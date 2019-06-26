@@ -4,12 +4,12 @@ description: WIA ビデオ ドライバーの開発
 ms.assetid: 3cf14fd3-1dfa-480e-a69c-c4d2c196a504
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c0579d3db48d6e5943b24ee021711e89d620649d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3bc4ada8af6ec6090ddd3b3b340ebc41412b9cd1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364574"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353815"
 ---
 # <a name="developing-a-wia-video-driver"></a>WIA ビデオ ドライバーの開発
 
@@ -34,7 +34,7 @@ ICMProfiles="sRGB Color Space Profile.icm"
 
 これらの追加を行っていない場合は、WIA がデバイスを認識していません。 必ず*追加*INF ファイルにこれらの変更。 次の行のみ、INF ファイルを置き換えないでください。
 
-サポートする方法の例には、ドライバーからまだ pin と USBCAMD モデルを使用してビデオ_カメラから WIA を参照してください[USB-Based カメラ キャプチャ ボタンで](https://msdn.microsoft.com/library/windows/hardware/ff568643)します。
+サポートする方法の例には、ドライバーからまだ pin と USBCAMD モデルを使用してビデオ_カメラから WIA を参照してください[USB-Based カメラ キャプチャ ボタンで](https://docs.microsoft.com/windows-hardware/drivers/stream/usb-based-camera-with-a-capture-button)します。
 
  
 

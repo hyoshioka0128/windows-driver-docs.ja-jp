@@ -7,12 +7,12 @@ keywords:
 - NDIS フィルター ドライバー WDK、特性
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ca033e85a792987c76b134426d66f7172fb5fec
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a861c19269826723cf4f3c70340b3f5b07c6d649
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382642"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353737"
 ---
 # <a name="filter-driver-characteristics"></a>フィルター ドライバーの特性
 
@@ -34,7 +34,7 @@ ms.locfileid: "63382642"
 
 -   NDIS ドライバー スタックの再起動時に、プロトコルのドライバーはドライバー スタック内のフィルター モジュールの一覧を取得できます。
 
-    フィルター モジュールの一覧については、次を参照してください。 [ **NDIS\_プロトコル\_再起動\_パラメーター**](https://msdn.microsoft.com/library/windows/hardware/ff566844)します。
+    フィルター モジュールの一覧については、次を参照してください。 [ **NDIS\_プロトコル\_再起動\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_protocol_restart_parameters)します。
 
 -   フィルター ドライバーは、基になるミニポート アダプターとの間の通信の大部分をフィルター処理できます。 フィルター モジュールは、上位のプロトコル ドライバーとミニポート アダプターの間の特定のバインディングに関連付けられていません。 フィルター ドライバーが提供できるサービスをフィルター処理の種類の詳細については、次を参照してください。[フィルター ドライバー サービス](filter-driver-services.md)します。
 

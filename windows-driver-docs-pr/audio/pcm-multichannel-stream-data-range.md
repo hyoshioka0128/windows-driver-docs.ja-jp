@@ -6,12 +6,12 @@ keywords:
 - PCM マルチ チャネル ストリームのデータ範囲 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e612b8269af533472797cb0ed9efa569808ad1fd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 23d967757435b819212ecab427f43767984dd7b7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332232"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355313"
 ---
 # <a name="pcm-multichannel-stream-data-range"></a>PCM マルチチャンネル ストリームのデータ範囲
 
@@ -19,7 +19,7 @@ ms.locfileid: "63332232"
 ## <span id="pcm_multichannel_stream_data_range"></span><span id="PCM_MULTICHANNEL_STREAM_DATA_RANGE"></span>
 
 
-この例では、 [ **KSDATARANGE\_オーディオ**](https://msdn.microsoft.com/library/windows/hardware/ff537096) PCM マルチ チャネル ストリームのデータ範囲を記述する構造体。
+この例では、 [ **KSDATARANGE\_オーディオ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksdatarange_audio) PCM マルチ チャネル ストリームのデータ範囲を記述する構造体。
 
 ```cpp
   DataRange.FormatSize  = sizeof(KSDATARANGE_AUDIO);

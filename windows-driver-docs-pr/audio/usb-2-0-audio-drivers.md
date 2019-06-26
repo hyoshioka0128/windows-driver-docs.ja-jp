@@ -3,16 +3,16 @@ title: USB Audio 2.0 のドライバー
 description: 1703 のリリース以降、Windows 10 では、USB オーディオ 2.0 ドライバーが Windows に含まれます。 このドライバーは、基本的な機能を提供します。
 ms.date: 10/23/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: fcdf5f1a141a94257ded52be6616ba068164912f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 86d2800a322c15562ffbac9413e74b0e33e1e0b6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335384"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354161"
 ---
 # <a name="usb-audio-20-drivers"></a>USB Audio 2.0 のドライバー
 
-1703 のリリース以降、Windows 10 では、USB オーディオ 2.0 ドライバーが Windows に含まれます。 USB オーディオ 2.0 デバイス クラスをサポートするために設計されています。 ドライバーは、WaveRT オーディオ ポート クラス ミニポートです。 USB オーディオ 2.0 デバイス クラスの詳細については、次を参照してください。 [ https://www.usb.org/developers/docs/devclass_docs/](https://www.usb.org/developers/docs/devclass_docs/)します。 
+1703 のリリース以降、Windows 10 では、USB オーディオ 2.0 ドライバーが Windows に含まれます。 USB オーディオ 2.0 デバイス クラスをサポートするために設計されています。 ドライバーは、WaveRT オーディオ ポート クラス ミニポートです。 USB オーディオ 2.0 デバイス クラスの詳細については、次を参照してください。 [ https://www.usb.org/documents?search=&type%5B0%5D=55&items_per_page=50](https://www.usb.org/documents?search=&type%5B0%5D=55&items_per_page=50)します。 
 
 ドライバーの名前は: _usbaudio2.sys_と関連付けられている inf ファイルは_usbaudio2.inf_します。
 
@@ -35,7 +35,7 @@ USBAudio.Sys に示すように、Windows USB オーディオの広いアーキ�
 -   ADC 2 は、オーディオ デバイス、リリース 2.0 の USB デバイスのクラス定義を参照します。
 -   FMT 2 は、Release 2.0 にオーディオ データ形式の仕様を参照します。
 
-USB のかどうかは、特別な関心のグループを保持する、[公式の USB 仕様](https://www.usb.org/developers/docs/)仕様書、およびツールをテストします。 
+USB のかどうかは、特別な関心のグループを保持する、[公式の USB 仕様](https://www.usb.org/documents)仕様書、およびツールをテストします。 
 
 
 ## <a name="audio-formats"></a>オーディオ形式の設定
@@ -351,7 +351,7 @@ UCHAR Example2_MSOS20DescriptorSetForUAC2 [0x76] = {
 
 ### <a name="see-also"></a>関連項目
 
-[Windows Driver Model (WDM)](https://msdn.microsoft.com/library/windows/hardware/ff565698)
+[Windows Driver Model (WDM)](https://docs.microsoft.com/windows-hardware/drivers/kernel/windows-driver-model)
 
 [オーディオ ドライバーの概要](https://docs.microsoft.com/windows-hardware/drivers/audio/getting-started-with-wdm-audio-drivers)
 

@@ -19,12 +19,12 @@ keywords:
 - 列挙体 pivot WDK ビデオ存在するネットワーク
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9599e9fcf89c09a0f8b7993989e395596b0a9f1d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: faac0a2042c7091eacbc5ef61bc1d663ad4c26a3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63338655"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355548"
 ---
 # <a name="enumerating-cofunctional-vidpn-source-and-target-modes"></a>Cofunctional VidPN ソースおよびターゲット モードの列挙
 
@@ -39,9 +39,9 @@ ms.locfileid: "63338655"
 
 1.  VidPN マネージャーを作成またはをそのソースとターゲットのすべてではありませんが、一部は、ピン留めされたモードを持つ VidPN を取得します。
 
-2.  VidPN manager 呼び出し[ **DxgkDdiIsSupportedVidPn** ](https://msdn.microsoft.com/library/windows/hardware/ff559684)をディスプレイ アダプターでサポートされている機能 VidPN を形成する、VidPN を拡張できるかどうかを判断します。 つまり、既存の固定モードを変更することがなく、残りのソースとターゲットのモードを固定することができるかどうかを確認します。
+2.  VidPN manager 呼び出し[ **DxgkDdiIsSupportedVidPn** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_issupportedvidpn)をディスプレイ アダプターでサポートされている機能 VidPN を形成する、VidPN を拡張できるかどうかを判断します。 つまり、既存の固定モードを変更することがなく、残りのソースとターゲットのモードを固定することができるかどうかを確認します。
 
-3.  VidPN manager 呼び出し[ **DxgkDdiEnumVidPnCofuncModality** ](https://msdn.microsoft.com/library/windows/hardware/ff559649)しないモードに固定するターゲット、ソースで利用できるモードを取得します。
+3.  VidPN manager 呼び出し[ **DxgkDdiEnumVidPnCofuncModality** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_enumvidpncofuncmodality)しないモードに固定するターゲット、ソースで利用できるモードを取得します。
 
 渡される引数の 1 つ*DxgkDdiEnumVidPnCofuncModality*制約 VidPN と呼ばれる VidPN オブジェクトへのハンドルします。
 
@@ -79,13 +79,13 @@ ms.locfileid: "63338655"
 
 制約 VidPN から制約を抽出するには、次の手順を実行します。
 
--   呼び出して開始、 [ **pfnGetTopology** ](https://msdn.microsoft.com/library/windows/hardware/ff562854)へのポインターを取得する関数を[VidPN トポロジ インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_vidpntopology_interface)制約 VidPN トポロジを表します。
+-   呼び出して開始、 [ **pfnGetTopology** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_vidpn_gettopology)へのポインターを取得する関数を[VidPN トポロジ インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_vidpntopology_interface)制約 VidPN トポロジを表します。
 
--   呼び出す、 [ **pfnAcquireFirstPathInfo** ](https://msdn.microsoft.com/library/windows/hardware/ff562092)と[ **pfnAcquireNextPathInfo** ](https://msdn.microsoft.com/library/windows/hardware/ff562093)関数内の各パスに関する情報を取得します制約 VidPN トポロジ。 特定のパス (ソース ID、ターゲットの ID、スケール、変換、回転変換、ターゲットの色の基準など) に関する情報が含まれている、 [ **D3DKMDT\_VIDPN\_存在\_パス** ](https://msdn.microsoft.com/library/windows/hardware/ff546647)構造体。
+-   呼び出す、 [ **pfnAcquireFirstPathInfo** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_vidpntopology_acquirefirstpathinfo)と[ **pfnAcquireNextPathInfo** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_vidpntopology_acquirenextpathinfo)関数内の各パスに関する情報を取得します制約 VidPN トポロジ。 特定のパス (ソース ID、ターゲットの ID、スケール、変換、回転変換、ターゲットの色の基準など) に関する情報が含まれている、 [ **D3DKMDT\_VIDPN\_存在\_パス** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmdt/ns-d3dkmdt-_d3dkmdt_vidpn_present_path)構造体。
 
--   パスごとにパスのソースの ID を渡す、 [ **pfnAcquireSourceModeSet** ](https://msdn.microsoft.com/library/windows/hardware/ff562110)パスのソースを取得します。
+-   パスごとにパスのソースの ID を渡す、 [ **pfnAcquireSourceModeSet** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_vidpn_acquiresourcemodeset)パスのソースを取得します。
 
--   呼び出す、 [ **pfnAcquirePinnedModeInfo** ](https://msdn.microsoft.com/library/windows/hardware/ff562076)モード (存在する場合) は、ソースのモードのセットに固定するかを判断する関数。 ソースのモードのセットに固定モードがある場合は、セット内の残りのモードを確認する必要はおそらくありません。 モードのセットが固定モードを持たない場合は、セット内の残りのモードを呼び出すことによって調べる[ **pfnAcquireFirstModeInfo** ](https://msdn.microsoft.com/library/windows/hardware/ff562074)と[ **pfnAcquireNextModeInfo**](https://msdn.microsoft.com/library/windows/hardware/ff562075).
+-   呼び出す、 [ **pfnAcquirePinnedModeInfo** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_vidpnsourcemodeset_acquirepinnedmodeinfo)モード (存在する場合) は、ソースのモードのセットに固定するかを判断する関数。 ソースのモードのセットに固定モードがある場合は、セット内の残りのモードを確認する必要はおそらくありません。 モードのセットが固定モードを持たない場合は、セット内の残りのモードを呼び出すことによって調べる[ **pfnAcquireFirstModeInfo** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_vidpnsourcemodeset_acquirefirstmodeinfo)と[ **pfnAcquireNextModeInfo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_vidpnsourcemodeset_acquirenextmodeinfo).
 
     同様の手順を使用して、ターゲット モードの設定を確認し、ターゲット モードを確認する、セットのモードがピン留めします。
 
@@ -95,9 +95,9 @@ ms.locfileid: "63338655"
 
 モニターが接続されているビデオの存在ターゲットも、モニターでサポートされるモードのセットを検討する必要があります。 ビデオの存在ターゲット ディスプレイ アダプターでは、(制約を考慮した) 特定のモードをサポートする場合でものみで、ターゲットのモードが接続されているモニターには、モードもサポートしている場合に設定するには、そのモードを一覧表示する必要があります。 接続されているモニターがサポートするモードを確認するのには、次の手順を実行します。
 
--   [DXGK\_モニター インターフェイス](https://msdn.microsoft.com/library/windows/hardware/ff561949)
+-   [DXGK\_モニター インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_monitor_interface)
 
-    呼び出す[ **pfnAcquireMonitorSourceModeSet**](https://msdn.microsoft.com/library/windows/hardware/ff561953)します。 モードを設定が必要ないない場合の調整、単独で省略できます。 コード型のモード設定を調整する必要がある場合新しいモードのセットを作成する新しい設定の既存のモードを置き換えますする必要があります。
+    呼び出す[ **pfnAcquireMonitorSourceModeSet**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_monitor_acquiremonitorsourcemodeset)します。 モードを設定が必要ないない場合の調整、単独で省略できます。 コード型のモード設定を調整する必要がある場合新しいモードのセットを作成する新しい設定の既存のモードを置き換えますする必要があります。
 
 -   [DXGK_VIDPN_INTERFACE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_vidpn_interface)
 
@@ -105,17 +105,17 @@ ms.locfileid: "63338655"
 
 -   [_DXGK_VIDPNSOURCEMODESET_INTERFACE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_vidpnsourcemodeset_interface)
 
-    呼び出して[ **pfnCreateNewModeInfo** ](https://msdn.microsoft.com/library/windows/hardware/ff562078)と[ **pfnAddMode**](https://msdn.microsoft.com/library/windows/hardware/ff562077)します。
+    呼び出して[ **pfnCreateNewModeInfo** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_vidpnsourcemodeset_createnewmodeinfo)と[ **pfnAddMode**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_vidpnsourcemodeset_addmode)します。
 
 -   [DXGK_VIDPN_INTERFACE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_vidpn_interface)
 
-    最後に呼び出す[ **pfnAssignSourceModeSet** ](https://msdn.microsoft.com/library/windows/hardware/ff562840)を既存のソース モードの新しい設定を置き換えます。
+    最後に呼び出す[ **pfnAssignSourceModeSet** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_vidpn_assignsourcemodeset)を既存のソース モードの新しい設定を置き換えます。
 
 ### <a name="adjusting-scaling-support-flags"></a>スケーリングをサポートするフラグを調整します。
 
-制約 VidPN トポロジ内の各パスのパスが固定のスケーリング変換を持つかどうかを決定します。 この決定をするためには、検査*vpnPath*.**ContentTransformation.Scaling**ここで、 *vpnPath*は、 [ **D3DKMDT\_VIDPN\_存在\_パス**](https://msdn.microsoft.com/library/windows/hardware/ff546647)パスを表す構造体です。 場合*vpnPath*.**ContentTransformation.Scaling**に設定されている**D3DKMDT\_VPPS\_IDENTITY**、 **D3DKMDT\_VPPS\_中央揃え**、または**D3DKMDT\_VPPS\_STRETCHED**パスのスケーリング変換がピン留めします。 それ以外の場合、スケール変換はピン留めされていません。
+制約 VidPN トポロジ内の各パスのパスが固定のスケーリング変換を持つかどうかを決定します。 この決定をするためには、検査*vpnPath*.**ContentTransformation.Scaling**ここで、 *vpnPath*は、 [ **D3DKMDT\_VIDPN\_存在\_パス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmdt/ns-d3dkmdt-_d3dkmdt_vidpn_present_path)パスを表す構造体です。 場合*vpnPath*.**ContentTransformation.Scaling**に設定されている**D3DKMDT\_VPPS\_IDENTITY**、 **D3DKMDT\_VPPS\_中央揃え**、または**D3DKMDT\_VPPS\_STRETCHED**パスのスケーリング変換がピン留めします。 それ以外の場合、スケール変換はピン留めされていません。
 
-パスが固定のスケーリング変換を持たない場合は、パスのスケーリングをサポートするフラグを調整する必要があるかどうかを決定します。 スケーリングの型のサポートは、cofunctional の制約がないか、スケーリングの型のサポートに失敗する場合は、制約 cofunctional を表示する場合は、サポートのフラグを調整する必要があります。 メンバーを設定、スケーリングをサポートするフラグを変更する、 [ **D3DKMDT\_VIDPN\_存在\_パス\_スケーリング\_サポート**](https://msdn.microsoft.com/library/windows/hardware/ff546712)フラグを保持する構造体。
+パスが固定のスケーリング変換を持たない場合は、パスのスケーリングをサポートするフラグを調整する必要があるかどうかを決定します。 スケーリングの型のサポートは、cofunctional の制約がないか、スケーリングの型のサポートに失敗する場合は、制約 cofunctional を表示する場合は、サポートのフラグを調整する必要があります。 メンバーを設定、スケーリングをサポートするフラグを変更する、 [ **D3DKMDT\_VIDPN\_存在\_パス\_スケーリング\_サポート**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmdt/ns-d3dkmdt-_d3dkmdt_vidpn_present_path_scaling_support)フラグを保持する構造体。
 
 ### <a name="adjusting-rotation-support-flags"></a>回転をサポートするフラグを調整します。
 
@@ -125,10 +125,10 @@ ms.locfileid: "63338655"
 
 ディスプレイ アダプターでのマルチ サンプリング アンチエイリアシングの対応する 1 つまたは複数の出力ビデオ コーデックにされている場合は、固定モードになっているソースごとに (制約を考慮) 利用できるマルチ サンプリング メソッドを報告する必要があります。 使用可能なマルチ サンプリング メソッドを報告するには、次の手順を実行します。
 
--   配列を作成する[D3DDDI\_MULTISAMPLINGMETHOD](https://msdn.microsoft.com/library/windows/hardware/ff544594)構造体
--   先の配列を渡す、 [ **pfnAssignMultisamplingMethodSet** ](https://msdn.microsoft.com/library/windows/hardware/ff562115)の関数、 [VidPN インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_vidpn_interface)します。
+-   配列を作成する[D3DDDI\_MULTISAMPLINGMETHOD](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dukmdt/ns-d3dukmdt-_d3dddi_multisamplingmethod)構造体
+-   先の配列を渡す、 [ **pfnAssignMultisamplingMethodSet** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_vidpn_assignmultisamplingmethodset)の関数、 [VidPN インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_vidpn_interface)します。
 
-[D3DDDI\_MULTISAMPLINGMETHOD](https://msdn.microsoft.com/library/windows/hardware/ff544594)構造体が 2 つのメンバー、これは次のように設定する必要があります、マルチ サンプリング メソッドの特性を示す。 **NumSamples**メンバーは、サンプリングされた subpixels の数を示します。 **NumQualityLevels**メンバーは、メソッドを行える品質レベルの数を示します。 各レベルの増加が大幅に表示されるイメージの品質を改善する限り、任意の数の品質レベルを指定できます。
+[D3DDDI\_MULTISAMPLINGMETHOD](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dukmdt/ns-d3dukmdt-_d3dddi_multisamplingmethod)構造体が 2 つのメンバー、これは次のように設定する必要があります、マルチ サンプリング メソッドの特性を示す。 **NumSamples**メンバーは、サンプリングされた subpixels の数を示します。 **NumQualityLevels**メンバーは、メソッドを行える品質レベルの数を示します。 各レベルの増加が大幅に表示されるイメージの品質を改善する限り、任意の数の品質レベルを指定できます。
 
 ### <a name="span-idenumerationpivotsspanspan-idenumerationpivotsspanenumeration-pivots"></a><span id="enumeration_pivots"></span><span id="ENUMERATION_PIVOTS"></span>列挙型のピボット
 

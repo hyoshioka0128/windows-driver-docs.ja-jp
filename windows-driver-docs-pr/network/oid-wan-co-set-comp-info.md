@@ -5,12 +5,12 @@ ms.assetid: f3b6b846-fa8c-425b-ba05-45927e744d66
 ms.date: 08/08/2017
 keywords: -OID_WAN_CO_SET_COMP_INFO ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 574d3fcc2015278bd6fb41a9e9086fde02af3d30
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: aaa9f7ab189e69e1e25c26941a6ceb1a362a700e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384236"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353669"
 ---
 # <a name="oidwancosetcompinfo"></a>OID\_WAN\_CO\_設定\_COMP\_情報
 
@@ -40,9 +40,9 @@ OID\_WAN\_CO\_設定\_COMP\_情報 OID に通知するミニポート ドライ�
 <a name="remarks"></a>注釈
 -------
 
-詳しくは、NDIS の\_WAN\_圧縮\_情報構造体を参照してください[OID\_WAN\_取得\_COMP\_情報](https://msdn.microsoft.com/library/windows/hardware/ff561202)します。
+詳しくは、NDIS の\_WAN\_圧縮\_情報構造体を参照してください[OID\_WAN\_取得\_COMP\_情報](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff561202(v=vs.85))します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

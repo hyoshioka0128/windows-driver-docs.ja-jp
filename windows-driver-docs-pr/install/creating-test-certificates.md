@@ -4,19 +4,19 @@ description: テスト証明書の作成
 ms.assetid: 4e6daa96-029c-4e1c-b483-b900cb836858
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bb5da0a1585b825404a27ffe197fc08867b197ca
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5b26d405fa71ee7f45a5761051865c0225c9f841
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372975"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356288"
 ---
 # <a name="creating-test-certificates"></a>テスト証明書の作成
 
 
 テスト署名テスト証明書が必要です。 できるテスト証明書が生成されると、複数のドライバーをテストするために使用または[ドライバー パッケージ](driver-packages.md)します。 詳細については、次を参照してください。[テスト証明書](test-certificates.md)します。
 
-このトピックでは、使用する方法を説明します、 [ **MakeCert** ](https://msdn.microsoft.com/library/windows/hardware/ff548309)テスト証明書を作成するためのツール。 ほとんどの開発環境では、MakeCert を使用して生成テスト証明書をインストールおよびテスト署名されたドライバーまたはドライバー パッケージの読み込みをテストするための十分な必要があります。 この種類のテスト証明書の詳細については、次を参照してください。[テスト証明書の MakeCert](makecert-test-certificate.md)します。
+このトピックでは、使用する方法を説明します、 [ **MakeCert** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/makecert)テスト証明書を作成するためのツール。 ほとんどの開発環境では、MakeCert を使用して生成テスト証明書をインストールおよびテスト署名されたドライバーまたはドライバー パッケージの読み込みをテストするための十分な必要があります。 この種類のテスト証明書の詳細については、次を参照してください。[テスト証明書の MakeCert](makecert-test-certificate.md)します。
 
 次のコマンドラインの例では、MakeCert を使用して、次のタスクを完了します。
 
@@ -50,7 +50,7 @@ makecert -r -pe -ss PrivateCertStore -n CN=Contoso.com(Test) -eku 1.3.6.1.5.5.7.
 
 すべての署名に 1 つだけの MakeCert テスト証明書を作成する開発者がある[ドライバー パッケージ](driver-packages.md)開発用コンピューター。
 
-MakeCert ツールとコマンドライン引数の詳細については、次を参照してください。 [ **MakeCert**](https://msdn.microsoft.com/library/windows/hardware/ff548309)します。
+MakeCert ツールとコマンドライン引数の詳細については、次を参照してください。 [ **MakeCert**](https://docs.microsoft.com/windows-hardware/drivers/devtest/makecert)します。
 
 Readme ファイルも参照してください*Selfsign_readme.htm*で、 *bin\\selfsign* Windows Driver Kit (WDK) のディレクトリ。
 

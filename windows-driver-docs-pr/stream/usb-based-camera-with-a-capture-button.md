@@ -12,12 +12,12 @@ keywords:
 - カメラの WDK ビデオのキャプチャ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 052c22163d86ebb35a975a3bbbcca58ec65c31f6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1b17b5a84e77abc3f92ce0bb3dcc1cdcd332a2dc
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382523"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377726"
 ---
 # <a name="usb-based-camera-with-a-capture-button"></a>キャプチャ ボタン付きの USB ベース カメラ
 
@@ -34,7 +34,7 @@ Microsoft も用意されています。、 [USBCAMD ミニドライバー ラ�
 
 図では、ユーザー、カメラの電源ボタンをプッシュするときに、静止 pin は 1 つのイメージのみをストリームします。 または、プログラムによる制御によってまだ暗証番号 (pin) をトリガーできます。
 
-Windows Image Acquisition (WIA) テクノロジーで、まだイメージのアーキテクチャ (STI) は、USBCAMD によって提供される機能を補完します。 参照してください[Windows Image Acquisition ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff553346)と[イメージ ドライバーも](https://msdn.microsoft.com/library/windows/hardware/ff548278)詳細についてはします。
+Windows Image Acquisition (WIA) テクノロジーで、まだイメージのアーキテクチャ (STI) は、USBCAMD によって提供される機能を補完します。 参照してください[Windows Image Acquisition ドライバー](https://docs.microsoft.com/windows-hardware/drivers/image/windows-image-acquisition-drivers)と[イメージ ドライバーも](https://docs.microsoft.com/windows-hardware/drivers/image/still-image-drivers)詳細についてはします。
 
 WIA ビデオ スナップショット フィルターは、Microsoft Windows XP 以降のオペレーティング システムに付属する WIA の追加です。 WIA ビデオ スナップショット フィルターは引き続き、ビデオ ストリームからキャプチャするフレームを使用します。
 

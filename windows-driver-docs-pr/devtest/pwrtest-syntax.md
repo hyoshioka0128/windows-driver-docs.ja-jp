@@ -5,12 +5,12 @@ ms.assetid: bcae1bb6-ce5b-4ece-a5ba-bae6fefd6408
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: d82450c3d99e99cf73cc33c452ad46bf0c5db20f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e7482b861dd8130b203acdb5f739a11e25f1efc6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380960"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356401"
 ---
 # <a name="pwrtest-syntax"></a>PwrTest の構文
 
@@ -23,7 +23,7 @@ PwrTest ツールの構文です。
 pwrtest /scenario [/scenario_options] [/common_options]
 ```
 
-<span id="_scenario"></span><span id="_SCENARIO"></span>**/**<em>シナリオ</em>  
+<span id="_scenario"></span><span id="_SCENARIO"></span> **/** <em>シナリオ</em>  
 
 | シナリオ   | 説明                                                                                                                                                        |
 |-------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -48,8 +48,8 @@ pwrtest /scenario [/scenario_options] [/common_options]
  
 
 
-<span id="_scenario_options"></span><span id="_SCENARIO_OPTIONS"></span>**/**<em>シナリオ\_オプション</em>  
-Pwrtest シナリオごとに使用できるオプションを参照する入力: **pwrtest.exe/**<em>シナリオ</em> **/でしょうか。**
+<span id="_scenario_options"></span><span id="_SCENARIO_OPTIONS"></span> **/** <em>シナリオ\_オプション</em>  
+Pwrtest シナリオごとに使用できるオプションを参照する入力: **pwrtest.exe/** <em>シナリオ</em> **/でしょうか。**
 
 例: **pwrtest.exe/sleep/でしょうか。**
 
@@ -57,11 +57,11 @@ Pwrtest シナリオごとに使用できるオプションを参照する入力
 
 |       *一般的な\_オプション*       |                                                                                                                説明                                                                                                                 |
 |-------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|    **/lf:**<em>フォルダー</em>    |                                            ログ ファイルのフォルダーを指定します。 たとえば、c:\\myfolder または\\ \\server\\を共有します。 既定のログの場所は、pwrtest.exe と同じフォルダーです。                                             |
-|     **/ln:**<em>name</em>     |                ログ ファイルの名前と、Event Tracing for Windows (ETW) トレース セッションの名前を指定します。 (.Wtl、.xml など)、ログ ファイルの拡張機能が自動的に追加されます。 既定の名前は pwrtestlog です。                |
-| **/etwbuffersize:**<em>n</em> |                                                  既定のサイズよりも大きい場合は、(KB 単位)、ETW バッファーのサイズを指定します。 既定値は、現在のページ サイズまたは (大きい方) 256 KB です。                                                  |
-| **/etwminbuffers:**<em>n</em> |                                論理プロセッサあたり 2 つの最小値よりも大きい場合は、ETW セッションに割り当てられたバッファーの最小数を指定します。 既定では論理プロセッサごとの 2 つのバッファーです。                                |
-| **/etwmaxbuffers:**<em>n</em> | その数が 2 論理プロセッサごとの最小値よりも大きい場合に、ETW セッションに割り当てられたバッファーの数を超える最大値を指定します、 **etwminbuffers**設定します。 既定値は、 **etwminbuffers**値 + 20。 |
+|    **/lf:** <em>フォルダー</em>    |                                            ログ ファイルのフォルダーを指定します。 たとえば、c:\\myfolder または\\ \\server\\を共有します。 既定のログの場所は、pwrtest.exe と同じフォルダーです。                                             |
+|     **/ln:** <em>name</em>     |                ログ ファイルの名前と、Event Tracing for Windows (ETW) トレース セッションの名前を指定します。 (.Wtl、.xml など)、ログ ファイルの拡張機能が自動的に追加されます。 既定の名前は pwrtestlog です。                |
+| **/etwbuffersize:** <em>n</em> |                                                  既定のサイズよりも大きい場合は、(KB 単位)、ETW バッファーのサイズを指定します。 既定値は、現在のページ サイズまたは (大きい方) 256 KB です。                                                  |
+| **/etwminbuffers:** <em>n</em> |                                論理プロセッサあたり 2 つの最小値よりも大きい場合は、ETW セッションに割り当てられたバッファーの最小数を指定します。 既定では論理プロセッサごとの 2 つのバッファーです。                                |
+| **/etwmaxbuffers:** <em>n</em> | その数が 2 論理プロセッサごとの最小値よりも大きい場合に、ETW セッションに割り当てられたバッファーの数を超える最大値を指定します、 **etwminbuffers**設定します。 既定値は、 **etwminbuffers**値 + 20。 |
 |        **/delaywrite**        |                                                           ログ データがディスク書き込み回数を削減するためのメモリにバッファリングされることを指定します。 このオプションでは、ETL を含むすべてのログの種類に影響します。                                                            |
 
 **使用例**
@@ -90,7 +90,7 @@ ETW トレースをサポートするための要件を実行します。
 
 .Log (プレーン テキスト) で、各実行に対して複数のログを自動的に生成されます PwrTest .xml (形式は各シナリオは異なります)、.wtl (WTTLog) および .etl (ETW トレース) ログの形式。
 
-PwrTest のすべてのシナリオを使用できるようにするには、まず Visual Studio と WDK を使用してテストするためのテスト コンピューターをプロビジョニングする必要があります。 詳細については、次を参照してください。[ドライバーの展開のためにコンピューターをプロビジョニングし、テスト (WDK 8.1)](https://msdn.microsoft.com/library/windows/hardware/dn745909)、または[ドライバーの展開のためにコンピューターをプロビジョニングし、テスト (WDK 8)](https://msdn.microsoft.com/library/windows/hardware/hh698272)します。 一部のシナリオでは、Windows ドライバー テスト フレームワーク (WDTF) の一部である電源ボタン ドライバーが必要です。 WDTF (および、同梱の電源ボタン ドライバー) は、Visual Studio と WDK を使用してテストするためのシステムをプロビジョニングするときに自動的にインストールします。 WDTF については、次を参照してください。 [ **Windows デバイスのテスト フレームワーク (WDTF) (Windows ドライバー)**](https://msdn.microsoft.com/library/windows/hardware/ff539547)します。
+PwrTest のすべてのシナリオを使用できるようにするには、まず Visual Studio と WDK を使用してテストするためのテスト コンピューターをプロビジョニングする必要があります。 詳細については、次を参照してください。[ドライバーの展開のためにコンピューターをプロビジョニングし、テスト (WDK 8.1)](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/provision-a-target-computer-wdk-8-1)、または[ドライバーの展開のためにコンピューターをプロビジョニングし、テスト (WDK 8)](https://docs.microsoft.com/previous-versions/hh698272(v=vs.85))します。 一部のシナリオでは、Windows ドライバー テスト フレームワーク (WDTF) の一部である電源ボタン ドライバーが必要です。 WDTF (および、同梱の電源ボタン ドライバー) は、Visual Studio と WDK を使用してテストするためのシステムをプロビジョニングするときに自動的にインストールします。 WDTF については、次を参照してください。 [ **Windows デバイスのテスト フレームワーク (WDTF) (Windows ドライバー)** ](https://docs.microsoft.com/windows-hardware/drivers/wdtf/index)します。
 
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 

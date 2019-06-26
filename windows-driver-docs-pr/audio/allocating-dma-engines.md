@@ -11,12 +11,12 @@ keywords:
 - DMA エンジン WDK オーディオをキャプチャします。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fc3c75b99ec958b9ae183d3ef54e6c33683f3ef6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a0040102cbb768bbb5a972f70e1c1272fb6cf4d8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331728"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355767"
 ---
 # <a name="allocating-dma-engines"></a>DMA エンジンの割り当て
 
@@ -31,9 +31,9 @@ HD オーディオ コント ローラーには、固定数 DMA エンジンに�
 
 -   双方向の DMA エンジンには、いずれかのレンダリングを処理またはストリームをキャプチャするように構成できます。
 
-レンダリングのストリームの DMA エンジンを割り当てるときに、 [ **AllocateCaptureDmaEngine** ](https://msdn.microsoft.com/library/windows/hardware/ff536177)ルーチンが使用できる場合、レンダリングの DMA エンジンを割り当てます。 DMA エンジンをレンダリングする場合は、終了ルーチンが使用できる場合、双方向の DMA エンジンを割り当てます。
+レンダリングのストリームの DMA エンジンを割り当てるときに、 [ **AllocateCaptureDmaEngine** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/nc-hdaudio-pallocate_capture_dma_engine)ルーチンが使用できる場合、レンダリングの DMA エンジンを割り当てます。 DMA エンジンをレンダリングする場合は、終了ルーチンが使用できる場合、双方向の DMA エンジンを割り当てます。
 
-同様に、ときに、DMA を割り当てエンジン ストリームについては、キャプチャ、 [ **AllocateRenderDmaEngine** ](https://msdn.microsoft.com/library/windows/hardware/ff536181)ルーチンが使用できる場合、キャプチャの DMA エンジンを割り当てます。 DMA エンジンをキャプチャする場合は、終了ルーチンが使用できる場合、双方向の DMA エンジンを割り当てます。
+同様に、ときに、DMA を割り当てエンジン ストリームについては、キャプチャ、 [ **AllocateRenderDmaEngine** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/nc-hdaudio-pallocate_render_dma_engine)ルーチンが使用できる場合、キャプチャの DMA エンジンを割り当てます。 DMA エンジンをキャプチャする場合は、終了ルーチンが使用できる場合、双方向の DMA エンジンを割り当てます。
 
 割り当て*Xxx*DmaEngine ルーチンは、HD オーディオ DDI の両方のバージョンで使用できます。
 

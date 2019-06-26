@@ -8,17 +8,17 @@ keywords:
 - WskReceiveFrom
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c0d272ce226776387d5f53a772d7cec34621541
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a96a47bd3ac477a57cf85e24665c9979945f0f95
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346068"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353294"
 ---
 # <a name="receiving-data-over-a-datagram-socket"></a>データグラム ソケット経由でのデータの受信
 
 
-Winsock カーネル (WSK) アプリケーションがローカル トランスポート アドレスにデータグラム ソケットをバインドした後、ソケットを使ってデータグラムを受信できます。 WSK アプリケーション データグラム ソケット経由で呼び出すことによって、データグラムを受信する、 [ **WskReceiveFrom** ](https://msdn.microsoft.com/library/windows/hardware/ff571141)関数。
+Winsock カーネル (WSK) アプリケーションがローカル トランスポート アドレスにデータグラム ソケットをバインドした後、ソケットを使ってデータグラムを受信できます。 WSK アプリケーション データグラム ソケット経由で呼び出すことによって、データグラムを受信する、 [ **WskReceiveFrom** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_receive_from)関数。
 
 次のコード例では、データグラム ソケット経由で、WSK アプリケーションがデータグラムを受信する方法を示します。
 
@@ -129,7 +129,7 @@ NTSTATUS
 }
 ```
 
-呼び出す代わりとして、 [ **WskReceiveFrom** ](https://msdn.microsoft.com/library/windows/hardware/ff571141)データグラム ソケット経由で各データグラムを受信する関数を WSK アプリケーションを有効にすることができます、 [ *WskReceiveFromEvent* ](https://msdn.microsoft.com/library/windows/hardware/ff571142)ソケットでのイベントのコールバック関数。 WSK アプリケーションを使用する場合、 *WskReceiveFromEvent*データグラム ソケットでのイベントのコールバック関数、WSK サブシステムを呼び出す、ソケットの*WskReceiveFromEvent*たびに新しいイベントのコールバック関数データグラムは、ソケットで受信されます。 データグラム ソケットの有効化の詳細については*WskReceiveFromEvent*イベントのコールバック関数を参照してください[の有効化と無効にするとイベントのコールバック関数](enabling-and-disabling-event-callback-functions.md)します。
+呼び出す代わりとして、 [ **WskReceiveFrom** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_receive_from)データグラム ソケット経由で各データグラムを受信する関数を WSK アプリケーションを有効にすることができます、 [ *WskReceiveFromEvent* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_receive_from_event)ソケットでのイベントのコールバック関数。 WSK アプリケーションを使用する場合、 *WskReceiveFromEvent*データグラム ソケットでのイベントのコールバック関数、WSK サブシステムを呼び出す、ソケットの*WskReceiveFromEvent*たびに新しいイベントのコールバック関数データグラムは、ソケットで受信されます。 データグラム ソケットの有効化の詳細については*WskReceiveFromEvent*イベントのコールバック関数を参照してください[の有効化と無効にするとイベントのコールバック関数](enabling-and-disabling-event-callback-functions.md)します。
 
 コード例を次に示す方法 WSK アプリケーションで受信できますデータグラム WSK サブシステム データグラム ソケットを呼び出すことによって*WskReceiveFromEvent*イベント コールバック関数。
 
@@ -172,7 +172,7 @@ NTSTATUS WSKAPI
 }
 ```
 
-データグラム ソケットの場合[ *WskReceiveFromEvent* ](https://msdn.microsoft.com/library/windows/hardware/ff571142)イベント コールバック関数は取得できません、データグラムのすべての一覧から[ **WSK\_データグラム\_INDICATION** ](https://msdn.microsoft.com/library/windows/hardware/ff571164)によって示される構造体、 *DataIndication*パラメーターの状態を返すことによってさらに処理するためのリストを保持して\_保留します。 このような状況で WSK アプリケーションを呼び出す必要があります、 [ **WskRelease** ](https://msdn.microsoft.com/library/windows/hardware/ff571144)関数解放 WSK の一覧を\_データグラム\_を示す値構造体にバックアップした後、WSK サブシステムこれには、データグラムのすべてを一覧内の構造体から取得が完了しました。
+データグラム ソケットの場合[ *WskReceiveFromEvent* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_receive_from_event)イベント コールバック関数は取得できません、データグラムのすべての一覧から[ **WSK\_データグラム\_INDICATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/ns-wsk-_wsk_datagram_indication)によって示される構造体、 *DataIndication*パラメーターの状態を返すことによってさらに処理するためのリストを保持して\_保留します。 このような状況で WSK アプリケーションを呼び出す必要があります、 [ **WskRelease** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff571144(v=vs.85))関数解放 WSK の一覧を\_データグラム\_を示す値構造体にバックアップした後、WSK サブシステムこれには、データグラムのすべてを一覧内の構造体から取得が完了しました。
 
  
 

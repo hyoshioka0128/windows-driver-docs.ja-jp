@@ -8,12 +8,12 @@ keywords:
 - インターフェイス名の WDK オーディオ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dbdb0c8235e53c71aefe84e397d0288055dce0de
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f1c32b7f1cba184099f2a7decf64447a0a0116b9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332283"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355338"
 ---
 # <a name="obtaining-a-device-interface-name"></a>デバイス インターフェイス名の取得
 
@@ -23,13 +23,13 @@ ms.locfileid: "63332283"
 
 Windows 2000 以降、Windows のマルチ メディア機能と Windows Me で**waveInMessage**、 **waveOutMessage**、 **midiInMessage**、 **midiOutMessage**、および**mixerMessage**デバイスのデバイスのインターフェイスの名前を取得できます。 この情報は、waveIn、waveOut、midiIn midiOut、またはミキサー API 以外のデバイスを識別するために必要なアプリケーション プログラムに役立ちます。 これらの Api のいずれか、デバイス ID で十分です。
 
-プラグ アンド プレイのマネージャーには、それを列挙する各デバイスを一意に識別するデバイス インターフェイス名が生成されます。 アプリケーションでは、不透明なとしてデバイス インターフェイス名を含む文字列を扱う必要があります。 デバイス インターフェイスの詳細については、次を参照してください。[デバイス インターフェイスの概要](https://msdn.microsoft.com/library/windows/hardware/ff549460)します。
+プラグ アンド プレイのマネージャーには、それを列挙する各デバイスを一意に識別するデバイス インターフェイス名が生成されます。 アプリケーションでは、不透明なとしてデバイス インターフェイス名を含む文字列を扱う必要があります。 デバイス インターフェイスの詳細については、次を参照してください。[デバイス インターフェイスの概要](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-device-interface-classes)します。
 
 Mmddk.h ヘッダー ファイルには、デバイス インターフェイス名を取得するための 2 つのメッセージ定数を定義します。
 
-[**DRV\_QUERYDEVICEINTERFACESIZE**](https://msdn.microsoft.com/library/windows/hardware/ff536364)
+[**DRV\_QUERYDEVICEINTERFACESIZE**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff536364(v=vs.85))
 
-[**DRV\_QUERYDEVICEINTERFACE**](https://msdn.microsoft.com/library/windows/hardware/ff536363)
+[**DRV\_QUERYDEVICEINTERFACE**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff536363(v=vs.85))
 
 最初のメッセージは、デバイス インターフェイス名を含む文字列を保持するために必要なバッファーのバイト単位のサイズを取得します。 2 番目のメッセージは、必要なサイズのバッファーに名の文字列を取得します。
 

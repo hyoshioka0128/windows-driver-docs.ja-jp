@@ -8,17 +8,17 @@ keywords:
 - EVENTSETID_CROSSBAR
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f5409e229f2cafb6cc92441da0d64fd4c5947ad
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 710598c7b1073ccf988f7a1fa1ca16f14acfcf5c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374164"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378381"
 ---
 # <a name="crossbar-change-event"></a>クロスバーの変更イベント
 
 
-[EVENTSETID\_クロスバー](https://msdn.microsoft.com/library/windows/hardware/ff559562)クロスバー変更イベントがイベント セットに含まれています。 次の表に、イベント、EVENTSETID の一部である\_クロスバー イベントのセット。
+[EVENTSETID\_クロスバー](https://docs.microsoft.com/windows-hardware/drivers/stream/eventsetid-crossbar)クロスバー変更イベントがイベント セットに含まれています。 次の表に、イベント、EVENTSETID の一部である\_クロスバー イベントのセット。
 
 <table>
 <colgroup>
@@ -33,7 +33,7 @@ ms.locfileid: "63374164"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff561843" data-raw-source="[&lt;strong&gt;KSEVENT_CROSSBAR_CHANGED&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff561843)"><strong>KSEVENT_CROSSBAR_CHANGED</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksevent-crossbar-changed" data-raw-source="[&lt;strong&gt;KSEVENT_CROSSBAR_CHANGED&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/stream/ksevent-crossbar-changed)"><strong>KSEVENT_CROSSBAR_CHANGED</strong></a></p></td>
 <td><p>DirectShow クロスバーが変更されたこと、たとえば、新しい暗証番号 (pin) のルーティング構成のために通知します。</p></td>
 </tr>
 </tbody>

@@ -8,12 +8,12 @@ keywords:
 - バッファー管理 WDK NDIS フィルターです。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e7cae78746cce3fb63c3832f3da99db273de5e7d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fb56bf78d8ad429d0d806cc02222e09954102a3e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382645"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353734"
 ---
 # <a name="filter-driver-buffer-management"></a>フィルター ドライバー バッファー管理
 
@@ -25,21 +25,21 @@ ms.locfileid: "63382645"
 
 フィルター ドライバーは、バッファーを作成していない、ドライバーでは、バッファー プールは管理しません。 このようなドライバーは、他のドライバーから受信するバッファーを渡すだけです。
 
-送信をサポートするか、操作を受信するバッファーを作成するフィルター ドライバーを管理する必要があります[ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)プール構造体と[ **NET\_バッファー** ](https://msdn.microsoft.com/library/windows/hardware/ff568376)プールを構成します。
+送信をサポートするか、操作を受信するバッファーを作成するフィルター ドライバーを管理する必要があります[ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)プール構造体と[ **NET\_バッファー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)プールを構成します。
 
 これらのプールを作成するには、ドライバーは、次の関数を呼び出します。
 
-[**NdisAllocateNetBufferListPool**](https://msdn.microsoft.com/library/windows/hardware/ff561611)
+[**NdisAllocateNetBufferListPool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisallocatenetbufferlistpool)
 
-[**NdisAllocateNetBufferPool**](https://msdn.microsoft.com/library/windows/hardware/ff561613)
+[**NdisAllocateNetBufferPool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisallocatenetbufferpool)
 
 フィルター ドライバーは、次の関数を使用して、構造体をプールから割り当てできます。
 
-[**NdisAllocateNetBufferAndNetBufferList**](https://msdn.microsoft.com/library/windows/hardware/ff561608)
+[**NdisAllocateNetBufferAndNetBufferList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisallocatenetbufferandnetbufferlist)
 
-[**NdisAllocateNetBufferList**](https://msdn.microsoft.com/library/windows/hardware/ff561609)
+[**NdisAllocateNetBufferList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisallocatenetbufferlist)
 
-[**NdisAllocateNetBuffer**](https://msdn.microsoft.com/library/windows/hardware/ff561607)
+[**NdisAllocateNetBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisallocatenetbuffer)
 
 呼び出す**NdisAllocateNetBufferAndNetBufferList**呼び出しよりも効率的です**NdisAllocateNetBufferList**続けて**NdisAllocateNetBuffer**します。 ただし、 **NdisAllocateNetBufferAndNetBufferList** 1 つのネットワークを作成するだけ\_ネット上のバッファーの構造体\_バッファー\_リスト構造体。 使用する**NdisAllocateNetBufferAndNetBufferList**、ドライバーを設定する必要があります、 *AllocateNetBuffer*パラメーターを**TRUE**呼び出し時に**NdisAllocateNetBufferListPool**します。
 
@@ -47,15 +47,15 @@ ms.locfileid: "63382645"
 
 フィルター ドライバーは、空き、プールに、次の関数を使用します。
 
-[**NdisFreeNetBufferListPool**](https://msdn.microsoft.com/library/windows/hardware/ff562590)
+[**NdisFreeNetBufferListPool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfreenetbufferlistpool)
 
-[**NdisFreeNetBufferPool**](https://msdn.microsoft.com/library/windows/hardware/ff562592)
+[**NdisFreeNetBufferPool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfreenetbufferpool)
 
 フィルター ドライバーでは、次の関数を使用して、プールから割り当てられている構造体を解放します。
 
-[**NdisFreeNetBufferList**](https://msdn.microsoft.com/library/windows/hardware/ff562583)
+[**NdisFreeNetBufferList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfreenetbufferlist)
 
-[**NdisFreeNetBuffer**](https://msdn.microsoft.com/library/windows/hardware/ff562582)
+[**NdisFreeNetBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfreenetbuffer)
 
 ドライバーは、NET を解放する必要があります\_で割り当てられたバッファーの構造体**NdisAllocateNetBuffer**関連付けられている NET を解放する前に\_バッファー\_リスト構造体。 NET\_で割り当てられたバッファーの構造体**NdisAllocateNetBufferAndNetBufferList** 、ドライバーは呼び出し時に解放されます**NdisFreeNetBufferList**関連付けられているネットワークに\_バッファー\_リスト構造体。
 

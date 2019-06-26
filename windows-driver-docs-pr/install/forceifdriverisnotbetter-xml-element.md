@@ -12,17 +12,17 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 14f19564df66e4d83d8880d69571f490e8f86e79
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6ffb8aea9579a7d0fde2fc948528a73745c3086c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377081"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353793"
 ---
 # <a name="forceifdriverisnotbetter-xml-element"></a>forceIfDriverIsNotBetter XML 要素
 
 
-\[DIFx は非推奨、詳細については、「 [DIFx ガイドライン](https://msdn.microsoft.com/windows/hardware/drivers/install/difx-guidelines)します。\]
+\[DIFx は非推奨、詳細については、「 [DIFx ガイドライン](https://docs.microsoft.com/windows-hardware/drivers/install/difx-guidelines)します。\]
 
 **ForceIfDriverIsNotBetter** XML 要素が空の要素を設定する、 **forceIfDriverIsNotBetter**フラグには、ドライバーがいる場合でも、デバイス ドライバーをインストールする DPInst を構成します。デバイスに現在インストールされているとは、新しいドライバーよりも優れた一致です。
 

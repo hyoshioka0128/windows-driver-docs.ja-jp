@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 1dcd1da3b06c41324d6d612315ac7725f1d6cbb3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e01b03b1c89e578f4f6c3069cb060e9f8a42071f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327140"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378262"
 ---
 # <a name="devpkeydeviceejectionrelations"></a>DEVPKEY_Device_EjectionRelations
 
 
-DEVPKEY_Device_EjectionRelations デバイス プロパティを表します、 [**取り出し関係**](https://msdn.microsoft.com/library/windows/hardware/ff551670)デバイス インスタンス。
+DEVPKEY_Device_EjectionRelations デバイス プロパティを表します、 [**取り出し関係**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-device-relations)デバイス インスタンス。
 
 <table>
 <colgroup>
@@ -56,9 +56,9 @@ DEVPKEY_Device_EjectionRelations デバイス プロパティを表します、 
 <a name="remarks"></a>注釈
 -------
 
-呼び出すことができます[ **SetupDiGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551963) DEVPKEY_Device_EjectionRelations の値を取得します。
+呼び出すことができます[ **SetupDiGetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) DEVPKEY_Device_EjectionRelations の値を取得します。
 
-Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティを直接サポートされません。 以前のバージョンの Windows でのデバイスのリレーションのプロパティを取得する方法については、次を参照してください。[デバイス関係の取得](https://msdn.microsoft.com/library/windows/hardware/ff550630)します。
+Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティを直接サポートされません。 以前のバージョンの Windows でのデバイスのリレーションのプロパティを取得する方法については、次を参照してください。[デバイス関係の取得](https://docs.microsoft.com/windows-hardware/drivers/install/retrieving-device-relations)します。
 
 <a name="requirements"></a>要件
 ------------
@@ -83,7 +83,7 @@ Windows Server 2003、Windows XP、および Windows 2000 は、このプロパ�
 ## <a name="see-also"></a>関連項目
 
 
-[**SetupDiGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551963)
+[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
 

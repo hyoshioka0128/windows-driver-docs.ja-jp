@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 580beb199fac00a965011bc3e28d23ceeacd2a8a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 796af60e5486cedcb698dadc3a23ca5de15164b4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384265"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378152"
 ---
 # <a name="devpkeydevicephysicaldevicelocation"></a>DEVPKEY_Device_PhysicalDeviceLocation
 
@@ -62,9 +62,9 @@ DEVPKEY_Device_PhysicalDeviceLocation デバイスのプロパティには、Win
 
 Windows では、物理デバイスの位置情報で DEVPKEY_Device_PhysicalDeviceLocation の値を設定します。 ACPI 4.0 a で、情報の形式が定義されている仕様、6.1.6 を参照します。
 
-呼び出すことができます[ **SetupDiGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551963) DEVPKEY_Device_PhysicalDeviceLocation の値を取得します。
+呼び出すことができます[ **SetupDiGetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) DEVPKEY_Device_PhysicalDeviceLocation の値を取得します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -87,7 +87,7 @@ Windows では、物理デバイスの位置情報で DEVPKEY_Device_PhysicalDev
 ## <a name="see-also"></a>関連項目
 
 
-[**SetupDiGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551963)
+[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
 

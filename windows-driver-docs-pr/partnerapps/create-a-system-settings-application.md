@@ -4,12 +4,12 @@ description: パートナーの設定アプリを作成する
 ms.assetid: 3b549c11-f8b2-46e8-9d22-4edc787743ee
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 64e15e9175a87c5bb64a027b20d22b4313b1a6db
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 7417af3e917a7bc6d0aed64ddd8db2511a914183
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577692"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353575"
 ---
 # <a name="create-a-partner-settings-app"></a>パートナーの設定アプリを作成する
 
@@ -29,7 +29,7 @@ Oem および携帯電話会社は、その他のデバイスと区別できる�
 
 ![設定アプリでデバイスの一覧](images/devices-list-in-settings.png)
 
-内のすべてのレベル 2 ページの一覧を検索することができます、 [Windows 設定アプリを起動](https://msdn.microsoft.com/windows/uwp/launch-resume/launch-settings-app)トピック。 配置されているページに関連するすべてのリンクである必要がありますに重要です。
+内のすべてのレベル 2 ページの一覧を検索することができます、 [Windows 設定アプリを起動](https://docs.microsoft.com/windows/uwp/launch-resume/launch-settings-app)トピック。 配置されているページに関連するすべてのリンクである必要がありますに重要です。
 
 さらに、各ページでは、ページ上のコンテンツに関連する必要がありますに最大 5 つの検索語句を追加することはできます。 最良の検索結果には、特定のフレーズを使用します。 全般と 1 単語の用語を使用すると、関連する検索で表示されない、リンクする場合があります。  
 
@@ -56,9 +56,9 @@ Oem および携帯電話会社は、その他のデバイスと区別できる�
 ## <a name="creating-system-settings-applications"></a>システムの設定アプリケーションを作成します。
 
 > [!NOTE]
-> 設定アプリケーションでは、ユニバーサル Windows プラットフォーム アプリし、すべての UWP プログラミング ガイドラインに従う必要があります。 参照してください[ユニバーサル Windows プラットフォーム (UWP) アプリのガイドライン](https://msdn.microsoft.com/library/windows/apps/hh465424.aspx)詳細についてはします。
+> 設定アプリケーションでは、ユニバーサル Windows プラットフォーム アプリし、すべての UWP プログラミング ガイドラインに従う必要があります。 参照してください[ユニバーサル Windows プラットフォーム (UWP) アプリのガイドライン](https://developer.microsoft.com/windows/apps/design)詳細についてはします。
 
-1. Windows ユニバーサル アプリを作成するのにには、Windows ソフトウェア開発キット (SDK) を使用します。 Windows ユニバーサル アプリを作成する方法の詳細については、[Visual Studio でのビルドの UWP アプリ](https://msdn.microsoft.com/library/windows/apps/xaml/dn609832.aspx)を参照してください。
+1. Windows ユニバーサル アプリを作成するのにには、Windows ソフトウェア開発キット (SDK) を使用します。 Windows ユニバーサル アプリを作成する方法の詳細については、次を参照してください。 [Visual Studio でのビルドの UWP アプリ](https://docs.microsoft.com/windows/uwp/get-started/create-uwp-apps)します。
 
     Windows Phone を対象とする設定アプリを作成する場合は、Windows Phone Silverlight アプリも作成できます。
 

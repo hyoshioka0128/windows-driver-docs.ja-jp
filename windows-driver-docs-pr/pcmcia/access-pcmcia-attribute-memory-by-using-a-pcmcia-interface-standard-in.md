@@ -7,12 +7,12 @@ keywords:
 - 属性のメモリ バス WDK PCMCIA PCMCIA_INTERFACE_STANDARD インターフェイス
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d73cdc5d353ad04f4930ec3b70660ec6f9b4e42
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b5d0e10d5cdbf5ad0db7c7450016ee16ebf2fcf1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391576"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353533"
 ---
 # <a name="access-pcmcia-attribute-memory-by-using-a-pcmciainterfacestandard-interface"></a>PCMCIA 属性のメモリを PCMCIA を使用してアクセス\_インターフェイス\_標準インターフェイス
 
@@ -24,9 +24,9 @@ ms.locfileid: "63391576"
 
 標準の PCMCIA インターフェイスは、主にメモリ カードのドライバーとファイル システムに提供されます。
 
-ドライバーを使用できる、 [ **PCMCIA\_変更\_メモリ\_ウィンドウ**](https://msdn.microsoft.com/library/windows/hardware/ff537610) PCMCIA でサポートされているルーチンをインターフェイス\_インターフェイス\_標準的なインターフェイスです。 PCMCIA\_変更\_メモリ\_ウィンドウ PCMCIA のメモリ カードのメモリ ウィンドウの属性を設定します。 [メモリ] ウィンドウは、PCMCIA バス ドライバーによってマップされます。 このルーチンは永続的なウィンドウを提供していないのみ既存のウィンドウの現在の設定を変更しことに注意してください。 さらに、設定が永続的なシステム電源の状態では、変化です。
+ドライバーを使用できる、 [ **PCMCIA\_変更\_メモリ\_ウィンドウ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddpcm/nc-ntddpcm-pcmcia_modify_memory_window) PCMCIA でサポートされているルーチンをインターフェイス\_インターフェイス\_標準的なインターフェイスです。 PCMCIA\_変更\_メモリ\_ウィンドウ PCMCIA のメモリ カードのメモリ ウィンドウの属性を設定します。 [メモリ] ウィンドウは、PCMCIA バス ドライバーによってマップされます。 このルーチンは永続的なウィンドウを提供していないのみ既存のウィンドウの現在の設定を変更しことに注意してください。 さらに、設定が永続的なシステム電源の状態では、変化です。
 
-詳細については、次を参照してください。 [PCMCIA\_インターフェイス\_メモリ カードの標準的なインターフェイス](https://msdn.microsoft.com/library/windows/hardware/ff537606)します。
+詳細については、次を参照してください。 [PCMCIA\_インターフェイス\_メモリ カードの標準的なインターフェイス](https://docs.microsoft.com/windows-hardware/drivers/pcmcia/pcmcia-interface-standard-interface-for-memory-cards)します。
 
  
 

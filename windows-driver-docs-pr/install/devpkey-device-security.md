@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 31d09af8c2eb82a14c9a8205c74256ca7010160d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 00beef5bfed218600605d6c9ae7795a0d84f7faf
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379828"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378114"
 ---
 # <a name="devpkeydevicesecurity"></a>DEVPKEY_Device_Security
 
@@ -60,11 +60,11 @@ DEVPKEY_Device_Security デバイス プロパティは、デバイスのイン�
 <a name="remarks"></a>注釈
 -------
 
-使用して DEVPKEY_Device_Security の値を設定することができます、 [ **INF AddReg ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546320)に含まれている、 [ **INF *DDInstall*します。ハードウェア セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547330)のデバイスをインストールする INF ファイル。
+使用して DEVPKEY_Device_Security の値を設定することができます、 [ **INF AddReg ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)に含まれている、 [ **INF *DDInstall*します。ハードウェア セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-hw-section)のデバイスをインストールする INF ファイル。
 
-DEVPKEY_Device_Security の値を取得するには呼び出すことによって[ **SetupDiGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551963)呼び出すことによってこのプロパティを設定することも[ **SetupDiSetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff552163).
+DEVPKEY_Device_Security の値を取得するには呼び出すことによって[ **SetupDiGetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)呼び出すことによってこのプロパティを設定することも[ **SetupDiSetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetdevicepropertyw).
 
-Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_Device_Security プロパティのキーをサポートしていません。 代わりに、Windows の以前のバージョンのプロパティの値へのアクセスに対応する SPDRP_SECURITY 識別子を使用することができます。 Windows の以前のバージョンでこのプロパティの値にアクセスする方法については、次を参照してください。[デバイス インスタンス SPDRP_Xxx プロパティへのアクセス](https://msdn.microsoft.com/library/windows/hardware/ff537737)します。
+Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_Device_Security プロパティのキーをサポートしていません。 代わりに、Windows の以前のバージョンのプロパティの値へのアクセスに対応する SPDRP_SECURITY 識別子を使用することができます。 Windows の以前のバージョンでこのプロパティの値にアクセスする方法については、次を参照してください。[デバイス インスタンス SPDRP_Xxx プロパティへのアクセス](https://docs.microsoft.com/windows-hardware/drivers/install/accessing-device-instance-spdrp-xxx-properties)します。
 
 <a name="requirements"></a>要件
 ------------
@@ -89,13 +89,13 @@ Windows Server 2003、Windows XP、および Windows 2000 は、このプロパ�
 ## <a name="see-also"></a>関連項目
 
 
-[**INF AddReg ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546320)
+[**INF AddReg ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)
 
-[**INF *DDInstall*します。ハードウェア セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547330)
+[**INF *DDInstall*します。ハードウェア セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-hw-section)
 
-[**SetupDiGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551963)
+[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
-[**SetupDiSetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff552163)
+[**SetupDiSetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetdevicepropertyw)
 
  
 

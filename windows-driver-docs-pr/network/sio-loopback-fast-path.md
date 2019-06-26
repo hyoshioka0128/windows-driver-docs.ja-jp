@@ -5,12 +5,12 @@ ms.assetid: 5A5AD945-9EFD-4157-AFA4-F9C3995B7C43
 ms.date: 08/08/2017
 keywords: -Windows Vista 以降のドライバーをネットワーク SIO_LOOPBACK_FAST_PATH 制御コード
 ms.localizationpriority: medium
-ms.openlocfilehash: 202a5925817abb81d7ce4b3df8f1b399222a9c16
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 172c07a24ceaa78e3d45fe9013a6bf0f8bc76e96
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370544"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379162"
 ---
 # <a name="sioloopbackfastpath-control-code"></a>SIO\_ループバック\_高速\_パス制御コード
 
@@ -21,7 +21,7 @@ ms.locfileid: "63370544"
 
 **SIO\_ループバック\_高速\_パス**ソケット I/O 制御コードにより、TCP ソケットのループバック インターフェイスで高速の操作を構成する WSK アプリケーション。
 
-WSK アプリケーションを呼び出すこの IOCTL を使用する、 [ **WskControlSocket** ](https://msdn.microsoft.com/library/windows/hardware/ff571127)関数は次のパラメーター。
+WSK アプリケーションを呼び出すこの IOCTL を使用する、 [ **WskControlSocket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_control_socket)関数は次のパラメーター。
 
 <table>
 <colgroup>
@@ -97,16 +97,16 @@ TCP/IP ソケット オプションのサブセットのみがサポートされ
 -   IPV6\_ユニキャスト\_ホップ数
 -   IPV6\_ユニキャスト\_場合
 -   IPV6\_V6ONLY
--   [**したがって\_条件付き\_ACCEPT**](https://msdn.microsoft.com/library/windows/desktop/dd264794)
--   [したがって\_EXCLUSIVEADDRUSE](https://msdn.microsoft.com/library/windows/desktop/cc150667)
--   [**したがって\_ポート\_スケーラビリティ**](https://msdn.microsoft.com/library/windows/desktop/cc150670)
+-   [**したがって\_条件付き\_ACCEPT**](https://docs.microsoft.com/windows/desktop/WinSock/so-conditional-accept)
+-   [したがって\_EXCLUSIVEADDRUSE](https://docs.microsoft.com/windows/desktop/WinSock/so-exclusiveaddruse)
+-   [**したがって\_ポート\_スケーラビリティ**](https://docs.microsoft.com/windows/desktop/WinSock/so-port-scalability)
 -   したがって\_RCVBUF
 -   したがって\_REUSEADDR
 -   TCP\_BSDURGENT
 
-呼び出すときに、WSK アプリケーションは IRP の完了のルーチンへのポインターを指定する必要があります、 [ **WskControlSocket** ](https://msdn.microsoft.com/library/windows/hardware/ff571127)の要求のこの型の関数。 WSK サブシステムが IRP を完了するまで、アプリケーションはバッファーを解放する必要があります。 IRP が完了すると、サブシステムは、完了ルーチンを呼び出します。 完了ルーチンで、アプリケーションが IRP の状態を確認し、いた以前の要求の割り当てられているすべてのリソースを解放する必要があります。
+呼び出すときに、WSK アプリケーションは IRP の完了のルーチンへのポインターを指定する必要があります、 [ **WskControlSocket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_control_socket)の要求のこの型の関数。 WSK サブシステムが IRP を完了するまで、アプリケーションはバッファーを解放する必要があります。 IRP が完了すると、サブシステムは、完了ルーチンを呼び出します。 完了ルーチンで、アプリケーションが IRP の状態を確認し、いた以前の要求の割り当てられているすべてのリソースを解放する必要があります。
 
-WSK IRP の処理の詳細については、次を参照してください。 [Winsock カーネル関数を使用して Irp](https://msdn.microsoft.com/library/windows/hardware/ff571006)します。
+WSK IRP の処理の詳細については、次を参照してください。 [Winsock カーネル関数を使用して Irp](https://docs.microsoft.com/windows-hardware/drivers/network/using-irps-with-winsock-kernel-functions)します。
 
 IRP を完了すると、サブシステムは設定*Irp -&gt;IoStatus.Status*に**状態\_成功**要求が成功した場合。 それ以外の場合、 *Irp -&gt;IoStatus.Status*に設定されます**状態\_無効な\_バッファー\_サイズ**または**状態\_いない\_サポートされている**呼び出しが成功しなかった場合。
 
@@ -144,9 +144,9 @@ IRP を完了すると、サブシステムは設定*Irp -&gt;IoStatus.Status*�
 ## <a name="see-also"></a>関連項目
 
 
-[**SIO\_ループバック\_高速\_パス (SDK)**](https://msdn.microsoft.com/library/windows/desktop/jj841212)
+[**SIO\_ループバック\_高速\_パス (SDK)** ](https://docs.microsoft.com/previous-versions/windows/desktop/legacy/jj841212(v=vs.85))
 
-[Winsock カーネル関数での Irp の使用](https://msdn.microsoft.com/library/windows/hardware/ff571006)
+[Winsock カーネル関数での Irp の使用](https://docs.microsoft.com/windows-hardware/drivers/network/using-irps-with-winsock-kernel-functions)
 
  
 

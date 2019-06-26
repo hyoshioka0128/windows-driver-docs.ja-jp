@@ -6,19 +6,19 @@ ms.date: 07/18/2017
 keywords:
 - WDI_TLV_LSO_V1_CAPABILITIES (0 xcc) ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 366fde51f9f3cea9fec6b4c97e0ba14b4164715c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4f9a814f2db63dd713f8f50dd8750bf95a79e0eb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357240"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354465"
 ---
 # <a name="wditlvlsov1capabilities-0xcc"></a>WDI\_TLV\_LSO\_V1\_機能 (0 xcc)
 
 
 WDI\_TLV\_LSO\_V1\_機能は、大規模なオフロード V1 の送信機能を含む TLV します。
 
-記載されている機能の値が報告[ **NDIS\_TCP\_IP\_チェックサム\_オフロード**](https://msdn.microsoft.com/library/windows/hardware/ff567878)します。 NDIS を使用して、\_オフロード\_いない\_サポートと NDIS\_オフロード\_を介して機能を指定する際にサポートされている[OID\_WDI\_GET\_アダプター\_機能](https://msdn.microsoft.com/library/windows/hardware/dn925838)します。
+記載されている機能の値が報告[ **NDIS\_TCP\_IP\_チェックサム\_オフロード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_tcp_ip_checksum_offload)します。 NDIS を使用して、\_オフロード\_いない\_サポートと NDIS\_オフロード\_を介して機能を指定する際にサポートされている[OID\_WDI\_GET\_アダプター\_機能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-get-adapter-capabilities)します。
 
 ## <a name="tlv-type"></a>TLV 型
 

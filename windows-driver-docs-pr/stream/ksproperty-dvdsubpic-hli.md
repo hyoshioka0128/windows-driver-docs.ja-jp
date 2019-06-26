@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c43354af2ddf72cba864ec1fa2e7e575f50d1e4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 778d4f9eaed631648b8b1f491491d2b34c00b9f2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377448"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354885"
 ---
 # <a name="kspropertydvdsubpichli"></a>KSPROPERTY\_DVDSUBPIC\_HLI
 
@@ -54,7 +54,7 @@ KSPROPERTY\_DVDSUBPIC\_HLI プロパティは、色やコントラストなど�
 <td><p>〇</p></td>
 <td><p>Pin</p></td>
 <td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff565627" data-raw-source="[&lt;strong&gt;KSPROPERTY_SPHLI&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff565627)"><strong>KSPROPERTY_SPHLI</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ksproperty_sphli" data-raw-source="[&lt;strong&gt;KSPROPERTY_SPHLI&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ksproperty_sphli)"><strong>KSPROPERTY_SPHLI</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -66,7 +66,7 @@ KSPROPERTY\_DVDSUBPIC\_HLI プロパティは、色やコントラストなど�
 <a name="remarks"></a>注釈
 -------
 
-[ **KSPROPERTY\_SPHLI** ](https://msdn.microsoft.com/library/windows/hardware/ff565627)構造が DVD の強調表示情報から現在選択されているボタンについて説明します。
+[ **KSPROPERTY\_SPHLI** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ksproperty_sphli)構造が DVD の強調表示情報から現在選択されているボタンについて説明します。
 
 <a name="requirements"></a>要件
 ------------
@@ -87,7 +87,7 @@ KSPROPERTY\_DVDSUBPIC\_HLI プロパティは、色やコントラストなど�
 ## <a name="see-also"></a>関連項目
 
 
-[**KSPROPERTY\_SPHLI**](https://msdn.microsoft.com/library/windows/hardware/ff565627)
+[**KSPROPERTY\_SPHLI**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ksproperty_sphli)
 
  
 

@@ -9,12 +9,12 @@ keywords:
 - 照明 WDK Direct3D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 916c16e09399ab24b96666131ac5fc9cb32e9cbb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9441150ffd74a8889dd9df5070dbd0f1a18df710
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353858"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380230"
 ---
 # <a name="hardware-transform-and-lighting"></a>ハードウェアの変換とライティング
 
@@ -22,9 +22,9 @@ ms.locfileid: "63353858"
 ## <span id="ddk_hardware_transform_and_lighting_gg"></span><span id="DDK_HARDWARE_TRANSFORM_AND_LIGHTING_GG"></span>
 
 
-変更せずに照明や変換など、geometry 操作のハードウェア アクセラレータが有効になって、 [ **D3dDrawPrimitives2** ](https://msdn.microsoft.com/library/windows/hardware/ff544704) DDI 直接 X の最新のリリース。 API レベルでは、ハードウェアで頂点の操作をサポートするデバイスがからラスタライズのみを個別に列挙されます。
+変更せずに照明や変換など、geometry 操作のハードウェア アクセラレータが有効になって、 [ **D3dDrawPrimitives2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/nc-d3dhal-lpd3dhal_drawprimitives2cb) DDI 直接 X の最新のリリース。 API レベルでは、ハードウェアで頂点の操作をサポートするデバイスがからラスタライズのみを個別に列挙されます。
 
-既存の caps 構造体は、ハードウェア アクセラレータを使用した変換のデバイス上に存在する可能性のある機能を示すために拡張されています。 サポートされている光源の数を設定するなど、 **dwNumLights**のメンバー、 [ **D3DLIGHTINGCAPS** ](https://msdn.microsoft.com/library/windows/hardware/ff548471) と共に報告されます構造[ **D3DDEVICEDESC\_V1** ](https://msdn.microsoft.com/library/windows/hardware/ff544689)構造体。
+既存の caps 構造体は、ハードウェア アクセラレータを使用した変換のデバイス上に存在する可能性のある機能を示すために拡張されています。 サポートされている光源の数を設定するなど、 **dwNumLights**のメンバー、 [ **D3DLIGHTINGCAPS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dcaps/ns-d3dcaps-_d3dlightingcaps) と共に報告されます構造[ **D3DDEVICEDESC\_V1** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/ns-d3dhal-_d3ddevicedesc_v1)構造体。
 
 その他のフラグは、次の表のとおりです。
 

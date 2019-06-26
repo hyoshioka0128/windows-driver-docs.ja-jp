@@ -4,12 +4,12 @@ description: PwrTest 要求のシナリオでは、プロセスとが発生し�
 ms.assetid: 4B082680-5C43-45F6-9A0E-0C23E9B1F282
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a75d6084b5e3650dd795892235105e2f6e81854
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c37c836e0643ef6099b72aa532fbc19e66ca8fd4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382666"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356404"
 ---
 # <a name="pwrtest-requests-scenario"></a>PwrTest の要求シナリオ
 
@@ -27,7 +27,7 @@ PwrTest 要求のシナリオを使用すると、コンピューターがスリ
 pwrtest /requests [/t:n] [/?] 
 ```
 
-<span id="_t_n"></span><span id="_T_N"></span>**t:**<em>n</em>  
+<span id="_t_n"></span><span id="_T_N"></span>**t:** <em>n</em>  
 シナリオの実行を合計時間 (分) を指定します (既定値の*n*は 30 分です)。
 
 **使用例**
@@ -137,7 +137,7 @@ pwrtest /requests  /t:60
 </tr>
 <tr class="odd">
 <td align="left"><strong>&lt;レガシ&gt;</strong></td>
-<td align="left"><p>呼び出し元は、レガシを使用する場合、True または False を報告<a href="https://msdn.microsoft.com/library/windows/desktop/aa373208" data-raw-source="[&lt;strong&gt;SetThreadExecutionState function (Windows)&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/desktop/aa373208)"> <strong>SetThreadExecutionState 関数 (Windows)</strong> </a>または<a href="https://msdn.microsoft.com/library/windows/hardware/ff559768" data-raw-source="[&lt;strong&gt;PoSetSystemState&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff559768)"> <strong>PoSetSystemState</strong> </a> Api または新しい<a href="https://msdn.microsoft.com/library/windows/desktop/dd405534" data-raw-source="[&lt;strong&gt;PowerSetRequest function (Windows)&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/desktop/dd405534)"> <strong>PowerSetRequest 関数 (Windows)</strong> </a>または<a href="https://msdn.microsoft.com/library/windows/hardware/ff559762" data-raw-source="[&lt;strong&gt;PoSetPowerRequest&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff559762)"> <strong>PoSetPowerRequest</strong> </a> Api。</p></td>
+<td align="left"><p>呼び出し元は、レガシを使用する場合、True または False を報告<a href="https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-setthreadexecutionstate" data-raw-source="[&lt;strong&gt;SetThreadExecutionState function (Windows)&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-setthreadexecutionstate)"> <strong>SetThreadExecutionState 関数 (Windows)</strong> </a>または<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-posetsystemstate" data-raw-source="[&lt;strong&gt;PoSetSystemState&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-posetsystemstate)"> <strong>PoSetSystemState</strong> </a> Api または新しい<a href="https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-powersetrequest" data-raw-source="[&lt;strong&gt;PowerSetRequest function (Windows)&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-powersetrequest)"> <strong>PowerSetRequest 関数 (Windows)</strong> </a>または<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-posetpowerrequest" data-raw-source="[&lt;strong&gt;PoSetPowerRequest&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-posetpowerrequest)"> <strong>PoSetPowerRequest</strong> </a> Api。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>&lt;SystemAllowed&gt;</strong></td>

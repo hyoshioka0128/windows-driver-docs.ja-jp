@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 5f81e6f48b1f28aedb580fe8381984c1fcffc950
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: febb28cf8a4b2881c4449fee8c21aa4a8d4f25fd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380654"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353506"
 ---
 # <a name="dsmsetloadbalancepolicyalua-function"></a>DsmSetLoadBalancePolicyALUA 関数
 
@@ -40,7 +40,7 @@ void DsmSetLoadBalancePolicyALUA(
 ----------
 
 *LoadBalancePolicy*   
-A [ **DsmSetLoadBalancePolicyALUA\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff552675)構造体。
+A [ **DsmSetLoadBalancePolicyALUA\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mpiodisk/ns-mpiodisk-_dsmsetloadbalancepolicyalua_out)構造体。
 
 *状態*   
 操作の状態。
@@ -55,7 +55,7 @@ A [ **DsmSetLoadBalancePolicyALUA\_アウト**](https://msdn.microsoft.com/libra
 
 この WMI メソッドが属する、 [DSM\_LB\_操作](dsm-lb-operations-wmi-class.md)WMI クラスです。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

@@ -4,12 +4,12 @@ description: オーディオ ドライバーのプロパティ セット
 ms.assetid: bac74ad5-3a9b-40b1-ae49-c86558c34e94
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 661e29d53d64a01521d0ee891d9f931950ff0ad3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ae64886c0e4d1aea7d1a32d02a9aca0dbf85ef72
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331536"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355719"
 ---
 # <a name="audio-drivers-property-sets"></a>オーディオ ドライバーのプロパティ セット
 
@@ -42,13 +42,13 @@ ms.locfileid: "63331536"
 
 -   **プロパティ記述子の型**
 
-    プロパティ記述子には、プロパティとそのプロパティに対して実行する操作を指定します。 記述子が常に始まり、 [ **KSPROPERTY** ](https://msdn.microsoft.com/library/windows/hardware/ff564262)構造がいくつかの型記述子の追加情報を格納します。 たとえば、 [ **KSNODEPROPERTY** ](https://msdn.microsoft.com/library/windows/hardware/ff537143)構造体は、プロパティ記述子を KSPROPERTY 構造で始まりますが、ノード ID も含まれています
+    プロパティ記述子には、プロパティとそのプロパティに対して実行する操作を指定します。 記述子が常に始まり、 [ **KSPROPERTY** ](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))構造がいくつかの型記述子の追加情報を格納します。 たとえば、 [ **KSNODEPROPERTY** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty)構造体は、プロパティ記述子を KSPROPERTY 構造で始まりますが、ノード ID も含まれています
 
 -   **プロパティ値の型**
 
     プロパティは通常の値を持つし、この値の型は、プロパティによって異なります。 たとえば、オンまたはオフ----だけ 2 つの状態のいずれかの可能性のあるプロパティには、ブール値通常があります。 ULONG 値 0 の整数値を 0 xffffffff にことが前提としているプロパティがあります。 複雑なプロパティは、配列や構造体の値があります。
 
-上記のプロパティ記述子とプロパティの値は、記載されているインスタンス仕様および操作データのバッファーのプロパティに固有のバージョン[KS プロパティ、イベント、およびメソッド](https://msdn.microsoft.com/library/windows/hardware/ff567673)します。
+上記のプロパティ記述子とプロパティの値は、記載されているインスタンス仕様および操作データのバッファーのプロパティに固有のバージョン[KS プロパティ、イベント、およびメソッド](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-properties--events--and-methods)します。
 
 プロパティ要求は、次のフラグのいずれかの関数を使用して、プロパティに対して実行される操作を指定します。
 
@@ -58,7 +58,7 @@ ms.locfileid: "63331536"
 
 -   KSPROPERTY\_型\_設定
 
-フィルターと暗証番号 (pin) のすべてのオブジェクトは、それらのプロパティを basic サポート操作をサポートします。 Get をサポートし、操作を設定するかどうかは、プロパティによって異なります。 フィルターまたは pin オブジェクトの固有の機能を表すプロパティは、get 操作のみを必要とする可能性があります。 構成可能な設定を表すプロパティは、取得操作が現在の設定を読み取るために役立つ可能性もが、設定操作のみを必要があります。 オーディオのプロパティで、get、セット、および操作を basic サポートを使用する方法の詳細については、次を参照してください。[オーディオ エンドポイント、プロパティおよびイベント](https://msdn.microsoft.com/library/windows/hardware/ff536199)します。
+フィルターと暗証番号 (pin) のすべてのオブジェクトは、それらのプロパティを basic サポート操作をサポートします。 Get をサポートし、操作を設定するかどうかは、プロパティによって異なります。 フィルターまたは pin オブジェクトの固有の機能を表すプロパティは、get 操作のみを必要とする可能性があります。 構成可能な設定を表すプロパティは、取得操作が現在の設定を読み取るために役立つ可能性もが、設定操作のみを必要があります。 オーディオのプロパティで、get、セット、および操作を basic サポートを使用する方法の詳細については、次を参照してください。[オーディオ エンドポイント、プロパティおよびイベント](https://docs.microsoft.com/windows-hardware/drivers/audio/audio-endpoints--properties-and-events)します。
 
 オーディオ ドライバーには、次のプロパティのセットが定義されています。
 

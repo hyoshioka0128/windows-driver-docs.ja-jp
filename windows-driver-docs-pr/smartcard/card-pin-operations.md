@@ -4,12 +4,12 @@ description: カード PIN 操作
 ms.assetid: 7993D284-8122-4831-9C00-E53DAEB7965F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c9b74f5946c8f27e830f9230f0239ea27bad29fc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2dd60ebed356581de3c059cd7f45edc645bdb6c6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324249"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356730"
 ---
 # <a name="card-pin-operations"></a>カード PIN 操作
 
@@ -159,8 +159,8 @@ typedef enum
 |--------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **PinCacheNormal**       | このモードの場合、PIN は、ログオン ID ごとのプロセスごとの Base CSP によってキャッシュされます。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | **PinCacheTimed**        | このモードでは、(値がで指定された秒数) の指定された期間の後に、PIN が無効になります。 これは、PIN がキャッシュに追加されたときに、タイムスタンプを記録し、このタイムスタンプと、暗証番号 (pin) がアクセスされるときの時刻を検証することによって実装されていました。 つまり、暗証番号 (pin) 可能性がある、指定されたタイムスタンプよりも長くキャッシュに在住が有効期限が切れた後は使用されません。 PIN は、保護されるようにするメモリ内で暗号化されます。                                                                                                                |
-| **PinCacheNone**         | PIN はキャッシュされることはできません、Base CSP は、暗証番号 (pin) をことはありません、キャッシュに追加します。 Base CSP または KSP がで呼び出された[ **CryptSetProvParam** ](https://msdn.microsoft.com/library/windows/desktop/aa380276)暗証番号 (pin) の検証のため、カードに送信されたがキャッシュされていない PIN を設定します。 つまり、後続の操作は、Base CSP トランザクションのタイムアウトの有効期限が切れる前に発生する必要があります。                                                                                                                                                                                                                  |
-| **PinCacheAlwaysPrompt** | 異なり**PinCacheNone**このキャッシュ モードが設定されている場合、Base CSP トランザクションのタイムアウトは適用されません。 PIN がユーザーから収集し、認証が必要な各呼び出しの前に確認のため、カードに送信されます。 呼び出す[ **CryptSetProvParam** ](https://msdn.microsoft.com/library/windows/desktop/aa380276)と[ **NcryptSetProperty** ](https://msdn.microsoft.com/library/windows/desktop/aa376292)の PIN の設定のエラーが返されます\_なしの成功検証と、暗証番号 (pin) のキャッシュです。 つまり、呼び出しが認証を必要とする場合に、サイレントのコンテキストを使用するアプリケーションからの呼び出しが失敗します。 |
+| **PinCacheNone**         | PIN はキャッシュされることはできません、Base CSP は、暗証番号 (pin) をことはありません、キャッシュに追加します。 Base CSP または KSP がで呼び出された[ **CryptSetProvParam** ](https://docs.microsoft.com/windows/desktop/api/wincrypt/nf-wincrypt-cryptsetprovparam)暗証番号 (pin) の検証のため、カードに送信されたがキャッシュされていない PIN を設定します。 つまり、後続の操作は、Base CSP トランザクションのタイムアウトの有効期限が切れる前に発生する必要があります。                                                                                                                                                                                                                  |
+| **PinCacheAlwaysPrompt** | 異なり**PinCacheNone**このキャッシュ モードが設定されている場合、Base CSP トランザクションのタイムアウトは適用されません。 PIN がユーザーから収集し、認証が必要な各呼び出しの前に確認のため、カードに送信されます。 呼び出す[ **CryptSetProvParam** ](https://docs.microsoft.com/windows/desktop/api/wincrypt/nf-wincrypt-cryptsetprovparam)と[ **NcryptSetProperty** ](https://docs.microsoft.com/windows/desktop/api/ncrypt/nf-ncrypt-ncryptsetproperty)の PIN の設定のエラーが返されます\_なしの成功検証と、暗証番号 (pin) のキャッシュです。 つまり、呼び出しが認証を必要とする場合に、サイレントのコンテキストを使用するアプリケーションからの呼び出しが失敗します。 |
 
 
 

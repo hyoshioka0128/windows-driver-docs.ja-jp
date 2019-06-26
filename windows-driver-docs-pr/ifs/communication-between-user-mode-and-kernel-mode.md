@@ -11,23 +11,23 @@ keywords:
 - WDK、ファイル システム ミニフィルターのポート
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a39f91c6f69747f6169b0daa13ea4b72ab4363a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 119bc581262896fc42547fd484343e6c4da1506a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330576"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378984"
 ---
 # <a name="communication-between-user-mode-and-kernel-mode"></a>ユーザー モードとカーネル モード間のコミュニケーション
 
 
 フィルター マネージャーは、ユーザー モードとの通信のポート経由のカーネル モード間の通信をサポートします。 ミニフィルター ドライバーでは、通信ポートのオブジェクトに適用されるセキュリティ記述子を指定することで、ポートのセキュリティを制御します。 通信ポートを介した通信はバッファーされていないので、高速かつ効率的です。 ユーザー モード アプリケーションまたはサービスはメッセージに返信ミニフィルター ドライバーから双方向通信用。
 
-ミニフィルター ドライバーは、通信サーバーのポートを作成し、着信接続をポートでリッスンするように暗黙的に開始します。 ユーザー モードの呼び出し元が、ポートに接続しようとすると、フィルター マネージャー呼び出しミニフィルター ドライバーの[ **ConnectNotifyCallback** ](https://msdn.microsoft.com/library/windows/hardware/ff541931)ルーチンでは、新しく作成された接続を識別するハンドル。 フィルター マネージャーは、コントロールを再度獲得は、接続のユーザー モードの呼び出し元のエンドポイントを表す別のファイル ハンドルをユーザー モードの呼び出し元に渡します。 I/O 完了ポート リスナー ポートに関連付けるには、このハンドルを使用できます。
+ミニフィルター ドライバーは、通信サーバーのポートを作成し、着信接続をポートでリッスンするように暗黙的に開始します。 ユーザー モードの呼び出し元が、ポートに接続しようとすると、フィルター マネージャー呼び出しミニフィルター ドライバーの[ **ConnectNotifyCallback** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltcreatecommunicationport)ルーチンでは、新しく作成された接続を識別するハンドル。 フィルター マネージャーは、コントロールを再度獲得は、接続のユーザー モードの呼び出し元のエンドポイントを表す別のファイル ハンドルをユーザー モードの呼び出し元に渡します。 I/O 完了ポート リスナー ポートに関連付けるには、このハンドルを使用できます。
 
 ユーザー モードの呼び出し元がポートのセキュリティ記述子で指定したとおりに十分なアクセス権を持つ場合にのみ、接続が受け入れられます。 ポートへの各接続は、独自のメッセージ キューとプライベート エンドポイントを取得します。
 
-(カーネルまたはユーザー) のいずれかのエンドポイントを閉じるには、その接続が終了します。 ユーザー モードの呼び出し元は、エンドポイントへのハンドルを閉じ、フィルター マネージャー呼び出しミニフィルター ドライバーの[ **DisconnectNotifyCallback** ](https://msdn.microsoft.com/library/windows/hardware/ff541931)ルーチン ミニフィルター ドライバーはハンドルを閉じることができますので、接続します。
+(カーネルまたはユーザー) のいずれかのエンドポイントを閉じるには、その接続が終了します。 ユーザー モードの呼び出し元は、エンドポイントへのハンドルを閉じ、フィルター マネージャー呼び出しミニフィルター ドライバーの[ **DisconnectNotifyCallback** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltcreatecommunicationport)ルーチン ミニフィルター ドライバーはハンドルを閉じることができますので、接続します。
 
 通信サーバー ポートを閉じると、新しい接続できなくなりますが、既存の接続を終了しません。 フィルター マネージャーは、ミニフィルター ドライバーをアンロードするときに、既存の接続を終了します。
 
@@ -35,27 +35,27 @@ ms.locfileid: "63330576"
 
 フィルター マネージャーは、ユーザー モード アプリケーションとの通信にミニフィルター ドライバー、カーネル モードの次のサポート ルーチンを提供します。
 
-[**FltCloseClientPort**](https://msdn.microsoft.com/library/windows/hardware/ff541867)
+[**FltCloseClientPort**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltcloseclientport)
 
-[**FltCloseCommunicationPort**](https://msdn.microsoft.com/library/windows/hardware/ff541871)
+[**FltCloseCommunicationPort**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltclosecommunicationport)
 
-[**FltCreateCommunicationPort**](https://msdn.microsoft.com/library/windows/hardware/ff541931)
+[**FltCreateCommunicationPort**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltcreatecommunicationport)
 
-[**FltSendMessage**](https://msdn.microsoft.com/library/windows/hardware/ff544378)
+[**FltSendMessage**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltsendmessage)
 
 ミニフィルター ドライバーと通信するアプリケーションをユーザー モードでは、次のサポート ルーチンが提供されます。
 
-[**FilterConnectCommunicationPort**](https://msdn.microsoft.com/library/windows/hardware/ff540460)
+[**FilterConnectCommunicationPort**](https://docs.microsoft.com/windows/desktop/api/fltuser/nf-fltuser-filterconnectcommunicationport)
 
-[**FilterGetMessage**](https://msdn.microsoft.com/library/windows/hardware/ff540506)
+[**FilterGetMessage**](https://docs.microsoft.com/windows/desktop/api/fltuser/nf-fltuser-filtergetmessage)
 
-[**FilterReplyMessage**](https://msdn.microsoft.com/library/windows/hardware/ff541508)
+[**FilterReplyMessage**](https://docs.microsoft.com/windows/desktop/api/fltuser/nf-fltuser-filterreplymessage)
 
-[**FilterSendMessage**](https://msdn.microsoft.com/library/windows/hardware/ff541513)
+[**FilterSendMessage**](https://docs.microsoft.com/windows/desktop/api/fltuser/nf-fltuser-filtersendmessage)
 
 ### <a name="span-idminifilterdrivercallbackroutinesforcommunicationbetweenusermodeandkernelmodespanspan-idminifilterdrivercallbackroutinesforcommunicationbetweenusermodeandkernelmodespanspan-idminifilterdrivercallbackroutinesforcommunicationbetweenusermodeandkernelmodespanminifilter-driver-callback-routines-for-communication-between-user-mode-and-kernel-mode"></a><span id="Minifilter_Driver_Callback_Routines_for_Communication_Between_User_Mode_and_Kernel_Mode"></span><span id="minifilter_driver_callback_routines_for_communication_between_user_mode_and_kernel_mode"></span><span id="MINIFILTER_DRIVER_CALLBACK_ROUTINES_FOR_COMMUNICATION_BETWEEN_USER_MODE_AND_KERNEL_MODE"></span>ユーザー モードとカーネル モードの間の通信に対してミニフィルター ドライバー コールバック ルーチン
 
-次のミニフィルター ドライバー コールバック ルーチンをパラメーターとして渡される[ **FltCreateCommunicationPort**](https://msdn.microsoft.com/library/windows/hardware/ff541931):
+次のミニフィルター ドライバー コールバック ルーチンをパラメーターとして渡される[ **FltCreateCommunicationPort**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltcreatecommunicationport):
 
 <table>
 <colgroup>

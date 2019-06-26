@@ -15,12 +15,12 @@ api_type:
 - LibDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: fde95e3872e481915bdfd6ee6cc7c61e9e051b86
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4f1ab1075a2443b10cd16d7876df93586e221cc8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383140"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378558"
 ---
 # <a name="getdiscoveredportattributes-function"></a>GetDiscoveredPortAttributes 関数
 
@@ -43,16 +43,16 @@ void GetDiscoveredPortAttributes(
 ----------
 
 *PortIndex*   
-Nx 型のローカル ポートのインデックス\_検出されたリモート ポートを照会するためのポート。 この情報は、ミニポート ドライバーに配信される、 **PortIndex**のメンバー、 [ **GetDiscoveredPortAttributes\_IN** ](https://msdn.microsoft.com/library/windows/hardware/ff553927)構造体。
+Nx 型のローカル ポートのインデックス\_検出されたリモート ポートを照会するためのポート。 この情報は、ミニポート ドライバーに配信される、 **PortIndex**のメンバー、 [ **GetDiscoveredPortAttributes\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_getdiscoveredportattributes_in)構造体。
 
 *DiscoveredPortIndex*   
-クエリを実行するリモートのポートのインデックス。 この情報は、ミニポート ドライバーに配信される、 **DiscoveredPortIndex**のメンバー、 [ **GetDiscoveredPortAttributes\_IN** ](https://msdn.microsoft.com/library/windows/hardware/ff553927)構造体。
+クエリを実行するリモートのポートのインデックス。 この情報は、ミニポート ドライバーに配信される、 **DiscoveredPortIndex**のメンバー、 [ **GetDiscoveredPortAttributes\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_getdiscoveredportattributes_in)構造体。
 
 *HBAStatus*   
-に返された場合、操作の状態を示す WMI 修飾子の値を格納します。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **GetDiscoveredPortAttributes\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff553930)構造体。
+に返された場合、操作の状態を示す WMI 修飾子の値を格納します。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **GetDiscoveredPortAttributes\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_getdiscoveredportattributes_out)構造体。
 
 *PortAttributes*   
-型の構造体[ **MSFC\_HBAPortAttributesResults** ](https://msdn.microsoft.com/library/windows/hardware/ff562510)で検出された fc 属性\_ポートを返すことができます。 ミニポート ドライバーには、この情報が返されます、 **PortAttributes**のメンバー、 [ **GetDiscoveredPortAttributes\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff553930)構造体。
+型の構造体[ **MSFC\_HBAPortAttributesResults** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_msfc_hbaportattributesresults)で検出された fc 属性\_ポートを返すことができます。 ミニポート ドライバーには、この情報が返されます、 **PortAttributes**のメンバー、 [ **GetDiscoveredPortAttributes\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_getdiscoveredportattributes_out)構造体。
 
 <a name="return-value"></a>戻り値
 ------------
@@ -91,11 +91,11 @@ WMI メソッドには適用されません。
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
-[**GetDiscoveredPortAttributes\_IN**](https://msdn.microsoft.com/library/windows/hardware/ff553927)
+[**GetDiscoveredPortAttributes\_IN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_getdiscoveredportattributes_in)
 
-[**GetDiscoveredPortAttributes\_OUT**](https://msdn.microsoft.com/library/windows/hardware/ff553930)
+[**GetDiscoveredPortAttributes\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_getdiscoveredportattributes_out)
 
-[**MSFC\_HBAPortAttributesResults**](https://msdn.microsoft.com/library/windows/hardware/ff562510)
+[**MSFC\_HBAPortAttributesResults**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_msfc_hbaportattributesresults)
 
  
 

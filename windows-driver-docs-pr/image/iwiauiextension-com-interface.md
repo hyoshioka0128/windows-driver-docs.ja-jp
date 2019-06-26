@@ -4,12 +4,12 @@ description: IWiaUIExtension COM インターフェイス
 ms.assetid: 10a8e981-889a-46f0-8bf5-da75632d4d94
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a66bfc6ddca796e2ff5e95a6b020be87efeaebc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 08c18fd7f14918db2bc6d9735deb75c88d7f413f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381648"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378868"
 ---
 # <a name="iwiauiextension-com-interface"></a>IWiaUIExtension COM インターフェイス
 
@@ -17,7 +17,7 @@ ms.locfileid: "63381648"
 
 
 
-実装する場合、 [IWiaUIExtension インターフェイス](https://msdn.microsoft.com/library/windows/hardware/ff545078)、none、一部またはすべてを実装することができます、 **IWiaUIExtension**メソッド。 場合、特定のメソッドは、電子メールを返します。\_NOTIMPL、システム指定の代替、およびその 1 つには、代わりに使用されます。
+実装する場合、 [IWiaUIExtension インターフェイス](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff545078(v=vs.85))、none、一部またはすべてを実装することができます、 **IWiaUIExtension**メソッド。 場合、特定のメソッドは、電子メールを返します。\_NOTIMPL、システム指定の代替、およびその 1 つには、代わりに使用されます。
 
 **IWiaUIExtension**インターフェイスは、次のメソッドを提供します。
 
@@ -34,15 +34,15 @@ ms.locfileid: "63381648"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff545069" data-raw-source="[&lt;strong&gt;IWiaUIExtension::DeviceDialog&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff545069)"><strong>IWiaUIExtension::DeviceDialog</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff545069(v=vs.85)" data-raw-source="[&lt;strong&gt;IWiaUIExtension::DeviceDialog&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff545069(v=vs.85))"><strong>IWiaUIExtension::DeviceDialog</strong></a></p></td>
 <td><p>既定のシステムのユーザー インターフェイスを置換するカスタム ユーザー インターフェイスを提供します。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff545073" data-raw-source="[&lt;strong&gt;IWiaUIExtension::GetDeviceBitmapLogo&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff545073)"><strong>IWiaUIExtension::GetDeviceBitmapLogo</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff545073(v=vs.85)" data-raw-source="[&lt;strong&gt;IWiaUIExtension::GetDeviceBitmapLogo&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff545073(v=vs.85))"><strong>IWiaUIExtension::GetDeviceBitmapLogo</strong></a></p></td>
 <td><p>デバイスのカスタム ビットマップのロゴを取得します。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff545075" data-raw-source="[&lt;strong&gt;IWiaUIExtension::GetDeviceIcon&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff545075)"><strong>IWiaUIExtension::GetDeviceIcon</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff545075(v=vs.85)" data-raw-source="[&lt;strong&gt;IWiaUIExtension::GetDeviceIcon&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff545075(v=vs.85))"><strong>IWiaUIExtension::GetDeviceIcon</strong></a></p></td>
 <td><p>カスタム デバイス アイコンを取得します。</p></td>
 </tr>
 </tbody>
@@ -50,7 +50,7 @@ ms.locfileid: "63381648"
 
  
 
-[**IWiaUIExtension::DeviceDialog** ](https://msdn.microsoft.com/library/windows/hardware/ff545069)へのポインターを受け取る、 [ **DEVICEDIALOGDATA** ](https://msdn.microsoft.com/library/windows/hardware/ff540560)構造 (で宣言されている*wiadevd.h*)、デバイスのダイアログ ボックスを実装するために必要なすべてのデータが含まれています。
+[**IWiaUIExtension::DeviceDialog** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff545069(v=vs.85))へのポインターを受け取る、 [ **DEVICEDIALOGDATA** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiadevd/ns-wiadevd-tagdevicedialogdata)構造 (で宣言されている*wiadevd.h*)、デバイスのダイアログ ボックスを実装するために必要なすべてのデータが含まれています。
 
 デバイス ダイアログは、次の 4 つの制約を受けますモーダル Win32 ダイアログ ボックスとして実装する必要があります。
 
@@ -62,9 +62,9 @@ ms.locfileid: "63381648"
 
 4.  そのメモリ容量を確認するように注意またはインプロセスで実行されるため、リソースのリークは、このコンポーネントに導入されています、アプリケーションでします。
 
-[**IWiaUIExtension::GetDeviceIcon** ](https://msdn.microsoft.com/library/windows/hardware/ff545075)ドライバーが指定したアイコンを使用するアプリケーションを使用します。 リークのリソースを回避するために、このアイコンで読み込む必要があります**LoadImage**、LR を使用して\_共有のフラグ (Windows SDK のドキュメントを参照してください)。
+[**IWiaUIExtension::GetDeviceIcon** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff545075(v=vs.85))ドライバーが指定したアイコンを使用するアプリケーションを使用します。 リークのリソースを回避するために、このアイコンで読み込む必要があります**LoadImage**、LR を使用して\_共有のフラグ (Windows SDK のドキュメントを参照してください)。
 
-[**IWiaUIExtension::GetDeviceBitmapLogo** ](https://msdn.microsoft.com/library/windows/hardware/ff545073)により、アプリケーションに適切なデバイスと仕入先のロゴを表示できます。 現時点では、システム コンポーネントには、このメソッドは使用しません。 DIB に割り当てられたビットマップがありますを使用してビットマップ**CreateDIBSection**、またはを使用して読み込まれた**LoadImage** 、lr\_CREATEDIBSECTION フラグが (詳細については、Windows SDK のマニュアルを参照してください情報)。 これにより、アプリケーションをパレットの情報を抽出し、現在または表示の色深度を変更します。
+[**IWiaUIExtension::GetDeviceBitmapLogo** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff545073(v=vs.85))により、アプリケーションに適切なデバイスと仕入先のロゴを表示できます。 現時点では、システム コンポーネントには、このメソッドは使用しません。 DIB に割り当てられたビットマップがありますを使用してビットマップ**CreateDIBSection**、またはを使用して読み込まれた**LoadImage** 、lr\_CREATEDIBSECTION フラグが (詳細については、Windows SDK のマニュアルを参照してください情報)。 これにより、アプリケーションをパレットの情報を抽出し、現在または表示の色深度を変更します。
 
 カスタム スキャン ダイアログ ボックスを実装すると、WIA スキャナー ドライバーでは、使用、 **IWiaUIExtension::DeviceDialog**メソッド (上記 4 つの制約) と Win32 のモーダル ダイアログ ボックスを作成して DEVICEDIALOGDATA 構造体を渡す*dwInitParam* LPARAM として DialogBoxParam 関数のパラメーター。
 

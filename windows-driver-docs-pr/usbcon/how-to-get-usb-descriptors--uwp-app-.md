@@ -3,12 +3,12 @@ Description: に関する情報の取得、USB デバイスとの対話の主な
 title: USB 記述子の取得方法 (UWP アプリ)
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d18df5103cc11a300748a3070e212b015dd38b79
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b136f289dadca0f3692ac908a3161a2c1b44b129
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364807"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378322"
 ---
 # <a name="how-to-get-usb-descriptors-uwp-app"></a>USB 記述子の取得方法 (UWP アプリ)
 
@@ -21,9 +21,9 @@ ms.locfileid: "63364807"
 
 **重要な API**
 
--   [**UsbDeviceDescriptor**](https://msdn.microsoft.com/library/windows/apps/dn263961)
--   [**UsbConfigurationDescriptor**](https://msdn.microsoft.com/library/windows/apps/dn297689)
--   [**UsbDescriptor**](https://msdn.microsoft.com/library/windows/apps/dn263863)
+-   [**UsbDeviceDescriptor**](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbDeviceDescriptor)
+-   [**UsbConfigurationDescriptor**](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbConfigurationDescriptor)
+-   [**UsbDescriptor**](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbDescriptor)
 
 に関する情報の取得、USB デバイスとの対話の主なタスクの 1 つです。 すべての USB デバイスは、記述子と呼ばれるデータ構造がいくつかの形式で情報を提供します。 このトピックでは、UWP アプリがエンドポイント、インターフェイス、構成、およびデバイス レベルのデバイスから記述子を取得する方法について説明します。
 
@@ -43,14 +43,14 @@ USB デバイスを完全なも提供する必要があります*構成記述子
 ## <a name="before-you-start"></a>はじめに...
 
 
--   デバイスを開いて、取得する必要がありますが、 [ **UsbDevice** ](https://msdn.microsoft.com/library/windows/apps/dn263883)オブジェクト。 読み取り[USB デバイス (UWP アプリ) に接続する方法](how-to-connect-to-a-usb-device--uwp-app-.md)します。
+-   デバイスを開いて、取得する必要がありますが、 [ **UsbDevice** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbDevice)オブジェクト。 読み取り[USB デバイス (UWP アプリ) に接続する方法](how-to-connect-to-a-usb-device--uwp-app-.md)します。
 -   Scenario5 CustomUsbDeviceAccess サンプルでは、このトピックに示す完全なコードを確認できます\_UsbDescriptors ファイル。
 -   デバイスのレイアウトに関する情報を取得します。 **Usbview.exe**アプリケーションを使用するすべての USB コント ローラーとそれらに接続されている USB デバイスを指定するには (Windows 8 用 Windows ソフトウェア開発キット (SDK) に含まれています)。 接続された各デバイスのデバイス、構成、インターフェイス、およびデバイスの機能について理解するためのエンドポイント記述子を表示できます。
 
 ## <a name="how-to-get-the-device-descriptor"></a>デバイス記述子を取得する方法
 
 
-UWP アプリから、以前に取得したデバイス記述子を取得できます[ **UsbDevice** ](https://msdn.microsoft.com/library/windows/apps/dn263883)オブジェクトを取得することによって、 [ **UsbDevice.DeviceDescriptor** ](https://msdn.microsoft.com/library/windows/apps/dn264002)プロパティの値。
+UWP アプリから、以前に取得したデバイス記述子を取得できます[ **UsbDevice** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbDevice)オブジェクトを取得することによって、 [ **UsbDevice.DeviceDescriptor** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbDevice#Windows_Devices_Usb_UsbDevice_DeviceDescriptor)プロパティの値。
 
 このコード例では、デバイスの記述子からフィールド値を含む文字列を設定する方法を示します。
 
@@ -80,12 +80,12 @@ String GetDeviceDescriptorAsString (UsbDevice device)
 ## <a name="how-to-get-the-configuration-descriptor"></a>構成記述子を取得する方法
 
 
-以前に取得した構成記述子の固定部分を取得する[ **UsbDevice** ](https://msdn.microsoft.com/library/windows/apps/dn263883)オブジェクト
+以前に取得した構成記述子の固定部分を取得する[ **UsbDevice** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbDevice)オブジェクト
 
-1.  取得、 [ **UsbConfiguration** ](https://msdn.microsoft.com/library/windows/apps/dn297681)オブジェクトから[ **UsbDevice**](https://msdn.microsoft.com/library/windows/apps/dn263883)します。 **UsbConfiguration**デバイスによって定義されている最初の USB 構成を表し、基になるデバイス ドライバーによっても既定で選択されます。
-2.  取得、 [ **UsbConfiguration.ConfigurationDescriptor** ](https://msdn.microsoft.com/library/windows/apps/dn263799)プロパティの値。
+1.  取得、 [ **UsbConfiguration** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbConfiguration)オブジェクトから[ **UsbDevice**](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbDevice)します。 **UsbConfiguration**デバイスによって定義されている最初の USB 構成を表し、基になるデバイス ドライバーによっても既定で選択されます。
+2.  取得、 [ **UsbConfiguration.ConfigurationDescriptor** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbConfiguration#Windows_Devices_Usb_UsbConfiguration_ConfigurationDescriptor)プロパティの値。
 
-構成記述子の固定部分では、デバイスの電源の特性を示します。 たとえば、デバイスがバスまたは外部ソースから電力を消費しているかどうかを確認できます (を参照してください[ **UsbConfigurationDescriptor.SelfPowered**](https://msdn.microsoft.com/library/windows/apps/dn263787))。 デバイスは、バスから電力を消費するが場合、(milliamp 単位) でどれくらいの電力を消費 (を参照してください[ **UsbConfigurationDescriptor.MaxPowerMilliamps**](https://msdn.microsoft.com/library/windows/apps/dn297702))。 デバイスが取得することでそれ自体または低電力状態からシステムをスリープ解除できるかどうかを判断することも、 [ **UsbConfigurationDescriptor.RemoteWakeup** ](https://msdn.microsoft.com/library/windows/apps/dn263785)値。
+構成記述子の固定部分では、デバイスの電源の特性を示します。 たとえば、デバイスがバスまたは外部ソースから電力を消費しているかどうかを確認できます (を参照してください[ **UsbConfigurationDescriptor.SelfPowered**](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbConfigurationDescriptor#Windows_Devices_Usb_UsbConfigurationDescriptor_SelfPowered))。 デバイスは、バスから電力を消費するが場合、(milliamp 単位) でどれくらいの電力を消費 (を参照してください[ **UsbConfigurationDescriptor.MaxPowerMilliamps**](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbConfigurationDescriptor#Windows_Devices_Usb_UsbConfigurationDescriptor_MaxPowerMilliamps))。 デバイスが取得することでそれ自体または低電力状態からシステムをスリープ解除できるかどうかを判断することも、 [ **UsbConfigurationDescriptor.RemoteWakeup** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbConfigurationDescriptor#Windows_Devices_Usb_UsbConfigurationDescriptor_RemoteWakeup)値。
 
 このコード例では、文字列で構成記述子の固定部分を取得する方法を示します。
 
@@ -119,17 +119,17 @@ String GetConfigurationDescriptorAsString(UsbDevice device)
 
 USB インターフェイスは、インターフェイスの設定のコレクションです。 そのため、全体のインターフェイスを記述する記述子ではありません。 用語*インターフェイス記述子*インターフェイス内の設定を表すデータ構造を示します。
 
-[ **Windows.Devices.Usb** ](https://msdn.microsoft.com/library/windows/apps/dn278466)名前空間が各 USB インターフェイスに関する情報の取得に使用できるオブジェクトを公開し、そのインターフェイスに含まれる (代替の設定) の記述子をインターフェイスのすべて。 構成記述子の可変長の部分からの記述子。
+[ **Windows.Devices.Usb** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb)名前空間が各 USB インターフェイスに関する情報の取得に使用できるオブジェクトを公開し、そのインターフェイスに含まれる (代替の設定) の記述子をインターフェイスのすべて。 構成記述子の可変長の部分からの記述子。
 
-インターフェイスの記述子を取得する[ **UsbConfiguration**](https://msdn.microsoft.com/library/windows/apps/dn297681)、
+インターフェイスの記述子を取得する[ **UsbConfiguration**](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbConfiguration)、
 
-1.  取得することによって、構成内でインターフェイスの配列を取得、 [ **UsbConfiguration.UsbInterfaces** ](https://msdn.microsoft.com/library/windows/apps/dn263808)プロパティ。
-2.  各インターフェイスに対して ([**UsbInterface**](https://msdn.microsoft.com/library/windows/apps/dn264121))、この情報を取得します。
+1.  取得することによって、構成内でインターフェイスの配列を取得、 [ **UsbConfiguration.UsbInterfaces** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbConfiguration#Windows_Devices_Usb_UsbConfiguration_UsbInterfaces)プロパティ。
+2.  各インターフェイスに対して ([**UsbInterface**](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbInterface))、この情報を取得します。
     -   アクティブとデータを転送できる一括と割り込みパイプします。
     -   インターフェイスで代替の設定の配列。
     -   インターフェイスの記述子の配列。
 
-このコード例をすべて取得[ **UsbInterface** ](https://msdn.microsoft.com/library/windows/apps/dn264121)構成オブジェクト。 各オブジェクトは、ヘルパー メソッドは、代替の設定と開いている一括とインターフェイスのパイプの数を取得します。 デバイスは、複数のインターフェイスをサポートする場合は、デバイス クラスやサブクラスでは、各インターフェイスのプロトコルのコードが異なることができます。 ただし、代替の設定のすべてのインターフェイス記述子では、同じコードを指定する必要があります。 この例では、メソッドは、インターフェイス全体のコードを調べるには、最初の設定のインターフェイスの記述子からデバイス クラスやサブクラスでは、プロトコルのコードを取得します。
+このコード例をすべて取得[ **UsbInterface** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbInterface)構成オブジェクト。 各オブジェクトは、ヘルパー メソッドは、代替の設定と開いている一括とインターフェイスのパイプの数を取得します。 デバイスは、複数のインターフェイスをサポートする場合は、デバイス クラスやサブクラスでは、各インターフェイスのプロトコルのコードが異なることができます。 ただし、代替の設定のすべてのインターフェイス記述子では、同じコードを指定する必要があります。 この例では、メソッドは、インターフェイス全体のコードを調べるには、最初の設定のインターフェイスの記述子からデバイス クラスやサブクラスでは、プロトコルのコードを取得します。
 
 ```CSharp
 String GetInterfaceDescriptorsAsString(UsbDevice device)
@@ -170,19 +170,19 @@ String GetInterfaceDescriptorsAsString(UsbDevice device)
 
 (既定のコントロール エンドポイント) を除くすべての USB エンドポイントには、エンドポイントの記述子が必要です。 特定のエンドポイントのエンドポイント記述子を取得するインターフェイスし、代替を知る必要があります、エンドポイントが属するに設定します。
 
-1.  取得、 [ **UsbInterface** ](https://msdn.microsoft.com/library/windows/apps/dn264121)エンドポイントを格納するオブジェクト。
-2.  取得することで別の設定の配列を取得する[ **UsbInterface.InterfaceSettings**](https://msdn.microsoft.com/library/windows/apps/dn264291)します。
-3.  を、配列内で設定を見つけます ([**UsbInterfaceSetting**](https://msdn.microsoft.com/library/windows/apps/dn264278)) エンドポイントを使用します。
+1.  取得、 [ **UsbInterface** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbInterface)エンドポイントを格納するオブジェクト。
+2.  取得することで別の設定の配列を取得する[ **UsbInterface.InterfaceSettings**](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbInterface#Windows_Devices_Usb_UsbInterface_InterfaceSettings)します。
+3.  を、配列内で設定を見つけます ([**UsbInterfaceSetting**](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbInterfaceSetting)) エンドポイントを使用します。
 4.  各設定内で一括および割り込みの記述子の配列を列挙することによって、エンドポイントが見つかりません。
 
     エンドポイントの記述子は、これらのオブジェクトによって表されます。
 
-    -   [**UsbBulkInEndpointDescriptor**](https://msdn.microsoft.com/library/windows/apps/dn297543)
-    -   [**UsbBulkOutEndpointDescriptor**](https://msdn.microsoft.com/library/windows/apps/dn297619)
-    -   [**UsbInterruptInEndpointDescriptor**](https://msdn.microsoft.com/library/windows/apps/dn264294)
-    -   [**UsbInterruptOutEndpointDescriptor**](https://msdn.microsoft.com/library/windows/apps/dn278420)
+    -   [**UsbBulkInEndpointDescriptor**](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbBulkInEndpointDescriptor)
+    -   [**UsbBulkOutEndpointDescriptor**](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbBulkOutEndpointDescriptor)
+    -   [**UsbInterruptInEndpointDescriptor**](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbInterruptInEndpointDescriptor)
+    -   [**UsbInterruptOutEndpointDescriptor**](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbInterruptOutEndpointDescriptor)
 
-使用することができます、デバイスに 1 つだけのインターフェイスがある場合、 [ **UsbDevice.DefaultInterface** ](https://msdn.microsoft.com/library/windows/apps/dn263998)のコード例で示すようにインターフェイスを取得します。 ここでは、ヘルパー メソッドの取得は、パイプのアクティブなインターフェイスの設定に関連付けられているエンドポイント記述子文字列を設定します。
+使用することができます、デバイスに 1 つだけのインターフェイスがある場合、 [ **UsbDevice.DefaultInterface** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbDevice#Windows_Devices_Usb_UsbDevice_DefaultInterface)のコード例で示すようにインターフェイスを取得します。 ここでは、ヘルパー メソッドの取得は、パイプのアクティブなインターフェイスの設定に関連付けられているエンドポイント記述子文字列を設定します。
 
 ```CSharp
 private String GetEndpointDescriptorsAsString(UsbDevice device)
@@ -250,15 +250,15 @@ private String GetEndpointDescriptorsAsString(UsbDevice device)
 ## <a name="how-to-get-custom-descriptors"></a>カスタムの記述子を取得する方法
 
 
-注意[ **UsbConfiguration**](https://msdn.microsoft.com/library/windows/apps/dn297681)、 [ **UsbInterface**](https://msdn.microsoft.com/library/windows/apps/dn264121)、および[ **UsbInterfaceSetting**](https://msdn.microsoft.com/library/windows/apps/dn264278)という名前のプロパティを公開の各オブジェクト、**記述子**します。 プロパティの値がによって表される記述子の配列を取得する[ **UsbDescriptor** ](https://msdn.microsoft.com/library/windows/apps/dn263863)オブジェクト。 **UsbDescriptor**オブジェクト バッファー記述子のデータを取得するアプリを使用できます。 [**UsbDescriptor.DescriptorType** ](https://msdn.microsoft.com/library/windows/apps/dn263870)と[ **UsbDescriptor.Length** ](https://msdn.microsoft.com/library/windows/apps/dn263874)プロパティ型と記述子を保持するために必要なバッファーの長さを格納します。
+注意[ **UsbConfiguration**](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbConfiguration)、 [ **UsbInterface**](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbInterface)、および[ **UsbInterfaceSetting**](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbInterfaceSetting)という名前のプロパティを公開の各オブジェクト、**記述子**します。 プロパティの値がによって表される記述子の配列を取得する[ **UsbDescriptor** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbDescriptor)オブジェクト。 **UsbDescriptor**オブジェクト バッファー記述子のデータを取得するアプリを使用できます。 [**UsbDescriptor.DescriptorType** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbDescriptor#Windows_Devices_Usb_UsbDescriptor_DescriptorType)と[ **UsbDescriptor.Length** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbDescriptor#Windows_Devices_Usb_UsbDescriptor_Length)プロパティ型と記述子を保持するために必要なバッファーの長さを格納します。
 
 **注**  型と長さ、記述子の記述子のすべてのバッファーの最初の 2 バイトも示します。
 
  
 
-たとえば、 [ **UsbConfiguration.Descriptors** ](https://msdn.microsoft.com/library/windows/apps/dn264289)プロパティは、完全な構成記述子 (固定および可変長の部分) の配列を取得します。 その配列の最初の要素は、固定長の構成記述子 (同じ[ **UsbConfigurationDescriptor**](https://msdn.microsoft.com/library/windows/apps/dn297689))、2 番目の要素は、代替の最初の設定のインターフェイスの記述子などなど。
+たとえば、 [ **UsbConfiguration.Descriptors** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbInterface#Windows_Devices_Usb_UsbInterface_Descriptors)プロパティは、完全な構成記述子 (固定および可変長の部分) の配列を取得します。 その配列の最初の要素は、固定長の構成記述子 (同じ[ **UsbConfigurationDescriptor**](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbConfigurationDescriptor))、2 番目の要素は、代替の最初の設定のインターフェイスの記述子などなど。
 
-同様に、 [ **UsbInterface.Descriptors** ](https://msdn.microsoft.com/library/windows/apps/dn264289)プロパティは、すべてのインターフェイス記述子および関連するエンドポイント記述子の配列を取得します。 [ **UsbInterfaceSetting.Descriptors** ](https://msdn.microsoft.com/library/windows/apps/dn264281)プロパティは、エンドポイント記述子など、その設定のすべての記述子の配列を取得します。
+同様に、 [ **UsbInterface.Descriptors** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbInterface#Windows_Devices_Usb_UsbInterface_Descriptors)プロパティは、すべてのインターフェイス記述子および関連するエンドポイント記述子の配列を取得します。 [ **UsbInterfaceSetting.Descriptors** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbInterfaceSetting#Windows_Devices_Usb_UsbInterfaceSetting_Descriptors)プロパティは、エンドポイント記述子など、その設定のすべての記述子の配列を取得します。
 
 この記述子を取得する方法は、アプリのカスタム記述子または SuperSpeed デバイス向けエンドポイント コンパニオンの記述子などの他の記述子を取得する必要がある場合に便利です。
 

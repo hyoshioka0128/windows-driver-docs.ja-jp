@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 62e7ed5da283a0c5495d296a1bd11f049a20d76a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2372fb4dcd766a18baa668a7684a6c9e635cd845
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364006"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354833"
 ---
 # <a name="kspropertyextxportrtcsearch"></a>KSPROPERTY\_EXTXPORT\_RTC\_検索
 
@@ -53,7 +53,7 @@ KSPROPERTY\_EXTXPORT\_RTC\_検索プロパティは、テープ上の相対時�
 <td><p>X</p></td>
 <td><p>〇</p></td>
 <td><p>デバイス</p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff565167" data-raw-source="[&lt;strong&gt;KSPROPERTY_EXTXPORT_S&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff565167)"><strong>KSPROPERTY_EXTXPORT_S</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_extxport_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_EXTXPORT_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_extxport_s)"><strong>KSPROPERTY_EXTXPORT_S</strong></a></p></td>
 <td><p>DWORD</p></td>
 </tr>
 </tbody>
@@ -70,7 +70,7 @@ KSPROPERTY\_EXTXPORT\_RTC\_検索プロパティは、テープ上の相対時�
 
 このメソッドが定義されているが、サポートされていません。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -91,7 +91,7 @@ KSPROPERTY\_EXTXPORT\_RTC\_検索プロパティは、テープ上の相対時�
 
 [**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
 
-[**KSPROPERTY\_EXTXPORT\_S**](https://msdn.microsoft.com/library/windows/hardware/ff565167)
+[**KSPROPERTY\_EXTXPORT\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_extxport_s)
 
  
 

@@ -22,12 +22,12 @@ keywords:
 - FsRec
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 33b0759d077296c64b60efd885dc9b1f70bdd6da
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cbf1c7cda65b48926cc824980c8a694a5b1f3f7c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379350"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380250"
 ---
 # <a name="what-happens-to-file-systems-during-system-boot"></a>システム起動時のファイル システムの状態
 
@@ -47,17 +47,17 @@ ms.locfileid: "63379350"
 
 2.  I/O マネージャーは、4 つのセグメントを持つグローバル ファイル システムのキューを作成します: CD-ROM、ディスク、テープ デバイス、およびネットワーク ファイル システムに対して 1 つずつです。 後で、各ファイル システムが登録されている場合は、そのコントロールのデバイス オブジェクトがこのキューの適切なセグメントに追加されます。 この時点では、ただし、ファイル システムがまだ登録されていないので、キューは空です。
 
-3.  PnP マネージャー呼び出し、 [ **DriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff544113) RAW のルーチンはファイル システムとすべてのサービスの\_ブート\_開始ドライバー。
+3.  PnP マネージャー呼び出し、 [ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize) RAW のルーチンはファイル システムとすべてのサービスの\_ブート\_開始ドライバー。
 
     場合、サービス\_ブート\_開始ドライバーはその他のドライバーに依存して、それらのドライバーが読み込まれも開始します。
 
-    PnP マネージャーは、呼び出すことで、ブート デバイスを起動、 [ **AddDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff540521)ブート デバイス ドライバーのルーチンです。 ブート デバイスに子デバイスがある場合は、これらのデバイスが列挙されます。 子デバイスは構成およびそのドライバーがブート開始ドライバーの場合は、開始します。 デバイスのドライバーはすべてのブート開始ドライバーではない場合、PnP マネージャーは、デバイスの devnode を作成しますが、デバイスが起動しません。
+    PnP マネージャーは、呼び出すことで、ブート デバイスを起動、 [ **AddDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)ブート デバイス ドライバーのルーチンです。 ブート デバイスに子デバイスがある場合は、これらのデバイスが列挙されます。 子デバイスは構成およびそのドライバーがブート開始ドライバーの場合は、開始します。 デバイスのドライバーはすべてのブート開始ドライバーではない場合、PnP マネージャーは、デバイスの devnode を作成しますが、デバイスが起動しません。
 
     この時点では、すべてのブート ドライバーが読み込まれ、ブート デバイスが開始されます。
 
 4.  PnP マネージャーは、検索し、各 devnode に関連付けられているドライバーの読み込みがまだ実行されていない、PnP デバイス ツリーを走査します。
 
-    (PnP デバイス ツリーに関する詳細については、次を参照してください[デバイス ツリー](https://msdn.microsoft.com/library/windows/hardware/ff543194)。)。各 PnP デバイスの起動時、PnP マネージャーは、存在する場合、デバイスの子を列挙します。 PnP マネージャーは、子デバイスを構成、それらのデバイス ドライバーをロードし、デバイスを開始します。
+    (PnP デバイス ツリーに関する詳細については、次を参照してください[デバイス ツリー](https://docs.microsoft.com/windows-hardware/drivers/kernel/device-tree)。)。各 PnP デバイスの起動時、PnP マネージャーは、存在する場合、デバイスの子を列挙します。 PnP マネージャーは、子デバイスを構成、それらのデバイス ドライバーをロードし、デバイスを開始します。
 
     PnP マネージャーは、各デバイスのドライバーを読み込む*かに関係なく*のドライバーの**StartType**、 **LoadOrderGroup**、または**依存関係**値。
 
@@ -71,13 +71,13 @@ ms.locfileid: "63379350"
 
     「ネットワーク」ロード順序グループでは、ネットワーク ファイル システムは、このフェーズ中にも読み込まれます。
 
-6.  ブート時に読み込まれるすべてのドライバーが初期化された後、I/O マネージャーが設定されているすべてのドライバーの再初期化ルーチンを呼び出します。 A*再初期化ルーチン*追加を指定する必要があるブート ドライバーによって登録されているコールバック ルーチンが時間はこの時点で、ブート プロセスを処理します。 再初期化ルーチンを呼び出すことによって登録されて[ **IoRegisterBootDriverReinitialization** ](https://msdn.microsoft.com/library/windows/hardware/ff549494)または[ **IoRegisterDriverReinitialization** ](https://msdn.microsoft.com/library/windows/hardware/ff549511).
+6.  ブート時に読み込まれるすべてのドライバーが初期化された後、I/O マネージャーが設定されているすべてのドライバーの再初期化ルーチンを呼び出します。 A*再初期化ルーチン*追加を指定する必要があるブート ドライバーによって登録されているコールバック ルーチンが時間はこの時点で、ブート プロセスを処理します。 再初期化ルーチンを呼び出すことによって登録されて[ **IoRegisterBootDriverReinitialization** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-ioregisterbootdriverreinitialization)または[ **IoRegisterDriverReinitialization** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-ioregisterdriverreinitialization).
 
 7.  サービス コントロール マネージャーは、サービスの種類のドライバーを読み込む\_自動\_スタートには、既に読み込まれていません。
 
 ### <a name="span-idddkfilesystemrecognizerifspanspan-idddkfilesystemrecognizerifspanfile-system-recognizer"></a><span id="ddk_file_system_recognizer_if"></span><span id="DDK_FILE_SYSTEM_RECOGNIZER_IF"></span>ファイル システムの認識
 
-システムの起動後に、システムに接続されているすべてのボリュームの記憶装置デバイス ドライバーが読み込まれ、起動します。 ただし、すべての組み込みのファイル システムが読み込まれ、すべてのファイル システム ボリュームがマウントされています。 ファイル システムの認識 (FsRec) が処理を必要に応じて、これらのタスクを実行[ **IRP\_MJ\_作成**](https://msdn.microsoft.com/library/windows/hardware/ff548630)要求。
+システムの起動後に、システムに接続されているすべてのボリュームの記憶装置デバイス ドライバーが読み込まれ、起動します。 ただし、すべての組み込みのファイル システムが読み込まれ、すべてのファイル システム ボリュームがマウントされています。 ファイル システムの認識 (FsRec) が処理を必要に応じて、これらのタスクを実行[ **IRP\_MJ\_作成**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-create)要求。
 
 サービスで FsRec が読み込まれる\_システム\_システムの起動時のフェーズを開始します。 "Boot File System"ロード順序グループではできますが、FsRec システムではない、ブート ファイルに注意してください。 実際のブート ファイル システム −、− ブート ボリュームをマウント ファイル システムがブート プロセスの開始時に読み込まれます。
 

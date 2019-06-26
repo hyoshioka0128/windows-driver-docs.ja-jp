@@ -6,16 +6,31 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.localizationpriority: medium
-ms.openlocfilehash: ff41adbef91d70e3a9c6952cc381148512c8f210
-ms.sourcegitcommit: 944535d8e00393531f6b265317a64da3567e4f2c
+ms.openlocfilehash: 413cd65e40bf4210e90d3910037a22efb2e681f3
+ms.sourcegitcommit: f1302058e374c02531d2e4db260ebc8ed8ad3a85
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65106412"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67350311"
 ---
 # <a name="windbg-preview---whats-new"></a>WinDbg プレビュー - 新機能
 
 このトピックでは、新 WinDbg プレビュー デバッガーについてを説明します。
+
+## <a name="10190512001"></a>1.0.1905.12001
+**SymSetDiaSession エラーの軽減策の機能強化**- は、一部のシナリオで プロセスに挿入することの DbgHelp が機能しないものアプリケーションで発生したエラーを軽減するために、過去 1 か月を修正します。 これに強化されましたし、このエラーに関するフィードバックの監視を続けます。
+
+**アクセントの色のカスタマイズ**シナリオの多くには、WinDbg を開いた状態での複数のインスタンスが必要があります - とそれらの間のやり取り、わかりにくいし、図に時間がかかることができます"right"の 1 つは、どちらかです。 視覚的にセッションを区別し、それらを簡単に切り替えることを支援する青いアクセントの色を変更する機能が追加されました。
+
+クリックするだけです、**ビュー**のオプションを選択し、リボン**アクセント カラー**最後のセクションでします。 今後のセッションを最新のターゲットから起動するとアクセントの色は、ターゲットのワークスペースの一部として保持されます。
+
+**ソースのトークン化の機能強化**-ソース ウィンドウにはなりました信頼のソース ファイルをトークン化の基本的なサポートとC++SEH _ _try/_ _except/_ _finally/_ _leave します。
+
+**コルーチンの機能強化**-コルーチンのローカル変数と特定のサポートの強化は、変数を最適化します。
+
+**既定のシンボルとソースのキャッシュ設定**-[設定] メニューにオプションを追加**デバッグ設定**シンボル キャッシュの場所を変更します。 **注**-これを空白に行っているとソースの読み込みが失敗すると、既知の問題があります。 これを将来のリリースを防ぐために検証を追加する予定です。
+
+**-pv 修正**--pv を読み取れない可能性がありますバグを修正しました (非侵アタッチ) 状況によっては動作します。
 
 ## <a name="10190418001"></a>1.0.1904.18001
 
@@ -41,7 +56,7 @@ ms.locfileid: "65106412"
 
 **デバッガー データ モデルC++ヘッダー** -新しいがあるC++を使用してモデルのヘッダー、DbgModel.h、デバッガーのデータを拡張するための Windows SDK の一部として含めるC++します。 詳細を確認することができます[デバッガー データ モデルC++概要](https://docs.microsoft.com/windows-hardware/drivers/debugger/data-model-cpp-overview)します。 このリリースには、'dx' コマンド、JavaScript、および新しい DbgModel.h ヘッダー経由でアクセスできるデバッガー データ モデルにいくつかより多くの「API スタイル」機能を追加する新しい拡張機能が含まれています。 このデータからのアセンブリとコードの実行に関するサポート技術情報を含めるモデルの拡張機能の拡張機能、 [Debugger.Utility.Code](https://docs.microsoft.com/windows-hardware/drivers/debugger/dbgmodel-namespace-code)名前空間、およびにより、ローカル ファイル システム、 [Debugger.Utility.FileSystem名前空間](https://docs.microsoft.com/windows-hardware/drivers/debugger/dbgmodel-namespace-file-system)します。
 
-**統合型の拡張機能**でこの新しい API の拡張がある新しいサンプル GitHub リポジトリ、 https://github.com/Microsoft/WinDbg-Samples/tree/master/SyntheticTypesします。 この JavaScript 拡張機能は、基本的な C ヘッダー ファイルを読み込んで、構造体や共用体のヘッダーで定義されている統合型情報を定義します。 Dx のコマンドでメモリ表示できる構造化された場合と、これらの型の型情報を pdb ファイルを作成する必要があります。
+**統合型の拡張機能**でこの新しい API の拡張がある新しいサンプル GitHub リポジトリ、 https://github.com/Microsoft/WinDbg-Samples/tree/master/SyntheticTypes します。 この JavaScript 拡張機能は、基本的な C ヘッダー ファイルを読み込んで、構造体や共用体のヘッダーで定義されている統合型情報を定義します。 Dx のコマンドでメモリ表示できる構造化された場合と、これらの型の型情報を pdb ファイルを作成する必要があります。
 
 その他の変更とバグ修正:
 

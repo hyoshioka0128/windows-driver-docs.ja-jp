@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 0741b53188af612d7ec36ddce55c6167f64b42e2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cc038b8f0ac64f9d89c0e692f3d950bae33ab6bf
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392533"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378076"
 ---
 # <a name="devpkeydeviceclassicon"></a>DEVPKEY_DeviceClass_Icon
 
 
-DEVPKEY_DeviceClass_Icon デバイス プロパティがのアイコンを表す、[デバイス セットアップ クラス](https://msdn.microsoft.com/library/windows/hardware/ff541509)します。
+DEVPKEY_DeviceClass_Icon デバイス プロパティがのアイコンを表す、[デバイス セットアップ クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-setup-classes)します。
 
 <table>
 <colgroup>
@@ -56,13 +56,13 @@ DEVPKEY_DeviceClass_Icon デバイス プロパティがのアイコンを表す
 <a name="remarks"></a>注釈
 -------
 
-DEVPKEY_DeviceClass_Icon の値によって設定されます、 [ **INF AddReg ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546320)に含まれている、 [ **INF ClassInstall32 セクション**](https://msdn.microsoft.com/library/windows/hardware/ff546335)クラスをインストールするとします。 DEVPKEY_DeviceClass_Icon の値を設定するには、使用、 **AddReg**を設定するディレクティブ、**アイコン**クラスのレジストリ エントリの値。
+DEVPKEY_DeviceClass_Icon の値によって設定されます、 [ **INF AddReg ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)に含まれている、 [ **INF ClassInstall32 セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-classinstall32-section)クラスをインストールするとします。 DEVPKEY_DeviceClass_Icon の値を設定するには、使用、 **AddReg**を設定するディレクティブ、**アイコン**クラスのレジストリ エントリの値。
 
 **アイコン**エントリの値が文字列の形式で整数値。 数が負の場合、数値の絶対値、setupapi.dll にあるアイコンのリソース識別子です。 数が正の場合がある場合、クラスのインストーラーまたはクラスのプロパティ ページのプロバイダー、クラスのインストーラーがなく、プロパティ ページのプロバイダーがある場合、数、クラスのインストーラー、DLL のアイコンのリソース識別子です。 ゼロの値が無効です。
 
-呼び出すことができます[ **SetupDiGetClassProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551086)または[ **SetupDiGetClassPropertyEx** ](https://msdn.microsoft.com/library/windows/hardware/ff551090) DEVPKEY_DeviceClass_Icon の値を取得するには.
+呼び出すことができます[ **SetupDiGetClassProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyw)または[ **SetupDiGetClassPropertyEx** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyexw) DEVPKEY_DeviceClass_Icon の値を取得するには.
 
-Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_DeviceClass_Icon プロパティのキーをサポートしていません。 Windows Server 2003、Windows XP、および Windows 2000 でのデバイス セットアップ クラスに対する小さいアイコンへのアクセス方法については、次を参照してください。[デバイス セットアップ クラスのアイコンのプロパティにアクセスする](https://msdn.microsoft.com/library/windows/hardware/ff537746)します。
+Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_DeviceClass_Icon プロパティのキーをサポートしていません。 Windows Server 2003、Windows XP、および Windows 2000 でのデバイス セットアップ クラスに対する小さいアイコンへのアクセス方法については、次を参照してください。[デバイス セットアップ クラスのアイコンのプロパティにアクセスする](https://docs.microsoft.com/windows-hardware/drivers/install/accessing-icon-properties-of-a-device-setup-class)します。
 
 <a name="requirements"></a>要件
 ------------
@@ -87,17 +87,17 @@ Windows Server 2003、Windows XP、および Windows 2000 は、このプロパ�
 ## <a name="see-also"></a>関連項目
 
 
-[**INF AddReg ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546320)
+[**INF AddReg ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)
 
-[**INF ClassInstall32 セクション**](https://msdn.microsoft.com/library/windows/hardware/ff546335)
+[**INF ClassInstall32 セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-classinstall32-section)
 
-[**SetupDiGetClassProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551086)
+[**SetupDiGetClassProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyw)
 
-[**SetupDiGetClassPropertyEx**](https://msdn.microsoft.com/library/windows/hardware/ff551090)
+[**SetupDiGetClassPropertyEx**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyexw)
 
-[**SetupDiDrawMiniIcon**](https://msdn.microsoft.com/library/windows/hardware/ff551005)
+[**SetupDiDrawMiniIcon**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdidrawminiicon)
 
-[**SetupDiLoadClassIcon**](https://msdn.microsoft.com/library/windows/hardware/ff552053)
+[**SetupDiLoadClassIcon**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiloadclassicon)
 
  
 

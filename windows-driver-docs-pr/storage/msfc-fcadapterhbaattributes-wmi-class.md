@@ -4,12 +4,12 @@ description: MSFC\_FCAdapterHBAAttributes WMI クラス
 ms.assetid: fa0ff9c2-e7cc-4000-bd18-ade953e57dcc
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 49de9254ff7d685068ae3fbff008bcfca09f638e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 31117754c7702111899a83e7d9402168c6d6642e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360889"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353262"
 ---
 # <a name="msfcfcadapterhbaattributes-wmi-class"></a>MSFC\_FCAdapterHBAAttributes WMI クラス
 
@@ -55,7 +55,7 @@ class MSFC_FCAdapterHBAAttributes {
 
 WMI ツール スイートによってコンパイルされるときに、このクラスの定義には、次のデータ構造が生成されます。
 
-[**MSFC\_FCAdapterHBAAttributes**](https://msdn.microsoft.com/library/windows/hardware/ff562495)
+[**MSFC\_FCAdapterHBAAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_msfc_fcadapterhbaattributes)
 
 この WMI クラスに関連付けられているメソッドはありません。
 

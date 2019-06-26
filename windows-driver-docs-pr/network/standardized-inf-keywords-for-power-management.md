@@ -4,12 +4,12 @@ description: 電源管理用の標準化された INF キーワード
 ms.assetid: bec8dd96-f64a-40eb-ade9-73c9a66a756e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d9e7789589b24256aa2efdff9836b12d3c2df9b4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7af3d8209a96dbbe03acaa089831d33809b4d5ae
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390664"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377570"
 ---
 # <a name="standardized-inf-keywords-for-power-management"></a>電源管理用の標準化された INF キーワード
 
@@ -17,29 +17,29 @@ ms.locfileid: "63390664"
 
 
 
-電源管理の標準化されたキーワードは、デバイス ドライバーの INF ファイルで定義されます。 オペレーティング システムでは、これらの標準的なキーワードを読み込みし、デバイスの現在の電源管理機能を調整します。 デバイス ドライバーは、NDIS 内に、デバイスのハードウェアの電源管理の機能を示す必要があります常に、 [ **NDIS\_ミニポート\_アダプター\_全般\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff565923)構造体。
+電源管理の標準化されたキーワードは、デバイス ドライバーの INF ファイルで定義されます。 オペレーティング システムでは、これらの標準的なキーワードを読み込みし、デバイスの現在の電源管理機能を調整します。 デバイス ドライバーは、NDIS 内に、デバイスのハードウェアの電源管理の機能を示す必要があります常に、 [ **NDIS\_ミニポート\_アダプター\_全般\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)構造体。
 
 有効にするか、ネットワーク アダプターの電源管理機能のサポートを無効にするのには、次の標準化された INF キーワードが定義されています。
 
-<a href="" id="-wakeonpattern"></a>**\*WakeOnPattern**  
+<a href="" id="-wakeonpattern"></a> **\*WakeOnPattern**  
 ネットワーク パケットが、指定したパターンと一致する場合は、コンピューターをスリープ解除するデバイスを有効にするかどうかを示す値。
 
-<a href="" id="-wakeonmagicpacket"></a>**\*WakeOnMagicPacket**  
+<a href="" id="-wakeonmagicpacket"></a> **\*WakeOnMagicPacket**  
 デバイスが受信すると、コンピューターをウェイクするため、デバイスを有効にするかどうかを示す値を*マジック パケット*します。 (A*マジック パケット*パケットを受信側のネットワーク アダプターのイーサネット アドレスの 16 個の連続したコピーを含む)
 
-<a href="" id="-devicesleepondisconnect"></a>**\*DeviceSleepOnDisconnect**  
+<a href="" id="-devicesleepondisconnect"></a> **\*DeviceSleepOnDisconnect**  
 低電力状態 (スリープの状態) にデバイスを配置するデバイスを有効にするかどうかを示す値メディアが切断されていると電力の状態 (ウェイク状態) に戻り値のときにメディアが再度に接続します。
 
-<a href="" id="-pmarpoffload"></a>**\*PMARPOffload**  
+<a href="" id="-pmarpoffload"></a> **\*PMARPOffload**  
 システムがスリープ状態に入ったときに、アドレス解決プロトコル (ARP) をオフロードするデバイスを有効にするかどうかを示す値。
 
-<a href="" id="-pmnsoffload"></a>**\*PMNSOffload**  
+<a href="" id="-pmnsoffload"></a> **\*PMNSOffload**  
 近隣要請 (NS) の負荷を軽減して、システムがスリープ状態に入ったときに、デバイスを有効にするかどうかを示す値。
 
-<a href="" id="-pmwifirekeyoffload"></a>**\*PMWiFiRekeyOffload**  
+<a href="" id="-pmwifirekeyoffload"></a> **\*PMWiFiRekeyOffload**  
 コンピューターがスリープ状態に入ったとき、一時的なキー (GTK) がウェイク ワイヤレス、LAN (WOL) のキー更新をオフロードするデバイスを有効にするかどうかを示す値をグループ化します。
 
-<a href="" id="-eee"></a>**\*EEE**  
+<a href="" id="-eee"></a> **\*EEE**  
 デバイスが IEEE 802.3az を有効にする必要があるかどうかを示す値エネルギー効率の高いイーサネットします。
 
 このトピックの最後にテーブルの列には、列挙型のキーワードは次の属性について説明します。
@@ -51,7 +51,7 @@ ms.locfileid: "63390664"
 SubkeyName に関連付けられているテキスト。
 
 <a href="" id="value"></a>値  
-リスト内の各オプションに関連付けられている列挙の整数値。 この値は**NDI\\params\\**<em>SubkeyName\\値。</em>
+リスト内の各オプションに関連付けられている列挙の整数値。 この値は**NDI\\params\\** <em>SubkeyName\\値。</em>
 
 <a href="" id="enumdesc"></a>EnumDesc  
 メニューに表示される各値に関連付けられている表示テキスト。

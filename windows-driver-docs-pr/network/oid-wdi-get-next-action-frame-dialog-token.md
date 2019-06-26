@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - OID_WDI_GET_NEXT_ACTION_FRAME_DIALOG_TOKEN ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: a5c2c208211580f6f6b868e447352c9826eb158e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fceb6564af7d2c38478f110bbcfa06182524adbe
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377242"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353672"
 ---
 # <a name="oidwdigetnextactionframedialogtoken"></a>OID\_WDI\_取得\_次\_アクション\_フレーム\_ダイアログ\_トークン
 
@@ -33,11 +33,11 @@ OID\_WDI\_取得\_次\_アクション\_フレーム\_ダイアログ\_トーク
 
 | TLV                                                                     | 許可されている複数の TLV インスタンス | 省略可能 | 説明     |
 |-------------------------------------------------------------------------|--------------------------------|----------|-----------------|
-| [**WDI\_TLV\_次\_ダイアログ\_トークン**](https://msdn.microsoft.com/library/windows/hardware/dn897854) |                                |          | ダイアログ トークンです。 |
+| [**WDI\_TLV\_次\_ダイアログ\_トークン**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-next-dialog-token) |                                |          | ダイアログ トークンです。 |
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

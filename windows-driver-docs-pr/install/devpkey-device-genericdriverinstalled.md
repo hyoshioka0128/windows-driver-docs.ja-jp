@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 38e5e395340926b3902670efe6dc8f035f955a30
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0c029bd27aba14d684c0175b910359ccb3bbc549
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380754"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378242"
 ---
 # <a name="devpkeydevicegenericdriverinstalled"></a>DEVPKEY_Device_GenericDriverInstalled
 
@@ -60,11 +60,11 @@ Windows では、DEVPKEY_Device_GenericDriverInstalled の値を設定します�
 
 DEVPKEY_Device_GenericDriverInstalled の値は、基本的なドライバーがインストールされていることを示す DEVPROP_TRUE に設定されます。 それ以外の場合、プロパティの値は、DEVPROP_FALSE に設定されます。
 
-呼び出すことができます[ **SetupDiGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551963) DEVPKEY_Device_GenericDriverInstalled の値を取得します。
+呼び出すことができます[ **SetupDiGetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) DEVPKEY_Device_GenericDriverInstalled の値を取得します。
 
 Windows Server 2003、Windows XP、および Windows 2000 では、このプロパティはサポートされません。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -87,7 +87,7 @@ Windows Server 2003、Windows XP、および Windows 2000 では、このプロ�
 ## <a name="see-also"></a>関連項目
 
 
-[**SetupDiGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551963)
+[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
 

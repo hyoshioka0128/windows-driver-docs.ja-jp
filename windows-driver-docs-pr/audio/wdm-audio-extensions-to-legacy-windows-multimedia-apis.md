@@ -8,12 +8,12 @@ keywords:
 - WDM オーディオ ドライバー WDK、拡張機能
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 14860d7795db633e22ce113c4ad67738e86c7cb3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 186c5cb6efd3921128dee681bb94520e69fa3606
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328470"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354103"
 ---
 # <a name="wdm-audio-extensions-to-legacy-windows-multimedia-apis"></a>レガシ Windows マルチ メディア API に対する WDM オーディオの拡張機能
 
@@ -23,9 +23,9 @@ ms.locfileid: "63328470"
 
 最近のバージョンの Windows では、Windows マルチ メディア Api aux、midiIn、midiOut、ミキサー、waveIn、および状態と WDM オーディオ ドライバーの機能についての情報を出力する waveOut オーディオ機能を拡張してきました。
 
-[ **AuxGetDevCaps**](https://msdn.microsoft.com/library/windows/desktop/dd756712)、 [ **midiInGetDevCaps**](https://msdn.microsoft.com/library/windows/desktop/dd798453)、 [ **midiOutGetDevCaps**](https://msdn.microsoft.com/library/windows/desktop/dd798469)、 [ **mixerGetDevCaps**](https://msdn.microsoft.com/library/windows/desktop/dd757300)、 [ **waveInGetDevCaps**](https://msdn.microsoft.com/library/windows/desktop/dd743841)、および[ **waveOutGetDevCaps** ](https://msdn.microsoft.com/library/windows/desktop/dd743857)関数は、オーディオ デバイスを一意に識別するドライバー固有の情報を取得できます。
+[ **AuxGetDevCaps**](https://docs.microsoft.com/previous-versions/dd756712(v=vs.85))、 [ **midiInGetDevCaps**](https://docs.microsoft.com/previous-versions/dd798453(v=vs.85))、 [ **midiOutGetDevCaps**](https://docs.microsoft.com/previous-versions/dd798469(v=vs.85))、 [ **mixerGetDevCaps**](https://docs.microsoft.com/previous-versions/dd757300(v=vs.85))、 [ **waveInGetDevCaps**](https://docs.microsoft.com/previous-versions/dd743841(v=vs.85))、および[ **waveOutGetDevCaps** ](https://docs.microsoft.com/previous-versions/dd743857(v=vs.85))関数は、オーディオ デバイスを一意に識別するドライバー固有の情報を取得できます。
 
-Windows のマルチ メディア機能[ **waveInMessage**](https://msdn.microsoft.com/library/windows/desktop/dd743846)、 [ **waveOutMessage**](https://msdn.microsoft.com/library/windows/desktop/dd743865)、 [ **midiInMessage**](https://msdn.microsoft.com/library/windows/desktop/dd798457)、 [ **midiOutMessage**](https://msdn.microsoft.com/library/windows/desktop/dd798475)、および[ **mixerMessage** ](https://msdn.microsoft.com/library/windows/desktop/dd757307)を取得できますwave、MIDI、またはミキサーのデバイスのデバイスのインターフェイスの名前。 さらに、 **waveOutMessage**、 **midiOutMessage**、および**waveInMessage**関数がウェーブの I/O、MIDI、優先するオーディオ デバイスのデバイス Id を取得し、通信をそれぞれボイスです。
+Windows のマルチ メディア機能[ **waveInMessage**](https://docs.microsoft.com/previous-versions/dd743846(v=vs.85))、 [ **waveOutMessage**](https://docs.microsoft.com/previous-versions/dd743865(v=vs.85))、 [ **midiInMessage**](https://docs.microsoft.com/previous-versions/dd798457(v=vs.85))、 [ **midiOutMessage**](https://docs.microsoft.com/previous-versions/dd798475(v=vs.85))、および[ **mixerMessage** ](https://docs.microsoft.com/previous-versions/dd757307(v=vs.85))を取得できますwave、MIDI、またはミキサーのデバイスのデバイスのインターフェイスの名前。 さらに、 **waveOutMessage**、 **midiOutMessage**、および**waveInMessage**関数がウェーブの I/O、MIDI、優先するオーディオ デバイスのデバイス Id を取得し、通信をそれぞれボイスです。
 
 このセクションでは、次のトピックがについて説明します。
 

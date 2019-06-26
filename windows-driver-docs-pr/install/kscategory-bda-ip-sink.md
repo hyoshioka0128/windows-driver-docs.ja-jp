@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 2925b32deaf17d1f40a9bef4b34a44131078a13a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c01736dbe080ec7abc90fd6d5a45835d6db426bd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382205"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353387"
 ---
 # <a name="kscategorybdaipsink"></a>KSCATEGORY_BDA_IP_SINK
 
 
-KSCATEGORY_BDA_IP_SINK[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)が定義されている、[カーネル ストリーミング](https://msdn.microsoft.com/library/windows/hardware/ff568277)でシンク フィルターの機能のカテゴリ (KS)、[ブロードキャスト ドライバー アーキテクチャ](https://msdn.microsoft.com/library/windows/hardware/ff556573)(性 BDA)。
+KSCATEGORY_BDA_IP_SINK[デバイス インターフェイス クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)が定義されている、[カーネル ストリーミング](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)でシンク フィルターの機能のカテゴリ (KS)、[ブロードキャスト ドライバー アーキテクチャ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_stream/index)(性 BDA)。
 
 <table>
 <colgroup>
@@ -56,7 +56,7 @@ KSCATEGORY_BDA_IP_SINK[デバイス インターフェイス クラス](https://
 
 BDA デバイス用のドライバーでは、デバイスがシンク BDA IP フィルターをサポートすることを示す KSCATEGORY_BDA_IP_SINK のインスタンスを登録します。
 
-詳細については、次を参照してください。 [BDA フィルター カテゴリ Guid](https://msdn.microsoft.com/library/windows/hardware/ff556521)します。
+詳細については、次を参照してください。 [BDA フィルター カテゴリ Guid](https://docs.microsoft.com/windows-hardware/drivers/stream/bda-filter-category-guids)します。
 
 <a name="requirements"></a>要件
 ------------

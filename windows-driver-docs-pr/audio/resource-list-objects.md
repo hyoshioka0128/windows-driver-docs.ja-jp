@@ -13,12 +13,12 @@ keywords:
 - デバイスの起動のルーチンの WDK オーディオ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 00f781a3ab77ca2e7fcd74e3b4a1cb2f4b5b697b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: abc5c15796b33e4399cd654e51cc39c15daed880
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328685"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355269"
 ---
 # <a name="resource-list-objects"></a>リソース リストのオブジェクト
 
@@ -26,7 +26,7 @@ ms.locfileid: "63328685"
 ## <span id="resource_list_objects"></span><span id="RESOURCE_LIST_OBJECTS"></span>
 
 
-PortCls システム ドライバーの実装、 [IResourceList](https://msdn.microsoft.com/library/windows/hardware/ff536976)ミニポート ドライバーのためのインターフェイス。 IResourceList オブジェクトは、デバイスのスタートアップ時にデバイスに、プラグ アンド プレイ マネージャを代入するシステムのハードウェア リソースの一覧は、構成リソースの一覧を表します。 スタートアップ時にリソース割り当ての詳細については、次を参照してください。[関数ドライバーでは、デバイスを起動](https://msdn.microsoft.com/library/windows/hardware/ff563856)します。
+PortCls システム ドライバーの実装、 [IResourceList](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iresourcelist)ミニポート ドライバーのためのインターフェイス。 IResourceList オブジェクトは、デバイスのスタートアップ時にデバイスに、プラグ アンド プレイ マネージャを代入するシステムのハードウェア リソースの一覧は、構成リソースの一覧を表します。 スタートアップ時にリソース割り当ての詳細については、次を参照してください。[関数ドライバーでは、デバイスを起動](https://docs.microsoft.com/windows-hardware/drivers/kernel/starting-a-device-in-a-function-driver)します。
 
 リソースの一覧には、次の種類リソースにはが含まれています。
 
@@ -38,53 +38,53 @@ PortCls システム ドライバーの実装、 [IResourceList](https://msdn.mi
 
 -   バスの相対メモリ アドレスのブロック
 
-リソースの種類については、次を参照してください。[ハードウェア リソース](https://msdn.microsoft.com/library/windows/hardware/ff547012)します。
+リソースの種類については、次を参照してください。[ハードウェア リソース](https://docs.microsoft.com/windows-hardware/drivers/kernel/hardware-resources)します。
 
-[IResourceList](https://msdn.microsoft.com/library/windows/hardware/ff536976)オブジェクトには、リソースの一覧の翻訳と無変換 (または「生」) のバージョンがカプセル化します。 変換し、リソースを翻訳しないについての詳細についてを参照してください。 [Bus 相対アドレスを仮想のアドレスにマッピング](https://msdn.microsoft.com/library/windows/hardware/ff554399)します。
+[IResourceList](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iresourcelist)オブジェクトには、リソースの一覧の翻訳と無変換 (または「生」) のバージョンがカプセル化します。 変換し、リソースを翻訳しないについての詳細についてを参照してください。 [Bus 相対アドレスを仮想のアドレスにマッピング](https://docs.microsoft.com/windows-hardware/drivers/kernel/mapping-bus-relative-addresses-to-virtual-addresses)します。
 
-[IResourceList](https://msdn.microsoft.com/library/windows/hardware/ff536976)インターフェイスは、次のメソッドをサポートしています。
+[IResourceList](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iresourcelist)インターフェイスは、次のメソッドをサポートしています。
 
-[**IResourceList::AddEntry**](https://msdn.microsoft.com/library/windows/hardware/ff536978)
+[**IResourceList::AddEntry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iresourcelist-addentry)
 
-[**IResourceList::AddEntryFromParent**](https://msdn.microsoft.com/library/windows/hardware/ff536981)
+[**IResourceList::AddEntryFromParent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iresourcelist-addentryfromparent)
 
-[**IResourceList::FindTranslatedEntry**](https://msdn.microsoft.com/library/windows/hardware/ff536982)
+[**IResourceList::FindTranslatedEntry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iresourcelist-findtranslatedentry)
 
-[**IResourceList::FindUntranslatedEntry**](https://msdn.microsoft.com/library/windows/hardware/ff536984)
+[**IResourceList::FindUntranslatedEntry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iresourcelist-finduntranslatedentry)
 
-[**IResourceList::NumberOfEntries**](https://msdn.microsoft.com/library/windows/hardware/ff536986)
+[**IResourceList::NumberOfEntries**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iresourcelist-numberofentries)
 
-[**IResourceList::NumberOfEntriesOfType**](https://msdn.microsoft.com/library/windows/hardware/ff536988)
+[**IResourceList::NumberOfEntriesOfType**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iresourcelist-numberofentriesoftype)
 
-[**IResourceList::TranslatedList**](https://msdn.microsoft.com/library/windows/hardware/ff536990)
+[**IResourceList::TranslatedList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iresourcelist-translatedlist)
 
-[**IResourceList::UntranslatedList**](https://msdn.microsoft.com/library/windows/hardware/ff536991)
+[**IResourceList::UntranslatedList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iresourcelist-untranslatedlist)
 
-Portcls.h のヘッダー ファイルでは、リソース リスト オブジェクトの処理を簡略化するマクロのセットを定義します。 これらのマクロの呼び出しの生成、 [IResourceList](https://msdn.microsoft.com/library/windows/hardware/ff536976)メソッド。 詳細については、IResourceList を参照してください。
+Portcls.h のヘッダー ファイルでは、リソース リスト オブジェクトの処理を簡略化するマクロのセットを定義します。 これらのマクロの呼び出しの生成、 [IResourceList](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iresourcelist)メソッド。 詳細については、IResourceList を参照してください。
 
 さらに、Portcls.h には、リソースの一覧を作成するための関数のペアを定義します。
 
-[**PcNewResourceList**](https://msdn.microsoft.com/library/windows/hardware/ff537717)
+[**PcNewResourceList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcnewresourcelist)
 
-[**PcNewResourceSublist**](https://msdn.microsoft.com/library/windows/hardware/ff537718)
+[**PcNewResourceSublist**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcnewresourcesublist)
 
 アダプター ドライバーのデバイスの起動のルーチンを呼び出すと、オペレーティング システム オーディオのアダプター カード上のデバイスを起動する (を参照してください[スタートアップ シーケンス](startup-sequence.md)) し、入力パラメーターとして、リソース リスト オブジェクトで渡します。 この一覧には、アダプターのドライバーをオペレーティング システムが割り当てられているすべてのシステム リソースが含まれています。
 
-デバイスの起動のルーチンでアダプタのドライバはすべてのアダプターのドライバーのデバイス (wave デバイスや、MIDI デバイス) を開始します。 各デバイスを管理するには、アダプターのドライバーは、ミニポート ドライバー オブジェクトとその関連付けられたポート ドライバー オブジェクトを作成します。 アダプターのドライバーはアダプター カード内のさまざまなデバイス間でリソース一覧内のリソースを分割します。 この目的で、ドライバーが通常は呼び出し[ **PcNewResourceSublist** ](https://msdn.microsoft.com/library/windows/hardware/ff537718)デバイスごとにリソースのリスト オブジェクトを作成します。 ドライバーを呼び出して[ **IResourceList::AddEntryFromParent** ](https://msdn.microsoft.com/library/windows/hardware/ff536981)に応じてさまざまな子リストに親の一覧から選択したリソースをコピーする回数。 さらに、アダプターのドライバーでは、それ自体にいくつかのリソースを割り当てることができます。
+デバイスの起動のルーチンでアダプタのドライバはすべてのアダプターのドライバーのデバイス (wave デバイスや、MIDI デバイス) を開始します。 各デバイスを管理するには、アダプターのドライバーは、ミニポート ドライバー オブジェクトとその関連付けられたポート ドライバー オブジェクトを作成します。 アダプターのドライバーはアダプター カード内のさまざまなデバイス間でリソース一覧内のリソースを分割します。 この目的で、ドライバーが通常は呼び出し[ **PcNewResourceSublist** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcnewresourcesublist)デバイスごとにリソースのリスト オブジェクトを作成します。 ドライバーを呼び出して[ **IResourceList::AddEntryFromParent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iresourcelist-addentryfromparent)に応じてさまざまな子リストに親の一覧から選択したリソースをコピーする回数。 さらに、アダプターのドライバーでは、それ自体にいくつかのリソースを割り当てることができます。
 
-次に、各ポート ドライバーの呼び出し、デバイスの起動ルーチン[ **iport::init** ](https://msdn.microsoft.com/library/windows/hardware/ff536943)メソッドをデバイスのリソース リスト オブジェクト (子の一覧を含む) を入力パラメーターとして渡します。 各ポート ドライバーの**iport::init**メソッドは、対応するミニポート ドライバーの IMiniport*Xxx*:: Init メソッドは、次の 1 つです。
+次に、各ポート ドライバーの呼び出し、デバイスの起動ルーチン[ **iport::init** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iport-init)メソッドをデバイスのリソース リスト オブジェクト (子の一覧を含む) を入力パラメーターとして渡します。 各ポート ドライバーの**iport::init**メソッドは、対応するミニポート ドライバーの IMiniport*Xxx*:: Init メソッドは、次の 1 つです。
 
-[**IMiniportDMus::Init**](https://msdn.microsoft.com/library/windows/hardware/ff536700)
+[**IMiniportDMus::Init**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nf-dmusicks-iminiportdmus-init)
 
-[**IMiniportMidi::Init**](https://msdn.microsoft.com/library/windows/hardware/ff536709)
+[**IMiniportMidi::Init**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportmidi-init)
 
-[**IMiniportTopology::Init**](https://msdn.microsoft.com/library/windows/hardware/ff536713)
+[**IMiniportTopology::Init**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiporttopology-init)
 
-[**IMiniportWaveCyclic::Init**](https://msdn.microsoft.com/library/windows/hardware/ff536722)
+[**IMiniportWaveCyclic::Init**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavecyclic-init)
 
-[**IMiniportWavePci::Init**](https://msdn.microsoft.com/library/windows/hardware/ff536734)
+[**IMiniportWavePci::Init**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavepci-init)
 
-[ **Iport::init** ](https://msdn.microsoft.com/library/windows/hardware/ff536943)メソッドは、IMiniport をそのリソースのリスト オブジェクトを渡します*Xxx*:: 入力パラメーターとしてメソッドを初期化します。 ミニポート ドライバーでは、DMA の利用をことができますし、チャネル、割り込み、およびリソースの一覧で他のシステム リソース。
+[ **Iport::init** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iport-init)メソッドは、IMiniport をそのリソースのリスト オブジェクトを渡します*Xxx*:: 入力パラメーターとしてメソッドを初期化します。 ミニポート ドライバーでは、DMA の利用をことができますし、チャネル、割り込み、およびリソースの一覧で他のシステム リソース。
 
 コード例では、Sb16 サンプル オーディオ ドライバーで、Microsoft Windows Driver Kit (WDK) を参照してください。
 

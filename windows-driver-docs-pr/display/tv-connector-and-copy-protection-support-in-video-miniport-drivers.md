@@ -13,16 +13,16 @@ keywords:
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
-ms.openlocfilehash: 07a3751eaa0e47f25cb997ed32dacb577a25385d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2bccf34cb12d65df26af09b845e80d39693c6abb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389777"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353397"
 ---
 # <a name="tv-connector-and-copy-protection-support-in-video-miniport-drivers"></a>テレビ ミニポート ドライバーでのテレビ コネクタおよびコピー防止サポート
 
-テレビ コネクタがあるアダプターのビデオのミニポート ドライバーを処理する必要があります[ **VRPs** ](https://msdn.microsoft.com/library/windows/hardware/ff570547)で、 [ **IOCTL\_ビデオ\_ハンドル\_VIDEOPARAMETERS** ](https://msdn.microsoft.com/library/windows/hardware/ff567805) I/O 制御コード。 この IOCTL は、機能およびテレビ コネクタとコピー防止のハードウェアの現在の設定を照会するか、テレビのコネクタとコピー防止のハードウェアの機能を設定するには、ミニポート ドライバーに送信されます。 ミニポート ドライバーをチェックして実行するアクションを決定する、 **dwCommand**のフィールド、 [ **VIDEOPARAMETERS** ](https://msdn.microsoft.com/library/windows/hardware/ff570173) VRP ので渡される構造体**InputBuffer**します。 システムでは、ミニポート ドライバーはこの VRP を処理しない場合、Rovi (旧称 Macrovision) の再生が Dvd を保護することはできません。
+テレビ コネクタがあるアダプターのビデオのミニポート ドライバーを処理する必要があります[ **VRPs** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/ns-video-_video_request_packet)で、 [ **IOCTL\_ビデオ\_ハンドル\_VIDEOPARAMETERS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddvdeo/ni-ntddvdeo-ioctl_video_handle_videoparameters) I/O 制御コード。 この IOCTL は、機能およびテレビ コネクタとコピー防止のハードウェアの現在の設定を照会するか、テレビのコネクタとコピー防止のハードウェアの機能を設定するには、ミニポート ドライバーに送信されます。 ミニポート ドライバーをチェックして実行するアクションを決定する、 **dwCommand**のフィールド、 [ **VIDEOPARAMETERS** ](https://docs.microsoft.com/windows/desktop/api/tvout/ns-tvout-_videoparameters) VRP ので渡される構造体**InputBuffer**します。 システムでは、ミニポート ドライバーはこの VRP を処理しない場合、Rovi (旧称 Macrovision) の再生が Dvd を保護することはできません。
 
 場合**dwCommand**担当副社長に設定されている\_コマンド\_GET、およびデバイス*しない*ミニポート ドライバーは、NO を返す必要があります、出力、テレビをサポート\_のエラー**ステータス**VRP のメンバー **StatusBlock**します。 これを設定する必要がありますも、**情報**VRP のメンバー **StatusBlock**サイズ (バイト単位) を VIDEOPARAMETERS の構造体します。 設定する必要があります**dwFlags**を 0 に設定**dwTVStandard**担当副社長に\_テレビ\_標準\_WIN\_VGA、設定と**dwAvailableTVStandard**担当副社長に\_テレビ\_標準\_WIN\_VGA します。
 

@@ -3,12 +3,12 @@ Description: 新機能とのユニバーサル シリアル バス (USB) Windows
 title: Windows 8.1 の新機能については、usb
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ca226ef7f1e1d9e50eb70faedd3b9046cef86a1c
-ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
+ms.openlocfilehash: 9e3a764d1fb4f3af046def0e4a6902dd20436259
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65405292"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356551"
 ---
 # <a name="windows-81-whats-new-for-usb"></a>Windows 8.1:USB の新機能
 
@@ -26,7 +26,7 @@ ms.locfileid: "65405292"
 ## <a name="windows-runtime-usb-api-for-developing-uwp-apps"></a>UWP アプリを開発するための Windows ランタイム USB API
 
 
-Windows ランタイムには、新しい名前空間が用意されています。[**Windows.Devices.Usb** ](https://msdn.microsoft.com/library/windows/apps/dn278466) (を参照してください[USB デバイスのアプリの作成 (を使用して UWP アプリC##/vb/c)](https://msdn.microsoft.com/library/windows/apps/xaml/dn263144)簡単な概要について)。 名前空間を使用して、カスタムの USB デバイスと通信する UWP アプリを記述できます。
+Windows ランタイムには、新しい名前空間が用意されています。[**Windows.Devices.Usb** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb) (を参照してください[USB デバイスのアプリの作成 (を使用して UWP アプリC##/vb/c)](https://docs.microsoft.com/previous-versions/windows/apps/dn263144(v=win.10))簡単な概要について)。 名前空間を使用して、カスタムの USB デバイスと通信する UWP アプリを記述できます。
 
 詳しくは、次のトピックをご覧ください。
 
@@ -39,7 +39,7 @@ Windows ランタイムには、新しい名前空間が用意されています
 -   [USB ディスクリプター (UWP アプリ) を取得する方法](how-to-get-usb-descriptors--uwp-app-.md)
 -   [USB インターフェイスの設定 (UWP アプリ) を選択する方法](how-to-select-a-usb-interface-setting--uwp-app-.md)
 
-これらのサンプルの使用法を示す、 [ **Windows.Devices.Usb** ](https://msdn.microsoft.com/library/windows/apps/dn278466)名前空間。
+これらのサンプルの使用法を示す、 [ **Windows.Devices.Usb** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb)名前空間。
 
 <table>
 <colgroup>
@@ -86,16 +86,16 @@ MS OS 2.0 記述子の仕様では、これらの機能強化を提供します�
 
 Microsoft 提供の WinUSB (カーネル モード ドライバー) と、USB デバイスのアイソクロナス エンドポイントの転送をようになりました
 
-ユーザー モード DLL、Winusb.dll、公開これら[WinUSB Functions](https://msdn.microsoft.com/library/windows/hardware/ff540046#winusb) Windows デスクトップ アプリを使用してこのような転送を開始します。
+ユーザー モード DLL、Winusb.dll、公開これら[WinUSB Functions](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb) Windows デスクトップ アプリを使用してこのような転送を開始します。
 
--   [**WinUsb\_RegisterIsochBuffer**](https://msdn.microsoft.com/library/windows/hardware/dn265566)
--   [**WinUsb\_UnregisterIsochBuffer**](https://msdn.microsoft.com/library/windows/hardware/dn265567)
--   [**WinUsb\_WriteIsochPipeAsap**](https://msdn.microsoft.com/library/windows/hardware/dn265569)
--   [**WinUsb\_ReadIsochPipeAsap**](https://msdn.microsoft.com/library/windows/hardware/dn265565)
--   [**WinUsb\_WriteIsochPipe**](https://msdn.microsoft.com/library/windows/hardware/dn265568)
--   [**WinUsb\_ReadIsochPipe**](https://msdn.microsoft.com/library/windows/hardware/dn265564)
--   [**WinUsb\_GetCurrentFrameNumber**](https://msdn.microsoft.com/library/windows/hardware/dn265549)
--   [**WinUsb\_GetAdjustedFrameNumber**](https://msdn.microsoft.com/library/windows/hardware/dn265548)
+-   [**WinUsb\_RegisterIsochBuffer**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_registerisochbuffer)
+-   [**WinUsb\_UnregisterIsochBuffer**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_unregisterisochbuffer)
+-   [**WinUsb\_WriteIsochPipeAsap**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_writeisochpipeasap)
+-   [**WinUsb\_ReadIsochPipeAsap**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_readisochpipeasap)
+-   [**WinUsb\_WriteIsochPipe**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_writeisochpipe)
+-   [**WinUsb\_ReadIsochPipe**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_readisochpipe)
+-   [**WinUsb\_GetCurrentFrameNumber**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_getcurrentframenumber)
+-   [**WinUsb\_GetAdjustedFrameNumber**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_getadjustedframenumber)
 
 ## <a name="usb-driver-stack-improvements"></a>USB ドライバー スタックの機能強化
 
@@ -112,12 +112,12 @@ Windows 8.1 のでは、USB 3.0 と 2.0 ドライバー スタックの両方の
 
 -   これらの USB テスト ハードウェア認定キット (HCK) でが改善されました。 デバイスの列挙型のテストは、簡略化されたトポロジを使用してテスト中に手動介入を削減する新しいパラメーターを指定するようになりました。 中断のテストは、改善されたロギング機能しました。
 
-    -   [USB ポートが公開されているコント ローラーのテスト](https://msdn.microsoft.com/library/windows/hardware/hh998021.aspx)
-    -   [USB ハブに USB ポートのテストが公開されています。](https://msdn.microsoft.com/library/windows/hardware/jj123960.aspx)
-    -   [ハブの選択的テストを中断します。](https://msdn.microsoft.com/library/windows/hardware/jj124844.aspx)
-    -   [USB 公開ポート システム テスト](https://msdn.microsoft.com/library/windows/hardware/jj123655.aspx)
-    -   [USB セレクティブ サスペンド テスト (xHCI)](https://msdn.microsoft.com/library/windows/hardware/jj124491.aspx)
-    -   [USB 3.0 テストを中断します。](https://msdn.microsoft.com/library/windows/hardware/jj125210.aspx)
+    -   [USB ポートが公開されているコント ローラーのテスト](https://docs.microsoft.com/previous-versions/windows/hardware/hck/hh998021(v=vs.85))
+    -   [USB ハブに USB ポートのテストが公開されています。](https://docs.microsoft.com/previous-versions/windows/hardware/hck/jj123960(v=vs.85))
+    -   [ハブの選択的テストを中断します。](https://docs.microsoft.com/previous-versions/windows/hardware/hck/jj124844(v=vs.85))
+    -   [USB 公開ポート システム テスト](https://docs.microsoft.com/previous-versions/windows/hardware/hck/jj123655(v=vs.85))
+    -   [USB セレクティブ サスペンド テスト (xHCI)](https://docs.microsoft.com/previous-versions/windows/hardware/hck/jj124491(v=vs.85))
+    -   [USB 3.0 テストを中断します。](https://docs.microsoft.com/previous-versions/windows/hardware/hck/jj125210(v=vs.85))
 -   MUTT および SuperMUTT デバイスが USB-準拠デバイスの場合。 デバイスと付属のソフトウェア パッケージに USB テストの HCK スイートに統合します。 USB のコントローラー、デバイス、システムの開発周期において、特にストレス テストにおいて使用できる自動化されたテストを提供します。
 
     MUTT ハードウェアを購入できる[JJG テクノロジ](http://jjgtechnologies.com/mutt.md)します。 デバイスのファームウェアがインストールされているインストールではありません。 ファームウェアをインストールするから MUTT ソフトウェア パッケージをダウンロード[この Web サイト](https://msdn.microsoft.com/windows/hardware/jj590752)MUTTUtil.exe を実行します。 詳細については、パッケージに付属のマニュアルを参照してください。
@@ -129,7 +129,7 @@ Windows 8.1 のでは、USB 3.0 と 2.0 ドライバー スタックの両方の
 -   Message Analyzer (Netmon) に示すように USB イベントとはわかりやすいようになりました。 イベントをグループ化もしてコント ローラー、ハブ、およびなどで並べ替えられます。
 
 ## <a name="related-topics"></a>関連トピック
-[ユニバーサル シリアル バス (USB)](https://msdn.microsoft.com/library/windows/hardware/ff538930)  
+[ユニバーサル シリアル バス (USB)](https://docs.microsoft.com/windows-hardware/drivers/)  
 
 
 

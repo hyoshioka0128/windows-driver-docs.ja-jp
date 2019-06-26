@@ -4,12 +4,12 @@ description: SerCx2 は周辺機器のドライバーと逐次的に接続され
 ms.assetid: BA5D8966-ACC5-44ED-8CB8-61D1BCF39522
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ca389e3449e2f653f006d34fbd5e87c09da41e4
-ms.sourcegitcommit: 6a0636c33e28ce2a9a742bae20610f0f3435262c
+ms.openlocfilehash: f8c3dc5e63e55624c3670c6b0e75e4b648e6cf3c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65836311"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356876"
 ---
 # <a name="sercx2-architectural-overview"></a>SerCx2 アーキテクチャの概要
 
@@ -25,8 +25,8 @@ SerCx2 とシリアル コント ローラー ドライバー カーネル モ�
 
 呼び出されるハードウェア リソースの特別な種類に周辺機器のデバイスへの論理接続を開く、周辺機器のドライバーが必要な情報がカプセル化、*接続 ID*します。 詳細については、次を参照してください。[周辺機器を逐次的に接続されている接続 Id](connection-ids-for-serially-connected-peripheral-devices.md)します。
 
-通常、ドライバーのみがシリアルのコント ローラーに直接 I/O 要求を送信します。 ときに、ユーザー モード アプリケーションでは、アプリケーションとデバイス間の媒介としてデバイス機能の周辺機器のドライバーを逐次的に接続されている周辺機器と通信する必要があります。 アプリケーションが書き込みを送信する場合は、アプリケーションは、周辺機器のデバイス間でデータを転送する必要がある、([**IRP\_MJ\_書き込み**](https://msdn.microsoft.com/library/windows/hardware/ff546904)) 要求または読み取り ([ **IRP\_MJ\_読み取り**](https://msdn.microsoft.com/library/windows/hardware/ff546883)) 周辺のドライバーでは、およびシリアル コント ローラーに対応する書き込みまたは読み取り要求を送信して周辺のドライバーが応答を要求します。 さらに、周辺機器のドライバーでは、シリアル ポートを構成するデバイス I/O 制御要求 (Ioctl) を送信できます。 Ioctl SerCx2 でサポートされているの一覧は、次を参照してください。[シリアル I/O 要求インターフェイス](serial-i-o-request-interface.md)します。
+通常、ドライバーのみがシリアルのコント ローラーに直接 I/O 要求を送信します。 ときに、ユーザー モード アプリケーションでは、アプリケーションとデバイス間の媒介としてデバイス機能の周辺機器のドライバーを逐次的に接続されている周辺機器と通信する必要があります。 アプリケーションが書き込みを送信する場合は、アプリケーションは、周辺機器のデバイス間でデータを転送する必要がある、([**IRP\_MJ\_書き込み**](https://docs.microsoft.com/previous-versions/ff546904(v=vs.85))) 要求または読み取り ([ **IRP\_MJ\_読み取り**](https://docs.microsoft.com/previous-versions/ff546883(v=vs.85))) 周辺のドライバーでは、およびシリアル コント ローラーに対応する書き込みまたは読み取り要求を送信して周辺のドライバーが応答を要求します。 さらに、周辺機器のドライバーでは、シリアル ポートを構成するデバイス I/O 制御要求 (Ioctl) を送信できます。 Ioctl SerCx2 でサポートされているの一覧は、次を参照してください。[シリアル I/O 要求インターフェイス](serial-i-o-request-interface.md)します。
 
-シリアル コント ローラーに I/O 要求を送信する周辺のドライバーを使用するか、カーネル モード ドライバーは、[カーネル モード ドライバー フレームワーク](https://docs.microsoft.com/windows-hardware/drivers/wdf/using-the-framework-to-develop-a-driver)(KMDF)、またはユーザー モード ドライバーを使用する、[ユーザー モード ドライバー フレームワーク](https://msdn.microsoft.com/library/windows/hardware/ff560442) (UMDF)。 SerCx2 周辺のドライバーによってシリアル コント ローラーに送信された I/O 要求のキューを管理します。
+シリアル コント ローラーに I/O 要求を送信する周辺のドライバーを使用するか、カーネル モード ドライバーは、[カーネル モード ドライバー フレームワーク](https://docs.microsoft.com/windows-hardware/drivers/wdf/using-the-framework-to-develop-a-driver)(KMDF)、またはユーザー モード ドライバーを使用する、[ユーザー モード ドライバー フレームワーク](https://docs.microsoft.com/windows-hardware/drivers/wdf/overview-of-the-umdf) (UMDF)。 SerCx2 周辺のドライバーによってシリアル コント ローラーに送信された I/O 要求のキューを管理します。
 
 読み取りまたは書き込み要求に応答して、SerCx2 シリアル コント ローラーと、要求のデータ バッファーの間でデータを移動する 1 つまたは複数の I/O トランザクションを開始します。 I/O の各トランザクションでは、下手順の I/O (PIO)、または DMA を使用して、シリアル コント ローラーと、要求のデータ バッファー間でデータを転送します。 シリアル コント ローラー ドライバーでサポートされている I/O トランザクションの種類は、シリアル コント ローラーのハードウェア機能に依存します。 詳細については、次を参照してください。 [SerCx2 I/O トランザクションの概要](overview-of-sercx2-i-o-transactions.md)します。

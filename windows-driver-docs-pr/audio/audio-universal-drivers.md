@@ -4,12 +4,12 @@ description: Windows 10 では、さまざまな種類のハードウェアで�
 ms.assetid: F4B56B3F-792F-4887-AF0F-FFC1F000CB8F
 ms.date: 10/27/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 795050c4d65f5be9d98dfc14572bd782bcb5d751
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c11f2ac001beee53b1d41839cc15468cd9a7e7ce
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333945"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355623"
 ---
 # <a name="universal-windows-drivers-for-audio"></a>オーディオ用のユニバーサル Windows ドライバー
 
@@ -21,15 +21,15 @@ Ihv は、すべてのデバイス (デスクトップ、ラップトップ、�
 
 これらのツールは、ユニバーサル Windows ドライバーのサポートを開発できます。
 
-- Visual Studio 2015 のサポート:「ターゲット プラットフォーム」を"Universal"と等しく設定するドライバーの設定があります。 ドライバーの開発環境のセットアップの詳細については、次を参照してください。[ユニバーサル Windows ドライバーの概要](https://msdn.microsoft.com/windows-drivers/develop/getting_started_with_universal_drivers)します。
+- Visual Studio 2015 のサポート:「ターゲット プラットフォーム」を"Universal"と等しく設定するドライバーの設定があります。 ドライバーの開発環境のセットアップの詳細については、次を参照してください。[ユニバーサル Windows ドライバーの概要](https://docs.microsoft.com/windows-hardware/drivers)します。
 
-- APIValidator ツール:ApiValidator.exe ツールを使うと、ドライバーから呼び出される API が、ユニバーサル Windows ドライバーにとって有効であるかどうかを確認できます。 このツールは、Windows 10、Windows Driver Kit (WDK) の一部であるし、Visual Studio 2015 を使用している場合は、自動的に実行されます。 詳細については、次を参照してください。[ユニバーサル Windows ドライバーの検証](https://msdn.microsoft.com/windows-drivers/develop/validating_universal_drivers)です。
+- APIValidator ツール:ApiValidator.exe ツールを使うと、ドライバーから呼び出される API が、ユニバーサル Windows ドライバーにとって有効であるかどうかを確認できます。 このツールは、Windows 10、Windows Driver Kit (WDK) の一部であるし、Visual Studio 2015 を使用している場合は、自動的に実行されます。 詳細については、次を参照してください。[ユニバーサル Windows ドライバーの検証](https://docs.microsoft.com/windows-hardware/drivers)です。
 
-- 更新された DDI リファレンス ドキュメント。ユニバーサル Windows ドライバーがサポートされるどの Ddi DDI のリファレンス ドキュメントを更新しています。 詳細については、次を参照してください。[オーディオ デバイス参照](https://msdn.microsoft.com/library/windows/hardware/ff536192)します。
+- 更新された DDI リファレンス ドキュメント。ユニバーサル Windows ドライバーがサポートされるどの Ddi DDI のリファレンス ドキュメントを更新しています。 詳細については、次を参照してください。[オーディオ デバイス参照](https://docs.microsoft.com/previous-versions/ff536192(v=vs.85))します。
 
 ## <a name="create-a-universal-audio-driver"></a>ユニバーサル オーディオ ドライバーを作成します。
 
-ステップ バイ ステップ ガイダンスについては、次を参照してください。[ユニバーサル Windows ドライバーの概要](https://msdn.microsoft.com/windows-drivers/develop/getting_started_with_universal_drivers)します。 手順の概要を次に示します。
+ステップ バイ ステップ ガイダンスについては、次を参照してください。[ユニバーサル Windows ドライバーの概要](https://docs.microsoft.com/windows-hardware/drivers)します。 手順の概要を次に示します。
 
 1. ユニバーサル、オーディオ ドライバーの開始点として使用するオーディオ sysvad のユニバーサル サンプルを読み込みます。 または、空の WDM ドライバー テンプレートを使用して起動し、オーディオ ドライバーに必要なユニバーサル sysvad のサンプル コードに追加します。
 
@@ -49,29 +49,29 @@ Windows 10 以降、ドライバーのプログラミング インターフェ�
 
 次の Ddi はユニバーサル オーディオ ドライバーを使用する場合に使用できます。
 
-- [オーディオ ドライバーのイベントのセット](https://msdn.microsoft.com/library/windows/hardware/ff536195)
+- [オーディオ ドライバーのイベントのセット](https://docs.microsoft.com/windows-hardware/drivers/audio/audio-drivers-event-sets)
 
-- [オーディオ ドライバー インターフェイス](https://msdn.microsoft.com/library/windows/hardware/ff536196)
+- [オーディオ ドライバー インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/audio/audio-drivers-interfaces)
 
-- [オーディオ ドライバーのプロパティ セット](https://msdn.microsoft.com/library/windows/hardware/ff536197)
+- [オーディオ ドライバーのプロパティ セット](https://docs.microsoft.com/windows-hardware/drivers/audio/audio-drivers-property-sets)
 
-- [オーディオ ドライバー構造体](https://msdn.microsoft.com/library/windows/hardware/ff536198)
+- [オーディオ ドライバー構造体](https://docs.microsoft.com/windows-hardware/drivers/audio/audio-drivers-structures)
 
-- [オーディオのトポロジのノード](https://msdn.microsoft.com/library/windows/hardware/ff536219)
+- [オーディオのトポロジのノード](https://docs.microsoft.com/windows-hardware/drivers/audio/audio-topology-nodes)
 
-- [高解像度オーディオ DDI 参照](https://msdn.microsoft.com/library/windows/hardware/ff536445)
+- [高解像度オーディオ DDI 参照](https://docs.microsoft.com/windows-hardware/drivers/audio/high-definition-audio-ddi-reference)
 
-- [ポート クラス オーディオ ドライバー リファレンス](https://msdn.microsoft.com/library/windows/hardware/ff537764)
+- [ポート クラス オーディオ ドライバー リファレンス](https://docs.microsoft.com/windows-hardware/drivers/audio/port-class-audio-driver-reference)
 
 ## <a name="convert-an-existing-audio-driver-to-a-universal-windows-driver"></a>ユニバーサル Windows ドライバーに既存のオーディオ ドライバーの変換します。
 
 ユニバーサル Windows ドライバーに既存のオーディオ ドライバーを変換するには、このプロセスに従います。
 
-1. 既存のドライバー呼び出しが OneCoreUAP Windows で実行するかどうかを決定します。 リファレンス ページの [要件] セクションを確認します。 詳細については、次を参照してください。[オーディオ デバイス参照](https://msdn.microsoft.com/library/windows/hardware/ff536192)します。
+1. 既存のドライバー呼び出しが OneCoreUAP Windows で実行するかどうかを決定します。 リファレンス ページの [要件] セクションを確認します。 詳細については、次を参照してください。[オーディオ デバイス参照](https://docs.microsoft.com/previous-versions/ff536192(v=vs.85))します。
 
 2. ユニバーサル Windows ドライバーとしては、ドライバーを再コンパイルします。 プロジェクトのプロパティでは、"Universal"するターゲット プラットフォームを設定します。
 
-3. Ddi のドライバーの呼び出しが、ユニバーサル Windows ドライバーが有効であることを確認するのに ApiValidator.exe ツールを使用します。 このツールは、Windows 10、Windows Driver Kit (WDK) の一部であるし、Visual Studio 2015 を使用している場合は、自動的に実行されます。 詳細については、次を参照してください。[ユニバーサル Windows ドライバーの検証](https://msdn.microsoft.com/windows-drivers/develop/validating_universal_drivers)です。
+3. Ddi のドライバーの呼び出しが、ユニバーサル Windows ドライバーが有効であることを確認するのに ApiValidator.exe ツールを使用します。 このツールは、Windows 10、Windows Driver Kit (WDK) の一部であるし、Visual Studio 2015 を使用している場合は、自動的に実行されます。 詳細については、次を参照してください。[ユニバーサル Windows ドライバーの検証](https://docs.microsoft.com/windows-hardware/drivers)です。
 
 4. ドライバーが OneCoreUAP の一部ではないインターフェイスを呼び出す場合、コンパイラはエラーを表示します。
 
@@ -128,7 +128,7 @@ APO のすべてのベンダー固有のシステムの設定、パラメータ�
 
 ### <a name="programmatically-launching-uwp-hardware-support-apps"></a>UWP アプリのハードウェア サポートをプログラムで起動します。
 
-UWP ハードウェアのサポート、アプリをプログラムで起動する (たとえば、新しいオーディオ デバイスが接続されている場合) ドライバー イベントに基づく、Windows シェル Api を使用します。 Windows 10 のシェル Api リソースの有効化、または経由で直接ベースの UWP の UI を起動するメソッドをサポートして[IApplicationActivationManager](https://msdn.microsoft.com/library/windows/desktop/hh706903.aspx)します。 UWP アプリケーションの自動起動する方法の詳細を検索する[Windows 10 UWP アプリの起動を自動化](https://docs.microsoft.com/windows/uwp/xbox-apps/automate-launching-uwp-apps#launch-activation)します。  
+UWP ハードウェアのサポート、アプリをプログラムで起動する (たとえば、新しいオーディオ デバイスが接続されている場合) ドライバー イベントに基づく、Windows シェル Api を使用します。 Windows 10 のシェル Api リソースの有効化、または経由で直接ベースの UWP の UI を起動するメソッドをサポートして[IApplicationActivationManager](https://docs.microsoft.com/windows/desktop/api/shobjidl_core/nf-shobjidl_core-iapplicationactivationmanager-activateapplication)します。 UWP アプリケーションの自動起動する方法の詳細を検索する[Windows 10 UWP アプリの起動を自動化](https://docs.microsoft.com/windows/uwp/xbox-apps/automate-launching-uwp-apps#launch-activation)します。  
 
 ### <a name="apo-and-device-driver-vendor-use-of-the-audiomodules-api"></a>AudioModules API の APO とデバイス ドライバーのベンダー使用
 
@@ -234,7 +234,7 @@ Windows 10 Mobile の sysvad サンプルをビルドするには、次の手順
    C:\Program Files (x86)\Windows Kits\10\src\audio\sysvad\x64\Debug\package`
    ```
 
-4. ガイダンスに従って[パッケージを作成する](https://msdn.microsoft.com/library/dn756642)モバイル イメージのドライバー ファイルを含むパッケージを作成します。
+4. ガイダンスに従って[パッケージを作成する](https://docs.microsoft.com/previous-versions/windows/hardware/packaging/dn756642(v=vs.85))モバイル イメージのドライバー ファイルを含むパッケージを作成します。
 
 5. モバイルのドライバー パッケージ (.spkg ファイル) をインストールするには、モバイル OS イメージにパッケージを結合する必要があります。 ImgGen を使用すると、モバイル デバイスにアップデートできるし、フラッシュの完全な更新プログラム (FFU) イメージに .spkg ドライバー パッケージを追加できます。 Sysvad 仮想オーディオ ドライバーのテストのためにモバイル イメージ内に存在するその他のオーディオ ドライバーを削除する必要がある場合があります。
 

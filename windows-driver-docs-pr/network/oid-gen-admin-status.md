@@ -5,12 +5,12 @@ ms.assetid: e8f45521-7419-4c11-b84b-36d4d3306fc2
 ms.date: 08/08/2017
 keywords: -OID_GEN_ADMIN_STATUS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 5323c785ee3688a7803c69c2d6c40dace8babdfe
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 548b87f7b79538e3f77952fe16596b9a086d4153
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380698"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356145"
 ---
 # <a name="oidgenadminstatus"></a>OID\_GEN\_管理者\_状態
 
@@ -30,9 +30,9 @@ ms.locfileid: "63380698"
 
 管理の状態は、システム管理者が要求した状態です。
 
-のみ[ネットワーク インターフェイスの NDIS](https://msdn.microsoft.com/library/windows/hardware/ff566527)プロバイダー、およびミニポート ドライバーではないまたはフィルター ドライバー、そのためには、OID 要求としてこの OID をサポートする必要があります。
+のみ[ネットワーク インターフェイスの NDIS](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-network-interfaces2)プロバイダー、およびミニポート ドライバーではないまたはフィルター ドライバー、そのためには、OID 要求としてこの OID をサポートする必要があります。
 
-クエリが成功すると、インターフェイス プロバイダーを返します NDIS\_状態\_成功して、クエリの結果は、値のいずれかで指定できます、 [ **NET\_場合\_管理者\_ステータス**](https://msdn.microsoft.com/library/windows/hardware/ff568740)列挙体。
+クエリが成功すると、インターフェイス プロバイダーを返します NDIS\_状態\_成功して、クエリの結果は、値のいずれかで指定できます、 [ **NET\_場合\_管理者\_ステータス**](https://docs.microsoft.com/windows/desktop/api/ifdef/ne-ifdef-_net_if_admin_status)列挙体。
 
 <a name="requirements"></a>必要条件
 ------------
@@ -53,9 +53,9 @@ ms.locfileid: "63380698"
 ## <a name="see-also"></a>関連項目
 
 
-[**NET\_場合\_管理者\_状態**](https://msdn.microsoft.com/library/windows/hardware/ff568740)
+[**NET\_場合\_管理者\_状態**](https://docs.microsoft.com/windows/desktop/api/ifdef/ne-ifdef-_net_if_admin_status)
 
-[NDIS ネットワーク インターフェイスの Oid](https://msdn.microsoft.com/library/windows/hardware/ff566545)
+[NDIS ネットワーク インターフェイスの Oid](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-network-interface-oids)
 
  
 

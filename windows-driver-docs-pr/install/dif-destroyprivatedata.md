@@ -14,21 +14,21 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 34546f44c89b83361299bd2299e6016fdccb1111
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: db2b92e746711ced56af442e369bb40fadc4e189
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362044"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354668"
 ---
 # <a name="difdestroyprivatedata"></a>DIF_DESTROYPRIVATEDATA
 
 
-DIF_DESTROYPRIVATEDATA 要求を任意のメモリまたはリソース割り当てられに格納されていることを解放するクラスのインストーラーの指示、 **ClassInstallReserved**のフィールド、 [ **SP_DEVINSTALL_PARAMS**](https://msdn.microsoft.com/library/windows/hardware/ff552346)構造体。
+DIF_DESTROYPRIVATEDATA 要求を任意のメモリまたはリソース割り当てられに格納されていることを解放するクラスのインストーラーの指示、 **ClassInstallReserved**のフィールド、 [ **SP_DEVINSTALL_PARAMS**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)構造体。
 
 ### <a name="when-sent"></a>送信時
 
-Windows を破棄すると、[デバイス情報設定されている](https://msdn.microsoft.com/library/windows/hardware/ff541247)または[ **SP_DEVINFO_DATA** ](https://msdn.microsoft.com/library/windows/hardware/ff552344)要素、または Windows で共同インストーラーとデバイスのクラスのインストーラーのリストを破棄する場合。
+Windows を破棄すると、[デバイス情報設定されている](https://docs.microsoft.com/windows-hardware/drivers/install/device-information-sets)または[ **SP_DEVINFO_DATA** ](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data)要素、または Windows で共同インストーラーとデバイスのクラスのインストーラーのリストを破棄する場合。
 
 ### <a name="who-handles"></a>処理します。
 
@@ -61,10 +61,10 @@ Windows を破棄すると、[デバイス情報設定されている](https://m
 装置のデバイス情報へのハンドルを設定します。
 
 <a href="" id="deviceinfodata"></a>*DeviceInfoData*  
-必要に応じてへのポインターを提供、 [ **SP_DEVINFO_DATA** ](https://msdn.microsoft.com/library/windows/hardware/ff552344)デバイス情報のセット内のデバイスを識別する構造体。
+必要に応じてへのポインターを提供、 [ **SP_DEVINFO_DATA** ](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data)デバイス情報のセット内のデバイスを識別する構造体。
 
 <a href="" id="device-installation-parameters-"></a>デバイスのインストール パラメーター   
-デバイスのインストール パラメーター ([**SP_DEVINSTALL_PARAMS**](https://msdn.microsoft.com/library/windows/hardware/ff552346)) に関連付けられている、 *DeviceInfoData*、指定した場合または、 *DeviceInfoSet*.
+デバイスのインストール パラメーター ([**SP_DEVINSTALL_PARAMS**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)) に関連付けられている、 *DeviceInfoData*、指定した場合または、 *DeviceInfoSet*.
 
 <a href="" id="class-installation-parameters"></a>インストール パラメーターをクラスします。  
 なし
@@ -72,7 +72,7 @@ Windows を破棄すると、[デバイス情報設定されている](https://m
 ### <a name="installer-output"></a>インストーラーの出力
 
 <a href="" id="device-installation-parameters-"></a>デバイスのインストール パラメーター   
-インストーラーをオフにできる、 **ClassInstallReserved**フィールドに、デバイスのインストール パラメータ ([**SP_DEVINSTALL_PARAMS**](https://msdn.microsoft.com/library/windows/hardware/ff552346))。
+インストーラーをオフにできる、 **ClassInstallReserved**フィールドに、デバイスのインストール パラメータ ([**SP_DEVINSTALL_PARAMS**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a))。
 
 ### <a name="installer-return-value"></a>インストーラーの戻り値
 
@@ -86,11 +86,11 @@ Windows を破棄すると、[デバイス情報設定されている](https://m
 
 ### <a name="installer-operation"></a>インストーラーの操作
 
-クラスのインストーラーは、メモリやリソースを解放 DIF_DESTROYPRIVATEDATA 要求に応答の 割り当てられに格納されていること、 **ClassInstallReserved**のフィールド、 [ **SP_DEVINSTALL_PARAMS**](https://msdn.microsoft.com/library/windows/hardware/ff552346)構造体。
+クラスのインストーラーは、メモリやリソースを解放 DIF_DESTROYPRIVATEDATA 要求に応答の 割り当てられに格納されていること、 **ClassInstallReserved**のフィールド、 [ **SP_DEVINSTALL_PARAMS**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)構造体。
 
 共同インストーラーを使用する必要があります、 **ClassInstallReserved**フィールド。
 
-差分のコードの詳細については、次を参照してください。 [DIF コードの処理](https://msdn.microsoft.com/library/windows/hardware/ff546094)します。
+差分のコードの詳細については、次を参照してください。 [DIF コードの処理](https://docs.microsoft.com/windows-hardware/drivers/install/handling-dif-codes)します。
 
 <a name="requirements"></a>要件
 ------------
@@ -115,9 +115,9 @@ Windows を破棄すると、[デバイス情報設定されている](https://m
 ## <a name="see-also"></a>関連項目
 
 
-[**SP_DEVINFO_DATA**](https://msdn.microsoft.com/library/windows/hardware/ff552344)
+[**SP_DEVINFO_DATA**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data)
 
-[**SP_DEVINSTALL_PARAMS**](https://msdn.microsoft.com/library/windows/hardware/ff552346)
+[**SP_DEVINSTALL_PARAMS**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)
 
  
 

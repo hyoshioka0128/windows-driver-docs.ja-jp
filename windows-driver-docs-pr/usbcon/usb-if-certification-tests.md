@@ -3,12 +3,12 @@ Description: Windows ハードウェア認定プログラムの提出の USB デ
 title: USB-IF 認定テスト
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 51b5169c89d717d031dc5e43f0b7e548ba717cf6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: da91a8ac1aaa06a104d6b283e7c1e12137990d50
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330369"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356593"
 ---
 # <a name="usb-if-certification-tests"></a>USB-IF 認定テスト
 
@@ -62,7 +62,7 @@ Windows 認定資格を満たす新しい USB の USB デバイスを送信す�
 
 - **USB の場合は認定資格**
 
-  USB の取得-から場合証明、 [USB-独立したテスト ラボを承認されている場合](http://www.usb.org/developers/compliance/labs/)し、Windows の認定資格については、デバイスに送信します。 USB を取得するには、次のオプションのいずれかを選択することができます-デバイスまたはホスト コント ローラーの場合は証明書。
+  USB の取得-から場合証明、 [USB-独立したテスト ラボを承認されている場合](https://www.usb.org/developers/compliance/labs/)し、Windows の認定資格については、デバイスに送信します。 USB を取得するには、次のオプションのいずれかを選択することができます-デバイスまたはホスト コント ローラーの場合は証明書。
 
   -   USB デバイスの送信-テスト用の独立したテスト ラボを承認されている場合。 ラボを検索する方法については、USB を参照してください。-独立したテスト ラボを承認されている場合。
       **注**通常は、承認された独立したテスト ラボ 1 ~ 2 週間かかります USB 仕様に準拠する目的の 1 つの USB デバイスをテストします。
@@ -75,7 +75,7 @@ Windows 認定資格を満たす新しい USB の USB デバイスを送信す�
 
   -   パンフレット、パッケージ化、および製品情報、デバイスの USB ロゴを使用できます。
   -   USB 掲載することができます-IF インテグレーターのリスト。
-  -   デバイスを持ち込み、[コンプライアンス ワーク ショップの USB 場合スポンサー](http://www.usb.org/developers/events/compshop/)します。 それぞれの年は 4 つのワーク ショップが、米国内で保持されているし、アジアに 1 つのワーク ショップが保持されています。
+  -   デバイスを持ち込み、[コンプライアンス ワーク ショップの USB 場合スポンサー](https://www.usb.org/developers/events/compshop/)します。 それぞれの年は 4 つのワーク ショップが、米国内で保持されているし、アジアに 1 つのワーク ショップが保持されています。
 
   デバイスが USB を経過した後のテスト ラボやワーク ショップからテスト ID 番号 (TID) が表示される場合は、認定テスト、します。 デバイスの Windows HLK テストの残りの部分を実行すると、この TID 数を Windows HLK に提供します。
 
@@ -83,7 +83,7 @@ Windows 認定資格を満たす新しい USB の USB デバイスを送信す�
 
 - **USB の自己テストがある場合**
 
-  USB コマンド Verifier テスト ツールをダウンロードして、USB の相互運用性のテスト ドキュメントおよびから必要なテストを実行、 [USB-IF](http://www.usb.org/home)します。 Windows 認定資格については、デバイスを次に送信します。
+  USB コマンド Verifier テスト ツールをダウンロードして、USB の相互運用性のテスト ドキュメントおよびから必要なテストを実行、 [USB-IF](https://www.usb.org/)します。 Windows 認定資格については、デバイスを次に送信します。
 
   **注**USB ホスト コント ローラーとハブの USB 資格がありません-場合にセルフ テスト オプションし、完全な USB を取得する必要があります-場合証明。
 

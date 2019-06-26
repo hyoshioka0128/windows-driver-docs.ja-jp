@@ -4,17 +4,17 @@ description: ACPI 5.0 仕様では、8 以降、Windows を実行する SoC ベ�
 ms.assetid: BAFBA051-FEDA-469B-9B67-C74D252C84F9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a3447610232f31d1a61eb6ef5bbc8a8ceae79c6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: daf042596bfd3ec168f9263f8c92b17cd1646f22
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337513"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353975"
 ---
 # <a name="overview-of-windows-support-for-acpi-50"></a>ACPI 5.0 に対する Windows のサポートの概要
 
 
-[ACPI 5.0 仕様](https://www.uefi.org/specifications)で導入された多くの便利な機能をサポートするために引き続き有効以降を実行する Windows 8、SoC ベースのモバイル プラットフォームをサポートによって、Windows Server 2016 の以降のサポート以前のバージョンの Windows。 この設計のガイドは、具体的には、Windows Server 2016 用に設計されたシステムの場合ともプラットフォーム SoC ベースに適用される ACPI 5.0 の部分に実装を指揮してで Windows を実行する ACPI の SoC 固有の機能を実装するためのベスト プラクティスについて説明しますこれらのプラットフォームです。
+[ACPI 5.0 仕様](https://uefi.org/specifications)で導入された多くの便利な機能をサポートするために引き続き有効以降を実行する Windows 8、SoC ベースのモバイル プラットフォームをサポートによって、Windows Server 2016 の以降のサポート以前のバージョンの Windows。 この設計のガイドは、具体的には、Windows Server 2016 用に設計されたシステムの場合ともプラットフォーム SoC ベースに適用される ACPI 5.0 の部分に実装を指揮してで Windows を実行する ACPI の SoC 固有の機能を実装するためのベスト プラクティスについて説明しますこれらのプラットフォームです。
 
 ## <a name="scope"></a>Scope
 
@@ -26,7 +26,7 @@ ms.locfileid: "63337513"
 ## <a name="firmware-revision-support"></a>ファームウェアのリビジョンのサポート
 
 
-Windows がファームウェアのリビジョンに基づくをサポートしている、 [ACPI 5.0 仕様](https://www.uefi.org/specifications)します。
+Windows がファームウェアのリビジョンに基づくをサポートしている、 [ACPI 5.0 仕様](https://uefi.org/specifications)します。
 
 **注**  Windows は、ACPI 5.0 仕様で定義されている機能のサブセットをサポートします。 Windows では、ファームウェアのリビジョンをより高いを比較する明示的なチェックはありません。 Windows では、この設計ガイド」の説明に従ってこのファームウェアには、必要なサポートが含まれている場合、ACPI 仕様の上位のリビジョンに準拠したファームウェアをサポートします。
 
@@ -53,7 +53,7 @@ Windows がファームウェアのリビジョンに基づくをサポートし
 </tr>
 <tr class="even">
 <td><p><a href="hardware-requirements-for-soc-based-platforms.md" data-raw-source="[Hardware requirements for SoC-based platforms](hardware-requirements-for-soc-based-platforms.md)">SoC ベースのプラットフォームのハードウェア要件</a></p></td>
-<td><p><a href="https://www.uefi.org/specifications" data-raw-source="[ACPI 5.0 specification](https://www.uefi.org/specifications)">ACPI 5.0 仕様</a>Windows を実行している SoC ベースのプラットフォームをサポートするためのハードウェア要件の新しいセットが導入されています。 ACPI 5.0 は、コストを削減するシステムのハードウェア制限の設計をサポートしていますが、長いバッテリ寿命を有効にするコネクテッド スタンバイ電源モデルをサポートしています。</p></td>
+<td><p><a href="https://uefi.org/specifications" data-raw-source="[ACPI 5.0 specification](https://uefi.org/specifications)">ACPI 5.0 仕様</a>Windows を実行している SoC ベースのプラットフォームをサポートするためのハードウェア要件の新しいセットが導入されています。 ACPI 5.0 は、コストを削減するシステムのハードウェア制限の設計をサポートしていますが、長いバッテリ寿命を有効にするコネクテッド スタンバイ電源モデルをサポートしています。</p></td>
 </tr>
 <tr class="odd">
 <td><p><a href="acpi-namespace-hierarchy.md" data-raw-source="[ACPI namespace hierarchy](acpi-namespace-hierarchy.md)">ACPI 名前空間の階層</a></p></td>
@@ -61,7 +61,7 @@ Windows がファームウェアのリビジョンに基づくをサポートし
 </tr>
 <tr class="even">
 <td><p><a href="microsoft-asl-compiler.md" data-raw-source="[Microsoft ASL compiler](microsoft-asl-compiler.md)">Microsoft ASL コンパイラ</a></p></td>
-<td><p>Microsoft ACPI のソース言語 (ASL) コンパイラ サポートでは、Advanced Configuration and Power Interface Specification、バージョン 5.0 の機能のバージョン 5.0 (<a href="https://www.uefi.org/specifications" data-raw-source="[ACPI 5.0 specification](https://www.uefi.org/specifications)">ACPI 5.0 仕様</a>)。 ASL コンパイラで、Windows Driver Kit (WDK) 8.1 に分散されます。</p></td>
+<td><p>Microsoft ACPI のソース言語 (ASL) コンパイラ サポートでは、Advanced Configuration and Power Interface Specification、バージョン 5.0 の機能のバージョン 5.0 (<a href="https://uefi.org/specifications" data-raw-source="[ACPI 5.0 specification](https://uefi.org/specifications)">ACPI 5.0 仕様</a>)。 ASL コンパイラで、Windows Driver Kit (WDK) 8.1 に分散されます。</p></td>
 </tr>
 </tbody>
 </table>

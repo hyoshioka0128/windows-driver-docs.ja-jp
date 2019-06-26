@@ -4,12 +4,12 @@ description: フラットベッド スキャナー用 WIA 項目のプロパテ�
 ms.assetid: 464549e5-8cdf-4e85-91a9-fa9a12f2a53b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a5ecaa5f6a34ce8538bdd3b6d954d5b98472f056
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b974ab1f174a33c9dee6c91323fd8587c6c448bb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352697"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355204"
 ---
 # <a name="wia-item-properties-for-flatbed-scanners"></a>フラットベッド スキャナー用 WIA 項目のプロパティ
 
@@ -17,7 +17,7 @@ ms.locfileid: "63352697"
 
 
 
-このセクションでは、スキャナーのフラット ベッド項目と子項目の必須および省略可能な WIA 項目プロパティについて説明します。 WIA の一般的なカメラに固有とスキャナーに固有のプロパティの完全な一覧を参照してください。 [WIA プロパティ](https://msdn.microsoft.com/library/windows/hardware/ff552739)します。
+このセクションでは、スキャナーのフラット ベッド項目と子項目の必須および省略可能な WIA 項目プロパティについて説明します。 WIA の一般的なカメラに固有とスキャナーに固有のプロパティの完全な一覧を参照してください。 [WIA プロパティ](https://docs.microsoft.com/windows-hardware/drivers/image/wia-properties)します。
 
 このセクションの内容:
 

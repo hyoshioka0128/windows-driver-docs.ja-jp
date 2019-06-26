@@ -7,12 +7,12 @@ keywords:
 - フィルター ドライバー WDK ファイル システムのアンインストール
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 062b126b9bc0becca59cff7a1ef470c4fbd83dd4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ae02c91128ecea16f5a01556b1737faebfc08c77
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379438"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380279"
 ---
 # <a name="using-an-inf-file-to-uninstall-a-file-system-filter-driver"></a>INF ファイルを使用したファイル システム フィルター ドライバーのアンインストール
 
@@ -52,11 +52,11 @@ InstallHinfSection(NULL,NULL,TEXT("DefaultUninstall 132 path-to-uninstall-dir\in
 
     追加と削除 で、アプリケーションの一覧を表示する方法の詳細については、Microsoft Windows sdk のセットアップとシステム管理のセクションでは"を削除する an Application"を参照してください。
 
--   アプリケーションのアンインストールまたは削除しないでください、INF ファイル (関連付けられた PNF ファイル)、Windows の INF ファイルのディレクトリから (*%windir%\\INF*)。
+-   アプリケーションのアンインストールまたは削除しないでください、INF ファイル (関連付けられた PNF ファイル)、Windows の INF ファイルのディレクトリから ( *%windir%\\INF*)。
 
 -   いくつかのフィルター ドライバー ファイルは、アプリケーションのアンインストール時に安全に削除できません。 これらのファイルに表示されませんが、 **DefaultUninstall.Services** INF ファイルのセクション。
 
-詳細については、アプリケーションのアンインストールを参照してください[デバイス インストール アプリケーションを記述して](https://msdn.microsoft.com/library/windows/hardware/ff554015)します。
+詳細については、アプリケーションのアンインストールを参照してください[デバイス インストール アプリケーションを記述して](https://docs.microsoft.com/windows-hardware/drivers/install/writing-a-device-installation-application)します。
 
  
 

@@ -8,12 +8,12 @@ keywords:
 - DDInstall.Services セクション WDK ネットワーク
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dea6eebe720c0ed9ee78d4d28c4b9fc4a9d426a6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6fcd4f1039b3698db0430704d21dcd90017f4c20
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370653"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354615"
 ---
 # <a name="ddinstallservices-section-in-a-network-inf-file"></a>ネットワーク INF ファイル内の DDInstall.Services セクション
 
@@ -21,7 +21,7 @@ ms.locfileid: "63370653"
 
 
 
-A *DDInstall*.**サービス**ネットワーク INF ファイルのセクションは、ジェネリックに基づきます[ **INF DDInstall.Services セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547349)します。
+A *DDInstall*.**サービス**ネットワーク INF ファイルのセクションは、ジェネリックに基づきます[ **INF DDInstall.Services セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-services-section)します。
 
 A *DDInstall*.**サービス**セクションは、1 つ以上含まれています**AddService** 、INF-ライター定義の参照ディレクティブ*サービス-インストール セクション*方法とタイミングを指定する、。サービスの特定のコンポーネントのドライバーが読み込まれます。
 
@@ -33,7 +33,7 @@ A *DDInstall*.**サービス**Net コンポーネント (アダプター) をイ
 
 **AddService**ディレクティブで、 *DDInstall*.**サービス**セクションを参照できます、*エラー ログ-インストール セクション*コンポーネントのエラー ログをインストールします。 エラー ログでは、すべてのネットワーク コンポーネントの省略可能です。
 
-詳細については、次を参照してください。 [ **INF AddService ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546326)します。
+詳細については、次を参照してください。 [ **INF AddService ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addservice-directive)します。
 
 例を次に、 *DDInstall*.**サービス** セクションで、*サービス-インストール セクション*、*エラー ログ-インストール セクション*、および*追加レジストリ セクション*によって参照されます。**AddReg**ディレクティブで、*エラー ログ-インストール セクション*:
 

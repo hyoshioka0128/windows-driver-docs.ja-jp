@@ -4,12 +4,12 @@ description: 仮想マシン キュー (VMQ)
 ms.assetid: c502c7d6-bdf1-4656-b5a5-339250910f08
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 042007d7437d65ba76fc6f167c052223e4708d51
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 285e8d2e07bf8519ab13fff81a5759a6f9698108
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63338331"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353638"
 ---
 # <a name="virtual-machine-queue-vmq"></a>仮想マシン キュー (VMQ)
 
@@ -29,7 +29,7 @@ VMQ インターフェイスをサポートします。
 
 -   分類別に、パケットをルーティングする先のメディア アクセス制御 (MAC) アドレスを使用して、ネットワーク アダプターのハードウェアで受信したパケットのキューが表示されます。
 
--   DMA を使用して仮想マシンに直接パケットを転送する NIC 機能は、メモリを共有します。 共有メモリの詳細については、次を参照してください。 [NDIS メモリ管理インターフェイス](https://msdn.microsoft.com/library/windows/hardware/ff564749)します。
+-   DMA を使用して仮想マシンに直接パケットを転送する NIC 機能は、メモリを共有します。 共有メモリの詳細については、次を参照してください。 [NDIS メモリ管理インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)します。
 
 -   異なるプロセッサ上の別の仮想マシンのパケットを処理することによって、複数のプロセッサをスケーリングします。
 

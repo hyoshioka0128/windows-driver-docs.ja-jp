@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - WDI_TLV_P2P_PROVISION_SERVICE_ATTRIBUTES ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 5570d2eb47afb79b9a2a90d081a1f2d90d641743
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5b498f207938e9640f6d107cede6c831e8f81511
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362798"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353295"
 ---
 # <a name="wditlvp2pprovisionserviceattributes"></a>WDI\_TLV\_P2P\_プロビジョニング\_サービス\_属性
 
@@ -34,13 +34,13 @@ WDI\_TLV\_P2P\_プロビジョニング\_サービス\_属性は、Wi-Fi Direct 
 | 型                                              | 説明                                                                                                                                        |
 |---------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|
 | UINT8                                             | Wi-Fi Direct ステータス コード、Wi-Fi Direct の仕様で定義されています。                                                                            |
-| [**WDI\_MAC\_アドレス**](https://msdn.microsoft.com/library/windows/hardware/dn926071) | 以降の Wi-Fi Direct 接続のローカルの MAC アドレス。                                                                                              |
+| [**WDI\_MAC\_アドレス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ns-dot11wdi-_wdi_mac_address) | 以降の Wi-Fi Direct 接続のローカルの MAC アドレス。                                                                                              |
 | UINT8                                             | 接続機能のビットマスク。                                                                                                                     |
 | UINT32                                            | 機能の機能のビットマスク。                                                                                                                        |
 | UINT32                                            | サービス インスタンスの提供情報 ID。                                                                                                         |
-| [**WDI\_MAC\_アドレス**](https://msdn.microsoft.com/library/windows/hardware/dn926071) | サービス インスタンスのサービスのアドレス。                                                                                                          |
+| [**WDI\_MAC\_アドレス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ns-dot11wdi-_wdi_mac_address) | サービス インスタンスのサービスのアドレス。                                                                                                          |
 | UINT32                                            | サービスにセッションを一意に識別するセッション ID です。                                                                                    |
-| [**WDI\_MAC\_アドレス**](https://msdn.microsoft.com/library/windows/hardware/dn926071) | サービスにセッションを一意に識別するセッションのアドレス。                                                                               |
+| [**WDI\_MAC\_アドレス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ns-dot11wdi-_wdi_mac_address) | サービスにセッションを一意に識別するセッションのアドレス。                                                                               |
 | UINT16                                            | 構成のタイムアウトをミリ秒単位で移動します。                                                                                                          |
 | UINT16                                            | クライアント構成のタイムアウト (ミリ秒単位)。                                                                                                      |
 | UINT8                                             | 永続的なグループを接続に使用するかどうかを示すフラグです。 フラグは、永続的なグループを使用する場合、1 に設定されます。                  |

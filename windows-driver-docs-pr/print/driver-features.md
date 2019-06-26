@@ -4,12 +4,12 @@ description: ドライバー機能
 ms.assetid: 56efebda-970f-4885-9c5f-1eac97aecfdd
 ms.date: 01/30/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 95b02d3d8d8f1b51ebea6cc41ffc02e0c1b1d461
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 48eec98b29f660b525cb4e46a0836219dc18d882
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387264"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356083"
 ---
 # <a name="driver-features"></a>ドライバー機能
 
@@ -216,7 +216,7 @@ ms.locfileid: "63387264"
 
 ## <a name="notes-on-driver-feature-keywords"></a>ドライバーの機能のキーワードに関する注意事項
 
-1. **%Custompagesize**ドライバーの機能が 5 つのオプションの値: x、y、WidthOffset、HeightOffset、および FeedDirection します。 5.16」セクションを参照してください、 *PostScript プリンター説明ファイル形式の仕様、バージョン 4.3*、これらのパラメーターの詳細について。
+1. **%Custompagesize**ドライバーの機能が 5 つのオプションの値: x、y、WidthOffset、HeightOffset、および FeedDirection します。 5\.16」セクションを参照してください、 *PostScript プリンター説明ファイル形式の仕様、バージョン 4.3*、これらのパラメーターの詳細について。
 
     A **%custompagesize**エントリが含まれる、 **%custompagesize** x、y、WidthOffset、HeightOffset、および FeedDirection オプションの値と共に、キーワード。 最初の項目は、NULL 文字が続く、%custompagesize キーワードです。 X の値、y、WidthOffset、および HeightOffset に従ってこのキーワードは、符号なし 10 進数字の部分文字列として表示されます、PostScript の数を表す各オプションの対応する値のポイントします。 1 つ以上のスペースまたはタブ文字の各数値の値が続きます。 文字列の最後の項目は、FeedDirection で、NULL 文字で終了の値です。 FeedDirection のオプションは、"LongEdge"、"ShortEdge"(0 と 1 の向きに対応する)、および"LongEdgeFlip"、"ShortEdgeFlip"(2 および 3 の向きに対応)。 チェック、  **\*LeadingEdge** PPD 機能キーワードがサポートされているフィードの方向をします。
 
@@ -238,7 +238,7 @@ ms.locfileid: "63387264"
     サポートされている場合は、この機能のオプションを EMF に関連する次の機能に変更を"false"に設定。
 
     1. 場合 **%pagepersheet** 「小冊子」は、「1」に変わります。
-    2. Collate は、"True"に設定されている場合 (設定できるいずれかのパブリックの部分で直接、 [ **DEVMODEW** ](https://msdn.microsoft.com/library/windows/hardware/ff552837)構造体または呼び出すことによって**SetOptions**上、  **\*Collate** PPD 機能)、部単位で印刷機能は現在利用できませんは、Collate を"False"に設定されます。
+    2. Collate は、"True"に設定されている場合 (設定できるいずれかのパブリックの部分で直接、 [ **DEVMODEW** ](https://docs.microsoft.com/windows/desktop/api/wingdi/ns-wingdi-_devicemodew)構造体または呼び出すことによって**SetOptions**上、  **\*Collate** PPD 機能)、部単位で印刷機能は現在利用できませんは、Collate を"False"に設定されます。
     3. 場合 **%pageorder**プリンターの現在の出力の順序設定の反対 **%pageorder**プリンターの値を元に戻されます。
 
 4. この機能は、スプーラー EMF スプールが有効になっている場合にのみサポートします。

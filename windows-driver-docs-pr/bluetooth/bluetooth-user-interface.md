@@ -4,12 +4,12 @@ description: ソフトウェア開発者および仕入先の Windows で Blueto
 ms.assetid: 7E342615-217A-4252-AAC4-7F7EE013840D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dc4f024d6811c27a05ee9df3594d535fa093ec71
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cc4ad313beb432d5d92688f034b6c9a97ddb3160
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328243"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354035"
 ---
 # <a name="bluetooth-user-interface"></a>Bluetooth のユーザー インターフェイス
 
@@ -53,7 +53,7 @@ Windows Vista RTM および Windows Vista SP1 では、Bluetooth の通知領域
 ## <a name="span-idcanvendorsaddtabstothecontrolpanelbluetoothsettingsapplicationspanspan-idcanvendorsaddtabstothecontrolpanelbluetoothsettingsapplicationspanspan-idcanvendorsaddtabstothecontrolpanelbluetoothsettingsapplicationspancan-vendors-add-tabs-to-the-control-panel-bluetooth-settings-application"></a><span id="Can_vendors_add_tabs_to_the_Control_Panel_Bluetooth_Settings_application_"></span><span id="can_vendors_add_tabs_to_the_control_panel_bluetooth_settings_application_"></span><span id="CAN_VENDORS_ADD_TABS_TO_THE_CONTROL_PANEL_BLUETOOTH_SETTINGS_APPLICATION_"></span>ベンダーは、コントロール パネルの Bluetooth 設定アプリケーションにタブを追加できますか。
 
 
-はい、ベンダーは、アプリケーションのシェルのプロパティ シート ハンドラーを実装することでタブを追加できます。 たとえば、Ihv インボックス Bluetooth スタック実装の拡張機能がファイル転送などのプロファイル バージョン 2.1 の Bluetooth の仕様に追加された機能拡張のタブを追加するプロパティ シート ハンドラーを実装できます。 プロパティ シート ハンドラーを実装する方法の詳細については、次を参照してください。[プロパティ シート ハンドラー](https://msdn.microsoft.com/library/windows/desktop/cc144106)します。
+はい、ベンダーは、アプリケーションのシェルのプロパティ シート ハンドラーを実装することでタブを追加できます。 たとえば、Ihv インボックス Bluetooth スタック実装の拡張機能がファイル転送などのプロファイル バージョン 2.1 の Bluetooth の仕様に追加された機能拡張のタブを追加するプロパティ シート ハンドラーを実装できます。 プロパティ シート ハンドラーを実装する方法の詳細については、次を参照してください。[プロパティ シート ハンドラー](https://docs.microsoft.com/previous-versions/windows/desktop/legacy/cc144106(v=vs.85))します。
 
 ## <a name="span-idwhydoeswindows7andwindowsvistadisplayadialogboxwhenabluetoothaudiodeviceisinitiallyconnectedspanspan-idwhydoeswindows7andwindowsvistadisplayadialogboxwhenabluetoothaudiodeviceisinitiallyconnectedspanspan-idwhydoeswindows7andwindowsvistadisplayadialogboxwhenabluetoothaudiodeviceisinitiallyconnectedspanwhy-does-windows-7-and-windows-vista-display-a-dialog-box-when-a-bluetooth-audio-device-is-initially-connected"></a><span id="Why_does_Windows_7_and_Windows_Vista_display_a_dialog_box_when_a_Bluetooth_audio_device_is_initially_connected_"></span><span id="why_does_windows_7_and_windows_vista_display_a_dialog_box_when_a_bluetooth_audio_device_is_initially_connected_"></span><span id="WHY_DOES_WINDOWS_7_AND_WINDOWS_VISTA_DISPLAY_A_DIALOG_BOX_WHEN_A_BLUETOOTH_AUDIO_DEVICE_IS_INITIALLY_CONNECTED_"></span>理由は Windows 7 および Windows Vista ダイアログ ボックスを表示、Bluetooth のオーディオ デバイスが最初に接続されている場合ですか。
 

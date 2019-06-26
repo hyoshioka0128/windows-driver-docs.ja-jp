@@ -12,12 +12,12 @@ keywords:
 - WDK のオーディオ、HD オーディオをクロックします。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: af329930b41058ec8ca10abae347fdf5c27ba5e8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 210de35d94ccc17035108d2aa04fe4f2e42bdb57
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335068"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354123"
 ---
 # <a name="wall-clock-and-link-position-registers"></a>ウォール クロックとリンク位置のレジスタ
 
@@ -32,7 +32,7 @@ HD オーディオ コント ローラーには、89 秒間に約 HD オーデ�
 
 循環バッファーのオフセットは、バイトの現在の読み取りまたは循環バッファーの先頭から書き込み位置オフセットだけです。 バッファーの末尾に達して、位置は、バッファーとゼロに循環バッファーのオフセットのリセットの先頭にラップします。 循環バッファーは、システム メモリに存在します。 詳細については、次を参照してください。、 *Intel 高度な定義オーディオ仕様*で、 [Intel HD オーディオ](https://go.microsoft.com/fwlink/p/?linkid=42508)web サイト。
 
-関数のカーネル モード ドライバーでは、ウォール クロックを読み取るでき、位置のレジスタを直接リンクすることができます。 直接アクセスを有効にするのには、HD オーディオ バス ドライバーは、システムの仮想メモリにレジスタを含む物理メモリをマップします。 ドライバーの関数呼び出し、 [ **GetWallClockRegister** ](https://msdn.microsoft.com/library/windows/hardware/ff536401)または[ **GetLinkPositionRegister** ](https://msdn.microsoft.com/library/windows/hardware/ff536398)仮想システムを取得するルーチンウォール クロックの登録またはリンク位置レジスタへのアドレス ポインター。 これら 2 つのルーチン、HD オーディオ DDI の両方のバージョンで利用できます。
+関数のカーネル モード ドライバーでは、ウォール クロックを読み取るでき、位置のレジスタを直接リンクすることができます。 直接アクセスを有効にするのには、HD オーディオ バス ドライバーは、システムの仮想メモリにレジスタを含む物理メモリをマップします。 ドライバーの関数呼び出し、 [ **GetWallClockRegister** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/nc-hdaudio-pget_wall_clock_register)または[ **GetLinkPositionRegister** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/nc-hdaudio-pget_link_position_register)仮想システムを取得するルーチンウォール クロックの登録またはリンク位置レジスタへのアドレス ポインター。 これら 2 つのルーチン、HD オーディオ DDI の両方のバージョンで利用できます。
 
 HD オーディオ コント ローラーのハードウェアには、メモリ ページを含まない、コント ローラーで別のレジスタのいずれかにウォール クロックとリンク位置のレジスタがミラー化します。 したがって、位置へのアクセス、コント ローラーのいずれかのレジスタをユーザー モードでないユーザー モードのプログラムは、ミラー化されたウォール クロック機能ドライバーがマップされている場合は、その他のレジスタの。 ドライバーは、その他のレジスタとプログラム、ハードウェアは、これらをタッチするユーザー モードのプログラムを許可しません。
 

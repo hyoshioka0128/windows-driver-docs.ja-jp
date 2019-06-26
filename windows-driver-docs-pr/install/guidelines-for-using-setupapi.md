@@ -8,12 +8,12 @@ keywords:
 - 一般的なセットアップは、WDK SetupAPI を関数します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a6abc3b0fe5f41edd2dae26ee97c5d92bb843b6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e40f10a614bfbb7353f991bbbf00f20dbdfaf835
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374562"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355140"
 ---
 # <a name="guidelines-for-using-setupapi"></a>SetupAPI の使用に関するガイドライン
 
@@ -21,7 +21,7 @@ ms.locfileid: "63374562"
 
 
 
-使用するためのガイドラインを次に、[一般的なセットアップ関数](https://msdn.microsoft.com/library/windows/hardware/ff544985)(**セットアップ * **Xxx*) と[デバイスのインストール機能](https://msdn.microsoft.com/library/windows/hardware/ff541299)(** SetupDi***Xxx*) SetupAPI が用意されています。
+使用するためのガイドラインを次に、[一般的なセットアップ関数](https://docs.microsoft.com/previous-versions/ff544985(v=vs.85))(**セットアップ * **Xxx*) と[デバイスのインストール機能](https://docs.microsoft.com/previous-versions/ff541299(v=vs.85))(** SetupDi***Xxx*) SetupAPI が用意されています。
 
 -   ォヌーォソェホ インストール ファイルの内容は、エラーのない、または指定したインストール ファイルがされていない悪意を持って変更します。 そのため、常に SetupAPI 関数から受信したすべての情報を検証します。 文字列は、有効な長さ、有効なサイズのバッファーであることと、インデックス値が有効な範囲内にあることを確認します。
 

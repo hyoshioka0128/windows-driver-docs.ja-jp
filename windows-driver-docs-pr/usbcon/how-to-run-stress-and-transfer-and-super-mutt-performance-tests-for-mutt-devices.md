@@ -3,12 +3,12 @@ Description: ストレスおよび転送とスーパー MUTT パフォーマン�
 title: MUTT デバイスのストレスおよび転送パフォーマンステストの実行方法
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d254c6e79297fa8ede9d4d7718afda88e3f03296
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 27ddc535fd62ef118816f6edcd490102a28dff2e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366041"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378316"
 ---
 # <a name="how-to-run-stress-and-transfer-performance-tests-for-mutt-devices"></a>MUTT デバイスのストレスおよび転送パフォーマンステストの実行方法
 
@@ -38,7 +38,7 @@ ms.locfileid: "63366041"
 3.  という名前のスクリプトを実行**FX3Perf.bat**テストの実行を開始します。
 
 ## <a name="related-topics"></a>関連トピック
-[USB](https://msdn.microsoft.com/library/windows/hardware/ff538930)  
+[USB](https://docs.microsoft.com/windows-hardware/drivers/)  
 [Microsoft USB Test Tool (MUTT) デバイス](microsoft-usb-test-tool--mutt--devices.md)  
 
 

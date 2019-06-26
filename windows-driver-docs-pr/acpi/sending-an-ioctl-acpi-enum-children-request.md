@@ -4,23 +4,23 @@ description: IOCTL_ACPI_ENUM_CHILDREN 要求を送信する
 ms.assetid: cbad53dd-4320-4920-9d16-231d0aaae839
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 620b75352436551925c185984b6c5ed24fcf1ef0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7f2551111415ee5350f7dad6cb778f25811abbdc
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330272"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355807"
 ---
 # <a name="sending-an-ioctlacpienumchildren-request"></a>送信 IOCTL\_ACPI\_ENUM\_子要求
 
 
-ドライバーは通常 2 つのシーケンスを使用して[ **IOCTL\_ACPI\_ENUM\_子**](https://msdn.microsoft.com/library/windows/hardware/ff536147)にデバイスの名前空間内の目的のオブジェクトを列挙する要求要求が送信されます。 ドライバーは、オブジェクトの名前とパスを格納するために必要なドライバーに割り当てられた出力バッファーのサイズを取得する最初の要求を送信します。 ドライバーはドライバーによって割り当てられる出力バッファー内のオブジェクトの名前とパスを返すには、2 番目の要求を送信します。
+ドライバーは通常 2 つのシーケンスを使用して[ **IOCTL\_ACPI\_ENUM\_子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ni-acpiioct-ioctl_acpi_enum_children)にデバイスの名前空間内の目的のオブジェクトを列挙する要求要求が送信されます。 ドライバーは、オブジェクトの名前とパスを格納するために必要なドライバーに割り当てられた出力バッファーのサイズを取得する最初の要求を送信します。 ドライバーはドライバーによって割り当てられる出力バッファー内のオブジェクトの名前とパスを返すには、2 番目の要求を送信します。
 
 次のコード例は、2 つの同期 IOCTL のシーケンスを送信する方法を示しています。\_ACPI\_ENUM\_子要求を再帰的には、要求が送られる親デバイスのすべての子デバイスを列挙します。 コードでは、次の一連の最初の要求を処理するために操作を実行します。
 
-1.  最初の要求の入力バッファーを設定します。 入力バッファーが、 [ **ACPI\_ENUM\_子\_入力\_バッファー** ](https://msdn.microsoft.com/library/windows/hardware/ff536110)構造体**署名**設定列挙体を\_子\_入力\_バッファー\_署名と**フラグ**列挙型に設定\_子\_マルチレベルします。
+1.  最初の要求の入力バッファーを設定します。 入力バッファーが、 [ **ACPI\_ENUM\_子\_入力\_バッファー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ns-acpiioct-_acpi_enum_children_input_buffer)構造体**署名**設定列挙体を\_子\_入力\_バッファー\_署名と**フラグ**列挙型に設定\_子\_マルチレベルします。
 
-2.  最初の要求の出力バッファーを設定します。 出力バッファーに設定されて、 [ **ACPI\_ENUM\_子\_出力\_バッファー** ](https://msdn.microsoft.com/library/windows/hardware/ff536112)構造体。 この出力バッファーでは、1 つだけ含まれている[ **ACPI\_ENUM\_子**](https://msdn.microsoft.com/library/windows/hardware/ff536109)をデバイスの名前を返すのに十分な大きさではない構造体。
+2.  最初の要求の出力バッファーを設定します。 出力バッファーに設定されて、 [ **ACPI\_ENUM\_子\_出力\_バッファー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ns-acpiioct-_acpi_enum_children_output_buffer)構造体。 この出力バッファーでは、1 つだけ含まれている[ **ACPI\_ENUM\_子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ns-acpiioct-_acpi_enum_child)をデバイスの名前を返すのに十分な大きさではない構造体。
 
 3.  呼び出し元が指定した呼び出し[SendDownStreamIrp 関数](senddownstreamirp-function.md)親デバイスに同期的に、最初の要求を送信します。
 
@@ -34,7 +34,7 @@ ms.locfileid: "63330272"
 
 2.  ドライバーによって提供される呼び出し**SendDownStreamIrp**親デバイスに同期的に 2 番目の要求を送信します。
 
-3.  ACPI ドライバーことを確認します、**署名**acpi メンバー\_ENUM\_子\_出力\_バッファー\_署名設定**コード** 1 つ以上の (少なくとも 1 つのオブジェクトの名前とパスが返されたことを示す) に設定し、**情報**のメンバー、 [ **IO\_状態\_ブロック**](https://msdn.microsoft.com/library/windows/hardware/ff550671)出力バッファーの割り当てのサイズにします。
+3.  ACPI ドライバーことを確認します、**署名**acpi メンバー\_ENUM\_子\_出力\_バッファー\_署名設定**コード** 1 つ以上の (少なくとも 1 つのオブジェクトの名前とパスが返されたことを示す) に設定し、**情報**のメンバー、 [ **IO\_状態\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_status_block)出力バッファーの割り当てのサイズにします。
 
 4.  出力バッファー内の子オブジェクト名の配列を処理します。
 

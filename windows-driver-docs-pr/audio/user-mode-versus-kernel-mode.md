@@ -14,12 +14,12 @@ keywords:
 - ユーザー モードと、DirectMusic カーネル モードの WDK オーディオ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a94943d2ec07fe783963e6b1c4e3595da0e5419
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7bf38a3b33d390384fac8d84331edce018554269
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335337"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354141"
 ---
 # <a name="user-mode-versus-kernel-mode"></a>ユーザー モードとカーネル モードの比較
 
@@ -29,7 +29,7 @@ ms.locfileid: "63335337"
 
 ユーザー モードまたはカーネル モードのいずれかで実行するカスタム シンセサイザーを記述できます。 一般に、ソフトウェア シンセサイザーがユーザー モードで実装するために簡単になりますが、頻繁にカーネル モードで待機時間の短縮を達成できます。 ハードウェア コンポーネントは、カーネル モードでのみサポートされていることができます。 適切な理由がない、ただし、最終的な実装がカーネル モードで実行する場合でも、ユーザー モードでの開発を開始するためです。
 
-ソフトウェアのシンセサイザー (および wave シンク) を構築することは、ユーザー モードで非常に簡単です。 ユーザー モード インターフェイスは簡単に使用し、デバッグが簡略化します。 別のメリットは、結果として得られるコンポーネントが、Microsoft Windows 実行可能ファイルでことです。 この実行可能ファイルは、COM オブジェクトであるためには、単に regsvr32.exe を使用してコマンドラインからの自己登録のインストールです。 (RegSvr32 システム アプリケーションの呼び出し、DLL の[ **DllRegisterServer** ](https://msdn.microsoft.com/library/windows/desktop/ms682162)関数。 詳細については、ドキュメントを参照して、Microsoft Windows SDK。)
+ソフトウェアのシンセサイザー (および wave シンク) を構築することは、ユーザー モードで非常に簡単です。 ユーザー モード インターフェイスは簡単に使用し、デバッグが簡略化します。 別のメリットは、結果として得られるコンポーネントが、Microsoft Windows 実行可能ファイルでことです。 この実行可能ファイルは、COM オブジェクトであるためには、単に regsvr32.exe を使用してコマンドラインからの自己登録のインストールです。 (RegSvr32 システム アプリケーションの呼び出し、DLL の[ **DllRegisterServer** ](https://docs.microsoft.com/windows/desktop/api/olectl/nf-olectl-dllregisterserver)関数。 詳細については、ドキュメントを参照して、Microsoft Windows SDK。)
 
 ユーザー モードの実装が必要な場合は、製品、ドライバーではなく、アプリケーション プログラムを配信できます。 ユーザーは、複雑なドライバーのインストール プロセスを回避し、インストールした後に再起動は必要ありません。 ユーザー モード コンポーネントは、他のアプリケーションで使用できるかどうかに応じて、使用可能なポートの 1 つとして列挙できます。 詳細については、次を参照してください。[登録 Your シンセサイザー](registering-your-synthesizer.md)します。
 

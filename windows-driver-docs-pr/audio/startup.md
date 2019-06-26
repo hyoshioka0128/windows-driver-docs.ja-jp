@@ -4,12 +4,12 @@ description: HFP デバイスの起動トピックでは、Bluetooth ハンズ�
 ms.assetid: C478BCBA-2A17-4604-AE2B-99B3445C741B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 13434323205ff001db3eb1105ecfd2c5817ed878
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 53fc4269e30aba98c77ff9acb6b04a6263b23d2e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328606"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354276"
 ---
 # <a name="hfp-device-startup"></a>HFP デバイスの起動
 
@@ -46,7 +46,7 @@ Windows オーディオ ドライバーに IoRegisterPlugPlayNotification が呼
 ## <a name="span-idretrievingstaticinformationspanspan-idretrievingstaticinformationspanspan-idretrievingstaticinformationspanretrieving-static-information"></a><span id="Retrieving_static_information"></span><span id="retrieving_static_information"></span><span id="RETRIEVING_STATIC_INFORMATION"></span>静的な情報を取得します。
 
 
-オーディオ ドライバーでは、HFP ドライバーからの静的な情報を取得できます。 たとえば、HFP ドライバーでは、ksnodetype、コンテナー id とペアになる HFP デバイスのフレンドリ名を提供できます。 オーディオ ドライバーでは、作成し、初期化 KS フィルターまたはフィルターを表すペアになる HFP デバイスをこの情報を使用できます。 オーディオ ドライバーを使用して[ **IOCTL\_BTHHFP\_デバイス\_取得\_記述子**](https://msdn.microsoft.com/library/windows/hardware/dn265108)この情報を取得します。
+オーディオ ドライバーでは、HFP ドライバーからの静的な情報を取得できます。 たとえば、HFP ドライバーでは、ksnodetype、コンテナー id とペアになる HFP デバイスのフレンドリ名を提供できます。 オーディオ ドライバーでは、作成し、初期化 KS フィルターまたはフィルターを表すペアになる HFP デバイスをこの情報を使用できます。 オーディオ ドライバーを使用して[ **IOCTL\_BTHHFP\_デバイス\_取得\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthhfpddi/ni-bthhfpddi-ioctl_bthhfp_device_get_descriptor)この情報を取得します。
 
 オーディオ ドライバーには、ペアになっている HFP デバイスの Bluetooth アドレスも取得できます。 各ペアになっている HFP デバイスが Bluetooth の一意のアドレスと、これは、一意の識別子の文字列として役立ちます。 詳細については、次を参照してください。 [HF デバイスの Bluetooth のアドレスを取得する](obtaining-bluetooth-address-of-hf-device.md)します。
 
@@ -81,7 +81,7 @@ Windows オーディオ ドライバーに IoRegisterPlugPlayNotification が呼
 オーディオ ドライバーでは、IOCTL、ヘッドセットのボリュームの状態で発生したボリューム レベルでの変更に関する情報を取得する get ボリュームの状態を送信します。
 
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
-[**IOCTL\_BTHHFP\_DEVICE\_GET\_DESCRIPTOR**](https://msdn.microsoft.com/library/windows/hardware/dn265108)  
+[**IOCTL\_BTHHFP\_DEVICE\_GET\_DESCRIPTOR**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthhfpddi/ni-bthhfpddi-ioctl_bthhfp_device_get_descriptor)  
 [操作の理論を概説します。](theory-of-operation.md)  
 [HF デバイスの Bluetooth のアドレスを取得します。](obtaining-bluetooth-address-of-hf-device.md)  
 

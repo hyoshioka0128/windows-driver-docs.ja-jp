@@ -4,12 +4,12 @@ description: 再生時のストリームの遅延
 ms.assetid: 70b41245-f463-4225-b79c-0ee65d8a0132
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cde863bb7a035f4f5c4ec043dd09240f9e2bdf96
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d121edf1edf9f6820b00361c129ddf67945dc755
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328628"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354257"
 ---
 # <a name="stream-latency-during-playback"></a>再生時のストリームの遅延
 
@@ -36,9 +36,9 @@ ms.locfileid: "63328628"
 
 クライアント バッファーからのデータのブロックの読み込みが完了するたびに通知するオーディオ デバイスを持つクライアントことで、待機時間が実際よりも小さい。
 
-クライアントに送信することによって、ストリームの待機時間に影響する遅延の概要を取得できる、 [ **KSPROPERTY\_RTAUDIO\_HWLATENCY** ](https://msdn.microsoft.com/library/windows/hardware/ff537378) WaveRT ポート ドライバーに要求します。
+クライアントに送信することによって、ストリームの待機時間に影響する遅延の概要を取得できる、 [ **KSPROPERTY\_RTAUDIO\_HWLATENCY** ](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-rtaudio-hwlatency) WaveRT ポート ドライバーに要求します。
 
-クライアントは、書き込みの間で維持し、位置を再生するために分離の量を決定後、クライアントは、書き込み位置を進めるまでにする方法を決定する再生位置の変更を監視します。 Windows Server 2008 および以降のオペレーティング システムでは、クライアントの送信[ **KSPROPERTY\_RTAUDIO\_POSITIONREGISTER** ](https://msdn.microsoft.com/library/windows/hardware/ff537381)再生位置を決定するプロパティの要求。 この機能のサポートは、PortCls システム ドライバーの機能強化によって提供されます。
+クライアントは、書き込みの間で維持し、位置を再生するために分離の量を決定後、クライアントは、書き込み位置を進めるまでにする方法を決定する再生位置の変更を監視します。 Windows Server 2008 および以降のオペレーティング システムでは、クライアントの送信[ **KSPROPERTY\_RTAUDIO\_POSITIONREGISTER** ](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-rtaudio-positionregister)再生位置を決定するプロパティの要求。 この機能のサポートは、PortCls システム ドライバーの機能強化によって提供されます。
 
 オーディオ デバイス上の図で示すように登録された位置にある場合、プロパティの要求は、ユーザー モードのクライアントにアクセスできる仮想メモリ アドレスにレジスタをマップします。 位置、レジスタがマップされた後、クライアントは現在を決定するメモリ アドレスの内容の再生位置を読み取ることができます。
 

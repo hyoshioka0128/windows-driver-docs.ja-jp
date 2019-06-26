@@ -10,12 +10,12 @@ keywords:
 - WDK DirectX VA の暗号化
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a7e1139a12c829ab8f6f5f324d1b93a8b299c13
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bfda7421910252e004d9ad46718e05bc77017d78
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380415"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355561"
 ---
 # <a name="encryption-support"></a>暗号化のサポート
 
@@ -47,7 +47,7 @@ ms.locfileid: "63380415"
 
 必要な暗号化方式の初期化パラメーターを渡すには、ホストとアクセラレータ間で交換される各データ セットは、暗号化プロトコルの種類の GUID によってプレフィックス指定する必要があります。 この GUID は、別のデータからの暗号化の 1 つの種類のデータを区別します。 これは、機能は、暗号化の種類を 1 つは、1 つの DirectX VA バッファーの使用可能であり、別の DirectX VA バッファーの別の種類の暗号化を使用できますので必要です。
 
-[ **DXVA\_EncryptProtocolHeader** ](https://msdn.microsoft.com/library/windows/hardware/ff563965)構造を使用して、暗号化プロトコルが使用されている暗号化の種類と使用されていることを示します。
+[ **DXVA\_EncryptProtocolHeader** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_encryptprotocolheader)構造を使用して、暗号化プロトコルが使用されている暗号化の種類と使用されていることを示します。
 
  
 

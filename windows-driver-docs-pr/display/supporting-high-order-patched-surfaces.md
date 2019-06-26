@@ -10,12 +10,12 @@ keywords:
 - パッチが適用されたサーフェス WDK DirectX 9.0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f1b8db2d23d05506d79ca214c079dd1a0f94689
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6d4f3d4a323adc5d0b822740d0edf85e7b2e52c6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373407"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355542"
 ---
 # <a name="supporting-high-order-patched-surfaces"></a>高次パッチ サーフェスのサポート
 
@@ -43,7 +43,7 @@ N パッチ目盛り表示デバイスをサポートできる、ドライバー
 
 ドライバーへの応答で D3DCAPS9 構造体を返す、 **GetDriverInfo2** 」の説明に従って D3DCAPS8 構造体を返すにする方法と同様にクエリ[DirectX 8.0 スタイル Direct3D の機能を Reporting](reporting-directx-8-0-style-direct3d-capabilities.md)します。 このクエリのサポートについては、「[サポート GetDriverInfo2](supporting-getdriverinfo2.md)します。
 
-ドライバーの指定、D3DFORMAT\_OP\_DMAP フラグ、 **dwOperations**のメンバー、 [ **DDPIXELFORMAT** ](https://msdn.microsoft.com/library/windows/hardware/ff550274)特定の構造置き換えマップ サンプリングの形式をマークする画面形式です。 テクスチャ サーフェスを作成すると、Direct3D のランタイム設定、DDSCAPS3\_DMAP ビット、 **dwCaps3** 、DDSCAPSEX のメンバー ([**DDSCAPS2**](https://msdn.microsoft.com/library/windows/hardware/ff550292)) 構造体テセレーション単位にテクスチャをサンプリングすることを示します。
+ドライバーの指定、D3DFORMAT\_OP\_DMAP フラグ、 **dwOperations**のメンバー、 [ **DDPIXELFORMAT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ddpixelformat)特定の構造置き換えマップ サンプリングの形式をマークする画面形式です。 テクスチャ サーフェスを作成すると、Direct3D のランタイム設定、DDSCAPS3\_DMAP ビット、 **dwCaps3** 、DDSCAPSEX のメンバー ([**DDSCAPS2**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff550292(v=vs.85))) 構造体テセレーション単位にテクスチャをサンプリングすることを示します。
 
 DirectX 9.0 と以降のドライバーが N パッチ機能を無効にする必要があることに注意してください。 場合にのみ、D3DRS @property\_PATCHSEGMENTS でレンダリング状態は、1.0 f より小さい。 DirectX 8.1 と以前のドライバーは、このように動作する必要はありません。
 
@@ -65,7 +65,7 @@ D3DRS\_ENABLEADAPTIVETESSELLATION = **FALSE**
 
 これは DirectX 9.0 の新機能も、D3DDMAPSAMPLER サンプラーは、置き換えマップ テクスチャを設定するテセレーション単体で使用されます。
 
-**注**   DirectX 9.0 と以降のアプリケーションは、D3DSAMP を使用できる\_DMAPOFFSET presampled 置き換えマップにコントロールを頂点のオフセットを D3DSAMPLERSTATETYPE 列挙値。 ランタイムは、ユーザー モード サンプラーの状態をマップ (D3DSAMP\_*Xxx*) には、カーネル モード D3DTSS\_*Xxx*値 DirectX 9.0 と以降のドライバーは処理する必要はありませんユーザー モード サンプラーの状態。 そのため、ドライバーには、D3DTSS が処理しなければならない代わりに\_DMAPOFFSET 値、 **TSState**のメンバー、 [ **D3DHAL\_DP2TEXTURESTAGESTATE** ](https://msdn.microsoft.com/library/windows/hardware/ff545878)D3DDP2OP 構造\_TEXTURESTAGESTATE 操作。 D3DSAMPLERSTATETYPE と presampled 変位マッピングする方法の詳細については、DirectX SDK の最新のドキュメントを参照してください。
+**注**   DirectX 9.0 と以降のアプリケーションは、D3DSAMP を使用できる\_DMAPOFFSET presampled 置き換えマップにコントロールを頂点のオフセットを D3DSAMPLERSTATETYPE 列挙値。 ランタイムは、ユーザー モード サンプラーの状態をマップ (D3DSAMP\_*Xxx*) には、カーネル モード D3DTSS\_*Xxx*値 DirectX 9.0 と以降のドライバーは処理する必要はありませんユーザー モード サンプラーの状態。 そのため、ドライバーには、D3DTSS が処理しなければならない代わりに\_DMAPOFFSET 値、 **TSState**のメンバー、 [ **D3DHAL\_DP2TEXTURESTAGESTATE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/ns-d3dhal-_d3dhal_dp2texturestagestate)D3DDP2OP 構造\_TEXTURESTAGESTATE 操作。 D3DSAMPLERSTATETYPE と presampled 変位マッピングする方法の詳細については、DirectX SDK の最新のドキュメントを参照してください。
 
  
 

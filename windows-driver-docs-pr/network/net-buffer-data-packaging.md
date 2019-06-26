@@ -11,12 +11,12 @@ keywords:
 - NET_BUFFER データ パッケージの WDK ネットワーク
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 19adce4ead2584e144d610ab35e1d2b08af66c72
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: db03f7007f271cc3fbfa19e4018669a3a8cd46ea
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363318"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353325"
 ---
 # <a name="netbuffer-data-packaging"></a>NET\_バッファー データのパッケージ化
 
@@ -24,7 +24,7 @@ ms.locfileid: "63363318"
 
 
 
-データのパッケージ化は、NDIS 6.0 で再設計されました。 送信および受信のアーキテクチャに基づいている、 [ **NDIS\_パケット**](https://msdn.microsoft.com/library/windows/hardware/ff557086)構造に基づいているアーキテクチャで置き換えられました[ **NET\_バッファー** ](https://msdn.microsoft.com/library/windows/hardware/ff568376)と[ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)構造体。 NET\_バッファーの構造は、NDIS と同等の機能\_パケットの構造体。 NET\_バッファーの構造体は、NDIS、プロトコルのドライバー、およびミニポート ドライバーの予約領域と同様に、ネットワーク データのバッファー (MDL チェーン) を指定します。 NET\_バッファーの構造体は、NET によって定義された一覧にまとめてリンクできます\_バッファー\_リスト構造体。 NET\_バッファー\_リスト構造は、すべてのネットワークに適用されるアウト オブ バンド (OOB) データにストレージを提供するも\_リスト内のバッファーの構造体。
+データのパッケージ化は、NDIS 6.0 で再設計されました。 送信および受信のアーキテクチャに基づいている、 [ **NDIS\_パケット**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff557086(v=vs.85))構造に基づいているアーキテクチャで置き換えられました[ **NET\_バッファー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)と[ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)構造体。 NET\_バッファーの構造は、NDIS と同等の機能\_パケットの構造体。 NET\_バッファーの構造体は、NDIS、プロトコルのドライバー、およびミニポート ドライバーの予約領域と同様に、ネットワーク データのバッファー (MDL チェーン) を指定します。 NET\_バッファーの構造体は、NET によって定義された一覧にまとめてリンクできます\_バッファー\_リスト構造体。 NET\_バッファー\_リスト構造は、すべてのネットワークに適用されるアウト オブ バンド (OOB) データにストレージを提供するも\_リスト内のバッファーの構造体。
 
 Microsoft 次世代ネットワーク ドライバー スタック、Winsock、TCP/IP トランスポートをなどのすべてのコンポーネントを使用して、NET\_バッファー データのパッケージ化します。 ドライバー スタック全体で一貫したデータのパッケージ化は、データを再パッケージ化する必要はありません、データの処理を簡略化され、関数呼び出しの数を減らします。
 

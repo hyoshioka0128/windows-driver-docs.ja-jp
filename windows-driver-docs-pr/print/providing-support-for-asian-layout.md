@@ -17,12 +17,12 @@ keywords:
 - 右から左に読む言語 WDk を印刷します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 89c49b95b8c7a45bbde4b33e9b0b85387d3bb0e6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d8aa3bddaa2035af7e152e6269fd8e9e687d95c4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376562"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356007"
 ---
 # <a name="providing-support-for-asian-layout"></a>アジア向けレイアウトのサポートを提供する
 
@@ -33,7 +33,7 @@ Microsoft Windows では、右から次の機能がアラビア語、日本語�
 
 -   **小冊子 Edge**:シートを折りたたむし、並列でページのレイアウトが、小冊子を印刷する場合、ユーザーは、右から左に小冊子のページを注文できます。 次の図は、小冊子を使用して、小冊子のページ レイアウトは\_EDGE\_適切なフラグ![。小冊子を使用して、小冊子のページ レイアウトを示す図\-edge\-右フラグ](images/asian-booklet.png)
 
-アジア言語のレイアウトをサポートするために、ドライバーの n-up 方向および小冊子のエッジを変更するためのフラグは、Windows Vista で利用できます。 これらの値を設定する方法の詳細については、次を参照してください[ **DrvQueryJobAttributes** ](https://msdn.microsoft.com/library/windows/hardware/ff548581)と[**属性\_情報\_4** ](https://msdn.microsoft.com/library/windows/hardware/ff545096).
+アジア言語のレイアウトをサポートするために、ドライバーの n-up 方向および小冊子のエッジを変更するためのフラグは、Windows Vista で利用できます。 これらの値を設定する方法の詳細については、次を参照してください[ **DrvQueryJobAttributes** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winddiui/nf-winddiui-drvqueryjobattributes)と[**属性\_情報\_4** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winddiui/ns-winddiui-_attribute_info_4).
 
  
 

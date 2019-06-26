@@ -13,12 +13,12 @@ keywords:
 - KS フィルター グラフ WDK オーディオ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b6ba6e0b89b4e7cea8e50f77ddfbc5a17b33d0f3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b2d140a083245bfa2f9c5e8911ef13c7768f9134
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331484"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355695"
 ---
 # <a name="audio-filter-graphs"></a>オーディオ フィルター グラフ
 
@@ -42,7 +42,7 @@ KS フィルターのグラフは、1 つまたは複数のデータ ストリ�
 
 上記の図では、通常の各 wave フィルターとその対応するトポロジ フィルター間に表示されるデータ パスが物理接続を表します。 オーディオ アダプター ソフトウェアを構成することはできませんの固定、ハードウェアの接続。
 
-ブリッジ暗証番号 (pin) または物理的な接続を使用して pin は完全に接続されている、ため、pin が暗黙的に存在する、インスタンス化またはできません削除します。 したがって、オブジェクトが存在しないブリッジ pin (ピンのブリッジのインスタンス)、Irp を送信するのフィルター オブジェクトを照会することができますが、 [KSPROPSETID\_Pin](https://msdn.microsoft.com/library/windows/hardware/ff566584)そのブリッジの pin のプロパティ。 物理接続による pin に同じ規則が適用されます。
+ブリッジ暗証番号 (pin) または物理的な接続を使用して pin は完全に接続されている、ため、pin が暗黙的に存在する、インスタンス化またはできません削除します。 したがって、オブジェクトが存在しないブリッジ pin (ピンのブリッジのインスタンス)、Irp を送信するのフィルター オブジェクトを照会することができますが、 [KSPROPSETID\_Pin](https://docs.microsoft.com/windows-hardware/drivers/stream/kspropsetid-pin)そのブリッジの pin のプロパティ。 物理接続による pin に同じ規則が適用されます。
 
 ブリッジの pin または物理的な接続を通過する信号には、アナログまたはデジタルのいずれかを指定できます。
 

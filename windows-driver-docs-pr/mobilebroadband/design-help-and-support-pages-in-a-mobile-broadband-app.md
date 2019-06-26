@@ -4,12 +4,12 @@ description: モバイル ブロードバンド アプリでヘルプ ページ�
 ms.assetid: bac8987e-e801-4488-b204-5532fb3ced1b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c80b7832a49adc67ad91842e0cbcec59c938e45
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f5afa4bb7a7932ad129d512e029a4257d3858ed4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383775"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354659"
 ---
 # <a name="design-help-and-support-pages-in-a-mobile-broadband-app"></a>モバイル ブロードバンド アプリでヘルプ ページとサポート ページを設計する
 
@@ -46,7 +46,7 @@ ms.locfileid: "63383775"
 ## <a name="span-idadditionalresourcesspanspan-idadditionalresourcesspanspan-idadditionalresourcesspanadditional-resources"></a><span id="Additional_resources"></span><span id="additional_resources"></span><span id="ADDITIONAL_RESOURCES"></span>その他のリソース
 
 
--   組み込みのコントロールを使用する方法の詳細については、次を参照してください。[コントロールやコンテンツを追加する](https://msdn.microsoft.com/library/windows/apps/hh465393)します。
+-   組み込みのコントロールを使用する方法の詳細については、次を参照してください。[コントロールやコンテンツを追加する](https://docs.microsoft.com/previous-versions/windows/apps/hh465393(v=win.10))します。
 
 -   [モバイル ブロード バンド WinRT API の概要](mobile-broadband-winrt-api-overview.md)
 

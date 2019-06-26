@@ -3,12 +3,12 @@ title: 古いメソッド - Windows 10 バージョン 1607 およびそれ以�
 description: 古いメソッド - Windows 10 バージョン 1607 およびそれ以前
 ms.date: 05/07/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 739b8a90c89372f5e3175591cfa971b4e3116df0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9a7e95e9da5e3c22c6968a77b36e296b1d1deda7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337510"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353960"
 ---
 # <a name="old-method---windows-10-version-1607-and-earlier"></a>古いメソッド - Windows 10 バージョン 1607 およびそれ以前
 
@@ -36,13 +36,13 @@ ms.locfileid: "63337510"
 
 7. この時点では、いくつかのオプションがあるし、IT 担当者は、特定の指示/構成オプションのシステムの OEM にお問い合わせくださいする必要があります。
 
-    a.   クリーン インストール メディアを挿入し、setup.exe を実行します。 可能性がある、インストール プロセスが CSM の検出し、レガシ ブートと BIOS モードで再インストールされます。
+    a.  クリーン インストール メディアを挿入し、setup.exe を実行します。 可能性がある、インストール プロセスが CSM の検出し、レガシ ブートと BIOS モードで再インストールされます。
 
-    b.   手順 5 は、プライマリのブート ディスクを使用した Diskpart.exe 内でまだ選択されているから"GPT に変換"を実行します
+    b.  手順 5 は、プライマリのブート ディスクを使用した Diskpart.exe 内でまだ選択されているから"GPT に変換"を実行します
 
       - 挿入、インストール メディア、再起動、および設定を使用して移動します。 同様のテキストと共にエラー メッセージが「選択したデバイスをインストールことはできません」が発生したか「ディスクの形式がサポートされていません」を起動し、デバイスが CSM を検出して、レガシ ブート MBR メソッドを起動しようとしています。
 
-      - また、UEFI ブート メソッドの GPT ディスクを手動で構成する手順に従います。 見て[Recommended UEFI-Based ディスク パーティション構成](https://technet.microsoft.com/library/dd744301)3 番目のパーティションを対象とする setup.exe を実行します。
+      - また、UEFI ブート メソッドの GPT ディスクを手動で構成する手順に従います。 見て[Recommended UEFI-Based ディスク パーティション構成](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-7/dd744301(v=ws.10))3 番目のパーティションを対象とする setup.exe を実行します。
 
 8. Windows 7 が実行中の (最新バージョンにパッチを適用する必要があります) と、システムがインストールされると、Windows 10 にアップグレードします。
 
@@ -53,4 +53,4 @@ ms.locfileid: "63337510"
 
 ## <a name="related-resources"></a>関連リソース
 
-[UEFI ベースのディスク パーティションの構成をお勧めします。](https://technet.microsoft.com/library/dd744301)
+[UEFI ベースのディスク パーティションの構成をお勧めします。](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-7/dd744301(v=ws.10))

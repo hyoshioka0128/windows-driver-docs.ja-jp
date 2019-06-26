@@ -10,12 +10,12 @@ keywords:
 - 共同インストーラー WDK デバイスのインストール、レジストリ キーの変更
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f50e266d0ed560a23fa4521bfe4ef8bc293e4740
-ms.sourcegitcommit: 3a51ae8db61be0e25549a5527ea3143e3025e82f
+ms.openlocfilehash: af2e82c214157888f735c1df6e3c819f82116742
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65456437"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377658"
 ---
 # <a name="modifying-registry-keys-by-class-installers-and-co-installers"></a>クラス インストーラーと共同インストーラーでのレジストリ キーの変更
 
@@ -38,7 +38,7 @@ ms.locfileid: "65456437"
 
 次のガイドラインは、クラスのインストーラーや共同インストーラーによってレジストリ キーを安全に変更する後にする必要があります。
 
--   クラスのインストーラーと共同インストーラーを使用する必要がありますまず[ **SetupDiCreateDevRegKey** ](https://msdn.microsoft.com/library/windows/hardware/ff550973)または[ **SetupDiOpenDevRegKey** ](https://msdn.microsoft.com/library/windows/hardware/ff552079)へのハンドルを開く変更するレジストリ キーです。 ハンドルが開かれた後は、レジストリ キーを変更するのにクラスのインストーラーと共同インストーラーが標準レジストリ関数を使用できます。
+-   クラスのインストーラーと共同インストーラーを使用する必要がありますまず[ **SetupDiCreateDevRegKey** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdicreatedevregkeya)または[ **SetupDiOpenDevRegKey** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiopendevregkey)へのハンドルを開く変更するレジストリ キーです。 ハンドルが開かれた後は、レジストリ キーを変更するのにクラスのインストーラーと共同インストーラーが標準レジストリ関数を使用できます。
 
 -   クラスのインストーラーと共同インストーラーを使用する必要がありますいない**SetupDiDeleteDevRegKey**または*ハードウェア キー*デバイス。 詳細については、次を参照してください。[デバイスのレジストリ キーを削除する](deleting-the-registry-keys-of-a-device.md)します。
 

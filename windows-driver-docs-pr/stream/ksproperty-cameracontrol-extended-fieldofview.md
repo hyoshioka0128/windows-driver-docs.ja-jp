@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 09/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 04d8b772a05846bfe1e9a58b6b4211b9c27a6340
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ee74e5a0d9a4329d83f0f99fb8fc13ea6a1b8b61
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347982"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355392"
 ---
 # <a name="kspropertycameracontrolextendedfieldofview"></a>KSPROPERTY\_CAMERACONTROL\_拡張\_FIELDOFVIEW
 
@@ -58,7 +58,7 @@ ms.locfileid: "63347982"
 
  
 
-プロパティの値 (データの操作) が含まれています、 [ **KSCAMERA\_EXTENDEDPROP\_ヘッダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)構造と[ **KSCAMERA\_EXTENDEDPROP\_FIELDOFVIEW** ](https://msdn.microsoft.com/library/windows/hardware/dn567562)構造体。
+プロパティの値 (データの操作) が含まれています、 [ **KSCAMERA\_EXTENDEDPROP\_ヘッダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)構造と[ **KSCAMERA\_EXTENDEDPROP\_FIELDOFVIEW** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_fieldofview)構造体。
 
 プロパティの合計データ サイズが**sizeof**(KSCAMERA\_EXTENDEDPROP\_ヘッダー) + **sizeof**(KSCAMERA\_EXTENDEDPROP\_FIELDOFVIEW)。 **サイズ**のメンバー [ **KSCAMERA\_EXTENDEDPROP\_ヘッダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)はこのプロパティの合計データ サイズに設定します。
 
@@ -82,7 +82,7 @@ KSPROPERTY に応答するとき\_型\_GET 要求をドライバーのメンバ�
 <thead>
 <tr class="header">
 <th>Member</th>
-<th>値</th>
+<th>Value</th>
 </tr>
 </thead>
 <tbody>
@@ -115,7 +115,7 @@ KSPROPERTY に応答するとき\_型\_GET 要求をドライバーのメンバ�
 
  
 
-ドライバーで FOV の焦点距離情報を設定する、 [ **KSCAMERA\_EXTENDEDPROP\_FIELDOFVIEW** ](https://msdn.microsoft.com/library/windows/hardware/dn567562)構造体。
+ドライバーで FOV の焦点距離情報を設定する、 [ **KSCAMERA\_EXTENDEDPROP\_FIELDOFVIEW** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_fieldofview)構造体。
 
 ## <a name="requirements"></a>必要条件
 
@@ -141,7 +141,7 @@ KSPROPERTY に応答するとき\_型\_GET 要求をドライバーのメンバ�
 
 [**KSCAMERA\_EXTENDEDPROP\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)
 
-[**KSCAMERA\_EXTENDEDPROP\_FIELDOFVIEW**](https://msdn.microsoft.com/library/windows/hardware/dn567562)
+[**KSCAMERA\_EXTENDEDPROP\_FIELDOFVIEW**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_fieldofview)
 
  
 

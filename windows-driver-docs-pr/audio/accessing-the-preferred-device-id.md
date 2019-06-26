@@ -9,12 +9,12 @@ keywords:
 - オーディオ デバイスを識別します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 12d98ddd9a95352e165b33d529ba389ef139cdf4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 29f7414ea424b6e5245fb07c275111741719657b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330825"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355783"
 ---
 # <a name="accessing-the-preferred-device-id"></a>推奨されるデバイス ID へのアクセス
 
@@ -26,7 +26,7 @@ Windows 2000 以降、Windows のマルチ メディア機能と Windows Me で*
 
 好みのデバイスは、マルチ メディアのコントロール パネルからユーザーが選択したデバイス mmsys.cpl します。 Windows のマルチ メディアまたは DirectSound アプリケーションを明示的を指定しない場合、デバイス、好みのデバイスは既定で選択されます。
 
-アプリケーションを呼び出して、現在優先するオーディオ デバイスのデバイス ID を取得する、 *xxx * * * メッセージ** メッセージ パラメーターを定数に設定して関数[ **DRVM\_マッパー\_優先\_取得**](https://msdn.microsoft.com/library/windows/hardware/ff536362)します。
+アプリケーションを呼び出して、現在優先するオーディオ デバイスのデバイス ID を取得する、 *xxx * * * メッセージ** メッセージ パラメーターを定数に設定して関数[ **DRVM\_マッパー\_優先\_取得**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff536362(v=vs.85))します。
 
 呼び出すときに、 **waveInMessage**、 **waveOutMessage**、または**midiOutMessage** 、DRVM で関数を\_マッパー\_優先\_メッセージを取得、WAVE としてデバイス ハンドルの値を指定\_マッパー (の**waveInMessage**または**waveOutMessage**) または MIDI\_マッパー (の**midiOutMessage**)、この値を適切なハンドル型にキャストします。HWAVEIN、HWAVEOUT、または HMIDIOUT します。 *Xxx * * * メッセージ** 関数は、有効なデバイス ハンドルの代わりにこの値を受け付けるようにするデバイスを開くことがなくアプリケーションの既定のデバイス ID のクエリを実行できます。 詳細については、 *xxx * * * メッセージ** 関数を参照してください[System-Intercepted デバイス メッセージ](system-intercepted-device-messages.md)します。
 

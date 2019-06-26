@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: ffc77d17f5042eaf9070a575df2e432ddf865322
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c0d752f43472500ecc85a1230c24d909fbd51e0b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327002"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378244"
 ---
 # <a name="devpkeydeviceexclusive"></a>DEVPKEY_Device_Exclusive
 
@@ -62,11 +62,11 @@ DEVPKEY_Device_Exclusive デバイス プロパティは、排他的に使用の
 
 DEVPKEY_Device_Exclusive プロパティの値は DEVPROP_TRUE が場合は排他的に使用、デバイスを開くことができます。 それ以外の場合、プロパティの値は、DEVPROP_FALSE です。
 
-使用して DEVPKEY_Device_Exclusive の値を設定することができます、 [ **INF AddReg ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546320)に含まれている、 [ **INF *DDInstall*します。ハードウェア セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547330)デバイスをインストールします。
+使用して DEVPKEY_Device_Exclusive の値を設定することができます、 [ **INF AddReg ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)に含まれている、 [ **INF *DDInstall*します。ハードウェア セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-hw-section)デバイスをインストールします。
 
-取得または呼び出すことによって DEVPKEY_Device_Exclusive の値を設定できます[ **SetupDiGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551963)と[ **SetupDiSetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff552163).
+取得または呼び出すことによって DEVPKEY_Device_Exclusive の値を設定できます[ **SetupDiGetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)と[ **SetupDiSetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetdevicepropertyw).
 
-Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_Device_Exclusive プロパティのキーをサポートしていません。 代わりに、Windows の以前のバージョンのプロパティの値へのアクセスに対応する SPDRP_EXCLUSIVE 識別子を使用することができます。 Windows の以前のバージョンでこのプロパティの値にアクセスする方法については、次を参照してください。[デバイス インスタンス SPDRP_Xxx プロパティへのアクセス](https://msdn.microsoft.com/library/windows/hardware/ff537737)します。
+Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_Device_Exclusive プロパティのキーをサポートしていません。 代わりに、Windows の以前のバージョンのプロパティの値へのアクセスに対応する SPDRP_EXCLUSIVE 識別子を使用することができます。 Windows の以前のバージョンでこのプロパティの値にアクセスする方法については、次を参照してください。[デバイス インスタンス SPDRP_Xxx プロパティへのアクセス](https://docs.microsoft.com/windows-hardware/drivers/install/accessing-device-instance-spdrp-xxx-properties)します。
 
 <a name="requirements"></a>要件
 ------------
@@ -91,13 +91,13 @@ Windows Server 2003、Windows XP、および Windows 2000 は、このプロパ�
 ## <a name="see-also"></a>関連項目
 
 
-[**INF AddReg ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546320)
+[**INF AddReg ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)
 
-[**INF *DDInstall*します。ハードウェア セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547330)
+[**INF *DDInstall*します。ハードウェア セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-hw-section)
 
-[**SetupDiGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551963)
+[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
-[**SetupDiSetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff552163)
+[**SetupDiSetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetdevicepropertyw)
 
  
 

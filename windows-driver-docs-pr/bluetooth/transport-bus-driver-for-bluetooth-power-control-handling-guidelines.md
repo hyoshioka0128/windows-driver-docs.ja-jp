@@ -4,12 +4,12 @@ description: Ihv は、多くの場合、チップ (SoC) システム上のシ�
 ms.assetid: 00792128-320E-45C1-9F58-343B72565CA7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e5cec025dd7c59e8bf9ab46105fd46211ef7b152
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 447c19151d1f2a61f23d29c42ab1ce6b3c4a9df8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328176"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353998"
 ---
 # <a name="transport-bus-driver-for-bluetooth-power-control-handling-guidelines"></a>Bluetooth 電源管理処理用トランスポート バス ドライバーのガイドライン
 
@@ -22,7 +22,7 @@ Ihv は、多くの場合、チップ (SoC) システム上のシステムに統
 
 -   Windows 8.1
 
-ワイヤレス、Bluetooth はチップ (SoC) システム上のシステムに統合されている多機能コント ローラー内の関数では多くの場合、短い範囲。 まで、Windows 7、Windows の以前のバージョンでは、唯一のトランスポート オプションとして、USB で Bluetooth のインボックス クラス ドライバーを提供します。 Windows 8 が導入された、 [Bluetooth 拡張可能なトランスポート Ioctl](https://msdn.microsoft.com/library/windows/hardware/hh450819)します。 USB のトランスポートとトランスポートの拡張可能なモデルは、Windows 8.1 でサポートされなければならない続けます。 DDI 拡張モデルは、システム インテグレーター UART (Universal Asynchronous Receiver/transmitter) などの SoC のプラットフォーム用の適切なトランスポートを選択できる柔軟性を提供する Windows に変更されません。 GPIOs より簡単かつ低電力コント ローラーを使用して、電源管理を処理するための「側波帯」メカニズムとしてさらに、(Bluetooth 無線の有効化などとスリープ/ウェイク信号として)。
+ワイヤレス、Bluetooth はチップ (SoC) システム上のシステムに統合されている多機能コント ローラー内の関数では多くの場合、短い範囲。 まで、Windows 7、Windows の以前のバージョンでは、唯一のトランスポート オプションとして、USB で Bluetooth のインボックス クラス ドライバーを提供します。 Windows 8 が導入された、 [Bluetooth 拡張可能なトランスポート Ioctl](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)します。 USB のトランスポートとトランスポートの拡張可能なモデルは、Windows 8.1 でサポートされなければならない続けます。 DDI 拡張モデルは、システム インテグレーター UART (Universal Asynchronous Receiver/transmitter) などの SoC のプラットフォーム用の適切なトランスポートを選択できる柔軟性を提供する Windows に変更されません。 GPIOs より簡単かつ低電力コント ローラーを使用して、電源管理を処理するための「側波帯」メカニズムとしてさらに、(Bluetooth 無線の有効化などとスリープ/ウェイク信号として)。
 
 このセクションと各サブトピックでは、電源管理のようなバス ドライバーによって処理のためのガイドラインとサンプル コードを提供し、Bluetooth コア ドライバーとの相互作用について説明します。 コントロールには、: アイドル状態の機能、取り組まと disarming ウェイク、アイドル状態とスリープ解除がシグナル通知、およびデバイスの電源状態変更。 ドライバー開発者は、代替 (USB 以外) トランスポートを介して Bluetooth をサポートするために開発作業を簡略化する Bluetooth シリアル HCI バス ドライバーのサンプルを採用できます。
 

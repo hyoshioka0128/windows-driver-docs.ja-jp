@@ -6,12 +6,12 @@ keywords:
 - UPS ミニドライバー、WDK をインストールします。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 334b2aa9fcffc827a3dc9ed8f88ba5a678be4ce6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 49c5293dbb897b58e8d150956de3c00f120ecbad
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335253"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354051"
 ---
 # <a name="installing-ups-minidrivers"></a>UPS ミニドライバーのインストール
 
@@ -19,7 +19,7 @@ ms.locfileid: "63335253"
 ## <span id="ddk_installing_ups_minidrivers_kg"></span><span id="DDK_INSTALLING_UPS_MINIDRIVERS_KG"></span>
 
 
-UPS ミニドライバーはユーザー モード Dll (Windows SDK のドキュメントで説明)、Microsoft Windows インストーラーまたは INF ファイルを使用してインストールできますが (を参照してください[INF ファイルを作成する](https://msdn.microsoft.com/library/windows/hardware/ff549520))。
+UPS ミニドライバーはユーザー モード Dll (Windows SDK のドキュメントで説明)、Microsoft Windows インストーラーまたは INF ファイルを使用してインストールできますが (を参照してください[INF ファイルを作成する](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-inf-files))。
 
 インストール操作の 1 つの役割は、作成する[UPS\\ServiceProviders レジストリ エントリ](ups-serviceproviders-registry-entries.md)します。
 

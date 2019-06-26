@@ -7,12 +7,12 @@ keywords:
 - オーディオの WDK ミキシング 3D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b464925a387ce6fc4021d82123863349779f6fd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a00e8ceea90b7919591ae721ce8be3312a737ea7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328582"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354239"
 ---
 # <a name="supporting-3d-directsound-acceleration-in-wdm-audio"></a>WDM オーディオでの 3D DirectSound アクセラレータのサポート
 
@@ -24,11 +24,11 @@ DirectSound は、次の要件を満たしている WDM オーディオ ミニ�
 
 -   Pin に一覧された要件を満たす必要があります[WDM オーディオでは 2D DirectSound アクセラレーションをサポートしている](supporting-2d-directsound-acceleration-in-wdm-audio.md)します。
 
--   Pin が 3D のノードを含める必要があります ([**KSNODETYPE\_3D\_効果**](https://msdn.microsoft.com/library/windows/hardware/ff537148)) のノードのチェーンにします。 (を参照してください[DirectSound ノード順序要件](directsound-node-ordering-requirements.md))。
+-   Pin が 3D のノードを含める必要があります ([**KSNODETYPE\_3D\_効果**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-3d-effects)) のノードのチェーンにします。 (を参照してください[DirectSound ノード順序要件](directsound-node-ordering-requirements.md))。
 
--   Pin をサポートする必要があります、 [KSPROPSETID\_DirectSound3DBuffer](https://msdn.microsoft.com/library/windows/hardware/ff537447) 3D のノードのプロパティで設定します。
+-   Pin をサポートする必要があります、 [KSPROPSETID\_DirectSound3DBuffer](https://docs.microsoft.com/windows-hardware/drivers/audio/kspropsetid-directsound3dbuffer) 3D のノードのプロパティで設定します。
 
--   Pin をサポートする必要があります、 [KSPROPSETID\_DirectSound3DListener](https://msdn.microsoft.com/library/windows/hardware/ff537449) 3D のノードのプロパティで設定します。
+-   Pin をサポートする必要があります、 [KSPROPSETID\_DirectSound3DListener](https://docs.microsoft.com/windows-hardware/drivers/audio/kspropsetid-directsound3dlistener) 3D のノードのプロパティで設定します。
 
  
 

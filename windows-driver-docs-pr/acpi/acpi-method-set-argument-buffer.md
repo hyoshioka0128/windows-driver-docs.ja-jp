@@ -6,17 +6,17 @@ keywords:
 - ACPI_METHOD_SET_ARGUMENT_BUFFER マクロ ACPI デバイス
 ms.date: 10/12/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 939fdf4b3ef597de842e0df6cc642e89f247579c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e7d3f5ca7ad3b58d471af4beb33cbf1eb33e6eb2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328848"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355877"
 ---
 # <a name="acpimethodsetargumentbuffer-macro"></a>ACPI\_メソッド\_設定\_引数\_バッファー マクロ
 
 
-ACPI\_メソッド\_設定\_引数\_バッファー マクロがのメンバーを設定、 [ **ACPI\_メソッド\_引数**](https://msdn.microsoft.com/library/windows/hardware/ff536125)データ バッファーで指定されているカスタム データの構造体。
+ACPI\_メソッド\_設定\_引数\_バッファー マクロがのメンバーを設定、 [ **ACPI\_メソッド\_引数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ns-acpiioct-_acpi_method_argument_v1)データ バッファーで指定されているカスタム データの構造体。
 
 <a name="syntax"></a>構文
 ------
@@ -51,7 +51,7 @@ ACPI へのポインター\_メソッド\_引数構造体。
 
 ドライバーは、このマクロを使用して ACPI のメンバーを設定する\_メソッド\_カスタム データを提供する引数の構造体。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -74,4 +74,4 @@ ACPI へのポインター\_メソッド\_引数構造体。
 ## <a name="see-also"></a>関連項目
 
 
-[**ACPI\_メソッド\_引数**](https://msdn.microsoft.com/library/windows/hardware/ff536125) 
+[**ACPI\_メソッド\_引数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ns-acpiioct-_acpi_method_argument_v1) 

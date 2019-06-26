@@ -4,12 +4,12 @@ description: このトピックでは、ポート クラス Bluetooth 側波帯�
 ms.assetid: A3C4E04C-8F3B-49B4-8E46-CF37E1A4F5AF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f62f0caa5ce3b03d482d573bed9381898712a5e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f1aa3cb6200531ecb98936cf13510e23bebe341c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328642"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355252"
 ---
 # <a name="setting-friendly-names-registering-apos"></a>フレンドリ名の設定、APO の登録
 
@@ -23,7 +23,7 @@ GUID が有効な各\_DEVINTERFACE\_BLUETOOTH\_HFP\_SCO\_HCIBYPASS インター�
 ## <a name="span-iddevpkeydeviceinterfacefriendlynamespanspan-iddevpkeydeviceinterfacefriendlynamespanspan-iddevpkeydeviceinterfacefriendlynamespandevpkeydeviceinterfacefriendlyname"></a><span id="DEVPKEY_DeviceInterface_FriendlyName"></span><span id="devpkey_deviceinterface_friendlyname"></span><span id="DEVPKEY_DEVICEINTERFACE_FRIENDLYNAME"></span>DEVPKEY\_DeviceInterface\_FriendlyName
 
 
-オーディオ ドライバーの送信、 [ **IOCTL\_BTHHFP\_デバイス\_取得\_記述子**](https://msdn.microsoft.com/library/windows/hardware/dn265108)ハンズフリー プロファイル (HFP) オーディオ ドライバーに要求します。 形式で要求された情報が返されます、 [ **BTHHFP\_記述子**](https://msdn.microsoft.com/library/windows/hardware/dn302030)構造体と構造体で参照される、他のデータ。 オーディオ ドライバーを呼び出して DEVPKEY を設定する IoSetDeviceInterfacePropertyData\_DeviceInterface\_FriendlyName の値に、 *FriendlyName*のフィールド、 **BTHHFP\_記述子**構造体。
+オーディオ ドライバーの送信、 [ **IOCTL\_BTHHFP\_デバイス\_取得\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthhfpddi/ni-bthhfpddi-ioctl_bthhfp_device_get_descriptor)ハンズフリー プロファイル (HFP) オーディオ ドライバーに要求します。 形式で要求された情報が返されます、 [ **BTHHFP\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthhfpddi/ns-bthhfpddi-_bthhfp_descriptor)構造体と構造体で参照される、他のデータ。 オーディオ ドライバーを呼び出して DEVPKEY を設定する IoSetDeviceInterfacePropertyData\_DeviceInterface\_FriendlyName の値に、 *FriendlyName*のフィールド、 **BTHHFP\_記述子**構造体。
 
 オーディオ ドライバーは、とおり IoSetDeviceInterfacePropertyData にパラメーターを設定します。
 

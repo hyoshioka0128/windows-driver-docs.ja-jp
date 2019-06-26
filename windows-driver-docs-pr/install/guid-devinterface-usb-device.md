@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: a00e2e14182c917beaae3a76185177ae6752ea94
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f7d2d1c7a27d3e021db02bbb495a05874efd58a0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391998"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353789"
 ---
 # <a name="guiddevinterfaceusbdevice"></a>GUID_DEVINTERFACE_USB_DEVICE
 
 
-GUID_DEVINTERFACE_USB_DEVICE[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)が定義されている[USB デバイス](https://msdn.microsoft.com/library/windows/hardware/ff538930)USB ハブに接続されています。
+GUID_DEVINTERFACE_USB_DEVICE[デバイス インターフェイス クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)が定義されている[USB デバイス](https://docs.microsoft.com/windows-hardware/drivers/)USB ハブに接続されています。
 
 <table>
 <colgroup>
@@ -60,7 +60,7 @@ Microsoft Windows Driver Kit (WDK) が含まれています、 [USBVIEW サン�
 
 Initguid.h は DEFINE_GUID マクロを使用して GUID を宣言するすべてのヘッダーをインクルードする前に含める必要があります。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

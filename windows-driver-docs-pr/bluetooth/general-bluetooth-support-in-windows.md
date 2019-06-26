@@ -4,12 +4,12 @@ description: Windows 10 で Bluetooth のバージョンとプロファイルの
 ms.assetid: F43DA802-37D0-4527-AA51-DA3C0AEF6914
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a13c2a3cc1c4dd9d69ddde93b5d66df3f5bb3bbd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7bb94fbe322f3e73fd792844100b77de6078b2cb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328231"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354007"
 ---
 # <a name="bluetooth-version-and-profile-support-in-windows-10"></a>Windows 10 での Bluetooth バージョンとプロファイルのサポート
 
@@ -196,7 +196,7 @@ Windows 10 (バージョン 1803) は、Bluetooth バージョン 5.0 および�
 <td align="left"><p>GATT プロファイルは、非表示</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>1.1 をマップします。</p></td>
+<td align="left"><p>1\.1 をマップします。</p></td>
 <td align="left"><p>メッセージへのアクセス プロファイル</p></td>
 </tr>
 <tr class="odd">
@@ -223,7 +223,7 @@ Windows 10 (バージョン 1803) は、Bluetooth バージョン 5.0 および�
 ## <a name="span-idnewfeaturesandrecommendationsforwindows10andlaterspanspan-idnewfeaturesandrecommendationsforwindows10andlaterspanspan-idnewfeaturesandrecommendationsforwindows10andlaterspannew-features-and-recommendations-for-windows10-and-later"></a><span id="New_features_and_recommendations_for_Windows_10_and_later"></span><span id="new_features_and_recommendations_for_windows_10_and_later"></span><span id="NEW_FEATURES_AND_RECOMMENDATIONS_FOR_WINDOWS_10_AND_LATER"></span>新機能と Windows 10 以降の推奨事項
 
 
-新機能とさまざまなバージョンの Windows 10 のハードウェア開発に関する推奨事項の詳細については、次を参照してください。 [Bluetooth](https://msdn.microsoft.com/library/windows/hardware/dn915047)で、[ハードウェア コンポーネントのガイドライン](https://msdn.microsoft.com/library/windows/hardware/dn915049)セクション。
+新機能とさまざまなバージョンの Windows 10 のハードウェア開発に関する推奨事項の詳細については、次を参照してください。 [Bluetooth](https://docs.microsoft.com/windows-hardware/design/component-guidelines/bluetooth)で、[ハードウェア コンポーネントのガイドライン](https://docs.microsoft.com/windows-hardware/design/component-guidelines/components)セクション。
 
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 

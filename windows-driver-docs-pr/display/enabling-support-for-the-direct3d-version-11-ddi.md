@@ -7,19 +7,19 @@ keywords:
 - DDI サポートを有効にすると、Direct3D バージョン 11 WDK Windows Server 2008 R2 表示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 73bdda91b8dee52a87bddf59585efbc610e9e1c9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f2718e45cffcccf29ba36316ae1a3b0471388417
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379478"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355575"
 ---
 # <a name="enabling-support-for-the-direct3d-version-11-ddi"></a>Direct3D バージョン 11 DDI のサポートの有効化
 
 
 このセクションでは、Windows 7 以降および Windows Server 2008 R2 以降のバージョンの Windows オペレーティング システムにのみ適用されます。
 
-11 DDI、INF ファイルをユーザー モード ディスプレイ ドライバー DLL のバージョンがグラフィックス デバイスかどうかに関係なく、DLL の名前をリストする必要があります、ディスプレイ ドライバーをインストール用にサポートを有効にする Direct3D のバージョン 11 DDI が存在するのと同じ DLL、 [Direct3D のバージョン 9 DDI](https://msdn.microsoft.com/library/windows/hardware/ff552927)と[Direct3D のバージョン 10 DDI](https://msdn.microsoft.com/library/windows/hardware/ff552909)または個別の DLL にします。
+11 DDI、INF ファイルをユーザー モード ディスプレイ ドライバー DLL のバージョンがグラフィックス デバイスかどうかに関係なく、DLL の名前をリストする必要があります、ディスプレイ ドライバーをインストール用にサポートを有効にする Direct3D のバージョン 11 DDI が存在するのと同じ DLL、 [Direct3D のバージョン 9 DDI](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/index)と[Direct3D のバージョン 10 DDI](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)または個別の DLL にします。
 
 [ミニポートの表示と表示のユーザー モード ドライバーのインストール要件](installing-display-miniport-and-user-mode-display-drivers.md)セクションは、ユーザー モードのディスプレイ ドライバーがインストールされ、Windows Vista のディスプレイ ドライバー モデルに従って使用する方法について説明します。 有効にするためのサポート、Direct3D のバージョン 11 DDI、バージョン 11 が含まれている DLL の名前を指定する必要がありますのバージョン 11 DDI が存在する場合でも、ユーザー モードの一覧で、3 番目のエントリとして DDI はドライバー名を表示、バージョン 9 と 10 Ddi として同じ DLL。
 

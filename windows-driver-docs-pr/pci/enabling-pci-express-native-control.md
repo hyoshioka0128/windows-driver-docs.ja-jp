@@ -5,12 +5,12 @@ ms:assetid: 0E3A4408-CBF7-494F-9F25-7C78E04526B4
 keywords: ACPI、ACPI \_OSC メソッド
 ms.date: 06/01/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b6d3572482779b7b0db40bd1e6936fb59034a88
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 84d01946e2552c4a221bd4ee80eb22818fead3c3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379760"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353561"
 ---
 # <a name="enabling-pci-express-native-control-in-windows"></a>Windows での PCI Express ネイティブ コントロールの有効化
 
@@ -33,8 +33,8 @@ Advanced Configuration and Power Interface (ACPI) オペレーティング シ�
 
 これらの仕様は、ACPI と PCI SIG Web サイトで使用できます。
 
-  - [ACPI の web サイト](https://www.uefi.org/specifications)
-  - [PCI SIG の web サイト](http://www.pcisig.org/)
+  - [ACPI の web サイト](https://uefi.org/specifications)
+  - [PCI SIG の web サイト](http://pcisig.com/)
 
 ## <a name="see-also"></a>関連項目
 [デバイス固有のデータ (_DSD) PCIe ルート ポート](dsd-for-pcie-root-ports.md)

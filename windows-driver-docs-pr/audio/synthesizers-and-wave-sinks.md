@@ -20,12 +20,12 @@ keywords:
 - Dmu ポート ドライバー WDK オーディオ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d7be4a2c764744162576bdcb75d37d268cabe877
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 14263ab8c78348a5ae37bc9aaa3007927531fcba
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335307"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354200"
 ---
 # <a name="synthesizers-and-wave-sinks"></a>シンセサイザーと Wave シンク
 
@@ -55,7 +55,7 @@ Wave シンクし、次の図が DirectMusic アーキテクチャがユーザ�
 
 次の手順が完了したら、ユーザー モード DirectMusic ポートはオープンで使用するためにアクティブ化します。 このドライバー コードの多くは動作するいるとすぐに機能の実装を開始できます。 ユーザー モードの Microsoft ソフトウェアのシンセサイザーのソース コードをテンプレートとして使用し、新しい機能の追加を開始します。
 
-シンセサイザーのユーザー モード ソフトウェアをオブジェクトとして実装できる、 [IDirectMusicSynth](https://msdn.microsoft.com/library/windows/hardware/ff536519)インターフェイス。 ユーザー モードのウェーブ シンクを持つオブジェクトとして実装できる、 [IDirectMusicSynthSink](https://msdn.microsoft.com/library/windows/hardware/ff536520)インターフェイス。 詳細については、次を参照してください。 [IDirectMusicSynth と IDirectMusicSynthSink](idirectmusicsynth-and-idirectmusicsynthsink.md)します。
+シンセサイザーのユーザー モード ソフトウェアをオブジェクトとして実装できる、 [IDirectMusicSynth](https://docs.microsoft.com/windows/desktop/api/dmusics/nn-dmusics-idirectmusicsynth)インターフェイス。 ユーザー モードのウェーブ シンクを持つオブジェクトとして実装できる、 [IDirectMusicSynthSink](https://docs.microsoft.com/windows/desktop/api/dmusics/nn-dmusics-idirectmusicsynthsink)インターフェイス。 詳細については、次を参照してください。 [IDirectMusicSynth と IDirectMusicSynthSink](idirectmusicsynth-and-idirectmusicsynthsink.md)します。
 
  
 

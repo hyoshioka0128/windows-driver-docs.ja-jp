@@ -12,12 +12,12 @@ keywords:
 - 変換ノード WDK オーディオ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ae2a5d872f693c90d805c2adfacecd9fbc3de52
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 90442e6e4e21a17a920228ff47a32c97cb49ebf5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335233"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354095"
 ---
 # <a name="wdmaud-topology-parsing"></a>WDMAud トポロジ解析
 
@@ -37,7 +37,7 @@ MUX と合計のノードが、*クラシック ターミネータ*変換先の�
 
 複数の親が検出された場合、解析はすぐに終了します。 ミキサー行ドライバーは、複数の入力を結合して形成されたは"仮想 sum"として、この条件を解釈します。
 
-返される名前に由来変換先の行の名前、 [ **KSPROPERTY\_PIN\_名前**](https://msdn.microsoft.com/library/windows/hardware/ff565203)その pin のプロパティ。
+返される名前に由来変換先の行の名前、 [ **KSPROPERTY\_PIN\_名前**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-pin-name)その pin のプロパティ。
 
 変換先の行のすべてのコントロールを翻訳すると後のソース行を変換する WDMAud を開始します。 ここでも、WDMAud がこれらの行を解析し、順序は SysAudio がそれらにクエリの順序の逆です。 また、ソース行が解析されます方向は、逆に、出力先の行が解析されます。 WDMAud、暗証番号 (pin) から開始し、次の終了条件のいずれかが検出されない限り、ダウン ストリームの方向に続行して各行を解析します。
 

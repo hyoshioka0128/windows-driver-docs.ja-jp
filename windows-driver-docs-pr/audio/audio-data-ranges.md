@@ -12,12 +12,12 @@ keywords:
 - オーディオ データの範囲について、データ範囲の WDK オーディオ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0cf3a6224dc23d6251a7e9aa67cc817e0cff7432
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 60eb376ca10b72d32f4ba01ff14e53dd2d01f7c3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331554"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355731"
 ---
 # <a name="audio-data-ranges"></a>オーディオ データ範囲
 
@@ -31,9 +31,9 @@ ms.locfileid: "63331554"
 
 プロパティの要求を使用して、データの範囲やデータの選択の交差部分をオーディオ ピンを照会する方法については、次を参照してください。[暗証番号 (pin) のデータ範囲は、プロパティの積集合](pin-data-range-and-intersection-properties.md)します。
 
-Wave 暗証番号 (pin) のデータ範囲を指定する、 [ **KSDATARANGE** ](https://msdn.microsoft.com/library/windows/hardware/ff561658)構造体のサンプル サイズ、頻度、および、暗証番号 (pin) をサポートするチャネルの範囲を説明する情報が続きます。 KSDATARANGE 構造体そのものを含め、この情報にカプセル化、 [ **KSDATARANGE\_オーディオ**](https://msdn.microsoft.com/library/windows/hardware/ff537096)構造体。
+Wave 暗証番号 (pin) のデータ範囲を指定する、 [ **KSDATARANGE** ](https://docs.microsoft.com/previous-versions/ff561658(v=vs.85))構造体のサンプル サイズ、頻度、および、暗証番号 (pin) をサポートするチャネルの範囲を説明する情報が続きます。 KSDATARANGE 構造体そのものを含め、この情報にカプセル化、 [ **KSDATARANGE\_オーディオ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksdatarange_audio)構造体。
 
-MIDI または DirectMusic 暗証番号 (pin) のデータ範囲を指定するには、詳細については、チャネルと同時に再生できるノートの最大数を含む KSDATARANGE 構造が続きます。 KSDATARANGE 構造自体と共に、この情報にカプセル化、 [ **KSDATARANGE\_音楽**](https://msdn.microsoft.com/library/windows/hardware/ff537097)構造体。
+MIDI または DirectMusic 暗証番号 (pin) のデータ範囲を指定するには、詳細については、チャネルと同時に再生できるノートの最大数を含む KSDATARANGE 構造が続きます。 KSDATARANGE 構造自体と共に、この情報にカプセル化、 [ **KSDATARANGE\_音楽**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksdatarange_music)構造体。
 
 このドキュメントでは、KSDATARANGE を使用するデータ範囲の例をいくつか\_オーディオおよび KSDATARANGE\_音楽構造体。
 

@@ -4,19 +4,19 @@ description: パケット結合の概要
 ms.assetid: E406E89C-247B-4DCB-B309-B742BF0A27E9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 522565d0e1a09ab3fee4e4b57752483727164161
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: df260acc887b8681874ccc9631b169ec6556a97d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340944"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356095"
 ---
 # <a name="overview-of-packet-coalescing"></a>パケット結合の概要
 
 
 特定の IP バージョン 4 (IPv4) と 6 (IPv6) のネットワーク プロトコルは、パケットをブロードキャストまたはマルチキャスト アドレスの送信を伴う IP バージョン。 これらのパケットは、IPv4 および IPv6 サブネット内の複数のホストで受信されます。 ほとんどの場合、これらのパケットを受信するホストは行いませんこれらのパケットで何か。 そのため、これらの不要なマルチキャストまたはブロードキャスト パケットの受信は、不要な処理と電力の消費量、受信ホスト内に発生するとします。
 
-たとえば、ホスト A の送信、マルチキャスト リンク ローカル マルチキャスト名前解決 (LLMNR) を解決するのには IPv6 サブネットの要求は、B の名前をホストします。 ホスト A は、を除き、この LLMNR 要求は、サブネット上のすべてのホストによって受信されます。 ホスト B を除いては、他のホストで実行されている TCP/IP プロトコル スタックは、パケットを検査し、なパケットがその意図されていませんを決定します。 プロトコル スタックは、パケットと呼び出しを拒否するため、 [ **NdisReturnNetBufferLists** ](https://msdn.microsoft.com/library/windows/hardware/ff564534)にパケットをミニポート ドライバーに戻ります。
+たとえば、ホスト A の送信、マルチキャスト リンク ローカル マルチキャスト名前解決 (LLMNR) を解決するのには IPv6 サブネットの要求は、B の名前をホストします。 ホスト A は、を除き、この LLMNR 要求は、サブネット上のすべてのホストによって受信されます。 ホスト B を除いては、他のホストで実行されている TCP/IP プロトコル スタックは、パケットを検査し、なパケットがその意図されていませんを決定します。 プロトコル スタックは、パケットと呼び出しを拒否するため、 [ **NdisReturnNetBufferLists** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisreturnnetbufferlists)にパケットをミニポート ドライバーに戻ります。
 
 NDIS パケット結合 NDIS 6.30 以降では、ネットワーク アダプターをサポートできます。 ランダム ブロードキャストまたはマルチキャスト パケット数、処理のオーバーヘッドと電源の結合を介して受信割り込みの数を減らすことでは、システムの消費量が大幅に削減します。
 

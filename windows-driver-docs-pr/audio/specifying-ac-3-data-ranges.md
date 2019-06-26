@@ -14,12 +14,12 @@ keywords:
 - 非 PCM オーディオの形式、WDK ac-3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c6b9480e9ad1d81af5d547f57bbe1f0f4ddfc70d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c011f5ac71cd472652f5dc6dd8e2295e22c4da0b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328620"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354292"
 ---
 # <a name="specifying-ac-3-data-ranges"></a>AC-3 データ範囲の指定
 
@@ -42,7 +42,7 @@ ms.locfileid: "63328620"
                       DEFINE_WAVEFORMATEX_GUID(WAVE_FORMAT_DOLBY_AC3_SPDIF)
 ```
 
-次のコード例は、WaveCyclic または WavePci ミニポート ドライバーを指定する方法を示しています、 [ **KSDATARANGE\_オーディオ**](https://msdn.microsoft.com/library/windows/hardware/ff537096) AC-3-フェールオーバー-S/PDIF 形式をサポートする、暗証番号 (pin) のエントリをテーブルします。
+次のコード例は、WaveCyclic または WavePci ミニポート ドライバーを指定する方法を示しています、 [ **KSDATARANGE\_オーディオ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksdatarange_audio) AC-3-フェールオーバー-S/PDIF 形式をサポートする、暗証番号 (pin) のエントリをテーブルします。
 
 ```cpp
 static KSDATARANGE_AUDIO PinDataRangesAC3Stream[] =

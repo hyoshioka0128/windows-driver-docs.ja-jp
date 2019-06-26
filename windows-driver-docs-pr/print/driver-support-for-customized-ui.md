@@ -4,12 +4,12 @@ description: V4 印刷ドライバー モデルは、印刷用のプリンター
 ms.assetid: 91B0E824-1EE3-40B0-A24E-5A66C158972E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ba91546c62a01b14cb74bbeabfda01343f0bc02
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fbd073c0eb01bbe5141d4452521795eec169525b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391956"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356079"
 ---
 # <a name="driver-support-for-customized-ui"></a>カスタマイズされた UI のドライバー サポート
 
@@ -24,7 +24,7 @@ V4 印刷ドライバー モデルは、印刷用のプリンター拡張また�
 
 プリンターの拡張機能または UWP デバイス アプリでいくつかの制約検証に関して最も効果的な対話型エクスペリエンスを提供する役に立ちますが、権限を持つと見なされます、ドライバーの検証を置き換える必要がありますされません。
 
-プリンターの拡張機能と UWP デバイス アプリを使用する必要があります、 [ **IPrinterQueue::SendBidiQuery** ](https://msdn.microsoft.com/library/windows/hardware/hh846197)ネットワーク リソースへの直接のネットワークではなく、メソッドを呼び出します。 ネットワーク リソースに接続する必要がある場合は、別のスレッドで、または分岐から UI を防ぐために非同期的に実行する必要があります。 今後の呼び出しを速く取得した後、データをキャッシュする必要があります。
+プリンターの拡張機能と UWP デバイス アプリを使用する必要があります、 [ **IPrinterQueue::SendBidiQuery** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nf-printerextension-iprinterqueue-sendbidiquery)ネットワーク リソースへの直接のネットワークではなく、メソッドを呼び出します。 ネットワーク リソースに接続する必要がある場合は、別のスレッドで、または分岐から UI を防ぐために非同期的に実行する必要があります。 今後の呼び出しを速く取得した後、データをキャッシュする必要があります。
 
 **プリンターの通知**
 
@@ -34,11 +34,11 @@ V4 印刷ドライバー モデルは、印刷用のプリンター拡張また�
 
 ![プリンターの通知動作のフローチャート](images/notificationbhvr.png)
 
-**注**  という事実を意識することが重要するには、Windows 8 環境で呼び出すことによって、通知を表示するカスタム UI を使用しようとする場合[GetForegroundWindow](https://msdn.microsoft.com/library/windows/desktop/ms633505.aspx)、通知ウィンドウにすることはできません表示されます。 これは、オペレーティング システムが GetForegroundWindow を使用して、フォア グラウンド ウィンドウを作成するスレッドに優先順位の高いを割り当てようとしているため、これは許可されていませんダイアログで、Windows 8 環境。 Windows 8 環境で通知を表示するカスタム UI を使用する場合を行う必要がありますを呼び出して[GetDesktopWindow します。](https://msdn.microsoft.com/library/windows/desktop/ms633504.aspx)
+**注**  という事実を意識することが重要するには、Windows 8 環境で呼び出すことによって、通知を表示するカスタム UI を使用しようとする場合[GetForegroundWindow](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-getforegroundwindow)、通知ウィンドウにすることはできません表示されます。 これは、オペレーティング システムが GetForegroundWindow を使用して、フォア グラウンド ウィンドウを作成するスレッドに優先順位の高いを割り当てようとしているため、これは許可されていませんダイアログで、Windows 8 環境。 Windows 8 環境で通知を表示するカスタム UI を使用する場合を行う必要がありますを呼び出して[GetDesktopWindow します。](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-getdesktopwindow)
 
  
 
-**ドライバーのイベントを作成する**します。 V4 印刷ドライバーでは、DriverEvent XML ファイルを使用して、双方向のクエリとトリガーが発生します。 ドライバーのイベントが発生することを説明します。 ドライバーのイベントでは標準の文字列のみをサポートすることが重要です。 標準の文字列の詳細については、次を参照してください。 [AsyncUI 既定のリソース ファイルの文字列リソース](https://msdn.microsoft.com/library/cc746159.aspx)します。 これにより、現在の実装では、 [AsyncUIBalloon](https://msdn.microsoft.com/library/cc238009(PROT.10).aspx)メッセージを作成および発行を使用して、 [MS パン プロトコル](https://msdn.microsoft.com/library/cc237960(PROT.13).aspx)します。 この実装は、パフォーマンスを向上させるために、後で変わる可能性があります、基になるプロトコルに依存関係を受け取らないように、v4 プリンター ドライバーを開発することが重要であるためです。
+**ドライバーのイベントを作成する**します。 V4 印刷ドライバーでは、DriverEvent XML ファイルを使用して、双方向のクエリとトリガーが発生します。 ドライバーのイベントが発生することを説明します。 ドライバーのイベントでは標準の文字列のみをサポートすることが重要です。 標準の文字列の詳細については、次を参照してください。 [AsyncUI 既定のリソース ファイルの文字列リソース](https://docs.microsoft.com/openspecs/windows_protocols/ms-pan/cbd34ab3-5a2a-4292-b7ce-e584020d14d7)します。 これにより、現在の実装では、 [AsyncUIBalloon](https://docs.microsoft.com/openspecs/windows_protocols/ms-pan/9ec494fd-eea8-4545-8e38-5992fa7f6a4a)メッセージを作成および発行を使用して、 [MS パン プロトコル](https://docs.microsoft.com/openspecs/windows_protocols/ms-pan/e44d984c-07d3-414c-8ffc-f8c8ad8512a8)します。 この実装は、パフォーマンスを向上させるために、後で変わる可能性があります、基になるプロトコルに依存関係を受け取らないように、v4 プリンター ドライバーを開発することが重要であるためです。
 
 次の図は、プロトコルの使用率を示します。
 
@@ -66,10 +66,10 @@ V4 印刷ドライバー モデルは、印刷用のプリンター拡張また�
 **ドライバーのイベントの XML 検証**です。 ドライバー マニフェストで適切に DriverEvent XML を記述する場合に限り、XML ファイルは INFGate ツールによって自動的に検証します。
 
 ## <a name="related-topics"></a>関連トピック
-[AsyncUIBalloon](https://msdn.microsoft.com/library/cc238009(PROT.10).aspx)  
-[AsyncUI 既定リソース ファイルの文字列リソース](https://msdn.microsoft.com/library/cc746159.aspx)  
-[**IPrinterQueue::SendBidiQuery**](https://msdn.microsoft.com/library/windows/hardware/hh846197)  
-[MS パン プロトコル](https://msdn.microsoft.com/library/cc237960(PROT.13).aspx)  
+[AsyncUIBalloon](https://docs.microsoft.com/openspecs/windows_protocols/ms-pan/9ec494fd-eea8-4545-8e38-5992fa7f6a4a)  
+[AsyncUI 既定リソース ファイルの文字列リソース](https://docs.microsoft.com/openspecs/windows_protocols/ms-pan/cbd34ab3-5a2a-4292-b7ce-e584020d14d7)  
+[**IPrinterQueue::SendBidiQuery**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nf-printerextension-iprinterqueue-sendbidiquery)  
+[MS パン プロトコル](https://docs.microsoft.com/openspecs/windows_protocols/ms-pan/e44d984c-07d3-414c-8ffc-f8c8ad8512a8)  
 
 
 

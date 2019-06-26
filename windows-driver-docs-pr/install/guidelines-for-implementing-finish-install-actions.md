@@ -4,12 +4,12 @@ description: インストールの完了アクションの実装のガイドラ�
 ms.assetid: 455d520a-ccd7-470b-ab5f-5786ee90b91d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fd317066a43e196ed7c1fd3d5d91fe0778109148
-ms.sourcegitcommit: 3a51ae8db61be0e25549a5527ea3143e3025e82f
+ms.openlocfilehash: 3b7ed73d15a5e8bde117141ab8b48edcbf5ca040
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65456430"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355151"
 ---
 # <a name="guidelines-for-implementing-finish-install-actions"></a>インストールの完了アクションの実装のガイドライン
 
@@ -22,7 +22,7 @@ ms.locfileid: "65456430"
 
 -   インストーラーが完了-インストール操作が完了-インストール操作が完了するまで実行する必要がある場合を終了するまで待ちます。
 
-    たとえば、完了インストール アクションの実行中にシステムの再起動によって中断されるを避けるためには、インストーラーが待機インストーラーの処理から返される前に終了する終了インストール アクションの[ **DIF_FINISHINSTALL_ACTION** ](https://msdn.microsoft.com/library/windows/hardware/ff543684)要求。
+    たとえば、完了インストール アクションの実行中にシステムの再起動によって中断されるを避けるためには、インストーラーが待機インストーラーの処理から返される前に終了する終了インストール アクションの[ **DIF_FINISHINSTALL_ACTION** ](https://docs.microsoft.com/windows-hardware/drivers/install/dif-finishinstall-action)要求。
 
 -   完了-インストール アクションは、進行中のユーザーに知らせる必要があります。
 
@@ -30,7 +30,7 @@ ms.locfileid: "65456430"
 
 -   インストーラーでは、システムの再起動が完了-インストール アクションを実行するために必要な場所の状況を処理する必要があります。
 
-    処理から返す前に完了インストール アクションの設定をデバイスで有効にするために、システムの再起動を必要とする場合、インストーラーでは DI_NEEDREBOOT フラグを設定する必要があります、 [ **DIF_FINISHINSTALL_ACTION** ](https://msdn.microsoft.com/library/windows/hardware/ff543684)要求。 ただし、デバイスのインストールは強制的に再起動しないコンピューターのしない限り、どうしても必要です。
+    処理から返す前に完了インストール アクションの設定をデバイスで有効にするために、システムの再起動を必要とする場合、インストーラーでは DI_NEEDREBOOT フラグを設定する必要があります、 [ **DIF_FINISHINSTALL_ACTION** ](https://docs.microsoft.com/windows-hardware/drivers/install/dif-finishinstall-action)要求。 ただし、デバイスのインストールは強制的に再起動しないコンピューターのしない限り、どうしても必要です。
 
     詳細については、デバイスのインストールでシステムを必要な場合の再起動を参照してください[デバイスのインストールとシステムの再起動](device-installations-and-system-restarts.md)します。
 
@@ -46,11 +46,11 @@ ms.locfileid: "65456430"
 
 -   インストーラーでは、完了インストール アクションが失敗し、もう一度は試行しない必要がある状況を処理する必要があります。
 
-    エラーでは、完了-インストール操作が正常にこれまで不可能な場合、インストーラーは、操作は、完了できないと、および、必要なクリーンアップを実行し、ユーザーに通知する必要があります。 このような状況で共同インストーラーは NO_ERROR とデバイスを返す必要があります。 またはクラスのインストーラーが ERROR_DI_DO_DEFAULT を返す必要があります。 Windows は devnode と呼び出しの完了インストール アクションを実行するフラグが設定されていることと、デバイスをクリアして、その後[ **SetupDiFinishInstallAction** ](https://msdn.microsoft.com/library/windows/hardware/ff551022)既定の 完了-インストールを実行するには操作です。
+    エラーでは、完了-インストール操作が正常にこれまで不可能な場合、インストーラーは、操作は、完了できないと、および、必要なクリーンアップを実行し、ユーザーに通知する必要があります。 このような状況で共同インストーラーは NO_ERROR とデバイスを返す必要があります。 またはクラスのインストーラーが ERROR_DI_DO_DEFAULT を返す必要があります。 Windows は devnode と呼び出しの完了インストール アクションを実行するフラグが設定されていることと、デバイスをクリアして、その後[ **SetupDiFinishInstallAction** ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff551022(v=vs.85))既定の 完了-インストールを実行するには操作です。
 
--   インストーラーを処理すると、 [ **DIF_NEWDEVICEWIZARD_FINISHINSTALL** ](https://msdn.microsoft.com/library/windows/hardware/ff543702) DIF コード、ことを確認完了インストール アクションが必要なかどうかを参照してください。 完了-インストール操作を実行する必要がありますがある場合、インストーラーは DI_FLAGSEX_FINISHINSTALL_ACTION フラグを設定のみ必要があります。 このフラグが不必要に設定されている場合は、ドライバーの再インストール時にユーザーがプロンプトにある、追加のデバイスのインストールを取得、DIF_FINISHINSTALL_ACTION 要求には、完了-インストール アクションを実行するはありません。
+-   インストーラーを処理すると、 [ **DIF_NEWDEVICEWIZARD_FINISHINSTALL** ](https://docs.microsoft.com/windows-hardware/drivers/install/dif-newdevicewizard-finishinstall) DIF コード、ことを確認完了インストール アクションが必要なかどうかを参照してください。 完了-インストール操作を実行する必要がありますがある場合、インストーラーは DI_FLAGSEX_FINISHINSTALL_ACTION フラグを設定のみ必要があります。 このフラグが不必要に設定されている場合は、ドライバーの再インストール時にユーザーがプロンプトにある、追加のデバイスのインストールを取得、DIF_FINISHINSTALL_ACTION 要求には、完了-インストール アクションを実行するはありません。
 
-    たとえば、完了-インストール操作が正常に動作するデバイスに必要なアプリケーションをインストールするデバイスの共同インストーラーを検討してください。 たとえば、Microsoft キーボードの 完了-インストール アクションは IntelliType アプリケーションをインストールする場合があります。 このような共同インストーラーを処理すると、 [ **DIF_NEWDEVICEWIZARD_FINISHINSTALL** ](https://msdn.microsoft.com/library/windows/hardware/ff543702) DIF コード、ことを確認、アプリケーションが既にインストールされているかどうかを参照してください。 アプリケーションが既にインストールされている場合、完了インストール アクションを実行するにはなく、DI_FLAGSEX_FINISHINSTALL_ACTION フラグを設定しないでくださいこのためです。 このような状況で共同インストーラーが、DI_FLAGSEX_FINISHINSTALL_ACTION フラグを正しく設定されている場合、ユーザーは 完了-インストール アクションが実行するアクションを持たない場合でも続行するためのアクセス許可の不要なユーザー アカウント制御 (UAC) プロンプトを取得します。
+    たとえば、完了-インストール操作が正常に動作するデバイスに必要なアプリケーションをインストールするデバイスの共同インストーラーを検討してください。 たとえば、Microsoft キーボードの 完了-インストール アクションは IntelliType アプリケーションをインストールする場合があります。 このような共同インストーラーを処理すると、 [ **DIF_NEWDEVICEWIZARD_FINISHINSTALL** ](https://docs.microsoft.com/windows-hardware/drivers/install/dif-newdevicewizard-finishinstall) DIF コード、ことを確認、アプリケーションが既にインストールされているかどうかを参照してください。 アプリケーションが既にインストールされている場合、完了インストール アクションを実行するにはなく、DI_FLAGSEX_FINISHINSTALL_ACTION フラグを設定しないでくださいこのためです。 このような状況で共同インストーラーが、DI_FLAGSEX_FINISHINSTALL_ACTION フラグを正しく設定されている場合、ユーザーは 完了-インストール アクションが実行するアクションを持たない場合でも続行するためのアクセス許可の不要なユーザー アカウント制御 (UAC) プロンプトを取得します。
 
     **注**  以降、Windows 7 では UAC が既定の設定 (「通知プログラムがコンピューターに変更を加えるとする場合にのみ」) またはそれ以下の設定に設定されている場合、オペレーティング システムは表示されませんでの管理者ユーザーの入力を求める完了-インストール アクションを処理するときの権限。
 

@@ -7,12 +7,12 @@ keywords:
 - ICC プロファイル WDK を印刷します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0be3f82b5dc2fe126696bd8262c881330206dea8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2f8c54485eb06c6aaa2b80e740f87598fd1cff9b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388082"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353516"
 ---
 # <a name="locating-icc-profiles"></a>ICC プロファイルを検索する
 
@@ -22,7 +22,7 @@ ms.locfileid: "63388082"
 
 色の管理を有効にすると、GDI の適切な ICC プロファイルを使用して検索、次の手順。
 
-1.  場合、ドライバーの[プリンター インターフェイス DLL](printer-interface-dll.md)提供、 [ **DrvQueryColorProfile** ](https://msdn.microsoft.com/library/windows/hardware/ff548573)関数、GDI クライアントは、ドライバーを指定する機会を提供する関数を呼び出す、プロファイル。 関数には、プロファイルが返された場合に使用されます。
+1.  場合、ドライバーの[プリンター インターフェイス DLL](printer-interface-dll.md)提供、 [ **DrvQueryColorProfile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winddiui/nf-winddiui-drvquerycolorprofile)関数、GDI クライアントは、ドライバーを指定する機会を提供する関数を呼び出す、プロファイル。 関数には、プロファイルが返された場合に使用されます。
 
 2.  場合**DrvQueryColorProfile**が存在しないか、プロファイルは返されません GDI が指定されたプリンターの種類のインストールされているプロファイルの色のディレクトリを検索します。 解像度、メディアの種類、および滑らかに一致する見つかった最初のプロファイルを使用する GDI DEVMODE 構造体で設定します。
 

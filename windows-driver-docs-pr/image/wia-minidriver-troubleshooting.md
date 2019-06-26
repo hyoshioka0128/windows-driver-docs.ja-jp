@@ -4,12 +4,12 @@ description: WIA ミニドライバーのトラブルシューティング
 ms.assetid: a0944bdd-56c4-4f7b-b542-eb353cd4d1f2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f79c92fbca686d31c29f6014898e5143a7c8673d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6a6057edfecf9868dfab28e0fdc6135d28a32474
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343773"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355193"
 ---
 # <a name="wia-minidriver-troubleshooting"></a>WIA ミニドライバーのトラブルシューティング
 
@@ -46,13 +46,13 @@ wiasUpdateScanRect, CheckXResAndUpdate failed (0x80070057)
  drvValidateItemProperties with hr = 0x80070057 (This is normal if the app wrote an invalid value)
 ```
 
-出力は、水平方向の解像度プロパティが、エラーの原因であるかを示しています。 解像度に 1200 に設定しようとして、アプリケーションが、1200 にサポートされている解像度の一覧は含まれません。 したがって、WIA サービス検証ヘルパー [ **wiasValidateItemProperties** ](https://msdn.microsoft.com/library/windows/hardware/ff549454)はこの値を設定する要求を拒否します。
+出力は、水平方向の解像度プロパティが、エラーの原因であるかを示しています。 解像度に 1200 に設定しようとして、アプリケーションが、1200 にサポートされている解像度の一覧は含まれません。 したがって、WIA サービス検証ヘルパー [ **wiasValidateItemProperties** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamdef/nf-wiamdef-wiasvalidateitemproperties)はこの値を設定する要求を拒否します。
 
 これで問題を特定すると、ドライバーまたはアプリケーションを変更する必要がありますがあるかどうかを判断する開発者の責任です。 スキャナーの仕様では、100 と 1400 の dpi の解像度ですべてをサポートするように、ドライバーが 1200 dpi の要求を処理できる必要があります。 スキャナーがこの設定をサポートしていない場合は、このプロパティの無効な値を水平方向の解像度を設定するのには再試行されませんので、アプリケーションを変更しなければなりません。 ここでは、アプリケーション、確認する値がこの値にプロパティを設定する前に有効であります。
 
 ログ記録レベルは、レジストリ内のエントリによって制御されます。 WIA、このキーはで存在します。
 
-**HKLM\\System\\CurrentControlSet\\Control\\StillImage\\Debug\\**<em>MODULE\_NAME</em>**\\DebugFlags**
+**HKLM\\System\\CurrentControlSet\\Control\\StillImage\\Debug\\** <em>MODULE\_NAME</em> **\\DebugFlags**
 
 この例では、モジュールで\_名は、適切なバイナリ モジュールの名前。 これは、WIA サービス*wiaservc.dll*します。 値**デバッグ フラグ**ログ記録レベルを制御します。 3 つの設定は、次の表に与えられます。
 
@@ -63,7 +63,7 @@ wiasUpdateScanRect, CheckXResAndUpdate failed (0x80070057)
 </colgroup>
 <thead>
 <tr class="header">
-<th>値</th>
+<th>Value</th>
 <th>説明</th>
 </tr>
 </thead>

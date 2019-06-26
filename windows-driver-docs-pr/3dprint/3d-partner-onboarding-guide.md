@@ -3,12 +3,12 @@ title: 3D 印刷パートナー オンボーディング ガイド
 description: このトピックでは、Windows Update にし、公開されている 3D プリンター ドライバーを実装する方法について説明します。
 ms.date: 05/17/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a923651df76199d8ff6179c1475c271ebad2e33
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0f43fad2f1559e503a2eefaba54207d9b238e872
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323536"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355211"
 ---
 # <a name="3d-print-partner-onboarding-guide"></a>3D 印刷パートナー オンボーディング ガイド
 
@@ -20,9 +20,9 @@ Windows 10 でプラグ アンド プレイの 3D プリンターは、Windows U
 
 ### <a name="upper-driver-render-filter"></a>上のドライバー (レンダー フィルター)
 
-- スライサーを実装します。 ドライバーは[3MF](http://www.3mf.io)として入力し、G コードまたはその他のようなマシン レベルのデータを生成します。
+- スライサーを実装します。 ドライバーは[3MF](https://3mf.io/)として入力し、G コードまたはその他のようなマシン レベルのデータを生成します。
 
-- 印刷キューを作成します。 下に、デバイスが表示されます**デバイスとプリンター**し、 **3D 印刷ダイアログ**の互換性のある[3D 印刷アプリケーション](https://developer.microsoft.com/windows/hardware/3d-software-partners)します。
+- 印刷キューを作成します。 下に、デバイスが表示されます**デバイスとプリンター**し、 **3D 印刷ダイアログ**の互換性のある[3D 印刷アプリケーション](https://developer.microsoft.com/windows/hardware/3d-print/software-partners)します。
 
 ### <a name="lower-driver-usb-driver"></a>下位のドライバー (USB ドライバー)
 
@@ -44,7 +44,7 @@ Windows 10 でプラグ アンド プレイの 3D プリンターは、Windows U
 
 1. 取得し、デバイスの USB ハードウェア ID を確認します
 
-    - デバイスのファームウェアが、一意のベンダー ID と製品 ID (PID/VID) によって割り当てられたことを確認、 [USB Implementers Forum (USB の場合)](http://www.usb.org)します。 USBSER デバイスでは、ことをお勧め、USB 上の競合を回避する一意のシリアル番号を使用するポートの変更。
+    - デバイスのファームウェアが、一意のベンダー ID と製品 ID (PID/VID) によって割り当てられたことを確認、 [USB Implementers Forum (USB の場合)](https://www.usb.org/)します。 USBSER デバイスでは、ことをお勧め、USB 上の競合を回避する一意のシリアル番号を使用するポートの変更。
 
 2. Microsoft ツールおよび Sdk をインストールします。
 

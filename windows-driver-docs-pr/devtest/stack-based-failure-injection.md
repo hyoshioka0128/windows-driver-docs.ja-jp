@@ -4,12 +4,12 @@ description: スタック ベースのエラー挿入オプションは、カー
 ms.assetid: B5C06413-81FB-46DA-B053-80ED347DA3EB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e51b2e851d153436f72a766b4e6bfe866507a24
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d275e9327ee6ae827645baabb595ce1180c4d040
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387917"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379037"
 ---
 # <a name="stack-based-failure-injection"></a>スタック ベースのエラー挿入
 
@@ -27,7 +27,7 @@ ms.locfileid: "63387917"
 ## <a name="span-idactivatingthisoptionspanspan-idactivatingthisoptionspanspan-idactivatingthisoptionspanactivating-this-option"></a><span id="Activating_this_option"></span><span id="activating_this_option"></span><span id="ACTIVATING_THIS_OPTION"></span>このオプションをアクティブ化します。
 
 
-スタック ベースのエラー挿入の機能の 1 つまたは複数のドライバーをアクティブ化することができます[テスト コンピューターにドライバーを展開する](https://msdn.microsoft.com/windows-drivers/develop/deploying_a_driver_to_a_test_computer)します。 スタック ベースのエラー挿入オプションを選択するには、構成するときに、[ドライバー パッケージのプロジェクトの Driver Verifier プロパティ](https://msdn.microsoft.com/windows-drivers/develop/driver_verifier_properties_for__driver_projects)します。 スタック ベースのエラー挿入オプションをアクティブ化またはコンピューターを再起動する必要があります。 ドライバーの検証とテスト コンピューターでこの機能を有効にするためのテスト ユーティリティを実行することもできます。
+スタック ベースのエラー挿入の機能の 1 つまたは複数のドライバーをアクティブ化することができます[テスト コンピューターにドライバーを展開する](https://docs.microsoft.com/windows-hardware/drivers)します。 スタック ベースのエラー挿入オプションを選択するには、構成するときに、[ドライバー パッケージのプロジェクトの Driver Verifier プロパティ](https://docs.microsoft.com/windows-hardware/drivers)します。 スタック ベースのエラー挿入オプションをアクティブ化またはコンピューターを再起動する必要があります。 ドライバーの検証とテスト コンピューターでこの機能を有効にするためのテスト ユーティリティを実行することもできます。
 
 **重要な**  スタック ベースのエラー挿入をテスト コンピューターでアクティブ化するとことを確認しても選択しない[低リソース シミュレーション](low-resources-simulation.md)します。
 
@@ -40,10 +40,10 @@ ms.locfileid: "63387917"
     3.  選択**Driver Verifier を有効にする**します。 テスト コンピューターでドライバーの検証を有効にする場合にのみ、または指定したドライバーの一覧については、コンピューターのドライバーのプロジェクトのすべてのドライバーをドライバーの検証ツールを有効にすることもできます。
     4.  **スタック ベースのエラー インジェクター**、スタック ベースのエラー挿入の (チェック) を選択します。
     5.  **[適用]** または **[OK]** をクリックします。
-    6.  参照してください[テスト コンピューターにドライバーを展開する](https://msdn.microsoft.com/windows-drivers/develop/deploying_a_driver_to_a_test_computer)詳細についてはします。 このオプションをアクティブ化するテスト コンピューターを再起動する必要があります。
+    6.  参照してください[テスト コンピューターにドライバーを展開する](https://docs.microsoft.com/windows-hardware/drivers)詳細についてはします。 このオプションをアクティブ化するテスト コンピューターを再起動する必要があります。
 -   **テストの有効化と無効にする Driver Verifier を使用**
 
-    1.  Driver Verifier は、ユーティリティのテストを実行してもできます。 説明されている指示に従って[Visual Studio を使用して実行時にドライバーをテストする方法](https://msdn.microsoft.com/windows-drivers/develop/testing_a_driver_at_runtime)します。 下、**すべてのテスト\\Driver Verifier**テスト カテゴリを選択、 **Driver Verifier を有効にする」(可能な再起動が必要)** と**Driver Verifier (可能な再起動の無効にします。必要な)** テストします。
+    1.  Driver Verifier は、ユーティリティのテストを実行してもできます。 説明されている指示に従って[Visual Studio を使用して実行時にドライバーをテストする方法](https://docs.microsoft.com/windows-hardware/drivers)します。 下、**すべてのテスト\\Driver Verifier**テスト カテゴリを選択、 **Driver Verifier を有効にする」(可能な再起動が必要)** と**Driver Verifier (可能な再起動の無効にします。必要な)** テストします。
     2.  名前をクリックして、Driver Verifier のオプションを選択して、 **Driver Verifier を有効にする」(可能な再起動が必要)** でテスト、**ドライバー テスト グループ**ウィンドウ。
     3.  選択 (チェック) スタック ベースのエラー挿入します。
     4.  これらのテストをテスト グループに追加した後は、テスト グループを保存できます。 スタック ベースのエラー挿入を有効にするのには、実行、 **Driver Verifier を有効にする」(可能な再起動が必要)** テスト用に構成したコンピューターでテストします。
@@ -62,11 +62,11 @@ ms.locfileid: "63387917"
 ## <a name="span-idusingthestackbasedfailureinjectionsbfidebuggerextensionspanspan-idusingthestackbasedfailureinjectionsbfidebuggerextensionspanspan-idusingthestackbasedfailureinjectionsbfidebuggerextensionspanusing-the-stack-based-failure-injection-sbfi-debugger-extension"></a><span id="Using_the_Stack_Based_Failure_Injection__SBFI__debugger_extension"></span><span id="using_the_stack_based_failure_injection__sbfi__debugger_extension"></span><span id="USING_THE_STACK_BASED_FAILURE_INJECTION__SBFI__DEBUGGER_EXTENSION"></span>スタック ベースのエラーの挿入 (SBFI) デバッガー拡張機能の使用
 
 
-ほとんどのバグでスタック ベースのエラー挿入の結果で見つかった問題を確認します。 これらのコードのバグの原因を特定するには、WDK は、拡張機能と必要なシンボルにスタック ベースのエラー挿入のデバッガーを提供します。 インストール手順は、デバッガー システムの両方にインストールされます。 既定の場所は c:\\Program Files (x86)\\Windows キット\\8.0\\デバッガー\\*&lt;arch&gt;* します。
+ほとんどのバグでスタック ベースのエラー挿入の結果で見つかった問題を確認します。 これらのコードのバグの原因を特定するには、WDK は、拡張機能と必要なシンボルにスタック ベースのエラー挿入のデバッガーを提供します。 インストール手順は、デバッガー システムの両方にインストールされます。 既定の場所は c:\\Program Files (x86)\\Windows キット\\8.0\\デバッガー\\ *&lt;arch&gt;* します。
 
 **デバッガーの拡張機能を実行するには**
 
-- デバッガーのコマンド プロンプトから次のコマンドを入力: **!**<em>&lt;パス&gt;\\</em>**kmautofaildbg.dll.autofail**します。 たとえば、c: でデバッガーの拡張機能がインストールされていると仮定すると\\dbgext とその kmautofail.pdb がシンボル パスには、次のコマンドを入力します。
+- デバッガーのコマンド プロンプトから次のコマンドを入力: **!** <em>&lt;パス&gt;\\</em>**kmautofaildbg.dll.autofail**します。 たとえば、c: でデバッガーの拡張機能がインストールされていると仮定すると\\dbgext とその kmautofail.pdb がシンボル パスには、次のコマンドを入力します。
 
   ```
   !c:\dbgext\kmautofaildbg.dll.autofail
@@ -95,9 +95,9 @@ Sequence: 2, Test Number: 0, Process ID: 0, Thread ID: 0
 
 出力の上部にあるシーケンス番号を注入する違反の数をカウントします。 この例では、このテストの実行中に挿入された 2 つ目のエラーを示します。 プロセス ID は、これは、システム プロセス、0 です。 IRQL は、2 は、これは、ディスパッチ レベルで呼び出されます。
 
-スタックから KmAutoFail は、スタック ベースのエラー挿入ドライバーです。 関数名では、Mydriver.sys からどのような関数を呼び出すことを示します KmAutoFail のインターセプトされ、フォールト挿入されます。 ここでは、失敗した関数が[ **exallocatepoolwithtag に**](https://msdn.microsoft.com/library/windows/hardware/ff544520)します。 すべての関数 KmAutoFail Ntoskrnl.sys または Ndis.sys 切片の呼び出しがこの名前付け規則を使用します。 次に、ドライバーが呼び出し履歴のテスト (Mydriver.sys) 参照してください。 これは、スタックの一意性を特定するために使用する呼び出しスタックの一部です。 したがって、デバッガーの拡張機能によってダンプの各エントリは、コール スタックのこの部分で一意になります。 呼び出し履歴の残りの部分では、ドライバーと呼ばれるユーザーを示します。 これの主な重要度は、(IOCTL) を使用してユーザー モードまたはカーネル モード ドライバーからかどうか、ドライバーが呼び出されます。
+スタックから KmAutoFail は、スタック ベースのエラー挿入ドライバーです。 関数名では、Mydriver.sys からどのような関数を呼び出すことを示します KmAutoFail のインターセプトされ、フォールト挿入されます。 ここでは、失敗した関数が[ **exallocatepoolwithtag に**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtag)します。 すべての関数 KmAutoFail Ntoskrnl.sys または Ndis.sys 切片の呼び出しがこの名前付け規則を使用します。 次に、ドライバーが呼び出し履歴のテスト (Mydriver.sys) 参照してください。 これは、スタックの一意性を特定するために使用する呼び出しスタックの一部です。 したがって、デバッガーの拡張機能によってダンプの各エントリは、コール スタックのこの部分で一意になります。 呼び出し履歴の残りの部分では、ドライバーと呼ばれるユーザーを示します。 これの主な重要度は、(IOCTL) を使用してユーザー モードまたはカーネル モード ドライバーからかどうか、ドライバーが呼び出されます。
 
-ドライバーにエラーが返された場合に注意するその[ *DriverEntry* ](https://msdn.microsoft.com/library/windows/hardware/ff544113)ルーチンを再読み込み試行は通常行わさまざまなメモリの場所にします。 その場合は、以前の場所からのコール スタックでは、ドライバー スタック情報ではなく「不要な」が含まれます可能性があります。 これは問題ではありませんが、ドライバーは、挿入されたエラーを正しく処理を指示します。
+ドライバーにエラーが返された場合に注意するその[ *DriverEntry* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)ルーチンを再読み込み試行は通常行わさまざまなメモリの場所にします。 その場合は、以前の場所からのコール スタックでは、ドライバー スタック情報ではなく「不要な」が含まれます可能性があります。 これは問題ではありませんが、ドライバーは、挿入されたエラーを正しく処理を指示します。
 
 この次のエントリは、ユーザー モードから IOCTL を使用して、ドライバーへの呼び出しを示します。 プロセス ID と IRQ レベルに注意してください。 Mydriver.sys は、NDIS フィルター ドライバーであるため、IOCTL Ndis.sys が通過します。 注その nt!NtDeviceIoControlFile がスタック上にします。 Ioctl で使用される、ドライバーで実行する任意のテストは、この関数で移動します。
 

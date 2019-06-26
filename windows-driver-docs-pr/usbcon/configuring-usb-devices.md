@@ -3,12 +3,12 @@ Description: このセクションのトピックでは、クライアント ド
 title: USB ドライバーでの USB 構成の選択
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 863cfa49f6b779888e79e795623bbf3988889e2d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e5036268bf3b8472b75c98ac59a5330c34246bab
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352604"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356628"
 ---
 # <a name="selecting-a-usb-configuration-in-usb-drivers"></a>USB ドライバーでの USB 構成の選択
 
@@ -63,15 +63,15 @@ WDM ベースのクライアント ドライバーは、USB デバイスで、�
 クライアント ドライバーは WDF オブジェクトや、デバイスが 1 つのインターフェイスまたは複数のインターフェイスにあるかどうかを使用している場合、特定の制限が適用されます。 既定の構成を変更する前に、次の制限を考慮してください。
 
 -   インターフェイスまたはインターフェイスのコレクションを管理する複合デバイス用のクライアント ドライバー、[汎用的な親の USB ドライバー](usb-common-class-generic-parent-driver.md) (Usbccgp.sys) デバイスの構成値を変更することはできません。 ただし、クライアント ドライバーでは、最初の (既定値) の構成以外の構成 を選択で、Usbccgp.sys を構成できます。 詳細については、次を参照してください。[既定以外の USB の構成を選択する構成で、Usbccgp.sys](selecting-the-configuration-for-a-multiple-interface--composite--usb-d.md)します。
--   フレームワークを使用している KMDF ベースのクライアント ドライバー [USB I/O ターゲット](https://msdn.microsoft.com/library/windows/hardware/ff544752)最初の構成のみを選択できます。
+-   フレームワークを使用している KMDF ベースのクライアント ドライバー [USB I/O ターゲット](https://docs.microsoft.com/windows-hardware/drivers/wdf/usb-i-o-targets)最初の構成のみを選択できます。
 -   [WinUSB](winusb.md)最初の構成のみをサポートします。
 -   多くの場合、クラス ドライバーには、複数の構成のサポートが不足しています。 デバイスが USB クラス仕様で定義されているクラスを実装する場合を参照してください、 [USB テクノロジ](https://go.microsoft.com/fwlink/p/?linkid=8769)デバイス クラスとクラス仕様に関する情報の web サイト。 Microsoft では、サポートされている USB デバイス クラスのクラス ドライバーを提供します。 詳しくは、「[サポートされる USB デバイス クラスのドライバー](supported-usb-classes.md)」をご覧ください。
 
 ## <a name="related-topics"></a>関連トピック
 [USB ドライバー開発ガイド](usb-driver-development-guide.md)  
 [USB 構成記述子](usb-configuration-descriptors.md)  
-[USB デバイスを使用してください。](https://msdn.microsoft.com/library/windows/hardware/ff553101)  
-[UMDF で USB インターフェイスの操作](https://msdn.microsoft.com/library/windows/hardware/ff561478)  
+[USB デバイスを使用してください。](https://docs.microsoft.com/windows-hardware/drivers/wdf/working-with-usb-devices)  
+[UMDF で USB インターフェイスの操作](https://docs.microsoft.com/windows-hardware/drivers/wdf/working-with-usb-interfaces-in-umdf-1-x-drivers)  
 
 
 

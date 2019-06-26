@@ -4,12 +4,12 @@ description: Windows 8.1 には、ユーザーが、ジョブ印刷する前に�
 ms.assetid: 43569030-224F-46C6-963F-FC3BE24A0FB3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 87e682ace2a8abad91db7ba290ea6ba959f2b125
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 020d4c1c358dd11d929f85390d18f2d5e2a556c4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581415"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356063"
 ---
 # <a name="driver-support-for-protected-printing"></a>保護された印刷のドライバー サポート
 
@@ -24,7 +24,7 @@ Windows 8.1 には、使用できる PrintTicket と PrintCapabilities ドキュ
 
 *http://schemas.microsoft.com/windows/2013/05/printing/printschemakeywordsv11*
 
-PrintTicket ファイルで保護された印刷を指定する方法については、[印刷暗証番号 (pin) のサンプル ファイルは PrintTicket](sample-printticket-file-for-pin-printing.md)を参照してください。 PrintCapabilities ファイルで保護された印刷を指定する方法を参照してくださいと[暗証番号 (pin) 印刷用のサンプル PrintCapabilities ファイル](sample-printcapabilities-file-for-pin-printing.md)します。
+PrintTicket ファイルで保護された印刷を指定する方法については、次を参照してください。[印刷暗証番号 (pin) のサンプル ファイルは PrintTicket](sample-printticket-file-for-pin-printing.md)します。 PrintCapabilities ファイルで保護された印刷を指定する方法を参照してくださいと[暗証番号 (pin) 印刷用のサンプル PrintCapabilities ファイル](sample-printcapabilities-file-for-pin-printing.md)します。
 
 仕様は、ここでダウンロードできます。
 
@@ -130,7 +130,7 @@ V4 印刷ドライバーのデータ ファイルで保護された印刷のサ�
 <td>ルート</td>
 <td><p>"int"(QuotedValue)</p>
 <p>つまり、引用符で囲まれた整数値を表す必要があります。</p></td>
-<td>* MSJobPasscodeMaxLength:「9」</td>
+<td>\* MSJobPasscodeMaxLength:「9」</td>
 </tr>
 </tbody>
 </table>
@@ -272,11 +272,11 @@ PPD\*機能 JobPasscode\*オプション
 
 **プリンターの拡張機能**
 
-プリンターの拡張機能は、印刷設定 UI で保護された印刷コントロールを表示できる必要があります。 これにより、デスクトップ アプリのユーザーは、プリンターの拡張機能を使用する場合は、保護された印刷機能を構成できます。 Microsoft は、変更を行って、 [ **IPrintSchemaTicket** ](https://msdn.microsoft.com/library/windows/hardware/hh451398)プリンターの拡張機能からの保護された印刷をサポートする Api のファミリです。
+プリンターの拡張機能は、印刷設定 UI で保護された印刷コントロールを表示できる必要があります。 これにより、デスクトップ アプリのユーザーは、プリンターの拡張機能を使用する場合は、保護された印刷機能を構成できます。 Microsoft は、変更を行って、 [ **IPrintSchemaTicket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprintschematicket)プリンターの拡張機能からの保護された印刷をサポートする Api のファミリです。
 
 **UWP デバイス アプリ**
 
-Microsoft は許可の変更を行っても、 [ **IPrintSchemaTicket** ](https://msdn.microsoft.com/library/windows/hardware/hh451398)のコントロールを表示するデバイス アプリを UWP を使用する Api のファミリが、印刷設定 UI での印刷を保護します。
+Microsoft は許可の変更を行っても、 [ **IPrintSchemaTicket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprintschematicket)のコントロールを表示するデバイス アプリを UWP を使用する Api のファミリが、印刷設定 UI での印刷を保護します。
 
  
 

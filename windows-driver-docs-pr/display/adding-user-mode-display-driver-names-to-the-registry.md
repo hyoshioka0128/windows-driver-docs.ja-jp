@@ -8,12 +8,12 @@ keywords:
 - レジストリ WDK の表示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 823b56df8251bfcd2c3bc2843b6ecc0e8ccbc52b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0b957581c6c4adc7de84a7cb9228412e47493fa1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341591"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353451"
 ---
 # <a name="adding-user-mode-display-driver-names-to-the-registry"></a>レジストリへのユーザー モード ディスプレイ ドライバー名の追加
 
@@ -42,7 +42,7 @@ HKR,, InstalledDisplayDrivers,    %REG_MULTI_SZ%, r200umd
 HKR,, InstalledDisplayDrivers,    %REG_MULTI_SZ%, r200umd, r200umdva, r200umd64, r200umd64va
 ```
 
-Microsoft Windows Hardware Quality Labs (WHQL) テスト プログラムでは、ユーザー モード ドライバーの表示名のリストを使用して、検証テストの実行をドライバー バイナリが変わりません。 他のアプリケーションが経由で使用もユーザー モード ドライバーの表示名の一覧通常[を実装する WMI](https://msdn.microsoft.com/library/windows/hardware/ff547139) (WMI) の一部である、アプリケーションを決定するファイルのリストとして、[ドライバー パッケージ](https://msdn.microsoft.com/library/windows/hardware/ff539954).
+Microsoft Windows Hardware Quality Labs (WHQL) テスト プログラムでは、ユーザー モード ドライバーの表示名のリストを使用して、検証テストの実行をドライバー バイナリが変わりません。 他のアプリケーションが経由で使用もユーザー モード ドライバーの表示名の一覧通常[を実装する WMI](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-wmi) (WMI) の一部である、アプリケーションを決定するファイルのリストとして、[ドライバー パッケージ](https://docs.microsoft.com/windows-hardware/drivers/install/components-of-a-driver-package).
 
  
 

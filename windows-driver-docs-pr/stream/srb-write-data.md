@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 72f5fdfd6178affa2c58f280092fa546df993e4b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d9c83b23fbd4e1acad95d3f6ac8c8d8a0a036cf6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333985"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377847"
 ---
 # <a name="srbwritedata"></a>SRB\_書き込み\_データ
 
@@ -25,7 +25,7 @@ ms.locfileid: "63333985"
 ## <span id="ddk_srb_write_data_ks"></span><span id="DDK_SRB_WRITE_DATA_KS"></span>
 
 
-クラス ドライバーは、ミニドライバーの書き込み要求を受信しました。 値*pSrb*-&gt;**CommandData**.**DataBufferArray**の配列を指す[ **KSSTREAM\_ヘッダー** ](https://msdn.microsoft.com/library/windows/hardware/ff567138)構造体は、データ バッファーをまとめて説明します。 値*pSrb*-&gt;**CommandData**.**NumberOfBuffers**配列のサイズを指定します。 *PSrb*ポインターが指す、 [ **HW\_ストリーム\_要求\_ブロック**](https://msdn.microsoft.com/library/windows/hardware/ff559702)構造体。
+クラス ドライバーは、ミニドライバーの書き込み要求を受信しました。 値*pSrb*-&gt;**CommandData**.**DataBufferArray**の配列を指す[ **KSSTREAM\_ヘッダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksstream_header)構造体は、データ バッファーをまとめて説明します。 値*pSrb*-&gt;**CommandData**.**NumberOfBuffers**配列のサイズを指定します。 *PSrb*ポインターが指す、 [ **HW\_ストリーム\_要求\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/ns-strmini-_hw_stream_request_block)構造体。
 
 ### <a name="span-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
 

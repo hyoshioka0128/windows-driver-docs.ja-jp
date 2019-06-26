@@ -8,12 +8,12 @@ keywords:
 - DPIXELFORMAT
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7499aa4041c462ee53f9307a6b7abdca9cc120e0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1ae4f4e261ccc5f7b2ed6e730051ec2970649d0e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325338"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356371"
 ---
 # <a name="format-operations"></a>形式の操作
 
@@ -21,7 +21,7 @@ ms.locfileid: "63325338"
 ## <span id="ddk_format_operations_gg"></span><span id="DDK_FORMAT_OPERATIONS_GG"></span>
 
 
-サポートされている画面形式のレポート操作は、その形式の画面で実行できるを DirectX 8.0 ドライバーが示すも必要があります。 ピクセル形式のサポートされている操作がを通じて報告された、 **dwOperations**のフィールド、 [ **DDPIXELFORMAT** ](https://msdn.microsoft.com/library/windows/hardware/ff550274)構造体。 ドライバーは、このフィールドを論理的に組み合わせたその形式のサーフェスのすべてのサポートされている操作を設定する必要があります。
+サポートされている画面形式のレポート操作は、その形式の画面で実行できるを DirectX 8.0 ドライバーが示すも必要があります。 ピクセル形式のサポートされている操作がを通じて報告された、 **dwOperations**のフィールド、 [ **DDPIXELFORMAT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ddpixelformat)構造体。 ドライバーは、このフィールドを論理的に組み合わせたその形式のサーフェスのすべてのサポートされている操作を設定する必要があります。
 
  
 

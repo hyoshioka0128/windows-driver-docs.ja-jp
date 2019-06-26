@@ -12,17 +12,17 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 9b2c28fc664e93ae4f4218153477459d5daffd56
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7e642c9d1871d562b02bc86ef91a68f0ba735867
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356946"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377676"
 ---
 # <a name="language-xml-element"></a>language XML 要素
 
 
-\[DIFx は非推奨、詳細については、「 [DIFx ガイドライン](https://msdn.microsoft.com/windows/hardware/drivers/install/difx-guidelines)します。\]
+\[DIFx は非推奨、詳細については、「 [DIFx ガイドライン](https://docs.microsoft.com/windows-hardware/drivers/install/difx-guidelines)します。\]
 
 **言語**XML 要素をローカライズし、DPInst は、そのウィザードのページに表示される項目をカスタマイズします。
 
@@ -94,7 +94,7 @@ ms.locfileid: "63356946"
 
 使用することができます、**言語**ローカライズし、テキスト、アイコン、および DPInst は、そのウィザードのページに表示されるビットマップをカスタマイズする要素。 アイコンは、Microsoft Windows タスク バーと Windows デスクトップ DPInst を表します。
 
-DPInst に追加されるエントリにも使用するアイコン**プログラムと機能**コントロール パネルの します。 これらのエントリを表す、[ドライバー パッケージ](https://msdn.microsoft.com/windows-drivers/develop/creating_a_driver_package)DPInst をインストールします。
+DPInst に追加されるエントリにも使用するアイコン**プログラムと機能**コントロール パネルの します。 これらのエントリを表す、[ドライバー パッケージ](https://docs.microsoft.com/windows-hardware/drivers)DPInst をインストールします。
 
 **注**  DPInst がそれらのエントリを追加する Windows Vista より前のバージョンの Windows で**プログラム追加と削除**コントロール パネルの します。
 

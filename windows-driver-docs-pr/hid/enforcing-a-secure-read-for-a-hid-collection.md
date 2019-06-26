@@ -9,12 +9,12 @@ keywords:
 - WDK を非表示に、信頼できるセキュリティで保護された読み取り
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c5ea56c054f43955a4299ef6ee06b4f80228964b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2646121ca18db641677bae1bd372ab3d5227bbba
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388965"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353811"
 ---
 # <a name="enforcing-a-secure-read-for-a-hid-collection"></a>HID コレクションにセキュリティで保護された読み取りを適用する
 
@@ -28,7 +28,7 @@ ms.locfileid: "63388965"
 
 このメカニズムでは、ユーザー モード システム コンポーネントには、重要なシステム操作中にコレクションから入力を取得する SeTcbPrivilege 特権のないユーザー モード アプリケーションができないようにすることができます「信頼」ように主に提供されています。 たとえば、「信頼できる」ユーザー モードのシステム コンポーネントでは、ユーザーがログオン操作中に提供する機密情報の取得から SeTcbPrivilege 特権なしのユーザー モード アプリケーションを防止できます。
 
-クライアントの使用を「信頼できる」 [ **IOCTL\_HID\_を有効にする\_SECURE\_読み取り**](https://msdn.microsoft.com/library/windows/hardware/ff541081)と[ **IOCTL\_HID\_を無効にする\_SECURE\_読み取り**](https://msdn.microsoft.com/library/windows/hardware/ff541077)のコレクションを有効にし、セキュリティで保護を無効にする要求を読み取ります。 SeTcbPrivilege 特権なしのクライアントがこれらの要求を使用して、要求には、コレクションのセキュリティで保護された読み取り状態は変わりません。 および、HID クラス ドライバーは、状態のステータス値を返します場合\_特権\_いない\_保持します。
+クライアントの使用を「信頼できる」 [ **IOCTL\_HID\_を有効にする\_SECURE\_読み取り**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidclass/ni-hidclass-ioctl_hid_enable_secure_read)と[ **IOCTL\_HID\_を無効にする\_SECURE\_読み取り**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidclass/ni-hidclass-ioctl_hid_disable_secure_read)のコレクションを有効にし、セキュリティで保護を無効にする要求を読み取ります。 SeTcbPrivilege 特権なしのクライアントがこれらの要求を使用して、要求には、コレクションのセキュリティで保護された読み取り状態は変わりません。 および、HID クラス ドライバーは、状態のステータス値を返します場合\_特権\_いない\_保持します。
 
 有効にして、セキュリティで保護を無効にする次のようにコレクションの動作を参照してください。
 
@@ -41,7 +41,7 @@ ms.locfileid: "63388965"
     -   ファイルのセキュリティで保護された読み取りの数が 0 に等しい場合は、ドライバーは、セキュリティで保護された読み取りの数は変更されません。
 -   コレクションのセキュリティで保護された読み取りの数が 0 より大きい場合は、HID クラス ドライバーは、コレクションのセキュリティで保護された読み取りを強制します。 それ以外の場合、ドライバーでは、コレクションのセキュリティで保護された読み取りは適用されません。
 
--   クライアントは、対応する有効にする要求の取り消しを無効にする要求を使用する必要があります。 ただし、クライアントはこれを実行しない場合、HID クラス ドライバー適切にデクリメント、セキュリティで保護された読み取りコレクションの数を処理するとき、 [ **IRP\_MJ\_閉じる**](https://msdn.microsoft.com/library/windows/hardware/ff550720)ファイルを要求します。 ドライバーは、終了の要求を処理するときに、デクリメント、セキュリティで保護された読み取りによって閉じられているファイルのセキュリティで保護された読み取りの数、コレクションの数。
+-   クライアントは、対応する有効にする要求の取り消しを無効にする要求を使用する必要があります。 ただし、クライアントはこれを実行しない場合、HID クラス ドライバー適切にデクリメント、セキュリティで保護された読み取りコレクションの数を処理するとき、 [ **IRP\_MJ\_閉じる**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-close)ファイルを要求します。 ドライバーは、終了の要求を処理するときに、デクリメント、セキュリティで保護された読み取りによって閉じられているファイルのセキュリティで保護された読み取りの数、コレクションの数。
 
  
 

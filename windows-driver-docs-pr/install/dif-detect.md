@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 58c275e42705cc696ac0fded6a5e5be0e0e5241a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a26c57dd7f444ad87f49240f4b73a1a4f2d33594
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391700"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354657"
 ---
 # <a name="difdetect"></a>DIF_DETECT
 
@@ -58,7 +58,7 @@ DIF_DETECT 要求は、特定のクラスの非 PnP デバイスを検出し、�
 ### <a name="installer-input"></a>インストーラーの入力
 
 <a href="" id="deviceinfoset"></a>*DeviceInfoSet*  
-識別するハンドルを提供、[デバイス情報設定されている](https://msdn.microsoft.com/library/windows/hardware/ff541247)します。 [デバイス セットアップ クラス](https://msdn.microsoft.com/library/windows/hardware/ff541509)に関連付けられている、 *DeviceInfoSet*します。
+識別するハンドルを提供、[デバイス情報設定されている](https://docs.microsoft.com/windows-hardware/drivers/install/device-information-sets)します。 [デバイス セットアップ クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-setup-classes)に関連付けられている、 *DeviceInfoSet*します。
 
 <a href="" id="deviceinfodata"></a>*DeviceInfoData*  
 なし
@@ -67,7 +67,7 @@ DIF_DETECT 要求は、特定のクラスの非 PnP デバイスを検出し、�
 インストールのパラメーターに関連付けられているデバイスがある、 *DeviceInfoSet*します。
 
 <a href="" id="class-installation-parameters"></a>インストール パラメーターをクラスします。  
-[ **SP_DETECTDEVICE_PARAMS** ](https://msdn.microsoft.com/library/windows/hardware/ff552341)構造が関連付けられている、 *DeviceInfoSet*します。 パラメーターには、クラスのインストーラーを検出操作の進行状況を示すために呼び出すコールバック ルーチンが含まれています。
+[ **SP_DETECTDEVICE_PARAMS** ](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_detectdevice_params)構造が関連付けられている、 *DeviceInfoSet*します。 パラメーターには、クラスのインストーラーを検出操作の進行状況を示すために呼び出すコールバック ルーチンが含まれています。
 
 ### <a name="installer-output"></a>インストーラーの出力
 
@@ -93,13 +93,13 @@ DIF_DETECT 要求に応答インストーラーは、セットアップ クラ�
 
 インストーラーは、デバイスが検出される場合、次には少なくとも行う必要があります。
 
--   呼び出す、 **DetectProgressNotify**コールバック ルーチンで、 [ **SP_DETECTDEVICE_PARAMS** ](https://msdn.microsoft.com/library/windows/hardware/ff552341)検出に著しいがかかる可能性がある場合は、インストールのパラメーターをクラス時間の長さ。
+-   呼び出す、 **DetectProgressNotify**コールバック ルーチンで、 [ **SP_DETECTDEVICE_PARAMS** ](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_detectdevice_params)検出に著しいがかかる可能性がある場合は、インストールのパラメーターをクラス時間の長さ。
 
 -   インストーラーが検出した各デバイスは、次のことを行う必要があります。
-    -   デバイス情報の要素の作成 ([**SetupDiCreateDeviceInfo**](https://msdn.microsoft.com/library/windows/hardware/ff550952))。
+    -   デバイス情報の要素の作成 ([**SetupDiCreateDeviceInfo**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdicreatedeviceinfoa))。
     -   ドライバーの選択の情報を提供します。
 
-        インストーラーでは、デバイスのドライバーを手動で選択できますか、インストーラーは、Windows がデバイスに対して、INF を検索に使用する、デバイスのハードウェア ID を設定できます。 インストーラーは、呼び出すことによって、ハードウェア ID を設定[ **SetupDiSetDeviceRegistryProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff552169)で、*プロパティ*SPDRP_HARDWAREID の値。
+        インストーラーでは、デバイスのドライバーを手動で選択できますか、インストーラーは、Windows がデバイスに対して、INF を検索に使用する、デバイスのハードウェア ID を設定できます。 インストーラーは、呼び出すことによって、ハードウェア ID を設定[ **SetupDiSetDeviceRegistryProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetdeviceregistrypropertya)で、*プロパティ*SPDRP_HARDWAREID の値。
 
     -   可能性があるいくつかのデバイスのインストール パラメーターを設定します。
 
@@ -109,7 +109,7 @@ DIF_DETECT 要求に応答インストーラーは、セットアップ クラ�
 
 フル インストール モードのセットアップ時に非 PnP デバイスを検出するために、インストーラーを処理する必要があります、 [ **DIF_FIRSTTIMESETUP** ](dif-firsttimesetup.md)要求。 フル インストール モードのセットアップでは、インストーラーに DIF_DETECT 要求を送信しません。
 
-差分のコードの詳細については、次を参照してください。 [DIF コードの処理](https://msdn.microsoft.com/library/windows/hardware/ff546094)します。
+差分のコードの詳細については、次を参照してください。 [DIF コードの処理](https://docs.microsoft.com/windows-hardware/drivers/install/handling-dif-codes)します。
 
 <a name="requirements"></a>要件
 ------------
@@ -138,11 +138,11 @@ DIF_DETECT 要求に応答インストーラーは、セットアップ クラ�
 
 [**DIF_FIRSTTIMESETUP**](dif-firsttimesetup.md)
 
-[**SetupDiCreateDeviceInfo**](https://msdn.microsoft.com/library/windows/hardware/ff550952)
+[**SetupDiCreateDeviceInfo**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdicreatedeviceinfoa)
 
-[**SP_DETECTDEVICE_PARAMS**](https://msdn.microsoft.com/library/windows/hardware/ff552341)
+[**SP_DETECTDEVICE_PARAMS**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_detectdevice_params)
 
-[**SP_DEVINSTALL_PARAMS**](https://msdn.microsoft.com/library/windows/hardware/ff552346)
+[**SP_DEVINSTALL_PARAMS**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)
 
  
 

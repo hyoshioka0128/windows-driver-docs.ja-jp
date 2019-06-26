@@ -4,24 +4,24 @@ description: Windows 8 以降では、デバイスを入力できます D3cold �
 ms.assetid: 4BADC310-CC53-4084-A592-66197C348279
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ff10d3af3c23cf857e2e68f772bfeacc59683d03
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 147a963ae4e2d7ba63300a7b3e6f5a36d98aeb26
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63338679"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353981"
 ---
 # <a name="firmware-requirements-for-d3cold"></a>D3cold のファームウェア要件
 
 
 Windows 8 以降では、デバイスを入力できます D3cold 電源のサブ状態システム S0 電源の状態のままになる場合でもです。 このトピックでは、D3cold を実装するための要件をサポートして、embedded デバイスのファームウェアをについて説明します。 次の説明の目的は、embedded デバイスを確実に入力し、D3cold の終了を有効にするファームウェアの開発者を支援します。
 
-さらに、D3cold をサポートするためのデバイス ドライバーの要件について簡単に説明します。 D3cold のデバイス ドライバーのサポートについての詳細については、次を参照してください。[ドライバーではサポートしている D3cold](https://msdn.microsoft.com/library/windows/hardware/hh967717)します。
+さらに、D3cold をサポートするためのデバイス ドライバーの要件について簡単に説明します。 D3cold のデバイス ドライバーのサポートについての詳細については、次を参照してください。[ドライバーではサポートしている D3cold](https://docs.microsoft.com/windows-hardware/drivers/kernel/supporting-d3cold-in-a-driver)します。
 
 ## <a name="introduction"></a>概要
 
 
-[デバイスの電源状態](https://msdn.microsoft.com/library/windows/hardware/ff543162)ACPI の仕様とバスのさまざまな仕様で定義されます。 PCI バスの仕様には、PCI 電源管理が導入されてからは、2 つのサブ状態 D3hot と D3cold に (off) デバイスの電源状態 D3 を分割します。 この区別は、ACPI 3.0 では ACPI の仕様に追加され、ACPI 4.0 で拡張されました。 Windows が常に両方 D3 のサブ状態をサポートするが、Windows 7 および以前のバージョンの Windows のサポート、D3cold サブ状態マシン全体に S0 が終了したときにのみ、スリープまたは休止状態の状態を入力する (操作) システムの電源状態 — 通常 S3 または S4 します。 Windows 8 以降、デバイス ドライバーの自分のデバイス、システムに残ります S0 中でも D3cold 状態にできるようにします。
+[デバイスの電源状態](https://docs.microsoft.com/windows-hardware/drivers/kernel/device-power-states)ACPI の仕様とバスのさまざまな仕様で定義されます。 PCI バスの仕様には、PCI 電源管理が導入されてからは、2 つのサブ状態 D3hot と D3cold に (off) デバイスの電源状態 D3 を分割します。 この区別は、ACPI 3.0 では ACPI の仕様に追加され、ACPI 4.0 で拡張されました。 Windows が常に両方 D3 のサブ状態をサポートするが、Windows 7 および以前のバージョンの Windows のサポート、D3cold サブ状態マシン全体に S0 が終了したときにのみ、スリープまたは休止状態の状態を入力する (操作) システムの電源状態 — 通常 S3 または S4 します。 Windows 8 以降、デバイス ドライバーの自分のデバイス、システムに残ります S0 中でも D3cold 状態にできるようにします。
 
 "D3"と呼ばれる多くの場合だけ、D3hot は、デバイスの「ソフト オフ」状態です。 この状態で、バスをスキャンして、デバイスを検出でき、デバイスに送信されたコマンドできます電源でもう一度します。 D3cold でデバイスのスリープ解除のロジックを促進するための電力量が少ないことを除いて、すべての電源は削除されます。 たとえば、PCI Express (PCIe) デバイスでは、メインのデバイスの電源ソース Vcc、頻繁に無効になって D3cold への移行にします。 Vcc オフにすると、電力消費量を削減し、モバイル ハードウェア プラットフォームは、バッテリの充電で実行できる時間を拡張できます。 D3cold でデバイスがある場合はバス スキャンによって検出されないし、コマンドを受信することはできません。 Vcc 電源を入れ、そのデバイスが D0 の状態には、通常と同じですが、初期化されていない状態に移動します。 ソフトウェアは、稼働状態に配置するデバイスを再初期化しする必要があります。
 
@@ -32,7 +32,7 @@ D3cold にデバイスを配置することは必ずしもデバイスの電源�
 -   ファームウェアとプラットフォームの要件
 -   デバイス ドライバーの要件
 
-これら 2 つのカテゴリの 1 つ目は、この説明の中心です。 2 番目のカテゴリの簡単な概要が表示されます。 デバイス ドライバーの要件の詳細については、次を参照してください。[ドライバーではサポートしている D3cold](https://msdn.microsoft.com/library/windows/hardware/hh967717)します。
+これら 2 つのカテゴリの 1 つ目は、この説明の中心です。 2 番目のカテゴリの簡単な概要が表示されます。 デバイス ドライバーの要件の詳細については、次を参照してください。[ドライバーではサポートしている D3cold](https://docs.microsoft.com/windows-hardware/drivers/kernel/supporting-d3cold-in-a-driver)します。
 
 ## <a name="firmware-and-platform-requirements"></a>ファームウェアとプラットフォームの要件
 
@@ -157,7 +157,7 @@ Scope (\_SB)
 
 Embedded デバイスでは、共通のバス仕様に準拠している場合、このデバイスは、bus によって定義されたメカニズムを探索可能な PCIe USB などれ、電源一部または全部バスを介して指定されます。 このデバイスが他の側波帯 power リソースで電源がいない場合、デバイスの主な電源、親のバス コント ローラーに、デバイスを接続するリンクです。 バスで列挙されるデバイスで識別できます、 \_embedded デバイスの定義で、ADR オブジェクト。 \_ADR オブジェクトは、embedded デバイスの親のバス上のデバイスのアドレスを持つ OSPM を指定するために使用します。 このアドレスは、(ACPI ファームウェアに表示される) とデバイスのプラットフォームの表現に (バス ハードウェアに表示される) とデバイスのバスの表現に使用されます。 (、 \_ADR アドレスのエンコーディングは、バスに固有です。 詳細については、section 6.1.1 を参照してください"\_ADR (アドレス)"、ACPI 5.0 仕様です。)。このメカニズムが使用されている場合、D3cold サポートが親バス ドライバーを使用した調整する必要があります。
 
-組み込みデバイスの主な電源がその親のバスをこのデバイスを接続するリンクの場合は、D3cold にデバイスを配置するため、重要な要件は、リンクの電源です。 D3cold への移行の詳細については、状態のグラフを参照してください。[デバイスの電源状態](https://msdn.microsoft.com/library/windows/hardware/ff543162)します。
+組み込みデバイスの主な電源がその親のバスをこのデバイスを接続するリンクの場合は、D3cold にデバイスを配置するため、重要な要件は、リンクの電源です。 D3cold への移行の詳細については、状態のグラフを参照してください。[デバイスの電源状態](https://docs.microsoft.com/windows-hardware/drivers/kernel/device-power-states)します。
 
 **プラットフォーム ファームウェア**
 
@@ -344,14 +344,14 @@ Scope (\_SB)
 ## <a name="device-driver-requirements"></a>デバイス ドライバーの要件
 
 
-(関数ドライバーでは通常) デバイスの電源ポリシー所有者は、D3hot から D3cold へのデバイスの移行を有効にするかどうかをオペレーティング システムに指示します。 ドライバーでは、デバイスをインストールする INF ファイルでは、この情報を提供できます。 または、ドライバーを呼び出すことができます、 [ *SetD3ColdSupport* ](https://msdn.microsoft.com/library/windows/hardware/hh967716)定期実行時に動的に有効または D3cold にデバイスの移行を無効にします。 D3cold を入力するデバイスを有効にすると、ドライバーは、次の動作を保証します。
+(関数ドライバーでは通常) デバイスの電源ポリシー所有者は、D3hot から D3cold へのデバイスの移行を有効にするかどうかをオペレーティング システムに指示します。 ドライバーでは、デバイスをインストールする INF ファイルでは、この情報を提供できます。 または、ドライバーを呼び出すことができます、 [ *SetD3ColdSupport* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-set_d3cold_support)定期実行時に動的に有効または D3cold にデバイスの移行を無効にします。 D3cold を入力するデバイスを有効にすると、ドライバーは、次の動作を保証します。
 
 -   デバイスは、コンピューターの S0 内に存続するとき、D3hot から D3cold への移行を許容できます。
 -   D0 に D3cold から返されるときに、デバイスが正常に動作はします。
 
 いずれかの要件を満たすために失敗したデバイスできない可能性があります、D3cold を入力すると、使用可能なコンピューターが再起動されるかがスリープ状態になるまでです。 デバイスは、それが入力する低電力 Dx 状態からウェイク イベントを通知できる必要がある場合、ドライバーは、特定のデバイスのウェイク信号 D3cold で動作する場合を除き、D3cold にエントリが有効にしない必要があります。
 
-詳細については、次を参照してください。[ドライバーではサポートしている D3cold](https://msdn.microsoft.com/library/windows/hardware/hh967717)します。
+詳細については、次を参照してください。[ドライバーではサポートしている D3cold](https://docs.microsoft.com/windows-hardware/drivers/kernel/supporting-d3cold-in-a-driver)します。
 
  
 

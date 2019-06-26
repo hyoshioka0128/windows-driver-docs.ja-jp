@@ -7,12 +7,12 @@ keywords:
 - オーディオ ドライバー WDK、ベンダーのオプション
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b5c7c3789db267533e211852f9f4b44ebb68516
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 56043e570d6c66a03e8eaf054de26c1588e6f914
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328528"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354131"
 ---
 # <a name="vendor-audio-driver-options"></a>ベンダーのオーディオ ドライバー オプション
 
@@ -30,11 +30,11 @@ ms.locfileid: "63328528"
 
 ただし、これらのオプションが十分でない場合、ベンダーは、次のいずれかのデータを実装できます。
 
--   独自の KS フィルター (を参照してください[KS フィルター](https://msdn.microsoft.com/library/windows/hardware/ff567644))
+-   独自の KS フィルター (を参照してください[KS フィルター](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-filters))
 
 -   実装、およびほとんどの ISA、PCI、および USB デバイスに不要なは困難ですが、Microsoft は独自の KS フィルターを勧めしません。
 
--   Stream クラス ミニドライバー (を参照してください[ストリーミング ミニドライバー](https://msdn.microsoft.com/library/windows/hardware/ff568277))
+-   Stream クラス ミニドライバー (を参照してください[ストリーミング ミニドライバー](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2))
 
 -   オーディオおよびビデオを統合するデバイスの適切な場合がありますを実装することは困難ですので、Microsoft は、独自のストリーム クラス ミニドライバーを勧めしません。
 

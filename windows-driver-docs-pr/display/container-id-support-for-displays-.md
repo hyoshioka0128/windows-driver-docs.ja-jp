@@ -4,12 +4,12 @@ description: 表示またはモニターのデバイス内に埋め込まれた�
 ms.assetid: 3149C156-34F4-4C55-AE77-1CC40C2B35BC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d613567fd2d9c73ac4fb5388037c5b02db010ff5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0e8e69a9d4f4b144ee561c4f080643e3d1f8d780
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327541"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356383"
 ---
 # <a name="container-id-support-for-displays"></a>ディスプレイ用のコンテナー ID のサポート
 
@@ -30,8 +30,8 @@ ms.locfileid: "63327541"
 
 ディスプレイ ミニポート ドライバーでは、この関数と構造体を実装します。
 
--   [*DxgkDdiGetChildContainerId*](https://msdn.microsoft.com/library/windows/hardware/hh451349)
--   [**DXGK\_子\_コンテナー\_ID**](https://msdn.microsoft.com/library/windows/hardware/hh464005)
+-   [*DxgkDdiGetChildContainerId*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_get_child_container_id)
+-   [**DXGK\_子\_コンテナー\_ID**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/ns-dispmprt-_dxgk_child_container_id)
 
 ## <a name="span-idcontaineriddescriptionspanspan-idcontaineriddescriptionspanspan-idcontaineriddescriptionspancontainer-id-description"></a><span id="Container_ID_description"></span><span id="container_id_description"></span><span id="CONTAINER_ID_DESCRIPTION"></span>コンテナー ID の説明
 

@@ -6,12 +6,12 @@ keywords:
 - アナログのオーディオ WDK オーディオ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c15f3ceab899ca3c3d4c965df5aa85a08da507c3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b27950896163fcaf6819536901ccd22213e0b9c4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331560"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355769"
 ---
 # <a name="analog-audio-stream-data-range"></a>アナログ オーディオ ストリームのデータ範囲
 
@@ -19,7 +19,7 @@ ms.locfileid: "63331560"
 ## <span id="analog_audio_stream_data_range"></span><span id="ANALOG_AUDIO_STREAM_DATA_RANGE"></span>
 
 
-この例では、 [ **KSDATARANGE** ](https://msdn.microsoft.com/library/windows/hardware/ff561658)アナログのオーディオ ストリームのデータ範囲を記述する構造体。
+この例では、 [ **KSDATARANGE** ](https://docs.microsoft.com/previous-versions/ff561658(v=vs.85))アナログのオーディオ ストリームのデータ範囲を記述する構造体。
 
 ```cpp
   DataRange.FormatSize  = sizeof(KSDATARANGE);

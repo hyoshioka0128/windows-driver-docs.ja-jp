@@ -16,12 +16,12 @@ keywords:
 - フィルター ドライバー WDK シリアル デバイス
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4da40df971ff1b17511de0867af86b6a848debde
-ms.sourcegitcommit: 6a0636c33e28ce2a9a742bae20610f0f3435262c
+ms.openlocfilehash: 52da4849e530cf99f3d463ebfcae6cc739f0900d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65836265"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378573"
 ---
 # <a name="using-serialsys-and-serenumsys"></a>Serial.sys および Serenum.sys の使用
 
@@ -41,21 +41,21 @@ ms.locfileid: "65836265"
     - [Serenum およびシリアルの操作](operation-of-serenum-and-serial.md)
     - [シリアルのレジストリ設定](registry-settings-for-serial.md)
     - [Serenum のレジストリ設定](registry-settings-for-serenum.md)
-    - [シリアル ドライバー リファレンス](https://msdn.microsoft.com/library/windows/hardware/ff547476)
-    - [Serenum ドライバー リファレンス](https://msdn.microsoft.com/library/windows/hardware/ff547040)
+    - [シリアル ドライバー リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
+    - [Serenum ドライバー リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
     - WDK で Ntddser.h ヘッダー ファイル内のデータ定義します。
 
 <!-- -->
 
-- ポート[デバイス セットアップ クラス](https://msdn.microsoft.com/library/windows/hardware/ff541509)
+- ポート[デバイス セットアップ クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-setup-classes)
 
     ポート クラスが含まれています*シリアル ポート*と*COM ポート*します。 シリアル ポートは、16550 UART または互換性のあるデバイスのシリアル通信ハードウェア インターフェイスです。 コンピューターで、rs-232 ポートは、DB ~ 9 または電気 UART のシリアル ポートに接続されている DB 25 コネクタでは通常。 COM ポートは、追加の Windows に固有の要件に準拠するシリアル ポートです。 詳細については、次を参照してください。 [COM ポートの構成](configuration-of-com-ports.md)します。
 
-- COM ポート[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)
+- COM ポート[デバイス インターフェイス クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)
 
-    COM ポートのデバイスのインターフェイスを使用して、COM ポートにアクセスする必要があります。 (COM ポートのデバイスのインターフェイス クラスの GUID は[ **GUID\_DEVINTERFACE\_com ポート**](https://msdn.microsoft.com/library/windows/hardware/ff545821))。
+    COM ポートのデバイスのインターフェイスを使用して、COM ポートにアクセスする必要があります。 (COM ポートのデバイスのインターフェイス クラスの GUID は[ **GUID\_DEVINTERFACE\_com ポート**](https://docs.microsoft.com/windows-hardware/drivers/install/guid-devinterface-comport))。
 
-- [COM ポート データベース](com-port-database.md)と[COM ポート データベース サポート ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff546483)
+- [COM ポート データベース](com-port-database.md)と[COM ポート データベース サポート ルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
 
     COM ポートのデータベースを介し COM ポートでの COM ポート番号を使用します。
 

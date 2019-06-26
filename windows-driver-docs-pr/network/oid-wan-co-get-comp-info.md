@@ -5,12 +5,12 @@ ms.assetid: a2525548-ca5a-47a8-ab19-e0469913f6be
 ms.date: 08/08/2017
 keywords: -OID_WAN_CO_GET_COMP_INFO ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: e0af4684bfedf1be715ee6fa599dcaa74cc7b8df
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f09f0cb87e92ce17440f0355b546f6ae7bdb5758
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342322"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353691"
 ---
 # <a name="oidwancogetcompinfo"></a>OID\_WAN\_CO\_取得\_COMP\_情報
 
@@ -40,7 +40,7 @@ OID\_WAN\_CO\_取得\_COMP\_情報 OID 要求の NIC、またはそのドライ�
 <a name="remarks"></a>注釈
 -------
 
-詳しくは、NDIS の\_WAN\_圧縮\_情報構造体を参照してください[OID\_WAN\_取得\_COMP\_情報](https://msdn.microsoft.com/library/windows/hardware/ff561202)します。
+詳しくは、NDIS の\_WAN\_圧縮\_情報構造体を参照してください[OID\_WAN\_取得\_COMP\_情報](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff561202(v=vs.85))します。
 
 <a name="requirements"></a>要件
 ------------
@@ -65,7 +65,7 @@ OID\_WAN\_CO\_取得\_COMP\_情報 OID 要求の NIC、またはそのドライ�
 ## <a name="see-also"></a>関連項目
 
 
-[OID\_WAN\_GET\_COMP\_INFO](https://msdn.microsoft.com/library/windows/hardware/ff561202)
+[OID\_WAN\_GET\_COMP\_INFO](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff561202(v=vs.85))
 
 [OID\_WAN\_CO\_SET\_COMP\_INFO](oid-wan-co-set-comp-info.md)
 

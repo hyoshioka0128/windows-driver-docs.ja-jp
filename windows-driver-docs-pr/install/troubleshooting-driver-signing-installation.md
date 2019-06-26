@@ -4,12 +4,12 @@ description: リリースで署名されたドライバーをインストール�
 ms.assetid: 36624611-1FE6-4B88-B785-44D6A81F61FF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c65fdb85ef48cec5515b9f3029eeb42b1797e588
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 77573df2ecf15c599886487fef6ea5d84a1c102e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339587"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356313"
 ---
 # <a name="troubleshooting-driver-signing-installation"></a>ドライバーの署名のインストールのトラブルシューティング
 
@@ -34,7 +34,7 @@ ms.locfileid: "63339587"
 
 チェック ボックスをオンには表示されませんこのダイアログ ボックスもう一度、コンピューターでドライバーがもう一度インストールされている場合、ドライバーが何らかの理由で削除されるかどうか。
 
-**注**  パブリッシャー情報が正確である、カタログの署名に使用された SPC に基づいてシステムを確認します。 発行者の信頼レベルが不明の場合: Contoso.com—the システム ダイアログ ボックスを表示するには、true とになります。 インストールを続行するには、ユーザーはインストールをクリックする必要があります。 信頼とドライバーのインストールの詳細については、次を参照してください。[コード署名のベスト プラクティス](https://msdn.microsoft.com/library/windows/hardware/dn653556)します。
+**注**  パブリッシャー情報が正確である、カタログの署名に使用された SPC に基づいてシステムを確認します。 発行者の信頼レベルが不明の場合: Contoso.com—the システム ダイアログ ボックスを表示するには、true とになります。 インストールを続行するには、ユーザーはインストールをクリックする必要があります。 信頼とドライバーのインストールの詳細については、次を参照してください。[コード署名のベスト プラクティス](https://docs.microsoft.com/previous-versions/windows/hardware/design/dn653556(v=vs.85))します。
 
  
 

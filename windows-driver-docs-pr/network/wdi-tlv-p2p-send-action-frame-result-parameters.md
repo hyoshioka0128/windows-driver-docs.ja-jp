@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - WDI_TLV_P2P_SEND_ACTION_FRAME_RESULT_PARAMETERS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: c08ae3fd10a8f0c29b72bb842896b0a05495d67a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 214aed1e2bf69476a68d96911eb38fac840fb97d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362789"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353291"
 ---
 # <a name="wditlvp2psendactionframeresultparameters"></a>WDI\_TLV\_P2P\_送信\_アクション\_フレーム\_結果\_パラメーター
 
@@ -33,7 +33,7 @@ WDI\_TLV\_P2P\_送信\_アクション\_フレーム\_結果\_パラメーター
 
 | 型                                              | 説明                                           |
 |---------------------------------------------------|-------------------------------------------------------|
-| [**WDI\_MAC\_アドレス**](https://msdn.microsoft.com/library/windows/hardware/dn926071) | ターゲット Wi-Fi Direct デバイスのデバイスのアドレス。 |
+| [**WDI\_MAC\_アドレス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ns-dot11wdi-_wdi_mac_address) | ターゲット Wi-Fi Direct デバイスのデバイスのアドレス。 |
 | UINT8                                             | Wi-Fi Direct ダイアログ トークンこのトランザクションにします。   |
 
  

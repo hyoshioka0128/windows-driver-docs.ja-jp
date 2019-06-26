@@ -11,12 +11,12 @@ keywords:
 - WDK オーディオ、時計の待機時間
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f68ed0b65b1cae533c3ee4b4e5bca676a3bbd123
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0230c56142540ec0e9f9017632afb10e61f8345e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328553"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354201"
 ---
 # <a name="time-stamped-events"></a>イベントのタイムスタンプ
 
@@ -28,7 +28,7 @@ ms.locfileid: "63328553"
 
 待機時間の時計をシステムに、待機時間がわかっているため、イベントのタイムスタンプ、適切な時に再生するバッファーで待機しているではなくだけをキューにイベントを削除でき、待ち時間が短いことを期待しています。
 
-マスターのクロックの実装を COM [ **IReferenceClock** ](https://msdn.microsoft.com/library/windows/desktop/dd743269)インターフェイス (Microsoft Windows SDK のドキュメントで説明)。 すべてのシステム上のデバイスは、この参照の時刻を使用します。
+マスターのクロックの実装を COM [ **IReferenceClock** ](https://docs.microsoft.com/windows/desktop/wmformat/ireferenceclock)インターフェイス (Microsoft Windows SDK のドキュメントで説明)。 すべてのシステム上のデバイスは、この参照の時刻を使用します。
 
 Microsoft の波のシンクの実装では、20 ミリ秒ごとのスリープ状態のスレッドを作成します。 スレッドのジョブの方法では、別のバッファーを作成し、DirectSound をします。 そのバッファーを作成するには、シンセサイザーを呼び出すし、指定された量の音楽データを表示するために尋ねます。 入力を求められたら量は、正確に 20 ミリ秒にする可能性があるスレッドが起動すると、実際の時間によって決まります。
 
@@ -36,7 +36,7 @@ Microsoft の波のシンクの実装では、20 ミリ秒ごとのスリープ�
 
 PCM バッファーは概念的には重要です (つまり、絶えずループしている)。 シンセサイザーには、バッファーの連続するスライスにサウンドを記述する 16 ビットの数値が表示されます。 スライスのサイズは若干異なります、スレッドが起動するたびに、シンクは 20 ミリ秒ごとに正確を起こすことはできませんのでです。 スレッドのウェイク アップは、たびに再生されるように catch スリープ状態に戻る前にバッファーを進行がどの程度を判断します。
 
-シンセサイザー ポート ドライバー自体には、アプリケーションの観点から、 [ **IDirectMusicSynth::GetLatencyClock** ](https://msdn.microsoft.com/library/windows/hardware/ff536536) wave シンクからクロックを取得する関数。 これは、2 つのクロックがあります。
+シンセサイザー ポート ドライバー自体には、アプリケーションの観点から、 [ **IDirectMusicSynth::GetLatencyClock** ](https://docs.microsoft.com/windows/desktop/api/dmusics/nf-dmusics-idirectmusicsynth-getlatencyclock) wave シンクからクロックを取得する関数。 これは、2 つのクロックがあります。
 
 -   Wave シンクを含むすべてのユーザーがリッスンするマスター クロック。
 
@@ -46,7 +46,7 @@ PCM バッファーは概念的には重要です (つまり、絶えずルー�
 
 この待機時間のクロックによって返される時間は、バッファーは、表示できる最も早い時刻をバッファー内の時点までのシンセサイザーのレンダリングが既にためです。 シンセサイザーは、その最後の書き込みに小さなバッファーをレンダリングするが場合、待機時間を小さくするとも。
 
-そのため、呼び出しのシンク、wave [ **IDirectMusicSynth::Render** ](https://msdn.microsoft.com/library/windows/hardware/ff536541)シンセサイザーでバッファーを表示してが入力されることを要求するレンダリング データ。 次の図に示すように、シンセサイザーの実行時間すべてタイムスタンプ付きのイベントの結果としてに付属している[ **IDirectMusicSynth::PlayBuffer** ](https://msdn.microsoft.com/library/windows/hardware/ff536540)関数呼び出し。
+そのため、呼び出しのシンク、wave [ **IDirectMusicSynth::Render** ](https://docs.microsoft.com/windows/desktop/api/dmusics/nf-dmusics-idirectmusicsynth-render)シンセサイザーでバッファーを表示してが入力されることを要求するレンダリング データ。 次の図に示すように、シンセサイザーの実行時間すべてタイムスタンプ付きのイベントの結果としてに付属している[ **IDirectMusicSynth::PlayBuffer** ](https://docs.microsoft.com/windows/desktop/api/dmusics/nf-dmusics-idirectmusicsynth-playbuffer)関数呼び出し。
 
 ![タイムスタンプ付きのメッセージのキューを示す図](images/dmevents.png)
 

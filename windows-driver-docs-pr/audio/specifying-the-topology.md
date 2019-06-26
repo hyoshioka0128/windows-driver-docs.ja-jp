@@ -25,12 +25,12 @@ keywords:
 - オーディオの WDK の混在
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e0645a9a1bebbcb6c520ea8e0fe69d1287eccd75
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a50bb863d0cbee614d40fd6f5cc14ac745d33fe1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328627"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354307"
 ---
 # <a name="specifying-the-topology"></a>トポロジの指定
 
@@ -39,7 +39,7 @@ ms.locfileid: "63328627"
 
 PortCls には、6 つのポートのドライバーが用意されています。WavePci、WaveCyclic、WaveRT、MIDI、Dmu およびトポロジ。 (WaveRT は Windows Vista から利用できましたがおよび推奨されるアプローチです)。トポロジのポート ドライバーでは、まとめて wave および MIDI デバイスからレンダリング ストリームが混在するオーディオ アダプター回路の部分を制御します。 入力ジャックからキャプチャ ストリームの選択も制御します。 少し誤解されやすい名称にもかかわらずトポロジ ポート ドライバーはオーディオのアダプターのトポロジのすべてを具体化できません、その大部分にが含まれては通常します。 その他のポート ドライバーでは、アダプターのトポロジの残りの部分を投稿します。
 
-各ポート ドライバーはフォームに対応するミニポート ドライバーと組み合わせて、 [KS フィルター](https://msdn.microsoft.com/library/windows/hardware/ff567644)オーディオのアダプターの特定のデバイス (wave、MIDI、またはミキサー) を表す次の表に示すようにします。
+各ポート ドライバーはフォームに対応するミニポート ドライバーと組み合わせて、 [KS フィルター](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-filters)オーディオのアダプターの特定のデバイス (wave、MIDI、またはミキサー) を表す次の表に示すようにします。
 
 <table>
 <colgroup>
@@ -72,7 +72,7 @@ PortCls には、6 つのポートのドライバーが用意されています�
 
 ミニポート ドライバーでは、デバイスを含むアダプター トポロジの一部の定義など、フィルターのデバイス固有の関数を実装します。 ポートのドライバーは、フィルターの種類ごとに、オペレーティング システムとの通信をなど、汎用フィルター操作で処理されます。
 
-各フィルターには、1 つまたは複数[KS ピン](https://msdn.microsoft.com/library/windows/hardware/ff567669)を入力し、フィルターのままにするオーディオ データのストリームの経路として機能します。 通常、wave、MIDI、トポロジのフィルターのピンがピンに関連付けられているし、アダプター回路で有線接続経由の Dmu をフィルター処理します。 これらのフィルターとの相互接続をまとめて、アダプターのトポロジを具体化する KS フィルター グラフを形成します。
+各フィルターには、1 つまたは複数[KS ピン](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-pins)を入力し、フィルターのままにするオーディオ データのストリームの経路として機能します。 通常、wave、MIDI、トポロジのフィルターのピンがピンに関連付けられているし、アダプター回路で有線接続経由の Dmu をフィルター処理します。 これらのフィルターとの相互接続をまとめて、アダプターのトポロジを具体化する KS フィルター グラフを形成します。
 
 次の図は、例のオーディオ アダプターのトポロジを示します。
 
@@ -97,37 +97,37 @@ MIDI、Wave 間の接続の前の図では、最上位レベルでトポロジ�
 <tr class="odd">
 <td align="left"><p>シンセサイザー</p></td>
 <td align="left"><p>シンセサイザー ノード</p></td>
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/ff537203" data-raw-source="[&lt;strong&gt;KSNODETYPE_SYNTHESIZER&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537203)"><strong>KSNODETYPE_SYNTHESIZER</strong></a></td>
+<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-synthesizer" data-raw-source="[&lt;strong&gt;KSNODETYPE_SYNTHESIZER&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-synthesizer)"><strong>KSNODETYPE_SYNTHESIZER</strong></a></td>
 </tr>
 <tr class="even">
 <td align="left"><p>DAC (DAC)</p></td>
 <td align="left"><p>デジタル-オーディオ コンバーター ノード</p></td>
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/ff537158" data-raw-source="[&lt;strong&gt;KSNODETYPE_DAC&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537158)"><strong>KSNODETYPE_DAC</strong></a></td>
+<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-dac" data-raw-source="[&lt;strong&gt;KSNODETYPE_DAC&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-dac)"><strong>KSNODETYPE_DAC</strong></a></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>ADC</p></td>
 <td align="left"><p>アナログ/デジタル コンバーター ノード</p></td>
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/ff537153" data-raw-source="[&lt;strong&gt;KSNODETYPE_ADC&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537153)"><strong>KSNODETYPE_ADC</strong></a></td>
+<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-adc" data-raw-source="[&lt;strong&gt;KSNODETYPE_ADC&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-adc)"><strong>KSNODETYPE_ADC</strong></a></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[ボリューム]</p></td>
 <td align="left"><p>ボリューム レベルの制御ノード</p></td>
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/ff537208" data-raw-source="[&lt;strong&gt;KSNODETYPE_VOLUME&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537208)"><strong>KSNODETYPE_VOLUME</strong></a></td>
+<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-volume" data-raw-source="[&lt;strong&gt;KSNODETYPE_VOLUME&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-volume)"><strong>KSNODETYPE_VOLUME</strong></a></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>Mute</p></td>
 <td align="left"><p>ミュート用のコントロールのノード</p></td>
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/ff537178" data-raw-source="[&lt;strong&gt;KSNODETYPE_MUTE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537178)"><strong>KSNODETYPE_MUTE</strong></a></td>
+<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-mute" data-raw-source="[&lt;strong&gt;KSNODETYPE_MUTE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-mute)"><strong>KSNODETYPE_MUTE</strong></a></td>
 </tr>
 <tr class="even">
 <td align="left"><p>Sum</p></td>
 <td align="left"><p>ノードの合計</p></td>
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/ff537196" data-raw-source="[&lt;strong&gt;KSNODETYPE_SUM&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537196)"><strong>KSNODETYPE_SUM</strong></a></td>
+<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-sum" data-raw-source="[&lt;strong&gt;KSNODETYPE_SUM&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-sum)"><strong>KSNODETYPE_SUM</strong></a></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>MUX</p></td>
 <td align="left"><p>マルチプレクサーのノード</p></td>
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/ff537180" data-raw-source="[&lt;strong&gt;KSNODETYPE_MUX&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537180)"><strong>KSNODETYPE_MUX</strong></a></td>
+<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-mux" data-raw-source="[&lt;strong&gt;KSNODETYPE_MUX&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-mux)"><strong>KSNODETYPE_MUX</strong></a></td>
 </tr>
 </tbody>
 </table>
@@ -140,7 +140,7 @@ MIDI、Wave 間の接続の前の図では、最上位レベルでトポロジ�
 
 ブリッジのオーディオのアダプターの右側にあるピンは、システムのシャーシのオーディオ ジャックを表します。 これらのピンと呼びます*ピンをブリッジ*KS フィルター グラフと、外部世界との間の境界をブリッジするためです。
 
-フィルター、pin、およびノードは、通常、オーディオ ドライバーのクライアント (カーネル モードのコンポーネントまたはユーザー モード アプリケーション) にアクセス可能であるプロパティを持ちます。 クライアントが送信を[KS プロパティ要求](https://msdn.microsoft.com/library/windows/hardware/ff567671)フィルター、pin、またはノード プロパティの現在の値に対してクエリを実行するか、プロパティ値を変更します。 たとえば、ボリューム レベルの制御ノードは、 [ **KSPROPERTY\_オーディオ\_VOLUMELEVEL** ](https://msdn.microsoft.com/library/windows/hardware/ff537309)プロパティで、クライアントは、KS プロパティ要求を通じて変更できます。 合計ノードのプロパティを通常持たないノード型の例に示します。
+フィルター、pin、およびノードは、通常、オーディオ ドライバーのクライアント (カーネル モードのコンポーネントまたはユーザー モード アプリケーション) にアクセス可能であるプロパティを持ちます。 クライアントが送信を[KS プロパティ要求](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-properties)フィルター、pin、またはノード プロパティの現在の値に対してクエリを実行するか、プロパティ値を変更します。 たとえば、ボリューム レベルの制御ノードは、 [ **KSPROPERTY\_オーディオ\_VOLUMELEVEL** ](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-volumelevel)プロパティで、クライアントは、KS プロパティ要求を通じて変更できます。 合計ノードのプロパティを通常持たないノード型の例に示します。
 
 わかりやすいように、Wave*Xxx*上の図にフィルターでは、システム バスから PCM wave 出力ストリームを受け入れるためピンが 1 つが用意されています。 これに対し、wave デバイスによっては PCM wave 出力の複数の pin を指定し、内部的には、pin の入力ストリームを混在させる場合のハードウェアを含みます。 これらのデバイスでは、ハードウェア アクセラレーション、アプリケーションのサウンド バッファーから再生する PCM ストリームをそのまま使用して、DirectSound を使用するアプリケーションを提供します。 」の説明に従って DirectSound でこれらのピンを使用するの他のノードの 2 次元 (2-d) と 3 次元 (3 D) を処理するを提供する必要があります[WDM オーディオでハードウェア アクセラレータを DirectSound](directsound-hardware-acceleration-in-wdm-audio.md)します。
 
@@ -150,7 +150,7 @@ Windows Server 2003、Windows XP、Windows 2000、および Windows でこの種
 
 上記の図の左下隅にある"非 PCM Wave Out"ピン留めは、AC-3-フェールオーバー-S/PDIF または WMA Pro-オーバー-S/PDIF など、S/PDIF パススルー形式で PCM 非出力ストリームを受け入れます。 これらの形式のいずれかを使用して、デバイスだけです、圧縮されたデータ転送 S/PDIF リンク経由でデータをデコードすることがなくします。 このため、上の図の右下隅にある"S/PDIF Out"ピン アイコンへのデータ パスには、ボリュームまたはミュートのノードにありません。 オーディオ形式の非 PCM と S/PDIF パススルー送信の詳細については、次を参照してください。[非 PCM Wave 形式のサポート](supporting-non-pcm-wave-formats.md)します。 追加情報は、ホワイト ペーパーで使用できる*WMA Pro オーバー-S/PDIF 形式のオーディオ ドライバー サポート*で、[オーディオ テクノロジ](https://go.microsoft.com/fwlink/p/?linkid=8751)web サイト。
 
-ミニポート ドライバーの形式でポート ドライバーには、そのトポロジを表示する、 [ **PCFILTER\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff537694)構造体。 この構造体では、すべてのフィルターのピンと、ノードについて説明し、pin とノードが互いにどのように接続する方法を指定します。
+ミニポート ドライバーの形式でポート ドライバーには、そのトポロジを表示する、 [ **PCFILTER\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/ns-portcls-pcfilter_descriptor)構造体。 この構造体では、すべてのフィルターのピンと、ノードについて説明し、pin とノードが互いにどのように接続する方法を指定します。
 
 モノリシック トポロジ フィルターを設計するのではなく 前の図に示すように、ミキサーの回路オーディオのアダプターでは、トポロジのいくつかのフィルターに分割できます。 たとえば、上記の図では、スピーカーを駆動するデータ パスは、1 つのトポロジのフィルターとして実装する可能性があり、入力デバイスからのオーディオ データをキャプチャするデータ パスは、別のトポロジのフィルターとして実装できます。 特定のトポロジ フィルター内のデータ パスが使用されていないときに、アダプターの部分の全体のアダプターを無効にしなくてもダウン電源できます。 詳細については、次を参照してください。[動的オーディオ サブデバイス](dynamic-audio-subdevices.md)します。
 

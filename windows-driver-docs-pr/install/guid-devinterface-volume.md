@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 3e55c378c959995961562e15b127749a7b93bee5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 1b39439c9d65c3bb8d10925a0e4326ffa221b48b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573137"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355161"
 ---
 # <a name="guiddevinterfacevolume"></a>GUID_DEVINTERFACE_VOLUME
 
 
-GUID_DEVINTERFACE_VOLUME[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)ボリューム デバイス用に定義されます。
+GUID_DEVINTERFACE_VOLUME[デバイス インターフェイス クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)ボリューム デバイス用に定義されます。
 
 <table>
 <colgroup>
@@ -54,11 +54,11 @@ GUID_DEVINTERFACE_VOLUME[デバイス インターフェイス クラス](https:
 <a name="remarks"></a>コメント
 -------
 
-システム提供[ストレージ クラス ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff559215) GUID_DEVINTERFACE_VOLUME オペレーティング システムとアプリケーション ボリューム デバイスの存在の通知のインスタンスを登録します。 マウント マネージャでは、プラグ アンド プレイ (PnP) デバイス インターフェイスの通知メカニズムを使用して、到達またはボリューム インターフェイスの削除を通知します。
+システム提供[ストレージ クラス ドライバー](https://docs.microsoft.com/windows-hardware/drivers/storage/introduction-to-storage-class-drivers) GUID_DEVINTERFACE_VOLUME オペレーティング システムとアプリケーション ボリューム デバイスの存在の通知のインスタンスを登録します。 マウント マネージャでは、プラグ アンド プレイ (PnP) デバイス インターフェイスの通知メカニズムを使用して、到達またはボリューム インターフェイスの削除を通知します。
 
 記憶域[サンプル](https://go.microsoft.com/fwlink/p/?LinkId=618052)WDK で含める、 [Addfilter ストレージ フィルター ツール](https://go.microsoft.com/fwlink/p/?linkid=256076)古い形式の識別子を使用する[ **VolumeClassGuid** ](volumeclassguid.md)GUID_DEVINTERFACE_VOLUME デバイス インターフェイス クラスのインスタンスを列挙します。
 
-記憶装置ドライバーの詳細については、[記憶装置ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff566976)と[マウント マネージャーの要求、記憶域クラス ドライバーをサポートしている](https://msdn.microsoft.com/library/windows/hardware/ff567603)を参照してください。
+記憶装置ドライバーの詳細については、次を参照してください。[記憶装置ドライバー](https://docs.microsoft.com/windows-hardware/drivers/storage/storage-drivers)と[マウント マネージャーの要求、記憶域クラス ドライバーをサポートしている](https://docs.microsoft.com/windows-hardware/drivers/storage/supporting-mount-manager-requests-in-a-storage-class-driver)します。
 
 <a name="requirements"></a>必要条件
 ------------

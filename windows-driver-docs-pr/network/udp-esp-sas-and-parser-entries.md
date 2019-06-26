@@ -10,12 +10,12 @@ keywords:
 - SAs の WDK IPsec オフロード
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a5d655628e902bccdd434081706651c56f5cc88
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4f9eb2cd03a893a4287c796dcc93eb6248501863
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358254"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355440"
 ---
 # <a name="udp-esp-sas-and-parser-entries"></a>UDP ESP SA およびパーサー エントリ
 
@@ -42,11 +42,11 @@ TCP/IP トランスポートは、負荷がミニポート ドライバーにオ
 
 ### <a name="adding-a-udp-esp-sa-and-parser-entry"></a>UDP ESP SA とパーサーのエントリを追加します。
 
-TCP/IP トランスポートは要求を発行して、これらの SAs の 1 つまたは複数の UDP ESP SAs とパーサーのエントリを追加するためのミニポート ドライバー、 [OID\_TCP\_タスク\_IPSEC\_追加\_UDPESP\_SA](https://msdn.microsoft.com/library/windows/hardware/ff569809)要求。 **EncapTypeEntry** 、オフロードのメンバー\_IPSEC\_追加\_UDPESP\_SA 構造体には、パーサーのエントリの情報が含まれています。
+TCP/IP トランスポートは要求を発行して、これらの SAs の 1 つまたは複数の UDP ESP SAs とパーサーのエントリを追加するためのミニポート ドライバー、 [OID\_TCP\_タスク\_IPSEC\_追加\_UDPESP\_SA](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-task-ipsec-add-udpesp-sa)要求。 **EncapTypeEntry** 、オフロードのメンバー\_IPSEC\_追加\_UDPESP\_SA 構造体には、パーサーのエントリの情報が含まれています。
 
 OID を発行する前に\_TCP\_タスク\_IPSEC\_追加\_UDPESP\_SA 要求、TCP/IP トランスポートは、オフロードされている SAs のパーサーのエントリがかどうかを決定しますその。指定された IP インターフェイスのパーサー エントリの一覧。
 
--   トランスポートが独自のエントリとセットのコピーを作成、トランスポートの一覧で、パーサーのエントリがない場合、 **EncapTypeEntryOffloadHandle** 、オフロードのメンバー\_IPSEC\_追加\_UDPESP\_SA の構造体を**NULL**します。 トランスポートは、発行、 [OID\_TCP\_タスク\_IPSEC\_追加\_UDPESP\_SA](https://msdn.microsoft.com/library/windows/hardware/ff569809)要求。 要求を受信した後、ミニポート ドライバーを決定するかどうか、パーサーのエントリを**EncapTypeEntry** NIC のパーサー エントリの一覧には、指定しました。
+-   トランスポートが独自のエントリとセットのコピーを作成、トランスポートの一覧で、パーサーのエントリがない場合、 **EncapTypeEntryOffloadHandle** 、オフロードのメンバー\_IPSEC\_追加\_UDPESP\_SA の構造体を**NULL**します。 トランスポートは、発行、 [OID\_TCP\_タスク\_IPSEC\_追加\_UDPESP\_SA](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-task-ipsec-add-udpesp-sa)要求。 要求を受信した後、ミニポート ドライバーを決定するかどうか、パーサーのエントリを**EncapTypeEntry** NIC のパーサー エントリの一覧には、指定しました。
 
     -   ミニポート ドライバーがカプセル化の種類を使用して、パーサーのエントリを作成しで指定された宛先ポート、NIC のパーサー エントリの一覧に指定されたパーサーのエントリがない場合**EncapTypeEntry** NIC にパーサーのエントリを追加します。パーサーのエントリの一覧。 ミニポート ドライバーが、OID で指定された SAs をオフロードし\_TCP\_タスク\_IPSEC\_追加\_UDPESP\_SA 要求。 OID 要求を正常に完了した後は、ミニポート ドライバーのハンドルを返します。 **EncapTypeEntryOffloadHandle**パーサーを新しく作成されたエントリを識別します。 ミニポート ドライバーもでオフロードされた SAs を識別するハンドルを返します、 **OffloadHandle** 、オフロードのメンバー\_IPSEC\_追加\_UDPESP\_SA 構造体。
     -   ミニポート ドライバーがだけでハンドルを返しますパーサーの指定したエントリが、NIC のパーサー エントリの一覧に既に場合**EncapTypeEntryOffloadHandle**の既存のパーサー エントリ。 ミニポート ドライバーもでオフロードされた SAs を識別するハンドルを返します、 **OffloadHandle** 、オフロードのメンバー\_IPSEC\_追加\_UDPESP\_SA 構造体。
@@ -59,7 +59,7 @@ OID を発行する前に\_TCP\_タスク\_IPSEC\_追加\_UDPESP\_SA 要求、TC
 
 ### <a name="deleting-a-udp-esp-sa-and-parser-entry"></a>UDP ESP SA およびパーサーのエントリの削除
 
-TCP/IP トランスポートは要求を発行してこれらの SAs の 1 つ以上の SAs またはパーサーのエントリを削除するミニポート ドライバー、 [OID\_TCP\_タスク\_IPSEC\_削除\_UDPESP\_SA](https://msdn.microsoft.com/library/windows/hardware/ff569811)要求。
+TCP/IP トランスポートは要求を発行してこれらの SAs の 1 つ以上の SAs またはパーサーのエントリを削除するミニポート ドライバー、 [OID\_TCP\_タスク\_IPSEC\_削除\_UDPESP\_SA](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-task-ipsec-delete-udpesp-sa)要求。
 
 この要求を発行する前に、TCP/IP は、パーサーのエントリを削除する SAs に関連付けられているは、参照カウントをデクリメントを転送します。 トランスポートは、参照カウントがゼロかどうかをテストします。
 

@@ -4,12 +4,12 @@ description: このトピックでは、ウイルス対策製品は Windows コ�
 ms.assetid: 101BC08B-EE63-4468-8B12-C8C8B0E99FC5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a9b5552ba5db2b5e4ad041ecf2d07e382238d0af
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 608297fa85d03c7e92995a9df7156aab3c847c1d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63322286"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379352"
 ---
 # <a name="span-idifskanti-virusoptimizationforwindowscontainersspananti-virus-optimization-for-windows-containers"></a><span id="ifsk.anti-virus_optimization_for_windows_containers"></span>Windows コンテナーのウイルス対策の最適化
 
@@ -24,7 +24,7 @@ ms.locfileid: "63322286"
 ## <a name="span-idcontaineroverviewspanspan-idcontaineroverviewspanspan-idcontaineroverviewspancontainer-overview"></a><span id="Container_overview"></span><span id="container_overview"></span><span id="CONTAINER_OVERVIEW"></span>コンテナーの概要
 
 
-Windows コンテナー機能は、配布とアプリケーションの配置を簡単に設計されています。 詳細についてはの概要を参照してください。 [Windows コンテナー](https://msdn.microsoft.com/virtualization/windowscontainers/about/about_overview)します。
+Windows コンテナー機能は、配布とアプリケーションの配置を簡単に設計されています。 詳細についてはの概要を参照してください。 [Windows コンテナー](https://docs.microsoft.com/virtualization/windowscontainers/about/about_overview)します。
 
 コンテナーは、複数のパッケージのレイヤーから構築されます。 Windows ベース OS パッケージは、最初の層を形成します。
 

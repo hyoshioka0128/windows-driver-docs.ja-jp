@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c7a59b13d9b73b7d7566b29df7adfc4e1dd88305
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9bbea1edeac5420a7b3e549c4263e768b186962b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332556"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354314"
 ---
 # <a name="kspropertytopologynodeenable"></a>KSPROPERTY\_TOPOLOGYNODE\_を有効にします。
 
@@ -53,7 +53,7 @@ KSPROPERTY\_TOPOLOGYNODE\_有効にするプロパティをオンまたはオフ
 <td align="left"><p>〇</p></td>
 <td align="left"><p>〇</p></td>
 <td align="left"><p>フィルター</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff537143" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537143)"><strong>KSNODEPROPERTY</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></p></td>
 <td align="left"><p>BOOL</p></td>
 </tr>
 </tbody>
@@ -74,7 +74,7 @@ KSPROPERTY\_TOPOLOGYNODE\_有効にするプロパティの要求がステータ
 
 ノードを無効にすると、ノードを通過するストリームをノードを実行する変換オフにします。 場合は、AEC、AGC、またはノイズ抑制ノード ([**KSNODETYPE\_音響\_エコー\_キャンセル**](ksnodetype-acoustic-echo-cancel.md)、 [ **KSNODETYPE\_AGC**](ksnodetype-agc.md)、または[ **KSNODETYPE\_ノイズ\_抑制**](ksnodetype-noise-suppress.md))、たとえば、無効になっているノードの動作パススルー モード (つまり、演算を実行しないストリームでノードの入力ピンから、出力ピンに流れる)。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -93,13 +93,13 @@ KSPROPERTY\_TOPOLOGYNODE\_有効にするプロパティの要求がステータ
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
-[**KSNODEPROPERTY**](https://msdn.microsoft.com/library/windows/hardware/ff537143)
+[**KSNODEPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty)
 
 [**KSNODETYPE\_音響\_エコー\_キャンセル**](ksnodetype-acoustic-echo-cancel.md)
 
 [**KSNODETYPE\_AGC**](ksnodetype-agc.md)
 
-[**KSNODETYPE\_ノイズ\_を抑制します。**](ksnodetype-noise-suppress.md)
+[**KSNODETYPE\_ノイズ\_を抑制します。** ](ksnodetype-noise-suppress.md)
 
  
 

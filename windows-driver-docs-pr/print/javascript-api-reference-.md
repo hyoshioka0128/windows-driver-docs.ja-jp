@@ -4,12 +4,12 @@ description: 印刷デバイスを USB 接続経由でサポートを提供す�
 ms.assetid: 604DF74E-AEF1-43DC-81B2-566A94B1CE8E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 80f04f419ca1fbf2c6e8f1938264b6c5a6fa4cd0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 23a7fd4ed3049d0ef6f001925586eff95079b22d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357247"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377532"
 ---
 # <a name="javascript-api-reference"></a>JavaScript API リファレンス
 
@@ -36,10 +36,10 @@ function getSchemas(scriptContext, printerStream, schemaRequests, printerBidiSch
 
 *scriptContext*
 
-\[\] 、 [ **IPrinterScriptContext** ](https://msdn.microsoft.com/library/windows/hardware/hh768279)関連するプロパティ バッグへのアクセスを提供するオブジェクト。
+\[\] 、 [ **IPrinterScriptContext** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterscriptcontext)関連するプロパティ バッグへのアクセスを提供するオブジェクト。
 *printerStream*
 
-\[\] 、 [IPrinterScriptableSequentialStream](https://msdn.microsoft.com/library/windows/hardware/hh439697)読み取りおよび USB バスへの書き込みアクセスを許可するオブジェクト。
+\[\] 、 [IPrinterScriptableSequentialStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterscriptablesequentialstream)読み取りおよび USB バスへの書き込みアクセスを許可するオブジェクト。
 *schemaRequests*
 
 \[\]双方向の要求のクエリ文字列のすべてを含む配列オブジェクト。
@@ -66,13 +66,13 @@ function getSchemas(scriptContext, printerStream, schemaRequests, printerBidiSch
 
 *scriptContext*
 
-\[\] 、 [ **IPrinterScriptContext** ](https://msdn.microsoft.com/library/windows/hardware/hh768279)関連するプロパティ バッグへのアクセスを提供するオブジェクト。
+\[\] 、 [ **IPrinterScriptContext** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterscriptcontext)関連するプロパティ バッグへのアクセスを提供するオブジェクト。
 *printerStream*
 
-\[\] 、 [IPrinterScriptableSequentialStream](https://msdn.microsoft.com/library/windows/hardware/hh439697)読み取りおよび USB バスへの書き込みアクセスを許可するオブジェクト。
+\[\] 、 [IPrinterScriptableSequentialStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterscriptablesequentialstream)読み取りおよび USB バスへの書き込みアクセスを許可するオブジェクト。
 *printerBidiSchemaElement*
 
-\[\] 、 [IPrinterBidiSchemaElement](https://msdn.microsoft.com/library/windows/hardware/hh406590) Bidi スキーマの値を設定するに関連付けられているすべてのデータを格納しているオブジェクト。
+\[\] 、 [IPrinterBidiSchemaElement](https://docs.microsoft.com/windows-hardware/drivers/print/iprinterbidischemaelement-interface) Bidi スキーマの値を設定するに関連付けられているすべてのデータを格納しているオブジェクト。
 戻り値
 
 | 戻り値 | 説明                                                                                                                                                                          |
@@ -96,7 +96,7 @@ function getSchemas(scriptContext, printerStream, schemaRequests, printerBidiSch
 \[\] 、 **IPrinterScriptContext**関連するプロパティ バッグへのアクセスを提供するオブジェクト。
 *printerStream*
 
-\[\] 、 [IPrinterScriptableSequentialStream](https://msdn.microsoft.com/library/windows/hardware/hh439697) USB バスへの読み取りアクセスを許可するオブジェクト。
+\[\] 、 [IPrinterScriptableSequentialStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterscriptablesequentialstream) USB バスへの読み取りアクセスを許可するオブジェクト。
 *printerBidiSchemaResponses*
 
 \[out\]オブジェクトのクエリ キーをすべての応答を格納する、スクリプトを使用します。
@@ -128,13 +128,13 @@ function startPrintJob(jobScriptContext, printerStream, printerBidiSchemaRespons
 
 *jobScriptContext*
 
-\[\] 、 [ **IPrinterScriptUsbJobContext** ](https://msdn.microsoft.com/library/windows/hardware/dn425143)ジョブのプロパティ バッグと永続的なデータ ストリームを製造元の JavaScript コードへのアクセスを提供するオブジェクト。
+\[\] 、 [ **IPrinterScriptUsbJobContext** ](https://docs.microsoft.com/windows-hardware/drivers/print/iprinterscriptusbjobcontext)ジョブのプロパティ バッグと永続的なデータ ストリームを製造元の JavaScript コードへのアクセスを提供するオブジェクト。
 *printerStream*
 
 \[\] 、 **IPrinterScriptableSequentialStream**オブジェクト、製造元の JavaScript コードが、印刷デバイスにデータの読み書きに使用できます。
 *printerBidiSchemaResponses*
 
-\[out\] 、 [ **IPrinterBidiSchemaResponses** ](https://msdn.microsoft.com/library/windows/hardware/hh920397) Bidi スキーマの値の変更/更新を返す、製造元の JavaScript コードを使用しているオブジェクトします。
+\[out\] 、 [ **IPrinterBidiSchemaResponses** ](https://docs.microsoft.com/windows-hardware/drivers/print/iprinterbidischemaresponses) Bidi スキーマの値の変更/更新を返す、製造元の JavaScript コードを使用しているオブジェクトします。
 
 | 戻り値 | 説明                                                                             |
 |--------------|-----------------------------------------------------------------------------------------|
@@ -284,8 +284,8 @@ function endPrintJob(jobScriptContext, printerStream, printerBidiSchemaResponses
 
 
 ## <a name="related-topics"></a>関連トピック
-[**IPrinterScriptContext**](https://msdn.microsoft.com/library/windows/hardware/hh768279)  
-[IPrinterScriptableSequentialStream](https://msdn.microsoft.com/library/windows/hardware/hh439697)  
+[**IPrinterScriptContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterscriptcontext)  
+[IPrinterScriptableSequentialStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterscriptablesequentialstream)  
 [USB Bidi エクステンダー](usb-bidi-extender.md)  
 
 

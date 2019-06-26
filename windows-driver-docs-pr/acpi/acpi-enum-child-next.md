@@ -6,17 +6,17 @@ keywords:
 - ACPI_ENUM_CHILD_NEXT マクロ ACPI デバイス
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 933fded8f739ba47d4f00cd070f2415435d48967
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 49af38a832a22bcb06c11e1f5b5986c06506a5ed
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328856"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355889"
 ---
 # <a name="acpienumchildnext-macro"></a>ACPI\_ENUM\_子\_次のマクロ
 
 
-ACPI\_列挙型\_子\_マクロ [次へ]、[次へ] へのポインターを計算する[ **ACPI\_列挙型\_子**](https://msdn.microsoft.com/library/windows/hardware/ff536109)の配列の構造可変長 ACPI\_ENUM\_子構造体。
+ACPI\_列挙型\_子\_マクロ [次へ]、[次へ] へのポインターを計算する[ **ACPI\_列挙型\_子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ns-acpiioct-_acpi_enum_child)の配列の構造可変長 ACPI\_ENUM\_子構造体。
 
 <a name="syntax"></a>構文
 ------
@@ -41,9 +41,9 @@ ACPI の型の変数へのポインター\_列挙型\_を次の ACPI に固定�
 <a name="remarks"></a>注釈
 -------
 
-ドライバーを使用した後、 [ **IOCTL\_ACPI\_ENUM\_子**](https://msdn.microsoft.com/library/windows/hardware/ff536147)で子デバイス名の配列を取得する要求、 [ **ACPI\_ENUM\_子\_出力\_バッファー** ](https://msdn.microsoft.com/library/windows/hardware/ff536112)要求と、ドライバーは、このマクロを使用して、可変長 ACPIへのポインターのシーケンスを決定するには\_列挙型\_内の子構造体、**子**出力バッファーを含む配列。
+ドライバーを使用した後、 [ **IOCTL\_ACPI\_ENUM\_子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ni-acpiioct-ioctl_acpi_enum_children)で子デバイス名の配列を取得する要求、 [ **ACPI\_ENUM\_子\_出力\_バッファー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ns-acpiioct-_acpi_enum_children_output_buffer)要求と、ドライバーは、このマクロを使用して、可変長 ACPIへのポインターのシーケンスを決定するには\_列挙型\_内の子構造体、**子**出力バッファーを含む配列。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -66,11 +66,11 @@ ACPI の型の変数へのポインター\_列挙型\_を次の ACPI に固定�
 ## <a name="see-also"></a>関連項目
 
 
-[**ACPI\_ENUM\_子**](https://msdn.microsoft.com/library/windows/hardware/ff536109)
+[**ACPI\_ENUM\_子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ns-acpiioct-_acpi_enum_child)
 
-[**ACPI\_ENUM\_子\_出力\_バッファー**](https://msdn.microsoft.com/library/windows/hardware/ff536112)
+[**ACPI\_ENUM\_子\_出力\_バッファー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ns-acpiioct-_acpi_enum_children_output_buffer)
 
-[**IOCTL\_ACPI\_ENUM\_CHILDREN**](https://msdn.microsoft.com/library/windows/hardware/ff536147)
+[**IOCTL\_ACPI\_ENUM\_CHILDREN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ni-acpiioct-ioctl_acpi_enum_children)
 
  
 

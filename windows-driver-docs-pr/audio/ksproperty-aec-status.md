@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 982d0b18fe330785cadc60810c8c205c1dfb9642
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 403fc77222bac6d5de7c486af188bb73d9c90bb8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333093"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354421"
 ---
 # <a name="kspropertyaecstatus"></a>KSPROPERTY\_AEC\_状態
 
@@ -53,7 +53,7 @@ KSPROPERTY\_AEC\_AEC ノードの状態を監視する STATUS プロパティが
 <td align="left"><p>〇</p></td>
 <td align="left"><p>いいえ</p></td>
 <td align="left"><p>Pin</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff537143" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537143)"><strong>KSNODEPROPERTY</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></p></td>
 <td align="left"><p>ULONG</p></td>
 </tr>
 </tbody>
@@ -72,7 +72,7 @@ KSPROPERTY\_AEC\_AEC ノードの状態を監視する STATUS プロパティが
 <thead>
 <tr class="header">
 <th align="left">AEC の状態フラグ</th>
-<th align="left">値</th>
+<th align="left">Value</th>
 <th align="left">DSCFX_AEC_STATUS フラグ</th>
 </tr>
 </thead>
@@ -115,7 +115,7 @@ AEC ノードを含むフィルターを作成またはノードがリセット�
 
 収束の状態では、AEC に切り替わります。 CH 状態 AEC アルゴリズムが収束後\_状態\_FD\_履歴\_継続的に\_収束します。 CH 状態が、AEC が困難になった状態に切り替わります AEC アルゴリズムがこれまでの収束を失った場合\_状態\_FD\_履歴\_以前\_DIVERGED します。 状態は収束された状態からが困難になった状態に切り替えるには最も高いですが、その可能性がありますに切り替えることも、初期化されていない状態から直接が困難になった状態。 CH 状態が困難になった状態に切り替えてから、アルゴリズムがリセットまたはスタベーションになるまでの状態の検出に保持されます。
 
-ときに、 [AEC システム フィルター](https://msdn.microsoft.com/library/windows/hardware/ff536174) --その 4 つのピンのいずれかの不足を検出した収束履歴を含む、その内部状態にリセットでキャプチャ、キャプチャした、では、レンダリングまたは--をレンダリングします。
+ときに、 [AEC システム フィルター](https://docs.microsoft.com/windows-hardware/drivers/audio/aec-system-filter) --その 4 つのピンのいずれかの不足を検出した収束履歴を含む、その内部状態にリセットでキャプチャ、キャプチャした、では、レンダリングまたは--をレンダリングします。
 
 次の 3 つの CH ステータス ビットのビット 2 が現在使用されていないに注意してください。
 
@@ -140,7 +140,7 @@ CH ステータス ビットを使用する代わりに、アプリケーショ�
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
-[**KSNODEPROPERTY**](https://msdn.microsoft.com/library/windows/hardware/ff537143)
+[**KSNODEPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty)
 
 [**KSNODETYPE\_音響\_エコー\_キャンセル**](ksnodetype-acoustic-echo-cancel.md)
 

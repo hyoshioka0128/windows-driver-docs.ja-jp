@@ -8,12 +8,12 @@ keywords:
 - 標準的な変数 WDK GPD ファイル
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 22d19d4fd97a53252283a725f635876d166a8607
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dcaa8fa77fb7ce9c522e80b994acdf86d68182d6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375186"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355079"
 ---
 # <a name="standard-variables"></a>標準変数
 
@@ -42,7 +42,7 @@ GPD 言語を使用して、コマンド文字列内で参照できる標準的�
 <thead>
 <tr class="header">
 <th>標準的な変数名</th>
-<th>値</th>
+<th>Value</th>
 <th>コメント</th>
 </tr>
 </thead>
@@ -175,8 +175,8 @@ GPD 言語を使用して、コマンド文字列内で参照できる標準的�
 </tr>
 <tr class="even">
 <td><p><strong>PageNumber</strong></p></td>
-<td><p>現在印刷中のページの数。 注、これは必ずしも対応しません、アプリケーションのページの番号が何回ではなく<a href="https://msdn.microsoft.com/library/windows/hardware/ff556281" data-raw-source="[&lt;em&gt;DrvSendPage&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff556281)"> <em>DrvSendPage</em> </a>が呼び出されました。</p>
-<p>この値がによって初期化<a href="https://msdn.microsoft.com/library/windows/hardware/ff556296" data-raw-source="[&lt;strong&gt;DrvStartDoc&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff556296)"> <strong>DrvStartDoc</strong> </a>によって増加されると<strong>DrvSendPage</strong>。</p>
+<td><p>現在印刷中のページの数。 注、これは必ずしも対応しません、アプリケーションのページの番号が何回ではなく<a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvsendpage" data-raw-source="[&lt;em&gt;DrvSendPage&lt;/em&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvsendpage)"> <em>DrvSendPage</em> </a>が呼び出されました。</p>
+<p>この値がによって初期化<a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvstartdoc" data-raw-source="[&lt;strong&gt;DrvStartDoc&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvstartdoc)"> <strong>DrvStartDoc</strong> </a>によって増加されると<strong>DrvSendPage</strong>。</p>
 <p>たとえば、n-up 場合 = 4 が選択されている<strong>PageNumber</strong>ドキュメントの 5 番目のページが印刷されている場合にのみは、2 に上がります。</p>
 <p>(前) に、ドキュメントを逆の順序で印刷される場合、別の例として、 <strong>PageNumber</strong>標準変数は、1 ページとして印刷する最初のページを場合でも、これは、ドキュメントの最後のページに報告されます。</p>
 <p>この動作が正しく自動二重化機能をサポートするために必要です。</p>

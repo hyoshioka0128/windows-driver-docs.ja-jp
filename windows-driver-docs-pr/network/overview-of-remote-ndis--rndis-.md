@@ -7,12 +7,12 @@ keywords:
 - リモートの NDIS WDK のネットワーク、USB transport
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cfcc0748f952439cf1de6b2b8380a855f9d2b7b8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 24b68cb60a5b72dd26eb48e72a21e2c0095d04b0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376984"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356091"
 ---
 # <a name="overview-of-remote-ndis-rndis"></a>リモート NDIS (RNDIS) の概要
 
@@ -61,7 +61,7 @@ Microsoft では、USB バスで NDIS リモート メッセージを実行す�
 ## <a name="related-topics"></a>関連トピック
 
 
-[Windows に含まれる USB クラス ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff538820)
+[Windows に含まれる USB クラス ドライバー](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
 
  
 

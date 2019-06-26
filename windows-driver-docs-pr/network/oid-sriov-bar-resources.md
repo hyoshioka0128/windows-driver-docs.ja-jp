@@ -5,12 +5,12 @@ ms.assetid: CA29591B-EBFB-4B12-A980-F3FAD65207E2
 ms.date: 08/08/2017
 keywords: -OID_SRIOV_BAR_RESOURCES ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: c00487b842b64e49307e3a05a18a24e2fde978ac
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f9d28a49da1f0ed5a6daca6250ea50ff30e3a633
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362553"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356113"
 ---
 # <a name="oidsriovbarresources"></a>OID\_SRIOV\_バー\_リソース
 
@@ -19,28 +19,28 @@ OID のオブジェクト識別子 (OID) メソッド要求を発行する NDIS\
 
 NDIS は、ネットワーク アダプターの PCIe 物理機能 (PF)、ミニポート ドライバーをこの OID メソッド要求を発行します。 この OID メソッド要求は、PF ミニポート ドライバー シングル ルート I/O 仮想化 (SR-IOV) インターフェイスをサポートする必要があります。
 
-**InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)構造体には、バッファーへのポインターが含まれています。 このバッファーには、次の構造が含まれています。
+**InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体には、バッファーへのポインターが含まれています。 このバッファーには、次の構造が含まれています。
 
--   [ **NDIS\_SRIOV\_バー\_リソース\_情報**](https://msdn.microsoft.com/library/windows/hardware/hh451675) VF とバーを指定する構造体を PF ミニポート ドライバー返すリソース情報。
+-   [ **NDIS\_SRIOV\_バー\_リソース\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_sriov_bar_resources_info) VF とバーを指定する構造体を PF ミニポート ドライバー返すリソース情報。
 
--   A [ **CM\_部分\_リソース\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff541977)従った構造体、 [ **NDIS\_SRIOV\_バー\_リソース\_情報**](https://msdn.microsoft.com/library/windows/hardware/hh451675)構造体。 **CM\_部分\_リソース\_記述子**構造に割り当てられたメモリのリソースに関する情報が含まれていますを指定したバー。
+-   A [ **CM\_部分\_リソース\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_cm_partial_resource_descriptor)従った構造体、 [ **NDIS\_SRIOV\_バー\_リソース\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_sriov_bar_resources_info)構造体。 **CM\_部分\_リソース\_記述子**構造に割り当てられたメモリのリソースに関する情報が含まれていますを指定したバー。
 
 <a name="remarks"></a>注釈
 -------
 
-OID の OID メソッド要求を発行する NDIS\_SRIOV\_バー\_リソース システムの物理アドレスと VF バーに割り当てられていたメモリ リソースの長さを取得します。 NDIS OID メソッド要求を発行する前に書式設定、 [ **NDIS\_SRIOV\_バー\_リソース\_情報**](https://msdn.microsoft.com/library/windows/hardware/hh451675)次のように構造体。
+OID の OID メソッド要求を発行する NDIS\_SRIOV\_バー\_リソース システムの物理アドレスと VF バーに割り当てられていたメモリ リソースの長さを取得します。 NDIS OID メソッド要求を発行する前に書式設定、 [ **NDIS\_SRIOV\_バー\_リソース\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_sriov_bar_resources_info)次のように構造体。
 
--   NDIS セット、 **VFId**のメンバー、 [ **NDIS\_SRIOV\_バー\_リソース\_情報**](https://msdn.microsoft.com/library/windows/hardware/hh451675)構造体をVF に関連付けられている識別子です。
+-   NDIS セット、 **VFId**のメンバー、 [ **NDIS\_SRIOV\_バー\_リソース\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_sriov_bar_resources_info)構造体をVF に関連付けられている識別子です。
 
--   NDIS セット、 **BarIndex**のメンバー、 [ **NDIS\_SRIOV\_バー\_リソース\_情報**](https://msdn.microsoft.com/library/windows/hardware/hh451675)構造体をバーの指定した VF のインデックス。 バーのインデックスは、PCI 構成領域でのバーのテーブル内のレジスタのオフセットです。
+-   NDIS セット、 **BarIndex**のメンバー、 [ **NDIS\_SRIOV\_バー\_リソース\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_sriov_bar_resources_info)構造体をバーの指定した VF のインデックス。 バーのインデックスは、PCI 構成領域でのバーのテーブル内のレジスタのオフセットです。
 
--   NDIS セット、 **BarResourcesOffset**のメンバー、 [ **NDIS\_SRIOV\_バー\_リソース\_情報**](https://msdn.microsoft.com/library/windows/hardware/hh451675)先頭からバイト単位のオフセットに構造体、 **NDIS\_SRIOV\_バー\_リソース\_情報**構造体を[ **CM\_部分\_リソース\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff541977)構造体。
+-   NDIS セット、 **BarResourcesOffset**のメンバー、 [ **NDIS\_SRIOV\_バー\_リソース\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_sriov_bar_resources_info)先頭からバイト単位のオフセットに構造体、 **NDIS\_SRIOV\_バー\_リソース\_情報**構造体を[ **CM\_部分\_リソース\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_cm_partial_resource_descriptor)構造体。
 
 **注**  OID の OID メソッドの要求を発行できないなど、プロトコルまたはフィルター ドライバー、ドライバー、スライド\_SRIOV\_バー\_PF ミニポート ドライバーにリソース。
 
  
 
-ドライバーは、指定されたリソースを返します、PF ミニポート ドライバーでは、OID メソッド要求を受け取る、バーの書式設定によって、 [ **CM\_部分\_リソース\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff541977)内で構造体、 **InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)構造体。 ドライバーのフォーマット、 **CM\_部分\_リソース\_記述子**指定 VF のバーに関連付けられているシステムのハードウェア リソースを含む構造体。
+ドライバーは、指定されたリソースを返します、PF ミニポート ドライバーでは、OID メソッド要求を受け取る、バーの書式設定によって、 [ **CM\_部分\_リソース\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_cm_partial_resource_descriptor)内で構造体、 **InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体。 ドライバーのフォーマット、 **CM\_部分\_リソース\_記述子**指定 VF のバーに関連付けられているシステムのハードウェア リソースを含む構造体。
 
 **注**  ドライバーは、リソースの種類の構造体の書式設定する必要があります**CmResourceTypeMemory**します。
 
@@ -72,11 +72,11 @@ PF のミニポート ドライバーでは、OID のメソッドの要求に関
 </tr>
 <tr class="odd">
 <td><p>NDIS_STATUS_INVALID_PARAMETER</p></td>
-<td><p>1 つ以上のメンバーの<a href="https://msdn.microsoft.com/library/windows/hardware/hh451675" data-raw-source="[&lt;strong&gt;NDIS_SRIOV_BAR_RESOURCES_INFO&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/hh451675)"> <strong>NDIS_SRIOV_BAR_RESOURCES_INFO</strong> </a>構造が無効な値を指定します。</p></td>
+<td><p>1 つ以上のメンバーの<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_sriov_bar_resources_info" data-raw-source="[&lt;strong&gt;NDIS_SRIOV_BAR_RESOURCES_INFO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_sriov_bar_resources_info)"> <strong>NDIS_SRIOV_BAR_RESOURCES_INFO</strong> </a>構造が無効な値を指定します。</p></td>
 </tr>
 <tr class="even">
 <td><p>NDIS_STATUS_INVALID_LENGTH</p></td>
-<td><p>情報バッファーがより小さい (sizeof (<a href="https://msdn.microsoft.com/library/windows/hardware/hh451675" data-raw-source="[&lt;strong&gt;NDIS_SRIOV_BAR_RESOURCES_INFO&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/hh451675)"><strong>NDIS_SRIOV_BAR_RESOURCES_INFO</strong></a>) + sizeof (<a href="https://msdn.microsoft.com/library/windows/hardware/ff541977" data-raw-source="[&lt;strong&gt;CM_PARTIAL_RESOURCE_DESCRIPTOR&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff541977)"><strong>CM_PARTIAL_RESOURCE_DESCRIPTOR</strong> </a>). PF のミニポート ドライバーを設定する必要があります、<strong>データ。METHOD_INFORMATION します。BytesNeeded</strong>内のメンバー、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff566710" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566710)"> <strong>NDIS_OID_REQUEST</strong> </a>構造体に必要な最小バッファー サイズ。</p></td>
+<td><p>情報バッファーがより小さい (sizeof (<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_sriov_bar_resources_info" data-raw-source="[&lt;strong&gt;NDIS_SRIOV_BAR_RESOURCES_INFO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_sriov_bar_resources_info)"><strong>NDIS_SRIOV_BAR_RESOURCES_INFO</strong></a>) + sizeof (<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_cm_partial_resource_descriptor" data-raw-source="[&lt;strong&gt;CM_PARTIAL_RESOURCE_DESCRIPTOR&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_cm_partial_resource_descriptor)"><strong>CM_PARTIAL_RESOURCE_DESCRIPTOR</strong> </a>). PF のミニポート ドライバーを設定する必要があります、<strong>データ。METHOD_INFORMATION します。BytesNeeded</strong>内のメンバー、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)"> <strong>NDIS_OID_REQUEST</strong> </a>構造体に必要な最小バッファー サイズ。</p></td>
 </tr>
 <tr class="odd">
 <td><p>NDIS_STATUS_FAILURE</p></td>
@@ -111,11 +111,11 @@ PF のミニポート ドライバーでは、OID のメソッドの要求に関
 
 
 ****
-[**CM\_部分\_リソース\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff541977)
+[**CM\_部分\_リソース\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_cm_partial_resource_descriptor)
 
-[**NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)
+[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
 
-[**NDIS\_SRIOV\_バー\_リソース\_情報**](https://msdn.microsoft.com/library/windows/hardware/hh451675)
+[**NDIS\_SRIOV\_バー\_リソース\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_sriov_bar_resources_info)
 
  
 

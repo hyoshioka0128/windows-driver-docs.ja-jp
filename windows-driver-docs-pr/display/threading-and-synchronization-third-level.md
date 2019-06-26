@@ -7,35 +7,35 @@ keywords:
 - 同期の WDK の表示、3 番目のレベル
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 647c5fd9bae10c25aa7f6dedcef25d2e3a0214ef
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2a5c71dcc40e28daa3dcee3db284f16beb506309
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389841"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354692"
 ---
 # <a name="threading-and-synchronization-third-level"></a>スレッドおよび同期の第 3 レベル
 
 
 Windows 表示 Driver Model (WDDM) は、スレッドと同期の第 3 レベルの下で、ディスプレイのミニポート ドライバーを次の呼び出しが行われることを保証します。 これにより、1 つのスレッド (つまり、呼び出し元のスレッド) のみが、ドライバー内にあります。 さらに、グラフィックス ハードウェアがアイドル状態、いいえダイレクト メモリ アクセス (DMA) バッファーを現在されているドライバーで処理する場合や、GPU のスケジューラを通過し、ビデオ メモリが CPU メモリをホストする完全に削除されます。
 
--   [*DxgkDdiAddDevice*](https://msdn.microsoft.com/library/windows/hardware/ff559586)
+-   [*DxgkDdiAddDevice*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_add_device)
 
--   [*DxgkDdiQueryChildRelations*](https://msdn.microsoft.com/library/windows/hardware/ff559750)
+-   [*DxgkDdiQueryChildRelations*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_query_child_relations)
 
--   [*DxgkDdiRemoveDevice*](https://msdn.microsoft.com/library/windows/hardware/ff559789)
+-   [*DxgkDdiRemoveDevice*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_remove_device)
 
--   [*DxgkDdiResetFromTimeout*](https://msdn.microsoft.com/library/windows/hardware/ff559815)
+-   [*DxgkDdiResetFromTimeout*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_resetfromtimeout)
 
--   [*DxgkDdiRestartFromTimeout*](https://msdn.microsoft.com/library/windows/hardware/ff559820)
+-   [*DxgkDdiRestartFromTimeout*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_restartfromtimeout)
 
--   [*DxgkDdiSetPowerState*](https://msdn.microsoft.com/library/windows/hardware/ff560764)
+-   [*DxgkDdiSetPowerState*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_set_power_state)
 
--   [*DxgkDdiStartDevice*](https://msdn.microsoft.com/library/windows/hardware/ff560775)
+-   [*DxgkDdiStartDevice*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_start_device)
 
--   [*DxgkDdiStopDevice*](https://msdn.microsoft.com/library/windows/hardware/ff560781)
+-   [*DxgkDdiStopDevice*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_stop_device)
 
--   [*DxgkDdiUnload*](https://msdn.microsoft.com/library/windows/hardware/ff560801)
+-   [*DxgkDdiUnload*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_unload)
 
  
 

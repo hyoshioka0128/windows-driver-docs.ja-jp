@@ -8,12 +8,12 @@ keywords:
 - デバイスのインストールに関するデバイス、WDK をインストールします。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e5da2f5be09b5193c07a6f01a5b89689a165be8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e26f6c7dff3d9577cc15c13f2c35c65cec549ba1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369455"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379449"
 ---
 # <a name="overview-of-device-and-driver-installation"></a>デバイスとドライバーのインストールの概要
 
@@ -23,7 +23,7 @@ ms.locfileid: "63369455"
 
 Windows では、デバイスとドライバーをインストールするコンポーネントを提供します。 [システム指定のデバイスのインストール コンポーネント](system-provided-device-installation-components.md)と連携して[コンポーネントのベンダーから提供された](vendor-provided-device-installation-components.md)デバイスをインストールします。
 
-Windows デバイスをインストール、システムを再起動すると、システムの再起動後にいつでもユーザーはプラグ アンド プレイ (PnP) デバイスをプラグイン (または非 PnP デバイスを手動でインストールされます)。 サポートに PnP、Windows を実行、ドライバーのインストールを構築するのではなく、システムで、デバイスに基づいているデバイスのインストールします。 一連のドライバーの読み込みではなく、たとえば、あるものとドライバーがサポートされるデバイスを検出、Windows がシステムと負荷に存在するデバイスを決定し、各デバイスのドライバーを呼び出します。 など、ACPI ドライバーおよびその他の PnP ドライバー[バス ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff540704) Windows ヘルプは、デバイスが存在するを決定します。
+Windows デバイスをインストール、システムを再起動すると、システムの再起動後にいつでもユーザーはプラグ アンド プレイ (PnP) デバイスをプラグイン (または非 PnP デバイスを手動でインストールされます)。 サポートに PnP、Windows を実行、ドライバーのインストールを構築するのではなく、システムで、デバイスに基づいているデバイスのインストールします。 一連のドライバーの読み込みではなく、たとえば、あるものとドライバーがサポートされるデバイスを検出、Windows がシステムと負荷に存在するデバイスを決定し、各デバイスのドライバーを呼び出します。 など、ACPI ドライバーおよびその他の PnP ドライバー[バス ドライバー](https://docs.microsoft.com/windows-hardware/drivers/kernel/bus-drivers) Windows ヘルプは、デバイスが存在するを決定します。
 
 ## <a name="in-this-section"></a>このセクションの内容
 

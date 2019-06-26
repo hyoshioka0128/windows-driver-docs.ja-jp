@@ -16,12 +16,12 @@ keywords:
 - Windows 2000 の WDK のアニメーションを表示します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3390248bdfc81aba6604f2abe79d7cd395d99bfb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d5438d0571b4ba9f721d137de05b7262e626c139
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382331"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353843"
 ---
 # <a name="special-effects-in-display-drivers"></a>ディスプレイ ドライバーの特殊効果
 
@@ -31,9 +31,9 @@ ms.locfileid: "63382331"
 
 Windows 2000 と以降のオペレーティング システム バージョンは、次の特殊効果をサポートします。
 
--   ディスプレイ ハードウェアでは、アルファ ブレンドをサポートする場合、ディスプレイ ドライバーを実装できます[ **DrvAlphaBlend**](https://msdn.microsoft.com/library/windows/hardware/ff556176)します。
+-   ディスプレイ ハードウェアでは、アルファ ブレンドをサポートする場合、ディスプレイ ドライバーを実装できます[ **DrvAlphaBlend**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvalphablend)します。
 
--   ディスプレイ ハードウェアでは、グラデーション塗りつぶしをサポートする場合、ディスプレイ ドライバーを実装する必要があります[ **DrvGradientFill**](https://msdn.microsoft.com/library/windows/hardware/ff556236)します。
+-   ディスプレイ ハードウェアでは、グラデーション塗りつぶしをサポートする場合、ディスプレイ ドライバーを実装する必要があります[ **DrvGradientFill**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvgradientfill)します。
 
 ### <a name="span-idalphablendingspanspan-idalphablendingspanspan-idalphablendingspanalpha-blending"></a><span id="Alpha_Blending"></span><span id="alpha_blending"></span><span id="ALPHA_BLENDING"></span>アルファ ブレンド
 
@@ -59,7 +59,7 @@ Wdk のディスプレイ ドライバーの実装を評価するテストがあ
 
 Windows 2000 (以降) のシェルを使用して*グラデーション塗りつぶし*すべてのキャプション バー。
 
-によって生成される結果[ **DrvGradientFill** ](https://msdn.microsoft.com/library/windows/hardware/ff556236) 、ピクセルあたりのビット数に依存し、次のガイドラインを満たす必要があります。
+によって生成される結果[ **DrvGradientFill** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvgradientfill) 、ピクセルあたりのビット数に依存し、次のガイドラインを満たす必要があります。
 
 ### <a name="span-id24bppor32bppsurfacesspanspan-id24bppor32bppsurfacesspan24-bpp-or-32-bpp-surfaces"></a><span id="_24_bpp_or_32_bpp_surfaces"></span><span id="_24_BPP_OR_32_BPP_SURFACES"></span>24 bpp、または 32 bpp のサーフェス
 

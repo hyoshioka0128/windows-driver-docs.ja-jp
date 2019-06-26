@@ -4,19 +4,19 @@ description: Bluetooth バイパス デバイス ドライバー インターフ
 ms.assetid: 70ED2FC9-A644-4C72-8208-3D4AB83B7AC0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 34cbdc05e8596f08004e2854b4f1c4d45828b3c1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d0c4ba71f4f98b92e62ae27d798e4976f36eb061
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333907"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355616"
 ---
 # <a name="bluetooth-bypass-ddi-reference"></a>Bluetooth バイパス DDI のリファレンス
 
 
 Bluetooth バイパス デバイス ドライバー インターフェイス (DDI) リファレンスには、構造体とハンズフリー プロファイル (HFP) ドライバーのサポートを提供する Windows 8.1 で導入された Ioctl を説明するトピックのセットです。
 
-DDI メンバーの詳細については、次を参照してください。 [Bluetooth HFP DDI 参照](https://msdn.microsoft.com/library/windows/hardware/dn302028)します。
+DDI メンバーの詳細については、次を参照してください。 [Bluetooth HFP DDI 参照](https://docs.microsoft.com/windows-hardware/drivers/audio/bluetooth-hfp-ddi-reference)します。
 
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 [操作の理論を概説します。](theory-of-operation.md)  

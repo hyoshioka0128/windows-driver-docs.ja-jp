@@ -4,12 +4,12 @@ description: MB ドライバー モデルのバージョン管理
 ms.assetid: f5778b36-4f84-4cfe-965c-36af225ac0dc
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b72b67507864b2177cd42ae43c318da390cf0ea7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e545f7ca9e8b4a94208fdccfad4e3ba48da0bee8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343373"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377989"
 ---
 # <a name="mb-driver-model-versioning"></a>MB ドライバー モデルのバージョン管理
 
@@ -30,7 +30,7 @@ MB ドライバー モデルのバージョン管理は、モデルのドライ�
 
 ドライバー モデルは、次のバージョンに移動、そのバージョン番号は 1 ずつ増加します。 ドライバー モデルに追加され、新しい Oid は、リビジョン 1; に開始されます。構造が変更されているデータは、対応するリビジョンを 1 増や、既存の Oid と、既存の Oid が変更されない、それぞれのリビジョン番号が保持されます。
 
-ドライバー モデルのバージョンがによって伝えられる[OID\_WWAN\_ドライバー\_CAP](https://msdn.microsoft.com/library/windows/hardware/ff569825)します。 MB サービスに送信 OID\_WWAN\_ドライバー\_CAP クエリ要求中に、ミニポート ドライバーに[MB ミニポート ドライバーの初期化](mb-miniport-driver-initialization.md)します。 個々 のリビジョンを OID が説明されている、**リビジョン**のメンバー、 [ **NDIS\_オブジェクト\_ヘッダー** ](https://msdn.microsoft.com/library/windows/hardware/ff566588)構造体に含まれる各個々 の OID のデータ構造体。
+ドライバー モデルのバージョンがによって伝えられる[OID\_WWAN\_ドライバー\_CAP](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-driver-caps)します。 MB サービスに送信 OID\_WWAN\_ドライバー\_CAP クエリ要求中に、ミニポート ドライバーに[MB ミニポート ドライバーの初期化](mb-miniport-driver-initialization.md)します。 個々 のリビジョンを OID が説明されている、**リビジョン**のメンバー、 [ **NDIS\_オブジェクト\_ヘッダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_object_header)構造体に含まれる各個々 の OID のデータ構造体。
 
  
 

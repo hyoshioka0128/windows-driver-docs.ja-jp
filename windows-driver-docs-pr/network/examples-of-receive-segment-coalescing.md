@@ -4,12 +4,12 @@ description: このセクションでは、順番に受信され、1 つの遅�
 ms.assetid: BC4C3216-683B-4E86-B2DF-F75FFCA7DACC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: abf61775d1421eaf92e4d26954cc00786198881d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f151085e0a28939b4a7f4e76d126912ccd59cadb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63385494"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353761"
 ---
 # <a name="examples-of-receive-segment-coalescing"></a>受信セグメント結合の例
 
@@ -34,7 +34,7 @@ ms.locfileid: "63385494"
 これらのセグメントの [なし] には、例外が生成されます。
 ### <a name="result"></a>結果
 
-10 個のセグメントから 1 つ SCU が形成されます。 これは、1 つとして示されます[ **NET\_バッファー** ](https://msdn.microsoft.com/library/windows/hardware/ff568376) 1 つの[ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388).
+10 個のセグメントから 1 つ SCU が形成されます。 これは、1 つとして示されます[ **NET\_バッファー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer) 1 つの[ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list).
 
 ## <a name="example-2-data-segments-followed-by-an-exception-followed-by-data-segments"></a>例 2:データ セグメントの後に、例外の後に、データ セグメント
 
@@ -71,7 +71,7 @@ ms.locfileid: "63385494"
 
 7 番目と 8 番目のセグメントは、まとめて、SCU を形成します。
 
-A [ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)チェーンが 3 つ示される**NET\_バッファー\_一覧**各構造体1 つを持つ[ **NET\_バッファー**](https://msdn.microsoft.com/library/windows/hardware/ff568376)します。 受信したセグメントの順序は維持されます。
+A [ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)チェーンが 3 つ示される**NET\_バッファー\_一覧**各構造体1 つを持つ[ **NET\_バッファー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)します。 受信したセグメントの順序は維持されます。
 
 ## <a name="example-3-data-segments-followed-by-multiple-window-updates"></a>例 3: 複数のウィンドウの更新後に、データ セグメント
 
@@ -95,7 +95,7 @@ A [ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows
 
 ### <a name="result"></a>結果
 
-7 セグメントから 1 つ SCU が形成されます。 これは、1 つとして示されます[ **NET\_バッファー** ](https://msdn.microsoft.com/library/windows/hardware/ff568376) 1 つの[ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388).
+7 セグメントから 1 つ SCU が形成されます。 これは、1 つとして示されます[ **NET\_バッファー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer) 1 つの[ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list).
 
 SCU します。WND = 131070、この値に基づいて、チェックサムを更新します。
 
@@ -124,7 +124,7 @@ SCU します。WND = 131070、この値に基づいて、チェックサムを�
 これらのセグメントの [なし] には、例外が生成されます。
 ### <a name="result"></a>結果
 
-5 つのセグメントから 1 つ SCU が形成されます。 これは、1 つとして示されます[ **NET\_バッファー** ](https://msdn.microsoft.com/library/windows/hardware/ff568376) 1 つの[ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388). SCU します。確認は、最後の SEG.ACK で設定されます。
+5 つのセグメントから 1 つ SCU が形成されます。 これは、1 つとして示されます[ **NET\_バッファー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer) 1 つの[ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list). SCU します。確認は、最後の SEG.ACK で設定されます。
 
  
 

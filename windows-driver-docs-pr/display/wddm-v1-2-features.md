@@ -4,12 +4,12 @@ description: このトピックでは、パフォーマンス、信頼性、お�
 ms.assetid: 65072545-76F0-43A8-9E46-703CA99BFE90
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fdbac4a14090306d9306f9a56cc7d837db23c194
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fff70e630d512cb1581008534d8757ae0020eda5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391185"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353407"
 ---
 # <a name="wddm-12-features"></a>WDDM 1.2 の機能
 
@@ -57,7 +57,7 @@ WDDM 1.2 には、必須およびオプションの両方の機能がありま�
 
 次の新しいまたは更新された表示ドライバー Ddi は、Windows 8 で提供されるも示します。
 
-[**カーネル モードの表示専用ドライバー (KMDOD) インターフェイス**](https://msdn.microsoft.com/library/windows/hardware/jj673962)
+[**カーネル モードの表示専用ドライバー (KMDOD) インターフェイス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
 
 限られた表示機能のない表示機能を提供します。
 
@@ -65,67 +65,67 @@ WDDM 1.2 には、必須およびオプションの両方の機能がありま�
 
  
 
-[**SPB インターフェイスを通じてチップ (SoC) アーキテクチャ上のシステムのサポート**](https://msdn.microsoft.com/library/windows/hardware/jj658947)
+[**SPB インターフェイスを通じてチップ (SoC) アーキテクチャ上のシステムのサポート**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
 
 SoC のシステムで表示ミニポート ドライバー アクセス bus リソースをことができます。
 
 ### <a name="span-idsurpriseremovalofsecondaryadapterspanspan-idsurpriseremovalofsecondaryadapterspanspan-idsurpriseremovalofsecondaryadapterspansurprise-removal-of-secondary-adapter"></a><span id="Surprise_removal_of_secondary_adapter"></span><span id="surprise_removal_of_secondary_adapter"></span><span id="SURPRISE_REMOVAL_OF_SECONDARY_ADAPTER"></span>セカンダリのアダプターの突然の取り外し
 
--   [*DxgkDdiNotifySurpriseRemoval*](https://msdn.microsoft.com/library/windows/hardware/hh780297)
--   [**DXGK\_SURPRISE\_REMOVAL\_TYPE**](https://msdn.microsoft.com/library/windows/hardware/hh780313)
--   [**DXGK\_DRIVERCAPS**](https://msdn.microsoft.com/library/windows/hardware/ff561062)
--   [**D3DKMT\_WDDM\_1\_2\_キャップ**](https://msdn.microsoft.com/library/windows/hardware/hh406678)
+-   [*DxgkDdiNotifySurpriseRemoval*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_notify_surprise_removal)
+-   [**DXGK\_SURPRISE\_REMOVAL\_TYPE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/ne-dispmprt-_dxgk_surprise_removal_type)
+-   [**DXGK\_DRIVERCAPS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_drivercaps)
+-   [**D3DKMT\_WDDM\_1\_2\_キャップ**](https://docs.microsoft.com/windows-hardware/drivers/display/d3dkmt-wddm-1-2-caps)
 
-[**システム ファームウェア テーブル インターフェイス**](https://msdn.microsoft.com/library/windows/hardware/jj647606)
+[**システム ファームウェア テーブル インターフェイス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/ns-dispmprt-_dxgk_firmware_table_interface)
 
 表示のミニポート ドライバーを列挙し、システム ファームウェアのテーブルを読み取ることができます。
 
-[**明るさコントロール インターフェイス V です。2 (適応型かつスムーズな明るさコントロール)**](https://msdn.microsoft.com/library/windows/hardware/jj647485)
+[**明るさコントロール インターフェイス V です。2 (適応型かつスムーズな明るさコントロール)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
 
 表示のバックライトのパワーし、スムーズに依然周辺光と明るさを変更するユーザーの要求の変化に適応表示ミニポート ドライバーを使用できます。
 
-参照してください[統合ディスプレイの明るさコントロールを Windows 8](https://msdn.microsoft.com/library/windows/hardware/dn614018)します。
+参照してください[統合ディスプレイの明るさコントロールを Windows 8](https://docs.microsoft.com/previous-versions/windows/hardware/design/dn614018(v=vs.85))します。
 
 ### <a name="span-idmicrosoftdirectxgraphicsinfrastructureddidxgispanspan-idmicrosoftdirectxgraphicsinfrastructureddidxgispanspan-idmicrosoftdirectxgraphicsinfrastructureddidxgispanmicrosoft-directx-graphics-infrastructure-ddi-dxgi"></a><span id="Microsoft_DirectX_Graphics_Infrastructure_DDI__DXGI_"></span><span id="microsoft_directx_graphics_infrastructure_ddi__dxgi_"></span><span id="MICROSOFT_DIRECTX_GRAPHICS_INFRASTRUCTURE_DDI__DXGI_"></span>Microsoft DirectX のグラフィックス インフラストラクチャ DDI (DXGI)
 
--   [*Blt1DXGI*](https://msdn.microsoft.com/library/windows/hardware/hh406235)
--   [**DXGI\_DDI\_ARG\_BLT1**](https://msdn.microsoft.com/library/windows/hardware/hh451221)
--   [**DXGI\_DDI\_ベース\_ARGS**](https://msdn.microsoft.com/library/windows/hardware/ff557485)
--   [**DXGI1\_2\_DDI\_ベース\_関数**](https://msdn.microsoft.com/library/windows/hardware/hh451215)
+-   [*Blt1DXGI*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxgiddi/ns-dxgiddi-dxgi1_2_ddi_base_functions)
+-   [**DXGI\_DDI\_ARG\_BLT1**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxgiddi/ns-dxgiddi-dxgi_ddi_arg_blt1)
+-   [**DXGI\_DDI\_ベース\_ARGS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxgiddi/ns-dxgiddi-dxgi_ddi_base_args)
+-   [**DXGI1\_2\_DDI\_ベース\_関数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxgiddi/ns-dxgiddi-dxgi1_2_ddi_base_functions)
 
 ### <a name="span-idallocationsharingenqueinggpueventsspanspan-idallocationsharingenqueinggpueventsspanspan-idallocationsharingenqueinggpueventsspanallocation-sharing--enqueing-gpu-events"></a><span id="Allocation_sharing___enqueing_GPU_events"></span><span id="allocation_sharing___enqueing_gpu_events"></span><span id="ALLOCATION_SHARING___ENQUEING_GPU_EVENTS"></span>割り当ての共有と enqueing GPU イベント
 
--   [*pfnCreateSynchronizationObject2Cb*](https://msdn.microsoft.com/library/windows/hardware/hh780321)
--   [*pfnSignalSynchronizationObject2Cb*](https://msdn.microsoft.com/library/windows/hardware/hh780325)
--   [*pfnWaitForSynchronizationObject2Cb*](https://msdn.microsoft.com/library/windows/hardware/hh780326)
--   [**D3DDDI\_DEVICECALLBACKS**](https://msdn.microsoft.com/library/windows/hardware/ff544512)
--   [**D3DDDI\_SYNCHRONIZATIONOBJECT\_フラグ**](https://msdn.microsoft.com/library/windows/hardware/ff544662)
--   [**D3DDDICB\_CREATESYNCHRONIZATIONOBJECT2**](https://msdn.microsoft.com/library/windows/hardware/hh451156)
--   [**D3DDDICB\_SIGNALFLAGS**](https://msdn.microsoft.com/library/windows/hardware/ff544271)
--   [**D3DDDICB\_SIGNALSYNCHRONIZATIONOBJECT2**](https://msdn.microsoft.com/library/windows/hardware/hh451164)
--   [**D3DDDICB\_WAITFORSYNCHRONIZATIONOBJECT2**](https://msdn.microsoft.com/library/windows/hardware/hh451167)
--   [**D3DKMT\_CREATEALLOCATIONFLAGS**](https://msdn.microsoft.com/library/windows/hardware/ff547802)
--   [**D3DKMT\_CREATEKEYEDMUTEX2**](https://msdn.microsoft.com/library/windows/hardware/hh439474)
--   [**D3DKMT\_CREATEKEYEDMUTEX2\_FLAGS**](https://msdn.microsoft.com/library/windows/hardware/hh780254)
--   [**D3DKMT\_RELEASEKEYEDMUTEX2**](https://msdn.microsoft.com/library/windows/hardware/hh406571)
--   [**D3DKMTShareObjects**](https://msdn.microsoft.com/library/windows/hardware/hh780251)
+-   [*pfnCreateSynchronizationObject2Cb*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_createsynchronizationobject2cb)
+-   [*pfnSignalSynchronizationObject2Cb*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_signalsynchronizationobject2cb)
+-   [*pfnWaitForSynchronizationObject2Cb*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_waitforsynchronizationobject2cb)
+-   [**D3DDDI\_DEVICECALLBACKS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ns-d3dumddi-_d3dddi_devicecallbacks)
+-   [**D3DDDI\_SYNCHRONIZATIONOBJECT\_フラグ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dukmdt/ns-d3dukmdt-_d3dddi_synchronizationobject_flags)
+-   [**D3DDDICB\_CREATESYNCHRONIZATIONOBJECT2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ns-d3dumddi-_d3dddicb_createsynchronizationobject2)
+-   [**D3DDDICB\_SIGNALFLAGS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dukmdt/ns-d3dukmdt-_d3dddicb_signalflags)
+-   [**D3DDDICB\_SIGNALSYNCHRONIZATIONOBJECT2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ns-d3dumddi-_d3dddicb_signalsynchronizationobject2)
+-   [**D3DDDICB\_WAITFORSYNCHRONIZATIONOBJECT2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ns-d3dumddi-_d3dddicb_waitforsynchronizationobject2)
+-   [**D3DKMT\_CREATEALLOCATIONFLAGS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmthk/ns-d3dkmthk-_d3dkmt_createallocationflags)
+-   [**D3DKMT\_CREATEKEYEDMUTEX2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmthk/ns-d3dkmthk-_d3dkmt_createkeyedmutex2)
+-   [**D3DKMT\_CREATEKEYEDMUTEX2\_FLAGS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmthk/ns-d3dkmthk-_d3dkmt_createkeyedmutex2_flags)
+-   [**D3DKMT\_RELEASEKEYEDMUTEX2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmthk/ns-d3dkmthk-_d3dkmt_releasekeyedmutex2)
+-   [**D3DKMTShareObjects**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmthk/nf-d3dkmthk-d3dkmtshareobjects)
 
 ### <a name="span-idcancelcommandinterfacespanspan-idcancelcommandinterfacespanspan-idcancelcommandinterfacespancancel-command-interface"></a><span id="Cancel_command_interface"></span><span id="cancel_command_interface"></span><span id="CANCEL_COMMAND_INTERFACE"></span>Cancel コマンド インターフェイス
 
--   [*DxgkDdiCancelCommand*](https://msdn.microsoft.com/library/windows/hardware/hh451344)
--   [**DXGKARG\_CANCELCOMMAND**](https://msdn.microsoft.com/library/windows/hardware/hh451250)
--   [**DXGK\_VIDSCHCAPS**](https://msdn.microsoft.com/library/windows/hardware/ff562863)
+-   [*DxgkDdiCancelCommand*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_cancelcommand)
+-   [**DXGKARG\_CANCELCOMMAND**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgkarg_cancelcommand)
+-   [**DXGK\_VIDSCHCAPS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_vidschcaps)
 
 ### <a name="span-idoutputduplicationspanspan-idoutputduplicationspanspan-idoutputduplicationspanoutput-duplication"></a><span id="Output_duplication"></span><span id="output_duplication"></span><span id="OUTPUT_DUPLICATION"></span>出力の重複
 
--   [**D3DKMTOutputDuplPresent**](https://msdn.microsoft.com/library/windows/hardware/hh439432)
--   [**D3DKMTOutputDuplReleaseFrame**](https://msdn.microsoft.com/library/windows/hardware/hh439438)
--   [**D3DKMT\_OUTPUTDUPL\_リリース\_フレーム**](https://msdn.microsoft.com/library/windows/hardware/hh406533)
--   [**D3DKMT\_OUTPUTDUPL\_スナップショット**](https://msdn.microsoft.com/library/windows/hardware/hh406536)
--   [**D3DKMT\_OUTPUTDUPLCONTEXTSCOUNT**](https://msdn.microsoft.com/library/windows/hardware/hh406505)
--   [**D3DKMT\_OUTPUTDUPLPRESENT**](https://msdn.microsoft.com/library/windows/hardware/hh406509)
--   [**D3DKMT\_OUTPUTDUPLPRESENTFLAGS**](https://msdn.microsoft.com/library/windows/hardware/hh406511)
--   [**D3DKMT\_存在\_RGNS**](https://msdn.microsoft.com/library/windows/hardware/hh406550)
+-   [**D3DKMTOutputDuplPresent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmthk/nf-d3dkmthk-d3dkmtoutputduplpresent)
+-   [**D3DKMTOutputDuplReleaseFrame**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmthk/nf-d3dkmthk-d3dkmtoutputduplreleaseframe)
+-   [**D3DKMT\_OUTPUTDUPL\_リリース\_フレーム**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmthk/ns-d3dkmthk-_d3dkmt_outputdupl_release_frame)
+-   [**D3DKMT\_OUTPUTDUPL\_スナップショット**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmthk/ns-d3dkmthk-_d3dkmt_outputdupl_snapshot)
+-   [**D3DKMT\_OUTPUTDUPLCONTEXTSCOUNT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmthk/ns-d3dkmthk-_d3dkmt_outputduplcontextscount)
+-   [**D3DKMT\_OUTPUTDUPLPRESENT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmthk/ns-d3dkmthk-_d3dkmt_outputduplpresent)
+-   [**D3DKMT\_OUTPUTDUPLPRESENTFLAGS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmthk/ns-d3dkmthk-_d3dkmt_outputduplpresentflags)
+-   [**D3DKMT\_存在\_RGNS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmthk/ns-d3dkmthk-_d3dkmt_present_rgns)
 
 [**Windows 8 の OpenGL の機能強化**](supporting-opengl-enhancements.md)
 

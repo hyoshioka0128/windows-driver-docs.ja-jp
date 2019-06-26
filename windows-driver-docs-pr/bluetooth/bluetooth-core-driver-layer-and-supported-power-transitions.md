@@ -4,12 +4,12 @@ description: 次の表では、Bluetooth core のドライバーがサポート�
 ms.assetid: 25A3598E-51A7-4B16-92F7-9D2F39177946
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 58fbf752748e57c0fe0017d902d942474d0af1e5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 13703c29e96c7f18970854a436832e9ecd91a55e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328322"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354040"
 ---
 # <a name="bluetooth-core-driver-layer-and-supported-power-transitions"></a>Bluetooth コア ドライバー レイヤーとサポートされている電源遷移
 
@@ -118,7 +118,7 @@ Windows 8.1 では、この Sx のサポートは変更されませんし、こ�
 ## <a name="span-idradiomanagementspanspan-idradiomanagementspanspan-idradiomanagementspanradio-management"></a><span id="Radio_Management"></span><span id="radio_management"></span><span id="RADIO_MANAGEMENT"></span>ラジオの管理
 
 
-今後、ラジオの管理 (RM) は、Bluetooth 4.0 ラジオの標準化がいます。 Bluetooth スタックは、HCI ダウン送信\_リセット コマンドは、転送モードがなしと D3 電源状態のデバイスで無線を配置することで応答するオプションが必要です。 スタックは、突然「機内」モードで無線を効果的に配置するすべての子 devnode を削除するには。 オプションをオンに戻すスタックから要求を受信できるようにシリアル バス ドライバーがオフの状態を無線でアンロード中に維持されます。 受信トレイ スタックが devnode 列挙が再処理されます。 無線管理の実装の詳細についてを参照してください、 [Bluetooth ソフトウェア無線スイッチ関数プロトタイプ](https://msdn.microsoft.com/library/windows/hardware/hh450832)します。
+今後、ラジオの管理 (RM) は、Bluetooth 4.0 ラジオの標準化がいます。 Bluetooth スタックは、HCI ダウン送信\_リセット コマンドは、転送モードがなしと D3 電源状態のデバイスで無線を配置することで応答するオプションが必要です。 スタックは、突然「機内」モードで無線を効果的に配置するすべての子 devnode を削除するには。 オプションをオンに戻すスタックから要求を受信できるようにシリアル バス ドライバーがオフの状態を無線でアンロード中に維持されます。 受信トレイ スタックが devnode 列挙が再処理されます。 無線管理の実装の詳細についてを参照してください、 [Bluetooth ソフトウェア無線スイッチ関数プロトタイプ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)します。
 
  
 

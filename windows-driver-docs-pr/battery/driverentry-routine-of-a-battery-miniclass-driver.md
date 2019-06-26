@@ -7,12 +7,12 @@ keywords:
 - DriverEntry WDK バッテリ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 45c69b4003285662ab64f95ab3566e3f4dbeb5ad
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c7b25b1095d4e684239912c8e08137f68163d7e7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335268"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354069"
 ---
 # <a name="driverentry-routine-of-a-battery-miniclass-driver"></a>バッテリ ミニクラス ドライバーの DriverEntry ルーチン
 
@@ -20,25 +20,25 @@ ms.locfileid: "63335268"
 ## <span id="ddk_driverentry_routine_of_battery_miniclass_driver_dg"></span><span id="DDK_DRIVERENTRY_ROUTINE_OF_BATTERY_MINICLASS_DRIVER_DG"></span>
 
 
-[ *DriverEntry* ](https://msdn.microsoft.com/library/windows/hardware/ff544113)ルーチンを miniclass ドライバーを初期化します。
+[ *DriverEntry* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)ルーチンを miniclass ドライバーを初期化します。
 
-Miniclass ドライバーの[ *DriverEntry* ](https://msdn.microsoft.com/library/windows/hardware/ff544113)ルーチンは、次のドライバー固有のエントリ ポイントを設定します。
+Miniclass ドライバーの[ *DriverEntry* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)ルーチンは、次のドライバー固有のエントリ ポイントを設定します。
 
--   [*アンロード*](https://msdn.microsoft.com/library/windows/hardware/ff564886)で日常的な*DriverObject*-&gt;**DriverUnload**
+-   [*アンロード*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_unload)で日常的な*DriverObject*-&gt;**DriverUnload**
 
--   ドライバーの[ *AddDevice* ](https://msdn.microsoft.com/library/windows/hardware/ff540521)で日常的な*DriverObject*-&gt;**DriverExtension** - &gt; **AddDevice**
+-   ドライバーの[ *AddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)で日常的な*DriverObject*-&gt;**DriverExtension** - &gt; **AddDevice**
 
--   [ *DRIVER_DISPATCH* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)のコールバック関数で*DriverObject*-&gt;**MajorFunction** \[[ **IRP\_MJ\_電源**](https://msdn.microsoft.com/library/windows/hardware/ff550784)\]
+-   [ *DRIVER_DISPATCH* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)のコールバック関数で*DriverObject*-&gt;**MajorFunction** \[[ **IRP\_MJ\_電源**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-power)\]
 
--   [ *DRIVER_DISPATCH* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)のコールバック関数で*DriverObject*-&gt;**MajorFunction** \[[ **IRP\_MJ\_PNP**](https://msdn.microsoft.com/library/windows/hardware/ff550772)\]
+-   [ *DRIVER_DISPATCH* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)のコールバック関数で*DriverObject*-&gt;**MajorFunction** \[[ **IRP\_MJ\_PNP**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-pnp)\]
 
--   [ *DRIVER_DISPATCH* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)のコールバック関数で*DriverObject*-&gt;**MajorFunction** \[[ **IRP\_MJ\_を作成します。**](https://msdn.microsoft.com/library/windows/hardware/ff550729)\]
+-   [ *DRIVER_DISPATCH* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)のコールバック関数で*DriverObject*-&gt;**MajorFunction** \[[ **IRP\_MJ\_を作成します。** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-create)\]
 
--   [ *DRIVER_DISPATCH* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)のコールバック関数で*DriverObject*-&gt;**MajorFunction** \[[ **IRP\_MJ\_閉じる**](https://msdn.microsoft.com/library/windows/hardware/ff550720)\]
+-   [ *DRIVER_DISPATCH* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)のコールバック関数で*DriverObject*-&gt;**MajorFunction** \[[ **IRP\_MJ\_閉じる**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-close)\]
 
--   [ *DRIVER_DISPATCH* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)のコールバック関数で*DriverObject*-&gt;**MajorFunction** \[[ **IRP\_MJ\_デバイス\_コントロール**](https://msdn.microsoft.com/library/windows/hardware/ff550744)\]
+-   [ *DRIVER_DISPATCH* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)のコールバック関数で*DriverObject*-&gt;**MajorFunction** \[[ **IRP\_MJ\_デバイス\_コントロール**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-device-control)\]
 
--   [ *DRIVER_DISPATCH* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)のコールバック関数で*DriverObject*-&gt;**MajorFunction** \[[ **IRP\_MJ\_システム\_コントロール**](https://msdn.microsoft.com/library/windows/hardware/ff550813)\]します。
+-   [ *DRIVER_DISPATCH* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)のコールバック関数で*DriverObject*-&gt;**MajorFunction** \[[ **IRP\_MJ\_システム\_コントロール**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-system-control)\]します。
 
 次のサンプル コードでは、架空の NewBatt miniclass ドライバーに対してこれらのエントリ ポイントを初期化します。
 
@@ -53,7 +53,7 @@ DriverObject->MajorFunction[IRP_MJ_POWER] = NewBattDispatchPower;
 DriverObject->MajorFunction[IRP_MJ_SYSTEM_CONTROL] = NewBattSystemControl;
 ```
 
-PnP マネージャー呼び出す miniclass ドライバーのまでバッテリ固有の状態情報が不明なので*AddDevice* 、ルーチン、 [ *DriverEntry* ](https://msdn.microsoft.com/library/windows/hardware/ff544113)ルーチンはありませんこのような任意の状態を初期化します。 デバイス固有の初期化が実行される、 *AddDevice*ルーチン。
+PnP マネージャー呼び出す miniclass ドライバーのまでバッテリ固有の状態情報が不明なので*AddDevice* 、ルーチン、 [ *DriverEntry* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)ルーチンはありませんこのような任意の状態を初期化します。 デバイス固有の初期化が実行される、 *AddDevice*ルーチン。
 
 ルーチン固有の追加要件は、次のトピックを参照してください。
 

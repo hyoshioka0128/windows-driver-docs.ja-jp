@@ -4,12 +4,12 @@ description: 1 つの PDO を持つ 1 台の MFP へのスキャン機能のイ�
 ms.assetid: 002ff319-42f9-4034-9bdd-c1e771ed2ba9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e33176f5755e52f07f374caa4432f41c138991a7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e67482d63294d2822d114e011d70b343b2c33678
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363568"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378920"
 ---
 # <a name="installing-scanning-functionality-in-an-mfp-with-a-single-pdo"></a>1 つの PDO を持つ 1 台の MFP へのスキャン機能のインストール
 
@@ -25,7 +25,7 @@ ms.locfileid: "63363568"
 
 **HKLM\\システム\\CurrentControlSet\\コントロール\\DeviceClasses\\{6bdd1fc6-810f-11d0-bec7-08002be2092f}\\&lt;*デバイス シンボリック リンク*&gt;**
 
-このキーは、この場所の将来のオペレーティング システムのバージョンのままには保証されません。 このキーを開くには、呼び出す[ **SetupDiOpenDeviceInterfaceRegKey**](https://msdn.microsoft.com/library/windows/hardware/ff552075)します。
+このキーは、この場所の将来のオペレーティング システムのバージョンのままには保証されません。 このキーを開くには、呼び出す[ **SetupDiOpenDeviceInterfaceRegKey**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiopendeviceinterfaceregkey)します。
 
 WIA サービスでは、すべてのイメージ クラス Pdo とデバイスのインターフェイスを列挙します。 そのため、WIA デバイスとして新しく作成したデバイスのインターフェイスが列挙されます。
 
@@ -35,7 +35,7 @@ INF PDO は 1 つだけ備えた多機能プリンターでスキャン機能を
 
 1.  1. 指定*sti\_ci.dll*のエントリの値として、 **CoInstallerEntry**エントリ。
 
-    デバイスの INF 必要があります、 [ **INF DDInstall.CoInstallers セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547321)デバイスのインストールの共同インストーラーを登録できるようにします。 このセクションは次のようになります。
+    デバイスの INF 必要があります、 [ **INF DDInstall.CoInstallers セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-coinstallers-section)デバイスのインストールの共同インストーラーを登録できるようにします。 このセクションは次のようになります。
 
     ```INF
     [OEMMFP.GPD.CoInstallers]
@@ -45,7 +45,7 @@ INF PDO は 1 つだけ備えた多機能プリンターでスキャン機能を
     HKR,,CoInstallers32,0x00010000,"sti_ci.dll, CoInstallerEntry"
     ```
 
-2.  2.、 **WIASection**内のエントリ、 [ **INF DDInstall セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547344) WIA 関連の設定すべてを含むセクションを参照します。 WIA 関連の設定を格納しているセクションは、同じ INF ファイルに表示する必要があります。
+2.  2.、 **WIASection**内のエントリ、 [ **INF DDInstall セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section) WIA 関連の設定すべてを含むセクションを参照します。 WIA 関連の設定を格納しているセクションは、同じ INF ファイルに表示する必要があります。
 
     ```INF
     [OEMMFP.GPD]
@@ -65,14 +65,14 @@ INF PDO は 1 つだけ備えた多機能プリンターでスキャン機能を
 
     含めることによって、 **WIASection**エントリ、イメージ クラスのインストーラーは、デバイスの devnode は作成されませんが、代わりに、追加のデバイスのインターフェイスを作成します。 したがって、STI-を格納する前に説明したデバイス インターフェイスのレジストリ キーを使用/WIA に関連する情報。
 
-3.  3. ことを確認して、 [ **INF DDInstall セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547344)必要なすべてのファイルをコピーします。
+3.  3. ことを確認して、 [ **INF DDInstall セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)必要なすべてのファイルをコピーします。
 
     コピーするファイルの一覧を表示する代わりに、 **WIASection**、それらは表示されませんデバイス マネージャーが、します。
 
 **注**   、 **Include**と**必要がある**エントリでは使用できません、 **WIASection**セクション。
-カーネル モードのすべての部分は、元によるインストールが[ **INF DDInstall セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547344)します。
+カーネル モードのすべての部分は、元によるインストールが[ **INF DDInstall セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)します。
 
-デバイスは、ホット-プラグ可能な独自のカーネル モード コンポーネントが必要な場合、は、作成して、イメージ クラスのデバイス インターフェイス (その他のクラス デバイス インターフェイスに加えて、印刷クラスのデバイスのインターフェイスなど) を有効にするにする必要があります。 カーネル モード コンポーネントへの呼び出しを使用して、デバイスの devnode では、イメージ クラス デバイス インターフェイスを有効に、 [ **IoSetDeviceInterfaceState** ](https://msdn.microsoft.com/library/windows/hardware/ff549700)関数。 イメージ クラスのデバイスのインターフェイスが有効にすると、デバイスが接続されていることを WIA サービスに通知するプラグ アンド プレイ イベントが発生します。
+デバイスは、ホット-プラグ可能な独自のカーネル モード コンポーネントが必要な場合、は、作成して、イメージ クラスのデバイス インターフェイス (その他のクラス デバイス インターフェイスに加えて、印刷クラスのデバイスのインターフェイスなど) を有効にするにする必要があります。 カーネル モード コンポーネントへの呼び出しを使用して、デバイスの devnode では、イメージ クラス デバイス インターフェイスを有効に、 [ **IoSetDeviceInterfaceState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iosetdeviceinterfacestate)関数。 イメージ クラスのデバイスのインターフェイスが有効にすると、デバイスが接続されていることを WIA サービスに通知するプラグ アンド プレイ イベントが発生します。
 
  
 

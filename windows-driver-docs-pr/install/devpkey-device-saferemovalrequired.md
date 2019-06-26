@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: fd7ffd441ad6460f0ea5992da68c21b6d40696ec
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 07fcfdca02c60e66a2263307c3fcc6bc0c28ace4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380090"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378112"
 ---
 # <a name="devpkeydevicesaferemovalrequired"></a>DEVPKEY_Device_SafeRemovalRequired
 
@@ -68,7 +68,7 @@ Windows のプラグ アンド プレイ (PnP) は、ホット プラグ デバ�
 
 -   デバイス インスタンスが開始されたか、または、システムによって自動的に取り出すことができます。
 
--   デバイス インスタンス CM_DEVCAP_SURPRISEREMOVALOK デバイス機能のビットが設定されていません。 デバイスの機能の詳細については、次を参照してください。 [ **SetupDiGetDeviceRegistryProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551967)します。
+-   デバイス インスタンス CM_DEVCAP_SURPRISEREMOVALOK デバイス機能のビットが設定されていません。 デバイスの機能の詳細については、次を参照してください。 [ **SetupDiGetDeviceRegistryProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceregistrypropertya)します。
 
 -   デバイス インスタンスが持っていない、 [ **DEVPKEY_Device_SafeRemovalRequiredOverride** ](devpkey-device-saferemovalrequiredoverride.md)デバイス プロパティ DEVPROP_FALSE に設定します。
 
@@ -78,7 +78,7 @@ Windows のプラグ アンド プレイ (PnP) は、ホット プラグ デバ�
 
 -   デバイス インスタンスがあるか、その親デバイス インスタンスから直接リムーバブル リムーバブル先祖、そのデバイス ツリーまたはします。
 
-呼び出すことができます[ **SetupDiGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551963) DEVPKEY_Device_SafeRemovalRequired の値を取得します。
+呼び出すことができます[ **SetupDiGetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) DEVPKEY_Device_SafeRemovalRequired の値を取得します。
 
 <a name="requirements"></a>必要条件
 ------------
@@ -105,9 +105,9 @@ Windows のプラグ アンド プレイ (PnP) は、ホット プラグ デバ�
 
 [**DEVPKEY_Device_SafeRemovalRequiredOverride**](devpkey-device-saferemovalrequiredoverride.md)
 
-[**SetupDiGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551963)
+[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
-[**SetupDiGetDeviceRegistryProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551967)
+[**SetupDiGetDeviceRegistryProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceregistrypropertya)
 
  
 

@@ -8,12 +8,12 @@ keywords:
 - オブジェクトの WDK オーディオ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f086bce6c2bdc411a8d968bb819892f45fcb0c34
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4b61976cfd300d4c1e84105bcd848555452055d9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333963"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355582"
 ---
 # <a name="creating-audio-driver-objects"></a>オーディオ ドライバー オブジェクトの作成
 
@@ -48,7 +48,7 @@ NTSTATUS CreateMyObject(
 指定します、 **IUnknown**新しいオブジェクトを集約するためのインターフェイス。 このパラメーターに設定できます**NULL**を集計が必要ないことを示します。
 
 <span id="PoolType"></span><span id="pooltype"></span><span id="POOLTYPE"></span>*PoolType*  
-元のオブジェクトが割り当てられるメモリ プールの種類を指定します (を参照してください[**プール\_型**](https://msdn.microsoft.com/library/windows/hardware/ff559707))。
+元のオブジェクトが割り当てられるメモリ プールの種類を指定します (を参照してください[**プール\_型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ne-wdm-_pool_type))。
 
 最初の 3 つのパラメーターは、COM のパラメーターと同じ**CoCreateInstance**関数。 この種類の作成機能の例は、次を参照してください。、 **CreateMiniportMidiFM** Fmsynth サンプル オーディオ ドライバー Microsoft Windows Driver Kit (WDK) での関数。
 
@@ -65,7 +65,7 @@ NTSTATUS NewMyObject(
 
 NewMyObject 関数は、作成しオブジェクトを初期化しにインターフェイス ポインターを渡します。 新規のプロトタイプは、初期化パラメーターは、クラスに固有であるため*Xxx*関数。 新しい*Xxx*関数オブジェクトのコンス トラクターに簡単にアクセスを提供します。
 
-新規の例については*Xxx*関数のこの種類は、次を参照してください。 [ **PcNewDmaChannel**](https://msdn.microsoft.com/library/windows/hardware/ff537712)します。
+新規の例については*Xxx*関数のこの種類は、次を参照してください。 [ **PcNewDmaChannel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcnewdmachannel)します。
 
  
 

@@ -8,12 +8,12 @@ keywords:
 - UMDF WDK、reflector は、ホスト プロセスを終了します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: af7e4207a514cc7d45b4f24db1a627d301e03c45
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0ac2975568da83e4c0e28027637ff22d524a732f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383755"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377422"
 ---
 # <a name="determining-why-the-reflector-terminated-the-host-process"></a>リフレクターがホスト プロセスを終了した理由の特定
 
@@ -29,7 +29,7 @@ ms.locfileid: "63383755"
 
 1.  %Windir% に最新の .dmp ファイルを見つけます\\system32\\LogFiles\\WUDF ディレクトリ。
 
-    **注**  ログ ディレクトリは、UMDF 2.15 以降、 *%programdata%*\\Microsoft\\WDF します。
+    **注**  ログ ディレクトリは、UMDF 2.15 以降、 *%programdata%* \\Microsoft\\WDF します。
 
      
 
@@ -45,11 +45,11 @@ ms.locfileid: "63383755"
 
 それ以外の場合は、リフレクターが、ホスト プロセスを終了した理由を判断するライブのカーネル モードのターゲットにアタッチする必要があります。 デバッグ セッションをセットアップする」に記載の手順に従います[UMDF ドライバーのデバッグを有効にする方法](enabling-a-debugger.md#kd)します。
 
-接続が確立されると、使用して、未処理の Irp を表示、 [ **! wdfkd.wdfumirps** ](https://msdn.microsoft.com/library/windows/hardware/dn265384) UMDF デバッガー拡張機能 ([**! wudfext.umirps** ](https://msdn.microsoft.com/library/windows/hardware/ff566197) umdf バージョン 1)。
+接続が確立されると、使用して、未処理の Irp を表示、 [ **! wdfkd.wdfumirps** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfumirps) UMDF デバッガー拡張機能 ([ **! wudfext.umirps** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wudfext-umirps) umdf バージョン 1)。
 
 -   PnP IRP または電源 IRP が保留中の場合は、理由、ドライバーが原因で、ホスト プロセスでスレッドを調べることでハングする IRP を決定します。
 
-    使用することができます、 [ **! プロセス**](https://msdn.microsoft.com/library/windows/hardware/ff564717)拡張機能をホスト プロセスで実行中のスレッドを調べます。 **0x1f**フラグの値は、各スレッドのスタック トレースを表示します。
+    使用することができます、 [ **! プロセス**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-process)拡張機能をホスト プロセスで実行中のスレッドを調べます。 **0x1f**フラグの値は、各スレッドのスタック トレースを表示します。
 
     **! プロセス** *&lt;プロセス addr&gt;*  **0x1f**
 

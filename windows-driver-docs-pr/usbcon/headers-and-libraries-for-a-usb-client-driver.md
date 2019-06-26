@@ -3,12 +3,12 @@ Description: このトピックでは、ヘッダーと、Windows Driver Model (
 title: USB クライアント ドライバーで必要なヘッダーとライブラリ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 91613d6c66488820ca24f089ffc9cdf68d108571
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 86ac904d1cff057d67412bb3e98f762da30ea49f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347992"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378340"
 ---
 # <a name="headers-and-libraries-required-by-a-usb-client-driver"></a>USB クライアント ドライバーで必要なヘッダーとライブラリ
 
@@ -46,7 +46,7 @@ ms.locfileid: "63347992"
 <td>usb.h</td>
 <td>Include\shared</td>
 <td></td>
-<td>定義<a href="https://msdn.microsoft.com/library/windows/hardware/ff538923" data-raw-source="[&lt;strong&gt;URB&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff538923)"> <strong>URB</strong> </a> USB ドライバー スタックに要求を送信するために必要なクライアント ドライバーで USB 要求のブロック (翻訳) の構造体。</td>
+<td>定義<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb" data-raw-source="[&lt;strong&gt;URB&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb)"> <strong>URB</strong> </a> USB ドライバー スタックに要求を送信するために必要なクライアント ドライバーで USB 要求のブロック (翻訳) の構造体。</td>
 </tr>
 <tr class="odd">
 <td>usb100.h</td>
@@ -132,14 +132,14 @@ ms.locfileid: "63347992"
 <td>Include\um</td>
 <td><p>winapifamily.h</p>
 <p>winusbio.h</p></td>
-<td>定義<a href="https://msdn.microsoft.com/library/windows/hardware/ff540046#winusb" data-raw-source="[WinUSB functions](https://msdn.microsoft.com/library/windows/hardware/ff540046#winusb)">WinUSB functions</a> Winusb.dll、によって公開される関数のドライバーを USB デバイスとしてインストールされている Winusb.sys に要求を送信する必要があるアプリケーションによって使用されます。</td>
+<td>定義<a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb" data-raw-source="[WinUSB functions](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb)">WinUSB functions</a> Winusb.dll、によって公開される関数のドライバーを USB デバイスとしてインストールされている Winusb.sys に要求を送信する必要があるアプリケーションによって使用されます。</td>
 </tr>
 <tr class="even">
 <td>winusbio.h</td>
 <td>Include\shared</td>
 <td><p>winapifamily.h</p>
 <p>usb.h</p></td>
-<td>フラグを定義<a href="https://msdn.microsoft.com/library/windows/hardware/ff540046#winusb" data-raw-source="[WinUSB functions](https://msdn.microsoft.com/library/windows/hardware/ff540046#winusb)">WinUSB functions</a>します。</td>
+<td>フラグを定義<a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb" data-raw-source="[WinUSB functions](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb)">WinUSB functions</a>します。</td>
 </tr>
 </tbody>
 </table>
@@ -207,8 +207,8 @@ Windows Driver Kit (WDK) では、Windows 8 以降、ヘッダー ファイル u
 新しいヘッダー ファイル、usbspec.h、公式の USB 仕様に従って定義されている Ddi のプロトコルの定義を提供します。 ヘッダー ファイルには、Ddi には for USB 3.0 仕様が含まれています。
 
 ## <a name="related-topics"></a>関連トピック
-[ユニバーサル シリアル バス (USB)](https://msdn.microsoft.com/library/windows/hardware/ff538930)  
-[Windows Driver Kit (WDK) のヘッダー ファイル](https://msdn.microsoft.com/library/windows/hardware/ff554695)  
+[ユニバーサル シリアル バス (USB)](https://docs.microsoft.com/windows-hardware/drivers/)  
+[Windows Driver Kit (WDK) のヘッダー ファイル](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/header-files-in-the-windows-driver-kit)  
 [USB クライアント ドライバー開発の概要](getting-started-with-usb-client-driver-development.md)  
 
 

@@ -6,17 +6,17 @@ keywords:
 - デバイスのプロパティのカスタムの作成、WDK デバイスのインストール
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ec294e7d9e6dacaa47fdb9e7d8de8664aa4d0fd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 48d3e6991cfc20c1c1573916dde521d52f4a8552
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392534"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356311"
 ---
 # <a name="creating-custom-device-properties"></a>カスタム デバイス プロパティの作成
 
 
-Windows Vista および Windows での以降のバージョンで、[統一されたデバイス プロパティのモデル](unified-device-property-model--windows-vista-and-later-.md)デバイスのインスタンスのプロパティのカスタム デバイス カテゴリの作成をサポート[デバイス セットアップ クラス](device-setup-classes.md)、デバイスクラス、およびデバイスのインターフェイスをインターフェイスします。 カスタム プロパティを呼び出して、適切なアクセスできる[SetupAPI プロパティ関数](https://msdn.microsoft.com/library/windows/hardware/ff541483)します。 使用して、カスタムのデバイス プロパティを変更こともできます、 [ **INF AddProperty ディレクティブ**](inf-addproperty-directive.md)または[ **INF DelProperty ディレクティブ**](inf-delproperty-directive.md)します。
+Windows Vista および Windows での以降のバージョンで、[統一されたデバイス プロパティのモデル](unified-device-property-model--windows-vista-and-later-.md)デバイスのインスタンスのプロパティのカスタム デバイス カテゴリの作成をサポート[デバイス セットアップ クラス](device-setup-classes.md)、デバイスクラス、およびデバイスのインターフェイスをインターフェイスします。 カスタム プロパティを呼び出して、適切なアクセスできる[SetupAPI プロパティ関数](https://docs.microsoft.com/previous-versions/ff541483(v=vs.85))します。 使用して、カスタムのデバイス プロパティを変更こともできます、 [ **INF AddProperty ディレクティブ**](inf-addproperty-directive.md)または[ **INF DelProperty ディレクティブ**](inf-delproperty-directive.md)します。
 
 カスタムのデバイス プロパティの詳細については、次のトピックを参照してください。
 
@@ -28,9 +28,9 @@ Windows Vista および Windows での以降のバージョンで、[統一さ�
 
 ### <a href="" id="creating-custom-device-property-categories"></a> カスタムのデバイス プロパティのカテゴリを作成します。
 
-カスタムのデバイス プロパティのカテゴリは、論理的に関連するカスタム デバイスのプロパティのコレクションです。 プログラムによってカスタム デバイス プロパティのカテゴリを作成するには、使用、 [ **DEFINE_DEVPROPKEY** ](https://msdn.microsoft.com/library/windows/hardware/ff541072)マクロを次のようにプロパティのカテゴリのプロパティを表すプロパティのキーを作成します。
+カスタムのデバイス プロパティのカテゴリは、論理的に関連するカスタム デバイスのプロパティのコレクションです。 プログラムによってカスタム デバイス プロパティのカテゴリを作成するには、使用、 [ **DEFINE_DEVPROPKEY** ](https://docs.microsoft.com/windows-hardware/drivers/install/define-devpropkey)マクロを次のようにプロパティのカテゴリのプロパティを表すプロパティのキーを作成します。
 
--   プロパティのカテゴリを表す一意の GUID 値を作成し、各プロパティのキーの GUID 値をこの一意の GUID 値に設定します。 新しい GUID 値を作成する方法については、次を参照してください。[の定義およびエクスポートする新しい Guid](https://msdn.microsoft.com/library/windows/hardware/ff542998)します。
+-   プロパティのカテゴリを表す一意の GUID 値を作成し、各プロパティのキーの GUID 値をこの一意の GUID 値に設定します。 新しい GUID 値を作成する方法については、次を参照してください。[の定義およびエクスポートする新しい Guid](https://docs.microsoft.com/windows-hardware/drivers/kernel/defining-and-exporting-new-guids)します。
 
     **注**  プロパティのシステム定義のカテゴリはオペレーティング システム専用として予約されています。
 

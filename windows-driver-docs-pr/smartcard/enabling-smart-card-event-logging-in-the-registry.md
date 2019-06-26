@@ -9,12 +9,12 @@ keywords:
 - WDK スマート カードのイベント
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 20a11ff11966b535c33469849eb052b90e1db9a1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c3d3916d0dfe7527f174ac37b5a54ca1242c6c23
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360140"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356719"
 ---
 # <a name="enabling-smart-card-event-logging-in-the-registry"></a>スマート カードのイベント ログをレジストリで有効にする
 
@@ -61,7 +61,7 @@ ms.locfileid: "63360140"
 
  
 
-これらのレジストリ エントリを指定する方法については、次を参照してください。 [ **INF AddService ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546326)します。
+これらのレジストリ エントリを指定する方法については、次を参照してください。 [ **INF AddService ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addservice-directive)します。
 
  
 

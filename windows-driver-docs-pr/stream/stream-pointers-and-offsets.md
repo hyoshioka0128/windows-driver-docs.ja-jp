@@ -12,12 +12,12 @@ keywords:
 - AVStream offsets WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 83dd8c8a386ece90fc5b6ddbc06e49578c87ae1f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9831c5d658131c8e628d0110656fa6e479824fff
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363496"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377796"
 ---
 # <a name="stream-pointers-and-offsets"></a>ストリーム ポインターとオフセット
 
@@ -25,11 +25,11 @@ ms.locfileid: "63363496"
 
 
 
-A [ **KSSTREAM\_ポインター** ](https://msdn.microsoft.com/library/windows/hardware/ff567139)構造に含まれる 2 つ[ **KSSTREAM\_ポインター\_オフセット**](https://msdn.microsoft.com/library/windows/hardware/ff567140)フレーム内の入力と出力の位置のインデックスを作成できる構造体。 ミニドライバーでは、これらのオフセットを操作することまたは、フレームの解像度でデータにアクセスできます。
+A [ **KSSTREAM\_ポインター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_ksstream_pointer)構造に含まれる 2 つ[ **KSSTREAM\_ポインター\_オフセット**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_ksstream_pointer_offset)フレーム内の入力と出力の位置のインデックスを作成できる構造体。 ミニドライバーでは、これらのオフセットを操作することまたは、フレームの解像度でデータにアクセスできます。
 
-フレーム内のストリーム ポインターを進めるため、ミニドライバーを呼び出します[ **KsStreamPointerAdvanceOffsets** ](https://msdn.microsoft.com/library/windows/hardware/ff567126)と[ **KsStreamPointerAdvanceOffsetsAndUnlock**](https://msdn.microsoft.com/library/windows/hardware/ff567127).
+フレーム内のストリーム ポインターを進めるため、ミニドライバーを呼び出します[ **KsStreamPointerAdvanceOffsets** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksstreampointeradvanceoffsets)と[ **KsStreamPointerAdvanceOffsetsAndUnlock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksstreampointeradvanceoffsetsandunlock).
 
-仮想アドレスを含むストリームのデータにアクセスするミニドライバーは、これらのオフセットを使用して、バイトの解像度でストリームの位置を指定します。 スキャッター/ギャザーの物理的なマッピングを使用するミニドライバーは、粒度でストリームの位置を指定できます、 [ **KSMAPPING** ](https://msdn.microsoft.com/library/windows/hardware/ff563394)構造体。
+仮想アドレスを含むストリームのデータにアクセスするミニドライバーは、これらのオフセットを使用して、バイトの解像度でストリームの位置を指定します。 スキャッター/ギャザーの物理的なマッピングを使用するミニドライバーは、粒度でストリームの位置を指定できます、 [ **KSMAPPING** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_ksmapping)構造体。
 
  
 

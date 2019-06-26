@@ -4,21 +4,21 @@ description: スマート カード ミニドライバーの概要
 ms.assetid: B5047C79-F74E-44FA-ADE5-8716ABC9EB79
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d2f48eef2d68b5fb6ae801fe8834a2e4e7121aa1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2e4cee9f2be7d64c00bb640d6ca8670da2288829
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390911"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356655"
 ---
 # <a name="smart-card-minidriver-overview"></a>スマート カード ミニドライバーの概要
 
 
 特定のカード ミニドライバーは、Base CSP または KSP で最下位の論理インターフェイス層です。 このミニドライバーは、Base CSP または KSP を使用し、SCRM を使用して、アプリケーションが特定の種類のカードと直接対話します。
 
-カードのミニドライバーは、この仕様で定義されている特定の Api のセットをエクスポートする DLL です。 カードのミニドライバーを呼び出すたびにへのポインターが含まれています、 [**カード\_データ**](https://msdn.microsoft.com/library/windows/hardware/dn468748)コンテキスト情報を提供する構造体。 このコンテキスト情報は、上位レイヤーとカードのミニドライバー間の通信を容易にするために使用される関数ポインターのいくつかの状態情報だけでなく、テーブルを提供します。
+カードのミニドライバーは、この仕様で定義されている特定の Api のセットをエクスポートする DLL です。 カードのミニドライバーを呼び出すたびにへのポインターが含まれています、 [**カード\_データ**](https://docs.microsoft.com/previous-versions/dn468748(v=vs.85))コンテキスト情報を提供する構造体。 このコンテキスト情報は、上位レイヤーとカードのミニドライバー間の通信を容易にするために使用される関数ポインターのいくつかの状態情報だけでなく、テーブルを提供します。
 
-このコンテキストの構造体の詳細については、次を参照してください。 [ **CardAcquireContext**](https://msdn.microsoft.com/library/windows/hardware/dn468701)します。
+このコンテキストの構造体の詳細については、次を参照してください。 [ **CardAcquireContext**](https://docs.microsoft.com/previous-versions/dn468701(v=vs.85))します。
 
 ## <a name="span-idrelateddocumentspanspan-idrelateddocumentspanspan-idrelateddocumentspanrelated-document"></a><span id="Related_Document"></span><span id="related_document"></span><span id="RELATED_DOCUMENT"></span>関連ドキュメント
 
@@ -44,17 +44,17 @@ ms.locfileid: "63390911"
 
             (スマート カードのドライバー) などのドライバーである o LSA プラグインは、デジタル署名する必要があります。
 
-            **注**  、 [Windows ハードウェア互換性プログラム](https://msdn.microsoft.com/library/windows/hardware/dn922588.aspx)Windows のドライバーがデジタル署名するための唯一の方法を提供します。 これについてはこの web サイトを参照する重要です。
+            **注**  、 [Windows ハードウェア互換性プログラム](https://docs.microsoft.com/windows-hardware/design/compatibility/index)Windows のドライバーがデジタル署名するための唯一の方法を提供します。 これについてはこの web サイトを参照する重要です。
 
              
 
     -   Microsoft Security Development Lifecycle (SDL) プロセス ガイダンスに準拠しています。
 
-        -   すべてのプラグインがの該当する部分に準拠する必要も、 [Microsoft Security Development Lifecycle (SDL): プロセス ガイダンス](https://msdn.microsoft.com/library/windows/desktop/cc307891.aspx)トピック。 たとえばを参照してください*いいえ共有セクション*付録 G の SDL のプロセスに記述されています。
+        -   すべてのプラグインがの該当する部分に準拠する必要も、 [Microsoft Security Development Lifecycle (SDL): プロセス ガイダンス](https://docs.microsoft.com/previous-versions/windows/desktop/cc307891(v=msdn.10))トピック。 たとえばを参照してください*いいえ共有セクション*付録 G の SDL のプロセスに記述されています。
 
         -   プラグインを適切なマイクロソフトの署名で署名が、場合でも、SDL のプロセスで非対応のプラグインの読み込みに失敗した可能性があります。
 
-SDL の詳細については、次を参照してください[Microsoft Security Development Lifecycle (SDL): プロセス ガイダンス](https://msdn.microsoft.com/library/windows/desktop/cc307891.aspx)。
+SDL の詳細については、次を参照してください[Microsoft Security Development Lifecycle (SDL): プロセス ガイダンス](https://docs.microsoft.com/previous-versions/windows/desktop/cc307891(v=msdn.10))。
 
 開発者向けのガイドラインについては、次を参照してくださいおよび[開発者に関するガイドライン。](developer-guidelines.md)
 
@@ -62,8 +62,8 @@ SDL の詳細については、次を参照してください[Microsoft Security
 
 
 -   SCRM カードへのアクセスに使用する場合、トランザクションが、呼び出し元によって処理されますが、カード ミニドライバーに想定あります。
--   カードのミニドライバーを除くすべてのエントリを指していると想定できます[ **CardDeleteContext** ](https://msdn.microsoft.com/library/windows/hardware/dn468715)カード トランザクションを保持しているによって呼び出されます。 これで想定できない**CardDeleteContext**カードが削除された可能性があるか、クリーンアップ プロシージャの一部として呼び出されたためです。
--   複数のコンテキストは、1 つのプロセスに存在できます。 呼び出す[ **CardDeleteContext** ](https://msdn.microsoft.com/library/windows/hardware/dn468715) 1 つのプロセスにする必要がありますいない機能が妨げ、その他のコンテキスト。
+-   カードのミニドライバーを除くすべてのエントリを指していると想定できます[ **CardDeleteContext** ](https://docs.microsoft.com/previous-versions/dn468715(v=vs.85))カード トランザクションを保持しているによって呼び出されます。 これで想定できない**CardDeleteContext**カードが削除された可能性があるか、クリーンアップ プロシージャの一部として呼び出されたためです。
+-   複数のコンテキストは、1 つのプロセスに存在できます。 呼び出す[ **CardDeleteContext** ](https://docs.microsoft.com/previous-versions/dn468715(v=vs.85)) 1 つのプロセスにする必要がありますいない機能が妨げ、その他のコンテキスト。
 -   カードの認証状態の処理が、カードのミニドライバーではない呼び出し元の責任もです。
 
 ## <a name="span-idconventionsspanspan-idconventionsspanspan-idconventionsspanconventions"></a><span id="Conventions"></span><span id="conventions"></span><span id="CONVENTIONS"></span>表記規則
@@ -101,35 +101,35 @@ S カードを返す\_E\_ファイル\_いない\_が見つかったは、この
 ## <a name="span-idhandlingmemoryallocationsspanspan-idhandlingmemoryallocationsspanspan-idhandlingmemoryallocationsspanhandling-memory-allocations"></a><span id="Handling_Memory_Allocations"></span><span id="handling_memory_allocations"></span><span id="HANDLING_MEMORY_ALLOCATIONS"></span>メモリ割り当ての処理
 
 
-この仕様で内部的にメモリ バッファーを割り当てることがすべての API 要素は呼び出すことによって[ **PFN\_CSP\_アロケーション**](https://msdn.microsoft.com/library/windows/hardware/dn468763)します。 このため、このようなすべてのメモリ バッファーを呼び出すことによって解放する必要があります[ **PFN\_CSP\_FREE**](https://msdn.microsoft.com/library/windows/hardware/dn468767)します。
+この仕様で内部的にメモリ バッファーを割り当てることがすべての API 要素は呼び出すことによって[ **PFN\_CSP\_アロケーション**](https://docs.microsoft.com/previous-versions/dn468763(v=vs.85))します。 このため、このようなすべてのメモリ バッファーを呼び出すことによって解放する必要があります[ **PFN\_CSP\_FREE**](https://docs.microsoft.com/previous-versions/dn468767(v=vs.85))します。
 
-使用して、カードのミニドライバーを実行するメモリの割り当てを行う必要があります[ **PFN\_CSP\_アロケーション**](https://msdn.microsoft.com/library/windows/hardware/dn468763)または[ **PFN\_CSP\_REALLOC**](https://msdn.microsoft.com/library/windows/hardware/dn468770)します。
+使用して、カードのミニドライバーを実行するメモリの割り当てを行う必要があります[ **PFN\_CSP\_アロケーション**](https://docs.microsoft.com/previous-versions/dn468763(v=vs.85))または[ **PFN\_CSP\_REALLOC**](https://docs.microsoft.com/previous-versions/dn468770(v=vs.85))します。
 
 ## <a name="span-idcachingspanspan-idcachingspanspan-idcachingspancaching"></a><span id="Caching"></span><span id="caching"></span><span id="CACHING"></span>キャッシュ
 
 
-Base CSP または KSP でカード インターフェイス レイヤーに書き込まれたまたは、スマート カードから読み取る必要があるデータの量を最小限に抑えるのデータ キャッシュを実装します。 データ キャッシュも利用可能になっての関数ポインターからを使用するカードのミニドライバーの[**カード\_データ**](https://msdn.microsoft.com/library/windows/hardware/dn468748)構造、およびカードのミニドライバーは、強化するためにこれらのポインターを使用する必要がありますそのカードに格納されている内部データ ファイルをキャッシュすることによってパフォーマンス。
+Base CSP または KSP でカード インターフェイス レイヤーに書き込まれたまたは、スマート カードから読み取る必要があるデータの量を最小限に抑えるのデータ キャッシュを実装します。 データ キャッシュも利用可能になっての関数ポインターからを使用するカードのミニドライバーの[**カード\_データ**](https://docs.microsoft.com/previous-versions/dn468748(v=vs.85))構造、およびカードのミニドライバーは、強化するためにこれらのポインターを使用する必要がありますそのカードに格納されている内部データ ファイルをキャッシュすることによってパフォーマンス。
 
 データ キャッシュには、カードに鮮度カウンターのキャッシュを保持するカードへの書き込みアクセスが必要です。 データ キャッシュ、カードにデータを書き込むことは不可能である場合、ミニドライバーを制御できます。
 
-データ キャッシュを制御する方法の詳細については、CP の定義を参照してください\_カード\_キャッシュ\_MODE プロパティ[ **CardGetProperty** ](https://msdn.microsoft.com/library/windows/hardware/dn468729)このトピックの。指定。
+データ キャッシュを制御する方法の詳細については、CP の定義を参照してください\_カード\_キャッシュ\_MODE プロパティ[ **CardGetProperty** ](https://docs.microsoft.com/previous-versions/dn468729(v=vs.85))このトピックの。指定。
 
 ## <a name="span-idmandatoryversioncheckingspanspan-idmandatoryversioncheckingspanspan-idmandatoryversioncheckingspanmandatory-version-checking"></a><span id="Mandatory_Version_Checking"></span><span id="mandatory_version_checking"></span><span id="MANDATORY_VERSION_CHECKING"></span>必須のバージョン チェック
 
 
-すべてのカードのミニドライバーは、バージョン チェックを実装する必要があります。 バージョン、 [**カード\_データ**](https://msdn.microsoft.com/library/windows/hardware/dn468748)構造体が呼び出し元がサポートするバージョンとカードのミニドライバーが実際にサポートされるバージョンとの間のネゴシエーション。
+すべてのカードのミニドライバーは、バージョン チェックを実装する必要があります。 バージョン、 [**カード\_データ**](https://docs.microsoft.com/previous-versions/dn468748(v=vs.85))構造体が呼び出し元がサポートするバージョンとカードのミニドライバーが実際にサポートされるバージョンとの間のネゴシエーション。
 
 ### <a name="span-idcarddataversionchecksspanspan-idcarddataversionchecksspanspan-idcarddataversionchecksspancarddata-version-checks"></a><span id="CARD_DATA_Version_Checks"></span><span id="card_data_version_checks"></span><span id="CARD_DATA_VERSION_CHECKS"></span>カード\_データ バージョンのチェック
 
-カード ミニドライバーの context 構造体の最小バージョンとして最低限のバージョンを定義する (つまり、 [**カード\_データ**](https://msdn.microsoft.com/library/windows/hardware/dn468748)構造) はサポートされているし、のレベルとして、現在のバージョンを定義します。このカード ミニドライバーのように設計されましたし、アイテムをから正常に返された有効であることが保証するすべてのカード ミニドライバーのセットの構造体の[ **CardAcquireContext**](https://msdn.microsoft.com/library/windows/hardware/dn468701)します。 現在のバージョンが最小バージョン以上にする必要があります、カード\_データ\_現在\_で定義されているバージョン、 *Cardmod.h*します。
+カード ミニドライバーの context 構造体の最小バージョンとして最低限のバージョンを定義する (つまり、 [**カード\_データ**](https://docs.microsoft.com/previous-versions/dn468748(v=vs.85))構造) はサポートされているし、のレベルとして、現在のバージョンを定義します。このカード ミニドライバーのように設計されましたし、アイテムをから正常に返された有効であることが保証するすべてのカード ミニドライバーのセットの構造体の[ **CardAcquireContext**](https://docs.microsoft.com/previous-versions/dn468701(v=vs.85))します。 現在のバージョンが最小バージョン以上にする必要があります、カード\_データ\_現在\_で定義されているバージョン、 *Cardmod.h*します。
 
-呼び出し元のアプリケーションを呼び出すと[ **CardAcquireContext**](https://msdn.microsoft.com/library/windows/hardware/dn468701)を読み込もうと目的のバージョンを指定します。 この要求のバージョンが設定されている、 **dwVersion**内のメンバー、 [**カード\_データ**](https://msdn.microsoft.com/library/windows/hardware/dn468748)構造体。
+呼び出し元のアプリケーションを呼び出すと[ **CardAcquireContext**](https://docs.microsoft.com/previous-versions/dn468701(v=vs.85))を読み込もうと目的のバージョンを指定します。 この要求のバージョンが設定されている、 **dwVersion**内のメンバー、 [**カード\_データ**](https://docs.microsoft.com/previous-versions/dn468748(v=vs.85))構造体。
 
-要求されたバージョンが、カードのミニドライバーがでサポートされる最小バージョンより小さい場合[ **CardAcquireContext** ](https://msdn.microsoft.com/library/windows/hardware/dn468701)リビジョンの不一致エラーを返す必要があります (次のサンプル コードを参照してください)。
+要求されたバージョンが、カードのミニドライバーがでサポートされる最小バージョンより小さい場合[ **CardAcquireContext** ](https://docs.microsoft.com/previous-versions/dn468701(v=vs.85))リビジョンの不一致エラーを返す必要があります (次のサンプル コードを参照してください)。
 
 カードのミニドライバーを設定する必要があります、要求されたバージョンが少なくとも最低限のバージョンよりも大きくの場合、 **dwVersion**メンバーをサポートしていることは、要求されたバージョン未満の最上位バージョンです。
 
-次のサンプル コードは、バージョンをチェックするときに、予想されるカードのミニドライバーの動作を示します。 これはの本文であると見なされます、 **CardAcquireContext**関数。 *pCardData*へのポインター、 [**カード\_データ**](https://msdn.microsoft.com/library/windows/hardware/dn468748)構造体がこの呼び出しに渡されます。
+次のサンプル コードは、バージョンをチェックするときに、予想されるカードのミニドライバーの動作を示します。 これはの本文であると見なされます、 **CardAcquireContext**関数。 *pCardData*へのポインター、 [**カード\_データ**](https://docs.microsoft.com/previous-versions/dn468748(v=vs.85))構造体がこの呼び出しに渡されます。
 
 ```ManagedCPlusPlus
 #define MINIMUM_VERSION_SUPPORTED (4)
@@ -152,13 +152,13 @@ Base CSP または KSP でカード インターフェイス レイヤーに書�
 
  
 
-後**dwVersion**への呼び出しで設定されている[ **CardAcquireContext**](https://msdn.microsoft.com/library/windows/hardware/dn468701)、するには変更されません、呼び出し元またはカード ミニドライバーのいずれかによって、同じコンテキストになっている前提としています.
+後**dwVersion**への呼び出しで設定されている[ **CardAcquireContext**](https://docs.microsoft.com/previous-versions/dn468701(v=vs.85))、するには変更されません、呼び出し元またはカード ミニドライバーのいずれかによって、同じコンテキストになっている前提としています.
 
 ### <a name="span-idotherstructureversionchecksspanspan-idotherstructureversionchecksspanspan-idotherstructureversionchecksspanother-structure-version-checks"></a><span id="Other_Structure_Version_Checks"></span><span id="other_structure_version_checks"></span><span id="OTHER_STRUCTURE_VERSION_CHECKS"></span>その他の構造のバージョン チェック
 
-その他のバージョン管理された構造とその他のカードのミニドライバー API メソッドは、バージョン管理は、場合と同じ、 [**カード\_データ**](https://msdn.microsoft.com/library/windows/hardware/dn468748)構造は、1 つの例外。 格納する構造体で、API メソッドが呼び出された、 **dwVersion**を 0 に設定されているメンバーの場合は、このとして処理する必要を**dwVersion** 1 の値。
+その他のバージョン管理された構造とその他のカードのミニドライバー API メソッドは、バージョン管理は、場合と同じ、 [**カード\_データ**](https://docs.microsoft.com/previous-versions/dn468748(v=vs.85))構造は、1 つの例外。 格納する構造体で、API メソッドが呼び出された、 **dwVersion**を 0 に設定されているメンバーの場合は、このとして処理する必要を**dwVersion** 1 の値。
 
-[ **CardRSADecrypt** ](https://msdn.microsoft.com/library/windows/hardware/dn468737)と[ **CardSignData** ](https://msdn.microsoft.com/library/windows/hardware/dn468741)関数はデータ構造のバージョン番号の特別な処理があります。渡されます。
+[ **CardRSADecrypt** ](https://docs.microsoft.com/previous-versions/dn468737(v=vs.85))と[ **CardSignData** ](https://docs.microsoft.com/previous-versions/dn468741(v=vs.85))関数はデータ構造のバージョン番号の特別な処理があります。渡されます。
 
  
 

@@ -12,12 +12,12 @@ keywords:
 - WDK のオーディオ ドライバーの交差部分
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 079a7f348257d6aa9f6c77d1e940d8f94efdd389
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3ea12a4605b07a398695d1048bc2f6006164ef2f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328618"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354281"
 ---
 # <a name="specifying-pin-data-ranges"></a>ピン データ範囲の指定
 
@@ -56,9 +56,9 @@ static KSDATARANGE_AUDIO PinDataRangesPcm[] =
 };
 ```
 
-なお、`PinDataRangesPcm`前の例では配列には型の 1 つのデータ範囲の記述子が含まれています[ **KSDATARANGE\_オーディオ**](https://msdn.microsoft.com/library/windows/hardware/ff537096)します。 一般的には、データ範囲の配列は、任意の数の記述子を含めることができます。 たとえば、非 PCM wave 出力ピンには、AC-3-フェールオーバー-S/PDIF と WMA Pro オーバー-S/PDIF 形式の両方をサポート可能性があります。 これら 2 つの形式のそれぞれは、別のデータ範囲記述子によって指定されます。 したがって、暗証番号 (pin) のデータ範囲の配列が少なくとも 2 つの KSDATARANGE には含まれます\_オーディオ構造体。
+なお、`PinDataRangesPcm`前の例では配列には型の 1 つのデータ範囲の記述子が含まれています[ **KSDATARANGE\_オーディオ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksdatarange_audio)します。 一般的には、データ範囲の配列は、任意の数の記述子を含めることができます。 たとえば、非 PCM wave 出力ピンには、AC-3-フェールオーバー-S/PDIF と WMA Pro オーバー-S/PDIF 形式の両方をサポート可能性があります。 これら 2 つの形式のそれぞれは、別のデータ範囲記述子によって指定されます。 したがって、暗証番号 (pin) のデータ範囲の配列が少なくとも 2 つの KSDATARANGE には含まれます\_オーディオ構造体。
 
-DirectMusic または Windows のマルチ メディア midiIn を使用するアプリケーションからの音楽ファイル ストリームの形式をサポートする構成可能な pin*Xxx*と midiOut*Xxx*関数型のデータ範囲の記述子を使用します。[ **KSDATARANGE\_音楽**](https://msdn.microsoft.com/library/windows/hardware/ff537097)します。
+DirectMusic または Windows のマルチ メディア midiIn を使用するアプリケーションからの音楽ファイル ストリームの形式をサポートする構成可能な pin*Xxx*と midiOut*Xxx*関数型のデータ範囲の記述子を使用します。[ **KSDATARANGE\_音楽**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksdatarange_music)します。
 
 ポート ドライバーでは、ミニポート ドライバーからデータ範囲情報を取得し、可能な限り、各暗証番号 (pin) をサポートするデータ形式に関する情報の要求を処理するために、この情報を使用します。 暗証番号 (pin) に単純な PCM データ範囲は、の場合は、ポート ドライバーはその暗証番号 (pin) の積集合の要求を処理できません。 積集合の要求では、クライアントは、ストリームの可能なデータ形式を表すデータ範囲のセットを提供します。 可能であれば、ポート ドライバーの積集合のハンドラーは、また、pin のデータの範囲内にある要求でデータの範囲から特定のデータ形式を取得します。 この形式は、2 つのデータ範囲のセットの積集合を表します。 そのため、クライアントと、暗証番号 (pin) の両方では、この形式のストリームを処理できます。 複雑なデータ範囲、ミニポート ドライバーは、独自の既定のハンドラーではなくポート ドライバーを使用して、独自の積集合ハンドラーを提供できます。 ミニポート ドライバーの積集合のハンドラーは、データ範囲の配列としてポート ドライバーに表現する困難な可能性のある形式の要件を許可できます。 詳細については、次を参照してください。[交差部分のデータ ハンドラー](data-intersection-handlers.md)します。 追加情報は、ホワイト ペーパーで使用できる*複数チャネルのオーディオ データ ファイルと WAVE ファイル*で、[オーディオ テクノロジ](https://go.microsoft.com/fwlink/p/?linkid=8751)web サイト。
 

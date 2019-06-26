@@ -11,12 +11,12 @@ keywords:
 - リンクの帯域幅の WDK オーディオ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 49e7c4082d6a4ab11ac7d1cc376e03a29af2a66e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 05c0f868594d126e6e977fed6544efd6152b2792
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331572"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355765"
 ---
 # <a name="allocating-link-bandwidth"></a>リンク帯域幅の割り当て
 
@@ -25,11 +25,11 @@ HD オーディオのリンクが、一定のバスのレンダリングに使�
 
 バスの帯域幅の固定量では、HD オーディオ リンクのシリアル (SDI) 行のデータと (SDO) 行をシリアル データがあります。 HD オーディオ バス ドライバーでは、SDI と SDO 行を個別に帯域幅の消費を監視します。 入力の割り当てまたはバスの帯域幅を出力する要求が使用できる帯域幅を超えている場合、バス ドライバーは、要求が失敗します。
 
-関数のドライバーが、バス ドライバーを呼び出すときに[ **AllocateCaptureDmaEngine** ](https://msdn.microsoft.com/library/windows/hardware/ff536177)と[ **AllocateRenderDmaEngine** ](https://msdn.microsoft.com/library/windows/hardware/ff536181)ルーチンの場合、ストリームの形式を指定します。 ストリーム形式は、ストリームのサンプリング レート、サンプル サイズ、およびチャネルの数を指定します。 この情報は、割り当てから*Xxx*DmaEngine ルーチンは、ストリームのバスの帯域幅要件を決定します。 十分な帯域幅を使用できる場合、ルーチンは、DMA エンジンを使用して、必要な帯域幅を割り当てます。 それ以外の場合、割り当てへの呼び出し*Xxx*DmaEngine は失敗します。
+関数のドライバーが、バス ドライバーを呼び出すときに[ **AllocateCaptureDmaEngine** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/nc-hdaudio-pallocate_capture_dma_engine)と[ **AllocateRenderDmaEngine** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/nc-hdaudio-pallocate_render_dma_engine)ルーチンの場合、ストリームの形式を指定します。 ストリーム形式は、ストリームのサンプリング レート、サンプル サイズ、およびチャネルの数を指定します。 この情報は、割り当てから*Xxx*DmaEngine ルーチンは、ストリームのバスの帯域幅要件を決定します。 十分な帯域幅を使用できる場合、ルーチンは、DMA エンジンを使用して、必要な帯域幅を割り当てます。 それ以外の場合、割り当てへの呼び出し*Xxx*DmaEngine は失敗します。
 
-関数のドライバーを呼び出すことができます[ **ChangeBandwidthAllocation** ](https://msdn.microsoft.com/library/windows/hardware/ff536229)に既存の DMA エンジン割り当ての帯域幅の割り当ての変更を要求します。
+関数のドライバーを呼び出すことができます[ **ChangeBandwidthAllocation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/nc-hdaudio-pchange_bandwidth_allocation)に既存の DMA エンジン割り当ての帯域幅の割り当ての変更を要求します。
 
-割り当て*Xxx*DmaEngine と[ **ChangeBandwidthAllocation** ](https://msdn.microsoft.com/library/windows/hardware/ff536229)ルーチンは、HD オーディオ DDI の両方のバージョンで使用できます。
+割り当て*Xxx*DmaEngine と[ **ChangeBandwidthAllocation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/nc-hdaudio-pchange_bandwidth_allocation)ルーチンは、HD オーディオ DDI の両方のバージョンで使用できます。
 
  
 

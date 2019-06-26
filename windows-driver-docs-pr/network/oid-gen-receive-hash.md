@@ -5,17 +5,17 @@ ms.assetid: be120dab-c98d-418f-8777-e2fb37b774a1
 ms.date: 08/08/2017
 keywords: -OID_GEN_RECEIVE_HASH ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b43c1e6e16220ce2b3fcfd1693ff79e73281188
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1f847bd4537a77cf6a72aa07a103f049fc40185b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391028"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353315"
 ---
 # <a name="oidgenreceivehash"></a>OID\_GEN\_受信\_ハッシュ
 
 
-クエリ、NDIS と関連付けたドライバーを使用、OID\_GEN\_受信\_ミニポート アダプターのハッシュの計算の設定を取得するには、現在の受信にハッシュの OID。 NDIS を返します、 [ **NDIS\_受信\_ハッシュ\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff567190)現在受信ハッシュの設定を含む構造体。
+クエリ、NDIS と関連付けたドライバーを使用、OID\_GEN\_受信\_ミニポート アダプターのハッシュの計算の設定を取得するには、現在の受信にハッシュの OID。 NDIS を返します、 [ **NDIS\_受信\_ハッシュ\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_hash_parameters)現在受信ハッシュの設定を含む構造体。
 
 セットとして NDIS と関連付けたドライバー使用 OID\_GEN\_受信\_ハッシュ OID ミニポート アダプターで受信ハッシュ計算を構成します。 ミニポート ドライバーが受信、NDIS\_受信\_ハッシュ\_パラメーター構造体。
 
@@ -32,11 +32,11 @@ NDIS ミニポート ドライバーでは、クエリは要求されません�
 
  
 
-**注**  の後に、秘密キーを追加、 [ **NDIS\_受信\_ハッシュ\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff567190)メンバー構造体します。
+**注**  の後に、秘密キーを追加、 [ **NDIS\_受信\_ハッシュ\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_hash_parameters)メンバー構造体します。
 
  
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -59,7 +59,7 @@ NDIS ミニポート ドライバーでは、クエリは要求されません�
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_受信\_ハッシュ\_パラメーター**](https://msdn.microsoft.com/library/windows/hardware/ff567190)
+[**NDIS\_受信\_ハッシュ\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_hash_parameters)
 
  
 

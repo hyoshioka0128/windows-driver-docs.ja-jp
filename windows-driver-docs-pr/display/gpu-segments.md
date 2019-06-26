@@ -4,12 +4,12 @@ description: グラフィックス プロセッシング ユニット (GPU) へ�
 ms.assetid: E6CAD808-73C0-48AB-BF95-76911D5C104A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ecf2d534acfc82044c7aec174a042297da8f7df
-ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
+ms.openlocfilehash: a3404fd22077396dfaa607fc15ba95adf3e8439a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67161446"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379958"
 ---
 # <a name="gpu-segments"></a>GPU セグメント
 
@@ -43,7 +43,7 @@ DDI、物理メモリ参照は常に、セグメント ID のセグメントの�
 
 GPU エンジンは、GPU の仮想アドレス指定をサポートしていないは、物理アドレスを介して割り当てにアクセスする必要があります。 これは、割り当てが取得されたセグメントから別のリソースをどのように割り当てられている方法に影響があります。 物理参照では、割り当てが連続してメモリ セグメントに割り当てる必要がありますまたは aperture セグメント内で連続した範囲が占めることを意味します。
 
-明示的に識別する、カーネル モード ドライバーする必要があります、レンダリング エンジンで、新しい設定が物理的にアクセスする必要の割り当て、不要かつ高価な連続した割り当てを避けるためには、 [ **DXGK\_ALLOCATIONINFOFLAGS2**](https://msdn.microsoft.com/library/windows/hardware/ff560970)::**AccessedPhysically**フラグの割り当ての作成時にします。
+明示的に識別する、カーネル モード ドライバーする必要があります、レンダリング エンジンで、新しい設定が物理的にアクセスする必要の割り当て、不要かつ高価な連続した割り当てを避けるためには、 [ **DXGK\_ALLOCATIONINFOFLAGS2**](https://docs.microsoft.com/windows-hardware/drivers/display/dxgk-allocationinfoflags2)::**AccessedPhysically**フラグの割り当ての作成時にします。
 
 このような割り当ては、システム メモリに常駐しているときに、aperture セグメントにマップされます。 割り当ては連続したは、メモリのセグメントに常駐しているときになります。 、この方法で作成された割り当ては、物理アドレス指定モードで動作しているエンジンに割り当ての一覧を参照できます。
 

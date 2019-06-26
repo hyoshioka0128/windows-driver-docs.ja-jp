@@ -6,17 +6,17 @@ keywords:
 - AVStream ハードウェア コーデックをサポートして WDK、サンプルの詳細情報
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 76148fe0ae5617f948b271213e8e87b0c7218552
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 87353cffc6772acf60dab9932edc0495d47c0d3e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374082"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353253"
 ---
 # <a name="describing-extended-sample-information-in-avstream-codecs"></a>AVStream コーデックの拡張サンプル情報の記述
 
 
-デコーダーのフィルターでは、拡張で拡張のサンプル情報が見つかります[ **KSSTREAM\_ヘッダー** ](https://msdn.microsoft.com/library/windows/hardware/ff567138)構造[ **KS\_フレーム\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff567645)、KSSTREAM に従う\_メモリ内のヘッダー。
+デコーダーのフィルターでは、拡張で拡張のサンプル情報が見つかります[ **KSSTREAM\_ヘッダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksstream_header)構造[ **KS\_フレーム\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_frame_info)、KSSTREAM に従う\_メモリ内のヘッダー。
 
 ドライバーは KSSTREAM で指定された情報を伝達する必要があります\_ヘッダー。出力 (宛先) KS ピンへの入力 (ソース) から OptionsFlags します。
 

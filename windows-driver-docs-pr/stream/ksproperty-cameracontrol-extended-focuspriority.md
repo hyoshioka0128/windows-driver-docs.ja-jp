@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 09/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f31403dd9d5d5c4bd0afd6e1400428508547ed8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4298097dd295765ca776a5281062bb7c500c3948
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347968"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355379"
 ---
 # <a name="kspropertycameracontrolextendedfocuspriority"></a>KSPROPERTY\_CAMERACONTROL\_拡張\_FOCUSPRIORITY
 
 
-**KSPROPERTY\_CAMERACONTROL\_拡張\_FOCUSPRIORITY**プロパティで定義されている ID、 [ **KSPROPERTY\_CAMERACONTROL\_拡張\_プロパティ**](https://msdn.microsoft.com/library/windows/hardware/dn917962)列挙体を使用して、フォーカスの優先順位を構成します。 フォーカスの優先度を設定すると、ときに重点を置いてよりも優先されます、画像を撮影した画像は常にフォーカスがあることを確認します。 それ以外の場合、画像をすぐに表示画像がフォーカスをされているかどうかに関係なくされます。 失敗したフォーカスとタイムアウトを指定しているかどうかの処理の動作は、ドライバーと oem は内部です。
+**KSPROPERTY\_CAMERACONTROL\_拡張\_FOCUSPRIORITY**プロパティで定義されている ID、 [ **KSPROPERTY\_CAMERACONTROL\_拡張\_プロパティ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ne-ksmedia-ksproperty_cameracontrol_extended_property)列挙体を使用して、フォーカスの優先順位を構成します。 フォーカスの優先度を設定すると、ときに重点を置いてよりも優先されます、画像を撮影した画像は常にフォーカスがあることを確認します。 それ以外の場合、画像をすぐに表示画像がフォーカスをされているかどうかに関係なくされます。 失敗したフォーカスとタイムアウトを指定しているかどうかの処理の動作は、ドライバーと oem は内部です。
 
 ## <a name="usage-summary-table"></a>使用状況の概要テーブル
 
@@ -109,7 +109,7 @@ ms.locfileid: "63347968"
 
  
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 <table>
 <colgroup>

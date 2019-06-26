@@ -14,16 +14,16 @@ api_type:
 - HeaderDef
 ms.date: 09/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c3f94e81fc2036cca1b359d211764f33b9f8f2f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 65b21b0bbfe7d4e933510564abbe16154483bc0c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327135"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355364"
 ---
 # <a name="kspropertycameracontrolextendedphotoconfirmation"></a>KSPROPERTY\_CAMERACONTROL\_拡張\_PHOTOCONFIRMATION
 
-**KSPROPERTY\_CAMERACONTROL\_拡張\_PHOTOCONFIRMATION**で定義されているプロパティ ID、 [ **KSPROPERTY\_CAMERACONTROL\_拡張\_プロパティ**](https://msdn.microsoft.com/library/windows/hardware/dn917962)列挙型が使用して設定し、ドライバーで、写真の確認の設定を取得します。
+**KSPROPERTY\_CAMERACONTROL\_拡張\_PHOTOCONFIRMATION**で定義されているプロパティ ID、 [ **KSPROPERTY\_CAMERACONTROL\_拡張\_プロパティ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ne-ksmedia-ksproperty_cameracontrol_extended_property)列挙型が使用して設定し、ドライバーで、写真の確認の設定を取得します。
 
 ## <a name="usage-summary-table"></a>使用状況の概要テーブル
 
@@ -56,7 +56,7 @@ ms.locfileid: "63327135"
 #define KSCAMERA_EXTENDEDPROP_PHOTOCONFIRMATION_ON      0x0000000000000001
 ```
 
-写真の確認に設定されている場合**KSCAMERA\_EXTENDEDPROP\_PHOTOCONFIRMATION\_OFF**、ドライバーのプレビュー暗証番号 (pin) のフォト フレームを生成または生成する必要がありますいない、 [ **KSCAMERA\_メタデータ\_PHOTOCONFIRMATION** ](https://msdn.microsoft.com/library/windows/hardware/dn925187)確認の写真のメタデータを含む構造体。 写真の確認に設定されている場合**KSCAMERA\_EXTENDEDPROP\_PHOTOCONFIRMATION\_ON**、ドライバーのプレビューのピン留めする必要がありますフォト フレームを生成および生成、 **KSCAMERA\_メタデータ\_PHOTOCONFIRMATION**確認の写真のメタデータを含む構造体。
+写真の確認に設定されている場合**KSCAMERA\_EXTENDEDPROP\_PHOTOCONFIRMATION\_OFF**、ドライバーのプレビュー暗証番号 (pin) のフォト フレームを生成または生成する必要がありますいない、 [ **KSCAMERA\_メタデータ\_PHOTOCONFIRMATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_metadata_photoconfirmation)確認の写真のメタデータを含む構造体。 写真の確認に設定されている場合**KSCAMERA\_EXTENDEDPROP\_PHOTOCONFIRMATION\_ON**、ドライバーのプレビューのピン留めする必要がありますフォト フレームを生成および生成、 **KSCAMERA\_メタデータ\_PHOTOCONFIRMATION**確認の写真のメタデータを含む構造体。
 
 次の表には、説明と要件が含まれています、 **KSCAMERA\_EXTENDEDPROP\_ヘッダー**フィールドを構造体を使用する場合、 **KSPROPERTY\_CAMERACONTROL\_拡張\_PHOTOCONFIRMATION**プロパティ。
 

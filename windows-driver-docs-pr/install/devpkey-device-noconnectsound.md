@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: f9a4f097aba69bc5fcf0361135e4cb7afa00ba59
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a800a2716c24894e986fb14b035b7f7117803060
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344308"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378180"
 ---
 # <a name="devpkeydevicenoconnectsound"></a>DEVPKEY_Device_NoConnectSound
 
@@ -58,13 +58,13 @@ DEVPKEY_Device_NoConnectSound デバイス プロパティは、Microsoft Window
 
 DEVPKEY_Device_NoConnectSound の値は、サウンドの再生を抑制する DEVPROP_TRUE に設定されます。 それ以外の場合、プロパティの値は、DEVPROP_FALSE に設定されます。
 
-DEVPKEY_Device_NoConnectSound プロパティは通常設定、 [ **INF AddProperty ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546318)デバイスの INF ファイルにします。
+DEVPKEY_Device_NoConnectSound プロパティは通常設定、 [ **INF AddProperty ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addproperty-directive)デバイスの INF ファイルにします。
 
-呼び出すことができます[ **SetupDiGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551963)または[ **SetupDiSetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff552163) DEVPKEY_Device_ の値を設定または取得するにはNoConnectSound します。
+呼び出すことができます[ **SetupDiGetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)または[ **SetupDiSetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetdevicepropertyw) DEVPKEY_Device_ の値を設定または取得するにはNoConnectSound します。
 
 Windows Server 2003、Windows XP、および Windows 2000 では、このプロパティはサポートされません。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -87,9 +87,9 @@ Windows Server 2003、Windows XP、および Windows 2000 では、このプロ�
 ## <a name="see-also"></a>関連項目
 
 
-[**INF AddProperty ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546318)
+[**INF AddProperty ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addproperty-directive)
 
-[**SetupDiGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551963)
+[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
 

@@ -4,12 +4,12 @@ description: このセクションでは、ドライバーと WSD のサンプ�
 ms.assetid: BF89F0D0-2ED3-4900-996F-BB7B9C8C9B80
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f36f5f9d432dc584864a1a6efb29c924fcf24382
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d3be72b3a5e837cd680a83077976041997d5f36b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330011"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355939"
 ---
 # <a name="install-the-driver-and-sample-app"></a>ドライバーとサンプル アプリのインストール
 
@@ -62,7 +62,7 @@ Windows コンピューターで、web サービスの展開では、IIS と ASP
 
     ![変更を適用します。](images/wsd-app-6.png)
 
-7.  ときに、**変更を適用する**ダイアログ ボックスが閉じ、ブラウザーを開きに移動します http://localhostします。
+7.  ときに、**変更を適用する**ダイアログ ボックスが閉じ、ブラウザーを開きに移動します http://localhost します。
 
     ![localhost](images/wsd-app-7.png)
 
@@ -72,7 +72,7 @@ Localhost を web サービスをデプロイするハンドラーのプロジ�
 
 ![web を発行します。](images/wsd-app-8.png)
 
-発行が成功するを参照する http://localhost送信の空のファイルになります。 ハンドラーがない場合セットアップ正しく、するは、エラー メッセージを受信または可能性のある既定の IIS web ページを参照してください。
+発行が成功するを参照する http://localhost 送信の空のファイルになります。 ハンドラーがない場合セットアップ正しく、するは、エラー メッセージを受信または可能性のある既定の IIS web ページを参照してください。
 
 切り替えることができます、 **DefaultAppPool**でを実行する、 **NetworkService** id と、それは引き続き期待どおりに動作します。 **DefaultAppPool**も、ネットワーク経由でも作業する必要があります。
 
@@ -126,7 +126,7 @@ IPv6 をサポートする必要がある場合は、IPv6 のため、ASP.NET �
 
 ポート 3702 で検出イベントをリッスンする UDP サーバーを実装することによって、アドホック探索を実行できます。
 
-Exchange のシーケンスの詳細については、次を参照してください。[検出し、メタデータ交換のメッセージ パターン](https://msdn.microsoft.com/library/windows/desktop/bb513677.aspx)します。
+Exchange のシーケンスの詳細については、次を参照してください。[検出し、メタデータ交換のメッセージ パターン](https://docs.microsoft.com/windows/desktop/WsdApi/discovery-and-metadata-exchange-message-patterns)します。
 
  
 

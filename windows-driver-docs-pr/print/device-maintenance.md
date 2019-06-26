@@ -4,12 +4,12 @@ description: デバイスのメンテナンス機能が Windows 8.1 と Windows 
 ms.assetid: 310E92A9-F751-4346-9B2D-0578A136AD20
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b654b230e1fa593635e19c189f3b6dd1c6cd070
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 160b9546c117f84d1a4726f8546c89617e426d6e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365342"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354925"
 ---
 # <a name="device-maintenance"></a>デバイス保守管理
 
@@ -29,11 +29,11 @@ ms.locfileid: "63365342"
 
 デバイスのメンテナンス機能を実装するために Windows (コード ネームは"Blue") で、次のインターフェイスが導入されました。
 
-[**IPrinterBidiSetRequestCallback**](https://msdn.microsoft.com/library/windows/hardware/dn265385)
+[**IPrinterBidiSetRequestCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterbidisetrequestcallback)
 
-[**IPrinterExtensionAsyncOperation**](https://msdn.microsoft.com/library/windows/hardware/dn265387)
+[**IPrinterExtensionAsyncOperation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterextensionasyncoperation)
 
-[**IPrinterQueue2**](https://msdn.microsoft.com/library/windows/hardware/dn265389)
+[**IPrinterQueue2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterqueue2)
 
 ## <a name="initiating-a-device-maintenance-session"></a>デバイスのメンテナンス セッションを開始します。
 
@@ -91,9 +91,9 @@ public class BidiSetResultCallback :
 デバイスのメンテナンスは、次の 3 つのエントリ ポイントのいずれかを使用して、アプリが呼び出された後に、UWP デバイス アプリでサポートされます。
 
 ## <a name="related-topics"></a>関連トピック
-[**IPrinterBidiSetRequestCallback**](https://msdn.microsoft.com/library/windows/hardware/dn265385)  
-[**IPrinterExtensionAsyncOperation**](https://msdn.microsoft.com/library/windows/hardware/dn265387)  
-[**IPrinterQueue2**](https://msdn.microsoft.com/library/windows/hardware/dn265389)  
+[**IPrinterBidiSetRequestCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterbidisetrequestcallback)  
+[**IPrinterExtensionAsyncOperation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterextensionasyncoperation)  
+[**IPrinterQueue2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterqueue2)  
 
 
 

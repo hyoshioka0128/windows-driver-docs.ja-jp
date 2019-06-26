@@ -7,12 +7,12 @@ keywords:
 - OID_WDI_SET_CONNECTION_QUALITY ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 7a14f8551a6a03841072c36587c15ad5ff9925eb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e96aabf2a7b13522639d042f016a5aab50852aff
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330203"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353647"
 ---
 # <a name="oidwdisetconnectionquality"></a>OID\_WDI\_設定\_接続\_品質
 
@@ -34,8 +34,8 @@ OID\_WDI\_設定\_接続\_品質は、特定の仮想化されたポートの接
 
 | TLV                                                                                                                       | 許可されている複数の TLV インスタンス | 省略可能 | 説明                                                                                                                                                                                    |
 |---------------------------------------------------------------------------------------------------------------------------|--------------------------------|----------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [**WDI\_TLV\_接続\_品質\_パラメーター**](https://msdn.microsoft.com/library/windows/hardware/dn926259)                           |                                |          | 必要な Wi-fi 接続品質ヒント。                                                                                                                                                     |
-| [**WDI\_TLV\_低\_待機時間\_接続\_品質\_パラメーター**](https://msdn.microsoft.com/library/windows/hardware/dn897843) |                                | x        | 接続品質の低待機時間の動作です。 これは、接続の品質は に設定されているかどうかに必要な[ **WDI\_接続\_品質\_低\_待機時間**](https://msdn.microsoft.com/library/windows/hardware/dn897807)します。 |
+| [**WDI\_TLV\_接続\_品質\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-connection-quality-parameters)                           |                                |          | 必要な Wi-fi 接続品質ヒント。                                                                                                                                                     |
+| [**WDI\_TLV\_低\_待機時間\_接続\_品質\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-low-latency-connection-quality-parameters) |                                | x        | 接続品質の低待機時間の動作です。 これは、接続の品質は に設定されているかどうかに必要な[ **WDI\_接続\_品質\_低\_待機時間**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_connection_quality_hint)します。 |
 
  
 

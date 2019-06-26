@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 96a6572278b9d63ff88dd81fdc43cbf350127962
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f689dd3447396744193eac9c82cb607fd307e69c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392543"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378079"
 ---
 # <a name="devpkeydeviceclassdhprebalanceoptout"></a>DEVPKEY_DeviceClass_DHPRebalanceOptOut
 
 
-DEVPKEY_DeviceClass_DHPRebalanceOptOut デバイスのプロパティは、デバイス全体のクラスは、リソースの後に再調整に参加するかどうかを示す値を表す、 [(DHP) をパーティション分割、動的なハードウェア](https://msdn.microsoft.com/library/windows/hardware/ff544234)プロセッサホット アド操作が発生しました。
+DEVPKEY_DeviceClass_DHPRebalanceOptOut デバイスのプロパティは、デバイス全体のクラスは、リソースの後に再調整に参加するかどうかを示す値を表す、 [(DHP) をパーティション分割、動的なハードウェア](https://docs.microsoft.com/windows-hardware/drivers/kernel/dynamic-hardware-partitioning-techniques)プロセッサホット アド操作が発生しました。
 
 <table>
 <colgroup>
@@ -65,15 +65,15 @@ DEVPKEY_DeviceClass_DHPRebalanceOptOut デバイスのプロパティは、デ�
 
 DEVPKEY_DeviceClass_DHPRebalanceOptOut デバイスのプロパティが存在する場合、プロパティの値に設定されます**TRUE**デバイスのクラスは、新しいプロセッサが動的に追加する場合に再調整するリソースに関与しません、システム。
 
-デバイスの[デバイス セットアップ クラス](https://msdn.microsoft.com/library/windows/hardware/ff541509)で指定された、 [ **INF バージョン セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547502)のデバイスの INF ファイル。
+デバイスの[デバイス セットアップ クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-setup-classes)で指定された、 [ **INF バージョン セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-version-section)のデバイスの INF ファイル。
 
 ネットワーク アダプターのこのプロパティの既定値 (クラス = Net) は**TRUE**します。 その他のすべてのデバイス セットアップ クラスには、このプロパティの既定値は**FALSE**します。
 
 このデバイスのプロパティでは、デバイスのクラスが他の理由により開始されるリソースのバランス調整に参加するかどうかには影響しません。
 
-DEVPKEY_DeviceClass_DHPRebalanceOptOut プロパティを呼び出すことによってアクセスできる[ **SetupDiGetClassProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551086)と[ **SetupDiSetClassProperty**](https://msdn.microsoft.com/library/windows/hardware/ff552128).
+DEVPKEY_DeviceClass_DHPRebalanceOptOut プロパティを呼び出すことによってアクセスできる[ **SetupDiGetClassProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyw)と[ **SetupDiSetClassProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetclasspropertyw).
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -96,9 +96,9 @@ DEVPKEY_DeviceClass_DHPRebalanceOptOut プロパティを呼び出すことに�
 ## <a name="see-also"></a>関連項目
 
 
-[**SetupDiGetClassProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551086)
+[**SetupDiGetClassProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyw)
 
-[**SetupDiSetClassProperty**](https://msdn.microsoft.com/library/windows/hardware/ff552128)
+[**SetupDiSetClassProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetclasspropertyw)
 
  
 

@@ -4,12 +4,12 @@ description: イベント ビューアーを使用したデバイス メタデ�
 ms.assetid: 168a9dd1-aab2-4497-a59d-b8fe52d8cde2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 10a6ba2d48a0d191822a799c9bb33e8f2308af01
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e8c344aa0a8079cd50004f3b82e0fe25bf046021
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352076"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353393"
 ---
 # <a name="debugging-device-metadata-packages-by-using-event-viewer"></a>イベント ビューアーを使用したデバイス メタデータ パッケージのデバッグ
 
@@ -28,7 +28,7 @@ DeviceMetadata/デバッグ チャネルには、エラーと、ダウンロー�
 
 3.  展開し、をクリックし、**イベント ビューアー**ノード。
 
-4.  **[表示]** メニューで、**[分析およびデバッグ ログの表示]** をクリックします。
+4.  **[表示]** メニューで、 **[分析およびデバッグ ログの表示]** をクリックします。
 
 5.  展開、 **Applications and Services Logs**ノード。
 
@@ -107,7 +107,7 @@ DMRC クエリでは、特定のデバイスのデバイス メタデータ パ�
 
 -   イベントの説明。
 
--   デバイスのハードウェア ID などのモデル ID、デバイスのルックアップ キー 詳細については、次を参照してください。 [ **HardwareID** ](https://msdn.microsoft.com/library/windows/hardware/ff546114)と[ **ModelID**](https://msdn.microsoft.com/library/windows/hardware/ff549295)します。
+-   デバイスのハードウェア ID などのモデル ID、デバイスのルックアップ キー 詳細については、次を参照してください。 [ **HardwareID** ](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff546114(v=vs.85))と[ **ModelID**](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff549295(v=vs.85))します。
 
     **注**  ハードウェアの一覧をパラメーターとして Id が渡されるときに、特定のハードウェア ID のみが記録されます。
 

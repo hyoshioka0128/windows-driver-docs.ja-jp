@@ -26,23 +26,23 @@ keywords:
 - データ形式の WDK オーディオ、チャンネル マスク
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e6154059f7b282e3bef75a8c295868f67129fa26
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 36c51c3280c8cda55e2bd52fb1979ac053db0f4b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333899"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355607"
 ---
 # <a name="channel-mask"></a>チャネル マスク
 
 
-Windows、 [ **WAVEFORMATEXTENSIBLE** ](https://msdn.microsoft.com/library/windows/hardware/ff538802)構造は、マルチ チャネル、PCM のオーディオ ストリームのデータ形式を定義します。 この構造体は、PCM あたりのビット数のサンプル、ストリーム、およびチャネル マスク内のチャネルの数などのパラメーターを指定します。 チャネル マスクには、スピーカーへのチャネルのマッピングを指定します。 次の図は、チャネル マスクに個別のビットを示します。
+Windows、 [ **WAVEFORMATEXTENSIBLE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-waveformatextensible)構造は、マルチ チャネル、PCM のオーディオ ストリームのデータ形式を定義します。 この構造体は、PCM あたりのビット数のサンプル、ストリーム、およびチャネル マスク内のチャネルの数などのパラメーターを指定します。 チャネル マスクには、スピーカーへのチャネルのマッピングを指定します。 次の図は、チャネル マスクに個別のビットを示します。
 
 ![チャネル マスク内の個々 のビットを示す図](images/spkrcfg3.png)
 
 チャネル マスク内の各ビットは、特定のスピーカー位置を表します。 その位置を表すマスクのビットが 1; に設定されている場合は、マスクは、特定のスピーカー位置にチャネルを割り当てます、未割り当てのスピーカー位置のすべてのマスク ビットが 0 に設定されます。 WAVEFORMATEXTENSIBLE 構造上の図に示されていないチャネル マスクのビット数を定義しますが、これらのビット ディスカッションのホーム シアターのスピーカー構成の影響はありません。 してわかりやすくするため省略しています。
 
-スピーカー位置を前の図に、チャネル マスク内のエンコーディングは、プロパティの値に使用するときと同様、 [ **KSPROPERTY\_オーディオ\_チャネル\_CONFIG**](https://msdn.microsoft.com/library/windows/hardware/ff537250)プロパティ要求。 詳細については、次を参照してください。 [ **KSAUDIO\_チャネル\_CONFIG**](https://msdn.microsoft.com/library/windows/hardware/ff537083)します。
+スピーカー位置を前の図に、チャネル マスク内のエンコーディングは、プロパティの値に使用するときと同様、 [ **KSPROPERTY\_オーディオ\_チャネル\_CONFIG**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-channel-config)プロパティ要求。 詳細については、次を参照してください。 [ **KSAUDIO\_チャネル\_CONFIG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksaudio_channel_config)します。
 
 次の表は、前の図に、マスクのビットごとの意味を示します。
 
@@ -124,7 +124,7 @@ Windows、 [ **WAVEFORMATEXTENSIBLE** ](https://msdn.microsoft.com/library/windo
 
 次の図は、チャネル マスク 0x63F 間の通信と**ホーム シアターの 7.1 スピーカー**構成します。
 
-![7.1 ホーム シアターのスピーカーの記録と再生を示す図](images/spkrcfg4.png)
+![7\.1 ホーム シアターのスピーカーの記録と再生を示す図](images/spkrcfg4.png)
 
 上記の図の左側にあるがオーディオの録音にコンテンツの表示、**ホーム シアターの 7.1 スピーカー**ストリーム形式。 グリッドの中央に小さな円では、リスナーの位置を表します。 各小規模、黒の四角形は、マイクを表します。 8 つのチャネルには、0 から 7 への番号が付けられます。 0、FR マイク レコードへのチャネルに FL マイク レコードでは、チャンネル 1 など。
 

@@ -7,12 +7,12 @@ keywords:
 - WDK プリンターの依存ファイル
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 29398cffcde34e28002c3d7e3a4a034afb5dcd8e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 812dff15cb58d8d0901c33a73cd6c9044c8bfbe1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367605"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356047"
 ---
 # <a name="printer-inf-file-entries"></a>プリンター INF ファイル エントリ
 
@@ -57,7 +57,7 @@ Ntprint.dll を認識するプリンター ドライバーの INF ファイル�
 
  
 
- **注**  **1 (DriverCategory)**:これらは、許可されている値、INF ファイルでは、カテゴリを指定する場合 (0 ~ 5 それぞれ) カテゴリを指定します。
+ **注**  **1 (DriverCategory)** :これらは、許可されている値、INF ファイルでは、カテゴリを指定する場合 (0 ~ 5 それぞれ) カテゴリを指定します。
  
  
 | ドライバー カテゴリ          | Value | 説明                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
@@ -75,11 +75,11 @@ V4 印刷ドライバーがマニフェスト ファイルを使用すること�
 
  
 
-**注**  **2 (ExcludeFromSelect)**:*デバイス ID*で表示しないデバイスの**デバイスの**ダイアログまたは プリンターの追加ウィザード。 このプリンターを INF ファイルで重複するデバイスの説明を持つデバイスのすべての PnP エントリが含まれていますたとえば、赤外線および並列列挙のため、または別のバスの複数のエントリがあるデバイスです。 この表で、他のすべてとは異なり、ExcludeFromSelect エントリは、INF ファイルの制御フラグ セクションに表示する必要があります。 参照してください[ **INF ControlFlags セクション**](https://msdn.microsoft.com/library/windows/hardware/ff546342)詳細についてはします。
+**注**  **2 (ExcludeFromSelect)** :*デバイス ID*で表示しないデバイスの**デバイスの**ダイアログまたは プリンターの追加ウィザード。 このプリンターを INF ファイルで重複するデバイスの説明を持つデバイスのすべての PnP エントリが含まれていますたとえば、赤外線および並列列挙のため、または別のバスの複数のエントリがあるデバイスです。 この表で、他のすべてとは異なり、ExcludeFromSelect エントリは、INF ファイルの制御フラグ セクションに表示する必要があります。 参照してください[ **INF ControlFlags セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-controlflags-section)詳細についてはします。
 
  
 
-**注**  **3 (VendorSetup)**:VendorSetup エントリが指定されていない場合は、カスタマイズされたセットアップ操作は実行されません。 具体的には、ユーザー インターフェイスは許可されていませんプリント プロセッサ、印刷のモニター、またはプリンター ドライバーのインストール中を除く VendorSetup INF エントリを使用しています。 このエントリの詳細については、次を参照してください。[プリンター セットアップの操作のカスタマイズ](customized-printer-setup-operations.md)します。
+**注**  **3 (VendorSetup)** :VendorSetup エントリが指定されていない場合は、カスタマイズされたセットアップ操作は実行されません。 具体的には、ユーザー インターフェイスは許可されていませんプリント プロセッサ、印刷のモニター、またはプリンター ドライバーのインストール中を除く VendorSetup INF エントリを使用しています。 このエントリの詳細については、次を参照してください。[プリンター セットアップの操作のカスタマイズ](customized-printer-setup-operations.md)します。
 
  
 
@@ -133,7 +133,7 @@ PRINTER_MODEL_123 = "Contoso Printer Model 123"
 
 ## <a name="related-topics"></a>関連トピック
 [双方向通信のスキーマ](bidirectional-communication-schema.md)  
-[**INF ControlFlags セクション**](https://msdn.microsoft.com/library/windows/hardware/ff546342)  
+[**INF ControlFlags セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-controlflags-section)  
 [カスタマイズされたドライバー コンポーネントをインストールします。](installing-customized-driver-components.md)  
 [ポイント アンド プリント](introduction-to-point-and-print.md)  
 [プリンター INF ファイルのインストールのセクション](printer-inf-file-install-sections.md)  

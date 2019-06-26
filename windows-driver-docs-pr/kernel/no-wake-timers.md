@@ -12,12 +12,12 @@ keywords:
 - KeSetCoalescableTimer
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e69f335ee69c22d6385d7a8130b64c1b745a59b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4b6a2551fd62f8cd87dcdcdb951dc0e479829f52
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341967"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355003"
 ---
 # <a name="no-wake-timers"></a>ウェイクなしタイマー
 
@@ -28,16 +28,16 @@ Windows 8.1 以降、ドライバーは低電力状態からのプロセッサ�
 
 ドライバーは、no ウェイク アップ タイマーを使用して、プロセッサがアクティブな状態のときにのみ実行する必要のある重要でない操作を開始できます。 たとえば、ドライバーはいいえウェイク アップ タイマーを使用して、ファイルをメモリ バッファーからの累積状態情報を定期的にフラッシュを可能性があります。 この状態情報には、プロセッサがアクティブな場合にのみ、ドライバーを実行する処理作業について説明します。 プロセッサが低電力状態とステータス情報は生成されません、プロセッサのスリープを解除する必要はありません。
 
-WDM ドライバーが呼び出すいいえウェイク アップ タイマーを作成する、 [ **ExAllocateTimer** ](https://msdn.microsoft.com/library/windows/hardware/dn265179)ルーチン。 この呼び出しで、ドライバー設定 EX\_タイマー\_いいえ\_ウェイク アップのフラグのビット、*属性*パラメーター。
+WDM ドライバーが呼び出すいいえウェイク アップ タイマーを作成する、 [ **ExAllocateTimer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatetimer)ルーチン。 この呼び出しで、ドライバー設定 EX\_タイマー\_いいえ\_ウェイク アップのフラグのビット、*属性*パラメーター。
 
-呼び出し、いくつかの締め切り時に、ドライバーが期限切れに no ウェイク アップ タイマーを設定するのには、 [ **ExSetTimer** ](https://msdn.microsoft.com/library/windows/hardware/dn265188)ルーチン。 この呼び出しで、ドライバーは、タイマーは、プロセッサを再開する前に、有効期限に達した後で、no ウェイク アップ タイマーを待機する時間を指定できます。 ドライバーにこの遅延の許容時間を書き込み、 **NoWakeTolerance**内のメンバー、 [ **EXT\_設定\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/dn265196)構造体、ドライバーがへの入力パラメーターとして渡して、 **ExSetTimer**ルーチン。 ドライバーが設定されている場合、 **NoWakeTolerance** EX 特殊な値にメンバー\_タイマー\_無制限\_タイマーの許容範囲はプロセッサを再開しないと、そのため、できませんまで期限切れ、プロセッサがその他の何らかの理由。
+呼び出し、いくつかの締め切り時に、ドライバーが期限切れに no ウェイク アップ タイマーを設定するのには、 [ **ExSetTimer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exsettimer)ルーチン。 この呼び出しで、ドライバーは、タイマーは、プロセッサを再開する前に、有効期限に達した後で、no ウェイク アップ タイマーを待機する時間を指定できます。 ドライバーにこの遅延の許容時間を書き込み、 **NoWakeTolerance**内のメンバー、 [ **EXT\_設定\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_ext_set_parameters_v0)構造体、ドライバーがへの入力パラメーターとして渡して、 **ExSetTimer**ルーチン。 ドライバーが設定されている場合、 **NoWakeTolerance** EX 特殊な値にメンバー\_タイマー\_無制限\_タイマーの許容範囲はプロセッサを再開しないと、そのため、できませんまで期限切れ、プロセッサがその他の何らかの理由。
 
-カーネル モード ドライバー フレームワーク (KMDF) ドライバーまたはユーザー モード ドライバー フレームワーク (UMDF) ドライバーを呼び出すことができます、 [ **WdfTimerCreate** ](https://msdn.microsoft.com/library/windows/hardware/ff550050)いいえウェイク アップ タイマーを作成します。 この呼び出しでは、ドライバーはへのポインターを渡します。 を[ **WDF\_タイマー\_CONFIG** ](https://msdn.microsoft.com/library/windows/hardware/ff552519)をパラメーターとして構造体。 ドライバーを設定することはありません、プロセッサを再開するいいえウェイク アップ タイマーを作成する、 **TolerableDelay**をこの構造体のメンバー、 **TolerableDelayUnlimited**定数。 この定数は、Windows 8.1 および KMDF のバージョン 1.13 または UMDF 2.0 以降がサポートされます。
+カーネル モード ドライバー フレームワーク (KMDF) ドライバーまたはユーザー モード ドライバー フレームワーク (UMDF) ドライバーを呼び出すことができます、 [ **WdfTimerCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdftimer/nf-wdftimer-wdftimercreate)いいえウェイク アップ タイマーを作成します。 この呼び出しでは、ドライバーはへのポインターを渡します。 を[ **WDF\_タイマー\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdftimer/ns-wdftimer-_wdf_timer_config)をパラメーターとして構造体。 ドライバーを設定することはありません、プロセッサを再開するいいえウェイク アップ タイマーを作成する、 **TolerableDelay**をこの構造体のメンバー、 **TolerableDelayUnlimited**定数。 この定数は、Windows 8.1 および KMDF のバージョン 1.13 または UMDF 2.0 以降がサポートされます。
 
 ## <a name="comparison-to-coalescable-timers"></a>合体可能なタイマーの比較
 
 
-[ **KeSetCoalescableTimer** ](https://msdn.microsoft.com/library/windows/hardware/ff553249)ルーチンは、Windows 7 で導入されました。 このルーチンは、タイマーの有効期限で許可する量の許容範囲を指定するためのドライバーを使用できます。 多くの場合、オペレーティング システムでは、2 つ以上のタイマーの割り込みを 1 つの割り込みに融合にこの情報を使用できます。 複数のタイマーの期限が近づいた互いに、許容範囲ウィンドウが重複する場合は、重複部分のリージョンに 1 つのタイマーの割り込みは、これらのタイマーのすべてのタイミング要件を満たすことができます。
+[ **KeSetCoalescableTimer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesetcoalescabletimer)ルーチンは、Windows 7 で導入されました。 このルーチンは、タイマーの有効期限で許可する量の許容範囲を指定するためのドライバーを使用できます。 多くの場合、オペレーティング システムでは、2 つ以上のタイマーの割り込みを 1 つの割り込みに融合にこの情報を使用できます。 複数のタイマーの期限が近づいた互いに、許容範囲ウィンドウが重複する場合は、重複部分のリージョンに 1 つのタイマーの割り込みは、これらのタイマーのすべてのタイミング要件を満たすことができます。
 
 タイマー結合の主な利点は、タイマーの有効期限の間の低電力状態に維持できるように、プロセッサ時間が拡張されているです。 そのため、ドライバーを使用して、タイマーの結合と no ウェイク アップ タイマーのような目的で。
 

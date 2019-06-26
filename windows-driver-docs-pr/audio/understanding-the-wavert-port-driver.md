@@ -4,12 +4,12 @@ description: WaveRT ポート ドライバーについて
 ms.assetid: 2627615a-3fde-4ed6-9f7f-f6d7e5d82b3b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c495206b0b47b05d8c099e3e76093a26e624c51a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 099f7346e3abf654f1cf065cb7883cd9b63912c8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335357"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354165"
 ---
 # <a name="understanding-the-wavert-port-driver"></a>WaveRT ポート ドライバーについて
 
@@ -18,7 +18,7 @@ WaveRT ポート ドライバーでは、WavePci ポート ドライバーのハ
 
 WaveRT ポート ドライバーでは、継続的にマップし、データ バッファーに直接アクセスできるメインのクライアント (通常、オーディオ エンジン) を提供することで、オーディオ データをコピーする必要があります。 また、この直接アクセスには、ドライバーのオーディオ ストリームのデータの操作を必要があります。 したがって、WaveRT ポート ドライバーには、一部のオーディオ デバイスがダイレクト メモリ アクセス (DMA) コント ローラーのニーズが対応しています。
 
-他のウェーブ レンダリングと wave キャプチャ デバイスから区別自体、WaveRT ポート ドライバーに登録して自身[ **KSCATEGORY\_リアルタイム**](https://msdn.microsoft.com/library/windows/hardware/ff548485)に加えて[ **KSCATEGORY\_オーディオ**](https://msdn.microsoft.com/library/windows/hardware/ff548261)、 [ **KSCATEGORY\_レンダリング**](https://msdn.microsoft.com/library/windows/hardware/ff548493)と[ **KSCATEGORY\_キャプチャ**](https://msdn.microsoft.com/library/windows/hardware/ff548325)します。 この自己登録では、アダプターのドライバーのインストール中に発生します。
+他のウェーブ レンダリングと wave キャプチャ デバイスから区別自体、WaveRT ポート ドライバーに登録して自身[ **KSCATEGORY\_リアルタイム**](https://docs.microsoft.com/windows-hardware/drivers/install/kscategory-realtime)に加えて[ **KSCATEGORY\_オーディオ**](https://docs.microsoft.com/windows-hardware/drivers/install/kscategory-audio)、 [ **KSCATEGORY\_レンダリング**](https://docs.microsoft.com/windows-hardware/drivers/install/kscategory-render)と[ **KSCATEGORY\_キャプチャ**](https://docs.microsoft.com/windows-hardware/drivers/install/kscategory-capture)します。 この自己登録では、アダプターのドライバーのインストール中に発生します。
 
 Windows Vista およびそれ以降のオペレーティング システムでは、オペレーティング システムを起動し、オーディオ エンジンが初期化されるとき、オーディオ エンジンはオーディオ デバイスを表す KS フィルターを列挙します。 列挙中には、オーディオ エンジンには、検出されたオーディオ デバイスのドライバーがインスタンス化します。 このプロセスは、これらのデバイスのフィルター オブジェクトの作成時になります。 WaveRT のオーディオ デバイスの場合は、結果のフィルター オブジェクトは、次のコンポーネントは。
 
@@ -30,7 +30,7 @@ Windows Vista およびそれ以降のオペレーティング システムで�
 
 1.  オーディオ エンジンは、KS フィルターに暗証番号 (pin) を開き、WaveRT ミニポート ドライバーは、暗証番号 (pin) のインスタンスを作成します。 オーディオ エンジンでは、pin が開いたら、また、ドライバーを wave 形式のストリームを渡します。 ドライバーでは、wave 形式の情報を使用して、次の手順で、適切なバッファー サイズを選択します。
 
-2.  オーディオ エンジンは、循環バッファーを作成する特定のサイズのミニポート ドライバーに要求を送信します。 用語*循環バッファー*という事実を指すことバッファーの位置の登録には、再生またはレコードの操作でバッファーの末尾に達すると、位置、レジスタできます自動的にラップ バッファーの先頭にします。 物理メモリの連続したブロックを設定する、WaveCyclic ミニポート ドライバーとは異なり、WaveRT ミニポート ドライバーを物理メモリ内で連続しているバッファーする必要はありません。 ドライバーを使用して、 [ **KSPROPERTY\_RTAUDIO\_バッファー** ](https://msdn.microsoft.com/library/windows/hardware/ff537370)プロパティ バッファーの容量を割り当てます。 オーディオ デバイスのハードウェアは、要求されたサイズのバッファーからストリーミングできない、ドライバーは、最も近いサイズで最初に要求されたサイズにバッファーを作成するオーディオ デバイスのリソース制限内では動作します。 ドライバーは、オーディオ デバイスの DMA エンジンにバッファーをマップし、ユーザー モードでバッファーをオーディオ エンジンにアクセスできるようにします。
+2.  オーディオ エンジンは、循環バッファーを作成する特定のサイズのミニポート ドライバーに要求を送信します。 用語*循環バッファー*という事実を指すことバッファーの位置の登録には、再生またはレコードの操作でバッファーの末尾に達すると、位置、レジスタできます自動的にラップ バッファーの先頭にします。 物理メモリの連続したブロックを設定する、WaveCyclic ミニポート ドライバーとは異なり、WaveRT ミニポート ドライバーを物理メモリ内で連続しているバッファーする必要はありません。 ドライバーを使用して、 [ **KSPROPERTY\_RTAUDIO\_バッファー** ](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-rtaudio-buffer)プロパティ バッファーの容量を割り当てます。 オーディオ デバイスのハードウェアは、要求されたサイズのバッファーからストリーミングできない、ドライバーは、最も近いサイズで最初に要求されたサイズにバッファーを作成するオーディオ デバイスのリソース制限内では動作します。 ドライバーは、オーディオ デバイスの DMA エンジンにバッファーをマップし、ユーザー モードでバッファーをオーディオ エンジンにアクセスできるようにします。
 
 3.  オーディオ エンジンは、定期的にオーディオ データを循環バッファーを書き込むのスレッドをスケジュールします。
 

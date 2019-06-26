@@ -8,12 +8,12 @@ keywords:
 - メモリ不足は、WDK の Driver Verifier を確認します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fe03c5ca66904d7232fe3ca078610f0dfdea4d68
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1f5391d090d5cfa1a1a665e1df34fb914623b0f7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372785"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354780"
 ---
 # <a name="low-resources-simulation"></a>低リソースのシミュレーション
 
@@ -23,31 +23,31 @@ ms.locfileid: "63372785"
 
 場合低リソース シミュレーション オプション (と呼ばれる*低リソース シミュレーションをランダム化*Windows 8.1 で) がアクティブな場合は、Driver Verifier にエラーが発生、ドライバーのメモリの割り当てのランダムなインスタンスで、ドライバーが実行されている場合に発生する可能性があります、十分なメモリを備えたコンピューター。 これは、メモリ不足とその他のリソース不足状態に適切に対応するドライバーの機能をテストします。
 
-低リソース シミュレーション テストの失敗など、いくつかの異なる機能への呼び出しによって要求された割り当て[ **ExAllocatePoolWithXXX**](https://msdn.microsoft.com/library/windows/hardware/ff544520)、 [ **MmGetSystemAddressForMdlSafe**](https://msdn.microsoft.com/library/windows/hardware/ff554559)、 [ **MmProbeAndLockPages**](https://msdn.microsoft.com/library/windows/hardware/ff554664)、 [ **MmMapLockedPagesSpecifyCache** ](https://msdn.microsoft.com/library/windows/hardware/ff554629)、および[ **MmMapIoSpace**](https://msdn.microsoft.com/library/windows/hardware/ff554618)します。
+低リソース シミュレーション テストの失敗など、いくつかの異なる機能への呼び出しによって要求された割り当て[ **ExAllocatePoolWithXXX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtag)、 [ **MmGetSystemAddressForMdlSafe**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)、 [ **MmProbeAndLockPages**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmprobeandlockpages)、 [ **MmMapLockedPagesSpecifyCache** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmmaplockedpagesspecifycache)、および[ **MmMapIoSpace**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmmapiospace)します。
 
-Windows Vista 以降、低リソース シミュレーション テストも挿入エラーに[ **IoAllocateIrp**](https://msdn.microsoft.com/library/windows/hardware/ff548257)、 [ **IoAllocateMdl**](https://msdn.microsoft.com/library/windows/hardware/ff548263)、[ **IoAllocateWorkItem**](https://msdn.microsoft.com/library/windows/hardware/ff548276)、 [ **IoAllocateErrorLogEntry**](https://msdn.microsoft.com/library/windows/hardware/ff548245)、 [ **MmAllocateContiguousMemory**](https://msdn.microsoft.com/library/windows/hardware/ff554460)、 [ **MmAllocateContiguousMemorySpecifyCache**](https://msdn.microsoft.com/library/windows/hardware/ff554464)、 [ **MmAllocatePagesForMdl** ](https://msdn.microsoft.com/library/windows/hardware/ff554482)、および[ **MmAllocatePagesForMdlEx**](https://msdn.microsoft.com/library/windows/hardware/ff554489)します。 さらへの呼び出し以降、Windows Vista では低リソース シミュレーションが有効にすると、 [ **KeWaitForMultipleObjects** ](https://msdn.microsoft.com/library/windows/hardware/ff553324)または[ **kewaitforsingleobject の 1**](https://msdn.microsoft.com/library/windows/hardware/ff553350)で、 *Alertable*パラメーターに設定**TRUE**状態を返すことができます\_特権のないプロセスのコンテキストで実行するときに通知します。 これは、同じ特権のないアプリケーションで別のスレッドから可能なスレッドのアラートをシミュレートします。
+Windows Vista 以降、低リソース シミュレーション テストも挿入エラーに[ **IoAllocateIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocateirp)、 [ **IoAllocateMdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocatemdl)、[ **IoAllocateWorkItem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocateworkitem)、 [ **IoAllocateErrorLogEntry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocateerrorlogentry)、 [ **MmAllocateContiguousMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatecontiguousmemory)、 [ **MmAllocateContiguousMemorySpecifyCache**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatecontiguousmemoryspecifycache)、 [ **MmAllocatePagesForMdl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatepagesformdl)、および[ **MmAllocatePagesForMdlEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatepagesformdlex)します。 さらへの呼び出し以降、Windows Vista では低リソース シミュレーションが有効にすると、 [ **KeWaitForMultipleObjects** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kewaitformultipleobjects)または[ **kewaitforsingleobject の 1**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kewaitforsingleobject)で、 *Alertable*パラメーターに設定**TRUE**状態を返すことができます\_特権のないプロセスのコンテキストで実行するときに通知します。 これは、同じ特権のないアプリケーションで別のスレッドから可能なスレッドのアラートをシミュレートします。
 
-低リソース シミュレーション テストでは、次の GDI 関数にエラーも挿入します。[**EngAllocMem**](https://msdn.microsoft.com/library/windows/hardware/ff564176)、 [ **EngAllocUserMem**](https://msdn.microsoft.com/library/windows/hardware/ff564178)、 [ **EngCreateBitmap**](https://msdn.microsoft.com/library/windows/hardware/ff564199)、 [ **EngCreateDeviceSurface**](https://msdn.microsoft.com/library/windows/hardware/ff564206)、 [ **EngCreateDeviceBitmap**](https://msdn.microsoft.com/library/windows/hardware/ff564204)、 [ **EngCreatePalette** ](https://msdn.microsoft.com/library/windows/hardware/ff564212)、 [ **EngCreateClip**](https://msdn.microsoft.com/library/windows/hardware/ff564202)、 [ **EngCreatePath**](https://msdn.microsoft.com/library/windows/hardware/ff564755)、 [ **EngCreateWnd**](https://msdn.microsoft.com/library/windows/hardware/ff564769)、 [ **EngCreateDriverObj**](https://msdn.microsoft.com/library/windows/hardware/ff564207)、 [ **BRUSHOBJ\_pvAllocRbrush**](https://msdn.microsoft.com/library/windows/hardware/ff538263)、および[**CLIPOBJ\_ppoGetPath**](https://msdn.microsoft.com/library/windows/hardware/ff539423)します。
+低リソース シミュレーション テストでは、次の GDI 関数にエラーも挿入します。[**EngAllocMem**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engallocmem)、 [ **EngAllocUserMem**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engallocusermem)、 [ **EngCreateBitmap**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engcreatebitmap)、 [ **EngCreateDeviceSurface**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engcreatedevicesurface)、 [ **EngCreateDeviceBitmap**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engcreatedevicebitmap)、 [ **EngCreatePalette** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engcreatepalette)、 [ **EngCreateClip**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engcreateclip)、 [ **EngCreatePath**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engcreatepath)、 [ **EngCreateWnd**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engcreatewnd)、 [ **EngCreateDriverObj**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engcreatedriverobj)、 [ **BRUSHOBJ\_pvAllocRbrush**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-brushobj_pvallocrbrush)、および[**CLIPOBJ\_ppoGetPath**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-clipobj_ppogetpath)します。
 
 Windows 7 および Windows オペレーティング システムの以降のバージョンでは、低リソース シミュレーション オプションは、次のカーネル Api を使用して割り当てられたメモリをサポートしています。
 
--   [**IoAllocateMdl**](https://msdn.microsoft.com/library/windows/hardware/ff548263)
+-   [**IoAllocateMdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocatemdl)
 
--   [**IoAllocateIrp** ](https://msdn.microsoft.com/library/windows/hardware/ff548257)と I/O を割り当てることができるその他のルーチン要求パケット (IRP) データ構造体
+-   [**IoAllocateIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocateirp)と I/O を割り当てることができるその他のルーチン要求パケット (IRP) データ構造体
 
--   [**RtlAnsiStringToUnicodeString** ](https://msdn.microsoft.com/library/windows/hardware/ff561729)およびその他のランタイム ライブラリ (RTL) の文字列ルーチン
+-   [**RtlAnsiStringToUnicodeString** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-rtlansistringtounicodestring)およびその他のランタイム ライブラリ (RTL) の文字列ルーチン
 
--   [**IoSetCompletionRoutineEx**](https://msdn.microsoft.com/library/windows/hardware/ff549686)
+-   [**IoSetCompletionRoutineEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iosetcompletionroutineex)
 
 Windows 8.1 以降、低リソース シミュレーション オプションはまた、MmAllocateNodePagesForMdlEx への呼び出しによって要求された割り当てを失敗します。 さらに、一部の関数では、Driver Verifier 収まっていることをパターンがランダムに割り当てられたメモリ。 ただし、関数が返す状況のみが初期化されていないメモリ。 これらの関数は次のとおりです。
 
--   [**MmAllocatePagesForMdlEx**](https://msdn.microsoft.com/library/windows/hardware/ff554489)
+-   [**MmAllocatePagesForMdlEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatepagesformdlex)
 -   MmAllocateNodePagesForMdlEx
--   [**MmAllocateContiguousMemory**](https://msdn.microsoft.com/library/windows/hardware/ff554460)
--   [**MmAllocateContiguousMemorySpecifyCache**](https://msdn.microsoft.com/library/windows/hardware/ff554464)
--   [**MmAllocateContiguousMemorySpecifyCacheNode**](https://msdn.microsoft.com/library/windows/hardware/ff554469)
--   [**MmAllocateContiguousNodeMemory**](https://msdn.microsoft.com/library/windows/hardware/jj602795)
--   [**MmAllocateNonCachedMemory**](https://msdn.microsoft.com/library/windows/hardware/ff554479)
+-   [**MmAllocateContiguousMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatecontiguousmemory)
+-   [**MmAllocateContiguousMemorySpecifyCache**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatecontiguousmemoryspecifycache)
+-   [**MmAllocateContiguousMemorySpecifyCacheNode**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatecontiguousmemoryspecifycachenode)
+-   [**MmAllocateContiguousNodeMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatecontiguousnodememory)
+-   [**MmAllocateNonCachedMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-mmallocatenoncachedmemory)
 
 ### <a name="span-idcustomsettingsforlowresourcessimulationspanspan-idcustomsettingsforlowresourcessimulationspancustom-settings-for-low-resources-simulation"></a><span id="custom_settings_for_low_resources_simulation"></span><span id="CUSTOM_SETTINGS_FOR_LOW_RESOURCES_SIMULATION"></span>低リソース シミュレーション用のカスタム設定
 

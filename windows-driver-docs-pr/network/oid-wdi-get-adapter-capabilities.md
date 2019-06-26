@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - OID_WDI_GET_ADAPTER_CAPABILITIES ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: e07449f00f60059f7f87ed18d7abe6da846e8c2b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4d7477f741c34bcc4250a28f2017c7b7defd083d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384630"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353677"
 ---
 # <a name="oidwdigetadaptercapabilities"></a>OID\_WDI\_取得\_アダプター\_機能
 
@@ -31,7 +31,7 @@ OID\_WDI\_取得\_アダプター\_機能は、アダプターをホストから
 ## <a name="get-property-results"></a>プロパティの結果を得る
 
 
-アダプターが Wi-Fi Direct をサポートする場合両方[ **WDI\_TLV\_AP\_属性**](https://msdn.microsoft.com/library/windows/hardware/dn926129)と[ **WDI\_TLV\_P2P\_属性**](https://msdn.microsoft.com/library/windows/hardware/dn897863)指定する必要があります。
+アダプターが Wi-Fi Direct をサポートする場合両方[ **WDI\_TLV\_AP\_属性**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-ap-attributes)と[ **WDI\_TLV\_P2P\_属性**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-attributes)指定する必要があります。
 
 <table>
 <colgroup>
@@ -50,89 +50,89 @@ OID\_WDI\_取得\_アダプター\_機能は、アダプターをホストから
 </thead>
 <tbody>
 <tr class="odd">
-<td><a href="https://msdn.microsoft.com/library/windows/hardware/dn926255" data-raw-source="[&lt;strong&gt;WDI_TLV_COMMUNICATION_CONFIGURATION_ATTRIBUTES&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn926255)"><strong>WDI_TLV_COMMUNICATION_CONFIGURATION_ATTRIBUTES</strong></a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-communication-configuration-attributes" data-raw-source="[&lt;strong&gt;WDI_TLV_COMMUNICATION_CONFIGURATION_ATTRIBUTES&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-communication-configuration-attributes)"><strong>WDI_TLV_COMMUNICATION_CONFIGURATION_ATTRIBUTES</strong></a></td>
 <td></td>
 <td>x</td>
 <td>ホスト アダプターの通信プロトコルの構成の属性。</td>
 </tr>
 <tr class="even">
-<td><a href="https://msdn.microsoft.com/library/windows/hardware/dn897835" data-raw-source="[&lt;strong&gt;WDI_TLV_INTERFACE_ATTRIBUTES&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn897835)"><strong>WDI_TLV_INTERFACE_ATTRIBUTES</strong></a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-interface-attributes" data-raw-source="[&lt;strong&gt;WDI_TLV_INTERFACE_ATTRIBUTES&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-interface-attributes)"><strong>WDI_TLV_INTERFACE_ATTRIBUTES</strong></a></td>
 <td></td>
 <td></td>
 <td>インターフェイス属性。</td>
 </tr>
 <tr class="odd">
-<td><a href="https://msdn.microsoft.com/library/windows/hardware/dn898066" data-raw-source="[&lt;strong&gt;WDI_TLV_STATION_ATTRIBUTES&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn898066)"><strong>WDI_TLV_STATION_ATTRIBUTES</strong></a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-station-attributes" data-raw-source="[&lt;strong&gt;WDI_TLV_STATION_ATTRIBUTES&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-station-attributes)"><strong>WDI_TLV_STATION_ATTRIBUTES</strong></a></td>
 <td></td>
 <td></td>
 <td>ステーションの属性。</td>
 </tr>
 <tr class="even">
-<td><a href="https://msdn.microsoft.com/library/windows/hardware/dn926129" data-raw-source="[&lt;strong&gt;WDI_TLV_AP_ATTRIBUTES&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn926129)"><strong>WDI_TLV_AP_ATTRIBUTES</strong></a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-ap-attributes" data-raw-source="[&lt;strong&gt;WDI_TLV_AP_ATTRIBUTES&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-ap-attributes)"><strong>WDI_TLV_AP_ATTRIBUTES</strong></a></td>
 <td></td>
 <td>x</td>
 <td>アクセス ポイントの属性。</td>
 </tr>
 <tr class="odd">
-<td><a href="https://msdn.microsoft.com/library/windows/hardware/dn898078" data-raw-source="[&lt;strong&gt;WDI_TLV_VIRTUALIZATION_ATTRIBUTES&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn898078)"><strong>WDI_TLV_VIRTUALIZATION_ATTRIBUTES</strong></a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-virtualization-attributes" data-raw-source="[&lt;strong&gt;WDI_TLV_VIRTUALIZATION_ATTRIBUTES&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-virtualization-attributes)"><strong>WDI_TLV_VIRTUALIZATION_ATTRIBUTES</strong></a></td>
 <td></td>
 <td>x</td>
 <td>仮想化の属性。</td>
 </tr>
 <tr class="even">
-<td><a href="https://msdn.microsoft.com/library/windows/hardware/dn897863" data-raw-source="[&lt;strong&gt;WDI_TLV_P2P_ATTRIBUTES&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn897863)"><strong>WDI_TLV_P2P_ATTRIBUTES</strong></a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-attributes" data-raw-source="[&lt;strong&gt;WDI_TLV_P2P_ATTRIBUTES&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-attributes)"><strong>WDI_TLV_P2P_ATTRIBUTES</strong></a></td>
 <td></td>
 <td>x</td>
 <td>Wi-Fi Direct 属性。</td>
 </tr>
 <tr class="odd">
-<td><a href="https://msdn.microsoft.com/library/windows/hardware/dn926277" data-raw-source="[&lt;strong&gt;WDI_TLV_DATAPATH_ATTRIBUTES&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn926277)"><strong>WDI_TLV_DATAPATH_ATTRIBUTES</strong></a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-datapath-attributes" data-raw-source="[&lt;strong&gt;WDI_TLV_DATAPATH_ATTRIBUTES&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-datapath-attributes)"><strong>WDI_TLV_DATAPATH_ATTRIBUTES</strong></a></td>
 <td></td>
 <td>x</td>
 <td>データパス属性。</td>
 </tr>
 <tr class="even">
-<td><a href="https://msdn.microsoft.com/library/windows/hardware/dn926146" data-raw-source="[&lt;strong&gt;WDI_TLV_BAND_INFO&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn926146)"><strong>WDI_TLV_BAND_INFO</strong></a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-band-info" data-raw-source="[&lt;strong&gt;WDI_TLV_BAND_INFO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-band-info)"><strong>WDI_TLV_BAND_INFO</strong></a></td>
 <td>x</td>
 <td>x</td>
 <td>バンド情報。</td>
 </tr>
 <tr class="odd">
-<td><a href="https://msdn.microsoft.com/library/windows/hardware/dn898023" data-raw-source="[&lt;strong&gt;WDI_TLV_PHY_INFO&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn898023)"><strong>WDI_TLV_PHY_INFO</strong></a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-phy-info" data-raw-source="[&lt;strong&gt;WDI_TLV_PHY_INFO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-phy-info)"><strong>WDI_TLV_PHY_INFO</strong></a></td>
 <td>x</td>
 <td>x</td>
 <td>PHY 情報。</td>
 </tr>
 <tr class="even">
-<td><a href="https://msdn.microsoft.com/library/windows/hardware/dn898032" data-raw-source="[&lt;strong&gt;WDI_TLV_PM_CAPABILITIES&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn898032)"><strong>WDI_TLV_PM_CAPABILITIES</strong></a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-pm-capabilities" data-raw-source="[&lt;strong&gt;WDI_TLV_PM_CAPABILITIES&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-pm-capabilities)"><strong>WDI_TLV_PM_CAPABILITIES</strong></a></td>
 <td></td>
 <td>x</td>
 <td>電源管理機能。</td>
 </tr>
 <tr class="odd">
-<td><a href="https://msdn.microsoft.com/library/windows/hardware/dn926268" data-raw-source="[&lt;strong&gt;WDI_TLV_COUNTRY_REGION_LIST&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn926268)"><strong>WDI_TLV_COUNTRY_REGION_LIST</strong></a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-country-region-list" data-raw-source="[&lt;strong&gt;WDI_TLV_COUNTRY_REGION_LIST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-country-region-list)"><strong>WDI_TLV_COUNTRY_REGION_LIST</strong></a></td>
 <td></td>
 <td>x</td>
 <td>国または地域コードです。</td>
 </tr>
 <tr class="even">
-<td><a href="https://msdn.microsoft.com/library/windows/hardware/dn898046" data-raw-source="[&lt;strong&gt;WDI_TLV_RECEIVE_COALESCING_CAPABILITIES&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn898046)"><strong>WDI_TLV_RECEIVE_COALESCING_CAPABILITIES</strong></a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-receive-coalescing-capabilities" data-raw-source="[&lt;strong&gt;WDI_TLV_RECEIVE_COALESCING_CAPABILITIES&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-receive-coalescing-capabilities)"><strong>WDI_TLV_RECEIVE_COALESCING_CAPABILITIES</strong></a></td>
 <td></td>
 <td>x</td>
 <td>ハードウェア支援によるフィルターの機能が表示されます。</td>
 </tr>
 <tr class="odd">
-<td><a href="https://msdn.microsoft.com/library/windows/hardware/dn898069" data-raw-source="[&lt;strong&gt;WDI_TLV_TCP_OFFLOAD_CAPABILITIES&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn898069)"><strong>WDI_TLV_TCP_OFFLOAD_CAPABILITIES</strong></a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-tcp-offload-capabilities" data-raw-source="[&lt;strong&gt;WDI_TLV_TCP_OFFLOAD_CAPABILITIES&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-tcp-offload-capabilities)"><strong>WDI_TLV_TCP_OFFLOAD_CAPABILITIES</strong></a></td>
 <td></td>
 <td>x</td>
 <td>TCP/IP はオフロード機能です。</td>
 </tr>
 <tr class="even">
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/mt769918" data-raw-source="[&lt;strong&gt;WDI_TLV_SUPPORTED_GUIDS&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/mt769918)"><strong>WDI_TLV_SUPPORTED_GUIDS</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-supported-guids" data-raw-source="[&lt;strong&gt;WDI_TLV_SUPPORTED_GUIDS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-supported-guids)"><strong>WDI_TLV_SUPPORTED_GUIDS</strong></a></p></td>
 <td><p>x</p></td>
 <td><p>x</p></td>
 <td><p>Windows 10 version 1607 では、バージョン 1.0.21 WDI に追加されます。</p>
-<p>渡される NDIS WDI がクエリされるときに Guid のリスト<a href="https://msdn.microsoft.com/library/windows/hardware/ff569641" data-raw-source="[OID_GEN_SUPPORTED_GUIDS](https://msdn.microsoft.com/library/windows/hardware/ff569641)">OID_GEN_SUPPORTED_GUIDS</a>します。</p></td>
+<p>渡される NDIS WDI がクエリされるときに Guid のリスト<a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-supported-guids" data-raw-source="[OID_GEN_SUPPORTED_GUIDS](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-supported-guids)">OID_GEN_SUPPORTED_GUIDS</a>します。</p></td>
 </tr>
 <tr class="odd">
 <td><p><a href="wdi-tlv-os-power-management-features.md" data-raw-source="[&lt;strong&gt;WDI_TLV_OS_POWER_MANAGEMENT_FEATURES&lt;/strong&gt;](wdi-tlv-os-power-management-features.md)"><strong>WDI_TLV_OS_POWER_MANAGEMENT_FEATURES</strong></a></p></td>
@@ -147,7 +147,7 @@ OID\_WDI\_取得\_アダプター\_機能は、アダプターをホストから
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

@@ -4,12 +4,12 @@ description: Microsoft ソース コード注釈言語 (SAL) には、Windows �
 ms.assetid: 2CD181B8-4E1D-457A-9FF9-DAB3AB932730
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1311f596f4d96b1db3c3cdb8d27b428043c10070
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 871680ed9eae5a0a759ac295520aa64712f1dc27
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340238"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353861"
 ---
 # <a name="sal-20-annotations-for-windows-drivers"></a>Windows ドライバーの SAL 2.0 注釈
 
@@ -85,7 +85,7 @@ Microsoft ソース コード注釈言語 (SAL) には、Windows ドライバー
 <tr class="even">
 <td align="left"><p><strong><em>Flt_CompletionContext_Outptr</em></strong></p></td>
 <td align="left"><a href="-flt-completioncontext-outptr--annotation.md" data-raw-source="[_Flt_CompletionContext_Outptr_ Annotation](-flt-completioncontext-outptr--annotation.md)"><em>Flt_CompletionContext_Outptr</em> Annotation</a></td>
-<td align="left"><p>使用して、 <strong><em>Flt_CompletionContext_Outptr</em></strong>ファイル システム ミニフィルターの前の操作のコールバック関数を宣言するときに注釈 (<a href="https://msdn.microsoft.com/library/windows/hardware/ff551109" data-raw-source="[&lt;strong&gt;PFLT_PRE_OPERATION_CALLBACK&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff551109)"><strong>PFLT_PRE_OPERATION_CALLBACK</strong></a>). この注釈を配置、 <em>CompletionContext</em>パラメーター。 この注釈を設定することを確認するコード分析ツール、 <em>CompletionContext</em> FLT_PREOP_CALLBACK_STATUS が値を返すが正しい。</p></td>
+<td align="left"><p>使用して、 <strong><em>Flt_CompletionContext_Outptr</em></strong>ファイル システム ミニフィルターの前の操作のコールバック関数を宣言するときに注釈 (<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nc-fltkernel-pflt_pre_operation_callback" data-raw-source="[&lt;strong&gt;PFLT_PRE_OPERATION_CALLBACK&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nc-fltkernel-pflt_pre_operation_callback)"><strong>PFLT_PRE_OPERATION_CALLBACK</strong></a>). この注釈を配置、 <em>CompletionContext</em>パラメーター。 この注釈を設定することを確認するコード分析ツール、 <em>CompletionContext</em> FLT_PREOP_CALLBACK_STATUS が値を返すが正しい。</p></td>
 </tr>
 </tbody>
 </table>

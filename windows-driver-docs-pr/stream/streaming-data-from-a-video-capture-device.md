@@ -7,12 +7,12 @@ keywords:
 - データをストリーミング ビデオの WDK AVStream のキャプチャ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 95652e3ac4c28d3018411dfe46770f68b84830af
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 51b7590555c13416f0767a4b9a9f1e2cccfcfb14
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374046"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377785"
 ---
 # <a name="streaming-data-from-a-video-capture-device"></a>ビデオ キャプチャ デバイスからのデータのストリーミング
 
@@ -29,7 +29,7 @@ ms.locfileid: "63374046"
 
 変更のチューニングの VBI デコーダーをすぐに通知する必要があります。 たとえば、チューナーは、1 つのチャネルを切り替える、VBI デコーダーする必要があります通知が表示、チューニング操作の先頭に信号が不安定になる期間中にデコードを一時的に停止できるように。 チューニング操作が完了したら、新しいチャネルと任意のビデオ標準または国/地域コードの変更された可能性があるの VBI デコーダーを通知する必要があります。
 
-ミニドライバーがクロスバー フィルターを通過した後、そのキャプチャ フィルターのアナログ ビデオ入力ピンに、そのチューナー フィルターからチューニング パケットを伝達する必要があります。 このパケットをユーザー モードでできるは、キャプチャ フィルターに達するまでだけです。 ミニドライバーは、としてこのチューニングのパケットを受信する[ **KS\_tv チューナー\_変更\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff567691)ミニドライバーのキャプチャのアナログ ビデオ入力ピンに構造体フィルターです。
+ミニドライバーがクロスバー フィルターを通過した後、そのキャプチャ フィルターのアナログ ビデオ入力ピンに、そのチューナー フィルターからチューニング パケットを伝達する必要があります。 このパケットをユーザー モードでできるは、キャプチャ フィルターに達するまでだけです。 ミニドライバーは、としてこのチューニングのパケットを受信する[ **KS\_tv チューナー\_変更\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_tvtuner_change_info)ミニドライバーのキャプチャのアナログ ビデオ入力ピンに構造体フィルターです。
 
 ミニドライバーは、そのフィルターを使用するキャプチャの VBI 出力ピンにチューニングのパケットにも反映する必要があります、[ビデオ ストリーム拡張ヘッダー](video-stream-extended-headers.md)します。 チェーンとして動作する VBI デコーダーは、その出力ピンに pin 入力から拡張ヘッダー情報を伝達同様にする必要があります。
 

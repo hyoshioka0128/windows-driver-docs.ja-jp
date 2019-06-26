@@ -4,12 +4,12 @@ description: ミニドライバー バージョン 6.02 の機能
 ms.assetid: 8BF4B63B-B723-4899-BCAF-7826FAFF2155
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f4c7c80de36691644eae17970dcf7481d8489dd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6caa401b657e2b226b973b31652283b4c32ba189
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63329608"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356685"
 ---
 # <a name="minidriver-version-602-features"></a>ミニドライバー バージョン 6.02 の機能
 
@@ -35,10 +35,10 @@ ms.locfileid: "63329608"
 
 このバージョンで追加された新しい Api は次のとおりです。
 
--   [**CardAuthenticateEx**](https://msdn.microsoft.com/library/windows/hardware/dn468703)
--   [**CardGetChallengeEx**](https://msdn.microsoft.com/library/windows/hardware/dn468724)
--   [**CardDeauthenticateEx**](https://msdn.microsoft.com/library/windows/hardware/dn468713)
--   [**CardChangeAuthenticatorEx**](https://msdn.microsoft.com/library/windows/hardware/dn468706)
+-   [**CardAuthenticateEx**](https://docs.microsoft.com/previous-versions/dn468703(v=vs.85))
+-   [**CardGetChallengeEx**](https://docs.microsoft.com/previous-versions/dn468724(v=vs.85))
+-   [**CardDeauthenticateEx**](https://docs.microsoft.com/previous-versions/dn468713(v=vs.85))
+-   [**CardChangeAuthenticatorEx**](https://docs.microsoft.com/previous-versions/dn468706(v=vs.85))
 
 **重要な**  すべてプロビジョニング システムが複数の Pin をサポート。 そのため、注意が必要 フィールドに、カードのプロビジョニング システムで更新できるキーのピンを適用するときにします。
 
@@ -55,7 +55,7 @@ ms.locfileid: "63329608"
 
 セキュリティで保護された PIN チャネルの詳細については、"セッション Pin"のセクションを参照してください。[開発者ガイドライン](developer-guidelines.md)します。
 
-この機能に関連する新しい API が含まれる[ **CardAuthenticateEx**](https://msdn.microsoft.com/library/windows/hardware/dn468703)します。
+この機能に関連する新しい API が含まれる[ **CardAuthenticateEx**](https://docs.microsoft.com/previous-versions/dn468703(v=vs.85))します。
 
 ## <a name="span-idexternalpinsupportspanspan-idexternalpinsupportspanspan-idexternalpinsupportspan-external-pin-support"></a><span id="_External_PIN_Support"></span><span id="_external_pin_support"></span><span id="_EXTERNAL_PIN_SUPPORT"></span> 外部 PIN のサポート
 
@@ -67,9 +67,9 @@ ms.locfileid: "63329608"
 
 外部 PIN モードでスマート カードへ PIN 認証が必要な場合は、Windows は、PIN をユーザーを要求していないがではなく、ユーザーに通知されることがなくすぐにミニドライバーの認証 API を呼び出します。 オペレーティング システムを介さずに、実際の認証と PIN の収集が発生することが期待されます。
 
-必要に応じて、および特定の制限、ミニドライバーは、独自のユーザー インターフェイス (UI) をユーザーが PIN の収集の関係における特定のアクションを実行するように指示を表示する許可します。 はなく、外部から収集する際に PIN を待機している Windows ユーザーに指示するが、実際には、ユーザーから PIN を収集するために、このような UI を使用することには必要ありません。 ミニドライバーは、コンテキストがサイレント モードと UI 要素を作成する特定のウィンドウ ハンドルを使用すると予測はときに、UI を表示する許可されていません。 詳細についてを参照[ **CardAuthenticateEx**](https://msdn.microsoft.com/library/windows/hardware/dn468703)、および[ **CardSetProperty**](https://msdn.microsoft.com/library/windows/hardware/dn468740)します。
+必要に応じて、および特定の制限、ミニドライバーは、独自のユーザー インターフェイス (UI) をユーザーが PIN の収集の関係における特定のアクションを実行するように指示を表示する許可します。 はなく、外部から収集する際に PIN を待機している Windows ユーザーに指示するが、実際には、ユーザーから PIN を収集するために、このような UI を使用することには必要ありません。 ミニドライバーは、コンテキストがサイレント モードと UI 要素を作成する特定のウィンドウ ハンドルを使用すると予測はときに、UI を表示する許可されていません。 詳細についてを参照[ **CardAuthenticateEx**](https://docs.microsoft.com/previous-versions/dn468703(v=vs.85))、および[ **CardSetProperty**](https://docs.microsoft.com/previous-versions/dn468740(v=vs.85))します。
 
-一時的なセッション PIN を返すことができるカードは、後続のキャッシングを Windows にこのような PIN を返す可能性があります。 このような場合では、Windows は、カードには、セッション PIN が無効にするまでにカードの認証以降のすべてのセッション PIN を紹介します。 詳細については、次を参照してください。 [ **CardAuthenticateEx**](https://msdn.microsoft.com/library/windows/hardware/dn468703)します。
+一時的なセッション PIN を返すことができるカードは、後続のキャッシングを Windows にこのような PIN を返す可能性があります。 このような場合では、Windows は、カードには、セッション PIN が無効にするまでにカードの認証以降のすべてのセッション PIN を紹介します。 詳細については、次を参照してください。 [ **CardAuthenticateEx**](https://docs.microsoft.com/previous-versions/dn468703(v=vs.85))します。
 
  
 

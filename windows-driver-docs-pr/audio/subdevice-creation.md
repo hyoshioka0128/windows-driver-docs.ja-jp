@@ -8,12 +8,12 @@ keywords:
 - サブデバイス WDK オーディオ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0171b629b3a5978cd90b72fd2f617e0f6f1697c8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c718dacfaf5064d8e820eef41027ce4d48797885
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328601"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354247"
 ---
 # <a name="subdevice-creation"></a>サブデバイスの作成
 
@@ -56,7 +56,7 @@ ms.locfileid: "63328601"
 
  
 
-サブデバイスの IMiniport*Xxx*と IPort*Xxx*基底インターフェイスから継承するインターフェイス[IMiniport](https://msdn.microsoft.com/library/windows/hardware/ff536698)と[IPort](https://msdn.microsoft.com/library/windows/hardware/ff536842)、それぞれします。
+サブデバイスの IMiniport*Xxx*と IPort*Xxx*基底インターフェイスから継承するインターフェイス[IMiniport](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iminiport)と[IPort](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iport)、それぞれします。
 
 PortCls システム ドライバーでは、ポート ドライバーとミニポート ドライバーが区別されません。 システムによって生成された要求を処理できるインターフェイスで、ポート オブジェクトなどのオブジェクトだけが必要です。
 
@@ -123,7 +123,7 @@ PortCls システム ドライバーでは、ポート ドライバーとミニ�
   }
 ```
 
-PortCls 関数の詳細については、上記のコード例の呼び出し、に対するを参照してください[ **PcNewPort**](https://msdn.microsoft.com/library/windows/hardware/ff537715)、 [ **PcNewMiniport**](https://msdn.microsoft.com/library/windows/hardware/ff537714)、および。[**PcRegisterSubdevice**](https://msdn.microsoft.com/library/windows/hardware/ff537731)します。
+PortCls 関数の詳細については、上記のコード例の呼び出し、に対するを参照してください[ **PcNewPort**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcnewport)、 [ **PcNewMiniport**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcnewminiport)、および。[**PcRegisterSubdevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcregistersubdevice)します。
 
  
 

@@ -13,12 +13,12 @@ keywords:
 - Unidrv WDK の印刷
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 428bfa4c9bd84cd2981e09362e813df5dbb78c99
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8d5a15e3a3ce843b15e7db1a67749f8e6b6db3bd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341303"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355089"
 ---
 # <a name="specifying-paper-orientation"></a>用紙の向きを指定する
 
@@ -66,7 +66,7 @@ ms.locfileid: "63341303"
 }
 ```
 
-**注**   For Windows 7、 **MxdcGetPDEVAdjustment**関数には、横置きに回転の新しいパラメーター。 詳細については、次を参照してください。 [ **MxdcXDCGetPDEVAdjustment**](https://msdn.microsoft.com/library/windows/hardware/ff557558)します。
+**注**   For Windows 7、 **MxdcGetPDEVAdjustment**関数には、横置きに回転の新しいパラメーター。 詳細については、次を参照してください。 [ **MxdcXDCGetPDEVAdjustment**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mxdc/nf-mxdc-mxdcgetpdevadjustment)します。
 
  
 

@@ -6,17 +6,17 @@ ms.date: 07/18/2017
 keywords:
 - WDI_TLV_DELETE_CIPHER_KEY_INFO ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 24c9074871730d95166e7975c755b4e95f4af6e4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b7751553c78fc2869dc5f49af846d6a6b8d98c27
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331812"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353616"
 ---
 # <a name="wditlvdeletecipherkeyinfo"></a>WDI\_TLV\_削除\_暗号\_キー\_情報
 
 
-WDI\_TLV\_削除\_暗号\_キー\_情報を使用して、削除する 1 つの暗号キーを識別するために情報を含む TLV [OID\_WDI\_設定\_削除\_暗号\_キー](https://msdn.microsoft.com/library/windows/hardware/dn925929)します。
+WDI\_TLV\_削除\_暗号\_キー\_情報を使用して、削除する 1 つの暗号キーを識別するために情報を含む TLV [OID\_WDI\_設定\_削除\_暗号\_キー](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-set-delete-cipher-keys)します。
 
 ## <a name="tlv-type"></a>TLV 型
 
@@ -39,7 +39,7 @@ WDI\_TLV\_削除\_暗号\_キー\_情報を使用して、削除する 1 つの�
 
  
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

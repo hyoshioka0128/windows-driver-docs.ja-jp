@@ -8,12 +8,12 @@ keywords:
 - ネットワーク構成 WDK への変更
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 742ebfb2c94a8251845416b4bfa6455be670b0dd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c27a027f8bb286f3c9b8e8f8b3b0cd289d3d65fe
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368300"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353777"
 ---
 # <a name="evaluating-changes-to-network-configuration"></a>ネットワーク構成の変更の評価
 
@@ -21,7 +21,7 @@ ms.locfileid: "63368300"
 
 
 
-通知オブジェクトのメソッドを呼び出して、サブシステム、ネットワークの構成後に[ **INetCfgComponentNotifyGlobal** ](https://msdn.microsoft.com/library/windows/hardware/ff547733)と[INetCfgComponentNotifyBinding](https://msdn.microsoft.com/library/windows/hardware/ff547730)インターフェイス、通知オブジェクトは、サブシステムを送信するネットワーク構成で提案された変更を評価する必要があり、変更に関連する操作を実行する必要があります。 通知オブジェクトのメソッド**INetCfgComponentNotifyGlobal**と**INetCfgComponentNotifyBinding**を所有するコンポーネントに影響する変更のみを処理するインターフェイスを実装する必要がありますオブジェクト。
+通知オブジェクトのメソッドを呼び出して、サブシステム、ネットワークの構成後に[ **INetCfgComponentNotifyGlobal** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff547733(v=vs.85))と[INetCfgComponentNotifyBinding](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff547730(v=vs.85))インターフェイス、通知オブジェクトは、サブシステムを送信するネットワーク構成で提案された変更を評価する必要があり、変更に関連する操作を実行する必要があります。 通知オブジェクトのメソッド**INetCfgComponentNotifyGlobal**と**INetCfgComponentNotifyBinding**を所有するコンポーネントに影響する変更のみを処理するインターフェイスを実装する必要がありますオブジェクト。
 
 次のトピックでは、通知オブジェクトがネットワークの構成に対する変更を処理する方法の例について説明します。
 

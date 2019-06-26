@@ -4,12 +4,12 @@ description: スイッチ拡張機能は、サイレント モードでインス
 ms.assetid: 300118F9-D9C7-4AFA-B54A-59666BC680F1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 06fa51361afe23d74523b1bc58df1ef16b077a48
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 79b2a513ad0e1590a3175f45f23213ea10497d06
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360204"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353745"
 ---
 # <a name="extension-driver-msi-packaging-requirements"></a>拡張ドライバー MSI パッケージ要件
 
@@ -35,7 +35,7 @@ MSI ファイルには、次の要件を満たす必要があります。
 | **DriverInstallParams**         | 必須 | **String** | このドライバーをサイレント モードでインストールするために使用するパラメーターです。 例:/q                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 | **IsManagedByExtensionManager** | 省略可能 | **String** | 存在し、0 以外 = [はい] を 0 または存在しない = いいえ                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 | **MinApplicableOSVersion**      | 必須 | **String** | この拡張機能で実行される Windows オペレーティング システムの最小バージョン。 オペレーティング システムのバージョン番号は、オペレーティング システムのバージョンを参照してください。 注 HYPER-V 拡張可能スイッチの機能が追加されたことで Windows Server 2012 では、そのためこのフィールドの最小有効値は、「6.2」です。                                                                                                                                                                                                                    |
-| **MaxApplicableOSVersion**      | 省略可能 | **String** | この拡張機能で実行される Windows オペレーティング システムの最大バージョン。 参照してください[オペレーティング システムのバージョン](https://msdn.microsoft.com/library/windows/desktop/ms724832)オペレーティング システムのバージョン番号。 HYPER-V 拡張可能スイッチの機能が追加されたことで Windows Server 2012 では、そのためこのフィールドの最小有効値に注意してください「6.2」またはの値は、 **MinApplicableOSVersion**、高い方します。 このフィールドは省略可能です。 値が指定されていない場合、拡張機能がで実行が**MinApplicableOSVersion**以降。 |
+| **MaxApplicableOSVersion**      | 省略可能 | **String** | この拡張機能で実行される Windows オペレーティング システムの最大バージョン。 参照してください[オペレーティング システムのバージョン](https://docs.microsoft.com/windows/desktop/SysInfo/operating-system-version)オペレーティング システムのバージョン番号。 HYPER-V 拡張可能スイッチの機能が追加されたことで Windows Server 2012 では、そのためこのフィールドの最小有効値に注意してください「6.2」またはの値は、 **MinApplicableOSVersion**、高い方します。 このフィールドは省略可能です。 値が指定されていない場合、拡張機能がで実行が**MinApplicableOSVersion**以降。 |
 
  
 

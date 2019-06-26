@@ -6,17 +6,17 @@ keywords:
 - ACPI_METHOD_NEXT_ARGUMENT マクロ ACPI デバイス
 ms.date: 10/12/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ed7d06635ff22f61562ff5cc406d7030cbeb9f0d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 596761fcbc027d1d7f3da5c23ed3b5f2ba3b05f5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328844"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355880"
 ---
 # <a name="acpimethodnextargument-macro"></a>ACPI\_メソッド\_次\_引数マクロ
 
 
-ACPI\_メソッド\_次\_引数構造体へのポインターを返します[ **ACPI\_メソッド\_引数**](https://msdn.microsoft.com/library/windows/hardware/ff536125)構造体配列の ACPI\_メソッド\_引数構造体。
+ACPI\_メソッド\_次\_引数構造体へのポインターを返します[ **ACPI\_メソッド\_引数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ns-acpiioct-_acpi_method_argument_v1)構造体配列の ACPI\_メソッド\_引数構造体。
 
 <a name="syntax"></a>構文
 ------
@@ -43,7 +43,7 @@ ACPI へのポインター\_メソッド\_ACPI の配列の構造体を引数\_�
 
 ACPI にポインターを与えられた\_メソッド\_引数構造、このような構造体の配列で、ドライバーを使用してこのマクロ、配列内の次の構造体へのポインターの計算が存在する場合。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -66,4 +66,4 @@ ACPI にポインターを与えられた\_メソッド\_引数構造、この�
 ## <a name="see-also"></a>関連項目
 
 
-[**ACPI\_メソッド\_引数**](https://msdn.microsoft.com/library/windows/hardware/ff536125)
+[**ACPI\_メソッド\_引数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ns-acpiioct-_acpi_method_argument_v1)

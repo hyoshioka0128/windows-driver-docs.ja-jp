@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: ee4a9079fb680385b6c1982ef53e92f0aeabafd2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 13bd939e42f6056052925c7214328db7e5ffca5c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383136"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378548"
 ---
 # <a name="getfc3mgmtinfo-function"></a>GetFC3MgmtInfo 関数
 
@@ -40,10 +40,10 @@ void GetFC3MgmtInfo(
 ----------
 
 *HBAStatus*   
-に返された場合、操作の状態を示す WMI 修飾子の値を格納します。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **GetFC3MgmtInfo\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff553946)構造体。
+に返された場合、操作の状態を示す WMI 修飾子の値を格納します。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **GetFC3MgmtInfo\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_getfc3mgmtinfo_out)構造体。
 
 *MgmtInfo*   
-返された場合は、型の構造体が含まれています。 [ **HBAFC3MgmtInfo** ](https://msdn.microsoft.com/library/windows/hardware/ff556032)ファイバー チャネル アダプターに関連付けられている FC3 管理情報を保持します。
+返された場合は、型の構造体が含まれています。 [ **HBAFC3MgmtInfo** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_hbafc3mgmtinfo)ファイバー チャネル アダプターに関連付けられている FC3 管理情報を保持します。
 
 <a name="return-value"></a>戻り値
 ------------
@@ -78,9 +78,9 @@ WMI メソッドには適用されません。
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
-[**GetFC3MgmtInfo\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff553946)
+[**GetFC3MgmtInfo\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_getfc3mgmtinfo_out)
 
-[**HBAFC3MgmtInfo**](https://msdn.microsoft.com/library/windows/hardware/ff556032)
+[**HBAFC3MgmtInfo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_hbafc3mgmtinfo)
 
  
 

@@ -4,12 +4,12 @@ description: Windows のボタン ユーザー インターフェイス (UI) の
 ms.assetid: B79ED0F9-B46A-4915-8FF3-5CF3D2E0E945
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7fdfa6c35d0cfc715401c7b89f42f6c9c35d8466
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 129ed5b0a20d8644378a8e5a4b4b4257198926fc
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63338092"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353931"
 ---
 # <a name="windows-button-array-device-specific-method-dsm"></a>Windows ボタン配列デバイス固有のメソッド (\_DSM)
 
@@ -37,7 +37,7 @@ Windows を Windows のボタン ユーザー インターフェイス (UI) の�
 -   ビット 1:このビットは割り込みコント ローラーに電力 ボタンがワイヤード (有線) の場合、1 に設定する必要があります (GPIO またはそれ以外の場合) レベルの検出をサポートします。 それ以外の場合、このビットは 0 にする必要があります。
 -   ビット 0:プラットフォームは、10 秒以上に時間を ACPI 電源ボタンのオーバーライドをサポートしている場合、このビットを 1 に設定する必要があります。 それ以外の場合、このビットは 0 にする必要があります。
 
-**注**  関数インデックス 0 の各\_DSM がサポートされている関数のインデックスのセットを返しますは常に必要とするクエリ関数を示します。 詳細については、セクション 9.14.1 を参照してください。"\_DSM (デバイスの特定のメソッド)"で、 [ACPI 5.0 仕様](https://www.uefi.org/specifications)します。
+**注**  関数インデックス 0 の各\_DSM がサポートされている関数のインデックスのセットを返しますは常に必要とするクエリ関数を示します。 詳細については、セクション 9.14.1 を参照してください。"\_DSM (デバイスの特定のメソッド)"で、 [ACPI 5.0 仕様](https://uefi.org/specifications)します。
 
  
 

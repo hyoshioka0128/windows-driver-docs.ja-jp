@@ -4,12 +4,12 @@ description: このトピックでは、更新プログラムのドライバー 
 ms.assetid: 9018900A-3670-4C78-9094-1DDAB82847DD
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f1644d0f152627fb8f043160bbf8ee514edcf9a2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fe270c24069362210c958e4241e623ef45bfeb89
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328102"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353994"
 ---
 # <a name="authoring-an-update-driver-package"></a>更新プログラム ドライバー パッケージの作成
 
@@ -279,7 +279,7 @@ Modify any strings here [optional]
     pvk2pfx.exe -pvk fwu.pvk -spc fwu.cer -pi <Password entered during makecert prompt> -spc fwu.cer -pfx fwu.pfx
     ```
 
-    詳細については、次を参照してください。 [ **MakeCert**](https://msdn.microsoft.com/library/windows/hardware/ff548309)します。
+    詳細については、次を参照してください。 [ **MakeCert**](https://docs.microsoft.com/windows-hardware/drivers/devtest/makecert)します。
 
 3.  カタログ ファイルを作成するには、次のコマンドを実行します。
 
@@ -287,9 +287,9 @@ Modify any strings here [optional]
     Inf2Cat.exe /driver:"." /os:8_x64
     ```
 
-    */Driver*引数は、INF の場所を指します。 値を変更、 */os*のファームウェアのドライバー パッケージの対象となる OS に応じて引数。 詳細については、次を参照してください。 [ **Inf2Cat**](https://msdn.microsoft.com/library/windows/hardware/ff547089)します。
+    */Driver*引数は、INF の場所を指します。 値を変更、 */os*のファームウェアのドライバー パッケージの対象となる OS に応じて引数。 詳細については、次を参照してください。 [ **Inf2Cat**](https://docs.microsoft.com/windows-hardware/drivers/devtest/inf2cat)します。
 
-    セキュリティ カタログとドライバーの詳細については、次を参照してください。[カタログ ファイルとデジタル署名](https://msdn.microsoft.com/library/windows/hardware/ff537872)と[PnP ドライバー パッケージのカタログ ファイルを作成する](https://msdn.microsoft.com/library/windows/hardware/ff540161)します。
+    セキュリティ カタログとドライバーの詳細については、次を参照してください。[カタログ ファイルとデジタル署名](https://docs.microsoft.com/windows-hardware/drivers/install/catalog-files)と[PnP ドライバー パッケージのカタログ ファイルを作成する](https://docs.microsoft.com/windows-hardware/drivers/install/creating-a-catalog-file-for-a-pnp-driver-package)します。
 
 4.  カタログ ファイルの署名には、次のコマンドを実行します。
 
@@ -297,7 +297,7 @@ Modify any strings here [optional]
     signtool sign /fd sha256 /f fwu.pfx /p <Password entered during makecert prompt> delta.cat
     ```
 
-    詳細については、次を参照してください。 [ **SignTool**](https://msdn.microsoft.com/library/windows/hardware/ff551778)します。
+    詳細については、次を参照してください。 [ **SignTool**](https://docs.microsoft.com/windows-hardware/drivers/devtest/signtool)します。
 
 5.  テスト システムでは、テスト証明書をインストールします。
     1.  Fwu.cer ファイルをダブルクリックし、選択、**証明書のインストール**オプション。

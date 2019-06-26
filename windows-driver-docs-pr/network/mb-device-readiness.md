@@ -4,12 +4,12 @@ description: MB デバイスの準備
 ms.assetid: 67a67ff7-dcff-4aec-bea9-7b1be9593649
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 95f83da274cae07e6a886ab706d852a48c8c1afd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 49820ee9dc04b868f5a6a7f338efdb73486a0bf3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343410"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378014"
 ---
 # <a name="mb-device-readiness"></a>MB デバイスの準備
 
@@ -38,15 +38,15 @@ MB サービスを想定していないこと、ミニポート ドライバー�
 
 ミニポート ドライバーを送信するまで、 **WwanReadyStateInitialized**準備完了の状態のイベントの通知サービスまで行われず、ネットワーク関連のアクティビティをさらに、問題を検出して、修正しました。 ただし、サービスはミニポート ドライバーに Oid を送信することがありますも。
 
-ミニポート ドライバーは、報告する前に準備ができる SMS サブシステムを待機する必要はありません、 **WwanReadyStateInitialized**準備完了状態。 ミニポート ドライバーが、個別に送信する代わりに、 [OID\_WWAN\_SMS\_構成](https://msdn.microsoft.com/library/windows/hardware/ff569837)SMS サブシステムが SMS メッセージを送受信する準備ができたときに通知します。
+ミニポート ドライバーは、報告する前に準備ができる SMS サブシステムを待機する必要はありません、 **WwanReadyStateInitialized**準備完了状態。 ミニポート ドライバーが、個別に送信する代わりに、 [OID\_WWAN\_SMS\_構成](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-sms-configuration)SMS サブシステムが SMS メッセージを送受信する準備ができたときに通知します。
 
 ### <a name="emergency-mode-support"></a>緊急モードのサポート
 
-ミニポート ドライバーでは、処理中に緊急呼び出しサービスをサポートしていることを示す場合[OID\_WWAN\_準備\_情報](https://msdn.microsoft.com/library/windows/hardware/ff569833)ミニポート ドライバーを設定する必要があります、 **EmergencyMode**のメンバー、 [ **WWAN\_準備\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff571226)構造体を**WwanEmergencyModeOn**します。 この場合、ミニポート ドライバーは、MB サービスに登録通知を送信する続行する必要がありますが、サービスは、自動を呼び出しません関連機能を構成します。
+ミニポート ドライバーでは、処理中に緊急呼び出しサービスをサポートしていることを示す場合[OID\_WWAN\_準備\_情報](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-ready-info)ミニポート ドライバーを設定する必要があります、 **EmergencyMode**のメンバー、 [ **WWAN\_準備\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wwan/ns-wwan-_wwan_ready_info)構造体を**WwanEmergencyModeOn**します。 この場合、ミニポート ドライバーは、MB サービスに登録通知を送信する続行する必要がありますが、サービスは、自動を呼び出しません関連機能を構成します。
 
 SIM が不要になった有効である、おそらく、サブスクリプションが有料、またはサービスが、デバイスが盗難にあった報告されているために、非アクティブ化されているため、検出場所のシナリオであっても緊急呼び出しサービスをサポートするミニポート ドライバーを指定できます。
 
-デバイスの準備の詳細については、次を参照してください。 [OID\_WWAN\_準備\_情報](https://msdn.microsoft.com/library/windows/hardware/ff569833)します。
+デバイスの準備の詳細については、次を参照してください。 [OID\_WWAN\_準備\_情報](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-ready-info)します。
 
  
 

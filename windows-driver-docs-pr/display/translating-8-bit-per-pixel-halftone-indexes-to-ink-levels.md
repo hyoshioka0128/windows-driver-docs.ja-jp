@@ -13,12 +13,12 @@ keywords:
 - WDK GDI ピクセルあたり 8 ビット ハーフトーンを翻訳するインデックスを作成します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d664d9cc1e4662081bafa86777b8592f347a60b8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 123914bda2dd9cb04dc62b8879c5e33532dcb3e6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389796"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353425"
 ---
 # <a name="translating-8-bit-per-pixel-halftone-indexes-to-ink-levels"></a>8 ビット/ピクセル ハーフトーン インデックスからインク レベルへの変換
 
@@ -26,7 +26,7 @@ ms.locfileid: "63389796"
 ## <span id="ddk_translating_8_bit_per_pixel_halftone_indexes_to_ink_levels_gg"></span><span id="DDK_TRANSLATING_8_BIT_PER_PIXEL_HALFTONE_INDEXES_TO_INK_LEVELS_GG"></span>
 
 
-**GenerateInkLevels**ここで示すように関数がインク レベルにピクセルあたり 8 ビット ハーフトーン インデックスに変換する方法の例を示します。 CMY モードと CMY でこれらのインデックスが含まれている\_その GDI のモードのパレットを反転[ **HT\_Get8BPPMaskPalette** ](https://msdn.microsoft.com/library/windows/hardware/ff567320)関数で返しますその*pPaletteEntry*パラメーター。 **GenerateInkLevels** INKLEVELS 構造体の 256 要素の配列を生成します。
+**GenerateInkLevels**ここで示すように関数がインク レベルにピクセルあたり 8 ビット ハーフトーン インデックスに変換する方法の例を示します。 CMY モードと CMY でこれらのインデックスが含まれている\_その GDI のモードのパレットを反転[ **HT\_Get8BPPMaskPalette** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-ht_get8bppmaskpalette)関数で返しますその*pPaletteEntry*パラメーター。 **GenerateInkLevels** INKLEVELS 構造体の 256 要素の配列を生成します。
 
 この関数を使用して、Windows 2000 CMY モードまたは windows 2000 以降 CMY のいずれかを生成することができます\_反転モード変換テーブル。 この関数は、Windows 2000 CMY モード CMY332 リバース マッピング インデックス テーブルを生成することも使用できます。 (CMY332 に、シアン、マゼンタ、および黄色の 2 つのビットのある 3 つのビットが使用) します。ときに*CMYMask*値は 3 ~ 255 の範囲で、関数の呼び出し元は、このテーブルを使用して、windows 2000 以降 CMY をマップする\_現在既存の Windows 2000 CMY インデックスにインデックスを反転ドライバー。
 

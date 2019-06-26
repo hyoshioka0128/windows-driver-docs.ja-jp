@@ -12,12 +12,12 @@ keywords:
 - SAN 接続のリッスン、WDK をソケットします。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b895c4922ed64900ee7eeeaf1181c41377a1ea49
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7a719b7b288e3f2b820a3d973950d37b656819b5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383193"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356215"
 ---
 # <a name="listening-for-connections-on-a-san"></a>SAN での接続のリッスン
 
@@ -33,11 +33,11 @@ ms.locfileid: "63383193"
 
 ### <a name="listening-for-incoming-connection-requests"></a>受信接続要求のリッスン
 
-SAN サービス プロバイダーを作成し、SAN のソケットをバインドを要求すると後のスイッチを呼び出して、 [ **WSPListen** ](https://msdn.microsoft.com/library/windows/hardware/ff566297)着信接続をリッスンする SAN ソケットが SAN サービス プロバイダーの関数SAN サービス プロバイダーであることを要求できますキューに着信接続の数に制限を指定します。
+SAN サービス プロバイダーを作成し、SAN のソケットをバインドを要求すると後のスイッチを呼び出して、 [ **WSPListen** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff566297(v=vs.85))着信接続をリッスンする SAN ソケットが SAN サービス プロバイダーの関数SAN サービス プロバイダーであることを要求できますキューに着信接続の数に制限を指定します。
 
 ### <a name="setting-up-to-accept-incoming-connections"></a>着信接続を受け入れるように設定します。
 
-スイッチは、非ブロッキング モードでのみの受信接続を受け入れます。 スイッチの呼び出し、SAN サービス プロバイダーの[ **WSPEventSelect** ](https://msdn.microsoft.com/library/windows/hardware/ff566287)関数を非ブロッキング モード ソケットにおよび着信接続のイベントの通知を要求します。 この呼び出しでは、スイッチは、FD を渡します。\_同意コードとそのコードに関連するイベント オブジェクト。 SAN サービス プロバイダーが、Win32 を呼び出し、SAN サービス プロバイダーがリッスンするために確立された以前のソケットで接続要求を受け取った後**SetEvent**を関連付けられたイベント オブジェクトを通知します。 スイッチは、専用のスレッドで受信接続イベントをリッスンし、受け入れるか、イベント オブジェクトがシグナル通知された後に、接続を拒否します。 詳細については、次を参照してください。[接続要求を受け入れる](accepting-connection-requests.md)します。
+スイッチは、非ブロッキング モードでのみの受信接続を受け入れます。 スイッチの呼び出し、SAN サービス プロバイダーの[ **WSPEventSelect** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff566287(v=vs.85))関数を非ブロッキング モード ソケットにおよび着信接続のイベントの通知を要求します。 この呼び出しでは、スイッチは、FD を渡します。\_同意コードとそのコードに関連するイベント オブジェクト。 SAN サービス プロバイダーが、Win32 を呼び出し、SAN サービス プロバイダーがリッスンするために確立された以前のソケットで接続要求を受け取った後**SetEvent**を関連付けられたイベント オブジェクトを通知します。 スイッチは、専用のスレッドで受信接続イベントをリッスンし、受け入れるか、イベント オブジェクトがシグナル通知された後に、接続を拒否します。 詳細については、次を参照してください。[接続要求を受け入れる](accepting-connection-requests.md)します。
 
 ### <a name="indicating-refusal-of-a-connection-request-to-a-remote-peer"></a>リモート ピアに接続要求の拒否されたことを示す
 

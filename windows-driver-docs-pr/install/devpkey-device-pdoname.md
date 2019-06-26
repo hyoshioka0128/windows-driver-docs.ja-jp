@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: d4e75e7f404371e31a008e388f02b465dbc1bd69
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5ccf1b9d5c2192f0df7a46dee688c2168c989046
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383823"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378150"
 ---
 # <a name="devpkeydevicepdoname"></a>DEVPKEY_Device_PDOName
 
@@ -60,11 +60,11 @@ DEVPKEY_Device_PDOName デバイス プロパティは、デバイスのイン�
 <a name="remarks"></a>注釈
 -------
 
-Windows では、デバイスを表す物理名オブジェクト (PDO) の名前に DEVPKEY_Device_PDOName の値を設定します。 PDO 名の詳細については、次を参照してください。、 *DeviceName*パラメーターと共に使用される、 [ **IoCreateDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff548397)ルーチン。
+Windows では、デバイスを表す物理名オブジェクト (PDO) の名前に DEVPKEY_Device_PDOName の値を設定します。 PDO 名の詳細については、次を参照してください。、 *DeviceName*パラメーターと共に使用される、 [ **IoCreateDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatedevice)ルーチン。
 
-呼び出すことができます[ **SetupDiGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551963) DEVPKEY_Device_PDOName の値を取得します。
+呼び出すことができます[ **SetupDiGetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) DEVPKEY_Device_PDOName の値を取得します。
 
-Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_Device_PDOName プロパティのキーをサポートしていません。 代わりに、Windows の以前のバージョンのプロパティの値へのアクセスに対応する SPDRP_PHYSICAL_DEVICE_OBJECT_NAME 識別子を使用することができます。 Windows の以前のバージョンでこのプロパティの値にアクセスする方法については、次を参照してください。[デバイス インスタンス SPDRP_Xxx プロパティへのアクセス](https://msdn.microsoft.com/library/windows/hardware/ff537737)します。
+Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_Device_PDOName プロパティのキーをサポートしていません。 代わりに、Windows の以前のバージョンのプロパティの値へのアクセスに対応する SPDRP_PHYSICAL_DEVICE_OBJECT_NAME 識別子を使用することができます。 Windows の以前のバージョンでこのプロパティの値にアクセスする方法については、次を参照してください。[デバイス インスタンス SPDRP_Xxx プロパティへのアクセス](https://docs.microsoft.com/windows-hardware/drivers/install/accessing-device-instance-spdrp-xxx-properties)します。
 
 <a name="requirements"></a>要件
 ------------
@@ -89,9 +89,9 @@ Windows Server 2003、Windows XP、および Windows 2000 は、このプロパ�
 ## <a name="see-also"></a>関連項目
 
 
-[**IoCreateDevice**](https://msdn.microsoft.com/library/windows/hardware/ff548397)
+[**IoCreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatedevice)
 
-[**SetupDiGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551963)
+[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
 

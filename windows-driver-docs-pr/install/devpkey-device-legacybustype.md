@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 0828f29c7b3aa57d9f746ffde93b6110bb73b1de
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b37459bcc167417a4e8affc4051528145dd3ef4d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351122"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378198"
 ---
 # <a name="devpkeydevicelegacybustype"></a>DEVPKEY_Device_LegacyBusType
 
@@ -60,11 +60,11 @@ DEVPKEY_Device_LegacyBusType デバイス プロパティは、レガシ バス�
 <a name="remarks"></a>コメント
 -------
 
-Windows の LegacyBusType メンバーの値に DEVPKEY_Device_LegacyBusType の値の設定、 [ **PNP_BUS_INFORMATION** ](https://msdn.microsoft.com/library/windows/hardware/ff559608)バス ドライバーへの応答を返す構造、 [**IRP_MN_QUERY_BUS_INFORMATION** ](https://msdn.microsoft.com/library/windows/hardware/ff551654)要求。 DEVPKEY_Device_LegacyBusType の値が 1 つの[ **INTERFACE_TYPE** ](https://msdn.microsoft.com/library/windows/hardware/ff547839) Wdm.h と Ntddk.h で定義されている列挙子の値。
+Windows の LegacyBusType メンバーの値に DEVPKEY_Device_LegacyBusType の値の設定、 [ **PNP_BUS_INFORMATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_pnp_bus_information)バス ドライバーへの応答を返す構造、 [**IRP_MN_QUERY_BUS_INFORMATION** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-bus-information)要求。 DEVPKEY_Device_LegacyBusType の値が 1 つの[ **INTERFACE_TYPE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ne-wdm-_interface_type) Wdm.h と Ntddk.h で定義されている列挙子の値。
 
-呼び出すことができます[ **SetupDiGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551963) DEVPKEY_Device_LegacyBusType の値を取得します。
+呼び出すことができます[ **SetupDiGetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) DEVPKEY_Device_LegacyBusType の値を取得します。
 
-Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_Device_LegacyBusType プロパティのキーをサポートしていません。 代わりに、Windows の以前のバージョンのプロパティの値へのアクセスに対応する SPDRP_LEGACYBUSTYPE 識別子を使用することができます。 Windows の以前のバージョンでこのプロパティの値にアクセスする方法については、次を参照してください。[デバイス インスタンス SPDRP_Xxx プロパティへのアクセス](https://msdn.microsoft.com/library/windows/hardware/ff537737)します。
+Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_Device_LegacyBusType プロパティのキーをサポートしていません。 代わりに、Windows の以前のバージョンのプロパティの値へのアクセスに対応する SPDRP_LEGACYBUSTYPE 識別子を使用することができます。 Windows の以前のバージョンでこのプロパティの値にアクセスする方法については、次を参照してください。[デバイス インスタンス SPDRP_Xxx プロパティへのアクセス](https://docs.microsoft.com/windows-hardware/drivers/install/accessing-device-instance-spdrp-xxx-properties)します。
 
 <a name="requirements"></a>要件
 ------------
@@ -89,13 +89,13 @@ Windows Server 2003、Windows XP、および Windows 2000 は、このプロパ�
 ## <a name="see-also"></a>関連項目
 
 
-[**INTERFACE_TYPE**](https://msdn.microsoft.com/library/windows/hardware/ff547839)
+[**INTERFACE_TYPE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ne-wdm-_interface_type)
 
-[**IRP_MN_QUERY_BUS_INFORMATION**](https://msdn.microsoft.com/library/windows/hardware/ff551654)
+[**IRP_MN_QUERY_BUS_INFORMATION**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-bus-information)
 
-[**PNP_BUS_INFORMATION**](https://msdn.microsoft.com/library/windows/hardware/ff559608)
+[**PNP_BUS_INFORMATION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_pnp_bus_information)
 
-[**SetupDiGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551963)
+[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
 

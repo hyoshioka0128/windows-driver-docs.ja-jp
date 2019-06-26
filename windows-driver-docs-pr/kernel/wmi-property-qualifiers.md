@@ -9,12 +9,12 @@ keywords:
 - 標準の MOF 修飾子 WDK WMI
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 86dd32e25cfe4a16e8a0c379abed235015420850
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 77aa7f128916d1d6b13def23324f3d733bb573c0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327226"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353775"
 ---
 # <a name="wmi-property-qualifiers"></a>WMI プロパティ修飾子
 
@@ -24,7 +24,7 @@ ms.locfileid: "63327226"
 
 次の表は、必須および省略可能な MOF プロパティ修飾子が WMI データまたはイベント ブロックで項目を定義するために使用できます。
 
-標準の MOF 修飾子を次に示します:**キー**、**読み取り**、**書き込み**、 **ValueMap**、および**値**. これらおよびその他の標準的な MOF 修飾子の詳細については、次を参照してください。 [MOF データ型](https://msdn.microsoft.com/library/aa392392)します。
+標準の MOF 修飾子を次に示します:**キー**、**読み取り**、**書き込み**、 **ValueMap**、および**値**. これらおよびその他の標準的な MOF 修飾子の詳細については、次を参照してください。 [MOF データ型](https://docs.microsoft.com/windows/desktop/WmiSdk/mof-data-types)します。
 
 <table>
 <colgroup>

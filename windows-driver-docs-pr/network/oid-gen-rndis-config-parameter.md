@@ -5,12 +5,12 @@ ms.assetid: 79e74e8b-7811-46a5-8ede-f6cca92967b0
 ms.date: 08/08/2017
 keywords: -OID_GEN_RNDIS_CONFIG_PARAMETER ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b45e4bea6361574ac528beef381c03ad0b1708c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 71c28e88e08d7f937cf675a8f1dbc176372eb549
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364168"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355119"
 ---
 # <a name="oidgenrndisconfigparameter"></a>OID\_GEN\_RNDIS\_CONFIG\_パラメーター
 
@@ -37,7 +37,7 @@ OID、セットとして\_GEN\_RNDIS\_CONFIG\_デバイス固有のパラメー�
 <a name="remarks"></a>コメント
 -------
 
-OID\_GEN\_RNDIS\_CONFIG\_RNDIS デバイスとパラメーターを使用します。 デバイス固有のパラメーターを設定するのにホストを使用します。 ミニポート ドライバーでは使用されません。 この OID の詳細については、次を参照してください。[デバイスに固有のパラメーターの設定](https://msdn.microsoft.com/library/windows/hardware/ff570784)します。
+OID\_GEN\_RNDIS\_CONFIG\_RNDIS デバイスとパラメーターを使用します。 デバイス固有のパラメーターを設定するのにホストを使用します。 ミニポート ドライバーでは使用されません。 この OID の詳細については、次を参照してください。[デバイスに固有のパラメーターの設定](https://docs.microsoft.com/windows-hardware/drivers/network/setting-device-specific-parameters)します。
 
 <a name="requirements"></a>必要条件
 ------------

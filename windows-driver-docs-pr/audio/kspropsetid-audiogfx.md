@@ -6,12 +6,12 @@ keywords:
 - KSPROPSETID_AudioGfx
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e94d4985a50fe9b1d11d0a6c7997bdccc46bb3a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5c0515e19bab81b74793c25095735b2b68447e09
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332532"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354319"
 ---
 # <a name="kspropsetidaudiogfx"></a>KSPROPSETID\_AudioGfx
 
@@ -19,7 +19,7 @@ ms.locfileid: "63332532"
 ## <span id="ddk_kspropsetid_audiogfx_ks"></span><span id="DDK_KSPROPSETID_AUDIOGFX_KS"></span>
 
 
-`KSPROPSETID_AudioGfx`プロパティ セットがレンダリングとキャプチャに使用されるオーディオ デバイスのデバイス Id の GFX フィルターを通知するために使用します。 ID が null で終わる Unicode 文字列の形式で指定されたデバイス (を参照してください[識別文字列](https://msdn.microsoft.com/library/windows/hardware/ff541224))。
+`KSPROPSETID_AudioGfx`プロパティ セットがレンダリングとキャプチャに使用されるオーディオ デバイスのデバイス Id の GFX フィルターを通知するために使用します。 ID が null で終わる Unicode 文字列の形式で指定されたデバイス (を参照してください[識別文字列](https://docs.microsoft.com/windows-hardware/drivers/install/device-identification-strings))。
 
 このセット内のプロパティ項目が KSPROPERTY によって指定された\_AUDIOGFX 列挙値。
 

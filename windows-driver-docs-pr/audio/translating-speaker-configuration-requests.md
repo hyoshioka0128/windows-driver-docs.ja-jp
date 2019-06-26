@@ -6,12 +6,12 @@ keywords:
 - スピーカー構成要求の WDK オーディオを翻訳します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c2b7d76dbe64d6e9ef547fe5ad3c828575d806e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 42f30166f6e88a552b113b532ae77272cfcfab07
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335417"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354167"
 ---
 # <a name="translating-speaker-configuration-requests"></a>スピーカー構成の要求を変換
 
@@ -23,7 +23,7 @@ ms.locfileid: "63335417"
 
  
 
-アプリケーションを呼び出すと**IDirectSound::SetSpeakerConfig** (参照 Microsoft Windows SDK のドキュメント)、DirectSound のスピーカー構成を変更する変換指定 DSSPEAKER\_*Xxx*スピーカー構成パラメーターと同じ KSAUDIO に\_*Xxx*チャネル構成マスク。 送信、 [ **KSPROPERTY\_オーディオ\_チャネル\_CONFIG** ](https://msdn.microsoft.com/library/windows/hardware/ff537250) DirectSound デバイスを表すフィルターには、このマスクを含むプロパティの設定要求。
+アプリケーションを呼び出すと**IDirectSound::SetSpeakerConfig** (参照 Microsoft Windows SDK のドキュメント)、DirectSound のスピーカー構成を変更する変換指定 DSSPEAKER\_*Xxx*スピーカー構成パラメーターと同じ KSAUDIO に\_*Xxx*チャネル構成マスク。 送信、 [ **KSPROPERTY\_オーディオ\_チャネル\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-channel-config) DirectSound デバイスを表すフィルターには、このマスクを含むプロパティの設定要求。
 
 次の表では、各 DSSPEAKER\_*Xxx*左側のパラメーターは同等の KSAUDIO と組み合わせて使用\_*Xxx*右側のチャネル構成マスク。
 
@@ -76,7 +76,7 @@ ms.locfileid: "63335417"
 
  
 
-上記の表に、DirectSound は KSAUDIO などについては、同じチャネル マスクを持つそのヘッドホンによる立体音響とステレオのスピーカーの構成を指定します\_スピーカー\_ステレオします。 これら 2 つの構成を区別するために DirectSound 送信フィルター スピーカー ジオメトリを指定します 2 番目のプロパティの設定要求 (を参照してください[ **KSPROPERTY\_オーディオ\_ステレオ\_。スピーカー\_GEOMETRY**](https://msdn.microsoft.com/library/windows/hardware/ff537305))。 ヘッドホンを示すためには、DirectSound は KSAUDIO の値を渡します。\_ステレオ\_スピーカー\_GEOMETRY\_ヘッドホンによる立体音響スピーカー geometry 要求。
+上記の表に、DirectSound は KSAUDIO などについては、同じチャネル マスクを持つそのヘッドホンによる立体音響とステレオのスピーカーの構成を指定します\_スピーカー\_ステレオします。 これら 2 つの構成を区別するために DirectSound 送信フィルター スピーカー ジオメトリを指定します 2 番目のプロパティの設定要求 (を参照してください[ **KSPROPERTY\_オーディオ\_ステレオ\_。スピーカー\_GEOMETRY**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-stereo-speaker-geometry))。 ヘッドホンを示すためには、DirectSound は KSAUDIO の値を渡します。\_ステレオ\_スピーカー\_GEOMETRY\_ヘッドホンによる立体音響スピーカー geometry 要求。
 
 ステレオ スピーカー、ただし、呼び出し元が場合**SetSpeakerConfig**可能 DSSPEAKER をいくつかのいずれかを指定できます\_*Xxx*ステレオのスピーカーのジオメトリ。 これらの次の表と同等の KSAUDIO 左の列には表示\_*Xxx*パラメーターは、右側に表示されます。
 

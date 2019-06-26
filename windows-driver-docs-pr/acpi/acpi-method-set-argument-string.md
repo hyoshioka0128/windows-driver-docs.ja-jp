@@ -6,17 +6,17 @@ keywords:
 - ACPI_METHOD_SET_ARGUMENT_STRING マクロ ACPI デバイス
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7278e3c3bebed21c4330839a01a728be90f3773b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 38e1af1b8530d391432ad2a8c94a6807a6685918
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328847"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355861"
 ---
 # <a name="acpimethodsetargumentstring-macro"></a>ACPI\_メソッド\_設定\_引数\_文字列マクロ
 
 
-ACPI\_メソッド\_設定\_引数\_文字列マクロがのメンバーを設定、 [ **ACPI\_メソッド\_引数**](https://msdn.microsoft.com/library/windows/hardware/ff536125)文字列値の構造体。
+ACPI\_メソッド\_設定\_引数\_文字列マクロがのメンバーを設定、 [ **ACPI\_メソッド\_引数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ns-acpiioct-_acpi_method_argument_v1)文字列値の構造体。
 
 <a name="syntax"></a>構文
 ------
@@ -70,4 +70,4 @@ NULL で終わる ASCII 文字列へのポインター。
 ## <a name="see-also"></a>関連項目
 
 
-[**ACPI\_メソッド\_引数**](https://msdn.microsoft.com/library/windows/hardware/ff536125) 
+[**ACPI\_メソッド\_引数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ns-acpiioct-_acpi_method_argument_v1) 

@@ -4,12 +4,12 @@ description: Windows 64 ビット版には、ドライバーに読み込まれ�
 ms.assetid: 52F309E4-9553-456B-BBD6-217318FC7222
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a76b55ed3084b756e802d834f071e57629e63b8d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cf33c02e06583e657c4ab38da1d5cce2a848afc2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339926"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356299"
 ---
 # <a name="test-signing"></a>テスト署名
 
@@ -51,7 +51,7 @@ BCDEdit を使用して、ユーザーは、システムの Administrators グ�
 *抜粋*[テスト署名ドライバー パッケージ方法](how-to-test-sign-a-driver-package.md):
 
 <a href="" id="signing-computer"></a>**コンピューターの署名**  
-これは、テスト署名ドライバーが Windows Vista および Windows の以降のバージョンのパッケージ化するために使用するコンピューターです。 このコンピューターでは、Windows XP SP2 または以降のバージョンの Windows が実行されている必要があります。 使用するには、[ドライバーの署名ツール](https://msdn.microsoft.com/library/windows/hardware/ff552958)以降のバージョンの Windows Driver Kit (WDK) がインストールされている、このコンピューターは、Windows Vista をいる必要があります。 これにより、開発用コンピューターこともできます。
+これは、テスト署名ドライバーが Windows Vista および Windows の以降のバージョンのパッケージ化するために使用するコンピューターです。 このコンピューターでは、Windows XP SP2 または以降のバージョンの Windows が実行されている必要があります。 使用するには、[ドライバーの署名ツール](https://docs.microsoft.com/windows-hardware/drivers/devtest/tools-for-signing-drivers)以降のバージョンの Windows Driver Kit (WDK) がインストールされている、このコンピューターは、Windows Vista をいる必要があります。 これにより、開発用コンピューターこともできます。
 
 <a href="" id="test-computer"></a>**テスト コンピューター**  
 これは、インストールし、テスト署名されたドライバー パッケージをテストするために使用するコンピューターです。 このコンピューターでは、Windows Vista または Windows の以降のバージョンが実行されている必要があります。
@@ -107,7 +107,7 @@ BCDEdit を使用して、ユーザーは、システムの Administrators グ�
 
     -   **-Ss**オプションは、テスト証明書を含む証明書ストアの名前を指定します (*PrivateCertStore*)。
 
-    -   **-N CN =** オプション Contoso.com(Test)、証明書の名前を指定します。 この名前を併用、 [ **SignTool** ](https://msdn.microsoft.com/library/windows/hardware/ff551778)証明書を識別するためのツール。
+    -   **-N CN =** オプション Contoso.com(Test)、証明書の名前を指定します。 この名前を併用、 [ **SignTool** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/signtool)証明書を識別するためのツール。
 
     -   *ContosoTest.cer* Contoso.com(Test) テストの証明書のコピーを含むファイルの名前です。 証明書ファイルを使用して、信頼されたルート証明機関証明書ストアと信頼された発行元の証明書ストアに証明書を追加します。
 
@@ -219,7 +219,7 @@ BCDEdit を使用して、ユーザーは、システムの Administrators グ�
 
     -   **/N**オプションは、証明書の名前を指定します (*Contoso.com(Test))* 指定された証明書ストアにインストールされています。
 
-    -   **/T**オプション、TSA の URL を指定します (*http://timestamp.verisign.com/scripts/timstamp.dll*) が、タイムスタンプ、デジタル署名します。
+    -   **/T**オプション、TSA の URL を指定します ( *http://timestamp.verisign.com/scripts/timstamp.dll* ) が、タイムスタンプ、デジタル署名します。
         **重要な**キーの失効がコード署名の秘密キーの署名者の場合は、侵害の必要な情報を提供するタイムスタンプを含むです。
 
 
@@ -268,7 +268,7 @@ tstamd64.cat では、デジタル署名されるカタログ ファイルの名
 
 2.  *抜粋を選択した*[テスト コンピューターにテスト証明書をインストールするを使用して CertMgr](using-certmgr-to-install-test-certificates-on-a-test-computer.md):
 
-    証明書のコピー (*.cer*) に使用したファイルは、[テスト署名](test-signing-driver-packages.md)ドライバーは、テスト コンピューターにします。 証明書ファイルは、テスト コンピューター上の任意のディレクトリにコピーできます。
+    証明書のコピー ( *.cer*) に使用したファイルは、[テスト署名](test-signing-driver-packages.md)ドライバーは、テスト コンピューターにします。 証明書ファイルは、テスト コンピューター上の任意のディレクトリにコピーできます。
 
     次の CertMgr コマンドでは、証明書のファイル、証明書を追加します。 *CertificateFileName.cer*テスト コンピューター上のストアの証明書には、信頼されたルート証明機関。
 
@@ -282,7 +282,7 @@ tstamd64.cat では、デジタル署名されるカタログ ファイルの名
     CertMgr.exe /add CertificateFileName.cer /s /r localMachine trustedpublisher
     ```
 
-    場所 (*からの抜粋* [ **CertMgr**](https://msdn.microsoft.com/library/windows/hardware/ff543411))。
+    場所 (*からの抜粋* [ **CertMgr**](https://docs.microsoft.com/windows-hardware/drivers/devtest/certmgr))。
 
     /add CertificateName
 

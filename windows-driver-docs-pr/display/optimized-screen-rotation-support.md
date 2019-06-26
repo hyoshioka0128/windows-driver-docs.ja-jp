@@ -4,12 +4,12 @@ description: Windows 8 では、回転モードの変更中にグラフィック
 ms.assetid: CFDB4713-EC90-4FAB-B379-742C52888BB3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b5daba1898d782332cd91d0a7922a3215128ffad
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ee90d7bdf097aaa3dd3604f2cf5a47f12ce8f2b5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358365"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353430"
 ---
 # <a name="optimized-screen-rotation-support"></a>最適化された画面回転のサポート
 
@@ -33,11 +33,11 @@ Windows 8 では、回転モードの変更中にグラフィックス アダプ
 
 ディスプレイのミニポート ドライバーでは、これらのドライバー実装関数を呼び出すときに、パスの回転を更新をサポートする必要があります。
 
--   [*DxgkDdiCommitVidPn*](https://msdn.microsoft.com/library/windows/hardware/ff559597)
--   [*DxgkDdiUpdateActiveVidPnPresentPath*](https://msdn.microsoft.com/library/windows/hardware/ff560803)
+-   [*DxgkDdiCommitVidPn*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_commitvidpn)
+-   [*DxgkDdiUpdateActiveVidPnPresentPath*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_updateactivevidpnpresentpath)
 
-ドライバーへの呼び出しで滑らかな回転のサポートを指定する必要があります[ *DxgkDdiUpdateActiveVidPnPresentPath* ](https://msdn.microsoft.com/library/windows/hardware/ff560803)を設定して、 [ **DXGK\_DRIVERCAPS**](https://msdn.microsoft.com/library/windows/hardware/ff561062)構造体の**SupportSmoothRotation**メンバーは、Windows 8 以降で使用されます。
-ドライバーを呼び出し中にパスの回転を設定することが常にある必要があります[ *DxgkDdiCommitVidPn*](https://msdn.microsoft.com/library/windows/hardware/ff559597)します。
+ドライバーへの呼び出しで滑らかな回転のサポートを指定する必要があります[ *DxgkDdiUpdateActiveVidPnPresentPath* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_updateactivevidpnpresentpath)を設定して、 [ **DXGK\_DRIVERCAPS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_drivercaps)構造体の**SupportSmoothRotation**メンバーは、Windows 8 以降で使用されます。
+ドライバーを呼び出し中にパスの回転を設定することが常にある必要があります[ *DxgkDdiCommitVidPn*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_commitvidpn)します。
 
 ## <a name="span-idsmoothrotationscenariosspanspan-idsmoothrotationscenariosspanspan-idsmoothrotationscenariosspansmooth-rotation-scenarios"></a><span id="Smooth_rotation_scenarios"></span><span id="smooth_rotation_scenarios"></span><span id="SMOOTH_ROTATION_SCENARIOS"></span>滑らかな回転シナリオ
 

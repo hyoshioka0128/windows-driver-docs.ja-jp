@@ -7,12 +7,12 @@ keywords:
 - D3DRENDERSTATE_MIPMAPLODBIAS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fd7bf824c217ba44d18926f327f941b0c9b8a432
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2f218561192944990233f59d9a6c7a6143adc2f9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358416"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379878"
 ---
 # <a name="mip-map-surface-creation-update"></a>MIP マップ サーフェス作成の更新
 
@@ -22,7 +22,7 @@ ms.locfileid: "63358416"
 
 DirectX 7.0 では、前に添付ファイル チェーンの MIP マップは、通常その MIP マップのサブレベルのみを行いました。 立方体環境マップの登場によって、これは、不要になった場合。 自体の立方体の環境の各面が MIP マップをする可能性があり、キューブ マップの他の面へのリンクと同様、MIP マップの下位レベルへのリンクの立方体環境マップの 1 つの面を形成のサーフェスの添付ファイルのチェーンがそのためで構成できます。
 
-新しい機能のビットがされているように、添付ファイルのチェーンの MIP マップの画面は、サーフェスを低いレベル MIP マップだけ以外へのリンクを含めるようになりましたことができます、導入された、DDSCAPS2\_MIPMAPSUBLEVEL (を参照してください、 [ **DDSCAPS2**](https://msdn.microsoft.com/library/windows/hardware/ff550292)ここと、次のフラグの構造)。 このビットは、MIP マップ チェーンの最上位レベルの画面がすべて設定されます。 つまり、DDSCAPS2 した画面を探して、最上位のサーフェイスの添付ファイル リストを走査して、MIP マップ チェーンの次の最低レベルを表す、サーフェイスを見つけることができます、MIP マップ チェーンの最上位レベルの画面を与え\_MIPMAPSUBLEVEL機能ビットが設定されます。
+新しい機能のビットがされているように、添付ファイルのチェーンの MIP マップの画面は、サーフェスを低いレベル MIP マップだけ以外へのリンクを含めるようになりましたことができます、導入された、DDSCAPS2\_MIPMAPSUBLEVEL (を参照してください、 [ **DDSCAPS2**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff550292(v=vs.85))ここと、次のフラグの構造)。 このビットは、MIP マップ チェーンの最上位レベルの画面がすべて設定されます。 つまり、DDSCAPS2 した画面を探して、最上位のサーフェイスの添付ファイル リストを走査して、MIP マップ チェーンの次の最低レベルを表す、サーフェイスを見つけることができます、MIP マップ チェーンの最上位レベルの画面を与え\_MIPMAPSUBLEVEL機能ビットが設定されます。
 
 機能は、サーフェイスがサーフェイスでのチェック、立方体環境マップの面であるかどうかを DDSCAPS2 をビット\_キューブ マップします。 場合、DDSCAPS\_MIPMAP 機能ビットが設定されていない、この画面の添付ファイルの一覧が作成されているキューブ マップの他の面から成る (確認機能ビット DDSCAPS2\_キューブ マップ\_POSITIVEX、DDSCAPS2\_CUBEMAP\_NEGATIVEX、DDSCAPS2\_CUBEMAP\_POSITIVEY、DDSCAPS2\_CUBEMAP\_NEGATIVEY、DDSCAPS2\_CUBEMAP\_POSITIVEZ、DDSCAPS2\_CUBEMAP\_NEGATIVEZ)。
 

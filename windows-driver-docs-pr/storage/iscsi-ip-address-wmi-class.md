@@ -4,12 +4,12 @@ description: ISCSI\_IP\_アドレスの WMI クラス
 ms.assetid: 3ceeb54f-ecc5-40c5-b0a8-8c6f86203f1c
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: c0738f9bc137a4adaf8e753a1631f7088c0a9265
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cfd81209cf19e9884ad4aeab26eff35ff18a679a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327039"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378447"
 ---
 # <a name="iscsiipaddress-wmi-class"></a>ISCSI\_IP\_アドレスの WMI クラス
 
@@ -58,7 +58,7 @@ class ISCSI_IP_Address {
 };
 ```
 
-WMI ツールのスイートでは、上記のクラス定義をコンパイルするときに生成、 [ **ISCSI\_IP\_アドレス**](https://msdn.microsoft.com/library/windows/hardware/ff561536)データ構造体。
+WMI ツールのスイートでは、上記のクラス定義をコンパイルするときに生成、 [ **ISCSI\_IP\_アドレス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsidef/ns-iscsidef-_iscsi_ip_address)データ構造体。
 
  
 

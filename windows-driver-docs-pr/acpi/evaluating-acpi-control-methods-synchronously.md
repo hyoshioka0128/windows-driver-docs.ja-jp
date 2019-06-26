@@ -8,33 +8,33 @@ keywords:
 - ACPI 制御メソッド WDK、SendDownStreamIrp コード サンプル
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 934819d87936d2ce2b705bc3090751284415d63c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3c5a09a840543b8d122a3cc5ba2fae0279e023a1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328825"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355835"
 ---
 # <a name="evaluating-acpi-control-methods-synchronously"></a>ACPI 制御メソッドを同期的に評価する
 
 
 デバイス ドライバーは、次のデバイス制御要求を使用して、デバイスを ACPI 名前空間で定義されている制御メソッドを同期的に評価できます。
 
--   [**IOCTL\_ACPI\_EVAL\_メソッド**](https://msdn.microsoft.com/library/windows/hardware/ff536148)
+-   [**IOCTL\_ACPI\_EVAL\_メソッド**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ni-acpiioct-ioctl_acpi_eval_method)
 
     この要求は、要求を送信するデバイスの ACPI 名前空間で直接の子オブジェクトであるコントロールのメソッドを評価します。
 
--   [**IOCTL\_ACPI\_EVAL\_メソッド\_例**](https://msdn.microsoft.com/library/windows/hardware/ff536149)
+-   [**IOCTL\_ACPI\_EVAL\_メソッド\_例**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ni-acpiioct-ioctl_acpi_eval_method_ex)
 
     この要求が同期的に、デバイスまたはデバイスの子オブジェクトでサポートされているコントロールのメソッドを評価する、要求が送信されます。
 
-[ACPI の Windows ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff540493)、Acpi.sys、システムの説明テーブルに指定されているデバイスに代わって、これらの要求の処理、 [ACPI BIOS](https://msdn.microsoft.com/library/windows/hardware/ff540487)します。 これらの要求の要件に適合するカーネル モード デバイス ドライバーで使用できる[カーネル モード ドライバー フレームワーク (KMDF)](https://msdn.microsoft.com/library/windows/hardware/dn265580)または[Windows Driver Model (WDM)](https://msdn.microsoft.com/library/windows/hardware/ff565698)します。 Windows 8 以降で、ユーザー モード デバイス ドライバーの要件に適合する[ユーザー モード ドライバー フレームワーク (UMDF)](https://msdn.microsoft.com/library/windows/hardware/ff560442)これらの要求を使用することができます。
+[ACPI の Windows ドライバー](https://docs.microsoft.com/windows-hardware/drivers/kernel/acpi-driver)、Acpi.sys、システムの説明テーブルに指定されているデバイスに代わって、これらの要求の処理、 [ACPI BIOS](https://docs.microsoft.com/windows-hardware/drivers/kernel/acpi-bios)します。 これらの要求の要件に適合するカーネル モード デバイス ドライバーで使用できる[カーネル モード ドライバー フレームワーク (KMDF)](https://docs.microsoft.com/windows-hardware/drivers/wdf/design-guide)または[Windows Driver Model (WDM)](https://docs.microsoft.com/windows-hardware/drivers/kernel/windows-driver-model)します。 Windows 8 以降で、ユーザー モード デバイス ドライバーの要件に適合する[ユーザー モード ドライバー フレームワーク (UMDF)](https://docs.microsoft.com/windows-hardware/drivers/wdf/overview-of-the-umdf)これらの要求を使用することができます。
 
 たとえば、WDM ドライバーは、次の一連のこれらの Ioctl のいずれかを使用する操作を実行します。
 
-1.  呼び出し[ **IoBuildDeviceIoControlRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff548318)要求を構築します。
+1.  呼び出し[ **IoBuildDeviceIoControlRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iobuilddeviceiocontrolrequest)要求を構築します。
 
-2.  呼び出し[**保留**](https://msdn.microsoft.com/library/windows/hardware/ff548336)デバイス スタックの要求を送信します。
+2.  呼び出し[**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)デバイス スタックの要求を送信します。
 
 3.  下位レベルのドライバーが要求を完了したことをドライバーに通知する I/O マネージャーを待機します。
 
@@ -62,9 +62,9 @@ ms.locfileid: "63328825"
 
 -   *イベント*呼び出し元が割り当てたで初期化イベント オブジェクトへのポインターに設定されます。 ドライバーは、I/O マネージャーは、このイベントは、下位レベルのドライバーが要求を完了していることを示しますを通知するまで待機します。
 
--   *OutputBuffer*へのポインターを提供する[ **ACPI\_EVAL\_出力\_バッファー** ](https://msdn.microsoft.com/library/windows/hardware/ff536123)からの出力引数を含む構造体、メソッドを制御します。 出力引数は、特定の制御メソッドに固有です。 任意の出力を返すドライバーの場合は、すべての出力引数を保持するために十分な大きさのバッファーを割り当てる必要があります。
+-   *OutputBuffer*へのポインターを提供する[ **ACPI\_EVAL\_出力\_バッファー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ns-acpiioct-_acpi_eval_output_buffer_v1)からの出力引数を含む構造体、メソッドを制御します。 出力引数は、特定の制御メソッドに固有です。 任意の出力を返すドライバーの場合は、すべての出力引数を保持するために十分な大きさのバッファーを割り当てる必要があります。
 
--   *IoStatusBlock*に設定されている、 [ **IO\_状態\_ブロック**](https://msdn.microsoft.com/library/windows/hardware/ff550671)構造体。 下位レベルのドライバーによって設定された要求の状態が返されます。
+-   *IoStatusBlock*に設定されている、 [ **IO\_状態\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_status_block)構造体。 下位レベルのドライバーによって設定された要求の状態が返されます。
 
 入力引数を受け取らないコントロールのメソッドを評価する方法のコード例では、次を参照してください。[コントロール メソッドなし入力引数を評価する](evaluating-a-control-method-without-input-arguments.md)します。
 

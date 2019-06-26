@@ -4,12 +4,12 @@ description: MSiSCSI\_ManagementOperations WMI クラス
 ms.assetid: 1037be46-6cae-458d-8549-927c7a053195
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: aa4fa08c14e1079c80d10692bcc454dd00663512
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 20291f4cdd88cddc0caa62fd1c1b3746caafa1ab
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354552"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379089"
 ---
 # <a name="msiscsimanagementoperations-wmi-class"></a>MSiSCSI\_ManagementOperations WMI クラス
 
@@ -71,7 +71,7 @@ class MSiSCSI_ManagementOperations
 };
 ```
 
-1 つ生成 WMI ツールのスイートでは、上記のクラス定義をコンパイルするときに、 [MSiSCSI\_ManagementOperations](https://msdn.microsoft.com/library/windows/hardware/ff563069)データ構造体。
+1 つ生成 WMI ツールのスイートでは、上記のクラス定義をコンパイルするときに、 [MSiSCSI\_ManagementOperations](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)データ構造体。
 
  
 

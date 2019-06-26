@@ -5,12 +5,12 @@ ms.assetid: b0c06db9-82ca-4f94-80e6-3cf13197abf5
 ms.date: 08/08/2017
 keywords: -NDIS_STATUS_WWAN_PREFERRED_PROVIDERS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 089a08a8b4de53142a90d5b4e5992bbbe7f26fa7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 115c02b4338ee27334dafe5fb6ea7d18b63500a2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341394"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377615"
 ---
 # <a name="ndisstatuswwanpreferredproviders"></a>NDIS\_状態\_WWAN\_優先\_プロバイダー
 
@@ -19,7 +19,7 @@ ms.locfileid: "63341394"
 
 ミニポート ドライバーには、この通知が不要なイベントを送信できます。
 
-この通知を使用して、 [ **NDIS\_WWAN\_優先\_プロバイダー** ](https://msdn.microsoft.com/library/windows/hardware/ff567913)構造体。
+この通知を使用して、 [ **NDIS\_WWAN\_優先\_プロバイダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_preferred_providers)構造体。
 
 <a name="remarks"></a>注釈
 -------
@@ -28,7 +28,7 @@ ms.locfileid: "63341394"
 
 ミニポート ドライバーでは、このを示す値を使用して、結果として更新プログラムに関する MB サービスに通知する、 [OID\_WWAN\_優先\_プロバイダー](oid-wwan-preferred-providers.md) MB サービスからの要求のセット。 OID への応答を\_WWAN\_優先\_プロバイダー セット要求内の 0 個の要素を含める必要があります、 **PreferredListHeader**メンバー。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -51,7 +51,7 @@ ms.locfileid: "63341394"
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_WWAN\_優先\_プロバイダー**](https://msdn.microsoft.com/library/windows/hardware/ff567913)
+[**NDIS\_WWAN\_優先\_プロバイダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_preferred_providers)
 
 [OID\_WWAN\_優先\_プロバイダー](oid-wwan-preferred-providers.md)
 

@@ -20,12 +20,12 @@ keywords:
 - ピンの WDK オーディオ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 27992b8952761b42a049e746ea329a2446297586
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c43919ff22e8025b3aeb3feba6a21a4315be8298
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331478"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355697"
 ---
 # <a name="audio-endpoints-properties-and-events"></a>オーディオのエンドポイント、プロパティ、およびイベント
 
@@ -33,7 +33,7 @@ ms.locfileid: "63331478"
 ## <span id="audio_properties_and_events"></span><span id="AUDIO_PROPERTIES_AND_EVENTS"></span>
 
 
-PortCls システム ドライバーが記載されている組み込みの操作のサブセットをサポート[KS プロパティ、イベント、およびメソッド](https://msdn.microsoft.com/library/windows/hardware/ff567673)します。
+PortCls システム ドライバーが記載されている組み込みの操作のサブセットをサポート[KS プロパティ、イベント、およびメソッド](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-properties--events--and-methods)します。
 
 Portcls.sys でポート ドライバーがサポートのいくつかのプロパティとイベントの要求ハンドラーを提供することで、ミニポート ドライバーのハンドラーには、他の要求を転送することによってプロパティおよびイベント。
 
@@ -57,37 +57,37 @@ WaveCyclic、WavePci、MIDI、および Dmu ポート ドライバーの現在�
 
 オーディオのアダプターのドライバーでは、次の標準的なプロパティ セットの一部またはすべてをサポートします。
 
-[KSPROPSETID\_AC3](https://msdn.microsoft.com/library/windows/hardware/ff537436)
+[KSPROPSETID\_AC3](https://docs.microsoft.com/windows-hardware/drivers/audio/kspropsetid-ac3)
 
-[KSPROPSETID\_音響\_エコー\_キャンセル](https://msdn.microsoft.com/library/windows/hardware/ff537438)
+[KSPROPSETID\_音響\_エコー\_キャンセル](https://docs.microsoft.com/windows-hardware/drivers/audio/kspropsetid-acoustic-echo-cancel)
 
-[KSPROPSETID\_オーディオ](https://msdn.microsoft.com/library/windows/hardware/ff537440)
+[KSPROPSETID\_オーディオ](https://docs.microsoft.com/windows-hardware/drivers/audio/kspropsetid-audio)
 
-[KSPROPSETID\_DirectSound3DBuffer](https://msdn.microsoft.com/library/windows/hardware/ff537447)
+[KSPROPSETID\_DirectSound3DBuffer](https://docs.microsoft.com/windows-hardware/drivers/audio/kspropsetid-directsound3dbuffer)
 
-[KSPROPSETID\_DirectSound3DListener](https://msdn.microsoft.com/library/windows/hardware/ff537449)
+[KSPROPSETID\_DirectSound3DListener](https://docs.microsoft.com/windows-hardware/drivers/audio/kspropsetid-directsound3dlistener)
 
-[KSPROPSETID\_DrmAudioStream](https://msdn.microsoft.com/library/windows/hardware/ff537481)
+[KSPROPSETID\_DrmAudioStream](https://docs.microsoft.com/windows-hardware/drivers/audio/kspropsetid-drmaudiostream)
 
-[KSPROPSETID\_全般](https://msdn.microsoft.com/library/windows/hardware/ff566576)
+[KSPROPSETID\_全般](https://docs.microsoft.com/windows-hardware/drivers/stream/kspropsetid-general)
 
-[KSPROPSETID\_Hrtf3d](https://msdn.microsoft.com/library/windows/hardware/ff537482)
+[KSPROPSETID\_Hrtf3d](https://docs.microsoft.com/windows-hardware/drivers/audio/kspropsetid-hrtf3d)
 
-[KSPROPSETID\_ジャック](https://msdn.microsoft.com/library/windows/hardware/ff537484)
+[KSPROPSETID\_ジャック](https://docs.microsoft.com/windows-hardware/drivers/audio/kspropsetid-jack)
 
-[KSPROPSETID\_暗証番号 (pin)](https://msdn.microsoft.com/library/windows/hardware/ff566584)
+[KSPROPSETID\_暗証番号 (pin)](https://docs.microsoft.com/windows-hardware/drivers/stream/kspropsetid-pin)
 
-[KSPROPSETID\_シンセサイザー](https://msdn.microsoft.com/library/windows/hardware/ff537486)
+[KSPROPSETID\_シンセサイザー](https://docs.microsoft.com/windows-hardware/drivers/audio/kspropsetid-synth)
 
-[KSPROPSETID\_シンセサイザー\_Dls](https://msdn.microsoft.com/library/windows/hardware/ff537488)
+[KSPROPSETID\_シンセサイザー\_Dls](https://docs.microsoft.com/windows-hardware/drivers/audio/kspropsetid-synth-dls)
 
-[KSPROPSETID\_TopologyNode](https://msdn.microsoft.com/library/windows/hardware/ff537491)
+[KSPROPSETID\_TopologyNode](https://docs.microsoft.com/windows-hardware/drivers/audio/kspropsetid-topologynode)
 
 すべてのオーディオ ドライバーのサポート、 **KSPROPSETID\_オーディオ**プロパティ セット。
 
 オーディオのアダプターのドライバーによっては、次のイベント セットをサポートします。
 
-[KSEVENTSETID\_AudioControlChange](https://msdn.microsoft.com/library/windows/hardware/ff537122)
+[KSEVENTSETID\_AudioControlChange](https://docs.microsoft.com/windows-hardware/drivers/audio/kseventsetid-audiocontrolchange)
 
 さらに、オーディオのアダプターのドライバーは Ksmedia.h のヘッダー ファイルで定義されているその他のプロパティ セットのプロパティのハンドラーを提供する無料です。 ドライバーがまたを定義して独自のカスタム プロパティとイベントのセットをサポートしますが、カスタム プロパティまたはイベントについて認識しているアプリケーションのみが使用できます。
 

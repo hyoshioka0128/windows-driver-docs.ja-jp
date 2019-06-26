@@ -14,12 +14,12 @@ keywords:
 - WDK Windows 2000 カーネル ストリーミング、ミニドライバー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c51b3d69e2ac63f4eb9fe0d60d1f8041d8149c1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d9250487bec1d1aa79d28c02a401a56e585d0cee
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324764"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377787"
 ---
 # <a name="streaming-minidrivers"></a>ストリーミングのミニドライバー
 
@@ -27,7 +27,7 @@ ms.locfileid: "63324764"
 
 
 
-**注**  このセクションでは、古いについて*Stream.sys*クラス ドライバー。 Microsoft Windows XP のリリースでは、Microsoft サポートしている*Stream.sys*既存のドライバーに対してだけです。 このリリースの時点では、ベンダーは、クラスの AVStream ドライバー モデルを使用するビデオまたはオーディオ/ビデオ、マルチ メディア ドライバーの新規の開発を検討をお勧めします。 詳細を確認、 [AVStream の概要](avstream-overview.md)します。 オーディオのみのドライバーを開発する場合は、Microsoft の下で、オーディオ ミニポート ドライバーを記述する必要があります*Portcls.sys*クラス ドライバー。 詳細については、次を参照してください。[オーディオ ミニポート ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff536206)します。
+**注**  このセクションでは、古いについて*Stream.sys*クラス ドライバー。 Microsoft Windows XP のリリースでは、Microsoft サポートしている*Stream.sys*既存のドライバーに対してだけです。 このリリースの時点では、ベンダーは、クラスの AVStream ドライバー モデルを使用するビデオまたはオーディオ/ビデオ、マルチ メディア ドライバーの新規の開発を検討をお勧めします。 詳細を確認、 [AVStream の概要](avstream-overview.md)します。 オーディオのみのドライバーを開発する場合は、Microsoft の下で、オーディオ ミニポート ドライバーを記述する必要があります*Portcls.sys*クラス ドライバー。 詳細については、次を参照してください。[オーディオ ミニポート ドライバー](https://docs.microsoft.com/windows-hardware/drivers/audio/audio-miniport-drivers)します。
 
  
 
@@ -48,7 +48,7 @@ ms.locfileid: "63324764"
 -   クラスのドライバー、PnP マネージャーのすべての対話を処理します。 以下に例を示します。
     -   クラスのドライバーでは、ミニドライバーの代わりに、機能のデバイス オブジェクトを作成します。
     -   クラスのドライバーでは、(ポート アドレス変換、変換しメモリの範囲、マッピング、および割り込みを接続する) などのリソースの構成を管理します。
-    -   クラス ドライバーの PnP Irp では、処理など[ **IRP\_MN\_開始\_デバイス**](https://msdn.microsoft.com/library/windows/hardware/ff551749)、または[ **IRP\_MN\_停止\_デバイス**](https://msdn.microsoft.com/library/windows/hardware/ff551755)します。
+    -   クラス ドライバーの PnP Irp では、処理など[ **IRP\_MN\_開始\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)、または[ **IRP\_MN\_停止\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-stop-device)します。
 -   すべての低レベルのバッファー管理は、クラス ドライバーによって処理されます。
     -   必要な場合は、DMA アダプタ オブジェクトを割り当てています。
     -   Dma バッファーをマッピングし、スキャッター/ギャザーの構築が一覧表示します。

@@ -6,22 +6,22 @@ keywords:
 - OID_TCP4_OFFLOAD_STATS
 ms.date: 11/06/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f532fea0a04e142555135bb1b351224299158e71
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f8f9809437d385555e02113006cced3145cf2e32
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63350904"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353693"
 ---
 # <a name="oidtcp4offloadstats"></a>OID_TCP4_OFFLOAD_STATS
 
 ホストは、クエリ統計 IPv4 データグラムを伝達するオフロードの TCP 接続上で、オフロード対象が処理される TCP セグメントを作成する OID_TCP4_OFFLOAD_STATS OID をスタックします。 ホストのスタックは、この OID がゼロにこのような統計情報のカウンターをリセットする、オフロード対象を設定します。
 
-OID_TCP4_OFFLOAD_STATS のクエリに応答してでは、オフロード対象を提供する入力で[TCP_OFFLOAD_STATS](https://msdn.microsoft.com/library/windows/hardware/ff570940)構造体。
+OID_TCP4_OFFLOAD_STATS のクエリに応答してでは、オフロード対象を提供する入力で[TCP_OFFLOAD_STATS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndischimney/ns-ndischimney-_tcp_offload_stats)構造体。
 
 OID_TCP4_OFFLOAD_STATS のセットへの応答、オフロード対象は、すべての IPv4 データグラムを伝えるオフロードの TCP 接続の TCP 統計カウンターをゼロにリセットする必要があります。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 | | |
 | --- | --- |

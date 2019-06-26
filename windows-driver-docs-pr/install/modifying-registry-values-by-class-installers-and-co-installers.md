@@ -10,12 +10,12 @@ keywords:
 - 共同インストーラー WDK デバイスのインストール、レジストリ値を変更します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1230f334bcc8a17c0f6510210c1e8b52fb0f193c
-ms.sourcegitcommit: 3a51ae8db61be0e25549a5527ea3143e3025e82f
+ms.openlocfilehash: 9a0213675ea93324f3207e2815ec4734e7252fd6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65456374"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377644"
 ---
 # <a name="modifying-registry-values-by-class-installers-and-co-installers"></a>クラス インストーラーと共同インストーラーでのレジストリ値の変更
 
@@ -38,11 +38,11 @@ ms.locfileid: "65456374"
 
     クラスのインストーラーと共同インストーラーが使用する方法についての制限に従う必要があります、 [RunOnce レジストリ キー](runonce-registry-key.md)で[INF ファイル](overview-of-inf-files.md)します。 具体的には、このレジストリ キーは、ソフトウェアのデバイス列挙子 (SWENUM) を使用して列挙されるソフトウェア専用デバイスのインストールにのみ使用する必要があります。
 
--   クラスのインストーラーと共同インストーラーを変更できる、 **CoInstallers32**と**EnumPropPages32**デバイスのレジストリ値*ソフトウェア キー*インストーラーの処理[ **DIF_REGISTER_COINSTALLERS** ](https://msdn.microsoft.com/library/windows/hardware/ff543715)要求。
+-   クラスのインストーラーと共同インストーラーを変更できる、 **CoInstallers32**と**EnumPropPages32**デバイスのレジストリ値*ソフトウェア キー*インストーラーの処理[ **DIF_REGISTER_COINSTALLERS** ](https://docs.microsoft.com/windows-hardware/drivers/install/dif-register-coinstallers)要求。
 
 次のガイドラインは、クラスのインストーラーや共同インストーラーによってレジストリ値を安全に変更する後にする必要があります。
 
--   クラスのインストーラーと共同インストーラーを使用する必要がありますまず[ **SetupDiCreateDevRegKey** ](https://msdn.microsoft.com/library/windows/hardware/ff550973)または[ **SetupDiOpenDevRegKey** ](https://msdn.microsoft.com/library/windows/hardware/ff552079)へのハンドルを開く変更するレジストリ キーです。 ハンドルが開かれた後は、レジストリ値を変更するのにクラスのインストーラーと共同インストーラーが標準レジストリ関数を使用できます。
+-   クラスのインストーラーと共同インストーラーを使用する必要がありますまず[ **SetupDiCreateDevRegKey** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdicreatedevregkeya)または[ **SetupDiOpenDevRegKey** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiopendevregkey)へのハンドルを開く変更するレジストリ キーです。 ハンドルが開かれた後は、レジストリ値を変更するのにクラスのインストーラーと共同インストーラーが標準レジストリ関数を使用できます。
 
 -   クラスのインストーラーと共同インストーラーを使用する必要がありますいない**SetupDiDeleteDevRegKey**または*ハードウェア キー*デバイス。 詳細については、次を参照してください。[デバイスのレジストリ キーを削除する](deleting-the-registry-keys-of-a-device.md)します。
 

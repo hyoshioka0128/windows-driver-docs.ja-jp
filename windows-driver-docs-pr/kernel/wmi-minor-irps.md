@@ -4,12 +4,12 @@ description: WMI のマイナー IRP
 ms.date: 08/12/2017
 ms.assetid: 5788294f-2145-4381-9b06-3b138b2d26df
 ms.localizationpriority: medium
-ms.openlocfilehash: cba176d23ac21f913ebedc1f128970e3764edc4b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d48d8b56fb1bd07a33eadb22b3847c7a9ff51936
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365374"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353787"
 ---
 # <a name="wmi-minor-irps"></a>WMI のマイナー IRP
 
@@ -17,11 +17,11 @@ ms.locfileid: "63365374"
 
 
 
-このセクションについて説明します、 [Windows Management Instrumentation](https://msdn.microsoft.com/library/windows/hardware/ff547139) Irp WDM に WMI の拡張機能の一部であります。 メジャーは、コードのすべての WMI Irp 使用[ **IRP\_MJ\_システム\_コントロール**](irp-mj-system-control.md)と軽微なコードが特定の WMI 要求を示します。 WMI のカーネル モード コンポーネント Irp を送信する WMI いずれかの WMI データの供給業者として次のドライバーの登録に成功した時刻。 WMI の Irp 通常送信ユーザー モードのデータ コンシューマーが WMI データを要求されたときにします。
+このセクションについて説明します、 [Windows Management Instrumentation](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-wmi) Irp WDM に WMI の拡張機能の一部であります。 メジャーは、コードのすべての WMI Irp 使用[ **IRP\_MJ\_システム\_コントロール**](irp-mj-system-control.md)と軽微なコードが特定の WMI 要求を示します。 WMI のカーネル モード コンポーネント Irp を送信する WMI いずれかの WMI データの供給業者として次のドライバーの登録に成功した時刻。 WMI の Irp 通常送信ユーザー モードのデータ コンシューマーが WMI データを要求されたときにします。
 
 すべてのドライバーのディスパッチ テーブル エントリ ポイントを設定する必要があります、 [ *DispatchSystemControl* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch) WMI 要求を処理するルーチン。
 
-呼び出すことによって、そのドライバーが WMI データ プロバイダーとして登録するかどうか[ **IoWMIRegistrationControl**](https://msdn.microsoft.com/library/windows/hardware/ff550480)で説明する手法のいずれかを使用して WMI Irp を処理する必要があります[WMI の要求を処理する](https://msdn.microsoft.com/library/windows/hardware/ff546968).
+呼び出すことによって、そのドライバーが WMI データ プロバイダーとして登録するかどうか[ **IoWMIRegistrationControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iowmiregistrationcontrol)で説明する手法のいずれかを使用して WMI Irp を処理する必要があります[WMI の要求を処理する](https://docs.microsoft.com/windows-hardware/drivers/kernel/handling-wmi-requests).
 
 WMI データ プロバイダーとして登録されていないドライバーは、次の下位ドライバーへのすべての WMI 要求を転送する必要があります。
 

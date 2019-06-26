@@ -7,12 +7,12 @@ keywords:
 - 透明 WDK Windows 2000 の表示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3dd2cae2303356336569a9d96815e92e74b6b447
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7015f9751dab0a06be349cac512e77556e7e9d11
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389782"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353422"
 ---
 # <a name="transparency-in-display-drivers"></a>ディスプレイ ドライバーの透過性
 
@@ -20,7 +20,7 @@ ms.locfileid: "63389782"
 ## <span id="ddk_transparency_in_display_drivers_gg"></span><span id="DDK_TRANSPARENCY_IN_DISPLAY_DRIVERS_GG"></span>
 
 
-ディスプレイ ハードウェアでは、透過性をサポートする場合、ディスプレイ ドライバーを実装する必要があります[ **DrvTransparentBlt**](https://msdn.microsoft.com/library/windows/hardware/ff557283)します。
+ディスプレイ ハードウェアでは、透過性をサポートする場合、ディスプレイ ドライバーを実装する必要があります[ **DrvTransparentBlt**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvtransparentblt)します。
 
 ビデオ メモリからの読み取りのコストを減らすためには、ソースと宛先の両方のサーフェスがビデオ メモリ内にある場合、ドライバーはこの関数を実装する必要があります。 ドライバーは、GDI システム メモリから、ビデオ メモリへの透過的なのビット ブロック転送を処理し、GDI も拡張のビット ブロック転送を処理できるようにをできるようにする必要があります。
 

@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 89da57b1e3fba8b70037a87f2c84db10b73c85b6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a39124687dc6b845a81bcfb8d179f1c4191722fd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351088"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378186"
 ---
 # <a name="devpkeydevicemanufacturer"></a>DEVPKEY_Device_Manufacturer
 
@@ -60,11 +60,11 @@ DEVPKEY_DEVICE_Manufacturer デバイス プロパティは、デバイスのイ
 <a name="remarks"></a>注釈
 -------
 
-DEVPKEY_DEVICE_Manufacturer の値によって設定されます、*製造元識別子*によって提供されるデバイスのエントリの値、 [ **INF 製造元セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547454)のデバイスをインストールする INF ファイル。
+DEVPKEY_DEVICE_Manufacturer の値によって設定されます、*製造元識別子*によって提供されるデバイスのエントリの値、 [ **INF 製造元セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-manufacturer-section)のデバイスをインストールする INF ファイル。
 
-呼び出すことができます[ **SetupDiGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551963) DEVPKEY_DEVICE_Manufacturer の値を取得します。
+呼び出すことができます[ **SetupDiGetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) DEVPKEY_DEVICE_Manufacturer の値を取得します。
 
-Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_Device_Manufacturer プロパティのキーをサポートしていません。 代わりに、Windows の以前のバージョンのプロパティの値へのアクセスに対応する SPDRP_MFG 識別子を使用することができます。 Windows の以前のバージョンでこのプロパティの値にアクセスする方法については、次を参照してください。[デバイス インスタンス SPDRP_Xxx プロパティへのアクセス](https://msdn.microsoft.com/library/windows/hardware/ff537737)します。
+Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_Device_Manufacturer プロパティのキーをサポートしていません。 代わりに、Windows の以前のバージョンのプロパティの値へのアクセスに対応する SPDRP_MFG 識別子を使用することができます。 Windows の以前のバージョンでこのプロパティの値にアクセスする方法については、次を参照してください。[デバイス インスタンス SPDRP_Xxx プロパティへのアクセス](https://docs.microsoft.com/windows-hardware/drivers/install/accessing-device-instance-spdrp-xxx-properties)します。
 
 <a name="requirements"></a>要件
 ------------
@@ -89,9 +89,9 @@ Windows Server 2003、Windows XP、および Windows 2000 は、このプロパ�
 ## <a name="see-also"></a>関連項目
 
 
-[**製造元の INF セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547454)
+[**製造元の INF セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-manufacturer-section)
 
-[**SetupDiGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551963)
+[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
 

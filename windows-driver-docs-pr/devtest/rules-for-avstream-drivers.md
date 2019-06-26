@@ -4,12 +4,12 @@ description: AVStream ミニポート ドライバーの DDI 準拠規則は、�
 ms.assetid: 0A104ADF-8607-4708-A0E3-1697F55B0CF5
 ms.date: 05/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: c0f577f152b1744aa5199d83a98a8478a3e26fb6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 07f8405af25de54c30eb31f296c47def2ca1cf88
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340292"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353871"
 ---
 # <a name="rules-for-avstream-drivers"></a>AVStream ドライバーの規則
 
@@ -37,7 +37,7 @@ AVStream ミニポート ドライバーの DDI 準拠規則は、カーネル �
 </tr>
 <tr class="even">
 <td align="left"><p><a href="ks-ksdevicemutex.md" data-raw-source="[&lt;strong&gt;KsDeviceMutex&lt;/strong&gt;](ks-ksdevicemutex.md)"><strong>KsDeviceMutex</strong></a></p></td>
-<td align="left"><p><a href="ks-ksdevicemutex.md" data-raw-source="[&lt;strong&gt;KsDeviceMutex&lt;/strong&gt;](ks-ksdevicemutex.md)"> <strong>KsDeviceMutex</strong> </a>ルールでは、ミニポート ドライバーをストリーミング カーネルが使用するように指定<a href="https://msdn.microsoft.com/library/windows/hardware/ff560911" data-raw-source="[&lt;strong&gt;KsAcquireDevice&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff560911)"> <strong>KsAcquireDevice</strong> </a>と<a href="https://msdn.microsoft.com/library/windows/hardware/ff566783" data-raw-source="[&lt;strong&gt;KsReleaseDevice&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566783)"><strong>KsReleaseDevice</strong> </a>正しい順序で。 すべての呼び出しには、 <strong>KsAcquireDevice</strong>に対応する呼び出しがあります。 <strong>KsReleaseDevice</strong>します。</p></td>
+<td align="left"><p><a href="ks-ksdevicemutex.md" data-raw-source="[&lt;strong&gt;KsDeviceMutex&lt;/strong&gt;](ks-ksdevicemutex.md)"> <strong>KsDeviceMutex</strong> </a>ルールでは、ミニポート ドライバーをストリーミング カーネルが使用するように指定<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksacquiredevice" data-raw-source="[&lt;strong&gt;KsAcquireDevice&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksacquiredevice)"> <strong>KsAcquireDevice</strong> </a>と<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksreleasedevice" data-raw-source="[&lt;strong&gt;KsReleaseDevice&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksreleasedevice)"><strong>KsReleaseDevice</strong> </a>正しい順序で。 すべての呼び出しには、 <strong>KsAcquireDevice</strong>に対応する呼び出しがあります。 <strong>KsReleaseDevice</strong>します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="ks-ksfiltermutex.md" data-raw-source="[&lt;strong&gt;KsFilterMutex&lt;/strong&gt;](ks-ksfiltermutex.md)"><strong>KsFilterMutex</strong></a></p></td>
@@ -74,11 +74,11 @@ AVStream ミニポート ドライバーの DDI 準拠規則は、カーネル �
 </tr>
 <tr class="even">
 <td align="left"><p><a href="ks-ksstreampointerclone.md" data-raw-source="[&lt;strong&gt;KsStreamPointerClone&lt;/strong&gt;](ks-ksstreampointerclone.md)"><strong>KsStreamPointerClone</strong></a></p></td>
-<td align="left"><p>KsStreamPointerClone ルールでは、カーネル ストリーム (KS) ミニポート ドライバーが正しく使用を指定します、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff567129" data-raw-source="[&lt;strong&gt;KsStreamPointerClone&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567129)"> <strong>KsStreamPointerClone</strong> </a>と<a href="https://msdn.microsoft.com/library/windows/hardware/ff567130" data-raw-source="[&lt;strong&gt;KsStreamPointerDelete&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567130)"> <strong>KsStreamPointerDelete</strong></a>関数。</p></td>
+<td align="left"><p>KsStreamPointerClone ルールでは、カーネル ストリーム (KS) ミニポート ドライバーが正しく使用を指定します、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksstreampointerclone" data-raw-source="[&lt;strong&gt;KsStreamPointerClone&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksstreampointerclone)"> <strong>KsStreamPointerClone</strong> </a>と<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksstreampointerdelete" data-raw-source="[&lt;strong&gt;KsStreamPointerDelete&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksstreampointerdelete)"> <strong>KsStreamPointerDelete</strong></a>関数。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="ks-ksstreampointerlock.md" data-raw-source="[&lt;strong&gt;KsStreamPointerLock&lt;/strong&gt;](ks-ksstreampointerlock.md)"><strong>KsStreamPointerLock</strong></a></p></td>
-<td align="left"><p>KsStreamPointerLock ルールでは、カーネル ストリーミング (KS) ミニポート ドライバーが使用するように指定、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff567134" data-raw-source="[&lt;strong&gt;KsStreamPointerLock&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567134)"> <strong>KsStreamPointerLock</strong> </a>と<a href="https://msdn.microsoft.com/library/windows/hardware/ff567137" data-raw-source="[&lt;strong&gt;KsStreamPointerUnlock&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567137)"> <strong>KsStreamPointerUnlock</strong></a>正しいシーケンスで機能します。</p></td>
+<td align="left"><p>KsStreamPointerLock ルールでは、カーネル ストリーミング (KS) ミニポート ドライバーが使用するように指定、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksstreampointerlock" data-raw-source="[&lt;strong&gt;KsStreamPointerLock&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksstreampointerlock)"> <strong>KsStreamPointerLock</strong> </a>と<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksstreampointerunlock" data-raw-source="[&lt;strong&gt;KsStreamPointerUnlock&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksstreampointerunlock)"> <strong>KsStreamPointerUnlock</strong></a>正しいシーケンスで機能します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="ks-ksstreampointerunlock.md" data-raw-source="[&lt;strong&gt;KsStreamPointerUnlock&lt;/strong&gt;](ks-ksstreampointerunlock.md)"><strong>KsStreamPointerUnlock</strong></a></p></td>
@@ -98,7 +98,7 @@ AVStream ミニポート ドライバーの DDI 準拠規則は、カーネル �
 </tr>
 <tr class="even">
 <td align="left"><p><a href="ks-kstimedpinsetdevicestate.md" data-raw-source="[&lt;strong&gt;KsTimedPinSetDeviceState&lt;/strong&gt;](ks-kstimedpinsetdevicestate.md)"><strong>KsTimedPinSetDeviceState</strong></a></p></td>
-<td align="left"><p>KsTimedPinSetDeviceState ルールでは、AVStream (KS) ミニポート ドライバー、AVStream ミニドライバーを使用して、状態遷移することを指定します<a href="https://msdn.microsoft.com/library/windows/hardware/ff556359" data-raw-source="[&lt;em&gt;AVStrMiniPinSetDeviceState&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff556359)"> <em>AVStrMiniPinSetDeviceState</em> </a>ルーチン内で、必要な時間。</p></td>
+<td align="left"><p>KsTimedPinSetDeviceState ルールでは、AVStream (KS) ミニポート ドライバー、AVStream ミニドライバーを使用して、状態遷移することを指定します<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nc-ks-pfnkspinsetdevicestate" data-raw-source="[&lt;em&gt;AVStrMiniPinSetDeviceState&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nc-ks-pfnkspinsetdevicestate)"> <em>AVStrMiniPinSetDeviceState</em> </a>ルーチン内で、必要な時間。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="ks-kstimedprocessingmutex.md" data-raw-source="[&lt;strong&gt;KsTimedProcessingMutex&lt;/strong&gt;](ks-kstimedprocessingmutex.md)"><strong>KsTimedProcessingMutex</strong></a></p></td>

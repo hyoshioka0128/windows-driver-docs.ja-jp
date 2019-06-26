@@ -6,17 +6,17 @@ keywords:
 - 生体認証ドライバー WDK、WinUSB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9008446f982d3bfc80ba40f16c8c9915524456c3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 88e7667e3a7b36638937af29cb4efd69fc1a52d9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328356"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354061"
 ---
 # <a name="using-winusb-in-a-wbdi-driver"></a>WBDI ドライバーでの WinUSB の使用
 
 
-Microsoft WBDI ドライバーを使用することをお勧め、 [USB I/O ターゲット](https://msdn.microsoft.com/library/windows/hardware/ff561358)ユーザー モード ドライバー フレームワーク (UMDF) には構築されています。
+Microsoft WBDI ドライバーを使用することをお勧め、 [USB I/O ターゲット](https://docs.microsoft.com/windows-hardware/drivers/wdf/usb-i-o-targets-in-umdf)ユーザー モード ドライバー フレームワーク (UMDF) には構築されています。
 
 ### <a name="span-idsettingumdfdispatcherspanspan-idsettingumdfdispatcherspansetting-umdfdispatcher"></a><span id="setting_umdfdispatcher"></span><span id="SETTING_UMDFDISPATCHER"></span>UmdfDispatcher の設定
 
@@ -32,7 +32,7 @@ UmdfService=WudfBioUsbSample, WudfBioUsbSample_Install
 UmdfServiceOrder=WudfBioUsbSample
 ```
 
-UmdfDispatcher 詳細については、次を参照してください。 [UmdfDispatcher INF ディレクティブの指定](https://msdn.microsoft.com/library/windows/hardware/ff560526)します。 WDF レジストリ ディレクティブについては、次を参照してください。 [WDF ディレクティブを指定する](https://msdn.microsoft.com/library/windows/hardware/ff560526)します。
+UmdfDispatcher 詳細については、次を参照してください。 [UmdfDispatcher INF ディレクティブの指定](https://docs.microsoft.com/windows-hardware/drivers/wdf/specifying-wdf-directives-in-inf-files)します。 WDF レジストリ ディレクティブについては、次を参照してください。 [WDF ディレクティブを指定する](https://docs.microsoft.com/windows-hardware/drivers/wdf/specifying-wdf-directives-in-inf-files)します。
 
 ### <a name="span-idpendingasynchronousreadrequestsspanspan-idpendingasynchronousreadrequestsspanpending-asynchronous-read-requests"></a><span id="pending_asynchronous_read_requests"></span><span id="PENDING_ASYNCHRONOUS_READ_REQUESTS"></span>保留中の非同期読み取り要求
 
@@ -42,17 +42,17 @@ WinUsb には、複数の未処理の読み取り要求を処理できます。 
 
 読み取り要求を保留するコードは、次の手順のループになります。
 
-1.  呼び出して、事前に割り当てられた framework メモリ オブジェクトを作成する[ **IWDFDriver::CreatePreallocatedWdfMemory**](https://msdn.microsoft.com/library/windows/hardware/ff558902)します。
+1.  呼び出して、事前に割り当てられた framework メモリ オブジェクトを作成する[ **IWDFDriver::CreatePreallocatedWdfMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdriver-createpreallocatedwdfmemory)します。
 
-2.  コールバック コードで提供、 [ **OnCompletion** ](https://msdn.microsoft.com/library/windows/hardware/ff556905)ルーチン。 参照してください`CBiometricDevice::OnCompletion`サンプル。
+2.  コールバック コードで提供、 [ **OnCompletion** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-irequestcallbackrequestcompletion-oncompletion)ルーチン。 参照してください`CBiometricDevice::OnCompletion`サンプル。
 
-3.  ポインターを取得、 [ **IRequestCallbackRequestCompletion** ](https://msdn.microsoft.com/library/windows/hardware/ff556904)所有するオブジェクトのインターフェイス。
+3.  ポインターを取得、 [ **IRequestCallbackRequestCompletion** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-irequestcallbackrequestcompletion)所有するオブジェクトのインターフェイス。
 
-4.  コールバック関数を呼び出すことによって登録[ **IWDFIoRequest::SetCompletionCallback** ](https://msdn.microsoft.com/library/windows/hardware/ff559153)へのポインターを渡して[ **IRequestCallbackRequestCompletion**](https://msdn.microsoft.com/library/windows/hardware/ff556904)前の手順で取得したものでした。 I/O 要求が完了すると、フレームワークは、コールバックを呼び出しますようになりました。
+4.  コールバック関数を呼び出すことによって登録[ **IWDFIoRequest::SetCompletionCallback** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest-setcompletioncallback)へのポインターを渡して[ **IRequestCallbackRequestCompletion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-irequestcallbackrequestcompletion)前の手順で取得したものでした。 I/O 要求が完了すると、フレームワークは、コールバックを呼び出しますようになりました。
 
-5.  呼び出す[ **IWDFIoRequest::Send** ](https://msdn.microsoft.com/library/windows/hardware/ff559149)デバイスに、読み取り要求を送信します。
+5.  呼び出す[ **IWDFIoRequest::Send** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest-send)デバイスに、読み取り要求を送信します。
 
-6.  プロセスは、コールバックの完了が発生したときに要求を読み取る。 前に、 [ **OnCompletion** ](https://msdn.microsoft.com/library/windows/hardware/ff556905)ルーチンを開始する、新しい読み取り要求の保留中、I/O のターゲットの状態を確認する必要があります。 これを行うには、クエリ[IWDFUsbTargetPipe](https://msdn.microsoft.com/library/windows/hardware/ff560391)へのポインターの[IWDFIoTargetStateManagement](https://msdn.microsoft.com/library/windows/hardware/ff559198)インターフェイス。 呼び出して[ **IWDFIoTargetStateManagement::GetState**](https://msdn.microsoft.com/library/windows/hardware/ff559202):
+6.  プロセスは、コールバックの完了が発生したときに要求を読み取る。 前に、 [ **OnCompletion** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-irequestcallbackrequestcompletion-oncompletion)ルーチンを開始する、新しい読み取り要求の保留中、I/O のターゲットの状態を確認する必要があります。 これを行うには、クエリ[IWDFUsbTargetPipe](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nn-wudfusb-iwdfusbtargetpipe)へのポインターの[IWDFIoTargetStateManagement](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfiotargetstatemanagement)インターフェイス。 呼び出して[ **IWDFIoTargetStateManagement::GetState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiotargetstatemanagement-getstate):
     ```cpp
     IWDFIoTarget * pTarget
     IWDFIoTargetStateManagement * pStateMgmt = NULL;

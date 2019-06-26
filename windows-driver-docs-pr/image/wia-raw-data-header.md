@@ -1,17 +1,17 @@
 ---
-title: WIA 生データのヘッダー
-description: WIA 生データのヘッダー
+title: WIA 未処理形式のデータ ヘッダー
+description: WIA 未処理形式のデータ ヘッダー
 ms.assetid: a2cb3835-7879-4f69-9784-9487df40730a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f90e4a9bef3e2d0655498515c25b519d6e4e02f9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 458552ca5d8b4362de397e03ce971f5f9a26f05a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560406"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355164"
 ---
-# <a name="wia-raw-data-header"></a>WIA 生データのヘッダー
+# <a name="wia-raw-data-header"></a>WIA 未処理形式のデータ ヘッダー
 
 
 生データのヘッダーは次のとおりです。
@@ -49,7 +49,7 @@ G4 圧縮されたデータ (WIA\_圧縮\_G4) 可能性があります、TIFF �
 
 JPEG 圧縮されたデータ (WIA\_圧縮\_JPEG) JFIF 形式を使用して転送する可能性があります (WiaImgFmt\_JPEG)、EEXIF 形式 (WiaImgFmt\_EXIF)、または TIFF 形式 (WiaImgFmt\_TIFF). インターチェンジの形式 (JFIF、EEXIF) 生の形式を使用して転送内のいずれかで書式設定された JPEG データを転送することはできません (WiaImgFmt\_RAW)-その他の JPEG と互換性のある形式のいずれかを使用する必要は代わりに、します。
 
-WIA 圧縮の定数の詳細については、次を参照してください。、 [ **WIA\_IPA\_圧縮**](https://msdn.microsoft.com/library/windows/hardware/ff551540)プロパティ。
+WIA 圧縮の定数の詳細については、次を参照してください。、 [ **WIA\_IPA\_圧縮**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-compression)プロパティ。
 
 <a href="" id="dword-photometricinterp"></a>DWORD *PhotometricInterp*  
 転送されるイメージのメトリックスをについて説明します。 このフィールドは、黒と白 (1bpp) と (4 bpp 以上)、グレースケール イメージに必要です。 これらのイメージは白と黒、WIA のどちらかの値を指定する必要があります\_写真\_白\_1 (位置 0 は黒、白の 1 の場合) または WIA\_写真\_白い\_0 (場所白は 0、1 を黒には)。 このフィールドは、カラー イメージでは省略可能です。

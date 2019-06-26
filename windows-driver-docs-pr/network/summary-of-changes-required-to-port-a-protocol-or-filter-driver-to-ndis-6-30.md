@@ -4,12 +4,12 @@ description: NDIS 6.30 をサポートする NDIS 6.x プロトコルまたは�
 ms.assetid: 1C6CB2E1-C129-4F3B-AF7D-357580BEE7F8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cfab77acb90427560709423227f8076ea5adfdd2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9b447b26d16ec8f924e5c80d4aae555bd2933d0e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376947"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377987"
 ---
 # <a name="summary-of-changes-required-to-port-a-protocol-or-filter-driver-to-ndis-630"></a>プロトコルまたはフィルター ドライバーを NDIS 6.30 に移植するために必要な変更の概要
 
@@ -42,9 +42,9 @@ NDIS 6.30 機能の詳細については、次を参照してください。 [ND
 フィルター ドライバーが完了する必要が常に**NetEventSetPower**パケットを待つことがなく。 詳細については、以下をご覧ください。
 
 -   [NDIS 6.30 で電源管理の機能強化](power-management-enhancements-in-ndis-6-30.md)
--   [**NDIS\_ミニポート\_アダプター\_登録\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff565934)
--   [**NET\_PNP\_イベント**](https://msdn.microsoft.com/library/windows/hardware/ff568751)
--   [OID\_PNP\_設定\_電源](https://msdn.microsoft.com/library/windows/hardware/ff569780)
+-   [**NDIS\_ミニポート\_アダプター\_登録\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_registration_attributes)
+-   [**NET\_PNP\_イベント**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_pnp_event)
+-   [OID\_PNP\_設定\_電源](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power)
 
 NDIS 6.30 機能の詳細については、次を参照してください。 [NDIS 6.30 概要](introduction-to-ndis-6-30.md)します。
 

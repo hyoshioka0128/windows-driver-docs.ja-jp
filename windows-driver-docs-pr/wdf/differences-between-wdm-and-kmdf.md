@@ -4,12 +4,12 @@ description: WDM モデルは、オペレーティング システムに密接�
 ms.assetid: 4D35F0AB-44CE-49CA-8AB7-3922871567B0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b1448822e25ac18af5b120e9de28bd72fd8626d9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f0f1e3cd36aa053cc68ba7f0ed1df13d7d360a4f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337784"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377414"
 ---
 # <a name="differences-between-wdm-and-wdf"></a>WDM と WDF の違い
 
@@ -18,7 +18,7 @@ WDM モデルは、オペレーティング システムに密接に関連付け
 
 比較では、Windows Driver Frameworks (WDF) モデルは、ドライバーの要件に重点を置いていて、フレームワーク ライブラリが多数のシステムとの対話を処理します。
 
-フレームワークは、I/O 要求をインターセプトは、適切な場所に既定のアクションを実行し、必要に応じて、ドライバーのコールバックを呼び出します。 WDF モデルは、ベース オブジェクトとイベント ドリブンです。 オブジェクトは、デバイス、ロック、またはキューなどの一般的なドライバーの構成要素を表します。 カーネル モード ドライバー フレームワーク (KMDF) またはユーザー モード ドライバー フレームワーク (UMDF) ドライバーには、エントリ ポイントが含まれています ([**DriverEntry**](https://msdn.microsoft.com/library/windows/hardware/ff540807))、サービスに必要なイベントに関連するコールバック関数、デバイスとサポートの I/O、および実装に依存するすべての内部の他のユーティリティ関数。
+フレームワークは、I/O 要求をインターセプトは、適切な場所に既定のアクションを実行し、必要に応じて、ドライバーのコールバックを呼び出します。 WDF モデルは、ベース オブジェクトとイベント ドリブンです。 オブジェクトは、デバイス、ロック、またはキューなどの一般的なドライバーの構成要素を表します。 カーネル モード ドライバー フレームワーク (KMDF) またはユーザー モード ドライバー フレームワーク (UMDF) ドライバーには、エントリ ポイントが含まれています ([**DriverEntry**](https://docs.microsoft.com/windows-hardware/drivers/wdf/driverentry-for-kmdf-drivers))、サービスに必要なイベントに関連するコールバック関数、デバイスとサポートの I/O、および実装に依存するすべての内部の他のユーティリティ関数。
 
 このセクションでは、WDM と WDF の間で、次の領域の重要な相違点について説明します。
 
@@ -35,7 +35,7 @@ WDM モデルは、オペレーティング システムに密接に関連付け
 ## <a name="driver-structure"></a>ドライバー構造
 
 
-WDM と WDF の両方のドライバーが含まれて、 [ **DriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff540807)ルーチンでは、多数の特定の I/O 要求を処理するために呼び出されるルーチンで、さまざまなサポート ルーチン。
+WDM と WDF の両方のドライバーが含まれて、 [ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/wdf/driverentry-for-kmdf-drivers)ルーチンでは、多数の特定の I/O 要求を処理するために呼び出されるルーチンで、さまざまなサポート ルーチン。
 
 WDM ドライバーでは、I/O のディスパッチ ルーチンは、IRP のコードを特定のメジャーにマップします。 ディスパッチ ルーチンは、I/O マネージャーから Irp を受信し、解析したり、適宜対応します。
 
@@ -43,8 +43,8 @@ WDF のドライバー、フレームワークは、I/O マネージャーから
 
 プラグ アンド プレイ デバイスの一般的な WDF ドライバーが含まれます。
 
--   A [ **DriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff540807)ルーチン。
--   [ *EvtDriverDeviceAdd* ](https://msdn.microsoft.com/library/windows/hardware/ff541693)ルーチンで、WDM AddDevice ルーチンの関数と似ています。
+-   A [ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/wdf/driverentry-for-kmdf-drivers)ルーチン。
+-   [ *EvtDriverDeviceAdd* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)ルーチンで、WDM AddDevice ルーチンの関数と似ています。
 -   1 つまたは複数の I/O キュー。
 -   1 つまたは複数 I/O イベント コールバック関数、WDM ドライバーの I/O の機能と同じである*DispatchXxx*ルーチン。
 -   プラグ アンド プレイし、ドライバーがサポートする電源イベントを処理するためにコールバックします。
@@ -88,11 +88,11 @@ WDF のドライバーでは、すべての種類のオブジェクトを作成�
 2.  必要に応じて、オブジェクトの属性の構造体を初期化します。
 3.  オブジェクトを作成する作成メソッドを呼び出します。
 
-構成構造と属性の構造は、オブジェクトと、ドライバーがそれを使用する方法に関する基本情報を指定します。 すべてのオブジェクトの型の使用[ **WDF\_オブジェクト\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff552400)属性として、構造体がオブジェクトの種類ごとの構成構造が異なると、一部のオブジェクトがないです。いずれかであります。 などがありますが、 [ **WDF\_ドライバー\_CONFIG** ](https://msdn.microsoft.com/library/windows/hardware/ff551300)が構造体、 **WDF\_デバイス\_CONFIG**構造体。
+構成構造と属性の構造は、オブジェクトと、ドライバーがそれを使用する方法に関する基本情報を指定します。 すべてのオブジェクトの型の使用[ **WDF\_オブジェクト\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/ns-wdfobject-_wdf_object_attributes)属性として、構造体がオブジェクトの種類ごとの構成構造が異なると、一部のオブジェクトがないです。いずれかであります。 などがありますが、 [ **WDF\_ドライバー\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/ns-wdfdriver-_wdf_driver_config)が構造体、 **WDF\_デバイス\_CONFIG**構造体。
 
-構成構造は、オブジェクトのドライバーのイベントのコールバック関数などのオブジェクトに固有の情報へのポインターを保持します。 ドライバーこの構造体に格納し、し、渡しますフレームワークにオブジェクトの作成方法を呼び出すときに。 呼び出しなど[ **WdfDriverCreate** ](https://msdn.microsoft.com/library/windows/hardware/ff547175)へのポインターが含まれています、 [ **WDF\_ドライバー\_CONFIG** ](https://msdn.microsoft.com/library/windows/hardware/ff551300)ドライバーへのポインターを含む構造体[ *EvtDriverDeviceAdd* ](https://msdn.microsoft.com/library/windows/hardware/ff541693)コールバック関数。
+構成構造は、オブジェクトのドライバーのイベントのコールバック関数などのオブジェクトに固有の情報へのポインターを保持します。 ドライバーこの構造体に格納し、し、渡しますフレームワークにオブジェクトの作成方法を呼び出すときに。 呼び出しなど[ **WdfDriverCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nf-wdfdriver-wdfdrivercreate)へのポインターが含まれています、 [ **WDF\_ドライバー\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/ns-wdfdriver-_wdf_driver_config)ドライバーへのポインターを含む構造体[ *EvtDriverDeviceAdd* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)コールバック関数。
 
-フレームワークは、WDF をという名前の関数を定義します\_*オブジェクト*\_CONFIG\_INIT 構成構造体を初期化するために、*オブジェクト*を表します。オブジェクトの種類の名前。 [ **WDF\_オブジェクト\_属性\_INIT** ](https://msdn.microsoft.com/library/windows/hardware/ff552402)関数は、ドライバーの初期化[ **WDF\_オブジェクト\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff552400)構造体。
+フレームワークは、WDF をという名前の関数を定義します\_*オブジェクト*\_CONFIG\_INIT 構成構造体を初期化するために、*オブジェクト*を表します。オブジェクトの種類の名前。 [ **WDF\_オブジェクト\_属性\_INIT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nf-wdfobject-wdf_object_attributes_init)関数は、ドライバーの初期化[ **WDF\_オブジェクト\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/ns-wdfobject-_wdf_object_attributes)構造体。
 
 ## <a name="object-context-area"></a>オブジェクト コンテキストの領域
 
@@ -111,7 +111,7 @@ WDF は、Windows Irp のサブセットをサポートしています。 主な
 
 ほぼすべてのドライバーでは、I/O 要求をキューします。 WDM ドライバーでは、次の方法のいずれかの通常使用します。
 
--   実装を[ *StartIo* ](https://msdn.microsoft.com/library/windows/hardware/ff563858)関数と呼び出し[ **IoStartPacket** ](https://msdn.microsoft.com/library/windows/hardware/ff550370)と[ **います**](https://msdn.microsoft.com/library/windows/hardware/ff550358) I/O 要求に対して、システムのデバイスのキューを使用します。
+-   実装を[ *StartIo* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_startio)関数と呼び出し[ **IoStartPacket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-iostartpacket)と[ **います**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-iostartnextpacket) I/O 要求に対して、システムのデバイスのキューを使用します。
 -   使用して、 **IoCsqXxx**または内部の I/O キューを実装するには、他のリストの管理機能。
 -   使用して、 **KeXxxDeviceQueue**関数を初期化し、スピン ロックで保護されているキューを管理します。
 

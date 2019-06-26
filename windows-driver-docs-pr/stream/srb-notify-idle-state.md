@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8532033ea5d2988db5ebb212efc5a31bcd75115f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 38cdeac2dc57d690a369c2135d2e6911cd0197cf
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379946"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377902"
 ---
 # <a name="srbnotifyidlestate"></a>SRB\_通知\_IDLE\_状態
 
@@ -33,9 +33,9 @@ ms.locfileid: "63379946"
 
 SRB\_通知\_IDLE\_Microsoft Windows Server 2003 ではなく Microsoft Windows XP Service Pack 2 (SP2) 以降に状態が送信されます。
 
-SRB\_通知\_IDLE\_状態の修正、USB のセレクティブ サスペンド ストリーム クラス ドライバー内に存在する問題 (*Stream.sys*) で説明されている Windows XP SP1 で[ナレッジ記事 813348](https://go.microsoft.com/fwlink/p/?linkid=210855)します。 SRB を使用する\_通知\_IDLE\_に基づいて 1 つのインスタンスのミニドライバー内で選択的にサポートするために状態が一時中断[クラスのストリーム](https://msdn.microsoft.com/library/windows/hardware/ff568277)と[USBCAMD2](https://msdn.microsoft.com/library/windows/hardware/ff568573)します。
+SRB\_通知\_IDLE\_状態の修正、USB のセレクティブ サスペンド ストリーム クラス ドライバー内に存在する問題 (*Stream.sys*) で説明されている Windows XP SP1 で[ナレッジ記事 813348](https://go.microsoft.com/fwlink/p/?linkid=210855)します。 SRB を使用する\_通知\_IDLE\_に基づいて 1 つのインスタンスのミニドライバー内で選択的にサポートするために状態が一時中断[クラスのストリーム](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)と[USBCAMD2](https://docs.microsoft.com/windows-hardware/drivers/stream/usbcamd2-minidriver-operation)します。
 
-Windows XP 以降では、SRB\_通知\_IDLE\_状態は存在しません。 Windows xp 以降、ミニドライバーを受け取る[ **SRB\_取得\_デバイス\_プロパティ**](srb-get-device-property.md)がアイドル状態からスリープ解除します。 ミニドライバーを呼び出して[ **PoRequestPowerIrp** ](https://msdn.microsoft.com/library/windows/hardware/ff559734) D0 にデバイスの状態を変更します。
+Windows XP 以降では、SRB\_通知\_IDLE\_状態は存在しません。 Windows xp 以降、ミニドライバーを受け取る[ **SRB\_取得\_デバイス\_プロパティ**](srb-get-device-property.md)がアイドル状態からスリープ解除します。 ミニドライバーを呼び出して[ **PoRequestPowerIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-porequestpowerirp) D0 にデバイスの状態を変更します。
 
 Windows XP SP1、および Windows Server 2003、SRB で\_取得\_デバイス\_プロパティは、このような状況では送信されません。 使用する場合*Stream.sys*これらのオペレーティング システムでは、前述のサポート技術情報記事の手順に従います。
 
@@ -43,7 +43,7 @@ Windows XP SP1、および Windows Server 2003、SRB で\_取得\_デバイス\_
 
 クラスのドライバーが SRB を送信して、デバイスの最後のインスタンスを閉じるときに\_通知\_IDLE\_D3 の状態に遷移するデバイスの要求を送信する前に、すぐに状態。
 
-ストリーム クラスのドライバーが、SRB を送信すると\_通知\_IDLE\_状態が要求への呼び出しを受け取るようにミニドライバー [ *StrMiniReceiveDevicePacket*](https://msdn.microsoft.com/library/windows/hardware/ff568463)します。
+ストリーム クラスのドライバーが、SRB を送信すると\_通知\_IDLE\_状態が要求への呼び出しを受け取るようにミニドライバー [ *StrMiniReceiveDevicePacket*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/nc-strmini-phw_receive_device_srb)します。
 
 ## <a name="see-also"></a>関連項目
 
@@ -52,7 +52,7 @@ Windows XP SP1、および Windows Server 2003、SRB で\_取得\_デバイス\_
 
 [**SRB\_オープン\_デバイス\_インスタンス**](srb-open-device-instance.md)
 
-[*StrMiniReceiveDevicePacket*](https://msdn.microsoft.com/library/windows/hardware/ff568463)
+[*StrMiniReceiveDevicePacket*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/nc-strmini-phw_receive_device_srb)
 
  
 

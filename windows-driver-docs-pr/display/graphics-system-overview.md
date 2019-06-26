@@ -8,12 +8,12 @@ keywords:
 - 描画の WDK GDI やグラフィックス システムについて
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b924e74279ec3a8fca7fe44b78245422100caa4d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0fda1e238ac6212cbd9319552c8c46d8fee36d9f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323778"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379942"
 ---
 # <a name="graphics-system-overview"></a>グラフィックス システムの概要
 
@@ -33,7 +33,7 @@ ms.locfileid: "63323778"
 
     これらのセクションでは、Windows NTâˆ でビデオ ディスプレイ環境を表す ' ベースのオペレーティング システムとの設計と実装の詳細表示、ビデオのミニポートを指定、およびドライバー開発者を監視します。 Windows 8 およびそれ以降のコンピューター上で Windows 2000 Display Driver Model ドライバーに準拠するをインストールできないことに注意してください。
 
--   [**印刷デバイスの設計ガイド**](https://msdn.microsoft.com/library/windows/hardware/ff561035)
+-   [**印刷デバイスの設計ガイド**](https://docs.microsoft.com/windows-hardware/drivers/print/index)
 
     このセクションでは、ドライバーと印刷スプーラ Windows NTâˆ で印刷環境を構成するについて説明します。 ' ベースのオペレーティング システム。 Windows Driver Kit (WDK) のこの部分内のセクションでは、新しいプリンターのハードウェアとネットワークの構成をサポートできるように、カスタマイズされたドライバーとスプーラー コンポーネントを提供する方法を指定します。
 

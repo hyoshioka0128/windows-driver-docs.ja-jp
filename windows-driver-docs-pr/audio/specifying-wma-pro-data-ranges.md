@@ -13,12 +13,12 @@ keywords:
 - 非 PCM のオーディオ形式 WDK、WMA Pro
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 757c87ccc2234773b6570bde8b4a0e5f56cc0ffe
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d4db2f788e8af531c4d940b118a7cf320aa070c8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328616"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354283"
 ---
 # <a name="specifying-wma-pro-data-ranges"></a>WMA Pro データ範囲の指定
 
@@ -39,7 +39,7 @@ ms.locfileid: "63328616"
                       DEFINE_WAVEFORMATEX_GUID(WAVE_FORMAT_WMASPDIF)
 ```
 
-次のコード例は、WaveCyclic または WavePci ミニポート ドライバーを指定する方法を示しています、 [ **KSDATARANGE\_オーディオ**](https://msdn.microsoft.com/library/windows/hardware/ff537096) WMA Pro-オーバー-S/PDIF をサポートする、暗証番号 (pin) のエントリをテーブルとAC-3-フェールオーバー-S/PDIF 形式:
+次のコード例は、WaveCyclic または WavePci ミニポート ドライバーを指定する方法を示しています、 [ **KSDATARANGE\_オーディオ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksdatarange_audio) WMA Pro-オーバー-S/PDIF をサポートする、暗証番号 (pin) のエントリをテーブルとAC-3-フェールオーバー-S/PDIF 形式:
 
 ```cpp
 static KSDATARANGE_AUDIO PinDataRangesSpdifOut[] =

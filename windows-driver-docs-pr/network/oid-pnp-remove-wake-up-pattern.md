@@ -5,12 +5,12 @@ ms.assetid: 493019d0-9cd9-4712-8d18-5ee0264be9e1
 ms.date: 08/08/2017
 keywords: -OID_PNP_REMOVE_WAKE_UP_PATTERN ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: a28cc63e48767ddff5d42b388d61f8253c849579
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a995266d6c0ecfeafe8d4b5f29064bf229c3ed43
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351715"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356135"
 ---
 # <a name="oidpnpremovewakeuppattern"></a>OID\_PNP\_削除\_WAKE\_を\_パターン
 
@@ -18,13 +18,13 @@ ms.locfileid: "63351715"
 
 
 
-OID\_PNP\_削除\_WAKE\_を\_パターンの OID が以前に受信したウェイク アップのパターンを削除するミニポート ドライバーを要求する[OID\_PNP\_追加\_WAKE\_を\_パターン](oid-pnp-add-wake-up-pattern.md)要求。 によって、マスク、と共に、ウェイク アップのパターンが記載されている、 [ **NDIS\_PM\_パケット\_パターン**](https://msdn.microsoft.com/library/windows/hardware/ff566756)構造体。
+OID\_PNP\_削除\_WAKE\_を\_パターンの OID が以前に受信したウェイク アップのパターンを削除するミニポート ドライバーを要求する[OID\_PNP\_追加\_WAKE\_を\_パターン](oid-pnp-add-wake-up-pattern.md)要求。 によって、マスク、と共に、ウェイク アップのパターンが記載されている、 [ **NDIS\_PM\_パケット\_パターン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_packet_pattern)構造体。
 
-**InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)構造体には、次が含まれています。
+**InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体には、次が含まれています。
 
--   [ **NDIS\_PM\_パケット\_パターン**](https://msdn.microsoft.com/library/windows/hardware/ff566756)パターンとそのマスクについての情報を提供する構造体。
+-   [ **NDIS\_PM\_パケット\_パターン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_packet_pattern)パターンとそのマスクについての情報を提供する構造体。
 
--   着信パケットのデータの量を示すマスク パターンに対応するバイト数と比較する必要があります。 マスクは、パケットの最初のバイトを開始します。 マスクの直後に、 [ **NDIS\_PM\_パケット\_パターン**](https://msdn.microsoft.com/library/windows/hardware/ff566756)構造体、 **InformationBuffer**します。
+-   着信パケットのデータの量を示すマスク パターンに対応するバイト数と比較する必要があります。 マスクは、パケットの最初のバイトを開始します。 マスクの直後に、 [ **NDIS\_PM\_パケット\_パターン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_packet_pattern)構造体、 **InformationBuffer**します。
 
 -   ウェイク アップ パターンでは、開始**PatternOffset**の先頭からのバイト、 **InformationBuffer**します。
 
@@ -53,7 +53,7 @@ OID\_PNP\_削除\_WAKE\_を\_パターンの OID が以前に受信したウェ�
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_PM\_パケット\_パターン**](https://msdn.microsoft.com/library/windows/hardware/ff566756)
+[**NDIS\_PM\_パケット\_パターン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_packet_pattern)
 
 [OID\_PNP\_追加\_WAKE\_を\_パターン](oid-pnp-add-wake-up-pattern.md)
 

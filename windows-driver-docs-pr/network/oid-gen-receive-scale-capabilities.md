@@ -5,12 +5,12 @@ ms.assetid: b7640ec3-248c-4db2-818d-3976df2dcb9b
 ms.date: 08/08/2017
 keywords: -OID_GEN_RECEIVE_SCALE_CAPABILITIES ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c63bdc1a616b91d8e7f262c9107bcaac4e5d773
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3bd06464c699e3befb5f228fb637d7b326b0d936
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362852"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355128"
 ---
 # <a name="oidgenreceivescalecapabilities"></a>OID\_GEN\_受信\_スケール\_機能
 
@@ -22,7 +22,7 @@ ms.locfileid: "63362852"
 
 NDIS ミニポート ドライバーでは、この OID 要求は表示されません。 NDIS は、ミニポート ドライバーにクエリを処理します。
 
-ミニポート ドライバーは、RSS の機能を返します、 [ **NDIS\_受信\_スケール\_機能**](https://msdn.microsoft.com/library/windows/hardware/ff567220)構造体。
+ミニポート ドライバーは、RSS の機能を返します、 [ **NDIS\_受信\_スケール\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_scale_capabilities)構造体。
 
 <a name="requirements"></a>要件
 ------------
@@ -47,7 +47,7 @@ NDIS ミニポート ドライバーでは、この OID 要求は表示されま
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_受信\_スケール\_機能**](https://msdn.microsoft.com/library/windows/hardware/ff567220)
+[**NDIS\_受信\_スケール\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_scale_capabilities)
 
  
 

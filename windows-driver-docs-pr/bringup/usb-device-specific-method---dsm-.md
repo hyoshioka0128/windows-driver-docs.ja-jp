@@ -4,12 +4,12 @@ description: USB サブシステムのデバイス固有クラスの構成をサ
 ms.assetid: 8F0EDE17-9895-4C24-B061-963DA0D7882B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6379d3b85d092e6867fc60436b1a7f5ebd6dc185
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3cda503d75207e5e8ac1fa152af9b8f456466849
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337351"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353945"
 ---
 # <a name="usb-device-specific-method-dsm"></a>USB デバイスに固有のメソッド (\_DSM)
 
@@ -82,7 +82,7 @@ None、Windows のインボックス ドライバーは、USB コント ロー�
 
 この関数を使用する場合、 \_DSM メソッドは、USB ポートのデバイスの 表示する必要があります。
 
-**注**  関数インデックス 0 の各\_DSM がサポートされている関数のインデックスのセットを返しますは常に必要とするクエリ関数を示します。 詳細については、セクション 9.14.1 を参照してください。"\_DSM (デバイスの特定のメソッド)"で、 [ACPI 5.0 仕様](https://www.uefi.org/specifications)します。
+**注**  関数インデックス 0 の各\_DSM がサポートされている関数のインデックスのセットを返しますは常に必要とするクエリ関数を示します。 詳細については、セクション 9.14.1 を参照してください。"\_DSM (デバイスの特定のメソッド)"で、 [ACPI 5.0 仕様](https://uefi.org/specifications)します。
 
  
 

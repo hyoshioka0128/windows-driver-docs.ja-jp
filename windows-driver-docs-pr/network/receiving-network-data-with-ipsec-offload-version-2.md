@@ -7,12 +7,12 @@ keywords:
 - 受信側のデータの WDK ネットワーク
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a6957adc41167e3faf66c39b230c797851c094d1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: afb3fd2b59f2fd4a4b22f47ee0865f3bd2952447
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380576"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353297"
 ---
 # <a name="receiving-network-data-with-ipsec-offload-version-2"></a>IPsec Offload Version 2 によるネットワーク データの受信
 
@@ -37,7 +37,7 @@ NIC は、IPsec オフロード バージョン 2 (IPsecOV2)、トランスポ�
 
 -   ミニポート ドライバーは、トランスポートに報告する機能に基づいて、パケットを処理できるか、さらに IPsec の処理を行わなくても、受信を示す値になることを確認します。 たとえば、パケットは IP オプションで、NIC がこのようなパケットを処理する IPsec オフロードをサポートしていませんし、ミニポート ドライバーは、IPsec の処理があります。
 
--   セット、 **CryptoDone**フラグ、 [ **NDIS\_IPSEC\_オフロード\_V2\_NET\_バッファー\_一覧\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff565818)構造体を NIC が IPsec で受信したパケットの少なくとも 1 つの IPsec ペイロードでチェックを実行することを示します。
+-   セット、 **CryptoDone**フラグ、 [ **NDIS\_IPSEC\_オフロード\_V2\_NET\_バッファー\_一覧\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_ipsec_offload_v2_net_buffer_list_info)構造体を NIC が IPsec で受信したパケットの少なくとも 1 つの IPsec ペイロードでチェックを実行することを示します。
 
 -   セット、 **NextCryptoDone** NDIS フラグ\_IPSEC\_オフロード\_V2\_NET\_バッファー\_一覧\_を示すために、情報構造体NIC は IPsec 受信パケットのトンネルおよびトランスポートの両方の部分でチェックを実行します。 ミニポート ドライバーがパケットにトンネルおよびトランスポートの両方のペイロードがある場合にのみ、このフラグを設定します。それ以外の場合、このフラグは 0 にする必要があります。
 
@@ -45,7 +45,7 @@ NIC は、IPsec オフロード バージョン 2 (IPsecOV2)、トランスポ�
 
 ミニポート ドライバーが両方をクリアして、NIC でオフロードが着信パケットの処理が実行されなかった場合、 **CryptoDone**と**NextCryptoDone**フラグ。 ミニポート ドライバーのクリア、NIC 解読されません、パケットは、AH または ESP で保護されているかどうかに関係なくパケットの受信のすべてのこれらのフラグ。
 
-ミニポート ドライバーを設定できます**SaDeleteReq**の[ **NDIS\_IPSEC\_オフロード\_V2\_NET\_バッファー\_一覧\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff565818)受信構造[ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)します。 TCP/IP トランスポートは発行後[OID\_TCP\_タスク\_IPSEC\_オフロード\_V2\_削除\_SA](https://msdn.microsoft.com/library/windows/hardware/ff569813)を削除する 1 回、受信パケットの受信に使用された SA とに 1 回もう一度削除済みに対応する送信の SA を削除するのには、SA を受信します。 追加と削除の SAs の詳細については、次を参照してください。 [IPsec オフロード バージョン 2 のセキュリティ アソシエーションを管理する](managing-security-associations-in-ipsec-offload-version-2.md)します。
+ミニポート ドライバーを設定できます**SaDeleteReq**の[ **NDIS\_IPSEC\_オフロード\_V2\_NET\_バッファー\_一覧\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_ipsec_offload_v2_net_buffer_list_info)受信構造[ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)します。 TCP/IP トランスポートは発行後[OID\_TCP\_タスク\_IPSEC\_オフロード\_V2\_削除\_SA](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-task-ipsec-offload-v2-delete-sa)を削除する 1 回、受信パケットの受信に使用された SA とに 1 回もう一度削除済みに対応する送信の SA を削除するのには、SA を受信します。 追加と削除の SAs の詳細については、次を参照してください。 [IPsec オフロード バージョン 2 のセキュリティ アソシエーションを管理する](managing-security-associations-in-ipsec-offload-version-2.md)します。
 
 ミニポート後は、ドライバーは、NET を示します\_バッファー\_リスト構造を TCP/IP トランスポートに TCP/IP トランスポートは、パケットの場合、シーケンス番号のチェック、NIC が、パケットに対して IPsec チェックの結果を調べます。チェックサムまたはテストをシーケンス処理に失敗したパケットの処理を決定します。
 

@@ -13,12 +13,12 @@ keywords:
 - ネットワーク ドライバー WDK、種類
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 855c11ba5759ced11eb1f37bde856286f35a19db
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ddb35995bb4b84f133aae42b8c8e0b9a58be812f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388757"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356222"
 ---
 # <a name="learning-about-protocol-drivers"></a>プロトコル ドライバーについて
 
@@ -45,7 +45,7 @@ Winsock サポートを提供するプロトコルを記述する場合は、次
 
 -   [NDIS プロトコル ドライバー](ndis-protocol-drivers.md)
 
--   [Windows ソケット トランスポートのヘルパー Dll](https://msdn.microsoft.com/library/windows/hardware/ff565691)
+-   [Windows ソケット トランスポートのヘルパー Dll](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff565691(v=vs.85))
 
  
 

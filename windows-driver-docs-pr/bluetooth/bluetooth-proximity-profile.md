@@ -4,12 +4,12 @@ description: 近接プロファイルは、その近接性を検出するため�
 ms.assetid: 6BA67CA4-AAE4-4D01-97A4-65970704E7ED
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b34e99aad337ea5ec3aa16437eb22728da676d6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 37466465999a8bc5569f2bfb4d15d4a807214b34
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328258"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354045"
 ---
 # <a name="bluetooth-proximity-profile"></a>Bluetooth 近接通信プロファイル
 
@@ -44,13 +44,13 @@ GATT サーバーにするには、近接性レポーターが必要です。
 
 GATT デバイスは、Windows 8.1 と組み合わせると、デバイス、システムの一部になるし、Windows が提供されます*デバイス オブジェクト*デバイスと、デバイスによって報告された、プライマリ サービスの両方を表します。
 
-[ **Windows.Devices.Bluetooth.GenericAttributeProfile 名前空間**](https://msdn.microsoft.com/library/windows/apps/dn297685)します。 アプリ開発者は、Windows 8.1 で使用できる汎用の属性のプロファイル Api について説明します。
+[ **Windows.Devices.Bluetooth.GenericAttributeProfile 名前空間**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile)します。 アプリ開発者は、Windows 8.1 で使用できる汎用の属性のプロファイル Api について説明します。
 
 デバイス アプリを開発する際に、最初の手順の 1 つは、Bluetooth サービスをユーザーが関心のシナリオを実現するためにアプリのニーズを特定します。 近接プロファイルでは、デバイス アプリは、「リンクが失われるサービス」と必要に応じて「即時警告サービス」と"Tx Power Service"を使用する必要があります。
 
-かどうか、デバイスとペアに Windows の実装「リンクが失われるサービス」を確認するデバイス アプリのために、アプリがで利用できる Api を使用する必要があります、 [ **Windows.Devices.Enumeration 名前空間**](https://msdn.microsoft.com/library/windows/apps/br225459)、namely DeviceInformation.FindAllAsync メソッド。
+かどうか、デバイスとペアに Windows の実装「リンクが失われるサービス」を確認するデバイス アプリのために、アプリがで利用できる Api を使用する必要があります、 [ **Windows.Devices.Enumeration 名前空間**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration)、namely DeviceInformation.FindAllAsync メソッド。
 
-[ **DeviceInformation.FindAllAsync メソッド**](https://msdn.microsoft.com/library/windows/apps/br225433)は、 *AQS (高度なクエリ構文)* デバイス セレクターが含まれているデバイスのみをフィルター処理するためにパラメーターとして、"リンクの損失サービス"。 デバイス アプリの開発者が使用することも、 [ **GetDeviceSelectorFromUuid** ](https://msdn.microsoft.com/library/windows/apps/dn297476)または[ **GetDeviceSelectorFromShortId** ](https://msdn.microsoft.com/library/windows/apps/dn297475) のメソッド[**GattDeviceService** ](https://msdn.microsoft.com/library/windows/apps/dn297468)クラス、AQS フィルターを手動で作成しないで済むようにします。
+[ **DeviceInformation.FindAllAsync メソッド**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformation#Windows_Devices_Enumeration_DeviceInformation_FindAllAsync_System_String_)は、 *AQS (高度なクエリ構文)* デバイス セレクターが含まれているデバイスのみをフィルター処理するためにパラメーターとして、"リンクの損失サービス"。 デバイス アプリの開発者が使用することも、 [ **GetDeviceSelectorFromUuid** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile.GattDeviceService#Windows_Devices_Bluetooth_GenericAttributeProfile_GattDeviceService_GetDeviceSelectorFromUuid_System_Guid_)または[ **GetDeviceSelectorFromShortId** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile.GattDeviceService#Windows_Devices_Bluetooth_GenericAttributeProfile_GattDeviceService_GetDeviceSelectorFromShortId_System_UInt16_) のメソッド[**GattDeviceService** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile.GattDeviceService)クラス、AQS フィルターを手動で作成しないで済むようにします。
 
 「リンクが失われるサービス」は、Bluetooth SIG、およびように定義されている Bluetooth GATT サービス、*短い Id*の代わりに使用できる、 *UUID の完全修飾*します。
 
@@ -87,9 +87,9 @@ GATT デバイスは、Windows 8.1 と組み合わせると、デバイス、シ
 
 Bluetooth SIG の維持の日付まで最も[サービスの一覧](https://go.microsoft.com/fwlink/p/?linkid=320723)します。
 
-オブジェクトが使用する開発者がどのサービスを決定した後は、オブジェクトを呼び出すことができます[ **GattDeviceService.FromIdAsync** ](https://msdn.microsoft.com/library/windows/apps/dn297473)サービスのインスタンスを取得します。
+オブジェクトが使用する開発者がどのサービスを決定した後は、オブジェクトを呼び出すことができます[ **GattDeviceService.FromIdAsync** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile.GattDeviceService#Windows_Devices_Bluetooth_GenericAttributeProfile_GattDeviceService_FromIdAsync_System_String_)サービスのインスタンスを取得します。
 
-開発者が、有効な GattDeviceService オブジェクトを取得した後は、デバイスを使用して、通信に使用されますができます、 [ **Windows.Devices.Bluetooth.GenericAttributeProfile** ](https://msdn.microsoft.com/library/windows/apps/dn297685) API。
+開発者が、有効な GattDeviceService オブジェクトを取得した後は、デバイスを使用して、通信に使用されますができます、 [ **Windows.Devices.Bluetooth.GenericAttributeProfile** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile) API。
 
 これらの Api は、特定のサービスとそれらのオブジェクト (に含まれるサービス、特性、および記述子など) へのアクセスを有効にするだけでなく読み取りおよび書き込み機能。
 
@@ -100,7 +100,7 @@ Bluetooth SIG の維持の日付まで最も[サービスの一覧](https://go.m
 
 Windows 8.1 での Bluetooth 低エネルギーのサポートには、電源を効率的を使用して強力なフォーカスがあります。 これには、ローカル Bluetooth 無線アダプターの電力消費の削減とできるだけ少なくする CPU の使用が含まれます。
 
-したがって、Bluetooth LE 接続を確立するために、アプリに必要なハンドラーを登録、 [ **GattCharacteristic.ValueChanged** ](https://msdn.microsoft.com/library/windows/apps/dn263767)イベント。 または、アプリが呼び出す必要がありますのいずれか、 [ **GattCharacteristic.ReadValueAsync**](https://msdn.microsoft.com/library/windows/apps/dn263752)、 [ **GattCharacteristic.WriteValueAsync** ](https://msdn.microsoft.com/library/windows/apps/dn263770)または[ **GattCharacteristic.WriteClientCharacteristicConfigurationDescriptorAsync** ](https://msdn.microsoft.com/library/windows/apps/dn263769) BluetoothCacheMode.Cached オプションを指定せずメソッド。
+したがって、Bluetooth LE 接続を確立するために、アプリに必要なハンドラーを登録、 [ **GattCharacteristic.ValueChanged** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile.GattCharacteristic#Windows_Devices_Bluetooth_GenericAttributeProfile_GattCharacteristic_ValueChanged)イベント。 または、アプリが呼び出す必要がありますのいずれか、 [ **GattCharacteristic.ReadValueAsync**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile.GattCharacteristic#Windows_Devices_Bluetooth_GenericAttributeProfile_GattCharacteristic_ReadValueAsync_Windows_Devices_Bluetooth_BluetoothCacheMode_)、 [ **GattCharacteristic.WriteValueAsync** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile.GattCharacteristic#Windows_Devices_Bluetooth_GenericAttributeProfile_GattCharacteristic_WriteValueAsync_Windows_Storage_Streams_IBuffer_)または[ **GattCharacteristic.WriteClientCharacteristicConfigurationDescriptorAsync** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile.GattCharacteristic#Windows_Devices_Bluetooth_GenericAttributeProfile_GattCharacteristic_WriteClientCharacteristicConfigurationDescriptorAsync_Windows_Devices_Bluetooth_GenericAttributeProfile_GattClientCharacteristicConfigurationDescriptorValue_) BluetoothCacheMode.Cached オプションを指定せずメソッド。
 
 **注**  電力消費量を最小限に抑えるために Windows がアクティブに監視のリンクの RSSI 値ローカル Bluetooth 無線コントローラをポーリングしています。
 

@@ -6,12 +6,12 @@ keywords:
 - バッテリ miniclass ドライバー WDK、機能
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f4a9309a6835b02d33a79798788098c38bddf07e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f19d8871482119ef066459b91bf353f3ae87ca26
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335249"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354090"
 ---
 # <a name="battery-miniclass-driver-functionality"></a>バッテリ ミニクラス ドライバーの機能
 
@@ -35,7 +35,7 @@ ms.locfileid: "63335249"
 
 バッテリ miniclass ドライバーは」の説明に従って、Ioctl の処理などの他の操作のバッテリ クラス ドライバーのサポート ルーチンを呼び出す[バッテリ クラス ドライバー機能](battery-class-driver-functionality.md)します。
 
-すべてのバッテリ miniclass ドライバーのセットを提供する[BatteryMini*Xxx* ](https://msdn.microsoft.com/library/windows/hardware/ff536286)ルーチン。 バッテリ クラス ドライバーは、miniclass ドライバーがデバイスに固有のタスクを実行することを要求するこれらのルーチンを呼び出します。 さらに、miniclass ドライバーする必要がありますが、その他のルーチン」の説明に従って[提供するために必要なバッテリ Miniclass ドライバー機能](supplying-required-battery-miniclass-driver-functionality.md)します。
+すべてのバッテリ miniclass ドライバーのセットを提供する[BatteryMini*Xxx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_battery/)ルーチン。 バッテリ クラス ドライバーは、miniclass ドライバーがデバイスに固有のタスクを実行することを要求するこれらのルーチンを呼び出します。 さらに、miniclass ドライバーする必要がありますが、その他のルーチン」の説明に従って[提供するために必要なバッテリ Miniclass ドライバー機能](supplying-required-battery-miniclass-driver-functionality.md)します。
 
  
 

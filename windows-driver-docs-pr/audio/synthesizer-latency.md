@@ -10,12 +10,12 @@ keywords:
 - wave オーディオ、待機時間の WDK をシンクします。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b97f055a5d013fed25ba7dc0d2b2409485a63ee
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1aa780999439aa5d463871fadd30ed735302ad80
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328566"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354219"
 ---
 # <a name="synthesizer-latency"></a>シンセサイザーの遅延
 
@@ -25,9 +25,9 @@ ms.locfileid: "63328566"
 
 シンセサイザーのタイミングで別の考慮事項は、待機時間は、現在の時刻とメモを再生できる初めての違いです。 MIDI メッセージをシンセサイザーに送信され、現在のサンプル時に出力バッファーに表示されることはできません。 許容値は、バッファーが既に配置されているが、wave 出力デバイスにストリーミングされていないデータに対して行う必要があります。
 
-Wave シンクはそのためは、待機時間の時計を実装する必要があります、 [ **IReferenceClock** ](https://msdn.microsoft.com/library/windows/desktop/dd743269)オブジェクト (Microsoft Windows SDK のドキュメントで説明)。 待機時間のクロックの[ **IReferenceClock::GetTime** ](https://docs.microsoft.com/en-us/previous-versions//dd551385(v=vs.85))メソッドの取得、サンプリング時間までデータは、バッファーに既に書き込まれているし、これをマスターのクロックの相対時刻の参照に変換します. Wave シンクを参照し、サンプルの時間の間の変換[ **IDirectMusicSynthSink::SampleToRefTime** ](https://msdn.microsoft.com/library/windows/hardware/ff536526)と[ **IDirectMusicSynthSink::RefTimeToSample** ](https://msdn.microsoft.com/library/windows/hardware/ff536525)、ここでは、シンセサイザーを呼び出して**IDirectMusicSynthSink::RefTimeToSample**変換を完了します。
+Wave シンクはそのためは、待機時間の時計を実装する必要があります、 [ **IReferenceClock** ](https://docs.microsoft.com/windows/desktop/wmformat/ireferenceclock)オブジェクト (Microsoft Windows SDK のドキュメントで説明)。 待機時間のクロックの[ **IReferenceClock::GetTime** ](https://docs.microsoft.com/en-us/previous-versions//dd551385(v=vs.85))メソッドの取得、サンプリング時間までデータは、バッファーに既に書き込まれているし、これをマスターのクロックの相対時刻の参照に変換します. Wave シンクを参照し、サンプルの時間の間の変換[ **IDirectMusicSynthSink::SampleToRefTime** ](https://docs.microsoft.com/windows/desktop/api/dmusics/nf-dmusics-idirectmusicsynthsink-sampletoreftime)と[ **IDirectMusicSynthSink::RefTimeToSample** ](https://docs.microsoft.com/windows/desktop/api/dmusics/nf-dmusics-idirectmusicsynthsink-reftimetosample)、ここでは、シンセサイザーを呼び出して**IDirectMusicSynthSink::RefTimeToSample**変換を完了します。
 
-待機時間は、すべて wave シンクによって管理されます。 実装、 [ **IDirectMusicSynthSink::GetLatencyClock** ](https://msdn.microsoft.com/library/windows/hardware/ff536523)メソッドは、待機時間の時計へのポインターを出力して、によってこのポインターを取得する必要がさらに[ **IDirectMusicSynth::GetLatencyClock**](https://msdn.microsoft.com/library/windows/hardware/ff536536)します。 アプリケーションでは、待機時間のクロックを使用して、コンピューターを呼び出すことによって、シンセサイザーに渡されるときに再生するキューを MIDI メッセージの最初のポイントを判断、 [ **IDirectMusicSynth::PlayBuffer** ](https://msdn.microsoft.com/library/windows/hardware/ff536540)メソッド。
+待機時間は、すべて wave シンクによって管理されます。 実装、 [ **IDirectMusicSynthSink::GetLatencyClock** ](https://docs.microsoft.com/windows/desktop/api/dmusics/nf-dmusics-idirectmusicsynthsink-getlatencyclock)メソッドは、待機時間の時計へのポインターを出力して、によってこのポインターを取得する必要がさらに[ **IDirectMusicSynth::GetLatencyClock**](https://docs.microsoft.com/windows/desktop/api/dmusics/nf-dmusics-idirectmusicsynth-getlatencyclock)します。 アプリケーションでは、待機時間のクロックを使用して、コンピューターを呼び出すことによって、シンセサイザーに渡されるときに再生するキューを MIDI メッセージの最初のポイントを判断、 [ **IDirectMusicSynth::PlayBuffer** ](https://docs.microsoft.com/windows/desktop/api/dmusics/nf-dmusics-idirectmusicsynth-playbuffer)メソッド。
 
 MIDI メッセージの待機時間の例は、次の図に示します。
 

@@ -6,12 +6,12 @@ keywords:
 - ネットワーク ドライバーをフィルター処理条件フラグ
 ms.date: 01/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ad23cac352db91acafb9a1526b3897c7e3ed591
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8ddf1285144d5cedf1f2503708cd9248eb7a7768
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347392"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353351"
 ---
 # <a name="filtering-condition-flags"></a>フィルター条件フラグ
 
@@ -183,7 +183,7 @@ ms.locfileid: "63347392"
 <p>0x00000020</p>
 </td>
 <td>
-<p>示します、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff568388"> <b>NET_BUFFER_LIST</b> </a>コールアウト ドライバーに渡された構造体は、IP パケットのフラグメント。</p>
+<p>示します、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list"> <b>NET_BUFFER_LIST</b> </a>コールアウト ドライバーに渡された構造体は、IP パケットのフラグメント。</p>
 <p>このフラグは、次のフィルター処理の層に適用。<dl>
 <dd>FWPM_LAYER_INBOUND_IPPACKET_V4</dd>
 <dd>FWPM_LAYER_INBOUND_IPPACKET_V6</dd>
@@ -199,7 +199,7 @@ ms.locfileid: "63347392"
 <p>0x00000040</p>
 </td>
 <td>
-<p>示します、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff568388"> <b>NET_BUFFER_LIST</b> </a>コールアウト ドライバーに渡された構造体には、パケットのフラグメントのリンク リストがについて説明します。</p>
+<p>示します、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list"> <b>NET_BUFFER_LIST</b> </a>コールアウト ドライバーに渡された構造体には、パケットのフラグメントのリンク リストがについて説明します。</p>
 <p>このフラグは、次のフィルター処理の層に適用。<dl>
 <dd>FWPM_LAYER_INBOUND_IPPACKET_V4</dd>
 <dd>FWPM_LAYER_INBOUND_IPPACKET_V6</dd>
@@ -285,7 +285,7 @@ ms.locfileid: "63347392"
 <p>0x00004000</p>
 </td>
 <td>
-<p>接続するアプリケーションが予期しているピア コンピューターの名前がなどの関数を呼び出すことによって取得されていることを示します<a href="https://msdn.microsoft.com/library/windows/hardware/bb394822"> <b>WSASetSocketPeerTargetName</b> </a>キャッシュを使用してではなく、ヒューリスティックです。</p>
+<p>接続するアプリケーションが予期しているピア コンピューターの名前がなどの関数を呼び出すことによって取得されていることを示します<a href="https://docs.microsoft.com/windows/desktop/api/ws2tcpip/nf-ws2tcpip-wsasetsocketpeertargetname"> <b>WSASetSocketPeerTargetName</b> </a>キャッシュを使用してではなく、ヒューリスティックです。</p>
 <p>このフラグは、Windows Server 2008 R2、Windows 7、および以降のバージョンの Windows で次のフィルター処理の層に適用。<dl>
 <dd>FWPM_LAYER_ALE_AUTH_CONNECT_V4</dd>
 <dd>FWPM_LAYER_ALE_AUTH_CONNECT_V6</dd>
@@ -310,7 +310,7 @@ ms.locfileid: "63347392"
 <p>0x00010000</p>
 </td>
 <td>
-<p>パケットが認証済みファイアウォール ポリシーと一致していることを示します。 ファイアウォール ルールの「セキュリティで保護された場合は、接続を許可する」オプションに一致する接続だけでは、このフラグが設定があります。 詳細については、次を参照してください。<a href="https://technet.microsoft.com/library/cc753463">ファイアウォールのバイパスの認証を有効にする方法</a>します。</p>
+<p>パケットが認証済みファイアウォール ポリシーと一致していることを示します。 ファイアウォール ルールの「セキュリティで保護された場合は、接続を許可する」オプションに一致する接続だけでは、このフラグが設定があります。 詳細については、次を参照してください。<a href="https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753463(v=ws.10)">ファイアウォールのバイパスの認証を有効にする方法</a>します。</p>
 <p>このフラグは、Windows Server 2008、Windows Vista SP1 と以降のバージョンの Windows で次のフィルター処理レイヤーで該当するもです。<dl>
 <dd>FWPM_LAYER_ALE_FLOW_ESTABLISHED_V4</dd>
 <dd>FWPM_LAYER_ALE_FLOW_ESTABLISHED_V6</dd>
@@ -337,7 +337,7 @@ ms.locfileid: "63347392"
 <p>0x00020000</p>
 </td>
 <td>
-<p>場合、このフラグが設定、 <a href="https://msdn.microsoft.com/library/windows/hardware/aa832668">IPV6_PROTECTION_LEVEL</a>既に承認済みのソケットに対してソケット オプションを設定します。</p>
+<p>場合、このフラグが設定、 <a href="https://docs.microsoft.com/windows/desktop/WinSock/ipv6-protection-level">IPV6_PROTECTION_LEVEL</a>既に承認済みのソケットに対してソケット オプションを設定します。</p>
 <p>このフラグは、次のフィルター処理の層に適用。<dl>
 <dd>FWPM_LAYER_ALE_RESOURCE_ASSIGNMENT_V6</dd>
 <dd>FWPM_LAYER_ALE_RESOURCE_ASSIGNMENT_V6_DISCARD</dd>

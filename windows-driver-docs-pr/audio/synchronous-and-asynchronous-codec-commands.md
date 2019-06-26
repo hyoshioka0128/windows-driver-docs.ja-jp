@@ -11,21 +11,21 @@ keywords:
 - コーデックの非同期コマンドの WDK オーディオ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f4ffc6bd8794693f6aced59ce86dbb3566ca56ad
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 04c30120d4704271e6f36585ac930eeebf2742d6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335067"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354211"
 ---
 # <a name="synchronous-and-asynchronous-codec-commands"></a>同期および非同期のコーデック コマンド
 
 
-[ **TransferCodecVerbs** ](https://msdn.microsoft.com/library/windows/hardware/ff538596)ルーチンは、HD オーディオ コント ローラーに接続されているオーディオとモデムのコーデックにコマンドを送信する関数のドライバーを許可します。 コーデックのコマンドは、同期または非同期に実行できます。
+[ **TransferCodecVerbs** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/nc-hdaudio-ptransfer_codec_verbs)ルーチンは、HD オーディオ コント ローラーに接続されているオーディオとモデムのコーデックにコマンドを送信する関数のドライバーを許可します。 コーデックのコマンドは、同期または非同期に実行できます。
 
--   呼び出し[ **TransferCodecVerbs** ](https://msdn.microsoft.com/library/windows/hardware/ff538596)コマンドの一覧は、コーデックの後にのみ、ルーチンを返します。 では同期的に、処理またはコーデックでは、すべてのコマンドが処理を送信します。
+-   呼び出し[ **TransferCodecVerbs** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/nc-hdaudio-ptransfer_codec_verbs)コマンドの一覧は、コーデックの後にのみ、ルーチンを返します。 では同期的に、処理またはコーデックでは、すべてのコマンドが処理を送信します。
 
--   呼び出し[ **TransferCodecVerbs** ](https://msdn.microsoft.com/library/windows/hardware/ff538596)ルーチンを返します、HD オーディオ バス ドライバー コマンドを追加します、その内部コマンド キューにないとすぐに非同期で処理されるコマンドの一覧を送信します。コーデックまたはコーデックのコマンドを待機しています。 コマンドの処理が、コーデック、バス ドライバー コールバック ルーチンを呼び出すことによって機能ドライバーに通知します。
+-   呼び出し[ **TransferCodecVerbs** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/nc-hdaudio-ptransfer_codec_verbs)ルーチンを返します、HD オーディオ バス ドライバー コマンドを追加します、その内部コマンド キューにないとすぐに非同期で処理されるコマンドの一覧を送信します。コーデックまたはコーデックのコマンドを待機しています。 コマンドの処理が、コーデック、バス ドライバー コールバック ルーチンを呼び出すことによって機能ドライバーに通知します。
 
 、送信するコーデック コマンドの性質によっては、関数のドライバーは、コーデックから応答を取得するのに、次の手法の 1 つ以上を使用します。
 
@@ -33,11 +33,11 @@ ms.locfileid: "63335067"
 
 -   コーデックの応答を参照してください、非同期モードを使用して、コマンドが完了するとを把握する (には、コーデック コマンドの記憶域を解放) を除く、コールバック ルーチンを無視関数ドライバーが、コーデックのコマンドを完了するまで待つ必要がない場合、および破棄またはコーデック コマンドへの応答を無視します。
 
--   関数ドライバー コーデックが完了すると、コマンドが、応答を確認する必要はありませんかを認識する必要がある場合に、非同期モードを使用および通知のコールバック ルーチンに依存しています。 ただし、破棄したり、コーデック コマンドへの応答を無視します。 コールバック ルーチンを使用して、[カーネル (KS) イベントをストリーミング](https://msdn.microsoft.com/library/windows/hardware/ff567643)ドライバーの主な部分に、通知を送信します。
+-   関数ドライバー コーデックが完了すると、コマンドが、応答を確認する必要はありませんかを認識する必要がある場合に、非同期モードを使用および通知のコールバック ルーチンに依存しています。 ただし、破棄したり、コーデック コマンドへの応答を無視します。 コールバック ルーチンを使用して、[カーネル (KS) イベントをストリーミング](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-events)ドライバーの主な部分に、通知を送信します。
 
 -   コーデックのコマンドを完了し、どのような応答が、コマンドを完了するを待つのではなく、すぐに処理を再開する必要があるときに、関数のドライバーで両方を知る必要がある場合、非同期モードを使用し、まで、応答の読み取りを回避できます。コールバック ルーチンを受け取ります。 コールバック ルーチンまたはドライバーのメイン部分のいずれかが、応答を検査できます。
 
-[*TransferCodecVerbs* ](https://msdn.microsoft.com/library/windows/hardware/ff538596)ステータスを返します\_バス ドライバーの内部コマンド キューへのコマンドの一覧の追加に成功すると、成功します。 呼び出しが成功した場合でも、応答できない可能性がありますが無効です。 関数のドライバーでは、それらが有効かどうかを判断するコーデック応答のステータス ビットを確認する必要があります。 このルールは、同期および非同期の両方のモードに適用されます。
+[*TransferCodecVerbs* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/nc-hdaudio-ptransfer_codec_verbs)ステータスを返します\_バス ドライバーの内部コマンド キューへのコマンドの一覧の追加に成功すると、成功します。 呼び出しが成功した場合でも、応答できない可能性がありますが無効です。 関数のドライバーでは、それらが有効かどうかを判断するコーデック応答のステータス ビットを確認する必要があります。 このルールは、同期および非同期の両方のモードに適用されます。
 
 無効な応答の原因は、次のいずれかをする可能性があります。
 
@@ -53,7 +53,7 @@ ms.locfileid: "63335067"
 
 -   場合**HasFifoOverrun** = 1 のコマンドでは、コーデック、おそらくに達するが、応答がオーバーラン FIFO により失われました。
 
-呼び出し中に*TransferCodecCommands*、呼び出し元の配列へのポインターを提供する[ **HDAUDIO\_コーデック\_転送**](https://msdn.microsoft.com/library/windows/hardware/ff536424)構造体。 各構造体は、コマンドが含まれていて、応答の領域を提供します。 常に、バス ドライバーは、応答を起動したコマンドを含む構造体に各応答を書き込みます。
+呼び出し中に*TransferCodecCommands*、呼び出し元の配列へのポインターを提供する[ **HDAUDIO\_コーデック\_転送**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/ns-hdaudio-_hdaudio_codec_transfer)構造体。 各構造体は、コマンドが含まれていて、応答の領域を提供します。 常に、バス ドライバーは、応答を起動したコマンドを含む構造体に各応答を書き込みます。
 
 呼び出しごとに*TransferCodecCommands*コマンドが処理される順序は、配列内のコマンドの順序によって決まります。 処理が 2 番目のコマンドを開始する前に、配列の最初のコマンドを常に処理を完了します。
 
@@ -65,7 +65,7 @@ ms.locfileid: "63335067"
 
 たとえば、一連のデータのインデックス レジスタのコーデックをバイトから構成され、8 ビットのデータを書き込むためのハードウェア インターフェイスを登録します。 最初に、関数ドライバーは、開始インデックスをインデックス レジスタに読み込むコーデック コマンドを送信します。 次に、ドライバーは、データ レジスタにデータの最初のバイトを書き込むコマンドを送信します。 次のデータに連続する各書き込みインデックス レジスタ インクリメントは、転送が完了するまでに登録します。 ただし、正しくインデックスとデータ レジスタのアクセスを同期する 2 つのドライバーのスレッドが失敗した場合、2 つのスレッドによる個々 の登録のアクセスの相対順序が定義されていないと、可能性の高い結果がデータの破損または、無効なハードウェア構成します。
 
-[ *TransferCodecVerbs* ](https://msdn.microsoft.com/library/windows/hardware/ff538596)ルーチンは、HD オーディオ DDI の両方のバージョンで使用できます。
+[ *TransferCodecVerbs* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/nc-hdaudio-ptransfer_codec_verbs)ルーチンは、HD オーディオ DDI の両方のバージョンで使用できます。
 
  
 

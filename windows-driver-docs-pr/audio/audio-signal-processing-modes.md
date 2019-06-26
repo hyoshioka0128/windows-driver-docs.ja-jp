@@ -4,12 +4,12 @@ description: ドライバーは、サポートされているオーディオ信�
 ms.assetid: 104275F8-2302-484B-B673-7448CAA1F793
 ms.date: 05/14/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: da363a5b00d061bd18f97d11cf7b37c66c25f985
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 430cdfae2c6ea60336ad325814f58595c23a6320
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331426"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355655"
 ---
 # <a name="audio-signal-processing-modes"></a>オーディオ信号の処理モード
 
@@ -170,7 +170,7 @@ System.Devices.AudioDevice.RawProcessingSupported が true の場合は、アプ
 
 アプリケーションでは、処理、オーディオ ハードウェア構成に関係なく最適なオーディオ効果を要求する必要があります。 たとえば、通信と、Windows のバック グラウンド ミュージックの一時停止するようにストリームをタグ付けします。
 
-オーディオ ストリームの静的なカテゴリの詳細については、次を参照してください。 [AudioCategory 列挙](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.audiocategory.aspx)と[MediaElement.AudioCategory プロパティ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaelement.audiocategory.aspx)します。
+オーディオ ストリームの静的なカテゴリの詳細については、次を参照してください。 [AudioCategory 列挙](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.AudioCategory)と[MediaElement.AudioCategory プロパティ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement#Windows_UI_Xaml_Controls_MediaElement_AudioCategory)します。
 
 ## <a name="span-idclsidsforsystemeffectsspanspan-idclsidsforsystemeffectsspanspan-idclsidsforsystemeffectsspanclsids-for-system-effects"></a><span id="CLSIDs_for_System_Effects"></span><span id="clsids_for_system_effects"></span><span id="CLSIDS_FOR_SYSTEM_EFFECTS"></span>システムの効果の Clsid
 
@@ -195,7 +195,7 @@ DEFINE_GUIDSTRUCT("E1F89EB5-5F46-419B-967B-FF6770B98401", KSATTRIBUTEID_AUDIOSIG
 #define KSATTRIBUTEID_AUDIOSIGNALPROCESSING_MODE DEFINE_GUIDNAMED(KSATTRIBUTEID_AUDIOSIGNALPROCESSING_MODE)
 ```
 
-KSATTRIBUTEID\_AUDIOSIGNALPROCESSING\_モード対応のドライバーをでモードを使用して、 [ **KSDATARANGE** ](https://msdn.microsoft.com/library/windows/hardware/ff561658)を含む構造体、 [ **KSATTRIBUTE\_一覧**](https://msdn.microsoft.com/library/windows/hardware/mt727894)します。 この一覧では、1 つの要素には、 [ **KSATTRIBUTE**](https://msdn.microsoft.com/library/windows/hardware/ff560987)します。 属性のメンバー、 **KSATTRIBUTE** KSATTRIBUTEID に構造体が設定されている\_AUDIOSIGNALPROCESSING\_モード。
+KSATTRIBUTEID\_AUDIOSIGNALPROCESSING\_モード対応のドライバーをでモードを使用して、 [ **KSDATARANGE** ](https://docs.microsoft.com/previous-versions/ff561658(v=vs.85))を含む構造体、 [ **KSATTRIBUTE\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksattribute_list)します。 この一覧では、1 つの要素には、 [ **KSATTRIBUTE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksattribute)します。 属性のメンバー、 **KSATTRIBUTE** KSATTRIBUTEID に構造体が設定されている\_AUDIOSIGNALPROCESSING\_モード。
 
 ## <a name="span-idaudioeffectsspanspan-idaudioeffectsspanspan-idaudioeffectsspanaudio-effects"></a><span id="Audio_Effects"></span><span id="audio_effects"></span><span id="AUDIO_EFFECTS"></span>オーディオ特殊効果
 

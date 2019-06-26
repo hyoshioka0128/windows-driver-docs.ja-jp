@@ -7,12 +7,12 @@ keywords:
 - WDK Unidrv の標準機能
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f6dc952e6c94fca9f27d1e61da6ceab81368e060
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ad223a9ae86b6ddaa3f9842e3af01c10dcf5dd43
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375194"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355082"
 ---
 # <a name="standard-features"></a>標準機能
 
@@ -108,7 +108,7 @@ ms.locfileid: "63375194"
 <td><p>参照してください<a href="standard-options.md" data-raw-source="[Standard Options](standard-options.md)">標準オプション</a>します。</p>
 <p>カスタマイズされたオプションを指定することはできません。</p></td>
 <td><p>任意。 指定しない場合、既定の方向は縦にします。</p>
-<p>Windows 7 では、 <strong>MxdcGetPDEVAdjustment</strong>関数には、横置きに回転の新しいパラメーター。 詳細については、次を参照してください。 <a href="https://msdn.microsoft.com/library/windows/hardware/ff557558" data-raw-source="[&lt;strong&gt;MxdcXDCGetPDEVAdjustment&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557558)"> <strong>MxdcXDCGetPDEVAdjustment</strong></a>します。</p></td>
+<p>Windows 7 では、 <strong>MxdcGetPDEVAdjustment</strong>関数には、横置きに回転の新しいパラメーター。 詳細については、次を参照してください。 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mxdc/nf-mxdc-mxdcgetpdevadjustment" data-raw-source="[&lt;strong&gt;MxdcXDCGetPDEVAdjustment&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mxdc/nf-mxdc-mxdcgetpdevadjustment)"> <strong>MxdcXDCGetPDEVAdjustment</strong></a>します。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>OutputBin</strong></p></td>

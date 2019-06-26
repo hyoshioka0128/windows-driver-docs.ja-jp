@@ -4,17 +4,17 @@ description: オペレーティング システムによるミニポート ド�
 ms.assetid: 6ab0e4e4-5118-4df5-ba4e-7da66ce5880d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 75c71078f5888a658afb70930453a65fae3a1b48
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bc014ba43a91072abf13884d64844e9255f2d96a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332314"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355354"
 ---
 # <a name="miniport-driver-types-by-operating-system"></a>オペレーティング システムによるミニポート ドライバーの種類
 
 
-オーディオ ドライバーを開発する際に、ドライバーは PortCls システム ドライバー (Portcls.sys) または AVStream クラスのシステム ドライバーと共に動作するかどうかを判断する必要があります。 ビデオ ストリームが必要でない場合は、PortCls システム ドライバーで動作するドライバーを必要があります。 これら 2 つの種類のシステム ドライバーの詳細については、次を参照してください。、[ポート クラスの概要](introduction-to-port-class.md)と[AVStream の概要](https://msdn.microsoft.com/library/windows/hardware/ff554240)トピック。
+オーディオ ドライバーを開発する際に、ドライバーは PortCls システム ドライバー (Portcls.sys) または AVStream クラスのシステム ドライバーと共に動作するかどうかを判断する必要があります。 ビデオ ストリームが必要でない場合は、PortCls システム ドライバーで動作するドライバーを必要があります。 これら 2 つの種類のシステム ドライバーの詳細については、次を参照してください。、[ポート クラスの概要](introduction-to-port-class.md)と[AVStream の概要](https://docs.microsoft.com/windows-hardware/drivers/stream/avstream-overview)トピック。
 
 PortCls システム ドライバー (Portcls.sys) では、レンダリング、wave と MIDI ストリームをキャプチャするオーディオ デバイスをサポートするためにいくつかの組み込みのポート ドライバーを提供します。 通常、ポート ドライバーは、オーディオ サブデバイスの各クラスの機能の大半を提供します。
 

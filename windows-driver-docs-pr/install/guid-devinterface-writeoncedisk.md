@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 3a8253d0da7eae155fac6142514700111e385adc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 262c3c24e75ace510ae0da5030392c5494c83c75
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330924"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355160"
 ---
 # <a name="guiddevinterfacewriteoncedisk"></a>GUID_DEVINTERFACE_WRITEONCEDISK
 
 
-GUID_DEVINTERFACE_WRITEONCEDISK[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)書き込みが定義されている、デバイスを 1 回ディスクします。
+GUID_DEVINTERFACE_WRITEONCEDISK[デバイス インターフェイス クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)書き込みが定義されている、デバイスを 1 回ディスクします。
 
 <table>
 <colgroup>
@@ -54,7 +54,7 @@ GUID_DEVINTERFACE_WRITEONCEDISK[デバイス インターフェイス クラス]
 <a name="remarks"></a>注釈
 -------
 
-システム提供[記憶装置ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff566976)オペレーティング システムと書き込みの存在をアプリケーションに通知する GUID_DEVINTERFACE_WRITEONCEDISK のインスタンスを登録などの CD-R ディスク 1 回
+システム提供[記憶装置ドライバー](https://docs.microsoft.com/windows-hardware/drivers/storage/storage-drivers)オペレーティング システムと書き込みの存在をアプリケーションに通知する GUID_DEVINTERFACE_WRITEONCEDISK のインスタンスを登録などの CD-R ディスク 1 回
 
 [**WriteOnceDiskClassGuid** ](writeoncediskclassguid.md) GUID_DEVINTERFACE_WRITEONCEDISK デバイス インターフェイスのクラスの古い識別子です。 このクラスの新しいインスタンスは、代わりに GUID_DEVINTERFACE_WRITEONCEDISK を使用します。
 

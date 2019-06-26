@@ -4,12 +4,12 @@ description: SetupPreferredAudioDevices
 ms.assetid: cc6b7da4-335d-4629-ba54-32aa32a1eb09
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1811c10c9ac649c7e58d5f7c7cd6b89946664d39
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 517f3c57b0b4a7c6b61dbb445eb8124b349630e9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328638"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355262"
 ---
 # <a name="setuppreferredaudiodevices"></a>SetupPreferredAudioDevices
 
@@ -19,11 +19,11 @@ ms.locfileid: "63328638"
 
 SetupPreferredAudioDevices キーワードは、デバイス、システムでは、1 つ含まれている場合、既定では、オーディオ システムができるようにするには、優先するオーディオ デバイスまたは複数のオーディオ デバイスを表します。 このキーワードは media クラスの特定と Microsoft Windows Millennium Edition または Windows 98、Microsoft Windows 2000、Windows XP、および Windows Vista でサポートされます。 SetupPreferredAudioDevicesis Windows 7 でサポートされていません。
 
-オーディオ デバイスを作成するときに明示的にではなくアプリケーション プログラムが既定値を使用するよう選択 (または優先) デバイスはデバイスを指定します。 (例: の説明を表示、 [ **waveOutOpen** ](https://msdn.microsoft.com/library/windows/desktop/dd743866)と**DirectSoundCreate** Microsoft Windows SDK のドキュメント内の関数)。
+オーディオ デバイスを作成するときに明示的にではなくアプリケーション プログラムが既定値を使用するよう選択 (または優先) デバイスはデバイスを指定します。 (例: の説明を表示、 [ **waveOutOpen** ](https://docs.microsoft.com/previous-versions/dd743866(v=vs.85))と**DirectSoundCreate** Microsoft Windows SDK のドキュメント内の関数)。
 
 オーディオのシステムの追跡、システム レジストリで、現在の優先オーディオ デバイス。 新しいオーディオ デバイスをインストールすることによって、システムをアップグレードすると、通常、デバイスをインストールする専用の INF ファイルは、優先するオーディオ デバイスとして、新しいデバイスを指定するレジストリを更新します。
 
-SetupPreferredAudioDevices キーワードは、レジストリの更新のディレクティブを囲むことができます、**追加レジストリ セクション**(を参照してください[ **INF AddReg ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546320)) 用の INF ファイルのオーディオ デバイス。 このディレクティブは、次の形式です。
+SetupPreferredAudioDevices キーワードは、レジストリの更新のディレクティブを囲むことができます、**追加レジストリ セクション**(を参照してください[ **INF AddReg ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)) 用の INF ファイルのオーディオ デバイス。 このディレクティブは、次の形式です。
 
 *reg rootkey*、 \[ *reg サブキー*\]SetupPreferredAudioDevices \[*フラグ*\]、 \[ *dword 値*\]
 

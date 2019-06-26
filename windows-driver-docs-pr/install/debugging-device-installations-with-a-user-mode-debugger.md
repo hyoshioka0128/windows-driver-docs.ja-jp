@@ -4,12 +4,12 @@ description: ユーザーモード デバッガーでのデバイスのインス
 ms.assetid: 34427afb-3303-44ec-a3a7-72f247c5506d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a86b65d148ce509e7e85619775ce7fadd8427728
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4f7f0d2fb6c2bd951543f7d462ee0b27d8561c70
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358852"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356289"
 ---
 # <a name="debugging-device-installations-with-a-user-mode-debugger"></a>ユーザーモード デバッガーでのデバイスのインストールのデバッグ
 
@@ -18,7 +18,7 @@ ms.locfileid: "63358852"
 
 ユーザー モード デバイスのインストールのホスト プロセスをデバッグする最も効率的な方法は、WinDbg または Visual Studio など、ユーザー モード デバッガーです。 *DrvInst.exe*プロセスは通常ユーザーが介入せずに完了、マイクロソフトの開発者を許可するには、Windows Vista と以降のバージョンの Windows にサポートが追加されて、[ドライバー パッケージ](driver-packages.md)デバイス インストールの主要なステージが処理される前にデバッガーをアタッチします。
 
-ユーザー モード デバッガーや他のデバッグ ツールの詳細については、次を参照してください。 [Windows デバッグ](https://msdn.microsoft.com/library/windows/hardware/ff551063)します。
+ユーザー モード デバッガーや他のデバッグ ツールの詳細については、次を参照してください。 [Windows デバッグ](https://docs.microsoft.com/windows-hardware/drivers/debugger/index)します。
 
 **DebugInstall**レジストリ値がデバッグのサポート システムで有効になっているデバイスのインストールの種類を指定します。 このレジストリ値の詳細については、次を参照してください。[デバイス インストールのデバッグのサポートを有効にする](enabling-support-for-debugging-device-installations.md)します。
 

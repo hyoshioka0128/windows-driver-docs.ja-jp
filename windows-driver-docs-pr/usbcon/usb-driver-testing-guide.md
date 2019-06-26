@@ -3,12 +3,12 @@ Description: このセクションでは、USB ハードウェアまたはソフ
 title: Windows での USB ハードウェア、ドライバー、アプリのテスト
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ddb54a520aed50db51b5c7dc72ba51e5f0d2f641
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 221a69c4b62df5f07a72be8c4577d8b5e734b9f0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325736"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356613"
 ---
 # <a name="testing-usb-hardware-drivers-and-apps-in-windows"></a>Windows での USB ハードウェア、ドライバー、アプリのテスト
 
@@ -87,7 +87,7 @@ ms.locfileid: "63325736"
  
 
 ## <a name="related-topics"></a>関連トピック
-[ユニバーサル シリアル バス (USB)](https://msdn.microsoft.com/library/windows/hardware/ff538930)  
+[ユニバーサル シリアル バス (USB)](https://docs.microsoft.com/windows-hardware/drivers/)  
 
 
 

@@ -17,12 +17,12 @@ keywords:
 - クロックの WDK オーディオ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ed2bab09b323bf012e42c809671421bc6720ed40
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6c24bbbe6e8a43b49b8126e6cfe87b34db548f3a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328570"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354209"
 ---
 # <a name="synthesizer-timing"></a>シンセサイザーのタイミング
 
@@ -36,7 +36,7 @@ ms.locfileid: "63328570"
 
 -   サンプル時間
 
-参照はメッセージのシーケンスを再生するには、絶対時間 (マスター クロック単位) です。 渡されるユーザー モードの実装では、 [ **IDirectMusicSynth::PlayBuffer** ](https://msdn.microsoft.com/library/windows/hardware/ff536540)メソッドをシンセサイザー MIDI メッセージが送られるときにします。 シンセサイザー、wave シンク、および DirectMusic の残りの部分の実装によってシンセサイザーに関連付けられている同じマスター時計の下のすべての作業をする必要があります、 [ **IDirectMusicSynth::SetMasterClock** ](https://msdn.microsoft.com/library/windows/hardware/ff536543)メソッドを wave シンクと[ **IDirectMusicSynthSink::SetMasterClock**](https://msdn.microsoft.com/library/windows/hardware/ff536528)します。
+参照はメッセージのシーケンスを再生するには、絶対時間 (マスター クロック単位) です。 渡されるユーザー モードの実装では、 [ **IDirectMusicSynth::PlayBuffer** ](https://docs.microsoft.com/windows/desktop/api/dmusics/nf-dmusics-idirectmusicsynth-playbuffer)メソッドをシンセサイザー MIDI メッセージが送られるときにします。 シンセサイザー、wave シンク、および DirectMusic の残りの部分の実装によってシンセサイザーに関連付けられている同じマスター時計の下のすべての作業をする必要があります、 [ **IDirectMusicSynth::SetMasterClock** ](https://docs.microsoft.com/windows/desktop/api/dmusics/nf-dmusics-idirectmusicsynth-setmasterclock)メソッドを wave シンクと[ **IDirectMusicSynthSink::SetMasterClock**](https://docs.microsoft.com/windows/desktop/api/dmusics/nf-dmusics-idirectmusicsynthsink-setmasterclock)します。
 
 シンセサイザーの出力バッファーにオフセットを測定するサンプルの時間が使用されます。 このバッファーは、サンプリング レートを基準としたため、サンプル時間ウェーブのサンプルが入力されます。 たとえば、22.1 kHz のサンプリング レート、毎秒の時間は等価です 22,100 サンプルまたは 44,200 バイト (16 ビットの mono 形式) の場合。
 

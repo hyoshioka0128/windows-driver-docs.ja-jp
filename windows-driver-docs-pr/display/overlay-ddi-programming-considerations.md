@@ -7,12 +7,12 @@ keywords:
 - オーバーレイ DDI WDK Server 2008 R2 の表示、プログラミングの考慮事項
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f49981c4fb3826ecac1f3627ececc12a23f4621f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a1a8a74479524618050c25c870efe2d3387c440d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383986"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354707"
 ---
 # <a name="overlay-ddi-programming-considerations"></a>オーバーレイ DDI のプログラミングに関する考慮事項
 
@@ -21,9 +21,9 @@ ms.locfileid: "63383986"
 
 実装する場合、[オーバーレイ DDI](overlay-ddi.md)ユーザー モードのディスプレイ ドライバーでは、次のプログラミングのヒントを検討してください。
 
--   D3DCAPS を設定する必要があります、ドライバーは、オーバーレイ DDI をサポートする場合\_オーバーレイ ビット、 **Cap**のメンバー [D3DCAPS9](https://go.microsoft.com/fwlink/p/?linkid=122122)構造体。 D3DCAPS9 構造体は、DirectX 9.0 SDK ドキュメントで説明します。 ドライバーの設定、D3DCAPS\_オーバーレイ ビットへの呼び出しに応答でその[ **GetCaps** ](https://msdn.microsoft.com/library/windows/hardware/ff566762)関数を D3DDDICAPS\_GETD3D9CAPS 値で設定されます、**型**のメンバー、 [ **D3DDDIARG\_GETCAPS** ](https://msdn.microsoft.com/library/windows/hardware/ff543148)構造体、 *pData*パラメーターを指します。
+-   D3DCAPS を設定する必要があります、ドライバーは、オーバーレイ DDI をサポートする場合\_オーバーレイ ビット、 **Cap**のメンバー [D3DCAPS9](https://go.microsoft.com/fwlink/p/?linkid=122122)構造体。 D3DCAPS9 構造体は、DirectX 9.0 SDK ドキュメントで説明します。 ドライバーの設定、D3DCAPS\_オーバーレイ ビットへの呼び出しに応答でその[ **GetCaps** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_getcaps)関数を D3DDDICAPS\_GETD3D9CAPS 値で設定されます、**型**のメンバー、 [ **D3DDDIARG\_GETCAPS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ns-d3dumddi-_d3dddiarg_getcaps)構造体、 *pData*パラメーターを指します。
 
--   32 ビットではなく、64 ビットの表示形式の場合 (たとえば、DWM が、D3DDDIFMT を使用する場合\_A16B16G16R16F 値から、 [ **D3DDDIFORMAT** ](https://msdn.microsoft.com/library/windows/hardware/ff544312)表示モードの列挙体)、Direct3D のランタイムでのオーバーレイのカラー キーの下位 32 ビットの配置、 **DstColorKeyLow**のメンバー、 [ **D3DDDI\_OVERLAYINFO** ](https://msdn.microsoft.com/library/windows/hardware/ff544621)構造との上位 32 ビット、 **DstColorKeyHigh**のメンバー **D3DDDI\_OVERLAYINFO**します。
+-   32 ビットではなく、64 ビットの表示形式の場合 (たとえば、DWM が、D3DDDIFMT を使用する場合\_A16B16G16R16F 値から、 [ **D3DDDIFORMAT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dukmdt/ne-d3dukmdt-_d3dddiformat)表示モードの列挙体)、Direct3D のランタイムでのオーバーレイのカラー キーの下位 32 ビットの配置、 **DstColorKeyLow**のメンバー、 [ **D3DDDI\_OVERLAYINFO** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ns-d3dumddi-_d3dddi_overlayinfo)構造との上位 32 ビット、 **DstColorKeyHigh**のメンバー **D3DDDI\_OVERLAYINFO**します。
 
  
 

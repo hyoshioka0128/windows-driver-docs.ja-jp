@@ -17,12 +17,12 @@ keywords:
 - デバイス ID の文字列の WDK オーディオ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 457fefef9c81a3b7a1bc7fa79f8b0b193f5f73ad
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 64ab1e96519e270aa5223fa6fc8f4b4c5b85df43
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335437"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354207"
 ---
 # <a name="system-wide-unique-device-ids"></a>システム全体にわたる一意のデバイス ID
 
@@ -30,9 +30,9 @@ ms.locfileid: "63335437"
 ## <span id="system_wide_unique_device_ids"></span><span id="SYSTEM_WIDE_UNIQUE_DEVICE_IDS"></span>
 
 
-一般的なオーディオ アダプター用のドライバーは、システムで同じのオーディオのアダプター カードの複数のインスタンスをサポートできる簡単に。 ドライバーはほぼすべてのデータ構造がデバイス拡張機能のバッファーに格納されます (の説明を参照して、 [**デバイス\_オブジェクト**](https://msdn.microsoft.com/library/windows/hardware/ff543147)構造体の**DeviceExtension**フィールド)。 ドライバーの複数のインスタンスは、任意のグローバル データを共有、ただし、それらのインスタンスはこのデータへのアクセスを同期する必要があります。
+一般的なオーディオ アダプター用のドライバーは、システムで同じのオーディオのアダプター カードの複数のインスタンスをサポートできる簡単に。 ドライバーはほぼすべてのデータ構造がデバイス拡張機能のバッファーに格納されます (の説明を参照して、 [**デバイス\_オブジェクト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_object)構造体の**DeviceExtension**フィールド)。 ドライバーの複数のインスタンスは、任意のグローバル データを共有、ただし、それらのインスタンスはこのデータへのアクセスを同期する必要があります。
 
-1 つの追加要件は、各サブデバイス アダプター カードの特定のインスタンスで使用する、[デバイス ID の文字列](https://msdn.microsoft.com/library/windows/hardware/ff541224)を一意に識別、サブデバイス同じアダプター カードのすべてのインスタンス間で、システムにします。
+1 つの追加要件は、各サブデバイス アダプター カードの特定のインスタンスで使用する、[デバイス ID の文字列](https://docs.microsoft.com/windows-hardware/drivers/install/device-identification-strings)を一意に識別、サブデバイス同じアダプター カードのすべてのインスタンス間で、システムにします。
 
 これを実現する最も簡単な方法では、プラグ アンド プレイのマネージャーに論理的に個別のデバイスとしてアダプター カードの各サブデバイスを公開します。 オプション (1) として表示されるこの[多機能オーディオ デバイス](multifunction-audio-devices.md)します。
 
@@ -48,7 +48,7 @@ ms.locfileid: "63335437"
 
 アダプター カードのバス ドライバーを指定する場合は、デバイス Id を割り当てるには、バス ドライバーがシステム全体で一意であることを確認する必要があります。
 
-バス ドライバーへの応答には、その子のいずれかのデバイス ID を提供する、 [ **IRP\_MN\_クエリ\_ID** ](https://msdn.microsoft.com/library/windows/hardware/ff551679)プラグ アンド プレイ マネージャーからのクエリ。 バス ドライバーがへの応答を示す 2 つの方法のいずれかで、ID を指定することができます、 [ **IRP\_MN\_クエリ\_機能**](https://msdn.microsoft.com/library/windows/hardware/ff551664) を設定することによってクエリ[**デバイス\_機能**](https://msdn.microsoft.com/library/windows/hardware/ff543095)構造体の**UniqueID**フィールドを**TRUE**または**FALSE**:
+バス ドライバーへの応答には、その子のいずれかのデバイス ID を提供する、 [ **IRP\_MN\_クエリ\_ID** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-id)プラグ アンド プレイ マネージャーからのクエリ。 バス ドライバーがへの応答を示す 2 つの方法のいずれかで、ID を指定することができます、 [ **IRP\_MN\_クエリ\_機能**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-capabilities) を設定することによってクエリ[**デバイス\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_capabilities)構造体の**UniqueID**フィールドを**TRUE**または**FALSE**:
 
 -   **UniqueID** = **は TRUE。**
 

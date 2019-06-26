@@ -4,19 +4,19 @@ description: チップ (SoC) 統合の回線でのシステムには、汎用の
 ms.assetid: 9EB4EFC3-B94E-42C9-9FC7-12DF4AD01622
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: b5f8da517665d4a0cc897ea82f8e2ccc69efa94f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e1c1cbedf49fc95d184a60d8d4e093bbecf9ce06
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337613"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353973"
 ---
 # <a name="general-purpose-io-gpio"></a>汎用入出力 (GPIO)
 
 
 チップ (SoC) 統合の回線でのシステムには、汎用の I/O (GPIO) ピンの広範な使用が確認されます。 SoC ベースのプラットフォームでは、Windows は、GPIO ハードウェアには、一般的な抽象化を定義し、この抽象化には、Advanced Configuration and Power Interface (ACPI) 名前空間からのサポートが必要です。
 
-GPIO 抽象化ではサポートされて、 [ACPI 5.0 仕様](https://www.uefi.org/specifications)この記事に記載されている定義。
+GPIO 抽象化ではサポートされて、 [ACPI 5.0 仕様](https://uefi.org/specifications)この記事に記載されている定義。
 
 GPIO コント ローラーがすべての Windows プラットフォームの要件を満たしていることを確認するを参照してください。 [GPIO コント ローラーの要件のチェックリスト](gpio-controller-requirements-checklist.md)します。
 
@@ -63,7 +63,7 @@ GPIO コント ローラーの\_CRS には、すべての GPIO コント ロー�
 
 周辺機器と GPIO ピンが接続されている間のリレーションシップは、オペレーティング システムに GPIO 接続リソース記述子によって記述されます。 これらのリソースの記述子には、GPIO 接続の 2 つの種類を定義できます。GPIO は、GPIO I/O 接続からの接続を中断します。 周辺機器に GPIO 接続記述子を含む、 \_GPIO I/O および割り込みのピンをすべての CR が接続されています。 接続されている割り込みがスリープ解除できる場合 (低電力アイドル状態からシステムをスリープ解除できる、ExclusiveAndWake または SharedAndWake として構成する必要があります。 詳細については、次を参照してください。[デバイスの電源管理](device-power-management.md)します。
 
-6.4.3.8.1、「GPIO 接続記述子」仕様のセクションで、ACPI 5.0、記述子が定義されます。 これらの記述子の ASL リソース テンプレートのマクロは 19.5.53、"GpioInt (GPIO 割り込み接続リソース記述子マクロ)"仕様のセクションで、ACPI 5.0 について説明します。
+6\.4.3.8.1、「GPIO 接続記述子」仕様のセクションで、ACPI 5.0、記述子が定義されます。 これらの記述子の ASL リソース テンプレートのマクロは 19.5.53、"GpioInt (GPIO 割り込み接続リソース記述子マクロ)"仕様のセクションで、ACPI 5.0 について説明します。
 
 **GPIO シグナル ACPI イベント**
 

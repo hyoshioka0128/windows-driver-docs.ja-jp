@@ -7,12 +7,12 @@ keywords:
 - SDEL クエリ
 ms.date: 11/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bf982a69e7e22088bb09eb8380ad5720c1800daf
-ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
+ms.openlocfilehash: 60f92999cba81a5b7c6b0a9c6cda1e535559a9f1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67161546"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353870"
 ---
 # <a name="run-the-tests"></a>テストを実行する
 ## <a name="description-of-the-tests-and-configuration-file"></a>テストと構成ファイルの説明
@@ -37,7 +37,7 @@ ms.locfileid: "67161546"
 
 **システム - PNP (無効および有効にする) と IO (信頼性) の前後**
 -   バイナリ。Sysfund_PNP_DisableEnable_With_IO_BeforeAndAfter_DataDriven.dll
--   [ドキュメント](https://msdn.microsoft.com/de-de/library/windows/hardware/dn941373(v=vs.85).aspx)
+-   [ドキュメント](https://docs.microsoft.com/windows-hardware/test/hlk/testref/b2849bf1-3478-4fd7-a577-31001084e908)
 
 **システム - PNP デバイスのテスト (信頼性) の削除します。**
 -   バイナリ。Sysfund_PNP_RemoveAndRestartDevice_DataDriven.dll
@@ -49,7 +49,7 @@ ms.locfileid: "67161546"
 
 **システムのスリープ (信頼性 SysFund) の前後に IO を** 
 -   バイナリ。Sysfund_Sleep_With_IO_BeforeAndAfter_DataDriven.dll
--   [ドキュメント](https://msdn.microsoft.com/library/windows/hardware/dn940448(v=vs.85).aspx)
+-   [ドキュメント](https://docs.microsoft.com/windows-hardware/test/hlk/testref/16ac817e-b042-4679-8027-c6c44d1ce29f)
 
 **デバイスの状態の確認**
 -   バイナリ。Utility_DeviceStatusCheck_DataDriven.dll
@@ -72,7 +72,7 @@ ms.locfileid: "67161546"
 テストとユーティリティは、必要な要素のみを使用し、他のすべての要素は無視されます。
 ### <a name="wdtftestxml-parameter-descriptions-and-use"></a>WDTFTest.xml パラメーターの説明と使用
 #### <a name="configuring-the-sdel-query"></a>SDEL クエリを構成します。
-[SDEL 言語](https://msdn.microsoft.com/library/windows/hardware/ff538361%28v=vs.85%29.aspx)をテストおよびユーティリティの対象となるデバイスを返すクエリを作成するために使用します。 完全なクエリを作成してステートメントを使用して次の SDEL 関連パラメーターを表示するには。
+[SDEL 言語](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)をテストおよびユーティリティの対象となるデバイスを返すクエリを作成するために使用します。 完全なクエリを作成してステートメントを使用して次の SDEL 関連パラメーターを表示するには。
 
 **SDEL**:値*IsDevice*システム上のデバイスの完全なセットを指定します。  通常、特定のドライバーまたはデバイスをテストする場合を除き、このパラメーターは編集できません。  SDEL 関連の次のパラメーターはドライバーを指定することによってこのスーパー セットからデバイスのサブセットを作成する、またはこのパラメーターは省略可能であるため、テストから除外する対象のデバイスが変更されません。
 ```
@@ -117,7 +117,7 @@ ms.locfileid: "67161546"
 
 #### <a name="parameters-that-apply-to-utilityenabledisabledriververifierdatadrivendll-only"></a>パラメーターに適用される```utility_enabledisabledriververifier_datadriven.dll```のみ。
 
-**DriverVerifierLevel**:0x209BB の既定値はの「標準フラグ」と等しい[Driver Verifier](https://msdn.microsoft.com/windows/hardware/drivers/devtest/driver-verifier)します。
+**DriverVerifierLevel**:0x209BB の既定値はの「標準フラグ」と等しい[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)します。
 ```
     <Parameter Name="DriverVerifierLevel">0x209BB</Parameter>
 ```
@@ -187,7 +187,7 @@ Mydriver1.sys と mydriver2.sys でバグを修正した後にリセットでき
     Error: Verify: SUCCEEDED(m_pDeviceDepot->Query(CComBSTR(DQ), &m_pTestTargets)) - Value (0x80070057) [File: onecore\base\tools\wdtf\tests\devfund\datadriven\sysfund_pnp_disableenable_with_io_beforeandafter_datadriven\test.cpp, Function: PNP_DisableEnable_With_IO_BeforeAndAfter::PNP_DisableEnable_With_IO_BeforeAndAfter_DataDriven_Test, Line: 231]
     EndGroup: PNP_DisableEnable_With_IO_BeforeAndAfter::PNP_DisableEnable_With_IO_BeforeAndAfter_DataDriven_Test#0 [Failed]
 ```
-HRESULT '0x80070057' 意味"E_INVALIDARG:1 つまたは複数の引数が無効です"。 に対して WDTFTest.xml 構成ファイルを慎重に確認、 [SDEL ドキュメント](https://msdn.microsoft.com/library/windows/hardware/ff538361%28v=vs.85%29.aspx)しこのエラーの原因となる形式が正しくないクエリを探します。
+HRESULT '0x80070057' 意味"E_INVALIDARG:1 つまたは複数の引数が無効です"。 に対して WDTFTest.xml 構成ファイルを慎重に確認、 [SDEL ドキュメント](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)しこのエラーの原因となる形式が正しくないクエリを探します。
 
 ### <a name="test-is-blocked-because-it-might-reboot-the-machine"></a>テストがブロックされているため、マシンを再起動する可能性があります。
 特定 SysFund のテストは、テスト中に、コンピューターを再起動することができます。 コンピューターを再起動することができるテストを実行するには、"/rebootstatefile"パラメーターを使用する必要があります。

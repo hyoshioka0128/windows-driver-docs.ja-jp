@@ -13,12 +13,12 @@ keywords:
 - 描画 WDK GDI や関数
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f7c1c3ea3fc87aa17227417af5ae5349a3485d1c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b9b5e4faf5b22f8d3dfe2109671cdf71f967c00c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388983"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353831"
 ---
 # <a name="using-the-graphics-ddi"></a>グラフィックス DDI の使用
 
@@ -30,7 +30,7 @@ ms.locfileid: "63388983"
 
 グラフィックス DDI 関数名は、 *DrvXxx*フォーム。 GDI を呼び出す*DrvXxx*ドライバーにデータを渡す関数。 ときに、アプリケーションには、GDI および GDI の要求には、ドライバーは、関連する関数をサポートしています、GDI がその関数を呼び出すことが決定します。 関数を提供し、関数の完了時に、GDI に戻り、ドライバーの役目です。
 
-このセクションでは、グラフィックス ディスプレイおよびプリンター ドライバーのライターが認識する必要がある DDI 関数について説明します。 グラフィックス DDI 関数に対する宣言、構造体の定義、および定数が記載*winddi.h*します。 グラフィックス DDI 関数の詳細については、次を参照してください。 [GDI 関数は、プリンターやディスプレイ ドライバーによって実装される](https://msdn.microsoft.com/library/windows/hardware/ff566549)します。
+このセクションでは、グラフィックス ディスプレイおよびプリンター ドライバーのライターが認識する必要がある DDI 関数について説明します。 グラフィックス DDI 関数に対する宣言、構造体の定義、および定数が記載*winddi.h*します。 グラフィックス DDI 関数の詳細については、次を参照してください。 [GDI 関数は、プリンターやディスプレイ ドライバーによって実装される](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)します。
 
 このセクションのトピックは次のとおりです。
 

@@ -15,12 +15,12 @@ keywords:
 - デバイスの電源状態が WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 220f0df30c4791cebc058fff094be0b1cb3f740e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2b5a40b4e989d41036002b67f3c02131eec8decb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390079"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379620"
 ---
 # <a name="power-management-for-io-queues"></a>I/O キューの電源管理
 
@@ -40,7 +40,7 @@ ms.locfileid: "63390079"
 
 フィルター ドライバーを作成しているか、ハードウェアと通信しませんスタックのドライバーは、ドライバーが受信する可能性がありますしない限り、いくつかあるその稼働状態にするデバイスを必要とするいくつかの要求は必要ありません。
 
-これら 2 つの種類の要求をサポートするために、フレームワークは 2 種類の I/O キューを提供します: いる*電源管理対象*とそうではありません。 設定、ドライバーは、各の I/O キューを作成するとき、 **PowerManaged**でキューのメンバー [ **WDF\_IO\_キュー\_CONFIG** ](https://msdn.microsoft.com/library/windows/hardware/ff552359)するか、構造体**WdfTrue**または**WdfFalse**を次のいずれかを示すために。
+これら 2 つの種類の要求をサポートするために、フレームワークは 2 種類の I/O キューを提供します: いる*電源管理対象*とそうではありません。 設定、ドライバーは、各の I/O キューを作成するとき、 **PowerManaged**でキューのメンバー [ **WDF\_IO\_キュー\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/ns-wdfio-_wdf_io_queue_config)するか、構造体**WdfTrue**または**WdfFalse**を次のいずれかを示すために。
 
 -   ドライバーが設定されている場合**PowerManaged**に**WdfTrue**キューが電源管理します。
 

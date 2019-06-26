@@ -4,12 +4,12 @@ description: オーディオ電源管理のインターフェイス
 ms.assetid: 7b123d3f-4f11-448e-8b20-92578fda7e69
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ae5448f82d5220a0a5e7891d1afcb1ef4d0b22bd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 65b4bcef0a0e841ac22fbc71df774139e1289534
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331415"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355659"
 ---
 # <a name="audio-power-management-interfaces"></a>オーディオ電源管理のインターフェイス
 
@@ -27,13 +27,13 @@ ms.locfileid: "63331415"
 
 省略可能なインターフェイスをミニポート ドライバーが差し迫ったの電源状態変更の事前通知が必要な場合に公開できます。
 
-[IAdapterPowerManagement](https://msdn.microsoft.com/library/windows/hardware/ff536485)
+[IAdapterPowerManagement](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iadapterpowermanagement)
 
-[IAdapterPowermanagement2](https://msdn.microsoft.com/library/windows/hardware/ff536486)
+[IAdapterPowermanagement2](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iadapterpowermanagement2)
 
-[IAdapterPowerManagement3](https://msdn.microsoft.com/library/windows/hardware/jj200330)
+[IAdapterPowerManagement3](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iadapterpowermanagement3)
 
-[IPowerNotify](https://msdn.microsoft.com/library/windows/hardware/ff536947)
+[IPowerNotify](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-ipowernotify)
 
  
 

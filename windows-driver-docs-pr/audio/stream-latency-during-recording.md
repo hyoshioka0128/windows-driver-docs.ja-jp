@@ -4,12 +4,12 @@ description: 記録時のストリームの遅延
 ms.assetid: b9391b34-acd8-4434-b00c-48bbbc0b6647
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 36f1f5f4987e239ea0c05949b580bf1e7c2b81b5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e85a90b337b1a91438fa99edf71617721249829e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328610"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354266"
 ---
 # <a name="stream-latency-during-recording"></a>記録時のストリームの遅延
 
@@ -34,9 +34,9 @@ ms.locfileid: "63328610"
 
 オーディオ エンジンを定期的に通知するオーディオ デバイスを持つクライアントことで、待機時間が実際よりも小さい。
 
-クライアント (通常はオーディオ エンジン) に送信することによって、オーディオ デバイスがストリームの待機時間に貢献する遅延の概要を取得できる、 [ **KSPROPERTY\_RTAUDIO\_HWLATENCY** ](https://msdn.microsoft.com/library/windows/hardware/ff537378)WaveRT ポート ドライバーに要求します。
+クライアント (通常はオーディオ エンジン) に送信することによって、オーディオ デバイスがストリームの待機時間に貢献する遅延の概要を取得できる、 [ **KSPROPERTY\_RTAUDIO\_HWLATENCY** ](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-rtaudio-hwlatency)WaveRT ポート ドライバーに要求します。
 
-クライアントは、レコードと読み取りの位置の間で維持するために分離の量を判断、クライアントは、レコードの量、読み取り位置を後退させる必要がありますを決定する位置の変更を監視します。 Windows Server 2008 および以降のオペレーティング システムでは、クライアントの送信[ **KSPROPERTY\_オーディオ\_位置**](https://msdn.microsoft.com/library/windows/hardware/ff537297)または[ **KSPROPERTY\_RTAUDIO\_POSITIONREGISTER** ](https://msdn.microsoft.com/library/windows/hardware/ff537381)プロパティ要求レコードの位置を決定します。 後者の要求メソッドは、クライアントは、レコードの位置については、カーネル モードのルーチンへの移行せずに直接を読み取るために効率的です。
+クライアントは、レコードと読み取りの位置の間で維持するために分離の量を判断、クライアントは、レコードの量、読み取り位置を後退させる必要がありますを決定する位置の変更を監視します。 Windows Server 2008 および以降のオペレーティング システムでは、クライアントの送信[ **KSPROPERTY\_オーディオ\_位置**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-position)または[ **KSPROPERTY\_RTAUDIO\_POSITIONREGISTER** ](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-rtaudio-positionregister)プロパティ要求レコードの位置を決定します。 後者の要求メソッドは、クライアントは、レコードの位置については、カーネル モードのルーチンへの移行せずに直接を読み取るために効率的です。
 
  
 

@@ -7,12 +7,12 @@ keywords:
 - DxApi ミニポート ドライバーの初期化
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 38016e7b0eec98b4d5c0e538ef3f359a0f7b8501
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2fff4c9c51ce46e596bb79e6cf612c4eca2aba63
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361220"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380381"
 ---
 # <a name="dxapi-miniport-driver-initialization"></a>DxApi ミニポート ドライバーの初期化
 
@@ -22,15 +22,15 @@ ms.locfileid: "63361220"
 
 DxApi インターフェイスの機能を有効にするには、DirectDraw ドライバーは、初期化時に次のタスクを実行する必要があります。
 
-1.  ドライバーを指定する必要があります、 [ **DdGetDriverInfo** ](https://msdn.microsoft.com/library/windows/hardware/ff549404)で機能、 [ **DD\_HALINFO** ](https://msdn.microsoft.com/library/windows/hardware/ff551627) DirectDraw できる構造体追加情報を取得する呼び出しです。
+1.  ドライバーを指定する必要があります、 [ **DdGetDriverInfo** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_getdriverinfo)で機能、 [ **DD\_HALINFO** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_halinfo) DirectDraw できる構造体追加情報を取得する呼び出しです。
 
-2.  *DdGetDriverInfo*の GUID を持つコールバックが呼び出される\_KernelCallbacks GUID を指定します。 ドライバーを入力する必要があります、 [ **DD\_KERNELCALLBACKS** ](https://msdn.microsoft.com/library/windows/hardware/ff551633)適切なコールバックとフラグのセットを含む構造体。 ドライバーがこの構造をコピーし、 **lpvData**のメンバー、 [ **DD\_GETDRIVERINFODATA** ](https://msdn.microsoft.com/library/windows/hardware/ff551550)構造体。
+2.  *DdGetDriverInfo*の GUID を持つコールバックが呼び出される\_KernelCallbacks GUID を指定します。 ドライバーを入力する必要があります、 [ **DD\_KERNELCALLBACKS** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-dd_kernelcallbacks)適切なコールバックとフラグのセットを含む構造体。 ドライバーがこの構造をコピーし、 **lpvData**のメンバー、 [ **DD\_GETDRIVERINFODATA** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_getdriverinfodata)構造体。
 
-3.  *DdGetDriverInfo* GUID を持つコールバックが呼び出される\_KernelCaps GUID を指定します。 ドライバーを入力する必要があります、 [ **DDKERNELCAPS** ](https://msdn.microsoft.com/library/windows/hardware/ff549593)構造体。 ドライバーがこの構造をコピーし、 **lpvData** 、DD のメンバー\_GETDRIVERINFODATA 構造体。
+3.  *DdGetDriverInfo* GUID を持つコールバックが呼び出される\_KernelCaps GUID を指定します。 ドライバーを入力する必要があります、 [ **DDKERNELCAPS** ](https://docs.microsoft.com/windows/desktop/api/ddkernel/ns-ddkernel-_ddkernelcaps)構造体。 ドライバーがこの構造をコピーし、 **lpvData** 、DD のメンバー\_GETDRIVERINFODATA 構造体。
 
-4.  DirectDraw ランタイムが呼び出すビデオ ポート ドライバー IOCTL ハンドラーで**MajorFunction** IRP を =\_MJ\_PNP、 **MinorFunction** IRP を =\_MN\_クエリ\_インターフェイス、および**InterfaceType** GUID =\_DxApi します。 ビデオ ポート ドライバーを呼び出して、ビデオのミニポート ドライバーの[ *HwVidQueryInterface* ](https://msdn.microsoft.com/library/windows/hardware/ff567358)関数を埋めるために、 [ **DXAPI\_インターフェイス**](https://msdn.microsoft.com/library/windows/hardware/ff557395) DirectDraw を呼び出すことができる DxApi インターフェイスのコールバック関数へのポインターを含む構造体。 これらのコールバック関数の一覧は[カーネル モードのビデオ トランスポート コールバック関数](kernel-mode-video-transport-callback-functions.md)します。
+4.  DirectDraw ランタイムが呼び出すビデオ ポート ドライバー IOCTL ハンドラーで**MajorFunction** IRP を =\_MJ\_PNP、 **MinorFunction** IRP を =\_MN\_クエリ\_インターフェイス、および**InterfaceType** GUID =\_DxApi します。 ビデオ ポート ドライバーを呼び出して、ビデオのミニポート ドライバーの[ *HwVidQueryInterface* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nc-video-pvideo_hw_query_interface)関数を埋めるために、 [ **DXAPI\_インターフェイス**](https://docs.microsoft.com/windows/desktop/api/dxmini/ns-dxmini-_dxapi_interface) DirectDraw を呼び出すことができる DxApi インターフェイスのコールバック関数へのポインターを含む構造体。 これらのコールバック関数の一覧は[カーネル モードのビデオ トランスポート コールバック関数](kernel-mode-video-transport-callback-functions.md)します。
 
-ビデオのミニポート ドライバーに値を指定できます、**コンテキスト**のメンバー、 [ **DXAPI\_インターフェイス**](https://msdn.microsoft.com/library/windows/hardware/ff557395)ビデオのミニポート ドライバーに渡される構造体これらの関数のいずれかが呼び出されるたび。
+ビデオのミニポート ドライバーに値を指定できます、**コンテキスト**のメンバー、 [ **DXAPI\_インターフェイス**](https://docs.microsoft.com/windows/desktop/api/dxmini/ns-dxmini-_dxapi_interface)ビデオのミニポート ドライバーに渡される構造体これらの関数のいずれかが呼び出されるたび。
 
  
 

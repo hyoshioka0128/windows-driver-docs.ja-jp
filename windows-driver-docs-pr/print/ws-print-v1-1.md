@@ -4,12 +4,12 @@ description: 印刷およびスキャンの周辺機器を接続プロトコル�
 ms.assetid: 4A641EF8-FBD3-46CA-9284-28AF1A4B8226
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 44c4afbe76e0f522c62d3785d7b416680503e10b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ee41e6eab8af7458791bf96cf770abdae6b81131
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380511"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356988"
 ---
 # <a name="web-services-on-devices-for-printing-ws-print"></a>Web Services on Devices for Printing (WS-Print)
 
@@ -67,12 +67,12 @@ Ws-print v1.2 をサポートしていること確認すると、プリンター
 
 **Ws-print v1.1**
 
-**名前空間:**<http://schemas.microsoft.com/windows/2010/06/wdp/printv11>
+**名前空間:** <http://schemas.microsoft.com/windows/2010/06/wdp/printv11>
 **XML の Namespace 定義:** xmlns:wprt12 ="<http://schemas.microsoft.com/windows/2012/10/wdp/printV12>"
 
 **WS 印刷 v1.2**
 
-**名前空間:**<http://schemas.microsoft.com/windows/2012/10/wdp/printV12>
+**名前空間:** <http://schemas.microsoft.com/windows/2012/10/wdp/printV12>
 **XML の Namespace 定義:** xmlns:wprt11 ="<http://schemas.microsoft.com/windows/2010/06/wdp/printv11>"
 ## <a name="specifying-ws-print-11-support"></a>WS 印刷 1.1 のサポートを指定します。
 
@@ -240,7 +240,7 @@ Ws-print v1.2 をサポートしている印刷デバイスは、Windows の名�
 ## <a name="device-model-id"></a>デバイスのモデル ID
 
 
-次のスキーマは、デバイスの ModelID をについて説明し、デバイス メタデータの取得のために使用します。 ModelIDs の詳細については、次を参照してください。 [ModelID 要素](https://msdn.microsoft.com/library/windows/hardware/ff549295.aspx)します。
+次のスキーマは、デバイスの ModelID をについて説明し、デバイス メタデータの取得のために使用します。 ModelIDs の詳細については、次を参照してください。 [ModelID 要素](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff549295(v=vs.85))します。
 
 ```xml
     <xs:annotation>
@@ -298,19 +298,19 @@ SetPrinterElements 操作の詳細については、WS 印刷 v1.0 – ダウン
 
 **仕様とサポート ファイルを Ws-print v1.0 – v1.2**
 
-**ファイル:**[デバイスで Web サービスのデバイス定義 V1.0 を印刷](http://download.microsoft.com/download/E/9/7/E974CFCB-4B3B-40CC-AF92-4F7F84477F0B/Printer.zip)
+**ファイル:** [デバイスで Web サービスのデバイス定義 V1.0 を印刷](http://download.microsoft.com/download/E/9/7/E974CFCB-4B3B-40CC-AF92-4F7F84477F0B/Printer.zip)
 **説明。** 2.64 Microsoft Word のドキュメントを格納しているとサポート ファイルは、MB zip ファイル2013 年 9 月 16 日
 
 **仕様とサポート ファイル**
 
-**ファイル:**[デバイスで Web サービスのデバイス定義 V1.0 を印刷](http://download.microsoft.com/download/9/c/5/9c5b2167-8017-4bae-9fde-d599bac8184a/PrintDevice.exe)
+**ファイル:** [デバイスで Web サービスのデバイス定義 V1.0 を印刷](http://download.microsoft.com/download/9/c/5/9c5b2167-8017-4bae-9fde-d599bac8184a/PrintDevice.exe)
 **説明。** 自己解凍形式のファイルは、Microsoft Word のドキュメントを含むファイルをサポートしている 76 KB2007 年 1 月 29 日
 
-**ファイル:**[Web Services on Devices のサービス定義 V1.0 をスキャン](http://download.microsoft.com/download/9/C/5/9C5B2167-8017-4BAE-9FDE-D599BAC8184A/ScanService.zip)
-**説明。**(1.5 MB zip ファイル Microsoft Word のドキュメントを格納しているとサポート ファイル。2012 年 2 月 9 日)
+**ファイル:** [Web Services on Devices のサービス定義 V1.0 をスキャン](http://download.microsoft.com/download/9/C/5/9C5B2167-8017-4BAE-9FDE-D599BAC8184A/ScanService.zip)
+**説明。** (1.5 MB zip ファイル Microsoft Word のドキュメントを格納しているとサポート ファイル。2012 年 2 月 9 日)
 
-**ファイル:**[Web Services on Devices のデバイス定義 V1.0 をスキャン](http://download.microsoft.com/download/9/c/5/9c5b2167-8017-4bae-9fde-d599bac8184a/ScanDevice.exe)
-**説明。**(76 KB 自己解凍形式のファイルを Microsoft Word のドキュメントを格納していると、ファイルのサポート2007 年 1 月 29 日)
+**ファイル:** [Web Services on Devices のデバイス定義 V1.0 をスキャン](http://download.microsoft.com/download/9/c/5/9c5b2167-8017-4bae-9fde-d599bac8184a/ScanDevice.exe)
+**説明。** (76 KB 自己解凍形式のファイルを Microsoft Word のドキュメントを格納していると、ファイルのサポート2007 年 1 月 29 日)
 ## <a name="related-topics"></a>関連トピック
 [V4 プリンター ドライバーの接続](v4-printer-driver-connectivity.md)  
 

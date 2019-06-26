@@ -12,17 +12,17 @@ keywords:
 - WDK Winsock Kernel のイベントのコールバック関数
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2362f1c9194a4a55442a6d65a007ea8056e32249
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: be1793e6e390a6fca6c7fa3ad2a9c95dd554744b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368917"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67357352"
 ---
 # <a name="using-winsock-kernel-functions-vs-event-callback-functions"></a>Winsock カーネル関数とイベント コールバック関数の使用
 
 
-特定のソケット操作では、Winsock カーネル (WSK) アプリケーションを呼び出すことができますか、操作を実行または実装 WSK サブシステムを呼び出すときにソケットでのイベントのコールバック関数を有効にし、ソケットの WSK 関数の 1 つ、[イベント](winsock-kernel-events.md)操作に関連付けられたに発生します。 たとえば、接続指向のソケット上のデータを受信するときに WSK アプリケーションか、呼び出すことができます、ソケットに[ **WskReceive** ](https://msdn.microsoft.com/library/windows/hardware/ff571139)関数、または実装し、有効にする、 [ *WskReceiveEvent* ](https://msdn.microsoft.com/library/windows/hardware/ff571140)ソケットでのイベントのコールバック関数。 WSK アプリケーションは、要件、アプリケーションで使用する方法です。 両方のメソッドを使用する方法の例は、WSK ドキュメント全体で提供されます。
+特定のソケット操作では、Winsock カーネル (WSK) アプリケーションを呼び出すことができますか、操作を実行または実装 WSK サブシステムを呼び出すときにソケットでのイベントのコールバック関数を有効にし、ソケットの WSK 関数の 1 つ、[イベント](winsock-kernel-events.md)操作に関連付けられたに発生します。 たとえば、接続指向のソケット上のデータを受信するときに WSK アプリケーションか、呼び出すことができます、ソケットに[ **WskReceive** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_receive)関数、または実装し、有効にする、 [ *WskReceiveEvent* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_receive_event)ソケットでのイベントのコールバック関数。 WSK アプリケーションは、要件、アプリケーションで使用する方法です。 両方のメソッドを使用する方法の例は、WSK ドキュメント全体で提供されます。
 
 次の一覧は、各メソッドの重要な点をまとめたものです。
 

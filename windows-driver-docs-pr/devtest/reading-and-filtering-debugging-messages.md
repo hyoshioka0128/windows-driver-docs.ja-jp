@@ -18,12 +18,12 @@ keywords:
 - による DbgPrint バッファー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 07e170eb85e507cd893ed3b86dbdc23b3722f216
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3230c3ac3ca27b5882a376fd544bd53057cddaaf
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323138"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356391"
 ---
 # <a name="reading-and-filtering-debugging-messages"></a>デバッグ メッセージの読み取りとフィルター処理
 
@@ -31,9 +31,9 @@ ms.locfileid: "63323138"
 ## <span id="ddk_reading_and_filtering_debugging_messages_tools"></span><span id="DDK_READING_AND_FILTERING_DEBUGGING_MESSAGES_TOOLS"></span>
 
 
-[ **DbgPrintEx**](https://msdn.microsoft.com/library/windows/hardware/ff543634)、 [ **vDbgPrintEx**](https://msdn.microsoft.com/library/windows/hardware/ff556075)、 [ **vDbgPrintExWithPrefix** ](https://msdn.microsoft.com/library/windows/hardware/ff556076)、および[ **KdPrintEx** ](https://msdn.microsoft.com/library/windows/hardware/ff548100)ルーチンでは、指定した条件下でカーネル デバッガーにメッセージを送信します。 この手順では、優先順位の低いメッセージをフィルター処理することができます。
+[ **DbgPrintEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-dbgprintex)、 [ **vDbgPrintEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-vdbgprintex)、 [ **vDbgPrintExWithPrefix** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-vdbgprintexwithprefix)、および[ **KdPrintEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kdprintex)ルーチンでは、指定した条件下でカーネル デバッガーにメッセージを送信します。 この手順では、優先順位の低いメッセージをフィルター処理することができます。
 
-**注**   Microsoft Windows Server 2003、Windows の以前のバージョン、 [**による DbgPrint** ](https://msdn.microsoft.com/library/windows/hardware/ff543632)と[ **KdPrint** ](https://msdn.microsoft.com/library/windows/hardware/ff548092)ルーチンのメッセージからカーネル デバッガーの無条件に送信します。 Windows Vista および Windows では、これらのルーチンの送信などの条件付きでは、メッセージの以降のバージョンで**DbgPrintEx**と**KdPrintEx**します。 Windows のどちらのバージョンを使用する必要がありますを使用する**DbgPrintEx**、 **vDbgPrintEx**、 **vDbgPrintExWithPrefix**、および**KdPrintEx**これらのルーチンでは、メッセージを送信する条件を制御できるようにするためです。
+**注**   Microsoft Windows Server 2003、Windows の以前のバージョン、 [**による DbgPrint** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-dbgprint)と[ **KdPrint** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kdprint)ルーチンのメッセージからカーネル デバッガーの無条件に送信します。 Windows Vista および Windows では、これらのルーチンの送信などの条件付きでは、メッセージの以降のバージョンで**DbgPrintEx**と**KdPrintEx**します。 Windows のどちらのバージョンを使用する必要がありますを使用する**DbgPrintEx**、 **vDbgPrintEx**、 **vDbgPrintExWithPrefix**、および**KdPrintEx**これらのルーチンでは、メッセージを送信する条件を制御できるようにするためです。
 
  
 
@@ -149,7 +149,7 @@ Windows Vista および以降のバージョンの Windows では、すべての
 
 - 対象のコンピューターにはコンポーネントのフィルター マスクのレジストリ キーにアクセスできる**HKEY\_ローカル\_マシン\\システム\\CurrentControlSet\\コントロール\\セッション マネージャー\\印刷フィルターをデバッグ**します。 レジストリ エディターを使用して、作成か、このキーを開きます。 このキーの下、大文字で、必要なコンポーネントの名前と値を作成します (たとえば、**既定**または**IHVDRIVER**)。 この値をコンポーネントのフィルター マスクとして使用する DWORD の値に設定 (DPFLTR を表示するなど、0x8\_情報\_DPFLTR だけでなく、レベルのメッセージ\_エラー\_レベルを 0 xf にマスクを設定またはすべてのメッセージを表示)。
 
-- カーネル デバッガーがアクティブな場合は、コンポーネントのフィルターのマスク値シンボルに格納されているアドレスを逆参照によってアクセスできる**Kd\_**<em>XXXX</em>  **\_マスク**ここで、 *XXXX*必要なコンポーネントの名前を指定します。 このマスクの値を表示するには WinDbg、KD をまたはに、 **dd (DWORD の表示)** コマンド、またはを新しいコンポーネント フィルター マスクを入力、 **ed (入力 DWORD)** コマンド。 シンボルのあいまいさの危険性がある場合としては、この記号を指定する場合があります**nt!Kd\_**<em>XXXX</em>**\_マスク**します。
+- カーネル デバッガーがアクティブな場合は、コンポーネントのフィルターのマスク値シンボルに格納されているアドレスを逆参照によってアクセスできる**Kd\_** <em>XXXX</em>  **\_マスク**ここで、 *XXXX*必要なコンポーネントの名前を指定します。 このマスクの値を表示するには WinDbg、KD をまたはに、 **dd (DWORD の表示)** コマンド、またはを新しいコンポーネント フィルター マスクを入力、 **ed (入力 DWORD)** コマンド。 シンボルのあいまいさの危険性がある場合としては、この記号を指定する場合があります**nt!Kd\_** <em>XXXX</em> **\_マスク**します。
 
 レジストリに格納されているフィルター マスクは、ブート時にも反映されます。 デバッガーによって作成されるフィルターのマスクは、すぐに有効と、ターゲット コンピューターが再起動されるまでに保持されます。 デバッガーは、レジストリで設定されている値をオーバーライドできますが、ターゲット コンピューターを再起動した場合、レジストリで指定されている値に、コンポーネントのフィルターのマスクを返します。
 
@@ -205,7 +205,7 @@ DbgPrint( "Fourth message.\n");
 
 ときに、**による DbgPrint**、 **DbgPrintEx**、 **vDbgPrintEx**、 **vDbgPrintExWithPrefix**、 **KdPrint**、または**KdPrintEx**ルーチンでは、デバッガーに、メッセージを送信、書式設定された文字列を送信する、**による DbgPrint**バッファー。 このバッファーの内容に直ちに反映されますデバッガー コマンド ウィンドウを使用してこの表示を無効にしない限り、**バッファーによる DbgPrint 出力**GFlags のオプション。
 
-使用してのみによる DbgPrint バッファーの内容を表示するにはこの表示を無効にした場合、 **! による dbgprint**拡張機能コマンド。 デバッガーの拡張機能については、次を参照してください。 [Windows デバッグ](https://msdn.microsoft.com/library/windows/hardware/ff551063)します。
+使用してのみによる DbgPrint バッファーの内容を表示するにはこの表示を無効にした場合、 **! による dbgprint**拡張機能コマンド。 デバッガーの拡張機能については、次を参照してください。 [Windows デバッグ](https://docs.microsoft.com/windows-hardware/drivers/debugger/index)します。
 
 任意の 1 への呼び出し**による DbgPrint**、 **DbgPrintEx**、 **vDbgPrintEx**、 **vDbgPrintExWithPrefix**、 **KdPrint**、または**KdPrintEx** 512 バイトのみの情報を送信します。 すべての出力 512 バイトを超えるは失われます。 による DbgPrint バッファー自体は、Windows の無料のビルドで最大 4 KB のデータを保持しを 32 KB のデータをチェックするビルドの Windows できます。 Windows Server 2003 および以降のバージョンの Windows で KDbgCtrl ツールを使用してによる DbgPrint バッファーのサイズを変更することができます。 このツールは、Windows のツールのデバッグの一部です。
 

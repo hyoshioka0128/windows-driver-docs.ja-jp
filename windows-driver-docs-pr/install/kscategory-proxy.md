@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 23f4f52689126081522dbd3d1322ddbd600a8e2d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8c90c965b430d6bb3cb9b2ce1fef711ed62e478b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374257"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355013"
 ---
 # <a name="kscategoryproxy"></a>KSCATEGORY_PROXY
 
 
-KSCATEGORY_PROXY[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)を表す、[カーネル ストリーミング](https://msdn.microsoft.com/library/windows/hardware/ff568277)で排他的に使用するために予約されている (KS) 機能のカテゴリ、[ストリーミング プロキシ モジュールカーネル](https://msdn.microsoft.com/library/windows/hardware/ff560877).
+KSCATEGORY_PROXY[デバイス インターフェイス クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)を表す、[カーネル ストリーミング](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)で排他的に使用するために予約されている (KS) 機能のカテゴリ、[ストリーミング プロキシ モジュールカーネル](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_stream/index).
 
 <table>
 <colgroup>
@@ -51,7 +51,7 @@ KSCATEGORY_PROXY[デバイス インターフェイス クラス](https://msdn.m
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

@@ -8,12 +8,12 @@ keywords:
 - WDK Bluetooth インターフェイス
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0231b26e38aba2af044d921ee9fb0039e07e1fec
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e80cd3d00cb30abf85ab3aaffcc4ff9418447fa3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328186"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354001"
 ---
 # <a name="querying-for-bluetooth-interfaces"></a>Bluetooth インターフェイスの照会
 
@@ -35,24 +35,24 @@ Bluetooth ドライバー スタックは、プロファイルのドライバー
 <tr class="odd">
 <td align="left"><p>GUID_BTHDDI_SDP_NODE_INTERFACE</p></td>
 <td align="left"><p>プロファイル サービスの探索プロトコル (SDP) レコードを作成できるようにする関数へのポインターを取得する GUID_BTHDDI_SDP_NODE_INTERFACE に対するクエリをドライバー。</p>
-<p>このインターフェイスに対応する、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff536635" data-raw-source="[&lt;strong&gt;BTHDDI_SDP_NODE_INTERFACE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff536635)"> <strong>BTHDDI_SDP_NODE_INTERFACE</strong> </a>構造体。</p></td>
+<p>このインターフェイスに対応する、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthsdpddi/ns-bthsdpddi-_bthddi_sdp_node_interface" data-raw-source="[&lt;strong&gt;BTHDDI_SDP_NODE_INTERFACE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthsdpddi/ns-bthsdpddi-_bthddi_sdp_node_interface)"> <strong>BTHDDI_SDP_NODE_INTERFACE</strong> </a>構造体。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>GUID_BTHDDI_SDP_PARSE_INTERFACE</p></td>
 <td align="left"><p>SDP レコードを解析できるようにする関数へのポインターを取得する GUID_BTHDDI_SDP_PARSE_INTERFACE のプロファイル ドライバー クエリ。</p>
-<p>このインターフェイスに対応する、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff536636" data-raw-source="[&lt;strong&gt;BTHDDI_SDP_PARSE_INTERFACE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff536636)"> <strong>BTHDDI_SDP_PARSE_INTERFACE</strong> </a>構造体。</p></td>
+<p>このインターフェイスに対応する、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthsdpddi/ns-bthsdpddi-_bthddi_sdp_parse_interface" data-raw-source="[&lt;strong&gt;BTHDDI_SDP_PARSE_INTERFACE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthsdpddi/ns-bthsdpddi-_bthddi_sdp_parse_interface)"> <strong>BTHDDI_SDP_PARSE_INTERFACE</strong> </a>構造体。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>GUID_BTHDDI_PROFILE_DRIVER_INTERFACE</p></td>
 <td align="left"><p>プロファイル ドライバーのクエリを作成できるようにする関数へのポインターを取得する BTHDDI_PROFILE_DRIVER_INTERFACE は、割り当て、再利用、および、BRBs を解放します。</p>
-<p>このインターフェイスに対応する、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff536645" data-raw-source="[&lt;strong&gt;BTH_PROFILE_DRIVER_INTERFACE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff536645)"> <strong>BTH_PROFILE_DRIVER_INTERFACE</strong> </a>構造体。</p></td>
+<p>このインターフェイスに対応する、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthddi/ns-bthddi-_bth_profile_driver_interface" data-raw-source="[&lt;strong&gt;BTH_PROFILE_DRIVER_INTERFACE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthddi/ns-bthddi-_bth_profile_driver_interface)"> <strong>BTH_PROFILE_DRIVER_INTERFACE</strong> </a>構造体。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-これらのインターフェイスを取得するプロファイル ドライバー最初をビルドして送信、 [ **IRP\_MN\_クエリ\_インターフェイス**](https://msdn.microsoft.com/library/windows/hardware/ff551687) IRP Bluetooth ドライバー スタックにします。
+これらのインターフェイスを取得するプロファイル ドライバー最初をビルドして送信、 [ **IRP\_MN\_クエリ\_インターフェイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-interface) IRP Bluetooth ドライバー スタックにします。
 
 次の手順は、これらのインターフェイスのいずれかを取得する一般的なプロセスです。
 

@@ -4,12 +4,12 @@ description: キオスク アプリの割り当てのアクセスのベスト �
 ms.assetid: 2405B5BB-2214-4B40-B3A1-C47073390B21
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d6e3f27183154851e6d7d84cf78200c995f7a0a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f3088a5c8933ebf141a37b825f2cf04dc56903d1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357790"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353583"
 ---
 # <a name="kiosk-apps-for-assigned-access-best-practices"></a>割り当てられたアクセスのキオスク アプリ:ベスト プラクティス
 
@@ -298,18 +298,18 @@ Windows.ApplicationModel.Core.CoreApplication.CreateNewView(); //causes exceptio
 ## <a name="span-idappendix2troubleshootingspanspan-idappendix2troubleshootingspanspan-idappendix2troubleshootingspanappendix-2-troubleshooting"></a><span id="Appendix_2__troubleshooting"></span><span id="appendix_2__troubleshooting"></span><span id="APPENDIX_2__TROUBLESHOOTING"></span>付録 2: のトラブルシューティング
 
 
-通常、キオスク アプリは、ロック画面のアプリ上のアクティブ化に失敗した場合、[ロックダウン] 画面で、アクティブ化エラー コードが表示されます。 エラー コードを使用して Windows を参照して、問題を見つけた[システム エラー コード](https://msdn.microsoft.com/library/windows/desktop/ms681381)します。 さらにイベント ビューアーには、ライセンス認証エラーの詳細が含まれています。 次の手順に従います。
+通常、キオスク アプリは、ロック画面のアプリ上のアクティブ化に失敗した場合、[ロックダウン] 画面で、アクティブ化エラー コードが表示されます。 エラー コードを使用して Windows を参照して、問題を見つけた[システム エラー コード](https://docs.microsoft.com/windows/desktop/Debug/system-error-codes)します。 さらにイベント ビューアーには、ライセンス認証エラーの詳細が含まれています。 次の手順に従います。
 
 1.  **イベント ビューアー**を開きます。 アクティブ化エラーを検出する可能性が高い 2 つの場所があります。
 2.  **イベント ビューアー (ローカル)** ウィンドウで、展開**Windows ログ**、 をクリックし、**アプリケーション**します。
-3.  また、**イベント ビューアー (ローカル)**、展開**Applications and Services Logs**、展開**Windows**、展開**アプリ**順にクリックします**Microsoft Windows-TWinUI/運用**します。
+3.  また、**イベント ビューアー (ローカル)** 、展開**Applications and Services Logs**、展開**Windows**、展開**アプリ**順にクリックします**Microsoft Windows-TWinUI/運用**します。
 
 割り当てられたアクセス権を持つキオスク アプリが全画面表示モードで実行しないでくださいため**ApplicationView.GetForCurrentView() します。IsFullScreenMode**は false を返します。
 
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
-[割り当てられたアクセス](https://msdn.microsoft.com/library/windows/hardware/mt620040)
+[割り当てられたアクセス](https://docs.microsoft.com/windows-hardware/customize/enterprise/assigned-access)
 
 [アプリの複数のビューを表示します。]( https://go.microsoft.com/fwlink/?LinkId=708251)
 

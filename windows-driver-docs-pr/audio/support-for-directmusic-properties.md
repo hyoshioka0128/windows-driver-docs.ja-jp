@@ -11,12 +11,12 @@ keywords:
 - プロパティ セット Guid の WDK オーディオ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 002741111cf4ada0be65f717c7bda15b9526538a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 854c1a876db2cd3f71fc8582558d3dc9b69c3e20
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328586"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354243"
 ---
 # <a name="support-for-directmusic-properties"></a>DirectMusic プロパティのサポート
 
@@ -24,7 +24,7 @@ ms.locfileid: "63328586"
 ## <span id="support_for_directmusic_properties"></span><span id="SUPPORT_FOR_DIRECTMUSIC_PROPERTIES"></span>
 
 
-DirectMusic 合成ミニポート ドライバーでは、プロパティ項目の配列の形式でそのハードウェアの機能を指定します。 プロパティの各項目は、 [ **PCPROPERTY\_項目**](https://msdn.microsoft.com/library/windows/hardware/ff537722)次を含む構造体。
+DirectMusic 合成ミニポート ドライバーでは、プロパティ項目の配列の形式でそのハードウェアの機能を指定します。 プロパティの各項目は、 [ **PCPROPERTY\_項目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/ns-portcls-pcproperty_item)次を含む構造体。
 
 -   プロパティは、DirectMusic で定義されている特定のハードウェア機能を定義する GUID を設定します。
 
@@ -76,19 +76,19 @@ DirectMusic では、次のプロパティ セット Guid が定義されてい�
 
 -   GUID\_DMU\_PROP\_XG\_ハードウェア
 
-上記のプロパティの定義セット Guid は、の説明を参照してください。、 [ **KSPROPERTY** ](https://msdn.microsoft.com/library/windows/hardware/ff564262) DirectX 8.0 プログラマーズ リファレンス、Microsoft Windows sdk で構造体。 上記の Guid のそれぞれのプロパティの設定は、インデックスはゼロで識別される 1 つの要素で構成されます。
+上記のプロパティの定義セット Guid は、の説明を参照してください。、 [ **KSPROPERTY** ](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85)) DirectX 8.0 プログラマーズ リファレンス、Microsoft Windows sdk で構造体。 上記の Guid のそれぞれのプロパティの設定は、インデックスはゼロで識別される 1 つの要素で構成されます。
 
 ### <a name="span-idikscontrolinterfacespanspan-idikscontrolinterfacespanikscontrol-interface"></a><span id="ikscontrol_interface"></span><span id="IKSCONTROL_INTERFACE"></span>IKsControl インターフェイス
 
-[IKsControl](https://msdn.microsoft.com/library/windows/hardware/ff559766)インターフェイスを取得し、設定、または、プロパティ、イベント、およびメソッドの基本的なサポートのクエリに使用されます。 このインターフェイスでは、(KS) アーキテクチャでは、ストリーミング WDM カーネルの一部ですが、DirectMusic ポートのプロパティを公開する DirectMusic でも使用されます。 このインターフェイスを取得する、 **IDirectMusicPort::QueryInterface**メソッド (Windows SDK のドキュメントで説明) を*riid*パラメーターに設定**IID\_IKsControl**します。
+[IKsControl](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksproxy/nn-ksproxy-ikscontrol)インターフェイスを取得し、設定、または、プロパティ、イベント、およびメソッドの基本的なサポートのクエリに使用されます。 このインターフェイスでは、(KS) アーキテクチャでは、ストリーミング WDM カーネルの一部ですが、DirectMusic ポートのプロパティを公開する DirectMusic でも使用されます。 このインターフェイスを取得する、 **IDirectMusicPort::QueryInterface**メソッド (Windows SDK のドキュメントで説明) を*riid*パラメーターに設定**IID\_IKsControl**します。
 
-[IKsControl](https://msdn.microsoft.com/library/windows/hardware/ff559766)インターフェイスが 3 つのメソッドには。[**KsProperty**](https://msdn.microsoft.com/library/windows/hardware/ff559792)、 [ **KsEvent**](https://msdn.microsoft.com/library/windows/hardware/ff559772)、および[ **KsMethod**](https://msdn.microsoft.com/library/windows/hardware/ff559785)します。 現在、のみ**KsProperty** DirectMusic でサポートされています。
+[IKsControl](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksproxy/nn-ksproxy-ikscontrol)インターフェイスが 3 つのメソッドには。[**KsProperty**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksproxy/nf-ksproxy-ikscontrol-ksproperty)、 [ **KsEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksproxy/nf-ksproxy-ikscontrol-ksevent)、および[ **KsMethod**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksproxy/nf-ksproxy-ikscontrol-ksmethod)します。 現在、のみ**KsProperty** DirectMusic でサポートされています。
 
-[ **IKsControl::KsProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff559795)メソッドを取得またはプロパティの値を設定します。 特定の DirectMusic ポートにプロパティ項目要求をルーティングする方法は、ポートの実装方法によって異なります。
+[ **IKsControl::KsProperty** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ikscontrol-ksproperty)メソッドを取得またはプロパティの値を設定します。 特定の DirectMusic ポートにプロパティ項目要求をルーティングする方法は、ポートの実装方法によって異なります。
 
 -   Microsoft Win32 ハンドルに基づくマルチ メディアの呼び出し (midiOut および midiIn Api) の上に DirectMusic エミュレーションを表すポートでプロパティがサポートされていません。 使用して、 **GUID\_DMU\_PROP\_LegacyCaps**プロパティ セット GUID を Win32 マルチ メディアの呼び出しで実装されているかどうかのポートを照会します。
 
--   プロパティ項目の要求を表すプラグ可能なソフトウェアのシンセサイザーのポートには、ユーザー モードで完全処理されます。 ポートの種類のトポロジはシンセサイザー (によって表される、 [IDirectMusicSynth](https://msdn.microsoft.com/library/windows/hardware/ff536519)インターフェイス) シンク ノードに接続されている (、 [IDirectMusicSynthSink](https://msdn.microsoft.com/library/windows/hardware/ff536520)インターフェイス)。 プロパティ要求が与えられます最初シンセサイザーのノードにシンク ノードにし、シンセサイザーでが認識されない場合。
+-   プロパティ項目の要求を表すプラグ可能なソフトウェアのシンセサイザーのポートには、ユーザー モードで完全処理されます。 ポートの種類のトポロジはシンセサイザー (によって表される、 [IDirectMusicSynth](https://docs.microsoft.com/windows/desktop/api/dmusics/nn-dmusics-idirectmusicsynth)インターフェイス) シンク ノードに接続されている (、 [IDirectMusicSynthSink](https://docs.microsoft.com/windows/desktop/api/dmusics/nn-dmusics-idirectmusicsynthsink)インターフェイス)。 プロパティ要求が与えられます最初シンセサイザーのノードにシンク ノードにし、シンセサイザーでが認識されない場合。
 
  
 

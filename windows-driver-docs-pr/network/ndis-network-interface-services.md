@@ -8,12 +8,12 @@ keywords:
 - WDK のサービスのネットワーク インターフェイス
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e26685fab844eff6166a4884f9ae3bdf07f2d29d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: c1439e42039e24b590efc22b4c7ca80fc72031db
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579356"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354977"
 ---
 # <a name="ndis-network-interface-services"></a>NDIS ネットワーク インターフェイス サービス
 
@@ -23,7 +23,7 @@ ms.locfileid: "56579356"
 
 NDIS のネットワーク インターフェイスのプログラミング インターフェイスがサービスを提供します。
 
--   ローカル一意識別子を生成 ( [ **NET\_LUID**](https://msdn.microsoft.com/library/windows/hardware/ff568747)) の各インターフェイス。 NET\_LUID 値。
+-   ローカル一意識別子を生成 ( [ **NET\_LUID**](https://docs.microsoft.com/windows/desktop/api/ifdef/ns-ifdef-net_luid_lh)) の各インターフェイス。 NET\_LUID 値。
     -   コンピューターを再起動するとを保持する必要があります。 プロバイダーのインターフェイスは、NET を行う必要があります\_関連付けられているインターフェイスが永続的でない場合でも永続的な Luid。 たとえば、この永続化は、NET を解放するインターフェイス プロバイダーを使用できます。\_LUID インデックス コンピューターの電源障害がある場合。
     -   インターフェイス型に関連付けられている必要があります ( *IfType*で RFC 2863)。
     -   ローカル コンピューター上で一意である必要があります。
@@ -31,7 +31,7 @@ NDIS のネットワーク インターフェイスのプログラミング イ�
 -   ローカルで一意のインターフェイス インデックスを生成する (24 ビットの値としても参照されている*IfIndex* ) の各インターフェイス。 *IfIndex*値の次のプロパティがあります。
     -   小さい数値は、適しています。 たとえば、NDIS は、最小の利用可能なインターフェイスのインデックスを再利用します。
     -   *IfIndex*コンピューターを再起動すると、値が保持されません。
-    -   一対一の対応関係がある、 [ **NET\_LUID** ](https://msdn.microsoft.com/library/windows/hardware/ff568747)値と*IfIndex*値。
+    -   一対一の対応関係がある、 [ **NET\_LUID** ](https://docs.microsoft.com/windows/desktop/api/ifdef/ns-ifdef-net_luid_lh)値と*IfIndex*値。
 -   インターフェイスのインデックス、NET 間のマップ\_LUID 値、および「表示名」(たとえば、ネットワーク接続 フォルダーに表示されるフレンドリ名)。
 
 -   ドライバー スタックでは、インターフェイスの重ね順を定義します。

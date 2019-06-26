@@ -6,17 +6,17 @@ ms.date: 07/18/2017
 keywords:
 - WDI_TLV_INDICATION_WAKE_PACKET ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c9cd776a34dfc3d845ea1c71bb8fb120d22f10a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dd1dd12dd2fbbe85c4980a2c8370b674d6036767
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382858"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380760"
 ---
 # <a name="wditlvindicationwakepacket"></a>WDI\_TLV\_INDICATION\_WAKE\_パケット
 
 
-WDI\_TLV\_を示す値\_WAKE\_パケットがウェイク アップ パケットを含む TLV [NDIS\_状態\_WDI\_INDICATION\_WAKE\_理由](https://msdn.microsoft.com/library/windows/hardware/dn925669)します。 ウェイク アップの理由が WDI が場合\_WAKE\_理由\_コード パケットの場合、状態は、WDI にカプセル化されたウェイク アップ パケットを含める必要があります\_TLV\_INDICATION\_WAKE\_パケット。
+WDI\_TLV\_を示す値\_WAKE\_パケットがウェイク アップ パケットを含む TLV [NDIS\_状態\_WDI\_INDICATION\_WAKE\_理由](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wdi-indication-wake-reason)します。 ウェイク アップの理由が WDI が場合\_WAKE\_理由\_コード パケットの場合、状態は、WDI にカプセル化されたウェイク アップ パケットを含める必要があります\_TLV\_INDICATION\_WAKE\_パケット。
 
 ## <a name="tlv-type"></a>TLV 型
 

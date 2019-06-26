@@ -7,17 +7,17 @@ keywords:
 - 64 ビットの WDK プリンター
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a1c36223634ad720723c11b20cecbde29f3a2fc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 33389049704eb125b82ee7b3cd78e91c2a0d9e91
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370359"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356978"
 ---
 # <a name="writing-64-bit-printer-drivers"></a>64 ビット プリンター ドライバーの記述
 
 
-64 ビット ドライバーを作成またはの 32 ビットと 64 ビットの両方のシステムでコンパイルできるドライバーを記述する場合に 64 ビット移植のガイドラインに従って[ドライバーのプログラミング手法](https://msdn.microsoft.com/library/windows/hardware/ff554452)します。 このトピックでは、いくつかの制限事項と 64 ビット プリンター ドライバーの書き込みで発生する可能性がある問題について説明します。
+64 ビット ドライバーを作成またはの 32 ビットと 64 ビットの両方のシステムでコンパイルできるドライバーを記述する場合に 64 ビット移植のガイドラインに従って[ドライバーのプログラミング手法](https://docs.microsoft.com/windows-hardware/drivers/kernel/miscellaneous-driver-programming-techniques)します。 このトピックでは、いくつかの制限事項と 64 ビット プリンター ドライバーの書き込みで発生する可能性がある問題について説明します。
 
 装飾を使用して、64 ビット アーキテクチャを特定する方法の詳細については、次のトピックを参照してください。
 
@@ -35,7 +35,7 @@ ms.locfileid: "63370359"
 
 代わりに、DWORD へのポインターをキャスト\_PTR または ULONG\_PTR。 DWORD 型の符号なし整数\_PTR または ULONG\_PTR は 32 ビットまたは 64 ビット コンピューターのコードをコンパイルするかどうかに関係なく、全体のポインターを格納するのに十分な大きさでは常にします。
 
-PDrvOptItems.UserData ポインター フィールドなど、 [ **OEMCUIPPARAM** ](https://msdn.microsoft.com/library/windows/hardware/ff557653)構造体は ULONG 型\_PTR。 次のコード例は、このフィールドに 64 ビット ポインターの値をコピーする場合のように指定しない動作を示しています。
+PDrvOptItems.UserData ポインター フィールドなど、 [ **OEMCUIPPARAM** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printoem/ns-printoem-_oemcuipparam)構造体は ULONG 型\_PTR。 次のコード例は、このフィールドに 64 ビット ポインターの値をコピーする場合のように指定しない動作を示しています。
 
 ```cpp
     PUSERDATA pData;
@@ -71,7 +71,7 @@ PDrvOptItems.UserData ポインター フィールドなど、 [ **OEMCUIPPARAM*
 ulSlotPhysAddr
 ```
 
-64 ビット長ではなく 32 ビット長のみであるハードウェア レジスタの値を表すことができます。 すべての新しい Win64 ヘルパー関数ポインターと整数型間の変換については、次を参照してください。 [、新しいデータ型](https://msdn.microsoft.com/library/windows/hardware/ff564619)します。
+64 ビット長ではなく 32 ビット長のみであるハードウェア レジスタの値を表すことができます。 すべての新しい Win64 ヘルパー関数ポインターと整数型間の変換については、次を参照してください。 [、新しいデータ型](https://docs.microsoft.com/windows-hardware/drivers/kernel/the-new-data-types)します。
  
 
  

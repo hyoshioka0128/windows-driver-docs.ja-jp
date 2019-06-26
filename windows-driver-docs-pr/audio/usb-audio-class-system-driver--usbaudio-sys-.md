@@ -4,12 +4,12 @@ description: USB オーディオ クラスのシステム ドライバー (Usbau
 ms.assetid: 7ECE8006-3181-451C-B047-A3D767A7B98A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 423c229b5b0da49df7a3ab9f5a8c948fff12d88c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 25eff07f09a55371fbdd3236e8f19ac7180d688b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328536"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354159"
 ---
 # <a name="usb-audio-class-system-driver-usbaudiosys"></a>USB オーディオ クラス システム ドライバー (Usbaudio.sys)
 
@@ -47,7 +47,7 @@ Windows 98 では、USBAudio ドライバーには、次の機能がサポート
 
 -   USB MIDI
 
--   [**WAVEFORMATEXTENSIBLE** ](https://msdn.microsoft.com/library/windows/hardware/ff538802) wave 形式 (USBAudio パックされた波を使用して\_形式\_PCM 24 ビットのデータの代わりにします)。
+-   [**WAVEFORMATEXTENSIBLE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-waveformatextensible) wave 形式 (USBAudio パックされた波を使用して\_形式\_PCM 24 ビットのデータの代わりにします)。
 
 Windows 98 秒 Edition (SE) Windows Me、および Windows 2000 以降で USBAudio サポートされるすべてが同じ機能として Windows 98 では、1 つの例外。USBAudio WAVEFORMATEXTENSIBLE をサポートしていますが、パックされた波をサポートしていません\_形式\_24 ビットのデータの PCM。
 
@@ -59,9 +59,9 @@ Windows XP と Windows Me で USBAudio が後で、Windows 98 SE、Windows 2000 
 
 図に、ドライバー コンポーネントに関する詳細については、次のセクションを参照してください。
 
-[AVStream の概要](https://msdn.microsoft.com/library/windows/hardware/ff554240)
+[AVStream の概要](https://docs.microsoft.com/windows-hardware/drivers/stream/avstream-overview)
 
-[システム提供の USB ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff538853)
+[システム提供の USB ドライバー](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
 
  
 

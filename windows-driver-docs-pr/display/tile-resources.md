@@ -4,12 +4,12 @@ description: タイルのリソースに対して十分でないデバイスの�
 ms.assetid: D48D2046-64A6-4B0E-9235-84DD2A83DB39
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b8a663c211d154411e5191072aaf1464ca93f3b1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e2e99a59954e7187703919f9ff1abbb9bc45067e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389848"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354679"
 ---
 # <a name="tile-resources"></a>タイル リソース
 
@@ -29,7 +29,7 @@ ms.locfileid: "63389848"
 
 理論上は、今日のパケットに基づくスケジューリング デバイス ページングのキューで待機部分の操作を実装、待機を監視して待機条件が満たされた後に、共有システム コンテキストにページング操作を送信できます。 ただし、を超えて移動パケットはベースのスケジュール設定し、ハードウェアが GPU に GPU を使用できるようにする必要をスケジュール設定に最適なパフォーマンスを確実にインタロックされた操作のプリミティブを同期します。
 
-この問題を解決するには、コンテキストごとのページングのコンパニオン コンテキストの概念を導入しました。 最初の呼び出しでページング コンパニオン コンテキストの遅延作成[ *UpdateGpuVirtualAddress* ](https://msdn.microsoft.com/library/windows/hardware/dn906365)インタロックされた同期が必要なすべてのページ テーブルの更新に使用されます。 *UpdateGpuVirtualAddress*監視 GPU フェンスのオブジェクトと特定のフェンス値をパラメーターとして受け取ります。 この監視対象のフェンスのコンパニオン コンテキスト待機はページのテーブルの更新とし、フェンスの監視対象オブジェクトをインクリメントしを通知します。 これにより、コンパニオン コンテキストと密接に同期するレンダリングのコンテキスト。
+この問題を解決するには、コンテキストごとのページングのコンパニオン コンテキストの概念を導入しました。 最初の呼び出しでページング コンパニオン コンテキストの遅延作成[ *UpdateGpuVirtualAddress* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_updategpuvirtualaddresscb)インタロックされた同期が必要なすべてのページ テーブルの更新に使用されます。 *UpdateGpuVirtualAddress*監視 GPU フェンスのオブジェクトと特定のフェンス値をパラメーターとして受け取ります。 この監視対象のフェンスのコンパニオン コンテキスト待機はページのテーブルの更新とし、フェンスの監視対象オブジェクトをインクリメントしを通知します。 これにより、コンパニオン コンテキストと密接に同期するレンダリングのコンテキスト。
 
 コンパニオン コンテキストを使用してページ テーブルの更新は、次に示します。
 
@@ -43,7 +43,7 @@ ms.locfileid: "63389848"
 
 プロセスごとの特権のある GPU 仮想アドレス空間は、プロセスの GPU のページ テーブルが GPU を使用してさまざまなページ テーブル エントリを更新するコマンドを更新できるので、アドレス空間を表示するように初期化されます。 さらに、すべてのタイルがプロセスによって作成されたプールがアドレス空間にもマップされます。
 
-コンパニオン コンテキストによってページ テーブル エントリを更新する方法は、少し特殊ないくつかを説明する必要があります。 ときに、*マップ*共有システム コンテキストで実行するための操作がキューに置かれた、ビデオ メモリ マネージャーにマップされる物理アドレスを知っているし、これらの物理アドレスが関連付けられているページング バッファーに直接表示されることができます。 [*UpdatePageTable* ](https://msdn.microsoft.com/library/windows/hardware/ff560815)ページング操作がここで使用して、ビデオ メモリ マネージャーは、いくつかの特定のページにページング操作が完了した後、他のいくつかの目的でこれらのページが再利用されることが保証されます。
+コンパニオン コンテキストによってページ テーブル エントリを更新する方法は、少し特殊ないくつかを説明する必要があります。 ときに、*マップ*共有システム コンテキストで実行するための操作がキューに置かれた、ビデオ メモリ マネージャーにマップされる物理アドレスを知っているし、これらの物理アドレスが関連付けられているページング バッファーに直接表示されることができます。 [*UpdatePageTable* ](https://docs.microsoft.com/windows-hardware/drivers/display/dxgkddiupdatepagetable)ページング操作がここで使用して、ビデオ メモリ マネージャーは、いくつかの特定のページにページング操作が完了した後、他のいくつかの目的でこれらのページが再利用されることが保証されます。
 
 ただし、コンパニオン コンテキストのページ テーブルの同期更新の処理はより困難です。 更新操作は、構築時に参照されているタイルのプールの物理ページただし、特定のこれらの操作がキューに配置任意の long GPU の背後にあるビデオ メモリ マネージャーが知っている待機 (アプリでしたデッドロックも通知しない)、ビデオ メモリマネージャーは、ページング操作は実行時に、タイルのプールの物理ページがありますが知らないし、ビデオ メモリ マネージャーは任意の時間をその場所でタイルのプールを保持することはできません。
 
@@ -62,9 +62,9 @@ ms.locfileid: "63389848"
 ## <a name="span-idupdategpuvirtualaddressongpuswithcpuvirtualpagetableupdatemodespanspan-idupdategpuvirtualaddressongpuswithcpuvirtualpagetableupdatemodespanspan-idupdategpuvirtualaddressongpuswithcpuvirtualpagetableupdatemodespan-update-gpu-virtual-address-on-gpus-with-cpuvirtual-page-table-update-mode"></a><span id="_Update_GPU_virtual_address_on_GPUs_with_CPU_VIRTUAL_page_table_update_mode"></span><span id="_update_gpu_virtual_address_on_gpus_with_cpu_virtual_page_table_update_mode"></span><span id="_UPDATE_GPU_VIRTUAL_ADDRESS_ON_GPUS_WITH_CPU_VIRTUAL_PAGE_TABLE_UPDATE_MODE"></span> CPU と Gpu で GPU の仮想アドレスを更新\_仮想ページ テーブルの更新モード
 
 
-サポートする Gpu、 **DXGK\_PAGETABLEUPDATE\_CPU\_仮想**ページ テーブルの更新モード、 **CopyPageTableEntries**操作は使用されません。 これらの統合は GPU で、ページング バッファーを使用しないでください。 ビデオ メモリ マネージャーは、適切なタイミングと使用まで、更新操作を遅延、 [ *UpdatePageTable* ](https://msdn.microsoft.com/library/windows/hardware/ff560815)セットアップ操作ページのテーブル。
+サポートする Gpu、 **DXGK\_PAGETABLEUPDATE\_CPU\_仮想**ページ テーブルの更新モード、 **CopyPageTableEntries**操作は使用されません。 これらの統合は GPU で、ページング バッファーを使用しないでください。 ビデオ メモリ マネージャーは、適切なタイミングと使用まで、更新操作を遅延、 [ *UpdatePageTable* ](https://docs.microsoft.com/windows-hardware/drivers/display/dxgkddiupdatepagetable)セットアップ操作ページのテーブル。
 
-この方法の欠点は、 [ *UpdatePageTable* ](https://msdn.microsoft.com/library/windows/hardware/ff560815)レンダリング操作で並列操作ではありません。 利点は、ドライバーがページング バッファーのサポートを実装および実装する必要がないこと*UpdatePageTable*操作即時として。
+この方法の欠点は、 [ *UpdatePageTable* ](https://docs.microsoft.com/windows-hardware/drivers/display/dxgkddiupdatepagetable)レンダリング操作で並列操作ではありません。 利点は、ドライバーがページング バッファーのサポートを実装および実装する必要がないこと*UpdatePageTable*操作即時として。
 
  
 

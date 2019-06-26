@@ -8,12 +8,12 @@ keywords:
 - UMDF WDK、ドライバーのフレームワーク オブジェクト リークが発生するかどうかを決定します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a302cc2cee7500b39622a2fb58a791eee969b0cd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a53ff81154cabcd787cd939eb5d135f8e4ce26c4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384581"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377446"
 ---
 # <a name="determining-if-a-driver-leaks-framework-objects"></a>ドライバーでのフレームワーク オブジェクトのリークの判断
 
@@ -27,7 +27,7 @@ UMDF バージョン 1 で呼び出し履歴はメモリ リークが発生へ�
 
 UMDF ドライバー バージョン 1 フレームワーク オブジェクトのリークをテストするには、次の手順を使用します。
 
-1.  使用して、 [WDF Verifier コントロール アプリケーション](https://msdn.microsoft.com/library/windows/hardware/ff556129)する検証のオプションを設定します。 定期的なテストの実行中に設定して開始**TrackObjects**なく**TrackRefCounts**します。
+1.  使用して、 [WDF Verifier コントロール アプリケーション](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdf-verifier-control-application)する検証のオプションを設定します。 定期的なテストの実行中に設定して開始**TrackObjects**なく**TrackRefCounts**します。
 
     ドライバーが読み込まれると、フレームワークのコードの検証機能が入力デバッガー framework オブジェクトが削除されていないと、使用するよう求められます、 [ **! wudfdumpobjects** ](using-umdf-debugger-extensions.md)デバッガー拡張機能。 このデバッガー拡張機能では、削除されていないオブジェクトの一覧が表示されます。
 
@@ -42,7 +42,7 @@ Framework のオブジェクトを削除する場合については、次を参�
 ## <a name="umdf-2"></a>UMDF 2
 
 
-UMDF バージョン 2 で解放されていない参照はまれですが呼び出しの不一致によるを使用する場合に発生することが[ **WdfObjectReference** ](https://msdn.microsoft.com/library/windows/hardware/ff548758)と[ **WdfObjectDereference**](https://msdn.microsoft.com/library/windows/hardware/ff548739).
+UMDF バージョン 2 で解放されていない参照はまれですが呼び出しの不一致によるを使用する場合に発生することが[ **WdfObjectReference** ](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdfobjectreference)と[ **WdfObjectDereference**](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdfobjectdereference).
 
 場合はバージョン 2 UMDF ドライバー framework オブジェクトのリークをテストするには、次の手順を使用します。
 
@@ -53,12 +53,12 @@ UMDF バージョン 2 で解放されていない参照はまれですが呼び
 
     ハンドルの追跡を有効にするには、値を設定**TrackHandles** 1 つまたは複数のオブジェクトの種類の名前にアスタリスクを指定または (\*) すべてのオブジェクトの種類を追跡するためにします。
 
-    使用して、UMDF 検証設定を変更することも、 [WdfVerifier.exe](https://msdn.microsoft.com/library/windows/hardware/ff556129)アプリケーション。
+    使用して、UMDF 検証設定を変更することも、 [WdfVerifier.exe](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdf-verifier-control-application)アプリケーション。
 
 3.  再起動し、デバッガーの接続を確立し、次のデバッガー コマンドを使用します。
 
-    -   [**! wdfkd.wdfdriverinfo 0x10** ](https://msdn.microsoft.com/library/windows/hardware/ff565724)ハンドルの階層を表示するには
-    -   [**! wdfkd.wdftagtracker** ](https://msdn.microsoft.com/library/windows/hardware/ff566126)タグ情報を表示するには
+    -   [ **! wdfkd.wdfdriverinfo 0x10** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfdriverinfo)ハンドルの階層を表示するには
+    -   [ **! wdfkd.wdftagtracker** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdftagtracker)タグ情報を表示するには
 
 UMDF 検証機能がオンの場合は、KMDF と同じように、ドライバーのアンロードでメモリ リークが検出されました。
 

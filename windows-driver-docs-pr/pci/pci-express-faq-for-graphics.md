@@ -4,12 +4,12 @@ description: このホワイト ペーパーは、Microsoft Windows オペレー
 ms.assetid: 30FC1CF9-B642-4E00-869C-63009BA3F128
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bcdf1aa33dd0bb170d63a21adca2dc9d55cf4b42
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b6ea7095ea2ea4c7eaf24a9afe5a85cc22a106e2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380542"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353548"
 ---
 # <a name="pci-express-faq-for-graphics"></a>PCI Express のグラフィックスについてよく寄せられる質問
 
@@ -134,7 +134,7 @@ PCI のように動作するには、PCIe の複数のモニターの構成が�
 X16 を組み込むことはできません、x8 にグラフィックス カード スロット。 ただし場合は、プラグインできる、x8、x16 にカード PCIe カード スロット。 N、p レーン PCIe カードは、n レーン PCIe スロットにいくつかの速度で動作&gt;p。 N の場合は true でない&lt;p。
 
 ## <a name="related-topics"></a>関連トピック
-[PCI-SIG](http://www.pcisig.com)  
+[PCI-SIG](http://pcisig.com/)  
 
 
 

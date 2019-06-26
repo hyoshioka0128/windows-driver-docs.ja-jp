@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 12/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 4da46e8ff07c9d733834cf6ee23b3454e7e7b958
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7e1692f2ceb2d01781eeb12f85511c5c89eb75a6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332653"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354379"
 ---
 # <a name="kspropertyrtaudiosetwritepacket"></a>KSPROPERTY\_RTAUDIO\_SETWRITEPACKET
 
@@ -30,10 +30,10 @@ KSPROPERTY\_RTAUDIO\_SETWRITEPACKET は、OS に WaveRT バッファーに有効
 
 |取得|設定|対象|プロパティ記述子の型|プロパティ値の型|
 |--- |--- |--- |--- |--- |
-|X|〇|Pin|[**KSPROPERTY**](https://msdn.microsoft.com/library/windows/hardware/ff564262)|[KSRTAUDIO_SETWRITEPACKET_INFO](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksrtaudio_setwritepacket_info)|
+|X|〇|Pin|[**KSPROPERTY**](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))|[KSRTAUDIO_SETWRITEPACKET_INFO](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksrtaudio_setwritepacket_info)|
 
 
-プロパティ記述子 (インスタンス データ) が、 [ **KSPROPERTY** ](https://msdn.microsoft.com/library/windows/hardware/ff564262)構造体。 要求を送信する前に、クライアントは、パケットの数、パケットの長さ、およびその他の情報を含む値を持つ構造体を読み込みます。
+プロパティ記述子 (インスタンス データ) が、 [ **KSPROPERTY** ](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))構造体。 要求を送信する前に、クライアントは、パケットの数、パケットの長さ、およびその他の情報を含む値を持つ構造体を読み込みます。
 
 プロパティの値は型の構造体[ **KSRTAUDIO\_SETWRITEPACKET\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksrtaudio_setwritepacket_info)します。
 
@@ -50,7 +50,7 @@ OS を指定した場合を除く、 *KSSTREAM\_ヘッダー\_OPTIONSF\_ENDOFSTR
 
 ハードウェアの機能に応じて場合、 *KSSTREAM\_ヘッダー\_OPTIONSF\_ENDOFSTREAM*フラグを指定すると、ドライバーには、サイレント状態の塗りつぶし、EOS に続く WaveRT バッファーの一部が可能性があります場合は、ハードウェアのパケットは、EOS 位置を超えるデータを転送します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

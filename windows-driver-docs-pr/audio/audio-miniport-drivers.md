@@ -9,12 +9,12 @@ keywords:
 - ミニポート ドライバー WDK オーディオ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2fc4006cd8350c30671975755beb639b32ac7e1b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0b87f0b84badf9bbc61b1af16c6c1c29a7b7dab8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331462"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355674"
 ---
 # <a name="audio-miniport-drivers"></a>オーディオ ミニポート ドライバー
 
@@ -26,7 +26,7 @@ ms.locfileid: "63331462"
 
 このドキュメントでは、外部バス上に存在するオーディオ デバイスをサポートする方法は説明しません。 外部バス上のオーディオ デバイスのサポートについては、次を参照してください。 [USBAudio クラスのシステム ドライバー](kernel-mode-wdm-audio-components.md#usbaudio_class_system_driver)と[AVCAudio クラスのシステム ドライバー](kernel-mode-wdm-audio-components.md#avcaudio_class_system_driver)します。
 
-次の説明では、リーダーがカーネル (KS) の概念をストリームに精通している前提としています。 背景情報は、次を参照してください。[カーネル ストリーミング](https://msdn.microsoft.com/library/windows/hardware/ff560842)します。
+次の説明では、リーダーがカーネル (KS) の概念をストリームに精通している前提としています。 背景情報は、次を参照してください。[カーネル ストリーミング](https://docs.microsoft.com/windows-hardware/drivers/stream/kernel-streaming)します。
 
 WDM オーディオ ドライバー モデルは、KS フィルターの実装をポートおよびミニポートのドライバーは相互に補完が個別に分割します。 この部門では、オーディオ ハードウェア ドライバーが書き込みフィルターの一般的な実装の問題デバイスに固有のハードウェア インターフェイスの問題からを分離することで簡単です。 ハードウェア ベンダーが、ハードウェア デバイスを直接制御するミニポート ドライバーを記述は、KS フィルターを実装するポート ドライバーがオペレーティング システムで提供されています。 ポートおよびミニポート ドライバーでは、ソフトウェアを適切に定義されたインターフェイスを介して互いと通信します。
 

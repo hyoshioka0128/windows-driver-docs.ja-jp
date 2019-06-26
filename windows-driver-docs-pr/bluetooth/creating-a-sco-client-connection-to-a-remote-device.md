@@ -8,12 +8,12 @@ keywords:
 - SCO 接続の開始
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 19bcc017d23799c5c4af684d476dad10b91c4984
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bbe5d984318124744ba2727974c865d1a30f7387
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328238"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354020"
 ---
 # <a name="creating-a-sco-client-connection-to-a-remote-device"></a>リモート デバイスへの SCO クライアント接続の作成
 
@@ -22,21 +22,21 @@ SCO クライアント プロファイル ドライバーは、リモート デ�
 
 SCO 接続は 2 つの Bluetooth デバイス間のポイント ツー ポイント接続であるために、SCO クライアント プロファイル ドライバーに接続するリモート デバイスの Bluetooth アドレスのみが必要があります。
 
-リモート デバイスへの接続を SCO を開始するプロファイルのドライバーがする必要があります[をビルドし、送信](building-and-sending-a-brb.md)、 [ **BRB\_SCO\_オープン\_チャネル**](https://msdn.microsoft.com/library/windows/hardware/ff536626)要求。
+リモート デバイスへの接続を SCO を開始するプロファイルのドライバーがする必要があります[をビルドし、送信](building-and-sending-a-brb.md)、 [ **BRB\_SCO\_オープン\_チャネル**](https://docs.microsoft.com/previous-versions/ff536626(v=vs.85))要求。
 
 リモート デバイスが、プロファイルのドライバーの SCO 接続要求を受け入れる場合、プロファイルのドライバー、コマンドを実行できます追加 BRB 新しく接続されたチャネル経由で IOCTL を使用して\_内部\_両方\_送信\_BRB など。
 
--   [**BRB\_SCO\_取得\_チャネル\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff536624)
+-   [**BRB\_SCO\_取得\_チャネル\_情報**](https://docs.microsoft.com/previous-versions/ff536624(v=vs.85))
 
--   [**BRB\_SCO\_取得\_システム\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff536625)
+-   [**BRB\_SCO\_取得\_システム\_情報**](https://docs.microsoft.com/previous-versions/ff536625(v=vs.85))
 
--   [**BRB\_SCO\_転送**](https://msdn.microsoft.com/library/windows/hardware/ff536629)
+-   [**BRB\_SCO\_転送**](https://docs.microsoft.com/previous-versions/ff536629(v=vs.85))
 
 **注**  プロファイル ドライバーにする必要があります[をビルドし、送信](building-and-sending-a-brb.md)、 **BRB\_SCO\_取得\_システム\_情報**中に要求そのため、どのようなグローバル SCO 設定は場合と、基になるハードウェア SCO をサポートしている場合を判断する初期化します。
 
  
 
-プロファイルのドライバーには、リモート デバイスへの接続を SCO 必要なくなる、[をビルドし、送信](building-and-sending-a-brb.md)、 [ **BRB\_SCO\_閉じる\_チャネル**](https://msdn.microsoft.com/library/windows/hardware/ff536622)要求。
+プロファイルのドライバーには、リモート デバイスへの接続を SCO 必要なくなる、[をビルドし、送信](building-and-sending-a-brb.md)、 [ **BRB\_SCO\_閉じる\_チャネル**](https://docs.microsoft.com/previous-versions/ff536622(v=vs.85))要求。
 
  
 

@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 09/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a6504be2543611f462bde0934e9a903be368497
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a9859c6e4a9a620300c7135a03de455498a11106
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347971"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355383"
 ---
 # <a name="kspropertycameracontrolextendedfocusmode"></a>KSPROPERTY\_CAMERACONTROL\_拡張\_FOCUSMODE
 
@@ -55,7 +55,7 @@ ms.locfileid: "63347971"
 </tbody>
 </table>
 
-プロパティの値 (データの操作) が含まれています、 [ **KSCAMERA\_EXTENDEDPROP\_ヘッダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)構造と[ **KSCAMERA\_EXTENDEDPROP\_VIDEOPROCSETTING** ](https://msdn.microsoft.com/library/windows/hardware/dn567566)構造体。
+プロパティの値 (データの操作) が含まれています、 [ **KSCAMERA\_EXTENDEDPROP\_ヘッダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)構造と[ **KSCAMERA\_EXTENDEDPROP\_VIDEOPROCSETTING** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_videoprocsetting)構造体。
 
 プロパティの合計データ サイズが**sizeof**(KSCAMERA\_EXTENDEDPROP\_ヘッダー) + **sizeof**(KSCAMERA\_EXTENDEDPROP\_VIDEOPROCSETTING). **サイズ**のメンバー [ **KSCAMERA\_EXTENDEDPROP\_ヘッダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)はこのプロパティの合計データ サイズに設定します。
 
@@ -143,7 +143,7 @@ KSPROPERTY に応答するとき\_型\_GET 要求をドライバーのメンバ�
 <thead>
 <tr class="header">
 <th>Member</th>
-<th>値</th>
+<th>Value</th>
 </tr>
 </thead>
 <tbody>
@@ -176,15 +176,15 @@ KSPROPERTY に応答するとき\_型\_GET 要求をドライバーのメンバ�
 </table>
 
 
-以前フォーカス範囲のフラグが設定されていない場合のドライバー設定**フラグ**KSCAMERA に\_EXTENDEDPROP\_フォーカス\_範囲\_KSCAMERA と共に引き\_EXTENDEDPROP\_VIDEOPROCFLAG\_自動 (既定値)。 メンバー、 [ **KSCAMERA\_EXTENDEDPROP\_VIDEOPROCSETTING** ](https://msdn.microsoft.com/library/windows/hardware/dn567566)に続く構造[ **KSCAMERA\_EXTENDEDPROP\_ヘッダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)フォーカス モードの要件に従って設定されます。
+以前フォーカス範囲のフラグが設定されていない場合のドライバー設定**フラグ**KSCAMERA に\_EXTENDEDPROP\_フォーカス\_範囲\_KSCAMERA と共に引き\_EXTENDEDPROP\_VIDEOPROCFLAG\_自動 (既定値)。 メンバー、 [ **KSCAMERA\_EXTENDEDPROP\_VIDEOPROCSETTING** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_videoprocsetting)に続く構造[ **KSCAMERA\_EXTENDEDPROP\_ヘッダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)フォーカス モードの要件に従って設定されます。
 
 **VideoProp.Value.ull** KSCAMERA モードの場合、値が現在の危険度の設定を含める必要があります\_EXTENDEDPROP\_VIDEOPROCFLAG\_自動。
 
 ### <a name="setting-the-property"></a>プロパティの設定
 
-設定すると、プロパティを KSPROPERTY\_型\_セットの要求、**フラグ**のメンバー [ **KSCAMERA\_EXTENDEDPROP\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)はフォーカス モード設定にはが含まれます。 **VideoProc.Value**のメンバー [ **KSCAMERA\_EXTENDEDPROP\_VIDEOPROCSETTING** ](https://msdn.microsoft.com/library/windows/hardware/dn567566)ときに無視する必要があります**フラグ** 、KSCAMERA を含む\_EXTENDEDPROP\_VIDEOPROCFLAG\_AUTO、KSCAMERA\_EXTENDEDPROP\_VIDEOPROCFLAG\_ロック、KSCAMERA\_EXTENDEDPROP\_フォーカス\_継続的なフラグ。
+設定すると、プロパティを KSPROPERTY\_型\_セットの要求、**フラグ**のメンバー [ **KSCAMERA\_EXTENDEDPROP\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)はフォーカス モード設定にはが含まれます。 **VideoProc.Value**のメンバー [ **KSCAMERA\_EXTENDEDPROP\_VIDEOPROCSETTING** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_videoprocsetting)ときに無視する必要があります**フラグ** 、KSCAMERA を含む\_EXTENDEDPROP\_VIDEOPROCFLAG\_AUTO、KSCAMERA\_EXTENDEDPROP\_VIDEOPROCFLAG\_ロック、KSCAMERA\_EXTENDEDPROP\_フォーカス\_継続的なフラグ。
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 <table>
 <colgroup>
@@ -207,4 +207,4 @@ KSPROPERTY に応答するとき\_型\_GET 要求をドライバーのメンバ�
 
 [**KSCAMERA\_EXTENDEDPROP\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)
 
-[**KSCAMERA\_EXTENDEDPROP\_VIDEOPROCSETTING**](https://msdn.microsoft.com/library/windows/hardware/dn567566)
+[**KSCAMERA\_EXTENDEDPROP\_VIDEOPROCSETTING**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_videoprocsetting)

@@ -11,12 +11,12 @@ keywords:
 - IPrintPipelineFilter
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bba5075a0d09a710cb670e362c21008f513997b2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 55fd4706bd9fa0b9cad0605ab2c520d21835ed3c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354866"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356873"
 ---
 # <a name="xps-filters"></a>XPS フィルター
 
@@ -27,9 +27,9 @@ XPS のフィルターをエクスポートする DLL は、 [DllGetClassObject]
 
 -   呼び出し**DllGetClassObject**フィルター オブジェクトの参照を取得する[IClassFactory](https://go.microsoft.com/fwlink/p/?linkid=123420)インターフェイス。
 
--   呼び出し、 [IClassFactory::CreateInstance](https://go.microsoft.com/fwlink/p/?linkid=123421)メソッドは、フィルター オブジェクトへの参照を取得する[IPrintPipelineFilter](https://msdn.microsoft.com/library/windows/hardware/ff554286)インターフェイス。
+-   呼び出し、 [IClassFactory::CreateInstance](https://go.microsoft.com/fwlink/p/?linkid=123421)メソッドは、フィルター オブジェクトへの参照を取得する[IPrintPipelineFilter](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/filterpipeline/nn-filterpipeline-iprintpipelinefilter)インターフェイス。
 
--   呼び出し、 [ **IPrintPipelineFilter::InitializeFilter** ](https://msdn.microsoft.com/library/windows/hardware/ff554291)フィルター オブジェクトを初期化します。
+-   呼び出し、 [ **IPrintPipelineFilter::InitializeFilter** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/filterpipeline/nf-filterpipeline-iprintpipelinefilter-initializefilter)フィルター オブジェクトを初期化します。
 
 フィルターの DLL をアンロードする前に、フィルター パイプラインの manager 呼び出し**DllCanUnloadNow**します。
 

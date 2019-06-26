@@ -7,12 +7,12 @@ keywords:
 - WDK ネイティブ 802.11 IHV UI 拡張 DLL のセキュリティのプロパティ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 49c9ad86cb3185d24e3d1df13bb29c9c9bd079d3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 755bd127dffb7f061925e7f207de8276b295c9af
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347415"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353735"
 ---
 # <a name="extending-wireless-security-properties"></a>ワイヤレス セキュリティ プロパティの拡張
 
@@ -29,24 +29,24 @@ ms.locfileid: "63347415"
 
 表示にする前に、**セキュリティ** タブで、オペレーティング システムは次の処理します。
 
-1.  呼び出すことによって、セキュリティ プロパティの拡張機能に対してネイティブ 802.11 IHV UI 拡張 DLL のクエリ、 [ **IDot11ExtUI::GetDot11ExtUIProperties** ](https://msdn.microsoft.com/library/windows/hardware/ff553776)メソッド。 オペレーティング システムの値を渡す**DOT11\_EXT\_UI\_セキュリティ**メソッドの*ExtType*パラメーター。
+1.  呼び出すことによって、セキュリティ プロパティの拡張機能に対してネイティブ 802.11 IHV UI 拡張 DLL のクエリ、 [ **IDot11ExtUI::GetDot11ExtUIProperties** ](https://docs.microsoft.com/previous-versions/windows/hardware/wireless/ff553776(v=vs.85))メソッド。 オペレーティング システムの値を渡す**DOT11\_EXT\_UI\_セキュリティ**メソッドの*ExtType*パラメーター。
 
-    802.11 IHV UI 拡張機能のネイティブ DLL には、型の 1 つまたは複数のプロパティがサポートされている場合**DOT11\_EXT\_UI\_セキュリティ**、DLL を返します (メソッドのを通じて*ppDot11ExtUIProperty*パラメーター) の一覧[IDot11ExtUIProperty COM インターフェイス](https://msdn.microsoft.com/library/windows/hardware/ff553746)DLL でサポートされているセキュリティのプロパティの拡張機能。 セキュリティのプロパティを拡張するために使用する COM インターフェイスの詳細については、次を参照してください。[ネイティブ 802.11 IHV UI 拡張機能の COM インターフェイス](native-802-11-ihv-ui-extensions-com-interfaces.md)します。
+    802.11 IHV UI 拡張機能のネイティブ DLL には、型の 1 つまたは複数のプロパティがサポートされている場合**DOT11\_EXT\_UI\_セキュリティ**、DLL を返します (メソッドのを通じて*ppDot11ExtUIProperty*パラメーター) の一覧[IDot11ExtUIProperty COM インターフェイス](https://docs.microsoft.com/previous-versions/windows/hardware/wireless/ff553746(v=vs.85))DLL でサポートされているセキュリティのプロパティの拡張機能。 セキュリティのプロパティを拡張するために使用する COM インターフェイスの詳細については、次を参照してください。[ネイティブ 802.11 IHV UI 拡張機能の COM インターフェイス](native-802-11-ihv-ui-extensions-com-interfaces.md)します。
 
-2.  セキュリティ拡張機能のフレンドリ名を拡張機能を呼び出すことによってクエリ[ **IDot11ExtUIProperty::GetDot11ExtUIPropertyFriendlyName** ](https://msdn.microsoft.com/library/windows/hardware/ff553768)メソッド。 オペレーティング システムの下部にある独自のセキュリティ設定の一覧に表示名を追加する、**セキュリティ**タブ。
+2.  セキュリティ拡張機能のフレンドリ名を拡張機能を呼び出すことによってクエリ[ **IDot11ExtUIProperty::GetDot11ExtUIPropertyFriendlyName** ](https://docs.microsoft.com/previous-versions/windows/hardware/wireless/ff553768(v=vs.85))メソッド。 オペレーティング システムの下部にある独自のセキュリティ設定の一覧に表示名を追加する、**セキュリティ**タブ。
 
-3.  オペレーティング システムを呼び出すが、エンドユーザーは、この一覧から項目を選択した場合、 [ **IDot11ExtUIProperty::Dot11ExtUIPropertyGetSelected** ](https://msdn.microsoft.com/library/windows/hardware/ff553753)メソッドの各セキュリティ拡張機能の[IDot11ExtUIProperty COM インターフェイス](https://msdn.microsoft.com/library/windows/hardware/ff553746)します。 値を返す最初の拡張機能**TRUE**メソッドの*pfIsSelected*パラメーターは、選択した拡張機能に決まります。 一覧で選択したエントリを強調表示し、されます。
+3.  オペレーティング システムを呼び出すが、エンドユーザーは、この一覧から項目を選択した場合、 [ **IDot11ExtUIProperty::Dot11ExtUIPropertyGetSelected** ](https://docs.microsoft.com/previous-versions/windows/hardware/wireless/ff553753(v=vs.85))メソッドの各セキュリティ拡張機能の[IDot11ExtUIProperty COM インターフェイス](https://docs.microsoft.com/previous-versions/windows/hardware/wireless/ff553746(v=vs.85))します。 値を返す最初の拡張機能**TRUE**メソッドの*pfIsSelected*パラメーターは、選択した拡張機能に決まります。 一覧で選択したエントリを強調表示し、されます。
 
-4.  クエリを選択した設定の[ **IDot11ExtUIProperty::Dot11ExtUIPropertyHasConfigurationUI** ](https://msdn.microsoft.com/library/windows/hardware/ff553756)メソッドを表示できるカスタム UI プロパティ ページがあるかどうかを確認します。 メソッドによって返される場合、 *fHasConfigurationUI*パラメーターに設定**TRUE**、オペレーティング システムは追加、**構成**独自仕様のセキュリティの一覧の横にあるボタンをクリックします。設定。
+4.  クエリを選択した設定の[ **IDot11ExtUIProperty::Dot11ExtUIPropertyHasConfigurationUI** ](https://docs.microsoft.com/previous-versions/windows/hardware/wireless/ff553756(v=vs.85))メソッドを表示できるカスタム UI プロパティ ページがあるかどうかを確認します。 メソッドによって返される場合、 *fHasConfigurationUI*パラメーターに設定**TRUE**、オペレーティング システムは追加、**構成**独自仕様のセキュリティの一覧の横にあるボタンをクリックします。設定。
 
-選択した独自のセキュリティ設定が構成 UI と、エンドユーザーをサポートしている場合をクリックする、**構成**ボタン、オペレーティング システムの呼び出しの設定の[ **IDot11ExtUIProperty::DisplayDot11ExtUIProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff553749)カスタム UI を起動するメソッド。 オペレーティング システムは、メソッドの設定の現在のプロファイル データを渡します*bstrIHVProfile*引数。
+選択した独自のセキュリティ設定が構成 UI と、エンドユーザーをサポートしている場合をクリックする、**構成**ボタン、オペレーティング システムの呼び出しの設定の[ **IDot11ExtUIProperty::DisplayDot11ExtUIProperty** ](https://docs.microsoft.com/previous-versions/windows/hardware/wireless/ff553749(v=vs.85))カスタム UI を起動するメソッド。 オペレーティング システムは、メソッドの設定の現在のプロファイル データを渡します*bstrIHVProfile*引数。
 
 プロファイル データは境界付けられた XML フラグメントとして書式設定、 &lt;IHV&gt; &lt;/IHV&gt; XML タグ。 これらのタグ内の XML データは、IHV の実装に固有し、オペレーティング システムに対して非透過的です。 ネイティブの 802.11 プロファイル データの書式設定に関する詳細については、Microsoft Windows SDK 内のドキュメントを参照してください。
 
-カスタム ui 設定のプロファイル データが変更されたかどうか[ **IDot11ExtUIProperty::DisplayDot11ExtUIProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff553749)メソッドが戻る前に、次を行う必要があります。
+カスタム ui 設定のプロファイル データが変更されたかどうか[ **IDot11ExtUIProperty::DisplayDot11ExtUIProperty** ](https://docs.microsoft.com/previous-versions/windows/hardware/wireless/ff553749(v=vs.85))メソッドが戻る前に、次を行う必要があります。
 
 -   変更されたプロファイル データの文字列バッファーを割り当てるし、メソッドの使用、バッファーへのポインターを返す*bstrModifiedIHVProfile*パラメーター。
-    **注**  設定の[ **IDot11ExtUIProperty::DisplayDot11ExtUIProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff553749)メソッドによって参照されるデータは変更しないで、 *bstrIHVProfile*引数。
+    **注**  設定の[ **IDot11ExtUIProperty::DisplayDot11ExtUIProperty** ](https://docs.microsoft.com/previous-versions/windows/hardware/wireless/ff553749(v=vs.85))メソッドによって参照されるデータは変更しないで、 *bstrIHVProfile*引数。
 
      
 

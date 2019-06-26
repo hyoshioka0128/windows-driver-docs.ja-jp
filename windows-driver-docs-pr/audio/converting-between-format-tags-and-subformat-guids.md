@@ -11,12 +11,12 @@ keywords:
 - wave 形式のタグの WDK オーディオ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ffa51e400286e4e04bf8f56ae4778ec41fe5f47d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 490bcf5702cf0dfadd51af6e15b47770e5883458
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333941"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355583"
 ---
 # <a name="converting-between-format-tags-and-subformat-guids"></a>形式タグとサブ形式 GUID の間の変換
 
@@ -26,7 +26,7 @@ ms.locfileid: "63333941"
 
 PCM 以外の波を処理するためのガイドライン\_形式\_拡張可能な形式は、wave 形式のタグで指定されている PCM 以外の形式に似ています。 具体的には、WAVE\_形式\_拡張可能な形式は、PCM の形式の場合、ファクトリから別の暗証番号 (pin) ファクトリが必要で、独自のデータ範囲の交差部分ハンドラーを必要とします。
 
-Wave オーディオ形式\_形式\_の GUID で拡張可能な形式が指定された、**サブフォーマット**のメンバー、 [ **KSDATAFORMAT** ](https://msdn.microsoft.com/library/windows/hardware/ff561656)構造体。 Wave 形式の登録済みのすべてのタグが対応するサブフォーマット定義によって生成される GUID、\_WAVEFORMATEX\_Ksmedia.h で GUID マクロ。 WAVE に対応する GUID など\_形式\_DOLBY\_AC3\_SPDIF タグが定義として定義されている\_WAVEFORMATEX\_GUID (WAVE\_形式\_DOLBY\_AC3\_SPDIF)。
+Wave オーディオ形式\_形式\_の GUID で拡張可能な形式が指定された、**サブフォーマット**のメンバー、 [ **KSDATAFORMAT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksdataformat)構造体。 Wave 形式の登録済みのすべてのタグが対応するサブフォーマット定義によって生成される GUID、\_WAVEFORMATEX\_Ksmedia.h で GUID マクロ。 WAVE に対応する GUID など\_形式\_DOLBY\_AC3\_SPDIF タグが定義として定義されている\_WAVEFORMATEX\_GUID (WAVE\_形式\_DOLBY\_AC3\_SPDIF)。
 
 Ksmedia.h から次のコード スニペットでは、autoinitialized 静的変数として新しい GUID を定義する方法を示します。
 

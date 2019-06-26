@@ -4,12 +4,12 @@ description: 命令トークン
 ms.assetid: bfeee1ad-aaf3-41d0-a667-15d22eccd1e9
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 91cbfeb2201b6c715617b2cbe5d6304476fe3f41
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4b373337d6f5d464fb4d6ced011c750a8d627450
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368584"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379896"
 ---
 # <a name="instruction-token"></a>命令トークン
 
@@ -21,29 +21,29 @@ ms.locfileid: "63368584"
 
 ### <a name="span-idbitsspanspan-idbitsspanbits"></a><span id="bits"></span><span id="BITS"></span>Bits
 
-<span id="_15_00_"></span>**\[15時 00分\]** ビット 0 ~ 15 を示し、[操作コード](https://msdn.microsoft.com/library/windows/hardware/ff569706)します。 D3DSIO\_ \*操作コードの例は、場所\*命令を表します。 たとえば、次のコード例では、 [ADD 命令](https://msdn.microsoft.com/library/windows/hardware/ff538212):
+<span id="_15_00_"></span> **\[15時 00分\]** ビット 0 ~ 15 を示し、[操作コード](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d9types/ne-d3d9types-_d3dshader_instruction_opcode_type)します。 D3DSIO\_ \*操作コードの例は、場所\*命令を表します。 たとえば、次のコード例では、 [ADD 命令](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d9types/ne-d3d9types-_d3dshader_instruction_opcode_type):
 
 ```cpp
 // D3DSIO_ADD d, s1, s2
 ```
 
-<span id="_23_16_"></span>**\[23時 16分\]** ビット 16 ~ 23 が操作のコードに関連する特定のコントロールを示します。
+<span id="_23_16_"></span> **\[23時 16分\]** ビット 16 ~ 23 が操作のコードに関連する特定のコントロールを示します。
 
-<span id="_27_24_"></span>**\[27:24\]** ピクセルと頂点シェーダーより前のバージョン 2 の\_0、24 ~ 27 ビットで予約されている、0x0 に設定します。
+<span id="_27_24_"></span> **\[27:24\]** ピクセルと頂点シェーダーより前のバージョン 2 の\_0、24 ~ 27 ビットで予約されている、0x0 に設定します。
 
 ピクセルと頂点シェーダーのバージョン 2 の\_24 ~ 27 のビットが 0 以降では、命令トークン自体 (つまり、命令のトークンを含まない命令を構成するトークンの数) を含まない命令の Dword のサイズを指定します。
 
-<span id="_28_"></span>**\[28\]** ピクセルと頂点シェーダーより前のバージョン 2 の\_0 ビット 28 は予約されている、0x0 に設定します。
+<span id="_28_"></span> **\[28\]** ピクセルと頂点シェーダーより前のバージョン 2 の\_0 ビット 28 は予約されている、0x0 に設定します。
 
 ピクセルと頂点シェーダーのバージョン 2 の\_0 以降のビット 28 は、命令が基づいているかどうかを示します (つまり、シェーダー コードの最後に、余分な述語のソース トークンが含まれます。 このビットが 0x1 に設定されている場合、命令が実行されます。
 
-<span id="_29_"></span>**\[29\]** 予約します。 この値は、「0x0」に設定されます。
+<span id="_29_"></span> **\[29\]** 予約します。 この値は、「0x0」に設定されます。
 
-<span id="_30_"></span>**\[30\]** ピクセル シェーダーのバージョン 2 よりも前の\_0、30 のビットがビット共同の問題。 場合 1 に設定されて、前の手順では、この命令の実行それ以外の場合、個別に実行します。
+<span id="_30_"></span> **\[30\]** ピクセル シェーダーのバージョン 2 よりも前の\_0、30 のビットがビット共同の問題。 場合 1 に設定されて、前の手順では、この命令の実行それ以外の場合、個別に実行します。
 
 ピクセル シェーダーのバージョン 2 の\_0 およびそれ以降すべての頂点シェーダーのバージョンでは、30 ビットは予約されている、0x0 に設定します。
 
-<span id="_31_"></span>**\[31\]**  31 のビットが 0 (0x0)。
+<span id="_31_"></span> **\[31\]**  31 のビットが 0 (0x0)。
 
 ### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>コメント
 

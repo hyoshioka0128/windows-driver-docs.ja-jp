@@ -10,19 +10,19 @@ keywords:
 - ドライバー WDK KMDF のデバッグ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d4deee1f1341e7436154a32c2186539ed9ec9b60
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: feece70c877750a49b073899156b711c97c6f803
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362443"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377482"
 ---
 # <a name="troubleshooting-kmdf-and-umdf-driver-installation"></a>KMDF および UMDF ドライバーのインストールのトラブルシューティング
 
 
 フレームワークの共同インストーラーは、デバッグ メッセージを作成します。 Windows のチェック ビルドを実行している場合、デバッガーでこれらのメッセージを確認できます。
 
-さらに、共同インストーラーが、デバッグ メッセージを書き込みます、[セットアップ アクション ログ](https://msdn.microsoft.com/library/windows/hardware/ff550900)(*%windir%\\setupact.log*) ファイル。 セットアップの操作ログには、共同インストーラーと、ドライバーの INF ファイルで指定されたドライバーのバージョンが含まれています。 期待どおりにあることを確認する必要があります。
+さらに、共同インストーラーが、デバッグ メッセージを書き込みます、[セットアップ アクション ログ](https://docs.microsoft.com/windows-hardware/drivers/install/setupapi-text-logs)( *%windir%\\setupact.log*) ファイル。 セットアップの操作ログには、共同インストーラーと、ドライバーの INF ファイルで指定されたドライバーのバージョンが含まれています。 期待どおりにあることを確認する必要があります。
 
 ## <a name="examining-kmdf-installation"></a>KMDF インストールの確認
 

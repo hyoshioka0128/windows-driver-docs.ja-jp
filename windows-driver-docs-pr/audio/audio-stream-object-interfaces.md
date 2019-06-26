@@ -4,12 +4,12 @@ description: オーディオ ストリーム オブジェクトのインター�
 ms.assetid: 9d68016a-ddb1-4fbb-b6cc-384f8c76552c
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 64c8200d748100332562c16a2382edbd53c4ad60
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e05d2cfaf56eab015e6ad9c3fc08a07db8e6b71e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331542"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355643"
 ---
 # <a name="audio-stream-object-interfaces"></a>オーディオ ストリーム オブジェクトのインターフェイス
 
@@ -23,7 +23,7 @@ ms.locfileid: "63331542"
 
 DirectMusic ストリームのバッファーのストレージを管理します。 Dmu ポート ドライバーによって実装されます。
 
-割り当てます[デジタル著作権管理 (DRM)](https://msdn.microsoft.com/library/windows/hardware/ff536260)デジタル オーディオ ストリームのコンテンツを保護します。 WaveCyclic、WavePci、または WaveRT ミニポート ドライバーによって実装されます。
+割り当てます[デジタル著作権管理 (DRM)](https://docs.microsoft.com/windows-hardware/drivers/audio/digital-rights-management)デジタル オーディオ ストリームのコンテンツを保護します。 WaveCyclic、WavePci、または WaveRT ミニポート ドライバーによって実装されます。
 
 MIDI フィルターで pin を流れる MIDI ストリームを表します。 MIDI ミニポート ドライバーによって実装されます。
 
@@ -41,25 +41,25 @@ WavePci ミニポート ドライバーのストリーム オブジェクトへ�
 
 DirectMusic シンセサイザー デバイス wave 出力を処理します。 Dmu のミニポート ドライバーによって実装され、Dmu ポート ドライバーのウェーブ シンクによって使用されます。
 
-[IAllocatorMXF](https://msdn.microsoft.com/library/windows/hardware/ff536491)
+[IAllocatorMXF](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nn-dmusicks-iallocatormxf)
 
-[IDrmAudioStream](https://msdn.microsoft.com/library/windows/hardware/ff536568)
+[IDrmAudioStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/drmk/nn-drmk-idrmaudiostream)
 
-[IMiniportMidiStream](https://msdn.microsoft.com/library/windows/hardware/ff536704)
+[IMiniportMidiStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iminiportmidistream)
 
-[IMiniportWaveCyclicStream](https://msdn.microsoft.com/library/windows/hardware/ff536715)
+[IMiniportWaveCyclicStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iminiportwavecyclicstream)
 
-[IMiniportWavePciStream](https://msdn.microsoft.com/library/windows/hardware/ff536725)
+[IMiniportWavePciStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iminiportwavepcistream)
 
-[IMiniportWaveRTStream](https://msdn.microsoft.com/library/windows/hardware/ff536738)
+[IMiniportWaveRTStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iminiportwavertstream)
 
-[IMiniportWaveRTStreamNotofication](https://msdn.microsoft.com/library/windows/hardware/ff536739)
+[IMiniportWaveRTStreamNotofication](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iminiportwavertstreamnotification)
 
-[IMXF](https://msdn.microsoft.com/library/windows/hardware/ff536782)
+[IMXF](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nn-dmusicks-imxf)
 
-[IPortWavePciStream](https://msdn.microsoft.com/library/windows/hardware/ff536907)
+[IPortWavePciStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iportwavepcistream)
 
-[ISynthSinkDMus](https://msdn.microsoft.com/library/windows/hardware/ff537011)
+[ISynthSinkDMus](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nn-dmusicks-isynthsinkdmus)
 
  
 

@@ -8,12 +8,12 @@ keywords:
 - DPIXELFORMAT
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ea327bef458a156b3b663da7041de9890c896ce9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6936828a38274d18d1d8e9e657f0e711be5a8e6e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389884"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354689"
 ---
 # <a name="the-texture-format-list"></a>テクスチャ形式リスト
 
@@ -27,13 +27,13 @@ DDPIXELFORMAT データ構造体は不要になった API レベルのインタ�
 
 さらに、その他の特定の新しいフィールドが DDPIXELFORMAT (新しいフィールドが追加されて既存のフィールドを持つ共用体のメンバーとして、データ構造のサイズは、同じように追加されています。 これらのフィールドが含まれます: **dwOperations**、 **dwPrivateFormatBitCount**、および**wFlipMSTypes**と**wBltMSTypes**します。
 
-DirectX 8.0 DDI 準拠のドライバーは、標準のメカニズムを通じてレポート DX7 スタイルのサーフェスの形式を続行する必要があります、テクスチャ形式の一覧で報告されたドライバーのグローバル データ構造体 ([**D3DHAL\_GLOBALDRIVERDATA**](https://msdn.microsoft.com/library/windows/hardware/ff545963)) と GUID への応答で Z/ステンシルの一覧を報告\_から ZPixelFormats [ **DdGetDriverInfo**](https://msdn.microsoft.com/library/windows/hardware/ff549404)します。 ただし、ドライバーも報告、サポートされる surface 形式のすべて以下に示す新しい DirectX 8.0 DDI メカニズムを通じてします。
+DirectX 8.0 DDI 準拠のドライバーは、標準のメカニズムを通じてレポート DX7 スタイルのサーフェスの形式を続行する必要があります、テクスチャ形式の一覧で報告されたドライバーのグローバル データ構造体 ([**D3DHAL\_GLOBALDRIVERDATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/ns-d3dhal-_d3dhal_globaldriverdata)) と GUID への応答で Z/ステンシルの一覧を報告\_から ZPixelFormats [ **DdGetDriverInfo**](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_getdriverinfo)します。 ただし、ドライバーも報告、サポートされる surface 形式のすべて以下に示す新しい DirectX 8.0 DDI メカニズムを通じてします。
 
 使用して DirectX 8.0 DDI スタイルのサーフェスの形式が報告された**GetDriverInfo2**します。 2 つ**GetDriverInfo2**クエリの種類は、ランタイムに使用クエリ画面形式のドライバーから。 D3DGDI2\_型\_GETFORMATCOUNT はドライバーによってサポートされる DirectX 8.0 スタイル画面形式の番号を要求するために使用します。 D3DGDI2\_型\_GETFORMAT が使用される、ドライバーから特定の画面形式のクエリにします。
 
-D3DGDI2 を処理するために\_型\_GETFORMATCOUNT、ドライバーは DirectX 8.0 DDI スタイル サーフェスの形式でサポートされる数を格納する必要があります、 **dwFormatCount**のフィールド、 [ **DD\_GETFORMATCOUNTDATA**](https://msdn.microsoft.com/library/windows/hardware/ff551566)します。
+D3DGDI2 を処理するために\_型\_GETFORMATCOUNT、ドライバーは DirectX 8.0 DDI スタイル サーフェスの形式でサポートされる数を格納する必要があります、 **dwFormatCount**のフィールド、 [ **DD\_GETFORMATCOUNTDATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/ns-d3dhal-_dd_getformatcountdata)します。
 
-ランタイムが、ドライバーからサポートされている形式の数を受信するとを照会し、各画面の形式の順番で**GetDriverInfo2** D3DGDI2 の種類のクエリ\_型\_GETFORMAT します。 によって示されるデータ構造、 **lpvData**のフィールド、 [ **DD\_GETDRIVERINFODATA** ](https://msdn.microsoft.com/library/windows/hardware/ff551550)データ構造は、この場合、 [ **DD\_GETFORMATDATA**](https://msdn.microsoft.com/library/windows/hardware/ff551569)します。
+ランタイムが、ドライバーからサポートされている形式の数を受信するとを照会し、各画面の形式の順番で**GetDriverInfo2** D3DGDI2 の種類のクエリ\_型\_GETFORMAT します。 によって示されるデータ構造、 **lpvData**のフィールド、 [ **DD\_GETDRIVERINFODATA** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_getdriverinfodata)データ構造は、この場合、 [ **DD\_GETFORMATDATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/ns-d3dhal-_dd_getformatdata)します。
 
 DirectX 8.0 ランタイムは、ドライバーを調べることによって報告されたテクスチャ形式の一覧をスキャン、 **dwFlags**フィールドの各ピクセル形式。 テクスチャ形式のいずれかであれば**dwFlags** DDPF に設定\_DX8 スタイルとしてこのテクスチャ形式のリストを識別し、ピクセル形式が DDPFとしてマークされていないすべてのテクスチャ形式をフィルター処理、D3DFORMATし、ランタイム\_D3DFORMAT します。 さらに、DDPF のある任意のテクスチャ形式のフィルター DX7 ランタイム\_D3DFORMAT を設定します。 そのため、DX8 DDI をサポートしているドライバーは古いスタイルで指定された 1 つ使用と、新しい 1 つを使用する、サポートされている各形式に対する 2 つのエントリを含むテクスチャ形式の一覧を返すことができます。 DX8 ランタイムは、新しいスタイルで指定された形式を使用し、DX7 ランタイムが古い形式で指定された形式を使用します。
 

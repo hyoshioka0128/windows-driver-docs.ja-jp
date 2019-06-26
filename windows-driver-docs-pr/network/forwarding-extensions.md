@@ -4,12 +4,12 @@ description: 転送拡張機能
 ms.assetid: 7ABBB3F3-66F5-4651-8A5A-94940F3FD82D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e9edee9cb08971a5cd6eeabb6511359f0fca5989
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4dd9f25b9f008be49d7fb64b75b89f10a5e02187
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347375"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353337"
 ---
 # <a name="forwarding-extensions"></a>転送拡張機能
 
@@ -38,7 +38,7 @@ ms.locfileid: "63347375"
 
 -   パケット トラフィックをフィルター処理しカスタムおよび標準ポートを適用または拡張可能スイッチを通じてパケット配信ポリシーを切り替えることができます。 転送拡張機能では、イングレス データ パス内のパケット フィルター処理、送信元ポートとパケットに、拡張機能を代入する宛先ポートに基づいてフィルタ リング規則が適用されます。
 
-    カスタム ポリシーは、独立系ソフトウェア ベンダー (ISV) によって定義されます。 標準的なポリシーは、拡張可能スイッチのインターフェイスによって定義されます。 この種のポリシーのプロパティの設定は、HYPER-V の WMI 管理層によって管理されます。 転送拡張機能がこれらのオブジェクト識別子 (OID) 要求プロパティの設定で構成されている[OID\_スイッチ\_ポート\_プロパティ\_UPDATE](https://msdn.microsoft.com/library/windows/hardware/hh598278)と[OID\_スイッチ\_プロパティ\_UPDATE](https://msdn.microsoft.com/library/windows/hardware/hh598283)します。
+    カスタム ポリシーは、独立系ソフトウェア ベンダー (ISV) によって定義されます。 標準的なポリシーは、拡張可能スイッチのインターフェイスによって定義されます。 この種のポリシーのプロパティの設定は、HYPER-V の WMI 管理層によって管理されます。 転送拡張機能がこれらのオブジェクト識別子 (OID) 要求プロパティの設定で構成されている[OID\_スイッチ\_ポート\_プロパティ\_UPDATE](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-property-update)と[OID\_スイッチ\_プロパティ\_UPDATE](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-property-update)します。
 
     ポリシーの拡張可能スイッチの詳細については、次を参照してください。[を管理する Hyper-v 拡張可能なスイッチ ポリシー](managing-hyper-v-extensible-switch-extensibility-policies.md)します。
 
@@ -78,13 +78,13 @@ OID 要求と NDIS 状態インジケーターを検査、だけでなく転送�
 
     プロバイダーのチーミングの詳細については、次を参照してください。[プロバイダーの拡張機能のチーミング](teaming-provider-extensions.md)します。
 
--   状態を返すことによって、拡張可能スイッチ ポートまたはネットワーク アダプターの接続の作成を拒否することができます\_データ\_いない\_適用可能な拡張可能スイッチの Oid を承諾します。 状態を返すことによって、転送拡張機能がポートの作成要求を拒否するなど、\_データ\_いない\_ドライバーの OID 設定要求の受信時に合意[OID\_スイッチ\_ポート\_作成](https://msdn.microsoft.com/library/windows/hardware/hh598272)です。
+-   状態を返すことによって、拡張可能スイッチ ポートまたはネットワーク アダプターの接続の作成を拒否することができます\_データ\_いない\_適用可能な拡張可能スイッチの Oid を承諾します。 状態を返すことによって、転送拡張機能がポートの作成要求を拒否するなど、\_データ\_いない\_ドライバーの OID 設定要求の受信時に合意[OID\_スイッチ\_ポート\_作成](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-create)です。
 
     **注**  転送拡張機能を作成またはポートを削除またはしないでネットワーク アダプターの接続。 拡張可能スイッチのプロトコルのエッジは、作成またはポートまたはネットワーク アダプターの接続の削除について、基になる拡張機能を通知する Oid を発行します。 詳細については、次を参照してください。 [Hyper-v 拡張可能スイッチのポートおよびネットワーク アダプターの状態](hyper-v-extensible-switch-port-and-network-adapter-states.md)します。
 
      
 
--   状態を返すことによって追加または拡張可能スイッチまたはポートのポリシーの更新プログラムを拒否できます、\_データ\_いない\_適用可能な拡張可能スイッチの Oid を受け入れられます。 状態を返すことによって、転送拡張機能がポート ポリシーの追加を拒否するなど、\_データ\_いない\_ドライバーの OID 設定要求の受信時に合意[OID\_スイッチ\_ポート\_プロパティ\_追加](https://msdn.microsoft.com/library/windows/hardware/hh598275)します。
+-   状態を返すことによって追加または拡張可能スイッチまたはポートのポリシーの更新プログラムを拒否できます、\_データ\_いない\_適用可能な拡張可能スイッチの Oid を受け入れられます。 状態を返すことによって、転送拡張機能がポート ポリシーの追加を拒否するなど、\_データ\_いない\_ドライバーの OID 設定要求の受信時に合意[OID\_スイッチ\_ポート\_プロパティ\_追加](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-property-add)します。
 
     ポリシーの拡張可能スイッチの詳細については、次を参照してください。[を管理する Hyper-v 拡張可能なスイッチ ポリシー](managing-hyper-v-extensible-switch-extensibility-policies.md)します。
 

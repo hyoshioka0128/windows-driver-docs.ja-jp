@@ -4,12 +4,12 @@ description: オーディオ ミニポート補助のインターフェイス
 ms.assetid: cda22e86-f3f7-430c-856d-a2c868caa975
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a13664b1c4fb2c557773b8ddd9ee21781ad5fb53
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 15180ea52e96ee0759501206825a5727817296ca
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331461"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355685"
 ---
 # <a name="audio-miniport-auxiliary-interfaces"></a>オーディオ ミニポート補助のインターフェイス
 
@@ -21,13 +21,13 @@ ms.locfileid: "63331461"
 
 このセクションでは、次のインターフェイスがについて説明します。
 
-[IMusicTechnology](https://msdn.microsoft.com/library/windows/hardware/ff536778)- Dmu ミニポート ドライバーのピンのデータ範囲で指定されている DirectMusic シンセサイザー テクノロジの変更に使用されます。
+[IMusicTechnology](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-imusictechnology)- Dmu ミニポート ドライバーのピンのデータ範囲で指定されている DirectMusic シンセサイザー テクノロジの変更に使用されます。
 
-[IPinCount](https://msdn.microsoft.com/library/windows/hardware/ff536832) -ミニポート ドライバーを動的に監視し、その pin カウントの操作の手段を提供します。
+[IPinCount](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-ipincount) -ミニポート ドライバーを動的に監視し、その pin カウントの操作の手段を提供します。
 
-[IPinName](https://msdn.microsoft.com/library/windows/hardware/ff536840) -ポートのエンドポイントの名前を動的に更新するドライバーを使用します。
+[IPinName](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-ipinname-getpinname) -ポートのエンドポイントの名前を動的に更新するドライバーを使用します。
 
-[IAdapterPnpManagement](https://msdn.microsoft.com/library/windows/hardware/mt604850) -管理メッセージ PnP 受け取りを登録するアダプターを使用します。
+[IAdapterPnpManagement](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iadapterpnpmanagement) -管理メッセージ PnP 受け取りを登録するアダプターを使用します。
 
  
 

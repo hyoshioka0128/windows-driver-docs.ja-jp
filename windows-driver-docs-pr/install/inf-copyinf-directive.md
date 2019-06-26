@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 51a120bab01fffa6957f8a204cf206f5eb48a0a6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 548d5335bd99c190b10466e2b336af46c9619cd0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373889"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378025"
 ---
 # <a name="inf-copyinf-directive"></a>INF CopyINF ディレクティブ
 
@@ -45,7 +45,7 @@ CopyINF=filename1.inf[,filename2.inf]...
 
 次の点を適用する、 **CopyINF**ディレクティブ。
 
--   Windows Vista では、前に Windows が既定の処理の一環として、指定した INF ファイルをコピー [ **DIF_INSTALLDEVICE** ](https://msdn.microsoft.com/library/windows/hardware/ff543692) (を参照してください[ **SetupDiInstallDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff552039)) デバイスが正常にインストールされます。
+-   Windows Vista では、前に Windows が既定の処理の一環として、指定した INF ファイルをコピー [ **DIF_INSTALLDEVICE** ](https://docs.microsoft.com/windows-hardware/drivers/install/dif-installdevice) (を参照してください[ **SetupDiInstallDevice** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiinstalldevice)) デバイスが正常にインストールされます。
 
     Windows では、デバイスのインストール中に検索、システムのディレクトリ パスに指定した INF ファイルをコピーします。
 
@@ -58,7 +58,7 @@ Windows Vista 以降では、次の点にも適用されます、 **CopyINF**デ
 
 -   **CopyINF**ディレクティブがドライバー ストアのインポートの代わりにデバイスのインストール中に処理されます。 つまり、呼び出しを[SetupCopyOEMInf](https://go.microsoft.com/fwlink/p/?linkid=194252) Windows Vista および Windows の以降のバージョンがすべて、 **CopyINF**その時点で処理される指定した INF ファイルでディレクティブ。 各再帰的に発生するこの**CopyINF**すべての参照先のドライバー パッケージがドライバー ストアにコピーされるまで、指定した INF ファイルに含まれるディレクティブです。
 
-Windows 10、特定の状況では、バージョン 1511 以降では (たとえば、Windows Update または呼び出しをいくつか実行している[ **DiInstallDevice**](https://msdn.microsoft.com/library/windows/hardware/ff544710))、Inf でコピー **CopyINF**適用可能なデバイスにもインストールされます。
+Windows 10、特定の状況では、バージョン 1511 以降では (たとえば、Windows Update または呼び出しをいくつか実行している[ **DiInstallDevice**](https://docs.microsoft.com/windows/desktop/api/newdev/nf-newdev-diinstalldevice))、Inf でコピー **CopyINF**適用可能なデバイスにもインストールされます。
 
 INF ファイルをコピーする方法の詳細については、次を参照してください。[コピー Inf](copying-inf-files.md)します。
 

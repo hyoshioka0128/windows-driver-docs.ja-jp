@@ -16,12 +16,12 @@ keywords:
 - 同期の WDK オーディオ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6fdbc238053392478af94f198a3faa36d6162ea1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d3b735e62aa6a56df79fa71d65d7b02a03e111a2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333871"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355606"
 ---
 # <a name="clock-synchronization"></a>時計の同期化
 
@@ -43,13 +43,13 @@ Wave シンクでは、フェーズがロックされているループを使用
 
 参照時 520 を再生するイベントがマークされているとします。 シンセサイザー ノートの表示中にサンプルとサンプル時間でそのすべての計算を実行するでは。 そのために 520 の参照時ではこれをサンプル時間で変換を把握する必要があります。 ユーザー モードでは、wave シンクは、シンセサイザーで使用される 2 つの関数を提供します。
 
-[**IDirectMusicSynthSink::SampleToRefTime**](https://msdn.microsoft.com/library/windows/hardware/ff536526)
+[**IDirectMusicSynthSink::SampleToRefTime**](https://docs.microsoft.com/windows/desktop/api/dmusics/nf-dmusics-idirectmusicsynthsink-sampletoreftime)
 
-[**IDirectMusicSynthSink::RefTimeToSample**](https://msdn.microsoft.com/library/windows/hardware/ff536525)
+[**IDirectMusicSynthSink::RefTimeToSample**](https://docs.microsoft.com/windows/desktop/api/dmusics/nf-dmusics-idirectmusicsynthsink-reftimetosample)
 
 変換を実行する、ここで、シンセサイザー呼び出し**IDirectMusicSynthSink::RefTimeToSample** wave シンク上でします。
 
-Wave シンクに戻るサンプル時間 (600 など)。 問題のメモは取得サンプル時間 600 にレンダリングされます。 その場合、シンセサイザー [ **IDirectMusicSynth::Render** ](https://msdn.microsoft.com/library/windows/hardware/ff536541)メソッドを取得します (たとえば、サンプル時間 600 ~ 800) からストリームの次の部分を表示するために、wave シンク、メモが表示されます、サンプル時 600 バッファー。
+Wave シンクに戻るサンプル時間 (600 など)。 問題のメモは取得サンプル時間 600 にレンダリングされます。 その場合、シンセサイザー [ **IDirectMusicSynth::Render** ](https://docs.microsoft.com/windows/desktop/api/dmusics/nf-dmusics-idirectmusicsynth-render)メソッドを取得します (たとえば、サンプル時間 600 ~ 800) からストリームの次の部分を表示するために、wave シンク、メモが表示されます、サンプル時 600 バッファー。
 
 **注**  サンプル時間はロール オーバーを回避するために 64 ビットの数値として保持されます。 (DWORD 値をロール オーバーをします 27 時間。)
 

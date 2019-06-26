@@ -3,19 +3,19 @@ Description: このトピックでは、ユニバーサル シリアル バス (
 title: Windows USB イベント トレーシング
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fcdf5d475339f928e83557fc36d42793e4ceb878
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 680a65744992420a7e333e4c6341ffff15f8d02d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376102"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356590"
 ---
 # <a name="usb-event-tracing-for-windows"></a>Windows USB イベント トレーシング
 
 
 このトピックでは、ユニバーサル シリアル バス (USB) 用に、トレースとログ記録機能についてドライバー開発者をクライアントの情報に示します。 この情報は、ユーザーの開発し、デバッグの USB デバイスに提供されます。 ツールをインストールし、トレース ファイルを作成し、USB のトレース ファイル内のイベントを分析する方法に関する情報が含まれます。 トピックでは、USB のエコシステムと USB のトレースとログ機能を使用して、正常に必要なハードウェアの包括的な知識があることを前提としています。
 
-イベント トレースの解釈、Windows を理解する必要がありますも[Windows での USB ホスト側ドライバー](usb-3-0-driver-stack-architecture.md)、[公式の USB 仕様、およびデバイスの USB クラス仕様](http://www.usb.org/developers/docs/)します。
+イベント トレースの解釈、Windows を理解する必要がありますも[Windows での USB ホスト側ドライバー](usb-3-0-driver-stack-architecture.md)、[公式の USB 仕様、およびデバイスの USB クラス仕様](https://www.usb.org/documents)します。
 
 -   [Event Tracing for Windows について](#about-event-tracing-for-windows)
 -   [ETW のログ記録の USB サポート](#usb-support-for-etw-logging)
@@ -31,7 +31,7 @@ ETW は、Windows 2000 で導入されました。 その後、さまざまな�
 
 ETW は、Windows Vista および Windows 7 が大幅にアップグレードされました。 最も重要な新機能の 1 つは、統一イベント プロバイダ モデルおよび Api です。 簡単に言えば、新しい統一 Api は、トレースのログとイベント プロバイダーの 1 つの一貫性があり、使いやすいメカニズムに書き込み、イベント ビューアーを結合します。 同時に、開発者を向上させるために ETW に追加されたいくつかの新機能およびエンドユーザーのエクスペリエンスします。
 
-ETW と WPP の詳細については、イベントのトレースを参照してくださいと[Event Tracing for Windows (ETW)](https://msdn.microsoft.com/library/windows/hardware/ff545699)します。
+ETW と WPP の詳細については、イベントのトレースを参照してくださいと[Event Tracing for Windows (ETW)](https://docs.microsoft.com/windows-hardware/drivers/devtest/event-tracing-for-windows--etw-)します。
 
 ## <a name="usb-support-for-etw-logging"></a>ETW のログ記録の USB サポート
 
@@ -90,7 +90,7 @@ Windows 8 では、USB 3.0 デバイスをサポートするために USB ドラ
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="capture-and-view-ing-usb-traces-with-microsoft-message-analyzer-.md" data-raw-source="[Capture and view USB traces with Microsoft Message Analyzer](capture-and-view-ing-usb-traces-with-microsoft-message-analyzer-.md)">Microsoft Message Analyzer を使用した USB トレースのキャプチャとビュー</a></p></td>
+<td><p><a href="capture-and-view-ing-usb-traces-with-microsoft-message-analyzer-.md" data-raw-source="[Capture and view USB traces with Microsoft Message Analyzer](capture-and-view-ing-usb-traces-with-microsoft-message-analyzer-.md)">Microsoft Message Analyzer を使用して USB トレースをキャプチャして表示する</a></p></td>
 <td><p>Microsoft メッセージ アナライザー (MMA) を使用して、キャプチャし、ライブの USB トレースを表示または既存のトレースを表示することができます。</p></td>
 </tr>
 <tr class="even">

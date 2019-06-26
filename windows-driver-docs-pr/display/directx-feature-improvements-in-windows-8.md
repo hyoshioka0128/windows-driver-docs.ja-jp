@@ -4,12 +4,12 @@ description: Windows 8 には、開発者、エンドユーザーおよびシス
 ms.assetid: 0622DA0D-41ED-4B47-B090-8D5B85E10EB3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aa4fb6c19989f24a30f5ced4630387a9474d3fad
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 92560f67bfbd8a7522104b43eb899eba3a8b4bac
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328402"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353457"
 ---
 # <a name="directx-feature-improvements-in-windows-8"></a>Windows 8 での DirectX 機能の向上
 
@@ -31,7 +31,7 @@ Windows 8 には、開発者、エンドユーザーおよびシステムの製�
 ## <a name="span-idpixelformatsspanspan-idpixelformatsspanpixel-formats-5551-565-4444"></a><span id="pixelformats"></span><span id="PIXELFORMATS"></span>ピクセル形式 (5551、565、4444)
 
 
-DirectX を使用して低電力の構成でグラフィックスのサポート強化に、次の DirectX 9 ピクセルの形式から、 [ **DXGI\_形式**](https://msdn.microsoft.com/library/windows/desktop/bb173059)の Direct3D の列挙をサポートする必要がありますWindows 8 の場合:
+DirectX を使用して低電力の構成でグラフィックスのサポート強化に、次の DirectX 9 ピクセルの形式から、 [ **DXGI\_形式**](https://docs.microsoft.com/windows/desktop/api/dxgiformat/ne-dxgiformat-dxgi_format)の Direct3D の列挙をサポートする必要がありますWindows 8 の場合:
 
 -   **DXGI\_形式\_B5G6R5\_UNORM**
 -   **DXGI\_形式\_B5G5R5A1\_UNORM**
@@ -100,7 +100,7 @@ Windows 8 で倍精度をサポートする Windows Display Driver Model (WDDM) 
 
 Direct3D 10.0、11.0 の Direct3D ハードウェア (および機能レベル 10\_0 - 11\_0) ForcedSampleCount を 1 に設定をサポートしています (およびレンダリング ターゲット ビューのすべてのサンプル数) (たとえば、深さ/ステンシルなし) の制限事項が説明されているとします。
 
-10 の\_0, 10\_1 から 11\_0 ハードウェア、 [ **D3D11\_1\_DDI\_ラスタライザー\_DESC**](https://msdn.microsoft.com/library/windows/hardware/hh451052).**ForcedSampleCount**設定されている (四角形) を 2 三角形を 1 に行のレンダリングを構成することはできません-ベースのモード (つまり、 **MultisampleEnable**状態を設定することはできませんを true に)。 この制限はない 11\_1 ハードウェア。 注意の名前を付け、 **MultisampleEnable**状態誤解を招くマルチ サンプリングを有効にするとはまったく関係がある不要になったためは、代わりは今すぐと共にコントロールの 1 つ**AntialiasedLineEnable**行レンダリング モードを選択するためです。
+10 の\_0, 10\_1 から 11\_0 ハードウェア、 [ **D3D11\_1\_DDI\_ラスタライザー\_DESC**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/ns-d3d10umddi-d3d11_1_ddi_rasterizer_desc).**ForcedSampleCount**設定されている (四角形) を 2 三角形を 1 に行のレンダリングを構成することはできません-ベースのモード (つまり、 **MultisampleEnable**状態を設定することはできませんを true に)。 この制限はない 11\_1 ハードウェア。 注意の名前を付け、 **MultisampleEnable**状態誤解を招くマルチ サンプリングを有効にするとはまったく関係がある不要になったためは、代わりは今すぐと共にコントロールの 1 つ**AntialiasedLineEnable**行レンダリング モードを選択するためです。
 
 これで、ターゲットに依存しないラスターの形式を制限**ForcedSampleCount** = 1 は、近い Direct3D 10.0 に存在していたが、Direct3D 10.1 と Direct3D を使用できなくなったモード (および機能レベル 10\_1 から 11\_0) API が変更されたのためです。 Direct3D 10.0 では、このモードがあったときに使用可能な複数サンプル アンチ エイリアス (MSAA) 画面でも center サンプリング レンダリング**MultisampleEnable**を false に設定された (および切り替えることでこれを切り替えるでした**MultisampleEnable**)。 Direct3D の 10.1 以降、 **MultisampleEnable**不要になった (名前) に関係なく、マルチ サンプリングに影響し、行のレンダリング動作を制御するだけです。
 
@@ -181,7 +181,7 @@ Direct3d11 にラスタライズ順不同でないレンダリング アクセ�
 
 ### <a name="span-idoffsettingconstantbufferupdatesspanspan-idoffsettingconstantbufferupdatesspanspan-idoffsettingconstantbufferupdatesspanoffsetting-constant-buffer-updates"></a><span id="Offsetting_constant_buffer_updates"></span><span id="offsetting_constant_buffer_updates"></span><span id="OFFSETTING_CONSTANT_BUFFER_UPDATES"></span>定数バッファーのオフセットの更新
 
-高パフォーマンスのゲーム エンジンを希望は、定数バッファーを別に参照できる定数の更新の大きなバッチを収集する**描画\\***、各を必要とする独自の定数では、一度にすべてを呼び出します。 により、アプリケーションで大きなバッファーを作成して、その中のリージョンに個別のシェーダーをポイントし、これは容易になります (同様のビューには、ビューを記述する全体オブジェクトを作成する必要はありません)。
+高パフォーマンスのゲーム エンジンを希望は、定数バッファーを別に参照できる定数の更新の大きなバッチを収集する**描画\\** *、各を必要とする独自の定数では、一度にすべてを呼び出します。 により、アプリケーションで大きなバッファーを作成して、その中のリージョンに個別のシェーダーをポイントし、これは容易になります (同様のビューには、ビューを記述する全体オブジェクトを作成する必要はありません)。
 
 定数バッファー今すぐして作成できますをアドレス指定可能な定数バッファーの最大サイズよりも大きいサイズを持つ個々 のシェーダー (最大 4096 16 バイト要素 - 65 kB で、各要素は 1 つの 4 つの成分シェーダー定数です)。 定数バッファー リソースのサイズは、システムが処理できるメモリの割り当てのサイズによってのみ制限ようになりました。
 
@@ -211,23 +211,23 @@ Tileable コピー操作では、イメージのソースと宛先のピクセ�
 
 これらの関数と構造体は、新しい Windows 8 向けに更新されました。
 
--   [*AssignDebugBinary*](https://msdn.microsoft.com/library/windows/hardware/hh406234)
--   [*CalcPrivateBlendStateSize(D3D11\_1)*](https://msdn.microsoft.com/library/windows/hardware/hh406237)
--   [*ClearView*](https://msdn.microsoft.com/library/windows/hardware/hh406255)
--   [*DefaultConstantBufferUpdateSubresourceUP(D3D11\_1)*](https://msdn.microsoft.com/library/windows/hardware/hh802464)
--   [*ResourceUpdateSubresourceUP(D3D11\_1)*](https://msdn.microsoft.com/library/windows/hardware/hh439847)
--   [*VsSetConstantBuffers(D3D11\_1)*](https://msdn.microsoft.com/library/windows/hardware/hh439921)
--   [**D3D11\_1DDI\_D3D11\_オプション\_データ**](https://msdn.microsoft.com/library/windows/hardware/hh406442)
--   [**D3DDDI\_BLTFLAGS**](https://msdn.microsoft.com/library/windows/hardware/ff544379)
--   [**D3DDDI\_コピー\_フラグ**](https://msdn.microsoft.com/library/windows/hardware/hh451175)
--   [**D3DDDIARG\_BUFFERBLT1**](https://msdn.microsoft.com/library/windows/hardware/hh451069)
--   [**D3DDDIARG\_破棄**](https://msdn.microsoft.com/library/windows/hardware/hh451076)
--   [**D3DDDIARG\_TEXBLT1**](https://msdn.microsoft.com/library/windows/hardware/hh451142)
--   [**D3DDDIARG\_VOLUMEBLT1**](https://msdn.microsoft.com/library/windows/hardware/hh451145)
--   [**D3DDDICAPS\_アーキテクチャ\_情報**](https://msdn.microsoft.com/library/windows/hardware/hh451150)
--   [**D3DDDICAPS\_シェーダー\_MIN\_有効桁数**](https://msdn.microsoft.com/library/windows/hardware/hh451152)
--   [**D3DDDICAPS\_シェーダー\_MIN\_精度\_サポート**](https://msdn.microsoft.com/library/windows/hardware/hh451154)
--   [**D3DDDICAPS\_型**](https://msdn.microsoft.com/library/windows/hardware/ff544132)
+-   [*AssignDebugBinary*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_assigndebugbinary)
+-   [*CalcPrivateBlendStateSize(D3D11\_1)* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_calcprivateblendstatesize)
+-   [*ClearView*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_clearview)
+-   [*DefaultConstantBufferUpdateSubresourceUP(D3D11\_1)* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_resourceupdatesubresourceup)
+-   [*ResourceUpdateSubresourceUP(D3D11\_1)* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_resourceupdatesubresourceup)
+-   [*VsSetConstantBuffers(D3D11\_1)* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_setconstantbuffers)
+-   [**D3D11\_1DDI\_D3D11\_オプション\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/ns-d3d10umddi-d3d11_1ddi_d3d11_options_data)
+-   [**D3DDDI\_BLTFLAGS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ns-d3dumddi-_d3dddi_bltflags)
+-   [**D3DDDI\_コピー\_フラグ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ne-d3dumddi-d3dddi_copy_flags)
+-   [**D3DDDIARG\_BUFFERBLT1**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ns-d3dumddi-_d3dddiarg_bufferblt1)
+-   [**D3DDDIARG\_破棄**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ns-d3dumddi-_d3dddiarg_discard)
+-   [**D3DDDIARG\_TEXBLT1**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ns-d3dumddi-_d3dddiarg_texblt1)
+-   [**D3DDDIARG\_VOLUMEBLT1**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ns-d3dumddi-_d3dddiarg_volumeblt1)
+-   [**D3DDDICAPS\_アーキテクチャ\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ns-d3dumddi-d3dddicaps_architecture_info)
+-   [**D3DDDICAPS\_シェーダー\_MIN\_有効桁数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ne-d3dumddi-d3dddicaps_shader_min_precision)
+-   [**D3DDDICAPS\_シェーダー\_MIN\_精度\_サポート**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ns-d3dumddi-d3dddicaps_shader_min_precision_support)
+-   [**D3DDDICAPS\_型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ne-d3dumddi-_d3dddicaps_type)
 
  
 

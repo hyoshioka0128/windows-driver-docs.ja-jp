@@ -6,17 +6,17 @@ keywords:
 - ACPI_ENUM_CHILD_LENGTH_FROM_CHILD マクロ ACPI デバイス
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bb682142fe13b46dc324d52379360ac4422c29e0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c750fe8d6cbcce2c3e8d0b2cb347c143faefc38b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328868"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355899"
 ---
 # <a name="acpienumchildlengthfromchild-macro"></a>ACPI\_ENUM\_子\_長さ\_FROM\_子マクロ
 
 
-ACPI\_ENUM\_子\_長さ\_FROM\_子マクロには、可変長のバイト単位で、サイズが計算されます[ **ACPI\_ENUM\_。子**](https://msdn.microsoft.com/library/windows/hardware/ff536109)構造体。
+ACPI\_ENUM\_子\_長さ\_FROM\_子マクロには、可変長のバイト単位で、サイズが計算されます[ **ACPI\_ENUM\_。子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ns-acpiioct-_acpi_enum_child)構造体。
 
 <a name="syntax"></a>構文
 ------
@@ -41,7 +41,7 @@ ACPI のバイト単位のサイズを\_ENUM\_子構造体*子*を指します�
 <a name="remarks"></a>注釈
 -------
 
-ドライバーは、このマクロを使用して ACPI のバイト単位のサイズを計算する\_ENUM\_内の子構造体、 [ **ACPI\_ENUM\_子\_出力\_バッファー** ](https://msdn.microsoft.com/library/windows/hardware/ff536112)構造体。
+ドライバーは、このマクロを使用して ACPI のバイト単位のサイズを計算する\_ENUM\_内の子構造体、 [ **ACPI\_ENUM\_子\_出力\_バッファー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ns-acpiioct-_acpi_enum_children_output_buffer)構造体。
 
 <a name="requirements"></a>必要条件
 ------------
@@ -66,9 +66,9 @@ ACPI のバイト単位のサイズを\_ENUM\_子構造体*子*を指します�
 ## <a name="see-also"></a>関連項目
 
 
-[**ACPI\_ENUM\_子**](https://msdn.microsoft.com/library/windows/hardware/ff536109)
+[**ACPI\_ENUM\_子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ns-acpiioct-_acpi_enum_child)
 
-[**ACPI\_ENUM\_子\_出力\_バッファー**](https://msdn.microsoft.com/library/windows/hardware/ff536112)
+[**ACPI\_ENUM\_子\_出力\_バッファー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ns-acpiioct-_acpi_enum_children_output_buffer)
 
  
 

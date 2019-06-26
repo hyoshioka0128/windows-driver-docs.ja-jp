@@ -4,17 +4,17 @@ description: フィルター ドライバーを NDIS 6.20 に移植するため�
 ms.assetid: faf83399-b9ac-41b3-a891-0142ded422b3
 keywords:
 - NDIS 6.20 WDK、フィルター ドライバーの移植
-- 6.20 WDK の NDIS フィルター ドライバーの移植
+- 6\.20 WDK の NDIS フィルター ドライバーの移植
 - フィルター ドライバー WDK
 - フィルター ドライバー WDK、NDIS 6.20 が動作への移植
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 333da3504df95acc12816b8e0b16396dd1bfe345
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c433a72c18746a430980d01eb6973e9d0cb759d1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366365"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67357480"
 ---
 # <a name="summary-of-changes-required-to-port-a-filter-driver-to-ndis-620"></a>フィルター ドライバーを NDIS 6.20 に移植するために必要な変更の概要
 
@@ -44,7 +44,7 @@ NDIS620 NDIS61 または NDIS60 プリプロセッサの定義に置き換えま
     64 を超えるプロセッサのサポートに関する詳細については、次を参照してください。 [NDIS 6.20 で 64 を超えるプロセッサのサポート](support-for-more-than-64-processors-in-ndis-6-20.md)します。
 
 <a href="" id="driver-initialization"></a>**ドライバーの初期化**  
--   NDIS バージョンで 6.20 が動作を設定、 **MajorNdisVersion**と**MinorNdisVersion**のメンバー、 [ **NDIS\_フィルター\_ドライバー\_特性**](https://msdn.microsoft.com/library/windows/hardware/ff565515)に渡される構造体、 [ **NdisFRegisterFilterDriver** ](https://msdn.microsoft.com/library/windows/hardware/ff562608)関数。
+-   NDIS バージョンで 6.20 が動作を設定、 **MajorNdisVersion**と**MinorNdisVersion**のメンバー、 [ **NDIS\_フィルター\_ドライバー\_特性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_filter_driver_characteristics)に渡される構造体、 [ **NdisFRegisterFilterDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfregisterfilterdriver)関数。
 
 -   フィルター ドライバーのバージョンを設定、 **MajorDriverVersion**と**MinorDriverVersion**の NDIS メンバー\_フィルター\_ドライバー\_の特性構造適切なドライバー固有の値。
 
@@ -55,13 +55,13 @@ NDIS620 NDIS61 または NDIS60 プリプロセッサの定義に置き換えま
     -   ハードウェア支援 (VMQ)
 -   これらの構造の更新バージョンを使用します。
 
-    -   [**NDIS\_フィルター\_アタッチ\_パラメーター**](https://msdn.microsoft.com/library/windows/hardware/ff565481)
-    -   [**NDIS\_オフロード\_パラメーター**](https://msdn.microsoft.com/library/windows/hardware/ff566706)
+    -   [**NDIS\_フィルター\_アタッチ\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_filter_attach_parameters)
+    -   [**NDIS\_オフロード\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_offload_parameters)
 
     NDIS 構造のバージョン情報については、次を参照してください。 [NDIS バージョン情報を指定する](specifying-ndis-version-information.md)します。
 
 <a href="" id="send-and-receive-data-paths"></a>**送信および受信データのパス**  
--   更新バージョンを使用して、 [ **NET\_バッファー** ](https://msdn.microsoft.com/library/windows/hardware/ff568376)構造体。
+-   更新バージョンを使用して、 [ **NET\_バッファー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)構造体。
 
 -   必要に応じて、仮想マシン キュー (VMQ) インターフェイスをサポートします。 VMQ の詳細については、次を参照してください。 [NDIS 6.20 で仮想マシン キュー (VMQ)](virtual-machine-queue--vmq--in-ndis-6-20.md)します。
 

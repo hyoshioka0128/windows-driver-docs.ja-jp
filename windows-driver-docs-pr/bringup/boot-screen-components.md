@@ -4,12 +4,12 @@ description: ファームウェア更新プログラムの起動画面に 2 つ�
 ms.assetid: 7ACD6BFC-AB92-4BCC-A9E1-9574D959B577
 ms.date: 10/12/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 02f07f71943a6ad1a5433d26da7c66b01be0f8e8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 859cf078853357f1b1dd98f6f37f032165dacaa0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328106"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353999"
 ---
 # <a name="boot-screen-components"></a>ブート画面のコンポーネント
 
@@ -23,11 +23,11 @@ ms.locfileid: "63328106"
 
 お客様は、実践的な画面を表示、前に起動画面で、OEM のロゴが表示されます。 
 
-OEM のロゴが OOBE を任意の画面に表示されないと、OOBE 後に表示、**コントロール パネルの ** **パフォーマンスの情報とツール**します。 表示されません、**設定**アプリ。
+OEM のロゴが OOBE を任意の画面に表示されないと、OOBE 後に表示、**コントロール パネルの**  **パフォーマンスの情報とツール**します。 表示されません、**設定**アプリ。
 
 POST (Power-on 自己テスト) およびオペレーティング システムの起動時間は、するために使用するよりも高速です。 適切なブランド化の時点を確認するには、OEM のロゴは、オペレーティング システムの起動と POST の両方で表示されます。 この方法で OEM のロゴがすぐに認識できる、適切に維持および高速で信頼性の高いエクスペリエンスを関連付けします。
 
-さらに、OEM のロゴをブランド化要素として表示、**コントロール パネルの **アプリで、**パフォーマンスの情報とツール**します。 表示されません、**設定**アプリ。
+さらに、OEM のロゴをブランド化要素として表示、**コントロール パネルの** アプリで、**パフォーマンスの情報とツール**します。 表示されません、**設定**アプリ。
 
 #### <a name="create-the-logo"></a>ロゴを作成します。
 
@@ -58,7 +58,7 @@ POST 中に、ロゴを正しく配置だけでなくロゴ ブート グラフ�
 > [!NOTE]
 > OEM のロゴは、oobe 画面には表示されません。
 
-追加の詳細について、BGRT では、5.2.22」セクションを参照してください、 [Advanced Configuration and Power Interface (ACPI) 仕様](https://www.uefi.org/specifications)します。
+追加の詳細について、BGRT では、5.2.22」セクションを参照してください、 [Advanced Configuration and Power Interface (ACPI) 仕様](https://uefi.org/specifications)します。
 
 ## <a name="update-text"></a>テキストを更新します。
 

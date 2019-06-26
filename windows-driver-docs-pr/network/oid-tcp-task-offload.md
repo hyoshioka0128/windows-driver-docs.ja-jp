@@ -6,12 +6,12 @@ keywords:
 - OID_TCP_TASK_OFFLOAD
 ms.date: 11/06/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 89d1bb66da0b8a06997f4b619514cce89fe514f5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 85a5b7920351589b5b0043fa581004223763f116
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63350908"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353697"
 ---
 # <a name="oidtcptaskoffload"></a>OID_TCP_TASK_OFFLOAD
 
@@ -19,23 +19,23 @@ ms.locfileid: "63350908"
 
 ## <a name="querying-offload-capabilities"></a>オフロード機能のクエリを実行します。
 
-ホスト スタック OID_TCP_TASK_OFFLOAD を照会する際の提供、 *InformationBuffer* 、 [NDIS_TASK_OFFLOAD_HEADER](https://msdn.microsoft.com/library/windows/hardware/ff559004)構造体。 この構造体では、次の項目を指定します。
+ホスト スタック OID_TCP_TASK_OFFLOAD を照会する際の提供、 *InformationBuffer* 、 [NDIS_TASK_OFFLOAD_HEADER](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff559004(v=vs.85))構造体。 この構造体では、次の項目を指定します。
 
 - ホストのスタックでサポートされているオフロード バージョンです。
 - カプセル化形式は、ホストのスタックによって処理されたパケットを送受信します。
 - このようなパケット カプセル化ヘッダーのサイズ。
 
-この情報により、ミニポート ドライバーまたはその NIC は、オフロード タスクを実行するための前提条件である送信パケットの最初の IP ヘッダーの先頭を特定できます。 カプセル化形式を把握する必要があります、オフロード対象プロセスがパケットを受信します。 OID_TCP_TASK_OFFLOAD のクエリに応答して、ミニポート ドライバーまたはオフロード ターゲットを返しますで、 *InformationBuffer*、NDIS_TASK_OFFLOAD_HEADER 構造直後に 1 つまたは複数[NDIS_TASK_オフロード](https://msdn.microsoft.com/library/windows/hardware/ff558995)構造体。 各 NDIS_TASK_OFFLOAD 構造体には、ミニポート ドライバーの NIC またはオフロード ターゲット サポート、オフロード機能について説明します。 ミニポート ドライバーの NIC または、オフロード対象のサポート、オフロード機能を複数のバージョン、特定のバージョンごとに 1 つの NDIS_TASK_OFFLOAD 構造体を返す必要があります。
+この情報により、ミニポート ドライバーまたはその NIC は、オフロード タスクを実行するための前提条件である送信パケットの最初の IP ヘッダーの先頭を特定できます。 カプセル化形式を把握する必要があります、オフロード対象プロセスがパケットを受信します。 OID_TCP_TASK_OFFLOAD のクエリに応答して、ミニポート ドライバーまたはオフロード ターゲットを返しますで、 *InformationBuffer*、NDIS_TASK_OFFLOAD_HEADER 構造直後に 1 つまたは複数[NDIS_TASK_オフロード](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff558995(v=vs.85))構造体。 各 NDIS_TASK_OFFLOAD 構造体には、ミニポート ドライバーの NIC またはオフロード ターゲット サポート、オフロード機能について説明します。 ミニポート ドライバーの NIC または、オフロード対象のサポート、オフロード機能を複数のバージョン、特定のバージョンごとに 1 つの NDIS_TASK_OFFLOAD 構造体を返す必要があります。
 
 各 NDIS_TASK_OFFLOAD 構造体が、**タスク**特定を指定するメンバーが構造を適用する機能をオフロードします。 各 NDIS_TASK_OFFLOAD 構造があります、 **TaskBuffer**指定したオフロード機能に関連する情報を格納します。 内の情報、 **TaskBuffer**の形式は次の構造体のいずれかです。
 
-- [NDIS_TASK_TCP_IP_CHECKSUM](https://msdn.microsoft.com/library/windows/hardware/ff559004)  
+- [NDIS_TASK_TCP_IP_CHECKSUM](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff559004(v=vs.85))  
     チェックサム オフロード機能を指定します。
-- [NDIS_TASK_IPSEC](https://msdn.microsoft.com/library/windows/hardware/ff558990)  
+- [NDIS_TASK_IPSEC](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff558990(v=vs.85))  
     インターネット プロトコル セキュリティ (IPsec) のオフロード機能を指定します。
-- [NDIS_TASK_TCP_LARGE_SEND](https://msdn.microsoft.com/library/windows/hardware/ff559008)  
+- [NDIS_TASK_TCP_LARGE_SEND](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff559008(v=vs.85))  
     大きな TCP パケットのセグメント化機能を指定します。
-- [NDIS_TASK_TCP_CONNECTION_OFFLOAD](https://msdn.microsoft.com/library/windows/hardware/ff567873)  
+- [NDIS_TASK_TCP_CONNECTION_OFFLOAD](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndischimney/ns-ndischimney-_ndis_tcp_connection_offload_parameters)  
     TCP chimney オフロード機能を指定します。 NDIS_TASK_TCP_CONNECTION_OFFLOAD の詳細については、次を参照してください。 [TCP Chimney オフロード](https://docs.microsoft.com/previous-versions/windows/hardware/network/ndis-tcp-chimney-offload)します。
 
 > [!NOTE]
@@ -53,10 +53,10 @@ NIC またはオフロード ターゲットを有効になっているオフロ
 
 再開の問題の報告された TCP オフロード機能を変更する負荷を軽減または、オフロード対象が一時停止を使用できます。
 
-- により、一時停止を示す値を呼び出すことによって、オフロード対象、 [NdisMIndicateStatusEx](https://msdn.microsoft.com/library/windows/hardware/ff563600) 、NDIS_STATUS_INDICATION で関数を ->**StatusCode**メンバー NDIS_STATUS_OFFLOAD_PAUSE に設定します。
+- により、一時停止を示す値を呼び出すことによって、オフロード対象、 [NdisMIndicateStatusEx](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismindicatestatusex) 、NDIS_STATUS_INDICATION で関数を ->**StatusCode**メンバー NDIS_STATUS_OFFLOAD_PAUSE に設定します。
 - により、再開を示す値を呼び出すことによって、オフロード対象、 **NdisMIndicateStatusEx** 、NDIS_STATUS_INDICATION で関数を ->**StatusCode**メンバー NDIS_STATUS_OFFLOAD_RESUME に設定します。
 
-オフロード対象が再開状態オブジェクトをオフロードするホストのスタックを要求した後、オフロード対象の TCP を取得するためにもう一度 OID_TCP_TASK_OFFLOAD ホスト スタック クエリは変更後の機能をオフロードします。 詳細については、次を参照してください。 [NDIS_STATUS_OFFLOAD_RESUME](https://msdn.microsoft.com/library/windows/hardware/ff567405)します。
+オフロード対象が再開状態オブジェクトをオフロードするホストのスタックを要求した後、オフロード対象の TCP を取得するためにもう一度 OID_TCP_TASK_OFFLOAD ホスト スタック クエリは変更後の機能をオフロードします。 詳細については、次を参照してください。 [NDIS_STATUS_OFFLOAD_RESUME](https://docs.microsoft.com/windows-hardware/drivers/network/)します。
 
 ## <a name="disabling-offload-capabilities"></a>オフロード機能を無効にします。
 
