@@ -6,12 +6,12 @@ keywords:
 - OID_TCP_OFFLOAD_PARAMETERS、WDK の Oid、WDK のオブジェクト識別子では、WDK の Oid をネットワークのネットワーク
 ms.date: 11/01/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: be54f424f8b0d421e046f6bf7a495cd8fe01cd61
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1c6cb2f38cb9c812c9994bd66952ac463c53d06b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351249"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386963"
 ---
 # <a name="oidtcpoffloadparameters"></a>OID_TCP_OFFLOAD_PARAMETERS
 
@@ -23,11 +23,11 @@ ms.locfileid: "63351249"
 
 OID_TCP_OFFLOAD_PARAMETERS は TCP オフロードをサポートするミニポート ドライバーに必要なその他のミニポート ドライバーでは省略可能です。 ミニポート ドライバーがこの OID をサポートしていない場合、ドライバーは NDIS_STATUS_NOT_SUPPORTED を返す必要があります。
 
-**InformationBuffer**のメンバー、 [NDIS_OID_REQUEST](https://msdn.microsoft.com/library/windows/hardware/ff566710)構造に含まれる、 [NDIS_OFFLOAD_PARAMETERS](https://msdn.microsoft.com/library/windows/hardware/ff566706)構造体。 場合の内容**InformationBuffer**は無効ですが、ミニポート ドライバーは、この OID への応答で NDIS_STATUS_INVALID_DATA を返す必要があります。
+**InformationBuffer**のメンバー、 [NDIS_OID_REQUEST](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造に含まれる、 [NDIS_OFFLOAD_PARAMETERS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_offload_parameters)構造体。 場合の内容**InformationBuffer**は無効ですが、ミニポート ドライバーは、この OID への応答で NDIS_STATUS_INVALID_DATA を返す必要があります。
 
 NDIS この OID を処理すると、NDIS ミニポート アダプターの更新プログラムのミニポート ドライバーに OID が渡される、前に、新しい設定で標準化されたキーワードの負荷を軽減します。
 
-ミニポート ドライバーの内容を使用する必要があります、 [NDIS_OFFLOAD_PARAMETERS](https://msdn.microsoft.com/library/windows/hardware/ff566706)オフロード機能の報告される現在の TCP を更新する構造体。 ミニポート ドライバーの更新後では、現在のタスク オフロード機能を報告する必要があります、 [NDIS_STATUS_TASK_OFFLOAD_CURRENT_CONFIG](ndis-status-task-offload-current-config.md)状態を示す値。 この状態を示す値により、新しい機能の情報ですべての上位のプロトコルのドライバーが更新されるようになります。
+ミニポート ドライバーの内容を使用する必要があります、 [NDIS_OFFLOAD_PARAMETERS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_offload_parameters)オフロード機能の報告される現在の TCP を更新する構造体。 ミニポート ドライバーの更新後では、現在のタスク オフロード機能を報告する必要があります、 [NDIS_STATUS_TASK_OFFLOAD_CURRENT_CONFIG](ndis-status-task-offload-current-config.md)状態を示す値。 この状態を示す値により、新しい機能の情報ですべての上位のプロトコルのドライバーが更新されるようになります。
 
 この OID は、特定のオフロードを有効または無効にするミニポート ドライバーに指示するより包括的な OID です。 ほとんどの TCP/IP タスク オフロードを構成およびこの OID を使用してアクティブ化できます。 Rx チェックサムまたは Rx の IPSec などのいくつかのオフロードには、この OID は、構成の変更として機能し、オフロードがあります直ちにとは限りません。 これらのオフロードをアクティブ化する、ミニポート ドライバーを受信するまで待つ必要があります、 [OID_OFFLOAD_ENCAPSULATION](oid-offload-encapsulation.md)セットの要求。
 
@@ -35,8 +35,8 @@ NDIS この OID を処理すると、NDIS ミニポート アダプターの更�
 
 ### <a name="see-also"></a>関連項目
 
-[NDIS_OFFLOAD_PARAMETERS](https://msdn.microsoft.com/library/windows/hardware/ff566706)  
-[NDIS_OID_REQUEST](https://msdn.microsoft.com/library/windows/hardware/ff566710)  
+[NDIS_OFFLOAD_PARAMETERS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_offload_parameters)  
+[NDIS_OID_REQUEST](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)  
 [NDIS_STATUS_TASK_OFFLOAD_CURRENT_CONFIG](ndis-status-task-offload-current-config.md)  
 [OID_TCP_OFFLOAD_CURRENT_CONFIG](oid-tcp-offload-current-config.md)  
 [OID_TCP_OFFLOAD_HARDWARE_CAPABILITIES](oid-tcp-offload-hardware-capabilities.md)

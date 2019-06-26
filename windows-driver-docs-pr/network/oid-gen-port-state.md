@@ -5,17 +5,17 @@ ms.assetid: e0705b2e-08ea-4ed4-a6df-4c33b934c3dd
 ms.date: 08/08/2017
 keywords: -OID_GEN_PORT_STATE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 6349425aff9bb0a08bd6b14f85076eda1c2a6d19
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b8f2f8782d2ffc5195f164b7e18855d2ced0e250
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367584"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380855"
 ---
 # <a name="oidgenportstate"></a>OID\_GEN\_ポート\_状態
 
 
-上にあるドライバーが、OID を使用するクエリとして\_GEN\_ポート\_状態 OID で指定されているポートの現在の状態を取得する、 **PortNumber**のメンバー、 [ **NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)構造体。
+上にあるドライバーが、OID を使用するクエリとして\_GEN\_ポート\_状態 OID で指定されているポートの現在の状態を取得する、 **PortNumber**のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体。
 
 **バージョン情報**
 
@@ -30,9 +30,9 @@ ms.locfileid: "63367584"
 
 NDIS は、この OID を処理し、ミニポート ドライバーには、この OID クエリは受け取りません。
 
-NDIS が NDIS を返します、クエリが成功すると、\_状態\_成功し、ポートの状態情報が返されます、 [ **NDIS\_ポート\_状態**](https://msdn.microsoft.com/library/windows/hardware/ff566800)構造体。
+NDIS が NDIS を返します、クエリが成功すると、\_状態\_成功し、ポートの状態情報が返されます、 [ **NDIS\_ポート\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_port_state)構造体。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -51,9 +51,9 @@ NDIS が NDIS を返します、クエリが成功すると、\_状態\_成功�
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)
+[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
 
-[**NDIS\_ポート\_状態**](https://msdn.microsoft.com/library/windows/hardware/ff566800)
+[**NDIS\_ポート\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_port_state)
 
  
 

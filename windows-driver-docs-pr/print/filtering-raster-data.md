@@ -1,6 +1,6 @@
 ---
-title: ラスターのデータのフィルター処理
-description: ラスターのデータのフィルター処理
+title: ラスター データのフィルター処理
+description: ラスター データのフィルター処理
 ms.assetid: 179a2dc0-8794-4934-99b9-eb3f7900536c
 keywords:
 - Unidrv、ラスター データのフィルター処理
@@ -11,22 +11,22 @@ keywords:
 - Unidrv WDK の印刷
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0200779d2e6f72317be85889cbcc40cb06fe8611
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 2f5a25a6a9207d8f2af551f8c0dcc481f424b8d4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552164"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382567"
 ---
-# <a name="filtering-raster-data"></a>ラスターのデータのフィルター処理
+# <a name="filtering-raster-data"></a>ラスター データのフィルター処理
 
 
 
 
 
-スプールが前に、スキャン ラインのデータ ストリームのカスタマイズされた処理の後を指定する場合は、これを行う実装することによって、 [ **IPrintOemUni::FilterGraphics** ](https://msdn.microsoft.com/library/windows/hardware/ff554252)メソッドで、 [プラグインのレンダリング](rendering-plug-ins.md)します。 この Unidrv 機能に関連付けられている GPD ファイルのエントリがありません。
+スプールが前に、スキャン ラインのデータ ストリームのカスタマイズされた処理の後を指定する場合は、これを行う実装することによって、 [ **IPrintOemUni::FilterGraphics** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni-filtergraphics)メソッドで、 [プラグインのレンダリング](rendering-plug-ins.md)します。 この Unidrv 機能に関連付けられている GPD ファイルのエントリがありません。
 
-詳細については、[データ Stream のフィルター処理をカスタマイズ](customized-data-stream-filtering.md)を参照してください。
+詳細については、次を参照してください。[データ Stream のフィルター処理をカスタマイズ](customized-data-stream-filtering.md)します。
 
  
 

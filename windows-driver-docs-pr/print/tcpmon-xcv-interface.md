@@ -9,12 +9,12 @@ keywords:
 - TCPMON Xcv インターフェイス WDK の印刷
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d0e957fcc8682b79bc708cc6a932f6405fd5669b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6cf1af37f5dbd97c987a3267c71cf4cc46d58e2d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388061"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381116"
 ---
 # <a name="tcpmon-xcv-interface"></a>TCPMON Xcv インターフェイス
 
@@ -22,7 +22,7 @@ ms.locfileid: "63388061"
 
 
 
-このセクションでは、標準の TCP/IP ポート モニタ (TCPMON) の利用 (Xcv) インターフェイスについて説明します。 このインターフェイスを使用して実装されている[ **XcvData** ](https://msdn.microsoft.com/library/windows/hardware/ff564255)と[ **XcvDataPort** ](https://msdn.microsoft.com/library/windows/hardware/ff564258)関数呼び出し、によりを使用して構成するもの、TCP/IP プリンター ポート、または TCP/IP プリンター ポートの構成に関する情報を取得します。 このセクションで説明されている Xcv インターフェイスは、TCP/IP ポートに固有です。 その他のポートの種類の使用可能な Xcv の他のインターフェイスがあります。
+このセクションでは、標準の TCP/IP ポート モニタ (TCPMON) の利用 (Xcv) インターフェイスについて説明します。 このインターフェイスを使用して実装されている[ **XcvData** ](https://docs.microsoft.com/previous-versions/ff564255(v=vs.85))と[ **XcvDataPort** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/nf-winsplp-xcvdataport)関数呼び出し、によりを使用して構成するもの、TCP/IP プリンター ポート、または TCP/IP プリンター ポートの構成に関する情報を取得します。 このセクションで説明されている Xcv インターフェイスは、TCP/IP ポートに固有です。 その他のポートの種類の使用可能な Xcv の他のインターフェイスがあります。
 
 ローカル コンピューターまたはリモート コンピューターのいずれかの Xcv インターフェイスを識別するハンドルを取得する呼び出し、**ようになりました**関数 (Microsoft Windows SDK のドキュメントで説明)。 次のコード例では、ポートへの Xcv ハンドルを取得する方法を示します。
 
@@ -43,7 +43,7 @@ if (OpenPrinter("<ServerName>\\,XcvPort <PortName>", &hXcv, &Defaults )
 }
 ```
 
-コードの例で*ServerName*と*PortName*サーバーとポート名の文字列を表します。 ハンドルを取得すると、TCPMON ポート モニターに固有の情報を照会できるまたはポートの構成を変更することができます。 ポート モニターに必要なアクセスを指定する必要がありますに注意してください、 **DesiredAccess**プリンターのメンバー\_の既定値の構造体 (または渡す**NULL**特別なセキュリティが必要ない場合)。 特定の呼び出し、 [ **XcvData** ](https://msdn.microsoft.com/library/windows/hardware/ff564255)関数 (AddPort と DeletePort コマンドが指定されている場合 - などを参照してください[TCPMON Xcv コマンド](tcpmon-xcv-commands.md))、SERVER\_ 。アクセス\_管理特権が必要です。 詳細については、**ようになりました**関数とアクセス権をプリンターに要求することが\_既定値は構造体を Windows SDK のマニュアルを参照してください。
+コードの例で*ServerName*と*PortName*サーバーとポート名の文字列を表します。 ハンドルを取得すると、TCPMON ポート モニターに固有の情報を照会できるまたはポートの構成を変更することができます。 ポート モニターに必要なアクセスを指定する必要がありますに注意してください、 **DesiredAccess**プリンターのメンバー\_の既定値の構造体 (または渡す**NULL**特別なセキュリティが必要ない場合)。 特定の呼び出し、 [ **XcvData** ](https://docs.microsoft.com/previous-versions/ff564255(v=vs.85))関数 (AddPort と DeletePort コマンドが指定されている場合 - などを参照してください[TCPMON Xcv コマンド](tcpmon-xcv-commands.md))、SERVER\_ 。アクセス\_管理特権が必要です。 詳細については、**ようになりました**関数とアクセス権をプリンターに要求することが\_既定値は構造体を Windows SDK のマニュアルを参照してください。
 
 ポートがまだ存在しない場合、モニター名を指定することによって、Xcv ハンドルをサーバーから取得できます。 (標準の TCP/IP ポート モニター ポート場合これは「標準 TCP/IP ポート」) です。次のコード例では、ポート モニターの Xcv データ ハンドルを取得する方法を示します。
 
@@ -65,7 +65,7 @@ if (OpenPrinter("<ServerName>\\,XcvMonitor <MonitorName>", &hXcv, &Defaults )
 }
 ```
 
-コードの例で*ServerName*と*PortName*サーバーとポート名の文字列を表します。 Xcv データのハンドルを入手した場合を実行できる手順と要求モニターに呼び出すことによって、 [ **XcvData** ](https://msdn.microsoft.com/library/windows/hardware/ff564255)関数。
+コードの例で*ServerName*と*PortName*サーバーとポート名の文字列を表します。 Xcv データのハンドルを入手した場合を実行できる手順と要求モニターに呼び出すことによって、 [ **XcvData** ](https://docs.microsoft.com/previous-versions/ff564255(v=vs.85))関数。
 
 戻り値に注意してください、 **XcvData**ポート モニターにデータが正しく送信されるかどうか関数がのみを示します。 戻り値**TRUE**操作が成功したことを示しません。 操作が成功したかどうかを判断する値を検査\* *pdwStatus*します。 これらの状態値は、次の表にまとめます。
 

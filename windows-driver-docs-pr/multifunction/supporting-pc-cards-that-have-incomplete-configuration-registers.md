@@ -8,12 +8,12 @@ keywords:
 - mf.sys
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e438eccd6028f59a8a8de144ea4351dedf16ce4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b31395f4e87edbe4336d52128dd93bea3086e1ff
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379590"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386378"
 ---
 # <a name="supporting-pc-cards-that-have-incomplete-configuration-registers"></a>不完全な構成レジスターを持つ PC カードのサポート
 
@@ -53,11 +53,11 @@ NT ベースのプラットフォーム上のようなデバイスの製造元�
 
 -   多機能デバイスのリソース要件。
 
-    リソース要件を指定する[ **INF DDInstall.LogConfigOverride セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547339)します。
+    リソース要件を指定する[ **INF DDInstall.LogConfigOverride セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-logconfigoverride-section)します。
 
 -   各関数の場合、デバイスのハードウェア ID。
 
-    内のハードウェア Id を指定する[ **INF DDInstall.HW セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547330)します。
+    内のハードウェア Id を指定する[ **INF DDInstall.HW セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-hw-section)します。
 
 -   各関数の場合、デバイスは、各子関数で必要な親のリソースを特定のリソース マップします。
 
@@ -65,7 +65,7 @@ NT ベースのプラットフォーム上のようなデバイスの製造元�
 
 INF では、上書きの構成、INF に存在する場合は、PnP マネージャーは、デバイスから、デバイスのリソース要件を使用しないために、デバイスで指定されたすべてのリソース要件を再確認する必要があります。
 
-このようなデバイスの構成オプションの登録をプログラムすることを使用して、 **PcCardConfig**単一関数のデバイスのプログラミングのようなエントリです。 **PcCardConfig**エントリには、デバイス全体に適用される情報が含まれています。 **PcCardConfig**にエントリが記載されている[ **INF LogConfig ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff547448)します。
+このようなデバイスの構成オプションの登録をプログラムすることを使用して、 **PcCardConfig**単一関数のデバイスのプログラミングのようなエントリです。 **PcCardConfig**エントリには、デバイス全体に適用される情報が含まれています。 **PcCardConfig**にエントリが記載されている[ **INF LogConfig ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-logconfig-directive)します。
 
 指定するときに、 **PcCardConfig**の多機能デバイスの形式のエントリ、 *ConfigIndex*単一関数のデバイスに対して定義されているのと同じです。 単一関数の PC カードの構成の登録には、そのデバイスの属性で定義されているリソースのセットへのインデックスが含まれています。 このディレクティブは、構成オプションのレジスタのインデックスに基づく形式を使用する特定の多機能デバイスにも使用できます。
 

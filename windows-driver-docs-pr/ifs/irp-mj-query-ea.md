@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b0dd20105e784f942ed8d2b746b521f09b2febc5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d4905b75dbe9e7164230510a312dd3bcf0a0442e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324327"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384819"
 ---
 # <a name="irpmjqueryea"></a>IRP\_MJ\_クエリ\_EA
 
@@ -40,7 +40,7 @@ IRP\_MJ\_クエリ\_EA 要求を送信 I/O マネージャーとその他のオ�
 ## <a name="parameters"></a>パラメーター
 
 
-ファイル システムまたはフィルター ドライバーは呼び出し[ **IoGetCurrentIrpStackLocation** ](https://msdn.microsoft.com/library/windows/hardware/ff549174)ポインターを取得する、独自の特定の IRP で[**場所スタック**](https://msdn.microsoft.com/library/windows/hardware/ff550659)、IRP として次の一覧に示すように*IrpSp*します。 (IRP が示した*Irp*)。ドライバーは IRP の IRP の処理に IRP スタックの場所は、次のメンバーで設定されている情報を使用して\_MJ\_クエリ\_EA 要求。
+ファイル システムまたはフィルター ドライバーは呼び出し[ **IoGetCurrentIrpStackLocation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetcurrentirpstacklocation)ポインターを取得する、独自の特定の IRP で[**場所スタック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)、IRP として次の一覧に示すように*IrpSp*します。 (IRP が示した*Irp*)。ドライバーは IRP の IRP の処理に IRP スタックの場所は、次のメンバーで設定されている情報を使用して\_MJ\_クエリ\_EA 要求。
 
 <a href="" id="deviceobject"></a>*デバイス オブジェクト*  
 ターゲット デバイスのオブジェクトへのポインター。
@@ -49,13 +49,13 @@ IRP\_MJ\_クエリ\_EA 要求を送信 I/O マネージャーとその他のオ�
 中間システム バッファーとして使用するシステム提供の出力バッファーへのポインター。 メソッドの使用\_バッファーに格納された I/O。
 
 <a href="" id="irp--iostatus"></a>*Irp-&gt;IoStatus*  
-ポインター、 [ **IO\_状態\_ブロック**](https://msdn.microsoft.com/library/windows/hardware/ff550671)最終的な完了の状態と、要求された操作に関する情報を受け取る。
+ポインター、 [ **IO\_状態\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_status_block)最終的な完了の状態と、要求された操作に関する情報を受け取る。
 
 <a href="" id="irp--mdladdress"></a>*Irp-&gt;MdlAddress*  
 拡張属性の情報を受け取る出力バッファーを記述するメモリ記述子一覧 (MDL) のアドレス。 メソッドの使用\_ダイレクト I/O。
 
 <a href="" id="irp--userbuffer"></a>*Irp-&gt;UserBuffer*  
-呼び出し元が指定へのポインター [**ファイル\_完全\_EA\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff545793)-拡張属性の情報を受け取る構造化した出力バッファー。 メソッドの使用\_どちら I/O。
+呼び出し元が指定へのポインター [**ファイル\_完全\_EA\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_file_full_ea_information)-拡張属性の情報を受け取る構造化した出力バッファー。 メソッドの使用\_どちら I/O。
 
 <a href="" id="irpsp--fileobject"></a>*IrpSp-&gt;FileObject*  
 関連付けられているファイル オブジェクトへのポインター*デバイス オブジェクト*します。
@@ -101,7 +101,7 @@ IRP を指定します\_MJ\_クエリ\_EA です。
 拡張属性の一覧をスキャンを開始する位置のエントリのインデックス。 場合、このパラメーターは無視されます、SL\_インデックス\_指定したフラグが設定されていない場合、または*IrpSp -&gt;Parameters.QueryEa.EaList*空でない一覧を示します。
 
 <a href="" id="irpsp--parameters-queryea-ealist"></a>*IrpSp-&gt;Parameters.QueryEa.EaList*  
-呼び出し元が指定へのポインター [**ファイル\_取得\_EA\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff540295)-クエリを実行する拡張属性を指定する構造化の入力バッファー。
+呼び出し元が指定へのポインター [**ファイル\_取得\_EA\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_get_ea_information)-クエリを実行する拡張属性を指定する構造化の入力バッファー。
 
 <a href="" id="irpsp--parameters-queryea-ealistlength"></a>*IrpSp-&gt;Parameters.QueryEa.EaListLength*  
 によって示されるバッファーのバイト長*IrpSp -&gt;Parameters.QueryEa.EaList*します。
@@ -121,19 +121,19 @@ IRP を指定します\_MJ\_クエリ\_EA です。
 ## <a name="see-also"></a>関連項目
 
 
-[**ファイル\_完全\_EA\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff545793)
+[**ファイル\_完全\_EA\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_file_full_ea_information)
 
-[**ファイル\_取得\_EA\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff540295)
+[**ファイル\_取得\_EA\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_get_ea_information)
 
-[**IO\_スタック\_場所**](https://msdn.microsoft.com/library/windows/hardware/ff550659)
+[**IO\_スタック\_場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)
 
-[**IO\_状態\_ブロック**](https://msdn.microsoft.com/library/windows/hardware/ff550671)
+[**IO\_状態\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_status_block)
 
-[**IoCheckEaBufferValidity**](https://msdn.microsoft.com/library/windows/hardware/ff548252)
+[**IoCheckEaBufferValidity**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-iocheckeabuffervalidity)
 
-[**IoGetCurrentIrpStackLocation**](https://msdn.microsoft.com/library/windows/hardware/ff549174)
+[**IoGetCurrentIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetcurrentirpstacklocation)
 
-[**IRP**](https://msdn.microsoft.com/library/windows/hardware/ff550694)
+[**IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_irp)
 
 [**IRP\_MJ\_SET\_EA**](irp-mj-set-ea.md)
 

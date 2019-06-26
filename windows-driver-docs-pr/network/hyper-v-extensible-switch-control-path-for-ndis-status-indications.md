@@ -4,12 +4,12 @@ description: NDIS 状態表示用の Hyper-V 拡張可能スイッチ制御パ�
 ms.assetid: D52FAC95-64EC-4A99-807A-B39DB136D8F9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 67fb1a1a709881b42ea1c5612e5038729d64d4ca
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ae452a4338684975a2d4487066292c158f45e02d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341912"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383701"
 ---
 # <a name="hyper-v-extensible-switch-control-path-for-ndis-status-indications"></a>NDIS 状態表示用の Hyper-V 拡張可能スイッチ制御パス
 
@@ -38,17 +38,17 @@ ms.locfileid: "63341912"
 
 拡張可能スイッチは、次の方法で基になる物理アダプターまたは拡張可能スイッチ チームからの NDIS 状態インジケーターをサポートします。
 
--   拡張可能スイッチのインターフェイスで NDIS 状態を示す値が到着すると、内で示す値をカプセル化、 [ **NDIS\_切り替える\_NIC\_状態\_を示す値**](https://msdn.microsoft.com/library/windows/hardware/hh598217)構造体。 拡張可能スイッチに関する問題のミニポート edge し、 [ **NDIS\_状態\_スイッチ\_NIC\_状態**](https://msdn.microsoft.com/library/windows/hardware/hh598205)これを含むことを示しています構造体。
+-   拡張可能スイッチのインターフェイスで NDIS 状態を示す値が到着すると、内で示す値をカプセル化、 [ **NDIS\_切り替える\_NIC\_状態\_を示す値**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_switch_nic_status_indication)構造体。 拡張可能スイッチに関する問題のミニポート edge し、 [ **NDIS\_状態\_スイッチ\_NIC\_状態**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-switch-nic-status)これを含むことを示しています構造体。
 
     転送拡張機能は、この通知を受信すると、カプセル化されたデータ変更を示す値を複製できます。 これにより、指定されたステータスまたは基になる拡張可能スイッチ チームの能力を変更する転送拡張機能です。
 
--   チーミング プロバイダーは、ハードウェアのアダプターのチームの構成に参加できるように動作する転送拡張機能を開始することでオフロード[ **NDIS\_状態\_スイッチ\_NIC\_ステータス**](https://msdn.microsoft.com/library/windows/hardware/hh598205)オフロード テクノロジに関連することを示すものです。
+-   チーミング プロバイダーは、ハードウェアのアダプターのチームの構成に参加できるように動作する転送拡張機能を開始することでオフロード[ **NDIS\_状態\_スイッチ\_NIC\_ステータス**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-switch-nic-status)オフロード テクノロジに関連することを示すものです。
 
-    たとえば、プロバイダーが開始できる、 [ **NDIS\_状態\_スイッチ\_NIC\_状態**](https://msdn.microsoft.com/library/windows/hardware/hh598205)をカプセル化されたを示す値[ **NDIS\_状態\_受信\_フィルター\_現在\_機能**](https://msdn.microsoft.com/library/windows/hardware/hh439814)オフロード機能を変更することを示す値アダプターのチームでの仮想マシン キュー (VMQ)。
+    たとえば、プロバイダーが開始できる、 [ **NDIS\_状態\_スイッチ\_NIC\_状態**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-switch-nic-status)をカプセル化されたを示す値[ **NDIS\_状態\_受信\_フィルター\_現在\_機能**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-receive-filter-current-capabilities)オフロード機能を変更することを示す値アダプターのチームでの仮想マシン キュー (VMQ)。
 
--   プロバイダーのチーム化を開始できますも、 [ **NDIS\_状態\_スイッチ\_NIC\_状態**](https://msdn.microsoft.com/library/windows/hardware/hh598205)を示す値を他のネットワーク アダプターを変更するには拡張可能スイッチ チーム以外の構成。
+-   プロバイダーのチーム化を開始できますも、 [ **NDIS\_状態\_スイッチ\_NIC\_状態**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-switch-nic-status)を示す値を他のネットワーク アダプターを変更するには拡張可能スイッチ チーム以外の構成。
 
-    たとえば、拡張機能を開始できる、 [ **NDIS\_状態\_スイッチ\_NIC\_状態**](https://msdn.microsoft.com/library/windows/hardware/hh598205)でカプセル化された[ **NDIS\_状態\_スイッチ\_ポート\_削除\_VF** ](https://msdn.microsoft.com/library/windows/hardware/hh598206)を示す値。 この通知は、仮想マシン (VM) ネットワーク アダプターと PCI Express (PCIe) 仮想機能 (VF) 間のバインドを削除します。 VF は、シングル ルート I/O 仮想化 (SR-IOV) インターフェイスをサポートする、基になる物理ネットワーク アダプターによって公開されます。
+    たとえば、拡張機能を開始できる、 [ **NDIS\_状態\_スイッチ\_NIC\_状態**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-switch-nic-status)でカプセル化された[ **NDIS\_状態\_スイッチ\_ポート\_削除\_VF** ](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-switch-port-remove-vf)を示す値。 この通知は、仮想マシン (VM) ネットワーク アダプターと PCI Express (PCIe) 仮想機能 (VF) 間のバインドを削除します。 VF は、シングル ルート I/O 仮想化 (SR-IOV) インターフェイスをサポートする、基になる物理ネットワーク アダプターによって公開されます。
 
     このバインドが削除された後、パケットは VM のネットワーク アダプターと基になる、SR-IOV 対応の物理アダプターの VF 間で直接の代わりに拡張可能スイッチ ポートを介して配信されます。 これにより、拡張可能スイッチ ポートの受信または拡張可能スイッチ ポート経由で送信されるパケットに適用するポリシー。
 
@@ -56,7 +56,7 @@ ms.locfileid: "63341912"
 
  
 
-方法を開始できる転送拡張機能の詳細については[ **NDIS\_状態\_スイッチ\_NIC\_状態**](https://msdn.microsoft.com/library/windows/hardware/hh598205) 、指示を参照してください[NDIS 状態インジケーターを管理する物理ネットワーク アダプターから](managing-ndis-status-indications-from-physical-network-adapters.md)します。
+方法を開始できる転送拡張機能の詳細については[ **NDIS\_状態\_スイッチ\_NIC\_状態**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-switch-nic-status) 、指示を参照してください[NDIS 状態インジケーターを管理する物理ネットワーク アダプターから](managing-ndis-status-indications-from-physical-network-adapters.md)します。
 
  
 

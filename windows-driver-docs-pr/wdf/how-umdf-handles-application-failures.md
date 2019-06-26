@@ -9,12 +9,12 @@ keywords:
 - アプリケーション エラー WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 58794bae3ae80ed4a737240b5bd3f0180963f752
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 42055756ed9c46efeb91e731a429692fe5ef945a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377407"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382830"
 ---
 # <a name="how-umdf-handles-application-failures"></a>UMDF によるアプリケーション エラーの処理方法
 
@@ -23,7 +23,7 @@ ms.locfileid: "63377407"
 
 アプリケーションが失敗したときに、次のイベントが発生します。
 
--   リフレクターを受け取る[ **IRP\_MJ\_クリーンアップ**](https://msdn.microsoft.com/library/windows/hardware/ff550718)します。
+-   リフレクターを受け取る[ **IRP\_MJ\_クリーンアップ**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-cleanup)します。
 
 -   クリーンアップ要求が"cancel"IPC チャネルでのホスト プロセスに送信されます。
 

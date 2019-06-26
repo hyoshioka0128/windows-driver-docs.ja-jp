@@ -4,12 +4,12 @@ description: Hyper-V 拡張可能スイッチ ネットワーク アダプター
 ms.assetid: 61403FDE-90BF-4D0A-83E1-5AF8ADBD37A5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 19e137888c50a8bba8d7f45dfd9ce7ae8fb98b9e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fdcbb0ccc707091b2e252fee425e1a71d5b98d46
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380684"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385721"
 ---
 # <a name="overview-of-hyper-v-extensible-switch-network-adapters"></a>Hyper-V 拡張可能スイッチ ネットワーク アダプターの概要
 
@@ -51,10 +51,10 @@ VM のネットワーク アダプターには、次の仮想化の種類がサ�
 
 拡張可能スイッチのネットワーク アダプターの接続の作成、更新、および次の拡張可能スイッチ OID 要求を削除していること。
 
-<a href="" id="oid-switch-nic-create"></a>[OID\_スイッチ\_NIC\_を作成します。](https://msdn.microsoft.com/library/windows/hardware/hh598263)  
-拡張可能スイッチのプロトコルのエッジの OID セット要求を発行する[OID\_切り替える\_NIC\_作成](https://msdn.microsoft.com/library/windows/hardware/hh598263)にネットワーク アダプターの接続の作成に関する拡張可能スイッチの拡張機能を通知するには拡張可能スイッチ ポート。 ポートする必要がありますが以前に作成したの OID セットの要求を通じて[OID\_スイッチ\_ポート\_作成](https://msdn.microsoft.com/library/windows/hardware/hh598272)です。
+<a href="" id="oid-switch-nic-create"></a>[OID\_スイッチ\_NIC\_を作成します。](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-create)  
+拡張可能スイッチのプロトコルのエッジの OID セット要求を発行する[OID\_切り替える\_NIC\_作成](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-create)にネットワーク アダプターの接続の作成に関する拡張可能スイッチの拡張機能を通知するには拡張可能スイッチ ポート。 ポートする必要がありますが以前に作成したの OID セットの要求を通じて[OID\_スイッチ\_ポート\_作成](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-create)です。
 
-[OID\_切り替える\_NIC\_作成](https://msdn.microsoft.com/library/windows/hardware/hh598263)要求は、拡張には、新しい拡張可能スイッチのネットワーク アダプターの接続が起動されているされ、そのパケット トラフィックが発生する間もなく開始されますのみに通知します。指定されたポート。
+[OID\_切り替える\_NIC\_作成](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-create)要求は、拡張には、新しい拡張可能スイッチのネットワーク アダプターの接続が起動されているされ、そのパケット トラフィックが発生する間もなく開始されますのみに通知します。指定されたポート。
 
 拡張機能は、状態を返すことによって作成の通知を拒否できます\_データ\_いない\_OID 要求に使用できます。 たとえば、拡張機能は、ネットワーク アダプターの接続に使用されるポートで構成されているそのポリシーを満たすことができない、拡張機能は作成の通知を拒否する必要があります。
 
@@ -70,12 +70,12 @@ VM のネットワーク アダプターには、次の仮想化の種類がサ�
 
 詳細については、NDIS\_スイッチ\_NIC\_のインデックス値を参照してください[ネットワーク アダプターのインデックス値](network-adapter-index-values.md)します。
 
-**注**  、拡張機能の生成または拡張可能スイッチのプロトコルのエッジの OID セット要求を発行するまで、ネットワーク アダプターの接続経由でパケットを転送できません[OID\_切り替える\_NIC\_CONNECT](https://msdn.microsoft.com/library/windows/hardware/hh598262)します。
+**注**  、拡張機能の生成または拡張可能スイッチのプロトコルのエッジの OID セット要求を発行するまで、ネットワーク アダプターの接続経由でパケットを転送できません[OID\_切り替える\_NIC\_CONNECT](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-connect)します。
 
  
 
-<a href="" id="oid-switch-nic-connect"></a>[OID\_スイッチ\_NIC\_接続](https://msdn.microsoft.com/library/windows/hardware/hh598262)  
-拡張可能スイッチのプロトコルのエッジの OID セット要求を発行する[OID\_切り替える\_NIC\_CONNECT](https://msdn.microsoft.com/library/windows/hardware/hh598262)に拡張可能スイッチの拡張機能を通知する、拡張可能スイッチにネットワーク アダプターがあります。接続が完全に動作します。
+<a href="" id="oid-switch-nic-connect"></a>[OID\_スイッチ\_NIC\_接続](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-connect)  
+拡張可能スイッチのプロトコルのエッジの OID セット要求を発行する[OID\_切り替える\_NIC\_CONNECT](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-connect)に拡張可能スイッチの拡張機能を通知する、拡張可能スイッチにネットワーク アダプターがあります。接続が完全に動作します。
 
 拡張機能では、拡張可能スイッチのドライバー スタックをこの OID セット要求を常に転送する必要があります。 拡張機能では、要求が失敗しない必要があります。
 
@@ -85,50 +85,50 @@ NDIS を使用して要求が完了した後、OID\_状態\_成功した場合�
 
 -   拡張可能な問題は、Oid または発信元ポートとしてポートを使用して、状態インジケーターを切り替えます。
 
--   呼び出す[ *ReferenceSwitchNic* ](https://msdn.microsoft.com/library/windows/hardware/hh598294)ネットワーク アダプターの接続の参照カウンターをインクリメントします。 参照カウンターが 0 以外の値を持つときに、拡張可能スイッチのインターフェイスはネットワーク アダプターの接続を終了できません。
+-   呼び出す[ *ReferenceSwitchNic* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_reference_switch_nic)ネットワーク アダプターの接続の参照カウンターをインクリメントします。 参照カウンターが 0 以外の値を持つときに、拡張可能スイッチのインターフェイスはネットワーク アダプターの接続を終了できません。
 
-<a href="" id="oid-switch-nic-updated"></a>[OID\_スイッチ\_NIC\_更新日](https://msdn.microsoft.com/library/windows/hardware/hh846216)  
+<a href="" id="oid-switch-nic-updated"></a>[OID\_スイッチ\_NIC\_更新日](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-updated)  
 OID の OID セット要求を発行する拡張可能スイッチのプロトコル edge\_切り替える\_NIC\_UPDATED に拡張可能スイッチの拡張機能、拡張可能スイッチのネットワーク アダプターのパラメーターが更新されていることを通知します。 OID は、Nic が接続された既にを切断プロセスを開始していないに対してのみ発行されます。 これらの実行時の構成変更を含めることができます*NicFriendlyName*、 *MTU*、 *NetCfgInstanceId*、 *PermanentMacAddress*、*VMMacAddress*、 *CurrentMacAddress*、および*VFAssigned します。*
 
 拡張機能では、拡張可能スイッチのドライバー スタックをこの OID セット要求を常に転送する必要があります。 拡張機能では、要求が失敗しない必要があります。
 
-<a href="" id="oid-switch-nic-disconnect"></a>[OID\_スイッチ\_NIC\_切断](https://msdn.microsoft.com/library/windows/hardware/hh598265)  
-拡張可能スイッチのプロトコルのエッジの OID セット要求を発行する[OID\_切り替える\_NIC\_切断](https://msdn.microsoft.com/library/windows/hardware/hh598265)に拡張可能スイッチの拡張機能を通知する、拡張可能スイッチにネットワーク アダプターがあります。接続が破棄されています。 拡張可能スイッチのプロトコルのエッジがの OID セット要求を発行したら、接続が完全に破損している、 [OID\_切り替える\_NIC\_削除](https://msdn.microsoft.com/library/windows/hardware/hh598264)します。
+<a href="" id="oid-switch-nic-disconnect"></a>[OID\_スイッチ\_NIC\_切断](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-disconnect)  
+拡張可能スイッチのプロトコルのエッジの OID セット要求を発行する[OID\_切り替える\_NIC\_切断](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-disconnect)に拡張可能スイッチの拡張機能を通知する、拡張可能スイッチにネットワーク アダプターがあります。接続が破棄されています。 拡張可能スイッチのプロトコルのエッジがの OID セット要求を発行したら、接続が完全に破損している、 [OID\_切り替える\_NIC\_削除](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-delete)します。
 
 拡張機能では、拡張可能スイッチのドライバー スタックをこの OID セット要求を常に転送する必要があります。 拡張機能では、要求が失敗しない必要があります。
 
-拡張機能は、この OID 要求を転送する後生成もダウンするネットワーク アダプターの接続が破棄されているポートにパケットを転送できなくできます。 また、拡張機能は呼び出すことができなく[ *ReferenceSwitchNic* ](https://msdn.microsoft.com/library/windows/hardware/hh598294)のネットワーク アダプターの接続。
+拡張機能は、この OID 要求を転送する後生成もダウンするネットワーク アダプターの接続が破棄されているポートにパケットを転送できなくできます。 また、拡張機能は呼び出すことができなく[ *ReferenceSwitchNic* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_reference_switch_nic)のネットワーク アダプターの接続。
 
-<a href="" id="oid-switch-nic-delete"></a>[OID\_スイッチ\_NIC\_削除](https://msdn.microsoft.com/library/windows/hardware/hh598264)  
-拡張可能スイッチのプロトコルのエッジの OID セット要求を発行する[OID\_切り替える\_NIC\_削除](https://msdn.microsoft.com/library/windows/hardware/hh598264)に拡張可能スイッチの拡張機能を通知する、拡張可能スイッチにネットワーク アダプターがあります。接続は破棄され、削除します。 この OID 要求は、OID がの要求を設定する対象のネットワーク接続に対してのみ発行[OID\_スイッチ\_NIC\_切断](https://msdn.microsoft.com/library/windows/hardware/hh598265)以前に発行されました。
+<a href="" id="oid-switch-nic-delete"></a>[OID\_スイッチ\_NIC\_削除](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-delete)  
+拡張可能スイッチのプロトコルのエッジの OID セット要求を発行する[OID\_切り替える\_NIC\_削除](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-delete)に拡張可能スイッチの拡張機能を通知する、拡張可能スイッチにネットワーク アダプターがあります。接続は破棄され、削除します。 この OID 要求は、OID がの要求を設定する対象のネットワーク接続に対してのみ発行[OID\_スイッチ\_NIC\_切断](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-disconnect)以前に発行されました。
 
 **注**  拡張機能は拡張可能スイッチのドライバー スタックをこの OID セット要求を常に転送する必要があります。 拡張機能では、要求が失敗しない必要があります。
 
  
 
-拡張可能スイッチのプロトコルのエッジがの OID セット要求を発行してこの OID 要求が完了すると、 [OID\_切り替える\_ポート\_破棄](https://msdn.microsoft.com/library/windows/hardware/hh598279)がポートの削除プロセスを開始するにはネットワーク アダプターの接続に使用されます。
+拡張可能スイッチのプロトコルのエッジがの OID セット要求を発行してこの OID 要求が完了すると、 [OID\_切り替える\_ポート\_破棄](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-teardown)がポートの削除プロセスを開始するにはネットワーク アダプターの接続に使用されます。
 
 拡張機能では、拡張可能スイッチのドライバー スタックをこの OID セット要求を常に転送する必要があります。 拡張機能では、要求が失敗しない必要があります。
 
 拡張可能スイッチのインターフェイスは、作成された各ネットワーク アダプター接続の参照カウンターを保持します。 その参照カウンターがある 0 以外の場合、ネットワーク アダプターの接続は削除されません。 インターフェイスには、次のハンドラー関数がインクリメントまたはデクリメント、拡張可能スイッチのネットワーク アダプター接続の参照カウンターを提供します。
 
-<a href="" id="referenceswitchnic"></a>[*ReferenceSwitchNic*](https://msdn.microsoft.com/library/windows/hardware/hh598294)  
+<a href="" id="referenceswitchnic"></a>[*ReferenceSwitchNic*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_reference_switch_nic)  
 拡張可能スイッチ拡張機能は、ネットワーク アダプター接続の参照カウンターをインクリメントするには、この関数を呼び出します。 参照カウンターには、0 以外の値が、拡張可能スイッチのインターフェイスでは、このネットワーク アダプターの接続は削除されません。
 
-拡張機能を呼び出す必要があります[ *ReferenceSwitchNic* ](https://msdn.microsoft.com/library/windows/hardware/hh598294)次の操作を実行する前に。
+拡張機能を呼び出す必要があります[ *ReferenceSwitchNic* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_reference_switch_nic)次の操作を実行する前に。
 
--   転送、 [OID\_切り替える\_NIC\_要求](https://msdn.microsoft.com/library/windows/hardware/hh598266)を基になる外部アダプターに拡張可能スイッチ ドライバー スタックを要求します。
+-   転送、 [OID\_切り替える\_NIC\_要求](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-request)を基になる外部アダプターに拡張可能スイッチ ドライバー スタックを要求します。
 
--   転送、 [ **NDIS\_状態\_切り替える\_NIC\_状態**](https://msdn.microsoft.com/library/windows/hardware/hh598205)拡張可能スイッチ ドライバー スタック基になるまでの状態の表示外部アダプターです。
+-   転送、 [ **NDIS\_状態\_切り替える\_NIC\_状態**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-switch-nic-status)拡張可能スイッチ ドライバー スタック基になるまでの状態の表示外部アダプターです。
 
-**注**  、拡張機能を呼び出してはならない[ *ReferenceSwitchNic* ](https://msdn.microsoft.com/library/windows/hardware/hh598294) OID を受信した後、接続の要求の設定、ネットワーク アダプターの[OID\_スイッチ\_NIC\_切断](https://msdn.microsoft.com/library/windows/hardware/hh598265)接続にします。
+**注**  、拡張機能を呼び出してはならない[ *ReferenceSwitchNic* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_reference_switch_nic) OID を受信した後、接続の要求の設定、ネットワーク アダプターの[OID\_スイッチ\_NIC\_切断](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-disconnect)接続にします。
 
  
 
-<a href="" id="dereferenceswitchnic"></a>[*DereferenceSwitchNic*](https://msdn.microsoft.com/library/windows/hardware/hh598141)  
+<a href="" id="dereferenceswitchnic"></a>[*DereferenceSwitchNic*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_dereference_switch_nic)  
 拡張可能スイッチ拡張機能は、ポートの参照カウンターをデクリメントするには、この関数を呼び出します。
 
-拡張機能を呼び出す場合[ *ReferenceSwitchNic*](https://msdn.microsoft.com/library/windows/hardware/hh598294)、呼び出す必要があります[ *DereferenceSwitchNic* ](https://msdn.microsoft.com/library/windows/hardware/hh598141)後、 [OID\_スイッチ\_NIC\_要求](https://msdn.microsoft.com/library/windows/hardware/hh598266)または[ **NDIS\_状態\_スイッチ\_NIC\_状態**](https://msdn.microsoft.com/library/windows/hardware/hh598205)完了を示す値。
+拡張機能を呼び出す場合[ *ReferenceSwitchNic*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_reference_switch_nic)、呼び出す必要があります[ *DereferenceSwitchNic* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_dereference_switch_nic)後、 [OID\_スイッチ\_NIC\_要求](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-request)または[ **NDIS\_状態\_スイッチ\_NIC\_状態**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-switch-nic-status)完了を示す値。
 
  
 

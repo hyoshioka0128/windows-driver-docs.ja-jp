@@ -4,12 +4,12 @@ description: MPIO\_コント ローラー\_情報 WMI クラス
 ms.assetid: 0448e056-2bbe-4e4f-a729-a872393222e5
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 81e51f737eb560c3ba18a27f7faf070468961792
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 61f3df09cb9d28a4f13a6e99cd8709c2090203d3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391432"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386174"
 ---
 # <a name="mpiocontrollerinfo-wmi-class"></a>MPIO\_コント ローラー\_情報 WMI クラス
 
@@ -33,7 +33,7 @@ class MPIO_CONTROLLER_INFO
 };
 ```
 
-このクラスの定義が WMI ツール スイートによってコンパイルされると、生成、 [ **MPIO\_コント ローラー\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff562329)データ構造体。 この WMI クラスに関連付けられているメソッドはありません。
+このクラスの定義が WMI ツール スイートによってコンパイルされると、生成、 [ **MPIO\_コント ローラー\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mpiowmi/ns-mpiowmi-_mpio_controller_info)データ構造体。 この WMI クラスに関連付けられているメソッドはありません。
 
  
 

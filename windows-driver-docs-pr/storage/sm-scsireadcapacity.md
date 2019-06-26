@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 3715c2aaaf352f59ec8c623270583028f2782bea
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cd098cc0eeba822a12ee4b3f1bfd309ccb1456c8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339059"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384296"
 ---
 # <a name="smscsireadcapacity-function"></a>SM\_ScsiReadCapacity 関数
 
@@ -51,19 +51,19 @@ void SM_ScsiReadCapacity(
 ----------
 
 *HbaPortWWN*   
-ターゲットにアクセスする HBA の世界中の名 (WWN)。 この情報は、の HbaPortWWN メンバーでは、ミニポート ドライバーに配信される、 [ **ScsiInquiry\_IN** ](https://msdn.microsoft.com/library/windows/hardware/ff564593)構造体。
+ターゲットにアクセスする HBA の世界中の名 (WWN)。 この情報は、の HbaPortWWN メンバーでは、ミニポート ドライバーに配信される、 [ **ScsiInquiry\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsiop/ns-iscsiop-_scsiinquiry_in)構造体。
 
 *DiscoveredPortWWN*   
-ターゲット デバイスにアクセスするポートの世界中の名 (WWN)。 この情報は、の DiscoveredPortWWN メンバーでは、ミニポート ドライバーに配信される、 [ **ScsiInquiry\_IN** ](https://msdn.microsoft.com/library/windows/hardware/ff564593)構造体。
+ターゲット デバイスにアクセスするポートの世界中の名 (WWN)。 この情報は、の DiscoveredPortWWN メンバーでは、ミニポート ドライバーに配信される、 [ **ScsiInquiry\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsiop/ns-iscsiop-_scsiinquiry_in)構造体。
 
 *DomainPortWWN*   
 世界中のコールバック名 (WWN) ポートは\_を任意のポートの最小値を持つ識別子\_物理ポートを使用して検出された SMP ポートの識別子。 値が 0 の物理ポートを使用して SMP ポートが検出されない場合があります。
 
 *SmhbaLUN*   
-照会の SCSI コマンドを受信する論理ユニットの論理ユニットの数。 この情報は、の SmhbaLUN メンバーでは、ミニポート ドライバーに配信される、 [ **ScsiInquiry\_IN** ](https://msdn.microsoft.com/library/windows/hardware/ff564593)構造体。
+照会の SCSI コマンドを受信する論理ユニットの論理ユニットの数。 この情報は、の SmhbaLUN メンバーでは、ミニポート ドライバーに配信される、 [ **ScsiInquiry\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsiop/ns-iscsiop-_scsiinquiry_in)構造体。
 
 *Cdb*   
-ターゲット デバイスに送信される SCSI 照会コマンドを保持するコマンドの記述子ブロックします。 この情報は、の Cdb メンバーでは、ミニポート ドライバーに配信される、 [ **ScsiInquiry\_IN** ](https://msdn.microsoft.com/library/windows/hardware/ff564593)構造体。
+ターゲット デバイスに送信される SCSI 照会コマンドを保持するコマンドの記述子ブロックします。 この情報は、の Cdb メンバーでは、ミニポート ドライバーに配信される、 [ **ScsiInquiry\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsiop/ns-iscsiop-_scsiinquiry_in)構造体。
 
 *InRespBufferMaxSize*   
 応答バッファーのバイト単位で最大サイズ。
@@ -72,22 +72,22 @@ void SM_ScsiReadCapacity(
 応答に意味がバッファーのバイト単位で最大サイズ。
 
 *HBAStatus*   
-操作の状態。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーでは、この情報を返しますの HBAStatus メンバーでは、 [ **ScsiInquiry\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff564602)構造体。
+操作の状態。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーでは、この情報を返しますの HBAStatus メンバーでは、 [ **ScsiInquiry\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsiop/ns-iscsiop-_scsiinquiry_out)構造体。
 
 *ScsiStatus*   
-SCSI 問い合わせコマンドの状態。 ミニポート ドライバーでは、この情報を返しますの ScsiStatus メンバーでは、 [ **ScsiInquiry\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff564602)構造体。
+SCSI 問い合わせコマンドの状態。 ミニポート ドライバーでは、この情報を返しますの ScsiStatus メンバーでは、 [ **ScsiInquiry\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsiop/ns-iscsiop-_scsiinquiry_out)構造体。
 
 *OutRespBufferSize*   
-SCSI 問い合わせコマンドの結果を保持するバッファーのバイト単位のサイズ。 ミニポート ドライバーでは、この情報を返しますの ResponseBufferSize メンバーでは、 [ **ScsiInquiry\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff564602)構造体。
+SCSI 問い合わせコマンドの結果を保持するバッファーのバイト単位のサイズ。 ミニポート ドライバーでは、この情報を返しますの ResponseBufferSize メンバーでは、 [ **ScsiInquiry\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsiop/ns-iscsiop-_scsiinquiry_out)構造体。
 
 *OutSenseBufferSize*   
-照会の SCSI コマンドに起因する SCSI 意味データを保持するバッファーのバイト単位のサイズ。 ミニポート ドライバーでは、この情報を返しますの SenseBufferSize メンバーでは、 [ **ScsiInquiry\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff564602)構造体。
+照会の SCSI コマンドに起因する SCSI 意味データを保持するバッファーのバイト単位のサイズ。 ミニポート ドライバーでは、この情報を返しますの SenseBufferSize メンバーでは、 [ **ScsiInquiry\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsiop/ns-iscsiop-_scsiinquiry_out)構造体。
 
 *RespBuffer*   
-SCSI 問い合わせコマンドの結果。 ミニポート ドライバーでは、この情報を返しますの ResponseBuffer メンバーでは、 [ **ScsiInquiry\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff564602)構造体。
+SCSI 問い合わせコマンドの結果。 ミニポート ドライバーでは、この情報を返しますの ResponseBuffer メンバーでは、 [ **ScsiInquiry\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsiop/ns-iscsiop-_scsiinquiry_out)構造体。
 
 *SenseBuffer*   
-照会の SCSI コマンドに起因する SCSI センス データ。 ミニポート ドライバーでは、この情報を返しますの SenseBuffer メンバーでは、 [ **ScsiInquiry\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff564602)構造体。
+照会の SCSI コマンドに起因する SCSI センス データ。 ミニポート ドライバーでは、この情報を返しますの SenseBuffer メンバーでは、 [ **ScsiInquiry\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsiop/ns-iscsiop-_scsiinquiry_out)構造体。
 
 <a name="return-value"></a>戻り値
 ------------

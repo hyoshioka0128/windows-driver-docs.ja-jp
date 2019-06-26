@@ -8,12 +8,12 @@ keywords:
 - キャンセル ルーチンを登録します。
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f9b5316b713470832d64a5454e9c7f68309ed177
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0c514e4e81df7ff4c29b2bbbe10961f3fd8343e6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382652"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378730"
 ---
 # <a name="registering-a-cancel-routine"></a>キャンセル ルーチンの登録
 
@@ -21,15 +21,15 @@ ms.locfileid: "63382652"
 
 
 
-デバイス ドライバーがある場合、 [ *StartIo* ](https://msdn.microsoft.com/library/windows/hardware/ff563858)そのディスパッチ ルーチンを登録できますで日常的な[*キャンセル*](https://msdn.microsoft.com/library/windows/hardware/ff540742)としてそのアドレスを指定して日常的な入力[ **IoStartPacket**](https://msdn.microsoft.com/library/windows/hardware/ff550370)します。
+デバイス ドライバーがある場合、 [ *StartIo* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_startio)そのディスパッチ ルーチンを登録できますで日常的な[*キャンセル*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_cancel)としてそのアドレスを指定して日常的な入力[ **IoStartPacket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-iostartpacket)します。
 
 ドライバーがない場合、 *StartIo*日常的なそのディスパッチ ルーチンは IRP がキューの他のドライバーのルーチンでさらに処理する前に、次を行う必要があります。
 
-1.  呼び出す[ **IoAcquireCancelSpinLock**](https://msdn.microsoft.com/library/windows/hardware/ff548196)します。
+1.  呼び出す[ **IoAcquireCancelSpinLock**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff548196(v=vs.85))します。
 
-2.  呼び出す[ **IoSetCancelRoutine** ](https://msdn.microsoft.com/library/windows/hardware/ff549674)入力 IRP とドライバーが提供するためのエントリ ポイントを備えた*キャンセル*ルーチン。
+2.  呼び出す[ **IoSetCancelRoutine** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iosetcancelroutine)入力 IRP とドライバーが提供するためのエントリ ポイントを備えた*キャンセル*ルーチン。
 
-3.  呼び出す[ **IoReleaseCancelSpinLock**](https://msdn.microsoft.com/library/windows/hardware/ff549550)します。
+3.  呼び出す[ **IoReleaseCancelSpinLock**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff549550(v=vs.85))します。
 
 キャンセルのスピン ロックについては、次を参照してください。[システムのキャンセル スピン ロックを使用して](using-the-system-s-cancel-spin-lock.md)します。
 

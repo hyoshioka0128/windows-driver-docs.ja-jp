@@ -8,12 +8,12 @@ keywords:
 - バインディングは、WDK のネットワークを変更します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ccf45fba976db2a9aa2602769b08df22acdcfc18
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6a224e33b0e7742cb6b97d650acc181696170852
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353234"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382779"
 ---
 # <a name="changing-bindings-for-a-component"></a>コンポーネントのバインドの変更
 
@@ -21,7 +21,7 @@ ms.locfileid: "63353234"
 
 
 
-ネットワーク構成のサブシステムは、通知オブジェクトのネットワーク コンポーネントに影響するバインディングの変更について通知オブジェクトを常に通知します。 サブシステムの呼び出し、通知オブジェクトの[ **INetCfgComponentNotifyBinding::NotifyBindingPath** ](https://msdn.microsoft.com/library/windows/hardware/ff547731)メソッドへのポインターと共に変更を示す値を渡すと、 **INetCfgBindingPath**バインド パスの変更に関係のインターフェイス。 場合は、サブシステム渡します NCN\_無効にすると、特定のネットワーク カードと、通知オブジェクトのネットワーク コンポーネントを共有するバインディング パスが無効にする、通知オブジェクトをアクティブ化できますバインディング別のネットワーク カードで次のコードに示すようにします。
+ネットワーク構成のサブシステムは、通知オブジェクトのネットワーク コンポーネントに影響するバインディングの変更について通知オブジェクトを常に通知します。 サブシステムの呼び出し、通知オブジェクトの[ **INetCfgComponentNotifyBinding::NotifyBindingPath** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff547731(v=vs.85))メソッドへのポインターと共に変更を示す値を渡すと、 **INetCfgBindingPath**バインド パスの変更に関係のインターフェイス。 場合は、サブシステム渡します NCN\_無効にすると、特定のネットワーク カードと、通知オブジェクトのネットワーク コンポーネントを共有するバインディング パスが無効にする、通知オブジェクトをアクティブ化できますバインディング別のネットワーク カードで次のコードに示すようにします。
 
 ```C++
 HRESULT CSample::NotifyBindingPath(DWORD dwChangeFlag,

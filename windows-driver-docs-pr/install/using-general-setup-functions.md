@@ -7,12 +7,12 @@ keywords:
 - 一般的なセットアップは、WDK SetupAPI を関数します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c38f5cbe6d0158a4362c4a9e35285a2eb28b01f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1bbd61444879a7aba9ec27b4d3fca861bb7b7594
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339429"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384761"
 ---
 # <a name="using-general-setup-functions"></a>一般的なセットアップ関数の使用
 
@@ -32,7 +32,7 @@ ms.locfileid: "63339429"
 
 -   ログ エントリを書き込む、 [SetupAPI テキスト ログ](setupapi-text-logs.md)します。
 
-インストール ソフトウェアが通常と共にこれらの関数を使用して[デバイスのインストール機能](https://msdn.microsoft.com/library/windows/hardware/ff541299)と[構成マネージャーの機能の PnP](https://msdn.microsoft.com/library/windows/hardware/ff549713)します。
+インストール ソフトウェアが通常と共にこれらの関数を使用して[デバイスのインストール機能](https://docs.microsoft.com/previous-versions/ff541299(v=vs.85))と[構成マネージャーの機能の PnP](https://docs.microsoft.com/previous-versions/ff549713(v=vs.85))します。
 
 このセクションで示す一般的なセットアップ関数は、Microsoft Windows SDK ドキュメントで詳しく説明します。
 

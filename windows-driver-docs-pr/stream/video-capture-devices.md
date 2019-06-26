@@ -6,21 +6,21 @@ keywords:
 - ビデオの WDK AVStream のキャプチャ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3615fe8bbe8c95475f9fa52c35694d7e57cb70ed
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bc7c183941dea50a9a9609c39274142148f8ea77
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337777"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385383"
 ---
 # <a name="video-capture-devices"></a>ビデオ キャプチャ デバイス
 
 
-このセクションでは、ビデオ キャプチャ ミニドライバーは、次の Windows Driver Model (WDM) アーキテクチャを作成する方法について説明します。 説明する概念に関する知識と想定して[カーネル ストリーミング](kernel-streaming.md)します。 オーディオのみのデバイス用のミニドライバーを作成する方法について、[オーディオ デバイスの設計ガイド](https://msdn.microsoft.com/library/windows/hardware/ff536191)します。
+このセクションでは、ビデオ キャプチャ ミニドライバーは、次の Windows Driver Model (WDM) アーキテクチャを作成する方法について説明します。 説明する概念に関する知識と想定して[カーネル ストリーミング](kernel-streaming.md)します。 オーディオのみのデバイス用のミニドライバーを作成する方法について、[オーディオ デバイスの設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/audio/index)します。
 
 DVD、MPEG デコーダー、ビデオ デコーダーとチューナー、ビデオ ポート拡張機能 (VPEs)、および 1 つのアダプターでのオーディオ コーデックの統合により、これらすべてのデバイスをサポートし、リソースの競合を処理する統一されたドライバー モデルには、開発作業が簡略化します。
 
-[AVStream](avstream-minidrivers-design-guide.md)と[Stream クラス](https://msdn.microsoft.com/library/windows/hardware/ff568275)両方のインターフェイスが統合されたデバイスのサポートを提供するフレームワークを提供します。 これらのインターフェイスは、カーネル モード ドライバーの間のデータ転送をサポートします。 これらのデータ転送は、スレッド ユーザー モードに移行する必要ありません、パフォーマンスに影響を回避します。
+[AVStream](avstream-minidrivers-design-guide.md)と[Stream クラス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_stream/index)両方のインターフェイスが統合されたデバイスのサポートを提供するフレームワークを提供します。 これらのインターフェイスは、カーネル モード ドライバーの間のデータ転送をサポートします。 これらのデータ転送は、スレッド ユーザー モードに移行する必要ありません、パフォーマンスに影響を回避します。
 
 両方のインターフェイスは、統一されたモデルの標準とカスタム データ型のストリーミングをサポートします。 Microsoft では、標準的なデバイスのプロパティ セットを定義します。 ベンダーは、必要な場合、追加のプロパティのセットを提供できます。
 

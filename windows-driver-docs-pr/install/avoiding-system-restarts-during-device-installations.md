@@ -4,12 +4,12 @@ description: デバイスのインストールとドライバーの更新プロ�
 ms.assetid: b30c9e5f-85af-4e7f-81aa-67fe2df8a178
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 004d3f794cea8e65df1fa7abe9c3ee403914f847
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 41bda6a033b69bd16b4cfad289b32fb1354ef9c8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380346"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385301"
 ---
 # <a name="avoiding-system-restarts-during-device-installations-and-driver-updates"></a>デバイスのインストールとドライバーの更新プログラムの中にシステムの再起動を回避します。
 
@@ -56,25 +56,25 @@ INF ファイルを使用している場合は、次の手順に従います。
     このフラグを使用する場合、Windows はディスク上のドライバー ファイルを置換しようとします。 詳細については、次を参照してください。 [INF CopyFiles ディレクティブ](inf-copyfiles-directive.md)します。
 
 2.  PnP ドライバーに対して、INF の場合は、デバイスのインストール中に、Windows が実行中のドライバーをアンロードして、新しいバージョンのドライバーを取得するために使用するデバイスを再起動するしようとします。 失敗した場合、デバイスのインストールはシステムを再起動することを示します。
-3.  PnP ドライバーに対して、INF でない場合など、メソッドを使用している[ **InstallHInfSection** ](https://msdn.microsoft.com/library/windows/desktop/aa376957) INF を処理し、手動で停止して、ドライバーを再起動します。
+3.  PnP ドライバーに対して、INF でない場合など、メソッドを使用している[ **InstallHInfSection** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-installhinfsectiona) INF を処理し、手動で停止して、ドライバーを再起動します。
     -   ドライバーのすべての開いているハンドルを閉じるし、次のいずれかを使用してドライバーを停止し。
 
         -   **sc.exe stop** *&lt;mydriver&gt;*
         -   **ControlService(SERVICE_CONTROL_STOP)**
 
-        詳細については、次を参照してください。 [ **ControlService 関数**](https://msdn.microsoft.com/library/windows/desktop/ms682108)します。
+        詳細については、次を参照してください。 [ **ControlService 関数**](https://docs.microsoft.com/windows/desktop/api/winsvc/nf-winsvc-controlservice)します。
 
 INF ファイルを使用していない場合は、次の手順を使用します。
 
 1.  前述のように、ドライバーを停止します。 古いドライバーのバイナリ ファイルを新しいものに置き換えます。
-2.  場合は、ドライバーを停止することはできません、既存のファイルの名前を変更、場所に、新しいファイルをコピーおよび今後削除する既存のファイルを設定 (たとえばを使用して[ **MoveFileEx** ](https://msdn.microsoft.com/library/windows/desktop/aa365240)で、 **MOVEFILE_DELAY_UNTIL_REBOOT**フラグ)。 の新しいバージョンのドライバーの使用を開始するには、システムが再起動する必要があります。
+2.  場合は、ドライバーを停止することはできません、既存のファイルの名前を変更、場所に、新しいファイルをコピーおよび今後削除する既存のファイルを設定 (たとえばを使用して[ **MoveFileEx** ](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-movefileexa)で、 **MOVEFILE_DELAY_UNTIL_REBOOT**フラグ)。 の新しいバージョンのドライバーの使用を開始するには、システムが再起動する必要があります。
 
 ## <a name="related-topics"></a>関連トピック
 
 
-[ファイル バックアップし、ファイルに格納されたページのセクション](https://msdn.microsoft.com/library/windows/hardware/ff545754)
+[ファイル バックアップし、ファイルに格納されたページのセクション](https://docs.microsoft.com/windows-hardware/drivers/kernel/file-backed-and-page-file-backed-sections)
 
-[ドライバーが読み込まれるときにどのようにして決まります](https://msdn.microsoft.com/library/windows/hardware/ff557272)
+[ドライバーが読み込まれるときにどのようにして決まります](https://docs.microsoft.com/windows-hardware/drivers/ifs/what-determines-when-a-driver-is-loaded)
 
  
 

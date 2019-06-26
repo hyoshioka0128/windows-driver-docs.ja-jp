@@ -8,12 +8,12 @@ keywords:
 - アクションは、WDK WDTF をインターフェイスします。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c17a5a68d3ef84b708fccca5405febb9066e7f61
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 292a179291806c21ccb89f863202ebce6779e6d0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354006"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386249"
 ---
 # <a name="com-interface-design-skills"></a>COM インターフェイス設計スキル
 
@@ -28,7 +28,7 @@ ms.locfileid: "63354006"
 
 4.  **堅牢な**します。 アクションのインターフェイスは再利用性のためのもの、単純なユース ケースだけを準備するので、試してください。
 
-5.  **関連**します。 診断を設計に含めることを確認します。 ユーザーをデバッグ方法の問題、インターフェイスを使用するときに考慮するを再試行してください。 使用してコードをインストルメント化することが役立ちます[WPP ソフトウェア トレース](https://msdn.microsoft.com/library/windows/hardware/ff556204)します。
+5.  **関連**します。 診断を設計に含めることを確認します。 ユーザーをデバッグ方法の問題、インターフェイスを使用するときに考慮するを再試行してください。 使用してコードをインストルメント化することが役立ちます[WPP ソフトウェア トレース](https://docs.microsoft.com/windows-hardware/drivers/devtest/wpp-software-tracing)します。
 
  
 

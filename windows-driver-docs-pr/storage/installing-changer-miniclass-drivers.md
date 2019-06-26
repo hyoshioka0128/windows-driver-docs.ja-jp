@@ -8,12 +8,12 @@ keywords:
 - miniclass ドライバー WDK チェンジャー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c95b2babd755e01bbe7d51bbd38d894b803669d8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 606f298e39fe76f31f18f7e8ce57abcff1b66f65
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362280"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385227"
 ---
 # <a name="installing-changer-miniclass-drivers"></a>チェンジャー ミニクラス ドライバーのインストール
 
@@ -23,7 +23,7 @@ ms.locfileid: "63362280"
 
 このセクションでは、インストールについては、Windows 2000 以降のオペレーティング システムでチェンジャー miniclass ドライバーに固有では。
 
-独自のコント ローラー ミニドライバーを提供しているベンダー ミニドライバーを行う必要がありますで MediumChanger セットアップ クラスのメンバー、 [ **INF バージョン セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547502)ドライバーの INF ファイル。 次に、例を示します。
+独自のコント ローラー ミニドライバーを提供しているベンダー ミニドライバーを行う必要がありますで MediumChanger セットアップ クラスのメンバー、 [ **INF バージョン セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-version-section)ドライバーの INF ファイル。 次に、例を示します。
 
 ```cpp
 [version]
@@ -36,7 +36,7 @@ ClassGuid={CE5939AE-EBDE-11d0-B181-0000F8753EC4}
 
 インストールの詳細については、Windows Driver Kit (WDK) で含まれているメディア チェンジャー サンプルに付属している INF ファイルを参照してください。
 
-Windows 2000 以降のオペレーティング システムでデバイスのインストールの詳細については、次を参照してください。[デバイス インストールの概要](https://msdn.microsoft.com/library/windows/hardware/ff549455)します。
+Windows 2000 以降のオペレーティング システムでデバイスのインストールの詳細については、次を参照してください。[デバイス インストールの概要](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-device-and-driver-installation)します。
 
  
 

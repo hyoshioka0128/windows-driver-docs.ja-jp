@@ -4,12 +4,12 @@ description: PCMCIA_INTERFACE_STANDARD インターフェイスのルーチン�
 ms.assetid: 468d2037-a7d5-4851-9f41-d1e6c9006750
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 75c99c2fc300f8e2d69a1e215bf61022da8f7f3a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: b7a2ddc569b82b7a6a206c7bd6168e0213eddfe6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574896"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386200"
 ---
 # <a name="calling-a-pcmciainterfacestandard-interface-routine"></a>呼び出す、PCMCIA\_インターフェイス\_標準的なインターフェイスのルーチン
 
@@ -19,7 +19,7 @@ ms.locfileid: "56574896"
 
 このセクションは、PCMCIA を呼び出す方法を説明します\_インターフェイス\_ルーチンの標準的なインターフェイスです。
 
-ドライバーを取得した後、 [PCMCIA\_インターフェイス\_標準のインターフェイスのメモリ カード ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff537607)PCMCIA バス ドライバー、ドライバーからの構造体がインターフェイスのルーチンを呼び出すことができます。
+ドライバーを取得した後、 [PCMCIA\_インターフェイス\_標準のインターフェイスのメモリ カード ルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)PCMCIA バス ドライバー、ドライバーからの構造体がインターフェイスのルーチンを呼び出すことができます。
 
 インターフェイスの各ルーチンでは、コンテキスト ポインターが必要です。 ドライバーを使用する必要があります、**コンテキスト**PCMCIA の PCMCIA バス ドライバーによって返されるメンバー値\_インターフェイス\_標準構造体。 コンテキスト ポインターが有効でない場合は、システムの動作が定義されていないと、システムが停止する可能性があります。
 

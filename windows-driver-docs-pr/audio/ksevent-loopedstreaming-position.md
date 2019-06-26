@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c2db83ad4be87df7cdff1b7bb496971e659173b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b99906618a060df0626c319e91652b672c1fadcc
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333358"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67391536"
 ---
 # <a name="kseventloopedstreamingposition"></a>KSEVENT\_LOOPEDSTREAMING\_位置
 
@@ -44,8 +44,8 @@ KSEVENT\_LOOPEDSTREAMING\_位置イベントは、オーディオのストリー
 <tbody>
 <tr class="odd">
 <td align="left"><p>Pin</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff561744" data-raw-source="[&lt;strong&gt;KSEVENT&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff561744)"><strong>KSEVENT</strong></a></p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff537505" data-raw-source="[&lt;strong&gt;LOOPEDSTREAMING_POSITION_EVENT_DATA&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537505)"><strong>LOOPEDSTREAMING_POSITION_EVENT_DATA</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/ff561744(v=vs.85)" data-raw-source="[&lt;strong&gt;KSEVENT&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff561744(v=vs.85))"><strong>KSEVENT</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-loopedstreaming_position_event_data" data-raw-source="[&lt;strong&gt;LOOPEDSTREAMING_POSITION_EVENT_DATA&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-loopedstreaming_position_event_data)"><strong>LOOPEDSTREAMING_POSITION_EVENT_DATA</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -67,9 +67,9 @@ WavePci と WaveCyclic ポート ドライバーには、Windows Server 2003、W
 
 波のいずれも Windows Vista で*Xxx*ポート ドライバーは、イベント ハンドラーまたは KSEVENT の他のサポートを実装\_LOOPEDSTREAMING\_イベントの位置。
 
-ループのバッファーが型のオーディオ ストリームのデータ バッファー [ **KSINTERFACE\_標準\_るーぷさいせいぼたん\_ストリーミング**](https://msdn.microsoft.com/library/windows/hardware/ff563381)します。 Play またはカーソルの記録がループのバッファーの末尾に達すると、カーソルは、バッファーの先頭にラップします。
+ループのバッファーが型のオーディオ ストリームのデータ バッファー [ **KSINTERFACE\_標準\_るーぷさいせいぼたん\_ストリーミング**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksinterface-standard-looped-streaming)します。 Play またはカーソルの記録がループのバッファーの末尾に達すると、カーソルは、バッファーの先頭にラップします。
 
-ループのバッファー、バッファーの位置と再生およびレコードのカーソルに関する詳細については、次を参照してください。[オーディオ位置プロパティ](https://msdn.microsoft.com/library/windows/hardware/ff536211)します。
+ループのバッファー、バッファーの位置と再生およびレコードのカーソルに関する詳細については、次を参照してください。[オーディオ位置プロパティ](https://docs.microsoft.com/windows-hardware/drivers/audio/audio-position-property)します。
 
 <a name="requirements"></a>要件
 ------------
@@ -90,11 +90,11 @@ WavePci と WaveCyclic ポート ドライバーには、Windows Server 2003、W
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
-[**KSEVENT**](https://msdn.microsoft.com/library/windows/hardware/ff561744)
+[**KSEVENT**](https://docs.microsoft.com/previous-versions/ff561744(v=vs.85))
 
-[**KSINTERFACE\_標準\_るーぷさいせいぼたん\_ストリーミング**](https://msdn.microsoft.com/library/windows/hardware/ff563381)
+[**KSINTERFACE\_標準\_るーぷさいせいぼたん\_ストリーミング**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksinterface-standard-looped-streaming)
 
-[**LOOPEDSTREAMING\_位置\_イベント\_データ**](https://msdn.microsoft.com/library/windows/hardware/ff537505)
+[**LOOPEDSTREAMING\_位置\_イベント\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-loopedstreaming_position_event_data)
 
  
 

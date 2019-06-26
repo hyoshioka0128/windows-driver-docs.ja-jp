@@ -9,33 +9,33 @@ keywords:
 - INF ファイル WDK Windows フィルタ リング プラットフォーム
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e694073d8d3d7c3f80d951f412a0649997b46ae
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3cc98228033c0baa739a2c507e2c16bf0a029a50
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327769"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385092"
 ---
 # <a name="inf-files-for-callout-drivers"></a>コールアウト ドライバーの INF ファイル
 
 
 Windows フィルタ リング プラットフォームのコールアウト ドライバーは、セットアップ情報ファイル (INF) ファイルによってインストールされます。 コールアウト ドライバーの INF ファイルには、次の INF ファイル セクションのみが含まれます。
 
-[**バージョンの INF セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547502)
+[**バージョンの INF セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-version-section)
 
-[**INF SourceDisksNames セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547478)
+[**INF SourceDisksNames セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-sourcedisksnames-section)
 
-[**INF SourceDisksFiles セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547472)
+[**INF SourceDisksFiles セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-sourcedisksfiles-section)
 
-[**INF DestinationDirs セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547383)
+[**INF DestinationDirs セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-destinationdirs-section)
 
-[**INF DefaultInstall セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547356)
+[**INF DefaultInstall セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-defaultinstall-section)
 
-[**INF DefaultInstall.Services セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547360)
+[**INF DefaultInstall.Services セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-defaultinstall-services-section)
 
-[**INF 文字列 セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547485)
+[**INF 文字列 セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-strings-section)
 
-次に、例を示します。
+例:
 
 ```INF
 ;

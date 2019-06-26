@@ -16,12 +16,12 @@ keywords:
 - フレームワークは、WDK KMDF、I/O キューのオブジェクトをオブジェクトします。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ef636f79cd697c4fbf2d92fcd7f5f6af8fcf27c0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c91318ab44cfd0bbb76e78e91d51a87f98b534d4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378082"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384454"
 ---
 # <a name="framework-queue-objects"></a>フレームワーク キュー オブジェクト
 
@@ -29,7 +29,7 @@ ms.locfileid: "63378082"
 
 
 
-フレームワークのキュー オブジェクトが表す*の I/O キュー*ドライバーが受け取る要求は、I/O のコンテナー。 各ドライバーでは、デバイスごとに 1 つまたは複数の I/O キューを作成できます。 フレームワークのキュー オブジェクトのセットを定義する[イベント コールバック関数](https://msdn.microsoft.com/library/windows/hardware/dn265647)ドライバーを提供して、ドライバーを呼び出すことができるオブジェクトのメソッドのセット。
+フレームワークのキュー オブジェクトが表す*の I/O キュー*ドライバーが受け取る要求は、I/O のコンテナー。 各ドライバーでは、デバイスごとに 1 つまたは複数の I/O キューを作成できます。 フレームワークのキュー オブジェクトのセットを定義する[イベント コールバック関数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/)ドライバーを提供して、ドライバーを呼び出すことができるオブジェクトのメソッドのセット。
 
 フレームワークでは、送信先、ドライバーのデバイスの 1 つの I/O 要求を受け取る、フレームワークは、適切な I/O キューに要求を配置します。 ドライバーは、1 つまたは複数を登録します。 場合[要求ハンドラー](request-handlers.md)、フレームワーク通知には、ドライバー、I/O 要求があるたびにことができます。 または、ドライバーは、要求の I/O キューをポーリングできます。
 

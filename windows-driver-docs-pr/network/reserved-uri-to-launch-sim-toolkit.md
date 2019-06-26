@@ -4,12 +4,12 @@ description: SIM ツールキットを起動するための予約済み URI
 ms.assetid: d194b37e-427b-4fe2-a49a-050d06a7d3b9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 322e0e454812b9c1a0c3dc4fd53188b0447110ee
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d73bc5dc34995eec6854464553fab1d7e53f0edb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352992"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384712"
 ---
 # <a name="reserved-uri-to-launch-sim-toolkit"></a>SIM ツールキットを起動するための予約済み URI
 
@@ -21,7 +21,7 @@ URI スキームを`"ms-settings-uicctoolkit"`、SIM toolkit ランチャーが�
 ## <a name="launching-a-uri"></a>URI の起動
 
 
-UWP アプリへの呼び出しを使用して CPL SIM アプリケーションを読み込むことができます、 [Launcher.LaunchUriAsync(Uri)](https://msdn.microsoft.com/library/windows/apps/hh701480.aspx)からメソッド、**ランチャー**のオブジェクト、 **Windows.System**名前空間。
+UWP アプリへの呼び出しを使用して CPL SIM アプリケーションを読み込むことができます、 [Launcher.LaunchUriAsync(Uri)](https://docs.microsoft.com/uwp/api/Windows.System.Launcher#Windows_System_Launcher_LaunchUriAsync_Windows_Foundation_Uri_)からメソッド、**ランチャー**のオブジェクト、 **Windows.System**名前空間。
 
 次の例では、パートナーが、アプリから SIM アプリケーション CPL を起動する方法を示します。
 

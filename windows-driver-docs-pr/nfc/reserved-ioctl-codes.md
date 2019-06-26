@@ -10,12 +10,12 @@ keywords:
 description: コードについては予約済みの ioctl NFC ドライバーは、STATUS_INVALID_DEVICE_STATE を返す必要があります。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b8c17429afe64a4c7171363ebd757767182645f4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 226a61dd529991313a5415e7397111d75c0466b1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348502"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386511"
 ---
 # <a name="reserved-ioctl-codes"></a>予約済みの IOCTL コード
 
@@ -32,5 +32,5 @@ CTL\_コード (ファイル\_デバイス\_NFP、0x0100、 \*、 \*) を通じ�
 
  
 ## <a name="related-topics"></a>関連トピック
-[NFC のデバイス ドライバー インターフェイス (DDI) の概要](https://msdn.microsoft.com/library/windows/hardware/mt715815)  
-[フィールドの近接 DDI 参照の近く](https://msdn.microsoft.com/library/windows/hardware/jj866056)  
+[NFC のデバイス ドライバー インターフェイス (DDI) の概要](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
+[フィールドの近接 DDI 参照の近く](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  

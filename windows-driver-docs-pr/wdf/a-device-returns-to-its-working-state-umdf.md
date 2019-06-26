@@ -7,12 +7,12 @@ keywords:
 - デバイスの状態のシナリオ WDK UMDF の操作に戻る
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d7502f2501251da8668925fc1b070dbb949be5d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 4632df1c4725dc0888ea611187bc2bd5ca0723a5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573538"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385335"
 ---
 # <a name="a-device-returns-to-its-working-state"></a>デバイスが動作状態に戻る
 
@@ -23,7 +23,7 @@ ms.locfileid: "56573538"
 
 -   デバイスは、外部イベントを検出し、そのバス上ウェイク信号をトリガーします。 カーネル モードのバス ドライバーでは、ウェイク信号を検出します。
 
--   デバイスがアイドル状態だったし、ドライバーは呼び出し[ **IWDFDevice2::StopIdle**](https://msdn.microsoft.com/library/windows/hardware/ff556948)します。
+-   デバイスがアイドル状態だったし、ドライバーは呼び出し[ **IWDFDevice2::StopIdle**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdevice2-stopidle)します。
 
 -   システムの電源の状態は、低電力状態からの作業 (S0) 状態に変更されました。
 
@@ -31,15 +31,15 @@ ms.locfileid: "56573538"
 
 各 UMDF ベース関数とフィルター ドライバーのデバイスをサポートする、フレームワークは、一度に 1 つのドライバーをドライバー スタックの最下位レベルである driver 以降では、シーケンスで、次を行います。
 
-1.  フレームワークは、ドライバーの[ **IPnpCallback::OnD0Entry** ](https://msdn.microsoft.com/library/windows/hardware/ff556799) (存在する) 場合、コールバック関数。
+1.  フレームワークは、ドライバーの[ **IPnpCallback::OnD0Entry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-ipnpcallback-ond0entry) (存在する) 場合、コールバック関数。
 
-2.  ドライバーがデバイスの電源ポリシーの所有者である場合は、フレームワーク、 [ **IPowerPolicyCallbackWakeFromS0::OnDisarmWakeFromS0** ](https://msdn.microsoft.com/library/windows/hardware/ff556819)または[ **IPowerPolicyCallbackWakeFromSx::OnDisarmWakeFromSx** ](https://msdn.microsoft.com/library/windows/hardware/ff556828)コールバック関数。
+2.  ドライバーがデバイスの電源ポリシーの所有者である場合は、フレームワーク、 [ **IPowerPolicyCallbackWakeFromS0::OnDisarmWakeFromS0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-ipowerpolicycallbackwakefroms0-ondisarmwakefroms0)または[ **IPowerPolicyCallbackWakeFromSx::OnDisarmWakeFromSx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-ipowerpolicycallbackwakefromsx-ondisarmwakefromsx)コールバック関数。
 
-3.  フレームワークの再起動のすべてのデバイスの電源管理対象の I/O キューと呼び出しの[ **IQueueCallbackIoResume::OnIoResume** ](https://msdn.microsoft.com/library/windows/hardware/ff556865)コールバック関数 (必要な場合)。
+3.  フレームワークの再起動のすべてのデバイスの電源管理対象の I/O キューと呼び出しの[ **IQueueCallbackIoResume::OnIoResume** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iqueuecallbackioresume-onioresume)コールバック関数 (必要な場合)。
 
-4.  場合は、ドライバーは、自己管理型の I/O を使用して、フレームワークのドライバーの[ **IPnpCallbackSelfManagedIo::OnSelfManagedIoRestart** ](https://msdn.microsoft.com/library/windows/hardware/ff556785)コールバック関数。
+4.  場合は、ドライバーは、自己管理型の I/O を使用して、フレームワークのドライバーの[ **IPnpCallbackSelfManagedIo::OnSelfManagedIoRestart** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-ipnpcallbackselfmanagedio-onselfmanagediorestart)コールバック関数。
 
-次の手順を示す図を表示するには、[デバイスで、ユーザーのプラグ](a-user-plugs-in-a-device.md)を参照してください。
+次の手順を示す図を表示するには、次を参照してください。[デバイスで、ユーザーのプラグ](a-user-plugs-in-a-device.md)します。
 
  
 

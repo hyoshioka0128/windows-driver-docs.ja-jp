@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - OID_WDI_TASK_SET_RADIO_STATE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 93c39173824acf545f079d3cf83095a43ca4953e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 612104967d8c9034d4a66944c0fc5850ac5e1730
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365717"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387221"
 ---
 # <a name="oidwditasksetradiostate"></a>OID\_WDI\_タスク\_設定\_ラジオ\_状態
 
@@ -35,7 +35,7 @@ IHV コンポーネントは、ホストに要請されていない問題ラジ�
 
 | TLV                                                                               | 許可されている複数の TLV インスタンス | 省略可能 | 説明                                                                                                           |
 |-----------------------------------------------------------------------------------|--------------------------------|----------|-----------------------------------------------------------------------------------------------------------------------|
-| [**WDI\_TLV\_ラジオ\_状態\_パラメーター**](https://msdn.microsoft.com/library/windows/hardware/dn898043) |                                |          | 無線の望ましい状態。 これは、1 に設定して、オプションが有効になっています。 0 に設定すると、オプションは無効になります。 |
+| [**WDI\_TLV\_ラジオ\_状態\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-radio-state-parameters) |                                |          | 無線の望ましい状態。 これは、1 に設定して、オプションが有効になっています。 0 に設定すると、オプションは無効になります。 |
 
  
 
@@ -48,7 +48,7 @@ IHV コンポーネントは、ホストに要請されていない問題ラジ�
 
 [NDIS\_状態\_WDI\_INDICATION\_ラジオ\_状態](ndis-status-wdi-indication-radio-status.md)のアダプターのオプションの状態の変更をレポートにこのを示す値を使用します。 これは、アダプターによってハードウェア無線状態の変更が検出されたときとソフトウェア無線の変更は、ホストによってトリガーされたときに送信されます。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

@@ -7,12 +7,12 @@ keywords:
 - コピー防止の WDK のビデオのミニポート、クエリを実行します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9cf18cf5d08535313b9d5bd990595ffb6ae6bb78
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 62f81405aa63368913528ac8ec5d0e74d957de64
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392646"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385045"
 ---
 # <a name="querying-tv-connector-and-copy-protection-hardware"></a>テレビ コネクタおよびコピー防止ハードウェアのクエリ
 
@@ -20,7 +20,7 @@ ms.locfileid: "63392646"
 ## <span id="ddk_querying_tv_connector_and_copy_protection_hardware_gg"></span><span id="DDK_QUERYING_TV_CONNECTOR_AND_COPY_PROTECTION_HARDWARE_GG"></span>
 
 
-テレビ コネクタがあるアダプターのビデオのミニポート ドライバーを処理する必要があります、 [ **IOCTL\_ビデオ\_処理\_VIDEOPARAMETERS** ](https://msdn.microsoft.com/library/windows/hardware/ff567805)要求でその[ *HwVidStartIO* ](https://msdn.microsoft.com/library/windows/hardware/ff567367)関数。 ときに、IOCTL 要求は、IOCTL\_ビデオ\_処理\_VIDEOPARAMETERS、 **InputBuffer**のメンバー、 [**ビデオ\_要求\_パケット**](https://msdn.microsoft.com/library/windows/hardware/ff570547)へのポインターを構造体、 [ **VIDEOPARAMETERS** ](https://msdn.microsoft.com/library/windows/hardware/ff570173)構造体。 **DwCommand** VIDEOPARAMETERS 構造体のメンバーでは、ミニポート ドライバーがテレビ コネクタに関する情報を提供する必要があるかどうかを指定します (VP\_コマンド\_取得) または TV に指定した設定を適用コネクタ (担当副社長\_コマンド\_設定)。
+テレビ コネクタがあるアダプターのビデオのミニポート ドライバーを処理する必要があります、 [ **IOCTL\_ビデオ\_処理\_VIDEOPARAMETERS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddvdeo/ni-ntddvdeo-ioctl_video_handle_videoparameters)要求でその[ *HwVidStartIO* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nc-video-pvideo_hw_start_io)関数。 ときに、IOCTL 要求は、IOCTL\_ビデオ\_処理\_VIDEOPARAMETERS、 **InputBuffer**のメンバー、 [**ビデオ\_要求\_パケット**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/ns-video-_video_request_packet)へのポインターを構造体、 [ **VIDEOPARAMETERS** ](https://docs.microsoft.com/windows/desktop/api/tvout/ns-tvout-_videoparameters)構造体。 **DwCommand** VIDEOPARAMETERS 構造体のメンバーでは、ミニポート ドライバーがテレビ コネクタに関する情報を提供する必要があるかどうかを指定します (VP\_コマンド\_取得) または TV に指定した設定を適用コネクタ (担当副社長\_コマンド\_設定)。
 
 ときに、 **dwCommand** VIDEOPARAMETERS 構造体のメンバーは担当副社長\_コマンド\_GET、ミニポート ドライバーでは、次を実行する必要があります。
 
@@ -28,7 +28,7 @@ ms.locfileid: "63392646"
 
 -   テレビ コネクタでサポートされる機能ごと対応するフラグを設定する、 **dwFlags** VIDEOPARAMETERS 構造体のメンバー。
 
--   各フラグ設定、 **dwFlags**メンバー、機能とそのフラグに関連付けられている現在の設定を示す VIDEOPARAMETERS 構造体の対応するメンバーに値を代入します。 参照してください、 [ **VIDEOPARAMETERS** ](https://msdn.microsoft.com/library/windows/hardware/ff570173)リファレンス ページの特定のフラグに対応する構造体のメンバーの一覧。
+-   各フラグ設定、 **dwFlags**メンバー、機能とそのフラグに関連付けられている現在の設定を示す VIDEOPARAMETERS 構造体の対応するメンバーに値を代入します。 参照してください、 [ **VIDEOPARAMETERS** ](https://docs.microsoft.com/windows/desktop/api/tvout/ns-tvout-_videoparameters)リファレンス ページの特定のフラグに対応する構造体のメンバーの一覧。
 
 **寸法**VIDEOPARAMETERS 構造体のメンバーでは、テレビがビデオの再生または Windows デスクトップを表示するために最適化を出力するかどうかを指定します。 ビデオの値を\_モード\_テレビ\_再生、テレビは、ビデオの再生に適した出力を指定します (つまり、ちらつきのフィルターが無効になっていますおよびオーバーが有効になっている)。 ビデオの値を\_モード\_WIN\_グラフィックスでは、テレビは、Windows グラフィックス用に最適化された出力を指定します (は、最大ちらつきフィルターが有効になっているし、オーバー スキャンが無効になっています)。
 

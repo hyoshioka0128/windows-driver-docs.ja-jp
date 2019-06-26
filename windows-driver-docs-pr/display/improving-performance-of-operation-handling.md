@@ -7,12 +7,12 @@ keywords:
 - 操作コード WDK Direct3D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 46bbb0c655059882b7dfb6833d38b2f57c8f5c4e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1675253e8379b11b4041b6b20e599d9e978413ce
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325058"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383934"
 ---
 # <a name="improving-performance-of-operation-handling"></a>操作処理のパフォーマンスの向上
 
@@ -22,9 +22,9 @@ ms.locfileid: "63325058"
 
 ディスプレイ ドライバーのパフォーマンスを向上させるには、グラフィックス プリミティブを描画および状態の変更の処理は、ドライバーを実装するときに、次のものを確認する必要があります。
 
--   DirectX のランタイムは、レンダリング状態パラメーターを設定する冗長な要求をフィルター処理します。 つまり、アプリケーションを呼び出す場合、 **IDirect3DDevice8::SetRenderState**メソッドを複数回冗長な呼び出し、およびドライバーのシーンをレンダリングする前に、同じデバイスレンダリング状態パラメーターを設定するに、ランタイムをフィルター処理[**D3dDrawPrimitives2** ](https://msdn.microsoft.com/library/windows/hardware/ff544704)関数はこの特定のレンダリング状態パラメーターを設定する 1 つの要求のみを受け取ります。 そのため、このフィルター アクションを実行するには、ドライバーを実装することはありません。
+-   DirectX のランタイムは、レンダリング状態パラメーターを設定する冗長な要求をフィルター処理します。 つまり、アプリケーションを呼び出す場合、 **IDirect3DDevice8::SetRenderState**メソッドを複数回冗長な呼び出し、およびドライバーのシーンをレンダリングする前に、同じデバイスレンダリング状態パラメーターを設定するに、ランタイムをフィルター処理[**D3dDrawPrimitives2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/nc-d3dhal-lpd3dhal_drawprimitives2cb)関数はこの特定のレンダリング状態パラメーターを設定する 1 つの要求のみを受け取ります。 そのため、このフィルター アクションを実行するには、ドライバーを実装することはありません。
 
--   操作要求を受け取るたびにしないとプリミティブを描画する前に、ドライバーはレンダリング状態レジスタに書き込むだけする必要があります ([**D3DHAL\_DP2OPERATION**](https://msdn.microsoft.com/library/windows/hardware/ff545678))。
+-   操作要求を受け取るたびにしないとプリミティブを描画する前に、ドライバーはレンダリング状態レジスタに書き込むだけする必要があります ([**D3DHAL\_DP2OPERATION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/ne-d3dhal-_d3dhal_dp2operation))。
 
 詳細については**IDirect3DDevice8::SetRenderState**、Direct3D SDK のドキュメントを参照してください。
 

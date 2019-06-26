@@ -4,12 +4,12 @@ description: コンテナー ID の生成方法
 ms.assetid: baa3c045-05ee-4012-97a3-c6e575c897be
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 59224a00be8a9686389c0b859e6b2da65ae1a811
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f58a9839611130670b1b6c9bf0236530ba8e3b51
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325818"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386407"
 ---
 # <a name="how-container-ids-are-generated"></a>コンテナー ID の生成方法
 
@@ -18,7 +18,7 @@ Windows 7 以降、プラグ アンド プレイ (PnP) マネージャーはデ�
 
 -   バス ドライバーは、コンテナー ID を提供します。
 
-    コンテナー ID を devnode に割り当てるときに、PnP マネージャーはまず devnode のバス ドライバーがコンテナー ID を指定できるかどうか バス ドライバーを通じてコンテナー ID を提供する、 [ **IRP_MN_QUERY_ID** ](https://msdn.microsoft.com/library/windows/hardware/ff551679)の要求、 **Parameters.QueryId.IdType**フィールドに設定**BusQueryContainerID**.
+    コンテナー ID を devnode に割り当てるときに、PnP マネージャーはまず devnode のバス ドライバーがコンテナー ID を指定できるかどうか バス ドライバーを通じてコンテナー ID を提供する、 [ **IRP_MN_QUERY_ID** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-id)の要求、 **Parameters.QueryId.IdType**フィールドに設定**BusQueryContainerID**.
 
     バス ドライバーは物理デバイスのハードウェアに埋め込まれた正規コンテナー ID を取得または bus 固有一意の ID、デバイスのハードウェアからを使用して、コンテナー ID を生成するには バスに固有の一意の Id の例では、デバイスのシリアル番号またはデバイスのファームウェアでのメディア アクセス制御 (MAC) アドレスを示します。
 
@@ -32,7 +32,7 @@ Windows 7 以降、プラグ アンド プレイ (PnP) マネージャーはデ�
 
 -   PnP マネージャーでは、リムーバブル デバイスの機能を通じてコンテナー ID を生成します。
 
-    バス ドライバーは、列挙 devnode のコンテナーの ID を提供することはできません、PnP マネージャーは、デバイスの列挙されたすべての devnode のコンテナー ID を生成するのにリムーバブル デバイスの機能を使用します。 バス ドライバーへの応答でこのデバイスの機能の報告、 [ **IRP_MN_QUERY_CAPABILITIES** ](https://msdn.microsoft.com/library/windows/hardware/ff551664)要求。
+    バス ドライバーは、列挙 devnode のコンテナーの ID を提供することはできません、PnP マネージャーは、デバイスの列挙されたすべての devnode のコンテナー ID を生成するのにリムーバブル デバイスの機能を使用します。 バス ドライバーへの応答でこのデバイスの機能の報告、 [ **IRP_MN_QUERY_CAPABILITIES** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-capabilities)要求。
 
     詳細については、次を参照してください。[コンテナー Id は、リムーバブル デバイスの機能から生成された](container-ids-generated-from-the-removable-device-capability.md)します。
 

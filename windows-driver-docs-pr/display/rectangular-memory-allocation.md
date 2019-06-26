@@ -6,12 +6,12 @@ keywords:
 - 四角形のメモリ割り当て WDK DirectDraw
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 771eb07b14039e986bb71780aab07d3a5426010b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9a8824088141e8151e861bd21843c7f96a1421ac
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351481"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385039"
 ---
 # <a name="rectangular-memory-allocation"></a>四角形のメモリの割り当て
 
@@ -33,9 +33,9 @@ ms.locfileid: "63351481"
 
 ![四角形のメモリの割り当てを示す図](images/ddfig5.png)
 
-上記の図では、開始点 (によって示される、 **fpStart**のメンバー、 [**グラフィックスアクセラレータ**](https://msdn.microsoft.com/library/windows/hardware/ff570171)構造) の四角形のヒープを加算して計算されます、プライマリの画面の開始アドレスへのプライマリ画面の幅。 幅と高さは、四角形のヒープのサイズにも計算されます。 以下の Windows のキャッシュ メモリが残っている場合があります、ヒープを作成できます。
+上記の図では、開始点 (によって示される、 **fpStart**のメンバー、 [**グラフィックスアクセラレータ**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_videomemory)構造) の四角形のヒープを加算して計算されます、プライマリの画面の開始アドレスへのプライマリ画面の幅。 幅と高さは、四角形のヒープのサイズにも計算されます。 以下の Windows のキャッシュ メモリが残っている場合があります、ヒープを作成できます。
 
-次の擬似コードに示す方法、 [**グラフィックスアクセラレータ**](https://msdn.microsoft.com/library/windows/hardware/ff570171)構造が四角形のメモリを設定します。
+次の擬似コードに示す方法、 [**グラフィックスアクセラレータ**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_videomemory)構造が四角形のメモリを設定します。
 
 ```cpp
 /*

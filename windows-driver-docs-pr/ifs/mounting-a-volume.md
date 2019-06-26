@@ -9,12 +9,12 @@ keywords:
 - WDK のファイル システム ボリュームのマウント
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 68b5ea6428b95c2d4302f381ac3b281d3be3ad10
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: af73e8e5235e7530f4a3fd2e66d70658173205da
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384271"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383885"
 ---
 # <a name="mounting-a-volume"></a>ボリュームのマウント
 
@@ -24,15 +24,15 @@ ms.locfileid: "63384271"
 
 ボリュームのマウント プロセスは、通常次のように (つまり、パーティション、またはダイナミック ボリューム) の論理ボリューム上のファイルを開く要求によってトリガーされます。
 
-1.  ユーザーのアプリケーションを呼び出す**CreateFile**ファイルを開きます。 カーネル モード ドライバーは呼び出しまたは[ **ZwCreateFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566424)または[ **IoCreateFileSpecifyDeviceObjectHint**](https://msdn.microsoft.com/library/windows/hardware/ff548289)します。
+1.  ユーザーのアプリケーションを呼び出す**CreateFile**ファイルを開きます。 カーネル モード ドライバーは呼び出しまたは[ **ZwCreateFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntcreatefile)または[ **IoCreateFileSpecifyDeviceObjectHint**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-iocreatefilespecifydeviceobjecthint)します。
 
 2.  I/O マネージャーは、論理ボリュームが、要求の対象になるしがマウントされているかどうかを確認するには、そのデバイス オブジェクトをチェックを決定します。 場合、VPB\_マウント済みフラグが設定されて、ファイル システムで、ボリュームがマウントされています。
 
-3.  かどうか、ボリュームがシステムの起動後のファイル システムとしてマウントされていません (VPB、\_マウント済みフラグが設定されていない)、ボリュームのマウントを送信する I/O マネージャー ([**IRP\_MJ\_ファイル\_システム\_コントロール**](https://msdn.microsoft.com/library/windows/hardware/ff548670)、IRP\_MN\_マウント\_ボリューム) が要求のボリュームごとのファイル システムに要求します。
+3.  かどうか、ボリュームがシステムの起動後のファイル システムとしてマウントされていません (VPB、\_マウント済みフラグが設定されていない)、ボリュームのマウントを送信する I/O マネージャー ([**IRP\_MJ\_ファイル\_システム\_コントロール**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-file-system-control)、IRP\_MN\_マウント\_ボリューム) が要求のボリュームごとのファイル システムに要求します。
 
     すべての組み込みのファイル システムは、システムのブート後でも、− を必ずしも読み込まれます。 (を参照してください[システム ブート時にファイル システムに起こる](what-happens-to-file-systems-during-system-boot.md))。まだ読み込まれていない組み込みのファイル システムでは、I/O マネージャーは、ファイル システム認識エンジンに対する (FsRec) に代わって、これらのファイル システム ボリュームのブート セクターをチェックするボリュームのマウント要求を送信します。
 
-    I/O マネージャーに負荷のファイル システムに送信することによって応答 FsRec ボリュームがまだ読み込まれていないファイル システムでフォーマットされていると判断した場合 ([**IRP\_MJ\_ファイル\_システム\_コントロール** ](https://msdn.microsoft.com/library/windows/hardware/ff548670)、IRP\_MN\_ロード\_ファイル\_システム) 要求を FsRec で、ファイル システムを読み込みます。 次に、I/O マネージャーはファイル システムに元のボリュームのマウント要求を送信します。
+    I/O マネージャーに負荷のファイル システムに送信することによって応答 FsRec ボリュームがまだ読み込まれていないファイル システムでフォーマットされていると判断した場合 ([**IRP\_MJ\_ファイル\_システム\_コントロール** ](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-file-system-control)、IRP\_MN\_ロード\_ファイル\_システム) 要求を FsRec で、ファイル システムを読み込みます。 次に、I/O マネージャーはファイル システムに元のボリュームのマウント要求を送信します。
 
 4.  各ファイル システム ボリュームのマウント要求を受信するかどうか、ボリュームのフォーマットとその他の情報を示す、ボリュームがその特定のファイル システムでフォーマットされたことを確認するボリュームのブート セクターを調べます。 形式が一致すると、ファイル システムは、ボリュームをマウントします。
 

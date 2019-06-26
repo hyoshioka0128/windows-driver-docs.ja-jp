@@ -11,12 +11,12 @@ keywords:
 - プロパティ バッグ WDK フィルター パイプライン
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 42529a7cd318f4110ce683eb3c0a96399e6d6f21
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
-ms.translationtype: HT
+ms.openlocfilehash: 3998e550f4abf47a937242617042c5bc7d0a0a46
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560261"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382585"
 ---
 # <a name="filter-pipeline-configuration-file"></a>フィルター パイプライン構成ファイルに関するページ
 
@@ -68,7 +68,7 @@ ms.locfileid: "56560261"
 
 ### <a name="private-keywords"></a>Private キーワード
 
-[XPSDrv 構成モジュール](xpsdrv-configuration-module.md)配置できる*プライベート キーワード*PrintTicket のエントリを処理する際に、 [XPS ドライバーのドキュメント イベント](xps-driver-document-events.md)中に、 [ **DrvDocumentEvent** ](https://msdn.microsoft.com/library/windows/hardware/ff548544)関数呼び出し。 これらの PrintTicket エントリは、フィルターは、PrintTicket の読み取り中に印刷フィルター パイプラインで処理フィルターによって読み取られます。
+[XPSDrv 構成モジュール](xpsdrv-configuration-module.md)配置できる*プライベート キーワード*PrintTicket のエントリを処理する際に、 [XPS ドライバーのドキュメント イベント](xps-driver-document-events.md)中に、 [ **DrvDocumentEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winddiui/nf-winddiui-drvdocumentevent)関数呼び出し。 これらの PrintTicket エントリは、フィルターは、PrintTicket の読み取り中に印刷フィルター パイプラインで処理フィルターによって読み取られます。
 
 ### <a name="filter-pipeline-property-bag"></a>パイプラインのプロパティ バッグをフィルター処理します。
 
@@ -85,7 +85,7 @@ DrvPopulateFilterServices(
     );
 ```
 
-前の関数の詳細については、[ **DrvPopulateFilterServices**](https://msdn.microsoft.com/library/windows/hardware/hh768268)を参照してください。
+前の関数の詳細については、次を参照してください。 [ **DrvPopulateFilterServices**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/filterpipeline/nf-filterpipeline-drvpopulatefilterservices)します。
 
 次のコード例の XML 構文を示しています、 **&lt;FilterServiceProvider&gt;** フィルター パイプライン構成ファイル内の要素。
 

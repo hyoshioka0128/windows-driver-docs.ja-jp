@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1af822a5b3cd92ebfb9b5bdb8ccb4000ebbec66c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5caad2e010791a103f4f3d2797bf8bb14398da66
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358116"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367762"
 ---
 # <a name="bug-check-0x15d-socsubsystemfailurelivedump"></a>バグ チェック 0x15D:SOC\_サブシステム\_エラー\_LIVEDUMP
 
@@ -26,7 +26,7 @@ ms.locfileid: "63358116"
 SOC\_サブシステム\_エラー\_LIVEDUMP バグ コードが 0x0000015D の値を持ちます。 これは、チップ (SoC) サブシステム上のシステムが重大な障害が発生したし、ライブ カーネル ダンプをキャプチャしたことを示します。 SoC のサブシステムでは、このような状況でのバグ チェックは生成されません。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="bug-check-0x14b-socsubsystemfailure-parameters"></a>バグ チェック 0x14B SOC\_サブシステム\_エラー パラメーター
@@ -46,7 +46,7 @@ SOC\_サブシステム\_エラー\_LIVEDUMP バグ コードが 0x0000015D の�
 <tbody>
 <tr class="odd">
 <td align="left"><p>1</p></td>
-<td align="left"><p>アドレス、 <strong><a href="https://msdn.microsoft.com/library/windows/hardware/dn376404" data-raw-source="[SOC_SUBSYSTEM_FAILURE_DETAILS](https://msdn.microsoft.com/library/windows/hardware/dn376404)">SOC_SUBSYSTEM_FAILURE_DETAILS</a></strong>構造体。</p></td>
+<td align="left"><p>アドレス、 <strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_soc_subsystem_failure_details" data-raw-source="[SOC_SUBSYSTEM_FAILURE_DETAILS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_soc_subsystem_failure_details)">SOC_SUBSYSTEM_FAILURE_DETAILS</a></strong>構造体。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>2</p></td>
@@ -58,7 +58,7 @@ SOC\_サブシステム\_エラー\_LIVEDUMP バグ コードが 0x0000015D の�
 </tr>
 <tr class="even">
 <td align="left"><p>4</p></td>
-<td align="left"><p>任意。 ベンダーから提供されたデータ ブロックのアドレス。</p></td>
+<td align="left"><p>(省略可能)。 ベンダーから提供されたデータ ブロックのアドレス。</p></td>
 </tr>
 </tbody>
 </table>

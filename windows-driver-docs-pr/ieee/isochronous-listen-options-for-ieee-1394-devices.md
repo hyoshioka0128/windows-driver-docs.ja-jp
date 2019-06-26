@@ -13,12 +13,12 @@ keywords:
 - WDK の IEEE 1394 ヘッダー バス
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f0f3a23f2d45c6d8b7f24114b059ef599cc3901c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: af351cbb16b365379e4de5251f3c86aa0857fe97
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63371006"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385770"
 ---
 # <a name="isochronous-listen-options-for-ieee-1394-devices"></a>IEEE 1394 デバイスの等時性リッスンのオプション
 
@@ -30,7 +30,7 @@ ms.locfileid: "63371006"
 
 ### <a name="receiving-or-stripping-packet-headers"></a>受信またはパケット ヘッダーの削除
 
-ホスト コント ローラーは、自動的にオフ アイソクロナスのパケット ヘッダーを取り除きます可能性がありますいません。 バス ドライバーの設定、ホスト\_情報\_サポート\_RETURNING\_ISO\_HDR フラグの**HostCapabilities**のメンバー、 [**取得\_ローカル\_ホスト\_情報 2** ](https://msdn.microsoft.com/library/windows/hardware/ff537147)場合は、ホスト コント ローラーを構造体*いない*アイソクロナス パケットからヘッダーを自動的に削除します。
+ホスト コント ローラーは、自動的にオフ アイソクロナスのパケット ヘッダーを取り除きます可能性がありますいません。 バス ドライバーの設定、ホスト\_情報\_サポート\_RETURNING\_ISO\_HDR フラグの**HostCapabilities**のメンバー、 [**取得\_ローカル\_ホスト\_情報 2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/1394/ns-1394-_get_local_host_info2)場合は、ホスト コント ローラーを構造体*いない*アイソクロナス パケットからヘッダーを自動的に削除します。
 
 また、ホスト コント ローラーがヘッダーの構成可能な削除をサポートすることがあります。 バス ドライバーの設定、ホスト\_情報\_サポート\_アイソクロナス\_HostCapabilities ホスト コント ローラーを構成して、ヘッダーを削除する場合の STRIPPING フラグ。 ドライバーの送信ヘッダーを削除するホスト コント ローラーで実際に構成する、 [**要求\_アイソクロナス\_ALLOCATE\_リソース**](https://msdn.microsoft.com/library/windows/hardware/ff537649)リソースに要求\_ストリップ\_追加\_QUADLETS フラグを設定します。 **NQuadletsToStrip**メンバーは、各パケットの先頭を取り除く quadlets の数を指定します。 たとえば、 **nQuadletsToStrip** = 1 は isochronous パケット ヘッダーを取り除きます。
 
@@ -48,7 +48,7 @@ DMA のストリーム ベースのホスト コント ローラーは、書き�
 
 ホスト コント ローラーは、DMA の両方の種類をサポートする場合、バス ドライバーは、既定値のストリーム ベースの DMA ホスト コント ローラーを設定します。 ホスト コント ローラーをパケットに基づく DMA をリセットするドライバーが、リソースを設定します。\_使用\_パケット\_リソース ハンドルを割り当てるときに基づくフラグ。
 
-ドライバーを使用して、 [**要求\_取得\_ローカル\_ホスト\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff537644) bus 要求 (で、 **u.GetLocalHostInformation.nLevel** 、IRB のメンバー = GET\_ホスト\_機能) ホスト コント ローラーの特性を判断します。 バス ドライバーを返します、 [**取得\_ローカル\_ホスト\_情報 2** ](https://msdn.microsoft.com/library/windows/hardware/ff537147)構造、および内のフラグの設定、 **HostCapabilities**ホスト コント ローラーのサポートを示すメンバー:
+ドライバーを使用して、 [**要求\_取得\_ローカル\_ホスト\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff537644) bus 要求 (で、 **u.GetLocalHostInformation.nLevel** 、IRB のメンバー = GET\_ホスト\_機能) ホスト コント ローラーの特性を判断します。 バス ドライバーを返します、 [**取得\_ローカル\_ホスト\_情報 2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/1394/ns-1394-_get_local_host_info2)構造、および内のフラグの設定、 **HostCapabilities**ホスト コント ローラーのサポートを示すメンバー:
 
 <table>
 <colgroup>

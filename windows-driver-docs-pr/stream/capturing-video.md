@@ -7,17 +7,17 @@ keywords:
 - ビデオの WDK AVStream、プロセスのキャプチャのキャプチャ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 95a6e812fa232d2a6f8f25040e32aadb5c7274ad
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d2e5e725e594d50921ea9c081e2cbbe21420f621
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384746"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386659"
 ---
 # <a name="capturing-video"></a>ビデオのキャプチャ
 
 
-ストリームが開始すると、 **KSSTATE\_実行**状態では、キャプチャ プロセスが開始されます。 指定したフレームの間隔に基づいて、 **AvgTimePerFrame**のメンバー、 [ **KS\_VIDEOINFOHEADER** ](https://msdn.microsoft.com/library/windows/hardware/ff567700)ストリームが開かれたときに渡された構造体、ストリームを SRB を介して渡されたバッファーにイメージを転送する\_読み取り\_データ。 キャプチャされたイメージに関する追加情報が返される、 [ **KS\_フレーム\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff567645)の末尾に追加される構造体、 [ **KSSTREAM\_ヘッダー** ](https://msdn.microsoft.com/library/windows/hardware/ff567138)構造体。
+ストリームが開始すると、 **KSSTATE\_実行**状態では、キャプチャ プロセスが開始されます。 指定したフレームの間隔に基づいて、 **AvgTimePerFrame**のメンバー、 [ **KS\_VIDEOINFOHEADER** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_videoinfoheader)ストリームが開かれたときに渡された構造体、ストリームを SRB を介して渡されたバッファーにイメージを転送する\_読み取り\_データ。 キャプチャされたイメージに関する追加情報が返される、 [ **KS\_フレーム\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_frame_info)の末尾に追加される構造体、 [ **KSSTREAM\_ヘッダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksstream_header)構造体。
 
 次のコード例は、追加された KS を取得します。\_フレーム\_情報構造体。
 
@@ -32,7 +32,7 @@ PKS_FRAME_INFO pFrameInfo = (PKS_FRAME_INFO) (pDataPacket + 1);
 *pFrameInfo = pStrmEx->FrameInfo; // Get the frame info from the minidriver-defined stream extension
 ```
 
-更新するが最善の**PictureNumber**または**DropCount**のメンバー [ **KS\_フレーム\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff567645)、[ **KS\_VBI\_フレーム\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff567694)、または[ **KSPROPERTY\_DROPPEDFRAMES\_現在\_S** ](https://msdn.microsoft.com/library/windows/hardware/ff565138)への移行で、 **KSSTATE\_ACQUIRE**状態。
+更新するが最善の**PictureNumber**または**DropCount**のメンバー [ **KS\_フレーム\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_frame_info)、[ **KS\_VBI\_フレーム\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_vbi_frame_info)、または[ **KSPROPERTY\_DROPPEDFRAMES\_現在\_S** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_droppedframes_current_s)への移行で、 **KSSTATE\_ACQUIRE**状態。
 
 これらのメンバーからの移行時を更新することができます、 **KSSTATE\_ACQUIRE**状態へ、 **KSSTATE\_一時停止**状態。
 

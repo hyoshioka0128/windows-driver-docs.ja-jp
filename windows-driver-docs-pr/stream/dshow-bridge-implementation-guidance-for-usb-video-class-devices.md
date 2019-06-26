@@ -3,12 +3,12 @@ title: UVC デバイス用の DShow Bridge 実装ガイダンス
 description: UVC デバイス DShow ブリッジ実装ガイダンスを提供します。
 ms.date: 05/17/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ccaa5be9ac2ff404335aaa5dc2f3a31caf75464
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2cb0a0fdcf2db20a9961adbd040eb7cd6815112e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363611"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387169"
 ---
 # <a name="dshow-bridge-implementation-guidance-for-uvc-devices"></a>UVC デバイス用の DShow Bridge 実装ガイダンス
 
@@ -68,7 +68,7 @@ USB の OS ディスクリプターを使用して DShow ブリッジを構成�
 
 ヘッダー セクションには、長さの合計とバージョン番号を含む、全体の拡張プロパティの記述子がについて説明します。
 
-| Offset | フィールド      | サイズ (バイト) | 値      | 説明                     |
+| Offset | フィールド      | サイズ (バイト) | Value      | 説明                     |
 |--------|------------|--------------|------------|---------------------------------|
 | 0      | dwLength   | 4            | 0x0000004c | 10 進数の 76                      |
 | 4      | bcdVersion | 2            | 0x0100     | バージョン 1.0                     |
@@ -79,7 +79,7 @@ USB の OS ディスクリプターを使用して DShow ブリッジを構成�
 
 USB HID デバイスは、作成する 1 つのカスタム プロパティ セクションに OS の記述子がプロパティの拡張、 **EnableDshowRedirection** DWORD レジストリ キー。
 
-| Offset | フィールド | サイズ (バイト) | 値 |
+| Offset | フィールド | サイズ (バイト) | Value |
 |--------|----------------------|---------|-------------------------------------------|
 | 0      | ない dwSize               | 4       | 0x00000042 (このプロパティの 66 のバイト数)   |
 | 4      | dwPropertyDataType   | 4       | 0x00000004 (REG\_DWORD\_リトル\_ENDIAN)   |
@@ -94,7 +94,7 @@ USB HID デバイスは、作成する 1 つのカスタム プロパティ セ�
 
 #### <a name="custom-property-section"></a>カスタム プロパティ」セクション
 
-| Offset | フィールド | サイズ (バイト) | 値 |
+| Offset | フィールド | サイズ (バイト) | Value |
 |--------|----------------------|----------|-----------------------------------------|
 | 0      | wLength              | 2        | この記述子のバイト長      |
 | 4      | wDescriptorType      | 2        | 0x00000004 (REG\_DWORD\_リトル\_ENDIAN) |
@@ -149,4 +149,4 @@ UCHAR Example2\_MSOS20DescriptorSetForFutureWindows\[0x48\] =
 
 [一般的な親の USB ドライバー (Usbccgp.sys)](https://docs.microsoft.com/windows-hardware/drivers/usbcon/usb-common-class-generic-parent-driver)
 
-[USB 仕様](http://www.usb.org/developers/docs)
+[USB 仕様](https://www.usb.org/documents)

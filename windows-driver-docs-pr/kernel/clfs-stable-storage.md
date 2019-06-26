@@ -19,12 +19,12 @@ keywords:
 - レコードのシーケンス番号の WDK CLFS
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fd6fb99c9d0f549a19ea8e905068d198df9dd605
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1845d10b75f80205290b987b695c4dd17d32e691
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343753"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383341"
 ---
 # <a name="clfs-stable-storage"></a>CLFS の安定した記憶域
 
@@ -56,7 +56,7 @@ CLFS は、論理的なコンテナーの識別子を使用して、クライア
 
 1.  クライアントは、次の 3 つのすべてのコンテナーに格納するには、十分なログ レコードを書き込みます。
 
-2.  クライアント ログを基本に設定します (呼び出して[ **ClfsAdvanceLogBase** ](https://msdn.microsoft.com/library/windows/hardware/ff540773)または[ **ClfsWriteRestartArea**](https://msdn.microsoft.com/library/windows/hardware/ff541770)) コンテナー内のレコードのいずれかに。2 です。 行うと、クライアントはコンテナー 1 内のレコードを必要がなくなったこと示します。
+2.  クライアント ログを基本に設定します (呼び出して[ **ClfsAdvanceLogBase** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-clfsadvancelogbase)または[ **ClfsWriteRestartArea**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-clfswriterestartarea)) コンテナー内のレコードのいずれかに。2 です。 行うと、クライアントはコンテナー 1 内のレコードを必要がなくなったこと示します。
 
 3.  クライアントは、別のレコードをログに書き込むし、新規に書き込まれるレコードの LSN を取得します。 その LSN で論理的なコンテナーの識別子には 4 です。 レコードは安定ストレージにフラッシュされる、物理コンテナー 1 に、クライアントが 4 の論理コンテナーに表示されるレコードは変わります。
 
@@ -68,11 +68,11 @@ CLFS は、論理的なコンテナーの識別子を使用して、クライア
 
 レコードの LSN を指定するには、次の関数を呼び出すことでの論理コンテナーの識別子、ブロックのオフセット、およびレコードのシーケンス番号を抽出できます。
 
-[**ClfsLsnContainer**](https://msdn.microsoft.com/library/windows/hardware/ff541573)
+[**ClfsLsnContainer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-clfslsncontainer)
 
-[**ClfsLsnBlockOffset**](https://msdn.microsoft.com/library/windows/hardware/ff541569)
+[**ClfsLsnBlockOffset**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-clfslsnblockoffset)
 
-[**ClfsLsnRecordSequence**](https://msdn.microsoft.com/library/windows/hardware/ff541615)
+[**ClfsLsnRecordSequence**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-clfslsnrecordsequence)
 
 論理的なコンテナーの識別子が、32 ビット数値 2 ^32 の可能な論理的なコンテナーの識別子、およびそれらが 0 xffffffff を範囲 0x0 内にあります。 ストリームが最大で 2 ^32 の論理コンテナーです。
 

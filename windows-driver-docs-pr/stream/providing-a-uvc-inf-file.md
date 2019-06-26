@@ -9,12 +9,12 @@ keywords:
 - サンプル コード WDK USB ビデオ クラス、UVC INF ファイル
 ms.date: 09/12/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 50ff6912c15ae7686a297bed448f8db329176fcd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 71390fdf0e8d8247d8367547e5dccb022f5635c3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390877"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385687"
 ---
 # <a name="providing-a-uvc-inf-file"></a>UVC INF ファイルの提供
 
@@ -158,7 +158,7 @@ UVC ドライバーでは、Windows Server 2003 と Windows Vista またはそ�
 
 低フレーム レートの条件で EOF ビットは、次のフレームの FID ビットよりも高速完了を報告場合があります。 EOF ビットは、mpeg-2 フレームの配信の待機時間を短縮できます。
 
-AddReg ディレクティブの位置指定の構文の詳細については、次を参照してください。 [ **INF AddReg ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546320)します。
+AddReg ディレクティブの位置指定の構文の詳細については、次を参照してください。 [ **INF AddReg ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)します。
 
 ```INF
 [MyDevice.NT.Services]

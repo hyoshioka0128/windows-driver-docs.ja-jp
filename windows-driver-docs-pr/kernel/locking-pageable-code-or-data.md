@@ -11,12 +11,12 @@ keywords:
 - ページ キーワード WDK
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e6f93d8e998f3abdf99cfbfec14edcdba6fc7e0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d5760dc4474e3c01c422af72e2f1a74fc7d22f17
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381362"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384224"
 ---
 # <a name="locking-pageable-code-or-data"></a>ページング可能なコードまたはデータのロック
 
@@ -28,7 +28,7 @@ ms.locfileid: "63381362"
 
 (モデム) などの散発的に使用されるデバイスのドライバーは、管理対象デバイスがアクティブでないときにシステムの領域を解放できます。 1 つのセクションでアクティブなデバイスをサービスに常駐する必要があるコードを配置して、ドライバーでコードがメモリにロック、デバイスが使用されている場合は、このセクションをページング可能として指定することができます。 ドライバーのデバイスが開かれると、オペレーティング システムがメモリにページング可能なセクションを表示し、ドライバー ロックまでありますが不要になった。
 
-システム CD オーディオ ドライバーのコードでは、この手法を使用します。 ドライバーのコードは、デバイスの製造元によってページング可能なセクションにグループ化されます。 特定のブランドこと、特定のシステム上に存在する場合があります。 また、CD-ROM がシステムに存在する場合でもからアクセスされる頻度が低い、CD の種類によってページング可能なセクションにコードをグループ化により、特定のコンピューター上に存在しないデバイス用にコードが読み込まれますことはありませんので。 ただし、デバイスがアクセスされると、システムは、適切なデバイス用のコードを読み込みます。 ドライバーの呼び出し後、 [ **MmLockPagableCodeSection** ](https://msdn.microsoft.com/library/windows/hardware/ff554601)ルーチンの説明に従って、以下にそのコードをそのデバイスの中にメモリにロックが使用されています。
+システム CD オーディオ ドライバーのコードでは、この手法を使用します。 ドライバーのコードは、デバイスの製造元によってページング可能なセクションにグループ化されます。 特定のブランドこと、特定のシステム上に存在する場合があります。 また、CD-ROM がシステムに存在する場合でもからアクセスされる頻度が低い、CD の種類によってページング可能なセクションにコードをグループ化により、特定のコンピューター上に存在しないデバイス用にコードが読み込まれますことはありませんので。 ただし、デバイスがアクセスされると、システムは、適切なデバイス用のコードを読み込みます。 ドライバーの呼び出し後、 [ **MmLockPagableCodeSection** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmlockpagablecodesection)ルーチンの説明に従って、以下にそのコードをそのデバイスの中にメモリにロックが使用されています。
 
 で、名前付きセクションにページング可能なコードを特定するのには、次のコンパイラ ディレクティブでマークします。
 
@@ -44,9 +44,9 @@ ms.locfileid: "63381362"
 #endif 
 ```
 
-ページング可能なドライバーのコードを常駐させるメモリ内でロックされているドライバーを呼び出すと[ **MmLockPagableCodeSection**](https://msdn.microsoft.com/library/windows/hardware/ff554601)、ページング可能なコードでは、アドレス (通常はドライバー ルーチンのエントリ ポイント) を渡すセクション。 **MmLockPagableCodeSection**の呼び出しで参照されているルーチンを含むセクションの内容全体をロックします。 つまり、この呼び出しによって、同じページに関連付けられたすべてのルーチン*Xxx*識別子が常駐しており、ロックされたメモリにします。
+ページング可能なドライバーのコードを常駐させるメモリ内でロックされているドライバーを呼び出すと[ **MmLockPagableCodeSection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmlockpagablecodesection)、ページング可能なコードでは、アドレス (通常はドライバー ルーチンのエントリ ポイント) を渡すセクション。 **MmLockPagableCodeSection**の呼び出しで参照されているルーチンを含むセクションの内容全体をロックします。 つまり、この呼び出しによって、同じページに関連付けられたすべてのルーチン*Xxx*識別子が常駐しており、ロックされたメモリにします。
 
-**MmLockPagableCodeSection**セクションのロックを解除するときに使用されるハンドルを返します (呼び出すことによって、 [ **MmUnlockPagableImageSection** ](https://msdn.microsoft.com/library/windows/hardware/ff556377)ルーチン) またはときに、ドライバーがからセクションをロックする必要がありますコード内の場所を追加します。
+**MmLockPagableCodeSection**セクションのロックを解除するときに使用されるハンドルを返します (呼び出すことによって、 [ **MmUnlockPagableImageSection** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmunlockpagableimagesection)ルーチン) またはときに、ドライバーがからセクションをロックする必要がありますコード内の場所を追加します。
 
 ドライバーとして扱うことも使用頻度の低いデータ ページング可能なすぎる、ページ アウトできますをサポートするデバイスがアクティブになるまでのようにします。 たとえば、システム ミキサーのドライバーは、ページング可能なデータを使用します。 ミキサーのデバイスには、このドライバーことができるように、データ ページング可能なは、それに関連付けられている非同期 I/O がありません。
 
@@ -74,11 +74,11 @@ CHAR Array2[64*1024];
 
 ゼロにグローバル変数を暗黙的に初期化ディスク上の実行可能ファイルのサイズを縮小し、ゼロに明示的な初期化をお勧めします。 明示的なゼロ初期化は、特定のデータ セクションでは、変数を配置するために必要がある場合を除く避ける必要があります。
 
-ドライバーの呼び出しでメモリ常駐データのセクションを作成して、メモリにロックする[ **MmLockPagableDataSection**](https://msdn.microsoft.com/library/windows/hardware/ff554607)、データ項目を渡すことがページング可能なデータ セクションに表示されます。 **MmLockPagableDataSection**後続ロックまたは要求をロック解除に使用するハンドルを返します。
+ドライバーの呼び出しでメモリ常駐データのセクションを作成して、メモリにロックする[ **MmLockPagableDataSection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmlockpagabledatasection)、データ項目を渡すことがページング可能なデータ セクションに表示されます。 **MmLockPagableDataSection**後続ロックまたは要求をロック解除に使用するハンドルを返します。
 
-ロックされているセクションのページング可能な状態を復元するには、呼び出す[ **MmUnlockPagableImageSection**](https://msdn.microsoft.com/library/windows/hardware/ff556377)、によって返されるハンドルの値を渡す[ **MmLockPagableCodeSection**](https://msdn.microsoft.com/library/windows/hardware/ff554601)または[ **MmLockPagableDataSection**](https://msdn.microsoft.com/library/windows/hardware/ff554607)必要に応じて、します。 ドライバーの[*アンロード*](https://msdn.microsoft.com/library/windows/hardware/ff564886)ルーチンを呼び出す必要があります**MmUnlockPagableImageSection**がコードとデータのセクションではロックを取得して各ハンドルを解放します。
+ロックされているセクションのページング可能な状態を復元するには、呼び出す[ **MmUnlockPagableImageSection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmunlockpagableimagesection)、によって返されるハンドルの値を渡す[ **MmLockPagableCodeSection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmlockpagablecodesection)または[ **MmLockPagableDataSection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmlockpagabledatasection)必要に応じて、します。 ドライバーの[*アンロード*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_unload)ルーチンを呼び出す必要があります**MmUnlockPagableImageSection**がコードとデータのセクションではロックを取得して各ハンドルを解放します。
 
-メモリ マネージャーがメモリにページをロックする前に、読み込まれたモジュール一覧を検索する必要がありますので、負荷の高い操作は、セクションのロックです。 場合は、コード内のさまざまな場所からのセクションのロックのドライバーを使用するより効率的な[ **MmLockPagableSectionByHandle** ](https://msdn.microsoft.com/library/windows/hardware/ff554610)その最初の呼び出し後**MmLockPagable*Xxx*セクション**します。
+メモリ マネージャーがメモリにページをロックする前に、読み込まれたモジュール一覧を検索する必要がありますので、負荷の高い操作は、セクションのロックです。 場合は、コード内のさまざまな場所からのセクションのロックのドライバーを使用するより効率的な[ **MmLockPagableSectionByHandle** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-mmlockpagablesectionbyhandle)その最初の呼び出し後**MmLockPagable*Xxx*セクション**します。
 
 渡されるハンドル**MmLockPagableSectionByHandle**以前の呼び出しによって返されたハンドルは、 **MmLockPagableCodeSection**または**MmLockPagableDataSection**します。
 

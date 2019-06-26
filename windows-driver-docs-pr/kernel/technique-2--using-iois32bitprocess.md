@@ -7,12 +7,12 @@ keywords:
 - IoIs32bitProcess
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e333cab00c1557e43fc78299fc079280a945fef
-ms.sourcegitcommit: 102deacad36c96892cbbc39c02f41fe68e60470b
+ms.openlocfilehash: 296c8ca40fc530fead46a45c5be8499c62e7d77a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66400857"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382961"
 ---
 # <a name="technique-2-using-iois32bitprocess"></a>方法 2: IoIs32bitProcess の使用
 
@@ -20,7 +20,7 @@ ms.locfileid: "66400857"
 
 
 
-32 ビットおよび 64 ビットのアプリケーションからの I/O 要求を別の IOCTL または FSCTL コントロールのコードを定義するは実用的がない場合、ドライバーの I/O 要求を送信するアプリケーションの種類を決定することは左側です。 Microsoft Windows の 64 ビット バージョンには、新しいカーネル モードのルーチンが導入されています[ **IoIs32bitProcess**](https://msdn.microsoft.com/library/windows/hardware/ff549372)、32 ビット ユーザー モード プロセスで現在の I/O 要求が発生したかどうかを検出します。 そのプロトタイプは。
+32 ビットおよび 64 ビットのアプリケーションからの I/O 要求を別の IOCTL または FSCTL コントロールのコードを定義するは実用的がない場合、ドライバーの I/O 要求を送信するアプリケーションの種類を決定することは左側です。 Microsoft Windows の 64 ビット バージョンには、新しいカーネル モードのルーチンが導入されています[ **IoIs32bitProcess**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iois32bitprocess)、32 ビット ユーザー モード プロセスで現在の I/O 要求が発生したかどうかを検出します。 そのプロトタイプは。
 
 ```cpp
 BOOLEAN

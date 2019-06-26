@@ -11,12 +11,12 @@ keywords:
 - ファイルへのハンドルを開く
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a802bf10a78f6935d9cdb6196a2655ab2ccbaa2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0abdad84a26cafe000c120249d92f865a146295d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382902"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384930"
 ---
 # <a name="opening-a-handle-to-a-file"></a>ファイルのハンドルを開く
 
@@ -26,9 +26,9 @@ ms.locfileid: "63382902"
 
 ファイルを識別するハンドルを開くには、次の手順に従います。
 
-1.  作成、 [**オブジェクト\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff557749)構造体、および呼び出し、 [ **InitializeObjectAttributes** ](https://msdn.microsoft.com/library/windows/hardware/ff547804)初期化するためにマクロ構造体。 ファイルのオブジェクトの名前を指定する、 *ObjectName*パラメーターを**InitializeObjectAttributes**します。
+1.  作成、 [**オブジェクト\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfwdm/ns-wudfwdm-_object_attributes)構造体、および呼び出し、 [ **InitializeObjectAttributes** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfwdm/nf-wudfwdm-initializeobjectattributes)初期化するためにマクロ構造体。 ファイルのオブジェクトの名前を指定する、 *ObjectName*パラメーターを**InitializeObjectAttributes**します。
 
-2.  渡すことによって、ファイルへのハンドルを開く、**オブジェクト\_属性**構造体を[ **IoCreateFile**](https://msdn.microsoft.com/library/windows/hardware/ff548418)、 [ **ZwCreateFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566424)、または[ **ZwOpenFile**](https://msdn.microsoft.com/library/windows/hardware/ff567011)します。
+2.  渡すことによって、ファイルへのハンドルを開く、**オブジェクト\_属性**構造体を[ **IoCreateFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatefile)、 [ **ZwCreateFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntcreatefile)、または[ **ZwOpenFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntopenfile)します。
 
     ファイルが存在しない場合**IoCreateFile**と**ZwCreateFile**は、作成**ZwOpenFile**状態を返す\_オブジェクト\_名前\_いない\_が見つかりました。
 
@@ -75,7 +75,7 @@ ms.locfileid: "63382902"
 
  
 
-使用できる値の詳細については*DesiredAccess*を参照してください[ **ZwCreateFile**](https://msdn.microsoft.com/library/windows/hardware/ff566424)します。
+使用できる値の詳細については*DesiredAccess*を参照してください[ **ZwCreateFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntcreatefile)します。
 
  
 

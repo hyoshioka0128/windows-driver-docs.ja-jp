@@ -6,33 +6,33 @@ keywords:
 - OpenPrinter
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f1fca25391ddbc2f2906e787ae2f2b8617ab8fa5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 03b116662632e42bc5e068060d5d83a6cdd8348f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339912"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385965"
 ---
 # <a name="openprinter"></a>OpenPrinter
 
 
-印刷キューを開いたときに (を使用して、`OpenPrinter`関数)、印刷ドライバーが読み込まれるとの次のメソッド、 [IPrintTicketProvider インターフェイス](https://msdn.microsoft.com/library/windows/hardware/ff554375)この順序で呼び出されます。
+印刷キューを開いたときに (を使用して、`OpenPrinter`関数)、印刷ドライバーが読み込まれるとの次のメソッド、 [IPrintTicketProvider インターフェイス](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff554375(v=vs.85))この順序で呼び出されます。
 
-1.  [**IPrintTicketProvider::GetSupportedVersions**](https://msdn.microsoft.com/library/windows/hardware/ff554371)
+1.  [**IPrintTicketProvider::GetSupportedVersions**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff554371(v=vs.85))
 
-2.  [**IPrintTicketProvider::BindPrinter**](https://msdn.microsoft.com/library/windows/hardware/ff554354)
+2.  [**IPrintTicketProvider::BindPrinter**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff554354(v=vs.85))
 
-3.  [**IPrintTicketProvider::QueryDeviceNamespace**](https://msdn.microsoft.com/library/windows/hardware/ff554378)
+3.  [**IPrintTicketProvider::QueryDeviceNamespace**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff554378(v=vs.85))
 
 メソッド、 **IPrintTicketProvider** Unidrv または PScript5 印刷ドライバーの呼び出しで、インターフェイス、 **IPrintOemPrintTicketProvider**ドライバーによってホストされている各プラグインのメソッド。 次の図とリストの表示方法これら呼び出しが行われるときに`OpenPrinter`が呼び出されます。
 
 ![シーケンスを呼び出すようになりましたを示す図](images/ptpcopen-uml.gif)
 
-1.  各プラグインは、呼び出し[ **IPrintOemPrintTicketProvider::GetSupportedVersions**](https://msdn.microsoft.com/library/windows/hardware/ff553170)します。
+1.  各プラグインは、呼び出し[ **IPrintOemPrintTicketProvider::GetSupportedVersions**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemprintticketprovider-getsupportedversions)します。
 
-2.  各プラグインは、呼び出し[ **IPrintOemPrintTicketProvider::BindPrinter**](https://msdn.microsoft.com/library/windows/hardware/ff553151)します。
+2.  各プラグインは、呼び出し[ **IPrintOemPrintTicketProvider::BindPrinter**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff553151(v=vs.85))します。
 
-3.  各プラグインは、呼び出し[ **IPrintOemPrintTicketProvider::QueryDeviceDefaultNamespace**](https://msdn.microsoft.com/library/windows/hardware/ff553180)します。
+3.  各プラグインは、呼び出し[ **IPrintOemPrintTicketProvider::QueryDeviceDefaultNamespace**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemprintticketprovider-querydevicedefaultnamespace)します。
 
  
 

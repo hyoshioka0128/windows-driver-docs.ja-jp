@@ -9,17 +9,17 @@ keywords:
 - 終了は、エンジン セッション WDK Windows フィルタ リング プラットフォームのフィルター処理します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3ab0edc9e4e4c9225c7007f141cd25e037ab3173
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ff129f1a737643dc3ee0cc8e2eeb286680aa4835
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63338429"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384216"
 ---
 # <a name="closing-a-session-to-the-filter-engine"></a>フィルター エンジンへのセッションを閉じる
 
 
-コールアウト ドライバーが必要な管理タスクを実行した後は、フィルター エンジンへのセッションが閉じる必要があります。 コールアウト ドライバーは呼び出すことによって、 [ **FwpmEngineClose0** ](https://msdn.microsoft.com/library/windows/hardware/ff550072)関数。 次に、例を示します。
+コールアウト ドライバーが必要な管理タスクを実行した後は、フィルター エンジンへのセッションが閉じる必要があります。 コールアウト ドライバーは呼び出すことによって、 [ **FwpmEngineClose0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpmk/nf-fwpmk-fwpmengineclose0)関数。 例:
 
 ```C++
 status =

@@ -1,17 +1,17 @@
 ---
-title: ユニバーサル INF ファイルの使用
+title: Using a Universal INF File (ユニバーサル INF ファイルの使用)
 description: ユニバーサルまたはモバイルのドライバー パッケージを作成する場合は、ユニバーサル INF ファイルを使用する必要があります。
 ms.assetid: 2CBEB814-974D-4E8B-A44A-2CFAA8D4C94E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 58f45248683bd487d421bb3503bfff6b5fabc881
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5404dcfd2b5d342fafaf4122d8ae08108e30e2ef
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339441"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384775"
 ---
-# <a name="using-a-universal-inf-file"></a>ユニバーサル INF ファイルの使用
+# <a name="using-a-universal-inf-file"></a>Using a Universal INF File (ユニバーサル INF ファイルの使用)
 
 ユニバーサルまたはモバイルのドライバー パッケージを作成する場合は、ユニバーサル INF ファイルを使用する必要があります。 デスクトップのドライバー パッケージを作成する場合、ユニバーサル INF ファイルを使用する必要はありませんが、ため実行がパフォーマンス上の利点のため推奨は。
 
@@ -60,10 +60,10 @@ Windows、Windows 10 Mobile などの一部のエディションは、ドライ�
 次のディレクティブでは、いくつかの注意事項で有効です。
 
 -   [ **INF AddReg ディレクティブ**](inf-addreg-directive.md)は有効な場合、指定したエントリ*追加レジストリ セクション*が、 *reg ルート*の値**HKR**、または、次の場合。
-    -   登録の[コンポーネント オブジェクト モデル](https://msdn.microsoft.com/library/ee663262(v=vs.85).aspx)(COM) オブジェクト、キーは、書き込むことができます。
+    -   登録の[コンポーネント オブジェクト モデル](https://docs.microsoft.com/windows/desktop/com)(COM) オブジェクト、キーは、書き込むことができます。
         -   HKCR
         -   Hklm \software\classes
-    -   作成の[ハードウェア Media Foundation 変換](https://msdn.microsoft.com/library/windows/desktop/ms703138.aspx)(仕様) キーは、書き込むことができます。
+    -   作成の[ハードウェア Media Foundation 変換](https://docs.microsoft.com/windows/desktop/medfound/media-foundation-transforms)(仕様) キーは、書き込むことができます。
         -   HKLM\SOFTWARE\Microsoft\Windows Media Foundation
         -   HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows Media Foundation
         -   HKLM\SOFTWARE\WOW3232Node\Microsoft\Windows メディア ファンデーション
@@ -80,5 +80,5 @@ Windows、Windows 10 Mobile などの一部のエディションは、ドライ�
 
 ## <a name="see-also"></a>関連項目
 
-* [ユニバーサル Windows ドライバーをインストールします。](https://msdn.microsoft.com/windows-drivers/develop/installing_a_universal_driver)
-* [InfVerif](https://msdn.microsoft.com/library/windows/hardware/dn929319)
+* [ユニバーサル Windows ドライバーをインストールします。](https://docs.microsoft.com/windows-hardware/drivers)
+* [InfVerif](https://docs.microsoft.com/windows-hardware/drivers/devtest/infverif)

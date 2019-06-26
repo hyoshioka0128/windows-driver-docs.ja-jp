@@ -4,12 +4,12 @@ description: 埋め込みの署名を使用したドライバーのリリース�
 ms.assetid: ffea2479-83ee-4d94-a5e6-73ecea9fc17d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 28d9032c9dbc09a1a3663c9d05046966c0f8df2a
-ms.sourcegitcommit: 944535d8e00393531f6b265317a64da3567e4f2c
+ms.openlocfilehash: c4195a48cdaf119b6d7def9d495929203f51bde8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65106370"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387313"
 ---
 # <a name="release-signing-a-driver-through-an-embedded-signature"></a>埋め込みの署名を使用したドライバーのリリース署名
 
@@ -22,7 +22,7 @@ ms.locfileid: "65106370"
 
 -   カタログ ファイルが含まれていないドライバー パッケージをドライバーがインストールされます。
 
-同様[カタログ ファイル](catalog-files.md)、 [ **SignTool** ](https://msdn.microsoft.com/library/windows/hardware/ff551778)ツールを使用して、テスト証明書を使用してカーネル モード バイナリ ファイル内のデジタル署名を埋め込みます。 次のコマンドラインは、署名ツールは、次を実行する方法を示します。
+同様[カタログ ファイル](catalog-files.md)、 [ **SignTool** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/signtool)ツールを使用して、テスト証明書を使用してカーネル モード バイナリ ファイル内のデジタル署名を埋め込みます。 次のコマンドラインは、署名ツールは、次を実行する方法を示します。
 
 -   テスト署名 Toastpkg サンプルの 64 ビット バージョンのバイナリ ファイル、toaster.sys します。 WDK のインストール ディレクトリ内でこのファイルにある、 *src\\全般\\トースター\\toastpkg\\toastcd\\amd64*ディレクトリ。
 
@@ -52,7 +52,7 @@ Signtool sign /v /fd sha256 /ac MSCV-VSClass3.cer /s MyPersonalStore /n contoso.
 
 -   **/N**オプションは、証明書の名前を指定します (*Contoso.com)* は指定された証明書ストアにインストールされています。
 
--   **/T**オプション、TSA の URL を指定します (*http://timestamp.verisign.com/scripts/timstamp.dll*) タイムスタンプをデジタル署名がこれです。
+-   **/T**オプション、TSA の URL を指定します ( *http://timestamp.verisign.com/scripts/timstamp.dll* ) タイムスタンプをデジタル署名がこれです。
 
     **重要な**  キーの失効がコード署名の秘密キーの署名者の場合は、侵害の必要な情報を提供するタイムスタンプを含むです。
 
@@ -60,7 +60,7 @@ Signtool sign /v /fd sha256 /ac MSCV-VSClass3.cer /s MyPersonalStore /n contoso.
 
 -   *amd64\\toaster.sys*埋め込まれた署名されるカーネル モード バイナリ ファイルの名前を指定します。
 
-SignTool とコマンドライン引数の詳細については、次を参照してください。 [ **SignTool**](https://msdn.microsoft.com/library/windows/hardware/ff551778)します。
+SignTool とコマンドライン引数の詳細については、次を参照してください。 [ **SignTool**](https://docs.microsoft.com/windows-hardware/drivers/devtest/signtool)します。
 
 埋め込みの署名でのドライバーをリリース署名の詳細については、次を参照してください。[ドライバー パッケージのリリース署名](release-signing-driver-packages.md)と[ドライバー ファイルをリリース署名](release-signing-a-driver-file.md)します。
 

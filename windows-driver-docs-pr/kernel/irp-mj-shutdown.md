@@ -6,12 +6,12 @@ ms.assetid: af0b01b5-5f81-42da-aa4b-433bd422a51f
 keywords:
 - IRP_MJ_SHUTDOWN カーネル モード ドライバーのアーキテクチャ
 ms.localizationpriority: medium
-ms.openlocfilehash: 5fd060c07e29f5b92188d768dd5facc5d6d85c83
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 20459241f40f4000dc16933a0d3e562424847af8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368424"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382253"
 ---
 # <a name="irpmjshutdown"></a>IRP\_MJ\_シャット ダウン
 
@@ -40,9 +40,9 @@ ms.locfileid: "63368424"
 
 ドライバーは、現在、デバイスにキャッシュされているか、シャット ダウン要求を完了する前に、ドライバーの内部バッファーに保持されているすべてのデータの転送を完了する必要があります。
 
-ドライバーは受信しません、 **IRP\_MJ\_シャット ダウン**いずれかに関係するために登録しない限り、デバイス オブジェクトの要求[ **IoRegisterShutdownNotification**](https://msdn.microsoft.com/library/windows/hardware/ff549541)または[ **IoRegisterLastChanceShutdownNotification**](https://msdn.microsoft.com/library/windows/hardware/ff549518)します。
+ドライバーは受信しません、 **IRP\_MJ\_シャット ダウン**いずれかに関係するために登録しない限り、デバイス オブジェクトの要求[ **IoRegisterShutdownNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregistershutdownnotification)または[ **IoRegisterLastChanceShutdownNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterlastchanceshutdownnotification)します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -63,9 +63,9 @@ ms.locfileid: "63368424"
 
 [*DispatchShutdown*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)
 
-[**IoRegisterLastChanceShutdownNotification**](https://msdn.microsoft.com/library/windows/hardware/ff549518)
+[**IoRegisterLastChanceShutdownNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterlastchanceshutdownnotification)
 
-[**IoRegisterShutdownNotification**](https://msdn.microsoft.com/library/windows/hardware/ff549541)
+[**IoRegisterShutdownNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregistershutdownnotification)
 
  
 

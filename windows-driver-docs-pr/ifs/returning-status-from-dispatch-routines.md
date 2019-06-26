@@ -9,12 +9,12 @@ keywords:
 - WDK のファイル システムの状態を返す
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c08527fb47b9a81d22804867a6d2157563392e2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ea021e58d61e949c1a44645084d8f1c5a07e1ee9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344543"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385938"
 ---
 # <a name="returning-status-from-dispatch-routines"></a>ディスパッチ ルーチンから返される状態
 
@@ -22,7 +22,7 @@ ms.locfileid: "63344543"
 ## <span id="ddk_returning_status_from_dispatch_routines_if"></span><span id="DDK_RETURNING_STATUS_FROM_DISPATCH_ROUTINES_IF"></span>
 
 
-ディスパッチ ルーチン完了ルーチンが設定されていないことがによって返される NTSTATUS 値を返す必要があります常に IRP を完了したときに点を除いて[**保留**](https://msdn.microsoft.com/library/windows/hardware/ff548336)します。 この値が状態でない限り\_、保留中の値に一致する必要があります**Irp -&gt;IoStatus.Status** IRP の完了したドライバーで設定します。
+ディスパッチ ルーチン完了ルーチンが設定されていないことがによって返される NTSTATUS 値を返す必要があります常に IRP を完了したときに点を除いて[**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)します。 この値が状態でない限り\_、保留中の値に一致する必要があります**Irp -&gt;IoStatus.Status** IRP の完了したドライバーで設定します。
 
 次のいずれかの作業キューに IRP を投稿する可能性があります完了ルーチンを設定するディスパッチ ルーチンを実行してください。
 

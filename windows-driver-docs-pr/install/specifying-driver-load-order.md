@@ -9,12 +9,12 @@ keywords:
 - サービスのインストール-セクション WDK INF ファイル
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 11f055ce9426c61d3baf30752039dec44fe95a58
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c8e58f4b8ecea3796ec3899fdcb0e88dadcaddb1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369435"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385887"
 ---
 # <a name="specifying-driver-load-order"></a>ドライバーの読み込み順序の指定
 
@@ -38,7 +38,7 @@ INF ファイルの設定は、ドライバーの読み込み順序を制御で�
 
 -   非*ブート開始ドライバー* PnP 列挙型ではないデバイスを検出します。
 
-    PnP 列挙型でないデバイスの場合、ドライバーを報告デバイス PnP マネージャーを呼び出すことによって[ **IoReportDetectedDevice**](https://msdn.microsoft.com/library/windows/hardware/ff549597)します。 このようなドライバーは、Windows はシステムの初期化中にドライバーを読み込むために、開始の種類 SERVICE_SYSTEM_START (0x01) にすることが必要です。
+    PnP 列挙型でないデバイスの場合、ドライバーを報告デバイス PnP マネージャーを呼び出すことによって[ **IoReportDetectedDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-ioreportdetecteddevice)します。 このようなドライバーは、Windows はシステムの初期化中にドライバーを読み込むために、開始の種類 SERVICE_SYSTEM_START (0x01) にすることが必要です。
 
     ドライバーのみをレポートの非 PnP ハードウェアは、この開始の種類を設定する必要があります。 サービスと非 PnP PnP の両方のデバイスのドライバーをこの開始の種類を設定があります。
 

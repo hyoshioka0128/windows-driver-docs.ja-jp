@@ -15,12 +15,12 @@ keywords:
 - WDK RDBSS ルーチンをアサートします。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c4af1c575bc56b9de201e8136b177787e6127cb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d6f7489a7e8776640c30e47bd42455d8887e2105
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359308"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386097"
 ---
 # <a name="diagnostics-and-debugging"></a>診断とデバッグ
 
@@ -49,21 +49,21 @@ RDBSS は、診断とデバッグのためのさまざまなルーチンを提�
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff553384" data-raw-source="[&lt;strong&gt;RxAssert&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff553384)"><strong>RxAssert</strong></a></p></td>
-<td align="left"><p>このルーチンは、インストールされている場合、カーネル デバッガーに RDBSS のチェックで、assert 文字列ビルドを送信します。 RxAssert.h が含まれる場合は、ファイルが使用される、Windows カーネル<strong>RtlAssert</strong>呼び出しはこれを再定義する<a href="https://msdn.microsoft.com/library/windows/hardware/ff553384" data-raw-source="[&lt;strong&gt;RxAssert&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff553384)"> <strong>RxAssert</strong> </a>ルーチンもします。</p>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ifs/rxassert" data-raw-source="[&lt;strong&gt;RxAssert&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ifs/rxassert)"><strong>RxAssert</strong></a></p></td>
+<td align="left"><p>このルーチンは、インストールされている場合、カーネル デバッガーに RDBSS のチェックで、assert 文字列ビルドを送信します。 RxAssert.h が含まれる場合は、ファイルが使用される、Windows カーネル<strong>RtlAssert</strong>呼び出しはこれを再定義する<a href="https://docs.microsoft.com/windows-hardware/drivers/ifs/rxassert" data-raw-source="[&lt;strong&gt;RxAssert&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ifs/rxassert)"> <strong>RxAssert</strong> </a>ルーチンもします。</p>
 <p>製品版ビルドでは、このルーチンの呼び出しはチェックをバグします。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554385" data-raw-source="[&lt;strong&gt;RxDbgBreakPoint&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554385)"><strong>RxDbgBreakPoint</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ifs/rxdbgbreakpoint" data-raw-source="[&lt;strong&gt;RxDbgBreakPoint&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ifs/rxdbgbreakpoint)"><strong>RxDbgBreakPoint</strong></a></p></td>
 <td align="left"><p>このルーチンは、インストールされている場合は、カーネル デバッガーによって処理される例外を発生させます。それ以外の場合、デバッグ、システムによって処理されます。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554655" data-raw-source="[&lt;strong&gt;RxpTrackDereference&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554655)"><strong>RxpTrackDereference</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fcb/nf-fcb-rxptrackdereference" data-raw-source="[&lt;strong&gt;RxpTrackDereference&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fcb/nf-fcb-rxptrackdereference)"><strong>RxpTrackDereference</strong></a></p></td>
 <td align="left"><p>このルーチンは、SRV_CALL、NET_ROOT、V_NET_ROOT、FOBX FCB を参照する要求を追跡するために使用し、チェックで SRV_OPEN 構造を構築します。 これらの参照要求のログは、ログ記録システムおよび WMI でアクセスできます。 このルーチンは、逆参照操作を実行できません。</p>
 <p>製品版ビルドでは、このルーチンは何もしません。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554659" data-raw-source="[&lt;strong&gt;RxpTrackReference&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554659)"><strong>RxpTrackReference</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fcb/nf-fcb-rxptrackreference" data-raw-source="[&lt;strong&gt;RxpTrackReference&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fcb/nf-fcb-rxptrackreference)"><strong>RxpTrackReference</strong></a></p></td>
 <td align="left"><p>このルーチンは、SRV_CALL、NET_ROOT、V_NET_ROOT、FOBX FCB、逆参照する要求を追跡するために使用し、チェックで SRV_OPEN 構造を構築します。 これらのログの要求を逆参照のログ記録システムと WMI によってアクセスできます。 このルーチンは、参照操作を実行できません。</p>
 <p>製品版ビルドでは、このルーチンは何もしません。</p></td>
 </tr>
@@ -72,7 +72,7 @@ RDBSS は、診断とデバッグのためのさまざまなルーチンを提�
 
  
 
-前の表に、ルーチンに加え、いくつかのマクロをこれらのルーチンを呼び出すは、デバッグに対して定義されます。 次の表に示されている、これらのマクロのラッパーを提供する、 [ **RxReference** ](https://msdn.microsoft.com/library/windows/hardware/ff554688)または[ **RxDereference** ](https://msdn.microsoft.com/library/windows/hardware/ff554388)ルーチンSRV 上のファイル構造管理操作のために使用される\_呼び出し、NET\_ルート, V\_NET\_ルート、FOBX、FCB、SRV、\_オープン構造体。 これらのマクロが最初に、対応するを呼び出す[ **RxpTrackReference** ](https://msdn.microsoft.com/library/windows/hardware/ff554659)または[ **RxpTrackDereference** ](https://msdn.microsoft.com/library/windows/hardware/ff554655)診断ログに記録するルーチンについては、対応するを呼び出す前に**RxReference**または**RxDeference**ルーチン。 A は、参照のログし、要求を逆参照 RDBSS ログ システムと WMI によってアクセスできます。
+前の表に、ルーチンに加え、いくつかのマクロをこれらのルーチンを呼び出すは、デバッグに対して定義されます。 次の表に示されている、これらのマクロのラッパーを提供する、 [ **RxReference** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxprocs/nf-rxprocs-rxreference)または[ **RxDereference** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxprocs/nf-rxprocs-rxdereference)ルーチンSRV 上のファイル構造管理操作のために使用される\_呼び出し、NET\_ルート, V\_NET\_ルート、FOBX、FCB、SRV、\_オープン構造体。 これらのマクロが最初に、対応するを呼び出す[ **RxpTrackReference** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fcb/nf-fcb-rxptrackreference)または[ **RxpTrackDereference** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fcb/nf-fcb-rxptrackdereference)診断ログに記録するルーチンについては、対応するを呼び出す前に**RxReference**または**RxDeference**ルーチン。 A は、参照のログし、要求を逆参照 RDBSS ログ システムと WMI によってアクセスできます。
 
 <table>
 <colgroup>

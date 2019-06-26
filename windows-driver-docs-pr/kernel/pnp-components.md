@@ -13,12 +13,12 @@ keywords:
 - PnP コンポーネント WDK ユーザー モード
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b735f72b2ef964273e737486b67fd652e33e211
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3a366b3d7da6c4eedb2ecc0aa32ed3f5dc3a4d5c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369240"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380932"
 ---
 # <a name="pnp-components"></a>PnP のコンポーネント
 
@@ -36,7 +36,7 @@ PnP ドライバーは、コンピューターで物理ディスク、論理、�
 
 すべてのドライバーには、PnP、電源管理をサポートする必要があります。 1 つのドライバーが PnP や電源管理をサポートしていない場合、全体として、システムの PnP、電源管理のサポートが制限されます。
 
-参照してください[デバイス インストールの概要](https://msdn.microsoft.com/library/windows/hardware/ff549455)デバイスとドライバーのセットアップについては、(INF) ファイル、CAT ファイル、およびレジストリを含むです。
+参照してください[デバイス インストールの概要](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-device-and-driver-installation)デバイスとドライバーのセットアップについては、(INF) ファイル、CAT ファイル、およびレジストリを含むです。
 
  
 

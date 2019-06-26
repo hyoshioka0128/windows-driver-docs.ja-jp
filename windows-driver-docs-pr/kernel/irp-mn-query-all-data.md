@@ -6,19 +6,19 @@ ms.assetid: 9d4e1c2e-73ad-4fc3-99e6-391a64edfa5c
 keywords:
 - IRP_MN_QUERY_ALL_DATA カーネル モード ドライバーのアーキテクチャ
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a3caa66f4b6b68b32f7fd712619b76492cf73f2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4d6dd8105b4d3c878ad87f0765d4281ca24a102f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342705"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383295"
 ---
 # <a name="irpmnqueryalldata"></a>IRP\_MN\_クエリ\_すべて\_データ
 
 
-WMI をサポートするすべてのドライバーでは、この IRP を処理する必要があります。 ドライバーを処理できる WMI Irp を呼び出すか[ **WmiSystemControl** ](https://msdn.microsoft.com/library/windows/hardware/ff565834)または」の説明に従って、IRP を処理することによって[WMI 要求の処理](https://msdn.microsoft.com/library/windows/hardware/ff546968)します。
+WMI をサポートするすべてのドライバーでは、この IRP を処理する必要があります。 ドライバーを処理できる WMI Irp を呼び出すか[ **WmiSystemControl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nf-wmilib-wmisystemcontrol)または」の説明に従って、IRP を処理することによって[WMI 要求の処理](https://docs.microsoft.com/windows-hardware/drivers/kernel/handling-wmi-requests)します。
 
-ドライバーを呼び出す場合[ **WmiSystemControl** ](https://msdn.microsoft.com/library/windows/hardware/ff565834)処理するために、 **IRP\_MN\_クエリ\_すべて\_データ**で WMI を要求します。有効にする呼び出しのドライバーの[ *DpWmiQueryDataBlock* ](https://msdn.microsoft.com/library/windows/hardware/ff544096)ルーチン。
+ドライバーを呼び出す場合[ **WmiSystemControl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nf-wmilib-wmisystemcontrol)処理するために、 **IRP\_MN\_クエリ\_すべて\_データ**で WMI を要求します。有効にする呼び出しのドライバーの[ *DpWmiQueryDataBlock* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nc-wmilib-wmi_query_datablock_callback)ルーチン。
 
 <a name="major-code"></a>主要コード
 ----------
@@ -42,9 +42,9 @@ WMI IRQL でこの IRP の送信 = パッシブ\_任意のスレッド コンテ
 ## <a name="output-parameters"></a>出力パラメーター
 
 
-ドライバーが呼び出すことによって WMI Irp を処理する場合[ **WmiSystemControl**](https://msdn.microsoft.com/library/windows/hardware/ff565834)、WMI を入力、**れた WNODE\_すべて\_データ**呼び出してドライバーの*DpWmiQueryDataBlock*ドライバーによって登録された各ブロックに対して 1 回ルーチン。
+ドライバーが呼び出すことによって WMI Irp を処理する場合[ **WmiSystemControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nf-wmilib-wmisystemcontrol)、WMI を入力、**れた WNODE\_すべて\_データ**呼び出してドライバーの*DpWmiQueryDataBlock*ドライバーによって登録された各ブロックに対して 1 回ルーチン。
 
-それ以外の場合、ドライバーを設定、 [**れた WNODE\_すべて\_データ**](https://msdn.microsoft.com/library/windows/hardware/ff566372)で構造体**Parameters.WMI.Buffer**次のようにします。
+それ以外の場合、ドライバーを設定、 [**れた WNODE\_すべて\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmistr/ns-wmistr-tagwnode_all_data)で構造体**Parameters.WMI.Buffer**次のようにします。
 
 -   設定**WnodeHeader.BufferSize**全体のバイト数に**れた WNODE\_すべて\_データ**返され、次のように設定します**WnodeHeader.Timestamp**。によって返される値**KeQuerySystemTime**、設定と**WnodeHeader.Flags**必要に応じて、返されるデータにします。
 
@@ -60,12 +60,12 @@ WMI IRQL でこの IRP の送信 = パッシブ\_任意のスレッド コンテ
 
     -   最後の要素の後にインスタンス データを書き込み、 **OffsetInstanceDataAndLength**配列、および各インスタンスは、8 バイト境界に一致するようにパディングします。
 
-場合、バッファー **Parameters.WMI.Buffer**が小さすぎるで必要なサイズを設定、ドライバーのすべてのデータを受信する、 [**れた WNODE\_すぎます\_小さな**](https://msdn.microsoft.com/library/windows/hardware/ff566379)で構造体**Parameters.WMI.Buffer**します。 バッファーがより小さい場合**sizeof**(**れた WNODE\_すぎます\_小さな**)、ドライバーは IRP が失敗し、ステータスを返します\_バッファー\_すぎます\_小さい。
+場合、バッファー **Parameters.WMI.Buffer**が小さすぎるで必要なサイズを設定、ドライバーのすべてのデータを受信する、 [**れた WNODE\_すぎます\_小さな**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmistr/ns-wmistr-tagwnode_too_small)で構造体**Parameters.WMI.Buffer**します。 バッファーがより小さい場合**sizeof**(**れた WNODE\_すぎます\_小さな**)、ドライバーは IRP が失敗し、ステータスを返します\_バッファー\_すぎます\_小さい。
 
 ## <a name="io-status-block"></a>I/O ステータス ブロック
 
 
-呼び出すことによって、ドライバーが IRP を処理する場合[ **WmiSystemControl**](https://msdn.microsoft.com/library/windows/hardware/ff565834)、WMI セット**Irp -&gt;IoStatus.Status**と**Irp-&gt;IoStatus.Information**状態の I/O ブロックにします。
+呼び出すことによって、ドライバーが IRP を処理する場合[ **WmiSystemControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nf-wmilib-wmisystemcontrol)、WMI セット**Irp -&gt;IoStatus.Status**と**Irp-&gt;IoStatus.Information**状態の I/O ブロックにします。
 
 それ以外の場合、ドライバーの設定**Irp -&gt;IoStatus.Status**ステータス\_成功または適切なエラーの状態、次のように。
 
@@ -78,11 +78,11 @@ WMI IRQL でこの IRP の送信 = パッシブ\_任意のスレッド コンテ
 <a name="operation"></a>操作
 ---------
 
-ドライバーを処理できる WMI Irp を呼び出すか[ **WmiSystemControl** ](https://msdn.microsoft.com/library/windows/hardware/ff565834)または」の説明に従って、IRP を処理することによって[WMI 要求の処理](https://msdn.microsoft.com/library/windows/hardware/ff546968)します。
+ドライバーを処理できる WMI Irp を呼び出すか[ **WmiSystemControl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nf-wmilib-wmisystemcontrol)または」の説明に従って、IRP を処理することによって[WMI 要求の処理](https://docs.microsoft.com/windows-hardware/drivers/kernel/handling-wmi-requests)します。
 
-ドライバーを呼び出して WMI Irp の処理する場合[ **WmiSystemControl**](https://msdn.microsoft.com/library/windows/hardware/ff565834)、ドライバーが、ルーチンを呼び出す[ *DpWmiQueryDataBlock* ](https://msdn.microsoft.com/library/windows/hardware/ff544096)ルーチン。
+ドライバーを呼び出して WMI Irp の処理する場合[ **WmiSystemControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nf-wmilib-wmisystemcontrol)、ドライバーが、ルーチンを呼び出す[ *DpWmiQueryDataBlock* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nc-wmilib-wmi_query_datablock_callback)ルーチン。
 
-ドライバーが処理する場合、 **IRP\_MN\_クエリ\_すべて\_データ**要求と、その方がよい場合にのみ**Parameters.WMI.ProviderId**指す同じドライバーに渡されるデバイス オブジェクト[ **IoWMIRegistrationControl**](https://msdn.microsoft.com/library/windows/hardware/ff550480)します。 それ以外の場合、ドライバーでは、次の下位のドライバーに要求を転送する必要があります。
+ドライバーが処理する場合、 **IRP\_MN\_クエリ\_すべて\_データ**要求と、その方がよい場合にのみ**Parameters.WMI.ProviderId**指す同じドライバーに渡されるデバイス オブジェクト[ **IoWMIRegistrationControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iowmiregistrationcontrol)します。 それ以外の場合、ドライバーでは、次の下位のドライバーに要求を転送する必要があります。
 
 要求を処理する前に、ドライバーを決定する必要があるかどうか**Parameters.WMI.DataPath**ドライバーがサポートする GUID を指します。 そうでない、ドライバーが IRP が失敗する必要があり、状態を返す場合\_WMI\_GUID\_いない\_が見つかりました。
 
@@ -90,9 +90,9 @@ WMI IRQL でこの IRP の送信 = パッシブ\_任意のスレッド コンテ
 
 -   いることを確認**Parameters.WMI.BufferSize**ドライバーから返されるすべてのデータを受信するのに十分な大きさであるバッファーを指定します。
 
--   入力、 [**れた WNODE\_すべて\_データ**](https://msdn.microsoft.com/library/windows/hardware/ff566372)で構造体**Parameters.WMI.Buffer**にそのデータ ブロックのすべてのインスタンス データ。
+-   入力、 [**れた WNODE\_すべて\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmistr/ns-wmistr-tagwnode_all_data)で構造体**Parameters.WMI.Buffer**にそのデータ ブロックのすべてのインスタンス データ。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -111,17 +111,17 @@ WMI IRQL でこの IRP の送信 = パッシブ\_任意のスレッド コンテ
 ## <a name="see-also"></a>関連項目
 
 
-[*DpWmiQueryDataBlock*](https://msdn.microsoft.com/library/windows/hardware/ff544096)
+[*DpWmiQueryDataBlock*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nc-wmilib-wmi_query_datablock_callback)
 
-[**IoWMIRegistrationControl**](https://msdn.microsoft.com/library/windows/hardware/ff550480)
+[**IoWMIRegistrationControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iowmiregistrationcontrol)
 
-[**KeQuerySystemTime**](https://msdn.microsoft.com/library/windows/hardware/ff553068)
+[**KeQuerySystemTime**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kequerysystemtime)
 
-[**WMILIB\_CONTEXT**](https://msdn.microsoft.com/library/windows/hardware/ff565813)
+[**WMILIB\_CONTEXT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/ns-wmilib-_wmilib_context)
 
-[**WmiSystemControl**](https://msdn.microsoft.com/library/windows/hardware/ff565834)
+[**WmiSystemControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nf-wmilib-wmisystemcontrol)
 
-[**れた WNODE\_すべて\_データ**](https://msdn.microsoft.com/library/windows/hardware/ff566372)
+[**れた WNODE\_すべて\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmistr/ns-wmistr-tagwnode_all_data)
 
  
 

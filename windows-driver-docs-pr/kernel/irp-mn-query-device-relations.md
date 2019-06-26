@@ -6,12 +6,12 @@ ms.assetid: 32437c5a-ad92-433c-8255-83775751a44d
 keywords:
 - IRP_MN_QUERY_DEVICE_RELATIONS カーネル モード ドライバーのアーキテクチャ
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c2452df3c64fc1bdaf3f1aae2765353e28ccd2b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6157d5924730f24258b1d989e6136d3c57794a89
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63386938"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383299"
 ---
 # <a name="irpmnquerydevicerelations"></a>IRP\_MN\_クエリ\_デバイス\_リレーション
 
@@ -34,7 +34,7 @@ PnP マネージャーでは、デバイス間の特定の関係を判断する�
 
 PnP マネージャーでは、指定したデバイスに関係を持つデバイスに関する情報を収集するには、この IRP を送信します。
 
-PnP マネージャー クエリ、デバイスの**BusRelations** (子デバイス)、デバイスが列挙され、デバイスの中に、それ以外の時間がアクティブで、ドライバーを呼び出す場合など、 [ **IoInvalidateDeviceRelations** ](https://msdn.microsoft.com/library/windows/hardware/ff549353)ルーチンを子デバイスが到着したまたはゲームを終了したことを示します。
+PnP マネージャー クエリ、デバイスの**BusRelations** (子デバイス)、デバイスが列挙され、デバイスの中に、それ以外の時間がアクティブで、ドライバーを呼び出す場合など、 [ **IoInvalidateDeviceRelations** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioinvalidatedevicerelations)ルーチンを子デバイスが到着したまたはゲームを終了したことを示します。
 
 PnP マネージャー クエリ、デバイスの**RemovalRelations**前に、デバイスのドライバーを削除します。 PnP マネージャーをクエリ**RemovalRelations**と**EjectionRelations**デバイスを取り出す前にします。
 
@@ -49,7 +49,7 @@ PnP マネージャー クエリ、デバイスの**PowerRelations** 、デバ�
 ## <a name="input-parameters"></a>入力パラメーター
 
 
-**Parameters.QueryDeviceRelations.Type**のメンバー、 [ **IO\_スタック\_場所**](https://msdn.microsoft.com/library/windows/hardware/ff550659)構造体のリレーションの種類を指定します。照会中します。 指定できる値は**BusRelations**、 **EjectionRelations**、 **RemovalRelations**、 **TargetDeviceRelation**、および**PowerRelations**します。
+**Parameters.QueryDeviceRelations.Type**のメンバー、 [ **IO\_スタック\_場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)構造体のリレーションの種類を指定します。照会中します。 指定できる値は**BusRelations**、 **EjectionRelations**、 **RemovalRelations**、 **TargetDeviceRelation**、および**PowerRelations**します。
 
 **FileObject** 、現在のメンバー **IO\_スタック\_場所**場合のみ有効なファイル オブジェクトへのポインターを構造体**Parameters.QueryDeviceRelations.Type**は**TargetDeviceRelation**します。
 
@@ -77,11 +77,11 @@ typedef struct _DEVICE_RELATIONS {
 
 ドライバーは、これに対する応答で関係を返す場合、 **IRP\_MN\_クエリ\_デバイス\_リレーション**、ドライバーを割り当てます、**デバイス\_リレーション**からページングされたメモリの数、およびデバイス オブジェクト ポインターの適切な数を含む構造体。 PnP マネージャーは、不要になったときに、構造体を解放します。 ドライバーが置き換えられた場合、**デバイス\_リレーション**割り当てられているその他のドライバーを構造体をドライバーは、以前の構造体を解放する必要があります。
 
-ドライバーは、この IRP でレポートされる任意のデバイスの PDO を参照する必要があります ([**ObReferenceObject**](https://msdn.microsoft.com/library/windows/hardware/ff558678))。 PnP マネージャーは、該当する場合に参照を削除します。
+ドライバーは、この IRP でレポートされる任意のデバイスの PDO を参照する必要があります ([**ObReferenceObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obfreferenceobject))。 PnP マネージャーは、該当する場合に参照を削除します。
 
-関数またはフィルター ドライバーは、後にいつでもこの IRP のデバイスを処理するために準備する必要があります、 [ *AddDevice* ](https://msdn.microsoft.com/library/windows/hardware/ff540521)デバイスのルーチンが完了しました。 クエリを処理するために、バス ドライバーを準備する必要があります**BusRelations**デバイスが列挙された後すぐにします。
+関数またはフィルター ドライバーは、後にいつでもこの IRP のデバイスを処理するために準備する必要があります、 [ *AddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)デバイスのルーチンが完了しました。 クエリを処理するために、バス ドライバーを準備する必要があります**BusRelations**デバイスが列挙された後すぐにします。
 
-処理の一般的な規則について[プラグ アンド プレイ マイナー Irp](plug-and-play-minor-irps.md)を参照してください[プラグ アンド プレイ](https://msdn.microsoft.com/library/windows/hardware/ff547125)します。
+処理の一般的な規則について[プラグ アンド プレイ マイナー Irp](plug-and-play-minor-irps.md)を参照してください[プラグ アンド プレイ](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)します。
 
 次のサブセクションでは、さまざまなクエリを処理するための特定のアクションについて説明します。
 
@@ -89,7 +89,7 @@ typedef struct _DEVICE_RELATIONS {
 
 コント ローラーのアダプター バス リレーション (子デバイス) の PnP マネージャー クエリ、バス ドライバー返す必要がありますのポインターのリストの任意のデバイスの Pdo を物理的にするときは、バスに提示します。 バス ドライバーでは、起動されたかどうかに関係なく、すべてのデバイスを報告します。 バス ドライバーは、そのバス デバイスの電源を投入する子が存在するかを判断する必要があります。
 
-**警告**  デバイス オブジェクトは、引数としての PDO を PnP マネージャーで、[デバイス] ノードが作成されるまで任意のルーチンに渡されることはできません (*devnode*) そのオブジェクト。 (システムはバグに確認の場合は、ドライバーがデバイス オブジェクトを渡すと、 [ **0 xca のバグ チェック。PNP\_検出\_FATAL\_エラー**](https://msdn.microsoft.com/library/windows/hardware/ff560209))。PnP マネージャーへの応答で devnode を作成し、 **IRP\_MN\_クエリ\_デバイス\_リレーション**要求。 ドライバーを受信したときに PDO の devnode が作成されていると想定できる、 [ **IRP\_MN\_クエリ\_リソース\_要件**](irp-mn-query-resource-requirements.md)要求。
+**警告**  デバイス オブジェクトは、引数としての PDO を PnP マネージャーで、[デバイス] ノードが作成されるまで任意のルーチンに渡されることはできません (*devnode*) そのオブジェクト。 (システムはバグに確認の場合は、ドライバーがデバイス オブジェクトを渡すと、 [ **0 xca のバグ チェック。PNP\_検出\_FATAL\_エラー**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xca--pnp-detected-fatal-error))。PnP マネージャーへの応答で devnode を作成し、 **IRP\_MN\_クエリ\_デバイス\_リレーション**要求。 ドライバーを受信したときに PDO の devnode が作成されていると想定できる、 [ **IRP\_MN\_クエリ\_リソース\_要件**](irp-mn-query-resource-requirements.md)要求。
 
  
 
@@ -113,7 +113,7 @@ PnP マネージャーが送信の図に示す例で、 **IRP\_MN\_クエリ\_�
 
     -   既にない任意の子デバイス用の PDO を作成します。
 
-    -   バス上に存在しないすべてのデバイスの非アクティブの PDO をマークします。 バス ドライバーの Pdo を削除するタイミングの詳細については「このような PDOs.For は削除されません[デバイスを削除する](https://msdn.microsoft.com/library/windows/hardware/ff561046)します。
+    -   バス上に存在しないすべてのデバイスの非アクティブの PDO をマークします。 バス ドライバーの Pdo を削除するタイミングの詳細については「このような PDOs.For は削除されません[デバイスを削除する](https://docs.microsoft.com/windows-hardware/drivers/kernel/removing-a-device)します。
 
     -   バス上に存在するすべての子デバイスを報告します。
 
@@ -129,9 +129,9 @@ PnP マネージャーが送信の図に示す例で、 **IRP\_MN\_クエリ\_�
 
 4.  省略可能な下位のフィルター、存在する場合、通常は処理されませんこの IRP。 このようなフィルター ドライバーは IRP が下位のスタックを渡します。 低いフィルター ドライバーは、この IRP を処理する場合は、PDO(s) 子デバイスの一覧に追加できますが、他のドライバーによって作成された任意の Pdo を削除する必要があります。
 
-5.  親のバス ドライバー (デバイスでは、raw モードで) デバイス スタックでのみ、ドライバーである場合を除き、この IRP を処理しません。 すべての PnP Irp の親のバス ドライバーは IRP が完了すると[ **IoCompleteRequest**](https://msdn.microsoft.com/library/windows/hardware/ff548343)します。
+5.  親のバス ドライバー (デバイスでは、raw モードで) デバイス スタックでのみ、ドライバーである場合を除き、この IRP を処理しません。 すべての PnP Irp の親のバス ドライバーは IRP が完了すると[ **IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest)します。
 
-    このようなドライバーが IRP バス ドライバー下方向や IRP デバイス stack のバックアップ方法を処理デバイス スタックの 1 つまたは複数のバス フィルター ドライバーがある場合 (ある場合[ *IoCompletion* ](https://msdn.microsoft.com/library/windows/hardware/ff548354)ルーチンの場合)。 このようなドライバー Pdo を下位のスタックの IRP に追加や、IRP スタックのバックアップ方法でリレーションシップの一覧を変更する PnP IRP の規則に従って (で*IoCompletion*ルーチン)。
+    このようなドライバーが IRP バス ドライバー下方向や IRP デバイス stack のバックアップ方法を処理デバイス スタックの 1 つまたは複数のバス フィルター ドライバーがある場合 (ある場合[ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)ルーチンの場合)。 このようなドライバー Pdo を下位のスタックの IRP に追加や、IRP スタックのバックアップ方法でリレーションシップの一覧を変更する PnP IRP の規則に従って (で*IoCompletion*ルーチン)。
 
 **EjectionRelations 要求**
 
@@ -145,7 +145,7 @@ PnP マネージャーに送信、 [ **IRP\_MN\_取り出し**](irp-mn-eject.md)
 
 Windows 7 では、以降では、 **PowerRelations**クエリにより、PnP 列挙をサポートする親バスと、列挙子の間の従来のリレーションシップの外部で電源管理関係を指定するためのドライバーバス上のデバイス。 たとえば、バス ドライバー、バス上の子デバイスを列挙できませんでした。 場合、またはデバイスの場合は 1 つ以上のバスの子、 **PowerRelations**クエリは、バスのバスと子デバイスの電源の関係を記述できます。
 
-PnP マネージャーの問題、 **PowerRelations** 、デバイスのドライバーを呼び出すと、デバイスのクエリ、 [ **IoInvalidateDeviceRelations** ](https://msdn.microsoft.com/library/windows/hardware/ff549353)ルーチンをを指定します*型*のパラメーター値**PowerRelations**します。
+PnP マネージャーの問題、 **PowerRelations** 、デバイスのドライバーを呼び出すと、デバイスのクエリ、 [ **IoInvalidateDeviceRelations** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioinvalidatedevicerelations)ルーチンをを指定します*型*のパラメーター値**PowerRelations**します。
 
 このクエリに応答して、ターゲット デバイス (クエリの対象となっているデバイス) のドライバーが提供する**デバイス\_リレーション**する必要があるその他のデバイスの Pdo へのポインターを含む構造体電源マネージャーで前に、ターゲット デバイスの電源をオンします。 逆に、ターゲット デバイスがオフにした後にのみこれらの他のデバイスをオフにする必要があります。 電源マネージャーは、これらのデバイスが有効になっているオンとオフを正しい順序で保証するために、クエリからの情報を使用します。
 
@@ -155,7 +155,7 @@ PnP マネージャーの問題、 **PowerRelations** 、デバイスのドラ�
 
 この同じドライバーを処理すると、 **IRP\_MN\_デバイス\_使用状況\_通知**を IRP **InPath**は**FALSE**、ドライバーを送信する必要があります、 **IRP\_MN\_デバイス\_使用状況\_通知**IRP でどのしまったとしても依存しているデバイスの同じセットを**InPath**は**TRUE**します。 ただし、ドライバーにはエラー状態では、この IRP が完了する必要がありますしないときにコード**InPath**は**FALSE**します。
 
-応答するドライバー、 **PowerRelations**クエリは、ターゲット デバイスの変更通知が Pdo は指定されたすべてのデバイスで登録する必要があります、 **PowerRelations**クエリ。 これらの通知に登録するドライバーを呼び出すことができます、 [ **IoRegisterPlugPlayNotification** ](https://msdn.microsoft.com/library/windows/hardware/ff549526)ルーチンを指定し、*によって*のパラメーター値**EventCategoryTargetDeviceChange**します。
+応答するドライバー、 **PowerRelations**クエリは、ターゲット デバイスの変更通知が Pdo は指定されたすべてのデバイスで登録する必要があります、 **PowerRelations**クエリ。 これらの通知に登録するドライバーを呼び出すことができます、 [ **IoRegisterPlugPlayNotification** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterplugplaynotification)ルーチンを指定し、*によって*のパラメーター値**EventCategoryTargetDeviceChange**します。
 
 **RemovalRelations 要求**
 
@@ -175,7 +175,7 @@ PnP マネージャーの問題、 **PowerRelations** 、デバイスのドラ�
 
 -   PnP デバイス オブジェクト
 
-    PnP デバイス スタック内のデバイス オブジェクトがスタックの PDO を学習時に、 [ *AddDevice* ](https://msdn.microsoft.com/library/windows/hardware/ff540521)デバイスのルーチンが呼び出されます。 ポインターの使用が適切に受信される同期されている場合、ドライバーは PDO へのポインターをキャッシュに安全にできます[ **IRP\_MN\_削除\_デバイス**](irp-mn-remove-device.md)メッセージ使用して、[削除ロック ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff561042)します。
+    PnP デバイス スタック内のデバイス オブジェクトがスタックの PDO を学習時に、 [ *AddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)デバイスのルーチンが呼び出されます。 ポインターの使用が適切に受信される同期されている場合、ドライバーは PDO へのポインターをキャッシュに安全にできます[ **IRP\_MN\_削除\_デバイス**](irp-mn-remove-device.md)メッセージ使用して、[削除ロック ルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)します。
 
 -   スタックの一番下ではなく、非 PnP スタック内のデバイス オブジェクト
 
@@ -183,13 +183,13 @@ PnP マネージャーの問題、 **PowerRelations** 、デバイスのドラ�
 
 -   デバイスのファイル オブジェクト
 
-    ドライバーを呼び出すことができます、ファイル オブジェクトを指定すると、デバイスの[ **IoGetRelatedDeviceObject** ](https://msdn.microsoft.com/library/windows/hardware/ff549277)をデバイス オブジェクトを取得し、上記のリスト アイテムでの指示に従います。
+    ドライバーを呼び出すことができます、ファイル オブジェクトを指定すると、デバイスの[ **IoGetRelatedDeviceObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetrelateddeviceobject)をデバイス オブジェクトを取得し、上記のリスト アイテムでの指示に従います。
 
 -   デバイス オブジェクトをハンドルします。
 
-    ドライバーを呼び出すことができます、ハンドルを指定すると、デバイス オブジェクト、 [ **ObReferenceObjectByHandle** ](https://msdn.microsoft.com/library/windows/hardware/ff558679)をデバイスのファイル オブジェクトを取得し、上記のリスト アイテムでの指示に従います。
+    ドライバーを呼び出すことができます、ハンドルを指定すると、デバイス オブジェクト、 [ **ObReferenceObjectByHandle** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obreferenceobjectbyhandle)をデバイスのファイル オブジェクトを取得し、上記のリスト アイテムでの指示に従います。
 
-親のバス ドライバーを処理する必要があります、 **TargetDeviceRelation**リレーションがその子デバイスを照会します。 バス ドライバーの参照に子デバイスの PDO [ **ObReferenceObject** ](https://msdn.microsoft.com/library/windows/hardware/ff558678)で PDO へのポインターを返します、**デバイス\_リレーション**構造体。 このリレーションシップ型、構造体で 1 つだけの PDO ポインターがあります。 PnP マネージャーは、デバイスに通知をドライバーまたはアプリケーションの登録を解除するときに PDO への参照を削除します。
+親のバス ドライバーを処理する必要があります、 **TargetDeviceRelation**リレーションがその子デバイスを照会します。 バス ドライバーの参照に子デバイスの PDO [ **ObReferenceObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obfreferenceobject)で PDO へのポインターを返します、**デバイス\_リレーション**構造体。 このリレーションシップ型、構造体で 1 つだけの PDO ポインターがあります。 PnP マネージャーは、デバイスに通知をドライバーまたはアプリケーションの登録を解除するときに PDO への参照を削除します。
 
 親のバス ドライバーのみに応答する、 **TargetDeviceRelation**クエリ。 関数とフィルター ドライバーをデバイス スタックの次の下位のドライバーに渡す必要があります。 バス ドライバーでは、そのアダプターまたはコント ローラーの機能のドライバーとしてこの IRP を受信する場合、バス ドライバーは function ドライバーのタスクを実行してを次の下位のドライバーは IRP を渡す必要があります。
 
@@ -199,7 +199,7 @@ PnP マネージャーの問題、 **PowerRelations** 、デバイスのドラ�
 
 ドライバーを送信する必要がありますいない**IRP\_MN\_クエリ\_デバイス\_リレーション**要求に**BusRelations**します。 ドライバーはこの IRP の送信が制限されません**RemovalRelations**または**EjectionRelations**が、これをドライバーでは、可能性はほとんどありません。
 
-ドライバーのデバイス スタックを照会できます**TargetDeviceRelation**します。 参照してください[Irp の処理](https://msdn.microsoft.com/library/windows/hardware/ff546847)Irp を送信する方法について。 この IRP に具体的には、次の手順が適用されます。
+ドライバーのデバイス スタックを照会できます**TargetDeviceRelation**します。 参照してください[Irp の処理](https://docs.microsoft.com/windows-hardware/drivers/kernel/handling-irps)Irp を送信する方法について。 この IRP に具体的には、次の手順が適用されます。
 
 -   IRP の I/O スタック内の次の場所の値を設定します設定**MajorFunction**に[ **IRP\_MJ\_PNP**](irp-mj-pnp.md)設定 **。MinorFunction**に**IRP\_MN\_クエリ\_デバイス\_リレーション**設定**Parameters.QueryDeviceRelations.Type**に**TargetDeviceRelation**、設定と**Irp -&gt;FileObject**に有効なファイル オブジェクト。
 
@@ -226,15 +226,15 @@ PnP マネージャーの問題、 **PowerRelations** 、デバイスのドラ�
 ## <a name="see-also"></a>関連項目
 
 
-[*AddDevice*](https://msdn.microsoft.com/library/windows/hardware/ff540521)
+[*AddDevice*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)
 
-[**IoCompleteRequest**](https://msdn.microsoft.com/library/windows/hardware/ff548343)
+[**IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest)
 
-[**IoGetRelatedDeviceObject**](https://msdn.microsoft.com/library/windows/hardware/ff549277)
+[**IoGetRelatedDeviceObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetrelateddeviceobject)
 
-[**IoInvalidateDeviceRelations**](https://msdn.microsoft.com/library/windows/hardware/ff549353)
+[**IoInvalidateDeviceRelations**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioinvalidatedevicerelations)
 
-[**IoRegisterPlugPlayNotification**](https://msdn.microsoft.com/library/windows/hardware/ff549526)
+[**IoRegisterPlugPlayNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterplugplaynotification)
 
 [**IRP\_MJ\_PNP**](irp-mj-pnp.md)
 
@@ -246,11 +246,11 @@ PnP マネージャーの問題、 **PowerRelations** 、デバイスのドラ�
 
 [**IRP\_MN\_REMOVE\_DEVICE**](irp-mn-remove-device.md)
 
-[**IO\_スタック\_場所**](https://msdn.microsoft.com/library/windows/hardware/ff550659)
+[**IO\_スタック\_場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)
 
-[**ObReferenceObject**](https://msdn.microsoft.com/library/windows/hardware/ff558678)
+[**ObReferenceObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obfreferenceobject)
 
-[**ObReferenceObjectByHandle**](https://msdn.microsoft.com/library/windows/hardware/ff558679)
+[**ObReferenceObjectByHandle**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obreferenceobjectbyhandle)
 
  
 

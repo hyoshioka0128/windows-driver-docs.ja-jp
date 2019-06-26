@@ -10,12 +10,12 @@ keywords:
 - ハードウェア Id の WDK デバイスのインストール
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 50bed89d8b75bd90087c5a4a129570bed30ea29f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: aa90109ecf052907b32d616b05982c4dd4064213
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327814"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383749"
 ---
 # <a name="identifiers-generated-by-usbstorsys"></a>USBSTOR.SYS によって生成された識別子
 
@@ -59,7 +59,7 @@ USB\\CLASS_08 &AMP; SUBCLASS_06 PROT_50
 
 オペレーティング システムが負荷になっている場合は、デバイスのデバイスの記述子から取得されたデータでは、これらの互換性のある id と一致する、 *Usbstor.sys*します。
 
-読み込まれるとすぐに、USB 記憶域のポート ドライバーは、各デバイスの論理ユニットを新しい PDO を作成します。 詳細については、によって作成されたデバイス スタックの例を参照してください。 *Usbstor.sys*に[USB 大容量記憶装置のデバイス オブジェクトの例](https://msdn.microsoft.com/windows/hardware/drivers/storage/device-object-example-for-a-usb-mass-storage-device)します。
+読み込まれるとすぐに、USB 記憶域のポート ドライバーは、各デバイスの論理ユニットを新しい PDO を作成します。 詳細については、によって作成されたデバイス スタックの例を参照してください。 *Usbstor.sys*に[USB 大容量記憶装置のデバイス オブジェクトの例](https://docs.microsoft.com/windows-hardware/drivers/storage/device-object-example-for-a-usb-mass-storage-device)します。
 
 PnP マネージャー クエリを新しく作成された Pdo の識別文字列についてには、USB 記憶域ポート ドライバーでは、デバイスの新しいセットを作成するとき、デバイスの SCSI 問い合わせデータからハードウェアおよび互換性 Id が派生します。 デバイス ID の形式は次のとおりです。
 

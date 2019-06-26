@@ -4,19 +4,19 @@ description: デバイス セットアップ クラスのプロパティへの�
 ms.assetid: cea33f31-1aaf-445e-9175-def58ea26588
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7af2ccfe7b4477e146e5569820251c84a58b12a4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e3ffc852825152bcd4c2059516f6916b007299c5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382925"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386051"
 ---
 # <a name="accessing-device-setup-class-properties"></a>デバイス セットアップ クラスのプロパティへのアクセス
 
 
 Windows Vista および Windows での以降のバージョンで、[統一されたデバイス プロパティのモデル](unified-device-property-model--windows-vista-and-later-.md)次が含まれています。
 
--   [デバイス セットアップ クラスのプロパティ](https://msdn.microsoft.com/library/windows/hardware/ff542239)、SPCRP_ に対応する*Xxx*識別子で定義されている*Setupapi.h します。*
+-   [デバイス セットアップ クラスのプロパティ](https://docs.microsoft.com/previous-versions/ff542239(v=vs.85))、SPCRP_ に対応する*Xxx*識別子で定義されている*Setupapi.h します。*
 
 -   SPCRP_ を持たないプロパティ*Xxx*識別子が、対応するシステム定義のレジストリ エントリの値。
 

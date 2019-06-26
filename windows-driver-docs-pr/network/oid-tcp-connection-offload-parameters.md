@@ -6,12 +6,12 @@ keywords:
 - OID_TCP_CONNECTION_OFFLOAD_PARAMETERS、WDK の Oid、WDK のオブジェクト識別子では、WDK の Oid をネットワークのネットワーク
 ms.date: 11/01/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 29f5a500a249237ce22a4205f7f5c010ab9189b2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7fb8b498dd5c62883d7dae05056d353416941712
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331807"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386967"
 ---
 # <a name="oidtcpconnectionoffloadparameters"></a>OID_TCP_CONNECTION_OFFLOAD_PARAMETERS
 
@@ -21,14 +21,14 @@ ms.locfileid: "63331807"
 
 ## <a name="remarks"></a>注釈
 
-**InformationBuffer**のメンバー、 [NDIS_OID_REQUEST](https://msdn.microsoft.com/library/windows/hardware/ff566710)構造に含まれる、 [NDIS_TCP_CONNECTION_OFFLOAD_PARAMETERS](https://msdn.microsoft.com/library/windows/hardware/ff567876)構造体。
+**InformationBuffer**のメンバー、 [NDIS_OID_REQUEST](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造に含まれる、 [NDIS_TCP_CONNECTION_OFFLOAD_PARAMETERS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndischimney/ns-ndischimney-_ndis_tcp_connection_offload_parameters)構造体。
 
 > [!NOTE]
 > OID_TCP_CONNECTION_OFFLOAD_PARAMETERS とを混同しないでください、 [OID_TCP_OFFLOAD_PARAMETERS](oid-tcp-offload-parameters.md)オフロード機能を有効または TCP を無効にする管理アプリケーションで使用される OID。
 
 ### <a name="see-also"></a>関連項目
 
-[NDIS_OID_REQUEST](https://msdn.microsoft.com/library/windows/hardware/ff566710)  
+[NDIS_OID_REQUEST](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)  
 [OID_TCP_OFFLOAD_PARAMETERS](oid-tcp-offload-parameters.md)
 
 ## <a name="requirements"></a>要件

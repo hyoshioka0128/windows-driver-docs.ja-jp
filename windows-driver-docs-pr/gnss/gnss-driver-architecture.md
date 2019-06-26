@@ -4,12 +4,12 @@ description: GNSS UMDF 2.0 ドライバーのアーキテクチャ、I/O の考�
 ms.assetid: 11B54F92-DC84-4D74-9BBE-C85047AD2167
 ms.date: 05/17/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 125af7694a4e113e821ad9f4d196dc4cb2a7a96c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a27cd96060652aa2d9ae6d662525e3ae0f60b4fd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63371215"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385179"
 ---
 # <a name="gnss-driver-architecture"></a>GNSS ドライバーのアーキテクチャ
 
@@ -29,7 +29,7 @@ GNSS UMDF 2.0 ドライバーのアーキテクチャ、I/O の考慮事項の�
 
 -   **アプリケーションをテストします。** GNSS 機能をテスト用アプリケーション。
 
--   **GNSS API:****IGnssAdapter**内部サービスのコンポーネント、場所もアプリケーションをテストする GNSS デバイスの機能を公開する COM (コンポーネント オブジェクト モデル) インターフェイス。 この API の正確な形状は、このドキュメントの範囲外です。 Windows コンポーネントに対するプログラミングによって GNSS デバイスを使用して、 **IGnssAdapter** COM インターフェイスです。 GNSS API セットを唯一の場所のプラットフォーム コンポーネント (たとえば、ロケーション サービスおよびテスト アプリケーションの場所) のプライベート API は、他のファースト パーティまたはサード パーティ製のアプリケーションをご利用いただけません。
+-   **GNSS API:** **IGnssAdapter**内部サービスのコンポーネント、場所もアプリケーションをテストする GNSS デバイスの機能を公開する COM (コンポーネント オブジェクト モデル) インターフェイス。 この API の正確な形状は、このドキュメントの範囲外です。 Windows コンポーネントに対するプログラミングによって GNSS デバイスを使用して、 **IGnssAdapter** COM インターフェイスです。 GNSS API セットを唯一の場所のプラットフォーム コンポーネント (たとえば、ロケーション サービスおよびテスト アプリケーションの場所) のプライベート API は、他のファースト パーティまたはサード パーティ製のアプリケーションをご利用いただけません。
 
 -   **GNSS アダプター:** これは、実装するシングルトン COM オブジェクト、 **IGnssAdapter** COM インターフェイスです。 このオブジェクトをインスタンス化しを使用して、GNSS デバイスを使用して、テスト アプリケーションとロケーション サービスの内部コンポーネント、 **IGnssAdapter**インターフェイス。 GNSS 配置エンジン コンポーネント、ロケーション サービスの実装を公開する COM クラス、 **IGnssAdapter**インターフェイス。 ロケーション サービスは、テストするためのファクトリ メカニズムと GNSS アダプター ロケーション サービス内の COM クラスのシングルトンの COM オブジェクトをインスタンス化するためには、他のプロセス外のアプリケーションを公開します。 プロセス外のアプリケーションでは、GNSS ドライバーに対してプログラムへの COM インターフェイス ポインターを使用します。
 
@@ -91,13 +91,13 @@ GNSS アダプターと GNSS ドライバー間の相互作用は、次のカテ
 
 Windows プラットフォームで機能拡張と GNSS スタックの適応性をサポートするために、GNSS アダプターと GNSS ドライバー確立によって提供されるサポートと同様に、基になる GNSS スタックの適切に定義されたさまざまな機能の共通の理解、Windows プラットフォームです。 機能面では、この GNSS インターフェイス定義の一部としても Microsoft によって定義され、GNSS 領域でより優れた技術革新が行われ、多様なチップセット/ドライバーのセットが市場に登場も進化します。 GNSS アダプターでは、または、必要に応じての初期化時に基になる GNSS ドライバー/デバイスのさまざまな機能を照会し、それに応じて GNSS ドライバーとの対話を最適化します。
 
-GNSS アダプターと GNSS ドライバーと機能の情報交換を行うコントロールのコードを使用して[ **IOCTL\_GNSS\_送信\_プラットフォーム\_機能**](https://msdn.microsoft.com/library/windows/hardware/dn917743)と[ **IOCTL\_GNSS\_取得\_デバイス\_機能**](https://msdn.microsoft.com/library/windows/hardware/dn917730)します。
+GNSS アダプターと GNSS ドライバーと機能の情報交換を行うコントロールのコードを使用して[ **IOCTL\_GNSS\_送信\_プラットフォーム\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gnssdriver/ni-gnssdriver-ioctl_gnss_send_platform_capability)と[ **IOCTL\_GNSS\_取得\_デバイス\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gnssdriver/ni-gnssdriver-ioctl_gnss_get_device_capability)します。
 
 ### <a name="gnss-driver-command-and-configuration"></a>GNSS ドライバー コマンドと構成
 
 GNSS アダプターには、1 回限りの構成または GNSS ドライバーの定期的な再構成を実行できます。 同様に、GNSS アダプターは、ドライバーによって特定 GNSS 固有のコマンドを実行することができます。 これは、ドライバーと高レベルのオペレーティング システム (HLOS) のコマンド実行のプロトコルを定義することで実現されます。 特定のコマンドの種類に応じて、目的とする操作はシステムの再起動後、またはすぐに効果をかかる場合があります。 GNSS デバイス機能の情報と同様に、GNSS コマンドもマイクロソフトによって適切に定義されたこの GNSS インターフェイス定義の一部として、進化将来の技術革新や GNSS デバイス/ドライバーの多様化して続行されます。
 
-デバイス コマンドの実行と構成を行うコントロールのコードを使用して[ **IOCTL\_GNSS\_送信\_DRIVERCOMMAND**](https://msdn.microsoft.com/library/windows/hardware/dn917742)します。
+デバイス コマンドの実行と構成を行うコントロールのコードを使用して[ **IOCTL\_GNSS\_送信\_DRIVERCOMMAND**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gnssdriver/ni-gnssdriver-ioctl_gnss_send_drivercommand)します。
 
 ### <a name="position-information"></a>位置情報
 
@@ -113,16 +113,16 @@ GNSS アダプターには、1 回限りの構成または GNSS ドライバー�
 
 GNSS ドライバーから位置情報を取得するは、次の操作で構成されるステートフルの一意の修正プログラム、セッションを介して行われます。
 
-1.  **修正プログラムのセッションを開始します。** GNSS アダプターは、(LBS アプリケーションからの要求) の結果として開始修正セッションを開始します。 GNSS アダプターは、特定の要件と、要求関連付けの設定を設定し、intimates 制御コードを発行して、修正プログラムを取得するエンジンを起動する GNSS ドライバー [ **IOCTL\_GNSS\_開始\_FIXSESSION**](https://msdn.microsoft.com/library/windows/hardware/dn917750)します。
+1.  **修正プログラムのセッションを開始します。** GNSS アダプターは、(LBS アプリケーションからの要求) の結果として開始修正セッションを開始します。 GNSS アダプターは、特定の要件と、要求関連付けの設定を設定し、intimates 制御コードを発行して、修正プログラムを取得するエンジンを起動する GNSS ドライバー [ **IOCTL\_GNSS\_開始\_FIXSESSION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gnssdriver/ni-gnssdriver-ioctl_gnss_start_fixsession)します。
 
-2.  **デバイスの位置 (データの修正プログラム) を取得します。** GNSS アダプターが制御コードを問題の修正プログラム、セッションが開始されると、 [ **IOCTL\_GNSS\_取得\_FIXDATA** ](https://msdn.microsoft.com/library/windows/hardware/dn917731)ドライバーから修正を待ち始めます。 新しい位置情報が、エンジンから利用できる場合、GNSS ドライバーは、この保留中の get 修正プログラムの要求に応答します。
+2.  **デバイスの位置 (データの修正プログラム) を取得します。** GNSS アダプターが制御コードを問題の修正プログラム、セッションが開始されると、 [ **IOCTL\_GNSS\_取得\_FIXDATA** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gnssdriver/ni-gnssdriver-ioctl_gnss_get_fixdata)ドライバーから修正を待ち始めます。 新しい位置情報が、エンジンから利用できる場合、GNSS ドライバーは、この保留中の get 修正プログラムの要求に応答します。
 
     > [!NOTE]
     > セッションの種類の修正プログラムが LKG 修正プログラム (なく最新の修正プログラム) の場合は、位置情報ドライバーのキャッシュに由来します。
 
     GNSS アダプターは、非同期 I/O 要求が使用可能な場合は、修正プログラム データを返す GNSS ドライバーの使用可能な常にあることを確認します。 多くの修正プログラム データが予想される場合は、GNSS アダプター (使用して同じ IOCTL) 別の I/O 要求を発行する以上のデータができるまで、このシーケンスが続行されます、修正プログラムまたは修正プログラムの性質によっては、セッションが停止します。
 
-3.  **修正プログラムのセッションを変更します。** GNSS ドライバーがサポートされていない場合、同じ種類の修正プログラムのセッション、GNSS を多重化アダプターが発行する[ **IOCTL\_GNSS\_変更\_FIXSESSION** ](https://msdn.microsoft.com/library/windows/hardware/dn917740)のそのレベルで多重化時にセッションの種類を修正するとします。
+3.  **修正プログラムのセッションを変更します。** GNSS ドライバーがサポートされていない場合、同じ種類の修正プログラムのセッション、GNSS を多重化アダプターが発行する[ **IOCTL\_GNSS\_変更\_FIXSESSION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gnssdriver/ni-gnssdriver-ioctl_gnss_modify_fixsession)のそのレベルで多重化時にセッションの種類を修正するとします。
 
 4.  **修正プログラムのセッションを停止します。** GNSS アダプターでは、停止の修正プログラムのセッションと修正プログラムの特定のセッションに関連する詳細の位置情報はありませんが必要なまたは期待を発行します。
 
@@ -192,15 +192,15 @@ GNSS アダプターと追跡の失敗、ジオフェンスの場合、オフロ
 
 GNSS アダプター GNSS ドライバーからこのような要求を積極的に求めていると、それによって、常に 1 つ維持することによって、または保留中の複数の Irp にこの種類の操作を実現できます GNSS ドライバーが、独自の上位レイヤーに要求を開始することができないため、ように GNSS driver は、このような保留中の要求に応答できます。 アシスタンス/ヘルパーの日付の要求の受信後、GNSS アダプター データをフェッチ (GNSS ドライバーに代わって特定のアクションを実行します)、し、その後 GNSS ドライバーは別に必要な情報が挿入**DeviceIoControl**呼び出します。
 
-一般的なイベント モデルを使って、ドライバーからの通知が処理されます。 たとえば、GNSS の詳細については、GNSS アダプターは、コントロール コード[ **IOCTL\_GNSS\_リッスン\_AGNSS** ](https://msdn.microsoft.com/library/windows/hardware/dn917733) GNSS ドライバーから AGNSS 要求を受信します。 GNSS アダプターが AGNSS アシスタンス データとの問題をフェッチ後[ **IOCTL\_GNSS\_挿入\_AGNSS** ](https://msdn.microsoft.com/library/windows/hardware/dn917732) GNSS ドライバーにデータをプッシュします。
+一般的なイベント モデルを使って、ドライバーからの通知が処理されます。 たとえば、GNSS の詳細については、GNSS アダプターは、コントロール コード[ **IOCTL\_GNSS\_リッスン\_AGNSS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gnssdriver/ni-gnssdriver-ioctl_gnss_listen_agnss) GNSS ドライバーから AGNSS 要求を受信します。 GNSS アダプターが AGNSS アシスタンス データとの問題をフェッチ後[ **IOCTL\_GNSS\_挿入\_AGNSS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gnssdriver/ni-gnssdriver-ioctl_gnss_inject_agnss) GNSS ドライバーにデータをプッシュします。
 
-この通知メカニズムは、ジオフェンスに関連するアラートのデータとステータスの更新プログラムを受信するためも使用されます。 アダプターは、コントロールのコードを使用して[ **IOCTL\_GNSS\_リッスン\_ジオフェンス\_アラート**](https://msdn.microsoft.com/library/windows/hardware/dn917737)の受信用個々 のジオフェンスのアラートと[ **IOCTL\_GNSS\_リッスン\_ジオフェンス\_TRACKINGSTATUS** ](https://msdn.microsoft.com/library/windows/hardware/dn917736)追跡ジオフェンスの全体的な状態の変更を受信するためです。
+この通知メカニズムは、ジオフェンスに関連するアラートのデータとステータスの更新プログラムを受信するためも使用されます。 アダプターは、コントロールのコードを使用して[ **IOCTL\_GNSS\_リッスン\_ジオフェンス\_アラート**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gnssdriver/ni-gnssdriver-ioctl_gnss_listen_geofence_alert)の受信用個々 のジオフェンスのアラートと[ **IOCTL\_GNSS\_リッスン\_ジオフェンス\_TRACKINGSTATUS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gnssdriver/ni-gnssdriver-ioctl_gnss_listen_geofences_trackingstatus)追跡ジオフェンスの全体的な状態の変更を受信するためです。
 
 ### <a name="gnss-driver-logging"></a>GNSS ドライバーのログ記録
 
 診断用には、GNSS ドライバーはエラーとその他の診断情報を以下に示すログ メカニズム (WPP) が規定されている Microsoft または ETW を使用してログインする必要があります。 お勧め、ETW ではなく、ログ目的で、WPP を使用するドライバーの両方のメカニズムがサポートされています。 WPP 推奨される理由は、ドライバーのデバッグに役立つツールの可用性です。
 
-ドライバーは、人間が判読できる、情報をログインしない必要があります。 またはログ記録方法を規定これ以外の場合は、します。 詳細については、次を参照してください。 [WPP ソフトウェア トレース](https://msdn.microsoft.com/library/windows/hardware/ff556204)します。
+ドライバーは、人間が判読できる、情報をログインしない必要があります。 またはログ記録方法を規定これ以外の場合は、します。 詳細については、次を参照してください。 [WPP ソフトウェア トレース](https://docs.microsoft.com/windows-hardware/drivers/devtest/wpp-software-tracing)します。
 
 WPP ソフトウェア トレースとメッセージのログ記録は、Windows イベント ログ サービスを使用すると似ています。 ドライバーでは、メッセージ ID と書式設定されていないバイナリ データをログ ファイルに記録します。 その後、ポスト プロセッサは、人間が判読できる形式にログ ファイルの情報を変換します。 ただし、WPP ソフトウェア トレースは、可能で、イベント ログ サービスでサポートされているよりも柔軟なメッセージ形式をサポートします。 たとえば、WPP ソフトウェア トレースでは、IP アドレス、Guid、システム Id、タイムスタンプ、およびその他の有用なデータ型の組み込みサポートがあります。 さらに、ユーザーは、そのアプリケーションに関連するカスタム データ型を追加できます。
 
@@ -321,13 +321,13 @@ GNSS アダプターでは、2 つのケースのいずれかで 1 つのスナ�
 
 4.  GNSS アダプターは、ドライバー固有の構成やコマンドの Ioctl を発行します。 GNSS ドライバーでは、必要なアクションを実行し、I/O 操作を完了します。
 
-5.  GNSS アダプターに関する問題、 [ **IOCTL\_GNSS\_開始\_FIXSESSION**](https://msdn.microsoft.com/library/windows/hardware/dn917750)パラメーターの型と修正プログラムの他の側面を指定するとします。 この IOCTL の受信後は、GNSS ドライバーは、修正プログラムの受信を開始する基になるデバイスとやり取りし、その後、I/O 操作が完了します。
+5.  GNSS アダプターに関する問題、 [ **IOCTL\_GNSS\_開始\_FIXSESSION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gnssdriver/ni-gnssdriver-ioctl_gnss_start_fixsession)パラメーターの型と修正プログラムの他の側面を指定するとします。 この IOCTL の受信後は、GNSS ドライバーは、修正プログラムの受信を開始する基になるデバイスとやり取りし、その後、I/O 操作が完了します。
 
-6.  GNSS アダプターに関する問題、 [ **IOCTL\_GNSS\_取得\_FIXDATA** ](https://msdn.microsoft.com/library/windows/hardware/dn917731)し、I/O の完了を待ちます。 GNSS ドライバーには、使用可能な中間修正プログラムが含まれている、ときに、I/O 操作を実行してデータを返します。
+6.  GNSS アダプターに関する問題、 [ **IOCTL\_GNSS\_取得\_FIXDATA** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gnssdriver/ni-gnssdriver-ioctl_gnss_get_fixdata)し、I/O の完了を待ちます。 GNSS ドライバーには、使用可能な中間修正プログラムが含まれている、ときに、I/O 操作を実行してデータを返します。
 
 7.  手順 6 は、GNSS ドライバーでは、これ以上の修正プログラムが予想される (最終的な修正プログラムを受信) であることを示しますまで繰り返されます。
 
-8.  GNSS アダプターに関する問題[ **IOCTL\_GNSS\_停止\_FIXSESSION**](https://msdn.microsoft.com/library/windows/hardware/dn917752)します。 GNSS ドライバーでは、元の修正プログラム要求に関連付けられている必要なクリーンアップ操作を行います。
+8.  GNSS アダプターに関する問題[ **IOCTL\_GNSS\_停止\_FIXSESSION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gnssdriver/ni-gnssdriver-ioctl_gnss_stop_fixsession)します。 GNSS ドライバーでは、元の修正プログラム要求に関連付けられている必要なクリーンアップ操作を行います。
 
 9.  GNSS アダプターは、ドライバー ファイル ハンドルを使用して、閉じ、 **CloseHandle** API。
 

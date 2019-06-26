@@ -6,12 +6,12 @@ keywords:
 - WDK DirectDraw の混在のメモリ割り当て
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9740f8f9877d7d01e79e2b93a67e6c62247d9341
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 28d18dbd68e7daf9eaa5c743d73cef2dccaea644
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358412"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382297"
 ---
 # <a name="mixed-memory-allocation"></a>混合メモリの割り当て
 
@@ -27,7 +27,7 @@ ms.locfileid: "63358412"
 
 上記の図は、線形の主な領域 (ヒープ 1) の下のメモリと、四角形が、プライマリの画面 (ヒープ 2) の右側に DirectDraw によって解放されるメモリのです。
 
-次の擬似コードに示す方法、 [**グラフィックスアクセラレータ**](https://msdn.microsoft.com/library/windows/hardware/ff570171)構造が線形および四角形のメモリの組み合わせを設定します。
+次の擬似コードに示す方法、 [**グラフィックスアクセラレータ**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_videomemory)構造が線形および四角形のメモリの組み合わせを設定します。
 
 ```cpp
 /*
@@ -86,7 +86,7 @@ static VIDEOMEMORY vidMem [] =
     vidMem[1].ddsCaps.dwCaps = 0;  // surface has no use restrictions
 ```
 
-線形のメモリ ヒープを設定する開始点と、プライマリのサーフェイスの下のスクラッチ領域の終了点を特定することによって示される、 **fpStart**と**fpEnd** 、線形のメンバー [ **グラフィックスアクセラレータ**](https://msdn.microsoft.com/library/windows/hardware/ff570171)構造 (<strong>vidMem\[</strong>0<strong>\]</strong>)。 四角形の部分がで示される、開始点を使用して設定、 **fpStart**四角形のグラフィックスアクセラレータ構造体のメンバー (<strong>vidMem\[</strong>1 <strong>\]</strong>)、によって示される、幅、 **dwWidth**によって示されるメンバー、および高さを**dwHeight**のプライマリ画面のメンバー。 ピッチ (、 **dwPitch**メンバー) 四角形の部分をセットアップする前に計算する必要があります。 これは、点を除いて、ピッチが 1 つ目ではなくグラフィックスアクセラレータ構造体の 2 番目の要素をここでは前の四角形の例のように同じです。 新しい各ヒープには、新しいグラフィックスアクセラレータ構造が必要です。
+線形のメモリ ヒープを設定する開始点と、プライマリのサーフェイスの下のスクラッチ領域の終了点を特定することによって示される、 **fpStart**と**fpEnd** 、線形のメンバー [ **グラフィックスアクセラレータ**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_videomemory)構造 (<strong>vidMem\[</strong>0<strong>\]</strong>)。 四角形の部分がで示される、開始点を使用して設定、 **fpStart**四角形のグラフィックスアクセラレータ構造体のメンバー (<strong>vidMem\[</strong>1 <strong>\]</strong>)、によって示される、幅、 **dwWidth**によって示されるメンバー、および高さを**dwHeight**のプライマリ画面のメンバー。 ピッチ (、 **dwPitch**メンバー) 四角形の部分をセットアップする前に計算する必要があります。 これは、点を除いて、ピッチが 1 つ目ではなくグラフィックスアクセラレータ構造体の 2 番目の要素をここでは前の四角形の例のように同じです。 新しい各ヒープには、新しいグラフィックスアクセラレータ構造が必要です。
 
 場合によっては、フリップ レジスタは 256 KB の境界のみを処理できます。 これらのインスタンスで小さなヒープは、キャッシュの下端とバック バッファーを 256 KB の境界で開始できるように、バック バッファーの先頭のスペースを使用できます。 この例は表示されませんが、グラフィックスアクセラレータ構造体を別の要素を追加し、キャッシュを越えた開始点と終点 256 KB の境界の直前に設定して実装できます。 DDSCAPS でこのようなヒープのフラグを設定する必要があります\_バックバッファー ヒープ マネージャーが、バック バッファーを検索するとき、その it をスキップするようにします。 このバック バッファー ヒープ (、1 つ配置) は、DDSCAPS でもマークは\_OFFSCREENPLAIN オフスクリーン サーフェスではプレーンなその他のヒープ内で使用可能なその他のメモリがなくなるまで、このヒープを使用してスプライトとテクスチャを保持します。
 

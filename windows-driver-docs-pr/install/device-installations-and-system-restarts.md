@@ -11,12 +11,12 @@ keywords:
 - デバイスのインストール中に再起動します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c83cde688a8f228979abd2964c4fcf32dd05cafe
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 45d5458a980367da11a30c05e4a7fec116894080
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357796"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387137"
 ---
 # <a name="device-installations-and-system-restarts"></a>デバイスのインストールとシステムの再起動
 
@@ -34,7 +34,7 @@ ms.locfileid: "63357796"
  
 
 <a href="" id="updating-a-driver-for-a-system-boot-device--"></a>システムのブート デバイス用のドライバーを更新しています。   
-システムのページング、休止状態、またはクラッシュ ダンプ ファイルに、デバイスが保持できる可能性がある場合、ドライバーがサービスする必要があります[ **IRP_MN_DEVICE_USAGE_NOTIFICATION** ](https://msdn.microsoft.com/library/windows/hardware/ff550841)要求。 システムは、これらのファイル、ディスク上のいずれかを配置する前に、この要求を送信します。 その後する必要があります失敗した場合は、ドライバーは、要求を成功[ **IRP_MN_QUERY_REMOVE_DEVICE** ](https://msdn.microsoft.com/library/windows/hardware/ff551705)要求。 デバイスのドライバーには、IRP_MN_QUERY_REMOVE_DEVICE 要求が失敗した場合、ユーザーに、システムの再起動が求められます。
+システムのページング、休止状態、またはクラッシュ ダンプ ファイルに、デバイスが保持できる可能性がある場合、ドライバーがサービスする必要があります[ **IRP_MN_DEVICE_USAGE_NOTIFICATION** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-device-usage-notification)要求。 システムは、これらのファイル、ディスク上のいずれかを配置する前に、この要求を送信します。 その後する必要があります失敗した場合は、ドライバーは、要求を成功[ **IRP_MN_QUERY_REMOVE_DEVICE** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-remove-device)要求。 デバイスのドライバーには、IRP_MN_QUERY_REMOVE_DEVICE 要求が失敗した場合、ユーザーに、システムの再起動が求められます。
 
 **注**  デバイスのセットアップ ファイルがシステムの再起動を開始する必要があります。
 

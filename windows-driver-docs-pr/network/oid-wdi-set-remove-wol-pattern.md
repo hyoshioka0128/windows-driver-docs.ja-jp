@@ -7,12 +7,12 @@ keywords:
 - OID_WDI_SET_REMOVE_WOL_PATTERN ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: b05d94f6e5ca673a0bbae0ec817a256d3a254406
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3ef9b5e0483e081553508bb388f1d664ee8a6eb4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368262"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386535"
 ---
 # <a name="oidwdisetremovewolpattern"></a>OID\_WDI\_設定\_削除\_WOL\_パターン
 
@@ -30,7 +30,7 @@ OID\_WDI\_設定\_削除\_WOL\_パターン、ファームウェアから、wake
 
 | TLV                                                                                        | 許可されている複数の TLV インスタンス | 省略可能 | 説明     |
 |--------------------------------------------------------------------------------------------|--------------------------------|----------|-----------------|
-| [**WDI\_TLV\_WAKE\_パケット\_パターン\_削除**](https://msdn.microsoft.com/library/windows/hardware/dn898186) |                                |          | WOL パターンの id。 |
+| [**WDI\_TLV\_WAKE\_パケット\_パターン\_削除**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-wake-packet-pattern-remove) |                                |          | WOL パターンの id。 |
 
  
 
@@ -39,7 +39,7 @@ OID\_WDI\_設定\_削除\_WOL\_パターン、ファームウェアから、wake
 
 追加のパラメーターはありません。 ヘッダー内のデータで十分です。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

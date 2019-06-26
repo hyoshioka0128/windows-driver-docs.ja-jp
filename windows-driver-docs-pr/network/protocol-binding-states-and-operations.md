@@ -11,12 +11,12 @@ keywords:
 - イベントの WDK ネットワーク
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d4945295c04ddfa9caac6ce95990b92c3fc81e1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a446101908e233f67e336d0ad4b235ff53791557
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390283"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385463"
 ---
 # <a name="protocol-binding-states-and-operations"></a>プロトコル バインドの状態と操作
 
@@ -27,7 +27,7 @@ ms.locfileid: "63390283"
 NDIS プロトコル ドライバーはドライバーを管理する各バインドに次の操作の状態をサポートする必要があります。
 
 <a href="" id="unbound"></a>バインドされていません。  
-連結なしの状態は、バインディングの初期状態です。 この状態は、NDIS を呼び出すが待機プロトコル ドライバー、 [ *ProtocolBindAdapterEx* ](https://msdn.microsoft.com/library/windows/hardware/ff570220)関数。
+連結なしの状態は、バインディングの初期状態です。 この状態は、NDIS を呼び出すが待機プロトコル ドライバー、 [ *ProtocolBindAdapterEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_bind_adapter_ex)関数。
 
 <a href="" id="opening"></a>開始  
 Opening 状態では、プロトコル ドライバーは、バインディングにリソースを割り当て、アダプターを開こうとするとします。
@@ -205,7 +205,7 @@ Closing 状態にプロトコル ドライバー アダプターへのバイン�
 プライマリ バインド イベントの定義は次のとおりです。
 
 <a href="" id="protocolbindadapterex"></a>*ProtocolBindAdapterEx*  
-NDIS ドライバーを呼び出してから[ *ProtocolBindAdapterEx* ](https://msdn.microsoft.com/library/windows/hardware/ff570220)関数の場合、バインディングが Opening 状態に遷移します。 詳細については、次を参照してください。[をアダプターにバインド](binding-to-an-adapter.md)します。
+NDIS ドライバーを呼び出してから[ *ProtocolBindAdapterEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_bind_adapter_ex)関数の場合、バインディングが Opening 状態に遷移します。 詳細については、次を参照してください。[をアダプターにバインド](binding-to-an-adapter.md)します。
 
 <a href="" id="bind-failed"></a>バインドに失敗しました  
 プロトコル ドライバーはアダプターにバインドできない場合、バインディングは連結なし状態に戻ります。
@@ -214,7 +214,7 @@ NDIS ドライバーを呼び出してから[ *ProtocolBindAdapterEx* ](https://
 ドライバーでは、アダプターが正常に開き、バインドは一時停止状態になります。 ドライバーは、バインド操作を完了します。
 
 <a href="" id="protocolunbindadapterex"></a>*ProtocolUnbindAdapterEx*  
-NDIS ドライバーを呼び出してから[ *ProtocolUnbindAdapterEx* ](https://msdn.microsoft.com/library/windows/hardware/ff570278)ハンドラー、バインドの入力、*閉じる*状態。 詳細については、次を参照してください。[アダプターからバインド解除](unbinding-from-an-adapter.md)します。
+NDIS ドライバーを呼び出してから[ *ProtocolUnbindAdapterEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_unbind_adapter_ex)ハンドラー、バインドの入力、*閉じる*状態。 詳細については、次を参照してください。[アダプターからバインド解除](unbinding-from-an-adapter.md)します。
 
 <a href="" id="unbind-is-complete"></a>バインド解除が完了しました  
 ドライバーには、バインドの解除操作が完了すると、バインディングは連結なし状態になります。

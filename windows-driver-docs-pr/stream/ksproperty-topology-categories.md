@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e9a51b74be02ec2eb9829cfc6a4e8e5b4b29350b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d21302da83b12f1278fddb5ee659a5bc82849156
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376413"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384003"
 ---
 # <a name="kspropertytopologycategories"></a>KSPROPERTY\_トポロジ\_カテゴリ
 
@@ -54,7 +54,7 @@ KSPROPERTY\_トポロジ\_ドライバーがサポートする機能のカテゴ
 <td><p>X</p></td>
 <td><p>フィルター</p></td>
 <td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff563441" data-raw-source="[&lt;strong&gt;KSMULTIPLE_ITEM&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff563441)"><strong>KSMULTIPLE_ITEM</strong></a>Guid のシーケンスと、その後</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksmultiple_item" data-raw-source="[&lt;strong&gt;KSMULTIPLE_ITEM&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksmultiple_item)"><strong>KSMULTIPLE_ITEM</strong></a>Guid のシーケンスと、その後</p></td>
 </tr>
 </tbody>
 </table>
@@ -64,7 +64,7 @@ KSPROPERTY\_トポロジ\_ドライバーがサポートする機能のカテゴ
 <a name="remarks"></a>注釈
 -------
 
-このプロパティを返します、 [ **KSMULTIPLE\_項目**](https://msdn.microsoft.com/library/windows/hardware/ff563441)シーケンス機能カテゴリ、KS フィルターでは、使用可能なを表す Guid の後に、構造体。 Microsoft は、標準のカテゴリを提供します。 *ks.h*と*ksmedia.h*します。 次はテクノロジ固有ではない機能のカテゴリの一覧です。
+このプロパティを返します、 [ **KSMULTIPLE\_項目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksmultiple_item)シーケンス機能カテゴリ、KS フィルターでは、使用可能なを表す Guid の後に、構造体。 Microsoft は、標準のカテゴリを提供します。 *ks.h*と*ksmedia.h*します。 次はテクノロジ固有ではない機能のカテゴリの一覧です。
 
 <table>
 <colgroup>
@@ -134,7 +134,7 @@ KSCATEGORY_ COMMUNICATIONSTRANSFORM</td>
 
 トポロジのカテゴリは、デバイス インターフェイス クラスに対応します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -153,11 +153,11 @@ KSCATEGORY_ COMMUNICATIONSTRANSFORM</td>
 ## <a name="see-also"></a>関連項目
 
 
-[**KSTOPOLOGY**](https://msdn.microsoft.com/library/windows/hardware/ff567146)
+[**KSTOPOLOGY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kstopology)
 
 [**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
 
-[**KSMULTIPLE\_項目**](https://msdn.microsoft.com/library/windows/hardware/ff563441)
+[**KSMULTIPLE\_項目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksmultiple_item)
 
  
 

@@ -4,19 +4,19 @@ description: ドライバー パッケージをテスト署名する方法
 ms.assetid: 992f0974-0b0e-4c96-ad16-c5894067896c
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b93c83d44aa25ac15fef1a4beaa4264aaa80891a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 49b82a40cce82c7074f37cb6f73860dedc6d4272
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63386922"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387032"
 ---
 # <a name="how-to-test-sign-a-driver-package"></a>ドライバー パッケージをテスト署名する方法
 
 
 このセクションでは、ときに従うことがあるという基本的な手順に関する情報を提供するテスト署名、[ドライバー パッケージ](driver-packages.md)します。 
 
-参照のプレリリース版をサインインするとき、テスト証明書を使用するテスト署名、[ドライバー パッケージ](driver-packages.md)テスト コンピューターで使用します。 具体的には、これにより、開発者などの自己署名証明書を使用してカーネル モード バイナリに署名する、 [ **MakeCert** ](https://msdn.microsoft.com/library/windows/hardware/ff548309)ツールが生成されます。 この機能により、開発者とドライバー署名の検証が有効になっている Windows のカーネル モード バイナリをテストします。
+参照のプレリリース版をサインインするとき、テスト証明書を使用するテスト署名、[ドライバー パッケージ](driver-packages.md)テスト コンピューターで使用します。 具体的には、これにより、開発者などの自己署名証明書を使用してカーネル モード バイナリに署名する、 [ **MakeCert** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/makecert)ツールが生成されます。 この機能により、開発者とドライバー署名の検証が有効になっている Windows のカーネル モード バイナリをテストします。
 
 Windows では、開発およびテスト目的のみのテスト署名されたドライバーをサポートしています。 テスト署名されたドライバーを運用環境では使用せず、顧客にリリースする必要があります。
 
@@ -39,7 +39,7 @@ Windows では、開発およびテスト目的のみのテスト署名された
 このセクションでは、別々 のコンピューターは、テスト署名ドライバーに関連するさまざまな処理に使用されます。 これらのコンピューターは参照としては、次のように。
 
 <a href="" id="signing-computer"></a>**コンピューターの署名**  
-これは、テスト署名ドライバーが Windows Vista および Windows の以降のバージョンのパッケージ化するために使用するコンピューターです。 このコンピューターでは、Windows XP SP2 または以降のバージョンの Windows が実行されている必要があります。 使用するには、[ドライバーの署名ツール](https://msdn.microsoft.com/library/windows/hardware/ff552958)以降のバージョンの Windows Driver Kit (WDK) がインストールされている、このコンピューターは、Windows Vista をいる必要があります。
+これは、テスト署名ドライバーが Windows Vista および Windows の以降のバージョンのパッケージ化するために使用するコンピューターです。 このコンピューターでは、Windows XP SP2 または以降のバージョンの Windows が実行されている必要があります。 使用するには、[ドライバーの署名ツール](https://docs.microsoft.com/windows-hardware/drivers/devtest/tools-for-signing-drivers)以降のバージョンの Windows Driver Kit (WDK) がインストールされている、このコンピューターは、Windows Vista をいる必要があります。
 
 <a href="" id="test-computer"></a>**テスト コンピューター**  
 これは、インストールし、テスト署名されたドライバー パッケージをテストするために使用するコンピューターです。 このコンピューターでは、Windows Vista または Windows の以降のバージョンが実行されている必要があります。

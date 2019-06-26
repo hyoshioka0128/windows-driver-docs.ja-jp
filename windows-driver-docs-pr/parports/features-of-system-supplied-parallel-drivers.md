@@ -11,12 +11,12 @@ keywords:
 - IEEE 1284 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 46d98a154681c101233543d06cc2dd1194f1fa88
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7a3069fb56abe1b79b2817f593c7fcd56f154dc6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373545"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382077"
 ---
 # <a name="features-of-system-supplied-parallel-drivers"></a>システム提供のパラレル ドライバーの機能
 
@@ -34,13 +34,13 @@ Windows 2000 には、次のドライバーが含まれています。
 
 -   *Parport*パラレル ポート関数ドライバーです。 Parport の実行可能イメージが*parport.sys*します。
 
-Parclass と Parport の操作が密接にを介して接続されている[パラレル ポートの内部デバイス制御要求](https://msdn.microsoft.com/library/windows/hardware/ff543963)と[ポート コールバック ルーチンを並列](https://msdn.microsoft.com/library/windows/hardware/ff544307)します。
+Parclass と Parport の操作が密接にを介して接続されている[パラレル ポートの内部デバイス制御要求](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)と[ポート コールバック ルーチンを並列](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)します。
 
 Windows XP 以降では、Parclass が削除され、Parport パラレル ポート機能のドライバーと、パラレル ポート バス ドライバーの両方の機能を提供します。 Windows XP で Parport の実行可能イメージが*parport.sys*します。
 
 パラレル ポートのシステムによって提供される関数のドライバーでは、システムに列挙された各パラレル ポートを表すオブジェクト (FDO) の機能のデバイスを作成します。 パラレル ポートのシステム提供のバス ドライバーでは、バス ドライバーは、ポートを列挙する並列各デバイスを表すオブジェクト (PDO) の物理デバイスを作成します。 たとえばクライアント[並列ドライバーのベンダーから提供された](vendor-supplied-parallel-drivers.md)、並列のデバイスの PDO とデバイスの親のポートの FDO によって提供されるインターフェイスを使用して並列デバイスを操作します。
 
-並列のドキュメントで説明されている運用マイナーの相違点を除いて、[システム提供平行ドライバーへのクライアント インターフェイス](https://msdn.microsoft.com/library/windows/hardware/ff543926)は Windows 2000 と Windows XP のようにその後で同じです。
+並列のドキュメントで説明されている運用マイナーの相違点を除いて、[システム提供平行ドライバーへのクライアント インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)は Windows 2000 と Windows XP のようにその後で同じです。
 
 システム提供平行ドライバーのサポート:
 
@@ -90,7 +90,7 @@ Windows XP 以降では、Parclass が削除され、Parport パラレル ポー
 
 [ベンダー提供のパラレル ドライバー](vendor-supplied-parallel-drivers.md)
 
-[システム提供平行ドライバーへのクライアント インターフェイス](https://msdn.microsoft.com/library/windows/hardware/ff543926)
+[システム提供平行ドライバーへのクライアント インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
 
 パラレル ポートとのデバイス標準については、次の仕様を参照してください。
 

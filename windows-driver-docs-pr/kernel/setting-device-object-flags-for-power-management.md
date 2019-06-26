@@ -10,12 +10,12 @@ keywords:
 - WDK のフラグの電源管理
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f4c8d19349f681429d706eaba7b24f98cd3bc320
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2e8d67ffe55c3e00b9220ab3e9c60e6a67f2d989
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63385547"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385243"
 ---
 # <a name="setting-device-object-flags-for-power-management"></a>電源管理に関するデバイス オブジェクト フラグの設定
 
@@ -23,7 +23,7 @@ ms.locfileid: "63385547"
 
 
 
-その[ *AddDevice* ](https://msdn.microsoft.com/library/windows/hardware/ff540521) 、日常的な各ドライバー (フィルター デバイス オブジェクト (DO)、機能のデバイス オブジェクト (FDO) または物理デバイス オブジェクト (PDO)) のデバイス オブジェクトを作成し、操作を設定\_*XXX*フラグでデバイス オブジェクトは、デバイスの属性とドライバーの構成について説明します。 次のデバイス オブジェクトのフラグは、電源管理に関するものです。
+その[ *AddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device) 、日常的な各ドライバー (フィルター デバイス オブジェクト (DO)、機能のデバイス オブジェクト (FDO) または物理デバイス オブジェクト (PDO)) のデバイス オブジェクトを作成し、操作を設定\_*XXX*フラグでデバイス オブジェクトは、デバイスの属性とドライバーの構成について説明します。 次のデバイス オブジェクトのフラグは、電源管理に関するものです。
 
 | Flag               | 説明                                                                                                                                                                                                                                                                                                |
 |--------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -34,9 +34,9 @@ ms.locfileid: "63385547"
 
 デバイス オブジェクトのフラグは、デバイスの PDO を作成するときに通常、バス ドライバーによって設定されます。 ただし、一部の関数のドライバーがの一部としてこれらのフラグの値を変更する必要があります、 *AddDevice*ルーチン。 Windows Vista 以降のオペレーティング システムは必要ありませんデバイス スタック内のすべてのデバイス オブジェクトに設定されている同じ電源関連フラグがあること。 ただし、Windows Server 2003、Windows XP、および Windows 2000 でデバイス スタック内のすべてのデバイス オブジェクトでは設定されている同じ電源関連フラグが必要です。
 
-Windows 2000 以降、ページング パスであるデバイスのドライバー設定しないで、DO\_POWER\_ページング可能なフラグ。 ドライバーが、「ページング パス」ページング ファイルの I/O 操作に含まれているかどうか。 このフラグを設定するドライバーは、IRQL で呼び出し可能である必要があります = ディスパッチ\_レベル。 詳細については、次を参照してください。[ディスパッチ ルーチンに対する制約](https://msdn.microsoft.com/library/windows/hardware/ff539309)します。
+Windows 2000 以降、ページング パスであるデバイスのドライバー設定しないで、DO\_POWER\_ページング可能なフラグ。 ドライバーが、「ページング パス」ページング ファイルの I/O 操作に含まれているかどうか。 このフラグを設定するドライバーは、IRQL で呼び出し可能である必要があります = ディスパッチ\_レベル。 詳細については、次を参照してください。[ディスパッチ ルーチンに対する制約](https://docs.microsoft.com/windows-hardware/drivers/ifs/constraints-on-dispatch-routines)します。
 
-一般に、ドライバーを変更できません、バス ドライバーの値は、\_POWER\_ページング可能なフラグ、およびドライバーをする必要がありますしないこのフラグを設定より低いレベルのドライバーがクリアした場合。 関連する遷移を処理するときに[ページング要求の PnP](https://msdn.microsoft.com/library/windows/hardware/ff554992) (への応答では通常、 [ **IRP\_MJ\_PNP** ](https://msdn.microsoft.com/library/windows/hardware/ff550772)で[**IRP\_MN\_デバイス\_使用状況\_通知**](https://msdn.microsoft.com/library/windows/hardware/ff550841)要求)、記憶装置ドライバーがその設定をシーケンスする必要があります慎重にフラグのクリアするとします。
+一般に、ドライバーを変更できません、バス ドライバーの値は、\_POWER\_ページング可能なフラグ、およびドライバーをする必要がありますしないこのフラグを設定より低いレベルのドライバーがクリアした場合。 関連する遷移を処理するときに[ページング要求の PnP](https://docs.microsoft.com/windows-hardware/drivers/storage/handling-pnp-paging-requests) (への応答では通常、 [ **IRP\_MJ\_PNP** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-pnp)で[**IRP\_MN\_デバイス\_使用状況\_通知**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-device-usage-notification)要求)、記憶装置ドライバーがその設定をシーケンスする必要があります慎重にフラグのクリアするとします。
 
 起動時に電源、突入を必要とするデバイス用のドライバーは、操作を実行を設定する必要があります\_POWER\_突入フラグをオフにすると、操作を実行する前にデバイス オブジェクト\_デバイス\_フラグを初期化しています。 デバイス スタック、バス ドライバー (PDO)、通常の 1 つだけのドライバーは、設定が必要な\_POWER\_デバイスに突入フラグ。 フラグは、電源装置をオーバー ロードを回避するために、このようなその他のデバイスでの順序でこのようなデバイスを 1 つずつ、電源必要があります、電源マネージャーに通知します。 電源マネージャーにより、任意の時点でその 1 つだけ電源突入 IRP が、システムの任意の場所でアクティブになっています。
 

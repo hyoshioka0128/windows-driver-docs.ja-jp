@@ -14,12 +14,12 @@ keywords:
 - Isr WDK カーネルでは、ハードウェアの優先順位
 ms.date: 05/08/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 051aac20bc8a3b0f142efb27444f69c19b741b07
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f0d7a0488091277d33270acd4726c75b98f3b871
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360282"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386017"
 ---
 # <a name="managing-hardware-priorities"></a>ハードウェアの優先度の管理
 
@@ -34,7 +34,7 @@ ms.locfileid: "63360282"
 <a href="" id="passive-level"></a>**パッシブ\_レベル**  
 **マスクされた割り込み**-None。
 
-**ドライバーのルーチンで呼び出さ**パッシブ\_レベル- [**DriverEntry**](https://msdn.microsoft.com/library/windows/hardware/ff544113)、 [ *AddDevice*](https://msdn.microsoft.com/library/windows/hardware/ff540521)、 [*を再初期化*](https://msdn.microsoft.com/library/windows/hardware/ff561022)、 [*アンロード*](https://msdn.microsoft.com/library/windows/hardware/ff564886)ルーチン、ほとんどのディスパッチ ルーチンは、ドライバーが作成したスレッド、ワーカー スレッドのコールバック。
+**ドライバーのルーチンで呼び出さ**パッシブ\_レベル- [**DriverEntry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)、 [ *AddDevice*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)、 [*を再初期化*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nc-ntddk-driver_reinitialize)、 [*アンロード*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_unload)ルーチン、ほとんどのディスパッチ ルーチンは、ドライバーが作成したスレッド、ワーカー スレッドのコールバック。
 
 <a href="" id="apc-level"></a>**APC\_レベル**  
 **マスク オフ割り込み**— APC\_レベル割り込み、マスク オフに指定します。
@@ -44,12 +44,12 @@ ms.locfileid: "63360282"
 <a href="" id="dispatch-level"></a>**ディスパッチ\_レベル**  
 **マスク オフ割り込み** -ディスパッチ\_レベルと APC\_レベル割り込み、マスク オフに指定します。 デバイス、時計、および電源障害の中断が発生することができます。
 
-**ドライバーのルーチンで呼び出さ**ディスパッチ\_レベル- [*StartIo*](https://msdn.microsoft.com/library/windows/hardware/ff563858)、 [ *AdapterControl*](https://msdn.microsoft.com/library/windows/hardware/ff540504)、 [ *AdapterListControl*](https://msdn.microsoft.com/library/windows/hardware/ff540513)、 [ *ControllerControl*](https://msdn.microsoft.com/library/windows/hardware/ff542049)、 [ *IoTimer* ](https://msdn.microsoft.com/library/windows/hardware/ff550381)、 [*キャンセル*](https://msdn.microsoft.com/library/windows/hardware/ff540742) (キャンセル スピン ロックを保持) 中、 [ *DpcForIsr*](https://msdn.microsoft.com/library/windows/hardware/ff544079)、 [ *CustomTimerDpc*](https://msdn.microsoft.com/library/windows/hardware/ff542983)、 [ *CustomDpc* ](https://msdn.microsoft.com/library/windows/hardware/ff542972)ルーチン。
+**ドライバーのルーチンで呼び出さ**ディスパッチ\_レベル- [*StartIo*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_startio)、 [ *AdapterControl*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_control)、 [ *AdapterListControl*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_list_control)、 [ *ControllerControl*](https://msdn.microsoft.com/library/windows/hardware/ff542049)、 [ *IoTimer* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_timer_routine)、 [*キャンセル*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_cancel) (キャンセル スピン ロックを保持) 中、 [ *DpcForIsr*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_dpc_routine)、 [ *CustomTimerDpc*](https://msdn.microsoft.com/library/windows/hardware/ff542983)、 [ *CustomDpc* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kdeferred_routine)ルーチン。
 
 <a href="" id="dirql"></a>**DIRQL**  
 **マスク オフ割り込み** — IRQL ですべての割り込み&lt;ドライバーの割り込みのオブジェクトの DIRQL を = です。 クロックと電源の障害割り込みと共に、DIRQL 値の大きいデバイスの中断が発生することができます。
 
-ドライバーで DIRQL ルーチンと呼ばれます- [*InterruptService*](https://msdn.microsoft.com/library/windows/hardware/ff547958)、 [ *SynchCritSection* ](https://msdn.microsoft.com/library/windows/hardware/ff563928)ルーチン。
+ドライバーで DIRQL ルーチンと呼ばれます- [*InterruptService*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kservice_routine)、 [ *SynchCritSection* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-ksynchronize_routine)ルーチン。
 
 APC の唯一の違い\_レベルとパッシブ\_レベルから APC にプロセス実行\_レベル APC 割り込みを取得できません。 両方は、Irql がスレッド コンテキストを示すもので、両方は、コードをページ アウトできることを意味するもので。
 
@@ -75,25 +75,25 @@ APC の唯一の違い\_レベルとパッシブ\_レベルから APC にプロ�
 
     *IoTimer*、*キャンセル*、および*CustomTimerDpc*ルーチンは、ディスパッチで実行されても\_レベル。
 
-いくつかの状況では、大容量記憶装置の中間的な最下位レベルのドライバーは IRQL APC で呼び出されます\_レベル。 ファイル システム ドライバーの送信をページ フォールトに具体的には、この発生することができます、 [ **IRP\_MJ\_読み取り**](https://msdn.microsoft.com/library/windows/hardware/ff550794)ドライバーを削減する要求。
+いくつかの状況では、大容量記憶装置の中間的な最下位レベルのドライバーは IRQL APC で呼び出されます\_レベル。 ファイル システム ドライバーの送信をページ フォールトに具体的には、この発生することができます、 [ **IRP\_MJ\_読み取り**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-read)ドライバーを削減する要求。
 
-最も標準的なドライバーのルーチンは、単に、適切なサポート ルーチンを呼び出すことを許可する IRQL で実行されます。 たとえば、デバイス ドライバーを呼び出す必要があります[ **AllocateAdapterChannel** ](https://msdn.microsoft.com/library/windows/hardware/ff540573) IRQL ディスパッチで実行中に\_レベル。 ほとんどのデバイス ドライバーからこれらのルーチンを呼び出すため、 *StartIo*ルーチン、通常は実行されているディスパッチで\_既にレベルします。
+最も標準的なドライバーのルーチンは、単に、適切なサポート ルーチンを呼び出すことを許可する IRQL で実行されます。 たとえば、デバイス ドライバーを呼び出す必要があります[ **AllocateAdapterChannel** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pallocate_adapter_channel) IRQL ディスパッチで実行中に\_レベル。 ほとんどのデバイス ドライバーからこれらのルーチンを呼び出すため、 *StartIo*ルーチン、通常は実行されているディスパッチで\_既にレベルします。
 
-なお、デバイス ドライバーがない*StartIo*ルーチンを設定し、Irp のキューを管理するため、必ずしも実行されていないディスパッチで\_レベル IRQL ときに呼び出す必要があります**AllocateAdapterChannel**. このようなドライバーは、その呼び出しを入れ子にしなければなりません**AllocateAdapterChannel**呼び出しの間で[ **KeRaiseIrql** ](https://msdn.microsoft.com/library/windows/hardware/ff553079)と[ **KeLowerIrql**](https://msdn.microsoft.com/library/windows/hardware/ff552968)を呼び出すときに必要な IRQL で実行するよう**AllocateAdapterChannel**し、呼び出し元のルーチンは、コントロールを得たときに、元の IRQL を復元します。
+なお、デバイス ドライバーがない*StartIo*ルーチンを設定し、Irp のキューを管理するため、必ずしも実行されていないディスパッチで\_レベル IRQL ときに呼び出す必要があります**AllocateAdapterChannel**. このようなドライバーは、その呼び出しを入れ子にしなければなりません**AllocateAdapterChannel**呼び出しの間で[ **KeRaiseIrql** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keraiseirql)と[ **KeLowerIrql**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kelowerirql)を呼び出すときに必要な IRQL で実行するよう**AllocateAdapterChannel**し、呼び出し元のルーチンは、コントロールを得たときに、元の IRQL を復元します。
 
 ドライバー サポート ルーチンを呼び出すときに、次の注意します。
 
-- 呼び出す[ **KeRaiseIrql** ](https://msdn.microsoft.com/library/windows/hardware/ff553079) 、入力の*NewIrql*はより小さい値は現在の IRQL で致命的なエラーが発生します。 呼び出す[ **KeLowerIrql** ](https://msdn.microsoft.com/library/windows/hardware/ff552968)以外に、元の IRQL を復元します (つまり、呼び出しの後に**KeRaiseIrql**) も、致命的なエラーが発生します。
+- 呼び出す[ **KeRaiseIrql** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keraiseirql) 、入力の*NewIrql*はより小さい値は現在の IRQL で致命的なエラーが発生します。 呼び出す[ **KeLowerIrql** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kelowerirql)以外に、元の IRQL を復元します (つまり、呼び出しの後に**KeRaiseIrql**) も、致命的なエラーが発生します。
 
-- IRQL での実行中に&gt;= ディスパッチ\_レベル、呼び出す[ **kewaitforsingleobject の 1** ](https://msdn.microsoft.com/library/windows/hardware/ff553350)または[ **KeWaitForMultipleObjects**](https://msdn.microsoft.com/library/windows/hardware/ff553324)カーネル定義のディスパッチャー オブジェクトになるまで待機する間隔を 0 以外の場合に、致命的なエラーが発生します。
+- IRQL での実行中に&gt;= ディスパッチ\_レベル、呼び出す[ **kewaitforsingleobject の 1** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kewaitforsingleobject)または[ **KeWaitForMultipleObjects**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kewaitformultipleobjects)カーネル定義のディスパッチャー オブジェクトになるまで待機する間隔を 0 以外の場合に、致命的なエラーが発生します。
 
 - イベント、セマフォ、ミュー テックス、またはシグナル状態に設定するタイマーを安全に待機できる唯一のドライバー ルーチンは、IRQL パッシブで nonarbitrary スレッド コンテキストで実行される\_ドライバーで作成されたスレッドなどのレベル、 **DriverEntry**と*を再初期化*ルーチン、または (ほとんどのデバイスの I/O 制御要求) などの本質的な同期 I/O 操作のディスパッチ ルーチン。
 
-- IRQL パッシブで実行されている中でも\_レベル、ページング可能なドライバーのコードを呼び出す必要がありますいない[ **KeSetEvent**](https://msdn.microsoft.com/library/windows/hardware/ff553253)、 [ **KeReleaseSemaphore** ](https://msdn.microsoft.com/library/windows/hardware/ff553143)、または[ **KeReleaseMutex** ](https://msdn.microsoft.com/library/windows/hardware/ff553140)入力*待機*パラメーターに設定**TRUE**します。 このような呼び出しには、致命的なページ フォールトを可能性があります。
+- IRQL パッシブで実行されている中でも\_レベル、ページング可能なドライバーのコードを呼び出す必要がありますいない[ **KeSetEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesetevent)、 [ **KeReleaseSemaphore** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kereleasesemaphore)、または[ **KeReleaseMutex** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kereleasemutex)入力*待機*パラメーターに設定**TRUE**します。 このような呼び出しには、致命的なページ フォールトを可能性があります。
 
 - IRQL APC よりも大きい値で実行されている任意のルーチン\_レベルはページ プールからメモリを割り当てるもページ プールのメモリを安全にアクセスします。 場合 APC より大きい IRQL で実行されているルーチン\_レベルでは、ページ フォールトは致命的なエラーです。
 
-- ドライバーは、IRQL のディスパッチで実行する必要があります\_を呼び出すときにレベル[ **KeAcquireSpinLockAtDpcLevel** ](https://msdn.microsoft.com/library/windows/hardware/ff551921)と[ **KeReleaseSpinLockFromDpcLevel**](https://msdn.microsoft.com/library/windows/hardware/ff553150).
+- ドライバーは、IRQL のディスパッチで実行する必要があります\_を呼び出すときにレベル[ **KeAcquireSpinLockAtDpcLevel** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keacquirespinlockatdpclevel)と[ **KeReleaseSpinLockFromDpcLevel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kereleasespinlockfromdpclevel).
 
   IRQL でドライバーを実行できる&lt;= ディスパッチ\_を呼び出すときにレベル**KeAcquireSpinLock**が呼び出すことによってそのスピン ロックを解放する必要がありますには**KeReleaseSpinLock**します。 指定されたスピン ロックを解放するプログラミング エラーはつまり、 **KeAcquireSpinLock**呼び出して**KeReleaseSpinLockFromDpcLevel**します。
 

@@ -13,12 +13,12 @@ keywords:
 - Pdo WDK IEEE 1394 バス
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 60f939f719e3b7bdf37ab28541b71173bb1eb955
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8222213d51492d3df6b3910a885a424a50deb5b0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376712"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385787"
 ---
 # <a name="asynchronous-io-for-ieee-1394-devices"></a>IEEE 1394 デバイスの非同期 I/O
 
@@ -30,9 +30,9 @@ IEEE 1394 バス上のデバイス通信、非同期モードのパケットを�
 
 ドライバーは、デバイスに非同期 I/O 要求を送信することによって、そのデバイスに通信できます。 ドライバーは、ホスト コンピューターの IEEE 1394 のアドレス空間のアドレスの範囲を割り当てるし、これらのアドレスに要求を受信することができますも。 次のセクションでは、両方に記載されています。
 
-[IEEE 1394 バス上の非同期 I/O 要求パケットの送信](https://msdn.microsoft.com/library/windows/hardware/ff538087)
+[IEEE 1394 バス上の非同期 I/O 要求パケットの送信](https://docs.microsoft.com/windows-hardware/drivers/ieee/sending-asynchronous-i-o-request-packets-on-the-ieee-1394-bus)
 
-[IEEE 1394 バス上の非同期 I/O 要求パケットの受信](https://msdn.microsoft.com/library/windows/hardware/ff537626)
+[IEEE 1394 バス上の非同期 I/O 要求パケットの受信](https://docs.microsoft.com/windows-hardware/drivers/ieee/receiving-asynchronous-i-o-request-packets-on-the-ieee-1394-bus)
 
  
 

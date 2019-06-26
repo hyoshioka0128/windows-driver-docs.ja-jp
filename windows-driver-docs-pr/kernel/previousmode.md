@@ -7,12 +7,12 @@ keywords:
 - Requestormode で
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 968c781c98198f7be9328578b6c98adbbb1b77fb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b7c0c749fb110d605c3a69b0b4ed4d0cc7e5fb01
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369133"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378822"
 ---
 # <a name="previousmode"></a>PreviousMode
 
@@ -27,11 +27,11 @@ ms.locfileid: "63369133"
 
 カーネル モード ドライバーを呼び出す場合、エラーが発生する可能性が、 **Nt * Xxx*** ルーチンと**PreviousMode**現在のスレッド オブジェクトの値は正確に示しませんパラメーターの値は、かどうかを。ユーザー モードまたはカーネル モードのソース。
 
-たとえば、カーネル モード ドライバーが任意のスレッドのコンテキストで実行されていること、 **PreviousMode**値に設定されているこのスレッド**UserMode**します。 ドライバーはカーネル モード ファイル ハンドルを渡す場合、 [**そのファイルに対してクローズ**](https://msdn.microsoft.com/library/windows/hardware/ff566417)日常的なこのルーチンのチェック、 **PreviousMode**値し、ハンドルはユーザー モードである必要がありますを決定処理します。 ときに**そのファイルに対してクローズ**ハンドルが見つからないステータスを返す、ユーザー モードのハンドル テーブルで\_無効な\_ハンドル エラー コード。 一方で、ドライバーが閉じられることはカーネル モードのハンドルのリークが発生します。
+たとえば、カーネル モード ドライバーが任意のスレッドのコンテキストで実行されていること、 **PreviousMode**値に設定されているこのスレッド**UserMode**します。 ドライバーはカーネル モード ファイル ハンドルを渡す場合、 [**そのファイルに対してクローズ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntclose)日常的なこのルーチンのチェック、 **PreviousMode**値し、ハンドルはユーザー モードである必要がありますを決定処理します。 ときに**そのファイルに対してクローズ**ハンドルが見つからないステータスを返す、ユーザー モードのハンドル テーブルで\_無効な\_ハンドル エラー コード。 一方で、ドライバーが閉じられることはカーネル モードのハンドルのリークが発生します。
 
-別の例の場合のパラメーター、 **Nt * Xxx*** ルーチンは、入力または出力バッファーを含める場合に**PreviousMode** = **UserMode**、ルーチン呼び出し、 [ **ProbeForRead** ](https://msdn.microsoft.com/library/windows/hardware/ff559876)または[ **ProbeForWrite** ](https://msdn.microsoft.com/library/windows/hardware/ff559879)バッファーを検証するルーチン。 ユーザー モードのメモリ内ではなく、システム メモリ内バッファーが割り当てられている場合、 **ProbeFor * Xxx*** ルーチンは、例外が発生し、 **Nt * Xxx*** ルーチンは、状態を返します\_へのアクセス\_違反のエラー コード。
+別の例の場合のパラメーター、 **Nt * Xxx*** ルーチンは、入力または出力バッファーを含める場合に**PreviousMode** = **UserMode**、ルーチン呼び出し、 [ **ProbeForRead** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-probeforread)または[ **ProbeForWrite** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-probeforwrite)バッファーを検証するルーチン。 ユーザー モードのメモリ内ではなく、システム メモリ内バッファーが割り当てられている場合、 **ProbeFor * Xxx*** ルーチンは、例外が発生し、 **Nt * Xxx*** ルーチンは、状態を返します\_へのアクセス\_違反のエラー コード。
 
-必要な場合は、ドライバーを呼び出すことができます、 [ **ExGetPreviousMode** ](https://msdn.microsoft.com/library/windows/hardware/ff545288)ルーチンを取得する、 **PreviousMode**現在のスレッド オブジェクトからの値。 または、ドライバーが読み取ることができます、 **requestormode で**フィールドを[ **IRP** ](https://msdn.microsoft.com/library/windows/hardware/ff550694)要求された I/O 操作を記述する構造体。 **Requestormode で**フィールドにはコピーが含まれています、 **PreviousMode**操作を要求したスレッドからの値。
+必要な場合は、ドライバーを呼び出すことができます、 [ **ExGetPreviousMode** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exgetpreviousmode)ルーチンを取得する、 **PreviousMode**現在のスレッド オブジェクトからの値。 または、ドライバーが読み取ることができます、 **requestormode で**フィールドを[ **IRP** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_irp)要求された I/O 操作を記述する構造体。 **Requestormode で**フィールドにはコピーが含まれています、 **PreviousMode**操作を要求したスレッドからの値。
 
  
 

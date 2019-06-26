@@ -7,12 +7,12 @@ keywords:
 - TCP ペイロード WDK のヘッダー データの分割
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c6d7ed911970817ce19848504744f151bc937fc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cdeea28393f3c062c2e608c87910b8c000c09be1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392899"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383615"
 ---
 # <a name="splitting-frames-at-the-tcp-payload"></a>TCP ペイロードでのフレームの分割
 
@@ -32,7 +32,7 @@ Nic には、タイムスタンプのオプションのみを使用して分割�
 
 上のレイヤー プロトコル ヘッダーの先頭のフレームの分割の詳細については、次を参照してください。[上のレイヤー プロトコル ヘッダーの先頭のフレームの分割](splitting-frames-at-the-beginning-of-the-upper-layer-protocol-headers.md)します。
 
-プロバイダーが TCP ペイロードを指定された位置のフレームを分割する場合は、ヘッダー データの分割[ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)構造体は、NDIS をいる必要があります\_NBL\_フラグ\_IS\_TCP および NDIS\_NBL\_フラグ\_分割\_で\_上限\_レイヤー\_プロトコル\_ペイロードのフラグのセット、 **NblFlags**メンバー。 ヘッダー データの設定の詳細については、NET を分割の\_バッファー\_フラグの一覧を参照してください[設定 NET\_バッファー\_情報を一覧表示](setting-net-buffer-list-information.md)します。
+プロバイダーが TCP ペイロードを指定された位置のフレームを分割する場合は、ヘッダー データの分割[ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)構造体は、NDIS をいる必要があります\_NBL\_フラグ\_IS\_TCP および NDIS\_NBL\_フラグ\_分割\_で\_上限\_レイヤー\_プロトコル\_ペイロードのフラグのセット、 **NblFlags**メンバー。 ヘッダー データの設定の詳細については、NET を分割の\_バッファー\_フラグの一覧を参照してください[設定 NET\_バッファー\_情報を一覧表示](setting-net-buffer-list-information.md)します。
 
  
 

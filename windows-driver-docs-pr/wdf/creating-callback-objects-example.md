@@ -6,19 +6,19 @@ keywords:
 - コールバック オブジェクト WDK UMDF、作成する例
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 19f852def4de16f87cef0b970f1ed39e78ca9024
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ca08be818e342e761830418ff1183e64a1fd6f56
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358472"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382394"
 ---
 # <a name="creating-callback-objects-example"></a>コールバック オブジェクトの作成の例
 
 
 [!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
 
-次のコード例は、の実装では、ドライバーがデバイス コールバック オブジェクトを作成する方法を示していますその[ **IDriverEntry::OnDeviceAdd** ](https://msdn.microsoft.com/library/windows/hardware/ff554896)メソッドと、デバイス コールバックへのポインターを渡します。インターフェイスの呼び出しで、 [ **IWDFDriver::CreateDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff558899)デバイスを作成するメソッド。
+次のコード例は、の実装では、ドライバーがデバイス コールバック オブジェクトを作成する方法を示していますその[ **IDriverEntry::OnDeviceAdd** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-idriverentry-ondeviceadd)メソッドと、デバイス コールバックへのポインターを渡します。インターフェイスの呼び出しで、 [ **IWDFDriver::CreateDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdriver-createdevice)デバイスを作成するメソッド。
 
 ```cpp
    HRESULT CMyDriver::OnDeviceAdd(

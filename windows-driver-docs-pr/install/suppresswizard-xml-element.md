@@ -12,17 +12,17 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 72c24e2bbd3ea296555b4563294ae229dd022233
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 36e775a68a1fadd56c48a71d7622109862418489
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339636"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385867"
 ---
 # <a name="suppresswizard-xml-element"></a>suppressWizard XML 要素
 
 
-\[DIFx は非推奨、詳細については、「 [DIFx ガイドライン](https://msdn.microsoft.com/windows/hardware/drivers/install/difx-guidelines)します。\]
+\[DIFx は非推奨、詳細については、「 [DIFx ガイドライン](https://docs.microsoft.com/windows-hardware/drivers/install/difx-guidelines)します。\]
 
 **SuppressWizard** XML 要素が空の要素を設定する、 **suppressWizard**その DPInst には、構成ウィザードのページおよびその他のユーザー メッセージを表示しないようにする DPInst フラグ生成されます。
 

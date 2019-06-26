@@ -8,12 +8,12 @@ keywords:
 - SRB_FUNCTION_XXX 将来の使用
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ecd4fbbcf8eb0b72057ca48c53f1550450723d23
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e49772ea85345a30585d8d76f895d547cbd5d2d6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389426"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384654"
 ---
 # <a name="other-srbfunctionxxx-requests"></a>その他の SRB\_関数\_XXX 要求
 
@@ -49,7 +49,7 @@ NT ベースのオペレーティング システムの SCSI ポート ドライ
 
 ミニポート ドライバーのデザイナーは、ミニポート ドライバーが、想定できます*決して*、SRB、すぐに上記のいずれかで送信**関数**値。 NT ベースのオペレーティング システムのポート ドライバー HBA 固有 (またはミニポート ドライバー固有) にアクセスすることから高度なドライバーを保護する記憶域クラスおよびフィルター ドライバーからこれらの要求を処理する状態情報がデバイスを検索するかを取り消すキューに置かれた要求。 これにより、NT ベースのオペレーティング システムの記憶域クラスおよびフィルター ドライバーは、HBA の特殊なモデルでは依存関係がないこと。
 
-参照してください[ **SCSI\_要求\_ブロック**](https://msdn.microsoft.com/library/windows/hardware/ff565393)詳細については、構造体。
+参照してください[ **SCSI\_要求\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/ns-srb-_scsi_request_block)詳細については、構造体。
 
  
 

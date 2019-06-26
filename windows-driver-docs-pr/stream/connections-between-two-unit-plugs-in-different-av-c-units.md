@@ -9,19 +9,19 @@ keywords:
 - AVCPRECONNECTINFO
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 93d1fe5bc36ab8aa7281fadfae1cd2275784935f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b346261620bd6fbe0345fcf02dc3fd0a5f0fe949
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374212"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384495"
 ---
 # <a name="connections-between-two-unit-plugs-in-different-avc-units"></a>異なる AV/C ユニット内の 2 つのユニット プラグ間の接続
 
 
 シナリオ 7 と 8 では、ターゲットが 1 つの AV/C 単位内でユニットの接続のサブユニットをサポートしません、別の単位でのサブユニットを 1 つのまとまりのサブユニット間の接続を表します。 このタイプの接続が必要な**信号のソース**と**入力選択**CCM コマンド。
 
-シナリオ 7 および 8 がサブユニットの送信元または送信先のプラグを記述する、 **KSPIN\_フラグ\_AVC\_PCRONLY**フラグを設定、**フラグ**のメンバー[**AVCPRECONNECTINFO** ](https://msdn.microsoft.com/library/windows/hardware/ff554103)によって変換が構造体は、 *Avc.sys*サブユニットのアドレスの 0 xff までです。
+シナリオ 7 および 8 がサブユニットの送信元または送信先のプラグを記述する、 **KSPIN\_フラグ\_AVC\_PCRONLY**フラグを設定、**フラグ**のメンバー[**AVCPRECONNECTINFO** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ns-avc-_avcpreconnectinfo)によって変換が構造体は、 *Avc.sys*サブユニットのアドレスの 0 xff までです。
 
 ### <a name="scenario-7"></a>**シナリオ 7**
 
@@ -33,7 +33,7 @@ ms.locfileid: "63374212"
 
 シナリオ 7 は、接続をローカルのピン留めを説明の**データフロー**メンバーが KSPIN\_データフロー\_in です。
 
-次の表に各列のメンバーに対応して、 [ **AVCCONNECTINFO** ](https://msdn.microsoft.com/library/windows/hardware/ff554101)構造体し、ソースのサブユニット プラグのこれらのメンバーの値を指定します。
+次の表に各列のメンバーに対応して、 [ **AVCCONNECTINFO** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ns-avc-_avcconnectinfo)構造体し、ソースのサブユニット プラグのこれらのメンバーの値を指定します。
 
 <table>
 <colgroup>

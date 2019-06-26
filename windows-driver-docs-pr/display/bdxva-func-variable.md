@@ -10,12 +10,12 @@ keywords:
 - bDXVA_Func 変数 WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 92174b1651c0da6fc2ec8496930572a716848ee4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1517826a7ea42c1f79eb0e505efdd9a9dc2b8c07
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346990"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381883"
 ---
 # <a name="bdxvafunc-variable"></a>bDXVA\_Func 変数
 
@@ -60,14 +60,14 @@ ms.locfileid: "63346990"
 
 **BDXVA\_Func**変数は、次のタスクを実行するために使用します。
 
--   プローブし、特定の DirectX VA 機能の構成をロックします。 これを行うなどを**bDXVA\_Func**で、 **DXVA\_ConfigQueryOrReplyFlag**変数と、 **DXVA\_ConfigQueryOrReplyFlag**変数これらの変数が送信されると、 **dwFunction**のメンバー、 [ **DD\_RENDERMOCOMPDATA** ](https://msdn.microsoft.com/library/windows/hardware/ff551693)への呼び出しで構造体[ *DdMoCompRender*](https://msdn.microsoft.com/library/windows/hardware/ff550248)します。
+-   プローブし、特定の DirectX VA 機能の構成をロックします。 これを行うなどを**bDXVA\_Func**で、 **DXVA\_ConfigQueryOrReplyFlag**変数と、 **DXVA\_ConfigQueryOrReplyFlag**変数これらの変数が送信されると、 **dwFunction**のメンバー、 [ **DD\_RENDERMOCOMPDATA** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_rendermocompdata)への呼び出しで構造体[ *DdMoCompRender*](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_render)します。
 
--   含めることによって、プローブまたはロック コマンドで渡される構成構造に関連付けられている関数を指定する**DXVA\_ConfigQueryOrReplyFlag**で変数を**DXVA\_ConfigQueryOrReplyFlag**で送信される変数、 **dwFunction**以下の構造体のメンバー。[**DXVA\_ConfigPictureDecode** ](https://msdn.microsoft.com/library/windows/hardware/ff563133)を圧縮する画像のデコード[ **DXVA\_ConfigAlphaLoad** ](https://msdn.microsoft.com/library/windows/hardware/ff563129) を読み込み、アルファブレンドデータ[**DXVA\_ConfigAlphaCombine** ](https://msdn.microsoft.com/library/windows/hardware/ff563126)アルファ ブレンドの組み合わせ
--   含めることによって、特定の DirectX VA 関数の暗号化プロトコルの初期化、 **DXVA\_EncryptProtocolFunc**で送信される変数、 **dwFunction**のメンバー、 [ **DD\_RENDERMOCOMPDATA** ](https://msdn.microsoft.com/library/windows/hardware/ff551693)構造体への呼び出しで[ *DdMoCompRender*](https://msdn.microsoft.com/library/windows/hardware/ff550248)します。
+-   含めることによって、プローブまたはロック コマンドで渡される構成構造に関連付けられている関数を指定する**DXVA\_ConfigQueryOrReplyFlag**で変数を**DXVA\_ConfigQueryOrReplyFlag**で送信される変数、 **dwFunction**以下の構造体のメンバー。[**DXVA\_ConfigPictureDecode** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_configpicturedecode)を圧縮する画像のデコード[ **DXVA\_ConfigAlphaLoad** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_configalphaload) を読み込み、アルファブレンドデータ[**DXVA\_ConfigAlphaCombine** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_configalphacombine)アルファ ブレンドの組み合わせ
+-   含めることによって、特定の DirectX VA 関数の暗号化プロトコルの初期化、 **DXVA\_EncryptProtocolFunc**で送信される変数、 **dwFunction**のメンバー、 [ **DD\_RENDERMOCOMPDATA** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_rendermocompdata)構造体への呼び出しで[ *DdMoCompRender*](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_render)します。
 
--   含めることで、暗号化プロトコルに関連付けられている関数を指定、 **dwFunction**のメンバー、 [ **DXVA\_EncryptProtocolHeader** ](https://msdn.microsoft.com/library/windows/hardware/ff563965)構造体。
+-   含めることで、暗号化プロトコルに関連付けられている関数を指定、 **dwFunction**のメンバー、 [ **DXVA\_EncryptProtocolHeader** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_encryptprotocolheader)構造体。
 
--   一連の信頼で実行される操作の通知**bDXVA\_Func**バイト値、 **dwFunction**のメンバー、 [ **DD\_RENDERMOCOMPDATA** ](https://msdn.microsoft.com/library/windows/hardware/ff551693)構造体への呼び出しで[ *DdMoCompRender*](https://msdn.microsoft.com/library/windows/hardware/ff550248)します。 最初の**bDXVA\_Func**操作は、最上位バイトで指定されて、次の操作を指定で、[次へ] 最上位バイト、します。 残りのバイト**dwFunction**通知操作が 0 に設定するのには使用されません。
+-   一連の信頼で実行される操作の通知**bDXVA\_Func**バイト値、 **dwFunction**のメンバー、 [ **DD\_RENDERMOCOMPDATA** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_rendermocompdata)構造体への呼び出しで[ *DdMoCompRender*](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_render)します。 最初の**bDXVA\_Func**操作は、最上位バイトで指定されて、次の操作を指定で、[次へ] 最上位バイト、します。 残りのバイト**dwFunction**通知操作が 0 に設定するのには使用されません。
 
  
 

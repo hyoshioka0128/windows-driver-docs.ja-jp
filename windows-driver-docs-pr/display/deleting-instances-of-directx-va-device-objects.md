@@ -8,12 +8,12 @@ keywords:
 - DirectX ビデオ アクセラレータ WDK Windows 2000 の表示、インスタンスの削除
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c567f73f0b75538f94c00486fd688a3f70a9942b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 140414cebfb2a6d3ef7fda237e9844e26907b780
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348896"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384895"
 ---
 # <a name="deleting-instances-of-directx-va-device-objects"></a>DirectX VA デバイス オブジェクトのインスタンスの削除
 
@@ -21,7 +21,7 @@ ms.locfileid: "63348896"
 ## <span id="ddk_deleting_instances_of_directx_va_device_objects_gg"></span><span id="DDK_DELETING_INSTANCES_OF_DIRECTX_VA_DEVICE_OBJECTS_GG"></span>
 
 
-DirectX VA デバイス オブジェクトのインスタンスを削除するのにには、次のコード例を使用します。 このコードは、の実装、 [ *DdMoCompDestroy* ](https://msdn.microsoft.com/library/windows/hardware/ff549664)コールバック関数。 **DestroyMoComp**のメンバー、 [ **DD\_MOTIONCOMPCALLBACKS** ](https://msdn.microsoft.com/library/windows/hardware/ff551660)コールバック関数へのポインターを構造体します。
+DirectX VA デバイス オブジェクトのインスタンスを削除するのにには、次のコード例を使用します。 このコードは、の実装、 [ *DdMoCompDestroy* ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_destroy)コールバック関数。 **DestroyMoComp**のメンバー、 [ **DD\_MOTIONCOMPCALLBACKS** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)コールバック関数へのポインターを構造体します。
 
 ```cpp
 DWORD APIENTRY

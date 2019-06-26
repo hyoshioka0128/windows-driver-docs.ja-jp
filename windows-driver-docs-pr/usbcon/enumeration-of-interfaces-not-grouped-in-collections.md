@@ -3,12 +3,12 @@ Description: 複合 USB デバイス上のインターフェイスは、個別�
 title: USB 複合デバイス上のインターフェイスの列挙
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cbf80573b7a1b02012e13216d1215a8bf6b90e30
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9d6f815574f91886c2e9427fe6947bffe8df628f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383020"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386270"
 ---
 # <a name="enumeration-of-interfaces-on-usb-composite-devices"></a>USB 複合デバイス上のインターフェイスの列挙
 
@@ -25,7 +25,7 @@ ms.locfileid: "63383020"
 -   *p(4)* 4 桁の製品コードは、ベンダーがデバイスに割り当てます。
 -   *z(2)* から抽出されたインターフェイスの数が、 **bInterfaceNumber**インターフェイス記述子フィールド。
 
-一般的な親ドライバー インターフェイス記述子から情報を使用して次の互換性のある Id も生成されます ([**USB\_インターフェイス\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff540065))。
+一般的な親ドライバー インターフェイス記述子から情報を使用して次の互換性のある Id も生成されます ([**USB\_インターフェイス\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbspec/ns-usbspec-_usb_interface_descriptor))。
 
 `USB\CLASS_d(2)&SUBCLASS_s(2)&PROT_p(2)`
 

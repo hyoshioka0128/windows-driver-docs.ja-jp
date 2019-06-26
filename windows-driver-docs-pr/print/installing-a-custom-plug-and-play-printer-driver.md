@@ -6,12 +6,12 @@ keywords:
 - プリンター ドライバー WDK をカスタマイズするには、プラグ アンド プレイします。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bd3124b506928018a113461baae3bb1b197431bc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 497a3335c63d42532bba5868cdac716ca77061b8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362754"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385983"
 ---
 # <a name="installing-a-custom-plug-and-play-printer-driver"></a>カスタムのプラグ アンド プレイ プリンター ドライバーをインストールする
 
@@ -27,9 +27,9 @@ Windows xp では、プラグ アンド プレイ マネージャーは、(最�
 
 3.  符号なしの IHV ドライバー
 
-Windows 2000 では、ボックスで、符号付きの IHV ドライバーの間の違いはありません: ドライバーのいずれかの型が符号なしの IHV ドライバー方が優先的に読み込まれます。 ドライバーと「ボックス」ドライバーを置換する INF ファイルをインストールするためのアプリケーションの詳細については、次を参照してください。[デバイス インストール アプリケーションを記述して](https://msdn.microsoft.com/library/windows/hardware/ff554015)します。
+Windows 2000 では、ボックスで、符号付きの IHV ドライバーの間の違いはありません: ドライバーのいずれかの型が符号なしの IHV ドライバー方が優先的に読み込まれます。 ドライバーと「ボックス」ドライバーを置換する INF ファイルをインストールするためのアプリケーションの詳細については、次を参照してください。[デバイス インストール アプリケーションを記述して](https://docs.microsoft.com/windows-hardware/drivers/install/writing-a-device-installation-application)します。
 
-Windows 2000 のインボックス ドライバーを置換するドライバーを開発している場合、以下のことを確認、*ハードウェア Id*で、 [ **INF モデル セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547456) INF ファイルが含まれます、。適切なポートの列挙子。 Ntprint.inf の Windows 2000 バージョンには、モデルの INF セクションでは、エントリにはポートの列挙子が含まれます。 INF ファイルで同じエントリは、ポートの列挙子を省略、プラグ アンド プレイは皆さん方が優先的、インボックス Windows 2000 のドライバーを選択します。 場合、ドライバーは Windows XP のインボックス ドライバーにハードウェア ID で、ポートの列挙子を含める必要はありません。
+Windows 2000 のインボックス ドライバーを置換するドライバーを開発している場合、以下のことを確認、*ハードウェア Id*で、 [ **INF モデル セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-models-section) INF ファイルが含まれます、。適切なポートの列挙子。 Ntprint.inf の Windows 2000 バージョンには、モデルの INF セクションでは、エントリにはポートの列挙子が含まれます。 INF ファイルで同じエントリは、ポートの列挙子を省略、プラグ アンド プレイは皆さん方が優先的、インボックス Windows 2000 のドライバーを選択します。 場合、ドライバーは Windows XP のインボックス ドライバーにハードウェア ID で、ポートの列挙子を含める必要はありません。
 
 IHV は、次の例のように、各モデルのモデルの INF セクション内の 2 行を提供することでクライアント側のインストールでユーザーの操作を求めるダイアログ ボックスを回避できます。
 

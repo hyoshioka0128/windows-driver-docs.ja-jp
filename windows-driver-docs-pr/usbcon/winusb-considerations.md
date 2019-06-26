@@ -3,12 +3,12 @@ Description: デバイスの機能のドライバーとして機能する USB �
 title: USB ドライバーを開発するためのドライバー モデルを選択します。
 ms.date: 05/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: a548bff389696d1bb369e7d62c7851db6e1b23d3
-ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
+ms.openlocfilehash: e893eaff0aa1f77998badb9f8874415cdc50bdb8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65405294"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385679"
 ---
 # <a name="choosing-a-driver-model-for-developing-a-usb-client-driver"></a>USB クライアント ドライバー開発用のドライバー モデルの選択
 
@@ -49,7 +49,7 @@ USB デバイスへのアクセスを提供する最も柔軟な方法は、デ�
 
     WinUSB 関数ドライバーとして読み込むカスタム USB ドライバーを実装するのには同じことを提供します。 たとえば、WinUSB は、デバイスにパッケージ化されているアプリケーションによってのみアクセスされる電子の気象観測計の推奨されるアプローチです。 また、デバイスとの通信を診断およびファームウェアの点滅と便利です。
 
-    Winusb.sys に要求を送信するアプリケーションを簡単に提供を公開するには、Winusb.dll、ユーザー モード DLL [WinUSB functions](https://msdn.microsoft.com/library/windows/hardware/ff540046#winusb)します。 アプリケーションでは、デバイスへのアクセス、構成、およびデバイスのエンドポイントへのデータ転送にこれらの関数を呼び出すことができます。
+    Winusb.sys に要求を送信するアプリケーションを簡単に提供を公開するには、Winusb.dll、ユーザー モード DLL [WinUSB functions](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb)します。 アプリケーションでは、デバイスへのアクセス、構成、およびデバイスのエンドポイントへのデータ転送にこれらの関数を呼び出すことができます。
 
     WinUSB は場合、オプションではありません。
 

@@ -12,19 +12,19 @@ keywords:
 - 帯域幅の割り当てください。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b2785ccf8456c3d43a48237eed60a292efc0f90a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 32c4c0632a3d5dfce9f031172ba84863d44d66b2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390310"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381026"
 ---
 # <a name="setting-up-isochronous-transfer-for-ieee-1394-devices"></a>IEEE 1394 デバイスの等時性転送の設定
 
 
 自分のデバイス ドライバーを開始する前に、次の手順に従う必要があります。
 
-### <a href="" id="step-1---choose-the-transfer-speed-"></a>手順 1 です。 転送速度を選択します。
+### <a href="" id="step-1---choose-the-transfer-speed-"></a>手順 1. 転送速度を選択します。
 
 IEEE 1394 バスは、ハードウェアの使用によって制限されている、いくつかの異なる速度をサポートできます。 特定のデバイスでは、ある程度の速度をサポートする場合でも、のみ低速度をサポートする別のデバイスに接続する可能性があります。 ドライバーは、デバイスとコンピューター間の転送速度を実行時に決定する必要があります。 バス ドライバーにクエリを実行、 [**要求\_取得\_速度\_BETWEEN\_デバイス**](https://msdn.microsoft.com/library/windows/hardware/ff537645)最大速度を判断する要求バスの 2 つのデバイスまたはデバイスとホスト コンピューター間。
 
@@ -56,11 +56,11 @@ Isochronous データ転送はすべてを配置する前に、ドライバー�
 
 -   ドライバーが、チャネルを使用して、デバイスからデータを読み取るかどうか (、 [**要求\_アイソクロナス\_リッスン**](https://msdn.microsoft.com/library/windows/hardware/ff537655)操作)、リソースを設定\_使用\_IN\_リッスン中のフラグ。 ドライバーが、チャネルを使用して、デバイスにデータを書き込むかどうか (、 [**要求\_アイソクロナス\_説明**](https://msdn.microsoft.com/library/windows/hardware/ff537660)操作)、リソースを設定\_使用\_IN\_説明フラグ。
 
--   ドライバーでは、ハンドルを使用して、トランザクションのデータ バッファーを提供します。 (詳細については、この手順 5 を参照してください)。バス ドライバーではを実行し、デバイス ドライバーは、多くのバッファーがアタッチされるまでに、操作を一時停止するまでに、順序で、バッファーを使用します。 参照してください[アイソクロナス DMA 転送の IEEE 1394 デバイスのバッファリング](https://msdn.microsoft.com/library/windows/hardware/ff537014)詳細についてはします。
+-   ドライバーでは、ハンドルを使用して、トランザクションのデータ バッファーを提供します。 (詳細については、この手順 5 を参照してください)。バス ドライバーではを実行し、デバイス ドライバーは、多くのバッファーがアタッチされるまでに、操作を一時停止するまでに、順序で、バッファーを使用します。 参照してください[アイソクロナス DMA 転送の IEEE 1394 デバイスのバッファリング](https://docs.microsoft.com/windows-hardware/drivers/ieee/buffering-isochronous-dma-transfers-for-ieee-1394-devices)詳細についてはします。
 
--   ドライバーは、アイソクロナス サイクル クロックの特定の値に、操作を同期することを指定できます。 参照してください[アイソクロナス同期オプションの IEEE 1394 デバイス](https://msdn.microsoft.com/library/windows/hardware/ff537379)詳細についてはします。
+-   ドライバーは、アイソクロナス サイクル クロックの特定の値に、操作を同期することを指定できます。 参照してください[アイソクロナス同期オプションの IEEE 1394 デバイス](https://docs.microsoft.com/windows-hardware/drivers/ieee/isochronous-synchronization-options-for-ieee-1394-devices)詳細についてはします。
 
--   ドライバーは、アイソクロナス リッスンするためのオプションを設定できます。 ドライバーでは、データ パケットから isochronous パケット ヘッダーを削除するかどうかを指定できます。 ドライバーは、各バッファーは、データが格納される必要がありますまたはバッファー、あたり待機中のデータ バッファー 1 つパケットに到着したデータがコピーされるかどうかも指定できます。 参照してください[アイソクロナス IEEE 1394 デバイス用のオプションのリッスン](https://msdn.microsoft.com/library/windows/hardware/ff537377)詳細についてはします。
+-   ドライバーは、アイソクロナス リッスンするためのオプションを設定できます。 ドライバーでは、データ パケットから isochronous パケット ヘッダーを削除するかどうかを指定できます。 ドライバーは、各バッファーは、データが格納される必要がありますまたはバッファー、あたり待機中のデータ バッファー 1 つパケットに到着したデータがコピーされるかどうかも指定できます。 参照してください[アイソクロナス IEEE 1394 デバイス用のオプションのリッスン](https://docs.microsoft.com/windows-hardware/drivers/ieee/isochronous-listen-options-for-ieee-1394-devices)詳細についてはします。
 
 この要求が失敗した場合、ドライバーの前の手順で、割り当てられたすべてのアイソクロナス リソース割り当てを解除する必要があります。
 
@@ -68,17 +68,17 @@ Isochronous データ転送はすべてを配置する前に、ドライバー�
 
 ドライバーは、リソース ハンドルを割り当てます後、は、ハンドルにバッファーをアタッチします。 ホスト DMA コント ローラーはからデータを読み取るか、接続されているバッファーにデータを書き込みます。
 
-各バッファーで、ドライバーに渡します、 [**アイソクロナス\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff537401)構造体のバッファーの使用方法を説明します。 バッファーのアイソクロナスで\_記述子構造体、ドライバーは、次の情報を指定できます。
+各バッファーで、ドライバーに渡します、 [**アイソクロナス\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/1394/ns-1394-_isoch_descriptor)構造体のバッファーの使用方法を説明します。 バッファーのアイソクロナスで\_記述子構造体、ドライバーは、次の情報を指定できます。
 
 -   フレームごとのバイト数の最大数。 データを送信するときに、ホスト コント ローラーは、このサイズのパケットにデータ バッファーを分割します。
 
 -   省略可能なコールバック ルーチンの場合。 処理が完了したら、バス ドライバーがこのルーチンを呼び出す
 
--   同期オプション。 参照してください[アイソクロナス同期オプションの IEEE 1394 デバイス](https://msdn.microsoft.com/library/windows/hardware/ff537379)の同期オプションの説明。
+-   同期オプション。 参照してください[アイソクロナス同期オプションの IEEE 1394 デバイス](https://docs.microsoft.com/windows-hardware/drivers/ieee/isochronous-synchronization-options-for-ieee-1394-devices)の同期オプションの説明。
 
--   アイソクロナス トークの操作に、ドライバーは、次のいくつかのデータ パケットを先頭に追加するヘッダーの一覧としてこのバッファーを指定できます。 参照してください[アイソクロナス IEEE 1394 デバイス用のオプションの説明](https://msdn.microsoft.com/library/windows/hardware/ff537380)詳細についてはします。
+-   アイソクロナス トークの操作に、ドライバーは、次のいくつかのデータ パケットを先頭に追加するヘッダーの一覧としてこのバッファーを指定できます。 参照してください[アイソクロナス IEEE 1394 デバイス用のオプションの説明](https://docs.microsoft.com/windows-hardware/drivers/ieee/isochronous-talk-options-for-ieee-1394-devices)詳細についてはします。
 
-操作が開始されると、ドライバーが不要なバッファーをデタッチすることができ、追加のバッファーを関連付けることができます。 識別されるコールバック ルーチンを使用できます[**アイソクロナス\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff537401)自体をバス ドライバーに接続されている最後のバッファー処理が完了したときに通知します。 参照してください[アイソクロナス DMA 転送の IEEE 1394 デバイスのバッファリング](https://msdn.microsoft.com/library/windows/hardware/ff537014)DMA が IEEE 1394 のデバイスでのバッファー処理の説明についてはします。
+操作が開始されると、ドライバーが不要なバッファーをデタッチすることができ、追加のバッファーを関連付けることができます。 識別されるコールバック ルーチンを使用できます[**アイソクロナス\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/1394/ns-1394-_isoch_descriptor)自体をバス ドライバーに接続されている最後のバッファー処理が完了したときに通知します。 参照してください[アイソクロナス DMA 転送の IEEE 1394 デバイスのバッファリング](https://docs.microsoft.com/windows-hardware/drivers/ieee/buffering-isochronous-dma-transfers-for-ieee-1394-devices)DMA が IEEE 1394 のデバイスでのバッファー処理の説明についてはします。
 
 ### <a href="" id="step-6---begin-the-data-transfer"></a>手順 6 です。 データ転送を開始します。
 

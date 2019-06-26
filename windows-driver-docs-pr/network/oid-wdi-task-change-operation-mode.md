@@ -7,12 +7,12 @@ keywords:
 - OID_WDI_TASK_CHANGE_OPERATION_MODE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 7134b0e75af214a3a3d78cd9f406d295c84142ea
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f31cc86fe32c2a65f85c8b0abe8a3f45feb357e8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348505"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386527"
 ---
 # <a name="oidwditaskchangeoperationmode"></a>OID\_WDI\_タスク\_変更\_操作\_モード
 
@@ -30,7 +30,7 @@ OID\_WDI\_タスク\_変更\_操作\_モードは、ポートの操作モード�
 
 | TLV                                                              | 許可されている複数の TLV インスタンス | 省略可能 | 説明                 |
 |------------------------------------------------------------------|--------------------------------|----------|-----------------------------|
-| [**WDI\_TLV\_操作\_モード**](https://msdn.microsoft.com/library/windows/hardware/dn897856) |                                |          | 目的の操作モード。 |
+| [**WDI\_TLV\_操作\_モード**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-operation-mode) |                                |          | 目的の操作モード。 |
 
  
 

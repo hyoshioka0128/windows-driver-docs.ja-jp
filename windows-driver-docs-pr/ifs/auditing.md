@@ -11,12 +11,12 @@ keywords:
 - WDK を参照してくださいイベントものイベント
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e19b5884b76c873cc3c81ec3c2e1a5a4eff8bec1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: df5500e9b6944c0cc4e423ce01318200d1112e32
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63393036"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385315"
 ---
 # <a name="auditing"></a>監査
 
@@ -30,9 +30,9 @@ Windows での監査システムでは、ログは破損しているか、侵害
 
 監査のためのキーのルーチンは次のとおりです。
 
--   [**SeAuditingFileEvents**](https://msdn.microsoft.com/library/windows/hardware/ff554770)--かどうかファイル監査が有効になって、システムでこのルーチンを決定します。 これは、完全な監査チェックを行う必要があるかどうかを判断するグローバル ポリシーを確認します。 このルーチンは、セキュリティ システムの操作を最適化するために導入されました。
+-   [**SeAuditingFileEvents**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-seauditingfileevents)--かどうかファイル監査が有効になって、システムでこのルーチンを決定します。 これは、完全な監査チェックを行う必要があるかどうかを判断するグローバル ポリシーを確認します。 このルーチンは、セキュリティ システムの操作を最適化するために導入されました。
 
--   [**SeOpenObjectAuditAlarm**](https://msdn.microsoft.com/library/windows/hardware/ff556682)--このルーチンは、Windows システム (監査オブジェクトを開こうとする) でプライマリ監査操作を実行します。 オブジェクトへのアクセスが成功したか失敗したかどうかではありませんが監査されるオブジェクトにアクセスしようとするにあることに注意してください。
+-   [**SeOpenObjectAuditAlarm**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-seopenobjectauditalarm)--このルーチンは、Windows システム (監査オブジェクトを開こうとする) でプライマリ監査操作を実行します。 オブジェクトへのアクセスが成功したか失敗したかどうかではありませんが監査されるオブジェクトにアクセスしようとするにあることに注意してください。
 
 監査の要件はありません。 サンプルのファイル システム (FAT または例では、cdfs を含む) IFS セクションでは、WDK は、監査を実装します。 ただし、セキュリティの観点から監査は、重要なシステムのセキュリティ動作を監視するための管理者が許可されています。
 

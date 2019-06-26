@@ -17,12 +17,12 @@ api_type:
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
-ms.openlocfilehash: 0cca20a4d4a1706153f29b4ff085cb23ad2e3c09
-ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
+ms.openlocfilehash: 7e347f0a10ec59b6daa352d8d83618cc748736de
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67161410"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384270"
 ---
 # <a name="dxvadeinterlacecontainerdeviceclassprocampcontrolqueryrange-method"></a>DXVA\_DeinterlaceContainerDeviceClass::ProcAmpControlQueryRange メソッド
 
@@ -78,9 +78,9 @@ HRESULT ProcAmpControlQueryRange(
 
  
 
-*lpVideoDescription* \[で\]へのポインターを提供する[ **DXVA\_VideoDesc** ](https://msdn.microsoft.com/library/windows/hardware/ff564070)構造体。 この構造体では、ドライバー ProcAmp 調整の適用先となる、ビデオの説明を提供します。 ドライバーは、特定のビデオ ストリームの ProcAmp サポートを調整できます。
+*lpVideoDescription* \[で\]へのポインターを提供する[ **DXVA\_VideoDesc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_videodesc)構造体。 この構造体では、ドライバー ProcAmp 調整の適用先となる、ビデオの説明を提供します。 ドライバーは、特定のビデオ ストリームの ProcAmp サポートを調整できます。
 
-*lpPropRange* \[アウト\]へのポインターを受け取る、 [ **DXVA\_VideoPropertyRange** ](https://msdn.microsoft.com/library/windows/hardware/ff564083)の範囲、ステップのサイズを指定してProcAmp の既定値。
+*lpPropRange* \[アウト\]へのポインターを受け取る、 [ **DXVA\_VideoPropertyRange** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_videopropertyrange)の範囲、ステップのサイズを指定してProcAmp の既定値。
 
 <a name="return-value"></a>戻り値
 ------------
@@ -92,9 +92,9 @@ HRESULT ProcAmpControlQueryRange(
 
 ProcAmp の各プロパティの VMR は、最小、最大値、ステップのサイズ、および既定値を決定するドライバーを照会します。 ドライバーを返す必要があるかどうか、ハードウェアは、特定の ProcAmp コントロール プロパティをサポートしていません、E\_から NOTIMPL、 **ProcAmpControlQueryRange**関数。
 
-ProcAmp プロパティに関する詳細については、次を参照してください。 [ProcAmp プロパティ](https://msdn.microsoft.com/library/windows/hardware/ff569189)します。
+ProcAmp プロパティに関する詳細については、次を参照してください。 [ProcAmp プロパティ](https://docs.microsoft.com/windows-hardware/drivers/display/procamp-properties)します。
 
-サンプル**ProcAmpControlQueryRange**関数のマップへの呼び出しに直接、 **RenderMoComp**のメンバー、 [ **DD\_MOTIONCOMPCALLBACKS**](https://msdn.microsoft.com/library/windows/hardware/ff551660)構造体。 **RenderMoComp**メンバーがドライバーによって提供される指す[ **DdMoCompRender** ](https://msdn.microsoft.com/library/windows/hardware/ff550248)参照コールバック、 [ **DD\_RENDERMOCOMPDATA** ](https://msdn.microsoft.com/library/windows/hardware/ff551693)構造体。 DD\_RENDERMOCOMPDATA 構造は次のように入力されます。
+サンプル**ProcAmpControlQueryRange**関数のマップへの呼び出しに直接、 **RenderMoComp**のメンバー、 [ **DD\_MOTIONCOMPCALLBACKS**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)構造体。 **RenderMoComp**メンバーがドライバーによって提供される指す[ **DdMoCompRender** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_render)参照コールバック、 [ **DD\_RENDERMOCOMPDATA** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_rendermocompdata)構造体。 DD\_RENDERMOCOMPDATA 構造は次のように入力されます。
 
 <table>
 <colgroup>
@@ -122,11 +122,11 @@ ProcAmp プロパティに関する詳細については、次を参照してく
 </tr>
 <tr class="even">
 <td align="left"><p>lpInputData</p></td>
-<td align="left"><p>ポインターを<a href="https://msdn.microsoft.com/library/windows/hardware/ff564032" data-raw-source="[&lt;strong&gt;DXVA_ProcAmpControlQueryRange&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564032)"> <strong>DXVA_ProcAmpControlQueryRange</strong> </a>構造体。</p></td>
+<td align="left"><p>ポインターを<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_procampcontrolqueryrange" data-raw-source="[&lt;strong&gt;DXVA_ProcAmpControlQueryRange&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_procampcontrolqueryrange)"> <strong>DXVA_ProcAmpControlQueryRange</strong> </a>構造体。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>lpOutputData</p></td>
-<td align="left"><p>ポインターを<a href="https://msdn.microsoft.com/library/windows/hardware/ff564083" data-raw-source="[&lt;strong&gt;DXVA_VideoPropertyRange&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564083)"> <strong>DXVA_VideoPropertyRange</strong> </a>構造体。</p></td>
+<td align="left"><p>ポインターを<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_videopropertyrange" data-raw-source="[&lt;strong&gt;DXVA_VideoPropertyRange&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_videopropertyrange)"> <strong>DXVA_VideoPropertyRange</strong> </a>構造体。</p></td>
 </tr>
 </tbody>
 </table>
@@ -206,11 +206,11 @@ DXVA_DeinterlaceContainerDeviceClass::ProcAmpControlQueryRange(
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
-[**DXVA\_ProcAmpControlQueryRange**](https://msdn.microsoft.com/library/windows/hardware/ff564032)
+[**DXVA\_ProcAmpControlQueryRange**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_procampcontrolqueryrange)
 
-[**DXVA\_VideoDesc**](https://msdn.microsoft.com/library/windows/hardware/ff564070)
+[**DXVA\_VideoDesc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_videodesc)
 
-[**DXVA\_VideoPropertyRange**](https://msdn.microsoft.com/library/windows/hardware/ff564083)
+[**DXVA\_VideoPropertyRange**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_videopropertyrange)
 
  
 

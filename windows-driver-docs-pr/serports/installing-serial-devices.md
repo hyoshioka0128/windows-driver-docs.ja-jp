@@ -6,12 +6,12 @@ keywords:
 - シリアル デバイス、WDK をインストールします。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b0e7356d629c1f72f76f93304a7b1b8ea9481606
-ms.sourcegitcommit: 6a0636c33e28ce2a9a742bae20610f0f3435262c
+ms.openlocfilehash: 83f32c9b18cda905afeba5917329ca364493213f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65836358"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386935"
 ---
 # <a name="installing-serial-devices"></a>シリアル デバイスをインストールする
 
@@ -27,6 +27,6 @@ ms.locfileid: "65836358"
 
 シリアル デバイスをインストールするための他のシリアルに固有の要件はありません。
 
-デバイスのインストールについては、次を参照してください。、[デバイス インストールの設計ガイド](https://msdn.microsoft.com/library/windows/hardware/ff541156)セクション。
+デバイスのインストールについては、次を参照してください。、[デバイス インストールの設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/install/index)セクション。
 
-シリアル デバイスに関する詳細については、次を参照してください。[シリアル デバイスとドライバー](https://msdn.microsoft.com/library/windows/hardware/ff547451)します。
+シリアル デバイスに関する詳細については、次を参照してください。[シリアル デバイスとドライバー](https://docs.microsoft.com/previous-versions/ff547451(v=vs.85))します。

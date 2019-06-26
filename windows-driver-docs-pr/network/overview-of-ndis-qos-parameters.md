@@ -4,12 +4,12 @@ description: NDIS QoS パラメーターの概要
 ms.assetid: E9321805-2930-410A-81BC-F7978517E89E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bba212964084b2108dcf457ff4504d4529f32519
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 70335c6f3e8dbbb465baafab667412ea2a8676a1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360975"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384381"
 ---
 # <a name="overview-of-ndis-qos-parameters"></a>NDIS QoS パラメーターの概要
 
@@ -35,11 +35,11 @@ NDIS QoS では、次の種類のパラメーターを定義します。
 <a href="" id="local-ndis-qos-parameters"></a>ローカルの NDIS QoS パラメーター  
 ローカルの NDIS QoS パラメーターは、ミニポート ドライバーとそのネットワーク アダプターの主要な QoS 設定を指定します。 これらのパラメーターは、システム レジストリに保存され、次のように、ミニポート ドライバーをローカルに管理します。
 
--   NDIS オブジェクト識別子 (OID) メソッドの要求を通じて[OID\_QOS\_パラメーター](https://msdn.microsoft.com/library/windows/hardware/hh451835) DCB コンポーネントによって発行されました。 この OID 要求に含まれる、 [ **NDIS\_QOS\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/hh451640)をローカルの NDIS QoS パラメーターを指定します。
+-   NDIS オブジェクト識別子 (OID) メソッドの要求を通じて[OID\_QOS\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-qos-parameters) DCB コンポーネントによって発行されました。 この OID 要求に含まれる、 [ **NDIS\_QOS\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_qos_parameters)をローカルの NDIS QoS パラメーターを指定します。
 
     DCB のコンポーネントの詳細については、次を参照してください。[データ センター ブリッジングの NDIS QoS アーキテクチャ](ndis-qos-architecture-for-data-center-bridging.md)します。
 
--   ネットワーク アダプターの独自のレジストリ設定。 ミニポート ドライバーがこれらの設定を読み取るときにその[ *MiniportInitializeEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559389) NDIS によって呼び出されます。
+-   ネットワーク アダプターの独自のレジストリ設定。 ミニポート ドライバーがこれらの設定を読み取るときにその[ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize) NDIS によって呼び出されます。
 
 -   独立系ハードウェア ベンダー (IHV) によって開発された管理アプリケーションを通じてミニポート ドライバーに発行された設定。
 

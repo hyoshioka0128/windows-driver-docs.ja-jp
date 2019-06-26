@@ -4,12 +4,12 @@ description: 単純なセグメント化フィルターの例
 ms.assetid: 9c77fea4-61d9-4bec-8d8d-35436d00c1ed
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ada6abf55e6f324785bf7b85aa862a64015b1e5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: da1939dbb6d34f42dacb074aecfef0963b2377a0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373080"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385025"
 ---
 # <a name="example-simple-segmentation-filter"></a>以下に例を示します。シンプル セグメンテーション フィルター
 
@@ -17,7 +17,7 @@ ms.locfileid: "63373080"
 
 
 
-次のコード例では、単純なセグメント化フィルターを実装する方法を示します。 例では、セグメント化フィルターを使用しません、 [ **WIA\_IP\_DESKEW\_X** ](https://msdn.microsoft.com/library/windows/hardware/ff552581)と[ **WIA\_IP\_DESKEW\_Y** ](https://msdn.microsoft.com/library/windows/hardware/ff552587)プロパティ。 わかりやすくするために、エラー チェック コードが省略されています。
+次のコード例では、単純なセグメント化フィルターを実装する方法を示します。 例では、セグメント化フィルターを使用しません、 [ **WIA\_IP\_DESKEW\_X** ](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-deskew-x)と[ **WIA\_IP\_DESKEW\_Y** ](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-deskew-y)プロパティ。 わかりやすくするために、エラー チェック コードが省略されています。
 
 ```cpp
 typedef struct _SUB_RECT

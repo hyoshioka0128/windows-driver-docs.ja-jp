@@ -9,12 +9,12 @@ keywords:
 - SetPortTimeOuts
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 22c4dfcd6fd4ad424b61c57f2f92b9c42f339c45
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 02b507030b09bbf26a531b439dcae6d1a277ad7a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372064"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384167"
 ---
 # <a name="setting-port-time-out-values"></a>ポート タイムアウト値の設定
 
@@ -22,9 +22,9 @@ ms.locfileid: "63372064"
 
 
 
-モニターの内からタイムアウト値を初期化する必要がありますを変更可能なタイムアウト値を持つポートのポート モニターを作成する場合[ **OpenPort** ](https://msdn.microsoft.com/library/windows/hardware/ff559593)関数。 たとえば、 **OpenPort** Localmon.dll、関数、[サンプル ポート モニター](sample-port-monitor.md)、呼び出し、 **SetCommTimeouts** Microsoft Windows SDK で説明されている関数この目的の場合は、ドキュメントです。
+モニターの内からタイムアウト値を初期化する必要がありますを変更可能なタイムアウト値を持つポートのポート モニターを作成する場合[ **OpenPort** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/nf-winsplp-openport)関数。 たとえば、 **OpenPort** Localmon.dll、関数、[サンプル ポート モニター](sample-port-monitor.md)、呼び出し、 **SetCommTimeouts** Microsoft Windows SDK で説明されている関数この目的の場合は、ドキュメントです。
 
-さらに、ポート モニタを提供できます必要に応じて、 [ **SetPortTimeOuts** ](https://msdn.microsoft.com/library/windows/hardware/ff562630)関数で、言語モニターによって呼び出すことができます。 Pjlmon.dll、によって、関数が呼び出されます、[サンプル言語モニター](sample-language-monitor.md)します。 印刷スプーラを呼び出しません**SetPortTimeOuts**します。
+さらに、ポート モニタを提供できます必要に応じて、 [ **SetPortTimeOuts** ](https://docs.microsoft.com/previous-versions/ff562630(v=vs.85))関数で、言語モニターによって呼び出すことができます。 Pjlmon.dll、によって、関数が呼び出されます、[サンプル言語モニター](sample-language-monitor.md)します。 印刷スプーラを呼び出しません**SetPortTimeOuts**します。
 
  
 

@@ -3,12 +3,12 @@ Description: MUTT デバイスを使用する前に、テスト システムを�
 title: MUTT テスト ツール実行のためのテスト システムの準備方法
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e7c60595a621275c95fa98fc9d448e0a2f5e116
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: adf9a6d2c666566a54af609cb7f05a2068da1380
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379941"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383513"
 ---
 # <a name="how-to-prepare-the-test-system-to-run-mutt-test-tools"></a>MUTT テスト ツール実行のためのテスト システムの準備方法
 
@@ -66,10 +66,10 @@ MUTT デバイスを使用する前に、テスト システムを準備する�
 
 ### <a name="tracing-and-logging-events-in-the-usb-driver-stack"></a>トレースと USB ドライバー スタックでイベントをログ記録
 
-移動して https://aka.ms/usbtrace手順については、USB ドライバーからの ETW トレースをキャプチャするためのスクリプトをダウンロードします。
+移動して https://aka.ms/usbtrace 手順については、USB ドライバーからの ETW トレースをキャプチャするためのスクリプトをダウンロードします。
 
 ## <a name="related-topics"></a>関連トピック
-[USB](https://msdn.microsoft.com/library/windows/hardware/ff538930)  
+[USB](https://docs.microsoft.com/windows-hardware/drivers/)  
 [Microsoft USB Test Tool (MUTT) デバイス](microsoft-usb-test-tool--mutt--devices.md)  
 
 

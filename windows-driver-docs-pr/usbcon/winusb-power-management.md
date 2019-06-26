@@ -3,17 +3,17 @@ Description: WinUSB 電源管理
 title: WinUSB 電源管理
 ms.date: 01/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: d4c57bfa041744eba9129e67c1097f4da5a0be0e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e84ef44620283c82d1ce7b2c2967c3e02764d765
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389143"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385350"
 ---
 # <a name="winusb-power-management"></a>WinUSB 電源管理
 
 
-WinUSB は、電源管理の KMDF のステート マシンを使用します。 呼び出しを通じて電源ポリシーの管理は[ **WinUsb\_SetPowerPolicy**](https://msdn.microsoft.com/library/windows/hardware/ff540309)します。
+WinUSB は、電源管理の KMDF のステート マシンを使用します。 呼び出しを通じて電源ポリシーの管理は[ **WinUsb\_SetPowerPolicy**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_setpowerpolicy)します。
 
 WinUSB の電源の動作を変更するには、デバイスの INF で既定のレジストリ設定を変更できます。 内の値を追加することで、レジストリにデバイスの特定の場所にこれらの値を記述する必要があります、 **HW。AddReg** INF のセクション。
 
@@ -36,7 +36,7 @@ HKR,,SystemWakeEnabled,0x00010001,1
 <a href="" id="selective-suspend"></a>**選択的な中断**  
 セレクティブ サスペンドのいくつかのシステムまたは WinUSB 設定によって無効にすることができます。 1 つの設定を強制はできません WinUSB 有効にする選択的中断します。
 
-次のポリシー設定で指定されている電源[ **WinUsb\_SetPowerPolicy**](https://msdn.microsoft.com/library/windows/hardware/ff540309)の*PolicyType*パラメーターの選択的な動作に影響します。中断します。
+次のポリシー設定で指定されている電源[ **WinUsb\_SetPowerPolicy**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_setpowerpolicy)の*PolicyType*パラメーターの選択的な動作に影響します。中断します。
 
 -   自動\_中断時に、0 に設定は設定しません、デバイス セレクティブ サスペンド モード。
 -   中断\_遅延セット WinUSB が選択的に移動するデバイスを要求したときに、デバイスがアイドル状態までの時間を中断します。
@@ -109,10 +109,10 @@ HKR,,SystemWakeEnabled,0x00010001,1
 [WinUSB (Winusb.sys) のインストール](winusb-installation.md)  
 [WinUSB 関数を使用して、USB デバイスにアクセスする方法](using-winusb-api-to-communicate-with-a-usb-device.md)  
 [ポリシーの変更をパイプ WinUSB 関数](winusb-functions-for-pipe-policy-modification.md)  
-[WinUSB 関数](https://msdn.microsoft.com/library/windows/hardware/ff540046#winusb)  
+[WinUSB 関数](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb)  
 [WinUSB](winusb.md)  
-[**WinUsb\_GetPowerPolicy**](https://msdn.microsoft.com/library/windows/hardware/ff540275)  
-[**WinUsb\_SetPowerPolicy**](https://msdn.microsoft.com/library/windows/hardware/ff540309)  
+[**WinUsb\_GetPowerPolicy**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_getpowerpolicy)  
+[**WinUsb\_SetPowerPolicy**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_setpowerpolicy)  
 
 
 

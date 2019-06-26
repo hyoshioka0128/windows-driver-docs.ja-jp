@@ -8,12 +8,12 @@ keywords:
 - WDK RSS ハッシュ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3559780bdce1a6a0896cd6e599afac6c4a22d121
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 737c559674cecfbf629aad04f62ddc76f239369a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359101"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382162"
 ---
 # <a name="rss-hashing-functions"></a>RSS ハッシュ関数
 
@@ -34,7 +34,7 @@ NIC のミニポート ドライバー、RSS ハッシュ関数でを使用し�
 >[!NOTE]
 > 現時点では、 **NdisHashFunctionToeplitz**は唯一のハッシュ関数をミニポート ドライバーを使用できます。 他のハッシュ関数は、NDIS 用に予約されています。 
 
-ミニポート ドライバーは、ハッシュ関数と各で使用される値を識別する必要があります[ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)受信したデータの構造体の前に、ドライバーを示します。 詳細については、次を参照してください。 [RSS の受信データのことを示す](indicating-rss-receive-data.md)します。
+ミニポート ドライバーは、ハッシュ関数と各で使用される値を識別する必要があります[ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)受信したデータの構造体の前に、ドライバーを示します。 詳細については、次を参照してください。 [RSS の受信データのことを示す](indicating-rss-receive-data.md)します。
 
 ## <a name="examples"></a>例
 

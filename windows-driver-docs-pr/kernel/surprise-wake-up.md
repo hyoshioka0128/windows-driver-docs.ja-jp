@@ -4,12 +4,12 @@ description: 驚きのウェイク アップでは、D0 に予期しない移行
 ms.assetid: 07D3EC05-A1C9-40C5-90FC-E25B5A66B064
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: ec9d19a1c3fab877172cad9e90b703b38ba2e9b8
-ms.sourcegitcommit: 944535d8e00393531f6b265317a64da3567e4f2c
+ms.openlocfilehash: 4b777b1e0e48245596cece58b07e5359faa9c465
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65106425"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385107"
 ---
 # <a name="surprise-wake-up"></a>予期しないウェイクアップ
 
@@ -20,18 +20,18 @@ D3hot から D3cold にデバイスを移動、ときにおそらくはいくつ
 
 この電源状態の変更が必要とする唯一のデバイス ドライバーは、変更を要求したドライバーです。 その他のデバイス ドライバーは、D0 で動作するようにデバイスに正しく初期化できるように、この変更の通知を受け取る必要があります。 この通知を受け取ることができるドライバーのみに D3cold を入力するには、そのデバイスが有効にする必要があります。 それ以外の場合、ドライバーでは、デバイスが D0 に入ったときはわかりません。
 
-デバイスがオンにすると、既定では、初期化されていないハードウェアの状態を入力します。 たとえば、 [PCI Express ベース 3.0 の仕様](https://www.pcisig.com/specifications/pciexpress/specifications/)を定義、 *D0 が初期化されていない*状態、デバイスは電源を最初に受信したときの入力をします。 この状態の定義は、PCI や PCI Express デバイスに固有ですが、他のバスに接続するデバイスが起動しているときのようなハードウェアの状態を入力するように設計します。
+デバイスがオンにすると、既定では、初期化されていないハードウェアの状態を入力します。 たとえば、 [PCI Express ベース 3.0 の仕様](https://pcisig.com/specifications/pciexpress/specifications/)を定義、 *D0 が初期化されていない*状態、デバイスは電源を最初に受信したときの入力をします。 この状態の定義は、PCI や PCI Express デバイスに固有ですが、他のバスに接続するデバイスが起動しているときのようなハードウェアの状態を入力するように設計します。
 
 場合は複数の関数を実装する PCI や PCI Express デバイス、デバイスのこれらの関数はおそらく同じ電源レールを共有します。 ただし、各関数は、個別のドライバーを必要があります、これらの関数のドライバーは、互いに直接通信することはありません。 これらの関数のいずれかのドライバーでは、D0 に D3cold から電源状態の変更を要求、するとき、その他の関数のドライバーはこの変更を予期しません。 これらの機能は、電力を供給、D0 で正しく動作する関数を構成できるように、ドライバーに通知する必要があります。
 
-子のデバイスに電源が入っているバス ドライバーを検出します。 バス ドライバーが D0 power IRP 自体を送信するデバイス ドライバーを求めるこのデバイスの機能のドライバーが D0 への遷移を要求していない場合 (、 [ **IRP\_MN\_設定\_POWER** ](https://msdn.microsoft.com/library/windows/hardware/ff551744)対象の状態を含む要求 = **PowerDeviceD0**) D0 で動作するデバイスを初期化します。 初期化されたこの D0 状態から、デバイス ドライバーは、D3hot へのデバイスの移行を開始できます。 デバイス ドライバー通知を受信できる突然遷移の D0 にバス ドライバーから次の方法で。
+子のデバイスに電源が入っているバス ドライバーを検出します。 バス ドライバーが D0 power IRP 自体を送信するデバイス ドライバーを求めるこのデバイスの機能のドライバーが D0 への遷移を要求していない場合 (、 [ **IRP\_MN\_設定\_POWER** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-set-power)対象の状態を含む要求 = **PowerDeviceD0**) D0 で動作するデバイスを初期化します。 初期化されたこの D0 状態から、デバイス ドライバーは、D3hot へのデバイスの移行を開始できます。 デバイス ドライバー通知を受信できる突然遷移の D0 にバス ドライバーから次の方法で。
 
 -   直接または間接的のクライアントとして自身を登録するデバイス ドライバー、[実行時の電源管理フレームワーク](overview-of-the-power-management-framework.md)(PoFx) 通知のコールバックを受信します。
--   スリープ解除するデバイスを arm デバイス用のドライバーが、保留中[ **IRP\_MN\_待機\_WAKE** ](https://msdn.microsoft.com/library/windows/hardware/ff551766)バス ドライバーによって完了した要求。
+-   スリープ解除するデバイスを arm デバイス用のドライバーが、保留中[ **IRP\_MN\_待機\_WAKE** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-wait-wake)バス ドライバーによって完了した要求。
 
-Windows 8 以降、電源ポリシーの所有者として機能する、デバイスの機能のドライバーとして登録できます自体の PoFx クライアント。 バス ドライバーは、デバイスに D0 への突然の遷移が発生したことを PoFx に通知をするときに、デバイスに移動し、次を D0 の状態に初期化された D3hot が PoFx に役立ちます。 PoFx、まず、呼び出し、ドライバーの[ *DevicePowerRequiredCallback* ](https://msdn.microsoft.com/library/windows/hardware/hh450949)ルーチンをデバイス スタック D0 電源 IRP を送信するデバイス ドライバを確認します。 次に、ドライバーの呼び出す PoFx [ *DevicePowerNotRequiredCallback* ](https://msdn.microsoft.com/library/windows/hardware/hh450946) D0 状態を維持するためにデバイスがいないデバイス ドライバーに通知するルーチンが必要です。
+Windows 8 以降、電源ポリシーの所有者として機能する、デバイスの機能のドライバーとして登録できます自体の PoFx クライアント。 バス ドライバーは、デバイスに D0 への突然の遷移が発生したことを PoFx に通知をするときに、デバイスに移動し、次を D0 の状態に初期化された D3hot が PoFx に役立ちます。 PoFx、まず、呼び出し、ドライバーの[ *DevicePowerRequiredCallback* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-po_fx_device_power_required_callback)ルーチンをデバイス スタック D0 電源 IRP を送信するデバイス ドライバを確認します。 次に、ドライバーの呼び出す PoFx [ *DevicePowerNotRequiredCallback* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-po_fx_device_power_not_required_callback) D0 状態を維持するためにデバイスがいないデバイス ドライバーに通知するルーチンが必要です。
 
-単一コンポーネントのデバイスは直接いない自体が登録 PoFx 呼び出すことによって、カーネル モード ドライバー フレームワーク (KMDF) バージョン 1.11、KMDF ドライバーを開始、 [ **WdfDeviceWdmAssignPowerFrameworkSettings**](https://msdn.microsoft.com/library/windows/hardware/hh451097)メソッド。 この呼び出しでは、ドライバーは、D0 への突然の遷移のドライバーに通知するコールバック ルーチンへのポインターを提供します。 詳細については、次を参照してください。[サポート機能の電力状態](https://msdn.microsoft.com/library/windows/hardware/hh451017)します。
+単一コンポーネントのデバイスは直接いない自体が登録 PoFx 呼び出すことによって、カーネル モード ドライバー フレームワーク (KMDF) バージョン 1.11、KMDF ドライバーを開始、 [ **WdfDeviceWdmAssignPowerFrameworkSettings**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicewdmassignpowerframeworksettings)メソッド。 この呼び出しでは、ドライバーは、D0 への突然の遷移のドライバーに通知するコールバック ルーチンへのポインターを提供します。 詳細については、次を参照してください。[サポート機能の電力状態](https://docs.microsoft.com/windows-hardware/drivers/wdf/supporting-functional-power-states)します。
 
 PoFx でそのデバイスを登録できませんドライバーは、デバイスのスリープ解除されている場合、D0 への突然の遷移の通知も。 ドライバーのバス ドライバーは、デバイスの電源をオンにと、完了**IRP\_MN\_待機\_WAKE**要求。 応答では、ドライバーは、D0 で動作するには、そのデバイスを初期化します。 デバイスは、この場合、ドライバーでは、その後はこのデバイスに移動 D3hot、アイドル状態になる可能性があります。
 

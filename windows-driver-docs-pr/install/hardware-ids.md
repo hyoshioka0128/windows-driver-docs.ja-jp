@@ -4,12 +4,12 @@ description: ハードウェア ID は、Windows を使用して、INF ファイ
 ms.assetid: 9eb894d6-4e83-4c08-8165-f30d6636da75
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f5312df32adcc5a63e470491253cb1f5ec0c66c3
-ms.sourcegitcommit: 944535d8e00393531f6b265317a64da3567e4f2c
+ms.openlocfilehash: 0c3a558ccf00d6db89267f473f647df1287bab04
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65106418"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383823"
 ---
 # <a name="hardware-id"></a>Hardware ID (ハードウェア ID)
 
@@ -39,11 +39,11 @@ ms.locfileid: "65106418"
 
 確立されている独自の名前付け規則、既存のデバイス クラスには、カスタムの形式を使用します。 ハードウェア ID の形式については、このようなバスのハードウェア仕様を参照してください。 新しい列挙子では、この形式は使用しないでください。
 
-文字、終端の NULL を除く、ハードウェア ID の数は、MAX_DEVICE_ID_LEN 未満である必要があります。 この制約が適用されるすべてのフィールドと任意の長さの合計"\\"フィールドの区切りには、ハードウェア ID デバイス Id の制約の詳細については、の操作」セクションを参照してください。 [ **IRP_MN_QUERY_ID**](https://msdn.microsoft.com/library/windows/hardware/ff551679)します。
+文字、終端の NULL を除く、ハードウェア ID の数は、MAX_DEVICE_ID_LEN 未満である必要があります。 この制約が適用されるすべてのフィールドと任意の長さの合計"\\"フィールドの区切りには、ハードウェア ID デバイス Id の制約の詳細については、の操作」セクションを参照してください。 [ **IRP_MN_QUERY_ID**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-id)します。
 
 ## <a name="obtaining-the-list-of-hardware-ids-for-a-device"></a>デバイスのハードウェア Id の一覧を取得します。
 
-デバイスのハードウェア Id の一覧を取得するには、呼び出す[ **IoGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff549203)で、 *DeviceProperty*パラメーターに設定**DevicePropertyHardwareID**. このルーチンを取得するハードウェア Id の一覧は、 [REG_MULTI_SZ](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)値。 各ハードウェア ID と最終的な NULL 終端文字の後に、NULL 終端文字を含む、ハードウェア一覧内の文字の最大数は、REGSTR_VAL_MAX_HCID_LEN です。 ハードウェア Id の一覧で、Id の考えられる最大数は、64 です。
+デバイスのハードウェア Id の一覧を取得するには、呼び出す[ **IoGetDeviceProperty** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdeviceproperty)で、 *DeviceProperty*パラメーターに設定**DevicePropertyHardwareID**. このルーチンを取得するハードウェア Id の一覧は、 [REG_MULTI_SZ](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)値。 各ハードウェア ID と最終的な NULL 終端文字の後に、NULL 終端文字を含む、ハードウェア一覧内の文字の最大数は、REGSTR_VAL_MAX_HCID_LEN です。 ハードウェア Id の一覧で、Id の考えられる最大数は、64 です。
 
 ## <a name="examples-of-hardware-ids"></a>ハードウェア Id の例
 

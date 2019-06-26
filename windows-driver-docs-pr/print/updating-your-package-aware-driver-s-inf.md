@@ -4,12 +4,12 @@ description: パッケージ対応ドライバーの INF を更新する
 ms.assetid: d0bf489d-d084-40df-b5aa-69cdf679993f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a58709ac71945097fb69619f9225d95bf72d788a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3c1b9509188ac5aa8ba1c9e8754bb2a92587b68d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346536"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385953"
 ---
 # <a name="updating-your-package-aware-drivers-inf"></a>パッケージ対応ドライバーの INF を更新する
 
@@ -29,7 +29,7 @@ InboxVersionRequired=<version of the updated core driver>
 
 前の例では、適切なドライバーのバージョン情報で斜体のテキストを置き換えます。
 
-次に、使用、 [ **INF CopyINF ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff547317)中核となる更新されたドライバー パッケージをドライバー ストアにコピーします。 このディレクティブは、Windows vista のドライバー ストアにコピーをサポートするために更新されました。
+次に、使用、 [ **INF CopyINF ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-copyinf-directive)中核となる更新されたドライバー パッケージをドライバー ストアにコピーします。 このディレクティブは、Windows vista のドライバー ストアにコピーをサポートするために更新されました。
 
 次の手順を完了すると、ドライバーをテストする準備があります。 PnP のインストール中に、インストーラーが、新しいパッケージに対応したドライバーを検出し、関連付けられている INF ファイルを読み取る。 CopyINF ディレクティブが強制的に更新されたコアのドライバー パッケージ、ドライバー ストアに読み込まれると、パッケージに対応したドライバーのインストールの残りの部分が続行されます。
 

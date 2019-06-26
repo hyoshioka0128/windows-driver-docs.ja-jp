@@ -7,12 +7,12 @@ keywords:
 - OID_WDI_TASK_CONNECT ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 8526e4ea1afb6b5db683ff0dc669d55116cb4a82
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7ede38b990875831813d6e5931dd7ff6a0fc473e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348850"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387243"
 ---
 # <a name="oidwditaskconnect"></a>OID\_WDI\_タスク\_接続
 
@@ -41,7 +41,7 @@ BSS エントリごとに、接続試行の状態は、アソシエーション�
 
 802.11 ステーションでは、堅牢なセキュリティ ネットワークの関連付け (RSNA) 認証アルゴリズムを有効にしているポイントにアクセスするのに事前認証の PMKID キャッシュを使用します。 802.11 ステーションは、関連付けまたはを持つ指定された PMKID BSSID に再関連付けは、802.11 ステーションは、関連付けまたは再関連付けフレームの RSN 情報要素 (RSN IE) で PMKID データを使用する必要があります。
 
-ポートがホストの FIPS モードでのサポートを宣言するかどうかは[ **WDI\_TLV\_ステーション\_属性**](https://msdn.microsoft.com/library/windows/hardware/dn898066)HostFIPSModeEnabled は、接続パラメーターに 1 に設定することがあります。
+ポートがホストの FIPS モードでのサポートを宣言するかどうかは[ **WDI\_TLV\_ステーション\_属性**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-station-attributes)HostFIPSModeEnabled は、接続パラメーターに 1 に設定することがあります。
 
 HostFIPSModeEnabled が 1 に設定されている場合は、次の規則が適用されます。
 
@@ -57,8 +57,8 @@ MFPEnabled と HostFIPSModeEnabled 両方とも 1 に設定、接続パラメー
 
 | TLV                                                                      | 許可されている複数の TLV インスタンス | 省略可能 | 説明                                                                                                                                                                                                                                                                                                                                                                                                  |
 |--------------------------------------------------------------------------|--------------------------------|----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [**WDI\_TLV\_CONNECT\_パラメーター**](https://msdn.microsoft.com/library/windows/hardware/dn926266) |                                |          | 接続パラメーター。                                                                                                                                                                                                                                                                                                                                                                                   |
-| [**WDI\_TLV\_CONNECT\_BSS\_エントリ**](https://msdn.microsoft.com/library/windows/hardware/dn926264)  | x                              |          | 優先される候補の一覧は、BSS エントリを接続します。 ポートは必要があります、リストがなくなるまで、BSS これらのエントリまたは正常に完了した接続のいずれかに接続しようとしています。 ポートは、必要な場合、エントリを優先できます。 アダプターが接続 BSS 選択をオーバーライド ビットを設定した場合、許可/拒否の一覧に従っている限り、この一覧にない BSS を選択できます。 |
+| [**WDI\_TLV\_CONNECT\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-connect-parameters) |                                |          | 接続パラメーター。                                                                                                                                                                                                                                                                                                                                                                                   |
+| [**WDI\_TLV\_CONNECT\_BSS\_エントリ**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-connect-bss-entry)  | x                              |          | 優先される候補の一覧は、BSS エントリを接続します。 ポートは必要があります、リストがなくなるまで、BSS これらのエントリまたは正常に完了した接続のいずれかに接続しようとしています。 ポートは、必要な場合、エントリを優先できます。 アダプターが接続 BSS 選択をオーバーライド ビットを設定した場合、許可/拒否の一覧に従っている限り、この一覧にない BSS を選択できます。 |
 
  
 

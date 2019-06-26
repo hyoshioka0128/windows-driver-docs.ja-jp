@@ -9,12 +9,12 @@ keywords:
 - マルチ プロトコル WDK の WAN ネットワークの NIC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d4054c796f9a0e268a98a7d735c442eb50139305
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5e1bda00517265c5d9fd04c9b27608d59abbfaaf
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324909"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385849"
 ---
 # <a name="installing-a-multiprotocol-wan-nic"></a>マルチ プロトコル WAN NIC のインストール
 
@@ -28,7 +28,7 @@ ms.locfileid: "63324909"
 > ISDN 機能は、Windows 10 以降非推奨です。 
 
 
-マルチ プロトコルの WAN NIC の仕入先には、ウィザードのページをインストールする共同インストーラーを提供する必要があります。 (共同インストーラーの詳細については、次を参照してください。[共同インストーラーの作成](https://msdn.microsoft.com/library/windows/hardware/ff554011))。 ウィザードのページには、WAN のプロトコルを選択するユーザーが表示されます。
+マルチ プロトコルの WAN NIC の仕入先には、ウィザードのページをインストールする共同インストーラーを提供する必要があります。 (共同インストーラーの詳細については、次を参照してください。[共同インストーラーの作成](https://docs.microsoft.com/windows-hardware/drivers/install/writing-a-co-installer))。 ウィザードのページには、WAN のプロトコルを選択するユーザーが表示されます。
 
 -   ユーザーは、ISDN を選択する場合は、ISDN ウィザードが表示されます。 ISDN ウィザードでは、ISDN スイッチの種類と、選択したスイッチの種類、その他の ISDN パラメーターの値に応じてユーザーを入力します。 詳細については、次を参照してください。 [ISDN キーを指定すると、ISDN アダプターの値](specifying-isdn-keys-and-values-for-an-isdn-adapter.md)します。
 

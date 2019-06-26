@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 398df88a9e9a2fd6fc003494327b321aa0a716bf
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 88c8a859ab0bcc3b71572066d370876704d6eb99
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367427"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367337"
 ---
 # <a name="bug-check-0x6e-session2initializationfailed"></a>バグ チェック 0x6E:SESSION2\_初期化\_失敗
 
@@ -26,7 +26,7 @@ ms.locfileid: "63367427"
 SESSION2\_初期化\_失敗のバグ チェックが 0x0000006E の値を持ちます。 このバグ チェックでは、Microsoft Windows オペレーティング システムの初期化が失敗したことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="session2initializationfailed-parameters"></a>SESSION2\_初期化\_FAILED パラメーター

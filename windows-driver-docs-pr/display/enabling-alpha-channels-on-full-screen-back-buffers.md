@@ -10,12 +10,12 @@ keywords:
 - アルファ チャネル WDK DirectX 8.0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9829939051617356f0c62cd2eda516c4808b7f9a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bd06402e11b1e90d78297882c220ae407da938c4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355348"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385611"
 ---
 # <a name="enabling-alpha-channels-on-full-screen-back-buffers"></a>全画面バック バッファーでのアルファ チャネルの有効化
 
@@ -29,7 +29,7 @@ DirectDraw DDI では、プライマリのフリッピング チェーンの作�
 
 この機能のサポートを示すために、ドライバーは、D3DCAPS3 を設定する必要があります\_アルファ\_全画面表示\_反転\_または\_破棄ビット (で定義されている、 *d3d8caps.h*ファイル) で**Caps3** D3DCAPS8 構造体のメンバー。 ドライバーがへの応答で D3DCAPS8 構造体を返します、 **GetDriverInfo2** 」の説明に従ってクエリ[DirectX 8.0 スタイル Direct3D の機能を Reporting](reporting-directx-8-0-style-direct3d-capabilities.md)します。 このクエリのサポートについては、「[サポート GetDriverInfo2](supporting-getdriverinfo2.md)します。
 
-この機能のサポートが確認された後、ドライバーを受信できます[ *DdCreateSurface* ](https://msdn.microsoft.com/library/windows/hardware/ff549263) 、DDSCAPS2 で呼び出しを\_ENABLEALPHACHANNEL (で定義されている、 *ddraw.h*ファイル) でビットを設定、 **dwCaps2**のメンバー、 [ **DDSCAPS2** ](https://msdn.microsoft.com/library/windows/hardware/ff550292)構造体。 このビットがプライマリ フリッピング チェーンの一部であるか、スタンドアロンのバック バッファー上にあるサーフェスを作成する設定のみです。
+この機能のサポートが確認された後、ドライバーを受信できます[ *DdCreateSurface* ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff549263(v=vs.85)) 、DDSCAPS2 で呼び出しを\_ENABLEALPHACHANNEL (で定義されている、 *ddraw.h*ファイル) でビットを設定、 **dwCaps2**のメンバー、 [ **DDSCAPS2** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff550292(v=vs.85))構造体。 このビットがプライマリ フリッピング チェーンの一部であるか、スタンドアロンのバック バッファー上にあるサーフェスを作成する設定のみです。
 
 ドライバーは、このビットが検出される場合、表示モードの形式が、表示モードの形式とアルファいないサーフェスが取るドライバーを決定します。 たとえば、32 bpp のモードでこのようなサーフェイス与える必要があります、D3DFMT\_A8R8G8B8 形式。
 

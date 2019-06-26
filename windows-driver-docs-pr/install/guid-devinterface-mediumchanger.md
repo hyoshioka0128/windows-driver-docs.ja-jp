@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 071f88c4fed60aaebd6a9001b402551023a5f640
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 14f150a1affa917061dfb303d937828a134b24b2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357785"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386433"
 ---
 # <a name="guiddevinterfacemediumchanger"></a>GUID_DEVINTERFACE_MEDIUMCHANGER
 
 
-GUID_DEVINTERFACE_MEDIUMCHANGER[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)メディア チェンジャー デバイス用に定義されます。
+GUID_DEVINTERFACE_MEDIUMCHANGER[デバイス インターフェイス クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)メディア チェンジャー デバイス用に定義されます。
 
 <table>
 <colgroup>
@@ -54,9 +54,9 @@ GUID_DEVINTERFACE_MEDIUMCHANGER[デバイス インターフェイス クラス]
 <a name="remarks"></a>注釈
 -------
 
-システム提供中[チェンジャー ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff551455)オペレーティング システムとメディア チェンジャー デバイスの存在をアプリケーションに通知する GUID_DEVINTERFACE_MEDIUMCHANGER のインスタンスを登録します。
+システム提供中[チェンジャー ドライバー](https://docs.microsoft.com/windows-hardware/drivers/storage/changer-drivers)オペレーティング システムとメディア チェンジャー デバイスの存在をアプリケーションに通知する GUID_DEVINTERFACE_MEDIUMCHANGER のインスタンスを登録します。
 
-記憶装置ドライバーの詳細については、次を参照してください。[記憶装置ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff566976)します。
+記憶装置ドライバーの詳細については、次を参照してください。[記憶装置ドライバー](https://docs.microsoft.com/windows-hardware/drivers/storage/storage-drivers)します。
 
 <a name="requirements"></a>必要条件
 ------------

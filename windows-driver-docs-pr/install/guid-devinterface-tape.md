@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 2abd46d4145958c2a1aed807e71359413c069499
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dd9fd6a1352624fb56b3dd2fafd0d5d5b2755b37
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377048"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386419"
 ---
 # <a name="guiddevinterfacetape"></a>GUID_DEVINTERFACE_TAPE
 
 
-GUID_DEVINTERFACE_TAPE[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)テープが定義されている[記憶装置](https://msdn.microsoft.com/library/windows/hardware/ff566969)します。
+GUID_DEVINTERFACE_TAPE[デバイス インターフェイス クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)テープが定義されている[記憶装置](https://docs.microsoft.com/windows-hardware/drivers/storage/index)します。
 
 <table>
 <colgroup>
@@ -54,9 +54,9 @@ GUID_DEVINTERFACE_TAPE[デバイス インターフェイス クラス](https://
 <a name="remarks"></a>コメント
 -------
 
-システム提供[テープ クラス ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff567961)オペレーティング システムとテープの記憶域デバイスの存在をアプリケーションに通知する GUID_DEVINTERFACE_TAPE のインスタンスを登録します。
+システム提供[テープ クラス ドライバー](https://docs.microsoft.com/windows-hardware/drivers/storage/tape-drivers)オペレーティング システムとテープの記憶域デバイスの存在をアプリケーションに通知する GUID_DEVINTERFACE_TAPE のインスタンスを登録します。
 
-記憶装置ドライバーの詳細については、次を参照してください。[記憶装置ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff566976)します。
+記憶装置ドライバーの詳細については、次を参照してください。[記憶装置ドライバー](https://docs.microsoft.com/windows-hardware/drivers/storage/storage-drivers)します。
 
 <a name="requirements"></a>必要条件
 ------------

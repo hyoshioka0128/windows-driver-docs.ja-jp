@@ -8,12 +8,12 @@ keywords:
 - ネットワーク WFP WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ff5f91809335557bc4717dfb5ef4130f8572143d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 294e7b189c873f2829983fc7fbde1e32d0e3cd66
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390960"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382606"
 ---
 # <a name="windows-filtering-platform-callout-drivers"></a>Windows フィルタリング プラットフォーム コールアウト ドライバー
 
@@ -34,9 +34,9 @@ ms.locfileid: "63390960"
 -   [Windows Filtering Platform 定数](windows-filtering-platform-constants.md)
 -   [その他の Windows フィルタ リング プラットフォーム機能](other-windows-filtering-platform-functions.md)
 
-WFP の概要については、次を参照してください。 [Windows フィルタ リング プラットフォーム](https://msdn.microsoft.com/library/windows/desktop/aa366510)します。
+WFP の概要については、次を参照してください。 [Windows フィルタ リング プラットフォーム](https://docs.microsoft.com/windows/desktop/FWP/windows-filtering-platform-start-page)します。
 
-WFP リファレンス情報は、次を参照してください。 [Windows フィルタ リング プラットフォーム コールアウト ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff571067)します。
+WFP リファレンス情報は、次を参照してください。 [Windows フィルタ リング プラットフォーム コールアウト ドライバー](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)します。
 
  
 

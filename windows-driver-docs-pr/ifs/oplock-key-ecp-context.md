@@ -15,12 +15,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d037c039a8333f608f71cc83c5acb00ccd31cbe5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 66e9a5a51f8e9688822d47f04e14195da4533a81
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551832"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386067"
 ---
 # <a name="oplockkeyecpcontext-structure"></a>OPLOCK\_キー\_ECP\_CONTEXT 構造体
 
@@ -43,23 +43,23 @@ typedef struct _OPLOCK_KEY_ECP_CONTEXT {
 **OplockKey**  
 Oplock キーの GUID です。 この GUID は、別のハンドルの間で共有され、同じクライアント キャッシュに属していることを示します。 2 つのハンドルは、同じ oplock キーを共有するときに 1 つのハンドルで実行される要求では、ハンドルが他には、未処理の oplock が壊れない。
 
-**予約されています**  
+**Reserved**  
 予約済み。 0 に設定する必要があります。
 
 <a name="remarks"></a>注釈
 -------
 
-ECPs を使用して、ファイルが作成されると、ファイルと追加情報を関連付ける方法については、[IRP の余分な作成のパラメーターを使用して\_MJ\_作成操作](https://msdn.microsoft.com/library/windows/hardware/ff557261)を参照してください。
+ECPs を使用して、ファイルが作成されると、ファイルと追加情報を関連付ける方法については、次を参照してください。 [IRP の余分な作成のパラメーターを使用して\_MJ\_作成操作](https://docs.microsoft.com/windows-hardware/drivers/ifs/using-extra-create-parameters-with-an-irp-mj-create-operation)します。
 
-OPLOCK\_キー\_ECP\_CONTEXT 構造は読み取り専用です。 これを使用して、oplock キー ECP をのみに関する情報を取得する必要があります。 この問題の詳細については、[ベンダー ECPs](https://msdn.microsoft.com/library/windows/hardware/ff556779)を参照してください。
+OPLOCK\_キー\_ECP\_CONTEXT 構造は読み取り専用です。 これを使用して、oplock キー ECP をのみに関する情報を取得する必要があります。 この問題の詳細については、次を参照してください。[ベンダー ECPs](https://docs.microsoft.com/windows-hardware/drivers/ifs/system-defined-ecps)します。
 
 Oplock キーにより、アプリケーションの oplock を損なうことがなく、同じストリームに複数のハンドルを開くためのアプリケーションです。 アプリケーション受信共有違反が発生した後にのみ、oplock が発生した (ステータス\_共有\_違反)。
 
-ストリームを開いたときに、ストリームのハンドルでの各 Oplock が付与されます。 このようなストリームのハンドル oplock キーで関連付けることができます。 呼び出し元は、oplock のキーを明示的に指定できます、 [ **IoCreateFileEx** ](https://msdn.microsoft.com/library/windows/hardware/ff548283)ルーチンをストリームのハンドルを作成します。 呼び出し元は、oplock のキーが、呼び出し元が、ハンドルを作成するときに明示的に指定していない、オペレーティング システムはハンドルのキーは、他のいずれかのハンドルの他の任意のキーと異なるように、ハンドルに関連付けられた一意の oplock のキーを持つものとしてハンドルを扱います。 Oplock が許可されたもの以外のハンドルでファイルの操作を受信した、操作のハンドルに関連付けられているキーからとは異なる oplock のハンドルに関連付けられている oplock キーとその操作と互換性がありません、現在 oplock を与え、し、その oplock は解除されます。 プロセスまたは互換性のない操作を実行するスレッドが同じである場合でも、oplock が解除されます。 たとえば、プロセスが排他的 oplock が付与されますストリームを開き、同じ処理し、同じストリームがもう一度開きます、異なる (またはなし) を使用して、oplock キー排他 oplock が壊れているすぐにします。
+ストリームを開いたときに、ストリームのハンドルでの各 Oplock が付与されます。 このようなストリームのハンドル oplock キーで関連付けることができます。 呼び出し元は、oplock のキーを明示的に指定できます、 [ **IoCreateFileEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-iocreatefileex)ルーチンをストリームのハンドルを作成します。 呼び出し元は、oplock のキーが、呼び出し元が、ハンドルを作成するときに明示的に指定していない、オペレーティング システムはハンドルのキーは、他のいずれかのハンドルの他の任意のキーと異なるように、ハンドルに関連付けられた一意の oplock のキーを持つものとしてハンドルを扱います。 Oplock が許可されたもの以外のハンドルでファイルの操作を受信した、操作のハンドルに関連付けられているキーからとは異なる oplock のハンドルに関連付けられている oplock キーとその操作と互換性がありません、現在 oplock を与え、し、その oplock は解除されます。 プロセスまたは互換性のない操作を実行するスレッドが同じである場合でも、oplock が解除されます。 たとえば、プロセスが排他的 oplock が付与されますストリームを開き、同じ処理し、同じストリームがもう一度開きます、異なる (またはなし) を使用して、oplock キー排他 oplock が壊れているすぐにします。
 
 ハンドルが作成されたときに、Oplock のキーがハンドルに関連付けられます。 各 oplock が付与されていない場合でも、oplock のキーを持つハンドルを関連付けることができます。
 
-各 oplock と oplock のキーの詳細については、[Oplock セマンティクス概要](https://msdn.microsoft.com/library/windows/hardware/ff551011)を参照してください。
+各 oplock と oplock のキーの詳細については、次を参照してください。 [Oplock セマンティクス概要](https://docs.microsoft.com/windows-hardware/drivers/ifs/overview)します。
 
 <a name="requirements"></a>要件
 ------------
@@ -84,7 +84,7 @@ Oplock キーにより、アプリケーションの oplock を損なうこと�
 ## <a name="see-also"></a>関連項目
 
 
-[**IoCreateFileEx**](https://msdn.microsoft.com/library/windows/hardware/ff548283)
+[**IoCreateFileEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-iocreatefileex)
 
  
 

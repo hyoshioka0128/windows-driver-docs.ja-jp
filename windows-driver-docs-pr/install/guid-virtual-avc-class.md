@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 6b757be14631fcd2da5b1b78b90457e59165b57f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 138f560c505ef6bdb640d39cd7dd172b72e431ba
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369966"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383859"
 ---
 # <a name="guidvirtualavcclass"></a>GUID_VIRTUAL_AVC_CLASS
 
 
-GUID_VIRTUAL_AVC_CLASS[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)オーディオ ビデオ コントロール (AV/C) の仮想デバイスでサポートされているが定義されている、 [AVStream](https://msdn.microsoft.com/library/windows/hardware/ff554240)アーキテクチャ。
+GUID_VIRTUAL_AVC_CLASS[デバイス インターフェイス クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)オーディオ ビデオ コントロール (AV/C) の仮想デバイスでサポートされているが定義されている、 [AVStream](https://docs.microsoft.com/windows-hardware/drivers/stream/avstream-overview)アーキテクチャ。
 
 <table>
 <colgroup>
@@ -54,7 +54,7 @@ GUID_VIRTUAL_AVC_CLASS[デバイス インターフェイス クラス](https://
 <a name="remarks"></a>コメント
 -------
 
-システム提供[AV/C クライアント ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff556367) [Avc.sys](https://msdn.microsoft.com/library/windows/hardware/ff568667)仮想 AV/C デバイスを表す GUID_VIRTUAL_AVC_CLASS のインスタンスを登録します。
+システム提供[AV/C クライアント ドライバー](https://docs.microsoft.com/windows-hardware/drivers/stream/av-c-client-drivers2) [Avc.sys](https://docs.microsoft.com/windows-hardware/drivers/stream/using-avc-sys)仮想 AV/C デバイスを表す GUID_VIRTUAL_AVC_CLASS のインスタンスを登録します。
 
 1394 バス上の AV/C 単位デバイス インターフェイスのクラスについては、次を参照してください。 [ **GUID_AVC_CLASS**](guid-avc-class.md)します。
 

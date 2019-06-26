@@ -4,12 +4,12 @@ description: MS\_SMHBA\_PORTATTRIBUTES WMI クラス
 ms.assetid: 26f17443-cb89-4c93-9b67-35acb75b6d03
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 60c045db6de116d45e23cc505e314d6ee547d126
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6a43e54d1c942ad23b96cd1283a01c0f59c6aeb0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380353"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386139"
 ---
 # <a name="mssmhbaportattributes-wmi-class"></a>MS\_SMHBA\_PORTATTRIBUTES WMI クラス
 
@@ -48,7 +48,7 @@ class MS_SMHBA_PORTATTRIBUTES
 
 このクラスの定義が WMI ツール スイートによってコンパイルされると、次のデータ構造が生成されます。
 
-[**MS\_SMHBA\_PORTATTRIBUTES**](https://msdn.microsoft.com/library/windows/hardware/ff563165)
+[**MS\_SMHBA\_PORTATTRIBUTES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_ms_smhba_portattributes)
 
 この WMI クラスに関連付けられているメソッドはありません。
 

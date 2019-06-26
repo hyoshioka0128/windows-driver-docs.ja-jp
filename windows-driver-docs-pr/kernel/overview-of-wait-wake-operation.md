@@ -12,12 +12,12 @@ keywords:
 - 待機/ウェイク Irp の待機またはスリープ解除についての Irp WDK 電源管理
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e4c57b4c8047d9747a476e0fd8d34bdfb2757b42
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1acc028863d6c9652d73490da8c73b1f61385b7d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360218"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383829"
 ---
 # <a name="overview-of-waitwake-operation"></a>待機/ウェイク操作の概要
 
@@ -29,7 +29,7 @@ ms.locfileid: "63360218"
 
 ![irp の概要を示す図\-mn\-待機\-wake 処理](images/send-waitwake.png)
 
-1.  システムとデバイスは、作業の状態では、デバイスの電源ポリシー所有者は、(「取得」) のウェイク アップのデバイスを有効にする必要がありますを決定します。 電源ポリシー所有者 power IRP の要求 ([**PoRequestPowerIrp** ](https://msdn.microsoft.com/library/windows/hardware/ff559734)でコードを少し[ **IRP\_MN\_待機\_ウェイク**](https://msdn.microsoft.com/library/windows/hardware/ff551766))、デバイス スタックのすべてのドライバーを通知するために、PDO に送信します。 ポリシー所有者を要求内には、コールバック ルーチンを指定します (とは異なります、 [ *IoCompletion* ](https://msdn.microsoft.com/library/windows/hardware/ff548354)ルーチン)。
+1.  システムとデバイスは、作業の状態では、デバイスの電源ポリシー所有者は、(「取得」) のウェイク アップのデバイスを有効にする必要がありますを決定します。 電源ポリシー所有者 power IRP の要求 ([**PoRequestPowerIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-porequestpowerirp)でコードを少し[ **IRP\_MN\_待機\_ウェイク**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-wait-wake))、デバイス スタックのすべてのドライバーを通知するために、PDO に送信します。 ポリシー所有者を要求内には、コールバック ルーチンを指定します (とは異なります、 [ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)ルーチン)。
 
 2.  I/O マネージャーを通じて、電源マネージャーは、デバイス スタックの先頭に IRP を送信します。
 

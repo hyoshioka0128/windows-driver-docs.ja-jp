@@ -7,12 +7,12 @@ keywords:
 - D3DCAPS8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1368535cadc96b5c9b00561c1449426c2a501189
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fe8603dc06fde4babcd6f6e40f0c0ce46c9fc82f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63385026"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385597"
 ---
 # <a name="minimum-capability-requirements-for-directx-80-drivers"></a>DirectX 8.0 ドライバーの最低限の機能要件
 
@@ -30,9 +30,9 @@ DirectX 8.0 ドライバーには明示的にする必要があります。
 
 -   新しいスタイルのピクセル形式の仕様をサポートするためにサポートされているテクスチャ形式の一覧を変更します。
 
--   新しい処理[ **D3dDrawPrimitives2** ](https://msdn.microsoft.com/library/windows/hardware/ff544704) (DP2) 描画トークンです。
+-   新しい処理[ **D3dDrawPrimitives2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/nc-d3dhal-lpd3dhal_drawprimitives2cb) (DP2) 描画トークンです。
 
--   処理[ **D3dCreateSurfaceEx** ](https://msdn.microsoft.com/library/windows/hardware/ff542840)の頂点とインデックス バッファーには、ドライバーはビデオ メモリ頂点バッファーの作成をサポートしていない場合でもです。 システム メモリの頂点とインデックス バッファーのハンドルは、ドライバーに渡されます。
+-   処理[ **D3dCreateSurfaceEx** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_createsurfaceex)の頂点とインデックス バッファーには、ドライバーはビデオ メモリ頂点バッファーの作成をサポートしていない場合でもです。 システム メモリの頂点とインデックス バッファーのハンドルは、ドライバーに渡されます。
 
 -   新しい posttransformed クリッピング フラグ D3DPMISCCAPS\_CLIPTLVERT、ハードウェアのクリッピングをサポートしている場合は、頂点データを posttransformed します。
 

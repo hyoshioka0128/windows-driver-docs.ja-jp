@@ -5,12 +5,12 @@ ms.assetid: 0a390456-8974-4668-b624-55259c2f9e20
 ms.date: 08/08/2017
 keywords: -OID_GEN_XMIT_LINK_SPEED ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 60b327f047c9f1b510dcc8ec013237b4be100bb5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 06727f9838fa91d01c46ca40f66048c7536e937b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355948"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385735"
 ---
 # <a name="oidgenxmitlinkspeed"></a>OID\_GEN\_XMIT\_リンク\_速度
 
@@ -28,11 +28,11 @@ ms.locfileid: "63355948"
 <a name="remarks"></a>注釈
 -------
 
-のみ[ネットワーク インターフェイスの NDIS](https://msdn.microsoft.com/library/windows/hardware/ff566527)プロバイダー、およびミニポート ドライバーではないまたはフィルター ドライバー、そのためには、OID 要求としてこの OID をサポートする必要があります。
+のみ[ネットワーク インターフェイスの NDIS](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-network-interfaces2)プロバイダー、およびミニポート ドライバーではないまたはフィルター ドライバー、そのためには、OID 要求としてこの OID をサポートする必要があります。
 
 インターフェイス プロバイダーは、NDIS を返した場合\_状態\_成功すると、クエリの結果は、転送を示す ULONG64 値の 1 秒あたりのビット単位で、インターフェイス リンク速度。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -51,7 +51,7 @@ ms.locfileid: "63355948"
 ## <a name="see-also"></a>関連項目
 
 
-[NDIS ネットワーク インターフェイスの Oid](https://msdn.microsoft.com/library/windows/hardware/ff566545)
+[NDIS ネットワーク インターフェイスの Oid](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-network-interface-oids)
 
  
 

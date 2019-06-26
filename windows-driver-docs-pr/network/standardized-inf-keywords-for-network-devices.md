@@ -4,12 +4,12 @@ description: ネットワーク デバイス用の標準化された INF キー�
 ms.assetid: F79AFB63-D404-4A5C-9515-82FFEB667048
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d55125e09c24d6b12248b4802e6a992ee71543a2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0955d1fcbfd631459e30e43380cc9dccccbc53fa
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345961"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378632"
 ---
 # <a name="standardized-inf-keywords-for-network-devices"></a>ネットワーク デバイス用の標準化された INF キーワード
 
@@ -35,7 +35,7 @@ ms.locfileid: "63345961"
 
 -   **\*PhysicalMediaType**
 
-NDIS ミニポート ドライバーの呼び出しません必須キーワードが、ドライバーの INF ファイルから不足している場合に、 [ *MiniportInitializeEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559389)関数。
+NDIS ミニポート ドライバーの呼び出しません必須キーワードが、ドライバーの INF ファイルから不足している場合に、 [ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)関数。
 
 次の両方に該当する場合は、標準化されたキーワードを NDIS 6.0 とそれ以降のミニポート ドライバーの必要があります。
 

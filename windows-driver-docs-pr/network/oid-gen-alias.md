@@ -5,12 +5,12 @@ ms.assetid: ff5e6494-aa4e-4a0a-b773-64b612236c8c
 ms.date: 08/08/2017
 keywords: -OID_GEN_ALIAS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 19c096ca75c596f7066f090bcb9f42ac177313d1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 361c0dfc20777c407824a41c82b062a0f1ea718c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63349466"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385501"
 ---
 # <a name="oidgenalias"></a>OID\_GEN\_エイリアス
 
@@ -28,13 +28,13 @@ ms.locfileid: "63349466"
 <a name="remarks"></a>注釈
 -------
 
-[ネットワーク インターフェイスの NDIS](https://msdn.microsoft.com/library/windows/hardware/ff566527)プロバイダーは、そのインターフェイスの一意のエイリアス文字列を割り当てることができます。 名前は、同じインターフェイスと関連付けられたままする必要があります、プロバイダーは、コンピューターの再起動後に永続的な文字列と reinitializations にことができます。
+[ネットワーク インターフェイスの NDIS](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-network-interfaces2)プロバイダーは、そのインターフェイスの一意のエイリアス文字列を割り当てることができます。 名前は、同じインターフェイスと関連付けられたままする必要があります、プロバイダーは、コンピューターの再起動後に永続的な文字列と reinitializations にことができます。
 
 NDIS ネットワーク インターフェイスのプロバイダーとそのためミニポート ドライバーではありませんサポートまたはだけフィルター ドライバー、する必要がありますこの OID OID 要求として。
 
 インターフェイスのプロバイダーは、NDIS を返した場合\_状態\_成功すると、クエリの結果は、NDIS で返されるエイリアス文字列\_場合\_カウント済\_文字列構造体。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -53,7 +53,7 @@ NDIS ネットワーク インターフェイスのプロバイダーとその�
 ## <a name="see-also"></a>関連項目
 
 
-[NDIS ネットワーク インターフェイスの Oid](https://msdn.microsoft.com/library/windows/hardware/ff566545)
+[NDIS ネットワーク インターフェイスの Oid](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-network-interface-oids)
 
  
 

@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 5c941ae159c3850c4a27c8fad717e73ecf05fd8f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 01e2080f56d99b5914242e8fd342d9e94dc8982d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392469"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387326"
 ---
 # <a name="guidbthportdeviceinterface"></a>GUID_BTHPORT_DEVICE_INTERFACE
 
 
-GUID_BTHPORT_DEVICE_INTERFACE[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)が定義されている[Bluetooth ラジオ](https://msdn.microsoft.com/library/windows/hardware/ff536596)します。
+GUID_BTHPORT_DEVICE_INTERFACE[デバイス インターフェイス クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)が定義されている[Bluetooth ラジオ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff536596(v=vs.85))します。
 
 <table>
 <colgroup>
@@ -54,9 +54,9 @@ GUID_BTHPORT_DEVICE_INTERFACE[デバイス インターフェイス クラス](h
 <a name="remarks"></a>注釈
 -------
 
-用のドライバー [Bluetooth ラジオ](https://msdn.microsoft.com/library/windows/hardware/ff536596)オペレーティング システムと Bluetooth ラジオの存在をアプリケーションに通知するこのデバイスのインターフェイス クラスのインスタンスを登録します。
+用のドライバー [Bluetooth ラジオ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff536596(v=vs.85))オペレーティング システムと Bluetooth ラジオの存在をアプリケーションに通知するこのデバイスのインターフェイス クラスのインスタンスを登録します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

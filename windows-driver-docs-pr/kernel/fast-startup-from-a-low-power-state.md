@@ -4,17 +4,17 @@ description: 低電力状態からの高速スタートアップ
 ms.assetid: 1091571c-2e30-4ad5-b4b9-0f8633e68288
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: eb6dadd7721bb235ec0a51c8ee63a29b5303ed7f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d6c6db45818adf93e6daf7c45992f65e6735860f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359952"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386602"
 ---
 # <a name="fast-startup-from-a-low-power-state"></a>低電力状態からの高速スタートアップ
 
 
-低電力状態から高速スタートアップを実現するためにリーフ ノードのデバイスのドライバーが S0 power IRP を処理する必要があります (つまり、 [ **IRP\_MN\_設定\_POWER** ](https://msdn.microsoft.com/library/windows/hardware/ff551744)の IRPS0 システム電源の状態)。 子のデバイスを所有しているデバイスの階層のリーフ ノードであるデバイスはありません。 リーフ ノードのデバイスには、子デバイス上の依存関係があるない、ため、デバイスの機能のドライバーは、オペレーティング システムまたはその他のドライバーの不必要な遅延を回避するためにバック グラウンド タスクとして、デバイスを再初期化できます。 これに対し、バス ドライバーには、子デバイスの電源投入シーケンスを調整する追加の同期ロジックを必要とする依存関係があります。
+低電力状態から高速スタートアップを実現するためにリーフ ノードのデバイスのドライバーが S0 power IRP を処理する必要があります (つまり、 [ **IRP\_MN\_設定\_POWER** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-set-power)の IRPS0 システム電源の状態)。 子のデバイスを所有しているデバイスの階層のリーフ ノードであるデバイスはありません。 リーフ ノードのデバイスには、子デバイス上の依存関係があるない、ため、デバイスの機能のドライバーは、オペレーティング システムまたはその他のドライバーの不必要な遅延を回避するためにバック グラウンド タスクとして、デバイスを再初期化できます。 これに対し、バス ドライバーには、子デバイスの電源投入シーケンスを調整する追加の同期ロジックを必要とする依存関係があります。
 
 低電力状態からリーフ ノードのデバイスの高速スタートアップを実現するために、次の手順を使用します。
 

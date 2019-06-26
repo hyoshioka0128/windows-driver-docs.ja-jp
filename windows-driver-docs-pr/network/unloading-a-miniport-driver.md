@@ -8,12 +8,12 @@ keywords:
 - アンロードのミニポート ドライバー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9bf7a723cacca92bd84c6a0b7b464ea3c9ef09ea
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2cf5d0bccf3bc2a06c749da8fd66852dddbc3841
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346667"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382093"
 ---
 # <a name="unloading-a-miniport-driver"></a>ミニポート ドライバーのアンロード
 
@@ -21,9 +21,9 @@ ms.locfileid: "63346667"
 
 
 
-NDIS ミニポート ドライバーに関連付けられているドライバー オブジェクトを指定します、 [**アンロード**](https://msdn.microsoft.com/library/windows/hardware/ff564886)ルーチン。 システム コール、*アンロード*ルーチンときに、すべてのデバイス ドライバー サービスが削除されていること。 NDIS の提供、*アンロード*ミニポート ドライバーの日常的な。 NDIS ミニポート ドライバーを呼び出す[ *MiniportDriverUnload* ](https://msdn.microsoft.com/library/windows/hardware/ff559378)関数を*アンロード*ルーチン。
+NDIS ミニポート ドライバーに関連付けられているドライバー オブジェクトを指定します、 [**アンロード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_unload)ルーチン。 システム コール、*アンロード*ルーチンときに、すべてのデバイス ドライバー サービスが削除されていること。 NDIS の提供、*アンロード*ミニポート ドライバーの日常的な。 NDIS ミニポート ドライバーを呼び出す[ *MiniportDriverUnload* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_unload)関数を*アンロード*ルーチン。
 
-ミニポート ドライバーを呼び出す必要があります[ **NdisMDeregisterMiniportDriver** ](https://msdn.microsoft.com/library/windows/hardware/ff563578)から*MiniportDriverUnload*します。
+ミニポート ドライバーを呼び出す必要があります[ **NdisMDeregisterMiniportDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismderegisterminiportdriver)から*MiniportDriverUnload*します。
 
 ミニポート ドライバーの*MiniportDriverUnload*関数は、個々 のドライバーのリソースを解放もする必要があります。 システムの後にドライバー アンロード操作が完了*MiniportDriverUnload*を返します。
 

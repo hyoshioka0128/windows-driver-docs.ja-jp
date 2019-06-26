@@ -7,12 +7,12 @@ keywords:
 - デバイスの種類の WDK デバイス オブジェクト
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c2d926dfcdeb1d32cc1d183f0482251f344934c4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 42e5b2d36c9b2f754c26d319d6e2c98077b27f48
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367850"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383007"
 ---
 # <a name="specifying-device-types"></a>デバイスの種類の指定
 
@@ -20,9 +20,9 @@ ms.locfileid: "63367850"
 
 
 
-各デバイス オブジェクトには、*デバイスの種類*に格納されている、 **DeviceType**のメンバー、 [**デバイス\_オブジェクト**](https://msdn.microsoft.com/library/windows/hardware/ff543147)構造体。 デバイスの種類は、ドライバーの基になるハードウェアの種類を表します。
+各デバイス オブジェクトには、*デバイスの種類*に格納されている、 **DeviceType**のメンバー、 [**デバイス\_オブジェクト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_object)構造体。 デバイスの種類は、ドライバーの基になるハードウェアの種類を表します。
 
-呼び出すときに、デバイス オブジェクトを作成するすべてのカーネル モード ドライバーは、デバイスの適切な型の値を指定する必要があります[ **IoCreateDevice**](https://msdn.microsoft.com/library/windows/hardware/ff548397)します。 **IoCreateDevice**ルーチンは、指定されたデバイスの種類を使用して初期化するために、 **DeviceType**のメンバー、**デバイス\_オブジェクト**構造体。
+呼び出すときに、デバイス オブジェクトを作成するすべてのカーネル モード ドライバーは、デバイスの適切な型の値を指定する必要があります[ **IoCreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatedevice)します。 **IoCreateDevice**ルーチンは、指定されたデバイスの種類を使用して初期化するために、 **DeviceType**のメンバー、**デバイス\_オブジェクト**構造体。
 
 システムでは、アルファベット順で次のデバイスの種類値を定義します。
 

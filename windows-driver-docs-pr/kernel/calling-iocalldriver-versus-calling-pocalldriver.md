@@ -8,12 +8,12 @@ keywords:
 - 電源 Irp WDK カーネル、PoCallDriver と保留
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ed224827b53ea3b1eccd92fb42753c02081981ee
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 41e52ccc5b429369008cdf863762b892a4d8fd03
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63338615"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385268"
 ---
 # <a name="calling-iocalldriver-versus-calling-pocalldriver"></a>PoCallDriver を呼び出すと、保留を呼び出す
 
@@ -21,9 +21,9 @@ ms.locfileid: "63338615"
 
 
 
-ドライバーを呼び出す必要があります Windows Vista 以降、 [**保留**](https://msdn.microsoft.com/library/windows/hardware/ff548336)の代わりに[ **PoCallDriver**](https://msdn.microsoft.com/library/windows/hardware/ff559654)、電源 Irp に渡す、次の下位のドライバーです。 Windows Server 2003、Windows XP、および Windows 2000 でドライバーを呼び出す必要があります**PoCallDriver**ではなく、**保留**次の下位ドライバーに電源 Irp を渡す。 ただし、Windows Vista と Windows の以前のバージョンで実行する同じコードを使用するドライバーを呼び出す必要があります**PoCallDriver**ではなく、**保留**します。
+ドライバーを呼び出す必要があります Windows Vista 以降、 [**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)の代わりに[ **PoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-pocalldriver)、電源 Irp に渡す、次の下位のドライバーです。 Windows Server 2003、Windows XP、および Windows 2000 でドライバーを呼び出す必要があります**PoCallDriver**ではなく、**保留**次の下位ドライバーに電源 Irp を渡す。 ただし、Windows Vista と Windows の以前のバージョンで実行する同じコードを使用するドライバーを呼び出す必要があります**PoCallDriver**ではなく、**保留**します。
 
-以降、Windows Vista で[ **PoRequestPowerIrp** ](https://msdn.microsoft.com/library/windows/hardware/ff559734)と**保留**電源マネージャーが、システム全体で power Irp を正しく同期するようにします。 Windows Server 2003、Windows XP、および Windows 2000 で**PoRequestPowerIrp**、 **PoCallDriver**、および[ **PoStartNextPowerIrp**](https://msdn.microsoft.com/library/windows/hardware/ff559776)、電源マネージャーが、システム全体で power Irp を正しく同期するようにします。
+以降、Windows Vista で[ **PoRequestPowerIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-porequestpowerirp)と**保留**電源マネージャーが、システム全体で power Irp を正しく同期するようにします。 Windows Server 2003、Windows XP、および Windows 2000 で**PoRequestPowerIrp**、 **PoCallDriver**、および[ **PoStartNextPowerIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-postartnextpowerirp)、電源マネージャーが、システム全体で power Irp を正しく同期するようにします。
 
 システムでは、次のようにアクティブな電源 Irp の数を制限します。
 

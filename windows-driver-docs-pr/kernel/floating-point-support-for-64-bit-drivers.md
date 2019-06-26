@@ -6,12 +6,12 @@ keywords:
 - 浮動小数点のポイントの WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c1f893e4917e3bb82e091ae372b017f7cf11f14f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 49d05c6e9771fec01515870cc78c711c21a81582
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359951"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386597"
 ---
 # <a name="using-extended-processor-features-in-windows-drivers"></a>Windows ドライバーでの拡張プロセッサ機能の使用
 
@@ -20,7 +20,7 @@ ms.locfileid: "63359951"
 
 -   2016 年 7 月
 
-X86 および x64 のシステム プロセッサの拡張機能を使用する Windows ドライバーは、呼び出しの間で浮動小数点演算をラップする必要があります[ **KeSaveExtendedProcessorState** ](https://msdn.microsoft.com/library/windows/hardware/ff553238)と[ **KeRestoreExtendedProcessorState** ](https://msdn.microsoft.com/library/windows/hardware/ff553182)レジスタを使用して同時実行アプリケーションでエラーを回避するためにします。
+X86 および x64 のシステム プロセッサの拡張機能を使用する Windows ドライバーは、呼び出しの間で浮動小数点演算をラップする必要があります[ **KeSaveExtendedProcessorState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesaveextendedprocessorstate)と[ **KeRestoreExtendedProcessorState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kerestoreextendedprocessorstate)レジスタを使用して同時実行アプリケーションでエラーを回避するためにします。
 
 ## <a name="legacy-mmxx87-registers"></a>レガシ MMX/x87 レジスタ
 
@@ -30,7 +30,7 @@ X86 および x64 のシステム プロセッサの拡張機能を使用する 
 ## <a name="sse-registers"></a>SSE レジスタ
 
 
-これらのレジスタは、XSTATE に対応\_マスク\_レガシ\_SSE フラグとは、x64 で使用される浮動小数点演算のコンパイラ。 これらのレジスタを使用するシステムする必要があります保存に使用する前に、XSTATE を渡すことで x86 用のドライバー\_マスク\_レガシまたは XSTATE\_マスク\_レガシ\_SSE フラグ、 [ **KeSaveExtendedProcessorState** ](https://msdn.microsoft.com/library/windows/hardware/ff553238)呼び出しを完了したら、それらを復元[ **KeRestoreExtendedProcessorState**](https://msdn.microsoft.com/library/windows/hardware/ff553182)します。 X64 では必要でないシステムでは、有害なされませんが。 これらの詳細についてを参照してくださいを登録の[WDM ドライバーで使用する浮動小数点](using-floating-point-or-mmx-in-a-wdm-driver.md)します。
+これらのレジスタは、XSTATE に対応\_マスク\_レガシ\_SSE フラグとは、x64 で使用される浮動小数点演算のコンパイラ。 これらのレジスタを使用するシステムする必要があります保存に使用する前に、XSTATE を渡すことで x86 用のドライバー\_マスク\_レガシまたは XSTATE\_マスク\_レガシ\_SSE フラグ、 [ **KeSaveExtendedProcessorState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesaveextendedprocessorstate)呼び出しを完了したら、それらを復元[ **KeRestoreExtendedProcessorState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kerestoreextendedprocessorstate)します。 X64 では必要でないシステムでは、有害なされませんが。 これらの詳細についてを参照してくださいを登録の[WDM ドライバーで使用する浮動小数点](using-floating-point-or-mmx-in-a-wdm-driver.md)します。
 
 ## <a name="avx-registers"></a>AVX レジスタ
 
@@ -131,8 +131,8 @@ exit:
 ```
 
 ## <a name="related-topics"></a>関連トピック
-[**KeSaveExtendedProcessorState**](https://msdn.microsoft.com/library/windows/hardware/ff553238)  
-[**KeRestoreExtendedProcessorState**](https://msdn.microsoft.com/library/windows/hardware/ff553182)  
+[**KeSaveExtendedProcessorState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesaveextendedprocessorstate)  
+[**KeRestoreExtendedProcessorState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kerestoreextendedprocessorstate)  
 [WDM ドライバーでの浮動小数点を使用してください。](using-floating-point-or-mmx-in-a-wdm-driver.md)  
 
 

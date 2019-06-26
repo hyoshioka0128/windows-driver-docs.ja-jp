@@ -6,12 +6,12 @@ keywords:
 - MiniportXxx 関数 WDK ネットワーク
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e8fa1b3cd58acb8bcb935e48b66d57d0c1acdda
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
-ms.translationtype: HT
+ms.openlocfilehash: dc1ece15239edda28c6f381e5b973f9226a3ddbb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552189"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382213"
 ---
 # <a name="miniportxxx-functions"></a>MiniportXxx 関数
 
@@ -23,7 +23,7 @@ ms.locfileid: "56552189"
 
 NDIS ミニポート ドライバーおよび上位層のドライバーは、呼び出しを通して互いと通信する NDIS ライブラリ (Ndis.sys) を使用して**Ndis * Xxx*** 関数。
 
-多くのミニポート ドライバー関数は、同期または非同期に動作します。 非同期関数が**Ndis*Xxx*完了**操作が終了したときに呼び出す必要がある関数。 プロトコル ドライバーを呼び出す場合など、 [ **NdisOidRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff563710)ミニポート ドライバー情報のクエリ、ミニポート ドライバーの*MiniportOidRequest*関数できますを保留しますNDIS を返すことによってリセット操作\_状態\_保留します。 最終的に、ミニポート ドライバーを呼び出す必要があります[ **NdisMOidRequestComplete** ](https://msdn.microsoft.com/library/windows/hardware/ff563622)のクエリ要求の最終的な状態を示します。
+多くのミニポート ドライバー関数は、同期または非同期に動作します。 非同期関数が**Ndis*Xxx*完了**操作が終了したときに呼び出す必要がある関数。 プロトコル ドライバーを呼び出す場合など、 [ **NdisOidRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisoidrequest)ミニポート ドライバー情報のクエリ、ミニポート ドライバーの*MiniportOidRequest*関数できますを保留しますNDIS を返すことによってリセット操作\_状態\_保留します。 最終的に、ミニポート ドライバーを呼び出す必要があります[ **NdisMOidRequestComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismoidrequestcomplete)のクエリ要求の最終的な状態を示します。
 
  
 

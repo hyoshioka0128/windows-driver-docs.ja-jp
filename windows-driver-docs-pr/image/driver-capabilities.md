@@ -4,12 +4,12 @@ description: ドライバーの機能
 ms.assetid: 639eff56-655d-4b6a-95f0-daa1daf62fae
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 12e7166ebca9173164eef8988ff5e68555b32d96
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 14f9b62924b3d55255c721b8df64b2a199e7c817
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364477"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385033"
 ---
 # <a name="driver-capabilities"></a>ドライバーの機能
 
@@ -23,7 +23,7 @@ WIA ミニドライバーは、すべてのイベントとそれがサポート�
 
 ![wia ミニドライバーの機能の一覧を示す図](images/wia-capabilitiestable.png)
 
-機能の表がの配列として定義されている[ **WIA\_DEV\_CAP\_DRV** ](https://msdn.microsoft.com/library/windows/hardware/ff550233)構造体。 ミニドライバーがこの配列を作成し、WIA サービスを呼び出すと、WIA サービスに返す必要があります、 [ **IWiaMiniDrv::drvGetCapabilities** ](https://msdn.microsoft.com/library/windows/hardware/ff543977)メソッド。
+機能の表がの配列として定義されている[ **WIA\_DEV\_CAP\_DRV** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/ns-wiamindr_lh-_wia_dev_cap_drv)構造体。 ミニドライバーがこの配列を作成し、WIA サービスを呼び出すと、WIA サービスに返す必要があります、 [ **IWiaMiniDrv::drvGetCapabilities** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvgetcapabilities)メソッド。
 
 ### <a name="defining-supported-events-and-commands"></a>イベントとコマンド サポートを定義します。
 

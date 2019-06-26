@@ -13,12 +13,12 @@ keywords:
 - 転送データの WDK カーネル、ad
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e6df4d17b02b6f10b60ceed8489fbdf0e7d0688b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 209d357253520095280d35bd229008f690cb53e8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339099"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387021"
 ---
 # <a name="adapter-objects-and-dma"></a>アダプター オブジェクトと DMA
 
@@ -26,7 +26,7 @@ ms.locfileid: "63339099"
 
 
 
-このセクションでは、アダプター オブジェクトをについて説明しますと[ *AdapterControl* ](https://msdn.microsoft.com/library/windows/hardware/ff540504)ルーチン、およびその使用 DMA 操作を制御する方法。 セクションには、次のトピックが含まれています。
+このセクションでは、アダプター オブジェクトをについて説明しますと[ *AdapterControl* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_control)ルーチン、およびその使用 DMA 操作を制御する方法。 セクションには、次のトピックが含まれています。
 
 [アダプター オブジェクトの概要](introduction-to-adapter-objects.md)
 

@@ -8,12 +8,12 @@ keywords:
 - ハードウェアのコーデック サポート WDK AVStream、検証と認定
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 679ba0e2cb5db52f0834cb430bcb1339f0c71c4c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b0c20a3a7d55db997ac74364c65cacbf34be1648
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337813"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384906"
 ---
 # <a name="validating-and-certifying-hardware-codecs"></a>ハードウェア コーデックの検証と認定
 
@@ -66,4 +66,4 @@ typedef enum
 
 ユーザー モード コンポーネント アクセス KSPROPSETID\_を通じて OPMVideoOutput、 **IKsControl** AVStream プロキシ MFT 上のインターフェイス。 ハンドラー ルーチン OPMVideoOutput メソッドの実装を示すコード例では、次を参照してください。[コーデック Merit 検証](codec-merit-validation.md)です。
 
-ドライバー固有 OPM については、次を参照してください。[出力 Protection Manager をサポートしている](https://msdn.microsoft.com/library/windows/hardware/ff569879)します。 OPM の特定のアプリケーションについては、次を参照してください。[出力 Protection Manager を使用した](https://go.microsoft.com/fwlink/p/?linkid=155059)します。
+ドライバー固有 OPM については、次を参照してください。[出力 Protection Manager をサポートしている](https://docs.microsoft.com/windows-hardware/drivers/display/supporting-output-protection-manager)します。 OPM の特定のアプリケーションについては、次を参照してください。[出力 Protection Manager を使用した](https://go.microsoft.com/fwlink/p/?linkid=155059)します。

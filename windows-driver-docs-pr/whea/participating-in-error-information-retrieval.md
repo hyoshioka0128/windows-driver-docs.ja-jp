@@ -12,23 +12,23 @@ keywords:
 - WDK WHEA エラー情報の取得
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 314ac2b6ecd141b63d5a631cdf9fddcc8e79ee4d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 76e57aef09a86ebcb0d20c934c99bcd066f7f49f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340770"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386461"
 ---
 # <a name="participating-in-error-information-retrieval"></a>エラー情報の取得への参加
 
 
 エラー情報の取得に参加するには、プラグイン PSHED は次のコールバック関数を実装する必要があります。
 
-[*RetrieveErrorInfo*](https://msdn.microsoft.com/library/windows/hardware/ff559483)
+[*RetrieveErrorInfo*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nc-ntddk-pshed_pi_retrieve_error_info)
 
-[*FinalizeErrorRecord*](https://msdn.microsoft.com/library/windows/hardware/ff559357)
+[*FinalizeErrorRecord*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nc-ntddk-pshed_pi_finalize_error_record)
 
-[*ClearErrorStatus*](https://msdn.microsoft.com/library/windows/hardware/ff559275)
+[*ClearErrorStatus*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nc-ntddk-pshed_pi_clear_error_status)
 
 次のコード例では、これらのコールバック関数を実装する方法を示します。
 

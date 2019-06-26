@@ -9,12 +9,12 @@ keywords:
 - 物理的なタイム WDK カーネルのストリーミング
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 24681511618126434518572d67e8c4141bbaf3e7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 60e3c3ef5062ca0fe05f287361e37ef80ff57547
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364878"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386632"
 ---
 # <a name="master-clocks"></a>マスター クロック
 
@@ -22,7 +22,7 @@ ms.locfileid: "63364878"
 
 
 
-その他のミニドライバー; によって作成されたクロックにストリームを同期できるは、ミニドライバー複数のストリームは、1 つのクロックに同期できます。 場合は、暗証番号 (pin) を使用または生成など、*マスター クロック*、ミニドライバーをサポートする必要があります[ **KSPROPERTY\_ストリーム\_MASTERCLOCK**](https://msdn.microsoft.com/library/windows/hardware/ff565713)します。 またクライアントは、pin のマスターの時計を設定するのにこのプロパティを使用できます。 マスターの表示と操作を頻繁にキャプチャを実行するピンが使用されます。 ミニドライバーは、終了時にクロックの参照を解放します。
+その他のミニドライバー; によって作成されたクロックにストリームを同期できるは、ミニドライバー複数のストリームは、1 つのクロックに同期できます。 場合は、暗証番号 (pin) を使用または生成など、*マスター クロック*、ミニドライバーをサポートする必要があります[ **KSPROPERTY\_ストリーム\_MASTERCLOCK**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-stream-masterclock)します。 またクライアントは、pin のマスターの時計を設定するのにこのプロパティを使用できます。 マスターの表示と操作を頻繁にキャプチャを実行するピンが使用されます。 ミニドライバーは、終了時にクロックの参照を解放します。
 
 マスターの時計をインターフェイスは、メソッド、プロパティおよびイベントをサポートするファイル オブジェクトです。
 

@@ -3,12 +3,12 @@ Description: MUTT ソフトウェア パッケージには、MUTT デバイス�
 title: MUTT ソフトウェア パッケージに含まれるツール
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fd9488de20bff07db101f10c8e443a35f349537f
-ms.sourcegitcommit: 952c17357bd2dd91a4caad42313a063951317697
+ms.openlocfilehash: d75bc2038e607c27b33cd95143b9c55798eea25b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65515036"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383485"
 ---
 # <a name="tools-in-the-mutt-software-package"></a>MUTT ソフトウェア パッケージに含まれるツール
 
@@ -38,7 +38,7 @@ Microsoft USB Test Tool (MUTT) ソフトウェア パッケージには、ハー
 
 ## <a name="version-updates"></a>バージョンの更新
 
-2.9.3 のバージョンの変更
+2\.9.3 のバージョンの変更
 
 - ドライバーの署名の問題を修正します。
 - ARM64 テスト ツールが含まれます
@@ -68,9 +68,9 @@ Version 2.2 の変更
 -   バージョン 45 に SuperMUTT ファームウェアを更新します。
 -   更新された WinUSB 転送をテストします。
 
-1.9.1 のバージョンの変更
+1\.9.1 のバージョンの変更
 
--   1.9 と一部のシステムでは、以前のバージョンでは、システム後の列挙 (xHCI コント ローラーに接続されている) 場合、高速で SuperMutt デバイス S4 から再開されます。 バージョン 1.9.1 では、その問題を修正します。
+-   1\.9 と一部のシステムでは、以前のバージョンでは、システム後の列挙 (xHCI コント ローラーに接続されている) 場合、高速で SuperMutt デバイス S4 から再開されます。 バージョン 1.9.1 では、その問題を修正します。
 
 バージョン 1.9 の変更
 
@@ -158,7 +158,7 @@ Version 2.2 の変更
  
 
 ## <a name="related-topics"></a>関連トピック
-[USB](https://msdn.microsoft.com/library/windows/hardware/ff538930)  
+[USB](https://docs.microsoft.com/windows-hardware/drivers/)  
 [Microsoft USB Test Tool (MUTT) デバイス](microsoft-usb-test-tool--mutt--devices.md)  
 
 

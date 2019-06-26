@@ -10,17 +10,17 @@ keywords:
 - ハードウェア エラー ソース WDK WHEA、informati を取得します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a021928b8b7bd6420443b5f3df96d0bcb41c6c1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3a2b12bc7b4758dd35502187089eab0537444fc9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340814"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386477"
 ---
 # <a name="getting-error-source-information-for-all-error-sources"></a>すべてのエラー ソースのエラー ソース情報の取得
 
 
-ユーザー モード アプリケーションは、すべての情報を取得できます、[エラー ソース](hardware-errors-and-error-sources.md)で呼び出すことによって、システム、 [ **WHEAErrorSourceMethods::GetAllErrorSourcesRtn** ](https://msdn.microsoft.com/library/windows/hardware/ff559527)メソッド。 このメソッドの配列を返します[ **WHEA\_エラー\_ソース\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff560505)でサポートされているエラーのソースのすべてを記述する構造体、ハードウェア プラットフォームです。
+ユーザー モード アプリケーションは、すべての情報を取得できます、[エラー ソース](hardware-errors-and-error-sources.md)で呼び出すことによって、システム、 [ **WHEAErrorSourceMethods::GetAllErrorSourcesRtn** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_whea/)メソッド。 このメソッドの配列を返します[ **WHEA\_エラー\_ソース\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_whea_error_source_descriptor)でサポートされているエラーのソースのすべてを記述する構造体、ハードウェア プラットフォームです。
 
 次のコード例では、すべてのエラーのソース システムでエラーのソース情報を取得する方法を示します。
 

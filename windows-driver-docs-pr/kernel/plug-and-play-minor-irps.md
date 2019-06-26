@@ -4,12 +4,12 @@ description: プラグ アンド プレイのマイナー IRP
 ms.date: 08/12/2017
 ms.assetid: eeb7dafd-fb44-4fb7-b5f0-314059ee0093
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f596962a85f29ddcb1986da40e37d011316bd78
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 559e226036022cc7c04b91a0422798c1d490d585
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369250"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380944"
 ---
 # <a name="plug-and-play-minor-irps"></a>プラグ アンド プレイのマイナー IRP
 
@@ -19,7 +19,7 @@ ms.locfileid: "63369250"
 
 このセクションには、ドライバーに送信される PnP Irp がについて説明します。 コードが主な機能であるすべての PnP Irp [ **IRP\_MJ\_PNP** ](irp-mj-pnp.md)とマイナー関数を特定の PnP 要求を示すコード。
 
-このセクションでは、個々 の Irp のリファレンス情報を提供します。 参照してください[プラグ アンド プレイ](https://msdn.microsoft.com/library/windows/hardware/ff547125)Irp が送信される、Irp を処理する方法については、順序の説明については[DispatchPnP ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff543348)、PnP の概念と用語の一般的なディスカッションとします。
+このセクションでは、個々 の Irp のリファレンス情報を提供します。 参照してください[プラグ アンド プレイ](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)Irp が送信される、Irp を処理する方法については、順序の説明については[DispatchPnP ルーチン](https://docs.microsoft.com/windows-hardware/drivers/kernel/dispatchpnp-routines)、PnP の概念と用語の一般的なディスカッションとします。
 
 各 IRP とドライバーの種類ごとでは、ドライバーとは、IRP を必要に応じて処理できる、IRP を処理するために必要なのか、または IRP を処理する必要があります。 ドライバーは処理し、個々 の Irp については、リファレンス ページを参照する Irp を識別するために次の表を参照してください。 Irp は IRP のリファレンス ページでアルファベット順にテーブルの機能の順序で表示されます。
 
@@ -47,7 +47,7 @@ Irp これら PnP マネージャーに送信します。 PnP ドライバーに
 |       [**IRP\_MN\_クエリ\_デバイス\_リレーション**](irp-mn-query-device-relations.md)       |                                             |                                              |                                                  |
 |                                 -   **BusRelations**                                  |                省略可能 (1)                 |                   必須                   |                      いいえ (2)                      |
 |                               -   **EjectionRelations**                               |                     X                      |                      X                      |                     省略可能                     |
-|                               -   **RemovalRelations**                                |                  省略可能                   |                   省略可能                   |                        X                        |
+|                               -   **RemovalRelations**                                |                  省略可能                   |                   オプション                   |                        X                        |
 |                             -   **TargetDeviceRelation**                              |                     X                      |                      X                      |                     必須                     |
 |              [**IRP\_MN\_クエリ\_リソース**](irp-mn-query-resources.md)               |                     X                      |                      X                      |                   必要な (1)                   |
 |  [**IRP\_MN\_クエリ\_リソース\_要件**](irp-mn-query-resource-requirements.md)  |                     X                      |                      X                      |                   必要な (1)                   |

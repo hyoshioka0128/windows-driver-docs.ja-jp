@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - Windows Vista 以降のドライバーをネットワーク NdisGetNextMdl マクロ
 ms.localizationpriority: medium
-ms.openlocfilehash: b65a4d70a345d23531a25ebbec563ed442912add
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1280211dfee544e8c35a2e2823875be824290355
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63338448"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383677"
 ---
 # <a name="ndisgetnextmdl-macro"></a>NdisGetNextMdl macro
 
@@ -45,7 +45,7 @@ VOID NdisGetNextMdl(
 <a name="remarks"></a>注釈
 -------
 
-**NdisGetNextMdl**マクロの MDL ベースのバージョンの提供、 [ **NdisGetNextBuffer** ](https://msdn.microsoft.com/library/windows/hardware/ff552070)関数。
+**NdisGetNextMdl**マクロの MDL ベースのバージョンの提供、 [ **NdisGetNextBuffer** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff552070(v=vs.85))関数。
 
 <a name="requirements"></a>必要条件
 ------------
@@ -78,7 +78,7 @@ VOID NdisGetNextMdl(
 ## <a name="see-also"></a>関連項目
 
 
-[**NdisGetNextBuffer**](https://msdn.microsoft.com/library/windows/hardware/ff552070)
+[**NdisGetNextBuffer**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff552070(v=vs.85))
 
  
 

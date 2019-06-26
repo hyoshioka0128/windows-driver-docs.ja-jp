@@ -10,21 +10,21 @@ keywords:
 - 保護レベルの WDK 表示、DPCP の優先順位
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e9b55f594291ec36d8e6c400ce03aeb59994d001
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c9abfda0b6561561a53d7eed0920f145677f778f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63350322"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384633"
 ---
 # <a name="assigning-precedence-to-protection-levels"></a>保護レベルへの優先順位の割り当て
 
 
 優先順位の値は、各保護の種類の場合は、各保護レベルに割り当てられます。 これにより、物理出力は、2 つ以上の保護されている出力が物理的な出力に関連付けられ、保護された各出力が別の保護レベルがある場合に使用する保護レベルを決定できます。
 
-Microsoft DirectX グラフィックスのカーネル サブシステム (*Dxgkrnl.sys*) 表示ミニポート ドライバーの 1 つ以上の呼び出しを行うことができます[ **DxgkDdiOPMCreateProtectedOutput** ](https://msdn.microsoft.com/library/windows/hardware/ff559705)特定の物理出力の 1 つ以上の保護された出力を作成する関数。 さらに、これらの保護された出力の各同じ出力保護の種類の別の保護レベルを持つことができます。
+Microsoft DirectX グラフィックスのカーネル サブシステム (*Dxgkrnl.sys*) 表示ミニポート ドライバーの 1 つ以上の呼び出しを行うことができます[ **DxgkDdiOPMCreateProtectedOutput** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_opm_create_protected_output)特定の物理出力の 1 つ以上の保護された出力を作成する関数。 さらに、これらの保護された出力の各同じ出力保護の種類の別の保護レベルを持つことができます。
 
-たとえば、グラフィックス アダプターが CGMS A 保護の型を持つ 1 つの複合出力をその複合の出力に関連付けられている保護された出力 A と B の両方があるとします。 たとえば、次に、A の出力を保護する[ **CGMS する保護レベル**](https://msdn.microsoft.com/library/windows/hardware/ff560846) DXGKMDT に設定されている\_OPM\_CGMSA\_コピー\_いいえ\_より保護されている出力 B の中に DXGKMDT に CGMS する保護レベルが設定されている\_OPM\_CGMSA\_コピー\_1 つ\_生成します。 このような状況で物理的な出力が両方の保護レベルを使用できません。 したがって、この物理の出力は、一度に CGMS する保護レベルを 1 つだけを出力することができます、ため、物理出力は優先順位の高い CGMS する保護レベルを使用する必要があります。
+たとえば、グラフィックス アダプターが CGMS A 保護の型を持つ 1 つの複合出力をその複合の出力に関連付けられている保護された出力 A と B の両方があるとします。 たとえば、次に、A の出力を保護する[ **CGMS する保護レベル**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmdt/ne-d3dkmdt-_dxgkmdt_opm_cgmsa) DXGKMDT に設定されている\_OPM\_CGMSA\_コピー\_いいえ\_より保護されている出力 B の中に DXGKMDT に CGMS する保護レベルが設定されている\_OPM\_CGMSA\_コピー\_1 つ\_生成します。 このような状況で物理的な出力が両方の保護レベルを使用できません。 したがって、この物理の出力は、一度に CGMS する保護レベルを 1 つだけを出力することができます、ため、物理出力は優先順位の高い CGMS する保護レベルを使用する必要があります。
 
 どの保護レベルが異なる場合 (最高優先順位の低い) から物理的な出力を使用する必要がありますには、出力が保護されている次のセクションでは表示では、さまざまな保護レベルを使用する物理出力よう指示します。 これらのテーブル COPP または OPM セマンティクスを持つ保護された出力に適用されることに注意してください。
 

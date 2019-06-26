@@ -8,12 +8,12 @@ keywords:
 - スピン ロック WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ba56d78c33627e9b70feb5ec457f09ae97c01429
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 707fc887e3e0a631ffc3cac0777b8cc2e2b20321
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63338642"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378774"
 ---
 # <a name="providing-storage-for-spin-locks-and-protected-data"></a>スピン ロックおよび保護されたデータ用の記憶域の提供
 
@@ -23,11 +23,11 @@ ms.locfileid: "63338642"
 
 デバイスのスタートアップの一環として、ドライバーは、スピン ロックで保護されたデータやリソースと、次の場所のいずれかでスピン ロックを対応する常駐のストレージを割り当てる必要があります。
 
--   デバイス ドライバーを呼び出すことによって設定するオブジェクトのデバイスの拡張機能[ **IoCreateDevice**](https://msdn.microsoft.com/library/windows/hardware/ff548397)
+-   デバイス ドライバーを呼び出すことによって設定するオブジェクトのデバイスの拡張機能[ **IoCreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatedevice)
 
--   呼び出すことによって、ドライバーを設定するコント ローラー オブジェクトのコント ローラー拡張機能[ **IoCreateController**](https://msdn.microsoft.com/library/windows/hardware/ff548395)
+-   呼び出すことによって、ドライバーを設定するコント ローラー オブジェクトのコント ローラー拡張機能[ **IoCreateController**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-iocreatecontroller)
 
--   ドライバーを呼び出すことによって取得 nonpaged のシステム領域メモリ[ **exallocatepoolwithtag に**](https://msdn.microsoft.com/library/windows/hardware/ff544520)
+-   ドライバーを呼び出すことによって取得 nonpaged のシステム領域メモリ[ **exallocatepoolwithtag に**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtag)
 
 スピン ロックを保持しているときにページング可能なデータにアクセスしようと、そのページが存在しない場合に、致命的なページ フォールトが発生します。 (ページング可能なメモリに格納されたが現在ページ アウト) ため、無効なスピン ロックを参照すると、致命的なページ フォールトまた発生します。
 
@@ -37,7 +37,7 @@ ms.locfileid: "63338642"
 
 - いずれかのいずれかのパラメーターとして使用するロックを回転、 **ExInterlocked * Xxx*** ルーチン。
 
-ドライバーがへの呼び出しを行うときに、 **ExInterlocked * Xxx*** その ISR からルーチンまたは[ *SynchCritSection* ](https://msdn.microsoft.com/library/windows/hardware/ff563928)ルーチンでは使用できませんのいずれか、 **Ke * Xxx*** ディスパッチより大きい IRQL で取得および解放するルーチンがスピンロック\_レベル。 その結果、呼び出しの間スピン ロックを再利用するドライバー、 **Ke*Xxx*スピンロック**と**ExInterlocked * Xxx*** ルーチンは、IRQL での実行中にすべての呼び出しを行う必要があります&lt;= ディスパッチ\_レベル。
+ドライバーがへの呼び出しを行うときに、 **ExInterlocked * Xxx*** その ISR からルーチンまたは[ *SynchCritSection* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-ksynchronize_routine)ルーチンでは使用できませんのいずれか、 **Ke * Xxx*** ディスパッチより大きい IRQL で取得および解放するルーチンがスピンロック\_レベル。 その結果、呼び出しの間スピン ロックを再利用するドライバー、 **Ke*Xxx*スピンロック**と**ExInterlocked * Xxx*** ルーチンは、IRQL での実行中にすべての呼び出しを行う必要があります&lt;= ディスパッチ\_レベル。
 
 ドライバーに同じスピン ロックを渡すことができます**ExInterlockedInsertHeadList**間は**ExInterlocked * Xxx*** でに 2 つのルーチンは、同じ IRQL でスピン ロックを使用して日常的な。 スピン ロックの使用率がパフォーマンスに与える影響の詳細については、次を参照してください。[スピン ロックを使用します。たとえば](using-spin-locks--an-example.md)します。
 

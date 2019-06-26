@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: e6a0a1ea43d27627336a8d0f2d378a2c7938c40a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 75e97f886dda6cd11308761d7353834926b82640
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392478"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387333"
 ---
 # <a name="guid61883class"></a>GUID_61883_CLASS
 
 
-GUID_61883_CLASS[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)、61883 デバイスに対して定義されているが[デバイス セットアップ クラス](https://msdn.microsoft.com/library/windows/hardware/ff541509)します。
+GUID_61883_CLASS[デバイス インターフェイス クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)、61883 デバイスに対して定義されているが[デバイス セットアップ クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-setup-classes)します。
 
 <table>
 <colgroup>
@@ -54,7 +54,7 @@ GUID_61883_CLASS[デバイス インターフェイス クラス](https://msdn.m
 <a name="remarks"></a>コメント
 -------
 
-61883 デバイス セットアップ クラスのデバイス用のドライバーでは、オペレーティング システムと 61883 デバイスの存在をアプリケーションに通知するこのデバイスのインターフェイス クラスのインスタンスを登録します。 61883 デバイス インターフェイスのクラスには、IEC 61883 プロトコルをサポートする IEEE 1394 デバイスが含まれています。 61883 のデバイスとドライバーについては、次を参照してください。 [IEC 61883 クライアント ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff537188)します。
+61883 デバイス セットアップ クラスのデバイス用のドライバーでは、オペレーティング システムと 61883 デバイスの存在をアプリケーションに通知するこのデバイスのインターフェイス クラスのインスタンスを登録します。 61883 デバイス インターフェイスのクラスには、IEC 61883 プロトコルをサポートする IEEE 1394 デバイスが含まれています。 61883 のデバイスとドライバーについては、次を参照してください。 [IEC 61883 クライアント ドライバー](https://docs.microsoft.com/windows-hardware/drivers/ieee/iec-61883-client-drivers)します。
 
 1394 bus デバイスに対するデバイス セットアップ クラスについては、次を参照してください。 [ **BUS1394_CLASS_GUID**](bus1394-class-guid.md)します。
 

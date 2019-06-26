@@ -8,12 +8,12 @@ keywords:
 - Rom WDK の IEEE 1394 バスの構成
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c5715354142e237460d5959926ae813a2f5c0b60
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f59e2be9a3316b94461e3ef0a3291824da14d8f5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370986"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385755"
 ---
 # <a name="modifying-the-1394-configuration-rom"></a>1394 構成 ROM の修正
 
@@ -29,10 +29,10 @@ ms.locfileid: "63370986"
 
 2.  ドライバーは、仮想の物理デバイス オブジェクト (Pdo) を使用して、デバイス ドライバーのテストを容易にするための方法でハードウェアをエミュレートします。
 
-    デバイスのエミュレーションでは、まだ受信がいないデバイスのドライバーをテストできます。 ハードウェア エミュレーション ドライバーは、1394 バス上の仮想 1394 デバイスに公開できます。 開発者は、別のシステムで新しいハードウェアのドライバーをデバッグできます。 詳細については、デバイスのエミュレーションは、次を参照してください。[ハードウェア エミュレーション ドライバーの IEEE 1394](https://msdn.microsoft.com/library/windows/hardware/ff537214)します。
+    デバイスのエミュレーションでは、まだ受信がいないデバイスのドライバーをテストできます。 ハードウェア エミュレーション ドライバーは、1394 バス上の仮想 1394 デバイスに公開できます。 開発者は、別のシステムで新しいハードウェアのドライバーをデバッグできます。 詳細については、デバイスのエミュレーションは、次を参照してください。[ハードウェア エミュレーション ドライバーの IEEE 1394](https://docs.microsoft.com/windows-hardware/drivers/ieee/ieee-1394-hardware-emulation-drivers)します。
 
 ## <a name="related-topics"></a>関連トピック
-[IEEE 1394 ノードの構成 ROM の内容を取得します。](https://msdn.microsoft.com/library/windows/hardware/gg266408)  
+[IEEE 1394 ノードの構成 ROM の内容を取得します。](https://docs.microsoft.com/windows-hardware/drivers/ieee/retrieving-the-contents-of-a-ieee-1394-node-s-configuration-rom)  
 
 
 

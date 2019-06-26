@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: ee12871ac07e4b873fabf27ad76d23e6124837de
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8981b27deefb3262d83cedc21879a1a3e8ec5b17
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379466"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386416"
 ---
 # <a name="guiddevinterfacevideooutputarrival"></a>GUID_DEVINTERFACE_VIDEO_OUTPUT_ARRIVAL
 
 
-GUID_DEVINTERFACE_VIDEO_OUTPUT_ARRIVAL[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)の子デバイスが定義されている[ディスプレイ デバイス](https://msdn.microsoft.com/library/windows/hardware/ff554044)します。
+GUID_DEVINTERFACE_VIDEO_OUTPUT_ARRIVAL[デバイス インターフェイス クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)の子デバイスが定義されている[ディスプレイ デバイス](https://docs.microsoft.com/windows-hardware/drivers/display/index)します。
 
 <table>
 <colgroup>
@@ -56,7 +56,7 @@ GUID_DEVINTERFACE_VIDEO_OUTPUT_ARRIVAL[デバイス インターフェイス ク
 
 この Windows オペレーティング システムでは、このデバイスのインターフェイス クラスを使用しません。
 
-ディスプレイ デバイスについては、次を参照してください。 [Windows Vista のディスプレイ ドライバー モデル](https://msdn.microsoft.com/library/windows/hardware/ff570593)と[Windows 2000 Display Driver Model](https://msdn.microsoft.com/library/windows/hardware/ff570584)します。
+ディスプレイ デバイスについては、次を参照してください。 [Windows Vista のディスプレイ ドライバー モデル](https://docs.microsoft.com/windows-hardware/drivers/display/windows-vista-display-driver-model-design-guide)と[Windows 2000 Display Driver Model](https://docs.microsoft.com/windows-hardware/drivers/display/windows-2000-display-driver-model-design-guide)します。
 
 ディスプレイ アダプターのデバイスのインターフェイス クラスについては、次を参照してください。 [ **GUID_DISPLAY_DEVICE_ARRIVAL**](guid-display-device-arrival.md)します。
 

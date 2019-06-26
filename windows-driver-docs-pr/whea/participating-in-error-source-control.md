@@ -12,23 +12,23 @@ keywords:
 - エラー ソース制御 WDK WHEA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8eb11e83460f6f4719bb93fba01d4b2e9a233d7a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ea98823fdefe85f8fe0745aae3ba8a11fe43fc32
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340752"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386451"
 ---
 # <a name="participating-in-error-source-control"></a>エラー ソース管理への参加
 
 
 エラーのソース管理に参加するには、プラグイン PSHED は次のコールバック関数を実装する必要があります。
 
-[*SetErrorSourceInfo*](https://msdn.microsoft.com/library/windows/hardware/ff559489)
+[*SetErrorSourceInfo*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nc-ntddk-pshed_pi_set_error_source_info)
 
-[*EnableErrorSource*](https://msdn.microsoft.com/library/windows/hardware/ff559304)
+[*EnableErrorSource*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nc-ntddk-pshed_pi_enable_error_source)
 
-[*DisableErrorSource*](https://msdn.microsoft.com/library/windows/hardware/ff559294)
+[*DisableErrorSource*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nc-ntddk-pshed_pi_disable_error_source)
 
 次のコード例では、これらのコールバック関数を実装する方法を示します。
 

@@ -10,12 +10,12 @@ keywords:
 - Direct3D WDK Windows 2000 の表示、柔軟な頂点の書式設定
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c47237926cb89856faa121f573acb58e34cb3ca8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1613ecce384e1385f43906d5363fdcf9a7c870a2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342456"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384883"
 ---
 # <a name="determining-the-vertex-buffer-data-format"></a>頂点バッファーのデータ形式の決定
 
@@ -53,7 +53,7 @@ ms.locfileid: "63342456"
 
 ### <a name="span-idddkfvfvertexdatacomponentsggspanspan-idddkfvfvertexdatacomponentsggspanfvf-vertex-data-components"></a><span id="ddk_fvf_vertex_data_components_gg"></span><span id="DDK_FVF_VERTEX_DATA_COMPONENTS_GG"></span>FVF 頂点データ コンポーネント
 
-ドライバーで指定されたフラグを分析することで、コンポーネントが存在するかを決定します、 **dwVertexType**のメンバー、 [ **D3DHAL\_DRAWPRIMITIVES2DATA** ](https://msdn.microsoft.com/library/windows/hardware/ff545957)。構造体。 次の表で設定できるビット フィールドを示します**dwVertexType**と、そのユーザーを識別するコンポーネント。
+ドライバーで指定されたフラグを分析することで、コンポーネントが存在するかを決定します、 **dwVertexType**のメンバー、 [ **D3DHAL\_DRAWPRIMITIVES2DATA** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/ns-d3dhal-_d3dhal_drawprimitives2data)。構造体。 次の表で設定できるビット フィールドを示します**dwVertexType**と、そのユーザーを識別するコンポーネント。
 
 <table>
 <colgroup>
@@ -62,7 +62,7 @@ ms.locfileid: "63342456"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">値</th>
+<th align="left">Value</th>
 <th align="left">説明</th>
 </tr>
 </thead>

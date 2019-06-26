@@ -6,12 +6,12 @@ keywords:
 - INF ファイル WDK デバイス インストールでは、一般的なガイドライン
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 788d55c9f1a0c810da0d0952cdf56d9f6fe40f51
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8243684a9a4d0bda25a6119325b8cc44f9c0e377
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392511"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387331"
 ---
 # <a name="general-guidelines-for-inf-files"></a>INF ファイルの一般的なガイドライン
 
@@ -24,11 +24,11 @@ INF ファイルには多くの共通部分があり、次の構文規則の 1 �
 
 -   デバイスのクラスのドキュメントです。
 
-    たとえば、デバイスがプリンターの場合は、表示[のインストールと構成のプリンター ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff551648)します。
+    たとえば、デバイスがプリンターの場合は、表示[のインストールと構成のプリンター ドライバー](https://docs.microsoft.com/windows-hardware/drivers/print/installing-and-configuring-printer-drivers)します。
 
 -   INF ファイル用のツールを WDK です。
 
-    詳細については、次を参照してください。 [INF ファイル用のツール](https://msdn.microsoft.com/library/windows/hardware/ff552956)します。 これらのツールに含まれる、 \\WDK の Tools サブディレクトリ。
+    詳細については、次を参照してください。 [INF ファイル用のツール](https://docs.microsoft.com/windows-hardware/drivers/devtest/tools-for-inf-files)します。 これらのツールに含まれる、 \\WDK の Tools サブディレクトリ。
 
 -   サンプルの INF ファイルと類似したデバイスの INF ファイル。
 
@@ -36,7 +36,7 @@ INF ファイルには多くの共通部分があり、次の構文規則の 1 �
 
 作成したり、改行の挿入を制御できます任意のテキスト エディターを使用して、INF ファイルを変更することができます。 INF に非 ASCII 文字が含まれている場合は、Unicode ファイルとしてファイルを保存します。
 
-INF ファイルを Windows 7 に付属し、以前のオペレーティング システムのファイル名をいる必要があります<em>xxxxxxxx</em>**.inf**ここで、"*xxxxxxxx*"が 8 文字を超えていません。 オペレーティング システムから個別に付属する INF ファイルの名前は 8 文字に制限されています。
+INF ファイルを Windows 7 に付属し、以前のオペレーティング システムのファイル名をいる必要があります<em>xxxxxxxx</em> **.inf**ここで、"*xxxxxxxx*"が 8 文字を超えていません。 オペレーティング システムから個別に付属する INF ファイルの名前は 8 文字に制限されています。
 
 Windows 8 以降、INF ファイル名は 8 文字に制限されていますかに関係なく場合、オペレーティング システムを出荷します。
 

@@ -18,12 +18,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 23ae404f052d7ea69152dacfcf9203fde5c9679f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: df8ad363df165239f96a6fb5c8588b3557acb022
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340888"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385393"
 ---
 # <a name="print-pipeline-property-bag"></a>印刷パイプライン プロパティ バッグ
 
@@ -55,7 +55,7 @@ ms.locfileid: "63340888"
 <td><p>ProgressReport</p></td>
 <td><p>XPS_FP_PROGRESS_REPORT</p></td>
 <td><p>VT_UNKNOWN</p></td>
-<td><p>ポインター、 <strong>IUnknown</strong>インターフェイス。 呼び出す<strong>QueryInterface</strong>へのポインターを取得する、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff554314" data-raw-source="[IPrintPipelineProgressReport](https://msdn.microsoft.com/library/windows/hardware/ff554314)">IPrintPipelineProgressReport</a>インターフェイス。</p></td>
+<td><p>ポインター、 <strong>IUnknown</strong>インターフェイス。 呼び出す<strong>QueryInterface</strong>へのポインターを取得する、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/filterpipeline/nn-filterpipeline-iprintpipelineprogressreport" data-raw-source="[IPrintPipelineProgressReport](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/filterpipeline/nn-filterpipeline-iprintpipelineprogressreport)">IPrintPipelineProgressReport</a>インターフェイス。</p></td>
 </tr>
 <tr class="odd">
 <td><p>PrinterHandle</p></td>
@@ -67,7 +67,7 @@ ms.locfileid: "63340888"
 <td><p>PerUserPrintTicket</p></td>
 <td><p>XPS_FP_USER_PRINT_TICKET</p></td>
 <td><p>VT_UNKNOWN</p></td>
-<td><p>ポインター、 <strong>IUnknown</strong>インターフェイス。 呼び出す<strong>QueryInterface</strong>へのポインターを取得する、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff554338" data-raw-source="[IPrintReadStreamFactory](https://msdn.microsoft.com/library/windows/hardware/ff554338)">IPrintReadStreamFactory</a>インターフェイス。</p></td>
+<td><p>ポインター、 <strong>IUnknown</strong>インターフェイス。 呼び出す<strong>QueryInterface</strong>へのポインターを取得する、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/filterpipeline/nn-filterpipeline-iprintreadstreamfactory" data-raw-source="[IPrintReadStreamFactory](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/filterpipeline/nn-filterpipeline-iprintreadstreamfactory)">IPrintReadStreamFactory</a>インターフェイス。</p></td>
 </tr>
 <tr class="odd">
 <td><p>UserSecurityToken</p></td>
@@ -85,20 +85,20 @@ ms.locfileid: "63340888"
 <td><p>PrintClassFactory</p></td>
 <td><p>XPS_FP_PRINT_CLASS_FACTORY</p></td>
 <td><p>VT_UNKNOWN</p></td>
-<td><p>ポインター、 <strong>IUnknown</strong>インターフェイス。 呼び出す<strong>QueryInterface</strong>へのポインターを取得する、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff551955" data-raw-source="[IPrintClassObjectFactory](https://msdn.microsoft.com/library/windows/hardware/ff551955)">IPrintClassObjectFactory</a>インターフェイス。</p></td>
+<td><p>ポインター、 <strong>IUnknown</strong>インターフェイス。 呼び出す<strong>QueryInterface</strong>へのポインターを取得する、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/filterpipeline/nn-filterpipeline-iprintclassobjectfactory" data-raw-source="[IPrintClassObjectFactory](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/filterpipeline/nn-filterpipeline-iprintclassobjectfactory)">IPrintClassObjectFactory</a>インターフェイス。</p></td>
 </tr>
 <tr class="even">
 <td><p>IPrintCoreHelper</p></td>
 <td><p>(このプロパティ名のシンボリック名がありません) です。</p></td>
 <td><p>VT_UNKNOWN</p></td>
-<td><p>ポインター、 <strong>IUnknown</strong>インターフェイス。 呼び出す<strong>QueryInterface</strong>へのポインターを取得する、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff552960" data-raw-source="[IPrintCoreHelper](https://msdn.microsoft.com/library/windows/hardware/ff552960)">IPrintCoreHelper</a>インターフェイス。</p>
+<td><p>ポインター、 <strong>IUnknown</strong>インターフェイス。 呼び出す<strong>QueryInterface</strong>へのポインターを取得する、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nn-prcomoem-iprintcorehelper" data-raw-source="[IPrintCoreHelper](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nn-prcomoem-iprintcorehelper)">IPrintCoreHelper</a>インターフェイス。</p>
 <p>このプロパティは構成 UI の DLL として、unidrvui.dll を使用する XPSDrv プリンター ドライバーで利用できるのみことに注意してください。</p></td>
 </tr>
 <tr class="odd">
 <td><p>PrintDeviceCapabilities</p></td>
 <td><p>XPS_FP_PRINTDEVICECAPABILITIES</p></td>
 <td><p>VT_UNKNOWN</p></td>
-<td><p>ポインター、 <strong>IUnknown</strong>インターフェイス。 呼び出す<strong>QueryInterface</strong>へのポインターを取得する、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff554338" data-raw-source="[IPrintReadStreamFactory](https://msdn.microsoft.com/library/windows/hardware/ff554338)">IPrintReadStreamFactory</a>インターフェイス。</p>
+<td><p>ポインター、 <strong>IUnknown</strong>インターフェイス。 呼び出す<strong>QueryInterface</strong>へのポインターを取得する、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/filterpipeline/nn-filterpipeline-iprintreadstreamfactory" data-raw-source="[IPrintReadStreamFactory](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/filterpipeline/nn-filterpipeline-iprintreadstreamfactory)">IPrintReadStreamFactory</a>インターフェイス。</p>
 <p>印刷フィルター パイプラインのプロパティ バッグから PrintDeviceCapabilities XML ファイルを取得する XPS レンダリング フィルターを使用できます。</p></td>
 </tr>
 </tbody>

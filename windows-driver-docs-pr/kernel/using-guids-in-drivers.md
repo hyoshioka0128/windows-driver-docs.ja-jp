@@ -10,12 +10,12 @@ keywords:
 - カーネル モード ドライバー WDK、Guid
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 20a1d8436168de8e8de29c676a43a5bd6e6b9f9b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e0e1fd0ee1470f8d5711473a3e8af6bcace5433c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387397"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381640"
 ---
 # <a name="using-guids-in-drivers"></a>ドライバーでの GUID の使用
 
@@ -23,7 +23,7 @@ ms.locfileid: "63387397"
 
 
 
-ドライバーと他のシステム コンポーネントを使用して、*グローバルに一意の識別子*さまざまなアイテムを識別するためには、(Guid)。 システム コンポーネントの Guid からの項目のなど定義[デバイス セットアップ クラス](https://msdn.microsoft.com/library/windows/hardware/ff541509)、PnP、WMI イベント、イベントおよびイベントを静止画像します。 ドライバー開発者はアイテムの Guid をなど、作成できる[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)イベント、およびカスタムの WMI イベントは、カスタム PnP します。 ドライバーとアプリケーションには、使用する Guid を定義するヘッダー ファイルが含まれます。
+ドライバーと他のシステム コンポーネントを使用して、*グローバルに一意の識別子*さまざまなアイテムを識別するためには、(Guid)。 システム コンポーネントの Guid からの項目のなど定義[デバイス セットアップ クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-setup-classes)、PnP、WMI イベント、イベントおよびイベントを静止画像します。 ドライバー開発者はアイテムの Guid をなど、作成できる[デバイス インターフェイス クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)イベント、およびカスタムの WMI イベントは、カスタム PnP します。 ドライバーとアプリケーションには、使用する Guid を定義するヘッダー ファイルが含まれます。
 
 ここでは、次のトピックについて説明します。
 

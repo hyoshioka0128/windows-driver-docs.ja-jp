@@ -8,12 +8,12 @@ keywords:
 - 状態インジケーター WDK、中間ネットワーク ドライバー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2903f03f0ba1ad5844a7c20b955911c0b17220c2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 58ecc228e539d4b6fc41891ff6befe65dc401963
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366379"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383607"
 ---
 # <a name="status-indications-in-an-intermediate-driver"></a>中間ドライバーでの状態表示
 
@@ -23,7 +23,7 @@ ms.locfileid: "63366379"
 
 中間ドライバーで状態インジケーターの実装では、プロトコル ドライバーに実装するとほぼ同じです。 ドライバーの中間状態のインジケーターの詳細については、次を参照してください。[プロトコル ドライバーに状態インジケーター](status-indications-in-a-protocol-driver.md)します。
 
-呼び出すことによってより高度なドライバーまで、状態を示す値を示している可能性、中間ドライバーでは、状態を示す値を受信すると[ **NdisMIndicateStatusEx**](https://msdn.microsoft.com/library/windows/hardware/ff563600)します。 中間のドライバーには、その特定のデザイン要件に合わせて上にあるドライバーへの状態の変更が示されます。
+呼び出すことによってより高度なドライバーまで、状態を示す値を示している可能性、中間ドライバーでは、状態を示す値を受信すると[ **NdisMIndicateStatusEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismindicatestatusex)します。 中間のドライバーには、その特定のデザイン要件に合わせて上にあるドライバーへの状態の変更が示されます。
 
  
 

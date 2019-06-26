@@ -12,12 +12,12 @@ keywords:
 - Pdo WDK 多機能デバイス
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 94f9cbdb5f0fd1e6eed1785b5149344b804f0793
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9db8e0a0eee790008b2c93af08f404b8879cec4c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379594"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386373"
 ---
 # <a name="using-the-system-supplied-multifunction-bus-driver"></a>システム提供の多機能バス ドライバーの使用
 
@@ -33,9 +33,9 @@ Mf.sys を使用するには、多機能デバイスは、次の要件を満た�
 
 -   デバイスの基になるバスには、多機能の標準が必要です。
 
--   [**デバイス\_機能**](https://msdn.microsoft.com/library/windows/hardware/ff543095)関数、子のと同じである必要があり、親デバイスのものと一致する必要があります。 子関数のデバイス機能にクエリされるときに ([**IRP\_MN\_クエリ\_機能**](https://msdn.microsoft.com/library/windows/hardware/ff551664))、mf.sys ドライバーのデバイス機能の報告親となるデバイス。
+-   [**デバイス\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_capabilities)関数、子のと同じである必要があり、親デバイスのものと一致する必要があります。 子関数のデバイス機能にクエリされるときに ([**IRP\_MN\_クエリ\_機能**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-capabilities))、mf.sys ドライバーのデバイス機能の報告親となるデバイス。
 
--   いずれかの多機能デバイスが存在するなど pcmcia.sys、バス ドライバーが処理する必要があります[ **IRP\_MN\_読み取り\_CONFIG** ](https://msdn.microsoft.com/library/windows/hardware/ff551727)と[**IRP\_MN\_書き込み\_CONFIG** ](https://msdn.microsoft.com/library/windows/hardware/ff551769)要求。 Mf.sys ドライバーは、親のバス ドライバーにこれらの Irp を渡すのみです。
+-   いずれかの多機能デバイスが存在するなど pcmcia.sys、バス ドライバーが処理する必要があります[ **IRP\_MN\_読み取り\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-read-config)と[**IRP\_MN\_書き込み\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-write-config)要求。 Mf.sys ドライバーは、親のバス ドライバーにこれらの Irp を渡すのみです。
 
 -   関数は、独立系である必要があります起動順序の依存関係を含めることはできません。(例、function1 は I/O ポート X と function2 はマッピング + 200); の別の関数のリソースの観点から、1 つの関数のリソース要件を表現できません。場合でも、別の関数と同じドライバーがサービスを提供、各関数が別のデバイスとして動作することがあります。
 

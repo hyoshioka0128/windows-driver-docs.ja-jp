@@ -7,12 +7,12 @@ keywords:
 - IoIs32bitProcess
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ae9241bbfd3aa3d0b57fdfde2da9191c19d6ed05
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9efdfbc5e25566cad35329c83f0dab809e3d54a8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361848"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386620"
 ---
 # <a name="extended-example-using-iois32bitprocess"></a>拡張の例: IoIs32bitProcess の使用
 
@@ -20,7 +20,7 @@ ms.locfileid: "63361848"
 
 
 
-次の例への呼び出しを追加することで、64 ビットの 32 ビット ドライバーを変更する方法を示します[ **IoIs32bitProcess**](https://msdn.microsoft.com/library/windows/hardware/ff549372)します。 この例に変更する必要があるドライバー コードの部分のみが表示されるに注意してください。
+次の例への呼び出しを追加することで、64 ビットの 32 ビット ドライバーを変更する方法を示します[ **IoIs32bitProcess**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iois32bitprocess)します。 この例に変更する必要があるドライバー コードの部分のみが表示されるに注意してください。
 
 ### <a name="original-driver-code"></a>元のドライバー コード
 

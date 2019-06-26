@@ -6,17 +6,17 @@ keywords:
 - デバイスのプロパティ表現 WDK デバイスのインストール
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d6d874d6075034c3b18bc0fa0c5edf521488d5aa
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7099e50f751f2d618a829cf599d1fe2254cb3825
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356114"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387119"
 ---
 # <a name="device-property-representations-windows-server-2003-windows-xp-and-windows-2000"></a>デバイスのプロパティの表現 (Windows Server 2003、Windows XP、および Windows 2000)
 
 
-Windows Server 2003、Windows XP、および Windows 2000 をサポートしていない、[統一されたデバイス プロパティのモデル](unified-device-property-model--windows-vista-and-later-.md)その Windows Vista と Windows のサポートの以降のバージョン。 ただし、ほとんどの[デバイスのシステム定義のプロパティ](https://msdn.microsoft.com/library/windows/hardware/ff553413)収録されているプロパティの統一されたデバイス モデルで Windows の以前のバージョンでサポートされている対応する表現があります。 Windows の以前のバージョン、方法は、デバイス プロパティが表され、プロパティにアクセスするためのメカニズムは、コンポーネントの種類とプロパティの型によって異なります。 これらの表現とメカニズム次に示します。
+Windows Server 2003、Windows XP、および Windows 2000 をサポートしていない、[統一されたデバイス プロパティのモデル](unified-device-property-model--windows-vista-and-later-.md)その Windows Vista と Windows のサポートの以降のバージョン。 ただし、ほとんどの[デバイスのシステム定義のプロパティ](https://docs.microsoft.com/previous-versions/ff553413(v=vs.85))収録されているプロパティの統一されたデバイス モデルで Windows の以前のバージョンでサポートされている対応する表現があります。 Windows の以前のバージョン、方法は、デバイス プロパティが表され、プロパティにアクセスするためのメカニズムは、コンポーネントの種類とプロパティの型によって異なります。 これらの表現とメカニズム次に示します。
 
 -   デバイス プロパティがへの入力パラメーターとして指定されているシステム定義の識別子によって表される、 [SetupAPI 関数](setupapi.md)デバイス プロパティにアクセスします。
 

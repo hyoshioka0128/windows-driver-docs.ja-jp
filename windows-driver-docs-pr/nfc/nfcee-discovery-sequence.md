@@ -10,12 +10,12 @@ keywords:
 description: NFCEE 管理のさまざまな実装をサポートするために操作の 2 つのモードを提供する NFC CX について説明します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ef73466084e3d016cf644a45c29c6a0ee88a2dc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f6b532c0ba21ed19bc52285309675407ab80af9e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378658"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383558"
 ---
 # <a name="nfcee-discovery-sequence"></a>NFCEE 検出シーケンス
 
@@ -34,5 +34,5 @@ ms.locfileid: "63378658"
 
  
 ## <a name="related-topics"></a>関連トピック
-[NFC のデバイス ドライバー インターフェイス (DDI) の概要](https://msdn.microsoft.com/library/windows/hardware/mt715815)  
-[NFC クラスの拡張機能 (CX) リファレンス](https://msdn.microsoft.com/library/windows/hardware/dn905536)  
+[NFC のデバイス ドライバー インターフェイス (DDI) の概要](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
+[NFC クラスの拡張機能 (CX) リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  

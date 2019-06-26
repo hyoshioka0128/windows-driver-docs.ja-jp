@@ -4,12 +4,12 @@ description: ドライバーが正しく OID 要求を処理することを確�
 ms.assetid: 0E12778B-BB86-4387-9B8A-19E3876D6F8C
 ms.date: 05/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: e762c59c2d2dd2c5ad79108c028be473d3167e0f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fcd5e7bbd91c556ab21312ec9661f9ac227e2d7d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356374"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361271"
 ---
 # <a name="oidprocessing-rule-set-ndis"></a>OidProcessing の規則セット (NDIS)
 
@@ -41,7 +41,7 @@ ms.locfileid: "63356374"
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="ndis-ndismnetpnpeventinoidrequest.md" data-raw-source="[&lt;strong&gt;NdisMNetPnPEventInOIDRequest&lt;/strong&gt;](ndis-ndismnetpnpeventinoidrequest.md)"><strong>NdisMNetPnPEventInOIDRequest</strong></a></p></td>
-<td align="left"><p>このルールは、ことを確認<a href="https://msdn.microsoft.com/library/windows/hardware/ff563616" data-raw-source="[&lt;strong&gt;NdisMNetPnPEvent&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff563616)"> <strong>NdisMNetPnPEvent</strong> </a> OID 要求のコンテキストでは呼び出されません。</p></td>
+<td align="left"><p>このルールは、ことを確認<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismnetpnpevent" data-raw-source="[&lt;strong&gt;NdisMNetPnPEvent&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismnetpnpevent)"> <strong>NdisMNetPnPEvent</strong> </a> OID 要求のコンテキストでは呼び出されません。</p></td>
 </tr>
 </tbody>
 </table>
@@ -60,7 +60,7 @@ ms.locfileid: "63356374"
     msbuild /t:sdv /p:Inputs="/check:OidProcessing.sdv" mydriver.VcxProj /p:Configuration="Win8 Release" /p:Platform=Win32
     ```
 
-    詳細については、次を参照してください。[ドライバーで障害を検出する Static Driver Verifier を使用して](https://msdn.microsoft.com/library/windows/hardware/hh454281)と[Static Driver Verifier のコマンド (MSBuild)](https://msdn.microsoft.com/library/windows/hardware/hh466459)します。
+    詳細については、次を参照してください。[ドライバーで障害を検出する Static Driver Verifier を使用して](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers)と[Static Driver Verifier のコマンド (MSBuild)](https://docs.microsoft.com/windows-hardware/drivers/devtest/-static-driver-verifier-commands--msbuild-)します。
 
  
 

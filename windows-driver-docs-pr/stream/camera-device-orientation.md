@@ -3,12 +3,12 @@ title: カメラの向きのドライバー サポート
 description: デバイスのカメラの向きを明示的に指定する方法について説明します。
 ms.date: 08/06/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b271e8b8552c17b077f536f9d5491bff7a181f7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 63a4a75c684aa7bba39853636ce171edc432ac63
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370293"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386692"
 ---
 # <a name="driver-support-for-camera-orientation"></a>カメラの向きのドライバー サポート
 
@@ -63,7 +63,7 @@ typedef struct _ACPI_PLD_V2_BUFFER {
 
 その結果、アプリケーションには、キャプチャされたフレームをレンダリング サーフェイスの向きが正しい転置できるように 2 つの周辺機器の空間関係を記述するためのメカニズムが必要があります。
 
-問題を解決する 1 つの方法は、ACPI を使用する\_PLD が構造体がの概念は既に*画面*と*の回転角度*定義します。 参照してください、 [ACPI 仕様](https://www.uefi.org/specifications)と[ACPI サポート ドキュメント](https://www.uefi.org/acpi)の完全な仕様。 たとえば、 \_PLD 構造が既に*パネル*周辺機器が存在する画面を指定するフィールド。
+問題を解決する 1 つの方法は、ACPI を使用する\_PLD が構造体がの概念は既に*画面*と*の回転角度*定義します。 参照してください、 [ACPI 仕様](https://uefi.org/specifications)と[ACPI サポート ドキュメント](https://uefi.org/acpi)の完全な仕様。 たとえば、 \_PLD 構造が既に*パネル*周辺機器が存在する画面を指定するフィールド。
 
 ![ACPI PLD パネル フィールド](images/acpi-pld-panel-field.png)
 

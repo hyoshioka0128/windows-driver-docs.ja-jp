@@ -9,12 +9,12 @@ keywords:
 - 権限借用 WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 329f57369e88186a9dcc750ed11fac48b4003a98
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 86d6a0f03b75345989b5b8ad5ee01b52a7e9ec56
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378118"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382855"
 ---
 # <a name="handling-client-impersonation-in-umdf-1x-drivers"></a>UMDF 1.x ドライバーでのクライアント偽装の処理
 
@@ -39,7 +39,7 @@ UMDF ドライバーのインストール パッケージと、クライアン�
 
 UMDF ドライバー、フレームワークは、次の順序で、I/O 要求の権限借用を処理します。
 
-1.  ドライバーの呼び出し、 [ **IWDFIoRequest::Impersonate** ](https://msdn.microsoft.com/library/windows/hardware/ff559136)必要な偽装レベルを指定するメソッドと[ **IImpersonateCallback::OnImpersonate**](https://msdn.microsoft.com/library/windows/hardware/ff554916)コールバック関数。
+1.  ドライバーの呼び出し、 [ **IWDFIoRequest::Impersonate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest-impersonate)必要な偽装レベルを指定するメソッドと[ **IImpersonateCallback::OnImpersonate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iimpersonatecallback-onimpersonate)コールバック関数。
 
 2.  フレームワークは、要求された偽装レベルを確認します。 要求されたレベルが UMDF ドライバーのインストール パッケージと、クライアント アプリケーションを使用するレベルよりも大きい場合は、権限借用の要求は失敗します。 それ以外の場合、フレームワークは、クライアントを偽装し、すぐに呼び出し、 **OnImpersonate**コールバック関数。
 
@@ -47,15 +47,15 @@ UMDF ドライバー、フレームワークは、次の順序で、I/O 要求�
 
 UMDF にドライバーを許可しない**OnImpersonate** framework のオブジェクトのメソッドの呼び出しにコールバック関数。 これにより、ドライバーが偽装レベルを他のドライバーのコールバック機能またはその他のドライバーを公開しません。
 
-**注**  バージョン 1.0 ~ UMDF の 1.7 で[ **IWDFIoRequest::Impersonate** ](https://msdn.microsoft.com/library/windows/hardware/ff559136)こと、クライアント アプリケーションと INF ファイルには、さらに、最高の権限借用レベルを付与場合は、ドライバーが要求される偽装レベルは低くなります。 UMFD バージョン 1.9 以降で、 **Impersonate**メソッドは、ドライバーが要求を権限借用レベルのみに付与します。
+**注**  バージョン 1.0 ~ UMDF の 1.7 で[ **IWDFIoRequest::Impersonate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest-impersonate)こと、クライアント アプリケーションと INF ファイルには、さらに、最高の権限借用レベルを付与場合は、ドライバーが要求される偽装レベルは低くなります。 UMFD バージョン 1.9 以降で、 **Impersonate**メソッドは、ドライバーが要求を権限借用レベルのみに付与します。
 
  
 
 ### <a name="passing-credentials-down-the-driver-stack"></a>下位のドライバー スタックの資格情報を渡す
 
-ドライバーが受信すると、 [ **WdfRequestCreate**](https://msdn.microsoft.com/library/windows/hardware/ff561467)-型指定された I/O 要求、ドライバーは、カーネル モード ドライバーをドライバー スタックを I/O 要求を転送場合があります。 カーネル モード ドライバーには、権限の借用機能がないを**IWDFIoRequest::Impersonate** UMDF ベースのドライバーを提供します。
+ドライバーが受信すると、 [ **WdfRequestCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi_types/ne-wudfddi_types-_wdf_request_type)-型指定された I/O 要求、ドライバーは、カーネル モード ドライバーをドライバー スタックを I/O 要求を転送場合があります。 カーネル モード ドライバーには、権限の借用機能がないを**IWDFIoRequest::Impersonate** UMDF ベースのドライバーを提供します。
 
-そのため、カーネル モード ドライバーがクライアントのユーザーの資格情報を受信するようにする場合 (の資格情報ではなく、[ドライバー ホスト プロセス](umdf-driver-host-process.md))、ドライバーを設定する必要があります、 [ **WDF\_要求\_送信\_オプション\_IMPERSONATE\_クライアント**](https://msdn.microsoft.com/library/windows/hardware/ff561462)フラグを呼び出すときに[ **IWDFIoRequest::Send** ](https://msdn.microsoft.com/library/windows/hardware/ff559149)を送信する、I/O ターゲットへの要求を作成します。 **送信**エラー メソッドを返しますのコード権限借用に失敗した場合、ドライバーによっても設定しない限り、 **WDF\_要求\_送信\_オプション\_権限借用\_無視\_エラー**フラグ。
+そのため、カーネル モード ドライバーがクライアントのユーザーの資格情報を受信するようにする場合 (の資格情報ではなく、[ドライバー ホスト プロセス](umdf-driver-host-process.md))、ドライバーを設定する必要があります、 [ **WDF\_要求\_送信\_オプション\_IMPERSONATE\_クライアント**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi_types/ne-wudfddi_types-_wdf_request_send_options_flags)フラグを呼び出すときに[ **IWDFIoRequest::Send** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest-send)を送信する、I/O ターゲットへの要求を作成します。 **送信**エラー メソッドを返しますのコード権限借用に失敗した場合、ドライバーによっても設定しない限り、 **WDF\_要求\_送信\_オプション\_権限借用\_無視\_エラー**フラグ。
 
 ドライバーを呼び出す必要はありません**IWDFIoRequest::Impersonate** I/O ターゲットに、要求を送信する前にします。
 

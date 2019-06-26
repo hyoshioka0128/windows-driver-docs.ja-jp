@@ -12,12 +12,12 @@ keywords:
 - IPrintAsyncNotifyChannel
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b7ee7af0e2306b9e27cd1964ee98a02b7e63799
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6d6094c2414aa5648d8dd585274e057a5abcfcce
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382779"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385970"
 ---
 # <a name="notification-channel"></a>通知チャンネル
 
@@ -109,7 +109,7 @@ DECLARE_INTERFACE_(IPrintAsyncNotifyChannel, IUnknown)
     -   呼び出す前に**リリース**双方向チャネルでは、常に呼び出す必要があります**CloseChannel**と成功の結果を受信します。 呼び出す必要はありません**リリース**場合への呼び出し**CloseChannel**チャネルが既にリリースされているあなたの代わりにあるため、失敗します。
     -   呼び出す必要はありません**リリース**入力するときに、 **ChannelClosed**イベント。 このような状況を避けるためには、確認の呼び出しを**CloseChannel**チャネルのエラーで失敗したが\_ALREADY\_終了します。 呼び出す必要はありません**リリース**ここでは、あなたの代わりに、チャネルは既に解放されているためです。
     -   呼び出す必要はありません**CloseChannel**、**リリース**、または場合に、チャネルで、他のメンバー関数、 **ChannelClosed**コールバック関数の実行が終了します。 ここでは、チャネルが既にリリースされているため、呼び出しが未定義の動作を引き起こすこと可能性があります。 この制限は、フォア グラウンド スレッドとコールバック オブジェクト間の調整を必要があります。
-    -   フォア グラウンド スレッドとコールバック オブジェクトがへの呼び出しを調整することを確認する必要があります**CloseChannel**と**リリース**します。 呼び出しを始めることはできません、フォア グラウンド スレッドと、コールバック オブジェクト**CloseChannel**を呼び出すには、呼び出し元が完了した他のか**リリース**します。 使用して、この制限を実装することができます、 [ **InterlockedCompareExchange** ](https://msdn.microsoft.com/library/windows/hardware/ff547853)ルーチン。 使用しない場合**InterlockedCompareExchange**、未定義の動作が発生する可能性があります。
+    -   フォア グラウンド スレッドとコールバック オブジェクトがへの呼び出しを調整することを確認する必要があります**CloseChannel**と**リリース**します。 呼び出しを始めることはできません、フォア グラウンド スレッドと、コールバック オブジェクト**CloseChannel**を呼び出すには、呼び出し元が完了した他のか**リリース**します。 使用して、この制限を実装することができます、 [ **InterlockedCompareExchange** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-interlockedcompareexchange)ルーチン。 使用しない場合**InterlockedCompareExchange**、未定義の動作が発生する可能性があります。
 -   チャネルのリスナーとして登録した場合は、呼び出す**CloseChannel**を呼び出して**リリース**で、 [IPrintAsyncNotifyCallback::OnEventNotify](https://go.microsoft.com/fwlink/p/?linkid=124757)コールバック双方向通信を終了する関数。 ただし、呼び出す必要はありません**CloseChannel**または**リリース**で、 **ChannelClosed**コールバック。
 
 これらの条件のいずれかを満たしている場合を呼び出す必要があります**リリース**します。 これらの条件のいずれかを満たしていない場合は、呼び出す必要はありません**リリース**します。

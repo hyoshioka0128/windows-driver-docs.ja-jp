@@ -9,12 +9,12 @@ keywords:
 - シンボルのダウンロード
 ms.date: 04/26/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c32a3743b44db5299f0becc4f6e80320656bc51
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e7397b2464a590d30354342e86193a9d6a202317
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368485"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361408"
 ---
 # <a name="windows-symbol-packages"></a>Windows シンボル パッケージ
 
@@ -44,10 +44,10 @@ ms.locfileid: "63368485"
 
 - [Windows デバッグ ツールをダウンロードします。](debugger-download-tools.md)
 
-- [Windows Driver Kit (WDK) のダウンロードします。](https://developer.microsoft.com/windows/hardware/windows-driver-kit)
+- [Windows Driver Kit (WDK) のダウンロードします。](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk)
 
-- [Windows アセスメント & デプロイメント キット (Windows ADK) のダウンロード](https://developer.microsoft.com/windows/hardware/windows-assessment-deployment-kit)
+- [Windows アセスメント & デプロイメント キット (Windows ADK) のダウンロード](https://docs.microsoft.com/windows-hardware/get-started/adk-install)
 
-- [Windows HLK、HCK、Logo Kit のダウンロード](https://developer.microsoft.com/windows/hardware/windows-hardware-lab-kit)
+- [Windows HLK、HCK、Logo Kit のダウンロード](https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit)
 
 - [Windows Insider Preview ビルドのダウンロード](https://insider.windows.com/)

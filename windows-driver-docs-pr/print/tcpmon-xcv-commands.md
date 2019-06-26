@@ -19,12 +19,12 @@ keywords:
 - SNMPEnabled
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 03a92b5e358c21369390f2030b07232aa85336d8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b97c53f437d7fb95d849a71c203347c20a7e2a76
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388057"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385963"
 ---
 # <a name="tcpmon-xcv-commands"></a>TCPMON Xcv コマンド
 
@@ -32,7 +32,7 @@ ms.locfileid: "63388057"
 
 
 
-このセクションへの呼び出しで指定できるコマンドがについて説明します、 [ **XcvData** ](https://msdn.microsoft.com/library/windows/hardware/ff564255)または[ **XcvDataPort** ](https://msdn.microsoft.com/library/windows/hardware/ff564258)関数である場合に標準の TCP/IP ポート モニタ (TCPMON) と通信します。 各コマンドがで指定された、 *pszDataName*これらの関数の呼び出しでの文字列。 特定のコマンドは、入力バッファーまたは出力バッファー、またはその両方が必要です。 *PInputData*と*pOutputData*これらの関数のパラメーターは、これらのバッファーのアドレスを保持します。
+このセクションへの呼び出しで指定できるコマンドがについて説明します、 [ **XcvData** ](https://docs.microsoft.com/previous-versions/ff564255(v=vs.85))または[ **XcvDataPort** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/nf-winsplp-xcvdataport)関数である場合に標準の TCP/IP ポート モニタ (TCPMON) と通信します。 各コマンドがで指定された、 *pszDataName*これらの関数の呼び出しでの文字列。 特定のコマンドは、入力バッファーまたは出力バッファー、またはその両方が必要です。 *PInputData*と*pOutputData*これらの関数のパラメーターは、これらのバッファーのアドレスを保持します。
 
 コマンド リストを次のそれぞれの説明に表示されるテーブル、 **XcvData**と**XcvDataPort**コマンドで使用されるパラメーター。 なお、 *hXcv* (どちらの関数に共通) パラメーターは、表示されていないは、 **XcvData**関数の*pdwStatus*パラメーター。
 
@@ -48,7 +48,7 @@ ms.locfileid: "63388057"
 <thead>
 <tr class="header">
 <th>XcvData パラメーター</th>
-<th>値</th>
+<th>Value</th>
 </tr>
 </thead>
 <tbody>
@@ -58,7 +58,7 @@ ms.locfileid: "63388057"
 </tr>
 <tr class="even">
 <td><p><em>pInputData</em></p></td>
-<td><p>アドレスを<a href="https://msdn.microsoft.com/library/windows/hardware/ff559892" data-raw-source="[&lt;strong&gt;PORT_DATA_1&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff559892)"> <strong>PORT_DATA_1</strong> </a>構造体</p></td>
+<td><p>アドレスを<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/tcpxcv/ns-tcpxcv-_port_data_1" data-raw-source="[&lt;strong&gt;PORT_DATA_1&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/tcpxcv/ns-tcpxcv-_port_data_1)"> <strong>PORT_DATA_1</strong> </a>構造体</p></td>
 </tr>
 <tr class="odd">
 <td><p><em>cbInputData</em></p></td>
@@ -81,7 +81,7 @@ ms.locfileid: "63388057"
 
  
 
-[**XcvData** ](https://msdn.microsoft.com/library/windows/hardware/ff564255) no が返されます\_エラーの場合は、ポートを追加できます。 通常のエラー コードのほか**XcvData**エラーが返されます\_アクセス\_かどうか、ユーザーには、サーバーのポートを作成するのに十分な特権を拒否します。 このコマンドは、サーバーを必要と\_アクセス\_管理特権。 場合、 *pInputData*パラメーターが**NULL**、関数には、エラーが返されます。\_無効な\_データ。 場合*pInputData*--&gt;*dwVersion*が 1 に等しく、関数は、エラーが返されます\_無効な\_レベル。
+[**XcvData** ](https://docs.microsoft.com/previous-versions/ff564255(v=vs.85)) no が返されます\_エラーの場合は、ポートを追加できます。 通常のエラー コードのほか**XcvData**エラーが返されます\_アクセス\_かどうか、ユーザーには、サーバーのポートを作成するのに十分な特権を拒否します。 このコマンドは、サーバーを必要と\_アクセス\_管理特権。 場合、 *pInputData*パラメーターが**NULL**、関数には、エラーが返されます。\_無効な\_データ。 場合*pInputData*--&gt;*dwVersion*が 1 に等しく、関数は、エラーが返されます\_無効な\_レベル。
 
 ### <a name="configport-command"></a>ConfigPort コマンド
 
@@ -95,7 +95,7 @@ ms.locfileid: "63388057"
 <thead>
 <tr class="header">
 <th>XcvData パラメーター</th>
-<th>値</th>
+<th>Value</th>
 </tr>
 </thead>
 <tbody>
@@ -105,7 +105,7 @@ ms.locfileid: "63388057"
 </tr>
 <tr class="even">
 <td><p><em>pInputData</em></p></td>
-<td><p>アドレスを<a href="https://msdn.microsoft.com/library/windows/hardware/ff559892" data-raw-source="[&lt;strong&gt;PORT_DATA_1&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff559892)"> <strong>PORT_DATA_1</strong> </a>構造体</p></td>
+<td><p>アドレスを<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/tcpxcv/ns-tcpxcv-_port_data_1" data-raw-source="[&lt;strong&gt;PORT_DATA_1&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/tcpxcv/ns-tcpxcv-_port_data_1)"> <strong>PORT_DATA_1</strong> </a>構造体</p></td>
 </tr>
 <tr class="odd">
 <td><p><em>cbInputData</em></p></td>
@@ -128,7 +128,7 @@ ms.locfileid: "63388057"
 
  
 
-[**XcvData** ](https://msdn.microsoft.com/library/windows/hardware/ff564255) no が返されます\_エラーの場合は、ポートを構成できます。 通常のエラー コードのほか**XcvData**エラーが返されます\_アクセス\_呼び出し元が要求を実行するのに十分な特権を持つかどうかは拒否されました。 このコマンドは、サーバーを必要と\_アクセス\_管理特権。 場合、 *pInputData*パラメーターが**NULL**、値か、 *cbInputData*が小さい関数はエラーを返しますよりも、必要に応じて、\_無効な\_データ。 場合*pInputData*--&gt;*dwVersion*が 1 に等しく、関数は、エラーが返されます\_無効な\_レベル。
+[**XcvData** ](https://docs.microsoft.com/previous-versions/ff564255(v=vs.85)) no が返されます\_エラーの場合は、ポートを構成できます。 通常のエラー コードのほか**XcvData**エラーが返されます\_アクセス\_呼び出し元が要求を実行するのに十分な特権を持つかどうかは拒否されました。 このコマンドは、サーバーを必要と\_アクセス\_管理特権。 場合、 *pInputData*パラメーターが**NULL**、値か、 *cbInputData*が小さい関数はエラーを返しますよりも、必要に応じて、\_無効な\_データ。 場合*pInputData*--&gt;*dwVersion*が 1 に等しく、関数は、エラーが返されます\_無効な\_レベル。
 
 ### <a name="deleteport-command"></a>DeletePort コマンド
 
@@ -142,7 +142,7 @@ ms.locfileid: "63388057"
 <thead>
 <tr class="header">
 <th>XcvData パラメーター</th>
-<th>値</th>
+<th>Value</th>
 </tr>
 </thead>
 <tbody>
@@ -152,7 +152,7 @@ ms.locfileid: "63388057"
 </tr>
 <tr class="even">
 <td><p><em>pInputData</em></p></td>
-<td><p>アドレスを<a href="https://msdn.microsoft.com/library/windows/hardware/ff547436" data-raw-source="[&lt;strong&gt;DELETE_PORT_DATA_1&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff547436)"> <strong>DELETE_PORT_DATA_1</strong> </a>構造体</p></td>
+<td><p>アドレスを<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/tcpxcv/ns-tcpxcv-_delete_port_data_1" data-raw-source="[&lt;strong&gt;DELETE_PORT_DATA_1&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/tcpxcv/ns-tcpxcv-_delete_port_data_1)"> <strong>DELETE_PORT_DATA_1</strong> </a>構造体</p></td>
 </tr>
 <tr class="odd">
 <td><p><em>cbInputData</em></p></td>
@@ -189,7 +189,7 @@ ms.locfileid: "63388057"
 <thead>
 <tr class="header">
 <th>XcvData パラメーター</th>
-<th>値</th>
+<th>Value</th>
 </tr>
 </thead>
 <tbody>
@@ -199,7 +199,7 @@ ms.locfileid: "63388057"
 </tr>
 <tr class="even">
 <td><p><em>pInputData</em></p></td>
-<td><p>アドレスを<a href="https://msdn.microsoft.com/library/windows/hardware/ff546300" data-raw-source="[&lt;strong&gt;CONFIG_INFO_DATA_1&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff546300)"> <strong>CONFIG_INFO_DATA_1</strong> </a>構造体</p></td>
+<td><p>アドレスを<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/tcpxcv/ns-tcpxcv-_config_info_data_1" data-raw-source="[&lt;strong&gt;CONFIG_INFO_DATA_1&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/tcpxcv/ns-tcpxcv-_config_info_data_1)"> <strong>CONFIG_INFO_DATA_1</strong> </a>構造体</p></td>
 </tr>
 <tr class="odd">
 <td><p><em>cbInputData</em></p></td>
@@ -207,7 +207,7 @@ ms.locfileid: "63388057"
 </tr>
 <tr class="even">
 <td><p><em>pOutputData</em></p></td>
-<td><p>アドレスを<a href="https://msdn.microsoft.com/library/windows/hardware/ff559892" data-raw-source="[&lt;strong&gt;PORT_DATA_1&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff559892)"> <strong>PORT_DATA_1</strong> </a>構造体</p></td>
+<td><p>アドレスを<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/tcpxcv/ns-tcpxcv-_port_data_1" data-raw-source="[&lt;strong&gt;PORT_DATA_1&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/tcpxcv/ns-tcpxcv-_port_data_1)"> <strong>PORT_DATA_1</strong> </a>構造体</p></td>
 </tr>
 <tr class="odd">
 <td><p><em>cbOutputData</em></p></td>
@@ -236,7 +236,7 @@ ms.locfileid: "63388057"
 <thead>
 <tr class="header">
 <th>XcvData パラメーター</th>
-<th>値</th>
+<th>Value</th>
 </tr>
 </thead>
 <tbody>
@@ -269,7 +269,7 @@ ms.locfileid: "63388057"
 
  
 
-[**XcvData** ](https://msdn.microsoft.com/library/windows/hardware/ff564255) no が返されます\_エラーの場合は、プリンターのホストの名前を取得することができます。 場合*cbOutputData*が小さい関数はエラーを返しますよりも、必要に応じて、\_無効な\_パラメーターと*pcbOutputNeeded*は**NULL**とエラー\_不十分\_場合にバッファー *pcbOutputNeeded*以外**NULL**します。 場合*pOutputData*は**NULL**、関数には、エラーが返されます。\_無効な\_パラメーター。
+[**XcvData** ](https://docs.microsoft.com/previous-versions/ff564255(v=vs.85)) no が返されます\_エラーの場合は、プリンターのホストの名前を取得することができます。 場合*cbOutputData*が小さい関数はエラーを返しますよりも、必要に応じて、\_無効な\_パラメーターと*pcbOutputNeeded*は**NULL**とエラー\_不十分\_場合にバッファー *pcbOutputNeeded*以外**NULL**します。 場合*pOutputData*は**NULL**、関数には、エラーが返されます。\_無効な\_パラメーター。
 
 ### <a name="ipaddress-command"></a>IPAddress コマンド
 
@@ -283,7 +283,7 @@ ms.locfileid: "63388057"
 <thead>
 <tr class="header">
 <th>XcvData パラメーター</th>
-<th>値</th>
+<th>Value</th>
 </tr>
 </thead>
 <tbody>
@@ -316,7 +316,7 @@ ms.locfileid: "63388057"
 
  
 
-[**XcvData** ](https://msdn.microsoft.com/library/windows/hardware/ff564255) no が返されます\_エラーの場合は、プリンターの IP アドレスを取得することができます。 場合*cbOutputData*が小さい関数はエラーを返しますよりも、必要に応じて、\_無効な\_パラメーターと*pcbOutputNeeded*は**NULL**とエラー\_不十分\_場合にバッファー *pcbOutputNeeded*以外**NULL**します。 場合*pOutputData*は**NULL**、関数には、エラーが返されます。\_無効な\_パラメーター。
+[**XcvData** ](https://docs.microsoft.com/previous-versions/ff564255(v=vs.85)) no が返されます\_エラーの場合は、プリンターの IP アドレスを取得することができます。 場合*cbOutputData*が小さい関数はエラーを返しますよりも、必要に応じて、\_無効な\_パラメーターと*pcbOutputNeeded*は**NULL**とエラー\_不十分\_場合にバッファー *pcbOutputNeeded*以外**NULL**します。 場合*pOutputData*は**NULL**、関数には、エラーが返されます。\_無効な\_パラメーター。
 
 ### <a name="monitorui-command"></a>MonitorUI コマンド
 
@@ -330,7 +330,7 @@ ms.locfileid: "63388057"
 <thead>
 <tr class="header">
 <th>XcvData パラメーター</th>
-<th>値</th>
+<th>Value</th>
 </tr>
 </thead>
 <tbody>
@@ -363,7 +363,7 @@ ms.locfileid: "63388057"
 
  
 
-[**XcvData** ](https://msdn.microsoft.com/library/windows/hardware/ff564255) no が返されます\_エラーに、ユーザーの名前を取得することである場合は、DLL をインターフェイスします。 通常のエラー コードのほか**XcvData**エラーが返されます\_アクセス\_呼び出し元がサーバー上に十分な特権を持つかどうかが拒否されました。 このコマンドは、サーバーを必要と\_アクセス\_管理特権。 場合*cbOutputData*が小さい関数はエラーを返しますよりも、必要に応じて、\_無効な\_パラメーターと*pcbOutputNeeded*は**NULL**とエラー\_不十分\_場合にバッファー *pcbOutputNeeded*以外**NULL**します。 場合*pOutputData*は**NULL**、関数には、エラーが返されます。\_無効な\_パラメーター。
+[**XcvData** ](https://docs.microsoft.com/previous-versions/ff564255(v=vs.85)) no が返されます\_エラーに、ユーザーの名前を取得することである場合は、DLL をインターフェイスします。 通常のエラー コードのほか**XcvData**エラーが返されます\_アクセス\_呼び出し元がサーバー上に十分な特権を持つかどうかが拒否されました。 このコマンドは、サーバーを必要と\_アクセス\_管理特権。 場合*cbOutputData*が小さい関数はエラーを返しますよりも、必要に応じて、\_無効な\_パラメーターと*pcbOutputNeeded*は**NULL**とエラー\_不十分\_場合にバッファー *pcbOutputNeeded*以外**NULL**します。 場合*pOutputData*は**NULL**、関数には、エラーが返されます。\_無効な\_パラメーター。
 
 ### <a name="snmpcommunity"></a>SNMPCommunity
 
@@ -377,7 +377,7 @@ ms.locfileid: "63388057"
 <thead>
 <tr class="header">
 <th>XcvData パラメーター</th>
-<th>値</th>
+<th>Value</th>
 </tr>
 </thead>
 <tbody>
@@ -410,7 +410,7 @@ ms.locfileid: "63388057"
 
  
 
-[**XcvData** ](https://msdn.microsoft.com/library/windows/hardware/ff564255) no が返されます\_エラーの場合は、プリンターの SNMP コミュニティ名を取得できます。 場合*cbOutputData*が小さい関数はエラーを返しますよりも、必要に応じて、\_無効な\_パラメーターと*pcbOutputNeeded*は**NULL**とエラー\_不十分\_場合にバッファー *pcbOutputNeeded*以外**NULL**します。 場合*pOutputData*は**NULL**、関数には、エラーが返されます。\_無効な\_パラメーター。
+[**XcvData** ](https://docs.microsoft.com/previous-versions/ff564255(v=vs.85)) no が返されます\_エラーの場合は、プリンターの SNMP コミュニティ名を取得できます。 場合*cbOutputData*が小さい関数はエラーを返しますよりも、必要に応じて、\_無効な\_パラメーターと*pcbOutputNeeded*は**NULL**とエラー\_不十分\_場合にバッファー *pcbOutputNeeded*以外**NULL**します。 場合*pOutputData*は**NULL**、関数には、エラーが返されます。\_無効な\_パラメーター。
 
 ### <a name="snmpdeviceindex"></a>SNMPDeviceIndex
 
@@ -424,7 +424,7 @@ ms.locfileid: "63388057"
 <thead>
 <tr class="header">
 <th>XcvData パラメーター</th>
-<th>値</th>
+<th>Value</th>
 </tr>
 </thead>
 <tbody>
@@ -457,7 +457,7 @@ ms.locfileid: "63388057"
 
  
 
-[**XcvData** ](https://msdn.microsoft.com/library/windows/hardware/ff564255) no が返されます\_エラーの場合は、プリンターの SNMP デバイスのインデックスを取得できます。 場合*cbOutputData*が小さい関数はエラーを返しますよりも、必要に応じて、\_無効な\_パラメーターと*pcbOutputNeeded*は**NULL**とエラー\_不十分\_場合にバッファー *pcbOutputNeeded*以外**NULL**します。 場合*pOutputData*は**NULL**、関数には、エラーが返されます。\_無効な\_パラメーター。
+[**XcvData** ](https://docs.microsoft.com/previous-versions/ff564255(v=vs.85)) no が返されます\_エラーの場合は、プリンターの SNMP デバイスのインデックスを取得できます。 場合*cbOutputData*が小さい関数はエラーを返しますよりも、必要に応じて、\_無効な\_パラメーターと*pcbOutputNeeded*は**NULL**とエラー\_不十分\_場合にバッファー *pcbOutputNeeded*以外**NULL**します。 場合*pOutputData*は**NULL**、関数には、エラーが返されます。\_無効な\_パラメーター。
 
 ### <a name="snmpenabled"></a>SNMPEnabled
 
@@ -471,7 +471,7 @@ ms.locfileid: "63388057"
 <thead>
 <tr class="header">
 <th>XcvData パラメーター</th>
-<th>値</th>
+<th>Value</th>
 </tr>
 </thead>
 <tbody>

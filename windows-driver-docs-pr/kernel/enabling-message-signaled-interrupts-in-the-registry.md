@@ -8,12 +8,12 @@ keywords:
 - Msi WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f6f529eec61b47a67453a10ce78ccb5443daf1f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6b3c804ea0c3224e19461c7455925f278708056f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361891"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384940"
 ---
 # <a name="enabling-message-signaled-interrupts-in-the-registry"></a>レジストリでのメッセージ シグナル割り込みの有効化
 
@@ -24,7 +24,7 @@ ms.locfileid: "63361891"
 
 自分のデバイスを割り当ての Msi の最大数を指定するのにレジストリを使用することもできます。 **MessageNumberLimit**エントリの**管理の割り込み\\MessageSignaledInterruptProperties** 21\_に Msi の最大数を指定する DWORD 値割り当てます。 PCI の 2.2 **MessageNumberLimit** 1、2、4、8、または 16 にする必要があります。 PCI の 3.0 **MessageNumberLimit** 2,048 までの任意の数を指定できます。
 
-使用して、 [ **INF AddReg ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546320)デバイスのハードウェア キーの下のレジストリ キーを設定するドライバーの INF ファイルでします。 詳細については、次を参照してください。 [ **INF DDInstall.HW セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547330)します。
+使用して、 [ **INF AddReg ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)デバイスのハードウェア キーの下のレジストリ キーを設定するドライバーの INF ファイルでします。 詳細については、次を参照してください。 [ **INF DDInstall.HW セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-hw-section)します。
 
 次のコード例は、設定する方法を示します、 **MSISupported**エントリ**管理の割り込み\\MessageSignaledInterruptProperties**デバイス。 作成する必要がありますに注意してください、**管理の割り込み**と**管理の割り込み\\MessageSignaledInterruptProperties**キーを設定する前に、 **MSISupported**エントリ。
 

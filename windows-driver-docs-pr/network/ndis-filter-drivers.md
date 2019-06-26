@@ -8,12 +8,12 @@ keywords:
 - フィルター モジュールの WDK ネットワーク
 ms.date: 11/26/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: bf4f4afd2decbf012cad359eb60173d5e3c5298d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 234b673508213d2fdee0be7bc929bcd5c12564de
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392929"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385519"
 ---
 # <a name="filter-drivers"></a>フィルター ドライバー
 
@@ -32,4 +32,4 @@ A*フィルター モジュール*フィルター ドライバーのインスタ
 
 [NDIS フィルター ドライバー](ndis-filter-drivers2.md)
 
-[NDIS フィルター ドライバー リファレンス](https://msdn.microsoft.com/library/windows/hardware/ff565527)
+[NDIS フィルター ドライバー リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)

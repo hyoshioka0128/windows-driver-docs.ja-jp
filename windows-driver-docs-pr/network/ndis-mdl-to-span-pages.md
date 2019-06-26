@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - Windows Vista 以降のドライバーをネットワーク NDIS_MDL_TO_SPAN_PAGES マクロ
 ms.localizationpriority: medium
-ms.openlocfilehash: e5903a6f9505aa9ef4cade6b141154fa874b95c3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4c69272cb175c5dd228f6dd73c4b48944c8a0067
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378412"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385743"
 ---
 # <a name="ndismdltospanpages-macro"></a>NDIS\_MDL\_TO\_スパン\_ページ マクロ
 
@@ -41,9 +41,9 @@ MDL へのポインター。
 <a name="remarks"></a>注釈
 -------
 
-**NDIS\_MDL\_TO\_スパン\_ページ**マクロの MDL ベースのバージョンの提供、 [ **NDIS\_バッファー\_TO\_スパン\_ページ**](https://msdn.microsoft.com/library/windows/hardware/ff556922)関数。
+**NDIS\_MDL\_TO\_スパン\_ページ**マクロの MDL ベースのバージョンの提供、 [ **NDIS\_バッファー\_TO\_スパン\_ページ**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff556922(v=vs.85))関数。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -74,7 +74,7 @@ MDL へのポインター。
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_バッファー\_TO\_スパン\_ページ**](https://msdn.microsoft.com/library/windows/hardware/ff556922)
+[**NDIS\_バッファー\_TO\_スパン\_ページ**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff556922(v=vs.85))
 
  
 

@@ -10,12 +10,12 @@ keywords:
 - プリンター ドライバー WDK、アーキテクチャ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c41685a855f42fc453c71ef300fb6c0ab9259a9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a8475113b5d684cf49f09b7effbcddd96522dece
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340904"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380633"
 ---
 # <a name="printer-driver-architecture"></a>プリンター ドライバー アーキテクチャ
 
@@ -25,7 +25,7 @@ ms.locfileid: "63340904"
 
 Microsoft Win32 GDI または Windows vista、Windows Presentation Foundation (WPF) 関数の呼び出しを通じて、アプリケーションから印刷ジョブが作成されます。 Win32 関数は、EMF、としてアプリケーション データをスプールまたはすぐに各ドキュメントのページの印刷可能なイメージをレンダリングすることができます。 WPF は、スプールのアプリケーション データを XPS スプール ファイルとして機能します。
 
-Windows Vista では、前にアプリケーションを使用して、プリンターのプリンター設定を伝え、 [ **DEVMODEW** ](https://msdn.microsoft.com/library/windows/hardware/ff552837)構造体。 Windows Vista では、印刷チケットと印刷機能のテクノロジは、プリンターやアプリケーション全体でプリンターの設定がより互換性のあるようににプリンターの設定を通信します。
+Windows Vista では、前にアプリケーションを使用して、プリンターのプリンター設定を伝え、 [ **DEVMODEW** ](https://docs.microsoft.com/windows/desktop/api/wingdi/ns-wingdi-_devicemodew)構造体。 Windows Vista では、印刷チケットと印刷機能のテクノロジは、プリンターやアプリケーション全体でプリンターの設定がより互換性のあるようににプリンターの設定を通信します。
 
 画像レンダリング、すぐに、または印刷の処理中に実行するかどうかは、印刷ドライバーで実行されます。
 

@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e531175c38ab20fd474c7f7bef18d2f3ca26e371
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9bd84e17256b7242ddf247ddb0580419672e3cee
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335652"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368005"
 ---
 # <a name="usb3kducxdevice"></a>!usb3kd.ucx\_device
 
@@ -42,7 +42,7 @@ Usb3kd.dll
 <a name="remarks"></a>注釈
 -------
 
-USB ホスト コント ローラーの拡張機能ドライバー (Ucx*バージョン*.sys) コント ローラーのドライバーの USB 3.0 ハブのドライバーと USB 3.0 ホスト間の抽象化レイヤーを提供します。 拡張機能ドライバーが、ホスト コント ローラー、デバイス、およびエンドポイントの独自の表現。 出力、 [ **! ucx\_デバイス**](-usb3kd-device-info.md)コマンドは、拡張機能ドライバーによって管理されるデータ構造に基づきます。 USB ホスト コント ローラーの拡張機能ドライバーと USB 3.0 ホスト コント ローラーのドライバーの詳細については、次を参照してください。 [USB ドライバー スタック アーキテクチャ](https://msdn.microsoft.com/library/windows/hardware/hh406256)します。
+USB ホスト コント ローラーの拡張機能ドライバー (Ucx*バージョン*.sys) コント ローラーのドライバーの USB 3.0 ハブのドライバーと USB 3.0 ホスト間の抽象化レイヤーを提供します。 拡張機能ドライバーが、ホスト コント ローラー、デバイス、およびエンドポイントの独自の表現。 出力、 [ **! ucx\_デバイス**](-usb3kd-device-info.md)コマンドは、拡張機能ドライバーによって管理されるデータ構造に基づきます。 USB ホスト コント ローラーの拡張機能ドライバーと USB 3.0 ホスト コント ローラーのドライバーの詳細については、次を参照してください。 [USB ドライバー スタック アーキテクチャ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)します。
 
 **! ucx\_デバイス**と[ **! デバイス\_情報**](-usb3kd-device-info.md)デバイスに関する情報の両方が表示が表示される情報は異なります。 出力 **! ucx\_デバイス**は USB ホスト コント ローラーの拡張機能ドライバーの point of view およびの出力から **! デバイス\_情報**USB 3.0 ハブの観点からは、ドライバー。 たとえば、 **! ucx\_デバイス**出力には、エンドポイントに関する情報が含まれています、 **! デバイス\_情報**出力には、構成、およびインターフェイスに関する情報が含まれています。記述子。
 
@@ -99,7 +99,7 @@ EventCallbacks:
 
 [USB 3.0 の拡張機能](usb-3-extensions.md)
 
-[**! usb3kd.ucx\_コント ローラー\_一覧**](-usb3kd-ucx-controller-list.md)
+[ **! usb3kd.ucx\_コント ローラー\_一覧**](-usb3kd-ucx-controller-list.md)
 
 [ユニバーサル シリアル バス (USB) ドライバー](https://go.microsoft.com/fwlink/p?LinkID=227351)
 

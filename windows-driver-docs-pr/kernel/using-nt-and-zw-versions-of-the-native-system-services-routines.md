@@ -6,19 +6,19 @@ keywords:
 - Native System Services API WDK
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3ea0e42c42cad7f7ebdef549eac488c43224bcfa
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8d047d2e3c44e8ee7974b23477453fe2a866461a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354198"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381628"
 ---
 # <a name="using-nt-and-zw-versions-of-the-native-system-services-routines"></a>Nt および Zw バージョンのネイティブ システム サービス ルーチンの使用
 
 
 Windows ネイティブのオペレーティング システムのサービス API は、カーネル モードで実行されるルーチンのセットとして実装されます。 これらのルーチンは、プレフィックスで始まる名前を持つ**Nt**または**Zw**します。 カーネル モード ドライバーでは、これらのルーチンを直接呼び出すことができます。 ユーザー モード アプリケーションは、システムの呼び出しを使用してこれらのルーチンにアクセスできます。
 
-いくつかの例外では、ネイティブ システム サービス ルーチンはそれぞれ異なるプレフィックスが、名前が似ている 2 つの異なるバージョンがあります。 呼び出しなど[NtCreateFile](https://go.microsoft.com/fwlink/p/?linkid=157250)と[ **ZwCreateFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566424)同様の操作を実行し、同じカーネル モード システム ルーチンが、実際には、サービスを提供します。 ユーザー モードからシステムの呼び出し、 **Nt**と**Zw**ルーチンのバージョンの動作は同じです。 カーネル モード ドライバーからの呼び出し、 **Nt**と**Zw**ルーチンのバージョンを呼び出し元がルーチンに渡すパラメーターの値を扱う方法が異なります。
+いくつかの例外では、ネイティブ システム サービス ルーチンはそれぞれ異なるプレフィックスが、名前が似ている 2 つの異なるバージョンがあります。 呼び出しなど[NtCreateFile](https://go.microsoft.com/fwlink/p/?linkid=157250)と[ **ZwCreateFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntcreatefile)同様の操作を実行し、同じカーネル モード システム ルーチンが、実際には、サービスを提供します。 ユーザー モードからシステムの呼び出し、 **Nt**と**Zw**ルーチンのバージョンの動作は同じです。 カーネル モード ドライバーからの呼び出し、 **Nt**と**Zw**ルーチンのバージョンを呼び出し元がルーチンに渡すパラメーターの値を扱う方法が異なります。
 
 カーネル モード ドライバーは呼び出し、 **Zw**サービス パラメーターが、信頼されたカーネル モードのソースから取得したルーチンを通知するルーチンのネイティブ システムのバージョン。 この場合、ルーチンは、安全に検証しことがなくパラメーターを使用、できることを前提とします。 ただし、ユーザー モードのソースまたはカーネル モードのソースからパラメーターがある場合、ドライバー代わりに呼び出して、 **Nt**かどうかを決定する、そのルーチンのバージョンを呼び出し元のスレッドの履歴に基づくパラメーターユーザー モードまたはカーネル モードで開始されます。 ルーチンがカーネル モードのパラメーターとユーザー モード パラメーターを区別する方法の詳細については、次を参照してください。 [ **PreviousMode**](previousmode.md)します。
 
@@ -26,7 +26,7 @@ Windows ネイティブのオペレーティング システムのサービス A
 
 ネイティブ システム サービス ルーチンでは、受け取ったパラメーターに関する追加の前提条件を確認します。 ルーチンは、カーネル モード ドライバーで割り当てられたバッファーへのポインターを受け取る場合、ルーチンでは、ユーザー モードのメモリではなく、システム メモリ内でバッファーを割り当てられたこと前提としています。 ルーチンは、ユーザー モード アプリケーションによって開かれたハンドルを受信する場合、ルーチンは、カーネル モードのハンドル テーブルではなくユーザー モードのハンドル テーブルでのハンドルを検索します。
 
-いくつかの点では、パラメーター値の意味はユーザー モードおよびカーネル モードからの呼び出しで大幅に異なります。 たとえば、 [ **ZwNotifyChangeKey** ](https://msdn.microsoft.com/library/windows/hardware/ff566488)ルーチン (またはその**NtNotifyChangeKey**対応)、入力パラメーターのペアを持つ*ApcRoutine*と*ApcContext*、ということで、パラメーターがユーザー モードまたはカーネル モードのソースからかどうかによって異なります。 ユーザー モードからの呼び出しに対して*ApcRoutine* 、APC ルーチンを指すと*ApcContext* APC ルーチンを呼び出すときに、オペレーティング システムが提供するコンテキスト値を指します。 カーネル モードからの呼び出しに対して*ApcRoutine*を指す、 [**作業\_キュー\_項目**](https://msdn.microsoft.com/library/windows/hardware/ff557304)構造、および*ApcContext*によって定義された作業のキュー項目の種類を指定します、**作業\_キュー\_項目**構造体。
+いくつかの点では、パラメーター値の意味はユーザー モードおよびカーネル モードからの呼び出しで大幅に異なります。 たとえば、 [ **ZwNotifyChangeKey** ](https://msdn.microsoft.com/library/windows/hardware/ff566488)ルーチン (またはその**NtNotifyChangeKey**対応)、入力パラメーターのペアを持つ*ApcRoutine*と*ApcContext*、ということで、パラメーターがユーザー モードまたはカーネル モードのソースからかどうかによって異なります。 ユーザー モードからの呼び出しに対して*ApcRoutine* 、APC ルーチンを指すと*ApcContext* APC ルーチンを呼び出すときに、オペレーティング システムが提供するコンテキスト値を指します。 カーネル モードからの呼び出しに対して*ApcRoutine*を指す、 [**作業\_キュー\_項目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_work_queue_item)構造、および*ApcContext*によって定義された作業のキュー項目の種類を指定します、**作業\_キュー\_項目**構造体。
 
 ここでは、次のトピックについて説明します。
 

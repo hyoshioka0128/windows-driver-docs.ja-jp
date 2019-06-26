@@ -11,12 +11,12 @@ keywords:
 - 最下位レベルのドライバー WDK
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f4f1f02caf1eb226f58accdaefbe14b25949d81
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 60bd4fc29d5bba51b7dea9966a06cb92d7c116b1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359375"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382939"
 ---
 # <a name="types-of-windows-drivers"></a>Windows ドライバーの種類
 
@@ -28,7 +28,7 @@ Microsoft Windows ドライバーの 2 つの基本的な種類あります。
 
 -   *ユーザー モード ドライバー*ユーザー モードで実行し、通常、Win32 アプリケーションとカーネル モード ドライバーまたはその他のオペレーティング システムのコンポーネント間のインターフェイスを提供します。
 
-    たとえば、Windows Vista では、すべてのプリンター ドライバーはユーザー モードで実行します。 プリンター ドライバー コンポーネントの詳細については、次を参照してください。[印刷の概要](https://msdn.microsoft.com/library/windows/hardware/ff551767)します。
+    たとえば、Windows Vista では、すべてのプリンター ドライバーはユーザー モードで実行します。 プリンター ドライバー コンポーネントの詳細については、次を参照してください。[印刷の概要](https://docs.microsoft.com/windows-hardware/drivers/print/introduction-to-printing)します。
 
 -   *カーネル モード ドライバー* I/O、プラグ アンド プレイのメモリ、プロセスおよびスレッド、セキュリティ、管理とカーネル モードのオペレーティング システムのコンポーネントで構成されると、役員の一部として、カーネル モードで実行します。 カーネル モード ドライバーは、通常重ねられています。 一般より高度なドライバー通常アプリケーションからデータを受信、データをフィルター処理およびデバイスの機能をサポートしている下位レベルのドライバーに渡します。
 

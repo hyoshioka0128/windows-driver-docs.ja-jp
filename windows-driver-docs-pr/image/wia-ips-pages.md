@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c95113c74472f33a676de8d57185690a296ba3a6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d47cd0a6b495a0971f73117dfd6ac200736bc0b9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383687"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385304"
 ---
 # <a name="wiaipspages"></a>WIA\_IP\_ページ
 
@@ -46,7 +46,7 @@ WIA\_IP\_自動ドキュメント フィーダーから取得するページの�
 </colgroup>
 <thead>
 <tr class="header">
-<th>値</th>
+<th>Value</th>
 <th>定義</th>
 </tr>
 </thead>
@@ -63,7 +63,7 @@ WIA\_IP\_自動ドキュメント フィーダーから取得するページの�
 **注**  二重モードが有効になっている場合 (場合に、WIA\_IP\_ドキュメント\_処理\_フィーダーに設定されている選択 |双方向)、WIA\_IP\_ページは依然としてスキャンするページ数。
 1 枚の用紙が自動的に入力 2 つのページ二重モードが有効になっている場合、ページの背面にある空白である場合でもです。
 
-WIA を設定した場合\_IP\_を 1 に、スキャナーのページは、ページの側面の 1 つを処理します。 スキャナーは、二重モードでは、ページの一方だけをスキャンできない場合、WIA を変更する必要があります、ことをお勧めします\_IP\_ページ値、 **Inc**のメンバー、 [ **WIA。\_プロパティ\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff552751)構造体を 2 にします。 この値は、アプリケーションは 2 つの倍数単位のページを要求する必要があります。 値が 0 のことを意味*すべて*ドキュメント フィーダーに現在読み込まれているページがスキャンされるは。
+WIA を設定した場合\_IP\_を 1 に、スキャナーのページは、ページの側面の 1 つを処理します。 スキャナーは、二重モードでは、ページの一方だけをスキャンできない場合、WIA を変更する必要があります、ことをお勧めします\_IP\_ページ値、 **Inc**のメンバー、 [ **WIA。\_プロパティ\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/ns-wiamindr_lh-_wia_property_info)構造体を 2 にします。 この値は、アプリケーションは 2 つの倍数単位のページを要求する必要があります。 値が 0 のことを意味*すべて*ドキュメント フィーダーに現在読み込まれているページがスキャンされるは。
 
  
 
@@ -92,7 +92,7 @@ WIA を設定した場合\_IP\_を 1 に、スキャナーのページは、ペ�
 
 [**WIA\_DPS\_ページ**](wia-dps-pages.md)
 
-[**WIA\_プロパティ\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff552751)
+[**WIA\_プロパティ\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/ns-wiamindr_lh-_wia_property_info)
 
  
 

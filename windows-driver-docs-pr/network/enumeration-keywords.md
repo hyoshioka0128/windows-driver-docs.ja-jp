@@ -7,12 +7,12 @@ keywords:
 - 列挙型のキーワードの WDK NDIS ミニポート
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c9f9af3bddfb3d8786db8da8b0b953f5dc84b9ce
-ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
+ms.openlocfilehash: 7db8feca170edc2f17035b7b46bd9cfee2d19aa9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67161544"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384563"
 ---
 # <a name="enumeration-keywords"></a>列挙キーワード
 
@@ -55,7 +55,7 @@ HKR, Ndi\params\<SubkeyName>\enum, "3", 0, "%Rx & Tx Enabled%"
 
 **注**  現時点イーサネット デバイスは、フローの制御をサポートし、LAN の Windows 8 のインボックス ドライバーがあるフロー制御が既定で有効にします。 これらの LAN アダプターのいずれかにカーネル デバッガーをアタッチします、ネットワークへのフロー制御の一時停止のフレームのプッシュ、NIC が開始されます。 ほとんどのネットワーク スイッチは、一時的に同じハブに接続されているその他のすべてのコンピューターのネットワーク停止させるして対応されます。 これは一般的な開発シナ リオであり、エンド ユーザー エクスペリエンスが望ましくないと、診断が難しい。
 
-このため、Windows 8 以降では、NDIS が無効になりますフロー制御に自動的にコンピューターでデバッグが有効になっているときに (」と入力して、たとえば、 **bcdedit/set でデバッグ**コマンドラインで)。 カーネル デバッグを有効な場合に、ミニポート呼び出し[**エミュレーター** ](https://msdn.microsoft.com/library/windows/hardware/ff564511)渡します"\*FlowControl"用、*キーワード*パラメーター、NDIS は構成済みの値をオーバーライドし、0 を返します。
+このため、Windows 8 以降では、NDIS が無効になりますフロー制御に自動的にコンピューターでデバッグが有効になっているときに (」と入力して、たとえば、 **bcdedit/set でデバッグ**コマンドラインで)。 カーネル デバッグを有効な場合に、ミニポート呼び出し[**エミュレーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisreadconfiguration)渡します"\*FlowControl"用、*キーワード*パラメーター、NDIS は構成済みの値をオーバーライドし、0 を返します。
 
 NDIS は、デバッグ中にフロー制御を有効にする必要がある場合、 **AllowFlowControlUnderDebugger**を実行できるようにするレジストリ値。 **AllowFlowControlUnderDebugger**レジストリ値は、NDIS がフローの制御を無効にでき、Nic が構成されている動作を維持します。 次のレジストリ キーの下で見つかります。
 
@@ -71,7 +71,7 @@ NDIS は、デバッグ中にフロー制御を有効にする必要がある場
 デバイスが有効になっているまたは 802.1 q を挿入する機能を無効になっているかどうかを示す値のタグをパケットの優先順位と仮想 Lan (Vlan)。 このキーワードは、デバイスが有効になっていること、またはパケットの優先順位または VLAN タグを無効になっているかどうかは示されません。 代わりに、次について説明します。
 
 -   デバイスが 802.1 q を挿入するかどうか、送信操作中にタグ
--   かどうか 802.1 q タグ情報が表示されます、 [ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)アウト オブ バンド (OOB) の情報
+-   かどうか 802.1 q タグ情報が表示されます、 [ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)アウト オブ バンド (OOB) の情報
 -   デバイス コピー 802.1 q タグの中に OOB が操作を受信するかどうか
 
 ミニポート ドライバーは、802.1 q を削除する必要がありますすべてからヘッダーに関係なくパケットの受信、  **\*PriorityVLANTag**設定します。 場合、802.1 q ヘッダーは、パケットに残される、その他のドライバーでは、パケットを正しく解析できない可能性があります。
@@ -83,12 +83,12 @@ NDIS は、デバッグ中にフロー制御を有効にする必要がある場
 Tx フラグは、送信パスに有効になっている、ミニポート ドライバーが、次の操作にする必要があります。
 
 -   それぞれに挿入、802.1 q ヘッダーは、パケットを送信と、これデータを入力 OOB から (OOB 内のゼロ以外のデータが存在する) 場合です。
--   適切なアドバタイズ**MacOptions**で[ **NDIS\_ミニポート\_アダプター\_全般\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff565923) (**NDIS\_MAC\_オプション\_8021 P\_優先度**と**NDIS\_MAC\_オプション\_8021Q\_VLAN**)。
+-   適切なアドバタイズ**MacOptions**で[ **NDIS\_ミニポート\_アダプター\_全般\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes) (**NDIS\_MAC\_オプション\_8021 P\_優先度**と**NDIS\_MAC\_オプション\_8021Q\_VLAN**)。
 
 それ以外の場合、Tx フラグが無効な場合。
 
 -   ミニポート フィルターは、802.1 q を考慮する必要があります OOB 内の情報 (と任意のタグは挿入できません)。
--   ミニポート フィルターが適切なにアドバタイズする必要がありますしない**MacOptions**で[ **NDIS\_ミニポート\_アダプター\_全般\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff565923).
+-   ミニポート フィルターが適切なにアドバタイズする必要がありますしない**MacOptions**で[ **NDIS\_ミニポート\_アダプター\_全般\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes).
 
 **注**  読み取る必要がありますもミニポート ドライバーでは、NDIS サービスの品質 (QoS) をサポートする場合、  **\*QOS**キーワード値。 に基づいて、  **\*QOS**キーワードの値、  **\*PriorityVLANTag**キーワードの値が異なる方法で解釈されます。 詳細については、次を参照してください。[の NDIS QoS の標準化された INF キーワード](standardized-inf-keywords-for-ndis-qos.md)します。
 

@@ -4,12 +4,12 @@ description: 割り込みイベントのサポートの追加
 ms.assetid: 74fbaa7c-f058-4b17-b278-3dea0faf4431
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 10ab2b05085bac6de7c2f17190bbc46cb1de072e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 889e70793d24db6e8472787e231852f23179bacd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367093"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383397"
 ---
 # <a name="adding-interrupt-event-support"></a>割り込みイベントのサポートの追加
 
@@ -21,13 +21,13 @@ ms.locfileid: "63367093"
 
 1.  設定**機能 = 0x31**デバイスの INF ファイルにします。 (を参照してください[WIA デバイスの INF ファイル](inf-files-for-wia-devices.md)詳細についてはします)。
 
-2.  レポート STI\_GENCAP\_通知と STI\_USD\_GENCAP\_ネイティブ\_で PUSHSUPPORT、 [ **IStiUSD::GetCapabilities**](https://msdn.microsoft.com/library/windows/hardware/ff543817)メソッド。
+2.  レポート STI\_GENCAP\_通知と STI\_USD\_GENCAP\_ネイティブ\_で PUSHSUPPORT、 [ **IStiUSD::GetCapabilities**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-getcapabilities)メソッド。
 
-3.  サポートされているレポートのすべてのイベント、 [ **IWiaMiniDrv::drvGetCapabilities** ](https://msdn.microsoft.com/library/windows/hardware/ff543977)メソッド。
+3.  サポートされているレポートのすべてのイベント、 [ **IWiaMiniDrv::drvGetCapabilities** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvgetcapabilities)メソッド。
 
-4.  キャッシュと渡されたイベント ハンドルを使用して、 [ **IStiUSD::SetNotificationHandle** ](https://msdn.microsoft.com/library/windows/hardware/ff543840)メソッド。 これは、デバイスが通知されるイベント ハンドルまたは WIA ミニドライバーに通知を使用して直接**SetEvent** (Microsoft Windows SDK のドキュメントで説明)。 このメソッドでは、WIA デバイスの待機状態を開始します。
+4.  キャッシュと渡されたイベント ハンドルを使用して、 [ **IStiUSD::SetNotificationHandle** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-setnotificationhandle)メソッド。 これは、デバイスが通知されるイベント ハンドルまたは WIA ミニドライバーに通知を使用して直接**SetEvent** (Microsoft Windows SDK のドキュメントで説明)。 このメソッドでは、WIA デバイスの待機状態を開始します。
 
-5.  適切なイベント情報の対応を報告、 [ **IStiUSD::GetNotificationData** ](https://msdn.microsoft.com/library/windows/hardware/ff543821)メソッド。
+5.  適切なイベント情報の対応を報告、 [ **IStiUSD::GetNotificationData** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-getnotificationdata)メソッド。
 
 次の 2 つの例の実装と割り込みには、デバイスの構成を表示する、 **IWiaMiniDrv::drvGetCapabilities**と**IStiUSD::SetNotificationHandle**メソッド。
 
@@ -39,13 +39,13 @@ ms.locfileid: "63367093"
 
 WIA サービスの呼び出し、 **IWiaMiniDrv::drvGetCapabilities** WIA デバイスでサポートされているイベントとコマンドを取得します。 WIA ドライバーは、受信でのはじめ*lFlags*がどの要求を決定するパラメーターが回答する必要があります。
 
-WIA ドライバー (これによって解放および WIA ドライバーによって使用される) にメモリを割り当てる必要がありますの配列を含める[ **WIA\_DEV\_CAP\_DRV** ](https://msdn.microsoft.com/library/windows/hardware/ff550233)構造体。 呼び出しで、 **IWiaMiniDrv::drvGetCapabilities**で、WIA ドライバーに割り当てられたメモリのアドレスを保持するメモリ位置へのポインターを渡す、 *ppCapabilities*パラメーター。
+WIA ドライバー (これによって解放および WIA ドライバーによって使用される) にメモリを割り当てる必要がありますの配列を含める[ **WIA\_DEV\_CAP\_DRV** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/ns-wiamindr_lh-_wia_dev_cap_drv)構造体。 呼び出しで、 **IWiaMiniDrv::drvGetCapabilities**で、WIA ドライバーに割り当てられたメモリのアドレスを保持するメモリ位置へのポインターを渡す、 *ppCapabilities*パラメーター。
 
 **注**   WIA サービスでは、このメモリは解放されます。 WIA ドライバーが割り当てられたメモリを管理する必要があります。
 
  
 
-次の例の実装を示しています、 [ **IWiaMiniDrv::drvGetCapabilities** ](https://msdn.microsoft.com/library/windows/hardware/ff543977)メソッド。
+次の例の実装を示しています、 [ **IWiaMiniDrv::drvGetCapabilities** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvgetcapabilities)メソッド。
 
 ```cpp
 HRESULT _stdcall CWIADevice::drvGetCapabilities(
@@ -173,7 +173,7 @@ HRESULT _stdcall CWIADevice::drvGetCapabilities(
 }
 ```
 
-[ **IStiUSD::SetNotificationHandle** ](https://msdn.microsoft.com/library/windows/hardware/ff543840) WIA サービスによって、またはこのドライバーを開始または停止イベント通知で内部的には、メソッドが呼び出されます。 使用して作成、有効なハンドルが渡される、WIA サービス**CreateEvent** (Microsoft Windows SDK のドキュメントで説明)、WIA ドライバーは、ハードウェアのイベントが発生したときに、このハンドルを通知することを示します。
+[ **IStiUSD::SetNotificationHandle** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-setnotificationhandle) WIA サービスによって、またはこのドライバーを開始または停止イベント通知で内部的には、メソッドが呼び出されます。 使用して作成、有効なハンドルが渡される、WIA サービス**CreateEvent** (Microsoft Windows SDK のドキュメントで説明)、WIA ドライバーは、ハードウェアのイベントが発生したときに、このハンドルを通知することを示します。
 
 **NULL**に渡すことができます、 **IStiUSD::SetNotificationHandle**メソッド。 **NULL** WIA ミニドライバーがデバイスのすべてのアクティビティを停止し、そのイベントの待機操作を終了することを示します。
 
@@ -269,15 +269,15 @@ STDMETHODIMP CWIADevice::SetNotificationHandle(HANDLE hEvent)
 }
 ```
 
-WIA ミニドライバーまたは WIA デバイスの検出し、イベントの通知が行われると、WIA サービスを呼び出す、 [ **IStiUSD::GetNotificationData** ](https://msdn.microsoft.com/library/windows/hardware/ff543821)メソッド。 これは、この WIA ミニドライバーが発生したイベントの詳細を報告するメソッドです。
+WIA ミニドライバーまたは WIA デバイスの検出し、イベントの通知が行われると、WIA サービスを呼び出す、 [ **IStiUSD::GetNotificationData** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-getnotificationdata)メソッド。 これは、この WIA ミニドライバーが発生したイベントの詳細を報告するメソッドです。
 
 WIA サービスの呼び出し、 **IStiUSD::GetNotificationData**が通知されたイベントに関する情報を取得します。 **IStiUSD::GetNotificationData**メソッドは、2 つのイベント操作のいずれかの結果として呼び出すことができます。
 
-1.  **IStiUSD::GetStatus** 、STI を設定して保留中のイベントがあったことを報告\_様々\_保留中のフラグ、 [ **STI\_デバイス\_の状態**](https://msdn.microsoft.com/library/windows/hardware/ff548369)構造体。
+1.  **IStiUSD::GetStatus** 、STI を設定して保留中のイベントがあったことを報告\_様々\_保留中のフラグ、 [ **STI\_デバイス\_の状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sti/ns-sti-_sti_device_status)構造体。
 
 2.  *HEvent*によってハンドルが渡される**IStiUSD::SetNotificationHandle**ハードウェア、または呼び出すことによってシグナル通知された**SetEvent** (Microsoft Windows SDK で説明します。ドキュメント)。
 
-入力するため、WIA ドライバーは、 [ **STINOTIFY** ](https://msdn.microsoft.com/library/windows/hardware/ff548350)構造体
+入力するため、WIA ドライバーは、 [ **STINOTIFY** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sti/ns-sti-_stinotify)構造体
 
 次の例の実装を示しています、 **IStiUSD::GetNotificationData**メソッド。
 
@@ -330,13 +330,13 @@ STDMETHODIMP CWIADevice::GetNotificationData( LPSTINOTIFY pBuffer )
 
 中断イベントを渡すことによって、いつでも停止できる**NULL**イベント ハンドルとして。 ミニドライバーは、ハードウェア デバイスで、待機状態を停止するシグナルとしてこのを解釈する必要があります。
 
-**注**   、 [ **IWiaMiniDrv::drvNotifyPnpEvent** ](https://msdn.microsoft.com/library/windows/hardware/ff544998)メソッドは、イベントの待機状態に影響を与える電源管理イベントを受け取ることができます。
+**注**   、 [ **IWiaMiniDrv::drvNotifyPnpEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvnotifypnpevent)メソッドは、イベントの待機状態に影響を与える電源管理イベントを受け取ることができます。
 
  
 
-WIA サービスの呼び出し、 **IWiaMiniDrv::drvNotifyPnpEvent**メソッド作成して送信し、WIA\_イベント\_POWER\_中断イベント、システムがスリープ状態に配置するとします。 この呼び出しが発生した場合、デバイスが、待機状態からに既に可能性があります。 スリープ状態は、このシャット ダウン状態にシステムを許可する任意の待機状態を終了するカーネル モード ドライバーを自動的にトリガーします。 システムのスリープ状態から再開 WIA サービスが送信、WIA\_イベント\_POWER\_再開イベント。 この時点で、WIA ミニドライバーは、割り込みイベントの待機状態を再確立する必要があります。 スリープ状態の詳細については、次を参照してください。[システム電源の状態](https://msdn.microsoft.com/library/windows/hardware/ff564571)と[デバイスの電源状態](https://msdn.microsoft.com/library/windows/hardware/ff543162)します。
+WIA サービスの呼び出し、 **IWiaMiniDrv::drvNotifyPnpEvent**メソッド作成して送信し、WIA\_イベント\_POWER\_中断イベント、システムがスリープ状態に配置するとします。 この呼び出しが発生した場合、デバイスが、待機状態からに既に可能性があります。 スリープ状態は、このシャット ダウン状態にシステムを許可する任意の待機状態を終了するカーネル モード ドライバーを自動的にトリガーします。 システムのスリープ状態から再開 WIA サービスが送信、WIA\_イベント\_POWER\_再開イベント。 この時点で、WIA ミニドライバーは、割り込みイベントの待機状態を再確立する必要があります。 スリープ状態の詳細については、次を参照してください。[システム電源の状態](https://docs.microsoft.com/windows-hardware/drivers/kernel/system-power-states)と[デバイスの電源状態](https://docs.microsoft.com/windows-hardware/drivers/kernel/device-power-states)します。
 
-WIA ミニドライバー キャッシュ イベント ハンドル最初に渡されることをお勧めしますが、 [ **IStiUSD::SetNotificationHandle** ](https://msdn.microsoft.com/library/windows/hardware/ff543840)システムをスリープ状態から再開したときにその it を再利用できるようにメソッドまたは休止状態。
+WIA ミニドライバー キャッシュ イベント ハンドル最初に渡されることをお勧めしますが、 [ **IStiUSD::SetNotificationHandle** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-setnotificationhandle)システムをスリープ状態から再開したときにその it を再利用できるようにメソッドまたは休止状態。
 
 WIA サービス*しない*呼び出し、 **IStiUSD::SetNotificationHandle**後に、システムが再開されました。 ミニドライバーを呼び出すことをお勧めその**IStiUSD::SetNotificationHandle**メソッド、キャッシュされたイベント ハンドルを渡します。
 
@@ -352,7 +352,7 @@ WIA サービスの呼び出し、 **IWiaMiniDrv::drvNotifyPnpEvent**システ�
 
 WIA ドライバーは、中断から返された後、イベントの割り込みの待機状態を復元する必要があります。 これにより、イベントは、システムのスリープと機能も。
 
-次の例の実装を示しています、 [ **IWiaMiniDrv::drvNotifyPnpEvent** ](https://msdn.microsoft.com/library/windows/hardware/ff544998)メソッド。
+次の例の実装を示しています、 [ **IWiaMiniDrv::drvNotifyPnpEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvnotifypnpevent)メソッド。
 
 ```cpp
 HRESULT _stdcall CWIADevice::drvNotifyPnpEvent(

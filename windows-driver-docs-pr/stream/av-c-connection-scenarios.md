@@ -18,12 +18,12 @@ keywords:
 - 外部のプラグイン接続 WDK AV/C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c414a77ea2d7d330e62f9cbf383e8ce4adca0914
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 503fac06f40129fee3101c993859b7d5c01ea1db
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384810"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386767"
 ---
 # <a name="avc-connection-scenarios"></a>AV/C 接続シナリオ
 
@@ -31,7 +31,7 @@ ms.locfileid: "63384810"
 
 
 
-Windows Vista では、前に、接続と互換性の管理 (CCM) プロトコルの*Avc.sys*コンピューターが、データ ストリーミングを開始する外部の AV/C デバイスのコント ローラーとして動作する 1 つの接続シナリオでは、サポートされていますデバイスです。 たとえばでの接続管理のストリーミングを開始する*Avc.sys* connect を使用して、デバイス上のサブユニットとデバイス単位のアイソクロナス出力プラグイン間の接続を確立し、単体のコマンド (の切断[**AVC\_関数\_ACQUIRE** ](https://msdn.microsoft.com/library/windows/hardware/ff554148)と[ **AVC\_関数\_リリース**](https://msdn.microsoft.com/library/windows/hardware/ff554169)、それぞれ)。 AV/C 仕様と CCM プロトコルの詳細については、次を参照してください。、 [1394 貿易](https://go.microsoft.com/fwlink/p/?linkid=518448)web サイト。
+Windows Vista では、前に、接続と互換性の管理 (CCM) プロトコルの*Avc.sys*コンピューターが、データ ストリーミングを開始する外部の AV/C デバイスのコント ローラーとして動作する 1 つの接続シナリオでは、サポートされていますデバイスです。 たとえばでの接続管理のストリーミングを開始する*Avc.sys* connect を使用して、デバイス上のサブユニットとデバイス単位のアイソクロナス出力プラグイン間の接続を確立し、単体のコマンド (の切断[**AVC\_関数\_ACQUIRE** ](https://docs.microsoft.com/windows-hardware/drivers/stream/avc-function-acquire)と[ **AVC\_関数\_リリース**](https://docs.microsoft.com/windows-hardware/drivers/stream/avc-function-release)、それぞれ)。 AV/C 仕様と CCM プロトコルの詳細については、次を参照してください。、 [1394 貿易](https://go.microsoft.com/fwlink/p/?linkid=518448)web サイト。
 
 多くの 7 つの接続シナリオをサポートするために、Windows Vista での接続管理が改善されように*Avc.sys* 8 単位のサブユニット/接続のシナリオをサポートしています。 接続の管理の機能強化のサブユニット プラグから他のサブユニット プラグ; に接続のサポートを追加します。サブユニットは、同じ AV/C 単位内または異なる AV/C 単位で指定できます。 *Avc.sys*信号のソースと入力選択し、CCM プロトコル単位コマンドを使用して接続を確立します。 (*Avc.sys* AV/C 仕様を必要とするレベルにのみ出力プリセットなど他の CCM のプロトコル単位コマンドをサポートしています)。
 
@@ -43,7 +43,7 @@ AV/C ユニットとのサブユニットに関連する接続の 2 つの一般
 
 Windows vista の場合に実装されている強化された接続の管理*Avc.sys*接続、デバイスが内部接続するために、AV/C コマンドに応答できますの最初の型に適用されます。 強化された接続の管理*Avc.sys* AV/C CCM プロトコルをサポートして、デバイスの場合との間で異なる AV/C (バス上のデバイスと同じ IEEE 1394)、2 つのテープ サブユニット エンド ツー エンド接続を確立することができます。
 
-**注**  *Avc.sys*接続 (メモリ バッファー) の 2 つ目の種類をサポートしていません。 ただし、接続のメモリ バッファーの種類に依存、 [IEC 61883](https://msdn.microsoft.com/library/windows/hardware/ff537188)プロトコルし、基になるではサポートされて*61883.sys* (、コンピューターに含まれるメモリ バッファーの同じスタック内のドライバー接続の場合)。
+**注**  *Avc.sys*接続 (メモリ バッファー) の 2 つ目の種類をサポートしていません。 ただし、接続のメモリ バッファーの種類に依存、 [IEC 61883](https://docs.microsoft.com/windows-hardware/drivers/ieee/iec-61883-client-drivers)プロトコルし、基になるではサポートされて*61883.sys* (、コンピューターに含まれるメモリ バッファーの同じスタック内のドライバー接続の場合)。
 
  
 
@@ -51,7 +51,7 @@ Windows vista の場合に実装されている強化された接続の管理*Av
 
 4 つのシナリオ (1 ~ 4) を表す*内通信*-単位の接続。 これらの接続は、内で完全に 1 つの AV/C の単位に格納されます。 その他の 4 つのシナリオ (5 ~ 8) を表す*inter*-単位の接続。 これらの接続は、2 つの異なる AV/C 単位です。
 
-次のトピックがのメンバーの AV/C 接続管理の 8 つのさまざまなシナリオとそれぞれの値をについて説明します、 [ **AVCCONNECTINFO** ](https://msdn.microsoft.com/library/windows/hardware/ff554101)構造体。
+次のトピックがのメンバーの AV/C 接続管理の 8 つのさまざまなシナリオとそれぞれの値をについて説明します、 [ **AVCCONNECTINFO** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ns-avc-_avcconnectinfo)構造体。
 
 [サブユニット プラグと 1 つの AV/C 単位内でユニット プラグ間の接続](connections-between-subunit-plugs-and-unit-plugs-within-one-av-c-unit.md)
 

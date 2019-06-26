@@ -12,12 +12,12 @@ keywords:
 - プラグ アンド プレイ WDK デバイス インストールでは、SetupAPI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 14f781b80d64c58948d0f8fe602968dec8cfd256
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fceae2a2f3771f4eda0aeeac23ebc4eb431ced52
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348660"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386399"
 ---
 # <a name="setupapi-functions-that-simplify-driver-installation"></a>ドライバーのインストールを簡略化する SetupAPI 関数
 
@@ -26,7 +26,7 @@ ms.locfileid: "63348660"
 
 ### <a href="" id="diinstalldevice--windows-vista-and-later-versions-of-windows-"></a> DiInstallDevice (Windows Vista および Windows の以降のバージョン)
 
-[ **DiInstallDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff544710)関数では、プレインストールされている特定のドライバーのインストール、[ドライバー ストア](driver-store.md)システムに存在する特定のデバイス。
+[ **DiInstallDevice** ](https://docs.microsoft.com/windows/desktop/api/newdev/nf-newdev-diinstalldevice)関数では、プレインストールされている特定のドライバーのインストール、[ドライバー ストア](driver-store.md)システムに存在する特定のデバイス。
 
 インストール アプリケーションでは、次の両方に該当する場合は、この関数を使用するのみ。
 
@@ -34,7 +34,7 @@ ms.locfileid: "63348660"
 
 -   アプリケーションでは、デバイス固有のインスタンスのドライバーがデバイスのインスタンスにインストールすることが必要です。
 
-それ以外の場合、インストール アプリケーションで使用する[ **DiInstallDriver** ](https://msdn.microsoft.com/library/windows/hardware/ff544717)または[ **UpdateDriverForPlugAndPlayDevices** ](https://msdn.microsoft.com/library/windows/hardware/ff553534)をインストールするにはデバイスに最適なものであるドライバー。
+それ以外の場合、インストール アプリケーションで使用する[ **DiInstallDriver** ](https://docs.microsoft.com/windows/desktop/api/newdev/nf-newdev-diinstalldrivera)または[ **UpdateDriverForPlugAndPlayDevices** ](https://docs.microsoft.com/windows/desktop/api/newdev/nf-newdev-updatedriverforplugandplaydevicesa)をインストールするにはデバイスに最適なものであるドライバー。
 
 呼び出し元が呼び出すことができますも**DiInstallDevice**以下を実行します。
 
@@ -48,9 +48,9 @@ ms.locfileid: "63348660"
 
 ### <a href="" id="diinstalldriver--windows-vista-and-later-versions-of-windows-"></a> DiInstallDriver (Windows Vista および Windows の以降のバージョン)
 
-[ **DiInstallDriver** ](https://msdn.microsoft.com/library/windows/hardware/ff544717)関数のプレインストール、[ドライバー パッケージ](driver-packages.md)で、[ドライバー ストア](driver-store.md)し、すべてのデバイスで、ドライバーをインストールしますID またはドライバー パッケージと一致する互換性 ID は、ハードウェアのあるシステムに存在します。
+[ **DiInstallDriver** ](https://docs.microsoft.com/windows/desktop/api/newdev/nf-newdev-diinstalldrivera)関数のプレインストール、[ドライバー パッケージ](driver-packages.md)で、[ドライバー ストア](driver-store.md)し、すべてのデバイスで、ドライバーをインストールしますID またはドライバー パッケージと一致する互換性 ID は、ハードウェアのあるシステムに存在します。
 
-呼び出す**DiInstallDriver**または[ **UpdateDriverForPlugAndPlayDevices** ](https://msdn.microsoft.com/library/windows/hardware/ff553534)デバイス用の新しいドライバーをインストールするインストール アプリケーションの最も簡単な方法です。 **DiInstallDriver**と**UpdateDriverForPlugAndPlayDevices**同じ基本的なインストール操作を実行します。 ただし**UpdateDriverForPlugAndPlayDevices**追加のインストール オプションをサポートしています。
+呼び出す**DiInstallDriver**または[ **UpdateDriverForPlugAndPlayDevices** ](https://docs.microsoft.com/windows/desktop/api/newdev/nf-newdev-updatedriverforplugandplaydevicesa)デバイス用の新しいドライバーをインストールするインストール アプリケーションの最も簡単な方法です。 **DiInstallDriver**と**UpdateDriverForPlugAndPlayDevices**同じ基本的なインストール操作を実行します。 ただし**UpdateDriverForPlugAndPlayDevices**追加のインストール オプションをサポートしています。
 
 既定では、 **DiInstallDriver**ドライバーがデバイスに現在インストールされているドライバーよりもデバイスに最適である場合のみをデバイスに、ドライバーをインストールします。 Windows デバイスのドライバーを選択する方法については、次を参照してください。 [Windows ドライバーを選択する方法](how-setup-selects-drivers.md)します。
 
@@ -66,7 +66,7 @@ ms.locfileid: "63348660"
 
 ### <a href="" id="dirollbackdriver--windows-vista-and-later-versions-of-windows-"></a> DiRollbackDriver (Windows Vista および Windows の以降のバージョン)
 
-[ **DiRollbackDriver** ](https://msdn.microsoft.com/library/windows/hardware/ff544721)関数は現在のデバイスをデバイスに設定されているバックアップ ドライバーのインストールにインストールされているドライバーを置き換えます。 この関数は、デバイスのドライバーを更新した後、デバイスが失敗した場合、デバイスを稼働状態に復元するには、主に提供されます。 この関数は、ユーザーがクリックされた場合に実行される同じ操作を実行**ドライバーのロールバック**デバイス マネージャーでデバイス ドライバーのページ。
+[ **DiRollbackDriver** ](https://docs.microsoft.com/windows/desktop/api/newdev/nf-newdev-dirollbackdriver)関数は現在のデバイスをデバイスに設定されているバックアップ ドライバーのインストールにインストールされているドライバーを置き換えます。 この関数は、デバイスのドライバーを更新した後、デバイスが失敗した場合、デバイスを稼働状態に復元するには、主に提供されます。 この関数は、ユーザーがクリックされた場合に実行される同じ操作を実行**ドライバーのロールバック**デバイス マネージャーでデバイス ドライバーのページ。
 
 Windows では、最大でデバイスの 1 つのバックアップ ドライバーを保持します。 Windows では、バックアップ デバイスのドライバーをドライバーが正常にデバイスと Windows のインストール後すぐには、デバイスが正しく機能していることを判断すると、ドライバーを設定します。 ただし、デバイス ドライバーが正常にインストールされませんまたはインストール後、デバイスが正しく機能しない、Windows は設定されません、ドライバー、デバイスのバックアップ ドライバーとして。
 
@@ -80,9 +80,9 @@ Windows では、最大でデバイスの 1 つのバックアップ ドライ�
 
 ### <a href="" id="updatedriverforplugandplaydevices"></a> UpdateDriverForPlugAndPlayDevices
 
-[ **UpdateDriverForPlugAndPlayDevices** ](https://msdn.microsoft.com/library/windows/hardware/ff553534)関数は、すべてのデバイスで、システムに存在するハードウェア ID またはドライバー パッケージと一致する互換性のある ID を持つドライバーをインストールします。
+[ **UpdateDriverForPlugAndPlayDevices** ](https://docs.microsoft.com/windows/desktop/api/newdev/nf-newdev-updatedriverforplugandplaydevicesa)関数は、すべてのデバイスで、システムに存在するハードウェア ID またはドライバー パッケージと一致する互換性のある ID を持つドライバーをインストールします。
 
-この関数の呼び出しまたは[ **DiInstallDriver** ](https://msdn.microsoft.com/library/windows/hardware/ff544717)インストール アプリケーション、システム内のデバイスに最適なものである新しいドライバーをインストールする最も簡単な方法です。 基本的な操作**UpdateDriverForPlugAndPlayDevices**の操作に似ています**DiInstallDriver**します。 ただし**UpdateDriverForPlugAndPlayDevices**追加のインストール オプションをサポートしています。
+この関数の呼び出しまたは[ **DiInstallDriver** ](https://docs.microsoft.com/windows/desktop/api/newdev/nf-newdev-diinstalldrivera)インストール アプリケーション、システム内のデバイスに最適なものである新しいドライバーをインストールする最も簡単な方法です。 基本的な操作**UpdateDriverForPlugAndPlayDevices**の操作に似ています**DiInstallDriver**します。 ただし**UpdateDriverForPlugAndPlayDevices**追加のインストール オプションをサポートしています。
 
 既定では、 **UpdateDriverForPlugAndPlayDevices**ドライバーがデバイスに現在インストールされているドライバーよりもデバイスに最適である場合のみをデバイスに、ドライバーをインストールします。
 

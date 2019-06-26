@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 628950a41f191e31b266b49ba599a738e0dbfab9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f41c5bd8f910f9fd2e508710ac94dd78ac1d415d
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364708"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67392723"
 ---
 # <a name="kstimeddevicecallbacks-rule-"></a>KsTimedDeviceCallbacks ルール)
 
@@ -30,7 +30,7 @@ KsTimedDeviceCallbacks ルールでは、カーネル ストリーミング (KS)
 
 |                                   |                                                                                                                                       |
 |-----------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
-| この規則で見つかったバグ チェック | [**バグ チェック 0xC4 の。ドライバー\_VERIFIER\_検出\_違反**](https://msdn.microsoft.com/library/windows/hardware/ff560187) (0x00082002) |
+| この規則で見つかったバグ チェック | [**バグ チェック 0xC4 の。ドライバー\_VERIFIER\_検出\_違反**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation) (0x00082002) |
 
 <a name="how-to-test"></a>テスト方法
 -----------
@@ -49,7 +49,7 @@ KsTimedDeviceCallbacks ルールでは、カーネル ストリーミング (KS)
 <td align="left"><p>このルールを確認するには、コマンド プロンプト ウィンドウを開きます。 Driver Verifier のコマンドを入力し、指定<strong>/domain ks</strong>します。</p>
 <p>次に、例を示します。</p>
 <p><strong>verifier /domain ks</strong> [<em>options</em>] <strong>/driver</strong> <em>&lt;yourdriver&gt;</em></p>
-<p>詳細については、次を参照してください。 <a href="https://msdn.microsoft.com/library/windows/hardware/ff545448" data-raw-source="[Driver Verifier](https://msdn.microsoft.com/library/windows/hardware/ff545448)">Driver Verifier</a>します。</p></td>
+<p>詳細については、次を参照してください。 <a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier" data-raw-source="[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)">Driver Verifier</a>します。</p></td>
 </tr>
 </tbody>
 </table>
@@ -59,7 +59,7 @@ KsTimedDeviceCallbacks ルールでは、カーネル ストリーミング (KS)
 <a name="see-also"></a>関連項目
 --------
 
-[ロックおよびロック解除の Stream ポインター](https://msdn.microsoft.com/library/windows/hardware/ff567709)
+[ロックおよびロック解除の Stream ポインター](https://docs.microsoft.com/windows-hardware/drivers/stream/locking-and-unlocking-stream-pointers)
  
 
  

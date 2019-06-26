@@ -11,12 +11,12 @@ keywords:
 - DI_FLAGSEX_FINISHINSTALL_ACTION
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e8368607b1af9f00f2a2044cfca3a6dd622ffc2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bef923a0bc63beee143a72971e7fdb35674384f7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325821"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386403"
 ---
 # <a name="how-finish-install-actions-are-processed"></a>インストールの完了アクションの処理方法
 
@@ -33,11 +33,11 @@ Windows は、その他のすべてのインストール操作が完了しなど
 
 Windows は、インストーラーの 完了-インストール アクションを処理する次の手順を実行します。
 
-1.  中核となるデバイスのインストールの最後に、Windows を呼び出す[ **SetupDiCallClassInstaller** ](https://msdn.microsoft.com/library/windows/hardware/ff550922)を送信する、 [ **DIF_NEWDEVICEWIZARD_FINISHINSTALL** ](https://msdn.microsoft.com/library/windows/hardware/ff543702)デバイス用のインストーラーを要求します。
+1.  中核となるデバイスのインストールの最後に、Windows を呼び出す[ **SetupDiCallClassInstaller** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdicallclassinstaller)を送信する、 [ **DIF_NEWDEVICEWIZARD_FINISHINSTALL** ](https://docs.microsoft.com/windows-hardware/drivers/install/dif-newdevicewizard-finishinstall)デバイス用のインストーラーを要求します。
 
     DIF_NEWDEVICEWIZARD_FINISHINSTALL は、中核となるデバイスのインストールの両方のコンテキストで、クライアントのコンテキストで送信される唯一の差分コードです。 そのため、クラスのインストーラー、クラスの共同インストーラーまたはデバイスの共同インストーラーする必要があることを示す完了インストール アクション DIF_NEWDEVICEWIZARD_FINISHINSTALL 処理中の代わりに DIF_INSTALLDEVICE 処理中にします。
 
-2.  インストーラーは、完了-インストール アクションを提供する場合に応答 DIF_FLAGSEX_FINISHINSTALL_ACTION フラグを設定、 [ **DIF_NEWDEVICEWIZARD_FINISHINSTALL** ](https://msdn.microsoft.com/library/windows/hardware/ff543702)要求。 DIF_FLAGSEX_FINISHINSTALL_ACTION フラグは設定されているすべてのインストーラーが DIF_NEWDEVICEWIZARD_FINISHINSTALL 要求を処理した後場合、デバイスが [完了] のインストール操作を実行するフラグが設定されます。
+2.  インストーラーは、完了-インストール アクションを提供する場合に応答 DIF_FLAGSEX_FINISHINSTALL_ACTION フラグを設定、 [ **DIF_NEWDEVICEWIZARD_FINISHINSTALL** ](https://docs.microsoft.com/windows-hardware/drivers/install/dif-newdevicewizard-finishinstall)要求。 DIF_FLAGSEX_FINISHINSTALL_ACTION フラグは設定されているすべてのインストーラーが DIF_NEWDEVICEWIZARD_FINISHINSTALL 要求を処理した後場合、デバイスが [完了] のインストール操作を実行するフラグが設定されます。
 
     この操作の詳細については、次を参照してください。[実行完了-インストール アクションを持つものとして、デバイスをマークする](setting-the-configflag-finishinstall-action-device-configuration-flag.md)します。
 
@@ -53,7 +53,7 @@ Windows は、インストーラーの 完了-インストール アクション
 
     ユーザーが管理者特権なし署名されている場合、Windows には、ユーザーの同意と、管理者コンテキストで、完了-インストール アクションを実行する資格情報が求められます。
 
-4.  ときに操作の実行を完了-インストール、完了-インストール プロセスを開始、デバイスの 完了-インストール ウィザード ページが完了するし、を呼び出して[ **SetupDiCallClassInstaller** ](https://msdn.microsoft.com/library/windows/hardware/ff550922) を送信する[ **DIF_FINISHINSTALL_ACTION** ](https://msdn.microsoft.com/library/windows/hardware/ff543684) 」の説明に従って、デバイスのすべてのインストーラーに要求[- インストールが完了操作を実行している](running-finish-install-actions.md)します。
+4.  ときに操作の実行を完了-インストール、完了-インストール プロセスを開始、デバイスの 完了-インストール ウィザード ページが完了するし、を呼び出して[ **SetupDiCallClassInstaller** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdicallclassinstaller) を送信する[ **DIF_FINISHINSTALL_ACTION** ](https://docs.microsoft.com/windows-hardware/drivers/install/dif-finishinstall-action) 」の説明に従って、デバイスのすべてのインストーラーに要求[- インストールが完了操作を実行している](running-finish-install-actions.md)します。
 
 5.  」の説明に従って Windows が既定の 完了-インストール アクションを実行のインストーラーの 完了-インストール操作を完了すると、[既定の 完了-インストール アクションを実行している](running-the-default-finish-install-action.md)します。
 

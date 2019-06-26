@@ -11,12 +11,12 @@ keywords:
 - バス マスター以外の DMA Nic WDK ネットワーク
 ms.date: 06/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f2095da6be5896f18f07cde40b9e4e40274bfc2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5b2aa3ec1d96a52b8d4f3b66d2b1a2b961b30ceb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357672"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386323"
 ---
 # <a name="network-interface-card-support"></a>ネットワーク インターフェイス カードのサポート
 
@@ -24,9 +24,9 @@ ms.locfileid: "63357672"
 
 ## <a name="reporting-a-nics-medium-type-to-ndis"></a>NDIS に NIC のメディアの種類を報告します。
 
-NIC のメディアの種類を報告するミニポート ドライバーがへのポインターを渡す、 [ **NDIS\_ミニポート\_アダプター\_全般\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff565923)構造体、 *MiniportAttributes*のパラメーター、 [ **NdisMSetMiniportAttributes** ](https://msdn.microsoft.com/library/windows/hardware/ff563672)関数。 ミニポート ドライバーは呼び出し**NdisMSetMiniportAttributes**からその[ *MiniportInitializeEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559389)初期化中に機能します。 ミニポート ドライバーを設定する必要があります、 *MiniportAttributes*属性で登録属性を設定した後、 [ **NDIS\_ミニポート\_アダプター\_登録\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff565934)構造体し、その他の属性を設定する前にします。 設定、 *MiniportAttributes*属性は必須です。 ドライバーのセット、 **MediaType**のメンバー、 **NDIS_MINIPORT_ADAPTER_GENERAL_ATTRIBUTES**構造体を設定するときに、適切なメディアの種類を*MiniportAttributes*属性。
+NIC のメディアの種類を報告するミニポート ドライバーがへのポインターを渡す、 [ **NDIS\_ミニポート\_アダプター\_全般\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)構造体、 *MiniportAttributes*のパラメーター、 [ **NdisMSetMiniportAttributes** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsetminiportattributes)関数。 ミニポート ドライバーは呼び出し**NdisMSetMiniportAttributes**からその[ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)初期化中に機能します。 ミニポート ドライバーを設定する必要があります、 *MiniportAttributes*属性で登録属性を設定した後、 [ **NDIS\_ミニポート\_アダプター\_登録\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_registration_attributes)構造体し、その他の属性を設定する前にします。 設定、 *MiniportAttributes*属性は必須です。 ドライバーのセット、 **MediaType**のメンバー、 **NDIS_MINIPORT_ADAPTER_GENERAL_ATTRIBUTES**構造体を設定するときに、適切なメディアの種類を*MiniportAttributes*属性。
 
-上位の NDIS プロトコル ドライバーを呼び出すと[ **NdisOpenAdapterEx** ](https://msdn.microsoft.com/library/windows/hardware/ff563715)指定ミニポート アダプターにバインドする、動作できるメディアの種類の一覧を提供します。 NDIS では、ミニポート ドライバーとプロトコル ドライバーからの情報を使用して、バインドを設定します。 このバインディングでは、ドライバー スタックとネットワークのデータを転送するためのパスを提供します。
+上位の NDIS プロトコル ドライバーを呼び出すと[ **NdisOpenAdapterEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisopenadapterex)指定ミニポート アダプターにバインドする、動作できるメディアの種類の一覧を提供します。 NDIS では、ミニポート ドライバーとプロトコル ドライバーからの情報を使用して、バインドを設定します。 このバインディングでは、ドライバー スタックとネットワークのデータを転送するためのパスを提供します。
 
 ## <a name="physical-nics"></a>物理 Nic
 

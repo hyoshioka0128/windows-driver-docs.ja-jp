@@ -7,12 +7,12 @@ keywords:
 - デバイスの電源ポリシー所有者 WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a8e8cb45d24f56a788d75a8c91cca222847fae21
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c528b72cf6a6102c9841518fa6859c9c2568f23d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359830"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387005"
 ---
 # <a name="handling-a-system-set-power-irp-in-a-device-power-policy-owner"></a>デバイス電源ポリシー所有者のシステム電源設定 IRP の処理
 
@@ -22,7 +22,7 @@ ms.locfileid: "63359830"
 
 システムへの応答セット power の IRP、[電源ポリシー所有者](managing-device-power-policy.md)デバイス スタックは、適切なデバイスの電源状態にそのデバイス スタックを配置する責任を負います。
 
-デバイスの電源ポリシー所有者は受信すると、一般的な規則として、 [ **IRP\_MN\_設定\_POWER** ](https://msdn.microsoft.com/library/windows/hardware/ff551744)のシステム電源の状態をシステムを渡すことによって応答する必要がありますデバイス スタック IRP を出力を設定します。 デバイスの電源ポリシー所有者は、デバイス スタックを送信することによって応答も**IRP\_MN\_設定\_POWER**で対応するデバイスの電源状態の[ *IoCompletion* ](https://msdn.microsoft.com/library/windows/hardware/ff548354)ルーチン。 スタック内のすべてのドライバーは、デバイスを完了した後にセット power IRP では、デバイスの電源ポリシーの所有者が完了すると、システム IRP の出力を設定します。
+デバイスの電源ポリシー所有者は受信すると、一般的な規則として、 [ **IRP\_MN\_設定\_POWER** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-set-power)のシステム電源の状態をシステムを渡すことによって応答する必要がありますデバイス スタック IRP を出力を設定します。 デバイスの電源ポリシー所有者は、デバイス スタックを送信することによって応答も**IRP\_MN\_設定\_POWER**で対応するデバイスの電源状態の[ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)ルーチン。 スタック内のすべてのドライバーは、デバイスを完了した後にセット power IRP では、デバイスの電源ポリシーの所有者が完了すると、システム IRP の出力を設定します。
 
 ただし、システム再開パフォーマンスを向上させるには、デバイス電源所有者子デバイスがないデバイスの必要がありますを使用して、別のアプローチに戻るにシステムにかかる時間を短縮する[作業状態 S0](system-working-state-s0.md)から、 [スリープ状態](system-sleeping-states.md)します。 システムへの応答でこの例では、作業状態 S0、システムが返すセット power IRP デバイス電源ポリシー所有者は、次の一連の操作を実行する必要があります。
 

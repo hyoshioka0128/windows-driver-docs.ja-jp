@@ -10,12 +10,12 @@ keywords:
 - WDK のバスのプロトコル
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6396d63a2992d6c90449ca8253303ce0dddadec7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d29e9bbde632b70f9a3ba140c30747d0dc63f0cf
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376679"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385783"
 ---
 # <a name="iec-61883-client-drivers"></a>IEC-61883 クライアント ドライバー
 
@@ -23,7 +23,7 @@ ms.locfileid: "63376679"
 
 
 
-IEC 61883 は、IEEE 1394 オーディオおよびビデオのデバイスで使用される標準の通信とコントロールのインターフェイスです。 Windows 98 SE、Windows 2000 以前のオペレーティング システムで 61883 機能は、Microsoft デジタル ビデオ (MSDV) カムコーダー ドライバーの一部として実装されました*msdv.sys*します。 Windows Me、Windows XP、および以降のオペレーティング システムでは、61883 機能が 61883 をサポートする専用の個別のドライバーに移動されています。 IEC 61883 クライアント ドライバーのベンダーから提供された、システムが提供する要求を送信する[IEC 61883 プロトコル ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff537191) (*61883.sys*) 自分のデバイスと通信します。
+IEC 61883 は、IEEE 1394 オーディオおよびビデオのデバイスで使用される標準の通信とコントロールのインターフェイスです。 Windows 98 SE、Windows 2000 以前のオペレーティング システムで 61883 機能は、Microsoft デジタル ビデオ (MSDV) カムコーダー ドライバーの一部として実装されました*msdv.sys*します。 Windows Me、Windows XP、および以降のオペレーティング システムでは、61883 機能が 61883 をサポートする専用の個別のドライバーに移動されています。 IEC 61883 クライアント ドライバーのベンダーから提供された、システムが提供する要求を送信する[IEC 61883 プロトコル ドライバー](https://docs.microsoft.com/windows-hardware/drivers/ieee/iec-61883-protocol-driver) (*61883.sys*) 自分のデバイスと通信します。
 
 IEC 61883 仕様では、どの多数のコンシューマーが電子的なオーディオおよびビデオ機器相互接続できますプロトコルを定義します。 これらの仕様には、一般的なデータ形式、データ フロー、およびオーディオビジュアル情報の接続の構成の定義が含まれます。 IEC 61883 プロトコル ドライバーには、次の承認済み IEC 61883 仕様に準拠しているデバイスがサポートされています。
 
@@ -41,8 +41,8 @@ IEC 61883 仕様では、どの多数のコンシューマーが電子的なオ�
 
 このセクションの内容:
 
-[IEC 61883 プロトコル ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff537191)
-[クライアント ドライバー スタックで IEC 61883 プロトコル ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff537193)
+[IEC 61883 プロトコル ドライバー](https://docs.microsoft.com/windows-hardware/drivers/ieee/iec-61883-protocol-driver)
+[クライアント ドライバー スタックで IEC 61883 プロトコル ドライバー](https://docs.microsoft.com/windows-hardware/drivers/ieee/iec-61883-protocol-driver-in-a-client-driver-stack)
  
 
  

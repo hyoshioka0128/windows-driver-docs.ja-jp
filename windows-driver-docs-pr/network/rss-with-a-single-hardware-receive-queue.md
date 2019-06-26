@@ -11,12 +11,12 @@ keywords:
 - 複数の受信キュー WDK RSS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f6ac453e65e8a3b992b6ef3d8521368308d929eb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fc9505ccdd9fffb02aea9905c75e4a4f8b40f37a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359782"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382142"
 ---
 # <a name="rss-with-a-single-hardware-receive-queue"></a>単一ハードウェア受信キューを使用した RSS
 
@@ -44,11 +44,11 @@ ms.locfileid: "63359782"
 
     1 つの割り込みでシステムを処理する受信バッファーは、多くのさまざまなネットワーク接続を関連付けることができます。
 
-3.  NDIS ミニポート ドライバーの呼び出す[ *MiniportInterrupt* ](https://msdn.microsoft.com/library/windows/hardware/ff559395)関数 (ISR) システムで決定された CPU にします。
+3.  NDIS ミニポート ドライバーの呼び出す[ *MiniportInterrupt* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_isr)関数 (ISR) システムで決定された CPU にします。
 
 4.  ISR には、割り込みと NDIS を要求を受信したデータの処理に遅延プロシージャ呼び出し (DPC) のキューが無効にします。
 
-5.  NDIS 呼び出し、 [ *MiniportInterruptDPC* ](https://msdn.microsoft.com/library/windows/hardware/ff559398)現在の CPU に (DPC) の関数。 DPC: で
+5.  NDIS 呼び出し、 [ *MiniportInterruptDPC* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_interrupt_dpc)現在の CPU に (DPC) の関数。 DPC: で
 
     1.  ミニポート ドライバーでは、受信バッファーの NIC が計算されたハッシュ値を使用し、CPU に関連付けられている受信キューに受信した各バッファーを再割り当ています。
     2.  現在の DPC は、NDIS ごと、その他の空の受信キューに関連付けられている Cpu の DPC をキューに登録を要求します。
@@ -58,7 +58,7 @@ ms.locfileid: "63359782"
 
 6.  特定の CPU で DPC:
     1.  受信キューに関連付けられている受信バッファーを処理し、ドライバー スタック上のデータを示します。 詳細については、次を参照してください。 [RSS の受信データのことを示す](indicating-rss-receive-data.md)します。
-    2.  完了する最後の DPC にある場合は、割り込みを有効にします。 この割り込みが完了し、プロセスが再び開始します。 ドライバーは、分割不可能な操作を完了するのに最後の DPC を識別するために使用する必要があります。 たとえば、ドライバーを使用できます、 [ **NdisInterlockedDecrement** ](https://msdn.microsoft.com/library/windows/hardware/ff562751)アトミックのカウンターを実装する関数。
+    2.  完了する最後の DPC にある場合は、割り込みを有効にします。 この割り込みが完了し、プロセスが再び開始します。 ドライバーは、分割不可能な操作を完了するのに最後の DPC を識別するために使用する必要があります。 たとえば、ドライバーを使用できます、 [ **NdisInterlockedDecrement** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisinterlockeddecrement)アトミックのカウンターを実装する関数。
 
  
 

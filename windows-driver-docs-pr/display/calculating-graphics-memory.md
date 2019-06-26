@@ -4,12 +4,12 @@ description: グラフィックス メモリの計算
 ms.assetid: 030a332b-d1f0-4a86-b11f-cfd2fbe42ac2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5933d95cb8549bf4cc8e10e940c6d5b2142f3ee1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1da5c9c39b974691ee4b3ba58a48d1221a75d28c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341586"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384607"
 ---
 # <a name="calculating-graphics-memory"></a>グラフィックス メモリの計算
 
@@ -29,17 +29,17 @@ TotalSystemMemoryAvailableForGraphics = MAX((TotalSystemMemory / 2), 64MB)
 <span id="Commit_limit_on_aperture_segment"></span><span id="commit_limit_on_aperture_segment"></span><span id="COMMIT_LIMIT_ON_APERTURE_SEGMENT"></span>コミット aperture セグメント上の制限  
 ビデオ メモリ マネージャーでは、システム メモリの量ピン留めするミニポート ドライバーを表示する (つまり、ミニポート ドライバーを表示するシステム メモリの量できます、aperture セグメントを介したメモリ マップ)、特定の時点での GPU 使用します。 GPU に割り当てられたシステム メモリの総量は大幅に; コミット制限を超える場合があります。ただし、ビデオ メモリ マネージャーにより、コミットまでしか限度額が実際には、開口部セグメントに常駐している任意の時点で。
 
-既定では、特定の開口部セグメント上、commit limit は、そのセグメントのサイズです。 ディスプレイのミニポート ドライバーで別のコミット制限値を指定できます、 **CommitLimit**のメンバー、 [ **DXGK\_SEGMENTDESCRIPTOR** ](https://msdn.microsoft.com/library/windows/hardware/ff562035)構造体ときに、ドライバーでは、セグメントについて説明します。 などで指定されているコミット制限方法は、ドライバーを記述する特定のセグメントにのみ適用されます。
+既定では、特定の開口部セグメント上、commit limit は、そのセグメントのサイズです。 ディスプレイのミニポート ドライバーで別のコミット制限値を指定できます、 **CommitLimit**のメンバー、 [ **DXGK\_SEGMENTDESCRIPTOR** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_segmentdescriptor)構造体ときに、ドライバーでは、セグメントについて説明します。 などで指定されているコミット制限方法は、ドライバーを記述する特定のセグメントにのみ適用されます。
 
-セグメントあたりのコミット制限に加えて、グローバル コミットに制限はすべて aperture セグメントです。 このグローバル コミット制限は、"共有システム メモリ"とも呼ばれます。 この値は、ビデオ メモリ マネージャーによって計算されます。 ただし、ディスプレイのミニポート ドライバーに小さい値にこの値を小さくことができますが、 **ApertureSegmentCommitLimit**のメンバー、 [ **DXGK\_DRIVERCAPS** ](https://msdn.microsoft.com/library/windows/hardware/ff561062)構造体には、この実習をようお勧めできません。
+セグメントあたりのコミット制限に加えて、グローバル コミットに制限はすべて aperture セグメントです。 このグローバル コミット制限は、"共有システム メモリ"とも呼ばれます。 この値は、ビデオ メモリ マネージャーによって計算されます。 ただし、ディスプレイのミニポート ドライバーに小さい値にこの値を小さくことができますが、 **ApertureSegmentCommitLimit**のメンバー、 [ **DXGK\_DRIVERCAPS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_drivercaps)構造体には、この実習をようお勧めできません。
 
 ビデオ メモリ マネージャーでは、セグメントあたりのコミット制限も、グローバル コミット制限に違反するディスプレイのミニポート ドライバーは許可されません。 特定のセグメントが 1 GB のコミット制限が、グローバル コミット制限値は 256 MB、ビデオ メモリ マネージャーにはそのセグメントを 256 MB 以上のシステム メモリにマップするディスプレイのミニポート ドライバーはできません。
 
 <span id="Dedicated_video_memory"></span><span id="dedicated_video_memory"></span><span id="DEDICATED_VIDEO_MEMORY"></span>専用ビデオ メモリ  
-ディスプレイのミニポート ドライバー情報が指定しなかったのセグメントのすべてのメモリのサイズの合計、 **PopulatedFromSystemMemory**内のメンバー、 [ **DXGK\_SEGMENTFLAGS** ](https://msdn.microsoft.com/library/windows/hardware/ff562039)各セグメントの構造体。
+ディスプレイのミニポート ドライバー情報が指定しなかったのセグメントのすべてのメモリのサイズの合計、 **PopulatedFromSystemMemory**内のメンバー、 [ **DXGK\_SEGMENTFLAGS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_segmentflags)各セグメントの構造体。
 
 <span id="Dedicated_system_memory"></span><span id="dedicated_system_memory"></span><span id="DEDICATED_SYSTEM_MEMORY"></span>専用のシステム メモリ  
-ディスプレイのミニポート ドライバーが指定のセグメントのすべてのメモリのサイズの合計、 **PopulatedFromSystemMemory**内のメンバー、 [ **DXGK\_SEGMENTFLAGS** ](https://msdn.microsoft.com/library/windows/hardware/ff562039)各セグメントの構造体。 この数は、グラフィックの使用 (TotalSystemMemoryAvailableForGraphics) で利用可能な合計システム メモリよりも大きいにすることはできません。
+ディスプレイのミニポート ドライバーが指定のセグメントのすべてのメモリのサイズの合計、 **PopulatedFromSystemMemory**内のメンバー、 [ **DXGK\_SEGMENTFLAGS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_segmentflags)各セグメントの構造体。 この数は、グラフィックの使用 (TotalSystemMemoryAvailableForGraphics) で利用可能な合計システム メモリよりも大きいにすることはできません。
 
 <span id="Shared_system_memory"></span><span id="shared_system_memory"></span><span id="SHARED_SYSTEM_MEMORY"></span>共有のシステム メモリ  
 GPU に共有されているシステム メモリの最大量。 この数は、次のように計算されます。

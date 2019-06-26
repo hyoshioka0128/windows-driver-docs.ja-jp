@@ -10,37 +10,37 @@ keywords:
 - トランスポート アドレス WDK Winsock カーネル
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f654e81cc13c0666f0220edce0fdc7a8f776769
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a28d1ca7dc86a575658eec00125f8a0bfd2df826
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347301"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378647"
 ---
 # <a name="resolving-host-names-and-ip-addresses"></a>ホスト名と IP アドレスの解決
 
 
-Windows 7 以降、*カーネルの名前解決*機能は、Unicode のホスト名とトランスポート アドレスの間のプロトコルに依存しない変換を実行するカーネル モード コンポーネントを使用できます。 以下を使用する[Winsock カーネル (WSK)](https://msdn.microsoft.com/library/windows/hardware/ff571083)この名前解決を実行するクライアント レベルの機能。
+Windows 7 以降、*カーネルの名前解決*機能は、Unicode のホスト名とトランスポート アドレスの間のプロトコルに依存しない変換を実行するカーネル モード コンポーネントを使用できます。 以下を使用する[Winsock カーネル (WSK)](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)この名前解決を実行するクライアント レベルの機能。
 
--   [**WskFreeAddressInfo**](https://msdn.microsoft.com/library/windows/hardware/ff571131)
+-   [**WskFreeAddressInfo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_free_address_info)
 
--   [**WskGetAddressInfo**](https://msdn.microsoft.com/library/windows/hardware/ff571132)
+-   [**WskGetAddressInfo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_get_address_info)
 
--   [**WskGetNameInfo**](https://msdn.microsoft.com/library/windows/hardware/ff571134)
+-   [**WskGetNameInfo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_get_name_info)
 
-これらの関数と同様に、ユーザー モードの関数の名前からアドレス変換を実行する[ **FreeAddrInfoW**](https://msdn.microsoft.com/library/windows/desktop/ms737912)、 [ **GetAddrInfoW**](https://msdn.microsoft.com/library/windows/desktop/ms738519)、[ **GetNameInfoW**](https://msdn.microsoft.com/library/windows/desktop/ms738531)、それぞれします。
+これらの関数と同様に、ユーザー モードの関数の名前からアドレス変換を実行する[ **FreeAddrInfoW**](https://docs.microsoft.com/windows/desktop/api/ws2tcpip/nf-ws2tcpip-freeaddrinfow)、 [ **GetAddrInfoW**](https://docs.microsoft.com/windows/desktop/api/ws2tcpip/nf-ws2tcpip-getaddrinfow)、[ **GetNameInfoW**](https://docs.microsoft.com/windows/desktop/api/ws2tcpip/nf-ws2tcpip-getnameinfow)、それぞれします。
 
 この機能を利用するには、コンパイルまたは、NTDDI にドライバーを再コンパイルする必要があります\_バージョン マクロ設定 NTDDI\_WIN7 以上。
 
 次の呼び出しシーケンスを実行すると、ドライバーのカーネルの名前解決機能を使用するためがあります。
 
-1.  呼び出す[ **WskRegister** ](https://msdn.microsoft.com/library/windows/hardware/ff571143) WSK に登録します。
+1.  呼び出す[ **WskRegister** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nf-wsk-wskregister) WSK に登録します。
 
-2.  呼び出す[ **WskCaptureProviderNPI** ](https://msdn.microsoft.com/library/windows/hardware/ff571122) WSK プロバイダーをキャプチャする[ネットワーク プログラミング インターフェイス (NPI)](network-programming-interface.md)します。
+2.  呼び出す[ **WskCaptureProviderNPI** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nf-wsk-wskcaptureprovidernpi) WSK プロバイダーをキャプチャする[ネットワーク プログラミング インターフェイス (NPI)](network-programming-interface.md)します。
 
-3.  完了したら NPI WSK プロバイダーを使用して、呼び出す[ **WskReleaseProviderNPI** ](https://msdn.microsoft.com/library/windows/hardware/ff571145)解放 WSK プロバイダー NPI します。
+3.  完了したら NPI WSK プロバイダーを使用して、呼び出す[ **WskReleaseProviderNPI** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nf-wsk-wskreleaseprovidernpi)解放 WSK プロバイダー NPI します。
 
-4.  呼び出す[ **WskDeregister** ](https://msdn.microsoft.com/library/windows/hardware/ff571128) WSK アプリケーションの登録を解除します。
+4.  呼び出す[ **WskDeregister** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nf-wsk-wskderegister) WSK アプリケーションの登録を解除します。
 
 次のコード例は、WSK アプリケーションを呼び出す方法を表示する上記の呼び出しの順序を使用して、 **WskGetAddressInfo**トランスポート アドレスのホスト名を変換する関数。
 

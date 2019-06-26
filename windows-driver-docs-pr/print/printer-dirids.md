@@ -10,12 +10,12 @@ keywords:
 - 識別子の WDK プリンター
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c9f577dbc0ee727a9a379b129f8252d6d2c64d55
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4893cb53a7b722f6fca6b9474b30c21beb53b2b9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340899"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380660"
 ---
 # <a name="printer-dirids"></a>プリンター Dirids
 
@@ -23,7 +23,7 @@ ms.locfileid: "63340899"
 
 
 
-INF ファイル、ディレクトリ識別子内のターゲット ディレクトリを指定するときに (`dirids`) 使用する必要があります。 詳細については、次を参照してください。[を使用して Dirids](https://msdn.microsoft.com/library/windows/hardware/ff553598)します。
+INF ファイル、ディレクトリ識別子内のターゲット ディレクトリを指定するときに (`dirids`) 使用する必要があります。 詳細については、次を参照してください。[を使用して Dirids](https://docs.microsoft.com/windows-hardware/drivers/install/using-dirids)します。
 
 次の表に、プリンター固有`dirids`とそれぞれの目的です。
 
@@ -49,12 +49,12 @@ INF ファイル、ディレクトリ識別子内のターゲット ディレク
 <tr class="even">
 <td><p>66001</p></td>
 <td><p>によって返されるディレクトリ パスを表す、 <a href="https://go.microsoft.com/fwlink/p/?linkid=124455" data-raw-source="[GetPrintProcessorDirectory](https://go.microsoft.com/fwlink/p/?linkid=124455)">GetPrintProcessorDirectory</a>関数。</p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff556325#wdkgloss-print-processor" data-raw-source="&lt;em&gt;Print processor&lt;/em&gt;"><em>プリント プロセッサ</em></a>ファイル。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/#wdkgloss-print-processor" data-raw-source="&lt;em&gt;Print processor&lt;/em&gt;"><em>プリント プロセッサ</em></a>ファイル。</p></td>
 </tr>
 <tr class="odd">
 <td><p>66002</p></td>
 <td><p>ローカル システムの \System32 にコピーする追加ファイルをディレクトリのパスを表します。 このテーブルを次の段落を参照してください。</p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff556325#wdkgloss-print-monitor" data-raw-source="&lt;em&gt;Print monitor&lt;/em&gt;"><em>印刷モニター</em> </a>ファイル。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/#wdkgloss-print-monitor" data-raw-source="&lt;em&gt;Print monitor&lt;/em&gt;"><em>印刷モニター</em> </a>ファイル。</p></td>
 </tr>
 <tr class="even">
 <td><p>66003</p></td>

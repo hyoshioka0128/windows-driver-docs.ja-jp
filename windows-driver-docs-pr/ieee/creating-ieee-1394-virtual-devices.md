@@ -8,12 +8,12 @@ keywords:
 - 仮想デバイス WDK IEEE 1394 バス
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 63e837ada427979c61cd3f3d9ca0da9bc0506581
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ca131b4d21ddc06a0e3618b9ed2ad4706b988844
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376696"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385781"
 ---
 # <a name="creating-ieee-1394-virtual-devices"></a>IEEE 1394 仮想デバイスの作成
 
@@ -21,11 +21,11 @@ ms.locfileid: "63376696"
 
 
 
-上位レベルのドライバーとユーザー モードのサービスを追加または削除できます 1394 の仮想デバイスで、デバイス制御の要求を使用して、 [ **IOCTL\_IEEE1394\_API\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff537241)コードを制御します。 要求に含まれる、 [ **IEEE1394\_API\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff537204)持つ**RequestNumber**メンバーは、(を実行するアクションを示します。追加または削除)、バス ドライバー。 仮想デバイスには、デバイス ID がありませんか、インスタンス ID、ドライバーまたは仮想デバイスを作成することを要求するユーザーのプログラムがあるので必要があります、デバイス ID を指定し、インスタンスの ID、 [ **IEEE1394\_VDEV\_PNP\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff537206)構造体。
+上位レベルのドライバーとユーザー モードのサービスを追加または削除できます 1394 の仮想デバイスで、デバイス制御の要求を使用して、 [ **IOCTL\_IEEE1394\_API\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff537241)コードを制御します。 要求に含まれる、 [ **IEEE1394\_API\_要求**](https://docs.microsoft.com/previous-versions/ff537204(v=vs.85))持つ**RequestNumber**メンバーは、(を実行するアクションを示します。追加または削除)、バス ドライバー。 仮想デバイスには、デバイス ID がありませんか、インスタンス ID、ドライバーまたは仮想デバイスを作成することを要求するユーザーのプログラムがあるので必要があります、デバイス ID を指定し、インスタンスの ID、 [ **IEEE1394\_VDEV\_PNP\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff537206)構造体。
 
 ときに、IEEE1394\_要求\_フラグ\_IOCTL を使用して、永続的なが指定された\_IEEE1394\_API\_要求、1394 バス ドライバーに関する不揮発性のコンテキスト情報を格納する、レジストリの仮想デバイス。 これにより、バス ドライバーを自動的に次の起動時、上位レベルのドライバーからの介入なしに仮想の PDO を再作成できます。
 
-バス ドライバーでは、このレジストリ エントリを使用して、システム内の各 1394 デバイス スタックの仮想デバイスの「列挙」。 1394 バス ドライバーの呼び出し後、仮想デバイスの仮想の PDO を作成するには、 [ **IoInvalidateDeviceRelations**](https://msdn.microsoft.com/library/windows/hardware/ff549353)、実際のデバイス用の PDO を作成した後はこれだけです。 この呼び出しは、プラグ アンド プレイ (PnP) マネージャーで新しいデバイスが到着すると、ことを通知し、PnP マネージャーが、仮想デバイスのドライバーをロードします。
+バス ドライバーでは、このレジストリ エントリを使用して、システム内の各 1394 デバイス スタックの仮想デバイスの「列挙」。 1394 バス ドライバーの呼び出し後、仮想デバイスの仮想の PDO を作成するには、 [ **IoInvalidateDeviceRelations**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioinvalidatedevicerelations)、実際のデバイス用の PDO を作成した後はこれだけです。 この呼び出しは、プラグ アンド プレイ (PnP) マネージャーで新しいデバイスが到着すると、ことを通知し、PnP マネージャーが、仮想デバイスのドライバーをロードします。
 
 複数の 1394 のホスト コント ローラーは、システム、レジストリで定義されている仮想デバイス上に存在する 1 つが複数回列挙されます。 仮想デバイスごとに一意のインスタンス ID は、仮想デバイスを作成する上位レベルのドライバーまたはユーザーのサービスは「ハード コーディングされた」特定のインスタンスを指定する必要がありますを搭載したシステム上の仮想デバイスの ID を複数の 1 つ 1394 ホスト コント ローラー。 代わりに、上位のソフトウェアが、IEEE1394 を設定する必要があります\_要求\_フラグ\_使用\_ローカル\_ホスト\_EUI フラグ、IEEE1394\_API\_を要求します。 このフラグが設定、バス ドライバーは、デバイスを列挙します。 次に、仮想デバイスのインスタンス ID としてホスト コント ローラーのインスタンス ID を使用します。 インスタンス ID は、そのホスト コント ローラーのインスタンス ID と同じでは、仮想デバイスは一意のインスタンス ID を持ちます。 も各 1394 デバイス スタックが一意のインスタンス ID を持つホスト コント ローラーであるため、
 

@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 23d6016942535b915b4bd9654b80b4beee1d9f08
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: db4867374b45a337ac557b28a71d9f4bfd6d8e2f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390192"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386730"
 ---
 # <a name="avcfunctionsetconnectinfo"></a>AVC\_関数\_設定\_接続情報
 
@@ -81,7 +81,7 @@ typedef struct _AVC_MULTIFUNC_IRB {
 } AVC_MULTIFUNC_IRB, *PAVC_MULTIFUNC_IRB;
 ```
 
-### <a name="requirements"></a>必要条件
+### <a name="requirements"></a>要件
 
 **ヘッダー:** 宣言されている*avc.h*します。 含める*avc.h*します。
 
@@ -103,7 +103,7 @@ AV/C デバイスの接続情報を指定します。
 
 ### <a name="see-also"></a>関連項目
 
-[**AVC\_MULTIFUNC\_IRB**](https://msdn.microsoft.com/library/windows/hardware/ff554177)、 [ **AVC\_SETCONNECT\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff554192)、 [ **AVCCONNECTINFO**](https://msdn.microsoft.com/library/windows/hardware/ff554101)、 [ **AVC\_関数**](https://msdn.microsoft.com/library/windows/hardware/ff554145)、 [ **AV/C 交差ハンドラー**](https://msdn.microsoft.com/library/windows/hardware/ff556379)
+[**AVC\_MULTIFUNC\_IRB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ns-avc-_avc_multifunc_irb)、 [ **AVC\_SETCONNECT\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ns-avc-_avc_setconnect_info)、 [ **AVCCONNECTINFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ns-avc-_avcconnectinfo)、 [ **AVC\_関数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ne-avc-_tagavc_function)、 [ **AV/C 交差ハンドラー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/nc-avc-pfnavcintersecthandler)
 
  
 

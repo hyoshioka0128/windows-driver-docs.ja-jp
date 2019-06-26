@@ -15,12 +15,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a744b35346b16758aecb7754b375c4c2caa880f3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e36561ba15d2881dc145be7df0dd6cc3b9e395fc
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383837"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386079"
 ---
 # <a name="filelock-structure"></a>ファイル\_ロック構造体
 
@@ -43,7 +43,7 @@ typedef struct _FILE_LOCK {
 } FILE_LOCK, *PFILE_LOCK;
 ```
 
-<a name="members"></a>メンバー
+<a name="members"></a>Members
 -------
 
 **CompleteLockIrpRoutine**  
@@ -75,15 +75,15 @@ typedef struct _FILE_LOCK {
 
 ファイル システム ドライバー、従来のファイル システム フィルター ドライバーおよびミニフィルターに対して、作成してファイルを使用するさまざまなルーチンを使用できます\_ロック オブジェクトでもファイルへの読み取り/書き込みアクセスをテストします。
 
--   ファイルを割り当てる\_ロック オブジェクト、呼び出し[ **FsRtlAllocateFileLock** ](https://msdn.microsoft.com/library/windows/hardware/ff545640)または[ **FltAllocateFileLock**](https://msdn.microsoft.com/library/windows/hardware/ff541743)します。
+-   ファイルを割り当てる\_ロック オブジェクト、呼び出し[ **FsRtlAllocateFileLock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlallocatefilelock)または[ **FltAllocateFileLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltallocatefilelock)します。
 
--   初期化されていない、ファイルを初期化するために\_ロック オブジェクト、呼び出し[ **FsRtlInitializeFileLock** ](https://msdn.microsoft.com/library/windows/hardware/ff546122)または[ **FltInitializeFileLock** ](https://msdn.microsoft.com/library/windows/hardware/ff543273). 注意をファイル\_から返されるロック[ **FsRtlAllocateFileLock** ](https://msdn.microsoft.com/library/windows/hardware/ff545640)または[ **FltAllocateFileLock** ](https://msdn.microsoft.com/library/windows/hardware/ff541743)は既に初期化されます。
+-   初期化されていない、ファイルを初期化するために\_ロック オブジェクト、呼び出し[ **FsRtlInitializeFileLock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlinitializefilelock)または[ **FltInitializeFileLock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltinitializefilelock). 注意をファイル\_から返されるロック[ **FsRtlAllocateFileLock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlallocatefilelock)または[ **FltAllocateFileLock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltallocatefilelock)は既に初期化されます。
 
--   ファイルの初期化解除に\_ロック オブジェクト、呼び出し[ **FsRtlUninitializeFileLock** ](https://msdn.microsoft.com/library/windows/hardware/ff547313)または[ **FltUninitializeFileLock**](https://msdn.microsoft.com/library/windows/hardware/ff544595)します。
+-   ファイルの初期化解除に\_ロック オブジェクト、呼び出し[ **FsRtlUninitializeFileLock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtluninitializefilelock)または[ **FltUninitializeFileLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltuninitializefilelock)します。
 
--   ファイルを解放する\_ロック オブジェクトによって割り当てられる、 [ **FsRtlAllocateFileLock** ](https://msdn.microsoft.com/library/windows/hardware/ff545640) 、ルーチンの呼び出し[ **FsRtlFreeFileLock** ](https://msdn.microsoft.com/library/windows/hardware/ff546011). ファイルを解放する\_ロック オブジェクトによって割り当てられる、 [ **FltAllocateFileLock** ](https://msdn.microsoft.com/library/windows/hardware/ff541743) 、ルーチンの呼び出し[ **FltFreeFileLock** ](https://msdn.microsoft.com/library/windows/hardware/ff542969).
+-   ファイルを解放する\_ロック オブジェクトによって割り当てられる、 [ **FsRtlAllocateFileLock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlallocatefilelock) 、ルーチンの呼び出し[ **FsRtlFreeFileLock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlfreefilelock). ファイルを解放する\_ロック オブジェクトによって割り当てられる、 [ **FltAllocateFileLock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltallocatefilelock) 、ルーチンの呼び出し[ **FltFreeFileLock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfreefilelock).
 
-ファイルの後に\_ロックがれました初期化、ルーチンなど[ **FsRtlCheckLockForReadAccess**](https://msdn.microsoft.com/library/windows/hardware/ff545758)、 [ **FltCheckLockForWriteAccess**](https://msdn.microsoft.com/library/windows/hardware/ff541837)、および[ **FsRtlFastCheckLockForRead** ](https://msdn.microsoft.com/library/windows/hardware/ff545918)ファイルを他のスレッドによってアクセスできるかどうかを判断するために使用できます。
+ファイルの後に\_ロックがれました初期化、ルーチンなど[ **FsRtlCheckLockForReadAccess**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlchecklockforreadaccess)、 [ **FltCheckLockForWriteAccess**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltchecklockforwriteaccess)、および[ **FsRtlFastCheckLockForRead** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlfastchecklockforread)ファイルを他のスレッドによってアクセスできるかどうかを判断するために使用できます。
 
 <a name="requirements"></a>要件
 ------------
@@ -108,28 +108,28 @@ typedef struct _FILE_LOCK {
 ## <a name="see-also"></a>関連項目
 
 
-[**FltAllocateFileLock**](https://msdn.microsoft.com/library/windows/hardware/ff541743)
+[**FltAllocateFileLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltallocatefilelock)
 
-[**FltCheckLockForReadAccess**](https://msdn.microsoft.com/library/windows/hardware/ff541834)
+[**FltCheckLockForReadAccess**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltchecklockforreadaccess)
 
-[**FltCheckLockForWriteAccess**](https://msdn.microsoft.com/library/windows/hardware/ff541837)
+[**FltCheckLockForWriteAccess**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltchecklockforwriteaccess)
 
-[**FltInitializeFileLock**](https://msdn.microsoft.com/library/windows/hardware/ff543273)
+[**FltInitializeFileLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltinitializefilelock)
 
 **FltInitializeFileLock**
-[**FsRtlAllocateFileLock**](https://msdn.microsoft.com/library/windows/hardware/ff545640)
+[**FsRtlAllocateFileLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlallocatefilelock)
 
-[**FsRtlCheckLockForReadAccess**](https://msdn.microsoft.com/library/windows/hardware/ff545758)
+[**FsRtlCheckLockForReadAccess**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlchecklockforreadaccess)
 
-[**FsRtlCheckLockForWriteAccess**](https://msdn.microsoft.com/library/windows/hardware/ff545760)
+[**FsRtlCheckLockForWriteAccess**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlchecklockforwriteaccess)
 
-[**FsRtlFastCheckLockForRead**](https://msdn.microsoft.com/library/windows/hardware/ff545918)
+[**FsRtlFastCheckLockForRead**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlfastchecklockforread)
 
-[**FsRtlFastCheckLockForWrite**](https://msdn.microsoft.com/library/windows/hardware/ff545928)
+[**FsRtlFastCheckLockForWrite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlfastchecklockforwrite)
 
-[**FsRtlInitializeFileLock**](https://msdn.microsoft.com/library/windows/hardware/ff546122)
+[**FsRtlInitializeFileLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlinitializefilelock)
 
-[**FsRtlUninitializeFileLock**](https://msdn.microsoft.com/library/windows/hardware/ff547313)
+[**FsRtlUninitializeFileLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtluninitializefilelock)
 
  
 

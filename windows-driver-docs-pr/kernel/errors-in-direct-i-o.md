@@ -1,6 +1,6 @@
 ---
-title: ダイレクト I/O エラー
-description: ダイレクト I/O エラー
+title: ダイレクト I/O のエラー
+description: ダイレクト I/O のエラー
 ms.assetid: 9efc2875-3402-4e2e-871b-3cc1d8f45360
 keywords:
 - 信頼性 WDK カーネルでは、ダイレクト I/O
@@ -9,14 +9,14 @@ keywords:
 - バッファーの長さ 0 の WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c46e461f458cbd2e805c69cfc04a0288c09c97e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 84ed8c1e26df36f609ddabb8d1b2e94853ba31ab
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532396"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385125"
 ---
-# <a name="errors-in-direct-io"></a>ダイレクト I/O エラー
+# <a name="errors-in-direct-io"></a>ダイレクト I/O のエラー
 
 
 
@@ -24,7 +24,7 @@ ms.locfileid: "56532396"
 
 ダイレクト I/O の最も一般的な問題は、長さ 0 のバッファーを正しく処理するために失敗しています。 長さ 0 のバッファーの結果が I/O マネージャーが長さ 0 の転送 MDLs を作成しないためです、 **NULL**値**Irp -&gt;MdlAddress**。
 
-アドレス空間をマップするドライバーを使用する必要があります[ **MmGetSystemAddressForMdlSafe**](https://msdn.microsoft.com/library/windows/hardware/ff554559)、返された**NULL**をドライバーに渡すかどうか、失敗した場合をマッピングする場合は、 **NULL** **MdlAddress**します。 ドライバーを常に確認する必要があります、 **NULL**返されたアドレスを使用する前に戻り値。
+アドレス空間をマップするドライバーを使用する必要があります[ **MmGetSystemAddressForMdlSafe**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)、返された**NULL**をドライバーに渡すかどうか、失敗した場合をマッピングする場合は、 **NULL** **MdlAddress**します。 ドライバーを常に確認する必要があります、 **NULL**返されたアドレスを使用する前に戻り値。
 
 Double 型のマッピングは、システム アドレス バッファーに、ユーザーのアドレス空間をダイレクト I/O、2 つの異なる仮想アドレスが同じ物理アドレスを持つようにします。 Double 型のマッピングには、次の結果は、ドライバーの問題が生じる場合がありますがあります。
 
@@ -56,7 +56,7 @@ Double 型のマッピングは、システム アドレス バッファーに�
 
     逆に場合、 **NULL**が現在のところ、その呼び出し**RtlInitUnicodeString**バッファーの範囲を超えるし、システムのマッピングの外になる場合は、バグ チェックが原因として考えられることができます。
 
-ドライバーは、作成し、独自の MDL のマップする場合、プローブされますが、メソッドでのみ、MDL にアクセスすることを確認する必要があります。 つまり、ドライバーを呼び出すと[ **MmProbeAndLockPages**](https://msdn.microsoft.com/library/windows/hardware/ff554664)、アクセス方法を指定します (**IoReadAccess**、 **IoWriteAccess**、または**IoModifyAccess**)。 ドライバーが指定されている場合**IoReadAccess**、によって提供されるシステムのバッファーに書き込む後で試行する必要がありますいない[ **MmGetSystemAddressForMdl** ](https://msdn.microsoft.com/library/windows/hardware/ff554556)または[**MmGetSystemAddressForMdlSafe**](https://msdn.microsoft.com/library/windows/hardware/ff554559)します。
+ドライバーは、作成し、独自の MDL のマップする場合、プローブされますが、メソッドでのみ、MDL にアクセスすることを確認する必要があります。 つまり、ドライバーを呼び出すと[ **MmProbeAndLockPages**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmprobeandlockpages)、アクセス方法を指定します (**IoReadAccess**、 **IoWriteAccess**、または**IoModifyAccess**)。 ドライバーが指定されている場合**IoReadAccess**、によって提供されるシステムのバッファーに書き込む後で試行する必要がありますいない[ **MmGetSystemAddressForMdl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmgetsystemaddressformdl)または[**MmGetSystemAddressForMdlSafe**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)します。
 
  
 

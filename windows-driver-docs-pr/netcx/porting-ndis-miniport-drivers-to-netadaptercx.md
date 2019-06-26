@@ -7,12 +7,12 @@ keywords:
 ms.date: 01/22/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: b911cd1a888166419f113e34b09a7dd2da988c13
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f85978d636769aeeca88b11ad613b7d3855332b8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375338"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382821"
 ---
 # <a name="porting-ndis-miniport-drivers-to-netadaptercx"></a>NDIS ミニポート ドライバーの NetAdapterCx への移植
 
@@ -27,7 +27,7 @@ WDF の詳細についてを参照してください、 [WDF ドライバー開�
 Visual Studio で NDIS ミニポート ドライバーの既存のプロジェクトを開き、KMDF プロジェクトに変換する、次の手順を使用します。
 
 1. まずに移動します**構成プロパティには、ドライバーが]-> [設定]、[ドライバー モデル**ことを確認します**ドライバーの種類**KMDF とに設定されている**KMDF のメジャー バージョン**と**KMDF マイナー バージョン**はどちらも空です。
-2. プロジェクトのプロパティ で開きます**ドライバーの設定には、ネットワーク アダプター ドライバーが-> **設定と**ネットワーク アダプター クラスの拡張機能へのリンク**に**はい**。
+2. プロジェクトのプロパティ で開きます**ドライバーの設定には、ネットワーク アダプター ドライバーが->** 設定と**ネットワーク アダプター クラスの拡張機能へのリンク**に**はい**。
    * 変換には、ドライバーでは、NDIS Api を呼び出すは引き続き場合、へのリンクを引き続き`ndis.lib`します。
 3. NDIS プリプロセッサのマクロのような削除`NDIS650_MINIPORT=1`します。
 4. すべてのソース ファイル (または、一般的な/プリコンパイル済みヘッダー) は、次のヘッダーを追加します。
@@ -59,7 +59,7 @@ Visual Studio で NDIS ミニポート ドライバーの既存のプロジェ�
 
 ## <a name="driver-initialization"></a>ドライバーの初期化
 
-呼び出しを削除[ **NdisMRegisterMiniportDriver** ](https://msdn.microsoft.com/library/windows/hardware/ff563654)から[ *DriverEntry*](https://msdn.microsoft.com/library/windows/hardware/ff540807)以下を追加します。
+呼び出しを削除[ **NdisMRegisterMiniportDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismregisterminiportdriver)から[ *DriverEntry*](https://docs.microsoft.com/windows-hardware/drivers/wdf/driverentry-for-kmdf-drivers)以下を追加します。
 
 ```C++
 WDF_DRIVER_CONFIG_INIT(&config, EvtDriverDeviceAdd);
@@ -69,21 +69,21 @@ if (!NT_SUCCESS(status)) {
 }
 ```
 
-設定されている場合は、削除、 **WdfDriverInitNoDispatchOverride**への呼び出しからフラグ[ **WdfDriverCreate**](https://msdn.microsoft.com/library/windows/hardware/ff547175)します。
+設定されている場合は、削除、 **WdfDriverInitNoDispatchOverride**への呼び出しからフラグ[ **WdfDriverCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nf-wdfdriver-wdfdrivercreate)します。
 
-*DriverUnload* WDF のネットワーク クライアントのドライバーのオプションのルーチンは、必要に応じて削除できるようにします。 呼び出さない[ **NdisMDeregisterMiniportDriver** ](https://msdn.microsoft.com/library/windows/hardware/ff563578)から*DriverUnload*します。
+*DriverUnload* WDF のネットワーク クライアントのドライバーのオプションのルーチンは、必要に応じて削除できるようにします。 呼び出さない[ **NdisMDeregisterMiniportDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismderegisterminiportdriver)から*DriverUnload*します。
 
 ## <a name="device-initialization"></a>デバイスの初期化
 
 次に、コードからの配布*MiniportInitializeEx*に適切な WDF イベントのコールバック ハンドラーをいくつかの省略可能です。 コールバック シーケンスの詳細については、「 [WDF クライアントのネットワーク アダプター ドライバーの電源投入シーケンス](power-up-sequence-for-a-netadaptercx-client-driver.md)します。
 
-同じメソッドを呼び出すことが[ **NdisMSetMiniportAttributes** ](https://msdn.microsoft.com/library/windows/hardware/ff563672) 、ネット アダプターを開始しているが、前に呼び出すときに[ **NetAdapterStart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nf-netadapter-netadapterstart). ジェネリック型の 1 つのルーチンを呼び出す代わりに、ただし、 [ **NDIS_MINIPORT_ADAPTER_ATTRIBUTES** ](https://msdn.microsoft.com/library/windows/hardware/ff565920)構造体、クライアント ドライバーは、さまざまな種類の機能を設定する別の関数を呼び出します。
+同じメソッドを呼び出すことが[ **NdisMSetMiniportAttributes** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsetminiportattributes) 、ネット アダプターを開始しているが、前に呼び出すときに[ **NetAdapterStart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nf-netadapter-netadapterstart). ジェネリック型の 1 つのルーチンを呼び出す代わりに、ただし、 [ **NDIS_MINIPORT_ADAPTER_ATTRIBUTES** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_attributes)構造体、クライアント ドライバーは、さまざまな種類の機能を設定する別の関数を呼び出します。
 
 コールバックを提供する必要があり、ネット アダプターを開始する方法については、次を参照してください。[デバイスとアダプターの初期化](device-and-adapter-initialization.md)します。
 
 ## <a name="creating-queues-to-manage-control-requests"></a>コントロールの要求を管理するキューの作成
 
-次に、引き続き内[ *EVT_WDF_DRIVER_DEVICE_ADD*](https://msdn.microsoft.com/library/windows/hardware/ff541693)、オブジェクト識別子 (OID) のパスを設定します。 OID のパスは、WDF キューのようにモデル化されますが、WDFREQUESTs ではなく Oid を取得します。
+次に、引き続き内[ *EVT_WDF_DRIVER_DEVICE_ADD*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)、オブジェクト識別子 (OID) のパスを設定します。 OID のパスは、WDF キューのようにモデル化されますが、WDFREQUESTs ではなく Oid を取得します。
 
 これを移植するとき、2 つの高レベル方法はあります。 最初のオプションでは、登録、 [ *EVT_NET_REQUEST_DEFAULT* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netrequestqueue/nc-netrequestqueue-evt_net_request_default) NDIS からミニポート ドライバーが要求を受信する方法に非常に同様の方法で要求を OID を受け取るハンドラー。 これは、おそらくだけ必要になるため、古い MINIPORT_OID_REQUEST ハンドラーから関数のシグネチャを調整する最も簡単なポートです。
 
@@ -95,37 +95,37 @@ Oid のハンドラーを登録する方法の詳細については、次を参�
 
 ## <a name="reading-configuration-from-the-registry"></a>レジストリから構成の読み取り
 
-次への呼び出しを置き換える[ **NdisOpenConfigurationEx** ](https://msdn.microsoft.com/library/windows/hardware/ff563717)および関連する関数で、`NetConfiguration*`メソッド。 `NetConfiguration*`メソッドと似ています、`Ndis*Configuration*`関数、およびするが、コードを再構築する必要はありません。
+次への呼び出しを置き換える[ **NdisOpenConfigurationEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisopenconfigurationex)および関連する関数で、`NetConfiguration*`メソッド。 `NetConfiguration*`メソッドと似ています、`Ndis*Configuration*`関数、およびするが、コードを再構築する必要はありません。
 
 詳細については、次を参照してください。[構成情報にアクセスする](accessing-configuration-information.md)します。
 
 ## <a name="receiving-io-control-codes-iotcls-from-user-mode"></a>ユーザー モードから受信側の I/O 制御コード (IOTCLs)
 
-NDIS ドライバーを呼び出す場合は、このセクションを読む[ **NdisRegisterDeviceEx**](https://msdn.microsoft.com/library/windows/hardware/ff564518)ルーチンがユーザー モードから Ioctl を受信するには、(CDO) 制御デバイス オブジェクトを作成するために使用します。
+NDIS ドライバーを呼び出す場合は、このセクションを読む[ **NdisRegisterDeviceEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisregisterdeviceex)ルーチンがユーザー モードから Ioctl を受信するには、(CDO) 制御デバイス オブジェクトを作成するために使用します。
 
 これは、WDF ネットワーク クライアント ドライバーで 2 つの方法を示します。
 
-呼び出すことによって、制御デバイス オブジェクトを作成する最も簡単なポートは、 [ **WdfControlDeviceInitAllocate** ](https://msdn.microsoft.com/library/windows/hardware/ff545841)からクライアントの[ *EVT_WDF_DRIVER_DEVICE_ADD*](https://msdn.microsoft.com/library/windows/hardware/ff541693)コールバック。 詳細については、次を参照してください。[コントロール デバイス オブジェクトを使用する](../wdf/using-control-device-objects.md)します。
+呼び出すことによって、制御デバイス オブジェクトを作成する最も簡単なポートは、 [ **WdfControlDeviceInitAllocate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfcontrol/nf-wdfcontrol-wdfcontroldeviceinitallocate)からクライアントの[ *EVT_WDF_DRIVER_DEVICE_ADD*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)コールバック。 詳細については、次を参照してください。[コントロール デバイス オブジェクトを使用する](../wdf/using-control-device-objects.md)します。
 
 ただし、推奨されるソリューションは、デバイスのインターフェイスを作成する」の説明に従って[を使用してデバイスのインターフェイス](using-device-interfaces.md)します。
 
 ## <a name="finishing-device-initialization"></a>デバイスの初期化を終了
 
-この時点で[ *EVT_WDF_DRIVER_DEVICE_ADD*](https://msdn.microsoft.com/library/windows/hardware/ff541693)、その他の割り込みの割り当てのようなデバイスを初期化するには行うことができます。
+この時点で[ *EVT_WDF_DRIVER_DEVICE_ADD*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)、その他の割り込みの割り当てのようなデバイスを初期化するには行うことができます。
 
 ## <a name="handling-power-state-change-notifications"></a>電源状態の変更通知の処理
 
-WDF のクライアント ドライバーは受信しません[ **OID_PNP_SET_POWER** ](https://msdn.microsoft.com/library/windows/hardware/ff569780)の電力状態を変更します。
+WDF のクライアント ドライバーは受信しません[ **OID_PNP_SET_POWER** ](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power)の電力状態を変更します。
 
 代わりに、WDF クライアントは、電源の状態変更通知を受信する省略可能なコールバック関数を登録します。 概要については、次を参照してください。 [PnP をサポートしていると関数のドライバーでの電源管理](../wdf/supporting-pnp-and-power-management-in-function-drivers.md)します。
 
-通常、コードで、 [ **OID_PNP_SET_POWER** ](https://msdn.microsoft.com/library/windows/hardware/ff569780)ハンドラーに移動[ *EVT_WDF_DEVICE_D0_EXIT* ](https://msdn.microsoft.com/library/windows/hardware/ff540855)と[ *EVT_WDF_DEVICE_D0_ENTRY*](https://msdn.microsoft.com/library/windows/hardware/ff540848)します。
+通常、コードで、 [ **OID_PNP_SET_POWER** ](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power)ハンドラーに移動[ *EVT_WDF_DEVICE_D0_EXIT* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_exit)と[ *EVT_WDF_DEVICE_D0_ENTRY*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_entry)します。
 
 WDF の電源のステート マシンは若干異なるためは、コードに小さな変更を加える必要があります。
 
-具体的には、その[ *MiniportInitializeEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559389) one-time initialization タスクと作業を D0 状態、デバイスにコールバック関数では、NDIS ミニポート ドライバーを実行します。 D0 に移動する作業が繰り返されますし、その[ *OID_PNP_SET_POWER* ](https://msdn.microsoft.com/library/windows/hardware/ff569780)ハンドラー。
+具体的には、その[ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize) one-time initialization タスクと作業を D0 状態、デバイスにコールバック関数では、NDIS ミニポート ドライバーを実行します。 D0 に移動する作業が繰り返されますし、その[ *OID_PNP_SET_POWER* ](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power)ハンドラー。
 
-WDF クライアントが前に、イベントのコールバックで one-time initialization タスクを実行する一方、 [ **EVT_WDF_DEVICE_D0_ENTRY**](https://msdn.microsoft.com/library/windows/hardware/ff540848)、中、低電力状態では、デバイスにします。 D0 に移動するのには、 [ **EVT_WDF_DEVICE_D0_ENTRY**](https://msdn.microsoft.com/library/windows/hardware/ff540848)します。
+WDF クライアントが前に、イベントのコールバックで one-time initialization タスクを実行する一方、 [ **EVT_WDF_DEVICE_D0_ENTRY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_entry)、中、低電力状態では、デバイスにします。 D0 に移動するのには、 [ **EVT_WDF_DEVICE_D0_ENTRY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_entry)します。
 
 まとめると、WDF には、2 つではなく、1 つの場所で、"go to D0"のコードを配置します。
 
@@ -133,13 +133,13 @@ WDF クライアントが前に、イベントのコールバックで one-time 
 
 ## <a name="querying-and-setting-power-management-capabilities"></a>クエリを実行して、電源管理機能の設定
 
-同様に、WDF のクライアント ドライバーは受信しません[ **OID_PM_PARAMETERS** ](https://msdn.microsoft.com/library/windows/hardware/ff569768)クエリまたは電源管理を設定するには、ネットワーク アダプターのハードウェア機能。
+同様に、WDF のクライアント ドライバーは受信しません[ **OID_PM_PARAMETERS** ](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pm-parameters)クエリまたは電源管理を設定するには、ネットワーク アダプターのハードウェア機能。
 
 代わりに、ドライバーは、NETPOWERSETTINGS オブジェクトから、必要な wake on LAN (WoL) 構成を照会します。 詳細については、次を参照してください。[電源管理の構成](configuring-power-management.md)します。
 
 返される実際のフラグは、ロジックに詳細な変更を加える必要はありませんので、6 の NDIS ミニポートの場合と同じセマンティクスを持ちます。 主な違いは、電源ダウン シーケンス中にこれらのフラグを照会できますようになりましたことです。 参照してください[NetAdapterCx クライアント ドライバーの電源切断シーケンス](power-down-sequence-for-a-netadaptercx-client-driver.md)します。
 
-OID のハンドラーを削除するには、このコードの周りを移動した後[ *OID_PNP_SET_POWER* ](https://msdn.microsoft.com/library/windows/hardware/ff569780)と[ *OID_PM_PARAMETERS*](https://msdn.microsoft.com/library/windows/hardware/ff569768)します。
+OID のハンドラーを削除するには、このコードの周りを移動した後[ *OID_PNP_SET_POWER* ](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power)と[ *OID_PM_PARAMETERS*](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pm-parameters)します。
 
 NetAdapter フレームワークは、ホスト、ネットワーク インターフェイスを使用しますが、D0 でデバイスを繰り返し、ためクライアント通常実装しません power ロジック。既定の NetAdapter 電源動作で十分です。
 
@@ -153,14 +153,14 @@ NetAdapter フレームワークは、ホスト、ネットワーク インタ�
   * A [ **NET_PACKET_FRAGMENT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netpacket/ns-netpacket-_net_packet_fragment)メモリ記述子のリスト (MDL) に似ています。 各[ **NET_PACKET** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netpacket/ns-netpacket-_net_packet)がこれらの 1 つ以上。
   * 置換構造とその使用方法の詳細については、次を参照してください。[パケット記述子と拡張機能](packet-descriptors-and-extensions.md)します。
 * Ndis 6.x、ミニポートは開始の処理し、セマンティクスを一時停止する必要があります。 NetAdapterCx モデルで、これは不要になった場合です。
-* [ *EVT_RXQUEUE_ADVANCE* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netrxqueue/nc-netrxqueue-evt_rxqueue_advance)コールバックはのような[ **MINIPORT_RETURN_NET_BUFFER_LISTS** ](https://msdn.microsoft.com/library/windows/hardware/ff559437) ndis 6.x します。
-* [ *EVT_TXQUEUE_ADVANCE* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/nettxqueue/nc-nettxqueue-evt_txqueue_advance)コールバックはのような[ **MINIPORT_SEND_NET_BUFFER_LISTS** ](https://msdn.microsoft.com/library/windows/hardware/ff559440) ndis 6.x します。
+* [ *EVT_RXQUEUE_ADVANCE* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netrxqueue/nc-netrxqueue-evt_rxqueue_advance)コールバックはのような[ **MINIPORT_RETURN_NET_BUFFER_LISTS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_return_net_buffer_lists) ndis 6.x します。
+* [ *EVT_TXQUEUE_ADVANCE* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/nettxqueue/nc-nettxqueue-evt_txqueue_advance)コールバックはのような[ **MINIPORT_SEND_NET_BUFFER_LISTS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_send_net_buffer_lists) ndis 6.x します。
 
 ## <a name="device-removal"></a>デバイスの削除
 
 WDF NIC ドライバーのデバイスの削除は、その他の WDF デバイス ドライバー、必要なネットワーク特定処理なしでの場合と同様です。 WDF デバイスで最初に、ネットワークのデータ パスがシャット ダウンの後にします。 WDF のシャット ダウンについては、次を参照してください。[ユーザーがデバイスから切り離し](../wdf/a-user-unplugs-a-device.md)します。
 
-*MiniportHaltEx*ハンドラーがの間で配布される可能性があります[ *EVT_WDF_DEVICE_D0_EXIT* ](https://msdn.microsoft.com/library/windows/hardware/ff540855)と[ *EVT_WDF_DEVICE_RELEASE_ハードウェア*](https://msdn.microsoft.com/library/windows/hardware/ff540890)します。
+*MiniportHaltEx*ハンドラーがの間で配布される可能性があります[ *EVT_WDF_DEVICE_D0_EXIT* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_exit)と[ *EVT_WDF_DEVICE_RELEASE_ハードウェア*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_release_hardware)します。
 
 WDF のクライアントは、NetAdapter または作成した OID とデータパス キューのいずれかを削除する必要はありません。 WDF では、これらのオブジェクトが自動的に削除します。
 

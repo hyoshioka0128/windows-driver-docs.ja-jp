@@ -4,12 +4,12 @@ description: このトピックでは、I8042prt、Microsoft Windows 2000 以降
 ms.assetid: BB1046EE-8780-46ED-8CEB-63110643D325
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 06c6dffc2bc630b40207d25fac8db7e2e545dad8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: de2287a99dfb610f85bd8cdf5053e1a0280d8a17
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365358"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385811"
 ---
 # <a name="ps2-i8042prt-driver"></a>PS/2 (i8042prt) ドライバー
 
@@ -28,27 +28,27 @@ I8042prt の機能は次のとおりです。
 
 -   レガシ デバイスの操作です。
 
--   接続、[クラス サービス コールバック ルーチンをキーボード](https://msdn.microsoft.com/library/windows/hardware/ff542274)と[クラス サービス コールバック ルーチンをマウス](https://msdn.microsoft.com/library/windows/hardware/ff542363)します。
+-   接続、[クラス サービス コールバック ルーチンをキーボード](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/kbdmou/nc-kbdmou-pservice_callback_routine)と[クラス サービス コールバック ルーチンをマウス](https://docs.microsoft.com/previous-versions/ff542363(v=vs.85))します。
 
     I8042prt では、クラスのサービスのコールバックを使用して、クラス ドライバーのデータ バッファーに I8042prt の入力データのバッファーからデータを転送します。
 
--   ベンダーから提供された追加[ **PI8042\_キーボード\_初期化\_ルーチン**](https://msdn.microsoft.com/library/windows/hardware/ff543243)キーボード デバイス用のコールバック ルーチン。
+-   ベンダーから提供された追加[ **PI8042\_キーボード\_初期化\_ルーチン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntdd8042/nc-ntdd8042-pi8042_keyboard_initialization_routine)キーボード デバイス用のコールバック ルーチン。
 
     省略可能な上位レベルのデバイスのフィルター ドライバーは、コールバック ルーチンを提供します。
 
--   ベンダーから提供された追加[ **PI8042\_キーボード\_ISR** ](https://msdn.microsoft.com/library/windows/hardware/ff543248)コールバック ルーチンと、カスタム[ **PI8042\_マウス\_ISR** ](https://msdn.microsoft.com/library/windows/hardware/ff543252)コールバック ルーチン。
+-   ベンダーから提供された追加[ **PI8042\_キーボード\_ISR** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntdd8042/nc-ntdd8042-pi8042_keyboard_isr)コールバック ルーチンと、カスタム[ **PI8042\_マウス\_ISR** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntdd8042/nc-ntdd8042-pi8042_mouse_isr)コールバック ルーチン。
 
     省略可能な上位レベルのデバイスのフィルター ドライバーは、これらのコールバック ルーチンを提供します。
 
--   [キーボードの書き込みバッファー要求](https://msdn.microsoft.com/library/windows/hardware/ff541263)と[マウス書き込みバッファー要求](https://msdn.microsoft.com/library/windows/hardware/ff541270)します。
+-   [キーボードの書き込みバッファー要求](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntdd8042/ni-ntdd8042-ioctl_internal_i8042_keyboard_write_buffer)と[マウス書き込みバッファー要求](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntdd8042/ni-ntdd8042-ioctl_internal_i8042_mouse_write_buffer)します。
 
     その他の読み取りし、デバイスで書き込みし、上位レベルのデバイスのフィルター ドライバーとデバイスの ISR デバイスへの書き込みを同期するバッファーの書き込み要求を使用できます。
 
--   [キーボードの開始情報要求](https://msdn.microsoft.com/library/windows/hardware/ff541257)と[マウス開始情報要求](https://msdn.microsoft.com/library/windows/hardware/ff541265)します。
+-   [キーボードの開始情報要求](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntdd8042/ni-ntdd8042-ioctl_internal_i8042_keyboard_start_information)と[マウス開始情報要求](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntdd8042/ni-ntdd8042-ioctl_internal_i8042_mouse_start_information)します。
 
     開始情報の要求は、上位レベルのフィルター ドライバーへのデバイスの割り込みオブジェクトへのポインターを渡します。 フィルター ドライバーは、デバイスの ISR とその操作を同期するのに割り込みオブジェクトを使用することができます。
 
--   [I8042prt コールバック ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff539965)します。
+-   [I8042prt コールバック ルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)します。
 
     上位レベルのデバイスのフィルター ドライバーは、デバイス、およびデバイスからのデータ パケットをキューに書き込む、デバイスの ISR のコンテキストでコールバック ルーチンを使用できます。
 

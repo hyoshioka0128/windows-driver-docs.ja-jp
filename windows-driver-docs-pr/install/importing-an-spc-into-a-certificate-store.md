@@ -4,12 +4,12 @@ description: 証明書ストアへの SPC のインポート
 ms.assetid: 4640b48c-e56f-4c6b-8943-f8b6fc3e37d7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f60a60c92312a6fb79e66c12e04d80dcc1b81bf6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 22b26a4e5451b969171e9f18671c1d4c1313274b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323348"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385929"
 ---
 # <a name="importing-an-spc-into-a-certificate-store"></a>証明書ストアへの SPC のインポート
 
@@ -38,7 +38,7 @@ certutil -user -p pfxpassword -importPFX abc.pfx
 
 -   **-Importpfx**オプションの名前を指定します、 *.pfx*ファイル (*abc.pfx*)。
 
-1 回、 *.pfx*署名のコンピューター上の個人証明書ストアにファイルをインポート、使用することができます[ **SignTool** ](https://msdn.microsoft.com/library/windows/hardware/ff551778)リリースへの署名を[ドライバーパッケージ](driver-packages.md)します。
+1 回、 *.pfx*署名のコンピューター上の個人証明書ストアにファイルをインポート、使用することができます[ **SignTool** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/signtool)リリースへの署名を[ドライバーパッケージ](driver-packages.md)します。
 
  
 

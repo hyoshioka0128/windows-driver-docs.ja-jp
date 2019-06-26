@@ -6,12 +6,12 @@ keywords:
 - WDK DirectX 9.0 の非ページの表示メモリ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 95ec52f08d2c2adb49bc2adb84fe4b9d43c27be3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 987bdd6d6abd870439a94372dc6fa2bff1bcb357
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380107"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384647"
 ---
 # <a name="allocating-nonpaged-display-memory"></a>非ページ表示メモリの割り当て
 
@@ -21,7 +21,7 @@ ms.locfileid: "63380107"
 
 **このトピックでは、Microsoft Windows XP にのみ以降に適用されます。**
 
-DirectX 9.0 バージョンのディスプレイ ドライバーが呼び出すことができます、 [ **EngAllocMem** ](https://msdn.microsoft.com/library/windows/hardware/ff564176)からシステムのメモリを割り当てるだけでなく、グラフィックス デバイス インターフェイス (GDI) 関数のページの非ページ プールからも対象プール。 非ページ メモリを割り当てるには、ドライバーが、FL を指定する必要があります\_非ページ\_メモリ フラグ、*フラグ*のパラメーター、 **EngAllocMem**呼び出します。 このフラグが指定されていない場合は、システムのページ プールからメモリが割り当てられます。
+DirectX 9.0 バージョンのディスプレイ ドライバーが呼び出すことができます、 [ **EngAllocMem** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engallocmem)からシステムのメモリを割り当てるだけでなく、グラフィックス デバイス インターフェイス (GDI) 関数のページの非ページ プールからも対象プール。 非ページ メモリを割り当てるには、ドライバーが、FL を指定する必要があります\_非ページ\_メモリ フラグ、*フラグ*のパラメーター、 **EngAllocMem**呼び出します。 このフラグが指定されていない場合は、システムのページ プールからメモリが割り当てられます。
 
 Windows 2000 と前から、システムの唯一の許可されている割り当てページ プール
 

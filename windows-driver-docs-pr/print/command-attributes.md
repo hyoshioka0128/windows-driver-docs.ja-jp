@@ -13,12 +13,12 @@ keywords:
 - params
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bff0efceae5936f6a41ba19ffd2c233be0795fcc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cbb7ece877d22ba38be66c5a5763dab7ff02114c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382618"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382057"
 ---
 # <a name="command-attributes"></a>コマンド属性
 
@@ -30,7 +30,7 @@ ms.locfileid: "63382618"
 
 -   プリンターのハードウェアで、操作が実装されている場合、操作を実行するためのハードウェアを原因となるエスケープ シーケンスです。
 
--   コールバック識別子として必要なパラメーター、 [ **IPrintOemUni::CommandCallback** ](https://msdn.microsoft.com/library/windows/hardware/ff554216)メソッドで、操作が実装されている場合、[プラグインでレンダリング](rendering-plug-ins.md)します。
+-   コールバック識別子として必要なパラメーター、 [ **IPrintOemUni::CommandCallback** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni-commandcallback)メソッドで、操作が実装されている場合、[プラグインでレンダリング](rendering-plug-ins.md)します。
 
 -   コマンドを送信する、他のコマンドに対して相対的順序。
 
@@ -52,7 +52,7 @@ ms.locfileid: "63382618"
 <tbody>
 <tr class="odd">
 <td><p><strong><em>CallbackID</strong></p></td>
-<td><p>正の数値があり、レンダリング プラグインでは、に渡される<a href="https://msdn.microsoft.com/library/windows/hardware/ff554216" data-raw-source="[&lt;strong&gt;IPrintOemUni::CommandCallback&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554216)"> <strong>IPrintOemUni::CommandCallback</strong> </a>メソッドとしてその<em>dCmdCbID</em>引数。</p></td>
+<td><p>正の数値があり、レンダリング プラグインでは、に渡される<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni-commandcallback" data-raw-source="[&lt;strong&gt;IPrintOemUni::CommandCallback&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni-commandcallback)"> <strong>IPrintOemUni::CommandCallback</strong> </a>メソッドとしてその<em>dCmdCbID</em>引数。</p></td>
 <td><p>必要な<a href="dynamically-generated-printer-commands.md" data-raw-source="[dynamically generated printer commands](dynamically-generated-printer-commands.md)">プリンター コマンドを動的に生成される</a>します。 有効でない場合 <strong></em>Cmd</strong>を指定します。</p></td>
 </tr>
 <tr class="even">

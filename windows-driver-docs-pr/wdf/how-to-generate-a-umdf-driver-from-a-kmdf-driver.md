@@ -4,12 +4,12 @@ description: このトピックでは、カーネル モード ドライバー �
 ms.assetid: 69B865CF-65D0-4211-951B-6574E27F10BD
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 69cbfe374c5bc881741a320f52e74cfea00ed2fa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 0719ebe553874752cd0da559a9f7ab2b1c427ac0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538393"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382841"
 ---
 # <a name="how-to-convert-a-kmdf-driver-to-a-umdf-2-driver-and-vice-versa"></a>KMDF ドライバーを 2 の UMDF ドライバー (およびその逆) に変換する方法
 
@@ -46,14 +46,14 @@ ms.locfileid: "56538393"
 
 4.  削除するか、条件付きでコンパイルするには、ソース コードを更新 (を使用して、 **\_カーネル\_モード**マクロ) 機能をターゲット ドライバー モデルではサポートされていません。 次に、例を示します。
 
-    -   ドライバーは、WPP トレースを使用している場合は、更新、 [WPP\_INIT\_トレース](https://msdn.microsoft.com/library/windows/hardware/ff556191)マクロ。 このマクロは、ユーザー モードとカーネル モードで別のパラメーターを受け取ります。
+    -   ドライバーは、WPP トレースを使用している場合は、更新、 [WPP\_INIT\_トレース](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556191(v=vs.85))マクロ。 このマクロは、ユーザー モードとカーネル モードで別のパラメーターを受け取ります。
         ```cpp
         WPP_INIT_TRACING ( DriverObject, RegistryPath ); // KMDF
         WPP_INIT_TRACING ( “<MyDriverNameString>” ); // UMDF
         ```
 
-    -   KMDF ドライバーなど WDM ルーチンの呼び出しを変換するかどうか[ **exallocatepoolwithtag に**](https://msdn.microsoft.com/library/windows/hardware/ff544520)など、WDF の対応するメソッドを置き換える[ **WdfMemoryCreate**](https://msdn.microsoft.com/library/windows/hardware/ff548706)します。 同様に、ユーザー モード関数を呼び出す UMDF ドライバーを変換する場合は、これらのカーネル モードのと同じルーチンを置き換えます。
-    -   いくつかのメソッドは、UMDF でのみサポートされていますが、他のユーザー、KMDF でのみサポートされます。 Windows Driver Frameworks (WDF) のすべてのメソッドと、フレームワークの適用性の一覧は、[WDF のコールバックの概要とメソッド](https://msdn.microsoft.com/library/windows/hardware/dn265591)を参照してください。
+    -   KMDF ドライバーなど WDM ルーチンの呼び出しを変換するかどうか[ **exallocatepoolwithtag に**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtag)など、WDF の対応するメソッドを置き換える[ **WdfMemoryCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfmemory/nf-wdfmemory-wdfmemorycreate)します。 同様に、ユーザー モード関数を呼び出す UMDF ドライバーを変換する場合は、これらのカーネル モードのと同じルーチンを置き換えます。
+    -   いくつかのメソッドは、UMDF でのみサポートされていますが、他のユーザー、KMDF でのみサポートされます。 Windows Driver Frameworks (WDF) のすべてのメソッドと、フレームワークの適用性の一覧は、次を参照してください。 [WDF のコールバックの概要とメソッド](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_wdf/)します。
 
  
 

@@ -8,17 +8,17 @@ keywords:
 - 挿入する、Windows ハードウェア エラー アーキテクチャ WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3715863ceb38fb03afcb3d8a4cf0fc8b9c74e046
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ba7305f84ab2d3f05c3ffc5b3d0202fea1994182
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340782"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387162"
 ---
 # <a name="injecting-a-hardware-error"></a>ハードウェア エラーの挿入
 
 
-ユーザー モード アプリケーションは呼び出すことによって、ハードウェア プラットフォームにハードウェア エラーを挿入することができます、 [ **WHEAErrorInjectionMethods::InjectError** ](https://msdn.microsoft.com/library/windows/hardware/ff559518)メソッド。 アプリケーションでは、ハードウェア エラーをテストして、システムのハードウェアのエラー処理機能を検証するハードウェア プラットフォームに挿入します。
+ユーザー モード アプリケーションは呼び出すことによって、ハードウェア プラットフォームにハードウェア エラーを挿入することができます、 [ **WHEAErrorInjectionMethods::InjectError** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_whea/)メソッド。 アプリケーションでは、ハードウェア エラーをテストして、システムのハードウェアのエラー処理機能を検証するハードウェア プラットフォームに挿入します。
 
 次のコード例では、ハードウェア エラーを挿入する方法を示します。
 

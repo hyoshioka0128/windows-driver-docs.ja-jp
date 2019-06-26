@@ -11,12 +11,12 @@ keywords:
 - WDK のバッファーはファイル システム
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a914ddae53fd28edc569b09ee2e17df9abb9045
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7dd037cd9e4886e391678be20a737d54a7389274
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352868"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384807"
 ---
 # <a name="network-redirectors-and-the-file-system-process"></a>ネットワーク リダイレクターとファイル システムの処理
 
@@ -27,13 +27,13 @@ ms.locfileid: "63352868"
 
 非同期の IRP を実行する\_MJ\_書き込み要求、RDBSS またはファイル オブジェクトの FCB リソース (ファイル オブジェクトを変更するための同期オブジェクト) を取得するネットワーク ミニ リダイレクターが必要です。 FCB のリソースが既に別のスレッドによって保持されているし、RDBSS またはネットワークのミニ リダイレクターが FCB のリソースに、ユーザーのスレッドのコンテキスト (FSD) を取得すると、この操作をブロックします。 ファイル システムへの非同期要求をブロックにはなりません。 非同期要求の (IRP\_MJ\_書き込み要求など)、ファイル システム ドライバーは、必要なリソースが使用可能なかどうかを確認して最初に (たとえばネットワーク ミニ-リダイレクターの FCB リソース)。 リソースが使用できないし、ファイル システム ドライバーでは、後で完了するための作業キューに要求をポスト システム ワーカー スレッド (FSP) によって、ファイル システムには、状態が返される場合\_FSD スレッドからの保留します。 ユーザーのアプリケーションに、FSD が状態を返す\_保留中のすぐに、中に、実際の作業は、FSP システム ワーカー スレッドによって処理されます。
 
-ファイル システム ドライバーが FSP に作業をポストする前に、いくつかのタスクを完了する必要があります。 ファイル システム ドライバーは、システムのワーカー スレッドによって作業が完了するために、FSD 内のユーザーのスレッドからのセキュリティ コンテキストをキャプチャする必要があります。 RDBSS はこれを自動的には、 [ **RxFsdPostRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff554472)ネットワークのミニ リダイレクター ルーチン。 このルーチンは、ネットワークのミニ リダイレクターが状態を取得するたびに RDBSS によって呼び出される\_で保留、 **PostRequest** 、RX のメンバー\_コンテキストに設定**TRUE**。 作業が作業キューにポストする場合、ファイル システム ドライバーもを確認してください、ユーザー バッファーがシステムのワーカー スレッドによって後で使用できるようになります。 このタスクを実行する 2 つの方法はあります。
+ファイル システム ドライバーが FSP に作業をポストする前に、いくつかのタスクを完了する必要があります。 ファイル システム ドライバーは、システムのワーカー スレッドによって作業が完了するために、FSD 内のユーザーのスレッドからのセキュリティ コンテキストをキャプチャする必要があります。 RDBSS はこれを自動的には、 [ **RxFsdPostRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxprocs/nf-rxprocs-rxfsdpostrequest)ネットワークのミニ リダイレクター ルーチン。 このルーチンは、ネットワークのミニ リダイレクターが状態を取得するたびに RDBSS によって呼び出される\_で保留、 **PostRequest** 、RX のメンバー\_コンテキストに設定**TRUE**。 作業が作業キューにポストする場合、ファイル システム ドライバーもを確認してください、ユーザー バッファーがシステムのワーカー スレッドによって後で使用できるようになります。 このタスクを実行する 2 つの方法はあります。
 
 1.  ファイル システム ドライバーは、システム ワーカー スレッド (FSP) が、バッファーを後でアクセスできるように、FSP を投稿する前にカーネル メモリ領域にユーザー バッファーをマップできます。 システムのワーカー スレッドによって後でに割り当てられる常にメモリ ページもできるため、FSP 内ユーザー バッファーのロックをファイル システム ドライバーでよく使用される方法です。
 
-2.  ファイル システムは、呼び出し元プロセスのスレッドを FSP を使用して保存でき、システムのワーカー スレッドが、FSP 中にこの呼び出し元のプロセスにアタッチできます。 使用して、 [ **KeStackAttachProcess**](https://msdn.microsoft.com/library/windows/hardware/ff549659)、システム ワーカー スレッドは、ユーザーの呼び出し元プロセスにアタッチしてユーザー バッファーへのアクセスし、ユーザーの使用して呼び出し元プロセスからデタッチし[**KeUnstackDetachProcess** ](https://msdn.microsoft.com/library/windows/hardware/ff549677)作業が完了するとします。
+2.  ファイル システムは、呼び出し元プロセスのスレッドを FSP を使用して保存でき、システムのワーカー スレッドが、FSP 中にこの呼び出し元のプロセスにアタッチできます。 使用して、 [ **KeStackAttachProcess**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-kestackattachprocess)、システム ワーカー スレッドは、ユーザーの呼び出し元プロセスにアタッチしてユーザー バッファーへのアクセスし、ユーザーの使用して呼び出し元プロセスからデタッチし[**KeUnstackDetachProcess** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-keunstackdetachprocess)作業が完了するとします。
 
-RDBSS はユーザーのバッファーでメソッド 1 を使用して自動的にロック、 [ **RxFsdPostRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff554472) IRP のルーチンは、RX 限り要求\_コンテキスト\_フラグ\_いいえ\_PREPOSTING\_が必要ビットが設定されていない、**フラグ**、RX のメンバー\_CONTEXT 構造体。 ユーザー バッファーは、次の要求のロックされます。
+RDBSS はユーザーのバッファーでメソッド 1 を使用して自動的にロック、 [ **RxFsdPostRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxprocs/nf-rxprocs-rxfsdpostrequest) IRP のルーチンは、RX 限り要求\_コンテキスト\_フラグ\_いいえ\_PREPOSTING\_が必要ビットが設定されていない、**フラグ**、RX のメンバー\_CONTEXT 構造体。 ユーザー バッファーは、次の要求のロックされます。
 
 -   IRP\_MJ\_ディレクトリ\_IRP のマイナー関数を使用したコントロール\_MN\_クエリ\_ディレクトリ
 
@@ -53,7 +53,7 @@ RDBSS はユーザーのバッファーでメソッド 1 を使用して自動�
 
 -   IRP\_MJ\_INTERNAL\_DEVICE\_CONTROL
 
-RDBSS のみの非同期呼び出しをサポートする、 **MrxLowIoSubmit**操作の配列。 ネットワークのミニ リダイレクターは、その他の操作を実装する必要がある場合 ([**MRxQueryFileInfo**](https://msdn.microsoft.com/library/windows/hardware/ff550770)など)、非同期の呼び出しとしてネットワークのミニ リダイレクターは FSP に要求を投稿する必要があります。 ネットワークのミニ リダイレクターは要求を受信するかどうかは**MrxQueryFileInfo** 、rx\_コンテキスト\_非同期\_操作ビットが設定で、**フラグ**RX のメンバー\_CONTEXT 構造体、ネットワークのミニ リダイレクターは非同期操作の FSP にこの要求を投稿する必要があります。 操作で、 **MrxQueryFileInfo** 、日常的なネットワーク ミニリダイレクターはまず、ユーザーのスレッドのセキュリティ コンテキストをキャプチャおよびユーザー バッファーをカーネル領域にマップ (または必要をアタッチするシステム ワーカー スレッドを設定します。ユーザーの呼び出しプロセス FSP で実行中に)。 ネットワーク ミニリダイレクターを設定し、 **PostRequest** 、RX のメンバー\_コンテキスト構造体を**TRUE**状態を返すと\_FSD から PENDING。 操作の作業キューにはシステム ワーカー スレッド (FSP) によって、作業を RDBSS によってディスパッチは。
+RDBSS のみの非同期呼び出しをサポートする、 **MrxLowIoSubmit**操作の配列。 ネットワークのミニ リダイレクターは、その他の操作を実装する必要がある場合 ([**MRxQueryFileInfo**](https://docs.microsoft.com/windows-hardware/drivers/ifs/mrxqueryfileinfo)など)、非同期の呼び出しとしてネットワークのミニ リダイレクターは FSP に要求を投稿する必要があります。 ネットワークのミニ リダイレクターは要求を受信するかどうかは**MrxQueryFileInfo** 、rx\_コンテキスト\_非同期\_操作ビットが設定で、**フラグ**RX のメンバー\_CONTEXT 構造体、ネットワークのミニ リダイレクターは非同期操作の FSP にこの要求を投稿する必要があります。 操作で、 **MrxQueryFileInfo** 、日常的なネットワーク ミニリダイレクターはまず、ユーザーのスレッドのセキュリティ コンテキストをキャプチャおよびユーザー バッファーをカーネル領域にマップ (または必要をアタッチするシステム ワーカー スレッドを設定します。ユーザーの呼び出しプロセス FSP で実行中に)。 ネットワーク ミニリダイレクターを設定し、 **PostRequest** 、RX のメンバー\_コンテキスト構造体を**TRUE**状態を返すと\_FSD から PENDING。 操作の作業キューにはシステム ワーカー スレッド (FSP) によって、作業を RDBSS によってディスパッチは。
 
  
 

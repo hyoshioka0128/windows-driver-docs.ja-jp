@@ -12,12 +12,12 @@ keywords:
 - AVStream DMA WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 937dee14c371b241bfff8bcfd19333c6c4d9bef6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9d16c18fb65ac3e735f0965bdaf632f753a53263
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390188"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386694"
 ---
 # <a name="avstream-dma-services"></a>AVStream DMA サービス
 
@@ -27,7 +27,7 @@ ms.locfileid: "63390188"
 
 共通バッファー DMA を実装するまたはダイレクト メモリ アクセス (DMA) を使用する AVStream ミニドライバーを開発するには、ユーザー モード キャプチャ バッファーに直接標準 DMA を実行できます。
 
-どちらの方法は、ドライバーが呼び出すことによって、DMA アダプターを取得を必要としています。 [ **IoGetDmaAdapter**](https://msdn.microsoft.com/library/windows/hardware/ff549220)します。
+どちらの方法は、ドライバーが呼び出すことによって、DMA アダプターを取得を必要としています。 [ **IoGetDmaAdapter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdmaadapter)します。
 
  
 

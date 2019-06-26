@@ -6,12 +6,12 @@ keywords:
 - KSPROPSETID_SynthClock
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b4fc138212d48982333cced8466b1794e6e3e800
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2c9aa608d324bb72650cedc24eee2f443c581611
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332470"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67391554"
 ---
 # <a name="kspropsetidsynthclock"></a>KSPROPSETID\_SynthClock
 
@@ -21,7 +21,7 @@ ms.locfileid: "63332470"
 
 `KSPROPSETID_SynthClock`プロパティ セットを使用して、DirectMusic シンセサイザーをマスターのクロック時間を取得します。 このセットには、DirectMusic フィルター オブジェクトの 1 つのプロパティが含まれています。 Dmu ポート ドライバーでは、このプロパティのハンドラーを実装します。
 
-詳細については、次を参照してください。[マスター クロック](https://msdn.microsoft.com/library/windows/hardware/ff567717)と[シンセサイザー タイミング](https://msdn.microsoft.com/library/windows/hardware/ff538449)します。
+詳細については、次を参照してください。[マスター クロック](https://docs.microsoft.com/windows-hardware/drivers/stream/master-clocks)と[シンセサイザー タイミング](https://docs.microsoft.com/windows-hardware/drivers/audio/synthesizer-timing)します。
 
 このセット内のプロパティ項目が KSPROPERTY によって指定された\_SYNTHCLOCK 列挙値では、ヘッダーで定義されているファイル Dmusprop.h します。
 
@@ -54,7 +54,7 @@ KSPROPERTY\_シンセサイザー\_MASTERCLOCK プロパティを使用して、
 <td align="left"><p>〇</p></td>
 <td align="left"><p>X</p></td>
 <td align="left"><p>フィルター</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564262" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564262)"><strong>KSPROPERTY</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/ff564262(v=vs.85)" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))"><strong>KSPROPERTY</strong></a></p></td>
 <td align="left"><p>ULONGLONG</p></td>
 </tr>
 </tbody>
@@ -68,7 +68,7 @@ KSPROPERTY\_シンセサイザー\_MASTERCLOCK プロパティを使用して、
 
 KSPROPERTY\_シンセサイザー\_MASTERCLOCK プロパティ要求がステータスを返します\_を正常に完了したことを示すために成功します。 それ以外の場合、要求は、適切なエラー状態コードを返します。
 
-詳細については、次を参照してください。[マスター クロック](https://msdn.microsoft.com/library/windows/hardware/ff567717)します。
+詳細については、次を参照してください。[マスター クロック](https://docs.microsoft.com/windows-hardware/drivers/stream/master-clocks)します。
 
  
 

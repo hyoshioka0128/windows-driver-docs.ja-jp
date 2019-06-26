@@ -11,12 +11,12 @@ keywords:
 - デバイスのインストールの種類、WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e86fabffcf0e12708ee9936c2752a9ebf37356c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: de410aa375ad34e75c22a1479e11e6a5f8885165
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348600"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385897"
 ---
 # <a name="software-first-installation"></a>ソフトウェア ファースト インストール
 
@@ -35,7 +35,7 @@ ms.locfileid: "63348600"
 
 -   デバイスが「ホットプラグ」の場合にプラグインするユーザーに通知します。
 
-    バスがホット プラグ通知を提供していない場合は、呼び出すことによって再列挙を開始[ **CM_Reenumerate_DevNode**](https://msdn.microsoft.com/library/windows/hardware/ff539763)します。
+    バスがホット プラグ通知を提供していない場合は、呼び出すことによって再列挙を開始[ **CM_Reenumerate_DevNode**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_reenumerate_devnode)します。
 
 -   デバイスがホット プラグ可能でない場合に、システムの電源をオフに、デバイスを接続、し、システムをオンにユーザーに通知します。
 

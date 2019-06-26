@@ -12,12 +12,12 @@ keywords:
 - QU
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e8daa301886b3d7c0e67a3a8a4589e3f32e075ad
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: eedbbd90727ca5cba19f1675fe5fa2c5bf32fc1e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335359"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384383"
 ---
 # <a name="ndis-supported-wmi-operations"></a>NDIS でサポートされている WMI の操作
 
@@ -29,7 +29,7 @@ NDIS は、次の WMI 操作をサポートしています。
 
 -   アダプターを列挙し、仮想接続 (VC) を列挙します。
 
-    NDIS グローバル Guid を登録します ( [GUID\_NDIS\_ENUMERATE\_アダプター\_EX](https://msdn.microsoft.com/library/windows/hardware/ff552617)と GUID\_NDIS\_ENUMERATE\_VC) wmi を(つまり、ミニポート ドライバーのインスタンス) のすべてのミニポート アダプターを列挙する WMI クライアントを有効にするという名前のすべての VCs とします。 NDIS は、すべての読み込まれたミニポート ドライバーとそのすべての名前付きの VCs を追跡、ため、NDIS はこのような情報のミニポート ドライバーをクエリできません。
+    NDIS グローバル Guid を登録します ( [GUID\_NDIS\_ENUMERATE\_アダプター\_EX](https://docs.microsoft.com/windows-hardware/drivers/network/guid-ndis-enumerate-adapters-ex)と GUID\_NDIS\_ENUMERATE\_VC) wmi を(つまり、ミニポート ドライバーのインスタンス) のすべてのミニポート アダプターを列挙する WMI クライアントを有効にするという名前のすべての VCs とします。 NDIS は、すべての読み込まれたミニポート ドライバーとそのすべての名前付きの VCs を追跡、ため、NDIS はこのような情報のミニポート ドライバーをクエリできません。
 
 -   クエリの 1 つのインスタンスと 1 つのインスタンスの設定
 
@@ -37,7 +37,7 @@ NDIS は、次の WMI 操作をサポートしています。
 
 -   すべてのデータを照会します。
 
-    NDIS 適切なデータを取得し、WMI に GUID のインスタンスのすべての結合されたデータを返すことで特定の GUID のすべてのデータのクエリ要求に応じます。 たとえば、クエリのすべてのデータの要求に対して応答で[GUID\_NDIS\_ENUMERATE\_アダプター\_EX](https://msdn.microsoft.com/library/windows/hardware/ff552617)NDIS が WMI にすべての読み込まれたミニポート ドライバーの一覧を返します。 OID にマップされる GUID のクエリすべてのデータに対して\_GEN\_CO\_XMIT\_PDU\_NDIS が、各接続指向のミニポート ドライバーでは、各 VC の OID を照会し、WMI に組み合わされたデータを返します。 すべてのデータのクエリ要求のオーバーヘッドは非常に高くなる可能性があります、ために、WMI クライアントは、アダプターと VCs 列挙にのみクエリのすべてのデータ要求を使用する必要があります。 アダプターまたは VC 対象を決定した後、クライアントは、個々 のインスタンスの GUID を照会できます。
+    NDIS 適切なデータを取得し、WMI に GUID のインスタンスのすべての結合されたデータを返すことで特定の GUID のすべてのデータのクエリ要求に応じます。 たとえば、クエリのすべてのデータの要求に対して応答で[GUID\_NDIS\_ENUMERATE\_アダプター\_EX](https://docs.microsoft.com/windows-hardware/drivers/network/guid-ndis-enumerate-adapters-ex)NDIS が WMI にすべての読み込まれたミニポート ドライバーの一覧を返します。 OID にマップされる GUID のクエリすべてのデータに対して\_GEN\_CO\_XMIT\_PDU\_NDIS が、各接続指向のミニポート ドライバーでは、各 VC の OID を照会し、WMI に組み合わされたデータを返します。 すべてのデータのクエリ要求のオーバーヘッドは非常に高くなる可能性があります、ために、WMI クライアントは、アダプターと VCs 列挙にのみクエリのすべてのデータ要求を使用する必要があります。 アダプターまたは VC 対象を決定した後、クライアントは、個々 のインスタンスの GUID を照会できます。
 
 -   EVENT NOTIFICATION
 

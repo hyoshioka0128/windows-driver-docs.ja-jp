@@ -8,12 +8,12 @@ keywords:
 - 信頼されたルート証明機関証明書ストア WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cdc4e2019f175e1e7c95748a3b5ab339651bbcd6
-ms.sourcegitcommit: 91b989fc3256267fab89c36b1fa54ff039dcc687
+ms.openlocfilehash: 34103f959c1eb1f1e85583721af3719935702f00
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/15/2019
-ms.locfileid: "67148519"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385526"
 ---
 # <a name="trusted-root-certification-authorities-certificate-store"></a>信頼されたルート証明機関の証明書ストア
 
@@ -32,7 +32,7 @@ Windows Vista 以降、プラグ アンド プレイ (PnP) マネージャーは
 
 有効なデジタル署名することによって信頼性との整合性を[ドライバー パッケージ](driver-packages.md)します。 ただし、必ずしも、エンドユーザーまたはシステム管理者を暗黙で信頼ソフトウェア発行元。 ユーザーまたは管理者は、インストールまたはソフトウェア発行者およびアプリケーションの知識に基づいて、ケースの単位でアプリケーションを実行するかどうかを決定する必要があります。 既定では、発行元は、信頼済みでその証明書がインストールされている場合にのみ、[信頼された発行元証明書ストア](trusted-publishers-certificate-store.md)します。
 
-信頼されたルート証明機関の証明書ストアの名前は*ルート。* 使用して、プライベート CA のルート証明書をコンピューターの信頼されたルート証明機関証明書ストアに手動でインストールすることができます、 [ **CertMgr** ](https://msdn.microsoft.com/library/windows/hardware/ff543411)ツール。
+信頼されたルート証明機関の証明書ストアの名前は*ルート。* 使用して、プライベート CA のルート証明書をコンピューターの信頼されたルート証明機関証明書ストアに手動でインストールすることができます、 [ **CertMgr** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/certmgr)ツール。
 
 **注**  ドライバーの PnP マネージャーによって使用される検証ポリシーの署名は、プライベート CA のルート証明書がローカル コンピューターのバージョンのルート証明機関で以前にインストールされている必要があります証明書ストア。 詳細については、次を参照してください。[ローカル マシンと現在のユーザー証明書ストア](local-machine-and-current-user-certificate-stores.md)します。
 

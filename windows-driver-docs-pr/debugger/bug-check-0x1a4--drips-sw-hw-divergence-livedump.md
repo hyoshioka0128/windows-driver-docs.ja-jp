@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d357205ba44673b04c6d79eb2e8f11248e51d63b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7e2fc175a21893bb41b306e5199447c81d0fbd6a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362414"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367622"
 ---
 # <a name="bug-check-bug-check-0x1a4-dripsswhwdivergencelivedump"></a>チェックのバグ チェック 0x1A4 をバグします。DRIPS\_SW\_HW\_相違\_LIVEDUMP 
 
@@ -28,7 +28,7 @@ DRIPS\_SW\_HW\_相違\_LIVEDUMP ライブ ダンプが 0x000001A4 の値を持�
 (このコードは、実際のバグチェックには使用されません。 ライブ ダンプの識別に使用されます)。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="dripsswhwdivergencelivedump-parameters"></a>DRIPS\_SW\_HW\_相違\_LIVEDUMP パラメーター

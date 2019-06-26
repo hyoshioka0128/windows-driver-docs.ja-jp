@@ -11,12 +11,12 @@ keywords:
 - 現在の Irql を発生させる
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c5ccf8f8be7cfbed04a95732a4101a05d5f923b6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1805e5f89e8698e632aa42393ec75d93d207aa9a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342720"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384987"
 ---
 # <a name="disabling-apcs"></a>APC の無効化
 
@@ -31,9 +31,9 @@ ms.locfileid: "63342720"
 
 これらの設定が、現在のスレッドに適用され、他のスレッドの動作には影響しないことに注意してください。
 
-特定の種類の Apc を無効になっているとは、いくつかのドライバー サポート ルーチンを呼び出す必要があります。 Executive のリソースを取得するルーチンなど (など[ **ExAcquireResourceSharedLite**](https://msdn.microsoft.com/library/windows/hardware/ff544363)) 呼び出す通常カーネル Apc を無効になっている必要があります。 特定の種類の Apc が有効になっていると、その他のルーチンを呼び出す必要があります。 たとえば、任意のルーチン、I/O 完了ルーチンに依存している (など[ **IoVolumeDeviceToDosName**](https://msdn.microsoft.com/library/windows/hardware/ff550422)) 特別なカーネル Apc が有効になっているで呼び出す必要があります。 各ルーチンは、ドキュメントでは、ルーチンが、APC 実行の状態に関する特定の制約がかどうかを指定します。
+特定の種類の Apc を無効になっているとは、いくつかのドライバー サポート ルーチンを呼び出す必要があります。 Executive のリソースを取得するルーチンなど (など[ **ExAcquireResourceSharedLite**](https://msdn.microsoft.com/library/windows/hardware/ff544363)) 呼び出す通常カーネル Apc を無効になっている必要があります。 特定の種類の Apc が有効になっていると、その他のルーチンを呼び出す必要があります。 たとえば、任意のルーチン、I/O 完了ルーチンに依存している (など[ **IoVolumeDeviceToDosName**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-iovolumedevicetodosname)) 特別なカーネル Apc が有効になっているで呼び出す必要があります。 各ルーチンは、ドキュメントでは、ルーチンが、APC 実行の状態に関する特定の制約がかどうかを指定します。
 
-ドライバーは、適切なルーチンを呼び出すことによって、重要なまたは保護された領域を明示的に入力できます。 詳細については、次を参照してください。[クリティカル領域および領域の保護された](critical-regions-and-guarded-regions.md)します。 ドライバーは APC を現在の IRQL を上げることができますも明示的に\_呼び出してレベル[ **KeRaiseIrql**](https://msdn.microsoft.com/library/windows/hardware/ff553079)します。 ドライバーを呼び出して元の値に IRQL を下げる必要があります、その後[ **KeLowerIrql**](https://msdn.microsoft.com/library/windows/hardware/ff552968)します。 現在の IRQL では、値の増減により高速では保護された領域の使用が、保護された領域は Windows Server 2003 以降のバージョンの Windows で利用できますのみ。
+ドライバーは、適切なルーチンを呼び出すことによって、重要なまたは保護された領域を明示的に入力できます。 詳細については、次を参照してください。[クリティカル領域および領域の保護された](critical-regions-and-guarded-regions.md)します。 ドライバーは APC を現在の IRQL を上げることができますも明示的に\_呼び出してレベル[ **KeRaiseIrql**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keraiseirql)します。 ドライバーを呼び出して元の値に IRQL を下げる必要があります、その後[ **KeLowerIrql**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kelowerirql)します。 現在の IRQL では、値の増減により高速では保護された領域の使用が、保護された領域は Windows Server 2003 以降のバージョンの Windows で利用できますのみ。
 
 ミュー テックスの次の操作では、入力または重大または保護された領域を離れることまたは発生または現在の IRQL を下げると同じ効果があります。
 

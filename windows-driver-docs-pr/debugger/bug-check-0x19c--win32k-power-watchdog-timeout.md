@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 65dca129b435e15d8289e31d9c562c8d9b3719d2
-ms.sourcegitcommit: 187418c1a52a67efa533462eec760bab9b7f6957
+ms.openlocfilehash: de3eadd382d6321fcc0737bb41a1abaa8b99b47e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67192698"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367637"
 ---
 # <a name="bug-check-0x19c-win32kpowerwatchdogtimeout"></a>バグ チェック 0x19C:WIN32K\_POWER\_ウォッチドッグ\_タイムアウト
 
@@ -26,7 +26,7 @@ ms.locfileid: "67192698"
 WIN32K\_POWER\_ウォッチドッグ\_バグ チェックのタイムアウトが 0x0000019C の値を持ちます。 Win32k しなかったにしないこと、モニター適切なタイミングでこれを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="win32kpowerwatchdogtimeout-parameters"></a>WIN32K\_POWER\_ウォッチドッグ\_タイムアウト パラメーター

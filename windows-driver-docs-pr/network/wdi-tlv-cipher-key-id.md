@@ -6,17 +6,17 @@ ms.date: 07/18/2017
 keywords:
 - WDI_TLV_CIPHER_KEY_ID ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: a6abe0f2d217250b3b645a9a9d06ea38ffab2dde
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3d359e762aeca4351a855b151d3891a4eb9b60cc
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391012"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387187"
 ---
 # <a name="wditlvcipherkeyid"></a>WDI\_TLV\_暗号\_キー\_ID
 
 
-WDI\_TLV\_暗号\_キー\_ID を含む、暗号 TLV は、キーの ID [OID\_WDI\_設定\_追加\_暗号\_キー](https://msdn.microsoft.com/library/windows/hardware/dn925855)と[OID\_WDI\_設定\_削除\_暗号\_キー](https://msdn.microsoft.com/library/windows/hardware/dn925929)します。
+WDI\_TLV\_暗号\_キー\_ID を含む、暗号 TLV は、キーの ID [OID\_WDI\_設定\_追加\_暗号\_キー](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-set-add-cipher-keys)と[OID\_WDI\_設定\_削除\_暗号\_キー](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-set-delete-cipher-keys)します。
 
 ## <a name="tlv-type"></a>TLV 型
 
@@ -37,7 +37,7 @@ Uint32 型のサイズをバイト単位で。
 
  
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

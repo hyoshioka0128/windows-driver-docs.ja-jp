@@ -9,12 +9,12 @@ keywords:
 - 効果サブキー WDK フォース フィードバック
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: c45de6bfdd67ee517dfeac41acb3292dcd57ba9d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cd068521e1b0eecbf9c1518515808374f10d4fe6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373005"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381053"
 ---
 # <a name="oemforcefeedback-registry-settings"></a>OEMForceFeedback レジストリ設定
 
@@ -28,7 +28,7 @@ ms.locfileid: "63373005"
 
 新しい**OEMForceFeedback**フォース フィードバックの特定のキーと値を保持するためにキーが定義されています。 このキーの下では、**効果**ごとの 2 つの値を格納しているサブキー。
 
-で、**効果**サブキーが各効果の 1 つのサブキーの一覧を示します。 各サブキーの名前は、フォームのグローバル一意識別子 (GUID)"{12345678-1234-1234-1234-123456789012}"。 「{...}」をという名前のキーの下にあります。 2 つの値です。 既定値は、結果の文字列のフレンドリ名です。 **属性**値は、 [ **DIEFFECTATTRIBUTES** ](https://msdn.microsoft.com/library/windows/hardware/ff538456)構造体。
+で、**効果**サブキーが各効果の 1 つのサブキーの一覧を示します。 各サブキーの名前は、フォームのグローバル一意識別子 (GUID)"{12345678-1234-1234-1234-123456789012}"。 「{...}」をという名前のキーの下にあります。 2 つの値です。 既定値は、結果の文字列のフレンドリ名です。 **属性**値は、 [ **DIEFFECTATTRIBUTES** ](https://docs.microsoft.com/windows/desktop/api/dinputd/ns-dinputd-dieffectattributes)構造体。
 
 ```cpp
 "{guid1}"
@@ -49,7 +49,7 @@ ms.locfileid: "63373005"
 
 省略可能な値の名前を示すインターフェイスの形式が使用されます。 場合、 **CLSID**値が存在する必要があります形式で GUID を含む文字列値を"{12345678-1234-1234-1234-123456789012}"ドライバー インターフェイスを提供する COM オブジェクト。 場合、 **VJoyD**値が存在するを使用するデバイスに関連付けられている VJoyD ミニドライバーの余分なコールバック ドライバー インターフェイスを指定する必要があることを示す、長さ 0 のバイナリ値になります。 値は、実装されると、ヒューマン インターフェイス デバイス (HID) はドライバー インターフェイスを提供します。 を示すために追加されます。
 
-デバイスは、定義済みのカテゴリのいずれにも該当しないハードウェアの効果をサポートしている場合 (DIEFT\_CONSTANTFORCE、DIEFT\_RAMPFORCE、DIEFT\_定期的、DIEFT\_条件、または DIEFT\_CUSTOMFORCE)、次に、 [ **DIEFFECTATTRIBUTES** ](https://msdn.microsoft.com/library/windows/hardware/ff538456)効果 DIEFT を指定する必要があります構造体\_エフェクトの種類とハードウェア。
+デバイスは、定義済みのカテゴリのいずれにも該当しないハードウェアの効果をサポートしている場合 (DIEFT\_CONSTANTFORCE、DIEFT\_RAMPFORCE、DIEFT\_定期的、DIEFT\_条件、または DIEFT\_CUSTOMFORCE)、次に、 [ **DIEFFECTATTRIBUTES** ](https://docs.microsoft.com/windows/desktop/api/dinputd/ns-dinputd-dieffectattributes)効果 DIEFT を指定する必要があります構造体\_エフェクトの種類とハードウェア。
 
 デバイスが (前の段落に記載) 定義済みのカテゴリのいずれかに該当するハードウェアの効果をサポートしてが (DICONSTANTFORCE、DIRAMPFORCE、標準の種類に固有のデータ構造の一部ではない追加のパラメーターを受け取りますDIPERIODIC、DICONDITION、または DICUSTOMFORCE) これらの構造については、DirectInput のセクションの DirectX ソフトウェア開発キット (SDK) を参照してください。 このような場合は、次のように、効果が表示されます。
 

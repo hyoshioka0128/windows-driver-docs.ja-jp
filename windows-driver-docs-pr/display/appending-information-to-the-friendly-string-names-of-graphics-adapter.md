@@ -10,12 +10,12 @@ keywords:
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
-ms.openlocfilehash: a2828317136a7c3be2b23310a2b28f59778f7b2d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c683f9e92d8140cf3630c880965ee18da38a0b0d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63385034"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384641"
 ---
 # <a name="appending-information-to-the-friendly-string-names-of-graphics-adapters"></a>グラフィックス アダプターのわかりやすい文字列名に情報を追加
 
@@ -34,7 +34,7 @@ Windows Display Driver Model (WDDM) の"(Microsoft Corporation の WDDM)"を追�
 New Driver Model Foo Device Name (Microsoft Corporation - WDDM)
 ```
 
-詳細については、*文字列*セクションおよび *%strkey* 、INF で他の場所で指定されているトークンを参照してください[ **INF 文字列セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547485).
+詳細については、*文字列*セクションおよび *%strkey* 、INF で他の場所で指定されているトークンを参照してください[ **INF 文字列セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-strings-section).
 
  
 

@@ -7,12 +7,12 @@ keywords:
 - OID_WDI_TASK_DOT11_RESET ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: c051f1df5631ebbca54ba0e63705c38d94de7723
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0f1f542cdb1c496fac86081a07ac9e558aa5cf4d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383590"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386214"
 ---
 # <a name="oidwditaskdot11reset"></a>OID\_WDI\_タスク\_DOT11\_リセット
 
@@ -43,8 +43,8 @@ Dot11 リセットは、802.11 MLME と PLME リセット プリミティブの�
 
 | TLV                                                                               | 許可されている複数の TLV インスタンス | 省略可能 | 説明                                       |
 |-----------------------------------------------------------------------------------|--------------------------------|----------|---------------------------------------------------|
-| [**WDI\_TLV\_DOT11\_リセット\_パラメーター**](https://msdn.microsoft.com/library/windows/hardware/dn926302) |                                |          | Dot11 リセットのパラメーターです。                   |
-| [**WDI\_TLV\_構成済み\_MAC\_アドレス**](https://msdn.microsoft.com/library/windows/hardware/dn926257) |                                | x        | MAC アドレス、ポートに使用する必要があります。 |
+| [**WDI\_TLV\_DOT11\_リセット\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-dot11-reset-parameters) |                                |          | Dot11 リセットのパラメーターです。                   |
+| [**WDI\_TLV\_構成済み\_MAC\_アドレス**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-configured-mac-address) |                                | x        | MAC アドレス、ポートに使用する必要があります。 |
 
  
 

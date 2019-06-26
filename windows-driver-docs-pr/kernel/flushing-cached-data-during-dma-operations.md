@@ -9,12 +9,12 @@ keywords:
 - キャッシュされたデータのフラッシュ
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ca5160347d97edd817c43e2df691acf9491420d1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cee326a8f5df5ed787a0e1e55be193b010c77b9c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359983"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386593"
 ---
 # <a name="flushing-cached-data-during-dma-operations"></a>DMA 操作中のキャッシュ データのフラッシュ
 
@@ -22,7 +22,7 @@ ms.locfileid: "63359983"
 
 
 
-一部のプラットフォームで、プロセッサおよび DMA コント ローラーのシステム上 (または各バス マスター DMA アダプター) キャッシュ コヒレンシー異常が発生します。 次のガイドラインは、バージョン 1 または 2 の DMA 操作のインターフェイスを使用するドライバーを有効にする (を参照してください[ **DMA\_操作**](https://msdn.microsoft.com/library/windows/hardware/ff544071)) サポートされているすべてのプロセッサ全体で一貫性のあるキャッシュの状態を維持するにはこのアーキテクチャでは、自動的にキャッシュの一貫性を強制するハードウェアを含まないアーキテクチャを含むです。
+一部のプラットフォームで、プロセッサおよび DMA コント ローラーのシステム上 (または各バス マスター DMA アダプター) キャッシュ コヒレンシー異常が発生します。 次のガイドラインは、バージョン 1 または 2 の DMA 操作のインターフェイスを使用するドライバーを有効にする (を参照してください[ **DMA\_操作**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_dma_operations)) サポートされているすべてのプロセッサ全体で一貫性のあるキャッシュの状態を維持するにはこのアーキテクチャでは、自動的にキャッシュの一貫性を強制するハードウェアを含まないアーキテクチャを含むです。
 
 **注**  DMA 操作のインターフェイスのバージョン 1 および 2 を使用するドライバーにのみ、このトピックのガイドラインが適用されます。 このインターフェイスのバージョン 3 を使用するドライバーは、異なる一連のガイドラインに従う必要があります。 詳細については、次を参照してください。 [DMA 操作のインターフェイスのバージョン 3](version-3-of-the-dma-operations-interface.md)します。
 
@@ -30,11 +30,11 @@ ms.locfileid: "63359983"
 
 **DMA 操作中にデータの整合性を維持するために最下位レベルのドライバーに次のガイドラインに従います**
 
-1.  呼び出す[ **KeFlushIoBuffers** ](https://msdn.microsoft.com/library/windows/hardware/ff552041)プロセッサでキャッシュされる可能性がデータとメモリ内のデータ間の一貫性を維持するために、転送操作を開始する前にします。
+1.  呼び出す[ **KeFlushIoBuffers** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keflushiobuffers)プロセッサでキャッシュされる可能性がデータとメモリ内のデータ間の一貫性を維持するために、転送操作を開始する前にします。
 
-    ドライバーを呼び出す場合[ **AllocateCommonBuffer** ](https://msdn.microsoft.com/library/windows/hardware/ff540575)で、 *CacheEnabled*パラメーターに設定**TRUE**ドライバーはを呼び出す必要があります**KeFlushIoBuffers**と、バッファーからの転送操作を開始する前にします。
+    ドライバーを呼び出す場合[ **AllocateCommonBuffer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pallocate_common_buffer)で、 *CacheEnabled*パラメーターに設定**TRUE**ドライバーはを呼び出す必要があります**KeFlushIoBuffers**と、バッファーからの転送操作を開始する前にします。
 
-2.  呼び出す[ **FlushAdapterBuffers** ](https://msdn.microsoft.com/library/windows/hardware/ff545917)各デバイスの転送操作の最後に必ずシステム DMA コント ローラーのバッファーの残りの部分 (バイト) が書き込まれたメモリにまたは下位のデバイスにします。
+2.  呼び出す[ **FlushAdapterBuffers** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pflush_adapter_buffers)各デバイスの転送操作の最後に必ずシステム DMA コント ローラーのバッファーの残りの部分 (バイト) が書き込まれたメモリにまたは下位のデバイスにします。
 
     か、または、 **FlushAdapterBuffers**特定の IRP の各転送操作の最後に必ずすべてのデータ システム メモリに読み込まれるまたはされたバス マスター DMA のデバイスに書き込まれます。
 

@@ -9,12 +9,12 @@ keywords:
 - プロファイル データの WDK ネットワーク
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f5badb786fbf0e7e8197f7abc24f7ba830aaa87
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.openlocfilehash: 926dfd62e3405a376a7148da77ff0549dbab8c14
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59903330"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384426"
 ---
 # <a name="accessing-profile-and-context-data"></a>プロファイルとコンテキスト データへのアクセス
 
@@ -25,7 +25,7 @@ ms.locfileid: "59903330"
 
 802.11 IHV UI 拡張機能のネイティブ DLL でサポートされているカスタム ユーザー インターフェイス (UI) は、いずれかで表示できます。
 
--   呼び出し[ **Dot11ExtSendUIRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff547567) 802.11 IHV 拡張機能のネイティブ DLL によって行われました。 このプロセスの詳細については、次を参照してください。[カスタム UI の表示を要求する](requesting-the-display-of-a-custom-ui.md)します。
+-   呼び出し[ **Dot11ExtSendUIRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11ext_send_ui_request) 802.11 IHV 拡張機能のネイティブ DLL によって行われました。 このプロセスの詳細については、次を参照してください。[カスタム UI の表示を要求する](requesting-the-display-of-a-custom-ui.md)します。
 
 -   ネイティブ 802.11 IHV 拡張 DLL の呼び出し*Dot11ExtQueryUIRequest*オペレーティング システムによって行われた IHV ハンドラー関数。 このプロセスの詳細については、次を参照してください。[カスタム UI を表示するためのクエリ](querying-for-the-display-of-a-custom-ui.md)します。
 
@@ -37,13 +37,13 @@ ms.locfileid: "59903330"
 プロファイル データへのアクセスは、**読み取り**と**書き込み**のメソッド、 [IPropertyBag COM インターフェイス](https://go.microsoft.com/fwlink/p/?linkid=56610)という名前のプロパティの**IHV\_プロファイル\_データ**します。
 
 <a href="" id="context-data"></a>**コンテキスト データ**  
-ネイティブの 802.11 IHV 拡張機能の DLL によってカスタム UI を指定します、 [ **DOT11EXT\_IHV\_UI\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff547637)構造体は、両方の引数として渡される、[ **Dot11ExtSendUIRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff547567)と[ *Dot11ExtIhvQueryUIRequest* ](https://msdn.microsoft.com/library/windows/hardware/ff547507)関数。 DOT11EXT 内\_IHV\_UI\_、IHV が提供できる要求の構造 (を通じて、 **pvUIRequest**メンバー) にカスタム UI 固有のコンテキスト データ。 通常、IHV は、カスタム UI の既定の設定では、このデータを書式設定します。
+ネイティブの 802.11 IHV 拡張機能の DLL によってカスタム UI を指定します、 [ **DOT11EXT\_IHV\_UI\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/ns-wlanihv-_dot11ext_ihv_ui_request)構造体は、両方の引数として渡される、[ **Dot11ExtSendUIRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11ext_send_ui_request)と[ *Dot11ExtIhvQueryUIRequest* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_query_ui_request)関数。 DOT11EXT 内\_IHV\_UI\_、IHV が提供できる要求の構造 (を通じて、 **pvUIRequest**メンバー) にカスタム UI 固有のコンテキスト データ。 通常、IHV は、カスタム UI の既定の設定では、このデータを書式設定します。
 
 プロファイル データへのアクセスは、**読み取り**と**書き込み**のメソッド、 [IPropertyBag COM インターフェイス](https://go.microsoft.com/fwlink/p/?linkid=56610)という名前のプロパティの**IHV\_通知\_データ**します。
 
-802.11 IHV UI 拡張機能のネイティブ DLL にアクセスする、 [IPropertyBag COM インターフェイス](https://go.microsoft.com/fwlink/p/?linkid=56610)を通じて、 *IUnknown*によって返されるポインター、 [ **IObjectWithSite::SetSite** ](https://msdn.microsoft.com/library/windows/desktop/ms683869)メソッド。 詳細については、次を参照してください。 [ **IObjectWithSite**](https://msdn.microsoft.com/library/windows/desktop/ms693765)します。
+802.11 IHV UI 拡張機能のネイティブ DLL にアクセスする、 [IPropertyBag COM インターフェイス](https://go.microsoft.com/fwlink/p/?linkid=56610)を通じて、 *IUnknown*によって返されるポインター、 [ **IObjectWithSite::SetSite** ](https://docs.microsoft.com/windows/desktop/api/ocidl/nf-ocidl-iobjectwithsite-setsite)メソッド。 詳細については、次を参照してください。 [ **IObjectWithSite**](https://docs.microsoft.com/windows/desktop/api/ocidl/nn-ocidl-iobjectwithsite)します。
 
-IPropertyBag COM インターフェイスの代わりに、802.11 IHV UI 拡張機能のネイティブ DLL にアクセスできる、 **IHV\_プロファイル\_データ**と**IHV\_通知\_データ**プロパティを通じて、 [ **GetProp** ](https://msdn.microsoft.com/library/windows/desktop/ms633564) Win32 関数。 このような状況で次の例に示すように、DLL は、親ウィンドウのハンドルを使用する必要があります。
+IPropertyBag COM インターフェイスの代わりに、802.11 IHV UI 拡張機能のネイティブ DLL にアクセスできる、 **IHV\_プロファイル\_データ**と**IHV\_通知\_データ**プロパティを通じて、 [ **GetProp** ](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-getpropa) Win32 関数。 このような状況で次の例に示すように、DLL は、親ウィンドウのハンドルを使用する必要があります。
 
 ```C++
 LPWSTR lpszBuffer = (LPWSTR) GetProp(GetParent(hwndDlg), L"IHV_PROFILE_DATA");

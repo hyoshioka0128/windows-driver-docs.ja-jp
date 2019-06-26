@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cf7a790767107a310c53e531f18477aedd587a2e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5f5fd5ca30842163fd685b1305e977d2e754ad98
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324493"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384811"
 ---
 # <a name="irpmjread"></a>IRP\_MJ\_READ
 
@@ -25,7 +25,7 @@ ms.locfileid: "63324493"
 ## <a name="when-sent"></a>送信時
 
 
-IRP\_MJ\_読み取り I/O マネージャーによって、またはファイル システム ドライバーによって要求が送信されます。 この要求を送信できますなど、ユーザー モード アプリケーションには、Microsoft Win32 関数が呼び出されるとなど**ReadFile**、カーネル モード コンポーネントが呼び出されたときまたは[ **ZwReadFile** ](https://msdn.microsoft.com/library/windows/hardware/ff567072).
+IRP\_MJ\_読み取り I/O マネージャーによって、またはファイル システム ドライバーによって要求が送信されます。 この要求を送信できますなど、ユーザー モード アプリケーションには、Microsoft Win32 関数が呼び出されるとなど**ReadFile**、カーネル モード コンポーネントが呼び出されたときまたは[ **ZwReadFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntreadfile).
 
 ## <a name="operation-file-system-drivers"></a>操作:ファイル システム ドライバー
 
@@ -60,7 +60,7 @@ IRP\_MJ\_読み取り I/O マネージャーによって、またはファイル
 ## <a name="parameters"></a>パラメーター
 
 
-ファイル システムまたはフィルター ドライバーは呼び出し[ **IoGetCurrentIrpStackLocation** ](https://msdn.microsoft.com/library/windows/hardware/ff549174)ポインターを取得する、独自の特定の IRP で[**場所スタック**](https://msdn.microsoft.com/library/windows/hardware/ff550659)、IRP として次の一覧に示すように*IrpSp*します。 (IRP が示した*Irp*)。ドライバーは IRP の読み取り要求の処理に IRP スタックの場所は、次のメンバーに含まれる情報を使用できます。
+ファイル システムまたはフィルター ドライバーは呼び出し[ **IoGetCurrentIrpStackLocation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetcurrentirpstacklocation)ポインターを取得する、独自の特定の IRP で[**場所スタック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)、IRP として次の一覧に示すように*IrpSp*します。 (IRP が示した*Irp*)。ドライバーは IRP の読み取り要求の処理に IRP スタックの場所は、次のメンバーに含まれる情報を使用できます。
 
 <a href="" id="deviceobject"></a>*デバイス オブジェクト*  
 
@@ -72,7 +72,7 @@ IRP\_MJ\_読み取り I/O マネージャーによって、またはファイル
 
 <a href="" id="irp--iostatus"></a>*Irp-&gt;IoStatus*  
 
-ポインター、 [ **IO\_状態\_ブロック**](https://msdn.microsoft.com/library/windows/hardware/ff550671)最終的な完了の状態と、要求された操作に関する情報を受け取る。 詳細については、の説明を参照して、 *IoStatusBlock*パラメーターを[ **ZwReadFile**](https://msdn.microsoft.com/library/windows/hardware/ff567072)します。
+ポインター、 [ **IO\_状態\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_status_block)最終的な完了の状態と、要求された操作に関する情報を受け取る。 詳細については、の説明を参照して、 *IoStatusBlock*パラメーターを[ **ZwReadFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntreadfile)します。
 
 <a href="" id="irp--mdladdress"></a>*Irp-&gt;MdlAddress*  
 
@@ -122,7 +122,7 @@ IRP を指定します\_MJ\_を読み取る。
 
 <a href="" id="irpsp--parameters-read-length"></a>*IrpSp-&gt;Parameters.Read.Length*
 
-読み取るデータのバイト長。 読み取られたバイト数が返される読み取り操作が成功した場合、**情報**のメンバー、 [ **IO\_状態\_ブロック**](https://msdn.microsoft.com/library/windows/hardware/ff550671)によって示される構造*Irp -&gt;IoStatus*します。
+読み取るデータのバイト長。 読み取られたバイト数が返される読み取り操作が成功した場合、**情報**のメンバー、 [ **IO\_状態\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_status_block)によって示される構造*Irp -&gt;IoStatus*します。
 
 <a name="remarks"></a>注釈
 -------
@@ -132,23 +132,23 @@ IRP を指定します\_MJ\_を読み取る。
 ## <a name="see-also"></a>関連項目
 
 
-[**CcMdlRead**](https://msdn.microsoft.com/library/windows/hardware/ff539159)
+[**CcMdlRead**](https://docs.microsoft.com/previous-versions/ff539159(v=vs.85))
 
 [**CcMdlReadComplete**](https://msdn.microsoft.com/library/windows/hardware/ff539163)
 
-[**IO\_スタック\_場所**](https://msdn.microsoft.com/library/windows/hardware/ff550659)
+[**IO\_スタック\_場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)
 
-[**IO\_状態\_ブロック**](https://msdn.microsoft.com/library/windows/hardware/ff550671)
+[**IO\_状態\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_status_block)
 
-[**IoGetCurrentIrpStackLocation**](https://msdn.microsoft.com/library/windows/hardware/ff549174)
+[**IoGetCurrentIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetcurrentirpstacklocation)
 
-[**IRP**](https://msdn.microsoft.com/library/windows/hardware/ff550694)
+[**IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_irp)
 
-[**IRP\_MJ\_読み取り (WDK カーネル リファレンス)**](https://msdn.microsoft.com/library/windows/hardware/ff550794)
+[**IRP\_MJ\_読み取り (WDK カーネル リファレンス)** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-read)
 
 [**IRP\_MJ\_WRITE**](irp-mj-write.md)
 
-[**ZwReadFile**](https://msdn.microsoft.com/library/windows/hardware/ff567072)
+[**ZwReadFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntreadfile)
 
  
 

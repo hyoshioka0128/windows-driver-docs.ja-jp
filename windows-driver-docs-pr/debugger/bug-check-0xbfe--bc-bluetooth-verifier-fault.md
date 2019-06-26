@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 28bd555afbcef2c0ce127066c8d4bd0c90565931
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9b870984e8a9396d3ac318244d0297ff9bd8e7ba
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370886"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361620"
 ---
 # <a name="bug-check-0xbfe-bcbluetoothverifierfault"></a>バグ チェック 0xBFE:BC\_BLUETOOTH\_VERIFIER\_エラー
 
@@ -26,7 +26,7 @@ ms.locfileid: "63370886"
 ビジネス継続性\_BLUETOOTH\_VERIFIER\_フォールトのバグ チェックが 0x00000BFE の値を持ちます。 これは、ドライバーの違反が原因となったことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="bcbluetoothverifierfault-parameters"></a>BC\_BLUETOOTH\_VERIFIER\_フォールト パラメーター

@@ -7,12 +7,12 @@ keywords:
 - 永続的なメモリ ウィンドウ WDK PCMCIA バス
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 49e8abfe5a1cffe684580cc30607f967abf28ebd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c514ae00c3fd309d306fe83970eb4de448bdf91d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391574"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380699"
 ---
 # <a name="access-pcmcia-attribute-memory-through-a-permanent-memory-window"></a>永続メモリ ウィンドウを使用して PCMCIA 属性メモリにアクセスする
 
@@ -26,7 +26,7 @@ ms.locfileid: "63391574"
 
 ドライバーは、IRQL DIRQL で実行中に、このメソッドを使用できます。
 
-セットアップとプラグ アンド プレイのマネージャーのサポート、 [ **INF DDInstall.LogConfigOverride セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547339)、プラグを強制してで指定されたリソースを使用する再生マネージャー、 **PcCardConfig**エントリ。 **LogConfigOverride**セクションを格納するログ構成セクションを指定します、 **PcCardConfig**エントリ。 フィールド、 **PcCardConfig**エントリは、必要なメモリ リソースを指定し、属性のメモリのメモリ リソースが使用されます。
+セットアップとプラグ アンド プレイのマネージャーのサポート、 [ **INF DDInstall.LogConfigOverride セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-logconfigoverride-section)、プラグを強制してで指定されたリソースを使用する再生マネージャー、 **PcCardConfig**エントリ。 **LogConfigOverride**セクションを格納するログ構成セクションを指定します、 **PcCardConfig**エントリ。 フィールド、 **PcCardConfig**エントリは、必要なメモリ リソースを指定し、属性のメモリのメモリ リソースが使用されます。
 
  
 

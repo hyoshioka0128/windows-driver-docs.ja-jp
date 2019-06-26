@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2cd9ad0ea5e8616deaea9a148edeff7009cfe768
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 601da5beb0e302729882b6c7e9e0977d2fecae47
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333095"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67391484"
 ---
 # <a name="kspropertyaudiocopyprotection"></a>KSPROPERTY\_オーディオ\_コピー\_保護
 
@@ -53,8 +53,8 @@ KSPROPERTY\_オーディオ\_コピー\_保護プロパティをオーディオ 
 <td align="left"><p>〇</p></td>
 <td align="left"><p>〇</p></td>
 <td align="left"><p>フィルター</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564262" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564262)"><strong>KSPROPERTY</strong></a></p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff537084" data-raw-source="[&lt;strong&gt;KSAUDIO_COPY_PROTECTION&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537084)"><strong>KSAUDIO_COPY_PROTECTION</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/ff564262(v=vs.85)" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))"><strong>KSPROPERTY</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksaudio_copy_protection" data-raw-source="[&lt;strong&gt;KSAUDIO_COPY_PROTECTION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksaudio_copy_protection)"><strong>KSAUDIO_COPY_PROTECTION</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -80,9 +80,9 @@ SCMS には、オーディオ コンテンツの保護の 3 つのレベルを�
 
 **レベル 2:** ストリームのすべてコピーするありません。
 
-KSPROPERTY\_オーディオ\_コピー\_保護プロパティから独立した関連付けられていない機能の実装に[デジタル著作権管理 (DRM)](https://msdn.microsoft.com/library/windows/hardware/ff536260)と Windows のセキュリティで保護されたオーディオのパス (SAP)メディア。 SAP の詳細については、Microsoft Windows SDK のドキュメントを参照してください。
+KSPROPERTY\_オーディオ\_コピー\_保護プロパティから独立した関連付けられていない機能の実装に[デジタル著作権管理 (DRM)](https://docs.microsoft.com/windows-hardware/drivers/audio/digital-rights-management)と Windows のセキュリティで保護されたオーディオのパス (SAP)メディア。 SAP の詳細については、Microsoft Windows SDK のドキュメントを参照してください。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -101,9 +101,9 @@ KSPROPERTY\_オーディオ\_コピー\_保護プロパティから独立した�
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
-[**KSPROPERTY**](https://msdn.microsoft.com/library/windows/hardware/ff564262)
+[**KSPROPERTY**](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))
 
-[**KSAUDIO\_コピー\_保護**](https://msdn.microsoft.com/library/windows/hardware/ff537084)
+[**KSAUDIO\_コピー\_保護**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksaudio_copy_protection)
 
  
 

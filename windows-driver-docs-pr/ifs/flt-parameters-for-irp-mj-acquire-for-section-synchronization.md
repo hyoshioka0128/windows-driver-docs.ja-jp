@@ -16,12 +16,12 @@ api_type:
 - HeaderDef
 ms.date: 06/14/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 6edcc43a6644c853cd43170ea4858a6a95ccee6b
-ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
+ms.openlocfilehash: d5cd06b99e01e03e897aac2982e01418cb9eb251
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67161574"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386075"
 ---
 # <a name="fltparameters-for-irpmjacquireforsectionsynchronization-union"></a>FLT_PARAMETERS IRP_MJ_ACQUIRE_FOR_SECTION_SYNCHRONIZATION 共用体
 
@@ -70,7 +70,7 @@ IRP_MJ_ACQUIRE_FOR_SECTION_SYNCHRONIZATION は、ファイル システム (FSFi
 
 場合の列挙値、 **SyncType**に設定されているメンバー **SyncTypeOther**、ファイル システム ミニフィルターまたはレガシ フィルター ドライバーをこの操作に失敗することはできません。 場合**SyncType**に設定されている**SyncTypeCreateSection**、作成するための十分なメモリがない場合は、STATUS_INSUFFICIENT_RESOURCES エラーで失敗するファイル システム ミニフィルターまたはレガシ フィルター ドライバーが許可されている、セクション。
 
-FSFilter コールバック操作の詳細については、参照のエントリを参照してください。 [ **FsRtlRegisterFileSystemFilterCallbacks**](https://msdn.microsoft.com/library/windows/hardware/ff547172)します。
+FSFilter コールバック操作の詳細については、参照のエントリを参照してください。 [ **FsRtlRegisterFileSystemFilterCallbacks**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-fsrtlregisterfilesystemfiltercallbacks)します。
 
 ## <a name="requirements"></a>必要条件
 

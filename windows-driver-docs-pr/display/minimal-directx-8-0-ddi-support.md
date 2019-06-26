@@ -6,12 +6,12 @@ keywords:
 - DirectX 8.0 リリース ノートには Windows 2000 の WDK の表示、最小限のサポート
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f58ac91933e961a3d3c46adddd2841a35097d7c4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 875829941427fac96afdf08901be3c490036d1fa
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390819"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385599"
 ---
 # <a name="minimal-directx-80-ddi-support"></a>最小限の DirectX 8.0 DDI サポート
 
@@ -19,11 +19,11 @@ ms.locfileid: "63390819"
 ## <span id="ddk_minimal_directx_8_0_ddi_support_gg"></span><span id="DDK_MINIMAL_DIRECTX_8_0_DDI_SUPPORT_GG"></span>
 
 
-DirectX 8.0 では、DirectX 7.0 ドライバー、ハードウェア アクセラレーションを提供します。 ただし、複数の頂点のストリーム、インデックス バッファー、頂点とピクセル シェーダーなどの DirectX 8.0 の新機能のいずれかを公開するドライバーの場合する必要があります DirectX 8.0 スタイルの機能を報告することによって識別される、サポート、新しい[ **D3dDrawPrimitives2** ](https://msdn.microsoft.com/library/windows/hardware/ff544704)レンダリング トークンです。 新しい D3dDrawPrimitives2 をサポートするためには、トークン、ドライバーのレンダリング頂点ストリームと頂点シェーダーの固定機能の基本的なサポートを提供する必要があります。
+DirectX 8.0 では、DirectX 7.0 ドライバー、ハードウェア アクセラレーションを提供します。 ただし、複数の頂点のストリーム、インデックス バッファー、頂点とピクセル シェーダーなどの DirectX 8.0 の新機能のいずれかを公開するドライバーの場合する必要があります DirectX 8.0 スタイルの機能を報告することによって識別される、サポート、新しい[ **D3dDrawPrimitives2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/nc-d3dhal-lpd3dhal_drawprimitives2cb)レンダリング トークンです。 新しい D3dDrawPrimitives2 をサポートするためには、トークン、ドライバーのレンダリング頂点ストリームと頂点シェーダーの固定機能の基本的なサポートを提供する必要があります。
 
 DirectX 8.0 スタイルの機能をレポートには、次の手順が含まれます。
 
--   新しい処理**GetDriverInfo2** 、既存のバリアント[ **DdGetDriverInfo** ](https://msdn.microsoft.com/library/windows/hardware/ff549404)エントリ ポイント。
+-   新しい処理**GetDriverInfo2** 、既存のバリアント[ **DdGetDriverInfo** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_getdriverinfo)エントリ ポイント。
 
 -   要求されたときに、デバイスの機能を含む D3DCAPS8 構造体を返します。
 

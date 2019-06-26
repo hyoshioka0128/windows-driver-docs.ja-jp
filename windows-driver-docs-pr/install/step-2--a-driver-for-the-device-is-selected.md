@@ -4,17 +4,17 @@ description: 手順 2 のデバイスのドライバーが選択されていま�
 ms.assetid: 2134cab6-58ea-4258-9a45-09bf54156e0a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e00a50a7836c30a7b4a86359c8603664ad9162e
-ms.sourcegitcommit: 3a51ae8db61be0e25549a5527ea3143e3025e82f
+ms.openlocfilehash: c3263a15f4171e48f3ed27ca04bf00ae5b062cb1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65456425"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385873"
 ---
 # <a name="step-2-a-driver-for-the-device-is-selected"></a>手順 2:デバイスのドライバーが選択されます
 
 
-新しいデバイスが検出され、Windows を識別した後、その[デバイス インストールのコンポーネント](https://msdn.microsoft.com/library/windows/hardware/ff541277)これらの手順に従います。
+新しいデバイスが検出され、Windows を識別した後、その[デバイス インストールのコンポーネント](https://docs.microsoft.com/previous-versions/ff541277(v=vs.85))これらの手順に従います。
 
 1.  適切な Windows 検索[ドライバー パッケージ](driver-packages.md)デバイス。 この手順の詳細については、次を参照してください。[ドライバー パッケージを探して](#searching-for-the-driver)します。
 2.  Windows では、1 つまたは複数のドライバー パッケージからデバイスの最適なドライバーを選択します。 この手順の詳細については、次を参照してください。 [、ドライバーを選択する](#selecting-the-driver)します。

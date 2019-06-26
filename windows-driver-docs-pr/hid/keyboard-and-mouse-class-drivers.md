@@ -4,12 +4,12 @@ description: 非 HID キーボードとマウスは、複数のレガシ バス�
 ms.assetid: 0771D802-4F1D-4612-8376-ED3113DCC652
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f29c31fae56bc7aac668d08854a40ee5bb55b5cb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d44c3ddb3563d0d1f5f8d40f947656a6d4c882f2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346252"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384837"
 ---
 # <a name="keyboard-and-mouse-class-drivers"></a>キーボードとマウスのクラス ドライバー
 
@@ -53,7 +53,7 @@ Kbdclass と Mouclass 各機能。
 
 -   1 つ以上のデバイスの同時操作です。
 
--   接続、[サービス コールバック ルーチンをクラス](https://msdn.microsoft.com/library/windows/hardware/ff542274)クラス ドライバーのデータ バッファーにデバイスの入力バッファーからデータを転送する機能ドライバーを使用しています。
+-   接続、[サービス コールバック ルーチンをクラス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/kbdmou/nc-kbdmou-pservice_callback_routine)クラス ドライバーのデータ バッファーにデバイスの入力バッファーからデータを転送する機能ドライバーを使用しています。
 
 ## <a name="configuration-of-device-objects"></a>デバイス オブジェクトの構成
 
@@ -116,13 +116,13 @@ Kbdclass と Mouclass 受信要求の作成後に次のプラグ アンド プ�
 ## <a name="connect-a-service-callback-to-a-device"></a>サービスのコールバックをデバイスに接続します。
 
 
-デバイスを開く前に、クラス ドライバーはそのクラスのサービスをデバイスに接続する必要があります。 クラス ドライバーは、デバイス スタックにもクラスは、アタッチした後、そのクラスのサービスを接続します。 関数ドライバーでは、クラスのサービスのコールバックを使用して、デバイスのクラスのデータのキューへのデバイスから入力データを転送します。 デバイスの機能のドライバーの ISR ディスパッチ完了ルーチンでは、クラスのサービスのコールバックを呼び出します。 クラスのサービスのコールバックを提供する Kbdclass [ **KeyboardClassServiceCallback**](https://msdn.microsoft.com/library/windows/hardware/ff542324)、Mouclass クラスのサービスのコールバックを提供して[ **MouseClassServiceCallback**](https://msdn.microsoft.com/library/windows/hardware/ff542394).
+デバイスを開く前に、クラス ドライバーはそのクラスのサービスをデバイスに接続する必要があります。 クラス ドライバーは、デバイス スタックにもクラスは、アタッチした後、そのクラスのサービスを接続します。 関数ドライバーでは、クラスのサービスのコールバックを使用して、デバイスのクラスのデータのキューへのデバイスから入力データを転送します。 デバイスの機能のドライバーの ISR ディスパッチ完了ルーチンでは、クラスのサービスのコールバックを呼び出します。 クラスのサービスのコールバックを提供する Kbdclass [ **KeyboardClassServiceCallback**](https://docs.microsoft.com/previous-versions/ff542324(v=vs.85))、Mouclass クラスのサービスのコールバックを提供して[ **MouseClassServiceCallback**](https://docs.microsoft.com/previous-versions/ff542394(v=vs.85)).
 
-仕入先は、デバイス用の上位レベルのフィルター ドライバーをインストールすることでクラス サービスのコールバックの動作を変更することができます。 サンプルのフィルター ドライバー [Kbfiltr](https://go.microsoft.com/fwlink/p/?linkid=256125)定義、 [ **KbFilter\_ServiceCallback** ](https://msdn.microsoft.com/library/windows/hardware/ff542297)コールバック、およびフィルター ドライバーのサンプル[Moufiltr](https://go.microsoft.com/fwlink/p/?linkid=256135)定義、 [ **MouFilter\_ServiceCallback** ](https://msdn.microsoft.com/library/windows/hardware/ff542380)コールバック。 デバイスのポートの入力バッファーからクラスのデータ キューに転送される入力データを変更するのには、サンプル フィルター サービスのコールバックを構成できます。 たとえば、フィルター サービスのコールバックできます削除、変換、またはデータを挿入します。
+仕入先は、デバイス用の上位レベルのフィルター ドライバーをインストールすることでクラス サービスのコールバックの動作を変更することができます。 サンプルのフィルター ドライバー [Kbfiltr](https://go.microsoft.com/fwlink/p/?linkid=256125)定義、 [ **KbFilter\_ServiceCallback** ](https://docs.microsoft.com/previous-versions/ff542297(v=vs.85))コールバック、およびフィルター ドライバーのサンプル[Moufiltr](https://go.microsoft.com/fwlink/p/?linkid=256135)定義、 [ **MouFilter\_ServiceCallback** ](https://docs.microsoft.com/previous-versions/ff542380(v=vs.85))コールバック。 デバイスのポートの入力バッファーからクラスのデータ キューに転送される入力データを変更するのには、サンプル フィルター サービスのコールバックを構成できます。 たとえば、フィルター サービスのコールバックできます削除、変換、またはデータを挿入します。
 
 次のようには、サービスのクラスとフィルターのコールバックが接続されています。
 
--   クラス ドライバー内部のデバイスの送信接続デバイス スタックの要求 ([**IOCTL\_内部\_キーボード\_CONNECT** ](https://msdn.microsoft.com/library/windows/hardware/ff541279)または[ **IOCTL\_内部\_マウス\_CONNECT**](https://msdn.microsoft.com/library/windows/hardware/ff541300))。 クラスは、データを接続する接続で指定された\_クラスのデバイス オブジェクトへのポインターとクラスのサービスのコールバックへのポインターを含むデータ構造体。
+-   クラス ドライバー内部のデバイスの送信接続デバイス スタックの要求 ([**IOCTL\_内部\_キーボード\_CONNECT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/kbdmou/ni-kbdmou-ioctl_internal_keyboard_connect)または[ **IOCTL\_内部\_マウス\_CONNECT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/kbdmou/ni-kbdmou-ioctl_internal_mouse_connect))。 クラスは、データを接続する接続で指定された\_クラスのデバイス オブジェクトへのポインターとクラスのサービスのコールバックへのポインターを含むデータ構造体。
 
 -   フィルター ドライバーが接続要求を受信した後、クラスの connect のデータのコピーを保存し、要求の接続のデータを接続データをフィルター処理に置き換えます。 フィルター データを接続する、フィルター デバイス オブジェクトへのポインターと、フィルター ドライバー サービス コールバックへのポインターを指定します。 次に、フィルター ドライバーは、関数のドライバーをフィルター選択された接続要求を送信します。
 
@@ -137,19 +137,19 @@ Kbdclass と Mouclass 受信要求の作成後に次のプラグ アンド プ�
 
 I8042prt には、キーボード デバイスのパラメーターを設定して、キーボード デバイスに関する情報を照会する次の内部デバイス制御の要求がサポートされています。
 
-[**IOCTL\_キーボード\_クエリ\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff541325)
+[**IOCTL\_キーボード\_クエリ\_属性**](https://docs.microsoft.com/windows/desktop/api/ntddkbd/ni-ntddkbd-ioctl_keyboard_query_attributes)
 
-[**IOCTL\_キーボード\_クエリ\_インジケーター\_翻訳**](https://msdn.microsoft.com/library/windows/hardware/ff541352)
+[**IOCTL\_キーボード\_クエリ\_インジケーター\_翻訳**](https://docs.microsoft.com/windows/desktop/api/ntddkbd/ni-ntddkbd-ioctl_keyboard_query_indicator_translation)
 
-[**IOCTL\_キーボード\_クエリ\_インジケーター**](https://msdn.microsoft.com/library/windows/hardware/ff541337)
+[**IOCTL\_キーボード\_クエリ\_インジケーター**](https://docs.microsoft.com/windows/desktop/api/ntddkbd/ni-ntddkbd-ioctl_keyboard_query_indicators)
 
-[**IOCTL\_キーボード\_クエリ\_キーボード**](https://msdn.microsoft.com/library/windows/hardware/ff541357)
+[**IOCTL\_キーボード\_クエリ\_キーボード**](https://docs.microsoft.com/windows/desktop/api/ntddkbd/ni-ntddkbd-ioctl_keyboard_query_typematic)
 
-[**IOCTL\_キーボード\_設定\_インジケーター**](https://msdn.microsoft.com/library/windows/hardware/ff542059)
+[**IOCTL\_キーボード\_設定\_インジケーター**](https://docs.microsoft.com/windows/desktop/api/ntddkbd/ni-ntddkbd-ioctl_keyboard_set_indicators)
 
-[**IOCTL\_キーボード\_設定\_キーボード**](https://msdn.microsoft.com/library/windows/hardware/ff542070)
+[**IOCTL\_キーボード\_設定\_キーボード**](https://docs.microsoft.com/windows/desktop/api/ntddkbd/ni-ntddkbd-ioctl_keyboard_set_typematic)
 
-キーボード デバイス コントロールのすべての要求に関する詳細については、次を参照してください。 [I8042prt キーボード内部デバイス制御要求](https://msdn.microsoft.com/library/windows/hardware/ff539973)します。
+キーボード デバイス コントロールのすべての要求に関する詳細については、次を参照してください。 [I8042prt キーボード内部デバイス制御要求](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)します。
 
 ## <a name="scan-code-mapper-for-keyboards"></a>コードのマッパーのキーボードをスキャンします。
 
@@ -255,9 +255,9 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout
 
 I8042prt には、マウス デバイスに関する情報を照会は、次のデバイスの内部コントロール要求がサポートされています。
 
-[**IOCTL\_マウス\_クエリ\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff542085)
+[**IOCTL\_マウス\_クエリ\_属性**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff542085(v=vs.85))
 
-マウス デバイス コントロールのすべての要求に関する詳細については、次を参照してください。 [I8042prt マウス内部デバイス制御要求](https://msdn.microsoft.com/library/windows/hardware/ff539982)します。
+マウス デバイス コントロールのすべての要求に関する詳細については、次を参照してください。 [I8042prt マウス内部デバイス制御要求](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)します。
 
 ## <a name="registry-settings-associated-with-mouse-class-driver"></a>マウスのクラス ドライバーに関連するレジストリ設定
 
@@ -280,7 +280,7 @@ GUID 型のデバイスの\_クラス\_マウス デバイスの機能のドラ�
 
 -   デバイス固有の入力を処理します。
 
--   作成、 [**マウス\_入力\_データ**](https://msdn.microsoft.com/library/windows/hardware/ff542403)構造体に必要な[ **MouseClassServiceCallback**](https://msdn.microsoft.com/library/windows/hardware/ff542394)します。
+-   作成、 [**マウス\_入力\_データ**](https://docs.microsoft.com/windows/desktop/api/ntddmou/ns-ntddmou-_mouse_input_data)構造体に必要な[ **MouseClassServiceCallback**](https://docs.microsoft.com/previous-versions/ff542394(v=vs.85))します。
 
 -   マウスを転送\_入力\_データ構造を呼び出すことによって、Mouclass データ キュー **MouseClassServiceCallback**その ISR で完了ルーチンをディスパッチします。
 

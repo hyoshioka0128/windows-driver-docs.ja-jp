@@ -13,12 +13,12 @@ keywords:
 - WDK ジョイスティックの位置
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: eac6e5d7bfbb830358c84d970e7f684280db3bd9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9e0fcdfa63e74e5a99f11055e9dc826a0ad29924
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365436"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385821"
 ---
 # <a name="polling-callback"></a>ポーリングのコールバック
 
@@ -46,7 +46,7 @@ JOY\_OEMPOLLRC\_FAIL が返されるは、ポーリングは、デバイスが�
 
 API とシステムのドライバーでは、アプリケーションによって行われた要求の検証を実行し、必要なデータを完了すると、アプリケーションの構造にコピーします。 ミニドライバーは、この機能をレプリケートする必要があります。 ただし、1 つのプロセスは、ポーリングの途中で引き続きもう 1 つは、デバイスのポーリングから何もなりません。 このイベントの結果は 2 つの軸をレポートの異なるサンプルほど悪くないです。 必要に応じて、ミニドライバーは、独自のプロセスの同期を実行できます。
 
-戻り値に依存"type"パラメーターと、デバイスがサポートします。 常に、ボタンとボタンの数を返す必要があります。 ハット スイッチ ポーリングが必要である、ミニドライバーを指定する方法がないために、軸はすべてが要求される場合、この値を返す必要があります。 ハット スイッチの設定\_デバイスが 1 つをサポートしない場合は未定義です。 返される値の 1 つの軸のポーリング、 **dwX** JOYPOLLDATA 構造体のメンバー (、 [ **VJPOLLDATA** ](https://msdn.microsoft.com/library/windows/hardware/ff543573)構造 DirectX 5.0 以降)。 軸の数の要求が奇数で要求の複数の軸、**は\_他**のメンバー、 [ **JOYOEMPOLLDATA** ](https://msdn.microsoft.com/library/windows/hardware/ff542251)構造体を指定するかどうかまたは、次の軸の場所には、最後の軸が返されます。 3 つの軸のアンケートでは、たとえば、メンバーを指定するかどうか返される軸 X、Y、Z X, Y, r
+戻り値に依存"type"パラメーターと、デバイスがサポートします。 常に、ボタンとボタンの数を返す必要があります。 ハット スイッチ ポーリングが必要である、ミニドライバーを指定する方法がないために、軸はすべてが要求される場合、この値を返す必要があります。 ハット スイッチの設定\_デバイスが 1 つをサポートしない場合は未定義です。 返される値の 1 つの軸のポーリング、 **dwX** JOYPOLLDATA 構造体のメンバー (、 [ **VJPOLLDATA** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff543573(v=vs.85))構造 DirectX 5.0 以降)。 軸の数の要求が奇数で要求の複数の軸、**は\_他**のメンバー、 [ **JOYOEMPOLLDATA** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff542251(v=vs.85))構造体を指定するかどうかまたは、次の軸の場所には、最後の軸が返されます。 3 つの軸のアンケートでは、たとえば、メンバーを指定するかどうか返される軸 X、Y、Z X, Y, r
 
 型によってカテゴリ化されるその他の有効な戻り値の一覧を次に (追加のデータを入力できますが、軸の数が奇数のすべての投票をデコードする必要がありますに注意してください、**は\_他**返される内容を決定するにはメンバー)。
 

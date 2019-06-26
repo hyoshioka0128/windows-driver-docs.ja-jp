@@ -8,12 +8,12 @@ keywords:
 - 機能の WDK Unidrv 属性します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3eefb56f0fc8d4f93c6b7d370972197e986141c6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d839e3c3a2d46dd797c5798e6d2f415632ff4d8a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380532"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380680"
 ---
 # <a name="printer-capability-attributes"></a>プリンター機能属性
 
@@ -46,7 +46,7 @@ ms.locfileid: "63380532"
 </tr>
 <tr class="even">
 <td><p></em><strong>OEMCustomData</strong></p></td>
-<td><p>指定する文字列を引用符で囲まれた、<a href="rendering-plug-ins.md" data-raw-source="[rendering plug-in](rendering-plug-ins.md)">プラグインでレンダリング</a>呼び出し時に<a href="https://msdn.microsoft.com/library/windows/hardware/ff553128" data-raw-source="[&lt;strong&gt;IPrintOemDriverUni::DrvGetGPDData&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff553128)"> <strong>IPrintOemDriverUni::DrvGetGPDData</strong></a>します。</p></td>
+<td><p>指定する文字列を引用符で囲まれた、<a href="rendering-plug-ins.md" data-raw-source="[rendering plug-in](rendering-plug-ins.md)">プラグインでレンダリング</a>呼び出し時に<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemdriveruni-drvgetgpddata" data-raw-source="[&lt;strong&gt;IPrintOemDriverUni::DrvGetGPDData&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemdriveruni-drvgetgpddata)"> <strong>IPrintOemDriverUni::DrvGetGPDData</strong></a>します。</p></td>
 <td><p>レンダリングのプラグイン呼び出しの場合に必要な<strong>IPrintOemDriverUni::DrvGetGPDData</strong>します。</p>
 <p>テキスト文字列の内容の解釈は、プラグインのレンダリングによって決定されます。</p>
 <p>この属性は、再配置可能なグローバル属性。ルート レベルに配置することがあります (を参照してください<a href="root-level-only-attributes.md" data-raw-source="[Root-Level-Only Attributes](root-level-only-attributes.md)">Root-Level-Only 属性</a>) プリンター構成では、依存関係がないかでが表示されることを示すために<em>オプションまたは * の場合は、いくつかの依存関係がある場合を構築します。</p></td>
@@ -149,7 +149,7 @@ AFTER_FF - CmdFF コマンドの後にします。</td>
 
 使用せず自動二重化をサポートできるプラグインのレンダリング、OEM、 \* **ReverseBandOrderForEvenPages?** 属性。 プラグインを行うすべてのページ全体のデータのキャッシュ以降、下部にあるスキャン ラインで、プリンターに送信するだけでします。 スキャンする行だけでなく、他のすべてそのページで、逆の順序で送信する必要があります。
 
-**注**  プラグインのレンダリング、OEM がプリンターにデータを送信するために、各スキャン ラインのビットの順序と各バンドでスキャン ラインの順序を反転責任を負います。 ときにこの実行する必要がありますを決定する PageNumber 標準変数の値を取得して、呼び出すことによって[ **IPrintOemDriverUni::DrvGetStandardVariable**](https://msdn.microsoft.com/library/windows/hardware/ff553129)、SVIインデックスを使用して\_PAGENUMBER します。 ページ数が奇数の場合は、逆にすることは必要ありません。 数値が偶数の二重化が選択されている場合は、逆にすることが必要です。
+**注**  プラグインのレンダリング、OEM がプリンターにデータを送信するために、各スキャン ラインのビットの順序と各バンドでスキャン ラインの順序を反転責任を負います。 ときにこの実行する必要がありますを決定する PageNumber 標準変数の値を取得して、呼び出すことによって[ **IPrintOemDriverUni::DrvGetStandardVariable**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemdriveruni-drvgetstandardvariable)、SVIインデックスを使用して\_PAGENUMBER します。 ページ数が奇数の場合は、逆にすることは必要ありません。 数値が偶数の二重化が選択されている場合は、逆にすることが必要です。
 
  
 

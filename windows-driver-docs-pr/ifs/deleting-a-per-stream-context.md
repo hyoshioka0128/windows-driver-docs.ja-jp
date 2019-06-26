@@ -10,12 +10,12 @@ keywords:
 - ストリーム コンテキストを削除します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e559ba5dd4caecdcf5545eb970fb62184686f9d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 87cc07573c7c3d28011af77bf28a0ae66f39d7d2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359330"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381010"
 ---
 # <a name="deleting-a-per-stream-context"></a>ストリーム別コンテキストの削除
 
@@ -39,7 +39,7 @@ ms.locfileid: "63359330"
 
 ### <a name="span-idwhentheper-streamcontextsfreecallbackiscalledspanspan-idwhentheper-streamcontextsfreecallbackiscalledspanspan-idwhentheper-streamcontextsfreecallbackiscalledspanwhen-the-per-stream-contexts-freecallback-is-called"></a><span id="When_the_Per-Stream_Context_s_FreeCallback_Is_Called"></span><span id="when_the_per-stream_context_s_freecallback_is_called"></span><span id="WHEN_THE_PER-STREAM_CONTEXT_S_FREECALLBACK_IS_CALLED"></span>Stream あたりのコンテキストの FreeCallback が呼び出された場合
 
-ファイル ストリームがされているときに閉じているか、削除、ファイル システムがファイル ストリームの独自のストリーム コンテキストを解放します。 ファイル システム、この時点で呼び出すも[ **FsRtlTeardownPerStreamContexts**](https://msdn.microsoft.com/library/windows/hardware/ff547295)、さらに呼び出し、 [ **FreeCallback** ](https://msdn.microsoft.com/library/windows/hardware/ff547357)ルーチンすべてのファイル ストリームのコンテキストのグローバル リストに含まれるのストリーム コンテキストを登録します。 (A **FreeCallback**ルーチンが、フィルター ドライバーを呼び出すときに登録されている[ **FsRtlInitPerStreamContext** ](https://msdn.microsoft.com/library/windows/hardware/ff546178)構造体のストリーム コンテキストを初期化します。 詳細については、次を参照してください**FSRTL\_1 秒あたり\_ストリーム\_コンテキスト**。)。
+ファイル ストリームがされているときに閉じているか、削除、ファイル システムがファイル ストリームの独自のストリーム コンテキストを解放します。 ファイル システム、この時点で呼び出すも[ **FsRtlTeardownPerStreamContexts**](https://msdn.microsoft.com/library/windows/hardware/ff547295)、さらに呼び出し、 [ **FreeCallback** ](https://msdn.microsoft.com/library/windows/hardware/ff547357)ルーチンすべてのファイル ストリームのコンテキストのグローバル リストに含まれるのストリーム コンテキストを登録します。 (A **FreeCallback**ルーチンが、フィルター ドライバーを呼び出すときに登録されている[ **FsRtlInitPerStreamContext** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-fsrtlinitperstreamcontext)構造体のストリーム コンテキストを初期化します。 詳細については、次を参照してください**FSRTL\_1 秒あたり\_ストリーム\_コンテキスト**。)。
 
 **注**   、フィルターの後にドライバーが呼び出されて[ **FsRtlInsertPerStreamContext** ](https://msdn.microsoft.com/library/windows/hardware/ff546194)ファイル システムのストリーム コンテキスト構造体、ファイル ストリームに関連付けるには、確認する責任を負います、 [ **FreeCallback** ](https://msdn.microsoft.com/library/windows/hardware/ff547357)ストリームへの参照を開いている任意のされなくなったときに、フィルターのストリーム コンテキストは呼び出されるルーチン。
 

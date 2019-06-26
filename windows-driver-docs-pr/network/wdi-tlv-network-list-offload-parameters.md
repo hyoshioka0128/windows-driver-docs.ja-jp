@@ -6,17 +6,17 @@ ms.date: 07/18/2017
 keywords:
 - WDI_TLV_NETWORK_LIST_OFFLOAD_PARAMETERS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a57cef35df6f346d947deec674c27b8b554e067
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 27ee11981d30545dd6b761e78e9e43b7ddc2ac98
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392268"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385714"
 ---
 # <a name="wditlvnetworklistoffloadparameters"></a>WDI\_TLV\_ネットワーク\_一覧\_オフロード\_パラメーター
 
 
-WDI\_TLV\_ネットワーク\_一覧\_オフロード\_パラメーターは、のネットワークの一覧のオフロード (NLO) パラメーターを含む TLV [OID\_WDI\_セット\_ネットワーク\_一覧\_オフロード](https://msdn.microsoft.com/library/windows/hardware/dn925933)します。
+WDI\_TLV\_ネットワーク\_一覧\_オフロード\_パラメーターは、のネットワークの一覧のオフロード (NLO) パラメーターを含む TLV [OID\_WDI\_セット\_ネットワーク\_一覧\_オフロード](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-set-network-list-offload)します。
 
 ## <a name="tlv-type"></a>TLV 型
 
@@ -38,7 +38,7 @@ WDI\_TLV\_ネットワーク\_一覧\_オフロード\_パラメーターは、�
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

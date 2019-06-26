@@ -15,17 +15,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d3ab64a3b59b7aff11d306011eb34e199b25f80b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e8f932115a7717163934b84f70dfc8e70889f206
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352842"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385312"
 ---
 # <a name="mrxsetquotainfo-routine"></a>MRxSetQuotaInfo ルーチン
 
 
-*MRxSetQuotaInfo*ルーチンを呼び出して[RDBSS](https://msdn.microsoft.com/library/windows/hardware/ff556810)ネットワーク ミニ リダイレクターがファイル システム オブジェクトのクォータ情報を設定することを要求します。
+*MRxSetQuotaInfo*ルーチンを呼び出して[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)ネットワーク ミニ リダイレクターがファイル システム オブジェクトのクォータ情報を設定することを要求します。
 
 <a name="syntax"></a>構文
 ------
@@ -121,7 +121,7 @@ RDBSS への呼び出しを発行する*MRxSetQuotaInfo*受信に応答する[ *
 ## <a name="see-also"></a>関連項目
 
 
-[**MRxIsValidDirectory**](https://msdn.microsoft.com/library/windows/hardware/ff550696)
+[**MRxIsValidDirectory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_chkdir_calldown)
 
 [**MRxQueryDirectory**](mrxquerydirectory.md)
 

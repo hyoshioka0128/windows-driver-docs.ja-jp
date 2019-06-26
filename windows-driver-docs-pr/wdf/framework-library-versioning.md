@@ -12,12 +12,12 @@ keywords:
 - マイナー バージョン番号を WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2544f6c59809aecaaa8fb54870ff80b6aa55ea74
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0a9d811cfbc8d50d856e186c99abc120045617c4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391343"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384463"
 ---
 # <a name="framework-library-versioning"></a>フレームワーク ライブラリのバージョン
 
@@ -39,7 +39,7 @@ KMDF ライブラリの各バージョンには、メジャー バージョン�
 
 ドライバーをビルドする MSBuild ユーティリティは、ドライバーを MSBuild ユーティリティを使用しているライブラリのバージョン番号を含むスタブ ファイルにリンクします。 オペレーティング システムでは、ドライバーが読み込まれたら、フレームワークのローダーは、ドライバーは、システム上にある framework ライブラリのバージョンで実行される場合を判断するドライバーのスタブのバージョン情報を確認します。
 
-ドライバーを呼び出すことができます、ドライバーを実行しているライブラリのバージョンを調べるに[ **WdfDriverIsVersionAvailable** ](https://msdn.microsoft.com/library/windows/hardware/ff547190)または[ **WdfDriverRetrieveVersionString**](https://msdn.microsoft.com/library/windows/hardware/ff547211).
+ドライバーを呼び出すことができます、ドライバーを実行しているライブラリのバージョンを調べるに[ **WdfDriverIsVersionAvailable** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nf-wdfdriver-wdfdriverisversionavailable)または[ **WdfDriverRetrieveVersionString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nf-wdfdriver-wdfdriverretrieveversionstring).
 
 KMDF ライブラリのリリース履歴については、次を参照してください。 [KMDF バージョン履歴](kmdf-version-history.md)します。
 

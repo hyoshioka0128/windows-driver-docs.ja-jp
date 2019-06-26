@@ -4,12 +4,12 @@ description: Hklm \system\currentcontrolset\services レジストリ ツリー�
 ms.assetid: c966b029-8171-4db7-9fbb-3a4222ff184b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a705e118b4863cf39610a5baf8415fbf0b161c1d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4993798367012b8ba3a7a1e1ad2d7a69426ac9eb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363454"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386410"
 ---
 # <a name="hklmsystemcurrentcontrolsetservices-registry-tree"></a>HKLM\\システム\\CurrentControlSet\\サービスのレジストリ ツリー
 
@@ -17,12 +17,12 @@ ms.locfileid: "63363454"
 
 
 
-**HKLM\\システム\\CurrentControlSet\\サービス**レジストリ ツリーは、システムの各サービスに関する情報を保存します。 各ドライバーは、フォームのキーを持つ**HKLM\\システム\\CurrentControlSet\\サービス\\**<em>DriverName</em>します。 PnP マネージャー内のドライバーのこのパスを渡す、 *RegistryPath*ドライバーの呼び出し時にパラメーター [ **DriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff544113)ルーチン。 ドライバーがドライバーの定義済みのグローバルなデータでそのキーの下を格納できる、**サービス**ツリー。 このキーの下に格納されている情報は初期化中にドライバーを使用できます。
+**HKLM\\システム\\CurrentControlSet\\サービス**レジストリ ツリーは、システムの各サービスに関する情報を保存します。 各ドライバーは、フォームのキーを持つ**HKLM\\システム\\CurrentControlSet\\サービス\\** <em>DriverName</em>します。 PnP マネージャー内のドライバーのこのパスを渡す、 *RegistryPath*ドライバーの呼び出し時にパラメーター [ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)ルーチン。 ドライバーがドライバーの定義済みのグローバルなデータでそのキーの下を格納できる、**サービス**ツリー。 このキーの下に格納されている情報は初期化中にドライバーを使用できます。
 
 次のキーと値のエントリは、特に興味深いは。
 
 <a href="" id="imagepath"></a>**ImagePath**  
-ドライバーのイメージ ファイルの完全修飾パスを指定する値のエントリ。 Windows では、必要なを使用してこの値を作成します。 **ServiceBinary**ドライバーの INF ファイルのエントリ。 このエントリは存在、*サービス-インストール セクション*ドライバーのによって参照される[ **INF AddService ディレクティブ**](inf-addservice-directive.md)します。 このパスの一般的な値は *%systemroot%*\\*system32\\ドライバー\\DriverName*、.sys、 *DriverName*はドライバーの名前**サービス**キー。
+ドライバーのイメージ ファイルの完全修飾パスを指定する値のエントリ。 Windows では、必要なを使用してこの値を作成します。 **ServiceBinary**ドライバーの INF ファイルのエントリ。 このエントリは存在、*サービス-インストール セクション*ドライバーのによって参照される[ **INF AddService ディレクティブ**](inf-addservice-directive.md)します。 このパスの一般的な値は *%systemroot%* \\*system32\\ドライバー\\DriverName*、.sys、 *DriverName*はドライバーの名前**サービス**キー。
 
 <a href="" id="parameters"></a>**パラメーター**  
 ドライバー固有のデータを格納するために使用するキー。 ドライバーの一部の種類では、システムで特定の値のエントリを検索する必要があります。 このサブキーを使用する値のエントリを追加する**AddReg**ドライバーの INF ファイル内のエントリ。

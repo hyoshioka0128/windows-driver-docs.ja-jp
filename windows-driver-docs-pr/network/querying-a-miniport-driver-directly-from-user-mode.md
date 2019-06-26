@@ -6,12 +6,12 @@ keywords:
 - ユーザー モード ドライバー クエリ WDK ネットワーク
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: defd016d20795ee0fcd45a388394588ef863e3d3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 45c501fd0efd92a89deecadef7ada927760d7a66
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366380"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385441"
 ---
 # <a name="querying-a-miniport-driver-directly-from-user-mode"></a>ユーザー モードから直接のミニポート ドライバーのクエリ
 
@@ -19,7 +19,7 @@ ms.locfileid: "63366380"
 
 
 
-アプリケーションで使用できます[ **IOCTL\_NDIS\_クエリ\_GLOBAL\_STATS** ](https://msdn.microsoft.com/library/windows/hardware/ff548975)ミニポート ドライバーの NIC からの情報を直接照会する この操作で、アプリケーションは、OID ミニポート ドライバーがサポートする任意のクエリを使用できます。
+アプリケーションで使用できます[ **IOCTL\_NDIS\_クエリ\_GLOBAL\_STATS** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff548975(v=vs.85))ミニポート ドライバーの NIC からの情報を直接照会する この操作で、アプリケーションは、OID ミニポート ドライバーがサポートする任意のクエリを使用できます。
 
  
 

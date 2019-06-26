@@ -4,12 +4,12 @@ description: SR-IOV 仮想機能 (VF)
 ms.assetid: 92EFC8C3-A610-46EB-A1BC-750715378077
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a5fcc02cbe32598a6f7417a75e10fdea49d948ff
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fefb5acf9e4cbc98fa08407150d57b87870cf849
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345999"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386206"
 ---
 # <a name="sr-iov-virtual-functions-vfs"></a>SR-IOV 仮想機能 (VF)
 
@@ -28,13 +28,13 @@ VF のミニポート ドライバーは、VF を管理する VM にインスト
 
 VF のミニポート ドライバーは、PCI デバイス ドライバーのように機能できます。 読み取り/VF の PCI 構成領域に書き込むことができます。 ただし、仮想 PCI デバイスへのアクセスは特権が必要ですし、次のように、PF ミニポート ドライバーによって管理されています。
 
--   VF のミニポート ドライバーを呼び出すと[ **NdisMGetBusData** ](https://msdn.microsoft.com/library/windows/hardware/ff563591) VF のネットワーク アダプターの PCI 構成領域からデータを読み取る、仮想化スタックが通知されます。 このスタックは、HYPER-V 親パーティションの管理オペレーティング システムで実行されます。 オブジェクト識別子 (OID) のメソッド要求の発行、スタックは、読み取り要求の通知、 [OID\_SRIOV\_読み取り\_VF\_CONFIG\_領域](https://msdn.microsoft.com/library/windows/hardware/hh451879)PF をミニポート ドライバー。 読み取るデータがで指定された、 [ **NDIS\_SRIOV\_読み取り\_VF\_CONFIG\_領域\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/hh451681)OID 要求に含まれている構造体。
+-   VF のミニポート ドライバーを呼び出すと[ **NdisMGetBusData** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismgetbusdata) VF のネットワーク アダプターの PCI 構成領域からデータを読み取る、仮想化スタックが通知されます。 このスタックは、HYPER-V 親パーティションの管理オペレーティング システムで実行されます。 オブジェクト識別子 (OID) のメソッド要求の発行、スタックは、読み取り要求の通知、 [OID\_SRIOV\_読み取り\_VF\_CONFIG\_領域](https://docs.microsoft.com/windows-hardware/drivers/network/oid-sriov-read-vf-config-space)PF をミニポート ドライバー。 読み取るデータがで指定された、 [ **NDIS\_SRIOV\_読み取り\_VF\_CONFIG\_領域\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_sriov_read_vf_config_space_parameters)OID 要求に含まれている構造体。
 
-    ドライバーは VF PCI 構成領域から、要求されたデータを読み取るし、OID 要求を完了して、データを返します。 このデータは VF のミニポート ドライバーに返されます場合への呼び出し[ **NdisMGetBusData** ](https://msdn.microsoft.com/library/windows/hardware/ff563591)が完了するとします。
+    ドライバーは VF PCI 構成領域から、要求されたデータを読み取るし、OID 要求を完了して、データを返します。 このデータは VF のミニポート ドライバーに返されます場合への呼び出し[ **NdisMGetBusData** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismgetbusdata)が完了するとします。
 
--   VF のミニポート ドライバーを呼び出すと[ **NdisMSetBusData** ](https://msdn.microsoft.com/library/windows/hardware/ff563670) VF のネットワーク アダプターの PCI 構成領域にデータの書き込みに書き込み要求の仮想化スタックに通知します。 OID メソッド要求を発行[OID\_SRIOV\_書き込み\_VF\_CONFIG\_領域](https://msdn.microsoft.com/library/windows/hardware/hh451925)PF ミニポート ドライバーにします。 書き込むデータがで指定された、 [ **NDIS\_SRIOV\_書き込み\_VF\_CONFIG\_領域\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/hh451688)OID 要求に含まれている構造体。
+-   VF のミニポート ドライバーを呼び出すと[ **NdisMSetBusData** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsetbusdata) VF のネットワーク アダプターの PCI 構成領域にデータの書き込みに書き込み要求の仮想化スタックに通知します。 OID メソッド要求を発行[OID\_SRIOV\_書き込み\_VF\_CONFIG\_領域](https://docs.microsoft.com/windows-hardware/drivers/network/oid-sriov-write-vf-config-space)PF ミニポート ドライバーにします。 書き込むデータがで指定された、 [ **NDIS\_SRIOV\_書き込み\_VF\_CONFIG\_領域\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_sriov_write_vf_config_space_parameters)OID 要求に含まれている構造体。
 
-    ドライバーは VF PCI 構成領域にデータを書き込み、OID 要求が完了すると、要求の状態を返します。 この状態は、呼び出しの後 VF のミニポート ドライバーに返される[ **NdisMSetBusData** ](https://msdn.microsoft.com/library/windows/hardware/ff563670)が完了するとします。
+    ドライバーは VF PCI 構成領域にデータを書き込み、OID 要求が完了すると、要求の状態を返します。 この状態は、呼び出しの後 VF のミニポート ドライバーに返される[ **NdisMSetBusData** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsetbusdata)が完了するとします。
 
 VF のミニポート ドライバーも PF ミニポート ドライバーと通信します。 この通信パスは、バック チャネル インターフェイスです。 詳細については、次を参照してください。 [SR-IOV PF/VF のバック チャネル通信](sr-iov-pf-vf-backchannel-communication.md)します。
 

@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1066f6f3e212febce7745c86dbf1197f46035a92
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 65fe4cde47b5526f4326e1fd4b82e10d74546398
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331702"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386744"
 ---
 # <a name="avcfunctiongetextplugcounts"></a>AVC\_関数\_取得\_EXT\_プラグ\_カウント
 
@@ -101,7 +101,7 @@ typedef struct _AVC_MULTIFUNC_IRB {
 
 ### <a name="see-also"></a>関連項目
 
-[**AVC\_MULTIFUNC\_IRB**](https://msdn.microsoft.com/library/windows/hardware/ff554177), [**AVC\_EXT\_PLUG\_COUNTS**](https://msdn.microsoft.com/library/windows/hardware/ff554143), [**AVC\_FUNCTION**](https://msdn.microsoft.com/library/windows/hardware/ff554145)
+[**AVC\_MULTIFUNC\_IRB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ns-avc-_avc_multifunc_irb), [**AVC\_EXT\_PLUG\_COUNTS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ns-avc-_avc_ext_plug_counts), [**AVC\_FUNCTION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ne-avc-_tagavc_function)
 
  
 

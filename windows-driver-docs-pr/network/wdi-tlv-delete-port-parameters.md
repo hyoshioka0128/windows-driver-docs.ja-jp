@@ -6,17 +6,17 @@ ms.date: 07/18/2017
 keywords:
 - WDI_TLV_DELETE_PORT_PARAMETERS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: b9623fdc7dfaf098ccd6791f3aa6185973ab730d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 030d8a7a3f1835bf535e857e650a755d57d95806
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331831"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384203"
 ---
 # <a name="wditlvdeleteportparameters"></a>WDI\_TLV\_削除\_ポート\_パラメーター
 
 
-WDI\_TLV\_削除\_ポート\_パラメーターはパラメーターを含む TLV [OID\_WDI\_タスク\_削除\_ポート](https://msdn.microsoft.com/library/windows/hardware/dn925950).
+WDI\_TLV\_削除\_ポート\_パラメーターはパラメーターを含む TLV [OID\_WDI\_タスク\_削除\_ポート](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-task-delete-port).
 
 ## <a name="tlv-type"></a>TLV 型
 
@@ -37,7 +37,7 @@ WDI\_TLV\_削除\_ポート\_パラメーターはパラメーターを含む TL
 
  
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

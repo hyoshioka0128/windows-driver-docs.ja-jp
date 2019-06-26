@@ -7,12 +7,12 @@ keywords:
 - デバイスの WDK デバイス インストールのプロパティにアクセスします。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a3c6caf1dca07278044c356f1f1fd05285c71e9f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 309e9583b3880040798ace2ea43d7bd10e4b5893
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382931"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385018"
 ---
 # <a name="accessing-device-properties"></a>デバイス プロパティへのアクセス
 
@@ -25,23 +25,23 @@ ms.locfileid: "63382931"
 
 -   ユーザー モード アプリケーションでは、次の手順に従います。
 
-    1.  使用して、Windows Vista 以降、 [ **SetupDiGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551963) 、デバイスのプロパティを取得して使用し[ **SetupDiSetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff552163)DEVPKEY_Xxx プロパティのコードをデバイスのプロパティを設定するとします。
+    1.  使用して、Windows Vista 以降、 [ **SetupDiGetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) 、デバイスのプロパティを取得して使用し[ **SetupDiSetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetdevicepropertyw)DEVPKEY_Xxx プロパティのコードをデバイスのプロパティを設定するとします。
 
         Windows Vista および以降のバージョンの Windows デバイスのインスタンスのプロパティに関する詳細については、次を参照してください。[プロパティへのアクセス デバイス インスタンス (Windows Vista 以降)](accessing-device-instance-properties--windows-vista-and-later-.md)します。
 
         **注**  以降 Windows Vista では、いくつかのデバイス プロパティは、オペレーティング システムによって予約されています。 詳細については、次を参照してください。[デバイス プロパティの変更](modifying-device-properties.md)します。
 
-    2.  Windows 2000、Windows XP、および Windows Server 2003 を使用して[ **SetupDiGetDeviceRegistryProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551122) 、デバイスのプロパティを取得して使用し[ **SetupDiSetDeviceRegistryProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff552169) SPDRP_Xxx プロパティのコードをデバイスのプロパティを設定するとします。
+    2.  Windows 2000、Windows XP、および Windows Server 2003 を使用して[ **SetupDiGetDeviceRegistryProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinterfacepropertyw) 、デバイスのプロパティを取得して使用し[ **SetupDiSetDeviceRegistryProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetdeviceregistrypropertya) SPDRP_Xxx プロパティのコードをデバイスのプロパティを設定するとします。
 
         Windows 2000、Windows XP、および Windows Server 2003 デバイス インスタンスのプロパティに関する詳細については、次を参照してください。[デバイス インスタンス SPDRP_Xxx プロパティへのアクセス](accessing-device-instance-spdrp-xxx-properties.md)します。
 
     3.  物理的に存在するデバイスのカスタム設定といない方は、レジストリ内で永続的なストレージを使用します。 この場合は、独自のレジストリ キーと値のセットを作成する必要があります。 これを行うには、次のように使用します。 **SetupDiCreateDevRegKey** (DIREG_DEV) または*ソフトウェア キー* (DIREG_DRV) デバイス。
 
-        **注**  デバイスがアンインストールされるまで、ハードウェア キーがレジストリに永続化します。 ソフトウェア キーを移動またはでオフになって、[デバイス インストール コンポーネント](https://msdn.microsoft.com/library/windows/hardware/ff541277)ドライバーのアップグレード中に
+        **注**  デバイスがアンインストールされるまで、ハードウェア キーがレジストリに永続化します。 ソフトウェア キーを移動またはでオフになって、[デバイス インストール コンポーネント](https://docs.microsoft.com/previous-versions/ff541277(v=vs.85))ドライバーのアップグレード中に
 
         カスタムの設定を保存するには使用[RegCloseKey](https://go.microsoft.com/fwlink/p/?linkid=194543)レジストリ キーが作成または開きます。
 
--   カーネル モード ドライバーでは、使用[ **IoGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff549203)デバイス プロパティにアクセスします。
+-   カーネル モード ドライバーでは、使用[ **IoGetDeviceProperty** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdeviceproperty)デバイス プロパティにアクセスします。
 
  
 

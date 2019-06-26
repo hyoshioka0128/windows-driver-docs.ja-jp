@@ -6,12 +6,12 @@ ms.assetid: 07661709-8929-4567-a05f-96d995862ee6
 keywords:
 - IRP_MN_QUERY_DEVICE_TEXT カーネル モード ドライバーのアーキテクチャ
 ms.localizationpriority: medium
-ms.openlocfilehash: eedcf3d55e5e95ee877360a3ded21b914ffe5d45
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: caa767e57545efedb56131f7e65af17baaddf10f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381438"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383285"
 ---
 # <a name="irpmnquerydevicetext"></a>IRP\_MN\_クエリ\_デバイス\_テキスト
 
@@ -33,7 +33,7 @@ PnP マネージャーでは、この IRP を送信 IRQL パッシブで\_任意
 ## <a name="input-parameters"></a>入力パラメーター
 
 
-**Parameters.QueryDeviceText.DeviceTextType**のメンバー、 [ **IO\_スタック\_場所**](https://msdn.microsoft.com/library/windows/hardware/ff550659)構造体は、 **デバイス\_テキスト\_型**どの文字列が要求を指定する値。 指定できる値**デバイス\_テキスト\_型**含める**DeviceTextDescription**と**DeviceTextLocationInformation**します。
+**Parameters.QueryDeviceText.DeviceTextType**のメンバー、 [ **IO\_スタック\_場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)構造体は、 **デバイス\_テキスト\_型**どの文字列が要求を指定する値。 指定できる値**デバイス\_テキスト\_型**含める**DeviceTextDescription**と**DeviceTextLocationInformation**します。
 
 **Parameters.QueryDeviceText.LocaleId** LCID が要求されたテキストのロケールを指定することができます。
 
@@ -58,13 +58,13 @@ PnP マネージャーでは、この IRP を送信 IRQL パッシブで\_任意
 
 バス ドライバーでは、この IRP への応答の情報が返された場合、ページングされたメモリから NULL で終わる Unicode 文字列を割り当てます。 PnP マネージャーは、不要になったときに、文字列を解放します。
 
-デバイスの親のバス ドライバーが IRP を完了すると、デバイスが説明または場所の情報を提供しない場合 ([**IoCompleteRequest**](https://msdn.microsoft.com/library/windows/hardware/ff548343)) を変更しなくても**Irp-&gt;IoStatus.Status**または**Irp -&gt;IoStatus.Information**します。
+デバイスの親のバス ドライバーが IRP を完了すると、デバイスが説明または場所の情報を提供しない場合 ([**IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest)) を変更しなくても**Irp-&gt;IoStatus.Status**または**Irp -&gt;IoStatus.Information**します。
 
 関数とフィルター ドライバーは、この IRP; を処理しません[次へ] の下位のドライバーに変更を加えるに渡される**Irp -&gt;IoStatus**します。
 
 ロケールごとに別のテキスト文字列をサポートするバス ドライバーは、デバイスによって明示的にサポートされていない言語の要求を処理できる必要があります。 このような場合は、バス ドライバーは、最も近いロケールと一致またはフォールバックする必要がありますおよびいくつかサポートされているロケールの適切な文字列を返すを返す必要があります。
 
-参照してください[プラグ アンド プレイ](https://msdn.microsoft.com/library/windows/hardware/ff547125)処理のための一般的な規則[プラグ アンド プレイ マイナー Irp](plug-and-play-minor-irps.md)します。
+参照してください[プラグ アンド プレイ](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)処理のための一般的な規則[プラグ アンド プレイ マイナー Irp](plug-and-play-minor-irps.md)します。
 
 **この IRP を送信します。**
 

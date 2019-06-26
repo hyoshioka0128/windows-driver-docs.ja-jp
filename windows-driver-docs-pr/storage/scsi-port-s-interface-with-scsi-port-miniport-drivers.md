@@ -4,12 +4,12 @@ description: SCSI ポートと SCSI ポート ミニポート ドライバーと
 ms.assetid: e6bd9861-5b89-40cc-92ab-0d23f18ba805
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7397064af53122863dc652116ef793160370c47e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d7116916442b45bee369da9b1a155647dc596951
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378172"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386487"
 ---
 # <a name="scsi-ports-interface-with-scsi-port-miniport-drivers"></a>SCSI ポートと SCSI ポート ミニポート ドライバーとのインターフェイス
 
@@ -19,11 +19,11 @@ ms.locfileid: "63378172"
 
 SCSI ポート ドライバーと SCSI ポート ミニポート ドライバー間の通信が行わによって SCSI 要求のブロック (される Srb) およびミニポート ドライバー コールバック ルーチン。 SCSI ポート ミニポート ドライバー コールバック ルーチンの詳細については、次を参照してください。 [SCSI ミニポート ドライバー](scsi-miniport-drivers.md)します。
 
-概要と SRB の個々 の関数、SRB フラグ、および SRB 状態の値の定義については、次を参照してください。 [ **SCSI\_要求\_ブロック**](https://msdn.microsoft.com/library/windows/hardware/ff565393)します。
+概要と SRB の個々 の関数、SRB フラグ、および SRB 状態の値の定義については、次を参照してください。 [ **SCSI\_要求\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/ns-srb-_scsi_request_block)します。
 
 ミニポート ドライバーが SRB 関数に対応する方法に関する話題は、次を参照してください。 [SCSI ミニポート ドライバー HwScsiStartIo ルーチン](scsi-miniport-driver-s-hwscsistartio-routine.md)します。
 
-SCSI ポートは、同期的に、アダプターがタグ付けされたキューがサポートする場合を除くされる Srb を SCSI ポート ミニポート ドライバーに転送します。 タグが付けられたキューをサポートするホスト バス アダプターでは、内部要求キューに配置でき、それらを SCSI ポートを各要求に割り当てることのタグで示される順序で処理することができます。 [ **SCSI\_要求\_ブロック**](https://msdn.microsoft.com/library/windows/hardware/ff565393) (SRB) 構造体には、SCSI ポート ドライバーを使用してホスト アダプターの内部キューでされる Srb を順序付けする方法を指定する 2 つのメンバーが含まれています。:**QueuedTag**と**QueueAction**します。 SCSI ポート割り当ての数、または *「タグ」* 値に、 **QueuedTag**アダプターが、パケットを処理する順序を示す各 SRB のメンバー。 タグの値では、SCSI ポートされる Srb が正常に完了してされる Srb がタイムアウトしたかを追跡することもできます。
+SCSI ポートは、同期的に、アダプターがタグ付けされたキューがサポートする場合を除くされる Srb を SCSI ポート ミニポート ドライバーに転送します。 タグが付けられたキューをサポートするホスト バス アダプターでは、内部要求キューに配置でき、それらを SCSI ポートを各要求に割り当てることのタグで示される順序で処理することができます。 [ **SCSI\_要求\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/ns-srb-_scsi_request_block) (SRB) 構造体には、SCSI ポート ドライバーを使用してホスト アダプターの内部キューでされる Srb を順序付けする方法を指定する 2 つのメンバーが含まれています。:**QueuedTag**と**QueueAction**します。 SCSI ポート割り当ての数、または *「タグ」* 値に、 **QueuedTag**アダプターが、パケットを処理する順序を示す各 SRB のメンバー。 タグの値では、SCSI ポートされる Srb が正常に完了してされる Srb がタイムアウトしたかを追跡することもできます。
 
 **QueueAction**値は次のいずれかのメンバーが割り当てられます。
 

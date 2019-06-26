@@ -4,12 +4,12 @@ description: 入力アセンブラー ステージ
 ms.assetid: 8db6a2ab-8354-4690-8141-2cdd91c77d5c
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fa2a2f0d0065c4562b7aab79374e648305a49a66
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9d8fbd37c2116f7225e1f562a9de1c888494a68c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63350254"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385175"
 ---
 # <a name="input-assembler-stage"></a>入力アセンブラー ステージ
 
@@ -24,7 +24,7 @@ ms.locfileid: "63350254"
 
 インスタンス化されたジオメトリのレンダリングは、各頂点バッファー (インデックス付きでない場合) 内の範囲のループまたはバッファー (インデックス付きの場合) のインデックス、非インデックスまたはインデックス付きのレンダリングで順次のトラバーサルを許可することで有効です。 バッファー バインディングとして識別できる*インスタンス データ*または*頂点データ*します。 この id は、インスタンス化されたレンダリングを実行中にバインドされたバッファーを使用する方法を指定します。 によって生成されるアドレス以外のインデックスを作成または頂点データは、ループ、ランタイムがインスタンス化されたレンダリングを実行するときにもアカウントをフェッチするインデックス付きのレンダリングが使われます。 インスタンス データをその一方が常に順番に通過インスタンス (たとえばは手順インスタンス内の頂点の数が走査転送後の 1 つ) ごとに 1 つの手順と同じ頻度でのバッファー オフセット位置から開始します。 手順レート インスタンスのデータは、インスタンス数 (つまり、1 つ一歩前進インスタンス、すべての 3 番目のインスタンスとその他のすべての) のサブ調和するも選択できます。
 
-IA のもう 1 つの特殊なケースに書き込まれたバッファー ストリーム ステージの出力を読み取ることができます。 このようなシナリオにより、新しい種類の描画操作では、 [ **DrawAuto**](https://msdn.microsoft.com/library/windows/hardware/ff556123)します。 *DrawAuto* CPU 操作で、データの量が実際に書き込まれたかを判断することがなく、再利用されるストリーム出力バッファーに書き込まれた出力の動的な量を許可します。
+IA のもう 1 つの特殊なケースに書き込まれたバッファー ストリーム ステージの出力を読み取ることができます。 このようなシナリオにより、新しい種類の描画操作では、 [ **DrawAuto**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_drawauto)します。 *DrawAuto* CPU 操作で、データの量が実際に書き込まれたかを判断することがなく、再利用されるストリーム出力バッファーに書き込まれた出力の動的な量を許可します。
 
 バッファーから頂点データを生成するには、だけでなく、IA できます自動生成 3 つのスカラーのカウンター値。VertexID、PrimitiveID、および InstanceID、レンダリング パイプラインのシェーダーのステージを入力します。
 
@@ -32,19 +32,19 @@ IA のもう 1 つの特殊なケースに書き込まれたバッファー ス�
 
 Direct3D のランタイムは、設定を作成する次のドライバー関数を呼び出すし、IA を破棄します。
 
-[**CalcPrivateElementLayoutSize**](https://msdn.microsoft.com/library/windows/hardware/ff538289)
+[**CalcPrivateElementLayoutSize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_calcprivateelementlayoutsize)
 
-[**CreateElementLayout**](https://msdn.microsoft.com/library/windows/hardware/ff540640)
+[**CreateElementLayout**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_createelementlayout)
 
-[**DestroyElementLayout**](https://msdn.microsoft.com/library/windows/hardware/ff552771)
+[**DestroyElementLayout**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_destroyelementlayout)
 
-[**IaSetIndexBuffer**](https://msdn.microsoft.com/library/windows/hardware/ff567387)
+[**IaSetIndexBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_ia_setindexbuffer)
 
-[**IaSetInputLayout**](https://msdn.microsoft.com/library/windows/hardware/ff567389)
+[**IaSetInputLayout**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_setinputlayout)
 
-[**IaSetTopology**](https://msdn.microsoft.com/library/windows/hardware/ff567390)
+[**IaSetTopology**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_ia_settopology)
 
-[**IaSetVertexBuffers**](https://msdn.microsoft.com/library/windows/hardware/ff567392)
+[**IaSetVertexBuffers**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_ia_setvertexbuffers)
 
  
 

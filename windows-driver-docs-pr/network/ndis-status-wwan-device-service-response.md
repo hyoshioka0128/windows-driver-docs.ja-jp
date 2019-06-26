@@ -6,23 +6,23 @@ ms.date: 07/18/2017
 keywords:
 - NDIS_STATUS_WWAN_DEVICE_SERVICE_RESPONSE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ed8c7044cd8e715203a32c512d4906a1a102dd9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dab0f6c21b96673cd6b928e44eb17eba20c1007e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369030"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385509"
 ---
 # <a name="ndisstatuswwandeviceserviceresponse"></a>NDIS\_状態\_WWAN\_デバイス\_サービス\_応答
 
 
-ミニポート ドライバーを使用して、NDIS\_状態\_WWAN\_デバイス\_サービス\_のトランザクションの完了の応答を実装するために応答を示す値[OID\_WWAN\_デバイス\_サービス\_コマンド](https://msdn.microsoft.com/library/windows/hardware/hh440094)します。
+ミニポート ドライバーを使用して、NDIS\_状態\_WWAN\_デバイス\_サービス\_のトランザクションの完了の応答を実装するために応答を示す値[OID\_WWAN\_デバイス\_サービス\_コマンド](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-device-service-command)します。
 
 ミニポート ドライバーは、この通知を使用して、不要なイベントを送信することはできません。
 
-この通知を使用して、 [ **NDIS\_WWAN\_デバイス\_サービス\_応答**](https://msdn.microsoft.com/library/windows/hardware/hh439838)構造体。
+この通知を使用して、 [ **NDIS\_WWAN\_デバイス\_サービス\_応答**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_device_service_response)構造体。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -45,9 +45,9 @@ ms.locfileid: "63369030"
 ## <a name="see-also"></a>関連項目
 
 
-[OID\_WWAN\_デバイス\_サービス\_コマンド](https://msdn.microsoft.com/library/windows/hardware/hh440094)
+[OID\_WWAN\_デバイス\_サービス\_コマンド](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-device-service-command)
 
-[**NDIS\_WWAN\_デバイス\_サービス\_応答**](https://msdn.microsoft.com/library/windows/hardware/hh439838)
+[**NDIS\_WWAN\_デバイス\_サービス\_応答**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_device_service_response)
 
  
 

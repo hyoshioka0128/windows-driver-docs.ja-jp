@@ -4,12 +4,12 @@ description: Windows 8 以降、Windows は、カーネル モード デバイ�
 ms.assetid: C66E0050-04E8-4DCD-B989-94A97558C4CE
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 9fae6e9bcb09ee5192eb537f22682ea3aa0acea1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b87b6df95ad96524d886eb65ec3f230143f72978
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388140"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385013"
 ---
 # <a name="device-level-thermal-management"></a>デバイス レベルの温度管理
 
@@ -23,7 +23,7 @@ Windows 8 以降、Windows は、カーネル モード デバイス ドライ�
 
 一方、プラットフォームで他のデバイスからの分離でローカルに、そのデバイスの温度のレベルを管理しようとするデバイス ドライバーは、非効率的な電力使用状況と、応答していないユーザー インターフェイス (UI) と、不適切な判断をする可能性が高くなります。
 
-デバイス ドライバーを実装するグローバルの温度管理に参加するには[GUID\_熱\_冷却\_インターフェイス](https://msdn.microsoft.com/library/windows/hardware/hh698265)ドライバー インターフェイス。 システムの起動時には、Acpi.sys、システム指定のドライバーは、システムにはこのインターフェイスをサポートすると、それらの特定のデバイス ドライバーを照会します。 ドライバーが表示されることができます、 [ **IRP\_MN\_クエリ\_インターフェイス**](https://msdn.microsoft.com/library/windows/hardware/ff551687)後にいつでもこのインターフェイスの要求、 [ *AddDevice* ](https://msdn.microsoft.com/library/windows/hardware/ff540521)ドライバーのデバイスのルーチンが呼び出されます。 この要求に応答してでは、温度管理機能を備えているデバイスのドライバーがへのポインターを提供できます、 [**熱\_冷却\_インターフェイス**](https://msdn.microsoft.com/library/windows/hardware/hh698275)構造体。 この構造体には、ドライバーによって実装されるコールバック ルーチンのセットへのポインターが含まれています。 デバイスの温度のレベルを管理するには、は、オペレーティング システムは、これらのルーチンを直接呼び出します。
+デバイス ドライバーを実装するグローバルの温度管理に参加するには[GUID\_熱\_冷却\_インターフェイス](https://msdn.microsoft.com/library/windows/hardware/hh698265)ドライバー インターフェイス。 システムの起動時には、Acpi.sys、システム指定のドライバーは、システムにはこのインターフェイスをサポートすると、それらの特定のデバイス ドライバーを照会します。 ドライバーが表示されることができます、 [ **IRP\_MN\_クエリ\_インターフェイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-interface)後にいつでもこのインターフェイスの要求、 [ *AddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)ドライバーのデバイスのルーチンが呼び出されます。 この要求に応答してでは、温度管理機能を備えているデバイスのドライバーがへのポインターを提供できます、 [**熱\_冷却\_インターフェイス**](https://msdn.microsoft.com/library/windows/hardware/hh698275)構造体。 この構造体には、ドライバーによって実装されるコールバック ルーチンのセットへのポインターが含まれています。 デバイスの温度のレベルを管理するには、は、オペレーティング システムは、これらのルーチンを直接呼び出します。
 
 このインターフェイスで 2 つのプリンシパル ルーチンは[ *ActiveCooling* ](https://msdn.microsoft.com/library/windows/hardware/hh698235)と[ *PassiveCooling*](https://msdn.microsoft.com/library/windows/hardware/hh698270)します。 ドライバーの*ActiveCooling*ルーチンが関与します。 または、デバイスのアクティブな冷却を解除します。 たとえば、このルーチンはオンとオフをファンをする場合があります。 ドライバーの*PassiveCooling*ルーチンは、先には、許容可能な温度レベルを維持するために、デバイスのパフォーマンスを調整度を制御します。 たとえば、過熱状態を防ぐために、半分の速度でデバイスを実行するこのルーチンを呼び出す可能性があります。
 

@@ -8,12 +8,12 @@ keywords:
 - ネイティブ 802.11 IHV 拡張 WDK をインストールします。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 59d53e61de2fb8dc03ec309256b7e3395e497464
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0714e63eabed796726839a84c60c32449a617ebf
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324872"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385847"
 ---
 # <a name="installing-native-80211-ihv-extensions"></a>ネイティブ 802.11 IHV 拡張機能のインストール
 
@@ -36,7 +36,7 @@ ms.locfileid: "63324872"
     IhvUIExt.dll,,,2
     ```
 
-    CopyFiles ディレクティブの詳細については、次を参照してください。 [ **INF CopyFiles ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546346)します。
+    CopyFiles ディレクティブの詳細については、次を参照してください。 [ **INF CopyFiles ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-copyfiles-directive)します。
 
 -   DestinationDirs セクションがのコピー先を宣言することを確認、*ファイルのセクション一覧*CopyFiles ディレクティブで使用します。
 
@@ -48,9 +48,9 @@ ms.locfileid: "63324872"
     Sample-File-List-Section = 11
     ```
 
-    DestinationDirs セクションの詳細については、次を参照してください。 [ **INF DestinationDirs セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547383)します。
+    DestinationDirs セクションの詳細については、次を参照してください。 [ **INF DestinationDirs セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-destinationdirs-section)します。
 
--   確認します AddReg ディレクティブを関連付けられている*追加レジストリ セクション*、WLAN アダプターごとに INF ファイルに追加されます。 AddReg ディレクティブの詳細については、次を参照してください。 [ **INF AddReg ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546320)します。
+-   確認します AddReg ディレクティブを関連付けられている*追加レジストリ セクション*、WLAN アダプターごとに INF ファイルに追加されます。 AddReg ディレクティブの詳細については、次を参照してください。 [ **INF AddReg ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)します。
 
     内で、*追加レジストリ セクション*、次のキーを宣言する必要があります。
 
@@ -73,7 +73,7 @@ ms.locfileid: "63324872"
 
     WLAN アダプターの OUI がの値と一致していることを確認する AdapterOUI キーが使用される、 **OUI**の属性、 **IHV** XML 要素。 詳細については、 **IHV**要素と、ネイティブの 802.11 XML スキーマが、Microsoft Windows SDK のマニュアルを参照してください。
 
-INF ファイルとそのセクションの詳細については、次を参照してください。 [INF ファイルを作成する](https://msdn.microsoft.com/library/windows/hardware/ff549520)します。
+INF ファイルとそのセクションの詳細については、次を参照してください。 [INF ファイルを作成する](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-inf-files)します。
 
  
 

@@ -6,12 +6,12 @@ keywords:
 - デバイス メタデータ作成ウィザードでのアプリケーションの指定
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6be78ec70a614c626c10509cb463c0c3318b5145
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dbd76aa954f2063e228e33e48627207e1ba9bdc1
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387920"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67391958"
 ---
 # <a name="specify-applications-in-the-device-metadata-authoring-wizard"></a>デバイス メタデータ作成ウィザードでのアプリケーションの指定
 
@@ -160,7 +160,7 @@ UWP デバイス アプリと特権を持つアプリケーションの詳細に
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
-[デバイス メタデータのスキーマ リファレンス](https://msdn.microsoft.com/library/windows/hardware/br259102)
+[デバイス メタデータのスキーマ リファレンス](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/dn465877(v=vs.85))
 
 
 

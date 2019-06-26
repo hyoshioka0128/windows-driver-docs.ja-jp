@@ -3,12 +3,12 @@ Description: このセクションでは、USB ドライバーの開発を紹介
 title: USB クライアント ドライバー開発の概要
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 07f8120c47fd0ff99ba20465d37061f5260fbb9e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 247073421b5cee2f198e8aa578af19d27849ca38
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374466"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67391772"
 ---
 # <a name="getting-started-with-usb-client-driver-development"></a>USB クライアント ドライバー開発の概要
 
@@ -56,10 +56,10 @@ ms.locfileid: "63374466"
 <td><p><strong>手順 5</strong>— Microsoft 提供の USB ドライバー スタックとドライバー開発の概念を理解します。</p>
 <ul>
 <li><a href="usb-3-0-driver-stack-architecture.md" data-raw-source="[USB host-side drivers in Windows](usb-3-0-driver-stack-architecture.md)">Windows での USB ホスト側のドライバー</a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/hardware/ff554731" data-raw-source="[Concepts for All Driver Developers](https://msdn.microsoft.com/library/windows/hardware/ff554731)">すべてのドライバー開発者向けの概念</a></li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/concepts-and-knowledge-for-all-driver-developers" data-raw-source="[Concepts for All Driver Developers](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/concepts-and-knowledge-for-all-driver-developers)">すべてのドライバー開発者向けの概念</a></li>
 <li><a href="usb-concepts-for-all-developers.md" data-raw-source="[Concepts for all USB developers](usb-concepts-for-all-developers.md)">すべての USB 開発者の概念</a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/hardware/ff554721" data-raw-source="[Device nodes and device stacks](https://msdn.microsoft.com/library/windows/hardware/ff554721)">デバイス ノードとデバイス スタック</a></li>
-<li><em>Windows Driver Foundation でのドライバーの開発</em>少額 Orwick と Guy Smith によって書き込まれた、します。 詳細については、次を参照してください。 <a href="https://msdn.microsoft.com/library/windows/hardware/dn605830" data-raw-source="[Developing Drivers with WDF](https://msdn.microsoft.com/library/windows/hardware/dn605830)">WDF のドライバーが開発</a>します。</li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/device-nodes-and-device-stacks" data-raw-source="[Device nodes and device stacks](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/device-nodes-and-device-stacks)">デバイス ノードとデバイス スタック</a></li>
+<li><em>Windows Driver Foundation でのドライバーの開発</em>少額 Orwick と Guy Smith によって書き込まれた、します。 詳細については、次を参照してください。 <a href="https://docs.microsoft.com/windows-hardware/drivers/wdf/developing-drivers-with-wdf" data-raw-source="[Developing Drivers with WDF](https://docs.microsoft.com/windows-hardware/drivers/wdf/developing-drivers-with-wdf)">WDF のドライバーが開発</a>します。</li>
 <li><a href="usb-driver-samples-in-wdk.md" data-raw-source="[USB driver samples](usb-driver-samples-in-wdk.md)">USB ドライバーのサンプル</a></li>
 </ul></td>
 <td><ul>
@@ -73,12 +73,12 @@ ms.locfileid: "63374466"
 <ul>
 <li><a href="https://go.microsoft.com/fwlink/p/?linkid=617580" data-raw-source="[Install the latest Windows Driver Kit (WDK)](https://go.microsoft.com/fwlink/p/?linkid=617580)">最新の Windows Driver Kit (WDK) のインストール</a>します。</li>
 <li><a href="https://go.microsoft.com/fwlink/p/?linkid=617580" data-raw-source="[Install Microsoft Visual Studio 2012](https://go.microsoft.com/fwlink/p/?linkid=617580)">Microsoft Visual Studio 2012 をインストール</a>します。</li>
-<li><a href="https://msdn.microsoft.com/library/windows/hardware/hh450944" data-raw-source="[Get Set Up for Debugging](https://msdn.microsoft.com/library/windows/hardware/hh450944)">デバッグの設定を取得</a>します。</li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/debugger/getting-set-up-for-debugging" data-raw-source="[Get Set Up for Debugging](https://docs.microsoft.com/windows-hardware/drivers/debugger/getting-set-up-for-debugging)">デバッグの設定を取得</a>します。</li>
 <li>あることを確認、<a href="headers-and-libraries-for-a-usb-client-driver.md" data-raw-source="[Headers and libraries required by a USB client driver](headers-and-libraries-for-a-usb-client-driver.md)">ヘッダーとライブラリの USB クライアント ドライバーで必要な</a>します。</li>
 </ul></td>
 <td><ul>
 <li>カーネル モード ドライバーを記述する必要がありますを構成した場合、イーサネット ネットワークを 1394 ケーブル、USB 2.0 または 3.0 デバッグ ケーブル、またはヌル モデム ケーブルを介したホストとターゲット コンピューターでデバッグします。</li>
-<li>ユーザー モード ドライバーを記述する場合は、Microsoft Visual Studio 環境で使用可能なユーザー モード デバッガーを使用できます。 知っておくべき<a href="https://msdn.microsoft.com/library/windows/hardware/hh406273" data-raw-source="[how to attach to a process or launch a process under the debugger](https://msdn.microsoft.com/library/windows/hardware/hh406273)">プロセスにアタッチするか、デバッガーでプロセスを起動する方法</a>します。</li>
+<li>ユーザー モード ドライバーを記述する場合は、Microsoft Visual Studio 環境で使用可能なユーザー モード デバッガーを使用できます。 知っておくべき<a href="https://docs.microsoft.com/windows-hardware/drivers/debugger/debugging-a-user-mode-process-using-visual-studio" data-raw-source="[how to attach to a process or launch a process under the debugger](https://docs.microsoft.com/windows-hardware/drivers/debugger/debugging-a-user-mode-process-using-visual-studio)">プロセスにアタッチするか、デバッガーでプロセスを起動する方法</a>します。</li>
 </ul></td>
 </tr>
 <tr class="odd">
@@ -121,7 +121,7 @@ Windows オペレーティング システムで動作する USB デバイスと
 [ドライバーの開発用最新ツールをダウンロード](https://go.microsoft.com/fwlink/p/?linkid=617585)、お使いの製品が信頼性が高く、を通じて Windows と互換性があることを確認、 [Windows 認定プログラム](https://go.microsoft.com/fwlink/p/?linkid=617591)、学習[Windows ドライバー サンプル](https://go.microsoft.com/fwlink/p/?LinkId=616507).
 
 ## <a name="related-topics"></a>関連トピック
-[ユニバーサル シリアル バス (USB) ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff538930)  
+[ユニバーサル シリアル バス (USB) ドライバー](https://docs.microsoft.com/windows-hardware/drivers/)  
 [USB のセレクティブがサスペンドを有効にする方法と、USB デバイスの UMDF ドライバーにシステムがスリープ解除](https://go.microsoft.com/fwlink/p/?linkid=617587)  
 [USB ドライバー開発ガイド](usb-driver-development-guide.md)  
 

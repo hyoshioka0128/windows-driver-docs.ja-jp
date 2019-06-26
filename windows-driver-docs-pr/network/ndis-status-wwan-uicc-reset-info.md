@@ -6,12 +6,12 @@ keywords:
 - NDIS_STATUS_WWAN_UICC_RESET_INFO、UICC リセット状態の通知、モバイル ブロード バンド UICC リセット状態の通知、MB UICC リセット状態の通知
 ms.date: 08/18/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6deb8a53742bb47118eb823eefd43633a93e2b09
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2e378f155cd928e09462f2c498599ee6ccc9a6ec
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324892"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384392"
 ---
 # <a name="ndisstatuswwanuiccresetinfo"></a>NDIS_STATUS_WWAN_UICC_RESET_INFO
 
@@ -20,9 +20,9 @@ NDIS_STATUS_WWAN_UICC_RESET_INFO 状態の通知は、UICC スマート カー�
 1. 後に、 [OID_WWAN_UICC_RESET](oid-wwan-uicc-reset.md)クエリ要求。
 2. UICC リセットが完了したら UICC カードの後のリセットのパススルー状態の MB ホストに通知する、要求の設定に従って、OID_WWAN_UICC_RESET。
 
-この通知を使用して、 [NDIS_WWAN_UICC_RESET_INFO](https://msdn.microsoft.com/library/windows/hardware/9CBAFC44-187A-41ED-9405-1208167AC75D)構造体。
+この通知を使用して、 [NDIS_WWAN_UICC_RESET_INFO](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_uicc_reset_info)構造体。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 | | |
 | --- | --- |
@@ -33,7 +33,7 @@ NDIS_STATUS_WWAN_UICC_RESET_INFO 状態の通知は、UICC スマート カー�
 
 [OID_WWAN_UICC_RESET](oid-wwan-uicc-reset.md)
 
-[NDIS_WWAN_UICC_RESET_INFO](https://msdn.microsoft.com/library/windows/hardware/9CBAFC44-187A-41ED-9405-1208167AC75D)
+[NDIS_WWAN_UICC_RESET_INFO](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_uicc_reset_info)
 
 [低レベルの MB UICC アクセス](mb-low-level-uicc-access.md)
 

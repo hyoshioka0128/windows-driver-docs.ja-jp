@@ -7,12 +7,12 @@ keywords:
 - コールバック ルーチン PnP WDK
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c08c88bf63918451585353762e01dbc5a84dd1b3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5039783581195c83de12d581933407409743e9b9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359882"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387013"
 ---
 # <a name="guidelines-for-writing-pnp-notification-callback-routines"></a>PnP 通知コールバック ルーチンの記述に関するガイドライン
 
@@ -30,7 +30,7 @@ PnP サブシステムの円滑に運用のために、PnP 通知コールバッ
 
     通知のコールバック中にこのようなルーチンを呼び出すと、システム デッドロックが発生することができます。
 
-    ドライバーを呼び出してはならないなど[ **IoReportTargetDeviceChange** ](https://msdn.microsoft.com/library/windows/hardware/ff549625)で通知のコールバック ルーチン。 呼び出す[ **IoReportTargetDeviceChangeAsynchronous** ](https://msdn.microsoft.com/library/windows/hardware/ff549634)代わりにします。
+    ドライバーを呼び出してはならないなど[ **IoReportTargetDeviceChange** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioreporttargetdevicechange)で通知のコールバック ルーチン。 呼び出す[ **IoReportTargetDeviceChangeAsynchronous** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioreporttargetdevicechangeasynchronous)代わりにします。
 
 3.  通知のコールバック ルーチンは、明示的に失敗しないすべてのイベントの成功を返す必要があります。
 

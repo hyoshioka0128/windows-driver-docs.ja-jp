@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ae805605e03e4ac29c6784949351a9bb4de679f3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0cc2e5bb85dd8bece9230ac3200144db28650dde
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367340"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367298"
 ---
 # <a name="bug-check-0x7e-systemthreadexceptionnothandled"></a>バグ チェック 0x7E:システム\_スレッド\_例外\_いない\_処理済み
 
@@ -26,7 +26,7 @@ ms.locfileid: "63367340"
 システム\_スレッド\_例外\_いない\_処理済みのバグ チェックが 0x0000007E の値を持ちます。 このバグ チェックでは、システム スレッドがエラー ハンドラーをキャッチされなかった例外を生成することを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="systemthreadexceptionnothandled-parameters"></a>システム\_スレッド\_例外\_いない\_処理済みのパラメーター

@@ -9,12 +9,12 @@ keywords:
 - DMA は、WDK カーネルでは、アダプタ オブジェクトを転送します。
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a77b7f3f1243934b8c235191cdef91b49eece8f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 519b184bf177a79ba04d9c6f0f1f8a200c94f176
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359940"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386031"
 ---
 # <a name="getting-an-adapter-object"></a>アダプター オブジェクトの取得
 
@@ -22,13 +22,13 @@ ms.locfileid: "63359940"
 
 
 
-システムまたはバス マスター DMA を使用してドライバーを呼び出し、デバイスの起動時に[ **IoGetDmaAdapter** ](https://msdn.microsoft.com/library/windows/hardware/ff549220)アダプター オブジェクトへのポインターを取得し、各で使用できるマップ レジスタの最大数を決定するには転送操作。 ドライバーを呼び出すと**IoGetDmaAdapter**、I/O マネージャーで、さらに、必要なプラットフォームに固有の情報を取得する HAL を呼び出します。
+システムまたはバス マスター DMA を使用してドライバーを呼び出し、デバイスの起動時に[ **IoGetDmaAdapter** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdmaadapter)アダプター オブジェクトへのポインターを取得し、各で使用できるマップ レジスタの最大数を決定するには転送操作。 ドライバーを呼び出すと**IoGetDmaAdapter**、I/O マネージャーで、さらに、必要なプラットフォームに固有の情報を取得する HAL を呼び出します。
 
-ドライバーはシステム定義で特定の情報を指定する必要があります[**デバイス\_説明**](https://msdn.microsoft.com/library/windows/hardware/ff543107)呼び出しで構造**IoGetDmaAdapter**します。 ドライバーを使用する必要があります[ **RtlZeroMemory** ](https://msdn.microsoft.com/library/windows/hardware/ff563610)初期化するために、**デバイス\_説明**に値を設定する前にゼロを含む構造体。
+ドライバーはシステム定義で特定の情報を指定する必要があります[**デバイス\_説明**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_description)呼び出しで構造**IoGetDmaAdapter**します。 ドライバーを使用する必要があります[ **RtlZeroMemory** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-rtlzeromemory)初期化するために、**デバイス\_説明**に値を設定する前にゼロを含む構造体。
 
 必要なデータには、デバイスがスキャッター/ギャザーの機能がある場合に、バス マスターをどのようにがかどうかや、デバイスを同時に転送できるデータのバイト数などのドライバーのデバイスの機能に関する情報が含まれています (**MaximumLength**).
 
-必要なデバイスの説明のデータには、バス マスター デバイスのドライバーを制御するバスのプラットフォームに固有とシステムによって割り当てられた番号などのプラットフォームに固有の情報も含まれています。 ドライバーは、呼び出すことでこの情報を取得できます[ **IoGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff549203)します。
+必要なデバイスの説明のデータには、バス マスター デバイスのドライバーを制御するバスのプラットフォームに固有とシステムによって割り当てられた番号などのプラットフォームに固有の情報も含まれています。 ドライバーは、呼び出すことでこの情報を取得できます[ **IoGetDeviceProperty**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdeviceproperty)します。
 
 **デバイス\_説明**構造に関連するいくつかの DMA デバイスまたはドライバーがない可能性がありますをいくつかのフィールドが含まれています。 たとえば、 **BusNumber** WDM ドライバーではフィールドは使用されません。 各ドライバーでは、関連する構造体のメンバーの値を指定する必要があります、値をその他のすべてのメンバーをゼロに設定する必要があります。
 
@@ -42,7 +42,7 @@ ms.locfileid: "63359940"
 
 -   サイズ (**サイズ**)
 
--   ポインターを[ **DMA\_操作**](https://msdn.microsoft.com/library/windows/hardware/ff544071)構造 (**DmaOperations**)
+-   ポインターを[ **DMA\_操作**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_dma_operations)構造 (**DmaOperations**)
 
 **DMA\_操作**構造体は、そのデバイス上の DMA 操作を実行するドライバーを使用する必要があります関数へのポインターのテーブルを構成します。 関数は、このデータ構造体でポインターを介してのみアクセスできます。ドライバーは、名前で直接それらを呼び出すことはできません。 (これらのルーチンを置き換えるので注意**Hal * Xxx*** ルーチンの以前のバージョンの Windows NT ではサポートされています。 従来のドライバーの互換性を確保するには、Wdm.h と Ntddk.h ヘッダー ファイル、古い形式の名前を持つマクロが、新しいドライバーは、データ構造を使用して、関数を呼び出す必要があります常にします。)
 
@@ -56,11 +56,11 @@ ms.locfileid: "63359940"
 
 DMA デバイス ドライバーは、オブジェクトのポインターをアダプターにストレージを提供する必要がありますと*NumberOfMapRegisters*によって返される値**IoGetDmaAdapter**します。 このポインターは、DMA を使用するシステム提供のサポート ルーチンに必要なパラメーターです。 IRQL でルーチンを呼び出す必要があるため、これらの多くをサポートしてディスパッチ =\_レベル、ドライバーによって割り当てられたストレージは、常駐である必要があります。 DMA のほとんどのドライバーで必要な記憶域の提供、[デバイス拡張機能](device-extensions.md)します。 ただし、記憶域にできるコント ローラーの拡張機能ドライバーにも使用している場合、[コント ローラー オブジェクト](using-controller-objects.md)またはドライバーが割り当てられる非ページ プール。 参照してください[システム容量のメモリを割り当てる](allocating-system-space-memory.md)と[を管理するハードウェアの優先順位](managing-hardware-priorities.md)詳細についてはします。
 
-ドライバーには、すべての DMA 操作が完了したら、それを呼び出す[ **PutDmaAdapter** ](https://msdn.microsoft.com/library/windows/hardware/ff559965)アダプター オブジェクトを解放します。
+ドライバーには、すべての DMA 操作が完了したら、それを呼び出す[ **PutDmaAdapter** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pput_dma_adapter)アダプター オブジェクトを解放します。
 
 次のセクションでは、([を使用してシステム DMA](using-system-dma.md)と[バス マスター DMA を使用して](using-bus-master-dma.md)) 転送要求を満たすために、デバイスの使用サポート DMA ルーチンのドライバーがモノリシック方法について説明します。 これらのセクションでは、ドライバーは、次のことを前提としています。
 
--   標準的な[ *StartIo* ](https://msdn.microsoft.com/library/windows/hardware/ff563858)ルーチンではなくを設定して Irp の内部キューを管理します。
+-   標準的な[ *StartIo* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_startio)ルーチンではなくを設定して Irp の内部キューを管理します。
 
 -   転送要求の数が不足してマップに登録を分割する内部のルーチンは使用できます。
 

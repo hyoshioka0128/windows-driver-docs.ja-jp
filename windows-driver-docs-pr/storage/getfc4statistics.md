@@ -15,12 +15,12 @@ api_type:
 - LibDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: b420920bf57c4a27de06a54abe86adc2410ddad3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b98234d86b502aeda0f5958c623a7f6aaf61e0c8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383135"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378546"
 ---
 # <a name="getfc4statistics-function"></a>GetFC4Statistics 関数
 
@@ -43,16 +43,16 @@ void GetFC4Statistics(
 ----------
 
 *HBAStatus*   
-に返された場合、操作の状態を示す WMI 修飾子の値を格納します。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **GetFC4Statistics\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff553960)構造体。
+に返された場合、操作の状態を示す WMI 修飾子の値を格納します。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **GetFC4Statistics\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_getfc4statistics_out)構造体。
 
 *PortWWN*   
-Nx 型のローカル ポートの世界中の名前\_がトラフィックの統計情報が報告されることをポート。 この情報は、ミニポート ドライバーに配信される、 **PortWWN**のメンバー、 [ **GetFC4Statistics\_IN** ](https://msdn.microsoft.com/library/windows/hardware/ff553958)構造体。
+Nx 型のローカル ポートの世界中の名前\_がトラフィックの統計情報が報告されることをポート。 この情報は、ミニポート ドライバーに配信される、 **PortWWN**のメンバー、 [ **GetFC4Statistics\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_getfc4statistics_in)構造体。
 
 *FC4Type*   
-FC 4 プロトコルの種類を示す値。 FC4 型の詳細については、T11 委員会を参照してください。*ファイバー チャネル汎用サービス - 4*仕様。 この情報は、ミニポート ドライバーに配信される、 **FC4Type**のメンバー、 [ **GetFC4Statistics\_IN** ](https://msdn.microsoft.com/library/windows/hardware/ff553958)構造体。
+FC 4 プロトコルの種類を示す値。 FC4 型の詳細については、T11 委員会を参照してください。*ファイバー チャネル汎用サービス - 4*仕様。 この情報は、ミニポート ドライバーに配信される、 **FC4Type**のメンバー、 [ **GetFC4Statistics\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_getfc4statistics_in)構造体。
 
 *FC4Statistics*   
-返された場合は、型の構造体が含まれています。 [ **MSFC\_FC4STATISTICS** ](https://msdn.microsoft.com/library/windows/hardware/ff562492)指定 FC 4 プロトコルの統計情報を保持しています。 ミニポート ドライバーには、この情報が返されます、 **FC4Statistics**のメンバー、 [ **GetFC4Statistics\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff553960)構造体。
+返された場合は、型の構造体が含まれています。 [ **MSFC\_FC4STATISTICS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_msfc_fc4statistics)指定 FC 4 プロトコルの統計情報を保持しています。 ミニポート ドライバーには、この情報が返されます、 **FC4Statistics**のメンバー、 [ **GetFC4Statistics\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_getfc4statistics_out)構造体。
 
 <a name="return-value"></a>戻り値
 ------------
@@ -91,13 +91,13 @@ WMI メソッドには適用されません。
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
-[**GetFC4Statistics\_IN**](https://msdn.microsoft.com/library/windows/hardware/ff553958)
+[**GetFC4Statistics\_IN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_getfc4statistics_in)
 
-[**GetFC4Statistics\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff553960)
+[**GetFC4Statistics\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_getfc4statistics_out)
 
 [HBA\_状態](hba-status.md)
 
-[**MSFC\_FC4STATISTICS**](https://msdn.microsoft.com/library/windows/hardware/ff562492)
+[**MSFC\_FC4STATISTICS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_msfc_fc4statistics)
 
  
 

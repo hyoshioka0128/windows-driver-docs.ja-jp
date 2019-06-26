@@ -8,12 +8,12 @@ keywords:
 - ミニドライバー WDK Windows 2000 のカーネル ストリーム、書き込み
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 50c00bcd9db95bd9e3ca27da17f8236685996e9b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f1df004fb437789d471844324aa2688b4c69dfa0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327522"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385351"
 ---
 # <a name="writing-a-stream-minidriver"></a>ストリーム ミニドライバーの作成
 
@@ -35,37 +35,37 @@ ms.locfileid: "63327522"
 
 **すべてのミニドライバーは、ルーチン**
 
-[*StrMiniCancelPacket*](https://msdn.microsoft.com/library/windows/hardware/ff568448)
+[*StrMiniCancelPacket*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/nc-strmini-phw_cancel_srb)
 
-[*StrMiniReceiveDevicePacket*](https://msdn.microsoft.com/library/windows/hardware/ff568463)
+[*StrMiniReceiveDevicePacket*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/nc-strmini-phw_receive_device_srb)
 
-[*StrMiniRequestTimeout*](https://msdn.microsoft.com/library/windows/hardware/ff568473)
+[*StrMiniRequestTimeout*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/nc-strmini-phw_request_timeout_handler)
 
-[*StrMiniEvent*](https://msdn.microsoft.com/library/windows/hardware/ff568457)
+[*StrMiniEvent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/nc-strmini-phw_event_routine)
 
-[*StrMiniInterrupt*](https://msdn.microsoft.com/library/windows/hardware/ff568459)
+[*StrMiniInterrupt*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/nc-strmini-phw_interrupt)
 
 **ルーチン、ミニドライバーは、それぞれ個別のストリームを提供します**
 
-[*StrMiniReceiveStreamDataPacket*](https://msdn.microsoft.com/library/windows/hardware/ff568470)
+[*StrMiniReceiveStreamDataPacket*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/nc-strmini-phw_receive_device_srb)
 
-[**StrMiniReceiveStreamControlPacket**](https://msdn.microsoft.com/library/windows/hardware/ff568467)
+[**StrMiniReceiveStreamControlPacket**](https://docs.microsoft.com/previous-versions/ff568467(v=vs.85))
 
-[*StrMiniEvent*](https://msdn.microsoft.com/library/windows/hardware/ff568457)
+[*StrMiniEvent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/nc-strmini-phw_event_routine)
 
-[*StrMiniClock*](https://msdn.microsoft.com/library/windows/hardware/ff568452)
+[*StrMiniClock*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/nc-strmini-phw_query_clock_routine)
 
 いくつかの異なるストリームに、同じコールバックを使用するミニドライバーのことができます。 コールバックは、パラメーターから呼び出された対象のストリームを判断できます。
 
 ミニドライバー、WDM ドライバーをすべてのようにも指定する必要あります、 **DriverEntry**ルーチン。 主なタスク、 **DriverEntry**ミニドライバーのルーチンは、クラス ドライバーを使用した、ミニドライバーを登録します。
 
-クラス ドライバーは、ミニドライバーの代わりにすべての I/O 要求を受信します。 要求の完了に必要な情報を取得するクラス ドライバー ストリーム要求のブロック (SRB) をビルドし、いずれかに渡されます、 **StrMini*XXX*パケット**ルーチン。 クラス ドライバーを全体として、デバイスへの I/O 要求のディスパッチ、 [ *StrMiniReceiveDevicePacket* ](https://msdn.microsoft.com/library/windows/hardware/ff568463)ルーチン。 要求に個別のストリームに渡す、 [ *StrMiniReceiveStreamDataPacket* ](https://msdn.microsoft.com/library/windows/hardware/ff568470) (ストリーミング カーネルは、読み取りおよび書き込み要求) についてまたは[ **StrMiniReceiveStreamControlPacket** ](https://msdn.microsoft.com/library/windows/hardware/ff568467) (他の要求)。
+クラス ドライバーは、ミニドライバーの代わりにすべての I/O 要求を受信します。 要求の完了に必要な情報を取得するクラス ドライバー ストリーム要求のブロック (SRB) をビルドし、いずれかに渡されます、 **StrMini*XXX*パケット**ルーチン。 クラス ドライバーを全体として、デバイスへの I/O 要求のディスパッチ、 [ *StrMiniReceiveDevicePacket* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/nc-strmini-phw_receive_device_srb)ルーチン。 要求に個別のストリームに渡す、 [ *StrMiniReceiveStreamDataPacket* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/nc-strmini-phw_receive_device_srb) (ストリーミング カーネルは、読み取りおよび書き込み要求) についてまたは[ **StrMiniReceiveStreamControlPacket** ](https://docs.microsoft.com/previous-versions/ff568467(v=vs.85)) (他の要求)。
 
 通常、クラス ドライバー、その要求をキューを 1 つずつに渡します、ミニドライバーします。 ミニドライバーは、独自の同期を行うことができます必要に応じてミニドライバーはすぐに処理できない要求をキュー責任を負います。 参照してください[ミニドライバー同期](minidriver-synchronization.md)詳細についてはします。
 
-ミニドライバーは、ストリーム要求のブロックを操作するため、2 つの追加ルーチンを提供する必要があります。 クラスのドライバー呼び出し[ *StrMiniCancelPacket* ](https://msdn.microsoft.com/library/windows/hardware/ff568448)とキャンセル IRP を受信して、特定のパケットをキャンセルするミニドライバーを指示する必要があります。 クラスのドライバーもの追跡、ミニドライバーでストリーム要求のブロックの処理を完了にかかる時間。 クラスのドライバーが、要求がタイムアウトし、呼び出すようにミニドライバーのミニドライバーは時間がかかりすぎる場合[ *StrMiniRequestTimeout* ](https://msdn.microsoft.com/library/windows/hardware/ff568473)ルーチン。
+ミニドライバーは、ストリーム要求のブロックを操作するため、2 つの追加ルーチンを提供する必要があります。 クラスのドライバー呼び出し[ *StrMiniCancelPacket* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/nc-strmini-phw_cancel_srb)とキャンセル IRP を受信して、特定のパケットをキャンセルするミニドライバーを指示する必要があります。 クラスのドライバーもの追跡、ミニドライバーでストリーム要求のブロックの処理を完了にかかる時間。 クラスのドライバーが、要求がタイムアウトし、呼び出すようにミニドライバーのミニドライバーは時間がかかりすぎる場合[ *StrMiniRequestTimeout* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/nc-strmini-phw_request_timeout_handler)ルーチン。
 
-ハードウェアの割り込みが発生した、オペレーティング システムが、クラス ドライバーを通知する呼び出しミニドライバーの[ *StrMiniInterrupt* ](https://msdn.microsoft.com/library/windows/hardware/ff568459)割り込みを処理するルーチン。
+ハードウェアの割り込みが発生した、オペレーティング システムが、クラス ドライバーを通知する呼び出しミニドライバーの[ *StrMiniInterrupt* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/nc-strmini-phw_interrupt)割り込みを処理するルーチン。
 
  
 

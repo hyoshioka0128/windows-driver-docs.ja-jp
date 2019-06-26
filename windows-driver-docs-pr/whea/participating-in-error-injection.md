@@ -12,21 +12,21 @@ keywords:
 - WDK WHEA エラーの挿入
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ba750aebcad32ffa450042a5189109aee3172c4a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1163a64508a4f003f3ad12d76d81925cff0c762d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341910"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386455"
 ---
 # <a name="participating-in-error-injection"></a>エラーの挿入への参加
 
 
 エラー情報の取得に参加するには、プラグイン PSHED は次のコールバック関数を実装する必要があります。
 
-[*GetInjectionCapabilities*](https://msdn.microsoft.com/library/windows/hardware/ff559372)
+[*GetInjectionCapabilities*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nc-ntddk-pshed_pi_get_injection_capabilities)
 
-[*InjectError*](https://msdn.microsoft.com/library/windows/hardware/ff559397)
+[*InjectError*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nc-ntddk-pshed_pi_inject_error)
 
 次のコード例では、これらのコールバック関数を実装する方法を示します。
 

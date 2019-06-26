@@ -4,12 +4,12 @@ description: ALE エンドポイント有効期間管理
 ms.assetid: cbf54062-4ced-4cf6-babf-e9e4e1ddf302
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 976ac66dc1e0bc436cfc464d5ad940d54b9afc79
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9043dedd176f2b702572762683fc8936d54c9742
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367745"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386362"
 ---
 # <a name="ale-endpoint-lifetime-management"></a>ALE エンドポイント有効期間管理
 
@@ -30,7 +30,7 @@ ALE リソース割り当ての対応するレイヤーですべてを示す値�
 
 ALE エンドポイント クロージャ レイヤーは、エンドポイントの種類に応じて異なる方法で起動されます。 すべて ALE 承認の TCP 接続の ALE エンドポイントの閉包が示されます層の接続 (たとえば FWPS\_レイヤー\_ALE\_AUTH\_CONNECT\_V4) ALE を承認または受信 (のレイヤーをそのまま使用例 FWPS\_レイヤー\_ALE\_AUTH\_RECV\_ACCEPT\_V4) を示す値。 エンジンがエンドポイントごとに一意のハンドルを割り当てるし、FWPS で渡します ALE リソースには、リリースの問題を\_メタデータ\_フィールド\_トランスポート\_エンドポイント\_メタデータ フィールドのハンドル。 TCP 以外のエンドポイントの一意のリモート ピアと通信して、ソケットの数に関係なく、各エンドポイントの ALE エンドポイント クロージャ レイヤーが呼び出されます。 ALE エンドポイント クロージャ レイヤーは各 TCP リスニング ソケットも呼び出されます。
 
-コールアウト ALE エンドポイント クロージャ レイヤーの登録には、保留の分類ことができます。 これにより、エンドポイントのシャット ダウンする前に、非同期処理のコールアウトのすべてのパケットを再挿入をキューに登録できます。 保留の分類にコールアウト ドライバーを呼び出す必要があります[ **FwpsPendClassify0** ](https://msdn.microsoft.com/library/windows/hardware/ff551197)への呼び出しに続く[ **FwpsCompleteClassify0** ](https://msdn.microsoft.com/library/windows/hardware/ff551150)とき処理が完了しました。
+コールアウト ALE エンドポイント クロージャ レイヤーの登録には、保留の分類ことができます。 これにより、エンドポイントのシャット ダウンする前に、非同期処理のコールアウトのすべてのパケットを再挿入をキューに登録できます。 保留の分類にコールアウト ドライバーを呼び出す必要があります[ **FwpsPendClassify0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpspendclassify0)への呼び出しに続く[ **FwpsCompleteClassify0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpscompleteclassify0)とき処理が完了しました。
 
 該当する場合、エンジンは、FWPS に親エンドポイントの一意のハンドルを示します\_メタデータ\_フィールド\_親\_エンドポイント\_メタデータ フィールドのハンドル。 これにより、必要な場合、親/子の関係を追跡するために、コールアウト ドライバー。
 

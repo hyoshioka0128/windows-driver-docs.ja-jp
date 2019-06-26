@@ -8,12 +8,12 @@ keywords:
 - タイマー WDK SCSI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f67ffc633f496b072231aabc75258b8b27bf906f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 21b4b2fcbe61e07822dfe67e776dc2d5d3738acb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378943"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386494"
 ---
 # <a name="scsi-miniport-drivers-hwscsitimer-routine"></a>SCSI ミニポート ドライバーの HwScsiTimer ルーチン
 
@@ -21,13 +21,13 @@ ms.locfileid: "63378943"
 ## <span id="ddk_scsi_miniport_drivers_hwscsitimer_routine_kg"></span><span id="DDK_SCSI_MINIPORT_DRIVERS_HWSCSITIMER_ROUTINE_KG"></span>
 
 
-ミニポート ドライバーがない、 [ **HwScsiInterrupt** ](https://msdn.microsoft.com/library/windows/hardware/ff557312)ルーチンがすべての HBA の I/O 操作をポーリングして管理するためする必要がありますが、 [ *HwScsiTimer*](https://msdn.microsoft.com/library/windows/hardware/ff557327)ルーチン。 ただし、ミニポート ドライバーが*HwScsiInterrupt*ルーチンが頻繁にある*HwScsiTimer*ルーチンもします。
+ミニポート ドライバーがない、 [ **HwScsiInterrupt** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557312(v=vs.85))ルーチンがすべての HBA の I/O 操作をポーリングして管理するためする必要がありますが、 [ *HwScsiTimer*](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557327(v=vs.85))ルーチン。 ただし、ミニポート ドライバーが*HwScsiInterrupt*ルーチンが頻繁にある*HwScsiTimer*ルーチンもします。
 
-ミニポート ドライバーを呼び出すことができます、 [ **ScsiPortStallExecution** ](https://msdn.microsoft.com/library/windows/hardware/ff564757)ミニポート ドライバーには、HBA の状態変更の待機、*しない*長く待機するには、このルーチンを呼び出す除く 1 ミリ秒よりも場合によっては、操作の実行、ミニポート ドライバーが初期化のみ。 **ScsiPortStallExecution**一定の間隔でシステムの有用な処理から他のコードを防ぐため、プロセッサと結びついています。
+ミニポート ドライバーを呼び出すことができます、 [ **ScsiPortStallExecution** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportstallexecution)ミニポート ドライバーには、HBA の状態変更の待機、*しない*長く待機するには、このルーチンを呼び出す除く 1 ミリ秒よりも場合によっては、操作の実行、ミニポート ドライバーが初期化のみ。 **ScsiPortStallExecution**一定の間隔でシステムの有用な処理から他のコードを防ぐため、プロセッサと結びついています。
 
 呼び出す代わりに**ScsiPortStallExecution**入力の間隔と多くの CPU サイクルの浪費、ミニポート ドライバーが必要、 *HwScsiTimer*ルーチン。 1 つまたは複数*HwScsiTimer*ルーチンは、HBA がすべての操作の完了の割り込みを生成しない場合、またはバスのリセットなどの操作時間 1 ミリ秒を超えるいずれかのよく要求される場合に特に便利です。
 
-HBA がこのような操作の設定、ミニポート ドライバーは呼び出し[ **ScsiPortNotification** ](https://msdn.microsoft.com/library/windows/hardware/ff564657)で、* NotificationType ***RequestTimerCall**、操作に関するコンテキストを含むその HBA 固有デバイスの拡張機能へのポインター、 *HwScsiTimer*エントリ ポイント、およびドライバーにより決定された間隔。
+HBA がこのような操作の設定、ミニポート ドライバーは呼び出し[ **ScsiPortNotification** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportnotification)で、* NotificationType ***RequestTimerCall**、操作に関するコンテキストを含むその HBA 固有デバイスの拡張機能へのポインター、 *HwScsiTimer*エントリ ポイント、およびドライバーにより決定された間隔。
 
 **ScsiPortNotification**呼び出しを同期して、 *HwScsiTimer*でそれらを日常的な*HwScsiInterrupt*が実行するために日常的なときに同時に、 *HwScsiTimer*ルーチンが実行されています。
 

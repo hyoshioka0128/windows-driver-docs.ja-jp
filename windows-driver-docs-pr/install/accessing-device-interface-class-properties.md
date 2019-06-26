@@ -4,12 +4,12 @@ description: デバイス インターフェイス クラスのプロパティ�
 ms.assetid: c9efe273-dc66-4585-8ab5-3842df1c95df
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4be0d5781dd6bc6e41865396f8a4d53815db0055
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c6f177b9ca6cb6543bc7109658aef2eac83e01f4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373883"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383050"
 ---
 # <a name="accessing-device-interface-class-properties"></a>デバイス インターフェイス クラスのプロパティへのアクセス
 
@@ -24,13 +24,13 @@ Windows Server 2003、Windows XP、および Windows 2000 もこれらのデバ�
 
 以前のバージョンの Windows、Windows Vista およびそれ以降のバージョンとの互換性は維持するために、デバイス インターフェイスに関する情報にアクセスするこれら 2 つの方法もサポートします。 ただし、Windows Vista およびそれ以降のバージョンでこれらのプロパティにアクセスするのにプロパティのキーを使用する必要があります。
 
-デバイスのシステム定義のインターフェイス クラスのプロパティの一覧は、次を参照してください。[デバイス インターフェイスのクラス プロパティ](https://msdn.microsoft.com/library/windows/hardware/ff541406)します。 [デバイス セットアップ クラスのプロパティ](accessing-device-setup-class-properties.md)Windows Vista およびそれ以降のバージョンのプロパティへのアクセスに使用するプロパティのキー識別子ごとに表示されます。 プロパティのキーで提供される情報には、Windows Server 2003、Windows XP、および Windows 2000 のプロパティへのアクセスに使用できる対応するレジストリ エントリの値も含まれています。
+デバイスのシステム定義のインターフェイス クラスのプロパティの一覧は、次を参照してください。[デバイス インターフェイスのクラス プロパティ](https://docs.microsoft.com/previous-versions/ff541406(v=vs.85))します。 [デバイス セットアップ クラスのプロパティ](accessing-device-setup-class-properties.md)Windows Vista およびそれ以降のバージョンのプロパティへのアクセスに使用するプロパティのキー識別子ごとに表示されます。 プロパティのキーで提供される情報には、Windows Server 2003、Windows XP、および Windows 2000 のプロパティへのアクセスに使用できる対応するレジストリ エントリの値も含まれています。
 
 プロパティのキーを使用して、Windows Vista およびそれ以降のバージョンのデバイス セットアップ クラスのプロパティにアクセスする方法については、次を参照してください。[にアクセスするデバイス クラスのプロパティ (Windows Vista 以降)](accessing-device-class-properties--windows-vista-and-later-.md)します。
 
 ### <a href="" id="accessing-the-default-interface-for-a-device-interface-class"></a> デバイスのインターフェイス クラスの既定のインターフェイスにアクセスします。
 
-デバイスのインターフェイス クラスの既定のインターフェイスを取得する[ **SetupDiGetClassDevs** ](https://msdn.microsoft.com/library/windows/hardware/ff551069)し、次のパラメーター値を指定します。
+デバイスのインターフェイス クラスの既定のインターフェイスを取得する[ **SetupDiGetClassDevs** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclassdevsw)し、次のパラメーター値を指定します。
 
 -   設定*ClassGuid*を既定のインターフェイスを取得する対象のデバイスのインターフェイス クラスを表す GUID。
 
@@ -42,17 +42,17 @@ Windows Server 2003、Windows XP、および Windows 2000 もこれらのデバ�
 
 この呼び出しでは、デバイス情報の要素が含まれるデバイス情報のセットを返します。 返されるデバイス情報要素は、指定したデバイスのインターフェイス クラスの既定のインターフェイスをサポートするデバイスを表します。
 
-デバイス インターフェイスのクラスの既定のインターフェイスを設定するには、呼び出す[ **SetupDiSetDeviceInterfaceDefault** ](https://msdn.microsoft.com/library/windows/hardware/ff552149)し、次のパラメーター値を指定します。
+デバイス インターフェイスのクラスの既定のインターフェイスを設定するには、呼び出す[ **SetupDiSetDeviceInterfaceDefault** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetdeviceinterfacedefault)し、次のパラメーター値を指定します。
 
 -   設定*DeviceInfoSet*デバイス インターフェイスのクラスの既定として設定するデバイスのインターフェイスが含まれるデバイス情報のセットへのハンドル。
 
--   設定*DeviceInterfaceData*へのポインター、 [ **SP_DEVICE_INTERFACE_DATA** ](https://msdn.microsoft.com/library/windows/hardware/ff552342)でデバイスのインターフェイスを指定する構造体*DeviceInfoSet*.
+-   設定*DeviceInterfaceData*へのポインター、 [ **SP_DEVICE_INTERFACE_DATA** ](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_device_interface_data)でデバイスのインターフェイスを指定する構造体*DeviceInfoSet*.
 
 ### <a href="" id="accessing-device-interface-class-properties-that-have-registry-entry-v"></a> インターフェイス クラスのレジストリ キーの下のレジストリ エントリの値を持つデバイス インターフェイスのクラス プロパティにアクセスします。
 
 インターフェイス クラスのレジストリ キーの下の対応するレジストリ エントリ値を持つデバイスのインターフェイス クラスのプロパティにアクセスするには、次の手順を実行します。
 
-1.  呼び出す、 [ **SetupDiOpenClassRegKeyEx** ](https://msdn.microsoft.com/library/windows/hardware/ff552067)インターフェイス クラスのレジストリ キーを開き、次のパラメーター値を指定する関数。
+1.  呼び出す、 [ **SetupDiOpenClassRegKeyEx** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiopenclassregkeyexa)インターフェイス クラスのレジストリ キーを開き、次のパラメーター値を指定する関数。
 
     -   設定*ClassGuid*要求クラスのレジストリ キーのデバイスのインターフェイス クラスを識別する GUID へのポインター。
     -   設定*samDesired*必要なアクセス権限を示す REGSAM に型指定された値にします。
@@ -60,7 +60,7 @@ Windows Server 2003、Windows XP、および Windows 2000 もこれらのデバ�
     -   設定*MachineName*要求クラスのレジストリ キーを開くときにコンピューターの名前を含む NULL で終わる文字列へのポインター。 コンピューターがローカル コンピューターの場合は、設定*MachineName*に**NULL**します。
     -   設定*予約*に**NULL**します。
 
-    この呼び出し場合[ **SetupDiOpenClassRegKeyEx** ](https://msdn.microsoft.com/library/windows/hardware/ff552067)成功すると、 **SetupDiOpenClassRegKeyEx**要求ハンドルを返します。 関数呼び出しが失敗した場合、 **SetupDiOpenClassRegKeyEx** INVALID_HANDLE_VALUE とへの呼び出しを返します[GetLastError](https://go.microsoft.com/fwlink/p/?linkid=169416)はログに記録されたエラー コードを返します。
+    この呼び出し場合[ **SetupDiOpenClassRegKeyEx** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiopenclassregkeyexa)成功すると、 **SetupDiOpenClassRegKeyEx**要求ハンドルを返します。 関数呼び出しが失敗した場合、 **SetupDiOpenClassRegKeyEx** INVALID_HANDLE_VALUE とへの呼び出しを返します[GetLastError](https://go.microsoft.com/fwlink/p/?linkid=169416)はログに記録されたエラー コードを返します。
 
 2.  呼び出しで取得したハンドルを指定[RegQueryValueEx](https://go.microsoft.com/fwlink/p/?linkid=95398)と[RegSetValueEx](https://go.microsoft.com/fwlink/p/?linkid=95399)を取得またはデバイスのインターフェイス クラス プロパティに対応するレジストリ エントリの値を設定します。
 

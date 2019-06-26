@@ -3,12 +3,12 @@ Description: トランスポートで UCSI 仕様を実装する UCSI クラス�
 title: UCSI クライアント ドライバーを記述する
 ms.date: 09/30/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 625212799bed9e6bec50495c7556736d8a6f20ad
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8dafc98f16cb5b0cfab0e931fcb52198efaf97f5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389140"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385343"
 ---
 # <a name="write-a-ucsi-client-driver"></a>UCSI クライアント ドライバーを記述する
 
@@ -98,7 +98,7 @@ UcmUcsiCx は OPM から PPM ファームウェアに UCSI コマンドを送信
 
 -   デスクトップ エディション (Home、Pro、Enterprise、および教育機関向け) の場合は、Windows 10 をインストールします。
 
--   [インストール](https://developer.microsoft.com/windows/hardware/windows-driver-kit)開発用コンピューターに最新 Windows Driver Kit (WDK)。 このキットが必要なヘッダー ファイルとライブラリを具体的には、クライアント ドライバーを記述するため、必要があります。
+-   [インストール](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk)開発用コンピューターに最新 Windows Driver Kit (WDK)。 このキットが必要なヘッダー ファイルとライブラリを具体的には、クライアント ドライバーを記述するため、必要があります。
 
     -   スタブ ライブラリは、(UcmUcsiCxStub.lib)。 ライブラリでは、クライアント ドライバーによって行われた呼び出しを変換し、クラスの拡張機能に渡します。
     -   ヘッダー ファイルでは、Ucmucsicx.h します。

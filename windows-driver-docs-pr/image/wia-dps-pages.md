@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f0289268f58ceffcb92c04873d35546fbd3cb4f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ca82950a5afba115b24f8e802186950a237367b1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377936"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383771"
 ---
 # <a name="wiadpspages"></a>WIA\_DPS\_ページ
 
@@ -49,7 +49,7 @@ WIA\_DPS\_自動ドキュメント フィーダーから取得するページの
 </colgroup>
 <thead>
 <tr class="header">
-<th>値</th>
+<th>Value</th>
 <th>定義</th>
 </tr>
 </thead>
@@ -66,11 +66,11 @@ WIA\_DPS\_自動ドキュメント フィーダーから取得するページの
 **注**  二重モードが有効になっている場合 (つまり、 [ **WIA\_DPS\_ドキュメント\_処理\_選択**](wia-dps-document-handling-select.md)プロパティがフィーダー |双方向)、WIA\_DPS\_ページは依然としてスキャンするページ数。
 1 枚の用紙が自動的に入力 2 つのページ二重モードが有効になっている場合、ページの背面にある空白である場合でもです。
 
-WIA を設定した場合\_DPS\_を 1 に、スキャナーのページは、ページの側面の 1 つを処理します。 スキャナーは、二重モードでは、ページの一方だけをスキャンできない場合は、WIA を変更する必要があります\_DPS\_ページ値、 **Inc**のメンバー、 [ **WIA\_プロパティ\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff552751)構造体を 2 にします。 この値は、2 つの倍数単位のページを要求する必要がありますが、アプリケーションに通知します。 場合 WIA\_DPS\_ページが 0 は、スキャナーをスキャン*すべて*ドキュメント フィーダーに現在読み込まれているページ。
+WIA を設定した場合\_DPS\_を 1 に、スキャナーのページは、ページの側面の 1 つを処理します。 スキャナーは、二重モードでは、ページの一方だけをスキャンできない場合は、WIA を変更する必要があります\_DPS\_ページ値、 **Inc**のメンバー、 [ **WIA\_プロパティ\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/ns-wiamindr_lh-_wia_property_info)構造体を 2 にします。 この値は、2 つの倍数単位のページを要求する必要がありますが、アプリケーションに通知します。 場合 WIA\_DPS\_ページが 0 は、スキャナーをスキャン*すべて*ドキュメント フィーダーに現在読み込まれているページ。
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -97,7 +97,7 @@ WIA を設定した場合\_DPS\_を 1 に、スキャナーのページは、ペ
 
 [**WIA\_IP\_ページ**](wia-ips-pages.md)
 
-[**WIA\_プロパティ\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff552751)
+[**WIA\_プロパティ\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/ns-wiamindr_lh-_wia_property_info)
 
  
 

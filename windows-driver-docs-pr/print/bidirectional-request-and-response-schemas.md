@@ -4,17 +4,17 @@ description: 双方向の要求と応答スキーマは、クエリやアプリ�
 ms.assetid: C005D90D-DCDB-410C-BD6F-83111849547E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f3579ceb8517082c1bf90c9271f143e1054f45e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e3a4885e9d57ab83c960ff0c56d67dc351e56911
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390619"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382577"
 ---
 # <a name="bidirectional-request-and-response-schemas"></a>双方向の要求と応答のスキーマ
 
 
-双方向の要求と応答スキーマは、クエリやアプリケーションとプリンターの間の双方向通信のために使用する応答の XML 形式のセットを提供します。 これらのクエリを使用して、アプリケーションはに従って格納されているプリンターの構成および状態データを取得できます、[双方向通信スキーマ](bidirectional-communication-schema.md)します。 任意の書き込み可能なプリンターのプロパティを設定することもできます。 いずれかを使用することができます、 [ **IBidiSpl2::SendRecvXMLStream** ](https://msdn.microsoft.com/library/windows/hardware/dd144983)または[ **IBidiSpl2::SendRecvXMLString** ](https://msdn.microsoft.com/library/windows/hardware/dd144984)との通信に関数プリンターです。
+双方向の要求と応答スキーマは、クエリやアプリケーションとプリンターの間の双方向通信のために使用する応答の XML 形式のセットを提供します。 これらのクエリを使用して、アプリケーションはに従って格納されているプリンターの構成および状態データを取得できます、[双方向通信スキーマ](bidirectional-communication-schema.md)します。 任意の書き込み可能なプリンターのプロパティを設定することもできます。 いずれかを使用することができます、 [ **IBidiSpl2::SendRecvXMLStream** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bidispl/nf-bidispl-ibidispl2-sendrecvxmlstream)または[ **IBidiSpl2::SendRecvXMLString** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bidispl/nf-bidispl-ibidispl2-sendrecvxmlstring)との通信に関数プリンターです。
 
 いくつかの要求スキーマと対応する応答のスキーマがあります。 次のトピックでは、それぞれの正式な定義と、それぞれの例があります。
 
@@ -34,7 +34,7 @@ ms.locfileid: "63390619"
 
 要求の作成方法の詳細については、次を参照してください。[双方向通信のスキーマのクエリを構築する](constructing-a-bidi-communication-schema-query.md)します。
 
-双方向通信のスキーマの詳細については、次を参照してください。、[双方向通信スキーマ階層](bidirectional-communication-schema-hierarchy.md)と[双方向通信のスキーマ リファレンス](https://msdn.microsoft.com/library/windows/hardware/ff545175)トピック。
+双方向通信のスキーマの詳細については、次を参照してください。、[双方向通信スキーマ階層](bidirectional-communication-schema-hierarchy.md)と[双方向通信のスキーマ リファレンス](https://docs.microsoft.com/windows-hardware/drivers/print/bidi-communications-schema-reference)トピック。
 
  
 

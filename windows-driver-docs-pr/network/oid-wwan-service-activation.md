@@ -5,12 +5,12 @@ ms.assetid: a70c087d-0650-4aab-b78e-0d5a7aa49eb6
 ms.date: 08/08/2017
 keywords: -OID_WWAN_SERVICE_ACTIVATION ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 15574dd8a63a321b7c0e07e3dfbeba068eab3a1b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3a7e5f7a8d8dee6dce48be439e127c385a2042b4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368452"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383179"
 ---
 # <a name="oidwwanserviceactivation"></a>OID\_WWAN\_サービス\_アクティブ化
 
@@ -19,12 +19,12 @@ OID\_WWAN\_サービス\_ライセンス認証プロバイダーのネットワ�
 
 クエリ要求はサポートされていません。
 
-ミニポート ドライバーが非同期的に、最初に返す NDIS セット要求を処理する必要があります\_状態\_INDICATION\_元の要求とそれ以降の送信に必要な[ **NDIS\_状態\_WWAN\_サービス\_アクティベーション**](ndis-status-wwan-service-activation.md)状態通知を含む、 [ **NDIS\_WWAN\_サービス\_アクティベーション**](https://msdn.microsoft.com/library/windows/hardware/ff567918)構造体をトランザクションが完了しているときに、プロバイダーのネットワークにアクセスするためにサービスのアクティブ化を開始します。
+ミニポート ドライバーが非同期的に、最初に返す NDIS セット要求を処理する必要があります\_状態\_INDICATION\_元の要求とそれ以降の送信に必要な[ **NDIS\_状態\_WWAN\_サービス\_アクティベーション**](ndis-status-wwan-service-activation.md)状態通知を含む、 [ **NDIS\_WWAN\_サービス\_アクティベーション**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_service_activation)構造体をトランザクションが完了しているときに、プロバイダーのネットワークにアクセスするためにサービスのアクティブ化を開始します。
 
 <a name="remarks"></a>注釈
 -------
 
-詳細については、この OID を使用して、次を参照してください。 [MB サービスの検出とアクティブ化](https://msdn.microsoft.com/library/windows/hardware/ff559122)します。
+詳細については、この OID を使用して、次を参照してください。 [MB サービスの検出とアクティブ化](https://docs.microsoft.com/windows-hardware/drivers/network/mb-service-detection-and-activation)します。
 
 処理するときに、プロバイダーのネットワークは、クエリまたは要求を設定またはミニポート ドライバーが Subscriber Identity Module (SIM カード) にアクセスできます。
 
@@ -59,11 +59,11 @@ MB サービス OID を使用して\_WWAN\_サービス\_ライセンス認証�
 
 [OID\_WWAN\_準備\_情報](oid-wwan-ready-info.md)
 
-[**NDIS\_WWAN\_サービス\_アクティブ化**](https://msdn.microsoft.com/library/windows/hardware/ff567918)
+[**NDIS\_WWAN\_サービス\_アクティブ化**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_service_activation)
 
 [**NDIS\_状態\_WWAN\_サービス\_アクティブ化**](ndis-status-wwan-service-activation.md)
 
-[MB サービスの検出とアクティブ化](https://msdn.microsoft.com/library/windows/hardware/ff559122)
+[MB サービスの検出とアクティブ化](https://docs.microsoft.com/windows-hardware/drivers/network/mb-service-detection-and-activation)
 
  
 

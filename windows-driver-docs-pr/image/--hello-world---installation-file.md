@@ -4,16 +4,16 @@ description: Hello World' のインストール ファイル
 ms.assetid: 826f4f99-16bd-4586-9cc1-0afde2fcee65
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 17e3dd3c02647d4c9f762ccb83611f968c346655
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 51a3922167b764ddea6a1c434d2edeab86b185c5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377633"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385641"
 ---
 # <a name="hello-world-installation-file"></a>'Hello World' のインストール ファイル
 
-ミニドライバーは、インストールするセットアップ情報 (INF) ファイルが必要です。 INF ファイルでは、すべてのデバイスのインストールに必要な情報を含むテキスト ファイルです。 INF ファイルについては、次を参照してください。、 [WIA デバイスの INF ファイル](inf-files-for-wia-devices.md)と[INF ファイルを作成する](https://msdn.microsoft.com/library/windows/hardware/ff549520)セクション。
+ミニドライバーは、インストールするセットアップ情報 (INF) ファイルが必要です。 INF ファイルでは、すべてのデバイスのインストールに必要な情報を含むテキスト ファイルです。 INF ファイルについては、次を参照してください。、 [WIA デバイスの INF ファイル](inf-files-for-wia-devices.md)と[INF ファイルを作成する](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-inf-files)セクション。
 
 *Hellowld.inf*ファイルは、次を含める必要があります。
 

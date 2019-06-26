@@ -4,12 +4,12 @@ description: MS\_SMHBA\_SASPHYSTATISTICS WMI クラス
 ms.assetid: 72afc856-8232-492f-b8d2-4e88dd9fe723
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 57f77419a5dab6d18461bbe37a3eb83b3d744ae8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 96ea2dc029f0bcbf8b18abc7c30e047a80fc2f0c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325254"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386125"
 ---
 # <a name="mssmhbasasphystatistics-wmi-class"></a>MS\_SMHBA\_SASPHYSTATISTICS WMI クラス
 
@@ -52,7 +52,7 @@ class MS_SMHBA_SASPHYSTATISTICS
 
 このクラスの定義が WMI ツール スイートによってコンパイルされると、次のデータ構造が生成されます。
 
-[**MS\_SMHBA\_SASPHYSTATISTICS**](https://msdn.microsoft.com/library/windows/hardware/ff563175)
+[**MS\_SMHBA\_SASPHYSTATISTICS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_ms_smhba_sasphystatistics)
 
 この WMI クラスに関連付けられているメソッドはありません。
 

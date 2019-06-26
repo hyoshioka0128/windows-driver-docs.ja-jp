@@ -9,12 +9,12 @@ keywords:
 - WDK GDI のユーザー オブジェクト
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cbe8594a1691889c3595434e424f06f4c61e622e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0ec5927ca3ceba3cbeca85ee4ffb39c6b657c924
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323224"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382348"
 ---
 # <a name="gdi-user-objects"></a>GDI ユーザー オブジェクト
 
@@ -43,43 +43,43 @@ GDI は重要なは、内部データを構造化、いますと渡すことに�
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff538261" data-raw-source="[&lt;strong&gt;BRUSHOBJ&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff538261)"><strong>BRUSHOBJ</strong></a></p></td>
-<td align="left"><p>線、テキスト、または塗りつぶしを出力する関数のグラフィック ブラシ オブジェクトを定義します。 ドライバーを呼び出すことができます<a href="https://msdn.microsoft.com/library/windows/hardware/ff556272#wdkgloss-brushobj" data-raw-source="&lt;em&gt;BRUSHOBJ&lt;/em&gt;"> <em>BRUSHOBJ</em> </a> services ブラシを実現する、または実現 GDI によって以前にキャッシュを検索します。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_brushobj" data-raw-source="[&lt;strong&gt;BRUSHOBJ&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_brushobj)"><strong>BRUSHOBJ</strong></a></p></td>
+<td align="left"><p>線、テキスト、または塗りつぶしを出力する関数のグラフィック ブラシ オブジェクトを定義します。 ドライバーを呼び出すことができます<a href="https://docs.microsoft.com/windows-hardware/drivers/#wdkgloss-brushobj" data-raw-source="&lt;em&gt;BRUSHOBJ&lt;/em&gt;"> <em>BRUSHOBJ</em> </a> services ブラシを実現する、または実現 GDI によって以前にキャッシュを検索します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff539417" data-raw-source="[&lt;strong&gt;CLIPOBJ&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff539417)"><strong>CLIPOBJ</strong></a></p></td>
-<td align="left"><p>アクセスに、ドライバーを提供します、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff556274#wdkgloss-clip-region" data-raw-source="&lt;em&gt;clip region&lt;/em&gt;"><em>クリップ領域</em></a>の描画や情報を入力します。 このリージョンは、一連の四角形として列挙できます。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_clipobj" data-raw-source="[&lt;strong&gt;CLIPOBJ&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_clipobj)"><strong>CLIPOBJ</strong></a></p></td>
+<td align="left"><p>アクセスに、ドライバーを提供します、 <a href="https://docs.microsoft.com/windows-hardware/drivers/#wdkgloss-clip-region" data-raw-source="&lt;em&gt;clip region&lt;/em&gt;"><em>クリップ領域</em></a>の描画や情報を入力します。 このリージョンは、一連の四角形として列挙できます。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff565804" data-raw-source="[&lt;strong&gt;FLOATOBJ&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff565804)"><strong>FLOATOBJ</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_floatobj" data-raw-source="[&lt;strong&gt;FLOATOBJ&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_floatobj)"><strong>FLOATOBJ</strong></a></p></td>
 <td align="left"><p>グラフィックスの浮動小数点演算をエミュレートするためにドライバーを許可します。 その他のすべてのカーネル モード ドライバーは、浮動小数点演算が無効になります。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff565974" data-raw-source="[&lt;strong&gt;FONTOBJ&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff565974)"><strong>FONTOBJ</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_fontobj" data-raw-source="[&lt;strong&gt;FONTOBJ&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_fontobj)"><strong>FONTOBJ</strong></a></p></td>
 <td align="left"><p>については、特定のインスタンス (または実現) フォントへのドライバーへのアクセスを提供します。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff568844" data-raw-source="[&lt;strong&gt;PALOBJ&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff568844)"><strong>PALOBJ</strong></a></p></td>
-<td align="left"><p>パレットの色の RGB; を含む構造体使用してアクセスできる、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff568845" data-raw-source="&lt;strong&gt;PALOBJ_cGetColors&lt;/strong&gt;"> <em>PALOBJ</em> </a>構造にパブリック メンバーが含まれていません。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_palobj" data-raw-source="[&lt;strong&gt;PALOBJ&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_palobj)"><strong>PALOBJ</strong></a></p></td>
+<td align="left"><p>パレットの色の RGB; を含む構造体使用してアクセスできる、 <a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-palobj_cgetcolors" data-raw-source="&lt;strong&gt;PALOBJ_cGetColors&lt;/strong&gt;"> <em>PALOBJ</em> </a>構造にパブリック メンバーが含まれていません。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff568849" data-raw-source="[&lt;strong&gt;PATHOBJ&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff568849)"><strong>PATHOBJ</strong></a></p></td>
-<td align="left"><p>指定するパスを定義します (行やベジエ曲線) を描画します。 A <a href="https://msdn.microsoft.com/library/windows/hardware/ff556325#wdkgloss-pathobj" data-raw-source="&lt;em&gt;PATHOBJ&lt;/em&gt;"> <em>PATHOBJ</em> </a>構造が一連の行と線を付けるか、入力をベジエ曲線を記述するドライバーに渡されます。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_pathobj" data-raw-source="[&lt;strong&gt;PATHOBJ&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_pathobj)"><strong>PATHOBJ</strong></a></p></td>
+<td align="left"><p>指定するパスを定義します (行やベジエ曲線) を描画します。 A <a href="https://docs.microsoft.com/windows-hardware/drivers/#wdkgloss-pathobj" data-raw-source="&lt;em&gt;PATHOBJ&lt;/em&gt;"> <em>PATHOBJ</em> </a>構造が一連の行と線を付けるか、入力をベジエ曲線を記述するドライバーに渡されます。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff569738" data-raw-source="[&lt;strong&gt;STROBJ&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff569738)"><strong>STROBJ</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_strobj" data-raw-source="[&lt;strong&gt;STROBJ&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_strobj)"><strong>STROBJ</strong></a></p></td>
 <td align="left"><p>ドライバーのグリフのハンドルとテキスト文字列の描画方法を説明する位置の一覧を列挙します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff569901" data-raw-source="[&lt;strong&gt;SURFOBJ&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff569901)"><strong>SURFOBJ</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_surfobj" data-raw-source="[&lt;strong&gt;SURFOBJ&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_surfobj)"><strong>SURFOBJ</strong></a></p></td>
 <td align="left"><p>GDI ビットマップ、デバイス依存ビットマップ、またはデバイス管理の画面が画面を識別します。 参照してください<a href="surface-types.md" data-raw-source="[Surface Types](surface-types.md)">画面型</a>詳細についてはします。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff570618" data-raw-source="[&lt;strong&gt;XFORMOBJ&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff570618)"><strong>XFORMOBJ</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff570618(v=vs.85)" data-raw-source="[&lt;strong&gt;XFORMOBJ&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff570618(v=vs.85))"><strong>XFORMOBJ</strong></a></p></td>
 <td align="left"><p>ジオメトリのワイド線など、任意線形 2 次元変換をについて説明します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff570634" data-raw-source="[&lt;strong&gt;XLATEOBJ&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff570634)"><strong>XLATEOBJ</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_xlateobj" data-raw-source="[&lt;strong&gt;XLATEOBJ&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_xlateobj)"><strong>XLATEOBJ</strong></a></p></td>
 <td align="left"><p>ソースのサーフェス形式からピクセルを宛先表面形式に変換するために必要な翻訳を定義します。</p></td>
 </tr>
 </tbody>

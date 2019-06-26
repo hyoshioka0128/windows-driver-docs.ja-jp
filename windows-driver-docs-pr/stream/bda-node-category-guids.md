@@ -4,12 +4,12 @@ description: BDA ノード カテゴリの GUID
 ms.assetid: cf439881-d20d-4efc-8ea3-3752e117b14d
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ffd408ea016f9eb1ffbd0938a1594e06512629ec
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8732ccab41d210a22b7169008d2e1500ea488c52
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392717"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386688"
 ---
 # <a name="bda-node-category-guids"></a>BDA ノード カテゴリの GUID
 
@@ -17,7 +17,7 @@ ms.locfileid: "63392717"
 ## <span id="ddk_bda_node_category_guids_ks"></span><span id="DDK_BDA_NODE_CATEGORY_GUIDS_KS"></span>
 
 
-BDA ミニドライバーは、BDA ノード カテゴリの Guid を使用して、作成に使用できる BDA ノードの種類を指定します。 BDA ミニドライバー割り当てますこれらのいずれかの Guid を変数に、**型**のメンバー、 [ **KSNODE\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff563473)ポイントを構造体します。 *Bdamedia.h*ヘッダー ファイルには、これらの Guid が定義されています。
+BDA ミニドライバーは、BDA ノード カテゴリの Guid を使用して、作成に使用できる BDA ノードの種類を指定します。 BDA ミニドライバー割り当てますこれらのいずれかの Guid を変数に、**型**のメンバー、 [ **KSNODE\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_ksnode_descriptor)ポイントを構造体します。 *Bdamedia.h*ヘッダー ファイルには、これらの Guid が定義されています。
 
 ネットワーク プロバイダーは、KSPROPERTY\_BDA\_ノード\_の型のプロパティ、 [KSPROPSETID\_BdaTopology](kspropsetid-bdatopology.md)から使用できるノード型の一覧を取得するプロパティを設定しますBDA ミニドライバーします。 このノードの種類の一覧が KSNODE の配列\_記述子構造体。
 

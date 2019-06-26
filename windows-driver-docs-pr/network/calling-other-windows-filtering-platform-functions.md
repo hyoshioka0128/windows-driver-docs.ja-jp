@@ -10,12 +10,12 @@ keywords:
 - ユーザー モード コールアウト ドライバー WDK Windows フィルタ リング プラットフォーム
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 24b8ee9c6b24c69c0d8d0a43a5db24f8ac7a8f79
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 44ca188d9b2ef84ee19a4998765fce59b874e292
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379340"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386357"
 ---
 # <a name="calling-other-windows-filtering-platform-functions"></a>その他の Windows フィルター プラットフォーム関数の呼び出し
 
@@ -28,7 +28,7 @@ Windows フィルタ リング プラットフォームの管理機能のほと�
 
 [フィルター エンジンへのセッションを閉じる](closing-a-session-to-the-filter-engine.md)
 
-コールアウト ドライバーから呼び出すことができる他の Windows フィルタ リング プラットフォーム関数の一覧は、次を参照してください。 [Windows フィルタ リング プラットフォーム関数のその他の](https://msdn.microsoft.com/library/windows/hardware/ff569961)します。 これらの関数を使用する方法の詳細については、次を参照してください。、 [Windows フィルタ リング プラットフォーム](https://go.microsoft.com/fwlink/p/?linkid=90220)Microsoft Windows SDK のドキュメント。
+コールアウト ドライバーから呼び出すことができる他の Windows フィルタ リング プラットフォーム関数の一覧は、次を参照してください。 [Windows フィルタ リング プラットフォーム関数のその他の](https://docs.microsoft.com/windows-hardware/drivers/network/other-windows-filtering-platform-functions)します。 これらの関数を使用する方法の詳細については、次を参照してください。、 [Windows フィルタ リング プラットフォーム](https://go.microsoft.com/fwlink/p/?linkid=90220)Microsoft Windows SDK のドキュメント。
 
  
 

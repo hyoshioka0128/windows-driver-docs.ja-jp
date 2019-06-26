@@ -6,12 +6,12 @@ keywords:
 - COM API 機能が移動体通信ネットワーク ドライバー
 ms.date: 11/07/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e87107e64fd6fffd5c62e6f6e8cc4dc9bdbed98c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 645b6f6e46e8b34567f197a53629cc680b7c883f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341902"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382792"
 ---
 # <a name="cellular-com-api-capabilities"></a>携帯ネットワーク COM API の機能
 
@@ -47,5 +47,5 @@ ms.locfileid: "63341902"
 
 [携帯電話の COM API の設計ガイド](cellular-com-api-design-guide.md)
 
-[携帯電話の COM API リファレンス](https://msdn.microsoft.com/library/windows/hardware/dn946508)
+[携帯電話の COM API リファレンス](https://docs.microsoft.com/previous-versions/windows/hardware/cellular/dn946508(v=vs.85))
 

@@ -4,12 +4,12 @@ description: センサー ドライバーのイベントについて
 ms.assetid: 1e747743-f701-4854-92be-7b55c39fee08
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: e8a832ca852e627707af3ccc03b4ee285dcd1613
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f30b0c6a0d3f7af4e2945df5f2b4e3c944fc627f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360937"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384511"
 ---
 # <a name="about-sensor-driver-events"></a>センサー ドライバーのイベントについて
 
@@ -18,13 +18,13 @@ ms.locfileid: "63360937"
 
 発生する可能性がセンサー ドライバー**状態変更イベント**、新しいオペレーションの条件とその他のイベント通知をデバイスでの遷移をアプリケーションに通知します。 ドライバーは、デバイスを提供する各センサーの個別のイベントを発生させる必要があります。
 
-**注**  使用しないでください[ **IWDFDevice::PostEvent** ](https://msdn.microsoft.com/library/windows/hardware/ff558835)センサー イベントを発生させます。 センサー プラットフォームは、接続されているクライアントのプログラム には、このようなイベントを転送しません。
+**注**  使用しないでください[ **IWDFDevice::PostEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdevice-postevent)センサー イベントを発生させます。 センサー プラットフォームは、接続されているクライアントのプログラム には、このようなイベントを転送しません。
 
  
 
 ## <a name="state-change-events"></a>状態変更イベント
 
-センサー ドライバーは、センサー クラスの拡張を呼び出して、状態変更イベントを発生させる[ **ISensorClassExtension::PostStateChange** ](https://msdn.microsoft.com/library/windows/hardware/ff545523)メソッド。 たとえば、センサーの初期化が終了するドライバーが、新しい通知するには、このメソッドを呼び出す[ **SensorState** ](https://msdn.microsoft.com/library/windows/hardware/ff545708)センサーをという名前の値\_状態\_準備。
+センサー ドライバーは、センサー クラスの拡張を呼び出して、状態変更イベントを発生させる[ **ISensorClassExtension::PostStateChange** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorsclassextension/nf-sensorsclassextension-isensorclassextension-poststatechange)メソッド。 たとえば、センサーの初期化が終了するドライバーが、新しい通知するには、このメソッドを呼び出す[ **SensorState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorsclassextension/ne-sensorsclassextension-__midl___midl_itf_windowssensorclassextension_0000_0000_0001)センサーをという名前の値\_状態\_準備。
 
 ## <a name="event-constants"></a>イベント定数
 

@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4bc7a950388bd1df089d54046b600d9d45cffa0c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 963c2a4eb2ea79c2467e61f922166f0206090092
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372668"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385916"
 ---
 # <a name="inf-ddinstall-section"></a>INF DDInstall セクション
 
@@ -60,36 +60,36 @@ ms.locfileid: "63372668"
 ## <a name="entries"></a>エントリ
 
 
-<a href="" id="driverver-mm-dd-yyyy--x-y-v-z--"></a>**DriverVer=**<em>mm/dd/yyyy</em>\[**,**<em>x.y.v.z</em>\]   
+<a href="" id="driverver-mm-dd-yyyy--x-y-v-z--"></a>**DriverVer=** <em>mm/dd/yyyy</em>\[ **,** <em>x.y.v.z</em>\]   
 この項目のバージョン情報を指定します、[ドライバー パッケージ](driver-packages.md)します。
 
 このエントリを指定する方法については、次を参照してください。 [ **INF DriverVer ディレクティブ**](inf-driverver-directive.md)します。
 
-<a href="" id="copyfiles--filename---file-list-section--file-list-section-----"></a>**CopyFiles=@**<em>filename</em> | *file-list-section*\[**,**<em>file-list-section</em>\] ...  
+<a href="" id="copyfiles--filename---file-list-section--file-list-section-----"></a>**CopyFiles=@** <em>filename</em> | *file-list-section*\[ **,** <em>file-list-section</em>\] ...  
 このディレクティブは、先のソース メディアからコピーされる 1 つの名前付きファイルを指定しますか、または 1 つまたは複数 INF ライター定義のセクションでは、先に転送するため、元のメディアのデバイス関連のファイルを指定するを参照します。 **CopyFiles**ディレクティブは省略可能では、ほとんどには存在*DDInstall*セクション。
 
 **DefaultDestDir**内のエントリ、 [ **DestinationDirs** ](inf-destinationdirs-section.md) INF のセクションがコピーされる 1 つのファイルの保存先を指定します。 [ **SourceDisksNames** ](inf-sourcedisksnames-section.md)と[ **SourceDisksFiles** ](inf-sourcedisksfiles-section.md)セクション、またはで指定された追加の INF、 **LayoutFile**エントリのこの INF の[**バージョン**](inf-version-section.md)セクションで、ドライバー ファイルの配布メディアの場所を指定します。
 
 詳細については、次を参照してください。 [ **INF CopyFiles ディレクティブ**](inf-copyfiles-directive.md)します。
 
-<a href="" id="copyinf-filename1-inf--filename2-inf----"></a>**CopyINF =**<em>filename1</em>**.inf**\[**、**<em>filename2</em>**.inf**\]...  
+<a href="" id="copyinf-filename1-inf--filename2-inf----"></a>**CopyINF =** <em>filename1</em> **.inf**\[ **、** <em>filename2</em> **.inf**\]...  
 (Windows XP 以降)このディレクティブは、ターゲット システムにコピーする INF ファイルを指定します。
 
 詳細については、次を参照してください。 [ **INF CopyINF ディレクティブ**](inf-copyinf-directive.md)します。
 
-<a href="" id="addreg-add-registry-section--add-registry-section----"></a>**AddReg=**<em>add-registry-section</em>\[**,**<em>add-registry-section</em>\]...  
+<a href="" id="addreg-add-registry-section--add-registry-section----"></a>**AddReg=** <em>add-registry-section</em>\[ **,** <em>add-registry-section</em>\]...  
 このディレクティブは、1 つまたは複数 INF ライター定義のセクションでは新しいサブキー、場合によっては、初期値エントリで指定されているまたは既存のキーの値のエントリが変更されたレジストリに書き込まれるを参照します。
 
-**HKR**追加レジストリ セクション内の仕様を指定、 **.クラス\\**<em>SetupClassGUID</em>**\\**<em>デバイス インスタンス id</em>ユーザーからアクセス可能なドライバーのレジストリ パス。 この種類の**HKR**仕様とも呼ばれる、します。 「ソフトウェア キー」です。
+**HKR**追加レジストリ セクション内の仕様を指定、 **.クラス\\** <em>SetupClassGUID</em> **\\** <em>デバイス インスタンス id</em>ユーザーからアクセス可能なドライバーのレジストリ パス。 この種類の**HKR**仕様とも呼ばれる、します。 「ソフトウェア キー」です。
 
 詳細については、次を参照してください。 [ **INF AddReg ディレクティブ**](inf-addreg-directive.md)します。
 
-<a href="" id="addproperty-add-registry-section--add-registry-section----"></a>**AddProperty =**<em>追加レジストリ セクション</em>\[**、**<em>追加レジストリ セクション</em>\].  
+<a href="" id="addproperty-add-registry-section--add-registry-section----"></a>**AddProperty =** <em>追加レジストリ セクション</em>\[ **、** <em>追加レジストリ セクション</em>\].  
 (Windows Vista 以降)変更を 1 つまたは複数の INF ファイルでセクションを参照して[デバイス プロパティ](device-properties.md)デバイス インスタンスに設定されています。 使用する必要があります、 [ **INF AddProperty ディレクティブ**](inf-addproperty-directive.md) Windows Vista またはそれ以降のバージョンの Windows オペレーティング システムを新たに導入されたデバイス インスタンス プロパティを設定するだけです。
 
 デバイス インスタンス プロパティ以前 Windows Server 2003、Windows XP、または Windows 2000 で導入された、対応するレジストリ エントリの値がある、使用する続行する必要があります[ **INF AddReg ディレクティブ**](inf-addreg-directive.md)デバイス インスタンスのプロパティを設定します。 システム定義プロパティとカスタム プロパティに次のガイドラインが適用されます。 使用する方法についての詳細、 **AddProperty**ディレクティブを参照してください[INF AddProperty ディレクティブと INF DelProperty ディレクティブを使用して](using-the-inf-addproperty-directive-and-the-inf-delproperty-directive.md)します。
 
-<a href="" id="include-filename1-inf--filename2-inf----"></a>**含める =**<em>filename1</em>**.inf**\[**、**<em>filename2</em>**.inf**\]...  
+<a href="" id="include-filename1-inf--filename2-inf----"></a>**含める =** <em>filename1</em> **.inf**\[ **、** <em>filename2</em> **.inf**\]...  
 この省略可能なエントリでは、1 つまたは複数追加システムが指定した INF ファイルをこのデバイスやドライバーをインストールするために必要なセクションが含まれているを指定します。 通常、このエントリが指定されている場合は、**必要がある**エントリ。
 
 たとえば、このエントリが次のよう指定、システムのカーネル ストリーミング サポートに依存しているデバイス ドライバー用のシステム INF ファイル。
@@ -100,8 +100,8 @@ Include= ks.inf[, [kscaptur.inf,] [ksfilter.inf]]...
 
 詳細については、 **Include**エントリと、その使用に関する制限事項を参照してください。[デバイス ファイルのソースとターゲットの場所を指定する](specifying-the-source-and-target-locations-for-device-files.md)します。
 
-<a href="" id="needs-inf-section-name--inf-section-name----"></a>**必要な =**<em>inf セクション名</em>\[**、**<em>inf セクション名</em>\].  
-この省略可能なエントリでは、このデバイスのインストール中に処理する必要があるシステム提供の INF ファイル内のセクションを指定します。 通常、このような名前付きセクションは、 *DDInstall* (または<em>DDInstall</em>**.**<em>xxx</em>) 内に記載されている INF ファイルの 1 つのセクション、 **Include**エントリ。 ただし、このような内で参照されている任意のセクションがあります、 *DDInstall*または<em>DDInstall</em>**.**<em>xxx</em>の含まれる INF セクション。
+<a href="" id="needs-inf-section-name--inf-section-name----"></a>**必要な =** <em>inf セクション名</em>\[ **、** <em>inf セクション名</em>\].  
+この省略可能なエントリでは、このデバイスのインストール中に処理する必要があるシステム提供の INF ファイル内のセクションを指定します。 通常、このような名前付きセクションは、 *DDInstall* (または<em>DDInstall</em> **.** <em>xxx</em>) 内に記載されている INF ファイルの 1 つのセクション、 **Include**エントリ。 ただし、このような内で参照されている任意のセクションがあります、 *DDInstall*または<em>DDInstall</em> **.** <em>xxx</em>の含まれる INF セクション。
 
 上記のあるデバイス ドライバーの INF ファイルなど、 **Include**エントリは次のようにこのエントリを指定します。
 
@@ -111,31 +111,31 @@ Needs= KS.Registration[, KSCAPTUR.Registration | KSCAPTUR.Registration.NT, MSPCL
 
 **必要がある**エントリを入れ子にすることはできません。 詳細については、**必要がある**エントリと、その使用に関する制限事項を参照してください。[デバイス ファイルのソースとターゲットの場所を指定する](specifying-the-source-and-target-locations-for-device-files.md)します。
 
-<a href="" id="delfiles-file-list-section--file-list-section----"></a>**Delfiles =**<em>ファイルのセクション一覧</em>\[**、**<em>ファイルのセクション一覧</em>\].  
+<a href="" id="delfiles-file-list-section--file-list-section----"></a>**Delfiles =** <em>ファイルのセクション一覧</em>\[ **、** <em>ファイルのセクション一覧</em>\].  
 このディレクティブは、1 つまたは複数 INF ライター定義のセクションでは削除するターゲット上のファイルの一覧を参照します。
 
 詳細については、次を参照してください。 [ **INF DelFiles ディレクティブ**](inf-delfiles-directive.md)します。
 
-<a href="" id="renfiles-file-list-section--file-list-section----"></a>**Renfiles =**<em>ファイルのセクション一覧</em>\[**、**<em>ファイルのセクション一覧</em>\].  
+<a href="" id="renfiles-file-list-section--file-list-section----"></a>**Renfiles =** <em>ファイルのセクション一覧</em>\[ **、** <em>ファイルのセクション一覧</em>\].  
 このディレクティブは、1 つまたは複数 INF ライター定義のセクションではデバイスに関連するソース ファイルがターゲット コンピューターにコピーされる前に、変換先の名前を変更するファイルのリストを参照します。
 
 詳細については、次を参照してください。[**INF RenFiles ディレクティブ**](inf-renfiles-directive.md)します。
 
-<a href="" id="delreg-del-registry-section--del-registry-section----"></a>**DelReg=**<em>del-registry-section</em>\[**,**<em>del-registry-section</em>\]...  
+<a href="" id="delreg-del-registry-section--del-registry-section----"></a>**DelReg=** <em>del-registry-section</em>\[ **,** <em>del-registry-section</em>\]...  
 このディレクティブは、1 つまたは複数 INF ライター定義のセクションでは、デバイスのインストール中に、レジストリから削除するエントリを指定では、どのキーと値を参照します。
 
 通常、このディレクティブは、INF は、このデバイスの以前のインストールからの古いレジストリ エントリをクリーンアップする必要がありますと、アップグレードを処理するために使用します。
 
-**HKR** delete レジストリ セクション内の指定を指定、 **.クラス\\**<em>SetupClassGUID</em>**\\**<em>デバイス インスタンス id</em>ユーザーからアクセス可能なドライバーのレジストリ パス。 この種類の**HKR**仕様とも呼ばれる、します。 「ソフトウェア キー」です。
+**HKR** delete レジストリ セクション内の指定を指定、 **.クラス\\** <em>SetupClassGUID</em> **\\** <em>デバイス インスタンス id</em>ユーザーからアクセス可能なドライバーのレジストリ パス。 この種類の**HKR**仕様とも呼ばれる、します。 「ソフトウェア キー」です。
 
 詳細については、次を参照してください。 [ **INF してディレクティブ**](inf-delreg-directive.md)します。
 
-<a href="" id="delproperty-add-registry-section--add-registry-section----"></a>**DelProperty=**<em>add-registry-section</em>\[**,**<em>add-registry-section</em>\]...  
+<a href="" id="delproperty-add-registry-section--add-registry-section----"></a>**DelProperty=** <em>add-registry-section</em>\[ **,** <em>add-registry-section</em>\]...  
 (Windows Vista 以降)削除する 1 つまたは複数の INF ファイルでセクションを参照して[デバイス プロパティ](device-properties.md)デバイス インスタンスに設定されています。 使用する必要があります、 [ **INF DelProperty ディレクティブ**](inf-delproperty-directive.md) Windows Vista または Windows の以降のバージョンを新たに導入されたデバイス インスタンス プロパティを削除するだけです。
 
 デバイス インスタンス プロパティ以前 Windows Server 2003、Windows XP、または Windows 2000 で導入された、対応するレジストリ エントリの値がある、使用する続行する必要があります[ **INF してディレクティブ**](inf-delreg-directive.md)デバイス インスタンスのプロパティを削除します。 システム定義プロパティとカスタム プロパティに次のガイドラインが適用されます。 使用する方法についての詳細、 **DelProperty**ディレクティブを参照してください[INF AddProperty ディレクティブと INF DelProperty ディレクティブを使用して](using-the-inf-addproperty-directive-and-the-inf-delproperty-directive.md)します。
 
-<a href="" id="featurescore-featurescore"></a>**FeatureScore =**<em>featurescore</em>  
+<a href="" id="featurescore-featurescore"></a>**FeatureScore =** <em>featurescore</em>  
 **警告**  、 **FeatureScore**ディレクティブが処理されるで直接指定した場合のみ、 **\[DDInstall\]** セクション。
 
  
@@ -150,14 +150,14 @@ Needs= KS.Registration[, KSCAPTUR.Registration | KSCAPTUR.Registration.NT, MSPCL
 
  
 
-<a href="" id="bitreg-bit-registry-section--bit-registry-section----"></a>**BitReg =**<em>ビットのレジストリ セクション</em>\[**、**<em>ビットのレジストリ セクション</em>\].  
+<a href="" id="bitreg-bit-registry-section--bit-registry-section----"></a>**BitReg =** <em>ビットのレジストリ セクション</em>\[ **、** <em>ビットのレジストリ セクション</em>\].  
 このディレクティブは、1 つまたは複数 INF ライター定義を既存のレジストリ値のエントリの型のセクションを参照[REG_BINARY](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)変更されます。
 
-**HKR**ビット レジストリのセクションで仕様を指定、 **.クラス\\**<em>SetupClassGUID</em>**\\**<em>デバイス インスタンス id</em>ユーザーからアクセス可能なドライバーのレジストリ パス。 この種類の**HKR**仕様とも呼ばれる、します。 「ソフトウェア キー」です。
+**HKR**ビット レジストリのセクションで仕様を指定、 **.クラス\\** <em>SetupClassGUID</em> **\\** <em>デバイス インスタンス id</em>ユーザーからアクセス可能なドライバーのレジストリ パス。 この種類の**HKR**仕様とも呼ばれる、します。 「ソフトウェア キー」です。
 
 詳細については、次を参照してください。 [ **INF BitReg ディレクティブ**](inf-bitreg-directive.md)します。
 
-<a href="" id="logconfig-log-config-section--log-config-section----"></a>**LogConfig=**<em>log-config-section</em>\[**,**<em>log-config-section</em>\]...  
+<a href="" id="logconfig-log-config-section--log-config-section----"></a>**LogConfig=** <em>log-config-section</em>\[ **,** <em>log-config-section</em>\]...  
 このディレクティブは、ルート列挙デバイスか、または手動でインストールされているデバイスに対して、INF 内で 1 つまたは複数のライター定義 INF セクションを参照します。 これらの名前のセクションでは、このような「検出」または手動でインストールされているデバイスの INF に、デバイスが正常に機能が必要 bus 相対ハードウェア リソースの 1 つまたは複数の論理構成を指定します。 ソフトウェア構成可能でないこのような手動でインストールされているデバイスの INF する必要があります、 <em>DDInstall</em>**します。FactDef**セクション。
 
 **LogConfig**ディレクティブを使用すると、プラグ アンド プレイ (PnP) デバイスをインストールすることはありません。 ただし、使用することができます、 [ **INF DDInstall.LogConfigOverride セクション**](inf-ddinstall-logconfigoverride-section.md) PnP デバイス用のオーバーライド構成を提供します。
@@ -166,37 +166,37 @@ Needs= KS.Registration[, KSCAPTUR.Registration | KSCAPTUR.Registration.NT, MSPCL
 
 詳細については、次を参照してください。 [ **INF LogConfig ディレクティブ**](inf-logconfig-directive.md)します。
 
-<a href="" id="profileitems-profile-items-section--profile-items-section----"></a>**ProfileItems =**<em>プロファイル-section 項目</em>\[**、**<em>プロファイル-section 項目</em>\].  
+<a href="" id="profileitems-profile-items-section--profile-items-section----"></a>**ProfileItems =** <em>プロファイル-section 項目</em>\[ **、** <em>プロファイル-section 項目</em>\].  
 (Microsoft Windows 2000 および Windows の以降のバージョン)このディレクティブは、1 つまたは複数 INF ライター定義のセクションでは追加、または [スタート] メニューから削除する項目を説明するを参照します。
 
 詳細については、次を参照してください。 [ **INF ProfileItems ディレクティブ**](inf-profileitems-directive.md)します。
 
-<a href="" id="updateinis-update-ini-section--update-ini-section----"></a>**UpdateInis =**<em>update-section ini</em>\[**、**<em>update-section ini</em>\].  
+<a href="" id="updateinis-update-ini-section--update-ini-section----"></a>**UpdateInis =** <em>update-section ini</em>\[ **、** <em>update-section ini</em>\].  
 使用頻度の低いこのディレクティブは、1 つを参照またはソース INI を指定する、多くの INF ライター定義セクションのファイルから特定のセクションまたはこのようなセクション内の行のインストール時に、同じ名前の変換先の INI ファイルに読み込むことができます。 必要に応じて、同じ名前の指定したソースの INI ファイルからの先に既存の INI ファイルの変更の 1 行ずつ更新 ini セクションで指定できます。
 
 詳細については、次を参照してください。 [ **INF UpdateInis ディレクティブ**](inf-updateinis-directive.md)します。
 
-<a href="" id="updateinifields-update-inifields-section--update-inifields-section----"></a>**UpdateIniFields =**<em>update-section inifields</em>\[**、**<em>update-section inifields</em>\].  
+<a href="" id="updateinifields-update-inifields-section--update-inifields-section----"></a>**UpdateIniFields =** <em>update-section inifields</em>\[ **、** <em>update-section inifields</em>\].  
 使用頻度の低いこのディレクティブは、1 つまたは複数 INF ライター定義のセクションでは、デバイスに固有の INI ファイルの行を内の変更を指定するを参照します。
 
 詳細については、次を参照してください。 [ **INF UpdateIniFields ディレクティブ**](inf-updateinifields-directive.md)します。
 
-<a href="" id="ini2reg-ini-to-registry-section--ini-to-registry-section----"></a>**Ini2Reg =**<em>セクション レジストリ ini</em>\[**、**<em>セクション レジストリ ini</em>\].  
+<a href="" id="ini2reg-ini-to-registry-section--ini-to-registry-section----"></a>**Ini2Reg =** <em>セクション レジストリ ini</em>\[ **、** <em>セクション レジストリ ini</em>\].  
 これは、ディレクティブの参照セクションまたは、ソース メディアに、デバイスに固有の INI ファイルの行は 1 つまたは複数のライター定義 INF セクションは、レジストリに移動するのにはほとんど使用されません。
 
 詳細については、次を参照してください。 [ **INF Ini2Reg ディレクティブ**](inf-ini2reg-directive.md)します。
 
-<a href="" id="registerdlls-register-dll-section--register-dll-section----"></a>**RegisterDlls =**<em>レジスタ-section dll</em>\[**、**<em>レジスタ-section dll</em>\].  
+<a href="" id="registerdlls-register-dll-section--register-dll-section----"></a>**RegisterDlls =** <em>レジスタ-section dll</em>\[ **、** <em>レジスタ-section dll</em>\].  
 このディレクティブは、OLE コントロールは、自己登録を必要とするファイルを指定するために使用する 1 つまたは複数の INF セクションを参照します。
 
 詳細については、次を参照してください。 [ **INF RegisterDlls ディレクティブ**](inf-registerdlls-directive.md)します。
 
-<a href="" id="unregisterdlls-unregister-dll-section--unregister-dll-section----"></a>**UnregisterDlls =**<em>の登録を解除 dll セクション</em>\[**、**<em>の登録を解除 dll セクション</em>\].  
+<a href="" id="unregisterdlls-unregister-dll-section--unregister-dll-section----"></a>**UnregisterDlls =** <em>の登録を解除 dll セクション</em>\[ **、** <em>の登録を解除 dll セクション</em>\].  
 このディレクティブは、OLE コントロールは、(自己の削除) を自己登録解除を必要とするファイルを指定するために使用する 1 つまたは複数の INF セクションを参照します。
 
 詳細については、次を参照してください。 [ **INF UnregisterDlls ディレクティブ**](inf-unregisterdlls-directive.md)します。
 
-<a href="" id="excludeid-device-identification-string--device-identification-string----"></a>**ExcludeID =**<em>デバイスの識別文字列</em>\[**、**<em>デバイスの識別文字列</em>\].  
+<a href="" id="excludeid-device-identification-string--device-identification-string----"></a>**ExcludeID =** <em>デバイスの識別文字列</em>\[ **、** <em>デバイスの識別文字列</em>\].  
 **警告**  、 **ExcludeID**ディレクティブが処理されるで直接指定した場合のみ、 **\[DDInstall\]** セクション。
 
  
@@ -211,20 +211,20 @@ Needs= KS.Registration[, KSCAPTUR.Registration | KSCAPTUR.Registration.NT, MSPCL
 <a name="remarks"></a>コメント
 -------
 
-Windows Driver Kit (WDK) のドキュメント全体で用語*DDInstall*を参照するために使用する*インストール セクション名*プラットフォーム拡張機能の有無。 そのため、"*DDInstall*セクション"意味"、INF の形式で名前付きセクション\[*インストール セクション名*\]または\[ <em>インストール セクション名</em>**.nt * * * xxx*\]"。 名前を作成するときに*DDInstall*セクションなど、デバイスに固有のプレフィックスを含める必要があります**\[WDMPNPB003_Device\]** または **\[GPR400 します。Install.NT\]** します。
+Windows Driver Kit (WDK) のドキュメント全体で用語*DDInstall*を参照するために使用する*インストール セクション名*プラットフォーム拡張機能の有無。 そのため、"*DDInstall*セクション"意味"、INF の形式で名前付きセクション\[*インストール セクション名*\]または\[ <em>インストール セクション名</em>* *.nt * * * xxx*\]"。 名前を作成するときに*DDInstall*セクションなど、デバイスに固有のプレフィックスを含める必要があります **\[WDMPNPB003_Device\]** または **\[GPR400 します。Install.NT\]** します。
 
 各*DDInstall* - 製造元でデバイス/モデルに固有のエントリでは、セクションを参照する必要があります[ **INF*モデル*セクション**](inf-models-section.md)の INF ファイル。
 
 ソース メディアからの転送に関連付けられているファイルがないデバイスを除く別のオペレーティング システム プラットフォームで WDM ドライバーをインストールする INF ファイルは少なくとも 1 つ、次のことがあります*DDInstall*セクション。
 
-- <em>インストール セクション名</em>**.ntx86**セクション デバイス/ドライバーのインストールが x86 ベースのプラットフォームに固有のエントリを指定します。
-- <em>インストール セクション名</em>**.ntia64**セクション デバイス/ドライバーのインストールは Itanium ベースのプラットフォームに固有のエントリを指定します。
-- <em>インストール セクション名</em>**.ntamd64**セクション デバイス/ドライバーのインストールは x64 ベースのプラットフォームに固有のエントリを指定します。
-- <em>インストール セクション名</em>**.ntarm**セクション デバイス/ドライバーのインストールは ARM ベースのプラットフォームに固有のエントリを指定します。
-- <em>インストール セクション名</em>**.ntarm64**セクション ARM64 ベースのプラットフォームに固有のデバイスとドライバーのインストール用のエントリを指定します。
+- <em>インストール セクション名</em> **.ntx86**セクション デバイス/ドライバーのインストールが x86 ベースのプラットフォームに固有のエントリを指定します。
+- <em>インストール セクション名</em> **.ntia64**セクション デバイス/ドライバーのインストールは Itanium ベースのプラットフォームに固有のエントリを指定します。
+- <em>インストール セクション名</em> **.ntamd64**セクション デバイス/ドライバーのインストールは x64 ベースのプラットフォームに固有のエントリを指定します。
+- <em>インストール セクション名</em> **.ntarm**セクション デバイス/ドライバーのインストールは ARM ベースのプラットフォームに固有のエントリを指定します。
+- <em>インストール セクション名</em> **.ntarm64**セクション ARM64 ベースのプラットフォームに固有のデバイスとドライバーのインストール用のエントリを指定します。
 
 
-- *インストール セクション名*または<em>インストール セクション名</em>**.nt**特定に固有ではないデバイスとドライバーのインストール用のエントリを指定するセクションハードウェア プラットフォームです。
+- *インストール セクション名*または<em>インストール セクション名</em> **.nt**特定に固有ではないデバイスとドライバーのインストール用のエントリを指定するセクションハードウェア プラットフォームです。
 
 詳細については、システム定義を使用する方法についての **.nt**、 **.ntx86**、 **.ntia64**、 **.ntamd64**、 **.ntarm**、および **.ntarm64** 、拡張機能を参照してください[INF ファイルを複数のプラットフォームやオペレーティング システムを作成する](creating-inf-files-for-multiple-platforms-and-operating-systems.md)します。
 
@@ -238,12 +238,12 @@ Windows 2000 以降、ドライバーをインストールする INF ファイ�
 
 に応じて、[デバイス セットアップ クラス](device-setup-classes.md)に指定されている、 [ **INF バージョン セクション**](inf-version-section.md)で追加のクラスに固有のディレクティブを指定できます、 *DDInstall*セクション。 クラスに固有のディレクティブの詳細については、次のトピックを参照してください。
 
--   [Windows SideShow と互換性のあるデバイスの INF ファイルを構築](https://msdn.microsoft.com/library/windows/hardware/ff547750)
--   [ネットワークの INF ファイルで DDInstall セクション](https://msdn.microsoft.com/library/windows/hardware/ff546332)
--   [静止画像デバイスの INF ファイル](https://msdn.microsoft.com/library/windows/hardware/ff542762)
--   [WIA デバイスの INF ファイル](https://msdn.microsoft.com/library/windows/hardware/ff542770)
--   [ネットワーク コンポーネントのインストール要件](https://msdn.microsoft.com/library/windows/hardware/ff554949)
--   [INF ファイルで WDF ディレクティブの指定](https://msdn.microsoft.com/windows/hardware/drivers/wdf/specifying-wdf-directives-in-inf-files)
+-   [Windows SideShow と互換性のあるデバイスの INF ファイルを構築](https://docs.microsoft.com/windows-hardware/drivers/)
+-   [ネットワークの INF ファイルで DDInstall セクション](https://docs.microsoft.com/windows-hardware/drivers/network/ddinstall-services-section-in-a-network-inf-file)
+-   [静止画像デバイスの INF ファイル](https://docs.microsoft.com/windows-hardware/drivers/image/inf-files-for-still-image-devices)
+-   [WIA デバイスの INF ファイル](https://docs.microsoft.com/windows-hardware/drivers/image/inf-files-for-wia-devices)
+-   [ネットワーク コンポーネントのインストール要件](https://docs.microsoft.com/windows-hardware/drivers/network/installation-requirements-for-network-components)
+-   [INF ファイルで WDF ディレクティブの指定](https://docs.microsoft.com/windows-hardware/drivers/wdf/specifying-wdf-directives-in-inf-files)
 
 <a name="examples"></a>使用例
 --------
@@ -310,7 +310,7 @@ CopyFiles=MSSB16.CopyList
 AddReg=WDM_SB16.AddReg
 ```
 
-次の例は、上の参照セクションでは、**必要がある**システムが指定したエントリ*ks.inf*と*wdmaudio.inf*ファイル。 前の例では、これらのファイルがで指定された、 **Includes**エントリ。 オペレーティング システムのインストーラーのデバイスやメディア クラスのインストーラーがこのデバイスを処理する場合<em>インストール セクション名</em>**.nt**  セクションで、次の 2 つのセクションではこれらをも処理します。
+次の例は、上の参照セクションでは、**必要がある**システムが指定したエントリ*ks.inf*と*wdmaudio.inf*ファイル。 前の例では、これらのファイルがで指定された、 **Includes**エントリ。 オペレーティング システムのインストーラーのデバイスやメディア クラスのインストーラーがこのデバイスを処理する場合<em>インストール セクション名</em> **.nt**  セクションで、次の 2 つのセクションではこれらをも処理します。
 
 ```ini
 [KS.Registration]
