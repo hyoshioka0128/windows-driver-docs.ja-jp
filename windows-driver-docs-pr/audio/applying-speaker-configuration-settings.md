@@ -6,12 +6,12 @@ keywords:
 - 失敗したスピーカー構成要求の WDK オーディオ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a07ff462e58a2ac314b43671368e73a309290ab0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4d784b07b048aeb3e56329831de24d9922f1ceaf
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331568"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355758"
 ---
 # <a name="applying-speaker-configuration-settings"></a>スピーカー構成の設定を適用
 
@@ -39,7 +39,7 @@ DirectSound は、レジストリの現在のスピーカーの構成設定を�
 
 この時点では、ラベルを表示する必要があります**スピーカーのセットアップ**から選択できるスピーカー構成の一覧の横にあります。
 
-DirectSound を使用して、 [ **KSPROPERTY\_オーディオ\_チャネル\_CONFIG** ](https://msdn.microsoft.com/library/windows/hardware/ff537250) 3D ノードまたは DAC にスピーカー構成情報を送信する要求をプロパティの設定ノード ([**KSNODETYPE\_3D\_効果**](https://msdn.microsoft.com/library/windows/hardware/ff537148)または[ **KSNODETYPE\_DAC** ](https://msdn.microsoft.com/library/windows/hardware/ff537158)) オーディオ フィルター グラフ。 3D のノードのプロパティの要求の対象を実際には pin です (3 D ストリーム オブジェクト) フィードをノード。 DAC のノードでは、ターゲットは、DAC のノードを含むフィルター オブジェクトです。 いずれの場合も、スピーカーの構成設定はグローバルであり、オーディオ デバイス全体に影響を与えます。 以降を実行しているすべてのオーディオ アプリケーションは、DirectSound の設定が変更されるまで、新しい設定の対象がもう一度です。
+DirectSound を使用して、 [ **KSPROPERTY\_オーディオ\_チャネル\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-channel-config) 3D ノードまたは DAC にスピーカー構成情報を送信する要求をプロパティの設定ノード ([**KSNODETYPE\_3D\_効果**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-3d-effects)または[ **KSNODETYPE\_DAC** ](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-dac)) オーディオ フィルター グラフ。 3D のノードのプロパティの要求の対象を実際には pin です (3 D ストリーム オブジェクト) フィードをノード。 DAC のノードでは、ターゲットは、DAC のノードを含むフィルター オブジェクトです。 いずれの場合も、スピーカーの構成設定はグローバルであり、オーディオ デバイス全体に影響を与えます。 以降を実行しているすべてのオーディオ アプリケーションは、DirectSound の設定が変更されるまで、新しい設定の対象がもう一度です。
 
 Windows Me に付属し、Windows XP 以降、スピーカー構成プロパティに要求を送信 DAC ノード--DirectSound の以前のバージョン、DirectSound の唯一のバージョンは、この機能をサポートしないことに注意してください。 ただし、DirectSound のすべてのバージョンでは、3 D のノードにこれらの要求を送信します。
 

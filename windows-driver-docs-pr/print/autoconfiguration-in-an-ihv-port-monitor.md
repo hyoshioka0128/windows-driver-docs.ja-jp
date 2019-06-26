@@ -8,21 +8,21 @@ keywords:
 - プリンターの自動構成の WDK プリンター、IHV ポート モニター
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2591eaa8bbd8b465a65e07d1911ba462d8d4fe88
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b52d57bef2f3bf0171a564a0d2123ea751a97986
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63350751"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370465"
 ---
 # <a name="autoconfiguration-in-an-ihv-port-monitor"></a>IHV ポート モニターの自動構成
 
 
 IHV ポート モニターを開発しようとしています。 ユーザーは、自動構成をサポートするように設計する必要があります。 IHV のポート モニターでの自動構成のサポートを提供するには、次のガイドラインに従います。
 
--   実装、 [ **SendRecvBidiDataFromPort** ](https://msdn.microsoft.com/library/windows/hardware/ff562071)関数では、この関数のアドレスに置き、 **pfnSendRecvBidiDataFromPort**のメンバー、 [**MONITOR2** ](https://msdn.microsoft.com/library/windows/hardware/ff557532)構造体。
+-   実装、 [ **SendRecvBidiDataFromPort** ](https://docs.microsoft.com/previous-versions/ff562071(v=vs.85))関数では、この関数のアドレスに置き、 **pfnSendRecvBidiDataFromPort**のメンバー、 [**MONITOR2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/ns-winsplp-_monitor2)構造体。
 
--   サポート、[双方向通信スキーマ](https://msdn.microsoft.com/library/windows/hardware/ff545175)します。
+-   サポート、[双方向通信スキーマ](https://docs.microsoft.com/windows-hardware/drivers/print/bidi-communications-schema-reference)します。
 
 -   双方向の通知をサポートします。
 

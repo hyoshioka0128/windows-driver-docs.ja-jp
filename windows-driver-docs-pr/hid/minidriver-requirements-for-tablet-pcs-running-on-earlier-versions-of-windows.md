@@ -4,12 +4,12 @@ description: ペン デバイスとボタンのデバイスのベンダーから
 ms.assetid: 89BE7E13-4D46-4265-9522-D5A51999F633
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a9d506012ba8554a2bd9bd019ac69ad84cabc77f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0d301b456f368a98579f8012770c596a63902323
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346206"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371944"
 ---
 # <a name="minidriver-requirements-for-tablet-pcs-running-on-earlier-versions-of-windows"></a>ミニドライバーの要件の以前のバージョンの Windows で実行されている Pc をタブレットします。
 
@@ -37,7 +37,7 @@ Tablet PC のペン デバイスが必要です。
 
 -   生データのみを報告します。 ドライバーは、直線、ペンの傾き、画面の回転、またはスケーリングの補償されない必要があります。 これらの変換は、Tablet PC API によって処理されます。 ただし、ドライバーでは、ペンの座標システムで API で使用すると同じの原点と方向を使用する必要がありますを確認します。 たとえば、ドライバーする必要があります、配信元が、左から右、x 座標が増加する横長画面の左上隅であると y 座標を上から下に増えることを確認します。
 
--   デバイスが USB デバイスの場合は、Tablet PC のペン デバイスをサポートする必要があります、 [USB のセレクティブ サスペンド機能](https://msdn.microsoft.com/library/windows/hardware/ff540144)します。
+-   デバイスが USB デバイスの場合は、Tablet PC のペン デバイスをサポートする必要があります、 [USB のセレクティブ サスペンド機能](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)します。
 
 ### <a href="" id="ddk-requirements-on-hid-minidrivers-for-tablet-pc-button-devices-kg"></a>PC のボタンのデバイスの要件
 

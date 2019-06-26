@@ -15,17 +15,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e7d7f73472f66c4a8a389a9ebb94a28c02124438
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 51240b38fb8af60facab91e2fb0c6d2586f5056e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324452"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375671"
 ---
 # <a name="mrxqueryfileinfo-routine"></a>MRxQueryFileInfo routine
 
 
-*MRxQueryFileInfo*ルーチンを呼び出して[RDBSS](https://msdn.microsoft.com/library/windows/hardware/ff556810)ネットワーク ミニ リダイレクターがファイル システム オブジェクト上のファイル情報を照会することを要求します。
+*MRxQueryFileInfo*ルーチンを呼び出して[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)ネットワーク ミニ リダイレクターがファイル システム オブジェクト上のファイル情報を照会することを要求します。
 
 <a name="syntax"></a>構文
 ------
@@ -123,7 +123,7 @@ RDBSS への呼び出しを発行する*MRxQueryFileInfo*受信に応答する[ 
 
 RDBSS は、SL で要求をサポートしていません\_インデックス\_の指定されたビット、 **IrpSp -&gt;フラグ**を設定します。 ネットワークのミニ リダイレクターはへの呼び出しを受信しません*MRxQueryFileInfo* 、SL で\_インデックス\_の指定されたビット**IrpSp -&gt;フラグ**を設定します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -146,7 +146,7 @@ RDBSS は、SL で要求をサポートしていません\_インデックス\_�
 ## <a name="see-also"></a>関連項目
 
 
-[**MRxIsValidDirectory**](https://msdn.microsoft.com/library/windows/hardware/ff550696)
+[**MRxIsValidDirectory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_chkdir_calldown)
 
 [**MRxQueryDirectory**](mrxquerydirectory.md)
 

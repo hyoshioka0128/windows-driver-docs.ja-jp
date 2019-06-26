@@ -12,12 +12,12 @@ keywords:
 - geninf.exe
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d580775db413c77472243ec7684a9d7e1538742
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 673e56e9911f39df38ccb27556f18eb07ec82fe2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387241"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370186"
 ---
 # <a name="creating-graphics-inf-files"></a>グラフィックス INF ファイルの作成
 
@@ -65,7 +65,7 @@ INF ファイルを使用して、NT ベースのオペレーティング シス
 
 これらのサンプル INF ファイル、Windows Driver Kit (WDK) ではどちらも付属しています。
 
-参照してください[INF ファイルを作成する](https://msdn.microsoft.com/library/windows/hardware/ff549520)と[INF ファイルのセクションとディレクティブ](https://msdn.microsoft.com/library/windows/hardware/ff547433)詳細については、サンプルの INF ファイルを更新するときにします。
+参照してください[INF ファイルを作成する](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-inf-files)と[INF ファイルのセクションとディレクティブ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-file-sections-and-directives)詳細については、サンプルの INF ファイルを更新するときにします。
 
  
 

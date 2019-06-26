@@ -3,12 +3,12 @@ Description: このトピックでは、クライアント ドライバーが、
 title: USB 等時性エンドポイントへのデータの転送方法
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d7895644493e58c4d72ce0a7054007d12655b26
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 24bcfa23b9930ed85d4c2a99b2f813b37cd34ea0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379912"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369544"
 ---
 # <a name="how-to-transfer-data-to-usb-isochronous-endpoints"></a>USB 等時性エンドポイントへのデータの転送方法
 
@@ -33,15 +33,15 @@ Isochronous 転送は、基に、パケットです。 用語*アイソクロナ
 
 アイソクロナスの転送要求を作成する前に、アイソクロナス エンドポイントが開かれたパイプに関する情報が必要です。
 
-Windows Driver Model (WDM) ルーチンを使用するクライアント ドライバーでは、いずれかでパイプ情報が含まれている、 [ **USBD\_パイプ\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff539114)の構造を[ **USBD\_インターフェイス\_一覧\_エントリ**](https://msdn.microsoft.com/library/windows/hardware/ff539076)配列。 クライアント ドライバーでは、ドライバーの構成を選択する前回の要求では、その配列またはデバイスのインターフェイスを取得します。
+Windows Driver Model (WDM) ルーチンを使用するクライアント ドライバーでは、いずれかでパイプ情報が含まれている、 [ **USBD\_パイプ\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_usbd_pipe_information)の構造を[ **USBD\_インターフェイス\_一覧\_エントリ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/ns-usbdlib-_usbd_interface_list_entry)配列。 クライアント ドライバーでは、ドライバーの構成を選択する前回の要求では、その配列またはデバイスのインターフェイスを取得します。
 
-Windows Driver Framework (WDF) のクライアント ドライバーは、フレームワークの対象になるパイプ オブジェクトと呼び出しへの参照を取得する必要があります[ **WdfUsbTargetPipeGetInformation** ](https://msdn.microsoft.com/library/windows/hardware/ff551142)パイプ情報を取得する、 [**WDF\_USB\_パイプ\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff553037)構造体。
+Windows Driver Framework (WDF) のクライアント ドライバーは、フレームワークの対象になるパイプ オブジェクトと呼び出しへの参照を取得する必要があります[ **WdfUsbTargetPipeGetInformation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetpipegetinformation)パイプ情報を取得する、 [**WDF\_USB\_パイプ\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/ns-wdfusb-_wdf_usb_pipe_information)構造体。
 
 パイプの情報に基づき、この一連の情報を決定します。
 
 -   ホスト コント ローラーは、パイプの各パケットに、データの量を送信できます。
 
-    クライアント ドライバーは、要求で送信できるデータの量は、ホスト コント ローラーが送信またはエンドポイントから受信するバイトの最大数を超えることはできません。 最大バイト数がで示される、 **MaximumPacketSize**のメンバー [ **USBD\_パイプ\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff539114)と[**WDF\_USB\_パイプ\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff553037)構造体。 USB ドライバー スタックのセット、 **MaximumPacketSize**値、構成を選択または選択インターフェイス要求中にします。
+    クライアント ドライバーは、要求で送信できるデータの量は、ホスト コント ローラーが送信またはエンドポイントから受信するバイトの最大数を超えることはできません。 最大バイト数がで示される、 **MaximumPacketSize**のメンバー [ **USBD\_パイプ\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_usbd_pipe_information)と[**WDF\_USB\_パイプ\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/ns-wdfusb-_wdf_usb_pipe_information)構造体。 USB ドライバー スタックのセット、 **MaximumPacketSize**値、構成を選択または選択インターフェイス要求中にします。
 
     フル スピード デバイス、 **MaximumPacketSize**の最初の 11 ビットから派生したが、 **wMaxPacketSize**のエンドポイントができるバイトの最大数を示すエンドポイント記述子フィールド送信またはトランザクションで受信します。 フル スピード デバイスのコント ローラーは、バス間隔ごとの 1 つのトランザクションを送信します。
 
@@ -116,7 +116,7 @@ Windows Driver Framework (WDF) のクライアント ドライバーは、フレ
 1.  各 isochronous パケットのサイズを取得します。
 2.  フレームごとの isochronous パケットの数を決定します。
 3.  転送内容をすべてのバッファーを保持するために必要な isochronous パケットの数を計算します。
-4.  割り当て、 [ **URB** ](https://msdn.microsoft.com/library/windows/hardware/ff538923)転送の詳細を説明する構造体。
+4.  割り当て、 [ **URB** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb)転送の詳細を説明する構造体。
 5.  各 isochronous パケット、パケットのオフセットなどの詳細を指定します。
 
 完全なコード アイソクロナスを送信する方法の例は、USBSAMP 要求を転送します。
@@ -161,32 +161,32 @@ Windows Driver Framework (WDF) のクライアント ドライバーは、フレ
 
 ### <a href="" id="allocate-an-urb-structure-to-describe-the-details-of-the-transfer-"></a>手順 4:転送の詳細を説明する URB 構造体を割り当てます。
 
-1.  割り当て、 [ **URB** ](https://msdn.microsoft.com/library/windows/hardware/ff538923)非ページ プール内の構造体。
+1.  割り当て、 [ **URB** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb)非ページ プール内の構造体。
 
-    ドライバーを呼び出す必要があります、クライアント ドライバー WDM ルーチンを使用する場合、 [ **USBD\_IsochUrbAllocate** ](https://msdn.microsoft.com/library/windows/hardware/hh406231) for Windows 8、Windows Driver Kit (WDK) がある場合。 クライアント ドライバーでは、Windows Vista および Windows オペレーティング システムの以降のバージョンを対象に、ルーチンを使用できます。 Windows 8 の WDK がないか、クライアント ドライバーを以前のバージョンのオペレーティング システムの場合は、呼び出すことによってスタックまたは非ページ プール内の構造を割り当てることができるかどうか[ **exallocatepoolwithtag に**](https://msdn.microsoft.com/library/windows/hardware/ff544520).
+    ドライバーを呼び出す必要があります、クライアント ドライバー WDM ルーチンを使用する場合、 [ **USBD\_IsochUrbAllocate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_isochurballocate) for Windows 8、Windows Driver Kit (WDK) がある場合。 クライアント ドライバーでは、Windows Vista および Windows オペレーティング システムの以降のバージョンを対象に、ルーチンを使用できます。 Windows 8 の WDK がないか、クライアント ドライバーを以前のバージョンのオペレーティング システムの場合は、呼び出すことによってスタックまたは非ページ プール内の構造を割り当てることができるかどうか[ **exallocatepoolwithtag に**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtag).
 
-    WDF のクライアント ドライバーを呼び出すことができます、 [ **WdfUsbTargetDeviceCreateIsochUrb** ](https://msdn.microsoft.com/library/windows/hardware/hh439420)メモリを割り当てる対象のメソッド、 [ **URB** ](https://msdn.microsoft.com/library/windows/hardware/ff538923)構造体。
+    WDF のクライアント ドライバーを呼び出すことができます、 [ **WdfUsbTargetDeviceCreateIsochUrb** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdevicecreateisochurb)メモリを割り当てる対象のメソッド、 [ **URB** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb)構造体。
 
-2.  **UrbIsochronousTransfer**のメンバー、 [ **URB** ](https://msdn.microsoft.com/library/windows/hardware/ff538923)へのポインターを構造体、 [  **\_URB\_アイソクロナス\_転送**](https://msdn.microsoft.com/library/windows/hardware/ff540414)アイソクロナスの転送の詳細を記述する構造体。 次の初期化**UrbIsochronousTransfer**メンバーとして次のとおりです。
-    -   設定、 **UrbIsochronousTransfer.Hdr.Length** URB のサイズのメンバー。 URB のサイズを取得するには、呼び出す[**取得\_ISO\_URB\_サイズ**](https://msdn.microsoft.com/library/windows/hardware/ff537144)マクロ パケットの数を指定します。
+2.  **UrbIsochronousTransfer**のメンバー、 [ **URB** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb)へのポインターを構造体、 [  **\_URB\_アイソクロナス\_転送**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb_isoch_transfer)アイソクロナスの転送の詳細を記述する構造体。 次の初期化**UrbIsochronousTransfer**メンバーとして次のとおりです。
+    -   設定、 **UrbIsochronousTransfer.Hdr.Length** URB のサイズのメンバー。 URB のサイズを取得するには、呼び出す[**取得\_ISO\_URB\_サイズ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-get_iso_urb_size)マクロ パケットの数を指定します。
     -   設定、 **UrbIsochronousTransfer.Hdr.Function**メンバー`URB_FUNCTION_ISOCH_TRANSFER`します。
     -   設定、 **UrbIsochronousTransfer.NumberOfPackets**アイソクロナス パケットの数のメンバー。
     -   設定、 **UrbIsochronousTransfer.PipeHandle**パイプ エンドポイントに関連付けられている不透明なハンドルにします。 パイプ ハンドルが、ユニバーサル シリアル バス (USB) ドライバー スタックで使用される USBD パイプ ハンドルであることを確認します。
 
-        USBD パイプ ハンドルを取得するには、WDF のクライアント ドライバーを呼び出すことができます、 [ **WdfUsbTargetPipeWdmGetPipeHandle** ](https://msdn.microsoft.com/library/windows/hardware/ff551162)メソッドとフレームワークのパイプ オブジェクトへの WDFUSBPIPE ハンドルを指定します。 WDM クライアント ドライバーで取得したのと同じハンドルを使用する必要があります、 **PipeHandle**のメンバー、 [ **USBD\_パイプ\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff539114)構造体。
+        USBD パイプ ハンドルを取得するには、WDF のクライアント ドライバーを呼び出すことができます、 [ **WdfUsbTargetPipeWdmGetPipeHandle** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetpipewdmgetpipehandle)メソッドとフレームワークのパイプ オブジェクトへの WDFUSBPIPE ハンドルを指定します。 WDM クライアント ドライバーで取得したのと同じハンドルを使用する必要があります、 **PipeHandle**のメンバー、 [ **USBD\_パイプ\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_usbd_pipe_information)構造体。
 
     -   転送の方向を指定します。 設定**UrbIsochronousTransfer.TransferFlags** USBD に\_転送\_方向\_IN isochronous 転送 (デバイスからの読み取り); でのUSBD\_転送\_方向\_アイソクロナス (デバイスへの書き込み) 転送の。
     -   指定、USBD\_開始\_ISO\_転送\_ASAP フラグ**UrbIsochronousTransfer**します。TransferFlags します。 フラグは、次の適切なフレームで、転送を送信する USB ドライバー スタックを指示します。 クライアント ドライバーは、このパイプ アイソクロナスの URB を送信する最初に、可能なとすぐに、ドライバー スタックは URB でアイソクロナス パケットを送信します。 USB ドライバー スタックは、そのパイプで後続の翻訳を使用する次のフレームを追跡します。 USBD を使用する後続の isochronous URB の送信に遅延がある場合\_開始\_ISO\_転送\_ASAP フラグ、ドライバー スタックが遅延するには、その URB の一部またはすべてのパケットを考慮して、ものは転送されませんパケット。
 
         USB ドライバー スタックのリセット、USBD\_開始\_ISO\_転送\_ASAP 開始フレーム追跡、スタックがそのパイプの前の URB を完了した後、アイソクロナス URB 1024 フレームを受信しない場合。 USBD を指定する代わりに\_開始\_ISO\_転送\_ASAP フラグは、開始フレームを指定することができます。 詳細については、「解説」を参照してください。
 
-    -   転送バッファーとそのサイズを指定します。 ポインターを設定するには、バッファーに**UrbIsochronousTransfer.TransferBuffer**または[ **MDL** ](https://msdn.microsoft.com/library/windows/hardware/ff554414)でバッファーを記述する**UrbIsochronousTransfer.TransferBufferMDL**します。
+    -   転送バッファーとそのサイズを指定します。 ポインターを設定するには、バッファーに**UrbIsochronousTransfer.TransferBuffer**または[ **MDL** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_mdl)でバッファーを記述する**UrbIsochronousTransfer.TransferBufferMDL**します。
 
-        取得する、 [ **MDL** ](https://msdn.microsoft.com/library/windows/hardware/ff554414) WDF のクライアント ドライバーを呼び出すことができます、転送バッファーの[ **WdfRequestRetrieveOutputWdmMdl** ](https://msdn.microsoft.com/library/windows/hardware/ff550021)または[ **WdfRequestRetrieveInputWdmMdl**](https://msdn.microsoft.com/library/windows/hardware/ff550016)転送の方向に応じて、します。
+        取得する、 [ **MDL** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_mdl) WDF のクライアント ドライバーを呼び出すことができます、転送バッファーの[ **WdfRequestRetrieveOutputWdmMdl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestretrieveoutputwdmmdl)または[ **WdfRequestRetrieveInputWdmMdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestretrieveinputwdmmdl)転送の方向に応じて、します。
 
 ### <a href="" id="specify-the-details-of-each-isochronous-packet-in-the-transfer-"></a>手順 5:転送では、各アイソクロナス パケットの詳細を指定します。
 
-USB ドライバー スタックは、新しい割り当て[ **URB** ](https://msdn.microsoft.com/library/windows/hardware/ff538923)各アイソクロナスのパケットが、パケットに含まれるデータではなく、情報を保持するのに十分な大きさである構造体。 **URB**構造、 **UrbIsochronousTransfer.IsoPacket**メンバーの配列は、 [ **USBD\_ISO\_パケット\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff539084)各 isochronous パケットを転送の詳細を説明します。 パケットは、連続している必要があります。 配列内の要素の数は、URB で指定された isochronous パケットの数である必要があります**UrbIsochronousTransfer.NumberOfPackets**メンバー。
+USB ドライバー スタックは、新しい割り当て[ **URB** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb)各アイソクロナスのパケットが、パケットに含まれるデータではなく、情報を保持するのに十分な大きさである構造体。 **URB**構造、 **UrbIsochronousTransfer.IsoPacket**メンバーの配列は、 [ **USBD\_ISO\_パケット\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_usbd_iso_packet_descriptor)各 isochronous パケットを転送の詳細を説明します。 パケットは、連続している必要があります。 配列内の要素の数は、URB で指定された isochronous パケットの数である必要があります**UrbIsochronousTransfer.NumberOfPackets**メンバー。
 
 高速転送では、配列内の各要素は microframe の 1 つで 1 つの isochronous パケットに関連付けます。 全体の速度、各要素は 1 つのフレームで isochronous パケットが転送された 1 つに関連付けます。
 
@@ -248,9 +248,9 @@ Total length transferred is 360,000 bytes.
 
 **転送の開始の USB フレーム番号を指定します。**
 
-**UrbIsochronousTransfer.StartFrame** URB のメンバーは、転送の開始の USB フレーム数を指定します。 クライアント ドライバーが、URB を送信する時間と USB ドライバー スタックが URB を処理する時間の間の待機時間は常にします。 そのため、クライアント ドライバーはドライバー URB を送信するときは、現在のフレームより後の開始フレームを常に指定する必要があります。 現在のフレーム数を取得するには、クライアント ドライバーが URB を送信できる\_関数\_取得\_現在\_フレーム\_USB ドライバー スタックへの要求の数 ([  **\_URB\_取得\_現在\_フレーム\_数**](https://msdn.microsoft.com/library/windows/hardware/ff540401))。
+**UrbIsochronousTransfer.StartFrame** URB のメンバーは、転送の開始の USB フレーム数を指定します。 クライアント ドライバーが、URB を送信する時間と USB ドライバー スタックが URB を処理する時間の間の待機時間は常にします。 そのため、クライアント ドライバーはドライバー URB を送信するときは、現在のフレームより後の開始フレームを常に指定する必要があります。 現在のフレーム数を取得するには、クライアント ドライバーが URB を送信できる\_関数\_取得\_現在\_フレーム\_USB ドライバー スタックへの要求の数 ([  **\_URB\_取得\_現在\_フレーム\_数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb_get_current_frame_number))。
 
-Isochronous 転送の場合、絶対パスは、現在のフレームの違い、 **StartFrame** USBD より小さい値があります\_ISO\_開始\_フレーム\_範囲。 適切な範囲内 StartFrame でない場合、USB ドライバー スタックの設定、**状態**URB ヘッダーのメンバー (を参照してください[  **\_URB\_ヘッダー**](https://msdn.microsoft.com/library/windows/hardware/ff540409)) するUSBD\_状態\_不適切な\_開始\_フレームおよび全体の URB を破棄します。
+Isochronous 転送の場合、絶対パスは、現在のフレームの違い、 **StartFrame** USBD より小さい値があります\_ISO\_開始\_フレーム\_範囲。 適切な範囲内 StartFrame でない場合、USB ドライバー スタックの設定、**状態**URB ヘッダーのメンバー (を参照してください[  **\_URB\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb_header)) するUSBD\_状態\_不適切な\_開始\_フレームおよび全体の URB を破棄します。
 
 **StartFrame** URB で指定された値は、最初のアイソクロナス URB パケットが転送されるフレーム数を示します。 以降のパケットのフレーム数は、バス スピードとエンドポイントの期間の値をポーリングに依存します。 などの高速転送では、最初のパケットで転送される**StartFrame**もう 1 つでパケットが転送される**StartFrame**+1、という具合です。 USB ドライバー スタックがフレームでのフル スピードのアイソクロナスのパケットを転送する方法が表示されます。
 

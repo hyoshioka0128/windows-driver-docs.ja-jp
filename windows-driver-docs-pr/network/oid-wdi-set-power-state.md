@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - OID_WDI_SET_POWER_STATE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 982326f8e938b8549b395365997e22f29d54f4c9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fcc41c92d1d38ca43ac1aa6ca9863ca2326e2085
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348576"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359203"
 ---
 # <a name="oidwdisetpowerstate"></a>OID\_WDI\_設定\_POWER\_状態
 
@@ -155,19 +155,19 @@ AOAC システムを休止状態またはされていないために必要なサ
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/dn898040" data-raw-source="[&lt;strong&gt;WDI_TLV_POWER_STATE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn898040)"><strong>WDI_TLV_POWER_STATE</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-power-state" data-raw-source="[&lt;strong&gt;WDI_TLV_POWER_STATE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-power-state)"><strong>WDI_TLV_POWER_STATE</strong></a></p></td>
 <td></td>
 <td></td>
 <td><p>電源の状態。 これは、プライマリのポートに適用されます。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/dn926303" data-raw-source="[&lt;strong&gt;WDI_TLV_ENABLE_WAKE_EVENTS&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn926303)"><strong>WDI_TLV_ENABLE_WAKE_EVENTS</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-enable-wake-events" data-raw-source="[&lt;strong&gt;WDI_TLV_ENABLE_WAKE_EVENTS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-enable-wake-events)"><strong>WDI_TLV_ENABLE_WAKE_EVENTS</strong></a></p></td>
 <td></td>
 <td>x</td>
 <td><p>このフィールドは可能性があります、NIC が省電力に配置されていると (SD IO で D2) などの指定したイベントのいずれかのスリープ解除されている場合にのみ表示されます。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/dn898060" data-raw-source="[&lt;strong&gt;WDI_TLV_SET_POWER_DX_REASON&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn898060)"><strong>WDI_TLV_SET_POWER_DX_REASON</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-set-power-dx-reason" data-raw-source="[&lt;strong&gt;WDI_TLV_SET_POWER_DX_REASON&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-set-power-dx-reason)"><strong>WDI_TLV_SET_POWER_DX_REASON</strong></a></p></td>
 <td></td>
 <td>x</td>
 <td><p>セットの電力理由です。</p></td>
@@ -182,7 +182,7 @@ AOAC システムを休止状態またはされていないために必要なサ
 
 | TLV                                                                                 | 許可されている複数の TLV インスタンス | 省略可能 | 説明                                                                                                                                                                                                                                                                                                                                               |
 |-------------------------------------------------------------------------------------|--------------------------------|----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [**WDI\_TLV\_アダプター\_再開\_必要な作業**](https://msdn.microsoft.com/library/windows/hardware/dn926120) |                                | x        | 値が true の場合に通知、OS のファームウェアがそのコンテキストの再開中にアシスタンスを必要があること。 ストレージに、ドライバーが中断されている場合にのみ発生する必要があります。 IHV コンポーネントは、オペレーティング システムは、一連のファームウェア コンテキストおよび IHV コンポーネント コンテキストの最新の状態を表示する Wi-fi のコマンドを発行するため、ソフトウェアの状態をリセットする必要があります。 |
+| [**WDI\_TLV\_アダプター\_再開\_必要な作業**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-adapter-resume-required) |                                | x        | 値が true の場合に通知、OS のファームウェアがそのコンテキストの再開中にアシスタンスを必要があること。 ストレージに、ドライバーが中断されている場合にのみ発生する必要があります。 IHV コンポーネントは、オペレーティング システムは、一連のファームウェア コンテキストおよび IHV コンポーネント コンテキストの最新の状態を表示する Wi-fi のコマンドを発行するため、ソフトウェアの状態をリセットする必要があります。 |
 
  
 
@@ -191,9 +191,9 @@ AOAC システムを休止状態またはされていないために必要なサ
 
 NIC には、スタックをスリープ解除することを検出するイベントのセットを指定します。 サブセットまたは低電力のコマンドを使用して NIC にイベントの完全なセットをオペレーティング システムが組み込まれます。 ウェイク イベントのいくつかのパラメーターは、Dx コマンドよりもかなり以前に設定されます。 Dx コマンドの前に、ファームウェアに他のユーザー設定されます。 すべてのイベントは、Dx コマンドでのみ有効になります。
 
-このインターフェイスでは、ダウンが有効に設定されているイベントを追加、省略可能な[ **WDI\_TLV\_を有効にする\_WAKE\_イベント**](https://msdn.microsoft.com/library/windows/hardware/dn926303) TLV の一部として、OID\_WDI\_設定\_Dx デバイスの電源状態の電源コマンド。 TLV がない場合、オペレーティング システムがスリープ解除する NIC を arm しない場合。
+このインターフェイスでは、ダウンが有効に設定されているイベントを追加、省略可能な[ **WDI\_TLV\_を有効にする\_WAKE\_イベント**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-enable-wake-events) TLV の一部として、OID\_WDI\_設定\_Dx デバイスの電源状態の電源コマンド。 TLV がない場合、オペレーティング システムがスリープ解除する NIC を arm しない場合。
 
-ファームウェアが持つ Dx コマンドを受信すると[ **WDI\_TLV\_を有効にする\_WAKE\_イベント**](https://msdn.microsoft.com/library/windows/hardware/dn926303)、検出、Dx を完了する前に、ウェイク イベントコマンド。 イベントのバッファー、コマンドの処理が完了、およびウェイク割り込みをアサートする必要があります。
+ファームウェアが持つ Dx コマンドを受信すると[ **WDI\_TLV\_を有効にする\_WAKE\_イベント**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-enable-wake-events)、検出、Dx を完了する前に、ウェイク イベントコマンド。 イベントのバッファー、コマンドの処理が完了、およびウェイク割り込みをアサートする必要があります。
 
 NIC がスタックを解除する理由のウェイク アップの理由で、Wi-fi NIC によって各ウェイクに従ってください。 NIC は、アサートすることは通常、バスや ACPI メソッドによって処理されますが、ウェイク アップ割り込み行で、スタックを解除します。 メソッドは、ウェイク イベントを処理するには、CPU と必要なコンポーネントをスリープ解除し、Wi-fi 待機 Wake IRP スタックを完了します。 その後、オペレーティング システムでは、ドライバーとファームウェアを D0 要求を発行します。 この要求は、ドライバー、ファームウェアに D0 コマンドを送信するには、電源 OID です。 ファームウェアは、受け取って D0 コマンドが完了するまでに、ウェイク アップの理由を示す値を保持します。
 
@@ -204,7 +204,7 @@ NIC がスタックを解除する理由のウェイク アップの理由で、
 ## <a name="no-enabled-wake-events"></a>有効なウェイク イベントがありません。
 
 
-存在する場合ありません[ **WDI\_TLV\_を有効にする\_WAKE\_イベント**](https://msdn.microsoft.com/library/windows/hardware/dn926303)存在する場合は、オペレーティング システムでは、省電力で実行するために Nic は必要はありません。 Nic が完全に電源がオフです。 ハード ドライブに中断されている場合は、ファームウェアのコンテキストで再開を再開する Nic ドライバーが必要です。
+存在する場合ありません[ **WDI\_TLV\_を有効にする\_WAKE\_イベント**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-enable-wake-events)存在する場合は、オペレーティング システムでは、省電力で実行するために Nic は必要はありません。 Nic が完全に電源がオフです。 ハード ドライブに中断されている場合は、ファームウェアのコンテキストで再開を再開する Nic ドライバーが必要です。
 
 ## <a name="power-state-interaction-and-transition-examples"></a>電源状態の相互作用と移行の例
 
@@ -252,7 +252,7 @@ NIC がスタックを解除する理由のウェイク アップの理由で、
 -   D2 notArmToWake:保持している電力は、再初期化が必要ありません。
 -   D3 notArmtoWake:ホット場合がありますまたはコールドします。 コールドは、そのコンテキストを復元する必要があります。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

@@ -7,12 +7,12 @@ keywords:
 - HelpText 値 WDK ネットワーク
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c0573a425ae6b2f68cff26c78b40c2f5fbaa18be
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0a38aafb025f3c270ccb918b6efa0148b09ced89
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367853"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379270"
 ---
 # <a name="adding-a-helptext-value"></a>HelpText 値の追加
 
@@ -39,7 +39,7 @@ INF ファイルを**NetTrans**、 **NetClient**、または**NetService**ユー
 HKR, Ndi, HelpText, 0, %MyTransport_Help%
 ```
 
-**HelpText**値は、% *strkey*% トークンで定義されている、**文字列**INF ファイルのセクション。 詳細については、**文字列**セクションを参照してください、 [ **INF 文字列セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547485)します。
+**HelpText**値は、% *strkey*% トークンで定義されている、**文字列**INF ファイルのセクション。 詳細については、**文字列**セクションを参照してください、 [ **INF 文字列セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-strings-section)します。
 
 **注**  Multilingual User Interface (MUI) のサポート、 **HelpText**値に間接的な文字列形式を指定できます`@filename,resource`します。 例:"@% SystemRoot %\\System32\\ドライバー\\mydriver.sys、-1000"。 対象の文字列は、指定したファイルにあります。 リソースの値は、ファイル内の特定の文字列を識別します。 リソースの値が 0 の場合、数は、バイナリ ファイル内の文字列のインデックスとして使用されます。 リソースの値が負の場合、リソース ファイル内のリソース識別子として使用します。
 

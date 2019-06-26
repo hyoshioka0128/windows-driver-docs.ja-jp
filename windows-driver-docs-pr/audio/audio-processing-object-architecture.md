@@ -4,12 +4,12 @@ description: オーディオ処理オブジェクト (APOs) は、Windows オー
 ms.assetid: 2F57B4C7-8C83-4DDF-BFAF-B9308752E91D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dd53e46e57783d59ae626835ca0c8ce5f80ad0d6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e2c66e12c6f59e59a06bf486a26bf97a3fe98697
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331447"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355678"
 ---
 # <a name="audio-processing-object-architecture"></a>オーディオ処理オブジェクトのアーキテクチャ
 
@@ -40,7 +40,7 @@ Windows には、オーディオ ドライバーの付加価値機能の一部�
 DSP 必要 APO プロキシ経由で提供されるように、ハードウェアで、効果が適用されます。 Microsoft では、既定のプロキシ APO (MsApoFxProxy.dll) を提供します。 APO、Microsoft を使用するには、このプロパティのセットとプロパティをサポートする必要があります。
 
 -   [KSPROPSETID\_AudioEffectsDiscovery](https://docs.microsoft.com/windows-hardware/drivers/audio/kspropsetid-audioeffectsdiscovery)
--   [KSPROPERTY\_AUDIOEFFECTSDISCOVERY\_EFFECTSLIST](https://msdn.microsoft.com/library/windows/hardware/dn457706)
+-   [KSPROPERTY\_AUDIOEFFECTSDISCOVERY\_EFFECTSLIST](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/dn457706(v=vs.85))
 
 必要に応じて、APO 独自のプロキシを実装することができます。
 
@@ -72,15 +72,15 @@ APO を追加する方法の詳細については、ダイアログ パネルが
 
 **カスタム APO テストと要求**
 
-Microsoft HLK APOs で使用できるテストを提供します。 オーディオのテストでは、「の詳細については[Device.Audio テスト](https://msdn.microsoft.com/library/windows/hardware/jj123955.aspx)と[Device.Audio テスト](https://msdn.microsoft.com/library/windows/hardware/jj124726.aspx)します。
+Microsoft HLK APOs で使用できるテストを提供します。 オーディオのテストでは、「の詳細については[Device.Audio テスト](https://docs.microsoft.com/previous-versions/windows/hardware/hck/jj123955(v=vs.85))と[Device.Audio テスト](https://docs.microsoft.com/previous-versions/windows/hardware/hck/jj124726(v=vs.85))します。
 
 これら 2 つのテストは APOs を使用する場合に、特に役立ちます。
 
-[オーディオ EffectsDiscovery (手動) - 証明書を確認します。](https://msdn.microsoft.com/library/windows/hardware/dn456312.aspx)
+[オーディオ EffectsDiscovery (手動) - 証明書を確認します。](https://docs.microsoft.com/previous-versions/windows/hardware/hck/dn456312(v=vs.85))
 
-[SysFX Test](https://msdn.microsoft.com/library/windows/hardware/jj124017.aspx)
+[SysFX Test](https://docs.microsoft.com/previous-versions/windows/hardware/hck/jj124017(v=vs.85))
 
-APOs をサポートするためのオーディオ要件については、次を参照してください。 [Device.Audio 要件](https://msdn.microsoft.com/library/windows/hardware/jj134354.aspx)します。
+APOs をサポートするためのオーディオ要件については、次を参照してください。 [Device.Audio 要件](https://docs.microsoft.com/previous-versions/windows/hardware/cert-program/deviceaudio-requirements)します。
 
 **カスタム APO ツールとユーティリティ**
 
@@ -90,7 +90,7 @@ APOs をサポートするためのオーディオ要件については、次を
 
 **アプリケーションは、オーディオ効果の認識**
 
-アプリケーションでは、どのオーディオ効果は、システム上で現在アクティブかを判断する Api を呼び出す機能があります。 オーディオ エフェクト認識 Api の詳細については、次を参照してください。 [AudioRenderEffectsManager クラス](https://msdn.microsoft.com/library/windows/apps/windows.media.effects.audiorendereffectsmanager.aspx)します。
+アプリケーションでは、どのオーディオ効果は、システム上で現在アクティブかを判断する Api を呼び出す機能があります。 オーディオ エフェクト認識 Api の詳細については、次を参照してください。 [AudioRenderEffectsManager クラス](https://docs.microsoft.com/uwp/api/Windows.Media.Effects.AudioRenderEffectsManager)します。
 
 ## <a name="span-idaudioprocessingobjectsarchitecturespanspan-idaudioprocessingobjectsarchitecturespanspan-idaudioprocessingobjectsarchitecturespanaudio-processing-objects-architecture"></a><span id="Audio_Processing_Objects_Architecture"></span><span id="audio_processing_objects_architecture"></span><span id="AUDIO_PROCESSING_OBJECTS_ARCHITECTURE"></span>オーディオ処理オブジェクト アーキテクチャ
 

@@ -12,12 +12,12 @@ keywords:
 - InterruptMessageService
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9313c319a2811550fc67331c3381566b96da272a
-ms.sourcegitcommit: ba351c01be491b8ab5c74d778ab02c8766a5667a
+ms.openlocfilehash: d9abcb3032a9003aa774e3b764f77fbce850b713
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67041369"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369729"
 ---
 # <a name="introduction-to-interrupt-service-routines"></a>割り込みサービス ルーチンの概要
 
@@ -30,9 +30,9 @@ PCI 2.2 以降では、PCI デバイスが生成できる*メッセージ シグ
 
 システムには、isr を特定の 2 つのさまざまな種類がサポートされています。
 
--   ドライバーが登録できる、 [ *InterruptService* ](https://msdn.microsoft.com/library/windows/hardware/ff547958)行ベースまたはメッセージ シグナル割り込みを処理するルーチン。 (これは、Windows Vista より前に使用可能な唯一の種類です)。システムでは、ドライバーによって提供されるコンテキストの値を渡します。
+-   ドライバーが登録できる、 [ *InterruptService* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kservice_routine)行ベースまたはメッセージ シグナル割り込みを処理するルーチン。 (これは、Windows Vista より前に使用可能な唯一の種類です)。システムでは、ドライバーによって提供されるコンテキストの値を渡します。
 
--   ドライバーが登録できる、 [ *InterruptMessageService* ](https://msdn.microsoft.com/library/windows/hardware/ff547940)メッセージ シグナル割り込みを処理するルーチン。 システムでは、ドライバーによって提供されるコンテキストの値と、割り込みメッセージのメッセージ ID の両方を渡します。
+-   ドライバーが登録できる、 [ *InterruptMessageService* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kmessage_service_routine)メッセージ シグナル割り込みを処理するルーチン。 システムでは、ドライバーによって提供されるコンテキストの値と、割り込みメッセージのメッセージ ID の両方を渡します。
 
 InterruptService または InterruptMessageService ルーチンで、デバイスの割り込みをサービスの登録の詳細については、次を参照してください。 [Message-Signaled 割り込み概要](https://docs.microsoft.com/windows-hardware/drivers/kernel/introduction-to-message-signaled-interrupts)します。
  

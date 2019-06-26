@@ -7,12 +7,12 @@ keywords:
 - VideoPortGetProcAddress
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a7af1231545192fb7da76bb162990ce264aa4c35
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 707c39b096c8faa1d88c610310f86de5224ca8c1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388981"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373562"
 ---
 # <a name="using-videoportgetprocaddress"></a>VideoPortGetProcAddress の使用
 
@@ -22,7 +22,7 @@ ms.locfileid: "63388981"
 
 ビデオのミニポート ドライバーは、ミニポート ドライバーが新しいオペレーティング システムのバージョンに固有の機能を使用しない限り、NT ベースのオペレーティング システムのバージョンの読み込みおよびそれ以前のオペレーティング システムのバージョンで実行できる 1 つの開発。
 
-ビデオのミニポート ドライバーが読み込まれるときに、 **VideoPortGetProcAddress**のメンバー、 [**ビデオ\_ポート\_CONFIG\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff570531)構造体には、ビデオ ポート ドライバーをエクスポートするコールバック ルーチンのアドレスが含まれています。 [ **VideoPortGetProcAddress**](https://msdn.microsoft.com/library/windows/hardware/ff570315)します。 ミニポート ドライバーは、このコールバック ルーチンを使用してからエクスポートされたビデオ ポート関数のアドレスを検索する*videoprt.sys*します。 ミニポート ドライバーは、関数のアドレスがある後、は、関数の呼び出しにこのアドレスを使用できます。 これは、次のコード例に示します。
+ビデオのミニポート ドライバーが読み込まれるときに、 **VideoPortGetProcAddress**のメンバー、 [**ビデオ\_ポート\_CONFIG\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/ns-video-_video_port_config_info)構造体には、ビデオ ポート ドライバーをエクスポートするコールバック ルーチンのアドレスが含まれています。 [ **VideoPortGetProcAddress**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nc-video-pvideo_port_get_proc_address)します。 ミニポート ドライバーは、このコールバック ルーチンを使用してからエクスポートされたビデオ ポート関数のアドレスを検索する*videoprt.sys*します。 ミニポート ドライバーは、関数のアドレスがある後、は、関数の呼び出しにこのアドレスを使用できます。 これは、次のコード例に示します。
 
 ```cpp
   // Useful typedef for a function pointer type

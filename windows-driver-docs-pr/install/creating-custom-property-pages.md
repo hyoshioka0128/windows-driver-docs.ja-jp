@@ -4,19 +4,19 @@ description: カスタム プロパティ ページの作成
 ms.assetid: 2481450f-ebb2-40e3-8a42-eabaecc1c7e4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 897cf3f7d0d0e2575d37de6649b11d45476a571b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b870bcffdf3d65c991dfb791a699fcde0bf39fa1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363129"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356295"
 ---
 # <a name="creating-custom-property-pages"></a>カスタム プロパティ ページの作成
 
 
 ときに、[デバイスのプロパティ ページのプロバイダー](types-of-device-property-page-providers.md) 、そのデバイスまたはデバイス クラスのプロパティ ページを作成する要求をハンドル、プロバイダーは、次の手順を実行する必要があります。
 
-1.  呼び出す[ **SetupDiGetClassInstallParams** ](https://msdn.microsoft.com/library/windows/hardware/ff551083)現在を取得するクラスは、デバイスのパラメーターをインストールします。 次に、例を示します。
+1.  呼び出す[ **SetupDiGetClassInstallParams** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclassinstallparamsa)現在を取得するクラスは、デバイスのパラメーターをインストールします。 次に、例を示します。
 
     ```cpp
     SP_ADDPROPERTYPAGE_DATA AddPropertyPageData;
@@ -44,7 +44,7 @@ ms.locfileid: "63363129"
 
 3.  後で、ダイアログ ボックス プロシージャで必要になるし、データでは、このメモリが初期化される任意のデバイスに固有のデータを保存するためのメモリを割り当てます。 プロバイダーは、プロパティ ページが破棄されるときに、そのプロパティ ページのコールバックでは、このメモリを解放する必要があります。
 
-    プロバイダーの[共同インストーラー](writing-a-co-installer.md)、このデバイスに固有のデータを含める必要があります、 *DeviceInfoSet*と*DeviceInfoData*で渡される、 [ **DIF_ADDPROPERTYPAGE_ADVANCED** ](https://msdn.microsoft.com/library/windows/hardware/ff543656)デバイス インストール機能 (差分) コード。
+    プロバイダーの[共同インストーラー](writing-a-co-installer.md)、このデバイスに固有のデータを含める必要があります、 *DeviceInfoSet*と*DeviceInfoData*で渡される、 [ **DIF_ADDPROPERTYPAGE_ADVANCED** ](https://docs.microsoft.com/windows-hardware/drivers/install/dif-addpropertypage-advanced)デバイス インストール機能 (差分) コード。
 
     たとえば、プロパティ ページのプロバイダーは定義して、構造体を使用して、次の例に示すようにできます。
 
@@ -73,7 +73,7 @@ ms.locfileid: "63363129"
 
 7.  各追加のカスタム プロパティ ページの手順 2. ~ 6. を繰り返します。
 
-8.  呼び出す[ **SetupDiSetClassInstallParams** ](https://msdn.microsoft.com/library/windows/hardware/ff552122)新しいクラスをセットアップするには、インストールのパラメーターで、更新されたプロパティのページ構造が含まれます。
+8.  呼び出す[ **SetupDiSetClassInstallParams** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetclassinstallparamsa)新しいクラスをセットアップするには、インストールのパラメーターで、更新されたプロパティのページ構造が含まれます。
 
 9.  NO_ERROR を返します。
 

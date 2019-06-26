@@ -11,12 +11,12 @@ keywords:
 - ポート ドライバー WDK オーディオ、ポート クラス
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dc78c0b0edf81c7983bbf37d02f78ecb87e9b1b9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1410d6abc90842112044136429ae642ed6462a74
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328596"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354221"
 ---
 # <a name="supporting-a-device"></a>デバイスのサポート
 
@@ -26,15 +26,15 @@ ms.locfileid: "63328596"
 
 PortCls システム ドライバー (*Portcls.sys*) をレンダリングし、wave と MIDI ストリームをキャプチャするオーディオ デバイスをサポートするいくつかの組み込みのポート ドライバーを提供します。
 
-基底インターフェイスから派生するインターフェイスを公開するポートのすべてのドライバー [IPort](https://msdn.microsoft.com/library/windows/hardware/ff536842)します。 **IPort**基底インターフェイスからメソッドを継承**IUnknown**します。 **IPort**次の追加のメソッドを提供します。
+基底インターフェイスから派生するインターフェイスを公開するポートのすべてのドライバー [IPort](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iport)します。 **IPort**基底インターフェイスからメソッドを継承**IUnknown**します。 **IPort**次の追加のメソッドを提供します。
 
-[**IPort::GetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff536941)
+[**IPort::GetDeviceProperty**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iport-getdeviceproperty)
 
 レジストリからオーディオのアダプターのプラグ アンド プレイ プロパティを取得します。
-[**IPort::Init**](https://msdn.microsoft.com/library/windows/hardware/ff536943)
+[**IPort::Init**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iport-init)
 
 ポート オブジェクトを初期化します。
-[**IPort::NewRegistryKey**](https://msdn.microsoft.com/library/windows/hardware/ff536945)
+[**IPort::NewRegistryKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iport-newregistrykey)
 
 新しいレジストリ キーを作成するか、既存のキーを開きます。
 PortCls には、次のポートのドライバーが実装されています。

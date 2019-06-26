@@ -12,12 +12,12 @@ keywords:
 - 暗証番号 (pin) のデータ範囲 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ba6d8656959f8125ef7da6d970b153d773317042
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ab0245fe51b6c7c64442e985c24bc7f0628c54d5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374092"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376396"
 ---
 # <a name="data-range-intersections-in-avstream"></a>AVStream のデータ範囲の交差
 
@@ -29,9 +29,9 @@ ms.locfileid: "63374092"
 
 データ範囲は、有効なパラメーターのシーケンスを指定します。 たとえば、オーディオ データの範囲は、2 番目と C D サンプルごとのビットごとの A B サンプルでオーディオの特定の形式を指定できます。
 
-ミニドライバーで特定の pin をサポートするデータ範囲の一覧を示します、 **DataRanges**の対応するメンバー [ **KSPIN\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff563533)構造体。
+ミニドライバーで特定の pin をサポートするデータ範囲の一覧を示します、 **DataRanges**の対応するメンバー [ **KSPIN\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kspin_descriptor)構造体。
 
-AVStream、ミニドライバーは、内のミニドライバーで提供されるコールバック ルーチンへのポインターを提供することで独自のデータ範囲の交差部分ハンドラーを提供できます、 **IntersectHandler**のメンバー、 [ **KSPIN\_記述子\_EX**](https://msdn.microsoft.com/library/windows/hardware/ff563534)します。 範囲の交差 AVStream させるには、このメンバーを設定**NULL**します。 参照してください[ *AVStrMiniIntersectHandlerEx* ](https://msdn.microsoft.com/library/windows/hardware/ff556326)にコールバック ルーチンを定義する方法について説明します。
+AVStream、ミニドライバーは、内のミニドライバーで提供されるコールバック ルーチンへのポインターを提供することで独自のデータ範囲の交差部分ハンドラーを提供できます、 **IntersectHandler**のメンバー、 [ **KSPIN\_記述子\_EX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_kspin_descriptor_ex)します。 範囲の交差 AVStream させるには、このメンバーを設定**NULL**します。 参照してください[ *AVStrMiniIntersectHandlerEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nc-ks-pfnksintersecthandlerex)にコールバック ルーチンを定義する方法について説明します。
 
 交差にする必要がある場合、ミニドライバーは、intersect ハンドラーを提供する場合、ミニドライバーはサブフォーマット、および指定子の主な種類の一致する 2 つのデータ範囲を受け取ります。 さらに、データの範囲の必要な属性が一致します。
 
@@ -39,11 +39,11 @@ AVStream、ミニドライバーは、内のミニドライバーで提供され
 
 2 つのデータ範囲が交差しない場合、ハンドラーがステータスを返します\_いいえ\_一致します。
 
-ミニドライバーが指定されている場合、 [ *AVStrMiniPinSetDataFormat* ](https://msdn.microsoft.com/library/windows/hardware/ff556355)ディスパッチ、AVStream AVStream が、ピンで、特定の形式を設定しているようにミニドライバーに通知するには、このディスパッチを呼び出します。 ポインターを提供、 *AVStrMiniPinSetDataFormat*コールバック ルーチンで、 **SetDataFormat**のメンバー、 [ **KSPIN\_ディスパッチ**](https://msdn.microsoft.com/library/windows/hardware/ff563535)構造体。 (ミニドライバーのクライアントである[クラスのストリーム](https://msdn.microsoft.com/library/windows/hardware/ff568275)受信[ **SRB\_設定\_データ\_形式**](https://msdn.microsoft.com/library/windows/hardware/ff568201) ではなく*AVStrMiniPinSetDataFormat*)。
+ミニドライバーが指定されている場合、 [ *AVStrMiniPinSetDataFormat* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nc-ks-pfnkspinsetdataformat)ディスパッチ、AVStream AVStream が、ピンで、特定の形式を設定しているようにミニドライバーに通知するには、このディスパッチを呼び出します。 ポインターを提供、 *AVStrMiniPinSetDataFormat*コールバック ルーチンで、 **SetDataFormat**のメンバー、 [ **KSPIN\_ディスパッチ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_kspin_dispatch)構造体。 (ミニドライバーのクライアントである[クラスのストリーム](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_stream/index)受信[ **SRB\_設定\_データ\_形式**](https://docs.microsoft.com/windows-hardware/drivers/stream/srb-set-data-format) ではなく*AVStrMiniPinSetDataFormat*)。
 
 ミニドライバーは、提案された形式を拒否する状態を返すことによって\_いいえ\_から一致*AVStrMiniPinSetDataFormat*します。
 
-最初の呼び出しだけでなく[ *AVStrMiniPinSetDataFormat* ](https://msdn.microsoft.com/library/windows/hardware/ff556355) 、暗証番号 (pin) が作成される前に、ミニドライバーは、2 つ目を受け取ることが*AVStrMiniPinSetDataFormat*を呼び出す直前に実行状態にピン留めする遷移します。 AVStream またはストリーム クラス クライアントがビデオ キャプチャ ミニドライバーと、このような通知を受け取る場合*ディスパッチには、実際の画面のパラメーターが含まれています。* します。 可能であれば、この 2 つ目の形式変更、ミニドライバーは失敗しません。 2 番目のディスパッチ呼び出しが行われることを前提としてはいません。
+最初の呼び出しだけでなく[ *AVStrMiniPinSetDataFormat* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nc-ks-pfnkspinsetdataformat) 、暗証番号 (pin) が作成される前に、ミニドライバーは、2 つ目を受け取ることが*AVStrMiniPinSetDataFormat*を呼び出す直前に実行状態にピン留めする遷移します。 AVStream またはストリーム クラス クライアントがビデオ キャプチャ ミニドライバーと、このような通知を受け取る場合*ディスパッチには、実際の画面のパラメーターが含まれています。* します。 可能であれば、この 2 つ目の形式変更、ミニドライバーは失敗しません。 2 番目のディスパッチ呼び出しが行われることを前提としてはいません。
 
 ミニドライバーは、どのような形式は、最後に含まれていたでデータをキャプチャする必要があります成功*AVStrMiniPinSetDataFormat*ディスパッチします。
 

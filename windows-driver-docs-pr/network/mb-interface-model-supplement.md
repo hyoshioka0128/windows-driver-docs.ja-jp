@@ -4,12 +4,12 @@ description: このセクションでは、MB インターフェイス モデル
 ms.assetid: 577BCF39-868B-44F5-A5C0-75E28689C2B6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cdbc2f5019b71faefb9b29343e41bb00ac7eaeac
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3b0888b65daaf7a27efdd6ba7115400f9bf47061
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343347"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377999"
 ---
 # <a name="mb-interface-model-supplement"></a>MB インターフェイス モデルに関する補足条項
 
@@ -200,7 +200,7 @@ Microsoft OS 文字列記述子と、検索に、次の制約が適用されま�
 
 **BRequest**フィールドは、要求の形式を示すために使用します。 Microsoft OS 機能の記述子を取得する、 **bRequest**特別な GET のフィールドを代入する\_MS\_記述子バイト。 このバイトの値が付いて、 **bMS\_VendorCode**Microsoft の文字列記述子から取得します。 Microsoft OS 文字列記述子の基準取得に関する詳細については、次を参照してください。 **OS 文字列記述子を取得する**します。
 
-**WValue**フィールドは、特別な用途し、は、上位バイトと下位バイトに分割されます。 高位のバイトを使用して、インターフェイスの数を格納します。 これは複合デバイスは、特に用のインターフェイスごとに機能の記述子を格納するために不可欠なまたはデバイスを[複数のインターフェイス](https://msdn.microsoft.com/library/windows/hardware/ff537102)します。 ほとんどの場合、0 のインターフェイスが使用されます。 下位バイトを使用して、ページ番号を格納します。 この機能は 64 KB のサイズの境界の記述子を防止 (のサイズによって設定された制限、 **wLength**フィールド)。 記述子は、ページの値を 0 に初期設定がフェッチされます。 完全な記述子の場合 (サイズは 64 KB) が受信されると、ページの値は 1 つずつ増えます、記述子の要求が再度送信されます (この時点で、インクリメントは、値をページ)。 このプロセスは、64 KB 未満のサイズの記述子が受信されるまで繰り返されます。 ページの最大数は 255 に、記述子のサイズに対して 16 MB の制限が適用されるに注意してください。
+**WValue**フィールドは、特別な用途し、は、上位バイトと下位バイトに分割されます。 高位のバイトを使用して、インターフェイスの数を格納します。 これは複合デバイスは、特に用のインターフェイスごとに機能の記述子を格納するために不可欠なまたはデバイスを[複数のインターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)します。 ほとんどの場合、0 のインターフェイスが使用されます。 下位バイトを使用して、ページ番号を格納します。 この機能は 64 KB のサイズの境界の記述子を防止 (のサイズによって設定された制限、 **wLength**フィールド)。 記述子は、ページの値を 0 に初期設定がフェッチされます。 完全な記述子の場合 (サイズは 64 KB) が受信されると、ページの値は 1 つずつ増えます、記述子の要求が再度送信されます (この時点で、インクリメントは、値をページ)。 このプロセスは、64 KB 未満のサイズの記述子が受信されるまで繰り返されます。 ページの最大数は 255 に、記述子のサイズに対して 16 MB の制限が適用されるに注意してください。
 
 **WIndex**フィールドには、Microsoft OS 機能記述子を取得するの機能のインデックス番号が格納されます。 Microsoft では、この Microsoft OS 機能ディスクリプターとインデックスの一覧を維持します。 詳細については、Microsoft OS 機能ディスクリプターを参照してください。 [Microsoft OS ディスクリプター](https://go.microsoft.com/fwlink/p/?linkid=308932)します。
 

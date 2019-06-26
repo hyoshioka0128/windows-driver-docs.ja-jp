@@ -3,12 +3,12 @@ Description: 使用可能なポートに接続された MUTT デバイスの実�
 title: Visual Studio で MUTT デバイスのシステム電源 devfund テストを実行します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 61c9c14b4dbea00de855e89135593836ba81f385
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a0f97aef6bf6387e3101decf58ebc0181364e697
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366052"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378311"
 ---
 # <a name="how-to-run-system-power-devfund-tests-in-visual-studio-for-mutt-devices"></a>Visual Studio での MUTT デバイスのシステム電源 devfund テストの実行方法
 
@@ -64,7 +64,7 @@ Devfund テストの実行を開始する前に、次の要件を満たしてい
 上記のテストの詳細については、次を参照してください。**について、基本的なデバイス テスト**で[を選択し、デバイスの基本的なテストを構成する方法](https://go.microsoft.com/fwlink/p/?linkid=316387)します。
 
 ## <a name="related-topics"></a>関連トピック
-[USB](https://msdn.microsoft.com/library/windows/hardware/ff538930)  
+[USB](https://docs.microsoft.com/windows-hardware/drivers/)  
 [Microsoft USB Test Tool (MUTT) デバイス](microsoft-usb-test-tool--mutt--devices.md)  
 
 

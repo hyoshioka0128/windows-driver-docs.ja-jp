@@ -4,22 +4,22 @@ description: このセクションは、IPv6 近隣要請 (NS) オフロード�
 ms.assetid: 48AACE46-4D39-49ED-90AD-F73E27D0CDBE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 685fecb635c435e52ecd5a3f7adde5d6075fbab8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2565613a276a8f876f97cbbe279c73a4940ff68a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363064"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374866"
 ---
 # <a name="implementing-ipv6-ns-offload"></a>IPv6 NS オフロードの実装
 
 
-NDIS プロトコル ドライバーに送信します (NS) として要求をオフロードする IPv6 近隣要請、 [OID\_PM\_追加\_プロトコル\_オフロード](https://msdn.microsoft.com/library/windows/hardware/ff569763)OID 要求。 これらの NS オフロード要求をサポートするには、ミニポートを次に行う必要があります。
+NDIS プロトコル ドライバーに送信します (NS) として要求をオフロードする IPv6 近隣要請、 [OID\_PM\_追加\_プロトコル\_オフロード](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pm-add-protocol-offload)OID 要求。 これらの NS オフロード要求をサポートするには、ミニポートを次に行う必要があります。
 
 ## <a name="indicating-how-many-offload-requests-the-miniport-adapter-supports"></a>ミニポート アダプタのサポートを要求数の負荷を軽減することを示す
 
 
-ミニポート ドライバーの設定、 **NumNSOffloadIPv6Addresses**のメンバー、 [ **NDIS\_PM\_機能**](https://msdn.microsoft.com/library/windows/hardware/ff566748)を NS の数を示すために構造体オフロード、ミニポート アダプターがサポートを要求します。
+ミニポート ドライバーの設定、 **NumNSOffloadIPv6Addresses**のメンバー、 [ **NDIS\_PM\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_capabilities)を NS の数を示すために構造体オフロード、ミニポート アダプターがサポートを要求します。
 
 **注**  、名前とは異なり、 **NumNSOffloadIPv6Addresses**メンバーには、アドレスの数ではなく、サポートされている要求の数が含まれています。
 
@@ -35,7 +35,7 @@ NDIS プロトコル ドライバーに送信します (NS) として要求を�
 
 ### <a name="example"></a>例
 
-ミニポート ドライバーが設定されている場合、 [ **NDIS\_PM\_機能**](https://msdn.microsoft.com/library/windows/hardware/ff566748)のメンバー、 **NumNSOffloadIPv6Addresses** NDIS 可能性がありますし、3、構造体送信の最大 3 [OID\_PM\_追加\_プロトコル\_オフロード](https://msdn.microsoft.com/library/windows/hardware/ff569763)種類の要求**NdisPMProtocolOffloadIdIPv6NS**します。 各 OID\_PM\_追加\_プロトコル\_オフロード要求での 1 つまたは 2 つのアドレスがあります、 **TargetIPv6Addresses**のメンバー、 [ **NDIS\_PM\_プロトコル\_オフロード**](https://msdn.microsoft.com/library/windows/hardware/ff566760)構造体。 したがって、ミニポートが 3 x 2 = 6 をサポートする必要がありますターゲット アドレス。
+ミニポート ドライバーが設定されている場合、 [ **NDIS\_PM\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_capabilities)のメンバー、 **NumNSOffloadIPv6Addresses** NDIS 可能性がありますし、3、構造体送信の最大 3 [OID\_PM\_追加\_プロトコル\_オフロード](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pm-add-protocol-offload)種類の要求**NdisPMProtocolOffloadIdIPv6NS**します。 各 OID\_PM\_追加\_プロトコル\_オフロード要求での 1 つまたは 2 つのアドレスがあります、 **TargetIPv6Addresses**のメンバー、 [ **NDIS\_PM\_プロトコル\_オフロード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_protocol_offload)構造体。 したがって、ミニポートが 3 x 2 = 6 をサポートする必要がありますターゲット アドレス。
 
 ミニポートがユニキャストの両方に一致する必要があり、各ターゲット アドレス、ミニポートのマルチキャストの NS メッセージは、2 x 6 の合計と一致できる必要がありますので、12 NS メッセージ パターンを = です。
 

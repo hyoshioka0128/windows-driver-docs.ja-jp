@@ -4,12 +4,12 @@ description: ページ サイズと向きのコード例
 ms.assetid: 28425df2-131b-4fbc-ae44-043be2fb4813
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 51b1f49c74815c249ef98eed60fa5f2acc325a17
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bd916efbcf8fac9db507c783012a79869abc4c67
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392622"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376526"
 ---
 # <a name="page-size-and-orientation-code-examples"></a>ページ サイズと向きのコード例
 
@@ -19,9 +19,9 @@ ms.locfileid: "63392622"
 
 2.  アプリケーション設定、WIA\_IP\_ページ\_サイズ プロパティは、WIA を\_ページ\_文字。
 
-3.  アプリケーションの設定、 [ **WIA\_IP\_向き**](https://msdn.microsoft.com/library/windows/hardware/ff552625) LANSCAPE するプロパティ。
+3.  アプリケーションの設定、 [ **WIA\_IP\_向き**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-orientation) LANSCAPE するプロパティ。
 
-4.  アプリケーションの変更、 [ **WIA\_IP\_XEXTENT** ](https://msdn.microsoft.com/library/windows/hardware/ff552661)プロパティ値を小さくします。
+4.  アプリケーションの変更、 [ **WIA\_IP\_XEXTENT** ](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-xextent)プロパティ値を小さくします。
 
 ### <a name="example-1-the-minidriver-reports-the-settings"></a>例 1:設定がレポート、ミニドライバー
 
@@ -43,6 +43,6 @@ WIA_IPS_PAGE_SIZE WIA_PAGE_LETTER WIA_IPS_PAGE_HEIGHT = 11000 WIA_IPS_PAGE_WIDTH
 
 ### <a name="example-4-an-application-changes-the-wiaipsxextent-property-to-a-smaller-value"></a>例 4:アプリケーションの変更、WIA\_IP\_XEXTENT プロパティ値を小さくする
 
-次のコード例では、アプリケーション変更、 [ **WIA\_IP\_XEXTENT** ](https://msdn.microsoft.com/library/windows/hardware/ff552661) 1000 プロパティ。 ミニドライバーを想定してください WIA に含まれていること、新しい値を\_IP\_XEXTENT が、WIA を無効になった\_IP\_ページ\_SIZE プロパティと、WIA を変更する必要がありますので\_IP\_ページ\_サイズ WIA を\_ページ\_カスタム。 ミニドライバーを調整する必要がありますも[ **WIA\_IP\_ページ\_幅**](https://msdn.microsoft.com/library/windows/hardware/ff552636)します。
+次のコード例では、アプリケーション変更、 [ **WIA\_IP\_XEXTENT** ](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-xextent) 1000 プロパティ。 ミニドライバーを想定してください WIA に含まれていること、新しい値を\_IP\_XEXTENT が、WIA を無効になった\_IP\_ページ\_SIZE プロパティと、WIA を変更する必要がありますので\_IP\_ページ\_サイズ WIA を\_ページ\_カスタム。 ミニドライバーを調整する必要がありますも[ **WIA\_IP\_ページ\_幅**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-page-width)します。
 
 WIA_IPS_PAGE_SIZE WIA_PAGE_CUSTOM WIA_IPS_PAGE_HEIGHT を = = 10000 WIA_IPS_PAGE_WIDTH = 8500 WIA_IPS_ORIENTATION LANSCAPE WIA_IPS_XPOS を = = 0 WIA_IPS_YPOS = 0 WIA_IPS_XEXTENT = 1000 WIA_IPS_YEXTENT 850 WIA_IPS_XRES を = = 100 WIA_IPS_YRES = 100

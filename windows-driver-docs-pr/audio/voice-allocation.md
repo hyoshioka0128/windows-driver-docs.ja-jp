@@ -12,12 +12,12 @@ keywords:
 - シンセサイザー WDK の音声、音声の割り当て
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b55579b261ddf9fe7e45bd5ba010ce5332da8f1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 653566fc7e8bad546fbc33b44f92614bcabadbf8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335237"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354133"
 ---
 # <a name="voice-allocation"></a>音声の割り当て
 
@@ -118,7 +118,7 @@ DirectMusic シンセサイザー - ハードウェアとソフトウェアの�
 
 DirectSound バッファーが 1 つずつを実際に割り当てられた、読みやすくするために、テーブルにまとめられていることに注意してください。
 
-シンセサイザー暗証番号 (pin) のインスタンスを作成すると、直後に音声割り当てる必要があるないそれに基づきます。 作成後すぐ、 [ **KSPROPERTY\_シンセサイザー\_PORTPARAMETERS** ](https://msdn.microsoft.com/library/windows/hardware/ff537405)プロパティ項目を受信します。 このプロパティの項目には、このインスタンスに関連付けられているボイスの数がその他のものを示します。 この項目は、すべての音声要求された場合に、動的プールの実際の新しいサイズを報告する機会を割り当てられていないミニポート ドライバーも提供します。
+シンセサイザー暗証番号 (pin) のインスタンスを作成すると、直後に音声割り当てる必要があるないそれに基づきます。 作成後すぐ、 [ **KSPROPERTY\_シンセサイザー\_PORTPARAMETERS** ](https://docs.microsoft.com/previous-versions/ff537405(v=vs.85))プロパティ項目を受信します。 このプロパティの項目には、このインスタンスに関連付けられているボイスの数がその他のものを示します。 この項目は、すべての音声要求された場合に、動的プールの実際の新しいサイズを報告する機会を割り当てられていないミニポート ドライバーも提供します。
 
  
 

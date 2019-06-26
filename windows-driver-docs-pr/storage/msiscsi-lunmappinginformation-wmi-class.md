@@ -4,12 +4,12 @@ description: MSiSCSI\_LUNMappingInformation WMI クラス
 ms.assetid: 646add52-f946-4169-9f6b-974253ec30af
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 8e40aa4b601feb670a4f2fb99fc42def75a57b31
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7dfc7dc88017bf152120bf2746d4bdf20bdcedde
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387945"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353507"
 ---
 # <a name="msiscsilunmappinginformation-wmi-class"></a>MSiSCSI\_LUNMappingInformation WMI クラス
 
@@ -25,7 +25,7 @@ MSiSCSI\_LUNMappingInformation クラスは、特定の論理ユニットに、�
 
 MSiSCSI\_LUNMappingInformation クラスは発行されませんしで定義されている*Operations.mof*します。
 
-WMI ツールのスイートでは、このクラスの定義をコンパイルするときに生成、 [ **MSiSCSI\_LUNMappingInformation** ](https://msdn.microsoft.com/library/windows/hardware/ff563065)データ構造体。
+WMI ツールのスイートでは、このクラスの定義をコンパイルするときに生成、 [ **MSiSCSI\_LUNMappingInformation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsiop/ns-iscsiop-_msiscsi_lunmappinginformation)データ構造体。
 
 SCSI アドレス情報をその MSiSCSI\_LUNMappingInformation 公開は、イニシエーターのミニポート ドライバーが提供される情報と一致する必要があります、論理ユニットの列挙中にポート ドライバーにします。
 

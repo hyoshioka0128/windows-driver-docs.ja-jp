@@ -9,17 +9,17 @@ keywords:
 - 解析の印刷チケット オブジェクト
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ce0d061497ef14d0589dc76db55bfd98f887995b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5144289f05eba100bc3161a328f028386ddace13
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351889"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363981"
 ---
 # <a name="print-ticket-parsing"></a>印刷チケット解析
 
 
-印刷チケットは、現在の文書パーツのマージされたが後、印刷ドライバーのフィルターはフィルターに適用される設定を検索する内容を解析する必要があります。 メソッド、 [IPrintCoreHelper インターフェイス](https://msdn.microsoft.com/library/windows/hardware/ff552960)印刷チケットの要素を解析するために、印刷ドライバーのフィルター モジュールで使用できます。 印刷チケットから印刷チケットの要素を展開した後は、フィルター モジュールの関数に統合することができます。 フィルター モジュールが記載されて、 [XPS フィルター パイプライン](xpsdrv-printer-driver.md)セクション。
+印刷チケットは、現在の文書パーツのマージされたが後、印刷ドライバーのフィルターはフィルターに適用される設定を検索する内容を解析する必要があります。 メソッド、 [IPrintCoreHelper インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nn-prcomoem-iprintcorehelper)印刷チケットの要素を解析するために、印刷ドライバーのフィルター モジュールで使用できます。 印刷チケットから印刷チケットの要素を展開した後は、フィルター モジュールの関数に統合することができます。 フィルター モジュールが記載されて、 [XPS フィルター パイプライン](xpsdrv-printer-driver.md)セクション。
 
  
 

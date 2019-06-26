@@ -23,12 +23,12 @@ keywords:
 - WDM オーディオ コンポーネント WDK
 ms.date: 05/08/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 239c968d82da525c03967408201b73f5a8e9cb37
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d7dbdde7861c3d09da3a6d0eb5af5cef5d57f85d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333386"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359849"
 ---
 # <a name="kernel-mode-wdm-audio-components"></a>カーネル モード WDM オーディオ コンポーネント
 
@@ -136,7 +136,7 @@ DRMK システム ドライバー (Drmk.sys) は、DRM で保護されたコン�
 
 スプリッター システム ドライバー (Splitter.sys) は 2 つ作成される KS フィルターまたは以上の出力を 1 つの入力キャプチャ ストリームからストリームします。 スプリッター ドライバーは、入力ストリームの形式とは無関係に 2 つの詳細出力ストリームに入力ストリームを透過的にコピーします。
 
-スプリッター ドライバーは、Microsoft Windows XP と Windows Me でサポートされている以降です。 詳細については、次を参照してください。 [AVStream スプリッター](https://msdn.microsoft.com/library/windows/hardware/ff554255)します。
+スプリッター ドライバーは、Microsoft Windows XP と Windows Me でサポートされている以降です。 詳細については、次を参照してください。 [AVStream スプリッター](https://docs.microsoft.com/windows-hardware/drivers/stream/avstream-splitters)します。
 
 ### <a name="span-idportclassadapterdriverandportclssystemdriverspanspan-idportclassadapterdriverandportclssystemdriverspanport-class-adapter-driver-and-portcls-system-driver"></a><span id="port_class_adapter_driver_and_portcls_system_driver"></span><span id="PORT_CLASS_ADAPTER_DRIVER_AND_PORTCLS_SYSTEM_DRIVER"></span>ポート クラスのアダプターのドライバーと PortCls システム ドライバー
 
@@ -176,11 +176,11 @@ AVCAudio クラスのシステム ドライバー (Avcaudio.sys) では、IEEE 1
 
 図に、ドライバー コンポーネントに関する詳細については、次のセクションを参照してください。
 
-[AVStream の概要](https://msdn.microsoft.com/library/windows/hardware/ff554240)
+[AVStream の概要](https://docs.microsoft.com/windows-hardware/drivers/stream/avstream-overview)
 
-[AV/C クライアント ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff556364)
+[AV/C クライアント ドライバー](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_stream/index)
 
-[IEEE 1394 バス](https://msdn.microsoft.com/library/windows/hardware/ff537207)
+[IEEE 1394 バス](https://developer.microsoft.com/windows/hardware)
 
  
 

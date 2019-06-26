@@ -11,17 +11,17 @@ keywords:
 - リフレクター WDK UMDF の読み込み
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8bec546532b0d656dc3a493e30ff1a7d7dd34c2b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0e4f2a93478ce1191b8d2d58e21a1f4765eea367
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63350724"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379050"
 ---
 # <a name="specifying-the-reflector-in-an-inf-file"></a>INF ファイルで、Reflector を指定します。
 
 
-Reflector (WUDFRd.sys)、カーネル モード デバイス スタックに追加する UMDF ドライバーの INF ファイルを含める必要があります、 [ **AddService ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546326)で、 [ **INF DDInstall.Servicesセクション**](https://msdn.microsoft.com/library/windows/hardware/ff547349)します。 Reflector は、上部のフィルター、下位のフィルター、またはユーザー モードのスタックの構成によって、デバイスのサービスを指定できます。
+Reflector (WUDFRd.sys)、カーネル モード デバイス スタックに追加する UMDF ドライバーの INF ファイルを含める必要があります、 [ **AddService ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addservice-directive)で、 [ **INF DDInstall.Servicesセクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-services-section)します。 Reflector は、上部のフィルター、下位のフィルター、またはユーザー モードのスタックの構成によって、デバイスのサービスを指定できます。
 
 次のコード例では、UMDF 関数ドライバーの INF ファイルが、reflector を追加する方法を示します。
 
@@ -32,7 +32,7 @@ AddService=WUDFRd,0x000001fa,WUDFRD_ServiceInstall
 
 この例で、ドライバーは、0x2 を指定します (SPSVCINST\_ASSOCSERVICE) フラグ (に入れて、*フラグ*上記のパラメーター)、カーネル モード デバイス スタック内の関数のドライバーとして、reflector を割り当てる。
 
-**AddService**ディレクティブでは、既存のサービス構成が上書きされないように 0x000001f8 フラグもを設定します。 これらのフラグの詳細については、次を参照してください。、*フラグ*のパラメーター、 [ **AddService ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546326)します。
+**AddService**ディレクティブでは、既存のサービス構成が上書きされないように 0x000001f8 フラグもを設定します。 これらのフラグの詳細については、次を参照してください。、*フラグ*のパラメーター、 [ **AddService ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addservice-directive)します。
 
 WUDFVhidmini サンプルでは、次のコード例を示しています、 **AddService** UMDF フィルター ドライバーのディレクティブ。
 

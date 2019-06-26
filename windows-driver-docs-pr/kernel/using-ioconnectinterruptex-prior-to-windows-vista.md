@@ -12,17 +12,17 @@ keywords:
 - CONNECT_FULLY_SPECIFIED
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b54195eb15989893d764b1168297de390032c099
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 21f8ef9078271bf00db99b62aabc2f8ca61586f8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364942"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381617"
 ---
 # <a name="using-ioconnectinterruptex-prior-to-windows-vista"></a>Windows Vista より前の IoConnectInterruptEx の使用
 
 
-Windows 2000、Windows XP、または Windows Server 2003 用のドライバーを使用する Iointex.lib ライブラリにリンクできます[ **IoConnectInterruptEx** ](https://msdn.microsoft.com/library/windows/hardware/ff548378)でこれらのバージョンのオペレーティング システム。
+Windows 2000、Windows XP、または Windows Server 2003 用のドライバーを使用する Iointex.lib ライブラリにリンクできます[ **IoConnectInterruptEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioconnectinterruptex)でこれらのバージョンのオペレーティング システム。
 
 使用する**IoConnectInterruptEx**このようなドライバー、Wdm.h または Ntddk.h 後すぐ、ドライバーのソース コードで Iointex.h を含めます。 Iointex.h ヘッダーは、ルーチンのプロトタイプを宣言します。 ドライバーをビルドすると、Iointex.lib に静的にリンクされていることを確認します。
 

@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b04efab93fc641bc0f335b9afffea4c8e0dafa24
-ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
+ms.openlocfilehash: 1968ea5fcdc16292c287b65afb38461753af9f53
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67161541"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354857"
 ---
 # <a name="kspropertyextensionunitinfo"></a>KSPROPERTY\_拡張子\_単位\_情報
 
@@ -53,7 +53,7 @@ KSPROPERTY\_拡張子\_単位\_情報プロパティが拡張機能単位の記�
 <td><p>〇</p></td>
 <td><p>X</p></td>
 <td><p>フィルター ノード</p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff566720" data-raw-source="[&lt;strong&gt;KSP_NODE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566720)"><strong>KSP_NODE</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_node" data-raw-source="[&lt;strong&gt;KSP_NODE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_node)"><strong>KSP_NODE</strong></a></p></td>
 <td><p>PVOID</p></td>
 </tr>
 </tbody>
@@ -68,7 +68,7 @@ KSPROPERTY\_拡張子\_単位\_情報プロパティが拡張機能単位の記�
 
 システム提供の USB ビデオ クラス ドライバー、デバイスの起動中に (*Usbvideo.sys*) は、デバイスの拡張単位記述子から情報をキャッシュします。 *Usbvideo.sys*では情報 KSPROPERTY に応答をキャッシュし、\_拡張子\_単位\_情報。
 
-そのため、このプロパティによって返されるフィールドは、拡張機能ユニット記述子のデバイスで提供されるものと同じです。 このような記述子の例は、次を参照してください。[サンプル拡張機能ユニット記述子](https://msdn.microsoft.com/library/windows/hardware/ff568133)します。
+そのため、このプロパティによって返されるフィールドは、拡張機能ユニット記述子のデバイスで提供されるものと同じです。 このような記述子の例は、次を参照してください。[サンプル拡張機能ユニット記述子](https://docs.microsoft.com/windows-hardware/drivers/stream/sample-extension-unit-descriptor)します。
 
 具体的には、KSPROPERTY\_拡張機能\_単位\_GUID の次の表に示すように、記述子から、データ フィールドを続けて拡張単位が情報を返します。
 
@@ -95,7 +95,7 @@ KSPROPERTY\_拡張子\_単位\_情報プロパティが拡張機能単位の記�
 
  
 
-次のコード例は、KSPROPERTY を送信する方法を示しています\_拡張子\_単位\_に示すように、完全なサンプルについては、[サンプル拡張ユニット プラグイン DLL](https://msdn.microsoft.com/library/windows/hardware/ff568134):。
+次のコード例は、KSPROPERTY を送信する方法を示しています\_拡張子\_単位\_に示すように、完全なサンプルについては、[サンプル拡張ユニット プラグイン DLL](https://docs.microsoft.com/windows-hardware/drivers/stream/sample-extension-unit-plug-in-dll):。
 
 ```cpp
 ExtensionProp.Property.Set = PROPSETID_VIDCAP_EXTENSION_UNIT;

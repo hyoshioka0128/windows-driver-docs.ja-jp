@@ -6,12 +6,12 @@ keywords:
 - バッテリ情報 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b003b90dd145dae7c8f820c097925a8d9b77e795
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9eb1df6611596377d8ad2c43a585052287290b0c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335076"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355237"
 ---
 # <a name="responding-to-battery-information-queries"></a>バッテリ情報クエリへの応答
 
@@ -19,7 +19,7 @@ ms.locfileid: "63335076"
 ## <span id="ddk_responding_to_battery_information_queries_dg"></span><span id="DDK_RESPONDING_TO_BATTERY_INFORMATION_QUERIES_DG"></span>
 
 
-バッテリ クラス ドライバーの呼び出し、 [ *BatteryMiniQueryInformation* ](https://msdn.microsoft.com/library/windows/hardware/ff536273)ルーチンをさまざまな現在のバッテリに関する情報を取得します。 このルーチンは、次のように宣言されます。
+バッテリ クラス ドライバーの呼び出し、 [ *BatteryMiniQueryInformation* ](https://docs.microsoft.com/windows/desktop/api/batclass/nc-batclass-bclass_query_information_callback)ルーチンをさまざまな現在のバッテリに関する情報を取得します。 このルーチンは、次のように宣言されます。
 
 ```cpp
 typedef 
@@ -35,7 +35,7 @@ NTSTATUS
     );
 ```
 
-*コンテキスト*パラメーターは miniclass ドライバーによって割り当てられ、クラス ドライバーに渡されるコンテキスト領域へのポインター、 [**バッテリ\_ミニポート\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff536287)デバイスの初期化で構造体。 *BatteryTag*パラメーターは、値によって以前返さ[ *BatteryMiniQueryTag*](https://msdn.microsoft.com/library/windows/hardware/ff536275)します。
+*コンテキスト*パラメーターは miniclass ドライバーによって割り当てられ、クラス ドライバーに渡されるコンテキスト領域へのポインター、 [**バッテリ\_ミニポート\_情報**](https://docs.microsoft.com/windows/desktop/api/batclass/ns-batclass-battery_miniport_info)デバイスの初期化で構造体。 *BatteryTag*パラメーターは、値によって以前返さ[ *BatteryMiniQueryTag*](https://docs.microsoft.com/windows/desktop/api/batclass/nc-batclass-bclass_query_tag_callback)します。
 
 *レベル*パラメーターが要求された情報の種類を指定します。 Miniclass ドライバーとして情報を書式設定、 [**バッテリ\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff536283)構造体し、によって提供されるアドレスに返す*バッファー*で、長さへのポインター *ReturnedLength*します。
 

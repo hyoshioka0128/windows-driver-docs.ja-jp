@@ -14,12 +14,12 @@ keywords:
 - WMI の WDK カーネルでは、インスタンス名
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2078674b8482d7e1b07032eb57faf3f2a6c43747
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 33c0a37eae3a4be1bc428f14040cb44745cde398
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388219"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377100"
 ---
 # <a name="defining-wmi-instance-names"></a>WMI インスタンス名の定義
 
@@ -39,7 +39,7 @@ ms.locfileid: "63388219"
 
     ドライバーでは、ブロックを登録する際にブロックの動的インスタンス名を生成することを示します。 ドライバーと WMI の両方が、バッファー内の文字列として動的にインスタンス名を渡す、ブロックが登録されると、 **Parameters.WMI.Buffer**します。
 
-実行時にインスタンスの数またはインスタンス名、データ ブロックの変更頻度場合にのみ、ドライバーは動的なインスタンス名を生成する必要があります。 たとえば、ドライバー可能性がありますを使用して、プロセス Id または TCP/IP 接続の IP アドレス インスタンス名として。 このようなインスタンス名は、動的; である必要があります。静的な場合は、ドライバーはオーバーヘッドが増加するかなりを呼び出す必要がありますので[ **IoWMIRegistrationControl** ](https://msdn.microsoft.com/library/windows/hardware/ff550480)変更が発生するたびに、数とインスタンスの名前を更新します。
+実行時にインスタンスの数またはインスタンス名、データ ブロックの変更頻度場合にのみ、ドライバーは動的なインスタンス名を生成する必要があります。 たとえば、ドライバー可能性がありますを使用して、プロセス Id または TCP/IP 接続の IP アドレス インスタンス名として。 このようなインスタンス名は、動的; である必要があります。静的な場合は、ドライバーはオーバーヘッドが増加するかなりを呼び出す必要がありますので[ **IoWMIRegistrationControl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iowmiregistrationcontrol)変更が発生するたびに、数とインスタンスの名前を更新します。
 
 ほとんどの場合は、静的インスタンス名はことをお勧めする理由は次の動的インスタンス名です。
 
@@ -47,13 +47,13 @@ ms.locfileid: "63388219"
 
 -   WMI は、登録時に静的なインスタンス名の競合を検出し、ドライバーの数、ブロックの登録に関係なく、特定のブロックのすべてのインスタンス名が一意ように、必要に応じて、インスタンス名を自動的に変更できます。
 
-    WMI は、ドライバーを使用して一意の名前を生成するための動的インスタンス名、インスタンス名の競合を検出できない[ **IoWMIAllocateInstanceIds**](https://msdn.microsoft.com/library/windows/hardware/ff550429)します。
+    WMI は、ドライバーを使用して一意の名前を生成するための動的インスタンス名、インスタンス名の競合を検出できない[ **IoWMIAllocateInstanceIds**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iowmiallocateinstanceids)します。
 
 -   ドライバーは、名前は、ドライバーの PDO またはドライバーの定義の基本名に基づいている限り、静的なインスタンスの名前を使用するブロックの Irp を処理するために、WMI のライブラリのルーチンを使用できます。
 
     ドライバーは、動的なインスタンスの名前を使用するデータ ブロックの Irp を処理するために WMI ライブラリ ルーチンを使用できません。
 
-ドライバーは、ブロックが静的または動的なインスタンス名を使用し、静的インスタンスの型、名前、設定や WMIREG をクリアするかどうかを示します\_フラグ\_*XXX*で、 [ **WMIREGGUID** ](https://msdn.microsoft.com/library/windows/hardware/ff565827)または[ **WMIGUIDREGINFO** ](https://msdn.microsoft.com/library/windows/hardware/ff565811)構成ブロックを登録するときを WMI に渡されます。 詳細については、次を参照してください。 [WMI データ プロバイダーとして登録する](registering-as-a-wmi-data-provider.md)します。
+ドライバーは、ブロックが静的または動的なインスタンス名を使用し、静的インスタンスの型、名前、設定や WMIREG をクリアするかどうかを示します\_フラグ\_*XXX*で、 [ **WMIREGGUID** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmistr/ns-wmistr-wmiregguidw)または[ **WMIGUIDREGINFO** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/ns-wmilib-_wmiguidreginfo)構成ブロックを登録するときを WMI に渡されます。 詳細については、次を参照してください。 [WMI データ プロバイダーとして登録する](registering-as-a-wmi-data-provider.md)します。
 
  
 

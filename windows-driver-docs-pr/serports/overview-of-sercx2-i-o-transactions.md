@@ -4,12 +4,12 @@ description: SerCx2 シリアル コント ローラーのドライバーを 1 �
 ms.assetid: 04DDFE53-4855-4029-BE1E-9D184B02A998
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c29685682913abc8e3f9976aebbeb164ceb86ded
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a6bd5e6d9af2272690d25642ad100f0c668fbf34
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331113"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354904"
 ---
 # <a name="overview-of-sercx2-io-transactions"></a>SerCx2 の I/O トランザクションの概要
 
@@ -58,7 +58,7 @@ SerCx2 分割読み取りまたは書き込み I/O の 2 つ以上のトラン�
 
 シリアル コント ローラー ドライバーが一連のトランザクションのサポート システム DMA またはカスタムのトランザクションをコールバック関数を登録する場合、ドライバーは、これらのトランザクションを実行するハードウェアの機能を記述するパラメーター値を提供します。 たとえば、システム DMA のトランザクション パラメーターは含めるアラインメントの要件および DMA コント ローラーのシステムをサポートする転送の最小値と最大の長さです。 SerCx2 では、これらのパラメーターを使用して、読み取りを処理または PIO トランザクションまたはシステム DMA のトランザクションとして要求を記述するかどうかと 2 つまたは複数の I/O トランザクションに要求を分割するかどうかを決定します。
 
-ただし、シリアル コント ローラーには、パラメーター SerCx2 にシリアル コント ローラーのドライバーを提供することによって適切に記述できない特殊なハードウェア機能があります。 そのため、ドライバーでは、パーティションを読み取りまたは書き込みを 1 つまたは複数の I/O トランザクションに要求する方法について SerCx2 より良い決定を行えるにドライバーを可能にするハードウェア依存の情報へのアクセスがあります。 オプションとして、このようなドライバーを実装できます[ *EvtSerCx2SelectNextReceiveTransactionType* ](https://msdn.microsoft.com/library/windows/hardware/dn265225)と[ *EvtSerCx2SelectNextTransmitTransactionType*](https://msdn.microsoft.com/library/windows/hardware/dn265226)イベント コールバック関数。 SerCx2 は実装されている場合、ドライバーを使用して満たす読み取りまたは書き込み I/O のトランザクションの要求を決定できるように、これらの関数を呼び出します。
+ただし、シリアル コント ローラーには、パラメーター SerCx2 にシリアル コント ローラーのドライバーを提供することによって適切に記述できない特殊なハードウェア機能があります。 そのため、ドライバーでは、パーティションを読み取りまたは書き込みを 1 つまたは複数の I/O トランザクションに要求する方法について SerCx2 より良い決定を行えるにドライバーを可能にするハードウェア依存の情報へのアクセスがあります。 オプションとして、このようなドライバーを実装できます[ *EvtSerCx2SelectNextReceiveTransactionType* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nc-sercx-evt_sercx2_select_next_receive_transaction_type)と[ *EvtSerCx2SelectNextTransmitTransactionType*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nc-sercx-evt_sercx2_select_next_transmit_transaction_type)イベント コールバック関数。 SerCx2 は実装されている場合、ドライバーを使用して満たす読み取りまたは書き込み I/O のトランザクションの要求を決定できるように、これらの関数を呼び出します。
 
  
 

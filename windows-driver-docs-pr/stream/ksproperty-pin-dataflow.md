@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 15816fbe2f46c844b8185fe23463ea8a718d786e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d1aeec825d25be1943ede5b9898156c3f264af05
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346382"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376659"
 ---
 # <a name="kspropertypindataflow"></a>KSPROPERTY\_PIN\_データ フロー
 
@@ -53,8 +53,8 @@ KSPROPERTY\_PIN\_データフロー プロパティ pin ファクトリによっ
 <td><p>〇</p></td>
 <td><p>いいえ</p></td>
 <td><p>Pin</p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff566722" data-raw-source="[&lt;strong&gt;KSP_PIN&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566722)"><strong>KSP_PIN</strong></a></p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff563532" data-raw-source="[&lt;strong&gt;KSPIN_DATAFLOW&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff563532)"><strong>KSPIN_DATAFLOW</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_pin" data-raw-source="[&lt;strong&gt;KSP_PIN&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_pin)"><strong>KSP_PIN</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ne-ks-kspin_dataflow" data-raw-source="[&lt;strong&gt;KSPIN_DATAFLOW&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ne-ks-kspin_dataflow)"><strong>KSPIN_DATAFLOW</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -64,9 +64,9 @@ KSPROPERTY\_PIN\_データフロー プロパティ pin ファクトリによっ
 <a name="remarks"></a>注釈
 -------
 
-ピン留めするファクトリを指定、 **PinId**のメンバー、 [ **KSP\_PIN** ](https://msdn.microsoft.com/library/windows/hardware/ff566722)構造体。
+ピン留めするファクトリを指定、 **PinId**のメンバー、 [ **KSP\_PIN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_pin)構造体。
 
-KSPROPERTY\_PIN\_データ フローは、型の列挙体を返します[ **KSPIN\_データフロー**](https://msdn.microsoft.com/library/windows/hardware/ff563532)、いずれかに設定**KSPIN\_データ フロー\_IN**または KSPIN\_データフロー\_アウトします。
+KSPROPERTY\_PIN\_データ フローは、型の列挙体を返します[ **KSPIN\_データフロー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ne-ks-kspin_dataflow)、いずれかに設定**KSPIN\_データ フロー\_IN**または KSPIN\_データフロー\_アウトします。
 
 Stream ミニドライバーは、このプロパティを直接処理する必要はありません。ストリーム クラス ドライバーは、ストリーム要求のブロックを使用して詳細情報を照会するこのプロパティを処理します。
 
@@ -89,9 +89,9 @@ Stream ミニドライバーは、このプロパティを直接処理する必�
 ## <a name="see-also"></a>関連項目
 
 
-[**KSP\_暗証番号 (PIN)**](https://msdn.microsoft.com/library/windows/hardware/ff566722)
+[**KSP\_暗証番号 (PIN)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_pin)
 
-[**KSPIN\_データ フロー**](https://msdn.microsoft.com/library/windows/hardware/ff563532)
+[**KSPIN\_データ フロー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ne-ks-kspin_dataflow)
 
  
 

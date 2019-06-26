@@ -8,12 +8,12 @@ keywords:
 - 印刷チケット WDK、GDI ベースの印刷ドライバー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1bb37596b19b3f473a3d5159d40a797770017748
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8aff80f8e99642a166167d3e564e9b515aa4f92c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351860"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354917"
 ---
 # <a name="print-ticket-processing-in-the-print-driver"></a>印刷ドライバーの印刷チケット処理
 
@@ -22,7 +22,7 @@ PrintTicket オブジェクトで検証済みの設定は、XPSDrv プリンタ�
 
 XPSDrv プリンター ドライバーでは、印刷ドライバーの印刷処理フィルターでこの処理を実行します。
 
-GDI ベースの印刷ドライバーが引き続き使用する、 [ **DEVMODEW** ](https://msdn.microsoft.com/library/windows/hardware/ff552837)設定、Windows Vista に組み込まれた互換性サポートのため印刷サブシステムを構造体します。 このサポートの詳細については、次を参照してください。 [Win 32 アプリケーション互換性の印刷チケット](print-ticket-compatibility-with-win-32-applications.md)します。
+GDI ベースの印刷ドライバーが引き続き使用する、 [ **DEVMODEW** ](https://docs.microsoft.com/windows/desktop/api/wingdi/ns-wingdi-_devicemodew)設定、Windows Vista に組み込まれた互換性サポートのため印刷サブシステムを構造体します。 このサポートの詳細については、次を参照してください。 [Win 32 アプリケーション互換性の印刷チケット](print-ticket-compatibility-with-win-32-applications.md)します。
 
 印刷チケットの印刷ドライバーの処理を実装する方法の詳細については、次を参照してください。 [XPSDrv 表示モジュールでの印刷チケット サポート](print-ticket-support-in-the-xpsdrv-render-module.md)します。
 

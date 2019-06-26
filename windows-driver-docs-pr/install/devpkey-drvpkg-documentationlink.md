@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 7d655b193face74e631ee1cc88ffe2fbf2539a15
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 264a34e2acde3f4716b94c419656155e14f8c954
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348762"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377282"
 ---
 # <a name="devpkeydrvpkgdocumentationlink"></a>DEVPKEY_DrvPkg_DocumentationLink
 
@@ -64,7 +64,7 @@ URL は、パラメーターを含めることができます。 たとえば、
 http://www.microsoft.com/redirect?prod=DSC530&rev=34&type=docs
 ```
 
-マイクロソフトでは、Web ホスティングまたは DEVPKEY_DrvPkg_DocumentationLink プロパティの値で指定されている web ページのリダイレクトを提供していません。 URL は、によって管理されている web ページにリンクする必要があります、[ドライバー パッケージ](https://msdn.microsoft.com/library/windows/hardware/ff544840)プロバイダー。
+マイクロソフトでは、Web ホスティングまたは DEVPKEY_DrvPkg_DocumentationLink プロパティの値で指定されている web ページのリダイレクトを提供していません。 URL は、によって管理されている web ページにリンクする必要があります、[ドライバー パッケージ](https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages)プロバイダー。
 
 ユーザーは、エンドユーザーのセットアップで生成されたダイアログ ボックスに表示される web サイトのリンクをクリックすると、Windows には、DEVPKEY_DrvPkg_DocumentationLink によって提供される URL を含む HTTP 要求に、次の情報が追加されます。
 
@@ -82,7 +82,7 @@ http://www.microsoft.com/redirect?prod=DSC530&rev=34&type=docs
 The following example shows the type of HTTP request that would be sent to a web server: http://www.microsoft.com/redirect?prod=DSC530&rev34&type=docs&pver=6.0&spb=pro&olcid=0x409&pnpid=PCI%5CVEN_8086%26DEV_2533%26SUBSYS_00000000%26REV_04
 ```
 
-DEVPKEY_DrvPkg_DocumentationLink によっての値を設定することができます、 [ **INF AddProperty ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546318)に含まれている、 [ **INF *DDInstall*セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547344)のデバイスをインストールする INF ファイル。 DEVPKEY_DrvPkg_DocumentationLinkproperty の値を取得するには呼び出すことによって[ **SetupDiGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551963)します。
+DEVPKEY_DrvPkg_DocumentationLink によっての値を設定することができます、 [ **INF AddProperty ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addproperty-directive)に含まれている、 [ **INF *DDInstall*セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)のデバイスをインストールする INF ファイル。 DEVPKEY_DrvPkg_DocumentationLinkproperty の値を取得するには呼び出すことによって[ **SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)します。
 
 次に、INF を使用する方法の例**AddProperty** 、INF によってインストールされているデバイスの DEVPKEY_DrvPkg_DocumentationLink の値を設定するディレクティブ*DDInstall*セクション"SampleDDInstallSection":
 
@@ -120,11 +120,11 @@ DeviceDocumentationLink,,,,"http://www.microsoft.com/redirect?prod=DSC530&rev34&
 ## <a name="see-also"></a>関連項目
 
 
-[**INF AddProperty ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546318)
+[**INF AddProperty ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addproperty-directive)
 
-[**INF *DDInstall*セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547344)
+[**INF *DDInstall*セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)
 
-[**SetupDiGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551963)
+[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
 

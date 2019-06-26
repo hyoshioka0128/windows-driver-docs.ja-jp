@@ -10,12 +10,12 @@ keywords:
 - シンセサイザー WDK オーディオ、MIDI トランスポート
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f9b9dfaed609b57ed9070c597bab95108505b433
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1626ea40ace629e12b28601399af5d488ddcfa33
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332333"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363238"
 ---
 # <a name="midi-transport"></a>MIDI トランスポート
 
@@ -35,7 +35,7 @@ Dmu ポート ドライバーでは、DirectMusic ユーザー モード コン�
 
 [SysAudio システム ドライバー](kernel-mode-wdm-audio-components.md#sysaudio_system_driver)、Dmu ポート ドライバー、オーディオ フィルター グラフでは、どのビルドのハードウェアに接続します。 ポート ドライバーのウェーブ シンク部分では、ハードウェア デバイスに接続できる SysAudio wave アウト pin を取得するには、使用データを渡します。 (かどうかがハードウェアまたはソフトウェアのシンセサイザー) に関係なく Dmu ミニポート ドライバーから wave データをプルし、すべてのタイミングの問題を処理します。 ユーザー モードと比較して、ミニポート ドライバーに似ています、シンセサイザー wave シンクは同じポート ドライバーの一部です。
 
-Wave pin KSPIN のデータ方向の公開 Dmu のミニポート ドライバーでは、ホストにその出力を提供できる場合、\_データフロー\_OUT (を参照してください[ **KSPIN**](https://msdn.microsoft.com/library/windows/hardware/ff563483))、どの SysAudio認識して KMixer に接続します。
+Wave pin KSPIN のデータ方向の公開 Dmu のミニポート ドライバーでは、ホストにその出力を提供できる場合、\_データフロー\_OUT (を参照してください[ **KSPIN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_kspin))、どの SysAudio認識して KMixer に接続します。
 
 Wave シンクの詳細については、次を参照してください。[カーネル モードのソフトウェアのシンセサイザーの A Wave シンク](a-wave-sink-for-kernel-mode-software-synthesizers.md)します。
 

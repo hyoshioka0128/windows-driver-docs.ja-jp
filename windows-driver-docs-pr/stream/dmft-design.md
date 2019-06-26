@@ -3,12 +3,12 @@ title: デバイス MFT 設計ガイド
 description: このトピックでは、すべてのストリームに共通の後処理を実行するために使用されるユーザー モードで実行されているデバイス全体にわたる拡張機能の設計について説明します。
 ms.date: 01/30/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: c9af7c1432569a1cfd9c236741410df088294dc0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6f1ed6d0adf5043cd87c3be4902510c66ff0401a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384759"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358455"
 ---
 # <a name="device-mft-design-guide"></a>デバイス MFT 設計ガイド
 
@@ -18,7 +18,7 @@ Windows でのビデオ キャプチャのスタックでは、MFT0 の形式で
 
 ## <a name="terminology"></a>用語
 
-| 用語       | 説明                                                                                         |
+| 項目       | 説明                                                                                         |
 |------------|-----------------------------------------------------------------------------------------------------|
 | KS         | カーネル ストリーミング ドライバー                                                                             |
 | AvStream   | オーディオ ドライバー モデルのビデオのストリーミング                                                                  |
@@ -86,9 +86,9 @@ Devproxy でユーザー モードで表される最初の Ks Pin には、デ�
 
 DeviceSource クエリ DTM をサポートされている出力 mediatypes を取得します。 DTM を使用して、これらのデバイス MFT の出力ピンから取得します。 DeviceSource がプレゼンテーションの記述子を公開し、キャプチャ パイプラインには、この情報に基づいて Stream 記述子。
 
-SourceReader では、DeviceSource の公開されている mediatypes を使用し、各ストリームで既定 mediatypes を設定します。 さらに、DeviceSource 既定 mediatypes の DTM の出力ストリームを設定します。 DTM を使用して、デバイス MFT の出力ストリームに、メディアの種類の設定、 [SetOutputStreamState](https://msdn.microsoft.com/library/windows/hardware/mt797684)メソッド。
+SourceReader では、DeviceSource の公開されている mediatypes を使用し、各ストリームで既定 mediatypes を設定します。 さらに、DeviceSource 既定 mediatypes の DTM の出力ストリームを設定します。 DTM を使用して、デバイス MFT の出力ストリームに、メディアの種類の設定、 [SetOutputStreamState](https://docs.microsoft.com/windows/desktop/api/mftransform/nf-mftransform-imfdevicetransform-setoutputstreamstate)メソッド。
 
-ときに**SetOutputStreamState**を呼び出すと、その入力ストリームのメディアの種類を変更するには、DTM にメッセージが選択されている出力メディアの種類に基づくデバイス MFT 投稿し、待機します。 このメッセージでは、DTM クエリを使用して、デバイス MFT の入力ストリームの優先入力メディアの種類への応答で[GetPreferredInputStreamState](https://msdn.microsoft.com/library/mt797670)します。 これにより、Devproxy の対応する出力ストリームに、メディアの種類が設定されます。 成功する場合、DTM は SetInputStreamState を使用して、デバイス MFT の入力ストリームにその同じメディアの種類を設定します。 デバイス MFT の完了後、この呼び出しを受信するには、 **SetOutputStreamState**します。
+ときに**SetOutputStreamState**を呼び出すと、その入力ストリームのメディアの種類を変更するには、DTM にメッセージが選択されている出力メディアの種類に基づくデバイス MFT 投稿し、待機します。 このメッセージでは、DTM クエリを使用して、デバイス MFT の入力ストリームの優先入力メディアの種類への応答で[GetPreferredInputStreamState](https://docs.microsoft.com/windows/desktop/api/mftransform/nf-mftransform-imfdevicetransform-getinputstreampreferredstate)します。 これにより、Devproxy の対応する出力ストリームに、メディアの種類が設定されます。 成功する場合、DTM は SetInputStreamState を使用して、デバイス MFT の入力ストリームにその同じメディアの種類を設定します。 デバイス MFT の完了後、この呼び出しを受信するには、 **SetOutputStreamState**します。
 
 CaptureEngine は、DeviceSource で特定のストリームを有効にすると個別のストリームを選択します。 これを通じて DTM によってデバイス MFT に伝達は、 **SetOutputStreamState**呼び出します。 デバイス MFT は、要求された状態で、特定の出力ストリームを配置します。 前述のように、デバイス MFT はまた、DTM を有効にする必要があるために必要な入力ストリームの詳細通知します。 これは、結果、DTM Devproxy にストリーム選択を反映します。 このプロセスの最後に、Devproxy とデバイスの MFT 内のすべての必要なストリームは、ストリームができています。
 
@@ -144,7 +144,7 @@ SourceReader のクライアントは、そのネイティブ デバイス MFT �
 
     - 最適化では、1 つ以上の出力で、同じ入力が共有すると、アプリケーション プログラムがデバイス MFT の出力のいずれか無効にされた場合、入力は、メディアの種類を変更する必要があります。 たとえば、1080 p の出力ストリームが停止し、その他のすべてのストリームが場合、は、720 p でストリーミングは、1 つの入力を共有し、入力ストリームは、720 p 電力の節約し、パフォーマンスを向上するにそのメディアの種類を変更する必要があります。
 
-DTM ハンドル[METransformInputStreamStateChanged](https://msdn.microsoft.com/Library/Windows/Hardware/mt797687)メディアの種類とデバイス MFT 入力とこれらの条件下で Devproxy 出力の状態を変更するデバイス MFT からの通知。
+DTM ハンドル[METransformInputStreamStateChanged](https://docs.microsoft.com/windows-hardware/drivers/stream/metransforminputstreamstatechanged)メディアの種類とデバイス MFT 入力とこれらの条件下で Devproxy 出力の状態を変更するデバイス MFT からの通知。
 
 ### <a name="flush-device-mft"></a>フラッシュ デバイス MFT
 
@@ -162,7 +162,7 @@ DTM ハンドル[METransformInputStreamStateChanged](https://msdn.microsoft.com/
 
     - 出力ピンに固有のフラッシュします。 これは通常、ストリームが停止したときに発生します。
 
-フラッシュする前にポストされたすべてのイベントは、デバイス MFT マネージャーによって削除されます。 その内部のフラッシュ後にデバイス MFT リセット[METransformHaveOutput](https://msdn.microsoft.com/library/windows/hardware/mt797686)数を追跡します。
+フラッシュする前にポストされたすべてのイベントは、デバイス MFT マネージャーによって削除されます。 その内部のフラッシュ後にデバイス MFT リセット[METransformHaveOutput](https://docs.microsoft.com/windows-hardware/drivers/stream/metransformhaveoutput)数を追跡します。
 
 ### <a name="drain-of-device-mft"></a>デバイス MFT のドレイン
 
@@ -174,7 +174,7 @@ DTM ハンドル[METransformInputStreamStateChanged](https://msdn.microsoft.com/
 
 ### <a name="warm-start"></a>ウォーム スタート
 
-DeviceSource ウォーム スタート遷移すると、ストリームの状態を一時停止する特定の出力ストリームしようとします。 さらに、DTM を呼び出す、 [IMFDeviceTransform::SetOutputStreamState](https://msdn.microsoft.com/library/windows/hardware/mt797684)デバイス MFT 状態を一時停止する特定の出力ストリームに移行するメソッド。 これは、結果を一時停止にする場合は、対応する入力ストリーム。 これは、要求することによってデバイス MFT で実現されます**METransformInputStreamStateChanged** DTM を処理、 [IMFDeviceTransform::SetInputStreamState](https://msdn.microsoft.com/library/windows/hardware/mt797683)メソッド。
+DeviceSource ウォーム スタート遷移すると、ストリームの状態を一時停止する特定の出力ストリームしようとします。 さらに、DTM を呼び出す、 [IMFDeviceTransform::SetOutputStreamState](https://docs.microsoft.com/windows/desktop/api/mftransform/nf-mftransform-imfdevicetransform-setoutputstreamstate)デバイス MFT 状態を一時停止する特定の出力ストリームに移行するメソッド。 これは、結果を一時停止にする場合は、対応する入力ストリーム。 これは、要求することによってデバイス MFT で実現されます**METransformInputStreamStateChanged** DTM を処理、 [IMFDeviceTransform::SetInputStreamState](https://docs.microsoft.com/windows/desktop/api/mftransform/nf-mftransform-imfdevicetransform-setinputstreamstate)メソッド。
 
 ### <a name="variable-photo-sequence"></a>可変の写真シーケンス
 
@@ -182,7 +182,7 @@ DeviceSource ウォーム スタート遷移すると、ストリームの状態
 
 ### <a name="photo-confirmation"></a>写真の確認
 
-写真を使用して確認をサポートするデバイス MFT、 **IMFCapturePhotoConfirmation**インターフェイス。 パイプラインを使用して、このインターフェイスを取得します[IMFGetService::GetService](https://msdn.microsoft.com/library/windows/desktop/ms696978)メソッド。
+写真を使用して確認をサポートするデバイス MFT、 **IMFCapturePhotoConfirmation**インターフェイス。 パイプラインを使用して、このインターフェイスを取得します[IMFGetService::GetService](https://docs.microsoft.com/windows/desktop/api/mfidl/nf-mfidl-imfgetservice-getservice)メソッド。
 
 ### <a name="metadata"></a>メタデータ
 
@@ -196,17 +196,17 @@ Devproxy はメタデータのバッファー サイズのドライバーを照�
 
 ## <a name="device-transform-manager-dtm-event-handling"></a>デバイス マネージャーの変換 (DTM) イベントの処理
 
-[デバイス マネージャーの変換イベント](https://msdn.microsoft.com/Library/Windows/Hardware/mt797660)以下の参照トピックで定義されます。
+[デバイス マネージャーの変換イベント](https://docs.microsoft.com/windows-hardware/drivers/stream/device-mft-events)以下の参照トピックで定義されます。
 
-- [METransformFlushInputStream](https://msdn.microsoft.com/library/windows/hardware/mt797685)
-- [METransformHaveOutput](https://msdn.microsoft.com/library/windows/hardware/mt797686)
-- [METransformInputStreamStateChanged](https://msdn.microsoft.com/Library/windows/hardware/mt797687)
-- [METransformNeedInput](https://msdn.microsoft.com/library/windows/hardware/mt797688)
+- [METransformFlushInputStream](https://docs.microsoft.com/windows-hardware/drivers/stream/metransformflushinputstream)
+- [METransformHaveOutput](https://docs.microsoft.com/windows-hardware/drivers/stream/metransformhaveoutput)
+- [METransformInputStreamStateChanged](https://docs.microsoft.com/windows-hardware/drivers/stream/metransforminputstreamstatechanged)
+- [METransformNeedInput](https://docs.microsoft.com/windows-hardware/drivers/stream/metransformneedinput)
 
 
 ## <a name="imfdevicetransform-interface"></a>IMFDeviceTransform インターフェイス
 
-[IMFDeviceTransform](https://msdn.microsoft.com/library/windows/hardware/mt797663)デバイス MFT と対話するインターフェイスを定義します。 このインターフェイスの管理を容易に*m*入力と*n*デバイス MFT を出力します。 その他のインターフェイスとデバイス MFT は、このインターフェイスを実装する必要があります。
+[IMFDeviceTransform](https://docs.microsoft.com/windows/desktop/api/mftransform/nn-mftransform-imfdevicetransform)デバイス MFT と対話するインターフェイスを定義します。 このインターフェイスの管理を容易に*m*入力と*n*デバイス MFT を出力します。 その他のインターフェイスとデバイス MFT は、このインターフェイスを実装する必要があります。
 
 ### <a name="general-event-propagation"></a>一般的なイベントの伝達
 
@@ -218,9 +218,9 @@ Devproxy (または、デバイス内で)、イベントが発生したときに
 
 デバイスの仕様では、次のインターフェイスをサポートする必要があります。
 
-- [IMFDeviceTransform](https://msdn.microsoft.com/library/windows/hardware/mt797663)
+- [IMFDeviceTransform](https://docs.microsoft.com/windows/desktop/api/mftransform/nn-mftransform-imfdevicetransform)
 
-- [IKsControl](https://msdn.microsoft.com/library/windows/hardware/ff559769)
+- [IKsControl](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nn-ks-ikscontrol)
 
     - これにより、すべての ksproperties、イベントおよびデバイス MFT を経由するメソッド。 これにより、デバイス MFT はデバイス MFT 内でこれらの関数呼び出しを処理またはだけドライバーに転送する機能。 場所、KsEvent メソッドを処理し、デバイス MFT は、次を実行する必要がありますの場合。
 
@@ -232,25 +232,25 @@ Devproxy (または、デバイス内で)、イベントが発生したときに
 
         - デバイス MFT KSEVENT_TYPE_ONESHOT 非イベントを処理するかどうかは、受信時にハンドルを複製する必要があります、 **KSEVENT_TYPE_ENABLE**呼び出す必要がありますと**CloseHandle**処理で重複しているときに、ksイベントはすべてのパラメーターを 0 に設定を持つ KsEvent 関数を呼び出すことによって無効になります。
 
-- [IMFRealtimeClientEx](https://msdn.microsoft.com/library/windows/desktop/hh448047)
+- [IMFRealtimeClientEx](https://docs.microsoft.com/windows/desktop/api/mfidl/nn-mfidl-imfrealtimeclientex)
 
 - [IMFMediaEventGenerator](https://docs.microsoft.com/windows/desktop/api/mfobjects/nn-mfobjects-imfmediaeventgenerator)
 
-- [IMFShutdown](https://msdn.microsoft.com/library/windows/desktop/ms703054)
+- [IMFShutdown](https://docs.microsoft.com/windows/desktop/api/mfidl/nn-mfidl-imfshutdown)
 
 ### <a name="notification-requirements"></a>通知の要件
 
 デバイスの仕様では、サンプルや、任意の入力ストリームの状態の変更の有無について DTM を通知するために、次のメッセージを使用する必要があります。
 
-- [METransformHaveOutput](https://msdn.microsoft.com/library/windows/hardware/mt797686)
+- [METransformHaveOutput](https://docs.microsoft.com/windows-hardware/drivers/stream/metransformhaveoutput)
 
-- [METransformInputStreamStateChanged](https://msdn.microsoft.com/Library/windows/hardware/mt797687)
+- [METransformInputStreamStateChanged](https://docs.microsoft.com/windows-hardware/drivers/stream/metransforminputstreamstatechanged)
 
-- [METransformFlushInputStream](https://msdn.microsoft.com/library/windows/hardware/mt797685)
+- [METransformFlushInputStream](https://docs.microsoft.com/windows-hardware/drivers/stream/metransformflushinputstream)
 
 ### <a name="thread-requirements"></a>スレッドの要件
 
-デバイス MFT は、独自のスレッドを作成しないでください。 を通じて渡される ID を持つ、MF 作業キューを使用する必要があります代わりに、 [IMFRealtimeClientEx](https://msdn.microsoft.com/library/windows/desktop/hh448047)インターフェイス。 これは、デバイス MFT で実行されているすべてのスレッドが位置キャプチャ パイプラインが実行されている適切な優先順位を取得するかどうかを確認します。 それ以外の場合の優先順位の逆転のスレッドを引き起こす可能性が。
+デバイス MFT は、独自のスレッドを作成しないでください。 を通じて渡される ID を持つ、MF 作業キューを使用する必要があります代わりに、 [IMFRealtimeClientEx](https://docs.microsoft.com/windows/desktop/api/mfidl/nn-mfidl-imfrealtimeclientex)インターフェイス。 これは、デバイス MFT で実行されているすべてのスレッドが位置キャプチャ パイプラインが実行されている適切な優先順位を取得するかどうかを確認します。 それ以外の場合の優先順位の逆転のスレッドを引き起こす可能性が。
 
 ### <a name="inputstream-requirements"></a>InputStream 要件
 

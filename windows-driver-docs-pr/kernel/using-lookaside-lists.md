@@ -14,12 +14,12 @@ keywords:
 - WDK のメモリの解放ルーチン
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0582df0a1cf5966ffdf2a620d0a613a527c68c56
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4801465fae3a975a5171c82f913af3dce9fc1e89
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364929"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381616"
 ---
 # <a name="using-lookaside-lists"></a>ルックアサイド リストの使用
 
@@ -38,39 +38,39 @@ ms.locfileid: "63364929"
 ## <a name="lookaside-list-interfaces"></a>ルック アサイド リスト インターフェイス
 
 
-以降、Windows Vista では、 [**ルック アサイド\_一覧\_EX** ](https://msdn.microsoft.com/library/windows/hardware/ff554329)構造体には、非ページや段組のバッファーを含むことのできるルック アサイド リストがについて説明します。 場合は、ドライバーは、カスタム*Allocate*と*Free*ルーチンこのルック アサイド リストのこれらのルーチンは、入力パラメーターとしてプライベート コンテキストを受信します。 ドライバーは、このコンテキストを使用して、ルック アサイド リストのプライベート データを収集します。 たとえば、コンテキストは動的に割り当てられ、リストによって解放リスト エントリの数がカウントされる可能性があります。 この方法でコンテキストを使用する方法を示すコード例を参照してください。 [ **ExInitializeLookasideListEx**](https://msdn.microsoft.com/library/windows/hardware/ff545298)します。
+以降、Windows Vista では、 [**ルック アサイド\_一覧\_EX** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/eprocess)構造体には、非ページや段組のバッファーを含むことのできるルック アサイド リストがについて説明します。 場合は、ドライバーは、カスタム*Allocate*と*Free*ルーチンこのルック アサイド リストのこれらのルーチンは、入力パラメーターとしてプライベート コンテキストを受信します。 ドライバーは、このコンテキストを使用して、ルック アサイド リストのプライベート データを収集します。 たとえば、コンテキストは動的に割り当てられ、リストによって解放リスト エントリの数がカウントされる可能性があります。 この方法でコンテキストを使用する方法を示すコード例を参照してください。 [ **ExInitializeLookasideListEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exinitializelookasidelistex)します。
 
 次のシステム指定のルーチンによって記述されるルック アサイド リストのサポート、**ルック アサイド\_一覧\_EX**構造体。
 
-[**ExAllocateFromLookasideListEx**](https://msdn.microsoft.com/library/windows/hardware/ff544381)
+[**ExAllocateFromLookasideListEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatefromlookasidelistex)
 
-[**ExDeleteLookasideListEx**](https://msdn.microsoft.com/library/windows/hardware/ff544563)
+[**ExDeleteLookasideListEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exdeletelookasidelistex)
 
-[**ExFlushLookasideListEx**](https://msdn.microsoft.com/library/windows/hardware/ff544587)
+[**ExFlushLookasideListEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exflushlookasidelistex)
 
-[**ExFreeToLookasideListEx**](https://msdn.microsoft.com/library/windows/hardware/ff544597)
+[**ExFreeToLookasideListEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exfreetolookasidelistex)
 
-[**ExInitializeLookasideListEx**](https://msdn.microsoft.com/library/windows/hardware/ff545298)
+[**ExInitializeLookasideListEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exinitializelookasidelistex)
 
-Windows 2000 以降、 [**ページ\_ルック アサイド\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff558775)構造体には、ページ バッファを含むルック アサイド リストがについて説明します。 場合は、ドライバーは、カスタム*Allocate*と*Free*ルーチンこのルック アサイド リストのこれらのルーチンは受け取りません入力パラメーターとしてプライベート コンテキスト。 このため、ドライバーを Windows Vista および Windows の以降のバージョンでのみ実行する場合は使用を検討して、**ルック アサイド\_一覧\_EX**の代わりに構造体、**ページング\_ルック アサイド\_一覧**ルック アサイド リストの構造体。 次のシステム指定のルーチンによって記述されるルック アサイド リストのサポート、**ページ\_ルック アサイド\_一覧**構造体。
+Windows 2000 以降、 [**ページ\_ルック アサイド\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/kernel/eprocess)構造体には、ページ バッファを含むルック アサイド リストがについて説明します。 場合は、ドライバーは、カスタム*Allocate*と*Free*ルーチンこのルック アサイド リストのこれらのルーチンは受け取りません入力パラメーターとしてプライベート コンテキスト。 このため、ドライバーを Windows Vista および Windows の以降のバージョンでのみ実行する場合は使用を検討して、**ルック アサイド\_一覧\_EX**の代わりに構造体、**ページング\_ルック アサイド\_一覧**ルック アサイド リストの構造体。 次のシステム指定のルーチンによって記述されるルック アサイド リストのサポート、**ページ\_ルック アサイド\_一覧**構造体。
 
-[**ExAllocateFromPagedLookasideList**](https://msdn.microsoft.com/library/windows/hardware/ff544393)
+[**ExAllocateFromPagedLookasideList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatefrompagedlookasidelist)
 
-[**ExDeletePagedLookasideList**](https://msdn.microsoft.com/library/windows/hardware/ff544570)
+[**ExDeletePagedLookasideList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exdeletepagedlookasidelist)
 
-[**ExFreeToPagedLookasideList**](https://msdn.microsoft.com/library/windows/hardware/ff544605)
+[**ExFreeToPagedLookasideList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exfreetopagedlookasidelist)
 
-[**ExInitializePagedLookasideList**](https://msdn.microsoft.com/library/windows/hardware/ff545309)
+[**ExInitializePagedLookasideList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exinitializepagedlookasidelist)
 
-Windows 2000 以降、 [ **NPAGED\_ルック アサイド\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff556431)構造体には、非ページのバッファーを含むルック アサイド リストがについて説明します。 場合は、ドライバーは、カスタム*Allocate*と*Free*ルーチンこのルック アサイド リストのこれらのルーチンは受け取りません入力パラメーターとしてプライベート コンテキスト。 ここでもには、ドライバーを Windows Vista および Windows の以降のバージョンでのみ実行する場合は使用を検討して、**ルック アサイド\_一覧\_EX**の代わりに構造体、 **NPAGED\_ルック アサイド\_一覧**ルック アサイド リストの構造体。 次のシステム指定のルーチンによって記述されるルック アサイド リストのサポート、 **NPAGED\_ルック アサイド\_一覧**構造体。
+Windows 2000 以降、 [ **NPAGED\_ルック アサイド\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/kernel/eprocess)構造体には、非ページのバッファーを含むルック アサイド リストがについて説明します。 場合は、ドライバーは、カスタム*Allocate*と*Free*ルーチンこのルック アサイド リストのこれらのルーチンは受け取りません入力パラメーターとしてプライベート コンテキスト。 ここでもには、ドライバーを Windows Vista および Windows の以降のバージョンでのみ実行する場合は使用を検討して、**ルック アサイド\_一覧\_EX**の代わりに構造体、 **NPAGED\_ルック アサイド\_一覧**ルック アサイド リストの構造体。 次のシステム指定のルーチンによって記述されるルック アサイド リストのサポート、 **NPAGED\_ルック アサイド\_一覧**構造体。
 
-[**ExAllocateFromNPagedLookasideList**](https://msdn.microsoft.com/library/windows/hardware/ff544388)
+[**ExAllocateFromNPagedLookasideList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatefromnpagedlookasidelist)
 
-[**ExDeleteNPagedLookasideList**](https://msdn.microsoft.com/library/windows/hardware/ff544566)
+[**ExDeleteNPagedLookasideList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exdeletenpagedlookasidelist)
 
-[**ExFreeToNPagedLookasideList**](https://msdn.microsoft.com/library/windows/hardware/ff544601)
+[**ExFreeToNPagedLookasideList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exfreetonpagedlookasidelist)
 
-[**ExInitializeNPagedLookasideList**](https://msdn.microsoft.com/library/windows/hardware/ff545301)
+[**ExInitializeNPagedLookasideList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exinitializenpagedlookasidelist)
 
 ## <a name="implementation-guidelines"></a>実装ガイドライン
 
@@ -83,11 +83,11 @@ Windows 2000 以降、 [ **NPAGED\_ルック アサイド\_一覧**](https://msd
 
 -   パフォーマンスを向上させるには、渡す**NULL**のポインター、 *Allocate*と*Free*パラメーター **ExInitializeLookasideListEx**しない限り、割り当てと解放のルーチンは、だけで複数の割り当てし、ルック アサイド リストのエントリのメモリを解放しないでください必要があります。 たとえば、これらのルーチンは、動的に割り当てられたバッファーのドライバーの使用状況に関する情報を記録することがあります。
 
--   ドライバーによって提供される*Allocate*ルーチンは、入力パラメーターを渡すことができます (*PoolType*、*タグ*、および*サイズ*) に直接受信します。[ **exallocatepoolwithtag に**](https://msdn.microsoft.com/library/windows/hardware/ff544520)または[ **ExAllocatePoolWithQuotaTag** ](https://msdn.microsoft.com/library/windows/hardware/ff544513)新しいバッファーを割り当てルーチン。
+-   ドライバーによって提供される*Allocate*ルーチンは、入力パラメーターを渡すことができます (*PoolType*、*タグ*、および*サイズ*) に直接受信します。[ **exallocatepoolwithtag に**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtag)または[ **ExAllocatePoolWithQuotaTag** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithquotatag)新しいバッファーを割り当てルーチン。
 
 -   すべての呼び出しの**ExAllocateFromLookasideListEx**、相互の呼び出しを行う**ExFreeToLookasideListEx**できるだけ早くたびに以前に割り当てられたエントリが使用されていません。
 
-指定*Allocate*と*Free*ルーチンを呼び出すよりも、何もしない[ **exallocatepoolwithtag に**](https://msdn.microsoft.com/library/windows/hardware/ff544520)と[ **ExFreePool**](https://msdn.microsoft.com/library/windows/hardware/ff544590)、それぞれ、プロセッサ サイクルを浪費します。 **ExAllocateFromLookasideListEx**に必要な呼び出しを行う**exallocatepoolwithtag に**と**ExFreePool**ドライバーがパスと自動的に**NULL***Allocate*と*Free*へのポインター **ExInitializeLookasideListEx**します。
+指定*Allocate*と*Free*ルーチンを呼び出すよりも、何もしない[ **exallocatepoolwithtag に**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtag)と[ **ExFreePool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-exfreepool)、それぞれ、プロセッサ サイクルを浪費します。 **ExAllocateFromLookasideListEx**に必要な呼び出しを行う**exallocatepoolwithtag に**と**ExFreePool**ドライバーがパスと自動的に**NULL***Allocate*と*Free*へのポインター **ExInitializeLookasideListEx**します。
 
 いずれかのドライバーによって提供される*Allocate*ルーチンはページ プール ルック アサイドの非ページ化リストまたはその逆に保持されることからエントリをメモリを割り当てられませんする必要があります。 後続のすべてのドライバーのため、固定サイズのエントリを割り当てる必要がありますもこと**ExAllocateFromLookasideListEx**リストが空でない限りのルック アサイド リストに現在保持されている最初のエントリを返します。 呼び出しは、 **ExAllocateFromLookasideListEx** 、呼び出し時に、ドライバーによって提供される*Allocate*ルーチンの場合は、特定のルック アサイド リストは空です。 呼び出すたびにそのため、 **ExAllocateFromLookasideListEx**、返されるエントリにルック アサイド リストのすべてのエントリが固定サイズの場合にのみ、ドライバーが必要なサイズになります。 ドライバーによって提供される*Allocate*ルーチンを変更しないでくださいも、*タグ*、ドライバーは、最初に渡された値**ExInitializeLookasideListEx**のためでの変更プール タグの値は、デバッグと難しく、ドライバーのメモリ使用量を追跡します。
 

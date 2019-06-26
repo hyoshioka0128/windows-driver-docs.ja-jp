@@ -4,12 +4,12 @@ description: このトピックでは、Windows 8 ドライバーのオプトイ
 ms.assetid: 43721EC9-4901-4C68-9CCC-E0A71BF2200E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d2de1bcac68be13f32c96039adea5e499282f640
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1c94997e99e55dec5afe0ce957ae4fc6220c7c36
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333505"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359955"
 ---
 # <a name="span-idaudioimmediateidletimeoutopt-inspanimmediate-idle-timeout-opt-in"></a><span id="audio.immediate_idle_timeout_opt-in"></span>イミディ エイト アイドル タイムアウトのオプトイン
 
@@ -40,7 +40,7 @@ HKLM\\システム\\CurrentControlSet\\コントロール\\クラス\\{4D36E96C-
 
 場合、即時のアイドル状態の電源管理に opts ドライバー、連続的に受信したアダプターの Irp の上下に継続的に電源を不必要に防ぐために必要なロジックがシステムの電源エンジン プラグイン (PEP) に含まれています、ことを確認する必要があります。 デバイスの I/O 要求のバッチ用に電源を保持するためにいくつかの保存場所のルールを適用する必要があります。
 
-さらに、ドライバーのプログラムで有効または無効に、アイドル状態の電源管理を許可する Windows 7 で導入された新しいインターフェイスは引き続き、ドライバーがないにオプトイン即時のアイドル状態の電源管理が受け入れられます。 使用してこれには、 [ **IPortClsPower::SetIdlePowerManagement** ](https://msdn.microsoft.com/library/windows/hardware/ff536875)メソッド場合を除いて、レジストリの設定の上書きが行う*ImmediateIdle*は1 (TRUE) に設定します。
+さらに、ドライバーのプログラムで有効または無効に、アイドル状態の電源管理を許可する Windows 7 で導入された新しいインターフェイスは引き続き、ドライバーがないにオプトイン即時のアイドル状態の電源管理が受け入れられます。 使用してこれには、 [ **IPortClsPower::SetIdlePowerManagement** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iportclspower-setidlepowermanagement)メソッド場合を除いて、レジストリの設定の上書きが行う*ImmediateIdle*は1 (TRUE) に設定します。
 
  
 

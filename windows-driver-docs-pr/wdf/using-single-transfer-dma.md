@@ -4,12 +4,12 @@ description: このトピックでは、KMDF ドライバーが 1 つ転送 DMA 
 ms.assetid: 57bf9988-6eed-42ca-a961-a6d16c5c19c1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 976eb2ffabef3f732d39c7ca3e1efabadaf8e95e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5b239f22e5340a5fefb30964005577e4017c604c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391836"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372210"
 ---
 # <a name="using-single-transfer-dma"></a>単一転送 DMA の使用
 
@@ -21,22 +21,22 @@ DMA トランザクションの 1 つの転送が必要である KMDF バージ�
 
 単一のトランザクションの 1 つの転送を設定するには、次のシーケンスを使用します。
 
-1. 呼び出す[ **WdfDmaTransactionCreate** ](https://msdn.microsoft.com/library/windows/hardware/ff547027)または[ **WdfDmaTransactionRelease**](https://msdn.microsoft.com/library/windows/hardware/ff547114)します。
-2. 呼び出す[ **WdfDmaTransactionSetSingleTransferRequirement**](https://msdn.microsoft.com/library/windows/hardware/988c7e70-3b2a-4a0f-91cf-dfab3ea07f05)します。
-3. 呼び出す[ **WdfDmaTransactionInitialize**](https://msdn.microsoft.com/library/windows/hardware/ff547099)します。  
+1. 呼び出す[ **WdfDmaTransactionCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdmatransaction/nf-wdfdmatransaction-wdfdmatransactioncreate)または[ **WdfDmaTransactionRelease**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdmatransaction/nf-wdfdmatransaction-wdfdmatransactionrelease)します。
+2. 呼び出す[ **WdfDmaTransactionSetSingleTransferRequirement**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdmatransaction/nf-wdfdmatransaction-wdfdmatransactionsetsingletransferrequirement)します。
+3. 呼び出す[ **WdfDmaTransactionInitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdmatransaction/nf-wdfdmatransaction-wdfdmatransactioninitialize)します。  
     トランザクションの断片化のための初期化に失敗した場合は、ドライバーには、I/O 要求が失敗する可能性がまたはトランザクションのメモリ バッファーを再配置し、トランザクションを再初期化します。
-4. 呼び出す[ **WdfDmaTransactionExecute**](https://msdn.microsoft.com/library/windows/hardware/ff547062)します。
+4. 呼び出す[ **WdfDmaTransactionExecute**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdmatransaction/nf-wdfdmatransaction-wdfdmatransactionexecute)します。
 
-ドライバーをデバッグするときに使用できます、 [ **! wdfkd.wdfdmatransaction** ](https://msdn.microsoft.com/library/windows/hardware/ff565721)拡張機能を特定のトランザクション オブジェクトの 1 つの転送を設定するかどうかを判断します。
+ドライバーをデバッグするときに使用できます、 [ **! wdfkd.wdfdmatransaction** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfdmatransaction)拡張機能を特定のトランザクション オブジェクトの 1 つの転送を設定するかどうかを判断します。
 
 ## <a name="setting-the-single-transfer-requirement-for-all-dma-transactions-created-with-a-particular-dma-enabler"></a>特定 DMA イネーブラーで作成されたすべての DMA トランザクションの 1 つの移動要求の設定
 
-特定のイネーブラーで作成されたすべてのトランザクションの 1 つの転送を設定するには、指定、 **WDF_DMA_ENABLER_CONFIG_REQUIRE_SINGLE_TRANSFER**フラグ[ **WDF_DMA_ENABLER_CONFIG_FLAGS**](https://msdn.microsoft.com/library/windows/hardware/hh439491)を呼び出すときに[ **WdfDmaEnablerCreate**](https://msdn.microsoft.com/library/windows/hardware/guid)します。  
+特定のイネーブラーで作成されたすべてのトランザクションの 1 つの転送を設定するには、指定、 **WDF_DMA_ENABLER_CONFIG_REQUIRE_SINGLE_TRANSFER**フラグ[ **WDF_DMA_ENABLER_CONFIG_FLAGS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdmaenabler/ne-wdfdmaenabler-_wdf_dma_enabler_config_flags)を呼び出すときに[ **WdfDmaEnablerCreate**](https://docs.microsoft.com/previous-versions/jj619276(v=technet.10))します。  
 
-このフラグを使用するドライバーを呼び出す必要はありません[ **WdfDmaTransactionSetSingleTransferRequirement** ](https://msdn.microsoft.com/library/windows/hardware/988c7e70-3b2a-4a0f-91cf-dfab3ea07f05)を作成するたびにまたはトランザクション オブジェクトを再利用されます。
+このフラグを使用するドライバーを呼び出す必要はありません[ **WdfDmaTransactionSetSingleTransferRequirement** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdmatransaction/nf-wdfdmatransaction-wdfdmatransactionsetsingletransferrequirement)を作成するたびにまたはトランザクション オブジェクトを再利用されます。
 
 この設定は、場合にも保持ドライバー[トランザクション オブジェクトを再利用](reusing-dma-transaction-objects.md)します。
 
-使用して、デバッグ時に、 [ **! wdfkd.wdfdmaenabler** ](https://msdn.microsoft.com/library/windows/hardware/ff565717)拡張機能を特定の DMA イネーブラー オブジェクトの 1 つの転送を設定するかどうかを判断します。
+使用して、デバッグ時に、 [ **! wdfkd.wdfdmaenabler** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfdmaenabler)拡張機能を特定の DMA イネーブラー オブジェクトの 1 つの転送を設定するかどうかを判断します。
 
 WDF 関数を呼び出してドライバーの DMA イベント コールバックの順序の詳細については、次を参照してください。 [KMDF ドライバーでは、バス マスター DMA デバイスの I/O 要求の処理](handling-i-o-requests-in-a-kmdf-driver-for-a-bus-master-dma-device.md)します。

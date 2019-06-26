@@ -4,17 +4,17 @@ description: プログラミング ガイド
 ms.assetid: 289bdf85-9138-4920-a61f-050c51077d3e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a3a9803c7f335985abe3baa2929a17d1e9d02a4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a366ee90fe4d8265ef829dc22347f2b818d7764e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328755"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362548"
 ---
 # <a name="programming-guidelines"></a>プログラミング ガイド
 
 
-このセクションでは、HD オーディオ DDI バージョンを使用するためのプログラミング ガイドラインを示します (で定義されている、 [ **HDAUDIO\_BUS\_インターフェイス**](https://msdn.microsoft.com/library/windows/hardware/ff536413)、 [ **HDAUDIO\_BUS\_インターフェイス\_V2** ](https://msdn.microsoft.com/library/windows/hardware/ff536418)と[ **HDAUDIO\_BUS\_インターフェイス\_BDL**](https://msdn.microsoft.com/library/windows/hardware/ff536416)構造) にコントロールのオーディオおよびモデム コーデック HD オーディオ バス インターフェイス コント ローラーに接続されています。
+このセクションでは、HD オーディオ DDI バージョンを使用するためのプログラミング ガイドラインを示します (で定義されている、 [ **HDAUDIO\_BUS\_インターフェイス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/ns-hdaudio-_hdaudio_bus_interface)、 [ **HDAUDIO\_BUS\_インターフェイス\_V2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/ns-hdaudio-_hdaudio_bus_interface_v2)と[ **HDAUDIO\_BUS\_インターフェイス\_BDL**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/ns-hdaudio-_hdaudio_bus_interface_bdl)構造) にコントロールのオーディオおよびモデム コーデック HD オーディオ バス インターフェイス コント ローラーに接続されています。
 
 HD オーディオ バス ドライバーでは、その子では、カーネル モード関数ドライバー、オーディオとモデムのコーデックを HD オーディオ DDI の一方または両方のバージョンを公開します。 (UAA HD オーディオ クラス ドライバーはこれらの子のいずれかの可能性があります)。これらのドライバーでは、コント ローラーの HD オーディオ デバイスのハードウェア機能にアクセスする Ddi でルーチンを呼び出します。
 

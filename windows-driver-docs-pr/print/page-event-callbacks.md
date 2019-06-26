@@ -11,12 +11,12 @@ keywords:
 - イベントのコールバック WDK CPSUI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c262a174865348acecc70f36c614c065aa2731bf
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3eba6807d721e6a537638c97ef38dd3f911c7e5e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345278"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360718"
 ---
 # <a name="page-event-callbacks"></a>ページ イベント コールバック
 
@@ -30,7 +30,7 @@ ms.locfileid: "63345278"
 
 -   アプリケーションがない CPSUI によって提供されるカスタマイズされたページを作成する場合は、ダイアログ ボックスのプロシージャを提供します。 詳細については、次を参照してください。 [ ダイアログ ボックス プロシージャと CPSUI](dialog-box-procedures-and-cpsui.md)します。
 
-呼び出すときにページ イベントのコールバックのアドレスを CPSUI CPSUI アプリケーション提供、 [ **ComPropSheet** ](https://msdn.microsoft.com/library/windows/hardware/ff546207)関数。
+呼び出すときにページ イベントのコールバックのアドレスを CPSUI CPSUI アプリケーション提供、 [ **ComPropSheet** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/nc-compstui-pfncompropsheet)関数。
 
  
 

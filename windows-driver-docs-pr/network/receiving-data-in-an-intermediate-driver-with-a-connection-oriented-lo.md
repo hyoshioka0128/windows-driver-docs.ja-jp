@@ -7,12 +7,12 @@ keywords:
 - NDIS は、ドライバー WDK を中間、受信操作
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d7cf5b282e06a4c0fb512ff0debc58559f4aeac3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 09bae2f773b1c4ce256f477531cb33e364822fc0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383176"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373320"
 ---
 # <a name="receiving-data-in-an-intermediate-driver-with-a-connection-oriented-lower-edge"></a>接続指向の下端を含む中間ドライバーでのデータの受信
 
@@ -20,9 +20,9 @@ ms.locfileid: "63383176"
 
 
 
-NDIS を呼び出して、中間のドライバーの場合は、中間ドライバーは、接続指向のミニポート ドライバー上に重ねられる、 [ **ProtocolCoReceiveNetBufferLists** ](https://msdn.microsoft.com/library/windows/hardware/ff570256)を受信したデータを示す関数。
+NDIS を呼び出して、中間のドライバーの場合は、中間ドライバーは、接続指向のミニポート ドライバー上に重ねられる、 [ **ProtocolCoReceiveNetBufferLists** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_co_receive_net_buffer_lists)を受信したデータを示す関数。
 
-基になる接続指向のミニポート ドライバーを呼び出すことでネットワーク データを示します[ **NdisMCoIndicateReceiveNetBufferLists**](https://msdn.microsoft.com/library/windows/hardware/ff563561)、1 つまたは複数のリンク リストを渡して[ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)構造体。
+基になる接続指向のミニポート ドライバーを呼び出すことでネットワーク データを示します[ **NdisMCoIndicateReceiveNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcoindicatereceivenetbufferlists)、1 つまたは複数のリンク リストを渡して[ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)構造体。
 
 接続指向の下端と中間のドライバーのデータの受信についての詳細については、次を参照してください。 [Connection-Oriented 操作](connection-oriented-operations.md)します。
 

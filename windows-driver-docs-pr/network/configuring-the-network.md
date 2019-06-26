@@ -9,12 +9,12 @@ keywords:
 - ネットワーク構成 WDK ofbject を通知します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f78f81f9bf90ee0f6076269363ce9cdea10b6adf
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9fb147b81d48700b57c6f437ba7dca79c6eb60fe
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357414"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374959"
 ---
 # <a name="configuring-the-network"></a>ネットワークの構成
 
@@ -24,9 +24,9 @@ ms.locfileid: "63357414"
 
 通知オブジェクトは、ネットワークの構成をプログラムで制御を所有するネットワーク コンポーネントに提供できます。
 
-コントロール パネルの ネットワーク アプリケーションからは、ネットワーク コンポーネントのプロパティを構成できます。 クリックすると、**ネットワーク**アイコン、通知オブジェクトのインスタンスを作成し、オブジェクトの呼び出しが、ネットワーク構成サブシステムを起動する[ **INetCfgComponentControl::Initialize**](https://msdn.microsoft.com/library/windows/hardware/ff547729)メソッド。 このメソッドは、オブジェクトを初期化し、コンポーネントとネットワークの構成のすべての側面へのアクセスを提供します。
+コントロール パネルの ネットワーク アプリケーションからは、ネットワーク コンポーネントのプロパティを構成できます。 クリックすると、**ネットワーク**アイコン、通知オブジェクトのインスタンスを作成し、オブジェクトの呼び出しが、ネットワーク構成サブシステムを起動する[ **INetCfgComponentControl::Initialize**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff547729(v=vs.85))メソッド。 このメソッドは、オブジェクトを初期化し、コンポーネントとネットワークの構成のすべての側面へのアクセスを提供します。
 
-サブシステムに通知オブジェクトの呼び出し後、ネットワーク構成のサブシステムでは、インスタンスを作成し、通知オブジェクトを初期化します、 [ **INetCfgComponentNotifyGlobal::GetSupportedNotifications** ](https://msdn.microsoft.com/library/windows/hardware/ff547734)オブジェクトで必要な通知の種類を取得します。 この情報では、サブシステムは、オブジェクトに必要な通知を送信できます。 オブジェクトは、これらの通知を使用して、ネットワークのセットアップと構成オブジェクトを所有するコンポーネントに影響を与える可能性がありますの側面を制御できます。 たとえば、サブシステムの呼び出し、通知オブジェクトの[ **INetCfgComponentNotifyGlobal::SysQueryBindingPath** ](https://msdn.microsoft.com/library/windows/hardware/ff547737)サブシステムはバインド パスを追加するオブジェクトに通知するメソッドその他のネットワーク コンポーネントが属しているが、オブジェクトがサブシステムに、そのバインディング パスが無効にすることを要求すること。 さらに、通知オブジェクトのメソッドのいずれかの呼び出し、サブシステム[INetCfgComponentNotifyBinding](https://msdn.microsoft.com/library/windows/hardware/ff547730)インターフェイス。 これらのメソッドに通知方法、サブシステムへの変更に関するオブジェクトは、通知オブジェクトを所有するコンポーネントを他のネットワーク コンポーネントをバインドします。
+サブシステムに通知オブジェクトの呼び出し後、ネットワーク構成のサブシステムでは、インスタンスを作成し、通知オブジェクトを初期化します、 [ **INetCfgComponentNotifyGlobal::GetSupportedNotifications** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff547734(v=vs.85))オブジェクトで必要な通知の種類を取得します。 この情報では、サブシステムは、オブジェクトに必要な通知を送信できます。 オブジェクトは、これらの通知を使用して、ネットワークのセットアップと構成オブジェクトを所有するコンポーネントに影響を与える可能性がありますの側面を制御できます。 たとえば、サブシステムの呼び出し、通知オブジェクトの[ **INetCfgComponentNotifyGlobal::SysQueryBindingPath** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff547737(v=vs.85))サブシステムはバインド パスを追加するオブジェクトに通知するメソッドその他のネットワーク コンポーネントが属しているが、オブジェクトがサブシステムに、そのバインディング パスが無効にすることを要求すること。 さらに、通知オブジェクトのメソッドのいずれかの呼び出し、サブシステム[INetCfgComponentNotifyBinding](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff547730(v=vs.85))インターフェイス。 これらのメソッドに通知方法、サブシステムへの変更に関するオブジェクトは、通知オブジェクトを所有するコンポーネントを他のネットワーク コンポーネントをバインドします。
 
  
 

@@ -4,12 +4,12 @@ description: Windows 10 以降では、電源管理フレームワーク (PoFx) 
 ms.assetid: D5341D6D-7C71-43CB-9C70-7E939B32C33F
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: e10d95d11c5d8620ab9f84a5f7dfe90f6090f6b8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9df895638ec56c6c814fe2586e7a55df24bc5a56
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343686"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377220"
 ---
 # <a name="component-level-performance-state-management"></a>コンポーネント レベルのパフォーマンス状態の管理
 
@@ -42,18 +42,18 @@ PoFx によるパフォーマンスの状態管理のため、デバイスのコ
 
 1.  ドライバーは、PoFx によって管理されるデバイスのコンポーネントを登録します。 詳細については、次を参照してください。[コンポーネント レベルの電源管理](component-level-power-management.md)します。
 
-2.  ドライバーは、呼び出すことによってパフォーマンスの状態のサポートを登録[ **PoFxRegisterComponentPerfStates**](https://msdn.microsoft.com/library/windows/hardware/dn939778)します。 登録の呼び出しの一環として、ドライバー自体が特定のコンポーネントのパフォーマンスの状態を定義するかプラットフォーム拡張機能にプラグインを代わりに定義するには、(PEP) を延期します。
+2.  ドライバーは、呼び出すことによってパフォーマンスの状態のサポートを登録[ **PoFxRegisterComponentPerfStates**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-pofxregistercomponentperfstates)します。 登録の呼び出しの一環として、ドライバー自体が特定のコンポーネントのパフォーマンスの状態を定義するかプラットフォーム拡張機能にプラグインを代わりに定義するには、(PEP) を延期します。
 
     デバイス ドライバー、または PEP は、コンポーネント、パフォーマンスの状態 (不連続または範囲に基づく) の種類と値の詳細と実際のパフォーマンスの数ごとのパフォーマンス状態のセットの数など、パフォーマンスの状態のナレッジを保持する必要があります。示されます。 PEP がパフォーマンスの状態をサポートしていない場合、ドライバーをまだ PoFx のパフォーマンス状態のサポートについては登録およびログと分析では、Windows パフォーマンス アナライザー (WPA) のパフォーマンス状態の変更の OS に通知。
 
-    正常に完了すると、いずれの場合も[ **PoFxRegisterComponentPerfStates**](https://msdn.microsoft.com/library/windows/hardware/dn939778)、ドライバーは、 [ **PO\_FX\_コンポーネント\_PERF\_情報**](https://msdn.microsoft.com/library/windows/hardware/dn939832)登録済みのパフォーマンス状態のセットを含む構造体。
+    正常に完了すると、いずれの場合も[ **PoFxRegisterComponentPerfStates**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-pofxregistercomponentperfstates)、ドライバーは、 [ **PO\_FX\_コンポーネント\_PERF\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_po_fx_component_perf_info)登録済みのパフォーマンス状態のセットを含む構造体。
 
-3.  ドライバーは、コンポーネントは、パフォーマンスの状態を変更する必要がありますを決定したら、それを呼び出す[ **PoFxIssueComponentPerfStateChange** ](https://msdn.microsoft.com/library/windows/hardware/dn939769)または[ **PoFxIssueComponentPerfStateChangeMultiple**](https://msdn.microsoft.com/library/windows/hardware/dn939772)します。 PoFx 呼び出すドライバーの[ **ComponentPerfStateCallback** ](https://msdn.microsoft.com/library/windows/hardware/dn939353)ルーチン パフォーマンス状態の変更が完了するとします。
+3.  ドライバーは、コンポーネントは、パフォーマンスの状態を変更する必要がありますを決定したら、それを呼び出す[ **PoFxIssueComponentPerfStateChange** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-pofxissuecomponentperfstatechange)または[ **PoFxIssueComponentPerfStateChangeMultiple**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-pofxissuecomponentperfstatechangemultiple)します。 PoFx 呼び出すドライバーの[ **ComponentPerfStateCallback** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-po_fx_component_perf_state_callback)ルーチン パフォーマンス状態の変更が完了するとします。
 
-4.  ドライバーを活用して、 [ **ComponentPerfStateCallback** ](https://msdn.microsoft.com/library/windows/hardware/dn939353)日常的なかどうか、PEP が成功したか、パフォーマンスの状態の変更を拒否します。 PEP に変更が成功した場合、ドライバーは、その観点からパフォーマンスの状態を変更するために必要な作業を実行します。 PEP には、変更が拒否されている場合、何もしないか、同じまたは別のパフォーマンスが状態を使用して要求を再試行するドライバーを引き起こすことができます。
+4.  ドライバーを活用して、 [ **ComponentPerfStateCallback** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-po_fx_component_perf_state_callback)日常的なかどうか、PEP が成功したか、パフォーマンスの状態の変更を拒否します。 PEP に変更が成功した場合、ドライバーは、その観点からパフォーマンスの状態を変更するために必要な作業を実行します。 PEP には、変更が拒否されている場合、何もしないか、同じまたは別のパフォーマンスが状態を使用して要求を再試行するドライバーを引き起こすことができます。
 
 ## <a name="related-topics"></a>関連トピック
-[デバイスの電源管理リファレンス](https://msdn.microsoft.com/library/windows/hardware/hh450958)  
+[デバイスの電源管理リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
 
 
 

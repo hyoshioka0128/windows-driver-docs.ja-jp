@@ -6,12 +6,12 @@ keywords:
 - 強制的にフィードバック ドライバー WDK を非表示にサポートされるメソッド
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 4e13c09772a151d3f0b04d670b10382e573acbfd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c2eda901ce83fdfdfa282f9d9f305592142ce323
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388955"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375741"
 ---
 # <a name="driver-interface"></a>ドライバー インターフェイス
 
@@ -21,25 +21,25 @@ ms.locfileid: "63388955"
 
 フォース フィードバック ドライバーでは、COM ベースで、ドライバーのインスタンスは DirectInput によって作成されます。 インターフェイスが指定されている場合が"VJoyD"VJoyD ミニドライバーは VJoyD によって読み込まれます。 両方のドライバー パスは、エクスポートした次のメソッドをサポートします。
 
-[*DestroyEffect*](https://msdn.microsoft.com/library/windows/hardware/ff538410)
+[*DestroyEffect*](https://docs.microsoft.com/previous-versions/ff538410(v=vs.85))
 
-[*初期化します。*](https://msdn.microsoft.com/library/windows/hardware/ff541025)
+[*初期化します。* ](https://docs.microsoft.com/previous-versions/ff541025(v=vs.85))
 
-[*DownloadEffect*](https://msdn.microsoft.com/library/windows/hardware/ff538601)
+[*DownloadEffect*](https://docs.microsoft.com/previous-versions/ff538601(v=vs.85))
 
-[*GetEffectStatus*](https://msdn.microsoft.com/library/windows/hardware/ff538772)
+[*GetEffectStatus*](https://docs.microsoft.com/previous-versions/ff538772(v=vs.85))
 
-[*GetForceFeedbackState*](https://msdn.microsoft.com/library/windows/hardware/ff538776)
+[*GetForceFeedbackState*](https://docs.microsoft.com/previous-versions/ff538776(v=vs.85))
 
-[*エスケープ*](https://msdn.microsoft.com/library/windows/hardware/ff538680)
+[*エスケープ*](https://docs.microsoft.com/previous-versions/ff538680(v=vs.85))
 
-[*SendForceFeedbackCommand*](https://msdn.microsoft.com/library/windows/hardware/ff543387)
+[*SendForceFeedbackCommand*](https://docs.microsoft.com/previous-versions/ff543387(v=vs.85))
 
-[*SetGain*](https://msdn.microsoft.com/library/windows/hardware/ff543406)
+[*SetGain*](https://docs.microsoft.com/previous-versions/ff543406(v=vs.85))
 
-[*StartEffect*](https://msdn.microsoft.com/library/windows/hardware/ff543458)
+[*StartEffect*](https://docs.microsoft.com/previous-versions/ff543458(v=vs.85))
 
-[*StopEffect*](https://msdn.microsoft.com/library/windows/hardware/ff543460)
+[*StopEffect*](https://docs.microsoft.com/previous-versions/ff543460(v=vs.85))
 
 この機能はすべてフォース フィードバック デバイスをサポートします。
 

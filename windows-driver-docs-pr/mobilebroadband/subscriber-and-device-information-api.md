@@ -4,12 +4,12 @@ description: サブスクライバーとデバイス情報 API
 ms.assetid: 45d6c053-b64b-4768-8e79-a090dcdf346e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1bd1ac10579fd1f36f4b3c5075816cafbe5a565f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3c0dc7fa9f3791956c27ca0829db7b0e8fda3184
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378323"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67357883"
 ---
 # <a name="subscriber-and-device-information-api"></a>サブスクライバーとデバイス情報 API
 
@@ -32,7 +32,7 @@ ms.locfileid: "63378323"
 
 -   **ファームウェアとハードウェア バージョン**ファームウェアとハードウェアのバージョン。
 
-サブスクライバーとデバイス情報 API の詳細については、次を参照してください。 [ **Windows.Networking.NetworkOperators 名前空間**](https://msdn.microsoft.com/library/windows/apps/br241148)します。
+サブスクライバーとデバイス情報 API の詳細については、次を参照してください。 [ **Windows.Networking.NetworkOperators 名前空間**](https://docs.microsoft.com/uwp/api/Windows.Networking.NetworkOperators)します。
 
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 

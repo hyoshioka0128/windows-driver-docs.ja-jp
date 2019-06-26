@@ -4,19 +4,19 @@ description: デバイス インスタンスの状態と問題コードの取得
 ms.assetid: 22ca9ac2-fe67-427d-a6e4-f1d9cbbede52
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dc53d29a376517562885c2fb8a13611c812895f5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: af76c971342ad2fdb429d608fe3fd641bc563173
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327772"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378024"
 ---
 # <a name="retrieving-the-status-and-problem-code-for-a-device-instance"></a>デバイス インスタンスの状態と問題コードの取得
 
 
-Windows Vista および Windows での以降のバージョンで、[統一されたデバイス プロパティのモデル](unified-device-property-model--windows-vista-and-later-.md)が含まれています、[デバイス状態のプロパティと問題のコード プロパティ](https://msdn.microsoft.com/library/windows/hardware/ff542254)します。 統一されたデバイス プロパティのモデルを使用して[プロパティ キー](property-keys.md)をこれらのプロパティを表します。
+Windows Vista および Windows での以降のバージョンで、[統一されたデバイス プロパティのモデル](unified-device-property-model--windows-vista-and-later-.md)が含まれています、[デバイス状態のプロパティと問題のコード プロパティ](https://docs.microsoft.com/previous-versions/ff542254(v=vs.85))します。 統一されたデバイス プロパティのモデルを使用して[プロパティ キー](property-keys.md)をこれらのプロパティを表します。
 
-Windows Server 2003、Windows XP、および Windows 2000、統一されたプロパティのモデルのプロパティのキーをサポートしても、これらのプロパティを表す対応するレジストリ エントリの値をサポートしています。 ただし、呼び出すことによって、対応する情報を取得できます、 [ **CM_Get_DevNode_Status** ](https://msdn.microsoft.com/library/windows/hardware/ff538514)関数。 Windows の以前のバージョンとの互換性を維持するために Windows Vista およびそれ以降のバージョンもサポート**CM_Get_DevNode_Status**します。 ただし、デバイス ドライバーのプロパティにアクセスするのに、統一されたデバイス プロパティのモデルのプロパティのキーを使用する必要があります。
+Windows Server 2003、Windows XP、および Windows 2000、統一されたプロパティのモデルのプロパティのキーをサポートしても、これらのプロパティを表す対応するレジストリ エントリの値をサポートしています。 ただし、呼び出すことによって、対応する情報を取得できます、 [ **CM_Get_DevNode_Status** ](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_devnode_status)関数。 Windows の以前のバージョンとの互換性を維持するために Windows Vista およびそれ以降のバージョンもサポート**CM_Get_DevNode_Status**します。 ただし、デバイス ドライバーのプロパティにアクセスするのに、統一されたデバイス プロパティのモデルのプロパティのキーを使用する必要があります。
 
 デバイス ドライバーのプロパティは、Windows Vista およびそれ以降のバージョンのプロパティへのアクセスに使用するプロパティのキー識別子が表示されます。
 

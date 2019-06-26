@@ -13,12 +13,12 @@ keywords:
 - ExSetTimerResolution
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 068b52e5f39eb1701ad3a7e945ac91869a2c43a4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 186a6899369a48d218f27854ebe2d4284bf717bd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63386254"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371886"
 ---
 # <a name="high-resolution-timers"></a>高分解能タイマー
 
@@ -27,9 +27,9 @@ Windows 8.1 以降、ドライバーを使用できる、 [ **Ex*Xxx*タイマ�
 
 ただし、高解像度のタイマーには、システム クロック割り込みを必要があります。: 少なくとも、一時的に — 電力消費量が増加する傾向にある、より高い割合で発生します。 そのため、ドライバーは高分解能タイマーを使用して、タイマー精度が、重要な場合にのみとそれ以外の場合、既定の解像度タイマーを使用する必要があります。
 
-WDM ドライバーが呼び出し高分解能タイマを作成するのには、 [ **ExAllocateTimer** ](https://msdn.microsoft.com/library/windows/hardware/dn265179)ルーチンとセット EX\_タイマー\_高\_解像度、フラグ*属性*パラメーター。 ドライバーを呼び出すと、 [ **ExSetTimer** ](https://msdn.microsoft.com/library/windows/hardware/dn265188)高分解能タイマを設定する日常的なオペレーティング システムが、必要に応じて、システム時計の解像度ように位置回タイマー有効期限が切れるで指定した有効期限が切れた時刻に正確に対応の詳細は、 *DueTime*と*期間*パラメーター。
+WDM ドライバーが呼び出し高分解能タイマを作成するのには、 [ **ExAllocateTimer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatetimer)ルーチンとセット EX\_タイマー\_高\_解像度、フラグ*属性*パラメーター。 ドライバーを呼び出すと、 [ **ExSetTimer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exsettimer)高分解能タイマを設定する日常的なオペレーティング システムが、必要に応じて、システム時計の解像度ように位置回タイマー有効期限が切れるで指定した有効期限が切れた時刻に正確に対応の詳細は、 *DueTime*と*期間*パラメーター。
 
-カーネル モード ドライバー フレームワーク (KMDF) ドライバーを呼び出すことができます、 [ **WdfTimerCreate** ](https://msdn.microsoft.com/library/windows/hardware/ff550050)高分解能タイマを作成します。 この呼び出しでは、ドライバーはへのポインターを渡します。 を[ **WDF\_タイマー\_CONFIG** ](https://msdn.microsoft.com/library/windows/hardware/ff552519)をパラメーターとして構造体。 高分解能タイマをドライバーのセットを作成する、 **UseHighResolutionTimer**をこの構造体のメンバー **TRUE**します。 このメンバーは、Windows 8.1 および KMDF バージョン 1.13 以降では、構造体の一部です。
+カーネル モード ドライバー フレームワーク (KMDF) ドライバーを呼び出すことができます、 [ **WdfTimerCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdftimer/nf-wdftimer-wdftimercreate)高分解能タイマを作成します。 この呼び出しでは、ドライバーはへのポインターを渡します。 を[ **WDF\_タイマー\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdftimer/ns-wdftimer-_wdf_timer_config)をパラメーターとして構造体。 高分解能タイマをドライバーのセットを作成する、 **UseHighResolutionTimer**をこの構造体のメンバー **TRUE**します。 このメンバーは、Windows 8.1 および KMDF バージョン 1.13 以降では、構造体の一部です。
 
 ## <a name="controlling-timer-accuracy"></a>タイマー精度を制御します。
 
@@ -44,7 +44,7 @@ WDM ドライバーが呼び出し高分解能タイマを作成するのには�
 
 電力の過剰消費を防ぐためには、ドライバーが、実行時間の長い高分解能タイマーの期間のシステム クロックのティック間の既定の間隔よりも小さい値に設定を避ける必要があります。 それ以外の場合、最大速度でシステム クロックを継続的に実行するオペレーティング システムが強制されます。
 
-Windows 8 以降、ドライバーが呼び出すことができます、 [ **ExQueryTimerResolution** ](https://msdn.microsoft.com/library/windows/hardware/dn275969)ルーチンをシステム クロックでサポートされているタイマーの解像度の範囲を取得します。
+Windows 8 以降、ドライバーが呼び出すことができます、 [ **ExQueryTimerResolution** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exquerytimerresolution)ルーチンをシステム クロックでサポートされているタイマーの解像度の範囲を取得します。
 
 ## <a name="comparison-to-exsettimerresolution"></a>ExSetTimerResolution との比較
 
@@ -57,7 +57,7 @@ Windows 2000 以降、ドライバーが呼び出すことができます、 [ *
 
 同時に複数のドライバーを使用する場合、サードパーティ**ExSetTimerResolution**タイマー精度を高めるためには、システム クロックを長期間実行の最大レートで可能性があります。 これに対し、オペレーティング システムではグローバルに複数の高解像度タイマーの操作を調整して、システム クロックがこれらのタイマーのタイミングの要件を満たすために必要な場合にのみの最大レートでが実行されるようにします。
 
-最後を使用して**ExSetTimerResolution**は本質的に高分解能タイマを使用するよりも精度が低下します。 ドライバーを呼び出してから**ExSetTimerResolution** 、ミリ秒あたりのティックの詳細については、最大速度に、システム クロックを向上させるドライバー呼び出すことができます、ルーチンなど[ **KeSetTimerEx**](https://msdn.microsoft.com/library/windows/hardware/ff553292)タイマーを設定します。 タイマーできる最大有効期限が切れる、この呼び出しでは、ドライバーは、相対的な有効期限の時間を指定する場合は、約 1 ミリ秒より前か、指定した有効期限よりも後。 ただし、高分解能タイマーの相対的な有効期限の時間が指定されている場合は、タイマーできます有効期限が切れるまで約 1 ミリ秒、指定した有効期限より後が決して早期失効します。
+最後を使用して**ExSetTimerResolution**は本質的に高分解能タイマを使用するよりも精度が低下します。 ドライバーを呼び出してから**ExSetTimerResolution** 、ミリ秒あたりのティックの詳細については、最大速度に、システム クロックを向上させるドライバー呼び出すことができます、ルーチンなど[ **KeSetTimerEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesettimerex)タイマーを設定します。 タイマーできる最大有効期限が切れる、この呼び出しでは、ドライバーは、相対的な有効期限の時間を指定する場合は、約 1 ミリ秒より前か、指定した有効期限よりも後。 ただし、高分解能タイマーの相対的な有効期限の時間が指定されている場合は、タイマーできます有効期限が切れるまで約 1 ミリ秒、指定した有効期限より後が決して早期失効します。
 
  
 

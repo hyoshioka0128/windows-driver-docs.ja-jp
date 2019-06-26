@@ -9,12 +9,12 @@ keywords:
 - OID 要求 WDK NDIS ポート
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9858b55d37f59c16dd4a49f5756aadef42be2ee6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 77dbf3d94129d784993236f661b26e3dbeb42cd8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353063"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354573"
 ---
 # <a name="enumerating-ports"></a>ポートの列挙
 
@@ -22,9 +22,9 @@ ms.locfileid: "63353063"
 
 
 
-NDIS プロトコルおよびフィルター ドライバーを使用できる、 [OID\_GEN\_ENUMERATE\_ポート](https://msdn.microsoft.com/library/windows/hardware/ff569583)OID のクエリ要求に関連付けられているアクティブな NDIS ポートの特性を決定する、基になるミニポート アダプター。 NDIS が、この OID を処理し、ミニポート ドライバーには、この OID クエリは受け取りません。
+NDIS プロトコルおよびフィルター ドライバーを使用できる、 [OID\_GEN\_ENUMERATE\_ポート](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-enumerate-ports)OID のクエリ要求に関連付けられているアクティブな NDIS ポートの特性を決定する、基になるミニポート アダプター。 NDIS が、この OID を処理し、ミニポート ドライバーには、この OID クエリは受け取りません。
 
-NDIS でクエリの結果は、クエリが成功すると、 [ **NDIS\_ポート\_配列**](https://msdn.microsoft.com/library/windows/hardware/ff566786)構造体。 **NumberOfPorts**の NDIS メンバー\_ポート\_ミニポート アダプターに関連付けられているアクティブなポートの数が配列に含まれています。 **ポート**の NDIS メンバー\_ポート\_配列へのポインターのリストに含まれる[ **NDIS\_ポート\_特性**](https://msdn.microsoft.com/library/windows/hardware/ff566791)構造体。 各 NDIS\_ポート\_の特性構造が 1 つのポートの特性を定義します。
+NDIS でクエリの結果は、クエリが成功すると、 [ **NDIS\_ポート\_配列**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_port_array)構造体。 **NumberOfPorts**の NDIS メンバー\_ポート\_ミニポート アダプターに関連付けられているアクティブなポートの数が配列に含まれています。 **ポート**の NDIS メンバー\_ポート\_配列へのポインターのリストに含まれる[ **NDIS\_ポート\_特性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_port_characteristics)構造体。 各 NDIS\_ポート\_の特性構造が 1 つのポートの特性を定義します。
 
  
 

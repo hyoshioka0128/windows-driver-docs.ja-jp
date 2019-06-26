@@ -4,12 +4,12 @@ description: ベンダー拡張コマンド
 ms.assetid: 3d360a9f-5a65-452b-a8ad-080dc7d8c8f5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ea83d3dc71207a59612ca4ab3a307bbabc0f9ca
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 300cd6c53b26ade72f2bbfca44d0014f6c855193
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356128"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375387"
 ---
 # <a name="vendor-extended-commands"></a>ベンダー拡張コマンド
 
@@ -19,7 +19,7 @@ ms.locfileid: "63356128"
 
 アプリケーションを使用してデバイスに任意のコマンドを送信することができます、 **IWiaItemExtras::Escape**メソッドは、Microsoft Windows SDK ドキュメントで説明します。 呼び出して**QueryInterface**ルート アイテムへのポインターを取得することができます、 **IWiaItemExtras**インターフェイス。 アプリケーションは任意のオペコードとパラメーターを使用して PTP コマンドを作成し、デバイスにこのコマンドを送信します。 アプリケーションもデータを送信したり、デバイスからデータを受信できます。
 
-デバイス操作の結果をアプリケーションに通知時に、 **IWiaItemExtras::Escape**メソッドから返される応答コードと応答のパラメーターに入力し、 [ **PTP\_仕入先\_データ\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff546452)構造体。 **SessionId**と**TransactionId**のメンバー、 [ **PTP\_ベンダー\_データ\_IN** ](https://msdn.microsoft.com/library/windows/hardware/ff546450)構造は無視されます。 ドライバーは、これらの正しい値を提供します。
+デバイス操作の結果をアプリケーションに通知時に、 **IWiaItemExtras::Escape**メソッドから返される応答コードと応答のパラメーターに入力し、 [ **PTP\_仕入先\_データ\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ptpusd/ns-ptpusd-_ptp_vendor_data_out)構造体。 **SessionId**と**TransactionId**のメンバー、 [ **PTP\_ベンダー\_データ\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ptpusd/ns-ptpusd-_ptp_vendor_data_in)構造は無視されます。 ドライバーは、これらの正しい値を提供します。
 
 エスケープ以外のベンダー定義コマンドの\_PTP\_クリア\_区画、特別なフラグをエスケープ\_PTP\_ベンダー\_コマンドを (OR 演算子を使用して) 組み合わせる必要があります、コマンドを使用使用される、 **IWiaItemExtras::Escape**メソッド。 ベンダー定義コマンドを作成するか、次の説明フラグを使用してデバイス上のオブジェクトを削除する場合、ドライバーは追加またはその内部構造からオブジェクトを削除し、WIA イベントが生成されます。 適切な WIA インターフェイスを通じて他のすべての標準コマンドを発行する必要があります。
 
@@ -86,11 +86,11 @@ ms.locfileid: "63356128"
 
  
 
-**注**  アプリケーションを呼び出すと**IWiaItemExtras::Escape** 、エスケープ\_PTP\_クリア\_ドライバーには、このメソッドは、最初の引数として停止フラグ発行、PTP**デバイスの状態の取得**任意のエンドポイントは停止状態でかどうかを判断する要求。 場合、**デバイスの状態の取得**コマンドが成功すると、ドライバーの問題、 [ **IOCTL\_リセット\_パイプ**](https://msdn.microsoft.com/library/windows/hardware/ff542872)このような各エンドポイントの USB 制御コード。 場合、**デバイスの状態の取得**コマンドが失敗した、ドライバーが、PTP**デバイス リセット**要求。 **デバイスの状態を取得する**と**デバイス リセット**ピマ 15740:2000 標準、最初のエディション、およびリビジョン 1.0 USB まだイメージ キャプチャ デバイス定義の (USB SICDD) に記載されています。
+**注**  アプリケーションを呼び出すと**IWiaItemExtras::Escape** 、エスケープ\_PTP\_クリア\_ドライバーには、このメソッドは、最初の引数として停止フラグ発行、PTP**デバイスの状態の取得**任意のエンドポイントは停止状態でかどうかを判断する要求。 場合、**デバイスの状態の取得**コマンドが成功すると、ドライバーの問題、 [ **IOCTL\_リセット\_パイプ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbscan/ni-usbscan-ioctl_reset_pipe)このような各エンドポイントの USB 制御コード。 場合、**デバイスの状態の取得**コマンドが失敗した、ドライバーが、PTP**デバイス リセット**要求。 **デバイスの状態を取得する**と**デバイス リセット**ピマ 15740:2000 標準、最初のエディション、およびリビジョン 1.0 USB まだイメージ キャプチャ デバイス定義の (USB SICDD) に記載されています。
 
  
 
-次のサンプル コードは、コマンドのベンダー拡張インターフェイスを使用する方法を示しています。 コードが含まれているかどうかを必ず、 *ptpusd.h*ヘッダー エスケープ コードおよび他の定数の定義が含まれているため、および[ **PTP\_ベンダー\_データ\_IN** ](https://msdn.microsoft.com/library/windows/hardware/ff546450)と[ **PTP\_ベンダー\_データ\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff546452)構造体。 **IWiaItemExtras**インターフェイスがへの呼び出しを使用して取得した**QueryInterface**ルート項目にします。 このルート項目へのポインター *pIWiaRootItem*、取得できます、たとえばへの呼び出しによって**IWiaDevMgr::SelectDeviceDlg** (Microsoft Windows SDK のドキュメントで説明)。
+次のサンプル コードは、コマンドのベンダー拡張インターフェイスを使用する方法を示しています。 コードが含まれているかどうかを必ず、 *ptpusd.h*ヘッダー エスケープ コードおよび他の定数の定義が含まれているため、および[ **PTP\_ベンダー\_データ\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ptpusd/ns-ptpusd-_ptp_vendor_data_in)と[ **PTP\_ベンダー\_データ\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ptpusd/ns-ptpusd-_ptp_vendor_data_out)構造体。 **IWiaItemExtras**インターフェイスがへの呼び出しを使用して取得した**QueryInterface**ルート項目にします。 このルート項目へのポインター *pIWiaRootItem*、取得できます、たとえばへの呼び出しによって**IWiaDevMgr::SelectDeviceDlg** (Microsoft Windows SDK のドキュメントで説明)。
 
 ```cpp
 //

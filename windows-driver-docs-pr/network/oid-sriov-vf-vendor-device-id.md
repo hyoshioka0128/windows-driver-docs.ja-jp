@@ -5,12 +5,12 @@ ms.assetid: 19D98264-325B-4EA4-83BF-BBFECD185E55
 ms.date: 08/08/2017
 keywords: -OID_SRIOV_VF_VENDOR_DEVICE_ID ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 71edfff9a856ea29291c8158819b38e9b609a84b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6ce3875d1b5986a9d5a2c0c901cdb9c471010acb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351363"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373892"
 ---
 # <a name="oidsriovvfvendordeviceid"></a>OID\_SRIOV\_VF\_ベンダー\_デバイス\_ID
 
@@ -19,16 +19,16 @@ ms.locfileid: "63351363"
 
 上にあるドライバーは、、PCI Express (PCIe) 物理機能 (PF) ネットワーク アダプターのミニポート ドライバーをこの OID メソッド要求を発行します。 この OID メソッド要求は、PF ミニポート ドライバー シングル ルート I/O 仮想化 (SR-IOV) インターフェイスをサポートする必要があります。
 
-**InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)構造体にはへのポインターが含まれています、 [ **NDIS\_SRIOV\_VF\_ベンダー\_デバイス\_ID\_情報**](https://msdn.microsoft.com/library/windows/hardware/hh451686)構造体。
+**InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体にはへのポインターが含まれています、 [ **NDIS\_SRIOV\_VF\_ベンダー\_デバイス\_ID\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_sriov_vf_vendor_device_id_info)構造体。
 
 <a name="remarks"></a>注釈
 -------
 
-この OID メソッド要求を発行して、前に、上にあるドライバーを初期化する必要があります、 [ **NDIS\_SRIOV\_VF\_ベンダー\_デバイス\_ID\_情報**](https://msdn.microsoft.com/library/windows/hardware/hh451686)構造体し、設定する必要があります、 **VFId**メンバーを元の情報が読み取られる VF の識別子。
+この OID メソッド要求を発行して、前に、上にあるドライバーを初期化する必要があります、 [ **NDIS\_SRIOV\_VF\_ベンダー\_デバイス\_ID\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_sriov_vf_vendor_device_id_info)構造体し、設定する必要があります、 **VFId**メンバーを元の情報が読み取られる VF の識別子。
 
 この OID 要求を処理する場合、PF ミニポート ドライバーする必要があります指定 VF に以前割り当てられたリソースを確認します。 PF のミニポート ドライバーを VF 用のリソースの割り当ての OID メソッド要求中に[OID\_NIC\_スイッチ\_ALLOCATE\_VF](oid-nic-switch-allocate-vf.md)します。 指定した VF 用のリソースが割り当てられていない場合、ドライバーは OID 要求に失敗する必要があります。
 
-詳細については、次を参照してください。[仮想関数、PCI ベンダーとデバイスのデバイス Id の照会](https://msdn.microsoft.com/library/windows/hardware/hh440185)します。
+詳細については、次を参照してください。[仮想関数、PCI ベンダーとデバイスのデバイス Id の照会](https://docs.microsoft.com/windows-hardware/drivers/network/querying-the-pci-vendor-and-device-identifiers-for-a-virtual-function)します。
 
 ### <a name="return-status-codes"></a>リターン状態コード
 
@@ -56,11 +56,11 @@ PF のミニポート ドライバーでは、OID の OID メソッド要求の�
 </tr>
 <tr class="odd">
 <td><p>NDIS_STATUS_INVALID_PARAMETER</p></td>
-<td><p>1 つ以上のメンバーの<a href="https://msdn.microsoft.com/library/windows/hardware/hh451686" data-raw-source="[&lt;strong&gt;NDIS_SRIOV_VF_VENDOR_DEVICE_ID_INFO&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/hh451686)"> <strong>NDIS_SRIOV_VF_VENDOR_DEVICE_ID_INFO</strong> </a>構造が無効な値を指定します。</p></td>
+<td><p>1 つ以上のメンバーの<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_sriov_vf_vendor_device_id_info" data-raw-source="[&lt;strong&gt;NDIS_SRIOV_VF_VENDOR_DEVICE_ID_INFO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_sriov_vf_vendor_device_id_info)"> <strong>NDIS_SRIOV_VF_VENDOR_DEVICE_ID_INFO</strong> </a>構造が無効な値を指定します。</p></td>
 </tr>
 <tr class="even">
 <td><p>NDIS_STATUS_INVALID_LENGTH</p></td>
-<td><p>情報バッファーが小さすぎます。 NDIS セット、<strong>データ。METHOD_INFORMATION します。BytesNeeded</strong>内のメンバー、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff566710" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566710)"> <strong>NDIS_OID_REQUEST</strong> </a>構造体に必要な最小バッファー サイズ。</p></td>
+<td><p>情報バッファーが小さすぎます。 NDIS セット、<strong>データ。METHOD_INFORMATION します。BytesNeeded</strong>内のメンバー、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)"> <strong>NDIS_OID_REQUEST</strong> </a>構造体に必要な最小バッファー サイズ。</p></td>
 </tr>
 <tr class="odd">
 <td><p>NDIS_STATUS_FAILURE</p></td>
@@ -95,9 +95,9 @@ PF のミニポート ドライバーでは、OID の OID メソッド要求の�
 
 
 ****
-[**NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)
+[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
 
-[**NDIS\_SRIOV\_VF\_ベンダー\_デバイス\_ID\_情報**](https://msdn.microsoft.com/library/windows/hardware/hh451686)
+[**NDIS\_SRIOV\_VF\_ベンダー\_デバイス\_ID\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_sriov_vf_vendor_device_id_info)
 
 [OID\_NIC\_スイッチ\_ALLOCATE\_VF](oid-nic-switch-allocate-vf.md)
 

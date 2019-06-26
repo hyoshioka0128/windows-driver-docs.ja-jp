@@ -10,12 +10,12 @@ keywords:
 - リモート管理 WDK のブート パラメーター
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b045ee198245272a2c3eb1be8a09794e5ee2e21b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c341bc214f659a3b4fc5c023c778c2af4993d17f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364712"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360416"
 ---
 # <a name="boot-parameters-to-enable-ems-redirection"></a>EMS リダイレクトを有効にするためのブート パラメーター
 
@@ -29,7 +29,7 @@ ms.locfileid: "63364712"
 
 ## <a name="enabling-ems-on-a-computer-without-an-acpi-spcr-table-in-operating-systems-prior-to-windows-server-2008"></a>Windows Server 2008 より前のオペレーティング システムでは ACPI SPCR テーブルのないコンピューターで EMS を有効にします。
 
-BIOS ファームウェアを ACPI シリアル ポート Console Redirection (SPCR) テーブルではありませんが、コンピューターでの EMS コンソール リダイレクトを有効にするには追加、**リダイレクト COM を = * * * x*と**redirectbaudrate =** パラメーターを\[ブート ローダー\] Boot.ini ファイルのセクション。 これらのパラメーターは、EMS のコンソールのリダイレクトのポートと送信レートを設定します。 BIOS で帯域外の通信が確立されている同じポートと送信レートを使用します。 次に、追加、 [**リダイレクト/** ](https://msdn.microsoft.com/library/windows/hardware/ff557180)ブート エントリのパラメーター。
+BIOS ファームウェアを ACPI シリアル ポート Console Redirection (SPCR) テーブルではありませんが、コンピューターでの EMS コンソール リダイレクトを有効にするには追加、**リダイレクト COM を = * * * x*と**redirectbaudrate =** パラメーターを\[ブート ローダー\] Boot.ini ファイルのセクション。 これらのパラメーターは、EMS のコンソールのリダイレクトのポートと送信レートを設定します。 BIOS で帯域外の通信が確立されている同じポートと送信レートを使用します。 次に、追加、 [**リダイレクト/** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/-redirect)ブート エントリのパラメーター。
 
 次の Bootcfg コマンドは、一覧の最初のブート エントリの EMS コンソールのリダイレクトを使用できます。 COM2 のポートを設定し、115, 200 キロ ビット/秒 (Kbps) に転送速度を設定します。 これらは、同じポートとボー レートの設定、管理者が帯域外のポートの BIOS で設定します。
 
@@ -69,11 +69,11 @@ multi(0)disk(0)rdisk(0)partition(2)\WINDOWS="Windows Server 2003, Standard" /fas
 
 ## <a name="enabling-ems-on-a-computer-without-an-acpi-spcr-table-in-windows-server-2008"></a>Windows Server 2008 で ACPI SPCR テーブルのないコンピューターでの EMS を有効にします。
 
-BIOS ファームウェアを ACPI シリアル ポート Console Redirection (SPCR) テーブルではありませんが、コンピューターでの EMS コンソール リダイレクトを有効にするには使用、 [ **BCDEdit/emssettings** ](https://msdn.microsoft.com/library/windows/hardware/ff542198) COM ポートを設定するコマンドボー レート。
+BIOS ファームウェアを ACPI シリアル ポート Console Redirection (SPCR) テーブルではありませんが、コンピューターでの EMS コンソール リダイレクトを有効にするには使用、 [ **BCDEdit/emssettings** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcdedit--emssettings) COM ポートを設定するコマンドボー レート。
 
 これらのパラメーターは、EMS のコンソールのリダイレクトのグローバル ポートと送信レートを設定します。 BIOS で帯域外の通信が確立されている同じポートと送信レートを使用します。
 
-次に、使用、 [ **BCDEdit/ems** ](https://msdn.microsoft.com/library/windows/hardware/ff542193)ブート エントリの EMS を有効にするコマンド。
+次に、使用、 [ **BCDEdit/ems** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcdedit--ems)ブート エントリの EMS を有効にするコマンド。
 
 次のコマンドは、COM2 と 115200 のボー レートを使用するグローバル EMS のリダイレクト設定を設定し、指定されたブート エントリの EMS を有効にします。
 
@@ -87,7 +87,7 @@ bcdedit /ems {18b123cd-2bf6-11db-bfae-00e018e2b8db} on
 
 ## <a name="enabling-ems-on-a-computer-with-an-spcr-table-in-operating-systems-prior-to-windows-server-2008"></a>Windows Server 2008 より前のオペレーティング システムで SPCR テーブルを使用しているコンピューターで EMS を有効にします。
 
-ACPI BIOS ファームウェアと ACPI SPCR テーブルを使用しているコンピューターでは、EMS を有効にするを使用するか、**リダイレクト = USEBIOSSETTINGS**パラメーター、または **リダイレクト COM を = * * * x*と**redirectbaudrate =** パラメーター。 次に、追加、 [**リダイレクト/** ](https://msdn.microsoft.com/library/windows/hardware/ff557180)ブート エントリのパラメーター。
+ACPI BIOS ファームウェアと ACPI SPCR テーブルを使用しているコンピューターでは、EMS を有効にするを使用するか、**リダイレクト = USEBIOSSETTINGS**パラメーター、または **リダイレクト COM を = * * * x*と**redirectbaudrate =** パラメーター。 次に、追加、 [**リダイレクト/** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/-redirect)ブート エントリのパラメーター。
 
 次の例での使用、**リダイレクト = USEBIOSSETTINGS**パラメーター。 次の Bootcfg コマンドは、一覧の最初のブート エントリの EMS コンソールのリダイレクトを使用できます。
 
@@ -130,7 +130,7 @@ multi(0)disk(0)rdisk(0)partition(2)\WINDOWS="Windows Server 2003, Standard" /fas
 
 ## <a name="enabling-ems-on-a-computer-with-an-spcr-table-in-windows-server-2008"></a>Windows Server 2008 で SPCR テーブルを使用しているコンピューターでの EMS を有効にします。
 
-ACPI BIOS ファームウェアと ACPI SPCR テーブルを使用しているコンピューターでは、EMS を有効にするを使用することができます、 [ **BCDEdit/emssettings** ](https://msdn.microsoft.com/library/windows/hardware/ff542198)どちらかを指定し、 **BIOS**パラメーターまたは、 **emsport**と**emsbaudrate**パラメーター。 ブート エントリの EMS を有効にするを使用して、 [ **BCDEdit/ems** ](https://msdn.microsoft.com/library/windows/hardware/ff542193)コマンド。
+ACPI BIOS ファームウェアと ACPI SPCR テーブルを使用しているコンピューターでは、EMS を有効にするを使用することができます、 [ **BCDEdit/emssettings** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcdedit--emssettings)どちらかを指定し、 **BIOS**パラメーターまたは、 **emsport**と**emsbaudrate**パラメーター。 ブート エントリの EMS を有効にするを使用して、 [ **BCDEdit/ems** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcdedit--ems)コマンド。
 
 次の例では、使用する方法、 **BIOS**パラメーター。 次の BCDEdit コマンドでは、現在のブート エントリの EMS コンソールのリダイレクトを使用できます。
 
@@ -141,7 +141,7 @@ bcdedit /ems on
 
 ## <a name="enabling-ems-on-a-computer-with-efi-firmware-in-operating-systems-prior-to-windows-server-2008"></a>Windows Server 2008 より前のオペレーティング システムで、EFI ファームウェアを使用しているコンピューターで EMS を有効にします。
 
-EFI ファームウェアを使用しているコンピューターで EMS を有効にするのには、Bootcfg を使用して追加、 [**リダイレクト/** ](https://msdn.microsoft.com/library/windows/hardware/ff557180)ブート エントリのパラメーター。 Windows では、ファームウェアの SPCR テーブルを参照して、帯域外のポートとその設定を検索し、EMS のコンソールのリダイレクトを同じポートとレートを使用します。
+EFI ファームウェアを使用しているコンピューターで EMS を有効にするのには、Bootcfg を使用して追加、 [**リダイレクト/** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/-redirect)ブート エントリのパラメーター。 Windows では、ファームウェアの SPCR テーブルを参照して、帯域外のポートとその設定を検索し、EMS のコンソールのリダイレクトを同じポートとレートを使用します。
 
 次の Bootcfg コマンドは、Itanium ベースのコンピューターで EMS のリダイレクトを使用できます。 使用して、Bootcfg **/ems**スイッチの引数を追加すると、 **リダイレクト/** ブート エントリのパラメーター。 **/Id**スイッチ ブート エントリを識別します。
 
@@ -169,7 +169,7 @@ OsFilePath:       \Device\HarddiskVolume3\WINDOWS
 
 ## <a name="enabling-ems-on-a-computer-with-efi-firmware-in-windows-server-2008"></a>Windows Server 2008 で EFI ファームウェアを使用しているコンピューターでの EMS を有効にします。
 
-EFI ファームウェアを使用しているコンピューターでは、EMS を有効にする、使用、 [ **BCDEdit/ems** ](https://msdn.microsoft.com/library/windows/hardware/ff542193)コマンドし、ブート エントリを指定します。 Windows では、ファームウェアの SPCR テーブルを参照して、帯域外のポートとその設定を検索し、EMS のコンソールのリダイレクトを同じポートとレートを使用します。
+EFI ファームウェアを使用しているコンピューターでは、EMS を有効にする、使用、 [ **BCDEdit/ems** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcdedit--ems)コマンドし、ブート エントリを指定します。 Windows では、ファームウェアの SPCR テーブルを参照して、帯域外のポートとその設定を検索し、EMS のコンソールのリダイレクトを同じポートとレートを使用します。
 
 次のコマンドは、{18b123cd-2bf6-11db-bfae-00e018e2b8db} の識別子を持つ指定されたブート エントリの EMS コンソールのリダイレクトを使用できます。
 
@@ -203,7 +203,7 @@ Bootcfg もから EMS ポートとボー レートの設定が削除、他のブ
 
 ## <a name="changing-ems-settings-on-a-computer-running-windows-server-2008"></a>Windows Server 2008 を実行するコンピューターでの EMS 設定の変更
 
-ACPI BIOS ファームウェアと ACPI SPCR テーブルを持つコンピューター上のブート エントリの EMS を構成するときに使用できます、 [ **BCDEdit/emssettings** ](https://msdn.microsoft.com/library/windows/hardware/ff542198)コマンドを指定するか、 **BIOS**オプションまたは**emsport**と**emsbaudrate**オプション。 使用する場合、 **BIOS**オプションを設定しないでください、 **emsport**または**emsbaudrate**オプション。
+ACPI BIOS ファームウェアと ACPI SPCR テーブルを持つコンピューター上のブート エントリの EMS を構成するときに使用できます、 [ **BCDEdit/emssettings** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcdedit--emssettings)コマンドを指定するか、 **BIOS**オプションまたは**emsport**と**emsbaudrate**オプション。 使用する場合、 **BIOS**オプションを設定しないでください、 **emsport**または**emsbaudrate**オプション。
 
 EFI ファームウェアをあるコンピューター上で EMS を構成することも ACPI BIOS ファームウェア、ACPI SPCR テーブルを使用せずには、使用するときに、 **BCDEdit/emssettings**コマンドを指定、 **emsport**と**emsbaudrate**オプション。
 
@@ -215,7 +215,7 @@ EFI ファームウェアをあるコンピューター上で EMS を構成す�
 bcdedit /emssettings EMSPORT:2 EMSBAUDRATE:57600
 ```
 
-有効またはブート エントリの EMS を無効にする、使用、 [ **BCDEdit/ems** ](https://msdn.microsoft.com/library/windows/hardware/ff542193)コマンド。
+有効またはブート エントリの EMS を無効にする、使用、 [ **BCDEdit/ems** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcdedit--ems)コマンド。
 
 たとえば、次のコマンドは、{173075c9-2cb2-11dc-b426-001558c41f5c} の識別子を持つ特定のブート エントリの EMS を有効.
 

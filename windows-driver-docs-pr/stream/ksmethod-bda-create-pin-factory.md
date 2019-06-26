@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1390dd794d25609148a176df6e978fbbfc6f5a8f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 562b1e7da0f7a067756b4e2335ea96889069a97e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343162"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370402"
 ---
 # <a name="ksmethodbdacreatepinfactory"></a>KSMETHOD\_BDA\_作成\_PIN\_ファクトリ
 
@@ -56,9 +56,9 @@ ULONG、ピン留めするファクトリの識別子を表します。
 ## <a name="see-also"></a>関連項目
 
 
-[**BdaMethodCreatePin**](https://msdn.microsoft.com/library/windows/hardware/ff556467)
+[**BdaMethodCreatePin**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdasup/nf-bdasup-bdamethodcreatepin)
 
-[**KSM\_暗証番号 (PIN)**](https://msdn.microsoft.com/library/windows/hardware/ff563453)
+[**KSM\_暗証番号 (PIN)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdasup/ns-bdasup-_ksm_pin)
 
  
 

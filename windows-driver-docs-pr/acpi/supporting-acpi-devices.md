@@ -13,12 +13,12 @@ keywords:
 - WDM 関数ドライバー WDK ACPI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d0d544118b6e030ed46b1008fc4116f6a4af724
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7e12356fa23256abf0a4e9692876f24a56afa56a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330888"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355805"
 ---
 # <a name="supporting-acpi-devices"></a>ACPI デバイスをサポートする
 
@@ -27,7 +27,7 @@ ms.locfileid: "63330888"
 
 ACPI のデバイスには、バッテリ、熱ゾーンは、システムを ACPI 名前空間で定義されているその他のデバイスなどの低レベルのシステム デバイスが含まれます。 ACPI の名前空間は、ACPI BIOS を使用してオブジェクトを参照する階層の名前空間です。
 
-システム提供の結合操作[ACPI ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff540493)と ACPI BIOS は ACPI デバイスの基本的な機能をサポートし、オペレーティング システムの残りの部分に対して透過的です。 ACPI のデバイスを ACPI システムの説明テーブルの定義のブロックを指定します。 デバイスの定義のブロックには、デバイス データにアクセスするために使用するデバイスのメモリの連続したブロックを指定する操作領域が、特に指定します。
+システム提供の結合操作[ACPI ドライバー](https://docs.microsoft.com/windows-hardware/drivers/kernel/acpi-driver)と ACPI BIOS は ACPI デバイスの基本的な機能をサポートし、オペレーティング システムの残りの部分に対して透過的です。 ACPI のデバイスを ACPI システムの説明テーブルの定義のブロックを指定します。 デバイスの定義のブロックには、デバイス データにアクセスするために使用するデバイスのメモリの連続したブロックを指定する操作領域が、特に指定します。
 
 ACPI デバイスの機能を強化するために、ベンダーは WDM 関数ドライバー、ドライバーによって提供される操作のリージョンの ACPI BIOS と通信を指定できます。 ACPI ドライバーでは、関数のドライバーによって提供される操作リージョン ハンドラーを呼び出すことによって操作の領域にアクセスします。
 
@@ -51,6 +51,6 @@ ACPI 操作リージョン経由の通信、によって関数ドライバー直
 
 [ACPI 関数デバイスの操作](operation-of-an-acpi-device-function-driver.md)
 
-システム提供についてサポートを参照してください、ACPI デバイス関数のドライバーをサポートするルーチン[ACPI 操作リージョン ハンドラーの参照](https://msdn.microsoft.com/library/windows/hardware/ff536132)します。
+システム提供についてサポートを参照してください、ACPI デバイス関数のドライバーをサポートするルーチン[ACPI 操作リージョン ハンドラーの参照](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_acpi/index)します。
 
 ACPI のデバイスと名前空間の詳細については、次を参照してください。、 [Advanced Configuration and Power Interface (ACPI) 仕様](https://go.microsoft.com/fwlink/p/?linkid=866846)します。

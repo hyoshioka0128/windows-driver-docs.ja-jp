@@ -3,12 +3,12 @@ Description: 新しいシステムを構築する場合、このトピックの�
 title: システム開発において推奨される USB テスト
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e4519642815ef34c141be5497c1373fe2f033ca4
-ms.sourcegitcommit: fb1383cab980eb3d755cd67aa2d6634087cd7b7a
+ms.openlocfilehash: 25a1885bb0b2f3b60c4eb163e01dec18a9a52aa6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65501773"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356576"
 ---
 # <a name="recommended-usb-tests-for-system-development"></a>システム開発において推奨される USB テスト
 
@@ -26,11 +26,11 @@ ms.locfileid: "65501773"
 ## <a name="stage-1system-bring-up"></a>第 1 段階: システム bring アップ
 
 
--   [DF – (Basic) の前後に IO とスリープ](https://msdn.microsoft.com/library/windows/hardware/dn247481.aspx)
--   [DF - 前後の I/O を伴う PNP (無効化/有効化) (基本)](https://msdn.microsoft.com/library/windows/hardware/dn260411.aspx)
--   [USB Exposed ポート コント ローラーのテスト](https://msdn.microsoft.com/library/windows/hardware/hh998021.aspx)
--   [USB xHCI 転送速度テスト](https://msdn.microsoft.com/library/windows/hardware/hh997864.aspx)
--   [USB3 終了](https://msdn.microsoft.com/library/windows/hardware/jj124672.aspx)
+-   [DF – (Basic) の前後に IO とスリープ](https://docs.microsoft.com/previous-versions/windows/hardware/hck/dn247481(v=vs.85))
+-   [DF - 前後の I/O を伴う PNP (無効化/有効化) (基本)](https://docs.microsoft.com/previous-versions/windows/hardware/hck/dn260411(v=vs.85))
+-   [USB Exposed ポート コント ローラーのテスト](https://docs.microsoft.com/previous-versions/windows/hardware/hck/hh998021(v=vs.85))
+-   [USB xHCI 転送速度テスト](https://docs.microsoft.com/previous-versions/windows/hardware/hck/hh997864(v=vs.85))
+-   [USB3 終了](https://docs.microsoft.com/previous-versions/windows/hardware/hck/jj124672(v=vs.85))
 
 <table>
 <colgroup>
@@ -80,9 +80,9 @@ ms.locfileid: "65501773"
 ## <a name="stage-2system-integration"></a>ステージ 2-システムとの統合
 
 
--   [DF - 再起動の再起動と IO (機能) の前後](https://msdn.microsoft.com/library/windows/hardware/dn260266.aspx)
--   [DF - スリープと PNP (無効および有効にする) (機能) の前後に IO の前に](https://msdn.microsoft.com/library/windows/hardware/dn260391.aspx)
--   [USB xHCI 転送速度テスト](https://msdn.microsoft.com/library/windows/hardware/hh997864.aspx)
+-   [DF - 再起動の再起動と IO (機能) の前後](https://docs.microsoft.com/previous-versions/windows/hardware/hck/dn260266(v=vs.85))
+-   [DF - スリープと PNP (無効および有効にする) (機能) の前後に IO の前に](https://docs.microsoft.com/previous-versions/windows/hardware/hck/dn260391(v=vs.85))
+-   [USB xHCI 転送速度テスト](https://docs.microsoft.com/previous-versions/windows/hardware/hck/hh997864(v=vs.85))
 
 <table>
 <colgroup>
@@ -138,13 +138,13 @@ ms.locfileid: "65501773"
 
 システム 1
 
--   [DF - (認定) 中に IO とスリープ](https://msdn.microsoft.com/library/windows/hardware/dn247416.aspx)
--   [DF - 同時実行ハードウェアおよびオペレーティング システム (CHAOS) テスト (認定)](https://msdn.microsoft.com/library/windows/hardware/hh998603.aspx)
+-   [DF - (認定) 中に IO とスリープ](https://docs.microsoft.com/previous-versions/windows/hardware/hck/dn247416(v=vs.85))
+-   [DF - 同時実行ハードウェアおよびオペレーティング システム (CHAOS) テスト (認定)](https://docs.microsoft.com/previous-versions/windows/hardware/hck/hh998603(v=vs.85))
 
 システム 2
 
--   [DF - スリープと PNP (無効および有効にする) (機能) の前後に IO の前に](https://msdn.microsoft.com/library/windows/hardware/dn260391.aspx)
--   [USB xHCI 転送速度テスト](https://msdn.microsoft.com/library/windows/hardware/hh997864.aspx)
+-   [DF - スリープと PNP (無効および有効にする) (機能) の前後に IO の前に](https://docs.microsoft.com/previous-versions/windows/hardware/hck/dn260391(v=vs.85))
+-   [USB xHCI 転送速度テスト](https://docs.microsoft.com/previous-versions/windows/hardware/hck/hh997864(v=vs.85))
 
 システム (ドッキング ステーションがサポートされている) 場合 3
 

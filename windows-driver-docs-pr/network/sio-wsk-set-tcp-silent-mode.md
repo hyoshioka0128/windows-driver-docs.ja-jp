@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - Windows Vista 以降のドライバーをネットワーク SIO_WSK_SET_TCP_SILENT_MODE 制御コード
 ms.localizationpriority: medium
-ms.openlocfilehash: 70fc504df0db9cb1d355199f7f1b0ddd0be34be6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8015a45c335ccd797f0edeb4fe5aba4e49c362a7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351683"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376418"
 ---
 # <a name="siowsksettcpsilentmode-control-code"></a>SIO\_WSK\_設定\_TCP\_サイレント\_モード制御コード
 
@@ -20,7 +20,7 @@ ms.locfileid: "63351683"
 
 サイレント モードで TCP 接続は、ネットワーク上でのデータまたはコントロールのパケットを送信しません。 このソケット I/O 制御操作は、接続の TCP ソケットだけに適用されます。 ループバックではサポートされません。
 
-この操作を実行するには、呼び出し、 [ **WskControlSocket** ](https://msdn.microsoft.com/library/windows/hardware/ff571127)関数は次のパラメーター。
+この操作を実行するには、呼び出し、 [ **WskControlSocket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_control_socket)関数は次のパラメーター。
 
 <a name="parameters"></a>パラメーター
 ----------
@@ -52,15 +52,15 @@ ms.locfileid: "63351683"
 <a name="remarks"></a>注釈
 -------
 
-呼び出すときに、WSK アプリケーションは IRP へのポインターを指定する必要があります、 [ **WskControlSocket** ](https://msdn.microsoft.com/library/windows/hardware/ff571127)サイレント モードを有効にする関数。
+呼び出すときに、WSK アプリケーションは IRP へのポインターを指定する必要があります、 [ **WskControlSocket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_control_socket)サイレント モードを有効にする関数。
 
-呼び出しの前に、WSK アプリケーション[ **WskControlSocket** ](https://msdn.microsoft.com/library/windows/hardware/ff571127)サイレント モードを有効にする必要があります保留中の送信がないことを確認または要求を切断します。
+呼び出しの前に、WSK アプリケーション[ **WskControlSocket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_control_socket)サイレント モードを有効にする必要があります保留中の送信がないことを確認または要求を切断します。
 
-[**WskControlSocket** ](https://msdn.microsoft.com/library/windows/hardware/ff571127)戻ります**状態\_成功**サイレント モードが有効になっています。 サイレント モードを有効にすると、送信、および切断要求は失敗で**状態\_無効な\_デバイス\_状態**サイレント モードで受信したすべてのコントロールやデータ パケットが破棄されます。
+[**WskControlSocket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_control_socket)戻ります**状態\_成功**サイレント モードが有効になっています。 サイレント モードを有効にすると、送信、および切断要求は失敗で**状態\_無効な\_デバイス\_状態**サイレント モードで受信したすべてのコントロールやデータ パケットが破棄されます。
 
-このソケットでだけ有効な操作は[ **WskCloseSocket**](https://msdn.microsoft.com/library/windows/hardware/ff571124)します。
+このソケットでだけ有効な操作は[ **WskCloseSocket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_close_socket)します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -83,9 +83,9 @@ ms.locfileid: "63351683"
 ## <a name="see-also"></a>関連項目
 
 
-[**WskCloseSocket**](https://msdn.microsoft.com/library/windows/hardware/ff571124)
+[**WskCloseSocket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_close_socket)
 
-[**WskControlSocket**](https://msdn.microsoft.com/library/windows/hardware/ff571127)
+[**WskControlSocket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_control_socket)
 
  
 

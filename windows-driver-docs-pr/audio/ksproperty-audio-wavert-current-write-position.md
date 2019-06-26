@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a102a879f435225b7e918fc529cfcdf8ef9e1808
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0c7dd2b4d0735c79cddb737f79fe060b7a7f237a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332878"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360568"
 ---
 # <a name="kspropertyaudiowavertcurrentwriteposition"></a>KSPROPERTY\_オーディオ\_WAVERT\_現在\_書き込み\_位置
 
@@ -65,7 +65,7 @@ KSPROPERTY\_オーディオ\_WAVERT\_現在\_書き込み\_位置プロパティ
 <a name="remarks"></a>注釈
 -------
 
-このプロパティの要求によって提供された情報を解釈する方法を理解するには、サイズが n バイトの循環バッファーを想定しています。 すべてのデータが書き込まれる前に、初期の書き込み位置には 0 です。 倍数であるチャンク バッファーにデータが書き込まれる[ **WAVEFORMATEX.nBlockAlign** ](https://msdn.microsoft.com/library/windows/hardware/ff538799)バイト。
+このプロパティの要求によって提供された情報を解釈する方法を理解するには、サイズが n バイトの循環バッファーを想定しています。 すべてのデータが書き込まれる前に、初期の書き込み位置には 0 です。 倍数であるチャンク バッファーにデータが書き込まれる[ **WAVEFORMATEX.nBlockAlign** ](https://docs.microsoft.com/windows/desktop/api/mmreg/ns-mmreg-twaveformatex)バイト。
 
 たとえば、バッファーには、20 ミリ秒 48000 Hz のサンプリングされた 16 ビット PCM ステレオ データにはが含まれます。 NBlockAlign メンバーの説明に基づいて、 **WAVEFORMATEX**構造体の場合は、この例の nBlockAlign で、2 = \* 16/8 = 4 バイト。 つまり、バッファーの長さが 48000 である\*20/1000 = 960 のフレームまたは 960 \* 4 = 3840 バイト。
 
@@ -80,7 +80,7 @@ if new write position = old write position, we’ve had a glitch
      log a "duplicate write position" glitch event
 ```
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -103,7 +103,7 @@ if new write position = old write position, we’ve had a glitch
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
-[**WAVEFORMATEX**](https://msdn.microsoft.com/library/windows/hardware/ff538799)
+[**WAVEFORMATEX**](https://docs.microsoft.com/windows/desktop/api/mmreg/ns-mmreg-twaveformatex)
 
  
 

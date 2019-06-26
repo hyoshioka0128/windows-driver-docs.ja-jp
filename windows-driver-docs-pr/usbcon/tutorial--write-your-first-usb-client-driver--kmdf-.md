@@ -3,12 +3,12 @@ Description: このトピックでは、単純なカーネル モード ドラ�
 title: 初めての USB クライアント ドライバーの記述方法 (KMDF)
 ms.date: 06/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 65fd69e5353ca9fd179d388c38768de7292dcd5d
-ms.sourcegitcommit: 2589492f3c14f779efa8b446e81d4e0f6d048f4f
+ms.openlocfilehash: 36c4ab490118f72610ec52837e014334ca77c9c6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2019
-ms.locfileid: "66815067"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368789"
 ---
 # <a name="how-to-write-your-first-usb-client-driver-kmdf"></a>初めての USB クライアント ドライバーの記述方法 (KMDF)
 
@@ -32,7 +32,7 @@ ms.locfileid: "66815067"
 -   ホスト コンピューターでは、Windows 8 の最新 Windows Driver Kit (WDK) を持ちます。 キットは、ヘッダー、ライブラリ、ツール、ドキュメントについては、デバッグ ツールを開発するために必要なビルド、デバッグと KMDF ドライバー。 WDK の最新バージョンを取得するには、次を参照してください。 [Windows Driver Kit (WDK) のダウンロード](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk)します。
 -   ホスト コンピューターでは、Windows 用デバッグ ツールの最新バージョンがあります。 WDK から最新バージョンを取得することもできますを[ダウンロードとデバッグ ツールの Windows にインストール](https://msdn.microsoft.com/windows/hardware/gg463009.aspx)します。
 -   Windows Vista または Windows の以降のバージョン、ターゲット コンピューターが実行されています。
--   カーネルのデバッグと、ホストとターゲット コンピューターが構成されます。 詳細については、次を参照してください。[設定、ネットワーク接続のセットアップでは、Visual Studio](https://msdn.microsoft.com/library/windows/hardware/hh439353)します。
+-   カーネルのデバッグと、ホストとターゲット コンピューターが構成されます。 詳細については、次を参照してください。[設定、ネットワーク接続のセットアップでは、Visual Studio](https://docs.microsoft.com/windows-hardware/drivers/debugger/setting-up-a-network-debugging-connection-in-visual-studio)します。
 
 **ハードウェア要件**
 
@@ -44,9 +44,9 @@ Microsoft USB Test Tool (MUTT) デバイスを取得することもできます�
 
 **推奨資料**
 
--   [すべてのドライバー開発者向けの概念](https://msdn.microsoft.com/library/windows/hardware/ff554731)
--   [デバイス ノードとデバイス スタック](https://msdn.microsoft.com/library/windows/hardware/ff554721)
--   [Windows ドライバーの概要](https://msdn.microsoft.com/library/windows/hardware/ff554690)
+-   [すべてのドライバー開発者向けの概念](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/concepts-and-knowledge-for-all-driver-developers)
+-   [デバイス ノードとデバイス スタック](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/device-nodes-and-device-stacks)
+-   [Windows ドライバーの概要](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/index)
 -   [カーネル モード ドライバー フレームワーク](https://docs.microsoft.com/windows-hardware/drivers/wdf/)
 -   *Windows Driver Foundation でのドライバーの開発*少額 Orwick と Guy Smith によって書き込まれた、します。 詳細については、次を参照してください。 [WDF のドライバーが開発](https://msdn.microsoft.com/windows/hardware/gg463318)します。
 
@@ -55,7 +55,7 @@ Microsoft USB Test Tool (MUTT) デバイスを取得することもできます�
 
 ### <a href="" id="generate-the-kmdf-driver-code-by-using-the--visual-studio-professional-2019---usb-driver-template"></a>手順 1:Visual Studio Professional 2019 USB ドライバーのテンプレートを使用して、KMDF ドライバー コードを生成します。
 
-KMDF ドライバー コードの生成方法については、手順を参照してください。 [KMDF ドライバーの作成、テンプレートに基づく](https://msdn.microsoft.com/library/windows/hardware/hh439654)します。
+KMDF ドライバー コードの生成方法については、手順を参照してください。 [KMDF ドライバーの作成、テンプレートに基づく](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/writing-a-kmdf-driver-based-on-a-template)します。
 
 **USB に固有のコードを Visual Studio Professional 2019 で、次のオプションを選択します。**
 
@@ -116,7 +116,7 @@ INF ファイルでは、製造元とプロバイダーの名前をデバイス 
 
 ### <a href="" id="configure-a-computer-for-testing-and-debugging"></a>手順 4:テストとデバッグ用のコンピューターを構成します。
 
-でテストおよびドライバーをデバッグするには、ホスト コンピューターとターゲット コンピューターのドライバーにデバッガーを実行します。 ここまでは、ドライバーをビルドするのにホスト コンピューターで Visual Studio を使用しています。 次に、ターゲット コンピューターを構成する必要があります。 対象のコンピュータを構成する手順については、[ドライバーの展開とテスト用にプロビジョニング](https://msdn.microsoft.com/library/windows/hardware/dn745909)します。
+でテストおよびドライバーをデバッグするには、ホスト コンピューターとターゲット コンピューターのドライバーにデバッガーを実行します。 ここまでは、ドライバーをビルドするのにホスト コンピューターで Visual Studio を使用しています。 次に、ターゲット コンピューターを構成する必要があります。 対象のコンピュータを構成する手順については、[ドライバーの展開とテスト用にプロビジョニング](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/provision-a-target-computer-wdk-8-1)します。
 
 ### <a href="" id="enable-tracing-for-kernel-debugging"></a>手順 5:カーネルのデバッグ トレースを有効にします。
 
@@ -130,7 +130,7 @@ INF ファイルでは、製造元とプロバイダーの名前をデバイス 
 
    **tracepdb -f \[PDBFiles\] -p \[TMFDirectory\]**
 
-   **-F**オプションは、場所と PDB シンボル ファイルの名前を指定します。 **-P** Tracepdb によって作成される TMF ファイルの場所を指定します。 詳細については、次を参照してください。 [ **Tracepdb コマンド**](https://msdn.microsoft.com/library/windows/hardware/ff553043)します。
+   **-F**オプションは、場所と PDB シンボル ファイルの名前を指定します。 **-P** Tracepdb によって作成される TMF ファイルの場所を指定します。 詳細については、次を参照してください。 [ **Tracepdb コマンド**](https://docs.microsoft.com/windows-hardware/drivers/devtest/tracepdb-commands)します。
 
    指定した位置には、3 つのファイル (.c ファイルで、プロジェクトごとに 1 つ) を確認します。 GUID ファイル名が表示されます。
 
@@ -153,7 +153,7 @@ INF ファイルでは、製造元とプロバイダーの名前をデバイス 
 
 **WPP トレースの対象のコンピューターを構成するには**
 
-1. ターゲット コンピューターにトレース ログ ツールがあることを確認します。 ツールがである、 <em>&lt;インストール\_フォルダー&gt;</em>Windows キット\\8.0\\ツール\\ *&lt;arch&gt;*  WDK のフォルダー。 詳細については、次を参照してください。 [ **Tracelog コマンド構文**](https://msdn.microsoft.com/library/windows/hardware/ff553012)します。
+1. ターゲット コンピューターにトレース ログ ツールがあることを確認します。 ツールがである、 <em>&lt;インストール\_フォルダー&gt;</em>Windows キット\\8.0\\ツール\\ *&lt;arch&gt;*  WDK のフォルダー。 詳細については、次を参照してください。 [ **Tracelog コマンド構文**](https://docs.microsoft.com/windows-hardware/drivers/devtest/tracelog-command-syntax)します。
 2. 開く、**コマンド ウィンドウ**管理者として実行します。
 3. 次のコマンドを入力します。
 
@@ -183,11 +183,11 @@ INF ファイルでは、製造元とプロバイダーの名前をデバイス 
 
  
 
-Visual Studio Professional 2019 でターゲット システムにドライバーを展開する方法の詳細については、次を参照してください。[テスト コンピューターにドライバーを展開する](https://msdn.microsoft.com/windows-drivers/develop/deploying_a_driver_to_a_test_computer)します。
+Visual Studio Professional 2019 でターゲット システムにドライバーを展開する方法の詳細については、次を参照してください。[テスト コンピューターにドライバーを展開する](https://docs.microsoft.com/windows-hardware/drivers)します。
 
 デバイス マネージャーを使用して、ターゲット コンピューターでドライバーを手動でインストールできます。 コマンド プロンプトからドライバーをインストールする場合は、これらのユーティリティを使用できます。
 
--   [PnPUtil](https://msdn.microsoft.com/library/windows/hardware/ff550419)
+-   [PnPUtil](https://docs.microsoft.com/windows-hardware/drivers/devtest/pnputil)
 
     このツールは、Windows 付属します。 Windows では\\System32 します。 このユーティリティを使用して、ドライバーをドライバー ストアに追加することができます。
 
@@ -200,9 +200,9 @@ Visual Studio Professional 2019 でターゲット システムにドライバ�
     Published name : oem22.inf
     ```
 
-    詳細については、次を参照してください。 [PnPUtil 例](https://msdn.microsoft.com/library/windows/hardware/ff550428)します。
+    詳細については、次を参照してください。 [PnPUtil 例](https://docs.microsoft.com/windows-hardware/drivers/devtest/pnputil-examples)します。
 
--   [**DevCon Update**](https://msdn.microsoft.com/library/windows/hardware/ff544832)
+-   [**DevCon Update**](https://docs.microsoft.com/windows-hardware/drivers/devtest/devcon-update)
 
     このツールには、WDK します。 インストールし、ドライバーの更新に使用できます。
 

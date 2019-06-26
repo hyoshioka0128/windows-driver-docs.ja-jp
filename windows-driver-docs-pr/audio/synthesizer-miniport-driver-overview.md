@@ -14,12 +14,12 @@ keywords:
 - シンセサイザー WDK オーディオ、カーネル モードのハードウェア アクセラレーション
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 53db733ab39d953b78b2787ec29193e631eadf8d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2c46d3ef342ea8d88a82d3dba62cca6bcc0fdff7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335397"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354237"
 ---
 # <a name="synthesizer-miniport-driver-overview"></a>シンセサイザー ミニポート ドライバーの概要
 
@@ -33,17 +33,17 @@ ms.locfileid: "63335397"
 
 DirectMusic のカーネル モード ドライバー dmusicks.h は最も重要なヘッダー ファイルです。 ミニポート ドライバーを実装する必要がある主なカーネル モード インターフェイスが含まれています。 これらのインターフェイスは次のとおりです。
 
-[IMiniportDMus](https://msdn.microsoft.com/library/windows/hardware/ff536699)
+[IMiniportDMus](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nn-dmusicks-iminiportdmus)
 
-[ISynthSinkDMus](https://msdn.microsoft.com/library/windows/hardware/ff537011)
+[ISynthSinkDMus](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nn-dmusicks-isynthsinkdmus)
 
-[IMXF](https://msdn.microsoft.com/library/windows/hardware/ff536782)
+[IMXF](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nn-dmusicks-imxf)
 
-[IAllocatorMXF](https://msdn.microsoft.com/library/windows/hardware/ff536491)
+[IAllocatorMXF](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nn-dmusicks-iallocatormxf)
 
-[IMasterClock](https://msdn.microsoft.com/library/windows/hardware/ff536696)
+[IMasterClock](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nn-dmusicks-imasterclock)
 
-[IPortDMus](https://msdn.microsoft.com/library/windows/hardware/ff536879)
+[IPortDMus](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nn-dmusicks-iportdmus)
 
 これらのインターフェイスの最後の 3 つは、PortCls.sys で実装されます。
 
@@ -53,7 +53,7 @@ DirectMusic のカーネル モード ドライバー dmusicks.h は最も重要
 
 ![directmusic システムにアダプタのドライバの関係を示す図](images/dmkmbig.png)
 
-最上位のレベルでは、ドライバーは DirectMusic ポート ドライバーを介して公開されます (、 **IDirectMusicPort**インターフェイス インスタンス)。 これは、アプリケーションと DirectMusic との通信です。 このポート ドライバー下と通信する、暗証番号 (pin) のインスタンス経由の呼び出しをストリーミングする標準のカーネルを使用して、 [ **DeviceIoControl** ](https://msdn.microsoft.com/library/windows/desktop/aa363216)関数 (Microsoft Windows SDK のドキュメントで説明)。
+最上位のレベルでは、ドライバーは DirectMusic ポート ドライバーを介して公開されます (、 **IDirectMusicPort**インターフェイス インスタンス)。 これは、アプリケーションと DirectMusic との通信です。 このポート ドライバー下と通信する、暗証番号 (pin) のインスタンス経由の呼び出しをストリーミングする標準のカーネルを使用して、 [ **DeviceIoControl** ](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)関数 (Microsoft Windows SDK のドキュメントで説明)。
 
 "Port"という用語に、上の図の 2 つの競合する意味があるに注意してください。 DirectMusic API で用語のポートの使用を混同しないように、上記のユーザー モードでカーネル モードで Dmu ポート ドライバー。 条件では、2 つのコンテキストで似ていますが、若干異なる意味があります。 具体的には、注意、 **IDirectMusicPort**図の上部にあるインターフェイスには、図の下半分で Dmu ポート ドライバーを実装するピンが 1 つのインスタンスの抽象化します。
 

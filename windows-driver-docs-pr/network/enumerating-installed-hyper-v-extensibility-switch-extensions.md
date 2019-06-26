@@ -4,19 +4,19 @@ description: Hyper-V 拡張可能スイッチ拡張機能の列挙
 ms.assetid: AC468A8F-5C48-419B-9E9E-D63925E1CE9D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 06c2019cdc8ce75135a6fa279d48573bc0132432
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 477799f927ef067e391b71dc79d1b7c4f153171d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372472"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354582"
 ---
 # <a name="enumerating-hyper-v-extensible-switch-extensions"></a>Hyper-V 拡張可能スイッチ拡張機能の列挙
 
 
-[Get-vmswitchextension](https://technet.microsoft.com/library/hh848603.aspx) PowerShell コマンドレットは、拡張可能スイッチのインスタンスにバインドされている HYPER-V 拡張可能スイッチ拡張機能を列挙します。 このコマンドレットは、拡張可能スイッチのインスタンスで、拡張機能が有効になっているかどうかも報告されます。
+[Get-vmswitchextension](https://docs.microsoft.com/powershell/module/hyper-v/get-vmsystemswitchextension) PowerShell コマンドレットは、拡張可能スイッチのインスタンスにバインドされている HYPER-V 拡張可能スイッチ拡張機能を列挙します。 このコマンドレットは、拡張可能スイッチのインスタンスで、拡張機能が有効になっているかどうかも報告されます。
 
-[Get-vmswitchextension](https://technet.microsoft.com/library/hh848603.aspx)コマンドレットは、次の構文を使用します。
+[Get-vmswitchextension](https://docs.microsoft.com/powershell/module/hyper-v/get-vmsystemswitchextension)コマンドレットは、次の構文を使用します。
 
 ``` syntax
 Get-VMSwitchExtension [[-VMSwitchName] <string[]>] [[-Name] <string[]>] [-ComputerName <string[]>]
@@ -25,7 +25,7 @@ Get-VMSwitchExtension [[-VMSwitchName] <string[]>] [[-Name] <string[]>] [-Comput
 Get-VMSwitchExtension [[-VMSwitch] <VMSwitch[]>] [-ComputerName <string[]>] [<CommonParameters>]
 ```
 
-次の例からの出力を示しています、 [Get-vmswitchextension](https://technet.microsoft.com/library/hh848603.aspx)コマンドレット。
+次の例からの出力を示しています、 [Get-vmswitchextension](https://docs.microsoft.com/powershell/module/hyper-v/get-vmsystemswitchextension)コマンドレット。
 
 ``` syntax
 PS C:\Windows\system32> Get-VMSwitchExtension PrivateNetwork | fl -property @("Name","ExtensionType", "SwitchName","Enabled")
@@ -58,9 +58,9 @@ Enabled       : True
 ## <a name="related-topics"></a>関連トピック
 
 
-[Get-vmswitchextension](https://technet.microsoft.com/library/hh848603.aspx)
+[Get-vmswitchextension](https://docs.microsoft.com/powershell/module/hyper-v/get-vmsystemswitchextension)
 
-[**Msvm\_EthernetSwitchExtension**](https://msdn.microsoft.com/library/hh850139)
+[**Msvm\_EthernetSwitchExtension**](https://docs.microsoft.com/windows/desktop/HyperV_v2/msvm-ethernetswitchextension)
 
  
 

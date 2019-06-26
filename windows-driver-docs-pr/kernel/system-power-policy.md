@@ -11,12 +11,12 @@ keywords:
 - DC 電源 WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a722ef366095010410ad23ab2ab648776d594ea
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1cdf5661a679f5fb20c0f57e30e7313736a78019
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345419"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355465"
 ---
 # <a name="system-power-policy"></a>システム電源ポリシー
 
@@ -24,9 +24,9 @@ ms.locfileid: "63345419"
 
 
 
-システム電源ポリシー マネージャーとしての役割、電源マネージャー システムの使用状況の追跡、適切なシステムの電源状態を決定し、送信[ **IRP\_MJ\_POWER** ](https://msdn.microsoft.com/library/windows/hardware/ff550784)クエリまたはシステムの電源状態の変更を要求します。 インターフェイスを使用するアプリケーションの読み取りし、書き込みの電源ポリシーの設定 (Microsoft Windows SDK を参照) も提供します。
+システム電源ポリシー マネージャーとしての役割、電源マネージャー システムの使用状況の追跡、適切なシステムの電源状態を決定し、送信[ **IRP\_MJ\_POWER** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-power)クエリまたはシステムの電源状態の変更を要求します。 インターフェイスを使用するアプリケーションの読み取りし、書き込みの電源ポリシーの設定 (Microsoft Windows SDK を参照) も提供します。
 
-電源マネージャーは、2 つの独立した電源ポリシーを維持 — AC (現在の壁)、および DC (バッテリまたは UPS) のいずれかのいずれか: これら 2 つのポリシーによっては、現在の電源の間で自動的に切り替わります。 通常、AC 電源ポリシーは、DC 電源ポリシーは、パフォーマンス上の節約を強調しています中に、節約、経由でパフォーマンスを強化します。 確認する、システムは、他の 1 つのポリシーから変更されたときに、ドライバーはシステムの通知に登録できる\\コールバック\\PowerState コールバック オブジェクト。 詳細については、次を参照してください。 [ **ExCreateCallback** ](https://msdn.microsoft.com/library/windows/hardware/ff544560)と[コールバック オブジェクト](callback-objects.md)します。
+電源マネージャーは、2 つの独立した電源ポリシーを維持 — AC (現在の壁)、および DC (バッテリまたは UPS) のいずれかのいずれか: これら 2 つのポリシーによっては、現在の電源の間で自動的に切り替わります。 通常、AC 電源ポリシーは、DC 電源ポリシーは、パフォーマンス上の節約を強調しています中に、節約、経由でパフォーマンスを強化します。 確認する、システムは、他の 1 つのポリシーから変更されたときに、ドライバーはシステムの通知に登録できる\\コールバック\\PowerState コールバック オブジェクト。 詳細については、次を参照してください。 [ **ExCreateCallback** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-excreatecallback)と[コールバック オブジェクト](callback-objects.md)します。
 
 自動的に APCI 仕様に準拠しているコンピューターが AC からバッテリ電源に切り替えるし、別のバッテリが 1 つからこのような各電源としてソースがオフラインになり。 コンピューターのハードウェアでオペレーティング システムの電源をオンにできる場合、電源マネージャーは、どのバッテリは引き続き機能が少なくとも課金と、コンピューターの電源が選択を追跡します。
 

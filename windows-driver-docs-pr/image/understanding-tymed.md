@@ -4,12 +4,12 @@ description: TYMED とは
 ms.assetid: 36110923-c346-4367-8b7d-ef4d003ed88c
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 02afa4eaa3596bddcea5677c26acc942e8784412
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5e9fdba50a40960fc459ae0479b275c870d7e2a1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383708"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358206"
 ---
 # <a name="understanding-tymed"></a>TYMED とは
 
@@ -17,7 +17,7 @@ ms.locfileid: "63383708"
 
 
 
-TYMED では、データ転送の種類を指定します。 このメンバーの値がから派生した、 [ **WIA\_IPA\_TYMED** ](https://msdn.microsoft.com/library/windows/hardware/ff551656)一般的な項目のプロパティ。 指定されたデータ転送には、メモリ コールバック転送またはファイル転送のいずれかを指定できます。 TYMED の詳細については、Microsoft Windows SDK ドキュメントを参照して\_XXX 定数。
+TYMED では、データ転送の種類を指定します。 このメンバーの値がから派生した、 [ **WIA\_IPA\_TYMED** ](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-tymed)一般的な項目のプロパティ。 指定されたデータ転送には、メモリ コールバック転送またはファイル転送のいずれかを指定できます。 TYMED の詳細については、Microsoft Windows SDK ドキュメントを参照して\_XXX 定数。
 
 ### <a name="file-transfer-tymed"></a>ファイル転送 TYMED
 

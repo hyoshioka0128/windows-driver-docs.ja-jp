@@ -10,12 +10,12 @@ keywords:
 - WDK のよく知られた識別子はファイル システム
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 95918109cb6c931fdfdd257262246ec703a2a48f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2255ce63be01547495603b78260b5ad64c6e30fb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344501"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371348"
 ---
 # <a name="security-identifier"></a>セキュリティ識別子
 
@@ -47,11 +47,11 @@ ms.locfileid: "63344501"
 
 さらに、カーネル ドライバーでは、次の標準ランタイム ライブラリ ルーチンを使用して、SID を作成することがあります。
 
--   [**RtlInitializeSid**](https://msdn.microsoft.com/library/windows/hardware/ff552998)-新しい SID のバッファーを初期化します。
+-   [**RtlInitializeSid**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-rtlinitializesid)-新しい SID のバッファーを初期化します。
 
--   [**RtlLengthSid**](https://msdn.microsoft.com/library/windows/hardware/ff553085): 指定されたバッファーに保存されている SID のサイズを決定します。
+-   [**RtlLengthSid**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-rtllengthsid): 指定されたバッファーに保存されている SID のサイズを決定します。
 
--   [**RtlValidSid**](https://msdn.microsoft.com/library/windows/hardware/ff553314): 指定された SID バッファーが有効な書式設定されたバッファーであるかどうか。
+-   [**RtlValidSid**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-rtlvalidsid): 指定された SID バッファーが有効な書式設定されたバッファーであるかどうか。
 
 なお**RtlLengthSid**と**RtlValidSid** SID の 8 バイトの固定ヘッダーが存在することを前提としています。 したがって、ドライバーは、これらの関数を呼び出す前にこの SID ヘッダーの長さの最小確認する必要があります。
 

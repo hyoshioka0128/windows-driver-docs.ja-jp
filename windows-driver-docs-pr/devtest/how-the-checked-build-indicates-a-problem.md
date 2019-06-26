@@ -12,12 +12,12 @@ keywords:
 - WDK のエラー チェック ビルド
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 81478c63008e35f60b35159a6e51537d5200b373
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c0d1c435766b512fb6af883cf70bf416ef2e6d7e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330649"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372688"
 ---
 # <a name="how-the-checked-build-indicates-a-problem"></a>チェック ビルドで問題が示される方法
 
@@ -27,11 +27,11 @@ ms.locfileid: "63330649"
 
 オペレーティング システムのチェック ビルドでは、さまざまな方法を使用して、見つけた問題の通知。 これらのメソッドには、アサート エラー、ブレークポイントおよびデバッガーのメッセージが含まれます。 これらのメソッドのすべては、カーネル デバッガーからの出力になります。 したがってに便利ですが、接続されているカーネル モード デバッガー (WinDbg、KD など) を使用してチェック ビルドを実行する必要があります。
 
-デバッグの詳細については、「 [Windows デバッグ](https://msdn.microsoft.com/library/windows/hardware/ff551063)します。
+デバッグの詳細については、「 [Windows デバッグ](https://docs.microsoft.com/windows-hardware/drivers/debugger/index)します。
 
 ### <a name="span-idassertfailuresspanspan-idassertfailuresspanassert-failures"></a><span id="assert_failures"></span><span id="ASSERT_FAILURES"></span>アサート失敗
 
-チェック ビルドが実行されるチェックの大部分として実装されて[ **ASSERT** ](https://msdn.microsoft.com/library/windows/hardware/ff542107)ステートメント。 式がアサートされていると評価される場合**FALSE**デバッガーを含むメッセージが表示されます。
+チェック ビルドが実行されるチェックの大部分として実装されて[ **ASSERT** ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff542107(v=vs.85))ステートメント。 式がアサートされていると評価される場合**FALSE**デバッガーを含むメッセージが表示されます。
 
 -   失敗したコード式のテキスト
 
@@ -52,9 +52,9 @@ ntkrnlmp!DbgBreakPoint:
 
 ユーザーが「中断、無視、終了プロセスまたはスレッドの終了」によく寄せられる、デバッガーの出力に示すように、 デバッガーがブレークポイントが設定されたシステムの実行を停止の原因となった"b"を入力して回答があったユーザー。 結果として、ユーザーでは、検出された問題をデバッグを継続できますようになりました。
 
-失敗したアサートがシステムに影響する方法は、さまざまな要因によって異なります。 Windows Vista より前の Windows のバージョンでは、オペレーティング システムのシステムの起動処理中のデバッグが有効な場合、システムを (接続されている) 場合、デバッガーを中断またはデバッガーに接続するを待つのハングします。 システムがクラッシュし、デバッグが有効でない場合[**バグ チェック 0x1E** ](https://msdn.microsoft.com/library/windows/hardware/ff557408) (KMODE\_例外\_いない\_処理済み) 0x80000003 のパラメーター 1 の値。 Windows Vista 以降では、システムは、デバッガーが接続されている場合にのみ、デバッガーが中断されます。 デバッグが有効でない場合、またはデバッグが有効になっているが、デバッガーが接続されていない場合は、失敗したアサーションは (ただし、アサーションによるチェックは実行されます) に報告されません。 ドライバーを開発し、確定的にデバッグが有効な場合にデバッガーにブレークするようには、デバッガーが接続されていない、使用することができますが、場合[ **DbgBreakPoint** ](https://msdn.microsoft.com/library/windows/hardware/ff543626)ステートメントをコードにします。
+失敗したアサートがシステムに影響する方法は、さまざまな要因によって異なります。 Windows Vista より前の Windows のバージョンでは、オペレーティング システムのシステムの起動処理中のデバッグが有効な場合、システムを (接続されている) 場合、デバッガーを中断またはデバッガーに接続するを待つのハングします。 システムがクラッシュし、デバッグが有効でない場合[**バグ チェック 0x1E** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0x1e--kmode-exception-not-handled) (KMODE\_例外\_いない\_処理済み) 0x80000003 のパラメーター 1 の値。 Windows Vista 以降では、システムは、デバッガーが接続されている場合にのみ、デバッガーが中断されます。 デバッグが有効でない場合、またはデバッグが有効になっているが、デバッガーが接続されていない場合は、失敗したアサーションは (ただし、アサーションによるチェックは実行されます) に報告されません。 ドライバーを開発し、確定的にデバッグが有効な場合にデバッガーにブレークするようには、デバッガーが接続されていない、使用することができますが、場合[ **DbgBreakPoint** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-dbgbreakpoint)ステートメントをコードにします。
 
-いくつか[ **ASSERT** ](https://msdn.microsoft.com/library/windows/hardware/ff542107)エラーの追加前[**による DbgPrint** ](https://msdn.microsoft.com/library/windows/hardware/ff543632)出力します。 この種類の assert の 1 つの一般的な例は、次[**ページ\_コード**](https://msdn.microsoft.com/library/windows/hardware/ff558773)マクロ、ntddk.h とドライバーのチェック ビルドで使用するための wdm.h で定義されています。
+いくつか[ **ASSERT** ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff542107(v=vs.85))エラーの追加前[**による DbgPrint** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-dbgprint)出力します。 この種類の assert の 1 つの一般的な例は、次[**ページ\_コード**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)マクロ、ntddk.h とドライバーのチェック ビルドで使用するための wdm.h で定義されています。
 
 ```
 #define PAGED_CODE() \
@@ -72,7 +72,7 @@ KdPrint(( "EX: Pageable code called at IRQL %d\n", KeGetCurrentIrql() )); \
 
 ### <a name="span-idbreakpointsspanspan-idbreakpointsspanbreakpoints"></a><span id="breakpoints"></span><span id="BREAKPOINTS"></span>ブレークポイント
 
-チェック ビルドはブレークポイントを使用しても問題があります。 ブレークポイントは多くの場合、続く[**による DbgPrint** ](https://msdn.microsoft.com/library/windows/hardware/ff543632)ステートメントで、デバッガーが発生した問題に関する情報を表示します。 ブレークポイントが発生した場合、デバッガーでは、システムに接続されていない、システムがクラッシュし、説明のすべてのメッセージは失われます。
+チェック ビルドはブレークポイントを使用しても問題があります。 ブレークポイントは多くの場合、続く[**による DbgPrint** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-dbgprint)ステートメントで、デバッガーが発生した問題に関する情報を表示します。 ブレークポイントが発生した場合、デバッガーでは、システムに接続されていない、システムがクラッシュし、説明のすべてのメッセージは失われます。
 
 一部のチェックのビルドでのブレークポイントの前にして、ドライバーの作成者によってこれが発生した最も一般的なメッセージが記載されて[ビルド ブレークポイントのチェックとメッセージ](checked-build-breakpoints-and-messages.md)します。
 
@@ -107,7 +107,7 @@ f9f77ddc 8069bece 805f8c04 00000001 00000000 ntkrnlmp!PspSystemThreadStartup+0x4
 00000000 00000000 00000000 00000000 00000000 ntkrnlmp!KiThreadStartup+0x16
 ```
 
-ブレークポイントが、呼び出しの結果として作成されたこのスタック トレースからわかる、 **KfAcquireSpinLock**します。 Wdm.h を調べると確認できますとしてドライバーによって参照される関数の実際の名前である[ **KeAcquireSpinLock**](https://msdn.microsoft.com/library/windows/hardware/ff551917)します。 ブレークポイントの前にメッセージが表示されない、場合でも、スタックの一番上にあるブレークポイントの場所を確認できます (**ntkrnlmp!SpinLockSpinningForTooLong**)。 この場所は、ブレークポイントの理由を示します。保留中の異常に長いのため、取得、スピン ロックを回転されているがします。
+ブレークポイントが、呼び出しの結果として作成されたこのスタック トレースからわかる、 **KfAcquireSpinLock**します。 Wdm.h を調べると確認できますとしてドライバーによって参照される関数の実際の名前である[ **KeAcquireSpinLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keacquirespinlock)します。 ブレークポイントの前にメッセージが表示されない、場合でも、スタックの一番上にあるブレークポイントの場所を確認できます (**ntkrnlmp!SpinLockSpinningForTooLong**)。 この場所は、ブレークポイントの理由を示します。保留中の異常に長いのため、取得、スピン ロックを回転されているがします。
 
 ### <a name="span-iddebuggermessagesspanspan-iddebuggermessagesspandebugger-messages"></a><span id="debugger_messages"></span><span id="DEBUGGER_MESSAGES"></span>デバッガーのメッセージ
 

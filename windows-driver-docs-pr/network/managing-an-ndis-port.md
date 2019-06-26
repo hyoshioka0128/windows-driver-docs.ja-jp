@@ -9,12 +9,12 @@ keywords:
 - ポート番号の WDK NDIS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 925ed4de88ae2bf0a0d9420de116b81da09bbadb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ddb816426be0a7c31723a55ccb0eeaac52de8fb5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343641"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356169"
 ---
 # <a name="managing-an-ndis-port"></a>NDIS ポートの管理
 
@@ -30,13 +30,13 @@ NDIS は、関連付けられている状態のインジケーターと PnP イ�
 
 NDIS ポートを管理するは、以下の構造体は、ポート番号を含めます。
 
-<a href="" id="ndis-oid-request"></a>[**NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)  
+<a href="" id="ndis-oid-request"></a>[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)  
 OID 要求をについて説明します。
 
-<a href="" id="ndis-status-indication"></a>[**NDIS\_状態\_を示す値**](https://msdn.microsoft.com/library/windows/hardware/ff567373)  
+<a href="" id="ndis-status-indication"></a>[**NDIS\_状態\_を示す値**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)  
 NDIS 状態インジケーターをについて説明します。
 
-<a href="" id="net-pnp-event-notification"></a>[**NET\_PNP\_EVENT\_NOTIFICATION**](https://msdn.microsoft.com/library/windows/hardware/ff568752)  
+<a href="" id="net-pnp-event-notification"></a>[**NET\_PNP\_EVENT\_NOTIFICATION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_pnp_event_notification)  
 PnP イベント通知をについて説明します。
 
 このセクションの内容:

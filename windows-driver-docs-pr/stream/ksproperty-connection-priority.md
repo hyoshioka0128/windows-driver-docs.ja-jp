@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b190e1f2e7ca88ad5139521b8ddd59f9df3716cd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1da8feeb8df2bf19637ea68cc4d3cbbc5f84fc7c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368680"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373112"
 ---
 # <a name="kspropertyconnectionpriority"></a>KSPROPERTY\_接続\_優先順位
 
@@ -54,7 +54,7 @@ ms.locfileid: "63368680"
 <td><p>〇</p></td>
 <td><p>Pin</p></td>
 <td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564250" data-raw-source="[&lt;strong&gt;KSPRIORITY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564250)"><strong>KSPRIORITY</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kspriority" data-raw-source="[&lt;strong&gt;KSPRIORITY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kspriority)"><strong>KSPRIORITY</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -64,7 +64,7 @@ ms.locfileid: "63368680"
 <a name="remarks"></a>注釈
 -------
 
-このプロパティは、型の構造体を返す[ **KSPRIORITY** ](https://msdn.microsoft.com/library/windows/hardware/ff564250)格納している、優先度クラスとサブクラスです。
+このプロパティは、型の構造体を返す[ **KSPRIORITY** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kspriority)格納している、優先度クラスとサブクラスです。
 
 1 つの優先度がもう 1 つの場合よりも大きい、 **PriorityClass**メンバー値が大きい場合は、 **PriorityClass**メンバーが同じ、 **PrioritySubClass**メンバーは、大きい。
 
@@ -93,9 +93,9 @@ KSPROPERTY\_接続\_優先順位は省略可能です。 クライアントが K
 ## <a name="see-also"></a>関連項目
 
 
-[**KSPRIORITY**](https://msdn.microsoft.com/library/windows/hardware/ff564250)
+[**KSPRIORITY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kspriority)
 
-[**KSPIN\_接続**](https://msdn.microsoft.com/library/windows/hardware/ff563531)
+[**KSPIN\_接続**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kspin_connect)
 
  
 

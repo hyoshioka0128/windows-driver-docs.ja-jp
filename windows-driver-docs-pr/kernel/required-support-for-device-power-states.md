@@ -12,12 +12,12 @@ keywords:
 - ポート ドライバー WDK の電源管理
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f49c132de9b1c4d382dea9c32fd2d29740655dbb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cc14a78e34ca4e4cdc444b38ccb5db34d7335ca8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324534"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373412"
 ---
 # <a name="required-support-for-device-power-states"></a>デバイスの電源状態に関して必要なサポート
 
@@ -41,7 +41,7 @@ ms.locfileid: "63324534"
 
 -   ストリーミングのドライバーでは、D0 と D3 のデバイスの電源状態を処理するのにストリーミング クラス ドライバーの電源管理のインターフェイスを使用します。 D1 と D2 のデバイスの電源状態を処理するためにこれらのドライバーは、このセクションで説明されている電源管理のインターフェイスを使用する必要があります。
 
--   SCSI ポート ドライバーでは、ミニポートの PnP、電源管理の要件の大部分を管理します。 SCSI ミニポート ドライバーがなど関連のルーチンと共に PnP や電源管理のインターフェイスをサポートする必要があります[ **HwScsiAdapterControl**](https://msdn.microsoft.com/library/windows/hardware/ff557274)します。
+-   SCSI ポート ドライバーでは、ミニポートの PnP、電源管理の要件の大部分を管理します。 SCSI ミニポート ドライバーがなど関連のルーチンと共に PnP や電源管理のインターフェイスをサポートする必要があります[ **HwScsiAdapterControl**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557274(v=vs.85))します。
 
 -   ビデオ ポート ドライバーでは、ミニポートの PnP、電源管理の要件の大部分を管理します。 ビデオのミニポート ドライバーでは、WDK で他の場所で説明されているミニポート固有のルーチンをサポートする必要があります。
 

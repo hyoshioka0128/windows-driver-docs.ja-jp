@@ -4,12 +4,12 @@ description: 早期起動マルウェア対策ドライバーでは、WHQL で�
 ms.assetid: 48759EB3-F8F9-4881-BD30-6D1252F08DFE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 21799b9b7a3bb988d1cb2b128e504d0bceab3bd4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9e5625c7c261ec1bd1001a564ce116be97177059
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346157"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374998"
 ---
 # <a name="elam-prerequisites"></a>ELAM の前提条件
 
@@ -19,7 +19,7 @@ ms.locfileid: "63346157"
 ## <a name="antimalware-vendor-participation-requirements"></a>マルウェア対策ベンダーへの参加の要件
 
 
-Microsoft では、起動時マルウェア対策ベンダーがいずれかのメンバーである必要があります、  **[Microsoft Virus Initiative (MVI)](https://www.microsoft.com/wdsi/alliances/virus-initiative)** します。 このメンバーシップにより、ベンダーが正の業界定評のあるアクティブなマルウェア対策コミュニティの参加者であるようになります。 MVI プログラムのメンバーではないし ELAM を使用する必要があると思われる場合にお問い合わせください**[ mvi@microsoft.com ](mailto:mvi@microsoft.com)** の追加情報。
+Microsoft では、起動時マルウェア対策ベンダーがいずれかのメンバーである必要があります、  **[Microsoft Virus Initiative (MVI)](https://docs.microsoft.com/windows/security/threat-protection/intelligence/virus-initiative-criteria)** します。 このメンバーシップにより、ベンダーが正の業界定評のあるアクティブなマルウェア対策コミュニティの参加者であるようになります。 MVI プログラムのメンバーではないし ELAM を使用する必要があると思われる場合にお問い合わせください **[ mvi@microsoft.com ](mailto:mvi@microsoft.com)** の追加情報。
 
 
 ## <a name="windows-hardware-quality-lab-whql-submission"></a>Windows Hardware Quality Lab (WHQL) の送信

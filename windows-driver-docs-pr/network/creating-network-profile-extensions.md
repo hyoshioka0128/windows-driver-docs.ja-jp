@@ -7,12 +7,12 @@ keywords:
 - WDK ネイティブ 802.11 のスキャン操作
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d7bc1f7f5e30e379989a65a118946c6dc609000f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: df7ce8da5ffc9d51138f73c2003847b621f454a9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357274"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374890"
 ---
 # <a name="creating-network-profile-extensions"></a>ネットワーク プロファイル拡張機能の作成
 
@@ -21,11 +21,11 @@ ms.locfileid: "63357274"
 
  
 
-基になるワイヤレス LAN (WLAN) アダプターには、スキャン操作が完了すると、オペレーティング システムに検出された基本的なサービスのセット (BSS) ネットワークの一覧を返します。 オペレーティング システムの呼び出し、 [ *Dot11ExtIhvCreateDiscoveryProfiles* ](https://msdn.microsoft.com/library/windows/hardware/ff547445)関数をユーザーがいない作成ネットワーク プロファイルをすべて BSS ネットワーク。 この関数が呼び出されると、IHV 拡張機能の DLL は一時的な接続と BSS ネットワークへの接続に使用できるセキュリティ プロファイルのフラグメントを返すことができます。
+基になるワイヤレス LAN (WLAN) アダプターには、スキャン操作が完了すると、オペレーティング システムに検出された基本的なサービスのセット (BSS) ネットワークの一覧を返します。 オペレーティング システムの呼び出し、 [ *Dot11ExtIhvCreateDiscoveryProfiles* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_create_discovery_profiles)関数をユーザーがいない作成ネットワーク プロファイルをすべて BSS ネットワーク。 この関数が呼び出されると、IHV 拡張機能の DLL は一時的な接続と BSS ネットワークへの接続に使用できるセキュリティ プロファイルのフラグメントを返すことができます。
 
 スキャン操作の詳細については、次を参照してください。[ネイティブ 802.11 スキャン操作](native-802-11-scan-operations.md)します。
 
-ときに[ *Dot11ExtIhvCreateDiscoveryProfiles* ](https://msdn.microsoft.com/library/windows/hardware/ff547445)が呼び出されると、IHV 拡張機能の DLL は次のガイドラインを従う必要があります。
+ときに[ *Dot11ExtIhvCreateDiscoveryProfiles* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_create_discovery_profiles)が呼び出されると、IHV 拡張機能の DLL は次のガイドラインを従う必要があります。
 
 -   オペレーティング システムに渡します、 *pConnectableBssid* IEEE 802.11 ビーコンおよびプローブ応答のフレームの一覧は、最後のスキャン操作中に受信するパラメーター。 この一覧は、DOT11 として書式設定\_BSS\_エントリの構造体。 リスト内で各ビーコンまたはプローブの応答は、同じサービス セット識別子 (SSID) とアクセス ポイント (AP) によって送信されました。
 

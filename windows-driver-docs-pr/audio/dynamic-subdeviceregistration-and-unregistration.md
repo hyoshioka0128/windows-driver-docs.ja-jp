@@ -9,31 +9,31 @@ keywords:
 - オーディオ サブデバイス WDK の登録を解除
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 09d625ee56111367272c94f0575f21bb75df7e8e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a9805157522bff772f2c4b81a14b8320c4be2166
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333817"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360071"
 ---
 # <a name="dynamic-subdevice-registration-and-unregistration"></a>動的サブデバイスの登録と登録解除
 
 
-いくつかの形式のジャック プレゼンスの検出をサポートするデバイスには、動的なデバイスと呼ばれ、ジャックをサポートする必要があります、 [ **KSPROPERTY\_ジャック\_説明**](https://msdn.microsoft.com/library/windows/hardware/ff537364)プロパティ。 次の手順では、作成、登録、またはこれらの動的なデバイスに関連付けられているサブデバイスの登録を解除する動的なデバイスのドライバーによって使用されるアルゴリズムを示します。 フィルターの形式で、サブデバイスが作成されます。
+いくつかの形式のジャック プレゼンスの検出をサポートするデバイスには、動的なデバイスと呼ばれ、ジャックをサポートする必要があります、 [ **KSPROPERTY\_ジャック\_説明**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-jack-description)プロパティ。 次の手順では、作成、登録、またはこれらの動的なデバイスに関連付けられているサブデバイスの登録を解除する動的なデバイスのドライバーによって使用されるアルゴリズムを示します。 フィルターの形式で、サブデバイスが作成されます。
 
 次の手順では、オーディオ デバイス ドライバーが読み込まれるときに、回線のモジュラー ジャックに接続されているオーディオ デバイスがあるときの動作を示しています。
 
-1.  ドライバーはジャック プレゼンスの検出が判断するためには、ジャックに接続されているデバイスです。 ドライバー呼び出し[ **PcRegisterSubdevice** ](https://msdn.microsoft.com/library/windows/hardware/ff537731)トポロジのフィルターを登録する[Portcls](introduction-to-port-class.md)します。 A [ **KSCATEGORY\_オーディオ**](https://msdn.microsoft.com/library/windows/hardware/ff548261)インターフェイスは、トポロジのフィルターの登録の結果として作成されます。
+1.  ドライバーはジャック プレゼンスの検出が判断するためには、ジャックに接続されているデバイスです。 ドライバー呼び出し[ **PcRegisterSubdevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcregistersubdevice)トポロジのフィルターを登録する[Portcls](introduction-to-port-class.md)します。 A [ **KSCATEGORY\_オーディオ**](https://docs.microsoft.com/windows-hardware/drivers/install/kscategory-audio)インターフェイスは、トポロジのフィルターの登録の結果として作成されます。
 
 2.  オーディオ スタックの通知を受け取るときに、 **KSCATEGORY\_オーディオ**インターフェイスを作成、 [AudioEndpoint ビルダー](audio-endpoint-builder-algorithm.md)作成し関連付けられているエンドポイントを初期化し、その状態に設定アクティブです。
 
 3.  ドライバー Portcls wave フィルターに登録して、オーディオ スタックが通知されます。
 
-4.  ドライバー呼び出し[ **PcRegisterPhysicalConnection** ](https://msdn.microsoft.com/library/windows/hardware/ff537726)トポロジ フィルターを使用して wave フィルターを接続します。 この物理的に接続し、Portcls に登録されます。
+4.  ドライバー呼び出し[ **PcRegisterPhysicalConnection** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcregisterphysicalconnection)トポロジ フィルターを使用して wave フィルターを接続します。 この物理的に接続し、Portcls に登録されます。
 
-5.  ドライバーの IsConnected メンバーの設定、 [ **KSJACK\_説明**](https://msdn.microsoft.com/library/windows/hardware/ff537136)構造体を**TRUE**ジャックに接続されているデバイスがあることを示します。
+5.  ドライバーの IsConnected メンバーの設定、 [ **KSJACK\_説明**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksjack-description)構造体を**TRUE**ジャックに接続されているデバイスがあることを示します。
 
-**注**  オーディオ デバイス ジャック プレゼンスがない場合、検出、 **IsConnected**メンバーは常にあります**TRUE**。 デバイスでジャックのプレゼンスをサポートするかどうかを確認するクライアント アプリケーションが呼び出すことができますの検出、 [IKsJackDescription2::GetJackDescription2](https://go.microsoft.com/fwlink/p/?linkid=143698)の JackCapabilities フラグを読み取る、 [ **KSJACK\_DESCRIPTION2** ](https://msdn.microsoft.com/library/windows/hardware/ff537138)構造体。 このフラグは、JACKDESC2 場合\_プレゼンス\_検出\_機能ビットが設定、エンドポイントがジャックのプレゼンスをサポートしていることを示します検出します。 その場合、戻り値の**IsConnected**メンバーは、ジャックのカーソルの状態を正確に反映として解釈できます。
+**注**  オーディオ デバイス ジャック プレゼンスがない場合、検出、 **IsConnected**メンバーは常にあります**TRUE**。 デバイスでジャックのプレゼンスをサポートするかどうかを確認するクライアント アプリケーションが呼び出すことができますの検出、 [IKsJackDescription2::GetJackDescription2](https://go.microsoft.com/fwlink/p/?linkid=143698)の JackCapabilities フラグを読み取る、 [ **KSJACK\_DESCRIPTION2** ](https://docs.microsoft.com/windows-hardware/drivers/audio/ksjack-description2)構造体。 このフラグは、JACKDESC2 場合\_プレゼンス\_検出\_機能ビットが設定、エンドポイントがジャックのプレゼンスをサポートしていることを示します検出します。 その場合、戻り値の**IsConnected**メンバーは、ジャックのカーソルの状態を正確に反映として解釈できます。
 
  
 
@@ -62,9 +62,9 @@ ms.locfileid: "63333817"
 
 **削除のプラグにデバイス ドライバーの応答**
 
-1.  ドライバーを呼び出す必要があります[ **IUnregisterPhysicalConnection::UnregisterPhysicalConnection** ](https://msdn.microsoft.com/library/windows/hardware/ff537024) wave フィルターとトポロジのフィルター間の物理接続の登録を解除します。
+1.  ドライバーを呼び出す必要があります[ **IUnregisterPhysicalConnection::UnregisterPhysicalConnection** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iunregisterphysicalconnection-unregisterphysicalconnection) wave フィルターとトポロジのフィルター間の物理接続の登録を解除します。
 
-2.  ドライバーを呼び出す必要があります[ **IUnregisterSubdevice::UnregisterSubdevice** ](https://msdn.microsoft.com/library/windows/hardware/ff537032) wave フィルターの登録を解除します。
+2.  ドライバーを呼び出す必要があります[ **IUnregisterSubdevice::UnregisterSubdevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iunregistersubdevice-unregistersubdevice) wave フィルターの登録を解除します。
 
 3.  ドライバーを設定する必要があります、 **IsConnected**のメンバー、 **KSJACK\_説明**構造**FALSE**します。
 

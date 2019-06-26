@@ -8,12 +8,12 @@ keywords:
 - 描画の WDK GDI グラフィックス出力
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c204a83447a8f64cdbc14b76552da3f729024a5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 814734f90b35c3ccb4a17ae5294af600a22b490c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372757"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355538"
 ---
 # <a name="supporting-graphics-output"></a>グラフィックス出力のサポート
 
@@ -23,7 +23,7 @@ ms.locfileid: "63372757"
 
 ドライバーを処理する特定のグラフィックス操作は、描画サーフェイスとハードウェアの機能によって異なります。 サーフェスが標準の形式である場合*DIB*GDI がドライバーでサポートされていないすべての表示操作を処理します。 いずれかをドライバーが接続できる、[描画関数](optional-display-driver-functions.md)とハードウェアのサポートを活用するためにそれらを実装します。
 
-デバイス管理の画面では、ドライバー、する必要があります少なくとも、サポート、グラフィックスの出力関数[ **DrvCopyBits**](https://msdn.microsoft.com/library/windows/hardware/ff556182)、 [ **DrvTextOut** ](https://msdn.microsoft.com/library/windows/hardware/ff557277) 。、および[ **DrvStrokePath**](https://msdn.microsoft.com/library/windows/hardware/ff556316)します。 必要に応じて、他のグラフィックス出力関数のいずれかをサポートできます。 サポートしている[ **DrvBitBlt**](https://msdn.microsoft.com/library/windows/hardware/ff556180)、たとえば、パフォーマンスを向上させることができます。 一部の関数が必要であり、一定レベルの機能で適切な GCAPS フラグを設定してその機能を示すためにデバイスを許可する他のユーザー、 [ **DEVINFO** ](https://msdn.microsoft.com/library/windows/hardware/ff552835)構造体。
+デバイス管理の画面では、ドライバー、する必要があります少なくとも、サポート、グラフィックスの出力関数[ **DrvCopyBits**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvcopybits)、 [ **DrvTextOut** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvtextout) 。、および[ **DrvStrokePath**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvstrokepath)します。 必要に応じて、他のグラフィックス出力関数のいずれかをサポートできます。 サポートしている[ **DrvBitBlt**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvbitblt)、たとえば、パフォーマンスを向上させることができます。 一部の関数が必要であり、一定レベルの機能で適切な GCAPS フラグを設定してその機能を示すためにデバイスを許可する他のユーザー、 [ **DEVINFO** ](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-tagdevinfo)構造体。
 
 ドライバーのすべての描画呼び出しは常に単一スレッドで画面の種類に関係なくです。
 

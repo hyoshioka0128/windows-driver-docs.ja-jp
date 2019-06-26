@@ -6,17 +6,17 @@ ms.date: 07/18/2017
 keywords:
 - WDI_TLV_CONNECT_PARAMETERS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e3f2119db4c760ac4c1c13c99cf40ee81927439
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 276398423da0151c57b16c209e4ada02287717d0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63371050"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358576"
 ---
 # <a name="wditlvconnectparameters"></a>WDI\_TLV\_CONNECT\_パラメーター
 
 
-WDI\_TLV\_CONNECT\_パラメーターはパラメーターを含む TLV [OID\_WDI\_タスク\_CONNECT](https://msdn.microsoft.com/library/windows/hardware/dn925948)と[OID\_WDI\_タスク\_ローミング](https://msdn.microsoft.com/library/windows/hardware/dn925958)します。
+WDI\_TLV\_CONNECT\_パラメーターはパラメーターを含む TLV [OID\_WDI\_タスク\_CONNECT](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-task-connect)と[OID\_WDI\_タスク\_ローミング](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-task-roam)します。
 
 ## <a name="tlv-type"></a>TLV 型
 
@@ -43,7 +43,7 @@ WDI\_TLV\_CONNECT\_パラメーターはパラメーターを含む TLV [OID\_WD
 | [**WDI\_TLV\_許可しない\_BSSID\_一覧**](wdi-tlv-disallowed-bssids-list.md) |   | x | 関連付けに使用するのには許可されていない Bssid の一覧。 指定した場合、アダプターいないこのリストである任意の AP に関連付ける必要があります。 |
 | [**WDI\_TLV\_許可\_BSSID\_一覧**](wdi-tlv-allowed-bssids-list.md) |   | x | 関連付けに使用することができる Bssid の一覧。 WDI 255.255.255.255 を指定する場合は、すべて Bssid が許可されます。 | 
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

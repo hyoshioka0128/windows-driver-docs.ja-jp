@@ -6,12 +6,12 @@ keywords:
 - PCM のストリーム データ形式 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 165a69f9b0efc90ab86fd70f1e8c59de4505dcb2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8d7e07a4a8fa01905791091d0312046f9a9f79bb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332228"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355307"
 ---
 # <a name="pcm-stream-data-format"></a>PCM ストリームのデータ形式
 
@@ -19,7 +19,7 @@ ms.locfileid: "63332228"
 ## <span id="pcm_stream_data_format"></span><span id="PCM_STREAM_DATA_FORMAT"></span>
 
 
-この例では、 [ **KSDATAFORMAT\_WAVEFORMATEX** ](https://msdn.microsoft.com/library/windows/hardware/ff537095) PCM ストリームのデータ形式を記述する構造体。
+この例では、 [ **KSDATAFORMAT\_WAVEFORMATEX** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksdataformat_waveformatex) PCM ストリームのデータ形式を記述する構造体。
 
 ```cpp
   DataFormat.FormatSize  = sizeof(KSDATAFORMAT_WAVEFORMATEX);

@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 586e4baf835cec41de8f0b28d00f90707ed76910
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3826c82d3cc380e3d650e7b9ece1421ce1ab5ce8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377097"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360284"
 ---
 # <a name="floppyclassguid"></a>FloppyClassGuid
 
 
-FloppyClassGuid は古い形式の識別子、[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)フロッピー ディスクの[記憶装置](https://msdn.microsoft.com/library/windows/hardware/ff566969)します。 Microsoft Windows 2000 以降を使用して、 [ **GUID_DEVINTERFACE_FLOPPY** ](guid-devinterface-floppy.md)このクラスの新しいインスタンスのクラス識別子。
+FloppyClassGuid は古い形式の識別子、[デバイス インターフェイス クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)フロッピー ディスクの[記憶装置](https://docs.microsoft.com/windows-hardware/drivers/storage/index)します。 Microsoft Windows 2000 以降を使用して、 [ **GUID_DEVINTERFACE_FLOPPY** ](guid-devinterface-floppy.md)このクラスの新しいインスタンスのクラス識別子。
 
 <a name="remarks"></a>注釈
 -------

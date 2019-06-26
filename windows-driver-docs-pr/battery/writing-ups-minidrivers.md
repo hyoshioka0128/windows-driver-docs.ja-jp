@@ -12,12 +12,12 @@ keywords:
 - 無停電電源装置 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 88a19094bacda3114155c76f70eba10bc7b30870
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bfa4cc4cd7f1cfef40ac34d4f5a3d5f5e3142679
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328679"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355239"
 ---
 # <a name="writing-ups-minidrivers"></a>UPS ミニドライバーの作成
 
@@ -47,7 +47,7 @@ UPS ミニドライバーの詳細については、次のトピックを参照�
 
 [UPS ミニドライバーをインストールします。](installing-ups-minidrivers.md)
 
-**注**   Windows Vista 以降のバージョンの Windows では、COM ポートに接続されている ups をサポートしていません。 Ups を経由して接続をサポートするためにこれらの Windows のバージョンが引き続き[USB](https://msdn.microsoft.com/library/windows/hardware/ff538930)します。
+**注**   Windows Vista 以降のバージョンの Windows では、COM ポートに接続されている ups をサポートしていません。 Ups を経由して接続をサポートするためにこれらの Windows のバージョンが引き続き[USB](https://docs.microsoft.com/windows-hardware/drivers/)します。
 
  
 

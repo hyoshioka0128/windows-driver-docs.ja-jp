@@ -7,19 +7,19 @@ keywords:
 - WDK Windows フィルタ リング プラットフォームのログ記録
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b953b68419a12757178d6c3d73d524e4132da131
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 075f872abbb618643976eaa3cc5977098a6568a0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372684"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354619"
 ---
 # <a name="data-logging"></a>データのログ
 
 
-データを決定するログに記録、吹き出しの[classifyFn](https://msdn.microsoft.com/library/windows/hardware/ff544887)コールアウト関数は、データ フィールド、メタデータ フィールド、およびそれに渡される任意の生データの任意の組み合わせと格納されている関連するデータを検査できますフィルターまたはデータに関連付けられたコンテキストのフロー。
+データを決定するログに記録、吹き出しの[classifyFn](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)コールアウト関数は、データ フィールド、メタデータ フィールド、およびそれに渡される任意の生データの任意の組み合わせと格納されている関連するデータを検査できますフィルターまたはデータに関連付けられたコンテキストのフロー。
 
-たとえば、コールアウトは、受信 (受信) IPv4 パケットの数は、ネットワーク層でのフィルターによって破棄の追跡場合、コールアウトが、FWPM でフィルター エンジンに追加されます\_レイヤー\_受信\_IPPACKET\_V4\_破棄レイヤー。 この場合、引き出し線の[classifyFn](https://msdn.microsoft.com/library/windows/hardware/ff544887)コールアウト関数次の例のようになります。
+たとえば、コールアウトは、受信 (受信) IPv4 パケットの数は、ネットワーク層でのフィルターによって破棄の追跡場合、コールアウトが、FWPM でフィルター エンジンに追加されます\_レイヤー\_受信\_IPPACKET\_V4\_破棄レイヤー。 この場合、引き出し線の[classifyFn](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)コールアウト関数次の例のようになります。
 
 ```C++
 ULONG TotalDiscardCount = 0;
@@ -67,7 +67,7 @@ VOID NTAPI
 ## <a name="related-topics"></a>関連トピック
 
 
-[classifyFn](https://msdn.microsoft.com/library/windows/hardware/ff544887)
+[classifyFn](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
 
  
 

@@ -8,12 +8,12 @@ keywords:
 - インターフェイス プロバイダー WDk のネットワーク インターフェイス
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 75832430bcdff619985f577b6e59fa5b632149e5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e73f68a9bd83ba7850c7147e0b15c0184db674b3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379335"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379788"
 ---
 # <a name="handling-oid-query-and-set-requests-in-an-ndis-interface-provider"></a>NDIS インターフェイス プロバイダーでの OID クエリおよび設定要求の処理
 
@@ -21,7 +21,7 @@ ms.locfileid: "63379335"
 
 
 
-NDISIF インターフェイスは、クエリを実行または RFC 2863 内の情報に対応する設定が可能な (統計カウンターを含む) 複数のインターフェイス パラメーターを定義します。 NDIS エントリでこれらのインターフェイスのパラメーターにアクセスする呼び出し時にインターフェイス プロバイダーを定義するポイント、 [ **NdisIfRegisterProvider** ](https://msdn.microsoft.com/library/windows/hardware/ff562716)関数。 インターフェイスをプロバイダーとして登録の詳細については、次を参照してください。[インターフェイス プロバイダーとして登録](registering-as-an-interface-provider.md)します。
+NDISIF インターフェイスは、クエリを実行または RFC 2863 内の情報に対応する設定が可能な (統計カウンターを含む) 複数のインターフェイス パラメーターを定義します。 NDIS エントリでこれらのインターフェイスのパラメーターにアクセスする呼び出し時にインターフェイス プロバイダーを定義するポイント、 [ **NdisIfRegisterProvider** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisifregisterprovider)関数。 インターフェイスをプロバイダーとして登録の詳細については、次を参照してください。[インターフェイス プロバイダーとして登録](registering-as-an-interface-provider.md)します。
 
 インターフェイスのパラメーターは、オブジェクト識別子 (Oid) によって識別されます。 いくつかの Oid は、インターフェイスのプロバイダーに固有です。
 

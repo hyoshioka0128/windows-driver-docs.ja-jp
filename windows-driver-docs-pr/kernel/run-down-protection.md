@@ -4,12 +4,12 @@ description: Windows XP 以降、run-down 保護はカーネル モード ドラ
 ms.assetid: AF451636-DBA0-4905-9723-73EE7AA9483E
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 3d43014655454b20629cdda877bcc7e0cb6f792f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 120e24c276b75c119691dcc93434dc2081ddd73b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377327"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373377"
 ---
 # <a name="run-down-protection"></a>ランダウン防止
 
@@ -23,13 +23,13 @@ Windows XP 以降、run-down 保護はカーネル モード ドライバーを�
 ## <a name="primary-run-down-protection-routines"></a>プライマリ保護の run-down ルーチン
 
 
-オブジェクトを共有するには、オブジェクトを所有するドライバーを呼び出し、 [ **ExInitializeRundownProtection** ](https://msdn.microsoft.com/library/windows/hardware/jj569373)ルーチン run-down 保護オブジェクトを初期化するためにします。 この呼び出しの後、オブジェクトにアクセスするその他のドライバーを取得および run-down 保護オブジェクトを解放できます。
+オブジェクトを共有するには、オブジェクトを所有するドライバーを呼び出し、 [ **ExInitializeRundownProtection** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exinitializerundownprotection)ルーチン run-down 保護オブジェクトを初期化するためにします。 この呼び出しの後、オブジェクトにアクセスするその他のドライバーを取得および run-down 保護オブジェクトを解放できます。
 
-共有されたオブジェクトの呼び出しにアクセスするドライバー、 [ **ExAcquireRundownProtection** ](https://msdn.microsoft.com/library/windows/hardware/jj569371)ルーチンをオブジェクトに run-down 保護を要求します。 アクセスが完了したら、このドライバーは呼び出し、 [ **ExReleaseRundownProtection** ](https://msdn.microsoft.com/library/windows/hardware/jj569375) run-down 保護オブジェクトを解放するルーチン。
+共有されたオブジェクトの呼び出しにアクセスするドライバー、 [ **ExAcquireRundownProtection** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exacquirerundownprotection)ルーチンをオブジェクトに run-down 保護を要求します。 アクセスが完了したら、このドライバーは呼び出し、 [ **ExReleaseRundownProtection** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exreleaserundownprotection) run-down 保護オブジェクトを解放するルーチン。
 
 所有しているドライバー、認識された場合、共有されたオブジェクトを削除する必要がありますこのドライバーは、オブジェクトのすべての未処理のアクセスが完了するまでオブジェクトを削除するまで待機します。
 
-共有オブジェクトを削除する準備として、所有しているドライバーを呼び出し、 [ **ExWaitForRundownProtectionRelease** ](https://msdn.microsoft.com/library/windows/hardware/jj569378)ルーチン実行するオブジェクトを待機します。 この呼び出し中に**ExWaitForRundownProtectionRelease** run-down 保護が解除されるオブジェクトの以前に許可したすべてのインスタンスの間、待機が防ぎます run-down 保護する、オブジェクトに新しい要求与えられます。 最後の保護されたアクセスを終了し、run-down 保護のすべてのインスタンスがリリースされると後、 **ExWaitForRundownProtectionRelease**から返されると、所有しているドライバーにより安全にオブジェクトが削除できます。
+共有オブジェクトを削除する準備として、所有しているドライバーを呼び出し、 [ **ExWaitForRundownProtectionRelease** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exwaitforrundownprotectionrelease)ルーチン実行するオブジェクトを待機します。 この呼び出し中に**ExWaitForRundownProtectionRelease** run-down 保護が解除されるオブジェクトの以前に許可したすべてのインスタンスの間、待機が防ぎます run-down 保護する、オブジェクトに新しい要求与えられます。 最後の保護されたアクセスを終了し、run-down 保護のすべてのインスタンスがリリースされると後、 **ExWaitForRundownProtectionRelease**から返されると、所有しているドライバーにより安全にオブジェクトが削除できます。
 
 **ExWaitForRundownProtectionRelease** run-down 保護を共有されたオブジェクトに格納されるすべてのドライバーは、この保護をリリースするまで、呼び出し元のドライバーのスレッドの実行をブロックします。 防ぐために**ExWaitForRundownProtectionRelease** run-down 保護、オブジェクトの格納中に、中断されているが過度に長期間実行をブロックするには、共有オブジェクトにアクセスするスレッドをドライバーが避ける必要があります。 このため、ドライバーにアクセスする呼び出す必要があります**ExAcquireRundownProtection**と**ExReleaseRundownProtection**クリティカル領域または保護された領域は、内または IRQL での実行中に APC=\_レベル。
 
@@ -45,7 +45,7 @@ Run-down 保護は、共有されたオブジェクトへのアクセスをシ�
 ## <a name="the-exrundownref-structure"></a>EX\_ランダウン\_REF 構造体
 
 
-[ **EX\_ランダウン\_REF** ](https://msdn.microsoft.com/library/windows/hardware/jj569379)構造が共有されたオブジェクトの run-down 対策の状態を追跡します。 この構造体は、ドライバーに対して非透過的です。 Run-down 保護のシステム指定のルーチンでは、オブジェクト上で有効な現在の run-down 保護インスタンスの数をカウントするのにこの構造体を使用します。 これらのルーチンは、オブジェクトのが実行またはで実行されているプロセスではあるかどうかを追跡するためにもこの構造体を使用します。
+[ **EX\_ランダウン\_REF** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/eprocess)構造が共有されたオブジェクトの run-down 対策の状態を追跡します。 この構造体は、ドライバーに対して非透過的です。 Run-down 保護のシステム指定のルーチンでは、オブジェクト上で有効な現在の run-down 保護インスタンスの数をカウントするのにこの構造体を使用します。 これらのルーチンは、オブジェクトのが実行またはで実行されているプロセスではあるかどうかを追跡するためにもこの構造体を使用します。
 
 オブジェクトを所有するドライバーを呼び出すオブジェクトを共有するには、 **ExInitializeRundownProtection**初期化するために、 **EX\_ランダウン\_REF**構造に関連付けられている、オブジェクト。 初期化後は、所有しているドライバーが利用できるこの構造体オブジェクトへのアクセスを必要とするその他のドライバーにします。 アクセスのドライバーでは、この構造体を渡すパラメーターとして、 **ExAcquireRundownProtection**と**ExReleaseRundownProtection**の呼び出しを取得および run-down 保護オブジェクトを解放します。 所有しているドライバーのパラメーターとしてこの構造体を渡す、 **ExWaitForRundownProtectionRelease**呼び出し、オブジェクトを安全に削除されるよう実行するを待機します。
 
@@ -61,11 +61,11 @@ Run-down 保護では、共有オブジェクトへの安全なアクセスを�
 
 その他のいくつかの run-down 保護ルーチンは、前に説明した以外に使用できます。 これらの追加ルーチンは、一部のドライバーで使用される可能性があります。
 
-[ **ExReInitializeRundownProtection** ](https://msdn.microsoft.com/library/windows/hardware/jj569374)ルーチンが以前に使用できるように[ **EX\_ランダウン\_REF** ](https://msdn.microsoft.com/library/windows/hardware/jj569379)、新しいオブジェクトに関連する構造体し、run-down の保護をこのオブジェクトを初期化します。
+[ **ExReInitializeRundownProtection** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exreinitializerundownprotection)ルーチンが以前に使用できるように[ **EX\_ランダウン\_REF** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/eprocess)、新しいオブジェクトに関連する構造体し、run-down の保護をこのオブジェクトを初期化します。
 
-[ **ExRundownCompleted** ](https://msdn.microsoft.com/library/windows/hardware/jj569377)日常的な更新プログラム、 **EX\_ランダウン\_REF**構造を示すために、関連オブジェクトの下の実行完了しました。
+[ **ExRundownCompleted** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exrundowncompleted)日常的な更新プログラム、 **EX\_ランダウン\_REF**構造を示すために、関連オブジェクトの下の実行完了しました。
 
-[ **ExAcquireRundownProtectionEx** ](https://msdn.microsoft.com/library/windows/hardware/jj569372)と[ **ExReleaseRundownProtectionEx** ](https://msdn.microsoft.com/library/windows/hardware/jj569376)ルーチンと似ています[ **ExAcquireRundownProtection** ](https://msdn.microsoft.com/library/windows/hardware/jj569371)と[ **ExReleaseRundownProtection**](https://msdn.microsoft.com/library/windows/hardware/jj569375)します。 これら 4 つのルーチンでは、増分または run-down 保護の共有オブジェクト上で有効なインスタンスのカウントをデクリメントします。 一方**ExAcquireRundownProtection**と**ExReleaseRundownProtection**にインクリメントされ、1 つずつ、このカウントをデクリメント**ExAcquireRundownProtectionEx**と**ExReleaseRundownProtectionEx**にインクリメントされ、任意の量によって、カウントをデクリメントします。
+[ **ExAcquireRundownProtectionEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exacquirerundownprotectionex)と[ **ExReleaseRundownProtectionEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exreleaserundownprotectionex)ルーチンと似ています[ **ExAcquireRundownProtection** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exacquirerundownprotection)と[ **ExReleaseRundownProtection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exreleaserundownprotection)します。 これら 4 つのルーチンでは、増分または run-down 保護の共有オブジェクト上で有効なインスタンスのカウントをデクリメントします。 一方**ExAcquireRundownProtection**と**ExReleaseRundownProtection**にインクリメントされ、1 つずつ、このカウントをデクリメント**ExAcquireRundownProtectionEx**と**ExReleaseRundownProtectionEx**にインクリメントされ、任意の量によって、カウントをデクリメントします。
 
  
 

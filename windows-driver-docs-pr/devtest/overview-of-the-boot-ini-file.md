@@ -13,12 +13,12 @@ keywords:
 - WDK のブート パラメーター
 ms.date: 07/03/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d0193b302f5a4101775cbfef2050c3b12e48e5a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 27cd16807fe30303cdc94dab697643627895b386
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356332"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361284"
 ---
 # <a name="overview-of-the-bootini-file"></a>Boot.ini ファイルの概要
 
@@ -72,8 +72,8 @@ Boot.ini では、2 つの主要なセクションがあります。
     "Microsoft Windows XP Professional"
     ```
 
--   *ブート エントリのパラメーター*とも呼ばれます*ブート パラメーター*または*ロード オプション*有効化、無効化、およびオペレーティング システムの機能を構成します。 ようなコマンド ライン パラメーター、フォワード スラッシュ (/) で始まるなどをブート パラメーター [ **/debug**](https://msdn.microsoft.com/library/windows/hardware/ff556253)します。 各ブート エントリには、0 個以上のブート パラメーターがあります。
+-   *ブート エントリのパラメーター*とも呼ばれます*ブート パラメーター*または*ロード オプション*有効化、無効化、およびオペレーティング システムの機能を構成します。 ようなコマンド ライン パラメーター、フォワード スラッシュ (/) で始まるなどをブート パラメーター [ **/debug**](https://docs.microsoft.com/windows-hardware/drivers/devtest/-debug)します。 各ブート エントリには、0 個以上のブート パラメーターがあります。
 
-    ドライバーのテストとデバッグに関連するブート パラメーターの一覧は、次を参照してください。 [Boot.ini のブート パラメーター参照](https://msdn.microsoft.com/library/windows/hardware/ff542248)します。
+    ドライバーのテストとデバッグに関連するブート パラメーターの一覧は、次を参照してください。 [Boot.ini のブート パラメーター参照](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)します。
 
 それぞれ異なる一連のブート パラメーターを持つ、同じオペレーティング システムの複数のブート エントリがあることができます。 Windows 標準のブートを作成するエントリ、オペレーティング システムをインストールして、その他を作成するときに、Boot.ini を編集してオペレーティング システムのエントリをカスタマイズします。

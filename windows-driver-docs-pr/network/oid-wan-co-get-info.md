@@ -5,12 +5,12 @@ ms.assetid: c97130a5-68e1-4c69-a5a5-9781ea59af0c
 ms.date: 08/08/2017
 keywords: -OID_WAN_CO_GET_INFO ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 29e5b4f9b6f884c20df931c7f9b15964047ec358
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fafc2b348d074a94505dca885aef8100c8387341
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342282"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353685"
 ---
 # <a name="oidwancogetinfo"></a>OID\_WAN\_CO\_取得\_情報
 
@@ -39,7 +39,7 @@ OID\_WAN\_CO\_取得\_情報 OID がその NIC 上のすべての仮想接続 (V
 <a href="" id="maxsendwindow"></a>**MaxSendWindow**  
 VC いる CoNDIS WAN ミニポート ドライバーが処理できる未処理のパケットの最大数を指定します。 このメンバーは、少なくとも 1 つに設定する必要があります。
 
-NDISWAN ドライバーが、このメンバーの値を使用しての送信パケットの数に、ミニポート ドライバーの要求を送信するのには制限として*MiniportCoSendPackets* NDISWAN の保留がパケットを送信する前に機能します。 これらのパケットは、ミニポート ドライバーが未処理の送信が完了するまでにキューに登録されます。 動的とを使用して VC あたりごと、ミニポート ドライバーはこの値を調整したり、 **SendWindow**内のメンバー、 [ **WAN\_CO\_LINKPARAMS** ](https://msdn.microsoft.com/library/windows/hardware/ff565819)ミニポート ドライバーに渡します構造[ **NdisMCoIndicateStatus**](https://msdn.microsoft.com/library/windows/hardware/ff553458)します。 使用して、現在の NDISWAN **SendWindow**として未処理の送信の制限値。 ミニポート ドライバーが設定されている場合**SendWindow** NDISWAN を 0 に特定の VC のパケットの送信を停止する必要があります。 つまり、送信ウィンドウが有効なシャット ダウン、NDISWAN からすべてのパケットを受け付けられないことを指定します、ミニポート ドライバーを指定します。
+NDISWAN ドライバーが、このメンバーの値を使用しての送信パケットの数に、ミニポート ドライバーの要求を送信するのには制限として*MiniportCoSendPackets* NDISWAN の保留がパケットを送信する前に機能します。 これらのパケットは、ミニポート ドライバーが未処理の送信が完了するまでにキューに登録されます。 動的とを使用して VC あたりごと、ミニポート ドライバーはこの値を調整したり、 **SendWindow**内のメンバー、 [ **WAN\_CO\_LINKPARAMS** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff565819(v=vs.85))ミニポート ドライバーに渡します構造[ **NdisMCoIndicateStatus**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff553458(v=vs.85))します。 使用して、現在の NDISWAN **SendWindow**として未処理の送信の制限値。 ミニポート ドライバーが設定されている場合**SendWindow** NDISWAN を 0 に特定の VC のパケットの送信を停止する必要があります。 つまり、送信ウィンドウが有効なシャット ダウン、NDISWAN からすべてのパケットを受け付けられないことを指定します、ミニポート ドライバーを指定します。
 
 いる CoNDIS WAN ミニポート ドライバーでは、パケットを内部的には、キューする必要がありますので、値の**MaxSendWindow**理論上は**max**(ULONG)。 ただし、このドライバーにより決定された値は、NIC のリンクの速度、またはハードウェアの機能を反映する必要があります。 たとえば、常に、ミニポート ドライバーの NIC を少なくとも 4 つのパケットのルームの場合、ミニポート ドライバーが設定します**MaxSendWindow** 4 ようにする着信パケット*MiniportCoSendPackets*上に配置できる。すぐのハードウェア。
 
@@ -126,7 +126,7 @@ OID と WAN ミニポート ドライバーが、その後と呼ばれるかど�
 <a href="" id="desiredaccm"></a>**DesiredACCM**  
 非同期の制御文字のマップがネゴシエートされます。 このメンバーは、非同期のメディアの種類に対してのみ適用されます。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -149,13 +149,13 @@ OID と WAN ミニポート ドライバーが、その後と呼ばれるかど�
 ## <a name="see-also"></a>関連項目
 
 
-[**NdisMCoIndicateStatus**](https://msdn.microsoft.com/library/windows/hardware/ff553458)
+[**NdisMCoIndicateStatus**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff553458(v=vs.85))
 
 [OID\_WAN\_CO\_取得\_リンク\_情報](oid-wan-co-get-link-info.md)
 
 [OID\_WAN\_CO\_SET\_LINK\_INFO](oid-wan-co-set-link-info.md)
 
-[**WAN\_CO\_LINKPARAMS**](https://msdn.microsoft.com/library/windows/hardware/ff565819)
+[**WAN\_CO\_LINKPARAMS**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff565819(v=vs.85))
 
 
 

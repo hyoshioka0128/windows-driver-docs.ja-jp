@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3cd03dfbc3e5784ecbda3f3a93486d412ba9ada8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a80cf5bab4605cb63573fba8c1b8efab22dc3462
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387074"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377886"
 ---
 # <a name="srbopenstream"></a>SRB\_オープン\_ストリーム
 
@@ -45,9 +45,9 @@ ms.locfileid: "63387074"
 
 ### <a name="comments"></a>コメント
 
-クラス ドライバーを提供する[ **HW\_ストリーム\_オブジェクト**](https://msdn.microsoft.com/library/windows/hardware/ff559697)内でバッファー *pSrb* - &gt; **StreamObject**で*pSrb*-&gt;**StreamObject**-&gt;**StreamNumber**に開かれるストリームの数に設定します。 *PSrb*ポインターが指す、 [ **HW\_ストリーム\_要求\_ブロック**](https://msdn.microsoft.com/library/windows/hardware/ff559702)構造体。 **StreamNumber**内のストリームのオフセットに対応する、 [ **HW\_ストリーム\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff559686) への応答で、ミニドライバーは、構造体[**SRB\_取得\_ストリーム\_情報**](srb-get-stream-info.md)要求。 クラスのドライバーで開いているストリームを提供するデータ形式を指定する*pSrb*-&gt;**CommandData** - &gt; **OpenFormat**します。
+クラス ドライバーを提供する[ **HW\_ストリーム\_オブジェクト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/ns-strmini-_hw_stream_object)内でバッファー *pSrb* - &gt; **StreamObject**で*pSrb*-&gt;**StreamObject**-&gt;**StreamNumber**に開かれるストリームの数に設定します。 *PSrb*ポインターが指す、 [ **HW\_ストリーム\_要求\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/ns-strmini-_hw_stream_request_block)構造体。 **StreamNumber**内のストリームのオフセットに対応する、 [ **HW\_ストリーム\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/ns-strmini-_hw_stream_descriptor) への応答で、ミニドライバーは、構造体[**SRB\_取得\_ストリーム\_情報**](srb-get-stream-info.md)要求。 クラスのドライバーで開いているストリームを提供するデータ形式を指定する*pSrb*-&gt;**CommandData** - &gt; **OpenFormat**します。
 
-ミニドライバーは、この要求を受信したときに、この時点で、指定したストリームを開くことができるかどうかそれを判断する必要があります。 ミニドライバーを確認することも、 [ **KSDATAFORMAT** ](https://msdn.microsoft.com/library/windows/hardware/ff561656)で形式が渡されます。 SRB の OpenFormat フィールドです。 ストリームを開くには場合、ミニドライバーは、ハードウェアを更新\_ストリーム\_オブジェクトの構造、および状態を返します。\_成功します。 開いているストリーム インスタンスの最大数、またはこのストリームを開くために必要なハードウェア リソースが使用可能な、ミニドライバーは、該当するエラー状態を返します。
+ミニドライバーは、この要求を受信したときに、この時点で、指定したストリームを開くことができるかどうかそれを判断する必要があります。 ミニドライバーを確認することも、 [ **KSDATAFORMAT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksdataformat)で形式が渡されます。 SRB の OpenFormat フィールドです。 ストリームを開くには場合、ミニドライバーは、ハードウェアを更新\_ストリーム\_オブジェクトの構造、および状態を返します。\_成功します。 開いているストリーム インスタンスの最大数、またはこのストリームを開くために必要なハードウェア リソースが使用可能な、ミニドライバーは、該当するエラー状態を返します。
 
 **ときに、SRB\_オープン\_ミニドライバーがストリームのコマンドを受信した、ようにミニドライバーにする必要があります。**
 

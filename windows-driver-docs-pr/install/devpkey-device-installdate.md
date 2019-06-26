@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: bc059a9dde25505db27108f2d48d36b348f0906c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6e57bd9e3ceaf1c23e96fe12e385d16dc73dd36c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380752"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378222"
 ---
 # <a name="devpkeydeviceinstalldate"></a>DEVPKEY_Device_InstallDate
 
@@ -60,9 +60,9 @@ Windows では、デバイスのインスタンスが最後システムでイン
 
 このタイムスタンプの値は、デバイス ドライバーの連続する各更新プログラムを変更します。 たとえば、このタイムスタンプは、日付と時刻の Windows Update でデバイス ドライバーの最終更新日時を報告します。
 
-呼び出すことができます[ **SetupDiGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551963) DEVPKEY_Device_FirstInstallDate プロパティの値を取得します。
+呼び出すことができます[ **SetupDiGetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) DEVPKEY_Device_FirstInstallDate プロパティの値を取得します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -85,7 +85,7 @@ Windows では、デバイスのインスタンスが最後システムでイン
 ## <a name="see-also"></a>関連項目
 
 
-[**SetupDiGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551963)
+[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
 

@@ -4,12 +4,12 @@ description: オーディオ トポロジ ノード
 ms.assetid: d999955b-d620-41c9-b42d-6870ce1d4b93
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dd8984a5e2436ea38b954d148dec4949e11f1387
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 65e3dcb35027d0e57c66b142d7be7ac12b30c1d5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333937"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355648"
 ---
 # <a name="audio-topology-nodes"></a>オーディオ トポロジ ノード
 
@@ -17,7 +17,7 @@ ms.locfileid: "63333937"
 ## <span id="ddk_audio_topology_nodes_ks"></span><span id="DDK_AUDIO_TOPOLOGY_NODES_KS"></span>
 
 
-WDM オーディオ ドライバー、フレームワークでは、オーディオ デバイスのトポロジのノードの標準セットを定義します。 ミニポート ドライバーでは、一連のノードとノード間の接続を指定することで、デバイスのオーディオのトポロジについて説明します。 [SysAudio システム ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff537039#sysaudio-system-driver)この情報を使用して、クライアント アプリケーションに提示されているオーディオ フィルター グラフを作成します。
+WDM オーディオ ドライバー、フレームワークでは、オーディオ デバイスのトポロジのノードの標準セットを定義します。 ミニポート ドライバーでは、一連のノードとノード間の接続を指定することで、デバイスのオーディオのトポロジについて説明します。 [SysAudio システム ドライバー](https://docs.microsoft.com/windows-hardware/drivers/audio/kernel-mode-wdm-audio-components#sysaudio-system-driver)この情報を使用して、クライアント アプリケーションに提示されているオーディオ フィルター グラフを作成します。
 
 トポロジ内の各データ パスを開始または停止、pin といくつかのノードを通過ですることができますと見なすデータ パスに沿った一ビーズします。 データ パス内の各ノードは、データ パス内でそのノードを一意に識別するノード ID (基本的にはインデックス) によって識別されます。 暗証番号 (pin) の 2 つのインスタンスが同じ ID を持つノードを持つ可能性がありますが、暗証番号 (pin) のインスタンスとノードの ID の組み合わせは、オーディオ、トポロジ内の各ノードを一意に識別します。
 
@@ -65,7 +65,7 @@ WDM オーディオ ドライバー、フレームワークでは、オーディ
 
 [**KSNODETYPE\_MUX**](ksnodetype-mux.md)
 
-[**KSNODETYPE\_ノイズ\_を抑制します。**](ksnodetype-noise-suppress.md)
+[**KSNODETYPE\_ノイズ\_を抑制します。** ](ksnodetype-noise-suppress.md)
 
 [**KSNODETYPE\_PEAKMETER**](ksnodetype-peakmeter.md)
 

@@ -9,12 +9,12 @@ keywords:
 - タスクのオフロード WDK TCP/IP トランスポートは、サービスを無効にします。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 96d5c49b7248831820cf2944f15172c23056bf83
-ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
+ms.openlocfilehash: 8d3f1a7c9db0e82fcf7e440657fd0d5d08a613ce
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67161552"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377953"
 ---
 # <a name="using-registry-values-to-enable-and-disable-task-offloading"></a>タスク オフロードを有効および無効にするレジストリ値の使用
 
@@ -397,7 +397,7 @@ ms.locfileid: "67161552"
 
 有効にできるオフロードの組み合わせに対して制限があります。 たとえば、ミニポート アダプターが LSOV1 または LSOV2 をサポートする場合、ミニポート アダプターも ip アドレスと TCP チェックサムを計算します。 有効な組み合わせのオフロードの詳細については、次を参照してください。[結合の種類のタスクをオフロード](combining-types-of-task-offloads.md)します。
 
-プロトコル ドライバーを発行する必要がありますいないレジストリ キーの設定では、タスクのオフロード サービスが無効にした場合、 [OID\_オフロード\_カプセル化](https://msdn.microsoft.com/library/windows/hardware/ff569762)オブジェクト識別子 (OID)。
+プロトコル ドライバーを発行する必要がありますいないレジストリ キーの設定では、タスクのオフロード サービスが無効にした場合、 [OID\_オフロード\_カプセル化](https://docs.microsoft.com/windows-hardware/drivers/network/oid-offload-encapsulation)オブジェクト識別子 (OID)。
 
 次のレジストリ値を使用して、有効またはタスク オフロード、TCP/IP プロトコルを無効にできます。
 

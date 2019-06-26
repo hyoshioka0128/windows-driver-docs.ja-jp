@@ -10,12 +10,12 @@ keywords:
 - PROPSHEETPAGE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3267ce97f51253b7c18b1c09417c2e6c77be1187
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e8ee69c614031a743cae0d2a24a3e17b8b9bc87b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358606"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353510"
 ---
 # <a name="methods-for-specifying-pages"></a>ページを指定するためのメソッド
 
@@ -23,9 +23,9 @@ ms.locfileid: "63358606"
 
 
 
-アプリケーションでは 3 つのメソッドを使用 CPSUI にプロパティ シートのページを指定するのにことができます。 CPSUI の呼び出しでは、次のメソッドの各[ **ComPropSheet** ](https://msdn.microsoft.com/library/windows/hardware/ff546207)のいずれかを指定する、関数、 [ComPropSheet 関数コード](https://msdn.microsoft.com/library/windows/hardware/ff546214)します。
+アプリケーションでは 3 つのメソッドを使用 CPSUI にプロパティ シートのページを指定するのにことができます。 CPSUI の呼び出しでは、次のメソッドの各[ **ComPropSheet** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/nc-compstui-pfncompropsheet)のいずれかを指定する、関数、 [ComPropSheet 関数コード](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_print/index)します。
 
--   指定する、 [ **COMPROPSHEETUI** ](https://msdn.microsoft.com/library/windows/hardware/ff546211)構造体
+-   指定する、 [ **COMPROPSHEETUI** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_compropsheetui)構造体
 
     COMPROPSHEETUI 構造体を渡すことによって、アプリケーションがプロパティ シート ページをについて説明するかどうか**ComPropSheet**、そのことができます。
 
@@ -38,9 +38,9 @@ ms.locfileid: "63358606"
 
 -   コールバック関数を指定します。
 
-    アプリケーションに渡すことができます[ **ComPropSheet** ](https://msdn.microsoft.com/library/windows/hardware/ff546207)のアドレスを[ **PFNPROPSHEETUI**](https://msdn.microsoft.com/library/windows/hardware/ff559812)-コールバック関数では、どの CPSUI をすぐに型指定されました。呼び出されます。 コールバック関数が呼び出し元の責任**ComPropSheet**自体と、プロパティ シートのページを作成します。
+    アプリケーションに渡すことができます[ **ComPropSheet** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/nc-compstui-pfncompropsheet)のアドレスを[ **PFNPROPSHEETUI**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/nc-compstui-pfnpropsheetui)-コールバック関数では、どの CPSUI をすぐに型指定されました。呼び出されます。 コールバック関数が呼び出し元の責任**ComPropSheet**自体と、プロパティ シートのページを作成します。
 
-    印刷スプーラをプリンター インターフェイス DLL の CPSUI の存在を通知するためにこのメソッドを使用して**DrvDocumentPropertySheets**と*Pscript*ドライバー CPSUIの存在を通知するために、この手法を使用して[**IPrintOemUI::DocumentPropertySheets** ](https://msdn.microsoft.com/library/windows/hardware/ff554173)と[ **IPrintOemUI::DevicePropertySheets** ](https://msdn.microsoft.com/library/windows/hardware/ff554165)内の COM メソッド[ユーザープラグインのインターフェイス](user-interface-plug-ins.md)します。
+    印刷スプーラをプリンター インターフェイス DLL の CPSUI の存在を通知するためにこのメソッドを使用して**DrvDocumentPropertySheets**と*Pscript*ドライバー CPSUIの存在を通知するために、この手法を使用して[**IPrintOemUI::DocumentPropertySheets** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemui-documentpropertysheets)と[ **IPrintOemUI::DevicePropertySheets** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemui-devicepropertysheets)内の COM メソッド[ユーザープラグインのインターフェイス](user-interface-plug-ins.md)します。
 
 新しいページを指定する方法のいずれかを使用すると、ページ割り当てる必要があります、[グループの親](group-parent.md)へのハンドルの親グループに渡すことによって、 **ComPropSheet**関数。
 

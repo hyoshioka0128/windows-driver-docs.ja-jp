@@ -9,12 +9,12 @@ keywords:
 - クラスター化されたプリント サーバーの印刷のモニターに変換します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fbb874569adeaf200cc00a20256ca711a4bd7e03
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 125a535936d85eef548c0bf48725166d72adab36
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365694"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372478"
 ---
 # <a name="converting-print-monitors-for-use-with-clustered-print-servers"></a>クラスター化された印刷サーバーで使用するために印刷モニターを変換する
 
@@ -24,15 +24,15 @@ ms.locfileid: "63365694"
 
 プリント サーバーのクラスタ リングは、Windows 2000 の新しい機能です。 複数のスプーラー インスタンス (ノードの spooler」および「クラスター スプーラー) から呼び出せるように、Windows 2000 (またはそれ以降) のクラスターで実行するためのものでは、すべてプリンター ポート モニターを変更する必要があります。 次の手順を実行する必要があります。
 
--   モニターの[ **InitializePrintMonitor** ](https://msdn.microsoft.com/library/windows/hardware/ff551600)関数を置換する必要がある、 [ **InitializePrintMonitor2** ](https://msdn.microsoft.com/library/windows/hardware/ff551605)関数。 後者の関数は、モニターのインスタンス ハンドルを返します。
+-   モニターの[ **InitializePrintMonitor** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/nf-winsplp-initializeprintmonitor)関数を置換する必要がある、 [ **InitializePrintMonitor2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/nf-winsplp-initializeprintmonitor2)関数。 後者の関数は、モニターのインスタンス ハンドルを返します。
 
--   グローバルに格納された変数は、ローカルに割り当てられたメモリに移動する必要があり、このメモリは、によって返されたモニターのハンドルを関連付ける必要がある[ **InitializePrintMonitor2**](https://msdn.microsoft.com/library/windows/hardware/ff551605)します。
+-   グローバルに格納された変数は、ローカルに割り当てられたメモリに移動する必要があり、このメモリは、によって返されたモニターのハンドルを関連付ける必要がある[ **InitializePrintMonitor2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/nf-winsplp-initializeprintmonitor2)します。
 
--   API は、スプーラーのレジストリ関数への呼び出しで置き換える必要がある Win32 のレジストリへの呼び出し、これのアドレスでモニターに渡される、 [ **MONITORREG** ](https://msdn.microsoft.com/library/windows/hardware/ff557537)構造体。 (を参照してください[ポートの構成情報を格納する](storing-port-configuration-information.md))。
+-   API は、スプーラーのレジストリ関数への呼び出しで置き換える必要がある Win32 のレジストリへの呼び出し、これのアドレスでモニターに渡される、 [ **MONITORREG** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/ns-winsplp-_monitorreg)構造体。 (を参照してください[ポートの構成情報を格納する](storing-port-configuration-information.md))。
 
--   ポート モニター UI の DLL とポートの監視サーバー DLL には、ポート モニターを分割する必要があります。 UI の DLL は、スプーラーを呼び出すことによってサーバー DLL と通信する必要があります[ **XcvData** ](https://msdn.microsoft.com/library/windows/hardware/ff564255)関数。
+-   ポート モニター UI の DLL とポートの監視サーバー DLL には、ポート モニターを分割する必要があります。 UI の DLL は、スプーラーを呼び出すことによってサーバー DLL と通信する必要があります[ **XcvData** ](https://docs.microsoft.com/previous-versions/ff564255(v=vs.85))関数。
 
--   A [**シャット ダウン**](https://msdn.microsoft.com/library/windows/hardware/ff562646)関数を追加する必要があります。
+-   A [**シャット ダウン**](https://docs.microsoft.com/previous-versions/ff562646(v=vs.85))関数を追加する必要があります。
 
 変換されません印刷のモニターは、非クラスター化環境でのみ使用できます。 これらは、クラスター化されたサーバーで使用できません。
 

@@ -5,12 +5,12 @@ ms.assetid: 3897A898-2B00-45DF-AC05-7EC719EB7353
 keywords: OID_GEN_RECEIVE_SCALE_PARAMETERS_V2, OID_GEN_RECEIVE_SCALE_PARAMETERS_V2 RSSv2
 ms.date: 10/11/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 687db15ca59a2480ba2cf2a0a100599b3552b549
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 474e9a10ca974ca2aae0d3a1d898a1501ff93940
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364198"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355129"
 ---
 [!include[RSSv2 Beta Prerelease](../rssv2-beta-prerelease.md)]
 
@@ -18,7 +18,7 @@ ms.locfileid: "63364198"
 
 OID_GEN_RECEIVE_SCALE_PARAMETERS_V2 OID に送信される[RSSv2](receive-side-scaling-version-2-rssv2-.md)-対応のミニポート ドライバーにスケーリングのエンティティに対する、間接指定テーブル以外の実行時パラメーターを設定します。 OID_GEN_RECEIVE_SCALE_PARAMETERS_V2 置換、 [OID_GEN_RECEIVE_SCALE_PARAMETERS](oid-gen-receive-scale-parameters.md) RSSv1 から OID、NDIS 6.80 する前に NDIS 光重みフィルター (LWFs) に表示されません。 この OID 正規の OID は、クエリまたは一連の要求として発行することができます。 これが IRQL で発行される PASSIVE_LEVEL = =。 特定 VPort をターゲットにできるときに、 *NDIS_OID_REQUEST_FLAGS_VPORT_ID_VALID* NIC スイッチの作成にフラグを設定します。 それ以外の場合、ネイティブ RSS ケース内の物理 NIC を対象とします。
 
-クエリでは、NDIS および上にあるドライバーを使用して OID_GEN_RECEIVE_SCALE_PARAMETERS_V2 クエリ NIC の RSS パラメーター NDIS を返します、 [NDIS_RECEIVE_SCALE_PARAMETERS_V2](https://msdn.microsoft.com/library/windows/hardware/96EAB6EE-BF9A-46AD-8DED-5D9BD2B6F219) RSS の現在のパラメーターを定義する構造体。
+クエリでは、NDIS および上にあるドライバーを使用して OID_GEN_RECEIVE_SCALE_PARAMETERS_V2 クエリ NIC の RSS パラメーター NDIS を返します、 [NDIS_RECEIVE_SCALE_PARAMETERS_V2](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_scale_parameters_v2) RSS の現在のパラメーターを定義する構造体。
 
 この OID の目的は、セットとして、次の操作を実行するは。
 
@@ -39,7 +39,7 @@ RSS を有効にすると、上位のレイヤーの問題、 [OID_GEN_RSS_SET_I
 
 RSS を無効にする過程で、上位レイヤーはポイントすべて ite 用プライマリ プロセッサに RSS を無効にするには、この OID を呼び出す前にします。 その後、受信トラフィック、プライマリのプロセッサを対象とする必要があります。 ただし、ミニポート ドライバーでは、VPort の削除する前に RSS の無効化は限りません。 上位のレイヤーはことができますので、受信トラフィックが経由で流れていない、VPort を確保ゼロに VPort の受信フィルターを設定し、RSS を無効にしなくても、VPort の削除を続行します。
 
-上位のレイヤーは管理機能を実行する前に重要な不変性が違反していないことを確認します。 次に、例を示します。
+上位のレイヤーは管理機能を実行する前に重要な不変性が違反していないことを確認します。 例:
 
 - キューの数を変更する前に間接指定テーブルを VPort 用に構成されたより多くのプロセッサを参照していないこと、上位のレイヤーが保証されます。
 VMMQ によって制限されているアダプターの間接指定テーブル エントリの数を変更する前に、2 の累乗に間接指定テーブルの内容を正規化した上位のレイヤーが保証されます。
@@ -66,6 +66,6 @@ VMMQ によって制限されているアダプターの間接指定テーブル
 
 - [Receive Side Scaling バージョン 2 (RSSv2)](receive-side-scaling-version-2-rssv2-.md)
 - [OID_GEN_RECEIVE_SCALE_PARAMETERS](oid-gen-receive-scale-parameters.md)
-- [NDIS_RECEIVE_SCALE_PARAMETERS_V2](https://msdn.microsoft.com/library/windows/hardware/96EAB6EE-BF9A-46AD-8DED-5D9BD2B6F219)
+- [NDIS_RECEIVE_SCALE_PARAMETERS_V2](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_scale_parameters_v2)
 - [OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES](oid-gen-rss-set-indirection-table-entries.md)
 

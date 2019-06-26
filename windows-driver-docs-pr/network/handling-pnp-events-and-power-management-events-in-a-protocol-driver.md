@@ -13,16 +13,16 @@ keywords:
 - イベント通知の WDK ネットワーク
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d4c28205f9594fe4939d32173b54fb9261d2b5d0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9b3d38c6f612a38054b2b3b3eeb2fb05aa62f9d9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325721"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379792"
 ---
 # <a name="handling-pnp-events-and-power-management-events-in-a-protocol-driver"></a>プロトコル ドライバーの PnP イベントと電源管理イベントの処理
 
-オペレーティング システムでは、プラグ アンド プレイ (PnP) I/O 要求パケット (IRP) または電源管理 IRP がネットワーク インターフェイス カード (NIC) を表すターゲット デバイス オブジェクトを発行、NDIS は IRP をインターセプトします。 NDIS を呼び出してドライバーの各バインド プロトコル ドライバーとバインドされた各中間ドライバーにイベントを示します[ *ProtocolNetPnPEvent* ](https://msdn.microsoft.com/library/windows/hardware/ff570263)関数。 呼び出しで*ProtocolNetPnPEvent*、NDIS へのポインターを渡す、 [ **NET\_PNP\_イベント\_通知**](https://msdn.microsoft.com/library/windows/hardware/ff568752)を格納しています。NET\_PNP\_イベント構造体。 NET\_PNP\_PnP イベントまたは指定されている電源管理イベント、イベントの構造について説明します。 プロトコル ドライバーの PnP インターフェイスの詳細については、次を参照してください。[プロトコル ドライバーでの PnP イベント通知の処理](handling-pnp-event-notifications-in-a-protocol-driver.md)します。
+オペレーティング システムでは、プラグ アンド プレイ (PnP) I/O 要求パケット (IRP) または電源管理 IRP がネットワーク インターフェイス カード (NIC) を表すターゲット デバイス オブジェクトを発行、NDIS は IRP をインターセプトします。 NDIS を呼び出してドライバーの各バインド プロトコル ドライバーとバインドされた各中間ドライバーにイベントを示します[ *ProtocolNetPnPEvent* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_net_pnp_event)関数。 呼び出しで*ProtocolNetPnPEvent*、NDIS へのポインターを渡す、 [ **NET\_PNP\_イベント\_通知**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_pnp_event_notification)を格納しています。NET\_PNP\_イベント構造体。 NET\_PNP\_PnP イベントまたは指定されている電源管理イベント、イベントの構造について説明します。 プロトコル ドライバーの PnP インターフェイスの詳細については、次を参照してください。[プロトコル ドライバーでの PnP イベント通知の処理](handling-pnp-event-notifications-in-a-protocol-driver.md)します。
 
 示されている、PnP や電源管理イベントの一覧を次の**NetEvent**ネット コード\_PNP\_イベントの構造。
 
@@ -34,17 +34,17 @@ ms.locfileid: "63325721"
 
     ミニポート アダプターが低電力状態にある場合、プロトコル ドライバーには、OID 要求を発行できません。 この要件は、ドライバー スタックが一時停止状態のときに適用されるその他の制限に追加される追加の電源管理の制限です。
 
-    場合は、基になるミニポート アダプタの管理に対応した電源は、ミニポート ドライバーの設定、**デバイス**のメンバー [ **NDIS\_ミニポート\_アダプター\_全般\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff565923)に**NULL**と NDIS セット、**デバイス**のメンバー [**NDIS\_バインド\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff564832)に**NULL**します。
+    場合は、基になるミニポート アダプタの管理に対応した電源は、ミニポート ドライバーの設定、**デバイス**のメンバー [ **NDIS\_ミニポート\_アダプター\_全般\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)に**NULL**と NDIS セット、**デバイス**のメンバー [**NDIS\_バインド\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_bind_parameters)に**NULL**します。
 
-    **注**NDIS 6.30、以降、このイベントの通知を送信プロトコル ドライバーは新しい I/O 要求の生成を停止する必要があり、保留中の I/O 要求への呼び出しのコンテキスト内での完了を待つ必要がありますいない[ *ProtocolNetPnPEvent*](https://msdn.microsoft.com/library/windows/hardware/ff570263)します。
+    **注**NDIS 6.30、以降、このイベントの通知を送信プロトコル ドライバーは新しい I/O 要求の生成を停止する必要があり、保留中の I/O 要求への呼び出しのコンテキスト内での完了を待つ必要がありますいない[ *ProtocolNetPnPEvent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_net_pnp_event)します。
 
     セット電源イベントの詳細については、次を参照してください。 [PnP イベントを処理し、中間のドライバーで電源管理イベント](handling-pnp-events-and-power-management-events-in-an-intermediate-dri.md)します。
 
 -   **NetEventQueryPower**
 
-    クエリ機能要求、クエリは、基になるミニポート アダプターは特定の電源状態に遷移を作成できるかどうかを示します。 プロトコル ドライバーは常に成功する必要があります、 **NetEventQueryPower**します。 アクティブな接続を確立した後、プロトコルのドライバーを呼び出すことができます[ **PoRegisterSystemState** ](https://msdn.microsoft.com/library/windows/hardware/ff559731)を継続的なビジー状態を登録します。 状態の登録を有効になっている限り、電源マネージャーしようとしませんシステムをスリープ状態を格納します。 プロトコル ドライバーが呼び出すことによって状態登録をキャンセル、接続が非アクティブになった後[ **PoUnregisterSystemState**](https://msdn.microsoft.com/library/windows/hardware/ff559794)します。 プロトコル ドライバーは、システムが失敗したことでスリープ状態に遷移するを防ぐためにしないでください、 **NetEventQueryRemoveDevice**します。 なお、 **NetEventQueryPower**が常に続く、 **NetEventSetPower**します。 A **NetEventSetPower**するセット、デバイスの現在の電源状態有効取り消さ、 **NetEventQueryPower**します。
+    クエリ機能要求、クエリは、基になるミニポート アダプターは特定の電源状態に遷移を作成できるかどうかを示します。 プロトコル ドライバーは常に成功する必要があります、 **NetEventQueryPower**します。 アクティブな接続を確立した後、プロトコルのドライバーを呼び出すことができます[ **PoRegisterSystemState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-poregistersystemstate)を継続的なビジー状態を登録します。 状態の登録を有効になっている限り、電源マネージャーしようとしませんシステムをスリープ状態を格納します。 プロトコル ドライバーが呼び出すことによって状態登録をキャンセル、接続が非アクティブになった後[ **PoUnregisterSystemState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-pounregistersystemstate)します。 プロトコル ドライバーは、システムが失敗したことでスリープ状態に遷移するを防ぐためにしないでください、 **NetEventQueryRemoveDevice**します。 なお、 **NetEventQueryPower**が常に続く、 **NetEventSetPower**します。 A **NetEventSetPower**するセット、デバイスの現在の電源状態有効取り消さ、 **NetEventQueryPower**します。
 
-    **注**NDIS 6.30、以降、このイベントの通知を送信しますプロトコル ドライバーにする必要がありますいない完了を待つ、保留中の I/O 要求への呼び出しのコンテキスト内での[ *ProtocolNetPnPEvent*](https://msdn.microsoft.com/library/windows/hardware/ff570263).
+    **注**NDIS 6.30、以降、このイベントの通知を送信しますプロトコル ドライバーにする必要がありますいない完了を待つ、保留中の I/O 要求への呼び出しのコンテキスト内での[ *ProtocolNetPnPEvent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_net_pnp_event).
 
 -   **NetEventQueryRemoveDevice**
 
@@ -58,15 +58,15 @@ ms.locfileid: "63325721"
 
     ネットワーク コンポーネントの構成が変更されたことを示します。 たとえば、ユーザーは、TCP/IP の IP アドレスを変更する NDIS は このイベントを使用して、TCP/IP プロトコルを示します、 **NetEventReconfigure**コード。 プロトコル ドライバー、まれな状況は、エラー コードを返すことが示された構成の変更を適用できないと、使用可能な既定値がない場合。 メモリの割り当てに失敗した場合は、プロトコルにエラー コードが返されますの例に示します。 エラー コードを返すと、システムを再起動するように求めることができます。
 
-    プロトコルを検証する必要があります**NetEventReconfigure**-に関連するデータが渡されるその[ *ProtocolNetPnPEvent* ](https://msdn.microsoft.com/library/windows/hardware/ff570263)関数。 このようなデータの詳細については、次を参照してください。 [ **NET\_PNP\_イベント プロトコル ドライバーを**](https://msdn.microsoft.com/library/windows/hardware/ff568751)します。
+    プロトコルを検証する必要があります**NetEventReconfigure**-に関連するデータが渡されるその[ *ProtocolNetPnPEvent* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_net_pnp_event)関数。 このようなデータの詳細については、次を参照してください。 [ **NET\_PNP\_イベント プロトコル ドライバーを**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_pnp_event)します。
 
 -   **NetEventBindList**
 
-    プロトコル ドライバーにそのバインドの一覧の処理順序が再構成されていることを示します。 この一覧では、たとえば、複数のバインドのいずれかにルーティングすることも、ユーザーの要求を処理する際、プロトコルのバインドに適用する相対順序を示します。 このイベントに渡されたバッファーには、デバイス名が NULL で終わる Unicode 文字列として書式設定の一覧が含まれています。 各デバイス名の形式と同じですが、 *DeviceName*への呼び出しに渡されるパラメーター [ *ProtocolBindAdapterEx*](https://msdn.microsoft.com/library/windows/hardware/ff570220)します。
+    プロトコル ドライバーにそのバインドの一覧の処理順序が再構成されていることを示します。 この一覧では、たとえば、複数のバインドのいずれかにルーティングすることも、ユーザーの要求を処理する際、プロトコルのバインドに適用する相対順序を示します。 このイベントに渡されたバッファーには、デバイス名が NULL で終わる Unicode 文字列として書式設定の一覧が含まれています。 各デバイス名の形式と同じですが、 *DeviceName*への呼び出しに渡されるパラメーター [ *ProtocolBindAdapterEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_bind_adapter_ex)します。
 
-    プロトコルを検証する必要があります**NetEventBindList**-に関連するデータが渡されるその*ProtocolNetPnPEvent*関数。 このようなデータの詳細については、次を参照してください。 [ **NET\_PNP\_イベント プロトコル ドライバーを**](https://msdn.microsoft.com/library/windows/hardware/ff568751)します。
+    プロトコルを検証する必要があります**NetEventBindList**-に関連するデータが渡されるその*ProtocolNetPnPEvent*関数。 このようなデータの詳細については、次を参照してください。 [ **NET\_PNP\_イベント プロトコル ドライバーを**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_pnp_event)します。
 
-    プロトコルを検証する必要があります**NetEventBindList**-に関連するデータが渡されるその*ProtocolNetPnPEvent*関数。 このようなデータの詳細については、次を参照してください。 [ **NET\_PNP\_イベント プロトコル ドライバーを**](https://msdn.microsoft.com/library/windows/hardware/ff568751)します。
+    プロトコルを検証する必要があります**NetEventBindList**-に関連するデータが渡されるその*ProtocolNetPnPEvent*関数。 このようなデータの詳細については、次を参照してください。 [ **NET\_PNP\_イベント プロトコル ドライバーを**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_pnp_event)します。
 
 -   **NetEventBindsComplete**
 
@@ -98,4 +98,4 @@ ms.locfileid: "63325721"
 
 **バッファー** net メンバー\_PNP\_イベントの構造が指定されているイベントに固有の情報を格納しているバッファーを指します。
 
-プロトコル ドライバーへの呼び出しを完了できる*ProtocolNetPnPEvent*に非同期で[ **NdisCompleteNetPnPEvent**](https://msdn.microsoft.com/library/windows/hardware/ff561705)します。
+プロトコル ドライバーへの呼び出しを完了できる*ProtocolNetPnPEvent*に非同期で[ **NdisCompleteNetPnPEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscompletenetpnpevent)します。

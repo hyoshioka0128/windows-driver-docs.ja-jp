@@ -4,12 +4,12 @@ description: TAEF では、対応するテストとは異なるコンテキス�
 ms.assetid: FAFF5265-5268-412E-86A5-149B187B1376
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 098241eb5ad4ed03950eff668265d9db41e9d57b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f837dd849574228e38fe49798198510e0e408fc5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324737"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373005"
 ---
 # <a name="runfixtureas"></a>RunFixtureAs
 
@@ -64,14 +64,14 @@ TAEF '没入型ブローカー' プロセスで、フィクスチャを実行し
 
 **注:**  
 -   'ブローカー' は、Windows 8 以降のオペレーティング システムでのみサポートされます。
--   システムでは、テスト署名ポリシーを有効にする必要があります。 詳細については、 [「ブート構成オプションを TESTSIGNING](https://msdn.microsoft.com/library/windows/hardware/ff553484)します。
+-   システムでは、テスト署名ポリシーを有効にする必要があります。 詳細については、 [「ブート構成オプションを TESTSIGNING](https://docs.microsoft.com/windows-hardware/drivers/install/the-testsigning-boot-configuration-option)します。
 -   使用してリモートでテストを実行している ' RunFixtureAs ブローカーを =' は現在サポートされていません。
 -   実行するときに ' RunFixtureAs ブローカーを =' TAEF では、"TE を使用します。フィクスチャの実行で"TE ProcessHost.Broker.exe"プロセス。ProcessHost.exe"。
 
  
 
 <span id="UIAccess"></span><span id="uiaccess"></span><span id="UIACCESS"></span>**UIAccess**  
-TAEF は、UIAccess 実行レベル マーク アップのプロセスで、フィクスチャを実行します。 UI オートメーション アプリケーションの UIAccess については、次を参照してください。、 [Windows 整合性メカニズム デザイン](https://msdn.microsoft.com/library/bb625963)します。
+TAEF は、UIAccess 実行レベル マーク アップのプロセスで、フィクスチャを実行します。 UI オートメーション アプリケーションの UIAccess については、次を参照してください。、 [Windows 整合性メカニズム デザイン](https://docs.microsoft.com/previous-versions/dotnet/articles/bb625963(v=msdn.10))します。
 
 **注:**  
 -   UIAccess は、Vista 以降のオペレーティング システムでのみサポートされます。

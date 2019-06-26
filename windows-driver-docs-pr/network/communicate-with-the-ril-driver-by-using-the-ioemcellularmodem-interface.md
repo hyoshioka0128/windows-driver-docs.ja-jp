@@ -6,29 +6,29 @@ keywords:
 - IOemCellularModem インターフェイスのネットワーク ドライバーを使用して、RIL ドライバーとの通信します。
 ms.date: 11/07/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c8b465ac667d458874a1fcd1346b06b5bd711c7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 29764ad9d165259d265ed55b7361b97cbf81aa99
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356920"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369203"
 ---
 # <a name="communicate-with-the-ril-driver-by-using-the-ioemcellularmodem-interface"></a>IOemCellularModem インターフェイスを使用して、RIL ドライバーとの通信します。
 
 > [!WARNING]
 > 携帯電話の COM API は、Windows 10 で非推奨とされます。 このコンテンツは、OEM および携帯電話会社が Windows Phone 8.1 アプリケーションの作成の保守をサポートするために提供されます。
 
-使用することができます、 [IOemCellularModem](https://msdn.microsoft.com/library/windows/hardware/dn946687) OEM RIL ドライバーと通信するインターフェイス。 パートナーが使用できる場合は、制限付きのプラットフォームで Api を使用して、モデムとの通信には、(RPAL) ボックスの一覧。
+使用することができます、 [IOemCellularModem](https://docs.microsoft.com/previous-versions/windows/hardware/cellular/dn946687(v=vs.85)) OEM RIL ドライバーと通信するインターフェイス。 パートナーが使用できる場合は、制限付きのプラットフォームで Api を使用して、モデムとの通信には、(RPAL) ボックスの一覧。
 
-携帯電話の COM Api の詳細については、次を参照してください。[携帯電話の COM API リファレンス](https://msdn.microsoft.com/library/windows/hardware/dn946508)します。
+携帯電話の COM Api の詳細については、次を参照してください。[携帯電話の COM API リファレンス](https://docs.microsoft.com/previous-versions/windows/hardware/cellular/dn946508(v=vs.85))します。
 
 ## <a name="using-cellular-com-apis"></a>携帯電話の COM Api を使用します。
 
-携帯電話の COM Api を使用するへのポインターを取得、 [IOemCellular](https://msdn.microsoft.com/library/windows/hardware/dn946677)を呼び出してインスタンス**CoCreateInstanceFromApp**します。 呼び出し元アプリケーションには、使用するには IOemCellular インターフェイスへのポインターが必要な[IOemCellularModem](https://msdn.microsoft.com/library/windows/hardware/dn946687)インターフェイス。 
+携帯電話の COM Api を使用するへのポインターを取得、 [IOemCellular](https://docs.microsoft.com/previous-versions/windows/hardware/cellular/dn946677(v=vs.85))を呼び出してインスタンス**CoCreateInstanceFromApp**します。 呼び出し元アプリケーションには、使用するには IOemCellular インターフェイスへのポインターが必要な[IOemCellularModem](https://docs.microsoft.com/previous-versions/windows/hardware/cellular/dn946687(v=vs.85))インターフェイス。 
 
-[IOemCellular::RegisterForOemModemExistenceChanges](https://msdn.microsoft.com/library/windows/hardware/dn931023)メソッドを使用して、モデムが一覧表示します。 メソッドが呼び出されると、 [IOemCellularModemExistenceChange::OnOemModemAdded](https://msdn.microsoft.com/library/windows/hardware/dn946689)が呼び出されると、 [IOemCellularModem](https://msdn.microsoft.com/library/windows/hardware/dn946687)ポインター。
+[IOemCellular::RegisterForOemModemExistenceChanges](https://docs.microsoft.com/previous-versions/windows/hardware/cellular/dn931023(v=vs.85))メソッドを使用して、モデムが一覧表示します。 メソッドが呼び出されると、 [IOemCellularModemExistenceChange::OnOemModemAdded](https://docs.microsoft.com/previous-versions/windows/hardware/cellular/dn946689(v=vs.85))が呼び出されると、 [IOemCellularModem](https://docs.microsoft.com/previous-versions/windows/hardware/cellular/dn946687(v=vs.85))ポインター。
 
-このコードでは、取得、 [IOemCellular](https://msdn.microsoft.com/library/windows/hardware/dn946677)を使用してポインター **CoCreateInstanceFromApp**します。 CoCreateInstanceFromApp は、特定のインターフェイスを 1 つまたは複数のポインターを返すことができます。 必要なインターフェイスは、クエリ [0] .pIID によって指定される、IOemCellular です。 OemCellular は、サポートする COM クラス; への参照クラスをアクティブにするファクトリを決定します。 
+このコードでは、取得、 [IOemCellular](https://docs.microsoft.com/previous-versions/windows/hardware/cellular/dn946677(v=vs.85))を使用してポインター **CoCreateInstanceFromApp**します。 CoCreateInstanceFromApp は、特定のインターフェイスを 1 つまたは複数のポインターを返すことができます。 必要なインターフェイスは、クエリ [0] .pIID によって指定される、IOemCellular です。 OemCellular は、サポートする COM クラス; への参照クラスをアクティブにするファクトリを決定します。 
 
 ```c++
     MULTI_QI query[1];
@@ -40,7 +40,7 @@ ms.locfileid: "63356920"
                                 nullptr, _countof(query), query);
     ...
 ```
-このコードへのポインターを登録するかを示しています。 [IOemCellularModemExistenceChange](https://msdn.microsoft.com/library/windows/hardware/dn946688)を使用して[IOemCellular::RegisterForOemModemExistenceChanges](https://msdn.microsoft.com/library/windows/hardware/dn931023)します。 次のコードではへのポインター **CModems** IOemCellularModemExistenceChange インターフェイスを提供します。
+このコードへのポインターを登録するかを示しています。 [IOemCellularModemExistenceChange](https://docs.microsoft.com/previous-versions/windows/hardware/cellular/dn946688(v=vs.85))を使用して[IOemCellular::RegisterForOemModemExistenceChanges](https://docs.microsoft.com/previous-versions/windows/hardware/cellular/dn931023(v=vs.85))します。 次のコードではへのポインター **CModems** IOemCellularModemExistenceChange インターフェイスを提供します。
 
 ```c++
     HRESULT hr;
@@ -49,7 +49,7 @@ ms.locfileid: "63356920"
     ...
 ```
 
-このコードは、実装する方法を示しています。 **OnOemModemAdded**やの他のメソッド、 [IOemCellularModemExistenceChange](https://msdn.microsoft.com/library/windows/hardware/dn946688)インターフェイス。
+このコードは、実装する方法を示しています。 **OnOemModemAdded**やの他のメソッド、 [IOemCellularModemExistenceChange](https://docs.microsoft.com/previous-versions/windows/hardware/cellular/dn946688(v=vs.85))インターフェイス。
 
 ```c++
 class CModems : public IOemCellularModemExistenceChange, public CellBase
@@ -75,9 +75,9 @@ IFACEMETHODIMP CModems::OnOemModemAdded(IOemCellularModem *pModem)
 
 ## <a name="sending-opaque-data-to-ril"></a>RIL を非透過データを送信します。
 
-表示されたら、 **IOemCellularModem**を呼び出すことによってポインター **OnOemModemAdded**、 [IOemCellularModem::SendModemOpaqueCommand](https://msdn.microsoft.com/library/windows/hardware/dn931017)ことができます。 Cellcore を呼び出し、バック グラウンドで、 **RIL_DevSpecific**渡されたパラメーターを持つ関数です。 RIL ドライバーでは、この要求を処理し、上位の層への応答を送信します。 応答が配信された後、コールバックを[IModemOpaqueCommandCompletion::OnModemOpaqueCommandCompletion](https://msdn.microsoft.com/library/windows/hardware/dn946648)の結果とが呼び出される、 **SendModemOpaqueCommand**呼び出します。
+表示されたら、 **IOemCellularModem**を呼び出すことによってポインター **OnOemModemAdded**、 [IOemCellularModem::SendModemOpaqueCommand](https://docs.microsoft.com/previous-versions/windows/hardware/cellular/dn931017(v=vs.85))ことができます。 Cellcore を呼び出し、バック グラウンドで、 **RIL_DevSpecific**渡されたパラメーターを持つ関数です。 RIL ドライバーでは、この要求を処理し、上位の層への応答を送信します。 応答が配信された後、コールバックを[IModemOpaqueCommandCompletion::OnModemOpaqueCommandCompletion](https://docs.microsoft.com/previous-versions/windows/hardware/cellular/dn946648(v=vs.85))の結果とが呼び出される、 **SendModemOpaqueCommand**呼び出します。
 
-このコードでは非透過的なデータに送信、 [IOemCellularModem::SendModemOpaqueCommand](https://msdn.microsoft.com/library/windows/hardware/dn931017)します。
+このコードでは非透過的なデータに送信、 [IOemCellularModem::SendModemOpaqueCommand](https://docs.microsoft.com/previous-versions/windows/hardware/cellular/dn931017(v=vs.85))します。
 
 ```c++
     void CCellcoreComponent::CAgent::SetRadioPowerState(bool fPowerOn)
@@ -90,7 +90,7 @@ IFACEMETHODIMP CModems::OnOemModemAdded(IOemCellularModem *pModem)
     ...
 ```
 
-前のコード例では、コマンドは、無線をオンまたはオフにするために RIL に送信されます。 RIL ドライバーを 2 つの DWORD データ要素を処理するために設計するときに**RIL_DevSpecific**が呼び出されます。 独自の構造と、ニーズに合わせてコマンドを定義することができます。 応答は、完了コールバックし、コマンドの完了後、RIL ドライバーを送信します ([IModemOpaqueCommandCompletion::OnModemOpaqueCommandCompletion](https://msdn.microsoft.com/library/windows/hardware/dn946648)) が呼び出されます。 
+前のコード例では、コマンドは、無線をオンまたはオフにするために RIL に送信されます。 RIL ドライバーを 2 つの DWORD データ要素を処理するために設計するときに**RIL_DevSpecific**が呼び出されます。 独自の構造と、ニーズに合わせてコマンドを定義することができます。 応答は、完了コールバックし、コマンドの完了後、RIL ドライバーを送信します ([IModemOpaqueCommandCompletion::OnModemOpaqueCommandCompletion](https://docs.microsoft.com/previous-versions/windows/hardware/cellular/dn946648(v=vs.85))) が呼び出されます。 
 
 このコードでは、受信側の完了イベントを処理、 **SendModemOpaqueCommand**前の例ではコマンド。
 
@@ -120,9 +120,9 @@ IFACEMETHODIMP CCellcoreComponent::CAgent::OnModemOpaqueCommandCompletion (
 
 ## <a name="receiving-a-notification-from-ril"></a>RIL から通知を受け取る
 
-携帯電話のインターフェイスで始まる RIL 通知のいくつか提供されます**RIL_NOTIFY**と同様に、 **RIL_NOTIFY_SIGNALQUALITY**します。 **IOemCellularModem** RIL 通知を受信する既定の方法を提供しません。 1 つのオプションは、使用する[IOemCellularModem::RegisterForOpaqueModemNotifications](https://msdn.microsoft.com/library/windows/hardware/dn931015)のこれらの OEM RIL 通知します。 これを行うには、独自の RIL 通知メッセージをまず定義より小さい**RIL_NOTIFY_OEM_MAX**RilAPITypes.h で定義されています。 RIL、OEM RIL 通知を送信するたびに[IOpaqueModemNotifications::OnOpaqueModemNotifications](https://msdn.microsoft.com/library/windows/hardware/dn931072)コールバック ポインターが IOemCellularModem::RegisterForOpaqueModemNotifications によって登録された後に呼び出されます。 
+携帯電話のインターフェイスで始まる RIL 通知のいくつか提供されます**RIL_NOTIFY**と同様に、 **RIL_NOTIFY_SIGNALQUALITY**します。 **IOemCellularModem** RIL 通知を受信する既定の方法を提供しません。 1 つのオプションは、使用する[IOemCellularModem::RegisterForOpaqueModemNotifications](https://docs.microsoft.com/previous-versions/windows/hardware/cellular/dn931015(v=vs.85))のこれらの OEM RIL 通知します。 これを行うには、独自の RIL 通知メッセージをまず定義より小さい**RIL_NOTIFY_OEM_MAX**RilAPITypes.h で定義されています。 RIL、OEM RIL 通知を送信するたびに[IOpaqueModemNotifications::OnOpaqueModemNotifications](https://docs.microsoft.com/previous-versions/windows/hardware/cellular/dn931072(v=vs.85))コールバック ポインターが IOemCellularModem::RegisterForOpaqueModemNotifications によって登録された後に呼び出されます。 
 
-このコードを呼び出す方法を示します[IOemCellularModem::RegisterForOpaqueModemNotifications](https://msdn.microsoft.com/library/windows/hardware/dn931015)します。
+このコードを呼び出す方法を示します[IOemCellularModem::RegisterForOpaqueModemNotifications](https://docs.microsoft.com/previous-versions/windows/hardware/cellular/dn931015(v=vs.85))します。
 
 ```c++
 HRESULT CCellcoreComponent::CAgent::Initialize()
@@ -132,7 +132,7 @@ HRESULT CCellcoreComponent::CAgent::Initialize()
     ...
 ```
 
-このコードは、実装する方法を示しています。 [IOpaqueModemNotifications::OnOpaqueModemNotifications](https://msdn.microsoft.com/library/windows/hardware/dn931072)します。 コードには、信号のバーの数を返す通知コールバック ハンドルが含まれています。 呼び出し元のアプリケーションの両方を RIL ドライバーでは、カスタム定義通知 RIL_NOTIFY_OEM_SIGNALSTRENGTH を実装する必要があります。
+このコードは、実装する方法を示しています。 [IOpaqueModemNotifications::OnOpaqueModemNotifications](https://docs.microsoft.com/previous-versions/windows/hardware/cellular/dn931072(v=vs.85))します。 コードには、信号のバーの数を返す通知コールバック ハンドルが含まれています。 呼び出し元のアプリケーションの両方を RIL ドライバーでは、カスタム定義通知 RIL_NOTIFY_OEM_SIGNALSTRENGTH を実装する必要があります。
 
 ```c++
 class CAgent : 
@@ -192,5 +192,5 @@ IFACEMETHODIMP CCellcoreComponent::CAgent::OnOpaqueModemNotifications(
 
 [携帯電話の COM API の設計ガイド](cellular-com-api-design-guide.md)
 
-[携帯電話の COM API リファレンス](https://msdn.microsoft.com/library/windows/hardware/dn946508)
+[携帯電話の COM API リファレンス](https://docs.microsoft.com/previous-versions/windows/hardware/cellular/dn946508(v=vs.85))
 

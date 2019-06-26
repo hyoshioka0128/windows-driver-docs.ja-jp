@@ -4,12 +4,12 @@ description: NIC スイッチ
 ms.assetid: 7681DBB2-6645-4B06-9D95-64E7FD379029
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e010a225adcdd610b42d8f523d2e848a4b79362
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 91e5a6a241576bdb8f02388d6b41698ca8c1c877
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380589"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371214"
 ---
 # <a name="nic-switches"></a>NIC スイッチ
 
@@ -42,7 +42,7 @@ NIC のスイッチのハードウェア リソースは、SR-IOV ネットワ�
 
 -   標準化された、SR-IOV と NIC スイッチ INF キーワードに基づく静的作成します。 これらのキーワードの詳細については、次を参照してください。 [SR-IOV の標準化された INF キーワード](standardized-inf-keywords-for-sr-iov.md)します。
 
--   オブジェクト識別子 (OID) のメソッドの要求ベースの動的な作成[OID\_NIC\_スイッチ\_作成\_スイッチ](https://msdn.microsoft.com/library/windows/hardware/hh451815)します。 NDIS または HYPER-V 拡張可能スイッチ モジュールは、SR-IOV ネットワーク アダプターに NIC のスイッチを作成するには、これら OID 要求を発行します。
+-   オブジェクト識別子 (OID) のメソッドの要求ベースの動的な作成[OID\_NIC\_スイッチ\_作成\_スイッチ](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-create-switch)します。 NDIS または HYPER-V 拡張可能スイッチ モジュールは、SR-IOV ネットワーク アダプターに NIC のスイッチを作成するには、これら OID 要求を発行します。
 
 NIC のスイッチを作成、構成、および管理する方法の詳細については、次を参照してください。[管理 NIC スイッチ](managing-nic-switches.md)します。
 

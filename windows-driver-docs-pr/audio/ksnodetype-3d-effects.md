@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a273d7684614ee495426b436317a30fa0ce2d59
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d2801d68257f98a42fdaef43ac5439deb8166f0a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333311"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359027"
 ---
 # <a name="ksnodetype3deffects"></a>KSNODETYPE\_3D\_効果
 
@@ -35,7 +35,7 @@ KSNODETYPE\_3D\_効果ノードは、次の省略可能なプロパティを使�
 
 [**KSPROPERTY\_AUDIO\_STEREO\_SPEAKER\_GEOMETRY**](ksproperty-audio-stereo-speaker-geometry.md)
 
-詳細については、次を参照してください。 [DirectSound スピーカー構成設定](https://msdn.microsoft.com/library/windows/hardware/ff536332)します。
+詳細については、次を参照してください。 [DirectSound スピーカー構成設定](https://docs.microsoft.com/windows-hardware/drivers/audio/directsound-speaker-configuration-settings)します。
 
 さらに、DirectSound いる必要があります、KSNODETYPE\_3D\_効果ノードは、次の 3 D リスナーと 3D バッファー プロパティをサポートします。
 

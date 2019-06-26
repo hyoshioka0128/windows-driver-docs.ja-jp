@@ -4,12 +4,12 @@ description: ISCSI\_パス WMI クラス
 ms.assetid: d4067869-2c67-42d3-988e-af825549853d
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: b9a3c1dad6878eba817bf4ceb7bf23419ab89e8e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 63a99b532c8e2122a7d37cde20269a60f71bdc0d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377488"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378431"
 ---
 # <a name="iscsipath-wmi-class"></a>ISCSI\_パス WMI クラス
 
@@ -59,7 +59,7 @@ class ISCSI_Path
 };
 ```
 
-WMI ツールのスイートでは、上記のクラス定義をコンパイルするときに生成、 [ **ISCSI\_パス**](https://msdn.microsoft.com/library/windows/hardware/ff561550)データ構造体。
+WMI ツールのスイートでは、上記のクラス定義をコンパイルするときに生成、 [ **ISCSI\_パス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsimgt/ns-iscsimgt-_iscsi_path)データ構造体。
 
  
 

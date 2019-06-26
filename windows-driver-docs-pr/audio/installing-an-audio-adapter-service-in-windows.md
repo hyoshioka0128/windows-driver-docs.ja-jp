@@ -9,16 +9,16 @@ keywords:
 - アダプター サービスの WDK オーディオ
 ms.date: 10/26/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f927a980c2079bfff843be04b7f28a1c1a7086c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 69fab800bc97d16bc70d0579eb365d802547e367
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333439"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359893"
 ---
 # <a name="installing-an-audio-adapter-service-in-windows"></a>Windows でのオーディオ アダプター サービスのインストール
 
-次[ **INF AddService ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546326) XYZ のオーディオ デバイスの Xyzaud.sys アダプター ドライバーがインストールされます。
+次[ **INF AddService ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addservice-directive) XYZ のオーディオ デバイスの Xyzaud.sys アダプター ドライバーがインストールされます。
 
 ```cpp
   [XYZ-Audio-Device.Services.NTX86]

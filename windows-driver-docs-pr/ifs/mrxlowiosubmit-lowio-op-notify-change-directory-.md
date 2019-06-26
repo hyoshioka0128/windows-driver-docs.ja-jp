@@ -15,17 +15,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b70fbc346cf6039e070973e4c4c82c3c3e9e5338
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: edbc2b8b5992bbb247467f9d8f8c72180034a39b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357542"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355533"
 ---
 # <a name="mrxlowiosubmitlowioopnotifychangedirectory-routine"></a>MRxLowIOSubmit\[LOWIO\_OP\_通知\_変更\_ディレクトリ\]ルーチン
 
 
-*MRxLowIOSubmit\[LOWIO\_OP\_通知\_変更\_ディレクトリ\]* ルーチンを呼び出して[RDBSS](https://msdn.microsoft.com/library/windows/hardware/ff556810)にディレクトリ変更通知の操作のネットワークのミニ リダイレクターに要求を発行します。
+*MRxLowIOSubmit\[LOWIO\_OP\_通知\_変更\_ディレクトリ\]* ルーチンを呼び出して[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)にディレクトリ変更通知の操作のネットワークのミニ リダイレクターに要求を発行します。
 
 <a name="syntax"></a>構文
 ------
@@ -96,7 +96,7 @@ RX へのポインター\_CONTEXT 構造体。 このパラメーターには、
 
 RDBSS 呼び出し*MRxLowIOSubmit\[LOWIO\_OP\_通知\_変更\_ディレクトリ\]* 受信に応答する[ **IRP\_MJ\_ディレクトリ\_コントロール**](irp-mj-directory-control.md)要求。
 
-呼び出しの前に*MRxLowIOSubmit\[LOWIO\_OP\_通知\_変更\_ディレクトリ\]*、RDBSSRXでは、次のメンバーを変更します。\_によって示される CONTEXT 構造体、 *RxContext*パラメーター。
+呼び出しの前に*MRxLowIOSubmit\[LOWIO\_OP\_通知\_変更\_ディレクトリ\]* 、RDBSSRXでは、次のメンバーを変更します。\_によって示される CONTEXT 構造体、 *RxContext*パラメーター。
 
 **LowIoContext.Operation** LOWIO にメンバーが設定されている\_OP\_通知\_変更\_ディレクトリ。
 
@@ -112,9 +112,9 @@ RDBSS 呼び出し*MRxLowIOSubmit\[LOWIO\_OP\_通知\_変更\_ディレクトリ
 
 ディレクトリ変更通知の操作を通常によって実装されますミニリダイレクター ネットワークは、非同期操作としてかなりの時間がかかるため。 操作は、通常、変更通知を要求しているリモート サーバーにネットワーク要求を送信するので構成されます。 サーバーで、必要な変更の影響を受ける場合は、応答が取得されます。 これは、ローカルで開始されたキャンセルを処理するための一意のコンテキスト値を登録する必要がありますネットワーク ミニリダイレクター操作の例です。
 
-中に、 *MRxLowIOSubmit\[LOWIO\_OP\_通知\_変更\_ディレクトリ\]* ルーチンは、処理中、 **LowIoContext.ResourceThreadId** RX のメンバー\_コンテキスト RDBSS で操作を開始したプロセスのスレッドを示すことが保証されます。 **LowIoContext.ResourceThreadId**別のスレッドの代わり FCB 構造体を解放するメンバーを使用することができます。 非同期のルーチンが完了したら、最初のスレッドから取得された FCB 構造体を解放できます。 FCB 構造体を呼び出すことによって解放できます[ **RxReleaseFcbResourceForThreadInMRx**](https://msdn.microsoft.com/library/windows/hardware/ff554694)します。
+中に、 *MRxLowIOSubmit\[LOWIO\_OP\_通知\_変更\_ディレクトリ\]* ルーチンは、処理中、 **LowIoContext.ResourceThreadId** RX のメンバー\_コンテキスト RDBSS で操作を開始したプロセスのスレッドを示すことが保証されます。 **LowIoContext.ResourceThreadId**別のスレッドの代わり FCB 構造体を解放するメンバーを使用することができます。 非同期のルーチンが完了したら、最初のスレッドから取得された FCB 構造体を解放できます。 FCB 構造体を呼び出すことによって解放できます[ **RxReleaseFcbResourceForThreadInMRx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrxfcb/nf-mrxfcb-rxreleasefcbresourceforthreadinmrx)します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -137,23 +137,23 @@ RDBSS 呼び出し*MRxLowIOSubmit\[LOWIO\_OP\_通知\_変更\_ディレクトリ
 ## <a name="see-also"></a>関連項目
 
 
-[**MRxLowIOSubmit\[LOWIO\_OP\_EXCLUSIVELOCK\]**](mrxlowiosubmit-lowio-op-exclusivelock-.md)
+[**MRxLowIOSubmit\[LOWIO\_OP\_EXCLUSIVELOCK\]** ](mrxlowiosubmit-lowio-op-exclusivelock-.md)
 
-[**MRxLowIOSubmit\[LOWIO\_OP\_FSCTL\]**](mrxlowiosubmit-lowio-op-fsctl-.md)
+[**MRxLowIOSubmit\[LOWIO\_OP\_FSCTL\]** ](mrxlowiosubmit-lowio-op-fsctl-.md)
 
-[**MRxLowIOSubmit\[LOWIO\_OP\_IOCTL\]**](mrxlowiosubmit-lowio-op-ioctl-.md)
+[**MRxLowIOSubmit\[LOWIO\_OP\_IOCTL\]** ](mrxlowiosubmit-lowio-op-ioctl-.md)
 
-[**MRxLowIOSubmit\[LOWIO\_OP\_READ\]**](mrxlowiosubmit-lowio-op-read-.md)
+[**MRxLowIOSubmit\[LOWIO\_OP\_READ\]** ](mrxlowiosubmit-lowio-op-read-.md)
 
-[**MRxLowIOSubmit\[LOWIO\_OP\_SHAREDLOCK\]**](mrxlowiosubmit-lowio-op-sharedlock-.md)
+[**MRxLowIOSubmit\[LOWIO\_OP\_SHAREDLOCK\]** ](mrxlowiosubmit-lowio-op-sharedlock-.md)
 
-[**MRxLowIOSubmit\[LOWIO\_OP\_UNLOCK\]**](mrxlowiosubmit-lowio-op-unlock-.md)
+[**MRxLowIOSubmit\[LOWIO\_OP\_UNLOCK\]** ](mrxlowiosubmit-lowio-op-unlock-.md)
 
-[**MRxLowIOSubmit\[LOWIO\_OP\_UNLOCK\_MULTIPLE\]**](mrxlowiosubmit-lowio-op-unlock-multiple-.md)
+[**MRxLowIOSubmit\[LOWIO\_OP\_UNLOCK\_MULTIPLE\]** ](mrxlowiosubmit-lowio-op-unlock-multiple-.md)
 
-[**MRxLowIOSubmit\[LOWIO\_OP\_WRITE\]**](mrxlowiosubmit-lowio-op-write-.md)
+[**MRxLowIOSubmit\[LOWIO\_OP\_WRITE\]** ](mrxlowiosubmit-lowio-op-write-.md)
 
-[**RxReleaseFcbResourceForThreadInMRx**](https://msdn.microsoft.com/library/windows/hardware/ff554694)
+[**RxReleaseFcbResourceForThreadInMRx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrxfcb/nf-mrxfcb-rxreleasefcbresourceforthreadinmrx)
 
  
 

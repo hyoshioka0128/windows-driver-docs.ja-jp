@@ -5,17 +5,17 @@ ms.assetid: a54190f7-0d2e-4f85-84c2-05fc9ec4994a
 ms.date: 08/08/2017
 keywords: -OID_GEN_RECEIVE_SCALE_PARAMETERS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: ebd164b14c13c5ca30fdec357c1225afcae3d9e7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cfe12cbc857018518b804436fc777864ae7aea71
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364184"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355124"
 ---
 # <a name="oidgenreceivescaleparameters"></a>OID\_GEN\_受信\_スケール\_パラメーター
 
 
-クエリとして NDIS と関連付けたドライバーできます OID を使用\_GEN\_受信\_スケール\_現在のクエリを実行するパラメーターの OID が NIC の側のスケーリング (RSS) パラメーターを受け取る NDIS を返します、 [ **NDIS\_受信\_スケール\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff567228) RSS の現在のパラメーターを定義する構造体。
+クエリとして NDIS と関連付けたドライバーできます OID を使用\_GEN\_受信\_スケール\_現在のクエリを実行するパラメーターの OID が NIC の側のスケーリング (RSS) パラメーターを受け取る NDIS を返します、 [ **NDIS\_受信\_スケール\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_scale_parameters) RSS の現在のパラメーターを定義する構造体。
 
 セットとして NDIS と関連付けたドライバー使用 OID\_GEN\_受信\_スケール\_NIC の現在の RSS パラメーターを設定するパラメーターの OID ミニポート ドライバーが受信、NDIS\_受信\_スケール\_RSS パラメーターを定義するパラメーターの構造体。
 
@@ -27,7 +27,7 @@ ms.locfileid: "63364184"
 
 NDIS ミニポート ドライバーでは、クエリが要求されていないと、RSS をサポートするドライバーに対して必要です。 NDIS は、ミニポート ドライバーにクエリを処理します。
 
-TCP/IP ドライバーは IPv4 を構成し、1 つの OID と IPv6 の OID 要求の設定\_GEN\_受信\_スケール\_パラメーター。 つまり、スタックは、IPv4 と IPv6 の両方に対して RSS が有効にする必要があります、設定に対応するフラグの両方、 **HashInformation**のメンバー、 [ **NDIS\_受信\_スケール\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff567228)構造と送信の 1 つの OID 要求。 また、IPv4 と IPv6 の同じ秘密キーを使用して、IPv4 のみが有効になっている場合でも、キーが 40 (バイト単位) を必ず。
+TCP/IP ドライバーは IPv4 を構成し、1 つの OID と IPv6 の OID 要求の設定\_GEN\_受信\_スケール\_パラメーター。 つまり、スタックは、IPv4 と IPv6 の両方に対して RSS が有効にする必要があります、設定に対応するフラグの両方、 **HashInformation**のメンバー、 [ **NDIS\_受信\_スケール\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_scale_parameters)構造と送信の 1 つの OID 要求。 また、IPv4 と IPv6 の同じ秘密キーを使用して、IPv4 のみが有効になっている場合でも、キーが 40 (バイト単位) を必ず。
 
 基になるミニポート アダプターは、最新の OID を使用する必要があります\_GEN\_受信\_スケール\_受け取ったパラメーター OID 設定します。 たとえば、ミニポート OID の取得\_GEN\_受信\_スケール\_IPv4 ハッシュを使用してパラメーターの OID は型がありません、コントロールが以前に有効な場合は、IPv4 RSS を無効にする必要があります。
 
@@ -39,7 +39,7 @@ TCP/IP ドライバーは IPv4 を構成し、1 つの OID と IPv6 の OID 要�
 
  
 
-**注**  間接指定テーブルと秘密キーは後に追加された、 [ **NDIS\_受信\_スケール\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff567228)構造体のメンバー。 間接指定テーブルと秘密キーの詳細については、次を参照してください。 **NDIS\_受信\_スケール\_パラメーター**します。
+**注**  間接指定テーブルと秘密キーは後に追加された、 [ **NDIS\_受信\_スケール\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_scale_parameters)構造体のメンバー。 間接指定テーブルと秘密キーの詳細については、次を参照してください。 **NDIS\_受信\_スケール\_パラメーター**します。
 
  
 
@@ -66,7 +66,7 @@ TCP/IP ドライバーは IPv4 を構成し、1 つの OID と IPv6 の OID 要�
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_受信\_スケール\_パラメーター**](https://msdn.microsoft.com/library/windows/hardware/ff567228)
+[**NDIS\_受信\_スケール\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_scale_parameters)
 
 [OID\_GEN\_受信\_ハッシュ](oid-gen-receive-hash.md)
 

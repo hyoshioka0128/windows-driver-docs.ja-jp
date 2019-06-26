@@ -4,25 +4,25 @@ description: SendDownStreamIrp 関数
 ms.assetid: 09a06041-5b26-4796-b9b8-d7d27321d955
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c9a373a1b43f86a6e8feeca3bfab3badfaa8db8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dbd6f1c6b52ffd88cbd46f82c791b83452b8d5f9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63329715"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355809"
 ---
 # <a name="senddownstreamirp-function"></a>SendDownStreamIrp 関数
 
 
-コード例を`SendDownStreamIrp`このトピックで提供されている関数は、ACPI ドライバーを同期 IOCTL 要求を送信するドライバーによって提供される関数を実装する方法を示します。 `SendDownStreamIrp`関数は、送信に使用できる、 [ **IOCTL\_ACPI\_EVAL\_メソッド**](https://msdn.microsoft.com/library/windows/hardware/ff536148)要求、 [ **IOCTL\_ACPI\_EVAL\_メソッド\_EX** ](https://msdn.microsoft.com/library/windows/hardware/ff536149)要求、または[ **IOCTL\_ACPI\_ENUM\_子**](https://msdn.microsoft.com/library/windows/hardware/ff536147)要求。
+コード例を`SendDownStreamIrp`このトピックで提供されている関数は、ACPI ドライバーを同期 IOCTL 要求を送信するドライバーによって提供される関数を実装する方法を示します。 `SendDownStreamIrp`関数は、送信に使用できる、 [ **IOCTL\_ACPI\_EVAL\_メソッド**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ni-acpiioct-ioctl_acpi_eval_method)要求、 [ **IOCTL\_ACPI\_EVAL\_メソッド\_EX** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ni-acpiioct-ioctl_acpi_eval_method_ex)要求、または[ **IOCTL\_ACPI\_ENUM\_子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ni-acpiioct-ioctl_acpi_enum_children)要求。
 
 コードの使用例、`SendDownStreamIrp`このセクションに記載されている関数は、次の一連の操作を実行します。
 
 -   イベント オブジェクトを作成します。
 
--   呼び出し[ **IoBuildDeviceIoControlRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff548318) IOCTL 要求を作成します。
+-   呼び出し[ **IoBuildDeviceIoControlRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iobuilddeviceiocontrolrequest) IOCTL 要求を作成します。
 
--   呼び出し[**保留**](https://msdn.microsoft.com/library/windows/hardware/ff548336) IOCTL 要求を送信します。
+-   呼び出し[**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver) IOCTL 要求を送信します。
 
 -   ACPI のドライバーが、要求が完了したことを示すイベント オブジェクトに通知するまで待機します。
 

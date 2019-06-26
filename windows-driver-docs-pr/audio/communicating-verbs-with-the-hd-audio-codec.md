@@ -4,12 +4,12 @@ description: 動詞を HD オーディオ コーデックとやり取りする
 ms.assetid: d93013fa-5b09-4616-bc71-5d3838337717
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 71f8ec7ff40cd04a6236fef85a75b933365a78b8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2fe04cc596357f1e42a7ba1353b94db1a563a0f6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333877"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355585"
 ---
 # <a name="communicating-verbs-with-the-hd-audio-codec"></a>動詞を HD オーディオ コーデックとやり取りする
 
@@ -41,7 +41,7 @@ BOOL DeviceIoControl(
 );
 ```
 
-場合に呼び出し[ **DeviceIoControl** ](https://msdn.microsoft.com/library/windows/desktop/aa363216)が成功すると、0 以外の値はすべて返します。 呼び出しが故障したかが保留されています (処理されませんすぐに)、 **DeviceIoControl**ゼロ値を返します。 クラスのドライバーを呼び出すことができます[GetLastError](https://go.microsoft.com/fwlink/p/?linkid=169416)より詳細なエラー メッセージ。
+場合に呼び出し[ **DeviceIoControl** ](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)が成功すると、0 以外の値はすべて返します。 呼び出しが故障したかが保留されています (処理されませんすぐに)、 **DeviceIoControl**ゼロ値を返します。 クラスのドライバーを呼び出すことができます[GetLastError](https://go.microsoft.com/fwlink/p/?linkid=169416)より詳細なエラー メッセージ。
 
 IOCTL を使用できるとき、オーディオ ドライバーには、暗証番号 (pin) の既定の設定を変更する必要があります、\_AZALIABUS\_SENDVERBS 送受信するように設定し、オーディオ コーデックから動詞を取得します。 オーディオ コーデックとの通信は、pin の構成の詳細については、オーディオ コーデックはのみ Get 動詞に応答します。
 

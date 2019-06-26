@@ -6,23 +6,23 @@ ms.date: 07/18/2017
 keywords:
 - NDIS_STATUS_WWAN_DEVICE_CAPS_EX ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: d3eda6be7161a70346333d55c24923f213edb9f0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a27e48a081a967e87c3f375cacbed14e1b8a0f6b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354825"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375177"
 ---
 # <a name="ndisstatuswwandevicecapsex"></a>NDIS\_状態\_WWAN\_デバイス\_CAP\_例
 
 
-ミニポート ドライバーを使用して、 **NDIS\_状態\_WWAN\_デバイス\_CAP\_EX** MB サービスに以前の完了を通知するために通知[OID\_WWAN\_デバイス\_CAP\_EX](https://msdn.microsoft.com/library/windows/hardware/mt799830)クエリ要求。
+ミニポート ドライバーを使用して、 **NDIS\_状態\_WWAN\_デバイス\_CAP\_EX** MB サービスに以前の完了を通知するために通知[OID\_WWAN\_デバイス\_CAP\_EX](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-device-caps-ex)クエリ要求。
 
 ミニポート ドライバーは、この通知を使用して、不要なイベントを送信することはできません。
 
-この通知を使用して、 [ **NDIS\_WWAN\_デバイス\_CAP\_EX** ](https://msdn.microsoft.com/library/windows/hardware/mt782401)構造体。
+この通知を使用して、 [ **NDIS\_WWAN\_デバイス\_CAP\_EX** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_device_caps_ex)構造体。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -45,9 +45,9 @@ ms.locfileid: "63354825"
 ## <a name="see-also"></a>関連項目
 
 
-[OID\_WWAN\_デバイス\_CAP\_例](https://msdn.microsoft.com/library/windows/hardware/mt799830)
+[OID\_WWAN\_デバイス\_CAP\_例](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-device-caps-ex)
 
-[**NDIS\_WWAN\_デバイス\_CAP\_例**](https://msdn.microsoft.com/library/windows/hardware/mt782401)
+[**NDIS\_WWAN\_デバイス\_CAP\_例**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_device_caps_ex)
 
  
 

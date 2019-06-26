@@ -9,12 +9,12 @@ keywords:
 - Irp WDK ストレージ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a023df0bec38f35033bf5fc7250d767f878d51ad
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ba778556d13fcac51beedfc64d1098f33b80a1d5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63329613"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368867"
 ---
 # <a name="storage-class-drivers-support-of-io-requests"></a>記憶域クラス ドライバーの I/O 要求サポート
 
@@ -24,17 +24,17 @@ ms.locfileid: "63329613"
 
 クラスのまったく新しい種類のストレージ デバイス ドライバーのデザイナーには、デバイスの性質によって、サポートするために、ドライバーの I/O 要求の適切なセットを判断する必要があります。 一般にサポートされる要求のセットは、次の少なくとも。
 
-[**IRP\_MJ\_作成**](https://msdn.microsoft.com/library/windows/hardware/ff550729)と、デバイスの種類によって、または対称[ **IRP\_MJ\_閉じる**](https://msdn.microsoft.com/library/windows/hardware/ff550720)
+[**IRP\_MJ\_作成**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-create)と、デバイスの種類によって、または対称[ **IRP\_MJ\_閉じる**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-close)
 
-[**IRP\_MJ\_DEVICE\_CONTROL**](https://msdn.microsoft.com/library/windows/hardware/ff550744)
+[**IRP\_MJ\_DEVICE\_CONTROL**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-device-control)
 
-[**IRP\_MJ\_読み取り**](https://msdn.microsoft.com/library/windows/hardware/ff550794)、 [ **IRP\_MJ\_書き込み**](https://msdn.microsoft.com/library/windows/hardware/ff550819)、またはその両方
+[**IRP\_MJ\_読み取り**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-read)、 [ **IRP\_MJ\_書き込み**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-write)、またはその両方
 
-[**IRP\_MJ\_PNP**](https://msdn.microsoft.com/library/windows/hardware/ff550772)
+[**IRP\_MJ\_PNP**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-pnp)
 
-[**IRP\_MJ\_電源**](https://msdn.microsoft.com/library/windows/hardware/ff550784)
+[**IRP\_MJ\_電源**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-power)
 
-[**IRP\_MJ\_システム\_コントロール**](https://msdn.microsoft.com/library/windows/hardware/ff550813)
+[**IRP\_MJ\_システム\_コントロール**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-system-control)
 
  
 

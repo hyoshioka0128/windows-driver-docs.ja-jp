@@ -12,12 +12,12 @@ keywords:
 - WDK のネットワークの状態遷移の電源
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e694f0d2987cbef8ad94eda8b0f7693fd7e56e3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c9bda3e5b96d9e79259d2ab0289fb479d2312c1c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366136"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379738"
 ---
 # <a name="transitioning-to-the-working-state"></a>稼働状態への遷移
 
@@ -25,7 +25,7 @@ ms.locfileid: "63366136"
 
 
 
-NDIS ミニポート ドライバーを送信することによって作業電源の状態 (D0) への移行を開始する、 [OID\_PNP\_設定\_POWER](https://msdn.microsoft.com/library/windows/hardware/ff569780) D0 の状態を指定する要求。 ミニポート ドライバーでは、ネットワーク アダプターを動作状態に復元するために必要なすべてのデバイスに依存する操作を実行する必要があります。 ミニポート ドライバーでは、任意のハードウェア コンテキスト--パケット フィルター、マルチキャスト アドレス、現在のメディア アクセス制御 (MAC) アドレスまたはネットワーク アダプターが失われている可能性があります--ウェイク アップ パターンも復元する必要があります。
+NDIS ミニポート ドライバーを送信することによって作業電源の状態 (D0) への移行を開始する、 [OID\_PNP\_設定\_POWER](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power) D0 の状態を指定する要求。 ミニポート ドライバーでは、ネットワーク アダプターを動作状態に復元するために必要なすべてのデバイスに依存する操作を実行する必要があります。 ミニポート ドライバーでは、任意のハードウェア コンテキスト--パケット フィルター、マルチキャスト アドレス、現在のメディア アクセス制御 (MAC) アドレスまたはネットワーク アダプターが失われている可能性があります--ウェイク アップ パターンも復元する必要があります。
 
 **注**  NDIS 6.30、以降、ミニポート ドライバーをサポートする[NDIS パケット結合](ndis-packet-coalescing.md)にまとめられたパケット カウンターをオフにする必要があります。 ドライバーには、低電力の遷移の前に 1 つにまとめ、すべてのパケットをフラッシュするネットワーク アダプター構成もする必要があります。 詳細については、次を参照してください。[処理パケット結合受信フィルター](handling-packet-coalescing-receive-filters.md)します。
 

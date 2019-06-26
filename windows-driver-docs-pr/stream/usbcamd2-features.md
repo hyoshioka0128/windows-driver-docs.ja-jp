@@ -11,12 +11,12 @@ keywords:
 - カメラ WDK USBCAMD2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cfe47fbc91634a6f1a718bc59e77070fe94265f0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 30f9a228f501881ef5cc42ebcab1360bf5c79ca2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354519"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369535"
 ---
 # <a name="usbcamd2-features"></a>USBCAMD2 の機能
 
@@ -25,15 +25,15 @@ ms.locfileid: "63354519"
 
 -   **される Srb のオート コンプリート**
 
-    USBCAMD2 はされる Srb を自動的に完了できます。 元の USBCAMD カメラ ミニドライバーされる Srb を完了する必要があります。 USBCAMD2 がされる Srb を自動的に完了することを指定するには、渡す**TRUE**で、 *NeedsCompletion*パラメーターを呼び出すと[ **USBCAMD\_AdapterReceivePacket**](https://msdn.microsoft.com/library/windows/hardware/ff568574)します。
+    USBCAMD2 はされる Srb を自動的に完了できます。 元の USBCAMD カメラ ミニドライバーされる Srb を完了する必要があります。 USBCAMD2 がされる Srb を自動的に完了することを指定するには、渡す**TRUE**で、 *NeedsCompletion*パラメーターを呼び出すと[ **USBCAMD\_AdapterReceivePacket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbcamdi/nf-usbcamdi-usbcamd_adapterreceivepacket)します。
 
 -   **割り込み、パイプを介してハードウェアによってトリガーされたイベントのサポート**
 
-    USBCAMD2 カメラ ミニドライバーは、割り込みパイプを介して通知される外部トリガー イベントを登録できます。 USBCAMD2 では、割り込みを処理できます。 たとえば、割り込みパイプは、スナップショット ボタンが押されたときに、カメラのミニドライバーを通知できます。 デバイス イベントのイメージ (まだ STI) アーキテクチャのイベント モニターを通知できます。 スナップショット ボタンを押して、STI 監視通知の送信し、STI プッシュ モデルを使用して、カメラの pin にまだ関連付けられている、以前に登録された STI アプリケーションを起動できます。 外部トリガー イベントを送信する USBCAMD2 を構成するには、渡す、 *USBCAMD\_CamControlFlag\_EnableDeviceEvents*フラグ、 *CamControlFlag*を呼び出すときのパラメーター[ **USBCAMD\_InitializeNewInterface**](https://msdn.microsoft.com/library/windows/hardware/ff568599)します。
+    USBCAMD2 カメラ ミニドライバーは、割り込みパイプを介して通知される外部トリガー イベントを登録できます。 USBCAMD2 では、割り込みを処理できます。 たとえば、割り込みパイプは、スナップショット ボタンが押されたときに、カメラのミニドライバーを通知できます。 デバイス イベントのイメージ (まだ STI) アーキテクチャのイベント モニターを通知できます。 スナップショット ボタンを押して、STI 監視通知の送信し、STI プッシュ モデルを使用して、カメラの pin にまだ関連付けられている、以前に登録された STI アプリケーションを起動できます。 外部トリガー イベントを送信する USBCAMD2 を構成するには、渡す、 *USBCAMD\_CamControlFlag\_EnableDeviceEvents*フラグ、 *CamControlFlag*を呼び出すときのパラメーター[ **USBCAMD\_InitializeNewInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbcamdi/nf-usbcamdi-usbcamd_initializenewinterface)します。
 
 -   **汎用 USB パイプ構成のサポート**
 
-    USBCAMD2 は一括または転送のビデオおよび静止画像データをアイソクロナス パイプを使用するカメラをサポートします。 USBCAMD2 は、ミニドライバーを照会し、初期化中に、パイプの構成情報を動的に作成します。 元の USBCAMD ライブラリでは、数または種類が使用されるパイプの操作について、パイプの事前設定された構成と見なされます。 パイプの構成で指定する、 [ **USBCAMD\_パイプ\_Config\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff568623)配列に渡す[ *CamConfigureEx*](https://msdn.microsoft.com/library/windows/hardware/ff557605)します。
+    USBCAMD2 は一括または転送のビデオおよび静止画像データをアイソクロナス パイプを使用するカメラをサポートします。 USBCAMD2 は、ミニドライバーを照会し、初期化中に、パイプの構成情報を動的に作成します。 元の USBCAMD ライブラリでは、数または種類が使用されるパイプの操作について、パイプの事前設定された構成と見なされます。 パイプの構成で指定する、 [ **USBCAMD\_パイプ\_Config\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbcamdi/ns-usbcamdi-_pipe_config_descriptor)配列に渡す[ *CamConfigureEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbcamdi/nc-usbcamdi-pcam_configure_routine_ex)します。
 
 -   **まだピン留めし、Pin のサポートのキャプチャ**
 

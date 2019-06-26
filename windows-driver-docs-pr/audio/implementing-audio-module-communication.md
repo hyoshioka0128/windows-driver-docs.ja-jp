@@ -3,12 +3,12 @@ title: オーディオ モジュール通信の実装
 description: オーディオのモジュールは、distinct、オーディオ処理ロジックの比較的アトミックな関数を実行するのです。
 ms.date: 07/07/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d1c0705f6644d6413b77bd40e70cd10b9227f843
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7f6d887cab55793345dd36fc677004cdd577d863
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333471"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359914"
 ---
 <a name="implementing-audio-module-communication"></a>オーディオ モジュール通信の実装
 ========================================================================================
@@ -66,7 +66,7 @@ DSP | デジタル信号処理
 
 HSAs や他のアプリケーションはのみにアクセスできる使用可能なモジュール フィルター ハンドルを使用します。 ストリームに読み込まれる個々 の画像は、ストリームにアクセスできるオブジェクトのみがオーディオのモジュールを対象とします。
 
-パスワードの詳細については、次を参照してください。 [Windows オーディオ処理オブジェクト](https://msdn.microsoft.com/windows/hardware/drivers/audio/windows-audio-processing-objects)します。
+パスワードの詳細については、次を参照してください。 [Windows オーディオ処理オブジェクト](https://docs.microsoft.com/windows-hardware/drivers/audio/windows-audio-processing-objects)します。
 
 ### <a name="sending-commands"></a>コマンドを送信します。
 
@@ -87,7 +87,7 @@ HSAs や他のアプリケーションはのみにアクセスできる使用可
  
 **オーディオのモジュールのプロパティをストリーミングするカーネル** 
 
-新しい KS プロパティ セットで識別される[KSPROPSETID_AudioModule](https://msdn.microsoft.com/library/windows/hardware/mt808144(v=vs.85).aspx)、オーディオのモジュールに固有の 3 つのプロパティが定義されています。 
+新しい KS プロパティ セットで識別される[KSPROPSETID_AudioModule](https://docs.microsoft.com/windows-hardware/drivers/audio/kspropsetid-audiomodule)、オーディオのモジュールに固有の 3 つのプロパティが定義されています。 
 
 PortCls ミニポート ドライバーでは、直接ヘルパー インターフェイスが指定されていない各プロパティの応答を処理する必要があります。
 
@@ -108,7 +108,7 @@ typedef enum {
 
 ### <a name="audio-module-descriptors"></a>オーディオ モジュール記述子
 
-サポート、 [KSPROPERTY_AUDIOMODULE_DESCRIPTORS](https://msdn.microsoft.com/library/windows/hardware/mt808142(v=vs.85).aspx)プロパティとして、オーディオのモジュールが認識されているドライバーを識別します。 フィルターまたは暗証番号 (pin) のハンドルを使用してクエリを実行する、プロパティと、KSPROPERTY、DeviceIoControl の呼び出しの入力バッファーとして渡されます。 [KSAUDIOMODULE_DESCRIPTOR](https://msdn.microsoft.com/library/windows/hardware/mt808137(v=vs.85).aspx)が定義されているオーディオ ハードウェア内で各モジュールについて説明します。 これらの記述子の配列は、この要求に応答で返される
+サポート、 [KSPROPERTY_AUDIOMODULE_DESCRIPTORS](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audiomodule-descriptors)プロパティとして、オーディオのモジュールが認識されているドライバーを識別します。 フィルターまたは暗証番号 (pin) のハンドルを使用してクエリを実行する、プロパティと、KSPROPERTY、DeviceIoControl の呼び出しの入力バッファーとして渡されます。 [KSAUDIOMODULE_DESCRIPTOR](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ksaudiomodule_descriptor)が定義されているオーディオ ハードウェア内で各モジュールについて説明します。 これらの記述子の配列は、この要求に応答で返される
 
 #### <a name="ksmediah"></a>ksmedia.h:
 
@@ -124,11 +124,11 @@ typedef struct _KSAUDIOMODULE_DESCRIPTOR
     WCHAR   Name[AUDIOMODULE_MAX_NAME_SIZE];
 } KSAUDIOMODULE_DESCRIPTOR, *PKSAUDIOMODULE_DESCRIPTOR;
 ```
-詳細については、次を参照してください。 [KSAUDIOMODULE_DESCRIPTOR](https://msdn.microsoft.com/library/windows/hardware/mt808137(v=vs.85).aspx)します。
+詳細については、次を参照してください。 [KSAUDIOMODULE_DESCRIPTOR](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ksaudiomodule_descriptor)します。
 
 ### <a name="audio-module-command"></a>オーディオのモジュールのコマンド
 
-サポート、 [KSPROPERTY_AUDIOMODULE_COMMAND](https://msdn.microsoft.com/library/windows/hardware/mt808141(v=vs.85).aspx)プロパティは、クエリを実行して、オーディオのモジュールのパラメーターを設定するカスタム コマンドを送信するオーディオ モジュールのクライアントを使用します。 プロパティは、フィルターまたは暗証番号 (pin) のハンドルを使用して送信できる、 [KSAUDIOMODULE_PROPERTY](https://msdn.microsoft.com/library/windows/hardware/mt808139(v=vs.85).aspx) DeviceIoControl の呼び出しの入力バッファーとして渡されます。 クライアントできます必要に応じて追加情報を送信する隣接、 [KSAUDIOMODULE_PROPERTY](https://msdn.microsoft.com/library/windows/hardware/mt808139(v=vs.85).aspx)カスタム コマンドを送信する入力バッファーにします。
+サポート、 [KSPROPERTY_AUDIOMODULE_COMMAND](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audiomodule-command)プロパティは、クエリを実行して、オーディオのモジュールのパラメーターを設定するカスタム コマンドを送信するオーディオ モジュールのクライアントを使用します。 プロパティは、フィルターまたは暗証番号 (pin) のハンドルを使用して送信できる、 [KSAUDIOMODULE_PROPERTY](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ksaudiomodule_property) DeviceIoControl の呼び出しの入力バッファーとして渡されます。 クライアントできます必要に応じて追加情報を送信する隣接、 [KSAUDIOMODULE_PROPERTY](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ksaudiomodule_property)カスタム コマンドを送信する入力バッファーにします。
 
 #### <a name="ksmediah"></a>ksmedia.h:
 
@@ -143,14 +143,14 @@ typedef struct _KSPAUDIOMODULE_PROPERTY
 } KSAUDIOMODULE_PROPERTY, *PKSPAUDIOMODULE_PROPERTY;
 
 ```
-詳細については、次を参照してください。 [KSAUDIOMODULE_PROPERTY](https://msdn.microsoft.com/library/windows/hardware/mt808139(v=vs.85).aspx)します。
+詳細については、次を参照してください。 [KSAUDIOMODULE_PROPERTY](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ksaudiomodule_property)します。
 
 
 ### <a name="audio-module-notification-device-id"></a>オーディオ モジュール通知デバイスの ID
 
-サポート、 [KSPROPERTY_AUDIOMODULE_NOTIFICATION_DEVICE_ID](https://msdn.microsoft.com/library/windows/hardware/mt808143(v=vs.85).aspx)ミニポート シグナル通知を有効にして、オーディオのモジュールのクライアントに情報を渡すに必要です。 この ID の有効期間が公開されていると、Windows オーディオ スタックをアクティブにされているオーディオ デバイスの有効期間に関連付けられています。 フィルターまたは暗証番号 (pin) のハンドルを使用して、プロパティを送信することができます、KSPROPERTY が DeviceIoControl の呼び出しの入力バッファーとして渡されます。
+サポート、 [KSPROPERTY_AUDIOMODULE_NOTIFICATION_DEVICE_ID](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audiomodule-notification-device-id)ミニポート シグナル通知を有効にして、オーディオのモジュールのクライアントに情報を渡すに必要です。 この ID の有効期間が公開されていると、Windows オーディオ スタックをアクティブにされているオーディオ デバイスの有効期間に関連付けられています。 フィルターまたは暗証番号 (pin) のハンドルを使用して、プロパティを送信することができます、KSPROPERTY が DeviceIoControl の呼び出しの入力バッファーとして渡されます。
 
-詳細については、次を参照してください。 [KSAUDIOMODULE_PROPERTY](https://msdn.microsoft.com/library/windows/hardware/mt808139(v=vs.85).aspx)します。
+詳細については、次を参照してください。 [KSAUDIOMODULE_PROPERTY](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ksaudiomodule_property)します。
 
 
 <a name="span-idportclshelperspanportcls-helper---audio-module-notifications"></a><span id="PortCls_Helper"></span>PortCls ヘルパー - オーディオ モジュールの通知
@@ -212,13 +212,13 @@ typedef struct _KSAUDIOMODULE_NOTIFICATION {
 ```
 詳しくは、次のトピックをご覧ください。
 
- [IPortClsNotifications](https://msdn.microsoft.com/library/windows/hardware/mt808133(v=vs.85).aspx)
+ [IPortClsNotifications](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iportclsnotifications)
     
- [IPortClsNotifications::AllocNotificationBuffer](https://msdn.microsoft.com/library/windows/hardware/mt808134(v=vs.85).aspx)
+ [IPortClsNotifications::AllocNotificationBuffer](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iportclsnotifications-allocnotificationbuffer)
 
- [IPortClsNotifications::FreeNotificationBuffer](https://msdn.microsoft.com/library/windows/hardware/mt808135(v=vs.85).aspx)    
+ [IPortClsNotifications::FreeNotificationBuffer](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iportclsnotifications-freenotificationbuffer)   
     
- [IPortClsNotifications::SendNotificationBuffer](https://msdn.microsoft.com/library/windows/hardware/mt808136(v=vs.85).aspx)    
+ [IPortClsNotifications::SendNotificationBuffer](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iportclsnotifications-sendnotification) 
 
 ### <a name="calling-sequence"></a>呼び出しシーケンス
 

@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 3663da355ec776d50c0519c0bd960c133f8765d8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4ff4c6ae4ea4469e81803769181e423d46cd7bd0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381488"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377297"
 ---
 # <a name="devpkeydeviceinterfacefriendlyname"></a>DEVPKEY_DeviceInterface_FriendlyName
 
@@ -60,15 +60,15 @@ DEVPKEY_DeviceInterface_FriendlyName デバイス プロパティは、デバイ
 <a name="remarks"></a>注釈
 -------
 
-**FriendlyName**デバイス インターフェイス クラスのレジストリ値によって設定されます、 [ **INF AddInterface ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546310)に含まれている、 [ **INF *DDInstall*します。インターフェイス セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547335)のデバイスのインターフェイスをインストールする INF ファイル。
+**FriendlyName**デバイス インターフェイス クラスのレジストリ値によって設定されます、 [ **INF AddInterface ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addinterface-directive)に含まれている、 [ **INF *DDInstall*します。インターフェイス セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-interfaces-section)のデバイスのインターフェイスをインストールする INF ファイル。
 
 Windows 設定の値、 [ **DEVPKEY_NAME** ](devpkey-name--device-interface-.md) DEVPKEY_DeviceInterface_FriendlyName の値へのインターフェイスのデバイス プロパティ。 ユーザー インターフェイスの項目でデバイスのインターフェイスを識別するには、DEVPKEY_DeviceInterface_FriendlyName の値ではなく、デバイス インターフェイスの DEVPKEY_NAME の値を使用します。
 
-呼び出すことによって、DEVPKEY_DeviceInterface_FriendlyName の値を取得する[ **SetupDiGetDeviceInterfaceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551122)し、呼び出すことによって設定[ **SetupDiSetDeviceInterfaceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff552158)します。
+呼び出すことによって、DEVPKEY_DeviceInterface_FriendlyName の値を取得する[ **SetupDiGetDeviceInterfaceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinterfacepropertyw)し、呼び出すことによって設定[ **SetupDiSetDeviceInterfaceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetdeviceinterfacepropertyw)します。
 
-Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_DeviceInterface_FriendlyName プロパティのキーをサポートしていません。 このプロパティの値をアクセスするには、対応するのにアクセスして**FriendlyName**デバイス インターフェイスのレジストリ エントリの値。 デバイスのインターフェイスのレジストリ エントリの値にアクセスする方法については、次を参照してください。[デバイス インターフェイスのプロパティへのアクセス](https://msdn.microsoft.com/library/windows/hardware/ff537740)します。
+Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_DeviceInterface_FriendlyName プロパティのキーをサポートしていません。 このプロパティの値をアクセスするには、対応するのにアクセスして**FriendlyName**デバイス インターフェイスのレジストリ エントリの値。 デバイスのインターフェイスのレジストリ エントリの値にアクセスする方法については、次を参照してください。[デバイス インターフェイスのプロパティへのアクセス](https://docs.microsoft.com/windows-hardware/drivers/install/accessing-device-interface-properties)します。
 
-デバイスのインターフェイスについては、次を参照してください。[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)と[ **INF AddInterface ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546310)します。
+デバイスのインターフェイスについては、次を参照してください。[デバイス インターフェイス クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)と[ **INF AddInterface ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addinterface-directive)します。
 
 <a name="requirements"></a>要件
 ------------
@@ -93,17 +93,17 @@ Windows Server 2003、Windows XP、および Windows 2000 は、このプロパ�
 ## <a name="see-also"></a>関連項目
 
 
-[**DEVPKEY_NAME (デバイス インターフェイス)**](devpkey-name--device-interface-.md)
+[**DEVPKEY_NAME (デバイス インターフェイス)** ](devpkey-name--device-interface-.md)
 
-[**INF AddInterface ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546310)
+[**INF AddInterface ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addinterface-directive)
 
-[**INF *DDInstall*します。インターフェイス セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547335)
+[**INF *DDInstall*します。インターフェイス セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-interfaces-section)
 
-[**SetupDiGetDeviceInterfaceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551122)
+[**SetupDiGetDeviceInterfaceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinterfacepropertyw)
 
-[**SetupDiOpenDeviceInterfaceRegKey**](https://msdn.microsoft.com/library/windows/hardware/ff552075)
+[**SetupDiOpenDeviceInterfaceRegKey**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiopendeviceinterfaceregkey)
 
-[**SetupDiSetDeviceInterfaceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff552158)
+[**SetupDiSetDeviceInterfaceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetdeviceinterfacepropertyw)
 
  
 

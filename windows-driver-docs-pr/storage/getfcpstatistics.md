@@ -15,12 +15,12 @@ api_type:
 - LibDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 86c8b6a03b29267f97728e41e72e25aa54561c91
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e8be48eac90fdc3f392f9dd29b523907e9e42e40
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354038"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378533"
 ---
 # <a name="getfcpstatistics-function"></a>GetFCPStatistics 関数
 
@@ -42,13 +42,13 @@ void GetFCPStatistics(
 ----------
 
 *HBAStatus*   
-に返された場合、操作の状態を示す WMI 修飾子の値を格納します。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **GetFCPStatistics\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff554944)構造体。
+に返された場合、操作の状態を示す WMI 修飾子の値を格納します。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **GetFCPStatistics\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_getfcpstatistics_out)構造体。
 
 *ScsiId*   
-返された場合は、型の構造体が含まれています。 [ **HBAScsiID** ](https://msdn.microsoft.com/library/windows/hardware/ff556042)デバイスを識別する情報を保持します。 この情報は、ミニポート ドライバーに配信される、 **ScsiId**のメンバー、 [ **GetFCPStatistics\_IN** ](https://msdn.microsoft.com/library/windows/hardware/ff554942)構造体。
+返された場合は、型の構造体が含まれています。 [ **HBAScsiID** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_hbascsiid)デバイスを識別する情報を保持します。 この情報は、ミニポート ドライバーに配信される、 **ScsiId**のメンバー、 [ **GetFCPStatistics\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_getfcpstatistics_in)構造体。
 
 *FC4Statistics*   
-返された場合は、型の構造体が含まれています。 [ **MSFC\_FC4STATISTICS** ](https://msdn.microsoft.com/library/windows/hardware/ff562492)に指定された SCSI 論理ユニットの統計情報を保持しています。 ミニポート ドライバーには、この情報が返されます、 **FC4Statistics**のメンバー、 [ **GetFCPStatistics\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff554944)構造体。
+返された場合は、型の構造体が含まれています。 [ **MSFC\_FC4STATISTICS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_msfc_fc4statistics)に指定された SCSI 論理ユニットの統計情報を保持しています。 ミニポート ドライバーには、この情報が返されます、 **FC4Statistics**のメンバー、 [ **GetFCPStatistics\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_getfcpstatistics_out)構造体。
 
 <a name="return-value"></a>戻り値
 ------------
@@ -87,11 +87,11 @@ WMI メソッドには適用されません。
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
-[**GetFCPStatistics\_IN**](https://msdn.microsoft.com/library/windows/hardware/ff554942)
+[**GetFCPStatistics\_IN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_getfcpstatistics_in)
 
-[**GetFCPStatistics\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff554944)
+[**GetFCPStatistics\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_getfcpstatistics_out)
 
-[**MSFC\_FC4STATISTICS**](https://msdn.microsoft.com/library/windows/hardware/ff562492)
+[**MSFC\_FC4STATISTICS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_msfc_fc4statistics)
 
  
 

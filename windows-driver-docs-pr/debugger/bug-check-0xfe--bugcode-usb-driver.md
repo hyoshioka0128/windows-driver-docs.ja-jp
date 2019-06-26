@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 32c4aec13c8bedb6c9137abdc5477f0d046e642a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d32c731d9260ad074a1bfed4e66d04882a252d3e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367275"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361478"
 ---
 # <a name="bug-check-0xfe-bugcodeusbdriver"></a>バグ チェック 0xFE:BUGCODE\_USB\_ドライバー
 
@@ -26,7 +26,7 @@ ms.locfileid: "63367275"
 BUGCODE\_USB\_ドライバーのバグ チェックが 0x000000FE の値を持ちます。 これは、ユニバーサル シリアル バス (USB) ドライバーでエラーが発生したことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="bugcodeusbdriver-parameters"></a>BUGCODE\_USB\_ドライバーのパラメーター

@@ -12,19 +12,19 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 21ea8c4f5714d95833c43ed65bea650063c1dc1c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c83d970e2c003df13ebfbd1c382b6c57d22d3c4b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364966"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360836"
 ---
 # <a name="icon-xml-element"></a>icon XML 要素
 
 
-\[DIFx は非推奨、詳細については、「 [DIFx ガイドライン](https://msdn.microsoft.com/windows/hardware/drivers/install/difx-guidelines)します。\]
+\[DIFx は非推奨、詳細については、「 [DIFx ガイドライン](https://docs.microsoft.com/windows-hardware/drivers/install/difx-guidelines)します。\]
 
-**アイコン**XML 要素を DPInst は DPInst EULA ページに表示されるカスタム アイコンのソース ファイルを指定します。 DPInst では、このアイコンを使用して、Microsoft Windows タスク バー、デスクトップで DPInst を表します。 DPInst を表すエントリにも使用するアイコンを[ドライバー パッケージ](https://msdn.microsoft.com/library/windows/hardware/ff544840)、DPInst に追加する**プログラムと機能**コントロール パネルの 
+**アイコン**XML 要素を DPInst は DPInst EULA ページに表示されるカスタム アイコンのソース ファイルを指定します。 DPInst では、このアイコンを使用して、Microsoft Windows タスク バー、デスクトップで DPInst を表します。 DPInst を表すエントリにも使用するアイコンを[ドライバー パッケージ](https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages)、DPInst に追加する**プログラムと機能**コントロール パネルの
 
 **注**  DPInst は Windows Vista では、前にするドライバー パッケージのエントリを追加**プログラム追加と削除**コントロール パネルの します。
 

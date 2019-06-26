@@ -4,12 +4,12 @@ description: デスクトップ COSA/APN データベースの提出のテスト
 ms.assetid: 8f45dbf0-4f96-4d11-b2a2-41b9e75b5e9b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 44c3b835a15c6fd02855bf69f1e81344f6b6b7c3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: da175fb7dc89768f071a0b3f5fb0e66bbaa5c2b3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376992"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67357854"
 ---
 # <a name="testing-your-desktop-cosaapn-database-submission"></a>デスクトップ COSA/APN データベースの提出のテスト
 
@@ -36,7 +36,7 @@ Windows 10 バージョン 1703 以降では、このプロセスを使用しま
 
 TAM に、APN 情報を含む、完成したスプレッドシートを送信すると後、Microsoft がプロビジョニング パッケージ (.ppkg) ファイルを作成してをインストールして、APN をテストできるようにした後に返送します。 
 
-プロビジョニング パッケージ ファイルをインストールする方法の詳細については、次を参照してください。[プロビジョニング パッケージの適用](https://technet.microsoft.com/itpro/windows/deploy/provisioning-apply-package)します。
+プロビジョニング パッケージ ファイルをインストールする方法の詳細については、次を参照してください。[プロビジョニング パッケージの適用](https://docs.microsoft.com/windows/deploy/provisioning-apply-package)します。
 
 ### <a name="modify-the-local-cosa-database-desktop-cosa"></a>ローカル COSA データベース (デスクトップ COSA) の変更します。
 

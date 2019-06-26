@@ -8,12 +8,12 @@ keywords:
 - WDK NDIS 中間の設定操作
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e031ed48a5b2d36cd1d2951cb65d6d699864031e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1a0800e9d7d5edc9bc2a320c267f91ed2a3c3077
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63349695"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379790"
 ---
 # <a name="handling-oidpnpxxx-queries-and-sets"></a>OID の処理\_PNP\_Xxx クエリとセット
 
@@ -21,15 +21,15 @@ ms.locfileid: "63349695"
 
 
 
-中間のドライバーの仮想ミニポートをエクスポートする必要があります、 [ *MiniportOidRequest* ](https://msdn.microsoft.com/library/windows/hardware/ff559416)関数。 NDIS ドライバーの中間の呼び出し*MiniportOidRequest*関数の場合、中間のドライバーのミニポート仮想呼び出しにバインドされている上位のドライバー [ **NdisOidRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff563710)クエリまたはオブジェクトの情報を設定する (OID\_*Xxx*)。 NDIS は呼び出すことができますも*MiniportOidRequest*独自の代わりにします。 セットとオブジェクトの情報をクエリのミニポート ドライバーの処理の詳細については、次を参照してください。[取得し、ミニポート ドライバー情報の設定と、WMI の NDIS サポート](obtaining-and-setting-miniport-driver-information-and-ndis-support-for.md)します。
+中間のドライバーの仮想ミニポートをエクスポートする必要があります、 [ *MiniportOidRequest* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_oid_request)関数。 NDIS ドライバーの中間の呼び出し*MiniportOidRequest*関数の場合、中間のドライバーのミニポート仮想呼び出しにバインドされている上位のドライバー [ **NdisOidRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisoidrequest)クエリまたはオブジェクトの情報を設定する (OID\_*Xxx*)。 NDIS は呼び出すことができますも*MiniportOidRequest*独自の代わりにします。 セットとオブジェクトの情報をクエリのミニポート ドライバーの処理の詳細については、次を参照してください。[取得し、ミニポート ドライバー情報の設定と、WMI の NDIS サポート](obtaining-and-setting-miniport-driver-information-and-ndis-support-for.md)します。
 
-中間のドライバーが、基になるミニポート アダプターで受信するの機能に関する情報を保持する必要があります、 [ *ProtocolBindAdapterEx* ](https://msdn.microsoft.com/library/windows/hardware/ff570220)関数。 ミニポート アダプタの管理に対応した電源は、NDIS 設定、**デバイス**のメンバー [ **NDIS\_バインド\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff564832)に**NULL**します。
+中間のドライバーが、基になるミニポート アダプターで受信するの機能に関する情報を保持する必要があります、 [ *ProtocolBindAdapterEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_bind_adapter_ex)関数。 ミニポート アダプタの管理に対応した電源は、NDIS 設定、**デバイス**のメンバー [ **NDIS\_バインド\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_bind_parameters)に**NULL**します。
 
-中間のドライバーの照会または OID を設定できます\_*Xxx*基になるミニポート ドライバーによって保持されています。 これは、これを**NdisOidRequest**(かどうか、中間のドライバーがコネクションレスの下端)、または[ **NdisCoOidRequest**](https://msdn.microsoft.com/library/windows/hardware/ff561711)(中間のドライバーがある場合、接続指向下端)。
+中間のドライバーの照会または OID を設定できます\_*Xxx*基になるミニポート ドライバーによって保持されています。 これは、これを**NdisOidRequest**(かどうか、中間のドライバーがコネクションレスの下端)、または[ **NdisCoOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscooidrequest)(中間のドライバーがある場合、接続指向下端)。
 
 中間のドライバーは、次のようにクエリとセット処理する必要があります。
 
--   [OID\_PNP\_機能](https://msdn.microsoft.com/library/windows/hardware/ff569774)
+-   [OID\_PNP\_機能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-capabilities)
 
     この OID クエリに応答して、中間ドライバーは、基になる物理ミニポート アダプタの PnP 機能をレポートする必要があります。 物理デバイスに対してミニポート アダプターがこの OID クエリを受け取らないに注意してください。
 
@@ -41,7 +41,7 @@ ms.locfileid: "63349695"
 
     このような設定は、中間ドライバーが電源管理に対応したが、システムをスリープ解除できないことを示します。
 
--   [OID\_PNP\_クエリ\_POWER](https://msdn.microsoft.com/library/windows/hardware/ff569778)と[OID\_PNP\_設定\_電源](https://msdn.microsoft.com/library/windows/hardware/ff569780)
+-   [OID\_PNP\_クエリ\_POWER](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-query-power)と[OID\_PNP\_設定\_電源](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power)
 
     中間のドライバーは、NDIS を返す必要があります常に\_状態\_OID のクエリに成功\_PNP\_クエリ\_電源または一連の OID\_PNP\_設定\_電源。 中間のドライバーでは、基になるミニポート ドライバーにこれらの OID 要求のいずれかの反映されませんする必要があります。
 
@@ -49,21 +49,21 @@ ms.locfileid: "63349695"
 
     中間のドライバーが基になるミニポート ドライバーに渡す必要があります、基になる NIC が電源管理対応の場合は、(呼び出して**NdisOidRequest**または**NdisCoOidRequest**) 次の OID\_PNP\_*Xxx*ウェイク アップに関連したイベント。
 
-    [OID\_PNP\_を有効にする\_WAKE\_を](https://msdn.microsoft.com/library/windows/hardware/ff569775)
+    [OID\_PNP\_を有効にする\_WAKE\_を](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-enable-wake-up)
 
-    [OID\_PNP\_追加\_WAKE\_を\_パターン](https://msdn.microsoft.com/library/windows/hardware/ff569773)
+    [OID\_PNP\_追加\_WAKE\_を\_パターン](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-add-wake-up-pattern)
 
-    [OID\_PNP\_削除\_WAKE\_を\_パターン](https://msdn.microsoft.com/library/windows/hardware/ff569779)
+    [OID\_PNP\_削除\_WAKE\_を\_パターン](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-remove-wake-up-pattern)
 
-    [OID\_PNP\_WAKE\_を\_パターン\_一覧](https://msdn.microsoft.com/library/windows/hardware/ff569783)
+    [OID\_PNP\_WAKE\_を\_パターン\_一覧](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-wake-up-pattern-list)
 
-    [OID\_PNP\_WAKE\_を\_エラー](https://msdn.microsoft.com/library/windows/hardware/ff569781)
+    [OID\_PNP\_WAKE\_を\_エラー](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-wake-up-error)
 
-    [OID\_PNP\_WAKE\_を\_OK](https://msdn.microsoft.com/library/windows/hardware/ff569782)
+    [OID\_PNP\_WAKE\_を\_OK](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-wake-up-ok)
 
 中間ドライバーでは、上位のプロトコル ドライバーにこれらの Oid を基になるミニポート ドライバーの応答も反映する必要があります。
 
-場合は、基になるミニポート アダプタの管理に対応した電源は、ミニポート ドライバーの設定、**デバイス**のメンバー [ **NDIS\_ミニポート\_アダプター\_全般\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff565923)に**NULL**と NDIS セット、**デバイス**のメンバー [**NDIS\_バインド\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff564832)に**NULL**します。
+場合は、基になるミニポート アダプタの管理に対応した電源は、ミニポート ドライバーの設定、**デバイス**のメンバー [ **NDIS\_ミニポート\_アダプター\_全般\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)に**NULL**と NDIS セット、**デバイス**のメンバー [**NDIS\_バインド\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_bind_parameters)に**NULL**します。
 
 中間ドライバーが NDIS を返す場合は、基になるミニポート アダプターの管理に対応した電源は、\_状態\_いない\_クエリまたはこれらの Oid のセットへの応答でサポートされています。
 

@@ -8,12 +8,12 @@ keywords:
 - WDK KTM トランザクション
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 93f97f767690e893a56e20b2be2c0437ba31955e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c73224fff2e559b1f28dcd8517876835c40bd28a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364935"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362917"
 ---
 # <a name="using-kernel-transaction-manager"></a>カーネル トランザクション マネージャーの使用
 
@@ -29,7 +29,7 @@ ms.locfileid: "63364935"
 
 [KTM を使用します。](using-ktm.md)
 
-ルーチン、構造、および KTM をサポートする列挙体については、次を参照してください。、[カーネル トランザクション マネージャ参照](https://msdn.microsoft.com/library/windows/hardware/ff553232)します。
+ルーチン、構造、および KTM をサポートする列挙体については、次を参照してください。、[カーネル トランザクション マネージャ参照](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)します。
 
  
 

@@ -4,12 +4,12 @@ description: イメージ形式のサポートの追加
 ms.assetid: 1ffa7c0d-23ec-402a-a0b5-fb5596a851bf
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ef5bfb29959b7ae10378fcff5ab3ebbcc671373
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d4cb2a158955cf46959f3efbfb81694938309c41
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367107"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375937"
 ---
 # <a name="adding-image-format-support"></a>イメージ形式のサポートの追加
 
@@ -17,7 +17,7 @@ ms.locfileid: "63367107"
 
 
 
-WIA ミニドライバー WIA サービスへのイメージ形式のレポート、 [ **IWiaMiniDrv::drvGetWiaFormatInfo** ](https://msdn.microsoft.com/library/windows/hardware/ff543986)メソッド。
+WIA ミニドライバー WIA サービスへのイメージ形式のレポート、 [ **IWiaMiniDrv::drvGetWiaFormatInfo** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvgetwiaformatinfo)メソッド。
 
 ### <a href="" id="implementing-iwiaminidrv-drvgetwiaformatinfo"></a>Implementing IWiaMiniDrv::drvGetWiaFormatInfo
 
@@ -41,7 +41,7 @@ TYMED\_コールバック
 
 TYMED\_マルチページ\_コールバック
 
-次の例の実装を示しています[ **IWiaMiniDrv::drvGetWiaFormatInfo**](https://msdn.microsoft.com/library/windows/hardware/ff543986):。
+次の例の実装を示しています[ **IWiaMiniDrv::drvGetWiaFormatInfo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvgetwiaformatinfo):。
 
 ```cpp
 HRESULT _stdcall CWIADevice::drvGetWiaFormatInfo(

@@ -8,12 +8,12 @@ keywords:
 - 認識できない power Irp WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e3d18e55bc38642b48a338fde22fd0e26ae2b416
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d6e8fb7f12329e0551df306a638a7a73d9db0f87
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359788"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371902"
 ---
 # <a name="handling-unsupported-or-unrecognized-power-irps"></a>サポートされていないか認識できない電源 IRP の処理
 
@@ -25,9 +25,9 @@ ms.locfileid: "63359788"
 
 サポートされていないか認識できない power IRP を渡すには、ドライバーに記載されている順序で、次のルーチンを呼び出す必要があります[Power Irp を渡して](passing-power-irps.md):
 
--   Windows 7 および Windows Vista では、呼び出す[ **IoSkipCurrentIrpStackLocation** ](https://msdn.microsoft.com/library/windows/hardware/ff550355)と[**保留**](https://msdn.microsoft.com/library/windows/hardware/ff548336)します。
+-   Windows 7 および Windows Vista では、呼び出す[ **IoSkipCurrentIrpStackLocation** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)と[**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)します。
 
--   Windows Server 2003、Windows XP、および Windows 2000、呼び出して[ **PoStartNextPowerIrp**](https://msdn.microsoft.com/library/windows/hardware/ff559776)、 **IoSkipCurrentIrpStackLocation**、および[ **PoCallDriver**](https://msdn.microsoft.com/library/windows/hardware/ff559654)します。
+-   Windows Server 2003、Windows XP、および Windows 2000、呼び出して[ **PoStartNextPowerIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-postartnextpowerirp)、 **IoSkipCurrentIrpStackLocation**、および[ **PoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-pocalldriver)します。
 
 ドライバーは IRP がデバイス スタックを渡す前に、IRP では何も変更されません。
 

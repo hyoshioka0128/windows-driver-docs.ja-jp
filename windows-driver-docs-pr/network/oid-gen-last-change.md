@@ -5,12 +5,12 @@ ms.assetid: bd96d1ec-2fd0-491f-acb4-c1594ce6a084
 ms.date: 08/08/2017
 keywords: -OID_GEN_LAST_CHANGE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 40330e5150a2ef45be4c3057ec319fd971adbd66
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1b9385b9c8164c33a4a0b7232854ec6fe207fe1f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375696"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369094"
 ---
 # <a name="oidgenlastchange"></a>OID\_GEN\_最後\_変更
 
@@ -28,15 +28,15 @@ ms.locfileid: "63375696"
 <a name="remarks"></a>注釈
 -------
 
-のみ[ネットワーク インターフェイスの NDIS](https://msdn.microsoft.com/library/windows/hardware/ff566527)プロバイダー、およびミニポート ドライバーではないまたはフィルター ドライバー、そのためには、OID 要求としてこの OID をサポートする必要があります。
+のみ[ネットワーク インターフェイスの NDIS](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-network-interfaces2)プロバイダー、およびミニポート ドライバーではないまたはフィルター ドライバー、そのためには、OID 要求としてこの OID をサポートする必要があります。
 
-この OID は、インターフェイスが現在の運用状態になったときに、最後のコンピューターの再起動から開始時間を返します。 操作の状態の詳細については、次を参照してください[ **NDIS\_状態\_工程\_状態**](https://msdn.microsoft.com/library/windows/hardware/ff567406)と[OID\_GEN\_。OPERATIONAL\_状態](oid-gen-operational-status.md)します。 現在の時刻を取得するインターフェイスをプロバイダーが呼び出すことができます、 [ **NdisGetSystemUpTimeEx** ](https://msdn.microsoft.com/library/windows/hardware/ff562675)関数。
+この OID は、インターフェイスが現在の運用状態になったときに、最後のコンピューターの再起動から開始時間を返します。 操作の状態の詳細については、次を参照してください[ **NDIS\_状態\_工程\_状態**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-oper-status)と[OID\_GEN\_。OPERATIONAL\_状態](oid-gen-operational-status.md)します。 現在の時刻を取得するインターフェイスをプロバイダーが呼び出すことができます、 [ **NdisGetSystemUpTimeEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisgetsystemuptimeex)関数。
 
 現在の操作状態は、インターフェイスの最後の再初期化する前に入力された、この値は 0 にする必要があります。 . インターフェイス プロバイダーを追跡しない場合は、動作状態を変更する時間、値は 0 を指定する必要があります。
 
 インターフェイスのプロバイダーは、NDIS を返した場合\_状態\_成功すると、クエリの結果は、最後のコンピューターの再起動 (ミリ秒単位) の状態の変更時刻を指定する ULONG64 値。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -57,11 +57,11 @@ ms.locfileid: "63375696"
 
 [OID\_GEN\_OPERATIONAL\_状態](oid-gen-operational-status.md)
 
-[**NDIS\_状態\_工程\_状態**](https://msdn.microsoft.com/library/windows/hardware/ff567406)
+[**NDIS\_状態\_工程\_状態**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-oper-status)
 
-[**NdisGetSystemUpTimeEx**](https://msdn.microsoft.com/library/windows/hardware/ff562675)
+[**NdisGetSystemUpTimeEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisgetsystemuptimeex)
 
-[NDIS ネットワーク インターフェイスの Oid](https://msdn.microsoft.com/library/windows/hardware/ff566545)
+[NDIS ネットワーク インターフェイスの Oid](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-network-interface-oids)
 
  
 

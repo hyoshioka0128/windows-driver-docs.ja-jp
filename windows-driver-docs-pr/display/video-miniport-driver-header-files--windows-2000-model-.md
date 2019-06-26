@@ -7,12 +7,12 @@ keywords:
 - ヘッダー ファイル WDK のビデオのミニポート
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 67c8035c69d2cd8b42e5332b68ec7ab783685c81
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bee47274052bf2578c58c7f7ccfcae265916e802
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389684"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376126"
 ---
 # <a name="video-miniport-driver-header-files-windows-2000-model"></a>ビデオ ミニポート ドライバーのヘッダー ファイル (Windows 2000 モデル)
 
@@ -48,15 +48,15 @@ Windows 2000 のディスプレイ ドライバー モデル内のビデオの�
 </tr>
 <tr class="even">
 <td align="left"><p><em>ntddvdeo.h</em></p></td>
-<td align="left"><p>システム定義の I/O 制御コード (Ioctl) を格納およびビデオ要求パケットで送信される対応する構造体 (<a href="https://msdn.microsoft.com/library/windows/hardware/ff556344#wdkgloss-video-request-packet--vrp-" data-raw-source="&lt;em&gt;VRPs&lt;/em&gt;"><em>VRPs</em></a>) ビデオのミニポート ドライバー。</p></td>
+<td align="left"><p>システム定義の I/O 制御コード (Ioctl) を格納およびビデオ要求パケットで送信される対応する構造体 (<a href="https://docs.microsoft.com/windows-hardware/drivers/#wdkgloss-video-request-packet--vrp-" data-raw-source="&lt;em&gt;VRPs&lt;/em&gt;"><em>VRPs</em></a>) ビデオのミニポート ドライバー。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><em>tvout.h</em></p></td>
-<td align="left"><p>含まれています、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff570173" data-raw-source="[&lt;strong&gt;VIDEOPARAMETERS&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff570173)"> <strong>VIDEOPARAMETERS</strong> </a>テレビ コネクタとコピー保護のサポートとこの構造体で使用される定数を実装するために使用される構造体。</p></td>
+<td align="left"><p>含まれています、 <a href="https://docs.microsoft.com/windows/desktop/api/tvout/ns-tvout-_videoparameters" data-raw-source="[&lt;strong&gt;VIDEOPARAMETERS&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/tvout/ns-tvout-_videoparameters)"> <strong>VIDEOPARAMETERS</strong> </a>テレビ コネクタとコピー保護のサポートとこの構造体で使用される定数を実装するために使用される構造体。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><em>video.h</em></p></td>
-<td align="left"><p>含まれています、<strong>ビデオ ポート</strong><em>Xxx</em>と<em>SvgaHwIoPortXxx</em>ビデオ ポートにビデオに固有の構造体の宣言、機能など、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff570547" data-raw-source="[&lt;strong&gt;VIDEO_REQUEST_PACKET&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff570547)"> <strong>VIDEO_REQUEST_PACKET</strong></a>、および<em>HwVidXxx</em>ビデオのミニポート関数のプロトタイプ。</p></td>
+<td align="left"><p>含まれています、<strong>ビデオ ポート</strong><em>Xxx</em>と<em>SvgaHwIoPortXxx</em>ビデオ ポートにビデオに固有の構造体の宣言、機能など、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/ns-video-_video_request_packet" data-raw-source="[&lt;strong&gt;VIDEO_REQUEST_PACKET&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/ns-video-_video_request_packet)"> <strong>VIDEO_REQUEST_PACKET</strong></a>、および<em>HwVidXxx</em>ビデオのミニポート関数のプロトタイプ。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><em>videoagp.h</em></p></td>
@@ -67,7 +67,7 @@ Windows 2000 のディスプレイ ドライバー モデル内のビデオの�
 
  
 
-これらのヘッダーは、Windows Driver Kit (WDK) に付属しています。 詳細については、関数、構造体、システム定義されている I/O 制御コード、およびこれらのヘッダー ファイル内の定数を参照してください。 [GDI 関数](https://msdn.microsoft.com/library/windows/hardware/ff566543)します。
+これらのヘッダーは、Windows Driver Kit (WDK) に付属しています。 詳細については、関数、構造体、システム定義されている I/O 制御コード、およびこれらのヘッダー ファイル内の定数を参照してください。 [GDI 関数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)します。
 
  
 

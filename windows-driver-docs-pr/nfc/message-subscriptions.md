@@ -10,23 +10,23 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a9ae0834d88925b73d13a7da1a910c9573c071e4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d45ff27cc232234eb5ede8caedf4c677eb9ea92d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378711"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375102"
 ---
 # <a name="nfp-message-subscriptions"></a>NFP メッセージのサブスクリプション
 
 
 サブスクリプションは、ドライバー内で一意のオープン ハンドルとして表されます。 サブスクリプションがアクティブになりますに識別するハンドルを開くことで、"Sub\\"デバイスの名前空間。 次のすべてのものにする、サブスクリプションの種類が定義されている、"Sub\\"プレフィックス。
 
-メッセージの受信にコールバックを指定を通じて、完了した[ **IOCTL\_NFP\_取得\_次\_サブスクライブ済み\_メッセージ**](https://msdn.microsoft.com/library/windows/hardware/jj853319)します。
+メッセージの受信にコールバックを指定を通じて、完了した[ **IOCTL\_NFP\_取得\_次\_サブスクライブ済み\_メッセージ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/nfpdev/ni-nfpdev-ioctl_nfp_get_next_subscribed_message)します。
 
-使用して、サブスクリプションを一時的に無効にできます、 [ **IOCTL\_NFP\_を無効にする**](https://msdn.microsoft.com/library/windows/hardware/jj853315)します。
+使用して、サブスクリプションを一時的に無効にできます、 [ **IOCTL\_NFP\_を無効にする**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/nfpdev/ni-nfpdev-ioctl_nfp_disable)します。
 
-サブスクリプションを使用して再度有効にすることができます、 [ **IOCTL\_NFP\_を有効にする**](https://msdn.microsoft.com/library/windows/hardware/jj853316)します。
+サブスクリプションを使用して再度有効にすることができます、 [ **IOCTL\_NFP\_を有効にする**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/nfpdev/ni-nfpdev-ioctl_nfp_enable)します。
 
 ## <a name="handles"></a>ハンドル数
 
@@ -86,16 +86,16 @@ ms.locfileid: "63378711"
 ## <a name="unresponsive-or-misbehaving-clients"></a>クライアントが応答していないか、不適切な動作
 
 
-クライアントが、必要な送信に失敗したことで「受信」キューのドレインを停止する[ **IOCTL\_NFP\_取得\_次\_サブスクライブ済み\_メッセージ**](https://msdn.microsoft.com/library/windows/hardware/jj853319)間隔を 10 に 20 秒の要求\[10 ~ 20 秒\]ドライバーが、クライアントがなくなったことを想定してください。 通常の状況では、クライアントは、1 秒の範囲内での要求を更新する必要があります\[1 s\]します。 このような場合、ドライバーは"CompleteEventImmediately"カウンターを 0 に設定する必要があり、クライアントがウェイク アップし、必要な IRP を送信するまで、カウンターをインクリメントしない必要があります。
+クライアントが、必要な送信に失敗したことで「受信」キューのドレインを停止する[ **IOCTL\_NFP\_取得\_次\_サブスクライブ済み\_メッセージ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/nfpdev/ni-nfpdev-ioctl_nfp_get_next_subscribed_message)間隔を 10 に 20 秒の要求\[10 ~ 20 秒\]ドライバーが、クライアントがなくなったことを想定してください。 通常の状況では、クライアントは、1 秒の範囲内での要求を更新する必要があります\[1 s\]します。 このような場合、ドライバーは"CompleteEventImmediately"カウンターを 0 に設定する必要があり、クライアントがウェイク アップし、必要な IRP を送信するまで、カウンターをインクリメントしない必要があります。
 
 ### <a name="required-actions"></a>必要な操作
 
-ドライバーは、"CompleteEventImmediately"をカウンターを 0 に設定する必要があり、クライアントが、置換を送信していない場合は、カウンターをインクリメントする必要がありますいない[ **IOCTL\_NFP\_取得\_次\_サブスクライブ\_メッセージ**](https://msdn.microsoft.com/library/windows/hardware/jj853319)以前 IOCTL 完了の 10 ~ 20 秒以内です。
+ドライバーは、"CompleteEventImmediately"をカウンターを 0 に設定する必要があり、クライアントが、置換を送信していない場合は、カウンターをインクリメントする必要がありますいない[ **IOCTL\_NFP\_取得\_次\_サブスクライブ\_メッセージ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/nfpdev/ni-nfpdev-ioctl_nfp_get_next_subscribed_message)以前 IOCTL 完了の 10 ~ 20 秒以内です。
 
 ## <a name="malformed-messages"></a>メッセージの形式が正しくありません。
 
 
-クライアントを削除するか、すべてのエラーを無視する可能性があります (状態を除く\_バッファー\_OVERFLOW) から返された[ **IOCTL\_NFP\_取得\_次\_サブスクライブ\_メッセージ**](https://msdn.microsoft.com/library/windows/hardware/jj853319)します。 そのため、ドライバーべきではないために、完了これらのエラー状態とだけで形式が正しくないメッセージを受信しました。
+クライアントを削除するか、すべてのエラーを無視する可能性があります (状態を除く\_バッファー\_OVERFLOW) から返された[ **IOCTL\_NFP\_取得\_次\_サブスクライブ\_メッセージ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/nfpdev/ni-nfpdev-ioctl_nfp_get_next_subscribed_message)します。 そのため、ドライバーべきではないために、完了これらのエラー状態とだけで形式が正しくないメッセージを受信しました。
 
 ### <a name="required-actions"></a>必要な操作
 
@@ -127,6 +127,6 @@ ms.locfileid: "63378711"
 
  
 ## <a name="related-topics"></a>関連トピック
-[NFC のデバイス ドライバー インターフェイス (DDI) の概要](https://msdn.microsoft.com/library/windows/hardware/mt715815)  
-[フィールドの近接 DDI 参照の近く](https://msdn.microsoft.com/library/windows/hardware/jj866056)  
+[NFC のデバイス ドライバー インターフェイス (DDI) の概要](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
+[フィールドの近接 DDI 参照の近く](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
 

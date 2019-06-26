@@ -12,12 +12,12 @@ keywords:
 - WDK のオーディオをフィルター処理します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2bcfe9e7f7e492e56c7cd9a15803ff86d8c712d1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 59d24d6a79619703afa2f2d3e0cb13b475f014fb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331637"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355689"
 ---
 # <a name="audio-filters-pins-and-nodes"></a>オーディオ フィルター、ピン、ノード
 
@@ -55,7 +55,7 @@ WDM オーディオ デバイスのフィルターでは、その内部のトポ
 
 [トポロジのフィルター](topology-filters.md)
 
-カーネル ストリーミングのフィルター、pin、およびノードの参照の全般的な説明の[KS ミニドライバー アーキテクチャ](https://msdn.microsoft.com/library/windows/hardware/ff567656)します。
+カーネル ストリーミングのフィルター、pin、およびノードの参照の全般的な説明の[KS ミニドライバー アーキテクチャ](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-minidriver-architecture)します。
 
  
 

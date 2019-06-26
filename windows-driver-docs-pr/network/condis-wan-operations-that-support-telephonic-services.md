@@ -12,12 +12,12 @@ keywords:
 - TAPI WDK のネットワーク
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 40eac07481ea4ba12824b8974c425556080508f7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c852721e0d1c0742b37f31d233f1bd8a21339d61
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390729"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379854"
 ---
 # <a name="condis-wan-operations-that-support-telephonic-services"></a>電話サービスをサポートしている CoNDIS WAN 操作
 
@@ -45,7 +45,7 @@ ms.locfileid: "63390729"
 
 [接続指向の NDIS 経由で電話サービスをサポートする非 WAN 固有の拡張機能](non-wan-specific-extensions-to-support-telephonic-services-over-connec.md)
 
-これらの説明では、TAPI に組み込まれている概念について簡単に説明が、リーダーは、詳細については、TAPI、Windows SDK を参照してください。 TAPI を方法についての詳細には、回線デバイスをモデル化し、すべて WAN ミニポート ドライバーでは、その接続の状態を維持する必要があります、方法を参照してください[回線デバイス、アドレス、および呼び出し (NDIS 5.1)](https://msdn.microsoft.com/library/windows/hardware/ff549181)と[状態の維持。情報 (NDIS 5.1)](https://msdn.microsoft.com/library/windows/hardware/ff549232)します。
+これらの説明では、TAPI に組み込まれている概念について簡単に説明が、リーダーは、詳細については、TAPI、Windows SDK を参照してください。 TAPI を方法についての詳細には、回線デバイスをモデル化し、すべて WAN ミニポート ドライバーでは、その接続の状態を維持する必要があります、方法を参照してください[回線デバイス、アドレス、および呼び出し (NDIS 5.1)](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff549181(v=vs.85))と[状態の維持。情報 (NDIS 5.1)](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff549232(v=vs.85))します。
 
  
 

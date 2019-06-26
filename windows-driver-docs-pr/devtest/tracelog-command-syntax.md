@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3010002b73323b6f086d1e486ef633fa54481180
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d71b143e2a15f8997fb29e3c8ae36cc19eac8e3e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391815"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353461"
 ---
 # <a name="tracelog-command-syntax"></a>Tracelog のコマンド構文
 
@@ -131,7 +131,7 @@ NT Kernel Logger フラグのいずれかを有効にしたかどうか (など 
 起動する場合、[グローバル ロガーの起動時にセッション](boot-time-global-logger-session.md)コマンドを使用する必要がありますのカーネル イベントをトレースすると、**トレース ログの"NT Kernel Logger"を停止**または**tracelog-GlobalLoggerを停止**を停止します。 停止するコマンドのいずれかを使用すると、[グローバル ロガー トレース セッション](global-logger-trace-session.md)トレース セッションでは、トレース ログには、プロバイダーが停止しますが、レジストリ エントリの値はリセットされません。 グローバルのロガーのレジストリ エントリの値をリセットするには、使用**tracelog-削除**します。
 
 <span id="-systemrundown__LoggerName_"></span><span id="-systemrundown__loggername_"></span><span id="-SYSTEMRUNDOWN__LOGGERNAME_"></span> **-systemrundown** \[*LoggerName*\]  
-要求に向けられたランダウン イベントを記録する SystemTraceProvider*ロガー*セッション。 参照してください[構成し、SystemTraceProvider セッションを開始する](https://msdn.microsoft.com/library/windows/desktop/jj883720)については、トレース セッションを開始します。
+要求に向けられたランダウン イベントを記録する SystemTraceProvider*ロガー*セッション。 参照してください[構成し、SystemTraceProvider セッションを開始する](https://docs.microsoft.com/windows/desktop/ETW/configuring-and-starting-a-systemtraceprovider-session)については、トレース セッションを開始します。
 
 このコマンドは、Windows 8 と Windows の以降のバージョンで使用できるだけです。
 
@@ -437,7 +437,7 @@ Pid のフィルターを指定します*n* Pid (許可されている最大 8)�
 イベント ID フィルターを指定する*n*イベント Id (最大 64 イベント Id は許可されている)。 このオプションは、以降の Windows 8.1 で利用可能です。
 
 <span id="-systemlogger"></span><span id="-SYSTEMLOGGER"></span> **-systemlogger**  
-ロガーは、SystemTraceProvider イベントを受け取ることができます。 参照してください[構成し、SystemTraceProvider セッションを開始する](https://msdn.microsoft.com/library/windows/desktop/jj883720)します。 このオプションは、以降 Windows 8 で使用できます。
+ロガーは、SystemTraceProvider イベントを受け取ることができます。 参照してください[構成し、SystemTraceProvider セッションを開始する](https://docs.microsoft.com/windows/desktop/ETW/configuring-and-starting-a-systemtraceprovider-session)します。 このオプションは、以降 Windows 8 で使用できます。
 
 <span id="_______-um______"></span><span id="_______-UM______"></span> **-um**   
 このパラメーターはプライベートのトレース セッションを必要プライベート トレース セッションを指定します。

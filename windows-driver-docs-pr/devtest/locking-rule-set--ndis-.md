@@ -4,12 +4,12 @@ description: ドライバーが正しく共有リソースを管理すること�
 ms.assetid: 1123A246-7833-4EAB-B1B8-0C71413CE86B
 ms.date: 05/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: a56edc22dffd1e93b5e1b3aa4653cf0f72280069
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.openlocfilehash: ee94bbbe094a161adc459caae63f4ebcbfac5571
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57463948"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354791"
 ---
 # <a name="locking-rule-set-ndis"></a>ロックの規則セット (NDIS)
 
@@ -33,7 +33,7 @@ ms.locfileid: "57463948"
 <tbody>
 <tr class="odd">
 <td align="left"><p><a href="ndis-spinlock.md" data-raw-source="[&lt;strong&gt;SpinLock&lt;/strong&gt;](ndis-spinlock.md)"><strong>SpinLock</strong></a></p></td>
-<td align="left"><p><a href="ndis-spinlock.md" data-raw-source="[&lt;strong&gt;SpinLock&lt;/strong&gt;](ndis-spinlock.md)"><strong>スピンロック</strong></a>ルールは、NDIS スピン ロック インターフェイスの正しい使用を確認します。 このルールへの呼び出しを指定します<a href="https://msdn.microsoft.com/library/windows/hardware/ff560699" data-raw-source="[&lt;strong&gt;NdisAcquireSpinLock&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff560699)"> <strong>NdisAcquireSpinLock</strong> </a>は、スピンロックがロックされていない状態の場合にのみ行われます。 このルールでは、ミニポート ハンドラー ルーチンを終了する前に、スピンロックが解放されるも検証します。</p></td>
+<td align="left"><p><a href="ndis-spinlock.md" data-raw-source="[&lt;strong&gt;SpinLock&lt;/strong&gt;](ndis-spinlock.md)"><strong>スピンロック</strong></a>ルールは、NDIS スピン ロック インターフェイスの正しい使用を確認します。 このルールへの呼び出しを指定します<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisacquirespinlock" data-raw-source="[&lt;strong&gt;NdisAcquireSpinLock&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisacquirespinlock)"> <strong>NdisAcquireSpinLock</strong> </a>は、スピンロックがロックされていない状態の場合にのみ行われます。 このルールでは、ミニポート ハンドラー ルーチンを終了する前に、スピンロックが解放されるも検証します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="ndis-spinlockbalanced.md" data-raw-source="[&lt;strong&gt;SpinLockBalanced&lt;/strong&gt;](ndis-spinlockbalanced.md)"><strong>SpinLockBalanced</strong></a></p></td>
@@ -42,15 +42,15 @@ ms.locfileid: "57463948"
 <tr class="odd">
 <td align="left"><p><a href="ndis-spinlockdpr.md" data-raw-source="[&lt;strong&gt;SpinLockDpr&lt;/strong&gt;](ndis-spinlockdpr.md)"><strong>SpinLockDpr</strong></a></p></td>
 <td align="left"><p><a href="ndis-spinlockdpr.md" data-raw-source="[&lt;strong&gt;SpinLockDpr&lt;/strong&gt;](ndis-spinlockdpr.md)"> <strong>SpinLockDpr</strong> </a>ルールは、NDIS スピン ロック インターフェイスの正しい使用を確認します。</p>
-<p>このルールへの呼び出しを指定します<a href="https://msdn.microsoft.com/library/windows/hardware/ff561749" data-raw-source="[&lt;strong&gt;NdisDprAcquireSpinLock&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff561749)"> <strong>NdisDprAcquireSpinLock</strong> </a>は、スピン ロックがロックされていない状態の場合にのみ行われます。 このルールでは、ミニポート ハンドラー ルーチンを終了する前に、スピン ロックが解放されるも検証します。</p></td>
+<p>このルールへの呼び出しを指定します<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisdpracquirespinlock" data-raw-source="[&lt;strong&gt;NdisDprAcquireSpinLock&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisdpracquirespinlock)"> <strong>NdisDprAcquireSpinLock</strong> </a>は、スピン ロックがロックされていない状態の場合にのみ行われます。 このルールでは、ミニポート ハンドラー ルーチンを終了する前に、スピン ロックが解放されるも検証します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="ndis-spinlockdprrelease.md" data-raw-source="[&lt;strong&gt;SpinLockDprRelease&lt;/strong&gt;](ndis-spinlockdprrelease.md)"><strong>SpinLockDprRelease</strong></a></p></td>
-<td align="left"><p><a href="ndis-spinlockdprrelease.md" data-raw-source="[&lt;strong&gt;SpinLockDprRelease&lt;/strong&gt;](ndis-spinlockdprrelease.md)"> <strong>SpinLockDprRelease</strong> </a>への呼び出し規則を確認します<a href="https://msdn.microsoft.com/library/windows/hardware/ff560699" data-raw-source="[&lt;strong&gt;NdisAcquireSpinLock&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff560699)"> <strong>NdisAcquireSpinLock</strong> </a>または<a href="https://msdn.microsoft.com/library/windows/hardware/ff561749" data-raw-source="[&lt;strong&gt;NdisDprAcquireSpinLock&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff561749)"> <strong>NdisDprAcquireSpinLock</strong> </a>スピンロックが「ロック解除」状態のときにのみ呼び出されます。 このルールでは、ミニポート ハンドラーを終了する前に、スピンロックのルーチンがされたリリースも確認します。</p></td>
+<td align="left"><p><a href="ndis-spinlockdprrelease.md" data-raw-source="[&lt;strong&gt;SpinLockDprRelease&lt;/strong&gt;](ndis-spinlockdprrelease.md)"> <strong>SpinLockDprRelease</strong> </a>への呼び出し規則を確認します<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisacquirespinlock" data-raw-source="[&lt;strong&gt;NdisAcquireSpinLock&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisacquirespinlock)"> <strong>NdisAcquireSpinLock</strong> </a>または<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisdpracquirespinlock" data-raw-source="[&lt;strong&gt;NdisDprAcquireSpinLock&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisdpracquirespinlock)"> <strong>NdisDprAcquireSpinLock</strong> </a>スピンロックが「ロック解除」状態のときにのみ呼び出されます。 このルールでは、ミニポート ハンドラーを終了する前に、スピンロックのルーチンがされたリリースも確認します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="ndis-spinlockrelease.md" data-raw-source="[&lt;strong&gt;SpinLockRelease&lt;/strong&gt;](ndis-spinlockrelease.md)"><strong>SpinLockRelease</strong></a></p></td>
-<td align="left"><p>SpinLockRelease ルールでは、ドライバーが、スピン ロックを解放する必要がありますされないことを指定します (<a href="https://msdn.microsoft.com/library/windows/hardware/ff564524" data-raw-source="[&lt;strong&gt;NdisReleaseSpinLock&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564524)"><strong>NdisReleaseSpinLock</strong></a>) 最初に取得します。</p></td>
+<td align="left"><p>SpinLockRelease ルールでは、ドライバーが、スピン ロックを解放する必要がありますされないことを指定します (<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisreleasespinlock" data-raw-source="[&lt;strong&gt;NdisReleaseSpinLock&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisreleasespinlock)"><strong>NdisReleaseSpinLock</strong></a>) 最初に取得します。</p></td>
 </tr>
 </tbody>
 </table>
@@ -69,7 +69,7 @@ ms.locfileid: "57463948"
     msbuild /t:sdv /p:Inputs="/check:Locking.sdv" mydriver.VcxProj /p:Configuration="Win8 Release" /p:Platform=Win32
     ```
 
-    詳細については、[ドライバーで障害を検出する Static Driver Verifier を使用して](https://msdn.microsoft.com/library/windows/hardware/hh454281)と[Static Driver Verifier のコマンド (MSBuild)](https://msdn.microsoft.com/library/windows/hardware/hh466459)を参照してください。
+    詳細については、次を参照してください。[ドライバーで障害を検出する Static Driver Verifier を使用して](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers)と[Static Driver Verifier のコマンド (MSBuild)](https://docs.microsoft.com/windows-hardware/drivers/devtest/-static-driver-verifier-commands--msbuild-)します。
 
  
 

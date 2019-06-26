@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: bfed85bd5efa233c728e5644757401062708e0f5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 7510f9d4c406fa67c41c219cf730d724068fd06f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558586"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377920"
 ---
 # <a name="addport-function"></a>AddPort 関数
 
@@ -39,11 +39,11 @@ void AddPort(
 <a name="parameters"></a>パラメーター
 ----------
 
-*PortWWN\[8\]*   
+*PortWWN\[8\]*    
 イベントが報告されることがポートを示す世界中の名前。
 
 *HBAStatus*   
-に返された場合、操作の状態を格納します。 使用できる値とその説明の一覧は、[HBA\_状態](hba-status.md)を参照してください。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **AddPort\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff550132)構造体。
+に返された場合、操作の状態を格納します。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **AddPort\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_addport_out)構造体。
 
 <a name="return-value"></a>戻り値
 ------------
@@ -78,9 +78,9 @@ WMI メソッドには適用されません。
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
-[**AddPort\_IN**](https://msdn.microsoft.com/library/windows/hardware/ff550131)
+[**AddPort\_IN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_addport_in)
 
-[**AddPort\_OUT**](https://msdn.microsoft.com/library/windows/hardware/ff550132)
+[**AddPort\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_addport_out)
 
  
 

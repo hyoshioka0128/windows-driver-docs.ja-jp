@@ -4,12 +4,12 @@ description: WIA 転送定数
 ms.assetid: 69f76919-5bbb-4968-997c-2d51f19aab6b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cbd778f1d426f9678b9af52e723f2ca0ea725836
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 973911ef639af6ecbf4ffbb1b7ff1a6135d35c60
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352629"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369816"
 ---
 # <a name="wia-transfer-constants"></a>WIA 転送定数
 
@@ -42,7 +42,7 @@ ms.locfileid: "63352629"
 <tbody>
 <tr class="odd">
 <td><p><strong>WiaItemTypeTransfer</strong></p></td>
-<td><p>これは、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff551585" data-raw-source="[&lt;strong&gt;WIA_IPA_ITEM_FLAGS&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff551585)"> <strong>WIA_IPA_ITEM_FLAGS</strong> </a>ビットは、データを転送することができるすべての項目で設定する必要があります。 は、アプリケーションをダウンロードを開始またはことには、このビット セットのアイテムをアップロードできます。</p></td>
+<td><p>これは、 <a href="https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-item-flags" data-raw-source="[&lt;strong&gt;WIA_IPA_ITEM_FLAGS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-item-flags)"> <strong>WIA_IPA_ITEM_FLAGS</strong> </a>ビットは、データを転送することができるすべての項目で設定する必要があります。 は、アプリケーションをダウンロードを開始またはことには、このビット セットのアイテムをアップロードできます。</p></td>
 </tr>
 </tbody>
 </table>
@@ -101,7 +101,7 @@ ms.locfileid: "63352629"
 
 ### <a name="transfer-flags"></a>転送フラグ
 
-次の表に渡すことのできるフラグ[ **IWiaMiniDrv::drvAcquireItemData**](https://msdn.microsoft.com/library/windows/hardware/ff543956)します。
+次の表に渡すことのできるフラグ[ **IWiaMiniDrv::drvAcquireItemData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvacquireitemdata)します。
 
 <table>
 <colgroup>

@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c3e1843dbcfee98d14985f06150abde7d18f94c3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b01e620cbe6609cf14dbddd469a1bd56a9c21ec0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336457"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362488"
 ---
 # <a name="icpleak"></a>!icpleak
 
@@ -63,7 +63,7 @@ I/O 完了ポートについては、次を参照してください。 *Microsof
 <a name="remarks"></a>注釈
 -------
 
-この拡張機能は、I/O 完了のプールでメモリ リークがある場合に便利です。 プロセスが呼び出すことによって I/O 完了のパケットを割り当てるときに、I/O 完了のプールのリークが発生する可能性が[ **PostQueuedCompletionStatus**](https://msdn.microsoft.com/library/windows/desktop/aa365458)、呼び出しはありませんが、 [ **GetQueuedCompletionStatus** ](https://msdn.microsoft.com/library/windows/desktop/aa364986) 、それらを解放するか、プロセスがキューに入れ、ポートに完了のエントリが、エントリを取得するスレッドは存在しません。 実行のリークを検出するために、 [ **! poolused** ](-poolused.md)プール タグの拡張機能と ICP の値を確認します。 プールが使用する場合、ICP タグは、重要でリークが発生した可能性があります。
+この拡張機能は、I/O 完了のプールでメモリ リークがある場合に便利です。 プロセスが呼び出すことによって I/O 完了のパケットを割り当てるときに、I/O 完了のプールのリークが発生する可能性が[ **PostQueuedCompletionStatus**](https://docs.microsoft.com/windows/desktop/FileIO/postqueuedcompletionstatus)、呼び出しはありませんが、 [ **GetQueuedCompletionStatus** ](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-getqueuedcompletionstatus) 、それらを解放するか、プロセスがキューに入れ、ポートに完了のエントリが、エントリを取得するスレッドは存在しません。 実行のリークを検出するために、 [ **! poolused** ](-poolused.md)プール タグの拡張機能と ICP の値を確認します。 プールが使用する場合、ICP タグは、重要でリークが発生した可能性があります。
 
 この拡張機能は、システムの種類の一覧を管理する場合にのみ機能します。 場合、 *HandleFlag*設定は、システムに多数のプロセスに、この拡張機能には、実行に長い時間がかかります。
 

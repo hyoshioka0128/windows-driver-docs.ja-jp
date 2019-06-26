@@ -14,12 +14,12 @@ keywords:
 - LowerFilters
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 02b1d844be1a359d193adf3a17f59f4f31155b9e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f6f8abfbfc3d2a4379bf8ed3c80de2f3db987ed5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357522"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379465"
 ---
 # <a name="installing-a-filter-driver"></a>フィルター ドライバーのインストール
 
@@ -27,7 +27,7 @@ ms.locfileid: "63357522"
 
 
 
-PnP フィルター ドライバーは、セットアップ クラスの特定のデバイスやすべてのデバイスをサポートし、デバイスの機能のドライバー (上位のフィルター) の上またはデバイスの機能のドライバー (低いフィルター) の下にアタッチできます。 参照してください[WDM ドライバーの種類](https://msdn.microsoft.com/library/windows/hardware/ff564862)PnP ドライバーのレイヤーの詳細についてはします。
+PnP フィルター ドライバーは、セットアップ クラスの特定のデバイスやすべてのデバイスをサポートし、デバイスの機能のドライバー (上位のフィルター) の上またはデバイスの機能のドライバー (低いフィルター) の下にアタッチできます。 参照してください[WDM ドライバーの種類](https://docs.microsoft.com/windows-hardware/drivers/kernel/types-of-wdm-drivers)PnP ドライバーのレイヤーの詳細についてはします。
 
 ### <a href="" id="ddk-installing-a-device-specific-filter-driver-dg"></a>デバイス固有のフィルター ドライバーをインストールします。
 
@@ -64,7 +64,7 @@ ServiceBinary  = %12%\cdaudio.sys
 
 ### <a href="" id="ddk-installing-a-class-filter-driver-dg"></a>クラスのフィルター ドライバーをインストールします。
 
-必要なサービスをインストールするには、クラス全体上または下-フィルターのデバイス セットアップ クラスに対するをインストールするには、します。 アプリケーションは、上または下-フィルターの目的のデバイス セットアップ クラスと、サービスを登録できます。 サービス バイナリをコピーするアプリケーションを使用できます**SetupInstallFilesFromInfSection**します。 サービスをインストールするには、アプリケーションを使用できます**SetupInstallServicesFromInfSection**します。 アプリケーションの呼び出しを上または下の特定のデバイス セットアップ クラスに対するフィルターとして、サービスを登録する**SetupInstallFromInfSection**関心のあるデバイス セットアップ クラスごとには、取得したレジストリ キー ハンドルを使用して[ **SetupDiOpenClassRegKey** ](https://msdn.microsoft.com/library/windows/hardware/ff552065)の*RelativeKeyRoot*パラメーター。 たとえば、INF セクションでは、次を考慮してください。
+必要なサービスをインストールするには、クラス全体上または下-フィルターのデバイス セットアップ クラスに対するをインストールするには、します。 アプリケーションは、上または下-フィルターの目的のデバイス セットアップ クラスと、サービスを登録できます。 サービス バイナリをコピーするアプリケーションを使用できます**SetupInstallFilesFromInfSection**します。 サービスをインストールするには、アプリケーションを使用できます**SetupInstallServicesFromInfSection**します。 アプリケーションの呼び出しを上または下の特定のデバイス セットアップ クラスに対するフィルターとして、サービスを登録する**SetupInstallFromInfSection**関心のあるデバイス セットアップ クラスごとには、取得したレジストリ キー ハンドルを使用して[ **SetupDiOpenClassRegKey** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiopenclassregkey)の*RelativeKeyRoot*パラメーター。 たとえば、INF セクションでは、次を考慮してください。
 
 ```cpp
 :

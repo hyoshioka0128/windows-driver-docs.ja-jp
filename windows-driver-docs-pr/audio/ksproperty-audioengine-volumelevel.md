@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d1276709c02ff3c56b27c52ed6b48a967c1f587
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7efaf513f0408f8ad842022988f130a95bca57d4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332844"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358833"
 ---
 # <a name="kspropertyaudioenginevolumelevel"></a>KSPROPERTY\_AUDIOENGINE\_VOLUMELEVEL
 
@@ -50,8 +50,8 @@ ms.locfileid: "63332844"
 <td align="left"><p>〇</p></td>
 <td align="left"><p>〇</p></td>
 <td align="left"><p>暗証番号 (pin) のインスタンスを使用してノード</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff537145" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY_AUDIO_CHANNEL&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537145)"><strong>KSNODEPROPERTY_AUDIO_CHANNEL</strong></a></p></td>
-<td align="left"><p>時間の長い (Get 要求) 用と<a href="https://msdn.microsoft.com/library/windows/hardware/hh831854" data-raw-source="[&lt;strong&gt;KSAUDIOENGINE_VOLUMELEVEL&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/hh831854)"> <strong>KSAUDIOENGINE_VOLUMELEVEL</strong> </a> (用セットの要求)。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty_audio_channel" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY_AUDIO_CHANNEL&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty_audio_channel)"><strong>KSNODEPROPERTY_AUDIO_CHANNEL</strong></a></p></td>
+<td align="left"><p>時間の長い (Get 要求) 用と<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_tagksaudioengine_volumelevel" data-raw-source="[&lt;strong&gt;KSAUDIOENGINE_VOLUMELEVEL&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_tagksaudioengine_volumelevel)"> <strong>KSAUDIOENGINE_VOLUMELEVEL</strong> </a> (用セットの要求)。</p></td>
 </tr>
 </tbody>
 </table>
@@ -64,7 +64,7 @@ ms.locfileid: "63332844"
 
 -2147483647 (16 進数、または時間の長い 0x80000001\_分 + 1) は-32767.99998474 デシベル (減衰) と
 
-+ 2147483647 まで (16 進数、または時間の長い 0x7FFFFFFF\_MAX) は +32767.99998474 デシベル (向上)。
+\+ 2147483647 まで (16 進数、または時間の長い 0x7FFFFFFF\_MAX) は +32767.99998474 デシベル (向上)。
 
 &gt; \[!注\] &gt; + 2147483647 まで、このスケールが 1/65536 デシベルの解像度を-2147483648 から、デシベル範囲が整数値で表されます。
 
@@ -81,7 +81,7 @@ ms.locfileid: "63332844"
 
 プロパティ記述子を**KSPROPERTY\_AUDIOENGINE\_VOLUMELEVEL**チャンネル番号を指定します。 オーディオ エンジン ノードを通過するストリームを含むかどうか*n*チャネル、チャネルは番号が 0 ~ *n-1*します。 0 xffffffff のチャネルの値が、要求がすべてのチャネルに適用されることを示すことに注意してください。 ストリームが実行状態にないときにプロパティの要求が行われた場合、ボリューム レベルは、要求されたレベルにすぐに設定されます。 ボリューム レベルのランプが進行中は実行状態のまま、ストリーム場合、ストリームのボリューム レベルはすぐに現在フェードのターゲット レベルに設定します。 既存のボリューム レベル ランプが進行中はプロパティの新しい要求が行われた場合、新しいごとの傾斜増加要求は、現在ボリューム レベルの新しい要求を受信したときに、ボリュームの限界に到達するレベルから始める必要があります。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -104,9 +104,9 @@ ms.locfileid: "63332844"
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
-[**KSAUDIOENGINE\_VOLUMELEVEL**](https://msdn.microsoft.com/library/windows/hardware/hh831854)
+[**KSAUDIOENGINE\_VOLUMELEVEL**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_tagksaudioengine_volumelevel)
 
-[**KSNODEPROPERTY\_オーディオ\_チャネル**](https://msdn.microsoft.com/library/windows/hardware/ff537145)
+[**KSNODEPROPERTY\_オーディオ\_チャネル**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty_audio_channel)
 
 [**KSPROPERTY\_AUDIOENGINE**](ksproperty-audioengine.md)
 

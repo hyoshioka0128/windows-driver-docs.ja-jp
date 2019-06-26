@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 0db15a6d70852a3af6f290f67aa78c42a4d2f2db
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 590ed69084b85644c02dc0981b206a114dd75a68
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335939"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364278"
 ---
 # <a name="ndiskdnblpool"></a>!ndiskd.nblpool
 
 
-**! Ndiskd.nblpool**拡張機能に関する情報を表示する、 [ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/windows/hardware/drivers/network/net-buffer-list-structure) (NBL) プール。 パラメーターなしで、この拡張機能を実行する場合。 ndiskd はシステムに割り当てられているすべての NBL プールの一覧を表示します。
+**! Ndiskd.nblpool**拡張機能に関する情報を表示する、 [ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-structure) (NBL) プール。 パラメーターなしで、この拡張機能を実行する場合。 ndiskd はシステムに割り当てられているすべての NBL プールの一覧を表示します。
 
 ```console
 !ndiskd.nblpool [-handle <x>] [-basic] [-allocations] [-find <str>] [-findnb <str>] 
@@ -45,7 +45,7 @@ NBL プールに関する基本情報が表示されます。
 デバッガー式を使用して割り当てられた NBLs の一覧をフィルター処理します。
 
 <span id="_______-findnb______"></span><span id="_______-FINDNB______"></span> *-findnb*   
-によって割り当てられた NBLs の一覧がリンクされているフィルター [ **NET\_バッファー**](https://msdn.microsoft.com/windows/hardware/drivers/network/net-buffer-structure)s (おり、nbs 経由)。
+によって割り当てられた NBLs の一覧がリンクされているフィルター [ **NET\_バッファー**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-structure)s (おり、nbs 経由)。
 
 <span id="_______-findctx______"></span><span id="_______-FINDCTX______"></span> *-findctx*   
 割り当てられた NBLs コンテキスト領域別の一覧をフィルター処理します。
@@ -161,19 +161,19 @@ ALL ALLOCATED NBLs
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
-[ネットワーク ドライバーの設計ガイド](https://msdn.microsoft.com/windows/hardware/drivers/network/index)
+[ネットワーク ドライバーの設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
-[Windows Vista およびそれ以降のネットワーク リファレンス](https://msdn.microsoft.com/library/windows/hardware/ff571081)
+[Windows Vista およびそれ以降のネットワーク リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
 
 [ネットワーク スタックのデバッグ](https://go.microsoft.com/fwlink/p/?linkid=845311)
 
-[**NDIS 拡張機能 (Ndiskd.dll)**](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 拡張機能 (Ndiskd.dll)** ](ndis-extensions--ndiskd-dll-.md)
 
-[**!ndiskd.help**](-ndiskd-help.md)
+[ **!ndiskd.help**](-ndiskd-help.md)
 
-[**NET\_バッファー\_一覧**](https://msdn.microsoft.com/windows/hardware/drivers/network/net-buffer-list-structure)
+[**NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-structure)
 
-[**NET\_バッファー**](https://msdn.microsoft.com/windows/hardware/drivers/network/net-buffer-structure)
+[**NET\_バッファー**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-structure)
 
  
 

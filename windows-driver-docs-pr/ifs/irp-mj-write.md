@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c61d96057a16bdf650640dd68342e37a4ea2b79
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d7a9867fb75d40cc8cba61375f0c07544fa0613d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324360"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375668"
 ---
 # <a name="irpmjwrite"></a>IRP\_MJ\_WRITE
 
@@ -25,7 +25,7 @@ ms.locfileid: "63324360"
 ## <a name="when-sent"></a>送信時
 
 
-IRP\_MJ\_書き込み I/O マネージャーによって、またはファイル システム ドライバーによって要求が送信されます。 この要求を送信できますなど、ユーザー モード アプリケーションには、Microsoft Win32 関数が呼び出されるとなど**WriteFile**カーネル モード コンポーネントが呼び出されたときまたは[ **ZwWriteFile**](https://msdn.microsoft.com/library/windows/hardware/ff567121).
+IRP\_MJ\_書き込み I/O マネージャーによって、またはファイル システム ドライバーによって要求が送信されます。 この要求を送信できますなど、ユーザー モード アプリケーションには、Microsoft Win32 関数が呼び出されるとなど**WriteFile**カーネル モード コンポーネントが呼び出されたときまたは[ **ZwWriteFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntwritefile).
 
 ## <a name="operation-file-system-drivers"></a>操作:ファイル システム ドライバー
 
@@ -60,7 +60,7 @@ MDL 書き込み要求、ファイル システムは必要な操作を決定す
 ## <a name="parameters"></a>パラメーター
 
 
-ファイル システムまたはフィルター ドライバーは呼び出し[ **IoGetCurrentIrpStackLocation** ](https://msdn.microsoft.com/library/windows/hardware/ff549174)ポインターを取得する、独自の特定の IRP で[**場所スタック**](https://msdn.microsoft.com/library/windows/hardware/ff550659)、IRP として次の一覧に示すように*IrpSp*します。 (IRP が示した*Irp*)。ドライバーは IRP の IRP スタックの場所を作成する要求の処理では、次のメンバーで設定されている情報を使用できます。
+ファイル システムまたはフィルター ドライバーは呼び出し[ **IoGetCurrentIrpStackLocation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetcurrentirpstacklocation)ポインターを取得する、独自の特定の IRP で[**場所スタック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)、IRP として次の一覧に示すように*IrpSp*します。 (IRP が示した*Irp*)。ドライバーは IRP の IRP スタックの場所を作成する要求の処理では、次のメンバーで設定されている情報を使用できます。
 
 <a href="" id="deviceobject"></a>*デバイス オブジェクト*  
 
@@ -72,7 +72,7 @@ MDL 書き込み要求、ファイル システムは必要な操作を決定す
 
 <a href="" id="irp--iostatus"></a>*Irp-&gt;IoStatus*  
 
-ポインター、 [ **IO\_状態\_ブロック**](https://msdn.microsoft.com/library/windows/hardware/ff550671)最終的な完了の状態と、要求された操作に関する情報を受け取る。 場合、IRP\_MJ\_書き込み要求が失敗した場合、ファイル システムの書き込みのディスパッチ ルーチンがエラー NTSTATUS 値、およびの値を返します*Irp -&gt;IoStatus.Information*は未定義とすることはできませんこのオプションを使用するとします。
+ポインター、 [ **IO\_状態\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_status_block)最終的な完了の状態と、要求された操作に関する情報を受け取る。 場合、IRP\_MJ\_書き込み要求が失敗した場合、ファイル システムの書き込みのディスパッチ ルーチンがエラー NTSTATUS 値、およびの値を返します*Irp -&gt;IoStatus.Information*は未定義とすることはできませんこのオプションを使用するとします。
 
 <a href="" id="irp--mdladdress"></a>*Irp-&gt;MdlAddress*  
 
@@ -86,7 +86,7 @@ MDL 書き込み要求、ファイル システムは必要な操作を決定す
 
 <a href="" id="irpsp--flags"></a>*IrpSp-&gt;フラグ*  
 
-場合、SL\_FORCE\_直接\_書き込みフラグが設定されて、カーネル モード ドライバーがボリュームの領域に書き込むことができますを通常書き込むことができないため直接ブロックを記述します。 Windows Vista 以降のオペレーティング システムでセキュリティ上の理由から、直接書き込みブロックが実装されました。 ファイル システム レイヤーと記憶域スタック レイヤーの両方でこのフラグをチェックします。 直接書き込みのブロックに関する詳細については、次を参照してください。[ボリュームとディスクに直接書き込みの操作をブロックしている](https://msdn.microsoft.com/library/windows/hardware/ff551353)します。 SL\_FORCE\_直接\_書き込みフラグは Windows Vista 以降のバージョンの Windows で使用できます。
+場合、SL\_FORCE\_直接\_書き込みフラグが設定されて、カーネル モード ドライバーがボリュームの領域に書き込むことができますを通常書き込むことができないため直接ブロックを記述します。 Windows Vista 以降のオペレーティング システムでセキュリティ上の理由から、直接書き込みブロックが実装されました。 ファイル システム レイヤーと記憶域スタック レイヤーの両方でこのフラグをチェックします。 直接書き込みのブロックに関する詳細については、次を参照してください。[ボリュームとディスクに直接書き込みの操作をブロックしている](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)します。 SL\_FORCE\_直接\_書き込みフラグは Windows Vista 以降のバージョンの Windows で使用できます。
 
 <a href="" id="irpsp--majorfunction"></a>*IrpSp-&gt;MajorFunction*
 
@@ -142,21 +142,21 @@ IRP を指定します\_MJ\_を記述します。
 
 [**CcPrepareMdlWrite**](https://msdn.microsoft.com/library/windows/hardware/ff539181)
 
-[**FLT\_IO\_PARAMETER\_BLOCK**](https://msdn.microsoft.com/library/windows/hardware/ff544638)
+[**FLT\_IO\_PARAMETER\_BLOCK**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_io_parameter_block)
 
-[**IO\_スタック\_場所**](https://msdn.microsoft.com/library/windows/hardware/ff550659)
+[**IO\_スタック\_場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)
 
-[**IO\_状態\_ブロック**](https://msdn.microsoft.com/library/windows/hardware/ff550671)
+[**IO\_状態\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_status_block)
 
-[**IoGetCurrentIrpStackLocation**](https://msdn.microsoft.com/library/windows/hardware/ff549174)
+[**IoGetCurrentIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetcurrentirpstacklocation)
 
-[**IRP**](https://msdn.microsoft.com/library/windows/hardware/ff550694)
+[**IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_irp)
 
 [**IRP\_MJ\_READ**](irp-mj-read.md)
 
-[**IRP\_MJ\_書き込み (WDK カーネル リファレンス)**](https://msdn.microsoft.com/library/windows/hardware/ff550819)
+[**IRP\_MJ\_書き込み (WDK カーネル リファレンス)** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-write)
 
-[**ZwWriteFile**](https://msdn.microsoft.com/library/windows/hardware/ff567121)
+[**ZwWriteFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntwritefile)
 
  
 

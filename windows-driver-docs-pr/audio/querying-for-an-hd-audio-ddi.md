@@ -8,19 +8,19 @@ keywords:
 - クエリの WDK オーディオ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e51aec944825b6a289ebfa11529f3739ef66f0b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 12e61ddceb239d25bdc7d59c1c5f8f82dc81bd66
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328711"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355282"
 ---
 # <a name="querying-for-an-hd-audio-ddi"></a>HD オーディオ DDI のクエリ
 
 
-関数のドライバー、オーディオまたはモデムのコーデックを送信します、HD オーディオ DDI を持つオブジェクトへの参照をカウントを取得する、 [ **IRP\_MN\_クエリ\_インターフェイス**](https://msdn.microsoft.com/library/windows/hardware/ff551687)HD オーディオ バス ドライバーに IOCTL します。
+関数のドライバー、オーディオまたはモデムのコーデックを送信します、HD オーディオ DDI を持つオブジェクトへの参照をカウントを取得する、 [ **IRP\_MN\_クエリ\_インターフェイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-interface)HD オーディオ バス ドライバーに IOCTL します。
 
-Windows Vista 以降では、HD オーディオ バス ドライバーのサポート、 [ **HDAUDIO\_BUS\_インターフェイス**](https://msdn.microsoft.com/library/windows/hardware/ff536413)と[ **HDAUDIO\_バス\_インターフェイス\_V2** ](https://msdn.microsoft.com/library/windows/hardware/ff536418) DDI のバージョン。 サポートされていません、 [ **HDAUDIO\_BUS\_インターフェイス\_BDL** ](https://msdn.microsoft.com/library/windows/hardware/ff536416)バージョン。
+Windows Vista 以降では、HD オーディオ バス ドライバーのサポート、 [ **HDAUDIO\_BUS\_インターフェイス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/ns-hdaudio-_hdaudio_bus_interface)と[ **HDAUDIO\_バス\_インターフェイス\_V2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/ns-hdaudio-_hdaudio_bus_interface_v2) DDI のバージョン。 サポートされていません、 [ **HDAUDIO\_BUS\_インターフェイス\_BDL** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/ns-hdaudio-_hdaudio_bus_interface_bdl)バージョン。
 
 HD オーディオのバス ドライバーは、Windows Server 2003 および Windows XP でのアップグレードとしてインストールできます。 このバス ドライバーには、両方の DDI バージョンがサポートしています。
 

@@ -9,12 +9,12 @@ keywords:
 - パススルー要求 WDK ストレージ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2648bccc670e52f0617303a1b617e8c4b2f3fcfd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9c232392803ca359610f199dd644eb5022b3f0f5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384170"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378467"
 ---
 # <a name="handling-scsi-pass-through-requests"></a>SCSI パススルー要求の処理
 
@@ -22,7 +22,7 @@ ms.locfileid: "63384170"
 ## <span id="ddk_handling_scsi_pass_through_requests_kg"></span><span id="DDK_HANDLING_SCSI_PASS_THROUGH_REQUESTS_KG"></span>
 
 
-によって生成されるクラス ドライバー、 [ **IOCTL\_SCSI\_渡す\_を通じて**](https://msdn.microsoft.com/library/windows/hardware/ff560519)要求または[ **IOCTL\_SCSI\_渡す\_を通じて\_直接**](https://msdn.microsoft.com/library/windows/hardware/ff560521)要求は、次を担当します。
+によって生成されるクラス ドライバー、 [ **IOCTL\_SCSI\_渡す\_を通じて**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddscsi/ni-ntddscsi-ioctl_scsi_pass_through)要求または[ **IOCTL\_SCSI\_渡す\_を通じて\_直接**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddscsi/ni-ntddscsi-ioctl_scsi_pass_through_direct)要求は、次を担当します。
 
 -   ユーザー バッファーの長さを設定**Parameters.DeviceIoControl.InputBufferLength**に少なくとも**sizeof**(SCSI\_渡す\_を通じて) または**sizeof**(SCSI\_渡す\_を通じて\_ダイレクト)
 

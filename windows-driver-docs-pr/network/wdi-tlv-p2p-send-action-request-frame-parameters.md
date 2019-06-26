@@ -6,17 +6,17 @@ ms.date: 07/18/2017
 keywords:
 - WDI_TLV_P2P_SEND_ACTION_REQUEST_FRAME_PARAMETERS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 77a4163e1ecd2c9bf08ae72a378bfa4badf4cd1d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 32fdbe11f8d4b10d0b6ebeac4d59018fd5044150
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384507"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355431"
 ---
 # <a name="wditlvp2psendactionrequestframeparameters"></a>WDI\_TLV\_P2P\_送信\_アクション\_要求\_フレーム\_パラメーター
 
 
-WDI\_TLV\_P2P\_送信\_アクション\_要求\_フレーム\_パラメーターでWi-FiDirectアクション要求フレームを送信するためのパラメーターを含むTLVは、[OID\_WDI\_タスク\_P2P\_送信\_要求\_アクション\_フレーム](https://msdn.microsoft.com/library/windows/hardware/dn925956)します。
+WDI\_TLV\_P2P\_送信\_アクション\_要求\_フレーム\_パラメーターでWi-FiDirectアクション要求フレームを送信するためのパラメーターを含むTLVは、[OID\_WDI\_タスク\_P2P\_送信\_要求\_アクション\_フレーム](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-task-p2p-send-request-action-frame)します。
 
 ## <a name="tlv-type"></a>TLV 型
 
@@ -33,8 +33,8 @@ WDI\_TLV\_P2P\_送信\_アクション\_要求\_フレーム\_パラメーター
 
 | 型                                                                    | 説明                                                                                                                    |
 |-------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------|
-| [**WDI\_P2P\_アクション\_フレーム\_型**](https://msdn.microsoft.com/library/windows/hardware/dn926086) | 送信する要求の種類。                                                                                                   |
-| [**WDI\_MAC\_アドレス**](https://msdn.microsoft.com/library/windows/hardware/dn926071)                       | ターゲットのピア デバイスの MAC アドレス。                                                                                     |
+| [**WDI\_P2P\_アクション\_フレーム\_型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_p2p_action_frame_type) | 送信する要求の種類。                                                                                                   |
+| [**WDI\_MAC\_アドレス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ns-dot11wdi-_wdi_mac_address)                       | ターゲットのピア デバイスの MAC アドレス。                                                                                     |
 | UINT8                                                                   | 直接ダイアログ トークン トランザクション。                                                                                   |
 | UINT32                                                                  | 送信タイムアウト。 最大時間 (ミリ秒)、アクションのフレームを送信します。                                                 |
 | UINT32                                                                  | Post ACK 時間。 時間 (ミリ秒) で、着信パケットの受信が確認された後に、listen チャネルに保たれます。 |

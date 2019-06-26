@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a4199c52bd68cd100afd636098d5715ce73931a7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5b6066efff020fb8c8d61ac298e1fbe1edcd5bb7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332684"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354393"
 ---
 # <a name="kspropertyrtaudiobufferwithnotification"></a>KSPROPERTY\_RTAUDIO\_バッファー\_WITH\_通知
 
@@ -52,19 +52,19 @@ KSPROPERTY\_RTAUDIO\_バッファー\_WITH\_通知プロパティは、ドライ
 <td align="left"><p>〇</p></td>
 <td align="left"><p>いいえ</p></td>
 <td align="left"><p>Pin</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff537495" data-raw-source="[&lt;strong&gt;KSRTAUDIO_BUFFER_PROPERTY_WITH_NOTIFICATION&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537495)"><strong>KSRTAUDIO_BUFFER_PROPERTY_WITH_NOTIFICATION</strong></a></p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff537493" data-raw-source="[&lt;strong&gt;KSRTAUDIO_BUFFER&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537493)"><strong>KSRTAUDIO_BUFFER</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksrtaudio_buffer_property_with_notification" data-raw-source="[&lt;strong&gt;KSRTAUDIO_BUFFER_PROPERTY_WITH_NOTIFICATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksrtaudio_buffer_property_with_notification)"><strong>KSRTAUDIO_BUFFER_PROPERTY_WITH_NOTIFICATION</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksrtaudio_buffer" data-raw-source="[&lt;strong&gt;KSRTAUDIO_BUFFER&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksrtaudio_buffer)"><strong>KSRTAUDIO_BUFFER</strong></a></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-プロパティ記述子 (インスタンス データ) から成る、KSRTAUDIO\_バッファー\_プロパティ\_WITH\_通知の構造体を含む、 [ **KSPROPERTY**](https://msdn.microsoft.com/library/windows/hardware/ff564262)の他のメンバーと構造体。 クライアントは、構造体に、要求されたバッファー サイズを書き込みます。 クライアントとしてベース アドレスを指定する必要があります**NULL**特定のベース アドレスが必要な場合を除き、します。
+プロパティ記述子 (インスタンス データ) から成る、KSRTAUDIO\_バッファー\_プロパティ\_WITH\_通知の構造体を含む、 [ **KSPROPERTY**](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))の他のメンバーと構造体。 クライアントは、構造体に、要求されたバッファー サイズを書き込みます。 クライアントとしてベース アドレスを指定する必要があります**NULL**特定のベース アドレスが必要な場合を除き、します。
 
 このプロパティは、DMA 駆動のイベント通知を使用するときに使用されます。 に基づいて、 **NotificationCount**メンバーが、登録に 1 回だけ (最後) のイベントがシグナル状態で 2 回 (中間点と終了) または循環バッファーを巡回ごと。 使用してイベントの登録[ **KSPROPERTY\_RTAUDIO\_登録\_通知\_イベント**](ksproperty-rtaudio-register-notification-event.md) KSPROPERTY の呼び出しに成功した後\_RTAUDIO\_バッファー\_WITH\_通知します。
 
-プロパティの値 (データの操作) は、型の構造体[ **KSRTAUDIO\_バッファー**](https://msdn.microsoft.com/library/windows/hardware/ff537493)します。 ドライバーは、実際のバッファー サイズ、ベース アドレスは、割り当て済み循環バッファーのメモリ バリアのフラグと、この構造体を格納します。
+プロパティの値 (データの操作) は、型の構造体[ **KSRTAUDIO\_バッファー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksrtaudio_buffer)します。 ドライバーは、実際のバッファー サイズ、ベース アドレスは、割り当て済み循環バッファーのメモリ バリアのフラグと、この構造体を格納します。
 
 ### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
 
@@ -112,7 +112,7 @@ KSPROPERTY\_RTAUDIO\_バッファー\_WITH\_通知プロパティ要求がステ
 
 このプロパティを介して割り当てられたバッファーを解放、暗証番号 (pin) を自動的に終了します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -135,11 +135,11 @@ KSPROPERTY\_RTAUDIO\_バッファー\_WITH\_通知プロパティ要求がステ
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
-[**KSPROPERTY**](https://msdn.microsoft.com/library/windows/hardware/ff564262)
+[**KSPROPERTY**](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))
 
-[**KSRTAUDIO\_バッファー**](https://msdn.microsoft.com/library/windows/hardware/ff537493)
+[**KSRTAUDIO\_バッファー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksrtaudio_buffer)
 
-[**KSRTAUDIO\_バッファー\_プロパティ\_WITH\_通知**](https://msdn.microsoft.com/library/windows/hardware/ff537495)
+[**KSRTAUDIO\_バッファー\_プロパティ\_WITH\_通知**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksrtaudio_buffer_property_with_notification)
 
 [**KSPROPERTY\_RTAUDIO\_登録\_通知\_イベント**](ksproperty-rtaudio-register-notification-event.md)
 

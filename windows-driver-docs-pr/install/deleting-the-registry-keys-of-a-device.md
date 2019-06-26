@@ -7,19 +7,19 @@ keywords:
 - レジストリ キーの WDK デバイスのインストールを削除します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ef9e28fc56f907915eb6f88b8bebf6057b7bbb6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9ca09ccb3a368074a329cc5b425a6f04372d976e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367972"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360825"
 ---
 # <a name="deleting-the-registry-keys-of-a-device"></a>デバイスのレジストリ キーの削除
 
 
 使用しないようにする**SetupDiDeleteDevRegKey**または*ハードウェア キー*理由は次のデバイス。
 
--   [**SetupDiDeleteDevRegKey** ](https://msdn.microsoft.com/library/windows/hardware/ff550991)レジストリ キー内のすべてのカスタム設定を削除します。 これには、次のデータが含まれます。
+-   [**SetupDiDeleteDevRegKey** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdideletedevregkey)レジストリ キー内のすべてのカスタム設定を削除します。 これには、次のデータが含まれます。
 
     -   インストール時に指定された設定。
 
@@ -27,9 +27,9 @@ ms.locfileid: "63367972"
 
     -   作成されたアプリケーションまたはその他のコンポーネントによって変更する設定。
 
-    [**SetupDiDeleteDevRegKey** ](https://msdn.microsoft.com/library/windows/hardware/ff550991)不可欠なデバイス インストール状態も削除します。
+    [**SetupDiDeleteDevRegKey** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdideletedevregkey)不可欠なデバイス インストール状態も削除します。
 
--   ソフトウェアまたはハードウェアのキーを使用して開かれた[ **SetupDiOpenDevRegKey** ](https://msdn.microsoft.com/library/windows/hardware/ff552079) DICS_FLAG_GLOBAL のスコープを持つデバイスのインストール状態に関するデータが含まれています。 DICS_FLAG_CONFIGSPECIFIC のスコープでアクセスされるソフトウェアまたはハードウェアのキーでは、デバイスのインストール状態は含まれません。
+-   ソフトウェアまたはハードウェアのキーを使用して開かれた[ **SetupDiOpenDevRegKey** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiopendevregkey) DICS_FLAG_GLOBAL のスコープを持つデバイスのインストール状態に関するデータが含まれています。 DICS_FLAG_CONFIGSPECIFIC のスコープでアクセスされるソフトウェアまたはハードウェアのキーでは、デバイスのインストール状態は含まれません。
 
     いずれの場合も、これらのソフトウェアまたはハードウェア キーを削除するその他のデバイス インストールのコンポーネントに影響を及ぼすことができます。
 

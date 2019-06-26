@@ -7,12 +7,12 @@ keywords:
 - BUS_INTERFACE_STANDARD
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c89c86a41547e892e94ec5452fa7be9ad7a60cd6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2d154f450c48437cf3ee4c70580e881614355d3f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391584"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353527"
 ---
 # <a name="access-pcmcia-attribute-memory-by-using-a-businterfacestandard-interface"></a>PCMCIA 属性のメモリ バスを使用してへのアクセス\_インターフェイス\_標準インターフェイス
 
@@ -26,7 +26,7 @@ ms.locfileid: "63391584"
 
 ドライバーは、このメソッドを使用して、IRQL での実行中に&lt;= DISPTACH\_レベル。
 
-ドライバーは通常、バスを取得\_インターフェイス\_初期化中に標準的なインターフェイスです。 ドライバーを使用して、 [ **IRP\_MN\_クエリ\_インターフェイス**](https://msdn.microsoft.com/library/windows/hardware/ff551687) PCMCIA バス ドライバーからインターフェイスを取得する要求。 IRQL パッシブでインターフェイスのクエリ要求を送信する必要があります\_レベル。
+ドライバーは通常、バスを取得\_インターフェイス\_初期化中に標準的なインターフェイスです。 ドライバーを使用して、 [ **IRP\_MN\_クエリ\_インターフェイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-interface) PCMCIA バス ドライバーからインターフェイスを取得する要求。 IRQL パッシブでインターフェイスのクエリ要求を送信する必要があります\_レベル。
 
 ドライバー インターフェイス ルーチンを呼び出すことができます、ドライバーは、標準バス インターフェイスを取得した後に**GetBusData**または**SetBusData**メモリにアクセスする属性。
 

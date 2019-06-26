@@ -12,12 +12,12 @@ keywords:
 - WDK カーネルの電源を節約します。
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 17a37a25eeeb490176b3736aa12030fb20f0ce15
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b4ca1020fcfb8ac3702f01706798cdd132aa85fe
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345416"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355460"
 ---
 # <a name="system-wide-overview-of-power-management"></a>電源管理のシステム全体の概要
 
@@ -31,11 +31,11 @@ ms.locfileid: "63345416"
 
 ![電源管理のシステム全体の概要を示す図](images/power-comp.png)
 
-アプリケーションとユーザーは、コントロール パネルを使用し、電源管理ルーチンを呼び出すことで電源管理の決定に影響します。 ユーザーは、コントロール パネルを使用して、システムとデバイスのカスタムの電源設定を含む、電源オプションを設定することができます。 コントロール パネルには、電源マネージャーと、アクティブな電源ポリシーと関連付けられている電源設定の変更のドライバーに通知します。 Windows Vista 以降、電源マネージャー ドライバーに通知を呼び出すことによって、 [**電源設定のコールバック**](https://msdn.microsoft.com/library/windows/hardware/ff559727)ドライバーが通知を受信登録します。 Windows Server 2003、Windows XP、および Windows 2000 では、この通知が WMI を通じて行われます。
+アプリケーションとユーザーは、コントロール パネルを使用し、電源管理ルーチンを呼び出すことで電源管理の決定に影響します。 ユーザーは、コントロール パネルを使用して、システムとデバイスのカスタムの電源設定を含む、電源オプションを設定することができます。 コントロール パネルには、電源マネージャーと、アクティブな電源ポリシーと関連付けられている電源設定の変更のドライバーに通知します。 Windows Vista 以降、電源マネージャー ドライバーに通知を呼び出すことによって、 [**電源設定のコールバック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-poregisterpowersettingcallback)ドライバーが通知を受信登録します。 Windows Server 2003、Windows XP、および Windows 2000 では、この通知が WMI を通じて行われます。
 
 電源マネージャー、システム全体を管理して*電源ポリシー*システムを制御するルールの電力使用状況。 (詳細については、次を参照してください[システム電源ポリシー](system-power-policy.md)。)。コントロール パネルと Api から情報を使用して、アプリケーションが使用している、またはシステムの電源ポリシーを適切に調整ができるように、さまざまなデバイスを使用する必要があります、電源マネージャーは確認できます。
 
-電源マネージャー インターフェイスも提供します、ドライバーは、構成する[電源管理サポート ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff559835)、[電源管理 Irp のマイナー](https://msdn.microsoft.com/library/windows/hardware/ff559822)ドライバーのエントリ ポイントを必要とします。
+電源マネージャー インターフェイスも提供します、ドライバーは、構成する[電源管理サポート ルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)、[電源管理 Irp のマイナー](https://docs.microsoft.com/windows-hardware/drivers/kernel/power-management-minor-irps)ドライバーのエントリ ポイントを必要とします。
 
 電源マネージャーは、システムの電源状態の変更を要求する場合、ドライバーは、適切なデバイスの電源状態で自分のデバイスを配置することで応答します。 さらに、ドライバーは、デバイスのアイドル状態の検出を実行し、スリープ状態で未使用のデバイスを配置できます。 Bus 固有のメカニズムでデバイスの電源機能レポートし設定デバイスの状態の報告し、デバイスの電源を変更します。 デバイスの電源が変更された正確にする方法とタイミングは、デバイスの種類と、デバイスのハードウェアの機能によって異なります。
 

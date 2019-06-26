@@ -7,12 +7,12 @@ keywords:
 - OID_WDI_SET_P2P_START_BACKGROUND_DISCOVERY ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: d6f0549dbe26b7cf65eaa2ae7447f306c858a194
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a62c2b90748b8903c21024851e89b68061e51b5d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330162"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359185"
 ---
 # <a name="oidwdisetp2pstartbackgrounddiscovery"></a>OID\_WDI\_設定\_P2P\_開始\_バック グラウンド\_検出
 
@@ -29,7 +29,7 @@ OID\_WDI\_設定\_P2P\_開始\_バック グラウンド\_検出が定期的に�
 
 チャネルの一覧が指定されている場合のみ指定されたチャネルでアダプターをスキャンする必要があります。 それ以外の場合、すべてのチャネルでスキャンする必要があります。 指定したチャネルの外部でデバイスを検出するファームウェアが発生した場合情報をオペレーティング システムに送信する必要があります。
 
-期間とチャネルをリッスンすると ([**WDI\_TLV\_P2P\_検出\_チャネル\_設定**](https://msdn.microsoft.com/library/windows/hardware/dn897877)) が指定すると、参照します。リモート デバイスの待機時間。 アダプターは、待機時間とチャネルのすべての値に基づいて最も効率的な方法で要求されたチャネルをスキャンするスケジュールを考案する必要があります。 オペレーティング システムでは、待機時間とチャンネルの複数のインスタンスを指定できますも。 この場合、アダプターする必要がありますまずを思い付くリッスン期間とチャネルのリストの 0 以外の値を持つこれらのエントリのスキャンのスケジュール。 次に、アダプターでは、次の場合に既定値を使用する必要があります。
+期間とチャネルをリッスンすると ([**WDI\_TLV\_P2P\_検出\_チャネル\_設定**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-discovery-channel-settings)) が指定すると、参照します。リモート デバイスの待機時間。 アダプターは、待機時間とチャネルのすべての値に基づいて最も効率的な方法で要求されたチャネルをスキャンするスケジュールを考案する必要があります。 オペレーティング システムでは、待機時間とチャンネルの複数のインスタンスを指定できますも。 この場合、アダプターする必要がありますまずを思い付くリッスン期間とチャネルのリストの 0 以外の値を持つこれらのエントリのスキャンのスケジュール。 次に、アダプターでは、次の場合に既定値を使用する必要があります。
 
 1.  待機期間が 0 の場合、アダプターは、指定したチャネルの既定のスキャン時間を使用してください。
 2.  チャネルの一覧が空の場合、アダプターはそのバンドの指定されたリッスンとサイクルの時間を使用してそのバンド内のチャネルのすべてをスキャンする必要があります。 時間は適用されませんを持つ独立した任意のチャンネル スキャンでは、オペレーティング システムで指定された期間をリッスンします。
@@ -43,11 +43,11 @@ D2 の NIC がある場合は、D0 に戻るまで、バック グラウンド�
 
 | TLV                                                                                                | 許可されている複数の TLV インスタンス | 省略可能 | 説明                                                                                                                         |
 |----------------------------------------------------------------------------------------------------|--------------------------------|----------|-------------------------------------------------------------------------------------------------------------------------------------|
-| [**WDI\_TLV\_P2P\_バック グラウンド\_DISCOVER\_モード**](https://msdn.microsoft.com/library/windows/hardware/dn897864)     |                                |          | Wi-Fi Direct バック グラウンドの検出モード パラメーター。                                                                                   |
-| [**WDI\_TLV\_P2P\_検出\_チャネル\_設定**](https://msdn.microsoft.com/library/windows/hardware/dn897877) | x                              | x        | 一覧は、スキャンするチャネルをお勧めします。                                                                                               |
-| [**WDI\_TLV\_P2P\_DEVICE\_FILTER\_LIST**](https://msdn.microsoft.com/library/windows/hardware/dn897873)                 |                                | x        | Wi-Fi Direct デバイスとデバイスの Wi-Fi Direct 時に検索するグループの所有者の一覧を検出します。                                    |
-| [**WDI\_TLV\_P2P\_サービス\_名前\_ハッシュ**](https://msdn.microsoft.com/library/windows/hardware/dn898009)                   | x                              | x        | クエリを実行するハッシュのサービス名のリスト。 これは、必要な場合 WDI\_P2P\_サービス\_検出\_型\_サービス\_名前\_のみを指定します。 |
-| [**WDI\_TLV\_ベンダー\_特定\_IE**](https://msdn.microsoft.com/library/windows/hardware/dn898076)                          |                                | x        | ポートによって送信されたプローブ要求に含める必要がある 1 つまたは複数の i。                                                       |
+| [**WDI\_TLV\_P2P\_バック グラウンド\_DISCOVER\_モード**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-background-discover-mode)     |                                |          | Wi-Fi Direct バック グラウンドの検出モード パラメーター。                                                                                   |
+| [**WDI\_TLV\_P2P\_検出\_チャネル\_設定**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-discovery-channel-settings) | x                              | x        | 一覧は、スキャンするチャネルをお勧めします。                                                                                               |
+| [**WDI\_TLV\_P2P\_DEVICE\_FILTER\_LIST**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-device-filter-list)                 |                                | x        | Wi-Fi Direct デバイスとデバイスの Wi-Fi Direct 時に検索するグループの所有者の一覧を検出します。                                    |
+| [**WDI\_TLV\_P2P\_サービス\_名前\_ハッシュ**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-service-name-hash)                   | x                              | x        | クエリを実行するハッシュのサービス名のリスト。 これは、必要な場合 WDI\_P2P\_サービス\_検出\_型\_サービス\_名前\_のみを指定します。 |
+| [**WDI\_TLV\_ベンダー\_特定\_IE**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-vendor-specific-ie)                          |                                | x        | ポートによって送信されたプローブ要求に含める必要がある 1 つまたは複数の i。                                                       |
 
  
 

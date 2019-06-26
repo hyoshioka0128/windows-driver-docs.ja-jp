@@ -8,12 +8,12 @@ keywords:
 - WDM 低い edge WDK ネットワー キング、ドライバーの実装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ab16f15313e8369134d73c910ddb33a11daf261
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1490b43145b903e86abcd50bfacebad95aa5898a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362562"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377079"
 ---
 # <a name="implementation-tips-and-requirements-for-wdm-lower-edge"></a>WDM の下端の実装のヒントと要件
 
@@ -25,7 +25,7 @@ ms.locfileid: "63362562"
 
 NDIS WDM のミニポート ドライバーを実装する場合は、次に留意してください。
 
--   構築、NDIS WDM ミニポート ドライバーが必要です、NDIS\_Ndis.h ヘッダー ファイルが含まれる前に、WDM フラグが定義されています。 NDIS を定義する\_WDM フラグに確実に Ndis.h は、適切な WDM ヘッダー ファイルを自動的に含めます。 NDIS\_するか、ミニポート ドライバーのソース コードの先頭に埋め込まれたまたは、ミニポート ドライバーのソース ファイルで設定する必要があります WDM フラグ。 NDIS WDM のミニポート ドライバーには、カーネル モードのルーチンを呼び出すに WDM ヘッダー ファイルが必要です[**保留**](https://msdn.microsoft.com/library/windows/hardware/ff548336)と[ **IoAllocateIrp** ](https://msdn.microsoft.com/library/windows/hardware/ff548257).
+-   構築、NDIS WDM ミニポート ドライバーが必要です、NDIS\_Ndis.h ヘッダー ファイルが含まれる前に、WDM フラグが定義されています。 NDIS を定義する\_WDM フラグに確実に Ndis.h は、適切な WDM ヘッダー ファイルを自動的に含めます。 NDIS\_するか、ミニポート ドライバーのソース コードの先頭に埋め込まれたまたは、ミニポート ドライバーのソース ファイルで設定する必要があります WDM フラグ。 NDIS WDM のミニポート ドライバーには、カーネル モードのルーチンを呼び出すに WDM ヘッダー ファイルが必要です[**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)と[ **IoAllocateIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocateirp).
 
 -   特定のバス ドライバー インターフェイスの関数呼び出しでは、バス ドライバーのヘッダー ファイルが必要です。
 

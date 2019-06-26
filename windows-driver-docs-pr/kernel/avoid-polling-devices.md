@@ -10,12 +10,12 @@ keywords:
 - WDK の I/O のカウンター
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eacadeb33d891735c29b35ec5d596a067b119daa
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 53b6197f07eab9c309dfa13290c686d5818039ac
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63338630"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369958"
 ---
 # <a name="avoid-polling-devices"></a>デバイスのポーリングの回避
 
@@ -31,7 +31,7 @@ ms.locfileid: "63338630"
 
 カウンターをインクリメントする単純なループをコーディングして低速デバイスの問題を解決するために論理するかもしれませんが、それによって「無駄」最小間隔のレジスタをデバイスが更新中にこのようなドライバーが Windows プラットフォーム間で移植できる可能性があります。 ループ カウンターの最大値には、プラットフォームごとにカスタマイズが必要です。 さらに、ドライバーが適切な最適化コンパイラでコンパイルされると場合、は、コンパイラは、ドライバーのカウンター変数とループのインクリメントされる位置削除可能性があります。
 
-**注**  場合は、デバイスのハードウェアの状態を更新中にドライバーをインストールする必要がありますにこの実装のガイドラインに従ってください。ドライバーが呼び出せる[ **KeStallExecutionProcessor** ](https://msdn.microsoft.com/library/windows/hardware/ff553295)デバイスの登録を読み取る前にします。 ドライバーには、停止し、50 マイクロ秒不要になったの停止の間隔を指定する必要があります、一般に、間隔が最小限に抑える必要があります。
+**注**  場合は、デバイスのハードウェアの状態を更新中にドライバーをインストールする必要がありますにこの実装のガイドラインに従ってください。ドライバーが呼び出せる[ **KeStallExecutionProcessor** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-kestallexecutionprocessor)デバイスの登録を読み取る前にします。 ドライバーには、停止し、50 マイクロ秒不要になったの停止の間隔を指定する必要があります、一般に、間隔が最小限に抑える必要があります。
 
 粒度、 **KeStallExecutionProcessor**間隔は 1 つのマイクロ秒。
 

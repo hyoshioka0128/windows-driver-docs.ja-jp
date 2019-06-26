@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5287d0e0f4808813792f9688946a5256a9ed5c60
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8d9f49b85d314e5cd1886cb100f0d56aeea8882f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327219"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381907"
 ---
 # <a name="kspropertyvideoprocampwhitebalancecomponent"></a>KSPROPERTY\_ビデオ プロシージャ アンプ\_ホワイト バランス\_コンポーネント
 
@@ -53,7 +53,7 @@ KSPROPERTY\_ビデオ プロシージャ アンプ\_ホワイト バランス\_�
 <td><p>〇</p></td>
 <td><p>〇</p></td>
 <td><p>node</p></td>
-<td><a href="https://msdn.microsoft.com/library/windows/hardware/ff566082" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOPROCAMP_NODE_S2&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566082)"><strong>KSPROPERTY_VIDEOPROCAMP_NODE_S2</strong></a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videoprocamp_node_s2" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOPROCAMP_NODE_S2&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videoprocamp_node_s2)"><strong>KSPROPERTY_VIDEOPROCAMP_NODE_S2</strong></a></td>
 <td><p>長整数のペア</p></td>
 </tr>
 </tbody>
@@ -70,11 +70,11 @@ KSPROPERTY\_ビデオ プロシージャ アンプ\_ホワイト バランス\_�
 
 クライアントの赤要素値を指定する必要がありますセット要求を行うときに、 **Value1**メンバーと青要素値、 **Value2** 、KSPROPERTY のメンバー\_ビデオ プロシージャ アンプ\_ノード\_S2 構造体。
 
-デバイスでサポートされているホワイト バランス値の範囲を確認するのには、アプリケーションが、KSPROPERTY を発行できます\_型\_BASICSUPPORT 要求。 KSPROPERTY を指定する\_型\_で BASICSUPPORT、**フラグ**のメンバー、 [ **KSPROPERTY\_項目**](https://msdn.microsoft.com/library/windows/hardware/ff565176)構造体。
+デバイスでサポートされているホワイト バランス値の範囲を確認するのには、アプリケーションが、KSPROPERTY を発行できます\_型\_BASICSUPPORT 要求。 KSPROPERTY を指定する\_型\_で BASICSUPPORT、**フラグ**のメンバー、 [ **KSPROPERTY\_項目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksproperty_item)構造体。
 
 クライアントで赤の値を受け取る get 要求を行うときに、 **Value1**メンバーと青要素値、 **Value2** 、KSPROPERTY のメンバー\_ビデオ プロシージャ アンプ\_ノード\_S2 構造体。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -95,7 +95,7 @@ KSPROPERTY\_ビデオ プロシージャ アンプ\_ホワイト バランス\_�
 
 [**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
 
-[**KSPROPERTY\_ビデオ プロシージャ アンプ\_ノード\_S2**](https://msdn.microsoft.com/library/windows/hardware/ff566082)
+[**KSPROPERTY\_ビデオ プロシージャ アンプ\_ノード\_S2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videoprocamp_node_s2)
 
  
 

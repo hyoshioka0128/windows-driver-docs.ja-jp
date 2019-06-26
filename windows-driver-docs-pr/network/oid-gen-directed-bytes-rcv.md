@@ -5,12 +5,12 @@ ms.assetid: 435941b5-647f-4c5f-84ef-7b4b832c452e
 ms.date: 08/08/2017
 keywords: -OID_GEN_DIRECTED_BYTES_RCV ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 75258cf599d0e1795e9f7c9b6dffb15dffb6882d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 94b4d20dc6ac39fa7c100eacbe8754826026732f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368942"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369152"
 ---
 # <a name="oidgendirectedbytesrcv"></a>OID\_GEN\_ダイレクト\_バイト\_受信
 
@@ -37,7 +37,7 @@ ms.locfileid: "63368942"
 <a name="remarks"></a>注釈
 -------
 
-Oid の統計に関する概要については、次を参照してください。 [General Statistics](https://msdn.microsoft.com/library/windows/hardware/ff552485)します。
+Oid の統計に関する概要については、次を参照してください。 [General Statistics](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-general-statistics-oids)します。
 
 <a name="requirements"></a>要件
 ------------

@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 582372622a1a80939e219a601da84da0cd97c54c
-ms.sourcegitcommit: f3825d59bb69429e892a088061bd014a65e0d161
+ms.openlocfilehash: 36daa743555be8308383603ac7f773a0ec96c624
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66452395"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355505"
 ---
 # <a name="guidclassusbdevice"></a>GUID_CLASS_USB_DEVICE
 
 
-GUID_CLASS_USB_DEVICE は古い形式の識別子、[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)の[USB](https://msdn.microsoft.com/library/windows/hardware/ff538930) USB ハブに接続されているデバイス。 Microsoft Windows 2000 以降を使用して、 [ **GUID_DEVINTERFACE_USB_DEVICE** ](guid-devinterface-usb-device.md)このクラスの新しいインスタンスのクラス識別子。
+GUID_CLASS_USB_DEVICE は古い形式の識別子、[デバイス インターフェイス クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)の[USB](https://docs.microsoft.com/windows-hardware/drivers/) USB ハブに接続されているデバイス。 Microsoft Windows 2000 以降を使用して、 [ **GUID_DEVINTERFACE_USB_DEVICE** ](guid-devinterface-usb-device.md)このクラスの新しいインスタンスのクラス識別子。
 
 <a name="remarks"></a>注釈
 -------

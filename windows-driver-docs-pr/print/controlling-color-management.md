@@ -6,12 +6,12 @@ keywords:
 - 色の管理 WDK の印刷を制御します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 765943a92ff35b77d246b574114c0999c78d139e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e6efc0ab1515a569ab7839db5836dac80e069d53
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358656"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374666"
 ---
 # <a name="controlling-color-management"></a>色の管理を制御する
 
@@ -19,7 +19,7 @@ ms.locfileid: "63358656"
 
 
 
-プリンターの色の管理は、アプリケーション、システム (GDI)、ドライバー、またはデバイスのハードウェアで制御できます。 内のフラグを調べることでどのコンポーネントが色補正を管理するドライバーを決定します、 [ **BRUSHOBJ** ](https://msdn.microsoft.com/library/windows/hardware/ff538261)と[ **XLATEOBJ** ](https://msdn.microsoft.com/library/windows/hardware/ff570634)グラフィックス DDI 描画関数の実装に渡される構造体。 次のフラグが定義されています。
+プリンターの色の管理は、アプリケーション、システム (GDI)、ドライバー、またはデバイスのハードウェアで制御できます。 内のフラグを調べることでどのコンポーネントが色補正を管理するドライバーを決定します、 [ **BRUSHOBJ** ](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_brushobj)と[ **XLATEOBJ** ](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_xlateobj)グラフィックス DDI 描画関数の実装に渡される構造体。 次のフラグが定義されています。
 
 <table>
 <colgroup>

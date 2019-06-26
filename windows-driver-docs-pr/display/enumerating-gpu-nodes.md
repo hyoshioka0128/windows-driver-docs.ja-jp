@@ -6,17 +6,17 @@ keywords:
 - GPU ノード、WDK のディスプレイ ドライバーを列挙します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 448e1d347a6252e1197e4304eb6afebafadd22b8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bcada44e5242441070d15e10810a1922224887de
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353906"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355552"
 ---
 # <a name="enumerating-gpu-engine-capabilities"></a>GPU エンジンの機能の列挙
 
 
-Windows 8.1 以降、ディスプレイのミニポート ドライバーを実装する必要があります、 [ *DxgkDdiGetNodeMetadata* ](https://msdn.microsoft.com/library/windows/hardware/dn265415)関数で、GPU のノードのエンジンの機能のクエリを実行するために使用します。
+Windows 8.1 以降、ディスプレイのミニポート ドライバーを実装する必要があります、 [ *DxgkDdiGetNodeMetadata* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_getnodemetadata)関数で、GPU のノードのエンジンの機能のクエリを実行するために使用します。
 
 この情報は、ワークロードがスケジュールされ、ノード間で分散する方法の評価に役立ち、アプリケーションをデバッグする機能を改善します。
 
@@ -25,11 +25,11 @@ Windows 8.1 以降、ディスプレイのミニポート ドライバーを実�
 
 このインターフェイスは、GPU の指定されたノードのエンジンの機能を提供します。
 
--   [*DxgkDdiGetNodeMetadata*](https://msdn.microsoft.com/library/windows/hardware/dn265415)
--   [**DXGKARG\_GETNODEMETADATA**](https://msdn.microsoft.com/library/windows/hardware/dn265405)
--   [**DXGK\_エンジン\_型**](https://msdn.microsoft.com/library/windows/hardware/dn265417)
+-   [*DxgkDdiGetNodeMetadata*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_getnodemetadata)
+-   [**DXGKARG\_GETNODEMETADATA**](https://docs.microsoft.com/windows-hardware/drivers/display/)
+-   [**DXGK\_エンジン\_型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmdt/ne-d3dkmdt-dxgk_engine_type)
 
-ポインター、 [ *DxgkDdiGetNodeMetadata* ](https://msdn.microsoft.com/library/windows/hardware/dn265415)によって関数が提供される、 **DxgkDdiGetNodeMetadata**のメンバー、 [**ドライバー\_初期化\_データ**](https://msdn.microsoft.com/library/windows/hardware/ff556169)構造体。
+ポインター、 [ *DxgkDdiGetNodeMetadata* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_getnodemetadata)によって関数が提供される、 **DxgkDdiGetNodeMetadata**のメンバー、 [**ドライバー\_初期化\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/ns-dispmprt-_driver_initialization_data)構造体。
 
 ## <a name="span-idgpunodearchitecturespanspan-idgpunodearchitecturespanspan-idgpunodearchitecturespangpu-node-architecture"></a><span id="GPU_node_architecture"></span><span id="gpu_node_architecture"></span><span id="GPU_NODE_ARCHITECTURE"></span>GPU ノードのアーキテクチャ
 
@@ -40,12 +40,12 @@ Windows 8.1 以降、ディスプレイのミニポート ドライバーを実�
 
 別のノードは、GPU の非対称の処理のコアを表し、各ノード内のエンジンがアダプター間で対称的な処理のコアを表します。 つまり、3-D のノードには、複数のアダプターとしない別のエンジンの種類上の同一 3-D エンジンのみが含まれます。
 
-エンジンは常にグループ化ノードのエンジンの種類によって、ため、指定したノードに基づく、エンジンの種類の情報を照会できます。 ディスプレイのミニポート ドライバーを指定できますエンジンの種類が記載されて、 [ **DXGK\_エンジン\_型**](https://msdn.microsoft.com/library/windows/hardware/dn265417)列挙体。
+エンジンは常にグループ化ノードのエンジンの種類によって、ため、指定したノードに基づく、エンジンの種類の情報を照会できます。 ディスプレイのミニポート ドライバーを指定できますエンジンの種類が記載されて、 [ **DXGK\_エンジン\_型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmdt/ne-d3dkmdt-dxgk_engine_type)列挙体。
 
 ## <a name="span-idexampleimplementationofnodemetadatafunctionspanspan-idexampleimplementationofnodemetadatafunctionspanspan-idexampleimplementationofnodemetadatafunctionspanexample-implementation-of-node-metadata-function"></a><span id="Example_implementation_of_node_metadata_function"></span><span id="example_implementation_of_node_metadata_function"></span><span id="EXAMPLE_IMPLEMENTATION_OF_NODE_METADATA_FUNCTION"></span>ノードのメタデータ関数の実装例
 
 
-このコードは、ディスプレイのミニポート ドライバーを実装によって返されることがあるエンジンの種類のいくつかの方法を示しています、 [ *DxgkDdiGetNodeMetadata* ](https://msdn.microsoft.com/library/windows/hardware/dn265415)関数。
+このコードは、ディスプレイのミニポート ドライバーを実装によって返されることがあるエンジンの種類のいくつかの方法を示しています、 [ *DxgkDdiGetNodeMetadata* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_getnodemetadata)関数。
 
 ```ManagedCPlusPlus
 NTSTATUS

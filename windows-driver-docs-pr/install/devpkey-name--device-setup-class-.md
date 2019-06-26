@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 3939d28abf4ae90921e48c724f29200e739b1d3d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 65c3cb72020aef7a4c472162dfce57e0aa368b7f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327499"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376808"
 ---
 # <a name="devpkeyname-device-setup-class"></a>DEVPKEY_NAME (デバイス セットアップ クラス)
 
 
-DEVPKEY_NAME デバイス プロパティの名前を表す、[デバイス セットアップ クラス](https://msdn.microsoft.com/library/windows/hardware/ff541509)します。
+DEVPKEY_NAME デバイス プロパティの名前を表す、[デバイス セットアップ クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-setup-classes)します。
 
 <table>
 <colgroup>
@@ -60,11 +60,11 @@ DEVPKEY_NAME の値は、ユーザー インターフェイスの項目で、エ
 
 DEVPKEY_NAME の値は、の値として同じ DEVPKEY_DeviceClass_Name が設定されている場合、 [ **DEVPKEY_DeviceClass_Name** ](devpkey-deviceclass-name.md)デバイス プロパティ。 それ以外の場合、DEVPKEY_NAME 値は、の値として同じ、 [ **DEVPKEY_DeviceClass_ClassName** ](devpkey-deviceclass-classname.md)デバイス プロパティ。
 
-呼び出すことができます[ **SetupDiGetClassProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551086)または[ **SetupDiGetClassPropertyEx** ](https://msdn.microsoft.com/library/windows/hardware/ff551090) DEVPKEY_NAME のデバイスの値を取得するにはセットアップ クラスです。
+呼び出すことができます[ **SetupDiGetClassProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyw)または[ **SetupDiGetClassPropertyEx** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyexw) DEVPKEY_NAME のデバイスの値を取得するにはセットアップ クラスです。
 
 Windows Server 2003、Windows XP、および Windows 2000 は、対応する名前プロパティを直接サポートされません。 ただし、以前のバージョンの Windows では、DEVPKEY_DeviceClass_Name および DEVPKEY_DeviceClass_ClassName に対応するプロパティをサポートしています。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -91,13 +91,13 @@ Windows Server 2003、Windows XP、および Windows 2000 は、対応する名�
 
 [**DEVPKEY_DeviceClass_Name**](devpkey-deviceclass-name.md)
 
-[**SetupDiGetClassProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551086)
+[**SetupDiGetClassProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyw)
 
-[**SetupDiGetClassPropertyEx**](https://msdn.microsoft.com/library/windows/hardware/ff551090)
+[**SetupDiGetClassPropertyEx**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyexw)
 
-[**SetupDiGetClassDescription**](https://msdn.microsoft.com/library/windows/hardware/ff551053)
+[**SetupDiGetClassDescription**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclassdescriptiona)
 
-[**SetupDiClassNameFromGuid**](https://msdn.microsoft.com/library/windows/hardware/ff550947)
+[**SetupDiClassNameFromGuid**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiclassnamefromguida)
 
  
 

@@ -9,12 +9,12 @@ keywords:
 - ベンダーから提供されたドライバー WDK のスマート カードのデバッグ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c5703850f2a821293a24e90169b10509c48ca4ae
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0b7b6fe3323aa5e44c57bfc9a0f192935837612d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392114"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356672"
 ---
 # <a name="smart-card-driver-debugging"></a>スマート カード ドライバーのデバッグ
 
@@ -37,7 +37,7 @@ DEBUG_ALL
 
 有効なデバッグ機能を組み合わせたセットと呼ばれる値で表される、*デバッグ レベル*します。 この値を計算するには、有効に機能に対応する定数のビットごとの OR を取得します。
 
-デバッグ レベルを設定する 2 つの方法はあります。 まず、スマート カード ドライバーのテスト プログラムを使用して*Scdrvtst*、Windows Driver Kit (WDK) に付属します。 2 つ目は、使用する、 [ **SmartcardSetDebugLevel** ](https://msdn.microsoft.com/library/windows/hardware/ff548960)スマート カード ドライバーのライブラリ ルーチン。
+デバッグ レベルを設定する 2 つの方法はあります。 まず、スマート カード ドライバーのテスト プログラムを使用して*Scdrvtst*、Windows Driver Kit (WDK) に付属します。 2 つ目は、使用する、 [ **SmartcardSetDebugLevel** ](https://docs.microsoft.com/previous-versions/ff548960(v=vs.85))スマート カード ドライバーのライブラリ ルーチン。
 
 どちらの場合も、プログラムまたはルーチンのデバッグ レベルを設定するとするデバッグ レベルの値を渡す必要があります。 たとえば、スマート カードのライブラリ ルーチンを使用して、ドライバーから デバッグのレベルを設定するには、次の呼び出しを行います。
 
@@ -68,7 +68,7 @@ SmartcardDebug(
 
 ドライバーの開発中に、スマート カードのドライバー ライブラリのチェック済みバージョンを使用し、デバッグ レベルを使用して、最大値に設定**SmartcardSetDebugLevel**(デバッグ\_すべて) で、 *DriverEntry*ルーチン。
 
-リモート デバッグ セッションの設定の詳細については、次を参照してください。 [Windows デバッグ](https://msdn.microsoft.com/library/windows/hardware/ff551063)します。
+リモート デバッグ セッションの設定の詳細については、次を参照してください。 [Windows デバッグ](https://docs.microsoft.com/windows-hardware/drivers/debugger/index)します。
 
  
 

@@ -7,12 +7,12 @@ keywords:
 - ドライバー スタックの WDK ネットワークを再起動します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c69bed1aa124a6f777eb7e66108593d2b53939cc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 266742acb82f421142b7703a1a4923c95837d365
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391631"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379188"
 ---
 # <a name="restarting-a-driver-stack"></a>ドライバー スタックの再起動
 
@@ -24,11 +24,11 @@ NDIS は、フィルター モジュールを挿入したり、バインドの�
 
 1.  NDIS は、ミニポート アダプターを再起動します。
 
-    NDIS ミニポート ドライバーを呼び出してから[ **MiniportRestart** ](https://msdn.microsoft.com/library/windows/hardware/ff559435)関数、ミニポート アダプターは、再開中状態になります。 ミニポート ドライバーは、送信を再開して、受信操作を準備します。 準備が失敗した場合、ミニポート アダプターが一時停止状態に戻ります。 ミニポート アダプター ドライバーの送信を再開し、操作を受信する準備が実行中の状態が入力されます。
+    NDIS ミニポート ドライバーを呼び出してから[ **MiniportRestart** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_restart)関数、ミニポート アダプターは、再開中状態になります。 ミニポート ドライバーは、送信を再開して、受信操作を準備します。 準備が失敗した場合、ミニポート アダプターが一時停止状態に戻ります。 ミニポート アダプター ドライバーの送信を再開し、操作を受信する準備が実行中の状態が入力されます。
 
 2.  NDIS は、ドライバー スタックの一番下から始まるおよびプロトコル ドライバーまで進行中に、フィルター モジュールを再起動します。
 
-    NDIS フィルター ドライバーを呼び出してから[ **FilterRestart** ](https://msdn.microsoft.com/library/windows/hardware/ff549962)関数、フィルター モジュールは、再開中状態になります。 フィルター ドライバーは、送信を再開して、受信操作を準備します。 準備に失敗した場合、モジュールは、一時停止状態を返します。 送信を再開し、操作を受信する準備ができたら、ドライバー、フィルター モジュール実行中の状態が入力されます。
+    NDIS フィルター ドライバーを呼び出してから[ **FilterRestart** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_restart)関数、フィルター モジュールは、再開中状態になります。 フィルター ドライバーは、送信を再開して、受信操作を準備します。 準備に失敗した場合、モジュールは、一時停止状態を返します。 送信を再開し、操作を受信する準備ができたら、ドライバー、フィルター モジュール実行中の状態が入力されます。
 
 3.  NDIS は、プロトコル ドライバーに PnP 再起動イベントを送信します。
 

@@ -7,12 +7,12 @@ keywords:
 - WDK の RSS CPU の構成
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7840da0e5762459d68484df363d0821ea3013f8a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2574fde01ad98cbc9869c40a59067de254f88f64
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368912"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375128"
 ---
 # <a name="setting-the-number-of-rss-processors"></a>RSS プロセッサの数の設定
 
@@ -34,6 +34,6 @@ RSS に使用される Cpu の実際の数は、RSS ベース CPU の数を構�
 
 **注**以降 Windows 8 および Windows Server 2012 では、管理者は制御できますに多くのネットワーク アダプターの PowerShell コマンドレットを使用します。 レジストリを直接編集することは推奨されませんようになりました。 
 
-RSS Cpu の数を設定するための PowerShell コマンドレットは[Set-netadapterrss](https://technet.microsoft.com/library/jj130863)します。 使用しての主な違い**Set-netadapterrss**を使用して、 **MaxNumRssCpus**中 - ネットワーク アダプターごとに PowerShell コマンドレットが動作するは**MaxNumRssCpus**はグローバルですべてのネットワーク アダプターに適用されることを意味します。 一般に、個別に各ネットワーク アダプターの使用はお勧め詳細の柔軟性、粒度と各ネットワーク アダプターを付与するには、独自の構成か。 ただし、管理者は、グローバルと使用も**MaxNumRssCpus**扱おうと同時にすべての現在および今後のすべてのネットワーク アダプターに構成を適用する場合のキーします。
+RSS Cpu の数を設定するための PowerShell コマンドレットは[Set-netadapterrss](https://docs.microsoft.com/powershell/module/netadapter/Set-NetAdapterRss)します。 使用しての主な違い**Set-netadapterrss**を使用して、 **MaxNumRssCpus**中 - ネットワーク アダプターごとに PowerShell コマンドレットが動作するは**MaxNumRssCpus**はグローバルですべてのネットワーク アダプターに適用されることを意味します。 一般に、個別に各ネットワーク アダプターの使用はお勧め詳細の柔軟性、粒度と各ネットワーク アダプターを付与するには、独自の構成か。 ただし、管理者は、グローバルと使用も**MaxNumRssCpus**扱おうと同時にすべての現在および今後のすべてのネットワーク アダプターに構成を適用する場合のキーします。
 
-ネットワーク アダプター コマンドレットの完全な一覧を参照してください。 [Windows PowerShell のネットワーク アダプター コマンドレット](https://technet.microsoft.com/library/jj134956)します。
+ネットワーク アダプター コマンドレットの完全な一覧を参照してください。 [Windows PowerShell のネットワーク アダプター コマンドレット](https://docs.microsoft.com/powershell/module/netadapter/)します。

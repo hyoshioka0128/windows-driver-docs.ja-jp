@@ -7,12 +7,12 @@ keywords:
 - OID_WDI_SET_ASSOCIATION_PARAMETERS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 7dacbac9eaf8a6203a72ef249a0788d9f219265a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 681cc68754495e492b7593b3f862a0aa331811d4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376626"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353653"
 ---
 # <a name="oidwdisetassociationparameters"></a>OID\_WDI\_設定\_アソシエーション\_パラメーター
 
@@ -32,7 +32,7 @@ OID\_WDI\_設定\_アソシエーション\_パラメーターが、アダプタ
 
 | TLV                                                                     | 許可されている複数の TLV インスタンス | 省略可能 | 説明                     |
 |-------------------------------------------------------------------------|--------------------------------|----------|---------------------------------|
-| [**WDI\_TLV\_CONNECT\_BSS\_エントリ**](https://msdn.microsoft.com/library/windows/hardware/dn926264) | x                              |          | BSS エントリとパラメーター。 |
+| [**WDI\_TLV\_CONNECT\_BSS\_エントリ**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-connect-bss-entry) | x                              |          | BSS エントリとパラメーター。 |
 
  
 

@@ -19,12 +19,12 @@ keywords:
 - Unidrv WDK の印刷
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e0316bf0a365cf18eb7e7cbf2a68afc73712c36d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a2ac212af621da5a51949df9e303c413023fa622
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365584"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372409"
 ---
 # <a name="customized-font-management"></a>カスタマイズされたフォント管理
 
@@ -34,25 +34,25 @@ ms.locfileid: "63365584"
 
 *PCL*ソフト フォントをビットマップとしてダウンロード プリンター、Unidrv サポートまたは TrueType 概要を説明します。 デバイス フォントの PPDS プリンター コマンド形式を Unidrv が、PCL、CAPSL をサポートします。 その他の形式では、プラグインの表示で管理コードをカスタマイズしたフォントを提供する必要があります。 次の一連の IPrintOemUni メソッドを実装することができます。
 
-<a href="" id="iprintoemuni--downloadfontheader"></a>[**IPrintOemUni::DownloadFontHeader**](https://msdn.microsoft.com/library/windows/hardware/ff554242)  
+<a href="" id="iprintoemuni--downloadfontheader"></a>[**IPrintOemUni::DownloadFontHeader**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni-downloadfontheader)  
 Unidrv からソフト フォントのヘッダー情報を取得し、プリンターに情報をダウンロードするために使用します。
 
-<a href="" id="iprintoemuni--downloadcharglyph"></a>[**IPrintOemUni::DownloadCharGlyph**](https://msdn.microsoft.com/library/windows/hardware/ff554241)  
+<a href="" id="iprintoemuni--downloadcharglyph"></a>[**IPrintOemUni::DownloadCharGlyph**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni-downloadcharglyph)  
 ソフト フォントの文字のグリフをプリンターにダウンロードするために使用します。
 
-<a href="" id="iprintoemuni--outputcharstr"></a>[**IPrintOemUni::OutputCharStr**](https://msdn.microsoft.com/library/windows/hardware/ff554267)  
+<a href="" id="iprintoemuni--outputcharstr"></a>[**IPrintOemUni::OutputCharStr**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni-outputcharstr)  
 文字の印刷を制御するために使用します。
 
-<a href="" id="iprintoemuni--sendfontcmd"></a>[**IPrintOemUni::SendFontCmd**](https://msdn.microsoft.com/library/windows/hardware/ff554274)  
+<a href="" id="iprintoemuni--sendfontcmd"></a>[**IPrintOemUni::SendFontCmd**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni-sendfontcmd)  
 プリンターのデバイス フォントの選択範囲のコマンドを変更し、必要に応じて、プリンターに送信するために使用します。
 
-<a href="" id="iprintoemuni--textoutasbitmap"></a>[**IPrintOemUni::TextOutAsBitmap**](https://msdn.microsoft.com/library/windows/hardware/ff554277)  
+<a href="" id="iprintoemuni--textoutasbitmap"></a>[**IPrintOemUni::TextOutAsBitmap**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni-textoutasbitmap)  
 テキスト文字列のビットマップ イメージを作成するために使用します。
 
-<a href="" id="iprintoemuni--ttdownloadmethod"></a>[**IPrintOemUni::TTDownloadMethod**](https://msdn.microsoft.com/library/windows/hardware/ff554279)  
+<a href="" id="iprintoemuni--ttdownloadmethod"></a>[**IPrintOemUni::TTDownloadMethod**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni-ttdownloadmethod)  
 指定ソフト フォントをプリンターに送信されるときに使用、Unidrv グリフ形式を指定するために使用します。
 
-Unidrv、コールバック関数を提供する[ *UNIFONTOBJ\_GetInfo*](https://msdn.microsoft.com/library/windows/hardware/ff563594)プラグインの表示がフォントまたはグリフの情報を取得する呼び出すことができます。
+Unidrv、コールバック関数を提供する[ *UNIFONTOBJ\_GetInfo*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printoem/nc-printoem-pfngetinfo)プラグインの表示がフォントまたはグリフの情報を取得する呼び出すことができます。
 
 説明するようデバイス フォントのフォントの説明を指定する必要があります、 **Unidrv フォント メトリック ファイル**セクションおよび**グリフの翻訳テーブル ファイル**セクション。
 
@@ -62,7 +62,7 @@ Unidrv、コールバック関数を提供する[ *UNIFONTOBJ\_GetInfo*](https:/
 
 ### <a href="" id="ddk-unidrv-font-metrics-files-gg"></a>Unidrv フォント メトリック ファイル
 
-Unidrv フォント メトリック (.ufm) ファイルでは、プリンターがサポートする各デバイス フォントを表す必要があります。 .Ufm ファイルはバイナリ ファイルで説明されている構造体を使用して構築される[Unidrv フォント メトリック構造](https://msdn.microsoft.com/library/windows/hardware/ff563547)します。 .Ufm ファイル内の最初の構造体は[ **UNIFM\_HDR**](https://msdn.microsoft.com/library/windows/hardware/ff563587)、その他の構造でのファイルへのオフセットが含まれています。 次の図は、Unidrv フォント メトリック ファイルのレイアウトを示します。
+Unidrv フォント メトリック (.ufm) ファイルでは、プリンターがサポートする各デバイス フォントを表す必要があります。 .Ufm ファイルはバイナリ ファイルで説明されている構造体を使用して構築される[Unidrv フォント メトリック構造](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_print/index)します。 .Ufm ファイル内の最初の構造体は[ **UNIFM\_HDR**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prntfont/ns-prntfont-_unifm_hdr)、その他の構造でのファイルへのオフセットが含まれています。 次の図は、Unidrv フォント メトリック ファイルのレイアウトを示します。
 
 ![unidrv フォント メトリック ファイルのレイアウトを示す図](images/ufm.png)
 
@@ -70,13 +70,13 @@ Unidrv には、.ifi ファイル、Windows NT 4.0 用に作成されたフォ�
 
 ### <a href="" id="ddk-glyph-translation-table-files-gg"></a>グリフの翻訳テーブル ファイル
 
-グリフ変換テーブル (.gtt) ファイルでは、プリンターがサポートする各デバイス フォントを表す必要があります。 .Gtt ファイルはバイナリ ファイルで説明されている構造体を使用して構築される[Unidrv グリフ翻訳テーブル構造](https://msdn.microsoft.com/library/windows/hardware/ff563549)します。 .Gtt ファイル内の最初の構造体は、 [ **UNI\_GLYPHSETDATA** ](https://msdn.microsoft.com/library/windows/hardware/ff563597)ファイルへのオフセットを含む構造体の他の構造体。
+グリフ変換テーブル (.gtt) ファイルでは、プリンターがサポートする各デバイス フォントを表す必要があります。 .Gtt ファイルはバイナリ ファイルで説明されている構造体を使用して構築される[Unidrv グリフ翻訳テーブル構造](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_print/index)します。 .Gtt ファイル内の最初の構造体は、 [ **UNI\_GLYPHSETDATA** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prntfont/ns-prntfont-_uni_glyphsetdata)ファイルへのオフセットを含む構造体の他の構造体。
 
 次の図は、グリフの翻訳テーブル ファイルのレイアウトを示します。
 
 ![グリフの翻訳テーブル ファイルのレイアウトを示す図](images/gtt.png)
 
-前の図は、単に\_GLYPHSETDATA 構造体には、最初に、ファイルの先頭からのオフセットが含まれています[ **GLYPHRUN** ](https://msdn.microsoft.com/library/windows/hardware/ff550544)構造体の場合は、最初に、 [ 。**UNI\_CODEPAGEINFO** ](https://msdn.microsoft.com/library/windows/hardware/ff563596)構造体、および、 [ **MAPTABLE** ](https://msdn.microsoft.com/library/windows/hardware/ff556509)構造体。
+前の図は、単に\_GLYPHSETDATA 構造体には、最初に、ファイルの先頭からのオフセットが含まれています[ **GLYPHRUN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prntfont/ns-prntfont-_glyphrun)構造体の場合は、最初に、 [ 。**UNI\_CODEPAGEINFO** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prntfont/ns-prntfont-_uni_codepageinfo)構造体、および、 [ **MAPTABLE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prntfont/ns-prntfont-_maptable)構造体。
 
 Unidrv には、グリフ翻訳ファイル Windows NT 4.0 では、作成された実行可変長エンコーディング (RLE) 圧縮を使用して、グラフィックスの拡張機能もサポートしています。
 
@@ -86,17 +86,17 @@ Unidrv には、グリフ翻訳ファイル Windows NT 4.0 では、作成され
 
 .Uff ファイルは、次の構造体のセットを使用して構築されるバイナリ ファイルです。
 
--   [Unidrv フォント形式構造](https://msdn.microsoft.com/library/windows/hardware/ff562892)、.uff ファイルの構造と内容を定義します。
+-   [Unidrv フォント形式構造](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_print/index)、.uff ファイルの構造と内容を定義します。
 
--   [Unidrv フォント メトリック構造](https://msdn.microsoft.com/library/windows/hardware/ff563547)、各フォントのメトリックを定義します。
+-   [Unidrv フォント メトリック構造](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_print/index)、各フォントのメトリックを定義します。
 
--   [Unidrv グリフ翻訳テーブル構造](https://msdn.microsoft.com/library/windows/hardware/ff563549)フォントで使用されるグリフのセットを定義します。
+-   [Unidrv グリフ翻訳テーブル構造](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_print/index)フォントで使用されるグリフのセットを定義します。
 
 次の図は、Unidrv フォント形式のファイルのレイアウトを示します。
 
 ![unidrv フォント形式のファイルのレイアウトを示す図](images/uff.png)
 
-Unidrv フォント形式のファイルから成る、 [ **UFF\_fileheader です**](https://msdn.microsoft.com/library/windows/hardware/ff562862)構造、および 1 つまたは複数[ **UFF\_ディレクトリ**](https://msdn.microsoft.com/library/windows/hardware/ff562866)と[**データ\_ヘッダー** ](https://msdn.microsoft.com/library/windows/hardware/ff547364)のペアを構造体します。 各データ\_ヘッダー構造がフォント データのブロックに関連付けられています。 UFF\_fileheader です構造体には、最初の UFF ファイルの先頭からのオフセットが含まれています。\_ディレクトリ構造体。 各 UFF\_FONTDRECTORY 構造には、データ ファイルの先頭からのオフセットが含まれる\_フォント データが含まれるヘッダーの構造体。
+Unidrv フォント形式のファイルから成る、 [ **UFF\_fileheader です**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prntfont/ns-prntfont-_uff_fileheader)構造、および 1 つまたは複数[ **UFF\_ディレクトリ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prntfont/ns-prntfont-_uff_fontdirectory)と[**データ\_ヘッダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prntfont/ns-prntfont-_data_header)のペアを構造体します。 各データ\_ヘッダー構造がフォント データのブロックに関連付けられています。 UFF\_fileheader です構造体には、最初の UFF ファイルの先頭からのオフセットが含まれています。\_ディレクトリ構造体。 各 UFF\_FONTDRECTORY 構造には、データ ファイルの先頭からのオフセットが含まれる\_フォント データが含まれるヘッダーの構造体。
 
 さらに、ダウンロード可能な*PCL*ソフト フォントは、バイナリ データをダウンロードするが .uff ファイルに格納されます。
 

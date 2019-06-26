@@ -4,12 +4,12 @@ description: Web サイトを使用した Windows のプロビジョニング
 ms.assetid: ba60fddd-a248-4afb-9390-f9277ef1f094
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 43e96b241107438e23351ae83d379711efd49f30
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 99777210008f6aaa9c7684f5162fcef16e8ad50c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383652"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369217"
 ---
 # <a name="provisioning-windows-using-a-website"></a>Web サイトを使用した Windows のプロビジョニング
 
@@ -90,7 +90,7 @@ Windows は、まずインターネット接続の決定にネットワークに
 
 Windows が携帯電話会社の URL を使用する場合 (AccountExperienceURL 属性、[演算子](operator.md)要素) Windows APN データベースからモバイル ブロード バンドをライセンス認証を完了するために必要なデバイス情報を提供しますweb サイトです。 このデバイス情報は、web サイトに HTTPS 要求のパラメーターとして渡されます。
 
-URL の形式が **https://Operator URL\[でしょうか。 propN = valN\[& propN = valN\]\*\]** ここで。
+URL の形式が **https://Operator URL\[ でしょうか。 propN = valN\[ & propN = valN\]\*\]** ここで。
 
 -   **演算子 URL** URL によって提供され、APN データベースに格納されています。
 
@@ -149,7 +149,7 @@ URL の形式が **https://Operator URL\[でしょうか。 propN = valN\[& prop
 
 -   モバイル ブロード バンド デバイスを再接続するコンピューターに指示します。
 
-モバイル ブロード バンドのアプリを使用してコンピューターに適用できるメタデータをプロビジョニングするのと同じアカウントは、モバイル ブロード バンドの web サイトにも適用できます。 Web ページの JavaScript での可用性の確認、 [ **window.external.msProvisionNetworks** ](https://msdn.microsoft.com/library/dn529170)メソッド。 存在する場合、ブラウザーは、アカウントをプロビジョニングする Windows メタデータを転送できます。
+モバイル ブロード バンドのアプリを使用してコンピューターに適用できるメタデータをプロビジョニングするのと同じアカウントは、モバイル ブロード バンドの web サイトにも適用できます。 Web ページの JavaScript での可用性の確認、 [ **window.external.msProvisionNetworks** ](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/platform-apis/dn529170(v=vs.85))メソッド。 存在する場合、ブラウザーは、アカウントをプロビジョニングする Windows メタデータを転送できます。
 
 アカウント プロビジョニングのメタデータに関する詳細については、次を参照してください。[アカウント プロビジョニング](account-provisioning.md)します。
 

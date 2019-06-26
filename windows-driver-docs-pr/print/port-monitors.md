@@ -10,12 +10,12 @@ keywords:
 - 印刷キュー、WDK ポート モニター
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d09bfdd9c4dd0b707298aa3c8ae68804754fba37
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 403bda45d6816b3f365a9ebd8962c202e9464777
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331782"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370462"
 ---
 # <a name="port-monitors"></a>ポート モニター
 
@@ -23,7 +23,7 @@ ms.locfileid: "63331782"
 
 
 
-ポート モニターは、ユーザー モード Dll で構成されます。 ユーザー モードの印刷スプーラーと I/O ポートのハードウェアにアクセスするポートのカーネル モードのドライバーの間の通信パスを提供する責任を負います。 ポートを使用して監視通常、 [ **CreateFile**](https://msdn.microsoft.com/library/windows/desktop/aa363858)、 **WriteFile**、 **ReadFile**、および**DeviceIOControl**関数、ポートのカーネル モード ドライバーとの通信に、Microsoft Windows SDK ドキュメントに記載します。 ポート モニターも担当の管理と、サーバーのプリンター ポートの構成」の説明に従って[管理ポート](managing-a-port.md)します。
+ポート モニターは、ユーザー モード Dll で構成されます。 ユーザー モードの印刷スプーラーと I/O ポートのハードウェアにアクセスするポートのカーネル モードのドライバーの間の通信パスを提供する責任を負います。 ポートを使用して監視通常、 [ **CreateFile**](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-createfilea)、 **WriteFile**、 **ReadFile**、および**DeviceIOControl**関数、ポートのカーネル モード ドライバーとの通信に、Microsoft Windows SDK ドキュメントに記載します。 ポート モニターも担当の管理と、サーバーのプリンター ポートの構成」の説明に従って[管理ポート](managing-a-port.md)します。
 
 「プリンター」の NT-ベースのオペレーティング システム ユーザーのビューは、1 つまたは複数の物理プリンター デバイスを接続できる、印刷キューでは本当に。 ポートは、印刷キューとプリンター 1 台のデバイス間の物理的な接続です。 各ポート モニターは、1 つまたは複数の種類のポートの 1 つまたは複数のインスタンスをサポートします。 たとえばの Localmon.dll、[サンプル ポート モニター](sample-port-monitor.md)、すべてのサーバーのローカル COM と LPT ポートをサポートできます。 (印刷フォルダーによってポート モニターを呼び出して、Windows SDK ドキュメントのポートが割り当てられます**AddPrinter**関数です。)。
 
@@ -43,7 +43,7 @@ Windows 2000 以降では、各ポート モニターが 2 つの Dll に分か�
 <a href="" id="port-monitor-server-dll-"></a>**ポート監視のサーバー DLL**   
 ポート モニターのサーバー DLL では、ポートの通信機能が含まれていて、プリント サーバー上で実行します。 ユーザー インターフェイスは表示しないでください。
 
-UI の DLL が、スプーラーを呼び出すことによって、サーバー DLL と通信する[ **XcvData** ](https://msdn.microsoft.com/library/windows/hardware/ff564255)関数。
+UI の DLL が、スプーラーを呼び出すことによって、サーバー DLL と通信する[ **XcvData** ](https://docs.microsoft.com/previous-versions/ff564255(v=vs.85))関数。
 
 A[サンプル ポート モニター](sample-port-monitor.md) Windows Driver Kit (WDK) では含まれています。
 

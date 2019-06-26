@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 76b4fddfb7ba74d4a9784cdafd54d15f32bfbb67
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2d52edef707ffbe8745d32a0d4b8fafeedd57d21
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380738"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370052"
 ---
 # <a name="inf-logconfig-directive"></a>INF LogConfig ディレクティブ
 
@@ -57,7 +57,7 @@ ConfigPriority=priority-value[,config-type]
 ## <a name="entries"></a>エントリ
 
 
-<a href="" id="configpriority-priority-value"></a>**ConfigPriority =**<em>優先度値</em>  
+<a href="" id="configpriority-priority-value"></a>**ConfigPriority =** <em>優先度値</em>  
 次のいずれかとして、この論理構成での優先順位の値を指定します。
 
 <a href="" id="desired"></a>必要な  
@@ -89,7 +89,7 @@ ConfigPriority=priority-value[,config-type]
 <a href="" id="disabled"></a>無効になっています。  
 ハードウェアまたはデバイスが無効です。
 
-<a href="" id="dmaconfig--dmaattrs--dmanum--dmanum-----"></a>**DMAConfig =**\[*DMAattrs:*\]*DMANum*\[<strong>、</strong>DMANum\].\]  
+<a href="" id="dmaconfig--dmaattrs--dmanum--dmanum-----"></a>**DMAConfig =** \[*DMAattrs:* \]*DMANum*\[<strong>、</strong>DMANum\].\]  
 *DMAattrs*デバイスが唯一の 8 ビット DMA チャネルを持つバスに接続されているし、デバイスは、標準のシステム DMA を使用する場合は省略可能です。 それ以外の場合、次の文字のいずれかを指定できます。
 
 | Letter | 説明    |
@@ -104,10 +104,10 @@ ConfigPriority=priority-value[,config-type]
 
 *DMANum*コンマ (,) で次の各区切りの 10 進数として 1 つまたは複数のバス相対 DMA チャネルを指定します。
 
-<a href="" id="ioconfig-io-range--io-range----"></a>**IOConfig =**<em>io 範囲</em>\[**、**<em>io 範囲</em>\].  
+<a href="" id="ioconfig-io-range--io-range----"></a>**IOConfig =** <em>io 範囲</em>\[ **、** <em>io 範囲</em>\].  
 形式は次のいずれかで、デバイスの 1 つまたは複数の I/O ポート範囲を指定します。
 
-<a href="" id="start-end---decode-mask---alias-offset---attr------type-1-i-o-range-"></a>*開始から終了*\[**(**\[*デコード マスク*\]\[*: エイリアス オフセット*\]\[ *: attr*\]**)** \] (種類 1 の I/O の範囲)  
+<a href="" id="start-end---decode-mask---alias-offset---attr------type-1-i-o-range-"></a>*開始から終了*\[ **(** \[*デコード マスク*\]\[ *: エイリアス オフセット*\]\[ *: attr*\] **)** \] (種類 1 の I/O の範囲)  
 
 <a href="" id="start"></a>*開始*  
 64 ビットの 16 進数のアドレスとして、I/O ポートの範囲の開始アドレスを指定します。
@@ -133,7 +133,7 @@ ConfigPriority=priority-value[,config-type]
 <a href="" id="attr"></a>*attr*  
 文字を指定**M**システム メモリ内の特定の範囲がある場合。 省略した場合、特定の範囲は I/O ポートの領域では。
 
-<a href="" id="size-min-max--align-mask----decode-mask---alias-offset---attr------type-2-i-o-range-"></a><em>サイズ</em>**@**<em>最小-最大</em>\[**%**<em>align マスク</em>\] \[ **(**\[*デコード マスク*\]\[**:**<em>エイリアス オフセット</em>\] \[ **:**<em>attr</em>\])\] (種類 2 の I/O の範囲)  
+<a href="" id="size-min-max--align-mask----decode-mask---alias-offset---attr------type-2-i-o-range-"></a><em>サイズ</em> **@** <em>最小-最大</em>\[ **%** <em>align マスク</em>\] \[ **(** \[*デコード マスク*\]\[ **:** <em>エイリアス オフセット</em>\] \[ **:** <em>attr</em>\])\] (種類 2 の I/O の範囲)  
 
 <a href="" id="size"></a>*サイズ*  
 32 ビット 16 進数の値として、I/O ポートの範囲に必要なバイト数を指定します。
@@ -165,7 +165,7 @@ ConfigPriority=priority-value[,config-type]
 <a href="" id="attr"></a>*attr*  
 文字を指定**M**システム メモリ内の特定の範囲がある場合。 省略した場合、特定の範囲は I/O ポートの領域では。
 
-<a href="" id="memconfig-mem-range--mem-range----"></a>**MemConfig =**<em>メモリ範囲</em>\[**、**<em>メモリ範囲</em>\].  
+<a href="" id="memconfig-mem-range--mem-range----"></a>**MemConfig =** <em>メモリ範囲</em>\[ **、** <em>メモリ範囲</em>\].  
 次の形式のいずれかでは、デバイスの 1 つ以上のメモリ範囲を指定します。
 
 ```ini
@@ -209,12 +209,12 @@ start-end[(attr)] | size@min-max[%align-mask][(attr)]
 
 Align マスクを省略すると、メモリの既定の配置は、4 K の境界 (FFFFF000) では。
 
-<a href="" id="irqconfig--irqattrs--irqnum--irqnum----"></a>**IRQConfig =**\[*IRQattrs:*\]*IRQNum*\[**、**<em>IRQNum</em>\]...  
+<a href="" id="irqconfig--irqattrs--irqnum--irqnum----"></a>**IRQConfig =** \[*IRQattrs:* \]*IRQNum*\[ **、** <em>IRQNum</em>\]...  
 *IRQattrs*デバイス bus 相対の edge によってトリガーされる IRQ を使用している場合を省略するとします。 それ以外の場合、指定**L**レベルによってトリガーされる IRQ を示すと **%.*ls**場合は、デバイスは、このエントリに記載の IRQ ラインを共有できます。
 
 *IRQNum*デバイスを 10 進数として使用できる 1 つまたは複数のバス相対 Irq を指定します、次のコンマ (,) で区切っています。
 
-<a href="" id="pccardconfig-configindex---memorycardbase1---memorycardbase2----attrs--"></a>**PcCardConfig=**<em>ConfigIndex</em>\[**:**\[*MemoryCardBase1*\]\[**:**<em>MemoryCardBase2</em>\]\]\[**(**<em>attrs</em>**)**\]  
+<a href="" id="pccardconfig-configindex---memorycardbase1---memorycardbase2----attrs--"></a>**PcCardConfig=** <em>ConfigIndex</em>\[ **:** \[*MemoryCardBase1*\]\[ **:** <em>MemoryCardBase2</em>\]\]\[ **(** <em>attrs</em> **)** \]  
 CardBus レジスタを構成します。 または、デバイスの属性の領域にマップされる最大 2 つの永続的なメモリ ウィンドウを作成します。 ドライバーは、[メモリ] ウィンドウを使用して、ISR. から属性の領域にアクセスすることができます。 すべての数値を 16 進形式で指定します。
 
 要素を**PcCardConfig**エントリは、次のとおり。
@@ -309,7 +309,7 @@ PCMCIA バス上のデバイスの 8 ビット PCMCIA 構成のインデック�
 
 ゼロ待機 I/O windows 上の状態
 
-<a href="" id="mfcardconfig-configregbase-configoptions--ioresourceindex---attrs-----"></a>**MfCardConfig =**<em>ConfigRegBase</em>**:**<em>ConfigOptions</em>\[**:** <em>IoResourceIndex</em>\]\[**(**<em>属性</em>**)**\].次のように登録、多機能端末の 1 つの関数の構成のセットの属性、メモリの場所を指定します。
+<a href="" id="mfcardconfig-configregbase-configoptions--ioresourceindex---attrs-----"></a>**MfCardConfig =** <em>ConfigRegBase</em> **:** <em>ConfigOptions</em>\[ **:** <em>IoResourceIndex</em>\]\[ **(** <em>属性</em> **)** \].次のように登録、多機能端末の 1 つの関数の構成のセットの属性、メモリの場所を指定します。
 
 <a href="" id="configregbase"></a>*ConfigRegBase*  
 構成の多機能デバイスには、この関数のレジスタの属性のオフセットを指定します。
@@ -342,7 +342,7 @@ PnP デバイスの場合は、PnP マネージャーは、一連の論理ハー
 
 1 つだけ**ConfigPriority**エントリは、それぞれで使用できる*ログの構成 セクションで*します。 ありますの各デバイスのハードウェア リソース要件に応じて、その他のエントリの 1 つ以上。
 
-1 つまたは複数**MfCardConfig =** エントリでのみ表示されます、*ログの構成 セクションで*によって参照される、 **LogConfig**ディレクティブで、 <em>DDInstall</em>**.LogConfigOverride**の多機能デバイスに対して、INF セクション。 多機能デバイスの INF ファイルの詳細については、次を参照してください。[多機能デバイスをサポートしている](https://msdn.microsoft.com/library/windows/hardware/ff542743)します。
+1 つまたは複数**MfCardConfig =** エントリでのみ表示されます、*ログの構成 セクションで*によって参照される、 **LogConfig**ディレクティブで、 <em>DDInstall</em> **.LogConfigOverride**の多機能デバイスに対して、INF セクション。 多機能デバイスの INF ファイルの詳細については、次を参照してください。[多機能デバイスをサポートしている](https://docs.microsoft.com/windows-hardware/drivers/multifunction/index)します。
 
 ### <a name="logconfig-referenced-section-entries-and-values"></a>LogConfig 参照セクションのエントリと値
 
@@ -451,7 +451,7 @@ IRQConfig=14,15,5,7,9,11,12,3
 PcCardConfig=1:0:0(W)
 ```
 
-方法の例をいくつかの**MfCardConfig**エントリが使用されるを参照してください[をサポートしている PC カードことがある不完全な登録アドレス構成](https://msdn.microsoft.com/library/windows/hardware/ff542774)します。
+方法の例をいくつかの**MfCardConfig**エントリが使用されるを参照してください[をサポートしている PC カードことがある不完全な登録アドレス構成](https://docs.microsoft.com/windows-hardware/drivers/multifunction/supporting-pc-cards-that-have-incomplete-configuration-register-addres)します。
 
 ## <a name="see-also"></a>関連項目
 

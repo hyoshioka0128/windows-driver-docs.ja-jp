@@ -10,12 +10,12 @@ keywords:
 - ドライバー WDK DRM のデバッグ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d05032f85e6b2de8e81f145a41a92dd6c37d304
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b1acfbf87bc5d5709fcf14554ee99e099be44ff6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333805"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359053"
 ---
 # <a name="developing-and-debugging-drm-drivers"></a>DRM ドライバーの開発とデバッグ
 
@@ -33,7 +33,7 @@ ms.locfileid: "63333805"
 
 [DRMK システム ドライバー](kernel-mode-wdm-audio-components.md#drmk_system_driver) DRM で保護されたコンテンツを再生中に、接続から、カーネル デバッガーを防止します。 アンチ デバッグ防御では、DRMK を使用して保護されたコンテンツを不透明な複数のメジャーの 1 つです。 後、ドライバーをテストする準備ができたら、ただし、次の手法を使用して、DRM 準拠の機能をデバッグできます。
 
--   Wave ストリームを一時的に変更**SetState**メソッド (たとえばを参照してください[ **IMiniportWavePciStream::SetState**](https://msdn.microsoft.com/library/windows/hardware/ff536733)) を呼び出す[ **IDrmAudioStream::SetContentId** ](https://msdn.microsoft.com/library/windows/hardware/ff536570)設定と、 [ **DRMRIGHTS** ](https://msdn.microsoft.com/library/windows/hardware/ff536355)パラメーターの**CopyProtect** メンバー**TRUE**します。
+-   Wave ストリームを一時的に変更**SetState**メソッド (たとえばを参照してください[ **IMiniportWavePciStream::SetState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavepcistream-setstate)) を呼び出す[ **IDrmAudioStream::SetContentId** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/drmk/nf-drmk-idrmaudiostream-setcontentid)設定と、 [ **DRMRIGHTS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/drmk/ns-drmk-tagdrmrights)パラメーターの**CopyProtect** メンバー**TRUE**します。
 
 -   デバッグが完了したら、忘れずに削除してください、 **SetContentId**呼び出します。
 

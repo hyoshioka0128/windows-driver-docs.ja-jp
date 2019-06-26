@@ -10,12 +10,12 @@ keywords:
 - WDK COPP のステータス情報
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e7ed0577badd301771c48cea049895a5f9f751c0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 92185cabe1807de07d84ebb32d87232bc0704400
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323794"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370268"
 ---
 # <a name="copp-status"></a>COPP 状態
 
@@ -27,7 +27,7 @@ ms.locfileid: "63323794"
 
 ビデオのミニポート ドライバーでは、DirectX VA COPP デバイスに関連付けられた物理コネクタで COPP 状態の要求を受信できます。
 
-ビデオのミニポート ドライバーの[ *COPPQueryStatus* ](https://msdn.microsoft.com/library/windows/hardware/ff539652)関数へのポインターを渡される、 [ **DXVA\_COPPStatusInput** ](https://msdn.microsoft.com/library/windows/hardware/ff563899)要求を格納する構造体。 *COPPQueryStatus*にステータスを書き込みます、 [ **DXVA\_COPPStatusOutput** ](https://msdn.microsoft.com/library/windows/hardware/ff563903)構造体、 *pOutput*パラメーター ポイント。 **GuidStatusRequestID**と**StatusData**の DXVA メンバー\_COPPStatusInput 状態要求を指定します。 ビデオのミニポート ドライバーによっては、要求へのポインターにステータス情報をキャストする必要が、 [ **DXVA\_COPPStatusData**](https://msdn.microsoft.com/library/windows/hardware/ff563154)、 [ **DXVA\_COPPStatusDisplayData**](https://msdn.microsoft.com/library/windows/hardware/ff563157)、 [ **DXVA\_COPPStatusHDCPKeyData**](https://msdn.microsoft.com/library/windows/hardware/ff563896)、または[ **DXVA\_COPPStatusSignalingCmdData** ](https://msdn.microsoft.com/library/windows/hardware/ff563905)構造体。 ビデオのミニポート ドライバーに状態情報をコピーする必要があります、 **COPPStatus**配列メンバーの DXVA\_COPPStatusOutput します。
+ビデオのミニポート ドライバーの[ *COPPQueryStatus* ](https://docs.microsoft.com/windows-hardware/drivers/display/coppquerystatus)関数へのポインターを渡される、 [ **DXVA\_COPPStatusInput** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_coppstatusinput)要求を格納する構造体。 *COPPQueryStatus*にステータスを書き込みます、 [ **DXVA\_COPPStatusOutput** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_coppstatusoutput)構造体、 *pOutput*パラメーター ポイント。 **GuidStatusRequestID**と**StatusData**の DXVA メンバー\_COPPStatusInput 状態要求を指定します。 ビデオのミニポート ドライバーによっては、要求へのポインターにステータス情報をキャストする必要が、 [ **DXVA\_COPPStatusData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_coppstatusdata)、 [ **DXVA\_COPPStatusDisplayData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_coppstatusdisplaydata)、 [ **DXVA\_COPPStatusHDCPKeyData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_coppstatushdcpkeydata)、または[ **DXVA\_COPPStatusSignalingCmdData** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_coppstatussignalingcmddata)構造体。 ビデオのミニポート ドライバーに状態情報をコピーする必要があります、 **COPPStatus**配列メンバーの DXVA\_COPPStatusOutput します。
 
 **注**  ドライバーで 1 回使用される 128 ビットのランダムな数値を返す必要があります、 **rApp**の DXVA メンバー\_COPPStatusData、DXVA\_COPPStatusDisplayData、DXVA\_COPPStatusHDCPKeyData、または DXVA\_COPPStatusSignalingCmdData します。 128 ビットのランダムな数値が、送信元アプリケーションによって生成され、記載されて、 **rApp**の DXVA メンバー\_COPPStatusInput します。
 
@@ -70,11 +70,11 @@ ms.locfileid: "63323794"
 
     ドライバーでは、COPP を組み合わせることができますのみ\_BusType\_がないグラフィックス アダプターとその他のサブシステムの間のコマンドおよびステータス インターフェイス シグナルの場合、前述のバスの種類の値のいずれかの (0x80000000) の値を統合公開されている仕様と標準コネクタの種類を使用する拡張バスで使用できます。 メモリ バスは、この定義から除外されます。
 
--   DXVA の\_COPPQueryDisplayData 設定**guidStatusRequestID**で何も設定と**StatusData**、情報が返されます、 [ **DXVA\_COPPStatusDisplayData** ](https://msdn.microsoft.com/library/windows/hardware/ff563157) DirectX VA COPP デバイスに関連付けられているコネクタ経由で送信される信号の表示モードを記述する構造体。
+-   DXVA の\_COPPQueryDisplayData 設定**guidStatusRequestID**で何も設定と**StatusData**、情報が返されます、 [ **DXVA\_COPPStatusDisplayData** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_coppstatusdisplaydata) DirectX VA COPP デバイスに関連付けられているコネクタ経由で送信される信号の表示モードを記述する構造体。
 
--   DXVA の\_COPPQueryHDCPKeyData 設定**guidStatusRequestID**で何も設定と**StatusData**、情報が返されます、 [ **DXVA\_COPPStatusHDCPKeyData** ](https://msdn.microsoft.com/library/windows/hardware/ff563896)高帯域幅デジタル コンテンツの保護 (HDCP) キーの選択範囲ベクター (KSV) を記述する構造体。
+-   DXVA の\_COPPQueryHDCPKeyData 設定**guidStatusRequestID**で何も設定と**StatusData**、情報が返されます、 [ **DXVA\_COPPStatusHDCPKeyData** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_coppstatushdcpkeydata)高帯域幅デジタル コンテンツの保護 (HDCP) キーの選択範囲ベクター (KSV) を記述する構造体。
 
--   DXVA の\_COPPQuerySignaling 設定**guidStatusRequestID**で何も設定と**StatusData**、情報が返されます、 [ **DXVA\_COPPStatusSignalingCmdData** ](https://msdn.microsoft.com/library/windows/hardware/ff563905) DirectX VA COPP デバイスに関連付けられた物理コネクタを通過する信号を保護する方法を記述する構造体。
+-   DXVA の\_COPPQuerySignaling 設定**guidStatusRequestID**で何も設定と**StatusData**、情報が返されます、 [ **DXVA\_COPPStatusSignalingCmdData** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_coppstatussignalingcmddata) DirectX VA COPP デバイスに関連付けられた物理コネクタを通過する信号を保護する方法を記述する構造体。
 
     COPP 状態のクエリがビデオのミニポート ドライバーが一部を取得を要求しても情報を拡張します。
 

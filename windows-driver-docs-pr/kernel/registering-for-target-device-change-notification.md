@@ -10,16 +10,16 @@ keywords:
 - IoRegisterPlugPlayNotification
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 96b478944afdeac60fe7c5d75bc9f7320ab9c6b0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8f50583b3b101d28c2fa8b71e185efa0c30245b8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63338446"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373455"
 ---
 # <a name="registering-for-target-device-change-notification"></a>ターゲット デバイス変更の通知登録
 
-ドライバーを呼び出すことによって PnP ターゲット デバイスの変更イベントの通知の登録[ **IoRegisterPlugPlayNotification**](https://msdn.microsoft.com/library/windows/hardware/ff549526)します。
+ドライバーを呼び出すことによって PnP ターゲット デバイスの変更イベントの通知の登録[ **IoRegisterPlugPlayNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterplugplaynotification)します。
 
 次の情報は、ターゲット デバイスの変更通知のこのルーチンの呼び出しに適用されます。
 
@@ -39,7 +39,7 @@ ms.locfileid: "63338446"
 
     また、ドライバーを使用して、*コンテキスト*当初デバイスを開くために使用するパスを格納します。 ドライバーは、このパスを使用して、操作の削除を取り消された後、デバイスを再度開きます。 (を参照してください[処理 GUID\_ターゲット\_デバイス\_削除\_キャンセル イベント](handling-a-guid-target-device-remove-cancelled-event.md)詳細についてはします)。
 
-ドライバーを呼び出して通知登録を削除する[ **IoUnregisterPlugPlayNotification** ](https://msdn.microsoft.com/library/windows/hardware/ff550398)で、 *NotificationEntry*によって返される**IoRegisterPlugPlayNotification**します。 ドライバーは、通知に登録し、参照が未解決のまま、ファイル オブジェクトの参照が失われた、登録を削除して、ドライバーは、参照を解放する必要があります。
+ドライバーを呼び出して通知登録を削除する[ **IoUnregisterPlugPlayNotification** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iounregisterplugplaynotification)で、 *NotificationEntry*によって返される**IoRegisterPlugPlayNotification**します。 ドライバーは、通知に登録し、参照が未解決のまま、ファイル オブジェクトの参照が失われた、登録を削除して、ドライバーは、参照を解放する必要があります。
 
  
 

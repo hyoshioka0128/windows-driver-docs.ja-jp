@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 1d1d424c478cac1140b25f48e65e34e829fcf49f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 62d2e482b17d433c4c14fada88233cb5dd102270
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381491"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377294"
 ---
 # <a name="devpkeydeviceinterfaceclassdefaultinterface"></a>DEVPKEY_DeviceInterfaceClass_DefaultInterface
 
@@ -56,11 +56,11 @@ DEVPKEY_DeviceInterfaceClass_DefaultInterface デバイス プロパティは、
 <a name="remarks"></a>注釈
 -------
 
-インストールして、デバイスのインターフェイスを使用して確認する方法については[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)と[ **INF AddInterface ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546310)します。
+インストールして、デバイスのインターフェイスを使用して確認する方法については[デバイス インターフェイス クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)と[ **INF AddInterface ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addinterface-directive)します。
 
-DEVPKEY_DeviceInterfaceClass_DefaultInterface の値を取得するには呼び出すことによって[ **SetupDiGetDeviceInterfaceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551122)します。 呼び出して DEVPKEY_DeviceInterfaceClass_DefaultInterface を設定する[ **SetupDiSetDeviceInterfaceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff552158)します。
+DEVPKEY_DeviceInterfaceClass_DefaultInterface の値を取得するには呼び出すことによって[ **SetupDiGetDeviceInterfaceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinterfacepropertyw)します。 呼び出して DEVPKEY_DeviceInterfaceClass_DefaultInterface を設定する[ **SetupDiSetDeviceInterfaceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetdeviceinterfacepropertyw)します。
 
-Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_DeviceInterfaceClass_DefaultInterface プロパティのキーをサポートしていません。 Windows の以前のバージョンのデバイスのインターフェイス クラスの既定のインターフェイスにアクセスする方法については、次を参照してください。[インターフェイス クラス プロパティのデバイスへのアクセス](https://msdn.microsoft.com/library/windows/hardware/ff537739)します。
+Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_DeviceInterfaceClass_DefaultInterface プロパティのキーをサポートしていません。 Windows の以前のバージョンのデバイスのインターフェイス クラスの既定のインターフェイスにアクセスする方法については、次を参照してください。[インターフェイス クラス プロパティのデバイスへのアクセス](https://docs.microsoft.com/windows-hardware/drivers/install/accessing-device-interface-class-properties)します。
 
 <a name="requirements"></a>要件
 ------------
@@ -85,13 +85,13 @@ Windows Server 2003、Windows XP、および Windows 2000 は、このプロパ�
 ## <a name="see-also"></a>関連項目
 
 
-[**INF AddInterface ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546310)
+[**INF AddInterface ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addinterface-directive)
 
-[**SetupDiGetClassDevs**](https://msdn.microsoft.com/library/windows/hardware/ff551069)
+[**SetupDiGetClassDevs**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclassdevsw)
 
-[**SetupDiGetDeviceInterfaceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551122)
+[**SetupDiGetDeviceInterfaceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinterfacepropertyw)
 
-[**SetupDiSetDeviceInterfaceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff552158)
+[**SetupDiSetDeviceInterfaceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetdeviceinterfacepropertyw)
 
  
 

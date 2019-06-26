@@ -6,12 +6,12 @@ keywords:
 - Windows Filtering Platform 定数ネットワーク ドライバー
 ms.date: 11/07/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: be3a90276b772aa9130e2ec567d41e76d6cd6399
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cbe3445d3d73c6bbc753d968b6db3576abd14309
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378712"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370564"
 ---
 # <a name="windows-filtering-platform-constants"></a>Windows フィルタリング プラットフォーム定数
 
@@ -35,5 +35,5 @@ ms.locfileid: "63378712"
 
 ## <a name="related-topics"></a>関連トピック
 
-[Windows フィルタ リング プラットフォーム コールアウト ドライバー リファレンス](https://msdn.microsoft.com/library/windows/hardware/ff571067)
+[Windows フィルタ リング プラットフォーム コールアウト ドライバー リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
 

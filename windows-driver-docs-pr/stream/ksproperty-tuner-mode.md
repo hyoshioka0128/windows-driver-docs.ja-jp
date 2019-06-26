@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e9df3e6ec8ac23a883b5d75a7a9dd2f5e2a09a8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b96328c765e52cd5b35e8ec5606aa97be79d0f6a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342204"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355987"
 ---
 # <a name="kspropertytunermode"></a>KSPROPERTY\_チューナー\_モード
 
@@ -53,7 +53,7 @@ ms.locfileid: "63342204"
 <td><p>〇</p></td>
 <td><p>〇</p></td>
 <td><p>Pin</p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff565878" data-raw-source="[&lt;strong&gt;KSPROPERTY_TUNER_MODE_S&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff565878)"><strong>KSPROPERTY_TUNER_MODE_S</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_tuner_mode_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_TUNER_MODE_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_tuner_mode_s)"><strong>KSPROPERTY_TUNER_MODE_S</strong></a></p></td>
 <td><p>ULONG</p></td>
 </tr>
 </tbody>
@@ -68,7 +68,7 @@ ms.locfileid: "63342204"
 
 **モード**、KSPROPERTY のメンバー\_チューナー\_モード\_の構造をチューナーの現在のモードを指定します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -89,7 +89,7 @@ ms.locfileid: "63342204"
 
 [**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
 
-[**KSPROPERTY\_チューナー\_モード\_S**](https://msdn.microsoft.com/library/windows/hardware/ff565878)
+[**KSPROPERTY\_チューナー\_モード\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_tuner_mode_s)
 
  
 

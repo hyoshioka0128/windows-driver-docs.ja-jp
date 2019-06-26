@@ -17,12 +17,12 @@ keywords:
 - PCPIN_DESCRIPTOR 構造体
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f2ec2c37f3b4244c8d17f5050eda21c0197adc78
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5dddb482ca90baf7e00a998679f60141d8441542
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335276"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354177"
 ---
 # <a name="topology-pins"></a>トポロジのピン
 
@@ -32,7 +32,7 @@ ms.locfileid: "63335276"
 
 [WDMAud システム ドライバー](user-mode-wdm-audio-components.md#wdmaud_system_driver) KS フィルターのトポロジのピンをミキサー API がアプリケーションに公開する元とコピー先ミキサーの行に変換します。 (シンク) の入力ピンがミキサーのソース行となり (ソース) の出力ピンが宛先ミキサーの線になります。
 
-」の説明に従って[Pin ファクトリ](pin-factories.md)、ミニポート ドライバーは、暗証番号 (pin) の記述子の型の構造体は、それぞれの配列を提供します[ **PCPIN\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff537721)です。フィルターに属する pin ファクトリをについて説明します。 各ピン留めする記述子には、次の情報が含まれています。
+」の説明に従って[Pin ファクトリ](pin-factories.md)、ミニポート ドライバーは、暗証番号 (pin) の記述子の型の構造体は、それぞれの配列を提供します[ **PCPIN\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/ns-portcls-pcpin_descriptor)です。フィルターに属する pin ファクトリをについて説明します。 各ピン留めする記述子には、次の情報が含まれています。
 
 -   **データ フローの方向の指定子**
 
@@ -340,7 +340,7 @@ MIXERLINE\_TARGETTYPE\_WAVEIN
 
 上記のテーブルに表示されないすべてのピン留めするカテゴリ WDMAud 変換 MIXERLINE のターゲット型を持つ移行先ミキサーの行を出力ピン\_TARGETTYPE\_MIXERLINE の未定義とコンポーネントの種類\_COMPONENTTYPE\_DST\_UNDEFINED。
 
-前述の表に、KS のほとんどはカテゴリの Guid をピン留め KSNODETYPE がある\_*Xxx*名。 これらの名前は、Ksmedia.h と Dmusprop.h ヘッダー ファイルで定義されます。 (この名前付け規則からの 2 つの別れは Guid KSCATEGORY\_オーディオおよび PINNAME\_Ksmedia.h でも定義されているをキャプチャします)。」の説明に従って[トポロジ ノード](topology-nodes.md)、KSNODETYPE\_*Xxx* Guid を使用して KS ノードの種類を指定することもできます。 ほとんどの KSNODETYPE\_*Xxx* Guid 暗証番号 (pin) のカテゴリまたはノードの種類の両方ではなくいずれかを指定します。 例外は[ **KSNODETYPE\_シンセサイザー**](https://msdn.microsoft.com/library/windows/hardware/ff537203)を使用する pin カテゴリまたはされるコンテキストに応じて、ノードの種類のいずれかを指定することができます。 KSNODETYPE の一覧については\_*Xxx*暗証番号 (pin) のカテゴリを表す Guid を参照してください[Pin Category プロパティ](pin-category-property.md)します。 KSNODETYPE の一覧については\_*Xxx*ノードの型を表す Guid を参照してください[オーディオ トポロジ ノード](https://msdn.microsoft.com/library/windows/hardware/ff536219)します。
+前述の表に、KS のほとんどはカテゴリの Guid をピン留め KSNODETYPE がある\_*Xxx*名。 これらの名前は、Ksmedia.h と Dmusprop.h ヘッダー ファイルで定義されます。 (この名前付け規則からの 2 つの別れは Guid KSCATEGORY\_オーディオおよび PINNAME\_Ksmedia.h でも定義されているをキャプチャします)。」の説明に従って[トポロジ ノード](topology-nodes.md)、KSNODETYPE\_*Xxx* Guid を使用して KS ノードの種類を指定することもできます。 ほとんどの KSNODETYPE\_*Xxx* Guid 暗証番号 (pin) のカテゴリまたはノードの種類の両方ではなくいずれかを指定します。 例外は[ **KSNODETYPE\_シンセサイザー**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-synthesizer)を使用する pin カテゴリまたはされるコンテキストに応じて、ノードの種類のいずれかを指定することができます。 KSNODETYPE の一覧については\_*Xxx*暗証番号 (pin) のカテゴリを表す Guid を参照してください[Pin Category プロパティ](pin-category-property.md)します。 KSNODETYPE の一覧については\_*Xxx*ノードの型を表す Guid を参照してください[オーディオ トポロジ ノード](https://docs.microsoft.com/windows-hardware/drivers/audio/audio-topology-nodes)します。
 
 KSCATEGORY\_オーディオが別の使用状況のデュアル GUID。 いずれかとして使用できます、 **KS pin カテゴリ GUID**または**KS フィルター カテゴリ GUID**コンテキストに応じて、します。 デバイスのインストール中に、オーディオ ドライバーに登録 KSCATEGORY フィルター カテゴリで、デバイス インターフェイス\_オーディオです。 詳細については、次を参照してください。[オーディオ アダプターのデバイスのインターフェイスをインストールする](installing-device-interfaces-for-an-audio-adapter.md)します。
 

@@ -7,21 +7,21 @@ keywords:
 - 共同インストーラー WDK デバイスのインストールが完了-インストール アクション
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dc087da0bed51e9c47ac2d2dc3d168f8f5bf7292
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1d794683369b75c008e95195d9b08ebeae7e7aa0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361190"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375317"
 ---
 # <a name="code-example-finish-install-actions-in-a-co-installer"></a>コードの例:共同インストーラーでのインストールの完了アクション
 
 
 この例では、共同インストーラーは、完了-インストール操作をサポートするために、次の操作を実行します。
 
--   共同インストーラーを受信すると、 [ **DIF_NEWDEVICEWIZARD_FINISHINSTALL** ](https://msdn.microsoft.com/library/windows/hardware/ff543702)要求、インストーラーが指定した関数を呼び出して*FinishInstallActionsNeeded*に実行するアクションが完了-インストールがあるかどうかを決定します。 (コードを*FinishInstallActionsNeeded*関数は、この例では表示されません)。
+-   共同インストーラーを受信すると、 [ **DIF_NEWDEVICEWIZARD_FINISHINSTALL** ](https://docs.microsoft.com/windows-hardware/drivers/install/dif-newdevicewizard-finishinstall)要求、インストーラーが指定した関数を呼び出して*FinishInstallActionsNeeded*に実行するアクションが完了-インストールがあるかどうかを決定します。 (コードを*FinishInstallActionsNeeded*関数は、この例では表示されません)。
 
-    場合*FinishInstallActionsNeeded*返します**TRUE**、共同インストーラー呼び出し[ **SetupDiGetDeviceInstallParams** ](https://msdn.microsoft.com/library/windows/hardware/ff551104)を取得する、デバイスと、呼び出しのデバイスのインストール パラメーター [ **SetupDiSetDeviceInstallParams** ](https://msdn.microsoft.com/library/windows/hardware/ff552141)を設定する、 **FlagsEx** のメンバー[ **SP_DEVINSTALL_PARAMS** ](https://msdn.microsoft.com/library/windows/hardware/ff552346) DI_FLAGSEX_FINISHINSTALL_ACTION フラグを使用してデバイスの構造体。 このフラグを設定すると、送信する Windows、 [ **DIF_FINISHINSTALL_ACTION** ](https://msdn.microsoft.com/library/windows/hardware/ff543684)すべてのクラスのインストーラー、co-installer クラスとのこのインストールに関係しているデバイスの共同インストーラーへの要求デバイスです。 完了した後、完了-インストール アクションを除く、すべてのインストール操作にこの要求が送信されます。
+    場合*FinishInstallActionsNeeded*返します**TRUE**、共同インストーラー呼び出し[ **SetupDiGetDeviceInstallParams** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinstallparamsa)を取得する、デバイスと、呼び出しのデバイスのインストール パラメーター [ **SetupDiSetDeviceInstallParams** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetdeviceinstallparamsa)を設定する、 **FlagsEx** のメンバー[ **SP_DEVINSTALL_PARAMS** ](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a) DI_FLAGSEX_FINISHINSTALL_ACTION フラグを使用してデバイスの構造体。 このフラグを設定すると、送信する Windows、 [ **DIF_FINISHINSTALL_ACTION** ](https://docs.microsoft.com/windows-hardware/drivers/install/dif-finishinstall-action)すべてのクラスのインストーラー、co-installer クラスとのこのインストールに関係しているデバイスの共同インストーラーへの要求デバイスです。 完了した後、完了-インストール アクションを除く、すべてのインストール操作にこの要求が送信されます。
 
 -   共同インストーラーをもう一度呼び出す共同インストーラーは DIF_FINISHINSTALL_ACTION 要求を受け取る、 *FinishInstallActionsNeeded*と判断するかどうか、完了インストール アクションを実行するが、そうである場合は、実行、完了-インストール アクション。 共同インストーラーは、進行状況と完了インストール アクション DIF_FINISHINSTALL_ACTION 要求の処理から戻る前に完了するまで待機に 完了-インストール アクションのあるユーザーに通知します。
 

@@ -9,12 +9,12 @@ keywords:
 - ドライバー開始の種類の WDK ファイル システム
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1bc4e23f35d2a518c5bf1e2b3a251b0d18edb6c0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5b7f7f1a9481db9bb0281ea0679dcbe85b0926f3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324352"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376007"
 ---
 # <a name="load-order-groups-and-altitudes-for-minifilter-drivers"></a>ミニフィルター ドライバー用のロード順序グループと高度
 
@@ -29,7 +29,7 @@ Windows では、ファイル システム フィルター ドライバーとシ
 
 各ロード順序グループでは、高度の定義された範囲を持ちます。 ミニフィルター ドライバーに高度の割り当ては、Microsoft によって管理されます。 ミニフィルター ドライバーの高度を要求する電子メール メッセージを送信<fsfcomm@microsoft.com>割り当てられる 1 つを要求します。
 
-ミニフィルター ドライバーには、ロード順序グループを表す高度の範囲から高度値を指定する必要があります。 ミニフィルター ドライバーの高度の値は、ミニフィルター ドライバーのインストールに使用される INF ファイルの文字列のセクションのインスタンスの定義で指定されます。 呼び出しでインスタンスの定義を指定することも、 [ **InstanceSetupCallback** ](https://msdn.microsoft.com/library/windows/hardware/ff551096)で日常的な[ **FLT\_登録**](https://msdn.microsoft.com/library/windows/hardware/ff544811)構造体。 ミニフィルター ドライバーに対しては、複数のインスタンスと高度を定義できます。 これらのインスタンスの定義は、すべてのボリュームに適用されます。
+ミニフィルター ドライバーには、ロード順序グループを表す高度の範囲から高度値を指定する必要があります。 ミニフィルター ドライバーの高度の値は、ミニフィルター ドライバーのインストールに使用される INF ファイルの文字列のセクションのインスタンスの定義で指定されます。 呼び出しでインスタンスの定義を指定することも、 [ **InstanceSetupCallback** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nc-fltkernel-pflt_instance_setup_callback)で日常的な[ **FLT\_登録**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_registration)構造体。 ミニフィルター ドライバーに対しては、複数のインスタンスと高度を定義できます。 これらのインスタンスの定義は、すべてのボリュームに適用されます。
 
 詳細については、次の規則が型を起動し、ミニフィルター ドライバーが読み込まれるときにロード順序グループが決定します。
 

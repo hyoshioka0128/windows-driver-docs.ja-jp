@@ -9,12 +9,12 @@ keywords:
 - 16 9 レター ボックスの高さ例 WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 64bb8a0e9f3b4533cd8cb068434f2377a9df711b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8edc81940eaef842772bac0e45bcee38c51de915
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361238"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355231"
 ---
 # <a name="dvd-169-letterbox-height-in-43-example"></a>4:3 ディスプレイでの DVD 16:9 レターボックスの高さの例
 
@@ -24,13 +24,13 @@ ms.locfileid: "63361238"
 
 16:9 のビデオの DVD のレター ボックス フレームに表示する 4:3 の使用には、ソースと変換先の画像の次の値があります。
 
-次の四角形の値で使用されます、 **PictureSourceRect16thPel**のメンバー、 [ **DXVA\_BlendCombination** ](https://msdn.microsoft.com/library/windows/hardware/ff563120)ソースの構造画像:
+次の四角形の値で使用されます、 **PictureSourceRect16thPel**のメンバー、 [ **DXVA\_BlendCombination** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_blendcombination)ソースの構造画像:
 
 -   **上部**= 0
 
 -   **下部にある** = **上部**+ (16 X*垂直\_サイズ*) = 7680 または 9216
 
-次の四角形の値で使用されます、 **PictureDestinationRect**のメンバー、 [ **DXVA\_BlendCombination** ](https://msdn.microsoft.com/library/windows/hardware/ff563120)変換先の構造画像:
+次の四角形の値で使用されます、 **PictureDestinationRect**のメンバー、 [ **DXVA\_BlendCombination** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_blendcombination)変換先の構造画像:
 
 -   **上部** = *垂直\_サイズ*/8 = 60 または 72
 

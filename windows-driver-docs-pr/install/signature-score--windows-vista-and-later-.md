@@ -6,12 +6,12 @@ keywords:
 - 署名スコア WDK デバイスのインストール
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e322655aab6d6b4b84cbe8dd3653a80a1932902
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 453ff67c4c31cd8c31083dca369d0c256e7e02b0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348802"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373494"
 ---
 # <a name="signature-score"></a>署名のスコア
 
@@ -29,7 +29,7 @@ ms.locfileid: "63348802"
     -   Authenticode テクノロジを使用してサード パーティの署名。  有効なサード パーティの署名の種類を以下に示します。
         -   ドライバーの署名証明書、エンタープライズ証明機関 (CA) からコードを使用して署名します。
         -   ドライバーの署名証明書クラス 3 の CA によって発行されたコードを使用して署名します。
-        -   署名証明書によって作成されたコードを使用して署名されたドライバー、 [ **MakeCert ツール**](https://msdn.microsoft.com/library/windows/hardware/ff548309)します。
+        -   署名証明書によって作成されたコードを使用して署名されたドライバー、 [ **MakeCert ツール**](https://docs.microsoft.com/windows-hardware/drivers/devtest/makecert)します。
 -   Windows は、2 番目に適したシグネチャ スコアを割り当てます[ドライバー パッケージ](driver-packages.md)有効な署名する必要はありませんが、によってドライバーがインストールされている、 [ **INF *DDInstall*セクション**](inf-ddinstall-section.md)を持つ、 **.nt**プラットフォーム拡張機能。
 
     詳細については、 **.nt**拡張機能を参照してください[INF ファイルを複数のプラットフォームやオペレーティング システムを作成する](creating-inf-files-for-multiple-platforms-and-operating-systems.md)します。

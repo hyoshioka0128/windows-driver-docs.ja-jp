@@ -4,12 +4,12 @@ description: SR-IOV、VMQ、および RSS の標準化された INF キーワー
 ms.assetid: EF556563-4097-4388-A563-29FC891AC626
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1537e1823822d994e3d50e5eda27b9378299f8ee
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 091d8b2fda2829dc24af30d0c6330e4ffb8b1d61
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325742"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381357"
 ---
 # <a name="handling-sr-iov-vmq-and-rss-standardized-inf-keywords"></a>SR-IOV、VMQ、および RSS の標準化された INF キーワードの処理
 
@@ -30,7 +30,7 @@ ms.locfileid: "63325742"
 
 ネットワーク アダプターが、TCP/IP スタックと、HYPER-V 拡張可能スイッチのドライバー スタックからバインドできない場合は、ミニポート ドライバーが停止され、し、再初期化します。 このため、RSS、VMQ、SR-IOV 対応の間に自動的に切り替えるには、このようなネットワーク アダプターのことはできません。
 
-NDIS を呼び出すと、 [ *MiniportInitializeEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559389)関数、ミニポート ドライバーこれらの手順に従う NDIS に、現在有効になっている、SR-IOV、VMQ、または RSS の機能を報告する前に。
+NDIS を呼び出すと、 [ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)関数、ミニポート ドライバーこれらの手順に従う NDIS に、現在有効になっている、SR-IOV、VMQ、または RSS の機能を報告する前に。
 
 1.  ミニポート ドライバーの読み込み、  **\*SriovPreferred** NDIS を現在有効な機能を報告する前にキーワード。
 
@@ -48,7 +48,7 @@ NDIS を呼び出すと、 [ *MiniportInitializeEx* ](https://msdn.microsoft.com
 
     SR-IOV キーワードの詳細については、次を参照してください。 [SR-IOV の標準化された INF キーワード](standardized-inf-keywords-for-sr-iov.md)します。
 
-    **注**  キーワードを標準化、RSS のいずれかを読み取り、ミニポート ドライバーが SR-IOV 対応の基本設定で構成された場合いない必要があります。 ただし、ドライバーは、VMQ を読み取る必要があります **\*VMQVlanFiltering**標準化されたキーワードです。 このキーワードは、ミニポート ドライバーがメディア アクセス制御 (MAC) ヘッダーで仮想の VLAN (VLAN) id を使用してネットワーク パケットをフィルター処理を有効になっているかどうかを指定します。 ミニポート ドライバーでは、この機能を報告するには、NDIS\_受信\_フィルター\_MAC\_ヘッダー\_VLAN\_ID\_でサポートされているフラグ、 **SupportedMacHeaderFields**のメンバー、 [ **NDIS\_受信\_フィルター\_機能**](https://msdn.microsoft.com/library/windows/hardware/ff566864)構造体。 詳細については、  **\*VMQVlanFiltering**標準化されたキーワードを参照してください[VMQ の標準化された INF キーワード](standardized-inf-keywords-for-vmq.md)します。
+    **注**  キーワードを標準化、RSS のいずれかを読み取り、ミニポート ドライバーが SR-IOV 対応の基本設定で構成された場合いない必要があります。 ただし、ドライバーは、VMQ を読み取る必要があります **\*VMQVlanFiltering**標準化されたキーワードです。 このキーワードは、ミニポート ドライバーがメディア アクセス制御 (MAC) ヘッダーで仮想の VLAN (VLAN) id を使用してネットワーク パケットをフィルター処理を有効になっているかどうかを指定します。 ミニポート ドライバーでは、この機能を報告するには、NDIS\_受信\_フィルター\_MAC\_ヘッダー\_VLAN\_ID\_でサポートされているフラグ、 **SupportedMacHeaderFields**のメンバー、 [ **NDIS\_受信\_フィルター\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)構造体。 詳細については、  **\*VMQVlanFiltering**標準化されたキーワードを参照してください[VMQ の標準化された INF キーワード](standardized-inf-keywords-for-vmq.md)します。
 
      
 
@@ -85,7 +85,7 @@ NDIS を呼び出すと、 [ *MiniportInitializeEx* ](https://msdn.microsoft.com
 <th align="left"></em>RssOrVmqPreference</th>
 <th align="left"><em>SRIOV</th>
 <th align="left"></em>VMQ</th>
-<th align="left">* RSS</th>
+<th align="left">\* RSS</th>
 <th align="left">有効なインターフェイス</th>
 </tr>
 </thead>

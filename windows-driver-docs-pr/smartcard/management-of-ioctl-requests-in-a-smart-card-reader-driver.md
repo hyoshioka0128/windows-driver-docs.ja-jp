@@ -8,12 +8,12 @@ keywords:
 - ベンダーから提供されたドライバー WDK スマート カード、IOCTL 要求の管理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c6a1f254bda1ac3754f278461600b929592a69a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d55b7ee31e7b4c8fcc81e179288cb79b565eab18
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331106"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356698"
 ---
 # <a name="management-of-ioctl-requests-in-a-smart-card-reader-driver"></a>スマート カード リーダー ドライバーでの IOCTL 要求の管理
 
@@ -21,7 +21,7 @@ ms.locfileid: "63331106"
 ## <span id="_ntovr_management_of_ioctl_requests_in_a_smart_card_reader_driver"></span><span id="_NTOVR_MANAGEMENT_OF_IOCTL_REQUESTS_IN_A_SMART_CARD_READER_DRIVER"></span>
 
 
-IOCTL 要求の管理は、スマート カードのドライバー ライブラリの中央に配置します。 ほとんどの場合、スマート カード リーダーのドライバー渡すだけで済みます IOCTL 要求を[ **SmartcardDeviceControl (WDM)** ](https://msdn.microsoft.com/library/windows/hardware/ff548939)ライブラリ ルーチン。
+IOCTL 要求の管理は、スマート カードのドライバー ライブラリの中央に配置します。 ほとんどの場合、スマート カード リーダーのドライバー渡すだけで済みます IOCTL 要求を[ **SmartcardDeviceControl (WDM)** ](https://docs.microsoft.com/previous-versions/ff548939(v=vs.85))ライブラリ ルーチン。
 
 ただし、スマート カードのドライバー ライブラリによって処理された IOCTL 要求の標準セットは、常に、リーダー デバイスの機能を完全にサポートには不十分な。 そのため、ベンダーは、独自の IOCTL 要求を作成する必要があります。 さらに、一部の標準の IOCTL 要求後ドライバー ライブラリによって処理されている追加の処理を必要があります。 ドライバーではどちらのこれらの理由から、スマート カード リーダーのベンダーから提供されたリーダーのドライバーのアーキテクチャが一連のコールバック ルーチンを実装することができます。 これらのコールバック ルーチンでは、必要なときに、Ioctl のさらなる処理を提供します。
 

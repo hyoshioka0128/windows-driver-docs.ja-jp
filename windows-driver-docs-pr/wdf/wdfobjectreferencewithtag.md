@@ -6,12 +6,12 @@ keywords:
 - WdfObjectReferenceWithTag マクロ
 ms.date: 08/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a4426aad88ad8466da6ce36a7bc84355db6af13
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 98bad0b0f240ddc155a457e6193a0cc7ae068ab5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63385730"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354436"
 ---
 # <a name="wdfobjectreferencewithtag-macro"></a>WdfObjectReferenceWithTag マクロ
 
@@ -51,11 +51,11 @@ Framework のオブジェクトへのハンドル。
 
 ドライバーを呼び出す場合**WdfObjectReferenceWithTag**参照カウントをインクリメントするドライバーを呼び出す必要があります[ **WdfObjectDereferenceWithTag** ](wdfobjectdereferencewithtag.md)カウントをデクリメントします。
 
-呼び出す[ **WdfObjectReferenceActual** ](https://msdn.microsoft.com/library/windows/hardware/ff548760)または**WdfObjectReferenceWithTag**の代わりに[ **WdfObjectReference**](wdfobjectreference.md) Microsoft デバッガーに追加の情報 (タグの値、行番号、およびファイル名) を提供します。 **WdfObjectReferenceActual**中に、行番号とファイル名を指定するには、ドライバーは、 **WdfObjectReferenceWithTag**ドライバーの現在の行番号とファイル名を使用します。
+呼び出す[ **WdfObjectReferenceActual** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nf-wdfobject-wdfobjectreferenceactual)または**WdfObjectReferenceWithTag**の代わりに[ **WdfObjectReference**](wdfobjectreference.md) Microsoft デバッガーに追加の情報 (タグの値、行番号、およびファイル名) を提供します。 **WdfObjectReferenceActual**中に、行番号とファイル名を指定するには、ドライバーは、 **WdfObjectReferenceWithTag**ドライバーの現在の行番号とファイル名を使用します。
 
-使用して、タグ、行番号、およびファイル名の値を表示することができます、 **! wdftagtracker**デバッガー拡張機能。 デバッガー拡張機能では、ポインターと、一連の文字の両方として、タグの値が表示されます。 詳細については、デバッガーの拡張機能は、次を参照してください。 [KMDF ドライバーをデバッグ](https://msdn.microsoft.com/library/windows/hardware/ff540790)します。
+使用して、タグ、行番号、およびファイル名の値を表示することができます、 **! wdftagtracker**デバッガー拡張機能。 デバッガー拡張機能では、ポインターと、一連の文字の両方として、タグの値が表示されます。 詳細については、デバッガーの拡張機能は、次を参照してください。 [KMDF ドライバーをデバッグ](https://docs.microsoft.com/windows-hardware/drivers/wdf/debugging-a-wdf-driver)します。
 
-オブジェクトの参照カウントの詳細については、次を参照してください。 [Framework オブジェクトのライフ サイクル](https://msdn.microsoft.com/library/windows/hardware/ff542889)します。
+オブジェクトの参照カウントの詳細については、次を参照してください。 [Framework オブジェクトのライフ サイクル](https://docs.microsoft.com/windows-hardware/drivers/wdf/framework-object-life-cycle)します。
 
 <a name="examples"></a>例
 --------

@@ -4,12 +4,12 @@ description: チェック済みのオペレーティング システムと HAL �
 ms.assetid: 1203b7cd-50b9-4174-8bec-112019444fac
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 727cebe2bbe3f3a4f324428501c9d06f87c29ddf
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4a8f2c3e7d7735d63ab8747767c7009fbef4f423
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356602"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354796"
 ---
 # <a name="installing-just-the-checked-operating-system-and-hal-for-windows-vista-and-later"></a>チェック済みのオペレーティング システムと HAL のみのインストール (Windows Vista 以降)
 
@@ -20,7 +20,7 @@ ms.locfileid: "63356602"
 
 部分的なチェック ビルドをインストールする前に、オペレーティング システム イメージと HAL ファイル システムに無料のビルドをインストールするために使用されたのバージョンを確認する必要があります。
 
-**ヒント:**   の 64 ビット バージョンの Windows Vista 以降では、このプロセスは簡単です。 ある場合、 [Windows Driver Kit (WDK)](https://msdn.microsoft.com/library/windows/hardware/ff557573)、オペレーティング システム イメージと HAL ファイル デバッグからを使用する\\WDK のディレクトリ。 参照してください[チェック ビルドをインストールする](installing-the-checked-build.md)します。 各 amd64 または ia64 が対象の 1 つだけのバージョンがあります。 ファイルの名前は、ntkrnlmp.exe と Hal.dll です。 使用している Windows のバージョンの WDK があれば、進んでに[手順 2。チェックされたファイルをコピー](#step-2---copying-the-checked-files)します。
+**ヒント:**   の 64 ビット バージョンの Windows Vista 以降では、このプロセスは簡単です。 ある場合、 [Windows Driver Kit (WDK)](https://docs.microsoft.com/windows-hardware/drivers/)、オペレーティング システム イメージと HAL ファイル デバッグからを使用する\\WDK のディレクトリ。 参照してください[チェック ビルドをインストールする](installing-the-checked-build.md)します。 各 amd64 または ia64 が対象の 1 つだけのバージョンがあります。 ファイルの名前は、ntkrnlmp.exe と Hal.dll です。 使用している Windows のバージョンの WDK があれば、進んでに[手順 2。チェックされたファイルをコピー](#step-2---copying-the-checked-files)します。
 
  
 
@@ -126,7 +126,7 @@ BCDEdit を使用して一般的な手順については、次を参照してく
 **注**  BCDEdit のオプションを無効にするか、またはコンピューターの BitLocker とセキュア ブートを中断する必要がありますを設定する前にします。
 
  
-Windows Vista 以降では部分的なチェック ビルドを構成するには、使用、 [ **BCDEdit/set** ](https://msdn.microsoft.com/library/windows/hardware/ff542202)コマンドと**カーネル**と**hal**オプション。
+Windows Vista 以降では部分的なチェック ビルドを構成するには、使用、 [ **BCDEdit/set** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcdedit--set)コマンドと**カーネル**と**hal**オプション。
 
 たとえば、次のコマンドは、checked HAL およびカーネルのバージョンを使用するブート エントリを構成します。
 
@@ -138,7 +138,7 @@ bcdedit /set {44a942bf-d6ee-11e3-baf8-000ffee4f6cd} kernel ntkrnlmp.chk
 bcdedit /set {44a942bf-d6ee-11e3-baf8-000ffee4f6cd} hal hal.chk
 ```
 
-カーネル デバッグには、コンピューターを構成することも必要があります。 具体的には、ブートのデバッグ用のブート エントリを有効にする必要があります[ **BCDEdit/bootdebug**](https://msdn.microsoft.com/library/windows/hardware/ff542183)します。 ブート デバッグできないようにコンピューターに接続されているカーネル デバッガーがない場合は、この新しいブート エントリを選択した場合、Windows 回復環境に、コンピューターはブートします。
+カーネル デバッグには、コンピューターを構成することも必要があります。 具体的には、ブートのデバッグ用のブート エントリを有効にする必要があります[ **BCDEdit/bootdebug**](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcdedit--bootdebug)します。 ブート デバッグできないようにコンピューターに接続されているカーネル デバッガーがない場合は、この新しいブート エントリを選択した場合、Windows 回復環境に、コンピューターはブートします。
 
 ```
 bcdedit /bootdebug {44a942bf-d6ee-11e3-baf8-000ffee4f6cd} on
@@ -192,9 +192,9 @@ Microsoft (R) Windows (R) 6.00. 6001 Service Pack 1 Multiprocessor Checked.
 ## <a name="related-topics"></a>関連トピック
 
 
-[デバッグ (カーネル モードとユーザー モード) の設定](https://msdn.microsoft.com/library/windows/hardware/hh450944)
+[デバッグ (カーネル モードとユーザー モード) の設定](https://docs.microsoft.com/windows-hardware/drivers/debugger/getting-set-up-for-debugging)
 
-[Windows 用デバッグ ツール](https://msdn.microsoft.com/library/windows/hardware/ff551063)
+[Windows 用デバッグ ツール](https://docs.microsoft.com/windows-hardware/drivers/debugger/index)
 
  
 

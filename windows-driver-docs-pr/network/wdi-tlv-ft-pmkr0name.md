@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - WDI_TLV_FT_PMKR0NAME ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: dadb4a2f6dc2c5222d6f4cdef2a30d05fcef9b99
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 346f274f32b1d79d1ba1e79d10765fd741bda3f5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353174"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358537"
 ---
 # <a name="wditlvftpmkr0name"></a>WDI\_TLV\_FT\_PMKR0NAME
 
@@ -26,18 +26,18 @@ WDI\_TLV\_FT\_PMKR0NAME PMKR0Name や PMKR1Name を含む TLV は、(802.11r)。
 ## <a name="length"></a>長さ
 
 
-サイズ (バイト単位) で、 [ **WDI\_型\_PMK\_名前**](https://msdn.microsoft.com/library/windows/hardware/mt269156)構造体。
+サイズ (バイト単位) で、 [ **WDI\_型\_PMK\_名前**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ns-wditypes-_wdi_type_pmk_name)構造体。
 
 ## <a name="values"></a>値
 
 
 | 型                                                   | 説明                         |
 |--------------------------------------------------------|-------------------------------------|
-| [**WDI\_型\_PMK\_名**](https://msdn.microsoft.com/library/windows/hardware/mt269156) | PMKR0Name または PMKR1Name (802.11r)。 |
+| [**WDI\_型\_PMK\_名**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ns-wditypes-_wdi_type_pmk_name) | PMKR0Name または PMKR1Name (802.11r)。 |
 
  
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

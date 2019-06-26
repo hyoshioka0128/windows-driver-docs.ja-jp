@@ -4,12 +4,12 @@ description: 入力バッファー順序の例 2
 ms.assetid: e480bd93-4ae2-4a6c-b669-69c44c0154d0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c3a637b335544acce6b32cf1daacdb23897359e0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 068b22606ac23dc27bf4ac4a5b5e29fcbe9b4499
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63350234"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379928"
 ---
 # <a name="input-buffer-order-example-2"></a>入力バッファー順序の例 2
 
@@ -19,7 +19,7 @@ ms.locfileid: "63350234"
 
 **このセクションでは、Windows Server 2003 SP1 以降、および Windows XP SP2 以降にのみ適用されます。**
 
-VMR ドライバーへの呼び出しを開始する[ **DeinterlaceBltEx** ](https://msdn.microsoft.com/library/windows/hardware/ff563927)でデバイスを使用する関数[入力バッファーの順序の例 1](input-buffer-order-example-1.md)インター レースと 2 つのビデオ サブストリームを結合するにはビデオ ストリーム。 内のサーフェスのシーケンス、 **lpBufferInfo**配列。
+VMR ドライバーへの呼び出しを開始する[ **DeinterlaceBltEx** ](https://docs.microsoft.com/windows-hardware/drivers/display/dxva-deinterlacebobdeviceclass-deinterlacebltex)でデバイスを使用する関数[入力バッファーの順序の例 1](input-buffer-order-example-1.md)インター レースと 2 つのビデオ サブストリームを結合するにはビデオ ストリーム。 内のサーフェスのシーケンス、 **lpBufferInfo**配列。
 
 <table>
 <colgroup>

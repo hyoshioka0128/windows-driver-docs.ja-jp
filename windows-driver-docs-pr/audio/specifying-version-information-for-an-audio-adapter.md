@@ -9,12 +9,12 @@ keywords:
 - バージョンの WDK オーディオ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f79b19799bbb1aa8c4def21888b97c31d6ad769b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b5cd4405c69a99679194c144b2a5684c29877f24
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328614"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354286"
 ---
 # <a name="specifying-version-information-for-an-audio-adapter"></a>オーディオ アダプターのバージョン情報の指定
 
@@ -30,7 +30,7 @@ ms.locfileid: "63328614"
   ClassGUID={4d36e96c-e325-11ce-bfc1-08002be10318}
 ```
 
-すべてのデバイス クラスの追加のバージョン要件およびオプションの説明は、次を参照してください。 [ **INF バージョン セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547502)します。
+すべてのデバイス クラスの追加のバージョン要件およびオプションの説明は、次を参照してください。 [ **INF バージョン セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-version-section)します。
 
  
 

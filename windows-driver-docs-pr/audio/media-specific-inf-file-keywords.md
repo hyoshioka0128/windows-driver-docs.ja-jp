@@ -10,12 +10,12 @@ keywords:
 - INF ファイルのメディアのキーワードの WDK オーディオ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6af0a429a82e0db898e6d8409a4266e40281e12e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b1e0a1e78708fe4c675a762a8b20c6f7af212da6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332352"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360458"
 ---
 # <a name="media-specific-inf-file-keywords"></a>メディア固有の INF ファイルのキーワード
 
@@ -23,11 +23,11 @@ ms.locfileid: "63332352"
 ## <span id="media_specific_inf_file_keywords"></span><span id="MEDIA_SPECIFIC_INF_FILE_KEYWORDS"></span>
 
 
-INF ファイルのキーワードの一覧[INF ファイルのセクションとディレクティブ](https://msdn.microsoft.com/library/windows/hardware/ff547433)が、すべてのデバイス クラス、キーワードは、一覧には表示されないメディア固有の次の INF ファイルに共通するキーワードが含まれます。
+INF ファイルのキーワードの一覧[INF ファイルのセクションとディレクティブ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-file-sections-and-directives)が、すべてのデバイス クラス、キーワードは、一覧には表示されないメディア固有の次の INF ファイルに共通するキーワードが含まれます。
 
-[**SetupPreferredAudioDevices**](https://msdn.microsoft.com/library/windows/hardware/ff537899)
+[**SetupPreferredAudioDevices**](https://docs.microsoft.com/windows-hardware/drivers/audio/setuppreferredaudiodevices)
 
-**SetupPreferredAudioDevices**キーワードは、Windows 2000 以降をサポートします。 詳細については、次を参照してください。 [Media クラス INF 拡張子](https://msdn.microsoft.com/library/windows/hardware/ff537513)します。
+**SetupPreferredAudioDevices**キーワードは、Windows 2000 以降をサポートします。 詳細については、次を参照してください。 [Media クラス INF 拡張子](https://docs.microsoft.com/windows-hardware/drivers/audio/media-class-inf-extensions)します。
 
  
 

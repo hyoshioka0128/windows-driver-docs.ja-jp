@@ -6,12 +6,12 @@ keywords:
 - ネットワーク ドライバーのフィルター条件の識別子
 ms.date: 11/08/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 14db0a8be2eddeecca89292114554c37e81fd71c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c30f766cbdb5349462a6ccdeec7941de278098d1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347398"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353355"
 ---
 # <a name="filtering-condition-identifiers"></a>フィルター条件識別子
 
@@ -55,7 +55,7 @@ ms.locfileid: "63347398"
 <p>FWPM_CONDITION_ARRIVAL_TUNNEL_TYPE</p>
 </td>
 <td>
-<p>場合に、トンネルで使用される、カプセル化メソッドの IfType メンバー、 <a href="https://msdn.microsoft.com/library/windows/hardware/aa366058"> <b>IP_ADAPTER_ADDRESSES</b> </a>構造体が IF_TYPE_TUNNEL します。 トンネルの種類は IANA によって定義されます。 詳細については、次を参照してください。 <a href="http://www.iana.org/assignments/ianaiftype-mib/ianaiftype-mib">IANAifType MIB 定義</a>と Windows SDK <a href="https://msdn.microsoft.com/library/windows/hardware/ff557015">IP ヘルパー</a>ドキュメント。</p>
+<p>場合に、トンネルで使用される、カプセル化メソッドの IfType メンバー、 <a href="https://docs.microsoft.com/windows/desktop/api/iptypes/ns-iptypes-_ip_adapter_addresses_lh"> <b>IP_ADAPTER_ADDRESSES</b> </a>構造体が IF_TYPE_TUNNEL します。 トンネルの種類は IANA によって定義されます。 詳細については、次を参照してください。 <a href="http://www.iana.org/assignments/ianaiftype-mib/ianaiftype-mib">IANAifType MIB 定義</a>と Windows SDK <a href="https://docs.microsoft.com/windows-hardware/drivers/network/ip-helper">IP ヘルパー</a>ドキュメント。</p>
 <p>WFP は到着インターフェイスを使用して、この条件に一致します。 到着インターフェイスは、弱いホストまたは転送を実行する前に、ネットワークからの受信が IP スタックに入る前に、パケットに表示される最初のインターフェイスです。</p>
 <p>この条件は、受信の条件では本質的に再認証のために、非対称です。 これは、応答の送信パケットの受信接続を再するときに、WFP がこの条件で空の値を使用することを意味します。</p>
 <p>2 番目のフィルターを再認証を処理するために使用する必要があります。 この 2 番目のフィルターを許可または空の値をブロックするかをこのような状況の有効な値を持つ別の条件を使用します。 到着インターフェイスの条件の場合は、送信パケットに有効なインターフェイスがインターフェイスの条件の次ホップ クラスになります。</p>
@@ -69,7 +69,7 @@ ms.locfileid: "63347398"
 <p>FWPM_CONDITION_IP_ARRIVAL_INTERFACE</p>
 </td>
 <td>
-<p><a href="https://msdn.microsoft.com/library/windows/hardware/ff557080"> <b>LUID</b> </a>到着の IP アドレスに関連付けられているネットワーク インターフェイス。</p>
+<p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/igpupvdev/ns-igpupvdev-_luid"> <b>LUID</b> </a>到着の IP アドレスに関連付けられているネットワーク インターフェイス。</p>
 <p>WFP は到着インターフェイスを使用して、この条件に一致します。 到着インターフェイスは、弱いホストまたは転送を実行する前に、ネットワークからの受信が IP スタックに入る前に、パケットに表示される最初のインターフェイスです。</p>
 <p>この条件は、受信の条件では本質的に再認証のために、非対称です。 これは、応答の送信パケットの受信接続を再するときに、WFP がこの条件で空の値を使用することを意味します。</p>
 <p>2 番目のフィルターを再認証を処理するために使用する必要があります。 この 2 番目のフィルターを許可または空の値をブロックするかをこのような状況の有効な値を持つ別の条件を使用します。 到着インターフェイスの条件の場合は、送信パケットに有効なインターフェイスがインターフェイスの条件の次ホップ クラスになります。</p>
@@ -111,7 +111,7 @@ ms.locfileid: "63347398"
 <p>FWPM_CONDITION_NEXTHOP_TUNNEL_TYPE</p>
 </td>
 <td>
-<p>場合に、トンネルで使用されるカプセル化の方法、 <b>IfType</b>のメンバー、 <a href="https://msdn.microsoft.com/library/windows/hardware/aa366058"> <b>IP_ADAPTER_ADDRESSES</b> </a>構造体が IF_TYPE_TUNNEL します。 トンネルの種類は IANA によって定義されます。 詳細については、次を参照してください。 <a href="http://www.iana.org/assignments/ianaiftype-mib/ianaiftype-mib">IANAifType MIB 定義</a>と Windows SDK <a href="https://msdn.microsoft.com/library/windows/hardware/ff557015">IP ヘルパー</a>ドキュメント。</p>
+<p>場合に、トンネルで使用されるカプセル化の方法、 <b>IfType</b>のメンバー、 <a href="https://docs.microsoft.com/windows/desktop/api/iptypes/ns-iptypes-_ip_adapter_addresses_lh"> <b>IP_ADAPTER_ADDRESSES</b> </a>構造体が IF_TYPE_TUNNEL します。 トンネルの種類は IANA によって定義されます。 詳細については、次を参照してください。 <a href="http://www.iana.org/assignments/ianaiftype-mib/ianaiftype-mib">IANAifType MIB 定義</a>と Windows SDK <a href="https://docs.microsoft.com/windows-hardware/drivers/network/ip-helper">IP ヘルパー</a>ドキュメント。</p>
 <p>WFP は、この条件と一致するのに次ホップ インターフェイスを使用します。 次ホップ インターフェイスには、弱いホストまたは転送を実行した後、IP スタックのネットワークに対する送信を終了する前に、パケットが表示される最後のインターフェイスです。</p>
 <p>この条件は、送信の条件では本質的に再認証のために、非対称です。 これは、応答の受信パケットの送信接続を再するときに、WFP がこの条件で空の値を使用することを意味します。</p>
 <p>2 番目のフィルターを再認証を処理するために使用する必要があります。 この 2 番目のフィルターを許可または空の値をブロックするかをこのような状況の有効な値を持つ別の条件を使用します。 次のホップ インターフェイス条件の場合は、受信パケットの有効なインターフェイスがインターフェイスの条件の到着クラスになります。</p>
@@ -125,7 +125,7 @@ ms.locfileid: "63347398"
 <p>FWPM_CONDITION_IP_NEXTHOP_INTERFACE</p>
 </td>
 <td>
-<p><a href="https://msdn.microsoft.com/library/windows/hardware/ff557080"> <b>LUID</b></a>到着の IP アドレスに関連付けられているネットワーク インターフェイス。</p>
+<p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/igpupvdev/ns-igpupvdev-_luid"> <b>LUID</b></a>到着の IP アドレスに関連付けられているネットワーク インターフェイス。</p>
 <p>WFP は、この条件と一致するのに次ホップ インターフェイスを使用します。 次ホップ インターフェイスには、弱いホストまたは転送を実行した後、IP スタックのネットワークに対する送信を終了する前に、パケットが表示される最後のインターフェイスです。</p>
 <p>この条件は、送信の条件では本質的に再認証のために、非対称です。 これは、応答の受信パケットの送信接続を再するときに、WFP がこの条件で空の値を使用することを意味します。</p>
 <p>2 番目のフィルターを再認証を処理するために使用する必要があります。 この 2 番目のフィルターを許可または空の値をブロックするかをこのような状況の有効な値を持つ別の条件を使用します。 次のホップ インターフェイス条件の場合は、受信パケットの有効なインターフェイスがインターフェイスの条件の到着クラスになります。</p>
@@ -249,7 +249,7 @@ NlatBroadcast
 <p>FWPM_CONDITION_IP_PROTOCOL</p>
 </td>
 <td>
-<p>指定されている、IP プロトコル番号<a href="http://tools.ietf.org/html/rfc1700">RFC 1700</a>します。</p>
+<p>指定されている、IP プロトコル番号<a href="https://tools.ietf.org/html/rfc1700">RFC 1700</a>します。</p>
 </td>
 </tr>
 <tr>
@@ -273,7 +273,7 @@ NlatBroadcast
 <p>FWPM_CONDITION_ICMP_TYPE</p>
 </td>
 <td>
-<p>ICMP [種類] フィールドで指定されている<a href="http://tools.ietf.org/html/rfc792">RFC 792</a>します。</p>
+<p>ICMP [種類] フィールドで指定されている<a href="https://tools.ietf.org/html/rfc792">RFC 792</a>します。</p>
 </td>
 </tr>
 <tr>
@@ -281,7 +281,7 @@ NlatBroadcast
 <p>FWPM_CONDITION_ICMP_CODE</p>
 </td>
 <td>
-<p>指定されている、ICMP コード フィールド<a href="http://tools.ietf.org/html/rfc792">RFC 792</a>します。</p>
+<p>指定されている、ICMP コード フィールド<a href="https://tools.ietf.org/html/rfc792">RFC 792</a>します。</p>
 </td>
 </tr>
 <tr>
@@ -328,7 +328,7 @@ NlatBroadcast
 <p>FWPM_CONDITION_EMBEDDED_PROTOCOL</p>
 </td>
 <td>
-<p>IP プロトコル番号で指定されている、ICMP パケットに埋め込まれている<a href="http://tools.ietf.org/html/rfc1700">RFC 1700</a>します。</p>
+<p>IP プロトコル番号で指定されている、ICMP パケットに埋め込まれている<a href="https://tools.ietf.org/html/rfc1700">RFC 1700</a>します。</p>
 </td>
 </tr>
 <tr>
@@ -487,7 +487,7 @@ SIO_RCVALL_MCAST
 </dd>
 </dl>
 </p>
-<p>これらの raw ソケット モードについては、次を参照してください。 <a href="https://msdn.microsoft.com/library/windows/hardware/ms741621"> <b>WSAIoctl</b> </a> 、Microsoft Windows SDK ドキュメント。</p>
+<p>これらの raw ソケット モードについては、次を参照してください。 <a href="https://docs.microsoft.com/windows/desktop/api/winsock2/nf-winsock2-wsaioctl"> <b>WSAIoctl</b> </a> 、Microsoft Windows SDK ドキュメント。</p>
 </td>
 </tr>
 <tr>
@@ -582,7 +582,7 @@ RPC_PROTSEQ_NMP
 <p>FWPM_CONDITION_RPC_AUTH_TYPE</p>
 </td>
 <td>
-<p>認証サービスの種類。 認証サービスの種類に関する詳細については、次を参照してください。 <a href="https://msdn.microsoft.com/library/windows/hardware/aa373556"><b>認証サービス定数</b></a> Windows SDK のドキュメントの RPC のセクションでします。</p>
+<p>認証サービスの種類。 認証サービスの種類に関する詳細については、次を参照してください。 <a href="https://docs.microsoft.com/windows/desktop/Rpc/authentication-service-constants"><b>認証サービス定数</b></a> Windows SDK のドキュメントの RPC のセクションでします。</p>
 </td>
 </tr>
 <tr>
@@ -590,7 +590,7 @@ RPC_PROTSEQ_NMP
 <p>FWPM_CONDITION_RPC_AUTH_LEVEL</p>
 </td>
 <td>
-<p>認証サービスのレベル。 認証サービス レベルの詳細については、次を参照してください。 <a href="https://msdn.microsoft.com/library/windows/hardware/aa373553"><b>認証レベルの定数</b></a> Windows SDK のドキュメントの RPC のセクションでします。</p>
+<p>認証サービスのレベル。 認証サービス レベルの詳細については、次を参照してください。 <a href="https://docs.microsoft.com/windows/desktop/Rpc/authentication-level-constants"><b>認証レベルの定数</b></a> Windows SDK のドキュメントの RPC のセクションでします。</p>
 </td>
 </tr>
 <tr>
@@ -702,7 +702,7 @@ RPC_PROTSEQ_NMP
 <p>FWPM_CONDITION_RPC_PROXY_AUTH_TYPE</p>
 </td>
 <td>
-<p>RPC プロキシ認証サービスの種類。 認証サービスの種類に関する詳細については、次を参照してください。 <a href="https://msdn.microsoft.com/library/windows/hardware/aa373556"><b>認証サービス定数</b></a> Windows SDK のドキュメントの RPC のセクションでします。</p>
+<p>RPC プロキシ認証サービスの種類。 認証サービスの種類に関する詳細については、次を参照してください。 <a href="https://docs.microsoft.com/windows/desktop/Rpc/authentication-service-constants"><b>認証サービス定数</b></a> Windows SDK のドキュメントの RPC のセクションでします。</p>
 </td>
 </tr>
 <tr>
@@ -802,7 +802,7 @@ RPC_PROTSEQ_NMP
 <p>FWPM_CONDITION_NDIS_MEDIA_TYPE</p>
 </td>
 <td>
-<p>いずれかとして指定する NDIS メディアの種類、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff565910"> <b>NDIS_MEDIUM</b> </a>列挙値。</p>
+<p>いずれかとして指定する NDIS メディアの種類、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ne-ntddndis-_ndis_medium"> <b>NDIS_MEDIUM</b> </a>列挙値。</p>
 <div class="alert"><b>注</b>Windows 8、Windows Server 2012、および以降のバージョンの Windows でサポートされています。</div>
 <div> </div>
 </td>
@@ -832,7 +832,7 @@ RPC_PROTSEQ_NMP
 <p>FWPM_CONDITION_MAC_LOCAL_ADDRESS_TYPE</p>
 </td>
 <td>
-<p>ローカルの MAC アドレスのデータ リンクの種類。 これで定義されている値の 1 つ、 <a href="https://msdn.microsoft.com/library/windows/hardware/dd744934"> <b>DL_ADDRESS_TYPE</b> </a> FwpmTypes.h で列挙します。</p>
+<p>ローカルの MAC アドレスのデータ リンクの種類。 これで定義されている値の 1 つ、 <a href="https://docs.microsoft.com/windows/desktop/api/fwpmtypes/ne-fwpmtypes-__midl___midl_itf_fwpmtypes_0000_0000_0001"> <b>DL_ADDRESS_TYPE</b> </a> FwpmTypes.h で列挙します。</p>
 <div class="alert"><b>注</b>Windows 8、Windows Server 2012、および以降のバージョンの Windows でサポートされています。</div>
 <div> </div>
 </td>
@@ -842,7 +842,7 @@ RPC_PROTSEQ_NMP
 <p>FWPM_CONDITION_MAC_REMOTE_ADDRESS_TYPE</p>
 </td>
 <td>
-<p>リモートの MAC アドレスのデータ リンクの種類。 これで定義されている値の 1 つ、 <a href="https://msdn.microsoft.com/library/windows/hardware/dd744934"> <b>DL_ADDRESS_TYPE</b> </a> FwpmTypes.h で列挙します。</p>
+<p>リモートの MAC アドレスのデータ リンクの種類。 これで定義されている値の 1 つ、 <a href="https://docs.microsoft.com/windows/desktop/api/fwpmtypes/ne-fwpmtypes-__midl___midl_itf_fwpmtypes_0000_0000_0001"> <b>DL_ADDRESS_TYPE</b> </a> FwpmTypes.h で列挙します。</p>
 <div class="alert"><b>注</b>Windows 8、Windows Server 2012、および以降のバージョンの Windows でサポートされています。</div>
 <div> </div>
 </td>
@@ -892,7 +892,7 @@ RPC_PROTSEQ_NMP
 <p>FWPM_CONDITION_MAC_SOURCE_ADDRESS_TYPE</p>
 </td>
 <td>
-<p>フレームを作成するインターフェイスの MAC アドレスのデータ リンクの種類。 これで定義されている値の 1 つ、 <a href="https://msdn.microsoft.com/library/windows/hardware/dd744934"> <b>DL_ADDRESS_TYPE</b> </a> FwpmTypes.h で列挙します。</p>
+<p>フレームを作成するインターフェイスの MAC アドレスのデータ リンクの種類。 これで定義されている値の 1 つ、 <a href="https://docs.microsoft.com/windows/desktop/api/fwpmtypes/ne-fwpmtypes-__midl___midl_itf_fwpmtypes_0000_0000_0001"> <b>DL_ADDRESS_TYPE</b> </a> FwpmTypes.h で列挙します。</p>
 <div class="alert"><b>注</b>Windows 8、Windows Server 2012、および以降のバージョンの Windows でサポートされています。</div>
 <div> </div>
 </td>
@@ -902,7 +902,7 @@ RPC_PROTSEQ_NMP
 <p>FWPM_CONDITION_MAC_DESTINATION_ADDRESS_TYPE</p>
 </td>
 <td>
-<p>フレームの宛先をインターフェイスの MAC アドレスのデータ リンクの種類。 これで定義されている値の 1 つ、 <a href="https://msdn.microsoft.com/library/windows/hardware/dd744934"> <b>DL_ADDRESS_TYPE</b> </a> FwpmTypes.h で列挙します。</p>
+<p>フレームの宛先をインターフェイスの MAC アドレスのデータ リンクの種類。 これで定義されている値の 1 つ、 <a href="https://docs.microsoft.com/windows/desktop/api/fwpmtypes/ne-fwpmtypes-__midl___midl_itf_fwpmtypes_0000_0000_0001"> <b>DL_ADDRESS_TYPE</b> </a> FwpmTypes.h で列挙します。</p>
 <div class="alert"><b>注</b>Windows 8、Windows Server 2012、および以降のバージョンの Windows でサポートされています。</div>
 <div> </div>
 </td>
@@ -942,7 +942,7 @@ RPC_PROTSEQ_NMP
 <p>FWPM_CONDITION_VSWITCH_NETWORK_TYPE</p>
 </td>
 <td>
-<p>仮想スイッチに関連付けられているネットワークの種類。 これで定義されている値の 1 つ、 <a href="https://msdn.microsoft.com/library/windows/hardware/hh447394"> <b>FWP_VSWITCH_NETWORK_TYPE</b> </a> FwpTypes.h で列挙します。</p>
+<p>仮想スイッチに関連付けられているネットワークの種類。 これで定義されている値の 1 つ、 <a href="https://docs.microsoft.com/windows/desktop/api/fwptypes/ne-fwptypes-fwp_vswitch_network_type_"> <b>FWP_VSWITCH_NETWORK_TYPE</b> </a> FwpTypes.h で列挙します。</p>
 <div class="alert"><b>注</b>でサポートされている<i>Windows 8</i>と以降のバージョンの Windows。</div>
 <div> </div>
 </td>
@@ -972,7 +972,7 @@ RPC_PROTSEQ_NMP
 <p>FWPM_CONDITION_VSWITCH_SOURCE_INTERFACE_TYPE</p>
 </td>
 <td>
-<p>フレームを作成した仮想スイッチのインターフェイスの型。 これで定義されている値の 1 つ、 <a href="https://msdn.microsoft.com/library/windows/hardware/hh451589"> <b>NDIS_NIC_SWITCH_TYPE</b> </a> Ntddndis.h で列挙します。</p>
+<p>フレームを作成した仮想スイッチのインターフェイスの型。 これで定義されている値の 1 つ、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ne-ntddndis-_ndis_nic_switch_type"> <b>NDIS_NIC_SWITCH_TYPE</b> </a> Ntddndis.h で列挙します。</p>
 <div class="alert"><b>注</b>Windows 8、Windows Server 2012、および以降のバージョンの Windows でサポートされています。</div>
 <div> </div>
 </td>
@@ -982,7 +982,7 @@ RPC_PROTSEQ_NMP
 <p>FWPM_CONDITION_VSWITCH_DESTINATION_INTERFACE_TYPE</p>
 </td>
 <td>
-<p>フレームの宛先が仮想スイッチのインターフェイスの型。 これで定義されている値の 1 つ、 <a href="https://msdn.microsoft.com/library/windows/hardware/hh451589"> <b>NDIS_NIC_SWITCH_TYPE</b> </a> Ntddndis.h で列挙します。</p>
+<p>フレームの宛先が仮想スイッチのインターフェイスの型。 これで定義されている値の 1 つ、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ne-ntddndis-_ndis_nic_switch_type"> <b>NDIS_NIC_SWITCH_TYPE</b> </a> Ntddndis.h で列挙します。</p>
 <div class="alert"><b>注</b>Windows 8、Windows Server 2012、および以降のバージョンの Windows でサポートされています。</div>
 <div> </div>
 </td>

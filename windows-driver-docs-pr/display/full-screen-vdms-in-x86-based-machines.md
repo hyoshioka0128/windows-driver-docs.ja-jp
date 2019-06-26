@@ -9,12 +9,12 @@ keywords:
 - x86 ベースのマシン WDK VGA と互換性のあるビデオのミニポート
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2dc575de050c7fdf52775ad813a78fdc4885a336
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 6444c03a427481cbebcbb8042b332fbe6a1771f3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573981"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356377"
 ---
 # <a name="full-screen-vdms-in-x86-based-machines"></a>x86 ベース マシンの全画面 VDM
 
@@ -24,7 +24,7 @@ ms.locfileid: "56573981"
 
 パフォーマンス上の理由から、ユーザーは、x86 ベースのマシンでは、MS-DOS アプリケーションを全画面表示モードを切り替えると、ディスプレイ ドライバーはアダプターのコントロールを生成します。 VGA、システムまたは VGA と互換性のあるミニポート ドライバー、フックを V86 エミュレーターからアプリケーション発行など、すべての I/O 命令**IN**、 **INSD/REP INSB/INSW**、 **アウト**、および**OUTSD/REP OUTSB/OUTSW**手順については、ビデオの I/O ポートにします。 これらかぎ状の I/O 操作は、VGA と互換性のあるミニポート ドライバーに転送される*SvgaHwIoPortXxx*関数。
 
-ただし、パフォーマンスを向上させる、ミニポート ドライバー呼び出せる[ **VideoPortSetTrappedEmulatorPorts** ](https://msdn.microsoft.com/library/windows/hardware/ff570366)へのアクセス、アプリケーションを直接いくつかの I/O ポートを許可します。 ミニポート ドライバーでは、他の I/O ポートをフックは引き続きその*SvgaHwIoPortXxx*をこれらのポートをアプリケーションが発行した命令ストリームを検証します。
+ただし、パフォーマンスを向上させる、ミニポート ドライバー呼び出せる[ **VideoPortSetTrappedEmulatorPorts** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nf-video-videoportsettrappedemulatorports)へのアクセス、アプリケーションを直接いくつかの I/O ポートを許可します。 ミニポート ドライバーでは、他の I/O ポートをフックは引き続きその*SvgaHwIoPortXxx*をこれらのポートをアプリケーションが発行した命令ストリームを検証します。
 
 全画面表示アプリケーションが、マシンが応答を停止する命令のシーケンスを発行しないように、 *SvgaHwIoPortXxx*関数は、アダプターのレジスタのドライバーにより決定されたセットにアプリケーションの命令ストリームを監視します。 ミニポート ドライバーには、完全に安全では I/O ポートにのみ直接アクセスが有効にする必要があります。 たとえば、sequencer およびその他の出力の登録用のポートする必要があります常に V86 エミュレーターでフックし、ミニポート ドライバーが提供するトラップ*SvgaHwIoPortXxx*検証のための関数。
 

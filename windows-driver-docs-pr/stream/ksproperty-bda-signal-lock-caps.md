@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 759b59bdca46c54c0b91807fe229aeefcbd747ad
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7d1ae5b0e553f5988f04c9b33ed5b7e0b5dec968
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380824"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361130"
 ---
 # <a name="kspropertybdasignallockcaps"></a>KSPROPERTY\_BDA\_信号\_ロック\_キャップ
 
@@ -51,7 +51,7 @@ ms.locfileid: "63380824"
 <td><p>X</p></td>
 <td><p>Pin またはフィルター</p></td>
 <td><p>KSP_NODE</p></td>
-<td><p>32 ビットの値のビットごとの OR を含む<a href="https://msdn.microsoft.com/library/windows/hardware/ff556526" data-raw-source="[&lt;strong&gt;BDA_LockType&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff556526)"> <strong>BDA_LockType</strong></a>-型指定された値</p></td>
+<td><p>32 ビットの値のビットごとの OR を含む<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdamedia/ne-bdamedia-_bdalocktype" data-raw-source="[&lt;strong&gt;BDA_LockType&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdamedia/ne-bdamedia-_bdalocktype)"> <strong>BDA_LockType</strong></a>-型指定された値</p></td>
 </tr>
 </tbody>
 </table>
@@ -63,7 +63,7 @@ ms.locfileid: "63380824"
 
 **NodeId** KSP のメンバー\_ノードの管理ノードの識別子を指定しますまたは、暗証番号 (pin) を指定する − 1 に設定されています。
 
-返される 32 ビット値はビットごとの OR の[ **BDA\_LockType**](https://msdn.microsoft.com/library/windows/hardware/ff556526)-ドライバーがサポートするロックの種類を示す値を入力します。
+返される 32 ビット値はビットごとの OR の[ **BDA\_LockType**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdamedia/ne-bdamedia-_bdalocktype)-ドライバーがサポートするロックの種類を示す値を入力します。
 
 RF チューナーのノードには、このを示す値を提供する必要があります。
 
@@ -86,9 +86,9 @@ RF チューナーのノードには、このを示す値を提供する必要�
 ## <a name="see-also"></a>関連項目
 
 
-[**BDA\_LockType**](https://msdn.microsoft.com/library/windows/hardware/ff556526)
+[**BDA\_LockType**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdamedia/ne-bdamedia-_bdalocktype)
 
-[**KSP\_ノード**](https://msdn.microsoft.com/library/windows/hardware/ff566720)
+[**KSP\_ノード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_node)
 
 [**KSPROPERTY\_BDA\_信号\_ロック\_型**](ksproperty-bda-signal-lock-type.md)
 

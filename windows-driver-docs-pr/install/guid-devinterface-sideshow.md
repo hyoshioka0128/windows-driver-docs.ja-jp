@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: d80259093c3b6b18952cd90e88dd2df51983cb5f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 66cff35c114507e9a4cf6e59040b553f664a1408
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363687"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375244"
 ---
 # <a name="guiddevinterfacesideshow"></a>GUID_DEVINTERFACE_SIDESHOW
 
 
-GUID_DEVINTERFACE_SIDESHOW[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)が定義されている[Windows SideShow デバイス](https://msdn.microsoft.com/library/windows/hardware/ff548124)します。
+GUID_DEVINTERFACE_SIDESHOW[デバイス インターフェイス クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)が定義されている[Windows SideShow デバイス](https://docs.microsoft.com/windows-hardware/drivers/)します。
 
 <table>
 <colgroup>

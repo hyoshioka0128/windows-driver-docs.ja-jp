@@ -9,12 +9,12 @@ keywords:
 - アロケーター WDK オーディオ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c707da813e32bf476c7947ad63e82dfe8d67c068
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 04494c700050578df176a55e52db5445a2854823
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331578"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355778"
 ---
 # <a name="allocator"></a>アロケーター
 
@@ -22,11 +22,11 @@ ms.locfileid: "63331578"
 ## <span id="allocator"></span><span id="ALLOCATOR"></span>
 
 
-アロケーターの間のインターフェイスは[IMXF](https://msdn.microsoft.com/library/windows/hardware/ff536782)と[IAllocatorMXF](https://msdn.microsoft.com/library/windows/hardware/ff536491)します。 これらのインターフェイスでは、再利用できます。 [ **DMU\_カーネル\_イベント**](https://msdn.microsoft.com/library/windows/hardware/ff536340)の割り当てとメモリを解放せずに構造体。 [**IMXF::PutMessage** ](https://msdn.microsoft.com/library/windows/hardware/ff536791)アロケーターへの構造体を提供し、 [ **IAllocatorMXF::GetMessage** ](https://msdn.microsoft.com/library/windows/hardware/ff536494)新しくゼロ DMU を取得\_カーネル\_再利用するためのアロケーターからのイベント構造体。 (アロケーターは、DMU を空にすると作成される\_カーネル\_しない空の状態を開始するように、プール内のイベント構造です)。ダイアグラムの次の図の Irp で示すように (DMU の形式で\_EVENTHEADER 構造体) を返し、dmusic.dll から受け取る。
+アロケーターの間のインターフェイスは[IMXF](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nn-dmusicks-imxf)と[IAllocatorMXF](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nn-dmusicks-iallocatormxf)します。 これらのインターフェイスでは、再利用できます。 [ **DMU\_カーネル\_イベント**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/ns-dmusicks-_dmus_kernel_event)の割り当てとメモリを解放せずに構造体。 [**IMXF::PutMessage** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nf-dmusicks-imxf-putmessage)アロケーターへの構造体を提供し、 [ **IAllocatorMXF::GetMessage** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nf-dmusicks-iallocatormxf-getmessage)新しくゼロ DMU を取得\_カーネル\_再利用するためのアロケーターからのイベント構造体。 (アロケーターは、DMU を空にすると作成される\_カーネル\_しない空の状態を開始するように、プール内のイベント構造です)。ダイアグラムの次の図の Irp で示すように (DMU の形式で\_EVENTHEADER 構造体) を返し、dmusic.dll から受け取る。
 
 ![ポートおよびミニポートのドライバーを介して irp のフローを示す図](images/dmalloc.png)
 
-アンパッカー呼び出し**IAllocatorMXF::GetMessage**空を取得する[ **DMU\_カーネル\_イベント**](https://msdn.microsoft.com/library/windows/hardware/ff536340)構造体。 取得、DMU を返し、\_カーネル\_イベント IRP から構造体、(MIDI イベントごとに 1 つ)、これらの構造体に格納および sequencer を (その MXF インターフェイスを使用) に渡します。 Sequencer そのタイムスタンプに基づいて順序変更を期限になったに渡しますミニポート ドライバーを呼び出して**IMXF::PutMessage**します。 ミニポート ドライバーは、DMU から MIDI データ\_カーネル\_wave データに表示されるように、イベントが構造体します。 使用の DMU を渡す\_カーネル\_イベント構造体が別のアロケーターにバックアップ**IMXF::PutMessage**呼び出します。
+アンパッカー呼び出し**IAllocatorMXF::GetMessage**空を取得する[ **DMU\_カーネル\_イベント**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/ns-dmusicks-_dmus_kernel_event)構造体。 取得、DMU を返し、\_カーネル\_イベント IRP から構造体、(MIDI イベントごとに 1 つ)、これらの構造体に格納および sequencer を (その MXF インターフェイスを使用) に渡します。 Sequencer そのタイムスタンプに基づいて順序変更を期限になったに渡しますミニポート ドライバーを呼び出して**IMXF::PutMessage**します。 ミニポート ドライバーは、DMU から MIDI データ\_カーネル\_wave データに表示されるように、イベントが構造体します。 使用の DMU を渡す\_カーネル\_イベント構造体が別のアロケーターにバックアップ**IMXF::PutMessage**呼び出します。
 
 逆の状況では、キャプチャは発生します。 MIDI データの元ハードウェア、ミニポート ドライバーとミニポート ドライバーの呼び出しに**IAllocatorMXF::GetMessage**空の DMU を取得する\_カーネル\_イベント構造体。 DMU\_カーネル\_構造体のイベントのタイムスタンプとデータの格納し、を使用してキャプチャ シンクに渡される**IMXF::PutMessage**します。 DMU を設定する場合、ミニポート ドライバーは構造体ごとの 1 つ以上のメッセージを渡すことができます\_KEF\_イベント\_未完了フラグ、DMU\_カーネル\_イベント構造体。 Dmu ポート ドライバーのキャプチャのシンクは、この生データ ストリームを解析し、DMU を出力\_カーネル\_タイムスタンプ MIDI メッセージ (構造体ごとに 1 つ) が含まれるイベントの構造体。
 

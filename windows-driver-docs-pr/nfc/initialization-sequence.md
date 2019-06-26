@@ -10,17 +10,17 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: df285c0593424bd4a1d41f6ea8c52d3595be99a1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8a18d7283f36b8dc9fae66fc59a3ec1c5c7351a3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370558"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375121"
 ---
 # <a name="initialization-sequence"></a>初期化シーケンス
 
 
-次の図は、高度な一連の初期化中に、NFC CX および、NFCC によって交換される NCI パケットを示しています。 、初期化の開始前に、NFC CX ドライバーは、登録されている場合に、クライアント ドライバーの初期化前のシーケンスのハンドラーを呼び出します。 StateInit には、次の大まかなシーケンスが構成されています。NCI の初期化、パラメーター、および RF インターフェイスおよび RF プロトコル マッピングの標準の NCI 構成、NCI をリセットします。 ただし、NFC のクライアント ドライバーなどの NFC CX のインターフェイスの関数を使用して初期化中に使用される NCI 構成パラメーターのいくつかの既定値を設定できます[ **NfcCxSetRfDiscoveryConfig** ](https://msdn.microsoft.com/library/windows/hardware/dn905616)と[**NfcCxSetLlcpConfig**](https://msdn.microsoft.com/library/windows/hardware/dn905615)します。 初期化が完了した後、初期化のシーケンスの完了ハンドラーが呼び出されます。 初期化が完了した後は、次の状態は、StateRfIdle です。
+次の図は、高度な一連の初期化中に、NFC CX および、NFCC によって交換される NCI パケットを示しています。 、初期化の開始前に、NFC CX ドライバーは、登録されている場合に、クライアント ドライバーの初期化前のシーケンスのハンドラーを呼び出します。 StateInit には、次の大まかなシーケンスが構成されています。NCI の初期化、パラメーター、および RF インターフェイスおよび RF プロトコル マッピングの標準の NCI 構成、NCI をリセットします。 ただし、NFC のクライアント ドライバーなどの NFC CX のインターフェイスの関数を使用して初期化中に使用される NCI 構成パラメーターのいくつかの既定値を設定できます[ **NfcCxSetRfDiscoveryConfig** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/nfccx/nf-nfccx-nfccxsetrfdiscoveryconfig)と[**NfcCxSetLlcpConfig**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/nfccx/nf-nfccx-nfccxsetllcpconfig)します。 初期化が完了した後、初期化のシーケンスの完了ハンドラーが呼び出されます。 初期化が完了した後は、次の状態は、StateRfIdle です。
 
 ![初期化シーケンス](images/initializationsequence.png)
 
@@ -38,6 +38,6 @@ NFC のクライアント ドライバーからファームウェアのダウン
 
  
 ## <a name="related-topics"></a>関連トピック
-[NFC のデバイス ドライバー インターフェイス (DDI) の概要](https://msdn.microsoft.com/library/windows/hardware/mt715815)  
-[NFC クラスの拡張機能 (CX) リファレンス](https://msdn.microsoft.com/library/windows/hardware/dn905536)  
+[NFC のデバイス ドライバー インターフェイス (DDI) の概要](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
+[NFC クラスの拡張機能 (CX) リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
 

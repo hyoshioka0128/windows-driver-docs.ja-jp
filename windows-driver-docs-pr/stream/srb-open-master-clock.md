@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fa3b353712b3d3c2ac6537df22866bab13c8738b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3b30d765138e8c2cfd56236f84e34492a1b1d2c6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387078"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377895"
 ---
 # <a name="srbopenmasterclock"></a>SRB\_オープン\_マスター\_クロック
 
@@ -42,7 +42,7 @@ ms.locfileid: "63387078"
 
 ### <a name="comments"></a>コメント
 
-クラスのドライバー セット、 **CommandData**.**MasterClockHandle**によって示されるメンバー *pSrb*クロック オブジェクトのハンドルには、マスターのクロックを表すが作成されます。 *PSrb*ポインターが指す、 [ **HW\_ストリーム\_要求\_ブロック**](https://msdn.microsoft.com/library/windows/hardware/ff559702)構造体。
+クラスのドライバー セット、 **CommandData**.**MasterClockHandle**によって示されるメンバー *pSrb*クロック オブジェクトのハンドルには、マスターのクロックを表すが作成されます。 *PSrb*ポインターが指す、 [ **HW\_ストリーム\_要求\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/ns-strmini-_hw_stream_request_block)構造体。
 
 ミニドライバーを保持する必要があります、 **CommandData.MasterClockHandle**フィールドのマスターのクロックのハンドルを指す SRB の値。
 

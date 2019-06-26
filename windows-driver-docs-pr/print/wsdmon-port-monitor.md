@@ -10,17 +10,17 @@ keywords:
 - WSD コンプライアンス WDK の印刷
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3dd20426087a054acc693411e02c4fa5c9e9f831
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: af40e6f9317e808f6bcc85dcc7aee74c5f3379f3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354902"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356971"
 ---
 # <a name="wsdmon-port-monitor"></a>WSDMON ポート モニター
 
 
-WSDMON ポート モニターに準拠しているネットワーク プリンターに印刷をサポートするプリンター ポート モニター、 [Web Services for Devices (WSD) テクノロジ](https://msdn.microsoft.com/library/windows/hardware/ff563758)します。 WSDMON ポート モニターは、WSD イベントをリッスンし、それに応じてプリンターの状態を更新します。 このポート モニターは Windows Vista の新機能です。
+WSDMON ポート モニターに準拠しているネットワーク プリンターに印刷をサポートするプリンター ポート モニター、 [Web Services for Devices (WSD) テクノロジ](https://docs.microsoft.com/windows-hardware/drivers/print/web-services-for-devices-print-service-schema)します。 WSDMON ポート モニターは、WSD イベントをリッスンし、それに応じてプリンターの状態を更新します。 このポート モニターは Windows Vista の新機能です。
 
 WSDMON ポート モニターを実行できます。
 

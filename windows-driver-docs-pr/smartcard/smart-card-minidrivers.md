@@ -4,19 +4,19 @@ description: スマート カード ミニドライバー
 ms.assetid: BE24E8C3-663A-47A3-B30C-CBB0AEF89E45
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fb20231b804bdb47e4228c078562c730e7220aaa
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f1a0e595611401ef6341e056ca79a2fe79cd4811
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382564"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356659"
 ---
 # <a name="smart-card-minidrivers"></a>スマート カード ミニドライバー
 
 
 スマート カード ミニドライバーは、カードのミニドライバーの開発者から複雑な暗号化操作の大部分をカプセル化して、従来の暗号化サービス プロバイダー (CSP) を開発する代わりに単純なを提供します。
 
-スマート カード ミニドライバーの仕様については、次を参照してください。[スマート カード ミニドライバーの仕様](https://msdn.microsoft.com/library/windows/hardware/dn631754)します。
+スマート カード ミニドライバーの仕様については、次を参照してください。[スマート カード ミニドライバーの仕様](https://docs.microsoft.com/previous-versions/windows/hardware/design/dn631754(v=vs.85))します。
 
 Windows Vista 以降、アプリケーションは、Microsoft Cryptography API を使用できます。[次へ] Generation (CNG) のスマート カード ベースの暗号化サービス。 Windows Vista で導入された楕円曲線暗号 (ECC) の取り組みの一環として、ECC スマート カードは、新しい暗号化フレームワークでサポートされます。 アプリケーションとレガシ CAPI サブシステムを既存の Rivest-Shamir-Adleman (RSA) カードのミニドライバーと対話するインターフェイスを加えなくても動作し続けます。
 

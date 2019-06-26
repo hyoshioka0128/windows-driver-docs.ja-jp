@@ -4,12 +4,12 @@ description: DCL 命令形式
 ms.assetid: 2833fe6a-f430-4a34-936f-04e997063671
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 02abef4420f05a1a25721c3a43105939b7245e22
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0117a883bd9ac1a8bd1090b368768fdfa1d56ff4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341580"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358671"
 ---
 # <a name="dcl-instruction-format"></a>DCL 命令形式
 
@@ -40,7 +40,7 @@ DWORD トークン
 
 [変換先のパラメーターのトークン](destination-parameter-token.md)
 
-登録数を示す、[の種類を登録](https://msdn.microsoft.com/library/windows/hardware/ff569707)D3DSPR として\_サンプラーします。 これらは、このトークンで使用されているフィールドのみです。
+登録数を示す、[の種類を登録](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d9types/ne-d3d9types-_d3dshader_param_register_type)D3DSPR として\_サンプラーします。 これらは、このトークンで使用されているフィールドのみです。
 
 **入力またはテクスチャのみを登録します。**
 
@@ -82,7 +82,7 @@ DWORD トークン
 
 [変換先のパラメーターのトークン](destination-parameter-token.md)
 
-登録数を示す、[の種類を登録](https://msdn.microsoft.com/library/windows/hardware/ff569707)D3DSPR として\_入力します。 書き込みマスク フィールドでは、宣言されたコンポーネントを示します。
+登録数を示す、[の種類を登録](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d9types/ne-d3d9types-_d3dshader_param_register_type)D3DSPR として\_入力します。 書き込みマスク フィールドでは、宣言されたコンポーネントを示します。
 
 **ピクセル シェーダー 3\_0 と以降のみです。**
 
@@ -107,7 +107,7 @@ DWORD トークン
 
 [変換先のパラメーターのトークン](destination-parameter-token.md)
 
-登録数を示す、[の種類を登録](https://msdn.microsoft.com/library/windows/hardware/ff569707)D3DSPR として\_テクスチャ。 書き込みマスク フィールドでは、宣言されたコンポーネントを示します。
+登録数を示す、[の種類を登録](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d9types/ne-d3d9types-_d3dshader_param_register_type)D3DSPR として\_テクスチャ。 書き込みマスク フィールドでは、宣言されたコンポーネントを示します。
 
 **顔がのみに登録します。**
 
@@ -166,7 +166,7 @@ DWORD トークン
 
 [変換先のパラメーターのトークン](destination-parameter-token.md)
 
-登録数を示す、[の種類を登録](https://msdn.microsoft.com/library/windows/hardware/ff569707)D3DSPR として\_出力します。 コンポーネントが記述された書き込みマスク フィールドを定義します。
+登録数を示す、[の種類を登録](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d9types/ne-d3d9types-_d3dshader_param_register_type)D3DSPR として\_出力します。 コンポーネントが記述された書き込みマスク フィールドを定義します。
 
 いくつか DCL 手順では、出力を記述するには、同じレジスタのオフセットを使用できることに注意してください。 ただし、各 DCL 命令の書き込みマスク コンポーネントは、さまざまなである必要があります。 たとえば、次は頂点シェーダー 3 では有効で\_0 以降。
 

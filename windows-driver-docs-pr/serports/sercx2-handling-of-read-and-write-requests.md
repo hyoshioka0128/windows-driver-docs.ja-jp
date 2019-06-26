@@ -4,17 +4,17 @@ description: 周辺機器のドライバーは、シリアル ポートに接続
 ms.assetid: 98100680-7D27-42B7-A445-C539B2DF95AD
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e71adc20a8da60c2a600f5aa4fcc43810ab84b8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6e8e923cefffaea2f86acfdfd0e6082f58756ac5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388000"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356809"
 ---
 # <a name="sercx2-handling-of-read-and-write-requests"></a>読み取り/書き込み要求の SerCx2 処理
 
 
-周辺機器のドライバーが書き込みを送信します ([**IRP\_MJ\_書き込み**](https://msdn.microsoft.com/library/windows/hardware/ff546904)) と読み取り ([**IRP\_MJ\_読み取り** ](https://msdn.microsoft.com/library/windows/hardware/ff546883)) とポートに接続されている周辺機器のデバイスからデータを転送するシリアル コント ローラー上のポートに要求します。 SerCx2 がこれらの要求を処理する方法は、要求がタイムアウトまたはが取り消された場合でも、適切に定義されました。
+周辺機器のドライバーが書き込みを送信します ([**IRP\_MJ\_書き込み**](https://docs.microsoft.com/previous-versions/ff546904(v=vs.85))) と読み取り ([**IRP\_MJ\_読み取り** ](https://docs.microsoft.com/previous-versions/ff546883(v=vs.85))) とポートに接続されている周辺機器のデバイスからデータを転送するシリアル コント ローラー上のポートに要求します。 SerCx2 がこれらの要求を処理する方法は、要求がタイムアウトまたはが取り消された場合でも、適切に定義されました。
 
 ## <a name="cancellation-of-a-read-or-write-request"></a>読み取りまたは書き込み要求の取り消し
 
@@ -26,7 +26,7 @@ ms.locfileid: "63388000"
 ## <a name="requests-that-time-out"></a>要求がタイムアウト
 
 
-場合は、要求が処理に時間がかかる場合、読み取りまたは書き込み要求はタイムアウトすること。 ができます また、読み取り要求では、シリアル コント ローラーで受信した 2 つの連続するバイトまでの時間が最大許容時間を超えた場合にタイムアウトができます。 いずれの場合も、タイムアウト条件が検出されると、SerCx2 すぐに要求を完了状態で\_タイムアウト状態コード。 完了した要求は、読み取りまたは要求の処理中に SerCx2 によって書き込まれたバイト数を報告します。 必要に応じて、要求を送信した周辺のドライバーは、完了、部分的に完了した読み取りまたは書き込み操作を 2 番目の要求を送信するのにこの情報を使用できます。 タイムアウトの詳細については、次を参照してください。 [**シリアル\_タイムアウト**](https://msdn.microsoft.com/library/windows/hardware/hh439614)します。
+場合は、要求が処理に時間がかかる場合、読み取りまたは書き込み要求はタイムアウトすること。 ができます また、読み取り要求では、シリアル コント ローラーで受信した 2 つの連続するバイトまでの時間が最大許容時間を超えた場合にタイムアウトができます。 いずれの場合も、タイムアウト条件が検出されると、SerCx2 すぐに要求を完了状態で\_タイムアウト状態コード。 完了した要求は、読み取りまたは要求の処理中に SerCx2 によって書き込まれたバイト数を報告します。 必要に応じて、要求を送信した周辺のドライバーは、完了、部分的に完了した読み取りまたは書き込み操作を 2 番目の要求を送信するのにこの情報を使用できます。 タイムアウトの詳細については、次を参照してください。 [**シリアル\_タイムアウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddser/ns-ntddser-_serial_timeouts)します。
 
 ## <a name="impact-of-hardware-limitations"></a>ハードウェアの制限の影響
 

@@ -4,12 +4,12 @@ description: Windows Vista でのデータ転送のキャンセル
 ms.assetid: 0cdc02bf-23fe-4122-8d5f-f42c3c07da8b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c7a456ee86ca7245cb4d2823abbd24c588150588
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 975222e9333a8c05d2861cec371ac3f452b80786
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373298"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355524"
 ---
 # <a name="cancellation-of-data-transfers-in-windows-vista"></a>Windows Vista でのデータ転送のキャンセル
 
@@ -24,18 +24,18 @@ Windows Vista では、新しいインターフェイスで**IWiaTransfer** (こ
 
 アプリケーションが、転送をキャンセルする 2 つの異なる方法で、Windows Vista ドライバーが通知されることができます。
 
--   ドライバーへの呼び出しを受信するその[ **IWiaMiniDrv::drvNotifyPnPEvent** ](https://msdn.microsoft.com/library/windows/hardware/ff544998) WIA を\_イベント\_キャンセル\_IO イベント。 すべてのカーネル モードの読み取りまたは書き込み操作を使用して、重複 I/O のことをお勧めします。 この手順でのみを保証できる*即時*キャンセルします。
+-   ドライバーへの呼び出しを受信するその[ **IWiaMiniDrv::drvNotifyPnPEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvnotifypnpevent) WIA を\_イベント\_キャンセル\_IO イベント。 すべてのカーネル モードの読み取りまたは書き込み操作を使用して、重複 I/O のことをお勧めします。 この手順でのみを保証できる*即時*キャンセルします。
 
--   S\_2 つのコールバック関数から FALSE が返されます。**IWiaMiniDrvTransferCallback::GetNextStream**と[ **IWiaMiniDrvTransferCallback::SendMessage**](https://msdn.microsoft.com/library/windows/hardware/jj151552)します。
+-   S\_2 つのコールバック関数から FALSE が返されます。**IWiaMiniDrvTransferCallback::GetNextStream**と[ **IWiaMiniDrvTransferCallback::SendMessage**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrvtransfercallback-sendmessage)します。
 
-アプリケーションを呼び出すと**IWiaTransfer::Cancel**、 **IWiaMiniDrv::drvNotifyPnPEvent** WIA をドライバーにメソッドを呼び出す必要があります\_イベント\_キャンセル\_IO。 さらに、 [ **IWiaMiniDrvTransferCallback::GetNextStream** ](https://msdn.microsoft.com/library/windows/hardware/jj151551)と**IWiaMiniDrvTransferCallback::SendMessage**コールバック関数は常に返す必要があります S\_転送をキャンセルした後は FALSE です。
+アプリケーションを呼び出すと**IWiaTransfer::Cancel**、 **IWiaMiniDrv::drvNotifyPnPEvent** WIA をドライバーにメソッドを呼び出す必要があります\_イベント\_キャンセル\_IO。 さらに、 [ **IWiaMiniDrvTransferCallback::GetNextStream** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrvtransfercallback-getnextstream)と**IWiaMiniDrvTransferCallback::SendMessage**コールバック関数は常に返す必要があります S\_転送をキャンセルした後は FALSE です。
 
 場合**IWiaTransferCallback::GetNextStream** WIA を返します\_状態\_スキップ\_項目の中に、[複数項目転送](multipage-istream-transfers.md)アプリケーションがスキップしています (は、されません転送する)、現在の項目。 戻り値の S\_FALSE 静止全体の転送を取り消す必要があることを意味します。
 
 **IWiaTransfer**と**IWiaTransferCallback**インターフェイスが、Microsoft Windows SDK ドキュメントに記載されています。
 
 ## <a name="related-topics"></a>関連トピック
-[**IWiaMiniDrvTransferCallback**](https://msdn.microsoft.com/library/windows/hardware/jj151550)  
+[**IWiaMiniDrvTransferCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nn-wiamindr_lh-iwiaminidrvtransfercallback)  
 
 
 

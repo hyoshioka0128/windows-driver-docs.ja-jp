@@ -9,12 +9,12 @@ keywords:
 - 同期の WDK カーネル、割り込み
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f7c92791abf47c6b267f6a5f2e2f5719c50d77aa
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 02a7ab16c71ba6acc0625d42e128d7017278dcca
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387411"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381672"
 ---
 # <a name="using-critical-sections"></a>クリティカル セクションの使用
 
@@ -22,7 +22,7 @@ ms.locfileid: "63387411"
 
 
 
-任意のドライバーを含む、 [ *InterruptService* ](https://msdn.microsoft.com/library/windows/hardware/ff547958)ルーチンでは 1 つ必要はほとんどの場合または同期するより重要なセクションにハードウェア リソースまたはドライバーに ISR ルーチンとその他のルーチンの間でデータ アクセス.
+任意のドライバーを含む、 [ *InterruptService* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kservice_routine)ルーチンでは 1 つ必要はほとんどの場合または同期するより重要なセクションにハードウェア リソースまたはドライバーに ISR ルーチンとその他のルーチンの間でデータ アクセス.
 
 ここでは、次のトピックについて説明します。
 

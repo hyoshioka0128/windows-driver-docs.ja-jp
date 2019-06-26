@@ -4,12 +4,12 @@ description: WIA ミニドライバーのデバッグ
 ms.assetid: 6466d0db-a2f9-4b3e-aa3e-8030b243f862
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e6df7c6a5e6cb14575afc1bd1edc9aec20c871a8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: de83d900e29497ee740d7749eb35a7445d8b9855
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352686"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355195"
 ---
 # <a name="wia-minidriver-debugging"></a>WIA ミニドライバーのデバッグ
 
@@ -29,7 +29,7 @@ WIA ドライバーは、WIA のサービス プロセス内で実行されま�
 
 シンボルと、デバッガー内から他のファイルへのネットワーク アクセスが必要な場合これらでは、デバッガーの下で、WIA サービスを自動的に開始する場合に表示される可能性がありますできません。 WIA では、Microsoft Windows Server 2003 およびそれ以降のオペレーティング システム バージョンの Windows XP では、LocalSystem サービスとは、LocalService としてを実行し、ネットワークにアクセスする適切な特権がありません。 そのため、場合でも、コンピューター「確認」できるすべてのネットワーク上、サービスを実行してデバッガーできないことがありますに。 WIA サービスの詳細についてには、特権レベルの変更後、参照してください[WIA ドライバーに関するセキュリティの問題](security-issues-for-wia-drivers.md)します。
 
--   ドライバーの読み込みまたはドライバーの STI 部分の初期化中に問題が発生した場合 (たとえば中、 [ **IStiUSD::Initialize**](https://msdn.microsoft.com/library/windows/hardware/ff543824))、デバッガーがアタッチされている時間で、エラーが既に発生し、有用な情報を取得するには遅すぎます。 この問題の一般的な症状は、デバイスが表示されないで、**マイ コンピューター**フォルダーが*は*に表示、**デバイス マネージャー**フォルダー。
+-   ドライバーの読み込みまたはドライバーの STI 部分の初期化中に問題が発生した場合 (たとえば中、 [ **IStiUSD::Initialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-initialize))、デバッガーがアタッチされている時間で、エラーが既に発生し、有用な情報を取得するには遅すぎます。 この問題の一般的な症状は、デバイスが表示されないで、**マイ コンピューター**フォルダーが*は*に表示、**デバイス マネージャー**フォルダー。
 
 ### <a name="starting-the-wia-service-under-a-debugger"></a>デバッガーの下で、WIA サービスの開始
 
@@ -39,7 +39,7 @@ WIA サービスを開始すると、サービス コントロール マネー�
 
 最初に、 **ImagePath**キーは、次の文字列値に設定されます。
 
-"**%SystemRoot%\\System32\\svchost.exe -k imgsvc**"
+" **%SystemRoot%\\System32\\svchost.exe -k imgsvc**"
 
 NTSD で WIA サービスを実行するには、よう、上記の値を変更など。
 
@@ -88,6 +88,6 @@ NTSD で WIA サービスを実行するには、よう、上記の値を変更�
 
 次の文字列値。
 
-"**%SystemRoot%\\System32\\stisvc.exe -k imgsvc**"
+" **%SystemRoot%\\System32\\stisvc.exe -k imgsvc**"
 
-ここで、WIA サービスの開始時に実行*stisvc.exe*の代わりに*svchost.exe*します。 インスタンスが 1 つだけがあるため、このプロセスの検索が簡単、 *stisvc.exe*します。 アプリを確認する PID を検索する必要はありません。 したがって、たとえば、Microsoft Visual Studio を使用してドライバーを開発している場合に進んで、**デバッグの開始**下にあるメニュー項目、**ビルド** メニューのをクリックして**プロセスにアタッチしています.**、選択および*stisvc.exe*一覧にします。
+ここで、WIA サービスの開始時に実行*stisvc.exe*の代わりに*svchost.exe*します。 インスタンスが 1 つだけがあるため、このプロセスの検索が簡単、 *stisvc.exe*します。 アプリを確認する PID を検索する必要はありません。 したがって、たとえば、Microsoft Visual Studio を使用してドライバーを開発している場合に進んで、**デバッグの開始**下にあるメニュー項目、**ビルド** メニューのをクリックして**プロセスにアタッチしています.** 、選択および*stisvc.exe*一覧にします。

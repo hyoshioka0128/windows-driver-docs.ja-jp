@@ -9,12 +9,12 @@ keywords:
 - デバイスのセットアップ情報の取得
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 230312578cde427e1503f6a4b647ce43eece226f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7f176bd20c8313e2981041e9554bc3ae9737c823
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328671"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355267"
 ---
 # <a name="retrieving-device-setup-information"></a>デバイス セットアップ情報の取得
 
@@ -22,7 +22,7 @@ ms.locfileid: "63328671"
 ## <span id="retrieving_device_setup_information"></span><span id="RETRIEVING_DEVICE_SETUP_INFORMATION"></span>
 
 
-セットアップ情報をレジストリから取得するアダプターのドライバーを呼び出すことができます、 [ **PcGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff537701)関数、およびミニポート ドライバーには、ポート ドライバーを呼び出すことができます[ **IPort::GetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff536941)メソッド。
+セットアップ情報をレジストリから取得するアダプターのドライバーを呼び出すことができます、 [ **PcGetDeviceProperty** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcgetdeviceproperty)関数、およびミニポート ドライバーには、ポート ドライバーを呼び出すことができます[ **IPort::GetDeviceProperty** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iport-getdeviceproperty)メソッド。
 
 これらの呼び出しのいずれか、呼び出し元を選択します。 次のデバイスのいずれかに、デバイス プロパティのパラメーターを設定して要求するセットアップ情報の種類\_レジストリ\_ファイル Wdm.h のヘッダーからプロパティの列挙値。
 
@@ -66,7 +66,7 @@ ms.locfileid: "63328671"
 
 -   **DevicePropertyUINumber**
 
-については、DeviceProperty*Xxx*上記の値を参照してください[ **IoGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff549203)します。
+については、DeviceProperty*Xxx*上記の値を参照してください[ **IoGetDeviceProperty**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdeviceproperty)します。
 
  
 

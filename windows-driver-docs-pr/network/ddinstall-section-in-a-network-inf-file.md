@@ -8,12 +8,12 @@ keywords:
 - DDInstall セクション WDK ネットワーク
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ce4968d47102e892fcc91b476044dfd0ab473c6c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 18810cddf20c9e58bbd9b332e8ea1ef255a8cfc1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358780"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354627"
 ---
 # <a name="ddinstall-section-in-a-network-inf-file"></a>ネットワーク INF ファイル内の DDInstall セクション
 
@@ -21,7 +21,7 @@ ms.locfileid: "63358780"
 
 
 
-A *DDInstall*ネットワーク INF ファイルのセクションは、ジェネリックに基づきます[ **INF DDInstall セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547344)します。
+A *DDInstall*ネットワーク INF ファイルのセクションは、ジェネリックに基づきます[ **INF DDInstall セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)します。
 
 A *DDInstall*ネットワーク INF ファイルでセクションが次のネットワークに固有のエントリには。
 
@@ -133,7 +133,7 @@ A *DDInstall*セクションは、物理ネットワーク アダプターを含
 <thead>
 <tr class="header">
 <th align="left">BusType Entry</th>
-<th align="left">値</th>
+<th align="left">Value</th>
 </tr>
 </thead>
 <tbody>

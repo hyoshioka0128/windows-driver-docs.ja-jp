@@ -15,12 +15,12 @@ api_type:
 - LibDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: fc97c0ae362890b948f5a39fed41753ef0cd28a4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 96ab06b9b4047ad0d6529eed42f4bbf26496c8d3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63329988"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374640"
 ---
 # <a name="setbindingsupport-function"></a>SetBindingSupport 関数
 
@@ -48,7 +48,7 @@ void SetBindingSupport(
 永続的なバインディングに関連する機能の特定のセットを提供するには、HBA の機能とそのミニポート ドライバーを示すビットマップ。 このパラメーターには値の一覧は、の説明を参照して、 [HBA\_バインド\_型](hba-bind-type.md)WMI クラスの修飾子。
 
 *HBAStatus*   
-に返された場合、操作の状態を格納します。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **SetBindingSupport\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff565575)構造体。
+に返された場合、操作の状態を格納します。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **SetBindingSupport\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_setbindingsupport_out)構造体。
 
 <a name="return-value"></a>戻り値
 ------------
@@ -89,9 +89,9 @@ WMI メソッドには適用されません。
 
 [**SetBindingSupport**](setbindingsupport.md)
 
-[**SetBindingSupport\_IN**](https://msdn.microsoft.com/library/windows/hardware/ff565566)
+[**SetBindingSupport\_IN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_setbindingsupport_in)
 
-[**SetBindingSupport\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff565575)
+[**SetBindingSupport\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_setbindingsupport_out)
 
  
 

@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - SIO_WSK_SET_REMOTE_ADDRESS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: d3c0e231f85875b4730e7c0f9a57712d0b774a73
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b8fac4433823c57ee465dbbff013e6d739c54bdf
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351682"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379128"
 ---
 # <a name="siowsksetremoteaddress"></a>SIO\_WSK\_設定\_リモート\_アドレス
 
@@ -20,11 +20,11 @@ SIO\_WSK\_設定\_リモート\_アドレス ソケット I/O 制御操作によ
 
 WSK アプリケーションでは、データグラム ソケットに対して固定のリモート トランスポート アドレスを設定、ソケット経由で送信されるすべてのデータグラムは、リモートの固定のトランスポート アドレスに送信し、固定リモート トランスポート アドレスから受信したデータグラムのみが受け入れられます。
 
-WSK アプリケーションでは、代替リモート トランスポート アドレスを指定することによって、ソケットを使ってデータグラムを送信するときに、リモートの固定のトランスポート アドレスをオーバーライドする、 *RemoteAddress*パラメーターを呼び出すときに、 [ **WskSendTo** ](https://msdn.microsoft.com/library/windows/hardware/ff571148)関数。 このような状況では、データグラムがリモートの固定のトランスポート アドレスの代わりに代替リモート トランスポート アドレスに送信されます。 ただし、他のリモート転送アドレスから送信されるすべての応答は許容されません。
+WSK アプリケーションでは、代替リモート トランスポート アドレスを指定することによって、ソケットを使ってデータグラムを送信するときに、リモートの固定のトランスポート アドレスをオーバーライドする、 *RemoteAddress*パラメーターを呼び出すときに、 [ **WskSendTo** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_send_to)関数。 このような状況では、データグラムがリモートの固定のトランスポート アドレスの代わりに代替リモート トランスポート アドレスに送信されます。 ただし、他のリモート転送アドレスから送信されるすべての応答は許容されません。
 
 WSK アプリケーションでは、リモートの固定のトランスポート アドレスを指定するこのソケット I/O 制御操作を使用している場合、データグラム ソケットがローカル トランスポート アドレスにバインドされた後は、する必要があります。
 
-WSK アプリケーションを呼び出して、データグラム ソケットに対して固定のリモート トランスポート アドレスを設定する、 [ **WskControlSocket** ](https://msdn.microsoft.com/library/windows/hardware/ff571127)関数は次のパラメーター。
+WSK アプリケーションを呼び出して、データグラム ソケットに対して固定のリモート トランスポート アドレスを設定する、 [ **WskControlSocket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_control_socket)関数は次のパラメーター。
 
 <table>
 <colgroup>

@@ -4,12 +4,12 @@ description: WIA ミニドライバー インターフェイス
 ms.assetid: 6d069584-f9e1-4312-b8f2-1ef3d518faeb
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2442972a981387a344df5d1b0d11533d4748b75b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5ee0ffb88e52755355ab565fbbcef502342e0a44
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343788"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355185"
 ---
 # <a name="wia-minidriver-interfaces"></a>WIA ミニドライバー インターフェイス
 
@@ -17,7 +17,7 @@ ms.locfileid: "63343788"
 
 
 
-WIA ミニドライバーは、標準を実装する COM オブジェクト**IUnknown** (これは、Microsoft Windows SDK ドキュメントで説明されている) COM インターフェイスと WIA 固有の 2 つの追加インターフェイス。[IStiUSD](istiusd-com-interface.md)と[IWiaMiniDrv](https://msdn.microsoft.com/library/windows/hardware/ff545027)します。
+WIA ミニドライバーは、標準を実装する COM オブジェクト**IUnknown** (これは、Microsoft Windows SDK ドキュメントで説明されている) COM インターフェイスと WIA 固有の 2 つの追加インターフェイス。[IStiUSD](istiusd-com-interface.md)と[IWiaMiniDrv](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nn-wiamindr_lh-iwiaminidrv)します。
 
 ### <a name="istiusd-interface"></a>IStiUSD インターフェイス
 
