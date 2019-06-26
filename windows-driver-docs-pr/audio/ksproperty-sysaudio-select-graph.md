@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 79eb872c3761d483363c0eafd960cd662982c1c1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 340afc75cfc22e37d8a94b4fa11fd42841f773c4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332605"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360515"
 ---
 # <a name="kspropertysysaudioselectgraph"></a>KSPROPERTY\_SYSAUDIO\_選択\_グラフ
 
@@ -53,7 +53,7 @@ KSPROPERTY\_SYSAUDIO\_選択\_SysAudio が仮想のオーディオ デバイス�
 <td align="left"><p>X</p></td>
 <td align="left"><p>〇</p></td>
 <td align="left"><p>フィルター</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff538500" data-raw-source="[&lt;strong&gt;SYSAUDIO_SELECT_GRAPH&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff538500)"><strong>SYSAUDIO_SELECT_GRAPH</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-sysaudio_select_graph" data-raw-source="[&lt;strong&gt;SYSAUDIO_SELECT_GRAPH&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-sysaudio_select_graph)"><strong>SYSAUDIO_SELECT_GRAPH</strong></a></p></td>
 <td align="left"><p>なし</p></td>
 </tr>
 </tbody>
@@ -61,7 +61,7 @@ KSPROPERTY\_SYSAUDIO\_選択\_SysAudio が仮想のオーディオ デバイス�
 
  
 
-プロパティ記述子 (インスタンス データ) は、型 SYSAUDIO の構造\_選択\_プロパティ、暗証番号 (pin) の ID、およびノードの ID を示すグラフ プロパティが型の埋め込み構造体で指定された[ **KSPROPERTY**](https://msdn.microsoft.com/library/windows/hardware/ff564262)します。 暗証番号 (pin) の ID は、仮想のオーディオ デバイスをラップする KS フィルターでピン留めするファクトリを識別するインデックスです。 ノード ID は、指定した pin のデータ パス内の省略可能なノードを識別するインデックスです。 詳細については、「解説」を参照してください。
+プロパティ記述子 (インスタンス データ) は、型 SYSAUDIO の構造\_選択\_プロパティ、暗証番号 (pin) の ID、およびノードの ID を示すグラフ プロパティが型の埋め込み構造体で指定された[ **KSPROPERTY**](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))します。 暗証番号 (pin) の ID は、仮想のオーディオ デバイスをラップする KS フィルターでピン留めするファクトリを識別するインデックスです。 ノード ID は、指定した pin のデータ パス内の省略可能なノードを識別するインデックスです。 詳細については、「解説」を参照してください。
 
 このプロパティのプロパティの値 (データの操作) が定義されていません。 プロパティ値のバッファーのポインターとして指定**NULL**とそのサイズを 0 として。
 
@@ -99,9 +99,9 @@ KSPROPERTY\_SYSAUDIO\_選択\_グラフ プロパティの設定要求の要求�
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
-[**SYSAUDIO\_選択\_グラフ**](https://msdn.microsoft.com/library/windows/hardware/ff538500)
+[**SYSAUDIO\_選択\_グラフ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-sysaudio_select_graph)
 
-[**KSPROPERTY**](https://msdn.microsoft.com/library/windows/hardware/ff564262)
+[**KSPROPERTY**](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))
 
  
 

@@ -4,12 +4,12 @@ description: METransformInputStreamStateChanged イベントは、入力スト�
 ms.assetid: 734080DD-8D96-4AF3-BB13-FDA8E0398C0B
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0384c0aae1672207c752bc42c5546cc1a8081555
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 24b746febc87b7cf95bade05b77df736d0451d35
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348355"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363301"
 ---
 # <a name="metransforminputstreamstatechanged"></a>METransformInputStreamStateChanged
 
@@ -33,7 +33,7 @@ ms.locfileid: "63348355"
 ## <a name="remarks"></a>注釈
 
 
-デバイス変換 manager (DTM) を呼び出すには、このイベントに応答して、 [ **GetInputStreamPreferredState** ](https://msdn.microsoft.com/library/windows/hardware/mt797670)で指定された入力ストリームのインデックスを持つデバイス MFT します。 デバイス MFT は、優先状態とメディアの種類を返します。
+デバイス変換 manager (DTM) を呼び出すには、このイベントに応答して、 [ **GetInputStreamPreferredState** ](https://docs.microsoft.com/windows/desktop/api/mftransform/nf-mftransform-imfdevicetransform-getinputstreampreferredstate)で指定された入力ストリームのインデックスを持つデバイス MFT します。 デバイス MFT は、優先状態とメディアの種類を返します。
 
 DTM を devproxy 出力ストリームに、要求されたメディアの種類を設定し、要求されたストリームの状態に移行します。 これが成功すると、DTM はデバイス MFT 入力ストリームで同じメディアの種類を設定し、要求された状態に移行します。 します。
 

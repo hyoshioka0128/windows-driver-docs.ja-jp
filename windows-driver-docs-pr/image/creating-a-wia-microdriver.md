@@ -4,12 +4,12 @@ description: WIA マイクロドライバーの作成
 ms.assetid: 4f453569-d768-47fb-9b70-ebb51e303cf0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f77d905d77de2217b7fde09f510771391e70a92
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: da2e9d7a24388dec06503bb2027c5c3bea92ced0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63386328"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360898"
 ---
 # <a name="creating-a-wia-microdriver"></a>WIA マイクロドライバーの作成
 
@@ -27,9 +27,9 @@ ms.locfileid: "63386328"
 
 ![wia microdriver アーキテクチャのコンポーネントを示す図](images/art-6.png)
 
-WIA ベッド ドライバーは、microdriver WIA microdriver 関数を呼び出すことによって、WIA サービスからの要求を処理します。 Microdriver には、これらの各関数を実装する必要があります。 A [ **SCANINFO** ](https://msdn.microsoft.com/library/windows/hardware/ff547361)通信スキャン ウィンドウ解像度などのスキャンのパラメーターを格納および microdriver に構造体が渡されます。 WIA ベッド ドライバーは SCANINFO 構造体の値を読み取りますが、それらを書き込むことはありません。 SCANINFO メンバーを設定する microdriver の役目です。
+WIA ベッド ドライバーは、microdriver WIA microdriver 関数を呼び出すことによって、WIA サービスからの要求を処理します。 Microdriver には、これらの各関数を実装する必要があります。 A [ **SCANINFO** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamicro/ns-wiamicro-_scaninfo)通信スキャン ウィンドウ解像度などのスキャンのパラメーターを格納および microdriver に構造体が渡されます。 WIA ベッド ドライバーは SCANINFO 構造体の値を読み取りますが、それらを書き込むことはありません。 SCANINFO メンバーを設定する microdriver の役目です。
 
-Microdriver は、スキャンのすべてのパラメーターを格納する必要がありますに格納されている値に依存する必要があります、 [ **SCANINFO** ](https://msdn.microsoft.com/library/windows/hardware/ff547361)構造体。 これは、デバイスに複数のアプリケーション アクセスをサポートするために重要です。 2 つのアプリケーションは、同時に、同じデバイスでのスキャンを設定する場合を実行している microdriver の 1 つだけのコピー。 このような状況では、microdriver はアプリケーションがデバイスにアクセスしようとに応じて異なる SCANINFO 構造体が 2 つのいずれかで呼び出されます。
+Microdriver は、スキャンのすべてのパラメーターを格納する必要がありますに格納されている値に依存する必要があります、 [ **SCANINFO** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamicro/ns-wiamicro-_scaninfo)構造体。 これは、デバイスに複数のアプリケーション アクセスをサポートするために重要です。 2 つのアプリケーションは、同時に、同じデバイスでのスキャンを設定する場合を実行している microdriver の 1 つだけのコピー。 このような状況では、microdriver はアプリケーションがデバイスにアクセスしようとに応じて異なる SCANINFO 構造体が 2 つのいずれかで呼び出されます。
 
  
 

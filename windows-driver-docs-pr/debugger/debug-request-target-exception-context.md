@@ -12,17 +12,17 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e85b67bfb58caa4d2715150a92d8ff9dabd5877
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1a48ec1f66ebb7997ac545bbe88d3688fadfaf7b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63349040"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366969"
 ---
 # <a name="debugrequesttargetexceptioncontext"></a>デバッグ\_要求\_ターゲット\_例外\_コンテキスト
 
 
-デバッグ\_要求\_ターゲット\_例外\_コンテキスト[**要求**](request.md)操作は戻り、[スレッド コンテキスト](https://msdn.microsoft.com/library/windows/hardware/ff554702#thread-context)ユーザー モードのミニダンプ ファイル ストアド イベント。
+デバッグ\_要求\_ターゲット\_例外\_コンテキスト[**要求**](request.md)操作は戻り、[スレッド コンテキスト](https://docs.microsoft.com/windows-hardware/drivers/debugger/scopes-and-symbol-groups#thread-context)ユーザー モードのミニダンプ ファイル ストアド イベント。
 
 **Parameters**
 
@@ -35,14 +35,14 @@ ms.locfileid: "63349040"
 <a name="remarks"></a>注釈
 -------
 
-この情報にも返されます、*コンテキスト*パラメーターによって、 [ **GetStoredEventInformation** ](https://msdn.microsoft.com/library/windows/hardware/ff548431)メソッド。
+この情報にも返されます、*コンテキスト*パラメーターによって、 [ **GetStoredEventInformation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugcontrol4-getstoredeventinformation)メソッド。
 
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
 [**要求**](request.md)
 
-[**GetStoredEventInformation**](https://msdn.microsoft.com/library/windows/hardware/ff548431)
+[**GetStoredEventInformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugcontrol4-getstoredeventinformation)
 
  
 

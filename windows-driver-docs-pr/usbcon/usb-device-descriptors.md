@@ -3,19 +3,19 @@ Description: デバイス記述子には、全体として、USB デバイスに
 title: USB デバイス記述子
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 07b95f16db27690c9221eae598a5ca8b2e2519f4
-ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
+ms.openlocfilehash: e1d4388e67fb3a283cc2c0fd4a9708804015fc30
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65405058"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360164"
 ---
 # <a name="usb-device-descriptors"></a>USB デバイス記述子
 
 
-デバイス記述子には、全体として、USB デバイスに関する情報が含まれています。 このトピックで説明します、 [ **USB\_デバイス\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff539280)構造体であり、クライアント ドライバーがデバイスを取得する get 記述子の要求を送信する方法に関する情報が含まれています記述子。
+デバイス記述子には、全体として、USB デバイスに関する情報が含まれています。 このトピックで説明します、 [ **USB\_デバイス\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbspec/ns-usbspec-_usb_device_descriptor)構造体であり、クライアント ドライバーがデバイスを取得する get 記述子の要求を送信する方法に関する情報が含まれています記述子。
 
-すべてのユニバーサル シリアル バス (USB) デバイスは、デバイスに関連する情報を含む 1 つのデバイス記述子を提供できる必要があります。 [ **USB\_デバイス\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff539280)構造体には、デバイスの記述子がについて説明します。 Windows では、その情報を使用して、情報のさまざまなセットを派生させます。 たとえば、 **idVendor**と**idProduct**フィールドはベンダーと製品の id をそれぞれ指定します。 Windows では、これらのフィールド値を使用して、作成、*ハードウェア ID*デバイス。 特定のデバイスのハードウェア ID を表示するには、開く**デバイス マネージャー**とデバイスのプロパティを表示します。 **詳細** タブで、**ハードウェア Id**プロパティの値をハードウェア ID を示します ("USB\\*XXX*") Windows によって生成されます。 **BcdUSB**フィールドは、デバイスが準拠する USB 仕様のバージョンを示します。 たとえば、0x0200 では、デバイスが USB 2.0 仕様どおりに設計されていることを示します。 **BcdDevice**値がデバイス定義のリビジョン番号を示します。 USB ドライバー スタックを使用して**bcdDevice**、と共に**idVendor**と**idProduct**ハードウェアとデバイスの互換性 Id を生成します。 これらを表示することで識別子**デバイス マネージャー**。 デバイス記述子では、デバイスがサポートする構成の総数も示します。
+すべてのユニバーサル シリアル バス (USB) デバイスは、デバイスに関連する情報を含む 1 つのデバイス記述子を提供できる必要があります。 [ **USB\_デバイス\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbspec/ns-usbspec-_usb_device_descriptor)構造体には、デバイスの記述子がについて説明します。 Windows では、その情報を使用して、情報のさまざまなセットを派生させます。 たとえば、 **idVendor**と**idProduct**フィールドはベンダーと製品の id をそれぞれ指定します。 Windows では、これらのフィールド値を使用して、作成、*ハードウェア ID*デバイス。 特定のデバイスのハードウェア ID を表示するには、開く**デバイス マネージャー**とデバイスのプロパティを表示します。 **詳細** タブで、**ハードウェア Id**プロパティの値をハードウェア ID を示します ("USB\\*XXX*") Windows によって生成されます。 **BcdUSB**フィールドは、デバイスが準拠する USB 仕様のバージョンを示します。 たとえば、0x0200 では、デバイスが USB 2.0 仕様どおりに設計されていることを示します。 **BcdDevice**値がデバイス定義のリビジョン番号を示します。 USB ドライバー スタックを使用して**bcdDevice**、と共に**idVendor**と**idProduct**ハードウェアとデバイスの互換性 Id を生成します。 これらを表示することで識別子**デバイス マネージャー**。 デバイス記述子では、デバイスがサポートする構成の総数も示します。
 
 容量は最高速度で接続したときよりも高速容量でホスト コンピューターに、デバイスが接続されているときに、デバイスはそのデバイス記述子でさまざまな情報をレポート可能性があります。 デバイスでは、電源の状態の変更時など、接続の有効期間中にデバイス記述子に含まれる情報は変更しないでください。
 
@@ -29,11 +29,11 @@ ms.locfileid: "65405058"
 
 Windows Driver Frameworks (WDF) のクライアント ドライバーは、framework USB ターゲット デバイス オブジェクトが作成された後にのみデバイス記述子を取得できます。
 
-KMDF ドライバーは、呼び出すことで、USB ターゲット デバイス オブジェクト WDFUSBDEVICE ハンドルを取得する必要があります[ **WdfUsbTargetDeviceCreate**](https://msdn.microsoft.com/library/windows/hardware/ff550077)します。 通常、クライアント ドライバーを呼び出す**WdfUsbTargetDeviceCreate**ドライバーの[ *EvtDevicePrepareHardware* ](https://msdn.microsoft.com/library/windows/hardware/ff540880)コールバック実装します。 その後、クライアント ドライバーを呼び出す必要があります、 [ **WdfUsbTargetDeviceGetDeviceDescriptor** ](https://msdn.microsoft.com/library/windows/hardware/ff550090)メソッド。 デバイス記述子が呼び出し元が割り当てたで受信した後、呼び出しが完了したら、 [ **USB\_デバイス\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff539280)構造体。
+KMDF ドライバーは、呼び出すことで、USB ターゲット デバイス オブジェクト WDFUSBDEVICE ハンドルを取得する必要があります[ **WdfUsbTargetDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdevicecreate)します。 通常、クライアント ドライバーを呼び出す**WdfUsbTargetDeviceCreate**ドライバーの[ *EvtDevicePrepareHardware* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)コールバック実装します。 その後、クライアント ドライバーを呼び出す必要があります、 [ **WdfUsbTargetDeviceGetDeviceDescriptor** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdevicegetdevicedescriptor)メソッド。 デバイス記述子が呼び出し元が割り当てたで受信した後、呼び出しが完了したら、 [ **USB\_デバイス\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbspec/ns-usbspec-_usb_device_descriptor)構造体。
 
-UMDF ドライバーの framework デバイス オブジェクトをクエリする必要があります、 [ **IWDFUsbTargetDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff560362)ポインターと、呼び出し、 [ **IWDFUsbTargetDevice::RetrieveDescriptor**](https://msdn.microsoft.com/library/windows/hardware/ff560362_retrievedescriptor)メソッド USB を指定して\_デバイス\_記述子\_記述子の型と型。
+UMDF ドライバーの framework デバイス オブジェクトをクエリする必要があります、 [ **IWDFUsbTargetDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nn-wudfusb-iwdfusbtargetdevice)ポインターと、呼び出し、 [ **IWDFUsbTargetDevice::RetrieveDescriptor**](https://msdn.microsoft.com/library/windows/hardware/ff560362_retrievedescriptor)メソッド USB を指定して\_デバイス\_記述子\_記述子の型と型。
 
-ホストは、URB を送信することによってもデバイス記述子を取得できます。 このメソッドは、カーネル モード ドライバーにのみ適用されます。 ただし、クライアント ドライバーはドライバーが Windows Driver Model (WDM) に基づいていない限り、URB この種類の要求を送信することが必要です。 このようなドライバーを割り当てる必要があります、 [ **URB** ](https://msdn.microsoft.com/library/windows/hardware/ff538923)構造体を呼び出して、 [ **UsbBuildGetDescriptorRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff538943)マクロの形式を指定します要求の URB します。 ドライバーは、USB ドライバー スタックに URB を送信することで、要求を送信できます。 詳細については、次を参照してください。 [、URB を送信する方法](send-requests-to-the-usb-driver-stack.md)します。
+ホストは、URB を送信することによってもデバイス記述子を取得できます。 このメソッドは、カーネル モード ドライバーにのみ適用されます。 ただし、クライアント ドライバーはドライバーが Windows Driver Model (WDM) に基づいていない限り、URB この種類の要求を送信することが必要です。 このようなドライバーを割り当てる必要があります、 [ **URB** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb)構造体を呼び出して、 [ **UsbBuildGetDescriptorRequest** ](https://docs.microsoft.com/previous-versions/ff538943(v=vs.85))マクロの形式を指定します要求の URB します。 ドライバーは、USB ドライバー スタックに URB を送信することで、要求を送信できます。 詳細については、次を参照してください。 [、URB を送信する方法](send-requests-to-the-usb-driver-stack.md)します。
 
 このコード例では、適切な URB で pURB によって指し示されるバッファーの形式を UsbBuildGetDescriptorRequest 呼び出しを示します。
 

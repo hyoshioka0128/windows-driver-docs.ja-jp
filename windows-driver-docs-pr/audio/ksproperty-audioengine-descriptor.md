@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 090b206274bad3d6693b5b753163773d6b91db60
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e190aa43db72fbf22b8477029e91506bf4a19ee1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332872"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360563"
 ---
 # <a name="kspropertyaudioenginedescriptor"></a>KSPROPERTY\_AUDIOENGINE\_記述子
 
@@ -51,7 +51,7 @@ ms.locfileid: "63332872"
 <td align="left"><p>X</p></td>
 <td align="left"><p>フィルターを使用してノード</p></td>
 <td align="left"><p>KSP_NODE</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/hh450862" data-raw-source="[&lt;strong&gt;KSAUDIOENGINE_DESCRIPTOR&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/hh450862)"><strong>KSAUDIOENGINE_DESCRIPTOR</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_tagksaudioengine_descriptor" data-raw-source="[&lt;strong&gt;KSAUDIOENGINE_DESCRIPTOR&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_tagksaudioengine_descriptor)"><strong>KSAUDIOENGINE_DESCRIPTOR</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -87,7 +87,7 @@ ms.locfileid: "63332872"
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
-[**KSAUDIOENGINE\_記述子**](https://msdn.microsoft.com/library/windows/hardware/hh450862)
+[**KSAUDIOENGINE\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_tagksaudioengine_descriptor)
 
 [**KSPROPERTY\_AUDIOENGINE**](ksproperty-audioengine.md)
 

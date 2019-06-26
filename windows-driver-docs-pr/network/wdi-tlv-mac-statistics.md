@@ -6,17 +6,17 @@ ms.date: 07/18/2017
 keywords:
 - WDI_TLV_MAC_STATISTICS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 0513d4da6a4f8f1735b1768ab32d1124bf47d535
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 481a205b151feb4d9993db3f56fb419b2bc1c4f6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63385262"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377004"
 ---
 # <a name="wditlvmacstatistics"></a>WDI\_TLV\_MAC\_統計情報
 
 
-WDI\_TLV\_MAC\_統計情報が、ピア用の MAC 統計情報を含む TLV [OID\_WDI\_取得\_統計](https://msdn.microsoft.com/library/windows/hardware/dn925850)します。
+WDI\_TLV\_MAC\_統計情報が、ピア用の MAC 統計情報を含む TLV [OID\_WDI\_取得\_統計](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-get-statistics)します。
 
 ## <a name="tlv-type"></a>TLV 型
 
@@ -44,7 +44,7 @@ WDI\_TLV\_MAC\_統計情報が、ピア用の MAC 統計情報を含む TLV [OID
 </thead>
 <tbody>
 <tr class="odd">
-<td><a href="https://msdn.microsoft.com/library/windows/hardware/dn926071" data-raw-source="[&lt;strong&gt;WDI_MAC_ADDRESS&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn926071)"><strong>WDI_MAC_ADDRESS</strong></a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ns-dot11wdi-_wdi_mac_address" data-raw-source="[&lt;strong&gt;WDI_MAC_ADDRESS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ns-dot11wdi-_wdi_mac_address)"><strong>WDI_MAC_ADDRESS</strong></a></td>
 <td>これらのカウントが設定されているピアの MAC アドレス。 マルチキャストおよびブロードキャスト パケットの場合は、この値は FF-FF-FF-FF-FF-FF-FF に設定されます。</td>
 </tr>
 <tr class="even">
@@ -58,7 +58,7 @@ WDI\_TLV\_MAC\_統計情報が、ピア用の MAC 統計情報を含む TLV [OID
 <tr class="even">
 <td>UINT64</td>
 <td>Mac の破棄、IEEE 802.11 dot11ExcludeUnencrypted 管理情報ベース (MIB) オブジェクトが有効にすると、暗号化されていない受信 MPDU フレームの数。
-<p>この MIB オブジェクトに関する詳細については、次を参照してください。 <a href="https://msdn.microsoft.com/library/windows/hardware/ff569365" data-raw-source="[OID_DOT11_EXCLUDE_UNENCRYPTED](https://msdn.microsoft.com/library/windows/hardware/ff569365)">OID_DOT11_EXCLUDE_UNENCRYPTED</a>します。 MPDU フレームでは、IEEE 802.11 MAC ヘッダー内のフレーム コントロール フィールドの保護されているフレームのサブフィールドが 0 に設定されているときに暗号化されていないと見なされます。</p></td>
+<p>この MIB オブジェクトに関する詳細については、次を参照してください。 <a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-dot11-exclude-unencrypted" data-raw-source="[OID_DOT11_EXCLUDE_UNENCRYPTED](https://docs.microsoft.com/windows-hardware/drivers/network/oid-dot11-exclude-unencrypted)">OID_DOT11_EXCLUDE_UNENCRYPTED</a>します。 MPDU フレームでは、IEEE 802.11 MAC ヘッダー内のフレーム コントロール フィールドの保護されているフレームのサブフィールドが 0 に設定されているときに暗号化されていないと見なされます。</p></td>
 </tr>
 <tr class="odd">
 <td>UINT64</td>

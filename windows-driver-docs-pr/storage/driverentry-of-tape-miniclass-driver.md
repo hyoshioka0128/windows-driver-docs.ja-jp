@@ -14,12 +14,12 @@ api_type:
 - DllExport
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 8950abae153c9c5dfa43c595b2570df162188f6e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1407c3fc2fb9035754ae0b72659b3e94ac9bab4a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380679"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368260"
 ---
 # <a name="driverentry-of-tape-miniclass-driver-routine"></a>テープ Miniclass ドライバーの DriverEntry ルーチン
 
@@ -40,7 +40,7 @@ ULONG DriverEntry(
 ----------
 
 *[引数 1]* \[で\]  
-テープの miniclass ドライバーからに渡されるドライバー コンテキストへのポインター [ **TapeClassInitialize**](https://msdn.microsoft.com/library/windows/hardware/ff567619)します。 コンテキスト情報の形式は、OS 固有で移植可能なテープ miniclass ドライバーによって解釈する必要があります。
+テープの miniclass ドライバーからに渡されるドライバー コンテキストへのポインター [ **TapeClassInitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/minitape/nf-minitape-tapeclassinitialize)します。 コンテキスト情報の形式は、OS 固有で移植可能なテープ miniclass ドライバーによって解釈する必要があります。
 
 *[引数 2]* \[で\]  
 テープの miniclass ドライバーからに渡される 2 つ目のコンテキスト構造へのポインター **TapeClassInitialize**します。 コンテキスト情報の形式は、OS 固有で移植可能なテープ miniclass ドライバーによって解釈する必要があります。
@@ -57,9 +57,9 @@ ULONG DriverEntry(
 
 **TapeClassInitialize** 、必要なドライバーの初期化のテープ miniclass ドライバーの主要なタスクのほとんどを実行**DriverEntry**ルーチンは、テープの入力を割り当てたり\_INIT\_データ\_EX ドライバー固有の定数とエントリ ポイントを含む構造体。
 
-**DriverEntry**最初に呼び出す必要があります[ **TapeClassZeroMemory** ](https://msdn.microsoft.com/library/windows/hardware/ff567927)テープを消去する\_INIT\_データ\_EX 構造体。 **DriverEntry**構造内の値とポインターを設定します。
+**DriverEntry**最初に呼び出す必要があります[ **TapeClassZeroMemory** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/minitape/nf-minitape-tapeclasszeromemory)テープを消去する\_INIT\_データ\_EX 構造体。 **DriverEntry**構造内の値とポインターを設定します。
 
-**DriverEntry**呼び出し**TapeClassInitialize**し、テープのアドレスを渡します\_INIT\_データ\_EX と 2 つのポインターに渡された**DriverEntry**(*[引数 1]* と *[引数 2]*)。 **TapeClassInitialize**ドライバーの初期化が完了して、テープ miniclass ドライバーの状態を返します**DriverEntry**ルーチン。 **DriverEntry**から受信した状態を返します**TapeClassInitialize**します。
+**DriverEntry**呼び出し**TapeClassInitialize**し、テープのアドレスを渡します\_INIT\_データ\_EX と 2 つのポインターに渡された**DriverEntry**( *[引数 1]* と *[引数 2]* )。 **TapeClassInitialize**ドライバーの初期化が完了して、テープ miniclass ドライバーの状態を返します**DriverEntry**ルーチン。 **DriverEntry**から受信した状態を返します**TapeClassInitialize**します。
 
 <a name="requirements"></a>必要条件
 ------------
@@ -92,13 +92,13 @@ ULONG DriverEntry(
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
-[**テープ\_INIT\_データ\_例**](https://msdn.microsoft.com/library/windows/hardware/ff567968)
+[**テープ\_INIT\_データ\_例**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/minitape/ns-minitape-_tape_init_data_ex)
 
-[**TapeClassInitialize**](https://msdn.microsoft.com/library/windows/hardware/ff567619)
+[**TapeClassInitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/minitape/nf-minitape-tapeclassinitialize)
 
-[**TapeClassZeroMemory**](https://msdn.microsoft.com/library/windows/hardware/ff567927)
+[**TapeClassZeroMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/minitape/nf-minitape-tapeclasszeromemory)
 
-[**テープ\_状態**](https://msdn.microsoft.com/library/windows/hardware/ff567975)
+[**テープ\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/minitape/ne-minitape-_tape_status)
 
  
 

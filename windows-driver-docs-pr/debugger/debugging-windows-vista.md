@@ -4,12 +4,12 @@ description: WinDbg を使用して、Windows Vista をデバッグする、Wind
 ms.assetid: 1E4FC9D9-7F84-4F67-8FBC-4283C69AB0AC
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a2f4cae56eb5c7046b4dfcfefa4f3c0b68b6b5c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4300e7341eea3be26a8a342f06c7da31e0b95c28
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346323"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366908"
 ---
 # <a name="debugging-windows-vista"></a>Windows Vista のデバッグ
 
@@ -18,7 +18,7 @@ WinDbg を使用して、Windows Vista をデバッグするに含まれてい�
 
 SDK をインストールし、インストール中、次のように選択します。 のみのデバッグ ツールの Windows をダウンロードする場合、**ツールを Windows のデバッグ**ボックスとその他のすべてのボックスをオフにします。
 
-**注**  SDK をインストールする前に、Microsoft Visual C 2010 再頒布可能コンポーネントをアンインストールする必要があります。 詳細については、次を参照してください。 [、Microsoft サポート web サイト](https://support.microsoft.com/kb/2717426)します。
+**注**  SDK をインストールする前に、Microsoft Visual C 2010 再頒布可能コンポーネントをアンインストールする必要があります。 詳細については、次を参照してください。 [、Microsoft サポート web サイト](https://support.microsoft.com/help/2717426/windows-sdk-fails-to-install-with-return-code-5100)します。
 
  
 

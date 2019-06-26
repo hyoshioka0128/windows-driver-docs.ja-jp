@@ -6,12 +6,12 @@ keywords:
 - MIDI ストリームのデータ形式の WDK オーディオ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1edb84cf06c56e713dc9f41d3297e68a25efa447
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 99aba27b45dde07388dbeb87081b3e3b658c0096
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332346"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363234"
 ---
 # <a name="midi-stream-data-format"></a>MIDI ストリームのデータ形式
 
@@ -19,7 +19,7 @@ ms.locfileid: "63332346"
 ## <span id="midi_stream_data_format"></span><span id="MIDI_STREAM_DATA_FORMAT"></span>
 
 
-この例では、 [ **KSDATAFORMAT** ](https://msdn.microsoft.com/library/windows/hardware/ff561656) MIDI ストリームのデータ形式を記述する構造体。
+この例では、 [ **KSDATAFORMAT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksdataformat) MIDI ストリームのデータ形式を記述する構造体。
 
 ```cpp
   DataFormat.FormatSize  = sizeof(KSDATAFORMAT);

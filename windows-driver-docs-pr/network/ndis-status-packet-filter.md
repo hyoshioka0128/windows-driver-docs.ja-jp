@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - NDIS_STATUS_PACKET_FILTER ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: f5d9922ba3eab75edcfab51dcc1ac9203987b45d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9b4575a2c0a3aadcf3e00e122f942c0925ff8856
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63386221"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368547"
 ---
 # <a name="ndisstatuspacketfilter"></a>NDIS\_状態\_パケット\_フィルター
 
@@ -25,9 +25,9 @@ NDIS は NDIS は、NDIS を生成するときに、パケット フィルター
 
 NDIS フィルター ドライバーでは、NDIS を生成できますも\_状態\_パケット\_フィルター状態を示す値。
 
-NDIS フィルター型フラグのビットごとの OR を提供する、 **StatusBuffer**のメンバー、 [ **NDIS\_状態\_INDICATION** ](https://msdn.microsoft.com/library/windows/hardware/ff567373)構造体。 フィルターの型のフラグの一覧は、次を参照してください。、 [OID\_GEN\_現在\_パケット\_フィルター](https://msdn.microsoft.com/library/windows/hardware/ff569575) OID。 パケット フィルターの詳細については、次を参照してください。 [OID\_GEN\_サポートされている\_パケット\_フィルター](https://msdn.microsoft.com/library/windows/hardware/ff569643)します。
+NDIS フィルター型フラグのビットごとの OR を提供する、 **StatusBuffer**のメンバー、 [ **NDIS\_状態\_INDICATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)構造体。 フィルターの型のフラグの一覧は、次を参照してください。、 [OID\_GEN\_現在\_パケット\_フィルター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-current-packet-filter) OID。 パケット フィルターの詳細については、次を参照してください。 [OID\_GEN\_サポートされている\_パケット\_フィルター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-supported-packet-filters)します。
 
-**StatusBufferSize**のメンバー、 [ **NDIS\_状態\_INDICATION** ](https://msdn.microsoft.com/library/windows/hardware/ff567373) sizeof(ULONG) に構造体が設定されています。
+**StatusBufferSize**のメンバー、 [ **NDIS\_状態\_INDICATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication) sizeof(ULONG) に構造体が設定されています。
 
 <a name="requirements"></a>要件
 ------------
@@ -52,11 +52,11 @@ NDIS フィルター型フラグのビットごとの OR を提供する、 **St
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_状態\_を示す値**](https://msdn.microsoft.com/library/windows/hardware/ff567373)
+[**NDIS\_状態\_を示す値**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)
 
-[OID\_GEN\_現在\_パケット\_フィルター](https://msdn.microsoft.com/library/windows/hardware/ff569575)
+[OID\_GEN\_現在\_パケット\_フィルター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-current-packet-filter)
 
-[OID\_GEN\_サポートされている\_パケット\_フィルター](https://msdn.microsoft.com/library/windows/hardware/ff569643)
+[OID\_GEN\_サポートされている\_パケット\_フィルター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-supported-packet-filters)
 
  
 

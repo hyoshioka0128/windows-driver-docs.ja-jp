@@ -4,12 +4,12 @@ description: グラフィックス メモリの数の取得
 ms.assetid: ec704093-ad9a-4717-8e9e-537a2848b1c7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d2af0b2d0d88f7f1b1761d47ea97b927afcc1b1f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ef4b5c3755b6350888e2d2c93d4e0fe64482b8a3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383210"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365667"
 ---
 # <a name="retrieving-graphics-memory-numbers"></a>グラフィックス メモリの数の取得
 
@@ -42,7 +42,7 @@ ms.locfileid: "63383210"
     }
     ```
 
-2.  アプリケーションは新しい DirectX 10 のバージョンを使用した後、ディスプレイ ドライバー モデルが、WDDM があると判断した場合、アプリケーション、グラフィックス メモリの数値を取得する Api。 アプリケーションは、次のグラフィックス メモリの数値を取得[ **DXGI\_アダプター\_DESC** ](https://msdn.microsoft.com/library/windows/desktop/bb173058) Dxgi.h に存在し、DirectX に含まれているデータ構造ソフトウェア開発キット (SDK)。
+2.  アプリケーションは新しい DirectX 10 のバージョンを使用した後、ディスプレイ ドライバー モデルが、WDDM があると判断した場合、アプリケーション、グラフィックス メモリの数値を取得する Api。 アプリケーションは、次のグラフィックス メモリの数値を取得[ **DXGI\_アダプター\_DESC** ](https://docs.microsoft.com/windows/desktop/api/dxgi/ns-dxgi-dxgi_adapter_desc) Dxgi.h に存在し、DirectX に含まれているデータ構造ソフトウェア開発キット (SDK)。
     ```cpp
     typedef struct DXGI_ADAPTER_DESC {
         WCHAR Description[ 128 ];

@@ -11,17 +11,17 @@ keywords:
 - エラー ソース WDK を有効にします。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6dc24927a76845f5a7db39f1cfb3e4521d8eea95
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c791344a61b3854be1a31937249ef8d65db6ae9d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354480"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362593"
 ---
 # <a name="enabling-an-error-source"></a>エラー ソースを有効にする
 
 
-ユーザー モード アプリケーションを有効にすることができます、[エラー ソース](hardware-errors-and-error-sources.md)呼び出すことによって、 [ **WHEAErrorSourceMethods::EnableErrorSourceRtn** ](https://msdn.microsoft.com/library/windows/hardware/ff559525)メソッド。
+ユーザー モード アプリケーションを有効にすることができます、[エラー ソース](hardware-errors-and-error-sources.md)呼び出すことによって、 [ **WHEAErrorSourceMethods::EnableErrorSourceRtn** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_whea/)メソッド。
 
 次のコード例では、エラーのソースを有効にする方法を示します。
 
@@ -124,7 +124,7 @@ pClass->Release();
 pOutParameters->Release();
 ```
 
-ユーザー モード アプリケーションを無効にすることができます、[エラー ソース](hardware-errors-and-error-sources.md)呼び出すことによって、 [ **WHEAErrorSourceMethods::DisableErrorSourceRtn** ](https://msdn.microsoft.com/library/windows/hardware/ff559523)メソッド。 エラーのソースを無効にする方法の詳細については、次を参照してください。 [、エラーのソースを無効にする](disabling-an-error-source.md)します。
+ユーザー モード アプリケーションを無効にすることができます、[エラー ソース](hardware-errors-and-error-sources.md)呼び出すことによって、 [ **WHEAErrorSourceMethods::DisableErrorSourceRtn** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_whea/)メソッド。 エラーのソースを無効にする方法の詳細については、次を参照してください。 [、エラーのソースを無効にする](disabling-an-error-source.md)します。
 
  
 

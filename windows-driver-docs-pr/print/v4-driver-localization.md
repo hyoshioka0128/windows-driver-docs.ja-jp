@@ -4,19 +4,19 @@ description: Windows 8 は、プリンターの拡張機能と UWP デバイス 
 ms.assetid: 5C587AF2-C51E-4728-A214-7FC1F8A6E445
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 31cffd917fad5cda53ba8ad4de2619720ee9bd32
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e06e28be29d29329e15511be1b09387f9f26635e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358582"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362720"
 ---
 # <a name="v4-printer-driver-localization"></a>V4 プリンター ドライバー ローカライズ
 
 
 Windows 8 は、プリンターの拡張機能と UWP デバイス アプリの開発をサポートする標準的なローカライズされた表示文字列を提供しています。
 
-新しいを通じて提供されます。 これらの標準的なローカライズされた表示文字列[ **IPrintSchemaCapabilities** ](https://msdn.microsoft.com/library/windows/hardware/hh451256)一部の機能とその関連する標準的なオプションをサポートするオブジェクト。 次の表は、文字列の表示機能を Windows 8 は、その標準にローカライズできます。
+新しいを通じて提供されます。 これらの標準的なローカライズされた表示文字列[ **IPrintSchemaCapabilities** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprintschemacapabilities)一部の機能とその関連する標準的なオプションをサポートするオブジェクト。 次の表は、文字列の表示機能を Windows 8 は、その標準にローカライズできます。
 
 <table>
 <colgroup>
@@ -96,7 +96,7 @@ Windows 8 は、プリンターの拡張機能と UWP デバイス アプリの�
 
 表示名は、別のユーザー インターフェイスと Api の間で異なります。 次の 3 つのフローチャートを使用して、特定のシナリオで想定されるローカリゼーション動作の概要を参照してください。
 
-次のフローチャート、予想されるローカリゼーションは動作を示します UWP アプリで、 [ **IPrintSchemaFeature** ](https://msdn.microsoft.com/library/windows/hardware/hh451284)と[ **IPrintSchemaOption**](https://msdn.microsoft.com/library/windows/hardware/hh451335)オブジェクトのファミリです。
+次のフローチャート、予想されるローカリゼーションは動作を示します UWP アプリで、 [ **IPrintSchemaFeature** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprintschemafeature)と[ **IPrintSchemaOption**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprintschemaoption)オブジェクトのファミリです。
 
 ![Windows アプリ、iprintschemafeature または iprintschemaoption ローカリゼーション動作のフローチャート](images/locstringmodern.png)
 
@@ -149,9 +149,9 @@ o JobHolePunch、DocumentHolePunch o JobStapleAllDocuments、DocumentStaple o Jo
 PPD ベースのドライバーは、リソース Dll をサポートしていません。 その結果、複数の PPD ファイルを提供するために必要な場合があります。 PPD 構成ファイルを使用する v4 印刷ドライバーがロケールごとに 1 つ PPD ファイルにこのトピックで説明されたテクニックを使用することをお勧めします。
 
 ## <a name="related-topics"></a>関連トピック
-[**IPrintSchemaCapabilities**](https://msdn.microsoft.com/library/windows/hardware/hh451256)  
-[**IPrintSchemaFeature**](https://msdn.microsoft.com/library/windows/hardware/hh451284)  
-[**IPrintSchemaOption**](https://msdn.microsoft.com/library/windows/hardware/hh451335)  
+[**IPrintSchemaCapabilities**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprintschemacapabilities)  
+[**IPrintSchemaFeature**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprintschemafeature)  
+[**IPrintSchemaOption**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprintschemaoption)  
 [GPD PPD ベースの機能の説明の変更](gpd-ppd-based-feature-description-changes.md)  
 [標準的な機能](standard-features.md)  
 

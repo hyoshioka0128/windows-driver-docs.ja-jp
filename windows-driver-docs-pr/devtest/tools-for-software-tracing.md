@@ -12,12 +12,12 @@ keywords:
 - トレース ツールを WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ea87821206a6aba081bd95a836042b86c515328
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a24dca714db3c9fb13460039f7a9ab673b44265a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339732"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360910"
 ---
 # <a name="tools-for-software-tracing"></a>ソフトウェア トレース用のツール
 
@@ -85,9 +85,9 @@ Windows ソフトウェア トレース プリプロセッサ (WPP) マクロを
 
 ドライバーの使用、カーネル モードの ETW API については、次を参照してください。 [Event Tracing for Windows (ETW)](event-tracing-for-windows--etw-.md)します。
 
-Windows Driver Model (WDM) に Windows Management Instrumentation (WMI) の拡張機能を使用して、ソフトウェア トレースのドライバーを追加する方法については、次を参照してください。 [WMI Event Tracing](https://msdn.microsoft.com/library/windows/hardware/ff566350)します。
+Windows Driver Model (WDM) に Windows Management Instrumentation (WMI) の拡張機能を使用して、ソフトウェア トレースのドライバーを追加する方法については、次を参照してください。 [WMI Event Tracing](https://docs.microsoft.com/windows-hardware/drivers/kernel/wmi-event-tracing)します。
 
-**注**   ETW と WPP カーネル モード ドライバーとユーザー モード アプリケーションのほとんどの種類をサポートします。 ただし、ETW と WPP は、ドライバー、ミニポート ドライバーなどの特定の種類では使用する型を使用します。 特定のドライバーの種類がサポートされているかどうかを判断する基本的な WPP にマクロを追加、ドライバーなど[WPP\_INIT\_トレース](https://msdn.microsoft.com/library/windows/hardware/ff556191)と[WPP\_クリーンアップ](https://msdn.microsoft.com/library/windows/hardware/ff556179)します。 使用される型が定義されていないため、コードがコンパイルできない場合は、ETW と WPP がドライバーの種類をサポートできません。 
+**注**   ETW と WPP カーネル モード ドライバーとユーザー モード アプリケーションのほとんどの種類をサポートします。 ただし、ETW と WPP は、ドライバー、ミニポート ドライバーなどの特定の種類では使用する型を使用します。 特定のドライバーの種類がサポートされているかどうかを判断する基本的な WPP にマクロを追加、ドライバーなど[WPP\_INIT\_トレース](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556191(v=vs.85))と[WPP\_クリーンアップ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556179(v=vs.85))します。 使用される型が定義されていないため、コードがコンパイルできない場合は、ETW と WPP がドライバーの種類をサポートできません。 
 
 ## <a name="whats-in-this-section"></a>このセクションでは新機能
 
@@ -117,4 +117,4 @@ Windows Driver Model (WDM) に Windows Management Instrumentation (WMI) の拡�
 
 [カーネル モードのパフォーマンスの監視](kernel-mode-performance-monitoring.md)
 
-概念的な情報は[イベントのトレースに関する](https://msdn.microsoft.com/library/windows/desktop/aa363668)、Microsoft Windows SDK のドキュメントを参照してください。 
+概念的な情報は[イベントのトレースに関する](https://docs.microsoft.com/windows/desktop/ETW/about-event-tracing)、Microsoft Windows SDK のドキュメントを参照してください。 

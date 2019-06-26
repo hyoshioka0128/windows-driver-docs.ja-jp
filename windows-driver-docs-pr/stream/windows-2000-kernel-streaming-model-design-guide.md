@@ -10,12 +10,12 @@ keywords:
 - カーネル ストリーミング モデル WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a463708fe04dbb3758adcff45c7cb9380cec4059
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a134bfee5429b542825c40f57a980921c55f219e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327402"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385353"
 ---
 # <a name="windows-2000-kernel-streaming-model-design-guide"></a>Windows 2000 カーネル ストリーミング モデル設計ガイド
 
@@ -25,11 +25,11 @@ ms.locfileid: "63327402"
 
 次のセクションでは、Windows 2000 カーネル ストリーミング モデルについて説明します。
 
-[ミニドライバーのストリーミング](https://msdn.microsoft.com/library/windows/hardware/ff568275)
+[ミニドライバーのストリーミング](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_stream/index)
 
 [USBCAMD ミニドライバー ライブラリ](usbcamd-minidriver-library.md)
 
-[DVD デコーダー ミニドライバー](https://msdn.microsoft.com/library/windows/hardware/ff558742)
+[DVD デコーダー ミニドライバー](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_stream/index)
 
 [カーネルのストリーミング](kernel-streaming.md)
 

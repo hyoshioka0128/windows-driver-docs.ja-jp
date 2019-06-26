@@ -12,19 +12,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 80a06858183ca571bc5fafe2bf3802855a3a2ad1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5d408b1b68326718859f0f24555117748aa6bfe8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352594"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362138"
 ---
 # <a name="bug-check-0x16b-clustercsvclusterwatchdoglivedump"></a>バグ チェック 0x16B:クラスター\_CSV\_クラスター\_ウォッチドッグ\_LIVEDUMP
 
 クラスター\_CSV\_クラスター\_ウォッチドッグ\_LIVEDUMP バグ チェックが 0x0000016B の値を持ちます。 これは、クラスター サービスのユーザー モードのウォッチドッグでスレッドが長時間進行を行われていないことが検出されたことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 
@@ -53,7 +53,7 @@ ms.locfileid: "63352594"
 ## <a name="see-also"></a>関連項目
 ----------
 
-[使用してライブ ダンプ (ブログ) のトラブルシューティングがハングします。](https://blogs.msdn.microsoft.com/clustering/2016/03/02/troubleshooting-hangs-using-live-dump/)
+[使用してライブ ダンプ (ブログ) のトラブルシューティングがハングします。](https://techcommunity.microsoft.com/t5/Failover-Clustering/bg-p/FailoverClustering)
 
 [バグチェック コード リファレンス](bug-check-code-reference2.md)
 

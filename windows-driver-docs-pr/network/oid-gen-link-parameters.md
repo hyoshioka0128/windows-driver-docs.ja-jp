@@ -5,12 +5,12 @@ ms.assetid: 6a8ee5b1-ac68-424f-b749-45b085ca1d75
 ms.date: 08/08/2017
 keywords: -OID_GEN_LINK_PARAMETERS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 18fac22d61a6ce300cb234cc680e93117e1d1bcc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1d4ddf0d0f5a3132cf6365dc1edd8a17e142a92f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375686"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369102"
 ---
 # <a name="oidgenlinkparameters"></a>OID\_GEN\_リンク\_パラメーター
 
@@ -44,7 +44,7 @@ NDIS\_リンク\_パラメーター構造は次のように定義されます。
 この構造体には、次のメンバーが含まれています。
 
 <a href="" id="header"></a>**ヘッダー**  
-[ **NDIS\_オブジェクト\_ヘッダー** ](https://msdn.microsoft.com/library/windows/hardware/ff566588) NDIS 構造\_リンク\_パラメーター構造体。 設定、**型**、構造体のメンバーを**ヘッダー**を使用する NDIS\_オブジェクト\_型\_既定では、**リビジョン**NDIS メンバー\_リンク\_パラメーター\_リビジョン\_1、および**サイズ**NDIS メンバー\_SIZEOF\_リンク\_パラメーター\_リビジョン\_1。
+[ **NDIS\_オブジェクト\_ヘッダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_object_header) NDIS 構造\_リンク\_パラメーター構造体。 設定、**型**、構造体のメンバーを**ヘッダー**を使用する NDIS\_オブジェクト\_型\_既定では、**リビジョン**NDIS メンバー\_リンク\_パラメーター\_リビジョン\_1、および**サイズ**NDIS メンバー\_SIZEOF\_リンク\_パラメーター\_リビジョン\_1。
 
 <a href="" id="mediaduplexstate"></a>**MediaDuplexState**  
 メディアの双方向状態。 この値は、によって返される値と同じ、 [OID\_GEN\_メディア\_双方向\_状態](oid-gen-media-duplex-state.md)OID。
@@ -92,9 +92,9 @@ IEEE 802.3 pause フレームのサポートの種類。 このメンバーは�
 
 
 
-OID のためのミニポート アダプターのリンクの状態が変更された場合\_GEN\_リンク\_パラメーターが要求を設定、ミニポート ドライバーを生成する必要があります、 [ **NDIS\_状態\_リンク\_状態**](https://msdn.microsoft.com/library/windows/hardware/ff567391) NDIS と新しいリンクの状態の上にあるドライバーを通知する状態を示す値。
+OID のためのミニポート アダプターのリンクの状態が変更された場合\_GEN\_リンク\_パラメーターが要求を設定、ミニポート ドライバーを生成する必要があります、 [ **NDIS\_状態\_リンク\_状態**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-link-state) NDIS と新しいリンクの状態の上にあるドライバーを通知する状態を示す値。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -113,9 +113,9 @@ OID のためのミニポート アダプターのリンクの状態が変更さ
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_オブジェクト\_ヘッダー**](https://msdn.microsoft.com/library/windows/hardware/ff566588)
+[**NDIS\_オブジェクト\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_object_header)
 
-[**NDIS\_状態\_リンク\_状態**](https://msdn.microsoft.com/library/windows/hardware/ff567391)
+[**NDIS\_状態\_リンク\_状態**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-link-state)
 
 [OID\_GEN\_メディア\_双方向\_状態](oid-gen-media-duplex-state.md)
 

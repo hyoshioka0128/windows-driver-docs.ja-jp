@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 364579feb88b0e98ce28825cba30b74a775145be
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b4e42b606817d8f509635e70a940c9b499d249ad
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379954"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376357"
 ---
 # <a name="kspropertystreamrate"></a>KSPROPERTY\_ストリーム\_率
 
@@ -54,7 +54,7 @@ KSPROPERTY\_ストリーム\_レート プロパティと連携する[ **KSPROPE
 <td><p>〇</p></td>
 <td><p>Pin</p></td>
 <td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff566752" data-raw-source="[&lt;strong&gt;KSRATE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566752)"><strong>KSRATE</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksrate" data-raw-source="[&lt;strong&gt;KSRATE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksrate)"><strong>KSRATE</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -70,7 +70,7 @@ Pin を再サンプリングを使用してデータの間隔を変更できま�
 
 プロパティを読み取るには、現在の速度とセグメントが返されます。 新しいセグメントのレートを設定すると、現在速度設定が置き換えられます。 この方法で高速順方向の要求を停止を行う要求レートの設定は 1.0 で、常に受け入れられる必要があります。 指定したレートで取得できない場合、pin は最適設定を実行する代わりに要求を拒否できます。
 
-レートの設定とクエリの両方を使用して、 [ **KSRATE** ](https://msdn.microsoft.com/library/windows/hardware/ff566752)プレゼンテーションの開始、期間、および速度を指定する構造体。 レートの変化はでのみ実行される一時停止または実行の状態および他の状態を変更した後に停止されます。 料金の変更は、パーセンテージまたは公称 1.0 速度を調整する、暗証番号 (pin) があり、同じ形式で返される現在の設定を によって指定されます。
+レートの設定とクエリの両方を使用して、 [ **KSRATE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksrate)プレゼンテーションの開始、期間、および速度を指定する構造体。 レートの変化はでのみ実行される一時停止または実行の状態および他の状態を変更した後に停止されます。 料金の変更は、パーセンテージまたは公称 1.0 速度を調整する、暗証番号 (pin) があり、同じ形式で返される現在の設定を によって指定されます。
 
 このプロパティは、インターフェイスを翻訳するも使用する必要があり、時間単位が前のプロパティで指定し、レートの変化がサポートされていない場合でも、変更、ピンの間のインターフェイス フィルターに実装する必要があります。 KSINTERFACE をサポートする、フィルターなど、\_標準\_1 つ上の位置に固定して KSINTERFACE に変換されます\_標準\_トポロジによって関連するもう 1 つの pin でのストリーミングにレートの変化を使用することはできません。 フィルターできる必要がありますを pin といずれかのインターフェイスのいずれかの変更要求を実行し、独自のインターフェイスと単位を変更も、料金は変更されません。
 
@@ -97,7 +97,7 @@ Pin を再サンプリングを使用してデータの間隔を変更できま�
 
 [**KSPROPERTY\_ストリーム\_RATECAPABILITY**](ksproperty-stream-ratecapability.md)
 
-[**KSRATE**](https://msdn.microsoft.com/library/windows/hardware/ff566752)
+[**KSRATE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksrate)
 
  
 

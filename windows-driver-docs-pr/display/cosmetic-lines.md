@@ -10,12 +10,12 @@ keywords:
 - 表面的な行 WDK GDI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6dfe54234eba20470d04b46666640ca82c7d19fa
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 14f4f4dd2bab779eb061f6e4524933c30e80019a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390031"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370240"
 ---
 # <a name="cosmetic-lines"></a>コスメティック線
 
@@ -92,7 +92,7 @@ A*表面的な*行が 1 ピクセル幅では常に、単色ブラシを使用�
 
 ![表面的な行のダイヤモンドの規則を示す図](images/102-01b.png)
 
-表面的な行を表示するため、 [ **DrvStrokePath** ](https://msdn.microsoft.com/library/windows/hardware/ff556316)関数が GIQ ひし形の規則に従います。 [ **DrvLineTo** ](https://msdn.microsoft.com/library/windows/hardware/ff556245)関数は、Microsoft Win32 にアプリケーション呼び出しの最適化としてドライバーを提供できる省略可能なエントリ ポイント**LineTo**関数。 **DrvLineTo**よりも簡単です**DrvStrokePath**整数エンドポイントと表面的な実線のみをサポートしているためです。
+表面的な行を表示するため、 [ **DrvStrokePath** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvstrokepath)関数が GIQ ひし形の規則に従います。 [ **DrvLineTo** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvlineto)関数は、Microsoft Win32 にアプリケーション呼び出しの最適化としてドライバーを提供できる省略可能なエントリ ポイント**LineTo**関数。 **DrvLineTo**よりも簡単です**DrvStrokePath**整数エンドポイントと表面的な実線のみをサポートしているためです。
 
 R2 をサポートするラスター デバイス\_混合モードでは、その逆に、コピー先の色を変更するバイナリのラスター オペレーション、ドライバーは、正確なレンダリングを使用する必要があります。 レンダリングは、GDI とドライバーの両方でレンダリングを必要とするデバイスの正確な必要があります。 GDI は一部のビットマップを描画します。 デバイスが含まれ、ドライバーは、(、ピクセルが小さすぎて表示違いがある) 場合を除き、他の面で描画します。 これには、複雑なクリッピングを処理する GDI を要求するデバイスも含まれています。
 

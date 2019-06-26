@@ -8,12 +8,12 @@ keywords:
 - SRB_FUNCTION_RESET_DEVICE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 156f4635de920238e7305c7ef25b854c369c91c5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 28611b80631ab5b2bc0319b6f8bbd1a0278603fe
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383114"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372333"
 ---
 # <a name="handling-srbfunctionresetdevice"></a>処理 SRB\_関数\_リセット\_デバイス
 
@@ -23,11 +23,11 @@ ms.locfileid: "63383114"
 
 ScsiPort ドライバーは、不要になった、ミニポート ドライバーをこの SRB を送信します。 Storport ミニポート ドライバーのみがこの SRB を処理する必要があります。
 
-HBA というように、ターゲット デバイスをリセットする機能がある場合[ *HwScsiFindAdapter* ](https://msdn.microsoft.com/library/windows/hardware/ff557300)設定、 [**ポート\_構成\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff563900)、ポート ドライバーがリセット未完了の要求がタイムアウトしたときにデバイスを要求します。
+HBA というように、ターゲット デバイスをリセットする機能がある場合[ *HwScsiFindAdapter* ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557300(v=vs.85))設定、 [**ポート\_構成\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/ns-srb-_port_configuration_information)、ポート ドライバーがリセット未完了の要求がタイムアウトしたときにデバイスを要求します。
 
 システムのポート ドライバー呼び出し、ミニポート ドライバーの*HwScsiStartIo*ルーチンを SRB、**関数**SRB にメンバーが設定されている\_関数\_リセット\_デバイスです。 ミニポート ドライバーは、要求は、デバイスのリセット要求を受信すると、デバイスの完了を完了します。
 
-デバイスのリセットが失敗したか、タイムアウト、またはポート ドライバーが待機しているときにタイムアウトが発生した場合、 **NextRequest**通知、ポートのドライバー呼び出し[ *HwScsiResetBus* ](https://msdn.microsoft.com/library/windows/hardware/ff557318).
+デバイスのリセットが失敗したか、タイムアウト、またはポート ドライバーが待機しているときにタイムアウトが発生した場合、 **NextRequest**通知、ポートのドライバー呼び出し[ *HwScsiResetBus* ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557318(v=vs.85)).
 
  
 

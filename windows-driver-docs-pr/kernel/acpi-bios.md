@@ -6,12 +6,12 @@ keywords:
 - ACPI BIOS WDK 電源管理
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3bacde07581ed79ca399e0c7386ef337c9653f2f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c2e62f38b0068eeb2a52e5e2fc176295a07e0461
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339130"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363460"
 ---
 # <a name="acpi-bios"></a>ACPI BIOS
 
@@ -25,5 +25,5 @@ Windows Server 2003、Windows XP、および Windows 2000、ACPI BIOS が 1999 �
 
 デバイス マネージャーは、個々 のコンピューターが ACPI をサポートしているかどうかを示します。 ドライバー情報の確認、**コンピューター**デバイス カテゴリ。
 
-ACPI の詳細については、次を参照してください。、 [ACPI 5.0 仕様](https://www.uefi.org/specifications)します。
+ACPI の詳細については、次を参照してください。、 [ACPI 5.0 仕様](https://uefi.org/specifications)します。
 

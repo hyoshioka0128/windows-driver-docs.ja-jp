@@ -11,12 +11,12 @@ keywords:
 - セッション
 ms.date: 08/02/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 6492c81235a35617a06c52dc8d7982d0789b99c9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bcf6b33d78464be58fc7598febd4aa554f5e2e76
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376101"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367034"
 ---
 # <a name="changing-contexts"></a>コンテキストの変更
 
@@ -44,7 +44,7 @@ ms.locfileid: "63376101"
 
 [ **! セッション**](-session.md)拡張機能は、すべてのログオン セッションを表示します。 または、現在のセッション コンテキストを変更します。
 
-セッション コンテキストを使って、 [ **! sprocess** ](-sprocess.md)と[ **! spoolused** ](https://msdn.microsoft.com/library/windows/hardware/ff565361) 「-2」としてセッション数が入力したときに拡張機能。
+セッション コンテキストを使って、 [ **! sprocess** ](-sprocess.md)と[ **! spoolused** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/kernel-mode-extensions) 「-2」としてセッション数が入力したときに拡張機能。
 
 セッション コンテキストが変更されたときにプロセスのコンテキストは、アクティブなプロセスにセッションに自動的に変更されます。
 
@@ -70,21 +70,21 @@ ms.locfileid: "63376101"
 
 次のコマンドのいずれかを使用してユーザー モードのデバッグを実行している間、現在のスレッド以外の値にレジスタのコンテキストを変更できます。
 
-[**.cxr (コンテキスト レコードの表示)**](-cxr--display-context-record-.md)
+[ **.cxr (コンテキスト レコードの表示)** ](-cxr--display-context-record-.md)
 
-[**.ecxr (例外コンテキスト レコードの表示)**](-ecxr--display-exception-context-record-.md)
+[ **.ecxr (例外コンテキスト レコードの表示)** ](-ecxr--display-exception-context-record-.md)
 
 カーネル モードのデバッグは、中には、次のコマンドを含むデバッガー コマンドを使用して、レジスタのコンテキストを制御できます。
 
-[**.thread (レジスタのコンテキストの設定)**](-thread--set-register-context-.md)
+[ **.thread (レジスタのコンテキストの設定)** ](-thread--set-register-context-.md)
 
-[**.cxr (コンテキスト レコードの表示)**](-cxr--display-context-record-.md)
+[ **.cxr (コンテキスト レコードの表示)** ](-cxr--display-context-record-.md)
 
-[**.trap (表示トラップ フレーム)**](-trap--display-trap-frame-.md)
+[ **.trap (表示トラップ フレーム)** ](-trap--display-trap-frame-.md)
 
 これらのコマンドでは、CPU レジスタの値は変更されません。 代わりに、デバッガーは、メモリ内の場所から指定されたレジスタのコンテキストを取得します。 実際には、デバッガーはのみを取得できます、*保存*レジスタの値。 (その他の値は、動的に設定されは保存されません。 保存されている値はスタック トレースを再作成するには不十分です。
 
-レジスタの値をなどを使用するすべてのコマンド新しい登録コンテキストが使用されるレジスタのコンテキストを設定すると、 [ **k (Display Stack Backtrace)** ](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)と[ **r (レジスタ)**](r--registers-.md).
+レジスタの値をなどを使用するすべてのコマンド新しい登録コンテキストが使用されるレジスタのコンテキストを設定すると、 [ **k (Display Stack Backtrace)** ](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)と[ **r (レジスタ)** ](r--registers-.md).
 
 ただし、マルチプロセッサ コンピューターをデバッグするときにいくつかのコマンドを有効にするプロセッサを指定することです。 (このようなコマンドの詳細については、次を参照してください[マルチプロセッサ構文](multiprocessor-syntax.md)。)。コマンド プロセッサを指定する場合、コマンドは場合でも、指定されたプロセッサは、現在アクティブなプロセッサ、レジスタの現在のコンテキストではなく、指定されたプロセッサ上のアクティブなスレッドの登録コンテキストを使用します。
 

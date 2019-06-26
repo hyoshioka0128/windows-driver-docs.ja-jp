@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 00bb1b44085a441f0c79fbaf9478a73b46612466
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6363505d37a72ddd1f3bbcc874f0cc160381a611
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370332"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365900"
 ---
 # <a name="fsrtlexitfilesystem-function"></a>FsRtlExitFileSystem 関数
 
@@ -53,11 +53,11 @@ VOID FsRtlExitFileSystem(
 
 すべての成功した呼び出し[ **FsRtlEnterFileSystem** ](fsrtlenterfilesystem.md)後続の呼び出しによって照合される必要があります**FsRtlExitFileSystem**します。
 
-ローカル ファイル システムおよびネットワーク リダイレクターとは異なり、ファイル システム フィルター ドライバー、通常カーネル Apc の配信を無効にする必要がありますしないで (呼び出して[ **FsRtlEnterFileSystem** ](fsrtlenterfilesystem.md)または[**KeEnterCriticalRegion** ](https://msdn.microsoft.com/library/windows/hardware/ff552021) IRQL APC を発生させることによって、または\_レベル) の呼び出しを通して[**保留**](https://msdn.microsoft.com/library/windows/hardware/ff548336)します。
+ローカル ファイル システムおよびネットワーク リダイレクターとは異なり、ファイル システム フィルター ドライバー、通常カーネル Apc の配信を無効にする必要がありますしないで (呼び出して[ **FsRtlEnterFileSystem** ](fsrtlenterfilesystem.md)または[**KeEnterCriticalRegion** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-keentercriticalregion) IRQL APC を発生させることによって、または\_レベル) の呼び出しを通して[**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)します。
 
-ファイル システム フィルター ドライバーに通常のカーネルの Apc を無効にする必要がありますときのみを呼び出す前にすぐには[ **ExAcquireResourceExclusive**](https://msdn.microsoft.com/library/windows/hardware/ff544345)、 [ **ExAcquireResourceExclusiveLite**](https://msdn.microsoft.com/library/windows/hardware/ff544351)、 [ **ExAcquireResourceShared**](https://msdn.microsoft.com/library/windows/hardware/ff544359)、 [ **ExAcquireResourceSharedLite**](https://msdn.microsoft.com/library/windows/hardware/ff544363)、または[ **ExAcquireSharedStarveExclusive**](https://msdn.microsoft.com/library/windows/hardware/ff544367)します。 呼び出した後[ **ExReleaseResource** ](https://msdn.microsoft.com/library/windows/hardware/ff545571)または[ **ExReleaseResourceLite**](https://msdn.microsoft.com/library/windows/hardware/ff545597)、フィルター ドライバーはすぐに再有効化の配信通常カーネル Apc です。 代替手段として[ **FsRtlEnterFileSystem**](fsrtlenterfilesystem.md)、ミニフィルター ドライバーを使用できる、 [ **FltAcquireResourceExclusive**](fltacquireresourceexclusive.md)、 [ **FltAcquireResourceShared**](fltacquireresourceshared.md)、および[ **FltReleaseResource** ](fltreleaseresource.md)取得する際に Apc を正しく処理するルーチンとリソースを解放します。
+ファイル システム フィルター ドライバーに通常のカーネルの Apc を無効にする必要がありますときのみを呼び出す前にすぐには[ **ExAcquireResourceExclusive**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mmcreatemdl)、 [ **ExAcquireResourceExclusiveLite**](https://msdn.microsoft.com/library/windows/hardware/ff544351)、 [ **ExAcquireResourceShared**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mmcreatemdl)、 [ **ExAcquireResourceSharedLite**](https://msdn.microsoft.com/library/windows/hardware/ff544363)、または[ **ExAcquireSharedStarveExclusive**](https://msdn.microsoft.com/library/windows/hardware/ff544367)します。 呼び出した後[ **ExReleaseResource** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/mmcreatemdl)または[ **ExReleaseResourceLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exreleaseresourcelite)、フィルター ドライバーはすぐに再有効化の配信通常カーネル Apc です。 代替手段として[ **FsRtlEnterFileSystem**](fsrtlenterfilesystem.md)、ミニフィルター ドライバーを使用できる、 [ **FltAcquireResourceExclusive**](fltacquireresourceexclusive.md)、 [ **FltAcquireResourceShared**](fltacquireresourceshared.md)、および[ **FltReleaseResource** ](fltreleaseresource.md)取得する際に Apc を正しく処理するルーチンとリソースを解放します。
 
-呼び出す前に、通常のカーネル Apc を無効にする必要はありません[ **ExAcquireSharedWaitForExclusive** ](https://msdn.microsoft.com/library/windows/hardware/ff544370)このルーチンを呼び出すため、 [ **KeRaiseIrqlToDpcLevel**](https://msdn.microsoft.com/library/windows/hardware/ff553084)、両方の通常の動作と特殊なカーネル Apc を無効にします。 呼び出す前に行う必要ないも[ **ExAcquireFastMutex** ](https://msdn.microsoft.com/library/windows/hardware/ff544337)または[ **ExAcquireResourceExclusive**](https://msdn.microsoft.com/library/windows/hardware/ff544345)のため、これらルーチンは、通常のカーネルの Apc を無効にします。
+呼び出す前に、通常のカーネル Apc を無効にする必要はありません[ **ExAcquireSharedWaitForExclusive** ](https://msdn.microsoft.com/library/windows/hardware/ff544370)このルーチンを呼び出すため、 [ **KeRaiseIrqlToDpcLevel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keraiseirqltodpclevel)、両方の通常の動作と特殊なカーネル Apc を無効にします。 呼び出す前に行う必要ないも[ **ExAcquireFastMutex** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff544337(v=vs.85))または[ **ExAcquireResourceExclusive**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mmcreatemdl)のため、これらルーチンは、通常のカーネルの Apc を無効にします。
 
 <a name="requirements"></a>要件
 ------------
@@ -86,13 +86,13 @@ VOID FsRtlExitFileSystem(
 ## <a name="see-also"></a>関連項目
 
 
-[**ExAcquireFastMutex**](https://msdn.microsoft.com/library/windows/hardware/ff544337)
+[**ExAcquireFastMutex**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff544337(v=vs.85))
 
-[**ExAcquireResourceExclusive**](https://msdn.microsoft.com/library/windows/hardware/ff544345)
+[**ExAcquireResourceExclusive**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mmcreatemdl)
 
 [**ExAcquireResourceExclusiveLite**](https://msdn.microsoft.com/library/windows/hardware/ff544351)
 
-[**ExAcquireResourceShared**](https://msdn.microsoft.com/library/windows/hardware/ff544359)
+[**ExAcquireResourceShared**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mmcreatemdl)
 
 [**ExAcquireResourceSharedLite**](https://msdn.microsoft.com/library/windows/hardware/ff544363)
 
@@ -100,11 +100,11 @@ VOID FsRtlExitFileSystem(
 
 [**ExAcquireSharedStarveExclusive**](https://msdn.microsoft.com/library/windows/hardware/ff544367)
 
-[**ExReleaseResource**](https://msdn.microsoft.com/library/windows/hardware/ff545571)
+[**ExReleaseResource**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mmcreatemdl)
 
-[**ExReleaseResourceLite**](https://msdn.microsoft.com/library/windows/hardware/ff545597)
+[**ExReleaseResourceLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exreleaseresourcelite)
 
-[**ExTryToAcquireFastMutex**](https://msdn.microsoft.com/library/windows/hardware/ff545647)
+[**ExTryToAcquireFastMutex**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff545647(v=vs.85))
 
 [**FltAcquireResourceExclusive**](fltacquireresourceexclusive.md)
 
@@ -114,11 +114,11 @@ VOID FsRtlExitFileSystem(
 
 [**FsRtlEnterFileSystem**](fsrtlenterfilesystem.md)
 
-[**保留**](https://msdn.microsoft.com/library/windows/hardware/ff548336)
+[**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)
 
-[**KeLeaveCriticalRegion**](https://msdn.microsoft.com/library/windows/hardware/ff552964)
+[**KeLeaveCriticalRegion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-keleavecriticalregion)
 
-[**KeRaiseIrqlToDpcLevel**](https://msdn.microsoft.com/library/windows/hardware/ff553084)
+[**KeRaiseIrqlToDpcLevel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keraiseirqltodpclevel)
 
  
 

@@ -11,12 +11,12 @@ keywords:
 - ディスパッチ ルーチン WDK カーネルを閉じる
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a89e0e96edb174d3fa2c041f0b6f05f994c2a3f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1d1442de58f98921bbad2140a998fbb3a1fea5f7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339147"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363470"
 ---
 # <a name="a-single-dispatchcreateclose-routine"></a>単一の DispatchCreateClose ルーチン
 
@@ -26,7 +26,7 @@ ms.locfileid: "63339147"
 
 多くのドライバーのチェーン内の下位レベルでは特にドライバーはドライバーを階層化、だけでの受信時にその存在を確立する必要があります、*作成*要求し、の受信を確認するだけで必要があります、 *を閉じる*要求。
 
-たとえば、ポート用のドライバー デバイス コント ローラーを呼び出す 1 つまたは複数の密接に結合されたクラスのドライバーと[ **IoGetDeviceObjectPointer** ](https://msdn.microsoft.com/library/windows/hardware/ff549198)を最小限に抑える必要があります[ *DispatchCreateClose* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)ルーチン。 ルーチンがあります何も複数の完全な IRP とおり。
+たとえば、ポート用のドライバー デバイス コント ローラーを呼び出す 1 つまたは複数の密接に結合されたクラスのドライバーと[ **IoGetDeviceObjectPointer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdeviceobjectpointer)を最小限に抑える必要があります[ *DispatchCreateClose* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)ルーチン。 ルーチンがあります何も複数の完全な IRP とおり。
 
 ```cpp
     :    : 
@@ -46,7 +46,7 @@ ms.locfileid: "63339147"
 
 論理または物理デバイスを表すファイル オブジェクトを開くための作成要求を処理するには、最上位レベルのドライバーが、以下を実行します。
 
-1.  呼び出す[ **IoGetCurrentIrpStackLocation** ](https://msdn.microsoft.com/library/windows/hardware/ff549174) IRP では、I/O スタックの場所にポインターを取得します。
+1.  呼び出す[ **IoGetCurrentIrpStackLocation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetcurrentirpstacklocation) IRP では、I/O スタックの場所にポインターを取得します。
 
 2.  確認**FileObject**.**ファイル名**、I/O スタックの場所と状態が IRP の完了\_成功の場合は、Unicode の文字列で**FileName**長さは 0 それ以外の場合、状態が IRP を完了\_。無効な\_パラメーター。
 

@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c8a989bc200a5bf41571028310928a3ca2baa911
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 01cb478d7c6e5ab8f37930cf03f91c10e50411d7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63371738"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361563"
 ---
 # <a name="bug-check-0xdb-drivercorruptedsysptes"></a>バグ チェック 0xDB:ドライバー\_破損した\_SYSPTES
 
@@ -26,7 +26,7 @@ ms.locfileid: "63371738"
 ドライバー\_破損した\_SYSPTES バグ チェックが 0x000000DB の値を持ちます。 これは、おそらくシステム Pte の破損により、無効な IRQL でメモリにアクセスしようとすることを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="drivercorruptedsysptes-parameters"></a>ドライバー\_破損した\_SYSPTES パラメーター
@@ -74,7 +74,7 @@ ms.locfileid: "63371738"
 <a name="resolution"></a>解決方法
 ----------
 
-このバグ チェックが発生した場合は、レジストリを編集して、原因を検出できます。  **\\ \\HKEY\_ローカル\_マシン\\システム\\CurrentControlSet\\コントロール\\セッション マネージャー\\メモリ管理**のレジストリ キーを作成または編集、 **TrackPtes**値に設定して、DWORD 3 に等しく設定します。 再起動します。 システムは、スタック トレースを保存し、システム、ドライバーは、同じエラーをコミットする場合は、発行[**バグ チェック 0 xda** ](bug-check-0xda--system-pte-misuse.md) (システム\_PTE\_誤用)。 スタック トレースは、エラーの原因となったドライバーを識別します。
+このバグ チェックが発生した場合は、レジストリを編集して、原因を検出できます。 **\\ \\HKEY\_ローカル\_マシン\\システム\\CurrentControlSet\\コントロール\\セッション マネージャー\\メモリ管理**のレジストリ キーを作成または編集、 **TrackPtes**値に設定して、DWORD 3 に等しく設定します。 再起動します。 システムは、スタック トレースを保存し、システム、ドライバーは、同じエラーをコミットする場合は、発行[**バグ チェック 0 xda** ](bug-check-0xda--system-pte-misuse.md) (システム\_PTE\_誤用)。 スタック トレースは、エラーの原因となったドライバーを識別します。
 
  
 

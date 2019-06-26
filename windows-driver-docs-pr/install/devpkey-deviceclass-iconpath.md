@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: c9585273aee84f3c1a01b6aff9ddf3246acfd62d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1d508f5c0df3b2bb0619f5a966039f3c677beaa2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392536"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362982"
 ---
 # <a name="devpkeydeviceclassiconpath"></a>DEVPKEY_DeviceClass_IconPath
 
 
-DEVPKEY_DeviceClass_IconPath デバイス プロパティがのアイコンが一覧を表す、[デバイス セットアップ クラス](https://msdn.microsoft.com/library/windows/hardware/ff541509)します。
+DEVPKEY_DeviceClass_IconPath デバイス プロパティがのアイコンが一覧を表す、[デバイス セットアップ クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-setup-classes)します。
 
 <table>
 <colgroup>
@@ -60,11 +60,11 @@ DEVPKEY_DeviceClass_IconPath デバイス プロパティがのアイコンが�
 <a name="remarks"></a>注釈
 -------
 
-呼び出すことができます[ **SetupDiGetClassProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551086)または[ **SetupDiGetClassPropertyEx** ](https://msdn.microsoft.com/library/windows/hardware/ff551090) DEVPKEY_DeviceClass_ の値を取得するにはIconPath します。
+呼び出すことができます[ **SetupDiGetClassProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyw)または[ **SetupDiGetClassPropertyEx** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyexw) DEVPKEY_DeviceClass_ の値を取得するにはIconPath します。
 
 DEVPKEY_DeviceClass_IconPath 値は、 [REG_MULTI_SZ](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)-Windows シェルによって使用される形式で、アイコン リソースの指定子の型指定されたリスト。 アイコン リソースの指定子の形式は"*ファイル パスの実行可能ファイル*、*リソース識別子*、"ここ*ファイル パスの実行可能ファイル*の完全修飾パスを含む、アイコン リソースを含むコンピューター上のファイルと*リソース識別子*リソースを識別する整数を指定します。 アイコン リソース指定子は、"%systemroot%\\system32\\DLL1.dll、-12"実行可能ファイルのパスが含まれています"%systemroot%\\system32\\DLL1.dll"と「-12」リソース識別子。
 
-Windows Server 2003、Windows XP、および Windows 2000 では、このプロパティはサポートされません。 これらのバージョンの Windows のデバイス セットアップ クラスのアイコンの情報にアクセスする方法については、次を参照してください。[デバイス セットアップ クラスのアイコンのプロパティにアクセスする](https://msdn.microsoft.com/library/windows/hardware/ff537746)します。
+Windows Server 2003、Windows XP、および Windows 2000 では、このプロパティはサポートされません。 これらのバージョンの Windows のデバイス セットアップ クラスのアイコンの情報にアクセスする方法については、次を参照してください。[デバイス セットアップ クラスのアイコンのプロパティにアクセスする](https://docs.microsoft.com/windows-hardware/drivers/install/accessing-icon-properties-of-a-device-setup-class)します。
 
 <a name="requirements"></a>要件
 ------------
@@ -89,11 +89,11 @@ Windows Server 2003、Windows XP、および Windows 2000 では、このプロ�
 ## <a name="see-also"></a>関連項目
 
 
-[**SetupDiGetClassProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551086)
+[**SetupDiGetClassProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyw)
 
-[**SetupDiGetClassPropertyEx**](https://msdn.microsoft.com/library/windows/hardware/ff551090)
+[**SetupDiGetClassPropertyEx**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyexw)
 
-[**SetupDiLoadClassIcon**](https://msdn.microsoft.com/library/windows/hardware/ff552053)
+[**SetupDiLoadClassIcon**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiloadclassicon)
 
  
 

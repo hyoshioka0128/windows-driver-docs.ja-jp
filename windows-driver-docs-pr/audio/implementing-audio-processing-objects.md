@@ -4,12 +4,12 @@ description: このトピックでは、オーディオ処理オブジェクト 
 ms.assetid: 822FAF10-DAB3-48D1-B782-0C80B072D3FB
 ms.date: 06/19/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: fa596eeaa6d6962226863023402da5f75de61397
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7bf23da3cc25371f67ef39b62b7243f1dd819eb5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333525"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359925"
 ---
 # <a name="implementing-audio-processing-objects"></a>オーディオ処理オブジェクトの実装
 
@@ -27,7 +27,7 @@ ms.locfileid: "63333525"
 
 各論理デバイスは、各型の 1 つ APO を関連付けることができます。 モードと影響の詳細については、次を参照してください。[オーディオ信号の処理モード](audio-signal-processing-modes.md)します。
 
-APO を実装するには、Baseaudioprocessingobject.h ファイルで宣言されている CBaseAudioProcessingObject 基底クラスに基づいてカスタム クラスを作成します。 このアプローチでは、カスタマイズされた APO を作成する CBaseAudioProcessingObject の基本クラスに新しい機能を追加する必要があります。 CBaseAudioProcessingObject 基底クラスは、APO を必要とする機能の多くを実装します。 次の 3 つの必要なインターフェイスのメソッドのほとんどの既定の実装を提供します。 主な例外は、 [ **IAudioProcessingObjectRT::APOProcess** ](https://msdn.microsoft.com/library/windows/hardware/ff536506)メソッド。
+APO を実装するには、Baseaudioprocessingobject.h ファイルで宣言されている CBaseAudioProcessingObject 基底クラスに基づいてカスタム クラスを作成します。 このアプローチでは、カスタマイズされた APO を作成する CBaseAudioProcessingObject の基本クラスに新しい機能を追加する必要があります。 CBaseAudioProcessingObject 基底クラスは、APO を必要とする機能の多くを実装します。 次の 3 つの必要なインターフェイスのメソッドのほとんどの既定の実装を提供します。 主な例外は、 [ **IAudioProcessingObjectRT::APOProcess** ](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nf-audioenginebaseapo-iaudioprocessingobjectrt-apoprocess)メソッド。
 
 カスタム、APOs を実装するために、次の手順を実行します。
 
@@ -45,16 +45,16 @@ APO を実装するには、Baseaudioprocessingobject.h ファイルで宣言さ
 すべてのカスタム APOs 次の一般的な特性があります。
 
 -   APO が 1 つの入力を必要し、1 つの出力接続します。 これらの接続は、オーディオのバッファーを複数のチャネルを持つことができます。
--   を通じて渡されるオーディオ データのみを変更、APO その[ **IAudioProcessingObjectRT::APOProcess** ](https://msdn.microsoft.com/library/windows/hardware/ff536506)ルーチン。 APO、KS トポロジを含む、基になる論理デバイスの設定は変更できません。
+-   を通じて渡されるオーディオ データのみを変更、APO その[ **IAudioProcessingObjectRT::APOProcess** ](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nf-audioenginebaseapo-iaudioprocessingobjectrt-apoprocess)ルーチン。 APO、KS トポロジを含む、基になる論理デバイスの設定は変更できません。
 -   IUnknown、だけでなく APOs は、次のインターフェイスを公開する必要があります。
 
-    • [IAudioProcessingObject](https://msdn.microsoft.com/library/windows/hardware/ff536501)します。 初期化とフォーマットのネゴシエーションなどのセットアップ タスクを処理するインターフェイスです。
+    • [IAudioProcessingObject](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nn-audioenginebaseapo-iaudioprocessingobject)します。 初期化とフォーマットのネゴシエーションなどのセットアップ タスクを処理するインターフェイスです。
 
-    • [IAudioProcessingObjectConfiguration](https://msdn.microsoft.com/library/windows/hardware/ff536502). 構成インターフェイスです。
+    • [IAudioProcessingObjectConfiguration](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nn-audioenginebaseapo-iaudioprocessingobjectconfiguration). 構成インターフェイスです。
 
-    • [IAudioProcessingObjectRT](https://msdn.microsoft.com/library/windows/hardware/ff536505). オーディオの処理を行うリアルタイム インターフェイス。 リアルタイム処理のスレッドから呼び出すことができます。
+    • [IAudioProcessingObjectRT](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nn-audioenginebaseapo-iaudioprocessingobjectrt). オーディオの処理を行うリアルタイム インターフェイス。 リアルタイム処理のスレッドから呼び出すことができます。
 
-    • [IAudioSystemEffects](https://msdn.microsoft.com/library/windows/hardware/ff536514)します。 インターフェイスをオーディオ エンジンは、システムの影響 APO として DLL を認識します。
+    • [IAudioSystemEffects](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nn-audioenginebaseapo-iaudiosystemeffects)します。 インターフェイスをオーディオ エンジンは、システムの影響 APO として DLL を認識します。
 
 -   すべての APOs リアルタイム システムの互換性があります。 これによって、次のことが起こります。
 
@@ -85,11 +85,11 @@ Sysvad オーディオ サンプルは、ここを参照できます。
 
 以下の手順をダウンロードして SYSVAD サンプルを開きます。
 
-a.  GitHub ツールを使用して、サンプルを使用することができます。 1 つの zip ファイルに汎用ドライバー サンプルをダウンロードすることもできます。
+a. GitHub ツールを使用して、サンプルを使用することができます。 1 つの zip ファイルに汎用ドライバー サンプルをダウンロードすることもできます。
 
 <https://github.com/Microsoft/Windows-driver-samples/archive/master.zip>
 
-b.  Master.zip ファイルをローカル ハード ドライブにダウンロードします。
+b. Master.zip ファイルをローカル ハード ドライブにダウンロードします。
 
 c. 右クリックして*Windows ドライバーのサンプル-master.zip*、選択**すべて展開**します。 新しいフォルダーを指定するか、抽出したファイルを保存する既存のサブスクリプションへの参照します。 たとえば、指定する*c:\\DriverSamples\\* として新しいファイルの抽出先フォルダーです。
 
@@ -144,9 +144,9 @@ SwapAPO サンプルについては、プライマリ ヘッダー ファイル�
 ## <a name="span-idimplementingthecomobjectaudioprocessingcodespanspan-idimplementingthecomobjectaudioprocessingcodespanspan-idimplementingthecomobjectaudioprocessingcodespanimplementing-the-com-object-audio-processing-code"></a><span id="Implementing_the_COM_Object_Audio_Processing_Code"></span><span id="implementing_the_com_object_audio_processing_code"></span><span id="IMPLEMENTING_THE_COM_OBJECT_AUDIO_PROCESSING_CODE"></span>COM オブジェクトのオーディオ処理コードを実装します。
 
 
-システム提供の APO をラップするには、カスタム クラスをに基づいて、 **CBaseAudioProcessingObject**基本クラス、Baseaudioprocessingobject.h ファイルで宣言されています。 このアプローチでは、新しい機能の概要では、 **CBaseAudioProcessingObject**基本クラスをカスタマイズした APO を作成します。 **CBaseAudioProcessingObject**基底クラスは、APO を必要とする機能の多くを実装します。 次の 3 つの必要なインターフェイスのメソッドのほとんどの既定の実装を提供します。 主な例外は、 [ **IAudioProcessingObjectRT::APOProcess** ](https://msdn.microsoft.com/library/windows/hardware/ff536506)メソッド。
+システム提供の APO をラップするには、カスタム クラスをに基づいて、 **CBaseAudioProcessingObject**基本クラス、Baseaudioprocessingobject.h ファイルで宣言されています。 このアプローチでは、新しい機能の概要では、 **CBaseAudioProcessingObject**基本クラスをカスタマイズした APO を作成します。 **CBaseAudioProcessingObject**基底クラスは、APO を必要とする機能の多くを実装します。 次の 3 つの必要なインターフェイスのメソッドのほとんどの既定の実装を提供します。 主な例外は、 [ **IAudioProcessingObjectRT::APOProcess** ](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nf-audioenginebaseapo-iaudioprocessingobjectrt-apoprocess)メソッド。
 
-使用して**CBaseAudioProcessingObject**、APO をより簡単に実装することができます。 APO が特殊な形式の要件がない、必要な float32 で動作する場合のフォーマットに含まれているインターフェイス メソッドの既定の実装**CBaseAudioProcessingObject**十分です。 既定の実装を指定するには、3 つだけのメイン メソッドを実装する必要があります。[**IAudioProcessingObject::IsInputFormatSupported**](https://msdn.microsoft.com/library/windows/hardware/ff536511)、 [ **IAudioProcessingObjectRT::APOProcess**](https://msdn.microsoft.com/library/windows/hardware/ff536506)、および**ValidateAndCacheConnectionInfo**.
+使用して**CBaseAudioProcessingObject**、APO をより簡単に実装することができます。 APO が特殊な形式の要件がない、必要な float32 で動作する場合のフォーマットに含まれているインターフェイス メソッドの既定の実装**CBaseAudioProcessingObject**十分です。 既定の実装を指定するには、3 つだけのメイン メソッドを実装する必要があります。[**IAudioProcessingObject::IsInputFormatSupported**](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nf-audioenginebaseapo-iaudioprocessingobject-isinputformatsupported)、 [ **IAudioProcessingObjectRT::APOProcess**](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nf-audioenginebaseapo-iaudioprocessingobjectrt-apoprocess)、および**ValidateAndCacheConnectionInfo**.
 
 に基づいて、APOs を開発する、 **CBaseAudioProcessingObject**クラスで、次の手順に従います。
 
@@ -170,13 +170,13 @@ SwapAPO サンプルについては、プライマリ ヘッダー ファイル�
 
 2.  次の 3 つのメソッドを実装します。
 
-    -   [**IAudioProcessingObject::IsInputFormatSupported**](https://msdn.microsoft.com/library/windows/hardware/ff536511)します。 このメソッドは、オーディオ エンジンと形式のネゴシエーションを処理します。
+    -   [**IAudioProcessingObject::IsInputFormatSupported**](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nf-audioenginebaseapo-iaudioprocessingobject-isinputformatsupported)します。 このメソッドは、オーディオ エンジンと形式のネゴシエーションを処理します。
 
-    -   [**IAudioProcessingObjectRT::APOProcess**](https://msdn.microsoft.com/library/windows/hardware/ff536506)します。 このメソッドは、信号処理を実行するのに、カスタム アルゴリズムを使用します。
+    -   [**IAudioProcessingObjectRT::APOProcess**](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nf-audioenginebaseapo-iaudioprocessingobjectrt-apoprocess)します。 このメソッドは、信号処理を実行するのに、カスタム アルゴリズムを使用します。
 
     -   **ValidateAndCacheConnectionInfo**します。 このメソッドは、たとえば、形式の詳細を格納するチャネルの数、サンプリング レート、サンプルの深さ、およびチャネル マスクにメモリを割り当てます。
 
-C++ のコード例を次の実装を示しています、 [ **APOProcess** ](https://msdn.microsoft.com/library/windows/hardware/ff536506)手順 1. で作成したサンプル クラスのメソッド。 この概念の実際の実装の手順については、**オーディオ処理オブジェクト ドライバー サンプル**セクション スワップ サンプルに移動しを参照、 *Swapapolfx.cpp*ファイル。
+C++ のコード例を次の実装を示しています、 [ **APOProcess** ](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nf-audioenginebaseapo-iaudioprocessingobjectrt-apoprocess)手順 1. で作成したサンプル クラスのメソッド。 この概念の実際の実装の手順については、**オーディオ処理オブジェクト ドライバー サンプル**セクション スワップ サンプルに移動しを参照、 *Swapapolfx.cpp*ファイル。
 
 ```cpp
 // Custom implementation of APOProcess method
@@ -237,10 +237,10 @@ CMyFromScratchAPO::IsInputFormatSupported {
 
 次のインターフェイスおよび COM コンポーネントのメソッドを実装します。
 
--   [IAudioProcessingObject](https://msdn.microsoft.com/library/windows/hardware/ff536501)します。 このインターフェイスに必要なメソッドは次のとおりです。[**初期化**](https://msdn.microsoft.com/library/windows/hardware/ff536510)と[ **IsInputFormatSupported します。**](https://msdn.microsoft.com/library/windows/hardware/ff536511)
--   [IAudioProcessingObjectConfiguration](https://msdn.microsoft.com/library/windows/hardware/ff536502)します。 このインターフェイスに必要なメソッドは次のとおりです。[**LockForProcess** ](https://msdn.microsoft.com/library/windows/hardware/ff536503)と[ **UnlockForProcess**](https://msdn.microsoft.com/library/windows/hardware/ff536504)
--   [IAudioProcessingObjectRT](https://msdn.microsoft.com/library/windows/hardware/ff536505)します。 このインターフェイスに必要なメソッドは[ **APOProcess** ](https://msdn.microsoft.com/library/windows/hardware/ff536506) DSP アルゴリズムを実装するメソッドであるとします。
--   [IAudioSystemEffects](https://msdn.microsoft.com/library/windows/hardware/ff536514)します。 このインターフェイスを APO として DLL を認識するオーディオ エンジンとなります。
+-   [IAudioProcessingObject](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nn-audioenginebaseapo-iaudioprocessingobject)します。 このインターフェイスに必要なメソッドは次のとおりです。[**初期化**](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nf-audioenginebaseapo-iaudioprocessingobject-initialize)と[ **IsInputFormatSupported します。** ](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nf-audioenginebaseapo-iaudioprocessingobject-isinputformatsupported)
+-   [IAudioProcessingObjectConfiguration](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nn-audioenginebaseapo-iaudioprocessingobjectconfiguration)します。 このインターフェイスに必要なメソッドは次のとおりです。[**LockForProcess** ](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nf-audioenginebaseapo-iaudioprocessingobjectconfiguration-lockforprocess)と[ **UnlockForProcess**](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nf-audioenginebaseapo-iaudioprocessingobjectconfiguration-unlockforprocess)
+-   [IAudioProcessingObjectRT](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nn-audioenginebaseapo-iaudioprocessingobjectrt)します。 このインターフェイスに必要なメソッドは[ **APOProcess** ](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nf-audioenginebaseapo-iaudioprocessingobjectrt-apoprocess) DSP アルゴリズムを実装するメソッドであるとします。
+-   [IAudioSystemEffects](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nn-audioenginebaseapo-iaudiosystemeffects)します。 このインターフェイスを APO として DLL を認識するオーディオ エンジンとなります。
 
 ## <a name="span-idworkingwithvisualstudioandaposspanspan-idworkingwithvisualstudioandaposspanspan-idworkingwithvisualstudioandaposspanworking-with-visual-studio-and-apos"></a><span id="Working_with_Visual_Studio_and_APOs"></span><span id="working_with_visual_studio_and_apos"></span><span id="WORKING_WITH_VISUAL_STUDIO_AND_APOS"></span>Visual Studio とパスワードを使用します。
 
@@ -251,7 +251,7 @@ Visual Studio でのパスワードを使用する場合は、APO プロジェ�
 
 ドライバーを Windows 10 を対象とは、universal CRT に対して動的にリンクする必要があります。
 
-Windows 8,1 をサポートする必要がある場合は、C/C++、コード生成で、プロジェクトのプロパティを設定して、静的リンクを有効にします。 「ランタイム ライブラリ」に設定 */MT*リリース ビルドまたは */MTd*デバッグ ビルドの場合。 ドライバーは難しい、MSVCRT の再配布するため、この変更が加えられた&lt;n&gt;.dll バイナリ。 ソリューションでは、libcmt.dll を静的にリンクします。 詳細については、次を参照してください。 [/MD、/MT、/LD (ランタイム ライブラリの使用)](https://msdn.microsoft.com/library/2kzt1wy3.aspx)します。
+Windows 8,1 をサポートする必要がある場合は、C/C++、コード生成で、プロジェクトのプロパティを設定して、静的リンクを有効にします。 「ランタイム ライブラリ」に設定 */MT*リリース ビルドまたは */MTd*デバッグ ビルドの場合。 ドライバーは難しい、MSVCRT の再配布するため、この変更が加えられた&lt;n&gt;.dll バイナリ。 ソリューションでは、libcmt.dll を静的にリンクします。 詳細については、次を参照してください。 [/MD、/MT、/LD (ランタイム ライブラリの使用)](https://docs.microsoft.com/cpp/build/reference/md-mt-ld-use-run-time-library)します。
 
 **埋め込みマニフェストの使用を無効にします。**
 
@@ -275,17 +275,17 @@ Sysvad サンプルに含まれる tabletaudiosample.inf と phoneaudiosample.in
 
 各 APO INF ファイルの設定の情報は次のリファレンス トピックを参照してください。
 
-[鍵\_FX\_StreamEffectClsid](https://msdn.microsoft.com/library/windows/hardware/mt238383)
+[鍵\_FX\_StreamEffectClsid](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-fx-streameffectclsid)
 
-[鍵\_FX\_ModeEffectClsid](https://msdn.microsoft.com/library/windows/hardware/mt238382)
+[鍵\_FX\_ModeEffectClsid](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-fx-modeeffectclsid)
 
-[鍵\_FX\_EndpointEffectClsid](https://msdn.microsoft.com/library/windows/hardware/mt238381)
+[鍵\_FX\_EndpointEffectClsid](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-fx-endpointeffectclsid)
 
-[鍵\_SFX\_ProcessingModes\_サポート\_の\_ストリーミング](https://msdn.microsoft.com/library/windows/hardware/mt238385)
+[鍵\_SFX\_ProcessingModes\_サポート\_の\_ストリーミング](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-sfx-processingmodes-supported-for-streaming)
 
-[鍵\_MFX\_ProcessingModes\_サポート\_の\_ストリーミング](https://msdn.microsoft.com/library/windows/hardware/mt238384)
+[鍵\_MFX\_ProcessingModes\_サポート\_の\_ストリーミング](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-mfx-processingmodes-supported-for-streaming)
 
-[鍵\_EFX\_ProcessingModes\_サポート\_の\_ストリーミング](https://msdn.microsoft.com/library/windows/hardware/mt238380)
+[鍵\_EFX\_ProcessingModes\_サポート\_の\_ストリーミング](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-efx-processingmodes-supported-for-streaming)
 
 次のサンプルの INF ファイルでは、オーディオ処理オブジェクト (APOs) の特定のモードを登録する方法を示します。 この一覧から利用可能な組み合わせをについて説明します。
 
@@ -590,9 +590,9 @@ APO オーディオ システム モニターでは、グラフにパスワー�
 
 -   LockForProcess
 
-エラー コードをこれらのメソッドのいずれかが戻るたびに、APO 障害カウントの値が増加します。 エラーの数が 0 にリセットされると、APO、オーディオのグラフに組み込むが正常であることを示すコードを返します。 呼び出しは成功、 [ **LockForProcess** ](https://msdn.microsoft.com/library/windows/hardware/ff536503)メソッドは、APO が正常に組み込まれていることを示しています。
+エラー コードをこれらのメソッドのいずれかが戻るたびに、APO 障害カウントの値が増加します。 エラーの数が 0 にリセットされると、APO、オーディオのグラフに組み込むが正常であることを示すコードを返します。 呼び出しは成功、 [ **LockForProcess** ](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nf-audioenginebaseapo-iaudioprocessingobjectconfiguration-lockforprocess)メソッドは、APO が正常に組み込まれていることを示しています。
 
-[ **CoCreateInstance** ](https://msdn.microsoft.com/library/windows/desktop/ms686615)具体的には、さまざまな理由から返された HRESULT コードがエラーを示すことが理由があります。 次の 3 つの主な理由は次のとおりです。
+[ **CoCreateInstance** ](https://docs.microsoft.com/windows/desktop/api/combaseapi/nf-combaseapi-cocreateinstance)具体的には、さまざまな理由から返された HRESULT コードがエラーを示すことが理由があります。 次の 3 つの主な理由は次のとおりです。
 
 -   グラフには、保護されたコンテンツが実行されていると、APO の署名が正しくありません。
 

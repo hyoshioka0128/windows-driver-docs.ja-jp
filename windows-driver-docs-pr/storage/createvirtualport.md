@@ -12,12 +12,12 @@ api_type:
 - COM
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 8bab66a53593ea632f35c83dc5c59e881098045e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ddfd5c5b5a5fb7946ca56416a071301e5884dc52
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392748"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368320"
 ---
 # <a name="createvirtualport-method"></a>CreateVirtualPort メソッド
 
@@ -40,16 +40,16 @@ void CreateVirtualPort(
 <a name="parameters"></a>パラメーター
 ----------
 
-*WWPN\[8\]*   
+*WWPN\[8\]*    
 作成する仮想ポートのワールド ワイド ポート名。
 
-*WWNN\[8\]*   
+*WWNN\[8\]*    
 仮想ポートに関連付けるワールド ワイド ノード名。
 
-*タグ\[16\]*   
+*タグ\[16\]*    
 仮想ポートのタグ識別子です。
 
-*VirtualName\[64\]*   
+*VirtualName\[64\]*    
 仮想ポートのシンボリック名。
 
 *状態*   
@@ -63,7 +63,7 @@ WMI メソッドには適用されません。
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
-[NPIV 状態コード](https://msdn.microsoft.com/library/windows/hardware/dn386176)
+[NPIV 状態コード](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/dn386176(v=vs.85))
 
  
 

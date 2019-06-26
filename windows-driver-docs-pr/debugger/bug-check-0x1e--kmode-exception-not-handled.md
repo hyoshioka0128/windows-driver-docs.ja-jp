@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: bb5479e33d9e87f4bf6b155ab5535ec0680088a3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fb8090e817e691cb5a46e6d4dcec1abafdbc9f02
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361596"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367563"
 ---
 # <a name="bug-check-0x1e-kmodeexceptionnothandled"></a>バグ チェック 0x1E:KMODE\_例外\_いない\_処理済み
 
@@ -26,7 +26,7 @@ ms.locfileid: "63361596"
 KMODE\_例外\_いない\_処理済みのバグ チェックが 0x0000001E の値を持ちます。 これは、カーネル モードのプログラムがエラー ハンドラーをキャッチされなかった例外を生成することを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="kmodeexceptionnothandled-parameters"></a>KMODE\_例外\_いない\_処理済みのパラメーター
@@ -84,7 +84,7 @@ KMODE\_例外\_いない\_処理済みのバグ チェックが 0x0000001E の�
 
     メモリ アクセス違反が発生しました。 (パラメーター 4 のバグ チェックは、ドライバーにアクセスしようとするアドレスです)。
 
-例外コードの完全な一覧を参照してください。 [NTSTATUS 値](https://msdn.microsoft.com/library/cc704588.aspx)します。 例外コードは、の inc ディレクトリにある ntstatus.h ファイルにも表示されます、 [Windows Driver Kit](https://docs.microsoft.com/windows-hardware/drivers/)します。
+例外コードの完全な一覧を参照してください。 [NTSTATUS 値](https://docs.microsoft.com/openspecs/windows_protocols/ms-erref/596a1078-e883-4972-9bbc-49e60bebca55)します。 例外コードは、の inc ディレクトリにある ntstatus.h ファイルにも表示されます、 [Windows Driver Kit](https://docs.microsoft.com/windows-hardware/drivers/)します。
 
 
 <a name="remarks"></a>注釈

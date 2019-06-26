@@ -4,12 +4,12 @@ description: NDIS のデータ センター ブリッジングの QoS 要件
 ms.assetid: 09BEFF6C-6887-42BA-A44B-5BFE65DBD69E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e8e047c07af150224b55d168418001b1da0ed915
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: beceb7a133f96ae12a28458418786706ea0ed242
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378265"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369175"
 ---
 # <a name="ndis-qos-requirements-for-data-center-bridging"></a>NDIS のデータ センター ブリッジングの QoS 要件
 
@@ -32,9 +32,9 @@ NDIS QoS、ミニポート ドライバーとネットワーク アダプター�
 
 -   NDIS 6.30 または以降のバージョンの NDIS ミニポート ドライバーをサポートする必要があります。
 
--   ミニポート ドライバーでのオブジェクト識別子 (OID) メソッドの要求をサポートする必要があります[OID\_QOS\_パラメーター](https://msdn.microsoft.com/library/windows/hardware/hh451835)の NDIS QoS パラメーターを設定します。 詳細については、次を参照してください。 [NDIS QoS パラメーターをローカル設定](setting-local-ndis-qos-parameters.md)します。
+-   ミニポート ドライバーでのオブジェクト識別子 (OID) メソッドの要求をサポートする必要があります[OID\_QOS\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-qos-parameters)の NDIS QoS パラメーターを設定します。 詳細については、次を参照してください。 [NDIS QoS パラメーターをローカル設定](setting-local-ndis-qos-parameters.md)します。
 
-    **注**  NDIS ミニポート ドライバーは例外ですの NDIS QoS OID 要求のほとんどを処理する[OID\_QOS\_パラメーター](https://msdn.microsoft.com/library/windows/hardware/hh451835)します。
+    **注**  NDIS ミニポート ドライバーは例外ですの NDIS QoS OID 要求のほとんどを処理する[OID\_QOS\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-qos-parameters)します。
 
      
 

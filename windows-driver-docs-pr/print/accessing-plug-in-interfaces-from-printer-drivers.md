@@ -7,12 +7,12 @@ keywords:
 - プラグインを WDK を印刷するインターフェイスへのアクセス
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bdf595693082d49ad6be56c2d3ca80562b295b9d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9c04218eb15f8fd938cbeba4a393c07772b4b34c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388725"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369005"
 ---
 # <a name="accessing-plug-in-interfaces-from-printer-drivers"></a>プリンター ドライバーからプラグイン インターフェイスにアクセスする
 
@@ -32,7 +32,7 @@ ms.locfileid: "63388725"
 
 5.  プラグインのインターフェイスの呼び出し、ドライバー`PublishDriverInterface`ドライバーの IPrintOemDriverUI、IPrintCoreUI2、IPrintOemDriverUni、IPrintOemDriverPS、または IPrintCorePS2 インターフェイスをプラグインに使用できるようにするメソッド。
 
-6.  プラグインが実装された場合、 [IPrintOemUni](iprintoemuni-com-interface.md)インターフェイス、ドライバー呼び出し[ **IPrintOemUni::GetImplementedMethod** ](https://msdn.microsoft.com/library/windows/hardware/ff554253)メソッドがあるインターフェイスを決定するには実装されています。 同様に、プラグインが実装された場合、 [IPrintOemUni2](iprintoemuni2-com-interface.md)インターフェイス、ドライバー呼び出し**IPrintOemUni2::GetImplementedMethod**を同じ目的。
+6.  プラグインが実装された場合、 [IPrintOemUni](iprintoemuni-com-interface.md)インターフェイス、ドライバー呼び出し[ **IPrintOemUni::GetImplementedMethod** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni-getimplementedmethod)メソッドがあるインターフェイスを決定するには実装されています。 同様に、プラグインが実装された場合、 [IPrintOemUni2](iprintoemuni2-com-interface.md)インターフェイス、ドライバー呼び出し**IPrintOemUni2::GetImplementedMethod**を同じ目的。
 
  
 

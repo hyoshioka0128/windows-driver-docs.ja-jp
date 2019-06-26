@@ -10,12 +10,12 @@ keywords:
 - 頂点へのバインドのストリーム バッファーの WDK DirectX 8.0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ca8485f65e7c74ff0ef3e4c959dbaac8bfc9a29
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 27a8caba2ef2f8b90ec4329ed72dbbbb2b8401a9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345534"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372799"
 ---
 # <a name="notification-of-stream-and-vertex-buffer-binding"></a>ストリーム バッファーと頂点バッファーのバインドの通知
 
@@ -23,7 +23,7 @@ ms.locfileid: "63345534"
 ## <span id="ddk_notification_of_stream_vertex_buffer_binding_gg"></span><span id="DDK_NOTIFICATION_OF_STREAM_VERTEX_BUFFER_BINDING_GG"></span>
 
 
-ドライバーは、次のように新しい DP2 トークン D3DDP2OP で特定のストリームを頂点バッファーのバインドの通知\_SETSTREAMSOURCE、およびその関連付けられている HAL データ構造[ **D3DHAL\_DP2SETSTREAMSOURCE**](https://msdn.microsoft.com/library/windows/hardware/ff545798).
+ドライバーは、次のように新しい DP2 トークン D3DDP2OP で特定のストリームを頂点バッファーのバインドの通知\_SETSTREAMSOURCE、およびその関連付けられている HAL データ構造[ **D3DHAL\_DP2SETSTREAMSOURCE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/ns-d3dhal-_d3dhal_dp2setstreamsource).
 
  
 

@@ -16,12 +16,12 @@ keywords:
 - VJoyD WDK HID のバージョン
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 45280843a3e3900821a27bb363a2a1e4d4bba022
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 12ec7b604ed8c6d978b46487a9e84947f2b8bacd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357576"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375743"
 ---
 #  <a name="directx-50-interface"></a>DirectX 5.0 インターフェイス
 
@@ -66,19 +66,19 @@ DirectX 5.0 およびそれ以降のインターフェイスのジョイステ�
 
  
 
-[ **VJREGDRVINFO** ](https://msdn.microsoft.com/library/windows/hardware/ff543581)構造体は、新しい登録に渡されます。
+[ **VJREGDRVINFO** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff543581(v=vs.85))構造体は、新しい登録に渡されます。
 
 **DwFunction** VJREGDRVINFO 構造体のメンバーは VJRT である必要があります\_読み込まれたその他のすべての値は予約されています。 VJRT\_LOADED は登録を使用する元のインターフェイスでは、読み込まれているようにミニドライバーに応答 VJoyD にコールバックを渡すと同様に、新しいインターフェイスで使用します。
 
-コントロールのコールバックとポーリング コールバック、すべてのドライバーは、コントロールのコールバックを指定する必要があり、非常に少数のデバイスが出力のみであるために、1 つのテーブルにマージされます (およびしたがってポーリング コールバックを必要はありません)。 使用してこれらのコールバックが登録されて、 [ **VJPOLLREG** ](https://msdn.microsoft.com/library/windows/hardware/ff543577)構造体。
+コントロールのコールバックとポーリング コールバック、すべてのドライバーは、コントロールのコールバックを指定する必要があり、非常に少数のデバイスが出力のみであるために、1 つのテーブルにマージされます (およびしたがってポーリング コールバックを必要はありません)。 使用してこれらのコールバックが登録されて、 [ **VJPOLLREG** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff543577(v=vs.85))構造体。
 
 **LpCfg** VJPOLLREG 構造体のメンバーは、元のインターフェイスで CfgRoutine とまったく同じように、標準の構成マネージャー コールバックをポイントします。 主な違いは、VJoyD が適切な configuration manager のコールバックを呼び出します。 VJoyD はドライバーをインストール済みのデバイス ノードにリンクし、configuration manager アクティビティのドライバーに通知するには、このコールバックを呼び出します。 以前のインターフェイスでは、各 configuration manager のコールバック、DirectX 5.0 の読み込まれているすべてのドライバーと呼ばれ、以降のインターフェイスのみ呼び出しを 1 つのドライバーが、変更されてデバイス ノードにリンクします。 また、ドライバーが読み込まれていないときに、configuration manager のアクティビティが発生する可能性があります、ためにが読み込まれるときに、このデバイス ノードのドライバーを通知する場合は、[デバイス] ノードが開始されて VJoyD プリミティブ キャッシュ システムは実装します。
 
 ドライバーは常に呼び出されるため、リソースの割り当てを必要なリソースを検索する既定のポートが確認しません。 残念ながら、前のインターフェイスを使用する方法を検索する必要があったドライバーは、従来の方法で引き続き動作します。 つまり、こと VJoyD は、一連のリソースを 1 つのドライバーのみを割り当てます、すべての古いドライバーが読み込まれるを引き続き使用できますに割り当てられていないポート。 リソースが割り当てられると、ドライバーは、デバイスとデバイスの状態を判断するために必要なすべてのハンドシェイクを実行する必要があります。
 
-[*初期化*](https://msdn.microsoft.com/library/windows/hardware/ff541025)コールバック (によって示される、 **fpInitialize** VJPOLLREG 構造体のメンバー) が置き換えられます、 *JoyId*でのコールバック前のインターフェイスです。 主な違いは、ドライバーは、1 つ以上のデバイスをサポートしている場合、インスタンスを識別できるように VJoyD にデバイスが登録時に渡されるデバイス インスタンスの識別のドライバーに戻る VJoyD が渡します。
+[*初期化*](https://docs.microsoft.com/previous-versions/ff541025(v=vs.85))コールバック (によって示される、 **fpInitialize** VJPOLLREG 構造体のメンバー) が置き換えられます、 *JoyId*でのコールバック前のインターフェイスです。 主な違いは、ドライバーは、1 つ以上のデバイスをサポートしている場合、インスタンスを識別できるように VJoyD にデバイスが登録時に渡されるデバイス インスタンスの識別のドライバーに戻る VJoyD が渡します。
 
-**注**  使用する必要があるレジストリ キーを開く必要がある場合、 [VJOYD\_OpenConfigKey\_サービス](https://msdn.microsoft.com/library/windows/hardware/ff543545)と[VJOYD\_OpenTypeKey\_サービス](https://msdn.microsoft.com/library/windows/hardware/ff543549)レジストリ キーを直接開く代わりにマクロ。 これらのサービスのマクロの使用により、適切なレジストリ ブランチが開かれています。 さらに、マクロがありますが、サービス サポートされる将来のバージョン DirectInput の基になるレジストリ データは異なる方法で構造化可能性があります。
+**注**  使用する必要があるレジストリ キーを開く必要がある場合、 [VJOYD\_OpenConfigKey\_サービス](https://docs.microsoft.com/previous-versions/ff543545(v=vs.85))と[VJOYD\_OpenTypeKey\_サービス](https://docs.microsoft.com/previous-versions/ff543549(v=vs.85))レジストリ キーを直接開く代わりにマクロ。 これらのサービスのマクロの使用により、適切なレジストリ ブランチが開かれています。 さらに、マクロがありますが、サービス サポートされる将来のバージョン DirectInput の基になるレジストリ データは異なる方法で構造化可能性があります。
 
  
 

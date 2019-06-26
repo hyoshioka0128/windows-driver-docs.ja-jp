@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 14b58f917c72a4aa9debefbbb31e553964f2ba31
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 316d462d7fc15479f730f4c68871556ef411dbfa
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335541"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367781"
 ---
 # <a name="bug-check-0x152-invalidpushlockflags"></a>バグ チェック 0x152:無効な\_プッシュ\_ロック\_フラグ
 
@@ -26,7 +26,7 @@ ms.locfileid: "63335541"
 無効な\_プッシュ\_ロック\_フラグのバグ チェックが 0x00000152 の値を持ちます。 これは、プッシュ ロック Api のいずれか 1 つのフラグが有効でないことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="invalidpushlockflags-parameters"></a>無効な\_プッシュ\_ロック\_フラグ パラメーター

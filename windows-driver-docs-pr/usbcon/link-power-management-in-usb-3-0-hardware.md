@@ -3,12 +3,12 @@ Description: このセクションでは、ユニバーサル シリアル バ�
 title: USB 3.0 ハードウェアの電源管理のリンク
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2780c8bc844d3da866e484582dbe3e798ce7a712
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b7ebed184bf051149d64d0348b70275592014643
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355456"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364832"
 ---
 # <a name="link-power-management-in-usb-30-hardware"></a>USB 3.0 ハードウェアの電源管理のリンク
 
@@ -17,7 +17,7 @@ ms.locfileid: "63355456"
 
 このセクションでは、読者が次のように慣れていることを前提とします。
 
--   公式[USB 3.0 仕様](http://www.usb.org/developers/docs/)します。
+-   公式[USB 3.0 仕様](https://www.usb.org/documents)します。
 -   [USB セレクティブ サスペンド](https://go.microsoft.com/fwlink/p/?linkid=230964)メカニズム。 メカニズムは、ブログの投稿に記載されて[セレクティブ サスペンドの USB の分かりやすい解説](https://go.microsoft.com/fwlink/p/?linkid=230962)します。
 
 ## <a name="in-this-section"></a>このセクションの内容

@@ -8,12 +8,12 @@ keywords:
 - ミニポート ドライバー WDK ストレージ、ATA のミニポート ドライバー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6acd4090899140ccc9e8a9b9882bb1efac72434e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: ccddd615bc9a6505a62fd5a0cc2d3e77c82f5d42
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578281"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368385"
 ---
 # <a name="ata-ports-interface-with-ata-miniport-drivers"></a>ATA ポートと ATA ミニポート ドライバーとのインターフェイス
 
@@ -21,7 +21,7 @@ ms.locfileid: "56578281"
 ## <span id="ddk_ata_ports_interface_with_ata_minport_drivers_kg"></span><span id="DDK_ATA_PORTS_INTERFACE_WITH_ATA_MINPORT_DRIVERS_KG"></span>
 
 
-**注**ATA ポートはドライバーと ATA ミニポート ドライバー モデルが変更されるか利用今後します。 代わりに、使用をお勧め、 [Storport ドライバー](https://msdn.microsoft.com/windows/hardware/drivers/storage/storport-driver)と[Storport ミニポート](https://msdn.microsoft.com/windows/hardware/drivers/storage/storport-miniport-drivers)ドライバー モデル。
+**注**ATA ポートはドライバーと ATA ミニポート ドライバー モデルが変更されるか利用今後します。 代わりに、使用をお勧め、 [Storport ドライバー](https://docs.microsoft.com/windows-hardware/drivers/storage/storport-driver)と[Storport ミニポート](https://docs.microsoft.com/windows-hardware/drivers/storage/storport-miniport-drivers)ドライバー モデル。
 
 
 Windows Vista 以降のバージョンの Windows IDE アーキテクチャでは、システム提供の 4 つの IDE ドライバーがあります。
@@ -36,7 +36,7 @@ Windows Vista 以降のバージョンの Windows IDE アーキテクチャで�
 
 ATA ポート ドライバーと既定のミニポート ドライバーは、Windows Vista の新機能です。 コント ローラーのドライバーと既定のコント ローラー ドライバーは、Windows Vista の新機能ではありません。
 
-Microsoft Windows オペレーティング システムを Windows Vista より前のバージョンでは、ベンダーが既定のコント ローラー ミニドライバーを置き換えることができます (*問題は、Pciide.sys*) 特定のコント ローラーにカスタマイズされているさまざまなミニドライバーにします。 Windows オペレーティング システムを Windows Vista より前の IDE スタックの構造の詳細については、[ポートの IDE ドライバー](ide-port-driver.md)を参照してください。
+Microsoft Windows オペレーティング システムを Windows Vista より前のバージョンでは、ベンダーが既定のコント ローラー ミニドライバーを置き換えることができます (*問題は、Pciide.sys*) 特定のコント ローラーにカスタマイズされているさまざまなミニドライバーにします。 Windows オペレーティング システムを Windows Vista より前の IDE スタックの構造の詳細については、次を参照してください。[ポートの IDE ドライバー](ide-port-driver.md)します。
 
 Windows Vista および以降のバージョンの Windows IDE アーキテクチャに ATA ポート ドライバーを組み込むことでは、ベンダーを置き換えることができます*問題は、Pciide.sys*ベンダーから提供された ATA ミニポート ドライバーを使用しています。 このドライバーは、コント ローラー ミニドライバーより多くの機能を含めることができます。
 

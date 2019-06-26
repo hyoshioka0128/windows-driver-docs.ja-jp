@@ -9,12 +9,12 @@ keywords:
 - オブジェクトのインスタンスへの通知の初期化
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5351a760b864d31f3a655af0638b097379eb05fa
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 98ca7f07175d777f389a48d682698d6b7aeb1a5e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357344"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374920"
 ---
 # <a name="creating-and-initializing-an-instance-of-a-notify-object"></a>通知オブジェクトのインスタンスの作成と初期化
 
@@ -28,13 +28,13 @@ ms.locfileid: "63357344"
 
 クラスのコンス トラクターは、初期値をクラスのデータ メンバーに割り当てる最初必要があります。 コンス トラクターが最初に割り当てる必要があります値を以下に示します。
 
--   コンス トラクターは、ネットワーク コンポーネントのインスタンスにインターフェイス ポインターを設定する必要があります[ **INetCfgComponent**](https://msdn.microsoft.com/library/windows/hardware/ff547715)を**NULL**値。
+-   コンス トラクターは、ネットワーク コンポーネントのインスタンスにインターフェイス ポインターを設定する必要があります[ **INetCfgComponent**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff547715(v=vs.85))を**NULL**値。
 
--   コンス トラクターは、ネットワーク構成オブジェクトのインスタンスにインターフェイス ポインターを設定する必要があります[ **INetCfg**](https://msdn.microsoft.com/library/windows/hardware/ff547694)を**NULL**値。
+-   コンス トラクターは、ネットワーク構成オブジェクトのインスタンスにインターフェイス ポインターを設定する必要があります[ **INetCfg**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff547694(v=vs.85))を**NULL**値。
 
 -   コンス トラクターには、通知オブジェクトは以前、不明なアクションを識別する定数を実行するアクションを指定する変数を設定する必要があります。 この変数の詳細については、次を参照してください。[通知のクラスを定義する](defining-a-notify-class.md)します。
 
-オブジェクトを呼び出して、サブシステム、ネットワーク構成のサブシステムには、通知オブジェクトのインスタンスが作成されたら、 [ **INetCfgComponentControl::Initialize** ](https://msdn.microsoft.com/library/windows/hardware/ff547729)オブジェクトを初期化するメソッドインスタンス。 この呼び出しでは、サブシステムを渡します、 **INetCfgComponent**インターフェイス ポインター。 これは、 **INetCfgComponent**にアクセスして、コンポーネントを制御するオブジェクトで使用できるオブジェクトのコンポーネントのインスタンスに通知オブジェクトを提供します。 サブシステム、この呼び出しで渡すことも、 **INetCfg**通知オブジェクトを使用してネットワークの構成のすべての側面にアクセスするネットワーク構成オブジェクトのインスタンスを持つ通知オブジェクトを提供するインターフェイス ポインター。
+オブジェクトを呼び出して、サブシステム、ネットワーク構成のサブシステムには、通知オブジェクトのインスタンスが作成されたら、 [ **INetCfgComponentControl::Initialize** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff547729(v=vs.85))オブジェクトを初期化するメソッドインスタンス。 この呼び出しでは、サブシステムを渡します、 **INetCfgComponent**インターフェイス ポインター。 これは、 **INetCfgComponent**にアクセスして、コンポーネントを制御するオブジェクトで使用できるオブジェクトのコンポーネントのインスタンスに通知オブジェクトを提供します。 サブシステム、この呼び出しで渡すことも、 **INetCfg**通知オブジェクトを使用してネットワークの構成のすべての側面にアクセスするネットワーク構成オブジェクトのインスタンスを持つ通知オブジェクトを提供するインターフェイス ポインター。
 
 **初期化**メソッドが割り当てる必要があります、 **INetCfgComponent**と**INetCfg**インターフェイス ポインターのデータ メンバーに、ネットワーク構成のサブシステムによって提供される、クラスに通知します。 **初期化**し、呼び出す必要があります。
 

@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 66306349c0bd048fd6db8d8d1f10eb1bdbe2d586
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8c66f7c3785082d47bade15745512d78b516760b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374270"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362964"
 ---
 # <a name="devpkeydeviceclasssecuritysds"></a>DEVPKEY_DeviceClass_SecuritySDS
 
 
-DEVPKEY_DeviceClass_SecuritySDS デバイス プロパティは、のセキュリティ記述子文字列を表す、[デバイス セットアップ クラス](https://msdn.microsoft.com/library/windows/hardware/ff541509)します。
+DEVPKEY_DeviceClass_SecuritySDS デバイス プロパティは、のセキュリティ記述子文字列を表す、[デバイス セットアップ クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-setup-classes)します。
 
 <table>
 <colgroup>
@@ -60,11 +60,11 @@ DEVPKEY_DeviceClass_SecuritySDS デバイス プロパティは、のセキュ�
 <a name="remarks"></a>注釈
 -------
 
-値を設定する DEVPKEY_DeviceClass_SecuritySDS 中またはインストール後のアプリケーションは、デバイス セットアップ クラスをインストールします。 このプロパティを設定する方法の詳細については、次を参照してください。[セキュリティで保護されたデバイスのインストールを作成する](https://msdn.microsoft.com/library/windows/hardware/ff540212)します。
+値を設定する DEVPKEY_DeviceClass_SecuritySDS 中またはインストール後のアプリケーションは、デバイス セットアップ クラスをインストールします。 このプロパティを設定する方法の詳細については、次を参照してください。[セキュリティで保護されたデバイスのインストールを作成する](https://docs.microsoft.com/windows-hardware/drivers/install/creating-secure-device-installations)します。
 
-DEVPKEY_DeviceClass_SecuritySDS の値を取得するには呼び出すことによって[ **SetupDiGetClassProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551086)または[ **SetupDiGetClassPropertyEx** ](https://msdn.microsoft.com/library/windows/hardware/ff551090). 呼び出して DEVPKEY_DeviceClass_SecuritySDS を設定する[ **SetupDiSetClassProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff552128)または[ **SetupDiSetClassPropertyEx**](https://msdn.microsoft.com/library/windows/hardware/ff552132)します。
+DEVPKEY_DeviceClass_SecuritySDS の値を取得するには呼び出すことによって[ **SetupDiGetClassProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyw)または[ **SetupDiGetClassPropertyEx** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyexw). 呼び出して DEVPKEY_DeviceClass_SecuritySDS を設定する[ **SetupDiSetClassProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetclasspropertyw)または[ **SetupDiSetClassPropertyEx**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetclasspropertyexw)します。
 
-Windows Server 2003 および Windows XP は、このプロパティをサポートは DEVPKEY_DeviceClass_SecuritySDS プロパティのキーをサポートしていません。 この以前のバージョンの Windows では、このプロパティの値にアクセスするのに SPCRP_SECURITY_SDS 識別子を使用できます。 このプロパティの値にアクセスする方法については、次を参照してください。[デバイス セットアップ クラス SPCRP_Xxx のプロパティを取得する](https://msdn.microsoft.com/library/windows/hardware/ff550644)と[デバイス セットアップ クラス SPCRP_Xxx プロパティの設定](https://msdn.microsoft.com/library/windows/hardware/ff550814)します。
+Windows Server 2003 および Windows XP は、このプロパティをサポートは DEVPKEY_DeviceClass_SecuritySDS プロパティのキーをサポートしていません。 この以前のバージョンの Windows では、このプロパティの値にアクセスするのに SPCRP_SECURITY_SDS 識別子を使用できます。 このプロパティの値にアクセスする方法については、次を参照してください。[デバイス セットアップ クラス SPCRP_Xxx のプロパティを取得する](https://docs.microsoft.com/windows-hardware/drivers/install/retrieving-spcrp-xxx-properties)と[デバイス セットアップ クラス SPCRP_Xxx プロパティの設定](https://docs.microsoft.com/windows-hardware/drivers/install/setting-spcrp-xxx-properties)します。
 
 <a name="requirements"></a>要件
 ------------
@@ -89,13 +89,13 @@ Windows Server 2003 および Windows XP は、このプロパティをサポー
 ## <a name="see-also"></a>関連項目
 
 
-[**SetupDiGetClassProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551086)
+[**SetupDiGetClassProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyw)
 
-[**SetupDiGetClassPropertyEx**](https://msdn.microsoft.com/library/windows/hardware/ff551090)
+[**SetupDiGetClassPropertyEx**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyexw)
 
-[**SetupDiSetClassProperty**](https://msdn.microsoft.com/library/windows/hardware/ff552128)
+[**SetupDiSetClassProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetclasspropertyw)
 
-[**SetupDiSetClassPropertyEx**](https://msdn.microsoft.com/library/windows/hardware/ff552132)
+[**SetupDiSetClassPropertyEx**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetclasspropertyexw)
 
  
 

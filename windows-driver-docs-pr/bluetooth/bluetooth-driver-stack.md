@@ -8,12 +8,12 @@ keywords:
 - WDK Bluetooth スタック
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c144d01f08e51cc218917c93b8dc6c8c5bc2d2f0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7548a401ffe5c96fbe3c09ba08721c65b457baa1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328320"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364675"
 ---
 # <a name="bluetooth-driver-stack"></a>Bluetooth ドライバー スタック
 
@@ -27,7 +27,7 @@ Bluetooth ドライバー スタックは、Bluetooth プロトコルの Microso
 -   **ユーザー モード**
     -   **ユーザー モード アプリケーション**-公開 Api を通じて、Bluetooth ドライバー スタックにアクセスするユーザー モード アプリケーション。 詳細については、次を参照してください。[について Bluetooth](https://go.microsoft.com/fwlink/p/?linkid=50712) Windows SDK のドキュメント。
 
-        **注**  に対してユーザー モード アプリケーションをリンクする必要があります*BthProps.lib*の代わりに*IrProps.lib*などの Api を使用するために、 [ **BluetoothSetLocalServiceInfo**](https://msdn.microsoft.com/library/windows/hardware/ff536580)します。
+        **注**  に対してユーザー モード アプリケーションをリンクする必要があります*BthProps.lib*の代わりに*IrProps.lib*などの Api を使用するために、 [ **BluetoothSetLocalServiceInfo**](https://docs.microsoft.com/windows/desktop/api/bluetoothapis/nf-bluetoothapis-bluetoothsetlocalserviceinfo)します。
 
          
 

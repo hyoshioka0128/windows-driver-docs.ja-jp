@@ -11,12 +11,12 @@ keywords:
 - WDK の INF ファイルをネットワークします。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dd59d89147457325f878dae84b95f043c1b7e283
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1bca1fb2d55947c13aa2d8eddaf9eab5f068c8f5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357272"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374908"
 ---
 # <a name="creating-network-inf-files"></a>ネットワーク INF ファイルの作成
 
@@ -24,9 +24,9 @@ ms.locfileid: "63357272"
 
 
 
-A*ネットワーク INF ファイル*標準の INF ファイル形式に基づきますが、ネットワークに固有のセクションでは、ディレクティブ、セクションのエントリの値などのネットワークに固有の項目があります。 ネットワークの INF ファイルの次の説明には、INF ファイルの基本の理解が想定しています。 ネットワークの INF ファイルを作成する前に、基本の INF ファイルの説明を読みます。 基本の INF ファイルの詳細については、次を参照してください。 [INF ファイルのセクションとディレクティブ](https://msdn.microsoft.com/library/windows/hardware/ff547433)します。
+A*ネットワーク INF ファイル*標準の INF ファイル形式に基づきますが、ネットワークに固有のセクションでは、ディレクティブ、セクションのエントリの値などのネットワークに固有の項目があります。 ネットワークの INF ファイルの次の説明には、INF ファイルの基本の理解が想定しています。 ネットワークの INF ファイルを作成する前に、基本の INF ファイルの説明を読みます。 基本の INF ファイルの詳細については、次を参照してください。 [INF ファイルのセクションとディレクティブ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-file-sections-and-directives)します。
 
-さまざまな Windows プラットフォーム上のネットワーク コンポーネントをインストールする 1 つの INF ファイルを使用できます。 詳細については、次を参照してください。 [INF ファイルのセクションとディレクティブ](https://msdn.microsoft.com/library/windows/hardware/ff547433)します。
+さまざまな Windows プラットフォーム上のネットワーク コンポーネントをインストールする 1 つの INF ファイルを使用できます。 詳細については、次を参照してください。 [INF ファイルのセクションとディレクティブ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-file-sections-and-directives)します。
 
 INF ファイルの要件は、ネットワーク コンポーネントの種類によって異なります。 ネットワーク コンポーネントの種類ごとの INF ファイルの要件の詳細については、ネットワーク コンポーネントのインストール要件の概要を参照してください。
 

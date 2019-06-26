@@ -4,17 +4,17 @@ description: Power Framework 遅延ファジー テスト オプションは、�
 ms.assetid: A33DEA5B-4758-456A-B4CF-F036CB511A1F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f3268173a4500e1111aa08ed4027f5190add8fa
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dd6ce751943b11b1dd72da29b889b01184b1fb33
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343101"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360381"
 ---
 # <a name="power-framework-delay-fuzzing"></a>Power Framework 遅延ファジー テスト
 
 
-Power Framework 遅延ファジー テスト オプションを使用するドライバーの同時実行のバグを検出するためにスレッド スケジュールをランダムに、[電源管理フレームワーク (PoFx)](https://msdn.microsoft.com/library/windows/hardware/hh406637)します。 このオプションは、電源管理フレームワーク (PoFx) を直接利用しないドライバーを使用しないでください。
+Power Framework 遅延ファジー テスト オプションを使用するドライバーの同時実行のバグを検出するためにスレッド スケジュールをランダムに、[電源管理フレームワーク (PoFx)](https://docs.microsoft.com/windows-hardware/drivers/kernel/overview-of-the-power-management-framework)します。 このオプションは、電源管理フレームワーク (PoFx) を直接利用しないドライバーを使用しないでください。
 
 **注**  このオプションは Windows 8 以降で使用できます。
 

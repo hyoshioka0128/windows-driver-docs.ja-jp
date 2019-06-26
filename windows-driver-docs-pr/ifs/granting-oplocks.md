@@ -4,12 +4,12 @@ description: Oplock の付与
 ms.assetid: 7faf17ef-1596-4952-9575-616f66b37ed6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c2e2f77d7b12be4d97f73dd0f93dccb23e001a59
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 40cfe733b6d0dd4e8bec22b107dce5a52d885108
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370141"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365895"
 ---
 # <a name="granting-oplocks"></a>Oplock の付与
 
@@ -29,7 +29,7 @@ ms.locfileid: "63370141"
 
 -   FSCTL\_要求\_OPLOCK
 
-一覧で最初の 4 つ FSCTLs は、従来の各 oplock の要求に使用されます。 最後 FSCTL が要求で Windows 7 の各 oplock を要求に使用される\_OPLOCK\_入力\_フラグ\_要求に指定されたフラグ、**フラグ**メンバー要求の\_OPLOCK\_入力\_として渡された、バッファーの構造体、 *lpInBuffer*パラメーターの[DeviceIoControl](https://go.microsoft.com/fwlink/p/?linkid=124239)します。 同様の方法で[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)カーネル モードから Windows 7 の各 oplock を要求するために使用できます。 ファイル システム ミニフィルターを使用する必要があります[ **FltAllocateCallbackData** ](https://msdn.microsoft.com/library/windows/hardware/ff541703)と[ **FltPerformAsynchronousIo** ](https://msdn.microsoft.com/library/windows/hardware/ff543420)を Windows 7 oplock を要求します。 4 つの Windows 7 の各 oplock の中に指定するために必要な 1 つまたは複数のフラグの OPLOCK の\_レベル\_キャッシュ\_読み取り、OPLOCK\_レベル\_キャッシュ\_ハンドル、または OPLOCK\_レベル\_キャッシュ\_で書き込みが設定されて、 **RequestedOplockLevel**メンバー要求の\_OPLOCK\_入力\_バッファーの構造体。 詳細については、次を参照してください。 [ **FSCTL\_要求\_OPLOCK**](https://msdn.microsoft.com/library/windows/hardware/ff545530)します。
+一覧で最初の 4 つ FSCTLs は、従来の各 oplock の要求に使用されます。 最後 FSCTL が要求で Windows 7 の各 oplock を要求に使用される\_OPLOCK\_入力\_フラグ\_要求に指定されたフラグ、**フラグ**メンバー要求の\_OPLOCK\_入力\_として渡された、バッファーの構造体、 *lpInBuffer*パラメーターの[DeviceIoControl](https://go.microsoft.com/fwlink/p/?linkid=124239)します。 同様の方法で[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)カーネル モードから Windows 7 の各 oplock を要求するために使用できます。 ファイル システム ミニフィルターを使用する必要があります[ **FltAllocateCallbackData** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltallocatecallbackdata)と[ **FltPerformAsynchronousIo** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltperformasynchronousio)を Windows 7 oplock を要求します。 4 つの Windows 7 の各 oplock の中に指定するために必要な 1 つまたは複数のフラグの OPLOCK の\_レベル\_キャッシュ\_読み取り、OPLOCK\_レベル\_キャッシュ\_ハンドル、または OPLOCK\_レベル\_キャッシュ\_で書き込みが設定されて、 **RequestedOplockLevel**メンバー要求の\_OPLOCK\_入力\_バッファーの構造体。 詳細については、次を参照してください。 [ **FSCTL\_要求\_OPLOCK**](https://docs.microsoft.com/windows-hardware/drivers/ifs/fsctl-request-oplock)します。
 
 ファイル システムのステータスを返します oplock と oplock を許可できるため、要求が行われると、\_PENDING (このため、oplock は与えない同期 I/O の)。 FSCTL IRP では、oplock が切断されるまでは完了しません。 Oplock が認められない場合は、適切なエラー コードが返されます。 特に一般的なエラー コードは、状態が返されます\_OPLOCK\_いない\_GRANTED と状態\_無効な\_パラメーター (および、類似するユーザー モードのと同じです)。
 
@@ -73,7 +73,7 @@ NTFS ファイル システム ファイルでこの手順の最適化を提供�
 <ul>
 <li>同期アクセスを開くと、STATUS_OPLOCK_NOT_GRANTED が返されます (oplock は同期 I/O 要求は付与されません)。</li>
 </ul></li>
-<li>あるない<a href="https://msdn.microsoft.com/library/windows/hardware/ff565748" data-raw-source="[TxF](https://msdn.microsoft.com/library/windows/hardware/ff565748)">TxF</a>ファイルの任意のストリームでのトランザクション。
+<li>あるない<a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/windows-kernel-mode-kernel-transaction-manager" data-raw-source="[TxF](https://docs.microsoft.com/windows-hardware/drivers/kernel/windows-kernel-mode-kernel-transaction-manager)">TxF</a>ファイルの任意のストリームでのトランザクション。
 <ul>
 <li>他の STATUS_OPLOCK_NOT_GRANTED が返されます。</li>
 </ul></li>

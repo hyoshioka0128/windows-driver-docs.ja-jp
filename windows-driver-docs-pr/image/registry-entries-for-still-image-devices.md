@@ -4,12 +4,12 @@ description: 静止画像デバイスのレジストリ エントリ
 ms.assetid: cedc8afc-54c4-485e-989c-481fe30d899b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ac2f74a3c2b78b90ebc585964b8cb93cdbd290e8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f120ca40fcee1610b2c87269e4619c955b421788
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379606"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374287"
 ---
 # <a name="registry-entries-for-still-image-devices"></a>静止画像デバイスのレジストリ エントリ
 
@@ -62,7 +62,7 @@ Microsoft STI のうちいくつかはベンダーから提供されたコンポ
 
  
 
-クライアント、 **StillImage** COM インターフェイスを呼び出す必要があります[ **IStillImage::SetDeviceValue** ](https://msdn.microsoft.com/library/windows/hardware/ff543801)と[ **IStillImage::GetDeviceValue** ](https://msdn.microsoft.com/library/windows/hardware/ff543786)レジストリを参照します。 イメージのミニドライバーが Win32 レジストリ ミニドライバーが受信したレジストリ キーを指定する API を呼び出すことができますも[ **IStiUSD::Initialize** ](https://msdn.microsoft.com/library/windows/hardware/ff543824)メソッド。 内から定義済みのレジストリ エントリの値を設定することも[INF ファイル](inf-files-for-still-image-devices.md)します。
+クライアント、 **StillImage** COM インターフェイスを呼び出す必要があります[ **IStillImage::SetDeviceValue** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff543801(v=vs.85))と[ **IStillImage::GetDeviceValue** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff543786(v=vs.85))レジストリを参照します。 イメージのミニドライバーが Win32 レジストリ ミニドライバーが受信したレジストリ キーを指定する API を呼び出すことができますも[ **IStiUSD::Initialize** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-initialize)メソッド。 内から定義済みのレジストリ エントリの値を設定することも[INF ファイル](inf-files-for-still-image-devices.md)します。
 
 ### <a name="customized-registry-values"></a>カスタマイズされたレジストリ値
 
@@ -92,7 +92,7 @@ Microsoft STI のうちいくつかはベンダーから提供されたコンポ
 <p>0x1 - 情報メッセージ</p>
 <p>0x2 - 警告メッセージ</p>
 <p>0x4 - エラー メッセージ</p>
-<p>参照してください<a href="https://msdn.microsoft.com/library/windows/hardware/ff543807" data-raw-source="[&lt;strong&gt;IStillImage::WriteToErrorLog&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff543807)"> <strong>IStillImage::WriteToErrorLog</strong></a>します。</p></td>
+<p>参照してください<a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff543807(v=vs.85)" data-raw-source="[&lt;strong&gt;IStillImage::WriteToErrorLog&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff543807(v=vs.85))"> <strong>IStillImage::WriteToErrorLog</strong></a>します。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>HKLM\SYSTEM\CurrentControlSet\Control\StillImage\Logging\STIMON</strong></p></td>

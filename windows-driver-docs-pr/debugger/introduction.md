@@ -4,12 +4,12 @@ description: デバッガー エンジンの基本
 ms.assetid: fa52a1f0-9397-48a5-acbd-ce5347c0baef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 885969afbd5699e9f3652d33076d89b9aa4ebdd0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0dd013770d830834cad88acaf37091d871fb2ba1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367224"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361312"
 ---
 # <a name="debugger-engine-introduction"></a>デバッガー エンジンの基本
 
@@ -31,7 +31,7 @@ ms.locfileid: "63367224"
 
 ここでまだ記載されていないのデバッガーとデバッガー エンジンに関連する多く概念の参照、[のデバッグ技術](debugging-techniques.md)このドキュメントの「します。
 
-デバッガー エンジン API の現在文書化されていない機能の一部を取得するには、使用、 [ **Execute** ](https://msdn.microsoft.com/library/windows/hardware/ff543208)個々 のデバッガー コマンドを実行するメソッド。
+デバッガー エンジン API の現在文書化されていない機能の一部を取得するには、使用、 [ **Execute** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugcontrol3-execute)個々 のデバッガー コマンドを実行するメソッド。
 
 ### <a name="span-idextensionsspanspan-idextensionsspanextensions"></a><span id="extensions"></span><span id="EXTENSIONS"></span>拡張機能
 

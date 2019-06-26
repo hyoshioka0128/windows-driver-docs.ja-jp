@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - NDIS_STATUS_HD_SPLIT_CURRENT_CONFIG ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 50b99e004bce1df1a5b2dff8eb1493adea8dd2e0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b22e475563ab4a6ec4325d66e02655707cbc54bd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375681"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368589"
 ---
 # <a name="ndisstatushdsplitcurrentconfig"></a>NDIS\_状態\_HD\_分割\_現在\_構成
 
@@ -21,11 +21,11 @@ ms.locfileid: "63375681"
 <a name="remarks"></a>注釈
 -------
 
-ミニポート ドライバーが受信すると、 [OID\_GEN\_HD\_分割\_パラメーター](https://msdn.microsoft.com/library/windows/hardware/ff569587)セットの要求、ドライバーの内容を使用する必要があります、 [ **NDIS\_HD\_分割\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff565701)ミニポート アダプターの現在の構成を更新する構造体。 ミニポート ドライバー更新の後、NDIS での変更を報告する必要があります\_状態\_HD\_分割\_現在\_構成状態を示す値。 状態の表示により、新しい情報ですべての上にあるドライバーが更新されるようになります。
+ミニポート ドライバーが受信すると、 [OID\_GEN\_HD\_分割\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-hd-split-parameters)セットの要求、ドライバーの内容を使用する必要があります、 [ **NDIS\_HD\_分割\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_hd_split_parameters)ミニポート アダプターの現在の構成を更新する構造体。 ミニポート ドライバー更新の後、NDIS での変更を報告する必要があります\_状態\_HD\_分割\_現在\_構成状態を示す値。 状態の表示により、新しい情報ですべての上にあるドライバーが更新されるようになります。
 
-**StatusBuffer**のメンバー、 [ **NDIS\_状態\_INDICATION** ](https://msdn.microsoft.com/library/windows/hardware/ff567373)構造に含まれる、 [ **NDIS\_HD\_分割\_現在\_CONFIG** ](https://msdn.microsoft.com/library/windows/hardware/ff565696)構造体。 この構造体には、ミニポート アダプターの現在のヘッダー データ分割構成を指定します。
+**StatusBuffer**のメンバー、 [ **NDIS\_状態\_INDICATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)構造に含まれる、 [ **NDIS\_HD\_分割\_現在\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_hd_split_current_config)構造体。 この構造体には、ミニポート アダプターの現在のヘッダー データ分割構成を指定します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -48,13 +48,13 @@ ms.locfileid: "63375681"
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_HD\_分割\_現在\_構成**](https://msdn.microsoft.com/library/windows/hardware/ff565696)
+[**NDIS\_HD\_分割\_現在\_構成**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_hd_split_current_config)
 
 [**NDIS\_状態\_HD\_分割\_現在\_構成**](ndis-status-hd-split-current-config.md)
 
-[**NDIS\_状態\_を示す値**](https://msdn.microsoft.com/library/windows/hardware/ff567373)
+[**NDIS\_状態\_を示す値**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)
 
-[OID\_GEN\_HD\_分割\_パラメーター](https://msdn.microsoft.com/library/windows/hardware/ff569587)
+[OID\_GEN\_HD\_分割\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-hd-split-parameters)
 
  
 

@@ -4,12 +4,12 @@ description: 既定の規則セット (Default.sdv) では、推奨される一�
 ms.assetid: A86161C6-52E8-457B-9C75-100D36796183
 ms.date: 05/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: bf5ab6bb7dc2d41a6c996fda809331f9b6c7a278
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 39b2fe9d94858baa577b994770872b35ea15b9ed
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341131"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371406"
 ---
 # <a name="default-rule-set-kmdf"></a>既定の規則セット (KMDF)
 
@@ -35,7 +35,7 @@ ms.locfileid: "63341131"
     msbuild /t:sdv /p:Inputs="/check:Default.sdv" mydriver.VcxProj /p:Configuration="Win8 Release" /p:Platform=Win32
     ```
 
-    詳細については、次を参照してください。[ドライバーで障害を検出する Static Driver Verifier を使用して](https://msdn.microsoft.com/library/windows/hardware/hh454281)と[Static Driver Verifier のコマンド (MSBuild)](https://msdn.microsoft.com/library/windows/hardware/hh466459)します。
+    詳細については、次を参照してください。[ドライバーで障害を検出する Static Driver Verifier を使用して](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers)と[Static Driver Verifier のコマンド (MSBuild)](https://docs.microsoft.com/windows-hardware/drivers/devtest/-static-driver-verifier-commands--msbuild-)します。
 
  
 

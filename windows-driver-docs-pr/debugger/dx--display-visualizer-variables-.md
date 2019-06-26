@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 65d63e3469b6e18f58eebcbbe245f81364156828
-ms.sourcegitcommit: e123b8b69473c0ebc0383ef722452866bf6662d3
+ms.openlocfilehash: 6efbf791848c434cd3c55113496f411adb6338fc
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66394278"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366901"
 ---
 # <a name="dx-display-debugger-object-model-expression"></a>dx (デバッガー オブジェクト モデル式の表示)
 
 
-**Dx**コマンドは、NatVis の拡張機能モデルを使用して、C++ の式を表示します。 NatVis の詳細については、次を参照してください。[ネイティブ オブジェクトのカスタム ビューを作成](https://msdn.microsoft.com/library/jj620914.aspx)です。
+**Dx**コマンドは、NatVis の拡張機能モデルを使用して、C++ の式を表示します。 NatVis の詳細については、次を参照してください。[ネイティブ オブジェクトのカスタム ビューを作成](https://docs.microsoft.com/visualstudio/debugger/create-custom-views-of-native-objects?view=vs-2015)です。
 
 ```dbgcmd
 dx [-g|-gc #][-c #][-n|-v]-r[#] Expression[,<FormatSpecifier> ]

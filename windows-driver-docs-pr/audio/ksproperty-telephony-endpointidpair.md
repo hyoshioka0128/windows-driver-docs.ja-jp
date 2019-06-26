@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 943bb388dad81319c759c8031b54536e47c7849b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e7215e37fa0488095e32af848a2a95a7b6f9aa4e
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332580"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67391573"
 ---
 # <a name="kspropertytelephonyendpointidpair"></a>KSPROPERTY\_テレフォニー\_ENDPOINTIDPAIR
 
@@ -50,15 +50,15 @@ ms.locfileid: "63332580"
 <td align="left"><p>〇</p></td>
 <td align="left"><p>〇</p></td>
 <td align="left"><p>フィルター</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564262" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564262)"><strong>KSPROPERTY</strong></a></p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/mt169887" data-raw-source="[&lt;strong&gt;KSTOPOLOGY_ENDPOINTIDPAIR&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/mt169887)"><strong>KSTOPOLOGY_ENDPOINTIDPAIR</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/ff564262(v=vs.85)" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))"><strong>KSPROPERTY</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_tagkstopology_endpointidpair" data-raw-source="[&lt;strong&gt;KSTOPOLOGY_ENDPOINTIDPAIR&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_tagkstopology_endpointidpair)"><strong>KSTOPOLOGY_ENDPOINTIDPAIR</strong></a></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-プロパティ値が型[ **KSTOPOLOGY\_ENDPOINTIDPAIR**](https://msdn.microsoft.com/library/windows/hardware/mt169887)レンダリングとキャプチャのエンドポイントを指定します。
+プロパティ値が型[ **KSTOPOLOGY\_ENDPOINTIDPAIR**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_tagkstopology_endpointidpair)レンダリングとキャプチャのエンドポイントを指定します。
 
 ### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
 
@@ -67,9 +67,9 @@ A **KSPROPERTY\_テレフォニー\_ENDPOINTIDPAIR**プロパティ要求は、�
 <a name="remarks"></a>注釈
 -------
 
-携帯電話ルーティングによって制御されます**KSPROPERTY\_テレフォニー\_ENDPOINTIDPAIR**トポロジ フィルターのプロパティ。 このプロパティは 1 組の[ **KSTOPOLOGY\_ENDPOINTID** ](https://msdn.microsoft.com/library/windows/hardware/mt169886)構造体が要求されたエンドポイントの組み合わせ。 **KSTOPOLOGY\_ENDPOINTID**エンドポイントとエンドポイントが接続されているトポロジ フィルター pin ID トポロジ フィルターの参照文字列が含まれています。 ドライバーは、このプロパティの基本的なサポートを提供し、すべてのレンダーの有効なペアを返しますおよび携帯電話の音声ルーティングのために使用できるエンドポイントをキャプチャします。 表示し、この新しいエンドポイントの組み合わせ、どのような制約は、ハードウェアに必要な会議を携帯電話のオーディオのキャプチャの両方の移動を処理するために、ドライバーの役目です。 このプロパティは、システムでアクティブな電話呼び出しがない場合でも、設定可能にする必要があります。
+携帯電話ルーティングによって制御されます**KSPROPERTY\_テレフォニー\_ENDPOINTIDPAIR**トポロジ フィルターのプロパティ。 このプロパティは 1 組の[ **KSTOPOLOGY\_ENDPOINTID** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_tagkstopology_endpointid)構造体が要求されたエンドポイントの組み合わせ。 **KSTOPOLOGY\_ENDPOINTID**エンドポイントとエンドポイントが接続されているトポロジ フィルター pin ID トポロジ フィルターの参照文字列が含まれています。 ドライバーは、このプロパティの基本的なサポートを提供し、すべてのレンダーの有効なペアを返しますおよび携帯電話の音声ルーティングのために使用できるエンドポイントをキャプチャします。 表示し、この新しいエンドポイントの組み合わせ、どのような制約は、ハードウェアに必要な会議を携帯電話のオーディオのキャプチャの両方の移動を処理するために、ドライバーの役目です。 このプロパティは、システムでアクティブな電話呼び出しがない場合でも、設定可能にする必要があります。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

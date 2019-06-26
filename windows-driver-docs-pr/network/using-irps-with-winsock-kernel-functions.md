@@ -9,12 +9,12 @@ keywords:
 - WDK Winsock Kernel 関数
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 73df49f09fa5f74d24afe806d43665cf960df4ed
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f980dfd44c4337e4f94c83ead5104f48b2655b7f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372134"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360734"
 ---
 # <a name="using-irps-with-winsock-kernel-functions"></a>Winsock カーネル関数での IRP の使用
 
@@ -23,19 +23,19 @@ Winsock カーネル (WSK)[ネットワーク プログラミング インター
 
 IRP WSK 関数に渡す WSK アプリケーションを使用するは、次の方法のいずれかで取得できます。
 
--   WSK アプリケーションが呼び出すことによって、IRP を割り当てます、 [ **IoAllocateIrp** ](https://msdn.microsoft.com/library/windows/hardware/ff548257)関数。 このような状況で WSK アプリケーションは、I/O スタックの少なくとも 1 つの場所で IRP を割り当てる必要があります。
+-   WSK アプリケーションが呼び出すことによって、IRP を割り当てます、 [ **IoAllocateIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocateirp)関数。 このような状況で WSK アプリケーションは、I/O スタックの少なくとも 1 つの場所で IRP を割り当てる必要があります。
 
--   WSK アプリケーションには、以前の割り当てを完了した IRP が再利用されます。 このような状況で、WSK を呼び出す必要があります、 [ **IoReuseIrp** ](https://msdn.microsoft.com/library/windows/hardware/ff549661) IRP を再初期化する関数。
+-   WSK アプリケーションには、以前の割り当てを完了した IRP が再利用されます。 このような状況で、WSK を呼び出す必要があります、 [ **IoReuseIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioreuseirp) IRP を再初期化する関数。
 
 -   WSK アプリケーションより高いレベルのドライバーまたは I/O マネージャーのいずれかを渡された IRP を使用します。 このような状況で IRP が WSK サブシステムによって少なくとも 1 つ残り I/O スタックの場所用に使用できるが必要です。
 
-WSK アプリケーションが使用する IRP、WSK を呼び出すために機能、設定できる、 [ **IoCompletion** ](https://msdn.microsoft.com/library/windows/hardware/ff548354) WSK サブシステムによって IRP が完了したときに呼び出される IRP のルーチンです。 WSK アプリケーション設定、 **IoCompletion**呼び出して IRP の日常的な[ **IoSetCompletionRoutine** ](https://msdn.microsoft.com/library/windows/hardware/ff549679)関数。 IRP が発生した方法に応じて、 **IoCompletion**ルーチンは、必須またはオプションのいずれか。
+WSK アプリケーションが使用する IRP、WSK を呼び出すために機能、設定できる、 [ **IoCompletion** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine) WSK サブシステムによって IRP が完了したときに呼び出される IRP のルーチンです。 WSK アプリケーション設定、 **IoCompletion**呼び出して IRP の日常的な[ **IoSetCompletionRoutine** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iosetcompletionroutine)関数。 IRP が発生した方法に応じて、 **IoCompletion**ルーチンは、必須またはオプションのいずれか。
 
--   WSK アプリケーション、IRP を割り当てまたは以前に割り当てられた後に設定する必要がある IRP を再利用する場合、 **IoCompletion** WSK 関数を呼び出す前に IRP のルーチンです。 このような状況で WSK アプリケーションを指定する必要があります**TRUE**の*InvokeOnSuccess*、 *InvokeOnError*、および*InvokeOnCancel*パラメーターに渡される、 **IoSetCompletionRoutine**ことを確認する関数、 **IoCompletion**ルーチンが常に呼び出されます。 さらに、 **IoCompletion** IRP が状態を返す必要があります常にに対して設定されているルーチン\_詳細\_処理\_IRP の完了処理を終了するには、必要な作業です。 WSK アプリケーションを実行する場合の後の IRP を使用して、 **IoCompletion**ルーチンが呼び出されると、その後に呼び出す必要があります、 [ **IoFreeIrp** ](https://msdn.microsoft.com/library/windows/hardware/ff549113)を解放する前に IRP 関数返す、 **IoCompletion**ルーチン。 WSK アプリケーションは IRP を確保できない場合は、別の WSK 関数の呼び出しの IRP 再利用ができます。
+-   WSK アプリケーション、IRP を割り当てまたは以前に割り当てられた後に設定する必要がある IRP を再利用する場合、 **IoCompletion** WSK 関数を呼び出す前に IRP のルーチンです。 このような状況で WSK アプリケーションを指定する必要があります**TRUE**の*InvokeOnSuccess*、 *InvokeOnError*、および*InvokeOnCancel*パラメーターに渡される、 **IoSetCompletionRoutine**ことを確認する関数、 **IoCompletion**ルーチンが常に呼び出されます。 さらに、 **IoCompletion** IRP が状態を返す必要があります常にに対して設定されているルーチン\_詳細\_処理\_IRP の完了処理を終了するには、必要な作業です。 WSK アプリケーションを実行する場合の後の IRP を使用して、 **IoCompletion**ルーチンが呼び出されると、その後に呼び出す必要があります、 [ **IoFreeIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iofreeirp)を解放する前に IRP 関数返す、 **IoCompletion**ルーチン。 WSK アプリケーションは IRP を確保できない場合は、別の WSK 関数の呼び出しの IRP 再利用ができます。
 
--   WSK アプリケーションより高いレベルのドライバーまたは I/O マネージャーに渡された IRP を使用する場合に設定する必要があります、 **IoCompletion**その必要がある場合にのみ、WSK 関数を呼び出す前に IRP の日常的な通知を受け取るときに、操作実行、WSK によって関数が完了します。 WSK アプリケーションが設定されていない場合、 **IoCompletion** IRP の日常的な IRP が完了したときに IRP が渡すことがより高いレベルのドライバーへのバックアップまたは IRP の完了の通常の処理に従って I/O マネージャーにします。 WSK アプリケーションが設定されている場合、 **IoCompletion** 、IRP の日常的な**IoCompletion**ルーチンが状態を返せるか\_成功または状態\_詳細\_処理\_必要な作業です。 場合、 **IoCompletion**ルーチンがステータスを返します\_成功すると、IRP の完了処理は、通常どおり続行されます。 場合、 **IoCompletion**ルーチンがステータスを返します\_詳細\_処理\_必要に応じて、WSK アプリケーションする必要があります、IRP 呼び出して完了[ **IoCompleteRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff548343) WSK 関数によって実行された操作の結果の処理が完了した後。 WSK アプリケーションより高いレベルのドライバーまたは I/O マネージャーに渡された IRP が解放しない必要があります。
+-   WSK アプリケーションより高いレベルのドライバーまたは I/O マネージャーに渡された IRP を使用する場合に設定する必要があります、 **IoCompletion**その必要がある場合にのみ、WSK 関数を呼び出す前に IRP の日常的な通知を受け取るときに、操作実行、WSK によって関数が完了します。 WSK アプリケーションが設定されていない場合、 **IoCompletion** IRP の日常的な IRP が完了したときに IRP が渡すことがより高いレベルのドライバーへのバックアップまたは IRP の完了の通常の処理に従って I/O マネージャーにします。 WSK アプリケーションが設定されている場合、 **IoCompletion** 、IRP の日常的な**IoCompletion**ルーチンが状態を返せるか\_成功または状態\_詳細\_処理\_必要な作業です。 場合、 **IoCompletion**ルーチンがステータスを返します\_成功すると、IRP の完了処理は、通常どおり続行されます。 場合、 **IoCompletion**ルーチンがステータスを返します\_詳細\_処理\_必要に応じて、WSK アプリケーションする必要があります、IRP 呼び出して完了[ **IoCompleteRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest) WSK 関数によって実行された操作の結果の処理が完了した後。 WSK アプリケーションより高いレベルのドライバーまたは I/O マネージャーに渡された IRP が解放しない必要があります。
 
-**注**  WSK アプリケーションが設定されている場合、 **IoCompletion**より高いレベルのドライバーをするか、I/O マネージャーをして渡された IRP の日常的な**IoCompletion**ルーチンを確認する必要があります、 **PendingReturned** IRP と呼び出しのメンバー、 [ **IoMarkIrpPending** ](https://msdn.microsoft.com/library/windows/hardware/ff549422)関数の場合、 **PendingReturned**メンバーが**TRUE**します。 詳細については、次を参照してください。 [、IoCompletion ルーチンを実装する](https://msdn.microsoft.com/library/windows/hardware/ff547084)します。
+**注**  WSK アプリケーションが設定されている場合、 **IoCompletion**より高いレベルのドライバーをするか、I/O マネージャーをして渡された IRP の日常的な**IoCompletion**ルーチンを確認する必要があります、 **PendingReturned** IRP と呼び出しのメンバー、 [ **IoMarkIrpPending** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iomarkirppending)関数の場合、 **PendingReturned**メンバーが**TRUE**します。 詳細については、次を参照してください。 [、IoCompletion ルーチンを実装する](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-an-iocompletion-routine)します。
 
  
 
@@ -238,7 +238,7 @@ NTSTATUS
 }
 ```
 
-Irp の使用に関する詳細については、次を参照してください。 [Irp の処理](https://msdn.microsoft.com/library/windows/hardware/ff546847)します。
+Irp の使用に関する詳細については、次を参照してください。 [Irp の処理](https://docs.microsoft.com/windows-hardware/drivers/kernel/handling-irps)します。
 
  
 

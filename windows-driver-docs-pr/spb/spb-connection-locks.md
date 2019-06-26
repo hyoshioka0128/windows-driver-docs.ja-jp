@@ -4,25 +4,25 @@ description: 接続のロックは、単純な周辺機器バス (sp B) 上の�
 ms.assetid: 073D9854-0F51-4518-A22B-0A0546694E30
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 63f4bc21850570653114833098d2a548f622140c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ed08374b284243d1ceb21eebdde9e64a78cc5bea
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352634"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376926"
 ---
 # <a name="spb-connection-locks"></a>SPB 接続のロック
 
 
-接続のロックはでターゲットの周辺機器へのアクセスを共有する 2 つのクライアントを有効にするために便利です、[シンプルな周辺機器のバス](https://msdn.microsoft.com/library/windows/hardware/hh450903)(SPB)。 両方のクライアントは、同じターゲット デバイスへの論理接続を開き、いずれかのクライアントは、一連の I/O 操作を実行するデバイスへの排他アクセスを必要とする場合、接続のロックを使用できます。 1 つのクライアントは、接続のロックを保持しているときに、最初のクライアントは、ロックを解放するまで、デバイスにアクセスする 2 つ目のクライアントによって要求が自動的に保留します。
+接続のロックはでターゲットの周辺機器へのアクセスを共有する 2 つのクライアントを有効にするために便利です、[シンプルな周辺機器のバス](https://docs.microsoft.com/previous-versions/hh450903(v=vs.85))(SPB)。 両方のクライアントは、同じターゲット デバイスへの論理接続を開き、いずれかのクライアントは、一連の I/O 操作を実行するデバイスへの排他アクセスを必要とする場合、接続のロックを使用できます。 1 つのクライアントは、接続のロックを保持しているときに、最初のクライアントは、ロックを解放するまで、デバイスにアクセスする 2 つ目のクライアントによって要求が自動的に保留します。
 
 クライアントを使用して、 [ **IOCTL\_SPB\_ロック\_接続**](https://msdn.microsoft.com/library/windows/hardware/jj819324)と[ **IOCTL\_SPB\_ロックの解除\_接続**](https://msdn.microsoft.com/library/windows/hardware/jj819325)要求を取得し、SPB の対象となるデバイスの接続のロックを解除します。 クライアントは、デバイスのファイル オブジェクトをこれらの I/O 制御 (IOCTL) 要求を送信します。
 
-SPB に接続されている周辺機器デバイスのドライバーは、通常、ユーザー モード ドライバー フレームワーク (UMDF) ドライバーまたはカーネル モード ドライバー フレームワーク (KMDF) ドライバー。 に SPB に接続されている周辺機器を IOCTL 要求を送信する UMDF ドライバー メソッドを呼び出すよう[ **IWDFIoRequest::Send**](https://msdn.microsoft.com/library/windows/hardware/ff559149)します。 KMDF ドライバーなどのメソッドの呼び出し[ **WdfIoTargetSendIoctlSynchronously**](https://msdn.microsoft.com/library/windows/hardware/ff548660)します。
+SPB に接続されている周辺機器デバイスのドライバーは、通常、ユーザー モード ドライバー フレームワーク (UMDF) ドライバーまたはカーネル モード ドライバー フレームワーク (KMDF) ドライバー。 に SPB に接続されている周辺機器を IOCTL 要求を送信する UMDF ドライバー メソッドを呼び出すよう[ **IWDFIoRequest::Send**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest-send)します。 KMDF ドライバーなどのメソッドの呼び出し[ **WdfIoTargetSendIoctlSynchronously**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdfiotargetsendioctlsynchronously)します。
 
 通常、接続のロックは必要ありません。 ほとんどのクライアント ドライバーは、SPB のターゲット デバイスに排他アクセスを常にあります。 接続のロックが 2 つのクライアントが同じターゲット デバイスへのアクセスを共有する必要があります比較的まれなケースでのみ必要し、一方または両方のクライアントが I/O 操作の一連のデバイスへの排他アクセスを必要場合があります。
 
-既定で 2 つのクライアントがターゲット デバイスを共有している場合、 [SPB フレームワーク拡張](https://msdn.microsoft.com/library/windows/hardware/hh406203)(SpbCx) SpbCx 要求キューに到着した順序に従ってデバイスの I/O 要求をシリアル化します。 接続のロックは、要求の既定の順序をオーバーライドします。 1 つのクライアントの接続がロック後 SpbCx を保持するバックアップ I/O 要求の最初のクライアントは、ロックを解放するまで、2 つ目のクライアントから受信しました。
+既定で 2 つのクライアントがターゲット デバイスを共有している場合、 [SPB フレームワーク拡張](https://docs.microsoft.com/windows-hardware/drivers/spb/spb-framework-extension)(SpbCx) SpbCx 要求キューに到着した順序に従ってデバイスの I/O 要求をシリアル化します。 接続のロックは、要求の既定の順序をオーバーライドします。 1 つのクライアントの接続がロック後 SpbCx を保持するバックアップ I/O 要求の最初のクライアントは、ロックを解放するまで、2 つ目のクライアントから受信しました。
 
 SpbCx の現在の実装では、接続のロックの主な用途は、Acpi.sys、ACPI ドライバーを使用したデバイスへのアクセスを共有するターゲット デバイスのクライアント ドライバーを有効にします。 Acpi.sys は、ACPI ファームウェア ハードウェア プラットフォームをに代わってコア リソースの特定のデバイスを管理するシステム提供のドライバーです。 たとえば、チップ (SoC) システムを使用するプラットフォームには、電源管理統合回線 (PMIC) Acpi.sys と、クライアント ドライバーの両方によってアクセスされる可能性がありますも含まれます。
 
@@ -36,13 +36,13 @@ SpbCx の現在の実装では、接続のロックの主な用途は、Acpi.sys
 次の一覧には、一連の I/O がについて説明します、クライアントがデバイス上の読み取り/変更/書き込み操作を実行する SPB 接続のターゲット デバイスに送信することを要求します。
 
 1.  [**IOCTL\_SPB\_ロック\_接続**](https://msdn.microsoft.com/library/windows/hardware/jj819324) – ターゲット デバイスに接続のロックを取得します。
-2.  [**IRP\_MJ\_読み取り**](https://msdn.microsoft.com/library/windows/hardware/ff550794) – クライアントが解釈して、データを変更できるように、デバイスのアドレスからのデータ ブロックを読み取る。
-3.  [**IRP\_MJ\_書き込み**](https://msdn.microsoft.com/library/windows/hardware/ff550819) – デバイスのアドレスに変更されたデータ ブロックを記述します。
+2.  [**IRP\_MJ\_読み取り**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-read) – クライアントが解釈して、データを変更できるように、デバイスのアドレスからのデータ ブロックを読み取る。
+3.  [**IRP\_MJ\_書き込み**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-write) – デバイスのアドレスに変更されたデータ ブロックを記述します。
 4.  [**IOCTL\_SPB\_UNLOCK\_接続**](https://msdn.microsoft.com/library/windows/hardware/jj819325) – ターゲット デバイスの接続のロックを解除します。
 
 上記の一覧は、1 つのデバイスの関数を実装する単純なデバイスに適切な可能性があります。
 
-ただしより複雑なデバイスは、いくつかのデバイス機能を実装する場合があります。 このデバイスには、クライアントがデータ転送の開始時に読み込まれる関数アドレス登録が含まれます。 このデバイスの場合、 [ **IOCTL\_SPB\_EXECUTE\_シーケンス**](https://msdn.microsoft.com/library/windows/hardware/hh450857)要求は、関数アドレス レジスタの読み込みを組み合わせることができ、データを転送します。1 つのアトミック バス操作に次のとおりです。 詳細についてで例 I²C デバイスの説明を参照してください。 [Bus のアトミック操作](https://msdn.microsoft.com/library/windows/hardware/jj850339)します。
+ただしより複雑なデバイスは、いくつかのデバイス機能を実装する場合があります。 このデバイスには、クライアントがデータ転送の開始時に読み込まれる関数アドレス登録が含まれます。 このデバイスの場合、 [ **IOCTL\_SPB\_EXECUTE\_シーケンス**](https://msdn.microsoft.com/library/windows/hardware/hh450857)要求は、関数アドレス レジスタの読み込みを組み合わせることができ、データを転送します。1 つのアトミック バス操作に次のとおりです。 詳細についてで例 I²C デバイスの説明を参照してください。 [Bus のアトミック操作](https://docs.microsoft.com/windows-hardware/drivers/spb/atomic-bus-operations)します。
 
 ## <a name="comparison-with-controller-locks"></a>コント ローラーのロックとの比較
 
@@ -51,7 +51,7 @@ SpbCx の現在の実装では、接続のロックの主な用途は、Acpi.sys
 
 バスのアトミック操作として一連のデータ転送を実行するクライアントが通常使用して、 [ **IOCTL\_SPB\_EXECUTE\_シーケンス**](https://msdn.microsoft.com/library/windows/hardware/hh450857)要求。 バスのアトミック操作を実行するあまり一般的な方法は、コント ローラーのロックを使用してです。 クライアントが送信[ **IOCTL\_SPB\_ロック\_コント ローラー** ](https://msdn.microsoft.com/library/windows/hardware/hh450858)と[ **IOCTL\_SPB\_ロックの解除\_コント ローラー** ](https://msdn.microsoft.com/library/windows/hardware/hh450859)取得と解放コント ローラーのロックを要求します。
 
-コント ローラーのロックは、接続のロックとは異なります。 コント ローラーのロックは、I/O と転送の対象となるデバイスから、バスのバスの単一のアトミック操作として実行するシーケンスを使用できます。 コント ローラーのロックが有効では、コント ローラーのロックが解放されるまで、バス上にまたは他のデバイスからの転送が遅延します。 詳細については、次を参照してください。 [Bus のアトミック操作](https://msdn.microsoft.com/library/windows/hardware/jj850339)します。
+コント ローラーのロックは、接続のロックとは異なります。 コント ローラーのロックは、I/O と転送の対象となるデバイスから、バスのバスの単一のアトミック操作として実行するシーケンスを使用できます。 コント ローラーのロックが有効では、コント ローラーのロックが解放されるまで、バス上にまたは他のデバイスからの転送が遅延します。 詳細については、次を参照してください。 [Bus のアトミック操作](https://docs.microsoft.com/windows-hardware/drivers/spb/atomic-bus-operations)します。
 
 **注**  一部の実装で接続ロックできない場合があります、副作用として転送バス上の他のデバイスにします。 ただし、この動作は実装に依存して、クライアント ドライバーがそれに依存する必要があります。 これに対し、コント ローラーのロックがコント ローラーのロックを保持する、クライアントと同じターゲット デバイスへのアクセスを別のクライアントを確実に防止し、クライアントに安全にこの動作に依存します。
 

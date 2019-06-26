@@ -4,12 +4,12 @@ description: 汎用の I/O (GPIO) コント ローラー デバイスは、frame
 ms.assetid: 4BE99C71-9BA6-44E3-A54F-DE8C3440A474
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 18038820c85b31fe193472e74df1c9f606444dea
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d44735cdb30c336c2f57b585b77488494c6865a6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63326148"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363602"
 ---
 # <a name="gpio-device-contexts"></a>GPIO デバイス コンテキスト
 
@@ -18,7 +18,7 @@ ms.locfileid: "63326148"
 
 GPIO フレームワーク拡張機能 (GpioClx) が、ドライバーによって実装されているイベントのコールバック関数を呼び出すと、GpioClx では、この関数に、デバイス コンテキストをパラメーターとして渡します。 コールバック関数は、デバイスの現在の状態を確認するデバイス コンテキストを調べます。 場合は、この関数は、この状態を変更、それに応じて、デバイス コンテキストを更新します。
 
-GpioClx は、デバイス オブジェクトの記憶域を割り当てます。 GPIO コント ローラーのドライバーには、複数のデバイス オブジェクトがある場合は、これらの各オブジェクトのデバイス コンテキスト、同じサイズです。 中に、 [ **DriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff544113)ルーチン、ドライバーの呼び出し、 [ **GPIO\_CLX\_RegisterClient** ](https://msdn.microsoft.com/library/windows/hardware/hh439490)メソッドのコールバック関数を登録して、必要なデバイス コンテキストのサイズを指定します。 後で、中に、 [ *EvtDriverDeviceAdd* ](https://msdn.microsoft.com/library/windows/hardware/ff541693)コールバック ルーチン、ドライバーの呼び出し、 [ **GPIO\_CLX\_ProcessAddDevicePostDeviceCreate** ](https://msdn.microsoft.com/library/windows/hardware/hh439484) GpioClx、および GpioClx に新しいデバイス オブジェクトを渡すメソッドがこのオブジェクトに、デバイス コンテキストを割り当てます。 その後、GpioClx がドライバーによって実装されるコールバック関数を呼び出すときにこのデバイス コンテキストに渡されます関数をパラメーターとして。
+GpioClx は、デバイス オブジェクトの記憶域を割り当てます。 GPIO コント ローラーのドライバーには、複数のデバイス オブジェクトがある場合は、これらの各オブジェクトのデバイス コンテキスト、同じサイズです。 中に、 [ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)ルーチン、ドライバーの呼び出し、 [ **GPIO\_CLX\_RegisterClient** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nf-gpioclx-gpio_clx_registerclient)メソッドのコールバック関数を登録して、必要なデバイス コンテキストのサイズを指定します。 後で、中に、 [ *EvtDriverDeviceAdd* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)コールバック ルーチン、ドライバーの呼び出し、 [ **GPIO\_CLX\_ProcessAddDevicePostDeviceCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nf-gpioclx-gpio_clx_processadddevicepostdevicecreate) GpioClx、および GpioClx に新しいデバイス オブジェクトを渡すメソッドがこのオブジェクトに、デバイス コンテキストを割り当てます。 その後、GpioClx がドライバーによって実装されるコールバック関数を呼び出すときにこのデバイス コンテキストに渡されます関数をパラメーターとして。
 
  
 

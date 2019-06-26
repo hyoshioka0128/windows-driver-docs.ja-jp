@@ -12,19 +12,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 7780040a8ea85e59839578604848c70a63be6eed
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1630401cd7c5562c7faadc25c650b67eade9fd10
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352570"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67391973"
 ---
 # <a name="bug-check-17c-pdclockwatchdoglivedump"></a>バグのチェック 17 C:PDC\_ロック\_ウォッチドッグ\_LIVEDUMP
 
 PDC\_ロック\_ウォッチドッグ\_LIVEDUMP バグ チェックが 0x0000017C の値を持ちます。 これは、長時間 PDC ロックがスレッドの保持されていることを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
  ## <a name="pdclockwatchdoglivedump-parameters"></a>PDC\_ロック\_ウォッチドッグ\_LIVEDUMP パラメーター
@@ -54,7 +54,7 @@ PDC\_ロック\_ウォッチドッグ\_LIVEDUMP バグ チェックが 0x0000017
 
 [バグチェック コード リファレンス](bug-check-code-reference2.md)
 
-[!thread](-thread.md)
+[\!スレッド](-thread.md)
 
 
  

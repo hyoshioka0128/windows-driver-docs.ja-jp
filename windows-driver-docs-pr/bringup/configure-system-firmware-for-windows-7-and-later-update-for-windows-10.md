@@ -3,12 +3,12 @@ title: Windows 7 のシステム ファームウェアを構成し、Windows 10 
 description: Windows 7 のシステム ファームウェアを構成し、Windows 10 を有効にします。
 ms.date: 05/07/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 07b9db4b912514d09a91e1ed415e1ad1c8ebf626
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7c604c75507c44c83ccf10afa43e27296affc6fe
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328078"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364585"
 ---
 # <a name="configure-system-firmware-for-windows-7-and-enable-for-windows-10"></a>Windows 7 のシステム ファームウェアを構成し、Windows 10 を有効にします。
 
@@ -19,7 +19,7 @@ ms.locfileid: "63328078"
 
 - Windows 10 のブート コンポーネントをセキュリティで保護された (証明書など) がインストールされています。参照してください[セキュア ブート](secure-boot.md)詳細についてはします。
 
-- TPM 2.0 が Windows 7 での TPM のサポートのために使用します。 参照してください[KB2920188](https://support.microsoft.com/kb/2920188)詳細についてはします。
+- TPM 2.0 が Windows 7 での TPM のサポートのために使用します。 参照してください[KB2920188](https://support.microsoft.com/help/2920188/update-to-add-support-for-tpm-2-0-in-windows-7-and-windows-server-2008)詳細についてはします。
 
 - システムとデバイス ファームウェアを更新できるは、モデル一意の ID を EFI システム リソース Table(ESRT) を代入するか。
 

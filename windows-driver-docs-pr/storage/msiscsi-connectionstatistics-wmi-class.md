@@ -4,12 +4,12 @@ description: MSiSCSI\_ConnectionStatistics WMI クラス
 ms.assetid: f12dfa6a-0999-40a3-9e15-bb65dc086911
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: bb34209bb0bcd75876c452a71aac64dcac864873
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1ad30054f27435335edb05117d6bf06b8d903d81
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370312"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376696"
 ---
 # <a name="msiscsiconnectionstatistics-wmi-class"></a>MSiSCSI\_ConnectionStatistics WMI クラス
 
@@ -78,7 +78,7 @@ class MSiSCSI_ConnectionStatistics : Win32_PerfRawData {
 };
 ```
 
-WMI ツールのスイートでは、上記のクラス定義をコンパイルするときに生成、 [ **MSiSCSI\_ConnectionStatistics** ](https://msdn.microsoft.com/library/windows/hardware/ff562986)データ構造体。
+WMI ツールのスイートでは、上記のクラス定義をコンパイルするときに生成、 [ **MSiSCSI\_ConnectionStatistics** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsiprf/ns-iscsiprf-_msiscsi_connectionstatistics)データ構造体。
 
 イニシエーターは、MSiSCSI を登録する必要があります\_ConnectionStatistics WMI クラスに次のターゲット インスタンス名。
 
@@ -86,7 +86,7 @@ WMI ツールのスイートでは、上記のクラス定義をコンパイル�
 targetname_#:#
 ```
 
-最初の番号記号 (\#) の値は、 **USID**のメンバー、 [ **MSiSCSI\_ConnectionStatistics** ](https://msdn.microsoft.com/library/windows/hardware/ff562986)構造、および 2 番目シャープ記号 (\#) の値は、 **CID**このクラスのメンバー。
+最初の番号記号 (\#) の値は、 **USID**のメンバー、 [ **MSiSCSI\_ConnectionStatistics** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsiprf/ns-iscsiprf-_msiscsi_connectionstatistics)構造、および 2 番目シャープ記号 (\#) の値は、 **CID**このクラスのメンバー。
 
  
 

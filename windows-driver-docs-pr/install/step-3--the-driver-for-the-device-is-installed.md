@@ -4,12 +4,12 @@ description: 手順 3 のデバイス ドライバーがインストールされ
 ms.assetid: 292c5ffe-fbdf-42b8-9642-024c78709843
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 08947e850224be9cf3e7cc53dad24eb5846a8f41
-ms.sourcegitcommit: 3a51ae8db61be0e25549a5527ea3143e3025e82f
+ms.openlocfilehash: 8106f257165427ae1d7d57f70664465506b68c8b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65456420"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385876"
 ---
 # <a name="step-3-the-driver-for-the-device-is-installed"></a>手順 3:デバイスのドライバーがインストールされます
 
@@ -36,7 +36,7 @@ Windows が新しいデバイスの最適なドライバーを選択すると後
 
 4.  PnP マネージャーでは、関数の適切なドライバーとデバイスのすべてのオプションのフィルター ドライバーを読み込みます。
 
-    PnP マネージャー呼び出し、 [ **DriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff544113)がまだ読み込まれていない任意の必要なドライバーの日常的な。 PnP マネージャーを呼び出して、 [ **AddDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff540521)以降、低いフィルター ドライバーでは、各ドライバー関数ドライバー、し、最後に、上部のフィルター ドライバーの日常的な。 PnP マネージャーは、必要な場合は、リソースをデバイスに割り当てられます。 し、送信、 [ **IRP_MN_START_DEVICE** ](https://msdn.microsoft.com/library/windows/hardware/ff551749)デバイスのドライバーにします。
+    PnP マネージャー呼び出し、 [ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)がまだ読み込まれていない任意の必要なドライバーの日常的な。 PnP マネージャーを呼び出して、 [ **AddDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)以降、低いフィルター ドライバーでは、各ドライバー関数ドライバー、し、最後に、上部のフィルター ドライバーの日常的な。 PnP マネージャーは、必要な場合は、リソースをデバイスに割り当てられます。 し、送信、 [ **IRP_MN_START_DEVICE** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)デバイスのドライバーにします。
 
 このステップが完了するとすぐに、デバイスがインストールされ、すぐに使用できます。
 

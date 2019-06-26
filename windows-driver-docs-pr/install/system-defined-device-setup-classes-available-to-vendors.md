@@ -4,12 +4,12 @@ description: ベンダーが使用できるシステム定義のデバイス セ
 ms.assetid: d4b8a964-f843-4960-9077-46746af27a61
 ms.date: 05/08/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 913deb31788028721c29f7d1ccf0551adcba74d6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b1cb2d9ede7ab41b0b01175a68600ef9c4915574
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339625"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385861"
 ---
 # <a name="system-defined-device-setup-classes-available-to-vendors"></a>ベンダーが使用できるシステム定義のデバイス セットアップ クラス  
   
@@ -74,7 +74,7 @@ ClassGuid = {4d36e96a-e325-11ce-bfc1-08002be10318}
 **ヒューマン インターフェイス デバイス (HID)**  
 クラス HIDClass を =  
 ClassGuid = {745a17a0-74d3-11d0-b6fe-00a0c90f57da}  
-このクラスには、システムが提供することによって運用される対話型の入力デバイスが含まれています。 [HID クラス ドライバー](https://msdn.microsoft.com/library/windows/hardware/jj126193)します。 これは、に準拠している USB デバイスが含まれています、 [USB HID 標準](../hid/hid-over-usb.md)と HID ミニドライバーを使用するデバイスを USB 以外。 詳細については、次を参照してください。 [HIDClass デバイス セットアップ クラス](../hid/minidriver-operations.md)します。 (この一覧の後半で、キーボードまたはマウス クラスも参照)。  
+このクラスには、システムが提供することによって運用される対話型の入力デバイスが含まれています。 [HID クラス ドライバー](https://docs.microsoft.com/previous-versions/jj126193(v=vs.85))します。 これは、に準拠している USB デバイスが含まれています、 [USB HID 標準](../hid/hid-over-usb.md)と HID ミニドライバーを使用するデバイスを USB 以外。 詳細については、次を参照してください。 [HIDClass デバイス セットアップ クラス](../hid/minidriver-operations.md)します。 (この一覧の後半で、キーボードまたはマウス クラスも参照)。  
   
 **IEEE 1284.4 デバイス**  
 クラス Dot4 を =  
@@ -136,7 +136,7 @@ ClassGuid = {4d36e970-e325-11ce-bfc1-08002be10318}
 <a href="" id="modem-"></a>**モデム**  
 クラス モデムを =  
 ClassGuid = {4d36e96d-e325-11ce-bfc1-08002be10318}  
-このクラスには、モデム デバイスが含まれています。 または、*ソフトウェア モデム*します。 これらのデバイスでは、モデム デバイスとデバイス ドライバーの機能を分割します。 モデムの INF ファイル、および Microsoft Windows Driver Model (WDM) モデム デバイスの詳細については、次を参照してください。[モデム INF ファイルの概要](https://msdn.microsoft.com/library/windows/hardware/ff542559)と[WDM モデム サポートの追加](https://msdn.microsoft.com/library/windows/hardware/ff541218)します。  
+このクラスには、モデム デバイスが含まれています。 または、*ソフトウェア モデム*します。 これらのデバイスでは、モデム デバイスとデバイス ドライバーの機能を分割します。 モデムの INF ファイル、および Microsoft Windows Driver Model (WDM) モデム デバイスの詳細については、次を参照してください。[モデム INF ファイルの概要](https://docs.microsoft.com/previous-versions/windows/hardware/modem/ff542559(v=vs.85))と[WDM モデム サポートの追加](https://docs.microsoft.com/previous-versions/windows/hardware/modem/ff541218(v=vs.85))します。  
   
 <a href="" id="monitor-"></a>**モニター**  
 クラス モニターを =  

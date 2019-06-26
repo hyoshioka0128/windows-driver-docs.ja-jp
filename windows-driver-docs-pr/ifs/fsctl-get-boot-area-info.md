@@ -14,29 +14,29 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 66271f6de4718c69b921fcb2a09a38f1e6fa3469
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 65a58b4a2a751609de947995ad3996d84ed73eee
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63393017"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365040"
 ---
 # <a name="fsctlgetbootareainfo-control-code"></a>FSCTL\_取得\_ブート\_領域\_情報制御コード
 
 
 **FSCTL\_取得\_ブート\_領域\_情報**制御コードは、ボリュームのブート セクターの場所を取得します。
 
-この操作を実行するには、呼び出し、 [ **FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)関数または[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)を次の関数パラメーター。
+この操作を実行するには、呼び出し、 [ **FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)関数または[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)を次の関数パラメーター。
 
 **Parameters**
 
 <a href="" id="fileobject"></a>*FileObject*  
-[**FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)のみです。 対象のボリュームのファイル オブジェクト ポインター **FSCTL\_取得\_ブート\_領域\_情報**ブート情報が取得されます。 このパラメーターが必要とすることはできません**NULL**します。
+[**FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)のみです。 対象のボリュームのファイル オブジェクト ポインター **FSCTL\_取得\_ブート\_領域\_情報**ブート情報が取得されます。 このパラメーターが必要とすることはできません**NULL**します。
 
 <a href="" id="filehandle"></a>*FileHandle*  
 [**ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)のみです。 対象のボリュームのファイル ハンドル**FSCTL\_取得\_ブート\_領域\_情報**ブート情報が取得されます。 このパラメーターが必要とすることはできません**NULL**します。
 
-Se、このハンドルを開く必要がある\_管理\_ボリューム\_アクセス権の名前。 詳細については、次を参照してください。[ファイルのセキュリティとアクセス権](https://msdn.microsoft.com/library/windows/desktop/aa364399)します。
+Se、このハンドルを開く必要がある\_管理\_ボリューム\_アクセス権の名前。 詳細については、次を参照してください。[ファイルのセキュリティとアクセス権](https://docs.microsoft.com/windows/desktop/FileIO/file-security-and-access-rights)します。
 
 <a href="" id="fscontrolcode"></a>*FsControlCode*  
 操作の制御コード。 使用**FSCTL\_取得\_ブート\_領域\_情報**この操作にします。
@@ -48,7 +48,7 @@ Se、このハンドルを開く必要がある\_管理\_ボリューム\_アク
 この操作で使用できません。 0 に設定します。
 
 <a href="" id="outputbuffer"></a>*OutputBuffer*  
-ポインターを[**ブート\_領域\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff728836)構造体は、ボリュームのブート セクターの場所を受信します。
+ポインターを[**ブート\_領域\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_boot_area_info)構造体は、ボリュームのブート セクターの場所を受信します。
 
 <a href="" id="outputbufferlength"></a>*OutputBufferLength*  
 (バイト単位)、出力バッファーのサイズ。
@@ -56,7 +56,7 @@ Se、このハンドルを開く必要がある\_管理\_ボリューム\_アク
 <a name="status-block"></a>ステータス ブロック
 ------------
 
-[**FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)または[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)など、次のいずれかの適切な NTSTATUS 値を返します。
+[**FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)または[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)など、次のいずれかの適切な NTSTATUS 値を返します。
 
 <table>
 <colgroup>
@@ -72,7 +72,7 @@ Se、このハンドルを開く必要がある\_管理\_ボリューム\_アク
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>STATUS_SUCCESS</strong></p></td>
-<td align="left"><p>操作が正常に完了しました。 OutputBuffer にはへのポインターが含まれています、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff728836" data-raw-source="[&lt;strong&gt;BOOT_AREA_INFO&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff728836)"> <strong>BOOT_AREA_INFO</strong> </a>構造体。</p></td>
+<td align="left"><p>操作が正常に完了しました。 OutputBuffer にはへのポインターが含まれています、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_boot_area_info" data-raw-source="[&lt;strong&gt;BOOT_AREA_INFO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_boot_area_info)"> <strong>BOOT_AREA_INFO</strong> </a>構造体。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>STATUS_INVALID_PARAMETER</strong></p></td>
@@ -119,7 +119,7 @@ Se、このハンドルを開く必要がある\_管理\_ボリューム\_アク
 ## <a name="see-also"></a>関連項目
 
 
-[**DeviceIoControl**](https://msdn.microsoft.com/library/windows/desktop/aa363216)
+[**DeviceIoControl**](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)
 
  
 

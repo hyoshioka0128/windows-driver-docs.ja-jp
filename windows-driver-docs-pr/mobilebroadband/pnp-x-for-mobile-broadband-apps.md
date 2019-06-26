@@ -4,12 +4,12 @@ description: モバイル ブロードバンド アプリの PnP-X
 ms.assetid: f8f4756e-00b6-4778-9d67-73653865cf54
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4602f5bdd02598c4084c00c9b4eeb58c3d2038b8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 73fb800262e0b1a03c2c0dad78a06d589df7d013
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391042"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369238"
 ---
 # <a name="pnp-x-for-mobile-broadband-apps"></a>モバイル ブロードバンド アプリの PnP-X
 
@@ -21,7 +21,7 @@ ms.locfileid: "63391042"
 
 モバイル ブロード バンド ユーザー用自動インストール済みである同じアプリまたはデバイスの製造元と演算子が一緒に作成したブランド化されたアプリを使用できます。 アプリは、標準的なモバイル ブロード バンド アプリと同じ機能の多くを含める必要があります。 参照してください[モバイル ブロード バンドのアプリのユーザー エクスペリエンスの設計](designing-the-user-experience-of-a-mobile-broadband-app.md)のためモバイル ブロード バンド アプリで標準的なエクスペリエンスの推奨事項。
 
-ネットワーク デバイスの特定のクラスが自動的に組み合わされ、;詳細については、次を参照してください。[内部デバイス用の UWP デバイス アプリ](https://msdn.microsoft.com/library/windows/hardware/dn265152)します。 その他のデバイス クラスは自動的にアプリをインストールできませんまでユーザーの組み合わせ、デバイスとコンピューター設定を使用しています。
+ネットワーク デバイスの特定のクラスが自動的に組み合わされ、;詳細については、次を参照してください。[内部デバイス用の UWP デバイス アプリ](https://docs.microsoft.com/windows-hardware/drivers/devapps/windows-store-device-apps-for-specialized-devices)します。 その他のデバイス クラスは自動的にアプリをインストールできませんまでユーザーの組み合わせ、デバイスとコンピューター設定を使用しています。
 
 ## <a name="span-idappprivilegesspanspan-idappprivilegesspanspan-idappprivilegesspanapp-privileges"></a><span id="App_privileges"></span><span id="app_privileges"></span><span id="APP_PRIVILEGES"></span>アプリの権限
 

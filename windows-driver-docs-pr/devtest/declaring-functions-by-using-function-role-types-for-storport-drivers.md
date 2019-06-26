@@ -4,12 +4,12 @@ description: Storport ドライバーを分析する SDV を有効にするに�
 ms.assetid: 40BD11CD-A559-4F90-BF39-4ED2FB800392
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 64ecfc2e698591f8e373ed2e76d88cf034561acb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6ad901f3f8148b928ac3e37eb12af7e07d7019c1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341150"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371422"
 ---
 # <a name="declaring-functions-by-using-function-role-types-for-storport-drivers"></a>Storport ドライバーの関数役割型を使用した関数の宣言
 
@@ -29,23 +29,23 @@ sp_DRIVER_INITIALIZE DriverEntry;
 | ロールの種類の関数                        | Storport ルーチン                                                                                                               |
 |-------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------|
 | sp\_ドライバー\_初期化                    | DriverEntry                                                                                                                    |
-| HW\_初期化                            | [**HwStorInitialize**](https://msdn.microsoft.com/library/windows/hardware/ff557396)                                                                               |
-| HW\_BUILDIO                               | [**HwStorBuildIo**](https://msdn.microsoft.com/library/windows/hardware/ff557369)                                                                                     |
-| HW\_STARTIO                               | [**HwStorStartIo**](https://msdn.microsoft.com/library/windows/hardware/ff557423)                                                                                     |
-| HW\_を中断                             | [**HwStorInterrupt**](https://msdn.microsoft.com/library/windows/hardware/ff557403)                                                                                 |
-| HW\_タイマー                                 | [**HwStorTimer**](https://msdn.microsoft.com/library/windows/hardware/ff557426)                                                                                         |
-| HW\_検索\_アダプター                         | [**HwStorFindAdapter**](https://msdn.microsoft.com/library/windows/hardware/ff557390)                                                                             |
-| HW\_リセット\_バス                            | [**HwStorResetBus**](https://msdn.microsoft.com/library/windows/hardware/ff557415)                                                                                   |
-| HW\_アダプター\_コントロール                      | [**HwStorAdapterControl**](https://msdn.microsoft.com/library/windows/hardware/ff557365)                                                                       |
-| HW\_パッシブ\_初期化\_ルーチン          | [**HwStorPassiveInitializeRoutine**](https://msdn.microsoft.com/library/windows/hardware/ff557407)                                                   |
-| HW\_DPC\_ルーチン                          | [**HwStorDpcRoutine**](https://msdn.microsoft.com/library/windows/hardware/ff557383)                                                                               |
-| HW\_FREE\_アダプター\_リソース              | 一部を HwFreeAdapterResources、 [**仮想\_HW\_初期化\_データ**](https://msdn.microsoft.com/library/windows/hardware/ff568010)構造体。  |
-| HW\_プロセス\_サービス\_要求             | 一部を HwProcessServiceRequest、 [**仮想\_HW\_初期化\_データ**](https://msdn.microsoft.com/library/windows/hardware/ff568010)構造体。 |
-| HW\_完了\_サービス\_IRP                | 一部を HwCompleteServiceIrp、 [**仮想\_HW\_初期化\_データ**](https://msdn.microsoft.com/library/windows/hardware/ff568010)構造体。    |
-| HW\_初期化\_トレース                   | 一部を HwInitializeTracing、 [**仮想\_HW\_初期化\_データ**](https://msdn.microsoft.com/library/windows/hardware/ff568010)構造体。     |
-| HW\_クリーンアップ\_トレース                      | 一部を HwCleanupTracing、 [**仮想\_HW\_初期化\_データ**](https://msdn.microsoft.com/library/windows/hardware/ff568010)構造体。        |
-| 仮想\_HW\_検索\_アダプター                | 一部を HwFindAdapter、 [**仮想\_HW\_初期化\_データ**](https://msdn.microsoft.com/library/windows/hardware/ff568010)構造体。           |
-| HW\_メッセージ\_シグナルされた\_INTERRUPT\_ルーチン | [**HwMSInterruptRoutine**](https://msdn.microsoft.com/library/windows/hardware/ff557268)                                                                       |
+| HW\_初期化                            | [**HwStorInitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-hw_initialize)                                                                               |
+| HW\_BUILDIO                               | [**HwStorBuildIo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-hw_buildio)                                                                                     |
+| HW\_STARTIO                               | [**HwStorStartIo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-hw_startio)                                                                                     |
+| HW\_を中断                             | [**HwStorInterrupt**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-hw_interrupt)                                                                                 |
+| HW\_タイマー                                 | [**HwStorTimer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-hw_timer)                                                                                         |
+| HW\_検索\_アダプター                         | [**HwStorFindAdapter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-hw_find_adapter)                                                                             |
+| HW\_リセット\_バス                            | [**HwStorResetBus**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-hw_reset_bus)                                                                                   |
+| HW\_アダプター\_コントロール                      | [**HwStorAdapterControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-hw_adapter_control)                                                                       |
+| HW\_パッシブ\_初期化\_ルーチン          | [**HwStorPassiveInitializeRoutine**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-hw_passive_initialize_routine)                                                   |
+| HW\_DPC\_ルーチン                          | [**HwStorDpcRoutine**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-hw_dpc_routine)                                                                               |
+| HW\_FREE\_アダプター\_リソース              | 一部を HwFreeAdapterResources、 [**仮想\_HW\_初期化\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/ns-storport-_virtual_hw_initialization_data)構造体。  |
+| HW\_プロセス\_サービス\_要求             | 一部を HwProcessServiceRequest、 [**仮想\_HW\_初期化\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/ns-storport-_virtual_hw_initialization_data)構造体。 |
+| HW\_完了\_サービス\_IRP                | 一部を HwCompleteServiceIrp、 [**仮想\_HW\_初期化\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/ns-storport-_virtual_hw_initialization_data)構造体。    |
+| HW\_初期化\_トレース                   | 一部を HwInitializeTracing、 [**仮想\_HW\_初期化\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/ns-storport-_virtual_hw_initialization_data)構造体。     |
+| HW\_クリーンアップ\_トレース                      | 一部を HwCleanupTracing、 [**仮想\_HW\_初期化\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/ns-storport-_virtual_hw_initialization_data)構造体。        |
+| 仮想\_HW\_検索\_アダプター                | 一部を HwFindAdapter、 [**仮想\_HW\_初期化\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/ns-storport-_virtual_hw_initialization_data)構造体。           |
+| HW\_メッセージ\_シグナルされた\_INTERRUPT\_ルーチン | [**HwMSInterruptRoutine**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-hw_message_signaled_interrupt_routine)                                                                       |
 
  
 

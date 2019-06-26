@@ -10,12 +10,12 @@ keywords:
 - WDK の Bluetooth の値を返す
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 03c883b19f878fd37a636282eb1d512eb98c3972
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c57ca71fa3d99344c13d99d7330f5518c748c58e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328249"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364647"
 ---
 # <a name="building-and-sending-a-brb"></a>BRB の構築と送信
 
@@ -24,15 +24,15 @@ ms.locfileid: "63328249"
 
 ### <a name="span-idtobuildandsendabrbspanspan-idtobuildandsendabrbspanto-build-and-send-a-brb"></a><span id="to_build_and_send_a_brb"></span><span id="TO_BUILD_AND_SEND_A_BRB"></span>構築し、BRB の送信
 
-1.  IRP を割り当てます。 Irp を使用する方法の詳細については、次を参照してください。 [Irp の処理](https://msdn.microsoft.com/library/windows/hardware/ff546847)します。
+1.  IRP を割り当てます。 Irp を使用する方法の詳細については、次を参照してください。 [Irp の処理](https://docs.microsoft.com/windows-hardware/drivers/kernel/handling-irps)します。
 
-2.  BRB を割り当てます。 BRBs を割り当てるには、呼び出し、 [ **BthAllocateBrb** ](https://msdn.microsoft.com/library/windows/hardware/ff536634)プロファイル ドライバーで使用するため、Bluetooth ドライバー スタックをエクスポートする関数。 ポインターを取得する、 *BthAllocateBrb*関数を参照してください[Bluetooth インターフェイスの照会](querying-for-bluetooth-interfaces.md)します。
+2.  BRB を割り当てます。 BRBs を割り当てるには、呼び出し、 [ **BthAllocateBrb** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthddi/nc-bthddi-pfnbth_allocate_brb)プロファイル ドライバーで使用するため、Bluetooth ドライバー スタックをエクスポートする関数。 ポインターを取得する、 *BthAllocateBrb*関数を参照してください[Bluetooth インターフェイスの照会](querying-for-bluetooth-interfaces.md)します。
 
 3.  BRB のパラメーターを初期化します。 各 BRB では、対応する構造体を使用します。 使用目的に従って構造体のメンバーを設定します。 BRBs と、対応する構造の一覧については、次を参照してください。 [Bluetooth ドライバー スタックを使用して](using-the-bluetooth-driver-stack.md)します。
 
 4.  IRP のパラメーターを初期化します。 設定、 **MajorFunction** IRP に IRP のメンバー\_MJ\_内部\_デバイス\_コントロール。 設定、 **Parameters.DeviceIoControl.IoControlCode** IOCTL メンバー\_内部\_両方\_送信\_BRB します。 設定、 **Parameters.Others.Argument1** BRB をポイントするメンバー。
 
-5.  IRP がドライバー スタック ダウンを渡します。 呼び出す[**保留**](https://msdn.microsoft.com/library/windows/hardware/ff548336) IRP を次の下位ドライバーに送信します。
+5.  IRP がドライバー スタック ダウンを渡します。 呼び出す[**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver) IRP を次の下位ドライバーに送信します。
 
 次の擬似コードの例では、Bluetooth ドライバー スタックの処理に L2CAP Ping BRB を設定する方法を示します。
 

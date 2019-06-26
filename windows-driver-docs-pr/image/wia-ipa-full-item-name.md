@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a01404a4936b11b24b3cb40e0b4c28de9aea1ea
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 444b8137b566127d8f5171cbd2fb9a0796401a7e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369533"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377320"
 ---
 # <a name="wiaipafullitemname"></a>WIA\_IPA\_完全\_項目\_名
 
@@ -38,11 +38,11 @@ WIA\_IPA\_完全\_項目\_NAME プロパティには、完全な項目名 (パ�
 <a name="remarks"></a>注釈
 -------
 
-*完全な項目名*と同じ、 *bstrFullItemName*のパラメーター、 [ **wiasCreateDrvItem** ](https://msdn.microsoft.com/library/windows/hardware/ff549160)ユーティリティ関数をサービスします。 アプリケーションの読み取り、WIA\_IPA\_完全な\_項目\_する項目のことを確認する名前のプロパティが現在使用して、WIA 項目のツリーでそのアイテムはどこにあります。 各項目には、一意の名前を必要があります。 通常、アプリケーションは、WIA 項目のツリー内の項目を検索する完全な項目の名前を使用します。 WIA サービスを作成して維持 WIA\_IPA\_完全\_項目\_名。
+*完全な項目名*と同じ、 *bstrFullItemName*のパラメーター、 [ **wiasCreateDrvItem** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamdef/nf-wiamdef-wiascreatedrvitem)ユーティリティ関数をサービスします。 アプリケーションの読み取り、WIA\_IPA\_完全な\_項目\_する項目のことを確認する名前のプロパティが現在使用して、WIA 項目のツリーでそのアイテムはどこにあります。 各項目には、一意の名前を必要があります。 通常、アプリケーションは、WIA 項目のツリー内の項目を検索する完全な項目の名前を使用します。 WIA サービスを作成して維持 WIA\_IPA\_完全\_項目\_名。
 
 アプリケーションは、WIA を読み取ります\_IPA\_完全\_項目\_まもなく受信するには、イメージの形式を特定の名前。 アプリケーションでは、書式を設定するには、このプロパティを書き込みます。 WIA\_IPA\_完全\_項目\_名前によって異なります、 [ **WIA\_IPA\_TYMED** ](wia-ipa-tymed.md)プロパティ。 WIA ミニドライバーを作成し、維持 WIA\_IPA\_完全\_項目\_名。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -61,11 +61,11 @@ WIA\_IPA\_完全\_項目\_NAME プロパティには、完全な項目名 (パ�
 ## <a name="see-also"></a>関連項目
 
 
-[**IWiaMiniDrvTransferCallback::GetNextStream**](https://msdn.microsoft.com/library/windows/hardware/jj151551)
+[**IWiaMiniDrvTransferCallback::GetNextStream**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrvtransfercallback-getnextstream)
 
 [**WIA\_IPA\_TYMED**](wia-ipa-tymed.md)
 
-[**wiasCreateDrvItem**](https://msdn.microsoft.com/library/windows/hardware/ff549160)
+[**wiasCreateDrvItem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamdef/nf-wiamdef-wiascreatedrvitem)
 
  
 

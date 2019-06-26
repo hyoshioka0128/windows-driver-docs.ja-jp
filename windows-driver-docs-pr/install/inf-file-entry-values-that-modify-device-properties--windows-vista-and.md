@@ -4,12 +4,12 @@ description: デバイス プロパティを変更する INF ファイルのエ�
 ms.assetid: 5ce0875f-2687-42d9-b980-ed184b552a62
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4412180ff2ee00ed20e73490e409867b9eb15730
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1186375f4aa1d6caeb04d541e3e932a3b20171cc
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379368"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365851"
 ---
 # <a name="inf-file-entry-values-that-modify-device-properties"></a>デバイス プロパティを変更する INF ファイルのエントリ値
 
@@ -38,11 +38,11 @@ ms.locfileid: "63379368"
 
 いくつかの INF ファイル エントリの値は、Windows が対応するデバイスのシステム定義のプロパティの設定に使用する情報を提供します。 デバイスのプロパティの値は、このような INF ファイル エントリの値によって提供されますのいくつかの例を次に示します。
 
--   [ **DEVPKEY_Device_DeviceDesc** ](https://msdn.microsoft.com/library/windows/hardware/ff542407)デバイス インスタンスのプロパティが設定されて、*デバイス説明*エントリの値で、 [ **INFセクションをモデル化**](inf-models-section.md)します。
+-   [ **DEVPKEY_Device_DeviceDesc** ](https://docs.microsoft.com/windows-hardware/drivers/install/devpkey-device-devicedesc)デバイス インスタンスのプロパティが設定されて、*デバイス説明*エントリの値で、 [ **INFセクションをモデル化**](inf-models-section.md)します。
 
--   [ **DEVPKEY_DeviceClass_ClassName** ](https://msdn.microsoft.com/library/windows/hardware/ff542272)プロパティを[デバイス セットアップ クラス](device-setup-classes.md)で設定されて、*クラス名*INFでエントリの値**クラス**ディレクティブで、 [ **INF バージョン セクション**](inf-version-section.md)します。
+-   [ **DEVPKEY_DeviceClass_ClassName** ](https://docs.microsoft.com/windows-hardware/drivers/install/devpkey-deviceclass-classname)プロパティを[デバイス セットアップ クラス](device-setup-classes.md)で設定されて、*クラス名*INFでエントリの値**クラス**ディレクティブで、 [ **INF バージョン セクション**](inf-version-section.md)します。
 
--   [ **DEVPKEY_DeviceInterface_ClassGuid** ](https://msdn.microsoft.com/library/windows/hardware/ff542349)デバイス インターフェイスのプロパティが設定されて、 *InterfaceClassGuid*エントリの値で、 [ **INF InterfaceInstall32 セクション**](inf-interfaceinstall32-section.md)します。
+-   [ **DEVPKEY_DeviceInterface_ClassGuid** ](https://docs.microsoft.com/windows-hardware/drivers/install/devpkey-deviceinterface-classguid)デバイス インターフェイスのプロパティが設定されて、 *InterfaceClassGuid*エントリの値で、 [ **INF InterfaceInstall32 セクション**](inf-interfaceinstall32-section.md)します。
 
 ### <a href="" id="inf-addreg-directives-and-inf-delreg-directives-that-modify-system-def"></a>INF AddReg ディレクティブとデバイスのシステム定義のプロパティを変更する INF してディレクティブ
 

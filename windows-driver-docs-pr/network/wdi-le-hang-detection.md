@@ -4,12 +4,12 @@ description: このセクションには、WDI に LE ハング検出がにつ�
 ms.assetid: 9C0BB4B8-184A-4C1A-8B47-C30C8318AEEB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 966b6d52548c937c3479bab0af8736e855ad6950
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 20f1394815cd92f83a924e15bdd808b1f9c7474c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63385480"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387215"
 ---
 # <a name="le-hang-detection"></a>LE ハング検出
 
@@ -21,14 +21,14 @@ ms.locfileid: "63385480"
 LE またはファームウェアのウォッチドッグ タイマーは、ファームウェアの停滞を検出すると、UE から期待次に示します。
 
 1.  D0 の場合
-    1.  LE を示します[NDIS\_状態\_WDI\_INDICATION\_ファームウェア\_STALLED](https://msdn.microsoft.com/library/windows/hardware/dn925634)します。
+    1.  LE を示します[NDIS\_状態\_WDI\_INDICATION\_ファームウェア\_STALLED](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wdi-indication-firmware-stalled)します。
     2.  表示から戻り値に、LE を返します (存在する場合)、ストールした WDI コマンド。
     3.  UE は、回復のリセット (RR) プロシージャを開始します。
 
 2.  Dx の場合これはのみ検出ファームウェア失速で発生します。
     1.  ファームウェアは、ウェイク アップの割り込みを発生させます。
     2.  D0 コマンドを受信するには、理由、ファームウェアの一時停止などのウェイク アップの理由を示します。
-    3.  D0 WDI OID を返された後、LE ことを示します[NDIS\_状態\_WDI\_INDICATION\_ファームウェア\_STALLED](https://msdn.microsoft.com/library/windows/hardware/dn925634)します。
+    3.  D0 WDI OID を返された後、LE ことを示します[NDIS\_状態\_WDI\_INDICATION\_ファームウェア\_STALLED](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wdi-indication-firmware-stalled)します。
     4.  D0 と手順を完了するには。1a、1b、および 1 c。
 
 ![wdi le ハング検出](images/wdi-le-hang-detection-flow.png)
@@ -59,9 +59,9 @@ Recovery にこのシナリオで動作する、リセット、ファームウ�
 ## <a name="related-topics"></a>関連トピック
 
 
-[NDIS\_状態\_WDI\_INDICATION\_ファームウェア\_STALLED](https://msdn.microsoft.com/library/windows/hardware/dn925634)
+[NDIS\_状態\_WDI\_INDICATION\_ファームウェア\_STALLED](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wdi-indication-firmware-stalled)
 
-[**WDI\_TLV\_INDICATION\_WAKE\_理由**](https://msdn.microsoft.com/library/windows/hardware/dn897834)
+[**WDI\_TLV\_INDICATION\_WAKE\_理由**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-indication-wake-reason)
 
  
 

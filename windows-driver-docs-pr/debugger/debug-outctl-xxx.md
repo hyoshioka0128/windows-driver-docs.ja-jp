@@ -14,12 +14,12 @@ api_location:
 api_type:
 - HeaderDef
 ms.localizationpriority: medium
-ms.openlocfilehash: 071d675430ac36829a6f7121d24ac02dcff836e9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5ef36199c42beacf0eca61f8d55a90633e9240b4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366222"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361442"
 ---
 # <a name="debugoutctlxxx"></a>デバッグ\_OUTCTL\_XXX
 
@@ -38,14 +38,14 @@ ms.locfileid: "63366222"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">値</th>
+<th align="left">Value</th>
 <th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>DEBUG_OUTCTL_THIS_CLIENT</p></td>
-<td align="left"><p>このクライアントによって呼び出されるメソッドによって生成される出力は、このクライアントにのみ送信されます<a href="https://msdn.microsoft.com/library/windows/hardware/ff560116#output-callbacks" data-raw-source="[output callbacks](https://msdn.microsoft.com/library/windows/hardware/ff560116#output-callbacks)">コールバックを出力</a>します。</p></td>
+<td align="left"><p>このクライアントによって呼び出されるメソッドによって生成される出力は、このクライアントにのみ送信されます<a href="https://docs.microsoft.com/windows-hardware/drivers/debugger/using-input-and-output#output-callbacks" data-raw-source="[output callbacks](https://docs.microsoft.com/windows-hardware/drivers/debugger/using-input-and-output#output-callbacks)">コールバックを出力</a>します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>DEBUG_OUTCTL_ALL_CLIENTS</p></td>
@@ -77,7 +77,7 @@ ms.locfileid: "63366222"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">値</th>
+<th align="left">Value</th>
 <th align="left">説明</th>
 </tr>
 </thead>
@@ -112,7 +112,7 @@ ms.locfileid: "63366222"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">値</th>
+<th align="left">Value</th>
 <th align="left">説明</th>
 </tr>
 </thead>

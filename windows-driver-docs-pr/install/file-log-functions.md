@@ -7,12 +7,12 @@ keywords:
 - ログ ファイル WDK SetupAPI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 675e7593dbd47703b7881ca9320bf4aea8f7d7bd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 54a1cd37eca96449affe0d365686f9f160a0d566
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378742"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371927"
 ---
 # <a name="file-log-functions"></a>ファイル ログ関数
 
@@ -37,27 +37,27 @@ ms.locfileid: "63378742"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/aa377397" data-raw-source="[&lt;strong&gt;SetupInitializeFileLog&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/desktop/aa377397)"><strong>SetupInitializeFileLog</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupinitializefileloga" data-raw-source="[&lt;strong&gt;SetupInitializeFileLog&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupinitializefileloga)"><strong>SetupInitializeFileLog</strong></a></p></td>
 <td align="left"><p>使用するためのログ ファイルを初期化します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/aa377405" data-raw-source="[&lt;strong&gt;SetupLogError&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/desktop/aa377405)"><strong>SetupLogError</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setuplogerrora" data-raw-source="[&lt;strong&gt;SetupLogError&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setuplogerrora)"><strong>SetupLogError</strong></a></p></td>
 <td align="left"><p>エラー メッセージをログ ファイルに書き込みます。 (それ使用してください、オペレーティング システムのインストール時にのみ。)</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/aa377406" data-raw-source="[&lt;strong&gt;SetupLogFile&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/desktop/aa377406)"><strong>SetupLogFile</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setuplogfilea" data-raw-source="[&lt;strong&gt;SetupLogFile&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setuplogfilea)"><strong>SetupLogFile</strong></a></p></td>
 <td align="left"><p>ログ ファイルにエントリを追加します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/aa377415" data-raw-source="[&lt;strong&gt;SetupQueryFileLog&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/desktop/aa377415)"><strong>SetupQueryFileLog</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupqueryfileloga" data-raw-source="[&lt;strong&gt;SetupQueryFileLog&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupqueryfileloga)"><strong>SetupQueryFileLog</strong></a></p></td>
 <td align="left"><p>ログ ファイルから情報を取得します。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/aa377429" data-raw-source="[&lt;strong&gt;SetupRemoveFileLogEntry&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/desktop/aa377429)"><strong>SetupRemoveFileLogEntry</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupremovefilelogentrya" data-raw-source="[&lt;strong&gt;SetupRemoveFileLogEntry&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupremovefilelogentrya)"><strong>SetupRemoveFileLogEntry</strong></a></p></td>
 <td align="left"><p>ログ ファイルからエントリを削除します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/aa377443" data-raw-source="[&lt;strong&gt;SetupTerminateFileLog&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/desktop/aa377443)"><strong>SetupTerminateFileLog</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupterminatefilelog" data-raw-source="[&lt;strong&gt;SetupTerminateFileLog&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupterminatefilelog)"><strong>SetupTerminateFileLog</strong></a></p></td>
 <td align="left"><p>ログ ファイルに割り当てられたリソースを解放します。</p></td>
 </tr>
 </tbody>

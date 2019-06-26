@@ -5,12 +5,12 @@ ms.assetid: d5a32626-caff-4708-a134-d80a845dee91
 ms.date: 08/08/2017
 keywords: -OID_GEN_CURRENT_PACKET_FILTER ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: b7ac4d4f4033f6f4082f9aa5e44eb189bbf99b73
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7e24e3cf00aef4b129e5d7d8c42957f645230fac
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368952"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369148"
 ---
 # <a name="oidgencurrentpacketfilter"></a>OID\_GEN\_現在\_パケット\_フィルター
 
@@ -81,19 +81,19 @@ FDDI の NIC を受信する SMT パケット。
 <a href="" id="ndis-packet-type-source-routing"></a>NDIS\_パケット\_型\_ソース\_ルーティング  
 すべてのソース パケットをルーティングします。 プロトコル ドライバーには、このビットが設定、NDIS ライブラリはソースのルーティング仲介役として機能しようとします。
 
-ミニポート アダプターがメディアの種類**NdisMedium802\_3**または**NdisMedium802\_5**NDIS は、マルチキャストおよび機能のアドレスと共に、パケットの受信を無効にします。呼び出し中に、 [ **NdisOpenAdapterEx** ](https://msdn.microsoft.com/library/windows/hardware/ff563715)関数。
+ミニポート アダプターがメディアの種類**NdisMedium802\_3**または**NdisMedium802\_5**NDIS は、マルチキャストおよび機能のアドレスと共に、パケットの受信を無効にします。呼び出し中に、 [ **NdisOpenAdapterEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisopenadapterex)関数。
 
-プロトコル ドライバーに他のすべてのメディアの種類を持つミニポート アダプターの中にいつでもパケットの受信を開始できます、 [ **NdisOpenAdapterEx** ](https://msdn.microsoft.com/library/windows/hardware/ff563715)呼び出します。 プロトコルがする前にパケットを受信できるさらに注意してください。 **NdisOpenAdapterEx**を返します。 一般に、最善の努力は、パケット フィルタ リングとパケット フィルターが 0 の場合でも受信表示をプロトコルを処理するドライバーを準備する必要があります。
+プロトコル ドライバーに他のすべてのメディアの種類を持つミニポート アダプターの中にいつでもパケットの受信を開始できます、 [ **NdisOpenAdapterEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisopenadapterex)呼び出します。 プロトコルがする前にパケットを受信できるさらに注意してください。 **NdisOpenAdapterEx**を返します。 一般に、最善の努力は、パケット フィルタ リングとパケット フィルターが 0 の場合でも受信表示をプロトコルを処理するドライバーを準備する必要があります。
 
 クエリの場合は、NDIS は、OR 演算子を使用して結合されるバインドのフィルターを返します。
 
 セットに対して、指定されたパケットのフィルターには、バインディングの前のパケット フィルターが置き換えられます。 ミニポート ドライバーには、パケットの種類以前有効になっているプロトコル ドライバーには、新しいフィルターでその型を指定しない場合、プロトコル ドライバーはこの種類のパケットを受信しません。
 
-ミニポート アダプターがメディアの種類**NdisMedium802\_3**または**NdisMedium802\_5**への応答で特定のパケットの種類のミニポート ドライバーがビットに設定されていない場合、このクエリでは、プロトコル ドライバーではその種類のパケットは受信しません。 プロトコル ドライバーがパケットの受信を無効に呼び出すことによって、その結果、 [ **NdisOidRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff563710)または[ **NdisCoOidRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff561711)関数がゼロのフィルターを使用します。
+ミニポート アダプターがメディアの種類**NdisMedium802\_3**または**NdisMedium802\_5**への応答で特定のパケットの種類のミニポート ドライバーがビットに設定されていない場合、このクエリでは、プロトコル ドライバーではその種類のパケットは受信しません。 プロトコル ドライバーがパケットの受信を無効に呼び出すことによって、その結果、 [ **NdisOidRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisoidrequest)または[ **NdisCoOidRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscooidrequest)関数がゼロのフィルターを使用します。
 
 その他のすべてのメディアの種類を持つミニポート アダプターの NDIS は、パケットの種類をチェックしません。 これらのメディアの種類は、プロトコル ドライバーが 0 のフィルターを指定することでパケットの受信を無効にできません。
 
-ときに、ミニポート ドライバーの[ *MiniportInitializeEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559389)関数が呼び出されると、ミニポート ドライバーのパケット フィルターを 0 に設定する必要があります。 パケット フィルターが 0 の場合に表示されるインジケーターは無効になります。 ミニポート ドライバーの後に*MiniportInitializeEx*関数が返される、OID を設定できるプロトコル ドライバー\_GEN\_現在\_パケット\_のため 0 以外の値をフィルター処理そのプロトコルで受信したパケットを示すために、ミニポート ドライバーを有効にします。
+ときに、ミニポート ドライバーの[ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)関数が呼び出されると、ミニポート ドライバーのパケット フィルターを 0 に設定する必要があります。 パケット フィルターが 0 の場合に表示されるインジケーターは無効になります。 ミニポート ドライバーの後に*MiniportInitializeEx*関数が返される、OID を設定できるプロトコル ドライバー\_GEN\_現在\_パケット\_のため 0 以外の値をフィルター処理そのプロトコルで受信したパケットを示すために、ミニポート ドライバーを有効にします。
 
 NDIS で無作為検出モードが有効な場合\_パケット\_型\_無作為検出ビットの場合でも、送信側のネットワーク ノードはないにリダイレクトするには、パケットを受信するプロトコル ドライバーが続行されます。 NDIS は、すべてのパケットが、NIC にはプロトコル ドライバーから送信します。
 
@@ -122,7 +122,7 @@ MPDU フラグメントが暗号化されている場合で、前に、示され
 
 有効な場合、この種類のフィルターにのみ影響 NDIS など、他の標準のパケット フィルター\_パケット\_型\_ダイレクトまたは NDIS\_パケット\_型\_ブロードキャストします。
 
-生の 802.11 データ パケットを指定する方法の詳細については、次を参照してください。 [Raw 802.11 パケットのことを示す](https://msdn.microsoft.com/library/windows/hardware/ff554833)します。
+生の 802.11 データ パケットを指定する方法の詳細については、次を参照してください。 [Raw 802.11 パケットのことを示す](https://docs.microsoft.com/windows-hardware/drivers/network/indicating-raw-802-11-packets)します。
 
 <a href="" id="ndis-packet-type-802-11-directed-mgmt"></a>NDIS\_パケット\_型\_802\_11\_ダイレクト\_管理  
 802.11 管理パケットが送られます。 有向パケット含む宛先アドレスが NIC のステーションのアドレスと一致しません
@@ -144,7 +144,7 @@ MPDU フラグメントが暗号化されている場合で、前に、示され
 
 有効な場合、この種類のフィルターにのみ影響 802.11 他の管理パケット フィルター、NDIS\_パケット\_型\_802\_11\_ダイレクト\_MGMT または NDIS\_パケット\_型\_802\_11\_マルチキャスト\_管理
 
-生の 802.11 管理パケットを指定する方法の詳細については、次を参照してください。 [Raw 802.11 パケットのことを示す](https://msdn.microsoft.com/library/windows/hardware/ff554833)します。
+生の 802.11 管理パケットを指定する方法の詳細については、次を参照してください。 [Raw 802.11 パケットのことを示す](https://docs.microsoft.com/windows-hardware/drivers/network/indicating-raw-802-11-packets)します。
 
 <a href="" id="ndis-packet-type-802-11-directed-ctrl"></a>NDIS\_パケット\_型\_802\_11\_ダイレクト\_CTRL  
 802.11 コントロール パケットが送られます。 有向パケット含む宛先アドレスが NIC のステーションのアドレスと一致しません
@@ -175,9 +175,9 @@ MPDU フラグメントが暗号化されている場合で、前に、示され
 
 NetMon と ExtAP 動作モードの詳細については、次のトピックを参照してください。
 
-[ネットワーク モニターの操作モード](https://msdn.microsoft.com/library/windows/hardware/ff568369)
+[ネットワーク モニターの操作モード](https://docs.microsoft.com/windows-hardware/drivers/network/network-monitor-operation-mode)
 
-[拡張可能なアクセス ポイントの操作モード](https://msdn.microsoft.com/library/windows/hardware/ff549858)
+[拡張可能なアクセス ポイントの操作モード](https://docs.microsoft.com/windows-hardware/drivers/network/extensible-access-point-operation-mode)
 
 <a name="requirements"></a>要件
 ------------
@@ -198,13 +198,13 @@ NetMon と ExtAP 動作モードの詳細については、次のトピックを
 ## <a name="see-also"></a>関連項目
 
 
-[*MiniportInitializeEx*](https://msdn.microsoft.com/library/windows/hardware/ff559389)
+[*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)
 
-[**NdisCoOidRequest**](https://msdn.microsoft.com/library/windows/hardware/ff561711)
+[**NdisCoOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscooidrequest)
 
-[**NdisOidRequest**](https://msdn.microsoft.com/library/windows/hardware/ff563710)
+[**NdisOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisoidrequest)
 
-[**NdisOpenAdapterEx**](https://msdn.microsoft.com/library/windows/hardware/ff563715)
+[**NdisOpenAdapterEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisopenadapterex)
 
  
 

@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 840ddb0eaf20194407cd8e5613932b76f329d773
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: aea99c33cb3288a4141238140b95a8628452d0c4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357614"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361881"
 ---
 # <a name="bug-check-0x40-targetmdltoosmall"></a>バグ チェック 0x40:ターゲット\_MDL\_すぎます\_小さな
 
@@ -26,7 +26,7 @@ ms.locfileid: "63357614"
 ターゲット\_MDL\_すぎます\_小さなバグ チェックが 0x00000040 の値を持ちます。 これは、ドライバーが正しく使用されていることを示します**IoBuildPartialMdl**します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="targetmdltoosmall-parameters"></a>ターゲット\_MDL\_すぎます\_小さなパラメーター

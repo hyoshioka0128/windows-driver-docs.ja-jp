@@ -8,41 +8,41 @@ keywords:
 - INF ファイル WDK WHEA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 604861b275a238d875dd06be3b32fb929a0159d3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d6c3cabad180eea41df3a78649186e809b68646a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340797"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386467"
 ---
 # <a name="inf-files-for-pshed-plug-ins"></a>PSHED プラグインの INF ファイル
 
 
-によって、PSHED プラグインがインストールされている、[情報 (INF) ファイル](https://msdn.microsoft.com/library/windows/hardware/ff547402)します。 PSHED プラグインの INF ファイルには、次の標準的な INF ファイルでセクションが含まれます。
+によって、PSHED プラグインがインストールされている、[情報 (INF) ファイル](https://docs.microsoft.com/windows-hardware/drivers/install/inf-files)します。 PSHED プラグインの INF ファイルには、次の標準的な INF ファイルでセクションが含まれます。
 
-[**バージョンの INF セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547502)
+[**バージョンの INF セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-version-section)
 
-[**INF SourceDisksNames セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547478)
+[**INF SourceDisksNames セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-sourcedisksnames-section)
 
-[**INF SourceDisksFiles セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547472)
+[**INF SourceDisksFiles セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-sourcedisksfiles-section)
 
-[**INF DestinationDirs セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547383)
+[**INF DestinationDirs セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-destinationdirs-section)
 
-[**製造元の INF セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547454)
+[**製造元の INF セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-manufacturer-section)
 
-[**INF*モデル*セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547456)
+[**INF*モデル*セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-models-section)
 
-[**INF *DDInstall*セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547344)
+[**INF *DDInstall*セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)
 
-[**INF *DDInstall*します。「サービス」セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547349)
+[**INF *DDInstall*します。「サービス」セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-services-section)
 
-[**INF 文字列 セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547485)
+[**INF 文字列 セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-strings-section)
 
-内で、 [ **INF*モデル*セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547456)、プラットフォーム ベンダーは、いずれかを使用できる[ハードウェア識別子 (ID)](https://msdn.microsoft.com/library/windows/hardware/ff546152) PSHED プラグインの。 使用して ID を指定したハードウェア、 *hw id*内のエントリ、*モデル*セクションし、ACPI 名前空間または別のデバイスの名前空間でのハードウェア ID を指定できます。 仕入先を指定できますも、[互換性 ID](https://msdn.microsoft.com/library/windows/hardware/ff539950)の値を持つ*PNP0C33*します。 この互換性のある ID を使用して、Microsoft と互換性のあるハードウェア エラー デバイスを定義します。 仕入先を使用して互換性のある ID を指定します、*互換性のある id*内のエントリ、*モデル*セクション。
+内で、 [ **INF*モデル*セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-models-section)、プラットフォーム ベンダーは、いずれかを使用できる[ハードウェア識別子 (ID)](https://docs.microsoft.com/windows-hardware/drivers/install/hardware-ids) PSHED プラグインの。 使用して ID を指定したハードウェア、 *hw id*内のエントリ、*モデル*セクションし、ACPI 名前空間または別のデバイスの名前空間でのハードウェア ID を指定できます。 仕入先を指定できますも、[互換性 ID](https://docs.microsoft.com/windows-hardware/drivers/install/compatible-ids)の値を持つ*PNP0C33*します。 この互換性のある ID を使用して、Microsoft と互換性のあるハードウェア エラー デバイスを定義します。 仕入先を使用して互換性のある ID を指定します、*互換性のある id*内のエントリ、*モデル*セクション。
 
-PSHED プラグインの INF ファイルに含める必要がありますも、 [ **AddReg** ](https://msdn.microsoft.com/library/windows/hardware/ff546320)にエントリを追加するファイルのセクションを参照するディレクティブ、**システム**\\ **CurrentControlSet**\\**コントロール**\\**PSHED**\\**プラグイン**レジストリのキー。 このエントリは、プラグインの PSHED がシステムにインストールされていることを PSHED に通知します。 これにより、システムを起動するたびにすべてインストールされている PSHED プラグインが正常にロードされていることを確認するよう PSHED できます。
+PSHED プラグインの INF ファイルに含める必要がありますも、 [ **AddReg** ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)にエントリを追加するファイルのセクションを参照するディレクティブ、**システム**\\ **CurrentControlSet**\\**コントロール**\\**PSHED**\\**プラグイン**レジストリのキー。 このエントリは、プラグインの PSHED がシステムにインストールされていることを PSHED に通知します。 これにより、システムを起動するたびにすべてインストールされている PSHED プラグインが正常にロードされていることを確認するよう PSHED できます。
 
-次に、例を示します。
+例:
 
 ```cpp
 ;

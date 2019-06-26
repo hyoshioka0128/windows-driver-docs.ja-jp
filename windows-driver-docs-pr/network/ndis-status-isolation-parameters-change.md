@@ -5,12 +5,12 @@ ms.assetid: 4F3916B6-F52D-4B99-8F1C-A4A5BA9B307B
 ms.date: 08/08/2017
 keywords: -NDIS_STATUS_ISOLATION_PARAMETERS_CHANGE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f8b713befb209af4db83f786f1a564263b63471
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4759dbe9f9f82789ff0b4efecff6d2325846ac72
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323446"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368577"
 ---
 # <a name="ndisstatusisolationparameterschange"></a>NDIS\_状態\_分離\_パラメーター\_変更
 
@@ -41,7 +41,7 @@ VM ネットワーク アダプターのミニポート ドライバーが生成
 
 
 ****
-[**NDIS\_状態\_を示す値**](https://msdn.microsoft.com/library/windows/hardware/ff567373)
+[**NDIS\_状態\_を示す値**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)
 
 [OID\_GEN\_分離\_パラメーター](oid-gen-isolation-parameters.md)
 

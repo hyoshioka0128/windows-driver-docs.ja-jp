@@ -9,12 +9,12 @@ ms.date: 04/20/2017
 ms.localizationpriority: medium
 f1_keywords:
 - C28152
-ms.openlocfilehash: e848f95770f8d2d2358e72931a4fad11d9a3eb8c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2604f9b5ead9eab0fc17d9e8e9897929d295491b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361353"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364109"
 ---
 # <a name="c28152"></a>C28152
 
@@ -29,7 +29,7 @@ C28152 を警告します。AddDevice などの関数からの戻り値が予期
 FunctionalDeviceObject->Flags &= ~DO_DEVICE_INITIALIZING;
 ```
 
-詳細については**AddDevice**ルーチンを参照してください[関数またはフィルター ドライバーで AddDevice ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff540529)
+詳細については**AddDevice**ルーチンを参照してください[関数またはフィルター ドライバーで AddDevice ルーチン](https://docs.microsoft.com/windows-hardware/drivers/kernel/adddevice-routines-in-function-or-filter-drivers)
 
  
 

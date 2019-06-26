@@ -8,12 +8,12 @@ keywords:
 - デバッガー コマンド プログラム、制御フロー トークン
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a52a84a2f0c1dd81b3955cbc7a268069b9fac6c7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3a72484fd5aa3fc2d5ab9a93a2b938e0034ae25e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375037"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367000"
 ---
 # <a name="control-flow-tokens"></a>制御フロー トークン
 
@@ -55,7 +55,7 @@ ms.locfileid: "63375037"
 
 -   [**同じ操作を行います**](-do.md)トークンと同様に動作、**は**キーワードは C では、条件の前に"while"という単語を使用することはできません。
 
--   [ **.Break** ](https://msdn.microsoft.com/library/windows/hardware/ff556242)トークンと同様に動作、 **break** C のキーワード内でこのトークンを使用する**対して**、 **.while**、または**手順**ループします。
+-   [ **.Break** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/-break)トークンと同様に動作、 **break** C のキーワード内でこのトークンを使用する**対して**、 **.while**、または**手順**ループします。
 
 -   [ **.Continue** ](-continue.md)トークンと同様に動作、**続行**C のキーワード内でこのトークンを使用する**対して**、 **.while**、または**手順**ループします。
 

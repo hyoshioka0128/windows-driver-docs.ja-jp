@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e178b556ff219b788f92ae9da4fc1f061dc25fc1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e7019b28256d9f828f97c467be343b43f0886f58
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324716"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361713"
 ---
 # <a name="bug-check-0x96-invalidworkqueueitem"></a>バグ チェック 0x96:無効な\_作業\_キュー\_項目
 
@@ -26,7 +26,7 @@ ms.locfileid: "63324716"
 無効な\_作業\_キュー\_項目のバグ チェックが 0x00000096 の値を持ちます。 このバグ チェックでは、キューのエントリが削除されたことを示すを含む、 **NULL**ポインター。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="invalidworkqueueitem-parameters"></a>無効な\_作業\_キュー\_アイテムのパラメーター

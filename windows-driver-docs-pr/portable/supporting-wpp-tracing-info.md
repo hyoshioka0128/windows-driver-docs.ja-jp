@@ -3,12 +3,12 @@ Description: WPP トレースのサポート
 title: WPP トレースのサポート
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c36d291a72128499c915f2dd58815b1ae3cf986
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 71e94395218c546c06d283b6a66d964bbf8c79fe
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380842"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387183"
 ---
 # <a name="supporting-wpp-tracing"></a>WPP トレースのサポート
 
@@ -152,7 +152,7 @@ DllMain ルーチンを更新した後は、それぞれを更新します。CPP
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
-[WDK と Visual Studio のビルド環境](https://msdn.microsoft.com/library/windows/hardware/hh454286)
+[WDK と Visual Studio のビルド環境](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdk-and-visual-studio-build-environment)
 
  
 

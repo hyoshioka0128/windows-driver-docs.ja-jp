@@ -11,19 +11,19 @@ keywords:
 - 下位の参加リスト WDK KTM
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 25f9ba7163ef8816fc8cdbb1e83be7b741ed0cdf
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8b4027083eda1425acb3175bd347d33c85f9c32b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345441"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377183"
 ---
 # <a name="creating-a-superior-transaction-manager"></a>上位トランザクション マネージャーの作成
 
 
 KTM で、*優先的なトランザクション マネージャー*リソース マネージャーに含まれているトランザクションの優れた参加リストを作成します。 A*上位登録*リソース マネージャーに調整する権限が付与された参加リストは、[コミット操作](handling-commit-operations.md)登録リストのトランザクションの。 つまり、トランザクションのクライアントまたは上位のトランザクション マネージャーは、トランザクションの前-prepare/準備/コミットのシーケンスを開始できます。
 
-KTM はすべての呼び出しを拒否するリソース マネージャーがトランザクションの上位の登録を作成、 [ **ZwCommitTransaction** ](https://msdn.microsoft.com/library/windows/hardware/ff566420)トランザクションにします。 そのため、トランザクションのクライアントは、このようなトランザクションをコミットすることはできません。 代わりに、上位の登録を作成したリソース マネージャーを呼び出す必要があります[ **ZwPrePrepareEnlistment**](https://msdn.microsoft.com/library/windows/hardware/ff567044)、 [ **ZwPrepareEnlistment** ](https://msdn.microsoft.com/library/windows/hardware/ff567039)、および[ **ZwCommitEnlistment**](https://msdn.microsoft.com/library/windows/hardware/ff566419)します。
+KTM はすべての呼び出しを拒否するリソース マネージャーがトランザクションの上位の登録を作成、 [ **ZwCommitTransaction** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcommittransaction)トランザクションにします。 そのため、トランザクションのクライアントは、このようなトランザクションをコミットすることはできません。 代わりに、上位の登録を作成したリソース マネージャーを呼び出す必要があります[ **ZwPrePrepareEnlistment**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntpreprepareenlistment)、 [ **ZwPrepareEnlistment** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntprepareenlistment)、および[ **ZwCommitEnlistment**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcommitenlistment)します。
 
 ### <a name="when-to-create-a-superior-transaction-manager"></a>上位のトランザクション マネージャーを作成する場合
 
@@ -35,19 +35,19 @@ KTM はすべての呼び出しを拒否するリソース マネージャーが
 
 コンポーネントに優れたトランザクション マネージャーになる場合は、以下を行うこと必要があります。
 
-1.  呼び出す[ **ZwCreateResourceManager** ](https://msdn.microsoft.com/library/windows/hardware/ff566427)リソース マネージャーとして登録します。
+1.  呼び出す[ **ZwCreateResourceManager** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcreateresourcemanager)リソース マネージャーとして登録します。
 
-2.  呼び出す[ **ZwCreateTransaction** ](https://msdn.microsoft.com/library/windows/hardware/ff566429)たびに、クライアントのコンポーネントがコンポーネントのクライアント インターフェイスを使用してトランザクションを作成します。
+2.  呼び出す[ **ZwCreateTransaction** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcreatetransaction)たびに、クライアントのコンポーネントがコンポーネントのクライアント インターフェイスを使用してトランザクションを作成します。
 
-3.  呼び出す[ **ZwCreateEnlistment**](https://msdn.microsoft.com/library/windows/hardware/ff566422)、参加リストを設定\_優れたフラグ、および参加リストの両方を指定して\_優れた\_権限との参加\_下位\_権限フラグにアクセスします。
+3.  呼び出す[ **ZwCreateEnlistment**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcreateenlistment)、参加リストを設定\_優れたフラグ、および参加リストの両方を指定して\_優れた\_権限との参加\_下位\_権限フラグにアクセスします。
 
-4.  呼び出す[ **ZwPrePrepareEnlistment**](https://msdn.microsoft.com/library/windows/hardware/ff567044)、 [ **ZwPrepareEnlistment**](https://msdn.microsoft.com/library/windows/hardware/ff567039)、および[ **ZwCommitEnlistment** ](https://msdn.microsoft.com/library/windows/hardware/ff566419)コンポーネントのクライアントがトランザクションをコミットするコンポーネントのクライアント インターフェイスを呼び出すとします。
+4.  呼び出す[ **ZwPrePrepareEnlistment**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntpreprepareenlistment)、 [ **ZwPrepareEnlistment**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntprepareenlistment)、および[ **ZwCommitEnlistment** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcommitenlistment)コンポーネントのクライアントがトランザクションをコミットするコンポーネントのクライアント インターフェイスを呼び出すとします。
 
 KTM では、トランザクションあたり 1 つだけ上位の登録を許可します。 他のリソース マネージャーは、追加の参加リストを作成できます。 これらの参加リストが呼び出される*下位の参加リスト*コミット操作を開始することはできませんので。
 
-上位の登録を優先的なトランザクション マネージャーの呼び出しをロールバックする[ **ZwRollbackEnlistment**](https://msdn.microsoft.com/library/windows/hardware/ff567083)します。
+上位の登録を優先的なトランザクション マネージャーの呼び出しをロールバックする[ **ZwRollbackEnlistment**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntrollbackenlistment)します。
 
-上位の登録を優先的なトランザクション マネージャーの呼び出しを回復する[ **ZwRecoverEnlistment**](https://msdn.microsoft.com/library/windows/hardware/ff567075)します。
+上位の登録を優先的なトランザクション マネージャーの呼び出しを回復する[ **ZwRecoverEnlistment**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntrecoverenlistment)します。
 
 優先的なトランザクション マネージャーがコミットまたはロールバック、トランザクションの復旧、KTM を送信[トランザクション通知](transaction-notifications.md)すべてに参加リストが下位に参加できるようにします。
 

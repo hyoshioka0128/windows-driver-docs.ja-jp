@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a2da0d3a24e845256fbe9bf220a7c1dff2c3137
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: cedcdc9313dc92ab04ed53bd3d77cd4455fdd982
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574414"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368152"
 ---
 # <a name="kspropertybdapidfilterunmappids"></a>KSPROPERTY\_BDA\_PIDFILTER\_UNMAP\_PID
 
@@ -42,16 +42,16 @@ ms.locfileid: "56574414"
 <thead>
 <tr class="header">
 <th>取得</th>
-<th>Set</th>
-<th>移行先</th>
+<th>設定</th>
+<th>対象</th>
 <th>プロパティ記述子の型</th>
 <th>プロパティ値の型</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>はい</p></td>
-<td><p>はい</p></td>
+<td><p>〇</p></td>
+<td><p>〇</p></td>
 <td><p>フィルター</p></td>
 <td><p>KSP_NODE</p></td>
 <td><p>BDA_PID_UNMAP</p></td>
@@ -61,7 +61,7 @@ ms.locfileid: "56574414"
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 **NodeId** KSP のメンバー\_ノードが PID フィルター ノードの識別子を指定します。
@@ -89,9 +89,9 @@ BDA\_PID\_UNMAP 構造体には、特定の Pid を入力ストリームから�
 ## <a name="see-also"></a>関連項目
 
 
-[**BDA\_PID\_マッピング解除**](https://msdn.microsoft.com/library/windows/hardware/ff556540)
+[**BDA\_PID\_マッピング解除**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdatypes/ns-bdatypes-_bda_pid_unmap)
 
-[**KSP\_ノード**](https://msdn.microsoft.com/library/windows/hardware/ff566720)
+[**KSP\_ノード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_node)
 
  
 

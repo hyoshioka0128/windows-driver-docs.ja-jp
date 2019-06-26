@@ -4,12 +4,12 @@ description: ドライバーのインストールは、一般的な INF 処理�
 ms.assetid: B00B4361-B531-4D28-A521-0F8B3B48CEA4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a10d80eb6fb9d51672bd7ddeb25475b270ec701
-ms.sourcegitcommit: 2a05cdf17819196ff3e99cb7d8d8b3bea4fd3faa
+ms.openlocfilehash: 1fd5d50315480e2e87b2817238c39b38a7c61e83
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67268549"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375025"
 ---
 # <a name="elam-driver-requirements"></a>ELAM ドライバーの要件
 
@@ -73,19 +73,19 @@ PnP ポリシーとを使用して、分類、AM ドライバーによって提�
 
 これらのコールバックは、ELAM ドライバーの有効期間を通じて有効な登録解除されます、ドライバーが読み込まれると。 For more info, see:
 
-* [**CmRegisterCallbackEx**](https://msdn.microsoft.com/library/windows/hardware/ff541921)
-* [**CmRegisterCallback**](https://msdn.microsoft.com/library/windows/hardware/ff541918)
-* [**CmUnRegisterCallback**](https://msdn.microsoft.com/library/windows/hardware/ff541928)
+* [**CmRegisterCallbackEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-cmregistercallbackex)
+* [**CmRegisterCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-cmregistercallback)
+* [**CmUnRegisterCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-cmunregistercallback)
 
 ### <a name="boot-driver-callbacks"></a>ブート ドライバーのコールバック
 
-使用[ **IoRegisterBootDriverCallback** ](https://msdn.microsoft.com/library/windows/hardware/hh439379)と[ **IoUnRegisterBootDriverCallback** ](https://msdn.microsoft.com/library/windows/hardware/hh439394)登録、の登録を解除する[ *BOOT_DRIVER_CALLBACK_FUNCTION*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nc-ntddk-boot_driver_callback_function)します。
+使用[ **IoRegisterBootDriverCallback** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-ioregisterbootdrivercallback)と[ **IoUnRegisterBootDriverCallback** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-iounregisterbootdrivercallback)登録、の登録を解除する[ *BOOT_DRIVER_CALLBACK_FUNCTION*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nc-ntddk-boot_driver_callback_function)します。
 
 このコールバックは、すべてのブート開始ドライバーが初期化されているし、コールバック機能が動作しなくを含む、ELAM ドライバーを Windows からステータスの更新を提供します。
 
 ### <a name="callback-type"></a>コールバックの種類
 
-[ **BDCB_CALLBACK_TYPE 列挙**](https://msdn.microsoft.com/library/windows/hardware/hh406352)コールバックの 2 つの種類について説明します。
+[ **BDCB_CALLBACK_TYPE 列挙**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ne-ntddk-_bdcb_callback_type)コールバックの 2 つの種類について説明します。
 
 -   コールバック状態が更新され、ELAM ドライバー (BdCbStatusUpdate) を提供します。
 -   イメージ (BdCbInitializeImage) を初期化する前に、ブート開始ドライバーと依存 Dll を分類する AM ドライバーによって使用されるコールバック
@@ -120,7 +120,7 @@ ELAM hive がアンロード、使用後に起動時マルウェア対策によ�
 
 **マルウェアの署名を検証します。**
 
-マルウェアの署名のデータの整合性を検証するためのメソッドは、各 AM ISV までままです。 [CNG 暗号化プリミティブ関数](https://msdn.microsoft.com/library/windows/desktop/aa833130)はデジタル署名と証明書をマルウェアの署名データを確認するために利用できます。
+マルウェアの署名のデータの整合性を検証するためのメソッドは、各 AM ISV までままです。 [CNG 暗号化プリミティブ関数](https://docs.microsoft.com/windows/desktop/SecCNG/cng-cryptographic-primitive-functions)はデジタル署名と証明書をマルウェアの署名データを確認するために利用できます。
 
 **マルウェアの署名のエラー**
 

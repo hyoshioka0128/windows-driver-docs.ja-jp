@@ -8,17 +8,17 @@ keywords:
 - PMI WDK 電源メーター
 ms.date: 10/09/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d419a271efd49519779a60d9db1501835bcad6f6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 407b2b57697a8564ecf2e3202cba215128233363
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331802"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376970"
 ---
 # <a name="power-meter-interface"></a>電源メーター インターフェイス
 
 
-電源メーター インターフェイス (PMI) は I/O 要求パケット (Irp) サービスを提供する WDM ドライバーを通じて提供されます、[電源マネージャー](https://msdn.microsoft.com/library/windows/hardware/ff559829)の電源の WMI プロバイダー コンポーネントと、[ユーザー モードの Power サービス](user-mode-power-service.md)(UMPS)。
+電源メーター インターフェイス (PMI) は I/O 要求パケット (Irp) サービスを提供する WDM ドライバーを通じて提供されます、[電源マネージャー](https://docs.microsoft.com/windows-hardware/drivers/kernel/power-manager)の電源の WMI プロバイダー コンポーネントと、[ユーザー モードの Power サービス](user-mode-power-service.md)(UMPS)。
 
 PMI では、ユーザー モード サービスまたはアプリケーションによって発行される I/O 制御 (IOCTL) 要求パケットのさまざまなサポートを提供します。 この IOCTL インターフェイスは、次の項目に関する情報を提供します。
 
@@ -34,7 +34,7 @@ PMI には、電力のしきい値または予算に達したか超えました�
 
 使用状況測定情報 PMI からアクセスされる電源は通常読み取り専用です。 ただし、電力メーターの機能、によってその予算構成でしたが読み取り専用または読み取り/書き込みアクセス許可。
 
-PMI IOCTL インターフェイスの詳細については、次を参照してください。 [PMI Ioctl](https://msdn.microsoft.com/library/windows/hardware/ff543884)します。
+PMI IOCTL インターフェイスの詳細については、次を参照してください。 [PMI Ioctl](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/pmi/index)します。
 
  
 **注**   PMB インフラストラクチャは、Windows 7、Windows Server 2008 R2、および以降のバージョンの Windows オペレーティング システムでサポートされています。

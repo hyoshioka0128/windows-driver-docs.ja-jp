@@ -4,12 +4,12 @@ description: DSM\_パラメーター WMI クラス
 ms.assetid: c946f8cb-327c-4d5a-a133-0051a405fcad
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: f3fc0f478f369302520f5b861b3ad19d24d12ea7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 418fd4df986cbde09e9f20b85434c1d09553911b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380669"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368244"
 ---
 # <a name="dsmparameters-wmi-class"></a>DSM\_パラメーター WMI クラス
 
@@ -41,7 +41,7 @@ class DSM_PARAMETERS
 };
 ```
 
-このクラスの定義が WMI ツール スイートによってコンパイルされると、生成、 [ **DSM\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff552713)データ構造体。 この WMI クラスに関連付けられているメソッドはありません。
+このクラスの定義が WMI ツール スイートによってコンパイルされると、生成、 [ **DSM\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mpiowmi/ns-mpiowmi-_dsm_parameters)データ構造体。 この WMI クラスに関連付けられているメソッドはありません。
 
  
 

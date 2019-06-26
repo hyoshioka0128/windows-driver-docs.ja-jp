@@ -10,12 +10,12 @@ keywords:
 - 埋め込みポインター WDK Ioctl
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f7484e66ea127da239c2c080d460c463d3f3b62d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 883fe8d9b2d45fb88fce154f06eeb6f52f3e6a7d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388264"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377156"
 ---
 # <a name="creating-ioctl-requests-in-drivers"></a>ドライバー内での IOCTL 要求の作成
 
@@ -25,30 +25,30 @@ ms.locfileid: "63388264"
 
 クラス ドライバーまたはその他の高度なドライバーは Irp をコントロールの I/O 要求を割り当てるし、次のように、次の下位ドライバーに送信。
 
-1.  割り当てまたは I/O 要求パケットを再利用 ([**IRP**](https://msdn.microsoft.com/library/windows/hardware/ff550694)) メジャーの関数コードで[ **IRP\_MJ\_デバイス\_コントロール**](https://msdn.microsoft.com/library/windows/hardware/ff550744)または[ **IRP\_MJ\_内部\_デバイス\_コントロール**](https://msdn.microsoft.com/library/windows/hardware/ff550766)します。 使用することができます、 [ **IoBuildDeviceIoControlRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff548318)ルーチンを具体的には、IOCTL IRP を割り当てます。 など、汎用的な IRP の作成と初期化ルーチンを使用することもできます[ **IoAllocateIrp**](https://msdn.microsoft.com/library/windows/hardware/ff548257)、 [ **IoReuseIrp**](https://msdn.microsoft.com/library/windows/hardware/ff549661)、または。[**IoInitializeIrp**](https://msdn.microsoft.com/library/windows/hardware/ff549315)します。 IRP の割り当ての詳細については、次を参照してください。[下位レベルのドライバーの作成の Irp](creating-irps-for-lower-level-drivers.md)します。
+1.  割り当てまたは I/O 要求パケットを再利用 ([**IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_irp)) メジャーの関数コードで[ **IRP\_MJ\_デバイス\_コントロール**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-device-control)または[ **IRP\_MJ\_内部\_デバイス\_コントロール**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-internal-device-control)します。 使用することができます、 [ **IoBuildDeviceIoControlRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iobuilddeviceiocontrolrequest)ルーチンを具体的には、IOCTL IRP を割り当てます。 など、汎用的な IRP の作成と初期化ルーチンを使用することもできます[ **IoAllocateIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocateirp)、 [ **IoReuseIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioreuseirp)、または。[**IoInitializeIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioinitializeirp)します。 IRP の割り当ての詳細については、次を参照してください。[下位レベルのドライバーの作成の Irp](creating-irps-for-lower-level-drivers.md)します。
 
 2.  IOCTL で IRP の下位のドライバーの I/O スタックの場所を設定\_*XXX*パラメーターを適切なコードをしています。
 
-3.  IOCTL 要求を非同期的に完了する場合は、呼び出し、 [ **KeInitializeEvent** ](https://msdn.microsoft.com/library/windows/hardware/ff552137)ルーチンを通知イベントとイベント オブジェクトを初期化します。 ドライバーでは、このイベントを使用して、I/O 操作を完了するまで待ちます。
+3.  IOCTL 要求を非同期的に完了する場合は、呼び出し、 [ **KeInitializeEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keinitializeevent)ルーチンを通知イベントとイベント オブジェクトを初期化します。 ドライバーでは、このイベントを使用して、I/O 操作を完了するまで待ちます。
 
-4.  呼び出す[ **IoSetCompletionRoutine** ](https://msdn.microsoft.com/library/windows/hardware/ff549679) IRP が上のドライバーが提供できるように、 [ *IoCompletion* ](https://msdn.microsoft.com/library/windows/hardware/ff548354)ルーチン、必要に応じて、実行するには次:
+4.  呼び出す[ **IoSetCompletionRoutine** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iosetcompletionroutine) IRP が上のドライバーが提供できるように、 [ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)ルーチン、必要に応じて、実行するには次:
 
     -   下位のドライバーが、特定の要求を処理する方法を決定します。
 
-    -   IRP 別の送信を要求または下位のドライバーが要求された操作が完了したら破棄 IRP がドライバーを作成、再利用します。 ドライバーは Irp を再利用できませんを[ **IoBuildDeviceIoControlRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff548318)を作成します。 詳細については、次を参照してください。 [Irp の再利用](reusing-irps.md)します。
+    -   IRP 別の送信を要求または下位のドライバーが要求された操作が完了したら破棄 IRP がドライバーを作成、再利用します。 ドライバーは Irp を再利用できませんを[ **IoBuildDeviceIoControlRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iobuilddeviceiocontrolrequest)を作成します。 詳細については、次を参照してください。 [Irp の再利用](reusing-irps.md)します。
 
-5.  呼び出す[**保留**](https://msdn.microsoft.com/library/windows/hardware/ff548336)から下位のドライバーに要求を渡します。
+5.  呼び出す[**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)から下位のドライバーに要求を渡します。
 
-6.  場合[**保留**](https://msdn.microsoft.com/library/windows/hardware/ff548336)ステータスを返します\_保留中の呼び出し、 [ **kewaitforsingleobject の 1** ](https://msdn.microsoft.com/library/windows/hardware/ff553350)ルーチンを現在の配置スレッド待機状態にします。 ドライバーの設定、ルーチンの*オブジェクト*パラメーターへの呼び出しで初期化されたイベント オブジェクトのアドレスを[ **KeInitializeEvent**](https://msdn.microsoft.com/library/windows/hardware/ff552137)します。
+6.  場合[**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)ステータスを返します\_保留中の呼び出し、 [ **kewaitforsingleobject の 1** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kewaitforsingleobject)ルーチンを現在の配置スレッド待機状態にします。 ドライバーの設定、ルーチンの*オブジェクト*パラメーターへの呼び出しで初期化されたイベント オブジェクトのアドレスを[ **KeInitializeEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keinitializeevent)します。
 
-    **注**ドライバーを呼び出す場合[ **kewaitforsingleobject の 1** ](https://msdn.microsoft.com/library/windows/hardware/ff553350)でその*タイムアウト*パラメーターはいずれかに設定**NULL**または、ドライバー、0 以外の値を格納する変数のアドレスは、IRQL で実行する必要があります&lt;APC を =\_nonarbitrary スレッド コンテキストでします。 IRQL でドライバーを実行する必要がありますそれ以外の場合、 &lt;= ディスパッチ\_レベル。
-
-
+    **注**ドライバーを呼び出す場合[ **kewaitforsingleobject の 1** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kewaitforsingleobject)でその*タイムアウト*パラメーターはいずれかに設定**NULL**または、ドライバー、0 以外の値を格納する変数のアドレスは、IRQL で実行する必要があります&lt;APC を =\_nonarbitrary スレッド コンテキストでします。 IRQL でドライバーを実行する必要がありますそれ以外の場合、 &lt;= ディスパッチ\_レベル。
 
 
-によって、イベントがシグナル状態その[ *IoCompletion* ](https://msdn.microsoft.com/library/windows/hardware/ff548354)ルーチン IOCTL 要求が完了するとします。 イベントがシグナル状態のスレッドが実行を再開します。
 
-**重要な**、ドライバーが、スタック上のローカル変数として、イベント オブジェクトを割り当てた場合、ドライバーを呼び出す必要があります[ **kewaitforsingleobject の 1** ](https://msdn.microsoft.com/library/windows/hardware/ff553350)でその*WaitMode*パラメーターに設定**kernelmode である**します。 このパラメーターの値は、スタックがページ アウトされていることを防ぎます。
+
+によって、イベントがシグナル状態その[ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)ルーチン IOCTL 要求が完了するとします。 イベントがシグナル状態のスレッドが実行を再開します。
+
+**重要な**、ドライバーが、スタック上のローカル変数として、イベント オブジェクトを割り当てた場合、ドライバーを呼び出す必要があります[ **kewaitforsingleobject の 1** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kewaitforsingleobject)でその*WaitMode*パラメーターに設定**kernelmode である**します。 このパラメーターの値は、スタックがページ アウトされていることを防ぎます。
 
 
 
@@ -61,9 +61,9 @@ ms.locfileid: "63388264"
 
 -   プライベート データ バッファーは、ポート ドライバーによって任意のスレッド コンテキストでアクセスできます。
 
-ディスプレイ ドライバーは、GDI 関数を呼び出すことができます[ **EngDeviceIoControl** ](https://msdn.microsoft.com/library/windows/hardware/ff564838)を介してシステム定義されたパブリック I/O 制御要求と同様に、個別に定義されたデバイスに固有の I/O 制御の要求を送信する、対応するアダプター固有のシステムのビデオ ポート ドライバー[ビデオのミニポート ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff570509)します。
+ディスプレイ ドライバーは、GDI 関数を呼び出すことができます[ **EngDeviceIoControl** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engdeviceiocontrol)を介してシステム定義されたパブリック I/O 制御要求と同様に、個別に定義されたデバイスに固有の I/O 制御の要求を送信する、対応するアダプター固有のシステムのビデオ ポート ドライバー[ビデオのミニポート ドライバー](https://docs.microsoft.com/windows-hardware/drivers/display/video-miniport-drivers-in-the-windows-2000-display-driver-model)します。
 
-ドライバー パッケージのすべてのユーザー モード コンポーネントを呼び出すことができます[ **DeviceIoControl** ](https://msdn.microsoft.com/library/windows/desktop/aa363216)ドライバー スタックにコントロールの I/O 要求を送信します。 I/O マネージャーを作成、 [ **IRP\_MJ\_デバイス\_コントロール**](https://msdn.microsoft.com/library/windows/hardware/ff550744)を要求し、最上位レベルのドライバーに配信します。
+ドライバー パッケージのすべてのユーザー モード コンポーネントを呼び出すことができます[ **DeviceIoControl** ](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)ドライバー スタックにコントロールの I/O 要求を送信します。 I/O マネージャーを作成、 [ **IRP\_MJ\_デバイス\_コントロール**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-device-control)を要求し、最上位レベルのドライバーに配信します。
 
 
 

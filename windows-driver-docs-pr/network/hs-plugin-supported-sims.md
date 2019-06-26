@@ -7,12 +7,12 @@ keywords:
 - Windows Vista 以降のドライバーをネットワーク PHS_PLUGIN_SUPPORTED_SIMS 構造体ポインター
 ms.date: 07/31/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 43c7d45a0ded04a285cedbd793534a7078fa2436
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6804143fe8be10d4e8306c742fe2832b0aa7f2f6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63322136"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364057"
 ---
 # <a name="hspluginsupportedsims-structure"></a>HS\_プラグイン\_サポートされている\_SIM 構造体
 
@@ -74,7 +74,7 @@ HS の配列\_SIM\_IDENTITY 構造体のリストを構成するには、SIM 構
 
 [**HS\_SIM\_の ID**](hs-sim-identity.md)
 
-[Microsoft インターフェイス定義言語](https://msdn.microsoft.com//library/windows/desktop/aa367091)
+[Microsoft インターフェイス定義言語](https://docs.microsoft.com/windows/desktop/Midl/midl-start-page)
 
  
 

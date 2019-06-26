@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: efe4f349f7857426f0c803727bd93ef64199629c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c275175f089390d8a7eda8dda1c7d16347c59e6b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351746"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386418"
 ---
 # <a name="guiddevinterfaceusbhub"></a>GUID_DEVINTERFACE_USB_HUB
 
 
-GUID_DEVINTERFACE_USB_HUB[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)が定義されている[USB](https://msdn.microsoft.com/library/windows/hardware/ff538930)ハブのデバイス。
+GUID_DEVINTERFACE_USB_HUB[デバイス インターフェイス クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)が定義されている[USB](https://docs.microsoft.com/windows-hardware/drivers/)ハブのデバイス。
 
 <table>
 <colgroup>

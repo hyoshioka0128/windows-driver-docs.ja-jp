@@ -9,33 +9,33 @@ keywords:
 - Irp WDK KMDF、前処理と後処理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d01f64a404e9698a37009c69ef2506674cb8542
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9babfb510d59ef66bd0cc493079c54b7f4f839b9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390053"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376328"
 ---
 # <a name="preprocessing-and-postprocessing-irps"></a>IRP の前処理と後処理
 
 
 \[KMDF にのみ適用されます。\]
 
-前に、ドライバーが I/O 要求パケット (IRP) をインターセプトする必要がありますまたはフレームワークは IRP を処理した後、ドライバーを呼び出すことができる場合[ **WdfDeviceInitAssignWdmIrpPreprocessCallback** ](https://msdn.microsoft.com/library/windows/hardware/ff546043) を登録する[ *EvtDeviceWdmIrpPreprocess* ](https://msdn.microsoft.com/library/windows/hardware/ff540925)の主要な I/O 関数のコードと、必要に応じて、大規模なコードに関連付けられている特定の小さな I/O 関数コードのイベントのコールバック関数。 その後、フレームワークが、ドライバーの*EvtDeviceWdmIrpPreprocess*ドライバーは、指定されたメジャーおよびマイナーの関数コードを含む IRP を受信するたびに、コールバック関数。
+前に、ドライバーが I/O 要求パケット (IRP) をインターセプトする必要がありますまたはフレームワークは IRP を処理した後、ドライバーを呼び出すことができる場合[ **WdfDeviceInitAssignWdmIrpPreprocessCallback** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceinitassignwdmirppreprocesscallback) を登録する[ *EvtDeviceWdmIrpPreprocess* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdfdevice_wdm_irp_preprocess)の主要な I/O 関数のコードと、必要に応じて、大規模なコードに関連付けられている特定の小さな I/O 関数コードのイベントのコールバック関数。 その後、フレームワークが、ドライバーの*EvtDeviceWdmIrpPreprocess*ドライバーは、指定されたメジャーおよびマイナーの関数コードを含む IRP を受信するたびに、コールバック関数。
 
-[ *EvtDeviceWdmIrpPreprocess* ](https://msdn.microsoft.com/library/windows/hardware/ff540925)コールバック関数は、IRP の前処理に必要なことすべてを実行できるし、呼び出す必要があります[ **WdfDeviceWdmDispatchPreprocessedIrp** ](https://msdn.microsoft.com/library/windows/hardware/ff546927)をドライバーがない限り、IRP をフレームワークに返す[処理フレームワークがサポートされていない IRP](handling-an-irp-that-the-framework-does-not-support.md)します。
+[ *EvtDeviceWdmIrpPreprocess* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdfdevice_wdm_irp_preprocess)コールバック関数は、IRP の前処理に必要なことすべてを実行できるし、呼び出す必要があります[ **WdfDeviceWdmDispatchPreprocessedIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicewdmdispatchpreprocessedirp)をドライバーがない限り、IRP をフレームワークに返す[処理フレームワークがサポートされていない IRP](handling-an-irp-that-the-framework-does-not-support.md)します。
 
-ドライバーの呼び出し後[ **WdfDeviceWdmDispatchPreprocessedIrp**](https://msdn.microsoft.com/library/windows/hardware/ff546927)、フレームワーク、ドライバーが指定されていない場合と同じ方法で IRP の処理、 [ *EvtDeviceWdmIrpPreprocess* ](https://msdn.microsoft.com/library/windows/hardware/ff540925)コールバック関数。 IRP の I/O 関数のコードが、framework がドライバーに渡される 1 つの場合は、ドライバーは IRP がもう一度として受け取ります要求オブジェクト。
+ドライバーの呼び出し後[ **WdfDeviceWdmDispatchPreprocessedIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicewdmdispatchpreprocessedirp)、フレームワーク、ドライバーが指定されていない場合と同じ方法で IRP の処理、 [ *EvtDeviceWdmIrpPreprocess* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdfdevice_wdm_irp_preprocess)コールバック関数。 IRP の I/O 関数のコードが、framework がドライバーに渡される 1 つの場合は、ドライバーは IRP がもう一度として受け取ります要求オブジェクト。
 
-ドライバーは、下位レベルのドライバーが IRP、ドライバーが完了したら、IRP の後処理が必要なかどうかは[ *EvtDeviceWdmIrpPreprocess* ](https://msdn.microsoft.com/library/windows/hardware/ff540925)コールバック関数を呼び出すことができます[ **IoSetCompletionRoutine** ](https://msdn.microsoft.com/library/windows/hardware/ff549679)を設定する、 [ *IoCompletion* ](https://msdn.microsoft.com/library/windows/hardware/ff548354)ルーチンを呼び出す前に[ **WdfDeviceWdmDispatchPreprocessedIrp**](https://msdn.microsoft.com/library/windows/hardware/ff546927)します。
+ドライバーは、下位レベルのドライバーが IRP、ドライバーが完了したら、IRP の後処理が必要なかどうかは[ *EvtDeviceWdmIrpPreprocess* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdfdevice_wdm_irp_preprocess)コールバック関数を呼び出すことができます[ **IoSetCompletionRoutine** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iosetcompletionroutine)を設定する、 [ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)ルーチンを呼び出す前に[ **WdfDeviceWdmDispatchPreprocessedIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicewdmdispatchpreprocessedirp)します。
 
-ドライバーの呼び出し後[ **WdfDeviceInitAssignWdmIrpPreprocessCallback**](https://msdn.microsoft.com/library/windows/hardware/ff546043)、フレームワークが原因で、さらに追加する I/O マネージャー [I/O スタックの場所](https://msdn.microsoft.com/library/windows/hardware/ff551821)すべて Irp をように、 [ *EvtDeviceWdmIrpPreprocess* ](https://msdn.microsoft.com/library/windows/hardware/ff540925)コールバック関数が設定できる、 [ *IoCompletion* ](https://msdn.microsoft.com/library/windows/hardware/ff548354)ルーチン。 呼び出す前に、コールバック関数は IRP の I/O スタックの場所のポインターを更新する必要があります[ **WdfDeviceWdmDispatchPreprocessedIrp**](https://msdn.microsoft.com/library/windows/hardware/ff546927)します。
+ドライバーの呼び出し後[ **WdfDeviceInitAssignWdmIrpPreprocessCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceinitassignwdmirppreprocesscallback)、フレームワークが原因で、さらに追加する I/O マネージャー [I/O スタックの場所](https://docs.microsoft.com/windows-hardware/drivers/kernel/i-o-stack-locations)すべて Irp をように、 [ *EvtDeviceWdmIrpPreprocess* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdfdevice_wdm_irp_preprocess)コールバック関数が設定できる、 [ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)ルーチン。 呼び出す前に、コールバック関数は IRP の I/O スタックの場所のポインターを更新する必要があります[ **WdfDeviceWdmDispatchPreprocessedIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicewdmdispatchpreprocessedirp)します。
 
 ### <a name="calling-wdfdevicewdmdispatchpreprocessedirp"></a>Calling WdfDeviceWdmDispatchPreprocessedIrp
 
-I/O マネージャーが、IRP に追加の I/O スタックの場所を追加するため、 [ *EvtDeviceWdmIrpPreprocess* ](https://msdn.microsoft.com/library/windows/hardware/ff540925)コールバック関数を呼び出す必要があります[ **IoSkipCurrentIrpStackLocation** ](https://msdn.microsoft.com/library/windows/hardware/ff550355)または[ **IoCopyCurrentIrpStackLocationToNext** ](https://msdn.microsoft.com/library/windows/hardware/ff548387) (IRP の次の I/O スタックの場所を設定する) を呼び出す前に[ **WdfDeviceWdmDispatchPreprocessedIrp**](https://msdn.microsoft.com/library/windows/hardware/ff546927)します。
+I/O マネージャーが、IRP に追加の I/O スタックの場所を追加するため、 [ *EvtDeviceWdmIrpPreprocess* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdfdevice_wdm_irp_preprocess)コールバック関数を呼び出す必要があります[ **IoSkipCurrentIrpStackLocation** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)または[ **IoCopyCurrentIrpStackLocationToNext** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocopycurrentirpstacklocationtonext) (IRP の次の I/O スタックの場所を設定する) を呼び出す前に[ **WdfDeviceWdmDispatchPreprocessedIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicewdmdispatchpreprocessedirp)します。
 
-かどうか、ドライバーは IRP、前処理は IRP を後処理いない、ドライバー必要はありませんを設定する、 [ *IoCompletion* ](https://msdn.microsoft.com/library/windows/hardware/ff548354) IRP の日常的な呼び出すことが[ **IoSkipCurrentIrpStackLocation**](https://msdn.microsoft.com/library/windows/hardware/ff550355)、次のコード例を示しています。
+かどうか、ドライバーは IRP、前処理は IRP を後処理いない、ドライバー必要はありませんを設定する、 [ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine) IRP の日常的な呼び出すことが[ **IoSkipCurrentIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)、次のコード例を示しています。
 
 ```cpp
 NTSTATUS
@@ -56,7 +56,7 @@ return WdfDeviceWdmDispatchPreprocessedIrp(Device, Irp);
 }
 ```
 
-ドライバーを呼び出す必要があります、ドライバーは IRP 処理後の場合、 [ **IoCopyCurrentIrpStackLocationToNext**](https://msdn.microsoft.com/library/windows/hardware/ff548387)、呼び出す必要がありますと[ **IoSetCompletionRoutine**](https://msdn.microsoft.com/library/windows/hardware/ff549679)を設定する、 [ *IoCompletion* ](https://msdn.microsoft.com/library/windows/hardware/ff548354) IRP のルーチンのコード例を次に示します。
+ドライバーを呼び出す必要があります、ドライバーは IRP 処理後の場合、 [ **IoCopyCurrentIrpStackLocationToNext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocopycurrentirpstacklocationtonext)、呼び出す必要がありますと[ **IoSetCompletionRoutine**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iosetcompletionroutine)を設定する、 [ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine) IRP のルーチンのコード例を次に示します。
 
 ```cpp
 NTSTATUS
@@ -86,9 +86,9 @@ return WdfDeviceWdmDispatchPreprocessedIrp(Device, Irp);
 }
 ```
 
-ドライバーを呼び出してはならない[ **IoCopyCurrentIrpStackLocationToNext** ](https://msdn.microsoft.com/library/windows/hardware/ff548387) (する必要があります設定しないと、 [ *IoCompletion* ](https://msdn.microsoft.com/library/windows/hardware/ff548354)ルーチン) 場合デバイス オブジェクトを処理するドライバーの[ *EvtDeviceWdmIrpPreprocess* ](https://msdn.microsoft.com/library/windows/hardware/ff540925)コールバック関数が表すを受け取る、物理デバイス オブジェクト (PDO) IRP の主要な関数のコードが IRP と\_MJ\_PNP または IRP\_MJ\_電源。 それ以外の場合、 [Driver Verifier](https://msdn.microsoft.com/library/windows/hardware/ff545448)エラーをレポートになります。
+ドライバーを呼び出してはならない[ **IoCopyCurrentIrpStackLocationToNext** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocopycurrentirpstacklocationtonext) (する必要があります設定しないと、 [ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)ルーチン) 場合デバイス オブジェクトを処理するドライバーの[ *EvtDeviceWdmIrpPreprocess* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdfdevice_wdm_irp_preprocess)コールバック関数が表すを受け取る、物理デバイス オブジェクト (PDO) IRP の主要な関数のコードが IRP と\_MJ\_PNP または IRP\_MJ\_電源。 それ以外の場合、 [Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)エラーをレポートになります。
 
-呼び出すタイミングの詳細については[ **IoCopyCurrentIrpStackLocationToNext**](https://msdn.microsoft.com/library/windows/hardware/ff548387)、 [ **IoSkipCurrentIrpStackLocation**](https://msdn.microsoft.com/library/windows/hardware/ff550355)と[ **IoSetCompletionRoutine**](https://msdn.microsoft.com/library/windows/hardware/ff549679)を参照してください[ドライバー スタックを渡して Irp](https://msdn.microsoft.com/library/windows/hardware/ff558781)します。
+呼び出すタイミングの詳細については[ **IoCopyCurrentIrpStackLocationToNext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocopycurrentirpstacklocationtonext)、 [ **IoSkipCurrentIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)と[ **IoSetCompletionRoutine**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iosetcompletionroutine)を参照してください[ドライバー スタックを渡して Irp](https://docs.microsoft.com/windows-hardware/drivers/kernel/passing-irps-down-the-driver-stack)します。
 
  
 

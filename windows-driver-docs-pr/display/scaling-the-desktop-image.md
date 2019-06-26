@@ -13,40 +13,40 @@ keywords:
 - WDK の Windows Server 2008 R2 の表示のデスクトップ イメージのスケーリング
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 545000757901bb9a6b6002447fa62bbc684a7d78
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d5a4e0304170a1afcc0796fd6cd600fcc4328301
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390546"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365595"
 ---
 # <a name="scaling-the-desktop-image"></a>デスクトップ イメージのスケーリング
 
 
 このセクションでは、Windows 7 以降および Windows Server 2008 R2 以降のバージョンの Windows オペレーティング システムにのみ適用されます。
 
-呼び出し元が使用できます、 [ **SetDisplayConfig** ](https://msdn.microsoft.com/library/windows/hardware/ff569533) CCD 関数をモニターしてデスクトップ イメージをスケーリングします。 場合は、デスクトップとモニターを使用して、同じ解像度、 **SetDisplayConfig**モニター デスクトップ イメージをスケーリングする必要はありません。 これは、 **SetDisplayConfig**操作は、スケーリングの識別と呼ばれます。 デスクトップとモニターの解像度が異なる場合、 **SetDisplayConfig**スケーリングの種類は次のいずれかに適用されます。 モニターの解像度がによって定義されている、 [ **DISPLAYCONFIG\_ターゲット\_モード**](https://msdn.microsoft.com/library/windows/hardware/ff553993)構造体。
+呼び出し元が使用できます、 [ **SetDisplayConfig** ](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-setdisplayconfig) CCD 関数をモニターしてデスクトップ イメージをスケーリングします。 場合は、デスクトップとモニターを使用して、同じ解像度、 **SetDisplayConfig**モニター デスクトップ イメージをスケーリングする必要はありません。 これは、 **SetDisplayConfig**操作は、スケーリングの識別と呼ばれます。 デスクトップとモニターの解像度が異なる場合、 **SetDisplayConfig**スケーリングの種類は次のいずれかに適用されます。 モニターの解像度がによって定義されている、 [ **DISPLAYCONFIG\_ターゲット\_モード**](https://docs.microsoft.com/windows/desktop/api/wingdi/ns-wingdi-displayconfig_target_mode)構造体。
 
 <span id="Centered"></span><span id="centered"></span><span id="CENTERED"></span>**中央揃え**  
-中央揃えのスケーリングは、デスクトップがせず、スケーリングは、すべてのモニターに表示されるモードです。 ときに[ **SetDisplayConfig** ](https://msdn.microsoft.com/library/windows/hardware/ff569533)中央揃えのスケーリングでは、適用される黒い帯が、デスクトップの上下に表示される可能性があります。 中央のスケーリングを次に示します。
+中央揃えのスケーリングは、デスクトップがせず、スケーリングは、すべてのモニターに表示されるモードです。 ときに[ **SetDisplayConfig** ](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-setdisplayconfig)中央揃えのスケーリングでは、適用される黒い帯が、デスクトップの上下に表示される可能性があります。 中央のスケーリングを次に示します。
 
 ![中央揃えのスケーリング方法を示す図](images/ccd-center-scale.png)
 
 <span id="Stretched"></span><span id="stretched"></span><span id="STRETCHED"></span>**拡大**  
-拡張されたスケールでデスクトップが水平および垂直に拡大する表示全体が使用されていることを確認するモニターのモードです。 ときに[ **SetDisplayConfig** ](https://msdn.microsoft.com/library/windows/hardware/ff569533)適用されるスケールを拡大、黒い帯がないデスクトップの上下に表示します。 ただし、デスクトップはゆがんで見える可能性があります。 スケール拡張を次に示します。
+拡張されたスケールでデスクトップが水平および垂直に拡大する表示全体が使用されていることを確認するモニターのモードです。 ときに[ **SetDisplayConfig** ](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-setdisplayconfig)適用されるスケールを拡大、黒い帯がないデスクトップの上下に表示します。 ただし、デスクトップはゆがんで見える可能性があります。 スケール拡張を次に示します。
 
 ![拡大縮小拡大を示す図します。](images/ccd-stretch-scale.png)
 
 <span id="Aspect-Ratio-Preserving_Stretched"></span><span id="aspect-ratio-preserving_stretched"></span><span id="ASPECT-RATIO-PRESERVING_STRETCHED"></span>**伸縮縦横比保持**  
-拡張されたスケールの縦横比保持は、デスクトップの水平方向に拡張し、可能な限り垂直方向に縦横比を維持しながらモードです。 ときに[ **SetDisplayConfig** ](https://msdn.microsoft.com/library/windows/hardware/ff569533)拡張スケーリングの縦横比保護を適用黒い帯表示がありますか*上と下*または*左側と右*デスクトップ。 黒のバンドを表示することはできませんただし、どちらも*上と下*と*の左と右*デスクトップ。 ユーザーは、優先するこのタイプのスケール、予想されるため、 **SetDisplayConfig**このタイプの既定値としてスケールを適用します。 次の図は、拡張されたスケーリングの縦横比保持を示します。
+拡張されたスケールの縦横比保持は、デスクトップの水平方向に拡張し、可能な限り垂直方向に縦横比を維持しながらモードです。 ときに[ **SetDisplayConfig** ](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-setdisplayconfig)拡張スケーリングの縦横比保護を適用黒い帯表示がありますか*上と下*または*左側と右*デスクトップ。 黒のバンドを表示することはできませんただし、どちらも*上と下*と*の左と右*デスクトップ。 ユーザーは、優先するこのタイプのスケール、予想されるため、 **SetDisplayConfig**このタイプの既定値としてスケールを適用します。 次の図は、拡張されたスケーリングの縦横比保持を示します。
 
 ![拡張されたスケーリングの縦横比保持方法を示す図](images/ccd-arpstretch-scale.png)
 
-スケーリングは、ソースとターゲット パスに使用されるモードによって異なります。 さらに、呼び出し元が呼び出すことができます[ **SetDisplayConfig** ](https://msdn.microsoft.com/library/windows/hardware/ff569533)ターゲット モードの情報を指定せず (つまり、設定、 *modeInfoArray*パラメーターは省略可能と設定することができます**NULL**)。 そのため、呼び出し元通常予測できない場合**SetDisplayConfig**スケーリングを実行する必要があります。 さらに、グラフィックス アダプターでサポートされる種類のスケーリングの完全な一覧を取得する API が存在しません。 [ **EnumDisplaySettings** ](https://msdn.microsoft.com/library/windows/desktop/dd162611) DMDFO を返します (Windows SDK のドキュメントで説明) Win32 関数\_の既定の**dmDisplayFixedOutput**メンバー、 **DEVMODE**構造体、 *lpDevMode*パラメーターが指す型をスケーリングする新しい Windows 7 を呼び出し元が要求したときにします。
+スケーリングは、ソースとターゲット パスに使用されるモードによって異なります。 さらに、呼び出し元が呼び出すことができます[ **SetDisplayConfig** ](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-setdisplayconfig)ターゲット モードの情報を指定せず (つまり、設定、 *modeInfoArray*パラメーターは省略可能と設定することができます**NULL**)。 そのため、呼び出し元通常予測できない場合**SetDisplayConfig**スケーリングを実行する必要があります。 さらに、グラフィックス アダプターでサポートされる種類のスケーリングの完全な一覧を取得する API が存在しません。 [ **EnumDisplaySettings** ](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-enumdisplaysettingsa) DMDFO を返します (Windows SDK のドキュメントで説明) Win32 関数\_の既定の**dmDisplayFixedOutput**メンバー、 **DEVMODE**構造体、 *lpDevMode*パラメーターが指す型をスケーリングする新しい Windows 7 を呼び出し元が要求したときにします。
 
-スケーリング、呼び出し元に渡します[ **SetDisplayConfig** ](https://msdn.microsoft.com/library/windows/hardware/ff569533)スケーリング操作を実行する明示的な要求ではなく、インテントをスケーリングします。 スケーリングが必要な場合 (たとえば、ソースとターゲットの解像度が異なる)、 **SetDisplayConfig**呼び出し元が提供されるスケーリングを使用します。 指定されたスケールがサポートされていない場合**SetDisplayConfig**グラフィックス アダプターの既定値を使用してスケーリングします。 ときに、呼び出し元からに渡されるソースとターゲットの解像度**SetDisplayConfig**は同じですが、 **SetDisplayConfig**セットにスケーリングが識別されます。
+スケーリング、呼び出し元に渡します[ **SetDisplayConfig** ](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-setdisplayconfig)スケーリング操作を実行する明示的な要求ではなく、インテントをスケーリングします。 スケーリングが必要な場合 (たとえば、ソースとターゲットの解像度が異なる)、 **SetDisplayConfig**呼び出し元が提供されるスケーリングを使用します。 指定されたスケールがサポートされていない場合**SetDisplayConfig**グラフィックス アダプターの既定値を使用してスケーリングします。 ときに、呼び出し元からに渡されるソースとターゲットの解像度**SetDisplayConfig**は同じですが、 **SetDisplayConfig**セットにスケーリングが識別されます。
 
-次の表は、さまざまな[ **SetDisplayConfig** ](https://msdn.microsoft.com/library/windows/hardware/ff569533)のスケーリング要求。
+次の表は、さまざまな[ **SetDisplayConfig** ](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-setdisplayconfig)のスケーリング要求。
 
 <table>
 <colgroup>
@@ -87,7 +87,7 @@ ms.locfileid: "63390546"
 <tr class="odd">
 <td align="left"><p>AdapterDefault</p></td>
 <td align="left"><p>アダプターの既定の値を拡大縮小</p>
-<p>現時点では、タブレットのシステムでは、既定値が拡大します。 タブレットではないシステムをサポートするグラフィックス アダプターで、 <a href="windows-vista-display-driver-model-design-guide.md" data-raw-source="[Windows Display Driver Model (WDDM)](windows-vista-display-driver-model-design-guide.md)">Windows Display Driver Model (WDDM)</a>、既定値はドライバーによって定義されます。 Windows Display Driver Model (WDDM) をサポートするグラフィックス アダプターを備えたタブレットではないシステムで<a href="https://msdn.microsoft.com/library/windows/hardware/ff557343" data-raw-source="[features new for Windows 7](https://msdn.microsoft.com/library/windows/hardware/ff557343)">Windows 7 の新機能</a>、既定値は DC_ASPECTRATIOCENTEREDMAX します。</p></td>
+<p>現時点では、タブレットのシステムでは、既定値が拡大します。 タブレットではないシステムをサポートするグラフィックス アダプターで、 <a href="windows-vista-display-driver-model-design-guide.md" data-raw-source="[Windows Display Driver Model (WDDM)](windows-vista-display-driver-model-design-guide.md)">Windows Display Driver Model (WDDM)</a>、既定値はドライバーによって定義されます。 Windows Display Driver Model (WDDM) をサポートするグラフィックス アダプターを備えたタブレットではないシステムで<a href="https://docs.microsoft.com/windows-hardware/drivers/what-s-new-in-driver-development" data-raw-source="[features new for Windows 7](https://docs.microsoft.com/windows-hardware/drivers/what-s-new-in-driver-development)">Windows 7 の新機能</a>、既定値は DC_ASPECTRATIOCENTEREDMAX します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>DatabaseValue</p></td>
@@ -220,7 +220,7 @@ DatabaseValue
 
  
 
-次の表は、スケール、呼び出し元に渡す方法、従来の[ **ChangeDisplaySettingsEx**](https://msdn.microsoft.com/library/windows/desktop/dd183413)API (Windows SDK のドキュメントで説明) は、スケール セットにマップされます。
+次の表は、スケール、呼び出し元に渡す方法、従来の[ **ChangeDisplaySettingsEx**](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-changedisplaysettingsexa)API (Windows SDK のドキュメントで説明) は、スケール セットにマップされます。
 
 結果ソース モード ChangeDisplaySettingsEx に渡されたフラグをスケーリングし、結果ソース モードと別の解決策があるターゲット モード、ターゲット モードが同じ解像度をある**設定**
 
@@ -292,7 +292,7 @@ DatabaseValue
 
  
 
-次の表は、どのディスプレイの構成のスケーリングを翻訳およびから返された[ **EnumDisplaySettings**](https://msdn.microsoft.com/library/windows/desktop/dd162611)します。
+次の表は、どのディスプレイの構成のスケーリングを翻訳およびから返された[ **EnumDisplaySettings**](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-enumdisplaysettingsa)します。
 
 <table>
 <colgroup>
@@ -337,7 +337,7 @@ DatabaseValue
 
 ### <a name="span-iddirectxgamesandscalingspanspan-iddirectxgamesandscalingspandirectx-games-and-scaling"></a><span id="directx_games_and_scaling"></span><span id="DIRECTX_GAMES_AND_SCALING"></span>DirectX ゲームとスケーリング
 
-Microsoft DirectX 9 L と以前のランタイムは、アプリケーションでいつでも呼び出すことが必要です、 [ **ChangeDisplaySettingsEx** ](https://msdn.microsoft.com/library/windows/desktop/dd183413) DM せず関数\_DISPLAYFIXEDOUTPUT の設定、 **dmFields**構造体 DEVMODE のメンバー、 *lpDevMode*パラメーターを指します。 DirectX 10 およびそれ以降のランタイムを使用すると、アプリケーションのスケーリングにそれらのアプリケーションを渡すことを選択**ChangeDisplaySettingsEx**します。 次の表に、スケーリングのスケーリング フラグに渡される値のマッピング**ChangeDisplaySettingsEx**します。
+Microsoft DirectX 9 L と以前のランタイムは、アプリケーションでいつでも呼び出すことが必要です、 [ **ChangeDisplaySettingsEx** ](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-changedisplaysettingsexa) DM せず関数\_DISPLAYFIXEDOUTPUT の設定、 **dmFields**構造体 DEVMODE のメンバー、 *lpDevMode*パラメーターを指します。 DirectX 10 およびそれ以降のランタイムを使用すると、アプリケーションのスケーリングにそれらのアプリケーションを渡すことを選択**ChangeDisplaySettingsEx**します。 次の表に、スケーリングのスケーリング フラグに渡される値のマッピング**ChangeDisplaySettingsEx**します。
 
 <table>
 <colgroup>

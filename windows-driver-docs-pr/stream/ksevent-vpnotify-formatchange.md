@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9d05697309b7d8bfc3778d532482f8334fc9c1c4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a37768cebb2c1e21ebc3a8dab903413c781d5792
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63329597"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385195"
 ---
 # <a name="kseventvpnotifyformatchange"></a>KSEVENT\_VPNOTIFY\_段落
 
@@ -51,8 +51,8 @@ KSEVENT\_VPNOTIFY\_段落イベントは、ユーザー モードで DirectShow 
 <td><p>X</p></td>
 <td><p>〇</p></td>
 <td><p>Pin</p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff561937" data-raw-source="[&lt;strong&gt;KSE_NODE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff561937)"><strong>KSE_NODE</strong></a></p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff561750" data-raw-source="[&lt;strong&gt;KSEVENTDATA&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff561750)"><strong>KSEVENTDATA</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kse_node" data-raw-source="[&lt;strong&gt;KSE_NODE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kse_node)"><strong>KSE_NODE</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kseventdata" data-raw-source="[&lt;strong&gt;KSEVENTDATA&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kseventdata)"><strong>KSEVENTDATA</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -67,7 +67,7 @@ KsProxy の VPE フィルターは、イベントのハンドルを保存する�
 
 KsProxy VPE フィルターは、IOCTL を送信することによって、イベント通知を無効にします\_KS\_を無効にする\_同じイベント ハンドルを持つイベント I/O 制御コード。 VPE フィルターによってイベント ハンドルが閉じられます。 ミニドライバーは、イベント ハンドルを終了しないで必要があります。
 
-DirectShow フィルターと KsProxy の詳細については、次を参照してください。[カーネル ストリーミング プロキシ](https://msdn.microsoft.com/library/windows/hardware/ff560877)します。 ビデオの解像度の変更などのストリームの変更の処理の詳細については、次を参照してください。 [Stream 変更](https://msdn.microsoft.com/library/windows/hardware/ff568284)します。
+DirectShow フィルターと KsProxy の詳細については、次を参照してください。[カーネル ストリーミング プロキシ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_stream/index)します。 ビデオの解像度の変更などのストリームの変更の処理の詳細については、次を参照してください。 [Stream 変更](https://docs.microsoft.com/windows-hardware/drivers/stream/stream-changes)します。
 
  
 

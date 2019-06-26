@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ea517a877738cdeba4a802a44fd1140a00ac4c7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c66ce9b849197e58e4a9a1c3457d85a4916ef423
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325999"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368842"
 ---
 # <a name="kspropertystreamtimeformat"></a>KSPROPERTY\_ストリーム\_TIMEFORMAT
 
@@ -66,7 +66,7 @@ KSPROPERTY\_ストリーム\_TIMEFORMAT プロパティを使用して、特定�
 
 プロパティは、接続に使用して、プレゼンテーション時間とエクステントの形式を示す時間形式を指定する GUID を返します。 定義されている時刻の形式は、DirectShow によって定義されているものに対応します。
 
-KSPROPERTY\_ストリーム\_TIMEFORMAT 率、プレゼンテーション時間/エクステント、pin をサポートする場合に実装する必要がありますまたは低下プロパティをスキップする省略可能なプロパティは、(これらのプロパティの詳細についてを参照してください[品質管理](https://msdn.microsoft.com/library/windows/hardware/ff568124))。 これにより、クライアントを接続し、使用率、プレゼンテーション時間/エクステント、タイムスタンプ情報の形式の使用時間形式を特定し、パフォーマンス低下の操作をスキップできます。
+KSPROPERTY\_ストリーム\_TIMEFORMAT 率、プレゼンテーション時間/エクステント、pin をサポートする場合に実装する必要がありますまたは低下プロパティをスキップする省略可能なプロパティは、(これらのプロパティの詳細についてを参照してください[品質管理](https://docs.microsoft.com/windows-hardware/drivers/stream/quality-management))。 これにより、クライアントを接続し、使用率、プレゼンテーション時間/エクステント、タイムスタンプ情報の形式の使用時間形式を特定し、パフォーマンス低下の操作をスキップできます。
 
 <a name="requirements"></a>必要条件
 ------------

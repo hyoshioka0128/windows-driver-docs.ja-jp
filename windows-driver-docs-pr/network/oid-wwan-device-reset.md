@@ -6,12 +6,12 @@ keywords:
 - MB デバイスのリセット、モバイル ブロード バンド デバイスのリセット、ミニポート ドライバーのモバイル ブロード バンド デバイスのリセット
 ms.date: 08/18/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 009a309b889e3efbd06bf23dfa892eee7ca40e5c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 03397a121a25efad0dcc420030bbc32e239f666b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63386676"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362846"
 ---
 # <a name="oidwwandevicereset"></a>OID_WWAN_DEVICE_RESET
 
@@ -19,7 +19,7 @@ OID_WWAN_DEVICE_RESET は、モデム デバイスをリセットするモバイ
 
 クエリ要求には適用されません。
 
-OID_WWAN_DEVICE_RESET を使用して、一連の要求について、 [NDIS_WWAN_SET_DEVICE_RESET](https://msdn.microsoft.com/library/windows/hardware/73894308-CFE0-49EF-BB09-E104CEE9C746)構造体。 モデムのミニポート ドライバーが要求を非同期に設定する対応する必要が最初に NDIS_STATUS_INDICATION_REQUIRED を後で送信する前に、元の要求を返す、 [NDIS_STATUS_WWAN_DEVICE_RESET_STATUS](ndis-status-wwan-device-reset-status.md)通知含む、 [NDIS_WWAN_DEVICE_RESET_STATUS](https://msdn.microsoft.com/library/windows/hardware/D18E8633-BEAD-49A5-A730-10564AFF8A3E)モデム デバイスのリセットの状態を表す構造体です。 この応答は、ペイロードが含まれていないが、モデムからのステータス コードがなどは常に*WWAN_STATUS_SUCCESS*または*WWAN_STATUS_BUSY*します。
+OID_WWAN_DEVICE_RESET を使用して、一連の要求について、 [NDIS_WWAN_SET_DEVICE_RESET](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_set_device_reset)構造体。 モデムのミニポート ドライバーが要求を非同期に設定する対応する必要が最初に NDIS_STATUS_INDICATION_REQUIRED を後で送信する前に、元の要求を返す、 [NDIS_STATUS_WWAN_DEVICE_RESET_STATUS](ndis-status-wwan-device-reset-status.md)通知含む、 [NDIS_WWAN_DEVICE_RESET_STATUS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_device_reset_status)モデム デバイスのリセットの状態を表す構造体です。 この応答は、ペイロードが含まれていないが、モデムからのステータス コードがなどは常に*WWAN_STATUS_SUCCESS*または*WWAN_STATUS_BUSY*します。
 
 要請されていないイベントは適用されません。
 
@@ -34,9 +34,9 @@ OID_WWAN_DEVICE_RESET を使用して、一連の要求について、 [NDIS_WWA
 
 [NDIS_STATUS_WWAN_DEVICE_RESET_STATUS](ndis-status-wwan-device-reset-status.md)
 
-[NDIS_WWAN_DEVICE_RESET_STATUS](https://msdn.microsoft.com/library/windows/hardware/D18E8633-BEAD-49A5-A730-10564AFF8A3E)
+[NDIS_WWAN_DEVICE_RESET_STATUS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_device_reset_status)
 
-[NDIS_WWAN_SET_DEVICE_RESET](https://msdn.microsoft.com/library/windows/hardware/73894308-CFE0-49EF-BB09-E104CEE9C746)
+[NDIS_WWAN_SET_DEVICE_RESET](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_set_device_reset)
 
 [リセット操作の MB モデム](mb-modem-reset-operations.md)
 

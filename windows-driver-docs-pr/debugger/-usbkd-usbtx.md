@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: aa91dd9e40441df750420fd6deb7b11713f6bf80
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1a815470de80b66646ab420f337c2744bba11e2b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327974"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367982"
 ---
 # <a name="usbkdusbtx"></a>!usbkd.usbtx
 
@@ -53,7 +53,7 @@ Usbkd.dll
 
 上記の出力の引数として、FDO のデバイスの拡張機能のアドレスを表示、 [DML](debugger-markup-language-commands.md)コマンド **! uhci\_情報 ffffe00001c8f1a0**します。
 
-DML コマンドをクリックするか、デバイスの拡張機能のアドレスを渡す[ **! usbhcdext** ](https://msdn.microsoft.com/library/windows/hardware/dn367072)転送リストを取得します。
+DML コマンドをクリックするか、デバイスの拡張機能のアドレスを渡す[ **! usbhcdext** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-usbkd-usbhcdext)転送リストを取得します。
 
 ```dbgcmd
 0: kd> !usbkd.usbhcdext ffffe00001c8f1a0

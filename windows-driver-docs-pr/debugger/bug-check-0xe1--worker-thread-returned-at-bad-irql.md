@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 63c6a16001068a9eecb9ebd48260f728d4680f9a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 02a4d8e0b1a9562ccc4f38101f8e79f8f10343be
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323174"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367102"
 ---
 # <a name="bug-check-0xe1-workerthreadreturnedatbadirql"></a>バグ チェック 0xE1:ワーカー\_スレッド\_から返された\_で\_不良\_IRQL
 
@@ -26,7 +26,7 @@ ms.locfileid: "63323174"
 ワーカー\_スレッド\_から返された\_で\_不良\_IRQL のバグ チェックが 0x000000E1 の値を持ちます。 これは、ワーカー スレッドが完了し、IRQL と共に返されることを示します&gt;= ディスパッチ\_レベル。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="workerthreadreturnedatbadirql-parameters"></a>ワーカー\_スレッド\_から返された\_で\_不良\_IRQL パラメーター

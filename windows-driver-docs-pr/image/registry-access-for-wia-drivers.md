@@ -4,12 +4,12 @@ description: WIA ドライバーのレジストリ アクセス
 ms.assetid: 0e0b7493-858b-4add-9e1d-fd71bae21b6e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d83eff681187d392c1b1a9f79c43278d2b0efe24
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ba2d916e2ce22f233f616c0fb503bbf8331b6262
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379609"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376492"
 ---
 # <a name="registry-access-for-wia-drivers"></a>WIA ドライバーのレジストリ アクセス
 
@@ -17,7 +17,7 @@ ms.locfileid: "63379609"
 
 
 
-ドライバー開発者向けには、アクセスに必要なレジストリ キーのアクセス許可が知っておく必要があります。 レジストリの多くは、ドライバーの読み取りに使用できます。 ただし、WIA ドライバーがそれらに渡されるレジストリ キーにのみ書き込む必要があります、 [ **IStiUSD::Initialize** ](https://msdn.microsoft.com/library/windows/hardware/ff543824)メソッド。
+ドライバー開発者向けには、アクセスに必要なレジストリ キーのアクセス許可が知っておく必要があります。 レジストリの多くは、ドライバーの読み取りに使用できます。 ただし、WIA ドライバーがそれらに渡されるレジストリ キーにのみ書き込む必要があります、 [ **IStiUSD::Initialize** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-initialize)メソッド。
 
 WIA サービスは、高い特権で実行されるので、他のレジストリ キーへの書き込みが Windows XP で可能ですが**LocalSystem**アカウントでは、このことはできません、低い特権の下で**LocalService** Microsoft Windows Server 2003 以降のアカウント。
 

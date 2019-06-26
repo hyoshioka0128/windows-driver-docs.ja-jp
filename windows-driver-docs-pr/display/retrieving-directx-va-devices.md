@@ -7,12 +7,12 @@ keywords:
 - DirectX VA デバイスの取得
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2facbc48422e8f394f06defe29a51474d4b45c7e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d72f5c8004c6ce12349110ddf1922b71dbca18f6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378520"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365661"
 ---
 # <a name="retrieving-directx-va-devices"></a>DirectX VA デバイスの取得
 
@@ -20,7 +20,7 @@ ms.locfileid: "63378520"
 ## <span id="ddk_retrieving_directx_va_devices_gg"></span><span id="DDK_RETRIEVING_DIRECTX_VA_DEVICES_GG"></span>
 
 
-次のコード例を使用すると、VA の DirectX デバイスを取得できます。 このコードは、の実装、 [ *DdMoCompGetGuids* ](https://msdn.microsoft.com/library/windows/hardware/ff550236)コールバック関数。 **GetMoCompGuids**のメンバー、 [ **DD\_MOTIONCOMPCALLBACKS** ](https://msdn.microsoft.com/library/windows/hardware/ff551660)コールバック関数へのポインターを構造体します。
+次のコード例を使用すると、VA の DirectX デバイスを取得できます。 このコードは、の実装、 [ *DdMoCompGetGuids* ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_getguids)コールバック関数。 **GetMoCompGuids**のメンバー、 [ **DD\_MOTIONCOMPCALLBACKS** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)コールバック関数へのポインターを構造体します。
 
 ```cpp
 DWORD g_dwDXVANumSupportedGUIDs = 4;

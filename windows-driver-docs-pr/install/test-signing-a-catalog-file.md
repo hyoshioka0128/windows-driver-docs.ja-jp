@@ -8,17 +8,17 @@ keywords:
 - テスト署名ドライバー パッケージ WDK、カタログ ファイル
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f3fc7d589a0d7fa3335fe69b4cfcf9138b3c580
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4b235ab765e83ccbb2ac4b8e991efc7b87ead6a9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339631"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377236"
 ---
 # <a name="test-signing-a-catalog-file"></a>カタログ ファイルのテスト署名
 
 
-作成することを確認したら、[ドライバー パッケージの](driver-packages.md) [カタログ ファイル](catalog-files.md)を使用して、 [ **SignTool** ](https://msdn.microsoft.com/library/windows/hardware/ff551778)テスト署名カタログ ファイル」の説明に従って、次のトピック:
+作成することを確認したら、[ドライバー パッケージの](driver-packages.md) [カタログ ファイル](catalog-files.md)を使用して、 [ **SignTool** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/signtool)テスト署名カタログ ファイル」の説明に従って、次のトピック:
 
 [MakeCert テスト証明書またはテスト署名の市販のテスト証明書のドライバー パッケージのカタログ ファイルを使用します。](#using-a-makecert-test-certificate-or-commercial-test-certificate-to-te)
 

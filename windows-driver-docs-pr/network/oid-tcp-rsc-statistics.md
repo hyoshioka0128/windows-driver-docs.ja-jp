@@ -5,12 +5,12 @@ ms.assetid: CD289868-1925-4222-8A4D-359118124325
 ms.date: 08/08/2017
 keywords: -OID_TCP_RSC_STATISTICS ネットワークのドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: fe48b97ade31b80a5e424b90d6358f3f1290f628
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0a65cdf87a6c6d9ecccb5ebbc3fe493106bbb82b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354144"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386957"
 ---
 # <a name="oidtcprscstatistics"></a>OID\_TCP\_RSC\_統計情報
 
@@ -22,9 +22,9 @@ NDIS 6.30 および RSC サービスを提供する以降のミニポート ド�
 <a name="remarks"></a>注釈
 -------
 
-**InformationBuffer**のメンバー [ **NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)構造に含まれる、 [ **NDIS\_RSC\_統計\_情報**](https://msdn.microsoft.com/library/windows/hardware/hh451657)構造体。
+**InformationBuffer**のメンバー [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造に含まれる、 [ **NDIS\_RSC\_統計\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_rsc_statistics_info)構造体。
 
-ミニポート ドライバーがのメンバーの統計情報を維持する必要があります、 [ **NDIS\_RSC\_統計\_情報**](https://msdn.microsoft.com/library/windows/hardware/hh451657)次のように構造体します。
+ミニポート ドライバーがのメンバーの統計情報を維持する必要があります、 [ **NDIS\_RSC\_統計\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_rsc_statistics_info)次のように構造体します。
 
 -   ドライバーはで結合されたパケットの数を増やす必要があります、 **CoalescedPkts**パケットが 1 つのまとめられた単位 (SCU) に追加されるたびに 1 つのメンバー。
 -   ドライバーでまとめられたオクテット数を増やす必要があります、 **CoalescedOctets** SCU にパケットが追加されるたびに、パケットの TCP ペイロードのサイズによってメンバー。
@@ -54,9 +54,9 @@ NDIS 6.30 および RSC サービスを提供する以降のミニポート ド�
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)
+[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
 
-[**NDIS\_RSC\_統計\_情報**](https://msdn.microsoft.com/library/windows/hardware/hh451657)
+[**NDIS\_RSC\_統計\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_rsc_statistics_info)
 
  
 

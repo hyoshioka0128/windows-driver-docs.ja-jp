@@ -1,26 +1,26 @@
 ---
-title: DriverEntry からの記憶装置ドライバーの戻り値
-description: DriverEntry からの記憶装置ドライバーの戻り値
+title: DriverEntry からのストレージ ドライバーの戻り値
+description: DriverEntry からのストレージ ドライバーの戻り値
 ms.assetid: a5772e9c-ec7b-4570-aaae-d2879f7e0bc7
 keywords:
 - WDK SCSI の値を返す
 - ScsiPortInitialize
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e9d41262f3b4981bf18f5e808db818dbda53054
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: aaf808b5a83f89af3eb050b63d09bacbd635dc96
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348458"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368856"
 ---
-# <a name="storage-drivers-return-from-driverentry"></a>DriverEntry からの記憶装置ドライバーの戻り値
+# <a name="storage-drivers-return-from-driverentry"></a>DriverEntry からのストレージ ドライバーの戻り値
 
 
 ## <span id="ddk_storage_driver_s_return_from_driverentry_kg"></span><span id="DDK_STORAGE_DRIVER_S_RETURN_FROM_DRIVERENTRY_KG"></span>
 
 
-ときに[ **ScsiPortInitialize** ](https://msdn.microsoft.com/library/windows/hardware/ff564645)コントロールを返します、 [ **DriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff552654)ルーチンの戻り値の反映**ScsiPortInitialize**とき**DriverEntry**自体がコントロールを返します。
+ときに[ **ScsiPortInitialize** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportinitialize)コントロールを返します、 [ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)ルーチンの戻り値の反映**ScsiPortInitialize**とき**DriverEntry**自体がコントロールを返します。
 
 ミニポート ドライバーを呼び出す場合**ScsiPortInitialize** 2 回以上その**DriverEntry**ルーチン*一番低い値を反映する必要があります*によって返される**ScsiPortInitialize**します。 ミニポート ドライバーのライターによって返される値についてどのような想定を行えません。 **ScsiPortInitialize**します。
 

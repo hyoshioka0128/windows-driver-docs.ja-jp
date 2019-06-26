@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 0572fd89535adc906ed8f16cc9bcaec1017d73b7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 36940f31fbc4c6bf9bec97926936af4c8d35008c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361547"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361925"
 ---
 # <a name="bug-check-0x2b-panicstackswitch"></a>バグ チェック 0x2B:パニック\_スタック\_スイッチ
 
@@ -26,7 +26,7 @@ ms.locfileid: "63361547"
 パニック\_スタック\_スイッチのバグ チェックが 0x0000002B の値を持ちます。 これは、カーネル モード スタックがオーバーランすることを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="panicstackswitch-parameters"></a>パニック\_スタック\_スイッチ パラメーター

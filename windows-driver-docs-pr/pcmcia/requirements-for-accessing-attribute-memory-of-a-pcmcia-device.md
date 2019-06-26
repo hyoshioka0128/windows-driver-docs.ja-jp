@@ -6,12 +6,12 @@ keywords:
 - 属性のメモリ バス WDK PCMCIA の要件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ab5842d6563c014284cc57311aaaa2192af397df
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8eddfaccbbe295617f503d6a446c10a46b2e7339
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378311"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382600"
 ---
 # <a name="requirements-for-accessing-attribute-memory-of-a-pcmcia-device"></a>PCMCIA デバイスの属性メモリにアクセスするための要件
 
@@ -37,7 +37,7 @@ ms.locfileid: "63378311"
 
 ドライバーは通常、デバイスを頻度の低い構成します。
 
-PCMCIA バス ドライバーが属性メモリでは、標準の PCMCIA 構成レジスタを管理することに注意してください。 ドライバーは、これらのレジスタに書き込む必要があります。 場合は、システムが予期しない動作が発生することができます。 システムのセットアップと、プラグ アンド プレイ マネージャなど INF ファイルのディレクティブでのサポート、 [ **INF LogConfig ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff547448) -を使用してこれらのレジスタを構成する必要があります。
+PCMCIA バス ドライバーが属性メモリでは、標準の PCMCIA 構成レジスタを管理することに注意してください。 ドライバーは、これらのレジスタに書き込む必要があります。 場合は、システムが予期しない動作が発生することができます。 システムのセットアップと、プラグ アンド プレイ マネージャなど INF ファイルのディレクティブでのサポート、 [ **INF LogConfig ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-logconfig-directive) -を使用してこれらのレジスタを構成する必要があります。
 
 <a href="" id="operate-a-device"></a>**デバイスを動作します。**  
 PCMCIA デバイスによっては、属性のメモリ内にあるコントロール レジスタを使用します。 ドライバー、ISR. 内でこれらのレジスタに直接アクセスする必要があります通常 この種類のアクセスでは、[頻度] で比較的多くなりますでき、高速ダイレクト メモリ アクセスを必要とすることができます。

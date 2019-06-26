@@ -7,12 +7,12 @@ keywords:
 - 生体認証ドライバー WDK 生体認証を順位付け
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0fc9a56c5201890283c9bef44f27eb3531a925a5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 329ced6ad146751ed4fda12e5d46c0a77b4aa1e2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328372"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364687"
 ---
 # <a name="ranking-a-biometric-driver-on-windows-update"></a>Windows Update における生体認証ドライバーのランク付け
 
@@ -38,7 +38,7 @@ Windows 生体認証フレームワークで正しく動作するため、ドラ
 
 Microsoft は、従来の生体認証ドライバー 0xa0 の特徴のスコアをお勧めします。 後でオーバーライドする必要がある場合、特徴のスコアを 0x00 を設定しない必要があります。
 
-ドライバーの特徴のスコアは、INF FeatureScore ディレクティブで設定されて、 [ **INF DDInstall セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547344)デバイス。
+ドライバーの特徴のスコアは、INF FeatureScore ディレクティブで設定されて、 [ **INF DDInstall セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)デバイス。
 
 たとえば、次のコードでは、0x20 をドライバーの特徴のスコアを設定します。
 

@@ -4,12 +4,12 @@ description: Cortana、音声のプラットフォームは、音声のすべて
 ms.assetid: 0684EF32-AA76-418B-9027-1C067A8140E3
 ms.date: 12/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: d6f00a02ab2df66ffecd132cf5924c19e96d92bd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6a0f64019f7a1a14e438624154df53d56d4b6c62
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335377"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364828"
 ---
 # <a name="voice-activation"></a>音声のアクティブ化
 
@@ -27,8 +27,8 @@ Windows で利用できる音声の相互作用エクスペリエンスを理解
 |                                                                                                   |                                                                       |
 |---------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------|
 | **トピック**                                                                                         | **説明**                                                       |
-| [Cortana とは何ですか。](https://windows.microsoft.com/windows-10/getstarted-what-is-cortana)      | 提供し、Cortana の概要と使用状況の方向                 |
-| [Cortana あなた次第します。](https://windows.microsoft.com/windows-10/getstarted-make-cortana-yours) | Cortana の設定 画面で使用できるカスタマイズをについて説明します。 |
+| [Cortana とは何ですか。](https://support.microsoft.com/help/17214/cortana-what-is)      | 提供し、Cortana の概要と使用状況の方向                 |
+| [Cortana あなた次第します。](https://support.microsoft.com/help/17178/windows-10-make-cortana-yours) | Cortana の設定 画面で使用できるカスタマイズをについて説明します。 |
 
 
 
@@ -75,7 +75,7 @@ Microsoft は、OS 既定キーワード spotter (ソフトウェア キーワ�
 | 音声のアクティブ化      | 定義済みのライセンス認証キーフレーズのキーワードの検出を提供するシナリオです。 たとえば、コルタナさん」は、Microsoft の音声のライセンス認証シナリオです。 |
 |WoV                    | ウェイク アップに-ボイス – 低電力状態では、オフの画面から、画面の完全な電源状態に音声をアクティブ化を実現するテクノロジ。 |
 |最新のスタンバイから WoV| ウェイク アップに-ボイス オフの状態の最新のスタンバイ (S0ix) 画面から (S0) の完全な電源状態で、画面にします。 |
-|モダン スタンバイ |Windows 低電力アイドル インフラストラクチャ - に接続されているスタンバイ (CS) で Windows 10 の後継です。 最新のスタンバイ状態の最初の状態は、画面がオフの場合です。 最下位のスリープ状態は、DRIPS/回復性の場合です。 詳細については、次を参照してください[最新スタンバイ。](https://msdn.microsoft.com/library/windows/hardware/mt282515(v=vs.85).aspx)   |
+|モダン スタンバイ |Windows 低電力アイドル インフラストラクチャ - に接続されているスタンバイ (CS) で Windows 10 の後継です。 最新のスタンバイ状態の最初の状態は、画面がオフの場合です。 最下位のスリープ状態は、DRIPS/回復性の場合です。 詳細については、次を参照してください[最新スタンバイ。](https://docs.microsoft.com/windows-hardware/design/device-experiences/modern-standby)   |
 |KWS                    |キーワード spotter – コルタナさん」の検出を提供するアルゴリズム |
 | SW KWS                |ソフトウェア キーワード spotter – (CPU) のホストで実行されている KWS の実装。 「コルタナさん、SW KWS は Windows の一部として含まれています。 |
 | HW KWS                | ハードウェア オフロード キーワード spotter – 実行 KWS の実装は、ハードウェアのオフロード。 |
@@ -90,12 +90,12 @@ Microsoft は、OS 既定キーワード spotter (ソフトウェア キーワ�
 -   このトピックの後半で説明されている SYSVAD サンプルに基づくカスタム キーワード検出機能を作成します。 説明されている、COM DLL でこれらのメソッドを実装する[キーワード Detector OEM アダプター インターフェイス](#keyword_detector)します。
 -   説明されている WAVE RT 拡張機能の実装[WAVERT 強化](#wavert_enhancements)します。
 -   キーワードの検出に使用される任意のカスタム APOs を記述する INF ファイルのエントリを提供します。
-    -   [鍵\_FX\_KeywordDetector\_StreamEffectClsid](https://msdn.microsoft.com/library/windows/hardware/mt244268)
-    -   [PKEY\_FX\_KeywordDetector\_ModeEffectClsid](https://msdn.microsoft.com/library/windows/hardware/mt244267)
-    -   [鍵\_FX\_KeywordDetector\_EndpointEffectClsid](https://msdn.microsoft.com/library/windows/hardware/mt244266)
-    -   [鍵\_SFX\_KeywordDetector\_ProcessingModes\_サポート\_の\_ストリーミング](https://msdn.microsoft.com/library/windows/hardware/mt244270)
-    -   [鍵\_MFX\_KeywordDetector\_ProcessingModes\_サポート\_の\_ストリーミング](https://msdn.microsoft.com/library/windows/hardware/mt244269)
-    -   [鍵\_EFX\_KeywordDetector\_ProcessingModes\_サポート\_の\_ストリーミング](https://msdn.microsoft.com/library/windows/hardware/mt244264)
+    -   [鍵\_FX\_KeywordDetector\_StreamEffectClsid](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-fx-keyworddetector-streameffectclsid)
+    -   [PKEY\_FX\_KeywordDetector\_ModeEffectClsid](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-fx-keyworddetector-modeeffectclsid)
+    -   [鍵\_FX\_KeywordDetector\_EndpointEffectClsid](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-fx-keyworddetector-endpointeffectclsid)
+    -   [鍵\_SFX\_KeywordDetector\_ProcessingModes\_サポート\_の\_ストリーミング](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-sfx-keyworddetector-processingmodes-supported-for-streaming)
+    -   [鍵\_MFX\_KeywordDetector\_ProcessingModes\_サポート\_の\_ストリーミング](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-mfx-keyworddetector-processingmodes-supported-for-streaming)
+    -   [鍵\_EFX\_KeywordDetector\_ProcessingModes\_サポート\_の\_ストリーミング](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-efx-keyworddetector-processingmodes-supported-for-streaming)
 -   ハードウェアの推奨事項を確認し、テストのガイダンス[オーディオ デバイスの推奨事項](https://docs.microsoft.com/windows-hardware/design/component-guidelines/audio)します。 このトピックでは、ガイダンスおよび設計と開発のオーディオ入力デバイスが Microsoft の音声のプラットフォームで使用するための推奨事項を提供します。
 -   サポートは、ステージングし、コマンドを連結します。
 -   サポートされている Cortana ロケールのコルタナさん」をサポートします。 
@@ -154,12 +154,12 @@ SYSVAD サンプル オーディオ ドライバーの詳細については、�
 
 プロパティは次のとおりです。
 
--   サポートされているキーワードの種類 - [ **KSPROPERTY\_SOUNDDETECTOR\_パターン**](https://msdn.microsoft.com/library/windows/hardware/dn932151)します。 このプロパティは、構成を検出するキーワードにオペレーティング システムによって設定されます。
--   キーワードの一覧パターンの Guid - [ **KSPROPERTY\_SOUNDDETECTOR\_SUPPORTEDPATTERNS**](https://msdn.microsoft.com/library/windows/hardware/dn932152)します。 このプロパティを使用して、サポートされているパターンの種類を識別する Guid のリストを取得できます。
--   武装 - [ **KSPROPERTY\_SOUNDDETECTOR\_故障**](https://msdn.microsoft.com/library/windows/hardware/dn932149)します。 この読み取り/書き込みプロパティは、検出機能が作動するかどうかを示すブール値を単に状態です。 OS では、キーワードの検出機能を使用してこれを設定します。 OS には、これを改ざんをクリアできます。 これは、ドライバーが自動的にクリア キーワードが検出されたパターンのキーワードを設定するとも後。 (OS する必要があります rearm。)
--   -結果と一致する[ **KSPROPERTY\_SOUNDDETECTOR\_MATCHRESULT**](https://msdn.microsoft.com/library/windows/hardware/dn932150)します。 この読み取りプロパティは、検出が行われた後に、結果データを保持します。
+-   サポートされているキーワードの種類 - [ **KSPROPERTY\_SOUNDDETECTOR\_パターン**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-sounddetector-patterns)します。 このプロパティは、構成を検出するキーワードにオペレーティング システムによって設定されます。
+-   キーワードの一覧パターンの Guid - [ **KSPROPERTY\_SOUNDDETECTOR\_SUPPORTEDPATTERNS**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-sounddetector-supportedpatterns)します。 このプロパティを使用して、サポートされているパターンの種類を識別する Guid のリストを取得できます。
+-   武装 - [ **KSPROPERTY\_SOUNDDETECTOR\_故障**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-sounddetector-armed)します。 この読み取り/書き込みプロパティは、検出機能が作動するかどうかを示すブール値を単に状態です。 OS では、キーワードの検出機能を使用してこれを設定します。 OS には、これを改ざんをクリアできます。 これは、ドライバーが自動的にクリア キーワードが検出されたパターンのキーワードを設定するとも後。 (OS する必要があります rearm。)
+-   -結果と一致する[ **KSPROPERTY\_SOUNDDETECTOR\_MATCHRESULT**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-sounddetector-matchresult)します。 この読み取りプロパティは、検出が行われた後に、結果データを保持します。
 
-キーワードが検出されたときに発生するイベントは、 [ **KSEVENT\_SOUNDDETECTOR\_MATCHDETECTED** ](https://msdn.microsoft.com/library/windows/hardware/dn932148)イベント。
+キーワードが検出されたときに発生するイベントは、 [ **KSEVENT\_SOUNDDETECTOR\_MATCHDETECTED** ](https://docs.microsoft.com/windows-hardware/drivers/audio/ksevent-sounddetector-matchdetected)イベント。
 
 **操作のシーケンス**
 
@@ -191,9 +191,9 @@ SYSVAD サンプル オーディオ ドライバーの詳細については、�
 
 ## <a name="span-idkeyworddetectorspankeyword-detector-oem-adapter-interface"></a><span id="keyword_detector"></span>キーワード Detector OEM アダプター インターフェイス
 
-計算やを使ってオーディオ ドライバーに読み取りし、書き込みは非透過的なデータを解析しやすく、OS およびドライバーの間の媒介として機能する COM オブジェクトの実装を提供する OEM [ **KSPROPERTY\_SOUNDDETECTOR\_パターン**](https://msdn.microsoft.com/library/windows/hardware/dn932151)と[ **KSPROPERTY\_SOUNDDETECTOR\_MATCHRESULT**](https://msdn.microsoft.com/library/windows/hardware/dn932150)します。
+計算やを使ってオーディオ ドライバーに読み取りし、書き込みは非透過的なデータを解析しやすく、OS およびドライバーの間の媒介として機能する COM オブジェクトの実装を提供する OEM [ **KSPROPERTY\_SOUNDDETECTOR\_パターン**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-sounddetector-patterns)と[ **KSPROPERTY\_SOUNDDETECTOR\_MATCHRESULT**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-sounddetector-matchresult)します。
 
-COM オブジェクトの CLSID は検出器パターンの種類によって返される GUID、 [ **KSPROPERTY\_SOUNDDETECTOR\_SUPPORTEDPATTERNS**](https://msdn.microsoft.com/library/windows/hardware/dn932152)します。 OS の呼び出しパターンを渡して CoCreateInstance キーワード パターンの種類と互換性が、オブジェクトの IKeywordDetectorOemAdapter インターフェイスのメソッドを呼び出して適切な COM オブジェクトをインスタンス化する GUID を入力します。
+COM オブジェクトの CLSID は検出器パターンの種類によって返される GUID、 [ **KSPROPERTY\_SOUNDDETECTOR\_SUPPORTEDPATTERNS**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-sounddetector-supportedpatterns)します。 OS の呼び出しパターンを渡して CoCreateInstance キーワード パターンの種類と互換性が、オブジェクトの IKeywordDetectorOemAdapter インターフェイスのメソッドを呼び出して適切な COM オブジェクトをインスタンス化する GUID を入力します。
 
 **COM スレッド処理モデルの要件**
 
@@ -207,15 +207,15 @@ OEM の実装には、COM スレッド モデルのいずれかを選択でき�
 
 次のメソッドを実装します。
 
--   [**IKeywordDetectorOemAdapter::BuildArmingPatternData**](https://msdn.microsoft.com/library/windows/hardware/dn957505)
--   [**IKeywordDetectorOemAdapter::ComputeAndAddUserModelData**](https://msdn.microsoft.com/library/windows/hardware/dn957506)
--   [**IKeywordDetectorOemAdapter::GetCapabilities**](https://msdn.microsoft.com/library/windows/hardware/dn957507)
--   [**IKeywordDetectorOemAdapter::ParseDetectionResultData**](https://msdn.microsoft.com/library/windows/hardware/dn957508)
--   [**IKeywordDetectorOemAdapter::VerifyUserKeyword**](https://msdn.microsoft.com/library/windows/hardware/dn957509)
+-   [**IKeywordDetectorOemAdapter::BuildArmingPatternData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/keyworddetectoroemadapter/nf-keyworddetectoroemadapter-ikeyworddetectoroemadapter-buildarmingpatterndata)
+-   [**IKeywordDetectorOemAdapter::ComputeAndAddUserModelData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/keyworddetectoroemadapter/nf-keyworddetectoroemadapter-ikeyworddetectoroemadapter-computeandaddusermodeldata)
+-   [**IKeywordDetectorOemAdapter::GetCapabilities**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/keyworddetectoroemadapter/nf-keyworddetectoroemadapter-ikeyworddetectoroemadapter-getcapabilities)
+-   [**IKeywordDetectorOemAdapter::ParseDetectionResultData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/keyworddetectoroemadapter/nf-keyworddetectoroemadapter-ikeyworddetectoroemadapter-parsedetectionresultdata)
+-   [**IKeywordDetectorOemAdapter::VerifyUserKeyword**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/keyworddetectoroemadapter/nf-keyworddetectoroemadapter-ikeyworddetectoroemadapter-verifyuserkeyword)
 
 **KEYWORDID**
 
-[ **KEYWORDID** ](https://msdn.microsoft.com/library/windows/hardware/dn957510)列挙体は、キーワードのフレーズのテキスト/関数を識別し、Windows 生体認証サービス アダプターにも使用します。 詳細については、次を参照してください[生体認証フレームワークの概要 - 基本的なプラットフォーム コンポーネント。](https://msdn.microsoft.com/library/windows/desktop/dd560897.aspx)
+[ **KEYWORDID** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/keyworddetectoroemadapter/ne-keyworddetectoroemadapter-__midl_ikeyworddetectoroemadapter_0002)列挙体は、キーワードのフレーズのテキスト/関数を識別し、Windows 生体認証サービス アダプターにも使用します。 詳細については、次を参照してください[生体認証フレームワークの概要 - 基本的なプラットフォーム コンポーネント。](https://docs.microsoft.com/windows/desktop/SecBioMet/biometric-framework-overview)
 
 ```cpp
 typedef enum  { 
@@ -227,7 +227,7 @@ typedef enum  {
 
 **KEYWORDSELECTOR**
 
-[ **KEYWORDSELECTOR** ](https://msdn.microsoft.com/library/windows/hardware/dn957511)構造体は、一連の Id を一意に特定のキーワードおよび言語を選択します。
+[ **KEYWORDSELECTOR** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/keyworddetectoroemadapter/ns-keyworddetectoroemadapter-__midl_ikeyworddetectoroemadapter_0003)構造体は、一連の Id を一意に特定のキーワードおよび言語を選択します。
 
 ```cpp
 typedef struct
@@ -252,7 +252,7 @@ OEM の DLL の開発者は、独立したユーザーを管理する方法と�
 ## <a name="span-idtrainingandoperationaudioprocessingspanspan-idtrainingandoperationaudioprocessingspanspan-idtrainingandoperationaudioprocessingspantraining-and-operation-audio-processing"></a><span id="Training_and_Operation_Audio_Processing"></span><span id="training_and_operation_audio_processing"></span><span id="TRAINING_AND_OPERATION_AUDIO_PROCESSING"></span>トレーニングとオーディオの処理の操作
 
 
-前述のように、オーディオ ストリームが使用可能な豊富な発音で完全な文トレーニング UI フローになります。 各文に個別に渡される[ **IKeywordDetectorOemAdapter::VerifyUserKeyword** ](https://msdn.microsoft.com/library/windows/hardware/dn957509)予想されるキーワードを含みが許容可能な品質を確認します。 すべての文は収集し、UI で確認した後はすべて渡される 1 つの呼び出しで[ **IKeywordDetectorOemAdapter::ComputeAndAddUserModelData**](https://msdn.microsoft.com/library/windows/hardware/dn957506)します。
+前述のように、オーディオ ストリームが使用可能な豊富な発音で完全な文トレーニング UI フローになります。 各文に個別に渡される[ **IKeywordDetectorOemAdapter::VerifyUserKeyword** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/keyworddetectoroemadapter/nf-keyworddetectoroemadapter-ikeyworddetectoroemadapter-verifyuserkeyword)予想されるキーワードを含みが許容可能な品質を確認します。 すべての文は収集し、UI で確認した後はすべて渡される 1 つの呼び出しで[ **IKeywordDetectorOemAdapter::ComputeAndAddUserModelData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/keyworddetectoroemadapter/nf-keyworddetectoroemadapter-ikeyworddetectoroemadapter-computeandaddusermodeldata)します。
 
 オーディオは、音声のアクティブ化のトレーニング用の独自の方法で処理されます。 次の表は、音声のアクティブ化のトレーニングと通常の音声認識の使用量の違いをまとめたものです。
 
@@ -305,7 +305,7 @@ OEM の DLL の開発者は、独立したユーザーを管理する方法と�
 
 これらの図では、音声ランタイム モジュールは、"speech platform"として表示されます。 前述のように、Windows の音声のプラットフォームは、Cortana、ディクテーションなどの Windows 10 でのエクスペリエンス、音声のすべての電源に使用されます。
 
-使用して、起動中に機能が収集されて[ **IKeywordDetectorOemAdapter::GetCapabilities**](https://msdn.microsoft.com/library/windows/hardware/dn957507)します。
+使用して、起動中に機能が収集されて[ **IKeywordDetectorOemAdapter::GetCapabilities**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/keyworddetectoroemadapter/nf-keyworddetectoroemadapter-ikeyworddetectoroemadapter-getcapabilities)します。
 
 ![スタートアップ時にトレーニング ux 音声のプラットフォームと、oem キーワードの検出機能を示す、キーワード認識シーケンス](images/audio-voice-activation-startup.png)
 
@@ -332,15 +332,15 @@ HW KWS ソリューションでは、最大で 200 ミリ秒以上 100 ミリ秒
 
 **DEVPKEY\_KsAudio\_PacketSize\_Constraints**
 
-DEVPKEY\_KsAudio\_PacketSize\_制約プロパティの値が含まれています、 [ **KSAUDIO\_PACKETSIZE\_制約**](https://msdn.microsoft.com/library/windows/hardware/dn965561)(つまり、オーディオ ハードウェアに WaveRT バッファーからデータを転送するメカニズム) のための物理ハードウェア制約を記述する構造体。 構造体には、0 以上の配列が含まれています[ **KSAUDIO\_PACKETSIZE\_PROCESSINGMODE\_制約**](https://msdn.microsoft.com/library/windows/hardware/dn965562)に固有の制約を記述する構造体。処理モードを通知します。 呼び出しの前に、このプロパティを設定して、ドライバー [ **PcRegisterSubdevice** ](https://msdn.microsoft.com/library/windows/hardware/ff537731)またはそれ以外の場合、KS のフィルター インターフェイスのピンのストリーミングを有効にします。
+DEVPKEY\_KsAudio\_PacketSize\_制約プロパティの値が含まれています、 [ **KSAUDIO\_PACKETSIZE\_制約**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ksaudio_packetsize_constraints)(つまり、オーディオ ハードウェアに WaveRT バッファーからデータを転送するメカニズム) のための物理ハードウェア制約を記述する構造体。 構造体には、0 以上の配列が含まれています[ **KSAUDIO\_PACKETSIZE\_PROCESSINGMODE\_制約**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ksaudio_packetsize_signalprocessingmode_constraint)に固有の制約を記述する構造体。処理モードを通知します。 呼び出しの前に、このプロパティを設定して、ドライバー [ **PcRegisterSubdevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcregistersubdevice)またはそれ以外の場合、KS のフィルター インターフェイスのピンのストリーミングを有効にします。
 
 **IMiniportWaveRTInputStream**
 
-ドライバーより優れた調整 OS に、ドライバーからオーディオ データ フローのためには、このインターフェイスを実装します。 キャプチャ ストリームでこのインターフェイスが使用可能な場合は、OS は WaveRT バッファー内のデータにアクセスするこのインターフェイスでメソッドを使用します。 詳細については、「 [ **IMiniportWaveRTInputStream::GetReadPacket**](https://msdn.microsoft.com/library/windows/hardware/dn946533)
+ドライバーより優れた調整 OS に、ドライバーからオーディオ データ フローのためには、このインターフェイスを実装します。 キャプチャ ストリームでこのインターフェイスが使用可能な場合は、OS は WaveRT バッファー内のデータにアクセスするこのインターフェイスでメソッドを使用します。 詳細については、「 [ **IMiniportWaveRTInputStream::GetReadPacket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavertinputstream-getreadpacket)
 
 **IMiniportWaveRTOutputStream**
 
-WaveRT ミニポートは、必要に応じて、OS からの書き込みの進行状況の点に注意し、正確なストリームの位置を取得するため、このインターフェイスを実装します。 詳細については、次を参照してください[ **IMiniportWaveRTOutputStream::SetWritePacket**](https://msdn.microsoft.com/library/windows/hardware/dn946537)、 [ **IMiniportWaveRTOutputStream::GetOutputStreamPresentationPosition。**](https://msdn.microsoft.com/library/windows/hardware/dn946535)と[ **IMiniportWaveRTOutputStream::GetPacketCount**](https://msdn.microsoft.com/library/windows/hardware/dn946536)します。
+WaveRT ミニポートは、必要に応じて、OS からの書き込みの進行状況の点に注意し、正確なストリームの位置を取得するため、このインターフェイスを実装します。 詳細については、次を参照してください[ **IMiniportWaveRTOutputStream::SetWritePacket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavertoutputstream-setwritepacket)、 [ **IMiniportWaveRTOutputStream::GetOutputStreamPresentationPosition。** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavertoutputstream-getoutputstreampresentationposition)と[ **IMiniportWaveRTOutputStream::GetPacketCount**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavertoutputstream-getpacketcount)します。
 
 **パフォーマンス カウンターのタイムスタンプ**
 
@@ -354,25 +354,25 @@ WaveRT ミニポートは、必要に応じて、OS からの書き込みの進�
 
 **読み取り操作のバースト**
 
-このセクションでは、バーストの読み取りの OS およびドライバーとの対話について説明します。 ドライバーは、パケットのストリーミング WaveRT モデルをサポートしていれば、読み取りバーストが、音声のライセンス認証シナリオ外で再起動できますなど、 [ **IMiniportWaveRTInputStream::GetReadPacket** ](https://msdn.microsoft.com/library/windows/hardware/dn946533)関数。
+このセクションでは、バーストの読み取りの OS およびドライバーとの対話について説明します。 ドライバーは、パケットのストリーミング WaveRT モデルをサポートしていれば、読み取りバーストが、音声のライセンス認証シナリオ外で再起動できますなど、 [ **IMiniportWaveRTInputStream::GetReadPacket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavertinputstream-getreadpacket)関数。
 
-バーストの 2 つの例の読み取りはシナリオについて説明します。 ミニポート暗証番号 (pin) カテゴリを持つ暗証番号 (pin) をサポートしている場合、1 つのシナリオで[ **KSNODETYPE\_オーディオ\_KEYWORDDETECTOR** ](https://msdn.microsoft.com/library/windows/hardware/dn965563)ドライバーはキャプチャを開始し、内部的にキーワードが検出されたときに、データをバッファリングします。 別のシナリオでドライバーできます必要に応じて内部でバッファー WaveRT バッファーの外部データ場合は、OS は、データを読み込んでいない迅速に呼び出すことによって[ **IMiniportWaveRTInputStream::GetReadPacket** ](https://msdn.microsoft.com/library/windows/hardware/dn946533).
+バーストの 2 つの例の読み取りはシナリオについて説明します。 ミニポート暗証番号 (pin) カテゴリを持つ暗証番号 (pin) をサポートしている場合、1 つのシナリオで[ **KSNODETYPE\_オーディオ\_KEYWORDDETECTOR** ](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-audio-keyworddetector)ドライバーはキャプチャを開始し、内部的にキーワードが検出されたときに、データをバッファリングします。 別のシナリオでドライバーできます必要に応じて内部でバッファー WaveRT バッファーの外部データ場合は、OS は、データを読み込んでいない迅速に呼び出すことによって[ **IMiniportWaveRTInputStream::GetReadPacket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavertinputstream-getreadpacket).
 
 KSSTATE に移行する前にキャプチャされたバースト データ\_実行するには、ドライバーは、バッファー内のキャプチャのデータと共にサンプルの正確なタイムスタンプ情報を保持する必要があります。 タイムスタンプは、サンプリングを特定のキャプチャされたサンプルのインスタントします。
 
 1. KSSTATE にストリームの遷移後\_これを実行すると、ドライバーすぐにイベントを設定、バッファー通知使用可能なデータが既に存在するためです。
 2. このイベントでは、OS は GetReadPacket()、使用できるデータに関する情報を取得を呼び出します。
 
-    a.  ドライバーは、有効なキャプチャされたデータのパケット数を返します (KSSTATE からの移行後の最初のパケットの場合は 0\_KSSTATE に停止\_実行)、OS が WaveRT バッファーと、パケット内のパケットの位置を派生できますストリームの先頭位置します。
+    a. ドライバーは、有効なキャプチャされたデータのパケット数を返します (KSSTATE からの移行後の最初のパケットの場合は 0\_KSSTATE に停止\_実行)、OS が WaveRT バッファーと、パケット内のパケットの位置を派生できますストリームの先頭位置します。
 
-    b.  ドライバーがサンプリングにも対応するパフォーマンス カウンターの値を返します、パケット内の最初のサンプルのインスタントします。 ハードウェアまたはドライバー (外部 WaveRT バッファー) 内でキャプチャ データの量がバッファリングされるに応じて比較的古いこのパフォーマンス カウンターの値である可能性に注意してください。
+    b. ドライバーがサンプリングにも対応するパフォーマンス カウンターの値を返します、パケット内の最初のサンプルのインスタントします。 ハードウェアまたはドライバー (外部 WaveRT バッファー) 内でキャプチャ データの量がバッファリングされるに応じて比較的古いこのパフォーマンス カウンターの値である可能性に注意してください。
 
     c. データがある場合より未読バッファリングされている使用可能なドライバーか: しました。 すぐに、MoreData の WaveRT バッファー (つまりいない GetReadPacket から返されるパケットで使用される領域) の使用可能な領域にデータが true を転送し、このルーチンから戻る前にバッファーの通知イベントを設定します。 または、ii です。 WaveRT バッファーの使用可能な領域に次のパケットをバースト プログラム ハードウェア MoreData の場合は false を返しますおよび後で、転送が完了すると、バッファー イベントを設定します。
 3. OS は、GetReadPacket() によって返される情報を使用して WaveRT バッファーからデータを読み取ります。
 4. OS は、次のバッファー通知イベントを待機します。 ドライバー (2 c) の手順で、バッファーの通知を設定する場合、待機をすぐに終了があります。
 5. ドライバーが WaveRT バッファーにより、キャプチャされたデータを転送し、OS を読み取るに使用できるようにした後に、イベントを設定する場合は、ドライバーでは、イベントはすぐには (2 c) の手順で設定しなかった、
 6. (2) に移動します。
-[ **KSNODETYPE\_オーディオ\_KEYWORDDETECTOR** ](https://msdn.microsoft.com/library/windows/hardware/dn965563)キーワード detector のピン ドライバー割り当てる必要があります十分なバーストの内部バッファリングのオーディオ データの少なくとも返ります。 OS は、作成が失敗した場合、ストリーム バッファー オーバーフロー ドライバーでは、前に、暗証番号 (pin) を内部バッファリングのアクティビティと関連付けられている無料のリソースになる可能性があります。
+[ **KSNODETYPE\_オーディオ\_KEYWORDDETECTOR** ](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-audio-keyworddetector)キーワード detector のピン ドライバー割り当てる必要があります十分なバーストの内部バッファリングのオーディオ データの少なくとも返ります。 OS は、作成が失敗した場合、ストリーム バッファー オーバーフロー ドライバーでは、前に、暗証番号 (pin) を内部バッファリングのアクティビティと関連付けられている無料のリソースになる可能性があります。
 
 
 ## <a name="span-idwakeonvoicespanspan-idwakeonvoicespanspan-idwakeonvoicespanwake-on-voice"></a><span id="Wake_on_Voice"></span><span id="wake_on_voice"></span><span id="WAKE_ON_VOICE"></span>Wake on 音声

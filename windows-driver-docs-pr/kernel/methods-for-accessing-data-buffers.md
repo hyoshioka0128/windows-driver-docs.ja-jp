@@ -12,12 +12,12 @@ keywords:
 - WDK カーネルのデータを転送するには、データ バッファーへのアクセス
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a6a23ca1b45d98da0b0433006d18f17d0c4e4b5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 66dda1a1cb83d17d3d325f2a52cfbc2de0402137
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380366"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386013"
 ---
 # <a name="methods-for-accessing-data-buffers"></a>データ バッファーにアクセスする方法
 
@@ -39,9 +39,9 @@ ms.locfileid: "63380366"
 
 詳細については、次を参照してください。[を使用していないバッファー Nor ダイレクト I/O](using-neither-buffered-nor-direct-i-o.md)します。
 
-[ **IRP\_MJ\_読み取り**](https://msdn.microsoft.com/library/windows/hardware/ff550794)と[ **IRP\_MJ\_書き込み**](https://msdn.microsoft.com/library/windows/hardware/ff550819)要求ドライバーは、それぞれにフラグを使用して、I/O メソッドを指定[**デバイス\_オブジェクト**](https://msdn.microsoft.com/library/windows/hardware/ff543147)構造体。 詳細については、次を参照してください。[デバイス オブジェクトを初期化して](initializing-a-device-object.md)します。
+[ **IRP\_MJ\_読み取り**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-read)と[ **IRP\_MJ\_書き込み**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-write)要求ドライバーは、それぞれにフラグを使用して、I/O メソッドを指定[**デバイス\_オブジェクト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_object)構造体。 詳細については、次を参照してください。[デバイス オブジェクトを初期化して](initializing-a-device-object.md)します。
 
-[ **IRP\_MJ\_デバイス\_コントロール**](https://msdn.microsoft.com/library/windows/hardware/ff550744)と[ **IRP\_MJ\_内部\_デバイス\_コントロール**](https://msdn.microsoft.com/library/windows/hardware/ff550766) I/O メソッドは、要求によって決まります、 *TransferType* IOCTL の各値に含まれる値。 詳細については、次を参照してください。 [I/O 制御コードを定義する](defining-i-o-control-codes.md)します。
+[ **IRP\_MJ\_デバイス\_コントロール**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-device-control)と[ **IRP\_MJ\_内部\_デバイス\_コントロール**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-internal-device-control) I/O メソッドは、要求によって決まります、 *TransferType* IOCTL の各値に含まれる値。 詳細については、次を参照してください。 [I/O 制御コードを定義する](defining-i-o-control-codes.md)します。
 
 ドライバー スタックのすべてのドライバーする必要があります要求ごとに同じバッファーへのアクセス メソッドを除く可能性がありますドライバーの使用、最上位レベル (を下位のドライバーで使用される方法に関係なく、「も」メソッドを使用することができます)。
 

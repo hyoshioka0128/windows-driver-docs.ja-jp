@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: f6ea7eed9fcb6e4f59d2ffe99926a18968f31345
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 236d96ef0a56eec667bacf8ec7fbf5baf7f2c2a2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380086"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375283"
 ---
 # <a name="guiddevinterfacei2c"></a>GUID_DEVINTERFACE_I2C
 
 
-GUID_DEVINTERFACE_I2C[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)のコンテキストで動作するディスプレイ アダプター ドライバーが定義されている、 [Windows Vista のディスプレイ ドライバー モデル](https://msdn.microsoft.com/library/windows/hardware/ff570593)による I2C トランザクションの実行と子のデバイスを監視します。
+GUID_DEVINTERFACE_I2C[デバイス インターフェイス クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)のコンテキストで動作するディスプレイ アダプター ドライバーが定義されている、 [Windows Vista のディスプレイ ドライバー モデル](https://docs.microsoft.com/windows-hardware/drivers/display/windows-vista-display-driver-model-design-guide)による I2C トランザクションの実行と子のデバイスを監視します。
 
 <table>
 <colgroup>
@@ -56,9 +56,9 @@ GUID_DEVINTERFACE_I2C[デバイス インターフェイス クラス](https://m
 
 ドライバーは、オペレーティング システムや子デバイスを監視でトランザクションを実行する I2C インターフェイスの存在をアプリケーションに通知するこのデバイスのインターフェイス クラスのインスタンスを登録します。
 
-ディスプレイのミニポート ドライバーがこの直接呼出し I2C インターフェイスをサポートするかどうかは[デバイス セットアップ クラス](https://msdn.microsoft.com/library/windows/hardware/ff541509)、カーネル モード コンポーネントを呼び出して、ミニポート ドライバーの直接呼び出しインターフェイスを取得できます[ **DxgkDdiQueryInterface** ](https://msdn.microsoft.com/library/windows/hardware/ff559764)関数とインターフェイスの種類を指定する GUID_DEVINTERFACE_I2C を指定します。
+ディスプレイのミニポート ドライバーがこの直接呼出し I2C インターフェイスをサポートするかどうかは[デバイス セットアップ クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-setup-classes)、カーネル モード コンポーネントを呼び出して、ミニポート ドライバーの直接呼び出しインターフェイスを取得できます[ **DxgkDdiQueryInterface** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_query_interface)関数とインターフェイスの種類を指定する GUID_DEVINTERFACE_I2C を指定します。
 
-I2C バスについては、次を参照してください。 [I2C バスとディスプレイ アダプターの子デバイス](https://msdn.microsoft.com/library/windows/hardware/ff567381)します。
+I2C バスについては、次を参照してください。 [I2C バスとディスプレイ アダプターの子デバイス](https://docs.microsoft.com/windows-hardware/drivers/display/i2c-bus-and-child-devices-of-the-display-adapter)します。
 
 <a name="requirements"></a>必要条件
 ------------

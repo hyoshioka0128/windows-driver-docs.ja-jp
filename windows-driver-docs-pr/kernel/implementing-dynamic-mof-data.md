@@ -10,12 +10,12 @@ keywords:
 - 動的 MOF データ WDK WMI
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bd436a85f6532977bdda64bad6a7d5411ff9eb30
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 91197869714680d31935e066ecb4cccb1bd92fce
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365384"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365805"
 ---
 # <a name="implementing-dynamic-mof-data"></a>動的 MOF データの実装
 
@@ -29,11 +29,11 @@ ms.locfileid: "63365384"
 
 2.  MOF コンパイラによって作成された .bmf ファイルの 16 進ダンプが含まれる .x ファイルを作成するのにには、wmimofck.exe を使用します。
 
-3.  使用**\#含める**ドライバーのソースと手順 2. で作成された 16 進数のデータを含めます。
+3.  使用 **\#含める**ドライバーのソースと手順 2. で作成された 16 進数のデータを含めます。
 
 4.  MSWmi のサポートとして登録\_MofData\_GUID は、予測で定義されている guid。
 
-5.  WMI を両方への応答で選択したバイナリ データを返す、 [ **IRP\_MN\_クエリ\_すべて\_データ**](https://msdn.microsoft.com/library/windows/hardware/ff551650)または[ **IRP\_MN\_クエリ\_単一\_インスタンス**](https://msdn.microsoft.com/library/windows/hardware/ff551718) MSWmi 要求\_MofData\_GUID。
+5.  WMI を両方への応答で選択したバイナリ データを返す、 [ **IRP\_MN\_クエリ\_すべて\_データ**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-all-data)または[ **IRP\_MN\_クエリ\_単一\_インスタンス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-single-instance) MSWmi 要求\_MofData\_GUID。
 
 Wmimofck ユーティリティの詳細については、次を参照してください。 [wmimofck.exe を使用して](using-wmimofck-exe.md)します。
 

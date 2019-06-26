@@ -6,17 +6,17 @@ keywords:
 - GetSupportedVersions
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 789e8584590b7abaab5001e9279c1d47a535b6a9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 664d55ef7fb14295c7a2edca40a5aaa2af9fbee6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63385246"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368992"
 ---
 # <a name="getsupportedversions"></a>GetSupportedVersions
 
 
-[ **IPrintTicketProvider::GetSupportedVersions** ](https://msdn.microsoft.com/library/windows/hardware/ff554371)メソッドは印刷ドライバーがサポートする印刷スキーマのメジャー バージョン番号を返します。 ここでは、バージョン 1 は唯一のバージョンが存在するため、このメソッドは、1 つだけサポートされているバージョンを返す必要があります。
+[ **IPrintTicketProvider::GetSupportedVersions** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff554371(v=vs.85))メソッドは印刷ドライバーがサポートする印刷スキーマのメジャー バージョン番号を返します。 ここでは、バージョン 1 は唯一のバージョンが存在するため、このメソッドは、1 つだけサポートされているバージョンを返す必要があります。
 
 次のサンプル コードに示すように実装は、最初のバージョンの Windows Vista、および新しいバージョンが追加されるまでに機能します。 新しいバージョンがサポートされている場合は、この値が変更されます。
 

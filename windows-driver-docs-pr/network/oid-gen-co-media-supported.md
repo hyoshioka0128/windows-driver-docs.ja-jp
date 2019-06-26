@@ -6,12 +6,12 @@ keywords:
 - OID_GEN_CO_MEDIA_SUPPORTED
 ms.date: 11/02/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b473639e3788c38c876d7d116da1db5f29b6a97
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e6ccb08cde7fb56219683bcdbc3a9d07b2e23b70
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348204"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361170"
 ---
 # <a name="oidgencomediasupported"></a>OID_GEN_CO_MEDIA_SUPPORTED
 
@@ -56,7 +56,7 @@ ATM ネットワーク用のドライバーを LAN エミュレーション宣�
 
 ワイヤレス WAN NIC ドライバーはそのメディアの種類としてレポートする必要があります**NdisMediumWirelessWan**します。 ただし、このようなミニポート ドライバーも指定する必要あります**NdisWWDIXEthernetFrames**いずれにもヘッダーの形式には、この形式を選択したプロトコルがバインドされているし、ミニポート ドライバーは、NIC のネイティブのヘッダーの形式も提供できます。 既存の LAN ベースのプロトコルをサポートするには、ドライバー開発者はワイヤレス NIC のネイティブのヘッダーの形式と既存のプロトコルで認識される形式にメディア固有の情報に「変換」する NDIS 中間ドライバーを提供できます。
 
-基になるミニポート ドライバーに返された場合**NULL**このクエリのかどうか、実験的なメディアを使用して、ドライバーを示す必要がありますまたは受信[NdisMCoIndicateReceivePacket](https://msdn.microsoft.com/library/windows/hardware/ff553455)します。
+基になるミニポート ドライバーに返された場合**NULL**このクエリのかどうか、実験的なメディアを使用して、ドライバーを示す必要がありますまたは受信[NdisMCoIndicateReceivePacket](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff553455(v=vs.85))します。
 
 
 ## <a name="requirements"></a>必要条件

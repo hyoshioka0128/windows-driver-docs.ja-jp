@@ -11,12 +11,12 @@ keywords:
 - WDK の HID 配列
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 417ee3c07732623ff66c5d3ef3fa4dc58dde7434
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5072f4ce271352902cfd2695ae8e7a4706804204
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346223"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371968"
 ---
 # <a name="link-collections"></a>リンク コレクション
 
@@ -26,11 +26,11 @@ ms.locfileid: "63346223"
 
 A*リンク コレクション*内で入れ子になったサブコレクションとして、[最上位のコレクション](top-level-collections.md)します。 最上位のコレクションには、0 個以上のリンク コレクションを持つことができます。
 
-[**HidP\_GetLinkCollectionNodes** ](https://msdn.microsoft.com/library/windows/hardware/ff539725)最上位のコレクションを返します[リンク コレクション配列](#ddk-link-collection-array-kg)最上位のコレクションのリンク コレクションに関する情報を格納します。
+[**HidP\_GetLinkCollectionNodes** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/nf-hidpi-hidp_getlinkcollectionnodes)最上位のコレクションを返します[リンク コレクション配列](#ddk-link-collection-array-kg)最上位のコレクションのリンク コレクションに関する情報を格納します。
 
 ### <a href="" id="ddk-link-collection-array-kg"></a>リンク コレクションの配列
 
-A*リンク コレクション配列*最上位のコレクションに含まれるすべてのリンク コレクションについて説明します。 各リンク コレクションがによって表される、 [ **HIDP\_リンク\_コレクション\_ノード**](https://msdn.microsoft.com/library/windows/hardware/ff539764)構造体。 配列のリンクのノードは、最上位のコレクション内のシーケンシャルで階層的な順序を識別する方法でリンクされています。 リンク コレクションの配列の最初の要素は最上位のコレクションを表し、残りのメンバーは、最上位のコレクションのリンクのコレクションを表します。
+A*リンク コレクション配列*最上位のコレクションに含まれるすべてのリンク コレクションについて説明します。 各リンク コレクションがによって表される、 [ **HIDP\_リンク\_コレクション\_ノード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/ns-hidpi-_hidp_link_collection_node)構造体。 配列のリンクのノードは、最上位のコレクション内のシーケンシャルで階層的な順序を識別する方法でリンクされています。 リンク コレクションの配列の最初の要素は最上位のコレクションを表し、残りのメンバーは、最上位のコレクションのリンクのコレクションを表します。
 
 リンク接続配列内のノードをトレースでは、ユーザー モード アプリケーションまたはカーネル モード ドライバーは、組織と最上位のコレクション内のすべてのリンク コレクションの使用状況を判断できます。 さらに、アプリケーションまたはドライバーは、それぞれのリンクのコレクションでコントロールを編成できます。 これは可能ですので、最上位のコレクションの[ボタン配列の機能](button-capability-arrays.md)と[機能の配列の値](value-capability-arrays.md)を含む各リンクのコレクションを識別[HID の使用状況](hid-usages.md)機能の配列で記述されます。
 

@@ -6,12 +6,12 @@ keywords:
 - NDIS_STATUS_WWAN_PCO_STATUS、PCO 状態の通知、モバイル ブロード バンド PCO 状態の通知、MB PCO 状態の通知
 ms.date: 08/08/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c73750e765e8d2837b60de05edd4aa760a073e3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9dd9700bb4d0f03ea842e161b6e18b720af77989
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341417"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374810"
 ---
 # <a name="ndisstatuswwanpcostatus"></a>NDIS_STATUS_WWAN_PCO_STATUS
 
@@ -27,14 +27,14 @@ ms.locfileid: "63341417"
 
 この通知を使用してホストに通知する、 **OID_WWAN_PCO**クエリ要求が完了したら、通知に含める PCO 値を使用します。 ホストのポート番号に対応する PDN PCO 値の完全な構造を渡すにはモデムが必要です。
 
-モデム PCO 機能がサポートされていますが、ホストに送信するときに、ネットワークから PCO 値を受信していないかどうか、 **OID_WWAN_PCO**クエリ要求では、モデムが返すようにする、 **NDIS_STATUS_WWAN_PCO_STATUS**空の通知[WWAN_PCO_VALUE](https://msdn.microsoft.com/library/windows/hardware/45A499CE-2C9A-4070-BEF8-880E7673FA8E)ペイロード。 
+モデム PCO 機能がサポートされていますが、ホストに送信するときに、ネットワークから PCO 値を受信していないかどうか、 **OID_WWAN_PCO**クエリ要求では、モデムが返すようにする、 **NDIS_STATUS_WWAN_PCO_STATUS**空の通知[WWAN_PCO_VALUE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wwan/ns-wwan-_wwan_pco_value)ペイロード。 
 
-この通知を使用して、 [NDIS_WWAN_PCO_STATUS](https://msdn.microsoft.com/library/windows/hardware/C71187C5-74B6-450A-8461-BB9FDF60DB8D)構造体。
+この通知を使用して、 [NDIS_WWAN_PCO_STATUS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_pco_status)構造体。
 
 > [!NOTE]
 > 現時点では、Windows 10 バージョン 1709 以降で一部のモデム、のみ PCO 要素の特定の演算子を提供できます。 モデムが PCO データ構造体を受信した演算子の適用可能な特定 PCO 要素が存在しない場合、不要なデバイスのウェイク アップを回避するために、モデムする必要がありますアドバタイズしない os PCO 通知。 
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 | | |
 | --- | --- |
@@ -45,8 +45,8 @@ ms.locfileid: "63341417"
 
 [OID_WWAN_PCO](oid-wwan-pco.md)
 
-[NDIS_WWAN_PCO_STATUS](https://msdn.microsoft.com/library/windows/hardware/C71187C5-74B6-450A-8461-BB9FDF60DB8D)
+[NDIS_WWAN_PCO_STATUS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_pco_status)
 
-[WWAN_PCO_VALUE](https://msdn.microsoft.com/library/windows/hardware/45A499CE-2C9A-4070-BEF8-880E7673FA8E)
+[WWAN_PCO_VALUE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wwan/ns-wwan-_wwan_pco_value)
 
 [MB プロトコルの構成オプション (PCO) 操作](mb-protocol-configuration-options-pco-operations.md)

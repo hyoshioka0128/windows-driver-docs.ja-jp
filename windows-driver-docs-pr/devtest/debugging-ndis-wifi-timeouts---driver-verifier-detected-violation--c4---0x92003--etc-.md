@@ -4,19 +4,19 @@ description: Driver Verifier は、ドライバーには、NDIS/WiFi のタイ�
 ms.assetid: 73D4B6DF-E667-4C71-B985-FCDC05837908
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 556d04d6c369ab9c5efb8600eac68345845463a3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9b4496a76e2753b5a7f216d2e49c78be948d1ef3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344866"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371424"
 ---
 # <a name="debugging-ndiswifi-time-out-errors---driververifierdetectedviolation-c4"></a>ドライバーの NDIS/WiFi タイムアウト エラーをデバッグ\_VERIFIER\_検出\_違反 (C4)
 
 
-ある場合、 [NDIS/WIFI 検証](ndis-wifi-verification.md)オプションを選択し、Driver Verifier のドライバーには、NDIS/WiFi のタイムアウト ルールのいずれかに違反が検出された[Driver Verifier](driver-verifier.md)生成[ **バグ チェック 0xC4 の。ドライバー\_VERIFIER\_検出\_違反**](https://msdn.microsoft.com/library/windows/hardware/ff560187) (パラメーター 1 で、特定の NDIS/WiFi タイムアウト ルールの識別子に等しい)。
+ある場合、 [NDIS/WIFI 検証](ndis-wifi-verification.md)オプションを選択し、Driver Verifier のドライバーには、NDIS/WiFi のタイムアウト ルールのいずれかに違反が検出された[Driver Verifier](driver-verifier.md)生成[ **バグ チェック 0xC4 の。ドライバー\_VERIFIER\_検出\_違反**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation) (パラメーター 1 で、特定の NDIS/WiFi タイムアウト ルールの識別子に等しい)。
 
-Driver Verifier は、テスト場合 NDIS/WIFI のタイムアウト ルールなど[ **NdisTimedOidComplete**](https://msdn.microsoft.com/library/windows/hardware/dn305120)、Driver Verifier のポーリング メカニズムは、サイクル数内で、ミニポート ドライバーからの応答が必要です。 各時間指定のルールには、許可されている独自の最大のサイクルが定義します。 最大値を超えると、Driver Verifier のバグ チェックが生成されます。 このセクションでは、これらの違反をデバッグするため、いくつかの戦略の例について説明します。
+Driver Verifier は、テスト場合 NDIS/WIFI のタイムアウト ルールなど[ **NdisTimedOidComplete**](https://docs.microsoft.com/windows-hardware/drivers/devtest/ndis-ndistimedoidcomplete)、Driver Verifier のポーリング メカニズムは、サイクル数内で、ミニポート ドライバーからの応答が必要です。 各時間指定のルールには、許可されている独自の最大のサイクルが定義します。 最大値を超えると、Driver Verifier のバグ チェックが生成されます。 このセクションでは、これらの違反をデバッグするため、いくつかの戦略の例について説明します。
 
 ## <a name="debugging-ndiswifi-timeout-errors"></a>NDIS/WIFI タイムアウト エラーのデバッグ
 
@@ -28,7 +28,7 @@ Driver Verifier は、テスト場合 NDIS/WIFI のタイムアウト ルール�
 
 ### <a name="use-analyze-to-display-information-about-the-bug-check"></a>使用してバグ チェックに関する情報を表示するために分析。
 
-デバッガーの制御をした後に発生するすべてのバグ チェックと同様、最適な最初の手順が実行するが、 [ **! 分析-v** ](https://msdn.microsoft.com/library/windows/hardware/ff562112)コマンド。
+デバッガーの制御をした後に発生するすべてのバグ チェックと同様、最適な最初の手順が実行するが、 [ **! 分析-v** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)コマンド。
 
 ```
 DRIVER_VERIFIER_DETECTED_VIOLATION (c4)
@@ -102,7 +102,7 @@ STACK_TEXT:
 
 ### <a name="use-the-ruleinfo-extension-command"></a>使用して、! ruleinfo 拡張コマンド
 
-**DV\_ルール\_情報:** のフィールド、 **! 分析**出力は、この規則違反に関する詳細情報を使用できるコマンドへのリンクを示しています。 この例で、リンクをクリックした場合、実行、 [ **! ruleinfo** ](https://msdn.microsoft.com/library/windows/hardware/dn265374)コマンド ルールと\_ID (0x92003)、Arg3 と Arg 4 バグは、値を確認します。
+**DV\_ルール\_情報:** のフィールド、 **! 分析**出力は、この規則違反に関する詳細情報を使用できるコマンドへのリンクを示しています。 この例で、リンクをクリックした場合、実行、 [ **! ruleinfo** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-ruleinfo)コマンド ルールと\_ID (0x92003)、Arg3 と Arg 4 バグは、値を確認します。
 
 ```
 kd> !ruleinfo 0x92003 0xffffffff9c17b860 0xffffffff9c1f3480
@@ -130,7 +130,7 @@ RULE_STATE: 0x9C1F3480
 
 ### <a name="identify-the-location-of-the-violation"></a>違反の場所を識別します。
 
-例ではここでは、NdisTimedOidComplete.sys、ミニポート ドライバーでは、スリープのサイクルに挿入、 *MPOidRequest*関数。 最後をクリックして確認できます\_呼び出す\_のスタックのリンク、 [ **! ruleinfo** ](https://msdn.microsoft.com/library/windows/hardware/dn265374)出力します。 これは、Driver Verifier、NDIS という名前の表示に表示される最後の呼び出し履歴*ndisMInvokeOidRequest*前に、タイムアウトが発生しました。
+例ではここでは、NdisTimedOidComplete.sys、ミニポート ドライバーでは、スリープのサイクルに挿入、 *MPOidRequest*関数。 最後をクリックして確認できます\_呼び出す\_のスタックのリンク、 [ **! ruleinfo** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-ruleinfo)出力します。 これは、Driver Verifier、NDIS という名前の表示に表示される最後の呼び出し履歴*ndisMInvokeOidRequest*前に、タイムアウトが発生しました。
 
 ```
 kd> dps 0x9C1F3480 + 0x10
@@ -146,12 +146,12 @@ kd> dps 0x9C1F3480 + 0x10
 
 ### <a name="fixing-the-cause-of-the-ndis-wifi-timeout-violation"></a>タイムアウトの違反の NDIS WIFI の原因を修正
 
-クラッシュ ダンプが時刻指定の規則の生成されたら、クラッシュ ダンプの時点で、根本原因が見つからない可能性があります。 さらにデバッグするには、NdisKd デバッガー拡張機能のコマンドを始めることを検討を参照してください[NDIS 拡張機能 (Ndiskd.dll)](https://msdn.microsoft.com/library/windows/hardware/ff552270)と[NDISKD 入門](https://go.microsoft.com/fwlink/p/?linkid=327569)します。 確認する必要がありますも[Event Tracing for Windows (ETW)](event-tracing-for-windows--etw-.md)ログは、ドライバーには、ETW が実装されている場合。 このルールが有効になっていない場合は、このエラーとして姿を現します自体ユーザーのアプリケーション ハング、または[ **0x9F のバグ チェック。ドライバー\_POWER\_状態\_エラー** ](https://msdn.microsoft.com/library/windows/hardware/ff559329)最悪の事態にします。
+クラッシュ ダンプが時刻指定の規則の生成されたら、クラッシュ ダンプの時点で、根本原因が見つからない可能性があります。 さらにデバッグするには、NdisKd デバッガー拡張機能のコマンドを始めることを検討を参照してください[NDIS 拡張機能 (Ndiskd.dll)](https://docs.microsoft.com/windows-hardware/drivers/debugger/ndis-extensions--ndiskd-dll-)と[NDISKD 入門](https://go.microsoft.com/fwlink/p/?linkid=327569)します。 確認する必要がありますも[Event Tracing for Windows (ETW)](event-tracing-for-windows--etw-.md)ログは、ドライバーには、ETW が実装されている場合。 このルールが有効になっていない場合は、このエラーとして姿を現します自体ユーザーのアプリケーション ハング、または[ **0x9F のバグ チェック。ドライバー\_POWER\_状態\_エラー** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0x9f--driver-power-state-failure)最悪の事態にします。
 
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
-[NDIS 拡張機能 (Ndiskd.dll)](https://msdn.microsoft.com/library/windows/hardware/ff552270)
+[NDIS 拡張機能 (Ndiskd.dll)](https://docs.microsoft.com/windows-hardware/drivers/debugger/ndis-extensions--ndiskd-dll-)
 
 [NDISKD (パート 1) の概要](https://go.microsoft.com/fwlink/p/?linkid=327569)
 

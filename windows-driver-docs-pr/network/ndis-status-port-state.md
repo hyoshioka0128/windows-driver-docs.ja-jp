@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - NDIS_STATUS_PORT_STATE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b27ceec7371a06e5270b45071dcfa809274532c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5d2bace5b512b2daae506f60443335fd95fee0a3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362876"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368534"
 ---
 # <a name="ndisstatusportstate"></a>NDIS\_状態\_ポート\_状態
 
@@ -21,7 +21,7 @@ NDIS ポートをサポートするミニポート ドライバーを使用し�
 <a name="remarks"></a>注釈
 -------
 
-ミニポート ドライバー ポート番号を設定する必要があります、 **PortNumber**のメンバー、 [ **NDIS\_状態\_INDICATION** ](https://msdn.microsoft.com/library/windows/hardware/ff567373)構造体。 **StatusBuffer**この構造体のメンバーにはへのポインターが含まれています、 [ **NDIS\_ポート\_状態**](https://msdn.microsoft.com/library/windows/hardware/ff566800)構造体。
+ミニポート ドライバー ポート番号を設定する必要があります、 **PortNumber**のメンバー、 [ **NDIS\_状態\_INDICATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)構造体。 **StatusBuffer**この構造体のメンバーにはへのポインターが含まれています、 [ **NDIS\_ポート\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_port_state)構造体。
 
 <a name="requirements"></a>必要条件
 ------------
@@ -46,9 +46,9 @@ NDIS ポートをサポートするミニポート ドライバーを使用し�
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_ポート\_状態**](https://msdn.microsoft.com/library/windows/hardware/ff566800)
+[**NDIS\_ポート\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_port_state)
 
-[**NDIS\_状態\_を示す値**](https://msdn.microsoft.com/library/windows/hardware/ff567373)
+[**NDIS\_状態\_を示す値**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)
 
  
 

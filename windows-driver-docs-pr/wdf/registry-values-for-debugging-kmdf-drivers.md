@@ -7,12 +7,12 @@ keywords:
 - WDK KMDF ドライバーをデバッグするためのレジストリ値
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 490cfdc7456c00562bbc3105e595e2c3b852c675
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8900f1f77d8cbc2ad4dffbc35b887c8e9e07077d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390036"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376300"
 ---
 # <a name="registry-values-for-debugging-wdf-drivers-kmdf-and-umdf"></a>WDF ドライバー (KMDF および UMDF) をデバッグするためのレジストリ値
 
@@ -43,10 +43,10 @@ HKR, Parameters\Wdf,DbgBreakOnError,0x00010001,1
 ```
 
 <a href="" id="verifyon-----------------reg-dword-"></a>**VerifyOn** (**REG\_DWORD**)  
-0 以外の値に設定を有効に、 [ **WDFVERIFY** ](https://msdn.microsoft.com/library/windows/hardware/ff551167)マクロですが、Wdfassert.h で定義されているか、マクロを無効にする場合は 0 に設定します。 VerifierOn 値が設定されている場合 VerifyOn は暗黙的 0 以外に設定します。
+0 以外の値に設定を有効に、 [ **WDFVERIFY** ](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdfverify)マクロですが、Wdfassert.h で定義されているか、マクロを無効にする場合は 0 に設定します。 VerifierOn 値が設定されている場合 VerifyOn は暗黙的 0 以外に設定します。
 
 <a href="" id="dbgbreakonerror--reg-dword-"></a>**DbgBreakOnError** (**REG\_DWORD**)  
-かどうか 0 以外の値に設定すると、フレームワーク デバッガーを中断するドライバーを呼び出すと[ **WdfVerifierDbgBreakPoint**](https://msdn.microsoft.com/library/windows/hardware/ff551164)します。 (場合、 **VerifierOn**値の設定、フレームワークがあっても、デバッガーに分割、 **DbgBreakOnError**値が存在しません)。上記のコード例を参照してください。
+かどうか 0 以外の値に設定すると、フレームワーク デバッガーを中断するドライバーを呼び出すと[ **WdfVerifierDbgBreakPoint**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfverifier/nf-wdfverifier-wdfverifierdbgbreakpoint)します。 (場合、 **VerifierOn**値の設定、フレームワークがあっても、デバッガーに分割、 **DbgBreakOnError**値が存在しません)。上記のコード例を参照してください。
 
 <a href="" id="dbgwaitforsignaltimeoutinsec--reg-dword-"></a>**DbgWaitForSignalTimeoutInSec** (**REG\_DWORD**)  
 以降では、Windows 8、ときに**VerifierOn**と**DbgBreakOnError**設定は、ドライバー、0 以外の値を設定して、デバッガーの中断の既定のタイムアウト期間を変更できます**DbgWaitForSignalTimeoutInSec**します。
@@ -87,7 +87,7 @@ HKR, Parameters\Wdf, LogPages,   0x00010001, 3 ; KMDF IFR size
 発生するクラッシュ ダンプ ファイルにそのイベント ロガーからの情報を含めるために、フレームワークに 0 以外の値に設定します。
 
 <a href="" id="tracedelaytime--reg-dword-"></a>**TraceDelayTime** (**REG\_DWORD**)  
-Microsoft Windows 2000 はのみ、0 以外の値の初期化中に遅延を導入するセットの[WPP ソフトウェア トレース](https://msdn.microsoft.com/library/windows/hardware/ff556204)します。 値がミリ秒単位で指定してに有効な値は 1000 (1 秒)。 この待機時間、WPP トレースの最初の部分が欠落する可能性があります。
+Microsoft Windows 2000 はのみ、0 以外の値の初期化中に遅延を導入するセットの[WPP ソフトウェア トレース](https://docs.microsoft.com/windows-hardware/drivers/devtest/wpp-software-tracing)します。 値がミリ秒単位で指定してに有効な値は 1000 (1 秒)。 この待機時間、WPP トレースの最初の部分が欠落する可能性があります。
 
 <a href="" id="enhancedverifieroptions-----------------reg-dword-"></a>**EnhancedVerifierOptions** (**REG\_DWORD**)  
 この値には、ビットマップが含まれています。 各ビットは、ビットを設定してユーザーが可能にする追加の検証オプションを表します。
@@ -96,9 +96,9 @@ Microsoft Windows 2000 はのみ、0 以外の値の初期化中に遅延を導�
 
 **0x1**:設定すると、検証チェックのドライバーのイベントのコールバック関数は次の処理かどうか。
 
--   呼び出された同じ IRQL で返します。 値が異なる場合、 [ **WDF\_違反**](https://msdn.microsoft.com/library/windows/hardware/ff557235) 0xE のエラー コードでのバグ チェックが発生します。
+-   呼び出された同じ IRQL で返します。 値が異なる場合、 [ **WDF\_違反**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0x10d---wdf-violation) 0xE のエラー コードでのバグ チェックが発生します。
 
--   、戻る前にすべての操作を終了する[クリティカル領域](https://msdn.microsoft.com/library/windows/hardware/ff542925)それが入力します。 コールバック関数がクリティカル領域内で入力すると、その it を返す場合、 [ **WDF\_違反**](https://msdn.microsoft.com/library/windows/hardware/ff557235)バグ チェックがエラー コード 0 xf で発生します。
+-   、戻る前にすべての操作を終了する[クリティカル領域](https://docs.microsoft.com/windows-hardware/drivers/kernel/critical-regions-and-guarded-regions)それが入力します。 コールバック関数がクリティカル領域内で入力すると、その it を返す場合、 [ **WDF\_違反**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0x10d---wdf-violation)バグ チェックがエラー コード 0 xf で発生します。
 
 **0x10000**:場合設定すると、ドライバーが有効にした場合と[進行を保証](guaranteeing-forward-progress-of-i-o-operations.md)の I/O キューでは、フレームワークは各キューの I/O 要求のメモリ不足の状況をシミュレートします。
 
@@ -143,7 +143,7 @@ KMDF ドライバーでは、次のレジストリ値は下に存在できる、
 
 指定する**HostProcessDbgBreakOnStart**または**HostProcessDbgBreakOnDriverLoad**とその他の UMDF タイムアウト (たとえば、プラグ アンド プレイ操作) を無効にするフレームワークです。 つまりには、ドライバーでは、過剰にタイムアウトが発生する場合は、これらの値を使用して可能性があります、ターゲット上で致命的なクラッシュの原因は、ドライバー。
 
-WDK に含まれている WDF Verifier ツール (WdfVerifier.exe) を使用して、これらのレジストリ値を設定することもできます。 UMDF ドライバーでこのツールの使用方法の詳細については、次を参照してください。 [WDF Verifier による UMDF 検証設定の管理](https://msdn.microsoft.com/library/windows/hardware/ff548422)します。
+WDK に含まれている WDF Verifier ツール (WdfVerifier.exe) を使用して、これらのレジストリ値を設定することもできます。 UMDF ドライバーでこのツールの使用方法の詳細については、次を参照してください。 [WDF Verifier による UMDF 検証設定の管理](https://docs.microsoft.com/windows-hardware/drivers/devtest/global-wdf-settings-tab)します。
 
 次の値にある**HKLM\\ソフトウェア\\Microsoft\\Windows NT\\CurrentVersion\\WUDF\\DebugMode**:
 

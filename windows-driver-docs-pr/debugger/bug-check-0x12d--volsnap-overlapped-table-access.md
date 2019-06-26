@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 43426eab591e00e47c808839819e4d7b847fce33
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 76257b28f2c941f830d37d389fd1ddf9d30b20ed
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351252"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367848"
 ---
 # <a name="bug-check-0x12d-volsnapoverlappedtableaccess"></a>バグ チェック 0x12D:VOLSNAP\_OVERLAPPED\_テーブル\_アクセス
 
@@ -26,7 +26,7 @@ ms.locfileid: "63351252"
 VOLSNAP\_OVERLAPPED\_テーブル\_アクセスのバグ チェックが 0x0000012D の値を持ちます。 これは、その volsnap テーブルが破損し、最終的に、テーブルが破損する可能性があります、2 つの異なるスレッドから共通のテーブルにアクセスしようとしたことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="volsnapoverlappedtableaccess-parameters"></a>VOLSNAP\_OVERLAPPED\_テーブル\_アクセス パラメーター

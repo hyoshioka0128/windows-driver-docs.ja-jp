@@ -14,21 +14,21 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a7a8f6b6cabf69b68f882ca1c7427e3ee6f49ef1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 1ddcebb0ad5041c287882cd92fbefa332f2c8088
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552039"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366224"
 ---
 # <a name="fsctlsetzerodata-control-code"></a>FSCTL\_設定\_0\_データ制御コード
 
 
 **FSCTL\_設定\_0\_データ**制御コードがゼロ (0) を使用するファイルの指定した範囲を入力します。 ファイルはスパースまたは圧縮された場合、NTFS ファイル システムはファイル内のディスク領域を解放できます。 これには、ゼロ (0)、ファイルのサイズを拡張せずにバイトの範囲を設定します。
 
-ドライバーからこの操作を実行するには、呼び出す[ **FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)次のパラメーターを使用します。
+ドライバーからこの操作を実行するには、呼び出す[ **FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)次のパラメーターを使用します。
 
-**パラメーター**
+**Parameters**
 
 <a href="" id="instance"></a>*インスタンス*  
 呼び出し元のポインターを不透明なインスタンス。 このパラメーターが必要とすることはできません**NULL**します。
@@ -42,11 +42,11 @@ ms.locfileid: "56552039"
 使用**FSCTL\_設定\_0\_データ**この操作にします。
 
 <a href="" id="inputbuffer"></a>*InputBuffer*  
-ポインターを[**ファイル\_0\_データ\_情報**](https://msdn.microsoft.com/library/windows/hardware/mt668763)または[**ファイル\_0\_データ\_情報\_EX** ](https://msdn.microsoft.com/library/windows/hardware/mt668764)をゼロに設定するファイルの範囲を指定します。
+ポインターを[**ファイル\_0\_データ\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_zero_data_information)または[**ファイル\_0\_データ\_情報\_EX** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_zero_data_information_ex)をゼロに設定するファイルの範囲を指定します。
 
 **FileOffset**メンバーがゼロ (0) に設定する最初のバイトのバイト オフセットと**BeyondFinalZero**メンバーは、バイトの最後の最初のバイトのゼロ (0) のバイト オフセットします。
 
-**フラグ**メンバー [**ファイル\_0\_データ\_情報\_EX** ](https://msdn.microsoft.com/library/windows/hardware/mt668764)に修飾子を指定します、操作です。 たとえば、**フラグ**に設定されている**ファイル\_0\_データ\_情報\_フラグ\_保持\_CACHED\_データ**、このファイルの範囲に対応するキャッシュの内容を削除できません。
+**フラグ**メンバー [**ファイル\_0\_データ\_情報\_EX** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_zero_data_information_ex)に修飾子を指定します、操作です。 たとえば、**フラグ**に設定されている**ファイル\_0\_データ\_情報\_フラグ\_保持\_CACHED\_データ**、このファイルの範囲に対応するキャッシュの内容を削除できません。
 
 <a href="" id="inputbufferlength"></a>*InputBufferLength*  
 (バイト単位)、入力バッファーのサイズ。
@@ -60,14 +60,14 @@ ms.locfileid: "56552039"
 <a name="status-block"></a>ステータス ブロック
 ------------
 
-[**FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)返します**状態\_成功**NTSTATUS は、適切な値。
+[**FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)返します**状態\_成功**NTSTATUS は、適切な値。
 
 -   **ステータス\_不十分\_リソース**が、操作を完了するのに十分なメモリがない場合に返されます。
 -   **ステータス\_無効な\_パラメーター**ときに返される、 *InputBufferLength*のサイズよりも小さい、**ファイル\_0\_データ\_情報**構造体または指定されたファイルがシステム メタデータ ファイルまたはディレクトリ。
 -   **ステータス\_アクセス\_DENIED**ときに返される、**ファイル\_0\_データ\_情報\_フラグ\_保持\_キャッシュされた\_データ**ユーザー モードから設定されます。
 -   **ステータス\_メディア\_書き込み\_PROTECTED**かどうか、ボリュームは現在書き込み禁止が返されます。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -86,11 +86,11 @@ ms.locfileid: "56552039"
 ## <a name="see-also"></a>関連項目
 
 
-[**FltFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff542988)
+[**FltFsControlFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)
 
-[**ファイル\_0\_データ\_情報**](https://msdn.microsoft.com/library/windows/hardware/mt668763)
+[**ファイル\_0\_データ\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_zero_data_information)
 
-[**ファイル\_0\_データ\_情報\_例**](https://msdn.microsoft.com/library/windows/hardware/mt668764)
+[**ファイル\_0\_データ\_情報\_例**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_zero_data_information_ex)
 
  
 

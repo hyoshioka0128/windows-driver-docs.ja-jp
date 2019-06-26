@@ -14,12 +14,12 @@ api_type:
 - DllExport
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 4a62edaf8cce48213db00d6110d825b839330a64
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 514571c8b5072dd6ad916aa9e51f77ea7ee0ba30
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384837"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368264"
 ---
 # <a name="driverentry-of-ide-controller-minidriver-function"></a>IDE コント ローラーのミニドライバーの DriverEntry 関数
 
@@ -48,16 +48,16 @@ IDE コント ローラー ミニドライバーのドライバーのオブジ�
 <a name="return-value"></a>戻り値
 ------------
 
-**DriverEntry**ステータスを返します\_成功から受け取ったエラー コードを返します。 成功した場合、 [ **PciIdeXInitialize** ](https://msdn.microsoft.com/library/windows/hardware/ff563788)ライブラリ ルーチン。
+**DriverEntry**ステータスを返します\_成功から受け取ったエラー コードを返します。 成功した場合、 [ **PciIdeXInitialize** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff563788(v=vs.85))ライブラリ ルーチン。
 
 <a name="remarks"></a>注釈
 -------
 
 各コント ローラー ミニドライバーは、という名前のルーチンをいる必要があります**DriverEntry**を読み込むためにします。
 
-IDE コント ローラーのミニドライバーの**DriverEntry**ルーチンを呼び出す必要があります、 [ **PciIdeXInitialize** ](https://msdn.microsoft.com/library/windows/hardware/ff563788)ライブラリ ルーチン。 **PciIdeXInitialize**コント ローラー ミニドライバーのディスパッチ テーブルを初期化します、拡張機能を割り当て、 *DriverObject*、ドライバー オブジェクトの拡張機能にさまざまな値を格納しているとします。 ドライバー オブジェクトの拡張機能に格納する必要があります値は、ドライバーの拡張機能とコント ローラー ミニドライバーへのポインターのサイズ[ **HwIdeXGetControllerProperties** ](https://msdn.microsoft.com/library/windows/hardware/ff557254)ルーチンを取得します。IDE コント ローラーについて説明します。
+IDE コント ローラーのミニドライバーの**DriverEntry**ルーチンを呼び出す必要があります、 [ **PciIdeXInitialize** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff563788(v=vs.85))ライブラリ ルーチン。 **PciIdeXInitialize**コント ローラー ミニドライバーのディスパッチ テーブルを初期化します、拡張機能を割り当て、 *DriverObject*、ドライバー オブジェクトの拡張機能にさまざまな値を格納しているとします。 ドライバー オブジェクトの拡張機能に格納する必要があります値は、ドライバーの拡張機能とコント ローラー ミニドライバーへのポインターのサイズ[ **HwIdeXGetControllerProperties** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557254(v=vs.85))ルーチンを取得します。IDE コント ローラーについて説明します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -88,11 +88,11 @@ IDE コント ローラーのミニドライバーの**DriverEntry**ルーチン
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
-[**HwIdeXGetControllerProperties**](https://msdn.microsoft.com/library/windows/hardware/ff557254)
+[**HwIdeXGetControllerProperties**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557254(v=vs.85))
 
-[**IDE\_コント ローラー\_プロパティ**](https://msdn.microsoft.com/library/windows/hardware/ff559076)
+[**IDE\_コント ローラー\_プロパティ**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff559076(v=vs.85))
 
-[**PciIdeXInitialize**](https://msdn.microsoft.com/library/windows/hardware/ff563788)
+[**PciIdeXInitialize**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff563788(v=vs.85))
 
  
 

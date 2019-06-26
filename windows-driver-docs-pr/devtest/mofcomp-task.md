@@ -4,17 +4,17 @@ description: Windows Driver Kit (WDK) には、MSBuld を使用してドライ�
 ms.assetid: 94B70223-393F-49C9-B2C9-34FF64D26454
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b2bb65b55b3f843e92d1c344af62b8faaf28ebc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0bda7c120efa3c9850d5edc880461605c6066185
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391327"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363820"
 ---
 # <a name="mofcomp-task"></a>Mofcomp タスク
 
 
-Windows Driver Kit (WDK) には、MSBuld を使用してドライバーをビルドするときに、Mofcomp.exe ツールを実行できるようにの Mofcomp にタスクが用意されています。 ツールの詳細については、次を参照してください。 [ **mofcomp**](https://msdn.microsoft.com/library/aa392389)します。
+Windows Driver Kit (WDK) には、MSBuld を使用してドライバーをビルドするときに、Mofcomp.exe ツールを実行できるようにの Mofcomp にタスクが用意されています。 ツールの詳細については、次を参照してください。 [ **mofcomp**](https://docs.microsoft.com/windows/desktop/WmiSdk/mofcomp)します。
 
 MSBuild では、Mofcomp 項目を使用して、Mofcomp.exe を Mofcomp タスクのパラメーターを送信します。 Mofcomp の項目メタデータは、プロジェクト ファイルの Mofcomp を使用してアクセスします。
 
@@ -188,7 +188,7 @@ mofcomp.exe -WMI b.mof
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
-[**mofcomp**](https://msdn.microsoft.com/library/aa392389)
+[**mofcomp**](https://docs.microsoft.com/windows/desktop/WmiSdk/mofcomp)
 
  
 

@@ -4,12 +4,12 @@ description: デバイスの基礎の侵入テストは、セキュリティの�
 ms.assetid: 53EBAF4B-2CEF-492B-98B8-DA199FDFBC46
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4326689b9b276cc1f7be8d753042b52dd15f6d64
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9828ec20902df80189c655f32d039b426ea9123d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356320"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361260"
 ---
 # <a name="penetration-tests-device-fundamentals"></a>侵入テスト (Device Fundamental)
 
@@ -38,7 +38,7 @@ ms.locfileid: "63356320"
 <td align="left"><p>無効にする<a href="iospy.md" data-raw-source="[I/O Spy](iospy.md)">I/O スパイ</a>1 つ以上のデバイスでします。</p>
 <p><strong>バイナリをテストします。</strong>Devfund_IOSpy_DisableSupport.wsc</p>
 <p><strong>メソッドをテストします。</strong>DisableIoSpy</p>
-<p><strong>パラメーター:</strong> -を参照してください<a href="https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests" data-raw-source="[Device Fundamentals Test Parameters](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)">デバイス基礎テスト パラメーター</a></p>
+<p><strong>パラメーター:</strong> -を参照してください<a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](https://docs.microsoft.com/windows-hardware/drivers)">デバイス基礎テスト パラメーター</a></p>
 <p><em>DQ</em></p></td>
 </tr>
 <tr class="even">
@@ -52,7 +52,7 @@ ms.locfileid: "63356320"
 <td align="left"><p>有効にする<a href="iospy.md" data-raw-source="[I/O Spy](iospy.md)">I/O スパイ</a>1 つまたは複数のデバイスにします。</p>
 <p><strong>バイナリをテストします。</strong>Devfund_IOSpy_EnableSupport.wsc</p>
 <p><strong>メソッドをテストします。</strong>EnableIoSpy</p>
-<p><strong>パラメーター:</strong> -を参照してください<a href="https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests" data-raw-source="[Device Fundamentals Test Parameters](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)">デバイス基礎テスト パラメーター</a></p>
+<p><strong>パラメーター:</strong> -を参照してください<a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](https://docs.microsoft.com/windows-hardware/drivers)">デバイス基礎テスト パラメーター</a></p>
 <p><em>DQ</em></p>
 <p><em>DFD</em> - IoSpy データ ファイルへのパスを指定します。 既定の場所は %SystemDrive%\DriverTest\IoSpy</p></td>
 </tr>
@@ -61,7 +61,7 @@ ms.locfileid: "63356320"
 <td align="left"><p>その他の API をファジー テストは、ドライバーが、さまざまなカーネル モード ドライバーからの一般的な呼び出しを処理できるかどうかを決定するテストです。</p>
 <p>テストには、次のテストが含まれています。</p>
 <ul>
-<li><p>呼び出す<a href="https://msdn.microsoft.com/library/windows/hardware/ff567072" data-raw-source="[&lt;strong&gt;ZwReadFile&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567072)"> <strong>ZwReadFile</strong> </a>と<a href="https://msdn.microsoft.com/library/windows/hardware/ff567121" data-raw-source="[&lt;strong&gt;ZwWriteFile&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567121)"> <strong>ZwWriteFile</strong></a>、有効なデータ バッファーのポインターを指定する、(0 を含む) の長さを可変とバイト オフセットには、0、-1 を含むさまざまなと 64 ビットのバイト オフセット。</p></li>
+<li><p>呼び出す<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntreadfile" data-raw-source="[&lt;strong&gt;ZwReadFile&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntreadfile)"> <strong>ZwReadFile</strong> </a>と<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntwritefile" data-raw-source="[&lt;strong&gt;ZwWriteFile&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntwritefile)"> <strong>ZwWriteFile</strong></a>、有効なデータ バッファーのポインターを指定する、(0 を含む) の長さを可変とバイト オフセットには、0、-1 を含むさまざまなと 64 ビットのバイト オフセット。</p></li>
 <li><p>取り消しは呼び出し/0 バッファーをフラッシュします。</p></li>
 <li><p>一連のディレクトリのクエリでは、有効なユーザー データのバッファー ポインターを一般的なファイル情報クラスを使用し、バッファー長が (0 を含む) をさまざまなを呼び出します。</p></li>
 <li><p>ディレクトリのクエリを呼び出すコントロール仮想 DOS コンピューター (VDM) の下で実行されているプログラムによって発行されたものと似ています。</p></li>
@@ -74,7 +74,7 @@ ms.locfileid: "63356320"
 </ul>
 <p><strong>バイナリをテストします。</strong>Devfund_DevicePathExerciser.dll</p>
 <p><strong>メソッドをテストします。</strong>DoMiscAPITest</p>
-<p><strong>パラメーター:</strong> -を参照してください<a href="https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests" data-raw-source="[Device Fundamentals Test Parameters](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)">デバイス基礎テスト パラメーター</a></p>
+<p><strong>パラメーター:</strong> -を参照してください<a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](https://docs.microsoft.com/windows-hardware/drivers)">デバイス基礎テスト パラメーター</a></p>
 <p><em>DoPoolCheck</em></p>
 <p><em>DQ</em></p>
 <p><em>TestCycles</em></p>
@@ -87,7 +87,7 @@ ms.locfileid: "63356320"
 <td align="left"><p>このテストは、その他の API をファジー テストとして同じテストを実行し、この時間、空 (長さが 0) のクエリと、無効なバッファーのアドレスをドライバー ファイルの拡張属性を取得しようとしました。</p>
 <p><strong>バイナリをテストします。</strong>Devfund_DevicePathExerciser.dll</p>
 <p><strong>メソッドをテストします。</strong>DoMiscAPIWithZeroLengthTest</p>
-<p><strong>パラメーター:</strong> -を参照してください<a href="https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests" data-raw-source="[Device Fundamentals Test Parameters](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)">デバイス基礎テスト パラメーター</a></p>
+<p><strong>パラメーター:</strong> -を参照してください<a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](https://docs.microsoft.com/windows-hardware/drivers)">デバイス基礎テスト パラメーター</a></p>
 <p><em>DoPoolCheck</em></p>
 <p><em>DQ</em></p>
 <p><em>TestCycles</em></p>
@@ -101,7 +101,7 @@ ms.locfileid: "63356320"
 <p>このテストの詳細については、次を参照してください。 <a href="#about-the-fuzz-open-and-close-test" data-raw-source="[About the Fuzz open and close test](#about-the-fuzz-open-and-close-test)">、ファジーについて開閉テスト</a>します。</p>
 <p><strong>バイナリをテストします。</strong>Devfund_DevicePathExerciser.dll</p>
 <p><strong>メソッドをテストします。</strong>DoOpenCloseTest</p>
-<p><strong>パラメーター:</strong> -を参照してください<a href="https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests" data-raw-source="[Device Fundamentals Test Parameters](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)">デバイス基礎テスト パラメーター</a></p>
+<p><strong>パラメーター:</strong> -を参照してください<a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](https://docs.microsoft.com/windows-hardware/drivers)">デバイス基礎テスト パラメーター</a></p>
 <p><em>DoPoolCheck</em></p>
 <p><em>DQ</em></p>
 <p><em>TestCycles</em></p>
@@ -116,10 +116,10 @@ ms.locfileid: "63356320"
 <p>ファジー テストの問題の各クエリまたは有効なバッファーとバッファーの長さおよびファイル情報クラスのさまざまな 1024 回以上呼び出しを設定します。 各型の 1 つの要求は、無効なバッファー ポインターと 0 個のバッファーの長さも送信されます。</p>
 <p>使用する場合、 <em>ChangeBufferProtectionFlags</em>バッファー内で、保護のオプション、ファジー テストによって異なります、セキュリティ設定を設定するパラメーターは、各クエリし、呼び出しを設定します。</p>
 <p>このテストでは、ファジー サブ開きますテストも実行します。</p>
-<p>このテストでは、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff567052" data-raw-source="[&lt;strong&gt;ZwQueryInformationFile&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567052)"> <strong>ZwQueryInformationFile</strong></a>、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff567096" data-raw-source="[&lt;strong&gt;ZwSetInformationFile&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567096)"> <strong>ZwSetInformationFile</strong></a>、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff567070" data-raw-source="[&lt;strong&gt;ZwQueryVolumeInformationFile&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567070)"> <strong>ZwQueryVolumeInformationFile</strong></a>、および<a href="https://msdn.microsoft.com/library/windows/hardware/ff567112" data-raw-source="[&lt;strong&gt;ZwSetVolumeInformationFile&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567112)"> <strong>ZwSetVolumeInformationFile</strong> </a>関数。</p>
+<p>このテストでは、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntqueryinformationfile" data-raw-source="[&lt;strong&gt;ZwQueryInformationFile&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntqueryinformationfile)"> <strong>ZwQueryInformationFile</strong></a>、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntsetinformationfile" data-raw-source="[&lt;strong&gt;ZwSetInformationFile&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntsetinformationfile)"> <strong>ZwSetInformationFile</strong></a>、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff567070" data-raw-source="[&lt;strong&gt;ZwQueryVolumeInformationFile&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567070)"> <strong>ZwQueryVolumeInformationFile</strong></a>、および<a href="https://msdn.microsoft.com/library/windows/hardware/ff567112" data-raw-source="[&lt;strong&gt;ZwSetVolumeInformationFile&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567112)"> <strong>ZwSetVolumeInformationFile</strong> </a>関数。</p>
 <p><strong>バイナリをテストします。</strong>Devfund_DevicePathExerciser.dll</p>
 <p><strong>メソッドをテストします。</strong>DoQueryAndSetFileInformationTest</p>
-<p><strong>パラメーター:</strong> -を参照してください<a href="https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests" data-raw-source="[Device Fundamentals Test Parameters](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)">デバイス基礎テスト パラメーター</a></p>
+<p><strong>パラメーター:</strong> -を参照してください<a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](https://docs.microsoft.com/windows-hardware/drivers)">デバイス基礎テスト パラメーター</a></p>
 <p><em>DoPoolCheck</em></p>
 <p><em>DQ</em></p>
 <p><em>TestCycles</em></p>
@@ -135,7 +135,7 @@ ms.locfileid: "63356320"
 <p>使用する場合、 <em>ChangeBufferProtectionFlags</em>バッファー内で、保護のオプション、ファジー テストによって異なります、セキュリティ設定を設定するパラメーターは、各クエリし、呼び出しを設定します。</p>
 <p><strong>バイナリをテストします。</strong>Devfund_DevicePathExerciser.dll</p>
 <p><strong>メソッドをテストします。</strong>DoQueryAndSetSecurityTest</p>
-<p><strong>パラメーター:</strong> -を参照してください<a href="https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests" data-raw-source="[Device Fundamentals Test Parameters](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)">デバイス基礎テスト パラメーター</a></p>
+<p><strong>パラメーター:</strong> -を参照してください<a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](https://docs.microsoft.com/windows-hardware/drivers)">デバイス基礎テスト パラメーター</a></p>
 <p><em>DoPoolCheck</em></p>
 <p><em>DQ</em></p>
 <p><em>TestCycles</em></p>
@@ -157,7 +157,7 @@ ms.locfileid: "63356320"
 <p>A<em>ランダムなテストを合わせた</em>はランダムなテストの一部として含まれています。 調整されたランダムなテストでは、ランダムなテストの結果を使用して、さらに詳しく IOCTL または FSCTL の要求に対するドライバーの応答を調べる。 調整されたランダムなテストでは、ランダムなテスト不足の領域とランダムなテストの呼び出しによって返される状態に基づいて予想どおり、いないにドライバーを応答でしたをプローブします。</p>
 <p><strong>バイナリをテストします。</strong>Devfund_DevicePathExerciser.dll</p>
 <p><strong>メソッドをテストします。</strong>DoRandomIOCTLTest, DoRandomFSCTLTest</p>
-<p><strong>パラメーター:</strong> -を参照してください<a href="https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests" data-raw-source="[Device Fundamentals Test Parameters](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)">デバイス基礎テスト パラメーター</a></p>
+<p><strong>パラメーター:</strong> -を参照してください<a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](https://docs.microsoft.com/windows-hardware/drivers)">デバイス基礎テスト パラメーター</a></p>
 <p><em>MinInBuffer</em></p>
 <p><em>MaxInBuffer</em></p>
 <p><em>MinOutBuffer</em></p>
@@ -179,13 +179,13 @@ ms.locfileid: "63356320"
 <tr class="even">
 <td align="left"><p><span id="fuzz_sub-opens_test"></span>ファジー サブ開きますテスト</p></td>
 <td align="left"><p>テストは、迅速な一連のデバイスの名前空間でオブジェクトを開く呼び出しを実行します。 これらの呼び出しで、デバイスで始まり、任意の名前とさまざまな長さで、コンテンツの意味がない文字列が含まれているパスを渡します。</p>
-<p>中に、<em>相対開くテスト</em>、(とも呼ばれます、<em>サブ オープン テスト</em>) ファジー テストが、デバイスのオブジェクトを開こうと<a href="https://msdn.microsoft.com/library/windows/hardware/ff542068" data-raw-source="[namespace](https://msdn.microsoft.com/library/windows/hardware/ff542068)">名前空間</a>します。</p>
+<p>中に、<em>相対開くテスト</em>、(とも呼ばれます、<em>サブ オープン テスト</em>) ファジー テストが、デバイスのオブジェクトを開こうと<a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/controlling-device-namespace-access" data-raw-source="[namespace](https://docs.microsoft.com/windows-hardware/drivers/kernel/controlling-device-namespace-access)">名前空間</a>します。</p>
 <p>ファジー テストをこのテストは中に、は、迅速な一連の呼び出しを使用して開かれたデバイスの名前空間でオブジェクトを開くを実行します<a href="#basic-open-operations" data-raw-source="[Basic Open Operations](#basic-open-operations)">を開く操作の基本的な</a>およびその他の開く操作。 これらの呼び出しでは、ファジー テストは、デバイスで始まり、任意の名前とさまざまな長さで、コンテンツの意味がない文字列が含まれているパスを渡します。</p>
-<p>このテストでは、ドライバーまたはファイル システムがその名前空間でのオープン要求を管理する方法を決定します。 具体的には、ドライバーは、名前空間でのオープン要求をサポートしていない場合、防ぐ必要があります未承認のアクセスを要求、失敗したかを使用する場合は、FILE_DEVICE_SECURE_OPEN デバイスの特性を設定して<a href="https://msdn.microsoft.com/library/windows/hardware/ff548397" data-raw-source="[&lt;strong&gt;IoCreateDevice&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff548397)"> <strong>IoCreateDevice</strong> </a>または<a href="https://msdn.microsoft.com/library/windows/hardware/ff548407" data-raw-source="[&lt;strong&gt;IoCreateDeviceSecure&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff548407)"> <strong>IoCreateDeviceSecure</strong> </a>デバイス オブジェクトを作成します。</p>
-<p>デバイスの名前空間の詳細については、次を参照してください。<a href="https://msdn.microsoft.com/library/windows/hardware/ff542068" data-raw-source="[Controlling Device Namespace Access](https://msdn.microsoft.com/library/windows/hardware/ff542068)">デバイス Namespace のアクセスを制御する</a>します。</p>
+<p>このテストでは、ドライバーまたはファイル システムがその名前空間でのオープン要求を管理する方法を決定します。 具体的には、ドライバーは、名前空間でのオープン要求をサポートしていない場合、防ぐ必要があります未承認のアクセスを要求、失敗したかを使用する場合は、FILE_DEVICE_SECURE_OPEN デバイスの特性を設定して<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatedevice" data-raw-source="[&lt;strong&gt;IoCreateDevice&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatedevice)"> <strong>IoCreateDevice</strong> </a>または<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdmsec/nf-wdmsec-wdmlibiocreatedevicesecure" data-raw-source="[&lt;strong&gt;IoCreateDeviceSecure&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdmsec/nf-wdmsec-wdmlibiocreatedevicesecure)"> <strong>IoCreateDeviceSecure</strong> </a>デバイス オブジェクトを作成します。</p>
+<p>デバイスの名前空間の詳細については、次を参照してください。<a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/controlling-device-namespace-access" data-raw-source="[Controlling Device Namespace Access](https://docs.microsoft.com/windows-hardware/drivers/kernel/controlling-device-namespace-access)">デバイス Namespace のアクセスを制御する</a>します。</p>
 <p><strong>バイナリをテストします。</strong>Devfund_DevicePathExerciser.dll</p>
 <p><strong>メソッドをテストします。</strong>DoSubOpensTest</p>
-<p><strong>パラメーター:</strong> -を参照してください<a href="https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests" data-raw-source="[Device Fundamentals Test Parameters](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)">デバイス基礎テスト パラメーター</a></p>
+<p><strong>パラメーター:</strong> -を参照してください<a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](https://docs.microsoft.com/windows-hardware/drivers)">デバイス基礎テスト パラメーター</a></p>
 <p><em>DoPoolCheck</em></p>
 <p><em>DQ</em></p>
 <p><em>TestCycles</em></p>
@@ -201,7 +201,7 @@ ms.locfileid: "63356320"
 <p>ファジー テスト レコード ストリーム名は、テストで使用します。</p>
 <p><strong>バイナリをテストします。</strong>Devfund_DevicePathExerciser.dll</p>
 <p><strong>メソッドをテストします。</strong>DoSubOpensWithStreamsTest</p>
-<p><strong>パラメーター:</strong> -を参照してください<a href="https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests" data-raw-source="[Device Fundamentals Test Parameters](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)">デバイス基礎テスト パラメーター</a></p>
+<p><strong>パラメーター:</strong> -を参照してください<a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](https://docs.microsoft.com/windows-hardware/drivers)">デバイス基礎テスト パラメーター</a></p>
 <p><em>DoPoolCheck</em></p>
 <p><em>DQ</em></p>
 <p><em>TestCycles</em></p>
@@ -211,13 +211,13 @@ ms.locfileid: "63356320"
 </tr>
 <tr class="even">
 <td align="left"><p><span id="Fuzz_Zero-Length_Buffer_FSCTL_test___Fuzz_Zero-Length_Buffer_IOCTL_test"></span><span id="fuzz_zero-length_buffer_fsctl_test___fuzz_zero-length_buffer_ioctl_test"></span><span id="FUZZ_ZERO-LENGTH_BUFFER_FSCTL_TEST___FUZZ_ZERO-LENGTH_BUFFER_IOCTL_TEST"></span>ファジー バッファー FSCTL を長さ 0 のテスト/長さ 0 のバッファー IOCTL のファジー テスト</p></td>
-<td align="left"><p>このテストへの呼び出しの一連の問題、 <a href="https://msdn.microsoft.com/library/windows/desktop/aa363216" data-raw-source="[&lt;strong&gt;DeviceIoControl function&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/desktop/aa363216)"> <strong>DeviceIoControl 関数</strong></a> 0 の入力または出力バッファー長を持つ。 テストは、別の関数コード、デバイスの種類、データ転送方法、およびアクセスの要件を使用して、さまざまなファイル システムの制御コードを生成します。</p>
-<p>ファジー テストへの呼び出しの一連の問題を長さ 0 のバッファーのテスト中に、 <a href="https://msdn.microsoft.com/library/windows/desktop/aa363216" data-raw-source="[&lt;strong&gt;DeviceIoControl function&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/desktop/aa363216)"> <strong>DeviceIoControl 関数</strong></a> 0 の入力または出力バッファー長を持つ。 テストは、別の関数コード、デバイスの種類、データ転送方法、およびアクセスの要件を使用して、さまざまな I/O 制御コードを生成します。 I/O 制御コードの内容については、次を参照してください。 <a href="https://msdn.microsoft.com/library/windows/hardware/ff543023" data-raw-source="[Defining I/O Control Codes](https://msdn.microsoft.com/library/windows/hardware/ff543023)">I/O 制御コードを定義する</a>します。</p>
+<td align="left"><p>このテストへの呼び出しの一連の問題、 <a href="https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol" data-raw-source="[&lt;strong&gt;DeviceIoControl function&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)"> <strong>DeviceIoControl 関数</strong></a> 0 の入力または出力バッファー長を持つ。 テストは、別の関数コード、デバイスの種類、データ転送方法、およびアクセスの要件を使用して、さまざまなファイル システムの制御コードを生成します。</p>
+<p>ファジー テストへの呼び出しの一連の問題を長さ 0 のバッファーのテスト中に、 <a href="https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol" data-raw-source="[&lt;strong&gt;DeviceIoControl function&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)"> <strong>DeviceIoControl 関数</strong></a> 0 の入力または出力バッファー長を持つ。 テストは、別の関数コード、デバイスの種類、データ転送方法、およびアクセスの要件を使用して、さまざまな I/O 制御コードを生成します。 I/O 制御コードの内容については、次を参照してください。 <a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/defining-i-o-control-codes" data-raw-source="[Defining I/O Control Codes](https://docs.microsoft.com/windows-hardware/drivers/kernel/defining-i-o-control-codes)">I/O 制御コードを定義する</a>します。</p>
 <p>無効なバッファーのポインターのドライバーの処理をテストするには、これらのユーザー モードの呼び出しでバッファー ポインターのアドレスを指定高 0xFFFFFC00 などのカーネルの仮想アドレス空間)。</p>
 <p>ファジー テストでは、基本および追加の開いているテスト中に開かれたすべてのデバイスでバッファーの長さ 0 のテストを実行します。 使用してこのテストをカスタマイズすることができます、 <em>MinFunctionCode</em>と<em>MaxFunctionCode</em>関数の呼び出しで使用されるコードの範囲の IOCTL または FSCTL を指定するパラメーターのコマンドと<em>MinDeviceType</em>と<em>MaxDeviceType</em>の呼び出しで使用されるデバイスの種類の範囲を指定します。</p>
 <p><strong>バイナリをテストします。</strong>Devfund_DevicePathExerciser.dll</p>
 <p><strong>メソッドをテストします。</strong>DoZeroLengthBufferIOCTLTest、DoZeroLengthBufferFSCTLTest</p>
-<p><strong>パラメーター:</strong> -を参照してください<a href="https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests" data-raw-source="[Device Fundamentals Test Parameters](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)">デバイス基礎テスト パラメーター</a></p>
+<p><strong>パラメーター:</strong> -を参照してください<a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](https://docs.microsoft.com/windows-hardware/drivers)">デバイス基礎テスト パラメーター</a></p>
 <p><em>MinDeviceType</em></p>
 <p><em>MaxDeviceType</em></p>
 <p><em>MinFunctionCode</em></p>
@@ -233,7 +233,7 @@ ms.locfileid: "63356320"
 <td align="left"><p>実行<a href="ioattack.md" data-raw-source="[I/O Attack](ioattack.md)">I/O 攻撃</a>で指定したデバイスまたはデバイス。</p>
 <p><strong>バイナリをテストします。</strong>Devfund_IOAttack_DeleteDataFile.wsc</p>
 <p><strong>メソッドをテストします。</strong>RunIoAttack</p>
-<p><strong>パラメーター:</strong> -を参照してください<a href="https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests" data-raw-source="[Device Fundamentals Test Parameters](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)">デバイス基礎テスト パラメーター</a></p>
+<p><strong>パラメーター:</strong> -を参照してください<a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](https://docs.microsoft.com/windows-hardware/drivers)">デバイス基礎テスト パラメーター</a></p>
 <p><em>DQ</em></p></td>
 </tr>
 </tbody>
@@ -252,7 +252,7 @@ ms.locfileid: "63356320"
 
 ファジー テストでは、常に、基本的なオープン操作を実行します。 それらを選択する必要はありませんし、テスト セッションから除外することはできません。
 
-ファジー テスト システム サービスを呼び出すことによってユーザー モードで開いているすべての操作を実行します ([ZwXxx ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff567122)) デバイスに必要な。 Open の呼び出しは、デバイスへのハンドルを返します、ファジー テストはテスト セッション用に選択された他のデバイス テストを実行するのにハンドルを使用します。
+ファジー テスト システム サービスを呼び出すことによってユーザー モードで開いているすべての操作を実行します ([ZwXxx ルーチン](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff567122(v=vs.85))) デバイスに必要な。 Open の呼び出しは、デバイスへのハンドルを返します、ファジー テストはテスト セッション用に選択された他のデバイス テストを実行するのにハンドルを使用します。
 
 基本のオープン操作の 5 つの種類があります。
 
@@ -260,7 +260,7 @@ ms.locfileid: "63356320"
 
 -   **開くには、円記号が追加されます。** ファジー テストの問題、デバイス名の後に円記号のオープン呼び出し (\)など\\デバイス\\cdrom\\呼び出しは、デバイス内のルート ディレクトリを開くことができるようします。
 
-    この操作は、ドライバーまたはファイル システムがその名前空間でのオープン要求を管理する方法を決定します。 具体的には、デバイスはその名前空間でのオープン要求をサポートしていない場合、ドライバー防ぐ必要があります未承認のアクセスを要求が失敗するか、ファイルを設定して\_デバイス\_SECURE\_開いているデバイス特性を呼び出すときに[ **IoCreateDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff548397)または[ **IoCreateDeviceSecure** ](https://msdn.microsoft.com/library/windows/hardware/ff548407)デバイス オブジェクトを作成します。
+    この操作は、ドライバーまたはファイル システムがその名前空間でのオープン要求を管理する方法を決定します。 具体的には、デバイスはその名前空間でのオープン要求をサポートしていない場合、ドライバー防ぐ必要があります未承認のアクセスを要求が失敗するか、ファイルを設定して\_デバイス\_SECURE\_開いているデバイス特性を呼び出すときに[ **IoCreateDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatedevice)または[ **IoCreateDeviceSecure** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdmsec/nf-wdmsec-wdmlibiocreatedevicesecure)デバイス オブジェクトを作成します。
 
 -   **名前付きパイプとして開きます。** ファジー テストでは、デバイスを表示し、デバイスに名前付きパイプを確立します。 アクセス パラメーター (ShareAccess) は、読み取りし、書き込みに初期設定が、要求が失敗した場合に調整します。 デバイスが名前付きパイプをサポートしていない場合、要求は失敗にする必要があります。
 
@@ -283,17 +283,17 @@ Open の呼び出しで使用されるパラメーターによって異なりま
 ## <a name="related-topics"></a>関連トピック
 
 
-[Visual Studio を使って実行時にドライバーをテストする方法](https://msdn.microsoft.com/windows-drivers/develop/testing_a_driver_at_runtime)
+[Visual Studio を使って実行時にドライバーをテストする方法](https://docs.microsoft.com/windows-hardware/drivers)
 
-[テストを選択し、デバイスの基本を構成する方法](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)
+[テストを選択し、デバイスの基本を構成する方法](https://docs.microsoft.com/windows-hardware/drivers)
 
 [Device Fundamental のテスト](device-fundamentals-tests.md)
 
-[Device Fundamental テストのパラメーター](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)
+[Device Fundamental テストのパラメーター](https://docs.microsoft.com/windows-hardware/drivers)
 
-[提供されている WDTF シンプル I/O プラグイン](https://msdn.microsoft.com/library/windows/hardware/hh781398)
+[提供されている WDTF シンプル I/O プラグイン](https://docs.microsoft.com/windows-hardware/drivers/wdtf/provided-wdtf-simpleio-plug-ins)
 
-[コマンド プロンプトから実行時にドライバーをテストする方法](https://msdn.microsoft.com/windows-drivers/develop/how_to_test_a_driver_at_runtime_from_a_command_prompt)
+[コマンド プロンプトから実行時にドライバーをテストする方法](https://docs.microsoft.com/windows-hardware/drivers)
 
  
 

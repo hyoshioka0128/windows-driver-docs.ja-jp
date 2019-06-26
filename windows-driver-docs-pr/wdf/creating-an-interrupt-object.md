@@ -9,23 +9,23 @@ keywords:
 - Msi WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5466e4b38f4c6ca08318e572eb2b7cb856a33143
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 46edf5d3d61392fbabe5cf5ae139658ab3766f4e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358478"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382398"
 ---
 # <a name="creating-an-interrupt-object"></a>割り込みオブジェクトの作成
 
 
 デバイスのハードウェアの割り込みを処理する Windows Driver Frameworks (WDF) ドライバーは、各デバイスをサポートする各割り込みの framework 割り込みオブジェクトを作成する必要があります。 Framework version 1.11 および Windows 8 の後で実行中または以降のバージョンのオペレーティング システムでは、カーネル モード ドライバー フレームワーク (KMDF) とユーザー モード ドライバー フレームワーク (UMDF) ドライバーが必要とする割り込みオブジェクトを作成できます[パッシブ レベルの処理](supporting-passive-level-interrupts.md). チップ (SoC) プラットフォームで、システムのドライバーを作成する場合を除き、ただし、ドライバーは、DIRQL 割り込みオブジェクトを使用する必要があります。
 
-ドライバーを通常オブジェクトを作成します framework 割り込みでその[ *EvtDriverDeviceAdd* ](https://msdn.microsoft.com/library/windows/hardware/ff541693)コールバック関数。 ドライバーからの割り込みのオブジェクトを作成できますもその[ *EvtDevicePrepareHardware* ](https://msdn.microsoft.com/library/windows/hardware/ff540880)コールバック関数。
+ドライバーを通常オブジェクトを作成します framework 割り込みでその[ *EvtDriverDeviceAdd* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)コールバック関数。 ドライバーからの割り込みのオブジェクトを作成できますもその[ *EvtDevicePrepareHardware* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)コールバック関数。
 
-フレームワークは、ドライバーの[ *EvtDriverDeviceAdd* ](https://msdn.microsoft.com/library/windows/hardware/ff541693)プラグ アンド プレイ (PnP) マネージャーがデバイスにベクトルの割り込みなどのシステム リソースを割り当てられる前に、コールバック関数。 後 PnP マネージャーでは、リソースを割り当てる、フレームワークには、割り込みのリソースがデバイスの割り込みのオブジェクトに格納します。 (ドライバーを[プラグ アンド プレイをサポートしない](using-kernel-mode-driver-framework-with-non-pnp-drivers.md)割り込みオブジェクトを使用することはできません)。
+フレームワークは、ドライバーの[ *EvtDriverDeviceAdd* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)プラグ アンド プレイ (PnP) マネージャーがデバイスにベクトルの割り込みなどのシステム リソースを割り当てられる前に、コールバック関数。 後 PnP マネージャーでは、リソースを割り当てる、フレームワークには、割り込みのリソースがデバイスの割り込みのオブジェクトに格納します。 (ドライバーを[プラグ アンド プレイをサポートしない](using-kernel-mode-driver-framework-with-non-pnp-drivers.md)割り込みオブジェクトを使用することはできません)。
 
-フレームワークの割り込みオブジェクトを作成するには、ドライバーを初期化する必要があります、 [ **WDF\_割り込み\_CONFIG** ](https://msdn.microsoft.com/library/windows/hardware/ff552347)構造体に渡すと、 [ **WdfInterruptCreate** ](https://msdn.microsoft.com/library/windows/hardware/ff547345)メソッド。
+フレームワークの割り込みオブジェクトを作成するには、ドライバーを初期化する必要があります、 [ **WDF\_割り込み\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/ns-wdfinterrupt-_wdf_interrupt_config)構造体に渡すと、 [ **WdfInterruptCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nf-wdfinterrupt-wdfinterruptcreate)メソッド。
 
 UMDF には、割り込みの次の種類がサポートされています。
 
@@ -41,35 +41,35 @@ UMDF は、UMDF 2.15 バージョン以降、ハードウェア プッシュ ボ
 
 KMDF バージョン 1.15 以降、KMDF も割り込みをサポートして、このようなデバイスで説明されている回避策なし[処理 Active-Both 割り込み](handling-active-both-interrupts.md)します。
 
-また、 [ **WDF\_INTERRUPT\_CONFIG**](https://msdn.microsoft.com/library/windows/hardware/ff552347)には、ドライバーは、次のドライバーが指定したイベントのコールバック関数へのポインターを提供します。
+また、 [ **WDF\_INTERRUPT\_CONFIG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/ns-wdfinterrupt-_wdf_interrupt_config)には、ドライバーは、次のドライバーが指定したイベントのコールバック関数へのポインターを提供します。
 
-<a href="" id="---------evtinterruptenable--------"></a>[*EvtInterruptEnable*](https://msdn.microsoft.com/library/windows/hardware/ff541730)  
+<a href="" id="---------evtinterruptenable--------"></a>[*EvtInterruptEnable*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_enable)  
 ハードウェアの割り込みを有効にします。
 
-<a href="" id="---------evtinterruptdisable--------"></a>[*EvtInterruptDisable*](https://msdn.microsoft.com/library/windows/hardware/ff541714)  
+<a href="" id="---------evtinterruptdisable--------"></a>[*EvtInterruptDisable*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_disable)  
 ハードウェアの割り込みを無効にします。
 
-<a href="" id="---------evtinterruptisr--------"></a>[*EvtInterruptIsr*](https://msdn.microsoft.com/library/windows/hardware/ff541735)  
+<a href="" id="---------evtinterruptisr--------"></a>[*EvtInterruptIsr*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_isr)  
 割り込みサービス ルーチン (ISR) を中断します。
 
-<a href="" id="---------evtinterruptdpc--------"></a>[*EvtInterruptDpc*](https://msdn.microsoft.com/library/windows/hardware/ff541721)  
+<a href="" id="---------evtinterruptdpc--------"></a>[*EvtInterruptDpc*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)  
 割り込みの遅延プロシージャ呼び出し (DPC)。
 
-<a href="" id="evtinterruptworkitem"></a>[*EvtInterruptWorkItem*](https://msdn.microsoft.com/library/windows/hardware/hh406422)  
+<a href="" id="evtinterruptworkitem"></a>[*EvtInterruptWorkItem*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_workitem)  
 作業項目、[パッシブ レベル割り込み](supporting-passive-level-interrupts.md)します。
 
-ドライバーはフレームワークのバージョン 1.11 または後で Windows 8 またはそれ以降のバージョンのオペレーティング システムを使用して、ドライバーは (DIRQL またはパッシブ) は、framework 割り込みのオブジェクトの親を framework デバイス オブジェクトか、フレームワークのキュー オブジェクトを明示的に設定できます。 ドライバーを設定する必要があります、ドライバーは、親を指定する場合、 **AutomaticSerialization**割り込みオブジェクトのメンバー [ **WDF\_割り込み\_CONFIG** ](https://msdn.microsoft.com/library/windows/hardware/ff552347)構造体を TRUE にします。 (場合にそのことを思い出してください**AutomaticSerialization**が true の場合、フレームワークは、割り込みオブジェクトの実行を同期[ *EvtInterruptDpc* ](https://msdn.microsoft.com/library/windows/hardware/ff541721)または[ *EvtInterruptWorkItem* ](https://msdn.microsoft.com/library/windows/hardware/hh406422)割り込みの親オブジェクトの下にあるその他のオブジェクトからのコールバック関数でコールバック関数です)。
+ドライバーはフレームワークのバージョン 1.11 または後で Windows 8 またはそれ以降のバージョンのオペレーティング システムを使用して、ドライバーは (DIRQL またはパッシブ) は、framework 割り込みのオブジェクトの親を framework デバイス オブジェクトか、フレームワークのキュー オブジェクトを明示的に設定できます。 ドライバーを設定する必要があります、ドライバーは、親を指定する場合、 **AutomaticSerialization**割り込みオブジェクトのメンバー [ **WDF\_割り込み\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/ns-wdfinterrupt-_wdf_interrupt_config)構造体を TRUE にします。 (場合にそのことを思い出してください**AutomaticSerialization**が true の場合、フレームワークは、割り込みオブジェクトの実行を同期[ *EvtInterruptDpc* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)または[ *EvtInterruptWorkItem* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_workitem)割り込みの親オブジェクトの下にあるその他のオブジェクトからのコールバック関数でコールバック関数です)。
 
-たとえば、ドライバーは、割り込みのキューのコールバックと同期する、割り込みの親としてキューを指定可能性があります[ *EvtInterruptDpc* ](https://msdn.microsoft.com/library/windows/hardware/ff541721)または[ *EvtInterruptWorkItem* ](https://msdn.microsoft.com/library/windows/hardware/hh406422)コールバック。 この構成では、フレームワークは、デバイス オブジェクトを削除するときに、キュー オブジェクトを削除します。
+たとえば、ドライバーは、割り込みのキューのコールバックと同期する、割り込みの親としてキューを指定可能性があります[ *EvtInterruptDpc* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)または[ *EvtInterruptWorkItem* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_workitem)コールバック。 この構成では、フレームワークは、デバイス オブジェクトを削除するときに、キュー オブジェクトを削除します。
 
-呼び出した後[ **WdfInterruptCreate**](https://msdn.microsoft.com/library/windows/hardware/ff547345)、ドライバーは呼び出すことができます必要に応じて[ **WdfInterruptSetPolicy** ](https://msdn.microsoft.com/library/windows/hardware/ff547387)または[ **WdfInterruptSetExtendedPolicy** ](https://msdn.microsoft.com/library/windows/hardware/ff547381)割り込みの追加パラメーターを指定します。 通常、ドライバーがからこれらのメソッドを呼び出してその[ *EvtDriverDeviceAdd* ](https://msdn.microsoft.com/library/windows/hardware/ff541693)コールバック関数。
+呼び出した後[ **WdfInterruptCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nf-wdfinterrupt-wdfinterruptcreate)、ドライバーは呼び出すことができます必要に応じて[ **WdfInterruptSetPolicy** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nf-wdfinterrupt-wdfinterruptsetpolicy)または[ **WdfInterruptSetExtendedPolicy** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nf-wdfinterrupt-wdfinterruptsetextendedpolicy)割り込みの追加パラメーターを指定します。 通常、ドライバーがからこれらのメソッドを呼び出してその[ *EvtDriverDeviceAdd* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)コールバック関数。
 
-フレームワークには、割り込みの親を削除する前に割り込みが自動的に削除されます。 ドライバーを呼び出すことができます必要に応じて、 [ **WdfObjectDelete** ](https://msdn.microsoft.com/library/windows/hardware/ff548734)を以前の時点で割り込みを削除します。
+フレームワークには、割り込みの親を削除する前に割り込みが自動的に削除されます。 ドライバーを呼び出すことができます必要に応じて、 [ **WdfObjectDelete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nf-wdfobject-wdfobjectdelete)を以前の時点で割り込みを削除します。
 
 ## <a name="supporting-message-signaled-interrupts"></a>メッセージ シグナル割り込みをサポートしています。
 
 
-メッセージ シグナル割り込み (Msi) は、以降 Windows Vista でサポートされます。 デバイスの Msi をサポートするために、オペレーティング システムを有効にするには、ドライバーの INF ファイルは、レジストリのいくつかの値を設定する必要があります。 これらの値を設定する方法については、次を参照してください。 [Enabling Message-Signaled がレジストリへの割り込み](https://msdn.microsoft.com/library/windows/hardware/ff544246)します。
+メッセージ シグナル割り込み (Msi) は、以降 Windows Vista でサポートされます。 デバイスの Msi をサポートするために、オペレーティング システムを有効にするには、ドライバーの INF ファイルは、レジストリのいくつかの値を設定する必要があります。 これらの値を設定する方法については、次を参照してください。 [Enabling Message-Signaled がレジストリへの割り込み](https://docs.microsoft.com/windows-hardware/drivers/kernel/enabling-message-signaled-interrupts-in-the-registry)します。
 
 ドライバーは、割り込みベクトルまたはデバイスをサポートできる MSI メッセージごとに framework 割り込みオブジェクトを作成する必要があります。 PnP マネージャーでは付与されません、デバイスのすべてのデバイスをサポートする割り込みリソース、余分な割り込みオブジェクトは使用されませんし、これらのコールバック関数は呼び出されません。
 

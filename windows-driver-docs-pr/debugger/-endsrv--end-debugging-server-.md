@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d2dbf56eebfa51b66db806433fdb10a94722ec8a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fe73c50d0928ed50945170bec349956c0e23b433
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334519"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364328"
 ---
 # <a name="endsrv-end-debugging-server"></a>.endsrv (デバッグ サーバーの終了)
 
@@ -72,7 +72,7 @@ ms.locfileid: "63334519"
 
 デバッグ サーバーの ID を調べるには、 [ **.servers (デバッグ サーバーの一覧)** ](-servers--list-debugging-servers-.md)コマンド。
 
-**.Endsrv**コマンドは、デバッグのサーバーを終了できますが、プロセス サーバー、または KD 接続サーバーので終了することはできません。 これらのサーバーを終了する方法については、次を参照してください。[プロセス サーバーのセッションを制御する](controlling-a-process-server-session.md)と[KD 接続サーバー セッションを制御する](controlling-a-kd-connection-server-session.md)します。 (がある、ただし、1 つの例外的な場合 **.endsrv**をプログラムで起動されました詳細については、次を参照してください。 プロセス サーバーを終了できます[ **IDebugClient::StartProcessServer** 。](https://msdn.microsoft.com/library/windows/hardware/ff558810).)
+**.Endsrv**コマンドは、デバッグのサーバーを終了できますが、プロセス サーバー、または KD 接続サーバーので終了することはできません。 これらのサーバーを終了する方法については、次を参照してください。[プロセス サーバーのセッションを制御する](controlling-a-process-server-session.md)と[KD 接続サーバー セッションを制御する](controlling-a-kd-connection-server-session.md)します。 (がある、ただし、1 つの例外的な場合 **.endsrv**をプログラムで起動されました詳細については、次を参照してください。 プロセス サーバーを終了できます[ **IDebugClient::StartProcessServer** 。](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugclient5-startprocessserver).)
 
 デバッグ サーバーをキャンセルした場合、サーバーにアタッチ今後デバッグ クライアントを防ぐ。 ただし、デバッグ サーバーをキャンセルすると、サーバーから現在接続されているすべてのクライアントが切断できません。
 

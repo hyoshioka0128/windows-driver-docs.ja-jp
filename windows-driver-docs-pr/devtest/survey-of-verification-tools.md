@@ -7,12 +7,12 @@ keywords:
 - WDK の静的検証ツール
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 60636066498fc7ae0017544d044ab50e8920647f
-ms.sourcegitcommit: a70dcf63a439d278ae0194733d9fa2adfe496c89
+ms.openlocfilehash: 187eaaef53bc8030b91e19142f5db4ce79d52b16
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66813585"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360933"
 ---
 # <a name="survey-of-verification-tools"></a>検証ツールの調査
 
@@ -45,7 +45,7 @@ ms.locfileid: "66813585"
     -   **管理者特権での IRQL での実行中にページング可能なメモリを使用します。** 検証済みのドライバーがディスパッチで IRQL を発生させる\_レベル、または以降では、Driver Verifier トリム、システムのワーキング セットからすべてのページング可能なメモリをシステム メモリ負荷をシミュレートします。 ページング可能な仮想アドレスのいずれかを使用すると、ドライバーがクラッシュします。
     -   **低リソース シミュレーション。** リソース不足の条件下でシステムをシミュレートするには、Driver Verifier はドライバーによって Api が呼び出されるさまざまなオペレーティング システムのカーネルにフェールバックできます。
     -   **メモリ リークが発生します。** Driver Verifier は、ドライバーによって行われるメモリ割り当てを追跡し、アンロードされたドライバーを取得する前に、メモリが解放されるようにします。
-    -   **I/O 操作を完了するか取り消される時間がかかりすぎています。** Driver Verifier の状態に対応するため、ドライバーのロジックをテストできます\_PENDING から値を返す[**保留**](https://msdn.microsoft.com/library/windows/hardware/ff548336)します。
+    -   **I/O 操作を完了するか取り消される時間がかかりすぎています。** Driver Verifier の状態に対応するため、ドライバーのロジックをテストできます\_PENDING から値を返す[**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)します。
     -   **DDI 準拠の確認。** (Windows 8 以降で使用可能)Driver Verifier には、一連のドライバーとオペレーティング システムのカーネル インターフェイスの適切な相互作用をチェックするデバイス ドライバー インターフェイス (DDI) ルールが適用されます。 これらの規則は、Static Driver Verifier は、ドライバーのソース コードの分析に使用されるルールに対応します。 Driver Verifier には、DDI 準拠の検査が有効になっているときにエラーが検出されると、実行[Static Driver Verifier](static-driver-verifier.md)エラーの原因となった同じ規則を選択します。 Static Driver Verifier は、ドライバーのソース コードの不具合の原因を見つけるのに役立ちます。
 -   [Application Verifier](application-verifier.md)はユーザー モード アプリケーションと C と C++ で記述されたドライバーの動的検証ツールです。 マネージ コードは検証されません。 Application Verifier は、WDK に含まれていませんが、ダウンロードしてインストールしてから、 [Microsoft ダウンロード センター](https://go.microsoft.com/fwlink/p/?linkid=11573)します。
 

@@ -9,12 +9,12 @@ ms.date: 04/20/2017
 ms.localizationpriority: medium
 f1_keywords:
 - C28134
-ms.openlocfilehash: 373e85d31a3ca2bc9d90974523d0d2d9abbb2c39
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4c08420c6f35bd65d7864175c5bc6b69b1bb61e2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361408"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364137"
 ---
 # <a name="c28134"></a>C28134
 
@@ -36,7 +36,7 @@ C28134 を警告します。プール タグの種類が整数、いない文字
 
  
 
-ドライバーなど、プール タグを代入する関数の呼び出しは[ **exallocatepoolwithtag に**](https://msdn.microsoft.com/library/windows/hardware/ff544520)、プール タグの値を指定する単一引用符でリテラル以外の値を使用してですが。 プール タグでは、引用符で囲まれた文字列を使用しません。
+ドライバーなど、プール タグを代入する関数の呼び出しは[ **exallocatepoolwithtag に**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtag)、プール タグの値を指定する単一引用符でリテラル以外の値を使用してですが。 プール タグでは、引用符で囲まれた文字列を使用しません。
 
 ### <a name="span-idexamplespanspan-idexamplespanexample"></a><span id="example"></span><span id="EXAMPLE"></span>例
 

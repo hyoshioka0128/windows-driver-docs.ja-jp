@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 39cf35335e95a2a0bacd609594e1086473ffb30d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 082983f06a846938b60c57b85b39e8b2f34406f5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391698"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385537"
 ---
 # <a name="kscategorywdmaud"></a>KSCATEGORY_WDMAUD
 
 
-KSCATEGORY_WDMAUD[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)を表す、[カーネル ストリーミング](https://msdn.microsoft.com/library/windows/hardware/ff568277)システム提供によって排他的に予約されている (KS) 機能のカテゴリ[WDM オーディオ コンポーネント](https://msdn.microsoft.com/library/windows/hardware/ff538905).
+KSCATEGORY_WDMAUD[デバイス インターフェイス クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)を表す、[カーネル ストリーミング](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)システム提供によって排他的に予約されている (KS) 機能のカテゴリ[WDM オーディオ コンポーネント](https://docs.microsoft.com/windows-hardware/drivers/audio/wdm-audio-components).
 
 <table>
 <colgroup>

@@ -4,12 +4,12 @@ description: オーディオ処理オブジェクト (APOs) のハードウェ�
 ms.assetid: 159DFFD2-2434-4EDC-A83C-455BA80F74C6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 003ed70c695725b7a1713e910edc8de0835f2c04
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1bd716fc9bf2999537bb887ad3c9f849ea083302
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333490"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359912"
 ---
 # <a name="implementing-hardware-offloaded-apo-effects"></a>APO 効果をオフロードするハードウェアの実装
 
@@ -47,7 +47,7 @@ Windows 8 でオーディオ エンジンが再設計されましたとは別で
 
 ハードウェア オフロード、APOs、サポートされているオーディオ形式をいくつか追加の考慮事項を与える必要があります。
 
-各 APO 実装[ **IAudioProcessingObject::IsInputFormatSupported** ](https://msdn.microsoft.com/library/windows/hardware/ff536511)出力オーディオ形式と変換する任意の形式かどうかを判断するオーディオのグラフの構築時に使用されるメソッドは、必要です。
+各 APO 実装[ **IAudioProcessingObject::IsInputFormatSupported** ](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nf-audioenginebaseapo-iaudioprocessingobject-isinputformatsupported)出力オーディオ形式と変換する任意の形式かどうかを判断するオーディオのグラフの構築時に使用されるメソッドは、必要です。
 
 ```cpp
 HRESULT IsInputFormatSupported(
@@ -74,10 +74,10 @@ SFX をオフロードは、オフロード サポートされている pin の�
 |                                                                                                                                  |                                           |
 |----------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------|
 | **プロパティのキー**                                                                                                                 | **GUID**                                  |
-| [鍵\_FX\_オフロード\_StreamEffectClsid](https://msdn.microsoft.com/library/windows/hardware/mt604869)                                                  | {D04E05A6-594B-4FB6-A80D-01AF5EED7D1D} 11 |
-| [PKEY\_FX\_Offload\_ModeEffectClsid](https://msdn.microsoft.com/library/windows/hardware/mt604868)                                                      | {D04E05A6-594B-4FB6-A80D-01AF5EED7D1D} 12 |
-| [鍵\_SFX\_オフロード\_ProcessingModes\_サポート\_の\_ストリーミング](https://msdn.microsoft.com/library/windows/hardware/mt604871) | {D3993A3F-99C2-4402-B5EC-A92A0367664B},11 |
-| [鍵\_MFX\_オフロード\_ProcessingModes\_サポート\_の\_ストリーミング](https://msdn.microsoft.com/library/windows/hardware/mt604870) | {D3993A3F-99C2-4402-B5EC-A92A0367664B},12 |
+| [鍵\_FX\_オフロード\_StreamEffectClsid](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-fx-offload-streameffectclsid)                                                  | {D04E05A6-594B-4FB6-A80D-01AF5EED7D1D} 11 |
+| [PKEY\_FX\_Offload\_ModeEffectClsid](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-fx-offload-modeeffectclsid)                                                      | {D04E05A6-594B-4FB6-A80D-01AF5EED7D1D} 12 |
+| [鍵\_SFX\_オフロード\_ProcessingModes\_サポート\_の\_ストリーミング](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-sfx-offload-processingmodes-supported-for-streaming) | {D3993A3F-99C2-4402-B5EC-A92A0367664B},11 |
+| [鍵\_MFX\_オフロード\_ProcessingModes\_サポート\_の\_ストリーミング](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-mfx-offload-processingmodes-supported-for-streaming) | {D3993A3F-99C2-4402-B5EC-A92A0367664B},12 |
 
  
 

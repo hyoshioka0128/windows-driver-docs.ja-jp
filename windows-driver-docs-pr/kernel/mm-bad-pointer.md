@@ -4,12 +4,12 @@ description: Windows カーネルのマクロ
 ms.assetid: 91366400-3307-4F13-A839-50BA85B7F73E
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: cc92a84d8af5cf9d5b9752633e34c1ebdbf49dbc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 46ab783d7acff09e72a76d4a6ca3a8bb726d0f78
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380246"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386006"
 ---
 # <a name="windows-kernel-macros"></a>Windows カーネルのマクロ
 
@@ -139,7 +139,7 @@ IRQL:任意のレベル
 
 定義されています。Wdm.h
 
-\nThe **IoSkipCurrentIrpStackLocation**マクロの変更、システムの[ **IO_STACK_LOCATION** ](https://msdn.microsoft.com/library/windows/hardware/ff550659)できるように、現在のドライバーが次の下位のドライバーを呼び出すときに、ポインターの配列、そのドライバーが、同じ受信**IO_STACK_LOCATION**現在のドライバーを受信した構造体。
+\nThe **IoSkipCurrentIrpStackLocation**マクロの変更、システムの[ **IO_STACK_LOCATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)できるように、現在のドライバーが次の下位のドライバーを呼び出すときに、ポインターの配列、そのドライバーが、同じ受信**IO_STACK_LOCATION**現在のドライバーを受信した構造体。
 
 _Irp [で, out]_
 
@@ -151,15 +151,15 @@ IRP へのポインター。
 
 **VOID**
 
-ドライバーを呼び出すことができます、ドライバーは IRP を次の下位ドライバーに送信するときに**IoSkipCurrentIrpStackLocation**を提供する予定がない場合、 [ _IoCompletion_ ](https://msdn.microsoft.com/library/windows/hardware/ff548354)ルーチン(ドライバーの内のアドレスが格納されている[ **IO_STACK_LOCATION** ](https://msdn.microsoft.com/library/windows/hardware/ff550659)構造)。 呼び出す場合**IoSkipCurrentIrpStackLocation**呼び出す前に[**保留**](https://msdn.microsoft.com/library/windows/hardware/ff548336)、次の下位のドライバーを受け取る同じ**IO_STACK_LOCATION** 、ドライバーを受信します。
+ドライバーを呼び出すことができます、ドライバーは IRP を次の下位ドライバーに送信するときに**IoSkipCurrentIrpStackLocation**を提供する予定がない場合、 [ _IoCompletion_ ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)ルーチン(ドライバーの内のアドレスが格納されている[ **IO_STACK_LOCATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)構造)。 呼び出す場合**IoSkipCurrentIrpStackLocation**呼び出す前に[**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)、次の下位のドライバーを受け取る同じ**IO_STACK_LOCATION** 、ドライバーを受信します。
 
-使用する場合、 _IoCompletion_ IRP の日常的なドライバー、呼び出す必要があります[ **IoCopyCurrentIrpStackLocationToNext** ](https://msdn.microsoft.com/library/windows/hardware/ff548387)の代わりに**IoSkipCurrentIrpStackLocation**します。 不完全なドライバーが呼び出し元の間違いを行った場合**IoSkipCurrentIrpStackLocation**完了ルーチンを設定し、このドライバーは、下にあるドライバーによって設定完了ルーチンを上書き可能性があります。
+使用する場合、 _IoCompletion_ IRP の日常的なドライバー、呼び出す必要があります[ **IoCopyCurrentIrpStackLocationToNext** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocopycurrentirpstacklocationtonext)の代わりに**IoSkipCurrentIrpStackLocation**します。 不完全なドライバーが呼び出し元の間違いを行った場合**IoSkipCurrentIrpStackLocation**完了ルーチンを設定し、このドライバーは、下にあるドライバーによって設定完了ルーチンを上書き可能性があります。
 
 ドライバーを呼び出していない場合、ドライバーは IRP を保留には、 **IoSkipCurrentIrpStackLocation** IRP [次へ] の下のドライバーに渡す前にします。 ドライバーを呼び出す場合**IoSkipCurrentIrpStackLocation**で [次へ] の下のドライバーに渡す前に保留 IRP、SL_PENDING_RETURNED フラグが設定、**コントロール**I/O スタックの場所のメンバー[次へ] のドライバーです。 次のドライバーでは、場所スタックが作成され、変更を所有している、ため、可能性のある保留中フラグをクリアするでした。 オペレーティング システムのバグ チェックがまたはが完了しない IRP の処理を発行するような場合があります。
 
 代わりに、保留 IRP がドライバーを呼び出す必要があります**IoCopyCurrentIrpStackLocationToNext**呼び出し前に次の下位のドライバーの新しいスタックの場所を設定するのには**保留**します。
 
-ドライバーを呼び出す場合**IoSkipCurrentIrpStackLocation**しないように注意を変更することで、 **IO_STACK_LOCATION**下位のドライバーまたはシステムの動作に影響を与える意図しない方法で構造体に関しては、そのドライバー。 例としては、変更、 **IO_STACK_LOCATION**構造体の**パラメーター**共用体、または呼び出し元[ **IoMarkIrpPending**](https://msdn.microsoft.com/library/windows/hardware/ff549422)します。
+ドライバーを呼び出す場合**IoSkipCurrentIrpStackLocation**しないように注意を変更することで、 **IO_STACK_LOCATION**下位のドライバーまたはシステムの動作に影響を与える意図しない方法で構造体に関しては、そのドライバー。 例としては、変更、 **IO_STACK_LOCATION**構造体の**パラメーター**共用体、または呼び出し元[ **IoMarkIrpPending**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iomarkirppending)します。
 
 Windows 2000 以降を使用できます。
 
@@ -170,7 +170,7 @@ IRQL:任意のレベル
 
 定義されています。Wdm.h
 
-**KeInitializeCallbackRecord**マクロを初期化します、 [ **KBUGCHECK_CALLBACK_RECORD** ](https://msdn.microsoft.com/library/windows/hardware/ff551853)または[ **KBUGCHECK_REASON_CALLBACK_レコード**](https://msdn.microsoft.com/library/windows/hardware/ff551873)構造体。
+**KeInitializeCallbackRecord**マクロを初期化します、 [ **KBUGCHECK_CALLBACK_RECORD** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/eprocess)または[ **KBUGCHECK_REASON_CALLBACK_レコード**](https://docs.microsoft.com/windows-hardware/drivers/kernel/eprocess)構造体。
 
 _[In] CallbackRecord_
 
@@ -209,7 +209,7 @@ IRQL:任意のレベル
 
 Windows 8.1 では、以降、 **MM_BAD_POINTER** Wdm.h のヘッダー ファイルでマクロが定義されています。 ただし、Windows Vista と共に登場した Windows の以前のバージョンでこのマクロの定義を使用するドライバー コードできます実行。
 
-以降、Windows Vista では、 [ **MmBadPointer** ](https://msdn.microsoft.com/library/windows/hardware/ff554494)グローバル変数は、アドレスが無効にすることが保証されるポインター値へのポインターとして使用します。 ただし、Windows 8.1 での使用を開始**MmBadPointer**は非推奨とし、使用するドライバーを更新する必要があります、 **MM_BAD_POINTER**マクロ代わりにします。
+以降、Windows Vista では、 [ **MmBadPointer** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm64bitphysicaladdress)グローバル変数は、アドレスが無効にすることが保証されるポインター値へのポインターとして使用します。 ただし、Windows 8.1 での使用を開始**MmBadPointer**は非推奨とし、使用するドライバーを更新する必要があります、 **MM_BAD_POINTER**マクロ代わりにします。
 
 Windows 8.1\ 以降を利用できます。 Windows Vista と共に登場した Windows の以前のバージョンとの互換性 _。
 
@@ -224,7 +224,7 @@ _[In] Mdl_
 
 **PMDL**
 
-ポインター、 [ **MDL** ](https://msdn.microsoft.com/library/windows/hardware/ff554414)物理メモリ内の仮想メモリ バッファーのレイアウトを記述する構造体。 詳細については、次を参照してください。[を使用して MDLs](using-mdls.md)します。
+ポインター、 [ **MDL** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_mdl)物理メモリ内の仮想メモリ バッファーのレイアウトを記述する構造体。 詳細については、次を参照してください。[を使用して MDLs](using-mdls.md)します。
 
 **戻り値**
 
@@ -286,7 +286,7 @@ MDL に関連付けられている物理ページ番号の配列の先頭への�
 
 **注**配列の内容を変更すると、診断が困難な微妙なシステム問題が発生することができます。 読み取り使用したり、この配列の内容を変更するはしないをお勧めします。
 
-ページング可能なメモリは、配列の内容はロックされているバッファーでのみ有効です[ **MmProbeAndLockPages**](https://msdn.microsoft.com/library/windows/hardware/ff554664)します。 非ページ プールは、配列の内容は更新 MDL のみ有効です[ **MmBuildMdlForNonPagedPool**](https://msdn.microsoft.com/library/windows/hardware/ff554498)、 [ **MmAllocatePagesForMdlEx**](https://msdn.microsoft.com/library/windows/hardware/ff554489)、または[ **MmAllocatePagesForMdl**](https://msdn.microsoft.com/library/windows/hardware/ff554482)します。
+ページング可能なメモリは、配列の内容はロックされているバッファーでのみ有効です[ **MmProbeAndLockPages**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmprobeandlockpages)します。 非ページ プールは、配列の内容は更新 MDL のみ有効です[ **MmBuildMdlForNonPagedPool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmbuildmdlfornonpagedpool)、 [ **MmAllocatePagesForMdlEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatepagesformdlex)、または[ **MmAllocatePagesForMdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatepagesformdl)します。
 
 MDLs の詳細については、次を参照してください。[を使用して MDLs](using-mdls.md)します。
 
@@ -315,7 +315,7 @@ _[In] Mdl_
 
 **MmGetMdlVirtualAddress**現在のスレッド コンテキストで有効である必要はない仮想アドレスを返します。 下位レベルのドライバーが、返された仮想アドレスを使用して、メモリ、特にメモリ領域をユーザーにアクセスしないようにします。
 
-MDL 内の物理アドレス エントリのインデックスとして使用される、返されたアドレスを入力できる[ **MapTransfer**](https://msdn.microsoft.com/library/windows/hardware/ff554402)します。
+MDL 内の物理アドレス エントリのインデックスとして使用される、返されたアドレスを入力できる[ **MapTransfer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pmap_transfer)します。
 
 呼び出し元**MmGetMdlVirtualAddress** IRQL で実行されていることができます。 IRQL で呼び出し元が実行されている通常は、このルーチンが取得するというよく = DISPATCH_LEVEL、 _CurrentVa_パラメーターを**MapTransfer**します。
 
@@ -362,21 +362,21 @@ _[In] の優先順位_
 
 プログラミング i/o (PIO) デバイスのドライバーで MDL によって定義された、ユーザー モードのバッファーをマップするには、このルーチンを呼び出す**Irp MdlAddress]-> [** システム アドレスの範囲に、ユーザー モード仮想アドレスの範囲に既にマップされて、領域。
 
-このルーチンの入り口で指定された MDL ロック ダウンされている物理ページを記述します。 使用してロックダウン MDL をビルドすることができます、 [ **MmProbeAndLockPages**](https://msdn.microsoft.com/library/windows/hardware/ff554664)、 [ **MmBuildMdlForNonPagedPool**](https://msdn.microsoft.com/library/windows/hardware/ff554498)、 [ **IoBuildPartialMdl**](https://msdn.microsoft.com/library/windows/hardware/ff548324)、または[ **MmAllocatePagesForMdlEx** ](https://msdn.microsoft.com/library/windows/hardware/ff554489)ルーチン。
+このルーチンの入り口で指定された MDL ロック ダウンされている物理ページを記述します。 使用してロックダウン MDL をビルドすることができます、 [ **MmProbeAndLockPages**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmprobeandlockpages)、 [ **MmBuildMdlForNonPagedPool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmbuildmdlfornonpagedpool)、 [ **IoBuildPartialMdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iobuildpartialmdl)、または[ **MmAllocatePagesForMdlEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatepagesformdlex)ルーチン。
 
 によって、システム-アドレス空間マッピングが返されるときに**MmGetSystemAddressForMdlSafe**が不要になった、解放する必要があります。 マッピングを解放するために必要な手順は、MDL がどのように構築されたかによって異なります。 これらは、次の 4 つの可能なケースです。
 
-*   MDL への呼び出しで作成した場合、 **MmProbeAndLockPages** 、日常的な必要はありません、システム アドレス空間のマッピングを明示的に解放します。 代わりへの呼び出し、 [ **MmUnlockPages** ](https://msdn.microsoft.com/library/windows/hardware/ff556381)ルーチンは、割り当てられている場合に、マッピングを解放します。
+*   MDL への呼び出しで作成した場合、 **MmProbeAndLockPages** 、日常的な必要はありません、システム アドレス空間のマッピングを明示的に解放します。 代わりへの呼び出し、 [ **MmUnlockPages** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmunlockpages)ルーチンは、割り当てられている場合に、マッピングを解放します。
 
 *   MDL への呼び出しで作成した場合、 **MmBuildMdlForNonPagedPool**ルーチン、 **MmGetSystemAddressForMdlSafe**新規に作成する代わりに既存のシステム アドレス空間のマッピングを再利用されます。 この場合は、クリーンアップは必要ありません (つまり、ロックを解除して、割り当ての解除は必要ありません)。
 
-*   MDL への呼び出しで作成した場合、 **IoBuildPartialMdl** 、日常的なドライバー呼び出す必要がありますか、 [ **MmPrepareMdlForReuse** ](https://msdn.microsoft.com/library/windows/hardware/ff554660)ルーチンまたは[ **IoFreeMdl** ](https://msdn.microsoft.com/library/windows/hardware/ff549126)ルーチンをシステム アドレス空間のマッピングをリリースします。
+*   MDL への呼び出しで作成した場合、 **IoBuildPartialMdl** 、日常的なドライバー呼び出す必要がありますか、 [ **MmPrepareMdlForReuse** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)ルーチンまたは[ **IoFreeMdl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iofreemdl)ルーチンをシステム アドレス空間のマッピングをリリースします。
 
 *   MDL への呼び出しで作成した場合、 **MmAllocatePagesForMdlEx** 、日常的なドライバー呼び出す必要があります、 **MmUnmapLockedPages**ルーチンをシステム アドレス空間のマッピングをリリースします。 場合**MmGetSystemAddressForMdlSafe** MDL、後続の 1 つ以上の時間と呼びます**MmGetSystemAddressForMdlSafe**の呼び出しは単に最初の呼び出しによって作成されたマッピングを返します。 1 回の呼び出しに**MmUnmapLockedPages**このマッピングを解放するだけで十分です。
 
-Windows 7 および Windows Server 2008 R2 以降、必要はありませんを明示的に呼び出す**MmUnmapLockedPages**によって作成された、MDL の**MmAllocatePagesForMdlEx**します。 代わりへの呼び出し、 [ **MmFreePagesFromMdl** ](https://msdn.microsoft.com/library/windows/hardware/ff554521)ルーチンが割り当てられている場合、システム アドレス空間のマッピングを解放します。
+Windows 7 および Windows Server 2008 R2 以降、必要はありませんを明示的に呼び出す**MmUnmapLockedPages**によって作成された、MDL の**MmAllocatePagesForMdlEx**します。 代わりへの呼び出し、 [ **MmFreePagesFromMdl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmfreepagesfrommdl)ルーチンが割り当てられている場合、システム アドレス空間のマッピングを解放します。
 
-新しいシステム アドレス空間マッピングを作成する**MmGetSystemAddressForMdlSafe**呼び出し**MmMapLockedPagesSpecifyCache**で、 _CacheType_パラメーターに設定**MmCached**します。 以外のキャッシュの種類を必要とするドライバー **MmCached**呼び出す必要があります**MmMapLockedPagesSpecifyCache**呼び出す代わりに直接**MmGetSystemAddressForMdlSafe**します。 詳細については、 _CacheType_パラメーターを参照してください[ **MmMapLockedPagesSpecifyCache**](https://msdn.microsoft.com/library/windows/hardware/ff554629)します。
+新しいシステム アドレス空間マッピングを作成する**MmGetSystemAddressForMdlSafe**呼び出し**MmMapLockedPagesSpecifyCache**で、 _CacheType_パラメーターに設定**MmCached**します。 以外のキャッシュの種類を必要とするドライバー **MmCached**呼び出す必要があります**MmMapLockedPagesSpecifyCache**呼び出す代わりに直接**MmGetSystemAddressForMdlSafe**します。 詳細については、 _CacheType_パラメーターを参照してください[ **MmMapLockedPagesSpecifyCache**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmmaplockedpagesspecifycache)します。
 
 呼び出しで**MmMapLockedPagesSpecifyCache**、MDL によって記述されるページがあるまだないキャッシュの種類が関連付けられている場合にのみ、指定されたキャッシュの種類が使用されます。 ただし、ほぼすべての場合、ページが、関連付けられているキャッシュの種類では、既にあるし、このキャッシュの種類は、新しいマッピングによって使用されます。 このルールの例外は、によって割り当てられているページに**MmAllocatePagesForMdl**、キャッシュの種類に設定**MmCached**ページの元のキャッシュの種類に関係なく。
 
@@ -386,9 +386,9 @@ Windows 7 および Windows Server 2008 R2 以降、必要はありませんを�
 
 返されるベース アドレスが、MDL 仮想アドレスとして同じオフセット。
 
-Windows 98 はサポートしていません**MmGetSystemAddressForMdlSafe**します。 使用[ **MmGetSystemAddressForMdl** ](https://msdn.microsoft.com/library/windows/hardware/ff554556)代わりにします。
+Windows 98 はサポートしていません**MmGetSystemAddressForMdlSafe**します。 使用[ **MmGetSystemAddressForMdl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmgetsystemaddressformdl)代わりにします。
 
-このマクロを呼び出すため[ **MmMapLockedPagesSpecifyCache**](https://msdn.microsoft.com/library/windows/hardware/ff554629)、それを使用して NtosKrnl.lib へのリンクが必要があります。
+このマクロを呼び出すため[ **MmMapLockedPagesSpecifyCache**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmmaplockedpagesspecifycache)、それを使用して NtosKrnl.lib へのリンクが必要があります。
 
 Windows 2000 以降を使用できます。
 
@@ -446,7 +446,7 @@ _[In] Mdl_
 
 **VOID**
 
-このマクロは繰り返しの同じ割り当てられた MDL を使用するドライバーを使用、 _TargetMdl_への呼び出しのパラメーター、 [ **IoBuildPartialMdl** ](https://msdn.microsoft.com/library/windows/hardware/ff548324)ルーチン。 呼び出しの場合、 **MmPrepareMdlForReuse**、指定した部分的な MDL は、システム アドレス空間に関連付けられているマッピングを持つ**MmPrepareMdlForReuse** MDL を再利用できるように、マッピングを解放します。
+このマクロは繰り返しの同じ割り当てられた MDL を使用するドライバーを使用、 _TargetMdl_への呼び出しのパラメーター、 [ **IoBuildPartialMdl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iobuildpartialmdl)ルーチン。 呼び出しの場合、 **MmPrepareMdlForReuse**、指定した部分的な MDL は、システム アドレス空間に関連付けられているマッピングを持つ**MmPrepareMdlForReuse** MDL を再利用できるように、マッピングを解放します。
 
 **MmPrepareMdlForReuse**してビルドされる部分的な MDLs のみを受け入れる**IoBuildPartialMdl**します。 場合**MmPrepareMdlForReuse**受信システム アドレス空間にマップされますがビルドされませんでしたが、MDL **IoBuildPartialMdl**、 **MmPrepareMdlForReuse**によって解放されません。マッピングと、チェックのビルドが原因で失敗するアサーション。
 
@@ -494,7 +494,7 @@ IRQL:任意のレベル
 
 ページング可能なコードが含まれていますか、ページング可能なコードにアクセスするすべてのドライバー ルーチンの先頭には、このマクロに呼び出しを行う必要があります。
 
-**PAGED_CODE**マクロは、ドライバーのコードがマクロを実行するポイントでのみ IRQL を確認します。 その後、コードには、IRQL が発生した場合、マクロには、この変更は検出されません。 ドライバー開発者が使用する必要があります[Static Driver Verifier](https://msdn.microsoft.com/library/windows/hardware/ff552808)と[Driver Verifier](https://msdn.microsoft.com/library/windows/hardware/ff545448)ドライバー ルーチンの実行中に、IRQL が不適切に発生したときを検出します。
+**PAGED_CODE**マクロは、ドライバーのコードがマクロを実行するポイントでのみ IRQL を確認します。 その後、コードには、IRQL が発生した場合、マクロには、この変更は検出されません。 ドライバー開発者が使用する必要があります[Static Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier)と[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)ドライバー ルーチンの実行中に、IRQL が不適切に発生したときを検出します。
 
 **PAGED_CODE**マクロがチェック ビルドでのみ機能します。
 
@@ -526,15 +526,15 @@ _IdlePointer [で, out]_
 
 **PULONG**
 
-以外を指定**NULL**アイドル状態のポインターによって以前返された[ **PoRegisterDeviceForIdleDetection**](https://msdn.microsoft.com/library/windows/hardware/ff559721)します。 なお**PoRegisterDeviceForIdleDetection**返す可能性があります、 **NULL**ポインター。 呼び出し元**PoSetDeviceBusy**以外、ポインターがあることを確認する必要があります**NULL**に渡す前に**PoSetDeviceBusy**します。
+以外を指定**NULL**アイドル状態のポインターによって以前返された[ **PoRegisterDeviceForIdleDetection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-poregisterdeviceforidledetection)します。 なお**PoRegisterDeviceForIdleDetection**返す可能性があります、 **NULL**ポインター。 呼び出し元**PoSetDeviceBusy**以外、ポインターがあることを確認する必要があります**NULL**に渡す前に**PoSetDeviceBusy**します。
 
 **戻り値**
 
 **VOID**
 
-**注**、 [ **PoSetDeviceBusyEx** ](https://msdn.microsoft.com/library/windows/hardware/ff559759)ルーチンの代わりとして、 **PoSetDeviceBusy**マクロ。 Windows Vista Service Pack 1 (SP1)、以降のバージョンの Windows の新しいドライバーのコードを記述する場合は、呼び出す**PoSetDeviceBusyEx**の代わりに**PoSetDeviceBusy**します。
+**注**、 [ **PoSetDeviceBusyEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-posetdevicebusyex)ルーチンの代わりとして、 **PoSetDeviceBusy**マクロ。 Windows Vista Service Pack 1 (SP1)、以降のバージョンの Windows の新しいドライバーのコードを記述する場合は、呼び出す**PoSetDeviceBusyEx**の代わりに**PoSetDeviceBusy**します。
 
-ドライバーを使用して**PoSetDeviceBusy**と共に**PoRegisterDeviceForIdleDetection**システム、デバイスのアイドル状態の検出を有効にします。 電源マネージャーが送信アイドル状態の検出のために登録されているデバイスがアイドル状態になった場合、 [ **IRP_MN_SET_POWER** ](https://msdn.microsoft.com/library/windows/hardware/ff551744)デバイスを要求されたスリープ状態にする要求。
+ドライバーを使用して**PoSetDeviceBusy**と共に**PoRegisterDeviceForIdleDetection**システム、デバイスのアイドル状態の検出を有効にします。 電源マネージャーが送信アイドル状態の検出のために登録されているデバイスがアイドル状態になった場合、 [ **IRP_MN_SET_POWER** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-set-power)デバイスを要求されたスリープ状態にする要求。
 
 **PoSetDeviceBusy**電源マネージャーがアイドル状態にカウント ダウンを再起動できるように、デバイスがビジー状態であるかを報告します。 場合は、デバイスは、電源が入っていない**PoSetDeviceBusy**その状態は変更されません。 つまり、電源オン要求を送信するシステムは発生しません。
 
@@ -668,7 +668,7 @@ _[Out] DestinationString_
 
 **PANSI_STRING**
 
-ポインター、 [ **ANSI_STRING** ](https://msdn.microsoft.com/library/windows/hardware/ff540605)構造体を初期化します。
+ポインター、 [ **ANSI_STRING** ](https://docs.microsoft.com/windows/desktop/api/ntdef/ns-ntdef-_string)構造体を初期化します。
 
 _[In] バッファーします。_
 
@@ -694,7 +694,7 @@ _[In] BufferSize_
 
 *   **バッファー**します。 _SourceString_します。
 
-空でないカウント Unicode 文字列を初期化するために呼び出す[ **RtlInitAnsiString**](https://msdn.microsoft.com/library/windows/hardware/ff561918)します。
+空でないカウント Unicode 文字列を初期化するために呼び出す[ **RtlInitAnsiString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-rtlinitansistring)します。
 
 Microsoft Windows XP および Windows の以降のバージョンで使用できます。
 
@@ -711,7 +711,7 @@ _[Out] DestinationString_
 
 **PUNICODE_STRING**
 
-ポインター、 [ **UNICODE_STRING** ](https://msdn.microsoft.com/library/windows/hardware/ff564879)構造体を初期化します。
+ポインター、 [ **UNICODE_STRING** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfwdm/ns-wudfwdm-_unicode_string)構造体を初期化します。
 
 _[In] バッファーします。_
 
@@ -737,7 +737,7 @@ _[In] BufferSize_
 
 *   **バッファー**します。 _SourceString_します。
 
-空でないカウント Unicode 文字列を初期化するために呼び出す[ **RtlInitUnicodeString**](https://msdn.microsoft.com/library/windows/hardware/ff561934)します。
+空でないカウント Unicode 文字列を初期化するために呼び出す[ **RtlInitUnicodeString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-rtlinitunicodestring)します。
 
 Windows xp 以降を使用できます。
 
@@ -754,7 +754,7 @@ _[In] L1_
 
 **PLUID**
 
-指定します、 [ **LUID** ](https://msdn.microsoft.com/library/windows/hardware/ff554334)を確認します。
+指定します、 [ **LUID** ](https://docs.microsoft.com/windows/desktop/api/ntdef/ns-ntdef-_luid)を確認します。
 
 **戻り値**
 

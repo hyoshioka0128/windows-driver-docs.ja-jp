@@ -9,12 +9,12 @@ keywords:
 - YUV 形式と WMF WDK の表示をサポートします。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: df9b36283db5b7c8c811ed12ae05a5d0da2ba880
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9343525733da15824bc51ac382e43ff4c0272f5a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63371416"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372026"
 ---
 # <a name="yuv-format-ranges-in-windows81"></a>Windows 8.1 で YUV 形式の範囲
 
@@ -53,16 +53,16 @@ Windows 8.1、メディア ファンデーション studio 輝度の範囲にサ
 
 ### <a name="span-idnewenumerationsspanspan-idnewenumerationsspanspan-idnewenumerationsspannew-enumerations"></a><span id="New_enumerations"></span><span id="new_enumerations"></span><span id="NEW_ENUMERATIONS"></span>新しい列挙体
 
--   [**D3D11\_1DDI\_ビデオ\_プロセッサ\_公称\_範囲**](https://msdn.microsoft.com/library/windows/hardware/dn265173)
--   [**DXVAHDDDI\_公称\_範囲**](https://msdn.microsoft.com/library/windows/hardware/dn265432)
+-   [**D3D11\_1DDI\_ビデオ\_プロセッサ\_公称\_範囲**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/ne-d3d10umddi-d3d11_1ddi_video_processor_nominal_range)
+-   [**DXVAHDDDI\_公称\_範囲**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ne-d3dumddi-_dxvahdddi_nominal_range)
 
 ### <a name="span-idchangedstructuresandenumerationsspanspan-idchangedstructuresandenumerationsspanspan-idchangedstructuresandenumerationsspanchanged-structures-and-enumerations"></a><span id="Changed_structures_and_enumerations"></span><span id="changed_structures_and_enumerations"></span><span id="CHANGED_STRUCTURES_AND_ENUMERATIONS"></span>変更された構造および列挙体
 
--   [**D3D11\_1DDI\_ビデオ\_プロセッサ\_色\_領域**](https://msdn.microsoft.com/library/windows/hardware/hh450970)
--   [**D3D11\_1DDI\_ビデオ\_プロセッサ\_デバイス\_キャップ**](https://msdn.microsoft.com/library/windows/hardware/hh450978)
--   [**DXVAHDDDI\_BLT\_STATE\_OUTPUT\_COLOR\_SPACE\_DATA**](https://msdn.microsoft.com/library/windows/hardware/ff563002)
--   [**DXVAHDDDI\_STREAM\_STATE\_INPUT\_COLOR\_SPACE\_DATA**](https://msdn.microsoft.com/library/windows/hardware/ff563084)
--   [**DXVAHDDDI\_VPDEVCAPS**](https://msdn.microsoft.com/library/windows/hardware/ff563113)
+-   [**D3D11\_1DDI\_ビデオ\_プロセッサ\_色\_領域**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/ns-d3d10umddi-d3d11_1ddi_video_processor_color_space)
+-   [**D3D11\_1DDI\_ビデオ\_プロセッサ\_デバイス\_キャップ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/ne-d3d10umddi-d3d11_1ddi_video_processor_device_caps)
+-   [**DXVAHDDDI\_BLT\_STATE\_OUTPUT\_COLOR\_SPACE\_DATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ns-d3dumddi-_dxvahdddi_blt_state_output_color_space_data)
+-   [**DXVAHDDDI\_STREAM\_STATE\_INPUT\_COLOR\_SPACE\_DATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ns-d3dumddi-_dxvahdddi_stream_state_input_color_space_data)
+-   [**DXVAHDDDI\_VPDEVCAPS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ns-d3dumddi-_dxvahdddi_vpdevcaps)
 
 **注**  WDDM 1.3、および大きいユーザー モードのディスプレイ ドライバーはこれらの追加または変更された構造および列挙体のすべてでサポートする必要があります。
 
