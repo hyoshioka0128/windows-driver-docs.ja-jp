@@ -10,12 +10,12 @@ keywords:
 - ピクセルあたり 8 ビット CMY マスク モード WDK GDI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 32dad429bf1ce8b92fa66ffeeb4eca5bb1e95c0f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cdb2ffafb7fe1edc6fdc286f9dbdaf4de5cfeb52
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389032"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370620"
 ---
 # <a name="using-gdi-8-bit-per-pixel-cmy-mask-modes"></a>GDI 8 ビット/ピクセル CMY マスク モードの使用
 
@@ -23,19 +23,19 @@ ms.locfileid: "63389032"
 ## <span id="ddk_using_gdi_8_bit_per_pixel_cmy_mask_modes_gg"></span><span id="DDK_USING_GDI_8_BIT_PER_PIXEL_CMY_MASK_MODES_GG"></span>
 
 
-Microsoft Windows 2000、 [ **HT\_Get8BPPMaskPalette** ](https://msdn.microsoft.com/library/windows/hardware/ff567320)ピクセルあたり 8 ビット モノクロまたは CMY パレット関数が返されます。 CMY パレットの転置インデックスも返されるように、この関数が変更された Windows XP 以降では、ときに、 *Use8BPPMaskPal*にパラメーターが設定されている**TRUE**します。 格納されている値に依存パレットの型が返される*pPaletteEntry*\[0\]とき**HT\_Get8BPPMaskPalette**が呼び出されます。 場合*pPaletteEntry*\[0\]設定されている 'RGB0' に、反転されたインデックスのパレットが返されます。 場合*pPaletteEntry*\[0\]設定は 0 に通常 CMY パレットが返されます。
+Microsoft Windows 2000、 [ **HT\_Get8BPPMaskPalette** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-ht_get8bppmaskpalette)ピクセルあたり 8 ビット モノクロまたは CMY パレット関数が返されます。 CMY パレットの転置インデックスも返されるように、この関数が変更された Windows XP 以降では、ときに、 *Use8BPPMaskPal*にパラメーターが設定されている**TRUE**します。 格納されている値に依存パレットの型が返される*pPaletteEntry*\[0\]とき**HT\_Get8BPPMaskPalette**が呼び出されます。 場合*pPaletteEntry*\[0\]設定されている 'RGB0' に、反転されたインデックスのパレットが返されます。 場合*pPaletteEntry*\[0\]設定は 0 に通常 CMY パレットが返されます。
 
 この動作の変更の理由**HT\_Get8BPPMaskPalette** Windows GDI Rop、パレット内のインデックスでは、パレットの色ではなくに基づいていますが、これを使用することを想定している、パレットのインデックス 0 は常には黒と白は常に最後のインデックス。 GDI は、パレット エントリをチェックしません。 この変更で**HT\_Get8BPPMaskPalette**により正しい ROP が反転される結果ではなく、出力のようになります。
 
 GDI ROP 動作を修正するには、Windows XP 以降の GDI 形式をサポートして、特別な CMY パレット コンポジション CMY マスク パレット エントリの開始時刻を 255 (白) のインデックスし、インデックスのインデックスを開始位置ではなく (黒) 0 までの作業の 0 (白) と 25 のインデックス操作5 (黒)。 反転 CMY モードでは、先頭と末尾のと同じ黒と白のエントリ数が埋め込まれたパレットで、256 エントリの完全なパレットの中央に CMY マスク色のすべてのエントリも移動します。
 
-**注**   、ディスカッションの用語*CMY モード*以前の実装でサポートされているモードを指す[ **HT\_Get8BPPMaskPalette**](https://msdn.microsoft.com/library/windows/hardware/ff567320). 用語*CMY\_反転モード*Windows XP およびそれ以降の GDI、この関数がビットマスクを反転させますでのみサポートされているモードを指すときにインデックス*pPaletteEntry*\[0\] 'RGB0' に設定されます。
+**注**   、ディスカッションの用語*CMY モード*以前の実装でサポートされているモードを指す[ **HT\_Get8BPPMaskPalette**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-ht_get8bppmaskpalette). 用語*CMY\_反転モード*Windows XP およびそれ以降の GDI、この関数がビットマスクを反転させますでのみサポートされているモードを指すときにインデックス*pPaletteEntry*\[0\] 'RGB0' に設定されます。
 
  
 
 次の手順は、すべての Windows XP および Windows GDI ハーフトーン ピクセルあたり 8 ビット CMY マスクのモードを使用するドライバーを後で必要です。 Windows 2000 用のドライバーを開発している場合は、ピクセルあたり 8 ビット モノクロ パレットに、ドライバーの使用を制限する必要があります。
 
-1.  設定、 **flHTFlags**のメンバー、 [ **GDIINFO** ](https://msdn.microsoft.com/library/windows/hardware/ff566484) HT 構造\_フラグ\_反転\_8BPP\_ビットマスク\_IDX CMY のいずれかでイメージを表示する GDI ように\_反転モード。
+1.  設定、 **flHTFlags**のメンバー、 [ **GDIINFO** ](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_gdiinfo) HT 構造\_フラグ\_反転\_8BPP\_ビットマスク\_IDX CMY のいずれかでイメージを表示する GDI ように\_反転モード。
 
 2.  設定*pPaletteEntry*\[0\]への呼び出しの前に次のように**HT\_Get8BPPMaskPalette**:
 
@@ -54,7 +54,7 @@ GDI ROP 動作を修正するには、Windows XP 以降の GDI 形式をサポ�
 
     ここで*pPaletteEntry*への呼び出しで渡された受け取るへのポインター、 **HT\_Get8BPPMaskPalette**関数。 このマクロには、実行が完了すると*pPaletteEntry*\[0\] 'RGB0' 文字列が格納されます。
 
-3.  チェック、 *pPaletteEntry*への呼び出しから返されるパラメーター [ **HT\_Get8BPPMaskPalette** ](https://msdn.microsoft.com/library/windows/hardware/ff567320)を使用して、 **HT\_IS\_BITMASKPALRGB**マクロで定義されている*winddi.h*します。 このマクロの使用例を次に示します。
+3.  チェック、 *pPaletteEntry*への呼び出しから返されるパラメーター [ **HT\_Get8BPPMaskPalette** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-ht_get8bppmaskpalette)を使用して、 **HT\_IS\_BITMASKPALRGB**マクロで定義されている*winddi.h*します。 このマクロの使用例を次に示します。
 
     ```cpp
     InvCMYSupported = HT_IS_BITMASKPALRGB(pPaletteEntry)
@@ -64,7 +64,7 @@ GDI ROP 動作を修正するには、Windows XP 以降の GDI 形式をサポ�
 
     このマクロを返す場合**FALSE**、GDI の現在のバージョン、*しない*反転 CMY ピクセルあたり 8 ビットのビットマスクのモードをサポートします。 その場合は、GDI では、古い CMY noninverted モードのみがサポートされています。
 
-ピクセルあたり 8 ビット CMY をサポートする GDI バージョン\_反転モードでは、意味、 *CMYMask*に渡されるパラメーター値、 [ **HT\_Get8BPPMaskPalette**](https://msdn.microsoft.com/library/windows/hardware/ff567320)関数が変更されました。 次の表は、変更内容をまとめたものです。
+ピクセルあたり 8 ビット CMY をサポートする GDI バージョン\_反転モードでは、意味、 *CMYMask*に渡されるパラメーター値、 [ **HT\_Get8BPPMaskPalette**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-ht_get8bppmaskpalette)関数が変更されました。 次の表は、変更内容をまとめたものです。
 
 <table>
 <colgroup>
@@ -78,7 +78,7 @@ GDI ROP 動作を修正するには、Windows XP 以降の GDI 形式をサポ�
 <div>
  
 </div>
-値</th>
+Value</th>
 <th align="left">CMY モード インデックス
 <div>
  
@@ -186,7 +186,7 @@ XOR ROP が正しく動作するためには、インデックス 127 と 128 �
 <div>
  
 </div>
-<strong>注意</strong>:これらのモードでは、有効な組み合わせ必要ありません、シアン、マゼンタ、または黄色のインク レベル 0 のいずれか。 このような組み合わせでは、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff567320" data-raw-source="[&lt;strong&gt;HT_Get8BPPMaskPalette&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567320)"> <strong>HT_Get8BPPMaskPalette</strong> </a>で 0 カウント パレットを返すことによって、エラー状態を示す、 <em>pPaletteEntry</em>パラメーター。</td>
+<strong>注意</strong>:これらのモードでは、有効な組み合わせ必要ありません、シアン、マゼンタ、または黄色のインク レベル 0 のいずれか。 このような組み合わせでは、 <a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-ht_get8bppmaskpalette" data-raw-source="[&lt;strong&gt;HT_Get8BPPMaskPalette&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-ht_get8bppmaskpalette)"> <strong>HT_Get8BPPMaskPalette</strong> </a>で 0 カウント パレットを返すことによって、エラー状態を示す、 <em>pPaletteEntry</em>パラメーター。</td>
 <td align="left"><p>0:黒</p>
 <div>
  
@@ -220,7 +220,7 @@ CxMxY が奇数の場合は、128 のインデックス位置にあるエント�
 <div>
  
 </div>
-<strong>注意</strong>:これらのモードでは、有効な組み合わせ必要ありません、シアン、マゼンタ、または黄色のインク レベル 0 のいずれか。 このような組み合わせでは、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff567320" data-raw-source="[&lt;strong&gt;HT_Get8BPPMaskPalette&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567320)"> <strong>HT_Get8BPPMaskPalette</strong> </a>で 0 カウント パレットを返すことによって、エラー状態を示す、 <em>pPaletteEntry</em>パラメーター。</td>
+<strong>注意</strong>:これらのモードでは、有効な組み合わせ必要ありません、シアン、マゼンタ、または黄色のインク レベル 0 のいずれか。 このような組み合わせでは、 <a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-ht_get8bppmaskpalette" data-raw-source="[&lt;strong&gt;HT_Get8BPPMaskPalette&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-ht_get8bppmaskpalette)"> <strong>HT_Get8BPPMaskPalette</strong> </a>で 0 カウント パレットを返すことによって、エラー状態を示す、 <em>pPaletteEntry</em>パラメーター。</td>
 </tr>
 </tbody>
 </table>

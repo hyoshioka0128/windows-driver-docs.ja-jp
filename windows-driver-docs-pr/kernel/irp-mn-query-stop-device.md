@@ -6,12 +6,12 @@ ms.assetid: 22f58964-23a0-4307-a748-9c1620e30871
 keywords:
 - IRP_MN_QUERY_STOP_DEVICE カーネル モード ドライバーのアーキテクチャ
 ms.localizationpriority: medium
-ms.openlocfilehash: 81dc0f034b028e240b637525b3e5026a5b78b938
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 14c43846bb6b27b1b09a8a5e79bcb1f9d36a1f93
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381418"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370850"
 ---
 # <a name="irpmnquerystopdevice"></a>IRP\_MN\_クエリ\_停止\_デバイス
 
@@ -54,9 +54,9 @@ PnP マネージャーでは、この IRP を送信 IRQL パッシブで\_シス
 
 この IRP に応答して、Windows 2000 およびそれ以降のドライバーを示してのリソースの負荷を分散デバイスを停止しても安全だかどうか。
 
-Windows 98 でリソースが再調整時にだけでなくこの IRP が送信されますがもときに、デバイスは無効化/。 ドライバーがこれら 2 つの状況を識別できないため、デバイスを無効にするのを続行するようにします。 デバイスに開いているハンドルがある場合は、ドライバーはこの IRP に失敗します。 」の説明に従って、ドライバーを続行する開いているハンドルがない場合は、 [IRP の処理\_MN\_クエリ\_停止\_デバイス要求 (Windows 98/Me)](https://msdn.microsoft.com/library/windows/hardware/ff546684)します。
+Windows 98 でリソースが再調整時にだけでなくこの IRP が送信されますがもときに、デバイスは無効化/。 ドライバーがこれら 2 つの状況を識別できないため、デバイスを無効にするのを続行するようにします。 デバイスに開いているハンドルがある場合は、ドライバーはこの IRP に失敗します。 」の説明に従って、ドライバーを続行する開いているハンドルがない場合は、 [IRP の処理\_MN\_クエリ\_停止\_デバイス要求 (Windows 98/Me)](https://docs.microsoft.com/windows-hardware/drivers/kernel/handling-an-irp-mn-query-stop-device-request--windows-98-me-)します。
 
-参照してください[プラグ アンド プレイ](https://msdn.microsoft.com/library/windows/hardware/ff547125)処理のための一般的な規則[プラグ アンド プレイ マイナー Irp](plug-and-play-minor-irps.md)します。
+参照してください[プラグ アンド プレイ](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)処理のための一般的な規則[プラグ アンド プレイ マイナー Irp](plug-and-play-minor-irps.md)します。
 
 **この IRP を送信します。**
 

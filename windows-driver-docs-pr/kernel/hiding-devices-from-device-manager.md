@@ -10,19 +10,19 @@ keywords:
 - NoDisplayClass 値 WDK デバイスのインストール
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cd9a2483d39287f6dd2f0dc6a8ab0737e84b02d6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7ca217d09111a19bfc6cef8b81c677e0c321f6ed
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358798"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371880"
 ---
 # <a name="hiding-devices-from-device-manager"></a>デバイス マネージャーでのデバイスの非表示
 
 
 既定では、デバイス マネージャーは、コンピューター上のすべてのデバイスの状態を示します。 状況によっては、特定のデバイスでデバイス マネージャーに表示されないようにする場合があります。 たとえば、マザーボードには、CardBus コント ローラーではないユーザーがアクセスできるスロットがあります。 ユーザーが、スロットを使用できないため、デバイスに関する情報を表示するデバイス マネージャーをしないようにします。
 
-デバイス マネージャーでデバイスを非表示にするには、としてデバイスをマークすることができます、*非表示デバイス*します。 通常、デバイス マネージャーでは、非表示のデバイスは表示されません。 (ただし、ユーザーがこの設定を上書きしても、デバイス マネージャー内のすべてのデバイスを表示できますでものを表示します。 この設定を上書きする方法の詳細については、次を参照してください[非表示のデバイスを表示する](https://msdn.microsoft.com/library/windows/hardware/ff553955)。)。
+デバイス マネージャーでデバイスを非表示にするには、としてデバイスをマークすることができます、*非表示デバイス*します。 通常、デバイス マネージャーでは、非表示のデバイスは表示されません。 (ただし、ユーザーがこの設定を上書きしても、デバイス マネージャー内のすべてのデバイスを表示できますでものを表示します。 この設定を上書きする方法の詳細については、次を参照してください[非表示のデバイスを表示する](https://docs.microsoft.com/windows-hardware/drivers/install/viewing-hidden-devices)。)。
 
 デバイスの非表示としてマークする 2 つの方法があります。 デバイスのドライバーや、ACPI BIOS を使用しています。
 
@@ -30,9 +30,9 @@ ms.locfileid: "63358798"
 
 ドライバーをドライバーを非表示としてマークする 2 つの方法があります。
 
--   関数のドライバーまたはフィルター ドライバーの関数が応答することで正常に開始されたデバイスを非表示にするオペレーティング システムを問い合わせることができる、 [ **IRP\_MN\_クエリ\_PNP\_デバイス\_状態**](https://msdn.microsoft.com/library/windows/hardware/ff551698) IRP します。 ドライバー、PNP を設定する必要があります、IRP が到着すると、\_デバイス\_不要\_表示\_UI ビット**IoStatus.Information**に**TRUE**ドライバーのルーチンをディスパッチします。
+-   関数のドライバーまたはフィルター ドライバーの関数が応答することで正常に開始されたデバイスを非表示にするオペレーティング システムを問い合わせることができる、 [ **IRP\_MN\_クエリ\_PNP\_デバイス\_状態**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-pnp-device-state) IRP します。 ドライバー、PNP を設定する必要があります、IRP が到着すると、\_デバイス\_不要\_表示\_UI ビット**IoStatus.Information**に**TRUE**ドライバーのルーチンをディスパッチします。
 
--   Windows XP および Windows オペレーティング システムの以降のバージョンでは、バス ドライバーまたはバス フィルター ドライバーを非表示に任意のデバイスでは、開始、またはそれ以外の場合、応答することで、 [ **IRP\_MN\_クエリ\_機能**](https://msdn.microsoft.com/library/windows/hardware/ff551664) IRP します。 IRP が到着すると、ドライバーを設定する必要があります、 **Parameters.DeviceCapabilities.NoDisplayInUI**メンバー **TRUE**ドライバーのディスパッチ ルーチンでします。 場合によっては、bus フィルター ドライバーが完了ルーチンで、このビットを設定する必要があります。 基になるバス ドライバーのディスパッチ ルーチンが他のドライバーの設定機能のすべてのフィールドを正しく消去時に、この余分な手順が必要です。
+-   Windows XP および Windows オペレーティング システムの以降のバージョンでは、バス ドライバーまたはバス フィルター ドライバーを非表示に任意のデバイスでは、開始、またはそれ以外の場合、応答することで、 [ **IRP\_MN\_クエリ\_機能**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-capabilities) IRP します。 IRP が到着すると、ドライバーを設定する必要があります、 **Parameters.DeviceCapabilities.NoDisplayInUI**メンバー **TRUE**ドライバーのディスパッチ ルーチンでします。 場合によっては、bus フィルター ドライバーが完了ルーチンで、このビットを設定する必要があります。 基になるバス ドライバーのディスパッチ ルーチンが他のドライバーの設定機能のすべてのフィールドを正しく消去時に、この余分な手順が必要です。
 
 ### <a name="hiding-devices-by-using-the-acpi-bios"></a>ACPI BIOS を使用してデバイスを非表示
 

@@ -3,12 +3,12 @@ title: MB プロビジョニング済みコンテキスト操作
 description: MB プロビジョニング済みコンテキスト操作
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b472c9c19d2299ecb08f7df3999b9570e8328cec
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 825eec779751cb37fa0d672ca9d8a05a075b9346
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353763"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374048"
 ---
 # <a name="mb-provisioned-context-operations"></a>MB プロビジョニング済みコンテキスト操作
 
@@ -19,7 +19,7 @@ ms.locfileid: "63353763"
 
 理想的には、モデムは、OS が認識する必要はありません、APN 構成をのみ格納する必要があります。 ただし、IHV および OEM のパートナーが通例、インターネットと購入の APNs、既知のモデムでのオペレーティング システムを構成します。 Windows 10 バージョン 1703 のリリースでは、前に Windows は、インターネットと購入の APN の構成のインターネット接続を確立するために、モデムからのみ読み取ることにします。 以降では、Windows 10 バージョン 1703 である可能性がありますをモデムの APN 構成する必要があります、Windows によって管理される携帯電話の設定を変更するユーザー設定など、OS や OMA DM 内のクライアントがある場合に特にケースを追加します。 これは、さらに可能性がありますもモデムの APN の構成に影響します。 たとえば、ある可能性があります、IMS スタック IMS 経由で sms IMS APN を使用されているモデムでします。 通常、特定のシナリオにおける IMS APN 構成を変更する必要がありますが、os、それらの接続は公開されません。 この変更は、OS から実行できます。 これをサポートするために、OS を Windows 10 バージョン 1703 以降、モデムに APNs のさまざまな種類を構成できます。
 
-USB フォーラムの MBIM 1.0 と Microsoft NDIS、既存の CID OID それぞれできるようになり、モデムの APN 構成の照会や設定を OS があります。 MBIM 1.0 は MBIM_CID_PROVISIONED_CONTEXT はこれを NDIS の[OID_WWAN_PROVISIONED_CONTEXTS](https://msdn.microsoft.com/library/windows/hardware/ff569831)します。 ただし、既存の CID と OID に設計されていません、モデムの電源を入れまたは SIM スワップなど、さまざまな状況で動作が予想される方法の明確なガイダンスとします。 OS の構成をサポートするデバイスをモデム プロビジョニングのコンテキストの今後の更新で Windows 10 バージョン 1703 OID、CID の新しいバージョンを実装する必要があります。 Ihv と Oem の OS バージョン 1703 より前に新しいハードウェアをサポートする下位互換性を確保できるように、既存 MBIM_CID_PROVISIONED_CONTEXT OID_WWAN_PROVISIONED_CONTEXTS をサポートするために続行する必要があります。  以降 Windows 10 では、バージョン 1703、デバイスは、OID OS し、CID の新しいバージョンをサポートしている場合はのみを使用して、コマンドの新しいバージョンを照会して、モデムの APN コンテキスト構成を設定します。 
+USB フォーラムの MBIM 1.0 と Microsoft NDIS、既存の CID OID それぞれできるようになり、モデムの APN 構成の照会や設定を OS があります。 MBIM 1.0 は MBIM_CID_PROVISIONED_CONTEXT はこれを NDIS の[OID_WWAN_PROVISIONED_CONTEXTS](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-provisioned-contexts)します。 ただし、既存の CID と OID に設計されていません、モデムの電源を入れまたは SIM スワップなど、さまざまな状況で動作が予想される方法の明確なガイダンスとします。 OS の構成をサポートするデバイスをモデム プロビジョニングのコンテキストの今後の更新で Windows 10 バージョン 1703 OID、CID の新しいバージョンを実装する必要があります。 Ihv と Oem の OS バージョン 1703 より前に新しいハードウェアをサポートする下位互換性を確保できるように、既存 MBIM_CID_PROVISIONED_CONTEXT OID_WWAN_PROVISIONED_CONTEXTS をサポートするために続行する必要があります。  以降 Windows 10 では、バージョン 1703、デバイスは、OID OS し、CID の新しいバージョンをサポートしている場合はのみを使用して、コマンドの新しいバージョンを照会して、モデムの APN コンテキスト構成を設定します。 
 
 ## <a name="mb-interface-update-for-provisioned-context-operations"></a>プロビジョニングされたコンテキスト操作 MB インターフェイスの更新
 

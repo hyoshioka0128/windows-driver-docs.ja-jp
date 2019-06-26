@@ -12,12 +12,12 @@ keywords:
 - アイコン
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8bb5f11c654adf814a47ed669fad989fdaf2bef9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: adf3052ca42132558adfc1e64445523bb9431862
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387371"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384389"
 ---
 # <a name="ndis-support-for-wmi"></a>WMI の NDIS サポート
 
@@ -29,9 +29,9 @@ ms.locfileid: "63387371"
 
 NDIS は、ミニポート アダプターが、WMI では、各ミニポート アダプターの仮想接続 (VCs) と一連のグローバル一意識別子 (Guid) をという名前が自動的に登録します。 これらの Guid の詳細については、次を参照してください。[標準ミニポート ドライバー Oid に登録されている WMI](standard-miniport-driver-oids-registered-with-wmi.md)します。 ミニポート ドライバーもなサポートを提供カスタム オブジェクト識別子 (Oid) とカスタム状態のインジケーターとして、 [Oid のカスタマイズと状態インジケーター](customized-oids-and-status-indications.md)トピックについて説明します。
 
-NDIS では、プロトコルのドライバーの WMI のサポートは提供されません。 プロトコル ドライバー、または、中間のドライバーは自身のデバイス オブジェクトを作成し、WMI を直接登録できます。 WMI を直接登録の詳細については、次を参照してください。 [WMI データ プロバイダーとして登録する](https://msdn.microsoft.com/library/windows/hardware/ff560870)します。
+NDIS では、プロトコルのドライバーの WMI のサポートは提供されません。 プロトコル ドライバー、または、中間のドライバーは自身のデバイス オブジェクトを作成し、WMI を直接登録できます。 WMI を直接登録の詳細については、次を参照してください。 [WMI データ プロバイダーとして登録する](https://docs.microsoft.com/windows-hardware/drivers/kernel/registering-as-a-wmi-data-provider)します。
 
-WMI アーキテクチャの詳細については、次を参照してください。 [Windows Management Instrumentation](https://msdn.microsoft.com/library/windows/hardware/ff547139)します。
+WMI アーキテクチャの詳細については、次を参照してください。 [Windows Management Instrumentation](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-wmi)します。
 
 このセクションの内容:
 

@@ -6,12 +6,12 @@ keywords:
 - NetAdapterCx に対する制御要求の処理、NetCx コントロールの処理を要求します。
 ms.date: 06/05/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a69a536cee452975b9c0853d4911dcc0232c78b1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 264696701099bb555b5bda09dc29a22e10bfc630
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372768"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386370"
 ---
 # <a name="handling-control-requests"></a>制御要求の処理
 
@@ -42,7 +42,7 @@ NetAdapterCx モデルでは、クライアントは、(Oid) のコントロー�
 
 どちらの方法は、スイッチ ステートメントを使用して、残りの部分を既定のハンドラーを使用しながら、いくつかの Oid のカスタム ハンドラーを提供することで同じドライバーを使用できます。
 
-クライアント ドライバーは、OID ハンドラーを登録します。 その[ *EvtDriverDeviceAdd* ](https://msdn.microsoft.com/library/windows/hardware/ff541693)ルーチン。
+クライアント ドライバーは、OID ハンドラーを登録します。 その[ *EvtDriverDeviceAdd* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)ルーチン。
 
 次のコントロール、クライアントが提供できる要求のハンドラーに示します。
 
@@ -105,7 +105,7 @@ if(!NT_SUCCESS(status))
 }
 ```
 
-NetAdapterCx にコントロール要求ハンドラーのドライバーのクライアントを呼び出すことができますとすぐに[ *EVT_WDF_DEVICE_PREPARE_HARDWARE* ](https://msdn.microsoft.com/library/windows/hardware/ff540880)呼び出し時まで返します[ *EVT_WDF_DEVICE_RELEASE_HARDWARE*](https://msdn.microsoft.com/library/windows/hardware/ff540890)します。
+NetAdapterCx にコントロール要求ハンドラーのドライバーのクライアントを呼び出すことができますとすぐに[ *EVT_WDF_DEVICE_PREPARE_HARDWARE* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)呼び出し時まで返します[ *EVT_WDF_DEVICE_RELEASE_HARDWARE*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_release_hardware)します。
 
 ## <a name="completing-requests"></a>要求の完了
 

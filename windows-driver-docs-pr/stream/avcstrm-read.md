@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: de3cfc78bd3bd34b4ed2880a140b41e9b7d5739c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 125ccb8beb41266c3ec6212fb0750cf96dfaff19
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374488"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386715"
 ---
 # <a name="avcstrmread"></a>AVCSTRM\_READ
 
@@ -94,14 +94,14 @@ typedef struct _AVC_STREAM_REQUEST_BLOCK {
 } AVC_STREAM_REQUEST_BLOCK, *PAVC_STREAM_REQUEST_BLOCK;
 ```
 
-### <a name="requirements"></a>要件
+### <a name="requirements"></a>必要条件
 
 **ヘッダー:** 宣言されている*avcstrm.h*します。 含める*avcstrm.h*します。
 
 ### <a name="span-idavcstreamrequestblockinputspanspan-idavcstreamrequestblockinputspanavcstreamrequestblock-input"></a><span id="avc_stream_request_block_input"></span><span id="AVC_STREAM_REQUEST_BLOCK_INPUT"></span>AVC\_ストリーム\_要求\_ブロックの入力
 
 <span id="SizeOfThisBlock__Version_and_Function"></span><span id="sizeofthisblock__version_and_function"></span><span id="SIZEOFTHISBLOCK__VERSION_AND_FUNCTION"></span>**SizeOfThisBlock、バージョン、および関数**  
-使用して、 [ **INIT\_AVCSTRM\_ヘッダー** ](https://msdn.microsoft.com/library/windows/hardware/ff560750)マクロをこれらのメンバーを初期化します。 渡す**AVCSTRM\_読み取り**マクロの要求の引数にします。
+使用して、 [ **INIT\_AVCSTRM\_ヘッダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avcstrm/nf-avcstrm-init_avcstrm_header)マクロをこれらのメンバーを初期化します。 渡す**AVCSTRM\_読み取り**マクロの要求の引数にします。
 
 <span id="AVCStreamContext"></span><span id="avcstreamcontext"></span><span id="AVCSTREAMCONTEXT"></span>**AVCStreamContext**  
 によって以前返されるストリームのコンテキスト (ハンドル) を指定**AVCSTRM\_オープン**読み取り操作はデータのソースを呼び出します。
@@ -109,9 +109,9 @@ typedef struct _AVC_STREAM_REQUEST_BLOCK {
 <span id="BufferStruct"></span><span id="bufferstruct"></span><span id="BUFFERSTRUCT"></span>**BufferStruct**  
 バッファーの読み取り操作でデータを配置する必要がありますを指定します。
 
-サブユニット ドライバーは IRP を割り当てる必要があります最初、 [ **AVC\_ストリーム\_要求\_ブロック**](https://msdn.microsoft.com/library/windows/hardware/ff554194)構造体。 次に、使用する必要があります、 [ **INIT\_AVCSTRM\_ヘッダー** ](https://msdn.microsoft.com/library/windows/hardware/ff560750) 、AVC を初期化するためにマクロ\_ストリーム\_要求\_ブロック構造体渡す**AVCSTRM\_読み取り**マクロに要求の引数として。 次に、サブユニット ドライバーの設定、 **AVCStreamContext**に読み取られるデータを提供するストリームのストリーム コンテキスト (ハンドル) のメンバー。 最後に、サブユニット ドライバーの設定、 **BufferStruct**のメンバー、 **CommandData**にデータをバッファーの読み取り操作を記述する共用体に配置します。
+サブユニット ドライバーは IRP を割り当てる必要があります最初、 [ **AVC\_ストリーム\_要求\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avcstrm/ns-avcstrm-_avc_stream_request_block)構造体。 次に、使用する必要があります、 [ **INIT\_AVCSTRM\_ヘッダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avcstrm/nf-avcstrm-init_avcstrm_header) 、AVC を初期化するためにマクロ\_ストリーム\_要求\_ブロック構造体渡す**AVCSTRM\_読み取り**マクロに要求の引数として。 次に、サブユニット ドライバーの設定、 **AVCStreamContext**に読み取られるデータを提供するストリームのストリーム コンテキスト (ハンドル) のメンバー。 最後に、サブユニット ドライバーの設定、 **BufferStruct**のメンバー、 **CommandData**にデータをバッファーの読み取り操作を記述する共用体に配置します。
 
-この要求を送信するには、サブユニットの送信、 [ **IRP\_MJ\_内部\_デバイス\_コントロール**](https://msdn.microsoft.com/library/windows/hardware/ff550766)で IRP、 **IoControlCode** IRP のメンバーに設定[ **IOCTL\_AVCSTRM\_クラス**](https://msdn.microsoft.com/library/windows/hardware/ff560778)と **[引数 1]** IRP のメンバーに設定AVC\_ストリーム\_要求\_行われるように、読み取り操作を記述するブロック構造体。
+この要求を送信するには、サブユニットの送信、 [ **IRP\_MJ\_内部\_デバイス\_コントロール**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-internal-device-control)で IRP、 **IoControlCode** IRP のメンバーに設定[ **IOCTL\_AVCSTRM\_クラス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avcstrm/ni-avcstrm-ioctl_avcstrm_class)と **[引数 1]** IRP のメンバーに設定AVC\_ストリーム\_要求\_行われるように、読み取り操作を記述するブロック構造体。
 
 このコマンドは、非同期的に完了します。 完了したら、IRP で設定する I/O 完了ルーチンが呼び出されます。
 
@@ -119,7 +119,7 @@ typedef struct _AVC_STREAM_REQUEST_BLOCK {
 
 ### <a name="see-also"></a>関連項目
 
-[**AVC\_ストリーム\_要求\_ブロック**](https://msdn.microsoft.com/library/windows/hardware/ff554194)、 [ **INIT\_AVCSTRM\_ヘッダー**](https://msdn.microsoft.com/library/windows/hardware/ff560750)、 [ **IRP\_MJ\_内部\_デバイス\_コントロール**](https://msdn.microsoft.com/library/windows/hardware/ff550766)、 [ **IOCTL\_AVCSTRM\_クラス**](https://msdn.microsoft.com/library/windows/hardware/ff560778)、 [ **AVCSTRM\_バッファー\_構造体**](https://msdn.microsoft.com/library/windows/hardware/ff554108)、 [ **AVCSTRM\_関数**](https://msdn.microsoft.com/library/windows/hardware/ff554120)
+[**AVC\_ストリーム\_要求\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avcstrm/ns-avcstrm-_avc_stream_request_block)、 [ **INIT\_AVCSTRM\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avcstrm/nf-avcstrm-init_avcstrm_header)、 [ **IRP\_MJ\_内部\_デバイス\_コントロール**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-internal-device-control)、 [ **IOCTL\_AVCSTRM\_クラス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avcstrm/ni-avcstrm-ioctl_avcstrm_class)、 [ **AVCSTRM\_バッファー\_構造体**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avcstrm/ns-avcstrm-_avcstrm_buffer_struct)、 [ **AVCSTRM\_関数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avcstrm/ne-avcstrm-_avcstrm_function)
 
  
 

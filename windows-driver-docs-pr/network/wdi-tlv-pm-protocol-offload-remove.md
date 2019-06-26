@@ -6,17 +6,17 @@ ms.date: 07/18/2017
 keywords:
 - WDI_TLV_PM_PROTOCOL_OFFLOAD_REMOVE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 779f047d2fef0119316cd945bfafbff74de34792
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 678febff425947dcb1ad8be194b15892bd16820a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382151"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373848"
 ---
 # <a name="wditlvpmprotocoloffloadremove"></a>WDI\_TLV\_PM\_プロトコル\_オフロード\_削除
 
 
-WDI\_TLV\_PM\_プロトコル\_オフロード\_削除は、削除するプロトコルのオフロード ID を含む TLV [OID\_WDI\_セット\_削除\_PM\_プロトコル\_オフロード](https://msdn.microsoft.com/library/windows/hardware/dn925943)します。
+WDI\_TLV\_PM\_プロトコル\_オフロード\_削除は、削除するプロトコルのオフロード ID を含む TLV [OID\_WDI\_セット\_削除\_PM\_プロトコル\_オフロード](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-set-remove-pm-protocol-offload)します。
 
 ## <a name="tlv-type"></a>TLV 型
 
@@ -37,7 +37,7 @@ Uint32 型のサイズをバイト単位で。
 
  
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

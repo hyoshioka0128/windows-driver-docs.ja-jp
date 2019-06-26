@@ -4,17 +4,17 @@ description: Driver Verifier は、最初のプール割り当てのすべてを
 ms.assetid: CDBE9A18-4126-4AD7-8E53-6D75DCA8B022
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 01151f9b50e7e8a10e8f4e8a88a16c233bb10243
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fe2b0f5e10635283fefeecd72f3d0a27a61bbf23
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344843"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371566"
 ---
 # <a name="debugging-memory-leaks---driververifierdetectedviolation-c4-0x62"></a>ドライバーのメモリ リークのデバッグ\_VERIFIER\_検出\_違反 (C4)。0x62
 
 
-[Driver Verifier](driver-verifier.md)生成[ **0xC4 のバグ チェック。ドライバー\_VERIFIER\_検出\_違反**](https://msdn.microsoft.com/library/windows/hardware/ff560187)が最初に、ドライバーをアンロードするときに数 0x62 のパラメーター 1 の値には、割り当てられたプールのすべてを解放します。 未解放のメモリの割り当て (メモリ リークとも呼ばれます) は、短くしたオペレーティング システムのパフォーマンスの一般的な原因です。 これらはシステム プールのフラグメントあり、最終的にシステムのクラッシュの原因します。
+[Driver Verifier](driver-verifier.md)生成[ **0xC4 のバグ チェック。ドライバー\_VERIFIER\_検出\_違反**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)が最初に、ドライバーをアンロードするときに数 0x62 のパラメーター 1 の値には、割り当てられたプールのすべてを解放します。 未解放のメモリの割り当て (メモリ リークとも呼ばれます) は、短くしたオペレーティング システムのパフォーマンスの一般的な原因です。 これらはシステム プールのフラグメントあり、最終的にシステムのクラッシュの原因します。
 
 カーネル デバッガーが実行されているテスト コンピューターに接続されている必要がある[Driver Verifier](driver-verifier.md)、Driver Verifier は、デバッガーを Windows 区切り、違反が検出され、エラーの簡単な説明が表示されます。
 
@@ -29,7 +29,7 @@ ms.locfileid: "63344843"
 
 ### <a name="use-analyze-to-display-information-about-the-bug-check"></a>使用してバグ チェックに関する情報を表示するために分析。
 
-デバッガーの制御をした後に発生するすべてのバグ チェックと同様、最適な最初の手順が実行するが、 [ **! 分析-v** ](https://msdn.microsoft.com/library/windows/hardware/ff562112)コマンド。
+デバッガーの制御をした後に発生するすべてのバグ チェックと同様、最適な最初の手順が実行するが、 [ **! 分析-v** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)コマンド。
 
 ```
 kd> !analyze -v
@@ -61,17 +61,17 @@ Arg4: 00000003, total # of (paged+nonpaged) allocations that weren't freed.
     that were leaked that caused the bugcheck.
 ```
 
-A [**チェック 0xC4 のバグします。ドライバー\_VERIFIER\_検出\_違反**](https://msdn.microsoft.com/library/windows/hardware/ff560187)数 0x62 の値が次のように説明されているパラメーターの 1 (Arg1)。
+A [**チェック 0xC4 のバグします。ドライバー\_VERIFIER\_検出\_違反**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)数 0x62 の値が次のように説明されているパラメーターの 1 (Arg1)。
 
 ドライバー\_VERIFIER\_検出\_違反 (C4) Arg1 Arg2 Arg3 Arg4 原因 Driver Verifier フラグ数 0x62 ドライバー名を設定します。
 解放されず、ページおよび非ページの両方のプールを含む割り当ての予約の合計数。
-アンロード最初に割り当てられたプールを解放せずに、ドライバーを作成しています。 Windows 8.1 では、このバグ チェック場合にも発生、ドライバーが最初にすべての作業項目を解放せずにアンロード ([**IO\_WORKITEM**](https://msdn.microsoft.com/library/windows/hardware/ff550679)) で、割り当てが[ **IoAllocateWorkItem**](https://msdn.microsoft.com/library/windows/hardware/ff548276)します。 このパラメーターでのバグ チェックにのみ発生するときに、[プール追跡](pool-tracking.md)オプションがアクティブです。
+アンロード最初に割り当てられたプールを解放せずに、ドライバーを作成しています。 Windows 8.1 では、このバグ チェック場合にも発生、ドライバーが最初にすべての作業項目を解放せずにアンロード ([**IO\_WORKITEM**](https://docs.microsoft.com/windows-hardware/drivers/kernel/eprocess)) で、割り当てが[ **IoAllocateWorkItem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocateworkitem)します。 このパラメーターでのバグ チェックにのみ発生するときに、[プール追跡](pool-tracking.md)オプションがアクティブです。
 指定[プール追跡](pool-tracking.md)(**verifier/flags 0x8**)。 標準のフラグでプールの追跡オプションが有効になっている (**verifier/standard** )。
  
 
 ### <a name="use-the-verifier-3-extension-command-to-find-out-about-the-pool-allocations"></a>使用して、! verifier 3 の拡張機能コマンド プールの割り当てについて
 
-この特定のバグ チェック パラメーター 4 (Arg4) で提供される情報は、最も重要です。 Arg4 解放されなかった割り当ての数を示します。 出力、 [ **! 分析**](https://msdn.microsoft.com/library/windows/hardware/ff562112)コマンドでも、 [ **! verifier** ](https://msdn.microsoft.com/library/windows/hardware/ff565591)デバッガーの拡張機能コマンドで使用できる内容を表示するにはそれらの割り当ては次のとおりでした。 完全な出力 **! verifier 3 MyDriver.sys**コマンドが次の例で示すようにします。
+この特定のバグ チェック パラメーター 4 (Arg4) で提供される情報は、最も重要です。 Arg4 解放されなかった割り当ての数を示します。 出力、 [ **! 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)コマンドでも、 [ **! verifier** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-verifier)デバッガーの拡張機能コマンドで使用できる内容を表示するにはそれらの割り当ては次のとおりでした。 完全な出力 **! verifier 3 MyDriver.sys**コマンドが次の例で示すようにします。
 
 ```
 kd> !verifier 3 Mydriver.sys
@@ -149,7 +149,7 @@ Summary of All Verifier Statistics
 
 例では、ドライバー、MyDriver.sys は 2 つのメモリ割り当てと正しく解放されていない 1 つの I/O 作業項目にします。 各一覧では、割り当ての要求が行われたドライバー コードの現在の割り当て、サイズ、使用すると、プール タグおよびアドレスのアドレスが表示されます。 ドライバーの問題は、シンボルが読み込まれている場合は、呼び出し元のアドレスの横にある関数の名前も示します。
 
-表示、タグの (0x8645a000 アドレスの割り当て) の 1 つだけが、ドライバー自体によって提供されました (**mdrv**)。 タグ**VMdl** Driver Verifier によって検証されているドライバーの呼び出しを行うたびに使用されます[ **IoAllocateMdl**](https://msdn.microsoft.com/library/windows/hardware/ff548263)します。 同様に、タグ**Vfwi**は、ドライバーがドライバーの検証ツールによって検証されているように要求します。 項目を使用して作業を割り当てるときに使用[ **IoAllocateWorkItem**](https://msdn.microsoft.com/library/windows/hardware/ff548276)します。
+表示、タグの (0x8645a000 アドレスの割り当て) の 1 つだけが、ドライバー自体によって提供されました (**mdrv**)。 タグ**VMdl** Driver Verifier によって検証されているドライバーの呼び出しを行うたびに使用されます[ **IoAllocateMdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocatemdl)します。 同様に、タグ**Vfwi**は、ドライバーがドライバーの検証ツールによって検証されているように要求します。 項目を使用して作業を割り当てるときに使用[ **IoAllocateWorkItem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocateworkitem)します。
 
 ### <a name="if-you-have-symbols-you-can-locate-where-in-the-source-files-the-memory-allocations-occurred"></a>シンボルがある場合、ソース ファイルで、メモリの割り当てが発生した場所を見つけることができます。
 
@@ -258,18 +258,18 @@ Pool block 9a836fd0, Size 00000030, Thread 88758740
 
 [Static Driver Verifier](static-driver-verifier.md)は Windows ドライバーのソース コードをスキャンし、さまざまなコード パスの実行をシミュレートすることで考えられる問題を報告するツールです。 Static Driver Verifier は、このような問題を識別するための優れた開発時ユーティリティです。
 
-など、ドライバーの検証ツールが含まれていない、シナリオ、使用できるその他の手法を参照してください。[カーネル モード メモリ リークを検出](https://msdn.microsoft.com/library/windows/hardware/ff545403)します。
+など、ドライバーの検証ツールが含まれていない、シナリオ、使用できるその他の手法を参照してください。[カーネル モード メモリ リークを検出](https://docs.microsoft.com/windows-hardware/drivers/debugger/finding-a-kernel-mode-memory-leak)します。
 
 ## <a name="related-topics"></a>関連トピック
 
 
-[カーネル モード メモリ リークを検出](https://msdn.microsoft.com/library/windows/hardware/ff545403)
+[カーネル モード メモリ リークを検出](https://docs.microsoft.com/windows-hardware/drivers/debugger/finding-a-kernel-mode-memory-leak)
 
 [静的ドライバー検証ツール](static-driver-verifier.md)
 
-[Windows デバッグ](https://msdn.microsoft.com/library/windows/hardware/ff551063)
+[Windows デバッグ](https://docs.microsoft.com/windows-hardware/drivers/debugger/index)
 
-[バグ チェック時にドライバー検証機能を処理が有効になっています。](https://msdn.microsoft.com/library/windows/hardware/hh450984)
+[バグ チェック時にドライバー検証機能を処理が有効になっています。](https://docs.microsoft.com/windows-hardware/drivers/debugger/handling-a-bug-check-when-driver-verifier-is-enabled)
 
  
 

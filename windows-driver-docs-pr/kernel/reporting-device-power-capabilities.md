@@ -11,12 +11,12 @@ keywords:
 - I/O 要求パケット WDK 電源管理
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f87b33f36ad1518e2b5d320a43bbe6016f551b91
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7ca69ef60db256d4e4fc479b81d842a685057106
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324494"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373407"
 ---
 # <a name="reporting-device-power-capabilities"></a>デバイスの電源機能のレポート
 
@@ -24,9 +24,9 @@ ms.locfileid: "63324494"
 
 
 
-ドライバーは、列挙中に、PnP への応答でデバイスに固有の情報を報告[ **IRP\_MN\_クエリ\_機能**](https://msdn.microsoft.com/library/windows/hardware/ff551664)要求。 ドライバーがデバイスの電源管理機能を報告するこのような他の情報と共に、 [**デバイス\_機能**](https://msdn.microsoft.com/library/windows/hardware/ff543095)構造体。 通常、バス ドライバーは、この構造体に格納します。
+ドライバーは、列挙中に、PnP への応答でデバイスに固有の情報を報告[ **IRP\_MN\_クエリ\_機能**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-capabilities)要求。 ドライバーがデバイスの電源管理機能を報告するこのような他の情報と共に、 [**デバイス\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_capabilities)構造体。 通常、バス ドライバーは、この構造体に格納します。
 
-高度なドライバーを設定する必要があります、 [ *IoCompletion* ](https://msdn.microsoft.com/library/windows/hardware/ff548354)クエリ機能の日常的な IRP のため、構造体のローカル コピーを作成していることを確認できますが含まれている適切な値には。 一般的な規則としてより高度なドライバーはこれらの値を変更しないでください。 ただし、変更が必要な場合は、ドライバーがデバイスの機能をさらに制限できますに追加することはできません。 つまり、ドライバーより制限の厳しいルールを作成できますが、それらを緩めることはできません。
+高度なドライバーを設定する必要があります、 [ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)クエリ機能の日常的な IRP のため、構造体のローカル コピーを作成していることを確認できますが含まれている適切な値には。 一般的な規則としてより高度なドライバーはこれらの値を変更しないでください。 ただし、変更が必要な場合は、ドライバーがデバイスの機能をさらに制限できますに追加することはできません。 つまり、ドライバーより制限の厳しいルールを作成できますが、それらを緩めることはできません。
 
 IRP が完了し、すべてのドライバーの完了のルーチンが実行されている後、は、構造体がキャッシュされ、ドライバーは、その内容を変更できません。
 

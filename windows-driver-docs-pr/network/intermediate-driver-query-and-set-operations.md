@@ -12,12 +12,12 @@ keywords:
 - Oid の WDK ネットワー キング、中間ドライバー クエリ、およびセット
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0113800dd9746a101f3a93687ffd08537978b82b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 81343b88aac5279865f3e7dc8101696ba39b470d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391655"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385254"
 ---
 # <a name="intermediate-driver-query-and-set-operations"></a>中間ドライバーのクエリおよび設定操作
 
@@ -25,9 +25,9 @@ ms.locfileid: "63391655"
 
 
 
-基になるミニポート アダプターにバインドが正常におよびその仮想ミニポートの初期化された後の中間のドライバーが基になるミニポート アダプタの運用特性を照会し、内部の状態を設定します。 必要に応じて、中間のドライバーも、基になるミニポート アダプターにバインドするための lookahead バッファー サイズとして、このようなパラメーターをネゴシエートします。 基になるミニポート アダプターに関連付けられている属性のほとんどで中間ドライバーに渡される、 *BindParameters*のパラメーター、 [ *ProtocolBindAdapterEx*](https://msdn.microsoft.com/library/windows/hardware/ff570220)関数。 中間ドライバーに渡される値を使用する必要があります*ProtocolBindAdapterEx*OID のクエリを発行するのではなく、可能な場合。 ただし、コネクションレスの下端と中間のドライバーは、呼び出すことによっての OID のクエリを発行できます[ **NdisOidRequest**](https://msdn.microsoft.com/library/windows/hardware/ff563710)します。 接続指向の下端と中間のドライバーが呼び出すことによって OID のクエリを発行できます[ **NdisCoOidRequest**](https://msdn.microsoft.com/library/windows/hardware/ff561711)します。
+基になるミニポート アダプターにバインドが正常におよびその仮想ミニポートの初期化された後の中間のドライバーが基になるミニポート アダプタの運用特性を照会し、内部の状態を設定します。 必要に応じて、中間のドライバーも、基になるミニポート アダプターにバインドするための lookahead バッファー サイズとして、このようなパラメーターをネゴシエートします。 基になるミニポート アダプターに関連付けられている属性のほとんどで中間ドライバーに渡される、 *BindParameters*のパラメーター、 [ *ProtocolBindAdapterEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_bind_adapter_ex)関数。 中間ドライバーに渡される値を使用する必要があります*ProtocolBindAdapterEx*OID のクエリを発行するのではなく、可能な場合。 ただし、コネクションレスの下端と中間のドライバーは、呼び出すことによっての OID のクエリを発行できます[ **NdisOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisoidrequest)します。 接続指向の下端と中間のドライバーが呼び出すことによって OID のクエリを発行できます[ **NdisCoOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscooidrequest)します。
 
-中間のドライバーのクエリを受信して要求をより高いレベルのドライバーから設定できるもその[ *MiniportOidRequest* ](https://msdn.microsoft.com/library/windows/hardware/ff559416)関数。 ドライバーするそれらの要求に応答か、基になるドライバーに渡したりします。 中間のドライバーがクエリとセットにどのように応答する方法は、実装によって異なります。
+中間のドライバーのクエリを受信して要求をより高いレベルのドライバーから設定できるもその[ *MiniportOidRequest* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_oid_request)関数。 ドライバーするそれらの要求に応答か、基になるドライバーに渡したりします。 中間のドライバーがクエリとセットにどのように応答する方法は、実装によって異なります。
 
 **注**  中間ドライバーの動作は、仮想ミニポートと基になるミニポート ドライバーの電源の状態によっても影響します。 クエリでの電源の状態の影響の詳細をセット操作では、次を参照してください。[設定 Power 要求を処理](handling-a-set-power-request.md)します。
 

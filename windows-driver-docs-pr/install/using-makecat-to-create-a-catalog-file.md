@@ -4,25 +4,25 @@ description: MakeCat を使ったカタログ ファイルの作成
 ms.assetid: c9f9360b-2b1d-4060-af4d-8d281319e181
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ae642f6045a968a8f990fe5acec10add2609f7d6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1e7d12ed9e28314a71e4496a2375935f9d43da99
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339408"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384757"
 ---
 # <a name="using-makecat-to-create-a-catalog-file"></a>MakeCat を使ったカタログ ファイルの作成
 
 
 使用することができます、 [MakeCat](https://go.microsoft.com/fwlink/p/?linkid=104922)を作成するツール、[カタログ ファイル](catalog-files.md)の[ドライバー パッケージ](driver-packages.md)します。
 
-INF ファイルを使用してインストールされていないドライバー パッケージのカタログ ファイルの作成にのみ、MakeCat ツールを使用する必要があります。 INF ファイルを使用して、ドライバー パッケージをインストールする場合は、使用、 [ **Inf2Cat** ](https://msdn.microsoft.com/library/windows/hardware/ff547089)カタログ ファイルを作成するためのツール。 Inf2Cat には、パッケージの INF ファイル内で参照される、ドライバー パッケージ内のすべてのファイルに自動的に含まれています。 Inf2Cat ツールを使用する方法の詳細については、次を参照してください。[カタログ ファイルを作成するのを使用して Inf2Cat](using-inf2cat-to-create-a-catalog-file.md)します。
+INF ファイルを使用してインストールされていないドライバー パッケージのカタログ ファイルの作成にのみ、MakeCat ツールを使用する必要があります。 INF ファイルを使用して、ドライバー パッケージをインストールする場合は、使用、 [ **Inf2Cat** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/inf2cat)カタログ ファイルを作成するためのツール。 Inf2Cat には、パッケージの INF ファイル内で参照される、ドライバー パッケージ内のすべてのファイルに自動的に含まれています。 Inf2Cat ツールを使用する方法の詳細については、次を参照してください。[カタログ ファイルを作成するのを使用して Inf2Cat](using-inf2cat-to-create-a-catalog-file.md)します。
 
 **注**  を作成し、カタログ ファイルへの署名、代わりに埋め込むことも、署名のカーネル モード バイナリの[ドライバー パッケージ](driver-packages.md)、ドライバー パッケージを提供するすべての .dll ファイルなどです。 この手順の詳細については、次を参照してください。[テスト署名ドライバーは、埋め込みの署名](test-signing-a-driver-through-an-embedded-signature.md)します。
 
  
 
-カタログ ファイルを作成する必要がありますまず手動で作成するカタログの定義ファイル (*.cdf*) カタログ ヘッダー属性やファイルのエントリを説明します。 このファイルが作成されると、行うことができますし、 [MakeCat](https://go.microsoft.com/fwlink/p/?linkid=104922)カタログ ファイルを作成するためのツール。 MakeCat ツールでは、次の処理時に、 *.cdf*ファイル。
+カタログ ファイルを作成する必要がありますまず手動で作成するカタログの定義ファイル ( *.cdf*) カタログ ヘッダー属性やファイルのエントリを説明します。 このファイルが作成されると、行うことができますし、 [MakeCat](https://go.microsoft.com/fwlink/p/?linkid=104922)カタログ ファイルを作成するためのツール。 MakeCat ツールでは、次の処理時に、 *.cdf*ファイル。
 
 -   各ファイルに記載されている属性の一覧を確認、 *.cdf*ファイル。
 

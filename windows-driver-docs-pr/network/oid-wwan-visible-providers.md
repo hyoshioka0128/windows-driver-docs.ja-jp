@@ -5,12 +5,12 @@ ms.assetid: 4dfd4477-6332-4163-8b3e-a1604b11d175
 ms.date: 08/08/2017
 keywords: -OID_WWAN_VISIBLE_PROVIDERS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: c89393ed05e71b34bc042167077da386607d814d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 280603e53f8f1505f342d91b568a9fea2867e98d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384231"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385485"
 ---
 # <a name="oidwwanvisibleproviders"></a>OID\_WWAN\_VISIBLE\_プロバイダー
 
@@ -19,7 +19,7 @@ OID\_WWAN\_VISIBLE\_プロバイダーが現在表示されている MB デバ�
 
 要求のセットがサポートされていません。
 
-ミニポート ドライバーは、最初に、非同期的には、NDIS を返すクエリ要求を処理する必要があります\_状態\_INDICATION\_元の要求とそれ以降の送信に必要な[ **NDIS\_状態\_WWAN\_VISIBLE\_プロバイダー** ](ndis-status-wwan-visible-providers.md)状態通知を含む、 [ **NDIS\_WWAN\_表示される\_プロバイダー** ](https://msdn.microsoft.com/library/windows/hardware/ff567948)クエリ要求を完了するときに表示されているネットワーク プロバイダーに関する情報を提供する構造体。
+ミニポート ドライバーは、最初に、非同期的には、NDIS を返すクエリ要求を処理する必要があります\_状態\_INDICATION\_元の要求とそれ以降の送信に必要な[ **NDIS\_状態\_WWAN\_VISIBLE\_プロバイダー** ](ndis-status-wwan-visible-providers.md)状態通知を含む、 [ **NDIS\_WWAN\_表示される\_プロバイダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_visible_providers)クエリ要求を完了するときに表示されているネットワーク プロバイダーに関する情報を提供する構造体。
 
 *クエリ*要求指定 NDIS\_WWAN\_取得\_VISIBLE\_プロバイダーが入力として構造体します。 ときに、**アクション**WWAN でメンバー\_取得\_VISIBLE\_WWAN にプロバイダーが設定されている\_取得\_VISIBLE\_プロバイダー\_すべて、ミニポートには、参照できるすべてのプロバイダーを返す必要があります。 ときに、**アクション**WWAN でメンバー\_取得\_VISIBLE\_WWAN にプロバイダーが設定されている\_取得\_VISIBLE\_プロバイダー\_マルチミニポート ホーム プロバイダーとして設定できるマルチ キャリア プロバイダーの表示を返すのみ必要があります。
 
@@ -30,7 +30,7 @@ OID\_WWAN\_VISIBLE\_プロバイダーが現在表示されている MB デバ�
 <a name="remarks"></a>コメント
 -------
 
-詳細については、この OID を使用して、次を参照してください。 [WWAN プロバイダー操作](https://msdn.microsoft.com/library/windows/hardware/ff559101)します。
+詳細については、この OID を使用して、次を参照してください。 [WWAN プロバイダー操作](https://docs.microsoft.com/windows-hardware/drivers/network/mb-provider-operations)します。
 
 ミニポート ドライバー Subscriber Identity Module (SIM カード) にアクセスできる処理がクエリ操作が、プロバイダーのネットワークにアクセスしないでください。
 
@@ -65,11 +65,11 @@ GSM ベースし、CDMA ベースの両方のデバイスでは、登録済み�
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_WWAN\_VISIBLE\_プロバイダー**](https://msdn.microsoft.com/library/windows/hardware/ff567948)
+[**NDIS\_WWAN\_VISIBLE\_プロバイダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_visible_providers)
 
 [**NDIS\_状態\_WWAN\_VISIBLE\_プロバイダー**](ndis-status-wwan-visible-providers.md)
 
-[WWAN プロバイダー操作](https://msdn.microsoft.com/library/windows/hardware/ff559101)
+[WWAN プロバイダー操作](https://docs.microsoft.com/windows-hardware/drivers/network/mb-provider-operations)
 
  
 

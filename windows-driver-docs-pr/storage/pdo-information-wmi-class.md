@@ -4,12 +4,12 @@ description: PDO\_情報 WMI クラス
 ms.assetid: 1a972905-42ea-4cb2-b937-5ed0f287d80a
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 30d92578d1ae17a72b5735647537ea50005f95d3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8d8e541da88b8f77b9f1240ce7f7cda9c642abd7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389417"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382063"
 ---
 # <a name="pdoinformation-wmi-class"></a>PDO\_情報 WMI クラス
 
@@ -44,7 +44,7 @@ class PDO_INFORMATION
 };
 ```
 
-このクラスの定義が WMI ツール スイートによってコンパイルされると、生成、 [ **PDO\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff563828)データ構造体。 この WMI クラスに関連付けられているメソッドはありません。
+このクラスの定義が WMI ツール スイートによってコンパイルされると、生成、 [ **PDO\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mpiodisk/ns-mpiodisk-_pdo_information)データ構造体。 この WMI クラスに関連付けられているメソッドはありません。
 
  
 

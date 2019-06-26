@@ -9,12 +9,12 @@ keywords:
 - グローバル文字列の WDK メモリ
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fe62862df9133eb15f054dd1c8eebcbd230d34a4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 84683f22535a2f04dd2eeb6c3771f7e00a0dbccd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339138"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382267"
 ---
 # <a name="accessing-read-only-system-memory"></a>読み取り専用システム メモリへのアクセス
 
@@ -26,7 +26,7 @@ Windows[メモリ マネージャー](windows-kernel-mode-memory-manager.md)書�
 
 ユーザー モードで、読み取り専用メモリは常に保護されています。 ただし、Windows NT 4.0 およびそれ以前のバージョンでは、読み取り専用メモリ保護されなかったカーネル モードでします。
 
-Windows カーネル モード ドライバーまたはアプリケーションが読み取り専用メモリ セグメントへの書き込みを試みると、バグ チェックが発行されます。 詳細については、次を参照してください。 [ **0xBE のバグ チェック。試行\_書き込み\_TO\_READONLY\_メモリ**](https://msdn.microsoft.com/library/windows/hardware/ff560161)します。
+Windows カーネル モード ドライバーまたはアプリケーションが読み取り専用メモリ セグメントへの書き込みを試みると、バグ チェックが発行されます。 詳細については、次を参照してください。 [ **0xBE のバグ チェック。試行\_書き込み\_TO\_READONLY\_メモリ**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xbe--attempted-write-to-readonly-memory)します。
 
 ### <a name="intercepting-system-calls"></a>システムの呼び出しをインターセプト
 

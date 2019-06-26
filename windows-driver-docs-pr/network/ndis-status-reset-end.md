@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - NDIS_STATUS_RESET_END ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c6c344047bde049e87f03fd2edcc02590703a0b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d3b1b3ef2fe76e487bba8bbdcc72340b52782493
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353161"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385075"
 ---
 # <a name="ndisstatusresetend"></a>NDIS\_状態\_リセット\_終了
 
@@ -21,7 +21,7 @@ NDIS\_状態\_リセット\_終了ステータスは、ミニポート アダプ
 <a name="remarks"></a>注釈
 -------
 
-ミニポート ドライバーは呼び出さないでください、 [ **NdisMIndicateStatusEx** ](https://msdn.microsoft.com/library/windows/hardware/ff563600)関数開始を通知し、リセット操作の開始時に、NDIS が上にあるドライバーを通知するために各リセット操作の完了と終了します。
+ミニポート ドライバーは呼び出さないでください、 [ **NdisMIndicateStatusEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismindicatestatusex)関数開始を通知し、リセット操作の開始時に、NDIS が上にあるドライバーを通知するために各リセット操作の完了と終了します。
 
 NDIS ミニポート ドライバーでは、リセット操作を開始、通知の上にあるドライバーを[ **NDIS\_状態\_リセット\_開始**](ndis-status-reset-start.md)状態を示す値。
 
@@ -54,7 +54,7 @@ NDIS ミニポート ドライバーでは、リセット操作を開始、通�
 
 [**NDIS\_状態\_リセット\_開始**](ndis-status-reset-start.md)
 
-[**NdisMIndicateStatusEx**](https://msdn.microsoft.com/library/windows/hardware/ff563600)
+[**NdisMIndicateStatusEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismindicatestatusex)
 
  
 

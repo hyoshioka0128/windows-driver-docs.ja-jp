@@ -14,12 +14,12 @@ keywords:
 - フレーム バッファー WDK Windows 2000 で、銀行を複数の表示します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 20e2ef8028d90467759df26652033efe7a8dbf1b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c736ca73d6764e574de3269cc8c0ce57b994481f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375908"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374390"
 ---
 # <a name="supporting-banked-frame-buffers"></a>バンク フレーム バッファーのサポート
 
@@ -55,7 +55,7 @@ GDI に直接アクセスできない*メモリに蓄積される*バンク フ�
 
 バンク フレーム バッファー処理を実行する場合、ディスプレイ ドライバーは、呼び出しのパラメーターをチェックして、または GDI を呼び出すことで (先の四角形のサイズ) のオブジェクトの境界を判断できます。 オブジェクトの境界から、オブジェクト数の銀行がまたがるドライバーを確認できます。 外接する四角形があるすべての銀行は、適切な GDI にディスプレイ ドライバーの呼び出しは、呼び出しごとに値を変更する関数を描画します。
 
-ドライバーの変更、 [ **CLIPOBJ** ](https://msdn.microsoft.com/library/windows/hardware/ff539417)銀行の境界内の変更に対応する GDI によって最初のメンバーに渡されました。 上端と下端のスキャンの値は、GDI が銀行の制限を超えて描画しないように再定義されます。 Bank のマネージャーは、GDI から取得した元の CLIPOBJ データを取得し、後で復元値を保持します。 新しいを提供する境界を変更し、 **rclBounds.top**と**rclBounds.bottom**に描画されている銀行の程度を記述する値。 銀行、中には、GDI がクリッピング パス全体を描画し、現在の銀行の制限を上書きしないようにサイズを実行する必要があります。
+ドライバーの変更、 [ **CLIPOBJ** ](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_clipobj)銀行の境界内の変更に対応する GDI によって最初のメンバーに渡されました。 上端と下端のスキャンの値は、GDI が銀行の制限を超えて描画しないように再定義されます。 Bank のマネージャーは、GDI から取得した元の CLIPOBJ データを取得し、後で復元値を保持します。 新しいを提供する境界を変更し、 **rclBounds.top**と**rclBounds.bottom**に描画されている銀行の程度を記述する値。 銀行、中には、GDI がクリッピング パス全体を描画し、現在の銀行の制限を上書きしないようにサイズを実行する必要があります。
 
 GDI によって渡された元の CLIPOBJ として定義された場合、 **NULL**または DC\_単純、ディスプレイ ドライバー渡しますを使って作成された代替 CLIPOBJ、 **EngCreateClip** GDI がクリップするように、1 つの銀行のエクステント。 ディスプレイ ドライバーと複雑な CLIPOBJ を変更、CLIPOBJ が楕円の上の図に示すように三角形クリップ オブジェクトなどの複雑な場合、 **rclBounds.top**と**rclBounds.bottom**クリップを 2 つのオブジェクト間の付加的な効果を生成する値。 その結果、GDI は、銀行の最後に書き込みできません。 ドライバーでは、GDI から取得した CLIPOBJ データの元の境界も復元する必要があります。
 

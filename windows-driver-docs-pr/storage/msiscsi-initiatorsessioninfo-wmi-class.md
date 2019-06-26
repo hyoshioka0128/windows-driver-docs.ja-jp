@@ -4,12 +4,12 @@ description: MSiSCSI\_InitiatorSessionInfo WMI クラス
 ms.assetid: 73053af8-80b0-4cab-8e27-c651be8f0e8c
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 490df49cdd7a4b91efc18ebc0e2a56d2ccfad2f9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 44a2e52a194b57d50885f2ba20f15f54af2e7ce5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365218"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370430"
 ---
 # <a name="msiscsiinitiatorsessioninfo-wmi-class"></a>MSiSCSI\_InitiatorSessionInfo WMI クラス
 
@@ -47,7 +47,7 @@ class MSiSCSI_InitiatorSessionInfo {
 };
 ```
 
-WMI ツールのスイートでは、上記のクラス定義をコンパイルするときに生成、 [ **MSiSCSI\_InitiatorSessionInfo** ](https://msdn.microsoft.com/library/windows/hardware/ff563054)データ構造体。
+WMI ツールのスイートでは、上記のクラス定義をコンパイルするときに生成、 [ **MSiSCSI\_InitiatorSessionInfo** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsimgt/ns-iscsimgt-_msiscsi_initiatorsessioninfo)データ構造体。
 
  
 

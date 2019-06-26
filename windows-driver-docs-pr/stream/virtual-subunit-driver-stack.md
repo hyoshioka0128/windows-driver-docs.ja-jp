@@ -12,12 +12,12 @@ keywords:
 - 互換性のある Id WDK AV/C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f2562d8aca6db24174633d011393e75f8009104c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a7ef4094622fb17a79aa145ccf51573ff728c54d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330042"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385361"
 ---
 # <a name="virtual-subunit-driver-stack"></a>仮想サブユニット ドライバー スタック
 
@@ -26,7 +26,7 @@ IEEE 1394 のドライバー スタックは、IEEE 1394、IEC 61883、オーデ
 
 *Avc.sys*仮想ドライバー スタックは、IEEE 1394 バス上の仮想 AV/C 単位として機能し、コンピューターのリソースを表す読み込まれるサブユニット ドライバーで構成されています。 仮想のサブユニット スタックは where *Avc.sys*コンピューターでソフトウェアを介して AV/C 仕様を実装します。 仮想 AV/C ドライバー スタックは、コンピューターのリソースのいずれか、AV/C サブユニットとして公開される場合にインスタンス化されます。
 
-Windows を読み込みます*Avc.sys* I/O コントロール (Ioctl) を使用してアプリケーション制御など、INF ファイルに指定されているレジストリ設定に基づいて、仮想 AV/C サブユニットのサポートを提供します。 各インスタンス*Avc.sys*つまり仮想サブユニット登録 GUID の新しいインスタンスをサポートするために読み込まれた\_仮想\_AVC\_クラス デバイスのインターフェイス。 GUID の詳細については\_仮想\_AVC\_デバイス インターフェイスのクラスを参照してください[を使用して Avc.sys](using-avc-sys.md)と[ **IOCTL\_AVC\_クラス**](https://msdn.microsoft.com/library/windows/hardware/ff560789)します。
+Windows を読み込みます*Avc.sys* I/O コントロール (Ioctl) を使用してアプリケーション制御など、INF ファイルに指定されているレジストリ設定に基づいて、仮想 AV/C サブユニットのサポートを提供します。 各インスタンス*Avc.sys*つまり仮想サブユニット登録 GUID の新しいインスタンスをサポートするために読み込まれた\_仮想\_AVC\_クラス デバイスのインターフェイス。 GUID の詳細については\_仮想\_AVC\_デバイス インターフェイスのクラスを参照してください[を使用して Avc.sys](using-avc-sys.md)と[ **IOCTL\_AVC\_クラス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ni-avc-ioctl_avc_class)します。
 
 レジストリ AV/C (およびより一般的には IEEE 1394) を保存する永続的な方法は、仮想デバイスの構成が、仮想デバイスの構成する必要がありますいない手動で入力をレジストリにします。 代わりに、INF ファイルを使用してまたはこの Ioctl の組み合わせによっては、構成を設定する必要があります。 仮想デバイスの構成の詳細については、次を参照してください。 [AV/C デバイス Id](av-c-device-identifiers.md)と[仮想のサブユニット デバイス Id](virtual-subunit-device-identifiers.md)します。
 

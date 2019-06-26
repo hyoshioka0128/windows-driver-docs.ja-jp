@@ -8,12 +8,12 @@ keywords:
 - WDK Direct3D のコールバック関数
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d90fc239bb159d3926f3147b8be91ca5ec3695d0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2b03562a8985692edeee5fd8c057cf72005a7126
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352286"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385583"
 ---
 # <a name="performing-floating-point-operations-in-direct3d"></a>Direct3D での浮動小数点演算の実行
 
@@ -25,23 +25,23 @@ DirectX のランタイムでは、保存し、多くのディスプレイ ド�
 
 DirectX のランタイムでは、保存し、Direct3D の次のコールバック関数の必要に応じて浮動小数点状態の復元します。
 
--   [**D3dContextCreate**](https://msdn.microsoft.com/library/windows/hardware/ff542178)
+-   [**D3dContextCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/nc-d3dhal-lpd3dhal_contextcreatecb)
 
--   [**D3dContextDestroy**](https://msdn.microsoft.com/library/windows/hardware/ff542180)
+-   [**D3dContextDestroy**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/nc-d3dhal-lpd3dhal_contextdestroycb)
 
--   [**D3dDrawPrimitives2**](https://msdn.microsoft.com/library/windows/hardware/ff544704)
+-   [**D3dDrawPrimitives2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/nc-d3dhal-lpd3dhal_drawprimitives2cb)
 
--   [**D3dGetDriverState**](https://msdn.microsoft.com/library/windows/hardware/ff544708)
+-   [**D3dGetDriverState**](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_getdriverstate)
 
--   [**D3dValidateTextureStageState**](https://msdn.microsoft.com/library/windows/hardware/ff549064)
+-   [**D3dValidateTextureStageState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/nc-d3dhal-lpd3dhal_validatetexturestagestatecb)
 
 次のコールバック関数では、Direct3D でサポートされているディスプレイ ドライバーする必要があります、浮動小数点の操作を実行する前に浮動小数点状態を保存して復元する操作が完了する.
 
--   [**D3dCreateSurfaceEx**](https://msdn.microsoft.com/library/windows/hardware/ff542840)
+-   [**D3dCreateSurfaceEx**](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_createsurfaceex)
 
--   [**D3dDestroyDDLocal**](https://msdn.microsoft.com/library/windows/hardware/ff544685)
+-   [**D3dDestroyDDLocal**](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_destroyddlocal)
 
--   [D3DBuffer コールバック](https://msdn.microsoft.com/library/windows/hardware/ff542176)
+-   [D3DBuffer コールバック](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
 
 浮動小数点演算の詳細については、次を参照してください。[グラフィックス ドライバー関数での浮動小数点操作](floating-point-operations-in-graphics-driver-functions.md)します。
 

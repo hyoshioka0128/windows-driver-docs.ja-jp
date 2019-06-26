@@ -8,16 +8,16 @@ keywords:
 - カーネル モードの ETW WDK ソフトウェア トレース
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: d28efb71879df2ae4700e770484753bb15b98bb5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7d5e1d2b0a0ab3feffb09c8fc4de591edc7e6e5b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332062"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371689"
 ---
 # <a name="adding-event-tracing-to-kernel-mode-drivers"></a>カーネル モード ドライバーへのイベント トレーシングの追加
 
-このセクションでは、Event Tracing for Windows (ETW) のカーネル モード API を使用して、イベント トレースのカーネル モード ドライバーを追加する方法について説明します。 ETW カーネル モードの API は、Windows Vista で導入され、は、以前のオペレーティング システムではサポートされていません。 使用[WPP ソフトウェア トレース](wpp-software-tracing.md)または[WMI イベントのトレース](https://msdn.microsoft.com/library/windows/hardware/ff566350)ドライバーが Windows 2000 以降のトレース機能をサポートする必要がある場合。
+このセクションでは、Event Tracing for Windows (ETW) のカーネル モード API を使用して、イベント トレースのカーネル モード ドライバーを追加する方法について説明します。 ETW カーネル モードの API は、Windows Vista で導入され、は、以前のオペレーティング システムではサポートされていません。 使用[WPP ソフトウェア トレース](wpp-software-tracing.md)または[WMI イベントのトレース](https://docs.microsoft.com/windows-hardware/drivers/kernel/wmi-event-tracing)ドライバーが Windows 2000 以降のトレース機能をサポートする必要がある場合。
 
 > [!TIP]
 > Windows Driver Kit (WDK) 8.1 と Visual Studio を使用して ETW を実装する方法を示すサンプル コードを表示するのを参照してください。、 [Eventdrv サンプル](https://go.microsoft.com/fwlink/p/?linkid=256109)します。
@@ -65,7 +65,7 @@ ms.locfileid: "63332062"
 
 チャネルに加えて、レベルとキーワードでイベントを関連付けることができます。 キーワードおよびレベルは、イベントを有効にして、パブリッシュされるときにイベントをフィルター処理するためのメカニズムを提供する方法を提供します。 キーワードは、論理的に関連するイベントをグループ化できます。 レベルは、または情報または、イベント、たとえば、重要なエラー、警告、詳細度を示すために使用できます。 Winmeta.xml ファイルには、イベント属性の定義済みの値が含まれています。
 
-イベント ペイロード (イベント メッセージ、およびデータ) のテンプレートを作成するときに、入力と出力の種類を指定する必要があります。 サポートされている型の「解説」セクションに記述されます[ **InputType 複合型 (Windows)**](https://docs.microsoft.com/windows/desktop/WES/eventmanifestschema-inputtype-complextype)します。
+イベント ペイロード (イベント メッセージ、およびデータ) のテンプレートを作成するときに、入力と出力の種類を指定する必要があります。 サポートされている型の「解説」セクションに記述されます[ **InputType 複合型 (Windows)** ](https://docs.microsoft.com/windows/desktop/WES/eventmanifestschema-inputtype-complextype)します。
 
 ```XML
 <?xml version='1.0' encoding='utf-8' standalone='yes'?>

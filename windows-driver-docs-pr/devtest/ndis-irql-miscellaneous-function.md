@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f963047f1e47dcd999725591160a097527837816
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8849b88e065040237409444224c1fb7c35cab44a
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370832"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67392294"
 ---
 # <a name="irqlmiscellaneousfunction-rule-ndis"></a>Irql\_[その他]\_関数ルール (ndis)
 
@@ -95,14 +95,14 @@ Irql\_[その他]\_関数の規則は、適切な IRQL レベルで NDIS 関数�
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>実行<a href="https://msdn.microsoft.com/library/windows/hardware/ff552808" data-raw-source="[Static Driver Verifier](https://msdn.microsoft.com/library/windows/hardware/ff552808)">Static Driver Verifier</a>を指定し、 <strong>Irql_Miscellaneous_Function</strong>ルール。</p>
+<td align="left"><p>実行<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier" data-raw-source="[Static Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier)">Static Driver Verifier</a>を指定し、 <strong>Irql_Miscellaneous_Function</strong>ルール。</p>
 コードの分析を実行するには、次の手順に従います。
 <ol>
-<li><a href="https://msdn.microsoft.com/library/windows/hardware/hh454281#preparing-your-source-code" data-raw-source="[Prepare your code (use role type declarations).](https://msdn.microsoft.com/library/windows/hardware/hh454281#preparing-your-source-code)">(ロールの型宣言の使用)、コードを準備します。</a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/hardware/hh454281#running-static-driver-verifier" data-raw-source="[Run Static Driver Verifier.](https://msdn.microsoft.com/library/windows/hardware/hh454281#running-static-driver-verifier)">Static Driver Verifier を実行します。</a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/hardware/hh454281#viewing-and-analyzing-the-results" data-raw-source="[View and analyze the results.](https://msdn.microsoft.com/library/windows/hardware/hh454281#viewing-and-analyzing-the-results)">表示し、結果を分析します。</a></li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code" data-raw-source="[Prepare your code (use role type declarations).](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code)">(ロールの型宣言の使用)、コードを準備します。</a></li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier" data-raw-source="[Run Static Driver Verifier.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier)">Static Driver Verifier を実行します。</a></li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#viewing-and-analyzing-the-results" data-raw-source="[View and analyze the results.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#viewing-and-analyzing-the-results)">表示し、結果を分析します。</a></li>
 </ol>
-<p>詳細については、次を参照してください。<a href="https://msdn.microsoft.com/library/windows/hardware/hh454281" data-raw-source="[Using Static Driver Verifier to Find Defects in Drivers](https://msdn.microsoft.com/library/windows/hardware/hh454281)">ドライバーで障害を検出する Static Driver Verifier を使用して</a>します。</p></td>
+<p>詳細については、次を参照してください。<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers" data-raw-source="[Using Static Driver Verifier to Find Defects in Drivers](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers)">ドライバーで障害を検出する Static Driver Verifier を使用して</a>します。</p></td>
 </tr>
 </tbody>
 </table>
@@ -110,54 +110,54 @@ Irql\_[その他]\_関数の規則は、適切な IRQL レベルで NDIS 関数�
 <a name="applies-to"></a>対象
 ----------
 
-[**NdisAllocateFromNPagedLookasideList**](https://msdn.microsoft.com/library/windows/hardware/ff560708)  
-[**NdisAllocateGenericObject**](https://msdn.microsoft.com/library/windows/hardware/ff561603)  
-[**NdisAllocateIoWorkItem**](https://msdn.microsoft.com/library/windows/hardware/ff561604)  
-[**NdisAllocateMemoryWithTagPriority**](https://msdn.microsoft.com/library/windows/hardware/ff561606)  
-[**NdisAnsiStringToUnicodeString**](https://msdn.microsoft.com/library/windows/hardware/ff561619)  
-[**NdisCloseConfiguration**](https://msdn.microsoft.com/library/windows/hardware/ff561642)  
-[**NdisCloseFile**](https://msdn.microsoft.com/library/windows/hardware/ff561645)  
-[**NdisDeleteNPagedLookasideList**](https://msdn.microsoft.com/library/windows/hardware/ff561739)  
-[**NdisDeregisterDeviceEx**](https://msdn.microsoft.com/library/windows/hardware/ff561741)  
-[**NdisEqualMemory**](https://msdn.microsoft.com/library/windows/hardware/ff561760)  
-[**NdisEqualString**](https://msdn.microsoft.com/library/windows/hardware/ff561771)  
-[**NdisEqualUnicodeString**](https://msdn.microsoft.com/library/windows/hardware/ff561775)  
-[**NdisFreeGenericObject**](https://msdn.microsoft.com/library/windows/hardware/ff561850)  
-[**NdisFreeIoWorkItem**](https://msdn.microsoft.com/library/windows/hardware/ff561855)  
-[**NdisFreeMemory**](https://msdn.microsoft.com/library/windows/hardware/ff562577)  
-[**NdisFreeString**](https://msdn.microsoft.com/library/windows/hardware/ff562604)  
-[**NdisFreeToNPagedLookasideList**](https://msdn.microsoft.com/library/windows/hardware/ff562607)  
-[**NdisGeneratePartialCancelId**](https://msdn.microsoft.com/library/windows/hardware/ff562623)  
-[**NdisGetCurrentProcessorCounts**](https://msdn.microsoft.com/library/windows/hardware/ff562625)  
-[**NdisGetRoutineAddress**](https://msdn.microsoft.com/library/windows/hardware/ff562665)  
-[**NdisGetSharedDataAlignment**](https://msdn.microsoft.com/library/windows/hardware/ff562671)  
-[**NdisGetVersion**](https://msdn.microsoft.com/library/windows/hardware/ff562680)  
-[**NdisInitAnsiString**](https://msdn.microsoft.com/library/windows/hardware/ff562730)  
-[**NdisInitializeNPagedLookasideList**](https://msdn.microsoft.com/library/windows/hardware/ff562736)  
-[**NdisInitializeString**](https://msdn.microsoft.com/library/windows/hardware/ff562741)  
-[**NdisInitUnicodeString**](https://msdn.microsoft.com/library/windows/hardware/ff562745)  
-[**NdisMapFile**](https://msdn.microsoft.com/library/windows/hardware/ff562785)  
-[**NdisOpenConfigurationEx**](https://msdn.microsoft.com/library/windows/hardware/ff563717)  
-[**NdisOpenConfigurationKeyByIndex**](https://msdn.microsoft.com/library/windows/hardware/ff563721)  
-[**NdisOpenConfigurationKeyByName**](https://msdn.microsoft.com/library/windows/hardware/ff563725)  
-[**NdisOpenFile**](https://msdn.microsoft.com/library/windows/hardware/ff563728)  
-[**NdisQueryAdapterInstanceName**](https://msdn.microsoft.com/library/windows/hardware/ff563745)  
-[**NdisQueryDepthSList**](https://msdn.microsoft.com/library/windows/hardware/ff563753)  
-[**NdisQueueIoWorkItem**](https://msdn.microsoft.com/library/windows/hardware/ff563775)  
-[**NdisReadConfiguration**](https://msdn.microsoft.com/library/windows/hardware/ff564511)  
-[**NdisReadNetworkAddress**](https://msdn.microsoft.com/library/windows/hardware/ff564512)  
-[**NdisReEnumerateProtocolBindings**](https://msdn.microsoft.com/library/windows/hardware/ff564516)  
-[**NdisRegisterDeviceEx**](https://msdn.microsoft.com/library/windows/hardware/ff564518)  
-[**NdisSetOptionalHandlers**](https://msdn.microsoft.com/library/windows/hardware/ff564550)  
-[**NdisSystemProcessorCount**](https://msdn.microsoft.com/library/windows/hardware/ff564579)  
-[**NdisUnicodeStringToAnsiString**](https://msdn.microsoft.com/library/windows/hardware/ff564635)  
-[**NdisUnmapFile**](https://msdn.microsoft.com/library/windows/hardware/ff564641)  
-[**NdisUpcaseUnicodeString**](https://msdn.microsoft.com/library/windows/hardware/ff564644)  
-[**NdisWaitEvent**](https://msdn.microsoft.com/library/windows/hardware/ff564651)  
-[**NdisWriteConfiguration**](https://msdn.microsoft.com/library/windows/hardware/ff564659)  
-[**NdisWriteErrorLogEntry**](https://msdn.microsoft.com/library/windows/hardware/ff564663)  
-[**NdisWriteEventLogEntry**](https://msdn.microsoft.com/library/windows/hardware/ff564672)  
-[**KeGetCurrentProcessorNumber**](https://msdn.microsoft.com/library/windows/hardware/ff552063)  
+[**NdisAllocateFromNPagedLookasideList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisallocatefromnpagedlookasidelist)  
+[**NdisAllocateGenericObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisallocategenericobject)  
+[**NdisAllocateIoWorkItem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisallocateioworkitem)  
+[**NdisAllocateMemoryWithTagPriority**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisallocatememorywithtagpriority)  
+[**NdisAnsiStringToUnicodeString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisansistringtounicodestring)  
+[**NdisCloseConfiguration**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscloseconfiguration)  
+[**NdisCloseFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisclosefile)  
+[**NdisDeleteNPagedLookasideList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisdeletenpagedlookasidelist)  
+[**NdisDeregisterDeviceEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisderegisterdeviceex)  
+[**NdisEqualMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisequalmemory)  
+[**NdisEqualString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisequalstring)  
+[**NdisEqualUnicodeString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisequalunicodestring)  
+[**NdisFreeGenericObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfreegenericobject)  
+[**NdisFreeIoWorkItem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfreeioworkitem)  
+[**NdisFreeMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfreememory)  
+[**NdisFreeString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfreestring)  
+[**NdisFreeToNPagedLookasideList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfreetonpagedlookasidelist)  
+[**NdisGeneratePartialCancelId**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisgeneratepartialcancelid)  
+[**NdisGetCurrentProcessorCounts**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisgetcurrentprocessorcounts)  
+[**NdisGetRoutineAddress**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisgetroutineaddress)  
+[**NdisGetSharedDataAlignment**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisgetshareddataalignment)  
+[**NdisGetVersion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisgetversion)  
+[**NdisInitAnsiString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisinitansistring)  
+[**NdisInitializeNPagedLookasideList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisinitializenpagedlookasidelist)  
+[**NdisInitializeString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisinitializestring)  
+[**NdisInitUnicodeString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisinitunicodestring)  
+[**NdisMapFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismapfile)  
+[**NdisOpenConfigurationEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisopenconfigurationex)  
+[**NdisOpenConfigurationKeyByIndex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisopenconfigurationkeybyindex)  
+[**NdisOpenConfigurationKeyByName**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisopenconfigurationkeybyname)  
+[**NdisOpenFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisopenfile)  
+[**NdisQueryAdapterInstanceName**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisqueryadapterinstancename)  
+[**NdisQueryDepthSList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisquerydepthslist)  
+[**NdisQueueIoWorkItem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisqueueioworkitem)  
+[**NdisReadConfiguration**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisreadconfiguration)  
+[**NdisReadNetworkAddress**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisreadnetworkaddress)  
+[**NdisReEnumerateProtocolBindings**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisreenumerateprotocolbindings)  
+[**NdisRegisterDeviceEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisregisterdeviceex)  
+[**NdisSetOptionalHandlers**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndissetoptionalhandlers)  
+[**NdisSystemProcessorCount**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndissystemprocessorcount)  
+[**NdisUnicodeStringToAnsiString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisunicodestringtoansistring)  
+[**NdisUnmapFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisunmapfile)  
+[**NdisUpcaseUnicodeString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisupcaseunicodestring)  
+[**NdisWaitEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiswaitevent)  
+[**NdisWriteConfiguration**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiswriteconfiguration)  
+[**NdisWriteErrorLogEntry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiswriteerrorlogentry)  
+[**NdisWriteEventLogEntry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiswriteeventlogentry)  
+[**KeGetCurrentProcessorNumber**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-kegetcurrentprocessornumber)  
 
 
 

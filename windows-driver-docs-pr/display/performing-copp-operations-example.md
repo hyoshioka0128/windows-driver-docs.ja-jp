@@ -9,12 +9,12 @@ keywords:
 - ビデオの WDK COPP COPP 操作の例のコードの保護
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 11716ec6ce25a67748a93cd2afe860a396b32f20
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1f5954313b6994309e2a56d1e80ab7bde6204bae
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352294"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385581"
 ---
 # <a name="performing-copp-operations-example"></a>COPP 操作の実行例
 
@@ -24,7 +24,7 @@ ms.locfileid: "63352294"
 
 **このセクションには、Windows Server 2003 SP1 にのみ以降が適用されますおよび Windows XP SP2 以降。**
 
-経由で、認定出力保護プロトコル (COPP) 操作を実行するのにには、次のコード例を使用します。 コード例の実装、 [ *DdMoCompRender* ](https://msdn.microsoft.com/library/windows/hardware/ff550248)コールバック関数。 **RenderMoComp**のメンバー、 [ **DD\_MOTIONCOMPCALLBACKS** ](https://msdn.microsoft.com/library/windows/hardware/ff551660)コールバック関数へのポインターを構造体します。 この例のコードのみは*DdMoCompRender* COPP 操作のために使用します。 実装について*DdMoCompRender* ProcAmp コントロールを実行して、操作をデインター レースを参照してください[ProcAmp コントロールを実行して操作のデインター レース](performing-procamp-control-and-deinterlacing-operations.md)と[実行サブストリーム合成の操作でデインター レース](performing-deinterlacing-with-substream-compositing-operations.md)します。
+経由で、認定出力保護プロトコル (COPP) 操作を実行するのにには、次のコード例を使用します。 コード例の実装、 [ *DdMoCompRender* ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_render)コールバック関数。 **RenderMoComp**のメンバー、 [ **DD\_MOTIONCOMPCALLBACKS** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)コールバック関数へのポインターを構造体します。 この例のコードのみは*DdMoCompRender* COPP 操作のために使用します。 実装について*DdMoCompRender* ProcAmp コントロールを実行して、操作をデインター レースを参照してください[ProcAmp コントロールを実行して操作のデインター レース](performing-procamp-control-and-deinterlacing-operations.md)と[実行サブストリーム合成の操作でデインター レース](performing-deinterlacing-with-substream-compositing-operations.md)します。
 
 ```cpp
 DWORD APIENTRY

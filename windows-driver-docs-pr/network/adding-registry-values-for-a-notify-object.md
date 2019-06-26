@@ -9,12 +9,12 @@ keywords:
 - レジストリ WDK オブジェクトに通知します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bc082fffc5a5d0724f6ad19729190bfe726b7909
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2d859c24aae57834b214d26889f533d35ec86c05
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367902"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384725"
 ---
 # <a name="adding-registry-values-for-a-notify-object"></a>通知オブジェクトのレジストリ値の追加
 
@@ -40,7 +40,7 @@ A **NetTrans**、 **NetClient**、または**NetService**コンポーネント�
 
  
 
-共同インストーラーの詳細については、次を参照してください。[共同インストーラーの作成](https://msdn.microsoft.com/library/windows/hardware/ff554011)です。
+共同インストーラーの詳細については、次を参照してください。[共同インストーラーの作成](https://docs.microsoft.com/windows-hardware/drivers/install/writing-a-co-installer)です。
 
 コンポーネントのかどうか、通知オブジェクトが、そのコンポーネントの INF ファイルを追加する必要があります (を通じて、*追加レジストリ セクション*) コンポーネントのための値を**Ndi**キー。
 
@@ -58,7 +58,7 @@ HKR, Ndi, ClsID, 0, "GUID"
 HKR, Ndi, ComponentDll, 0, "notifyobject.dll"
 ```
 
-*DDInstall*セクションは、通知オブジェクトを持つコンポーネントも含める必要があります、 **CopyFiles**を参照するディレクティブ、*ファイルのセクション一覧*通知をコピーします。指定されたインストール先ディレクトリに DLL のオブジェクト、 **DestinationDirs**セクション。 詳細については、 **CopyFiles**ディレクティブと**DestinationDirs**のセクションを参照してください[INF ファイルのセクションとディレクティブ](https://msdn.microsoft.com/library/windows/hardware/ff547433)します。
+*DDInstall*セクションは、通知オブジェクトを持つコンポーネントも含める必要があります、 **CopyFiles**を参照するディレクティブ、*ファイルのセクション一覧*通知をコピーします。指定されたインストール先ディレクトリに DLL のオブジェクト、 **DestinationDirs**セクション。 詳細については、 **CopyFiles**ディレクティブと**DestinationDirs**のセクションを参照してください[INF ファイルのセクションとディレクティブ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-file-sections-and-directives)します。
 
  
 

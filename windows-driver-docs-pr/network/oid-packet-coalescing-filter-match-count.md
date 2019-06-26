@@ -5,26 +5,26 @@ ms.assetid: 3325865D-A329-4562-8270-CC2F42043D48
 ms.date: 08/08/2017
 keywords: -OID_PACKET_COALESCING_FILTER_MATCH_COUNT ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: a90580eea69d85ccf616b3793ba48617810d5678
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0d36c0cd0b56e6697748a9bd47dabc257b72406d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63350938"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383247"
 ---
 # <a name="oidpacketcoalescingfiltermatchcount"></a>OID\_パケット\_COALESCING\_フィルター\_一致\_数
 
 
-OID の OID クエリ要求を発行する NDIS\_パケット\_COALESCING\_フィルター\_一致\_キャッシュされたパケットの数を取得する数または*まとめられた*のネットワーク アダプター。 アダプターが有効な場合、ネットワーク アダプターが受信したパケットを連結[NDIS パケット結合](https://msdn.microsoft.com/library/windows/hardware/hh451601)パケットが受信フィルターに一致するとします。
+OID の OID クエリ要求を発行する NDIS\_パケット\_COALESCING\_フィルター\_一致\_キャッシュされたパケットの数を取得する数または*まとめられた*のネットワーク アダプター。 アダプターが有効な場合、ネットワーク アダプターが受信したパケットを連結[NDIS パケット結合](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-packet-coalescing)パケットが受信フィルターに一致するとします。
 
-**InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)構造体には、呼び出し元が割り当てた ULONG64 変数へのポインターが含まれています. クエリ要求から正常に返された前に、ドライバー更新プログラム、ULONG64 変数に一致したパケットの数とは、ネットワーク アダプターのフィルターを受信します。
+**InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体には、呼び出し元が割り当てた ULONG64 変数へのポインターが含まれています. クエリ要求から正常に返された前に、ドライバー更新プログラム、ULONG64 変数に一致したパケットの数とは、ネットワーク アダプターのフィルターを受信します。
 
 <a name="remarks"></a>コメント
 -------
 
-NDIS 6.30、以降をサポートするドライバー [NDIS パケット結合](https://msdn.microsoft.com/library/windows/hardware/hh451601)OID の OID クエリ要求をサポートする必要があります\_パケット\_COALESCING\_フィルター\_一致\_カウントします。
+NDIS 6.30、以降をサポートするドライバー [NDIS パケット結合](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-packet-coalescing)OID の OID クエリ要求をサポートする必要があります\_パケット\_COALESCING\_フィルター\_一致\_カウントします。
 
-**注**  をサポートするドライバー、[シングル ルート I/O 仮想化 (SR-IOV)](https://msdn.microsoft.com/library/windows/hardware/hh440235)または[仮想マシン キュー (VMQ)](https://msdn.microsoft.com/library/windows/hardware/ff571035)インターフェイスは、OID クエリ要求をサポートする必要はありませんこの OID。
+**注**  をサポートするドライバー、[シングル ルート I/O 仮想化 (SR-IOV)](https://docs.microsoft.com/windows-hardware/drivers/network/single-root-i-o-virtualization--sr-iov-)または[仮想マシン キュー (VMQ)](https://docs.microsoft.com/windows-hardware/drivers/network/virtual-machine-queue--vmq--in-ndis-6-20)インターフェイスは、OID クエリ要求をサポートする必要はありませんこの OID。
 
  
 
@@ -36,9 +36,9 @@ OID の OID のクエリ要求を処理した後、ミニポート ドライバ�
 
 -   ミニポート ドライバーの OID セット要求を処理する[OID\_PNP\_設定\_POWER](oid-pnp-set-power.md) NdisDeviceStateD0 の電力状態に再開します。
 
--   NDIS ミニポート ドライバーの呼び出す[ *MiniportResetEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559432)関数を基になるネットワーク アダプターをリセットします。
+-   NDIS ミニポート ドライバーの呼び出す[ *MiniportResetEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_reset)関数を基になるネットワーク アダプターをリセットします。
 
-パケットの結合の詳細については、次を参照してください。 [NDIS パケット結合](https://msdn.microsoft.com/library/windows/hardware/hh205393)します。
+パケットの結合の詳細については、次を参照してください。 [NDIS パケット結合](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)します。
 
 ### <a name="return-status-codes"></a>リターン状態コード
 
@@ -48,7 +48,7 @@ OID の OID のクエリ要求を処理した後、ミニポート ドライバ�
 OID 要求は正常に完了しました。
 
 <a href="" id="ndis-status-invalid-length"></a>NDIS\_状態\_無効な\_長さ  
-情報バッファーが小さすぎます。 ドライバーのセット、**データ。設定\_情報。BytesNeeded**内のメンバー、 [ **NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)構造体に必要な最小バッファー サイズ。
+情報バッファーが小さすぎます。 ドライバーのセット、**データ。設定\_情報。BytesNeeded**内のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体に必要な最小バッファー サイズ。
 
 <a href="" id="ndis-status-failure"></a>NDIS\_状態\_エラー  
 他の理由から、要求が失敗しました。
@@ -76,9 +76,9 @@ OID 要求は正常に完了しました。
 ## <a name="see-also"></a>関連項目
 
 
-[*MiniportResetEx*](https://msdn.microsoft.com/library/windows/hardware/ff559432)
+[*MiniportResetEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_reset)
 
-[**NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)
+[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
 
 [OID\_PNP\_設定\_電源](oid-pnp-set-power.md)
 

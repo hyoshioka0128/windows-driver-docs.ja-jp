@@ -6,12 +6,12 @@ keywords:
 - テスト署名ドライバー パッケージ、WDK テスト署名ドライバー パッケージについて
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2426a79f688a0df2ad5f4794a006b07a7a2c05f6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2cbba0bc04f9056203b0775060f3bb6bd5c30582
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364302"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374989"
 ---
 # <a name="introduction-to-test-signing"></a>テスト署名の概要
 
@@ -36,7 +36,7 @@ ms.locfileid: "63364302"
 
 開発/テスト チームが参加できる、 [WHQL テスト署名プログラム](whql-test-signature-program.md)、Windows Hardware Quality Labs (WHQL) を PnP サインイン[ドライバー パッケージ](driver-packages.md)テスト目的で。 開発/テスト チームがまたは、独自の社内署名プロセスを管理しの次の種類を使用して、[テスト証明書](test-certificates.md)テスト署名ドライバーに。
 
--   [テスト証明書の MakeCert](makecert-test-certificate.md)、デジタル証明書がによってこれを作成、 [ **MakeCert** ](https://msdn.microsoft.com/library/windows/hardware/ff548309)ツール。
+-   [テスト証明書の MakeCert](makecert-test-certificate.md)、デジタル証明書がによってこれを作成、 [ **MakeCert** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/makecert)ツール。
 
 -   [市販のテスト証明書](commercial-test-certificate.md)、これは、Microsoft ルート証明書プログラムのメンバーである CA によって発行されるデジタル証明書。
 
@@ -48,7 +48,7 @@ ms.locfileid: "63364302"
 
 初期のドライバーの開発とデバッグを容易に、カーネル モード コードを読み込むしを未署名のカーネル モード ドライバーをテストするための要件を署名を一時的に無効にできます。 ただし、未署名のドライバのインストールを承認するためにシステム管理者を必要とする PnP ドライバーのインストール ポリシーを無効にすることはできません。 未署名のドライバをインストールする方法の詳細については、次を参照してください。[開発およびテスト中に、署名されていないドライバーをインストールする](installing-an-unsigned-driver-during-development-and-test.md)します。
 
-テスト署名ドライバー パッケージに使用する最適なツールについては、次を参照してください。[ドライバーの署名ツール](https://msdn.microsoft.com/library/windows/hardware/ff552958)します。
+テスト署名ドライバー パッケージに使用する最適なツールについては、次を参照してください。[ドライバーの署名ツール](https://docs.microsoft.com/windows-hardware/drivers/devtest/tools-for-signing-drivers)します。
 
 **注**  テスト署名ドライバー パッケージに関連する手順の理解を深めるためには、次を参照してください。[テスト署名ドライバー パッケージ方法](how-to-test-sign-a-driver-package.md)します。 このトピックでは、テスト署名プロセスの概要を提供し、テスト署名の例の多くを使用してステップ実行、 *ToastPkg*サンプル[ドライバー パッケージ](driver-packages.md)Windows Driver Kit (WDK) 内で。
 

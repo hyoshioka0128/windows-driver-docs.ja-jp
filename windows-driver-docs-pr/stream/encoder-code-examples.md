@@ -16,12 +16,12 @@ keywords:
 - レジストリの WDK エンコーダー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 632aa4aafecbb1c2d64cb6819a7536edc3085151
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b9702527288d70bf306dca1418df99fe79b4c7b5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363563"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384125"
 ---
 # <a name="encoder-code-examples"></a>エンコーダーのコード例
 
@@ -36,7 +36,7 @@ ms.locfileid: "63363563"
 
 ### <a name="implementing-supported-bit-rates"></a>**サポートされているビット レートを実装します。**
 
-次のコード スニペットは、サポートを実装する方法を示します、 [ENCAPIPARAM\_ビットレート](https://msdn.microsoft.com/library/windows/hardware/ff559520)プロパティ。 使用して、 [ **KSPROPERTY\_ステッピング\_長い**](https://msdn.microsoft.com/library/windows/hardware/ff565631) 400 bps 下限の境界と大きく 4,000,000 bps 上限を 400 ビット/秒 (bps) のステップ実行の粒度を指定する構造体。
+次のコード スニペットは、サポートを実装する方法を示します、 [ENCAPIPARAM\_ビットレート](https://docs.microsoft.com/windows-hardware/drivers/stream/encapiparam-bitrate)プロパティ。 使用して、 [ **KSPROPERTY\_ステッピング\_長い**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksproperty_stepping_long) 400 bps 下限の境界と大きく 4,000,000 bps 上限を 400 ビット/秒 (bps) のステップ実行の粒度を指定する構造体。
 
 ```cpp
 const KSPROPERTY_STEPPING_LONG BitRateRanges [] = {
@@ -121,7 +121,7 @@ DEFINE_KSPROPERTY_TABLE(ENCAPI_BitRate) {
 
 ### <a name="implementing-supported-encoding-bit-rate-modes"></a>**エンコード ビット レートのモードをサポートを実装します。**
 
-次のコード スニペットは、サポートを実装する方法を示します、 [ENCAPIPARAM\_ビットレート\_モード](https://msdn.microsoft.com/library/windows/hardware/ff559524)プロパティ。
+次のコード スニペットは、サポートを実装する方法を示します、 [ENCAPIPARAM\_ビットレート\_モード](https://docs.microsoft.com/windows-hardware/drivers/stream/encapiparam-bitrate-mode)プロパティ。
 
 エンコーダーでサポートされているエンコード モードを定義します。
 
@@ -198,7 +198,7 @@ DEFINE_KSPROPERTY_TABLE(ENCAPI_BitRateMode) {
 
  
 
-プロパティ セットは、として指定し、 [ **KSFILTER\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff562553)構造体のオートメーション テーブル。
+プロパティ セットは、として指定し、 [ **KSFILTER\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_ksfilter_descriptor)構造体のオートメーション テーブル。
 
 ```cpp
 DEFINE_KSPROPERTY_SET_TABLE(PropertyTable) {

@@ -10,12 +10,12 @@ keywords:
 - ソース情報 WDK WHEA では、新しい
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c4aa9a92bdf0eb746b84916d5f5e9d4861ac6e1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ab4920ac3ad03f16e9485d620c00083a0d541107
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340749"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386457"
 ---
 # <a name="new-information-for-windows-hardware-error-architecture"></a>Windows Hardware Error Architecture の新情報
 
@@ -33,9 +33,9 @@ ms.locfileid: "63340749"
 
 Windows 8 以降、次の変更が行われた Windows ハードウェア エラー アーキテクチャ (WHEA) に
 
--   新しい WMI プロバイダー クラス[ **WHEAPolicyManagementMethods**](https://msdn.microsoft.com/library/windows/hardware/hh451252)します。
--   WHEA のポリシーを指定できますいずれかが管理されている[ **WHEAPolicyManagementMethods** ](https://msdn.microsoft.com/library/windows/hardware/hh451252)または WHEA Powershell モジュールを使用します。 これらのモードのいずれかで、ポリシーが更新され、ポリシーの値が直ちに有効にします。
--   WHEA の WMI メソッド[ **WHEAErrorSourceMethods::SetErrorSourceInfoRtn** ](https://msdn.microsoft.com/library/windows/hardware/ff559531)は非推奨とされます。
+-   新しい WMI プロバイダー クラス[ **WHEAPolicyManagementMethods**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_whea/)します。
+-   WHEA のポリシーを指定できますいずれかが管理されている[ **WHEAPolicyManagementMethods** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_whea/)または WHEA Powershell モジュールを使用します。 これらのモードのいずれかで、ポリシーが更新され、ポリシーの値が直ちに有効にします。
+-   WHEA の WMI メソッド[ **WHEAErrorSourceMethods::SetErrorSourceInfoRtn** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_whea/)は非推奨とされます。
 
  
 

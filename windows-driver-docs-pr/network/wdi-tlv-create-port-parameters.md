@@ -6,17 +6,17 @@ ms.date: 07/18/2017
 keywords:
 - WDI_TLV_CREATE_PORT_PARAMETERS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: a616c4e5f15aef28de73d8ad7581e6be39f8145f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b0e86e421ccda2be78889421f41f5aedaff1a0e5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331808"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374704"
 ---
 # <a name="wditlvcreateportparameters"></a>WDI\_TLV\_作成\_ポート\_パラメーター
 
 
-WDI\_TLV\_作成\_ポート\_パラメーターはパラメーターを含む TLV [OID\_WDI\_タスク\_作成\_ポート](https://msdn.microsoft.com/library/windows/hardware/dn925949).
+WDI\_TLV\_作成\_ポート\_パラメーターはパラメーターを含む TLV [OID\_WDI\_タスク\_作成\_ポート](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-task-create-port).
 
 ## <a name="tlv-type"></a>TLV 型
 
@@ -33,12 +33,12 @@ WDI\_TLV\_作成\_ポート\_パラメーターはパラメーターを含む TL
 
 | 型   | 説明                                                                                                                                                                             |
 |--------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| UINT16 | 操作モードのビットごとの OR 値、ホストが作成されているポートで構成できます。 操作モードがで定義されている[ **WDI\_操作\_モード**](https://msdn.microsoft.com/library/windows/hardware/dn926085)します。 |
+| UINT16 | 操作モードのビットごとの OR 値、ホストが作成されているポートで構成できます。 操作モードがで定義されている[ **WDI\_操作\_モード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ne-dot11wdi-_wdi_operation_mode)します。 |
 | UINT32 | NDIS\_ポート\_番号を作成したポートに関連付けられます。 アダプターは、WDI 以外の Oid を処理する必要がある場合を除き、このフィールドに何もする必要はありません。                 |
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

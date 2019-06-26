@@ -16,12 +16,12 @@ keywords:
 - ビデオの WDK DirectX VA をデコードするには、オフホスト VLD ビット ストリーム処理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 41ff18f2480c2d3f2750973edc4c8b9ae077f567
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a0a5819e50452ce4aff38a99754086ea77982093
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383996"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372785"
 ---
 # <a name="off-host-vld-bitstream-decoding-operation"></a>オフホスト VLD ビットストリームのデコード操作
 
@@ -62,11 +62,11 @@ ms.locfileid: "63383996"
 
 ### <a name="span-idinverse-quantizationmatrixbuffersspanspan-idinverse-quantizationmatrixbuffersspanspan-idinverse-quantizationmatrixbuffersspaninverse-quantization-matrix-buffers"></a><span id="Inverse-Quantization_Matrix_Buffers"></span><span id="inverse-quantization_matrix_buffers"></span><span id="INVERSE-QUANTIZATION_MATRIX_BUFFERS"></span>量子化の逆行列のマトリックス バッファー
 
-オフホスト ビット ストリームのデコードのマトリックスを逆量子化を初期化するために、行列の逆行列量子化のバッファーが送信されます。 量子化の逆行列の行列のバッファーでは、新しい行列の逆行列量子化バッファーが提供されるまで、ビット ストリームで、すべての現在およびそれ以降のビデオをデコードする方法についてを説明します。 (そのため、行列の逆行列量子化は永続的な) です。1 つの逆量子化マトリックス バッファーは、一度にアクセラレータにホストから送信できます。 [ **DXVA\_QmatrixData** ](https://msdn.microsoft.com/library/windows/hardware/ff564034)構造体は、圧縮されたビデオ画像のデコードの量子化マトリックスのデータを読み込みます。
+オフホスト ビット ストリームのデコードのマトリックスを逆量子化を初期化するために、行列の逆行列量子化のバッファーが送信されます。 量子化の逆行列の行列のバッファーでは、新しい行列の逆行列量子化バッファーが提供されるまで、ビット ストリームで、すべての現在およびそれ以降のビデオをデコードする方法についてを説明します。 (そのため、行列の逆行列量子化は永続的な) です。1 つの逆量子化マトリックス バッファーは、一度にアクセラレータにホストから送信できます。 [ **DXVA\_QmatrixData** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_qmatrixdata)構造体は、圧縮されたビデオ画像のデコードの量子化マトリックスのデータを読み込みます。
 
 ### <a name="span-idslice-controlbuffersspanspan-idslice-controlbuffersspanspan-idslice-controlbuffersspanslice-control-buffers"></a><span id="Slice-Control_Buffers"></span><span id="slice-control_buffers"></span><span id="SLICE-CONTROL_BUFFERS"></span>スライス コントロール バッファー
 
-スライス コントロール バッファー オフホスト VLD ビット ストリーム処理の操作を説明します。 ホスト ソフトウェア デコーダーは、ビット ストリームでスライスのレベルの再同期ポイントの場所を決定します。 スライスは、ビット ストリーム データで再同期ポイントを含む multimacroblock レイヤーに定義されます。 H.261 ビット ストリームで、H.261 グループのブロック (GOB) は、スライスと見なされます。 H.263 では、ビットを 1 つまたは複数の H.263 豊富な GOB 以降のシーケンスは、コードを起動し、追加 GOB 開始のコードが含まれていないと、スライスと見なされます。 スライス コントロール バッファーの配列を格納する[ **DXVA\_SliceInfo** ](https://msdn.microsoft.com/library/windows/hardware/ff564049)スライス コントロールの構造は、対応するビット ストリーム データ バッファーの内容に適用されます。
+スライス コントロール バッファー オフホスト VLD ビット ストリーム処理の操作を説明します。 ホスト ソフトウェア デコーダーは、ビット ストリームでスライスのレベルの再同期ポイントの場所を決定します。 スライスは、ビット ストリーム データで再同期ポイントを含む multimacroblock レイヤーに定義されます。 H.261 ビット ストリームで、H.261 グループのブロック (GOB) は、スライスと見なされます。 H.263 では、ビットを 1 つまたは複数の H.263 豊富な GOB 以降のシーケンスは、コードを起動し、追加 GOB 開始のコードが含まれていないと、スライスと見なされます。 スライス コントロール バッファーの配列を格納する[ **DXVA\_SliceInfo** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_sliceinfo)スライス コントロールの構造は、対応するビット ストリーム データ バッファーの内容に適用されます。
 
 ### <a name="span-idbitstreambuffersspanspan-idbitstreambuffersspanspan-idbitstreambuffersspanbitstream-buffers"></a><span id="Bitstream_Buffers"></span><span id="bitstream_buffers"></span><span id="BITSTREAM_BUFFERS"></span>ビット ストリーム バッファー
 

@@ -5,12 +5,12 @@ ms.assetid: B1A72D34-286A-4A70-8BE3-F21324B92187
 ms.date: 08/08/2017
 keywords: -OID_NIC_SWITCH_FREE_VF ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 5469c272ed6c52721e0c2a3e374b5a8811f341c4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 54ce0c18e315e32264c512b39ebc6c5b8466a9f8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63350973"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383652"
 ---
 # <a name="oidnicswitchfreevf"></a>OID\_NIC\_スイッチ\_FREE\_VF
 
@@ -19,7 +19,7 @@ OID のオブジェクト識別子 (OID) セット要求を発行する上位の
 
 上にあるドライバーは、ネットワーク アダプターの PCIe 物理機能 (PF)、ミニポート ドライバーをこの OID セット要求を発行します。 この OID セットの要求は、PF ミニポート ドライバー シングル ルート I/O 仮想化 (SR-IOV) インターフェイスをサポートする必要があります。
 
-**InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)構造体にはへのポインターが含まれています、 [ **NDIS\_NIC\_スイッチ\_FREE\_VF\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/hh451579)構造体。
+**InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体にはへのポインターが含まれています、 [ **NDIS\_NIC\_スイッチ\_FREE\_VF\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_free_vf_parameters)構造体。
 
 上にあるドライバーを解放する VF の識別子を指定する、 **VFId**この構造体のメンバー。 ドライバーの以前の OID メソッド要求からこの識別子を取得した[OID\_NIC\_スイッチ\_ALLOCATE\_VF](oid-nic-switch-allocate-vf.md)します。
 
@@ -28,7 +28,7 @@ OID のオブジェクト識別子 (OID) セット要求を発行する上位の
 
 OID の OID セット要求を発行する上位のドライバー\_NIC\_スイッチ\_FREE\_VF を VF のリソースを解放します。 これらのリソースがの OID メソッド要求を通じて割り当てられた以前[OID\_NIC\_スイッチ\_ALLOCATE\_VF](oid-nic-switch-allocate-vf.md)します。
 
-VF リソースを解放する方法の詳細については、次を参照してください。[仮想関数のリソースを解放](https://msdn.microsoft.com/library/windows/hardware/hh439570)します。
+VF リソースを解放する方法の詳細については、次を参照してください。[仮想関数のリソースを解放](https://docs.microsoft.com/windows-hardware/drivers/network/freeing-resources-for-a-virtual-function)します。
 
 **注**  そのドライバーは VF を同じリソースの解放が要求できる唯一のコンポーネントで上にある、ドライバーは VF のリソースの割り当てを要求するとします。 上にあるドライバーは、OID の OID セット要求を発行する必要があります\_NIC\_スイッチ\_FREE\_VF VF リソースを解放します。 ドライバーのによって割り当てられた各 VF のリソースを解放する必要があります上にあるドライバーを停止できますが、前に[OID\_NIC\_スイッチ\_ALLOCATE\_VF](oid-nic-switch-allocate-vf.md)要求。
 
@@ -36,7 +36,7 @@ VF リソースを解放する方法の詳細については、次を参照し�
 
 ### <a name="return-status-codes"></a>リターン状態コード
 
-ミニポート ドライバーの[ *MiniportOidRequest* ](https://msdn.microsoft.com/library/windows/hardware/ff559416)関数は、次のいずれかがこの要求の値を返します。
+ミニポート ドライバーの[ *MiniportOidRequest* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_oid_request)関数は、次のいずれかがこの要求の値を返します。
 
 <table>
 <colgroup>
@@ -56,7 +56,7 @@ VF リソースを解放する方法の詳細については、次を参照し�
 </tr>
 <tr class="even">
 <td><p><strong>NDIS_STATUS_PENDING</strong></p></td>
-<td><p>ミニポート ドライバーでは、要求を非同期的に実行されます。 ミニポート ドライバーには、すべての処理が完了したら後、は、呼び出すことによって、要求が成功する必要があります、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff563622" data-raw-source="[&lt;strong&gt;NdisMOidRequestComplete&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff563622)"> <strong>NdisMOidRequestComplete</strong> </a>関数<strong>NDIS_STATUS_SUCCESS</strong>の<em>状態</em>パラメーター。</p></td>
+<td><p>ミニポート ドライバーでは、要求を非同期的に実行されます。 ミニポート ドライバーには、すべての処理が完了したら後、は、呼び出すことによって、要求が成功する必要があります、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismoidrequestcomplete" data-raw-source="[&lt;strong&gt;NdisMOidRequestComplete&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismoidrequestcomplete)"> <strong>NdisMOidRequestComplete</strong> </a>関数<strong>NDIS_STATUS_SUCCESS</strong>の<em>状態</em>パラメーター。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>NDIS_STATUS_NOT_ACCEPTED</strong></p></td>
@@ -64,7 +64,7 @@ VF リソースを解放する方法の詳細については、次を参照し�
 </tr>
 <tr class="even">
 <td><p><strong>NDIS_STATUS_REQUEST_ABORTED</strong></p></td>
-<td><p>ミニポート ドライバーでは、要求の処理を停止します。 たとえば、NDIS と呼ばれる、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff559432" data-raw-source="[&lt;em&gt;MiniportResetEx&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff559432)"> <em>MiniportResetEx</em> </a>関数。</p></td>
+<td><p>ミニポート ドライバーでは、要求の処理を停止します。 たとえば、NDIS と呼ばれる、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_reset" data-raw-source="[&lt;em&gt;MiniportResetEx&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_reset)"> <em>MiniportResetEx</em> </a>関数。</p></td>
 </tr>
 </tbody>
 </table>
@@ -95,11 +95,11 @@ NDIS は、この要求の次のステータス コードのいずれかを返�
 </tr>
 <tr class="odd">
 <td><p><strong>NDIS_STATUS_FILE_NOT_FOUND</strong></p></td>
-<td><p>1 つ以上のメンバーの<a href="https://msdn.microsoft.com/library/windows/hardware/hh451579" data-raw-source="[&lt;strong&gt;NDIS_NIC_SWITCH_FREE_VF_PARAMETERS&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/hh451579)"> <strong>NDIS_NIC_SWITCH_FREE_VF_PARAMETERS</strong> </a>構造が無効な値を指定します。 たとえば、 <strong>VFId</strong> VF のいずれかが割り当てられていないか削除されていない拡張を持つメンバーを指定します。</p></td>
+<td><p>1 つ以上のメンバーの<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_free_vf_parameters" data-raw-source="[&lt;strong&gt;NDIS_NIC_SWITCH_FREE_VF_PARAMETERS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_free_vf_parameters)"> <strong>NDIS_NIC_SWITCH_FREE_VF_PARAMETERS</strong> </a>構造が無効な値を指定します。 たとえば、 <strong>VFId</strong> VF のいずれかが割り当てられていないか削除されていない拡張を持つメンバーを指定します。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>NDIS_STATUS_INVALID_LENGTH</strong></p></td>
-<td><p>情報バッファーが小さすぎます。 NDIS セット、<strong>データ。SET_INFORMATION します。BytesNeeded</strong>内のメンバー、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff566710" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566710)"> <strong>NDIS_OID_REQUEST</strong> </a>構造体に必要な最小バッファー サイズ。</p></td>
+<td><p>情報バッファーが小さすぎます。 NDIS セット、<strong>データ。SET_INFORMATION します。BytesNeeded</strong>内のメンバー、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)"> <strong>NDIS_OID_REQUEST</strong> </a>構造体に必要な最小バッファー サイズ。</p></td>
 </tr>
 </tbody>
 </table>
@@ -130,11 +130,11 @@ NDIS は、この要求の次のステータス コードのいずれかを返�
 
 
 ****
-[**NDIS\_NIC\_スイッチ\_FREE\_VF\_パラメーター**](https://msdn.microsoft.com/library/windows/hardware/hh451579)
+[**NDIS\_NIC\_スイッチ\_FREE\_VF\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_free_vf_parameters)
 
-[**NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)
+[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
 
-[**NdisCloseAdapterEx**](https://msdn.microsoft.com/library/windows/hardware/ff561640)
+[**NdisCloseAdapterEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscloseadapterex)
 
 [OID\_NIC\_スイッチ\_ALLOCATE\_VF](oid-nic-switch-allocate-vf.md)
 

@@ -6,12 +6,12 @@ keywords:
 - 返さ機能
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f635661505a0a8249b061feebf124e41fc0e8e58
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a3080bdf44a9e1bc5eb9c603f27753c988e666c9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339871"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385960"
 ---
 # <a name="option-attributes-for-the-colormode-feature"></a>ColorMode 機能のオプション属性
 
@@ -60,13 +60,13 @@ ms.locfileid: "63339871"
 </tr>
 <tr class="odd">
 <td><p></em><strong>DrvBPP</strong></p></td>
-<td><p>1 ピクセルのビットマップ レンダリング バッファー Unidrv が使用するビット数を示す数値。 ビットマップ形式は、Windows <a href="https://msdn.microsoft.com/library/windows/hardware/ff556277#wdkgloss-device-independent-bitmap--dib-" data-raw-source="&lt;em&gt;device-independent bitmap (DIB)&lt;/em&gt;"><em>デバイスに依存しないビットマップ (DIB)</em></a>、有効な値は 1、4、8、16、24、または 32 とします。</p></td>
+<td><p>1 ピクセルのビットマップ レンダリング バッファー Unidrv が使用するビット数を示す数値。 ビットマップ形式は、Windows <a href="https://docs.microsoft.com/windows-hardware/drivers/#wdkgloss-device-independent-bitmap--dib-" data-raw-source="&lt;em&gt;device-independent bitmap (DIB)&lt;/em&gt;"><em>デバイスに依存しないビットマップ (DIB)</em></a>、有効な値は 1、4、8、16、24、または 32 とします。</p></td>
 <td><p>任意。 指定しない場合、既定値は 1 です。 (カラー プリンターの値を 1 と呼びます「平面モード」。)</p>
 <p>Windows Dib では、1 つのカラー プレーン常に使用します。</p></td>
 </tr>
 <tr class="even">
 <td><p><em><strong>IPCallbackID</strong></p></td>
-<td><p>正の数値があり、レンダリング プラグインでは、に渡される<a href="https://msdn.microsoft.com/library/windows/hardware/ff554261" data-raw-source="[&lt;strong&gt;IPrintOemUni::ImageProcessing&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554261)"> <strong>IPrintOemUni::ImageProcessing</strong> </a>メソッドとしてその<strong>IPCallbackID</strong>引数。</p></td>
+<td><p>正の数値があり、レンダリング プラグインでは、に渡される<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni-imageprocessing" data-raw-source="[&lt;strong&gt;IPrintOemUni::ImageProcessing&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni-imageprocessing)"> <strong>IPrintOemUni::ImageProcessing</strong> </a>メソッドとしてその<strong>IPCallbackID</strong>引数。</p></td>
 <td><p>必要な場合、<a href="rendering-plug-ins.md" data-raw-source="[rendering plug-in](rendering-plug-ins.md)">プラグインでレンダリング</a>が指定されてを格納している、 <strong>IPrintOemUni::ImageProcessing</strong>メソッド。</p></td>
 </tr>
 <tr class="odd">

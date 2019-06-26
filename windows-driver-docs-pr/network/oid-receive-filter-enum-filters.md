@@ -5,36 +5,36 @@ ms.assetid: 498c1e96-c3ee-4f5d-b0f2-6e88921187e5
 ms.date: 08/08/2017
 keywords: -OID_RECEIVE_FILTER_ENUM_FILTERS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 4eead4c8515dad96047aad47035da06f5304752b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 30f364fba78df8f72bd0e98970df4d75d347186f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63349415"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371187"
 ---
 # <a name="oidreceivefilterenumfilters"></a>OID\_受信\_フィルター\_ENUM\_フィルター
 
 
 OID の OID メソッド要求を発行する上位のドライバー\_受信\_フィルター\_ENUM\_ネットワーク アダプターで構成されているすべてのフィルターの一覧を取得するフィルター。
 
-**InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)構造体にはへのポインターが含まれています、 [ **NDIS\_受信\_フィルター\_情報\_配列**](https://msdn.microsoft.com/library/windows/hardware/ff567179)構造体。
+**InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体にはへのポインターが含まれています、 [ **NDIS\_受信\_フィルター\_情報\_配列**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_filter_info_array)構造体。
 
-OID メソッドの要求から正常に戻った後、 **InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)構造体バッファーへのポインターが含まれています。 このバッファーは、以下を格納する形式です。
+OID メソッドの要求から正常に戻った後、 **InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体バッファーへのポインターが含まれています。 このバッファーは、以下を格納する形式です。
 
--   [ **NDIS\_受信\_フィルター\_情報\_配列**](https://msdn.microsoft.com/library/windows/hardware/ff567179)で現在構成されている受信フィルターの一覧を指定する構造体、ミニポート ドライバー。
+-   [ **NDIS\_受信\_フィルター\_情報\_配列**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_filter_info_array)で現在構成されている受信フィルターの一覧を指定する構造体、ミニポート ドライバー。
 
--   配列の[ **NDIS\_受信\_フィルター\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff567176)構造体。 各構造体には、ミニポート ドライバーで現在構成されている受信フィルターのパラメーターを指定します。
+-   配列の[ **NDIS\_受信\_フィルター\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_filter_info)構造体。 各構造体には、ミニポート ドライバーで現在構成されている受信フィルターのパラメーターを指定します。
 
 <a name="remarks"></a>注釈
 -------
 
 NDIS フィルターが表示される次の NDIS インターフェイスで使用されます。
 
--   [NDIS パケット結合](https://msdn.microsoft.com/library/windows/hardware/hh451601)します。 使用する方法の詳細についてはこのインターフェイスでフィルターが表示されるを参照してください[管理パケット結合受信フィルター](https://msdn.microsoft.com/library/windows/hardware/hh464026)します。
+-   [NDIS パケット結合](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-packet-coalescing)します。 使用する方法の詳細についてはこのインターフェイスでフィルターが表示されるを参照してください[管理パケット結合受信フィルター](https://docs.microsoft.com/windows-hardware/drivers/network/managing-packet-coalescing-receive-filters)します。
 
--   [シングル ルート I/O 仮想化 (SR-IOV)](https://msdn.microsoft.com/library/windows/hardware/hh440235)します。 使用する方法の詳細についてはこのインターフェイスでフィルターが表示されるを参照してください[仮想ポートで受信フィルターを設定](https://msdn.microsoft.com/library/windows/hardware/hh440224)します。
+-   [シングル ルート I/O 仮想化 (SR-IOV)](https://docs.microsoft.com/windows-hardware/drivers/network/single-root-i-o-virtualization--sr-iov-)します。 使用する方法の詳細についてはこのインターフェイスでフィルターが表示されるを参照してください[仮想ポートで受信フィルターを設定](https://docs.microsoft.com/windows-hardware/drivers/network/setting-a-receive-filter-on-a-virtual-port)します。
 
--   [バーチャル マシン キュー (VMQ)](https://msdn.microsoft.com/library/windows/hardware/ff571035)。 使用する方法の詳細についてはこのインターフェイスでフィルターが表示されるを参照してください[設定および VMQ のフィルターをクリアする](https://msdn.microsoft.com/library/windows/hardware/ff570780)します。
+-   [バーチャル マシン キュー (VMQ)](https://docs.microsoft.com/windows-hardware/drivers/network/virtual-machine-queue--vmq--in-ndis-6-20)。 使用する方法の詳細についてはこのインターフェイスでフィルターが表示されるを参照してください[設定および VMQ のフィルターをクリアする](https://docs.microsoft.com/windows-hardware/drivers/network/setting-and-clearing-vmq-filters)します。
 
 上にあるドライバーやアプリケーションは、OID の OID メソッド要求を発行\_受信\_フィルター\_ENUM\_ネットワーク アダプターに設定された受信フィルターを列挙するフィルター。 これが含まれています、SR-IOV 仮想ポート (VPort) に設定されたフィルターを受信または、VMQ キューの受信します。
 
@@ -42,17 +42,17 @@ NDIS フィルターが表示される次の NDIS インターフェイスで使
 
 Windows Server 2012、結合のみをサポートする NDIS パケット以降で既定の受信ネットワーク アダプターのキューに登録します。
 
-パケットを列挙する結合フィルターを受信上にあるドライバーを設定する必要があります、 **QueueId**のメンバー、 [ **NDIS\_受信\_フィルター\_情報\_配列**](https://msdn.microsoft.com/library/windows/hardware/ff567179) NDIS 構造\_既定\_受信\_キュー\_id。
+パケットを列挙する結合フィルターを受信上にあるドライバーを設定する必要があります、 **QueueId**のメンバー、 [ **NDIS\_受信\_フィルター\_情報\_配列**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_filter_info_array) NDIS 構造\_既定\_受信\_キュー\_id。
 
 ### <a name="additional-guidelines-for-the-sr-iov-interface"></a>SR-IOV インターフェイスに関する追加のガイドライン
 
 既定の仮想ポート (VPort) のキュー受信以降では、Windows Server 2012、SR-IOV インターフェイスのみをサポートします。
 
-VPort を列挙するためにフィルターが表示される、上にあるドライバーを設定する必要があります、 **QueueId**のメンバー、 [ **NDIS\_受信\_フィルター\_情報\_配列**](https://msdn.microsoft.com/library/windows/hardware/ff567179) NDIS 構造\_既定\_受信\_キュー\_id。
+VPort を列挙するためにフィルターが表示される、上にあるドライバーを設定する必要があります、 **QueueId**のメンバー、 [ **NDIS\_受信\_フィルター\_情報\_配列**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_filter_info_array) NDIS 構造\_既定\_受信\_キュー\_id。
 
 ### <a name="additional-guidelines-for-the-vmq-interface"></a>VMQ インターフェイスに関する追加のガイドライン
 
-上にある、ドライバーは、OID の OID メソッド要求を発行できます\_受信\_フィルター\_ENUM\_受信キューに、VMQ に設定された受信フィルターを列挙するフィルター。 上にあるドライバーを初期化すると、 [ **NDIS\_受信\_フィルター\_情報\_配列**](https://msdn.microsoft.com/library/windows/hardware/ff567179)設定構造、 **QueueId**値は次のいずれかにメンバー。
+上にある、ドライバーは、OID の OID メソッド要求を発行できます\_受信\_フィルター\_ENUM\_受信キューに、VMQ に設定された受信フィルターを列挙するフィルター。 上にあるドライバーを初期化すると、 [ **NDIS\_受信\_フィルター\_情報\_配列**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_filter_info_array)設定構造、 **QueueId**値は次のいずれかにメンバー。
 
 -   既定以外のキューの識別子の値には、キューが表示されます。 上にあるドライバーの以前の OID メソッド要求からキューの識別子の入力値を取得した[OID\_受信\_フィルター\_ALLOCATE\_キュー](oid-receive-filter-allocate-queue.md)またはの OID のクエリ要求[OID\_受信\_フィルター\_ENUM\_キュー](oid-receive-filter-enum-queues.md)します。
 
@@ -63,13 +63,13 @@ VPort を列挙するためにフィルターが表示される、上にある�
 OID の OID メソッド要求を処理する NDIS\_受信\_フィルター\_ENUM\_ミニポート ドライバー、および次のステータス コードを返します。 1 つのフィルター。
 
 <a href="" id="ndis-status-success"></a>NDIS\_状態\_成功  
-要求は正常に完了しました。 **InformationBuffer**を指す、 [ **NDIS\_受信\_フィルター\_情報\_配列**](https://msdn.microsoft.com/library/windows/hardware/ff567179)構造体。
+要求は正常に完了しました。 **InformationBuffer**を指す、 [ **NDIS\_受信\_フィルター\_情報\_配列**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_filter_info_array)構造体。
 
 <a href="" id="ndis-status-pending"></a>NDIS\_状態\_PENDING  
 完了待ちになっています。 NDIS 渡します最終的な状態コードと結果を呼び出し元の OID 要求の完了ハンドラーに、要求が完了した後。
 
 <a href="" id="ndis-status-invalid-length"></a>NDIS\_状態\_無効な\_長さ  
-情報バッファーが小さすぎます。 NDIS セット、**データ。クエリ\_情報。BytesNeeded**内のメンバー、 [ **NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)構造体に必要な最小バッファー サイズ。
+情報バッファーが小さすぎます。 NDIS セット、**データ。クエリ\_情報。BytesNeeded**内のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体に必要な最小バッファー サイズ。
 
 <a href="" id="ndis-status-failure"></a>NDIS\_状態\_エラー  
 他の理由から、要求が失敗しました。
@@ -97,11 +97,11 @@ OID の OID メソッド要求を処理する NDIS\_受信\_フィルター\_ENU
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)
+[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
 
-[**NDIS\_受信\_フィルター\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff567176)
+[**NDIS\_受信\_フィルター\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_filter_info)
 
-[**NDIS\_受信\_フィルター\_情報\_配列**](https://msdn.microsoft.com/library/windows/hardware/ff567179)
+[**NDIS\_受信\_フィルター\_情報\_配列**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_filter_info_array)
 
 [OID\_受信\_フィルター\_ALLOCATE\_キュー](oid-receive-filter-allocate-queue.md)
 

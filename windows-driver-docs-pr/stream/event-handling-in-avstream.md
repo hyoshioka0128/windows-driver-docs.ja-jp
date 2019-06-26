@@ -8,12 +8,12 @@ keywords:
 - automation の WDK AVStream テーブルにします。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 28b24165e8b33c07030d7b4c97b11ff9f6d87a50
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fbcaf79e53824e4300a852ecaf2b58789e291490
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363548"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384103"
 ---
 # <a name="event-handling-in-avstream"></a>AVStream でのイベント処理
 
@@ -21,15 +21,15 @@ ms.locfileid: "63363548"
 
 
 
-AVStream フィルターとピンは、プロパティ、イベント、および指定することによってサポートされる方法を説明します、 [ **KSAUTOMATION\_テーブル**](https://msdn.microsoft.com/library/windows/hardware/ff560990)構造体、 **AutomationTable**のメンバーである、 [ **KSFILTER\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff562553)構造または[ **KSPIN\_記述子\_EX** ](https://msdn.microsoft.com/library/windows/hardware/ff563534)構造体。 詳細については、次を参照してください。 [AVStream 記述子](avstream-descriptors.md)します。
+AVStream フィルターとピンは、プロパティ、イベント、および指定することによってサポートされる方法を説明します、 [ **KSAUTOMATION\_テーブル**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksautomation_table_)構造体、 **AutomationTable**のメンバーである、 [ **KSFILTER\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_ksfilter_descriptor)構造または[ **KSPIN\_記述子\_EX** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_kspin_descriptor_ex)構造体。 詳細については、次を参照してください。 [AVStream 記述子](avstream-descriptors.md)します。
 
-配列を提供する、AVStream ミニドライバー イベントをサポートする[ **KSEVENT\_設定**](https://msdn.microsoft.com/library/windows/hardware/ff561867) automation テーブルの構造体。 各 KSEVENT\_セット構造体の配列を格納する[ **KSEVENT\_項目**](https://msdn.microsoft.com/library/windows/hardware/ff561862)構造体。 各 KSEVENT\_項目の構造は、ミニドライバーが特定のイベントをサポートする方法について説明します。
+配列を提供する、AVStream ミニドライバー イベントをサポートする[ **KSEVENT\_設定**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksevent_set) automation テーブルの構造体。 各 KSEVENT\_セット構造体の配列を格納する[ **KSEVENT\_項目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksevent_item)構造体。 各 KSEVENT\_項目の構造は、ミニドライバーが特定のイベントをサポートする方法について説明します。
 
-指定することによって、ミニドライバーがイベントの動作をカスタマイズできます[ *AVStrMiniAddEvent* ](https://msdn.microsoft.com/library/windows/hardware/ff554260)と[ *AVStrMiniRemoveEvent* ](https://msdn.microsoft.com/library/windows/hardware/ff556361)ハンドラーで、KSEVENT\_項目の構造体。
+指定することによって、ミニドライバーがイベントの動作をカスタマイズできます[ *AVStrMiniAddEvent* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nc-ks-pfnksaddevent)と[ *AVStrMiniRemoveEvent* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nc-ks-pfnksremoveevent)ハンドラーで、KSEVENT\_項目の構造体。
 
 イベントの有効化要求を受信すると、AVStream、KSEVENT が生成されます\_エントリの構造体。 ミニドライバーが指定されている場合、 *AVStrAddEvent*ハンドラー、AVStream にポインターを渡します、KSEVENT\_エントリの構造体への呼び出しで*AVStrAddEvent*します。
 
-指定しない場合、 *AVStrAddEvent*ハンドラー、し、既定では AVStream イベントを追加、オブジェクトの一覧にします。 ミニドライバーは受信しません、 [ **KSEVENT\_エントリ**](https://msdn.microsoft.com/library/windows/hardware/ff561853)ポインター。 ミニドライバーは、呼び出すことによって、イベントをトリガーできる[ **KsFilterGenerateEvents** ](https://msdn.microsoft.com/library/windows/hardware/ff562541)または[ **KsPinGenerateEvents**](https://msdn.microsoft.com/library/windows/hardware/ff563500)します。
+指定しない場合、 *AVStrAddEvent*ハンドラー、し、既定では AVStream イベントを追加、オブジェクトの一覧にします。 ミニドライバーは受信しません、 [ **KSEVENT\_エントリ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_ksevent_entry)ポインター。 ミニドライバーは、呼び出すことによって、イベントをトリガーできる[ **KsFilterGenerateEvents** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksfiltergenerateevents)または[ **KsPinGenerateEvents**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-kspingenerateevents)します。
 
  
 

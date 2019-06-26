@@ -7,12 +7,12 @@ keywords:
 - レンダリング multisamples WDK DirectX 9.0、品質を制御します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fb0c5b0b32ed37d3747df78ed9ad16a61f491531
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0b4b71247737f24c1e33a4bb1da921d907d3796e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323248"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370298"
 ---
 # <a name="controlling-quality-of-multiple-sample-rendering"></a>複数サンプル レンダリングの品質の管理
 
@@ -26,7 +26,7 @@ ms.locfileid: "63323248"
 
 ディスプレイ デバイスがマルチ サンプリングの手法をサポートしているかどうかを確認するだけでなく**IDirect3D9::CheckDeviceMultiSampleType**も、この手法に関連付けられている品質レベルの数を返します。
 
-アプリケーションは、サーフェスを作成する要求、サーフェスの形式、マルチ サンプリングの種類とそのサポートを以前に確認する品質レベルの数の組み合わせが使用されます。 これにより、画面が正常に作成します。 ランタイムが呼び出す、ドライバーの[ *DdCanCreateSurface*](https://msdn.microsoft.com/library/windows/hardware/ff549213)、 [ *DdCreateSurface*](https://msdn.microsoft.com/library/windows/hardware/ff549263)、または[ **D3dCreateSurfaceEx** ](https://msdn.microsoft.com/library/windows/hardware/ff542840)サーフェスを作成する関数。 この呼び出しで、ランタイムは 5 ビットにマルチ サンプリングされたサーフェイスでのサンプルの数をエンコードします (、DDSCAPS3\_マルチ サンプリング\_マスク マスク) と複数サンプル品質レベルを 3 つのビット数 (、DDSCAPS3\_マルチ サンプリング\_品質\_マスク マスク) の**dwCaps3**のメンバー、 [ **DDSCAPS2** ](https://msdn.microsoft.com/library/windows/hardware/ff550292)サーフェイスでの構造体。
+アプリケーションは、サーフェスを作成する要求、サーフェスの形式、マルチ サンプリングの種類とそのサポートを以前に確認する品質レベルの数の組み合わせが使用されます。 これにより、画面が正常に作成します。 ランタイムが呼び出す、ドライバーの[ *DdCanCreateSurface*](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff549213(v=vs.85))、 [ *DdCreateSurface*](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff549263(v=vs.85))、または[ **D3dCreateSurfaceEx** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_createsurfaceex)サーフェスを作成する関数。 この呼び出しで、ランタイムは 5 ビットにマルチ サンプリングされたサーフェイスでのサンプルの数をエンコードします (、DDSCAPS3\_マルチ サンプリング\_マスク マスク) と複数サンプル品質レベルを 3 つのビット数 (、DDSCAPS3\_マルチ サンプリング\_品質\_マスク マスク) の**dwCaps3**のメンバー、 [ **DDSCAPS2** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff550292(v=vs.85))サーフェイスでの構造体。
 
 詳細については**IDirect3D9::CheckDeviceMultiSampleType**、DirectX SDK の最新のドキュメントを参照してください。
 

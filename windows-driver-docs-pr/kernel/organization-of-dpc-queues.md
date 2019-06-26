@@ -7,23 +7,23 @@ keywords:
 - WDK の DPC キュー
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8895aecb8cb3ac08235b911f34bd26d978967c80
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a029b2f141c35f69949dd833b326ae57d626c751
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352017"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384919"
 ---
 # <a name="organization-of-dpc-queues"></a>DPC キューの構造
 
 
 システムでは、プロセッサごとに 1 つの DPC キューを提供します。 ドライバーは、DPC、DPC、キュー内の場所をシステムが割り当てられますがキューに登録し、キューを処理するときのコントロール。
 
-特定のプロセッサのキューに割り当てられている Dpc は、そのプロセッサで実行されます。 ドライバーを呼び出すと、既定で[ **KeInsertQueueDpc** ](https://msdn.microsoft.com/library/windows/hardware/ff552185)または[ **IoRequestDpc**](https://msdn.microsoft.com/library/windows/hardware/ff549657)DPC は現在アクティブなプロセッサのキューに配置します。 ドライバーは、呼び出すことによって、プロセッサのキューを指定できます[ **KeSetTargetProcessorDpc** ](https://msdn.microsoft.com/library/windows/hardware/ff553278)呼び出す前に**KeInsertQueueDpc**または**IoRequestDpc**.
+特定のプロセッサのキューに割り当てられている Dpc は、そのプロセッサで実行されます。 ドライバーを呼び出すと、既定で[ **KeInsertQueueDpc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keinsertqueuedpc)または[ **IoRequestDpc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iorequestdpc)DPC は現在アクティブなプロセッサのキューに配置します。 ドライバーは、呼び出すことによって、プロセッサのキューを指定できます[ **KeSetTargetProcessorDpc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-kesettargetprocessordpc)呼び出す前に**KeInsertQueueDpc**または**IoRequestDpc**.
 
 Windows Vista および Windows の以降のバージョンでは、システムはプロセッサごとに 1 つのスレッド DPC キューもあります。 ドライバーを使用できる**KeSetTargetProcessorDpc**スレッド Dpc のプロセッサのキューを指定します。
 
-[ **KeSetImportanceDpc** ](https://msdn.microsoft.com/library/windows/hardware/ff553259) DPC がキュー内に配置されているルーチン コントロール。 通常、DPC は; キューの末尾に配置されます。ドライバーを最初に呼び出す場合、 **KeSetImportanceDpc**で、*重要度*パラメーターと等しい**HighImportance**DPC はキューの先頭に置かれます。
+[ **KeSetImportanceDpc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-kesetimportancedpc) DPC がキュー内に配置されているルーチン コントロール。 通常、DPC は; キューの末尾に配置されます。ドライバーを最初に呼び出す場合、 **KeSetImportanceDpc**で、*重要度*パラメーターと等しい**HighImportance**DPC はキューの先頭に置かれます。
 
 通常の (非スレッドの) Dpc の**KeSetImportanceDpc**も決定するかどうか**KeInsertQueueDpc**または**IoRequestDpc** DPC の処理をすぐに開始されますキューです。 次の一覧には、キューを処理するための規則について説明します。
 

@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - WSK_SET_STATIC_EVENT_CALLBACKS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 19bee586264f06c08e2f8d8831d88ad743b4d2a5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ca182adbb4a1be121a6c352be67d07cb28a8ffad
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356776"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386311"
 ---
 # <a name="wsksetstaticeventcallbacks"></a>WSK\_設定\_静的\_イベント\_コールバック
 
@@ -20,7 +20,7 @@ WSK アプリケーションの使用、WSK\_設定\_静的\_イベント\_自�
 
 WSK アプリケーション、WSK を使用している場合\_設定\_静的\_イベント\_コールバック クライアント コントロールの操作が行う必要があります、ソケットを作成する前にします。
 
-WSK アプリケーションを呼び出す特定イベントのコールバック関数のすべてのソケットが作成されますを自動的に有効にする、 [ **WskControlClient** ](https://msdn.microsoft.com/library/windows/hardware/ff571126)関数は次のパラメーター。
+WSK アプリケーションを呼び出す特定イベントのコールバック関数のすべてのソケットが作成されますを自動的に有効にする、 [ **WskControlClient** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_control_client)関数は次のパラメーター。
 
 <table>
 <colgroup>
@@ -44,7 +44,7 @@ WSK アプリケーションを呼び出す特定イベントのコールバッ�
 </tr>
 <tr class="odd">
 <td><p><em>InputBuffer</em></p></td>
-<td><p>ポインターを<a href="https://msdn.microsoft.com/library/windows/hardware/ff571166" data-raw-source="[&lt;strong&gt;WSK_EVENT_CALLBACK_CONTROL&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff571166)"> <strong>WSK_EVENT_CALLBACK_CONTROL</strong> </a>を自動的に有効にする目的のイベントのコールバック関数を指定する構造体</p></td>
+<td><p>ポインターを<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/ns-wsk-_wsk_event_callback_control" data-raw-source="[&lt;strong&gt;WSK_EVENT_CALLBACK_CONTROL&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/ns-wsk-_wsk_event_callback_control)"> <strong>WSK_EVENT_CALLBACK_CONTROL</strong> </a>を自動的に有効にする目的のイベントのコールバック関数を指定する構造体</p></td>
 </tr>
 <tr class="even">
 <td><p><em>OutputSize</em></p></td>
@@ -65,11 +65,11 @@ WSK アプリケーションを呼び出す特定イベントのコールバッ�
 </tbody>
 </table>
 
-WSK アプリケーションのさまざまなソケットの種類についてイベント フラグの組み合わせを指定できます、**使う**のメンバー、 [ **WSK\_イベント\_コールバック\_コントロール** ](https://msdn.microsoft.com/library/windows/hardware/ff571166)構造体。 WSK サブシステムで、特定の適切なイベントのコールバック関数が自動的に有効に WSK アプリケーションでは、新しいソケットを作成するとき[カテゴリ](https://msdn.microsoft.com/library/windows/hardware/ff571093)WSK ソケットが作成されるのです。
+WSK アプリケーションのさまざまなソケットの種類についてイベント フラグの組み合わせを指定できます、**使う**のメンバー、 [ **WSK\_イベント\_コールバック\_コントロール** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/ns-wsk-_wsk_event_callback_control)構造体。 WSK サブシステムで、特定の適切なイベントのコールバック関数が自動的に有効に WSK アプリケーションでは、新しいソケットを作成するとき[カテゴリ](https://docs.microsoft.com/windows-hardware/drivers/network/winsock-kernel-socket-categories)WSK ソケットが作成されるのです。
 
 標準的な WSK イベントのコールバック関数のイベント フラグの詳細については、次を参照してください。 [**ように\_WSK\_イベント\_コールバック**](so-wsk-event-callback.md)します。
 
-有効にして、ソケットのイベントのコールバック関数を無効化の詳細については、次を参照してください。[の有効化と無効にするとイベントのコールバック関数](https://msdn.microsoft.com/library/windows/hardware/ff548851)します。
+有効にして、ソケットのイベントのコールバック関数を無効化の詳細については、次を参照してください。[の有効化と無効にするとイベントのコールバック関数](https://docs.microsoft.com/windows-hardware/drivers/network/enabling-and-disabling-event-callback-functions)します。
 
 *Irp*パラメーターである必要があります**NULL**このクライアントのコントロールの操作。
 

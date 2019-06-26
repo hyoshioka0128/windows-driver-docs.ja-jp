@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 9cfe18d5b50b5028e9917369ab7cc0b62673df4f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3b9180eb1d9b687523267d12e68d9d35ccbb41f7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382923"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387077"
 ---
 # <a name="devpkeydevicedevtype"></a>DEVPKEY_Device_DevType
 
@@ -60,13 +60,13 @@ DEVPKEY_Device_DevType デバイス プロパティは、デバイスのイン�
 <a name="remarks"></a>注釈
 -------
 
-Windows の DeviceType メンバーの値に DEVPKEY_Device_DevType の値の設定、 [ **DEVICE_OBJECT** ](https://msdn.microsoft.com/library/windows/hardware/ff543147)デバイス インスタンスの構造体。 DEVPKEY_Device_DevType の値が記載されているデバイスのシステム定義型の値のいずれかの[デバイスの種類の指定](https://msdn.microsoft.com/library/windows/hardware/ff563821)します。
+Windows の DeviceType メンバーの値に DEVPKEY_Device_DevType の値の設定、 [ **DEVICE_OBJECT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_object)デバイス インスタンスの構造体。 DEVPKEY_Device_DevType の値が記載されているデバイスのシステム定義型の値のいずれかの[デバイスの種類の指定](https://docs.microsoft.com/windows-hardware/drivers/kernel/specifying-device-types)します。
 
-使用して DEVPKEY_Device_DevType の値を設定することができます、 [ **INF AddReg ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546320)に含まれている、 [ **INF *DDInstall*します。ハードウェア セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547330)でデバイスをインストールする INF ファイル。
+使用して DEVPKEY_Device_DevType の値を設定することができます、 [ **INF AddReg ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)に含まれている、 [ **INF *DDInstall*します。ハードウェア セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-hw-section)でデバイスをインストールする INF ファイル。
 
-呼び出すことができます[ **SetupDiGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551963) DEVPKEY_Device_DevType の値を取得します。
+呼び出すことができます[ **SetupDiGetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) DEVPKEY_Device_DevType の値を取得します。
 
-Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_Device_DevType プロパティのキーをサポートしていません。 代わりに、Windows の以前のバージョンのプロパティの値へのアクセスに対応する SPDRP_DEVTYPE 識別子を使用することができます。 Windows の以前のバージョンでこのプロパティの値にアクセスする方法については、次を参照してください。[デバイス インスタンス SPDRP_Xxx プロパティへのアクセス](https://msdn.microsoft.com/library/windows/hardware/ff537737)します。
+Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_Device_DevType プロパティのキーをサポートしていません。 代わりに、Windows の以前のバージョンのプロパティの値へのアクセスに対応する SPDRP_DEVTYPE 識別子を使用することができます。 Windows の以前のバージョンでこのプロパティの値にアクセスする方法については、次を参照してください。[デバイス インスタンス SPDRP_Xxx プロパティへのアクセス](https://docs.microsoft.com/windows-hardware/drivers/install/accessing-device-instance-spdrp-xxx-properties)します。
 
 <a name="requirements"></a>要件
 ------------
@@ -91,11 +91,11 @@ Windows Server 2003、Windows XP、および Windows 2000 は、このプロパ�
 ## <a name="see-also"></a>関連項目
 
 
-[**DEVICE_OBJECT**](https://msdn.microsoft.com/library/windows/hardware/ff543147)
+[**DEVICE_OBJECT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_object)
 
-[**INF *DDInstall*します。ハードウェア セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547330)
+[**INF *DDInstall*します。ハードウェア セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-hw-section)
 
-[**SetupDiGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551963)
+[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
 

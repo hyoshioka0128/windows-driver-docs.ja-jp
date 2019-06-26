@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: ddbea6ef598e3d7a1e40eaa071c88ade7956f385
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 006765d237a8e539db56c9885c3e56746ab7dadd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366440"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387061"
 ---
 # <a name="devpkeydevicedriverdesc"></a>DEVPKEY_Device_DriverDesc
 
@@ -61,13 +61,13 @@ DEVPKEY_Device_DriverDesc デバイス プロパティでは、デバイスの�
 <a name="remarks"></a>コメント
 -------
 
-DEVPKEY_Device_DriverDesc の値によって設定されます、*デバイス説明*エントリの値によって指定された、 [ **INF*モデル*セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547456)のデバイスをインストールする INF ファイル。
+DEVPKEY_Device_DriverDesc の値によって設定されます、*デバイス説明*エントリの値によって指定された、 [ **INF*モデル*セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-models-section)のデバイスをインストールする INF ファイル。
 
 DEVPKEY_Device_DriverDesc の値が、エンド ユーザー ダイアログ ボックスに表示されるか、オペレーティング システムで何らかの理由で使用します。
 
-呼び出すことができます[ **SetupDiGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551963) DEVPKEY_Device_DriverDesc の値を取得します。
+呼び出すことができます[ **SetupDiGetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) DEVPKEY_Device_DriverDesc の値を取得します。
 
-Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_Device_LocationPaths プロパティのキーをサポートしていません。 この以前のバージョンの Windows で、対応するアクセスすることでこのプロパティの値にアクセスできます**DriverDesc**ソフトウェア キーをデバイス インスタンスの下のレジストリ値。 Windows の以前のバージョンでこのプロパティの値にアクセスする方法については、次を参照してください。[デバイス ドライバーのプロパティへのアクセス](https://msdn.microsoft.com/library/windows/hardware/ff537732)します。
+Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_Device_LocationPaths プロパティのキーをサポートしていません。 この以前のバージョンの Windows で、対応するアクセスすることでこのプロパティの値にアクセスできます**DriverDesc**ソフトウェア キーをデバイス インスタンスの下のレジストリ値。 Windows の以前のバージョンでこのプロパティの値にアクセスする方法については、次を参照してください。[デバイス ドライバーのプロパティへのアクセス](https://docs.microsoft.com/windows-hardware/drivers/install/accessing-device-driver-properties)します。
 
 <a name="requirements"></a>必要条件
 ------------
@@ -92,7 +92,7 @@ Windows Server 2003、Windows XP、および Windows 2000 は、このプロパ�
 ## <a name="see-also"></a>関連項目
 
 
-[**SetupDiGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551963)
+[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
 

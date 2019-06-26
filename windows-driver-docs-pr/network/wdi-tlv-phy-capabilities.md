@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - WDI_TLV_PHY_CAPABILITIES ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 45426b6e8174a382807e04c71d10097f37bb0e3c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3afd89398b3be938b26b65a2f6a6ed7fc2eceefd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63349330"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385063"
 ---
 # <a name="wditlvphycapabilities"></a>WDI\_TLV\_PHY\_機能
 
@@ -33,7 +33,7 @@ WDI\_TLV\_PHY\_機能は PHY 機能を含む TLV します。
 
 | 型                                        | 説明                                        |
 |---------------------------------------------|----------------------------------------------------|
-| [**WDI\_PHY\_型**](https://msdn.microsoft.com/library/windows/hardware/dn926105) | PHY 型を指定します。                           |
+| [**WDI\_PHY\_型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_phy_type) | PHY 型を指定します。                           |
 | UINT8                                       | PHY が CF ポーリングをサポートしているかどうかを指定します。 |
 | UINT32                                      | MPDU の最大長を指定します。                 |
 | UINT32                                      | 動作の温度クラスを指定します。         |
@@ -41,7 +41,7 @@ WDI\_TLV\_PHY\_機能は PHY 機能を含む TLV します。
 
  
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

@@ -7,12 +7,12 @@ keywords:
 - 頂点バッファー WDK DirectX 8.0 では、名前を変更します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 91f6fb5d31b605cc10978b245934858df9e61ed3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b4a72ecc783372824f0d7931c3248478a13e2097
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387425"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385561"
 ---
 # <a name="vertex-buffer-renaming"></a>頂点バッファーの名前変更
 
@@ -22,7 +22,7 @@ ms.locfileid: "63387425"
 
 ドライバーと、ランタイムの並列処理を向上させるのには、Direct3D には、頂点バッファー「の名前を変更」の概念がサポートしています。 基本的には、これは、頂点バッファーのダブル バッファリング スキームです。 ドライバーは、頂点バッファー DDI 呼び出しを通じて渡されるときに特定の状況では、頂点バッファーのビデオ メモリのポインターを変更します。 この方法で、ドライバーは、アプリケーションをロックし、頂点バッファーを入力すると同時に、中に、頂点バッファーの内容を処理する続行できます。 アプリケーションがに関する限り、同じ頂点バッファーを使用しています。 その頂点バッファーを指すメモリが変更されているという事実は、ランタイムとドライバーによって隠されています。
 
-DirectX の以前のバージョンがサポートされています、頂点バッファーがある名前変更と、DirectX 8.0 と特定の変更がされています。 Direct3D の以前のバージョンでを主に使用して実現された名前の変更、 [ **D3dDrawPrimitives2** ](https://msdn.microsoft.com/library/windows/hardware/ff544704) DDI エントリ ポイント。 指定されたフラグ[ **D3DHAL\_DRAWPRIMITIVES2DATA** ](https://msdn.microsoft.com/library/windows/hardware/ff545957)そうである場合と、ドライバーは、頂点またはコマンド バッファーをスワップだったかどうか指定は、必要なサイズのバッファー。 ただし、DirectX の 8.0 で頂点バッファーをスワップできませんによって実現されます*D3dDrawPrimitives2* (ただし、レガシー インターフェイス経由の呼び出しは、このメカニズムをまだ exploit) からのものではなく、 *LockExecuteBuffer* ([*LockD3DBuffer*](https://msdn.microsoft.com/library/windows/hardware/ff568216)) DDI エントリ ポイント。
+DirectX の以前のバージョンがサポートされています、頂点バッファーがある名前変更と、DirectX 8.0 と特定の変更がされています。 Direct3D の以前のバージョンでを主に使用して実現された名前の変更、 [ **D3dDrawPrimitives2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/nc-d3dhal-lpd3dhal_drawprimitives2cb) DDI エントリ ポイント。 指定されたフラグ[ **D3DHAL\_DRAWPRIMITIVES2DATA** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/ns-d3dhal-_d3dhal_drawprimitives2data)そうである場合と、ドライバーは、頂点またはコマンド バッファーをスワップだったかどうか指定は、必要なサイズのバッファー。 ただし、DirectX の 8.0 で頂点バッファーをスワップできませんによって実現されます*D3dDrawPrimitives2* (ただし、レガシー インターフェイス経由の呼び出しは、このメカニズムをまだ exploit) からのものではなく、 *LockExecuteBuffer* ([*LockD3DBuffer*](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff568216(v=vs.85))) DDI エントリ ポイント。
 
 DirectX 8.0 は、新しいロック フラグ、D3DLOCK を定義します。\_、破棄するには、ドライバーに渡される、呼び出し元では、ドライバーの既存の内容は必要ありませんし、破棄する頂点バッファーのデータへのポインターを返す前にそのことを示します。 そのため、ドライバーが、D3DLOCK、頂点バッファーのロックの呼び出しを受信すると\_破棄フラグ設定、頂点バッファーを設定して名前を変更する選択できます、 **fpVidMem**に新しい値。
 

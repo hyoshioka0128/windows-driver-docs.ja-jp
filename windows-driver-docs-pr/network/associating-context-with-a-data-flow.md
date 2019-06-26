@@ -9,19 +9,19 @@ keywords:
 - WDK Windows Filtering Platform のデータ フローとコンテキストの関連付け
 ms.date: 01/14/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 737e0598b7bc2e6575d899028f8dea5933f0c61c
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.openlocfilehash: 24ce4858b40210b124a53cff2f0529cb106859bb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57348577"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384419"
 ---
 # <a name="associating-context-with-a-data-flow"></a>コンテキストとデータ フローの関連付け
 
 
-データ フローをサポートするフィルタ リング層でデータを処理する吹き出し、コールアウト ドライバーは、各データ フローでコンテキストを関連付けることができます。 このようなコンテキストでは、フィルター エンジンに対して非透過的です。 吹き出しの[classifyFn](https://msdn.microsoft.com/library/windows/hardware/ff544887)コールアウト関数はこのコンテキストを使用して、そのデータ フローのフィルター エンジンによって呼び出されたときに [次へ] に、データ フローに固有の状態情報を保存します。 フィルター エンジンでは、このコンテキストを渡しますを通じて吹き出しの classifyFn コールアウト関数に、 *flowContext*パラメーター。 コンテキストが、データ フローに関連付けられていない場合、 *flowContext*パラメーターが 0 です。
+データ フローをサポートするフィルタ リング層でデータを処理する吹き出し、コールアウト ドライバーは、各データ フローでコンテキストを関連付けることができます。 このようなコンテキストでは、フィルター エンジンに対して非透過的です。 吹き出しの[classifyFn](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)コールアウト関数はこのコンテキストを使用して、そのデータ フローのフィルター エンジンによって呼び出されたときに [次へ] に、データ フローに固有の状態情報を保存します。 フィルター エンジンでは、このコンテキストを渡しますを通じて吹き出しの classifyFn コールアウト関数に、 *flowContext*パラメーター。 コンテキストが、データ フローに関連付けられていない場合、 *flowContext*パラメーターが 0 です。
 
-Flow では、データ、吹き出しのコンテキストの関連付け[classifyFn](https://msdn.microsoft.com/library/windows/hardware/ff544887)コールアウト関数呼び出し、 [ **FwpsFlowAssociateContext0** ](https://msdn.microsoft.com/library/windows/hardware/ff551165)関数。 例:
+Flow では、データ、吹き出しのコンテキストの関連付け[classifyFn](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)コールアウト関数呼び出し、 [ **FwpsFlowAssociateContext0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsflowassociatecontext0)関数。 例:
 
 ```cpp
 // Context structure to be associated with data flows
@@ -101,7 +101,7 @@ VOID NTAPI
 }
 ```
 
-コンテキストが既にデータ フローに関連付けられている場合にする必要がありますまず前に削除する新しいコンテキストをデータ フローを関連付けることができます。 データ フロー、吹き出しからのコンテキストを削除する[classifyFn](https://msdn.microsoft.com/library/windows/hardware/ff544887)コールアウト関数呼び出し、 [ **FwpsFlowRemoveContext0** ](https://msdn.microsoft.com/library/windows/hardware/ff551169)関数。 例:
+コンテキストが既にデータ フローに関連付けられている場合にする必要がありますまず前に削除する新しいコンテキストをデータ フローを関連付けることができます。 データ フロー、吹き出しからのコンテキストを削除する[classifyFn](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)コールアウト関数呼び出し、 [ **FwpsFlowRemoveContext0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsflowremovecontext0)関数。 例:
 
 ```C++
 // Context structure to be associated with data flows

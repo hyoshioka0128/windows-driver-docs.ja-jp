@@ -9,17 +9,17 @@ keywords:
 - ステンシル値 WDK の表示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 03944cdf380d8fa0c8111a4eaf5bf3e9f1ce8171
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fef10356a68cd2894deeeecf89def6796f57c359
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63338669"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370254"
 ---
 # <a name="copying-depth-stencil-values"></a>深度ステンシル値のコピー
 
 
-マイクロソフトの Direct3D ランタイムが呼び出すユーザー モードのディスプレイ ドライバーの[ **Blt** ](https://msdn.microsoft.com/library/windows/hardware/ff538251)深度ステンシルをコピーする関数がシステム メモリ、ビデオ メモリの値またはその逆です。 または、ドライバーでサポートされる非透過の深度ステンシルの形式には、ドライバーとハードウェアから形式の変換に実行する必要があります (つまり、により定義されたすべての形式、 [ **D3DDDIFORMAT** ](https://msdn.microsoft.com/library/windows/hardware/ff544312)列挙型を除くD3DDDIFMT\_D\*\_LOCKABLE)、またはから、次の形式のいずれか。
+マイクロソフトの Direct3D ランタイムが呼び出すユーザー モードのディスプレイ ドライバーの[ **Blt** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_blt)深度ステンシルをコピーする関数がシステム メモリ、ビデオ メモリの値またはその逆です。 または、ドライバーでサポートされる非透過の深度ステンシルの形式には、ドライバーとハードウェアから形式の変換に実行する必要があります (つまり、により定義されたすべての形式、 [ **D3DDDIFORMAT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dukmdt/ne-d3dukmdt-_d3dddiformat)列挙型を除くD3DDDIFMT\_D\*\_LOCKABLE)、またはから、次の形式のいずれか。
 
 -   D3DDDIFMT\_D16\_LOCKABLE
 
