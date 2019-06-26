@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - WDI_TLV_P2P_ASP2_ADVERTISED_SERVICE_ENTRY ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: dc28299656dcd97578f3012b678b6ee28b94caea
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b62a8ec597ebb665e6c6b411f554786c33a8df47
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356812"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379734"
 ---
 # <a name="wditlvp2pasp2advertisedserviceentry"></a>WDI\_TLV\_P2P\_ASP2\_アドバタイズ\_サービス\_エントリ
 
@@ -44,7 +44,7 @@ WDI\_TLV\_P2P\_ASP2\_アドバタイズ\_サービス\_エントリが ASP2 提�
 | [**WDI\_TLV\_P2P\_サービス\_情報**](wdi-tlv-p2p-service-information.md) |                                | x        | サービスのサービス情報。                                                                                                                                                                                                                                                     |
 | [**WDI\_TLV\_P2P\_サービス\_状態**](wdi-tlv-p2p-service-status.md)           |                                |          | サービスのサービスの状態。                                                                                                                                                                                                                                                           |
 | [**WDI\_TLV\_P2P\_広告\_ID**](wdi-tlv-p2p-advertisement-id.md)       |                                |          | サービス インスタンスを一意に識別する ID です。                                                                                                                                                                                                                                     |
-| [**WDI\_TLV\_P2P\_CONFIG\_メソッド**](wdi-tlv-p2p-config-methods.md)           |                                |          | 構成の方法で定義されている[ **WDI\_WPS\_構成\_メソッド**](https://msdn.microsoft.com/library/windows/hardware/dn898198)します。 のみ**WDI\_WPS\_構成\_メソッド\_表示**、 **WDI\_WPS\_構成\_メソッド\_キーパッド**、および**WDI\_WPS\_構成\_メソッド\_WFDS\_既定**適用されます。 |
+| [**WDI\_TLV\_P2P\_CONFIG\_メソッド**](wdi-tlv-p2p-config-methods.md)           |                                |          | 構成の方法で定義されている[ **WDI\_WPS\_構成\_メソッド**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_wps_configuration_method)します。 のみ**WDI\_WPS\_構成\_メソッド\_表示**、 **WDI\_WPS\_構成\_メソッド\_キーパッド**、および**WDI\_WPS\_構成\_メソッド\_WFDS\_既定**適用されます。 |
 
  
 

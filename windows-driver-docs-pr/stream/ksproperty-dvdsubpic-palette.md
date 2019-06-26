@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c7382a2f46a6e1eee9fad4430862e4513737548a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b654f80729a706be9b81c5820053a666fa336480
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377452"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354887"
 ---
 # <a name="kspropertydvdsubpicpalette"></a>KSPROPERTY\_DVDSUBPIC\_パレット
 
@@ -54,7 +54,7 @@ KSPROPERTY\_DVDSUBPIC\_PALETTE プロパティは、サブピクチャ ストリ
 <td><p>〇</p></td>
 <td><p>Pin</p></td>
 <td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff565628" data-raw-source="[&lt;strong&gt;KSPROPERTY_SPPAL&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff565628)"><strong>KSPROPERTY_SPPAL</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ksproperty_sppal" data-raw-source="[&lt;strong&gt;KSPROPERTY_SPPAL&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ksproperty_sppal)"><strong>KSPROPERTY_SPPAL</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -66,9 +66,9 @@ KSPROPERTY\_DVDSUBPIC\_PALETTE プロパティは、サブピクチャ ストリ
 <a name="remarks"></a>注釈
 -------
 
-[ **KSPROPERTY\_SPPAL** ](https://msdn.microsoft.com/library/windows/hardware/ff565628) 16 YUV 要素の配列が構造に含まれています。 これらの要素は、コマンドのサブピクチャ ストリーム内の要求の 4 ビット カラー番号に対応します。
+[ **KSPROPERTY\_SPPAL** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ksproperty_sppal) 16 YUV 要素の配列が構造に含まれています。 これらの要素は、コマンドのサブピクチャ ストリーム内の要求の 4 ビット カラー番号に対応します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -87,7 +87,7 @@ KSPROPERTY\_DVDSUBPIC\_PALETTE プロパティは、サブピクチャ ストリ
 ## <a name="see-also"></a>関連項目
 
 
-[**KSPROPERTY\_SPPAL**](https://msdn.microsoft.com/library/windows/hardware/ff565628)
+[**KSPROPERTY\_SPPAL**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ksproperty_sppal)
 
  
 

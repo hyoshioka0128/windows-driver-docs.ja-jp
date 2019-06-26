@@ -8,12 +8,12 @@ keywords:
 - 同期の WDK の割り込み
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 882679d108e07f7ba1e00a36ffc5e525a57e2921
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bb23cd578eea16a0e1ab99807cc44ef8088402ac
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362545"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377952"
 ---
 # <a name="synchronizing-with-interrupts"></a>割り込みとの同期
 
@@ -21,7 +21,7 @@ ms.locfileid: "63362545"
 
 
 
-ミニポート ドライバーの場合、 [ *MiniportInterrupt* ](https://msdn.microsoft.com/library/windows/hardware/ff559395)関数と他の NIC の登録や状態変数などのリソースを共有する*MiniportXxx*で実行される関数をIRQL を削減する*MiniportXxx*関数を呼び出す必要があります[ **NdisMSynchronizeWithInterruptEx**](https://msdn.microsoft.com/library/windows/hardware/ff563681)します。 この呼び出しにより、ミニポート ドライバーの[ *MiniportSynchronizeInterrupt* ](https://msdn.microsoft.com/library/windows/hardware/ff559454)関数同期とマルチプロセッサの安全な方法で共有リソースにアクセスします。
+ミニポート ドライバーの場合、 [ *MiniportInterrupt* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_isr)関数と他の NIC の登録や状態変数などのリソースを共有する*MiniportXxx*で実行される関数をIRQL を削減する*MiniportXxx*関数を呼び出す必要があります[ **NdisMSynchronizeWithInterruptEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsynchronizewithinterruptex)します。 この呼び出しにより、ミニポート ドライバーの[ *MiniportSynchronizeInterrupt* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_synchronize_interrupt)関数同期とマルチプロセッサの安全な方法で共有リソースにアクセスします。
 
  
 

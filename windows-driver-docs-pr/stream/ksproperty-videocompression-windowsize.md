@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e21e98ae322c3ec27db64ceae9211b7ae6c98002
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ebaed8b3800ebfced36a6a55daee4815f228cbcc
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63385172"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382007"
 ---
 # <a name="kspropertyvideocompressionwindowsize"></a>KSPROPERTY\_VIDEOCOMPRESSION\_WINDOWSIZE
 
@@ -53,7 +53,7 @@ KSPROPERTY\_VIDEOCOMPRESSION\_WINDOWSIZE プロパティは、平均フレーム
 <td><p>〇</p></td>
 <td><p>〇</p></td>
 <td><p>フィルター</p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff566018" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOCOMPRESSION_S&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566018)"><strong>KSPROPERTY_VIDEOCOMPRESSION_S</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videocompression_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOCOMPRESSION_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videocompression_s)"><strong>KSPROPERTY_VIDEOCOMPRESSION_S</strong></a></p></td>
 <td><p>LONG</p></td>
 </tr>
 </tbody>
@@ -68,11 +68,11 @@ KSPROPERTY\_VIDEOCOMPRESSION\_WINDOWSIZE プロパティは、平均フレーム
 
 **値**、KSPROPERTY のメンバー\_VIDEOCOMPRESSION\_構造がウィンドウのサイズを指定します。
 
-このプロパティをサポートするミニドライバーを設定する必要があります、 **KS\_CompressionCaps\_CanWindow**フラグ、**機能**のメンバー、 [ **KSPROPERTY\_VIDEOCOMPRESSION\_GETINFO\_S** ](https://msdn.microsoft.com/library/windows/hardware/ff565979)ミニドライバーのビデオの圧縮機能を取得する構造体。 ミニドライバーが設定されている場合、 **KS\_CompressionCaps\_CanWindow**プロパティの get と set の両方のサポートが提供フラグをします。
+このプロパティをサポートするミニドライバーを設定する必要があります、 **KS\_CompressionCaps\_CanWindow**フラグ、**機能**のメンバー、 [ **KSPROPERTY\_VIDEOCOMPRESSION\_GETINFO\_S** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videocompression_getinfo_s)ミニドライバーのビデオの圧縮機能を取得する構造体。 ミニドライバーが設定されている場合、 **KS\_CompressionCaps\_CanWindow**プロパティの get と set の両方のサポートが提供フラグをします。
 
 サイズのウィンドウの*n、* 連続する任意の平均フレーム サイズ*n*がフレームする必要があります、ストリームの指定されたデータのレートを超えない*個々*フレームを大きくすることがありますまたはより小さい。 たとえば、データ レートが 150 キロバイト/秒 (KBps) の 2 つ目の (fps) 映画ごとに 15 フレームに設定されている場合、*平均*各フレームのサイズは 10 キロバイト未満をするため必要があります。 個々 のフレームは、いれば (映画の 1 秒あたりの間で計算される 15 のフレーム) の平均サイズが 10 キロバイト以下大きくまたは小さくする可能性があります。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -93,9 +93,9 @@ KSPROPERTY\_VIDEOCOMPRESSION\_WINDOWSIZE プロパティは、平均フレーム
 
 [**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
 
-[**KSPROPERTY\_VIDEOCOMPRESSION\_S**](https://msdn.microsoft.com/library/windows/hardware/ff566018)
+[**KSPROPERTY\_VIDEOCOMPRESSION\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videocompression_s)
 
-[**KSPROPERTY\_VIDEOCOMPRESSION\_GETINFO\_S**](https://msdn.microsoft.com/library/windows/hardware/ff565979)
+[**KSPROPERTY\_VIDEOCOMPRESSION\_GETINFO\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videocompression_getinfo_s)
 
  
 

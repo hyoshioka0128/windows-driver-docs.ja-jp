@@ -9,12 +9,12 @@ keywords:
 - WDK ストリーミング ミニドライバーの同期
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b2462e67bd0be2cf47ed539283cbeb291cf8a21
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9f4e5d5dfcb5c2145dda59c1c1621bb8418cd334
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364820"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377744"
 ---
 # <a name="synchronization-examples"></a>同期の例
 
@@ -26,21 +26,21 @@ ms.locfileid: "63364820"
 
 -   **例 1:機能している ISR をミニドライバー**
 
-    使用してストリーム クラスの同期が有効な場合、すべてのミニドライバー エントリ ポイントが発生した IRQL でと呼ばれる、 [ **KeSynchronizeExecution**](https://msdn.microsoft.com/library/windows/hardware/ff553302)アダプターとすべて低い IRQ の IRQ レベルつまり。レベルは、ミニドライバーは、そのコードを実行するときにマスクされます。 したがって、命令型のこのモードでの作業はわずかでは、ミニドライバーは。
+    使用してストリーム クラスの同期が有効な場合、すべてのミニドライバー エントリ ポイントが発生した IRQL でと呼ばれる、 [ **KeSynchronizeExecution**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesynchronizeexecution)アダプターとすべて低い IRQ の IRQ レベルつまり。レベルは、ミニドライバーは、そのコードを実行するときにマスクされます。 したがって、命令型のこのモードでの作業はわずかでは、ミニドライバーは。
 
     ミニドライバーは、発生した IRQL で複数の 10 ~ 20 ミリ秒かかる時間は通常コードを実行しないでください。 デバッグ ビルドを使用する場合*stream.sys*、ストリーム クラスが発生した IRQL で費やされた時間数を記録し、ドライバーが費やす時間がかかりすぎるをアサートします。 ミニドライバーは、DMA、要求の登録またはだけその ISR でポートを読み取る必要があるプログラム ハードウェアのみに必要な場合は、通常、問題をすべての発生した IRQL でその処理を行うには。
 
-    など、ミニドライバー PIO、ミニドライバーを使用してデータを転送する必要があります使用、ミニドライバーは複数のマイクロ秒の処理を実行する場合、 [ **StreamClassCallAtNewPriority** ](https://msdn.microsoft.com/library/windows/hardware/ff568230)にディスパッチをスケジュール\_レベルのコールバック。 コールバックでは、ミニドライバーかかる 1/2 を 1 ミリ秒にその処理を行います。 ときに注意すべき 1 つこのモードでは、ディスパッチ\_レベルのコールバックは*いない*ISR と同期
+    など、ミニドライバー PIO、ミニドライバーを使用してデータを転送する必要があります使用、ミニドライバーは複数のマイクロ秒の処理を実行する場合、 [ **StreamClassCallAtNewPriority** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/nf-strmini-streamclasscallatnewpriority)にディスパッチをスケジュール\_レベルのコールバック。 コールバックでは、ミニドライバーかかる 1/2 を 1 ミリ秒にその処理を行います。 ときに注意すべき 1 つこのモードでは、ディスパッチ\_レベルのコールバックは*いない*ISR と同期
 
     同期していない問題には、ミニドライバー ISR のようにもコールバック中にリソース (たとえば、ポートやキューなど) にアクセスすると、ハードウェアの安定したままの場合 問題になる可能性が不安定になったり場合、ミニドライバーを使用する必要がありますが、 **StreamClassCallAtNewPriority**優先度の高いコールバックをスケジュールする場所、ディスパッチ\_レベルのコールバックで共有されているリソースに触れて、ISR によって使用されるリソース
 
-    優先度の高いコールバックは、呼び出しに相当**KeSynchronizeExecution**します。 **KeSynchronizeExecution**いくつかのパラメーターを参照するミニドライバーを必要とする[ **StreamClassCallAtNewPriority** ](https://msdn.microsoft.com/library/windows/hardware/ff568230)そうでないが、一般に、同じ動作では、2 つの結果は。
+    優先度の高いコールバックは、呼び出しに相当**KeSynchronizeExecution**します。 **KeSynchronizeExecution**いくつかのパラメーターを参照するミニドライバーを必要とする[ **StreamClassCallAtNewPriority** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/nf-strmini-streamclasscallatnewpriority)そうでないが、一般に、同じ動作では、2 つの結果は。
 
     ミニドライバーはごくまれにしかミリ秒は 1/2 を 1 よりも詳細、または場合によってはパッシブでサービスを呼び出す必要があるコードを実行する必要がある場合\_レベル (など、初期化時に) を設定し、 **StreamClassCallAtNewPriority**低優先度は受動的な取得に使用できる\_レベルのワーカー スレッド。 優先順位の低いコールバックがすべて同期されていないことと、ミニドライバーが新しい要求を受け取ることが (と仮定すると**ReadyForNextRequest** NotificationType パラメーターが保留中) または低の実行時に、ISR 呼び出し優先度のコールバック。
 
 -   **例 2:ミニドライバー ISR なし**
 
-    ストリーム クラスの同期がオンの場合、ミニドライバーのエントリ ポイントはすべてで呼び出されますディスパッチ\_レベル。 までの処理の 1/2 を 1 ミリ秒の期間の周囲の優先順位を調整することがなく、ミニドライバーを実行できます。 ミニドライバーはごくまれにしかは複数の 1/2 ミリ秒、または場合によってはパッシブでサービスを呼び出す必要があるコードを実行する必要がある場合\_レベル (など、初期化時に)、し[ **StreamClassCallAtNewPriority** ](https://msdn.microsoft.com/library/windows/hardware/ff568230)不足している優先度を受動的な取得に使用できる\_レベルのワーカー スレッド。 優先順位の低いコールバックが何もと同期されていないと、ミニドライバーは、新しい要求を受け取ることが (と仮定すると**ReadyForNextRequest** NotificationType パラメーターが保留中) 優先順位の低いコールバックを実行する場合。
+    ストリーム クラスの同期がオンの場合、ミニドライバーのエントリ ポイントはすべてで呼び出されますディスパッチ\_レベル。 までの処理の 1/2 を 1 ミリ秒の期間の周囲の優先順位を調整することがなく、ミニドライバーを実行できます。 ミニドライバーはごくまれにしかは複数の 1/2 ミリ秒、または場合によってはパッシブでサービスを呼び出す必要があるコードを実行する必要がある場合\_レベル (など、初期化時に)、し[ **StreamClassCallAtNewPriority** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/nf-strmini-streamclasscallatnewpriority)不足している優先度を受動的な取得に使用できる\_レベルのワーカー スレッド。 優先順位の低いコールバックが何もと同期されていないと、ミニドライバーは、新しい要求を受け取ることが (と仮定すると**ReadyForNextRequest** NotificationType パラメーターが保留中) 優先順位の低いコールバックを実行する場合。
 
 -   **Stream クラスの同期にする必要があります*****いない*****するために使用**
 

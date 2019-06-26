@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - SIO_WSK_QUERY_RECEIVE_BACKLOG ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: ed4d02617201f39c6ebeb9f98d02ed52069d4edc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a8326b7aec056733fba14d17d75bf7c20344c687
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351697"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379142"
 ---
 # <a name="siowskqueryreceivebacklog"></a>SIO\_WSK\_クエリ\_受信\_バックログ
 
@@ -20,7 +20,7 @@ SIO\_WSK\_クエリ\_受信\_バックログ ソケット I/O 制御操作によ
 
 WSK アプリケーションがこのソケット I/O 制御操作を使用して、受信バックログ クエリを場合接続指向のソケットがリモートのトランスポート アドレスに接続された後に実行する必要があります。
 
-WSK アプリケーションを呼び出す接続指向のソケットの受信データの現在のバックログを照会、 [ **WskControlSocket** ](https://msdn.microsoft.com/library/windows/hardware/ff571127)関数は次のパラメーター。
+WSK アプリケーションを呼び出す接続指向のソケットの受信データの現在のバックログを照会、 [ **WskControlSocket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_control_socket)関数は次のパラメーター。
 
 <table>
 <colgroup>
@@ -71,7 +71,7 @@ WSK アプリケーションを呼び出す接続指向のソケットの受信�
 
 呼び出すときに、WSK アプリケーションは IRP へのポインターを指定する必要があります、 **WskControlSocket**接続指向のソケットの受信データの現在のバックログ クエリを実行する関数。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

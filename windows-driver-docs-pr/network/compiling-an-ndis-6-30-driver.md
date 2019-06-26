@@ -4,12 +4,12 @@ description: このセクションは、NDIS 6.30 ドライバーをコンパイ
 ms.assetid: 6CBAFAA2-7DA3-4184-B82B-AEFF61F7072C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 67e0b44d601db92cec030ea7c66fbc4c2f7b430e
-ms.sourcegitcommit: 2589492f3c14f779efa8b446e81d4e0f6d048f4f
+ms.openlocfilehash: f286af8e981b57abb6175b5599c5ed1634a6ae92
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2019
-ms.locfileid: "66815113"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379279"
 ---
 # <a name="compiling-an-ndis-630-driver"></a>NDIS 6.30 ドライバーのコンパイル
 
@@ -24,7 +24,7 @@ Windows 8 の WDK には、ヘッダー バージョン管理がサポートし�
 
 WDK の Windows 8 のリリースでは、ドライバーをビルドする方法の詳細については、次を参照してください。[ドライバーをビルド](https://docs.microsoft.com/windows-hardware/drivers/develop/building-a-driver)します。
 
-ドライバーのビルド ファイルを Visual Studio プロジェクトに変換する方法の詳細については、次を参照してください。 [、ドライバーから既存のソース ファイルを作成する](https://msdn.microsoft.com/windows-drivers/develop/creating_a_driver_from_existing_source_files)します。
+ドライバーのビルド ファイルを Visual Studio プロジェクトに変換する方法の詳細については、次を参照してください。 [、ドライバーから既存のソース ファイルを作成する](https://docs.microsoft.com/windows-hardware/drivers)します。
 
  
 

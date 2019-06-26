@@ -4,12 +4,12 @@ description: NDIS 仮想マシン (VM) 共有メモリのセキュリティ上�
 ms.assetid: 42b903b0-6729-4314-9305-9345fff9b2ba
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d7abc25dca98a2e04cd61dfe692e4ebf1d4854d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c574d7cd2f299ae12234ff62ba5da27dcf406d4e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366158"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382125"
 ---
 # <a name="security-issues-with-ndis-virtual-machine-vm-shared-memory"></a>NDIS 仮想マシン (VM) 共有メモリのセキュリティ上の問題
 
@@ -83,9 +83,9 @@ Windows Server 2012 以降、VSP は割り当てられません共有メモリ�
 
 次の点は、Windows Server 2012、Windows の以降のバージョンで実行される VMQ ミニポート ドライバーに適用されます。
 
--   6.20 VMQ の NDIS ミニポート ドライバーでは、変更は必要ありません。 ただし、場合、VSP VM キューには、割り当ての OID (オブジェクト識別子) メソッドの要求を発行[OID\_受信\_フィルター\_ALLOCATE\_キュー](https://msdn.microsoft.com/library/windows/hardware/ff569784)、設定、 **LookaheadSize**のメンバー、 [ **NDIS\_受信\_キュー\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff567211)構造体をゼロにします。 これより前の先読みアサーションと post lookahead バッファーにパケットを分割されずに、ミニポート ドライバー。
+-   6\.20 VMQ の NDIS ミニポート ドライバーでは、変更は必要ありません。 ただし、場合、VSP VM キューには、割り当ての OID (オブジェクト識別子) メソッドの要求を発行[OID\_受信\_フィルター\_ALLOCATE\_キュー](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-allocate-queue)、設定、 **LookaheadSize**のメンバー、 [ **NDIS\_受信\_キュー\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)構造体をゼロにします。 これより前の先読みアサーションと post lookahead バッファーにパケットを分割されずに、ミニポート ドライバー。
 
--   NDIS 6.30 以降、VMQ ミニポート ドライバーはする必要がありますより前の先読みアサーションと post lookahead バッファーにパケット データを分割のサポートをアドバタイズしません。 初期化するときは、これらの規則を従う必要があります、ミニポート ドライバーがその VMQ 機能を登録する場合、 [ **NDIS\_受信\_フィルター\_機能**](https://msdn.microsoft.com/library/windows/hardware/ff566864)構造体。
+-   NDIS 6.30 以降、VMQ ミニポート ドライバーはする必要がありますより前の先読みアサーションと post lookahead バッファーにパケット データを分割のサポートをアドバタイズしません。 初期化するときは、これらの規則を従う必要があります、ミニポート ドライバーがその VMQ 機能を登録する場合、 [ **NDIS\_受信\_フィルター\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)構造体。
 
     -   ミニポート ドライバーを設定する必要がありますいない、 **NDIS\_受信\_フィルター\_先読み\_分割\_サポートされている**フラグ、**フラグ**メンバー。
 

@@ -13,12 +13,12 @@ keywords:
 - WDM 関数ドライバー WDK ACPI、デバイス スタック
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 71b194c354abde00a56417143950921a2511715a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1a2befb4974b0ccee264317ea4189a3b7f4c4f47
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328853"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355859"
 ---
 # <a name="device-stacks-for-an-acpi-device"></a>ACPI デバイスのデバイス スタック
 
@@ -38,7 +38,7 @@ ACPI デバイスがシステム ボードに統合されて、ハードウェ�
 
 ### <a name="system-supplied-root-bus-driver-and-acpi-driver"></a>ルートのシステム提供のバス ドライバーと ACPI ドライバー
 
-Microsoft は、ルートのバス ドライバーを提供し、 [ACPI ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff540493)します。 ACPI BIOS システムで HAL が原因、デバイス ツリーで、オペレーティング システムと、BIOS のインターフェイスとして機能しますベース システムの起動時に読み込まれる ACPI ドライバー。 ACPI ドライバーは、他のドライバーに対して透過的です。
+Microsoft は、ルートのバス ドライバーを提供し、 [ACPI ドライバー](https://docs.microsoft.com/windows-hardware/drivers/kernel/acpi-driver)します。 ACPI BIOS システムで HAL が原因、デバイス ツリーで、オペレーティング システムと、BIOS のインターフェイスとして機能しますベース システムの起動時に読み込まれる ACPI ドライバー。 ACPI ドライバーは、他のドライバーに対して透過的です。
 
 ### <a name="vendor-supplied-function-driver"></a>ドライバーのベンダーによって提供される関数
 

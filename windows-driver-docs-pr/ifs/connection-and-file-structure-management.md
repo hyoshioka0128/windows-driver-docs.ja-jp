@@ -12,12 +12,12 @@ keywords:
 - WDK RDBSS の接続情報
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 26e1683aee9da29d2514b8c193983bdf92fa0d94
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7447c9a39c07f7a22b80e1c68c163614f270dfa2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351419"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378972"
 ---
 # <a name="connection-and-file-structure-management"></a>接続とファイル構造管理
 
@@ -39,7 +39,7 @@ ms.locfileid: "63351419"
 
 -   SRV\_オープン - サーバー側のコンテキストを開く。 この構造体には、サーバー上の開いているハンドルがカプセル化します。
 
--   FOBX--ファイル オブジェクトの拡張機能。 この構造体は RDBSS の拡張機能、 [**ファイル\_オブジェクト**](https://msdn.microsoft.com/library/windows/hardware/ff545834)構造体。
+-   FOBX--ファイル オブジェクトの拡張機能。 この構造体は RDBSS の拡張機能、 [**ファイル\_オブジェクト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_file_object)構造体。
 
 これらのデータ構造は、次の階層に分類されます。
 
@@ -96,7 +96,7 @@ ms.locfileid: "63351419"
 
  
 
-各ケースでは、動的な値は、それを逆参照、構造体が参照されている呼び出し元の数を示します。 参照カウントの静的な部分は、ルーチン自体によって管理されます。 たとえば、 [ **RxCreateNetRoot** ](https://msdn.microsoft.com/library/windows/hardware/ff554366) 、関連付けられている SRV の参照カウントをインクリメント\_呼び出し構造体。
+各ケースでは、動的な値は、それを逆参照、構造体が参照されている呼び出し元の数を示します。 参照カウントの静的な部分は、ルーチン自体によって管理されます。 たとえば、 [ **RxCreateNetRoot** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fcb/nf-fcb-rxcreatenetroot) 、関連付けられている SRV の参照カウントをインクリメント\_呼び出し構造体。
 
 参照呼び出しと成功した参照; 参照カウントをインクリメントします。カウントの呼び出しをデクリメントを逆参照します。 ルーチンの呼び出しが、構造体を割り当て、および参照カウントを 1 に設定を作成します。
 

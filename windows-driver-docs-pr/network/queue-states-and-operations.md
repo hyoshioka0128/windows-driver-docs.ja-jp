@@ -4,12 +4,12 @@ description: キューの状態と操作
 ms.assetid: 892f8f19-b94e-4950-af88-334c9a8b8c0d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b54e8cde586d4687a1092b31ee0402a64dc0c0b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 319895ff2ab273ff66d185e922d2d9355183a75c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363640"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382193"
 ---
 # <a name="queue-states-and-operations"></a>キューの状態と操作
 
@@ -20,22 +20,22 @@ ms.locfileid: "63363640"
 キューごとにネットワーク アダプターは、次の操作状態のセットをサポートする必要があります。
 
 <a href="" id="undefined"></a>未定義  
-キューは割り当てられません。 上にある、ドライバーが送信キューを割り当てる、 [OID\_受信\_フィルター\_ALLOCATE\_キュー](https://msdn.microsoft.com/library/windows/hardware/ff569784) OID 要求。
+キューは割り当てられません。 上にある、ドライバーが送信キューを割り当てる、 [OID\_受信\_フィルター\_ALLOCATE\_キュー](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-allocate-queue) OID 要求。
 
 <a href="" id="allocated"></a>割り当てられました。  
-*Allocated*状態は、キューの初期状態です。 上にあるドライバーが、キューではのフィルターを通常は設定するキューは、割り当てられている状態では、ときに、 [OID\_受信\_フィルター\_設定\_フィルター](https://msdn.microsoft.com/library/windows/hardware/ff569795) OID またはキューが完了します。割り当て、 [OID\_受信\_フィルター\_キュー\_割り当て\_完了](https://msdn.microsoft.com/library/windows/hardware/ff569793)OID 要求。
+*Allocated*状態は、キューの初期状態です。 上にあるドライバーが、キューではのフィルターを通常は設定するキューは、割り当てられている状態では、ときに、 [OID\_受信\_フィルター\_設定\_フィルター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-set-filter) OID またはキューが完了します。割り当て、 [OID\_受信\_フィルター\_キュー\_割り当て\_完了](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-queue-allocation-complete)OID 要求。
 
 <a href="" id="set"></a>設定  
-*設定*状態では、キューに割り当てられている少なくとも 1 つのフィルターが、上にあるドライバーは送信されませんが、 [OID\_受信\_フィルター\_キュー\_の割り当て\_完全な](https://msdn.microsoft.com/library/windows/hardware/ff569793)OID。
+*設定*状態では、キューに割り当てられている少なくとも 1 つのフィルターが、上にあるドライバーは送信されませんが、 [OID\_受信\_フィルター\_キュー\_の割り当て\_完全な](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-queue-allocation-complete)OID。
 
 <a href="" id="running"></a>実行しています。  
 *を実行している*状態では、キューにフィルター設定、キューの割り当てが完了し、ミニポート アダプターでは、キューのパケットの受信を示すです。
 
 <a href="" id="paused"></a>一時停止  
-*Paused*状態では、ネットワーク アダプターには、キューの受信ネットワーク データは示しません。 前に、キューに設定されているフィルターがなかったか、 [OID\_受信\_フィルター\_キュー\_割り当て\_完了](https://msdn.microsoft.com/library/windows/hardware/ff569793)された OID 要求またはすべてのフィルターキューのセットのクリア、 [OID\_受信\_フィルター\_クリア\_フィルター](https://msdn.microsoft.com/library/windows/hardware/ff569785) OID 要求。
+*Paused*状態では、ネットワーク アダプターには、キューの受信ネットワーク データは示しません。 前に、キューに設定されているフィルターがなかったか、 [OID\_受信\_フィルター\_キュー\_割り当て\_完了](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-queue-allocation-complete)された OID 要求またはすべてのフィルターキューのセットのクリア、 [OID\_受信\_フィルター\_クリア\_フィルター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-clear-filter) OID 要求。
 
 <a href="" id="dma-stopped"></a>DMA の停止  
-*DMA 停止*状態では、受信したミニポート ドライバー、 [OID\_受信\_フィルター\_FREE\_キュー](https://msdn.microsoft.com/library/windows/hardware/ff569789) OID 要求。 ときに、DMA が停止し、ドライバーが、DMA 停止の状態を示す値を発行 (と[ **NDIS\_状態\_受信\_キュー\_状態**](https://msdn.microsoft.com/library/windows/hardware/ff567417))、ドライバーは解放の状態になります。
+*DMA 停止*状態では、受信したミニポート ドライバー、 [OID\_受信\_フィルター\_FREE\_キュー](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-free-queue) OID 要求。 ときに、DMA が停止し、ドライバーが、DMA 停止の状態を示す値を発行 (と[ **NDIS\_状態\_受信\_キュー\_状態**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-receive-queue-state))、ドライバーは解放の状態になります。
 
 <a href="" id="freeing"></a>解放します。  
 *解放*状態では、ミニポート ドライバーの送信を停止し、受信、キューの操作に必要な操作が完了して、関連付けられているリソースを解放します。 インジケーターが完了すると、未処理のすべての受信後に、キューが削除され、キューが未定義です。
@@ -211,7 +211,7 @@ ms.locfileid: "63363640"
 上位のドライバーには、キューが割り当てられます。 キューの割り当てに関する詳細については、次を参照してください。[割り当てと解放 VM キュー](allocating-and-freeing-vm-queues.md)します。
 
 <a href="" id="oid-receive-filter-set-filter---method--set--request"></a>OID\_受信\_フィルター\_設定\_フィルター - メソッド (set) 要求  
-上にある、ドライバーは、キューに対してフィルターを設定します。 上にあるドライバーが送信されていない場合、 [OID\_受信\_フィルター\_キュー\_割り当て\_完了](https://msdn.microsoft.com/library/windows/hardware/ff569793)OID、状態の設定、キューが。 それ以外の場合、キューは、実行状態です。 キューのフィルターの設定に関する詳細については、次を参照してください。[設定および VMQ のフィルターをクリアする](setting-and-clearing-vmq-filters.md)します。
+上にある、ドライバーは、キューに対してフィルターを設定します。 上にあるドライバーが送信されていない場合、 [OID\_受信\_フィルター\_キュー\_割り当て\_完了](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-queue-allocation-complete)OID、状態の設定、キューが。 それ以外の場合、キューは、実行状態です。 キューのフィルターの設定に関する詳細については、次を参照してください。[設定および VMQ のフィルターをクリアする](setting-and-clearing-vmq-filters.md)します。
 
 <a href="" id="oid-receive-filter-clear-filter---set-request"></a>OID\_受信\_フィルター\_クリア\_フィルターのセットの要求  
 上位のドライバーには、キューにフィルターがクリアされます。 実行中のキューの最後のフィルターをオフにした場合、DMA を停止することができます。表示されるインジケーターは停止され、存在する場合、受信したデータのキューをクリアする必要があります。 詳細については、キューにフィルターをオフにすると、次を参照してください。[設定および VMQ のフィルターをクリアする](setting-and-clearing-vmq-filters.md)します。
@@ -223,7 +223,7 @@ ms.locfileid: "63363640"
 ミニポート ドライバーを示すことができますのみが実行状態にあるキューのパケットを受信します。 キューのかを示す受信したデータの詳細については、次を参照してください。 [VMQ の送信と受信操作](vmq-send-and-receive-operations.md)します。
 
 <a href="" id="oid-receive-filter-free-queue-set-request-"></a>OID\_受信\_フィルター\_FREE\_キューが要求を設定します。  
-上にある、ドライバーは、キューを解放します。 ドライバーは、DMA 停止の状態を示す値を発行 (と[ **NDIS\_状態\_受信\_キュー\_状態**](https://msdn.microsoft.com/library/windows/hardware/ff567417))、ドライバーが、解放を入力状態。 未処理のすべての受信の表示が完了とキュー リソースが解放されます、キューが定義されていません。
+上にある、ドライバーは、キューを解放します。 ドライバーは、DMA 停止の状態を示す値を発行 (と[ **NDIS\_状態\_受信\_キュー\_状態**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-receive-queue-state))、ドライバーが、解放を入力状態。 未処理のすべての受信の表示が完了とキュー リソースが解放されます、キューが定義されていません。
 
  
 

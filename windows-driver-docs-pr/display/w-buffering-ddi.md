@@ -7,12 +7,12 @@ keywords:
 - WDK Direct3D の w バッファリング
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 162a51e816114945fb1824fcd6713e90fa0fba3a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7582dfdfcf86ac7b90ee630c743efb6e8f72d67b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391202"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380519"
 ---
 # <a name="w-buffering-ddi"></a>W バッファリング DDI
 
@@ -20,9 +20,9 @@ ms.locfileid: "63391202"
 ## <span id="ddk_w_buffering_ddi_gg"></span><span id="DDK_W_BUFFERING_DDI_GG"></span>
 
 
-ドライバーで w バッファリングをサポート、D3DPRASTERCAPS を有効にして\_で WBUFFER キャップ、 **dwRasterCaps**のメンバー、 [ **D3DPRIMCAPS** ](https://msdn.microsoft.com/library/windows/hardware/ff549034)構造体。 D3DRENDERSTATE\_w バッファリングまたは z バッファーを有効または無効にするドライバーに渡されるが ZENABLE レンダリング状態。
+ドライバーで w バッファリングをサポート、D3DPRASTERCAPS を有効にして\_で WBUFFER キャップ、 **dwRasterCaps**のメンバー、 [ **D3DPRIMCAPS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dcaps/ns-d3dcaps-_d3dprimcaps)構造体。 D3DRENDERSTATE\_w バッファリングまたは z バッファーを有効または無効にするドライバーに渡されるが ZENABLE レンダリング状態。
 
-[ **D3DHAL\_DP2VIEWPORTINFO** ](https://msdn.microsoft.com/library/windows/hardware/ff545936)構造体は、平面をワールド空間の前面と背面のクリップに対応するフィールドをサポートしています (hither と変えようそれぞれ)。 この情報は、調整霧テーブルも使用できます。
+[ **D3DHAL\_DP2VIEWPORTINFO** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/ns-d3dhal-_d3dhal_dp2viewportinfo)構造体は、平面をワールド空間の前面と背面のクリップに対応するフィールドをサポートしています (hither と変えようそれぞれ)。 この情報は、調整霧テーブルも使用できます。
 
  
 

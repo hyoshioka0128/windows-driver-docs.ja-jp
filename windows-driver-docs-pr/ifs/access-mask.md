@@ -11,12 +11,12 @@ keywords:
 - WDK のファイル システムの特定の権限
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6cf59be7320a7296b13c365b03a4fbc225b0d0bd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6acad041414c4e0cda056aa9e8a7c852790ea080
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323179"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381752"
 ---
 # <a name="access-mask"></a>アクセス マスク
 
@@ -24,7 +24,7 @@ ms.locfileid: "63323179"
 ## <span id="ddk_sec_access_mask_if"></span><span id="DDK_SEC_ACCESS_MASK_IF"></span>
 
 
-アクセス マスクの関数では、コンパクトな形式でアクセス権について説明します。 アクセス マスクにはへのアクセス管理を簡素化するには 4 つのビット セットが含まれています、*ジェネリック rights*、関数を使用して、詳細な権限のセットに変換する[ **RtlMapGenericMask**](https://msdn.microsoft.com/library/windows/hardware/ff562027).
+アクセス マスクの関数では、コンパクトな形式でアクセス権について説明します。 アクセス マスクにはへのアクセス管理を簡素化するには 4 つのビット セットが含まれています、*ジェネリック rights*、関数を使用して、詳細な権限のセットに変換する[ **RtlMapGenericMask**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-rtlmapgenericmask).
 
 次の図は、アクセス マスクを示します。
 
@@ -92,7 +92,7 @@ ms.locfileid: "63323179"
 
 -   **ファイル\_書き込み\_属性**: ディレクトリの属性情報を変更する権限。
 
-ファイル オブジェクトの権利を特定し、標準のジェネリックの権限の実際のマッピングは、I/O マネージャーによって定義されます。 このマッピングを使用して、ファイル システムを取得できる[ **IoGetFileObjectGenericMapping**](https://msdn.microsoft.com/library/windows/hardware/ff549231)します。 IRP の中にこのマッピングを実行する通常、\_MJ\_処理、ファイル システムを呼び出す前に、I/O マネージャーを作成します。 ファイル システムが特定の操作のセキュリティをチェックしてこれを行うことがあります (たとえば、FSCTL 操作が特殊化) します。
+ファイル オブジェクトの権利を特定し、標準のジェネリックの権限の実際のマッピングは、I/O マネージャーによって定義されます。 このマッピングを使用して、ファイル システムを取得できる[ **IoGetFileObjectGenericMapping**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-iogetfileobjectgenericmapping)します。 IRP の中にこのマッピングを実行する通常、\_MJ\_処理、ファイル システムを呼び出す前に、I/O マネージャーを作成します。 ファイル システムが特定の操作のセキュリティをチェックしてこれを行うことがあります (たとえば、FSCTL 操作が特殊化) します。
 
  
 

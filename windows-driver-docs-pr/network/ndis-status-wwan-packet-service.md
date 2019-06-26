@@ -5,12 +5,12 @@ ms.assetid: 7a04b54e-e07b-43dc-ba76-086d7521ff60
 ms.date: 08/08/2017
 keywords: -NDIS_STATUS_WWAN_PACKET_SERVICE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 1cbbe32663674087b7e50ff607c01860efc55ab4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2e08ed1be5b53def4c3baf1b51b6d58384301694
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369876"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377624"
 ---
 # <a name="ndisstatuswwanpacketservice"></a>NDIS\_状態\_WWAN\_パケット\_サービス
 
@@ -19,7 +19,7 @@ ms.locfileid: "63369876"
 
 ミニポート ドライバーには、この通知が不要なイベントを送信できます。
 
-この通知を使用して、 [ **NDIS\_WWAN\_パケット\_サービス\_状態**](https://msdn.microsoft.com/library/windows/hardware/ff567910)構造体。
+この通知を使用して、 [ **NDIS\_WWAN\_パケット\_サービス\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_packet_service_state)構造体。
 
 <a name="remarks"></a>注釈
 -------
@@ -52,7 +52,7 @@ CDMA ベースのミニポート ドライバーを自動的に開始できる�
 
 -   一時的な状態を返すことはありません、*設定*要求。 最終状態のみ**WwanPacketServiceStateAttached**または**WwanPacketServiceStateDetached** WWANでパケットのサービス操作を正常に完了した後に返す必要がある\_状態\_成功
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -75,7 +75,7 @@ CDMA ベースのミニポート ドライバーを自動的に開始できる�
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_WWAN\_パケット\_サービス\_状態**](https://msdn.microsoft.com/library/windows/hardware/ff567910)
+[**NDIS\_WWAN\_パケット\_サービス\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_packet_service_state)
 
 [OID\_WWAN\_パケット\_サービス](oid-wwan-packet-service.md)
 

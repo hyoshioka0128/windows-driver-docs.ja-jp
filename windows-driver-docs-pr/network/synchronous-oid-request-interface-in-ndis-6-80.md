@@ -5,12 +5,12 @@ ms.assetid: 6BF2E800-90A0-48FC-B702-5AD4EC318A35
 keywords: 同期の OID 要求インターフェイス、OID の同期呼び出し、WDK 同期 Oid、同期の OID 要求
 ms.date: 09/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 834028856064246b1c74282574cadda65b1b4788
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cf8ad7ac8ec26466ffdf977ba2636d6b772e5259
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362586"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377974"
 ---
 # <a name="synchronous-oid-request-interface-in-ndis-680"></a>NDIS 6.80 で同期の OID 要求インターフェイス
 
@@ -26,7 +26,7 @@ Windows ネットワーク ドライバーは、下位の NDIS バインド ス�
 
 | | 定期的な OID | 直接の OID | 同期の OID |
 | --- | --- | --- | --- |
-| ペイロード | [NDIS_OID_REQUEST](https://msdn.microsoft.com/library/windows/hardware/ff566710) | NDIS_OID_REQUEST | NDIS_OID_REQUEST |
+| ペイロード | [NDIS_OID_REQUEST](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request) | NDIS_OID_REQUEST | NDIS_OID_REQUEST |
 | OID の種類 | クエリの統計情報のセット、メソッド | クエリの統計情報のセット、メソッド | クエリの統計情報のセット、メソッド |
 | によってを発行できます。 | プロトコルでフィルター | プロトコルでフィルター | プロトコルでフィルター |
 | 行うことができます。 | ミニポート、フィルター | ミニポート、フィルター | ミニポート、フィルター |
@@ -69,7 +69,7 @@ OID のすべての要求があるこの基本的なフロー: 以上のドラ�
 
 インストールされているための十分なフィルターがある場合は、NDIS はより深い再帰を保持する新しいスレッド スタックの割り当てが強制されます。
 
-NDIS 考慮、 [NDIS_OID_REQUEST](https://msdn.microsoft.com/library/windows/hardware/ff566710)構造体が、スタックを利用のシングル ホップでのみ有効です。 フィルター ドライバーが (つまり Oid のほとんどの場合) [次へ] の下ドライバー、要求を渡すかどうか、フィルター ドライバー*する必要があります*OID 要求を複製する定型コードのいくつかの数十行を挿入します。 この定型コードでは、いくつかの問題があります。
+NDIS 考慮、 [NDIS_OID_REQUEST](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体が、スタックを利用のシングル ホップでのみ有効です。 フィルター ドライバーが (つまり Oid のほとんどの場合) [次へ] の下ドライバー、要求を渡すかどうか、フィルター ドライバー*する必要があります*OID 要求を複製する定型コードのいくつかの数十行を挿入します。 この定型コードでは、いくつかの問題があります。
 
 1. OID のクローンを作成するメモリの割り当てを強制的にされます。 メモリ プールに達すると、低速の両方が、OID 要求の転送の進行状況を保証することはできません。
 2. OID の構造の設計が同じである時間の経過と共にすべてのフィルター ドライバー ハード コード別に 1 つ NDIS_OID_REQUEST の内容のコピー メカニズムであるためです。

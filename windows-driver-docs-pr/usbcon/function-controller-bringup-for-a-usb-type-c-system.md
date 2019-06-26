@@ -3,12 +3,12 @@ Description: 関数コント ローラーのドライバーは、その型から
 title: USB Type-C Windows システムにおけるファンクション コントローラーの起動
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 488ea8a90b8d46564e7351c001267271f719f854
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5965d5bbd91cc2d9d73fd9afe11f69c742670273
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391557"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378356"
 ---
 # <a name="bring-up-the-function-controller-on-a-usb-type-c-windows-system"></a>USB Type-C Windows システムにおけるファンクション コントローラーの起動
 
@@ -27,8 +27,8 @@ ms.locfileid: "63391557"
 
 **重要な API**
 
--   [USB 関数コント ローラー クライアント ドライバーのプログラミング リファレンス](https://msdn.microsoft.com/library/windows/hardware/mt188010)
--   [独自の充電器をサポートするための USB フィルター ドライバー](https://msdn.microsoft.com/library/windows/hardware/mt188012)
+-   [USB 関数コント ローラー クライアント ドライバーのプログラミング リファレンス](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt188010(v=vs.85))
+-   [独自の充電器をサポートするための USB フィルター ドライバー](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt188012(v=vs.85))
 
 関数コント ローラーのドライバーは、その型から C の USB コネクタがサポートし、課金を開始し、デバイスに描画できる現在の最大量ときにバッテリ サブシステムに通知充電中レベルの詳細について、オペレーティング システムを通知します。
 
@@ -43,10 +43,10 @@ ms.locfileid: "63391557"
 
 -   場合は、システムでは、ChipIdea および Synopsys コント ローラーを使用します。
     1.  ChipIdea および Synopsys コント ローラーの組み込みのクライアント ドライバーを提供する Microsoft を読み込みます。
-    2.  下位のフィルター ドライバーを取得しますアタッチ/デタッチ充電が接続されているときにイベントを記述します。 ドライバーは、充電器と構成プロパティの種類を決定します。 USB BC1.2 仕様で定義されたポートを充電中も検出できます。 課金調停ドライバー (CAD.sys) ことを報告できるように、クラスの拡張機能に情報を充電渡されます。 詳細については、次を参照してください。[独自の充電器をサポートするための USB フィルター ドライバー](https://msdn.microsoft.com/library/windows/hardware/mt188012)します。
+    2.  下位のフィルター ドライバーを取得しますアタッチ/デタッチ充電が接続されているときにイベントを記述します。 ドライバーは、充電器と構成プロパティの種類を決定します。 USB BC1.2 仕様で定義されたポートを充電中も検出できます。 課金調停ドライバー (CAD.sys) ことを報告できるように、クラスの拡張機能に情報を充電渡されます。 詳細については、次を参照してください。[独自の充電器をサポートするための USB フィルター ドライバー](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt188012(v=vs.85))します。
 -   システムは、カスタムのコント ローラーを使用している場合は、クライアント ドライバーを記述します。 BC1.2 は検出ロジックは、クライアント ドライバーで実装されます。 詳しくは、次のトピックをご覧ください。
 
-    [USB 関数コント ローラー クライアント ドライバーのプログラミング リファレンス](https://msdn.microsoft.com/library/windows/hardware/mt188010)
+    [USB 関数コント ローラー クライアント ドライバーのプログラミング リファレンス](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt188010(v=vs.85))
 
     [関数の USB コント ローラーの Windows ドライバーの開発](developing-windows-drivers-for-usb-function-controllers.md)
 

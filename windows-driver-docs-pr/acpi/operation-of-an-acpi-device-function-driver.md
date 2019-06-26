@@ -9,12 +9,12 @@ keywords:
 - WDM 関数ドライバー WDK ACPI、操作
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d5b3a525ae6d76504249758a0bf8ec1a0ac127f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f837b1126b5cf520b8c38d3df88a6a0feaa581ef
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328828"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355833"
 ---
 # <a name="operation-of-an-acpi-device-function-driver"></a>ACPI デバイス機能ドライバーの操作
 
@@ -26,7 +26,7 @@ ms.locfileid: "63328828"
 
 デバイスの ACPI 関数ドライバーとは、WDM ドライバーでは、次のことです。
 
--   」の説明に従って、WDM 関数ドライバーの最小要件に準拠している[Windows Driver Model](https://msdn.microsoft.com/library/windows/hardware/ff565698)します。 これには、ドライバーのエントリ ポイント、ディスパッチ ルーチン、プラグ アンド プレイ、電源管理、および Windows Management Instrumentation (WMI) が含まれます。 この基本的な機能は、汎用の操作を Windows のドライバーと ACPI デバイスに固有の操作を実装するためのフレームワークが必要です。
+-   」の説明に従って、WDM 関数ドライバーの最小要件に準拠している[Windows Driver Model](https://docs.microsoft.com/windows-hardware/drivers/kernel/windows-driver-model)します。 これには、ドライバーのエントリ ポイント、ディスパッチ ルーチン、プラグ アンド プレイ、電源管理、および Windows Management Instrumentation (WMI) が含まれます。 この基本的な機能は、汎用の操作を Windows のドライバーと ACPI デバイスに固有の操作を実装するためのフレームワークが必要です。
 
 -   関数のドライバーと ACPI BIOS との間の通信インターフェイスは、デバイスの操作の領域をサポートしています。
 

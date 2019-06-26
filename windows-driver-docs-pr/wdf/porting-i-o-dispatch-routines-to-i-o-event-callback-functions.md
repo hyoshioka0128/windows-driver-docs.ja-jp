@@ -4,12 +4,12 @@ description: I/O ディスパッチ ルーチンの I/O イベント コール�
 ms.assetid: 0BD65185-C358-4E28-8E31-255AF8D77F93
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f16f8116bd4d8aa0afc4b8056815f585d1ca6bf9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ab11ee720dae3b4eaef1b74a99848092dc871d7f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390098"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379640"
 ---
 # <a name="porting-io-dispatch-routines-to-io-event-callback-functions"></a>I/O ディスパッチ ルーチンの I/O イベント コールバック関数への移植
 
@@ -26,16 +26,16 @@ WDM ドライバーの I/O のディスパッチ ルーチンの中核は、WDF 
 ## <a name="parameters-for-io-requests"></a>I/O 要求のパラメーター
 
 
-WDF のドライバーを処理し、I/O キューを構成する方法、ドライバーは必要ないかもしれません WDM ドライバーとして、I/O 要求のパラメーターを解析することを要求の種類によっては。 フレームワークが I/O イベントのコールバックを呼び出すときに要求を読み取り、書き込み、およびデバイスの I/O コントロール ([*EvtIoRead*](https://msdn.microsoft.com/library/windows/hardware/ff541776)、 [ *EvtIoWrite*](https://msdn.microsoft.com/library/windows/hardware/ff541813)、[ *EvtIoDeviceControl*](https://msdn.microsoft.com/library/windows/hardware/ff541758)、 [ *EvtIoInternalDeviceControl*](https://msdn.microsoft.com/library/windows/hardware/ff541768))、最もよく使用されるパラメーターを抽出しますIRP のコールバックにパラメーターとして渡します。 たとえば、フレームワークがドライバーの*EvtIoRead* WDFREQUEST オブジェクトと、読み取るバイト数へのハンドルをコールバックします。 ドライバーにデバイスのオフセットまたは並べ替えキーが不要な場合だけを取得できる、バッファー WDFREQUEST オブジェクトからの 1 つを呼び出すことによって、 **WdfRequestRetrieveOutputXxx**メソッドです。 追加のパラメーターを取得する必要はありません。
+WDF のドライバーを処理し、I/O キューを構成する方法、ドライバーは必要ないかもしれません WDM ドライバーとして、I/O 要求のパラメーターを解析することを要求の種類によっては。 フレームワークが I/O イベントのコールバックを呼び出すときに要求を読み取り、書き込み、およびデバイスの I/O コントロール ([*EvtIoRead*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_queue_io_read)、 [ *EvtIoWrite*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_queue_io_write)、[ *EvtIoDeviceControl*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_queue_io_device_control)、 [ *EvtIoInternalDeviceControl*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_queue_io_internal_device_control))、最もよく使用されるパラメーターを抽出しますIRP のコールバックにパラメーターとして渡します。 たとえば、フレームワークがドライバーの*EvtIoRead* WDFREQUEST オブジェクトと、読み取るバイト数へのハンドルをコールバックします。 ドライバーにデバイスのオフセットまたは並べ替えキーが不要な場合だけを取得できる、バッファー WDFREQUEST オブジェクトからの 1 つを呼び出すことによって、 **WdfRequestRetrieveOutputXxx**メソッドです。 追加のパラメーターを取得する必要はありません。
 
-**EvtIoDefault**コールバック、ただし、フレームワークに渡しますハンドルのみに、キューおよび要求オブジェクトを識別するハンドル。 その結果、ドライバーを呼び出す必要があります**WdfRequestGetParameters**要求の種類を含む、パラメーターを取得する (**WdfRequestTypeXxx**)。 [**WdfRequestGetParameters** ](https://msdn.microsoft.com/library/windows/hardware/ff549969)を返します、 [ **WDF\_要求\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff552472)で渡されたパラメーターを格納する構造体、作成、読み取り、書き込み、デバイスの I/O 制御、または内部デバイス I/O 制御要求。
+**EvtIoDefault**コールバック、ただし、フレームワークに渡しますハンドルのみに、キューおよび要求オブジェクトを識別するハンドル。 その結果、ドライバーを呼び出す必要があります**WdfRequestGetParameters**要求の種類を含む、パラメーターを取得する (**WdfRequestTypeXxx**)。 [**WdfRequestGetParameters** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestgetparameters)を返します、 [ **WDF\_要求\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/ns-wdfrequest-_wdf_request_parameters)で渡されたパラメーターを格納する構造体、作成、読み取り、書き込み、デバイスの I/O 制御、または内部デバイス I/O 制御要求。
 
 ## <a name="access-to-buffers-for-buffered-and-direct-io"></a>バッファーとダイレクト I/O バッファーへのアクセス
 
 
-フレームワークは、i/o 要求を受信したときに、基になる WDM IRP をカプセル化する WDFREQUEST オブジェクトを作成します。 WDFREQUEST オブジェクトをキューにし、最終的に、ドライバーのに従ってディスパッチ[仕様をディスパッチ](dispatching-methods-for-i-o-requests.md)キュー。 ドライバーでは、WDF メソッドを使用して、パラメーターと、I/O 要求のバッファーを取得します。 ドライバーは、いつでも基になる WDM IRP を呼び出すことで取得できます[ **WdfRequestWdmGetIrp**](https://msdn.microsoft.com/library/windows/hardware/ff550037)します。
+フレームワークは、i/o 要求を受信したときに、基になる WDM IRP をカプセル化する WDFREQUEST オブジェクトを作成します。 WDFREQUEST オブジェクトをキューにし、最終的に、ドライバーのに従ってディスパッチ[仕様をディスパッチ](dispatching-methods-for-i-o-requests.md)キュー。 ドライバーでは、WDF メソッドを使用して、パラメーターと、I/O 要求のバッファーを取得します。 ドライバーは、いつでも基になる WDM IRP を呼び出すことで取得できます[ **WdfRequestWdmGetIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestwdmgetirp)します。
 
-WDM ドライバーと同様に WDF のドライバーがサポートできる[バッファー、直接、またはどちらも I/O](https://msdn.microsoft.com/library/windows/hardware/ff540701)します。 ドライバーを呼び出すことで各デバイス オブジェクトはサポートされている I/O の種類を設定する[ **WdfDeviceInitSetIoType** ](https://msdn.microsoft.com/library/windows/hardware/ff546128)で、 [ *EvtDriverDeviceAdd* ](https://msdn.microsoft.com/library/windows/hardware/ff541693)デバイス オブジェクトを作成する前にコールバックします。 WDM ドライバーとは異なり、KMDF ドライバーにアクセス バッファーと同じ方法でバッファリングまたはダイレクト I/O を実行してごとに、同じメソッドを使用しているかどうか。
+WDM ドライバーと同様に WDF のドライバーがサポートできる[バッファー、直接、またはどちらも I/O](https://docs.microsoft.com/windows-hardware/drivers/wdf/accessing-data-buffers-in-wdf-drivers)します。 ドライバーを呼び出すことで各デバイス オブジェクトはサポートされている I/O の種類を設定する[ **WdfDeviceInitSetIoType** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceinitsetiotype)で、 [ *EvtDriverDeviceAdd* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)デバイス オブジェクトを作成する前にコールバックします。 WDM ドライバーとは異なり、KMDF ドライバーにアクセス バッファーと同じ方法でバッファリングまたはダイレクト I/O を実行してごとに、同じメソッドを使用しているかどうか。
 
 WDF ドライバーは、同じ方法でバッファーをバッファーとダイレクトの両方の I/O のアクセス、ですが、I/O 要求の種類に応じて、バッファーを取得するのにさまざまな方法を使用します。 次のセクションでは、ドライバーが I/O 要求の種類ごとに処理する方法について説明します。
 
@@ -48,47 +48,47 @@ WDF ドライバーは、同じ方法でバッファーをバッファーとダ�
 ## <a name="create-requests"></a>要求を作成します。
 
 
-WDF のドライバーが処理できる要求の作成 ([**IRP\_MJ\_作成**](https://msdn.microsoft.com/library/windows/hardware/ff550729)) 2 つの方法のいずれかで。
+WDF のドライバーが処理できる要求の作成 ([**IRP\_MJ\_作成**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-create)) 2 つの方法のいずれかで。
 
--   キューをバイパスし、代わりに指定する[ *EvtDeviceFileCreate* ](https://msdn.microsoft.com/library/windows/hardware/ff540868)コールバック。
--   フレームワークのキューの要求を作成し、実装がある、 [ *EvtIoDefault* ](https://msdn.microsoft.com/library/windows/hardware/ff541757)キューからこのような要求を処理するためにコールバックします。
+-   キューをバイパスし、代わりに指定する[ *EvtDeviceFileCreate* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_file_create)コールバック。
+-   フレームワークのキューの要求を作成し、実装がある、 [ *EvtIoDefault* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_queue_io_default)キューからこのような要求を処理するためにコールバックします。
 
 ファイルの作成要求の処理の詳細については、次を参照してください。 [Framework ファイル オブジェクト](framework-file-objects.md#creating-or-opening-a-file)します。
 
 ## <a name="read-requests"></a>読み取り要求
 
 
-読み取り要求のためのバッファーを取得する ([**IRP\_MJ\_読み取り**](https://msdn.microsoft.com/library/windows/hardware/ff550794))、WDF ドライバーでは、1 つを呼び出す、 **WdfRequestRetrieveOutputXxx**メソッド。 ドライバーが実行するかどうかに依存しているは、これらのメソッドを返します。 各バッファー[バッファー、直接、またはどちらも I/O](https://msdn.microsoft.com/library/windows/hardware/ff540701)。
+読み取り要求のためのバッファーを取得する ([**IRP\_MJ\_読み取り**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-read))、WDF ドライバーでは、1 つを呼び出す、 **WdfRequestRetrieveOutputXxx**メソッド。 ドライバーが実行するかどうかに依存しているは、これらのメソッドを返します。 各バッファー[バッファー、直接、またはどちらも I/O](https://docs.microsoft.com/windows-hardware/drivers/wdf/accessing-data-buffers-in-wdf-drivers)。
 
 バッファー ポインターの WDM 対応については、次を参照してください。 [KMDF バッファー ポインターの対応する WDM](wdm-equivalents-for-kmdf-buffer-pointers.md#read)します。
 
 ## <a name="write-requests"></a>書き込み要求
 
 
-書き込み要求のためのバッファーを取得する ([**IRP\_MJ\_書き込み**](https://msdn.microsoft.com/library/windows/hardware/ff550819))、WDF ドライバーでは、1 つを呼び出す、 **WdfRequestRetrieveInputXxx**メソッド。 ドライバーが実行するかどうかに依存しているは、これらのメソッドを返します。 各バッファー[バッファー、直接、またはどちらも I/O](https://msdn.microsoft.com/library/windows/hardware/ff540701)。
+書き込み要求のためのバッファーを取得する ([**IRP\_MJ\_書き込み**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-write))、WDF ドライバーでは、1 つを呼び出す、 **WdfRequestRetrieveInputXxx**メソッド。 ドライバーが実行するかどうかに依存しているは、これらのメソッドを返します。 各バッファー[バッファー、直接、またはどちらも I/O](https://docs.microsoft.com/windows-hardware/drivers/wdf/accessing-data-buffers-in-wdf-drivers)。
 
 バッファー ポインターの WDM 対応については、次を参照してください。 [KMDF バッファー ポインターの対応する WDM](wdm-equivalents-for-kmdf-buffer-pointers.md#write)します。
 
 ## <a name="device-io-control-requests"></a>デバイス I/O 制御要求
 
 
-デバイス I/O 制御要求を処理する ([**IRP\_MJ\_デバイス\_コントロール**](https://msdn.microsoft.com/library/windows/hardware/ff550744))、WDF ドライバーでは、いずれかを呼び出す**WdfRequestRetrieveInputXxx**メソッドまたは**WdfRequestRetrieveOutputXxx**バッファーのバッファーを取得し、ダイレクト I/O メソッド。 対応する入力と出力のメソッドは、ドライバーは、いずれかを使用できるように、同じバッファーを返します。 ドライバーが実行するかどうかに依存しているは、これらのメソッドを返します。 各バッファー[バッファー、直接、またはどちらも I/O](https://msdn.microsoft.com/library/windows/hardware/ff540701)、だけでは、読み取りおよび書き込み要求。
+デバイス I/O 制御要求を処理する ([**IRP\_MJ\_デバイス\_コントロール**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-device-control))、WDF ドライバーでは、いずれかを呼び出す**WdfRequestRetrieveInputXxx**メソッドまたは**WdfRequestRetrieveOutputXxx**バッファーのバッファーを取得し、ダイレクト I/O メソッド。 対応する入力と出力のメソッドは、ドライバーは、いずれかを使用できるように、同じバッファーを返します。 ドライバーが実行するかどうかに依存しているは、これらのメソッドを返します。 各バッファー[バッファー、直接、またはどちらも I/O](https://docs.microsoft.com/windows-hardware/drivers/wdf/accessing-data-buffers-in-wdf-drivers)、だけでは、読み取りおよび書き込み要求。
 
-ドライバーが別のデバイス スタックかを使用して送信されるデバイス I/O 制御要求を処理する場合、 **Parameters.Other**フィールド、ドライバーが呼び出す必要があります[ **WdfRequestGetParameters** ](https://msdn.microsoft.com/library/windows/hardware/ff549969)呼び出す代わりにバッファーへのポインターを取得する[ **WdfRequestRetrieveInputBuffer** ](https://msdn.microsoft.com/library/windows/hardware/ff550014)と[ **WdfRequestRetrieveOutputBuffer**](https://msdn.microsoft.com/library/windows/hardware/ff550018). これらの要求のソースは、カーネル モード コンポーネントである保証は、ため、ドライバーは、返されたバッファー ポインターを信頼できます。 ただし、バッファー長、およびその他のパラメーターを検証にする必要がありますも。
+ドライバーが別のデバイス スタックかを使用して送信されるデバイス I/O 制御要求を処理する場合、 **Parameters.Other**フィールド、ドライバーが呼び出す必要があります[ **WdfRequestGetParameters** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestgetparameters)呼び出す代わりにバッファーへのポインターを取得する[ **WdfRequestRetrieveInputBuffer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestretrieveinputbuffer)と[ **WdfRequestRetrieveOutputBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestretrieveoutputbuffer). これらの要求のソースは、カーネル モード コンポーネントである保証は、ため、ドライバーは、返されたバッファー ポインターを信頼できます。 ただし、バッファー長、およびその他のパラメーターを検証にする必要がありますも。
 
 バッファー ポインターの WDM 対応については、次を参照してください。 [KMDF バッファー ポインターの対応する WDM](wdm-equivalents-for-kmdf-buffer-pointers.md#device-control)します。
 
 ## <a name="internal-device-io-control-requests"></a>内部デバイス I/O 制御要求
 
 
-内部デバイス I/O 制御要求 ([**IRP\_MJ\_内部\_デバイス\_コントロール**](https://msdn.microsoft.com/library/windows/hardware/ff550766)) カーネル モード コンポーネントによってのみを発行し、要求のブロックを渡すためにいくつかのオペレーティング システム コンポーネントによって内部的に使用 (SCSI など xRB プロトコル要求ブロック\[される Srb\]またはユニバーサル要求ブロック\[翻訳\])。 さまざまな種類のバッファーには、このような要求を伴うことができます。
+内部デバイス I/O 制御要求 ([**IRP\_MJ\_内部\_デバイス\_コントロール**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-internal-device-control)) カーネル モード コンポーネントによってのみを発行し、要求のブロックを渡すためにいくつかのオペレーティング システム コンポーネントによって内部的に使用 (SCSI など xRB プロトコル要求ブロック\[される Srb\]またはユニバーサル要求ブロック\[翻訳\])。 さまざまな種類のバッファーには、このような要求を伴うことができます。
 
-取得して、内部デバイス I/O 制御要求のパラメーターの解釈は、問題が発生することができます。 このような一部の要求の長さを渡すために、問題が発生、 **InputBufferLength**と**OutputBufferLength**のフィールド、 **Parameters.DeviceIoControl**WDM IRP がいくつかの構造は必要ありません。 それにもかかわらず、フレームワークをどのような値は、抽出、 **InputBufferLength**と**OutputBufferLength**フィールドし、パラメーターとして渡し、 [ *EvtIoInternalDeviceControl* ](https://msdn.microsoft.com/library/windows/hardware/ff541768)コールバック。 これらの値でも、内部の検証も行われません。
+取得して、内部デバイス I/O 制御要求のパラメーターの解釈は、問題が発生することができます。 このような一部の要求の長さを渡すために、問題が発生、 **InputBufferLength**と**OutputBufferLength**のフィールド、 **Parameters.DeviceIoControl**WDM IRP がいくつかの構造は必要ありません。 それにもかかわらず、フレームワークをどのような値は、抽出、 **InputBufferLength**と**OutputBufferLength**フィールドし、パラメーターとして渡し、 [ *EvtIoInternalDeviceControl* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_queue_io_internal_device_control)コールバック。 これらの値でも、内部の検証も行われません。
 
 バッファーを取得するには、ドライバーを呼び出す次のいずれかの。
 
--   [**WdfRequestRetrieveInputBuffer**](https://msdn.microsoft.com/library/windows/hardware/ff550014)、返された、 **Parameters.DeviceIoControl.Type3InputBuffer** IRP のフィールド。
--   [**WdfRequestRetrieveOutputBuffer**](https://msdn.microsoft.com/library/windows/hardware/ff550018)、返された、 **UserBuffer** IRP のフィールド。
+-   [**WdfRequestRetrieveInputBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestretrieveinputbuffer)、返された、 **Parameters.DeviceIoControl.Type3InputBuffer** IRP のフィールド。
+-   [**WdfRequestRetrieveOutputBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestretrieveoutputbuffer)、返された、 **UserBuffer** IRP のフィールド。
 
  
 

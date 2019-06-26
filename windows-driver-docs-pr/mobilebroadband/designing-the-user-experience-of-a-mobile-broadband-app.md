@@ -4,12 +4,12 @@ description: モバイル ブロードバンド アプリのユーザー エク�
 ms.assetid: c84e2814-69ba-4cd0-ba11-1b035ccdfbde
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c66929c7f9dda7dd000bbf2f5347a7004ba85ab
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 30e2494c1684b42ef518e366ce29c388cc6fdf14
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378390"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381530"
 ---
 # <a name="designing-the-user-experience-of-a-mobile-broadband-app"></a>モバイル ブロードバンド アプリのユーザー エクスペリエンスの設計
 
@@ -87,7 +87,7 @@ ms.locfileid: "63378390"
 ## <a name="span-idresourcesspanspan-idresourcesspanadditional-resources"></a><span id="resources"></span><span id="RESOURCES"></span>その他のリソース
 
 
--   [UWP アプリ用のインデックスの UX のガイドライン](https://msdn.microsoft.com/library/windows/apps/hh465424)
+-   [UWP アプリ用のインデックスの UX のガイドライン](https://developer.microsoft.com/windows/apps/design)
 
 -   [モバイル ブロード バンドの概要](overview-of-mobile-broadband.md)
 

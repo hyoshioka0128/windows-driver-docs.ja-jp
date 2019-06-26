@@ -7,12 +7,12 @@ keywords:
 - ミニドライバーが指定したハーフトーン WDK Unidrv
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f97eed9f2072524a51317b8ed2cb8320f41564f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: de1908fd7a75188e0c9891b218d82af93fb134a1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380139"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382040"
 ---
 # <a name="minidriver-supplied-halftone-patterns"></a>ミニドライバーで指定されるハーフトーン パターン
 
@@ -36,7 +36,7 @@ ms.locfileid: "63380139"
 
     halftone.bin はハーフトーン パターンを含むファイル。
 
--   \*HTCallbackID 属性を使用するを実装していることを示すために、 [ **IPrintOemUni::HalftonePattern** ](https://msdn.microsoft.com/library/windows/hardware/ff554258)メソッドで、[プラグインをレンダリング](rendering-plug-ins.md). 一意\* **HTCallbackID**パターンごとに値を指定する必要があります、 **IPrintOemUni::HalftonePattern**メソッドがサポートされます。
+-   \*HTCallbackID 属性を使用するを実装していることを示すために、 [ **IPrintOemUni::HalftonePattern** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni-halftonepattern)メソッドで、[プラグインをレンダリング](rendering-plug-ins.md). 一意\* **HTCallbackID**パターンごとに値を指定する必要があります、 **IPrintOemUni::HalftonePattern**メソッドがサポートされます。
 
 ハーフトーン パターンのリソースを行うことができます、 **IPrintOemUni::HalftonePattern**メソッド、またはその両方として次のとおりです。
 

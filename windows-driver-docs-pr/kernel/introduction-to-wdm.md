@@ -11,12 +11,12 @@ keywords:
 - WDM ドライバー WDK カーネル、WDM ドライバーについて
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dfaae90d1641d9def7fb833ba2e1166fd75c71c6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: daca24ee2473401897f803dbc9c4e3d1e1fff0ae
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383798"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381704"
 ---
 # <a name="introduction-to-wdm"></a>WDM の概要
 
@@ -41,9 +41,9 @@ ms.locfileid: "63383798"
 
 ### <a name="should-you-write-a-wdm-driver"></a>WDM ドライバーを作成する必要がありますか。
 
-新しいドライバーを作成する場合は、使用を検討して、[カーネル モード ドライバー フレームワーク](https://msdn.microsoft.com/library/windows/hardware/dn265580)(KMDF)。 KMDF は、WDM インターフェイスよりも簡単に使用されるインターフェイスを提供します。
+新しいドライバーを作成する場合は、使用を検討して、[カーネル モード ドライバー フレームワーク](https://docs.microsoft.com/windows-hardware/drivers/wdf/design-guide)(KMDF)。 KMDF は、WDM インターフェイスよりも簡単に使用されるインターフェイスを提供します。
 
-書き込みません WDM ドライバー、ドライバーを非 WDM ドライバーのスタックに挿入されるかどうか。 新しいドライバーを決定するデバイスの種類に固有 Microsoft が提供ドライバーのドキュメントを Microsoft から提供されたドライバーとやり取りする必要がありますお読みください。 デバイスの種類に固有の詳細については、次を参照してください[デバイスとドライバー テクノロジ](https://msdn.microsoft.com/library/windows/hardware/ff557557)。)。
+書き込みません WDM ドライバー、ドライバーを非 WDM ドライバーのスタックに挿入されるかどうか。 新しいドライバーを決定するデバイスの種類に固有 Microsoft が提供ドライバーのドキュメントを Microsoft から提供されたドライバーとやり取りする必要がありますお読みください。 デバイスの種類に固有の詳細については、次を参照してください[デバイスとドライバー テクノロジ](https://docs.microsoft.com/windows-hardware/drivers/)。)。
 
 
 

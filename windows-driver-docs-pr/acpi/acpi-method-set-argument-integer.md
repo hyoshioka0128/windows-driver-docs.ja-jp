@@ -6,17 +6,17 @@ keywords:
 - ACPI_METHOD_SET_ARGUMENT_INTEGER マクロ ACPI デバイス
 ms.date: 10/12/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 61fbedf536c27bd6374c8a422e66bb7d28a37c29
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 92b2b0cdfd3d390e4121f0610d62d27d07615fb9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328846"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355867"
 ---
 # <a name="acpimethodsetargumentinteger-macro"></a>ACPI\_メソッド\_設定\_引数\_整数マクロ
 
 
-ACPI\_メソッド\_設定\_引数\_整数マクロがのメンバーを設定、 [ **ACPI\_メソッド\_引数**](https://msdn.microsoft.com/library/windows/hardware/ff536125)1 つの整数値の構造体。
+ACPI\_メソッド\_設定\_引数\_整数マクロがのメンバーを設定、 [ **ACPI\_メソッド\_引数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ns-acpiioct-_acpi_method_argument_v1)1 つの整数値の構造体。
 
 <a name="syntax"></a>構文
 ------
@@ -70,4 +70,4 @@ ULONG 型の整数値。
 ## <a name="see-also"></a>関連項目
 
 
-[**ACPI\_メソッド\_引数**](https://msdn.microsoft.com/library/windows/hardware/ff536125) 
+[**ACPI\_メソッド\_引数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ns-acpiioct-_acpi_method_argument_v1) 

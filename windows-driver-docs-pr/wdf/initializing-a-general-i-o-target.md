@@ -7,12 +7,12 @@ keywords:
 - WDK KMDF を対象と一般的な I/O の初期化
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 41ab324ffc1a6b96547a93d71f6b09da61590823
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7b9d2e5485c2dd5fb9018bc754b78fd0edc6ff3e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63386459"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380562"
 ---
 # <a name="initializing-a-general-io-target"></a>一般 I/O ターゲットの初期化
 
@@ -20,19 +20,19 @@ ms.locfileid: "63386459"
 
 
 
-ドライバーを呼び出すと、フレームワークにドライバーのデバイスのローカル I/O の対象を初期化します[ **WdfDeviceCreate**](https://msdn.microsoft.com/library/windows/hardware/ff545926)します。 デバイスのローカル I/O ターゲット、ドライバーの呼び出しを識別するハンドルを取得する[ **WdfDeviceGetIoTarget**](https://msdn.microsoft.com/library/windows/hardware/ff546017)します。
+ドライバーを呼び出すと、フレームワークにドライバーのデバイスのローカル I/O の対象を初期化します[ **WdfDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicecreate)します。 デバイスのローカル I/O ターゲット、ドライバーの呼び出しを識別するハンドルを取得する[ **WdfDeviceGetIoTarget**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicegetiotarget)します。
 
 ほとんどのドライバーでは、そのローカル I/O ターゲットにのみ要求を送信します。
 
 デバイスのリモートの I/O ターゲットを初期化するために、ドライバーが必要です。
 
-1.  呼び出す[ **WdfIoTargetCreate** ](https://msdn.microsoft.com/library/windows/hardware/ff548591) I/O ターゲット オブジェクトを作成します。
+1.  呼び出す[ **WdfIoTargetCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdfiotargetcreate) I/O ターゲット オブジェクトを作成します。
 
-2.  呼び出す[ **WdfIoTargetOpen** ](https://msdn.microsoft.com/library/windows/hardware/ff548634)をドライバーに要求を送信できるように、I/O ターゲットを開きます。
+2.  呼び出す[ **WdfIoTargetOpen** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdfiotargetopen)をドライバーに要求を送信できるように、I/O ターゲットを開きます。
 
-ドライバーを呼び出すと[ **WdfIoTargetOpen**](https://msdn.microsoft.com/library/windows/hardware/ff548634)、通常、リモートの I/O ターゲットを表す Unicode 文字列を指定することによって識別、[オブジェクト名](https://msdn.microsoft.com/library/windows/hardware/ff557762)します。 この名前は、デバイス、ファイル、またはデバイスのインターフェイスを識別できます。 フレームワークは、オブジェクト名をサポートするドライバー スタックの一番上に I/O 要求を送信します。
+ドライバーを呼び出すと[ **WdfIoTargetOpen**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdfiotargetopen)、通常、リモートの I/O ターゲットを表す Unicode 文字列を指定することによって識別、[オブジェクト名](https://docs.microsoft.com/windows-hardware/drivers/kernel/object-names)します。 この名前は、デバイス、ファイル、またはデバイスのインターフェイスを識別できます。 フレームワークは、オブジェクト名をサポートするドライバー スタックの一番上に I/O 要求を送信します。
 
-まれには、ドライバーは Windows Driver Model (WDM) へのポインターを指定してリモート I/O ターゲットを特定可能性があります[**デバイス\_オブジェクト**](https://msdn.microsoft.com/library/windows/hardware/ff543147)構造体。 このポインターは、呼び出し元のドライバーのスタック内の別のドライバーを識別します。 フレームワーク ベースのドライバーはこの手法をほとんど使用ほとんど他のドライバーにアクセスしているため**デバイス\_オブジェクト**構造体。
+まれには、ドライバーは Windows Driver Model (WDM) へのポインターを指定してリモート I/O ターゲットを特定可能性があります[**デバイス\_オブジェクト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_object)構造体。 このポインターは、呼び出し元のドライバーのスタック内の別のドライバーを識別します。 フレームワーク ベースのドライバーはこの手法をほとんど使用ほとんど他のドライバーにアクセスしているため**デバイス\_オブジェクト**構造体。
 
 次の例では、Ndisedge サンプル ドライバーが前述の手法を使用して作成し、リモートの I/O ターゲットを開く方法を示しています。
 

@@ -9,12 +9,12 @@ keywords:
 - レジストリの WDK ストリーミング ミニドライバー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 880b5c596cd16d4b3ebdb8585a47e370570a9b2d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c0f71193b94d7c91e83ebf8d5529959f18b11695
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391379"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377812"
 ---
 # <a name="stream-class-registry-values"></a>ストリーム クラスのレジストリ値
 
@@ -22,7 +22,7 @@ ms.locfileid: "63391379"
 
 
 
-下のミニドライバーをインストールする*Stream.sys*、仕入先に準拠しているデバイスに固有の INF ファイルを指定する必要があります[INF ファイルの一般的な要件](https://msdn.microsoft.com/library/windows/hardware/ff547433)します。 このファイルで、ストリーム クラスで実行されているミニドライバーがデバイスに固有の特殊なレジストリ値を設定できます[ **AddReg** ](https://msdn.microsoft.com/library/windows/hardware/ff546320)セクション。 これらのレジストリ エントリがバイナリ インジケーターとして使用: 01、機能を有効にする 16 進数の値に設定します。
+下のミニドライバーをインストールする*Stream.sys*、仕入先に準拠しているデバイスに固有の INF ファイルを指定する必要があります[INF ファイルの一般的な要件](https://docs.microsoft.com/windows-hardware/drivers/install/inf-file-sections-and-directives)します。 このファイルで、ストリーム クラスで実行されているミニドライバーがデバイスに固有の特殊なレジストリ値を設定できます[ **AddReg** ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)セクション。 これらのレジストリ エントリがバイナリ インジケーターとして使用: 01、機能を有効にする 16 進数の値に設定します。
 
 Stream クラス ミニドライバーでは、次のレジストリ値を使用できます。
 
@@ -38,7 +38,7 @@ Stream クラス ミニドライバーでは、次のレジストリ値を使用
 次のフラグが 9 の Windows でサポートされていましたが、x、NT ベースのオペレーティング システムでは古いは。
 
 <a href="" id="dontsuspendifstreamsarerunning"></a>**DontSuspendIfStreamsAreRunning**  
-このレジストリ変数は、Windows 2000 以降の NT ベースのオペレーティング システムで廃止されています。 (時点で、このリリースでは、DirectShow power クエリをリッスンおよび低電力のクエリを受信すると、一時停止にすべてのストリームを格納します。)アプリケーションが呼び出すことによって使用されているシステムを通知できますも**SetThreadExecutionState**します。 このルーチンは、Microsoft Windows SDK ドキュメントで説明します。 また、ドライバーを使用できる[ **PoSetSystemState**](https://msdn.microsoft.com/library/windows/hardware/ff559768)します。
+このレジストリ変数は、Windows 2000 以降の NT ベースのオペレーティング システムで廃止されています。 (時点で、このリリースでは、DirectShow power クエリをリッスンおよび低電力のクエリを受信すると、一時停止にすべてのストリームを格納します。)アプリケーションが呼び出すことによって使用されているシステムを通知できますも**SetThreadExecutionState**します。 このルーチンは、Microsoft Windows SDK ドキュメントで説明します。 また、ドライバーを使用できる[ **PoSetSystemState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-posetsystemstate)します。
 
 <a href="" id="oktohibernate"></a>**OkToHibernate**  
 このレジストリ文字列で、Windows 98 で実行されているドライバーのみです。 NT ベースのオペレーティング システムでは使用されません。

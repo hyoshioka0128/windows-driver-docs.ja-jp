@@ -6,12 +6,12 @@ keywords:
 - INF ファイル WDK ファイル システムのインストール手順
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c72c415bcdf1a5651968b26392ad11a3d68346a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cc33292c5b1e054d9c559ee2c556a51dc430fe20
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384659"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380290"
 ---
 # <a name="using-an-inf-file-to-install-a-file-system-filter-driver"></a>INF ファイルを使用したファイル システム フィルター ドライバーのインストール
 
@@ -23,7 +23,7 @@ INF ファイルを作成した後は、インストール、アップグレー�
 
 ### <a name="span-idright-clickinstallspanspan-idright-clickinstallspanspan-idright-clickinstallspanright-click-install"></a><span id="Right-Click_Install"></span><span id="right-click_install"></span><span id="RIGHT-CLICK_INSTALL"></span>インストールを右クリックします。
 
-実行する、 [ **DefaultInstall** ](https://msdn.microsoft.com/library/windows/hardware/ff547356)と[ **DefaultInstall.Services** ](https://msdn.microsoft.com/library/windows/hardware/ff547360)のセクションでは、INF ファイルの次を行う必要があります。
+実行する、 [ **DefaultInstall** ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-defaultinstall-section)と[ **DefaultInstall.Services** ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-defaultinstall-services-section)のセクションでは、INF ファイルの次を行う必要があります。
 
 1.  Windows エクスプ ローラーでは、INF ファイル名を右クリックします。 ショートカット メニューが表示されます。
 
@@ -45,7 +45,7 @@ RUNDLL32.EXE SETUPAPI.DLL,InstallHinfSection DefaultInstall 132 path-to-inf\infn
 
 ### <a name="span-idsetupapplicationspanspan-idsetupapplicationspanspan-idsetupapplicationspansetup-application"></a><span id="Setup_Application"></span><span id="setup_application"></span><span id="SETUP_APPLICATION"></span>アプリケーションをセットアップします。
 
-[**InstallHinfSection** ](https://msdn.microsoft.com/library/windows/desktop/aa376957)次のコード例に示すように、セットアップ アプリケーションから呼び出すもできます。
+[**InstallHinfSection** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-installhinfsectiona)次のコード例に示すように、セットアップ アプリケーションから呼び出すもできます。
 
 ```cpp
 InstallHinfSection(NULL,NULL,TEXT("DefaultInstall 132 path-to-inf\infname.inf"),0); 
@@ -59,9 +59,9 @@ InstallHinfSection(NULL,NULL,TEXT("DefaultInstall 132 path-to-inf\infname.inf"),
 
     追加と削除 で、アプリケーションの一覧を表示する方法の詳細については、Windows sdk のセットアップとシステム管理のセクションでは"を削除する an Application"を参照してください。
 
--   アプリケーションをセットアップする必要があります Windows INF ファイルのディレクトリにドライバーの INF ファイルをコピーしない (*%windir%\\INF*)。 SetupAPI がファイルを自動的にコピーの一部として、 [ **InstallHinfSection** ](https://msdn.microsoft.com/library/windows/desktop/aa376957)呼び出します。
+-   アプリケーションをセットアップする必要があります Windows INF ファイルのディレクトリにドライバーの INF ファイルをコピーしない ( *%windir%\\INF*)。 SetupAPI がファイルを自動的にコピーの一部として、 [ **InstallHinfSection** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-installhinfsectiona)呼び出します。
 
-セットアップ アプリケーションの詳細については、次を参照してください。[デバイス インストール アプリケーションを記述して](https://msdn.microsoft.com/library/windows/hardware/ff554015)します。
+セットアップ アプリケーションの詳細については、次を参照してください。[デバイス インストール アプリケーションを記述して](https://docs.microsoft.com/windows-hardware/drivers/install/writing-a-device-installation-application)します。
 
  
 

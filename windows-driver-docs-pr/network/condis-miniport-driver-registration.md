@@ -8,12 +8,12 @@ keywords:
 - ミニポート ドライバーの登録
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a46119f695d7abd76fb5fb16c119263adc40f24
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3e8c558c2109fc0490edc914f61a344587807e21
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367676"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379217"
 ---
 # <a name="condis-miniport-driver-registration"></a>CoNDIS ミニポート ドライバー登録
 
@@ -23,7 +23,7 @@ ms.locfileid: "63367676"
 
 いる CoNDIS ミニポート ドライバーでは、その他のミニポート ドライバーのように初期化しも追加いる CoNDIS エントリ ポイントを登録する必要があります。 ミニポート ドライバーの初期化の詳細については、次を参照してください。[ミニポート ドライバーの初期化](initializing-a-miniport-driver.md)します。
 
-いる CoNDIS エントリ ポイントを登録する*MiniportXxx*関数、いる CoNDIS ミニポート ドライバーの呼び出し、 [ **NdisSetOptionalHandlers** ](https://msdn.microsoft.com/library/windows/hardware/ff564550)関数を[*MiniportSetOptions* ](https://msdn.microsoft.com/library/windows/hardware/ff559443)関数。 *MiniportSetOptions*、ミニポート ドライバーを初期化します、 [ **NDIS\_ミニポート\_CO\_特性**](https://msdn.microsoft.com/library/windows/hardware/ff565948)構造体を渡しますで、 *OptionalHandlers*パラメーターの**NdisSetOptionalHandlers**します。
+いる CoNDIS エントリ ポイントを登録する*MiniportXxx*関数、いる CoNDIS ミニポート ドライバーの呼び出し、 [ **NdisSetOptionalHandlers** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndissetoptionalhandlers)関数を[*MiniportSetOptions* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-set_options)関数。 *MiniportSetOptions*、ミニポート ドライバーを初期化します、 [ **NDIS\_ミニポート\_CO\_特性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_co_characteristics)構造体を渡しますで、 *OptionalHandlers*パラメーターの**NdisSetOptionalHandlers**します。
 
 ミニポート register を呼び出すマネージャー (MCMs) も*ProtocolXxx*関数*MiniportSetOptions*します。 MCM ドライバーの登録の詳細については、次を参照してください。[いる CoNDIS MCM 登録](condis-mcm-registration.md)します。
 

@@ -9,12 +9,12 @@ keywords:
 - デバイス インターフェイスの列挙、WDK デバイスのインストール
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ea0698accf70230a3a9fc08cb7a202376ba17ba
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a0fcdfcd59a549049e2a465f057f56cb1f4b574d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63386990"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379477"
 ---
 # <a name="enumerating-installed-device-interfaces"></a>インストール済みのデバイス インターフェイスの列挙
 
@@ -25,13 +25,13 @@ ms.locfileid: "63386990"
 
 -   ユーザー モード アプリケーションは、次の手順に従う必要があります。
 
-    1.  使用[ **SetupDiGetClassDevs** ](https://msdn.microsoft.com/library/windows/hardware/ff551069)または[ **SetupDiGetClassDevsEx** ](https://msdn.microsoft.com/library/windows/hardware/ff551072)指定されたインターフェイスをサポートするデバイスを取得するにはデバイス インターフェイスのクラスです。 DIGCF_DEVICEINTERFACE フラグを設定する必要があります、*フラグ*して、パラメーターを設定する必要があります、*列挙子*パラメーターを特定のデバイスのインスタンス識別子。
+    1.  使用[ **SetupDiGetClassDevs** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclassdevsw)または[ **SetupDiGetClassDevsEx** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclassdevsexa)指定されたインターフェイスをサポートするデバイスを取得するにはデバイス インターフェイスのクラスです。 DIGCF_DEVICEINTERFACE フラグを設定する必要があります、*フラグ*して、パラメーターを設定する必要があります、*列挙子*パラメーターを特定のデバイスのインスタンス識別子。
 
         システムに存在するデバイスのインターフェイスのみを含める DIGCF_PRESENT フラグを設定します。、*フラグ*パラメーター。
 
-    2.  使用[ **SetupDiEnumDeviceInterfaces** ](https://msdn.microsoft.com/library/windows/hardware/ff551015)デバイス インターフェイスのクラスに登録されているインターフェイスを列挙します。 このインターフェイスのクラスがで指定された、 *InterfaceClassGuid*パラメーター。
+    2.  使用[ **SetupDiEnumDeviceInterfaces** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdienumdeviceinterfaces)デバイス インターフェイスのクラスに登録されているインターフェイスを列挙します。 このインターフェイスのクラスがで指定された、 *InterfaceClassGuid*パラメーター。
 
--   カーネル モード ドライバーを使用する必要があります[ **IoGetDeviceInterfaces** ](https://msdn.microsoft.com/library/windows/hardware/ff549186)システムにインストールされているデバイスのインターフェイス クラスを列挙します。
+-   カーネル モード ドライバーを使用する必要があります[ **IoGetDeviceInterfaces** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdeviceinterfaces)システムにインストールされているデバイスのインターフェイス クラスを列挙します。
 
  
 

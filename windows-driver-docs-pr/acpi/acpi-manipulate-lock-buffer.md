@@ -6,17 +6,17 @@ keywords:
 - ACPI_MANIPULATE_LOCK_BUFFER 構造 ACPI デバイス
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a88ceb99515500328c971b738864ebbb18cf6ec7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: aae8a0a4b844f28d552771f9dbfffee81dffee42
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324765"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355888"
 ---
 # <a name="acpimanipulatelockbuffer-structure"></a>ACPI\_操作\_ロック\_バッファーの構造体
 
 
-ACPI\_操作\_ロック\_バッファー マクロは内部使用のみに予約されています、 [ **IOCTL\_ACPI\_ACQUIRE\_GLOBAL\_ロック**](https://msdn.microsoft.com/library/windows/hardware/ff536144)と[ **IOCTL\_ACPI\_リリース\_GLOBAL\_ロック**](https://msdn.microsoft.com/library/windows/hardware/ff536150)します。
+ACPI\_操作\_ロック\_バッファー マクロは内部使用のみに予約されています、 [ **IOCTL\_ACPI\_ACQUIRE\_GLOBAL\_ロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ni-acpiioct-ioctl_acpi_acquire_global_lock)と[ **IOCTL\_ACPI\_リリース\_GLOBAL\_ロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ni-acpiioct-ioctl_acpi_release_global_lock)します。
 
 <a name="requirements"></a>必要条件
 ------------
@@ -37,9 +37,9 @@ ACPI\_操作\_ロック\_バッファー マクロは内部使用のみに予約
 ## <a name="see-also"></a>関連項目
 
 
-[**IOCTL\_ACPI\_ACQUIRE\_GLOBAL\_ロック**](https://msdn.microsoft.com/library/windows/hardware/ff536144)
+[**IOCTL\_ACPI\_ACQUIRE\_GLOBAL\_ロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ni-acpiioct-ioctl_acpi_acquire_global_lock)
 
-[**IOCTL\_ACPI\_リリース\_GLOBAL\_ロック**](https://msdn.microsoft.com/library/windows/hardware/ff536150)
+[**IOCTL\_ACPI\_リリース\_GLOBAL\_ロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ni-acpiioct-ioctl_acpi_release_global_lock)
 
  
 

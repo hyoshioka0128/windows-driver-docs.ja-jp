@@ -3,12 +3,12 @@ Description: C-USB 型システムに埋め込みコント ローラーが含ま
 title: USB Type-C コネクタ用 Windows ドライバーの開発
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dc06240f49b58ce836dbdd86099787314b20ea1a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 32306d25f53c5cdccf58211f9a6e985704b7952c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325212"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378361"
 ---
 # <a name="developing-windows-drivers-for-usb-type-c-connectors"></a>USB Type-C コネクタ用 Windows ドライバーの開発
 C-USB 型システムが PD ステート マシンを実装していないまたはステート マシンの実装が非 ACPI トランスポート経由で UCSI をサポートしていませんが、コネクタのドライバーを記述する必要があります。 その場合は、Microsoft から提供されたを読み込むことができます[UCSI ドライバー](ucsi.md)します。
@@ -94,11 +94,11 @@ C-USB 型システムが PD ステート マシンを実装していないまた
 
 [USB の役割の切り替え (URS) のクライアント ドライバーを記述します。 ](usb-dual-role-driver-stack-architecture.md)
 
-[USB デュアルロール コントローラー ドライバーのプログラミング参照](https://msdn.microsoft.com/library/windows/hardware/mt628026)
+[USB デュアルロール コントローラー ドライバーのプログラミング参照](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt628026(v=vs.85))
 
 [USB 関数のクライアント ドライバーを記述します。](developing-windows-drivers-for-usb-function-controllers.md)  
 
-[USB 関数コントローラーのプログラミング参照](https://msdn.microsoft.com/library/windows/hardware/mt188013)
+[USB 関数コントローラーのプログラミング参照](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
 
 ## <a name="related-topics"></a>関連トピック
 

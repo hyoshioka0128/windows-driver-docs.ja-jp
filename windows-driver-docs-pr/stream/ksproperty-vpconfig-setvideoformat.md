@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 258e788592f849fd7484286e90be31a9242e4553
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 761d3142ea889dc39296f052dfd78002d71bb777
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63329968"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380604"
 ---
 # <a name="kspropertyvpconfigsetvideoformat"></a>KSPROPERTY\_VPCONFIG\_SETVIDEOFORMAT
 
@@ -54,7 +54,7 @@ KSPROPERTY\_VPCONFIG\_SETVIDEOFORMAT プロパティは、ビデオ形式を設�
 <td><p>〇</p></td>
 <td><p>Pin</p></td>
 <td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff550274" data-raw-source="[&lt;strong&gt;DDPIXELFORMAT&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff550274)"><strong>DDPIXELFORMAT</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ddpixelformat" data-raw-source="[&lt;strong&gt;DDPIXELFORMAT&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ddpixelformat)"><strong>DDPIXELFORMAT</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -63,7 +63,7 @@ KSPROPERTY\_VPCONFIG\_SETVIDEOFORMAT プロパティは、ビデオ形式を設�
 
 プロパティの値 (データの操作) は、使用するビデオ形式を指定する DDPIXELFORMAT 構造です。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -84,7 +84,7 @@ KSPROPERTY\_VPCONFIG\_SETVIDEOFORMAT プロパティは、ビデオ形式を設�
 
 [**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
 
-[**DDPIXELFORMAT**](https://msdn.microsoft.com/library/windows/hardware/ff550274)
+[**DDPIXELFORMAT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ddpixelformat)
 
  
 

@@ -9,17 +9,17 @@ keywords:
 - 非同期通知 WDK XPS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 795bdb45d55077d12eedca434223f5cce34c8812
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ff046003df234ec9a534f91d8ce359007769e3db
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368903"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380709"
 ---
 # <a name="asynchronous-notifications-in-print-filters"></a>印刷フィルターの非同期通知
 
 
-印刷フィルター パイプラインでは、アプリケーション用の印刷スプーラーでサポートされている非同期の通知に非常に類似した非同期の通知機能があります。 [ **RouterCreatePrintAsyncNotificationChannel** ](https://msdn.microsoft.com/library/windows/hardware/ff562009)印刷スプーラで使用できる関数が印刷フィルターをご利用いただけません。 印刷のフィルターを使用する必要があります、 [IPrintClassObjectFactory](https://msdn.microsoft.com/library/windows/hardware/ff551955) IPrintAsyncNotify オブジェクトを作成するインターフェイス。
+印刷フィルター パイプラインでは、アプリケーション用の印刷スプーラーでサポートされている非同期の通知に非常に類似した非同期の通知機能があります。 [ **RouterCreatePrintAsyncNotificationChannel** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prnasntp/nf-prnasntp-routercreateprintasyncnotificationchannel)印刷スプーラで使用できる関数が印刷フィルターをご利用いただけません。 印刷のフィルターを使用する必要があります、 [IPrintClassObjectFactory](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/filterpipeline/nn-filterpipeline-iprintclassobjectfactory) IPrintAsyncNotify オブジェクトを作成するインターフェイス。
 
 このトピックでは、印刷フィルターで非同期通知機能を使用する方法について説明します。
 
@@ -29,7 +29,7 @@ ms.locfileid: "63368903"
 
 ### <a name="iprintclassobjectfactory"></a>IPrintClassObjectFactory
 
-[IPrintClassObjectFactory](https://msdn.microsoft.com/library/windows/hardware/ff551955)インターフェイス通知インターフェイスへのアクセスを提供します。 次のコード例では、フィルターがプロパティ バッグからこのインターフェイスを取得する方法を示しています。
+[IPrintClassObjectFactory](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/filterpipeline/nn-filterpipeline-iprintclassobjectfactory)インターフェイス通知インターフェイスへのアクセスを提供します。 次のコード例では、フィルターがプロパティ バッグからこのインターフェイスを取得する方法を示しています。
 
 ```cpp
 // This interface is defined as a private member variable in the filter class

@@ -11,12 +11,12 @@ keywords:
 - 幾何学的行 WDK GDI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f5107e6d12480f11309c8c39e7974099755edb4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9f2ed582285abd6c9ea8e17504a38c0feb25aa5d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373455"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379984"
 ---
 # <a name="geometric-wide-lines"></a>ジオメトリック太線
 
@@ -24,9 +24,9 @@ ms.locfileid: "63373455"
 ## <span id="ddk_geometric_wide_lines_gg"></span><span id="DDK_GEOMETRIC_WIDE_LINES_GG"></span>
 
 
-形状を*幾何学的*行は、幅、結合のスタイルおよびブラシ、およびで現在の世界からデバイスへの変換の端点キャップ スタイルによって決定されます、 [ **XFORMOBJ** ](https://msdn.microsoft.com/library/windows/hardware/ff570618)構造体。 ソリッドまたは非ソリッド ブラシを使用して線を描画できます。
+形状を*幾何学的*行は、幅、結合のスタイルおよびブラシ、およびで現在の世界からデバイスへの変換の端点キャップ スタイルによって決定されます、 [ **XFORMOBJ** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff570618(v=vs.85))構造体。 ソリッドまたは非ソリッド ブラシを使用して線を描画できます。
 
-高度なハードウェアのドライバーもサポートして幾何学的で線、 [ **DrvStrokePath** ](https://msdn.microsoft.com/library/windows/hardware/ff556316)関数。 GDI は、ドライバーが、GCAPS をテストして geometric ラインを含むパスを描画できるかどうかを決定します\_GEOMETRICWIDE 機能フラグ、 [ **DEVINFO** ](https://msdn.microsoft.com/library/windows/hardware/ff552835) への呼び出しで返される構造体。[**DrvEnablePDEV**](https://msdn.microsoft.com/library/windows/hardware/ff556211)します。 場合は、ドライバーには、機能がないか、GDI がより単純な呼び出しを自動的に変換関数は、パスまたはクリッピングがデバイスには複雑すぎるため、操作を処理するために失敗した場合、 [ **DrvFillPath**](https://msdn.microsoft.com/library/windows/hardware/ff556220)関数。
+高度なハードウェアのドライバーもサポートして幾何学的で線、 [ **DrvStrokePath** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvstrokepath)関数。 GDI は、ドライバーが、GCAPS をテストして geometric ラインを含むパスを描画できるかどうかを決定します\_GEOMETRICWIDE 機能フラグ、 [ **DEVINFO** ](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-tagdevinfo) への呼び出しで返される構造体。[**DrvEnablePDEV**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvenablepdev)します。 場合は、ドライバーには、機能がないか、GDI がより単純な呼び出しを自動的に変換関数は、パスまたはクリッピングがデバイスには複雑すぎるため、操作を処理するために失敗した場合、 [ **DrvFillPath**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvfillpath)関数。
 
 ジオメトリの太線は、ディスプレイ ドライバーのグラフィックス機能を特定の意味を持ちます。 デバイス座標を含むパスは、現在の変換の逆関数を使用してワールド座標に変換されます。 指定した幅と幾何学的構築し、アカウントの結合と終点のキャップを考慮して、パスの拡張のバージョンを取得します。 このパスはもう一度デバイス座標に変換し、指定のブラシで塗りつぶされます。
 

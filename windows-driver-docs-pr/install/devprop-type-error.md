@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 2e2b32bedfabfca7168f0b24f4c5b1ae9b08d903
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6a6be27334e5fefe69b4a5772ea516a9a2632094
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358839"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381722"
 ---
 # <a name="devproptypeerror"></a>DEVPROP_TYPE_ERROR
 
@@ -29,7 +29,7 @@ DEVPROP_TYPE_ERROR 識別子は、WINERROR で定義されている Microsoft Wi
 <a name="remarks"></a>注釈
 -------
 
-Windows Vista および Windows での以降のバージョンで、[統一されたデバイス プロパティのモデル](https://msdn.microsoft.com/library/windows/hardware/ff553515)も定義、 [ **DEVPROP_TYPE_NTSTATUS** ](devprop-type-ntstatus.md) NTSTATUS の基本データ型識別子エラー コード値。
+Windows Vista および Windows での以降のバージョンで、[統一されたデバイス プロパティのモデル](https://docs.microsoft.com/windows-hardware/drivers/install/unified-device-property-model--windows-vista-and-later-)も定義、 [ **DEVPROP_TYPE_NTSTATUS** ](devprop-type-ntstatus.md) NTSTATUS の基本データ型識別子エラー コード値。
 
 のみ DEVPROP_TYPE_ERROR を組み合わせることができます、 [ **DEVPROP_TYPEMOD_ARRAY** ](devprop-typemod-array.md)プロパティ データ型の修飾子。
 
@@ -47,7 +47,7 @@ Windows Vista および Windows での以降のバージョンで、[統一さ�
 
 ### <a name="retrieving-the-descriptive-text-for-a-win32-error-code-value"></a>Win32 エラー コード値の説明テキストを取得します。
 
-Win32 エラー コードに関連付けられている説明テキストを取得する、 [ **FormatMessage** ](https://msdn.microsoft.com/library/windows/desktop/ms679351)関数 (Windows SDK に記載されている) 時に、次のようにします。
+Win32 エラー コードに関連付けられている説明テキストを取得する、 [ **FormatMessage** ](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-formatmessage)関数 (Windows SDK に記載されている) 時に、次のようにします。
 
 -   値で FORMAT_MESSAGE_FROM_SYSTEM フラグが含まれて、 *dwflags*パラメーター。
 

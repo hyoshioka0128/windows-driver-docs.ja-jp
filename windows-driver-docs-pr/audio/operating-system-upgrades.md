@@ -11,12 +11,12 @@ keywords:
 - 移行の設定の WDK オーディオ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6867e25d64d7e287d66ee04fffd96bc2474cb3ba
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dcc1214e590d2b1e25fde77b1c384a2c0805dba0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332256"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355339"
 ---
 # <a name="operating-system-upgrades"></a>オペレーティング システムのアップグレード
 
@@ -36,7 +36,7 @@ Me Windows からアップグレードする場合]、[Windows XP または Wind
 
 いくつかの独自ドライバーでは、ただし、無条件たびに上書きこれらのレジストリ設定の既定値でインストールされています。 優れたアプローチは、インストール時に決定するためのドライバーによっては特定のドライバー固有のレジストリ エントリが既に存在するかどうかです。 存在、ドライバーはこれらのエントリを上書きせずに含まれている設定を保存する必要があります。
 
-ドライバーの INF ファイルの追加レジストリ セクション ディレクティブでは、既存のレジストリ エントリを上書きするかどうかを指定します。 詳細については、FLG の説明を参照してください。\_ADDREG\_NOCLOBBER フラグ[ **INF AddReg ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546320)します。
+ドライバーの INF ファイルの追加レジストリ セクション ディレクティブでは、既存のレジストリ エントリを上書きするかどうかを指定します。 詳細については、FLG の説明を参照してください。\_ADDREG\_NOCLOBBER フラグ[ **INF AddReg ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)します。
 
 ### <a name="span-idmigrationdllspanspan-idmigrationdllspanspan-idmigrationdllspanmigration-dll"></a><span id="Migration_DLL"></span><span id="migration_dll"></span><span id="MIGRATION_DLL"></span>DLL の移行
 

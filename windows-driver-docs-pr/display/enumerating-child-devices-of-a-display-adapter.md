@@ -10,29 +10,29 @@ keywords:
 - 子デバイス WDK ビデオ存在するネットワークを列挙します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 829713c12927b7a9d544f107f8902d78a42c1868
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6804c9ea16a06037cc9cb0d93a9c4625a7dd4ff3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377658"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355569"
 ---
 # <a name="enumerating-child-devices-of-a-display-adapter"></a>ディスプレイ アダプターの子デバイスの列挙
 
 
 次の一連の手順では、ポートのディスプレイ ドライバー、ディスプレイのミニポート ドライバー、およびビデオの表示 (VidPN) のネットワーク マネージャーが列挙子デバイス ディスプレイ アダプターの初期化時に共同作業する方法について説明します。
 
-1.  ポートのディスプレイ ドライバー呼び出しディスプレイ ミニポート ドライバーの[ **DxgkDdiStartDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff560775)関数。 *DxgkDdiStartDevice*を返します (で、*コード*パラメーター) が (またはドッキングなる可能性があります) をデバイスの数、ディスプレイ アダプターの子。 *DxgkDdiStartDevice*も返されます (で、 *NumberOfVideoPresentSources*パラメーター) ディスプレイ アダプターでサポートされているビデオの存在するソースの数を N。 これらのビデオの存在するソースは、その後数字 0、1、によって識別される.N は-1。
+1.  ポートのディスプレイ ドライバー呼び出しディスプレイ ミニポート ドライバーの[ **DxgkDdiStartDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_start_device)関数。 *DxgkDdiStartDevice*を返します (で、*コード*パラメーター) が (またはドッキングなる可能性があります) をデバイスの数、ディスプレイ アダプターの子。 *DxgkDdiStartDevice*も返されます (で、 *NumberOfVideoPresentSources*パラメーター) ディスプレイ アダプターでサポートされているビデオの存在するソースの数を N。 これらのビデオの存在するソースは、その後数字 0、1、によって識別される.N は-1。
 
-2.  ポートのディスプレイ ドライバー呼び出しディスプレイ ミニポート ドライバーの[ **DxgkDdiQueryChildRelations** ](https://msdn.microsoft.com/library/windows/hardware/ff559750)関数で、子のデバイスのディスプレイ アダプターを列挙します。 *DxgkDdiQueryChildRelations*の配列に格納[ **DXGK\_子\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff561001)構造: 子デバイスごとに 1 つ。 ディスプレイ アダプターのすべての子デバイスがオンボードことに注意してください: モニター ディスプレイ アダプターに接続するその他の外部デバイスでは、子デバイスを考慮はされません。 詳細については、次を参照してください。[ディスプレイ アダプターの子デバイス](child-devices-of-the-display-adapter.md)します。 *DxgkDdiQueryChildRelations*潜在的な子デバイスだけではなく、初期化時に物理的に存在する子デバイスを列挙する必要があります。 たとえばをドッキングするラップトップ コンピューターを接続する場合ステーションが新しいのビデオ出力の外観の結果は*DxgkDdiQueryChildRelations*ビデオ出力かどうかに関係なく、コンピューターがドッキングされるを列挙する必要があります初期化時間です。 ドングルをビデオ出力コネクタに接続する場合は、コネクタを共有する複数のモニターを許可また、 *DxgkDdiQueryChildRelations*ドングルが表示されるかどうかに関係なく、ドングルの各分岐の子デバイスを列挙する必要があります初期化時に接続します。
+2.  ポートのディスプレイ ドライバー呼び出しディスプレイ ミニポート ドライバーの[ **DxgkDdiQueryChildRelations** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_query_child_relations)関数で、子のデバイスのディスプレイ アダプターを列挙します。 *DxgkDdiQueryChildRelations*の配列に格納[ **DXGK\_子\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/ns-dispmprt-_dxgk_child_descriptor)構造: 子デバイスごとに 1 つ。 ディスプレイ アダプターのすべての子デバイスがオンボードことに注意してください: モニター ディスプレイ アダプターに接続するその他の外部デバイスでは、子デバイスを考慮はされません。 詳細については、次を参照してください。[ディスプレイ アダプターの子デバイス](child-devices-of-the-display-adapter.md)します。 *DxgkDdiQueryChildRelations*潜在的な子デバイスだけではなく、初期化時に物理的に存在する子デバイスを列挙する必要があります。 たとえばをドッキングするラップトップ コンピューターを接続する場合ステーションが新しいのビデオ出力の外観の結果は*DxgkDdiQueryChildRelations*ビデオ出力かどうかに関係なく、コンピューターがドッキングされるを列挙する必要があります初期化時間です。 ドングルをビデオ出力コネクタに接続する場合は、コネクタを共有する複数のモニターを許可また、 *DxgkDdiQueryChildRelations*ドングルが表示されるかどうかに関係なく、ドングルの各分岐の子デバイスを列挙する必要があります初期化時に接続します。
 
-3.  デバイスごとに子 (手順 1. で説明したよう列挙型) の HPD 認識値を持つ**HpdAwarenessInterruptible**または**HpdAwarenessPolled**ポートのディスプレイ ドライバーが表示ミニポートを呼び出すドライバーの[ **DxgkDdiQueryChildStatus** ](https://msdn.microsoft.com/library/windows/hardware/ff559754)子デバイスに接続されている外部デバイスがあるかどうかを判断する関数。
+3.  デバイスごとに子 (手順 1. で説明したよう列挙型) の HPD 認識値を持つ**HpdAwarenessInterruptible**または**HpdAwarenessPolled**ポートのディスプレイ ドライバーが表示ミニポートを呼び出すドライバーの[ **DxgkDdiQueryChildStatus** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_query_child_status)子デバイスに接続されている外部デバイスがあるかどうかを判断する関数。
 
 4.  ポートのディスプレイ ドライバーを次の条件のいずれかを満たす子デバイスごとの PDO を作成します。
     -   子デバイス HPD 認識価値がある**HpdAwarenessAlwaysConnected**します。
     -   子デバイス HPD 認識価値がある**HpdAwarenessPolled**または**HpdAwarenessInterruptible**、前のクエリや子デバイスがあるという通知から、オペレーティング システムを知っていると、外部デバイスが接続されています。
 
-5.  ポートのディスプレイ ドライバー呼び出しディスプレイ ミニポート ドライバーの[ **DxgkDdiQueryDeviceDescriptor** ](https://msdn.microsoft.com/library/windows/hardware/ff559761)関数を次の条件のいずれかを満たす子デバイスごとに。
+5.  ポートのディスプレイ ドライバー呼び出しディスプレイ ミニポート ドライバーの[ **DxgkDdiQueryDeviceDescriptor** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_query_device_descriptor)関数を次の条件のいずれかを満たす子デバイスごとに。
 
     -   子デバイスは、外部デバイスが接続されているが知られています。
     -   子デバイスは、外部デバイスが接続されていると見なされます。
@@ -47,11 +47,11 @@ ms.locfileid: "63377658"
 7.  VidPN マネージャーは、初期の VidPN を構築するのに、次の手順を使用します。
     -   最後の既知の適切な VidPN はレジストリに記録されて、いる場合は、初期 VidPN として使用します。
 
-    -   それ以外の場合、ディスプレイのミニポート ドライバーを呼び出す[ **DxgkDdiRecommendFunctionalVidPn** ](https://msdn.microsoft.com/library/windows/hardware/ff559775)初期の VidPN を取得します。
+    -   それ以外の場合、ディスプレイのミニポート ドライバーを呼び出す[ **DxgkDdiRecommendFunctionalVidPn** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_recommendfunctionalvidpn)初期の VidPN を取得します。
 
-    -   場合*DxgkDdiRecommendFunctionalVidPn*失敗を許容できますが、ある機能 VidPN を返す単純な VidPN 1 つのビデオの表示パスを格納している。 つまり、(ソース、ターゲット) のいずれかのペアを作成します。 呼び出すディスプレイ ミニポート ドライバーの[ **DxgkDdiIsSupportedVidPn** ](https://msdn.microsoft.com/library/windows/hardware/ff559684)提案 VidPN が動作することを確認する関数。 場合*DxgkDdiIsSupportedVidPn*に適した VidPN が見つかるまで、提案された VidPN が動作しないレポートを続けます。
+    -   場合*DxgkDdiRecommendFunctionalVidPn*失敗を許容できますが、ある機能 VidPN を返す単純な VidPN 1 つのビデオの表示パスを格納している。 つまり、(ソース、ターゲット) のいずれかのペアを作成します。 呼び出すディスプレイ ミニポート ドライバーの[ **DxgkDdiIsSupportedVidPn** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_issupportedvidpn)提案 VidPN が動作することを確認する関数。 場合*DxgkDdiIsSupportedVidPn*に適した VidPN が見つかるまで、提案された VidPN が動作しないレポートを続けます。
 
-    -   呼び出すディスプレイ ミニポート ドライバーの[ **DxgkDdiEnumVidPnCofuncModality** ](https://msdn.microsoft.com/library/windows/hardware/ff559649) VidPN で利用可能なソースとターゲットのモードを決定する関数。
+    -   呼び出すディスプレイ ミニポート ドライバーの[ **DxgkDdiEnumVidPnCofuncModality** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_enumvidpncofuncmodality) VidPN で利用可能なソースとターゲットのモードを決定する関数。
 
  
 

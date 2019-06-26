@@ -6,12 +6,12 @@ keywords:
 - デバイス メタデータ、WDK をパッケージ化について
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 28f3e9eb2dcf56fbb8bbce45941c82674e8b6b15
-ms.sourcegitcommit: 3a51ae8db61be0e25549a5527ea3143e3025e82f
+ms.openlocfilehash: c257eb5f37e7a73fa5c12fe7db5099f61801e9b0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65456419"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379442"
 ---
 # <a name="overview-of-device-metadata-packages"></a>デバイス メタデータ パッケージの概要
 
@@ -34,12 +34,12 @@ Windows 7 以降のデバイス メタデータ パッケージには、デバ�
 <a href="" id="packageinfo-xml-document"></a>[PackageInfo の XML ドキュメント](packageinfo-xml-document.md)  
 このドキュメントには、デバイス メタデータ パッケージの内容を指定するデータが含まれています。 オペレーティング システムでは、このデータを使用するパッケージをインストールし、その内容を参照します。
 
-このデータはに基づいて書式設定、 [PackageInfo XML スキーマ](https://msdn.microsoft.com/library/windows/hardware/ff549614)します。
+このデータはに基づいて書式設定、 [PackageInfo XML スキーマ](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff549614(v=vs.85))します。
 
 <a href="" id="deviceinfo-xml-document"></a>[DeviceInfo XML ドキュメント](deviceinfo-xml-document.md)  
 このドキュメントには、デバイスのカテゴリおよびモデルの名前などのデバイスのプロパティを指定するデータが含まれています。 デバイスとプリンターのユーザー インターフェイスでは、このデータを使用して、デバイスに関する詳細情報を示します。
 
-このデータはに基づいて書式設定、 [DeviceInfo XML スキーマ](https://msdn.microsoft.com/library/windows/hardware/ff541135)します。
+このデータはに基づいて書式設定、 [DeviceInfo XML スキーマ](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff541135(v=vs.85))します。
 
 <a href="" id="device-icon-file"></a>[デバイス アイコン ファイル](device-icon-file.md)  
 このファイルには、デバイスとプリンターのユーザー インターフェイスでデバイスを表す写真のようなイメージが含まれます。
@@ -47,7 +47,7 @@ Windows 7 以降のデバイス メタデータ パッケージには、デバ�
 <a href="" id="windowsinfo-xml-document"></a>[WindowsInfo XML ドキュメント](windowsinfo-xml-document.md)  
 このドキュメントには、デバイス メタデータ パッケージの指定したデバイスのデバイスとプリンターのユーザー インターフェイスを実行するアクションを表示を指定するデータが含まれています。
 
-このデータはに基づいて書式設定、 [WindowsInfo XML スキーマ](https://msdn.microsoft.com/library/windows/hardware/ff553992)します。
+このデータはに基づいて書式設定、 [WindowsInfo XML スキーマ](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff553992(v=vs.85))します。
 
 各デバイス メタデータ パッケージは、Cabarc を使用して 1 つのファイルに圧縮のコンポーネント (*Cabarc.exe*) ツール。 このツールの詳細についてを参照してください、 [Cabarc 概要](https://go.microsoft.com/fwlink/p/?linkid=145395)web サイト。
 

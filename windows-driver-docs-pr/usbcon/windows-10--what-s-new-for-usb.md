@@ -3,12 +3,12 @@ Description: 新機能と機能強化のユニバーサル シリアル バス (
 title: Windows 10 - 新機能については、usb
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f319c777e662059ee146d02321d15b73e11b2fa
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 06c240bfc6217ddb96a343375e4645e283904d16
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389190"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356543"
 ---
 # <a name="windows-10-whats-new-for-usb"></a>Windows 10:USB の新機能
 
@@ -22,7 +22,7 @@ ms.locfileid: "63389190"
     Windows 10 バージョン 1703 では、クラスの拡張 (UcmTcpciCx.sys) 仕様をサポートするユニバーサル シリアル バスの種類 C ポート コント ローラー インターフェイスを提供します。 USB Type-C コネクタ ドライバーで内部の PD/Type-C 状態を保持しておく必要はありません。 
     USB Type-C コネクタと USB 電源供給 (PD) ステート マシンの複雑な管理はシステムによって処理されます。 必要なのは、クラス拡張機能を介してハードウェアのイベントをシステムに通信するクライアント ドライバーを作成することだけです。 
 
-    [USB タイプ C ポート コント ローラー インターフェイス ドライバー クラスの拡張機能のリファレンス](https://msdn.microsoft.com/library/windows/hardware/mt805826)
+    [USB タイプ C ポート コント ローラー インターフェイス ドライバー クラスの拡張機能のリファレンス](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt805826(v=vs.85))
 
 -   **USB デュアル ロールのサポート。**
 
@@ -32,7 +32,7 @@ ms.locfileid: "63389190"
 
     [USB デュアル ロール ドライバー スタック アーキテクチャ](usb-dual-role-driver-stack-architecture.md)
 
-    [USB デュアルロール コントローラー ドライバーのプログラミング参照](https://msdn.microsoft.com/library/windows/hardware/mt628026)
+    [USB デュアルロール コントローラー ドライバーのプログラミング参照](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt628026(v=vs.85))
 
 -   **USB タイプ-c コネクタのドライバーを開発するためのプログラミング インターフェイスの新しいセットします。**
 
@@ -40,7 +40,7 @@ ms.locfileid: "63389190"
 
     [USB Type-C コネクタ用 Windows ドライバーの開発](developing-windows-drivers-for-usb-type-c-connectors.md)
 
-    [USB コネクタ マネージャー クラス拡張 (UcmCx)](https://msdn.microsoft.com/library/windows/hardware/mt188011)
+    [USB コネクタ マネージャー クラス拡張 (UcmCx)](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt188011(v=vs.85))
 
 -   **プログラミング インターフェイス、エミュレートされたホストのコント ローラーと接続されている仮想デバイスを開発するための新しいセットします。**
 
@@ -48,15 +48,15 @@ ms.locfileid: "63389190"
 
     [列挙された USB デバイス (UDE) 用 Windows ドライバーの開発](developing-windows-drivers-for-emulated-usb-host-controllers-and-devices.md)
 
-    [エミュレートされた USB ホスト コントローラー ドライバーのプログラミング参照](https://msdn.microsoft.com/library/windows/hardware/mt628025)
+    [エミュレートされた USB ホスト コントローラー ドライバーのプログラミング参照](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt628025(v=vs.85))
 
 -   **新しい USB ホスト コント ローラー ドライバーを開発するためのプログラミング インターフェイスのセットします。**
 
-    ホスト コント ローラーを開発するには、xHCI の仕様に準拠していませんか中である、ハードウェアがない場合、デバイスに接続されている周辺機器への TCP 接続経由で USB のトラフィックをルーティングするコント ローラーなどの仮想ホスト コント ローラーを作成します。 ホスト コント ローラーのドライバーは、framework クラスの拡張機能モデルを次のシステム提供のドライバーである USB ホスト コント ローラー拡張にクライアントです。 内で、 [Microsoft USB 3.0 ドライバー スタック](https://msdn.microsoft.com/library/windows/hardware/hh406256.aspx#usb-3-0-driver-stack)UCX は USB ホスト コント ローラー デバイスの管理コント ローラー用ドライバーのホストを支援する機能を提供します。
+    ホスト コント ローラーを開発するには、xHCI の仕様に準拠していませんか中である、ハードウェアがない場合、デバイスに接続されている周辺機器への TCP 接続経由で USB のトラフィックをルーティングするコント ローラーなどの仮想ホスト コント ローラーを作成します。 ホスト コント ローラーのドライバーは、framework クラスの拡張機能モデルを次のシステム提供のドライバーである USB ホスト コント ローラー拡張にクライアントです。 内で、 [Microsoft USB 3.0 ドライバー スタック](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index#usb-3-0-driver-stack)UCX は USB ホスト コント ローラー デバイスの管理コント ローラー用ドライバーのホストを支援する機能を提供します。
 
     [USB ホスト コントローラー用 Windows ドライバーの開発](developing-windows-drivers-for-usb-host-controllers.md)
 
-    [USB ホスト コントローラー拡張 (UCX) 参照](https://msdn.microsoft.com/library/windows/hardware/mt188009)
+    [USB ホスト コントローラー拡張 (UCX) 参照](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt188009(v=vs.85))
 
 -   **新しい USB 関数のコント ローラーのドライバーを開発するためのプログラミング インターフェイスのセットします。**
 
@@ -68,13 +68,13 @@ ms.locfileid: "63389190"
 
     [関数のコント ローラーのクライアント ドライバーのタスク](function-client-driver.md)
 
-    [ユーザー モード サービス UFX プログラミング リファレンス](https://msdn.microsoft.com/library/windows/hardware/mt188014)
+    [ユーザー モード サービス UFX プログラミング リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
 
-    [USB クラス ドライバーを関数 UFX プログラミング リファレンスを](https://msdn.microsoft.com/library/windows/hardware/mt188008)
+    [USB クラス ドライバーを関数 UFX プログラミング リファレンスを](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt188008(v=vs.85))
 
-    [USB 関数コント ローラー クライアント ドライバーのプログラミング リファレンス](https://msdn.microsoft.com/library/windows/hardware/mt188010)
+    [USB 関数コント ローラー クライアント ドライバーのプログラミング リファレンス](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt188010(v=vs.85))
 
-    [独自の充電器をサポートするための USB フィルター ドライバー](https://msdn.microsoft.com/library/windows/hardware/mt188012)
+    [独自の充電器をサポートするための USB フィルター ドライバー](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt188012(v=vs.85))
 
 -   **USB の CDC (シリアル) デバイスのエクスペリエンスも向上します。**
 

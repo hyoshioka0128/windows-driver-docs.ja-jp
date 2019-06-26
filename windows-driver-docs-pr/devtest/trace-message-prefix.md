@@ -8,12 +8,12 @@ keywords:
 - トレース メッセージのプレフィックス WDK Tracefmt
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 95228298ec048e0753e108691eed2546cdfadc52
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6c60359392686143c65ded544b7fa32c96e602f0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354640"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379590"
 ---
 # <a name="trace-message-prefix"></a>トレース メッセージ プレフィックス
 
@@ -107,13 +107,13 @@ Tracefmt には、既定では、特定のデータ要素が含まれていま�
 <td><p>%!フラグ。</p></td>
 <td><p>string</p></td>
 <td><p>名前を表示、<a href="trace-flags.md" data-raw-source="[trace flags](trace-flags.md)">トレース フラグ</a>トレース メッセージを有効にします。</p>
-<p>(ため、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff544918" data-raw-source="[&lt;strong&gt;DoTraceMessage&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff544918)"> <strong>DoTraceMessage</strong> </a>マクロ フラグとレベルの引数を逆に、DoTraceMessage によって生成されたメッセージの値を表示する、<a href="trace-level.md" data-raw-source="[trace level](trace-level.md)">トレース レベル</a>このフィールドに.)</p></td>
+<p>(ため、 <a href="https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85)" data-raw-source="[&lt;strong&gt;DoTraceMessage&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))"> <strong>DoTraceMessage</strong> </a>マクロ フラグとレベルの引数を逆に、DoTraceMessage によって生成されたメッセージの値を表示する、<a href="trace-level.md" data-raw-source="[trace level](trace-level.md)">トレース レベル</a>このフィールドに.)</p></td>
 </tr>
 <tr class="even">
 <td><p>%!レベル。</p></td>
 <td><p>string</p></td>
 <td><p>値を表示、<a href="trace-level.md" data-raw-source="[trace level](trace-level.md)">トレース レベル</a>トレース メッセージをできるようにします。</p>
-<p>(ため、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff544918" data-raw-source="[&lt;strong&gt;DoTraceMessage&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff544918)"> <strong>DoTraceMessage</strong> </a>マクロ フラグとレベルの引数を逆に、DoTraceMessage によって生成されたメッセージの名前を表示する、<a href="trace-flags.md" data-raw-source="[trace flags](trace-flags.md)">トレース フラグ</a>このフィールドにします)。</p></td>
+<p>(ため、 <a href="https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85)" data-raw-source="[&lt;strong&gt;DoTraceMessage&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))"> <strong>DoTraceMessage</strong> </a>マクロ フラグとレベルの引数を逆に、DoTraceMessage によって生成されたメッセージの名前を表示する、<a href="trace-flags.md" data-raw-source="[trace flags](trace-flags.md)">トレース フラグ</a>このフィールドにします)。</p></td>
 </tr>
 <tr>
 <td><p>%!COMPNAME!</p></td>

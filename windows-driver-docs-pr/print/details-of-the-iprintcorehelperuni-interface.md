@@ -6,21 +6,21 @@ keywords:
 - IPrintCoreHelperUni
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6319dec0fd5512b8c3bd51b1e7838ef669318711
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 85026f5c3f7e43844be24a8598121d32a5542462
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558355"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382037"
 ---
 # <a name="details-of-the-iprintcorehelperuni-interface"></a>IPrintCoreHelperUni インターフェイスの詳細
 
 
 **IPrintCoreHelperUni**インターフェイスによって提供される、Unidrv UI およびレンダリングのモジュールを実装するヘルパー インターフェイスのバージョンであります。 すべてのベースのメソッドだけでなく**IPrintCoreHelper** 、インターフェイス、 **IPrintCoreHelperUni**インターフェイスには GDL スナップショットへのアクセスを提供する次のメソッドが含まれています。
 
--   [**IPrintCoreHelperUni::CreateDefaultGDLSnapshot**](https://msdn.microsoft.com/library/windows/hardware/ff552917)
+-   [**IPrintCoreHelperUni::CreateDefaultGDLSnapshot**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintcorehelperuni-createdefaultgdlsnapshot)
 
--   [**IPrintCoreHelperUni::CreateGDLSnapshot**](https://msdn.microsoft.com/library/windows/hardware/ff552923)
+-   [**IPrintCoreHelperUni::CreateGDLSnapshot**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintcorehelperuni-creategdlsnapshot)
 
  
 

@@ -6,12 +6,12 @@ keywords:
 - preoperation コールバック ルーチン WDK ファイル システム ミニフィルター、バッファー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e7c35fcc95ff83f74a42d07ff95c6b8860d57d8f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 93d218215473c637d5780a89e6a6b81ff6628c76
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323145"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380373"
 ---
 # <a name="accessing-user-buffers-in-a-preoperation-callback-routine"></a>操作前コールバック ルーチン内でユーザー バッファーへアクセスする
 
@@ -19,11 +19,11 @@ ms.locfileid: "63323145"
 ## <span id="ddk_accessing_user_buffers_in_a_preoperation_callback_routine_if"></span><span id="DDK_ACCESSING_USER_BUFFERS_IN_A_PREOPERATION_CALLBACK_ROUTINE_IF"></span>
 
 
-ミニフィルター ドライバーの[ **preoperation コールバック ルーチン**](https://msdn.microsoft.com/library/windows/hardware/ff551109)扱う必要があります、バッファー、IRP ベースの I/O 操作で次のようにします。
+ミニフィルター ドライバーの[ **preoperation コールバック ルーチン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nc-fltkernel-pflt_pre_operation_callback)扱う必要があります、バッファー、IRP ベースの I/O 操作で次のようにします。
 
--   バッファーの MDL が存在するかどうかを確認します。 見つかる MDL ポインター、 *MdlAddress*または*OutputMdlAddress*パラメーター、 [ **FLT\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff544673)の操作。 ミニフィルター ドライバーが呼び出せる[ **FltDecodeParameters** ](https://msdn.microsoft.com/library/windows/hardware/ff541956) MDL ポインターを照会します。
+-   バッファーの MDL が存在するかどうかを確認します。 見つかる MDL ポインター、 *MdlAddress*または*OutputMdlAddress*パラメーター、 [ **FLT\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_parameters)の操作。 ミニフィルター ドライバーが呼び出せる[ **FltDecodeParameters** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltdecodeparameters) MDL ポインターを照会します。
 
-    有効な MDL を取得するための 1 つのメソッドが IRP 検索\_MN\_MDL フラグ、 **MinorFunction** I/O パラメーター ブロックのメンバー [ **FLT\_IO\_パラメーター\_ブロック**](https://msdn.microsoft.com/library/windows/hardware/ff544638)コールバックのデータ。 次の例は、IRP をチェックする方法を示しています。\_MN\_MDL フラグ。
+    有効な MDL を取得するための 1 つのメソッドが IRP 検索\_MN\_MDL フラグ、 **MinorFunction** I/O パラメーター ブロックのメンバー [ **FLT\_IO\_パラメーター\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_io_parameter_block)コールバックのデータ。 次の例は、IRP をチェックする方法を示しています。\_MN\_MDL フラグ。
 
     ```ManagedCPlusPlus
     NTSTATUS status;
@@ -36,7 +36,7 @@ ms.locfileid: "63323145"
     }
     ```
 
-    ただし、IRP\_MN\_MDL フラグ操作と書き込み操作の読み取りのみ設定できます。 使用することをお勧め[ **FltDecodeParameters** ](https://msdn.microsoft.com/library/windows/hardware/ff541956)ルーチンは、すべての操作に対して有効な MDL のチェックがあるため、MDL を取得します。 次の例では、有効な場合、MDL パラメーターのみが返されます。
+    ただし、IRP\_MN\_MDL フラグ操作と書き込み操作の読み取りのみ設定できます。 使用することをお勧め[ **FltDecodeParameters** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltdecodeparameters)ルーチンは、すべての操作に対して有効な MDL のチェックがあるため、MDL を取得します。 次の例では、有効な場合、MDL パラメーターのみが返されます。
 
     ```ManagedCPlusPlus
     NTSTATUS status;
@@ -46,7 +46,7 @@ ms.locfileid: "63323145"
     status = FltDecodeParameters(CallbackData, &ReadMdl, NULL, NULL, NULL);
     ```
 
--   バッファーの MDL が存在する場合に呼び出す[ **MmGetSystemAddressForMdlSafe** ](https://msdn.microsoft.com/library/windows/hardware/ff554559)バッファーのシステム アドレスを取得し、このアドレスを使用して、バッファーへのアクセスにします。
+-   バッファーの MDL が存在する場合に呼び出す[ **MmGetSystemAddressForMdlSafe** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)バッファーのシステム アドレスを取得し、このアドレスを使用して、バッファーへのアクセスにします。
 
     前の例から続行すると、次のコードは、システムのアドレスを取得します。
 
@@ -62,7 +62,7 @@ ms.locfileid: "63323145"
     }
     ```
 
--   バッファーの MDL がない場合は、バッファーのアドレスを使用して、バッファーへのアクセスします。 ユーザー領域バッファーのアドレスが有効では、ミニフィルター ドライバーなどでルーチンを使用する必要があります[ **ProbeForRead** ](https://msdn.microsoft.com/library/windows/hardware/ff559876)または[ **ProbeForWrite** ](https://msdn.microsoft.com/library/windows/hardware/ff559879)、内のすべてのバッファー参照を囲む**お試しください**/**を除く**ブロックします。
+-   バッファーの MDL がない場合は、バッファーのアドレスを使用して、バッファーへのアクセスします。 ユーザー領域バッファーのアドレスが有効では、ミニフィルター ドライバーなどでルーチンを使用する必要があります[ **ProbeForRead** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-probeforread)または[ **ProbeForWrite** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-probeforwrite)、内のすべてのバッファー参照を囲む**お試しください**/**を除く**ブロックします。
 
 Preoperation コールバック ルーチンを高速な I/O 操作では、バッファーを次のように扱う必要があります。
 

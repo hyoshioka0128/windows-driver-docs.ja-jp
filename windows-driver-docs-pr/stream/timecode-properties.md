@@ -8,17 +8,17 @@ keywords:
 - テープのタイムコード プロパティ WDK ビデオのキャプチャします。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6cde1938d4caff25152b7fe29811e504ef7c0ddc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f8c5420e648bfd3217caecdfee07e5d877341cd7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365217"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377736"
 ---
 # <a name="timecode-properties"></a>タイムコードのプロパティ
 
 
-[PROPSETID\_タイムコード\_リーダー](https://msdn.microsoft.com/library/windows/hardware/ff567798)タイムコード DVHS のテープ デッキや MiniDV ビデオ_カメラなどのテープ上に関連するプロパティがプロパティ セットに含まれています。 次の表に、プロパティ、PROPSETID の一部である\_タイムコード\_リーダー プロパティのセット。
+[PROPSETID\_タイムコード\_リーダー](https://docs.microsoft.com/windows-hardware/drivers/stream/propsetid-timecode-reader)タイムコード DVHS のテープ デッキや MiniDV ビデオ_カメラなどのテープ上に関連するプロパティがプロパティ セットに含まれています。 次の表に、プロパティ、PROPSETID の一部である\_タイムコード\_リーダー プロパティのセット。
 
 <table>
 <colgroup>
@@ -33,15 +33,15 @@ ms.locfileid: "63365217"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff565776" data-raw-source="[&lt;strong&gt;KSPROPERTY_TIMECODE_READER&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff565776)"><strong>KSPROPERTY_TIMECODE_READER</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-timecode-reader" data-raw-source="[&lt;strong&gt;KSPROPERTY_TIMECODE_READER&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-timecode-reader)"><strong>KSPROPERTY_TIMECODE_READER</strong></a></p></td>
 <td><p>現在のテープの位置のタイムコードを返します。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564282" data-raw-source="[&lt;strong&gt;KSPROPERTY_ATN_READER&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564282)"><strong>KSPROPERTY_ATN_READER</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-atn-reader" data-raw-source="[&lt;strong&gt;KSPROPERTY_ATN_READER&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-atn-reader)"><strong>KSPROPERTY_ATN_READER</strong></a></p></td>
 <td><p>現在のテープの位置の絶対トラック数を返します。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff565215" data-raw-source="[&lt;strong&gt;KSPROPERTY_RTC_READER&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff565215)"><strong>KSPROPERTY_RTC_READER</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-rtc-reader" data-raw-source="[&lt;strong&gt;KSPROPERTY_RTC_READER&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-rtc-reader)"><strong>KSPROPERTY_RTC_READER</strong></a></p></td>
 <td><p>現在のテープの位置の相対時間カウンターを返します。</p></td>
 </tr>
 </tbody>

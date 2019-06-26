@@ -4,12 +4,12 @@ description: カードの要件
 ms.assetid: 3BE887F9-4B35-4A83-9E98-DD7555DF2953
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c46911e0aa0fe77815b353f52e3e44ec665d00f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 63a4f24f302e6476386f1beed02c18556908d8ea
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373541"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356733"
 ---
 # <a name="card-requirements"></a>カードの要件
 
@@ -36,7 +36,7 @@ ms.locfileid: "63373541"
 1.  読のすべてのユーザーと、管理者書き込みアクセス許可が、カードのルート ディレクトリに"cardid"、カード ID ファイルを作成します。 このファイルには、カードの一意の 16 バイト バイナリ識別子が含まれています。 更新またはカードがまったくリサイクルされない限り、上書きされません。
 2.  読み取り/書き込みアクセス許可を持つすべてのユーザーと、ルート ディレクトリで"cardcf"、キャッシュ ファイルを作成します。 最初の内容は、0 の値を持つ 6 バイトです。
 3.  読のすべてのユーザーと書き込みのアクセス許可を持つユーザー、ルート ディレクトリで"cardapps"のアプリケーション マップを作成します。 最初の内容は、4 で 0 バイトの後に文字列"mscp"で構成される 8 バイト レコードです。
-4.  呼び出して、Base CSP または CNG KSP アプリケーションを作成[ **CardCreateDirectory**](https://msdn.microsoft.com/library/windows/hardware/dn468710)読のすべてのユーザーと、ユーザーには、書き込み権限を持つ、"mscp"アプリケーションを参照します。
+4.  呼び出して、Base CSP または CNG KSP アプリケーションを作成[ **CardCreateDirectory**](https://docs.microsoft.com/previous-versions/dn468710(v=vs.85))読のすべてのユーザーと、ユーザーには、書き込み権限を持つ、"mscp"アプリケーションを参照します。
 5.  読のすべてのユーザーと書き込みのアクセス許可を持つユーザーと同じディレクトリに"mscp"で、証明書のマップ ファイル"cmapfile"を作成します。 最初は空です。
 
 技術的には、カードが「作成」手順 2 の後に、定義のすべてのカードが、mscp"Microsoft"アプリケーションが予約されますが、実際に使用するかどうか。 これには、通常とは異なるファクト"mscp"アプリケーションが常に作成されると、ファイルが"mscp"アプリケーション内で作成されたことについて説明します。 カード管理 Microsoft が提供する DLL 内の関数によって実装される、カードの作成を想定どおり、この情報は、そのコンテキストでこれらの操作を正しくサポートできるカード ミニドライバーの作成者向け参照情報として提供されます。

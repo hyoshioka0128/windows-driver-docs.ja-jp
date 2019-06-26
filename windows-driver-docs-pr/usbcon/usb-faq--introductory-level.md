@@ -3,12 +3,12 @@ Description: このトピックでは、初心者の開発と Windows オペレ�
 title: Windows における USB- よくあるご質問
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f6f4fcba721a94c7ba0911a74546572b728a4326
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 75e2367af2ee80170b468c61cfe1e14170063fda
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379521"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356645"
 ---
 # <a name="usb-in-windows---faq"></a>Windows における USB- よくあるご質問
 
@@ -52,7 +52,7 @@ ms.locfileid: "63379521"
 
 たとえばなどのテキストを表示します *"USB 3.0、に協力してくれた SuperSpeed USB を接続できるサム ドライブを PC の xHCI ホスト コント ローラーにすると、ファイルのコピーを高速化します。"。*
 
-その文の USB 用語を理解しましょう。 USB 3.0、USB 2.0、および USB 1.0 は、USB 仕様のリビジョン番号を参照してください、 [USB Implementers Forum](http://www.usb.org/home)します。 USB 仕様では、どのホスト PC と USB デバイス相互に通信を定義します。
+その文の USB 用語を理解しましょう。 USB 3.0、USB 2.0、および USB 1.0 は、USB 仕様のリビジョン番号を参照してください、 [USB Implementers Forum](https://www.usb.org/)します。 USB 仕様では、どのホスト PC と USB デバイス相互に通信を定義します。
 
 バージョン番号は、最大転送速度も示します。 仕様の最新リビジョンは、USB 3.0 では、最大転送速度は 5 Gbps を指定します。 USB 1.0 は、2 つの異なるデータ レート、低速 USB (最大 1.5 Mbps) とフル_スピード USB (最大 12 Mbps) を定義します。 USB 2.0 定義の新しいデータ速度として高速 USB (480 Mbps) 低とフル スピード デバイスのサポートを維持しながらします。 USB 3.0 は、すべての定義済みのデータ レートを使用するが続行されます。 製品のパッケージを見ると、SuperSpeed USB は最新の USB 3.0 デバイスを参照します。 高速 USB は高速 USB 2.0 デバイスを記述するために使用します。 USB、記述のないは、低速とフル_スピードのデバイスを指します。
 
@@ -106,7 +106,7 @@ XHCI ホスト コント ローラーはどの速度のデバイスを操作す�
 
 ![デバイス マネージャーに接続されたデバイスの usb 3.0 ハブ](images/usb-3-hub-connected-devices-dm.png)
 
-## <a name="which-set-of-drivers-is-loaded-for-the-devices-that-are-connected-to-20-ports"></a>2.0 ポートに接続されているデバイスにどのドライバー セットが読み込まれますか。
+## <a name="which-set-of-drivers-is-loaded-for-the-devices-that-are-connected-to-20-ports"></a>2\.0 ポートに接続されているデバイスにどのドライバー セットが読み込まれますか。
 
 ホスト コント ローラーの種類ごとに異なるバイナリのセットが読み込まれます。 Windows が読み込む USB ドライバー スタックが接続されているデバイスの速度が、ホスト コント ローラーの種類に関連していることを理解しておく必要があります。
 
@@ -210,7 +210,7 @@ USB の場合は、Microsoft およびその他の USB と協力して-独立系
 
 詳細については、USB Web サイトで使用できます。
 
-USB および高速 USB を参照してください: [ http://www.usb.org/developers/packaging ](http://www.usb.org/developers/packaging/)/。
+USB および高速 USB を参照してください: [ http://www.usb.org/developers/packaging ](https://www.usb.org/developers/packaging/)/。
 
 SuperSpeed USB を参照してください:<http://www.usb.org/channel/>します。
 
@@ -484,9 +484,9 @@ USB デバイスは、いくつかの理由から、次のように、S3 から 
 
     ![ドライバを再インストールします。](images/usb-reinstall-driver.jpg)
 
-4. 新しいハードウェアの追加ウィザードで選択**ソフトウェアを自動的にインストール (推奨)**、順にクリックします**次**します。 ウィザードの最後のページをクリックするまで、すべての既定のオプションを使用して、ウィザードを続行**完了**します。 インストールを完了する、コンピューターを再起動する必要があります。
+4. 新しいハードウェアの追加ウィザードで選択**ソフトウェアを自動的にインストール (推奨)** 、順にクリックします**次**します。 ウィザードの最後のページをクリックするまで、すべての既定のオプションを使用して、ウィザードを続行**完了**します。 インストールを完了する、コンピューターを再起動する必要があります。
 
-Windows XP Service Pack 1 での USB 2.0 の可用性に関する詳細については、マイクロソフト サポート技術情報の記事 329632 を参照してください"方法を取得し、USB 2.0 をインストールするドライバーを Windows XP Service pack 1"で[ http://support.microsoft.com/default.aspx?scid=KB;。EN-US;Q329632 &](https://support.microsoft.com/kb/329632)します。
+Windows XP Service Pack 1 での USB 2.0 の可用性に関する詳細については、マイクロソフト サポート技術情報の記事 329632 を参照してください"方法を取得し、USB 2.0 をインストールするドライバーを Windows XP Service pack 1"で[ http://support.microsoft.com/default.aspx?scid=KB;。EN-US;Q329632 &](https://support.microsoft.com/help/329632)します。
 
 **注**  コンピューターにインストールされている最新の更新プログラムがあることを確認するには、Windows 更新プログラムを定期的にアクセスします。
 
@@ -502,7 +502,7 @@ Windows XP および Windows の以降のバージョンは、高速をサポー
 
 **注**  前の手順は、すべての USB 通知を無効にします、「高速 USB デバイスは高速ではないポートに接続されている」だけでなく。
 
-Windows XP Service Pack 1 での USB 2.0 のサポートについては、マイクロソフト サポート技術情報の記事 329632 を参照してください"方法を取得し、USB 2.0 をインストールする Windows XP Service pack 1、ドライバーで[ http://support.microsoft.com/default.aspx?scid=KB;。EN-US;Q329632](https://support.microsoft.com/kb/329632)します。
+Windows XP Service Pack 1 での USB 2.0 のサポートについては、マイクロソフト サポート技術情報の記事 329632 を参照してください"方法を取得し、USB 2.0 をインストールする Windows XP Service pack 1、ドライバーで[ http://support.microsoft.com/default.aspx?scid=KB;。EN-US;Q329632](https://support.microsoft.com/help/329632)します。
 
 ## <a name="is-my-usb-20-hub-single-tt-or-multi-tt"></a>自分の USB 2.0 ハブ シングル TT またはマルチ TT ですか。
 
@@ -513,7 +513,7 @@ USB 2.0 ハブには、ハブ (単一 TT) 上のすべてのダウン ストリ�
 - シングル TT します。 **bDeviceProtocol** == 0x01
 - マルチ TT します。 **bDeviceProtocol** == 0x02
 
-**Usbhub.sys**マルチ TT モードまたはシングル TT モードを有効にするこの設定を使用します。 Windows xp 以降、Usbhub.sys 常にモードを有効にマルチ TT マルチ TT ハブ。 TT レイアウトの詳細については、11.14.1.3 と 11.23.1 のセクションを参照してください、 [USB 2.0 仕様](http://www.usb.org/developers/docs)します。
+**Usbhub.sys**マルチ TT モードまたはシングル TT モードを有効にするこの設定を使用します。 Windows xp 以降、Usbhub.sys 常にモードを有効にマルチ TT マルチ TT ハブ。 TT レイアウトの詳細については、11.14.1.3 と 11.23.1 のセクションを参照してください、 [USB 2.0 仕様](https://www.usb.org/documents)します。
 
 ## <a name="what-characters-or-bytes-are-valid-in-a-usb-serial-number"></a>どのような文字またはバイトは、USB シリアル番号で有効ですか。
 
@@ -532,7 +532,7 @@ USB デバイス記述子の**iSerialNumber**フィールド、デバイスの�
 - 0x20 より小さい値です。
 - 0x7F よりも大きい値です。
 
-詳細については、 **iSerialNumber**値の 9.6.1」セクションを参照してください、 [USB 2.0 仕様](http://www.usb.org/developers/docs)します。
+詳細については、 **iSerialNumber**値の 9.6.1」セクションを参照してください、 [USB 2.0 仕様](https://www.usb.org/documents)します。
 
 ## <a name="what-langid-is-used-in-a-string-request-on-localized-builds-of-windows"></a>どのような LANGID が Windows のローカライズされたビルド文字列の要求で使用されるでしょうか。
 
@@ -544,7 +544,7 @@ USB デバイスでは、シリアル番号の文字列のインデックスに 
 
 ## <a name="what-is-the-maximum-usb-transfer-size-for-different-windows-versions"></a>さまざまな Windows バージョンの最大の USB 転送サイズとは何ですか。
 
-参照してください[さまざまなオペレーティング システム上の USB の最大サイズの転送](https://support.microsoft.com/kb/832430)します。
+参照してください[さまざまなオペレーティング システム上の USB の最大サイズの転送](https://support.microsoft.com/help/832430/maximum-size-of-usb-transfers-on-various-operating-systems)します。
 
 ## <a name="how-should-numbers-be-assigned-to-multiple-interfaces-on-a-composite-device"></a>番号は、複合デバイスに複数のインターフェイスにどのように割り当てする必要がありますか。
 
@@ -557,14 +557,14 @@ Windows XP Service Pack 1 および Windows の以前のバージョン。
 
 Windows XP Service Pack 2 および以降のバージョンの Windows では、インターフェイスの番号は増加、連続しないにのみ必要です。
 
-インターフェイス番号の詳細については、次を参照してください。[インタ フェースが順番に番号付けされていない複合 USB デバイスが Windows XP では動作しない](https://support.microsoft.com/kb/814560)します。
+インターフェイス番号の詳細については、次を参照してください。[インタ フェースが順番に番号付けされていない複合 USB デバイスが Windows XP では動作しない](https://support.microsoft.com/help/814560)します。
 
 インターフェイスの代替設定は、すべてのバージョンの Windows には、次のように割り当てる必要があります。
 
 - インターフェイスの既定値は 0 を設定する代替では常にします。
 - その他の代替設定の数値は、連続して増加である必要があります。
 
-代替の設定の詳細については、の 9.6.5」セクションを参照してください。、 [USB 2.0 仕様](http://www.usb.org/developers/docs)します。
+代替の設定の詳細については、の 9.6.5」セクションを参照してください。、 [USB 2.0 仕様](https://www.usb.org/documents)します。
 
 ## <a name="what-are-the-major-restrictions-imposed-by-usbccgpsys"></a>Usbccgp.sys によって課される主要な制約とは
 
@@ -598,7 +598,7 @@ Needs = Composite.Dev
 
 に関するブログの投稿を参照してください。[を含めると、ドライバーのパブリックの PDB ファイルに WPP トレース メッセージを表示する方法](https://techcommunity.microsoft.com/t5/Microsoft-USB-Blog/bg-p/MicrosoftUSBBlog/archive/2013/06/29/wpp-blog-post.aspx)します。
 
-USB core スタックのデバッグに関する詳細については、次を参照してください。[ドライバーとサブシステムのさまざまな詳細なデバッグ トレースを有効にする方法](https://support.microsoft.com/kb/314743)します。
+USB core スタックのデバッグに関する詳細については、次を参照してください。[ドライバーとサブシステムのさまざまな詳細なデバッグ トレースを有効にする方法](https://support.microsoft.com/help/314743)します。
 
 ## <a name="does-windows-support-interface-association-descriptors"></a>Windows は、インターフェイスの関連付けの記述子をサポートしますか。
 
@@ -631,4 +631,4 @@ USB を参照してください-IF FAQ ページ<http://www.usb.org/developers/u
 ## <a name="related-topics"></a>関連トピック
 
 [すべての開発者の USB の概念](usb-concepts-for-all-developers.md)  
-[ユニバーサル シリアル バス (USB)](https://msdn.microsoft.com/library/windows/hardware/ff538930)  
+[ユニバーサル シリアル バス (USB)](https://docs.microsoft.com/windows-hardware/drivers/)  

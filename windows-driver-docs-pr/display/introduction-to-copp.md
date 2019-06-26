@@ -9,12 +9,12 @@ keywords:
 - COPP についてのビデオの WDK COPP の保護
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9200ff0ee6287779cc6b53daa634cb4e09338095
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fc211133b3b750103df74f29b38fdb3565f4b7d8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362145"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379883"
 ---
 # <a name="introduction-to-copp"></a>COPP の概要
 
@@ -24,7 +24,7 @@ ms.locfileid: "63362145"
 
 **このセクションでは、Windows Server 2003 SP1 以降、および Windows XP SP2 以降にのみ適用されます。**
 
-COPP は、コピー防止をグラフィックス アダプターによって出力されるビデオに適用するメカニズムを提供します。 COPP を使用してさまざまなリンク保護要件をよりもより確実に保護の方法でグラフィックス アダプターに送信するための一般的なプロトコルを提供する、 [ **IOCTL\_ビデオ\_処理\_VIDEOPARAMETERS** ](https://msdn.microsoft.com/library/windows/hardware/ff567805) I/O 制御 (IOCTL) コード。
+COPP は、コピー防止をグラフィックス アダプターによって出力されるビデオに適用するメカニズムを提供します。 COPP を使用してさまざまなリンク保護要件をよりもより確実に保護の方法でグラフィックス アダプターに送信するための一般的なプロトコルを提供する、 [ **IOCTL\_ビデオ\_処理\_VIDEOPARAMETERS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddvdeo/ni-ntddvdeo-ioctl_video_handle_videoparameters) I/O 制御 (IOCTL) コード。
 
 次のトピックでは、COPP について説明します。
 

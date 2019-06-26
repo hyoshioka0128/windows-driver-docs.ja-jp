@@ -6,17 +6,17 @@ ms.date: 07/18/2017
 keywords:
 - WDI_TLV_INDICATION_WAKE_REASON ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 883f368ed0da138f079f9657697f22ebc094f254
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 154a4eac601e9f9f76413f040664ed61afb3526f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361750"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380780"
 ---
 # <a name="wditlvindicationwakereason"></a>WDI\_TLV\_INDICATION\_WAKE\_理由
 
 
-WDI\_TLV\_を示す値\_WAKE\_理由は、ウェイク アップの理由を含む TLV [NDIS\_状態\_WDI\_INDICATION\_WAKE\_理由](https://msdn.microsoft.com/library/windows/hardware/dn925669)します。
+WDI\_TLV\_を示す値\_WAKE\_理由は、ウェイク アップの理由を含む TLV [NDIS\_状態\_WDI\_INDICATION\_WAKE\_理由](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wdi-indication-wake-reason)します。
 
 ## <a name="tlv-type"></a>TLV 型
 
@@ -39,7 +39,7 @@ Uint32 型のサイズをバイト単位で。
 
 有効なスリープ解除理由の値は次のとおりです。
 
-| ウェイク アップの理由                                       | 値  | 説明                                                                                                          |
+| ウェイク アップの理由                                       | Value  | 説明                                                                                                          |
 |---------------------------------------------------|--------|----------------------------------------------------------------------------------------------------------------------|
 | WDI\_WAKE\_理由\_コード\_パケット                   | 0x0001 | 受信したパケットでは、ウェイク アップのパターンと一致します。                                                                          |
 | WDI\_WAKE\_理由\_コード\_メディア\_切断        | 0x0002 | メディア切断します。                                                                                                 |
@@ -55,7 +55,7 @@ Uint32 型のサイズをバイト単位で。
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

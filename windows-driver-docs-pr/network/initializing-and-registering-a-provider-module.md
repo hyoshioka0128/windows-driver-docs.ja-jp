@@ -10,17 +10,17 @@ keywords:
 - NmrRegisterProvider
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 008f31c858d04c81bdc2cc3e7f3508a293528cc5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2de912ab0becf1fac9a0a78cd98e7ebcd1145bca
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324938"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381288"
 ---
 # <a name="initializing-and-registering-a-provider-module"></a>プロバイダー モジュールの初期化と登録
 
 
-ネットワーク モジュール レジストラー (NMR) で登録にする前に、プロバイダー モジュールはさまざまなデータ構造体を初期化する必要があります。 これらの構造が含まれます、 [ **NPI\_MODULEID** ](https://msdn.microsoft.com/library/windows/hardware/ff568813)構造、 [ **NPI\_プロバイダー\_特性**](https://msdn.microsoft.com/library/windows/hardware/ff568814)構造、 [ **NPI\_登録\_インスタンス**](https://msdn.microsoft.com/library/windows/hardware/ff568815)構造 (、NPI 内に含まれる\_プロバイダー\_特性構造の場合)、およびプロバイダー モジュールの登録のコンテキストに使用されるプロバイダー モジュールで定義された構造です。
+ネットワーク モジュール レジストラー (NMR) で登録にする前に、プロバイダー モジュールはさまざまなデータ構造体を初期化する必要があります。 これらの構造が含まれます、 [ **NPI\_MODULEID** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff568813(v=vs.85))構造、 [ **NPI\_プロバイダー\_特性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netioddk/ns-netioddk-_npi_provider_characteristics)構造、 [ **NPI\_登録\_インスタンス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netioddk/ns-netioddk-_npi_registration_instance)構造 (、NPI 内に含まれる\_プロバイダー\_特性構造の場合)、およびプロバイダー モジュールの登録のコンテキストに使用されるプロバイダー モジュールで定義された構造です。
 
 かどうか、プロバイダー モジュールに自らを登録、NMR のプロバイダーとして、[ネットワーク プログラミング インターフェイス (NPI)](network-programming-interface.md) NPI に固有のプロバイダーの特性を定義する、プロバイダー モジュールは、プロバイダーのインスタンスを初期化する必要がありますもNPI で定義されている特性構造体。
 
@@ -119,11 +119,11 @@ PROVIDER_REGISTRATION_CONTEXT ProviderRegistrationContext =
 };
 ```
 
-プロバイダーのモジュールが通常初期化自体内でその[ **DriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff544113)関数。 プロバイダー モジュールの主な初期化タスクは次のとおりです。
+プロバイダーのモジュールが通常初期化自体内でその[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)関数。 プロバイダー モジュールの主な初期化タスクは次のとおりです。
 
--   指定、 [**アンロード**](https://msdn.microsoft.com/library/windows/hardware/ff564886)関数。 オペレーティング システムは、プロバイダー モジュールがシステムからアンロードされるときに、この関数を呼び出します。 プロバイダー モジュールがアンロード、関数を提供していない場合、プロバイダー モジュールは、システムからアンロードすることはできません。
+-   指定、 [**アンロード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_unload)関数。 オペレーティング システムは、プロバイダー モジュールがシステムからアンロードされるときに、この関数を呼び出します。 プロバイダー モジュールがアンロード、関数を提供していない場合、プロバイダー モジュールは、システムからアンロードすることはできません。
 
--   呼び出す、 [ **NmrRegisterProvider** ](https://msdn.microsoft.com/library/windows/hardware/ff568784) NMR をプロバイダー モジュールを登録する関数。
+-   呼び出す、 [ **NmrRegisterProvider** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netioddk/nf-netioddk-nmrregisterprovider) NMR をプロバイダー モジュールを登録する関数。
 
 例:
 
@@ -165,11 +165,11 @@ NTSTATUS
 }
 ```
 
-データ構造と呼び出しの独立したセットを初期化する必要があります、プロバイダー モジュールが 1 つ以上の NPI のプロバイダーである場合は、 [ **NmrRegisterProvider** ](https://msdn.microsoft.com/library/windows/hardware/ff568784)各 NPI でサポートされるのです。 ネットワーク モジュールはプロバイダー モジュールとクライアントのモジュールの両方のかどうか (つまり、NPI の 1 つのプロバイダーと別の NPI のクライアント) である 2 つの独立したデータ構造、プロバイダーのインターフェイスと、クライアント インターフェイスのセットを初期化する必要があります、両方を呼び出すと**NmrRegisterProvider**と[ **NmrRegisterClient**](https://msdn.microsoft.com/library/windows/hardware/ff568782)します。
+データ構造と呼び出しの独立したセットを初期化する必要があります、プロバイダー モジュールが 1 つ以上の NPI のプロバイダーである場合は、 [ **NmrRegisterProvider** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netioddk/nf-netioddk-nmrregisterprovider)各 NPI でサポートされるのです。 ネットワーク モジュールはプロバイダー モジュールとクライアントのモジュールの両方のかどうか (つまり、NPI の 1 つのプロバイダーと別の NPI のクライアント) である 2 つの独立したデータ構造、プロバイダーのインターフェイスと、クライアント インターフェイスのセットを初期化する必要があります、両方を呼び出すと**NmrRegisterProvider**と[ **NmrRegisterClient**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netioddk/nf-netioddk-nmrregisterclient)します。
 
-プロバイダー モジュールを呼び出す必要はありません[ **NmrRegisterProvider** ](https://msdn.microsoft.com/library/windows/hardware/ff568784)内からその[ **DriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff544113)関数。 たとえば、プロバイダー モジュールが複雑なドライバーのサブコンポーネントが場合、プロバイダー モジュールの登録と発生する可能性のみプロバイダー モジュールのサブコンポーネントがアクティブ化します。
+プロバイダー モジュールを呼び出す必要はありません[ **NmrRegisterProvider** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netioddk/nf-netioddk-nmrregisterprovider)内からその[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)関数。 たとえば、プロバイダー モジュールが複雑なドライバーのサブコンポーネントが場合、プロバイダー モジュールの登録と発生する可能性のみプロバイダー モジュールのサブコンポーネントがアクティブ化します。
 
-プロバイダー モジュールの実装の詳細については[**アンロード**](https://msdn.microsoft.com/library/windows/hardware/ff564886)関数を参照してください[プロバイダー モジュールをアンロード](unloading-a-provider-module.md)します。
+プロバイダー モジュールの実装の詳細については[**アンロード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_unload)関数を参照してください[プロバイダー モジュールをアンロード](unloading-a-provider-module.md)します。
 
  
 

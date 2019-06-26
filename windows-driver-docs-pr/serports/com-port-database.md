@@ -15,12 +15,12 @@ keywords:
 - WDK の COM ポートのデータベースのデータベース
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a8a6f7962b6204a1f26a427b68ae7323b14d44d
-ms.sourcegitcommit: 6a0636c33e28ce2a9a742bae20610f0f3435262c
+ms.openlocfilehash: 69bbfc1e8ea8cd33a22c2b8450538b38eb04ee3d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65836339"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380648"
 ---
 # <a name="com-port-database"></a>COM ポート データベース
 
@@ -46,21 +46,21 @@ COM ポートのデータベースをサポートするルーチンの詳細に�
 
 [SerialDisplayAdvancedSettings](https://docs.microsoft.com/windows/desktop/api/msports/nf-msports-serialdisplayadvancedsettings)、COM ポートを高度なプロパティ ページをインストールするためのシステム指定のルーチンであります。
 
-[PPORT_ADVANCED_DIALOG](https://msdn.microsoft.com/library/windows/hardware/ff546956(v=vs.85).aspx)-、ルーチンによって呼び出される省略可能なベンダーから提供されたダイアログ ボックスを提供する型指定された**SerialDisplayAdvancedSettings**
+[PPORT_ADVANCED_DIALOG](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff546956(v=vs.85))-、ルーチンによって呼び出される省略可能なベンダーから提供されたダイアログ ボックスを提供する型指定された**SerialDisplayAdvancedSettings**
 
 インストーラーでこれらのルーチンを呼び出すリンクをインストーラー *msports.lib*、Windows Driver Kit (WDK) で指定されます。
 
 ## <a name="structure-of-the-com-port-database"></a>COM ポートのデータベースの構造
 
-COM ポートのデータベースは、COM ポート番号は、使用するかどうかを示す各要素の配列で構成されます。 配列の最初の要素 COM1、COM2 というように、2 つ目が対応します。 ただし、データベースでは、について、指定したポート番号がこのデバイスに割り当てられているすべての情報は含まれません。 データベースのサイズでは、データベースが現在調停ポート番号の数と同じです。 データベースを介しポート番号の最小数は COMDB\_MIN\_ポート\_調停と調停が最大数は COMDB\_最大\_ポート\_調停です。 使用して、データベースのサイズを増やすことが、 [ **ComDBResizeDatabase** ](https://msdn.microsoft.com/library/windows/hardware/ff546480)ルーチン。
+COM ポートのデータベースは、COM ポート番号は、使用するかどうかを示す各要素の配列で構成されます。 配列の最初の要素 COM1、COM2 というように、2 つ目が対応します。 ただし、データベースでは、について、指定したポート番号がこのデバイスに割り当てられているすべての情報は含まれません。 データベースのサイズでは、データベースが現在調停ポート番号の数と同じです。 データベースを介しポート番号の最小数は COMDB\_MIN\_ポート\_調停と調停が最大数は COMDB\_最大\_ポート\_調停です。 使用して、データベースのサイズを増やすことが、 [ **ComDBResizeDatabase** ](https://docs.microsoft.com/windows/desktop/api/msports/nf-msports-comdbresizedatabase)ルーチン。
 
 ## <a name="opening-and-closing-the-com-port-database"></a>COM ポートのデータベースの開閉
 
-COM ポートのデータベースを使用する前に、クライアントは、呼び出すことによって、データベースを開く必要があります、 [ **ComDBOpen** ](https://msdn.microsoft.com/library/windows/hardware/ff546476)ルーチンをデータベースを識別するハンドルを取得します。 データベースは、任意の連続したデータベースのアクセス中に相互排除によって保護されます。 ただし、データベースを排他的に使用、開くことができませんおよびデータベースへの個別のアクセスとの間の状態を動的に変更できます。
+COM ポートのデータベースを使用する前に、クライアントは、呼び出すことによって、データベースを開く必要があります、 [ **ComDBOpen** ](https://docs.microsoft.com/windows/desktop/api/msports/nf-msports-comdbopen)ルーチンをデータベースを識別するハンドルを取得します。 データベースは、任意の連続したデータベースのアクセス中に相互排除によって保護されます。 ただし、データベースを排他的に使用、開くことができませんおよびデータベースへの個別のアクセスとの間の状態を動的に変更できます。
 
 ## <a name="determining-the-current-usage-of-com-port-numbers"></a>COM ポート番号の現在の使用量を決定します。
 
-COM ポート番号が既に使用して呼び出すことによって、COM ポートのデータベースを開いた後、クライアントが決定できます、 [ **ComDBGetCurrentPortUsage** ](https://msdn.microsoft.com/library/windows/hardware/ff546474)ルーチン。
+COM ポート番号が既に使用して呼び出すことによって、COM ポートのデータベースを開いた後、クライアントが決定できます、 [ **ComDBGetCurrentPortUsage** ](https://docs.microsoft.com/windows/desktop/api/msports/nf-msports-comdbgetcurrentportusage)ルーチン。
 
 通常、クライアントは、次のタスクを実行します。
 
@@ -74,14 +74,14 @@ COM ポート番号が既に使用して呼び出すことによって、COM ポ
 
 クライアントは、次のルーチンのいずれかを呼び出すことによって COM ポート番号を取得できます。
 
-- [**ComDBClaimNextFreePort**](https://msdn.microsoft.com/library/windows/hardware/ff546469)、最小の使用可能なポート番号を要求します。
+- [**ComDBClaimNextFreePort**](https://docs.microsoft.com/windows/desktop/api/msports/nf-msports-comdbclaimnextfreeport)、最小の使用可能なポート番号を要求します。
 
-- [**ComDBClaimPort**](https://msdn.microsoft.com/library/windows/hardware/ff546472)、特定のポート番号を要求しようと試みます。
+- [**ComDBClaimPort**](https://docs.microsoft.com/windows/desktop/api/msports/nf-msports-comdbclaimport)、特定のポート番号を要求しようと試みます。
 
 *主張*COM ポートのデータベース内の COM ポート番号が「使用中」としてポート番号を記録します。
 
-クライアントが呼び出すことでポート番号を解放、 [ **ComDBReleasePort** ](https://msdn.microsoft.com/library/windows/hardware/ff546477)ルーチン。
+クライアントが呼び出すことでポート番号を解放、 [ **ComDBReleasePort** ](https://docs.microsoft.com/windows/desktop/api/msports/nf-msports-comdbreleaseport)ルーチン。
 
 ## <a name="resizing-the-com-port-database"></a>COM ポートのデータベースのサイズ変更
 
-サイズと、クライアントが呼び出すことによって、COM ポートのデータベースを変更、 [ **ComDBResizeDatabase** ](https://msdn.microsoft.com/library/windows/hardware/ff546480)ルーチン。 クライアントは、整数では、データベースのサイズが 1024 の倍数を増やすだけことができます。 データベースの最大サイズは COMDB\_最大\_ポート\_調停です。
+サイズと、クライアントが呼び出すことによって、COM ポートのデータベースを変更、 [ **ComDBResizeDatabase** ](https://docs.microsoft.com/windows/desktop/api/msports/nf-msports-comdbresizedatabase)ルーチン。 クライアントは、整数では、データベースのサイズが 1024 の倍数を増やすだけことができます。 データベースの最大サイズは COMDB\_最大\_ポート\_調停です。

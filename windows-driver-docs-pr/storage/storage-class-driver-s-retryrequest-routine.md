@@ -8,12 +8,12 @@ keywords:
 - エラー WDK ストレージ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cdfd72c30a243cef7c1d608c3a0b7e889e6bfcb1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cd56a8ef9820c25c7ffd27add77964b84cdabe4e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339007"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379092"
 ---
 # <a name="storage-class-drivers-retryrequest-routine"></a>記憶域クラス ドライバーの RetryRequest ルーチン
 
@@ -37,9 +37,9 @@ ms.locfileid: "63339007"
 
 4.  ポート ドライバーですでに説明した IRP の I/O スタックの場所を設定[記憶域クラス ドライバーのディスパッチ ルーチン](storage-class-driver-s-dispatch-routines.md)を通じて[記憶域クラス ドライバー SplitTransferRequest ルーチン](storage-class-driver-s-splittransferrequest-routine.md)します。
 
-5.  呼び出す[ **IoSetCompletionRoutine** ](https://msdn.microsoft.com/library/windows/hardware/ff549679) 、IRP のため、ドライバーの[ **IoCompletion** ](https://msdn.microsoft.com/library/windows/hardware/ff548354)ルーチンが IRP の前に SRB を解放する必要があります返します。 *IoCompletion*ルーチンも必要になる要求を複数回再試行するかを呼び出してドライバーの*InterpretRequestSense*または*ReleaseQueue*ルーチン。
+5.  呼び出す[ **IoSetCompletionRoutine** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iosetcompletionroutine) 、IRP のため、ドライバーの[ **IoCompletion** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)ルーチンが IRP の前に SRB を解放する必要があります返します。 *IoCompletion*ルーチンも必要になる要求を複数回再試行するかを呼び出してドライバーの*InterpretRequestSense*または*ReleaseQueue*ルーチン。
 
-6.  要求を使用してドライバーを次の下位に渡す[**保留**](https://msdn.microsoft.com/library/windows/hardware/ff548336)します。
+6.  要求を使用してドライバーを次の下位に渡す[**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)します。
 
  
 

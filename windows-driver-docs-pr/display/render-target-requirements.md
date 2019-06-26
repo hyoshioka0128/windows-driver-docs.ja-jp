@@ -9,12 +9,12 @@ keywords:
 - 深度バッファーの WDK Direct3D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e70f923768bf7be7ca6352ac8a123b42a39ee5f4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4045f4ecba4016c0e07aeef3fcab0d9db7144e22
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351485"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380553"
 ---
 # <a name="render-target-requirements"></a>レンダー ターゲットの要件
 
@@ -26,7 +26,7 @@ ms.locfileid: "63351485"
 
 ### <a name="span-idcolorbuffersspanspan-idcolorbuffersspancolor-buffers"></a><span id="color_buffers"></span><span id="COLOR_BUFFERS"></span>色のバッファー
 
-ハードウェアはテクスチャとして使用することもあるレンダー ターゲットをサポートしていない場合 (つまり、デバイスことはできません「にレンダリング テクスチャ」)、デバイスへの呼び出しが失敗する必要があります、 **IDirect3DDevice7::SetRenderTarget**と**IDirect3D7::CreateDevice**メソッド。 これらのメソッドは、Direct3D SDK のドキュメントで説明します。 テクスチャが、DDSCAPS の存在によって示されたとして使用する、レンダー ターゲットであるという事実\_サーフェスの説明にテクスチャ フラグ (を参照してください、 **dwCaps**のメンバー、 [ **DDSCAPS**](https://msdn.microsoft.com/library/windows/hardware/ff550286)構造)。
+ハードウェアはテクスチャとして使用することもあるレンダー ターゲットをサポートしていない場合 (つまり、デバイスことはできません「にレンダリング テクスチャ」)、デバイスへの呼び出しが失敗する必要があります、 **IDirect3DDevice7::SetRenderTarget**と**IDirect3D7::CreateDevice**メソッド。 これらのメソッドは、Direct3D SDK のドキュメントで説明します。 テクスチャが、DDSCAPS の存在によって示されたとして使用する、レンダー ターゲットであるという事実\_サーフェスの説明にテクスチャ フラグ (を参照してください、 **dwCaps**のメンバー、 [ **DDSCAPS**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff550286(v=vs.85))構造)。
 
 ### <a name="span-iddepthbuffersspanspan-iddepthbuffersspandepth-buffers"></a><span id="depth_buffers"></span><span id="DEPTH_BUFFERS"></span>深度バッファー
 

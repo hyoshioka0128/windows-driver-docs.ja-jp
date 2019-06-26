@@ -4,18 +4,18 @@ description: ネットワークへの接続に使用されている Windows デ�
 ms.assetid: ea9a07cd-ad6e-4c49-aae0-fc9eee9b17c8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6973e43207f189d87be8d71a3a6917da268c73eb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 64c1b895dee464d91c226a7aa243452a4efc2cb5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378320"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381532"
 ---
 # <a name="determine-which-windows-device-is-being-used-to-connect-to-the-network"></a>ネットワークへの接続に使用されている Windows デバイスを決定する
 
-Windows デバイスは、ネットワークへの接続に使用されているを判断するには、によって公開されるネットワーク アダプターの Windows デバイスの ID を確認、 [ **DeviceId** ](https://msdn.microsoft.com/library/windows/apps/br207365)現在のネットワーク デバイスのプロパティアカウントのオブジェクト。
+Windows デバイスは、ネットワークへの接続に使用されているを判断するには、によって公開されるネットワーク アダプターの Windows デバイスの ID を確認、 [ **DeviceId** ](https://docs.microsoft.com/uwp/api/Windows.Networking.NetworkOperators.MobileBroadbandDeviceInformation#Windows_Networking_NetworkOperators_MobileBroadbandDeviceInformation_DeviceId)現在のネットワーク デバイスのプロパティアカウントのオブジェクト。
 
-次に、例を示します。
+例:
 
 ``` syntax
 account.currentDeviceInformation.deviceId

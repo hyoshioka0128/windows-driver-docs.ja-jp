@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: a8348b275652f6bc03f35c85acdcaaa686db52b6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a2e259d385a88331bdf7d0d28e2b8955c56d4620
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351082"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378183"
 ---
 # <a name="devpkeydevicematchingdeviceid"></a>DEVPKEY_Device_MatchingDeviceId
 
 
-DEVPKEY_Device_MatchingDeviceId デバイス プロパティを表します、[ハードウェア ID](https://msdn.microsoft.com/library/windows/hardware/ff546152)または[互換性 ID](https://msdn.microsoft.com/library/windows/hardware/ff539950) Windows を使用してデバイス インスタンスをインストールします。
+DEVPKEY_Device_MatchingDeviceId デバイス プロパティを表します、[ハードウェア ID](https://docs.microsoft.com/windows-hardware/drivers/install/hardware-ids)または[互換性 ID](https://docs.microsoft.com/windows-hardware/drivers/install/compatible-ids) Windows を使用してデバイス インスタンスをインストールします。
 
 <table>
 <colgroup>
@@ -61,11 +61,11 @@ DEVPKEY_Device_MatchingDeviceId デバイス プロパティを表します、[�
 <a name="remarks"></a>注釈
 -------
 
-Windows では、DEVPKEY_Device_MatchingDeviceId の値を設定します。 ハードウェア Id とデバイスの互換性 Id がによって提供される、*デバイス説明*エントリに含まれている、 [ **INF*モデル*セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547344)のデバイスをインストールする INF ファイル。
+Windows では、DEVPKEY_Device_MatchingDeviceId の値を設定します。 ハードウェア Id とデバイスの互換性 Id がによって提供される、*デバイス説明*エントリに含まれている、 [ **INF*モデル*セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)のデバイスをインストールする INF ファイル。
 
-呼び出すことができます[ **SetupDiGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551963) PKEY_Device_MatchingDeviceId の値を取得します。
+呼び出すことができます[ **SetupDiGetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) PKEY_Device_MatchingDeviceId の値を取得します。
 
-Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_Device_MatchingDeviceId プロパティのキーをサポートしていません。 この以前のバージョンの Windows で、対応するアクセスすることでこのプロパティの値にアクセスできます**MatchingDeviceId**ソフトウェア キーをデバイス インスタンスの下のレジストリ値。 Windows の以前のバージョンでこのプロパティの値にアクセスする方法については、次を参照してください。[デバイス ドライバーのプロパティへのアクセス](https://msdn.microsoft.com/library/windows/hardware/ff537732)します。
+Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_Device_MatchingDeviceId プロパティのキーをサポートしていません。 この以前のバージョンの Windows で、対応するアクセスすることでこのプロパティの値にアクセスできます**MatchingDeviceId**ソフトウェア キーをデバイス インスタンスの下のレジストリ値。 Windows の以前のバージョンでこのプロパティの値にアクセスする方法については、次を参照してください。[デバイス ドライバーのプロパティへのアクセス](https://docs.microsoft.com/windows-hardware/drivers/install/accessing-device-driver-properties)します。
 
 <a name="requirements"></a>必要条件
 ------------
@@ -90,9 +90,9 @@ Windows Server 2003、Windows XP、および Windows 2000 は、このプロパ�
 ## <a name="see-also"></a>関連項目
 
 
-[**INF*モデル*セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547344)
+[**INF*モデル*セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)
 
-[**SetupDiGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551963)
+[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
 

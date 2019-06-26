@@ -12,19 +12,19 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 03a8bfe19b6ce5e545c6b2b8a17e540e85c6d235
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1c8f23884ae01f2355438dcc0c78c824ef103508
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356944"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377674"
 ---
 # <a name="legacymode-xml-element"></a>legacyMode XML 要素
 
 
-\[DIFx は非推奨、詳細については、「 [DIFx ガイドライン](https://msdn.microsoft.com/windows/hardware/drivers/install/difx-guidelines)します。\]
+\[DIFx は非推奨、詳細については、「 [DIFx ガイドライン](https://docs.microsoft.com/windows-hardware/drivers/install/difx-guidelines)します。\]
 
-**LegacyMode** XML 要素が空の要素を設定する、 **legacyMode**未署名のドライバーをインストールする DPInst を構成するには、フラグと[ドライバー パッケージ](https://msdn.microsoft.com/library/windows/hardware/ff544840)です見つからないファイルがあります。
+**LegacyMode** XML 要素が空の要素を設定する、 **legacyMode**未署名のドライバーをインストールする DPInst を構成するには、フラグと[ドライバー パッケージ](https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages)です見つからないファイルがあります。
 
 **要素タグ**
 
@@ -67,7 +67,7 @@ ms.locfileid: "63356944"
 
 **注釈**
 
-既定では、DPInst インストールでのみ署名[ドライバー パッケージ](https://msdn.microsoft.com/library/windows/hardware/ff544840)と見つからないファイルがないドライバー パッケージ。 未署名のドライバ パッケージまたはファイルが欠落しているドライバー パッケージをそのまま使用する DPInst を構成する設定、 **legacyMode**を ON にフラグを含めることによって、 **legacyMode** の子要素として**dpinst** XML 要素またはを使用して、 **/lm** コマンド ライン スイッチ。
+既定では、DPInst インストールでのみ署名[ドライバー パッケージ](https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages)と見つからないファイルがないドライバー パッケージ。 未署名のドライバ パッケージまたはファイルが欠落しているドライバー パッケージをそのまま使用する DPInst を構成する設定、 **legacyMode**を ON にフラグを含めることによって、 **legacyMode** の子要素として**dpinst** XML 要素またはを使用して、 **/lm** コマンド ライン スイッチ。
 
 次のコード例に示します、 **legacyMode**要素。
 

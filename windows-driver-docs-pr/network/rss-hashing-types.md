@@ -8,12 +8,12 @@ keywords:
 - WDK RSS ハッシュ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f778eb4ac07b861cff4f06026d4f42fa3438d4f4
-ms.sourcegitcommit: bb482ef6935e171674c6a99bb499668c0f62ca24
+ms.openlocfilehash: ccf26d7a05f63492def0657645d737ed2377205d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66051644"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382143"
 ---
 # <a name="rss-hashing-types"></a>RSS ハッシュの種類
 
@@ -207,4 +207,4 @@ NIC は、次のフィールドに対してハッシュ値を計算する必要�
 > [!NOTE]
 > NIC が IPv6 拡張機能のハッシュの種類に従って、(IPv6 拡張ヘッダー フィールド) のハッシュ値を計算する必要がありますミニポート ドライバーでは、NIC の NDIS_RSS_CAPS_HASH_TYPE_TCP_IPV6_EX や NDIS_RSS_CAPS_HASH_TYPE_UDP_IPV6_EX の機能を報告する場合プロトコル ドライバーに設定します。 NIC は、拡張機能のハッシュの種類または通常のハッシュの種類のいずれかをハッシュ値の計算対象の IPv6 パケットの NET_BUFFER_LIST 構造に格納できます。
 
-ミニポート ドライバーのハッシュの種類の設定、 [ **NET_BUFFER_LIST** ](https://msdn.microsoft.com/library/windows/hardware/ff568388)する前に、受信したデータ構造体。 詳細については、次を参照してください。 [RSS の受信データのことを示す](indicating-rss-receive-data.md)します。
+ミニポート ドライバーのハッシュの種類の設定、 [ **NET_BUFFER_LIST** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)する前に、受信したデータ構造体。 詳細については、次を参照してください。 [RSS の受信データのことを示す](indicating-rss-receive-data.md)します。

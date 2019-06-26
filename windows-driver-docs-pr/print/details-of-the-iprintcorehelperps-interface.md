@@ -6,25 +6,25 @@ keywords:
 - IPrintCoreHelperPS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a89d865c49e23ed8645a572342476606a17c1bed
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 18b4bea3e7f34b7fd840b7b81e675f0a692d8af5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365344"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382059"
 ---
 # <a name="details-of-the-iprintcorehelperps-interface"></a>IPrintCoreHelperPS インターフェイスの詳細
 
 
 GDL パーサーに相当する型を持たない Pscript5 PPD ファイルに表示されるデータを読み取る Pscript5 ドライバーでは、追加のメソッドが提供されているためです。 すべてのベースのメソッドだけでなく**IPrintCoreHelper** 、インターフェイス、 **IPrintCoreHelperPS**インターフェイスには PPD ファイル内のデータへのアクセスを提供する次のメソッドが含まれています。
 
--   [**IPrintCoreHelperPS::GetFeatureAttribute**](https://msdn.microsoft.com/library/windows/hardware/ff551998)
+-   [**IPrintCoreHelperPS::GetFeatureAttribute**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintcorehelperps-getfeatureattribute)
 
--   [**IPrintCoreHelperPS::GetGlobalAttribute**](https://msdn.microsoft.com/library/windows/hardware/ff552899)
+-   [**IPrintCoreHelperPS::GetGlobalAttribute**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintcorehelperps-getglobalattribute)
 
--   [**IPrintCoreHelperPS::GetOptionAttribute**](https://msdn.microsoft.com/library/windows/hardware/ff552903)
+-   [**IPrintCoreHelperPS::GetOptionAttribute**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintcorehelperps-getoptionattribute)
 
-PPD 情報は、構成に依存しない、ためには、入力を指定する必要はありません[ **DEVMODEW** ](https://msdn.microsoft.com/library/windows/hardware/ff552837)これらのメソッドのパラメーター。
+PPD 情報は、構成に依存しない、ためには、入力を指定する必要はありません[ **DEVMODEW** ](https://docs.microsoft.com/windows/desktop/api/wingdi/ns-wingdi-_devicemodew)これらのメソッドのパラメーター。
 
  
 

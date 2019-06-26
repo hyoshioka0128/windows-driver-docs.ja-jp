@@ -8,12 +8,12 @@ keywords:
 - AYUV アルファ ブレンド画面 WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f27309f40e7e9c1a9f178714e0ef257862ca5bf4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d40e42bc29a4b3f64cda562e769f3f480ed3fe01
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347600"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380379"
 ---
 # <a name="loading-an-ayuv-alpha-blending-surface"></a>AYUV アルファ ブレンド サーフェスの読み込み
 
@@ -21,13 +21,13 @@ ms.locfileid: "63347600"
 ## <span id="ddk_loading_an_ayuv_alpha_blending_surface_gg"></span><span id="DDK_LOADING_AN_AYUV_ALPHA_BLENDING_SURFACE_GG"></span>
 
 
-AYUV アルファ ブレンドの画面は、32 のサンプルの配列をビットのそれぞれに定義されて、 [ **DXVA\_AYUVsample2** ](https://msdn.microsoft.com/library/windows/hardware/ff563116)構造体。 この画面は、デコードされたビデオ画像のグラフィックをブレンドするためのソースとして使用できます。
+AYUV アルファ ブレンドの画面は、32 のサンプルの配列をビットのそれぞれに定義されて、 [ **DXVA\_AYUVsample2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_ayuvsample2)構造体。 この画面は、デコードされたビデオ画像のグラフィックをブレンドするためのソースとして使用できます。
 
 幅と AYUV アルファ ブレンド画面の高さが指定されて、関連付けられた[バッファー記述リスト](buffer-description-list.md)します。
 
 ### <a name="span-idloadinga16-entryyuvpalettespanspan-idloadinga16-entryyuvpalettespanspan-idloadinga16-entryyuvpalettespanloading-a-16-entry-yuv-palette"></a><span id="Loading_a_16-Entry_YUV_Palette"></span><span id="loading_a_16-entry_yuv_palette"></span><span id="LOADING_A_16-ENTRY_YUV_PALETTE"></span>16 エントリ YUV パレットの読み込み
 
-16 エントリ YUV パレットが 16 の配列として定義されている[ **DXVA\_AYUVsample2** ](https://msdn.microsoft.com/library/windows/hardware/ff563116)構造体。 このパレットは、IA44 または AI44 アルファ ブレンド画面と共に使用されます。 パレットの配列は、AYUV アルファ ブレンド サンプル バッファーにアクセラレータに送信されます (バッファーの種類 8)。 ここで、 **bSampleAlpha8**メンバーは、DXVA の\_AYUVsample2 構造の各サンプルに意味がなく、ゼロにする必要があります。
+16 エントリ YUV パレットが 16 の配列として定義されている[ **DXVA\_AYUVsample2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_ayuvsample2)構造体。 このパレットは、IA44 または AI44 アルファ ブレンド画面と共に使用されます。 パレットの配列は、AYUV アルファ ブレンド サンプル バッファーにアクセラレータに送信されます (バッファーの種類 8)。 ここで、 **bSampleAlpha8**メンバーは、DXVA の\_AYUVsample2 構造の各サンプルに意味がなく、ゼロにする必要があります。
 
 YUV パレットは、デコードされたビデオ画像のグラフィックスの描画のソースの作成に使用できます。 このパレットは、いずれかと共に画像のソースを作成するために使用できます。
 
@@ -37,7 +37,7 @@ YUV パレットは、デコードされたビデオ画像のグラフィック�
 
 ### <a name="span-idloadinganayuvsurfacespanspan-idloadinganayuvsurfacespanspan-idloadinganayuvsurfacespanloading-an-ayuv-surface"></a><span id="Loading_an_AYUV_Surface"></span><span id="loading_an_ayuv_surface"></span><span id="LOADING_AN_AYUV_SURFACE"></span>AYUV、画面の読み込み
 
-パレットを 16 エントリだけを読み込むのではなく、イメージ全体のグラフィックは、グラフィックのコンテンツを指定する AYUV イメージとして直接単純に読み込まれます。 この場合は、AYUV グラフィックは AYUV アルファ ブレンド サンプル バッファーにアクセラレータに送信 (バッファーの種類 8) で指定されている、 [ **DXVA\_BufferDescription** ](https://msdn.microsoft.com/library/windows/hardware/ff563122)構造体。
+パレットを 16 エントリだけを読み込むのではなく、イメージ全体のグラフィックは、グラフィックのコンテンツを指定する AYUV イメージとして直接単純に読み込まれます。 この場合は、AYUV グラフィックは AYUV アルファ ブレンド サンプル バッファーにアクセラレータに送信 (バッファーの種類 8) で指定されている、 [ **DXVA\_BufferDescription** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_bufferdescription)構造体。
 
 ### <a name="span-idloadingania44ai44alpha-blendingsurfacespanspan-idloadingania44ai44alpha-blendingsurfacespanspan-idloadingania44ai44alpha-blendingsurfacespanloading-an-ia44ai44-alpha-blending-surface"></a><span id="Loading_an_IA44_AI44_Alpha-Blending_Surface"></span><span id="loading_an_ia44_ai44_alpha-blending_surface"></span><span id="LOADING_AN_IA44_AI44_ALPHA-BLENDING_SURFACE"></span>IA44/AI44 アルファ ブレンドのサーフェイスの読み込み
 

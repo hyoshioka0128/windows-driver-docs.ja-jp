@@ -8,12 +8,12 @@ keywords:
 - VA WDK DirectX では、DirectX ビデオ アクセラレータについて
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ffd1bd3781b85d84f86b4a7588756e7b65bb9432
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 34cd076af5b9c3a5fd24de77d4696cf2e371fdac
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362130"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379866"
 ---
 # <a name="introduction-to-directx-va"></a>DirectX VA の概要
 
@@ -25,7 +25,7 @@ DirectX VA は、頻繁が実行されて、ハードウェア アクセラレ�
 
 DirectX の VA API および対応する[補正のモーション](motion-compensation.md)DDI では、次の操作のサポート。
 
--   [アルファ ブレンド](https://msdn.microsoft.com/library/windows/hardware/ff538232)DVD などの目的でサブピクチャ サポートをします。
+-   [アルファ ブレンド](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)DVD などの目的でサブピクチャ サポートをします。
 
 -   [暗号化](encryption-support.md)を必要とするアプリケーション。
 

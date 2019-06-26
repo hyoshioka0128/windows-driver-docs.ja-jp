@@ -12,17 +12,17 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 02359f3886acbad1a5c846c85ea9194fd6b81e4c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: edb22f63126d47282e89d5c1a1c37d90b9457fd8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339278"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380393"
 ---
 # <a name="watermarkpath-xml-element"></a>watermarkPath XML 要素
 
 
-\[DIFx は非推奨、詳細については、「 [DIFx ガイドライン](https://msdn.microsoft.com/windows/hardware/drivers/install/difx-guidelines)します。\]
+\[DIFx は非推奨、詳細については、「 [DIFx ガイドライン](https://docs.microsoft.com/windows-hardware/drivers/install/difx-guidelines)します。\]
 
 **WatermarkPath**要素 DPInst は DPInst へようこそ ページと DPInst 完了 ページの左側に表示されるカスタムのウォーターマーク ビットマップのソース ファイルを指定します。
 

@@ -4,17 +4,17 @@ description: カタログ ファイルの SPC 署名の検証
 ms.assetid: 57bc65fe-1c31-4ebb-a1bc-e1fe275f8d10
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 45ae9e413b8d0e42ed7040684606c2792470d1be
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 10e451ae07320829812481745e60d1d8965cac43
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339297"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380415"
 ---
 # <a name="verifying-the-spc-signature-of-a-catalog-file"></a>カタログ ファイルの SPC 署名の検証
 
 
-確認する、[カタログ ファイル](catalog-files.md)によって、有効な署名が[ソフトウェア発行元証明書 (SPC)](software-publisher-certificate.md)と対応するクロス証明書を次を使用して、 [ **SignTool**](https://msdn.microsoft.com/library/windows/hardware/ff551778)コマンド。
+確認する、[カタログ ファイル](catalog-files.md)によって、有効な署名が[ソフトウェア発行元証明書 (SPC)](software-publisher-certificate.md)と対応するクロス証明書を次を使用して、 [ **SignTool**](https://docs.microsoft.com/windows-hardware/drivers/devtest/signtool)コマンド。
 
 ```cpp
 SignTool verify /v /kp CatalogFileName.cat 

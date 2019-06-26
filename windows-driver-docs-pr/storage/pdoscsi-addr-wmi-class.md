@@ -4,12 +4,12 @@ description: PDOSCSI\_ADDR WMI クラス
 ms.assetid: 8fdcfc5a-308a-457f-a015-e082e96f9df7
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 26957953dcf7a61a925390fffd07c4ede6757eb2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 949ac7b6b472b24bc653b49726a2c72fb057fd72
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389420"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382061"
 ---
 # <a name="pdoscsiaddr-wmi-class"></a>PDOSCSI\_ADDR WMI クラス
 
@@ -29,7 +29,7 @@ class PDOSCSI_ADDR
 };
 ```
 
-生成が WMI ツールのスイートでクラス定義 iscompiled このとき、 [ **PDOSCSI\_ADDR** ](https://msdn.microsoft.com/library/windows/hardware/ff563809)データ構造体。 この WMI クラスに関連付けられているメソッドはありません。
+生成が WMI ツールのスイートでクラス定義 iscompiled このとき、 [ **PDOSCSI\_ADDR** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mpiodisk/ns-mpiodisk-_pdoscsi_addr)データ構造体。 この WMI クラスに関連付けられているメソッドはありません。
 
  
 

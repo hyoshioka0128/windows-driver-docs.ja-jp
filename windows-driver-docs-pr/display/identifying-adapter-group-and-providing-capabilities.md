@@ -7,12 +7,12 @@ keywords:
 - 複数ヘッド ハードウェア WDK DirectX 9.0、アダプター
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bc59cc603954c3542e0f6baf27e4b0f1de48324e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 85003a30008b8221b6fde880dd2eb44b8a13ccec
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384555"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380179"
 ---
 # <a name="identifying-adapter-group-and-providing-capabilities"></a>アダプター グループの識別と機能の提供
 
@@ -20,7 +20,7 @@ ms.locfileid: "63384555"
 ## <span id="ddk_identifying_adapter_group_and_providing_capabilities_gg"></span><span id="DDK_IDENTIFYING_ADAPTER_GROUP_AND_PROVIDING_CAPABILITIES_GG"></span>
 
 
-DirectX 9.0 ランタイムの送信、 **GetDriverInfo2** 、D3DGDI2 を使用して要求\_型\_GETADAPTERGROUP 値を構成するアダプターのグループの識別子を要求する DirectX 9.0 バージョンのドライバーをドライバーの複数ヘッドのビデオ カード。 ドライバーでの識別子を取得する、 **ulUniqueAdapterGroupId**のメンバー、 [ **DD\_GETADAPTERGROUPDATA** ](https://msdn.microsoft.com/library/windows/hardware/ff551529)構造体。 ドライバーは、マスターとグループ内のすべての下位アダプターの一意識別子を提供する必要があります。 ランタイムでは、以降の操作でこの識別子を使用して、特定のアダプターがグループの一部であるかどうかを確認します。 この識別子は、その他のハードウェア ベンダーからドライバーを含む、ドライバーの間で一意である必要があります。 そのため、この識別子を他の複数ヘッドのビデオ カードに共通することはできませんを一意な 0 以外のカーネル モード アドレスとして報告することをお勧めします。
+DirectX 9.0 ランタイムの送信、 **GetDriverInfo2** 、D3DGDI2 を使用して要求\_型\_GETADAPTERGROUP 値を構成するアダプターのグループの識別子を要求する DirectX 9.0 バージョンのドライバーをドライバーの複数ヘッドのビデオ カード。 ドライバーでの識別子を取得する、 **ulUniqueAdapterGroupId**のメンバー、 [ **DD\_GETADAPTERGROUPDATA** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/ns-d3dhal-_dd_getadaptergroupdata)構造体。 ドライバーは、マスターとグループ内のすべての下位アダプターの一意識別子を提供する必要があります。 ランタイムでは、以降の操作でこの識別子を使用して、特定のアダプターがグループの一部であるかどうかを確認します。 この識別子は、その他のハードウェア ベンダーからドライバーを含む、ドライバーの間で一意である必要があります。 そのため、この識別子を他の複数ヘッドのビデオ カードに共通することはできませんを一意な 0 以外のカーネル モード アドレスとして報告することをお勧めします。
 
 DirectX 9.0 バージョンのドライバーでは、D3DCAPS9 構造体の次のメンバーを設定して、複数ヘッド ハードウェアを構成する方法を示します。
 

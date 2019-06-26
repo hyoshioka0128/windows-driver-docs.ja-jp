@@ -4,12 +4,12 @@ description: ISCSI\_DiscoveredTargetPortal WMI クラス
 ms.assetid: 0283bd12-2f14-48d6-8229-916208ae9fec
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: c9996e526911c1407261399ccd88ad0fee64b351
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 483d7e50dda5e1439ece927626b343a0b2f43502
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378561"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378452"
 ---
 # <a name="iscsidiscoveredtargetportal-wmi-class"></a>ISCSI\_DiscoveredTargetPortal WMI クラス
 
@@ -23,7 +23,7 @@ ISCSI\_DiscoveredTargetPortal によって提供される情報のスーパー �
 
 ISCSI\_DiscoveredTargetPortal クラスは発行されませんしで定義されている*Discover.mof*します。
 
-WMI ツールのスイートでは、このクラスの定義をコンパイルするときに生成、 [ **ISCSI\_DiscoveredTargetPortal** ](https://msdn.microsoft.com/library/windows/hardware/ff561509)データ構造体。
+WMI ツールのスイートでは、このクラスの定義をコンパイルするときに生成、 [ **ISCSI\_DiscoveredTargetPortal** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsifnd/ns-iscsifnd-_iscsi_discoveredtargetportal)データ構造体。
 
  
 

@@ -5,12 +5,12 @@ ms.assetid: 92ddf95f-8829-4259-b53a-c7ce56ee53f0
 ms.date: 08/08/2017
 keywords: -NDIS_STATUS_WWAN_READY_INFO ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: cb93eb3d2b2974d7fabe9a40c50ae90c237c609e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d13ede5e4ae0b866cfafc057a1d389d3cce728a0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341385"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377584"
 ---
 # <a name="ndisstatuswwanreadyinfo"></a>NDIS\_状態\_WWAN\_準備\_情報
 
@@ -19,7 +19,7 @@ ms.locfileid: "63341385"
 
 ミニポート ドライバーには、この通知が不要なイベントを送信できます。
 
-この通知を使用して、 [ **NDIS\_WWAN\_準備\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff567916)構造体。
+この通知を使用して、 [ **NDIS\_WWAN\_準備\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_ready_info)構造体。
 
 <a name="remarks"></a>注釈
 -------
@@ -51,7 +51,7 @@ ms.locfileid: "63341385"
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_WWAN\_準備\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff567916)
+[**NDIS\_WWAN\_準備\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_ready_info)
 
 [OID\_WWAN\_準備\_情報](oid-wwan-ready-info.md)
 

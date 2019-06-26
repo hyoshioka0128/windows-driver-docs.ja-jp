@@ -4,12 +4,12 @@ description: ローカル コンピューターと現在のユーザーの証明
 ms.assetid: b7362f2e-c8ff-42e4-9edc-df4b9967df29
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d36a1347d7728dd19230cfd3d5d2fd5a18379006
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2e6551bb13f2cdfdb4ed53b882a17638f961506a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63385551"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377672"
 ---
 # <a name="local-machine-and-current-user-certificate-stores"></a>ローカル コンピューターと現在のユーザーの証明書ストア
 
@@ -33,7 +33,7 @@ ms.locfileid: "63385551"
 
  
 
-追加またはシステムの証明書ストアから証明書を削除する方法の詳細については、次を参照してください。 [ **CertMgr**](https://msdn.microsoft.com/library/windows/hardware/ff543411)します。
+追加またはシステムの証明書ストアから証明書を削除する方法の詳細については、次を参照してください。 [ **CertMgr**](https://docs.microsoft.com/windows-hardware/drivers/devtest/certmgr)します。
 
  
 

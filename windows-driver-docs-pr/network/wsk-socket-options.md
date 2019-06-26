@@ -6,29 +6,29 @@ ms.date: 07/18/2017
 keywords:
 - WSK ソケット オプション ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 76964218815ade6580d7973da1d38acc75a684d7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5e825b4ca84cf0ac3953f3cc051442a9c1288cce
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360592"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379720"
 ---
 # <a name="wsk-socket-options"></a>WSK ソケット オプション
 
 
 SOL で、次のソケット オプションをサポートする、WSK サブシステム\_ソケット レベル。
 
-[**したがって\_ブロードキャスト**](https://msdn.microsoft.com/library/windows/hardware/ff570828)
+[**したがって\_ブロードキャスト**](https://docs.microsoft.com/windows-hardware/drivers/network/so-broadcast)
 
-[**したがって\_条件付き\_ACCEPT**](https://msdn.microsoft.com/library/windows/hardware/ff570829)
+[**したがって\_条件付き\_ACCEPT**](https://docs.microsoft.com/windows-hardware/drivers/network/so-conditional-accept)
 
-[**したがって\_EXCLUSIVEADDRUSE**](https://msdn.microsoft.com/library/windows/hardware/ff570830)
+[**したがって\_EXCLUSIVEADDRUSE**](https://docs.microsoft.com/windows-hardware/drivers/network/so-exclusiveaddruse)
 
-[**したがって\_KEEPALIVE**](https://msdn.microsoft.com/library/windows/hardware/ff570831)
+[**したがって\_KEEPALIVE**](https://docs.microsoft.com/windows-hardware/drivers/network/so-keepalive)
 
-[**したがって\_RCVBUF**](https://msdn.microsoft.com/library/windows/hardware/ff570832)
+[**したがって\_RCVBUF**](https://docs.microsoft.com/windows-hardware/drivers/network/so-rcvbuf)
 
-[**したがって\_REUSEADDR**](https://msdn.microsoft.com/library/windows/hardware/ff570833)
+[**したがって\_REUSEADDR**](https://docs.microsoft.com/windows-hardware/drivers/network/so-reuseaddr)
 
 [**したがって\_WSK\_イベント\_コールバック**](so-wsk-event-callback.md)
 

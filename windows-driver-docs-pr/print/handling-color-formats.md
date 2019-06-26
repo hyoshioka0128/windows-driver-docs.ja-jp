@@ -11,12 +11,12 @@ keywords:
 - Unidrv WDK の印刷
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a3f7307002a4352f9711d3bda48bec0f9024fb69
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e5ef06be43537bfd2ce64fe5bfb15e46f6aed9c3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360570"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378596"
 ---
 # <a name="handling-color-formats"></a>色形式の処理
 
@@ -60,7 +60,7 @@ ms.locfileid: "63360570"
 </tr>
 <tr class="even">
 <td><p>4</p></td>
-<td><p>1 (<a href="https://msdn.microsoft.com/library/windows/hardware/ff556274#wdkgloss-cmyk" data-raw-source="&lt;em&gt;CMYK&lt;/em&gt;"><em>CMYK</em></a>)</p></td>
+<td><p>1 (<a href="https://docs.microsoft.com/windows-hardware/drivers/#wdkgloss-cmyk" data-raw-source="&lt;em&gt;CMYK&lt;/em&gt;"><em>CMYK</em></a>)</p></td>
 </tr>
 </tbody>
 </table>
@@ -73,9 +73,9 @@ ms.locfileid: "63360570"
 
 -   設定、 \*DevNumOfPlanes と\*DevBPP 属性を 0 にします。 これを行うと、Unidrv は DIB のデータをプリンターに送信できなくなります。
 
--   提供、[プラグインでレンダリング](rendering-plug-ins.md)を実装する、 [ **IPrintOemUni::ImageProcessing** ](https://msdn.microsoft.com/library/windows/hardware/ff554261)メソッド。
+-   提供、[プラグインでレンダリング](rendering-plug-ins.md)を実装する、 [ **IPrintOemUni::ImageProcessing** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni-imageprocessing)メソッド。
 
-[ **IPrintOemUni::ImageProcessing** ](https://msdn.microsoft.com/library/windows/hardware/ff554261)メソッドは、次の操作を実行する必要があります。
+[ **IPrintOemUni::ImageProcessing** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni-imageprocessing)メソッドは、次の操作を実行する必要があります。
 
 -   DIB データをプリンターのカラー形式に変換します。
 
@@ -83,7 +83,7 @@ ms.locfileid: "63360570"
 
 -   印刷スプーラーにデータを送信します。
 
-提供の詳細については、 [ **IPrintOemUni::ImageProcessing** ](https://msdn.microsoft.com/library/windows/hardware/ff554261)関数を参照してください[色の書式設定のカスタマイズ](customized-color-formats.md)します。
+提供の詳細については、 [ **IPrintOemUni::ImageProcessing** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni-imageprocessing)関数を参照してください[色の書式設定のカスタマイズ](customized-color-formats.md)します。
 
 ### <a name="rendering-high-quality-images"></a>高品質なイメージのレンダリング
 

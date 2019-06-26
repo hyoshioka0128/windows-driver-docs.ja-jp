@@ -15,12 +15,12 @@ keywords:
 - 色空間を変換します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b53d21888f85912b798de043fa721b4e85cc3eda
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 06ebeef1b0248d627d16c43ef2df6161eb0496de
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391257"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381848"
 ---
 # <a name="vmr-video-processing"></a>VMR ビデオの処理
 
@@ -58,11 +58,11 @@ VMR の処理パイプラインの出力画面は、Direct3D のレンダー タ
 
 通常、VMR アルファ ブレンドを実行すること、またはとビデオの垂直/水平方向のミラーリングが表示されます、ビデオの再生アプリケーションは要求しません。 VMR は処理の 1 つのステージにすべてのビデオを組み込むことができます。 この場合、最初のパイプラインを使用します。 VMR がアルファ ブレンドまたは垂直/水平方向のミラーリングを実行すると、アプリケーションが要求 VMR、表示する前にビデオのイメージは、パイプラインに追加のステージを挿入します。 この場合、2 つ目のパイプラインを使用します。
 
-次の図は、処理するために使用 VMR ビデオ パイプライン*プログレッシブ*ビデオ ProcAmp コントロール ハードウェアが色空間変換を実行することはできず、水平方向にことはできません中にあるビデオ画像のサイズを変更します。ProcAmp 調整操作 (、DXVA によって示される\_VideoProcess\_YUV2RGB と DXVA\_VideoProcess\_StretchX 列挙子に[ **DXVA\_VideoProcessCaps**](https://msdn.microsoft.com/library/windows/hardware/ff564076))、YUV テクスチャをサポートしています。
+次の図は、処理するために使用 VMR ビデオ パイプライン*プログレッシブ*ビデオ ProcAmp コントロール ハードウェアが色空間変換を実行することはできず、水平方向にことはできません中にあるビデオ画像のサイズを変更します。ProcAmp 調整操作 (、DXVA によって示される\_VideoProcess\_YUV2RGB と DXVA\_VideoProcess\_StretchX 列挙子に[ **DXVA\_VideoProcessCaps**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ne-dxva-_dxva_videoprocesscaps))、YUV テクスチャをサポートしています。
 
 ![色空間変換を実行することはできませんと水平方向にサイズを変更できませんが yuv テクスチャをサポートできるハードウェアを示す図](images/procamp2.png)
 
-次の図は、処理するために使用 VMR ビデオ パイプライン*プログレッシブ*ビデオ ProcAmp コントロール ハードウェアは、色空間の変換を実行できないことはできません、ProcAmp 中にビデオ画像の水平方向にサイズ変更調整操作 (、DXVA によって示される\_VideoProcess\_YUV2RGB と DXVA\_VideoProcess\_StretchX 列挙子に[ **DXVA\_VideoProcessCaps**](https://msdn.microsoft.com/library/windows/hardware/ff564076))、YUV テクスチャはサポートされていません。
+次の図は、処理するために使用 VMR ビデオ パイプライン*プログレッシブ*ビデオ ProcAmp コントロール ハードウェアは、色空間の変換を実行できないことはできません、ProcAmp 中にビデオ画像の水平方向にサイズ変更調整操作 (、DXVA によって示される\_VideoProcess\_YUV2RGB と DXVA\_VideoProcess\_StretchX 列挙子に[ **DXVA\_VideoProcessCaps**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ne-dxva-_dxva_videoprocesscaps))、YUV テクスチャはサポートされていません。
 
 ![色空間の変換を実行できないハードウェアを示す図は、水平方向にサイズ変更できないし、yuv テクスチャをサポートすることはできません。](images/procamp3.png)
 

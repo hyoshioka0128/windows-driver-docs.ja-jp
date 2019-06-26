@@ -4,12 +4,12 @@ description: NDIS QoS トラフィック クラス
 ms.assetid: 0DE61F97-7173-4D91-90F3-20EAFB810251
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e05568cda29e6447344c3251b3786b9dc89abb15
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e1d60685e6bb08405adf399517c441ccf9bdd0c2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378256"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369161"
 ---
 # <a name="ndis-qos-traffic-classes"></a>NDIS QoS トラフィック クラス
 
@@ -30,9 +30,9 @@ NDIS サービスの品質 (QoS) トラフィック クラスは、一連のネ�
 
  
 
-トラフィック クラスのオブジェクト識別子 (OID) メソッドの要求を使用して指定[OID\_QOS\_パラメーター](https://msdn.microsoft.com/library/windows/hardware/hh451835)します。 この OID 要求に含まれる、 [ **NDIS\_QOS\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/hh451640)次の NDIS QoS パラメーターを指定する構造体。
+トラフィック クラスのオブジェクト識別子 (OID) メソッドの要求を使用して指定[OID\_QOS\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-qos-parameters)します。 この OID 要求に含まれる、 [ **NDIS\_QOS\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_qos_parameters)次の NDIS QoS パラメーターを指定する構造体。
 
--   ネットワーク アダプターで構成されるトラフィック クラスの数。 トラフィック クラスごとが 0 の範囲内で値によって識別されます (**NumTrafficClasses**– 1) ここで、 **NumTrafficClasses**のメンバーである、 [ **NDIS\_QOS\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/hh451640)構造体。
+-   ネットワーク アダプターで構成されるトラフィック クラスの数。 トラフィック クラスごとが 0 の範囲内で値によって識別されます (**NumTrafficClasses**– 1) ここで、 **NumTrafficClasses**のメンバーである、 [ **NDIS\_QOS\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_qos_parameters)構造体。
 
     **注**  NDIS 6.30 以降、NDIS QoS、NDIS 最大サポート\_QOS\_最大\_トラフィック\_トラフィック クラスのクラス (8)。 ネットワーク アダプターには、次の 3 つのトラフィック クラスの最小値をサポートする必要があります。
 
@@ -44,7 +44,7 @@ NDIS サービスの品質 (QoS) トラフィック クラスは、一連のネ�
 
 -   ETS TSA を使用するトラフィック クラスごとに割り当てられている送信帯域幅。
 
-OID メソッド要求[OID\_QOS\_パラメーター](https://msdn.microsoft.com/library/windows/hardware/hh451835)もトラフィックの分類を指定します。 これらの分類は、送信パケットと IEEE 802.1p の優先度のレベル間のリレーションシップを定義します。 詳細については、次を参照してください。 [NDIS QoS トラフィックの分類](ndis-qos-traffic-classifications.md)します。
+OID メソッド要求[OID\_QOS\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-qos-parameters)もトラフィックの分類を指定します。 これらの分類は、送信パケットと IEEE 802.1p の優先度のレベル間のリレーションシップを定義します。 詳細については、次を参照してください。 [NDIS QoS トラフィックの分類](ndis-qos-traffic-classifications.md)します。
 
  
 

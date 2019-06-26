@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - WDI_TLV_PHY_TYPE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a01e858bf108c31a29e0cc20cb4613e83b6d6da
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b10b121152df6ab6af989117a322b6928605b9cc
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380072"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380745"
 ---
 # <a name="wditlvphytype"></a>WDI\_TLV\_PHY\_型
 
@@ -33,7 +33,7 @@ Uint32 型のサイズをバイト単位で。
 
 | 型                                                 | 説明   |
 |------------------------------------------------------|---------------|
-| [**WDI\_PHY\_型**](https://msdn.microsoft.com/library/windows/hardware/dn926105) (UINT32) | PHY 型。 |
+| [**WDI\_PHY\_型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_phy_type) (UINT32) | PHY 型。 |
 
  
 

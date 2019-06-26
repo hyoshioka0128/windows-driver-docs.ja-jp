@@ -4,23 +4,23 @@ description: VM のスイッチの確認オプションは、HYPER-V 拡張可�
 ms.assetid: 629C0C70-D6C6-4977-A36B-6BD6EEC14FE8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 09b546a57395c9d861b1244b292024e1532ac38f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cc4e109ef2cc85619259c4ff02f0c7073a45e4c7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380475"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381785"
 ---
 # <a name="vm-switch-verification"></a>VM スイッチ検証
 
 
-VM のスイッチの確認オプションは、フィルター ドライバーを監視します。 (*拡張可能スイッチの拡張機能*) 内で実行される、 [Hyper-v 拡張可能スイッチ](https://msdn.microsoft.com/library/windows/hardware/hh598161)します。 または、送信で発生し、拡張可能スイッチ内の操作を受信するエラーをキャッチするのにには、このオプションを使用します。
+VM のスイッチの確認オプションは、フィルター ドライバーを監視します。 (*拡張可能スイッチの拡張機能*) 内で実行される、 [Hyper-v 拡張可能スイッチ](https://docs.microsoft.com/windows-hardware/drivers/network/hyper-v-extensible-switch)します。 または、送信で発生し、拡張可能スイッチ内の操作を受信するエラーをキャッチするのにには、このオプションを使用します。
 
 **注**  このオプションは、Windows 8.1 以降から使用できます。
 
  
 
-Driver Verifier を発行するときに、このオプションがアクティブで[**バグ チェック 0xC4** ](https://msdn.microsoft.com/library/windows/hardware/ff560187) (ドライバー\_VERIFIER\_検出\_違反) 場合、拡張可能スイッチの拡張機能HYPER-V 拡張可能スイッチ ハンドラー関数を正しく呼び出すには失敗します。
+Driver Verifier を発行するときに、このオプションがアクティブで[**バグ チェック 0xC4** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation) (ドライバー\_VERIFIER\_検出\_違反) 場合、拡張可能スイッチの拡張機能HYPER-V 拡張可能スイッチ ハンドラー関数を正しく呼び出すには失敗します。
 
 ## <a name="span-idactivatingthisoptionspanspan-idactivatingthisoptionspanspan-idactivatingthisoptionspanactivating-this-option"></a><span id="Activating_this_option"></span><span id="activating_this_option"></span><span id="ACTIVATING_THIS_OPTION"></span>このオプションをアクティブ化します。
 

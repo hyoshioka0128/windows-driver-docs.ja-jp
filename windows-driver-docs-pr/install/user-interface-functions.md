@@ -4,12 +4,12 @@ description: ユーザー インターフェイス関数
 ms.assetid: 30ec0628-cac7-46ab-a9f2-c81ca3ad7125
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fc2dcfa9e12430fb9abe737877eba295e440b9ac
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b9934d982dbeab42b29e0b734c5b6e0c937cf869
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339449"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380451"
 ---
 # <a name="user-interface-functions"></a>ユーザー インターフェイス関数
 
@@ -29,11 +29,11 @@ ms.locfileid: "63339449"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff552207" data-raw-source="[&lt;strong&gt;SetupGetNonInteractiveMode&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff552207)"><strong>SetupGetNonInteractiveMode</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupgetnoninteractivemode" data-raw-source="[&lt;strong&gt;SetupGetNonInteractiveMode&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupgetnoninteractivemode)"><strong>SetupGetNonInteractiveMode</strong></a></p></td>
 <td align="left"><p>呼び出し元のプロセスがダイアログ ボックスなどのユーザー インターフェイス コンポーネントでのユーザーと対話できるかどうかを示す SetupAPI 非対話型フラグの値を返します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff552213" data-raw-source="[&lt;strong&gt;SetupSetNonInteractiveMode&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff552213)"><strong>SetupSetNonInteractiveMode</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupsetnoninteractivemode" data-raw-source="[&lt;strong&gt;SetupSetNonInteractiveMode&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupsetnoninteractivemode)"><strong>SetupSetNonInteractiveMode</strong></a></p></td>
 <td align="left"><p>SetupAPI が呼び出し元のコンテキスト内のユーザーと対話できるかどうかを決定する非対話型 SetupAPI フラグを設定します。</p></td>
 </tr>
 </tbody>

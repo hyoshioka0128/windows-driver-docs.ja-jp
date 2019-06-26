@@ -4,12 +4,12 @@ description: グラフィックス ハードウェアのパフォーマンスを
 ms.assetid: 8A2E1392-F0B4-4F5F-AFD9-DE8C6F3C2147
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ec999bf2141e3683cd8cb206f236e6d41f140e64
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f8a984f3052b84b9c5aa5b2787b280151b7c4af2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323808"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379930"
 ---
 # <a name="graphics-kernel-performance-improvements"></a>グラフィックス カーネル パフォーマンスの向上
 
@@ -21,17 +21,17 @@ ms.locfileid: "63323808"
 
 これらの参照トピックでは、ディスプレイのミニポート ドライバーとユーザー モードのディスプレイ ドライバーでこの機能を実装する方法について説明します。
 
--   [*DxgkDdiCalibrateGpuClock*](https://msdn.microsoft.com/library/windows/hardware/dn467321)
--   [*DxgkDdiFormatHistoryBuffer*](https://msdn.microsoft.com/library/windows/hardware/dn439360)
--   [**DXGK\_履歴\_バッファー**](https://msdn.microsoft.com/library/windows/hardware/dn439361)
--   [**DXGK\_履歴\_バッファー\_ヘッダー**](https://msdn.microsoft.com/library/windows/hardware/dn439362)
--   [**DXGKARG\_CALIBRATEGPUCLOCK**](https://msdn.microsoft.com/library/windows/hardware/dn467320)
--   [**DXGKARG\_FORMATHISTORYBUFFER**](https://msdn.microsoft.com/library/windows/hardware/dn439358)
--   [**DXGKARG\_HISTORYBUFFERPRECISION**](https://msdn.microsoft.com/library/windows/hardware/dn439359)
--   [**ドライバー\_初期化\_データ**](https://msdn.microsoft.com/library/windows/hardware/ff556169) (新しい**DxgkDdiCalibrateGpuClock**と**DxgkDdiFormatHistoryBuffer**メンバー)
--   [**DXGK\_ALLOCATIONINFOFLAGS** ](https://msdn.microsoft.com/library/windows/hardware/ff560966) (新しい**HistoryBuffer**メンバー)
--   [**DXGK\_QUERYADAPTERINFOTYPE** ](https://msdn.microsoft.com/library/windows/hardware/ff562010) (新しい**DXGKQAITYPE\_HISTORYBUFFERPRECISION**定数値)
--   [*DxgkDdiCreateAllocation* ](https://msdn.microsoft.com/library/windows/hardware/ff559606) ("「解説」の"履歴バッファーの割り当てを参照してください)
+-   [*DxgkDdiCalibrateGpuClock*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_calibrategpuclock)
+-   [*DxgkDdiFormatHistoryBuffer*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_formathistorybuffer)
+-   [**DXGK\_履歴\_バッファー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_history_buffer)
+-   [**DXGK\_履歴\_バッファー\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_history_buffer_header)
+-   [**DXGKARG\_CALIBRATEGPUCLOCK**](https://docs.microsoft.com/windows-hardware/drivers/display/)
+-   [**DXGKARG\_FORMATHISTORYBUFFER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgkarg_formathistorybuffer)
+-   [**DXGKARG\_HISTORYBUFFERPRECISION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgkarg_historybufferprecision)
+-   [**ドライバー\_初期化\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/ns-dispmprt-_driver_initialization_data) (新しい**DxgkDdiCalibrateGpuClock**と**DxgkDdiFormatHistoryBuffer**メンバー)
+-   [**DXGK\_ALLOCATIONINFOFLAGS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_allocationinfoflags) (新しい**HistoryBuffer**メンバー)
+-   [**DXGK\_QUERYADAPTERINFOTYPE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ne-d3dkmddi-_dxgk_queryadapterinfotype) (新しい**DXGKQAITYPE\_HISTORYBUFFERPRECISION**定数値)
+-   [*DxgkDdiCreateAllocation* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_createallocation) ("「解説」の"履歴バッファーの割り当てを参照してください)
 
  
 

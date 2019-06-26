@@ -9,12 +9,12 @@ keywords:
 - ルーチン WDK ファイル システム ミニフィルターをアンロードします。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f8593d83f89624b486201acbd2b0a2e8bac93483
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3803c30268ba3fe240a32a23e183459db9ec1c95
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63322192"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356328"
 ---
 # <a name="writing-a-filterunloadcallback-routine-for-a-minifilter-driver"></a>ミニフィルター ドライバー用の FilterUnloadCallback ルーチンの記述
 
@@ -22,11 +22,11 @@ ms.locfileid: "63322192"
 ## <span id="ddk_writing_a_filterunloadcallback_routine_for_a_minifilter_driver_if"></span><span id="DDK_WRITING_A_FILTERUNLOADCALLBACK_ROUTINE_FOR_A_MINIFILTER_DRIVER_IF"></span>
 
 
-ファイル システム ミニフィルター ドライバーに登録できます必要に応じて、 [ **PFLT\_フィルター\_アンロード\_コールバック**](https://msdn.microsoft.com/library/windows/hardware/ff551085)-としてミニフィルター ドライバーのルーチンを型指定された*FilterUnloadCallback*ルーチン。 このコールバック ルーチンはミニフィルター ドライバーのとして呼ば*ルーチンをアンロード*します。
+ファイル システム ミニフィルター ドライバーに登録できます必要に応じて、 [ **PFLT\_フィルター\_アンロード\_コールバック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nc-fltkernel-pflt_filter_unload_callback)-としてミニフィルター ドライバーのルーチンを型指定された*FilterUnloadCallback*ルーチン。 このコールバック ルーチンはミニフィルター ドライバーのとして呼ば*ルーチンをアンロード*します。
 
 ミニフィルター ドライバーは、登録する必要はありません、 *FilterUnloadCallback*ルーチン。 ただし、強くお勧めミニフィルター ドライバーがこのコールバック ルーチンを登録するため、ミニフィルター ドライバーが登録していない場合、 *FilterUnloadCallback* 、日常的なドライバーをアンロードできません。
 
-ミニフィルター ドライバーが、PFLT のアドレスを格納するこのコールバック ルーチンを登録する\_フィルター\_アンロード\_のコールバックに型指定されたルーチン、 **FilterUnloadCallback** のメンバー[ **FLT\_登録**](https://msdn.microsoft.com/library/windows/hardware/ff544811)ミニフィルター ドライバーは、パラメーターとして渡される構造[ **FltRegisterFilter** ](https://msdn.microsoft.com/library/windows/hardware/ff544305)でその**DriverEntry**ルーチン。
+ミニフィルター ドライバーが、PFLT のアドレスを格納するこのコールバック ルーチンを登録する\_フィルター\_アンロード\_のコールバックに型指定されたルーチン、 **FilterUnloadCallback** のメンバー[ **FLT\_登録**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_registration)ミニフィルター ドライバーは、パラメーターとして渡される構造[ **FltRegisterFilter** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltregisterfilter)でその**DriverEntry**ルーチン。
 
 このセクションの内容:
 

@@ -9,12 +9,12 @@ keywords:
 - WDK DirectX 8.0 では、上位のサーフェスの状態を表示します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3df0e494a2d1bfd1071c9632aca13f96027da877
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2190b2a4b7c3e7669bc4c6fed81ed0af0507a54f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374594"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380212"
 ---
 # <a name="high-order-surface-render-states"></a>高次サーフェスのレンダー状態
 
@@ -34,7 +34,7 @@ ms.locfileid: "63374594"
 
 ### <a name="span-idd3drsdeletertpatchspanspan-idd3drsdeletertpatchspan-d3drsdeletertpatch"></a><span id="d3drs_deletertpatch"></span><span id="D3DRS_DELETERTPATCH"></span> D3DRS\_DELETERTPATCH
 
-このレンダリング状態では、修正プログラムが削除するのには、ドライバーに通知します。 詳細については、次を参照してください。 [ **D3DRENDERSTATETYPE**](https://msdn.microsoft.com/library/windows/hardware/ff549036)します。
+このレンダリング状態では、修正プログラムが削除するのには、ドライバーに通知します。 詳細については、次を参照してください。 [ **D3DRENDERSTATETYPE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d9types/ne-d3d9types-_d3drenderstatetype)します。
 
  
 

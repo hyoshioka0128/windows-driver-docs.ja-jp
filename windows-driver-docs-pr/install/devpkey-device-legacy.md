@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: f35f1d51f0ce7a92e9663b45680157ef2cee2f8d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cfd560ba0fc661fa803fc40119776b9bf2692e23
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63386296"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378202"
 ---
 # <a name="devpkeydevicelegacy"></a>DEVPKEY_Device_Legacy
 
@@ -58,7 +58,7 @@ DEVPKEY_Device_Legacy デバイス プロパティは、デバイスがデバイ
 
 PnP マネージャーでは、PnP マネージャーがデバイスの非 PnP ドライバーが読み込まれるときに、ルート列挙デバイスとして、デバイスが自動作成された場合に、DEVPROP_TRUE に DEVPKEY_Device_Reported の値を設定します。 それ以外の場合、PnP マネージャーでは、DEVPROP_FALSE にプロパティの値を設定します。
 
-呼び出すことができます[ **SetupDiGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551963) DEVPKEY_Device_Legacy の値を取得します。
+呼び出すことができます[ **SetupDiGetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) DEVPKEY_Device_Legacy の値を取得します。
 
 Windows Server 2003、Windows XP、および Windows 2000 では、このプロパティはサポートされません。
 
@@ -85,7 +85,7 @@ Windows Server 2003、Windows XP、および Windows 2000 では、このプロ�
 ## <a name="see-also"></a>関連項目
 
 
-[**SetupDiGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551963)
+[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
 

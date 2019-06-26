@@ -10,12 +10,12 @@ keywords:
 - MSI X WDK ネットワー キング、RSS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f4b52008ecac2d926e367b7322f09b6e87863bb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 16470ce0747917f85ae9b63f491966e334d22dd8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359768"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382127"
 ---
 # <a name="rss-with-message-signaled-interrupts"></a>メッセージ シグナル割り込みを使用した RSS
 
@@ -44,13 +44,13 @@ ms.locfileid: "63359768"
 
 2.  NIC を追加できる入力バッファーを受信して、いつでも、キューに追加を中断しません、CPU もう一度ミニポート ドライバーは、その CPU の割り込みを有効になるまでです。
 
-3.  NDIS ミニポート ドライバーの ISR の呼び出し ( [ *MiniportInterrupt*](https://msdn.microsoft.com/library/windows/hardware/ff559395)) 現在の CPU にします。
+3.  NDIS ミニポート ドライバーの ISR の呼び出し ( [ *MiniportInterrupt*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_isr)) 現在の CPU にします。
 
 4.  ISR では、現在の CPU の割り込みを無効にし、現在の CPU の DPC キューに入れます。
 
     その他の Cpu で DPC が現在の CPU で実行されているときに、中断が発生することができますも。
 
-5.  NDIS 呼び出し、 [ *MiniportInterruptDPC* ](https://msdn.microsoft.com/library/windows/hardware/ff559398)の DPC キューごとに機能します。 各 DPC:
+5.  NDIS 呼び出し、 [ *MiniportInterruptDPC* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_interrupt_dpc)の DPC キューごとに機能します。 各 DPC:
     1.  ビルドでは、そのキュー内のすべての受信バッファー記述子を受信し、ドライバー スタック上のデータを示します。 詳細については、次を参照してください。 [RSS の受信データのことを示す](indicating-rss-receive-data.md)します。
     2.  現在の CPU の割り込みを有効にします。 この割り込みが完了し、プロセスが再び開始します。 その他の Dpc の進行状況を追跡するためにアトミック操作が必要ないことに注意してください。
 

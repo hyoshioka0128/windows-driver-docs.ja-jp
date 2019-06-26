@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - WDI_TLV_INDICATION_CAN_SUSTAIN_AP ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a6ee8bc2e383aaec6acb653b6dead4e3c06d9ca
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: da7936ed19c50cd27ede5d5ace9878f123d0ec0d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342236"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380787"
 ---
 # <a name="wditlvindicationcansustainap"></a>WDI\_TLV\_INDICATION\_できます\_サステイン\_アジア太平洋
 
@@ -33,7 +33,7 @@ Uint32 型のサイズをバイト単位で。
 
 | 型   | 説明                                                                                                                        |
 |--------|------------------------------------------------------------------------------------------------------------------------------------|
-| UINT32 | 維持 AP のことが理由です。 参照してください[ **WDI\_できます\_サステイン\_AP\_理由**](https://msdn.microsoft.com/library/windows/hardware/dn897797)の考えられる理由の値。 |
+| UINT32 | 維持 AP のことが理由です。 参照してください[ **WDI\_できます\_サステイン\_AP\_理由**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_can_sustain_ap_reason)の考えられる理由の値。 |
 
  
 
@@ -64,7 +64,7 @@ Uint32 型のサイズをバイト単位で。
 ## <a name="see-also"></a>関連項目
 
 
-[NDIS\_STATUS\_WDI\_INDICATION\_CAN\_SUSTAIN\_AP](https://msdn.microsoft.com/library/windows/hardware/dn925570)
+[NDIS\_STATUS\_WDI\_INDICATION\_CAN\_SUSTAIN\_AP](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wdi-indication-can-sustain-ap)
 
  
 

@@ -5,12 +5,12 @@ ms.assetid: D23971FC-D75F-4C39-BE6A-F0E17F7C1804
 ms.date: 08/08/2017
 keywords: -Windows Vista 以降のドライバーをネットワーク SIO_QUERY_WFP_CONNECTION_REDIRECT_CONTEXT 制御コード
 ms.localizationpriority: medium
-ms.openlocfilehash: a8bfb1206a1e16d26f55487b8db5e94ea82f65bb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6cc4bbc74ea66735950224151eb321ee64e1fbc9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370547"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379160"
 ---
 # <a name="sioquerywfpconnectionredirectcontext-control-code"></a>SIO\_クエリ\_WFP\_接続\_リダイレクト\_コンテキスト コントロールのコード
 
@@ -23,9 +23,9 @@ WFP リダイレクト レコードは、WFP が送信プロキシ接続を設�
 
  
 
-リダイレクトの詳細については、次を参照してください。 [Bind を使用して、または接続のリダイレクト](https://msdn.microsoft.com/library/windows/hardware/ff571005)します。
+リダイレクトの詳細については、次を参照してください。 [Bind を使用して、または接続のリダイレクト](https://docs.microsoft.com/windows-hardware/drivers/network/using-bind-or-connect-redirection)します。
 
-Winsock クライアントが呼び出すリダイレクト レコードのリダイレクトのコンテキストを照会、 [ **WskControlSocket** ](https://msdn.microsoft.com/library/windows/hardware/ff571127)関数は次のパラメーター。
+Winsock クライアントが呼び出すリダイレクト レコードのリダイレクトのコンテキストを照会、 [ **WskControlSocket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_control_socket)関数は次のパラメーター。
 
 <table>
 <colgroup>
@@ -82,14 +82,14 @@ Winsock クライアントが呼び出すリダイレクト レコードのリ�
 
 呼び出し元は、次の方法のいずれかでこのクエリを実行できます。
 
--   設定できる、 *OutputBuffer*に大きなサイズで約 1 KB のバッファーします。 出力バッファー サイズが十分でない場合[ **WskControlSocket** ](https://msdn.microsoft.com/library/windows/hardware/ff571127)戻ります**状態\_バッファー\_すぎます\_小さな**と*OutputSizeReturned*必要なバッファーのサイズが含まれます。 大きなバッファーを割り当てられ、 **WskControlSocket**でもう一度呼び出すと、 **SIO\_クエリ\_WFP\_接続\_リダイレクト\_コンテキスト**要求と*OutputBuffer*より大きなバッファーを設定します。
--   設定できますか、 *OutputSize*パラメーターを 0 にし、 *OutputBuffer*に NULL を呼び出して[ **WskControlSocket**](https://msdn.microsoft.com/library/windows/hardware/ff571127)します。 完了すると、 **WskControlSocket**関数での出力バッファーのサイズ (バイト単位) 単位の取得、 *OutputSizeReturned*パラメーター。 適切なサイズのバッファーを割り当てられ、 **WskControlSocket**でもう一度呼び出すと、 **SIO\_クエリ\_WFP\_接続\_リダイレクト\_コンテキスト**要求と*OutputBuffer*バッファーに設定します。
+-   設定できる、 *OutputBuffer*に大きなサイズで約 1 KB のバッファーします。 出力バッファー サイズが十分でない場合[ **WskControlSocket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_control_socket)戻ります**状態\_バッファー\_すぎます\_小さな**と*OutputSizeReturned*必要なバッファーのサイズが含まれます。 大きなバッファーを割り当てられ、 **WskControlSocket**でもう一度呼び出すと、 **SIO\_クエリ\_WFP\_接続\_リダイレクト\_コンテキスト**要求と*OutputBuffer*より大きなバッファーを設定します。
+-   設定できますか、 *OutputSize*パラメーターを 0 にし、 *OutputBuffer*に NULL を呼び出して[ **WskControlSocket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_control_socket)します。 完了すると、 **WskControlSocket**関数での出力バッファーのサイズ (バイト単位) 単位の取得、 *OutputSizeReturned*パラメーター。 適切なサイズのバッファーを割り当てられ、 **WskControlSocket**でもう一度呼び出すと、 **SIO\_クエリ\_WFP\_接続\_リダイレクト\_コンテキスト**要求と*OutputBuffer*バッファーに設定します。
 
-**注**  を使用して、ユーザー モード アプリケーションでこのクエリを実行することも[ **SIO\_クエリ\_WFP\_接続\_リダイレクト\_コンテキスト (SDK)**](https://msdn.microsoft.com/library/windows/desktop/hh859712)します。
+**注**  を使用して、ユーザー モード アプリケーションでこのクエリを実行することも[ **SIO\_クエリ\_WFP\_接続\_リダイレクト\_コンテキスト (SDK)** ](https://docs.microsoft.com/previous-versions/windows/desktop/legacy/hh859712(v=vs.85))します。
 
  
 
-この種の要求では、Winsock クライアントは IRP へのポインターとその完了ルーチンへのポインターを指定する必要があります。 以上のドライバーをクライアントに IRP を渡せるまたは IRP を割り当て、クライアントを選択できます。 完了ルーチンを指定する、クライアントが呼び出す必要があります[ **IoSetCompletionRoutine**](https://msdn.microsoft.com/library/windows/hardware/ff549679)します。 詳細については、次を参照してください。 [Winsock カーネル関数を使用して Irp](https://msdn.microsoft.com/library/windows/hardware/ff571006)します。
+この種の要求では、Winsock クライアントは IRP へのポインターとその完了ルーチンへのポインターを指定する必要があります。 以上のドライバーをクライアントに IRP を渡せるまたは IRP を割り当て、クライアントを選択できます。 完了ルーチンを指定する、クライアントが呼び出す必要があります[ **IoSetCompletionRoutine**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iosetcompletionroutine)します。 詳細については、次を参照してください。 [Winsock カーネル関数を使用して Irp](https://docs.microsoft.com/windows-hardware/drivers/network/using-irps-with-winsock-kernel-functions)します。
 
 Winsock クライアント WSK サブシステムによって IRP が完了するまで、割り当てられたバッファーを解放する必要があります。 WSK サブシステムには、IRP が完了すると、完了ルーチンを呼び出すことによって、クライアントを通知します。 WSK サブシステムによってそのバッファーへの参照がクライアントに渡される、*コンテキスト*完了ルーチンのパラメーター。 バッファーのサイズが格納されている*Irp -&gt;IoStatus.Information*します。
 
@@ -126,13 +126,13 @@ Winsock クライアント WSK サブシステムによって IRP が完了す�
 ## <a name="see-also"></a>関連項目
 
 
-[Bind を使用して、またはリダイレクトの接続](https://msdn.microsoft.com/library/windows/hardware/ff571005)
+[Bind を使用して、またはリダイレクトの接続](https://docs.microsoft.com/windows-hardware/drivers/network/using-bind-or-connect-redirection)
 
-[Winsock カーネル関数での Irp の使用](https://msdn.microsoft.com/library/windows/hardware/ff571006)
+[Winsock カーネル関数での Irp の使用](https://docs.microsoft.com/windows-hardware/drivers/network/using-irps-with-winsock-kernel-functions)
 
 [**SIO\_クエリ\_WFP\_接続\_リダイレクト\_レコード**](sio-query-wfp-connection-redirect-records.md)
 
-[**SIO\_クエリ\_WFP\_接続\_リダイレクト\_コンテキスト (SDK)**](https://msdn.microsoft.com/library/windows/desktop/hh859712)
+[**SIO\_クエリ\_WFP\_接続\_リダイレクト\_コンテキスト (SDK)** ](https://docs.microsoft.com/previous-versions/windows/desktop/legacy/hh859712(v=vs.85))
 
  
 

@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - WDI_TLV_P2P_SERVICE_TYPE_HASH ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: f7d917821f5f4a01ac3903a48bb4d337820cd188
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8308a82a3c4298b04a5f067ecb3b03d84187bf07
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375640"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355422"
 ---
 # <a name="wditlvp2pservicetypehash"></a>WDI\_TLV\_P2P\_サービス\_型\_ハッシュ
 
@@ -30,18 +30,18 @@ WDI\_TLV\_P2P\_サービス\_型\_ハッシュは、サービスの種類のハ�
 ## <a name="length"></a>長さ
 
 
-サイズ (バイト単位) で、 [ **WDI\_P2P\_サービス\_名前\_ハッシュ**](https://msdn.microsoft.com/library/windows/hardware/dn926103)構造体。
+サイズ (バイト単位) で、 [ **WDI\_P2P\_サービス\_名前\_ハッシュ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ns-dot11wdi-_wdi_p2p_service_name_hash)構造体。
 
 ## <a name="values"></a>値
 
 
 | 型                                                                    | 説明               |
 |-------------------------------------------------------------------------|---------------------------|
-| [**WDI\_P2P\_サービス\_名前\_ハッシュ**](https://msdn.microsoft.com/library/windows/hardware/dn926103) | サービスの種類のハッシュです。 |
+| [**WDI\_P2P\_サービス\_名前\_ハッシュ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ns-dot11wdi-_wdi_p2p_service_name_hash) | サービスの種類のハッシュです。 |
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

@@ -7,17 +7,17 @@ keywords:
 - 現在のタスクは、WDK TCP/IP offload の設定を読み込む
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: db3edc57ecb3bdd3520be9908f3a65c76a5579cc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6bff5404a9a681c31675a417560fd5e94fe965aa
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364205"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381409"
 ---
 # <a name="determining-the-current-task-offload-settings"></a>現在のタスク オフロード設定の判断
 
 
-プロトコル ドライバーは、発行することによって、基になるミニポート アダプターの現在のタスク オフロードのカプセル化の設定を確認できます、 [OID\_オフロード\_カプセル化](https://msdn.microsoft.com/library/windows/hardware/ff569762)OID クエリ要求。
+プロトコル ドライバーは、発行することによって、基になるミニポート アダプターの現在のタスク オフロードのカプセル化の設定を確認できます、 [OID\_オフロード\_カプセル化](https://docs.microsoft.com/windows-hardware/drivers/network/oid-offload-encapsulation)OID クエリ要求。
 
 
 

@@ -3,12 +3,12 @@ Description: このトピックの「How to」のトピックでは、USB ドラ
 title: USB クライアント ドライバーに関する一般的なタスク
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 83eed89b45058d5723f14319f96b5f031ea7dd36
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8ae8bf2cd77c58138cda95df8ef448e50f0ca2fb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389195"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356549"
 ---
 # <a name="common-tasks-for-usb-client-drivers"></a>USB クライアント ドライバーに関する一般的なタスク
 
@@ -101,7 +101,7 @@ ms.locfileid: "63389195"
  
 
 ## <a name="related-topics"></a>関連トピック
-[ユニバーサル シリアル バス (USB) ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff538930)  
+[ユニバーサル シリアル バス (USB) ドライバー](https://docs.microsoft.com/windows-hardware/drivers/)  
 
 
 

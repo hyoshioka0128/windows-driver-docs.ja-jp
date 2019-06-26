@@ -4,12 +4,12 @@ description: サンプル ドライバーをインストールして ADXL345 加
 ms.assetid: A67EBD9C-9C5A-49D3-9205-37FC4396DF56
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4933140d66f1aa5a7d8f9b0ce89d384aa87e808c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: be6def79b02e6ae72d48ef8908dbfdfb537d25b5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345247"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377939"
 ---
 # <a name="install-the-sample-device-and-driver-on-your-sharks-cove-board"></a>サメ Cove ボード上のサンプル デバイスとドライバーをインストールします。
 
@@ -19,7 +19,7 @@ ms.locfileid: "63345247"
 ## <a name="install-windows-on-the-sharks-cove-board"></a>Sharks Cove ボードに Windows をインストールする
 
 
-サメ Cove ボードを取得する方法と、ボード上で Windows をインストールする方法については、次を参照してください。[サメ Cove ハードウェア開発ボード](https://msdn.microsoft.com/library/windows/hardware/dn745910)と[SharksCove.org](https://go.microsoft.com/fwlink/p/?linkid=403167)します。
+サメ Cove ボードを取得する方法と、ボード上で Windows をインストールする方法については、次を参照してください。[サメ Cove ハードウェア開発ボード](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/sharks-cove-hardware-development-board)と[SharksCove.org](https://go.microsoft.com/fwlink/p/?linkid=403167)します。
 
 ## <a name="modify-the-adxl345-to-work-with-the-sharks-cove"></a>サメ Cove を使用する ADXL345 を変更します。
 
@@ -44,7 +44,7 @@ J1C1 ヘッダー ピン次に示すように ADXL345 ピンを接続します�
 
 ドライバー開発環境には、*ホスト コンピューター*と*ターゲット コンピューター*という、2 台のコンピューターがあります。 ターゲット コンピューターは*テスト コンピューター*とも呼ばれます。 ドライバーの開発とビルドは、ホスト コンピューター上の Microsoft Visual Studio で行います。 デバッガーはホスト コンピューター上で実行され、Visual Studio のユーザー インターフェイスで利用できます。 ドライバーのテストとデバッグを行うときは、ドライバーをターゲット コンピューター上で実行します。 この場合、Sharks Cove ボードがターゲット コンピューターになります。
 
-ホスト コンピューターにインストール キットとツール」の説明に従って[サメ Cove ハードウェア開発ボード](https://msdn.microsoft.com/library/windows/hardware/dn745910)します。
+ホスト コンピューターにインストール キットとツール」の説明に従って[サメ Cove ハードウェア開発ボード](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/sharks-cove-hardware-development-board)します。
 
 ## <a name="download-and-extract-the-spbaccelerometer-sample"></a>ダウンロードし、抽出 SpbAccelerometer サンプル
 
@@ -59,7 +59,7 @@ J1C1 ヘッダー ピン次に示すように ADXL345 ピンを接続します�
 ## <a name="set-the-configuration-and-platform-in-visual-studio"></a>Visual Studio での構成とプラットフォームを設定します。
 
 
-ソリューション エクスプ ローラーで、Visual Studio で右クリックして**ソリューション 'SpbAccelerometer' (2 プロジェクト)**、選択**Configuration Manager**します。 構成とプラットフォームを設定します。 確認します構成**Win8.1 デバッグ**、プラットフォームを設定して**Win32**します。 このドライバーのプロジェクトとパッケージのプロジェクトの両方に対して行います。 オンにしないでください、**デプロイ**ボックス。
+ソリューション エクスプ ローラーで、Visual Studio で右クリックして**ソリューション 'SpbAccelerometer' (2 プロジェクト)** 、選択**Configuration Manager**します。 構成とプラットフォームを設定します。 確認します構成**Win8.1 デバッグ**、プラットフォームを設定して**Win32**します。 このドライバーのプロジェクトとパッケージのプロジェクトの両方に対して行います。 オンにしないでください、**デプロイ**ボックス。
 
 ## <a name="build-the-sample-using-visual-studio"></a>Visual Studio を使用してサンプルをビルドします。
 

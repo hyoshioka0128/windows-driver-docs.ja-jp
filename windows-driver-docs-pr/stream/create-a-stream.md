@@ -8,12 +8,12 @@ keywords:
 - C/WDK AV ストリーミングのコンテキスト
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e465d05ce37b2c9e15efe02d589a04983eae3d8a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 88034e603e687d16be8ddf832c2272e7968c8b44
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374172"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378392"
 ---
 # <a name="create-a-stream"></a>ストリームの作成
 
@@ -23,7 +23,7 @@ ms.locfileid: "63374172"
 
 AV/C ストリーミング フィルター ドライバーで、前にデータのストリーム コンテキストを作成する必要があります*Avcstrm.sys*サービスを提供することができます。 コンテキストは、要求されたデータ形式、データ ストリームの状態、およびストリームの拡張機能のようなプロパティを含む非透過構造体を指します。 データ形式の構造とデータ フローの方向は、その入力パラメーターが。 ストリームを正常に作成できる場合は、ストリーム コンテキストを返します。 このコンテキストでは、サブユニット ドライバーによってキャッシュされ、AV/C ストリーミングの後続の要求のために使用します。
 
-これは、同期操作です。 操作は、最初のストリームを開くストリーム要求の構造を作成します。 ユーザー定義 IRP 同期ルーチンを呼び出す特定のデータ フローの方向とで定義されているデータ形式に基づいているデータ ストリームを作成する下位のドライバーを呼び出して[ **AVCSTRM\_形式\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff554117). 次のコード サンプルでは、データのストリーム コンテキストを開く方法を示します。
+これは、同期操作です。 操作は、最初のストリームを開くストリーム要求の構造を作成します。 ユーザー定義 IRP 同期ルーチンを呼び出す特定のデータ フローの方向とで定義されているデータ形式に基づいているデータ ストリームを作成する下位のドライバーを呼び出して[ **AVCSTRM\_形式\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avcstrm/ns-avcstrm-_avcstrm_format_info). 次のコード サンプルでは、データのストリーム コンテキストを開く方法を示します。
 
 ```cpp
 #include <avcstrm.h>

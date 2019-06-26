@@ -11,27 +11,27 @@ keywords:
 - NmrDeregisterProvider
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6852d48f426a1c09c124eb1d510dc694e9ef3a51
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9f2ae1a5132676debf2375550470c8a339b0c14d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364233"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381430"
 ---
 # <a name="detaching-a-provider-module-from-a-client-module"></a>クライアント モジュールからのプロバイダー モジュールのデタッチ
 
 
-ときにプロバイダー モジュールの登録を解除ネットワーク モジュール レジストラー (NMR) を呼び出すことによって、 [ **NmrDeregisterProvider** ](https://msdn.microsoft.com/library/windows/hardware/ff568778)関数の場合、NMR 呼び出し、プロバイダー モジュールの[ *ProviderDetachClient* ](https://msdn.microsoft.com/library/windows/hardware/ff570397)それがアタッチされている、プロバイダー モジュールでデタッチ自体からすべてのクライアントのモジュール プロバイダー モジュールのパーツ 's プロセス登録の解除できるようにクライアント モジュールごとに 1 回のコールバック関数.
+ときにプロバイダー モジュールの登録を解除ネットワーク モジュール レジストラー (NMR) を呼び出すことによって、 [ **NmrDeregisterProvider** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netioddk/nf-netioddk-nmrderegisterprovider)関数の場合、NMR 呼び出し、プロバイダー モジュールの[ *ProviderDetachClient* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netioddk/nc-netioddk-npi_provider_detach_client_fn)それがアタッチされている、プロバイダー モジュールでデタッチ自体からすべてのクライアントのモジュール プロバイダー モジュールのパーツ 's プロセス登録の解除できるようにクライアント モジュールごとに 1 回のコールバック関数.
 
-さらに、クライアント モジュールをされるたびに、プロバイダー モジュールが接続されている登録を解除します、NMR で呼び出すことによって、 [ **NmrDeregisterClient** ](https://msdn.microsoft.com/library/windows/hardware/ff568774)関数の場合、NMR もプロバイダー モジュールの呼び出し[*ProviderDetachClient* ](https://msdn.microsoft.com/library/windows/hardware/ff570397)コールバック関数、プロバイダー モジュールからデタッチできます自体クライアント モジュール クライアント モジュールのパーツ 's プロセス登録の解除できるようにします。
+さらに、クライアント モジュールをされるたびに、プロバイダー モジュールが接続されている登録を解除します、NMR で呼び出すことによって、 [ **NmrDeregisterClient** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netioddk/nf-netioddk-nmrderegisterclient)関数の場合、NMR もプロバイダー モジュールの呼び出し[*ProviderDetachClient* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netioddk/nc-netioddk-npi_provider_detach_client_fn)コールバック関数、プロバイダー モジュールからデタッチできます自体クライアント モジュール クライアント モジュールのパーツ 's プロセス登録の解除できるようにします。
 
-後にその[ *ProviderDetachClient* ](https://msdn.microsoft.com/library/windows/hardware/ff570397)コールバック関数が呼び出された、呼び出しのクライアント モジュールのいずれかにする必要がありますいないことをプロバイダー モジュール[ネットワーク プログラミング インターフェイス (NPI)](network-programming-interface.md)コールバック関数。 クライアント モジュールの NPI コールバック関数のいずれかに進行中の呼び出しがない場合と、プロバイダー モジュールの*ProviderDetachClient*コールバック関数が呼び出されると、次に、 *ProviderDetachClient*コールバック関数は、状態を返す必要があります\_成功します。
+後にその[ *ProviderDetachClient* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netioddk/nc-netioddk-npi_provider_detach_client_fn)コールバック関数が呼び出された、呼び出しのクライアント モジュールのいずれかにする必要がありますいないことをプロバイダー モジュール[ネットワーク プログラミング インターフェイス (NPI)](network-programming-interface.md)コールバック関数。 クライアント モジュールの NPI コールバック関数のいずれかに進行中の呼び出しがない場合と、プロバイダー モジュールの*ProviderDetachClient*コールバック関数が呼び出されると、次に、 *ProviderDetachClient*コールバック関数は、状態を返す必要があります\_成功します。
 
-モジュールの NPI コールバック関数を 1 つ以上のクライアントの進行中の呼び出しがある場合と、プロバイダー モジュールの[ *ProviderDetachClient* ](https://msdn.microsoft.com/library/windows/hardware/ff570397)コールバック関数が呼び出された、 *ProviderDetachClient*コールバック関数は、状態を返す必要があります\_保留します。 この場合、プロバイダー モジュールを呼び出す必要があります、 [ **NmrProviderDetachClientComplete** ](https://msdn.microsoft.com/library/windows/hardware/ff568781)クライアント モジュールの NPI コールバック関数へのすべての実行中の呼び出しが完了した後も機能します。 呼び出し**NmrProviderDetachClientComplete** NMR プロバイダー モジュール クライアント モジュールからのデタッチが完了したことを通知します。
+モジュールの NPI コールバック関数を 1 つ以上のクライアントの進行中の呼び出しがある場合と、プロバイダー モジュールの[ *ProviderDetachClient* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netioddk/nc-netioddk-npi_provider_detach_client_fn)コールバック関数が呼び出された、 *ProviderDetachClient*コールバック関数は、状態を返す必要があります\_保留します。 この場合、プロバイダー モジュールを呼び出す必要があります、 [ **NmrProviderDetachClientComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netioddk/nf-netioddk-nmrproviderdetachclientcomplete)クライアント モジュールの NPI コールバック関数へのすべての実行中の呼び出しが完了した後も機能します。 呼び出し**NmrProviderDetachClientComplete** NMR プロバイダー モジュール クライアント モジュールからのデタッチが完了したことを通知します。
 
 クライアント モジュールの NPI コールバック関数の実行中の呼び出しの数を追跡する方法の詳細については、次を参照してください。[プログラミングに関する考慮事項](programming-considerations.md)します。
 
-プロバイダーのモジュールを実装する場合、 [ *ProviderCleanupBindingContext* ](https://msdn.microsoft.com/library/windows/hardware/ff570396)コールバック関数、NMR 呼び出し、プロバイダー モジュールの*ProviderCleanupBindingContext*プロバイダー モジュールおよびクライアント モジュールの両方がお互いからのデタッチを完了してからのコールバック関数。 プロバイダー モジュールの*ProviderCleanupBindingContext*コールバック関数は、プロバイダー モジュールのバインド コンテキストの構造体に含まれるデータのために必要なクリーンアップを実行する必要があります。 バインド コンテキストの構造体のメモリは、プロバイダー モジュールは、構造のメモリを動的に割り当てられる場合そのに解放する必要があります。
+プロバイダーのモジュールを実装する場合、 [ *ProviderCleanupBindingContext* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netioddk/nc-netioddk-npi_provider_cleanup_binding_context_fn)コールバック関数、NMR 呼び出し、プロバイダー モジュールの*ProviderCleanupBindingContext*プロバイダー モジュールおよびクライアント モジュールの両方がお互いからのデタッチを完了してからのコールバック関数。 プロバイダー モジュールの*ProviderCleanupBindingContext*コールバック関数は、プロバイダー モジュールのバインド コンテキストの構造体に含まれるデータのために必要なクリーンアップを実行する必要があります。 バインド コンテキストの構造体のメモリは、プロバイダー モジュールは、構造のメモリを動的に割り当てられる場合そのに解放する必要があります。
 
 例:
 

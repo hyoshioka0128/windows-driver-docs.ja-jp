@@ -10,12 +10,12 @@ keywords:
 - ドライバーのテストの WDK プリンターのインストール
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fb2aa1e52965d9c2e243c45f76e3925e5645c6a6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f68f26fd3eb90a95d637e3eb69612905e2d4724e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365349"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377542"
 ---
 # <a name="device-installation"></a>デバイスのインストール
 
@@ -51,7 +51,7 @@ ms.locfileid: "63365349"
 
  
 
-詳細については、次を参照してください。[システム電源の状態](https://msdn.microsoft.com/library/windows/hardware/ff564571)WDK ドキュメントと[システム電源の状態](https://go.microsoft.com/fwlink/p/?linkid=51899)、Microsoft Windows SDK ドキュメント。
+詳細については、次を参照してください。[システム電源の状態](https://docs.microsoft.com/windows-hardware/drivers/kernel/system-power-states)WDK ドキュメントと[システム電源の状態](https://go.microsoft.com/fwlink/p/?linkid=51899)、Microsoft Windows SDK ドキュメント。
 
 デバイスの最初のインストールが発生する最も一般的なシステム電源の状態は、システムの操作状態の S0 です。 デバイス インストールのテストのほとんどは、ここでは、最初に注目する必要がありますが、その他のシステムの電力状態に対しても中にインストールを確認する重要です。
 

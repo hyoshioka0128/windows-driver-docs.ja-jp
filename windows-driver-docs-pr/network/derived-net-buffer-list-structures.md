@@ -10,12 +10,12 @@ keywords:
 - 構造体の派生 WDK ネットワーク
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 22822826e647c5ba9e541eecfbc802a57c203dae
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 410a584a46ac704fe6cd43c8ed7ccfc26417e689
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347432"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381458"
 ---
 # <a name="derived-netbufferlist-structures"></a>NET の派生\_バッファー\_リストの構造体
 
@@ -23,23 +23,23 @@ ms.locfileid: "63347432"
 
 
 
-NDIS ドライバーを使用して管理する機能を提供する[ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)構造体の他の NET から派生した\_バッファー\_リストの構造体。 これらの関数は通常、中間ドライバーによって使用されます。
+NDIS ドライバーを使用して管理する機能を提供する[ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)構造体の他の NET から派生した\_バッファー\_リストの構造体。 これらの関数は通常、中間ドライバーによって使用されます。
 
 次の NDIS 関数が派生 NET を作成できます\_バッファー\_リスト構造既存の NET から\_バッファー\_リスト構造。
 
-[**NdisAllocateCloneNetBufferList**](https://msdn.microsoft.com/library/windows/hardware/ff560705)
+[**NdisAllocateCloneNetBufferList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisallocateclonenetbufferlist)
 
-[**NdisAllocateFragmentNetBufferList**](https://msdn.microsoft.com/library/windows/hardware/ff560707)
+[**NdisAllocateFragmentNetBufferList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisallocatefragmentnetbufferlist)
 
-[**NdisAllocateReassembledNetBufferList**](https://msdn.microsoft.com/library/windows/hardware/ff561614)
+[**NdisAllocateReassembledNetBufferList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisallocatereassemblednetbufferlist)
 
-これらの関数では、NDIS は、ネットワーク データをコピーせず、派生の構造を作成するため、システム パフォーマンスが向上します。 3 つの種類があります[ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)既存の NET から派生できる構造\_バッファー\_リスト構造。
+これらの関数では、NDIS は、ネットワーク データをコピーせず、派生の構造を作成するため、システム パフォーマンスが向上します。 3 つの種類があります[ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)既存の NET から派生できる構造\_バッファー\_リスト構造。
 
 <a href="" id="clone"></a>複製  
 A 複製 NET\_バッファー\_リスト構造は、元のデータを参照する重複しています。 ドライバーは、構造体のこの型を使用して、複数のパスを同じデータを効率的に転送します。
 
 <a href="" id="fragment"></a>フラグメント  
-フラグメント[ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)構造体にはセットが含まれています[ **NET\_バッファー** ](https://msdn.microsoft.com/library/windows/hardware/ff568376)、元のデータを参照している構造体ただし、データは、最大サイズを超えないを単位に分割されます。 ドライバーは、大きなバッファー サイズより小さなバッファーを効率的に分割するこの種類の構造体を使用できます。
+フラグメント[ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)構造体にはセットが含まれています[ **NET\_バッファー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)、元のデータを参照している構造体ただし、データは、最大サイズを超えないを単位に分割されます。 ドライバーは、大きなバッファー サイズより小さなバッファーを効率的に分割するこの種類の構造体を使用できます。
 
 <a href="" id="reassembled"></a>再構築  
 再構築された NET\_バッファー\_リスト構造体には、NET が含まれています\_NET の複数のソースから、元のデータを参照するバッファー構造\_バッファーの構造体。 ドライバーでは、この種類の構造体を使用して、1 つの大きなバッファーに多くの小さなバッファーを効率的に結合します。

@@ -4,12 +4,12 @@ description: モバイル ブロードバンド アプリで請求ページを�
 ms.assetid: 44c5a273-1dd4-4ff5-90aa-9d1f4f855439
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2abd40354ef9dd74f550d750593324007ca59070
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d9dd3cd0f252241bd895de3e3f5eec335941d4d6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383788"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379439"
 ---
 # <a name="design-billing-pages-in-a-mobile-broadband-app"></a>モバイル ブロードバンド アプリで請求ページを設計する
 
@@ -48,17 +48,17 @@ ms.locfileid: "63383788"
 ## <a name="span-idadditionalresourcesspanspan-idadditionalresourcesspanspan-idadditionalresourcesspanadditional-resources"></a><span id="Additional_resources"></span><span id="additional_resources"></span><span id="ADDITIONAL_RESOURCES"></span>その他のリソース
 
 
--   ビューとレイアウトの詳細については: を参照してください[レイアウトの選択](https://msdn.microsoft.com/library/windows/apps/hh465327)します。
+-   ビューとレイアウトの詳細については: を参照してください[レイアウトの選択](https://docs.microsoft.com/previous-versions/windows/apps/hh465327(v=win.10))します。
 
--   Listview の詳細については、次を参照してください。[クイック スタート。ListView を追加する](https://msdn.microsoft.com/library/windows/apps/hh465496)します。
+-   Listview の詳細については、次を参照してください。[クイック スタート。ListView を追加する](https://docs.microsoft.com/previous-versions/windows/apps/hh465496(v=win.10))します。
 
--   エラー処理の設計ガイダンスについては、次を参照してください。 [、UI レイアウト](https://msdn.microsoft.com/library/windows/apps/hh465304)します。
+-   エラー処理の設計ガイダンスについては、次を参照してください。 [、UI レイアウト](https://docs.microsoft.com/previous-versions/windows/apps/hh465304(v=win.10))します。
 
--   ユーザー補助のガイダンスについては、次を参照してください。 [、C++ を使用して UWP アプリのユーザー補助機能C#、または Visual Basic](https://msdn.microsoft.com/library/windows/apps/hh452680)します。
+-   ユーザー補助のガイダンスについては、次を参照してください。 [、C++ を使用して UWP アプリのユーザー補助機能C#、または Visual Basic](https://docs.microsoft.com/previous-versions/windows/apps/hh452680(v=win.10))します。
 
--   組み込みのコントロールを使用する方法の詳細については、次を参照してください。[コントロールやコンテンツを追加する](https://msdn.microsoft.com/library/windows/apps/hh465393)します。
+-   組み込みのコントロールを使用する方法の詳細については、次を参照してください。[コントロールやコンテンツを追加する](https://docs.microsoft.com/previous-versions/windows/apps/hh465393(v=win.10))します。
 
--   タッチ入力のガイドラインについては、次を参照してください。[クイック スタート。タッチ入力](https://msdn.microsoft.com/library/windows/apps/xaml/hh465387)します。
+-   タッチ入力のガイドラインについては、次を参照してください。[クイック スタート。タッチ入力](https://docs.microsoft.com/previous-versions/windows/apps/hh465387(v=win.10))します。
 
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 

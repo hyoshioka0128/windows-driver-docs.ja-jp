@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - WDI_TLV_INDICATION_WAKE_PACKET_PATTERN_ID ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 35d662515dd2449077a176e92919b00104386a49
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e855f9b62f86c11f6c2e3d923891950313b98c4d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354568"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380774"
 ---
 # <a name="wditlvindicationwakepacketpatternid"></a>WDI\_TLV\_INDICATION\_WAKE\_パケット\_パターン\_ID
 
@@ -33,7 +33,7 @@ Uint32 型のサイズをバイト単位で。
 
 | 型   | 説明                                                                                                                                                                    |
 |--------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| UINT32 | ウェイク アップ パケットに一致するパターンの ID。 使用パターンが追加されたときに、ID が定義されて[OID\_WDI\_設定\_追加\_WOL\_パターン](https://msdn.microsoft.com/library/windows/hardware/dn925858)します。 |
+| UINT32 | ウェイク アップ パケットに一致するパターンの ID。 使用パターンが追加されたときに、ID が定義されて[OID\_WDI\_設定\_追加\_WOL\_パターン](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-set-add-wol-pattern)します。 |
 
  
 

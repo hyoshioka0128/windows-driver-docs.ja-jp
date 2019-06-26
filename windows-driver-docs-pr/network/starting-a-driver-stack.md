@@ -7,12 +7,12 @@ keywords:
 - 開始ドライバー スタックの WDK ネットワー キング
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e087559610200cb3b95cc807df2ee0f57a0d9b03
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 37d75c5675fc16e9bcbe390538346cd5e0aa8e71
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390652"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377566"
 ---
 # <a name="starting-a-driver-stack"></a>ドライバー スタックの起動
 
@@ -36,21 +36,21 @@ ms.locfileid: "63390652"
 
 3.  システムでは、NDIS ミニポート アダプタの開始を要求します。
 
-    NDIS ミニポート アダプターを初期化するために、ミニポート ドライバーが呼び出す[ *MiniportInitializeEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559389)関数。 場合*MiniportInitializeEx*が成功すると、ミニポート アダプターが一時停止状態です。
+    NDIS ミニポート アダプターを初期化するために、ミニポート ドライバーが呼び出す[ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)関数。 場合*MiniportInitializeEx*が成功すると、ミニポート アダプターが一時停止状態です。
 
 4.  NDIS は、以降では、ミニポート ドライバーに最も近いモジュールとドライバー スタックの先頭に進行して、フィルター モジュールをアタッチします。
 
-    NDIS フィルター ドライバーの呼び出しはドライバー スタックにフィルター モジュールをアタッチするドライバーを要求する[ *FilterAttach* ](https://msdn.microsoft.com/library/windows/hardware/ff549905)関数。 各アタッチ操作が成功すると、フィルター モジュールは、一時停止状態になります。
+    NDIS フィルター ドライバーの呼び出しはドライバー スタックにフィルター モジュールをアタッチするドライバーを要求する[ *FilterAttach* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_attach)関数。 各アタッチ操作が成功すると、フィルター モジュールは、一時停止状態になります。
 
-5.  基になるすべてのドライバーは、一時停止状態では、NDIS 呼び出してプロトコル ドライバーの[ *ProtocolBindAdapterEx* ](https://msdn.microsoft.com/library/windows/hardware/ff570220)関数。
+5.  基になるすべてのドライバーは、一時停止状態では、NDIS 呼び出してプロトコル ドライバーの[ *ProtocolBindAdapterEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_bind_adapter_ex)関数。
 
-    ドライバーのプロトコル バインド Opening 状態に遷移します。 プロトコル ドライバーの呼び出し、 [ **NdisOpenAdapterEx** ](https://msdn.microsoft.com/library/windows/hardware/ff563715)ミニポート アダプターを使用したバインディングを開きます。
+    ドライバーのプロトコル バインド Opening 状態に遷移します。 プロトコル ドライバーの呼び出し、 [ **NdisOpenAdapterEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisopenadapterex)ミニポート アダプターを使用したバインディングを開きます。
 
-6.  バインディングのために必要なリソースの割り当ての NDIS および呼び出しプロトコル ドライバーの[ *ProtocolOpenAdapterCompleteEx* ](https://msdn.microsoft.com/library/windows/hardware/ff570265)関数。
+6.  バインディングのために必要なリソースの割り当ての NDIS および呼び出しプロトコル ドライバーの[ *ProtocolOpenAdapterCompleteEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_open_adapter_complete_ex)関数。
 
     バインディングは、一時停止状態になります。
 
-7.  プロトコル ドライバーの呼び出し、バインド操作を完了する、 [ **NdisCompleteBindAdapterEx** ](https://msdn.microsoft.com/library/windows/hardware/ff561702)関数。
+7.  プロトコル ドライバーの呼び出し、バインド操作を完了する、 [ **NdisCompleteBindAdapterEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscompletebindadapterex)関数。
 
 8.  NDIS は、ドライバー スタックを再起動します。 ドライバー スタックの再起動に関する詳細については、次を参照してください。[ドライバー スタックの再起動](restarting-a-driver-stack.md)します。
 

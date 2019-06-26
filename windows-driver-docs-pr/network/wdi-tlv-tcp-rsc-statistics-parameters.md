@@ -6,17 +6,17 @@ ms.date: 07/18/2017
 keywords:
 - WDI_TLV_TCP_RSC_STATISTICS_PARAMETERS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 26b1b9fa0f06a91546f308e077937cdd8fa4eca0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 147486c45267020bcd549342ded78abd075efef6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366632"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67357320"
 ---
 # <a name="wditlvtcprscstatisticsparameters"></a>WDI\_TLV\_TCP\_RSC\_統計\_パラメーター
 
 
-WDI\_TLV\_TCP\_RSC\_統計\_パラメーターがの TCP RSC の統計情報を含む TLV [OID\_WDI\_TCP\_RSC\_統計](https://msdn.microsoft.com/library/windows/hardware/dn925966)します。
+WDI\_TLV\_TCP\_RSC\_統計\_パラメーターがの TCP RSC の統計情報を含む TLV [OID\_WDI\_TCP\_RSC\_統計](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-tcp-rsc-statistics)します。
 
 ## <a name="tlv-type"></a>TLV 型
 
@@ -40,7 +40,7 @@ WDI\_TLV\_TCP\_RSC\_統計\_パラメーターがの TCP RSC の統計情報を�
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

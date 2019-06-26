@@ -14,16 +14,16 @@ keywords:
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
-ms.openlocfilehash: 92475ad722fdf15ade9ae5c8fd09382db2f5ecf7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 675bd8b33c161d4afb39f0de2a0f5e17d6a4a96d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383274"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380165"
 ---
 # <a name="reporting-directdraw-capabilities-for-nonlocal-display-memory"></a>非ローカルの表示メモリに対する DirectDraw 機能のレポート
 
-DMA モデルのドライバーでは、ローカルの表示メモリよりもメモリを非表示の別の機能があります。 たとえば、ディスプレイ カードが blit ローカル メモリいますが、表示しない非ローカル メモリ サーフェスを拡張することがあります。 場合、ドライバー、DDCAPS2\_サーフェイスに表示が非ローカル メモリの DirectDraw 機能の NONLOCALVIDMEMCAPS フラグ、ドライバーが検出された、 [ **DdGetDriverInfo** ](https://msdn.microsoft.com/library/windows/hardware/ff549404)ドライバーエントリ ポイントです。 このプローブを識別する GUID が GUID\_NonLocalVidMemCaps します。
+DMA モデルのドライバーでは、ローカルの表示メモリよりもメモリを非表示の別の機能があります。 たとえば、ディスプレイ カードが blit ローカル メモリいますが、表示しない非ローカル メモリ サーフェスを拡張することがあります。 場合、ドライバー、DDCAPS2\_サーフェイスに表示が非ローカル メモリの DirectDraw 機能の NONLOCALVIDMEMCAPS フラグ、ドライバーが検出された、 [ **DdGetDriverInfo** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_getdriverinfo)ドライバーエントリ ポイントです。 このプローブを識別する GUID が GUID\_NonLocalVidMemCaps します。
 
 DirectDraw のこのリリースでは、ドライバーのみ機能を指定して blt の非ローカルの表示メモリから表示のローカル メモリに注意してください。 転送表示の非ローカル メモリにローカルの表示メモリと非表示のメモリを非表示のメモリからは、DirectDraw HEL によって常にエミュレートされます。 この制限は、将来のリリースで緩和される可能性があります。
 

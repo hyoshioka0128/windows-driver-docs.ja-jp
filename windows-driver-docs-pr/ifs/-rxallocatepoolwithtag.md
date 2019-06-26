@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b1b804bf7f2fd8cd580827f6a54df0bef192a20c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bf3a6e36aaec881d46eb1307f45a732d0ed5036c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344594"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381768"
 ---
 # <a name="rxallocatepoolwithtag-function"></a>\_RxAllocatePoolWithTag 関数
 
@@ -55,7 +55,7 @@ IRQL からアクセスできる非ページ システム メモリです。 **N
 割り当てるバイトで、メモリ ブロックのサイズ。
 
 *タグ*   
-割り当てられたバッファーをマークするために使用する 4 バイト タグ。 タグを使用する方法については、次を参照してください。 [ **exallocatepoolwithtag に**](https://msdn.microsoft.com/library/windows/hardware/ff544520)します。 タグ内の各文字の ASCII 値は 0 ~ 127 の範囲にある必要があります。
+割り当てられたバッファーをマークするために使用する 4 バイト タグ。 タグを使用する方法については、次を参照してください。 [ **exallocatepoolwithtag に**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtag)します。 タグ内の各文字の ASCII 値は 0 ~ 127 の範囲にある必要があります。
 
 *ファイル名*   
 メモリの割り当てが発生したソース ファイル名へのポインター。 このパラメーターは現在は使用されません。
@@ -71,9 +71,9 @@ IRQL からアクセスできる非ページ システム メモリです。 **N
 <a name="remarks"></a>注釈
 -------
 
-推奨されます、 **RxAllocatePoolWithTag**このルーチンを直接使用する代わりにマクロが呼び出されます。 呼び出す製品版ビルドでこのマクロが定義されている[ **exallocatepoolwithtag に**](https://msdn.microsoft.com/library/windows/hardware/ff544520)します。 呼び出すチェック済みのビルドでこのマクロが定義されている **\_RxAllocatePoolWithTag**します。
+推奨されます、 **RxAllocatePoolWithTag**このルーチンを直接使用する代わりにマクロが呼び出されます。 呼び出す製品版ビルドでこのマクロが定義されている[ **exallocatepoolwithtag に**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtag)します。 呼び出すチェック済みのビルドでこのマクロが定義されている **\_RxAllocatePoolWithTag**します。
 
- **\_RxAllocatePoolWithTag**ルーチンの呼び出し**ExAllocatePoolWithTagPriority** LowPoolPriority に設定された優先順位 (要求の重要度) にします。 システムは、リソースの少ない実行時に、LowPoolPriority の要求は失敗します。 このルーチンを使用する場合、割り当てエラーから回復するには、ドライバーを準備する必要があります。
+**\_RxAllocatePoolWithTag**ルーチンの呼び出し**ExAllocatePoolWithTagPriority** LowPoolPriority に設定された優先順位 (要求の重要度) にします。 システムは、リソースの少ない実行時に、LowPoolPriority の要求は失敗します。 このルーチンを使用する場合、割り当てエラーから回復するには、ドライバーを準備する必要があります。
 
 ときに、システムがページのメモリをプールからバッファーを割り当てます\_サイズ以上、バッファー ページ境界に合わせて配置します。 メモリの要求ページよりも小さい\_サイズは必ずしもページの境界にアラインされますが、常に 1 つのページに収まるし、は、8 バイト境界にアラインされます。 ページを超えるブロックを要求するすべての成功した割り当て\_ページの倍数でないサイズ\_サイズが最後に割り当てられたページで使用されていないすべてのバイトを浪費します。
 
@@ -110,11 +110,11 @@ IRQL からアクセスできる非ページ システム メモリです。 **N
 ## <a name="see-also"></a>関連項目
 
 
-[**Exallocatepoolwithtag に**](https://msdn.microsoft.com/library/windows/hardware/ff544520)
+[**Exallocatepoolwithtag に**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtag)
 
-[**\_RxCheckMemoryBlock**](-rxcheckmemoryblock.md)
+[ **\_RxCheckMemoryBlock**](-rxcheckmemoryblock.md)
 
-[**\_RxFreePool**](-rxfreepool.md)
+[ **\_RxFreePool**](-rxfreepool.md)
 
  
 

@@ -10,12 +10,12 @@ keywords:
 - WDK の Driver Verifier の未解放のメモリ割り当て
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8562a9c8ebbc6523376b0c5e64df317b19c8c1e7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e75e8ac0b23ce0de3fbf3b64273639b1e37ca812
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392082"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377706"
 ---
 # <a name="pool-tracking"></a>プールのトラック
 
@@ -31,19 +31,19 @@ ms.locfileid: "63392082"
 
 Driver Verifier では、パラメーター 1 0x51、0x52、0x53、0x54、または 0x59 このバグ チェックが発行した場合、ドライバーがその割り当て外にメモリに書き込まれます。 この場合は、有効にしてください、[特別なプール](special-pool.md)エラーのソースを検索する機能。
 
-参照してください[**バグ チェック 0xC4** ](https://msdn.microsoft.com/library/windows/hardware/ff560187) (ドライバー\_VERIFIER\_検出\_違反)、バグの一覧については、パラメーターを確認します。
+参照してください[**バグ チェック 0xC4** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation) (ドライバー\_VERIFIER\_検出\_違反)、バグの一覧については、パラメーターを確認します。
 
-以降 Windows Vista では、ロックされたページの追跡もにより、プールの追跡オプションを有効にします。 このオプションがアクティブな場合は、Driver Verifier は発行[**バグ チェック 0xCB** ](https://msdn.microsoft.com/library/windows/hardware/ff560212) (ドライバー\_左\_ロック\_ページ\_IN\_プロセス) を解放するドライバーが失敗した場合は、I/O 操作の後にページをロックします。
+以降 Windows Vista では、ロックされたページの追跡もにより、プールの追跡オプションを有効にします。 このオプションがアクティブな場合は、Driver Verifier は発行[**バグ チェック 0xCB** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xcb--driver-left-locked-pages-in-process) (ドライバー\_左\_ロック\_ページ\_IN\_プロセス) を解放するドライバーが失敗した場合は、I/O 操作の後にページをロックします。
 
 Windows 7 および Windows オペレーティング システムの以降のバージョンでは、プールの追跡オプションは、次のカーネル Api を使用して割り当てられたメモリをサポートしています。
 
--   [**IoAllocateMdl**](https://msdn.microsoft.com/library/windows/hardware/ff548263)
+-   [**IoAllocateMdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocatemdl)
 
--   [**IoAllocateIrp** ](https://msdn.microsoft.com/library/windows/hardware/ff548257)と I/O を割り当てることができるその他のルーチン要求パケット (IRP) データ構造体
+-   [**IoAllocateIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocateirp)と I/O を割り当てることができるその他のルーチン要求パケット (IRP) データ構造体
 
--   [**RtlAnsiStringToUnicodeString** ](https://msdn.microsoft.com/library/windows/hardware/ff561729)およびその他のランタイム ライブラリ (RTL) の文字列ルーチン
+-   [**RtlAnsiStringToUnicodeString** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-rtlansistringtounicodestring)およびその他のランタイム ライブラリ (RTL) の文字列ルーチン
 
--   [**IoSetCompletionRoutineEx**](https://msdn.microsoft.com/library/windows/hardware/ff549686)
+-   [**IoSetCompletionRoutineEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iosetcompletionroutineex)
 
 Windows 7 および Windows オペレーティング システムの以降のバージョンでは、プールの追跡を有効にすると、Driver Verifier を検出できますでカーネル プールのメモリを割り当てようとする*クォータ*アイドル状態のプロセスのコンテキストでします。 このような試行は通常、DPC ルーチンから、ドライバーは、メモリを意味します。 DPC ルーチンのスレッドまたはプロセスのコンテキストは、そのプロセスのクォータを請求しようとしていますが正しくないために、信頼性が高くです。
 
@@ -51,15 +51,15 @@ Windows 7 および Windows オペレーティング システムの以降のバ
 
 メモリ プールの割り当ての統計情報は、検証されているドライバーごとに個別に監視できます。 ドライバー検証ツール マネージャーによって、Verifier.exe コマンドライン、またはログ ファイルで、これらの統計情報を表示できます。 参照してください[カウンターを個別に監視](monitoring-individual-counters.md)詳細についてはします。
 
-カーネル デバッガー拡張機能 **! verifier 0x3**ドライバーが読み込まれるまたはドライバーの中に現在の割り当てを追跡するために実行した後は、未処理のメモリ割り当てを検索するために使用できます。 この拡張機能は、プール タグ、プールのサイズと、各割り当てのアロケーターのアドレスにも表示されます。 デバッガーの拡張機能については、次を参照してください。 [Windows デバッグ](https://msdn.microsoft.com/library/windows/hardware/ff551063)します。
+カーネル デバッガー拡張機能 **! verifier 0x3**ドライバーが読み込まれるまたはドライバーの中に現在の割り当てを追跡するために実行した後は、未処理のメモリ割り当てを検索するために使用できます。 この拡張機能は、プール タグ、プールのサイズと、各割り当てのアロケーターのアドレスにも表示されます。 デバッガーの拡張機能については、次を参照してください。 [Windows デバッグ](https://docs.microsoft.com/windows-hardware/drivers/debugger/index)します。
 
 ### <a name="span-idpoolquotachargesfromdpcroutinespanspan-idpoolquotachargesfromdpcroutinespanspan-idpoolquotachargesfromdpcroutinespanpool-quota-charges-from-dpc-routine"></a><span id="Pool_Quota_Charges_from_DPC_Routine"></span><span id="pool_quota_charges_from_dpc_routine"></span><span id="POOL_QUOTA_CHARGES_FROM_DPC_ROUTINE"></span>DPC ルーチンからプール クォータの料金
 
-カーネル ドライバーを呼び出すことができます[ **ExAllocatePoolWithQuotaTag** ](https://msdn.microsoft.com/library/windows/hardware/ff544513)カーネル プールのメモリを割り当てるし、現在のプロセスのプール クォータに割り当てられているバイト数を請求します。 通常、ドライバーは、アプリケーションから受信した要求に直接関連するメモリ割り当てのクォータを使用します。
+カーネル ドライバーを呼び出すことができます[ **ExAllocatePoolWithQuotaTag** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithquotatag)カーネル プールのメモリを割り当てるし、現在のプロセスのプール クォータに割り当てられているバイト数を請求します。 通常、ドライバーは、アプリケーションから受信した要求に直接関連するメモリ割り当てのクォータを使用します。
 
 遅延プロシージャ呼び出し (DPC) のルーチンは、任意のプロセスのコンテキストで実行できます。 そのため、充電 DPC ルーチンからのクォータには、ランダムなプロセスが請求されます。 さらに悪い、DPC ルーチンがアイドル状態のプロセスのコンテキストで実行するとこの条件によりメモリの破損またはシステムがクラッシュします。
 
-Windows 7 以降、Driver Verifier を検出した[ **ExAllocatePoolWithQuotaTag** ](https://msdn.microsoft.com/library/windows/hardware/ff544513) DPC ルーチンからの呼び出し。
+Windows 7 以降、Driver Verifier を検出した[ **ExAllocatePoolWithQuotaTag** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithquotatag) DPC ルーチンからの呼び出し。
 
 ### <a name="span-idactivatingthisoptionspanspan-idactivatingthisoptionspanactivating-this-option"></a><span id="activating_this_option"></span><span id="ACTIVATING_THIS_OPTION"></span>このオプションをアクティブ化します。
 

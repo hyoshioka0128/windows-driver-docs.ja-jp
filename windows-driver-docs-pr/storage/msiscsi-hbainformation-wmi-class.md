@@ -4,12 +4,12 @@ description: MSiSCSI\_HBAInformation WMI クラス
 ms.assetid: 24c44f97-5ff3-46fa-a5bf-aa76f7f0d3f2
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 8e012558719bdb406d2fa50b8a26d729ef432648
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3f48f2bad1c7d60583a887d58d0005dc4d5c0fbe
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351886"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379679"
 ---
 # <a name="msiscsihbainformation-wmi-class"></a>MSiSCSI\_HBAInformation WMI クラス
 
@@ -154,7 +154,7 @@ class MSiSCSI_HBAInformation {
 };
 ```
 
-WMI ツールのスイートでは、上記のクラス定義をコンパイルするときに生成、 [ **MSiSCSI\_HBAInformation** ](https://msdn.microsoft.com/library/windows/hardware/ff563012)データ構造体。
+WMI ツールのスイートでは、上記のクラス定義をコンパイルするときに生成、 [ **MSiSCSI\_HBAInformation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsimgt/ns-iscsimgt-_msiscsi_hbainformation)データ構造体。
 
  
 

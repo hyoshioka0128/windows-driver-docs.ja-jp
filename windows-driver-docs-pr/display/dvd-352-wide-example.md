@@ -9,12 +9,12 @@ keywords:
 - WDK DirectX VA 352 全体の使用例
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 70453151dcb33539955ccb5bdf2050cf6f568001
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 688383d8cebb22d77c9a02d077d7fba2a15892b1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360379"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380243"
 ---
 # <a name="dvd-352-wide-example"></a>DVD 352 幅の例
 
@@ -22,7 +22,7 @@ ms.locfileid: "63360379"
 ## <span id="ddk_dvd_352_wide_example_gg"></span><span id="DDK_DVD_352_WIDE_EXAMPLE_GG"></span>
 
 
-DVD を使用して、704 の幅に拡大できます 352 全体図を使用できます、 **PictureSourceRect16thPel**のメンバー、 [ **DXVA\_BlendCombination** ](https://msdn.microsoft.com/library/windows/hardware/ff563120)(輝度サンプル間隔の解決策の 1/16) で構造体。
+DVD を使用して、704 の幅に拡大できます 352 全体図を使用できます、 **PictureSourceRect16thPel**のメンバー、 [ **DXVA\_BlendCombination** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_blendcombination)(輝度サンプル間隔の解決策の 1/16) で構造体。
 
 **PictureSourceRect16thPel**メンバーは、次の値と元の四角形を定義します。
 
@@ -30,7 +30,7 @@ DVD を使用して、704 の幅に拡大できます 352 全体図を使用で�
 
 -   **適切な**= 16 X (**左** + *水平\_サイズ*) 5632 を =
 
-**PictureDestinationRect**のメンバー、 [ **DXVA\_BlendCombination** ](https://msdn.microsoft.com/library/windows/hardware/ff563120)構造体を 2 つの代替のターゲットの四角形を定義します次の値。
+**PictureDestinationRect**のメンバー、 [ **DXVA\_BlendCombination** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_blendcombination)構造体を 2 つの代替のターゲットの四角形を定義します次の値。
 
 1.  次の値が先の四角形。
     -   **左**= 8

@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - WDI_TLV_ASSOCIATION_RESULT_PARAMETERS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 2221e79f6824090e946d83360f3d59c86334bfac
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 923874a59e22656858ea1cfa202c84395e494bb0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351947"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67357333"
 ---
 # <a name="wditlvassociationresultparameters"></a>WDI\_TLV\_アソシエーション\_結果\_パラメーター
 
@@ -33,24 +33,24 @@ WDI\_TLV\_アソシエーション\_結果\_パラメーターは、関連付け
 
 | 型                                                        | 説明                                                                                                                                                                                                                                         |
 |-------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| UINT32                                                      | 定義されている、関連付けの試行の完了ステータスを指定します[ **WDI\_ASSOC\_状態**](https://msdn.microsoft.com/library/windows/hardware/dn897725)します。                                                                                                                       |
+| UINT32                                                      | 定義されている、関連付けの試行の完了ステータスを指定します[ **WDI\_ASSOC\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_assoc_status)します。                                                                                                                       |
 | UINT32                                                      | このポートからの認証またはアソシエーション要求への応答でピアによって送信された 802.11 ステータス コード。                                                                                                                                     |
 | UINT8                                                       | ポートが、ap、802.11 アソシエーションまたは 802.11 の再関連付けの要求を送信するかどうかを指定します。 再関連付け要求を使用した場合、この値を 1 に設定する必要があります。                                                                              |
-| [**WDI\_AUTH\_アルゴリズム**](https://msdn.microsoft.com/library/windows/hardware/dn897792)     | ポートが関連付けの際にピアとのネゴシエート認証アルゴリズム。                                                                                                                                                             |
-| [**WDI\_暗号\_アルゴリズム**](https://msdn.microsoft.com/library/windows/hardware/dn897802) | ポートが関連付けの際にピアとのネゴシエート ユニキャスト暗号アルゴリズム。                                                                                                                                                             |
-| [**WDI\_暗号\_アルゴリズム**](https://msdn.microsoft.com/library/windows/hardware/dn897802) | ポートが関連付けの際にピアとのネゴシエート マルチキャスト データの暗号アルゴリズム。                                                                                                                                                      |
-| [**WDI\_暗号\_アルゴリズム**](https://msdn.microsoft.com/library/windows/hardware/dn897802) | ポートが関連付けの際にピアとのネゴシエート マルチキャスト管理暗号アルゴリズム。                                                                                                                                                |
+| [**WDI\_AUTH\_アルゴリズム**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_auth_algorithm)     | ポートが関連付けの際にピアとのネゴシエート認証アルゴリズム。                                                                                                                                                             |
+| [**WDI\_暗号\_アルゴリズム**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_cipher_algorithm) | ポートが関連付けの際にピアとのネゴシエート ユニキャスト暗号アルゴリズム。                                                                                                                                                             |
+| [**WDI\_暗号\_アルゴリズム**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_cipher_algorithm) | ポートが関連付けの際にピアとのネゴシエート マルチキャスト データの暗号アルゴリズム。                                                                                                                                                      |
+| [**WDI\_暗号\_アルゴリズム**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_cipher_algorithm) | ポートが関連付けの際にピアとのネゴシエート マルチキャスト管理暗号アルゴリズム。                                                                                                                                                |
 | UINT8                                                       | かどうか、ポートに関連付けられている配布システムをサポートしているモバイル ステーションと Ap を含め、BSS ネットワークですべてのステーションで ISO のレイヤー 2 をブリッジするため (DS) のサービスを指定します。 これはサポートされている場合、この値を 1 に設定する必要があります。 |
 | UINT8                                                       | ポートが関連付け操作中にポートの承認を実行するかどうかを指定します。                                                                                                                                                       |
 | UINT8                                                       | このアソシエーションの 802.11 WMM QoS プロトコルがネゴシエートされているかどうかを指定します。 ネゴシエートされた場合、この値を 1 に設定する必要があります。                                                                                                        |
-| [**WDI\_DS\_情報**](https://msdn.microsoft.com/library/windows/hardware/dn897813)                   | ポートがその前のアソシエーションとして同じ DS に接続されているかどうかを指定します。                                                                                                                                                                 |
+| [**WDI\_DS\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_ds_info)                   | ポートがその前のアソシエーションとして同じ DS に接続されているかどうかを指定します。                                                                                                                                                                 |
 | UINT32                                                      | (Re) との関連付けが 30 の 802.11 理由コードで失敗した場合、この値は、ピアから要求されたアソシエーション復活時間の値を示します。                                                                                               |
 | WDI\_バンド\_ID (UINT32)                                      | 関連付けが確立されているバンドの ID。                                                                                                                                                                                                |
 | UINT32                                                      | IHV アソシエーションの状態。 関連付けに失敗した場合、IHV で定義されたステータス コードを含めることができますこのします。 これは、デバッグのためにのみ使用します。                                                                                                        |
 
  
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

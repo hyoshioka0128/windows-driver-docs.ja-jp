@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 39f1e1e8f4f2a4ed9ba8cd650eb9cb479172e4b2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8952168e20cf84728306aac83d5be0364c772481
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360834"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382012"
 ---
 # <a name="kspropertyvideocompressionquality"></a>KSPROPERTY\_VIDEOCOMPRESSION\_品質
 
@@ -53,7 +53,7 @@ KSPROPERTY\_VIDECOMPRESSION\_品質プロパティは、ビデオの圧縮品質
 <td><p>〇</p></td>
 <td><p>〇</p></td>
 <td><p>フィルター</p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff566018" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOCOMPRESSION_S&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566018)"><strong>KSPROPERTY_VIDEOCOMPRESSION_S</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videocompression_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOCOMPRESSION_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videocompression_s)"><strong>KSPROPERTY_VIDEOCOMPRESSION_S</strong></a></p></td>
 <td><p>LONG</p></td>
 </tr>
 </tbody>
@@ -70,11 +70,11 @@ KSPROPERTY\_VIDECOMPRESSION\_品質プロパティは、ビデオの圧縮品質
 
 このプロパティ範囲を 0 から 10000 の値。 0 は、最低の品質、10000 を示します。 最高の値。 ミニドライバーは、既定値を決定します。
 
-このプロパティをサポートするミニドライバーを設定する必要があります、 **KS\_CompressionCaps\_CanQuality**フラグ、**機能**のメンバー、 [ **KSPROPERTY\_VIDEOCOMPRESSION\_GETINFO\_S** ](https://msdn.microsoft.com/library/windows/hardware/ff565979)ミニドライバーのビデオの圧縮機能を取得する構造体。 ミニドライバーは、KS を設定する場合\_CompressionCaps\_CanQuality をサポートすることが両方を取得し、要求のプロパティを設定します。
+このプロパティをサポートするミニドライバーを設定する必要があります、 **KS\_CompressionCaps\_CanQuality**フラグ、**機能**のメンバー、 [ **KSPROPERTY\_VIDEOCOMPRESSION\_GETINFO\_S** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videocompression_getinfo_s)ミニドライバーのビデオの圧縮機能を取得する構造体。 ミニドライバーは、KS を設定する場合\_CompressionCaps\_CanQuality をサポートすることが両方を取得し、要求のプロパティを設定します。
 
 このプロパティ範囲を 0 から 10000 の値。 0 は、最低の品質、10000 を示します。 最高の値。 ミニドライバーは、既定値を決定します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -95,9 +95,9 @@ KSPROPERTY\_VIDECOMPRESSION\_品質プロパティは、ビデオの圧縮品質
 
 [**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
 
-[**KSPROPERTY\_VIDEOCOMPRESSION\_S**](https://msdn.microsoft.com/library/windows/hardware/ff566018)
+[**KSPROPERTY\_VIDEOCOMPRESSION\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videocompression_s)
 
-[**KSPROPERTY\_VIDEOCOMPRESSION\_GETINFO\_S**](https://msdn.microsoft.com/library/windows/hardware/ff565979)
+[**KSPROPERTY\_VIDEOCOMPRESSION\_GETINFO\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videocompression_getinfo_s)
 
  
 

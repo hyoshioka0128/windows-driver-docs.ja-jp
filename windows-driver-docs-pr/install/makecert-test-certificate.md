@@ -7,17 +7,17 @@ keywords:
 - デジタル証明書 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 46c8ca0484a7325b95cbfe5b5f0a77a0f64d4475
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3afd2840c513ca2c904a4e03bb84c051ba442026
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356934"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377666"
 ---
 # <a name="makecert-test-certificate"></a>MakeCert テスト証明書
 
 
-MakeCert テスト証明書が、 [X.509 デジタル証明書](digital-certificates.md)を使用して作成され、 [ **MakeCert** ](https://msdn.microsoft.com/library/windows/hardware/ff548309)ツール。 MakeCert テスト証明書はテスト署名に使用できる、自己署名ルート証明書を[ドライバー パッケージの](driver-packages.md)[カタログ ファイル](catalog-files.md)またはテスト署名ドライバー ファイルの署名を埋め込むことで、ドライバー ファイル。
+MakeCert テスト証明書が、 [X.509 デジタル証明書](digital-certificates.md)を使用して作成され、 [ **MakeCert** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/makecert)ツール。 MakeCert テスト証明書はテスト署名に使用できる、自己署名ルート証明書を[ドライバー パッケージの](driver-packages.md)[カタログ ファイル](catalog-files.md)またはテスト署名ドライバー ファイルの署名を埋め込むことで、ドライバー ファイル。
 
 MakeCert テスト証明書の作成の詳細については、次を参照してください。 [**テスト証明書の作成**](creating-test-certificates.md)します。
 

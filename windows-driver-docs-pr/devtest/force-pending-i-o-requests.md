@@ -7,17 +7,17 @@ keywords:
 - STATUS_PENDING WDK Driver Verifier
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 980c325c5f1627c2fd18404f34e55b59c433a57c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 34d162ada928192d23c32e88298edbe501b2e04e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387254"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356523"
 ---
 # <a name="force-pending-io-requests"></a>保留中の I/O 要求を強制する
 
 
-保留中の I/O 要求を Force オプションがランダムにステータスを返します\_にドライバーの呼び出しに応答 PENDING [**保留**](https://msdn.microsoft.com/library/windows/hardware/ff548336)します。 このオプションの状態に対応するため、ドライバーのロジックをテストする\_PENDING から値を返す**保留**します。
+保留中の I/O 要求を Force オプションがランダムにステータスを返します\_にドライバーの呼び出しに応答 PENDING [**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)します。 このオプションの状態に対応するため、ドライバーのロジックをテストする\_PENDING から値を返す**保留**します。
 
 このオプションは、Windows Vista および Windows オペレーティング システムの以降のバージョンでのみサポートされます。
 
@@ -27,23 +27,23 @@ ms.locfileid: "63387254"
 
 ### <a name="span-idwhyuseforcependingiorequestsspanspan-idwhyuseforcependingiorequestsspanwhy-use-force-pending-io-requests"></a><span id="why_use_force_pending_i_o_requests_"></span><span id="WHY_USE_FORCE_PENDING_I_O_REQUESTS_"></span>保留中の I/O 要求の強制を使用する理由
 
-ドライバーより高度なドライバー スタック呼び出し[**保留**](https://msdn.microsoft.com/library/windows/hardware/ff548336)ドライバー スタック内に下位レベルのドライバーは IRP を渡す。 IRP を受信する下位レベルのドライバーのドライバーのディスパッチ ルーチンは IRP を直ちに完了または状態を返す\_PENDING IRP を後で完了するとします。
+ドライバーより高度なドライバー スタック呼び出し[**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)ドライバー スタック内に下位レベルのドライバーは IRP を渡す。 IRP を受信する下位レベルのドライバーのドライバーのディスパッチ ルーチンは IRP を直ちに完了または状態を返す\_PENDING IRP を後で完了するとします。
 
 通常、呼び出し元は、いずれかの結果を処理する準備である必要があります。 ただし、ほとんどをディスパッチするために、ルーチン処理 IRP をすぐに、状態\_保留中の呼び出し側のロジックは多くの場合、実行されると、重大なロジックがエラーを検出しない可能性があります。 保留中の I/O 要求を Force オプションへの呼び出しをインターセプト**保留**ステータスを返す\_保留中の呼び出しをテストするドライバー使用頻度の低いロジック。
 
 ### <a name="span-idwhendoyouuseforcependingiorequestsspanspan-idwhendoyouuseforcependingiorequestsspanwhen-do-you-use-force-pending-io-requests"></a><span id="when_do_you_use_force_pending_i_o_requests_"></span><span id="WHEN_DO_YOU_USE_FORCE_PENDING_I_O_REQUESTS_"></span>Force 保留中の I/O 要求を使用する場合
 
-このテストを実行する前に、ドライバーのデザインとソース コードを確認し、ドライバーが状態を処理するものであることを確認します。\_からすべての保留、 [**保留**](https://msdn.microsoft.com/library/windows/hardware/ff548336)呼び出し。
+このテストを実行する前に、ドライバーのデザインとソース コードを確認し、ドライバーが状態を処理するものであることを確認します。\_からすべての保留、 [**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)呼び出し。
 
 ドライバーの数が状態を処理するために設計されていません\_に対するすべての呼び出しで保留**保留**します。 IRP これら IRP を直ちに完了する保証は特定のよく知られているドライバーに送信される可能性があります。 送信ステータス\_PENDING 処理をしないドライバーをドライバーとシステムのクラッシュとメモリの破損が発生することができます。
 
 ### <a name="span-idhowshoulddrivershandlestatuspendingspanspan-idhowshoulddrivershandlestatuspendingspanhow-should-drivers-handle-statuspending"></a><span id="how_should_drivers_handle_status_pending_"></span><span id="HOW_SHOULD_DRIVERS_HANDLE_STATUS_PENDING_"></span>ドライバーを処理する方法の状態\_PENDING でしょうか。
 
-呼び出すより高度なドライバー [**保留**](https://msdn.microsoft.com/library/windows/hardware/ff548336) 、状態を処理する必要があります\_PENDING 戻り値が次のようにします。
+呼び出すより高度なドライバー [**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver) 、状態を処理する必要があります\_PENDING 戻り値が次のようにします。
 
--   呼び出しの前に**保留**、ドライバーを呼び出す必要があります[ **IoBuildSynchronousFsdRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff548330)に IRP の同期処理を調整します。
+-   呼び出しの前に**保留**、ドライバーを呼び出す必要があります[ **IoBuildSynchronousFsdRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iobuildsynchronousfsdrequest)に IRP の同期処理を調整します。
 
--   場合**保留**ステータスを返します\_保留中のドライバーは呼び出すことによって待機 IRP が完了する必要があります[ **kewaitforsingleobject の 1** ](https://msdn.microsoft.com/library/windows/hardware/ff553350)指定しました。イベントです。
+-   場合**保留**ステータスを返します\_保留中のドライバーは呼び出すことによって待機 IRP が完了する必要があります[ **kewaitforsingleobject の 1** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kewaitforsingleobject)指定しました。イベントです。
 
 -   ドライバーは、I/O マネージャーは、イベントを通知する前に、IRP を解放する場合がありますを予測する必要があります。
 
@@ -51,7 +51,7 @@ ms.locfileid: "63387254"
 
 ### <a name="span-idwhicherrorsdoesforcependingiorequestdetectspanspan-idwhicherrorsdoesforcependingiorequestdetectspanwhich-errors-does-force-pending-io-request-detect"></a><span id="which_errors_does_force_pending_i_o_request_detect_"></span><span id="WHICH_ERRORS_DOES_FORCE_PENDING_I_O_REQUEST_DETECT_"></span>保留中の I/O 要求の強制はエラーを検出しますか。
 
-保留中の I/O 要求を Force オプションを呼び出すドライバーで、次のエラーを検出した[**保留**](https://msdn.microsoft.com/library/windows/hardware/ff548336)ステータスを受信および\_PENDING 戻り値。
+保留中の I/O 要求を Force オプションを呼び出すドライバーで、次のエラーを検出した[**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)ステータスを受信および\_PENDING 戻り値。
 
 -   ドライバーは呼び出しません**IoBuildSynchronousFsdRequest**に同期処理を調整します。
 
@@ -65,7 +65,7 @@ ms.locfileid: "63387254"
 
 ### <a name="span-idforcependingiorequestschangesintroducedinwindows7spanspan-idforcependingiorequestschangesintroducedinwindows7spanspan-idforcependingiorequestschangesintroducedinwindows7spanforce-pending-io-requests-changes-introduced-in-windows-7"></a><span id="Force_Pending_I_O_Requests_Changes_Introduced_in_Windows_7"></span><span id="force_pending_i_o_requests_changes_introduced_in_windows_7"></span><span id="FORCE_PENDING_I_O_REQUESTS_CHANGES_INTRODUCED_IN_WINDOWS_7"></span>導入された Windows 7 を強制的に保留中の I/O 要求の変更
 
-Windows 7 以降、Force 保留中の I/O 要求オプションを効率的に強制的に状態のテストを実行する\_保留中の検証済みのドライバーのコード パス。 以前の Windows バージョンでは、Driver Verifier 強制、IRP の完了が遅延する場合にのみ、最初[ **IoCompleteRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff548343)の IRP を実行します。 つまり、同じデバイス スタックから Driver1 の検証の有効性が Driver2 の動作によって削減できます。 Driver1 のディスパッチ、ルーチンに返す前に同期的に Driver2 を待機し、完了する可能性があります。 I/O 要求が入力候補のパスの検証済みのドライバーにアンワインドする前に正確に IRP の完了の強制の遅延が発生します。 つまり、ステータス\_検証済みのドライバーのパスが実際に実行された保留中のコードと検証済みのドライバーが完了するまでの遅延を認識します。
+Windows 7 以降、Force 保留中の I/O 要求オプションを効率的に強制的に状態のテストを実行する\_保留中の検証済みのドライバーのコード パス。 以前の Windows バージョンでは、Driver Verifier 強制、IRP の完了が遅延する場合にのみ、最初[ **IoCompleteRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest)の IRP を実行します。 つまり、同じデバイス スタックから Driver1 の検証の有効性が Driver2 の動作によって削減できます。 Driver1 のディスパッチ、ルーチンに返す前に同期的に Driver2 を待機し、完了する可能性があります。 I/O 要求が入力候補のパスの検証済みのドライバーにアンワインドする前に正確に IRP の完了の強制の遅延が発生します。 つまり、ステータス\_検証済みのドライバーのパスが実際に実行された保留中のコードと検証済みのドライバーが完了するまでの遅延を認識します。
 
 ### <a name="span-idactivatingthisoptionspanspan-idactivatingthisoptionspanactivating-this-option"></a><span id="activating_this_option"></span><span id="ACTIVATING_THIS_OPTION"></span>このオプションをアクティブ化します。
 

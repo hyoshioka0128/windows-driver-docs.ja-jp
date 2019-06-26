@@ -3,12 +3,12 @@ Description: このトピックでは、新機能と Windows 8 でのユニバ�
 title: Windows 8 の新機能については、usb
 ms.date: 05/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 252462c9f33b45dc6155595776366a2454da52d0
-ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
+ms.openlocfilehash: 024c009f11414b810de36df4807ea8eda6ed3f92
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65405054"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356548"
 ---
 # <a name="windows8-whats-new-for-usb"></a>Windows 8:USB の新機能
 
@@ -21,18 +21,18 @@ ms.locfileid: "65405054"
 -   [割り当ておよび翻訳を構築するための新しいルーチン](#new-routines-for-allocating-and-building-urbs)
 -   [USB 3.0 ハブで新しいユーザー モードの I/O 制御要求します。](#new-user-mode-io-control-requests-for-usb-30-hubs)
 -   [WinUSB の新しい互換性のある ID](#new-compatible-id-for-winusb)
--   [USB クライアント ドライバー用の新しい Visual Studio テンプレート *(\*ベータ版の新規)*](#new-visual-studio-templates-for-usb-client-drivers-new-for-beta)
+-   [USB クライアント ドライバー用の新しい Visual Studio テンプレート *(\*ベータ版の新規)* ](#new-visual-studio-templates-for-usb-client-drivers-new-for-beta)
 -   [UASP ドライバー](#uasp-driver)
 -   [ブートのサポート](#boot-support)
 -   [強化されたデバッグと診断機能](#enhanced-debugging-and-diagnostic-capabilities)
 -   [新しい USB 固有のエラー メッセージでデバイス マネージャー](#new-usb-specific-failure-messages-in-device-manager)
 
-一般的な USB の新機能については、次を参照してください。 [New for USB ドライバー](https://msdn.microsoft.com/library/windows/hardware/hh451212)します。
+一般的な USB の新機能については、次を参照してください。 [New for USB ドライバー](https://docs.microsoft.com/windows-hardware/drivers/what-s-new-in-driver-development)します。
 
 ## <a name="new-driver-stack-for-usb-30-devices"></a>USB 3.0 デバイスで新しいドライバー スタック
 
 
-Windows 8 では、USB 3.0 デバイスをサポートする新しい USB ドライバー スタックを提供します。 新しいスタックには、USB 3.0 デバイスが xHCI ホスト コント ローラーに関連付けられている場合は、Windows によって読み込まれるドライバーが含まれています。 新しいドライバーがに基づいて[カーネル モード ドライバー フレームワーク](https://msdn.microsoft.com/library/windows/hardware/ff557405)(KMDF) と、USB 3.0 仕様で定義されている機能を実装します。 新しいドライバーは次のとおりです。
+Windows 8 では、USB 3.0 デバイスをサポートする新しい USB ドライバー スタックを提供します。 新しいスタックには、USB 3.0 デバイスが xHCI ホスト コント ローラーに関連付けられている場合は、Windows によって読み込まれるドライバーが含まれています。 新しいドライバーがに基づいて[カーネル モード ドライバー フレームワーク](https://docs.microsoft.com/windows-hardware/drivers/what-s-new-in-driver-development)(KMDF) と、USB 3.0 仕様で定義されている機能を実装します。 新しいドライバーは次のとおりです。
 
 -   Usbxhci.sys
 -   Ucx01000.sys
@@ -68,38 +68,38 @@ USBD のクライアントのコントラクトのバージョンを識別する
 
 | ユース ケース                                                           | KMDF ドライバーにする必要があります.                                                                                                              | WDM ドライバーが必要です。                                                                                          |
 |--------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------|
-| クライアントのコントラクト バージョンを指定して、USB ドライバー スタック | 呼び出す、 [ **WdfUsbTargetDeviceCreateWithParameters** ](https://msdn.microsoft.com/library/windows/hardware/hh439428)メソッド。                                      | 呼び出す、 [ **USBD\_CreateHandle** ](https://msdn.microsoft.com/library/windows/hardware/hh406241)ルーチン。                                                |
-| 特定の機能を照会するには                               | 呼び出す[ **WdfUsbTargetDeviceQueryUsbCapability** ](https://msdn.microsoft.com/library/windows/hardware/hh439434)クエリする機能の GUID を指定します。 | 呼び出す[ **USBD\_QueryUsbCapability** ](https://msdn.microsoft.com/library/windows/hardware/hh406230)クエリする機能の GUID を指定します。 |
+| クライアントのコントラクト バージョンを指定して、USB ドライバー スタック | 呼び出す、 [ **WdfUsbTargetDeviceCreateWithParameters** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdevicecreatewithparameters)メソッド。                                      | 呼び出す、 [ **USBD\_CreateHandle** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_createhandle)ルーチン。                                                |
+| 特定の機能を照会するには                               | 呼び出す[ **WdfUsbTargetDeviceQueryUsbCapability** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdevicequeryusbcapability)クエリする機能の GUID を指定します。 | 呼び出す[ **USBD\_QueryUsbCapability** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/hh406230(v=vs.85))クエリする機能の GUID を指定します。 |
 
  
 
 ## <a name="new-routines-for-allocating-and-building-urbs"></a>割り当ておよび翻訳を構築するための新しいルーチン
 
 
-Windows 8 は、割り当て、書式設定、および翻訳を解放するための新しいルーチンを提供します。 [ **URB** ](https://msdn.microsoft.com/library/windows/hardware/ff538923)構造体は、USB ドライバー スタックによって割り当てられています。 基になるスタックが新しい USB ドライバー スタックの場合は、URB 不透明 URB コンテキストにペアリングされています。 USB ドライバー スタックでは、URB を追跡および処理を向上させるために、URB コンテキストを使用します。 ルーチンの詳細については、次を参照してください。[割り当てと構成の翻訳](how-to-add-xrb-support-for-client-drivers.md)します。
+Windows 8 は、割り当て、書式設定、および翻訳を解放するための新しいルーチンを提供します。 [ **URB** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb)構造体は、USB ドライバー スタックによって割り当てられています。 基になるスタックが新しい USB ドライバー スタックの場合は、URB 不透明 URB コンテキストにペアリングされています。 USB ドライバー スタックでは、URB を追跡および処理を向上させるために、URB コンテキストを使用します。 ルーチンの詳細については、次を参照してください。[割り当てと構成の翻訳](how-to-add-xrb-support-for-client-drivers.md)します。
 
 新しいルーチンは次のとおりです。
 
--   [**USBD\_UrbAllocate**](https://msdn.microsoft.com/library/windows/hardware/hh406250)
--   [**USBD\_IsochUrbAllocate**](https://msdn.microsoft.com/library/windows/hardware/hh406231)
--   [**USBD\_SelectConfigUrbAllocateAndBuild**](https://msdn.microsoft.com/library/windows/hardware/hh406243)
--   [**USBD\_SelectInterfaceUrbAllocateAndBuild**](https://msdn.microsoft.com/library/windows/hardware/hh406245)
--   [**USBD\_UrbFree**](https://msdn.microsoft.com/library/windows/hardware/hh406252)
--   [**USBD\_AssignUrbToIoStackLocation** ](https://msdn.microsoft.com/library/windows/hardware/hh406228)ルーチンに IRP を URB を関連付けます。 このルーチンは、WDM ドライバーがクライアントにのみ適用されます。
+-   [**USBD\_UrbAllocate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_urballocate)
+-   [**USBD\_IsochUrbAllocate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_isochurballocate)
+-   [**USBD\_SelectConfigUrbAllocateAndBuild**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_selectconfigurballocateandbuild)
+-   [**USBD\_SelectInterfaceUrbAllocateAndBuild**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_selectinterfaceurballocateandbuild)
+-   [**USBD\_UrbFree**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_urbfree)
+-   [**USBD\_AssignUrbToIoStackLocation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_assignurbtoiostacklocation)ルーチンに IRP を URB を関連付けます。 このルーチンは、WDM ドライバーがクライアントにのみ適用されます。
 
 上記のルーチン、URB 割り当て KMDF 固有の新しいメソッドがあります。 KMDF ベースのクライアント ドライバーでは、ことをお勧めする次の項目を呼び出し、
 
--   [ **WdfUsbTargetDeviceCreateUrb** ](https://msdn.microsoft.com/library/windows/hardware/hh439423)メソッド (の代わりに[ **USBD\_UrbAllocate**](https://msdn.microsoft.com/library/windows/hardware/hh406250))、URB を割り当てることです。
--   [ **WdfUsbTargetDeviceCreateIsochUrb** ](https://msdn.microsoft.com/library/windows/hardware/hh439420)メソッド (の代わりに[ **USBD\_IsochUrbAllocate**](https://msdn.microsoft.com/library/windows/hardware/hh406231)) を URB を割り当てるアイソクロナスを転送します。 これらの呼び出しでは、可変サイズの URB isochronous パケットが転送に必要な数に基づいているを割り当てます。 アイソクロナス転送の詳細については、次を参照してください。 [USB アイソクロナス エンドポイントへのデータの転送方法](transfer-data-to-isochronous-endpoints.md)します。
+-   [ **WdfUsbTargetDeviceCreateUrb** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdevicecreateurb)メソッド (の代わりに[ **USBD\_UrbAllocate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_urballocate))、URB を割り当てることです。
+-   [ **WdfUsbTargetDeviceCreateIsochUrb** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdevicecreateisochurb)メソッド (の代わりに[ **USBD\_IsochUrbAllocate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_isochurballocate)) を URB を割り当てるアイソクロナスを転送します。 これらの呼び出しでは、可変サイズの URB isochronous パケットが転送に必要な数に基づいているを割り当てます。 アイソクロナス転送の詳細については、次を参照してください。 [USB アイソクロナス エンドポイントへのデータの転送方法](transfer-data-to-isochronous-endpoints.md)します。
 
 ## <a name="new-user-mode-io-control-requests-for-usb-30-hubs"></a>USB 3.0 ハブで新しいユーザー モードの I/O 制御要求します。
 
 
 Windows 8 では、USB 3.0 ハブとそのポートに関する情報を取得するアプリケーションが使用できる新しい Ioctl を提供します。 新しい Ioctl は次のとおりです。
 
--   [**IOCTL\_USB\_取得\_ハブ\_情報\_例**](https://msdn.microsoft.com/library/windows/hardware/hh450860)
--   [**IOCTL\_USB\_取得\_ポート\_コネクタ\_プロパティ**](https://msdn.microsoft.com/library/windows/hardware/hh450863)
--   [**IOCTL\_USB\_取得\_ノード\_接続\_情報\_EX\_V2**](https://msdn.microsoft.com/library/windows/hardware/hh450861)
+-   [**IOCTL\_USB\_取得\_ハブ\_情報\_例**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_usb_get_hub_information_ex)
+-   [**IOCTL\_USB\_取得\_ポート\_コネクタ\_プロパティ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_usb_get_port_connector_properties)
+-   [**IOCTL\_USB\_取得\_ノード\_接続\_情報\_EX\_V2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_usb_get_node_connection_information_ex_v2)
 
 送信することによって、USB ドライバーには、前の I/O 要求は、アプリケーションの取得を次の一連の情報にスタックします。
 
@@ -137,7 +137,7 @@ Windows to Go 機能は、フラッシュ ドライブまたは外部ドライ�
 ## <a name="enhanced-debugging-and-diagnostic-capabilities"></a>強化されたデバッグと診断機能
 
 
-Windows 8 には、高速の USB 問題の診断を向上させるために、新しい USB 3.0 デバッグ ツールが用意されています。 USB 3.0 ホスト コント ローラーとデバイスの状態を調べる新しい USB 3.0 カーネル デバッガー拡張機能があります。 USB WPP と USB の相互作用を分析し、USB デバイスの問題のトラブルシューティングをより簡単にするトレース イベントを使用することができます。 Windows 8 では、USB 3.0 経由でのデバッグをサポートします。 詳細については、次を参照してください。[設定を、USB 3.0 接続を手動で](https://msdn.microsoft.com/library/windows/hardware/hh439372)します。
+Windows 8 には、高速の USB 問題の診断を向上させるために、新しい USB 3.0 デバッグ ツールが用意されています。 USB 3.0 ホスト コント ローラーとデバイスの状態を調べる新しい USB 3.0 カーネル デバッガー拡張機能があります。 USB WPP と USB の相互作用を分析し、USB デバイスの問題のトラブルシューティングをより簡単にするトレース イベントを使用することができます。 Windows 8 では、USB 3.0 経由でのデバッグをサポートします。 詳細については、次を参照してください。[設定を、USB 3.0 接続を手動で](https://docs.microsoft.com/windows-hardware/drivers/debugger/setting-up-a-usb-3-0-debug-cable-connection)します。
 
 ## <a name="new-usb-specific-failure-messages-in-device-manager"></a>新しい USB 固有のエラー メッセージでデバイス マネージャー
 
@@ -175,8 +175,8 @@ Windows 8 で、このようなエラーが発生したときに、**全般**] �
 -   USB デバイスには、無効なシリアル番号の文字列記述子が返されます。
 
 ## <a name="related-topics"></a>関連トピック
-[USB ドライバーの新機能](https://msdn.microsoft.com/library/windows/hardware/hh451212)  
-[ユニバーサル シリアル バス (USB) ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff538930)  
+[USB ドライバーの新機能](https://docs.microsoft.com/windows-hardware/drivers/what-s-new-in-driver-development)  
+[ユニバーサル シリアル バス (USB) ドライバー](https://docs.microsoft.com/windows-hardware/drivers/)  
 
 
 

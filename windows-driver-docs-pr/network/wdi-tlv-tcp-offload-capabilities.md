@@ -6,19 +6,19 @@ ms.date: 07/18/2017
 keywords:
 - WDI_TLV_TCP_OFFLOAD_CAPABILITIES ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 8844720123bae2835abf537242605c5bb7734064
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f6b9d322080a76fb0a81011476a177bb9e60b970
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330396"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67357324"
 ---
 # <a name="wditlvtcpoffloadcapabilities"></a>WDI\_TLV\_TCP\_オフロード\_機能
 
 
 WDI\_TLV\_TCP\_オフロード\_機能は、TCP/IP のオフロード機能を含む TLV します。
 
-記載されている機能の値が報告[ **NDIS\_TCP\_IP\_チェックサム\_オフロード**](https://msdn.microsoft.com/library/windows/hardware/ff567878)します。 NDIS を使用して、\_オフロード\_いない\_サポートと NDIS\_オフロード\_を介して機能を指定する際にサポートされている[OID\_WDI\_GET\_アダプター\_機能](https://msdn.microsoft.com/library/windows/hardware/dn925838)します。 FIPS モードとの接続、オフロード、UE によってオフになっています。
+記載されている機能の値が報告[ **NDIS\_TCP\_IP\_チェックサム\_オフロード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_tcp_ip_checksum_offload)します。 NDIS を使用して、\_オフロード\_いない\_サポートと NDIS\_オフロード\_を介して機能を指定する際にサポートされている[OID\_WDI\_GET\_アダプター\_機能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-get-adapter-capabilities)します。 FIPS モードとの接続、オフロード、UE によってオフになっています。
 
 ## <a name="tlv-type"></a>TLV 型
 

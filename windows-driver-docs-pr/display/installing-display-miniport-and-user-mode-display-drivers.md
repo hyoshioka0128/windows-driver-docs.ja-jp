@@ -14,19 +14,19 @@ keywords:
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
-ms.openlocfilehash: 3f49c9ad7f0fd1db6c5dcefe8054342cc68874d7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d477e0f5fa1da4ace403258679f4a2a3af74050c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365453"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379904"
 ---
 # <a name="installation-requirements-for-display-miniport-and-user-mode-display-drivers"></a>ディスプレイ ミニポートおよびユーザー モード ディスプレイ ドライバーのインストール要件
 
 
 としてマークされている INF ファイルを使用して、オペレーティング システムでグラフィックス デバイスのディスプレイのミニポート ドライバーがインストールされている**クラスの表示を =** します。 この INF は、ドライバーのインストール中に、システム提供の表示のクラスのインストーラーによって解釈されます。
 
-Windows Vista 以降、グラフィックス デバイスのディスプレイ ミニポート ドライバーの INF ファイルは、すべてのソフトウェアの設定を格納する必要があります、 [ **DDInstall セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547344)します。 これにより、オペレーティング システム、プラグ アンド プレイ (PnP) にすべてのレジストリ値をコピーするソフトウェア キー、レジストリで。
+Windows Vista 以降、グラフィックス デバイスのディスプレイ ミニポート ドライバーの INF ファイルは、すべてのソフトウェアの設定を格納する必要があります、 [ **DDInstall セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)します。 これにより、オペレーティング システム、プラグ アンド プレイ (PnP) にすべてのレジストリ値をコピーするソフトウェア キー、レジストリで。
 
 適切なインストールを確認するには、Windows 表示 Driver Model (WDDM) に準拠している任意の表示ミニポート ドライバーの INF ファイルで、次の情報を指定する必要があります。
 
@@ -58,7 +58,7 @@ Windows Vista 以降、グラフィックス デバイスのディスプレイ �
 
 [モニター EDIDs、INF をオーバーライドします。](overriding-monitor-edids.md)
 
-参照してください、 [INF ファイルの概要](https://msdn.microsoft.com/library/windows/hardware/ff549520)と[INF ファイルのセクションとディレクティブ](https://msdn.microsoft.com/library/windows/hardware/ff547433)ミニポート ドライバーの INF ファイルの表示を作成する一般的な情報についてのセクションでします。 レジストリの詳細については、ルートなど、識別子**HKR**を参照してください[ **INF AddReg ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546320)します。
+参照してください、 [INF ファイルの概要](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-inf-files)と[INF ファイルのセクションとディレクティブ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-file-sections-and-directives)ミニポート ドライバーの INF ファイルの表示を作成する一般的な情報についてのセクションでします。 レジストリの詳細については、ルートなど、識別子**HKR**を参照してください[ **INF AddReg ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)します。
 
 **注**   INF セクションではありませんしをアンインストールするためのディレクティブは、グラフィック デバイスに固有のドライバーを表示します。
 

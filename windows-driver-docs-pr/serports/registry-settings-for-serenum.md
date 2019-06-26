@@ -9,12 +9,12 @@ keywords:
 - シリアル デバイス WDK、Serenum ドライバー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 57b5b0f1f4182122b2196cf086662023816799d8
-ms.sourcegitcommit: 6a0636c33e28ce2a9a742bae20610f0f3435262c
+ms.openlocfilehash: 44676e967ae4c07deed76d76bbceb06b92ca2ccd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65836342"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356852"
 ---
 # <a name="registry-settings-for-serenum"></a>Serenum 用のレジストリ設定
 
@@ -23,15 +23,15 @@ ms.locfileid: "65836342"
 次のレジストリ エントリの値では、プラグ アンド プレイ ハードウェア デバイスのレジストリ キー、rs-232 ポートの下です。
 
 <a href="" id="portname--reg-sz-"></a>**PortName** (REG\_SZ)  
-ポートの名前を指定します。 Serenum がこの値を読み取りへの応答のポート名を返します、 [ **IOCTL\_SERENUM\_取得\_ポート\_名前**](https://msdn.microsoft.com/library/windows/hardware/ff546533)要求。
+ポートの名前を指定します。 Serenum がこの値を読み取りへの応答のポート名を返します、 [ **IOCTL\_SERENUM\_取得\_ポート\_名前**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddser/ni-ntddser-ioctl_serenum_get_port_name)要求。
 
 <a href="" id="identifier--reg-sz-"></a>**識別子**(REG\_SZ)  
 ポートの名前を指定します。 Serenum では、この値を読み取ります。 サポート、**識別子**エントリの値は、一部のレガシ PCMCIA デバイスとの互換性にのみ提供されます。 使用、**識別子**エントリの値は廃止され、Windows 2000 以降のドライバーでは実装されない必要があります。 Serenum IOCTL への応答ポート名を返します\_SERENUM\_取得\_ポート\_名前要求。
 
 <a href="" id="skipenumerations--reg-dword-"></a>**SkipEnumerations** (REG\_DWORD)  
-Windows XP 以降では、このエントリの値は Serenum がへの応答のポートを列挙するときを制御する[ **IRP\_MN\_クエリ\_デバイス\_リレーション**](https://msdn.microsoft.com/library/windows/hardware/ff551670)要求**BusRelations**します。 
+Windows XP 以降では、このエントリの値は Serenum がへの応答のポートを列挙するときを制御する[ **IRP\_MN\_クエリ\_デバイス\_リレーション**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-device-relations)要求**BusRelations**します。 
 
-たびに、システムは、シリアル ポートのデバイス スタックを構築、Serenum 設定、*列挙モード*ポートを列挙するために使用します。 ポートのデバイス スタックの Serenum の初期化中に[ **AddDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff540521)ルーチンでは、ポートの読み取り**SkipEnumerations**エントリの値として列挙モードの設定次の表で説明します。
+たびに、システムは、シリアル ポートのデバイス スタックを構築、Serenum 設定、*列挙モード*ポートを列挙するために使用します。 ポートのデバイス スタックの Serenum の初期化中に[ **AddDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)ルーチンでは、ポートの読み取り**SkipEnumerations**エントリの値として列挙モードの設定次の表で説明します。
 
 <table>
 <colgroup>

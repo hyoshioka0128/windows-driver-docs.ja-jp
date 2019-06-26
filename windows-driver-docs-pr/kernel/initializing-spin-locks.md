@@ -11,12 +11,12 @@ keywords:
 - スピン ロック WDK カーネルをキューに登録
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 13a8d9c1b1a861209ee36b5d80865fc93d81107e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5ad9eee4f77a68f0d5e8e466b149a7805113bbe2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341084"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369785"
 ---
 # <a name="initializing-spin-locks"></a>スピン ロックの初期化
 
@@ -24,19 +24,19 @@ ms.locfileid: "63341084"
 
 
 
-呼び出し元が指定の executive スピン ロックへのアクセスを必要とする任意のサポート ルーチンを呼び出す前に、ドライバーを呼び出す必要があります[ **KeInitializeSpinLock** ](https://msdn.microsoft.com/library/windows/hardware/ff552160)を対応する executive スピン ロックを初期化します。 初期化された executive スピン ロックを必要とするサポート ルーチンを以下に示します。
+呼び出し元が指定の executive スピン ロックへのアクセスを必要とする任意のサポート ルーチンを呼び出す前に、ドライバーを呼び出す必要があります[ **KeInitializeSpinLock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keinitializespinlock)を対応する executive スピン ロックを初期化します。 初期化された executive スピン ロックを必要とするサポート ルーチンを以下に示します。
 
-- [**KeAcquireSpinLock** ](https://msdn.microsoft.com/library/windows/hardware/ff551917)し、続いて[ **KeReleaseSpinLock**](https://msdn.microsoft.com/library/windows/hardware/ff553145)
+- [**KeAcquireSpinLock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keacquirespinlock)し、続いて[ **KeReleaseSpinLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kereleasespinlock)
 
-- [**KeAcquireSpinLockAtDpcLevel** ](https://msdn.microsoft.com/library/windows/hardware/ff551921)し、続いて[ **KeReleaseSpinLockFromDpcLevel**](https://msdn.microsoft.com/library/windows/hardware/ff553150)
+- [**KeAcquireSpinLockAtDpcLevel** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keacquirespinlockatdpclevel)し、続いて[ **KeReleaseSpinLockFromDpcLevel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kereleasespinlockfromdpclevel)
 
-- [**KeAcquireInStackQueuedSpinLock** ](https://msdn.microsoft.com/library/windows/hardware/ff551899)し、続いて[ **KeReleaseInStackQueuedSpinLock**](https://msdn.microsoft.com/library/windows/hardware/ff553130)
+- [**KeAcquireInStackQueuedSpinLock** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff551899(v=vs.85))し、続いて[ **KeReleaseInStackQueuedSpinLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kereleaseinstackqueuedspinlock)
 
-- [**KeAcquireInStackQueuedSpinLockAtDpcLevel** ](https://msdn.microsoft.com/library/windows/hardware/ff551908)し、続いて[ **KeReleaseInStackQueuedSpinLockFromDpcLevel**](https://msdn.microsoft.com/library/windows/hardware/ff553137)
+- [**KeAcquireInStackQueuedSpinLockAtDpcLevel** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff551908(v=vs.85))し、続いて[ **KeReleaseInStackQueuedSpinLockFromDpcLevel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kereleaseinstackqueuedspinlockfromdpclevel)
 
 - **ExInterlocked * Xxx*** ルーチン
 
-呼び出しの前に[ **IoConnectInterrupt** ](https://msdn.microsoft.com/library/windows/hardware/ff548371)と[ **KeSynchronizeExecution**](https://msdn.microsoft.com/library/windows/hardware/ff553302)、最下位レベルのドライバーを呼び出す必要があります[**KeInitializeSpinLock** ](https://msdn.microsoft.com/library/windows/hardware/ff552160)ストレージを提供する割り込みスピン ロックを初期化します。
+呼び出しの前に[ **IoConnectInterrupt** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioconnectinterrupt)と[ **KeSynchronizeExecution**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesynchronizeexecution)、最下位レベルのドライバーを呼び出す必要があります[**KeInitializeSpinLock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keinitializespinlock)ストレージを提供する割り込みスピン ロックを初期化します。
 
  
 

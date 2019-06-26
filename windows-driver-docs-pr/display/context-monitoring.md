@@ -4,12 +4,12 @@ description: フェンスの監視対象オブジェクトは、高度なフォ�
 ms.assetid: B593FC24-3F8B-4C8A-BBF9-8EF88B748536
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ed9c5aa9b0766e00e3a59ad11711157f75ed70ce
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 33f49401c803bba26087c82a4c208d369c5e6264
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581447"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369886"
 ---
 # <a name="context-monitoring"></a>コンテキストの監視
 
@@ -19,7 +19,7 @@ ms.locfileid: "56581447"
 ## <a name="span-idmonitoredfencecreationspanspan-idmonitoredfencecreationspanspan-idmonitoredfencecreationspan-monitored-fence-creation"></a><span id="_Monitored_fence_creation"></span><span id="_monitored_fence_creation"></span><span id="_MONITORED_FENCE_CREATION"></span> 監視対象のフェンスの作成
 
 
-フェンスの監視対象オブジェクトが呼び出すことによって作成された[ *CreateSynchronizationObjectCb* ](https://msdn.microsoft.com/library/windows/hardware/ff568897)新しい同期オブジェクトの種類でコールバックを**D3DDDI\_MONITORED\_フェンス**します。
+フェンスの監視対象オブジェクトが呼び出すことによって作成された[ *CreateSynchronizationObjectCb* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_createsynchronizationobjectcb)新しい同期オブジェクトの種類でコールバックを**D3DDDI\_MONITORED\_フェンス**します。
 
 次の属性と共にフェンスの監視対象オブジェクトが作成されます。
 
@@ -35,7 +35,7 @@ ms.locfileid: "56581447"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">アイテム</th>
+<th align="left">項目</th>
 <th align="left">説明</th>
 </tr>
 </thead>
@@ -46,7 +46,7 @@ ms.locfileid: "56581447"
 </tr>
 <tr class="even">
 <td align="left"><p><span id="FenceValueCPUVirtualAddress"></span><span id="fencevaluecpuvirtualaddress"></span><span id="FENCEVALUECPUVIRTUALADDRESS"></span>FenceValueCPUVirtualAddress</p></td>
-<td align="left"><p>Cpu のフェンス値 (64 ビット) の読み取り専用マッピングです。 このアドレスがマップされている I/O の一貫性、一意性が他のプラットフォームでキャッシュを (無効) をサポートするプラットフォームの cpu の観点から (キャッシュ可能な) WB します。 フェンスの進行状況でこのメモリ位置を読み取るだけの追跡に CPU を使用できます。 CPU は、このメモリ位置に書き込むには使用できません。 フェンスを通知するには、CPU が呼び出しに必要な<a href="https://msdn.microsoft.com/library/windows/hardware/dn906360" data-raw-source="[&lt;em&gt;SignalSynchronizationObjectFromCpuCb&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/dn906360)"> <em>SignalSynchronizationObjectFromCpuCb</em></a>します。</p>
+<td align="left"><p>Cpu のフェンス値 (64 ビット) の読み取り専用マッピングです。 このアドレスがマップされている I/O の一貫性、一意性が他のプラットフォームでキャッシュを (無効) をサポートするプラットフォームの cpu の観点から (キャッシュ可能な) WB します。 フェンスの進行状況でこのメモリ位置を読み取るだけの追跡に CPU を使用できます。 CPU は、このメモリ位置に書き込むには使用できません。 フェンスを通知するには、CPU が呼び出しに必要な<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_signalsynchronizationobjectfromcpucb" data-raw-source="[&lt;em&gt;SignalSynchronizationObjectFromCpuCb&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_signalsynchronizationobjectfromcpucb)"> <em>SignalSynchronizationObjectFromCpuCb</em></a>します。</p>
 <p>サポートするアダプター <em>IoMmu</em> GPU アクセス用にこのアドレスを使用する必要があります。 アドレスがここでの読み取り/書き込みとしてマップされます。</p></td>
 </tr>
 <tr class="odd">
@@ -59,11 +59,11 @@ ms.locfileid: "56581447"
 
  
 
-フェンスの値は、64 ビットの境界に整列、それぞれの仮想アドレスを含む 64 ビット値です。 Gpu が使用して、新しい CPU によって表示として 64 ビット値をアトミックに更新できるかどうかを宣言する必要があります[ **DXGK\_VIDSCHCAPS**](https://msdn.microsoft.com/library/windows/hardware/ff562863)::**No64BitAtomics**フラグ。 GPU のみの 32 ビット値をアトミックに更新できる場合は、OS はフェンス ラップアラウンド ケースを自動的に処理されます。 ただし未処理待機とシグナルのフェンス値にすることはできません、制限は配置以上**UINT\_最大**最後のシグナルのフェンス値から/2。
+フェンスの値は、64 ビットの境界に整列、それぞれの仮想アドレスを含む 64 ビット値です。 Gpu が使用して、新しい CPU によって表示として 64 ビット値をアトミックに更新できるかどうかを宣言する必要があります[ **DXGK\_VIDSCHCAPS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_vidschcaps)::**No64BitAtomics**フラグ。 GPU のみの 32 ビット値をアトミックに更新できる場合は、OS はフェンス ラップアラウンド ケースを自動的に処理されます。 ただし未処理待機とシグナルのフェンス値にすることはできません、制限は配置以上**UINT\_最大**最後のシグナルのフェンス値から/2。
 ## <a name="span-idgpusignalspanspan-idgpusignalspanspan-idgpusignalspangpu-signal"></a><span id="GPU_signal"></span><span id="gpu_signal"></span><span id="GPU_SIGNAL"></span>GPU のシグナル
 
 
-GPU エンジンがその仮想アドレスを使用して監視対象のフェンスへの書き込み可能でない場合、ユーザー モード ドライバーは、新しい使用して[ *SignalSynchronizationObjectFromGpuCb* ](https://msdn.microsoft.com/library/windows/hardware/dn906362)がキューに登録されるコールバックをソフトウェア GPU コンテキストにパケットを信号です。
+GPU エンジンがその仮想アドレスを使用して監視対象のフェンスへの書き込み可能でない場合、ユーザー モード ドライバーは、新しい使用して[ *SignalSynchronizationObjectFromGpuCb* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_signalsynchronizationobjectfromgpucb)がキューに登録されるコールバックをソフトウェア GPU コンテキストにパケットを信号です。
 
 GPU からフェンスを通知するには、ユーザー モード ドライバーは、カーネルのモデルを経由せず直接フェンス書き込みコマンドをコンテキスト コマンド ストリームに挿入します。 カーネルがフェンスの進行状況を監視するメカニズムは、特定の GPU エンジンが監視対象のフェンスの基本的なまたは高度な実装をサポートするかどうかによって異なります。
 
@@ -72,17 +72,17 @@ GPU からフェンスを通知するには、ユーザー モード ドライ�
 ## <a name="span-idgpuwaitspanspan-idgpuwaitspanspan-idgpuwaitspan-gpu-wait"></a><span id="_GPU_wait"></span><span id="_gpu_wait"></span><span id="_GPU_WAIT"></span> GPU の待機
 
 
-GPU エンジンの監視対象のフェンスでは、ユーザー モード ドライバーを待機するがその保留中のコマンドをフラッシュする最初の必要をバッファーし呼び出し[ *WaitForSynchronizationObjectFromGpuCb* ](https://msdn.microsoft.com/library/windows/hardware/dn906367) (オブジェクトのフェンスを指定します。**hSyncObject**) フェンス値を待機するいるとします。 グラフィックス カーネルでは、キューにその内部のデータベースへの依存関係し、待機操作の背後にあるキューに作業が継続されるように、ユーザー モード ドライバーにすぐに返します。 待機操作がないスケジュール実行までの待機操作が満たされた後に送信されたバッファーをコマンドします。
+GPU エンジンの監視対象のフェンスでは、ユーザー モード ドライバーを待機するがその保留中のコマンドをフラッシュする最初の必要をバッファーし呼び出し[ *WaitForSynchronizationObjectFromGpuCb* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_waitforsynchronizationobjectfromgpucb) (オブジェクトのフェンスを指定します。**hSyncObject**) フェンス値を待機するいるとします。 グラフィックス カーネルでは、キューにその内部のデータベースへの依存関係し、待機操作の背後にあるキューに作業が継続されるように、ユーザー モード ドライバーにすぐに返します。 待機操作がないスケジュール実行までの待機操作が満たされた後に送信されたバッファーをコマンドします。
 
 ## <a name="span-idcpusignalspanspan-idcpusignalspanspan-idcpusignalspancpu-signal"></a><span id="CPU_signal"></span><span id="cpu_signal"></span><span id="CPU_SIGNAL"></span>CPU signal
 
 
-新しい[ *SignalSynchronizationObjectFromCpuCb* ](https://msdn.microsoft.com/library/windows/hardware/dn906360)フェンスの監視対象オブジェクトを通知するために CPU を許可するが追加されました。 フェンスの監視対象オブジェクトが、CPU によってシグナルを受け取る、グラフィックスのカーネルで更新されますフェンスのメモリ位置シグナル値、ユーザー モードのリーダーとすぐに解除待機にすぐに表示になるため、満足の待機処理。
+新しい[ *SignalSynchronizationObjectFromCpuCb* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_signalsynchronizationobjectfromcpucb)フェンスの監視対象オブジェクトを通知するために CPU を許可するが追加されました。 フェンスの監視対象オブジェクトが、CPU によってシグナルを受け取る、グラフィックスのカーネルで更新されますフェンスのメモリ位置シグナル値、ユーザー モードのリーダーとすぐに解除待機にすぐに表示になるため、満足の待機処理。
 
 ## <a name="span-idcpuwaitspanspan-idcpuwaitspanspan-idcpuwaitspancpu-wait"></a><span id="CPU_wait"></span><span id="cpu_wait"></span><span id="CPU_WAIT"></span>CPU 待機
 
 
-新しい[ *WaitForSynchronizationObjectFromCpuCb* ](https://msdn.microsoft.com/library/windows/hardware/dn906366)フェンスの監視対象オブジェクトで待機する CPU を許可するが追加されました。 待機操作の 2 つの形式を利用できます。 最初の形式、 *WaitForSynchronizationObjectFromCpuCb*コールバックは、待機が満たされているまでをブロックします。 2 番目の形式で*WaitForSynchronizationObjectFromCpuCb*ハンドルを待機条件が満たされた後に通知される CPU イベントに移動します。
+新しい[ *WaitForSynchronizationObjectFromCpuCb* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_waitforsynchronizationobjectfromcpucb)フェンスの監視対象オブジェクトで待機する CPU を許可するが追加されました。 待機操作の 2 つの形式を利用できます。 最初の形式、 *WaitForSynchronizationObjectFromCpuCb*コールバックは、待機が満たされているまでをブロックします。 2 番目の形式で*WaitForSynchronizationObjectFromCpuCb*ハンドルを待機条件が満たされた後に通知される CPU イベントに移動します。
 
  
 

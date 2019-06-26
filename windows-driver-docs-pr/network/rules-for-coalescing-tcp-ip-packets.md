@@ -4,12 +4,12 @@ description: このセクションでは、ミニポート ドライバーでの
 ms.assetid: EC3C72EB-20A6-4D48-8E8C-F70EE4483193
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b65e9adced45cbd7a55ca24bbb84ce24005905b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8a17c87ad22d86e6810a35f0ee3f217eb29b4a01
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359755"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382132"
 ---
 # <a name="rules-for-coalescing-tcpip-segments"></a>TCP/IP セグメントの結合の規則
 
@@ -169,7 +169,7 @@ TCP タイムスタンプ オプションは、合法的に結合された唯一
 
  
 
-設定して、次の帯域外の情報を次のように表示する必要がまとめられたセグメントを指定する際に、 **NetBufferListInfo**のメンバー、 [ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)まとめられたセグメントを記述する構造体。
+設定して、次の帯域外の情報を次のように表示する必要がまとめられたセグメントを指定する際に、 **NetBufferListInfo**のメンバー、 [ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)まとめられたセグメントを記述する構造体。
 
 -   結合されたセグメントの数を格納する必要があります、 **NetBufferListInfo**\[**TcpRecvSegCoalesceInfo**\].**CoalescedSegCount**メンバー。 この数には、結合されたデータのセグメントのみを表します。 ACK の純粋な結合が禁止されているし、ウィンドウの更新プログラムのセグメントは、このフィールドの一部としてカウントされない必要があります。
 
@@ -179,7 +179,7 @@ TCP タイムスタンプ オプションは、合法的に結合された唯一
 
 **DupAckCount**と**RscTcpTimestampDelta**メンバーは、解釈された場合、および場合にのみ、 **CoalescedSegCount**メンバーが 0 より大きい。 場合、 **CoalescedSegCount** 0 の場合は、セグメントは、非結合以外の RSC セグメントとして扱われます。
 
-内容については、 **NetBufferListInfo** 、メンバーを参照してください[ **NDIS\_NET\_バッファー\_一覧\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff566569)と[ **NDIS\_RSC\_NBL\_情報**](https://msdn.microsoft.com/library/windows/hardware/hh451655)します。
+内容については、 **NetBufferListInfo** 、メンバーを参照してください[ **NDIS\_NET\_バッファー\_一覧\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ne-ndis-_ndis_net_buffer_list_info)と[ **NDIS\_RSC\_NBL\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_rsc_nbl_info)します。
 
 PSH ビットまとめられたすべてのセグメントの or 演算があります。 つまり、個々 のセグメントのいずれかで PSH ビットが設定されている場合、ミニポート ドライバーが PSH ビットを SCU でに設定する必要があります。
 

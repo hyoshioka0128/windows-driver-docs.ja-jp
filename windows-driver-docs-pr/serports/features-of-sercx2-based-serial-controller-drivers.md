@@ -4,12 +4,12 @@ description: シリアル コント ローラーの SerCx2 ベースのドライ
 ms.assetid: 4A9B80F1-4DE1-4D35-ADDF-90058A4F8388
 ms.date: 05/13/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 0eddbd45eba4f19ab34aec94bf65603fa070a291
-ms.sourcegitcommit: 6a0636c33e28ce2a9a742bae20610f0f3435262c
+ms.openlocfilehash: 6759434255ae8cf496d670bbcda6fff99d38d6d3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65836351"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377925"
 ---
 # <a name="features-of-sercx2-based-serial-controller-drivers"></a>SerCx2 ベースのシリアル コントローラー ドライバーの機能
 
@@ -37,6 +37,6 @@ SerCx2 では、コント ローラーのドライバーの代わりに、次の
 - 低電力デバイスの状態との間の遷移
 - I/O 要求のキャンセル (カスタム I/O トランザクション中を除く)
 
-SerCx2 の変換を読み取りを管理し、書き込み操作、 [ **IRP\_MJ\_読み取り**](https://msdn.microsoft.com/library/windows/hardware/ff546883)と[ **IRP\_MJ\_書き込み** ](https://msdn.microsoft.com/library/windows/hardware/ff546904)を処理するコント ローラーのシリアル ドライバーの比較的単純な I/O トランザクションをクライアントからの要求。 詳細については、次を参照してください。 [SerCx2 I/O トランザクション](sercx2-i-o-transactions.md)です。
+SerCx2 の変換を読み取りを管理し、書き込み操作、 [ **IRP\_MJ\_読み取り**](https://docs.microsoft.com/previous-versions/ff546883(v=vs.85))と[ **IRP\_MJ\_書き込み** ](https://docs.microsoft.com/previous-versions/ff546904(v=vs.85))を処理するコント ローラーのシリアル ドライバーの比較的単純な I/O トランザクションをクライアントからの要求。 詳細については、次を参照してください。 [SerCx2 I/O トランザクション](sercx2-i-o-transactions.md)です。
 
 SerCx2 は、Sercx2.sys という名前のコンポーネントとして Windows に含まれます。 シリアル コント ローラー ドライバー静的 Sercxstubs.lib (バージョン 2.0) である SerCx2 ライブラリへのリンクし、実行時に、通信 Sercx2.sys します。 SerCx2 DDI が 2.0 に定義されている\\Sercx.h ヘッダー ファイル。 Windows 8.1 の Windows ドライバー キットで使用できる Sercxstubs.lib と Sercx.h します。

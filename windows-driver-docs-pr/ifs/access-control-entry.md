@@ -11,12 +11,12 @@ keywords:
 - ファイル システムの Sid の WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c0bc5ba37923f7c44aeea23b343598ba974c232e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: aad8e527a5c0517d6d6552cfaf4f19bfafdaf55d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323333"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381764"
 ---
 # <a name="access-control-entry"></a>アクセス制御エントリ
 
@@ -46,7 +46,7 @@ ms.locfileid: "63323333"
 
 したがって、オブジェクトにアクセスする場合は、セキュリティ サブシステムの監査とアラームの動作を制御する他の 2 つが使用されるときに、オブジェクトへのプログラムによるアクセスを制御する 3 つの種類に使用されます。 セキュリティ サブシステムの実際の動作がいくつかの情報を組み合わせることによって計算されるか、オブジェクトに関連付けられているすべての Ace のことに注意してください。
 
-ドライバーは、アクセスのアクセス制御エントリを作成できます\_許可\_ACE\_ルーチンを使用して入力[ **RtlAddAccessAllowedAce**](https://msdn.microsoft.com/library/windows/hardware/ff552092)します。 他の種類の ACE のエントリを追加するには、WDK が他のサポート ルーチンを提供しないために、ドライバー開発者は独自の機能を作成する必要があります。
+ドライバーは、アクセスのアクセス制御エントリを作成できます\_許可\_ACE\_ルーチンを使用して入力[ **RtlAddAccessAllowedAce**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-rtladdaccessallowedace)します。 他の種類の ACE のエントリを追加するには、WDK が他のサポート ルーチンを提供しないために、ドライバー開発者は独自の機能を作成する必要があります。
 
  
 

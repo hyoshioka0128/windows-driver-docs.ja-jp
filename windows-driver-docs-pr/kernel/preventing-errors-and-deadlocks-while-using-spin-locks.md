@@ -10,12 +10,12 @@ keywords:
 - スピン ロック WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eedd8ec0e6d377870830c91723588da17b1e36ee
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 04d96f822e7beb96a753bb0d4136646eae222dc9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369130"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381679"
 ---
 # <a name="preventing-errors-and-deadlocks-while-using-spin-locks"></a>スピン ロック使用中のエラーおよびデッドロックの防止
 
@@ -23,7 +23,7 @@ ms.locfileid: "63369130"
 
 
 
-ドライバーのルーチンは、スピン ロックを保持しているときに、ハードウェア例外またはシステム停止することがなくソフトウェア例外を発生させることができません。 ドライバーの ISR と言い換える*SynchCritSection*ルーチンへの呼び出しで、ドライバーを提供する[ **KeSynchronizeExecution** ](https://msdn.microsoft.com/library/windows/hardware/ff553302)必要があります、障害ドメインまたはトラップなどをページで、エラーまたは算術例外、およびソフトウェア例外を発生させることはできません。 呼び出すルーチン[ **KeAcquireSpinLock** ](https://msdn.microsoft.com/library/windows/hardware/ff551917)または[ **KeAcquireInStackQueuedSpinLock** ](https://msdn.microsoft.com/library/windows/hardware/ff551899)もハードウェア例外が発生することはできませんまたはソフトウェア例外を発生させる、executive スピン ロックが解放され、IRQL で現在実行されていないまで = ディスパッチ\_レベル。
+ドライバーのルーチンは、スピン ロックを保持しているときに、ハードウェア例外またはシステム停止することがなくソフトウェア例外を発生させることができません。 ドライバーの ISR と言い換える*SynchCritSection*ルーチンへの呼び出しで、ドライバーを提供する[ **KeSynchronizeExecution** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesynchronizeexecution)必要があります、障害ドメインまたはトラップなどをページで、エラーまたは算術例外、およびソフトウェア例外を発生させることはできません。 呼び出すルーチン[ **KeAcquireSpinLock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keacquirespinlock)または[ **KeAcquireInStackQueuedSpinLock** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff551899(v=vs.85))もハードウェア例外が発生することはできませんまたはソフトウェア例外を発生させる、executive スピン ロックが解放され、IRQL で現在実行されていないまで = ディスパッチ\_レベル。
 
 ### <a name="pageable-data-and-support-routines"></a>ページング可能なデータとサポート ルーチン
 

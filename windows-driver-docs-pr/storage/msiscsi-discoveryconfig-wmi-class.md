@@ -4,12 +4,12 @@ description: MSiSCSI\_DiscoveryConfig WMI クラス
 ms.assetid: dbf170ba-92ab-47bd-a076-5f54129305a5
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: a9849b12b0f6254d69d9ded7c8eafdc91635f296
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 99d1578588bc237f011ec94abb949db76a0e7000
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346500"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379700"
 ---
 # <a name="msiscsidiscoveryconfig-wmi-class"></a>MSiSCSI\_DiscoveryConfig WMI クラス
 
@@ -44,7 +44,7 @@ class MSiSCSI_DiscoveryConfig {
 };
 ```
 
-WMI ツールのスイートでは、上記のクラス定義をコンパイルするときに生成、 [ **MSiSCSI\_DiscoveryConfig** ](https://msdn.microsoft.com/library/windows/hardware/ff562991)データ構造体。
+WMI ツールのスイートでは、上記のクラス定義をコンパイルするときに生成、 [ **MSiSCSI\_DiscoveryConfig** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsicfg/ns-iscsicfg-_msiscsi_discoveryconfig)データ構造体。
 
  
 

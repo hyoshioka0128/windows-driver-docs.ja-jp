@@ -8,23 +8,23 @@ keywords:
 - NMR データ構造体の初期化
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 372d3fc86532b667967298b51da9ceee76710940
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8a13d3526117e3ffaca5cb0f334d678a00000e9b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324932"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381259"
 ---
 # <a name="initializing-nmr-data-structures"></a>NMR データ構造の初期化
 
 
 Winsock カーネル (WSK) する前にアプリケーションに登録することができます、[ネットワーク モジュール レジストラー (NMR)](network-module-registrar2.md)、最初、アプリケーションは、次の構造を初期化する可能性があります。
 
--   [**NPI\_MODULEID**](https://msdn.microsoft.com/library/windows/hardware/ff568813)
+-   [**NPI\_MODULEID**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff568813(v=vs.85))
 
--   [**NPI\_クライアント\_特性**](https://msdn.microsoft.com/library/windows/hardware/ff568812)
+-   [**NPI\_クライアント\_特性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netioddk/ns-netioddk-_npi_client_characteristics)
 
--   [**NPI\_登録\_インスタンス**](https://msdn.microsoft.com/library/windows/hardware/ff568815)内に含まれる、 [ **NPI\_クライアント\_特性**](https://msdn.microsoft.com/library/windows/hardware/ff568812)構造体
+-   [**NPI\_登録\_インスタンス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netioddk/ns-netioddk-_npi_registration_instance)内に含まれる、 [ **NPI\_クライアント\_特性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netioddk/ns-netioddk-_npi_client_characteristics)構造体
 
 有効であり、メモリに常駐のまま、NMR で WSK アプリケーションが登録されている限り、これらのデータ構造のすべて必要があります。
 
@@ -79,7 +79,7 @@ const NPI_CLIENT_CHARACTERISTICS Characteristics =
 };
 ```
 
-WSK アプリケーションが呼び出す、 [ **NmrRegisterClient** ](https://msdn.microsoft.com/library/windows/hardware/ff568782) NMR にアプリケーションを登録する関数。
+WSK アプリケーションが呼び出す、 [ **NmrRegisterClient** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netioddk/nf-netioddk-nmrregisterclient) NMR にアプリケーションを登録する関数。
 
 次に、例を示します。
 

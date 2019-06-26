@@ -8,12 +8,12 @@ keywords:
 - 逆シリアル化された NDIS ミニポート ドライバー WDK ネットワーク
 ms.date: 01/09/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f482562c043fac91c9d9d18172f586b57ebe8ad
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f9c3cf06239430cbb30659b38ffcf3202913a673
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347408"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381434"
 ---
 # <a name="deserialized-ndis-miniport-drivers"></a>逆シリアル化された NDIS ミニポート ドライバー
 
@@ -45,7 +45,7 @@ NDIS とのインターフェイス、ときに、逆シリアル化されたミ
 
 逆シリアル化されたミニポート ドライバーでは、次のドライバー内部の要件を満たす必要があります。
 
--   逆シリアル化されたミニポート ドライバーでのネットワーク バッファー キューを保護する必要があります[スピンロック](https://msdn.microsoft.com/library/windows/hardware/ff548114)します。 逆シリアル化されたミニポート ドライバーはそれ自体で同時にアクセスの共有状態も保護する必要があります*MiniportXxx*関数。
+-   逆シリアル化されたミニポート ドライバーでのネットワーク バッファー キューを保護する必要があります[スピンロック](https://docs.microsoft.com/windows-hardware/drivers/kernel/introduction-to-spin-locks)します。 逆シリアル化されたミニポート ドライバーはそれ自体で同時にアクセスの共有状態も保護する必要があります*MiniportXxx*関数。
 
 -   逆シリアル化されたミニポート ドライバーの*MiniportXxx* IRQL で関数が実行できる&lt;= ディスパッチ\_レベル。 その結果、ドライバーの作成者とは限りませんを*MiniportXxx*要求を処理する、シーケンス内の関数が呼び出されます。 1 つ*MiniportXxx*関数が別にプリエンプト*MiniportXxx*低い IRQL でを実行する関数。
 

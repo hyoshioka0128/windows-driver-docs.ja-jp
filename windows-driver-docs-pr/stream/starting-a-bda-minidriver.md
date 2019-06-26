@@ -7,12 +7,12 @@ keywords:
 - BDA ミニドライバー WDK AVStream の開始
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a63e9266792f5248da35d7009b0f9970a8fd56e7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 33e09e5381a25b1a3e8ffadb6a680aa46052f604
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333977"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377846"
 ---
 # <a name="starting-a-bda-minidriver"></a>BDA ミニドライバーの起動
 
@@ -20,11 +20,11 @@ ms.locfileid: "63333977"
 
 
 
-BDA デバイスの運用開始時に、プラグ アンド プレイ (PnP) マネージャーのディスパッチ[ **IRP\_MN\_開始\_デバイス**](https://msdn.microsoft.com/library/windows/hardware/ff551749)します。 AVStream クラスは、BDA デバイスに関連付けられた BDA ミニドライバーの開始ルーチンを呼び出します。 この開始ルーチン レジストリからデバイスに関する情報を取得、デバイスに関する情報を設定およびを呼び出して、 [ **BdaCreateFilterFactory** ](https://msdn.microsoft.com/library/windows/hardware/ff556438)に関数をサポートします。
+BDA デバイスの運用開始時に、プラグ アンド プレイ (PnP) マネージャーのディスパッチ[ **IRP\_MN\_開始\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)します。 AVStream クラスは、BDA デバイスに関連付けられた BDA ミニドライバーの開始ルーチンを呼び出します。 この開始ルーチン レジストリからデバイスに関する情報を取得、デバイスに関する情報を設定およびを呼び出して、 [ **BdaCreateFilterFactory** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdasup/nf-bdasup-bdacreatefilterfactory)に関数をサポートします。
 
--   最初のフィルター記述子からデバイスのフィルター ファクトリの作成 ([**KSFILTER\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff562553)) デバイス。 最初のフィルター記述子は、フィルターおよび入力ピンのディスパッチと自動化のテーブルを参照します。 参照してください[ディスパッチ テーブルを作成](creating-dispatch-tables.md)と[Automation テーブルを定義する](defining-automation-tables.md)詳細についてはします。
+-   最初のフィルター記述子からデバイスのフィルター ファクトリの作成 ([**KSFILTER\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_ksfilter_descriptor)) デバイス。 最初のフィルター記述子は、フィルターおよび入力ピンのディスパッチと自動化のテーブルを参照します。 参照してください[ディスパッチ テーブルを作成](creating-dispatch-tables.md)と[Automation テーブルを定義する](defining-automation-tables.md)詳細についてはします。
 
--   フィルター ファクトリに関連付ける、 [ **BDA\_フィルター\_テンプレート**](https://msdn.microsoft.com/library/windows/hardware/ff556523)構造体。 この構造体は、デバイスと、入力と出力ピンの考えられるペアの一覧のテンプレートのフィルター記述子を参照します。 この記述子と一覧がさらに参照します。
+-   フィルター ファクトリに関連付ける、 [ **BDA\_フィルター\_テンプレート**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdasup/ns-bdasup-_bda_filter_template)構造体。 この構造体は、デバイスと、入力と出力ピンの考えられるペアの一覧のテンプレートのフィルター記述子を参照します。 この記述子と一覧がさらに参照します。
     -   ネットワーク プロバイダーが BDA フィルターのトポロジの決定に使用できる静的テンプレート構造体。
     -   ノードと、フィルターを接続する方法と共に BDA フィルターの pin。
     -   ネットワーク プロバイダーが作成し、フィルターのインスタンスを閉じるに使用できるルーチン。

@@ -16,17 +16,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ca2f3ef8578319931d84f71dbd22abeac525f88
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3cc5a94d870d3ae5e12891bcc8689c0166035bbb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365008"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380350"
 ---
 # <a name="fltparameters-for-irpmjfilesystemcontrol-union"></a>FLT\_IRP のパラメーター\_MJ\_ファイル\_システム\_コントロール共用体
 
 
-共用体のコンポーネントで使用されるときに、 **MajorFunction**のフィールド、 [ **FLT\_IO\_パラメーター\_ブロック**](https://msdn.microsoft.com/library/windows/hardware/ff544638)用の構造、操作が[ **IRP\_MJ\_ファイル\_システム\_コントロール**](irp-mj-file-system-control.md)します。
+共用体のコンポーネントで使用されるときに、 **MajorFunction**のフィールド、 [ **FLT\_IO\_パラメーター\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_io_parameter_block)用の構造、操作が[ **IRP\_MJ\_ファイル\_システム\_コントロール**](irp-mj-file-system-control.md)します。
 
 <a name="syntax"></a>構文
 ------
@@ -98,34 +98,34 @@ IRP のすべてのバッファリング メソッドに使用される共用体
 **FsControlCode**  
 ターゲット デバイスのファイル システム、ファイル システム フィルターまたはミニフィルター ドライバーに渡される FSCTL 関数コードです。
 
-IOCTL および FSCTL 要求の詳細については、次を参照してください[I/O 制御コードを使用して](https://msdn.microsoft.com/library/windows/hardware/ff565406)で、*カーネル モードのアーキテクチャ ガイド*と"デバイスの入力と出力の制御コード"、Microsoft Windows sdk。ドキュメントです。 (このリソースできない場合がありますのいくつかの言語および国。)
+IOCTL および FSCTL 要求の詳細については、次を参照してください[I/O 制御コードを使用して](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-i-o-control-codes)で、*カーネル モードのアーキテクチャ ガイド*と"デバイスの入力と出力の制御コード"、Microsoft Windows sdk。ドキュメントです。 (このリソースできない場合がありますのいくつかの言語および国。)
 
 **どちらも**  
-IRP に使用される共用体のコンポーネント\_MN\_カーネル\_呼び出しと IRP\_MN\_ユーザー\_FS\_要求操作は、バッファリングのメソッドは、メソッドと\_NEITHER. バッファリング メソッドの詳細については、次を参照してください。 [I/O 制御コードを定義する](https://msdn.microsoft.com/library/windows/hardware/ff543023)で、*カーネル モードのアーキテクチャ ガイド*します。 (このリソースできない場合がありますのいくつかの言語および国。)
+IRP に使用される共用体のコンポーネント\_MN\_カーネル\_呼び出しと IRP\_MN\_ユーザー\_FS\_要求操作は、バッファリングのメソッドは、メソッドと\_NEITHER. バッファリング メソッドの詳細については、次を参照してください。 [I/O 制御コードを定義する](https://docs.microsoft.com/windows-hardware/drivers/kernel/defining-i-o-control-codes)で、*カーネル モードのアーキテクチャ ガイド*します。 (このリソースできない場合がありますのいくつかの言語および国。)
 
 **InputBuffer**  
-操作の元の要求者が提供される入力バッファーのユーザー モード仮想アドレス。 I/O マネージャーとフィルター マネージャーでは、これらのアドレスは検証されません。 ユーザー領域のアドレスは有効なは、ミニフィルターなどでルーチンを使用する必要があります、 [ **ProbeForRead**](https://msdn.microsoft.com/library/windows/hardware/ff559876)、 [ **ProbeForWrite**](https://msdn.microsoft.com/library/windows/hardware/ff559879)と[ **MmProbeAndLockPages**](https://msdn.microsoft.com/library/windows/hardware/ff554664)、内のすべてのバッファー参照を囲む**試用/を除く**ブロックします。 詳細については、次を参照してください。[を使用していないバッファー Nor ダイレクト I/O](https://msdn.microsoft.com/library/windows/hardware/ff565432)と[ユーザー スペースのアドレスを参照するエラー](https://msdn.microsoft.com/library/windows/hardware/ff544308)で、*カーネル モードのアーキテクチャ ガイド*します。 (このリソースできない場合がありますのいくつかの言語および国。)
+操作の元の要求者が提供される入力バッファーのユーザー モード仮想アドレス。 I/O マネージャーとフィルター マネージャーでは、これらのアドレスは検証されません。 ユーザー領域のアドレスは有効なは、ミニフィルターなどでルーチンを使用する必要があります、 [ **ProbeForRead**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-probeforread)、 [ **ProbeForWrite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-probeforwrite)と[ **MmProbeAndLockPages**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmprobeandlockpages)、内のすべてのバッファー参照を囲む**試用/を除く**ブロックします。 詳細については、次を参照してください。[を使用していないバッファー Nor ダイレクト I/O](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-neither-buffered-nor-direct-i-o)と[ユーザー スペースのアドレスを参照するエラー](https://docs.microsoft.com/windows-hardware/drivers/kernel/errors-in-referencing-user-space-addresses)で、*カーネル モードのアーキテクチャ ガイド*します。 (このリソースできない場合がありますのいくつかの言語および国。)
 
 **OutputBuffer**  
-操作の元の要求者が指定された出力バッファーのユーザー モード仮想アドレス。 I/O マネージャーとフィルター マネージャーでは、これらのアドレスは検証されません。 ユーザー領域のアドレスは有効なは、ミニフィルターなどでルーチンを使用する必要があります、 [ **ProbeForRead**](https://msdn.microsoft.com/library/windows/hardware/ff559876)、 [ **ProbeForWrite**](https://msdn.microsoft.com/library/windows/hardware/ff559879)と[ **MmProbeAndLockPages**](https://msdn.microsoft.com/library/windows/hardware/ff554664)、内のすべてのバッファー参照を囲む**試用/を除く**ブロックします。 詳細については、次を参照してください。[を使用していないバッファー Nor ダイレクト I/O](https://msdn.microsoft.com/library/windows/hardware/ff565432)と[ユーザー スペースのアドレスを参照するエラー](https://msdn.microsoft.com/library/windows/hardware/ff544308)で、*カーネル モードのアーキテクチャ ガイド*します。 (このリソースできない場合がありますのいくつかの言語および国。)
+操作の元の要求者が指定された出力バッファーのユーザー モード仮想アドレス。 I/O マネージャーとフィルター マネージャーでは、これらのアドレスは検証されません。 ユーザー領域のアドレスは有効なは、ミニフィルターなどでルーチンを使用する必要があります、 [ **ProbeForRead**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-probeforread)、 [ **ProbeForWrite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-probeforwrite)と[ **MmProbeAndLockPages**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmprobeandlockpages)、内のすべてのバッファー参照を囲む**試用/を除く**ブロックします。 詳細については、次を参照してください。[を使用していないバッファー Nor ダイレクト I/O](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-neither-buffered-nor-direct-i-o)と[ユーザー スペースのアドレスを参照するエラー](https://docs.microsoft.com/windows-hardware/drivers/kernel/errors-in-referencing-user-space-addresses)で、*カーネル モードのアーキテクチャ ガイド*します。 (このリソースできない場合がありますのいくつかの言語および国。)
 
 **OutputMdlAddress**  
 バッファーを記述したメモリ記述子一覧 (MDL) のアドレスを**Neither.OutputBuffer**へのポインターします。 このメンバーは省略可能とは、 **NULL**します。
 
 **バッファー**  
-IRP に使用される共用体のコンポーネント\_MN\_カーネル\_呼び出しと IRP\_MN\_ユーザー\_FS\_要求操作は、バッファリングのメソッドは、メソッドと\_バッファーに格納します。 バッファリング メソッドの詳細については、次を参照してください。 [I/O 制御コードを定義する](https://msdn.microsoft.com/library/windows/hardware/ff543023)で、*カーネル モードのアーキテクチャ ガイド*します。 (このリソースできない場合がありますのいくつかの言語および国。)
+IRP に使用される共用体のコンポーネント\_MN\_カーネル\_呼び出しと IRP\_MN\_ユーザー\_FS\_要求操作は、バッファリングのメソッドは、メソッドと\_バッファーに格納します。 バッファリング メソッドの詳細については、次を参照してください。 [I/O 制御コードを定義する](https://docs.microsoft.com/windows-hardware/drivers/kernel/defining-i-o-control-codes)で、*カーネル モードのアーキテクチャ ガイド*します。 (このリソースできない場合がありますのいくつかの言語および国。)
 
 **SystemBuffer**  
-操作のシステムによって割り当てられたバッファーのアドレス。 メソッドで\_バッファー I/O、このバッファーが使用されるの入力し、出力の両方。 詳細については、次を参照してください。[メソッドにアクセスするデータ バッファーの](https://msdn.microsoft.com/library/windows/hardware/ff554436)で、*カーネル モードのアーキテクチャ ガイド*します。 (このリソースできない場合がありますのいくつかの言語および国。)
+操作のシステムによって割り当てられたバッファーのアドレス。 メソッドで\_バッファー I/O、このバッファーが使用されるの入力し、出力の両方。 詳細については、次を参照してください。[メソッドにアクセスするデータ バッファーの](https://docs.microsoft.com/windows-hardware/drivers/kernel/methods-for-accessing-data-buffers)で、*カーネル モードのアーキテクチャ ガイド*します。 (このリソースできない場合がありますのいくつかの言語および国。)
 
 **ダイレクト**  
-IRP に使用される共用体のコンポーネント\_MN\_カーネル\_呼び出しと IRP\_MN\_ユーザー\_FS\_要求操作は、バッファリングのメソッドは、メソッドと\_で\_ダイレクト メソッド、または\_アウト\_ダイレクトします。 バッファリング メソッドの詳細については、次を参照してください。 [I/O 制御コードを定義する](https://msdn.microsoft.com/library/windows/hardware/ff543023)で、*カーネル モードのアーキテクチャ ガイド*します。
+IRP に使用される共用体のコンポーネント\_MN\_カーネル\_呼び出しと IRP\_MN\_ユーザー\_FS\_要求操作は、バッファリングのメソッドは、メソッドと\_で\_ダイレクト メソッド、または\_アウト\_ダイレクトします。 バッファリング メソッドの詳細については、次を参照してください。 [I/O 制御コードを定義する](https://docs.microsoft.com/windows-hardware/drivers/kernel/defining-i-o-control-codes)で、*カーネル モードのアーキテクチャ ガイド*します。
 
 **InputSystemBuffer**  
-操作の入力バッファーのアドレス。 このバッファーに安全にカーネル モードからアクセスできるように、オペレーティング システムによってダウン ロックされています。 詳細については、次を参照してください。[メソッドにアクセスするデータ バッファーの](https://msdn.microsoft.com/library/windows/hardware/ff554436)で、*カーネル モードのアーキテクチャ ガイド*します。 (このリソースできない場合がありますのいくつかの言語および国。)
+操作の入力バッファーのアドレス。 このバッファーに安全にカーネル モードからアクセスできるように、オペレーティング システムによってダウン ロックされています。 詳細については、次を参照してください。[メソッドにアクセスするデータ バッファーの](https://docs.microsoft.com/windows-hardware/drivers/kernel/methods-for-accessing-data-buffers)で、*カーネル モードのアーキテクチャ ガイド*します。 (このリソースできない場合がありますのいくつかの言語および国。)
 
 **OutputBuffer**  
-操作の元の要求者が指定された出力バッファーのユーザー モード仮想アドレス。 メソッドとは異なり、直接 i/o\_I/O のどちらも、オペレーティング システムがロック ダウンこのバッファーはカーネル モードからにアクセスする安全なミニフィルターが I/O 操作の元の要求者と同じプロセス コンテキストである限りようにします。 (それ以外の場合に呼び出す必要があります[ **MmGetSystemAddressForMdlSafe** ](https://msdn.microsoft.com/library/windows/hardware/ff554559)に MDL からシステムのアドレスを取得、 **OutputMdlAddress**へのポインターします)。詳細については、次を参照してください。[を使用して直接 I/O](https://msdn.microsoft.com/library/windows/hardware/ff565372)と[ダイレクト I/O エラー](https://msdn.microsoft.com/library/windows/hardware/ff544300)で、*カーネル モードのアーキテクチャ ガイド*します。 (このリソースできない場合がありますのいくつかの言語および国。)
+操作の元の要求者が指定された出力バッファーのユーザー モード仮想アドレス。 メソッドとは異なり、直接 i/o\_I/O のどちらも、オペレーティング システムがロック ダウンこのバッファーはカーネル モードからにアクセスする安全なミニフィルターが I/O 操作の元の要求者と同じプロセス コンテキストである限りようにします。 (それ以外の場合に呼び出す必要があります[ **MmGetSystemAddressForMdlSafe** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)に MDL からシステムのアドレスを取得、 **OutputMdlAddress**へのポインターします)。詳細については、次を参照してください。[を使用して直接 I/O](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-direct-i-o)と[ダイレクト I/O エラー](https://docs.microsoft.com/windows-hardware/drivers/kernel/errors-in-direct-i-o)で、*カーネル モードのアーキテクチャ ガイド*します。 (このリソースできない場合がありますのいくつかの言語および国。)
 
 **OutputMdlAddress**  
 MDL バッファーを記述するアドレスを**Direct.OutputBuffer**へのポインターします。 このメンバーが必要とすることはできません**NULL**します。
@@ -133,7 +133,7 @@ MDL バッファーを記述するアドレスを**Direct.OutputBuffer**への�
 <a name="remarks"></a>注釈
 -------
 
-[ **FLT\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff544673)の構造体[ **IRP\_MJ\_ファイル\_システム\_コントロール** ](irp-mj-file-system-control.md)操作にはコールバック データによって表されるファイル システムの制御情報操作のパラメーターが含まれています ([**FLT\_コールバック\_データ**](https://msdn.microsoft.com/library/windows/hardware/ff544620)) 構造体。 含まれている、 [ **FLT\_IO\_パラメーター\_ブロック**](https://msdn.microsoft.com/library/windows/hardware/ff544638)構造体。
+[ **FLT\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_parameters)の構造体[ **IRP\_MJ\_ファイル\_システム\_コントロール** ](irp-mj-file-system-control.md)操作にはコールバック データによって表されるファイル システムの制御情報操作のパラメーターが含まれています ([**FLT\_コールバック\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_callback_data)) 構造体。 含まれている、 [ **FLT\_IO\_パラメーター\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_io_parameter_block)構造体。
 
 IRP\_MJ\_ファイル\_システム\_コントロールが IRP ベースの操作。
 
@@ -156,35 +156,35 @@ IRP\_MJ\_ファイル\_システム\_コントロールが IRP ベースの操�
 ## <a name="see-also"></a>関連項目
 
 
-[**FLT\_コールバック\_データ**](https://msdn.microsoft.com/library/windows/hardware/ff544620)
+[**FLT\_コールバック\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_callback_data)
 
-[**FLT\_IO\_PARAMETER\_BLOCK**](https://msdn.microsoft.com/library/windows/hardware/ff544638)
+[**FLT\_IO\_PARAMETER\_BLOCK**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_io_parameter_block)
 
-[**FLT\_IS\_FASTIO\_OPERATION**](https://msdn.microsoft.com/library/windows/hardware/ff544645)
+[**FLT\_IS\_FASTIO\_OPERATION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
 
-[**FLT\_IS\_FS\_FILTER\_OPERATION**](https://msdn.microsoft.com/library/windows/hardware/ff544648)
+[**FLT\_IS\_FS\_FILTER\_OPERATION**](https://docs.microsoft.com/previous-versions/ff544648(v=vs.85))
 
-[**FLT\_IS\_IRP\_OPERATION**](https://msdn.microsoft.com/library/windows/hardware/ff544654)
+[**FLT\_IS\_IRP\_OPERATION**](https://docs.microsoft.com/previous-versions/ff544654(v=vs.85))
 
-[**FLT\_PARAMETERS**](https://msdn.microsoft.com/library/windows/hardware/ff544673)
+[**FLT\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_parameters)
 
-[**FltFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff542988)
+[**FltFsControlFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)
 
-[**IoBuildAsynchronousFsdRequest**](https://msdn.microsoft.com/library/windows/hardware/ff548310)
+[**IoBuildAsynchronousFsdRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iobuildasynchronousfsdrequest)
 
-[**IoBuildSynchronousFsdRequest**](https://msdn.microsoft.com/library/windows/hardware/ff548330)
+[**IoBuildSynchronousFsdRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iobuildsynchronousfsdrequest)
 
-[**IoVerifyVolume**](https://msdn.microsoft.com/library/windows/hardware/ff548559)
+[**IoVerifyVolume**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ioverifyvolume)
 
 [**IRP\_MJ\_ファイル\_システム\_コントロール**](irp-mj-file-system-control.md)
 
-[**MmGetSystemAddressForMdlSafe**](https://msdn.microsoft.com/library/windows/hardware/ff554559)
+[**MmGetSystemAddressForMdlSafe**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)
 
-[**MmProbeAndLockPages**](https://msdn.microsoft.com/library/windows/hardware/ff554664)
+[**MmProbeAndLockPages**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmprobeandlockpages)
 
-[**ProbeForRead**](https://msdn.microsoft.com/library/windows/hardware/ff559876)
+[**ProbeForRead**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-probeforread)
 
-[**ProbeForWrite**](https://msdn.microsoft.com/library/windows/hardware/ff559879)
+[**ProbeForWrite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-probeforwrite)
 
 [**ZwFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff566462)
 

@@ -10,12 +10,12 @@ keywords:
 - I2CWrite
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b368336d49a07369c27017358fdc6df8f39399a3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e9086af04553950c41032b30f28867c13319c0ca
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383721"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380198"
 ---
 # <a name="i2c-bus-and-child-devices-of-the-display-adapter"></a>ディスプレイ アダプターの I2C バスおよび子デバイス
 
@@ -46,17 +46,17 @@ I²C バスが 2 つだけのワイヤ: シリアル クロック行とシリア
 
 I²C 仕様には、I²C 通信を開始する、読み取りと I²C データ行の上のバイトの書き込みおよび I²C 通信の終了のためのプロトコルが定義されています。 システム提供のビデオ ポート ドライバーでは、そのプロトコルを実装する次の機能を提供します。
 
-* [**I2CStart**](https://msdn.microsoft.com/library/windows/hardware/ff567375)
-* [**I2CRead**](https://msdn.microsoft.com/library/windows/hardware/ff567372)
-* [**I2CWrite**](https://msdn.microsoft.com/library/windows/hardware/ff567378)
-* [**I2CStop**](https://msdn.microsoft.com/library/windows/hardware/ff567376)
+* [**I2CStart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nc-video-pi2c_start)
+* [**I2CRead**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nc-video-pi2c_read)
+* [**I2CWrite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nc-video-pi2c_write)
+* [**I2CStop**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nc-video-pi2c_stop)
 
 各 (実装される、ビデオ ポート ドライバーによってエクスポートされませんでしたが)、前の関数の一覧、ビデオのミニポート ドライバーからのサポートが必要です。 VideoPortServicesI2C に渡すことで関数ポインターを取得する必要があります、ビデオのミニポート ドライバーでは、I²C 関数を呼び出すことができます、前に、 [VideoPortQueryServices](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nf-video-videoportqueryservices)関数。
 
 たとえば、 **I2CRead**関数が I²C データ回線では、バイトのシーケンスを読み取りますが、各バイトを読み取るには、8 個の個別ビット、ビデオのミニポート ドライバーのみを実行できるタスクの読み取りが必要です。 **I2CRead**関数は、ポインターを受け取るために、ビデオのミニポート ドライバーからの支援を得ることができます (で、 *I2CCallbacks*構造) にビデオのミニポートによって実装される 4 つの I²C 関数ドライバー (*ReadClockLine*、 *WriteClockLine*、 *ReadDataLine*、および*WriteDataLine*)。 同様に、 **I2CStart**、 **I2CRead**、および**I2CWrite**各受信、 *I2CCallbacks*の 4 つすべてへのポインターを含む構造体ビデオのミニポート ドライバーの I²C 関数。
 
 
-すべてのビデオのミニポート ドライバー機能の概要とそれらの関数を登録する方法は、次を参照してください。[ビデオのミニポート ドライバー機能](https://msdn.microsoft.com/library/windows/hardware/ff570512)します。
+すべてのビデオのミニポート ドライバー機能の概要とそれらの関数を登録する方法は、次を参照してください。[ビデオのミニポート ドライバー機能](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/)します。
 
 詳細 I²C バスについては、Philips 半導体によって公開されている I²C Bus 仕様を参照してください。
 

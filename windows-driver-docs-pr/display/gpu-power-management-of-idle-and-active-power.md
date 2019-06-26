@@ -4,12 +4,12 @@ description: GPU の電源管理インフラストラクチャにより Windows 
 ms.assetid: F8096F7E-39EA-45CB-8A1C-60A7A298AFEC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 944d08c13f17ec0853897f855e1d8cc4d9a50bc3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2316226a9c2ba032831faf9ca1ab7ba79f683990
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365027"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379963"
 ---
 # <a name="gpu-power-management-of-idle-states-and-active-power"></a>アイドル状態および現在使用されている電源の GPU 電源管理
 
@@ -30,22 +30,22 @@ Windows 8 以降では、省略可能な GPU の電源管理インフラスト�
 
 これらの新規および更新された関数と構造体は Windows 8 以降で、ディスプレイのミニポート ドライバーの電源コンポーネントの状態を遷移して、Microsoft DirectX グラフィックスのカーネル サブシステム、電源イベントを通信するために使用できます。
 
--   [*DxgkCbCompleteFStateTransition*](https://msdn.microsoft.com/library/windows/hardware/jj128349)
--   [*DxgkCbPowerRuntimeControlRequest*](https://msdn.microsoft.com/library/windows/hardware/hh451323)
--   [*DxgkCbSetPowerComponentActive*](https://msdn.microsoft.com/library/windows/hardware/hh451331)
--   [*DxgkCbSetPowerComponentIdle*](https://msdn.microsoft.com/library/windows/hardware/hh451336)
--   [*DxgkCbSetPowerComponentLatency*](https://msdn.microsoft.com/library/windows/hardware/hh698278)
--   [*DxgkCbSetPowerComponentResidency*](https://msdn.microsoft.com/library/windows/hardware/hh698279)
--   [*DxgkDdiPowerRuntimeControlRequest*](https://msdn.microsoft.com/library/windows/hardware/hh451396)
--   [*DxgkDdiSetPowerComponentFState*](https://msdn.microsoft.com/library/windows/hardware/hh451422)
--   [**DXGK\_DRIVERCAPS**](https://msdn.microsoft.com/library/windows/hardware/ff561062)
--   [**DXGK\_POWER\_コンポーネント\_フラグ**](https://msdn.microsoft.com/library/windows/hardware/hh464063)
--   [**DXGK\_POWER\_コンポーネント\_マッピング**](https://msdn.microsoft.com/library/windows/hardware/hh464067)
--   [**DXGK\_POWER\_コンポーネント\_型**](https://msdn.microsoft.com/library/windows/hardware/hh464070)
--   [**DXGK\_POWER\_RUNTIME\_COMPONENT**](https://msdn.microsoft.com/library/windows/hardware/hh464073)
--   [**DXGK\_QUERYADAPTERINFOTYPE**](https://msdn.microsoft.com/library/windows/hardware/ff562010)
--   [**DXGKARG\_QUERYADAPTERINFO**](https://msdn.microsoft.com/library/windows/hardware/ff557621)
--   [**DXGK\_QUERYSEGMENTOUT3**](https://msdn.microsoft.com/library/windows/hardware/hh464082)
+-   [*DxgkCbCompleteFStateTransition*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkcb_completefstatetransition)
+-   [*DxgkCbPowerRuntimeControlRequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkcb_powerruntimecontrolrequest)
+-   [*DxgkCbSetPowerComponentActive*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkcb_setpowercomponentactive)
+-   [*DxgkCbSetPowerComponentIdle*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkcb_setpowercomponentidle)
+-   [*DxgkCbSetPowerComponentLatency*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkcb_setpowercomponentlatency)
+-   [*DxgkCbSetPowerComponentResidency*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkcb_setpowercomponentresidency)
+-   [*DxgkDdiPowerRuntimeControlRequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddipowerruntimecontrolrequest)
+-   [*DxgkDdiSetPowerComponentFState*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddisetpowercomponentfstate)
+-   [**DXGK\_DRIVERCAPS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_drivercaps)
+-   [**DXGK\_POWER\_コンポーネント\_フラグ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_power_component_flags)
+-   [**DXGK\_POWER\_コンポーネント\_マッピング**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_power_component_mapping)
+-   [**DXGK\_POWER\_コンポーネント\_型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ne-d3dkmddi-_dxgk_power_component_type)
+-   [**DXGK\_POWER\_RUNTIME\_COMPONENT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_power_runtime_component)
+-   [**DXGK\_QUERYADAPTERINFOTYPE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ne-d3dkmddi-_dxgk_queryadapterinfotype)
+-   [**DXGKARG\_QUERYADAPTERINFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgkarg_queryadapterinfo)
+-   [**DXGK\_QUERYSEGMENTOUT3**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_querysegmentout3)
 
 ## <a name="span-idgpupowermanagementscenariosspanspan-idgpupowermanagementscenariosspanspan-idgpupowermanagementscenariosspangpu-power-management-scenarios"></a><span id="GPU_power_management_scenarios"></span><span id="gpu_power_management_scenarios"></span><span id="GPU_POWER_MANAGEMENT_SCENARIOS"></span>GPU の電源管理のシナリオ
 

@@ -7,12 +7,12 @@ keywords:
 - OID_WDI_SET_FAST_BSS_TRANSITION_PARAMETERS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: a0a4099a4aec594c70bebeaca39582a1cfb8e9a7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0b10d48664ad432f0f0c7255df77f57400389836
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330178"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381206"
 ---
 # <a name="oidwdisetfastbsstransitionparameters"></a>OID\_WDI\_設定\_高速\_BSS\_遷移\_パラメーター
 
@@ -30,10 +30,10 @@ OID\_WDI\_設定\_高速\_BSS\_遷移\_パラメーターへの応答で送信[N
 
 | TLV                                                  | 許可されている複数の TLV インスタンス | 省略可能 | 説明                                                                                                                                                                                                                                                    |
 |------------------------------------------------------|--------------------------------|----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [**WDI\_TLV\_STATUS**](https://msdn.microsoft.com/library/windows/hardware/dn898068)      |                                |          | この状態が成功である場合、残りのフィールド (RSNIE、MDE、FTE) は存在します。 これは、問題またはエラー (たとえば、MIC チェック失敗) 認証の応答がないと、IHV の再関連付け要求を続行することを示します。 |
-| [**WDI\_TLV\_FT\_RSNIE**](https://msdn.microsoft.com/library/windows/hardware/mt269125) |                                | x        | RSN IE バイト blob。                                                                                                                                                                                                                                          |
-| [**WDI\_TLV\_FT\_MDE**](https://msdn.microsoft.com/library/windows/hardware/mt269120)     |                                | x        | MDE バイト blob。                                                                                                                                                                                                                                             |
-| [**WDI\_TLV\_FT\_FTE**](https://msdn.microsoft.com/library/windows/hardware/mt269118)     |                                | x        | FTE バイト blob。                                                                                                                                                                                                                                             |
+| [**WDI\_TLV\_STATUS**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-status)      |                                |          | この状態が成功である場合、残りのフィールド (RSNIE、MDE、FTE) は存在します。 これは、問題またはエラー (たとえば、MIC チェック失敗) 認証の応答がないと、IHV の再関連付け要求を続行することを示します。 |
+| [**WDI\_TLV\_FT\_RSNIE**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-ft-rsnie) |                                | x        | RSN IE バイト blob。                                                                                                                                                                                                                                          |
+| [**WDI\_TLV\_FT\_MDE**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-ft-mde)     |                                | x        | MDE バイト blob。                                                                                                                                                                                                                                             |
+| [**WDI\_TLV\_FT\_FTE**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-ft-fte)     |                                | x        | FTE バイト blob。                                                                                                                                                                                                                                             |
 
  
 

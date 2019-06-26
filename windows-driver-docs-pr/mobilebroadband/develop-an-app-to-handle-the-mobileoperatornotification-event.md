@@ -4,12 +4,12 @@ description: MobileOperatorNotification イベントを処理するアプリを�
 ms.assetid: 3c483888-8ec4-4270-af3e-ef1efc995171
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a7e778c54a6077bb306f1b0b2ec6dfe29b93296a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: da84f8dbc982eb1a011e75e16c1a1867fa969b7a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380286"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381508"
 ---
 # <a name="develop-an-app-to-handle-the-mobileoperatornotification-event"></a>MobileOperatorNotification イベントを処理するアプリを開発する
 
@@ -77,9 +77,9 @@ Visual Studio プロジェクトの package.appxmanifest ファイルで宣言�
 ## <a name="span-idsteptwospanspan-idsteptwospanstep-2-background-task-handler"></a><span id="steptwo"></span><span id="STEPTWO"></span>手順 2:バック グラウンド タスク ハンドラー
 
 
-アプリが通知を携帯電話会社に提供する場合、宣言、バック グラウンド タスクのアクティブ化のハンドラーを指定する必要があります。 ハンドラーが携帯電話会社ネットワーク アカウント ID とイベント データを取得[ **Windows.Networking.NetworkOperators.NetworkOperatorNotificationEventDetails**](https://msdn.microsoft.com/library/windows/apps/br207377)します。
+アプリが通知を携帯電話会社に提供する場合、宣言、バック グラウンド タスクのアクティブ化のハンドラーを指定する必要があります。 ハンドラーが携帯電話会社ネットワーク アカウント ID とイベント データを取得[ **Windows.Networking.NetworkOperators.NetworkOperatorNotificationEventDetails**](https://docs.microsoft.com/uwp/api/Windows.Networking.NetworkOperators.NetworkOperatorNotificationEventDetails)します。
 
-バック グラウンド タスクでサポートされている唯一の UI である**トースト**、バック グラウンドのタスク ハンドラーがトーストを表示または保存[ **NetworkOperatorNotificationEventDetails** ](https://msdn.microsoft.com/library/windows/apps/br207377)にローカル ストレージ。
+バック グラウンド タスクでサポートされている唯一の UI である**トースト**、バック グラウンドのタスク ハンドラーがトーストを表示または保存[ **NetworkOperatorNotificationEventDetails** ](https://docs.microsoft.com/uwp/api/Windows.Networking.NetworkOperators.NetworkOperatorNotificationEventDetails)にローカル ストレージ。
 
 次のコード例では、新しい管理 SMS 通知を受信したときに実行するように設計されたバック グラウンド タスクを示します。
 
@@ -312,7 +312,7 @@ var settings = Windows.Storage.ApplicationData.current.localSettings;
 
 使用してアプリに渡される場合は、トーストでは、パラメーターを設定、 **detail.arguments**します。
 
-JavaScript でまたはC#、処理する、 [ **WinJS.Application.onactivated** ](https://msdn.microsoft.com/library/windows/apps/br212679)イベント、し、イベント ハンドラーに渡されるイベント引数を確認します。 トーストからのアクティブ化は、型のイベント引数を渡し[ **Windows.UI.WebUI.WebUILaunchActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh701841)します。 場合、イベント引数の**detail.kind**プロパティは[ **Windows.ApplicationModel.Activation.ctivationKind**](https://msdn.microsoft.com/library/windows/apps/br224693).**起動**、アプリ提供開始エクスペリエンスまたは通知を受け取ったかどうかに応じて、イベント引数の**detail.argument**プロパティに設定されて**null**.
+JavaScript でまたはC#、処理する、 [ **WinJS.Application.onactivated** ](https://docs.microsoft.com/previous-versions/windows/apps/br212679(v=win.10))イベント、し、イベント ハンドラーに渡されるイベント引数を確認します。 トーストからのアクティブ化は、型のイベント引数を渡し[ **Windows.UI.WebUI.WebUILaunchActivatedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.WebUI.WebUILaunchActivatedEventArgs)します。 場合、イベント引数の**detail.kind**プロパティは[ **Windows.ApplicationModel.Activation.ctivationKind**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.ActivationKind).**起動**、アプリ提供開始エクスペリエンスまたは通知を受け取ったかどうかに応じて、イベント引数の**detail.argument**プロパティに設定されて**null**.
 
 **JavaScript**
 
@@ -446,7 +446,7 @@ function CompleteHandler(task) {
 
 ### <a name="span-idverifythatprovisioningmetadataissuccessfullyappliedspanspan-idverifythatprovisioningmetadataissuccessfullyappliedspanspan-idverifythatprovisioningmetadataissuccessfullyappliedspanverify-that-provisioning-metadata-is-successfully-applied"></a><span id="Verify_that_provisioning_metadata_is_successfully_applied"></span><span id="verify_that_provisioning_metadata_is_successfully_applied"></span><span id="VERIFY_THAT_PROVISIONING_METADATA_IS_SUCCESSFULLY_APPLIED"></span>プロビジョニングのメタデータが正しく適用されていることを確認します。
 
-ときに適用する、メタデータをプロビジョニングすることを確認します[ **ProvisionFromXmlDocumentResults.AllElementsProvisioned** ](https://msdn.microsoft.com/library/windows/apps/br212047)は true。 それ以外の場合は、エラーの詳細については ProvisionResultsXml を確認してください。 モバイル ブロード バンドの一般的なエラーを以下に示します。
+ときに適用する、メタデータをプロビジョニングすることを確認します[ **ProvisionFromXmlDocumentResults.AllElementsProvisioned** ](https://docs.microsoft.com/uwp/api/Windows.Networking.NetworkOperators.ProvisionFromXmlDocumentResults#Windows_Networking_NetworkOperators_ProvisionFromXmlDocumentResults_AllElementsProvisioned)は true。 それ以外の場合は、エラーの詳細については ProvisionResultsXml を確認してください。 モバイル ブロード バンドの一般的なエラーを以下に示します。
 
 -   PC で SIM とプロビジョニング ファイルの不一致 (プロファイルがエラーで失敗\_いない\_が見つかりました)。
 

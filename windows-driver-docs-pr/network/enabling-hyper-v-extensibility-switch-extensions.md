@@ -4,19 +4,19 @@ description: Hyper-V 拡張可能スイッチ拡張機能の有効化
 ms.assetid: 13FD68CB-8F50-4BE3-8822-03464D8C118C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d1a3a90dcff5d00d692ca2d4598d2b3568e05ae
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 971de17905c9f848856088c0e85b21fea2c77cd4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372499"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379433"
 ---
 # <a name="enabling-hyper-v-extensible-switch-extensions"></a>Hyper-V 拡張可能スイッチ拡張機能の有効化
 
 
 HYPER-V 拡張可能スイッチの拡張機能がインストールされているときに、拡張可能スイッチの各インスタンスにバインドされます。 ただし、拡張機能は既定で無効になっている、拡張可能スイッチのインスタンスごとに明示的に有効にする必要があります。
 
-[有効にする VMSwitchExtension](https://technet.microsoft.com/library/hh848541.aspx) PowerShell コマンドレット、拡張可能スイッチの特定のインスタンスで拡張機能を有効にします。 このコマンドレットは、次の構文を使用します。
+[有効にする VMSwitchExtension](https://docs.microsoft.com/powershell/module/hyper-v/enable-vmswitchextension) PowerShell コマンドレット、拡張可能スイッチの特定のインスタンスで拡張機能を有効にします。 このコマンドレットは、次の構文を使用します。
 
 ``` syntax
 Enable-VMSwitchExtension [-Name] <string[]> [-ComputerName <string[]>] [<CommonParameters>]
@@ -50,11 +50,11 @@ Enabled       : True
 ## <a name="related-topics"></a>関連トピック
 
 
-[Enable-VMSwitchExtension](https://technet.microsoft.com/library/hh848541.aspx)
+[Enable-VMSwitchExtension](https://docs.microsoft.com/powershell/module/hyper-v/enable-vmswitchextension)
 
-[Get-vmswitchextension](https://technet.microsoft.com/library/hh848603.aspx)
+[Get-vmswitchextension](https://docs.microsoft.com/powershell/module/hyper-v/get-vmsystemswitchextension)
 
-[**Msvm\_EthernetSwitchExtension**](https://msdn.microsoft.com/library/hh850139)
+[**Msvm\_EthernetSwitchExtension**](https://docs.microsoft.com/windows/desktop/HyperV_v2/msvm-ethernetswitchextension)
 
  
 

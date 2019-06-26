@@ -4,12 +4,12 @@ description: ISCSI\_PortalInfo WMI クラス
 ms.assetid: b38aa87c-00a5-483e-aa44-23f359783829
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: d8bb4958295d5afb89b2119f8db4a490df28f679
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cf4867aa5c2e878b01a8cfdd8b61e22b65cc5276
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359682"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378426"
 ---
 # <a name="iscsiportalinfo-wmi-class"></a>ISCSI\_PortalInfo WMI クラス
 
@@ -65,7 +65,7 @@ class ISCSI_PortalInfo
 };
 ```
 
-WMI ツールのスイートでは、上記のクラス定義をコンパイルするときに生成、 [ **ISCSI\_PortalInfo** ](https://msdn.microsoft.com/library/windows/hardware/ff561557)データ構造体。
+WMI ツールのスイートでは、上記のクラス定義をコンパイルするときに生成、 [ **ISCSI\_PortalInfo** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsimgt/ns-iscsimgt-_iscsi_portalinfo)データ構造体。
 
  
 

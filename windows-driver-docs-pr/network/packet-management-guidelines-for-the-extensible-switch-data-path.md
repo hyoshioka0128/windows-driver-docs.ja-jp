@@ -4,12 +4,12 @@ description: 拡張可能スイッチ データ パスのパケット管理ガ�
 ms.assetid: 18B2BCBA-8428-45CF-93A0-8F7182DBCAA2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e17a24f021dd213fdc1eeb83dcdd9e46c684a97
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 937d44e9225782b64a67577c288c72bb1b61875f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63385014"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67357603"
 ---
 # <a name="packet-management-guidelines-for-the-extensible-switch-data-path"></a>拡張可能スイッチ データ パスのパケット管理ガイドライン
 
@@ -26,13 +26,13 @@ ms.locfileid: "63385014"
 
 拡張機能は、パケットの管理、拡張可能スイッチのデータ パスで次のガイドラインに従う必要があります。
 
--   パケットが発信された拡張機能を呼び出す必要があります[ **NdisFSendNetBufferLists** ](https://msdn.microsoft.com/library/windows/hardware/ff562616)イングレス データ パス上の送信要求を開始します。 これは、拡張可能スイッチを介してパケットを適切な転送を許可するには、この方法で実行する必要があります。
+-   パケットが発信された拡張機能を呼び出す必要があります[ **NdisFSendNetBufferLists** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfsendnetbufferlists)イングレス データ パス上の送信要求を開始します。 これは、拡張可能スイッチを介してパケットを適切な転送を許可するには、この方法で実行する必要があります。
 
 -   キャプチャ拡張機能は、拡張可能スイッチのイングレスおよびエグレス データ パス上のパケットを監視できます。 ただし、この種類の拡張機能は、常にパケットを転送する必要があります、パケットを削除しない必要があります。 また、パケットを転送する前に、キャプチャ拡張機能はパケット データを変更しない必要があります。
 
 -   フィルター処理および転送拡張機能が拡張可能スイッチのイングレス データ パスは、次のことができる方法。
 
-    -   フィルター拡張機能パケット トラフィックをフィルター処理しカスタム ポートのみを適用したり、拡張可能なスイッチを通過パケット配信のポリシーを切り替えます。 拡張機能では、イングレス データ パス内のパケット フィルター処理、ときに、パケットが元のソース ポートおよびネットワーク アダプター接続のみに基づいてフィルタ リング規則のみ適用できます。 パケットの OOB データにこの情報が格納されている[ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)構造体し、を使用して取得できます、 [ **NET\_バッファー\_一覧\_スイッチ\_転送\_詳細**](https://msdn.microsoft.com/library/windows/hardware/hh598259)マクロ。
+    -   フィルター拡張機能パケット トラフィックをフィルター処理しカスタム ポートのみを適用したり、拡張可能なスイッチを通過パケット配信のポリシーを切り替えます。 拡張機能では、イングレス データ パス内のパケット フィルター処理、ときに、パケットが元のソース ポートおよびネットワーク アダプター接続のみに基づいてフィルタ リング規則のみ適用できます。 パケットの OOB データにこの情報が格納されている[ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)構造体し、を使用して取得できます、 [ **NET\_バッファー\_一覧\_スイッチ\_転送\_詳細**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-switch-forwarding-detail)マクロ。
 
         **注**  イングレス データ パス取得したパケットには宛先ポートが含まれていません。 パケットの宛先ポートに基づいてフィルター処理は、送信データ パス取得したパケットにのみ実行できます。
 
@@ -44,7 +44,7 @@ ms.locfileid: "63385014"
 
     -   フィルター拡張機能パケット トラフィックをフィルター処理しカスタム ポートのみを適用したり、拡張可能なスイッチを通過パケット配信のポリシーを切り替えます。 フィルター処理の拡張機能には、エグレス データ パス内のパケットがフィルター処理、ときに、パケットの宛先ポートのみに基づくフィルタ リング規則を適用できます。
 
-        OOB データのパケットの宛先ポート データが格納されている[ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)構造体。 拡張機能は、呼び出すことでこの情報を取得、 [ *GetNetBufferListDestinations* ](https://msdn.microsoft.com/library/windows/hardware/hh598157)関数。
+        OOB データのパケットの宛先ポート データが格納されている[ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)構造体。 拡張機能は、呼び出すことでこの情報を取得、 [ *GetNetBufferListDestinations* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_get_net_buffer_list_destinations)関数。
 
     -   転送拡張機能パケット トラフィックをフィルター処理しカスタムおよび標準ポートを適用したり、拡張可能なスイッチを通過パケット配信のポリシーを切り替えます。 出口データ パス内のパケット フィルターを転送拡張機能は、パケットの送信元または送信先のポートに基づくフィルタ リング規則を適用できます。
 
@@ -74,17 +74,17 @@ ms.locfileid: "63385014"
 
     -   出口データ パスには、新規または複製データ パケットを挿入します。
 
--   拡張不能スイッチ OOB データには、標準の NDIS データ パスで、パケットが送信または受信で指定されているかどうかに応じて異なる形式多くの場合があります。 たとえば、 [ **NDIS\_IPSEC\_オフロード\_V2\_ヘッダー\_NET\_バッファー\_一覧\_情報** ](https://msdn.microsoft.com/library/windows/hardware/ff565812) OOB データは、送信の和集合、および受信 – 固有の構造体。
+-   拡張不能スイッチ OOB データには、標準の NDIS データ パスで、パケットが送信または受信で指定されているかどうかに応じて異なる形式多くの場合があります。 たとえば、 [ **NDIS\_IPSEC\_オフロード\_V2\_ヘッダー\_NET\_バッファー\_一覧\_情報** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_ipsec_offload_v2_header_net_buffer_list_info) OOB データは、送信の和集合、および受信 – 固有の構造体。
 
-    拡張可能スイッチのデータ パスでは、両方と拡張機能ドライバー スタックのすべてのパケット移動は、送信し、受け取ります。 このため、拡張不能スイッチでパケットの OOB データ[ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)構造体は、送信のいずれかであるまたは期間を通じての形式の受信ドライバー スタックをフローします。
+    拡張可能スイッチのデータ パスでは、両方と拡張機能ドライバー スタックのすべてのパケット移動は、送信し、受け取ります。 このため、拡張不能スイッチでパケットの OOB データ[ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)構造体は、送信のいずれかであるまたは期間を通じての形式の受信ドライバー スタックをフローします。
 
     この OOB データの形式は、拡張可能スイッチに元のパケットが到着したソースの拡張可能スイッチ ポートに依存します。 ソース ポートが外部ネットワーク アダプターに接続されている場合は、拡張不能スイッチ OOB データが受信形式になります。 他のポートでは、この OOB データは送信形式になります。
 
-    **注**  、拡張機能のパケットのクローンを作成する場合[ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)構造にデータを拡張不能スイッチ OOB かかる必要があります追加または OOB データが変更される場合の考慮事項。 拡張機能を呼び出す必要があります[ *CopyNetBufferListInfo* ](https://msdn.microsoft.com/library/windows/hardware/hh598136)ソース パケットから複製されたパケットを拡張可能スイッチ データ パスに関連付けられた OOB データをコピーします。 この関数を OOB 送信を維持またはデータが複製されたパケットにコピーされる形式を受信します。
+    **注**  、拡張機能のパケットのクローンを作成する場合[ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)構造にデータを拡張不能スイッチ OOB かかる必要があります追加または OOB データが変更される場合の考慮事項。 拡張機能を呼び出す必要があります[ *CopyNetBufferListInfo* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_copy_net_buffer_list_info)ソース パケットから複製されたパケットを拡張可能スイッチ データ パスに関連付けられた OOB データをコピーします。 この関数を OOB 送信を維持またはデータが複製されたパケットにコピーされる形式を受信します。
 
      
 
--   呼び出す必要がありますが、拡張機能では、エグレス データ パスのいずれかの受信からパケットが削除する場合、 [ *ReportFilteredNetBufferLists*](https://msdn.microsoft.com/library/windows/hardware/hh598297)します。 この関数が呼び出されると、拡張可能スイッチのインターフェイスはカウンターをインクリメントし、パケットの破棄された、または除外されたイベント ログに記録します。
+-   呼び出す必要がありますが、拡張機能では、エグレス データ パスのいずれかの受信からパケットが削除する場合、 [ *ReportFilteredNetBufferLists*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_report_filtered_net_buffer_lists)します。 この関数が呼び出されると、拡張可能スイッチのインターフェイスはカウンターをインクリメントし、パケットの破棄された、または除外されたイベント ログに記録します。
 
  
 

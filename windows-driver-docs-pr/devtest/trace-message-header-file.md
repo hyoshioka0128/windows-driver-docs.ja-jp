@@ -8,12 +8,12 @@ keywords:
 - ファイルの WDK ソフトウェア トレース
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 49a75ba013366393766b8f91866a30fb974fb37e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1f55b9b475ae935e1304ec78fa17f3ea8783428e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354625"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381814"
 ---
 # <a name="trace-message-header-file"></a>トレース メッセージ ヘッダー ファイル
 
@@ -28,7 +28,7 @@ WPP TMH ファイルを自動的に生成をコンパイルするとき、[ト�
 #include SourceFileName.tmh
 ```
 
-ステートメントは、これの定義の後に表示する必要があります、 [WPP\_コントロール\_GUID](https://msdn.microsoft.com/library/windows/hardware/ff556186)マクロ、WPP マクロへの呼び出しの前にします。
+ステートメントは、これの定義の後に表示する必要があります、 [WPP\_コントロール\_GUID](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556186(v=vs.85))マクロ、WPP マクロへの呼び出しの前にします。
 
 詳細については、次を参照してください。[トレース プロデューサーに WPP マクロを追加する](adding-wpp-macros-to-a-trace-provider.md)して[TraceDrv](https://go.microsoft.com/fwlink/p/?LinkId=617726)、ソフトウェア トレース用に設計されたサンプル ドライバー。 TraceDrv サンプルは、 [Windows ドライバー サンプル](https://go.microsoft.com/fwlink/p/?LinkId=616507)GitHub リポジトリにあります。
 

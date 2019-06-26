@@ -12,12 +12,12 @@ keywords:
 - SeChangeNotifyPrivilege
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 06de785fdbbed8272e54d7c7df2047cd0b159266
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0a059177cf75eb3c1236b954ae12f6efc3bed262
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327905"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379002"
 ---
 # <a name="checking-for-traverse-privilege-on-irpmjcreate"></a>IRP の走査の権限のチェック\_MJ\_を作成します。
 
@@ -25,7 +25,7 @@ ms.locfileid: "63327905"
 ## <span id="ddk_checking_for_traverse_privilege_on_irp_mj_create_if"></span><span id="DDK_CHECKING_FOR_TRAVERSE_PRIVILEGE_ON_IRP_MJ_CREATE_IF"></span>
 
 
-懸念事項の 1 つ[ **IRP\_MJ\_作成**](https://msdn.microsoft.com/library/windows/hardware/ff548630)チェックは、呼び出し元が走査特権を持っているかどうか (には、呼び出し元がオブジェクトへのパスにアクセスする権限)。 ほとんどの呼び出し元に走査特権があるためにを走査特権ファイル システム内で通常実行される最初のチェックのいずれかの確認しています。
+懸念事項の 1 つ[ **IRP\_MJ\_作成**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-create)チェックは、呼び出し元が走査特権を持っているかどうか (には、呼び出し元がオブジェクトへのパスにアクセスする権限)。 ほとんどの呼び出し元に走査特権があるためにを走査特権ファイル システム内で通常実行される最初のチェックのいずれかの確認しています。
 
 ```cpp
     BOOLEAN traverseCheck = 

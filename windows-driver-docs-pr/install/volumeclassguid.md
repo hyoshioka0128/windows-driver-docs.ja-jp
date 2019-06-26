@@ -14,24 +14,24 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: b636807af2c4425baa7b058f7cdf4b22929187f7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c7d2684d127ace4921c38df7e238cac73619916e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339307"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380403"
 ---
 # <a name="volumeclassguid"></a>VolumeClassGuid
 
 
-VolumeClassGuid は古い形式の識別子、[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)ボリューム デバイスの場合。 Microsoft Windows 2000 以降を使用して、 [ **GUID_DEVINTERFACE_VOLUME** ](guid-devinterface-volume.md)このクラスの新しいインスタンスのクラス識別子。
+VolumeClassGuid は古い形式の識別子、[デバイス インターフェイス クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)ボリューム デバイスの場合。 Microsoft Windows 2000 以降を使用して、 [ **GUID_DEVINTERFACE_VOLUME** ](guid-devinterface-volume.md)このクラスの新しいインスタンスのクラス識別子。
 
 <a name="remarks"></a>注釈
 -------
 
 記憶域[サンプル](https://go.microsoft.com/fwlink/p/?LinkId=618052)WDK で含める、 [Addfilter ストレージ フィルター ツール](https://go.microsoft.com/fwlink/p/?linkid=256076)VolumeClassGuid を使用してのインスタンスを列挙する、 [ **GUID_DEVINTERFACE_VOLUME**](guid-devinterface-volume.md)デバイス インターフェイスのクラス。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

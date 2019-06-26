@@ -11,12 +11,12 @@ keywords:
 - デバイスのスリープ解除 ups WDK 電源管理
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c9d4a32b4715d571f372dbd4188aec767440af6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f73513baa10a47e6bacbbd8ba5bc2e83251f696a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388173"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378020"
 ---
 # <a name="determining-whether-a-device-can-wake-the-system"></a>デバイスがシステムをウェイクできるかどうかの判断
 
@@ -30,7 +30,7 @@ ms.locfileid: "63388173"
 
 同様に、ほとんどのデバイスは、すべてのデバイスの電源の状態もをサポート (D3 を通じて D0) もサポート ウェイク アップのすべてのデバイスの電源をサポートする状態。
 
-スリープは、元のことをスリープ解除をサポート、バス ドライバーによって列挙で説明されていると状態に格納されますと共に、デバイスを入力できることを示す、 [**デバイス\_機能**](https://msdn.microsoft.com/library/windows/hardware/ff543095)構造体。 次の表は、サポートの待機またはスリープ解除に関連するこの構造体のメンバーを一覧表示します。
+スリープは、元のことをスリープ解除をサポート、バス ドライバーによって列挙で説明されていると状態に格納されますと共に、デバイスを入力できることを示す、 [**デバイス\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_capabilities)構造体。 次の表は、サポートの待機またはスリープ解除に関連するこの構造体のメンバーを一覧表示します。
 
 <table>
 <colgroup>

@@ -4,12 +4,12 @@ description: Windows 8 以降、(オフ) デバイスの電源状態 D3 は D3ho
 ms.assetid: D085820E-EDAC-4353-8500-207F77D9CC1F
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 71bc176204f94c2be25ba71c0e2b7ecaf8a4e65c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8c87a7fb29ecf0fa2a941e7e25b6e279317b6850
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378008"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378022"
 ---
 # <a name="supporting-d3cold-in-a-driver"></a>ドライバーでの D3cold のサポート
 
@@ -55,7 +55,7 @@ Windows 8 は、コンピューターは、S0 があり、スリープ状態を�
 </tr>
 <tr class="odd">
 <td><p><a href="using-guid-d3cold-support-interface.md" data-raw-source="[Using the GUID_D3COLD_SUPPORT_INTERFACE Driver Interface](using-guid-d3cold-support-interface.md)">GUID_D3COLD_SUPPORT_INTERFACE ドライバー インターフェイスを使用します。</a></p></td>
-<td><p>Windows 8 以降、ドライバーで呼び出すことが、ルーチン、 <a href="https://msdn.microsoft.com/library/windows/hardware/hh967714" data-raw-source="[GUID_D3COLD_SUPPORT_INTERFACE](https://msdn.microsoft.com/library/windows/hardware/hh967714)">GUID_D3COLD_SUPPORT_INTERFACE</a>インターフェイス D3cold を使用して、これらのデバイスを有効にしてデバイスの D3cold 機能を判断します。 このインターフェイスで 2 つの主なルーチンは<a href="https://msdn.microsoft.com/library/windows/hardware/hh967716" data-raw-source="[&lt;em&gt;SetD3ColdSupport&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/hh967716)"> <em>SetD3ColdSupport</em> </a>と<a href="https://msdn.microsoft.com/library/windows/hardware/hh967712" data-raw-source="[&lt;em&gt;GetIdleWakeInfo&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/hh967712)"> <em>GetIdleWakeInfo</em></a>します。</p></td>
+<td><p>Windows 8 以降、ドライバーで呼び出すことが、ルーチン、 <a href="https://msdn.microsoft.com/library/windows/hardware/hh967714" data-raw-source="[GUID_D3COLD_SUPPORT_INTERFACE](https://msdn.microsoft.com/library/windows/hardware/hh967714)">GUID_D3COLD_SUPPORT_INTERFACE</a>インターフェイス D3cold を使用して、これらのデバイスを有効にしてデバイスの D3cold 機能を判断します。 このインターフェイスで 2 つの主なルーチンは<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-set_d3cold_support" data-raw-source="[&lt;em&gt;SetD3ColdSupport&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-set_d3cold_support)"> <em>SetD3ColdSupport</em> </a>と<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-get_idle_wake_info" data-raw-source="[&lt;em&gt;GetIdleWakeInfo&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-get_idle_wake_info)"> <em>GetIdleWakeInfo</em></a>します。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="surprise-wake-up.md" data-raw-source="[Surprise Wake-Up](surprise-wake-up.md)">驚きのウェイク アップ</a></p></td>
