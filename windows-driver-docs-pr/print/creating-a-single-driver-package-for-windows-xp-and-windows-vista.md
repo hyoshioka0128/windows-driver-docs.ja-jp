@@ -4,12 +4,12 @@ description: Windows XP と Windows Vista 用にドライバー パッケージ�
 ms.assetid: 5e350152-edd7-4afb-bcba-dd0217d0d17a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ef93623ad1ebafd020388dff2034c9a64381ad2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9509c95833777b04d7ca09be994f307169c81ce7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365546"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372429"
 ---
 # <a name="creating-a-single-driver-package-for-windows-xp-and-windows-vista"></a>Windows XP と Windows Vista 用にドライバー パッケージを 1 つ作成する
 
@@ -50,9 +50,9 @@ Microsoft [Connect](https://go.microsoft.com/fwlink/p/?linkid=133880) Web サイ
 
 2.  ドライバー パッケージのサブディレクトリには、全体の Windows Vista の中核となるドライバー パッケージを含めます。
 
-3.  使用して、 [ **INF CopyINF ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff547317)中核となる更新されたドライバーをドライバー ストアにプリロードします。
+3.  使用して、 [ **INF CopyINF ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-copyinf-directive)中核となる更新されたドライバーをドライバー ストアにプリロードします。
 
-4.  INF を使用して、 **InboxVersionRequired**=*&lt;中核となる更新されたドライバーのバージョン&gt;* core のドライバー パッケージの新しいバージョンのみを確実にディレクティブこのオプションを使用するとします。
+4.  INF を使用して、 **InboxVersionRequired**= *&lt;中核となる更新されたドライバーのバージョン&gt;* core のドライバー パッケージの新しいバージョンのみを確実にディレクティブこのオプションを使用するとします。
 
 5.  INF を使用して、 **CoreDriverDependencies**と**CoreDriverSections**ディレクティブを Windows Vista ドライバーが更新されたコアのドライバーが必要であるかを示します。
 

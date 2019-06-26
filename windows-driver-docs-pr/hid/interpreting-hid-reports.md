@@ -7,12 +7,12 @@ keywords:
 - WDK を非表示にレポートの解釈
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ef0a16f7736fbc2e41c10fd26360b04fc194f37
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 833f6a86bacfb0f2cc2b3655d65421cf3f065bd5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364637"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375894"
 ---
 # <a name="interpreting-hid-reports"></a>HID レポートを解釈する
 
@@ -20,7 +20,7 @@ ms.locfileid: "63364637"
 
 
 
-このセクションでは、ユーザー モード アプリケーションとカーネル モード ドライバーが、HidP を使用する方法について説明します\_*Xxx* [HIDClass サポート ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff538865)HID レポート内のコントロールのデータを解釈します。
+このセクションでは、ユーザー モード アプリケーションとカーネル モード ドライバーが、HidP を使用する方法について説明します\_*Xxx* [HIDClass サポート ルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)HID レポート内のコントロールのデータを解釈します。
 
 レポートからコントロールのデータを抽出する方法の詳細については、次を参照してください。
 

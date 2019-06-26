@@ -4,23 +4,23 @@ description: PwrTest 実行状態のシナリオ (/es) のモニター スレッ
 ms.assetid: 5470c99b-5780-486f-b36a-922fb821b7f3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a6f321396beaddca43406e4c201840a24d5f29cd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 58a29895573145873df565fbea55affb5efa5142
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345771"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372060"
 ---
 # <a name="pwrtest-execution-state-scenario"></a>PwrTest の実行状態シナリオ
 
 
-PwrTest 実行状態のシナリオ (**/es**) モニター スレッドの現在実行中のプロセスとサービスの状態の変更を実行します。
+PwrTest 実行状態のシナリオ ( **/es**) モニター スレッドの現在実行中のプロセスとサービスの状態の変更を実行します。
 
-**注**  この PwrTest 実行状態のシナリオは、主にレガシ電源要求の Api を使用してアプリケーションの使用[ **SetThreadExecutionState 関数 (Windows)** ](https://msdn.microsoft.com/library/windows/desktop/aa373208)). 監視する新しい power を使用するアプリケーション要求 Api など[ **PowerSetRequest 関数 (Windows)** ](https://msdn.microsoft.com/library/windows/desktop/dd405534)を使用して、 [PwrTest 要求シナリオ](pwrtest-requests-scenario.md)代わりにします。
+**注**  この PwrTest 実行状態のシナリオは、主にレガシ電源要求の Api を使用してアプリケーションの使用[ **SetThreadExecutionState 関数 (Windows)** ](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-setthreadexecutionstate)). 監視する新しい power を使用するアプリケーション要求 Api など[ **PowerSetRequest 関数 (Windows)** ](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-powersetrequest)を使用して、 [PwrTest 要求シナリオ](pwrtest-requests-scenario.md)代わりにします。
 
  
 
-アプリケーションとサービス可能性があります一時的に、モニターなどの電源管理設定を上書きし、スリープのアイドル タイムアウトなどのスレッドの実行状態を変更することで。 PwrTest 実行状態のシナリオは、スレッドの実行状態を監視し、システム状態の変更をアプリケーションとサービスは、Win32 を使用して行った[ **SetThreadExecutionState 関数 (Windows)** ](https://msdn.microsoft.com/library/windows/desktop/aa373208).
+アプリケーションとサービス可能性があります一時的に、モニターなどの電源管理設定を上書きし、スリープのアイドル タイムアウトなどのスレッドの実行状態を変更することで。 PwrTest 実行状態のシナリオは、スレッドの実行状態を監視し、システム状態の変更をアプリケーションとサービスは、Win32 を使用して行った[ **SetThreadExecutionState 関数 (Windows)** ](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-setthreadexecutionstate).
 
 使用することができます、 **/es**シナリオと共に[PwrTest アイドル シナリオ](pwrtest-idle-scenario.md)アプリケーションとアイドル状態に移行することから、モニターまたはシステムを妨げているサービスを識別できるようにします。
 
@@ -30,25 +30,25 @@ PwrTest 実行状態のシナリオ (**/es**) モニター スレッドの現在
 pwrtest /es  [/t:n] [/stes:{y|n}] [/rss:{y|n}] [/sss:{y|n}] [/all] [/user] [/kernel] [/idle] [/?] 
 ```
 
-<span id="_t_n"></span><span id="_T_N"></span>**t:**<em>n</em>  
+<span id="_t_n"></span><span id="_T_N"></span>**t:** <em>n</em>  
 シナリオの実行を合計時間 (分) を指定します (既定値の*n*は 30 分です)。
 
-<span id="_stes_yn"></span><span id="_STES_YN"></span>**/stes:**{**y**|**n**}  
-指定するかどうか[ **SetThreadExecutionState** ](https://msdn.microsoft.com/library/windows/desktop/aa373208)イベントをログに記録する必要があります (**y** (はい) は、既定値)。
+<span id="_stes_yn"></span><span id="_STES_YN"></span> **/stes:** {**y**|**n**}  
+指定するかどうか[ **SetThreadExecutionState** ](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-setthreadexecutionstate)イベントをログに記録する必要があります (**y** (はい) は、既定値)。
 
-<span id="_rss_yn"></span><span id="_RSS_YN"></span>**/rss:**{**y**|**n**}  
+<span id="_rss_yn"></span><span id="_RSS_YN"></span> **/rss:** {**y**|**n**}  
 指定するかどうか**RegisterSystemState**イベントをログに記録する必要があります (**y** (はい) は、既定値)。
 
-<span id="_sss_yn"></span><span id="_SSS_YN"></span>**/sss:**{**y**|**n**}  
+<span id="_sss_yn"></span><span id="_SSS_YN"></span> **/sss:** {**y**|**n**}  
 指定するかどうか**SetSystemState**イベントをログに記録する必要があります (**y** (はい) は、既定値)。
 
-<span id="_all"></span><span id="_ALL"></span>**/all**  
-すべてのイベントをログ記録することを指定します ([**SetThreadExecutionState**](https://msdn.microsoft.com/library/windows/desktop/aa373208)、 **RegisterSystemState**、 **SetSystemState**)。
+<span id="_all"></span><span id="_ALL"></span> **/all**  
+すべてのイベントをログ記録することを指定します ([**SetThreadExecutionState**](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-setthreadexecutionstate)、 **RegisterSystemState**、 **SetSystemState**)。
 
-<span id="_user"></span><span id="_USER"></span>**/user**  
-すべてのユーザー イベントをログ記録することを指定します ([**SetThreadExecutionState**](https://msdn.microsoft.com/library/windows/desktop/aa373208))。
+<span id="_user"></span><span id="_USER"></span> **/user**  
+すべてのユーザー イベントをログ記録することを指定します ([**SetThreadExecutionState**](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-setthreadexecutionstate))。
 
-<span id="_kernel"></span><span id="_KERNEL"></span>**/kernel**  
+<span id="_kernel"></span><span id="_KERNEL"></span> **/kernel**  
 カーネル モード イベントのみをログ記録することを指定します (**RegisterSystemState**、 **SetSystemState**)。
 
 <span id="_idle"></span><span id="_IDLE"></span>**アイドル状態/**  

@@ -4,12 +4,12 @@ description: INF InboxVersionRequired ディレクティブ
 ms.assetid: 75a07ca7-d279-4815-b644-10b58753f885
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c50b4f6ec572e4129e5525cb71d12822ca68939
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bc6c21a886d3d7f4c7a1e0c037bde1278ed7c9b5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377881"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372377"
 ---
 # <a name="inf-inboxversionrequired-directive"></a>INF InboxVersionRequired ディレクティブ
 
@@ -27,7 +27,7 @@ InboxVersionRequired=UseDriverVer
 
 場合、 **UseDriverVer**キーワードがの値として使用される**InboxVersionRequired**、 **UseDriverVer**クラスのインストーラーを使用することを通知、 **DriverVer**の中核となるドライバーの許容される最小バージョンとして解析される INF のディレクティブのバージョン文字列。 ドライバーを使用する際に注意が必要ですの注意を払う必要がありますが、 **UseDriverVer**キーワード。 INF によって参照されているすべてのコア ドライバーは正常にインストールの同じまたはそれ以降のバージョンである必要があります。
 
-値として特定のバージョン文字列を指定することもできます。 **InboxVersionRequired**します。 これらのバージョン文字列と同じ書式に従う、 **DriverVer**文字列で指定されている、 [ **INF バージョン セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547502)します。 詳細については、 **DriverVer**形式の文字列を参照してください[ **INF DriverVer ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff547394)します。
+値として特定のバージョン文字列を指定することもできます。 **InboxVersionRequired**します。 これらのバージョン文字列と同じ書式に従う、 **DriverVer**文字列で指定されている、 [ **INF バージョン セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-version-section)します。 詳細については、 **DriverVer**形式の文字列を参照してください[ **INF DriverVer ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-driverver-directive)します。
 
 次の例を設定する方法を示しています。 **InboxVersionRequired**を特定のバージョン文字列。
 

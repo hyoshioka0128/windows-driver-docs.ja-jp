@@ -4,24 +4,24 @@ description: システム定義の ECP
 ms.assetid: 6acb4be4-a7aa-431d-b2d8-3ef6d41cb4ef
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3dc84b3904b4b97aa42a79b96c4e4b9808847751
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 24ea2cd09d4295e932faca4413802c036e2e840d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344350"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371310"
 ---
 # <a name="system-defined-ecps"></a>システム定義の ECP
 
 
-オペレーティング システムで次の ECPs の定義、 *Ntifs.h*ヘッダー ファイル。 これらのシステム定義の ECPs に指定した追加情報をアタッチする、 [ **IRP\_MJ\_作成**](https://msdn.microsoft.com/library/windows/hardware/ff548630)ファイルを操作します。 ファイル システム スタックの要素の追加情報について ECPs を照会できます。
+オペレーティング システムで次の ECPs の定義、 *Ntifs.h*ヘッダー ファイル。 これらのシステム定義の ECPs に指定した追加情報をアタッチする、 [ **IRP\_MJ\_作成**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-create)ファイルを操作します。 ファイル システム スタックの要素の追加情報について ECPs を照会できます。
 
-通常、フィルター処理、 [ **IRP\_MJ\_作成**](https://msdn.microsoft.com/library/windows/hardware/ff548630)ファイルしまで下にあるフィルター ファイルのアタッチし、次のいずれかになりすます必要がありますいないパスの操作システム定義に ECPs、 **IRP\_MJ\_作成**ファイルで操作します。 処理し、IRP を発行するカーネル モード ドライバーに同様に、\_MJ\_ファイルに対する操作を作成する必要がありますいないアタッチし、IRP を次のシステム定義 ECPs のいずれかになりすます\_MJ\_作成操作で、ファイル。 次のシステム定義 ECPs は読み取り専用です。 それらを使用して、情報のみを取得する必要があります。
+通常、フィルター処理、 [ **IRP\_MJ\_作成**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-create)ファイルしまで下にあるフィルター ファイルのアタッチし、次のいずれかになりすます必要がありますいないパスの操作システム定義に ECPs、 **IRP\_MJ\_作成**ファイルで操作します。 処理し、IRP を発行するカーネル モード ドライバーに同様に、\_MJ\_ファイルに対する操作を作成する必要がありますいないアタッチし、IRP を次のシステム定義 ECPs のいずれかになりすます\_MJ\_作成操作で、ファイル。 次のシステム定義 ECPs は読み取り専用です。 それらを使用して、情報のみを取得する必要があります。
 
-1 つの例外が次のシステム定義 ECPs のいずれかをアタッチするフィルター ドライバーを制限することには、フィルター ドライバーは、階層型ファイル システムを実装している場合です。 これは、ファイル オブジェクトを所有し、独自に発行して[ **IRP\_MJ\_作成**](https://msdn.microsoft.com/library/windows/hardware/ff548630) IRP への応答でそのフィルターの下のファイルに対する操作\_MJ\_ファイル フィルター ドライバーは、独自のファイル オブジェクトのサービスを作成する操作。 フィルター ドライバーがこのような ECP コンテキスト構造体のリストを反映する必要があります (ECP\_リスト) 元の IRP から\_MJ\_IRP のファイルの作成操作\_MJ\_作成操作をフィルター ドライバーその下の問題です。 これらの ECP リストを伝達することで、フィルター ドライバーにより、IRP を発行するフィルターの下のすべてのフィルター\_MJ\_作成操作は元の IRP のコンテキストを認識\_MJ\_作成操作です。
+1 つの例外が次のシステム定義 ECPs のいずれかをアタッチするフィルター ドライバーを制限することには、フィルター ドライバーは、階層型ファイル システムを実装している場合です。 これは、ファイル オブジェクトを所有し、独自に発行して[ **IRP\_MJ\_作成**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-create) IRP への応答でそのフィルターの下のファイルに対する操作\_MJ\_ファイル フィルター ドライバーは、独自のファイル オブジェクトのサービスを作成する操作。 フィルター ドライバーがこのような ECP コンテキスト構造体のリストを反映する必要があります (ECP\_リスト) 元の IRP から\_MJ\_IRP のファイルの作成操作\_MJ\_作成操作をフィルター ドライバーその下の問題です。 これらの ECP リストを伝達することで、フィルター ドライバーにより、IRP を発行するフィルターの下のすべてのフィルター\_MJ\_作成操作は元の IRP のコンテキストを認識\_MJ\_作成操作です。
 
 <span id="GUID_ECP_OPLOCK_KEY"></span><span id="guid_ecp_oplock_key"></span>GUID\_ECP\_OPLOCK\_キー  
-識別する GUID、 [ **OPLOCK\_キー\_ECP\_コンテキスト**](https://msdn.microsoft.com/library/windows/hardware/ff551003)構造体であり、oplock のキーをファイルを開く要求にアタッチするために使用します。 Oplock キーには、アプリケーションのアプリケーションの oplock を損なうことがなく、同じストリームへの複数のハンドルを開くことができます。
+識別する GUID、 [ **OPLOCK\_キー\_ECP\_コンテキスト**](https://docs.microsoft.com/windows-hardware/drivers/ifs/oplock-key-ecp-context)構造体であり、oplock のキーをファイルを開く要求にアタッチするために使用します。 Oplock キーには、アプリケーションのアプリケーションの oplock を損なうことがなく、同じストリームへの複数のハンドルを開くことができます。
 
 各 oplock と oplock のキーの詳細については、次を参照してください。 [Oplock セマンティクス概要](overview.md)します。
 
@@ -40,7 +40,7 @@ ms.locfileid: "63344350"
 識別する GUID、 [ **SRV\_オープン\_ECP\_コンテキスト**](https://msdn.microsoft.com/library/windows/hardware/ff556749)構造体。 サーバーが、SRV をアタッチします\_開く\_ECP\_ファイルを開く要求にコンテキストの構造体。 サーバーは、条件付きのクライアント要求を満たすために、サーバーを使用するすべてのファイルを開く要求でこの GUID を使用します。 ファイル システム スタックを確認できるかどうか SRV\_開く\_ECP\_コンテキストが開いているファイルの要求に添付します。 SRV の情報に基づいて\_オープン\_ECP\_コンテキスト、ファイル システム スタックは、ファイルが開かれることを要求したクライアントを判断できますとその理由です。
 
 <span id="GUID_ECP_DUAL_OPLOCK_KEY"></span><span id="guid_ecp_dual_oplock_key"></span>GUID\_ECP\_デュアル\_OPLOCK\_キー  
-識別する GUID、 [**デュアル OPLOCK\_キー\_ECP\_コンテキスト**](https://msdn.microsoft.com/library/windows/hardware/hh406392)構造体。 ように、 [ **OPLOCK\_キー\_ECP\_コンテキスト**](https://msdn.microsoft.com/library/windows/hardware/ff551003)構造、**デュアル OPLOCK\_キー\_ECP\_コンテキスト**oplock のキーをファイルを開く要求にアタッチするために使用します。 **デュアル OPLOCK\_キー\_ECP\_コンテキスト**、ただし、親キーも設定できますターゲット ファイルのディレクトリに oplock を提供します。
+識別する GUID、 [**デュアル OPLOCK\_キー\_ECP\_コンテキスト**](https://docs.microsoft.com/windows-hardware/drivers/ifs/dual-oplock-key-ecp-context)構造体。 ように、 [ **OPLOCK\_キー\_ECP\_コンテキスト**](https://docs.microsoft.com/windows-hardware/drivers/ifs/oplock-key-ecp-context)構造、**デュアル OPLOCK\_キー\_ECP\_コンテキスト**oplock のキーをファイルを開く要求にアタッチするために使用します。 **デュアル OPLOCK\_キー\_ECP\_コンテキスト**、ただし、親キーも設定できますターゲット ファイルのディレクトリに oplock を提供します。
 
 <span id="GUID_ECP_IO_DEVICE_HINT"></span><span id="guid_ecp_io_device_hint"></span>GUID\_ECP\_IO\_デバイス\_ヒント  
 識別する GUID、 **IO\_デバイス\_ヒント\_ECP\_コンテキスト**構造体。 デバイスのヒントは、新しいデバイスを再解析対象の追跡プロバイダー ミニフィルター ドライバーの名前を支援するために使用されます。

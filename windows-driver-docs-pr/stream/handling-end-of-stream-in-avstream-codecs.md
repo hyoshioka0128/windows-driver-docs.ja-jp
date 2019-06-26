@@ -9,19 +9,19 @@ keywords:
 - AVStream ハードウェア コーデックは、WDK、ストリームの末尾の処理をサポートします。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4eeff1d7677e08e40fb00f431ea9df7b9a061d36
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f071e544d1e623798d63402a4e6395b0b048e7bb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363528"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384037"
 ---
 # <a name="handling-end-of-stream-in-avstream-codecs"></a>AVStream コーデックのストリームの終了処理
 
 
-KSSTREAM HW MFT は、ストリーム (EOS) フラグのセットの末尾を使用するサンプルを受信すると、設定\_ヘッダー\_OPTIONSF\_で ENDOFSTREAM、 **OptionsFlag**のメンバー、 [ **KSSTREAM\_ヘッダー** ](https://msdn.microsoft.com/library/windows/hardware/ff567138)サンプルに対応する構造体。
+KSSTREAM HW MFT は、ストリーム (EOS) フラグのセットの末尾を使用するサンプルを受信すると、設定\_ヘッダー\_OPTIONSF\_で ENDOFSTREAM、 **OptionsFlag**のメンバー、 [ **KSSTREAM\_ヘッダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksstream_header)サンプルに対応する構造体。
 
-ミニドライバーを受信した後、 [ **KSSTREAM\_ポインター** ](https://msdn.microsoft.com/library/windows/hardware/ff567139) 、KSSTREAM で\_ヘッダー\_OPTIONSF\_に設定されるENDOFSTREAMフラグ**StreamHeader.OptionsFlag**、ミニドライバー KSSTREAM に設定されるまでは、入力ピンは、新しい入力ストリーム ポインターを受け取りません\_ヘッダー\_OPTIONSF\_出力ストリームに ENDOFSTREAM。ポインター。
+ミニドライバーを受信した後、 [ **KSSTREAM\_ポインター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_ksstream_pointer) 、KSSTREAM で\_ヘッダー\_OPTIONSF\_に設定されるENDOFSTREAMフラグ**StreamHeader.OptionsFlag**、ミニドライバー KSSTREAM に設定されるまでは、入力ピンは、新しい入力ストリーム ポインターを受け取りません\_ヘッダー\_OPTIONSF\_出力ストリームに ENDOFSTREAM。ポインター。
 
 ミニドライバー KSSTREAM を設定する前に\_ヘッダー\_OPTIONSF\_現在使用できる入力で実現可能な数の出力のフレームが生成する出力ストリーム ポインターを ENDOFSTREAM、します。
 

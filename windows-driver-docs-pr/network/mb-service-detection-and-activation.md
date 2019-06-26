@@ -4,12 +4,12 @@ description: MB サービスの検出とアクティブ化
 ms.assetid: 7c53528b-722d-44a1-9eac-ee1fe89f21f3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e8cc65303fb8fec80ffc2bfe31804e2adcb88b57
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: a551ef9d08a4086c5e2c68c43516ebbbe25357ed
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532498"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374016"
 ---
 # <a name="mb-service-detection-and-activation"></a>MB サービスの検出とアクティブ化
 
@@ -22,7 +22,7 @@ ms.locfileid: "56532498"
 
 -   北米やその他の場所、U RIM が使用されていない、CDMA ベースのデバイスの必要があります、フラグをアクティブ化の状態を示すためにデバイスで。 ミニポート ドライバーでは、プロバイダーのネットワークに接続せず、初期化中にアクティブ化の状態を検出できる必要があります。 ミニポート ドライバーは、デバイスは最初のホーム ネットワークに無線接続するとき、サービスのアクティブ化を自動的に実行する必要があります。 アクティブ化が完了した後、ミニポート ドライバーは、サービスのアクティブ化をもう一度実行する必要がないように、フラグをクリアする必要があります。
 
-    ミニポート ドライバーに送信することによってサービスのアクティブ化の進行状況に関する MB サービスに通知[ **NDIS\_状態\_WWAN\_準備\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff567856)MB デバイスの初期化中に通知します。 または、サービスのアクティブ化の状態を確認するサービスを送信できます、 [OID\_WWAN\_準備\_情報](https://msdn.microsoft.com/library/windows/hardware/ff569833)ミニポート ドライバーにクエリ要求。 どちらの場合で、初期の準備完了状態があります**WwanReadyStateNotActivated**します。 サービスを有効にしたらミニポート ドライバーが初期化プロセスを再開し、デバイスの準備完了状態が変更されると、サービスに通知する必要があります。
+    ミニポート ドライバーに送信することによってサービスのアクティブ化の進行状況に関する MB サービスに通知[ **NDIS\_状態\_WWAN\_準備\_情報**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-ready-info)MB デバイスの初期化中に通知します。 または、サービスのアクティブ化の状態を確認するサービスを送信できます、 [OID\_WWAN\_準備\_情報](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-ready-info)ミニポート ドライバーにクエリ要求。 どちらの場合で、初期の準備完了状態があります**WwanReadyStateNotActivated**します。 サービスを有効にしたらミニポート ドライバーが初期化プロセスを再開し、デバイスの準備完了状態が変更されると、サービスに通知する必要があります。
 
 -   GSM ベースのデバイスの場合は、デバイスがそのサービスをアクティブ化が必要かどうかを検出するために一般的な方法はありません。 ミニポート ドライバーでは、サービスの検出とアクティブ化を実行する、その運送業者を特定、独自の専用メソッドを実装できます。
 
@@ -30,7 +30,7 @@ ms.locfileid: "56532498"
 
 サービスのアクティブ化は、デバイス プロバイダーのネットワークにアクセスできるように MB サービスのサブスクリプションをアクティブ化のプロセスを指します。 MB サービスが搭載されていないサービスのアクティブ化ロジックのため、実際のライセンス認証プロセスは、携帯電話テクノロジによって異なりますされ、通常は、ミニポート ドライバーやサード パーティのソフトウェアによる正確なアクティブ化の手順を実行する必要がありますので、別のプロバイダーのネットワーク用にカスタマイズします。 サービスのアクティブ化、自動または手動、または両方の組み合わせを使用できます。 ミニポート ドライバーには、新しいサブスクリプションごとに 1 回サービスのアクティブ化を実行する必要がありますだけです。
 
-サービスの検出とアクティブ化の詳細については、[OID\_WWAN\_サービス\_アクティベーション](https://msdn.microsoft.com/library/windows/hardware/ff569835)を参照してください。
+サービスの検出とアクティブ化の詳細については、次を参照してください。 [OID\_WWAN\_サービス\_アクティベーション](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-service-activation)します。
 
  
 

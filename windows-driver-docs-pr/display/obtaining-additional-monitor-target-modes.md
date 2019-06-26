@@ -6,43 +6,43 @@ keywords:
 - WDK の表示モードをターゲットを監視します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b674b83ada8a0f5ddb9101f9016ab9ae34c1bd9f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d9411b1974edde028566bf9bc30b8a608a1466f8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384003"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372783"
 ---
 # <a name="obtaining-additional-monitor-target-modes"></a>追加のモニター ターゲット モードの取得
 
 
-Windows 7 以降、新しい監視インターフェイスが使用可能な[ **DXGK\_モニター\_インターフェイス\_V2**](https://msdn.microsoft.com/library/windows/hardware/ff561968)します。 元にない 2 つの追加機能を備えています[ **DXGK\_モニター\_インターフェイス**](https://msdn.microsoft.com/library/windows/hardware/ff561949)インターフェイス。
+Windows 7 以降、新しい監視インターフェイスが使用可能な[ **DXGK\_モニター\_インターフェイス\_V2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_monitor_interface_v2)します。 元にない 2 つの追加機能を備えています[ **DXGK\_モニター\_インターフェイス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_monitor_interface)インターフェイス。
 
-[**pfnGetAdditionalMonitorModeSet**](https://msdn.microsoft.com/library/windows/hardware/ff561970)
+[**pfnGetAdditionalMonitorModeSet**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_monitor_getadditionalmonitormodeset)
 
-[**pfnReleaseAdditionalMonitorModeSet**](https://msdn.microsoft.com/library/windows/hardware/ff561977)
+[**pfnReleaseAdditionalMonitorModeSet**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_monitor_releaseadditionalmonitormodeset)
 
 これらの関数は、動的かつスケーラブルなディスプレイ ミニポート ドライバー VidPN ターゲットにターゲット モードを追加する方法を提供します。 比較の場合、DXGK\_モニター\_インターフェイスのインターフェイスには、ターゲット モードの静的一覧のみが用意されています。 これらの関数を使用して、ドライバーは、それを列挙する必要があります追加モードの一覧については、オペレーティング システムに照会できます。 ドライバーは、要求されたモードを検証し、モニターがサポートされていないものを拒否できます。
 
-ディスプレイのミニポート ドライバーがドライバー実装への呼び出しを受信すると[ **DxgkDdiEnumVidPnCofuncModality** ](https://msdn.microsoft.com/library/windows/hardware/ff559649) 、ターゲット モードを列挙するために関数
+ディスプレイのミニポート ドライバーがドライバー実装への呼び出しを受信すると[ **DxgkDdiEnumVidPnCofuncModality** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_enumvidpncofuncmodality) 、ターゲット モードを列挙するために関数
 
 次の手順を使用して、ターゲット モードの設定に互換性のあるタイミング情報を追加するにする必要があります。
 
-1.  呼び出すときに取得する追加のフィルター選択されたターゲット モードを返す[ **pfnGetAdditionalMonitorModeSet**](https://msdn.microsoft.com/library/windows/hardware/ff561970)します。 」の説明に従って、定期的なターゲット モードを返す必要がありますもこと[Cofunctional VidPN ソースを列挙し、ターゲット モード](enumerating-cofunctional-vidpn-source-and-target-modes.md)します。
+1.  呼び出すときに取得する追加のフィルター選択されたターゲット モードを返す[ **pfnGetAdditionalMonitorModeSet**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_monitor_getadditionalmonitormodeset)します。 」の説明に従って、定期的なターゲット モードを返す必要がありますもこと[Cofunctional VidPN ソースを列挙し、ターゲット モード](enumerating-cofunctional-vidpn-source-and-target-modes.md)します。
 
 2.  **PfnGetAdditionalMonitorModeSet**関数は、次を返します。
-    -   *ppAdditionalModesSet*で追加のタイミングのモード一覧[ **DXGK\_TARGETMODE\_詳細\_タイミング**](https://msdn.microsoft.com/library/windows/hardware/ff562060)形式。
+    -   *ppAdditionalModesSet*で追加のタイミングのモード一覧[ **DXGK\_TARGETMODE\_詳細\_タイミング**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmdt/ns-d3dkmdt-_dxgk_targetmode_detail_timing)形式。
     -   *pNumberModes、* タイミング モードの数。
 
 3.  これらのタイミングのモードのすべてを反復処理します。
 
 4.  すべてのタイミングを互換性のないモードと、通常モードへの呼び出し中に既に指定されたフィルターで除外*DxgkDdiEnumVidPnCofuncModality*します。
 
-5.  変換するために、残りのタイミング モード[ **D3DKMDT\_VIDPN\_ターゲット\_モード**](https://msdn.microsoft.com/library/windows/hardware/ff546729)型。
+5.  変換するために、残りのタイミング モード[ **D3DKMDT\_VIDPN\_ターゲット\_モード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmdt/ns-d3dkmdt-_d3dkmdt_vidpn_target_mode)型。
 
 6.  VidPN 対象モードのセットには、残りのタイミング モードのすべてを追加します。
 
-7.  呼び出す[ **pfnReleaseAdditionalMonitorModeSet** ](https://msdn.microsoft.com/library/windows/hardware/ff561977)から返されたタイミング モードの一覧を解放する**pfnGetAdditionalMonitorModeSet**します。
+7.  呼び出す[ **pfnReleaseAdditionalMonitorModeSet** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_monitor_releaseadditionalmonitormodeset)から返されたタイミング モードの一覧を解放する**pfnGetAdditionalMonitorModeSet**します。
 
 ディスプレイのミニポート ドライバーでは、VidPN ソース モードのセットと、ターゲット モードが設定するためのハードウェアでサポートされている他のすべてのタイミング モードを追加する必要があります。 表示モードのマネージャー (DMM) は、モードの一覧を生成してモニタによってサポートされていない別のタイミング モードを含む、すべての表示モード モニターによってサポートされていないと表示されていますの raw モードの一覧にのみ表示されます。 かどうかどうか、モニターが接続されてに関係なく、ミニポート ドライバーがすべて VidPN ソースとターゲット モードはサポートされているセット モニタによってを報告する必要があります。 のみモニターでサポートされているモードを報告するドライバーには、現在接続しているモニターがサポートされていないその他のモードも報告する必要があります。
 

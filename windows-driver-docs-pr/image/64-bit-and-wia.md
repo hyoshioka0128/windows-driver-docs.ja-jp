@@ -4,12 +4,12 @@ description: 64 ビットと WIA
 ms.assetid: 392e60c7-2ad6-4a71-83de-5e5ac550dc8b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fd5723bdf542803a98b501cd4feddd432a6193f5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3d6bb7907b482b30b3a17cbceb643d4ba9db1f3e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377622"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380481"
 ---
 # <a name="64-bit-and-wia"></a>64 ビットと WIA
 
@@ -19,7 +19,7 @@ ms.locfileid: "63377622"
 このセクションの内容:
 
 [64 ビット WIA ドライバー コンポーネント](64-bit-wia-driver-components.md)
-[32 ビットおよび 64 ビット WIA の相互運用性](32-bit-and-64-bit-wia-interoperability.md)64 ビット ドライバーの開発の詳細については、次を参照してください[64 ビット ドライバーのプログラミングの問題。](https://msdn.microsoft.com/library/windows/hardware/ff559923)
+[32 ビットおよび 64 ビット WIA の相互運用性](32-bit-and-64-bit-wia-interoperability.md)64 ビット ドライバーの開発の詳細については、次を参照してください[64 ビット ドライバーのプログラミングの問題。](https://docs.microsoft.com/windows-hardware/drivers/kernel/programming-issues-for-64-bit-drivers)
 
  
 

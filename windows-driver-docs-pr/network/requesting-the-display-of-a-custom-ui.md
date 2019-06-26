@@ -6,12 +6,12 @@ keywords:
 - カスタム UI WDK ネイティブ 802.11 IHV UI 拡張機能の DLL、表示を要求します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c4a14426a8874e8630f128976d364b59ddf1d933
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1e33af721872cd1e56c3a53a57808ee3bff5895b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63349392"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373229"
 ---
 # <a name="requesting-the-display-of-a-custom-ui"></a>カスタム UI の表示の要求
 
@@ -28,9 +28,9 @@ ms.locfileid: "63349392"
 
 -   WLAN ネットワークへの認証の結果をエンドユーザーに通知します。
 
-カスタム UI を起動またはネイティブの 802.11 IHV 拡張 DLL の呼び出し、通知を表示する[ **Dot11ExtSendUIRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff547567)へのポインターを渡すと、 [ **DOT11EXT\_IHV\_UI\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff547637)を通じて構造体、 *pIhvUIRequest*この関数のパラメーター。
+カスタム UI を起動またはネイティブの 802.11 IHV 拡張 DLL の呼び出し、通知を表示する[ **Dot11ExtSendUIRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11ext_send_ui_request)へのポインターを渡すと、 [ **DOT11EXT\_IHV\_UI\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/ns-wlanihv-_dot11ext_ihv_ui_request)を通じて構造体、 *pIhvUIRequest*この関数のパラメーター。
 
-を通じて、 [ **DOT11EXT\_IHV\_UI\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff547637)構造、802.11 IHV 拡張機能のネイティブ DLL を次のデータをカスタム UI を指定します。
+を通じて、 [ **DOT11EXT\_IHV\_UI\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/ns-wlanihv-_dot11ext_ihv_ui_request)構造、802.11 IHV 拡張機能のネイティブ DLL を次のデータをカスタム UI を指定します。
 
 -   ユーザー セッション識別子 (ID)、特定のユーザー コンテキストを識別するために使用されます。
 

@@ -9,12 +9,12 @@ keywords:
 - WDK NDIS ポートの認証パラメーター
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 09cb15313092b834341bbe840f576ade3b36a781
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0b5f4136862c496ce934dd0d395b5ecfeeb9dab1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346692"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375144"
 ---
 # <a name="setting-port-authentication-parameters"></a>ポート認証パラメーターの設定
 
@@ -22,11 +22,11 @@ ms.locfileid: "63346692"
 
 
 
-NDIS および上にあるドライバーを使用して、 [OID\_GEN\_ポート\_認証\_パラメーター](https://msdn.microsoft.com/library/windows/hardware/ff569623) OID は、NDIS ポートの現在の状態を設定する要求を設定します。 NDIS ポートをサポートするミニポート ドライバーでは、この OID をサポートする必要があります。
+NDIS および上にあるドライバーを使用して、 [OID\_GEN\_ポート\_認証\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-port-authentication-parameters) OID は、NDIS ポートの現在の状態を設定する要求を設定します。 NDIS ポートをサポートするミニポート ドライバーでは、この OID をサポートする必要があります。
 
-ミニポート ドライバーが、受信ポートの方向、ポートのコントロールの状態を使用して状態からの認証とセットの要求が成功した場合、 [ **NDIS\_ポート\_認証\_パラメーター**](https://msdn.microsoft.com/library/windows/hardware/ff566788)構造体。
+ミニポート ドライバーが、受信ポートの方向、ポートのコントロールの状態を使用して状態からの認証とセットの要求が成功した場合、 [ **NDIS\_ポート\_認証\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_port_authentication_parameters)構造体。
 
-ミニポートを生成する必要があります、 [ **NDIS\_状態\_ポート\_状態**](https://msdn.microsoft.com/library/windows/hardware/ff567415)状態の変更の上にあるドライバーに通知する状態を示す値。
+ミニポートを生成する必要があります、 [ **NDIS\_状態\_ポート\_状態**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-port-state)状態の変更の上にあるドライバーに通知する状態を示す値。
 
  
 

@@ -12,12 +12,12 @@ keywords:
 - 構造体の WDK ネットワーク
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 55f259572e1e9808b611eb6ea724669f1a1578a2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c1e718e516a95639eacb9b05e59e69b683d1999e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380898"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373918"
 ---
 # <a name="netbuffer-architecture"></a>NET\_バッファーのアーキテクチャ
 
@@ -25,7 +25,7 @@ ms.locfileid: "63380898"
 
 
 
-このセクションでは、に関する高レベルの情報を提供します。 [ **NET\_バッファー** ](https://msdn.microsoft.com/library/windows/hardware/ff568376)構造体と関連するデータ構造体と関数。 NET\_バッファーの構造体は、パッケージ化し、ネットワーク データを管理する効率的な手段を提供します。
+このセクションでは、に関する高レベルの情報を提供します。 [ **NET\_バッファー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)構造体と関連するデータ構造体と関数。 NET\_バッファーの構造体は、パッケージ化し、ネットワーク データを管理する効率的な手段を提供します。
 
 次のトピックがこのセクションに含まれます。
 

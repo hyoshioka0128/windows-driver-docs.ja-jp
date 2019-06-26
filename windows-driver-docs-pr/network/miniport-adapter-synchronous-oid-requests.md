@@ -5,16 +5,16 @@ ms.assetid: E169972C-2EFF-4005-B279-9EFC53B431E2
 keywords: ミニポート アダプター同期 OID 要求インターフェイス、ミニポート アダプター同期 OID 呼び出し、WDK ミニポート アダプター同期 Oid、ミニポート アダプター同期 OID 要求
 ms.date: 09/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 83ce015cff8e982951eaa75f7e5d09265ba2d88f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ada6ec85a15c9724921e0ad82133723dca707cb4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365776"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373936"
 ---
 # <a name="miniport-adapter-synchronous-oid-requests"></a>ミニポートアダプター同期 OID 要求
 
-ミニポート ドライバーを提供する同期の OID の要求パスをサポートするために、 [ *MiniportSynchronousOidRequest* ](https://msdn.microsoft.com/library/windows/hardware/0DDF9CF8-91F6-4D7C-A8E8-FC425BF155CB)関数内のエントリ ポイント、 [ **NDIS\_ミニポート\_ドライバー\_特性**](https://msdn.microsoft.com/library/windows/hardware/ff565958)の呼び出し時に構造体、 [ **NdisMRegisterMiniportDriver** ](https://msdn.microsoft.com/library/windows/hardware/ff563654)関数。
+ミニポート ドライバーを提供する同期の OID の要求パスをサポートするために、 [ *MiniportSynchronousOidRequest* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-miniport_synchronous_oid_request)関数内のエントリ ポイント、 [ **NDIS\_ミニポート\_ドライバー\_特性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_driver_characteristics)の呼び出し時に構造体、 [ **NdisMRegisterMiniportDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismregisterminiportdriver)関数。
 
 ミニポート ドライバーについて、*同期 OID 要求インターフェイス*とは異なり、標準モードと直接 OID 要求インターフェイスのミニポート ドライバーを非同期に登録する必要はありません*完了*コールバック関数。 これは、パスの同期の性質のためです。 [全般] では、通常、直接、および同期の Oid との違いについての詳細については、次を参照してください。[同期 OID 要求インターフェイスで NDIS 6.80](synchronous-oid-request-interface-in-ndis-6-80.md)します。
 
@@ -25,5 +25,5 @@ ms.locfileid: "63365776"
 
 | 同期の OID 関数 | 標準の OID 関数 |
 | --- | --- |
-| [*MiniportSynchronousOidRequest*](https://msdn.microsoft.com/library/windows/hardware/0DDF9CF8-91F6-4D7C-A8E8-FC425BF155CB) | [*MiniportOidRequest*](https://msdn.microsoft.com/library/windows/hardware/ff559416) |
+| [*MiniportSynchronousOidRequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-miniport_synchronous_oid_request) | [*MiniportOidRequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_oid_request) |
 

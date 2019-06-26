@@ -4,12 +4,12 @@ description: HBA\_バインド\_型
 ms.assetid: a5388574-f48a-4bdc-9ffe-408fa6de1eeb
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 682959a9a7c1832667884ede58694b3611528741
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1eb2dff89c406cb22130c2cfc330335bc321fdbc
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383105"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372315"
 ---
 # <a name="hbabindtype"></a>HBA\_バインド\_型
 
@@ -55,7 +55,7 @@ HBA\_バインド\_型 WMI クラスの修飾子は、永続的なバインデ�
 </tr>
 <tr class="even">
 <td align="left"><p>HBA_CAN_BIND_TARGETS</p></td>
-<td align="left"><p>論理ユニットのファイバー チャネル プロトコル (FCP) 識別子と、バスとターゲットなどの論理ユニットを識別するために、オペレーティング システムを使用する情報の永続的なバインディングを生成するには、HBA の機能とそのミニポート ドライバーを示します格納されている番号、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff556042" data-raw-source="[&lt;strong&gt;HBAScsiID&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff556042)"> <strong>HBAScsiID</strong></a>します。</p></td>
+<td align="left"><p>論理ユニットのファイバー チャネル プロトコル (FCP) 識別子と、バスとターゲットなどの論理ユニットを識別するために、オペレーティング システムを使用する情報の永続的なバインディングを生成するには、HBA の機能とそのミニポート ドライバーを示します格納されている番号、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_hbascsiid" data-raw-source="[&lt;strong&gt;HBAScsiID&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_hbascsiid)"> <strong>HBAScsiID</strong></a>します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>HBA_CAN_BIND_AUTOMAP</p></td>

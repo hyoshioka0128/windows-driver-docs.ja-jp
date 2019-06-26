@@ -10,12 +10,12 @@ keywords:
 - 状態ブロックの WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a6dbd1f49848deab86b69555a43806ea11459ce
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0e53261d4a715fe94d2a63a0964ed84aaee30125
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364268"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371888"
 ---
 # <a name="how-to-complete-an-irp-in-a-dispatch-routine"></a>ディスパッチ ルーチン内で IRP を完了する方法
 
@@ -29,7 +29,7 @@ ms.locfileid: "63364268"
 
     -   ディスパッチの日常的なセット**状態**状態のいずれか\_成功または適切なエラーが発生する (ステータス\_*XXX*)、サポート ルーチンへの呼び出しによって返される値をとりますまたは、下位のドライバーによりの特定同期要求。
 
-        下位レベルのドライバーが状態を返す場合\_保留中、高度なドライバーは呼び出す必要がありますいない[ **IoCompleteRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff548343) IRP が、例外が 1 つの。高度なドライバーを同期させるイベントを使用してその[ *IoCompletion* ](https://msdn.microsoft.com/library/windows/hardware/ff548354)ルーチンと場合、ディスパッチ ルーチン、 *IoCompletion*日常的な信号イベントと状態を返します。\_詳細\_処理\_必要な作業です。 ディスパッチ ルーチンは、イベントを待機しを呼び出して**IoCompleteRequest** IRP を完了します。
+        下位レベルのドライバーが状態を返す場合\_保留中、高度なドライバーは呼び出す必要がありますいない[ **IoCompleteRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest) IRP が、例外が 1 つの。高度なドライバーを同期させるイベントを使用してその[ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)ルーチンと場合、ディスパッチ ルーチン、 *IoCompletion*日常的な信号イベントと状態を返します。\_詳細\_処理\_必要な作業です。 ディスパッチ ルーチンは、イベントを待機しを呼び出して**IoCompleteRequest** IRP を完了します。
 
     -   設定**情報**バイト数を正常に転送された読み取りなどのデータを転送または書き込み要求、要求が満たされた場合。
 

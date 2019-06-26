@@ -4,27 +4,27 @@ description: 割り込みオブジェクトの削除
 ms.assetid: B72DA452-B22F-47CD-8C5D-E741F09F556E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7432fb4727fe0460b3ecfa3eaff927e1c7e1449c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3bedae105a3faf78c386cb20bd21bdb81fd1f4bd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330878"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377466"
 ---
 # <a name="deleting-an-interrupt-object"></a>割り込みオブジェクトの削除
 
 
 [!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
 
-ドライバーは、呼び出すことによって、割り込みオブジェクトを作成する場合[ **IWDFDevice3::CreateInterrupt**](https://msdn.microsoft.com/library/windows/hardware/hh451208)ドライバーは、割り込みオブジェクトを削除する必要はありません。 フレームワークは、割り込みオブジェクトは、framework デバイス オブジェクトの子オブジェクトでは自動的に割り込みオブジェクトを削除します。
+ドライバーは、呼び出すことによって、割り込みオブジェクトを作成する場合[ **IWDFDevice3::CreateInterrupt**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdevice3-createinterrupt)ドライバーは、割り込みオブジェクトを削除する必要はありません。 フレームワークは、割り込みオブジェクトは、framework デバイス オブジェクトの子オブジェクトでは自動的に割り込みオブジェクトを削除します。
 
 フレームワークは、次の規則を使用します。
 
--   ドライバーを呼び出す場合[ **CreateInterrupt** ](https://msdn.microsoft.com/library/windows/hardware/hh451208)からその[ **OnPrepareHardware** ](https://msdn.microsoft.com/library/windows/hardware/hh439734)コールバック メソッド、フレームワークは、割り込みを削除します。オブジェクトから、ドライバーが返された後にその[ **OnReleaseHardware** ](https://msdn.microsoft.com/library/windows/hardware/hh439739)コールバック。
+-   ドライバーを呼び出す場合[ **CreateInterrupt** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdevice3-createinterrupt)からその[ **OnPrepareHardware** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-ipnpcallbackhardware2-onpreparehardware)コールバック メソッド、フレームワークは、割り込みを削除します。オブジェクトから、ドライバーが返された後にその[ **OnReleaseHardware** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-ipnpcallbackhardware2-onreleasehardware)コールバック。
 
--   ドライバーを呼び出す場合[ **CreateInterrupt** ](https://msdn.microsoft.com/library/windows/hardware/hh451208)からその[ **OnDeviceAdd** ](https://msdn.microsoft.com/library/windows/hardware/ff554896)コールバック メソッド、フレームワークは、割り込みオブジェクトを削除します。デバイスが削除されたとき。
+-   ドライバーを呼び出す場合[ **CreateInterrupt** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdevice3-createinterrupt)からその[ **OnDeviceAdd** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-idriverentry-ondeviceadd)コールバック メソッド、フレームワークは、割り込みオブジェクトを削除します。デバイスが削除されたとき。
 
-ドライバーを呼び出すことができます必要に応じて、 [ **IWDFObject::DeleteWdfObject** ](https://msdn.microsoft.com/library/windows/hardware/ff560210)割り込みオブジェクトをいつでも削除します。 ドライバーは、外側の新しい割り込みオブジェクトを作成できないため[ **OnDeviceAdd** ](https://msdn.microsoft.com/library/windows/hardware/ff554896)または[ **OnPrepareHardware**](https://msdn.microsoft.com/library/windows/hardware/hh439734)、手動で削除した、フレームワークは、それを削除する前に、ドライバーは、オブジェクトを削除する必要がありますしない限り、オブジェクトを使用しない必要があります。
+ドライバーを呼び出すことができます必要に応じて、 [ **IWDFObject::DeleteWdfObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfobject-deletewdfobject)割り込みオブジェクトをいつでも削除します。 ドライバーは、外側の新しい割り込みオブジェクトを作成できないため[ **OnDeviceAdd** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-idriverentry-ondeviceadd)または[ **OnPrepareHardware**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-ipnpcallbackhardware2-onpreparehardware)、手動で削除した、フレームワークは、それを削除する前に、ドライバーは、オブジェクトを削除する必要がありますしない限り、オブジェクトを使用しない必要があります。
 
  
 

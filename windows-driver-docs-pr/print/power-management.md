@@ -10,12 +10,12 @@ keywords:
 - テストの WDK プリンターを休止状態します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fc29214273eb14b21fd07c044a445cecccf427f9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1c6543333369ee51fa4a6452035ee08c4b2b3c68
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389554"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373808"
 ---
 # <a name="power-management"></a>電源管理
 
@@ -32,11 +32,11 @@ ms.locfileid: "63389554"
 
 4.  重大なシャット ダウンの要求試行はすべて拒否する電源状態の変更が上書きされます。
 
-詳細については、次を参照してください。[システム電源の状態](https://msdn.microsoft.com/library/windows/hardware/ff564571)WDK ドキュメントと[システム電源の状態](https://go.microsoft.com/fwlink/p/?linkid=51899)、Microsoft Windows SDK ドキュメント。
+詳細については、次を参照してください。[システム電源の状態](https://docs.microsoft.com/windows-hardware/drivers/kernel/system-power-states)WDK ドキュメントと[システム電源の状態](https://go.microsoft.com/fwlink/p/?linkid=51899)、Microsoft Windows SDK ドキュメント。
 
 ### <a name="testing-port-connected-devices-across-various-power-states"></a>さまざまな電源状態の間でのポートに接続されたデバイスのテスト
 
-さまざまな電源状態の前後に、デバイスのテストを開始するには、まず、デバイスの基準を確認[プラグ アンド プレイ](https://msdn.microsoft.com/library/windows/hardware/ff547125)(PnP) 機能です。 次に、テスト環境を入力してすべての電源状態から復帰ことを確認します。
+さまざまな電源状態の前後に、デバイスのテストを開始するには、まず、デバイスの基準を確認[プラグ アンド プレイ](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)(PnP) 機能です。 次に、テスト環境を入力してすべての電源状態から復帰ことを確認します。
 
 1 つのデバイスが接続されており、正しくインストールされているには、各電源状態 S0 s5 までからの前後に、その動作をテストには、次のように。
 

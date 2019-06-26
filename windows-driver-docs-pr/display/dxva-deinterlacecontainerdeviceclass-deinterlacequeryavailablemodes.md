@@ -15,12 +15,12 @@ api_type:
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
-ms.openlocfilehash: c69cc3bed839714f3efab8718c15aa06ce23b015
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d2f3195b3fbc9b73786a2a4c8f7fa5fd7f2b3442
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360344"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375834"
 ---
 # <a name="dxvadeinterlacecontainerdeviceclassdeinterlacequeryavailablemodes-method"></a>DXVA\_DeinterlaceContainerDeviceClass::DeinterlaceQueryAvailableModes メソッド
 
@@ -41,7 +41,7 @@ HRESULT DeinterlaceQueryAvailableModes(
 <a name="parameters"></a>パラメーター
 ----------
 
-*lpVideoDescription* \[で\]へのポインターを提供する[ **DXVA\_VideoDesc** ](https://msdn.microsoft.com/library/windows/hardware/ff564070)のビデオ ストリームの説明を含む構造体実行するデインター レースまたはフレーム レート変換します。
+*lpVideoDescription* \[で\]へのポインターを提供する[ **DXVA\_VideoDesc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_videodesc)のビデオ ストリームの説明を含む構造体実行するデインター レースまたはフレーム レート変換します。
 
 *lpdwNumModesSupported* \[入力、出力\]インターまたはフレーム レートの変換モードは、配列で返される数へのポインターを受け取る*pGuidsDeinterlaceModes*します。
 
@@ -55,17 +55,17 @@ HRESULT DeinterlaceQueryAvailableModes(
 <a name="remarks"></a>注釈
 -------
 
-*LpVideoDescription*ドライバーは、解像度と、ソース ビデオの形式をサポートできるようにパラメーターは、ドライバーに渡されます。 など、ドライバーを実行することがありますが、3 つのフィールド アダプティブ 480i のコンテンツのインター レースを解除、1080 i コンテンツを bob できる可能性があります。 詳細については、次を参照してください。[ビデオ コンテンツのインターとフレーム レート変換](https://msdn.microsoft.com/library/windows/hardware/ff570502)します。
+*LpVideoDescription*ドライバーは、解像度と、ソース ビデオの形式をサポートできるようにパラメーターは、ドライバーに渡されます。 など、ドライバーを実行することがありますが、3 つのフィールド アダプティブ 480i のコンテンツのインター レースを解除、1080 i コンテンツを bob できる可能性があります。 詳細については、次を参照してください。[ビデオ コンテンツのインターとフレーム レート変換](https://docs.microsoft.com/windows-hardware/drivers/display/video-content-for-deinterlace-and-frame-rate-conversion)します。
 
 によって返される Guid、 *pGuidsDeinterlaceModes*パラメーターの品質を降順で返す (つまり、最高品質のモードに占める返される GUID の配列の最初の要素)。
 
-すべてのドライバーは、既存を使用して、bob のモードをサポートできる必要があります*ビット ブロック転送*(blt) ハードウェア。 モードの詳細については、次を参照してください。、[インター レースを解除モード](https://msdn.microsoft.com/library/windows/hardware/ff552704)と[フレーム レート変換モード](https://msdn.microsoft.com/library/windows/hardware/ff566449)トピック。
+すべてのドライバーは、既存を使用して、bob のモードをサポートできる必要があります*ビット ブロック転送*(blt) ハードウェア。 モードの詳細については、次を参照してください。、[インター レースを解除モード](https://docs.microsoft.com/windows-hardware/drivers/display/deinterlace-modes)と[フレーム レート変換モード](https://docs.microsoft.com/windows-hardware/drivers/display/frame-rate-conversion-modes)トピック。
 
-ドライバーからの要求に対する応答でサポートされている Guid (モード) を返します、 *VMR*します。 ドライバーがへの呼び出しに応答の[ *DdMoCompRender* ](https://msdn.microsoft.com/library/windows/hardware/ff550248)コールバック関数。 ドライバーはから Guid を返します、 **lpOutputData**のメンバー、 [ **DD\_RENDERMOCOMPDATA** ](https://msdn.microsoft.com/library/windows/hardware/ff551693)構造体、 *lpRenderData*パラメーターの*DdMoCompRender*ポイント。 **LpOutputData**へのポインター、 [ **DXVA\_DeinterlaceQueryAvailableModes** ](https://msdn.microsoft.com/library/windows/hardware/ff563951) でGuidの配列を格納する構造体**Guid**メンバー。
+ドライバーからの要求に対する応答でサポートされている Guid (モード) を返します、 *VMR*します。 ドライバーがへの呼び出しに応答の[ *DdMoCompRender* ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_render)コールバック関数。 ドライバーはから Guid を返します、 **lpOutputData**のメンバー、 [ **DD\_RENDERMOCOMPDATA** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_rendermocompdata)構造体、 *lpRenderData*パラメーターの*DdMoCompRender*ポイント。 **LpOutputData**へのポインター、 [ **DXVA\_DeinterlaceQueryAvailableModes** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_deinterlacequeryavailablemodes) でGuidの配列を格納する構造体**Guid**メンバー。
 
 **マッピングを RenderMoComp** ***DeinterlaceQueryAvailableModes***
 
-サンプル*DeinterlaceQueryAvailableModes*関数のマップへの呼び出しに直接、 **RenderMoComp**のメンバー、 [ **DD\_MOTIONCOMPCALLBACKS**](https://msdn.microsoft.com/library/windows/hardware/ff551660)構造体。 **RenderMoComp**メンバーが参照するディスプレイ ドライバーによって提供される関数を指す、 [ **DD\_RENDERMOCOMPDATA** ](https://msdn.microsoft.com/library/windows/hardware/ff551693)構造体。
+サンプル*DeinterlaceQueryAvailableModes*関数のマップへの呼び出しに直接、 **RenderMoComp**のメンバー、 [ **DD\_MOTIONCOMPCALLBACKS**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)構造体。 **RenderMoComp**メンバーが参照するディスプレイ ドライバーによって提供される関数を指す、 [ **DD\_RENDERMOCOMPDATA** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_rendermocompdata)構造体。
 
 **RenderMoComp**ドライバーによって提供される表示せずにコールバックが呼び出されて**BeginMoCompFrame**または**EndMoCompFrame**最初に呼び出される関数。
 
@@ -89,7 +89,7 @@ DD\_RENDERMOCOMPDATA 構造は次のように入力されます。
 </tr>
 <tr class="even">
 <td align="left"><p><strong>lpBufferInfo</strong></p></td>
-<td align="left"><p>NULL: </p></td>
+<td align="left"><p>NULL:</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>dwFunction</strong></p></td>
@@ -97,11 +97,11 @@ DD\_RENDERMOCOMPDATA 構造は次のように入力されます。
 </tr>
 <tr class="even">
 <td align="left"><p><strong>lpInputData</strong></p></td>
-<td align="left"><p>塗りつぶしへのポインター <a href="https://msdn.microsoft.com/library/windows/hardware/ff564070" data-raw-source="[&lt;strong&gt;DXVA_VideoDesc&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564070)"> <strong>DXVA_VideoDesc</strong> </a>構造体。</p></td>
+<td align="left"><p>塗りつぶしへのポインター <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_videodesc" data-raw-source="[&lt;strong&gt;DXVA_VideoDesc&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_videodesc)"> <strong>DXVA_VideoDesc</strong> </a>構造体。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>lpOutputData</strong></p></td>
-<td align="left"><p>ポインターを<a href="https://msdn.microsoft.com/library/windows/hardware/ff563951" data-raw-source="[&lt;strong&gt;DXVA_DeinterlaceQueryAvailableModes&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff563951)"> <strong>DXVA_DeinterlaceQueryAvailableModes</strong> </a>構造体。</p></td>
+<td align="left"><p>ポインターを<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_deinterlacequeryavailablemodes" data-raw-source="[&lt;strong&gt;DXVA_DeinterlaceQueryAvailableModes&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_deinterlacequeryavailablemodes)"> <strong>DXVA_DeinterlaceQueryAvailableModes</strong> </a>構造体。</p></td>
 </tr>
 </tbody>
 </table>
@@ -113,15 +113,15 @@ DD\_RENDERMOCOMPDATA 構造は次のように入力されます。
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
-[**DD\_MOTIONCOMPCALLBACKS**](https://msdn.microsoft.com/library/windows/hardware/ff551660)
+[**DD\_MOTIONCOMPCALLBACKS**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)
 
-[**DD\_RENDERMOCOMPDATA**](https://msdn.microsoft.com/library/windows/hardware/ff551693)
+[**DD\_RENDERMOCOMPDATA**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_rendermocompdata)
 
 [**DeinterlaceQueryModeCaps**](dxva-deinterlacecontainerdeviceclass-deinterlacequerymodecaps.md)
 
-[**DXVA\_VideoDesc**](https://msdn.microsoft.com/library/windows/hardware/ff564070)
+[**DXVA\_VideoDesc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_videodesc)
 
-[**DXVA\_SampleFormat**](https://msdn.microsoft.com/library/windows/hardware/ff564045)
+[**DXVA\_SampleFormat**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ne-dxva-_dxva_sampleformat)
 
  
 

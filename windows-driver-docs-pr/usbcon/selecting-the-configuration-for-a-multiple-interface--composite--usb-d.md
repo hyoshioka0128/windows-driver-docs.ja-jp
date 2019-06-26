@@ -3,12 +3,12 @@ Description: このトピックで、Usbccgp.sys USB 構成を選択する方法
 title: 既定以外の USB 構成を選択するための Usbccgp.sys の構成
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 45009bca190ff1fc97611511e6282af18781436a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cfb3d42d2dfd7b1cb33a18cf2980f02cbee57413
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379510"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358350"
 ---
 # <a name="configuring-usbccgpsys-to-select-a-non-default-usb-configuration"></a>既定以外の USB 構成を選択するための Usbccgp.sys の構成
 
@@ -35,7 +35,7 @@ ms.locfileid: "63379510"
 
 レジストリ設定は、代替の構成を選択する CCGP ドライバーを使用できます。
 
-レジストリ値を前の表で説明されているインデックスに対応する、USB で定義された構成で示される、 **bConfigurationValue**構成記述子のメンバー ([**USB\_構成\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff539241)) と*いない*によって、 **bConfigurationNum**デバイスの構成で報告される値記述子。 最初で、Usbccgp.sys は、OriginalConfigurationValue で指定された USB 構成のインデックスを使用して親 USB バス ドライバー (Usbhub.sys) を選択構成要求を送信します。 要求が失敗している場合で、Usbccgp.sys AlternateConfigurationValue で指定された値を使用しようとします。 Usbccgp.sys では、AlternateConfigurationValue または OriginalConfigurationValue が有効でない場合、既定値が使用されます。
+レジストリ値を前の表で説明されているインデックスに対応する、USB で定義された構成で示される、 **bConfigurationValue**構成記述子のメンバー ([**USB\_構成\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbspec/ns-usbspec-_usb_configuration_descriptor)) と*いない*によって、 **bConfigurationNum**デバイスの構成で報告される値記述子。 最初で、Usbccgp.sys は、OriginalConfigurationValue で指定された USB 構成のインデックスを使用して親 USB バス ドライバー (Usbhub.sys) を選択構成要求を送信します。 要求が失敗している場合で、Usbccgp.sys AlternateConfigurationValue で指定された値を使用しようとします。 Usbccgp.sys では、AlternateConfigurationValue または OriginalConfigurationValue が有効でない場合、既定値が使用されます。
 
 選択構成要求は、多くの理由で失敗します。 最も一般的なエラーは、または要求にデバイスが適切に応答しないときに発生します。、 **bMaxPower**値 (要求された構成に必要な電力) は、ハブのポートでサポートされている power 値を超えています。 たとえば、 **bMaxPower** (OriginalConfigurationValue で指定された) 特定の構成は 100 ミリアンペアいますが、ハブのポートは 50 ミリアンペアを提供することのみです。 USB ドライバー スタック (具体的には、USB ポート ドライバー) で、Usbccgp.sys では、その構成の選択構成要求を送信するときに、要求は失敗します。 次で、Usbccgp.sys は AltConfigurationValue によって示される構成を指定することで別の選択構成要求を送信します。 代替の構成には、50 ミリアンペアが必要です。 またはより少ないとしないその他の問題が発生した、選択構成要求が正常に完了します。
 
@@ -45,7 +45,7 @@ ms.locfileid: "63379510"
 
 1.  USB ポート ドライバーによって、選択構成要求の検証に使用する同じ条件を使用して、受信した要求を検証します。
 2.  Usbccgp.sys が URB 型の URB を送信することによって選択インターフェイス要求を発行する場合は、要求では、現在の設定とは異なるインターフェイスまたはパイプの設定を指定します、\_関数\_選択\_インターフェイスを変更するには新しいインターフェイスとパイプの設定を既存の設定。
-3.  キャッシュの内容をコピー、 [ **USBD\_インターフェイス\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff539068)と[ **USBD\_パイプ\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff539114) URB に構造体。
+3.  キャッシュの内容をコピー、 [ **USBD\_インターフェイス\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_usbd_interface_information)と[ **USBD\_パイプ\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_usbd_pipe_information) URB に構造体。
 4.  URB を完了します。
 
 ## <a name="related-topics"></a>関連トピック

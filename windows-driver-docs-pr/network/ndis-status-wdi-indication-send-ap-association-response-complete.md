@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - NDIS_STATUS_WDI_INDICATION_SEND_AP_ASSOCIATION_RESPONSE_COMPLETE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 461b34d968899f5a354edadc68e60afad9b9d014
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c910d0286cb18afaf7cea1773ce8c438f3e80684
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361030"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375214"
 ---
 # <a name="ndisstatuswdiindicationsendapassociationresponsecomplete"></a>NDIS\_状態\_WDI\_INDICATION\_送信\_AP\_アソシエーション\_応答\_完了
 
@@ -29,10 +29,10 @@ ms.locfileid: "63361030"
 
 | 種類 | 許可されている複数の TLV インスタンス | 省略可能 | 説明 |
 | --- | --- | --- | --- |
-| [**WDI\_TLV\_アソシエーション\_応答\_結果\_パラメーター**](https://msdn.microsoft.com/library/windows/hardware/dn926138) |   |   | アソシエーションの応答パラメーター。 |
-| [**WDI\_TLV\_アソシエーション\_応答\_フレーム**](https://msdn.microsoft.com/library/windows/hardware/dn926135) |   |   | 受信したアソシエーションの応答です。 これは、802.11 MAC ヘッダーには含まれません。 |
-| [**WDI\_TLV\_BEACON\_IES**](https://msdn.microsoft.com/library/windows/hardware/dn926148) |   |   | アソシエーションからビーコン IEs します。 |
-| [**WDI\_TLV\_PHY\_型\_一覧**](https://msdn.microsoft.com/library/windows/hardware/dn898029) |   |   | PHY 型のリスト。 |
+| [**WDI\_TLV\_アソシエーション\_応答\_結果\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-association-response-result-parameters) |   |   | アソシエーションの応答パラメーター。 |
+| [**WDI\_TLV\_アソシエーション\_応答\_フレーム**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-association-response-frame) |   |   | 受信したアソシエーションの応答です。 これは、802.11 MAC ヘッダーには含まれません。 |
+| [**WDI\_TLV\_BEACON\_IES**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-beacon-ies) |   |   | アソシエーションからビーコン IEs します。 |
+| [**WDI\_TLV\_PHY\_型\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-phy-type-list) |   |   | PHY 型のリスト。 |
  
 
 <a name="requirements"></a>必要条件

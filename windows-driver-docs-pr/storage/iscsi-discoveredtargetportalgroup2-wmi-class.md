@@ -4,12 +4,12 @@ description: ISCSI\_DiscoveredTargetPortalGroup2 WMI クラス
 ms.assetid: 9285c74c-ad20-4d34-abdb-d5c5db1f9e90
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 25fc6f491bf4b708048eaee74347ab728a39ce31
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fec9fdee3bc1b9af74d78403b87e254e58f5eb7d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387108"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378436"
 ---
 # <a name="iscsidiscoveredtargetportalgroup2-wmi-class"></a>ISCSI\_DiscoveredTargetPortalGroup2 WMI クラス
 
@@ -20,7 +20,7 @@ ISCSI\_DiscoveredTargetPortalGroup2 WMI クラスには、ポータルのグル�
 
 ISCSI\_DiscoveredTargetPortalGroup2 クラスは発行されませんしで定義されている*Discover.mof*します。
 
-WMI ツールのスイートでは、このクラスの定義をコンパイルするときに生成、 [ **ISCSI\_DiscoveredTargetPortalGroup2** ](https://msdn.microsoft.com/library/windows/hardware/ff561517)データ構造体。
+WMI ツールのスイートでは、このクラスの定義をコンパイルするときに生成、 [ **ISCSI\_DiscoveredTargetPortalGroup2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsifnd/ns-iscsifnd-_iscsi_discoveredtargetportalgroup2)データ構造体。
 
  
 

@@ -4,17 +4,17 @@ description: Driver Verifier にスピン ロック階層違反、0x1001 のパ�
 ms.assetid: 4C3ED1DB-5EDC-4386-B91C-CF86973EE1F6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d3b49d9c51ca2141a12f518298bb56fd5505e94e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 36e78d4c21d1b3717f0d3787a9f2a63b57681927
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344868"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371432"
 ---
 # <a name="span-iddevtestdebuggingdeadlocks-driververifierdetectedviolationc40x1001spandebugging-deadlocks---driververifierdetectedviolation-c4-0x1001"></a><span id="devtest.debugging_deadlocks_-_driver_verifier_detected_violation__c4___0x1001"></span>デッドロックのドライバーをデバッグ\_VERIFIER\_検出\_違反 (C4)。0x1001
 
 
-ときに[Driver Verifier](driver-verifier.md) 、スピン ロック階層違反を検出、ドライバー Verifiergenerates [ **0xC4 のバグ チェック。ドライバー\_VERIFIER\_検出\_違反**](https://msdn.microsoft.com/library/windows/hardware/ff560187) 0x1001 のパラメーター 1 の値。
+ときに[Driver Verifier](driver-verifier.md) 、スピン ロック階層違反を検出、ドライバー Verifiergenerates [ **0xC4 のバグ チェック。ドライバー\_VERIFIER\_検出\_違反**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation) 0x1001 のパラメーター 1 の値。
 
 デッドロック検出オプションがアクティブな場合 (デッドロック検出の Driver Verifier の標準オプションの一部)、 [Driver Verifier](driver-verifier.md)の割り当てられた各スピン ロックと順序を取得および解放を追跡します。 ロック階層の違反では、Driver Verifier の状況が検出されたことを意味を少なくとも 1 つの場合も、where、 *LockA*取得後、前に保持されている*LockB*は取得、および別の*LockB*取得後、前に保持されている*LockA*が必要です。
 
@@ -35,7 +35,7 @@ ms.locfileid: "63344868"
 (B)reak, (I)gnore, (W)arn only, (R)emove assert?
 ```
 
-Windows 8.1 を実行するコンピューターでこの違反をデバッグするには、選択**B** (中断)、推奨されるデバッガー コマンドを入力します ([**! デッドロック**](https://msdn.microsoft.com/library/windows/hardware/ff562326))。
+Windows 8.1 を実行するコンピューターでこの違反をデバッグするには、選択**B** (中断)、推奨されるデバッガー コマンドを入力します ([ **! デッドロック**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-deadlock))。
 
 ```
 kd> !deadlock
@@ -55,7 +55,7 @@ Lock A =   97dd800c (MyTestDriver!AlphaLock+0x00000000) - Type 'Spinlock'.
 Lock B =   97dd8008 (MyTestDriver!BravoLock+0x00000000) - Type 'Spinlock'.
 ```
 
-[ **! デッドロック**](https://msdn.microsoft.com/library/windows/hardware/ff562326) **3**コマンドの詳細情報を表示、最後の時点でのスタックを含めて取得することもできます。
+[ **! デッドロック**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-deadlock) **3**コマンドの詳細情報を表示、最後の時点でのスタックを含めて取得することもできます。
 
 ```
 kd> !deadlock 3
@@ -113,7 +113,7 @@ Lock A =     97dd800c (MyTestDriver!AlphaLock+0x00000000) - Type 'Spinlock'.
     Stack:   << Current stack trace - use kb to display it >>
 ```
 
-使用して、デバッガーの提案、 [ **kb (Stack Backtrace の表示)** ](https://msdn.microsoft.com/library/windows/hardware/ff551943)コマンドを現在のスタック トレースを表示します。
+使用して、デバッガーの提案、 [ **kb (Stack Backtrace の表示)** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-)コマンドを現在のスタック トレースを表示します。
 
 ```
 kd> kb
@@ -226,16 +226,16 @@ NTSTATUS DeviceControlIrpWorker(_In_ PIRP Irp,
 
 この潜在的な違反を修正するのには、いることを確認、ドライバーが AlphaLock の取得を試みると、そのチェック BravoLock が保持されないようにを正しい操作ですがあります。 最も簡単な修正プログラムは、単に BravoLock を解放し、再度 AlphaLock が取得されるとすぐに取得できます。 より重要なコード変更 AlphaLock と BravoLock の再取得を待機中に、BravoLock を保護する任意のデータが変更されないことが重要である場合に必要な場合があります。
 
-スピン ロックやその他の同期方法の詳細については、次を参照してください。[スピン ロック](https://msdn.microsoft.com/library/windows/hardware/ff563830)します。
+スピン ロックやその他の同期方法の詳細については、次を参照してください。[スピン ロック](https://docs.microsoft.com/windows-hardware/drivers/kernel/spin-locks)します。
 
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
-[スピン ロック](https://msdn.microsoft.com/library/windows/hardware/ff563830)
+[スピン ロック](https://docs.microsoft.com/windows-hardware/drivers/kernel/spin-locks)
 
-[**バグ チェック 0xC4 の。ドライバー\_VERIFIER\_検出\_違反**](https://msdn.microsoft.com/library/windows/hardware/ff560187)
+[**バグ チェック 0xC4 の。ドライバー\_VERIFIER\_検出\_違反**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)
 
-[**!deadlock**](https://msdn.microsoft.com/library/windows/hardware/ff562326)
+[ **!deadlock**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-deadlock)
 
 
 

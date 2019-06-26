@@ -4,12 +4,12 @@ description: デバイスの基礎の再起動のテストは前に、と後に�
 ms.assetid: 71EBEC60-C99F-412D-8FC5-2DD9209CC92D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3289abffa3cffd28d334971db5257321ece358af
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 38b7e50445b97e035132bb6fbfdf32dc23b85076
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536824"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375874"
 ---
 # <a name="reboot-tests-device-fundamentals"></a>再起動テスト (Device Fundamental)
 
@@ -36,7 +36,7 @@ ms.locfileid: "56536824"
 <td align="left"><p>このテストでは、重要なシステム再起動の前後に、I/O がデバイスで実行されます。</p>
 <p><strong>バイナリをテストします。</strong>Devfund_Critical_RebootRestart_With_IO_BeforeAndAfter.wsc</p>
 <p><strong>メソッドをテストします。</strong>Critical_Reboot_Restart_With_IO_Before_And_After</p>
-<p><strong>パラメーター:</strong> -を参照してください<a href="https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests" data-raw-source="[Device Fundamentals Test Parameters](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)">デバイス基礎テスト パラメーター</a></p>
+<p><strong>パラメーター:</strong> -を参照してください<a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](https://docs.microsoft.com/windows-hardware/drivers)">デバイス基礎テスト パラメーター</a></p>
 <p><em>DQ</em></p>
 <p><em>IOPeriod</em></p></td>
 </tr>
@@ -45,7 +45,7 @@ ms.locfileid: "56536824"
 <td align="left"><p>このテストは、I/O の実行中の重要な再起動を開始、および再起動の後にもう一度 SimpleI/O を実行するデバイスで単純な I/O を開始します。</p>
 <p><strong>バイナリをテストします。</strong>Devfund_Critical_RebootRestart_With_IO_During.wsc</p>
 <p><strong>メソッドをテストします。</strong>Critical_Reboot_Restart_With_IO_During</p>
-<p><strong>パラメーター:</strong> -を参照してください<a href="https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests" data-raw-source="[Device Fundamentals Test Parameters](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)">デバイス基礎テスト パラメーター</a></p>
+<p><strong>パラメーター:</strong> -を参照してください<a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](https://docs.microsoft.com/windows-hardware/drivers)">デバイス基礎テスト パラメーター</a></p>
 <p><em>DQ</em></p></td>
 </tr>
 <tr class="odd">
@@ -53,7 +53,7 @@ ms.locfileid: "56536824"
 <td align="left"><p>このテストでは前に、と、システムの再起動後に、I/O がデバイスで実行されます。</p>
 <p><strong>バイナリをテストします。</strong>Devfund_RebootRestart_With_IO_BeforeAndAfter.wsc</p>
 <p><strong>メソッドをテストします。</strong>Reboot_Restart_With_IO_Before_And_After</p>
-<p><strong>パラメーター:</strong> -を参照してください<a href="https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests" data-raw-source="[Device Fundamentals Test Parameters](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)">デバイス基礎テスト パラメーター</a></p>
+<p><strong>パラメーター:</strong> -を参照してください<a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](https://docs.microsoft.com/windows-hardware/drivers)">デバイス基礎テスト パラメーター</a></p>
 <p><em>DQ</em></p>
 <p><em>IOPeriod</em></p></td>
 </tr>
@@ -62,7 +62,7 @@ ms.locfileid: "56536824"
 <td align="left"><p>このテストは、I/O の実行中の再起動を開始、および再起動の後にもう一度 SimpleI/O を実行するデバイスで単純な I/O を開始します。</p>
 <p><strong>バイナリをテストします。</strong>Devfund_RebootRestart_With_IO_During.wsc</p>
 <p><strong>メソッドをテストします。</strong>Reboot_Restart_With_IO_During</p>
-<p><strong>パラメーター:</strong> -を参照してください<a href="https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests" data-raw-source="[Device Fundamentals Test Parameters](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)">デバイス基礎テスト パラメーター</a></p>
+<p><strong>パラメーター:</strong> -を参照してください<a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](https://docs.microsoft.com/windows-hardware/drivers)">デバイス基礎テスト パラメーター</a></p>
 <p><em>DQ</em></p></td>
 </tr>
 </tbody>
@@ -73,17 +73,17 @@ ms.locfileid: "56536824"
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
-[Visual Studio を使用して実行時にドライバーをテストする方法](https://msdn.microsoft.com/windows-drivers/develop/testing_a_driver_at_runtime)
+[Visual Studio を使って実行時にドライバーをテストする方法](https://docs.microsoft.com/windows-hardware/drivers)
 
-[テストを選択し、デバイスの基本を構成する方法](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)
+[テストを選択し、デバイスの基本を構成する方法](https://docs.microsoft.com/windows-hardware/drivers)
 
-[デバイスの基本テスト](device-fundamentals-tests.md)
+[Device Fundamental のテスト](device-fundamentals-tests.md)
 
-[デバイス基礎テスト パラメーター](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)
+[Device Fundamental テストのパラメーター](https://docs.microsoft.com/windows-hardware/drivers)
 
-[単純な I/O の WDTF プラグインを提供](https://msdn.microsoft.com/library/windows/hardware/hh781398)
+[提供されている WDTF シンプル I/O プラグイン](https://docs.microsoft.com/windows-hardware/drivers/wdtf/provided-wdtf-simpleio-plug-ins)
 
-[コマンド プロンプトから実行時にドライバーをテストする方法](https://msdn.microsoft.com/windows-drivers/develop/how_to_test_a_driver_at_runtime_from_a_command_prompt)
+[コマンド プロンプトから実行時にドライバーをテストする方法](https://docs.microsoft.com/windows-hardware/drivers)
 
  
 

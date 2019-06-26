@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e28352e9ec00e646771f26f6bf7df10e6b467f24
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f208b5ac166110626a663f884f4a256f8df3a40c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390878"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376352"
 ---
 # <a name="kspropertystreammasterclock"></a>KSPROPERTY\_ストリーム\_MASTERCLOCK
 
@@ -72,9 +72,9 @@ Pin の時計を設定すると、暗証番号 (pin)、基になるファイル 
 
 フィルターは、他のストリームとを同期する必要なく、グラフの中程のマスターのクロックの生成やコンバーター フィルターなど、いずれかを参照する必要がありますに配置する場合に、プロパティをサポートする必要はありません。 プロパティが場合も使用できます読み取り専用フィルターは、マスターのクロックが生成されますが、外部のマスター クロックを同期しません。
 
-参照してください[KS クロック](https://msdn.microsoft.com/library/windows/hardware/ff567307)と[AVStream クロック](https://msdn.microsoft.com/library/windows/hardware/ff554208)します。
+参照してください[KS クロック](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-clocks)と[AVStream クロック](https://docs.microsoft.com/windows-hardware/drivers/stream/avstream-clocks)します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

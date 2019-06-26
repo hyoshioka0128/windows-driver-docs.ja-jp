@@ -9,12 +9,12 @@ keywords:
 - レジストリの WDK エラー ログ
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b22a2fed4cacaec5eac40c9c61b15084f11c493f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: ec9724a0588d10dae007381b30eb38aa85aa4458
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574071"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373478"
 ---
 # <a name="registering-as-a-source-of-error-messages"></a>エラー メッセージのソースとしての登録
 
@@ -30,7 +30,7 @@ ms.locfileid: "56574071"
 <a href="" id="typessupported--reg-dword-"></a>**TypesSupported** (REG\_DWORD)  
 ログに記録できる可能性の重大度レベルのビットマスクを指定します。 これは、ドライバーが通常設定から 7 を示すすべての重大度レベルを記録することがあります。
 
-ドライバーの INF ファイルからこれらのレジストリ キーを設定する方法については、[**登録イベントをログに記録**](https://msdn.microsoft.com/library/windows/hardware/ff546326)を参照してください。
+ドライバーの INF ファイルからこれらのレジストリ キーを設定する方法については、次を参照してください。 [**登録イベントをログに記録**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addservice-directive)します。
 
  
 

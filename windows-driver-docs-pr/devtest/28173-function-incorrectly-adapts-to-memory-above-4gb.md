@@ -6,12 +6,12 @@ ms.date: 04/20/2017
 ms.localizationpriority: medium
 f1_keywords:
 - C28173
-ms.openlocfilehash: 07d445a07d935364dc6b172a946ca38b21dbfc25
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a25831462041752a09ea48d40ae9f1146d65f9dc
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361311"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371482"
 ---
 # <a name="c28173"></a>C28173
 
@@ -37,7 +37,7 @@ C28173 を警告します。正しくない 4 GB を超える物理メモリに�
 
 よく寄せられるよりも少ないレジスタを取得するコードが適応しない場合、この警告メッセージが表示されます。 関数への呼び出しは、いつ**IoGetDmaAdapter**、コード分析ツールをシミュレートする、 **IoGetDmaAdapter**要求よりも小さい番号のレジスタを返します。 呼び出し元の関数は、この条件を処理し、正常に完了する必要があります。
 
-ドライバーが 4 GB 以上のシステムで失敗できるその他の方法があることに注意してください。 これらの考えられる障害モードのコードを調査する必要があります。 詳細については、4 GB のメモリの問題と、マップのレジスタは、次を参照してください。 [ **NdisMAllocateMapRegisters**](https://msdn.microsoft.com/library/windows/hardware/ff552300)します。
+ドライバーが 4 GB 以上のシステムで失敗できるその他の方法があることに注意してください。 これらの考えられる障害モードのコードを調査する必要があります。 詳細については、4 GB のメモリの問題と、マップのレジスタは、次を参照してください。 [ **NdisMAllocateMapRegisters**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff552300(v=vs.85))します。
 
  
 

@@ -4,19 +4,19 @@ description: キーボード (外部またはラップトップで埋め込み)�
 ms.assetid: B22BA244-C5C6-4A50-AFE6-4E773194F18C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b9f4277b52857efe36a1c17c484521cc95be19d7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 302846780e17ec4963bb19281fab5b2aae5fd4fb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388958"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375740"
 ---
 # <a name="display-brightness-control"></a>ディスプレイの明るさの制御
 
 
 Windows 8 以降、標準化されたソリューションが追加されましたキーボード (外部またはラップトップで埋め込み)、hid のラップトップやタブレットの画面の明るさの制御を許可します。
 
-このソリューションは、「HID 委員会の承認された最近[レビュー要求 41 の HID](http://www.usb.org/developers/hidpage#approved-usage-table-review-requests)します。
+このソリューションは、「HID 委員会の承認された最近[レビュー要求 41 の HID](https://www.usb.org/developers/hidpage#approved-usage-table-review-requests)します。
 
 ## <a name="architecture-and-overview"></a>アーキテクチャと概要
 

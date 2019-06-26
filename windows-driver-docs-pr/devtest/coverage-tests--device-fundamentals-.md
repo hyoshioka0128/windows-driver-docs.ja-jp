@@ -4,12 +4,12 @@ description: デバイスの基本的なカバレッジは、監視して、さ�
 ms.assetid: 950B124B-8B2D-4A54-AFC3-E90BBDD8D1AF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 08e5da67ea719cc004a8414e224532bc597daa04
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 495eea96cb5233b59235d5f99e02889763c1cc28
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343108"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371576"
 ---
 # <a name="coverage-tests-device-fundamentals"></a>カバレッジ テスト (Device Fundamental)
 
@@ -43,7 +43,7 @@ ms.locfileid: "63343108"
 <p><strong>バイナリをテストします。</strong>DriverCoverageDisableSupport.dll</p>
 <p><strong>メソッドをテストします。</strong>DisableCoverageDataCollection</p>
 <p><strong>パラメータ:</strong></p>
-<p><em>DQ</em> -を参照してください<a href="https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests" data-raw-source="[Device Fundamentals Test Parameters](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)">デバイス基礎テスト パラメーター</a></p></td>
+<p><em>DQ</em> -を参照してください<a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](https://docs.microsoft.com/windows-hardware/drivers)">デバイス基礎テスト パラメーター</a></p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><span id="Display_collected_IRP_coverage_data._"></span><span id="display_collected_irp_coverage_data._"></span><span id="DISPLAY_COLLECTED_IRP_COVERAGE_DATA._"></span>収集された IRP のカバレッジ データを表示します。</p></td>
@@ -65,7 +65,7 @@ ms.locfileid: "63343108"
 <p><strong>バイナリをテストします。</strong>DriverCoverageEnableSupport.dll</p>
 <p><strong>メソッドをテストします。</strong>EnableCoverageDataCollection</p>
 <p><strong>パラメータ:</strong>なし</p>
-<p><em>DQ</em> -を参照してください<a href="https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests" data-raw-source="[Device Fundamentals Test Parameters](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)">デバイス基礎テスト パラメーター</a></p></td>
+<p><em>DQ</em> -を参照してください<a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](https://docs.microsoft.com/windows-hardware/drivers)">デバイス基礎テスト パラメーター</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -79,17 +79,17 @@ ms.locfileid: "63343108"
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
-[Visual Studio を使って実行時にドライバーをテストする方法](https://msdn.microsoft.com/windows-drivers/develop/testing_a_driver_at_runtime)
+[Visual Studio を使って実行時にドライバーをテストする方法](https://docs.microsoft.com/windows-hardware/drivers)
 
-[テストを選択し、デバイスの基本を構成する方法](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)
+[テストを選択し、デバイスの基本を構成する方法](https://docs.microsoft.com/windows-hardware/drivers)
 
 [Device Fundamental のテスト](device-fundamentals-tests.md)
 
-[Device Fundamental テストのパラメーター](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)
+[Device Fundamental テストのパラメーター](https://docs.microsoft.com/windows-hardware/drivers)
 
-[提供されている WDTF シンプル I/O プラグイン](https://msdn.microsoft.com/library/windows/hardware/hh781398)
+[提供されている WDTF シンプル I/O プラグイン](https://docs.microsoft.com/windows-hardware/drivers/wdtf/provided-wdtf-simpleio-plug-ins)
 
-[コマンド プロンプトから実行時にドライバーをテストする方法](https://msdn.microsoft.com/windows-drivers/develop/how_to_test_a_driver_at_runtime_from_a_command_prompt)
+[コマンド プロンプトから実行時にドライバーをテストする方法](https://docs.microsoft.com/windows-hardware/drivers)
 
  
 

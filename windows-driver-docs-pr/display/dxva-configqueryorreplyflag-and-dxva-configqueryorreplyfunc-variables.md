@@ -20,22 +20,22 @@ keywords:
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
-ms.openlocfilehash: 68d0c0727156b80ffac718897cd1e3e9d1b8a6e5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2030cf2f5c78346e7239fe623c15f552cb178c8d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370818"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375858"
 ---
 # <a name="dxvaconfigqueryorreplyflag-and-dxvaconfigqueryorreplyfunc-variables"></a>DXVA\_ConfigQueryOrReplyFlag と DXVA\_ConfigQueryorReplyFunc 変数
 
 *DXVA\_ConfigQueryOrReplyFlag*変数がクエリの種類を示しますまたはプローブとロックを使用するときの応答コマンドします。 最も重要な 24 ビット、 **dwFunction**以下の構造体のメンバーが含まれています、 *DXVA\_ConfigQueryOrReplyFlag*変数。
 
-[**DXVA\_ConfigPictureDecode** ](https://msdn.microsoft.com/library/windows/hardware/ff563133)圧縮された画像をデコードします。
+[**DXVA\_ConfigPictureDecode** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_configpicturedecode)圧縮された画像をデコードします。
 
-[**DXVA\_ConfigAlphaLoad** ](https://msdn.microsoft.com/library/windows/hardware/ff563129)アルファ ブレンド データを読み込むためです。
+[**DXVA\_ConfigAlphaLoad** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_configalphaload)アルファ ブレンド データを読み込むためです。
 
-[**DXVA\_ConfigAlphaCombine** ](https://msdn.microsoft.com/library/windows/hardware/ff563126)アルファ ブレンドの組み合わせ。
+[**DXVA\_ConfigAlphaCombine** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_configalphacombine)アルファ ブレンドの組み合わせ。
 
 最上位 20 のビット、 *DXVA\_ConfigQueryOrReplyFlag*変数は、次のクエリと応答を指定します。
 
@@ -46,7 +46,7 @@ ms.locfileid: "63370818"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">値</th>
+<th align="left">Value</th>
 <th align="left">説明</th>
 </tr>
 </thead>
@@ -129,25 +129,25 @@ ms.locfileid: "63370818"
 
 ときに*bDXVA\_Func*プローブまたはロックのコマンドで渡される構成構造に関連付けられている関数を指定するために使用*bDXVA\_Func*は 8 に配置されます最下位の*DXVA\_ConfigQueryorReplyFunc*変数、 **dwFunction**構成構造体を次のいずれかのメンバー。
 
-[**DXVA\_ConfigPictureDecode** ](https://msdn.microsoft.com/library/windows/hardware/ff563133)圧縮された画像をデコードします。
+[**DXVA\_ConfigPictureDecode** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_configpicturedecode)圧縮された画像をデコードします。
 
-[**DXVA\_ConfigAlphaLoad** ](https://msdn.microsoft.com/library/windows/hardware/ff563129)アルファ ブレンド データを読み込むためです。
+[**DXVA\_ConfigAlphaLoad** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_configalphaload)アルファ ブレンド データを読み込むためです。
 
-[**DXVA\_ConfigAlphaCombine** ](https://msdn.microsoft.com/library/windows/hardware/ff563126)アルファ ブレンドの組み合わせ。
+[**DXVA\_ConfigAlphaCombine** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_configalphacombine)アルファ ブレンドの組み合わせ。
 
 ### <a name="span-iddxvaencryptprotocolfuncspanspan-iddxvaencryptprotocolfuncspanspan-iddxvaencryptprotocolfuncspandxvaencryptprotocolfunc"></a><span id="DXVA_EncryptProtocolFunc"></span><span id="dxva_encryptprotocolfunc"></span><span id="DXVA_ENCRYPTPROTOCOLFUNC"></span>DXVA\_EncryptProtocolFunc
 
 最も重要な 24 ビット、 *DXVA\_EncryptProtocolFunc* DWORD 変数は次のように設定されます。
 
--   0xFFFF00 ホスト ソフトウェア デコーダーによって送信されると、 **dwFunction**のメンバー、 [ **DD\_RENDERMOCOMPDATA** ](https://msdn.microsoft.com/library/windows/hardware/ff551693)構造体への呼び出しで[*DdMoCompRender*](https://msdn.microsoft.com/library/windows/hardware/ff550248)します。
+-   0xFFFF00 ホスト ソフトウェア デコーダーによって送信されると、 **dwFunction**のメンバー、 [ **DD\_RENDERMOCOMPDATA** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_rendermocompdata)構造体への呼び出しで[*DdMoCompRender*](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_render)します。
 
--   0xFFFF08 でビデオ アクセラレータによって送信されたときに、 **dwFunction**のメンバー、 [ **DXVA\_EncryptProtocolHeader** ](https://msdn.microsoft.com/library/windows/hardware/ff563965)構造体。
+-   0xFFFF08 でビデオ アクセラレータによって送信されたときに、 **dwFunction**のメンバー、 [ **DXVA\_EncryptProtocolHeader** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_encryptprotocolheader)構造体。
 
 最下位の 8 ビット、 *DXVA\_EncryptProtocolFunc* DWORD 変数の値を格納する*bDXVA\_Func*暗号化プロトコルに関連付けられています。 このような使用はサポートされている値だけ*bDXVA\_Func* = 1 (圧縮された画像のデコード)。
 
 ### <a name="span-idspecifyinganoperationtobeperformedbyddmocomprenderspanspan-idspecifyinganoperationtobeperformedbyddmocomprenderspanspan-idspecifyinganoperationtobeperformedbyddmocomprenderspanspecifying-an-operation-to-be-performed-by-ddmocomprender"></a><span id="Specifying_an_Operation_to_be_Performed_by_DdMoCompRender"></span><span id="specifying_an_operation_to_be_performed_by_ddmocomprender"></span><span id="SPECIFYING_AN_OPERATION_TO_BE_PERFORMED_BY_DDMOCOMPRENDER"></span>DdMoCompRender により実行される操作を指定します。
 
-ときに*bDXVA\_Func*を使用して実行する実際の操作の通知 (画像をデコード、アルファ ブレンドのデータの読み込み、アルファ ブレンドの組み合わせ、または画像が再サンプリングを圧縮) *bDXVA\_Func*のシリーズを含めることによって、アクセラレータに伝達されます*bDXVA\_Func*バイト値、 **dwFunction**のメンバー、 [ **DD\_RENDERMOCOMPDATA** ](https://msdn.microsoft.com/library/windows/hardware/ff551693)構造体への呼び出しで[ *DdMoCompRender*](https://msdn.microsoft.com/library/windows/hardware/ff550248)します。 最初の*bDXVA\_Func*操作は、最上位バイトで指定されて、次の操作を指定で、[次へ] 最上位バイト、します。 残りのバイト**dwFunction**が 0 に設定します。
+ときに*bDXVA\_Func*を使用して実行する実際の操作の通知 (画像をデコード、アルファ ブレンドのデータの読み込み、アルファ ブレンドの組み合わせ、または画像が再サンプリングを圧縮) *bDXVA\_Func*のシリーズを含めることによって、アクセラレータに伝達されます*bDXVA\_Func*バイト値、 **dwFunction**のメンバー、 [ **DD\_RENDERMOCOMPDATA** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_rendermocompdata)構造体への呼び出しで[ *DdMoCompRender*](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_render)します。 最初の*bDXVA\_Func*操作は、最上位バイトで指定されて、次の操作を指定で、[次へ] 最上位バイト、します。 残りのバイト**dwFunction**が 0 に設定します。
 
  
 

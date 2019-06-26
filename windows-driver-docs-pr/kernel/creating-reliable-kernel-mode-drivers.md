@@ -9,12 +9,12 @@ keywords:
 - Irp WDK カーネルでは、信頼性の問題
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ec3d064e5f1bd63d0876519025edeaac9a2683d2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fdadc1d5641945bc44b14807faa90fd3a07303ef
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388249"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377150"
 ---
 # <a name="creating-reliable-kernel-mode-drivers"></a>信頼性の高いカーネルモード ドライバーの作成
 
@@ -26,7 +26,7 @@ ms.locfileid: "63388249"
 
 -   デバイス オブジェクトを正しくセキュリティで保護します。
 
-    システムのドライバーとデバイスへのユーザー アクセスは、システムは、デバイス オブジェクトに割り当てるセキュリティ記述子によって制御されます。 最も多くの場合、システムは、デバイスがインストールされている場合、デバイスのセキュリティ パラメーターを設定します。 詳細については、次を参照してください。[セキュリティで保護されたデバイスのインストールを作成する](https://msdn.microsoft.com/library/windows/hardware/ff540212)します。 そのデバイスへのアクセス制御に関与するためのドライバーの適切な場合があります。 詳細については、次を参照してください。[デバイス オブジェクトのセキュリティで保護する](securing-device-objects.md)します。
+    システムのドライバーとデバイスへのユーザー アクセスは、システムは、デバイス オブジェクトに割り当てるセキュリティ記述子によって制御されます。 最も多くの場合、システムは、デバイスがインストールされている場合、デバイスのセキュリティ パラメーターを設定します。 詳細については、次を参照してください。[セキュリティで保護されたデバイスのインストールを作成する](https://docs.microsoft.com/windows-hardware/drivers/install/creating-secure-device-installations)します。 そのデバイスへのアクセス制御に関与するためのドライバーの適切な場合があります。 詳細については、次を参照してください。[デバイス オブジェクトのセキュリティで保護する](securing-device-objects.md)します。
 
 -   デバイス オブジェクトを正しく検証されます。
 
@@ -74,7 +74,7 @@ ms.locfileid: "63388249"
 
 -   I/O スタックを適切に処理します。
 
-    ときに[ドライバー スタックを Irp を渡して](passing-irps-down-the-driver-stack.md)を呼び出してドライバーの重要[ **IoSkipCurrentIrpStackLocation** ](https://msdn.microsoft.com/library/windows/hardware/ff550355)または[ **IoCopyCurrentIrpStackLocationToNext** ](https://msdn.microsoft.com/library/windows/hardware/ff548387) [次へ] のドライバーの I/O スタックの場所を設定します。 次に I/O スタックの 1 つの場所を直接コピーするコードを書き込みません。
+    ときに[ドライバー スタックを Irp を渡して](passing-irps-down-the-driver-stack.md)を呼び出してドライバーの重要[ **IoSkipCurrentIrpStackLocation** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)または[ **IoCopyCurrentIrpStackLocationToNext** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocopycurrentirpstacklocationtonext) [次へ] のドライバーの I/O スタックの場所を設定します。 次に I/O スタックの 1 つの場所を直接コピーするコードを書き込みません。
 
 -   IRP の完了操作を適切に処理します。
 
@@ -90,7 +90,7 @@ ms.locfileid: "63388249"
 
 -   IRP のクリーンアップを処理し、適切に操作を終了します。
 
-    間の違いを理解しているかどうかを必ず[ **IRP\_MJ\_クリーンアップ**](https://msdn.microsoft.com/library/windows/hardware/ff550718)と[ **IRP\_MJ\_閉じる** ](https://msdn.microsoft.com/library/windows/hardware/ff550720)要求。 アプリケーションは、ファイル オブジェクトのすべてのハンドルを閉じますが、すべての I/O の前にも要求が完了した後、クリーンアップ要求が到着します。 閉じる要求は、ファイル オブジェクトのすべての I/O 要求が完了またはキャンセルされた後に到着します。 詳しくは、次のトピックをご覧ください。
+    間の違いを理解しているかどうかを必ず[ **IRP\_MJ\_クリーンアップ**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-cleanup)と[ **IRP\_MJ\_閉じる** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-close)要求。 アプリケーションは、ファイル オブジェクトのすべてのハンドルを閉じますが、すべての I/O の前にも要求が完了した後、クリーンアップ要求が到着します。 閉じる要求は、ファイル オブジェクトのすべての I/O 要求が完了またはキャンセルされた後に到着します。 詳しくは、次のトピックをご覧ください。
 
     [DispatchCreate、DispatchClose、および DispatchCreateClose ルーチン](dispatchcreate--dispatchclose--and-dispatchcreateclose-routines.md)
 
@@ -102,7 +102,7 @@ Irp を正しく処理の詳細については、次を参照してください�
 
 ### <a name="using-driver-verifier"></a>ドライバーの検証ツールの使用
 
-[Driver Verifier](https://msdn.microsoft.com/library/windows/hardware/ff545448)ドライバーの信頼性を確保する最も重要なことができるツールです。 Driver Verifier は、さまざまなこのセクションで説明したものの一部など、一般的なドライバーの問題を確認できます。 ただし、Driver Verifier の使用は、気を付けて、親切なソフトウェアの設計は置き換えられません。
+[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)ドライバーの信頼性を確保する最も重要なことができるツールです。 Driver Verifier は、さまざまなこのセクションで説明したものの一部など、一般的なドライバーの問題を確認できます。 ただし、Driver Verifier の使用は、気を付けて、親切なソフトウェアの設計は置き換えられません。
 
  
 

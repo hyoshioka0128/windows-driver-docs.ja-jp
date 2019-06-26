@@ -7,12 +7,12 @@ keywords:
 - 以降、WDK のパラレル ポート
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fe62cb2720451afd46645a0d463a9722071638af
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9fe045b0297f967ee4d0bbd42133a770282fc9f3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373542"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377544"
 ---
 # <a name="creating-and-starting-a-parallel-port"></a>パラレル ポートの作成と開始
 
@@ -28,7 +28,7 @@ ms.locfileid: "63373542"
 
     パラレル ポート、デバイス名の形式は"\\デバイス\\ParallelPortx"x は、ポート番号の整数値。 パラレル ポート関数ドライバー PortName エントリの値を使用して (REG\_SZ) 並列ポートでポート番号を特定するためのプラグ アンド プレイのレジストリ キーの下。 PortName がある形式"LPTn"、n は、ポートの数、し、"ParallePortx"で x に設定される (n-1) の値に注意してください。 たとえば、"ParallelPort0"は、"LPT1"に関連付けられます。 PortName が正しい形式を持たない場合、デバイス オブジェクトは作成されません。
 
-    "ParallelPortx"デバイス名とは限りませんことに注意してください。 使用をお勧め[ **IoRegisterPlugPlayNotification** ](https://msdn.microsoft.com/library/windows/hardware/ff549526) GUID の到着を通知する\_並列\_デバイスのデバイスのインターフェイス。
+    "ParallelPortx"デバイス名とは限りませんことに注意してください。 使用をお勧め[ **IoRegisterPlugPlayNotification** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterplugplaynotification) GUID の到着を通知する\_並列\_デバイスのデバイスのインターフェイス。
 
 -   登録し、GUID をできるように\_並列\_パラレル ポートのデバイスのインターフェイス
 

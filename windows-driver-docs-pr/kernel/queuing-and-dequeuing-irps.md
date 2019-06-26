@@ -15,12 +15,12 @@ keywords:
 - キャンセルの安全な IRP キュー WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a3fbcb27ad541987796406a40d3df7d586f0b87
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 04ff9062fc46d403ecd8bbcc4db244431b459e52
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578089"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378756"
 ---
 # <a name="queuing-and-dequeuing-irps"></a>IRP のキューとデキュー
 
@@ -32,19 +32,19 @@ I/O マネージャーは、マルチタス キング、マルチ スレッド �
 
 そのため、最下位レベルのドライバーには、次のいずれかが必要です。
 
--   A [ *StartIo* ](https://msdn.microsoft.com/library/windows/hardware/ff563858) 、日常的な I/O マネージャーが Irp の I/O 操作を開始するドライバーを呼び出しますがキューに登録するシステム提供の IRP キュー (を参照してください[ **IoStartPacket**](https://msdn.microsoft.com/library/windows/hardware/ff550370)).
+-   A [ *StartIo* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_startio) 、日常的な I/O マネージャーが Irp の I/O 操作を開始するドライバーを呼び出しますがキューに登録するシステム提供の IRP キュー (を参照してください[ **IoStartPacket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-iostartpacket)).
 
--   内部 IRP のキューおよびデキューのメカニズムは、それよりも高速には Irp を管理するドライバーを使用して満たすことが。 ドライバーは、デバイスのキュー、インタロックされたキュー、またはキャンセルの安全なキューを使用できます。 詳細については、[Driver-Managed IRP キュー](driver-managed-irp-queues.md)を参照してください。
+-   内部 IRP のキューおよびデキューのメカニズムは、それよりも高速には Irp を管理するドライバーを使用して満たすことが。 ドライバーは、デバイスのキュー、インタロックされたキュー、またはキャンセルの安全なキューを使用できます。 詳細については、次を参照してください。 [Driver-Managed IRP キュー](driver-managed-irp-queues.md)します。
 
 最下位レベルのデバイス ドライバを満たすことができます、ディスパッチ ルーチンですべての可能な IRP の完了を必要なしのみ*StartIo*ルーチンと Irp のドライバー管理キューがありません。
 
-高度なドライバーがほとんどないが*StartIo*ルーチン。 ほとんどの中間ドライバーでは、どちらも必要がある*StartIo*ルーチンも内部キュー中間のドライバーできます通常そのディスパッチ ルーチンから有効なパラメーター Irp を渡すとはどのような後処理が任意の IRP で必要です。その[ *IoCompletion* ](https://msdn.microsoft.com/library/windows/hardware/ff548354)ルーチン。
+高度なドライバーがほとんどないが*StartIo*ルーチン。 ほとんどの中間ドライバーでは、どちらも必要がある*StartIo*ルーチンも内部キュー中間のドライバーできます通常そのディスパッチ ルーチンから有効なパラメーター Irp を渡すとはどのような後処理が任意の IRP で必要です。その[ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)ルーチン。
 
 以下に示します、一般に、設計の考慮事項を実装するかどうかを決定するためのいくつか、 *StartIo* Irp の内部のドライバー管理キューの有無ルーチン。
 
 ### <a name="startio-routines-in-drivers"></a>ドライバーで StartIo ルーチン
 
-コンピューター周辺機器、一度に 1 つだけのデバイスの I/O 操作を処理できる、デバイス ドライバーを実装できます*StartIo*ルーチン。 I/O マネージャーは、これらのドライバーの[ **IoStartPacket** ](https://msdn.microsoft.com/library/windows/hardware/ff550370)と[**います**](https://msdn.microsoft.com/library/windows/hardware/ff550358)キューおよびデキューを Irp をルーチンとシステム提供の IRP キューです。
+コンピューター周辺機器、一度に 1 つだけのデバイスの I/O 操作を処理できる、デバイス ドライバーを実装できます*StartIo*ルーチン。 I/O マネージャーは、これらのドライバーの[ **IoStartPacket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-iostartpacket)と[**います**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-iostartnextpacket)キューおよびデキューを Irp をルーチンとシステム提供の IRP キューです。
 
 詳細については*StartIo*ルーチンを参照してください[StartIo ルーチンを記述](writing-a-startio-routine.md)します。
 
@@ -54,7 +54,7 @@ I/O マネージャーは、マルチタス キング、マルチ スレッド �
 
 いくつかの基になるデバイスのドライバーに要求を送信するより高度なドライバーが Irp の内部キューを維持することがありますもできます。 たとえば、ファイル システム ドライバーは、Irp の内部キューをほぼ常にあります。
 
-詳細については、[Driver-Managed IRP キュー](driver-managed-irp-queues.md)を参照してください。
+詳細については、次を参照してください。 [Driver-Managed IRP キュー](driver-managed-irp-queues.md)します。
 
 ### <a name="internal-queue-synchronization"></a>内部キューの同期
 
@@ -64,7 +64,7 @@ I/O マネージャーは、マルチタス キング、マルチ スレッド �
 
 ドライバーは IRP キューのすべての同期を実装し、ロジックを明示的にキャンセルできます。 たとえば、ドライバーは、インタロックされたキューを使用できます。 ドライバーのディスパッチ ルーチンは、インタロックされたキューおよびドライバーが作成したスレッドに Irp を挿入するか、ドライバーのワーカー スレッドのコールバックを削除して呼び出すことによって、 **ExInterlocked*Xxx*一覧**サポートルーチン。
 
-たとえば、システム フロッピー コント ローラーのドライバーは、インタロックされたキューを使用します。 そのデバイス専用のスレッドが他のデバイス ドライバーのによって行われる Irp の同じ処理を行います*StartIo*ルーチンとその他のデバイス ドライバーのによって行われる同じ Irp の処理の一部を[ *DpcForIsr* ](https://msdn.microsoft.com/library/windows/hardware/ff544079)ルーチン。
+たとえば、システム フロッピー コント ローラーのドライバーは、インタロックされたキューを使用します。 そのデバイス専用のスレッドが他のデバイス ドライバーのによって行われる Irp の同じ処理を行います*StartIo*ルーチンとその他のデバイス ドライバーのによって行われる同じ Irp の処理の一部を[ *DpcForIsr* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_dpc_routine)ルーチン。
 
 ### <a name="internal-queues-with-startio-routines-in-drivers"></a>ドライバーで StartIo ルーチンでキューの内部
 

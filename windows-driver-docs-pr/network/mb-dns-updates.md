@@ -4,19 +4,19 @@ description: MB DNS の更新
 ms.assetid: be93f0b4-a075-455e-b03c-6d23a2be7b1d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 15936af901990a4214ecd9faf50de553a197f65a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c578e0d4678d7608da10add204ab1c4b8558c67c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343406"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378002"
 ---
 # <a name="mb-dns-updates"></a>MB DNS の更新
 
 
 このトピックでは、DNS アドレスの更新プログラムに関する MB サービスに通知するための操作について説明します。
 
-ミニポート ドライバーを設定する必要があります、**ネーム サーバー** DNS アドレスの変更について、Windows を更新するレジストリ キー。 次の表では、適切なレジストリ キー、期待値および IPv4 と IPv6 のネットワークの文字列の例について説明します。 ミニポート ドライバーでは、IPv4 ネットワークをのみをサポートする場合は、IPv4 のレジストリ キーのみを設定があります。 Windows メディアについては、送信することによってイベントを接続の通知を送信する前に、ミニポート ドライバーは、適切なレジストリ キーを設定する必要があります[ **NDIS\_状態\_リンク\_状態**](https://msdn.microsoft.com/library/windows/hardware/ff567391)通知します。
+ミニポート ドライバーを設定する必要があります、**ネーム サーバー** DNS アドレスの変更について、Windows を更新するレジストリ キー。 次の表では、適切なレジストリ キー、期待値および IPv4 と IPv6 のネットワークの文字列の例について説明します。 ミニポート ドライバーでは、IPv4 ネットワークをのみをサポートする場合は、IPv4 のレジストリ キーのみを設定があります。 Windows メディアについては、送信することによってイベントを接続の通知を送信する前に、ミニポート ドライバーは、適切なレジストリ キーを設定する必要があります[ **NDIS\_状態\_リンク\_状態**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-link-state)通知します。
 
 <table>
 <colgroup>

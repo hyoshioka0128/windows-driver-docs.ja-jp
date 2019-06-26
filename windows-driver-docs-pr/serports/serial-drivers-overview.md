@@ -4,12 +4,12 @@ description: Windows のすべてのバージョンでは、コント ローラ�
 ms.assetid: 1EA0221E-0F68-429B-9DA5-4AE2D3394A09
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ceabf631a4ba34a8558df96eca10161cb851cb39
-ms.sourcegitcommit: 6a0636c33e28ce2a9a742bae20610f0f3435262c
+ms.openlocfilehash: 8a0577d62df4ec9e8d4e309f5110f129abc781e9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65836319"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356758"
 ---
 # <a name="serial-controller-drivers-overview"></a>シリアル コントローラー ドライバーの概要
 
@@ -23,9 +23,9 @@ GitHub では、Windows ドライバーのサンプル リポジトリにはソ�
 
 ## <a name="sercx-and-sercx2"></a>SerCx と SerCx2
 
-Windows 8 以降、SerCx は、integrated 回路基板の間でのシリアル通信をサポートするシステム提供のコンポーネントです。 SerCx は、カーネル モード ドライバー フレームワーク (KMDF) に拡張機能です。 この拡張機能は、シリアル コント ローラーのカスタムのドライバーの開発を簡略化します。 SerCx シリアル コント ローラーに共通する処理タスクの多くを処理することによって、シリアル コント ローラーの拡張機能ベースのドライバーを支援します。 このドライバーと通信を介して SerCx、 [SerCx デバイス ドライバー インターフェイス](https://msdn.microsoft.com/library/windows/hardware/dn265348)します。
+Windows 8 以降、SerCx は、integrated 回路基板の間でのシリアル通信をサポートするシステム提供のコンポーネントです。 SerCx は、カーネル モード ドライバー フレームワーク (KMDF) に拡張機能です。 この拡張機能は、シリアル コント ローラーのカスタムのドライバーの開発を簡略化します。 SerCx シリアル コント ローラーに共通する処理タスクの多くを処理することによって、シリアル コント ローラーの拡張機能ベースのドライバーを支援します。 このドライバーと通信を介して SerCx、 [SerCx デバイス ドライバー インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)します。
 
-Windows 8.1 以降、SerCx2 によって SerCx が優先されます。 SerCx2 では、多くの機能強化をサイズとコント ローラーのシリアル ドライバーの複雑さを軽減する SerCx にします。 具体的には、SerCx2 とシリアル コント ローラーへのアクセスの競合が発生する I/O トランザクションをコーディネートのタイムアウトの管理に必要な処理作業のシリアル コント ローラーのドライバーを緩和します。 その結果、シリアル コント ローラー ドライバーは、小規模で単純なは。 シリアル コント ローラーのハードウェア ベンダーには、シリアルのコント ローラーのハードウェアに固有の機能を管理する、汎用コント ローラーのシリアル タスクを実行する SerCx2 に依存した拡張機能に基づくシリアル コント ローラー ドライバーが用意されています。 このドライバーと通信を介して SerCx2、 [SerCx2 デバイス ドライバー インターフェイス](https://msdn.microsoft.com/library/windows/hardware/dn265349)します。
+Windows 8.1 以降、SerCx2 によって SerCx が優先されます。 SerCx2 では、多くの機能強化をサイズとコント ローラーのシリアル ドライバーの複雑さを軽減する SerCx にします。 具体的には、SerCx2 とシリアル コント ローラーへのアクセスの競合が発生する I/O トランザクションをコーディネートのタイムアウトの管理に必要な処理作業のシリアル コント ローラーのドライバーを緩和します。 その結果、シリアル コント ローラー ドライバーは、小規模で単純なは。 シリアル コント ローラーのハードウェア ベンダーには、シリアルのコント ローラーのハードウェアに固有の機能を管理する、汎用コント ローラーのシリアル タスクを実行する SerCx2 に依存した拡張機能に基づくシリアル コント ローラー ドライバーが用意されています。 このドライバーと通信を介して SerCx2、 [SerCx2 デバイス ドライバー インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)します。
 
 SerCx2 の詳細については、次を参照してください。[シリアルのフレームワークの拡張機能 (SerCx2) のバージョン 2 を使用して](using-version-2-of-the-serial-framework-extension.md)します。
 

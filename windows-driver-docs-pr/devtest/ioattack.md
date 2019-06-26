@@ -4,12 +4,12 @@ description: 侵入テスト (デバイスの基本) テストには、I/O 攻�
 ms.assetid: ae0eda5c-534e-44c2-a997-66fe1337ca9f
 ms.date: 07/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 75f298a6d03b2261bbe8a3d977e3f1240ca8321e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3c4f47fa009a8dccc7a388ce9dedaeb6b96a8925
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356522"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373707"
 ---
 # <a name="ioattack"></a>IoAttack
 
@@ -36,9 +36,9 @@ ms.locfileid: "63356522"
 
 テスト システムで IoAttack を実行する前に、次の操作を行う必要があります。
 
--   テスト コンピューターでカーネル モードのデバッグを有効にします。 テストのためにコンピューターを構成するときにこれを参照してください[ドライバーの展開のためにコンピューターをプロビジョニングし、テスト (WDK 8.1)](https://msdn.microsoft.com/library/windows/hardware/dn745909)、または[ドライバーの展開のためにコンピューターをプロビジョニングし、テスト (WDK 8)](https://msdn.microsoft.com/library/windows/hardware/hh698272)します。
+-   テスト コンピューターでカーネル モードのデバッグを有効にします。 テストのためにコンピューターを構成するときにこれを参照してください[ドライバーの展開のためにコンピューターをプロビジョニングし、テスト (WDK 8.1)](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/provision-a-target-computer-wdk-8-1)、または[ドライバーの展開のためにコンピューターをプロビジョニングし、テスト (WDK 8)](https://docs.microsoft.com/previous-versions/hh698272(v=vs.85))します。
 
--   実行、 **Driver Verifier を有効にするテスト**有効にする[Driver Verifier](driver-verifier.md)オプション ドライバー スタック内のドライバーのすべてのデバイスをテストできます。 具体的には、有効にしてください、[特別なプール](special-pool.md)オプション。 **追加または削除するドライバー テスト** ダイアログ ボックスで、 **Driver Verifier を有効にするテスト**すべてのテストの\\Driver Verifier。 「[Visual Studio を使って実行時にドライバーをテストする方法](https://msdn.microsoft.com/windows-drivers/develop/testing_a_driver_at_runtime)」をご覧ください。 選択して、テストとツールのパラメーターの構成については、次を参照してください[を選択して、デバイスの基本テストを構成する方法。](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)
+-   実行、 **Driver Verifier を有効にするテスト**有効にする[Driver Verifier](driver-verifier.md)オプション ドライバー スタック内のドライバーのすべてのデバイスをテストできます。 具体的には、有効にしてください、[特別なプール](special-pool.md)オプション。 **追加または削除するドライバー テスト** ダイアログ ボックスで、 **Driver Verifier を有効にするテスト**すべてのテストの\\Driver Verifier。 「[Visual Studio を使って実行時にドライバーをテストする方法](https://docs.microsoft.com/windows-hardware/drivers)」をご覧ください。 選択して、テストとツールのパラメーターの構成については、次を参照してください[を選択して、デバイスの基本テストを構成する方法。](https://docs.microsoft.com/windows-hardware/drivers)
 
 -   削除[IoSpy](iospy.md)テスト システムからです。 これを行うには、実行、 **I/O スパイを無効にする**をテストします。
 

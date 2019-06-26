@@ -11,12 +11,12 @@ keywords:
 - ポインターを再配置
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f573774db34ab9e43efdd83b20da36563ed870b4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 4544bff4ad6a3c8763090253a399b956ea7be92a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580974"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372868"
 ---
 # <a name="moving-the-pointer-drvmovepointer"></a>ポインターの移動: DrvMovePointer
 
@@ -24,9 +24,9 @@ ms.locfileid: "56580974"
 ## <span id="ddk_moving_the_pointer_drvmovepointer_gg"></span><span id="DDK_MOVING_THE_POINTER_DRVMOVEPOINTER_GG"></span>
 
 
-場合[ **DrvSetPointerShape** ](https://msdn.microsoft.com/library/windows/hardware/ff556289)し、ドライバーに含まれている[ **DrvMovePointer** ](https://msdn.microsoft.com/library/windows/hardware/ff556248)もサポートされている必要があります。 この関数は、新しい位置に、ドライバーで管理されたポインターを移動します。 GDI はポインターの関数への呼び出しをシリアル化のため*DrvMovePointer*は呼び出さない、ディスプレイ ドライバーが任意のスレッドの描画中にしない限り、GCAPS\_ASYNCMOVE フラグが設定されている、 [ **DEVINFO** ](https://msdn.microsoft.com/library/windows/hardware/ff552835)構造体。
+場合[ **DrvSetPointerShape** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvsetpointershape)し、ドライバーに含まれている[ **DrvMovePointer** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvmovepointer)もサポートされている必要があります。 この関数は、新しい位置に、ドライバーで管理されたポインターを移動します。 GDI はポインターの関数への呼び出しをシリアル化のため*DrvMovePointer*は呼び出さない、ディスプレイ ドライバーが任意のスレッドの描画中にしない限り、GCAPS\_ASYNCMOVE フラグが設定されている、 [ **DEVINFO** ](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-tagdevinfo)構造体。
 
-ドライバーを呼び出す必要があります[ **EngMovePointer** ](https://msdn.microsoft.com/library/windows/hardware/ff564977) GDI のデバイスで、エンジンに管理されたポインターを移動します。 ドライバーは、GDI が呼び出すことによって、カーソルを管理することを要求[ **EngSetPointerShape**](https://msdn.microsoft.com/library/windows/hardware/ff565017)します。
+ドライバーを呼び出す必要があります[ **EngMovePointer** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engmovepointer) GDI のデバイスで、エンジンに管理されたポインターを移動します。 ドライバーは、GDI が呼び出すことによって、カーソルを管理することを要求[ **EngSetPointerShape**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engsetpointershape)します。
 
  
 

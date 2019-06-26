@@ -5,12 +5,12 @@ ms.assetid: c4f42271-812b-4da9-8280-79d3bddc5164
 ms.date: 08/08/2017
 keywords: -OID_GEN_XMIT_ERROR ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 2fb462174463f97dbfc0914d510d3cd21f5afaa0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 62b08cfb6d9842983cf219e92ba236885d7d627f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537905"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371811"
 ---
 # <a name="oidgenxmiterror"></a>OID\_GEN\_XMIT\_エラー
 
@@ -34,10 +34,10 @@ ms.locfileid: "56537905"
 <a href="" id="ndis-5-1-drivers"></a>5.1 の NDIS ドライバー  
 必須。
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>コメント
 -------
 
-Oid の統計に関する概要については、[General Statistics](https://msdn.microsoft.com/library/windows/hardware/ff552485)を参照してください。
+Oid の統計に関する概要については、次を参照してください。 [General Statistics](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-general-statistics-oids)します。
 
 <a name="requirements"></a>要件
 ------------

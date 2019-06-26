@@ -6,19 +6,19 @@ ms.assetid: 104b6b3e-aa5d-437f-8236-02e4abb1ba46
 keywords:
 - IRP_MN_QUERY_SINGLE_INSTANCE カーネル モード ドライバーのアーキテクチャ
 ms.localizationpriority: medium
-ms.openlocfilehash: dfaea0793f295343a527b2f9f00f2fe7976eadaa
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 18c8d4b5ba79292961eeb716218f258378457c18
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381414"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370852"
 ---
 # <a name="irpmnquerysingleinstance"></a>IRP\_MN\_クエリ\_単一\_インスタンス
 
 
-WMI をサポートするすべてのドライバーでは、この IRP を処理する必要があります。 ドライバーを処理できる WMI Irp を呼び出すか[ **WmiSystemControl** ](https://msdn.microsoft.com/library/windows/hardware/ff565834)または」の説明に従って、IRP を処理することによって[WMI 要求の処理](https://msdn.microsoft.com/library/windows/hardware/ff546968)します。
+WMI をサポートするすべてのドライバーでは、この IRP を処理する必要があります。 ドライバーを処理できる WMI Irp を呼び出すか[ **WmiSystemControl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nf-wmilib-wmisystemcontrol)または」の説明に従って、IRP を処理することによって[WMI 要求の処理](https://docs.microsoft.com/windows-hardware/drivers/kernel/handling-wmi-requests)します。
 
-ドライバーを呼び出す場合[ **WmiSystemControl** ](https://msdn.microsoft.com/library/windows/hardware/ff565834)処理するために、 **IRP\_MN\_クエリ\_単一\_インスタンス**要求と、WMI を呼び出してドライバーの[ *DpWmiQueryDataBlock* ](https://msdn.microsoft.com/library/windows/hardware/ff544096)ルーチン。
+ドライバーを呼び出す場合[ **WmiSystemControl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nf-wmilib-wmisystemcontrol)処理するために、 **IRP\_MN\_クエリ\_単一\_インスタンス**要求と、WMI を呼び出してドライバーの[ *DpWmiQueryDataBlock* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nc-wmilib-wmi_query_datablock_callback)ルーチン。
 
 <a name="major-code"></a>主要コード
 ----------
@@ -39,12 +39,12 @@ WMI IRQL でこの IRP の送信 = パッシブ\_任意のスレッド コンテ
 
 **Parameters.WMI.DataPath**をクエリするデータ ブロックを識別する GUID を指します。
 
-**Parameters.WMI.BufferSize** nonpaged、バッファーの最大サイズを示す**Parameters.WMI.Buffer**を[**れた WNODE\_単一\_インスタンス**](https://msdn.microsoft.com/library/windows/hardware/ff566377)クエリ インスタンスを識別する構造体。
+**Parameters.WMI.BufferSize** nonpaged、バッファーの最大サイズを示す**Parameters.WMI.Buffer**を[**れた WNODE\_単一\_インスタンス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmistr/ns-wmistr-tagwnode_single_instance)クエリ インスタンスを識別する構造体。
 
 ## <a name="output-parameters"></a>出力パラメーター
 
 
-ドライバーが呼び出すことによって WMI Irp を処理する場合[ **WmiSystemControl**](https://msdn.microsoft.com/library/windows/hardware/ff565834)、WMI を入力、 [**れた WNODE\_単一\_インスタンス**](https://msdn.microsoft.com/library/windows/hardware/ff566377)ドライバーのによって提供されるデータの構造体[ *DpWmiQueryDataBlock* ](https://msdn.microsoft.com/library/windows/hardware/ff544096)ルーチン。
+ドライバーが呼び出すことによって WMI Irp を処理する場合[ **WmiSystemControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nf-wmilib-wmisystemcontrol)、WMI を入力、 [**れた WNODE\_単一\_インスタンス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmistr/ns-wmistr-tagwnode_single_instance)ドライバーのによって提供されるデータの構造体[ *DpWmiQueryDataBlock* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nc-wmilib-wmi_query_datablock_callback)ルーチン。
 
 それ以外の場合、ドライバーの設定、**れた WNODE\_単一\_インスタンス**で構造体**Parameters.WMI.Buffer**次のように。
 
@@ -54,12 +54,12 @@ WMI IRQL でこの IRP の送信 = パッシブ\_任意のスレッド コンテ
 
 -   インスタンス データを書き込みます**Parameters.WMI.Buffer**開始位置として**DataBlockOffset**します。 ドライバーは、入力値を変更する必要があります**DataBlockOffset**します。
 
-場合、バッファー **Parameters.WMI.Buffer**が小さすぎてすべてに必要なサイズでドライバーの塗りつぶし、データの受信を[**れた WNODE\_すぎます\_小さな**](https://msdn.microsoft.com/library/windows/hardware/ff566379)で構造体**Parameters.WMI.Buffer**します。 バッファーがより小さい場合**sizeof**(**れた WNODE\_すぎます\_小さな**)、ドライバーは IRP が失敗し、ステータスを返します\_バッファー\_すぎます\_小さい。
+場合、バッファー **Parameters.WMI.Buffer**が小さすぎてすべてに必要なサイズでドライバーの塗りつぶし、データの受信を[**れた WNODE\_すぎます\_小さな**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmistr/ns-wmistr-tagwnode_too_small)で構造体**Parameters.WMI.Buffer**します。 バッファーがより小さい場合**sizeof**(**れた WNODE\_すぎます\_小さな**)、ドライバーは IRP が失敗し、ステータスを返します\_バッファー\_すぎます\_小さい。
 
 ## <a name="io-status-block"></a>I/O ステータス ブロック
 
 
-呼び出すことによって、ドライバーが IRP を処理する場合[ **WmiSystemControl**](https://msdn.microsoft.com/library/windows/hardware/ff565834)、WMI セット**Irp -&gt;IoStatus.Status**と**Irp-&gt;IoStatus.Information**状態の I/O ブロックにします。
+呼び出すことによって、ドライバーが IRP を処理する場合[ **WmiSystemControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nf-wmilib-wmisystemcontrol)、WMI セット**Irp -&gt;IoStatus.Status**と**Irp-&gt;IoStatus.Information**状態の I/O ブロックにします。
 
 それ以外の場合、ドライバーの設定**Irp -&gt;IoStatus.Status**ステータス\_成功または適切なエラーの状態、次のように。
 
@@ -74,23 +74,23 @@ WMI IRQL でこの IRP の送信 = パッシブ\_任意のスレッド コンテ
 <a name="operation"></a>操作
 ---------
 
-ドライバーを処理できる WMI Irp を呼び出すか[ **WmiSystemControl** ](https://msdn.microsoft.com/library/windows/hardware/ff565834)または」の説明に従って、IRP を処理することによって[WMI 要求の処理](https://msdn.microsoft.com/library/windows/hardware/ff546968)します。
+ドライバーを処理できる WMI Irp を呼び出すか[ **WmiSystemControl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nf-wmilib-wmisystemcontrol)または」の説明に従って、IRP を処理することによって[WMI 要求の処理](https://docs.microsoft.com/windows-hardware/drivers/kernel/handling-wmi-requests)します。
 
-ドライバーを呼び出して WMI Irp の処理する場合[ **WmiSystemControl**](https://msdn.microsoft.com/library/windows/hardware/ff565834)、 **WmiSystemControl**呼び出してドライバーの[ *DpWmiQueryDataBlock* ](https://msdn.microsoft.com/library/windows/hardware/ff544096)ルーチン。
+ドライバーを呼び出して WMI Irp の処理する場合[ **WmiSystemControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nf-wmilib-wmisystemcontrol)、 **WmiSystemControl**呼び出してドライバーの[ *DpWmiQueryDataBlock* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nc-wmilib-wmi_query_datablock_callback)ルーチン。
 
-ドライバーが処理する場合、 **IRP\_MN\_クエリ\_単一\_インスタンス**要求自体には、その方がよい場合にのみ**Parameters.WMI.ProviderId**ドライバーの呼び出しで渡されたポインターと同じデバイス オブジェクトを指し示す[ **IoWMIRegistrationControl**](https://msdn.microsoft.com/library/windows/hardware/ff550480)します。 それ以外の場合、ドライバーでは、デバイス スタックの次の下位のドライバーに要求を転送する必要があります。
+ドライバーが処理する場合、 **IRP\_MN\_クエリ\_単一\_インスタンス**要求自体には、その方がよい場合にのみ**Parameters.WMI.ProviderId**ドライバーの呼び出しで渡されたポインターと同じデバイス オブジェクトを指し示す[ **IoWMIRegistrationControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iowmiregistrationcontrol)します。 それ以外の場合、ドライバーでは、デバイス スタックの次の下位のドライバーに要求を転送する必要があります。
 
 要求を処理する前に、ドライバーを決定する必要があるかどうか**Parameters.WMI.DataPath**ドライバーがサポートする GUID を指します。 そうでない、ドライバーが IRP が失敗する必要があり、状態を返す場合\_WMI\_GUID\_いない\_が見つかりました。
 
 ドライバーがすべての入力値を検証する責任を負います。 具体的には、ドライバーは IRP 要求自体を処理する場合、次を実行する必要があります。
 
--   静的の名のことを確認します、 **InstanceIndex**のメンバー、 [**れた WNODE\_単一\_インスタンス**](https://msdn.microsoft.com/library/windows/hardware/ff566377)がの範囲内に構造体インスタンスのデータ ブロックのドライバーでサポートされるインデックス。
+-   静的の名のことを確認します、 **InstanceIndex**のメンバー、 [**れた WNODE\_単一\_インスタンス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmistr/ns-wmistr-tagwnode_single_instance)がの範囲内に構造体インスタンスのデータ ブロックのドライバーでサポートされるインデックス。
 
 -   動的な名前は、インスタンス名の文字列が、ドライバーでサポートされるデータ ブロックのインスタンスを識別することを確認します。
 
 -   いることを確認**Parameters.WMI.BufferSize**ドライバーから返されるすべてのデータを受信するのに十分な大きさであるバッファーを指定します。
 
-ドライバーは、データ ブロックをサポートする場合、入力を確認します[**れた WNODE\_単一\_インスタンス**](https://msdn.microsoft.com/library/windows/hardware/ff566377)で**Parameters.WMI.Buffer**インスタンス。名前としては、次のようにします。
+ドライバーは、データ ブロックをサポートする場合、入力を確認します[**れた WNODE\_単一\_インスタンス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmistr/ns-wmistr-tagwnode_single_instance)で**Parameters.WMI.Buffer**インスタンス。名前としては、次のようにします。
 
 -   場合れた WNODE\_フラグ\_静的\_インスタンス\_で名前が設定されて**WnodeHeader.Flags**、ドライバーを使用して**InstanceIndex**へのインデックスとして、そのブロックの静的インスタンス名のドライバーの一覧。 WMI では、ブロックが登録されているときに、ドライバーによって提供される登録データからインデックスを取得します。
 
@@ -102,7 +102,7 @@ WMI IRQL でこの IRP の送信 = パッシブ\_任意のスレッド コンテ
 
 インスタンスが有効では、ドライバーが要求を処理できない場合は、すべての該当するエラー状態を返すできます。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -121,15 +121,15 @@ WMI IRQL でこの IRP の送信 = パッシブ\_任意のスレッド コンテ
 ## <a name="see-also"></a>関連項目
 
 
-[*DpWmiQueryDataBlock*](https://msdn.microsoft.com/library/windows/hardware/ff544096)
+[*DpWmiQueryDataBlock*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nc-wmilib-wmi_query_datablock_callback)
 
-[**IoWMIRegistrationControl**](https://msdn.microsoft.com/library/windows/hardware/ff550480)
+[**IoWMIRegistrationControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iowmiregistrationcontrol)
 
-[**WMILIB\_CONTEXT**](https://msdn.microsoft.com/library/windows/hardware/ff565813)
+[**WMILIB\_CONTEXT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/ns-wmilib-_wmilib_context)
 
-[**WmiSystemControl**](https://msdn.microsoft.com/library/windows/hardware/ff565834)
+[**WmiSystemControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nf-wmilib-wmisystemcontrol)
 
-[**れた WNODE\_単一\_インスタンス**](https://msdn.microsoft.com/library/windows/hardware/ff566377)
+[**れた WNODE\_単一\_インスタンス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmistr/ns-wmistr-tagwnode_single_instance)
 
  
 

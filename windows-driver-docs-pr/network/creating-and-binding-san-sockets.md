@@ -15,12 +15,12 @@ keywords:
 - SAN ソケット WDK、バインド
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a536797eb2f860c395d5a2997f344eda8f5de4f1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1834cc99cbdd3443304d8e60387ed3c9918434e6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357366"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374922"
 ---
 # <a name="creating-and-binding-san-sockets"></a>SAN ソケットの作成とバインド
 
@@ -71,7 +71,7 @@ SAN サービス プロバイダーによって作成されたソケットは、
 
 2.  データ転送に SAN サービス プロバイダーを使用できないことを決定するスイッチ、スイッチは、TCP/IP サービス プロバイダー経由のデータ転送をルーティングします。
 
-3.  スイッチが SAN サービス プロバイダーを呼び出す場合は、スイッチは、アプリケーションのソケットのサービスを提供する SAN サービス プロバイダーを選択、 [ **WSPSocket** ](https://msdn.microsoft.com/library/windows/hardware/ff566319)コンパニオン ソケットを作成する関数。
+3.  スイッチが SAN サービス プロバイダーを呼び出す場合は、スイッチは、アプリケーションのソケットのサービスを提供する SAN サービス プロバイダーを選択、 [ **WSPSocket** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff566319(v=vs.85))コンパニオン ソケットを作成する関数。
 
 ### <a name="initiating-creation-of-a-companion-socket"></a>コンパニオン ソケットの作成を開始します。
 
@@ -91,7 +91,7 @@ SAN サービス プロバイダーによって作成されたソケットは、
 
 ### <a name="binding-a-companion-socket"></a>コンパニオン ソケットをバインドします。
 
-1.  SAN サービス プロバイダーの場合、 **WSPSocket**関数が正常に完了すると、スイッチは、SAN サービス プロバイダーのすぐに呼び出し[ **WSPBind** ](https://msdn.microsoft.com/library/windows/hardware/ff566268)関数を割り当てるにはローカル IP アドレスと TCP ポート ソケットにします。
+1.  SAN サービス プロバイダーの場合、 **WSPSocket**関数が正常に完了すると、スイッチは、SAN サービス プロバイダーのすぐに呼び出し[ **WSPBind** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff566268(v=vs.85))関数を割り当てるにはローカル IP アドレスと TCP ポート ソケットにします。
 
 2.  スイッチは、SAN のソケット TCP/IP プロバイダーによって作成されたソケットに割り当てたのと同じ IP アドレスと TCP ポートを割り当てます。 SAN サービス プロバイダーは、ネイティブ形式にこの TCP/IP アドレスを変換する必要があります。
 
@@ -99,15 +99,15 @@ SAN サービス プロバイダーによって作成されたソケットは、
 
 ### <a name="setting-options-for-a-companion-socket"></a>コンパニオン ソケット オプションの設定
 
--   アプリケーションが、ソケット オプションを指定した場合、スイッチは、これらのオプションを格納します。 SAN のソケットを作成した後、スイッチが SAN サービス プロバイダーを呼び出す[ **WSPSetSockOpt** ](https://msdn.microsoft.com/library/windows/hardware/ff566318)をすぐにこれらのオプションを設定するアプリケーションによって指定されたサポートされている各オプションの関数SAN ソケット。
+-   アプリケーションが、ソケット オプションを指定した場合、スイッチは、これらのオプションを格納します。 SAN のソケットを作成した後、スイッチが SAN サービス プロバイダーを呼び出す[ **WSPSetSockOpt** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff566318(v=vs.85))をすぐにこれらのオプションを設定するアプリケーションによって指定されたサポートされている各オプションの関数SAN ソケット。
 
 ### <a name="failing-a-companion-socket-call"></a>コンパニオン ソケットの呼び出しの失敗
 
--   SAN サービス プロバイダーでは、前の呼び出しのいずれかが失敗した場合、 **WSPSocket**、 **WSPBind**、または**WSPSetSockOpt**関数、スイッチの呼び出し、SAN サービス プロバイダー [**WSPCloseSocket** ](https://msdn.microsoft.com/library/windows/hardware/ff566273) SAN ソケットを破棄します。 スイッチは、TCP/IP プロバイダーを使用して、アプリケーションのソケットをサービス提供を継続します。 スイッチ、SAN サービス プロバイダーを使用して接続を確立した後、スイッチできませんプロバイダーを使用して TCP/IP アプリケーションのソケットをサービスに注意してください。 この場合、スイッチは、アプリケーションに、適切なエラーを返します。
+-   SAN サービス プロバイダーでは、前の呼び出しのいずれかが失敗した場合、 **WSPSocket**、 **WSPBind**、または**WSPSetSockOpt**関数、スイッチの呼び出し、SAN サービス プロバイダー [**WSPCloseSocket** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff566273(v=vs.85)) SAN ソケットを破棄します。 スイッチは、TCP/IP プロバイダーを使用して、アプリケーションのソケットをサービス提供を継続します。 スイッチ、SAN サービス プロバイダーを使用して接続を確立した後、スイッチできませんプロバイダーを使用して TCP/IP アプリケーションのソケットをサービスに注意してください。 この場合、スイッチは、アプリケーションに、適切なエラーを返します。
 
 ### <a name="connecting-the-companion-socket"></a>コンパニオン ソケットを接続します。
 
--   スイッチがいずれかを呼び出し、スイッチがコンパニオン ソケットを設定後、 **WSPListen**または**WSPConnect** SAN に SAN サービス プロバイダーの原因となった操作を実行するプロバイダーのサービスの機能当初、ソケットを設定します。 たとえば、アプリケーションが最初に要求の受信接続をリッスンするように、スイッチは SAN サービス プロバイダーを呼び出す[ **WSPListen** ](https://msdn.microsoft.com/library/windows/hardware/ff566297)関数。
+-   スイッチがいずれかを呼び出し、スイッチがコンパニオン ソケットを設定後、 **WSPListen**または**WSPConnect** SAN に SAN サービス プロバイダーの原因となった操作を実行するプロバイダーのサービスの機能当初、ソケットを設定します。 たとえば、アプリケーションが最初に要求の受信接続をリッスンするように、スイッチは SAN サービス プロバイダーを呼び出す[ **WSPListen** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff566297(v=vs.85))関数。
 
  
 

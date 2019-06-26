@@ -6,12 +6,12 @@ keywords:
 - 線形のメモリ割り当て WDK DirectDraw
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b6632a5c20124b7db1f08b0333bdd77bf20c85a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 156d7191d12fd6f25eca2953661fbab3fc84a577
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363199"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372896"
 ---
 # <a name="linear-memory-allocation"></a>線形のメモリの割り当て
 
@@ -27,11 +27,11 @@ ms.locfileid: "63363199"
 
 ![線形のメモリ ヒープの割り当てを示す図](images/ddfig4.png)
 
-プライマリのサーフェスの先頭へのポインターが**fpPrimary**のメンバー、 [ **VIDEOMEMORYINFO** ](https://msdn.microsoft.com/library/windows/hardware/ff570172)構造体。 指定したプライマリ サーフェスとキャッシュは、このスクラッチ領域の先頭へのポインターを提供するさまざまな Windows のサイズ、 **fpStart**のメンバー、 [**グラフィックスアクセラレータ**](https://msdn.microsoft.com/library/windows/hardware/ff570171)構造体。 によって示される、終点、 **fpEnd**のメンバー、**グラフィックスアクセラレータ**構造体から 1 を引いたの残りのメモリのサイズを加算して計算されます。
+プライマリのサーフェスの先頭へのポインターが**fpPrimary**のメンバー、 [ **VIDEOMEMORYINFO** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_videomemoryinfo)構造体。 指定したプライマリ サーフェスとキャッシュは、このスクラッチ領域の先頭へのポインターを提供するさまざまな Windows のサイズ、 **fpStart**のメンバー、 [**グラフィックスアクセラレータ**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_videomemory)構造体。 によって示される、終点、 **fpEnd**のメンバー、**グラフィックスアクセラレータ**構造体から 1 を引いたの残りのメモリのサイズを加算して計算されます。
 
-[**グラフィックスアクセラレータ**](https://msdn.microsoft.com/library/windows/hardware/ff570171)構造体は、ヒープ表示のメモリを管理する情報を保持します。 このサンプルの配列で 1 つだけの要素には**グラフィックスアクセラレータ**構造体の 1 つだけのヒープがあるためです。 VIDMEM\_ISLINEAR、フラグ、 **dwFlags**のメンバー、**グラフィックスアクセラレータ**構造体、これを線形のメモリとして表します。
+[**グラフィックスアクセラレータ**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_videomemory)構造体は、ヒープ表示のメモリを管理する情報を保持します。 このサンプルの配列で 1 つだけの要素には**グラフィックスアクセラレータ**構造体の 1 つだけのヒープがあるためです。 VIDMEM\_ISLINEAR、フラグ、 **dwFlags**のメンバー、**グラフィックスアクセラレータ**構造体、これを線形のメモリとして表します。
 
-次の擬似コードに示す方法、 [**グラフィックスアクセラレータ**](https://msdn.microsoft.com/library/windows/hardware/ff570171)構造が線形のメモリを設定します。
+次の擬似コードに示す方法、 [**グラフィックスアクセラレータ**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_videomemory)構造が線形のメモリを設定します。
 
 ```cpp
 /*
@@ -67,9 +67,9 @@ static VIDEOMEMORY vidMem [] = {
     vidMem[ 0 ].fpEnd = VideoHeapEnd;
 ```
 
-最初の使用可能なスクラッチ領域の先頭は、プライマリの画面のサイズを Windows ブラシ、ペン、および VDD キャッシュのサイズ、GDI のプライマリ画面の先頭を加算して計算されます。 最初の要素の開始点を設定するため、結果、 [**グラフィックスアクセラレータ**](https://msdn.microsoft.com/library/windows/hardware/ff570171)スクラッチ領域の先頭に構造体。
+最初の使用可能なスクラッチ領域の先頭は、プライマリの画面のサイズを Windows ブラシ、ペン、および VDD キャッシュのサイズ、GDI のプライマリ画面の先頭を加算して計算されます。 最初の要素の開始点を設定するため、結果、 [**グラフィックスアクセラレータ**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_videomemory)スクラッチ領域の先頭に構造体。
 
-スクラッチ領域の末尾は、スクラッチ領域のサイズをスクラッチ領域の先頭を追加し、包括的にするには、1 を減算して検出されます。 結果の最初の (および、この場合は、のみ) エンド ポイント要素を設定するため、 [**グラフィックスアクセラレータ**](https://msdn.microsoft.com/library/windows/hardware/ff570171)スクラッチ領域の末尾に構造体。 複数のヒープがある場合、開始位置がこの終点がこのヒープと [次へ] のヒープの末尾に設定します。
+スクラッチ領域の末尾は、スクラッチ領域のサイズをスクラッチ領域の先頭を追加し、包括的にするには、1 を減算して検出されます。 結果の最初の (および、この場合は、のみ) エンド ポイント要素を設定するため、 [**グラフィックスアクセラレータ**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_videomemory)スクラッチ領域の末尾に構造体。 複数のヒープがある場合、開始位置がこの終点がこのヒープと [次へ] のヒープの末尾に設定します。
 
  
 

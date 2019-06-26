@@ -9,12 +9,12 @@ keywords:
 - Oid WDK ネットワー キングの Oid の詳細について
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d522a11e461d65e3783798ef792160020ec30931
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9a96d8a35e82aa7de3b5c90848e93ca4b45760ec
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331834"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375176"
 ---
 # <a name="network-oids"></a>ネットワーク OID
 
@@ -26,9 +26,9 @@ ms.locfileid: "63331834"
 
 NDIS とより高いレベルのドライバー クエリを実行でき、場合によっては、Oid を使用して情報を設定できます。
 
--   上位レベルのコネクションレス メディア呼び出し用のドライバー [ **NdisOidRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff563710)クエリまたはコネクションレス ミニポート ドライバーの情報を設定します。 NDIS ミニポート ドライバーの呼び出し、クエリまたはセットの操作を実行する[ *MiniportOidRequest* ](https://msdn.microsoft.com/library/windows/hardware/ff559416)関数。
+-   上位レベルのコネクションレス メディア呼び出し用のドライバー [ **NdisOidRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisoidrequest)クエリまたはコネクションレス ミニポート ドライバーの情報を設定します。 NDIS ミニポート ドライバーの呼び出し、クエリまたはセットの操作を実行する[ *MiniportOidRequest* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_oid_request)関数。
 
--   上位レベルの接続指向のメディアの呼び出し用のドライバー [ **NdisCoOidRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff561711)クエリまたは接続指向のミニポート ドライバーの情報を設定します。 両方のクエリを実行し、操作を設定、NDIS に呼び出し、ミニポート ドライバーの[ **MiniportCoOidRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff559362)関数。
+-   上位レベルの接続指向のメディアの呼び出し用のドライバー [ **NdisCoOidRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscooidrequest)クエリまたは接続指向のミニポート ドライバーの情報を設定します。 両方のクエリを実行し、操作を設定、NDIS に呼び出し、ミニポート ドライバーの[ **MiniportCoOidRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_co_oid_request)関数。
 
 NDIS は、多くのミニポート ドライバーのシステム定義の Oid をグローバル一意識別子 (Guid) にマップします。 NDIS は、これらの Guid と、カーネル モード Microsoft Windows Management Instrumentation (WMI) Web-based Enterprise Management (WBEM) アプリケーションのユーザー モードをサポートするを登録します。 WMI クライアントでは、クエリまたはこれらの Guid のいずれかを設定、ときに、NDIS がクエリの OID 操作または、必要に応じて、設定の OID 操作の要求を変換し、返された情報を渡します、状態が WMI に戻します。 カスタムの Guid は、カスタム Oid またはミニポート ドライバーの状態にマップできます。 ミニポート ドライバーする必要がありますカスタム GUID を OID または登録 GUID-状態マッピング NDIS の初期化中にします。
 

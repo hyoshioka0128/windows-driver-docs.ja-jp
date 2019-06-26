@@ -4,12 +4,12 @@ description: WIA アーキテクチャの概要
 ms.assetid: 47f44042-f22b-4ee0-88c5-fc977bf13791
 ms.date: 07/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 02162adc8a745ba70c147c0ab442699688f6d129
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 86b0d7f282e233c07bc1b7944f114e59eeabdacf
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356135"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375364"
 ---
 # <a name="wia-architecture-overview"></a>WIA アーキテクチャの概要
 
@@ -55,7 +55,7 @@ WIA ドライバー サービス ライブラリは、WIA ミニドライバー�
 
 WIA ミニドライバーは、ベンダーから提供された、WIA プロパティの変更と、イメージング デバイスにコマンドを直接ユーザー モード コンポーネント。 ミニドライバーは、ミニドライバーとの通信に WIA サービスによって呼び出される WIA DDI を実装します。
 
-WIA ミニドライバーは、標準の WIA ミニドライバー インターフェイスを実装します。 ミニドライバーは、USB ドライバーなど、標準の Microsoft Windows カーネル モード ドライバーを使用してイメージング デバイスと通信します。 ミニドライバーは、呼び出すことによって、カーネル モード ドライバーと通信する、 [ **CreateFile**](https://msdn.microsoft.com/library/windows/desktop/aa363858)、 **ReadFile**、 **WriteFile**、および**DeviceIoControl** (Microsoft Windows SDK のドキュメントで説明) の Win32 関数。
+WIA ミニドライバーは、標準の WIA ミニドライバー インターフェイスを実装します。 ミニドライバーは、USB ドライバーなど、標準の Microsoft Windows カーネル モード ドライバーを使用してイメージング デバイスと通信します。 ミニドライバーは、呼び出すことによって、カーネル モード ドライバーと通信する、 [ **CreateFile**](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-createfilea)、 **ReadFile**、 **WriteFile**、および**DeviceIoControl** (Microsoft Windows SDK のドキュメントで説明) の Win32 関数。
 
 イメージングのアプリケーションは、WIA ミニドライバーを直接呼び出すにことはできません。 ドライバーを直接呼び出す WIA サービスのみが許可されます。
 

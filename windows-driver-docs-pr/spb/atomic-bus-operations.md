@@ -4,12 +4,12 @@ description: Sp B に接続されている周辺機器の特定のハードウ�
 ms.assetid: F8CD670F-C817-40BF-AF4B-5F3839E46EFB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d71bd1573a871c2e5f9effc969e7b4d000a9ce0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9ae9bd621f34e3a96f48de5f81ee7aed82cbcbb4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348083"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369590"
 ---
 # <a name="atomic-bus-operations"></a>アトミック バス操作
 
@@ -21,7 +21,7 @@ Sp B に接続されている周辺機器の特定のハードウェア機能を
 ## <a name="spb-controller-locks"></a>SPB コント ローラーのロック
 
 
-アトミック転送シーケンスを実行するあまり一般的な方法は、SPB コント ローラーのロックを使用します。 クライアントが送信、 [ **IOCTL\_SPB\_ロック\_コント ローラー** ](https://msdn.microsoft.com/library/windows/hardware/hh450858) 、ロックの取得を要求し、 [ **IOCTL\_SPB\_UNLOCK\_コント ローラー** ](https://msdn.microsoft.com/library/windows/hardware/hh450859)ロックを解除する要求。 クライアントがコント ローラーのロック、単純な読み取りと書き込みの任意のシーケンスを保持する場合 ([**IRP\_MJ\_読み取り**](https://msdn.microsoft.com/library/windows/hardware/ff550794)と[ **IRP\_MJ\_書き込み**](https://msdn.microsoft.com/library/windows/hardware/ff550819)) クライアントがデバイスに送信する要求は、バスに対するアトミック操作として実行されます。
+アトミック転送シーケンスを実行するあまり一般的な方法は、SPB コント ローラーのロックを使用します。 クライアントが送信、 [ **IOCTL\_SPB\_ロック\_コント ローラー** ](https://msdn.microsoft.com/library/windows/hardware/hh450858) 、ロックの取得を要求し、 [ **IOCTL\_SPB\_UNLOCK\_コント ローラー** ](https://msdn.microsoft.com/library/windows/hardware/hh450859)ロックを解除する要求。 クライアントがコント ローラーのロック、単純な読み取りと書き込みの任意のシーケンスを保持する場合 ([**IRP\_MJ\_読み取り**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-read)と[ **IRP\_MJ\_書き込み**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-write)) クライアントがデバイスに送信する要求は、バスに対するアトミック操作として実行されます。
 
 SPB に接続されているほとんどの周辺機器にコント ローラーのロックが必要としないと、ほとんど SPB コント ローラーのドライバーはこれらのロックのサポートを実装していません。 ただし、いくつかのクライアントは、コント ローラーのロックを使用して、通常とは異なる機能を持つデバイスにアクセスする必要があります。
 
@@ -36,7 +36,7 @@ SPB に接続されているほとんどの周辺機器にコント ローラー
 
 ただし、ほとんどの sp B に接続されたデバイスでは、コント ローラーのロックが必要な機能がありません。 アトミックを必要とするほとんどのデバイスの操作のバスの[ **IOCTL\_SPB\_EXECUTE\_シーケンス**](https://msdn.microsoft.com/library/windows/hardware/hh450857)要求で十分です。
 
-SPB 接続ロック SPB コント ローラーのロックを混同しないでください。 2 つのクライアントが同じ SPB に接続されている周辺機器のデバイスへのアクセスを共有する特殊な場合は、いずれかのクライアントは、一時的にデバイスへの排他アクセスを取得する接続ロックを使用できます。 詳細については、次を参照してください。 [SPB 接続ロック](https://msdn.microsoft.com/library/windows/hardware/jj819326)します。
+SPB 接続ロック SPB コント ローラーのロックを混同しないでください。 2 つのクライアントが同じ SPB に接続されている周辺機器のデバイスへのアクセスを共有する特殊な場合は、いずれかのクライアントは、一時的にデバイスへの排他アクセスを取得する接続ロックを使用できます。 詳細については、次を参照してください。 [SPB 接続ロック](https://docs.microsoft.com/windows-hardware/drivers/spb/spb-connection-locks)します。
 
 ## <a name="hardware-bus-signals"></a>ハードウェア バス信号
 
@@ -59,7 +59,7 @@ I²C バス上の一般的な周辺機器は、いくつかのデバイスの内
 
 この例では I²C 周辺機器は、関数アドレスは、関数アドレス レジスタに読み込む開始ビット後、デバイスに書き込まれる最初のバイトを解釈します。 (ストップ ビットを示す) ように、シーケンスが終了する前に、またはデバイスからの移動、追加のバイトは、デバイスによってデータ レジスタから転送されるデータとして扱われます。
 
-書き込み操作を実行するクライアントは、書き込みを送信します ([**IRP\_MJ\_書き込み**](https://msdn.microsoft.com/library/windows/hardware/ff550819)) 書き込みバッファーの最初のバイトの関数のアドレスと、残りの要求バッファー内のバイトは、関数のアドレスに書き込まれるデータです。
+書き込み操作を実行するクライアントは、書き込みを送信します ([**IRP\_MJ\_書き込み**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-write)) 書き込みバッファーの最初のバイトの関数のアドレスと、残りの要求バッファー内のバイトは、関数のアドレスに書き込まれるデータです。
 
 デバイスからの読み取りより複雑です。 バス上でこの関数のアドレスを自動的にリセットする「高速の読み取り」機能が既定値はビットが停止するときは、0 に登録の例がサポートする I²C デバイスが検出されたことを想定しています。 この機能により、クライアントからデータを読み取る関数アドレス 0 関数アドレス登録を作成することがなく。 この機能は、ほとんど読み取りは、関数アドレス 0 から、比較的短い場合に特に、読み取り操作、デバイスの速度を向上させることができます。
 
@@ -72,7 +72,7 @@ I²C バス上の一般的な周辺機器は、いくつかのデバイスの内
 
 要求の他のパターンは、読み取り/変更/書き込み操作を実行する代わりに使用可能性があります。 たとえば、 **IRP\_MJ\_書き込み**要求手順 2. で置き換えることができます、 **IOCTL\_SPB\_EXECUTE\_シーケンス**要求どちらも書き込み、2 つのデータ転送を指定します。 シーケンスの最初の転送は、関数アドレス レジスタにバイトを読み込みます。 2 番目の転送は、選択した関数のアドレスにデータのバイトを書き込みます。 この要求とは異なり、 **IRP\_MJ\_書き込み**手順 2. では、関数アドレス バイトと同じ書き込みバッファーでデータ バイトを結合するクライアントは必要ありません。
 
-このデバイスで関数アドレス 0 で、読み取り/変更/書き込みを実行する、 **IOCTL\_SPB\_EXECUTE\_シーケンス**単純な読み取りは、上記の手順 1 で要求を置き換えることができます ([ **IRP\_MJ\_読み取り**](https://msdn.microsoft.com/library/windows/hardware/ff550794)) 要求します。
+このデバイスで関数アドレス 0 で、読み取り/変更/書き込みを実行する、 **IOCTL\_SPB\_EXECUTE\_シーケンス**単純な読み取りは、上記の手順 1 で要求を置き換えることができます ([ **IRP\_MJ\_読み取り**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-read)) 要求します。
 
  
 

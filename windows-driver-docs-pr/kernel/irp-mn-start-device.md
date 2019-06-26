@@ -6,12 +6,12 @@ ms.assetid: 0aac1346-b5c7-4dcc-ab86-03e8fd151505
 keywords:
 - IRP_MN_START_DEVICE カーネル モード ドライバーのアーキテクチャ
 ms.localizationpriority: medium
-ms.openlocfilehash: ff9e11350d5677f252c1a84ac90eaaf71039733b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1d182f36599bff8df3a14b308903684a30161184
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381400"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371848"
 ---
 # <a name="irpmnstartdevice"></a>IRP\_MN\_開始\_デバイス
 
@@ -26,16 +26,16 @@ ms.locfileid: "63381400"
 
 PnP マネージャーは、デバイスに存在する場合は、ハードウェア リソースが割り当てられるこの IRP を送信します。 デバイスが最近列挙され、は、最初の起動中またはリソースが再調整のために停止した後は、デバイスを再起動する可能性があります。
 
-PnP マネージャーが送信することがあります、 **IRP\_MN\_開始\_デバイス**既に開始されているデバイスにデバイスが現在使用してよりに異なる一連のリソースを指定します。 ドライバーは、呼び出すことによってこの操作を開始する[ **IoInvalidateDeviceState** ](https://msdn.microsoft.com/library/windows/hardware/ff549361)とそれに続く対応[ **IRP\_MN\_クエリ\_PNP\_デバイス\_状態**](irp-mn-query-pnp-device-state.md) PNP 要求\_リソース\_要件\_CHANGED フラグを設定します。 バス ドライバーは PCI の PCI ブリッジで新しい aperture を開くなど、このメカニズムを使用可能性があります。
+PnP マネージャーが送信することがあります、 **IRP\_MN\_開始\_デバイス**既に開始されているデバイスにデバイスが現在使用してよりに異なる一連のリソースを指定します。 ドライバーは、呼び出すことによってこの操作を開始する[ **IoInvalidateDeviceState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioinvalidatedevicestate)とそれに続く対応[ **IRP\_MN\_クエリ\_PNP\_デバイス\_状態**](irp-mn-query-pnp-device-state.md) PNP 要求\_リソース\_要件\_CHANGED フラグを設定します。 バス ドライバーは PCI の PCI ブリッジで新しい aperture を開くなど、このメカニズムを使用可能性があります。
 
 PnP マネージャーでは、この IRP を送信 IRQL パッシブで\_システム スレッドのコンテキスト内のレベル。
 
 ## <a name="input-parameters"></a>入力パラメーター
 
 
-**Parameters.StartDevice.AllocatedResources**のメンバー、 [ **IO\_スタック\_場所**](https://msdn.microsoft.com/library/windows/hardware/ff550659) を指す構造体[ **CM\_リソース\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff541994) PnP マネージャーがデバイスに割り当てられたハードウェア リソースを記述します。 この一覧には、未加工の形式でリソースが含まれています。 生のリソースを使用して、デバイスをプログラミングします。
+**Parameters.StartDevice.AllocatedResources**のメンバー、 [ **IO\_スタック\_場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location) を指す構造体[ **CM\_リソース\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_cm_resource_list) PnP マネージャーがデバイスに割り当てられたハードウェア リソースを記述します。 この一覧には、未加工の形式でリソースが含まれています。 生のリソースを使用して、デバイスをプログラミングします。
 
-**Parameters.StartDevice.AllocatedResourcesTranslated**を指す、 [ **CM\_リソース\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff541994)ハードウェア リソースを記述するを PnP マネージャーデバイスに割り当てられます。 この一覧には、翻訳された形式でリソースが含まれています。 翻訳されたリソースを使用して、割り込みのベクターを接続し、I/O の領域をマップし、メモリをマップします。
+**Parameters.StartDevice.AllocatedResourcesTranslated**を指す、 [ **CM\_リソース\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_cm_resource_list)ハードウェア リソースを記述するを PnP マネージャーデバイスに割り当てられます。 この一覧には、翻訳された形式でリソースが含まれています。 翻訳されたリソースを使用して、割り込みのベクターを接続し、I/O の領域をマップし、メモリをマップします。
 
 ## <a name="output-parameters"></a>出力パラメーター
 
@@ -60,7 +60,7 @@ PnP マネージャーでは、この IRP を送信 IRQL パッシブで\_シス
 
 Windows Vista およびそれ以降のオペレーティング システムでは、ことをお勧めドライバー保留常に、 **IRP\_MN\_開始\_デバイス**IRP 後でその処理を完了します。 この順序により、デバイスの再起動を非同期に処理するシステムです。 (Windows Vista より前に、のオペレーティング システムでは、ドライバーが状態を返すことができます\_PENDING からは、ディスパッチ ルーチンが PnP マネージャーには、他の操作と、デバイスの再起動が重複していない)。
 
-開始 IRP の処理の詳細については、次を参照してください。[デバイスを起動](https://msdn.microsoft.com/library/windows/hardware/ff563849)します。
+開始 IRP の処理の詳細については、次を参照してください。[デバイスを起動](https://docs.microsoft.com/windows-hardware/drivers/kernel/starting-a-device)します。
 
 **この IRP を送信します。**
 

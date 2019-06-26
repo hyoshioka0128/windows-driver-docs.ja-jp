@@ -4,12 +4,12 @@ description: ComputerHardwareIds の出力
 ms.assetid: 38a08dda-92db-4389-9c2c-91fe17a88051
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3cadc25f122b2e3da31b3a1b30ce5c4553305011
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 80c339dfd98c7c55580cca82b2cc00a7796dba74
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343105"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371601"
 ---
 # <a name="computerhardwareids-output"></a>ComputerHardwareIds の出力
 
@@ -39,7 +39,7 @@ Hardware IDs
 {d7be59e5-29b5-589a-b49d-de7265ef6a7b}    <- Manufacturer + Family + ProductName
 ```
 
-この例では、仕入先 (Contoso inc.) は通常使用して、2 つ目のハードウェア ID (d7be59e5-29b5-589a-b49d-de7265ef6a7b) の値を[ **HardwareID** ](https://msdn.microsoft.com/library/windows/hardware/ff546114)内の要素、 [PackageInfo の XML ドキュメント](https://msdn.microsoft.com/library/windows/hardware/ff549602)仕入先のデバイス メタデータ パッケージの。
+この例では、仕入先 (Contoso inc.) は通常使用して、2 つ目のハードウェア ID (d7be59e5-29b5-589a-b49d-de7265ef6a7b) の値を[ **HardwareID** ](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff546114(v=vs.85))内の要素、 [PackageInfo の XML ドキュメント](https://docs.microsoft.com/windows-hardware/drivers/install/packageinfo-xml-document)仕入先のデバイス メタデータ パッケージの。
 
  
 

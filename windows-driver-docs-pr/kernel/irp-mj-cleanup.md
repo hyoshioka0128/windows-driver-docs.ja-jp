@@ -6,12 +6,12 @@ ms.assetid: 097f5f1d-3e88-4db0-bb79-db2267bdaf38
 keywords:
 - IRP_MJ_CLEANUP Kernel-Mode Driver Architecture
 ms.localizationpriority: medium
-ms.openlocfilehash: a6c8959931957965cf13143fc14747934727e816
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 47c51e1c775002577f4d2ae9f89ac95cbc6c439f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327296"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370918"
 ---
 # <a name="irpmjcleanup"></a>IRP\_MJ\_CLEANUP
 
@@ -40,9 +40,9 @@ ms.locfileid: "63327296"
 
 ドライバーのデバイス オブジェクトが設定されている場合の排他として、一度に 1 つのスレッドのみがデバイスを使用できるようにドライバーする必要があります完了現在ターゲット デバイス オブジェクトをキューに登録し、状態を設定するすべての IRP\_各 IRP の I/O の状態が取り消されましたブロックです。
 
-それ以外の場合、ドライバーはキャンセルし、リリースされる、ファイル オブジェクトのハンドルに関連付けられている現在キューに置かれた Irp の完了する必要があります。 (ファイル オブジェクトへのポインターにある、 **FileObject**のドライバーのメンバー [ **IO\_スタック\_場所**](https://msdn.microsoft.com/library/windows/hardware/ff550659) IRP の)。ドライバーが IRP のクリーンアップが完了して状態を設定後、これらをキャンセルするには、Irp をキューに置かれた、\_I/O の状態のブロックで成功します。
+それ以外の場合、ドライバーはキャンセルし、リリースされる、ファイル オブジェクトのハンドルに関連付けられている現在キューに置かれた Irp の完了する必要があります。 (ファイル オブジェクトへのポインターにある、 **FileObject**のドライバーのメンバー [ **IO\_スタック\_場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location) IRP の)。ドライバーが IRP のクリーンアップが完了して状態を設定後、これらをキャンセルするには、Irp をキューに置かれた、\_I/O の状態のブロックで成功します。
 
-この要求の処理の詳細については、次を参照してください。 [DispatchCleanup ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff543242)します。
+この要求の処理の詳細については、次を参照してください。 [DispatchCleanup ルーチン](https://docs.microsoft.com/windows-hardware/drivers/kernel/dispatchcleanup-routines)します。
 
 <a name="requirements"></a>要件
 ------------
@@ -65,7 +65,7 @@ ms.locfileid: "63327296"
 
 [*DispatchCleanup*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)
 
-[**IO\_スタック\_場所**](https://msdn.microsoft.com/library/windows/hardware/ff550659)
+[**IO\_スタック\_場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)
 
 [**IRP\_MJ\_CLOSE**](irp-mj-close.md)
 

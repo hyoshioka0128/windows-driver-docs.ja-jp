@@ -11,12 +11,12 @@ keywords:
 - UFF ファイル
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6585b976e3d75e61b56374c697fde86dba1169e9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ca8548adb5ef53b60f9d671b8dd39c6b3e2de81a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365522"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372406"
 ---
 # <a name="customized-font-installers-for-unidrv"></a>Unidrv のカスタマイズされたフォント インストーラー
 
@@ -34,9 +34,9 @@ ms.locfileid: "63365522"
 
     次の COM インターフェイス メソッドは、このプラグインの場合に実装する必要があります。
 
-    [**IPrintOemUI::FontInstallerDlgProc**](https://msdn.microsoft.com/library/windows/hardware/ff554176)
+    [**IPrintOemUI::FontInstallerDlgProc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemui-fontinstallerdlgproc)
 
-    [**IPrintOemUI::UpdateExternalFonts**](https://msdn.microsoft.com/library/windows/hardware/ff554188)
+    [**IPrintOemUI::UpdateExternalFonts**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemui-updateexternalfonts)
 
 -   別の実行可能ファイルを指定します。
 

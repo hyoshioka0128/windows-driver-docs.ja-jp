@@ -4,12 +4,12 @@ description: MSiSCSI\_BootConfiguration WMI クラス
 ms.assetid: 5ca350ba-8689-46c2-8313-8f523354db98
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 9c39805d9af781cadb4166ea98c1eaf226b4e4d8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cb45546a4f2cdd22a8f319f2c404c0ca8fc28ab0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370318"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376694"
 ---
 # <a name="msiscsibootconfiguration-wmi-class"></a>MSiSCSI\_BootConfiguration WMI クラス
 
@@ -69,7 +69,7 @@ class MSiSCSI_BootConfiguration {
 };
 ```
 
-WMI ツールのスイートでは、上記のクラス定義をコンパイルするときに生成、 [ **MSiSCSI\_BootConfiguration** ](https://msdn.microsoft.com/library/windows/hardware/ff562976)データ構造体。
+WMI ツールのスイートでは、上記のクラス定義をコンパイルするときに生成、 [ **MSiSCSI\_BootConfiguration** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsicfg/ns-iscsicfg-_msiscsi_bootconfiguration)データ構造体。
 
  
 

@@ -4,17 +4,17 @@ ms.assetid: AE8ED273-2329-4E53-9FCD-5A8E863AED83
 description: Direct3D 9 へのアクセスをユーザー モード ドライバーの機能に必要な機能です。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 74dabea61ced318c1f29ddc90c9851ae954a5439
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3eef9102eef5761f7f71fa2bccb8c5385002dccc
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383224"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376614"
 ---
 # <a name="required-direct3d-9-capabilities"></a>Direct3D 9 の必須機能
 
 
-マイクロソフトの Direct3D のバージョン 9 の機能を完全にアクセスするアプリケーションの\_1, 9\_2、および 9\_3、ユーザー モード ドライバーは、特定のハードウェア機能を公開する必要があります。 これらの機能の観点で表される、 [ **D3DCAPS9** ](https://msdn.microsoft.com/library/windows/desktop/bb172513)ユーザー モード ドライバーのによって返される構造体[ *GetCaps* ](https://msdn.microsoft.com/library/windows/hardware/ff566762)関数。 機能のサポートを示すために、ドライバーがのこれらのメンバーを設定する必要があります**D3DCAPS9**の各フラグの値のすべてのビット演算 OR に。
+マイクロソフトの Direct3D のバージョン 9 の機能を完全にアクセスするアプリケーションの\_1, 9\_2、および 9\_3、ユーザー モード ドライバーは、特定のハードウェア機能を公開する必要があります。 これらの機能の観点で表される、 [ **D3DCAPS9** ](https://docs.microsoft.com/windows/desktop/api/d3d9caps/ns-d3d9caps-_d3dcaps9)ユーザー モード ドライバーのによって返される構造体[ *GetCaps* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_getcaps)関数。 機能のサポートを示すために、ドライバーがのこれらのメンバーを設定する必要があります**D3DCAPS9**の各フラグの値のすべてのビット演算 OR に。
 
 ## <a name="span-idminimumcapabilitiesfordirect3dlevel91spanspan-idminimumcapabilitiesfordirect3dlevel91spanspan-idminimumcapabilitiesfordirect3dlevel91spanminimum-capabilities-for-direct3d-level-91"></a><span id="Minimum_capabilities_for_Direct3D_level_9_1"></span><span id="minimum_capabilities_for_direct3d_level_9_1"></span><span id="MINIMUM_CAPABILITIES_FOR_DIRECT3D_LEVEL_9_1"></span>Direct3D の最低限の機能レベルの 9\_1
 
@@ -26,7 +26,7 @@ ms.locfileid: "63383224"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left"><a href="https://msdn.microsoft.com/library/windows/desktop/bb172513" data-raw-source="[&lt;strong&gt;D3DCAPS9&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/desktop/bb172513)"><strong>D3DCAPS9</strong> </a>メンバー</th>
+<th align="left"><a href="https://docs.microsoft.com/windows/desktop/api/d3d9caps/ns-d3d9caps-_d3dcaps9" data-raw-source="[&lt;strong&gt;D3DCAPS9&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/d3d9caps/ns-d3d9caps-_d3dcaps9)"><strong>D3DCAPS9</strong> </a>メンバー</th>
 <th align="left">フラグの値</th>
 </tr>
 </thead>
@@ -174,7 +174,7 @@ ms.locfileid: "63383224"
 
 **注**これらの要件も適用されます。
 -   ドライバーを設定する必要がありますも、 **TextureCaps** D3DPTEXTURECAPS の値にメンバー\_NONPOW2CONDITIONAL と D3DPTEXTURECAPS\_POW2、またはどちらもします。
--   ドライバーは、イベントに応答するとき、 [ **D3DDDIARG\_CREATEQUERY**](https://msdn.microsoft.com/library/windows/hardware/ff542958).**QueryType**は D3DDDIQUERYTYPE\_イベント、設定があります常に、イベントの**BOOL**値を**TRUE**の応答時にします。 参照してください[ *CreateQuery* ](https://msdn.microsoft.com/library/windows/hardware/ff540673)と**D3DDDIARG\_CREATEQUERY**します。
+-   ドライバーは、イベントに応答するとき、 [ **D3DDDIARG\_CREATEQUERY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ns-d3dumddi-_d3dddiarg_createquery).**QueryType**は D3DDDIQUERYTYPE\_イベント、設定があります常に、イベントの**BOOL**値を**TRUE**の応答時にします。 参照してください[ *CreateQuery* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_createquery)と**D3DDDIARG\_CREATEQUERY**します。
 
  
 
@@ -190,7 +190,7 @@ Direct3D レベル 9 に記載されているこれらの機能をさらに設�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left"><a href="https://msdn.microsoft.com/library/windows/desktop/bb172513" data-raw-source="[&lt;strong&gt;D3DCAPS9&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/desktop/bb172513)"><strong>D3DCAPS9</strong> </a>メンバー</th>
+<th align="left"><a href="https://docs.microsoft.com/windows/desktop/api/d3d9caps/ns-d3d9caps-_d3dcaps9" data-raw-source="[&lt;strong&gt;D3DCAPS9&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/d3d9caps/ns-d3d9caps-_d3dcaps9)"><strong>D3DCAPS9</strong> </a>メンバー</th>
 <th align="left">フラグの値</th>
 </tr>
 </thead>
@@ -249,7 +249,7 @@ Direct3D レベル 9 に記載されているこれらの機能をさらに設�
  
 
 **注**この要件も適用されます。
--   ドライバーに応答するときに、 *z*-クエリのテスト場所[ **D3DDDIARG\_CREATEQUERY**](https://msdn.microsoft.com/library/windows/hardware/ff542958).**QueryType**は D3DDDIQUERYTYPE\_オクルー ジョン、設定があります常に、クエリの**UINT**値を 0 以外の値の応答時にします。 参照してください[ *CreateQuery* ](https://msdn.microsoft.com/library/windows/hardware/ff540673)と**D3DDDIARG\_CREATEQUERY**します。
+-   ドライバーに応答するときに、 *z*-クエリのテスト場所[ **D3DDDIARG\_CREATEQUERY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ns-d3dumddi-_d3dddiarg_createquery).**QueryType**は D3DDDIQUERYTYPE\_オクルー ジョン、設定があります常に、クエリの**UINT**値を 0 以外の値の応答時にします。 参照してください[ *CreateQuery* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_createquery)と**D3DDDIARG\_CREATEQUERY**します。
 
  
 
@@ -265,7 +265,7 @@ Direct3D レベル 9 に記載されているこれらの機能をさらに設�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left"><a href="https://msdn.microsoft.com/library/windows/desktop/bb172513" data-raw-source="[&lt;strong&gt;D3DCAPS9&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/desktop/bb172513)"><strong>D3DCAPS9</strong> </a>メンバー</th>
+<th align="left"><a href="https://docs.microsoft.com/windows/desktop/api/d3d9caps/ns-d3d9caps-_d3dcaps9" data-raw-source="[&lt;strong&gt;D3DCAPS9&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/d3d9caps/ns-d3d9caps-_d3dcaps9)"><strong>D3DCAPS9</strong> </a>メンバー</th>
 <th align="left">フラグの値</th>
 </tr>
 </thead>

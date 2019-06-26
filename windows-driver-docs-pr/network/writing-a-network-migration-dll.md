@@ -11,12 +11,12 @@ keywords:
 - WDK の Dll のネットワーク移行
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6dab9f0c118ba47e843fbb3f03deac5abe543f1c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0d42efa3a8713534c008ac27c81ec0b69449476f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379784"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378611"
 ---
 # <a name="writing-a-network-migration-dll"></a>ネットワーク移行 DLL の作成
 
@@ -36,9 +36,9 @@ ms.locfileid: "63379784"
 
     DLL は、Windows 2000 に固有またはそれ以降、関数を呼び出すことはできませんまたは Windows 2000 に固有またはそれ以降の機能を使用します。 Postupgrade (フル インストール モード) フェーズでは、DLL を実行する場合は、Windows 2000 と以降のオペレーティング システムに読み込む必要がありますも。
 
--   **エクスポート、** [ **PreUpgradeInitialize**](https://msdn.microsoft.com/library/windows/hardware/ff562439)**と**[**DoPreUpgradeProcessing** ](https://msdn.microsoft.com/library/windows/hardware/ff545634)**関数**
+-   **エクスポート、** [ **PreUpgradeInitialize**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff562439(v=vs.85))**と**[**DoPreUpgradeProcessing** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff545634(v=vs.85))**関数**
 
-    DLL を GUI モードのフェーズで実行している場合はエクスポートする必要があります、 [ **PostUpgradeInitialize** ](https://msdn.microsoft.com/library/windows/hardware/ff562410)と[**発生**](https://msdn.microsoft.com/library/windows/hardware/ff545629)関数としてまぁ。
+    DLL を GUI モードのフェーズで実行している場合はエクスポートする必要があります、 [ **PostUpgradeInitialize** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff562410(v=vs.85))と[**発生**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff545629(v=vs.85))関数としてまぁ。
 
 -   **Winnt32 フェーズ中に元に戻せない変更を加えない**
 

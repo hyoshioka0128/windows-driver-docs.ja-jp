@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - WDI_TLV_ADAPTER_NLO_SCAN_MODE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 95dadeb161840e0e4d975d40c701159b3fa5147d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1053924c720ee8f2cef3acec977e5660aa7f72c9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356815"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381126"
 ---
 # <a name="wditlvadapternloscanmode"></a>WDI\_TLV\_アダプター\_NLO\_スキャン\_モード
 
@@ -33,11 +33,11 @@ Uint32 型のサイズをバイト単位で。
 
 | 型   | 説明                                                                                                                     |
 |--------|---------------------------------------------------------------------------------------------------------------------------------|
-| UINT32 | [**WDI\_スキャン\_型**](https://msdn.microsoft.com/library/windows/hardware/dn926115)アクティブまたはパッシブ モードでスキャンを実行するかどうかを示す値です。 |
+| UINT32 | [**WDI\_スキャン\_型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_scan_type)アクティブまたはパッシブ モードでスキャンを実行するかどうかを示す値です。 |
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

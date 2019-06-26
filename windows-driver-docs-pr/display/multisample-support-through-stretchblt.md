@@ -9,12 +9,12 @@ keywords:
 - blit 操作 WDK DirectX 8.0 を拡大します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b43d65a06e4bf45f3830e13b3bdd789fef8f41a6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2d80d7c367eca695ff362422ae755409d7818a89
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345562"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372819"
 ---
 # <a name="multisample-support-through-stretchblt"></a>StretchBlt を介したマルチサンプル サポート
 
@@ -30,7 +30,7 @@ ms.locfileid: "63345562"
 
 -   応答していない要求をマルチ サンプリングのレンダー ターゲットのサンプルを変更するアプリケーションです。 つまり、応答しない、D3DRS のビットマスクを設定する\_MULTISAMPLEMASK デバイス (D3DRENDERSTATETYPE) の状態を表示します。
 
-ドライバーは、stretch を使用している場合に注意する必要が全画面表示モードでページを実行する blt が反転、ドライバーがサポートされているサンプル カウントを指定する必要があります、 **wFlipMSTypes**のメンバー、 [ **DDPIXELFORMAT**](https://msdn.microsoft.com/library/windows/hardware/ff550274)の**MultiSampleCaps**構造および not、 **wBltMSTypes**反転するとメンバーが実行されています。
+ドライバーは、stretch を使用している場合に注意する必要が全画面表示モードでページを実行する blt が反転、ドライバーがサポートされているサンプル カウントを指定する必要があります、 **wFlipMSTypes**のメンバー、 [ **DDPIXELFORMAT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ddpixelformat)の**MultiSampleCaps**構造および not、 **wBltMSTypes**反転するとメンバーが実行されています。
 
  
 

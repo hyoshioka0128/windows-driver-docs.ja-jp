@@ -12,19 +12,19 @@ keywords:
 - BltDXGI および XR_BIAS WDK Windows 7 の表示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f81c0837544feb8c612a09b31a73c934a3d2d36
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6b364017dcd763e978955a7fb5932891bb7337e3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363373"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381888"
 ---
 # <a name="extended-format-aware-requirements"></a>拡張形式の認識要件
 
 
 このセクションでは、Windows 7 およびそれ以降のオペレーティング システムにのみ適用されます。
 
-正確な値を返すユーザー モードのディスプレイ ドライバー対応の形式に拡張されたことを保証、 [ **CheckFormatSupport** ](https://msdn.microsoft.com/library/windows/hardware/ff539390)エントリ ポイント関数のすべての形式での表に、 [拡張形式の詳細](details-of-the-extended-format.md)セクション。 ただし、ドライバーはすべての形式を必ずしもサポートしています。
+正確な値を返すユーザー モードのディスプレイ ドライバー対応の形式に拡張されたことを保証、 [ **CheckFormatSupport** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_checkformatsupport)エントリ ポイント関数のすべての形式での表に、 [拡張形式の詳細](details-of-the-extended-format.md)セクション。 ただし、ドライバーはすべての形式を必ずしもサポートしています。
 
 ドライバーは、そのキャスト バック バッファーを完全に型指定されたを暗黙的に保証対応の拡張の形式がサポートされています。
 
@@ -48,11 +48,11 @@ Direct3D 10.1 および Ddi 以降は、2 つの新しいバージョンのサ�
 
 ### <a name="span-idxrbiasandpresentdxgispanspan-idxrbiasandpresentdxgispanxrbias-and-presentdxgi"></a><span id="xr_bias_and_presentdxgi"></span><span id="XR_BIAS_AND_PRESENTDXGI"></span>XR\_バイアスと PresentDXGI
 
-ドライバーが XR のウィンドウの存在をサポートする必要はありません\_バイアス リソースの呼び出しを通じて、 [ **PresentDXGI** ](https://msdn.microsoft.com/library/windows/hardware/ff569179)関数。 このような場合は、実行時のレベルで制限されています。 ドライバーが XR の存在を全画面表示を実行するその他のすべての書式を持つ\_フリップ操作または同一のソースと宛先リソースとのビット ブロック転送 (bitblt) 操作のどちらかを通じてバイアス。 Stretch または変換は必要ありません。
+ドライバーが XR のウィンドウの存在をサポートする必要はありません\_バイアス リソースの呼び出しを通じて、 [ **PresentDXGI** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxgiddi/ns-dxgiddi-dxgi_ddi_base_functions)関数。 このような場合は、実行時のレベルで制限されています。 ドライバーが XR の存在を全画面表示を実行するその他のすべての書式を持つ\_フリップ操作または同一のソースと宛先リソースとのビット ブロック転送 (bitblt) 操作のどちらかを通じてバイアス。 Stretch または変換は必要ありません。
 
 ### <a name="span-idxrbiasandbltdxgispanspan-idxrbiasandbltdxgispanxrbias-and-bltdxgi"></a><span id="xr_bias_and_bltdxgi"></span><span id="XR_BIAS_AND_BLTDXGI"></span>XR\_バイアスと BltDXGI
 
-Direct3D ランタイムが呼び出すドライバーの[ **BltDXGI** ](https://msdn.microsoft.com/library/windows/hardware/ff538252) XR で次の操作のみを実行する関数\_バイアス ソース リソース。
+Direct3D ランタイムが呼び出すドライバーの[ **BltDXGI** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxgiddi/ns-dxgiddi-dxgi_ddi_base_functions) XR で次の操作のみを実行する関数\_バイアス ソース リソース。
 
 -   XR も先にコピー\_バイアス
 

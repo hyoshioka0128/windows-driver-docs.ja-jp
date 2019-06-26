@@ -6,12 +6,12 @@ keywords:
 - DeviceState
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 994521158ddec6fa1af9942cfa7b81e08fb5b98c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 312b01c052f5e67328dccd6a16cf05a2087b7cc0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342704"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385003"
 ---
 # <a name="devicestate"></a>DeviceState
 
@@ -19,7 +19,7 @@ ms.locfileid: "63342704"
 
 
 
-**DeviceState**のメンバー [**デバイス\_機能**](https://msdn.microsoft.com/library/windows/hardware/ff543095)の配列は、 [**デバイス\_POWER\_状態**](https://msdn.microsoft.com/library/windows/hardware/ff543160)値によりインデックス付けされた[**システム\_POWER\_状態**](https://msdn.microsoft.com/library/windows/hardware/ff564565)範囲の値**PowerSystemWorking**に**PowerSystemShutdown**します。 配列の各要素には、インデックスで示されるシステム電源の状態のデバイスをサポートできる最大の (highest-powered) デバイスの電源状態が含まれています。 または**PowerDeviceUnspecified**システム電源の状態がサポートされていない場合。
+**DeviceState**のメンバー [**デバイス\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_capabilities)の配列は、 [**デバイス\_POWER\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ne-wdm-_device_power_state)値によりインデックス付けされた[**システム\_POWER\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ne-wdm-_system_power_state)範囲の値**PowerSystemWorking**に**PowerSystemShutdown**します。 配列の各要素には、インデックスで示されるシステム電源の状態のデバイスをサポートできる最大の (highest-powered) デバイスの電源状態が含まれています。 または**PowerDeviceUnspecified**システム電源の状態がサポートされていない場合。
 
 たとえば、S0、S4 および S5 のみをサポートするシステムで[システム電源の状態](system-power-states.md)、 **DeviceState**配列に D0 と D3 の状態のみをサポートするデバイスには、次の表に示すように値が含まれています。
 
@@ -31,7 +31,7 @@ ms.locfileid: "63342704"
 <thead>
 <tr class="header">
 <th>DeviceState 要素</th>
-<th>値</th>
+<th>Value</th>
 </tr>
 </thead>
 <tbody>
@@ -74,7 +74,7 @@ ms.locfileid: "63342704"
 <thead>
 <tr class="header">
 <th>DeviceState 要素</th>
-<th>値</th>
+<th>Value</th>
 </tr>
 </thead>
 <tbody>

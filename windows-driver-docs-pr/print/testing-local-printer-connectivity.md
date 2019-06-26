@@ -9,12 +9,12 @@ keywords:
 - WDK プリンターの接続
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b3869382216cc8c764a204ac4bc2266eeae9a2a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ee09c95bdd87c445c8778581ca270257289bdd49
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388054"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372349"
 ---
 # <a name="testing-local-printer-connectivity"></a>ローカル プリンター接続のテスト
 
@@ -31,7 +31,7 @@ ms.locfileid: "63388054"
 
 1.  既定の設定を有効になっている、Spoolsv.exe を監視すると、Application Verifier を設定します。 さまざまなハードウェアでテストを 32 ビットおよび 64 ビットのマシンを含む推奨します。
 
-2.  Driver Verifier ツールを使用すると、使用しているすべてのカーネル モード ドライバーを監視できます。 プリンター ドライバーでは、必ず Win32k.sys を含める。 参照してください[Driver Verifier](https://msdn.microsoft.com/library/windows/hardware/ff545448)については、ツールを使用して、テスト環境を設定します。
+2.  Driver Verifier ツールを使用すると、使用しているすべてのカーネル モード ドライバーを監視できます。 プリンター ドライバーでは、必ず Win32k.sys を含める。 参照してください[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)については、ツールを使用して、テスト環境を設定します。
 
 3.  電源管理のテストの前に、デバイスが接続されている場合、確認、テスト環境がすべての可能なシステム電源の状態をサポートしていると、デバイスが入力し正常にすべての状態から復帰できます。
 

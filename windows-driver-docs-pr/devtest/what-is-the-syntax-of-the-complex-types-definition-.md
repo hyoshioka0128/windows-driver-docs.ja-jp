@@ -4,12 +4,12 @@ description: 複合型定義の構文とは
 ms.assetid: c378839a-3714-4b4e-94a6-d3e1dcf8a610
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 68dc7cce9f5340b4f4a7a47c9c7a7cdea228b681
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 926921884a79bfd17de708d1c01f01613697bee6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63386361"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376830"
 ---
 # <a name="what-is-the-syntax-of-the-complex-types-definition"></a>複合型定義の構文
 
@@ -22,7 +22,7 @@ Event Tracing for Windows (ETW) トレース関数で使用するためのいく
 DEFINE_CPLX_TYPE(TypeName, HelperMacroName, ArgumentType, WppMofType,"WppMofFormat", TypeSignature, Priority, Slots);
 ```
 
-次に、例を示します。
+例:
 
 ```
 DEFINE_CPLX_TYPE(.*ls, WPP_LOGXWCS, const xwcs_t&, ItemPWString,"s", _xwcs_t_, 0, 2);
@@ -36,7 +36,7 @@ WPP は、複合型を識別するために、このフィールドを使用し�
 <span id="HelperMacroName"></span><span id="helpermacroname"></span><span id="HELPERMACRONAME"></span>*HelperMacroName*  
 長さ/アドレスのペアの形式で可変長配列を引数に変換するヘルパー マクロ。 この形式が必要、 **TraceMessage**の可変個引数リスト内のエントリの各関数。
 
-引数を正しく書式設定を使用する必要があります、 [ **WPP\_LOGPAIR** ](https://msdn.microsoft.com/library/windows/hardware/ff556197)マクロでは、次の例に示すように、ヘルパー マクロの定義。
+引数を正しく書式設定を使用する必要があります、 [ **WPP\_LOGPAIR** ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556197(v=vs.85))マクロでは、次の例に示すように、ヘルパー マクロの定義。
 
 ```
 #define HelperMacroName(x) WPP_LOGPAIR(length, x)
@@ -119,7 +119,7 @@ struct xwcs_t {
 
 場所**ItemPWString** WPP によって認識されるカウント対象の Unicode 文字列型です。 長さは、2 バイトとして指定されます。
 
-ETW が、WPP はどのように解釈するときに\_LOGXWCS 定義では、2 バイト文字列を最初のバッファーに入れ[ **WPP\_LOGPAIR** ](https://msdn.microsoft.com/library/windows/hardware/ff556197)マクロが解釈されます。 ETW し、文字列のすべてのバイトのバッファーにコピー ETW 2 つ目の WPP を解釈するときに\_LOGPAIR マクロ
+ETW が、WPP はどのように解釈するときに\_LOGXWCS 定義では、2 バイト文字列を最初のバッファーに入れ[ **WPP\_LOGPAIR** ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556197(v=vs.85))マクロが解釈されます。 ETW し、文字列のすべてのバイトのバッファーにコピー ETW 2 つ目の WPP を解釈するときに\_LOGPAIR マクロ
 
 データ、WPP とは別の長さを指定したため、\_LOGXWCS の 2 つのスロットを消費する[TraceMessage](https://go.microsoft.com/fwlink/p/?linkid=179214)します。 そのため、数**2**は 8 番目の引数です。
 

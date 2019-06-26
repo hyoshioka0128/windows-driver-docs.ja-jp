@@ -4,12 +4,12 @@ description: インタロックされたオペランドのドライバー注釈
 ms.assetid: 33C85016-765B-42BF-9F38-BB682951B20C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 65c1f021f73da6f72fa077c8a1b79097535a9df1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 41b7655e9e8a025af3468abb105ab1a978692b8d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341664"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371516"
 ---
 # <a name="driver-annotations-for-interlocked-operands"></a>インタロックされたオペランドのドライバー注釈
 
@@ -49,7 +49,7 @@ ms.locfileid: "63341664"
 
 システム指定の関数は、既にインタロックされたオペランドの注釈が付いています。
 
-次の例では、注釈には、 [ **InterlockedExchange** ](https://msdn.microsoft.com/library/windows/hardware/ff547892)関数。 この注釈は、ターゲット パラメーターは、インタロックされた操作を使用して常にアクセスする必要がありますを指定します。
+次の例では、注釈には、 [ **InterlockedExchange** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-interlockedexchange)関数。 この注釈は、ターゲット パラメーターは、インタロックされた操作を使用して常にアクセスする必要がありますを指定します。
 
 ```
 LONG  

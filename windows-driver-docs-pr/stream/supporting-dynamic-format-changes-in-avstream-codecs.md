@@ -9,12 +9,12 @@ keywords:
 - AVStream ハードウェア コーデック サポート WDK、動的形式の変更をサポートしています。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 030d22c07134ede6ea81131f30d783c3bbc452e5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: feab607e1e5d2b67d32040e646099843df0170f9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63371838"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377760"
 ---
 # <a name="supporting-dynamic-format-changes-in-avstream-codecs"></a>AVStream コーデックの動的形式変更のサポート
 
@@ -23,19 +23,19 @@ ms.locfileid: "63371838"
 
 メディア ソースから動的形式変更の発生元と、次の一連のイベントが発生します。
 
-1.  ドライバーが受信、 [ **KSPROPERTY\_接続\_PROPOSEDATAFORMAT** ](https://msdn.microsoft.com/library/windows/hardware/ff565107)入力 KS 暗証番号 (pin) が、新しいメディアの種類をサポートしているかどうかを判断する要求。 ドライバーは、このプロパティをサポートする必要があります。
+1.  ドライバーが受信、 [ **KSPROPERTY\_接続\_PROPOSEDATAFORMAT** ](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-connection-proposedataformat)入力 KS 暗証番号 (pin) が、新しいメディアの種類をサポートしているかどうかを判断する要求。 ドライバーは、このプロパティをサポートする必要があります。
 
 2.  入力ピンが新しいメディアの種類、KSPROPERTY をサポートしているか\_接続\_PROPOSEDATAFORMAT ハンドラーは、状態を返す必要があります\_成功します。 ドライバーでは、現在選択されている出力メディアの種類と提案された入力を使用して、ストリームを再開できるかどうかを決定します。 場合は、ストリームを再開します。
 
 3.  入力ピンに新しく提案されたメディアの種類、KSPROPERTY、サポートされていない場合\_接続\_PROPOSEDATAFORMAT ハンドラーがエラーを返す必要があります。 HW MFT には、メディアの種類で、接続されているコンポーネントから、再度ネゴシエートします。
 
-4.  入力ピンには、新しいメディア入力の種類がサポートしている場合は、KS フィルターには、別の出力の種類のメディアが必要なドライバーを生成する必要があります、 [ **KSEVENT\_動的\_形式\_変更**](https://msdn.microsoft.com/library/windows/hardware/ff561849)イベント、メディアの種類の変更に関する HW MFT に通知する、このトピックの後半で詳しく説明します。
+4.  入力ピンには、新しいメディア入力の種類がサポートしている場合は、KS フィルターには、別の出力の種類のメディアが必要なドライバーを生成する必要があります、 [ **KSEVENT\_動的\_形式\_変更**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksevent-dynamic-format-change)イベント、メディアの種類の変更に関する HW MFT に通知する、このトピックの後半で詳しく説明します。
 
 5.  HW MFT KSEVENT 通知を受け取ると、出力ピンが移行**KSSTATE\_実行**KSSTATE に\_を停止します。
 
-6.  HW MFT は、これは、ドライバーの呼び出しに変換されます。 使用可能なメディアの種類、ドライバーを照会し[ *AVStrMiniIntersectHandlerEx* ](https://msdn.microsoft.com/library/windows/hardware/ff556326)交差ハンドラー。 ドライバーは、優先順位の順序の優先出力メディアの種類を報告する必要があります。
+6.  HW MFT は、これは、ドライバーの呼び出しに変換されます。 使用可能なメディアの種類、ドライバーを照会し[ *AVStrMiniIntersectHandlerEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nc-ks-pfnksintersecthandlerex)交差ハンドラー。 ドライバーは、優先順位の順序の優先出力メディアの種類を報告する必要があります。
 
-7.  ユーザー モードのクライアントは、メディアの種類を選択し、HW MFT の出力ピンに新しいメディアの種類を設定します。 これは、結果、ドライバーの呼び出しで[ *AVStrMiniPinSetDataFormat* ](https://msdn.microsoft.com/library/windows/hardware/ff556355)ルーチンをディスパッチします。 状態を返すことによって、ドライバーが、形式を受け入れる場合\_成功すると、新しいメディアの種類と再開をストリーミングします。 呼び出しが失敗した場合、形式の変更に関連するコンポーネントにメディアの種類が再ネゴシエートする必要があります。
+7.  ユーザー モードのクライアントは、メディアの種類を選択し、HW MFT の出力ピンに新しいメディアの種類を設定します。 これは、結果、ドライバーの呼び出しで[ *AVStrMiniPinSetDataFormat* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nc-ks-pfnkspinsetdataformat)ルーチンをディスパッチします。 状態を返すことによって、ドライバーが、形式を受け入れる場合\_成功すると、新しいメディアの種類と再開をストリーミングします。 呼び出しが失敗した場合、形式の変更に関連するコンポーネントにメディアの種類が再ネゴシエートする必要があります。
 
 8.  HW MFT は、接続されたメディアに変更があるかどうかを確認します。 選択したメディアの種類、暗証番号 (pin) を設定し、KSSTATE に配置の変更がない場合は、\_を実行します。 接続されたメディアに変更がある場合、HW MFT は、暗証番号 (pin) を破棄し、新しく選択されたメディアの種類とメディアを再作成します。 MFT は KSSTATE に、暗証番号 (pin) を格納する、\_を実行します。
 
@@ -84,9 +84,9 @@ KSEVENT_SET PinEventTable[] =
 
 各ピンには、その pin 記述子では、このイベントを公開する必要があります。 イベントは型 KSEVENTF\_イベント\_を処理します。
 
-ドライバーは、このイベントを生成、前に、優先のメディアの種類、現在選択されている入力メディアの種類に基づいて、KS pin の設定があります。 使用してこれを行う、 [  **\_KsEdit** ](https://msdn.microsoft.com/library/windows/hardware/ff568796)暗証番号 (pin) の記述子の関数。
+ドライバーは、このイベントを生成、前に、優先のメディアの種類、現在選択されている入力メディアの種類に基づいて、KS pin の設定があります。 使用してこれを行う、 [  **\_KsEdit** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-_ksedit)暗証番号 (pin) の記述子の関数。
 
-イベントを生成するドライバーを呼び出す必要があります[ **KsGenerateEvents**](https://msdn.microsoft.com/library/windows/hardware/ff562597)します。
+イベントを生成するドライバーを呼び出す必要があります[ **KsGenerateEvents**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksgenerateevents)します。
 
  
 

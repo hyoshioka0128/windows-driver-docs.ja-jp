@@ -10,12 +10,12 @@ keywords:
 - キューの WDK プリンター、ポイント アンド プリント
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f96e29981841ccda93d675da69bec12d6b077517
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e0ebe081e71302f8d9e556b4e962c137c77893aa
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387267"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383543"
 ---
 # <a name="downloading-queue-specific-files"></a>キュー固有ファイルのダウンロード
 
@@ -34,7 +34,7 @@ ms.locfileid: "63387267"
 4.  クライアントの Win32spl.dll は、プリンターのレジストリ エントリのコピー先サーバーで EnumPrinterKey と EnumPrinterDataEx を呼び出します。
 
 5.  プリンターのサブキーが出現するたび、次の操作を実行、サーバーのスプーラ EnumPrinterDataEx の処理中にレジストリ値を列挙、 **CopyFiles**キーなど、 **CopyFiles\\ICM**:
-    -   読み込み、[ポイントと印刷 DLL](point-and-print-dlls.md)指定するを呼び出している場合、その[ **GenerateCopyFilePaths** ](https://msdn.microsoft.com/library/windows/hardware/ff549896)関数で、ソースまたは変換先のパスを変更することができます。
+    -   読み込み、[ポイントと印刷 DLL](point-and-print-dlls.md)指定するを呼び出している場合、その[ **GenerateCopyFilePaths** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/nf-winsplp-generatecopyfilepaths)関数で、ソースまたは変換先のパスを変更することができます。
     -   作成**SourceDir**と**TargetDir**から返される元とコピー先のパスに基づくキー **GenerateCopyFilePaths**、として、クライアントのスプーラーに返しますEnumPrinterDataEx データ。 (これらのキー実際に存在しないサーバーにします。)
 
 6.  クライアントの Win32spl.dll EnumPrinterData への応答で受信したプリンターのキーをキャッシュし、EnumPrinterDataEx を呼び出します。
@@ -43,13 +43,13 @@ ms.locfileid: "63387267"
     -   提供される、1 つを呼び出す場合、ローカルのポイントと印刷の DLL を読み込み、 **GenerateCopyFilePaths**関数で、ソースまたは変換先のパスを変更することができます。 (入力値は、 **SourceDir**と**TargetDir**キーがサーバーから受信します)。
     -   関連付けられているすべてのファイルをダウンロード、**ファイル**サーバーからキー。
     -   ポイント アンド プリントのファイルがダウンロードされたことを示す、イベント ログに記録します。
-    -   ポイントと印刷の DLL を呼び出す[ **SpoolerCopyFileEvent** ](https://msdn.microsoft.com/library/windows/hardware/ff562681)関数は、DLL を指定すると、COPYFILE を指定する場合\_イベント\_ファイル\_CHANGED イベント。
+    -   ポイントと印刷の DLL を呼び出す[ **SpoolerCopyFileEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/nf-winsplp-spoolercopyfileevent)関数は、DLL を指定すると、COPYFILE を指定する場合\_イベント\_ファイル\_CHANGED イベント。
 
-8.  クライアントのスプーラー呼び出してドライバーの[ **DrvPrinterEvent** ](https://msdn.microsoft.com/library/windows/hardware/ff548564)関数、プリンターを指定する\_イベント\_キャッシュ\_更新イベント。
+8.  クライアントのスプーラー呼び出してドライバーの[ **DrvPrinterEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winddiui/nf-winddiui-drvprinterevent)関数、プリンターを指定する\_イベント\_キャッシュ\_更新イベント。
 
-9.  クライアントのスプーラー呼び出してドライバーの[ **DrvPrinterEvent** ](https://msdn.microsoft.com/library/windows/hardware/ff548564)プリンターを指定する関数を再度、\_イベント\_追加\_接続イベント。
+9.  クライアントのスプーラー呼び出してドライバーの[ **DrvPrinterEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winddiui/nf-winddiui-drvprinterevent)プリンターを指定する関数を再度、\_イベント\_追加\_接続イベント。
 
-10. クライアントのスプーラーを呼び出す場合は、ポイントと印刷 DLL を指定すると、その[ **SpoolerCopyFileEvent** ](https://msdn.microsoft.com/library/windows/hardware/ff562681) 、COPYFILE を指定する、関数\_イベント\_追加\_プリンター\_接続イベント。
+10. クライアントのスプーラーを呼び出す場合は、ポイントと印刷 DLL を指定すると、その[ **SpoolerCopyFileEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/nf-winsplp-spoolercopyfileevent) 、COPYFILE を指定する、関数\_イベント\_追加\_プリンター\_接続イベント。
 
 ### <a name="connection-example"></a>接続の例
 
@@ -61,7 +61,7 @@ NTPRINT、MyClient 呼び出しでユーザーのアプリケーションで HpC
 AddPrinterConnection("\\NTPRINT\HpColor")
 ```
 
-Mscms.dll および呼び出し、サーバーのスプーラを読み込みます[ **GenerateCopyFilePaths** ](https://msdn.microsoft.com/library/windows/hardware/ff549896)次のようにします。
+Mscms.dll および呼び出し、サーバーのスプーラを読み込みます[ **GenerateCopyFilePaths** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/nf-winsplp-generatecopyfilepaths)次のようにします。
 
 ```cpp
 GenerateCopyFilePaths(
@@ -89,7 +89,7 @@ TargetDir: "Color"
 
 MyClient 上のスプーラーは、次の操作を実行します。
 
--   Mscms.dll と呼び出しダウンロード[ **GenerateCopyFilePaths** ](https://msdn.microsoft.com/library/windows/hardware/ff549896)次のようにします。
+-   Mscms.dll と呼び出しダウンロード[ **GenerateCopyFilePaths** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/nf-winsplp-generatecopyfilepaths)次のようにします。
 
     ```cpp
     GenerateCopyFilePaths(
@@ -110,13 +110,13 @@ MyClient 上のスプーラーは、次の操作を実行します。
 
 -   ポイント アンド プリントのファイルがダウンロードされたことを示す、イベント ログに記録します。
 
--   呼び出し、 [ **SpoolerCopyFileEvent** ](https://msdn.microsoft.com/library/windows/hardware/ff562681)関数の指定、COPYFILE Mscms.dll\_イベント\_ファイル\_CHANGED イベント。
+-   呼び出し、 [ **SpoolerCopyFileEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/nf-winsplp-spoolercopyfileevent)関数の指定、COPYFILE Mscms.dll\_イベント\_ファイル\_CHANGED イベント。
 
--   プリンター ドライバーの呼び出す[ **DrvPrinterEvent** ](https://msdn.microsoft.com/library/windows/hardware/ff548564)関数、プリンターを指定する\_イベント\_キャッシュ\_更新イベント。
+-   プリンター ドライバーの呼び出す[ **DrvPrinterEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winddiui/nf-winddiui-drvprinterevent)関数、プリンターを指定する\_イベント\_キャッシュ\_更新イベント。
 
--   プリンター ドライバーの呼び出す[ **DrvPrinterEvent** ](https://msdn.microsoft.com/library/windows/hardware/ff548564)プリンターを指定する関数を再度、\_イベント\_追加\_接続イベント。
+-   プリンター ドライバーの呼び出す[ **DrvPrinterEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winddiui/nf-winddiui-drvprinterevent)プリンターを指定する関数を再度、\_イベント\_追加\_接続イベント。
 
--   呼び出し、 [ **SpoolerCopyFileEvent** ](https://msdn.microsoft.com/library/windows/hardware/ff562681)関数の指定、COPYFILE Mscms.dll\_イベント\_追加\_プリンター\_接続イベント。
+-   呼び出し、 [ **SpoolerCopyFileEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/nf-winsplp-spoolercopyfileevent)関数の指定、COPYFILE Mscms.dll\_イベント\_追加\_プリンター\_接続イベント。
 
  
 

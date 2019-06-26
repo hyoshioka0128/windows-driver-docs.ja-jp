@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: e30550559b132e31f19cc33b6d3dc47432327d90
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 414528ecf78d7055c7310c64fbec00b5f2af5291
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340129"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373502"
 ---
 # <a name="guidclassmodem"></a>GUID_CLASS_MODEM
 
 
-GUID_CLASS_MODEM は古い形式の識別子、[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)モデム デバイス。 Microsoft Windows 2000 以降を使用して、 [ **GUID_DEVINTERFACE_MODEM** ](guid-devinterface-modem.md)このクラスの新しいインスタンスのクラス識別子。
+GUID_CLASS_MODEM は古い形式の識別子、[デバイス インターフェイス クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)モデム デバイス。 Microsoft Windows 2000 以降を使用して、 [ **GUID_DEVINTERFACE_MODEM** ](guid-devinterface-modem.md)このクラスの新しいインスタンスのクラス識別子。
 
 <a name="requirements"></a>必要条件
 ------------

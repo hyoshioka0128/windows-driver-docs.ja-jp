@@ -5,19 +5,19 @@ ms.assetid: C4D04C96-94FA-4E01-839C-A9C5026D7AE5
 ms.date: 08/08/2017
 keywords: -OID_SRIOV_VF_SERIAL_NUMBER ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: f2f4b5fddfc84b6ca1bbd6362afc46481cbba87b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a0f4f753b5475ec1f564b4064be24801f4df5dce
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351262"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373902"
 ---
 # <a name="oidsriovvfserialnumber"></a>OID\_SRIOV\_VF\_シリアル\_数
 
 
 上にある、ドライバーの OID オブジェクト識別子 (OID) のクエリ要求を発行する\_SRIOV\_VF\_シリアル\_PCI Express (PCIe) 仮想機能 (VF) ネットワーク アダプターのシリアル番号を特定する番号。 この仮想ネットワーク アダプターは、VF がアタッチされている HYPER-V 子パーティションのゲスト オペレーティング システムで公開されます。
 
-**InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)構造体にはへのポインターが含まれています、 [ **NDIS\_SRIOV\_VF\_シリアル\_数\_情報**](https://msdn.microsoft.com/library/windows/hardware/hh451685)構造体。
+**InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体にはへのポインターが含まれています、 [ **NDIS\_SRIOV\_VF\_シリアル\_数\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_sriov_vf_serial_number_info)構造体。
 
 <a name="remarks"></a>注釈
 -------
@@ -52,7 +52,7 @@ NDIS が、OID を処理するときに\_SRIOV\_VF\_シリアル\_数要求と�
 </tr>
 <tr class="odd">
 <td><p>NDIS_STATUS_INVALID_LENGTH</p></td>
-<td><p>情報バッファーが小さすぎます。 NDIS セット、<strong>データ。QUERY_INFORMATION します。BytesNeeded</strong>内のメンバー、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff566710" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566710)"> <strong>NDIS_OID_REQUEST</strong> </a>構造体に必要な最小バッファー サイズ。</p></td>
+<td><p>情報バッファーが小さすぎます。 NDIS セット、<strong>データ。QUERY_INFORMATION します。BytesNeeded</strong>内のメンバー、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)"> <strong>NDIS_OID_REQUEST</strong> </a>構造体に必要な最小バッファー サイズ。</p></td>
 </tr>
 <tr class="even">
 <td><p>NDIS_STATUS_FAILURE</p></td>
@@ -87,9 +87,9 @@ NDIS が、OID を処理するときに\_SRIOV\_VF\_シリアル\_数要求と�
 
 
 ****
-[**NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)
+[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
 
-[**NDIS\_SRIOV\_VF\_シリアル\_数\_情報**](https://msdn.microsoft.com/library/windows/hardware/hh451685)
+[**NDIS\_SRIOV\_VF\_シリアル\_数\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_sriov_vf_serial_number_info)
 
 [OID\_NIC\_スイッチ\_ALLOCATE\_VF](oid-nic-switch-allocate-vf.md)
 

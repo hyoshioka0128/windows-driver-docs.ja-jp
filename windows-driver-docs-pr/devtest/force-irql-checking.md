@@ -8,12 +8,12 @@ keywords:
 - スピン ロック WDK Driver Verifier
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 73b01d0459207857b8a573334ad4d79eb7857e9e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 99f565d0983d0abb794c690d315b7a18d21270e4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387257"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372695"
 ---
 # <a name="force-irql-checking"></a>強制 IRQL 検査
 
@@ -25,7 +25,7 @@ ms.locfileid: "63387257"
 
 強制 IRQL 検査を有効にすると、Driver Verifier は、システム メモリの使用方法の大きなプレッシャーを提供します。 検証されているドライバーでは、スピン ロックを要求するたびに呼び出す**KeSynchronizeExecution**、ディスパッチする指示または\_レベル、または以降では、すべてのシステムのページング可能なプール、コード、および (を含む、ドライバーのデータワーキング セットからは、ページング可能なコードとデータ) は切り捨てられます。 ドライバーでは、このメモリのいずれかにアクセスしようとして、Driver Verifier はバグ チェックを発行します。
 
-Windows Vista 以降、このオプションによってページング可能なメモリ内で特定の同期オブジェクトが含まれている場合を検出するために、ドライバーの検証ツールです。 これらの同期オブジェクトは、オペレーティング システムのカーネルが管理者特権での IRQL でアクセスがあるためにページングされることはできません。 Driver Verifier は、ページング可能な検出できる[ **KTIMER**](https://msdn.microsoft.com/library/windows/hardware/ff554250)、PRKMUTEX、PKSPIN\_ロック、PRKEVENT、PKSPIN\_ロック、PRKSEMAPHORE、PERESOURCE、および[ **高速\_ミュー テックス**](https://msdn.microsoft.com/library/windows/hardware/ff545715)構造体。
+Windows Vista 以降、このオプションによってページング可能なメモリ内で特定の同期オブジェクトが含まれている場合を検出するために、ドライバーの検証ツールです。 これらの同期オブジェクトは、オペレーティング システムのカーネルが管理者特権での IRQL でアクセスがあるためにページングされることはできません。 Driver Verifier は、ページング可能な検出できる[ **KTIMER**](https://docs.microsoft.com/windows-hardware/drivers/kernel/eprocess)、PRKMUTEX、PKSPIN\_ロック、PRKEVENT、PKSPIN\_ロック、PRKSEMAPHORE、PERESOURCE、および[ **高速\_ミュー テックス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/eprocess)構造体。
 
 メモリ使用量には、この負荷では、検証のために選択されていないドライバーは直接影響はありません。 検証のために選択されていないドライバーの IRQL が発生したときに、トリミング アクションは発生しません。 ただし、ドライバーは検証されているのでは、IRQL が発生したときにドライバーの検証ツールが検証されないドライバーで使用できるページをトリミングします。 これが検証されないドライバーによってコミットされたエラーは、このオプションがアクティブなときに場合によってはキャッチ可能性があります。
 
@@ -33,11 +33,11 @@ Windows Vista 以降、このオプションによってページング可能な
 
 IRQL 発生させ、スピン ロック、およびへの呼び出しの数**KeSynchronizeExecution**によるドライバーが監視されていることを確認できます。 Driver Verifier がワーキング セットからページング可能なメモリがトリムされる回数も監視できます。 ドライバー検証ツール マネージャーによって、Verifier.exe コマンドライン、またはログ ファイルで、これらの統計情報を表示できます。 参照してください[グローバル カウンターの監視](monitoring-global-counters.md)詳細についてはします。
 
-カーネル デバッガー拡張機能 **! verifier**これらの統計情報を監視するも使用することができます。 ドライバー検証マネージャーのする同様の情報が表示されます。 Windows XP 以降では、 **! verifier 0x8**拡張機能が検証されているドライバーによって行われた最近の IRQL 変更のログに表示されます。 デバッガーの拡張機能については、次を参照してください。 [Windows デバッグ](https://msdn.microsoft.com/library/windows/hardware/ff551063)します。
+カーネル デバッガー拡張機能 **! verifier**これらの統計情報を監視するも使用することができます。 ドライバー検証マネージャーのする同様の情報が表示されます。 Windows XP 以降では、 **! verifier 0x8**拡張機能が検証されているドライバーによって行われた最近の IRQL 変更のログに表示されます。 デバッガーの拡張機能については、次を参照してください。 [Windows デバッグ](https://docs.microsoft.com/windows-hardware/drivers/debugger/index)します。
 
 ### <a name="span-idcallingkeentercriticalregionorkeleavecriticalregionatdispatchlevelorabovespanspan-idcallingkeentercriticalregionorkeleavecriticalregionatdispatchlevelorabovespanspan-idcallingkeentercriticalregionorkeleavecriticalregionatdispatchlevelorabovespancalling-keentercriticalregion-or-keleavecriticalregion-at-dispatchlevel-or-above"></a><span id="Calling_KeEnterCriticalRegion_or_KeLeaveCriticalRegion_at_DISPATCH_LEVEL_or_Above"></span><span id="calling_keentercriticalregion_or_keleavecriticalregion_at_dispatch_level_or_above"></span><span id="CALLING_KEENTERCRITICALREGION_OR_KELEAVECRITICALREGION_AT_DISPATCH_LEVEL_OR_ABOVE"></span>ディスパッチで KeEnterCriticalRegion または KeLeaveCriticalRegion を呼び出す\_レベル以上
 
-[**KeEnterCriticalRegion** ](https://msdn.microsoft.com/library/windows/hardware/ff552021)と[ **KeLeaveCriticalRegion** ](https://msdn.microsoft.com/library/windows/hardware/ff552964)することができる Api 使用配信とドライバーのコードの重要なシーケンスの実行を同期するには通常カーネルの非同期プロシージャは、(Apc) を呼び出します。 **KeEnterCriticalRegion**と**KeLeaveCriticalRegion** IRQL で Api を呼び出すことができません = ディスパッチ\_レベルまたはそれ以降。 呼び出す**KeEnterCriticalRegion**または**KeLeaveCriticalRegion**ディスパッチで\_レベルまたはシステム ハングまたはメモリ破損が発生できる以降。
+[**KeEnterCriticalRegion** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-keentercriticalregion)と[ **KeLeaveCriticalRegion** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-keleavecriticalregion)することができる Api 使用配信とドライバーのコードの重要なシーケンスの実行を同期するには通常カーネルの非同期プロシージャは、(Apc) を呼び出します。 **KeEnterCriticalRegion**と**KeLeaveCriticalRegion** IRQL で Api を呼び出すことができません = ディスパッチ\_レベルまたはそれ以降。 呼び出す**KeEnterCriticalRegion**または**KeLeaveCriticalRegion**ディスパッチで\_レベルまたはシステム ハングまたはメモリ破損が発生できる以降。
 
 Windows 7 以降、Driver Verifier 検出ディスパッチでこれらの Api の呼び出しを\_レベル、または場合強制 IRQL 検査オプションを有効にします。
 

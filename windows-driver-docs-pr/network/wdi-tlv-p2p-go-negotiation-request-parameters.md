@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - WDI_TLV_P2P_GO_NEGOTIATION_REQUEST_PARAMETERS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 43f215cd6191ee1825615c6f111ae229c73d4621
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5b20a790f7dc733425a41cf035f10b10856a4aa3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363642"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374682"
 ---
 # <a name="wditlvp2pgonegotiationrequestparameters"></a>WDI\_TLV\_P2P\_移動\_ネゴシエーション\_要求\_パラメーター
 
@@ -37,13 +37,13 @@ WDI\_TLV\_P2P\_移動\_ネゴシエーション\_要求\_パラメーターは�
 | UINT8                                             | 目的の移動の判断基準にフィールドを指定します。                                                                                                                                   |
 | UINT16                                            | 移動の構成のタイムアウトをミリ秒単位で指定します。                                                                                                                         |
 | UINT16                                            | クライアント構成のタイムアウトをミリ秒単位で指定します。                                                                                                                     |
-| [**WDI\_MAC\_アドレス**](https://msdn.microsoft.com/library/windows/hardware/dn926071) | インターフェイスのアドレスを対象としています。 後で Wi-Fi Direct 接続のローカルの MAC アドレスを指定します。                                                                                |
+| [**WDI\_MAC\_アドレス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ns-dot11wdi-_wdi_mac_address) | インターフェイスのアドレスを対象としています。 後で Wi-Fi Direct 接続のローカルの MAC アドレスを指定します。                                                                                |
 | UINT8                                             | Wi-Fi Direct グループ機能に対応するビットマスクを指定します。 ビットマスクは、Wi-fi P2P technical specification 表 13 グループ機能のビットマップ定義で定義されているものと一致します。 |
 | UINT8                                             | グループ機能ビットマップ上でオペレーティング システムによって設定するビットを指定します。                                                                                            |
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

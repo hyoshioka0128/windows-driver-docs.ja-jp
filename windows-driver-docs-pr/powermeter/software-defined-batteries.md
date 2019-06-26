@@ -6,12 +6,12 @@ keywords:
 - SDB
 ms.date: 11/09/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 527c7f1488a855300c65a14951b9a120a27a760a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 69d0abf944253f55920126b5a48483fe24ee9196
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331863"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376963"
 ---
 # <a name="software-defined-battery"></a>ソフトウェアには、バッテリが定義されています。
 
@@ -129,7 +129,7 @@ SDB 動作を説明するために使用されるこのセクションで説明�
 
 SDB インターフェイスに影響を与えるまたはしないで ACPI/CmBatt メカニズムに依存する、または、独自のミニポートを開発する OEM の要望に影響を与えます。
 
-注:Windows 転送すべて[IOCTL_BATTERY_SET_INFORMATION](https://msdn.microsoft.com/library/windows/desktop/aa372701.aspx)システムに列挙されているすべてのバッテリ デバイスにコマンド。
+注:Windows 転送すべて[IOCTL_BATTERY_SET_INFORMATION](https://docs.microsoft.com/windows/desktop/Power/ioctl-battery-set-information)システムに列挙されているすべてのバッテリ デバイスにコマンド。
 
 ### <a name="hpmi"></a>HPMI
 
@@ -203,7 +203,7 @@ HPMI のことができるようサービスの複数の同時 IOCTL 呼び出�
 
 ### <a name="feature-discovery"></a>機能の検出
 
-[IOCTL_HPMI_QUERY_CAPABILITIES](https://msdn.microsoft.com/library/windows/hardware/mt828475.aspx) HPMI でサポートされる機能を検出するために使用します。 IOCTL_HPMI_QUERY_CAPABILITIES では、必要な IOCTL です。
+[IOCTL_HPMI_QUERY_CAPABILITIES](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hpmi/ni-hpmi-ioctl_hpmi_query_capabilities) HPMI でサポートされる機能を検出するために使用します。 IOCTL_HPMI_QUERY_CAPABILITIES では、必要な IOCTL です。
 
 Windows は発行この IOCL HPMI に 1 回新しい HPMI ドライバーのインスタンスが検出されるとします。 
 
@@ -277,7 +277,7 @@ typedef struct _HPMI_QUERY_CAPABILITIES_RESPONSE {
 
 ### <a name="command-format"></a>コマンドの形式
 
-Windows の問題では、この IOCTL [HPMI_QUERY_CAPABILITIES](https://msdn.microsoft.com/library/windows/hardware/mt828472.aspx)します。
+Windows の問題では、この IOCTL [HPMI_QUERY_CAPABILITIES](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hpmi/ns-hpmi-_hpmi_query_capabilities)します。
 
 バージョンは、HPMI_QUERY_CAPABILITIES_VERSION_1 に設定されます。
 
@@ -286,16 +286,16 @@ Windows の問題では、この IOCTL [HPMI_QUERY_CAPABILITIES](https://msdn.mi
 
 HPMI は、STATUS_SUCCESS コードを返す必要があります。
 
-HPMI の応答で、次の値を設定して[HPMI_QUERY_CAPABILITIES_RESPONSE](https://msdn.microsoft.com/library/windows/hardware/mt828473.aspx)構造体。
+HPMI の応答で、次の値を設定して[HPMI_QUERY_CAPABILITIES_RESPONSE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hpmi/ns-hpmi-_hpmi_query_capabilities_response)構造体。
 
 - HPMI_QUERY_CAPABILITIES_RESPONSE_VERSION_1 にバージョンが設定されています。
-- RequestService HPMI ドライバーを受け取るように HPMI_REQUEST_SERVICE_BATTERY_UTILIZATION_HINTS に設定されている[IOCTL_HPMI_BATTERY_UTILIZATION_HINT](https://msdn.microsoft.com/library/windows/hardware/mt828474.aspx)します。
+- RequestService HPMI ドライバーを受け取るように HPMI_REQUEST_SERVICE_BATTERY_UTILIZATION_HINTS に設定されている[IOCTL_HPMI_BATTERY_UTILIZATION_HINT](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hpmi/ni-hpmi-ioctl_hpmi_battery_utilization_hint)します。
 - SdbCapabilities は HPMI_CAPABILITY_SDB_OEM_SIMPLE_AGE_BALANCING のバッテリ寿命の分散のサポートを示すために設定します。
 
 
 #### <a name="battery-utilization"></a>バッテリの使用率
 
-Windows 問題[IOCTL_HPMI_BATTERY_UTILIZATION_HINT](https://msdn.microsoft.com/library/windows/hardware/mt828474.aspx) HPMI に更新されたバッテリ最も使用率のヒントを提供します。 IOCTL_HPMI_BATTERY_UTILIZATION_HINT では、必要な IOCTL です。
+Windows 問題[IOCTL_HPMI_BATTERY_UTILIZATION_HINT](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hpmi/ni-hpmi-ioctl_hpmi_battery_utilization_hint) HPMI に更新されたバッテリ最も使用率のヒントを提供します。 IOCTL_HPMI_BATTERY_UTILIZATION_HINT では、必要な IOCTL です。
 
 」の説明に従って、HPMI は PreserveNonHotSwappableBatteries ヒントを利用できる[適応 SDB アルゴリズムを使用してホット スワップ可能なバッテリ](#ADAPTING-SDB)内部のバッテリを節約するためにします。
 
@@ -378,7 +378,7 @@ typedef struct _HPMI_BATTERY_UTILIZATION_HINT {
 
 Windows では、この IOCTL HPMI_BATTERY_UTILIZATION_HINT を発行します。 設定されているバージョン*HPMI_BATTERY_UTILIZATION_HINT_VERSION_1*します。
 
-[HPMI_BATTERY_UTILIZATION_HINT](https://msdn.microsoft.com/library/windows/hardware/mt828469.aspx)
+[HPMI_BATTERY_UTILIZATION_HINT](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hpmi/ns-hpmi-_hpmi_battery_utilization_hint)
 
 PreserveNonHotSwappableBatteries は、次の値のいずれかに設定されます。
 
@@ -395,7 +395,7 @@ HPMI は、STATUS_SUCCESS コードを返す必要があります。
 
 ## <a name="sample-interface-contract"></a>サンプル インターフェイス コントラクト
 
-参照してください[HMPI.h](https://msdn.microsoft.com/library/windows/hardware/mt828470.aspx)完全 (サンプル) API コントラクト インターフェイスの定義をここで説明をします。
+参照してください[HMPI.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hpmi/index)完全 (サンプル) API コントラクト インターフェイスの定義をここで説明をします。
 
 
 

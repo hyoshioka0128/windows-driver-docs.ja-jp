@@ -4,12 +4,12 @@ description: 次に一般的な質問、シナリオ、および問題ドライ�
 ms.assetid: 7189EB3B-E071-4145-8308-EFA6D4E89D4B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 172d5d753747d46a60c1b563542d588c1eb31021
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f1bcf3c8a5fb1b07c9f6f01a9e0b826c2d1eb563
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328185"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67391552"
 ---
 # <a name="transport-bus-driver-faq"></a>トランスポート バス ドライバーについてよく寄せられる質問
 
@@ -19,7 +19,7 @@ ms.locfileid: "63328185"
 ## <a name="span-idmyserialbusdriverencounteredsomeerrorwhatdoesitmeanspanspan-idmyserialbusdriverencounteredsomeerrorwhatdoesitmeanspanmy-serial-bus-driver-encountered-some-error-what-does-it-mean"></a><span id="my_serial_bus_driver_encountered_some_error._what_does_it_mean_"></span><span id="MY_SERIAL_BUS_DRIVER_ENCOUNTERED_SOME_ERROR._WHAT_DOES_IT_MEAN_"></span>シリアル バス ドライバーには、いくつかのエラーが発生しました。 それはどういう意味ですか。
 
 
-10 ~ 49 のコード:[デバイス マネージャーによって生成されたエラー コードの説明](http://support.microsoft.com/kb/310123)します。
+10 ~ 49 のコード:[デバイス マネージャーによって生成されたエラー コードの説明](https://support.microsoft.com/help/310123/error-codes-in-device-manager-in-windows)します。
 
 コード 51:シリアル バス ドライバーに依存するコント ローラー ドライバー (ACPI テーブルで定義) された場合は、システムは、シリアル バス ドライバーを読み込むなりますがいない取得開始依存に関連するドライバーのすべてが正常に開始されるまでです。 コント ローラー ドライバーが存在しないまたは、読み込まれていませんが正常に 51 にコードのエラーがトリガーされた場合。
 
@@ -27,7 +27,7 @@ ms.locfileid: "63328185"
 
 ドライバーの署名は、これらのトピックで詳しく説明します。
 
--   [ドライバーの署名](https://msdn.microsoft.com/library/windows/hardware/ff544865)
+-   [ドライバーの署名](https://docs.microsoft.com/windows-hardware/drivers/install/driver-signing)
 -   [Windows のドライバー署名の要件](https://msdn.microsoft.com/windows/hardware/gg487317)
 
 ## <a name="span-idwhyismyserialbusdrivernotgettinganyioctlsfromthebluetoothcorestackspanspan-idwhyismyserialbusdrivernotgettinganyioctlsfromthebluetoothcorestackspanspan-idwhyismyserialbusdrivernotgettinganyioctlsfromthebluetoothcorestackspanwhy-is-my-serial-bus-driver-not-getting-any-ioctls-from-the-bluetooth-core-stack"></a><span id="Why_is_my_serial_bus_driver_not_getting_any_IOCTLs_from_the_Bluetooth_core_stack_"></span><span id="why_is_my_serial_bus_driver_not_getting_any_ioctls_from_the_bluetooth_core_stack_"></span><span id="WHY_IS_MY_SERIAL_BUS_DRIVER_NOT_GETTING_ANY_IOCTLS_FROM_THE_BLUETOOTH_CORE_STACK_"></span>理由には、シリアル バス ドライバーが供給されていない任意の Ioctl Bluetooth core スタックからでしょうか。

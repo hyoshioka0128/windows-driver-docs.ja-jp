@@ -4,12 +4,12 @@ description: インスタンス ID は、コンピューターで同じ種類の
 ms.assetid: 093063a6-1855-4e36-9465-1eedaa3cd0f9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 359268d80df8d36f8cb0db9bf07abbde8e44d0f5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 353527552205fa383d1b13a35975acad465416a7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353817"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370928"
 ---
 # <a name="instance-id"></a>インスタンス ID
 
@@ -21,7 +21,7 @@ ms.locfileid: "63353817"
 
 NULL ターミネータを除く、インスタンス ID の文字数は、MAX_DEVICE_ID_LEN 未満である必要があります。 インスタンス ID が連結された場合にさらに、[デバイス ID](device-ids.md)デバイス ID とインスタンス ID の長さをさらに、デバイス インスタンス ID の可能な最大長で制約デバイス インスタンス ID を作成するには
 
-**UniqueID**のメンバー、 [ **DEVICE_CAPABILITIES** ](https://msdn.microsoft.com/library/windows/hardware/ff543095)デバイスかどうかをバスが指定したインスタンス ID を一意なシステム全体で次のようの構造体します。
+**UniqueID**のメンバー、 [ **DEVICE_CAPABILITIES** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_capabilities)デバイスかどうかをバスが指定したインスタンス ID を一意なシステム全体で次のようの構造体します。
 
 -   場合**UniqueID**は**FALSE**デバイスのバスが提供するインスタンス ID は、デバイスのバスにのみ一意です。 プラグ アンド プレイ (PnP) マネージャーは、バスが提供するインスタンス ID を変更し、対応するデバイスの ID をシステム内で一意であるデバイス インスタンス ID を作成すると、それを結合します。
 
@@ -29,7 +29,7 @@ NULL ターミネータを除く、インスタンス ID の文字数は、MAX_D
 
 インスタンス ID は、システムの再起動の間で永続的です。
 
-デバイスのバスが提供するインスタンス ID を取得するには、使用、 [ **IRP_MN_QUERY_ID** ](https://msdn.microsoft.com/library/windows/hardware/ff551679)を要求し、設定、 **Parameters.QueryId.IdType**メンバー **BusQueryInstanceID**します。
+デバイスのバスが提供するインスタンス ID を取得するには、使用、 [ **IRP_MN_QUERY_ID** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-id)を要求し、設定、 **Parameters.QueryId.IdType**メンバー **BusQueryInstanceID**します。
 
  
 

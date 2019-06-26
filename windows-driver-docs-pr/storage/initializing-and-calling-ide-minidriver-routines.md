@@ -10,12 +10,12 @@ keywords:
 - IDE コント ローラーのミニドライバーの初期化
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cce0d2261f3eb302904f5ead51ed0217bf97a411
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8b1dc53fdf3def48510d4e96d2eaaf6ec4d32a99
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359108"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370451"
 ---
 # <a name="initializing-and-calling-ide-minidriver-routines"></a>IDE ミニドライバー ルーチンの初期化と呼び出し
 
@@ -27,9 +27,9 @@ IDE コント ローラーのすべてのミニドライバーは、一連のハ
 
 ![ミニドライバーの日常的な初期化のためのプログラム フロー](images/idecallbacks.png)
 
-1.  ミニドライバーの IDE コント ローラー ドライバー、PnP マネージャー ロードを呼び出してその[ **DriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff544113)ルーチン、コント ローラーのドライバーのドライバー オブジェクトへのポインターを渡します。
+1.  ミニドライバーの IDE コント ローラー ドライバー、PnP マネージャー ロードを呼び出してその[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)ルーチン、コント ローラーのドライバーのドライバー オブジェクトへのポインターを渡します。
 
-2.  ミニドライバーの**DriverEntry**呼び出し、 [ **PciIdeXInitialize** ](https://msdn.microsoft.com/library/windows/hardware/ff563788)ライブラリ ルーチン、ミニドライバーにポインターを渡す**GetControllerProperties**ルーチン。
+2.  ミニドライバーの**DriverEntry**呼び出し、 [ **PciIdeXInitialize** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff563788(v=vs.85))ライブラリ ルーチン、ミニドライバーにポインターを渡す**GetControllerProperties**ルーチン。
 
 3.  **PciIdeXInitialize**へのポインターを格納**GetControllerProperties**ドライバー オブジェクト。
 
@@ -37,7 +37,7 @@ IDE コント ローラーのすべてのミニドライバーは、一連のハ
 
 5.  コント ローラー ドライバーへのポインターを取得する**GetControllerProperties**ドライバー オブジェクトに格納されています。
 
-6.  コント ローラーのドライバー呼び出し**GetControllerProperties**へのポインターを渡して、 [ **IDE\_コント ローラー\_プロパティ**](https://msdn.microsoft.com/library/windows/hardware/ff559076)構造体。
+6.  コント ローラーのドライバー呼び出し**GetControllerProperties**へのポインターを渡して、 [ **IDE\_コント ローラー\_プロパティ**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff559076(v=vs.85))構造体。
 
 7.  **GetControllerProperties**ミニドライバー ルーチンの標準的な一連のポインターを IDE に読み込み\_コント ローラー\_プロパティ。
 
@@ -57,17 +57,17 @@ IDE コント ローラーのすべてのミニドライバーは、一連のハ
 
 このルーチンは、DMA を使用して I/O を実行できるかどうかを判断します。
 
-[**HwIdeXChannelEnabled**](https://msdn.microsoft.com/library/windows/hardware/ff557252)
+[**HwIdeXChannelEnabled**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557252(v=vs.85))
 
-[**HwIdeXGetControllerProperties**](https://msdn.microsoft.com/library/windows/hardware/ff557254)
+[**HwIdeXGetControllerProperties**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557254(v=vs.85))
 
-[**HwIdeXSyncAccessRequired**](https://msdn.microsoft.com/library/windows/hardware/ff557256)
+[**HwIdeXSyncAccessRequired**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557256(v=vs.85))
 
-[**HwIdeXTransferModeSelect**](https://msdn.microsoft.com/library/windows/hardware/ff557260)
+[**HwIdeXTransferModeSelect**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557260(v=vs.85))
 
-[**HwIdeXUdmaModesSupported**](https://msdn.microsoft.com/library/windows/hardware/ff557264)
+[**HwIdeXUdmaModesSupported**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557264(v=vs.85))
 
-[**HwIdeXUseDma**](https://msdn.microsoft.com/library/windows/hardware/ff557266)
+[**HwIdeXUseDma**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557266(v=vs.85))
 
  
 

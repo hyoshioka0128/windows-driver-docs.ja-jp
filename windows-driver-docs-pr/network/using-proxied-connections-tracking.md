@@ -4,12 +4,12 @@ description: プロキシ接続追跡の使用
 ms.assetid: 20A737D7-043D-4D05-A15D-85595E48521B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cb23ce474690030042163b09c570e203d6630ea6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 44e8ffbd0db09d54b0de82578b20f84718c14291
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379180"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371774"
 ---
 # <a name="using-proxied-connections-tracking"></a>プロキシ接続追跡の使用
 
@@ -32,7 +32,7 @@ ms.locfileid: "63379180"
 
 ### <a name="redirecting-connections"></a>接続をリダイレクトします。
 
-コールアウト ドライバーは呼び出し、 [ **FwpsRedirectHandleCreate0** ](https://msdn.microsoft.com/library/windows/hardware/hh439681) TCP 接続をリダイレクトするために使用できるハンドルを作成する関数。
+コールアウト ドライバーは呼び出し、 [ **FwpsRedirectHandleCreate0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsredirecthandlecreate0) TCP 接続をリダイレクトするために使用できるハンドルを作成する関数。
 
 ここでは、次のトピックについて説明します。
 
@@ -42,7 +42,7 @@ ms.locfileid: "63379180"
 
 ### <a name="using-a-redirection-handle"></a>リダイレクトのハンドルを使用してください。
 
-リダイレクト コールアウトは、ローカルのプロセスに接続をリダイレクトできますエール接続前に、FwpsRedirectHandleCreate0 関数を使用したリダイレクト ハンドルを取得し、ハンドルを配置する必要があります、 [ **FWPS\_CONNECT\_REQUEST0** ](https://msdn.microsoft.com/library/windows/hardware/ff551231)構造体。 引き出し線は、ALE connect レイヤーをリダイレクトするための classifyFn で構造を変更します。
+リダイレクト コールアウトは、ローカルのプロセスに接続をリダイレクトできますエール接続前に、FwpsRedirectHandleCreate0 関数を使用したリダイレクト ハンドルを取得し、ハンドルを配置する必要があります、 [ **FWPS\_CONNECT\_REQUEST0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/ns-fwpsk-_fwps_connect_request0)構造体。 引き出し線は、ALE connect レイヤーをリダイレクトするための classifyFn で構造を変更します。
 
 FWPS\_CONNECT\_REQUEST0 構造体にはリダイレクトは、次のメンバーが含まれています。
 
@@ -53,18 +53,18 @@ FWPS\_CONNECT\_REQUEST0 構造体にはリダイレクトは、次のメンバ�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">用語</th>
+<th align="left">項目</th>
 <th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>localRedirectHandle</strong></p></td>
-<td align="left"><p>コールアウト ドライバーを呼び出すことによって作成されるリダイレクト ハンドル、 <a href="https://msdn.microsoft.com/library/windows/hardware/hh439681" data-raw-source="[&lt;strong&gt;FwpsRedirectHandleCreate0&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/hh439681)"> <strong>FwpsRedirectHandleCreate0</strong> </a>関数。</p></td>
+<td align="left"><p>コールアウト ドライバーを呼び出すことによって作成されるリダイレクト ハンドル、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsredirecthandlecreate0" data-raw-source="[&lt;strong&gt;FwpsRedirectHandleCreate0&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsredirecthandlecreate0)"> <strong>FwpsRedirectHandleCreate0</strong> </a>関数。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>localRedirectContext</strong></p></td>
-<td align="left"><p>コールアウト ドライバーを呼び出すことによって割り当てられているコールアウト ドライバーのコンテキスト領域、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff544520" data-raw-source="[&lt;strong&gt;ExAllocatePoolWithTag&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff544520)"> <strong>exallocatepoolwithtag に</strong></a>関数。</p></td>
+<td align="left"><p>コールアウト ドライバーを呼び出すことによって割り当てられているコールアウト ドライバーのコンテキスト領域、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtag" data-raw-source="[&lt;strong&gt;ExAllocatePoolWithTag&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtag)"> <strong>exallocatepoolwithtag に</strong></a>関数。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>localRedirectContextSize</strong></p></td>
@@ -75,11 +75,11 @@ FWPS\_CONNECT\_REQUEST0 構造体にはリダイレクトは、次のメンバ�
 
  
 
-コールアウト ドライバーが完了したら、リダイレクトのハンドルを使用して、呼び出す必要があります、 [ **FwpsRedirectHandleDestroy0** ](https://msdn.microsoft.com/library/windows/hardware/hh439684)ハンドルを破棄する関数。
+コールアウト ドライバーが完了したら、リダイレクトのハンドルを使用して、呼び出す必要があります、 [ **FwpsRedirectHandleDestroy0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsredirecthandledestroy0)ハンドルを破棄する関数。
 
 ### <a name="querying-the-redirect-state"></a>リダイレクト状態のクエリを実行します。
 
-コールアウト ドライバーは呼び出し、 [ **FwpsQueryConnectionRedirectState0** ](https://msdn.microsoft.com/library/windows/hardware/hh439677)接続のリダイレクトの状態を取得します。 [ **FWPS\_接続\_リダイレクト\_状態**](https://msdn.microsoft.com/library/windows/hardware/hh439704)列挙型への呼び出しの戻り値の型は、 **FwpsQueryConnectionRedirectState0**関数。
+コールアウト ドライバーは呼び出し、 [ **FwpsQueryConnectionRedirectState0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsqueryconnectionredirectstate0)接続のリダイレクトの状態を取得します。 [ **FWPS\_接続\_リダイレクト\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/ne-fwpsk-fwps_connection_redirect_state_)列挙型への呼び出しの戻り値の型は、 **FwpsQueryConnectionRedirectState0**関数。
 
 リダイレクト状態が FWPS 場合\_接続\_いない\_REDIRECTED、ALE\_CONNECT\_リダイレクト吹き出しに進んでプロキシ接続します。
 

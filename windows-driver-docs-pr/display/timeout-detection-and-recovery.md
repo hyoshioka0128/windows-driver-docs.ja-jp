@@ -6,19 +6,19 @@ keywords:
 - (タイムアウト検出と回復) TDR WDK の表示、説明
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1403613d73e985b5aef68d624cb38f203f593f1f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 42468138a6fdef65f9ee4ea9ef49a761754a99c0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389793"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375779"
 ---
 # <a name="timeout-detection-and-recovery-tdr"></a>タイムアウト検出と復旧 (TDR)
 
 
 グラフィックスの安定性の最も一般的な問題の 1 つには、コンピューターが「ハング」または実際には、エンドユーザーのコマンドまたは操作を処理している間は、完全に「固定」が表示されるときに発生します。 エンドユーザーは、通常数秒を待機し、コンピューターを再起動することにしました。 コンピューターの固定された外観は、GPU がゲーム プレイ中に処理を要するのグラフィカルな操作を通常処理でビジー状態のために通常発生します。 GPU がディスプレイの画面を更新できませんし、固定された、コンピューターが表示されます。
 
-Windows Vista 以降では、オペレーティング システムを完全に「停止」コンピューターが表示される状況を検出しようとします。 オペレーティング システムは、動的にデスクトップが再び応答するために固定された状況から回復を試みます。 このプロセスの検出と回復と呼ばれる*タイムアウト検出と回復*(TDR)。 TDR プロセスで、オペレーティング システムの GPU のスケジューラを呼び出すディスプレイ ミニポート ドライバーの[ *DxgkDdiResetFromTimeout* ](https://msdn.microsoft.com/library/windows/hardware/ff559815)ドライバーを再初期化し、GPU をリセットする関数。 そのため、エンドユーザーでは、エクスペリエンスが大幅に改善オペレーティング システムを再起動する必要はありません。
+Windows Vista 以降では、オペレーティング システムを完全に「停止」コンピューターが表示される状況を検出しようとします。 オペレーティング システムは、動的にデスクトップが再び応答するために固定された状況から回復を試みます。 このプロセスの検出と回復と呼ばれる*タイムアウト検出と回復*(TDR)。 TDR プロセスで、オペレーティング システムの GPU のスケジューラを呼び出すディスプレイ ミニポート ドライバーの[ *DxgkDdiResetFromTimeout* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_resetfromtimeout)ドライバーを再初期化し、GPU をリセットする関数。 そのため、エンドユーザーでは、エクスペリエンスが大幅に改善オペレーティング システムを再起動する必要はありません。
 
 ハング検出からのみ表示される成果物は、回復には、画面のちらつきです。 この画面では、オペレーティング システムは、これにより、画面の再描画されるグラフィックス スタックの一部をリセットしたときに結果がちらつきます。 Windows 表示 Driver Model (WDDM) 1.2 以降がディスプレイのミニポート ドライバーに準拠している場合、ちらつきがなくなります (を参照してください[WDDM 1.2 以降のシームレスな状態遷移を提供する](seamless-state-transitions-in-wddm-1-2-and-later.md))。 一部のレガシ Microsoft DirectX アプリケーション (たとえば、9.0 より前の DirectX のバージョンに準拠している DirectX アプリケーション) は、この回復の最後に黒の画面に表示可能性があります。 エンドユーザーは、これらのアプリケーションを再起動する必要があります。
 
@@ -34,7 +34,7 @@ DirectX グラフィックスのカーネル サブシステム (Dxgkrnl.sys) �
 ## <a name="span-idpreparationforrecoveryspanspan-idpreparationforrecoveryspanspan-idpreparationforrecoveryspanpreparation-for-recovery"></a><span id="Preparation_for_recovery"></span><span id="preparation_for_recovery"></span><span id="PREPARATION_FOR_RECOVERY"></span>復旧の準備
 
 
-オペレーティング システムの GPU スケジューラ呼び出しディスプレイ ミニポート ドライバーの[ *DxgkDdiResetFromTimeout* ](https://msdn.microsoft.com/library/windows/hardware/ff559815)ドライバー、オペレーティング システムにタイムアウトが検出されたことを通知する関数。 ドライバーはそれ自体を再初期化する必要がありますし、GPU をリセットします。 さらに、ドライバーはメモリへのアクセスを停止する必要があり、ハードウェアにはアクセスする必要があります。 オペレーティング システムとドライバー ハードウェアと事後の診断に役立つ可能性があるその他の状態情報を収集します。
+オペレーティング システムの GPU スケジューラ呼び出しディスプレイ ミニポート ドライバーの[ *DxgkDdiResetFromTimeout* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_resetfromtimeout)ドライバー、オペレーティング システムにタイムアウトが検出されたことを通知する関数。 ドライバーはそれ自体を再初期化する必要がありますし、GPU をリセットします。 さらに、ドライバーはメモリへのアクセスを停止する必要があり、ハードウェアにはアクセスする必要があります。 オペレーティング システムとドライバー ハードウェアと事後の診断に役立つ可能性があるその他の状態情報を収集します。
 
 ## <a name="span-iddesktoprecoveryspanspan-iddesktoprecoveryspanspan-iddesktoprecoveryspandesktop-recovery"></a><span id="Desktop_recovery"></span><span id="desktop_recovery"></span><span id="DESKTOP_RECOVERY"></span>デスクトップの修復
 

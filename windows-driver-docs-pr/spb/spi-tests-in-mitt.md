@@ -4,12 +4,12 @@ description: SPI は、ミット ソフトウェア パッケージに含まれ�
 ms.assetid: 8240841C-FFA0-48EC-AB7E-4E15E262C23D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3ce4c3af38584d5bde545b7a295564cf1041e5ac
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d8aa57f7d98267fede6aa847a28ed84410bb7ff8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368200"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376902"
 ---
 # <a name="spi-tests-in-mitt"></a>MITT の SPI テスト
 
@@ -27,9 +27,9 @@ ms.locfileid: "63368200"
 ## <a name="before-you-begin"></a>開始する前にしています.
 
 
--   ミット ボードおよび SPI または UART アダプター ボードを取得します。 参照してください[ミットを使用するためのハードウェアを購入](https://msdn.microsoft.com/library/windows/hardware/dn919811)します。
--   [ミット ソフトウェア パッケージをダウンロード](https://msdn.microsoft.com/library/windows/hardware/dn919810)します。 テスト対象のシステムにインストールします。
--   ミット ボード ミット ファームウェアをインストールします。 参照してください[ミット概要](https://msdn.microsoft.com/library/windows/hardware/dn919779)します。
+-   ミット ボードおよび SPI または UART アダプター ボードを取得します。 参照してください[ミットを使用するためのハードウェアを購入](https://docs.microsoft.com/windows-hardware/drivers/spb/multi-interface-test-tool--mitt--)します。
+-   [ミット ソフトウェア パッケージをダウンロード](https://docs.microsoft.com/previous-versions/dn919810(v=vs.85))します。 テスト対象のシステムにインストールします。
+-   ミット ボード ミット ファームウェアをインストールします。 参照してください[ミット概要](https://docs.microsoft.com/windows-hardware/drivers/spb/get-started-with-mitt---)します。
 
 ## <a name="hardware-setup"></a>ハードウェアのセットアップ
 
@@ -67,7 +67,7 @@ I²C コント ローラーがテスト対象システムで次の手順に従�
 
 
 
-2.  ACPI システムを変更し、この ASL テーブルが含まれます。 使用することができます、 [Microsoft ASL コンパイラ](https://msdn.microsoft.com/library/windows/hardware/dn551195)します。
+2.  ACPI システムを変更し、この ASL テーブルが含まれます。 使用することができます、 [Microsoft ASL コンパイラ](https://docs.microsoft.com/windows-hardware/drivers/bringup/microsoft-asl-compiler)します。
 
     **注**変更"\\\\\_SB\_します。SPI1"を次に示すようにテストする SPI コント ローラーの ACPI エントリ名にします。 SPI 頻度 1 Mhz、5 Mhz、および 20 Mhz で 3 つのテスト ターゲットを定義します。
 
@@ -125,7 +125,7 @@ Device(TP3) {
 
 SPI テストを実行する準備が整いました。 すべてのテストを一度に 1 つのテストを実行したり、手動でテストを実行できます。
 
-- 使用して 1 つのテストを実行、 **/name: *&lt;テスト名&gt;*** オプション。 このコマンドは、BasicIORead テストを実行します。
+- 使用して 1 つのテストを実行、 **/name: *&lt;テスト名&gt;** * オプション。 このコマンドは、BasicIORead テストを実行します。
 - このコマンドを使用して、すべてのテストを実行します。
 - ミット ソフトウェア パッケージに含まれている SPBCmd.exe ツールを使用して手動でテストを実行します。
 

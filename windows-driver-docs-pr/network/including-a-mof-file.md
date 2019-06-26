@@ -11,12 +11,12 @@ keywords:
 - MOF ファイルの WDK ネットワーク
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cc8aee4f71cba538becde5971a8e0448d1e71bb6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5b9b6c610847fd0378f736b22eae4d6e3aa560b6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362928"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374849"
 ---
 # <a name="including-a-mof-file"></a>MOF ファイルを含める
 
@@ -26,7 +26,7 @@ ms.locfileid: "63362928"
 
 管理オブジェクト フォーマット (MOF) ファイルにコンパイルされ、ミニポート ドライバーのリソースに含める必要があります、ミニポート ドライバーのカスタム Oid にマップするカスタム Guid のすべての説明を含める必要があります (\*.rc) ファイル。
 
-MOF のソース ファイルでは、型 MOFDATA の必要があり、.mof の拡張機能があります。 バイナリ ファイルに貼り付けた MOF のソース ファイルをコンパイルする必要があります[Mofcomp.exe](https://msdn.microsoft.com/library/windows/hardware/ff542012)でこのファイルを確認する必要がありますと[Wmimofck.exe](https://msdn.microsoft.com/library/windows/hardware/ff565588)します。
+MOF のソース ファイルでは、型 MOFDATA の必要があり、.mof の拡張機能があります。 バイナリ ファイルに貼り付けた MOF のソース ファイルをコンパイルする必要があります[Mofcomp.exe](https://docs.microsoft.com/windows-hardware/drivers/kernel/compiling-a-driver-s-mof-file)でこのファイルを確認する必要がありますと[Wmimofck.exe](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-wmimofck-exe)します。
 
 ミニポート ドライバーのリソース ファイルで、次の行を挿入する必要があります (\*.rc) MOF バイナリを含める。
 

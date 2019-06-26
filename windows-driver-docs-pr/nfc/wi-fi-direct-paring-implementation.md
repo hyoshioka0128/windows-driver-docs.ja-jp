@@ -10,12 +10,12 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b0f1a2ff29bd16f0eba6a57b54be41173c750db8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 13d66c54e6ae191326c901daa1bb99d4969929d1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373576"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380716"
 ---
 # <a name="wi-fi-direct-pairing-implementation"></a>Wi-Fi Direct ペアリングの実装
 
@@ -26,7 +26,7 @@ ms.locfileid: "63373576"
 
  
 
-**注**  Wi-fi alliance の Wi-fi P2P 通信事業者の構成レコードを Wi-Fi Direct の静的な接続に移行する Windows 10 が NFC にもサポートしています。 詳細については、次を参照してください。 [Wi-fi Alliance](http://www.wi-fi.org)します。
+**注**  Wi-fi alliance の Wi-fi P2P 通信事業者の構成レコードを Wi-Fi Direct の静的な接続に移行する Windows 10 が NFC にもサポートしています。 詳細については、次を参照してください。 [Wi-fi Alliance](https://www.wi-fi.org/)します。
 
  
 
@@ -857,5 +857,5 @@ Wi-Fi Direct デバイス、Wi-fi オプションがオフにする場合、イ�
 
  
 ## <a name="related-topics"></a>関連トピック
- [NFC デバイス ドライバー インターフェイス (DDI) リファレンス](https://msdn.microsoft.com/library/windows/hardware/mt715815)  
+ [NFC デバイス ドライバー インターフェイス (DDI) リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
  

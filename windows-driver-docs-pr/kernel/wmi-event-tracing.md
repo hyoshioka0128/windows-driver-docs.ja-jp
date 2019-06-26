@@ -10,12 +10,12 @@ keywords:
 - WDM ドライバー WDK WMI
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fdf10164a3358c49d7d9f4e0675407afd5770cbc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f936552dc2d07c3728b4f7aaa2dbdfa7f09a0d36
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63393011"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386385"
 ---
 # <a name="wmi-event-tracing"></a>WMI イベント トレース
 
@@ -31,15 +31,15 @@ ms.locfileid: "63393011"
 
 既存の WMI インフラストラクチャには、カーネル モード ドライバーが情報を記録するプロセスを統合します。 トレース イベントをログにドライバーは、次を行います。
 
-1.  呼び出すことによって、WMI プロバイダとして登録[ **IoWMIRegistrationControl**](https://msdn.microsoft.com/library/windows/hardware/ff550480)します。
+1.  呼び出すことによって、WMI プロバイダとして登録[ **IoWMIRegistrationControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iowmiregistrationcontrol)します。
 
-2.  WMIREG を設定してイベントをトレース可能としてマークを付ける\_フラグ\_追跡\_の GUID、**フラグ**のメンバー、 [ **WMIREGGUID** ](https://msdn.microsoft.com/library/windows/hardware/ff565827)ドライバーは、wmi イベントを登録するときに渡される構造体。
+2.  WMIREG を設定してイベントをトレース可能としてマークを付ける\_フラグ\_追跡\_の GUID、**フラグ**のメンバー、 [ **WMIREGGUID** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmistr/ns-wmistr-wmiregguidw)ドライバーは、wmi イベントを登録するときに渡される構造体。
 
 3.  WMIREG を設定して、全体的な有効化/無効化のトレース イベントの一連のコントロールのイベントとして 1 つのイベントを指定\_フラグ\_トレース\_コントロール\_の GUID、**フラグ**のメンバー、**WMIREGGUID**ドライバーは、wmi イベントを登録するときに渡される構造体。
 
-4.  GUID がトレース コントロールの GUID と一致するイベントを有効にする WMI からの要求を受信すると、ドライバーは、ロガーへのハンドルを格納する必要があります。 値は、イベントの書き込み時に必要になります。 このハンドルを使用する方法については、手順 6 を参照してください。 ロガーのハンドル値が含まれている、 **HistoricalContext**のメンバー、 [**れた WNODE\_ヘッダー** ](https://msdn.microsoft.com/library/windows/hardware/ff566375)パラメーターの一部である WMI バッファーの一部有効にするイベントの要求。
+4.  GUID がトレース コントロールの GUID と一致するイベントを有効にする WMI からの要求を受信すると、ドライバーは、ロガーへのハンドルを格納する必要があります。 値は、イベントの書き込み時に必要になります。 このハンドルを使用する方法については、手順 6 を参照してください。 ロガーのハンドル値が含まれている、 **HistoricalContext**のメンバー、 [**れた WNODE\_ヘッダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmistr/ns-wmistr-_wnode_header)パラメーターの一部である WMI バッファーの一部有効にするイベントの要求。
 
-5.  トレース イベントが WMI イベントのコンシューマーに送信されますまたは WMI イベント ロガーをのみを対象としているかどうかを決定します。 場所を決定するこれは、メモリ、 [**イベント\_トレース\_ヘッダー** ](https://msdn.microsoft.com/library/windows/hardware/ff544329)構造体に由来する必要があります。 最終的に、このメモリに渡される[ **IoWMIWriteEvent**](https://msdn.microsoft.com/library/windows/hardware/ff550520)します。
+5.  トレース イベントが WMI イベントのコンシューマーに送信されますまたは WMI イベント ロガーをのみを対象としているかどうかを決定します。 場所を決定するこれは、メモリ、 [**イベント\_トレース\_ヘッダー** ](https://msdn.microsoft.com/library/windows/hardware/ff544329)構造体に由来する必要があります。 最終的に、このメモリに渡される[ **IoWMIWriteEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iowmiwriteevent)します。
 
     イベントがログ イベントのみの場合、メモリは WMI では削除されません。 この場合、ドライバーは、バッファーにスタックに渡す必要がありますか、この目的のため、割り当てられたバッファーを再する必要があります。 パフォーマンス上の理由から、ドライバーが不要な割り当てやメモリを解放する呼び出しを最小限に抑える必要があります。 この勧告に準拠するためにエラーがログ ファイルに含まれるタイミング情報の整合性が低下します。
 
@@ -59,7 +59,7 @@ ms.locfileid: "63393011"
 
     最後にキャスト、**イベント\_トレース\_ヘッダー**を**れた WNODE\_ヘッダー**設定と、 **HistoricalContext** の値**れた Wnode**で保存されているロガーのハンドルを手順 4 上。
 
-7.  呼び出す[ **IoWMIWriteEvent** ](https://msdn.microsoft.com/library/windows/hardware/ff550520)へのポインターが、**イベント\_トレース\_ヘッダー**構造体。
+7.  呼び出す[ **IoWMIWriteEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iowmiwriteevent)へのポインターが、**イベント\_トレース\_ヘッダー**構造体。
 
 ドライバーはドライバーを使用したイベント ログを無効にする通知を受信するまでは、コントロールの GUID に関連付けられているトレース イベントのログ記録を続行する必要があります、 **IRP\_MN\_を無効にする\_イベント**要求。
 

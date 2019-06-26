@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 2816980d0a469f18048dda8769254b3be7a4c049
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4bfc07403d03e979fcd243a70bed3fee16085c85
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342316"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372718"
 ---
 # <a name="guiddevinterfacefloppy"></a>GUID_DEVINTERFACE_FLOPPY
 
 
-GUID_DEVINTERFACE_FLOPPY[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)フロッピー ディスクが定義されている[記憶装置](https://msdn.microsoft.com/library/windows/hardware/ff566969)します。
+GUID_DEVINTERFACE_FLOPPY[デバイス インターフェイス クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)フロッピー ディスクが定義されている[記憶装置](https://docs.microsoft.com/windows-hardware/drivers/storage/index)します。
 
 <table>
 <colgroup>
@@ -58,7 +58,7 @@ GUID_DEVINTERFACE_FLOPPY[デバイス インターフェイス クラス](https:
 
 記憶域[サンプル](https://go.microsoft.com/fwlink/p/?LinkId=618052)WDK に含める、[フロッピー ドライバー](https://go.microsoft.com/fwlink/p/?linkid=256192)古い形式の識別子を使用するサンプル[ **FloppyClassGuid** ](floppyclassguid.md)にGUID_DEVINTERFACE_FLOPPY デバイス インターフェイスのクラスのインスタンスを登録します。
 
-ストレージ ドライバーについては、次を参照してください。[記憶装置ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff566976)します。
+ストレージ ドライバーについては、次を参照してください。[記憶装置ドライバー](https://docs.microsoft.com/windows-hardware/drivers/storage/storage-drivers)します。
 
 <a name="requirements"></a>必要条件
 ------------

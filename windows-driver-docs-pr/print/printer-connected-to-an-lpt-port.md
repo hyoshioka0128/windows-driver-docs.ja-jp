@@ -8,12 +8,12 @@ keywords:
 - 並列の列挙子の WDk プリンター
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 47eedb2de388de7a6f65aa3fff62f631c95a9f18
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7b7edaca2055278e4e95c6ccbcd367e1f02a0b9f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380023"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380670"
 ---
 # <a name="printer-connected-to-an-lpt-port"></a>LPT ポートに接続されているプリンター
 
@@ -21,9 +21,9 @@ ms.locfileid: "63380023"
 
 
 
-LPT 列挙子の例に示します、[バス ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff540704)します。 LPT 列挙子に準拠している LPT ポートのハードウェアから id 情報を取得できる、 *IEEE 1284 拡張機能ポート プロトコルと ISA インターフェイス標準*します。
+LPT 列挙子の例に示します、[バス ドライバー](https://docs.microsoft.com/windows-hardware/drivers/kernel/bus-drivers)します。 LPT 列挙子に準拠している LPT ポートのハードウェアから id 情報を取得できる、 *IEEE 1284 拡張機能ポート プロトコルと ISA インターフェイス標準*します。
 
-Windows 2000 またはそれ以降のシステム起動すると、configuration manager は、LPT ポートに接続されている IEEE 1284 と互換性のあるデバイスを列挙するために、LPT 列挙子を呼び出します。 検出されたデバイスごとには、構成マネージャーは、プリンター クラスのインストーラーを呼び出します。 プリンター クラスのインストーラー呼び出し**SetupDi**-プレフィックス[デバイスのインストール機能](https://msdn.microsoft.com/library/windows/hardware/ff541299)から情報を取得する[プリンター INF ファイル](printer-inf-files.md)します。
+Windows 2000 またはそれ以降のシステム起動すると、configuration manager は、LPT ポートに接続されている IEEE 1284 と互換性のあるデバイスを列挙するために、LPT 列挙子を呼び出します。 検出されたデバイスごとには、構成マネージャーは、プリンター クラスのインストーラーを呼び出します。 プリンター クラスのインストーラー呼び出し**SetupDi**-プレフィックス[デバイスのインストール機能](https://docs.microsoft.com/previous-versions/ff541299(v=vs.85))から情報を取得する[プリンター INF ファイル](printer-inf-files.md)します。
 
 並列に接続されているプリンターでは、並列の列挙子を作成、 *devnode*に一意*ハードウェア ID*プリンターから受け取る 1284 文字列から生成されました。
 
@@ -41,7 +41,7 @@ LPTENUM\Hewlett-PackardHP_Co3115
 
 ハードウェア ID は、製造元の名前、モデルの名前および巡回冗長検査 (CRC) のコードを列挙子のプレフィックスで構成されます。 ハードウェア ID の最後の 4 桁の数字は、CRC のコードは、製造元とモデルの文字列から生成されます。 文字列内のスペースはアンダー スコアに置き換えられます。
 
-送信するには、デバイスから 1284 ID 文字列を読み取り、 [ **IOCTL\_PAR\_クエリ\_デバイス\_ID**](https://msdn.microsoft.com/library/windows/hardware/ff544076)します。 スプーラが、LPT をリダイレクトすることに注意してください*x*シンボリック リンク (場所*x* LPT 数 1、2、または 3) には、スプーラーの名前付きパイプ、した場合、スプーラが実行されている場合、し parport ことはありませんは確認 Ioctl を送信するにはLPTx します。
+送信するには、デバイスから 1284 ID 文字列を読み取り、 [ **IOCTL\_PAR\_クエリ\_デバイス\_ID**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddpar/ni-ntddpar-ioctl_par_query_device_id)します。 スプーラが、LPT をリダイレクトすることに注意してください*x*シンボリック リンク (場所*x* LPT 数 1、2、または 3) には、スプーラーの名前付きパイプ、した場合、スプーラが実行されている場合、し parport ことはありませんは確認 Ioctl を送信するにはLPTx します。
 
 下に置くことは、並列に接続されているプラグ アンド プレイ プリンターの devnode **HKLM\\システム\\CurrentControlSet\\Enum\\LPTENUM**であり、フォームの 1 つのハードウェア ID:
 
@@ -51,7 +51,7 @@ LPTENUM\Company_NameModelNam1234
 
 ドライバー スタックは、次のコード サンプルを次の図に表示されます。
 
-INF コードは正しく「プラグ アンド プレイ」LPTENUM フォームのハードウェア ID を\\*会社\_NameModelNam1234*次の例に示します。 "モデル名 XYZ"デバイスの説明は表示で 2 回、 [ **INF 製造元セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547454)します。 最初の行で、ハードウェア ID には、2 番目の行の ID は、ハードウェアの中に、バス列挙子が含まれています。 2 つの行では、プリンターがインストールされているバスの種類に関係なく、ランク 0 のハードウェア ID の一致を保証します。 参照してください[カスタムのプラグ アンド プレイ プリンター ドライバーをインストールする](installing-a-custom-plug-and-play-printer-driver.md)詳細についてはします。
+INF コードは正しく「プラグ アンド プレイ」LPTENUM フォームのハードウェア ID を\\*会社\_NameModelNam1234*次の例に示します。 "モデル名 XYZ"デバイスの説明は表示で 2 回、 [ **INF 製造元セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-manufacturer-section)します。 最初の行で、ハードウェア ID には、2 番目の行の ID は、ハードウェアの中に、バス列挙子が含まれています。 2 つの行では、プリンターがインストールされているバスの種類に関係なく、ランク 0 のハードウェア ID の一致を保証します。 参照してください[カスタムのプラグ アンド プレイ プリンター ドライバーをインストールする](installing-a-custom-plug-and-play-printer-driver.md)詳細についてはします。
 
 ```cpp
 [Manufacturer]
@@ -96,7 +96,7 @@ InteractiveInstall = LPTENUM\Company_NameModelNam1234, Company_NameModelNam1234
 Company_Name = "Company Name"
 ```
 
-モデルそれぞれ前の例と同様、 [ **INF 製造元セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547454)とほぼ同じ行のペアとして表されます。 特定のモデルのペアの 1 つの行には bus 列挙子が含まれていますもう一方は提供されません。 2 つの行では、プリンターがインストールされているバスの種類に関係なく、ランク 0 のハードウェア ID の一致を保証します。 参照してください[カスタムのプラグ アンド プレイ プリンター ドライバーをインストールする](installing-a-custom-plug-and-play-printer-driver.md)詳細についてはします。
+モデルそれぞれ前の例と同様、 [ **INF 製造元セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-manufacturer-section)とほぼ同じ行のペアとして表されます。 特定のモデルのペアの 1 つの行には bus 列挙子が含まれていますもう一方は提供されません。 2 つの行では、プリンターがインストールされているバスの種類に関係なく、ランク 0 のハードウェア ID の一致を保証します。 参照してください[カスタムのプラグ アンド プレイ プリンター ドライバーをインストールする](installing-a-custom-plug-and-play-printer-driver.md)詳細についてはします。
 
  
 

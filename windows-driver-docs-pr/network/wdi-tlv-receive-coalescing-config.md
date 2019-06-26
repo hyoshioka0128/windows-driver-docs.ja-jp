@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - WDI_TLV_RECEIVE_COALESCING_CONFIG ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: ca82dfd24a199ca5180bb93d2139fd7f915e9c73
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 37e47f11eceb3e22e44d3aa0f15e6187fc923a70
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360193"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382897"
 ---
 # <a name="wditlvreceivecoalescingconfig"></a>WDI\_TLV\_受信\_COALESCING\_構成
 
@@ -66,7 +66,7 @@ WDI\_TLV\_受信\_COALESCING\_構成が含む TLV は、結合の構成を受信
 ## <a name="see-also"></a>関連項目
 
 
-[OID\_WDI\_設定\_受信\_COALESCING](https://msdn.microsoft.com/library/windows/hardware/dn925941)
+[OID\_WDI\_設定\_受信\_COALESCING](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-set-receive-coalescing)
 
  
 

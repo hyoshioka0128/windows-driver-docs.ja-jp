@@ -7,12 +7,12 @@ keywords:
 - WDK の Driver Verifier のエラー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c7c76a18706ffebe56c74d189e4c9a3297c1c42
-ms.sourcegitcommit: 179f9119b6c7888ea18281f6d5d11d62ac45b58d
+ms.openlocfilehash: 0d29282a78aa8705d4f6e3ff7763d00c294d47e2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/22/2019
-ms.locfileid: "66035120"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371513"
 ---
 # <a name="driver-verifier-options-and-rule-classes"></a>Driver Verifier のオプションとルール クラス
 
@@ -110,7 +110,7 @@ Windows 10、17627 以降のバージョン以降、次の構文と規則クラ�
 
 [保留中の I/O 要求を強制する](force-pending-i-o-requests.md)
 
-(Windows Vista 以降)Driver Verifier テスト状態へのドライバーの応答でこのオプションがアクティブで\_保留の状態を返すことによって値を返す\_ランダムの呼び出しに対して保留[**保留**](https://msdn.microsoft.com/library/windows/hardware/ff548336).
+(Windows Vista 以降)Driver Verifier テスト状態へのドライバーの応答でこのオプションがアクティブで\_保留の状態を返すことによって値を返す\_ランダムの呼び出しに対して保留[**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver).
 
 [IRP ログ](irp-logging.md)
 
@@ -130,7 +130,7 @@ Windows 10、17627 以降のバージョン以降、次の構文と規則クラ�
 
 [Power Framework 遅延ファジー テスト](concurrency-stress-test.md)
 
-(Windows 8 以降)Driver Verifier を使用するドライバーの同時実行エラーをフラッシュ スレッドのスケジュールをランダムにこのオプションがアクティブの場合、[電源管理フレームワーク (PoFx)](https://msdn.microsoft.com/library/windows/hardware/hh406637)します。 電源管理フレームワーク (PoFx) を直接利用しないドライバーでは、このオプションはお勧めできません.
+(Windows 8 以降)Driver Verifier を使用するドライバーの同時実行エラーをフラッシュ スレッドのスケジュールをランダムにこのオプションがアクティブの場合、[電源管理フレームワーク (PoFx)](https://docs.microsoft.com/windows-hardware/drivers/kernel/overview-of-the-power-management-framework)します。 電源管理フレームワーク (PoFx) を直接利用しないドライバーでは、このオプションはお勧めできません.
 
 [DDI 準拠の確認](ddi-compliance-checking.md)
 
@@ -162,7 +162,7 @@ Windows 10、17627 以降のバージョン以降、次の構文と規則クラ�
 
 [VM スイッチの確認](vm-switch-verification.md)
 
-(Windows 8.1 以降)このオプションは、フィルター ドライバーを監視します。 (*拡張可能スイッチの拡張機能*) 内で実行される、 [Hyper-v 拡張可能スイッチ](https://msdn.microsoft.com/library/windows/hardware/hh598161)します。
+(Windows 8.1 以降)このオプションは、フィルター ドライバーを監視します。 (*拡張可能スイッチの拡張機能*) 内で実行される、 [Hyper-v 拡張可能スイッチ](https://docs.microsoft.com/windows-hardware/drivers/network/hyper-v-extensible-switch)します。
 
 [ポート/ミニポート インターフェイスのチェック](port-miniport-interface-checking.md)
 

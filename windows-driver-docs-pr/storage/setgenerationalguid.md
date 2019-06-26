@@ -4,12 +4,12 @@ description: SetGenerationalGuid
 ms.assetid: cf8e57e5-afdf-4bc2-9849-5df3fbbdd6c5
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: c48f906971a5afb2844a32505052fd0aba42235b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0c4f6288b8742f2e19357ef830bdb412b1ecdf5c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331094"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384659"
 ---
 # <a name="setgenerationalguid"></a>SetGenerationalGuid
 
@@ -32,7 +32,7 @@ ISCSI の探索サービスと発信側のキャッシュされた情報を更�
 
 [SetTunnelModeOuterAddress](settunnelmodeouteraddress.md)
 
-**SetGenerationalGuid**メソッドは、パブリッシュされていないに属する[MSiSCSI\_SecurityConfigOperations WMI クラス](msiscsi-securityconfigoperations-wmi-class.md)します。 パラメーターの説明については、 **SetGenerationalGuid**メソッドのメンバーの説明を参照してください、 [ **SetGenerationalGuid\_IN** ](https://msdn.microsoft.com/library/windows/hardware/ff565681)と[**SetGenerationalGuid\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff565687)構造体。 ミニポート ドライバー、MSiSCSI を実装する\_SecurityConfigOperations WMI クラスが、HBA 情報をキャッシュする場合にこのメソッドをサポートする必要があります。
+**SetGenerationalGuid**メソッドは、パブリッシュされていないに属する[MSiSCSI\_SecurityConfigOperations WMI クラス](msiscsi-securityconfigoperations-wmi-class.md)します。 パラメーターの説明については、 **SetGenerationalGuid**メソッドのメンバーの説明を参照してください、 [ **SetGenerationalGuid\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsiop/ns-iscsiop-_setgenerationalguid_in)と[**SetGenerationalGuid\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsiop/ns-iscsiop-_setgenerationalguid_out)構造体。 ミニポート ドライバー、MSiSCSI を実装する\_SecurityConfigOperations WMI クラスが、HBA 情報をキャッシュする場合にこのメソッドをサポートする必要があります。
 
  
 

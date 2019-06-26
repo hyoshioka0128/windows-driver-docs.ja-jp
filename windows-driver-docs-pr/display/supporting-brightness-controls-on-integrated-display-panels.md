@@ -10,29 +10,29 @@ keywords:
 - 自動明るさ WDK の表示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0aaa29e791956762959ca0567e4eaabbfccf7f03
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 19548bec4a8ca505eed45459711744279c6b5a32
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375892"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374364"
 ---
 # <a name="supporting-brightness-controls-on-integrated-display-panels"></a>パネルの統合ディスプレイの明るさコントロールをサポート
 
 
 明るさコントロールは、オペレーティング システムによって付与されたモニター ドライバー Monitor.sys で実装されます。 モニター ドライバーでは、明るさのレベルと対話するアプリケーション (など、オペレーティング システムの明るさのスライダー) を許可する Windows Management Instrumentation (WMI) インターフェイスを実装します。 モニター ドライバーは、明るさのレベルは、電源ポリシーの変更に対応できるように、デバイスの電源ポリシー エンジン (DPPE) とを登録します。 モニター ドライバーは、acpi の明るさのショートカット キーを処理するには、Advanced Configuration and Power Interface (ACPI) を登録します。 互換性のため、 [Windows 2000 Display Driver Model](windows-2000-display-driver-model-design-guide.md)、モニター ドライバーは、IOCTL ベースの明るさコントロールを実装します。
 
-ディスプレイ ミニポート ドライバーまたはシステムの基本入出力システム (BIOS) の統合ディスプレイの明るさを変更することができますサポートによって公開される ACPI メソッド。 内部的には、コンピューターに接続する出力のテクノロジを持つものとしてマークされている最初のビデオ ターゲット ([**D3DKMDT\_VOT\_内部**](https://msdn.microsoft.com/library/windows/hardware/ff546605))、モニター ドライバーの呼び出し、ディスプレイ ミニポート ドライバーの[ **DxgkDdiQueryInterface** ](https://msdn.microsoft.com/library/windows/hardware/ff559764)関数のクエリを[明るさコントロール インターフェイス](https://msdn.microsoft.com/library/windows/hardware/ff538260)GUIDによって識別されています\_DEVINTERFACE\_明るさ\_2 および DXGK\_明るさ\_インターフェイス\_バージョン\_1、および[明るさコントロール インターフェイス V します。2 (適応性が滑らかな輝度)](https://msdn.microsoft.com/library/windows/hardware/jj647485) GUID によって識別される\_DEVINTERFACE\_明るさと DXGK\_明るさ\_インターフェイス\_バージョン\_2。 照会するモニター ドライバーが ACPI を使用して、ディスプレイのミニポート ドライバーがサポートしない場合、少なくとも、明るさコントロール インターフェイス、 \_BCL、 \_BCM、および\_子デバイス BQC メソッド。 これらのメソッドの詳細については、の ACPI 仕様を参照して、 [ACPI の web サイト](https://go.microsoft.com/fwlink/p/?linkid=57185)します。
+ディスプレイ ミニポート ドライバーまたはシステムの基本入出力システム (BIOS) の統合ディスプレイの明るさを変更することができますサポートによって公開される ACPI メソッド。 内部的には、コンピューターに接続する出力のテクノロジを持つものとしてマークされている最初のビデオ ターゲット ([**D3DKMDT\_VOT\_内部**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmdt/ne-d3dkmdt-_d3dkmdt_video_output_technology))、モニター ドライバーの呼び出し、ディスプレイ ミニポート ドライバーの[ **DxgkDdiQueryInterface** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_query_interface)関数のクエリを[明るさコントロール インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)GUIDによって識別されています\_DEVINTERFACE\_明るさ\_2 および DXGK\_明るさ\_インターフェイス\_バージョン\_1、および[明るさコントロール インターフェイス V します。2 (適応性が滑らかな輝度)](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index) GUID によって識別される\_DEVINTERFACE\_明るさと DXGK\_明るさ\_インターフェイス\_バージョン\_2。 照会するモニター ドライバーが ACPI を使用して、ディスプレイのミニポート ドライバーがサポートしない場合、少なくとも、明るさコントロール インターフェイス、 \_BCL、 \_BCM、および\_子デバイス BQC メソッド。 これらのメソッドの詳細については、の ACPI 仕様を参照して、 [ACPI の web サイト](https://go.microsoft.com/fwlink/p/?linkid=57185)します。
 
 **注**  で、Windows 表示 Driver Model (WDDM)、ACPI 識別子は、統合表示パネルを識別するために使用されません。 異なる、 [Windows 2000 Display Driver Model](windows-2000-display-driver-model-design-guide.md)、サポートするだけ 0x0110 の識別子を持つパネルが表示されます。
 
  
 
-ACPI の BIOS に公開されているメソッドまたはディスプレイ ミニポート ドライバーで明るさコントロールをサポートしている場合、モニター ドライバーは、明るさのショートカット キーの ACPI 通知を登録します。 ショートカット キーの通知について、モニターのドライバーを通知するために代わるメカニズムが存在しません。 モニター ドライバーは、いずれかの明るさコントロール メカニズムを使用できない場合、または、ディスプレイのミニポート ドライバーを提供している場合、[明るさコントロール インターフェイス](https://msdn.microsoft.com/library/windows/hardware/ff538260)への呼び出しが失敗したが、 [ **DxgkDdiGetPossibleBrightness** ](https://msdn.microsoft.com/library/windows/hardware/ff559661)関数、モニターのドライバーが明るさコントロールをサポートしていません。
+ACPI の BIOS に公開されているメソッドまたはディスプレイ ミニポート ドライバーで明るさコントロールをサポートしている場合、モニター ドライバーは、明るさのショートカット キーの ACPI 通知を登録します。 ショートカット キーの通知について、モニターのドライバーを通知するために代わるメカニズムが存在しません。 モニター ドライバーは、いずれかの明るさコントロール メカニズムを使用できない場合、または、ディスプレイのミニポート ドライバーを提供している場合、[明るさコントロール インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)への呼び出しが失敗したが、 [ **DxgkDdiGetPossibleBrightness** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgk_brightness_get_possible)関数、モニターのドライバーが明るさコントロールをサポートしていません。
 
 ### <a name="span-idbrightnesslevelsspanspan-idbrightnesslevelsspanspan-idbrightnesslevelsspanbrightness-levels"></a><span id="Brightness_Levels"></span><span id="brightness_levels"></span><span id="BRIGHTNESS_LEVELS"></span>明るさのレベル
 
-明るさのレベルは、0 から 100、0 がオフと 100 はラップトップ コンピューターをサポートする最大の明るさの範囲の 1 バイトの値として表されます。 100 です。 最大輝度レベルをすべてのラップトップ コンピューターが報告する必要があります。ただし、ラップトップ コンピューターでは、0 のレベルをサポートする必要はありません。 0 から 100 までの値の唯一の要件より大きな値が高い明るさを表す必要があります。 レベル間のインクリメントは、一様にする必要はありませんし、ラップトップ コンピューターは、任意の数の最大レベルの 101 の個別の値をサポートできます。 ハードウェアのレベルをレベルの明るさの値の範囲にマップする方法を決定する必要があります。 ただし、ディスプレイのミニポート ドライバーへの呼び出し[ **DxgkDdiGetPossibleBrightness** ](https://msdn.microsoft.com/library/windows/hardware/ff559661)関数は、ハードウェアがサポートよりも多くの輝度レベル値を報告する必要があります。
+明るさのレベルは、0 から 100、0 がオフと 100 はラップトップ コンピューターをサポートする最大の明るさの範囲の 1 バイトの値として表されます。 100 です。 最大輝度レベルをすべてのラップトップ コンピューターが報告する必要があります。ただし、ラップトップ コンピューターでは、0 のレベルをサポートする必要はありません。 0 から 100 までの値の唯一の要件より大きな値が高い明るさを表す必要があります。 レベル間のインクリメントは、一様にする必要はありませんし、ラップトップ コンピューターは、任意の数の最大レベルの 101 の個別の値をサポートできます。 ハードウェアのレベルをレベルの明るさの値の範囲にマップする方法を決定する必要があります。 ただし、ディスプレイのミニポート ドライバーへの呼び出し[ **DxgkDdiGetPossibleBrightness** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgk_brightness_get_possible)関数は、ハードウェアがサポートよりも多くの輝度レベル値を報告する必要があります。
 
 ### <a name="span-iddisablingautomaticbrightnesschangesbythebiosspanspan-iddisablingautomaticbrightnesschangesbythebiosspanspan-iddisablingautomaticbrightnesschangesbythebiosspandisabling-automatic-brightness-changes-by-the-bios"></a><span id="Disabling_Automatic_Brightness_Changes_by_the_BIOS"></span><span id="disabling_automatic_brightness_changes_by_the_bios"></span><span id="DISABLING_AUTOMATIC_BRIGHTNESS_CHANGES_BY_THE_BIOS"></span>BIOS で自動の明るさの変更を無効にします。
 

@@ -9,12 +9,12 @@ keywords:
 - Unidrv WDK の印刷
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2224e35dd11d04be01dd7a62edb5a6df49812f29
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 838014830cc16dffc340327da3dc516bcd3f8504
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579234"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372374"
 ---
 # <a name="dynamically-generated-printer-commands"></a>動的生成プリンター コマンド
 
@@ -36,7 +36,7 @@ ms.locfileid: "56579234"
 
 コマンド文字列を動的に生成するコードを提供するには、次の操作を行う必要があります。
 
--   実装するプラグインのレンダリングを提供、 [ **IPrintOemUni::CommandCallback** ](https://msdn.microsoft.com/library/windows/hardware/ff554216)メソッド。
+-   実装するプラグインのレンダリングを提供、 [ **IPrintOemUni::CommandCallback** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni-commandcallback)メソッド。
 
 -   含める、 \*CallbackID コマンド属性と、必要に応じて、 \*Params 属性には、コマンドの内\*GPD ファイル内のエントリをコマンドします。
 

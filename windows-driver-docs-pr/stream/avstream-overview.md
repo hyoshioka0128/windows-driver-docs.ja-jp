@@ -6,12 +6,12 @@ keywords:
 - AVStream WDK、AVStream ミニドライバーについて
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fd544857b853011b524d23d4bd1eff40d2f06cba
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bb71dadba059f7a01b5a84743ea7ee3edbd96088
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379748"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386697"
 ---
 # <a name="avstream-overview"></a>AVStream の概要
 
@@ -21,9 +21,9 @@ ms.locfileid: "63379748"
 
 AVStream は、ビデオのみストリーミングと統合されたオーディオ/ビデオ ストリーミングをサポートする Microsoft 提供のマルチ メディア クラス ドライバーです。 エクスポートのドライバーで、オペレーティング システムの一部として Microsoft から提供 AVStream *Ks.sys*します。 ハードウェア ベンダーの記述の下で実行するミニドライバー *Ks.sys*します。
 
-オーディオ ドライバーの優先クラス ドライバーは、Microsoft から提供されたオーディオ[port クラス](https://msdn.microsoft.com/library/windows/hardware/ff536829)ドライバー。 オーディオのベンダーの下で実行するミニドライバーを書き込む必要があります*Portcls.sys*します。
+オーディオ ドライバーの優先クラス ドライバーは、Microsoft から提供されたオーディオ[port クラス](https://docs.microsoft.com/windows-hardware/drivers/audio/introduction-to-port-class)ドライバー。 オーディオのベンダーの下で実行するミニドライバーを書き込む必要があります*Portcls.sys*します。
 
-マイクロソフトは、サポート、[クラスのストリーム](https://msdn.microsoft.com/library/windows/hardware/ff568275)ミニドライバーの既存のドライバーのみです。
+マイクロソフトは、サポート、[クラスのストリーム](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_stream/index)ミニドライバーの既存のドライバーのみです。
 
 AVStream ドライバーは 98 の DirectX 8.0 が Gold またはそれ以降のバージョンまたはそれ以降のバージョンがインストールされている Microsoft Windows XP、Microsoft Windows Server 2003、または Windows の任意のプラットフォームでビルドします。
 

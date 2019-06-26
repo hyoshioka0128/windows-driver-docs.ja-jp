@@ -6,12 +6,12 @@ keywords:
 - 明示的な箱拡張機能の WDK プリンター
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4fb04bc70c3d677467e1efea12f77b9e5baed246
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: eac8b3cf0390662cd5396d79bae8cc59d18ce2ca
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324218"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371759"
 ---
 # <a name="explicit-bin-extensions"></a>明示的なビン拡張機能
 
@@ -36,7 +36,7 @@ ms.locfileid: "63324218"
 </tr>
 <tr class="even">
 <td><p><strong>type</strong></p></td>
-<td><p>列挙子、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff545211" data-raw-source="[&lt;strong&gt;BIDI_TYPE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff545211)"> <strong>BIDI_TYPE</strong> </a>列挙体。</p></td>
+<td><p>列挙子、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winspool/ne-winspool-bidi_type" data-raw-source="[&lt;strong&gt;BIDI_TYPE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winspool/ne-winspool-bidi_type)"> <strong>BIDI_TYPE</strong> </a>列挙体。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>drvPrinterEvent</strong></p></td>

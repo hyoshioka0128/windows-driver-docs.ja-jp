@@ -12,12 +12,12 @@ keywords:
 - WMI の WDK カーネルでは、クラス
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ebbe1965c85dee13af57a4e2817ae7930df8845
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e9ec82b101a42259efd2e2b5e0bef200c5e68a2d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63393013"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386387"
 ---
 # <a name="wmi-class-qualifiers"></a>WMI クラス修飾子
 
@@ -49,7 +49,7 @@ ms.locfileid: "63393013"
 </tr>
 <tr class="even">
 <td><p><strong>静的</strong></p></td>
-<td><p>データ プロバイダーが実行時に、データ ブロックのインスタンスを提供するのではなく、MOF ファイルの静的データのインスタンスを提供することを示します。 静的なデータが WMI データベースに存在するため、ドライバーは WMI を使って、静的データ ブロックを登録できません。 マークされたクラス<strong>静的</strong>、MOF でファイルが登録されていないドライバーの<a href="https://msdn.microsoft.com/library/windows/hardware/ff551731" data-raw-source="[&lt;strong&gt;IRP_MN_REGINFO&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff551731)"> <strong>IRP_MN_REGINFO</strong> </a>または<a href="https://msdn.microsoft.com/library/windows/hardware/ff551734" data-raw-source="[&lt;strong&gt;IRP_MN_REGINFO_EX&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff551734)"> <strong>IRP_MN_REGINFO_EX</strong> </a>ハンドラー。</p></td>
+<td><p>データ プロバイダーが実行時に、データ ブロックのインスタンスを提供するのではなく、MOF ファイルの静的データのインスタンスを提供することを示します。 静的なデータが WMI データベースに存在するため、ドライバーは WMI を使って、静的データ ブロックを登録できません。 マークされたクラス<strong>静的</strong>、MOF でファイルが登録されていないドライバーの<a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-reginfo" data-raw-source="[&lt;strong&gt;IRP_MN_REGINFO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-reginfo)"> <strong>IRP_MN_REGINFO</strong> </a>または<a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-reginfo-ex" data-raw-source="[&lt;strong&gt;IRP_MN_REGINFO_EX&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-reginfo-ex)"> <strong>IRP_MN_REGINFO_EX</strong> </a>ハンドラー。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>Provider("WMIProv")</strong></p></td>

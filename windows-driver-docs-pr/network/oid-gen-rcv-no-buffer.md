@@ -5,12 +5,12 @@ ms.assetid: 0fcbc7cc-439b-450f-b256-3584b29909fb
 ms.date: 08/08/2017
 keywords: -OID_GEN_RCV_NO_BUFFER ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 9565b066f12b8644204ce836b7efdc8209fec583
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c97d6ef76b43e91ae2e2f02974a8b56e15b28637
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367682"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376447"
 ---
 # <a name="oidgenrcvnobuffer"></a>OID\_GEN\_受信\_いいえ\_バッファー
 
@@ -37,7 +37,7 @@ ms.locfileid: "63367682"
 <a name="remarks"></a>コメント
 -------
 
-Oid の統計に関する概要については、次を参照してください。 [General Statistics](https://msdn.microsoft.com/library/windows/hardware/ff552485)します。
+Oid の統計に関する概要については、次を参照してください。 [General Statistics](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-general-statistics-oids)します。
 
 <a name="requirements"></a>要件
 ------------

@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - NDIS_STATUS_WW_INDICATION ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ccda98eb4325acc03c880a57cc1d0ec2070c312
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 114c57bb80bb4f79a2047f63eded1489388056c2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323448"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375185"
 ---
 # <a name="ndisstatuswwindication"></a>NDIS\_状態\_WW\_を示す値
 
@@ -21,9 +21,9 @@ NDIS\_状態\_WW\_を示す値の状態が同じ、 [ **NDIS\_状態\_メディ�
 <a name="remarks"></a>注釈
 -------
 
-NDIS の詳細については\_状態\_WW\_を示す値を参照してください[OID\_WW\_GEN\_INDICATION\_要求](https://msdn.microsoft.com/library/windows/hardware/ff561411)します。
+NDIS の詳細については\_状態\_WW\_を示す値を参照してください[OID\_WW\_GEN\_INDICATION\_要求](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff561411(v=vs.85))します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -48,7 +48,7 @@ NDIS の詳細については\_状態\_WW\_を示す値を参照してくださ�
 
 [**NDIS\_STATUS\_MEDIA\_SPECIFIC\_INDICATION**](ndis-status-media-specific-indication.md)
 
-[OID\_WW\_GEN\_INDICATION\_要求](https://msdn.microsoft.com/library/windows/hardware/ff561411)
+[OID\_WW\_GEN\_INDICATION\_要求](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff561411(v=vs.85))
 
  
 

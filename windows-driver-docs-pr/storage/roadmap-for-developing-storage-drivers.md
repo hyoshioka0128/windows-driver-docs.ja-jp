@@ -4,12 +4,12 @@ description: Windows ストレージ ドライバーの開発のロードマッ�
 ms.assetid: 67627ff9-588c-492f-861f-c592f7f92b51
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f8037c37e3b4c74f68f5c6fd3070d4550f9e7ad3
-ms.sourcegitcommit: 2589492f3c14f779efa8b446e81d4e0f6d048f4f
+ms.openlocfilehash: 80b2c4a3cffcd6707ccbdd029bd87622e961f5e4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2019
-ms.locfileid: "66815105"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387173"
 ---
 # <a name="roadmap-for-developing-windows-storage-drivers"></a>Windows ストレージ ドライバーの開発のロードマップ
 
@@ -18,7 +18,7 @@ ms.locfileid: "66815105"
 
 1.  **Windows アーキテクチャとドライバーについて説明します。**
 
-    Windows オペレーティング システムでのドライバーのしくみの基礎を理解する必要があります。 基本事項を把握すると、適切な設計上の決定を行い、開発プロセスを効率化することは役立ちます。 参照してください[ドライバー開発者向けのすべての概念](https://msdn.microsoft.com/library/windows/hardware/ff554731)します。
+    Windows オペレーティング システムでのドライバーのしくみの基礎を理解する必要があります。 基本事項を把握すると、適切な設計上の決定を行い、開発プロセスを効率化することは役立ちます。 参照してください[ドライバー開発者向けのすべての概念](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/concepts-and-knowledge-for-all-driver-developers)します。
 
 2.  **記憶装置ドライバーの基礎について説明します。**
 
@@ -34,7 +34,7 @@ ms.locfileid: "66815105"
 
 5.  **Windows ドライバーのビルド、テスト、およびデバッグ プロセスおよびツールについて説明します。**
 
-    ドライバーの構築は、ユーザー モード アプリケーションを構築することと同じではありません。 参照してください[開発、テスト、および展開ドライバー](https://msdn.microsoft.com/windows-drivers/develop/visual_studio_driver_development_environment) Windows ドライバーのビルド、デバッグ、およびテスト プロセス、ドライバーの署名、および Windows のロゴ テストについてです。 参照してください[ドライバー開発ツール](https://msdn.microsoft.com/library/windows/hardware/ff545440)については、検証、および、デバッグ ツールを構築、テストします。
+    ドライバーの構築は、ユーザー モード アプリケーションを構築することと同じではありません。 参照してください[開発、テスト、および展開ドライバー](https://docs.microsoft.com/windows-hardware/drivers) Windows ドライバーのビルド、デバッグ、およびテスト プロセス、ドライバーの署名、および Windows のロゴ テストについてです。 参照してください[ドライバー開発ツール](https://docs.microsoft.com/windows-hardware/drivers/devtest/index)については、検証、および、デバッグ ツールを構築、テストします。
 
 6.  **ストレージ ドライバーのサンプルを確認します。**
 
@@ -42,15 +42,15 @@ ms.locfileid: "66815105"
 
 7.  **開発、ビルド、テスト、および記憶域ドライバーをデバッグします。**
 
-    参照してください[ドライバーをビルド](https://docs.microsoft.com/windows-hardware/drivers/develop/building-a-driver)、[ドライバーのテスト](https://msdn.microsoft.com/windows-drivers/develop/testing_a_driver)と[ドライバーをデバッグ](https://msdn.microsoft.com/windows-drivers/develop/debugging_a_driver)については反復的なビルド、テスト、およびデバッグします。 このプロセスに役立つ、動作するドライバーをビルドすることを確認します。
+    参照してください[ドライバーをビルド](https://docs.microsoft.com/windows-hardware/drivers/develop/building-a-driver)、[ドライバーのテスト](https://docs.microsoft.com/windows-hardware/drivers)と[ドライバーをデバッグ](https://docs.microsoft.com/windows-hardware/drivers)については反復的なビルド、テスト、およびデバッグします。 このプロセスに役立つ、動作するドライバーをビルドすることを確認します。
 
 8.  **ストレージ ドライバーのドライバー パッケージを作成します。**
 
-    詳細については、次を参照してください。[ドライバー パッケージを作成する](https://msdn.microsoft.com/windows-drivers/develop/creating_a_driver_package)します。
+    詳細については、次を参照してください。[ドライバー パッケージを作成する](https://docs.microsoft.com/windows-hardware/drivers)します。
 
 9.  **署名し、配布、ストレージ** **ドライバー。**
 
-    最後の手順では、(省略可能) 署名し、ドライバーを配布します。 ドライバーが Windows ハードウェア認定に対して定義されている品質基準を満たしている場合は、Microsoft Windows 更新プログラムを介して配布できます。 詳細については、次を参照してください。[ドライバー パッケージを配布する](https://msdn.microsoft.com/windows-drivers/develop/distributing_a_driver_package_win8)します。
+    最後の手順では、(省略可能) 署名し、ドライバーを配布します。 ドライバーが Windows ハードウェア認定に対して定義されている品質基準を満たしている場合は、Microsoft Windows 更新プログラムを介して配布できます。 詳細については、次を参照してください。[ドライバー パッケージを配布する](https://docs.microsoft.com/windows-hardware/drivers)します。
 
 これらは、基本的な手順です。 追加の手順は、個々 のドライバーのニーズに基づいて、必要でにあります。
 

@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 3d1f382945bd4c80c275487802a436d859401ecb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6c448becaf80909e40c29f85b82eb5e9d8794477
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390740"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374223"
 ---
 # <a name="kscategorynetwork"></a>KSCATEGORY_NETWORK
 
 
-KSCATEGORY_NETWORK[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)が定義されている、[カーネル ストリーミング](https://msdn.microsoft.com/library/windows/hardware/ff568277)(KS) ネットワーク デバイスの機能のカテゴリ。
+KSCATEGORY_NETWORK[デバイス インターフェイス クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)が定義されている、[カーネル ストリーミング](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)(KS) ネットワーク デバイスの機能のカテゴリ。
 
 <table>
 <colgroup>

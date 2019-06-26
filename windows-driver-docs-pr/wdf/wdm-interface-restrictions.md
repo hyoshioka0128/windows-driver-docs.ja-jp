@@ -9,12 +9,12 @@ keywords:
 - フレームワークに基づいたドライバー WDK KMDF、WDM
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 39bbe87a759ce088a9c95b690f5ee64fce3b804d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f9261cc1a0d48b4b79a0782bb623fe6cff2f50fa
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63385713"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372082"
 ---
 # <a name="wdm-interface-restrictions"></a>WDM インターフェイスの制限
 
@@ -26,7 +26,7 @@ ms.locfileid: "63385713"
 
 フレームワークに基づくドライバーが WDM インターフェイスにアクセスする場合、次の制限があります。
 
--   フレームワーク ベースのドライバーが使用する必要があります、 **Tail.Overlay.DriverContext**のメンバー、 [ **IRP** ](https://msdn.microsoft.com/library/windows/hardware/ff550694)フレームワークはこのメンバーを使用するために、構造体します。
+-   フレームワーク ベースのドライバーが使用する必要があります、 **Tail.Overlay.DriverContext**のメンバー、 [ **IRP** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_irp)フレームワークはこのメンバーを使用するために、構造体します。
 
  
 

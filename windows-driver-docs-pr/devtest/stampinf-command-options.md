@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 762cfeac2a7e723a7cc02c0fb3f672677e0006fc
-ms.sourcegitcommit: e123b8b69473c0ebc0383ef722452866bf6662d3
+ms.openlocfilehash: 290868386b0816041f55027b50fa90ef75bf8b19
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66394273"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67391962"
 ---
 # <a name="stampinf-command-options"></a>Stampinf コマンドのオプション
 
@@ -44,10 +44,10 @@ Stampinf -f filename
 処理するための INF または INX ファイルを指定します。
 
 <span id="-s_section"></span><span id="-S_SECTION"></span> **-s** *section*  
-[**INF DriverVer ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff547394)を追加する INF セクションを指定します。 このディレクティブの既定の場所は、[**INF Version セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547502)です。
+[**INF DriverVer ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-driverver-directive)を追加する INF セクションを指定します。 このディレクティブの既定の場所は、[**INF Version セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-version-section)です。
 
 <span id="_______-d_________date_____"></span><span id="_______-D_________DATE_____"></span> **-d** \[ *日付* |  **\\** <em>\]  
-記述された日付を指定します、 [ </em> *INF DriverVer ディレクティブ*<em>](https://msdn.microsoft.com/library/windows/hardware/ff547394)します。日付の形式は*月</em>/* 日付 */* 年 * (たとえば、 **-d 2011 年 10 月 20 日**)。
+記述された日付を指定します、 [INF DriverVer ディレクティブ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-driverver-directive)します。 日付の形式が月/日/年</em>(たとえば、 **-d 2011 年 10 月 20 日**)。
 
 現在の日付を使用するには、アスタリスクを指定 (\*) このパラメーターを使用します。
 
@@ -58,17 +58,17 @@ Stampinf -f filename
 -   場合、STAMPINF\_環境変数の日付が指定されていない、Stampinf が現在の日付を使用します。
 
 <span id="_______-a_________architecture______________"></span><span id="_______-A_________ARCHITECTURE______________"></span> **-a \[** *architecture* **\]**    
-INX ファイルで使われている $ARCH$ 変数を置き換える "*アーキテクチャ*" 文字列を指定します。 $ARCH$ 変数の使用をカスタマイズする、 **TargetOSVersion**で装飾、 [ **INF 製造元セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547454)と、特定のプラットフォームをそれぞれのセクション名。 $ARCH$ 変数の詳細については、次を参照してください。 [INX INF ファイルを作成するファイルを使用する](https://msdn.microsoft.com/library/windows/hardware/ff545473)します。
+INX ファイルで使われている $ARCH$ 変数を置き換える "*アーキテクチャ*" 文字列を指定します。 $ARCH$ 変数の使用をカスタマイズする、 **TargetOSVersion**で装飾、 [ **INF 製造元セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-manufacturer-section)と、特定のプラットフォームをそれぞれのセクション名。 $ARCH$ 変数の詳細については、次を参照してください。 [INX INF ファイルを作成するファイルを使用する](https://docs.microsoft.com/windows-hardware/drivers/wdf/using-inx-files-to-create-inf-files)します。
 
 値、*アーキテクチャ*文字列は**x86**、 **64** (Itanium ベースのプラットフォーム用)、および**x64** (amd64 プラットフォーム) のです。
 
 場合、 **-** パラメーターが指定されていないまたは Stampinf、ビルド環境ウィンドウに設定されているプラットフォーム環境変数で指定されている値を使用して、オプションを指定せず指定します。
 
 <span id="_______-c________catalogfile______"></span><span id="_______-C________CATALOGFILE______"></span> **-c** *catalogfile*   
-[**INF Version セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547502)の **CatalogFile** ディレクティブに書き込まれる値を指定します。 既定では、**CatalogFile** ディレクティブは書き込まれません。
+[**INF Version セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-version-section)の **CatalogFile** ディレクティブに書き込まれる値を指定します。 既定では、**CatalogFile** ディレクティブは書き込まれません。
 
 <span id="_______-v_________time_____"></span><span id="_______-V_________TIME_____"></span> **-v \[** *time* **| \*\]**  
-[**INF DriverVer ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff547394)に書き込まれるバージョン番号の時刻を指定します。 時刻の書式は *hours.minutes.seconds.milliseconds* です (例: 11.30.20.15)。 このオプションはドライバーのバージョン番号を増やす方法として便利であり、開発時に重宝します。
+[**INF DriverVer ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-driverver-directive)に書き込まれるバージョン番号の時刻を指定します。 時刻の書式は *hours.minutes.seconds.milliseconds* です (例: 11.30.20.15)。 このオプションはドライバーのバージョン番号を増やす方法として便利であり、開発時に重宝します。
 
 現在の時刻を使うには、このパラメーターと共にアスタリスク (\*) を指定します。
 
@@ -102,12 +102,12 @@ Ntverp.h ファイルの場所を指定します。 *パス*Ntverp.h を格納�
 
 ### <a name="comments"></a>コメント
 
-日付の値に Stampinf が格納された、 [ **INF DriverVer ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff547394)に基づいていない*世界協定時刻*(UTC) であるとも呼ばれます*グリニッジ標準時*します。 ただし、 [ **Inf2Cat** ](inf2cat.md) UTC 値としてこの INF ディレクティブの日付の値を解釈します。 これがエラーが発生する場合は明日の日付を UTC 値として、Stampinf によって使用されるローカルの日付の値が Inf2Cat によって解釈されます。 この問題を回避するには*1 つ*します。
+日付の値に Stampinf が格納された、 [ **INF DriverVer ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-driverver-directive)に基づいていない*世界協定時刻*(UTC) であるとも呼ばれます*グリニッジ標準時*します。 ただし、 [ **Inf2Cat** ](inf2cat.md) UTC 値としてこの INF ディレクティブの日付の値を解釈します。 これがエラーが発生する場合は明日の日付を UTC 値として、Stampinf によって使用されるローカルの日付の値が Inf2Cat によって解釈されます。 この問題を回避するには*1 つ*します。
 
 -   設定、STAMPINF\_適切な UTC 日付の値を環境変数の日付。 Stampinf を指定せずに実行される、 **-d**パラメーター。 これにより、STAMPINF で指定された日付値を使用する Stampinf\_環境変数の日付。  今すぐ Stampinf と Inf2Cat の両方は、UTC を使用します。
 -   Inf2Cat を設定するために、ドライバー パッケージのプロジェクトの設定を変更`/uselocaltime`します。 このためには、 **[構成プロパティ] -> [Inf2Cat] -> [全般] -> [Use Local Time]\(現地時刻の使用\)** を使用します。 今すぐ Stampinf と Inf2Cat の両方は、ローカル時刻を使用します。
 
-ドライバーを開発する際に、プライベート環境変数を設定することができます\_ドライバー\_パッケージ。 Stampinf 設定日時に使用されるバージョンでこの変数が設定されている場合、 [ **INF DriverVer ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff547394)現在の日付と時間、コマンドラインの設定に関係なく。 さらに、Stampinf 設定、 **CatalogFile**ディレクティブ。 Stampinf 書き込みます**CatalogFile=delta.cat**で、 [ **INF バージョン セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547502)でカタログが既に指定されていない場合、 **-c**コマンド オプション。
+ドライバーを開発する際に、プライベート環境変数を設定することができます\_ドライバー\_パッケージ。 Stampinf 設定日時に使用されるバージョンでこの変数が設定されている場合、 [ **INF DriverVer ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-driverver-directive)現在の日付と時間、コマンドラインの設定に関係なく。 さらに、Stampinf 設定、 **CatalogFile**ディレクティブ。 Stampinf 書き込みます**CatalogFile=delta.cat**で、 [ **INF バージョン セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-version-section)でカタログが既に指定されていない場合、 **-c**コマンド オプション。
 
 この開発モードを有効にするビルドのウィンドウで、次のコマンドを入力します。
 

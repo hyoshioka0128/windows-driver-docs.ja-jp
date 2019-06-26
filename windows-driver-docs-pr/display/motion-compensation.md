@@ -1,6 +1,6 @@
 ---
-title: 動き補正
-description: 動き補正
+title: モーション補正
+description: モーション補正
 ms.assetid: 3b5c91f9-6c22-4110-943a-5b833f32c014
 keywords:
 - 描画の WDK DirectDraw、動き補正
@@ -12,14 +12,14 @@ keywords:
 - デジタル ビデオのデコード WDK DirectDraw
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 746476b34371e33ce1e161ed338560b44eac3e48
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: a22949f5aec4c8fb7cb4a0d8b78f6c4f53a73f58
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527921"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372882"
 ---
-# <a name="motion-compensation"></a>動き補正
+# <a name="motion-compensation"></a>モーション補正
 
 
 ## <span id="ddk_motion_compensation_gg"></span><span id="DDK_MOTION_COMPENSATION_GG"></span>
@@ -31,9 +31,9 @@ ms.locfileid: "56527921"
 
 動き補正機能を有効にするには、ドライバーは、次の手順を実行する必要があります。
 
--   実装を[ **DdGetDriverInfo** ](https://msdn.microsoft.com/library/windows/hardware/ff549404)機能、設定、 **GetDriverInfo**のメンバー、 [ **DD\_HALINFO**](https://msdn.microsoft.com/library/windows/hardware/ff551627)この関数を指す構造体と[ **DrvGetDirectDrawInfo** ](https://msdn.microsoft.com/library/windows/hardware/ff556229)が呼び出されます。 ドライバーの*DdGetDriverInfo*関数は、GUID を解析する必要があります\_MotionCompCallbacks GUID。
+-   実装を[ **DdGetDriverInfo** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_getdriverinfo)機能、設定、 **GetDriverInfo**のメンバー、 [ **DD\_HALINFO**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_halinfo)この関数を指す構造体と[ **DrvGetDirectDrawInfo** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvgetdirectdrawinfo)が呼び出されます。 ドライバーの*DdGetDriverInfo*関数は、GUID を解析する必要があります\_MotionCompCallbacks GUID。
 
--   入力、 [ **DD\_MOTIONCOMPCALLBACKS** ](https://msdn.microsoft.com/library/windows/hardware/ff551660)コールバック型フラグを設定すると、適切なドライバー コールバック ポインターを含む構造体、 *DdGetDriverInfo*GUID を持つ関数が呼び出された\_MotionCompCallbacks GUID。 ドライバーを Microsoft DirectDraw に割り当てられたバッファーに、この初期化された構造体をコピーしする必要があります、 **lpvData**のメンバー、 [ **DD\_GETDRIVERINFODATA**](https://msdn.microsoft.com/library/windows/hardware/ff551550)ポイント、構造体し、をバッファーに書き込まれたバイト数を返す**dwActualSize**します。
+-   入力、 [ **DD\_MOTIONCOMPCALLBACKS** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)コールバック型フラグを設定すると、適切なドライバー コールバック ポインターを含む構造体、 *DdGetDriverInfo*GUID を持つ関数が呼び出された\_MotionCompCallbacks GUID。 ドライバーを Microsoft DirectDraw に割り当てられたバッファーに、この初期化された構造体をコピーしする必要があります、 **lpvData**のメンバー、 [ **DD\_GETDRIVERINFODATA**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_getdriverinfodata)ポイント、構造体し、をバッファーに書き込まれたバイト数を返す**dwActualSize**します。
 
  
 

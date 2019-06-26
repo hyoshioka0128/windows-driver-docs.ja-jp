@@ -10,12 +10,12 @@ keywords:
 description: 関数やメソッド、NCI パケット/プロトコル、およびその他の詳細なログ記録の NFC ログを記録します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b4cc343c78296d44035df1cf7ac024d747d306fd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7cf627fd102ebf04e36d01296e70efd718ecbeed
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370756"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375112"
 ---
 # <a name="logging"></a>ログの記録
 
@@ -32,12 +32,12 @@ tracelog -enableex MyNfcSession -guid #D976D933-B88B-4227-95F8-00513C0986DE -mat
 tracelog -stop MyNfcSession
 ```
 
-これは、c: MySession.etl という名前の ETL ファイルを生成\\データ フォルダー。 それらをデコードすることができますしを使用して[Tracepdb](https://msdn.microsoft.com/library/windows/hardware/ff553034) (Tracepdb.exe) と[Tracefmt](https://msdn.microsoft.com/library/windows/hardware/ff552974) (Tracefmt.exe)、Windows ドライバー キットに含まれています。
+これは、c: MySession.etl という名前の ETL ファイルを生成\\データ フォルダー。 それらをデコードすることができますしを使用して[Tracepdb](https://docs.microsoft.com/windows-hardware/drivers/devtest/tracepdb) (Tracepdb.exe) と[Tracefmt](https://docs.microsoft.com/windows-hardware/drivers/devtest/tracefmt) (Tracefmt.exe)、Windows ドライバー キットに含まれています。
 
 NFC CX では、すべてのデバッグ拡張機能は含まれません。
 
 ## <a name="related-topics"></a>関連トピック
-[NFC のデバイス ドライバー インターフェイス (DDI) の概要](https://msdn.microsoft.com/library/windows/hardware/mt715815)  
-[NFC クラスの拡張機能 (CX) リファレンス](https://msdn.microsoft.com/library/windows/hardware/dn905536)  
-[Event Tracing for Windows (Windows ドライバー)](https://msdn.microsoft.com/library/windows/hardware/ff552961)  
-[ソフトウェア トレース用ツール](https://msdn.microsoft.com/library/windows/hardware/ff556204)  
+[NFC のデバイス ドライバー インターフェイス (DDI) の概要](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
+[NFC クラスの拡張機能 (CX) リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
+[Event Tracing for Windows (Windows ドライバー)](https://docs.microsoft.com/windows-hardware/drivers/devtest/tools-for-software-tracing)  
+[ソフトウェア トレース用ツール](https://docs.microsoft.com/windows-hardware/drivers/devtest/wpp-software-tracing)  

@@ -4,12 +4,12 @@ description: WIA コンポーネント
 ms.assetid: e75b8929-c16a-4c7a-9064-4fcb104bfa41
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 44b07e5da2591790aefa18a8665e5c1766a9da75
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 30d6d474c1b2109f7fb7ba064e5fe60a8862ee35
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366998"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375368"
 ---
 # <a name="wia-components"></a>WIA コンポーネント
 
@@ -104,9 +104,9 @@ WIA サービスは、イメージング アプリケーションと WIA ミニ�
 
 ### <a name="wia-minidrivers"></a>WIA ミニドライバー
 
-[WIA ミニドライバー](https://msdn.microsoft.com/library/windows/hardware/ff545027)ベンダーから提供されたを WIA プロパティの変更と、イメージング デバイスにコマンドを直接ユーザー モード コンポーネント。 ミニドライバーは、WIA サービスを呼び出すようにミニドライバーとの通信に WIA DDI を実装します。
+[WIA ミニドライバー](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nn-wiamindr_lh-iwiaminidrv)ベンダーから提供されたを WIA プロパティの変更と、イメージング デバイスにコマンドを直接ユーザー モード コンポーネント。 ミニドライバーは、WIA サービスを呼び出すようにミニドライバーとの通信に WIA DDI を実装します。
 
-WIA ミニドライバーは、カーネル モード静止イメージ ドライバーにドライブを USB ドライバーなどのドライバーを介して、イメージング デバイスがデバイスに固有では、ユーザー モード インターフェイスを提供します。 ミニドライバーは、呼び出すことによって、カーネル モード ドライバーと通信する、 [ **CreateFile**](https://msdn.microsoft.com/library/windows/desktop/aa363858)、 **ReadFile**、 **WriteFile**、および[ **DeviceIoControl** ](https://msdn.microsoft.com/library/windows/desktop/aa363216) Microsoft Win32 関数 (これは、Microsoft Windows SDK ドキュメントで説明しています)。
+WIA ミニドライバーは、カーネル モード静止イメージ ドライバーにドライブを USB ドライバーなどのドライバーを介して、イメージング デバイスがデバイスに固有では、ユーザー モード インターフェイスを提供します。 ミニドライバーは、呼び出すことによって、カーネル モード ドライバーと通信する、 [ **CreateFile**](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-createfilea)、 **ReadFile**、 **WriteFile**、および[ **DeviceIoControl** ](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol) Microsoft Win32 関数 (これは、Microsoft Windows SDK ドキュメントで説明しています)。
 
 イメージングのアプリケーションでは、WIA ミニドライバーを直接呼び出すことはできません。 WIA サービスのみでは、ドライバーを直接呼び出すことができます。
 
@@ -118,7 +118,7 @@ Microsoft では Microsoft Windows Driver Model WDM ベースのカーネル モ
 
 仕入先は、イメージング デバイスが I/O の Microsoft 提供のカーネル モード ドライバーと互換性がない場合にのみ、カーネル モード静止イメージ ドライバーを提供する必要があります。
 
-**注**   Windows XP で、後で、ドライバーからバージョン情報を取得できます。 [ **WIA\_DIP\_WIA\_バージョン**](https://msdn.microsoft.com/library/windows/hardware/ff550296)プロパティには、WIA バージョンが含まれていますと[ **WIA\_DIP\_ドライバー\_バージョン**](https://msdn.microsoft.com/library/windows/hardware/ff550263)プロパティには、DLL バージョン ドライバーにはが含まれています。 WIA サービスを作成してこれらのプロパティの保持自動的に追加されます、WIA サービスによって、ドライバーが読み込まれるときにします。 Windows Me には、これらのプロパティは含まれません。
+**注**   Windows XP で、後で、ドライバーからバージョン情報を取得できます。 [ **WIA\_DIP\_WIA\_バージョン**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dip-wia-version)プロパティには、WIA バージョンが含まれていますと[ **WIA\_DIP\_ドライバー\_バージョン**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dip-driver-version)プロパティには、DLL バージョン ドライバーにはが含まれています。 WIA サービスを作成してこれらのプロパティの保持自動的に追加されます、WIA サービスによって、ドライバーが読み込まれるときにします。 Windows Me には、これらのプロパティは含まれません。
 
  
 

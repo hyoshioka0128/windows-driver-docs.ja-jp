@@ -4,27 +4,27 @@ description: VMQ 割り込み要件
 ms.assetid: 7ECC9031-D41B-4664-963D-F1C20B297B7C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f7230021daa6b10cbc4599c22fe86d9d165ff449
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b74301b77abf9a07db2a31d6c62925f96ac1a49f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327588"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376403"
 ---
 # <a name="vmq-interrupt-requirements"></a>VMQ 割り込み要件
 
 
 仮想マシン キュー (VMQ) 機能をサポートしているミニポート ドライバーでは、次の割り込み配賦の要件もサポートする必要があります。
 
--   ミニポート ドライバーには、MSI をサポートする必要があります。 ドライバーを設定する必要があります、 **NDIS\_受信\_フィルター\_MSI\_X\_サポートされている**フラグ、 **SupportedQueueProperties**メンバー、 [ **NDIS\_受信\_フィルター\_機能**](https://msdn.microsoft.com/library/windows/hardware/ff566864)構造体。
+-   ミニポート ドライバーには、MSI をサポートする必要があります。 ドライバーを設定する必要があります、 **NDIS\_受信\_フィルター\_MSI\_X\_サポートされている**フラグ、 **SupportedQueueProperties**メンバー、 [ **NDIS\_受信\_フィルター\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)構造体。
 
-    ドライバーはこの構造を返します、 [ **NDIS\_ミニポート\_アダプター\_ハードウェア\_支援\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff565924)構造体ドライバーがその呼び出しで使用する、 [ **NdisMSetMiniportAttributes** ](https://msdn.microsoft.com/library/windows/hardware/ff563672)関数。
+    ドライバーはこの構造を返します、 [ **NDIS\_ミニポート\_アダプター\_ハードウェア\_支援\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_hardware_assist_attributes)構造体ドライバーがその呼び出しで使用する、 [ **NdisMSetMiniportAttributes** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsetminiportattributes)関数。
 
--   ミニポート ドライバーを呼び出す必要があります、 [ **NdisGetRssProcessorInformation** ](https://msdn.microsoft.com/library/windows/hardware/ff562669)ベクトルの割り込みを割り当てるためのプロセッサ情報を取得します。 レジストリ キーまたは割り込み割り当ての他のソースから取得した情報に依存する必要があります。
+-   ミニポート ドライバーを呼び出す必要があります、 [ **NdisGetRssProcessorInformation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisgetrssprocessorinformation)ベクトルの割り込みを割り当てるためのプロセッサ情報を取得します。 レジストリ キーまたは割り込み割り当ての他のソースから取得した情報に依存する必要があります。
 
-    [**NdisGetRssProcessorInformation** ](https://msdn.microsoft.com/library/windows/hardware/ff562669) RSS および VMQ のミニポート ドライバーが使用できるプロセッサのセットに関する情報を返します。 この情報は、 [ **NDIS\_RSS\_プロセッサ\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff567274)構造体。
+    [**NdisGetRssProcessorInformation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisgetrssprocessorinformation) RSS および VMQ のミニポート ドライバーが使用できるプロセッサのセットに関する情報を返します。 この情報は、 [ **NDIS\_RSS\_プロセッサ\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_rss_processor_info)構造体。
 
--   ミニポート ドライバーで指定されている各プロセッサの割り込みの 1 つだけのベクターを割り当てる必要があります、 [ **NDIS\_RSS\_プロセッサ\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff567274)構造体。
+-   ミニポート ドライバーで指定されている各プロセッサの割り込みの 1 つだけのベクターを割り当てる必要があります、 [ **NDIS\_RSS\_プロセッサ\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_rss_processor_info)構造体。
 
     ミニポート ドライバーでは、他のイベントを送信または受信パケットの操作に関連していない以下の 2 つのベクトルの割り込みを割り当てる必要があります。 など、ドライバーでは、リンクのステータス イベント、IDT を割り当てる可能性があります。
 

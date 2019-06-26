@@ -4,12 +4,12 @@ description: このトピックでは、どの WDM ドライバーは、Windows 
 ms.assetid: 53E34B9C-8C0A-4F15-951B-7AB133DE0C5A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d3ac883eb29b1aac4d7069bba0db51c7c3a719c3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d9e09e9fbe03d38f2dd0151708caba42a796e4ad
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63385706"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376172"
 ---
 # <a name="which-drivers-can-be-ported-and-where"></a>移植できるドライバーと場所
 
@@ -31,7 +31,7 @@ ms.locfileid: "63385706"
 
 KMDF を使用して、Windows 2000 以降を実行しているドライバーを作成することができます。 ターゲットの Windows 8.1 以降には、UMDF バージョン 1 と後で、Windows XP で実行されるドライバーを作成および UMDF バージョン 2 を使用できます。
 
-UMDF および KMDF をサポートするデバイスとドライバーの種類については、次を参照してください。[ドライバー モデルを選択する](https://msdn.microsoft.com/library/windows/hardware/ff554652)します。
+UMDF および KMDF をサポートするデバイスとドライバーの種類については、次を参照してください。[ドライバー モデルを選択する](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/choosing-a-driver-model)します。
 
 ## <a name="which-framework-should-i-port-my-wdm-driver-to-kmdf-or-umdf-2"></a>どのフレームワーク、KMDF または UMDF 2 には、WDM ドライバーを移植する必要がありますか。
 
@@ -40,12 +40,12 @@ UMDF および KMDF をサポートするデバイスとドライバーの種類
 
     後で、KMDF 専用の機能が必要があること認識、ある KMDF、するには、2 の UMDF ドライバーを変換する簡単な」の説明に従って[KMDF ドライバーを 2.0 の UMDF ドライバー (およびその逆) に変換する方法について](how-to-generate-a-umdf-driver-from-a-kmdf-driver.md)します。
 
-2.  記述することも、*モードに依存しない*ドライバー、つまり、KMDF または UMDF を使用してコンパイルすることができます。 モードに依存しないドライバーを作成するには、UMDF 2 テンプレートを使用して起動します。 記載 DDI バージョン管理情報を使用して[WDF のコールバックの概要とメソッド](https://msdn.microsoft.com/library/windows/hardware/dn265591)のみ KMDF と UMDF 2 の両方で使用できるメソッドを呼び出すことを確認します。 条件付きでヘッダーの参照をタグで説明するプリプロセッサ マクロを[KMDF ドライバーを 2.0 の UMDF ドライバー (およびその逆) に変換する方法について](how-to-generate-a-umdf-driver-from-a-kmdf-driver.md)します。 ドライバーには、ターゲット フレームワークでは、Visual Studio テンプレートを使用して、空のドライバーのプロジェクトを作成し、経由で、ソース コードをコピーします。
+2.  記述することも、*モードに依存しない*ドライバー、つまり、KMDF または UMDF を使用してコンパイルすることができます。 モードに依存しないドライバーを作成するには、UMDF 2 テンプレートを使用して起動します。 記載 DDI バージョン管理情報を使用して[WDF のコールバックの概要とメソッド](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_wdf/)のみ KMDF と UMDF 2 の両方で使用できるメソッドを呼び出すことを確認します。 条件付きでヘッダーの参照をタグで説明するプリプロセッサ マクロを[KMDF ドライバーを 2.0 の UMDF ドライバー (およびその逆) に変換する方法について](how-to-generate-a-umdf-driver-from-a-kmdf-driver.md)します。 ドライバーには、ターゲット フレームワークでは、Visual Studio テンプレートを使用して、空のドライバーのプロジェクトを作成し、経由で、ソース コードをコピーします。
 
 ## <a name="related-topics"></a>関連トピック
 
 
-[UMDF の概要](https://msdn.microsoft.com/library/windows/hardware/dn384105)
+[UMDF の概要](https://docs.microsoft.com/windows-hardware/drivers/wdf/getting-started-with-umdf-version-2)
 
 [KMDF バージョン履歴](kmdf-version-history.md)
 

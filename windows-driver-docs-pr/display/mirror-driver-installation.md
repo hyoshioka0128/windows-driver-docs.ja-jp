@@ -7,12 +7,12 @@ keywords:
 - ミラー ドライバー WDK Windows 2000 の表示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 100fd28f735c1d3e712e3fedcd1e2f29e2c9b0df
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ed4b2b1df3a82f7bf2f5bab0061159ca5d32f0a0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358409"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385593"
 ---
 # <a name="mirror-driver-installation"></a>ミラー ドライバーのインストール
 
@@ -22,13 +22,13 @@ ms.locfileid: "63358409"
 
 システムでは、ミラー ドライバーをインストール、Win32 への応答で**ChangeDisplaySettings**または**ChangeDisplaySettingsEx**呼び出します。 これらの呼び出しには、ミラー ドライバーをインストールおよびその設定を管理するを行うユーザー モード サービスを実装する必要があります。 このアプリケーションを使用します。
 
--   ミラー ドライバーがブート時に正しく読み込まれたことを確認します。 アプリケーションは、CD を指定する必要があります\_それ以降の起動と同じでは、ドライバーが自動的に読み込まれるように、レジストリ設定を保存する updateregistry にフラグ[ **DEVMODEW** ](https://msdn.microsoft.com/library/windows/hardware/ff552837)について以下で説明します。
+-   ミラー ドライバーがブート時に正しく読み込まれたことを確認します。 アプリケーションは、CD を指定する必要があります\_それ以降の起動と同じでは、ドライバーが自動的に読み込まれるように、レジストリ設定を保存する updateregistry にフラグ[ **DEVMODEW** ](https://docs.microsoft.com/windows/desktop/api/wingdi/ns-wingdi-_devicemodew)について以下で説明します。
 
 -   デスクトップの変更は表示を取得することによって、WM 経由で通知を変更するには適切に応答\_DISPLAYCHANGE メッセージ。
 
 サンプル*Mirror.exe*付属の Windows Driver Kit (WDK) でのファイル、ソース コードからビルドすることができる実装にミラー ドライバーの読み込み操作ユーザー モード サービスのサブセットを提供する必要があります。
 
-ユーザー モード アプリケーションを入力する必要があります、ミラー ドライバーをインストールすると、前に、 [ **DEVMODEW** ](https://msdn.microsoft.com/library/windows/hardware/ff552837)構造を次の表示属性を指定します。
+ユーザー モード アプリケーションを入力する必要があります、ミラー ドライバーをインストールすると、前に、 [ **DEVMODEW** ](https://docs.microsoft.com/windows/desktop/api/wingdi/ns-wingdi-_devicemodew)構造を次の表示属性を指定します。
 
 -   位置 (**dmPosition**)
 

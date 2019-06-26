@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e0a57c7c3eba65539a9296009826b900a81da3b5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 79e4fceeed8bffeccb34b3605b57231eb2ec11e9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346384"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371152"
 ---
 # <a name="kspropertypindataintersection"></a>KSPROPERTY\_PIN\_DATAINTERSECTION
 
@@ -53,8 +53,8 @@ ms.locfileid: "63346384"
 <td><p>〇</p></td>
 <td><p>いいえ</p></td>
 <td><p>Pin</p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff566722" data-raw-source="[&lt;strong&gt;KSP_PIN&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566722)"><strong>KSP_PIN</strong></a></p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff561656" data-raw-source="[&lt;strong&gt;KSDATAFORMAT&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff561656)"><strong>KSDATAFORMAT</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_pin" data-raw-source="[&lt;strong&gt;KSP_PIN&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_pin)"><strong>KSP_PIN</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksdataformat" data-raw-source="[&lt;strong&gt;KSDATAFORMAT&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksdataformat)"><strong>KSDATAFORMAT</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -64,13 +64,13 @@ ms.locfileid: "63346384"
 <a name="remarks"></a>注釈
 -------
 
-このプロパティを指定するには、提供、 [ **KSP\_PIN** ](https://msdn.microsoft.com/library/windows/hardware/ff566722)構造が続く、 [ **KSMULTIPLE\_項目**](https://msdn.microsoft.com/library/windows/hardware/ff563441)構造体と 64 ビットのシーケンスに不整合[ **KSDATARANGE** ](https://msdn.microsoft.com/library/windows/hardware/ff561658)構造体。 **PinId**のメンバー **KSP\_PIN**暗証番号 (pin) ファクトリを指定します。
+このプロパティを指定するには、提供、 [ **KSP\_PIN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_pin)構造が続く、 [ **KSMULTIPLE\_項目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksmultiple_item)構造体と 64 ビットのシーケンスに不整合[ **KSDATARANGE** ](https://docs.microsoft.com/previous-versions/ff561658(v=vs.85))構造体。 **PinId**のメンバー **KSP\_PIN**暗証番号 (pin) ファクトリを指定します。
 
 このプロパティは、クライアントが指定したリストから、最初の一致するデータ形式を返します。
 
 Stream ミニドライバーは、このプロパティを直接処理する必要はありません。ストリーム クラス ドライバーは、ストリーム要求のブロックを使用して詳細情報を照会するこのプロパティを処理します。
 
-詳細については、次を参照してください。 [KS データ形式とデータ範囲](https://msdn.microsoft.com/library/windows/hardware/ff567632)します。
+詳細については、次を参照してください。 [KS データ形式とデータ範囲](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-data-formats-and-data-ranges)します。
 
 <a name="requirements"></a>要件
 ------------
@@ -91,13 +91,13 @@ Stream ミニドライバーは、このプロパティを直接処理する必�
 ## <a name="see-also"></a>関連項目
 
 
-[**KSP\_暗証番号 (PIN)**](https://msdn.microsoft.com/library/windows/hardware/ff566722)
+[**KSP\_暗証番号 (PIN)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_pin)
 
-[**KSMULTIPLE\_項目**](https://msdn.microsoft.com/library/windows/hardware/ff563441)
+[**KSMULTIPLE\_項目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksmultiple_item)
 
-[**KSDATARANGE**](https://msdn.microsoft.com/library/windows/hardware/ff561658)
+[**KSDATARANGE**](https://docs.microsoft.com/previous-versions/ff561658(v=vs.85))
 
-[**KSDATAFORMAT**](https://msdn.microsoft.com/library/windows/hardware/ff561656)
+[**KSDATAFORMAT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksdataformat)
 
  
 

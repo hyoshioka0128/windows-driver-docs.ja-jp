@@ -9,12 +9,12 @@ keywords:
 - オフスクリーン メモリ WDK Windows 2000 の表示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 300dd7096c60a7095a7e44a6d71da51ef20305b7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 96308f6cc29df62fbbdc013f815d70385d5e81c8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373950"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384621"
 ---
 # <a name="bitmaps-in-display-drivers"></a>ディスプレイ ドライバーのビットマップ
 
@@ -42,7 +42,7 @@ ms.locfileid: "63373950"
 -   マスク ビット ブロック転送し、ダブル バッファリングなど、OpenGL をサポートする操作を実行するハードウェアを活用できます。
 
 
-ドライバーによってオフスクリーン メモリでデバイスのビットマップを実装する必要があります[ **DrvCreateDeviceBitmap**](https://msdn.microsoft.com/library/windows/hardware/ff556185)します。
+ドライバーによってオフスクリーン メモリでデバイスのビットマップを実装する必要があります[ **DrvCreateDeviceBitmap**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvcreatedevicebitmap)します。
 
  
 

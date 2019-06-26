@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - WDI_TLV_PLDR_SUPPORT ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 3339b7a4555f1a288ba0f28be901899eb130a60d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 295ccd496becfbd8158c30071bb12c220351cf39
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380020"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380740"
 ---
 # <a name="wditlvpldrsupport"></a>WDI\_TLV\_PLDR\_サポート
 
@@ -41,7 +41,7 @@ UINT8 のサイズをバイト単位で。
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -68,7 +68,7 @@ UINT8 のサイズをバイト単位で。
 ## <a name="see-also"></a>関連項目
 
 
-[PLDR](https://msdn.microsoft.com/library/windows/hardware/mt269098)
+[PLDR](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-pldr-and-fldr)
 
  
 

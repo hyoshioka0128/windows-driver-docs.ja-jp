@@ -5,12 +5,12 @@ ms.assetid: 65553a3f-57af-49ef-a3b7-ed35df0a319d
 ms.date: 08/08/2017
 keywords: -NDIS_STATUS_WWAN_SMS_STATUS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: c60af8cff49121851565aa71b41cd1eb8dcb20e0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bbed29918c313239e12a8678c9335cfdb75ce7ff
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372214"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372535"
 ---
 # <a name="ndisstatuswwansmsstatus"></a>NDIS\_状態\_WWAN\_SMS\_状態
 
@@ -23,7 +23,7 @@ ms.locfileid: "63372214"
 
 ミニポート ドライバーには、この通知が不要なイベントを送信できます。
 
-この通知を使用して、 [ **NDIS\_WWAN\_SMS\_状態**](https://msdn.microsoft.com/library/windows/hardware/ff567945)構造体。
+この通知を使用して、 [ **NDIS\_WWAN\_SMS\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_sms_status)構造体。
 
 <a name="remarks"></a>注釈
 -------
@@ -55,7 +55,7 @@ ms.locfileid: "63372214"
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_WWAN\_SMS\_状態**](https://msdn.microsoft.com/library/windows/hardware/ff567945)
+[**NDIS\_WWAN\_SMS\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_sms_status)
 
 [**NDIS\_状態\_WWAN\_SMS\_受信**](ndis-status-wwan-sms-receive.md)
 

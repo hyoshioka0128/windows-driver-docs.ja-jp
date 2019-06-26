@@ -11,12 +11,12 @@ keywords:
 - 失敗した開始 PnP WDK
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: de101e580cb4f21b343e8e57d8c820f256b27438
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9614bfec6c95559a5ae08ba2b3f021e81d7a7957
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331950"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382992"
 ---
 # <a name="starting-a-device"></a>デバイスの開始
 
@@ -24,13 +24,13 @@ ms.locfileid: "63331950"
 
 
 
-PnP マネージャーに送信する[ **IRP\_MN\_開始\_デバイス**](https://msdn.microsoft.com/library/windows/hardware/ff551749)新しく列挙されたデバイスを起動するかが、既存のデバイスを再起動するドライバーへの要求リソースの再調整のために停止します。
+PnP マネージャーに送信する[ **IRP\_MN\_開始\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)新しく列挙されたデバイスを起動するかが、既存のデバイスを再起動するドライバーへの要求リソースの再調整のために停止します。
 
-関数とフィルター ドライバーを設定する必要があります、 [ *IoCompletion* ](https://msdn.microsoft.com/library/windows/hardware/ff548354) 、日常的なパス、 **IRP\_MN\_開始\_デバイス**ダウン要求デバイス スタック、および下位のすべてのドライバーが IRP に完了するまで、その開始操作を延期します。 親のバス ドライバー、デバイス スタックの下部にあるドライバーは、他のドライバーが、デバイスにアクセスする前に、デバイスでは、その開始操作を実行する最初のドライバーである必要があります。
+関数とフィルター ドライバーを設定する必要があります、 [ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine) 、日常的なパス、 **IRP\_MN\_開始\_デバイス**ダウン要求デバイス スタック、および下位のすべてのドライバーが IRP に完了するまで、その開始操作を延期します。 親のバス ドライバー、デバイス スタックの下部にあるドライバーは、他のドライバーが、デバイスにアクセスする前に、デバイスでは、その開始操作を実行する最初のドライバーである必要があります。
 
 開始操作が適切な順序を確実には、Windows 2000 以降のバージョンの Windows での PnP マネージャーが延期デバイス インターフェイスを公開して、IRP が成功すると開始されるまで、デバイスの要求のブロックを作成します。
 
-デバイスのドライバーが失敗した場合、 **IRP\_MN\_開始\_デバイス**要求、PnP マネージャーに送信、 [ **IRP\_MN\_の削除\_デバイス**](https://msdn.microsoft.com/library/windows/hardware/ff551738) (Windows 2000 以降のバージョンの Windows で) デバイス スタックを要求します。 この IRP に応答して、ドライバーは、デバイスは、(これらには、開始 IRP が成功した) 場合は、開始操作を元に戻すの元に戻す、 [ *AddDevice* ](https://msdn.microsoft.com/library/windows/hardware/ff540521)操作、デバイス スタックからデタッチするとします。 PnP マネージャーによって、このようなデバイス「開始できませんでした」。
+デバイスのドライバーが失敗した場合、 **IRP\_MN\_開始\_デバイス**要求、PnP マネージャーに送信、 [ **IRP\_MN\_の削除\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-remove-device) (Windows 2000 以降のバージョンの Windows で) デバイス スタックを要求します。 この IRP に応答して、ドライバーは、デバイスは、(これらには、開始 IRP が成功した) 場合は、開始操作を元に戻すの元に戻す、 [ *AddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)操作、デバイス スタックからデタッチするとします。 PnP マネージャーによって、このようなデバイス「開始できませんでした」。
 
 このセクションでは、次のトピックについて説明します。
 

@@ -20,21 +20,21 @@ keywords:
 - WdfSynchronizationScopeInheritFromParent
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e74574b2b899ce051eb80aa22a6c62809f1b514e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0bdf93ac0b94e52cece3fde386e4e1694c195b90
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365526"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372286"
 ---
 # <a name="using-automatic-synchronization"></a>自動同期の使用
 
 
 ほぼすべての framework ベースのドライバーのコードは、イベントのコールバック関数に存在します。 フレームワークは自動的に、ほとんどのドライバーのコールバック関数を次のように同期します。
 
--   フレームワークは常に同期[全般的なデバイス オブジェクト](https://msdn.microsoft.com/library/windows/hardware/dn265631#device-callbacks)、[機能のデバイス オブジェクト (FDO)](https://msdn.microsoft.com/library/windows/hardware/dn265631#fdo-callbacks)、および[物理デバイス オブジェクト (PDO)](https://msdn.microsoft.com/library/windows/hardware/dn265631#pdo-callbacks)各イベントのコールバック関数その他のためが 1 つだけのコールバック関数 (を除く[ *EvtDeviceSurpriseRemoval*](https://msdn.microsoft.com/library/windows/hardware/ff540913)、 [ *EvtDeviceQueryRemove* ](https://msdn.microsoft.com/library/windows/hardware/ff540883)、および[ *EvtDeviceQueryStop*](https://msdn.microsoft.com/library/windows/hardware/ff540885)) デバイスごとに一度に呼び出すことができます。 これらのコールバック関数は、プラグ アンド プレイ (PnP) および電源管理イベントをサポートし、IRQL で呼び出されます = パッシブ\_レベル。
+-   フレームワークは常に同期[全般的なデバイス オブジェクト](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/#device-callbacks)、[機能のデバイス オブジェクト (FDO)](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/#fdo-callbacks)、および[物理デバイス オブジェクト (PDO)](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/#pdo-callbacks)各イベントのコールバック関数その他のためが 1 つだけのコールバック関数 (を除く[ *EvtDeviceSurpriseRemoval*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_surprise_removal)、 [ *EvtDeviceQueryRemove* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_query_remove)、および[ *EvtDeviceQueryStop*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_query_stop)) デバイスごとに一度に呼び出すことができます。 これらのコールバック関数は、プラグ アンド プレイ (PnP) および電源管理イベントをサポートし、IRQL で呼び出されます = パッシブ\_レベル。
 
--   必要に応じて、これらのコールバック関数は、一度に 1 つを実行できるように、フレームワークは、ドライバーの I/O 要求を処理するコールバック関数の実行を同期できます。 具体的には、フレームワークがのコールバック関数を同期できる[キュー](https://msdn.microsoft.com/library/windows/hardware/dn265647)、[割り込み](https://msdn.microsoft.com/library/windows/hardware/dn265640)、[遅延プロシージャ呼び出し (DPC)](https://msdn.microsoft.com/library/windows/hardware/dn265635)、[タイマー](https://msdn.microsoft.com/library/windows/hardware/dn265670)、[作業項目](https://msdn.microsoft.com/library/windows/hardware/dn265673)、および[ファイル](https://msdn.microsoft.com/library/windows/hardware/dn265638)オブジェクトの要求オブジェクトのほか、 [ *EvtRequestCancel* ](https://msdn.microsoft.com/library/windows/hardware/ff541817)コールバック関数。 フレームワークがほとんどを呼び出す IRQL でこれらのコールバック関数のディスパッチを =\_IRQL で実行するキューおよびファイル オブジェクトのコールバック関数を強制できますが、レベル = パッシブ\_レベル。 (作業項目のコールバック関数が常にパッシブで実行\_レベルです)。
+-   必要に応じて、これらのコールバック関数は、一度に 1 つを実行できるように、フレームワークは、ドライバーの I/O 要求を処理するコールバック関数の実行を同期できます。 具体的には、フレームワークがのコールバック関数を同期できる[キュー](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/)、[割り込み](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/)、[遅延プロシージャ呼び出し (DPC)](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdpc/)、[タイマー](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdftimer/)、[作業項目](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfworkitem/)、および[ファイル](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdffileobject/)オブジェクトの要求オブジェクトのほか、 [ *EvtRequestCancel* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nc-wdfrequest-evt_wdf_request_cancel)コールバック関数。 フレームワークがほとんどを呼び出す IRQL でこれらのコールバック関数のディスパッチを =\_IRQL で実行するキューおよびファイル オブジェクトのコールバック関数を強制できますが、レベル = パッシブ\_レベル。 (作業項目のコールバック関数が常にパッシブで実行\_レベルです)。
 
 フレームワークは、一連の内部同期ロックを使用して、この自動同期を実装します。 フレームワークにより、2 つまたは複数のスレッドが同時に、同じコールバック関数を呼び出すことはできませんので、各スレッドがコールバック関数を呼び出す前に同期ロックを獲得できるまで待機する必要があります。 (必要に応じて、ドライバーも取得できます必要な場合にこれらの同期ロック。 詳細については、次を参照してください[フレームワークを使用してロック](using-framework-locks.md)。)。
 
@@ -58,22 +58,22 @@ ms.locfileid: "63365526"
 <tbody>
 <tr class="odd">
 <td align="left"><p>キュー オブジェクト</p></td>
-<td align="left"><p><a href="request-handlers.md" data-raw-source="[Request handlers](request-handlers.md)">要求ハンドラー</a>、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff541771" data-raw-source="[&lt;em&gt;EvtIoQueueState&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff541771)"> <em>EvtIoQueueState</em></a>、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff541779" data-raw-source="[&lt;em&gt;EvtIoResume&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff541779)"> <em>EvtIoResume</em></a>、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff541788" data-raw-source="[&lt;em&gt;EvtIoStop&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff541788)"> <em>EvtIoStop</em></a></p></td>
+<td align="left"><p><a href="request-handlers.md" data-raw-source="[Request handlers](request-handlers.md)">要求ハンドラー</a>、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_queue_state" data-raw-source="[&lt;em&gt;EvtIoQueueState&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_queue_state)"> <em>EvtIoQueueState</em></a>、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_queue_io_resume" data-raw-source="[&lt;em&gt;EvtIoResume&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_queue_io_resume)"> <em>EvtIoResume</em></a>、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_queue_io_stop" data-raw-source="[&lt;em&gt;EvtIoStop&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_queue_io_stop)"> <em>EvtIoStop</em></a></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>ファイル オブジェクト</p></td>
-<td align="left"><p>すべて<a href="https://msdn.microsoft.com/library/windows/hardware/dn265638" data-raw-source="[callback functions](https://msdn.microsoft.com/library/windows/hardware/dn265638)">コールバック関数</a></p></td>
+<td align="left"><p>すべて<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdffileobject/" data-raw-source="[callback functions](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdffileobject/)">コールバック関数</a></p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>オブジェクトを要求します。</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff541817" data-raw-source="[&lt;em&gt;EvtRequestCancel&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff541817)"><em>EvtRequestCancel</em></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nc-wdfrequest-evt_wdf_request_cancel" data-raw-source="[&lt;em&gt;EvtRequestCancel&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nc-wdfrequest-evt_wdf_request_cancel)"><em>EvtRequestCancel</em></a></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-必要に応じて、フレームワークも同期できますこれら、割り込み、DPC、作業項目、コールバック関数と、デバイスのドライバーを提供するタイマー オブジェクトのコールバック関数 (割り込みオブジェクトの除外[ *EvtInterruptIsr* ](https://msdn.microsoft.com/library/windows/hardware/ff541735)コールバック関数)。 この追加の同期を有効にするドライバーを設定する必要があります、 **AutomaticSerialization**これらのオブジェクトの構成構造体メンバー **TRUE**します。
+必要に応じて、フレームワークも同期できますこれら、割り込み、DPC、作業項目、コールバック関数と、デバイスのドライバーを提供するタイマー オブジェクトのコールバック関数 (割り込みオブジェクトの除外[ *EvtInterruptIsr* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_isr)コールバック関数)。 この追加の同期を有効にするドライバーを設定する必要があります、 **AutomaticSerialization**これらのオブジェクトの構成構造体メンバー **TRUE**します。
 
 要約すると、フレームワークの自動同期機能は、次の機能を提供します。
 
@@ -85,7 +85,7 @@ ms.locfileid: "63365526"
 
 -   ドライバーは、割り込みサービスを提供するコードを同期する必要があり、アクセスが記載されている手法を使用してデータを中断[同期割り込みコード](synchronizing-interrupt-code.md)します。
 
--   フレームワークは同期しないドライバーのドライバーのなどの他のコールバック関数[ *CompletionRoutine* ](https://msdn.microsoft.com/library/windows/hardware/ff540745)コールバック関数、または I/O のターゲット オブジェクトを定義するコールバック関数。 代わりに、フレームワークによって追加[ロック](using-framework-locks.md)がこれらのコールバック関数を同期するドライバーを使用できます。
+-   フレームワークは同期しないドライバーのドライバーのなどの他のコールバック関数[ *CompletionRoutine* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nc-wdfrequest-evt_wdf_request_completion_routine)コールバック関数、または I/O のターゲット オブジェクトを定義するコールバック関数。 代わりに、フレームワークによって追加[ロック](using-framework-locks.md)がこれらのコールバック関数を同期するドライバーを使用できます。
 
 ### <a name="choosing-a-synchronization-scope"></a>同期スコープを選択します。
 
@@ -103,7 +103,7 @@ ms.locfileid: "63365526"
 
     フレームワークは、前の表が含まれていて、コールバック関数を呼び出す前に同期ロックを取得しませんコールバック関数の実行を同期しません。 同期が必要な場合、ドライバーによって提供する必要があります。
 
-デバイス レベルの同期、キュー レベルの同期、または、ドライバーのない同期を提供するためにフレームワークが必要かどうかを指定することを指定できます、*同期スコープ*ドライバー オブジェクトのデバイスオブジェクト、またはキューのオブジェクト。 **SynchronizationScope**のオブジェクトのメンバー [ **WDF\_オブジェクト\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff552400)構造体がオブジェクトの識別します同期スコープ。 ドライバーが指定できる同期スコープの値は次のとおりです。
+デバイス レベルの同期、キュー レベルの同期、または、ドライバーのない同期を提供するためにフレームワークが必要かどうかを指定することを指定できます、*同期スコープ*ドライバー オブジェクトのデバイスオブジェクト、またはキューのオブジェクト。 **SynchronizationScope**のオブジェクトのメンバー [ **WDF\_オブジェクト\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/ns-wdfobject-_wdf_object_attributes)構造体がオブジェクトの識別します同期スコープ。 ドライバーが指定できる同期スコープの値は次のとおりです。
 
 <a href="" id="wdfsynchronizationscopedevice"></a>**WdfSynchronizationScopeDevice**  
 フレームワークは、デバイス オブジェクトの同期ロックを取得することで同期します。
@@ -119,13 +119,13 @@ ms.locfileid: "63365526"
 
 一般に、デバイス レベルの同期を使用してはお勧めできません。
 
-同期スコープの値の詳細については、次を参照してください。 [ **WDF\_同期\_スコープ**](https://msdn.microsoft.com/library/windows/hardware/ff552518)します。
+同期スコープの値の詳細については、次を参照してください。 [ **WDF\_同期\_スコープ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/ne-wdfobject-_wdf_synchronization_scope)します。
 
 ドライバー オブジェクトの既定の同期のスコープは**WdfSynchronizationScopeNone**します。 デバイスとキューのオブジェクトの既定の同期のスコープは**WdfSynchronizationScopeInheritFromParent**します。
 
 すべてのデバイスのデバイス レベルの同期を行うために、フレームワークにする場合は、次の手順を使用できます。
 
-1.  設定**SynchronizationScope**に**WdfSynchronizationScopeDevice**で、 [ **WDF\_オブジェクト\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff552400)のドライバーの構造*ドライバー*オブジェクト。
+1.  設定**SynchronizationScope**に**WdfSynchronizationScopeDevice**で、 [ **WDF\_オブジェクト\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/ns-wdfobject-_wdf_object_attributes)のドライバーの構造*ドライバー*オブジェクト。
 
 2.  既定値を使用して、 **WdfSynchronizationScopeInheritFromParent**の各値*デバイス*オブジェクト。
 
@@ -133,21 +133,21 @@ ms.locfileid: "63365526"
 
 1.  既定値を使用して、 **WdfSynchronizationScopeNone**値、*ドライバー*オブジェクト。
 
-2.  設定**SynchronizationScope**に**WdfSynchronizationScopeDevice**で、 [ **WDF\_オブジェクト\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff552400)個々 の構造*デバイス*オブジェクト。
+2.  設定**SynchronizationScope**に**WdfSynchronizationScopeDevice**で、 [ **WDF\_オブジェクト\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/ns-wdfobject-_wdf_object_attributes)個々 の構造*デバイス*オブジェクト。
 
 デバイスのキュー レベルの同期を提供するためにフレームワークを設定する場合は、次の手法を使用できます。
 
--   フレームワーク バージョン 1.9 以降では、設定して個々 のキューのキュー レベルの同期を有効する必要があります**WdfSynchronizationScopeQueue**で、 [ **WDF\_オブジェクト\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff552400)キュー オブジェクトの構造体。 これは、手法をお勧めします。
+-   フレームワーク バージョン 1.9 以降では、設定して個々 のキューのキュー レベルの同期を有効する必要があります**WdfSynchronizationScopeQueue**で、 [ **WDF\_オブジェクト\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/ns-wdfobject-_wdf_object_attributes)キュー オブジェクトの構造体。 これは、手法をお勧めします。
 
 -   または、すべての framework バージョンでは、次の手順を使用できます。
-    1.  設定**SynchronizationScope**に**WdfSynchronizationScopeQueue**で、 [ **WDF\_オブジェクト\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff552400)の構造、*デバイス*オブジェクト。
+    1.  設定**SynchronizationScope**に**WdfSynchronizationScopeQueue**で、 [ **WDF\_オブジェクト\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/ns-wdfobject-_wdf_object_attributes)の構造、*デバイス*オブジェクト。
     2.  既定値を使用して、 **WdfSynchronizationScopeInheritFromParent**デバイスごとに値*キュー*オブジェクト。
 
 ドライバーの I/O 要求を処理するコールバック関数を同期するためにフレームワークしたくない場合は、既定値を使用して**SynchronizationScope**ドライバーのドライバー、デバイス、およびキューのオブジェクトの値。 この場合、フレームワークが、ドライバーの I/O 要求に関連するコールバック関数を自動的に同期しないと、IRQL でコールバック関数を呼び出すことができます&lt;= ディスパッチ\_レベル。
 
 その設定に注意してください、 **SynchronizationScope**値は、前の表が含まれています、コールバック関数のみを同期します。 場合に、ドライバーの割り込み、DPC、作業項目を同期させることも、フレームワークにして、タイマー オブジェクトのコールバック関数、ドライバーを設定する必要があります、 **AutomaticSerialization** にこれらのオブジェクトの構成構造体のメンバー**TRUE**します。
 
-ただし、設定**AutomaticSerialization**に**TRUE**同じ IRQL で実行すべて同期するコールバック関数の場合にのみです。 選択、*実行レベル*、IRQL レベルの互換性のない可能性がありますが、次の説明です。 このような場合は、ドライバーを使用する必要があります[framework ロック](using-framework-locks.md)設定ではなく**AutomaticSerialization**します。 割り込み、DPC、構成構造体の詳細については、作業項目と、タイマー オブジェクトおよび設定に適用される制限について**AutomaticSerialization**これらの構造体、を参照してください。[**WDF\_INTERRUPT\_CONFIG**](https://msdn.microsoft.com/library/windows/hardware/ff552347)、 [ **WDF\_DPC\_CONFIG**](https://msdn.microsoft.com/library/windows/hardware/ff551296)、 [ **WDF\_WORKITEM\_CONFIG**](https://msdn.microsoft.com/library/windows/hardware/ff553086)、および[ **WDF\_タイマー\_CONFIG** ](https://msdn.microsoft.com/library/windows/hardware/ff552519).
+ただし、設定**AutomaticSerialization**に**TRUE**同じ IRQL で実行すべて同期するコールバック関数の場合にのみです。 選択、*実行レベル*、IRQL レベルの互換性のない可能性がありますが、次の説明です。 このような場合は、ドライバーを使用する必要があります[framework ロック](using-framework-locks.md)設定ではなく**AutomaticSerialization**します。 割り込み、DPC、構成構造体の詳細については、作業項目と、タイマー オブジェクトおよび設定に適用される制限について**AutomaticSerialization**これらの構造体、を参照してください。[**WDF\_INTERRUPT\_CONFIG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/ns-wdfinterrupt-_wdf_interrupt_config)、 [ **WDF\_DPC\_CONFIG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdpc/ns-wdfdpc-_wdf_dpc_config)、 [ **WDF\_WORKITEM\_CONFIG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfworkitem/ns-wdfworkitem-_wdf_workitem_config)、および[ **WDF\_タイマー\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdftimer/ns-wdftimer-_wdf_timer_config).
 
 設定した場合**AutomaticSerialization**に**TRUE**、キュー レベルの同期を選択する必要があります。
 
@@ -163,7 +163,7 @@ ms.locfileid: "63365526"
 
 ドライバーは、ファイル オブジェクトのコールバック関数を提供する場合 IRQL でこれらのコールバック関数を呼び出すために、フレームワークをするほとんどの場合は注意 = パッシブ\_レベルのため、一部のファイル、ファイル名などのデータの指定はページング可能な。
 
-実行レベルを指定するには、ドライバーがの値を指定する必要があります、 **ExecutionLevel**のオブジェクトのメンバー [ **WDF\_オブジェクト\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff552400)構造体。 ドライバーを指定する実行レベルの値は次のとおりです。
+実行レベルを指定するには、ドライバーがの値を指定する必要があります、 **ExecutionLevel**のオブジェクトのメンバー [ **WDF\_オブジェクト\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/ns-wdfobject-_wdf_object_attributes)構造体。 ドライバーを指定する実行レベルの値は次のとおりです。
 
 <a href="" id="wdfexecutionlevelpassive"></a>**WdfExecutionLevelPassive**  
 フレームワークでは、オブジェクトのコールバック関数を呼び出す IRQL でパッシブ =\_レベル。
@@ -176,7 +176,7 @@ ms.locfileid: "63365526"
 
 ドライバー オブジェクトの既定の実行レベルは**WdfExecutionLevelDispatch**します。 その他のすべてのオブジェクトの既定の実行レベルは**WdfExecutionLevelInheritFromParent**します。
 
-実行レベル値の詳細については、次を参照してください。 [ **WDF\_実行\_レベル**](https://msdn.microsoft.com/library/windows/hardware/ff551310)します。
+実行レベル値の詳細については、次を参照してください。 [ **WDF\_実行\_レベル**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/ne-wdfobject-_wdf_execution_level)します。
 
 次の表では、位置、フレームワークは、キュー オブジェクトとファイル オブジェクトのドライバーのコールバック関数を呼び出すことができます、IRQL レベルを示します。
 

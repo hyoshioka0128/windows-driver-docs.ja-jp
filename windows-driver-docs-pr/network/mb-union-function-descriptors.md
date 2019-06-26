@@ -4,12 +4,12 @@ description: このセクションでは、統合機能ディスクリプター�
 ms.assetid: 4B8C63DD-4B8D-40AB-A6DF-0466343E7E45
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: caf0ed463cac22996d937819191284260f95e8e4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: aeb663a4eacb06832dcca998838a85d770651b38
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367639"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374036"
 ---
 # <a name="mb-union-function-descriptors"></a>MB Union Functional Descriptor
 
@@ -17,7 +17,7 @@ ms.locfileid: "63367639"
 ## <a name="union-function-descriptors"></a>統合機能ディスクリプター
 
 
-Ufd を実装しているモバイル ブロード バンド デバイスはデバイス クラスを持つ/サブクラス プロトコル/2 の/0]、[CDC のデバイスに必要な 0 として。 これは Windows がデバイスで USBCCGP を読み込みすることを防ぎます。 Windows が複合デバイスで USBCCGP を読み込む方法については、次を参照してください。 [USB 汎用親ドライバー (Usbccgp.sys)](https://msdn.microsoft.com/library/windows/hardware/ff539234)します。
+Ufd を実装しているモバイル ブロード バンド デバイスはデバイス クラスを持つ/サブクラス プロトコル/2 の/0]、[CDC のデバイスに必要な 0 として。 これは Windows がデバイスで USBCCGP を読み込みすることを防ぎます。 Windows が複合デバイスで USBCCGP を読み込む方法については、次を参照してください。 [USB 汎用親ドライバー (Usbccgp.sys)](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)します。
 
 Microsoft OS 互換性 ID を報告する Windows USBCCGP を読み込むには、デバイスに必要な"CDC\_WMC"デバイスが構成されていない場合。 互換性のある ID を検出した後は"CDC\_WMC"、USBCCGP と USBCCGP の Windows が読み込まれ、デバイス 1 に、構成を設定します。 USBCCGP は Microsoft OS の互換性のある id し、もう一度照会します。 今回は、ただし、する必要がありますを報告しないデバイスの Microsoft OS 互換性 ID"CDC\_WMC"。 デバイスによって、選択した構成内の関数の Microsoft OS 互換性 Id を報告する必要があります。
 

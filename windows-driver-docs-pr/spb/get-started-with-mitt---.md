@@ -4,12 +4,12 @@ description: ミット テストを実行するには、新しいミット掲示
 ms.assetid: 4467B82F-7B06-430B-A0CB-A6825045E5F4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eb0f35e136ca13e608bbb3c25ae2975cfbe5a309
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fe48e730bb5c8a7bae4c7eaa9126b3019cd4eaae
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348141"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373790"
 ---
 # <a name="get-started-with-mitt"></a>MITT の概要
 
@@ -27,8 +27,8 @@ ms.locfileid: "63348141"
 ## <a name="before-you-begin"></a>開始する前にしています.
 
 
--   [ミット ソフトウェア パッケージをダウンロード](https://msdn.microsoft.com/library/windows/hardware/dn919810)します。
--   [ミットを使用するためのハードウェアを購入します。](https://msdn.microsoft.com/library/windows/hardware/dn919811)
+-   [ミット ソフトウェア パッケージをダウンロード](https://docs.microsoft.com/previous-versions/dn919810(v=vs.85))します。
+-   [ミットを使用するためのハードウェアを購入します。](https://docs.microsoft.com/windows-hardware/drivers/spb/multi-interface-test-tool--mitt--)
 -   昇格された特権で Windows コマンド シェルを実行する方法を理解します。 テスト ツールのインストールには、管理者特権でコマンド ウィンドウが必要です。 そのウィンドウのコマンド プロンプト ウィンドウを開きを使用して、**管理者として実行**オプション。
 
 ## <a name="computer-setup-for-running-mitt-tests"></a>ミット テストを実行するためのコンピューターの設定
@@ -38,7 +38,7 @@ ms.locfileid: "63348141"
 
 -   コンピューターには、Windows 8.1 のバージョンのオペレーティング システムを実行する必要があります。
 -   コンピューターには、ミット ソフトウェア パッケージがインストールされている必要があります。
--   別のコンピューターで実行されているカーネル デバッガーをターゲットとして、コンピューターを接続する必要があります。 Windbg を取得する方法の詳細については、次を参照してください。 [Windows デバッグ](https://msdn.microsoft.com/library/windows/hardware/ff551063.aspx)します。
+-   別のコンピューターで実行されているカーネル デバッガーをターゲットとして、コンピューターを接続する必要があります。 Windbg を取得する方法の詳細については、次を参照してください。 [Windows デバッグ](https://docs.microsoft.com/windows-hardware/drivers/debugger/index)します。
     **注**  Windbg をスタンドアロン ツールのセットとしてインストールできます。
 
      
@@ -52,13 +52,13 @@ ms.locfileid: "63348141"
 ## <a name="install-wdtf-runtime-library"></a>WDTF ランタイム ライブラリをインストールします。
 
 
-ミット テストを実行するには、Windows ドライバー テスト フレームワーク (WDTF) する必要があります。 Windows Driver Kit (WDK) をインストールするときに、ランタイムが自動的にインストールされていることにします。 完全なインストール手順については、記載された手順に従います[WDTF ランタイム ライブラリ](https://msdn.microsoft.com/library/windows/hardware/hh831856)します。
+ミット テストを実行するには、Windows ドライバー テスト フレームワーク (WDTF) する必要があります。 Windows Driver Kit (WDK) をインストールするときに、ランタイムが自動的にインストールされていることにします。 完全なインストール手順については、記載された手順に従います[WDTF ランタイム ライブラリ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)します。
 
 **ダウンロード場所**:[WDK と WinDbg のダウンロード](https://go.microsoft.com/fwlink/p/?LinkId=733614)
 
 ランタイムがインストールされているここでは %programfiles (x86) %\\Windows キット\\8.1\\テスト\\ランタイム\\TAEF
 
-テスト対象のシステムは、カーネル デバッガーに接続する必要があります。 デバッグ ツールは、WDK と共にインストールされます。 詳細については、次を参照してください。[デバッグ ツールの Windows (WinDbg、KD、CDB、NTSD)](https://msdn.microsoft.com/library/windows/hardware/ff551063)と[Windows デバッグ](https://msdn.microsoft.com/library/windows/hardware/ff558823)します。
+テスト対象のシステムは、カーネル デバッガーに接続する必要があります。 デバッグ ツールは、WDK と共にインストールされます。 詳細については、次を参照してください。[デバッグ ツールの Windows (WinDbg、KD、CDB、NTSD)](https://docs.microsoft.com/windows-hardware/drivers/debugger/index)と[Windows デバッグ](https://docs.microsoft.com/windows-hardware/drivers/debugger/symbols)します。
 
 ## <a name="install-mitt-firmware"></a>ミット ファームウェアをインストールします。
 
@@ -69,15 +69,15 @@ ms.locfileid: "63348141"
 
     ![ミットのデバイス ノード](images/install-mitt.png)
 
-4.  ノードを右クリックし、選択**ドライバー ソフトウェアの更新しています.**.
+4.  ノードを右クリックし、選択**ドライバー ソフトウェアの更新しています.** .
 5.  選択**参照コンピューターでドライバー ソフトウェア**で、**ドライバー ソフトウェアの更新**ダイアログ。
 6.  選択**コンピューター上のデバイス ドライバーの一覧から選択できるように**します。
 7.  選択**すべてのデバイスを表示** をクリック**次**で、**以下の一覧からデバイスの種類を選択**ページ。
 8.  をクリックして**ディスクがある.** 上、**このハードウェアをインストールするデバイス ドライバーを選択**ページ。
-9.  ミット インストール ディレクトリに移動 (Program Files\\ミット\\*&lt;アーキテクチャ&gt;* または Program Files (x86)\\ミット\\*&lt;アーキテクチャ&gt;*) で、**ディスクからインストール ダイアログ ボックス**クリック**Ok**。
+9.  ミット インストール ディレクトリに移動 (Program Files\\ミット\\ *&lt;アーキテクチャ&gt;* または Program Files (x86)\\ミット\\ *&lt;アーキテクチャ&gt;* ) で、**ディスクからインストール ダイアログ ボックス**クリック**Ok**。
 10. **製造元**選択**Microsoft**します。 [**モデル**選択**USB MUTT 既定**] をクリックし、リストから**次**。
 11. クリックして**はい**ドライバーをインストールするとします。 無視ドライバーに関する警告は、ハードウェアと互換性のある可能性があります。 最後のページを閉じます。
-12. プログラム ファイルからコマンド プロンプトで\\ミット\\*&lt;アーキテクチャ&gt;*、このコマンドを実行します。
+12. プログラム ファイルからコマンド プロンプトで\\ミット\\ *&lt;アーキテクチャ&gt;* 、このコマンドを実行します。
 
     **MuttUtil.exe -List**
 
@@ -85,7 +85,7 @@ ms.locfileid: "63348141"
 
     ボードのデバイス ドライバーとして、WinUSB が読み込まれている上記の出力を示しています。
 
-13. ミット ボードにファームウェアを必要とする 2 つの個別チップがあります。 このタスクで使用[MuttUtil](https://msdn.microsoft.com/library/windows/hardware/dn376874)します。 次のコマンドを実行します。
+13. ミット ボードにファームウェアを必要とする 2 つの個別チップがあります。 このタスクで使用[MuttUtil](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)します。 次のコマンドを実行します。
 
     **MuttUtil.exe – UpdateFirmware**
 
@@ -116,7 +116,7 @@ MuttUtil 更新またはファームウェアのインストール中にエラ�
 -   ホスト コンピューター上の xHCI ルート ハブに直接ミットを接続することは推奨されません。 テストは、そのセットアップをランダムにぶら下げることができます。 この問題を回避するには、xHCI ポートとミット ボード電源の USB 2.0 ハブを追加します。
 
 ## <a name="related-topics"></a>関連トピック
-[複数のインターフェイスのテスト ツール (ミット) でのテスト](https://msdn.microsoft.com/library/windows/hardware/dn919874)  
+[複数のインターフェイスのテスト ツール (ミット) でのテスト](https://docs.microsoft.com/windows-hardware/drivers/spb/testing-with-multi-interface-test-tool--mitt-)  
 
 
 

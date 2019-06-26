@@ -9,12 +9,12 @@ keywords:
 - KS WDK、インターフェイス
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bfaa258619df88f0b8fbf11809b2ee5ddbe3258e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 574853d4d05fb0fff7a384e4a14b60846833fe5a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325234"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382497"
 ---
 # <a name="ks-interfaces"></a>KS のインターフェイス
 
@@ -22,11 +22,11 @@ ms.locfileid: "63325234"
 
 
 
-*インターフェイス*暗証番号 (pin) との通信方法を定義する記述子のパラメーターです。 配列へのポインターを提供することで、pin をサポートするインターフェイスを示します、ミニドライバー [ **KSPIN\_インターフェイス**](https://msdn.microsoft.com/library/windows/hardware/ff563537)構造、関連する[ **KSPIN\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff563533)構造体。 KS は、潜在的な接続とグラフの構築を決定するため、この情報を使用します。
+*インターフェイス*暗証番号 (pin) との通信方法を定義する記述子のパラメーターです。 配列へのポインターを提供することで、pin をサポートするインターフェイスを示します、ミニドライバー [ **KSPIN\_インターフェイス**](https://docs.microsoft.com/previous-versions/ff563537(v=vs.85))構造、関連する[ **KSPIN\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kspin_descriptor)構造体。 KS は、潜在的な接続とグラフの構築を決定するため、この情報を使用します。
 
 などのメディア、およびそのセットの要素をセットとしてインターフェイスは説明もします。 KSPIN\_インターフェイス構造体、インターフェイスのセット内の特定のインターフェイスを定義します。
 
-使用して、ユーザー モードのクライアントが接続のインターフェイスの種類にしを指定します、**インターフェイス**の関連メンバー [ **KSPIN\_CONNECT** ](https://msdn.microsoft.com/library/windows/hardware/ff563531)構造体。 クライアントはこの KSPIN を渡します\_CONNECT インスタンスへの呼び出しで[ **KsCreatePin**](https://msdn.microsoft.com/library/windows/hardware/ff561652)、IRP になる\_MJ\_ようにミニドライバーに送信される作成します。
+使用して、ユーザー モードのクライアントが接続のインターフェイスの種類にしを指定します、**インターフェイス**の関連メンバー [ **KSPIN\_CONNECT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kspin_connect)構造体。 クライアントはこの KSPIN を渡します\_CONNECT インスタンスへの呼び出しで[ **KsCreatePin**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-kscreatepin)、IRP になる\_MJ\_ようにミニドライバーに送信される作成します。
 
  
 

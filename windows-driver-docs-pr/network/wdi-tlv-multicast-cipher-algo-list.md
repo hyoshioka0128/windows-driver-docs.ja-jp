@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - WDI_TLV_MULTICAST_CIPHER_ALGO_LIST ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: cb8c56995e7c8f6dc1a5a49174a18fbe734fd613
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5f195f68b4c1d16a6cf3a2f0c9cbf1beafef7fc6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63385263"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377007"
 ---
 # <a name="wditlvmulticastcipheralgolist"></a>WDI\_TLV\_マルチキャスト\_暗号\_ALGO\_一覧
 
@@ -26,14 +26,14 @@ WDI\_TLV\_マルチキャスト\_暗号\_ALGO\_リストは、マルチキャス
 ## <a name="length"></a>長さ
 
 
-配列のサイズをバイト単位で[ **WDI\_暗号\_アルゴリズム**](https://msdn.microsoft.com/library/windows/hardware/dn897802)構造体。 配列には、1 つ以上の要素を含める必要があります。
+配列のサイズをバイト単位で[ **WDI\_暗号\_アルゴリズム**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_cipher_algorithm)構造体。 配列には、1 つ以上の要素を含める必要があります。
 
 ## <a name="values"></a>値
 
 
 | 型                                                            | 説明                              |
 |-----------------------------------------------------------------|------------------------------------------|
-| [**WDI\_暗号\_アルゴリズム**](https://msdn.microsoft.com/library/windows/hardware/dn897802)\[\] | マルチキャストの暗号アルゴリズムの配列。 |
+| [**WDI\_暗号\_アルゴリズム**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_cipher_algorithm)\[\] | マルチキャストの暗号アルゴリズムの配列。 |
 
  
 

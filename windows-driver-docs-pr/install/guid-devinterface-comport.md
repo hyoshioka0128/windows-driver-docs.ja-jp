@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 6b2c01ad414ffea9756b38bce9eca80a6d8821d7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9b92f88c737d337ff710341cfe3c4a7ea19ff336
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342362"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372739"
 ---
 # <a name="guiddevinterfacecomport"></a>GUID_DEVINTERFACE_COMPORT
 
 
-GUID_DEVINTERFACE_COMPORT[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)が定義されている[COM ポート](https://msdn.microsoft.com/library/windows/hardware/ff546485)します。
+GUID_DEVINTERFACE_COMPORT[デバイス インターフェイス クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)が定義されている[COM ポート](https://docs.microsoft.com/previous-versions/ff546485(v=vs.85))します。
 
 <table>
 <colgroup>
@@ -56,7 +56,7 @@ GUID_DEVINTERFACE_COMPORT[デバイス インターフェイス クラス](https
 
 シリアル ポート用のドライバーでは、オペレーティング システムとアプリケーションの COM ポートの存在を通知するこのデバイスのインターフェイス クラスのインスタンスを登録します。
 
-シリアル ポートのシステムによって提供される関数ドライバーに対するこのデバイスのインターフェイス クラスのインスタンスに登録する[シリアル ポート](https://msdn.microsoft.com/library/windows/hardware/ff547451)します。
+シリアル ポートのシステムによって提供される関数ドライバーに対するこのデバイスのインターフェイス クラスのインスタンスに登録する[シリアル ポート](https://docs.microsoft.com/previous-versions/ff547451(v=vs.85))します。
 
 次のサンプル (Github 上) は、シリアル ポートには、このクラスのインスタンスを登録します。
 
@@ -66,7 +66,7 @@ GUID_DEVINTERFACE_COMPORT[デバイス インターフェイス クラス](https
 
 [**GUID_CLASS_COMPORT** ](guid-class-comport.md)このデバイス インターフェイス クラスの古い形式の識別子は、このクラスの新しいインスタンスが GUID_DEVINTERFACE_COMPORT を代わりに使用します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

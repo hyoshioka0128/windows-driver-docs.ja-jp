@@ -9,12 +9,12 @@ keywords:
 - スレッドのロック WDK Driver Verifier
 ms.date: 07/03/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: adaf103c38fe11afca2ce8cba65d7c98bc0bde92
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d71f2f32444a0d363bb818efc1ed46cc5a9ffc31
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344926"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371439"
 ---
 # <a name="deadlock-detection"></a>デッドロックの検出
 
@@ -109,7 +109,7 @@ Driver Verifier はこれらの違反が検出されたときのバグ チェッ
 -   Windows 7 以降、Driver Verifier はデッドロックの可能性を予測できます。 たとえば、同じ KSPIN を使用しよう\_正規スピン ロックとスタックの両方のロックのデータ構造には、スピン ロックがキューに登録します。
 
 
-参照してください[**バグ チェック 0xC4** ](https://msdn.microsoft.com/library/windows/hardware/ff560187) (ドライバー\_VERIFIER\_検出\_違反)、バグの一覧については、パラメーターを確認します。
+参照してください[**バグ チェック 0xC4** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation) (ドライバー\_VERIFIER\_検出\_違反)、バグの一覧については、パラメーターを確認します。
 
 ### <a name="span-idmonitoringdeadlockdetectionspanspan-idmonitoringdeadlockdetectionspanmonitoring-deadlock-detection"></a><span id="monitoring_deadlock_detection"></span><span id="MONITORING_DEADLOCK_DETECTION"></span>デッドロックの検出を監視します。
 
@@ -117,7 +117,7 @@ Driver Verifier はこれらの違反が検出されたときのバグ チェッ
 
 最良の結果をドライバーの問題の上で実行される、Windows のチェック ビルドより完全な実行時のスタック トレースを取得するカーネルを利用できるためです。
 
-詳細な例は、 [ **! デッドロック**](https://msdn.microsoft.com/library/windows/hardware/ff562326)拡張機能とツールを Windows のデバッグ パッケージ内のドキュメントで、デバッガーの拡張機能に関する一般的な情報。 参照してください[Windows デバッグ](https://msdn.microsoft.com/library/windows/hardware/ff551063)詳細についてはします。
+詳細な例は、 [ **! デッドロック**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-deadlock)拡張機能とツールを Windows のデバッグ パッケージ内のドキュメントで、デバッガーの拡張機能に関する一般的な情報。 参照してください[Windows デバッグ](https://docs.microsoft.com/windows-hardware/drivers/debugger/index)詳細についてはします。
 
 ### <a name="span-idactivatingthisoptionspanspan-idactivatingthisoptionspanactivating-this-option"></a><span id="activating_this_option"></span><span id="ACTIVATING_THIS_OPTION"></span>このオプションをアクティブ化します。
 

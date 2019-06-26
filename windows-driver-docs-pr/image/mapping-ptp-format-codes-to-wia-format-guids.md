@@ -4,12 +4,12 @@ description: WIA 形式 GUID への PTP 形式のコードのマッピング
 ms.assetid: a69269c0-1474-4de5-9a08-94902ef1f089
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e19dcb705575aa728b4a167379795247c4b9aa6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 60cbd1a2ce890c732c8c6cc12b752c7a88ce8f31
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380382"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376600"
 ---
 # <a name="mapping-ptp-format-codes-to-wia-format-guids"></a>WIA 形式 GUID への PTP 形式のコードのマッピング
 
@@ -17,7 +17,7 @@ ms.locfileid: "63380382"
 
 
 
-オブジェクトの形式がを通じて公開される、 [ **WIA\_IPA\_形式**](https://msdn.microsoft.com/library/windows/hardware/ff551553) GUID としてのプロパティ。 WIA Guid と PTP 形式のコード間のマッピングは、次の表に示します。
+オブジェクトの形式がを通じて公開される、 [ **WIA\_IPA\_形式**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-format) GUID としてのプロパティ。 WIA Guid と PTP 形式のコード間のマッピングは、次の表に示します。
 
 <table>
 <colgroup>

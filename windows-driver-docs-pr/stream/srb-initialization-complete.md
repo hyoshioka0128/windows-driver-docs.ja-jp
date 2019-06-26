@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b4eaeb70035b5057b21ca60f0cf244c527bc8f91
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 257899c40a33b83ebdf0da4b2c8114f167733e5b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390856"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377912"
 ---
 # <a name="srbinitializationcomplete"></a>SRB\_初期化\_完了
 
@@ -31,7 +31,7 @@ ms.locfileid: "63390856"
 
 クラスのドライバーの送信を開始できるようにミニドライバーには、この要求が完了すると、 [ **SRB\_オープン\_ストリーム**](srb-open-stream.md)要求。
 
-ミニドライバーで、この SRB が受信したときに、ミニドライバーは、必要なレジストリ エントリを作成します。 たとえば、DirectShow フィルター可能性があります、テレビ チューナーまたは登録クロスバーを使用して、フィルターで使用するため、 [ **StreamClassRegisterFilterWithNoKSPins** ](https://msdn.microsoft.com/library/windows/hardware/ff568261)ルーチン。
+ミニドライバーで、この SRB が受信したときに、ミニドライバーは、必要なレジストリ エントリを作成します。 たとえば、DirectShow フィルター可能性があります、テレビ チューナーまたは登録クロスバーを使用して、フィルターで使用するため、 [ **StreamClassRegisterFilterWithNoKSPins** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/nf-strmini-streamclassregisterfilterwithnokspins)ルーチン。
 
  
 

@@ -8,12 +8,12 @@ keywords:
 - 要求ハンドラー WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d636e10958b2d9254d40bff7dacaf7a7aab872b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: af70dbb2c27f1f24334d50f8099c0e8a6345664a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359610"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376277"
 ---
 # <a name="request-handlers"></a>要求ハンドラー
 
@@ -25,26 +25,26 @@ ms.locfileid: "63359610"
 
 ドライバーが I/O キューごとと呼ばれる次のコールバック関数の 1 つ以上提供できる*要求ハンドラー*:
 
-<a href="" id="evtioread"></a>[*EvtIoRead*](https://msdn.microsoft.com/library/windows/hardware/ff541776)  
-フレームワークの I/O キューの[ *EvtIoRead* ](https://msdn.microsoft.com/library/windows/hardware/ff541776)読み取り要求は、キューで利用できる場合は、コールバック関数。
+<a href="" id="evtioread"></a>[*EvtIoRead*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_queue_io_read)  
+フレームワークの I/O キューの[ *EvtIoRead* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_queue_io_read)読み取り要求は、キューで利用できる場合は、コールバック関数。
 
-<a href="" id="evtiowrite"></a>[*EvtIoWrite*](https://msdn.microsoft.com/library/windows/hardware/ff541813)  
-フレームワークの I/O キューの[ *EvtIoWrite* ](https://msdn.microsoft.com/library/windows/hardware/ff541813)書き込み要求は、キューで利用できる場合は、コールバック関数。
+<a href="" id="evtiowrite"></a>[*EvtIoWrite*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_queue_io_write)  
+フレームワークの I/O キューの[ *EvtIoWrite* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_queue_io_write)書き込み要求は、キューで利用できる場合は、コールバック関数。
 
-<a href="" id="evtiodevicecontrol"></a>[*EvtIoDeviceControl*](https://msdn.microsoft.com/library/windows/hardware/ff541758)  
-フレームワークの I/O キューの[ *EvtIoDeviceControl* ](https://msdn.microsoft.com/library/windows/hardware/ff541758)デバイス I/O 制御の要求は、キューで利用できる場合は、コールバック関数。
+<a href="" id="evtiodevicecontrol"></a>[*EvtIoDeviceControl*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_queue_io_device_control)  
+フレームワークの I/O キューの[ *EvtIoDeviceControl* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_queue_io_device_control)デバイス I/O 制御の要求は、キューで利用できる場合は、コールバック関数。
 
-<a href="" id="evtiointernaldevicecontrol"></a>[*EvtIoInternalDeviceControl*](https://msdn.microsoft.com/library/windows/hardware/ff541768)  
-フレームワークの I/O キューの[ *EvtIoInternalDeviceControl* ](https://msdn.microsoft.com/library/windows/hardware/ff541768)デバイス I/O が内部のコントロール要求は、キューで利用できる場合は、コールバック関数。
+<a href="" id="evtiointernaldevicecontrol"></a>[*EvtIoInternalDeviceControl*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_queue_io_internal_device_control)  
+フレームワークの I/O キューの[ *EvtIoInternalDeviceControl* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_queue_io_internal_device_control)デバイス I/O が内部のコントロール要求は、キューで利用できる場合は、コールバック関数。
 
-<a href="" id="evtiodefault"></a>[*EvtIoDefault*](https://msdn.microsoft.com/library/windows/hardware/ff541757)  
-フレームワークの I/O キューの[ *EvtIoDefault* ](https://msdn.microsoft.com/library/windows/hardware/ff541757)コールバック関数のすべての要求が使用できるドライバーが関連付けられている要求の種類に固有のコールバック関数を提供していない場合。
+<a href="" id="evtiodefault"></a>[*EvtIoDefault*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_queue_io_default)  
+フレームワークの I/O キューの[ *EvtIoDefault* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_queue_io_default)コールバック関数のすべての要求が使用できるドライバーが関連付けられている要求の種類に固有のコールバック関数を提供していない場合。
 
-呼び出すときに、ドライバーがコールバック関数を登録[ **WdfIoQueueCreate** ](https://msdn.microsoft.com/library/windows/hardware/ff547401)デバイスの I/O キューを作成します。
+呼び出すときに、ドライバーがコールバック関数を登録[ **WdfIoQueueCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nf-wdfio-wdfioqueuecreate)デバイスの I/O キューを作成します。
 
-これらのコールバック関数の 2 つの入力引数を受信します。 フレームワークは、ドライバーと、要求に保持されている I/O キューを識別するハンドルを提供する I/O 要求を識別するハンドル。 コールバック関数が呼び出すことによって、ターゲット デバイスを調べる[ **WdfIoQueueGetDevice**](https://msdn.microsoft.com/library/windows/hardware/ff547421)します。
+これらのコールバック関数の 2 つの入力引数を受信します。 フレームワークは、ドライバーと、要求に保持されている I/O キューを識別するハンドルを提供する I/O 要求を識別するハンドル。 コールバック関数が呼び出すことによって、ターゲット デバイスを調べる[ **WdfIoQueueGetDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nf-wdfio-wdfioqueuegetdevice)します。
 
-フレームワークは、任意のスレッド コンテキストで、ドライバーの要求ハンドラーを呼び出します。 ドライバーを任意のスレッド コンテキストで実行中に長時間待機する必要があります。 場合によってには、ドライバーは、同期メカニズムとしてカーネルのディスパッチャー オブジェクトを使用する可能性があります。 ディスパッチャー オブジェクトの場合、ドライバーが待機できる場合とできない場合の対処方法については、次を参照してください。[カーネルのディスパッチャー オブジェクトの概要](https://msdn.microsoft.com/library/windows/hardware/ff548068)します。
+フレームワークは、任意のスレッド コンテキストで、ドライバーの要求ハンドラーを呼び出します。 ドライバーを任意のスレッド コンテキストで実行中に長時間待機する必要があります。 場合によってには、ドライバーは、同期メカニズムとしてカーネルのディスパッチャー オブジェクトを使用する可能性があります。 ディスパッチャー オブジェクトの場合、ドライバーが待機できる場合とできない場合の対処方法については、次を参照してください。[カーネルのディスパッチャー オブジェクトの概要](https://docs.microsoft.com/windows-hardware/drivers/kernel/introduction-to-kernel-dispatcher-objects)します。
 
  
 

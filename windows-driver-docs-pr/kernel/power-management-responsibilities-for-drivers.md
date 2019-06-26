@@ -13,12 +13,12 @@ keywords:
 - デバイスの電源状態の WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 64c14ee52d52d3b1997243ac4906eb5c1eb1178d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9c97fe28aec37109a93bf68e5d98c79cefd44074
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369144"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374197"
 ---
 # <a name="power-management-responsibilities-for-drivers"></a>ドライバーの電源管理の役割
 
@@ -44,7 +44,7 @@ ms.locfileid: "63369144"
 
 すべてのデバイス スタックのすべてのドライバーは、これらすべてのタスクを実行します。 通常、バス ドライバーの機能の報告、フラグを設定および物理デバイスを操作し、デバイスの電源ポリシー マネージャー (関数ドライバーでは、通常は) は、スリープ状態にウェイク アップを有効にして、デバイスへの要求を発行します。
 
-いくつかの例外を除き、ドライバーの電源投入および自分のデバイスをオフ、電源 Irp、大規模なコードでは、Irp への応答でウェイク アップのデバイスを有効にする、 [ **IRP\_MJ\_POWER** ](https://msdn.microsoft.com/library/windows/hardware/ff550784). Irp の電源は、ドライバーによって電源マネージャーによって、場合によっては、送信できます。
+いくつかの例外を除き、ドライバーの電源投入および自分のデバイスをオフ、電源 Irp、大規模なコードでは、Irp への応答でウェイク アップのデバイスを有効にする、 [ **IRP\_MJ\_POWER** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-power). Irp の電源は、ドライバーによって電源マネージャーによって、場合によっては、送信できます。
 
  
 

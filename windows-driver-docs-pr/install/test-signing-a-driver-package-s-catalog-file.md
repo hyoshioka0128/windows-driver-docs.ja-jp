@@ -4,17 +4,17 @@ description: ドライバー パッケージのカタログ ファイルのテ�
 ms.assetid: 8cc54f57-bac3-45a1-b780-48626943b446
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 91b4fee78c3552591c2c88c0c3d7d54ebbafc6f8
-ms.sourcegitcommit: 944535d8e00393531f6b265317a64da3567e4f2c
+ms.openlocfilehash: 8ff416c6bdd9a774846d0166876ab723457e8a7f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65106435"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380994"
 ---
 # <a name="test-signing-a-driver-packages-catalog-file"></a>ドライバー パッケージのカタログ ファイルのテスト署名
 
 
-後に、[カタログ ファイル](catalog-files.md)の[ドライバー パッケージ](driver-packages.md)が作成または更新されると、カタログでファイルを署名することも[ **SignTool**](https://msdn.microsoft.com/library/windows/hardware/ff551778)。 署名済み後、は、ドライバー パッケージのすべてのコンポーネントが変更された場合、カタログ ファイル内に格納されたデジタル署名が無効にします。
+後に、[カタログ ファイル](catalog-files.md)の[ドライバー パッケージ](driver-packages.md)が作成または更新されると、カタログでファイルを署名することも[ **SignTool**](https://docs.microsoft.com/windows-hardware/drivers/devtest/signtool)。 署名済み後、は、ドライバー パッケージのすべてのコンポーネントが変更された場合、カタログ ファイル内に格納されたデジタル署名が無効にします。
 
 カタログ ファイルにデジタル署名すると、SignTool はカタログ ファイル内でデジタル署名を保存します。 ドライバー パッケージのコンポーネントは、SignTool によっては変更されません。 ただし、カタログ ファイルには、ドライバー パッケージのコンポーネントのハッシュ値が格納されている、ためには、カタログ ファイル内でデジタル署名は、コンポーネントが同じ値にハッシュ限り維持されます。
 
@@ -46,14 +46,14 @@ Signtool sign /v /fd sha256 /s PrivateCertStore /n Contoso.com(Test) /t http://t
 
 -   **/N**オプションは、証明書の名前を指定します (*Contoso.com(Test))* 指定された証明書ストアにインストールされています。
 
--   **/T**オプション、TSA の URL を指定します (*http://timestamp.verisign.com/scripts/timstamp.dll*) が、タイムスタンプ、デジタル署名します。
+-   **/T**オプション、TSA の URL を指定します ( *http://timestamp.verisign.com/scripts/timstamp.dll* ) が、タイムスタンプ、デジタル署名します。
     **重要な**  キーの失効がコード署名の秘密キーの署名者の場合は、侵害の必要な情報を提供するタイムスタンプを含むです。
 
      
 
 -   *tstamd64.cat*デジタル署名されるカタログ ファイルの名前を指定します。
 
-SignTool とコマンドライン引数の詳細については、次を参照してください。 [ **SignTool**](https://msdn.microsoft.com/library/windows/hardware/ff551778)します。
+SignTool とコマンドライン引数の詳細については、次を参照してください。 [ **SignTool**](https://docs.microsoft.com/windows-hardware/drivers/devtest/signtool)します。
 
 テスト署名の詳細については、ドライバー パッケージのカタログ ファイルを参照してください[カタログ ファイルのテスト署名](test-signing-a-catalog-file.md)します。
 

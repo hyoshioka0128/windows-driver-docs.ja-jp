@@ -11,12 +11,12 @@ keywords:
 - Irp WDK カーネルでは、状態情報
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e5cc1286d49e4b6b48343b0248f83dc4bd46280
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1d64f0b90d6105b0d8f8c6645d7e84492d2599e9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364266"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371858"
 ---
 # <a name="io-status-blocks"></a>I/O ステータス ブロック
 
@@ -24,9 +24,9 @@ ms.locfileid: "63364266"
 
 
 
-構成される、I/O 状態ブロック、 [ **IO\_状態\_ブロック**](https://msdn.microsoft.com/library/windows/hardware/ff550671)構造体をそれぞれの一部である[ **IRP** ](https://msdn.microsoft.com/library/windows/hardware/ff550694). 状態の I/O のブロックには、2 つの目的があります。
+構成される、I/O 状態ブロック、 [ **IO\_状態\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_status_block)構造体をそれぞれの一部である[ **IRP** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_irp). 状態の I/O のブロックには、2 つの目的があります。
 
--   高度なドライバーの提供[ *IoCompletion* ](https://msdn.microsoft.com/library/windows/hardware/ff548354) IRP が完了したときに、サービスが動作するかどうかを判断する方法、ルーチン。
+-   高度なドライバーの提供[ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine) IRP が完了したときに、サービスが動作するかどうかを判断する方法、ルーチン。
 
 -   これは、理由、サービス動作または動作しなかった詳細情報を提供します。
 

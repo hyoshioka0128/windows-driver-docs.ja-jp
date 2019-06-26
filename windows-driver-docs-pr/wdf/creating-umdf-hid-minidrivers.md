@@ -4,12 +4,12 @@ description: このトピックでは、Windows Driver Frameworks (WDF) を使�
 ms.assetid: 4FEDFE4B-F3B2-4B34-80DC-84BFFA4C612B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ba6ee6144018d03814bd177d9981d7b758347b32
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6bee581b3b38d3c05b89a513d39fb359f22c81af
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392716"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377484"
 ---
 # <a name="creating-wdf-hid-minidrivers"></a>WDF HID ミニドライバーの作成
 
@@ -23,11 +23,11 @@ KMDF または UMDF を使用して、HID ミニドライバーを作成する�
 1.  下位のフィルター ドライバーを記述します*MsHidUmdf.sys* (UMDF) 用または*MsHidKmdf.sys* (KMDF) のどちらもオペレーティング システムの一部として含まれています。
 2.  ダウンロードして確認、 [vhidmini2 サンプル](https://github.com/Microsoft/Windows-driver-samples/tree/master/hid/vhidmini2)します。
 
-3.  呼び出す[ **WdfFdoInitSetFilter** ](https://msdn.microsoft.com/library/windows/hardware/ff547273)からドライバーの[ *EvtDriverDeviceAdd* ](https://msdn.microsoft.com/library/windows/hardware/ff541693)コールバック関数。
+3.  呼び出す[ **WdfFdoInitSetFilter** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdffdo/nf-wdffdo-wdffdoinitsetfilter)からドライバーの[ *EvtDriverDeviceAdd* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)コールバック関数。
 
 4.  I/O を作成する I/O を受信するキューを要求する*MsHidUmdf.sys*または*MsHidKmdf.sys*クラス ドライバーからドライバーに渡します。
 
-5.  提供、 [ *EvtIoDeviceControl* ](https://msdn.microsoft.com/library/windows/hardware/ff541758) IOCTL に固有のメソッドのハンドラーに分岐するコールバック関数。 説明されている Ioctl 確認[WDF HID ミニドライバー Ioctl](https://msdn.microsoft.com/library/windows/hardware/hh463977)ドライバーがデバイスの該当するものを処理することを確認してください。
+5.  提供、 [ *EvtIoDeviceControl* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_queue_io_device_control) IOCTL に固有のメソッドのハンドラーに分岐するコールバック関数。 説明されている Ioctl 確認[WDF HID ミニドライバー Ioctl](https://docs.microsoft.com/previous-versions/hh463977(v=vs.85))ドライバーがデバイスの該当するものを処理することを確認してください。
 6.  Umdf、ドライバーは、ACPI によって列挙された場合は、必要に応じて有効にする選択的を中断します。 デバイスのハードウェア キーでは、追加、 **EnableDefaultIdleNotificationHandler**サブキーし、1 に設定します。
 7.  UMDF、に対して以下の設定[INF ディレクティブ](specifying-wdf-directives-in-inf-files.md)WDF 固有で*DDInstall* INF ファイルのセクション。
 
@@ -36,7 +36,7 @@ KMDF または UMDF を使用して、HID ミニドライバーを作成する�
     -   **UmdfFileObjectPolicy**に**AllowNullAndUnknownFileObjects**
     -   **UmdfFsContextUsePolicy**に**CanUseFsContext2**
 
-    次に、例を示します。
+    例:
 
     ```cpp
     [hidumdf.NT.Wdf]
@@ -53,7 +53,7 @@ Windows 7 の UMDF HID ミニドライバーを作成する場合は、ダウン
 
 HID クラス ドライバー (*HidClass.sys*) とフレームワークがミニドライバー (プラグ アンド プレイの電源管理の要求など) によって I/O 要求を処理する競合の WDM ディスパッチ ルーチンを提供します。 その結果、HID ミニドライバーは、クラスのドライバーとフレームワークの両方にリンクできません。 そのため、マイクロソフトが提供しています*MsHidUmdf.sys*と*MsHidKmdf.sys*クラスのドライバーと、ミニドライバーの間に存在する WDM ドライバーであります。
 
-両方*MsHidUmdf.sys*と*MsHidKmdf.sys* HID クラス ドライバーの呼び出す[ **HidRegisterMinidriver** ](https://msdn.microsoft.com/library/windows/hardware/ff539835)ルーチンとして登録する、実際の HID ミニドライバーします。 これらのドライバー、デバイスの機能のドライバーとして機能し、単に渡される I/O 要求クラス ドライバーからには、ドライバー (とも呼ばれますため*パススルー ドライバー*)。 KMDF と UMDF の両方を指定する唯一のコンポーネントはパススルー ドライバー の下に位置する下位のフィルター ドライバーは HID ミニドライバーします。
+両方*MsHidUmdf.sys*と*MsHidKmdf.sys* HID クラス ドライバーの呼び出す[ **HidRegisterMinidriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidport/nf-hidport-hidregisterminidriver)ルーチンとして登録する、実際の HID ミニドライバーします。 これらのドライバー、デバイスの機能のドライバーとして機能し、単に渡される I/O 要求クラス ドライバーからには、ドライバー (とも呼ばれますため*パススルー ドライバー*)。 KMDF と UMDF の両方を指定する唯一のコンポーネントはパススルー ドライバー の下に位置する下位のフィルター ドライバーは HID ミニドライバーします。
 
 |                                                                                     |                                                                                        |
 |-------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------|

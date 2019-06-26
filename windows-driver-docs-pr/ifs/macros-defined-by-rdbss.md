@@ -8,12 +8,12 @@ keywords:
 - WDK RDBSS マクロ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fce4743163abccf2f355daddbce6eaa7aed9812a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 05c0ba92cd075cf297dc4895e0d2565a2c886df1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357732"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375994"
 ---
 # <a name="macros-defined-by-rdbss"></a>RDBSS が定義するマクロ
 
@@ -48,7 +48,7 @@ ms.locfileid: "63357732"
 <tr class="odd">
 <td align="left"><p><strong>RxAllocatePoolWithTag</strong> (<em>型</em>、<em>サイズ</em>、<em>タグ</em>)</p></td>
 <td align="left"><p>チェック済みのビルドでは、このマクロは、メモリの破壊のインスタンスを検出するときに使用できるブロックの先頭 4 バイトのタグを使用して、プールからメモリを割り当てます。</p>
-<p>製品版ビルドでは、このマクロが、直接呼び出しを<a href="https://msdn.microsoft.com/library/windows/hardware/ff544520" data-raw-source="[&lt;strong&gt;ExAllocatePoolWithTag&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff544520)"> <strong>exallocatepoolwithtag に</strong></a>します。</p></td>
+<p>製品版ビルドでは、このマクロが、直接呼び出しを<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtag" data-raw-source="[&lt;strong&gt;ExAllocatePoolWithTag&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtag)"> <strong>exallocatepoolwithtag に</strong></a>します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>RxCheckMemoryBlock</strong> (<em>ptr</em>)</p></td>
@@ -87,28 +87,28 @@ ms.locfileid: "63357732"
 </tr>
 <tr class="even">
 <td align="left"><p><strong>RxFcbAcquiredShared</strong> (<em>RXCONTEXT</em>, <em>FCB</em>)</p></td>
-<td align="left"><p>このマクロは、現在のスレッドが共有モードで標準のリソースへのアクセスを持つかどうかを確認します。 このマクロを呼び出す、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff545477" data-raw-source="[&lt;strong&gt;ExIsResourceAcquiredSharedLite&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff545477)"> <strong>ExIsResourceAcquiredSharedLite</strong> </a>ルーチン。</p></td>
+<td align="left"><p>このマクロは、現在のスレッドが共有モードで標準のリソースへのアクセスを持つかどうかを確認します。 このマクロを呼び出す、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exisresourceacquiredsharedlite" data-raw-source="[&lt;strong&gt;ExIsResourceAcquiredSharedLite&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exisresourceacquiredsharedlite)"> <strong>ExIsResourceAcquiredSharedLite</strong> </a>ルーチン。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>RxFillAndInstallFastIoDispatch</strong>(<em>__devobj</em>, <em>__fastiodisp</em>)</p></td>
-<td align="left"><p>このマクロを呼び出す<a href="https://msdn.microsoft.com/library/windows/hardware/ff557374" data-raw-source="[&lt;strong&gt;__RxFillAndInstallFastIoDispatch&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557374)"> <strong>__RxFillAndInstallFastIoDispatch</strong> </a>通常のディスパッチ I/O ベクターとそれをドライバー オブジェクトに関連付けられているインストールと一致するよう、高速な I/O ディスパッチ ベクターの入力をデバイス オブジェクトが渡されます。</p></td>
+<td align="left"><p>このマクロを呼び出す<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nf-mrx-__rxfillandinstallfastiodispatch" data-raw-source="[&lt;strong&gt;__RxFillAndInstallFastIoDispatch&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nf-mrx-__rxfillandinstallfastiodispatch)"> <strong>__RxFillAndInstallFastIoDispatch</strong> </a>通常のディスパッチ I/O ベクターとそれをドライバー オブジェクトに関連付けられているインストールと一致するよう、高速な I/O ディスパッチ ベクターの入力をデバイス オブジェクトが渡されます。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>RxFreePool</strong> (<em>ptr</em>)</p></td>
 <td align="left"><p>チェック済みのビルドでは、このマクロは、メモリ プールを解放します。</p>
-<p>製品版ビルドでは、このマクロが、直接呼び出しを<a href="https://msdn.microsoft.com/library/windows/hardware/ff544590" data-raw-source="[&lt;strong&gt;ExFreePool&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff544590)"> <strong>ExFreePool</strong></a>します。</p></td>
+<p>製品版ビルドでは、このマクロが、直接呼び出しを<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-exfreepool" data-raw-source="[&lt;strong&gt;ExFreePool&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-exfreepool)"> <strong>ExFreePool</strong></a>します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>RxIsFcbAcquiredShared</strong> (<em>FCB</em>)</p></td>
-<td align="left"><p>このマクロは、現在のスレッドが共有モードで標準のリソースへのアクセスを持つかどうかを確認します。 このマクロを呼び出す、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff545477" data-raw-source="[&lt;strong&gt;ExIsResourceAcquiredSharedLite&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff545477)"> <strong>ExIsResourceAcquiredSharedLite</strong> </a>ルーチン。</p></td>
+<td align="left"><p>このマクロは、現在のスレッドが共有モードで標準のリソースへのアクセスを持つかどうかを確認します。 このマクロを呼び出す、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exisresourceacquiredsharedlite" data-raw-source="[&lt;strong&gt;ExIsResourceAcquiredSharedLite&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exisresourceacquiredsharedlite)"> <strong>ExIsResourceAcquiredSharedLite</strong> </a>ルーチン。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>RxIsFcbAcquiredExclusive</strong> (<em>FCB</em>)</p></td>
-<td align="left"><p>このマクロは、現在のスレッドが排他モードで標準のリソースへのアクセスを持つかどうかを確認します。 このマクロを呼び出す、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff545458" data-raw-source="[&lt;strong&gt;ExIsResourceAcquiredExclusiveLite&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff545458)"> <strong>ExIsResourceAcquiredExclusiveLite</strong> </a>ルーチン。</p></td>
+<td align="left"><p>このマクロは、現在のスレッドが排他モードで標準のリソースへのアクセスを持つかどうかを確認します。 このマクロを呼び出す、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exisresourceacquiredexclusivelite" data-raw-source="[&lt;strong&gt;ExIsResourceAcquiredExclusiveLite&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exisresourceacquiredexclusivelite)"> <strong>ExIsResourceAcquiredExclusiveLite</strong> </a>ルーチン。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>RxIsFcbAcquired</strong> (<em>FCB</em>)</p></td>
-<td align="left"><p>このマクロは、現在のスレッドが共有または排他モードで標準のリソースへのアクセスを持つかどうかを確認します。 このマクロを呼び出す、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff545477" data-raw-source="[&lt;strong&gt;ExIsResourceAcquiredSharedLite&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff545477)"> <strong>ExIsResourceAcquiredSharedLite</strong> </a>と<a href="https://msdn.microsoft.com/library/windows/hardware/ff545458" data-raw-source="[&lt;strong&gt;ExIsResourceAcquiredExclusiveLite&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff545458)"> <strong>ExIsResourceAcquiredExclusiveLite</strong> </a>ルーチン。</p></td>
+<td align="left"><p>このマクロは、現在のスレッドが共有または排他モードで標準のリソースへのアクセスを持つかどうかを確認します。 このマクロを呼び出す、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exisresourceacquiredsharedlite" data-raw-source="[&lt;strong&gt;ExIsResourceAcquiredSharedLite&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exisresourceacquiredsharedlite)"> <strong>ExIsResourceAcquiredSharedLite</strong> </a>と<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exisresourceacquiredexclusivelite" data-raw-source="[&lt;strong&gt;ExIsResourceAcquiredExclusiveLite&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exisresourceacquiredexclusivelite)"> <strong>ExIsResourceAcquiredExclusiveLite</strong> </a>ルーチン。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>RxIsPrefixTableLockAcquired</strong> (<em>TABLE</em>)</p></td>
@@ -120,25 +120,25 @@ ms.locfileid: "63357732"
 </tr>
 <tr class="even">
 <td align="left"><p><strong>RxLog</strong>(<em>Args</em>)</p></td>
-<td align="left"><p>チェック ビルドは、このマクロを呼び出す、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff557368" data-raw-source="[&lt;strong&gt;_RxLog&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557368)"> <strong>_RxLog</strong> </a>ルーチン。</p>
+<td align="left"><p>チェック ビルドは、このマクロを呼び出す、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxlog/nf-rxlog-_rxlog" data-raw-source="[&lt;strong&gt;_RxLog&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxlog/nf-rxlog-_rxlog)"> <strong>_RxLog</strong> </a>ルーチン。</p>
 <p>製品版ビルドでこのマクロは何もしません。</p>
 <p>なお、引数を<strong>RxLog</strong>追加のログ記録をオフにするときに、null の呼び出しに変換を有効にするかっこのペアで囲む必要があります。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>RxLogEvent</strong> (<em>_DeviceObject</em>, <em>_OriginatorId</em>, <em>_EventId</em>, <em>_Status</em>)</p></td>
-<td align="left"><p>このマクロを呼び出す、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff554515" data-raw-source="[&lt;strong&gt;RxLogEventDirect&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554515)"> <strong>RxLogEventDirect</strong> </a>ルーチン。</p></td>
+<td align="left"><p>このマクロを呼び出す、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxprocs/nf-rxprocs-rxlogeventdirect" data-raw-source="[&lt;strong&gt;RxLogEventDirect&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxprocs/nf-rxprocs-rxlogeventdirect)"> <strong>RxLogEventDirect</strong> </a>ルーチン。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>RxLogFailure</strong> (<em>_DeviceObject</em>, <em>_OriginatorId</em>, <em>_EventId</em>, <em>_Status</em>)</p></td>
-<td align="left"><p>このマクロを呼び出す、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff554515" data-raw-source="[&lt;strong&gt;RxLogEventDirect&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554515)"> <strong>RxLogEventDirect</strong> </a>ルーチン。</p></td>
+<td align="left"><p>このマクロを呼び出す、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxprocs/nf-rxprocs-rxlogeventdirect" data-raw-source="[&lt;strong&gt;RxLogEventDirect&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxprocs/nf-rxprocs-rxlogeventdirect)"> <strong>RxLogEventDirect</strong> </a>ルーチン。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>RxLogFailureWithBuffer</strong> (<em>_DeviceObject</em>, <em>_OriginatorId</em>, <em>_EventId</em>, <em>_Status</em>, <em>_Buffer</em>, <em>_Length</em>)</p></td>
-<td align="left"><p>このマクロを呼び出す、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff554524" data-raw-source="[&lt;strong&gt;RxLogEventWithBufferDirect&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554524)"> <strong>RxLogEventWithBufferDirect</strong> </a>ルーチン。</p></td>
+<td align="left"><p>このマクロを呼び出す、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxprocs/nf-rxprocs-rxlogeventwithbufferdirect" data-raw-source="[&lt;strong&gt;RxLogEventWithBufferDirect&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxprocs/nf-rxprocs-rxlogeventwithbufferdirect)"> <strong>RxLogEventWithBufferDirect</strong> </a>ルーチン。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>RxLogRetail</strong>(<em>Args</em>)</p></td>
-<td align="left"><p>チェック ビルドは、このマクロを呼び出す、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff557368" data-raw-source="[&lt;strong&gt;_RxLog&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557368)"> <strong>_RxLog</strong> </a>ルーチン。</p>
+<td align="left"><p>チェック ビルドは、このマクロを呼び出す、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxlog/nf-rxlog-_rxlog" data-raw-source="[&lt;strong&gt;_RxLog&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxlog/nf-rxlog-_rxlog)"> <strong>_RxLog</strong> </a>ルーチン。</p>
 <p>製品版ビルドでこのマクロは何もしません。</p>
 <p>なお、引数を<strong>RxLogRetail</strong>追加のログ記録をオフにするときに、null の呼び出しに変換を有効にするかっこのペアで囲む必要があります。</p></td>
 </tr>
@@ -176,13 +176,13 @@ ms.locfileid: "63357732"
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>RxSynchronizeBlockingOperations</strong>(<em>RXCONTEXT</em>,<em>FCB</em>,<em>IOQUEUE</em>)</p></td>
-<td align="left"><p>このマクロは、同じ作業キューにブロッキング I/O 要求を同期します。 Windows Server 2003 では、このマクロを呼び出す、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff557377" data-raw-source="[&lt;strong&gt;__RxSynchronizeBlockingOperations&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557377)"> <strong>__RxSynchronizeBlockingOperations</strong> </a>ルーチン、 <em>DropFcbLock</em>パラメーターに設定<strong>FALSE</strong>.</p>
-<p>Windows XP および Windows 2000 では、このマクロを呼び出し、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff557382" data-raw-source="[&lt;strong&gt;__RxSynchronizeBlockingOperationsMaybeDroppingFcbLock&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557382)"> <strong>__RxSynchronizeBlockingOperationsMaybeDroppingFcbLock</strong> </a>ルーチン、 <em>DropFcbLock</em>パラメーターに設定<strong>FALSE</strong>します。</p></td>
+<td align="left"><p>このマクロは、同じ作業キューにブロッキング I/O 要求を同期します。 Windows Server 2003 では、このマクロを呼び出す、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxcontx/nf-rxcontx-__rxsynchronizeblockingoperations" data-raw-source="[&lt;strong&gt;__RxSynchronizeBlockingOperations&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxcontx/nf-rxcontx-__rxsynchronizeblockingoperations)"> <strong>__RxSynchronizeBlockingOperations</strong> </a>ルーチン、 <em>DropFcbLock</em>パラメーターに設定<strong>FALSE</strong>.</p>
+<p>Windows XP および Windows 2000 では、このマクロを呼び出し、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ifs/--rxsynchronizeblockingoperationsmaybedroppingfcblock" data-raw-source="[&lt;strong&gt;__RxSynchronizeBlockingOperationsMaybeDroppingFcbLock&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ifs/--rxsynchronizeblockingoperationsmaybedroppingfcblock)"> <strong>__RxSynchronizeBlockingOperationsMaybeDroppingFcbLock</strong> </a>ルーチン、 <em>DropFcbLock</em>パラメーターに設定<strong>FALSE</strong>します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>RxSynchronizeBlockingOperations</strong>(<em>RXCONTEXT</em>,<em>FCB</em>,<em>IOQUEUE</em>)</p></td>
-<td align="left"><p>このマクロは、同じ作業キューにブロッキング I/O 要求を同期します。 Windows Server 2003 では、このマクロを呼び出す、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff557377" data-raw-source="[&lt;strong&gt;__RxSynchronizeBlockingOperations&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557377)"> <strong>__RxSynchronizeBlockingOperations</strong> </a>ルーチン、 <em>DropFcbLock</em>パラメーターに設定<strong>TRUE</strong>.</p>
-<p>Windows XP および Windows 2000 では、このマクロを呼び出し、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff557382" data-raw-source="[&lt;strong&gt;__RxSynchronizeBlockingOperationsMaybeDroppingFcbLock&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557382)"> <strong>__RxSynchronizeBlockingOperationsMaybeDroppingFcbLock</strong> </a>ルーチン、 <em>DropFcbLock</em>パラメーターに設定<strong>TRUE</strong>します。</p></td>
+<td align="left"><p>このマクロは、同じ作業キューにブロッキング I/O 要求を同期します。 Windows Server 2003 では、このマクロを呼び出す、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxcontx/nf-rxcontx-__rxsynchronizeblockingoperations" data-raw-source="[&lt;strong&gt;__RxSynchronizeBlockingOperations&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxcontx/nf-rxcontx-__rxsynchronizeblockingoperations)"> <strong>__RxSynchronizeBlockingOperations</strong> </a>ルーチン、 <em>DropFcbLock</em>パラメーターに設定<strong>TRUE</strong>.</p>
+<p>Windows XP および Windows 2000 では、このマクロを呼び出し、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ifs/--rxsynchronizeblockingoperationsmaybedroppingfcblock" data-raw-source="[&lt;strong&gt;__RxSynchronizeBlockingOperationsMaybeDroppingFcbLock&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ifs/--rxsynchronizeblockingoperationsmaybedroppingfcblock)"> <strong>__RxSynchronizeBlockingOperationsMaybeDroppingFcbLock</strong> </a>ルーチン、 <em>DropFcbLock</em>パラメーターに設定<strong>TRUE</strong>します。</p></td>
 </tr>
 </tbody>
 </table>

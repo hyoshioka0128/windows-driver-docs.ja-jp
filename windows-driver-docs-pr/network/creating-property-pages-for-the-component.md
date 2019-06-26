@@ -10,12 +10,12 @@ keywords:
 - プロパティ ページのコールバック関数の WDK ネットワーク
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 296014c79cadb493ef68cc0b0d01224323c8dcc1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dbbf2df400aab1e2672b19ea52c67d9e79532dc4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366160"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374888"
 ---
 # <a name="creating-property-pages-for-the-component"></a>コンポーネントのプロパティ ページの作成
 
@@ -23,7 +23,7 @@ ms.locfileid: "63366160"
 
 
 
-通知オブジェクトは、ネットワーク構成のサブシステムの呼び出し、通知オブジェクトの後にカスタム プロパティ ページを作成します[ **INetCfgComponentPropertyUi::MergePropPages** ](https://msdn.microsoft.com/library/windows/hardware/ff547746)メソッド。 カスタム プロパティ ページは、コンポーネントのプロパティのページの既定のセットにマージできるシートを使用して、 **MergePropPages**メソッド。 **MergePropPages**適切なカスタム ページのマージ先の既定のページ数を返します。
+通知オブジェクトは、ネットワーク構成のサブシステムの呼び出し、通知オブジェクトの後にカスタム プロパティ ページを作成します[ **INetCfgComponentPropertyUi::MergePropPages** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff547746(v=vs.85))メソッド。 カスタム プロパティ ページは、コンポーネントのプロパティのページの既定のセットにマージできるシートを使用して、 **MergePropPages**メソッド。 **MergePropPages**適切なカスタム ページのマージ先の既定のページ数を返します。
 
 カスタム プロパティのページを作成する**MergePropPages** COM を呼び出す**CoTaskMemAlloc** PROPSHEETPAGE 構造体へのハンドルのメモリを割り当てる関数。 これらのハンドルは、作成するプロパティ ページを表します。 場合**CoTaskMemAlloc**正常、ハンドルのメモリを割り当てて**MergePropPages**を宣言し、入力は**PROPSHEETPAGE**各プロパティ ページの構造体。 後**MergePropPages**構造体のこれらの塗りつぶし、Win32 呼び出し**CreatePropertySheetPage**関数の各プロパティ ページ。 この呼び出しで**MergePropPages**を作成する PROPSHEETPAGE 構造体のアドレスを渡します。
 
@@ -36,11 +36,11 @@ ms.locfileid: "63366160"
 -   WM\_プロパティ ページで、イベントが発生した後、ダイアログ ボックスの関数に送信される通知メッセージ。 どのようなイベントが発生したこのメッセージと共に送信されるその他の情報を識別します。 このイベントの情報は、NMHDR 構造体へのポインターに含まれます。 NMHDR にはできますプロパティ シートが含まれている情報が含まれている例。
     -   PSN\_適用イベントは、ユーザーが [ok] を閉じるクリックすることを示す、またはプロパティ ページに適用します。 ユーザーが閉じる、[ok] をクリックするか、[適用] ダイアログ ボックスの関数が呼び出すことができます、 **PropSheet\_Changed**プロパティ シートのページで情報が変更されたことを通知するためにマクロ。 この呼び出しでは、ダイアログ ボックスの関数は、プロパティ シートとページにハンドルを渡します。 ダイアログ ボックスの関数は、Win32 を呼び出すことができます**GetParent**関数し、プロパティ シートを識別するハンドルを取得するページに、ハンドルを渡します。
 
-        ダイアログ ボックス関数では、プロパティ シートの変更について通知、ネットワーク構成のサブシステムは呼び出し、 [ **INetCfgComponentPropertyUi::ValidateProperties** ](https://msdn.microsoft.com/library/windows/hardware/ff547755)を確認する方法、すべての変更の有効性。 サブシステムに、通知オブジェクトの呼び出しのすべての変更が有効な場合は、 [ **INetCfgComponentPropertyUi::ApplyProperties** ](https://msdn.microsoft.com/library/windows/hardware/ff547741)メソッドを呼び出すすべての変更を有効にするとします。 ネットワーク構成のサブシステム呼び出し**ApplyProperties**前に、オペレーティング システムは、ダイアログ ボックスを閉じます。
+        ダイアログ ボックス関数では、プロパティ シートの変更について通知、ネットワーク構成のサブシステムは呼び出し、 [ **INetCfgComponentPropertyUi::ValidateProperties** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff547755(v=vs.85))を確認する方法、すべての変更の有効性。 サブシステムに、通知オブジェクトの呼び出しのすべての変更が有効な場合は、 [ **INetCfgComponentPropertyUi::ApplyProperties** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff547741(v=vs.85))メソッドを呼び出すすべての変更を有効にするとします。 ネットワーク構成のサブシステム呼び出し**ApplyProperties**前に、オペレーティング システムは、ダイアログ ボックスを閉じます。
 
         **ApplyProperties**通知オブジェクトのデータ メンバーに情報を設定して、ユーザーが入力した情報を取得するメソッドを実装することができます。
 
-    -   PSN\_リセット イベントは、プロパティ ページを破棄しようと、オペレーティング システムがあることを示します。 ユーザーは、この操作を開始するプロパティ ページで [キャンセル] をクリックします可能性があります。 ユーザーは、[キャンセル] をクリックすると、ネットワーク構成のサブシステムを呼び出す、 [ **INetCfgComponentPropertyUi::CancelProperties** ](https://msdn.microsoft.com/library/windows/hardware/ff547742)メソッドを呼び出すと変更をすべて無視されます。 ネットワーク構成のサブシステム呼び出し**CancelProperties**の前に、ダイアログ ボックスが閉じられました。
+    -   PSN\_リセット イベントは、プロパティ ページを破棄しようと、オペレーティング システムがあることを示します。 ユーザーは、この操作を開始するプロパティ ページで [キャンセル] をクリックします可能性があります。 ユーザーは、[キャンセル] をクリックすると、ネットワーク構成のサブシステムを呼び出す、 [ **INetCfgComponentPropertyUi::CancelProperties** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff547742(v=vs.85))メソッドを呼び出すと変更をすべて無視されます。 ネットワーク構成のサブシステム呼び出し**CancelProperties**の前に、ダイアログ ボックスが閉じられました。
     -   PSN\_KILLACTIVE イベントは、プロパティ ページが非アクティブになる直前にあることを示します。 このイベントは、ユーザーが別のページをアクティブにまたは、[ok] をクリックしたときに発生します。
 
 *プロパティ ページのコールバック*の各プロパティ ページで、関数を実装することも**MergePropPages**を作成します。 プロパティ ページのコールバック関数は、初期化とページのクリーンアップ操作を実行します。 プロパティ ページのコールバック関数、プロパティ ページに関連付けるに**MergePropPages**ポイントする必要があります、 **pfnCallback**各ページのプロパティ ページのコールバックに各 PROPSHEETPAGE 構造体のメンバーそのページ関数です。

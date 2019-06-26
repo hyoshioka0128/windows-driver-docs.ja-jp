@@ -6,12 +6,12 @@ keywords:
 - 使用状況の測定と予算の WDK の電源の概要
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aaeef30d377b47a548a5bb159c00173e995bc017
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 70d19064bedbb5f9ce035fa120f3648c95947091
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331841"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371768"
 ---
 # <a name="overview-of-the-power-metering-and-budgeting-infrastructure"></a>電力計測および予算作成インフラストラクチャの概要
 
@@ -48,7 +48,7 @@ PMB WMI クラスは、UMPS の電源の WMI プロバイダーのコンポー�
 UMPS の詳細については、次を参照してください。[ユーザー モードの Power サービス](user-mode-power-service.md)します。
 
 <span id="Power_Meter_Interface__PMI__"></span><span id="power_meter_interface__pmi__"></span><span id="POWER_METER_INTERFACE__PMI__"></span>電力メーター インターフェイス (PMI)   
-PMI は、ドライバーによって提供される WDM インターフェイスです。 このインターフェイスを使用すると、ドライバー サービスの PMI I/O 要求パケット (Irp) から、[電源マネージャー](https://msdn.microsoft.com/library/windows/hardware/ff559829)と、UMPS の電源の WMI プロバイダーのコンポーネント。 これらの Irp は、クエリを実行し、現在の電力使用状況測定と電力メーターから予算情報の設定に使用されます。
+PMI は、ドライバーによって提供される WDM インターフェイスです。 このインターフェイスを使用すると、ドライバー サービスの PMI I/O 要求パケット (Irp) から、[電源マネージャー](https://docs.microsoft.com/windows-hardware/drivers/kernel/power-manager)と、UMPS の電源の WMI プロバイダーのコンポーネント。 これらの Irp は、クエリを実行し、現在の電力使用状況測定と電力メーターから予算情報の設定に使用されます。
 
 Windows 7 および Windows Server 2008 R2 以降のオペレーティング システムでドライバーを提供 (*ACPIPMI します。SYS*) PMI ACPI 4.0 Power メータリング オブジェクトをサポートするシステムを実装します。 このドライバーにより、相手先ブランド供給 (Oem) PMB インフラストラクチャ内でサードパーティ製のドライバーをインストールすることがなく参加できるシステムを構築します。
 

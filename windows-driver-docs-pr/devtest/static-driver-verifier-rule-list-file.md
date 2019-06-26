@@ -12,17 +12,17 @@ keywords:
 - 規則の一覧ファイルの WDK Static Driver Verifier
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aa8da1ae137057ab2f609acf2edb7f919c6246e6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fb972d38a2852709079eb73e4234b9aa8ed0ddcd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365165"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375637"
 ---
 # <a name="static-driver-verifier-rule-list-file"></a>静的ドライバー検証ツールの規則一覧ファイル
 
 
-SDV ルールの一覧ファイルは、1 つまたは複数を一覧表示するテキスト ファイル[Static Driver Verifier ルール](https://msdn.microsoft.com/library/windows/hardware/ff551714)または名前パターンの 1 つのルールまたはルール名のパターンを行ごとに、ルールします。 ルールは任意の順序で表示でき、出現する順序で確認されています。 ファイルは、Test.sdv など、.sdv のファイル名拡張子を持ちます。
+SDV ルールの一覧ファイルは、1 つまたは複数を一覧表示するテキスト ファイル[Static Driver Verifier ルール](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)または名前パターンの 1 つのルールまたはルール名のパターンを行ごとに、ルールします。 ルールは任意の順序で表示でき、出現する順序で確認されています。 ファイルは、Test.sdv など、.sdv のファイル名拡張子を持ちます。
 
 行ごとに表示されているルールは、1 つの規則の名前を指定できますか、ワイルドカード文字であることができます (\*)、すべての SDV のルールを表します。
 

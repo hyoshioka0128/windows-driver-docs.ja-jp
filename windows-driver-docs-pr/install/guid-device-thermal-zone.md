@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: ee40380bf9becb6330b0968ceec10dc0de4e0c0f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e9b676cf08893fdf50205a83117908b82a980df6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391109"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370961"
 ---
 # <a name="guiddevicethermalzone"></a>GUID_DEVICE_THERMAL_ZONE
 
 
-GUID_DEVICE_THERMAL_ZONE[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)Advanced Configuration and Power Interface (ACPI) の熱ゾーン デバイス用に定義されます。
+GUID_DEVICE_THERMAL_ZONE[デバイス インターフェイス クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)Advanced Configuration and Power Interface (ACPI) の熱ゾーン デバイス用に定義されます。
 
 <table>
 <colgroup>
@@ -54,9 +54,9 @@ GUID_DEVICE_THERMAL_ZONE[デバイス インターフェイス クラス](https:
 <a name="remarks"></a>注釈
 -------
 
-システム提供[ACPI ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff540493)オペレーティング システムとデバイスの温度のゾーンの存在をアプリケーションに通知するこのデバイスのインターフェイス クラスのインスタンスを登録します。
+システム提供[ACPI ドライバー](https://docs.microsoft.com/windows-hardware/drivers/kernel/acpi-driver)オペレーティング システムとデバイスの温度のゾーンの存在をアプリケーションに通知するこのデバイスのインターフェイス クラスのインスタンスを登録します。
 
-WDM を指定する方法については[関数ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff546516) ACPI デバイスでは、次を参照してください。 [ACPI のデバイスをサポートしている](https://msdn.microsoft.com/library/windows/hardware/ff536161)します。
+WDM を指定する方法については[関数ドライバー](https://docs.microsoft.com/windows-hardware/drivers/kernel/function-drivers) ACPI デバイスでは、次を参照してください。 [ACPI のデバイスをサポートしている](https://docs.microsoft.com/windows-hardware/drivers/acpi/supporting-acpi-devices)します。
 
 <a name="requirements"></a>要件
 ------------

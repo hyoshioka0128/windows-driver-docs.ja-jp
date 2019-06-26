@@ -12,12 +12,12 @@ keywords:
 - カーネル モード ドライバー WDK、ドライバーをエクスポートします。
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dabe8d5d1cd4aaba5ace84bc66acb2f2830699e9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 11de78c3df6d16cc5f485a120e12215ce561115c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388297"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377168"
 ---
 # <a name="creating-export-drivers"></a>エクスポート ドライバーの作成
 
@@ -29,7 +29,7 @@ ms.locfileid: "63388297"
 
 エクスポートのカーネル モード ドライバーは特に適して、エクスポートのドライバーが読み込むことができるその他のさまざまなカーネル モード DLL のためのスタックとハードウェアの特性を基になるから独立しているドライバーのペアの一部を実装します。特定のハードウェアまたはデバイス スタック固有のコンポーネント。 Microsoft では、このカテゴリに分類されると共に、Windows オペレーティング システムのいくつかのドライバーが付属しています。 たとえば、SCSI ポート ドライバー、テープのクラス ドライバーは、IDE コント ローラーのドライバーは、他のドライバーによって読み込まれるすべてのシステム提供のエクスポート ドライバーです。
 
-エクスポートされたドライバーは、完全なカーネル モード ドライバーの特性の多くがありません。 エクスポートされたドライバーには、ディスパッチ テーブルはありません、ドライバー スタック内の場所がないおよびシステム サービスとしてそれを定義するサービス コントロール マネージャーのデータベース内のエントリはありません。 エクスポート、ドライバーが、 [ **DriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff544113)ルーチンが、その**DriverEntry**ルーチンが呼び出されない。 (ルーチンは、ビルド スクリプトの要件を満たすためにスタブのみです)。
+エクスポートされたドライバーは、完全なカーネル モード ドライバーの特性の多くがありません。 エクスポートされたドライバーには、ディスパッチ テーブルはありません、ドライバー スタック内の場所がないおよびシステム サービスとしてそれを定義するサービス コントロール マネージャーのデータベース内のエントリはありません。 エクスポート、ドライバーが、 [ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)ルーチンが、その**DriverEntry**ルーチンが呼び出されない。 (ルーチンは、ビルド スクリプトの要件を満たすためにスタブのみです)。
 
 エクスポートされたドライバーはディスパッチ テーブルを持たないときに、標準のドライバーにディスパッチ ルーチンを供給できることに注意してください。 標準のドライバーでは、独自のディスパッチ テーブルにディスパッチ ルーチンを挿入します。
 
@@ -71,7 +71,7 @@ RegistryPath は DLL のレジストリ キーへのパスを指定する、カ�
 
 ### <a name="importing-functions-from-an-export-driver"></a>エクスポートされたドライバーから関数をインポートします。
 
-エクスポート ドライバーによってエクスポートされる関数をインポートするには、DECLSPEC を使用して関数を宣言しなければなりません\_Ntdef.h で定義されているインポート マクロ。 次に、例を示します。
+エクスポート ドライバーによってエクスポートされる関数をインポートするには、DECLSPEC を使用して関数を宣言しなければなりません\_Ntdef.h で定義されているインポート マクロ。 例:
 
 ```cpp
 DECLSPEC_IMPORT int LoadPrinterDriver (int arg1); 

@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ad42db96c218f457a53d7aef9a3272b98f81550
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1236346cc9da2e37cba9f6c3b0e624450ebab6c3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63338980"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373107"
 ---
 # <a name="kspropertyconnectionstate"></a>KSPROPERTY\_接続\_状態
 
@@ -54,7 +54,7 @@ KSPROPERTY\_接続\_状態プロパティが現在の実行、暗証番号 (pin)
 <td><p>〇</p></td>
 <td><p>フィルターまたはピン留めします。</p></td>
 <td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff566856" data-raw-source="[&lt;strong&gt;KSSTATE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566856)"><strong>KSSTATE</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ne-ks-ksstate" data-raw-source="[&lt;strong&gt;KSSTATE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ne-ks-ksstate)"><strong>KSSTATE</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -73,7 +73,7 @@ KSPROPERTY\_接続\_状態プロパティが現在の実行、暗証番号 (pin)
 </colgroup>
 <thead>
 <tr class="header">
-<th>値</th>
+<th>Value</th>
 <th>説明</th>
 </tr>
 </thead>
@@ -120,7 +120,7 @@ KSPROPERTY\_接続\_状態プロパティが現在の実行、暗証番号 (pin)
 ## <a name="see-also"></a>関連項目
 
 
-[**KSSTATE**](https://msdn.microsoft.com/library/windows/hardware/ff566856)
+[**KSSTATE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ne-ks-ksstate)
 
  
 

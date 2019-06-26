@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2af681b9ebc97368f2bf6df3038cd6edcd676083
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c0661a204e988c1c2eaa89ec53064742d977b0df
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370736"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372748"
 ---
 # <a name="wiaipsfeedercontrol"></a>WIA\_IP\_フィーダー\_コントロール
 
@@ -47,14 +47,14 @@ ms.locfileid: "63370736"
 </colgroup>
 <thead>
 <tr class="header">
-<th>値</th>
+<th>Value</th>
 <th>定義</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p>WIA_FEEDER_CONTROL_AUTO</p></td>
-<td><p>デバイスは、フィーダー モーターの動作を制御します。 フィーダーが開始および各スキャン ジョブの停止 (<a href="https://msdn.microsoft.com/library/windows/hardware/ff543956" data-raw-source="[&lt;strong&gt;IWiaMiniDrv::drvAcquireItemData&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff543956)"><strong>IWiaMiniDrv::drvAcquireItemData</strong> </a>呼び出します)。 これは、プロパティがサポートされている場合に必要な既定値です。</p></td>
+<td><p>デバイスは、フィーダー モーターの動作を制御します。 フィーダーが開始および各スキャン ジョブの停止 (<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvacquireitemdata" data-raw-source="[&lt;strong&gt;IWiaMiniDrv::drvAcquireItemData&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvacquireitemdata)"><strong>IWiaMiniDrv::drvAcquireItemData</strong> </a>呼び出します)。 これは、プロパティがサポートされている場合に必要な既定値です。</p></td>
 </tr>
 <tr class="even">
 <td><p>WIA_FEEDER_CONTROL_MANUAL</p></td>
@@ -67,9 +67,9 @@ ms.locfileid: "63370736"
 
 デバイスは、この機能をサポートするときに、WIA アプリケーションで使用フィーダー モーターを最初のスキャン ジョブを実行する前に開始する (最初の**IWiaTransfer::Download**呼び出し) と最後のスキャン ジョブの完了後、フィーダーを停止 (最終**IWiaTransfer::Download** WIA アプリケーションの現在のセッションで呼び出す) が完了します。 個々 のジョブの間で (**IWiaTransfer::Download**呼び出し)、フィーダーの処理速度に保持され、遅延なしに、次のジョブを続行する準備ができました。
 
-WIA ミニドライバーを受信した場合、 [ **IWiaMiniDrv::drvAcquireItemData** ](https://msdn.microsoft.com/library/windows/hardware/ff543956) WIA 中に要求\_フィーダー\_コントロール\_手動設定と、WIA がない場合は、\_コマンド\_開始\_フィーダー コマンド、WIA ミニドライバーは、WIA を元に戻す必要があります\_フィーダー\_コマンド\_自動スキャン ジョブを実行する前にします。
+WIA ミニドライバーを受信した場合、 [ **IWiaMiniDrv::drvAcquireItemData** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvacquireitemdata) WIA 中に要求\_フィーダー\_コントロール\_手動設定と、WIA がない場合は、\_コマンド\_開始\_フィーダー コマンド、WIA ミニドライバーは、WIA を元に戻す必要があります\_フィーダー\_コマンド\_自動スキャン ジョブを実行する前にします。
 
-場合 WIA\_フィーダー\_コントロール\_手動に設定されているし、WIA ミニドライバーを受け取る、 [ **IWiaMiniDrv::drvUnInitializeWia** ](https://msdn.microsoft.com/library/windows/hardware/ff545010) WIAを受けることがなく要求\_コマンド\_停止\_フィーダー コマンド、WIA ミニドライバーは、呼び出しに戻る前に、フィーダーを停止する必要があります。
+場合 WIA\_フィーダー\_コントロール\_手動に設定されているし、WIA ミニドライバーを受け取る、 [ **IWiaMiniDrv::drvUnInitializeWia** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvuninitializewia) WIAを受けることがなく要求\_コマンド\_停止\_フィーダー コマンド、WIA ミニドライバーは、呼び出しに戻る前に、フィーダーを停止する必要があります。
 
 このプロパティは、フィーダー項目に対してのみ有効です (WIA\_カテゴリ\_フィーダー) は省略可能です。
 

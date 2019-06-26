@@ -5,12 +5,12 @@ ms.assetid: d281086f-4d8b-4e1e-b2bd-7b0a20338222
 ms.date: 08/08/2017
 keywords: -SO_EXCLUSIVEADDRUSE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 67f2d6739de37f83f374896125e95913593eb6aa
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 487a9c2557341cfb7eba1b6fddc414ccf3b0677c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373130"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376412"
 ---
 # <a name="soexclusiveaddruse"></a>したがって\_EXCLUSIVEADDRUSE
 
@@ -19,7 +19,7 @@ SO の状態\_EXCLUSIVEADDRUSE ソケット オプションは、ソケットが
 
 WSK アプリケーションでは、このソケット オプションを設定する場合、ローカル トランスポート アドレスにソケットをバインドする前に、実行する必要があります。
 
-WSK アプリケーションを呼び出すこのソケット オプションの状態を設定する、 [ **WskControlSocket** ](https://msdn.microsoft.com/library/windows/hardware/ff571127)関数は次のパラメーター。
+WSK アプリケーションを呼び出すこのソケット オプションの状態を設定する、 [ **WskControlSocket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_control_socket)関数は次のパラメーター。
 
 <table>
 <colgroup>
@@ -127,7 +127,7 @@ WSK アプリケーションを呼び出すこのソケット オプションの
 
 このソケット オプションの既定の状態は、排他的に使用してローカル トランスポート アドレスが無効になっていることです。
 
-SO を使用しての詳細については\_EXCLUSIVEADDRUSE ソケット オプションと、ソケットとの間ローカル トランスポート アドレスの共有への影響を参照してください。[トランスポート アドレスを共有](https://msdn.microsoft.com/library/windows/hardware/ff570806)します。
+SO を使用しての詳細については\_EXCLUSIVEADDRUSE ソケット オプションと、ソケットとの間ローカル トランスポート アドレスの共有への影響を参照してください。[トランスポート アドレスを共有](https://docs.microsoft.com/windows-hardware/drivers/network/sharing-transport-addresses)します。
 
 <a name="requirements"></a>必要条件
 ------------

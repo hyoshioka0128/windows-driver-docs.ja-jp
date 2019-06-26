@@ -10,12 +10,12 @@ keywords:
 - データ転送の WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e7e8c7e0ee11191c9cdea058d57388c141a92464
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 24624f205062c9336d3badf76566738c2e3d1577
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364270"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371875"
 ---
 # <a name="io-programming-techniques"></a>I/O のプログラミング手法
 
@@ -35,7 +35,7 @@ ms.locfileid: "63364270"
 
 [従来の入出力のプログラミング](legacy-i-o-programming.md)
 
-I/O マネージャーのアーキテクチャについては、次を参照してください。 [Windows I/O マネージャー](windows-kernel-mode-i-o-manager.md)します。 I/O マネージャーの参照については、次を参照してください。 [I/O マネージャー ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff551797)します。
+I/O マネージャーのアーキテクチャについては、次を参照してください。 [Windows I/O マネージャー](windows-kernel-mode-i-o-manager.md)します。 I/O マネージャーの参照については、次を参照してください。 [I/O マネージャー ルーチン](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff551797(v=vs.85))します。
 
  
 

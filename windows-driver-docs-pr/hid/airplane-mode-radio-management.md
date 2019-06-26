@@ -4,12 +4,12 @@ description: Windows 8 以降、Windows オペレーティング システムは
 ms.assetid: 5B0662B0-CBD3-4F31-B98F-6BC8184574DB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c55bdac9dd253b236aa95afe77b07d5cfbc08b18
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 58649c1a53e28f1ce3cbf7a7d4dd0140500502c7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390416"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375782"
 ---
 # <a name="airplane-mode-radio-management"></a>機内モード無線管理
 
@@ -154,7 +154,7 @@ END_COLLECTION                                 C0
 
 ヒント: \#2。のみ、機内モード無線管理 HID の使用は、モバイル システム (電源バッテリ使用時) で動作し、Windows 8 または Windows の以降のバージョンが必要です。
 
-ヒント: \#3。機内モード無線管理 ボタンの詳細については、次を参照してください。、[キーボードの Windows 8 の機能拡張](https://msdn.microsoft.com/library/windows/hardware/dn613956.aspx)ホワイト ペーパー。
+ヒント: \#3。機内モード無線管理 ボタンの詳細については、次を参照してください。、[キーボードの Windows 8 の機能拡張](https://docs.microsoft.com/previous-versions/windows/hardware/design/dn613956(v=vs.85))ホワイト ペーパー。
 
 ヒント: \#4。ボタンは、に関する詳細については、適切なハードウェアを実装するためには、Windows 8 システム ロゴの要件を確認してください。
 

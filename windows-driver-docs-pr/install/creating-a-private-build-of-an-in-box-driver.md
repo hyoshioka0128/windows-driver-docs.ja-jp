@@ -4,12 +4,12 @@ description: 受信トレイのドライバーのプライベート ビルドを
 ms.assetid: aed3c175-3e95-4bfb-a514-a663dd9e3f57
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4dbd9408fb0969aad9af56e4f5b9a1c88701cdb3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 953d8cdb3de7f61ad2ee3dab648ccc0c0258a1bc
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364316"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356316"
 ---
 # <a name="creating-a-private-build-of-an-inbox-driver"></a>受信トレイのドライバーのプライベート ビルドを作成します。
 
@@ -24,7 +24,7 @@ ms.locfileid: "63364316"
    $(O)\sample.inf
    ```
 
-2. ディレクティブを追加、*メイクファイル*新しい INF ファイルを生成し、実行するが、 [Stampinf](https://msdn.microsoft.com/library/windows/hardware/ff552786) INF ファイルのタイムスタンプをツールします。 次のコード例が方法を作成し、タイムスタンプという INF ファイルを表示するなど、 *Sample.inf*:
+2. ディレクティブを追加、*メイクファイル*新しい INF ファイルを生成し、実行するが、 [Stampinf](https://docs.microsoft.com/windows-hardware/drivers/devtest/stampinf) INF ファイルのタイムスタンプをツールします。 次のコード例が方法を作成し、タイムスタンプという INF ファイルを表示するなど、 *Sample.inf*:
 
    ```cpp
    $(O)\ sample.inf: $(_INX)\ sample.inx $(_LNG)\ sample.txt
@@ -35,7 +35,7 @@ ms.locfileid: "63364316"
        $(TSBINPLACE_CMD)
    ```
 
-   次[Stampinf](https://msdn.microsoft.com/library/windows/hardware/ff552786)コマンド ライン パラメーターは、この例で使用されます。
+   次[Stampinf](https://docs.microsoft.com/windows-hardware/drivers/devtest/stampinf)コマンド ライン パラメーターは、この例で使用されます。
 
    - -D\*パラメーターは、INF ファイルで、DriverVer ディレクティブの一部として、現在の日付を使用します。
    - **-V \\** * パラメーターは、バージョン番号の現在の時刻を使用します。 STAMPINF_VERSION 環境変数が設定されていると、Stampinf はこの環境変数で指定されているバージョン番号値を使います。
@@ -45,7 +45,7 @@ ms.locfileid: "63364316"
 
      
 
-サインインする必要があります、ドライバーがビルドされたら、[ドライバー パッケージ](driver-packages.md)は同じと[カタログ ファイル](catalog-files.md)に指定されている、 **-c**のパラメーター [Stampinf](https://msdn.microsoft.com/library/windows/hardware/ff552786)内、*メイクファイル*します。 ドライバー パッケージに署名するに記載されている手順に従います[開発中にドライバーの署名、およびテスト](signing-drivers-during-development-and-test.md)します。
+サインインする必要があります、ドライバーがビルドされたら、[ドライバー パッケージ](driver-packages.md)は同じと[カタログ ファイル](catalog-files.md)に指定されている、 **-c**のパラメーター [Stampinf](https://docs.microsoft.com/windows-hardware/drivers/devtest/stampinf)内、*メイクファイル*します。 ドライバー パッケージに署名するに記載されている手順に従います[開発中にドライバーの署名、およびテスト](signing-drivers-during-development-and-test.md)します。
 
  
 

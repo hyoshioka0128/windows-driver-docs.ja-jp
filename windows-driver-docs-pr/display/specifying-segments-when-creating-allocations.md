@@ -7,12 +7,12 @@ keywords:
 - WDK の割り当てを表示します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2186ca0e2f57633fd8ad791e445ed9c9c69f3f1e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 56c7362a14741ba4ca5a7dce396a2fddedf6d915
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376023"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376062"
 ---
 # <a name="specifying-segments-when-creating-allocations"></a>割り当て作成時のセグメントの指定
 
@@ -20,7 +20,7 @@ ms.locfileid: "63376023"
 ## <span id="ddk_specifying_segments_for_creating_and_rendering_allocations_gg"></span><span id="DDK_SPECIFYING_SEGMENTS_FOR_CREATING_AND_RENDERING_ALLOCATIONS_GG"></span>
 
 
-ディスプレイのミニポート ドライバーを指定し、ビデオ メモリ マネージャーの使用が推奨ビデオ メモリ マネージャーがドライバーを呼び出すときにそのメモリ セグメントに関する情報を返します[ **DxgkDdiCreateAllocation** ](https://msdn.microsoft.com/library/windows/hardware/ff559606)関数。 呼び出しで*DxgkDdiCreateAllocation*ドライバーがビデオ リソースの割り当てを作成します。 ドライバーがサポートされるセグメントとセグメント各自の好みの識別子を返します、 [ **DXGK\_ALLOCATIONINFO** ](https://msdn.microsoft.com/library/windows/hardware/ff560960)の割り当てを記述する構造体。
+ディスプレイのミニポート ドライバーを指定し、ビデオ メモリ マネージャーの使用が推奨ビデオ メモリ マネージャーがドライバーを呼び出すときにそのメモリ セグメントに関する情報を返します[ **DxgkDdiCreateAllocation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_createallocation)関数。 呼び出しで*DxgkDdiCreateAllocation*ドライバーがビデオ リソースの割り当てを作成します。 ドライバーがサポートされるセグメントとセグメント各自の好みの識別子を返します、 [ **DXGK\_ALLOCATIONINFO** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_allocationinfo)の割り当てを記述する構造体。
 
 返されるセグメントの情報からは、ビデオ メモリ マネージャーは、指定された操作のページで、適切なメモリ セグメントを決定します。
 

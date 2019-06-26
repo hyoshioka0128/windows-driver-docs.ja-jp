@@ -8,12 +8,12 @@ keywords:
 - デバイス WDK、デバイス スタックを並列します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9eb17f8c9a513d6c365d23b6859ce66fc2adfb0d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0ec93a7c51fef316270e256b381e2ec20916ee4a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373590"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376966"
 ---
 # <a name="device-stacks-for-parallel-ports-and-devices"></a>パラレル ポートとデバイスのデバイス スタック
 
@@ -39,7 +39,7 @@ ms.locfileid: "63373590"
 
 [パラレル ポートに接続されている並列のデバイスの動作](operating-a-parallel-device-attached-to-a-parallel-port.md)
 
-[システム提供平行ドライバーへのクライアント インターフェイス](https://msdn.microsoft.com/library/windows/hardware/ff543926)
+[システム提供平行ドライバーへのクライアント インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
 
  
 

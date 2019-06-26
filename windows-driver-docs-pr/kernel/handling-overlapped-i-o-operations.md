@@ -10,12 +10,12 @@ keywords:
 - オーバー ラップ I/O WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 03845bea026b74a8ace7c98b56fc407a32f34e3f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0d8899a618b7bc75f4b9f39a831505b286236c22
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392436"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375224"
 ---
 # <a name="handling-overlapped-io-operations"></a>重複した I/O 操作の処理
 
@@ -23,7 +23,7 @@ ms.locfileid: "63392436"
 
 
 
-[ *DpcForIsr* ](https://msdn.microsoft.com/library/windows/hardware/ff544079)または[ *CustomDpc* ](https://msdn.microsoft.com/library/windows/hardware/ff542972)一対一のデバイス上での操作と重複するドライバーのルーチンは使用できません入力要求の間の通信、 [ *StartIo* ](https://msdn.microsoft.com/library/windows/hardware/ff563858)ルーチンと ISR の呼び出しを[ **IoRequestDpc** ](https://msdn.microsoft.com/library/windows/hardware/ff549657)または[ **KeInsertQueueDpc**](https://msdn.microsoft.com/library/windows/hardware/ff552185)します。 このようなドライバーの*DpcForIsr*または*CustomDpc* IRP を ISR によって提供されるコンテキストでは、入力ポインターを使用することはできませんとは限りませんまたは**CurrentIrp**ターゲット内のポインターデバイス オブジェクト、その IRP のみを完了します。
+[ *DpcForIsr* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_dpc_routine)または[ *CustomDpc* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kdeferred_routine)一対一のデバイス上での操作と重複するドライバーのルーチンは使用できません入力要求の間の通信、 [ *StartIo* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_startio)ルーチンと ISR の呼び出しを[ **IoRequestDpc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iorequestdpc)または[ **KeInsertQueueDpc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keinsertqueuedpc)します。 このようなドライバーの*DpcForIsr*または*CustomDpc* IRP を ISR によって提供されるコンテキストでは、入力ポインターを使用することはできませんとは限りませんまたは**CurrentIrp**ターゲット内のポインターデバイス オブジェクト、その IRP のみを完了します。
 
 特定の時点では、同じ DPC オブジェクトを 2 回繰り返すことはできません。 ISR を呼び出す場合**IoRequestDpc**または**KeInsertQueueDpc** 、対応する前に 2 回以上*DpcForIsr*または*CustomDpc*を実行します、プロセッサの IRQL がディスパッチを下回ったときに 1 回だけ、DPC ルーチンが実行される\_レベル。 その一方、ISR から呼び出す場合**IoRequestDpc**または**KeInsertQueueDpc** 、対応するときに*DpcForIsr*または*CustomDpc*は別のプロセッサで実行されている、DPC ルーチン 2 つのプロセッサで同時に実行できます。
 

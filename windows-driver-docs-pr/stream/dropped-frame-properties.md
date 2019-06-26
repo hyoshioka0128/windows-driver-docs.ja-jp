@@ -7,17 +7,17 @@ keywords:
 - PROPSETID_VIDCAP_DROPPEDFRAMES
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fafebd5138a344be037ce1637b2f6e2b45f0f56f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ce96ad7d0646f5dd6bb3d5bf16d3936c0a4c0558
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384742"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358441"
 ---
 # <a name="dropped-frame-properties"></a>ドロップ フレームのプロパティ
 
 
-[PROPSETID\_しました\_DROPPEDFRAMES](https://msdn.microsoft.com/library/windows/hardware/ff567806)ビデオ フレームのキャプチャ操作中の削除に関連するプロパティがプロパティ セットに含まれています。 次の表に、プロパティ、PROPSETID の一部である\_しました\_DROPPEDFRAMES プロパティ セット。
+[PROPSETID\_しました\_DROPPEDFRAMES](https://docs.microsoft.com/windows-hardware/drivers/stream/propsetid-vidcap-droppedframes)ビデオ フレームのキャプチャ操作中の削除に関連するプロパティがプロパティ セットに含まれています。 次の表に、プロパティ、PROPSETID の一部である\_しました\_DROPPEDFRAMES プロパティ セット。
 
 <table>
 <colgroup>
@@ -32,7 +32,7 @@ ms.locfileid: "63384742"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff565135" data-raw-source="[&lt;strong&gt;KSPROPERTY_DROPPEDFRAMES_CURRENT&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff565135)"><strong>KSPROPERTY_DROPPEDFRAMES_CURRENT</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-droppedframes-current" data-raw-source="[&lt;strong&gt;KSPROPERTY_DROPPEDFRAMES_CURRENT&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-droppedframes-current)"><strong>KSPROPERTY_DROPPEDFRAMES_CURRENT</strong></a></p></td>
 <td><p>現在の画像数と平均のビデオ フレーム サイズなど、キャプチャ操作のフレームがドロップされた情報を返します。</p></td>
 </tr>
 </tbody>

@@ -8,12 +8,12 @@ keywords:
 - コンテキストの WDK ネットワーク
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2cd7231e7b457b1a03ed514e31ca20415d4d645e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: de7c059594a5ee6eaca97fa80500c889c07d61bc
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346696"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375156"
 ---
 # <a name="setting-context-to-display-properties"></a>プロパティを表示するコンテキストの設定
 
@@ -21,11 +21,11 @@ ms.locfileid: "63346696"
 
 
 
-通知オブジェクトには、オブジェクトを所有しているネットワーク コンポーネントのプロパティを表示するためのコンテキストを設定できます。 通知オブジェクトは、ネットワーク構成のサブシステムの呼び出し、オブジェクトの後にディスプレイ コンテキストを設定[ **INetCfgComponentPropertyUi::SetContext** ](https://msdn.microsoft.com/library/windows/hardware/ff547752)メソッドを呼び出し、サブシステムの前に、オブジェクトの[ **INetCfgComponentPropertyUi::MergePropPages** ](https://msdn.microsoft.com/library/windows/hardware/ff547746)メソッド。
+通知オブジェクトには、オブジェクトを所有しているネットワーク コンポーネントのプロパティを表示するためのコンテキストを設定できます。 通知オブジェクトは、ネットワーク構成のサブシステムの呼び出し、オブジェクトの後にディスプレイ コンテキストを設定[ **INetCfgComponentPropertyUi::SetContext** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff547752(v=vs.85))メソッドを呼び出し、サブシステムの前に、オブジェクトの[ **INetCfgComponentPropertyUi::MergePropPages** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff547746(v=vs.85))メソッド。
 
 ネットワーク構成のサブシステムを呼び出すと**SetContext**、合格、 **IUnknown**インターフェイス。 **SetContext**呼び出し、 **QueryInterface**メソッドをこの**IUnknown**サブシステムが提供される特定のオブジェクトのインターフェイスを決定するインターフェイス。
 
-たとえば、ネットワーク構成のサブシステムを指定できます、 [ **INetLanConnectionUiInfo** ](https://msdn.microsoft.com/library/windows/hardware/ff548005)インターフェイスを呼び出すときに**SetContext**します。 **SetContext**使用できる、 [ **GetDeviceGuid** ](https://msdn.microsoft.com/library/windows/hardware/ff548012)メソッドの**INetLanConnectionUiInfo** LAN デバイスの GUID を取得します。 通知オブジェクトは、この LAN デバイスのコンテキストでそのネットワーク コンポーネントのプロパティをその後表示できます。 たとえば、TCP/IP プロトコルの通知オブジェクトは、そのアダプターのコンテキストで特定の LAN アダプターに関連付けられている IP アドレスを表示できます。 これにより、ユーザーがそのアダプターの IP アドレスを指定できます。
+たとえば、ネットワーク構成のサブシステムを指定できます、 [ **INetLanConnectionUiInfo** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff548005(v=vs.85))インターフェイスを呼び出すときに**SetContext**します。 **SetContext**使用できる、 [ **GetDeviceGuid** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff548012(v=vs.85))メソッドの**INetLanConnectionUiInfo** LAN デバイスの GUID を取得します。 通知オブジェクトは、この LAN デバイスのコンテキストでそのネットワーク コンポーネントのプロパティをその後表示できます。 たとえば、TCP/IP プロトコルの通知オブジェクトは、そのアダプターのコンテキストで特定の LAN アダプターに関連付けられている IP アドレスを表示できます。 これにより、ユーザーがそのアダプターの IP アドレスを指定できます。
 
  
 

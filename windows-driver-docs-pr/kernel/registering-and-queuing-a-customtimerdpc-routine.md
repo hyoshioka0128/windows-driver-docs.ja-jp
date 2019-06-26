@@ -21,12 +21,12 @@ keywords:
 - タイマー オブジェクトの WDK カーネル、有効期限の設定
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d328e808a94225536cd8ef31216a86ecf8a477c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1cba98337ccf7fc0f17173d0b2ad05b59c890bc5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352996"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377092"
 ---
 # <a name="registering-and-queuing-a-customtimerdpc-routine"></a>CustomTimerDpc ルーチンの登録とキュー
 
@@ -34,13 +34,13 @@ ms.locfileid: "63352996"
 
 
 
-ドライバーが登録できる、 [ *CustomTimerDpc* ](https://msdn.microsoft.com/library/windows/hardware/ff542983)ルーチンからは、通常、次のルーチンを呼び出すことによってその[ *AddDevice* ](https://msdn.microsoft.com/library/windows/hardware/ff540521)ルーチン。
+ドライバーが登録できる、 [ *CustomTimerDpc* ](https://msdn.microsoft.com/library/windows/hardware/ff542983)ルーチンからは、通常、次のルーチンを呼び出すことによってその[ *AddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)ルーチン。
 
-1.  [**KeInitializeDpc** ](https://msdn.microsoft.com/library/windows/hardware/ff552130)ルーチンを登録するには
+1.  [**KeInitializeDpc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keinitializedpc)ルーチンを登録するには
 
-2.  [**KeInitializeTimer** ](https://msdn.microsoft.com/library/windows/hardware/ff552168)または[ **KeInitializeTimerEx** ](https://msdn.microsoft.com/library/windows/hardware/ff552173)タイマー オブジェクトを設定するには
+2.  [**KeInitializeTimer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keinitializetimer)または[ **KeInitializeTimerEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keinitializetimerex)タイマー オブジェクトを設定するには
 
-その後、ドライバーが呼び出せる[ **KeSetTimer** ](https://msdn.microsoft.com/library/windows/hardware/ff553286)または[ **KeSetTimerEx** ](https://msdn.microsoft.com/library/windows/hardware/ff553292)有効期限を指定し、タイマー オブジェクトを追加するにはシステムのタイマー キュー。 タイマー オブジェクトと呼び出し、有効期限に達すると、システムのキューから、 *CustomTimerDpc*ルーチン。 次の図は、これらの呼び出しを示しています。
+その後、ドライバーが呼び出せる[ **KeSetTimer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesettimer)または[ **KeSetTimerEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesettimerex)有効期限を指定し、タイマー オブジェクトを追加するにはシステムのタイマー キュー。 タイマー オブジェクトと呼び出し、有効期限に達すると、システムのキューから、 *CustomTimerDpc*ルーチン。 次の図は、これらの呼び出しを示しています。
 
 ![customtimerdpc ルーチンのタイマーおよび dpc オブジェクトの使用を示す図](images/3ketmdpc.png)
 
@@ -64,11 +64,11 @@ ms.locfileid: "63352996"
 
      
 
-指定できる最小の時間間隔**KeSetTimer**と**KeSetTimerEx**約 10 ミリ秒では、ドライバーが使用できるように、 *CustomTimerDpc*ルーチンも短い間隔の時間を計測、 [ *IoTimer* ](https://msdn.microsoft.com/library/windows/hardware/ff550381)ルーチンで、毎秒 1 回の実行を処理できます。
+指定できる最小の時間間隔**KeSetTimer**と**KeSetTimerEx**約 10 ミリ秒では、ドライバーが使用できるように、 *CustomTimerDpc*ルーチンも短い間隔の時間を計測、 [ *IoTimer* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_timer_routine)ルーチンで、毎秒 1 回の実行を処理できます。
 
 特定のタイマー オブジェクトの 1 つだけインスタンス化は、任意の時点でキューに登録できます。 呼び出す**KeSetTimer**または**KeSetTimerEx**同じ使用してもう一度*タイマー*オブジェクト ポインターのキューに置かれたタイマー オブジェクトをキャンセルし、リセットします。
 
-設定する、 [ *CustomTimerDpc* ](https://msdn.microsoft.com/library/windows/hardware/ff542983)ルーチンを設定するとまったく同じには、 [ *CustomDpc* ](https://msdn.microsoft.com/library/windows/hardware/ff542972)ルーチンを初期化するために追加の手順タイマー オブジェクト。 そのプロトタイプは同じですが、実際が*CustomTimerDpc*ルーチンは、2 つを使用できません*SystemArgument*ポインターがプロトタイプで宣言します。
+設定する、 [ *CustomTimerDpc* ](https://msdn.microsoft.com/library/windows/hardware/ff542983)ルーチンを設定するとまったく同じには、 [ *CustomDpc* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kdeferred_routine)ルーチンを初期化するために追加の手順タイマー オブジェクト。 そのプロトタイプは同じですが、実際が*CustomTimerDpc*ルーチンは、2 つを使用できません*SystemArgument*ポインターがプロトタイプで宣言します。
 
  
 

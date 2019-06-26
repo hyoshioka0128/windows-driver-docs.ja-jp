@@ -4,12 +4,12 @@ description: WDI は、2 つの Tx モード ポート キューと PeerTID キ�
 ms.assetid: 9ADBDAD5-4AFA-4AFA-A829-96EB28CEBAA1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 30d215fbc9906b339d82d4d734636fb0472eed49
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b52bf11bdff4cb9d1c6e0ed3d24dcbf8afe0a778
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342905"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67357106"
 ---
 # <a name="wdi-transmit-operations-and-offloads"></a>WDI 送信操作とオフロード
 
@@ -46,7 +46,7 @@ WDI は、2 つの Tx モードのいずれかで動作します。ポートの�
 <td align="left"><p>チェックサムは、LSO します。</p></td>
 <td align="left"><p>チェックサムは、起動時の構成可能なオフロードです。 各フレームでは、適用可能なチェックサム演算を指定するフラグには。</p>
 <p>WDI は、該当する場合ですか?/ターゲットから透過的に LSO セグメント化を処理します。</p></td>
-<td align="left"><p>チェックサム。ターゲット WDI にそのチェックサム オフロード機能の一部として渡すデバイス キャップ bringup 中にします。 機能については、次を参照してください。 <a href="https://msdn.microsoft.com/library/windows/hardware/ff567878" data-raw-source="[&lt;strong&gt;NDIS_TCP_IP_CHECKSUM_OFFLOAD&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567878)"> <strong>NDIS_TCP_IP_CHECKSUM_OFFLOAD</strong></a>します。</p>
+<td align="left"><p>チェックサム。ターゲット WDI にそのチェックサム オフロード機能の一部として渡すデバイス キャップ bringup 中にします。 機能については、次を参照してください。 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_tcp_ip_checksum_offload" data-raw-source="[&lt;strong&gt;NDIS_TCP_IP_CHECKSUM_OFFLOAD&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_tcp_ip_checksum_offload)"> <strong>NDIS_TCP_IP_CHECKSUM_OFFLOAD</strong></a>します。</p>
 <p>WDI は、該当する場合ですか?/ターゲットから透過的に LSO セグメント化を処理します。</p></td>
 </tr>
 <tr class="even">
@@ -124,7 +124,7 @@ WDI は、2 つの Tx モードのいずれかで動作します。ポートの�
 ## <a name="operation-in-host-implemented-fips-mode"></a>Host-Implemented FIPS モードでの操作
 
 
-ホストは、特定の接続に対して FIPS を提供する場合 (に設定されているホストの FIPS モードで true [ **WDI\_TLV\_接続\_設定**](https://msdn.microsoft.com/library/windows/hardware/dn926261))、ホストは、パケットを暗号化前に、ターゲットに送信します。 ターゲットは、追加の変更、パケットのデータの整合性に影響を与えることがなく、パケットを送信します。 たとえば、ターゲットを実行する必要がありますいないこのモードで MSDU 集計を転送します。
+ホストは、特定の接続に対して FIPS を提供する場合 (に設定されているホストの FIPS モードで true [ **WDI\_TLV\_接続\_設定**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-connection-settings))、ホストは、パケットを暗号化前に、ターゲットに送信します。 ターゲットは、追加の変更、パケットのデータの整合性に影響を与えることがなく、パケットを送信します。 たとえば、ターゲットを実行する必要がありますいないこのモードで MSDU 集計を転送します。
 
 ホスト FIPS モードがより一般的なケースには (ターゲット実装の暗号化モード) が有効になっていない、ヘッダー 802.11 ヘッダーには、暗号化されていないペイロード データが続きます。 パケットが転送前に、暗号化が必要な場合、ターゲットは、パケットを暗号化します。 パケットの QoS 優先順位付けを実行し、TCP レイヤーのオフロード操作 (チェックサム、多数の送信など) を実行できます。 この送信処理のため、ターゲットは、パケットに追加のヘッダーを追加する必要があります (たとえば、QoS、HT ヘッダー、または IV)。
 
@@ -162,13 +162,13 @@ WDI は、2 つの Tx モードのいずれかで動作します。ポートの�
 ## <a name="related-topics"></a>関連トピック
 
 
-[**NDIS\_TCP\_IP\_チェックサム\_オフロード**](https://msdn.microsoft.com/library/windows/hardware/ff567878)
+[**NDIS\_TCP\_IP\_チェックサム\_オフロード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_tcp_ip_checksum_offload)
 
 [WDI データ転送](wdi-data-transfer.md)
 
-[**WDI\_TLV\_接続\_設定**](https://msdn.microsoft.com/library/windows/hardware/dn926261)
+[**WDI\_TLV\_接続\_設定**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-connection-settings)
 
-[**WDI\_TXRX\_機能**](https://msdn.microsoft.com/library/windows/hardware/dn898187)
+[**WDI\_TXRX\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ns-dot11wdi-_wdi_txrx_target_capabilities)
 
  
 

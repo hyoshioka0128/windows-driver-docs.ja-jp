@@ -4,12 +4,12 @@ description: ミット ソフトウェア パッケージには、UART コント
 ms.assetid: 239F131C-5416-4E86-B0EE-E3156CDA11CF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ee233cd76caccb9d34192b8ed56404ba6767f4b7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5d10f5806800bae881ad640cc97b5d7a06335a6d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382776"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383517"
 ---
 # <a name="uart-tests-in-mitt"></a>MITT の UART テスト
 
@@ -27,9 +27,9 @@ ms.locfileid: "63382776"
 ## <a name="before-you-begin"></a>開始する前にしています.
 
 
--   ミット ボードと UART アダプターのボードを取得します。 参照してください[ミットを使用するためのハードウェアを購入](https://msdn.microsoft.com/library/windows/hardware/dn919811)します。
--   [ミット ソフトウェア パッケージをダウンロード](https://msdn.microsoft.com/library/windows/hardware/dn919810)します。 テスト対象のシステムにインストールします。
--   ミット ボード ミット ファームウェアをインストールします。 参照してください[ミット概要](https://msdn.microsoft.com/library/windows/hardware/dn919779)します。
+-   ミット ボードと UART アダプターのボードを取得します。 参照してください[ミットを使用するためのハードウェアを購入](https://docs.microsoft.com/windows-hardware/drivers/spb/multi-interface-test-tool--mitt--)します。
+-   [ミット ソフトウェア パッケージをダウンロード](https://docs.microsoft.com/previous-versions/dn919810(v=vs.85))します。 テスト対象のシステムにインストールします。
+-   ミット ボード ミット ファームウェアをインストールします。 参照してください[ミット概要](https://docs.microsoft.com/windows-hardware/drivers/spb/get-started-with-mitt---)します。
 
 ## <a name="hardware-setup"></a>ハードウェアのセットアップ
 
@@ -48,7 +48,7 @@ ms.locfileid: "63382776"
 
      
 
-3.  UART アダプター ボードは、正しい電圧を選択するためのジャンパーを提供します。 3.3 v のみシグナルが直接サポートされているアダプター ボード) を含めずに接続します。
+3.  UART アダプター ボードは、正しい電圧を選択するためのジャンパーを提供します。 3\.3 v のみシグナルが直接サポートされているアダプター ボード) を含めずに接続します。
 
     ![uart 配線](images/uart-wiring.png)
 
@@ -58,7 +58,7 @@ ms.locfileid: "63382776"
 ACPI テーブルを変更するには、Windows ハードウェア認定キット (HCK) 8.1 をインストールします。 UART コント ローラーがテスト対象システムで次の手順に従います。
 
 1.  Device.BusController.UART.HCKTestability 要件で説明されているシステムの変更を実行します。
-2.  ACPI テーブルの下で提供されているテンプレートに基づく UART テスト ドライバーを更新\\ \\ &lt;hckcontrollername&gt;\\テスト\\&lt;アーキテクチャ&gt;\\UART\\サンプル UART.asl またはこの例を使用します。 使用することができます、 [Microsoft ASL コンパイラ](https://msdn.microsoft.com/library/windows/hardware/dn551195)します。
+2.  ACPI テーブルの下で提供されているテンプレートに基づく UART テスト ドライバーを更新\\ \\ &lt;hckcontrollername&gt;\\テスト\\&lt;アーキテクチャ&gt;\\UART\\サンプル UART.asl またはこの例を使用します。 使用することができます、 [Microsoft ASL コンパイラ](https://docs.microsoft.com/windows-hardware/drivers/bringup/microsoft-asl-compiler)します。
 
     ``` syntax
     Device(UART) {

@@ -7,12 +7,12 @@ keywords:
 - 拡張機能、WdbgExts
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 01e895a8a9305905ec60e3b790bc62539e05e75b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 487a3d45a31dff6fed0ae6546763e0e0ba90927e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374800"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369389"
 ---
 # <a name="writing-wdbgexts-extension-code"></a>WdbgExts 拡張機能コードの作成
 
@@ -44,7 +44,7 @@ WdbgExts 拡張機能は、DbgEng.h ヘッダー ファイルで表示される 
 
 [WdbgExts ターゲットの情報](wdbgexts-target-information.md)
 
-これらの関数の一覧については、次を参照してください。 [WdbgExts 関数](https://msdn.microsoft.com/library/windows/hardware/ff561258)します。
+これらの関数の一覧については、次を参照してください。 [WdbgExts 関数](https://docs.microsoft.com/windows-hardware/drivers/debugger/wdbgexts-functions)します。
 
  
 

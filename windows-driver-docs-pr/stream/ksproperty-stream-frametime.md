@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e58877f78599834bd2e874ce1d05df3dea3cdd6e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 27eb5f123ede1ad818af6eac4e1ccc9219ed4554
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390889"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376354"
 ---
 # <a name="kspropertystreamframetime"></a>KSPROPERTY\_ストリーム\_FRAMETIME
 
@@ -54,7 +54,7 @@ KSPROPERTY\_ストリーム\_FRAMETIME プロパティにより、クライア�
 <td><p>いいえ</p></td>
 <td><p>Pin</p></td>
 <td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff562558" data-raw-source="[&lt;strong&gt;KSFRAMETIME&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff562558)"><strong>KSFRAMETIME</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksframetime" data-raw-source="[&lt;strong&gt;KSFRAMETIME&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksframetime)"><strong>KSFRAMETIME</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -70,7 +70,7 @@ KSPROPERTY\_ストリーム\_FRAMETIME は pin が転送には、メディアの
 
 期間は、暗証番号 (pin) によって提供されるプレゼンテーション時間単位で測定されます。 これは、インターフェイスとプレゼンテーション時間で使用される分子と分母のペアに依存します。 これは、汎用のファイル リーダーなどの任意のメディアの種類に対応でないストリームには適用されません。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -91,7 +91,7 @@ KSPROPERTY\_ストリーム\_FRAMETIME は pin が転送には、メディアの
 
 [**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
 
-[**KSFRAMETIME**](https://msdn.microsoft.com/library/windows/hardware/ff562558)
+[**KSFRAMETIME**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksframetime)
 
  
 

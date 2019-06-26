@@ -4,17 +4,17 @@ description: このメソッドは PrintTicket オブジェクト DEVMODEW 構�
 ms.assetid: 7ef8990d-66dd-421d-8bee-5abee52b8338
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a49e038688ff5f33345a153badcc0b37d37683c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 330c997cc98ed8d167cf2289b01b4f1a9610205e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365608"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372464"
 ---
 # <a name="convertprinttickettodevmode-print-ticket-support"></a>ConvertPrintTicketToDevMode 印刷チケット サポート
 
 
-[ **IPrintTicketProvider::ConvertPrintTicketToDevMode** ](https://msdn.microsoft.com/library/windows/hardware/ff554363)メソッドは、印刷サブシステムを PrintTicket オブジェクトに変換する、 [ **DEVMODEW**](https://msdn.microsoft.com/library/windows/hardware/ff552837)構造体。
+[ **IPrintTicketProvider::ConvertPrintTicketToDevMode** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff554363(v=vs.85))メソッドは、印刷サブシステムを PrintTicket オブジェクトに変換する、 [ **DEVMODEW**](https://docs.microsoft.com/windows/desktop/api/wingdi/ns-wingdi-_devicemodew)構造体。
 
  
 

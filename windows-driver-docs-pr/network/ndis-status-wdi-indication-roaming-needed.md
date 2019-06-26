@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - NDIS_STATUS_WDI_INDICATION_ROAMING_NEEDED ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: a70f2320aa2bb62f0db75d3b35eca9060925fc4f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9bcc1603c3832a0c9d1cd95e91b830bf49ec712b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361031"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375220"
 ---
 # <a name="ndisstatuswdiindicationroamingneeded"></a>NDIS\_状態\_WDI\_INDICATION\_ローミング\_が必要
 
@@ -29,7 +29,7 @@ ms.locfileid: "63361031"
 
 | 種類                                                                                    | 許可されている複数の TLV インスタンス | 省略可能 | 説明                                                                                                                         |
 |-----------------------------------------------------------------------------------------|--------------------------------|----------|-------------------------------------------------------------------------------------------------------------------------------------|
-| [**WDI\_TLV\_ローミング\_必要\_パラメーター**](https://msdn.microsoft.com/library/windows/hardware/dn898049) |                                |          | ローミングのトリガーの理由です。 ときに、 [OID\_WDI\_タスク\_ローミング](oid-wdi-task-roam.md)がトリガーされると、この理由はそれに転送されます。 |
+| [**WDI\_TLV\_ローミング\_必要\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-roaming-needed-parameters) |                                |          | ローミングのトリガーの理由です。 ときに、 [OID\_WDI\_タスク\_ローミング](oid-wdi-task-roam.md)がトリガーされると、この理由はそれに転送されます。 |
 
  
 

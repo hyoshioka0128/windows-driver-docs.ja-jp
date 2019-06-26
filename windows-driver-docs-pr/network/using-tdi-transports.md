@@ -6,17 +6,17 @@ keywords:
 - TDI は、WDK Winsock Kernel を転送します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b00440cdbf459395cc7a8fa4e5929510e55c709f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2753f2b49cde398da3caba407475f72b60dc9cfe
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373779"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372479"
 ---
 # <a name="using-tdi-transports"></a>TDI トランスポートの使用
 
 
-Winsock カーネル (WSK) サブシステムを使用するためのサポートを提供します[TDI](https://msdn.microsoft.com/library/windows/hardware/ff565094)トランスポート。 使用して、WSK TDI トランスポートを使用するには[ネットワーク プログラミング インターフェイス (NPI)](network-programming-interface.md)WSK アプリケーション アドレス ファミリ、ソケットの種類の組み合わせをマップする必要があり、TDI ごとのプロトコルが転送に関連するデバイスの名前に使用します。これらのそれぞれの TDI を転送します。 WSK アプリケーションは、アドレス ファミリ、ソケットの種類の組み合わせをマップし、TDI のデバイス名にプロトコルのトランスポートを使用して、 [ **WSK\_TDI\_DEVICENAME\_マッピング**](https://msdn.microsoft.com/library/windows/hardware/ff571190)クライアント管理の操作。
+Winsock カーネル (WSK) サブシステムを使用するためのサポートを提供します[TDI](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff565094(v=vs.85))トランスポート。 使用して、WSK TDI トランスポートを使用するには[ネットワーク プログラミング インターフェイス (NPI)](network-programming-interface.md)WSK アプリケーション アドレス ファミリ、ソケットの種類の組み合わせをマップする必要があり、TDI ごとのプロトコルが転送に関連するデバイスの名前に使用します。これらのそれぞれの TDI を転送します。 WSK アプリケーションは、アドレス ファミリ、ソケットの種類の組み合わせをマップし、TDI のデバイス名にプロトコルのトランスポートを使用して、 [ **WSK\_TDI\_DEVICENAME\_マッピング**](https://docs.microsoft.com/windows-hardware/drivers/network/wsk-tdi-devicename-mapping)クライアント管理の操作。
 
 次のコード例では、TDI トランスポートのデバイス名を WSK アプリケーションがアドレス ファミリ、ソケットの種類、およびプロトコルの組み合わせをマップする方法を示します。
 
@@ -68,7 +68,7 @@ NTSTATUS
 
 WSK アプリケーションは、ソケットを作成する前に TDI トランスポートのデバイス名にアドレス ファミリ、ソケットの種類、およびプロトコルの組み合わせをマップする必要があります。 WSK アプリケーションでは、アドレス ファミリ、ソケットの種類、およびプロトコルの組み合わせを TDI トランスポートのデバイス名にマップされることが正常に後、アプリケーションは、マップされた TDI トランスポートを使用する新しいソケットを作成できます。
 
-**注**  Windows Vista の後に、TDI が Microsoft Windows のバージョンでサポートされません。 使用[Windows フィルタ リング プラットフォーム](https://msdn.microsoft.com/library/windows/hardware/ff571067)または[Winsock Kernel](https://msdn.microsoft.com/library/windows/hardware/ff571083)代わりにします。
+**注**  Windows Vista の後に、TDI が Microsoft Windows のバージョンでサポートされません。 使用[Windows フィルタ リング プラットフォーム](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)または[Winsock Kernel](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)代わりにします。
 
  
 

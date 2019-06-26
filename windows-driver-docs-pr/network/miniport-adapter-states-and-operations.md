@@ -12,12 +12,12 @@ keywords:
 - WDK ne の状態を初期化しています
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 28f5e566d2e491fba9d2d7018687465b5bbf526c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e3a755301c317c6f47f44d2d40d75b3f52731776
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379810"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373958"
 ---
 # <a name="miniport-adapter-states-and-operations"></a>ミニポート アダプターの状態と操作
 
@@ -28,7 +28,7 @@ ms.locfileid: "63379810"
 管理アダプターごとに、NDIS 6.0 または以降のバージョンのミニポート ドライバーは、次の操作状態のセットをサポートする必要があります。
 
 <a href="" id="halted"></a>(停止)  
-中止状態は、すべてのアダプターの初期状態です。 NDIS ドライバーを呼び出すことができます、アダプターは、中止の状態が、 [ *MiniportInitializeEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559389)関数アダプターを初期化します。
+中止状態は、すべてのアダプターの初期状態です。 NDIS ドライバーを呼び出すことができます、アダプターは、中止の状態が、 [ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)関数アダプターを初期化します。
 
 <a href="" id="shutdown"></a>シャット ダウン  
 シャット ダウン状態でシステムのシャット ダウンと再起動を行う必要があります、システムでは、アダプターをもう一度使用する前にします。
@@ -75,7 +75,7 @@ ms.locfileid: "63379810"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff559389" data-raw-source="[&lt;em&gt;MiniportInitializeEx&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff559389)"><em>MiniportInitializeEx</em></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize" data-raw-source="[&lt;em&gt;MiniportInitializeEx&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)"><em>MiniportInitializeEx</em></a></p></td>
 <td align="left"><p>初期化</p></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -95,7 +95,7 @@ ms.locfileid: "63379810"
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff559449" data-raw-source="[&lt;em&gt;MiniportShutdownEx&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff559449)"><em>MiniportShutdownEx</em></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_shutdown" data-raw-source="[&lt;em&gt;MiniportShutdownEx&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_shutdown)"><em>MiniportShutdownEx</em></a></p></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -105,7 +105,7 @@ ms.locfileid: "63379810"
 <td align="left"><p>シャットダウン</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff559388" data-raw-source="[&lt;em&gt;MiniportHaltEx&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff559388)"><em>MiniportHaltEx</em></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_halt" data-raw-source="[&lt;em&gt;MiniportHaltEx&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_halt)"><em>MiniportHaltEx</em></a></p></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -115,7 +115,7 @@ ms.locfileid: "63379810"
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff559435" data-raw-source="[&lt;em&gt;MiniportRestart&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff559435)"><em>MiniportRestart</em></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_restart" data-raw-source="[&lt;em&gt;MiniportRestart&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_restart)"><em>MiniportRestart</em></a></p></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -135,7 +135,7 @@ ms.locfileid: "63379810"
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff559418" data-raw-source="[&lt;em&gt;MiniportPause&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff559418)"><em>MiniportPause</em></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_pause" data-raw-source="[&lt;em&gt;MiniportPause&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_pause)"><em>MiniportPause</em></a></p></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -210,25 +210,25 @@ ms.locfileid: "63379810"
 プライマリのミニポート ドライバーのイベントの定義は次のとおりです。
 
 <a href="" id="miniportinitializeex"></a>MiniportInitializeEx  
-NDIS というドライバーの[ *MiniportInitializeEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559389)アダプターを初期化します。 アダプターの初期化の詳細については、次を参照してください。[ミニポート アダプターの初期化](initializing-a-miniport-adapter.md)します。
+NDIS というドライバーの[ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)アダプターを初期化します。 アダプターの初期化の詳細については、次を参照してください。[ミニポート アダプターの初期化](initializing-a-miniport-adapter.md)します。
 
 <a href="" id="initialize-is-complete"></a>初期化が完了しました  
-後[ *MiniportInitializeEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559389)初期化操作が完了し、アダプターが一時停止状態に正常に返されます。
+後[ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)初期化操作が完了し、アダプターが一時停止状態に正常に返されます。
 
 <a href="" id="miniportshutdownex"></a>MiniportShutdownEx  
-NDIS というドライバーの[ *MiniportShutdownEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559449)アダプターをシャット ダウンする関数。 詳細については、次を参照してください。[ミニポート アダプターのシャット ダウン](miniport-adapter-shutdown.md)します。
+NDIS というドライバーの[ *MiniportShutdownEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_shutdown)アダプターをシャット ダウンする関数。 詳細については、次を参照してください。[ミニポート アダプターのシャット ダウン](miniport-adapter-shutdown.md)します。
 
 <a href="" id="miniporthaltex"></a>MiniportHaltEx  
-NDIS というドライバーの[ *MiniportHaltEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559388)アダプターを停止する関数。 詳細については、次を参照してください。[ミニポート アダプターを停止する](halting-a-miniport-adapter.md)します。
+NDIS というドライバーの[ *MiniportHaltEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_halt)アダプターを停止する関数。 詳細については、次を参照してください。[ミニポート アダプターを停止する](halting-a-miniport-adapter.md)します。
 
 <a href="" id="miniportrestart"></a>MiniportRestart  
-NDIS というドライバーの[ **MiniportRestart** ](https://msdn.microsoft.com/library/windows/hardware/ff559435)関数を一時停止中のアダプターを再起動します。 アダプターは、初期化後に、一時停止状態ではであるために、このイベントはアダプターの初期化が完了した後、アダプターを開始するも必要です。 詳細については、次を参照してください。[アダプター開始](starting-an-adapter.md)します。
+NDIS というドライバーの[ **MiniportRestart** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_restart)関数を一時停止中のアダプターを再起動します。 アダプターは、初期化後に、一時停止状態ではであるために、このイベントはアダプターの初期化が完了した後、アダプターを開始するも必要です。 詳細については、次を参照してください。[アダプター開始](starting-an-adapter.md)します。
 
 <a href="" id="restart-is-complete"></a>再起動が完了  
 ドライバー準備ができたら送信を処理し、受信操作を再開する操作が完了し、アダプターが実行中の状態。
 
 <a href="" id="miniportpause"></a>MiniportPause  
-NDIS というドライバーの[ *MiniportPause* ](https://msdn.microsoft.com/library/windows/hardware/ff559418)アダプターを一時停止する関数。 詳細については、次を参照してください。[アダプターを一時停止](pausing-an-adapter.md)します。
+NDIS というドライバーの[ *MiniportPause* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_pause)アダプターを一時停止する関数。 詳細については、次を参照してください。[アダプターを一時停止](pausing-an-adapter.md)します。
 
 <a href="" id="pause-is-complete"></a>一時停止が完了  
 ドライバーに必要なすべての操作が完了した後操作の送受信を停止、一時停止操作が完了および、アダプターが一時停止状態にします。
@@ -238,10 +238,10 @@ NDIS というドライバーの[ *MiniportPause* ](https://msdn.microsoft.com/l
  
 
 <a href="" id="initialize-failed"></a>初期化に失敗しました  
-NDIS ドライバーの場合[ *MiniportInitializeEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559389)関数と初期化失敗する場合、アダプターを中止状態に戻ります。
+NDIS ドライバーの場合[ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)関数と初期化失敗する場合、アダプターを中止状態に戻ります。
 
 <a href="" id="restart-failed"></a>再起動に失敗しました  
-NDIS ドライバーの場合[ **MiniportRestart** ](https://msdn.microsoft.com/library/windows/hardware/ff559435)関数と再起動の試行が失敗、一時停止状態のアダプターのままです。
+NDIS ドライバーの場合[ **MiniportRestart** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_restart)関数と再起動の試行が失敗、一時停止状態のアダプターのままです。
 
 <a href="" id="send-and-receive-operations"></a>送信し、受信操作  
 ドライバーが送信を処理する必要があり、受信操作の実行では、および、一時停止中の状態します。 送信し、受信操作についての詳細についてを参照してください。[ミニポート ドライバーの送信と受信操作](miniport-driver-send-and-receive-operations.md)します。

@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 519315cf1c00d4e3d2e0561821bd671f4de6daee
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ce9834404bbcd1972f92c1d0bfdfa365c229aa8a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342059"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370956"
 ---
 # <a name="guiddevinterfacebrightness"></a>GUID_DEVINTERFACE_BRIGHTNESS
 
 
-GUID_DEVINTERFACE_BRIGHTNESS[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)のコンテキストで動作するディスプレイ アダプター ドライバーが定義されている、 [Windows Vista のディスプレイ ドライバー モデル](https://msdn.microsoft.com/library/windows/hardware/ff570593)と輝度のサポート子デバイスを監視します。
+GUID_DEVINTERFACE_BRIGHTNESS[デバイス インターフェイス クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)のコンテキストで動作するディスプレイ アダプター ドライバーが定義されている、 [Windows Vista のディスプレイ ドライバー モデル](https://docs.microsoft.com/windows-hardware/drivers/display/windows-vista-display-driver-model-design-guide)と輝度のサポート子デバイスを監視します。
 
 <table>
 <colgroup>
@@ -56,9 +56,9 @@ GUID_DEVINTERFACE_BRIGHTNESS[デバイス インターフェイス クラス](ht
 
 ドライバーは、オペレーティング システムや子デバイスを監視の明るさコントロール インターフェイスの存在をアプリケーションに通知するこのデバイスのインターフェイス クラスのインスタンスを登録します。
 
-ディスプレイのミニポート ドライバーは、この直接呼出しの明るさコントロールのインターフェイスをサポートしている場合[デバイス セットアップ クラス](https://msdn.microsoft.com/library/windows/hardware/ff541509)、カーネル モード コンポーネントを呼び出して、ミニポート ドライバーの直接呼び出しインターフェイスを取得できます[ **DxgkDdiQueryInterface** ](https://msdn.microsoft.com/library/windows/hardware/ff559764)関数とインターフェイスの種類を指定する GUID_DEVINTERFACE_BRIGHTNESS を指定します。
+ディスプレイのミニポート ドライバーは、この直接呼出しの明るさコントロールのインターフェイスをサポートしている場合[デバイス セットアップ クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-setup-classes)、カーネル モード コンポーネントを呼び出して、ミニポート ドライバーの直接呼び出しインターフェイスを取得できます[ **DxgkDdiQueryInterface** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_query_interface)関数とインターフェイスの種類を指定する GUID_DEVINTERFACE_BRIGHTNESS を指定します。
 
-明るさのデバイスについては、次を参照してください。[統合表示パネルの明るさコントロールをサポートしている](https://msdn.microsoft.com/library/windows/hardware/ff569755)と[明るさコントロール インターフェイス](https://msdn.microsoft.com/library/windows/hardware/ff538260)します。
+明るさのデバイスについては、次を参照してください。[統合表示パネルの明るさコントロールをサポートしている](https://docs.microsoft.com/windows-hardware/drivers/display/supporting-brightness-controls-on-integrated-display-panels)と[明るさコントロール インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)します。
 
 <a name="requirements"></a>必要条件
 ------------

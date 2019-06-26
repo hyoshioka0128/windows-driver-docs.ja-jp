@@ -8,12 +8,12 @@ keywords:
 - IPrintOemUI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 916fdba3e1a22db48bc95200ed1c88804e15abb9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 52d846f697fb05ad7d73e5aa0949be2b5d97d736
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355676"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372386"
 ---
 # <a name="customizing-other-printer-interface-operations"></a>その他のプリンター インターフェイスの操作をカスタマイズする
 
@@ -23,13 +23,13 @@ ms.locfileid: "63355676"
 
 プラグインの UI は、必要に応じて次 IPrintOemUI メソッドのいずれかに実装できます。
 
-[**IPrintOemUI::DeviceCapabilities**](https://msdn.microsoft.com/library/windows/hardware/ff554162)
+[**IPrintOemUI::DeviceCapabilities**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemui-devicecapabilities)
 
-[**IPrintOemUI::DevQueryPrintEx**](https://msdn.microsoft.com/library/windows/hardware/ff554172)
+[**IPrintOemUI::DevQueryPrintEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemui-devqueryprintex)
 
-[**IPrintOemUI::PrinterEvent**](https://msdn.microsoft.com/library/windows/hardware/ff554182)
+[**IPrintOemUI::PrinterEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemui-printerevent)
 
-[**IPrintOemUI::UpgradePrinter**](https://msdn.microsoft.com/library/windows/hardware/ff554189)
+[**IPrintOemUI::UpgradePrinter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemui-upgradeprinter)
 
 メソッドは、同様に、ユーザー モードでエクスポートされた名前付きの関数に相当[プリンター インターフェイス DLL](printer-interface-dll.md) Unidrv と Pscript5 によって使用されます。 これらのカスタマイズの方法では、ドライバーのプリンター インターフェイス DLL で同等の関数は置き換えられません。 各ケースでプリンター インターフェイス DLL 関数が最初に呼び出されないし、ドライバーがプラグのカスタマイズ メソッドを呼び出します。
 

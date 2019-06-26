@@ -4,12 +4,12 @@ description: Windows 8 には、最適化をドライバー オプションで�
 ms.assetid: 1E71BFDF-3C67-41F6-968A-8AE54B54CCCB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e0e12306d7874d99cb0900c94353baeb1c3a2877
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cf54b94bf8189f69171067ceb1ea08016cea5f45
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327922"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376047"
 ---
 # <a name="standby-hibernate-optimizations"></a>スタンバイ休止状態の最適化
 
@@ -30,11 +30,11 @@ Windows 8 には、最適化をドライバー オプションで利用できる
 
 これらの構造は、新規または更新済みの休止状態がスタンバイをサポートするために Windows 8 以降では。
 
--   [**DXGK\_QUERYADAPTERINFOTYPE**](https://msdn.microsoft.com/library/windows/hardware/ff562010)
--   [**DXGK\_SEGMENTDESCRIPTOR3**](https://msdn.microsoft.com/library/windows/hardware/hh464086)
--   [**DXGK\_SEGMENTFLAGS**](https://msdn.microsoft.com/library/windows/hardware/ff562039)
+-   [**DXGK\_QUERYADAPTERINFOTYPE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ne-d3dkmddi-_dxgk_queryadapterinfotype)
+-   [**DXGK\_SEGMENTDESCRIPTOR3**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_segmentdescriptor3)
+-   [**DXGK\_SEGMENTFLAGS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_segmentflags)
 
-これらの利点を活かす休止状態にする必要があります最適化この機能をサポートできるすべてのデバイス。 WDDM 1.2 またはそれ以降のドライバーは、セグメントの機能を列挙するときに設定がありますも 1 つまたは複数のスタンバイ休止状態フラグの**PreservedDuringStandby**、 **PreservedDuringHibernate**、および**PartiallyPreservedDuringHibernate**します。 「解説」を参照してください、 [ **DXGK\_SEGMENTFLAGS** ](https://msdn.microsoft.com/library/windows/hardware/ff562039)詳細についてはトピック。
+これらの利点を活かす休止状態にする必要があります最適化この機能をサポートできるすべてのデバイス。 WDDM 1.2 またはそれ以降のドライバーは、セグメントの機能を列挙するときに設定がありますも 1 つまたは複数のスタンバイ休止状態フラグの**PreservedDuringStandby**、 **PreservedDuringHibernate**、および**PartiallyPreservedDuringHibernate**します。 「解説」を参照してください、 [ **DXGK\_SEGMENTFLAGS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_segmentflags)詳細についてはトピック。
 
 ## <a name="span-idstandbyoptspanspan-idstandbyoptspanusing-standby-hibernate-optimizations"></a><span id="standbyopt"></span><span id="STANDBYOPT"></span>スタンバイを使用して最適化を休止状態
 

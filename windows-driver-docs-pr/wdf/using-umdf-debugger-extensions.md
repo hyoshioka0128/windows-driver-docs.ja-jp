@@ -1,5 +1,5 @@
 ---
-title: Wudfext.dll でデバッガー拡張機能の概要
+title: Wudfext.dll でのデバッガー拡張機能の概要
 description: このトピックでは、WudfExt.dll で、特定のユーザー モード ドライバー フレームワーク (UMDF) ドライバーをデバッグに使用できるデバッガー拡張機能のコマンドについて説明します。
 ms.assetid: af84ed3a-33a1-4736-9080-c43e87052064
 keywords:
@@ -8,23 +8,23 @@ keywords:
 - 拡張機能の WDK デバッガー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8939a7bb7094ad113803804972496c0ffef7c807
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 99bf2a50ccc369298d5427a73c0b51e3d859ff08
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537563"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372170"
 ---
-# <a name="summary-of-debugger-extensions-in-wudfextdll"></a>Wudfext.dll でデバッガー拡張機能の概要
+# <a name="summary-of-debugger-extensions-in-wudfextdll"></a>Wudfext.dll でのデバッガー拡張機能の概要
 
 
 [!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
 
 Windows Driver Kit (WDK) には、という名前のデバッガー拡張機能ライブラリが含まれています。 *WudfExt.dll*、DDKROOT % である\\bin サブディレクトリ。 このトピックでは、デバッガー拡張機能のコマンドを説明します*WudfExt.dll*、ユーザー モード ドライバー フレームワーク (UMDF) バージョン 1 のデバッグに使用することができます。 *。x*ドライバー。
 
-UMDF バージョン 2.0 以降 UMDF ドライバーをデバッグする必要があります代わりに使用する、 *Wdfkd.dll*デバッガー拡張機能ライブラリ。 詳細については、[ **Windows ドライバー フレームワークの拡張機能 (Wdfkd.dll)**](https://msdn.microsoft.com/library/windows/hardware/ff551876)を参照してください。
+UMDF バージョン 2.0 以降 UMDF ドライバーをデバッグする必要があります代わりに使用する、 *Wdfkd.dll*デバッガー拡張機能ライブラリ。 詳細については、次を参照してください。 [ **Windows ドライバー フレームワークの拡張機能 (Wdfkd.dll)** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/kernel-mode-driver-framework-extensions--wdfkd-dll-)します。
 
-内の各コマンドの詳細については*WudfExt.dll*を参照してください[ユーザー モード ドライバー フレームワークの拡張機能 (Wudfext.dll)](https://msdn.microsoft.com/library/windows/hardware/ff560030)します。 すべての利用可能なデバッガー拡張機能ライブラリの詳細についてで提供されるドキュメントを参照して、 [Windows デバッグ](https://msdn.microsoft.com/library/windows/hardware/ff551063)パッケージ。
+内の各コマンドの詳細については*WudfExt.dll*を参照してください[ユーザー モード ドライバー フレームワークの拡張機能 (Wudfext.dll)](https://docs.microsoft.com/windows-hardware/drivers/debugger/user-mode-driver-framework-extensions--wudfext-dll-)します。 すべての利用可能なデバッガー拡張機能ライブラリの詳細についてで提供されるドキュメントを参照して、 [Windows デバッグ](https://docs.microsoft.com/windows-hardware/drivers/debugger/index)パッケージ。
 
 読み込み、 *WudfExt.dll*デバッガーの拡張機能ライブラリに、デバッガーのコマンド プロンプトで次のコマンドを入力します。
 

@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - WDI_TLV_PM_PROTOCOL_OFFLOAD_IPv4ARP ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b0d4692c2177801f6eec6d5a4f1725b510e560c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8b426057bb389c3c544af1f2417c176c9ce9c009
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362778"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373857"
 ---
 # <a name="wditlvpmprotocoloffloadipv4arp"></a>WDI\_TLV\_PM\_プロトコル\_オフロード\_IPv4ARP
 
@@ -36,7 +36,7 @@ WDI\_TLV\_PM\_プロトコル\_オフロード\_IPv4ARP は IPv4 ARP プロト�
 | UINT32                                            | プロトコルのオフロード ID を指定します これは、オフロードされたプロトコルを識別する OS で提供される値です。 OS では、追加要求を送信します。 または、上にあるドライバーへの要求が完了すると、前に、プロトコル間で一意の値に OS セット ProtocolOffloadId をネットワーク アダプターにオフロードします。                                                                   |
 | UINT8\[4\]                                        | ARP 要求のソース プロトコル アドレス (SPA) フィールドと一致する省略可能な IPv4 アドレスを指定します。 受信の ARP 要求にこの IPv4 アドレスに一致する SPA 値がある場合は、ネットワーク アダプターは、低電力状態にあるときに、ARP 応答を送信します。 これは、0 に設定されている場合、ネットワーク アダプターは、リモートの IPv4 アドレスから ARP 要求に応答します。 |
 | UINT8\[4\]                                        | ARP 応答を送信するときに、ソース プロトコル アドレス (SPA) フィールドのネットワーク アダプターを使用してホストの IPv4 アドレスを指定します。                                                                                                                                                                                                                                            |
-| [**WDI\_MAC\_アドレス**](https://msdn.microsoft.com/library/windows/hardware/dn926071) | 生成される ARP 応答パケットのソース ハードウェア アドレス (SHA) フィールドを使用する必要があります、ネットワーク アダプター MAC アドレスを指定します。 ただし、MAC ヘッダーの送信元アドレスとして、ネットワーク アダプターの現在の MAC アドレスを使用してください。                                                                                                          |
+| [**WDI\_MAC\_アドレス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ns-dot11wdi-_wdi_mac_address) | 生成される ARP 応答パケットのソース ハードウェア アドレス (SHA) フィールドを使用する必要があります、ネットワーク アダプター MAC アドレスを指定します。 ただし、MAC ヘッダーの送信元アドレスとして、ネットワーク アダプターの現在の MAC アドレスを使用してください。                                                                                                          |
 
  
 

@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - WDI_TLV_PHY_DATA_RATE_LIST ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b22840cac4183b268d79bbba4de7a84e72b2a72
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ffb7fda3a5251da4926cbfad72a6c26a186fab39
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377214"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373855"
 ---
 # <a name="wditlvphydataratelist"></a>WDI\_TLV\_PHY\_データ\_レート\_一覧
 
@@ -45,12 +45,12 @@ WDI\_データ\_レート\_リストは、次の要素で構成されます。
 
 | 種類   | 説明                                                                                   |
 |--------|-----------------------------------------------------------------------------------------------|
-| UINT8  | データで定義されているフラグを評価する[ **WDI\_データ\_レート\_フラグ**](https://msdn.microsoft.com/library/windows/hardware/dn897811)します。 |
+| UINT8  | データで定義されているフラグを評価する[ **WDI\_データ\_レート\_フラグ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_data_rate_flags)します。 |
 | UINT16 | データ レートの値。                                                                          |
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

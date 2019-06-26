@@ -16,12 +16,12 @@ keywords:
 - AddDevice ルーチンについて、AddDevice ルーチンの WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 609ba2b2556e24f09b8335dce6cf8efad2ba5f59
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 59de0dc6a9d31c72fb6f509a2d9db4a671b254b2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384535"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374133"
 ---
 # <a name="writing-an-adddevice-routine"></a>AddDevice ルーチンの記述
 
@@ -29,7 +29,7 @@ ms.locfileid: "63384535"
 
 
 
-PnP をサポートする任意のドライバーが必要、 [ *AddDevice* ](https://msdn.microsoft.com/library/windows/hardware/ff540521)ルーチン。 *AddDevice*ルーチンは、ドライバーが I/O 要求を実行する物理、論理、または仮想デバイスを表す 1 つまたは複数のデバイス オブジェクトを作成します。 デバイス オブジェクトを添付、デバイス スタック デバイス スタックは、デバイスに関連付けられた各ドライバーのデバイス オブジェクトが含まれるようにします。
+PnP をサポートする任意のドライバーが必要、 [ *AddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)ルーチン。 *AddDevice*ルーチンは、ドライバーが I/O 要求を実行する物理、論理、または仮想デバイスを表す 1 つまたは複数のデバイス オブジェクトを作成します。 デバイス オブジェクトを添付、デバイス スタック デバイス スタックは、デバイスに関連付けられた各ドライバーのデバイス オブジェクトが含まれるようにします。
 
 PnP マネージャーには、ドライバーの*AddDevice*ドライバーによって制御される各デバイスの日常的な。 *AddDevice*ルーチンは、システムの初期化 (デバイスが最初に列挙) の場合、中に呼び出され、いつでも、新しいデバイスは、システムの実行中に列挙されます。
 

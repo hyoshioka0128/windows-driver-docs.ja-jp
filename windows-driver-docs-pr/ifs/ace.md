@@ -7,12 +7,12 @@ keywords:
 - ACE の WDK ファイル システム
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c09852728fe16ca66bf2b8aaa4306f602e0d0861
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8107b5a02a195ca7113093dc523de87bfec2784a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323173"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371935"
 ---
 # <a name="ace"></a>ACE
 
@@ -66,23 +66,23 @@ ACL には、Ace のリストが含まれています。 ACE は、特定のユ�
 ## <a name="related-topics"></a>関連トピック
 
 
-[**アクセス\_許可\_ACE**](https://msdn.microsoft.com/library/windows/hardware/ff538796)
+[**アクセス\_許可\_ACE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_access_allowed_ace)
 
-[**アクセス\_DENIED\_ACE**](https://msdn.microsoft.com/library/windows/hardware/ff538831)
+[**アクセス\_DENIED\_ACE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_access_denied_ace)
 
-[**ACE\_ヘッダー**](https://msdn.microsoft.com/library/windows/hardware/ff538847)
+[**ACE\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_ace_header)
 
-[**ACL**](https://msdn.microsoft.com/library/windows/hardware/ff538866)
+[**ACL**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_acl)
 
-[**RtlAddAccessAllowedAce**](https://msdn.microsoft.com/library/windows/hardware/ff552092)
+[**RtlAddAccessAllowedAce**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-rtladdaccessallowedace)
 
-[**RtlGetAce**](https://msdn.microsoft.com/library/windows/hardware/ff552288)
+[**RtlGetAce**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-rtlgetace)
 
-[**SID**](https://msdn.microsoft.com/library/windows/hardware/ff556740)
+[**SID**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_sid)
 
-[**システム\_アラーム\_ACE**](https://msdn.microsoft.com/library/windows/hardware/ff556769)
+[**システム\_アラーム\_ACE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_system_alarm_ace)
 
-[**システム\_監査\_ACE**](https://msdn.microsoft.com/library/windows/hardware/ff556771)
+[**システム\_監査\_ACE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_system_audit_ace)
 
  
 

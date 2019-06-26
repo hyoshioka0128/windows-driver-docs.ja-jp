@@ -7,12 +7,12 @@ keywords:
 - 双方向通信スキーマ WDK の印刷
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 13411cf556ba8ec1e96aeda0a7270aa07e3379b4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c80df6ad72475dd04ba62c9a68ba729bde778309
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383158"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374664"
 ---
 # <a name="constructing-a-bidi-communication-schema-query"></a>双方向通信スキーマ クエリを作成する
 
@@ -27,7 +27,7 @@ ms.locfileid: "63383158"
 
 ### <a href="" id="example-request-and-response"></a> 要求と応答例
 
-必要とされる XML クエリと応答の形式の例を次に、[双方向の通信インターフェイス](https://msdn.microsoft.com/library/windows/hardware/ff545163)、IBidiSpl2 COM インターフェイスで具体的には。 最初の例は、2 つのスキーマを含む要求です。 最初のスキーマは、両面印刷ユニットがインストールされているかどうかを判断します。 2 つ目のスキーマは、ハード ディスクに関連付けられている値を決定します。
+必要とされる XML クエリと応答の形式の例を次に、[双方向の通信インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_print/index)、IBidiSpl2 COM インターフェイスで具体的には。 最初の例は、2 つのスキーマを含む要求です。 最初のスキーマは、両面印刷ユニットがインストールされているかどうかを判断します。 2 つ目のスキーマは、ハード ディスクに関連付けられている値を決定します。
 
 ```cpp
 <bidi:Get xmlns:bidi="http://schemas.microsoft.com/windows/2005/03/printing/bidi">

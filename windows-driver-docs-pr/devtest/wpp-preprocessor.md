@@ -12,12 +12,12 @@ keywords:
 - WDK、ビルド プロセスのトレース WPP ソフトウェア
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 85b399b4e2490cbec2ec4fd6a3c3d02f9d832d91
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: af48c8a8001b7f1a0a0bdd904abdd65785b0f8ce
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379111"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372678"
 ---
 # <a name="wpp-preprocessor"></a>WPP プリプロセッサ
 
@@ -123,7 +123,7 @@ TraceWPP ツール (TraceWPP.exe) を使用して、ビルド環境から個別�
 <tr class="odd">
 <td align="left"><p>コントロールの GUID を指定します。</p></td>
 <td align="left"><p><strong>-ctl:</strong><em>GUID</em></p></td>
-<td align="left">定義、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff556186" data-raw-source="[WPP_CONTROL_GUIDS](https://msdn.microsoft.com/library/windows/hardware/ff556186)">WPP_CONTROL_GUIDS</a>マクロを指定した<a href="control-guid.md" data-raw-source="[control GUID](control-guid.md)">コントロール GUID</a>および名前付きエラー、異常なおよびノイズ WPP_DEFINE_BIT エントリ。
+<td align="left">定義、 <a href="https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556186(v=vs.85)" data-raw-source="[WPP_CONTROL_GUIDS](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556186(v=vs.85))">WPP_CONTROL_GUIDS</a>マクロを指定した<a href="control-guid.md" data-raw-source="[control GUID](control-guid.md)">コントロール GUID</a>および名前付きエラー、異常なおよびノイズ WPP_DEFINE_BIT エントリ。
 <p>これは、ソース ファイルにマクロを追加する代わりにします。</p>
 <p><em>GUID</em>コントロールの GUID を表します。</p></td>
 </tr>
@@ -163,7 +163,7 @@ TraceWPP ツール (TraceWPP.exe) を使用して、ビルド環境から個別�
 <tr class="odd">
 <td align="left"><p>トレース メッセージを生成するには、関数</p></td>
 <td align="left"><p><strong>-func:</strong><em>FunctionDescription</em></p></td>
-<td align="left"><p>代わる方法を指定します、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff544918" data-raw-source="[&lt;strong&gt;DoTraceMessage&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff544918)"> <strong>DoTraceMessage</strong> </a>マクロ。 これらの関数は、トレース メッセージを生成し、使用できます。</p>
+<td align="left"><p>代わる方法を指定します、 <a href="https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85)" data-raw-source="[&lt;strong&gt;DoTraceMessage&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))"> <strong>DoTraceMessage</strong> </a>マクロ。 これらの関数は、トレース メッセージを生成し、使用できます。</p>
 <p>たとえば、フラグと、トレース メッセージのレベルの両方をなどを指定する関数を定義できます。</p>
 <pre space="preserve"><code>-func (DoMyTraceMessage(LEVEL,FLAGS,MSG,...)</code></pre>
 <p>複数のインスタンスを使用することができます、 <strong>- func</strong>オプション。</p>

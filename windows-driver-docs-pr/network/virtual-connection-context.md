@@ -8,12 +8,12 @@ keywords:
 - コンテキスト WDK 仮想接続
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f872dd485775f2f05552c2ce539accbad0ee309
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a5da8eeff07fec2e74931944c90f440ab7124f94
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377885"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377010"
 ---
 # <a name="virtual-connection-context"></a>仮想接続のコンテキスト
 
@@ -25,11 +25,11 @@ ms.locfileid: "63377885"
 
 VC では、接続指向の 2 つのエンティティ間の論理接続です。 接続指向の転送および受信は、特定の VC で常に発生します。
 
-接続指向のミニポート ドライバーでは、ミニポート ドライバーに割り当てられたコンテキストの領域を設定する各 VC に関する状態情報を保持します。 この VC あたりのコンテキストでは、ミニポート ドライバーによって保持され、NDIS してプロトコル ドライバーに対して非透過的です。 その[ **MiniportCoCreateVc** ](https://msdn.microsoft.com/library/windows/hardware/ff559354)関数では、NDIS、および NDIS に VC コンテキストの領域を識別するハンドルを渡します接続指向のミニポート ドライバー パスを*NdisVcHandle*ですミニポート ドライバーに、適切な接続指向のクライアントおよびコール マネージャーまたはコール マネージャー (MCM) の統合のミニポート ドライバーには、作成した VC を一意に識別します。
+接続指向のミニポート ドライバーでは、ミニポート ドライバーに割り当てられたコンテキストの領域を設定する各 VC に関する状態情報を保持します。 この VC あたりのコンテキストでは、ミニポート ドライバーによって保持され、NDIS してプロトコル ドライバーに対して非透過的です。 その[ **MiniportCoCreateVc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_co_create_vc)関数では、NDIS、および NDIS に VC コンテキストの領域を識別するハンドルを渡します接続指向のミニポート ドライバー パスを*NdisVcHandle*ですミニポート ドライバーに、適切な接続指向のクライアントおよびコール マネージャーまたはコール マネージャー (MCM) の統合のミニポート ドライバーには、作成した VC を一意に識別します。
 
-データを送信または VC で受信したことができます、前に、VC をアクティブにする必要があります。 コール マネージャーは、呼び出すことによって、VC のアクティブ化を開始**Ndis (M) CmActivateVc**を有効にする VC の特性を含む呼び出しのパラメーターを渡すとします。 NDIS ミニポート ドライバーの呼び出しでは、この呼び出しに応答して、 [ **MiniportCoActivateVc** ](https://msdn.microsoft.com/library/windows/hardware/ff559351)関数で、VC をアクティブにします。
+データを送信または VC で受信したことができます、前に、VC をアクティブにする必要があります。 コール マネージャーは、呼び出すことによって、VC のアクティブ化を開始**Ndis (M) CmActivateVc**を有効にする VC の特性を含む呼び出しのパラメーターを渡すとします。 NDIS ミニポート ドライバーの呼び出しでは、この呼び出しに応答して、 [ **MiniportCoActivateVc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_co_activate_vc)関数で、VC をアクティブにします。
 
-コール マネージャーに呼び出すことによって、VC できます非アクティブ化後の呼び出しが完了するか、VC、それ以外の場合は必要ありません、 [ **Ndis (M) CmDeactivateVc**](https://msdn.microsoft.com/library/windows/hardware/ff561657)、それが原因でを呼び出す、ミニポート ドライバーの NDIS [ **MiniportCoDeactivateVc** ](https://msdn.microsoft.com/library/windows/hardware/ff559356)関数。 接続指向クライアントまたはコール マネージャーは、呼び出すことによって、VC の削除を開始できる[ **NdisCoDeleteVc**](https://msdn.microsoft.com/library/windows/hardware/ff561698)、それが原因でを呼び出す、ミニポート ドライバーの NDIS [ **MiniportCoDeleteVc** ](https://msdn.microsoft.com/library/windows/hardware/ff559358)関数。
+コール マネージャーに呼び出すことによって、VC できます非アクティブ化後の呼び出しが完了するか、VC、それ以外の場合は必要ありません、 [ **Ndis (M) CmDeactivateVc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscmdeactivatevc)、それが原因でを呼び出す、ミニポート ドライバーの NDIS [ **MiniportCoDeactivateVc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_co_deactivate_vc)関数。 接続指向クライアントまたはコール マネージャーは、呼び出すことによって、VC の削除を開始できる[ **NdisCoDeleteVc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscodeletevc)、それが原因でを呼び出す、ミニポート ドライバーの NDIS [ **MiniportCoDeleteVc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_co_delete_vc)関数。
 
 Vc のミニポート ドライバー操作の詳細については、次を参照してください。 [VCs に対する操作](operations-on-vcs.md)します。
 

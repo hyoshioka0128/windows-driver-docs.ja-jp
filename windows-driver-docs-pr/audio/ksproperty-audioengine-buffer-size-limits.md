@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c44a0b88eff0918068bbb961d729eadf37ed0cf5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 622430152078bfd316c54fa07b66ca101d8bc36d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332886"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358858"
 ---
 # <a name="kspropertyaudioenginebuffersizerange"></a>KSPROPERTY\_AUDIOENGINE\_バッファー\_サイズ\_範囲
 
@@ -51,7 +51,7 @@ ms.locfileid: "63332886"
 <td align="left"><p>X</p></td>
 <td align="left"><p>フィルターを使用してノード</p></td>
 <td align="left"><p>KSP_NODE</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/hh450864" data-raw-source="[&lt;strong&gt;KSAUDIOENGINE_BUFFER_SIZE_RANGE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/hh450864)"><strong>KSAUDIOENGINE_BUFFER_SIZE_RANGE</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_tagksaudioengine_buffer_size_range" data-raw-source="[&lt;strong&gt;KSAUDIOENGINE_BUFFER_SIZE_RANGE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_tagksaudioengine_buffer_size_range)"><strong>KSAUDIOENGINE_BUFFER_SIZE_RANGE</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -65,7 +65,7 @@ A **KSPROPERTY\_AUDIOENGINE\_バッファー\_サイズ\_範囲**プロパティ
 <a name="remarks"></a>注釈
 -------
 
-呼び出し元を呼び出す前に注意することが重要、 **KSPROPERTY\_AUDIOENGINE\_バッファー\_サイズ\_範囲**のフィールドのプロパティ、呼び出し元の入力を[**KSDATAFORMAT\_WAVEFORMATEX** ](https://msdn.microsoft.com/library/windows/hardware/ff537095)構造体。 したがって**KSPROPERTY\_AUDIOENGINE\_バッファー\_サイズ\_範囲**を呼び出すと、オーディオ ドライバー、KSP の受信\_、入力では、ノードの後に**KSDATAFORMAT\_WAVEFORMATEX**呼び出し元からの構造体。 ドライバーは、指定したデータ形式を対応するために最小および最大バッファー サイズを決定するのに、この構造体で、データの書式情報を使用します。 このプロパティに呼び出しの成功時に (KS) フィルターをストリーミングし、カーネルの設定、 **MinBufferBytes**と**MaxBufferBytes**のフィールド、 [ **KSAUDIOENGINE\_バッファー\_サイズ\_範囲**](https://msdn.microsoft.com/library/windows/hardware/hh450864)構造体。
+呼び出し元を呼び出す前に注意することが重要、 **KSPROPERTY\_AUDIOENGINE\_バッファー\_サイズ\_範囲**のフィールドのプロパティ、呼び出し元の入力を[**KSDATAFORMAT\_WAVEFORMATEX** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksdataformat_waveformatex)構造体。 したがって**KSPROPERTY\_AUDIOENGINE\_バッファー\_サイズ\_範囲**を呼び出すと、オーディオ ドライバー、KSP の受信\_、入力では、ノードの後に**KSDATAFORMAT\_WAVEFORMATEX**呼び出し元からの構造体。 ドライバーは、指定したデータ形式を対応するために最小および最大バッファー サイズを決定するのに、この構造体で、データの書式情報を使用します。 このプロパティに呼び出しの成功時に (KS) フィルターをストリーミングし、カーネルの設定、 **MinBufferBytes**と**MaxBufferBytes**のフィールド、 [ **KSAUDIOENGINE\_バッファー\_サイズ\_範囲**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_tagksaudioengine_buffer_size_range)構造体。
 
 <a name="requirements"></a>必要条件
 ------------
@@ -90,9 +90,9 @@ A **KSPROPERTY\_AUDIOENGINE\_バッファー\_サイズ\_範囲**プロパティ
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
-[**KSAUDIOENGINE\_バッファー\_サイズ\_範囲**](https://msdn.microsoft.com/library/windows/hardware/hh450864)
+[**KSAUDIOENGINE\_バッファー\_サイズ\_範囲**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_tagksaudioengine_buffer_size_range)
 
-[**KSDATAFORMAT\_WAVEFORMATEX**](https://msdn.microsoft.com/library/windows/hardware/ff537095)
+[**KSDATAFORMAT\_WAVEFORMATEX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksdataformat_waveformatex)
 
 [**KSPROPERTY\_AUDIOENGINE**](ksproperty-audioengine.md)
 

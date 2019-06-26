@@ -5,12 +5,12 @@ Search.SourceType: Video
 ms.assetid: 969FD292-5D92-4257-8E15-F2129B832E22
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f7d0431ca0b13cbd247d35a55eeae2c6f70519fc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2556a921a2be332e50be8ddc0bb55651fdf90f9c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344933"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372136"
 ---
 # <a name="videos-debugging-umdf-drivers"></a>ビデオ: UMDF ドライバーのデバッグ
 
@@ -47,12 +47,12 @@ WDK サンプルと、OSR usb-fx2 Learning Kit の使用について説明しま
 
 この部分では、UMDF ドライバーのデバッグを開始する方法を学習します。 ビデオでは、アプリの 3 つのインスタンスが、ドライバーを読み取り、書き込み、およびデバイスの I/O 制御要求を送信するため、OSR usb-fx2 ドライバーのサンプルとアプリケーションのサンプルを設定する方法について説明します。 要求フロー最初、reflector してから、ユーザー モード ドライバーのホスト プロセスにする方法を確認します。 このビデオでは、FX2 ドライバー サンプルでは、WDF オブジェクト階層が導入されていて、次の UMDF デバッガー拡張機能を使用して、UMDF オブジェクト階層を移動する方法について説明します。
 
--   [**!wudfext.umdevstacks**](https://msdn.microsoft.com/library/windows/hardware/ff566191)
--   [**!wudfext.wudfdriverinfo**](https://msdn.microsoft.com/library/windows/hardware/ff566207)
--   [**!wudfext.wudfdevice**](https://msdn.microsoft.com/library/windows/hardware/ff566199)
--   [**!wudfext.wudfdevicequeues**](https://msdn.microsoft.com/library/windows/hardware/ff566203)
+-   [ **!wudfext.umdevstacks**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wudfext-umdevstacks)
+-   [ **!wudfext.wudfdriverinfo**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wudfext-wudfdriverinfo)
+-   [ **!wudfext.wudfdevice**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wudfext-wudfdevice)
+-   [ **!wudfext.wudfdevicequeues**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wudfext-wudfdevicequeues)
 
-UMDF 2 では、次を参照してください。 [Wdfkd.dll でデバッガー拡張の概要](debugger-extensions-for-kmdf-drivers.md)、たとえば[ **! wdfkd.wdfumdevstacks**](https://msdn.microsoft.com/library/windows/hardware/dn265380)します。
+UMDF 2 では、次を参照してください。 [Wdfkd.dll でデバッガー拡張の概要](debugger-extensions-for-kmdf-drivers.md)、たとえば[ **! wdfkd.wdfumdevstacks**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfumdevstacks)します。
 
 ## <a name="accessing-framework-usb-objects"></a>Framework USB オブジェクトへのアクセス
 

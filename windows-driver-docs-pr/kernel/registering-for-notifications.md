@@ -11,23 +11,23 @@ keywords:
 - WDK の通知がレジストリの呼び出しをフィルター処理します。
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d05a12dd9048ba3a7949ba45556ca89d70117f8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f5e37e58882ae9f7c1040406609fe837c6084b58
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63338757"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373464"
 ---
 # <a name="registering-for-notifications"></a>通知登録
 
 
-レジストリの呼び出しをフィルター処理するドライバーをフィルター処理、カーネル モードのレジストリは呼び出す必要がありますまず[ **CmRegisterCallback** ](https://msdn.microsoft.com/library/windows/hardware/ff541918)または[ **CmRegisterCallbackEx** ](https://msdn.microsoft.com/library/windows/hardware/ff541921)を登録する、 [ **RegistryCallback** ](https://msdn.microsoft.com/library/windows/hardware/ff560903)ルーチン。 (Windows Vista およびそれ以降のオペレーティング システム バージョンでは、ドライバーを使用する必要があります**CmRegisterCallbackEx**の代わりに**CmRegisterCallback**)。
+レジストリの呼び出しをフィルター処理するドライバーをフィルター処理、カーネル モードのレジストリは呼び出す必要がありますまず[ **CmRegisterCallback** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-cmregistercallback)または[ **CmRegisterCallbackEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-cmregistercallbackex)を登録する、 [ **RegistryCallback** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-ex_callback_function)ルーチン。 (Windows Vista およびそれ以降のオペレーティング システム バージョンでは、ドライバーを使用する必要があります**CmRegisterCallbackEx**の代わりに**CmRegisterCallback**)。
 
-ドライバーが登録した後、 *RegistryCallback* 、日常的な configuration manager によってルーチンを呼び出すスレッドは、レジストリの操作を実行しようとするたびにします。 レジストリの操作を実行するスレッドがユーザー モードのレジストリのルーチンを呼び出すユーザー モード アプリケーションから指定できます (**RegCreateKeyEx**、 **RegOpenKeyEx**など) からドライバーを呼び出すと、カーネル モードのレジストリ ルーチン ([**ZwCreateKey**](https://msdn.microsoft.com/library/windows/hardware/ff566425)、 [ **ZwOpenKey**](https://msdn.microsoft.com/library/windows/hardware/ff567014)など)。
+ドライバーが登録した後、 *RegistryCallback* 、日常的な configuration manager によってルーチンを呼び出すスレッドは、レジストリの操作を実行しようとするたびにします。 レジストリの操作を実行するスレッドがユーザー モードのレジストリのルーチンを呼び出すユーザー モード アプリケーションから指定できます (**RegCreateKeyEx**、 **RegOpenKeyEx**など) からドライバーを呼び出すと、カーネル モードのレジストリ ルーチン ([**ZwCreateKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwcreatekey)、 [ **ZwOpenKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwopenkey)など)。
 
-大部分の操作には、ドライバー通知を受信できる、configuration manager は、レジストリの操作を処理する前に (、*事前通知*) またはすぐに、操作の完了後 (ただし、構成する前にマネージャーが、呼び出し元に戻ります:、*通知後*)。 ドライバーが受信可能な通知の種類の一覧は、次を参照してください。 [ **REG\_通知\_クラス**](https://msdn.microsoft.com/library/windows/hardware/ff560950)します。
+大部分の操作には、ドライバー通知を受信できる、configuration manager は、レジストリの操作を処理する前に (、*事前通知*) またはすぐに、操作の完了後 (ただし、構成する前にマネージャーが、呼び出し元に戻ります:、*通知後*)。 ドライバーが受信可能な通知の種類の一覧は、次を参照してください。 [ **REG\_通知\_クラス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ne-wdm-_reg_notify_class)します。
 
-ドライバーが呼び出された後**CmRegisterCallback**または**CmRegisterCallbackEx**、ドライバーは、それを呼び出すまで、通知を受け取る[ **CmUnRegisterCallback**](https://msdn.microsoft.com/library/windows/hardware/ff541928)またはアンロードされています。
+ドライバーが呼び出された後**CmRegisterCallback**または**CmRegisterCallbackEx**、ドライバーは、それを呼び出すまで、通知を受け取る[ **CmUnRegisterCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-cmunregistercallback)またはアンロードされています。
 
  
 

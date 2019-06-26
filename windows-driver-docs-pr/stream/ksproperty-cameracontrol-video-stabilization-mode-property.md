@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cb3b097163587480b517ba1c89f0cbc298c84f25
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 90bea2e9f7096791cdd476587aa5bea7aed5e9c5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341191"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373167"
 ---
 # <a name="kspropertycameracontrolvideostabilizationmodeproperty"></a>KSPROPERTY\_CAMERACONTROL\_ビデオ\_安定化\_モード\_プロパティ
 
@@ -54,7 +54,7 @@ ms.locfileid: "63341191"
 <td><p>〇</p></td>
 <td><p>フィルター</p></td>
 <td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/jj151594" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_VIDEOSTABILIZATION_MODE_S&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/jj151594)"><strong>KSPROPERTY_CAMERACONTROL_VIDEOSTABILIZATION_MODE_S</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_cameracontrol_videostabilization_mode_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_VIDEOSTABILIZATION_MODE_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_cameracontrol_videostabilization_mode_s)"><strong>KSPROPERTY_CAMERACONTROL_VIDEOSTABILIZATION_MODE_S</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -66,7 +66,7 @@ ms.locfileid: "63341191"
 
 ID がプロパティ**KSPROPERTY\_CAMERACONTROL\_ビデオ\_安定化\_モード\_プロパティ\_ID**します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -87,7 +87,7 @@ ID がプロパティ**KSPROPERTY\_CAMERACONTROL\_ビデオ\_安定化\_モー�
 
 [**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
 
-[**KSPROPERTY\_CAMERACONTROL\_VIDEOSTABILIZATION\_モード\_S**](https://msdn.microsoft.com/library/windows/hardware/jj151594)
+[**KSPROPERTY\_CAMERACONTROL\_VIDEOSTABILIZATION\_モード\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_cameracontrol_videostabilization_mode_s)
 
  
 

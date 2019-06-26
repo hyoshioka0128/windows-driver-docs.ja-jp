@@ -10,12 +10,12 @@ keywords:
 - IoRegisterPlugPlayNotification
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ba4c9d31d21e381bc006f9d6c5f0bb8e7d35f0b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6f1633ee6fae1e21fe51460221ba1c2bc1ab1df5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63338442"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373459"
 ---
 # <a name="registering-for-device-interface-change-notification"></a>デバイス インターフェイス変更の通知登録
 
@@ -23,7 +23,7 @@ ms.locfileid: "63338442"
 
 
 
-ドライバーでは、呼び出すことによってデバイス インターフェイスの削除と到着のイベントの通知を登録します。 [ **IoRegisterPlugPlayNotification**](https://msdn.microsoft.com/library/windows/hardware/ff549526)します。
+ドライバーでは、呼び出すことによってデバイス インターフェイスの削除と到着のイベントの通知を登録します。 [ **IoRegisterPlugPlayNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterplugplaynotification)します。
 
 次の情報は、デバイス インターフェイスの変更通知のこのルーチンの呼び出しに適用されます。
 
@@ -37,13 +37,13 @@ ms.locfileid: "63338442"
 
     このフラグを登録する PnP マネージャーに指示、 *CallbackRoutine*の将来のデバイスのインターフェイスの出会いと別れを呼び出すと、指定したクラスの*CallbackRoutine*いずれかが即座に既にアクティブにされている関連するデバイスのインターフェイス。
 
-    ドライバーが呼び出せる[ **IoGetDeviceInterfaces** ](https://msdn.microsoft.com/library/windows/hardware/ff549186)ルーチンが、このフラグを設定、フラグを使用せず、特定のクラスの既存のインターフェイスの一覧を取得し、そのコールバックを登録する方が簡単で、回避できます、潜在的なタイミングの問題。
+    ドライバーが呼び出せる[ **IoGetDeviceInterfaces** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdeviceinterfaces)ルーチンが、このフラグを設定、フラグを使用せず、特定のクラスの既存のインターフェイスの一覧を取得し、そのコールバックを登録する方が簡単で、回避できます、潜在的なタイミングの問題。
 
 -   ドライバーの定義を指定*コンテキスト*、必要に応じて、PnP マネージャーは、コールバック ルーチンに渡されます。
 
 デバイス インターフェイス着荷通知に対する応答でデバイスを識別するハンドルを開いたドライバーに登録する必要があります**EventCategoryTargetDeviceChange**デバイス上のイベント。 (を参照してください[PnP ターゲット デバイスの変更通知を使用して](using-pnp-target-device-change-notification.md))。
 
-ドライバーは、呼び出すことによって通知登録をキャンセル[ **IoUnregisterPlugPlayNotification** ](https://msdn.microsoft.com/library/windows/hardware/ff550398)で、 *NotificationEntry*によって返される**IoRegisterPlugPlayNotification**します。
+ドライバーは、呼び出すことによって通知登録をキャンセル[ **IoUnregisterPlugPlayNotification** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iounregisterplugplaynotification)で、 *NotificationEntry*によって返される**IoRegisterPlugPlayNotification**します。
 
  
 

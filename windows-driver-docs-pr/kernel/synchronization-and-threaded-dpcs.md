@@ -8,12 +8,12 @@ keywords:
 - スピン ロック WDK カーネルをキューに登録
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 43c99ddab8dde7102ad0ab4fc8d6762c5b4f1709
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 78273ec2a8baf4a70098b662d45edb91c00bb3a4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378004"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385105"
 ---
 # <a name="synchronization-and-threaded-dpcs"></a>同期とスレッド DPC
 
@@ -25,15 +25,15 @@ ms.locfileid: "63378004"
 
 通常のスピン ロックでは、次の規則が適用されます。
 
--   ドライバーを呼び出すことができますを取得し、スピン ロックを解除、 [ **KeAcquireSpinLock** ](https://msdn.microsoft.com/library/windows/hardware/ff551917)と[ **KeReleaseSpinLock** ](https://msdn.microsoft.com/library/windows/hardware/ff553145)内外からと外側、 *CustomThreadedDpc*ルーチン。
+-   ドライバーを呼び出すことができますを取得し、スピン ロックを解除、 [ **KeAcquireSpinLock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keacquirespinlock)と[ **KeReleaseSpinLock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kereleasespinlock)内外からと外側、 *CustomThreadedDpc*ルーチン。
 
--   ドライバーが呼び出せる[ **KeAcquireSpinLockForDpc** ](https://msdn.microsoft.com/library/windows/hardware/ff551923)と[ **KeReleaseSpinLockForDpc** ](https://msdn.microsoft.com/library/windows/hardware/ff553148)から内で、 *CustomThreadedDpc*ルーチン。 なお、 *CustomThreadedDpc*ルーチンを呼び出してはならない[ **KeAcquireSpinLockAtDpcLevel** ](https://msdn.microsoft.com/library/windows/hardware/ff551921)または[ **KeReleaseSpinLockFromDpcLevel** ](https://msdn.microsoft.com/library/windows/hardware/ff553150)、これらのルーチンは、IRQL でのみ安全に呼び出すことがあるためディスパッチ =\_レベル。
+-   ドライバーが呼び出せる[ **KeAcquireSpinLockForDpc** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff551923(v=vs.85))と[ **KeReleaseSpinLockForDpc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kereleasespinlockfordpc)から内で、 *CustomThreadedDpc*ルーチン。 なお、 *CustomThreadedDpc*ルーチンを呼び出してはならない[ **KeAcquireSpinLockAtDpcLevel** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keacquirespinlockatdpclevel)または[ **KeReleaseSpinLockFromDpcLevel** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kereleasespinlockfromdpclevel)、これらのルーチンは、IRQL でのみ安全に呼び出すことがあるためディスパッチ =\_レベル。
 
 キューに置かれたスピン ロックの規則に似ています。
 
--   ドライバーを呼び出すことができますを取得し、スピン ロックを解放、 [ **KeAcquireInStackQueuedSpinLock** ](https://msdn.microsoft.com/library/windows/hardware/ff551899)と[ **KeReleaseInStackQueuedSpinLock** ](https://msdn.microsoft.com/library/windows/hardware/ff553130)の内部と外部両方から、 *CustomThreadedDpc*ルーチン。
+-   ドライバーを呼び出すことができますを取得し、スピン ロックを解放、 [ **KeAcquireInStackQueuedSpinLock** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff551899(v=vs.85))と[ **KeReleaseInStackQueuedSpinLock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kereleaseinstackqueuedspinlock)の内部と外部両方から、 *CustomThreadedDpc*ルーチン。
 
--   ドライバーが呼び出せる[ **KeAcquireInStackQueuedSpinLockForDpc** ](https://msdn.microsoft.com/library/windows/hardware/ff551912)と[ **KeReleaseInStackQueuedSpinLockForDpc** ](https://msdn.microsoft.com/library/windows/hardware/ff553133)から内で、*CustomThreadedDpc*ルーチン。 なお、 *CustomThreadedDpc*ルーチンを呼び出してはならない[ **KeAcquireInStackQueuedSpinLockAtDpcLevel** ](https://msdn.microsoft.com/library/windows/hardware/ff551908)または[ **KeReleaseInStackQueuedSpinLockFromDpcLevel**](https://msdn.microsoft.com/library/windows/hardware/ff553137)、これらのルーチンは、IRQL でのみ安全に呼び出すことがあるためディスパッチ =\_レベル。
+-   ドライバーが呼び出せる[ **KeAcquireInStackQueuedSpinLockForDpc** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff551912(v=vs.85))と[ **KeReleaseInStackQueuedSpinLockForDpc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kereleaseinstackqueuedspinlockfordpc)から内で、*CustomThreadedDpc*ルーチン。 なお、 *CustomThreadedDpc*ルーチンを呼び出してはならない[ **KeAcquireInStackQueuedSpinLockAtDpcLevel** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff551908(v=vs.85))または[ **KeReleaseInStackQueuedSpinLockFromDpcLevel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kereleaseinstackqueuedspinlockfromdpclevel)、これらのルーチンは、IRQL でのみ安全に呼び出すことがあるためディスパッチ =\_レベル。
 
 **KeAcquireSpinLockForDpc**と**KeAcquireInStackQueuedSpinLockForDpc**ディスパッチで呼び出されたときに、IRQL をリセットしない\_レベルが高速に実行よりも**KeAcquireSpinLock**と**KeAcquireInStackQueuedSpinLock**、それぞれします。
 

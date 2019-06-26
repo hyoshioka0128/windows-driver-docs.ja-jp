@@ -10,12 +10,12 @@ keywords:
 - ドロップ パーティが受信要求の WDK いる CoNDIS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d4bc6e6e2b97264d0d37e6f70bc4646dfa0939b1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9bd3c784ded5fd6059bb590acfeb252d6476d0cd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327781"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374853"
 ---
 # <a name="incoming-request-to-drop-a-party-from-a-multipoint-call"></a>マルチポイント呼び出しからパーティーを削除するための着信要求
 
@@ -25,9 +25,9 @@ ms.locfileid: "63327781"
 
 コール マネージャーまたは MCM ドライバーで multipoint 呼び出しから、ネットワークからメッセージを通知することによって、パーティを削除するリモート パーティから受信要求に発生します。 コール マネージャーまたは MCM ドライバーでは、受信要求をさらに、VC 上のデータ転送を妨げるネットワーク問題を検出した場合は、パーティを削除することも通知できます。
 
-呼び出しから削除されるパーティがない場合、VC の最後のパーティ、コール マネージャー呼び出します[ **NdisCmDispatchIncomingDropParty**](https://msdn.microsoft.com/library/windows/hardware/ff561672)します。 MCM にドライバーを呼び出す[ **NdisMCmDispatchIncomingDropParty**](https://msdn.microsoft.com/library/windows/hardware/ff563542)します。 コール マネージャーは、パーティを削除中ですが、VC の最後のパーティである場合は、 [ **NdisCmDispatchIncomingCloseCall**](https://msdn.microsoft.com/library/windows/hardware/ff561670)、し、MCM のドライバーを呼び出して[ **NdisMCmDispatchIncomingCloseCall**](https://msdn.microsoft.com/library/windows/hardware/ff563541)(を参照してください[の呼び出しを終了する着信要求](incoming-request-to-close-a-call.md))。
+呼び出しから削除されるパーティがない場合、VC の最後のパーティ、コール マネージャー呼び出します[ **NdisCmDispatchIncomingDropParty**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscmdispatchincomingdropparty)します。 MCM にドライバーを呼び出す[ **NdisMCmDispatchIncomingDropParty**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcmdispatchincomingdropparty)します。 コール マネージャーは、パーティを削除中ですが、VC の最後のパーティである場合は、 [ **NdisCmDispatchIncomingCloseCall**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscmdispatchincomingclosecall)、し、MCM のドライバーを呼び出して[ **NdisMCmDispatchIncomingCloseCall**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcmdispatchincomingclosecall)(を参照してください[の呼び出しを終了する着信要求](incoming-request-to-close-a-call.md))。
 
-呼び出し**Ndis (M) CmDispatchIncomingDropParty**を呼び出すクライアントの NDIS と[ **ProtocolClIncomingDropParty** ](https://msdn.microsoft.com/library/windows/hardware/ff570231)関数。
+呼び出し**Ndis (M) CmDispatchIncomingDropParty**を呼び出すクライアントの NDIS と[ **ProtocolClIncomingDropParty** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_cl_incoming_drop_party)関数。
 
 次に示しますを呼び出すことによって、受信要求 multipoint 呼び出しを通じて、パーティを削除するマネージャー。
 

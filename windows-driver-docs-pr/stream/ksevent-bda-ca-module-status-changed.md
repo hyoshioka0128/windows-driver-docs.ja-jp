@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 64fbca54666bc42b1e347711f769fca785a5ace4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 73ef9a6d807530be321b45bb6eae7f8d01151b77
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556846"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382481"
 ---
 # <a name="kseventbdacamodulestatuschanged"></a>KSEVENT\_BDA\_CA\_モジュール\_状態\_CHANGED
 
@@ -56,9 +56,9 @@ KSEVENT
 ## <a name="see-also"></a>関連項目
 
 
-[**KSEVENT**](https://msdn.microsoft.com/library/windows/hardware/ff561744)
+[**KSEVENT**](https://docs.microsoft.com/previous-versions/ff561744(v=vs.85))
 
-[**KSEVENTDATA**](https://msdn.microsoft.com/library/windows/hardware/ff561750)
+[**KSEVENTDATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kseventdata)
 
 [**KSPROPERTY\_BDA\_CA\_モジュール\_状態**](ksproperty-bda-ca-module-status.md)
 

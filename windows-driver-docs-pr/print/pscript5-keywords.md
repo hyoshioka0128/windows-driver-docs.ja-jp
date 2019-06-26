@@ -4,12 +4,12 @@ description: Pscript5 キーワード
 ms.assetid: a5f4384a-8d78-4dc6-969b-f7a1fa6cb5e7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 67764e4db2fea599b805c81e6a094e83e66b6a8a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 49986e4c414ded4a95f778f61cd6d8ae90edccd2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372523"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384694"
 ---
 # <a name="pscript5-keywords"></a>Pscript5 キーワード
 
@@ -55,7 +55,7 @@ ms.locfileid: "63372523"
 <tr class="even">
 <td><p>%CustomPageSize</p></td>
 <td><p>複雑な形式は、カスタムのページ サイズのオプションであります。 注 2 を次の次の表を参照してください。</p></td>
-<td><p>読み取りまたはカスタム ページのサイズ設定を指定します。 原因でこの機能を設定、 <strong>dmPaperSize</strong> 、public のメンバー <a href="https://msdn.microsoft.com/library/windows/hardware/ff552837" data-raw-source="[&lt;strong&gt;DEVMODEW&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff552837)"> <strong>DEVMODEW</strong> </a> DMPAPER_CUSTOMSIZE (PS のカスタム サイズを示す)、および設定にリセットする構造体DM_PAPERSIZE ビット フラグです。 この機能は、読み取り専用パブリック DEVMODEW 構造体は、カスタム用紙サイズが使用されていることを示すかどうか。</p>
+<td><p>読み取りまたはカスタム ページのサイズ設定を指定します。 原因でこの機能を設定、 <strong>dmPaperSize</strong> 、public のメンバー <a href="https://docs.microsoft.com/windows/desktop/api/wingdi/ns-wingdi-_devicemodew" data-raw-source="[&lt;strong&gt;DEVMODEW&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/wingdi/ns-wingdi-_devicemodew)"> <strong>DEVMODEW</strong> </a> DMPAPER_CUSTOMSIZE (PS のカスタム サイズを示す)、および設定にリセットする構造体DM_PAPERSIZE ビット フラグです。 この機能は、読み取り専用パブリック DEVMODEW 構造体は、カスタム用紙サイズが使用されていることを示すかどうか。</p>
 <p>ドキュメントの付箋。</p></td>
 </tr>
 <tr class="odd">
@@ -112,7 +112,7 @@ ms.locfileid: "63372523"
 <td><p>% の向き</p></td>
 <td><p></p>
 「Portrait」「Landscape」"RotatedLandscape"</td>
-<td><p>出力方向を指定します。 プライベートおよびパブリックの両方を変更するこの手法を使用して、印刷の向きを構成する<a href="https://msdn.microsoft.com/library/windows/hardware/ff552837" data-raw-source="[&lt;strong&gt;DEVMODEW&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff552837)"> <strong>DEVMODEW</strong> </a>で使用する場合、値を構造体、 <strong>IPrintCoreHelperPS</strong>インターフェイスです。 この警告には適用されません、 <strong>IPrintCoreUI2</strong>インターフェイス。</p>
+<td><p>出力方向を指定します。 プライベートおよびパブリックの両方を変更するこの手法を使用して、印刷の向きを構成する<a href="https://docs.microsoft.com/windows/desktop/api/wingdi/ns-wingdi-_devicemodew" data-raw-source="[&lt;strong&gt;DEVMODEW&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/wingdi/ns-wingdi-_devicemodew)"> <strong>DEVMODEW</strong> </a>で使用する場合、値を構造体、 <strong>IPrintCoreHelperPS</strong>インターフェイスです。 この警告には適用されません、 <strong>IPrintCoreUI2</strong>インターフェイス。</p>
 <p>ドキュメントの付箋。</p></td>
 </tr>
 <tr class="odd">

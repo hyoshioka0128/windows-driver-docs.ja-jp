@@ -8,12 +8,12 @@ keywords:
 - UMDF WDK、UMDF オブジェクトの表示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dc429e4394d8a4fb946627c2b3019aad9065f6bc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 08f723e30d418385b7f51bb8fdf3c619ce3507d4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347954"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372158"
 ---
 # <a name="viewing-umdf-objects"></a>UMDF オブジェクトの表示
 
@@ -21,7 +21,7 @@ ms.locfileid: "63347954"
 
 このトピックでは、Wudfext.dll デバッガー拡張機能を使用して、ユーザー モード ドライバー フレームワーク (UMDF) バージョン 1 のドライバーによって使用されるオブジェクトに関する情報を表示する方法について説明します。
 
-以降 UMDF バージョン 2 では、代わりに、Wdfkd.dll デバッガー拡張機能を使用する必要があります。 詳細については、次を参照してください。 [Windows ドライバー フレームワークの拡張機能 (Wdfkd.dll)](https://msdn.microsoft.com/library/windows/hardware/ff551876)します。
+以降 UMDF バージョン 2 では、代わりに、Wdfkd.dll デバッガー拡張機能を使用する必要があります。 詳細については、次を参照してください。 [Windows ドライバー フレームワークの拡張機能 (Wdfkd.dll)](https://docs.microsoft.com/windows-hardware/drivers/debugger/kernel-mode-driver-framework-extensions--wdfkd-dll-)します。
 
 UMDF バージョン 1 のオブジェクトに関する情報を表示するのには、次の手順を実行できます。
 
@@ -62,15 +62,15 @@ UMDF バージョン 1 のオブジェクトに関する情報を表示するの
 
 7.  次の UMDF デバッガー拡張機能を使用すると、ファイル オブジェクトに関する情報を表示します。
 
-    <a href="" id="-wudfext-wudfrequest-or--wudfext-umirp"></a>**! wudfext.wudfrequest**または **! wudfext.umirp**  
+    <a href="" id="-wudfext-wudfrequest-or--wudfext-umirp"></a> **! wudfext.wudfrequest**または **! wudfext.umirp**  
     使用して、 **! wudfext.wudfrequest**または **! wudfext.umirp** UMDF デバッガー拡張がデバイス オブジェクトの子オブジェクトであるファイルの表示にします。
 
-    <a href="" id="-wudfext-wudffile"></a>**!wudfext.wudffile**  
+    <a href="" id="-wudfext-wudffile"></a> **!wudfext.wudffile**  
     使用して、 **! wudfext.wudffile** UMDF デバッガー拡張が framework ファイルに関する情報を表示する次の例で示すようにします。
 
     **! wudfext.wudffile &lt;IWDFFile\*&gt;**
 
-    <a href="" id="-wudfext-umfile"></a>**! wudfext.umfile**  
+    <a href="" id="-wudfext-umfile"></a> **! wudfext.umfile**  
     使用して、 **! wudfext.umfile** UMDF 内スタック ファイル (つまり、ファイル オブジェクトによって作成されたファイル オブジェクトではなく、スタック内のドライバーの作成に関する情報を表示する次の例で示すように、UMDF デバッガー拡張機能アプリケーションまたは別のスタック内のドライバーによって)。
 
     **! wudfext.umfile &lt;addr&gt;**
@@ -79,7 +79,7 @@ UMDF バージョン 1 のオブジェクトに関する情報を表示するの
 
     情報を **! wudfext.umfile**表示には UMDF のスタック内のファイルをキューに置かれたすべての Irp が含まれています。 のみドライバーで作成されたファイルは、それらのファイルをキューに置かれたユーザー モード Irp を追跡します。 ファイルのアプリケーションで作成された場合は、I/O マネージャーは、カーネル モード Irp を追跡します。
 
-    <a href="" id="-wudfext-umdevstacks-and--wudfext-umdevstack"></a>**! wudfext.umdevstacks**と **! wudfext.umdevstack**  
+    <a href="" id="-wudfext-umdevstacks-and--wudfext-umdevstack"></a> **! wudfext.umdevstacks**と **! wudfext.umdevstack**  
     出力を使用して、 **! wudfext.umdevstacks**と **! wudfext.umdevstack** UMDF ドライバーで作成されたファイルに対応する未処理の UMDF 内スタック ファイルを表示のデバッガー拡張機能。
 
  

@@ -4,12 +4,12 @@ description: このセクションは、まとめられたセグメントを指�
 ms.assetid: 79A37DAB-D9B3-4FA2-8258-05E10BD6E3CB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e6455c7521f6abf30750d255c3cb4dd87e3f87e5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: be13f521a54a65da4942868bb7331321993471f8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327762"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374828"
 ---
 # <a name="indicating-coalesced-segments"></a>結合されたセグメントの表示
 
@@ -18,7 +18,7 @@ ms.locfileid: "63327762"
 
 SCU 必要があります。
 
--   呼び出すことによって示される[ **NdisMIndicateReceiveNetBufferLists**](https://msdn.microsoft.com/library/windows/hardware/ff563598)します。
+-   呼び出すことによって示される[ **NdisMIndicateReceiveNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismindicatereceivenetbufferlists)します。
 
 -   通常、ネットワーク経由で受信された TCP セグメントのようになります。
 
@@ -28,9 +28,9 @@ SCU 必要があります。
 
      
 
-NIC またはミニポート ドライバーする必要があります値を再計算と IPv4 の TCP チェックサム、該当する場合、まとめられたセグメントを示す前にします。 NIC またはミニポート ドライバーでは、TCP と IPv4 のチェックサムを検証しますが、まとめられたセグメントの再計算してされない場合に、設定する必要があります、 **TcpChecksumValueInvalid**と**IpChecksumValueInvalid**のフラグ[ **NDIS\_TCP\_IP\_チェックサム\_NET\_バッファー\_一覧\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff567877)構造体。 さらに、この場合、NIC またはミニポート ドライバー可能性があります必要に応じてをゼロに TCP と IPv4 ヘッダーのチェックサム値セグメント。
+NIC またはミニポート ドライバーする必要があります値を再計算と IPv4 の TCP チェックサム、該当する場合、まとめられたセグメントを示す前にします。 NIC またはミニポート ドライバーでは、TCP と IPv4 のチェックサムを検証しますが、まとめられたセグメントの再計算してされない場合に、設定する必要があります、 **TcpChecksumValueInvalid**と**IpChecksumValueInvalid**のフラグ[ **NDIS\_TCP\_IP\_チェックサム\_NET\_バッファー\_一覧\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_tcp_ip_checksum_net_buffer_list_info)構造体。 さらに、この場合、NIC またはミニポート ドライバー可能性があります必要に応じてをゼロに TCP と IPv4 ヘッダーのチェックサム値セグメント。
 
-NIC とミニポート ドライバーが常に設定する必要があります、 **IpChecksumSucceeded**と**TcpChecksumSucceeded**のフラグ、 [ **NDIS\_TCP\_IP\_チェックサム\_NET\_バッファー\_一覧\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff567877)まとめられたセグメントを示す前に構造体。
+NIC とミニポート ドライバーが常に設定する必要があります、 **IpChecksumSucceeded**と**TcpChecksumSucceeded**のフラグ、 [ **NDIS\_TCP\_IP\_チェックサム\_NET\_バッファー\_一覧\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_tcp_ip_checksum_net_buffer_list_info)まとめられたセグメントを示す前に構造体。
 
 結合規則の詳細については、次を参照してください。 [TCP/IP セグメントの結合規則](rules-for-coalescing-tcp-ip-packets.md)します。
 

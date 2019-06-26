@@ -10,12 +10,12 @@ keywords:
 - リムーバブル メディアへの変更を確認しています
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fc426505fbccbd5d3fb650e44c61b51f2f5692e3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c62e86aee271216507619a3825b0b24e5071f946
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324544"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373392"
 ---
 # <a name="responding-to-check-verify-requests-from-the-file-system"></a>ファイル システムからの検証チェック要求への応答
 
@@ -23,7 +23,7 @@ ms.locfileid: "63324544"
 
 
 
-独自の裁量では、ファイル システムは、デバイス ドライバーのディスパッチ エントリ ポイントに IRP を送信できる[ **IRP\_MJ\_デバイス\_コントロール**](https://msdn.microsoft.com/library/windows/hardware/ff550744) による要求**Parameters.DeviceIoControl.IoControlCode** I/O スタックを次の設定の場所。
+独自の裁量では、ファイル システムは、デバイス ドライバーのディスパッチ エントリ ポイントに IRP を送信できる[ **IRP\_MJ\_デバイス\_コントロール**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-device-control) による要求**Parameters.DeviceIoControl.IoControlCode** I/O スタックを次の設定の場所。
 
 <a href="" id="ioctl-xxx-check-verify"></a>IOCTL\_*XXX*\_CHECK\_VERIFY  
 場所*XXX*ディスク、テープ、または cd-rom ドライブなどのデバイスの種類です。
@@ -39,7 +39,7 @@ ms.locfileid: "63324544"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p><strong>ステータス</strong></p></td>
+<td><p><strong>状態</strong></p></td>
 <td><p>STATUS_SUCCESS に設定します。</p></td>
 </tr>
 <tr class="even">
@@ -61,7 +61,7 @@ ms.locfileid: "63324544"
     -   **ステータス**状態に設定\_確認\_必要な作業
     -   **情報**を 0 に設定
 
-3.  呼び出す[ **IoCompleteRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff548343) IRP の入力を使用します。
+3.  呼び出す[ **IoCompleteRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest) IRP の入力を使用します。
 
 ドライバーは設定しないで、ボリュームがマウントされていない場合\_確認\_ボリューム ビット。 ドライバーを設定する必要があります**IoStatus.Status**ステータス\_IO\_デバイス\_セットのエラー、 **IoStatus.Information**をゼロにして呼び出す**IoCompleteRequest** IRP にします。
 

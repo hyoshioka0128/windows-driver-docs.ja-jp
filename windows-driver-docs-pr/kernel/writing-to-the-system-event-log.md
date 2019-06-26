@@ -14,12 +14,12 @@ keywords:
 - WDK エラー ログのエントリ
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dc9a412d42c53db98cc0e380715576df2d5609de
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: f0b61cd95a273450f777a86a71bd89d7fb4d63e7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560647"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374102"
 ---
 # <a name="writing-to-the-system-event-log"></a>システム イベント ログへの書き込み
 
@@ -39,7 +39,7 @@ ms.locfileid: "56560647"
 
 ![イベントのプロパティ シートのスクリーン ショット](images/event-properties.png)
 
-ドライバーを使用して、 [ **IoAllocateErrorLogEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff548245)ルーチンをエラー ログのエントリを割り当てます。 ログ エントリは、可変長で構成されている[ **IO\_エラー\_ログ\_パケット**](https://msdn.microsoft.com/library/windows/hardware/ff550571)挿入文字列に続くヘッダー。
+ドライバーを使用して、 [ **IoAllocateErrorLogEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocateerrorlogentry)ルーチンをエラー ログのエントリを割り当てます。 ログ エントリは、可変長で構成されている[ **IO\_エラー\_ログ\_パケット**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_error_log_packet)挿入文字列に続くヘッダー。
 
 次の図はメモリ内のエラー ログのエントリのレイアウトを示します。
 
@@ -47,11 +47,11 @@ ms.locfileid: "56560647"
 
 **ErrorCode**のメンバー **IO\_エラー\_ログ\_パケット**エラーの NTSTATUS 値を指定します。 **DumpData**メンバーが、ダンプのデータのログ エントリを指定します。 **DumpData**でサイズが指定された、可変サイズの配列、 **DumpDataSize**メンバー。 ドライバーでは、最初の挿入文字列の先頭を指定する、 **StringOffset**メンバー、および内の文字列の数、 **NumberOfStrings**メンバー。 各挿入文字列自体は、null で終わる Unicode 文字列です。
 
-使用して、エラー ログにエントリを書き込みますが、ドライバーは、割り当てられているエラーのログ エントリによって記入と[ **IoWriteErrorLogEntry**](https://msdn.microsoft.com/library/windows/hardware/ff550527)します。 **IoWriteErrorLogEntry**自動的にログ エントリに割り当てられたメモリを解放します。 ドライバーを使用できる[ **IoFreeErrorLogEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff549107)をすべての未使用のログ エントリを解放します。
+使用して、エラー ログにエントリを書き込みますが、ドライバーは、割り当てられているエラーのログ エントリによって記入と[ **IoWriteErrorLogEntry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-iowriteerrorlogentry)します。 **IoWriteErrorLogEntry**自動的にログ エントリに割り当てられたメモリを解放します。 ドライバーを使用できる[ **IoFreeErrorLogEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iofreeerrorlogentry)をすべての未使用のログ エントリを解放します。
 
-定義済みのエラー コード (フォームの IO の\_ERR\_*XXX*) と Windows Driver Kit (WDK) に含まれている ntiologc.h ヘッダー ファイルで定義されます。 各エラー コードに関連付けられたエラー メッセージは、エラー コードの宣言の横にある、ntiologc.h のコメントにあります。 定義済みのエラー コードを使用するには、ドライバーは、関連するエラー メッセージのソースとして iologmsg.dll、システム ファイルを登録する必要があります。 詳細については、[エラー メッセージのソースとして登録する](registering-as-a-source-of-error-messages.md)を参照してください。
+定義済みのエラー コード (フォームの IO の\_ERR\_*XXX*) と Windows Driver Kit (WDK) に含まれている ntiologc.h ヘッダー ファイルで定義されます。 各エラー コードに関連付けられたエラー メッセージは、エラー コードの宣言の横にある、ntiologc.h のコメントにあります。 定義済みのエラー コードを使用するには、ドライバーは、関連するエラー メッセージのソースとして iologmsg.dll、システム ファイルを登録する必要があります。 詳細については、次を参照してください。[エラー メッセージのソースとして登録する](registering-as-a-source-of-error-messages.md)します。
 
-ドライバーは、独自のカスタム エラー型を定義することも、関連するエラー メッセージ。 詳細については、[カスタム エラーの種類を定義する](defining-custom-error-types.md)を参照してください。
+ドライバーは、独自のカスタム エラー型を定義することも、関連するエラー メッセージ。 詳細については、次を参照してください。[カスタム エラーの種類を定義する](defining-custom-error-types.md)します。
 
  
 

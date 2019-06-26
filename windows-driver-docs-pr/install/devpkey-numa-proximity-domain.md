@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 7e00471456da9fc292479ffa18eeb4859fb671cf
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9c24e1a67d6523642224bdf2854c9b03b7614996
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327473"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376806"
 ---
 # <a name="devpkeynumaproximitydomain"></a>DEVPKEY_Numa_Proximity_Domain
 
@@ -62,7 +62,7 @@ DEVPKEY_Numa_Proximity_Domain 値とは、ドメイン ID を表す数値です�
 
 DEVPKEY_Numa_Proximity_Domain の値を取得するには呼び出すことによって**IoSetDevicePropertyData**または**IoGetDevicePropertyData**のデバイス ドライバーにします。
 
-呼び出すこともできます[ **SetupDiGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551963) DEVPKEY_Numa_Proximity_Domain の値を取得します。
+呼び出すこともできます[ **SetupDiGetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) DEVPKEY_Numa_Proximity_Domain の値を取得します。
 
 このプロパティの値は、Windows が所有し、ドライバーとアプリケーションで読み取り専用として扱う必要があります。
 

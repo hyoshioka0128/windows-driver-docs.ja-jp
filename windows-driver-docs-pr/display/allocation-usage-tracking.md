@@ -4,19 +4,19 @@ description: 消滅の割り当てリスト、ビデオ メモリ マネージ�
 ms.assetid: F913C9A3-535F-4DA0-8895-7A05CBF4D4AC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c5a6e169b040825ac1d2ab84e086ef16c02054c2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3f708880fb88a16065872dd82f38a55f48bbab34
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354645"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384643"
 ---
 # <a name="allocation-usage-tracking"></a>割り当ての使用状況の追跡
 
 
 消滅の割り当てリスト、ビデオ メモリ マネージャーはなくなりました可視性を特定のコマンド バッファーで参照されている割り当て。 このため、ビデオ メモリ マネージャーが割り当ての使用状況を追跡し、関連の同期を処理するために、位置。 この責任はユーザー モード ドライバーに今すぐ分類されます。 具体的には、ユーザー モード ドライバーは、割り当てと名前の変更に直接アクセスする CPU に対して同期を処理する必要があります。
 
-割り当ての破棄のビデオ メモリ マネージャーは非同期的に延期がどちらも非ブロッキング呼び出し元のスレッドと非常に高いパフォーマンスの安全な方法でこれらします。 そのため、ユーザー モード ドライバーは、割り当ての破棄を延期することを気にするがありません。 ビデオ メモリ マネージャーが前提としています、既定で破棄要求する前にキューに置かれた可能性があります破棄されている割り当てのアクセス可能性のあるコマンドと、キューに置かれたまで、破棄操作を延期割り当て破棄要求を受信すると、コマンドが完了します。 ユーザー モード ドライバーを知っている保留中のコマンドを設定して、ビデオ メモリ マネージャー プロセスを待たず、要求するよう指示できますが、破棄されている割り当てにアクセスしない場合、 **AssumeNotInUse**フラグを呼び出すときに[ *Deallocate2* ](https://msdn.microsoft.com/library/windows/hardware/dn906353)または[ **DestroyAllocation2**](https://msdn.microsoft.com/library/windows/hardware/dn906772)します。
+割り当ての破棄のビデオ メモリ マネージャーは非同期的に延期がどちらも非ブロッキング呼び出し元のスレッドと非常に高いパフォーマンスの安全な方法でこれらします。 そのため、ユーザー モード ドライバーは、割り当ての破棄を延期することを気にするがありません。 ビデオ メモリ マネージャーが前提としています、既定で破棄要求する前にキューに置かれた可能性があります破棄されている割り当てのアクセス可能性のあるコマンドと、キューに置かれたまで、破棄操作を延期割り当て破棄要求を受信すると、コマンドが完了します。 ユーザー モード ドライバーを知っている保留中のコマンドを設定して、ビデオ メモリ マネージャー プロセスを待たず、要求するよう指示できますが、破棄されている割り当てにアクセスしない場合、 **AssumeNotInUse**フラグを呼び出すときに[ *Deallocate2* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_deallocate2cb)または[ **DestroyAllocation2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmthk/nf-d3dkmthk-d3dkmtdestroyallocation2)します。
 
 ## <a name="span-idlock2spanspan-idlock2spanspan-idlock2spanlock2"></a><span id="Lock2"></span><span id="lock2"></span><span id="LOCK2"></span>Lock2
 
@@ -29,11 +29,11 @@ ms.locfileid: "63354645"
     -   返す**WasStillDrawing**割り当ては現在ビジー状態にアクセスしようし、する、呼び出し元が要求した場合、**ロック**操作呼び出し元のスレッドをブロック (**D3D11\_マップ\_フラグ\_は\_いない\_待機**)。
     -   または、 **D3D11\_マップ\_フラグ\_は\_いない\_待機**フラグが設定されていない、割り当てが CPU アクセス可能になるまで待機します。 ユーザー モード ドライバーは、非ポーリング待機を実装する必要があります。 ユーザー モードのドライバーのメカニズムを監視する新しいコンテキストを使用します。
 
-ここでは、ユーザー モード ドライバーは引き続き呼び出す必要があります[ *LockCb*](https://msdn.microsoft.com/library/windows/hardware/ff568914)/[*UnlockCb* ](https://msdn.microsoft.com/library/windows/hardware/ff569011)ビデオ メモリを要求するにはCPU へのアクセスの割り当てを設定するマネージャー。 ほとんどの場合、ユーザー モード ドライバーは存続期間全体にマップされている割り当てを保持することになります。 ただし、今後で*LockCb*と*UnlockCb*新しい優先の廃止される予定[ *Lock2Cb* ](https://msdn.microsoft.com/library/windows/hardware/dn914483)と[ *Unlock2Cb* ](https://msdn.microsoft.com/library/windows/hardware/dn914484)呼び出し。 これらの新しいコールバックの目的は、引数とフラグの新しいセットを新しいクリーンな実装を提供することです。
+ここでは、ユーザー モード ドライバーは引き続き呼び出す必要があります[ *LockCb*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_lockcb)/[*UnlockCb* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_unlockcb)ビデオ メモリを要求するにはCPU へのアクセスの割り当てを設定するマネージャー。 ほとんどの場合、ユーザー モード ドライバーは存続期間全体にマップされている割り当てを保持することになります。 ただし、今後で*LockCb*と*UnlockCb*新しい優先の廃止される予定[ *Lock2Cb* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_lock2cb)と[ *Unlock2Cb* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_unlock2cb)呼び出し。 これらの新しいコールバックの目的は、引数とフラグの新しいセットを新しいクリーンな実装を提供することです。
 
-スウィズ リング範囲は、Windows Display Driver Model (WDDM) v2 から削除されへの呼び出しからスウィズ リング範囲への依存関係を削除するドライバー開発者の責任は[ *LockCb* ](https://msdn.microsoft.com/library/windows/hardware/ff568914)として実装に基づいているに向かって移動[ *Lock2Cb*](https://msdn.microsoft.com/library/windows/hardware/dn914483)します。
+スウィズ リング範囲は、Windows Display Driver Model (WDDM) v2 から削除されへの呼び出しからスウィズ リング範囲への依存関係を削除するドライバー開発者の責任は[ *LockCb* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_lockcb)として実装に基づいているに向かって移動[ *Lock2Cb*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_lock2cb)します。
 
-[*Lock2Cb* ](https://msdn.microsoft.com/library/windows/hardware/dn914483)仮想アドレス割り当てを取得するための単純なメソッドとして公開されます。 割り当てと同様に現在常駐している現在のセグメントの種類に基づいて、いくつかの制限があります。
+[*Lock2Cb* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_lock2cb)仮想アドレス割り当てを取得するための単純なメソッドとして公開されます。 割り当てと同様に現在常駐している現在のセグメントの種類に基づいて、いくつかの制限があります。
 
 次の適用の*CPUVisible*割り当て。
 
@@ -53,7 +53,7 @@ ms.locfileid: "63354645"
 ## <a name="span-idcpuhostaperturespanspan-idcpuhostaperturespanspan-idcpuhostaperturespancpuhostaperture"></a><span id="CPUHostAperture"></span><span id="cpuhostaperture"></span><span id="CPUHOSTAPERTURE"></span>CPUHostAperture
 
 
-ロックに対する優れたサポート。*CPUVisible*バーのサイズ変更に失敗した場合は、メモリのセグメントを*CPUHostAperture* PCI aperture で提供されます。 *CPUHostAperture*経由でのビデオ メモリの領域に直接マップできるページ ベースのマネージャーとして動作、 [ *DxgkDdiMapCpuHostAperture*](https://msdn.microsoft.com/library/windows/hardware/dn906340)デバイス ドライバーインターフェイス (DDI) 関数。 不連続な範囲に直接仮想アドレス空間の範囲をマップできる、 *CPUHostAperture*、いて、 *CPUHostAperture*ビデオ メモリを必要としないにマップし、スウィズ リングの範囲です。
+ロックに対する優れたサポート。*CPUVisible*バーのサイズ変更に失敗した場合は、メモリのセグメントを*CPUHostAperture* PCI aperture で提供されます。 *CPUHostAperture*経由でのビデオ メモリの領域に直接マップできるページ ベースのマネージャーとして動作、 [ *DxgkDdiMapCpuHostAperture*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_mapcpuhostaperture)デバイス ドライバーインターフェイス (DDI) 関数。 不連続な範囲に直接仮想アドレス空間の範囲をマップできる、 *CPUHostAperture*、いて、 *CPUHostAperture*ビデオ メモリを必要としないにマップし、スウィズ リングの範囲です。
 
 内に CPU によって参照可能なロック可能なメモリ量の最大!*CPUVisible*メモリ セグメントがのサイズに制限されていますが、 *CPUHostAperture*します。 公開するための詳細、 *CPUHostAperture* Microsoft DirectX のグラフィックスにカーネルで見つかる、 [CPU ホスト aperture](cpu-host-aperature.md)トピック。
 

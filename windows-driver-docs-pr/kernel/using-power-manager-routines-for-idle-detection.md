@@ -11,12 +11,12 @@ keywords:
 - タイムアウト WDK の電源管理
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c25ae08b4ef5f4b6d5d83b6812816a00bb3830da
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ac3295d9386489986d1b28e473797b755323aef2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391062"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381570"
 ---
 # <a name="using-power-manager-routines-for-idle-detection"></a>アイドル状態検出のための電源マネージャー ルーチンの使用
 
@@ -24,7 +24,7 @@ ms.locfileid: "63391062"
 
 
 
-電源マネージャーからのアイドル状態の検出のサポートを提供する、 [ **PoRegisterDeviceForIdleDetection** ](https://msdn.microsoft.com/library/windows/hardware/ff559721)と[ **PoSetDeviceBusy** ](https://msdn.microsoft.com/library/windows/hardware/ff559755)ルーチン。
+電源マネージャーからのアイドル状態の検出のサポートを提供する、 [ **PoRegisterDeviceForIdleDetection** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-poregisterdeviceforidledetection)と[ **PoSetDeviceBusy** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)ルーチン。
 
 デバイスの電源ポリシー所有者の呼び出しをそのデバイスのアイドル状態の検出を有効にする**PoRegisterDeviceForIdleDetection**を指定します。
 
@@ -40,7 +40,7 @@ ms.locfileid: "63391062"
 
 どのデバイスに対してタイムアウト値は、デバイスの電源投入待機時間に比例する必要がありますや、監視対象デバイスの動作に基づいています。 特定の種類のデバイスの場合、ドライバーは、デバイス クラスに対する標準的な電源ポリシーのタイムアウトを使用する場合は-1 の節約とパフォーマンスのタイムアウト値を指定できます。 詳細については、デバイスに固有のドキュメントを参照してください。
 
-デバイスが使用して、ドライバーで呼び出す必要があります[ **PoSetDeviceBusy**](https://msdn.microsoft.com/library/windows/hardware/ff559755)、によって返されたポインターを渡す**PoRegisterDeviceForIdleDetection**します。 **PoSetDeviceBusy**デバイスのアイドル状態のカウント ダウンを再起動するため、アイドル状態のカウンターをリセットします。 ドライバーを呼び出す必要があります**PoSetDeviceBusy** I/O 操作のたびにします。
+デバイスが使用して、ドライバーで呼び出す必要があります[ **PoSetDeviceBusy**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)、によって返されたポインターを渡す**PoRegisterDeviceForIdleDetection**します。 **PoSetDeviceBusy**デバイスのアイドル状態のカウント ダウンを再起動するため、アイドル状態のカウンターをリセットします。 ドライバーを呼び出す必要があります**PoSetDeviceBusy** I/O 操作のたびにします。
 
 デバイスがアイドル状態かどうかを確認するのには、電源マネージャーは、現在のシステム電源ポリシー (保護またはパフォーマンスのいずれか) のアイドル タイムアウトのドライバーが指定した値でアイドル状態のカウンターの値を比較します。 システム電源ポリシーに関連する関数の Microsoft Windows SDK を参照してください。
 

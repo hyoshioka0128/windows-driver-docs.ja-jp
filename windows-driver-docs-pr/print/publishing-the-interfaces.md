@@ -10,17 +10,17 @@ keywords:
 - 発行の WDK プリンター インターフェイス DLL
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d8f912fe965419dee97f696558dafa0cb296dbd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a9b86038d561b7dd22288af6249ec69baed5038b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372530"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384691"
 ---
 # <a name="publishing-the-interfaces"></a>インターフェイスを公開する
 
 
-プラグインには、通常、公開と呼ばれるメカニズムによって、core のドライバーの動作を実装するオブジェクトのインスタンスが表示されます。 [IPrintCoreHelper](https://msdn.microsoft.com/library/windows/hardware/ff552960)、 [IPrintCoreHelperPS](https://msdn.microsoft.com/library/windows/hardware/ff552906)、および[IPrintCoreHelperUni](https://msdn.microsoft.com/library/windows/hardware/ff552940)ヘルパー インターフェイスが同じモデルでは、いくつかの小さな違いがありますを使用して公開します。
+プラグインには、通常、公開と呼ばれるメカニズムによって、core のドライバーの動作を実装するオブジェクトのインスタンスが表示されます。 [IPrintCoreHelper](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nn-prcomoem-iprintcorehelper)、 [IPrintCoreHelperPS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nn-prcomoem-iprintcorehelperps)、および[IPrintCoreHelperUni](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nn-prcomoem-iprintcorehelperuni)ヘルパー インターフェイスが同じモデルでは、いくつかの小さな違いがありますを使用して公開します。
 
 次の一覧は、ユーザー インターフェイス (UI) で公開され、Unidrv と Pscript5 の両方のモジュールを描画するオブジェクトの順序をまとめたものです。 4 つのモジュールごとに、リスト内の数は、オブジェクトがパブリッシュされるとという名前の COM インターフェイスは、オブジェクトを実装するインターフェイスを指定の順序を示します。
 

@@ -5,21 +5,21 @@ ms.assetid: 1BF09EAE-9D03-4655-98CD-D3A10BF48A48
 ms.date: 08/08/2017
 keywords: -OID_PD_QUERY_CURRENT_CONFIG ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c35c2c408bd89f804ebaafb2c80fa933dc3ded9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 609711eda323688d404098e3559bd15e31d927f4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375656"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383225"
 ---
 # <a name="oidpdquerycurrentconfig"></a>OID\_PD\_クエリ\_現在\_構成
 
 
 OID のオブジェクト識別子 (OID) メソッド要求を送信する NDIS プロトコルまたはフィルター ドライバー\_PD\_クエリ\_現在\_PD 状態と機能を取得する PD 対応ミニポート ドライバーを構成します。 PD 対応のすべてのミニポート ドライバーでは、この OID 要求を処理する必要があります。
 
-**InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)構造体には、バッファーへのポインターが含まれています。 このバッファーには、次のデータが含まれています。
+**InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体には、バッファーへのポインターが含まれています。 このバッファーには、次のデータが含まれています。
 
--   [ **NDIS\_PD\_CONFIG** ](https://msdn.microsoft.com/library/windows/hardware/dn931835)構造体
+-   [ **NDIS\_PD\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pd_config)構造体
 
 <a name="remarks"></a>注釈
 -------
@@ -51,11 +51,11 @@ OID のオブジェクト識別子 (OID) メソッド要求を送信する NDIS 
 ## <a name="see-also"></a>関連項目
 
 
-[*MiniportOidRequest*](https://msdn.microsoft.com/library/windows/hardware/ff559416)
+[*MiniportOidRequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_oid_request)
 
-[**NDIS\_PD\_構成**](https://msdn.microsoft.com/library/windows/hardware/dn931835)
+[**NDIS\_PD\_構成**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pd_config)
 
-[**NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)
+[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
 
  
 

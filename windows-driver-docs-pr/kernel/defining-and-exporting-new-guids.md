@@ -9,12 +9,12 @@ keywords:
 - Guid をエクスポートします。
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ec5a2e76726008bdee18a36bf5a7496e3fbbe5e7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c43743ee92cc015deb36be6761ad8bdfad797f54
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388215"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377118"
 ---
 # <a name="defining-and-exporting-new-guids"></a>新しい GUID の定義とエクスポート
 
@@ -82,7 +82,7 @@ ms.locfileid: "63388215"
 
     複数インクルードされないようにするステートメントの外側の GUID 定義を配置することは行われません、GUID の複数のインスタンス、ドライバーのため、**定義\_GUID** EXTERN として GUID を定義します。\_C 変数。 型が一致している限り、外部変数の複数の宣言は許可されます。
 
-4.  新しい GUID を作成するときに[デバイス セットアップ クラス](https://msdn.microsoft.com/library/windows/hardware/ff541509)または[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)、次の規則が適用されます。
+4.  新しい GUID を作成するときに[デバイス セットアップ クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-setup-classes)または[デバイス インターフェイス クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)、次の規則が適用されます。
     -   デバイス セットアップ クラスとデバイスのインターフェイス クラスの両方を識別するためには、単一の GUID を使用しません。
 
     -   GUID に関連付けるシンボリック名を作成する場合は、次の規則を使用します。

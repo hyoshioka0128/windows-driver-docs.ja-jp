@@ -7,12 +7,12 @@ keywords:
 - 並列 IRP コード
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 39f253f9095a330932c22673dc9b2f2528d618c4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3b4ed3ad500a19b9566aa52426e84984aa83fc12
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373572"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376976"
 ---
 # <a name="device-specific-operations-for-io-requests-for-parallel-devices"></a>パラレル デバイスの I/O 要求に対するデバイス固有の操作
 このトピックでは、並列のデバイスの I/O 要求の次のデバイスに固有の操作をドキュメントします。
@@ -26,10 +26,10 @@ ms.locfileid: "63373572"
 
 
 ##  <a name="irpmjcreate"></a>IRP_MJ_CREATE
-[Irp_mj_create 用](https://msdn.microsoft.com/library/windows/hardware/ff550729)要求は、並列のデバイスを開きます。
+[Irp_mj_create 用](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-create)要求は、並列のデバイスを開きます。
 
 ### <a name="when-sent"></a>送信時
-クライアントを使用する必要があります、 [irp_mj_create 用](https://msdn.microsoft.com/library/windows/hardware/ff550729)をデバイスにアクセスできる前に、並列のデバイスを開く要求。
+クライアントを使用する必要があります、 [irp_mj_create 用](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-create)をデバイスにアクセスできる前に、並列のデバイスを開く要求。
 
 ### <a name="input-parameters"></a>入力パラメーター
 なし。
@@ -68,13 +68,13 @@ STATUS_NOT_A_DIRECTORY
 デバイスは、ディレクトリではありません。
 
 ### <a name="operation"></a>操作
-並列デバイスは、排他的なデバイスです。 並列デバイスが開いている場合は、パラレル ポートのシステム提供のバス ドライバーがその後で失敗した[irp_mj_create 用](https://msdn.microsoft.com/library/windows/hardware/ff550729)まで、デバイスが閉じられているデバイスを要求します。 デバイスまたは呼び出しに他の I/O 要求を送信する前に、クライアントは並列のデバイスを開く必要があります、[デバイス コールバック ルーチンを並列](https://msdn.microsoft.com/library/windows/hardware/ff544275)します。
+並列デバイスは、排他的なデバイスです。 並列デバイスが開いている場合は、パラレル ポートのシステム提供のバス ドライバーがその後で失敗した[irp_mj_create 用](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-create)まで、デバイスが閉じられているデバイスを要求します。 デバイスまたは呼び出しに他の I/O 要求を送信する前に、クライアントは並列のデバイスを開く必要があります、[デバイス コールバック ルーチンを並列](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)します。
 
-詳細については、次を参照してください。[の起動と使用の並列デバイス](https://msdn.microsoft.com/windows/hardware/drivers/parports/opening-and-using-a-parallel-device)します。
+詳細については、次を参照してください。[の起動と使用の並列デバイス](https://docs.microsoft.com/windows-hardware/drivers/parports/opening-and-using-a-parallel-device)します。
 
 
 ##  <a name="irpmjdevicecontrol"></a>IRP_MJ_DEVICE_CONTROL
-[IRP_MJ_DEVICE_CONTROL](https://msdn.microsoft.com/library/windows/hardware/ff550744)要求が並列デバイスは動作します。
+[IRP_MJ_DEVICE_CONTROL](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-device-control)要求が並列デバイスは動作します。
 
 ### <a name="when-sent"></a>送信時
 クライアントは、次の種類の操作のデバイス制御要求を使用します。
@@ -82,7 +82,7 @@ STATUS_NOT_A_DIRECTORY
 * デバイスに関する情報を取得します。
 * デバイスの動作モードを設定します。
 
-参照してください[並列のデバイスのデバイスのコントロール要求](https://msdn.microsoft.com/library/windows/hardware/ff543945)します。
+参照してください[並列のデバイスのデバイスのコントロール要求](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)します。
 
 ### <a name="input-parameters"></a>入力パラメーター
 要求ごとに固有です。
@@ -129,7 +129,7 @@ STATUS_UNSUCCESSFUL
 
 
 ##  <a name="irpmjinternaldevicecontrol"></a>IRP_MJ_INTERNAL_DEVICE_CONTROL
-[IRP_MJ_INTERNAL_DEVICE_CONTROL](https://msdn.microsoft.com/library/windows/hardware/ff550766)並列デバイスで要求が内部の動作モードを設定します。
+[IRP_MJ_INTERNAL_DEVICE_CONTROL](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-internal-device-control)並列デバイスで要求が内部の動作モードを設定します。
 
 ### <a name="when-sent"></a>送信時
 クライアントは、次の種類の操作の内部デバイス制御要求を使用します。
@@ -138,7 +138,7 @@ STATUS_UNSUCCESSFUL
 * パラレル ポートに関する接続情報を取得します。
 * ロックし、デバイスによって排他的に使用の並列のポートをロック解除
 
-内部参照[並列のデバイスのデバイスのコントロール要求](https://msdn.microsoft.com/library/windows/hardware/ff543945)します。
+内部参照[並列のデバイスのデバイスのコントロール要求](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)します。
 
 ### <a name="input-parameters"></a>入力パラメーター
 要求ごとに固有です。
@@ -186,7 +186,7 @@ STATUS_UNSUCCESSFUL
 
 
 ##  <a name="irpmjqueryinformation"></a>IRP_MJ_QUERY_INFORMATION
-[IRP_MJ_QUERY_INFORMATION](https://msdn.microsoft.com/library/windows/hardware/ff550788)要求は、並列のデバイスを表すファイルに関する情報を取得します。
+[IRP_MJ_QUERY_INFORMATION](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-query-information)要求は、並列のデバイスを表すファイルに関する情報を取得します。
 
 ### <a name="when-sent"></a>送信時
 クライアントは、ファイル サイズまたはファイル ポインターの現在のバイト オフセットを決定するクエリ情報の要求を送信します。
@@ -197,13 +197,13 @@ STATUS_UNSUCCESSFUL
 
 **FileStandardInformation**要求。
  
-**AssociatedIrp.SystemBuffer**へのポインターを[FILE_STANDARD_INFORMATION](https://msdn.microsoft.com/library/windows/hardware/ff545855)ファイル情報の出力をクライアントによって割り当てられる構造体。
+**AssociatedIrp.SystemBuffer**へのポインターを[FILE_STANDARD_INFORMATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_file_standard_information)ファイル情報の出力をクライアントによって割り当てられる構造体。
 
 **Parameters.QueryFile.Length**メンバーがバイト単位のサイズの設定、 **FILE_STANDARD_INFORMATION**構造体。
 
 **FilePositionInformation**要求。 
 
-**AssociatedIrp.SystemBuffer**を指す、 [FILE_POSITION_INFORMATION](https://msdn.microsoft.com/library/windows/hardware/ff545848)ファイル情報の出力をクライアントによって割り当てられる構造体。
+**AssociatedIrp.SystemBuffer**を指す、 [FILE_POSITION_INFORMATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_file_position_information)ファイル情報の出力をクライアントによって割り当てられる構造体。
 
 **Parameters.SetFile.Length**メンバーがバイト単位のサイズの設定、 **FILE_POSITION_INFORMATION**構造体。
 
@@ -254,10 +254,10 @@ STATUS_INVALID_PARAMETER
 
 
 ##  <a name="irpmjread"></a>IRP_MJ_READ
-[IRP_MJ_READ](https://msdn.microsoft.com/library/windows/hardware/ff550794)要求は、並列のデバイスから入力データを取得します。
+[IRP_MJ_READ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-read)要求は、並列のデバイスから入力データを取得します。
 
 ### <a name="when-sent"></a>送信時
-クライアントを使用して、 [IRP_MJ_READ](https://msdn.microsoft.com/library/windows/hardware/ff550794)並列デバイスからの入力を取得する要求。
+クライアントを使用して、 [IRP_MJ_READ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-read)並列デバイスからの入力を取得する要求。
 
 ### <a name="input-parameters"></a>入力パラメーター
 **Parameters.Read.Length**並列のデバイスから読み取るバイト数へのポインターします。
@@ -296,18 +296,18 @@ STATUS_DEVICE_REMOVED
 デバイスが削除されました。
 
 ### <a name="operation"></a>操作
-パラレル ポートのシステム提供のバス ドライバーでは、並列のデバイスの読み取りのプロトコルを使用します。 既定では、プロトコルは NIBBLE_MODE を読み取る。 クライアントを使用して読み取りのプロトコルをネゴシエートすることができます、 [IOCTL_IEEE1284_NEGOTIATE](https://msdn.microsoft.com/library/windows/hardware/ff543978)要求。
+パラレル ポートのシステム提供のバス ドライバーでは、並列のデバイスの読み取りのプロトコルを使用します。 既定では、プロトコルは NIBBLE_MODE を読み取る。 クライアントを使用して読み取りのプロトコルをネゴシエートすることができます、 [IOCTL_IEEE1284_NEGOTIATE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddpar/ni-ntddpar-ioctl_ieee1284_negotiate)要求。
 
 パラレル ポート バス ドライバーは、読み取り要求のキャンセル ルーチンの設定、読み取り要求を保留をマークし、作業キューに読み取り要求をキューします。 読み取り要求は、読み取り要求が完了したか、クライアントによって取り消されましたまでキャンセル可能な状態での作業キューに保持されます。
 
-詳細については、次を参照してください。[並列デバイスの読み書き](https://msdn.microsoft.com/windows/hardware/drivers/parports/reading-and-writing-a-parallel-device)します。
+詳細については、次を参照してください。[並列デバイスの読み書き](https://docs.microsoft.com/windows-hardware/drivers/parports/reading-and-writing-a-parallel-device)します。
 
 
 ##  <a name="irpmjwrite"></a>IRP_MJ_WRITE
-[IRP_MJ_WRITE](https://msdn.microsoft.com/library/windows/hardware/ff550819)要求は、並列のデバイスに出力データを転送します。
+[IRP_MJ_WRITE](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-write)要求は、並列のデバイスに出力データを転送します。
 
 ### <a name="when-sent"></a>送信時
-クライアントを使用して、 [IRP_MJ_WRITE](https://msdn.microsoft.com/library/windows/hardware/ff550819)並列デバイスに出力データを転送するときに要求します。
+クライアントを使用して、 [IRP_MJ_WRITE](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-write)並列デバイスに出力データを転送するときに要求します。
 
 ### <a name="input-parameters"></a>入力パラメーター
 **AssociatedIrp.SystemBuffer**のクライアントによって割り当てられる書き込みバッファーへのポインターがデータを書き込みます。 バッファーは、要求された並列のデバイスに書き込むバイト数を保持するために十分な大きさである必要があります。
@@ -347,23 +347,23 @@ STATUS_DEVICE_REMOVED
 デバイスが削除されました。
 
 ### <a name="operation"></a>操作
-パラレル ポートのシステム提供のバス ドライバーでは、並列のデバイスに設定されている書き込みプロトコルを使用してデータを転送します。 既定の書き込みプロトコルは、セントロニクスです。 クライアントを使用して書き込みプロトコルをネゴシエートすることができます、 [IOCTL_IEEE1284_NEGOTIATE](https://msdn.microsoft.com/library/windows/hardware/ff543978)要求。 
+パラレル ポートのシステム提供のバス ドライバーでは、並列のデバイスに設定されている書き込みプロトコルを使用してデータを転送します。 既定の書き込みプロトコルは、セントロニクスです。 クライアントを使用して書き込みプロトコルをネゴシエートすることができます、 [IOCTL_IEEE1284_NEGOTIATE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddpar/ni-ntddpar-ioctl_ieee1284_negotiate)要求。 
 
 パラレル ポート バス ドライバー、書き込み要求のキャンセル ルーチンを設定するには、書き込み要求、保留中としてマークおよび作業キューに書き込み要求のキューします。 書き込み要求は、要求が完了またはキャンセルされるまでにキャンセルできる状態に保持されます。
 
-詳細については、次を参照してください。[並列デバイスの読み書き](https://msdn.microsoft.com/windows/hardware/drivers/parports/reading-and-writing-a-parallel-device)します。
+詳細については、次を参照してください。[並列デバイスの読み書き](https://docs.microsoft.com/windows-hardware/drivers/parports/reading-and-writing-a-parallel-device)します。
 
 ## <a name="related-topics"></a>関連トピック
 
-[並列のデバイスのデバイスのコントロール要求](https://msdn.microsoft.com/library/windows/hardware/ff543945)します。
+[並列のデバイスのデバイスのコントロール要求](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)します。
 
-[FILE_POSITION_INFORMATION](https://msdn.microsoft.com/library/windows/hardware/ff545848) [FILE_STANDARD_INFORMATION](https://msdn.microsoft.com/library/windows/hardware/ff545855)
+[FILE_POSITION_INFORMATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_file_position_information) [FILE_STANDARD_INFORMATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_file_standard_information)
 
-[起動と使用の並列のデバイス](https://msdn.microsoft.com/windows/hardware/drivers/parports/opening-and-using-a-parallel-device)
+[起動と使用の並列のデバイス](https://docs.microsoft.com/windows-hardware/drivers/parports/opening-and-using-a-parallel-device)
 
-[パラレル ポートに接続されている並列のデバイスの動作](https://msdn.microsoft.com/windows/hardware/drivers/parports/operating-a-parallel-device-attached-to-a-parallel-port.md)
+[パラレル ポートに接続されている並列のデバイスの動作](https://docs.microsoft.com/windows-hardware/drivers/parports/operating-a-parallel-device-attached-to-a-parallel-port.md)
 
-[並列デバイス コールバック ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff544275)
+[並列デバイス コールバック ルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
 
-[並列のデバイスの読み取りと書き込み](https://msdn.microsoft.com/windows/hardware/drivers/parports/reading-and-writing-a-parallel-device)
+[並列のデバイスの読み取りと書き込み](https://docs.microsoft.com/windows-hardware/drivers/parports/reading-and-writing-a-parallel-device)
 

@@ -10,12 +10,12 @@ keywords:
 ms.date: 10/02/2018
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 59443b939b3fcb1d12aa4f3c2bc78e1ea389f409
-ms.sourcegitcommit: 7bd9480d40021827e6d46f9b83638dac85380e88
+ms.openlocfilehash: 17972b1697ef1991aac95b549c55261525352b28
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65875097"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372295"
 ---
 # <a name="umdf-version-history"></a>UMDF バージョン履歴
 
@@ -49,7 +49,7 @@ Windows 10 で UMDF ドライバーの新機能については、次を参照し
 
 ## <a name="umdf-version-229"></a>UMDF バージョン 2.29
 
-2.27 のバージョンから変更されていません。
+2\.27 のバージョンから変更されていません。
 
 ## <a name="umdf-version-227"></a>UMDF バージョン 2.27
 
@@ -62,12 +62,12 @@ Windows 10 で UMDF ドライバーの新機能については、次を参照し
 
 ## <a name="umdf-version-223"></a>UMDF バージョン 2.23
 
-* コンパニオンの機能は内部使用のみを追加します。  新しい Ddi を参照してください。 [WDF のコールバックの概要とメソッド](https://msdn.microsoft.com/library/windows/hardware/dn265591)します。
+* コンパニオンの機能は内部使用のみを追加します。  新しい Ddi を参照してください。 [WDF のコールバックの概要とメソッド](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_wdf/)します。
 
 ## <a name="umdf-version-221"></a>UMDF バージョン 2.21
 
-* [**WdfObjectDereferenceActual**](https://msdn.microsoft.com/library/windows/hardware/ff548743):入力*ファイル*PCCH から PCHAR パラメーターに変更します。
-* [**WdfObjectReferenceActual**](https://msdn.microsoft.com/library/windows/hardware/ff548760):入力*ファイル*PCCH から PCHAR パラメーターに変更します。
+* [**WdfObjectDereferenceActual**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nf-wdfobject-wdfobjectdereferenceactual):入力*ファイル*PCCH から PCHAR パラメーターに変更します。
+* [**WdfObjectReferenceActual**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nf-wdfobject-wdfobjectreferenceactual):入力*ファイル*PCCH から PCHAR パラメーターに変更します。
 
 ## <a name="umdf-version-219"></a>UMDF バージョン 2.19
 
@@ -77,10 +77,10 @@ Windows 10 で UMDF ドライバーの新機能については、次を参照し
 
 このバージョンは、次の既存のインターフェイスの UMDF サポートを追加します。
 
--   [**WdfDeviceConfigureWdmIrpDispatchCallback**](https://msdn.microsoft.com/library/windows/hardware/hh451093)
--   [*EvtDeviceWdmIrpDispatch*](https://msdn.microsoft.com/library/windows/hardware/hh406404)
--   [**WdfDeviceWdmDispatchIrp**](https://msdn.microsoft.com/library/windows/hardware/hh451100)
--   [**WdfDeviceWdmDispatchIrpToIoQueue**](https://msdn.microsoft.com/library/windows/hardware/hh451105)
+-   [**WdfDeviceConfigureWdmIrpDispatchCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceconfigurewdmirpdispatchcallback)
+-   [*EvtDeviceWdmIrpDispatch*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdfdevice_wdm_irp_dispatch)
+-   [**WdfDeviceWdmDispatchIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicewdmdispatchirp)
+-   [**WdfDeviceWdmDispatchIrpToIoQueue**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicewdmdispatchirptoioqueue)
 
 詳細については、次を参照してください。 [I/O キューへのディスパッチ Irp](dispatching-irps-to-i-o-queues.md)します。
 
@@ -88,11 +88,11 @@ Windows 10 で UMDF ドライバーの新機能については、次を参照し
 
 更新された Ddi 2.15 バージョンの一覧を次に示します。
 
--   新しい[ **WdfDeviceOpenDevicemapKey** ](https://msdn.microsoft.com/library/windows/hardware/dn932458)メソッドは、サブキーをアクセスするためのドライバーを使用し、下に値**HKEY\_ローカル\_マシン\\ハードウェア\\DEVICEMAP**します。
+-   新しい[ **WdfDeviceOpenDevicemapKey** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceopendevicemapkey)メソッドは、サブキーをアクセスするためのドライバーを使用し、下に値**HKEY\_ローカル\_マシン\\ハードウェア\\DEVICEMAP**します。
 
--   UMDF ドライバーを呼び出すことができます[ **WdfIoTargetWdmGetTargetFileHandle** ](https://msdn.microsoft.com/library/windows/hardware/ff548683)そのスタックに次の下位のカーネル モード ドライバーのファイル ハンドルを取得します。 ドライバーは、データをローカル I/O ターゲットに I/O を送信するためのフレームワークの抽象化をバイパスして、そのハンドルを書き込むことができます。
+-   UMDF ドライバーを呼び出すことができます[ **WdfIoTargetWdmGetTargetFileHandle** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdfiotargetwdmgettargetfilehandle)そのスタックに次の下位のカーネル モード ドライバーのファイル ハンドルを取得します。 ドライバーは、データをローカル I/O ターゲットに I/O を送信するためのフレームワークの抽象化をバイパスして、そのハンドルを書き込むことができます。
 
--   UMDF ドライバーでは、基になるバス ドライバー再列挙することを要求できます。 参照してください[ **WdfDeviceSetFailed**](https://msdn.microsoft.com/library/windows/hardware/ff546890)します。
+-   UMDF ドライバーでは、基になるバス ドライバー再列挙することを要求できます。 参照してください[ **WdfDeviceSetFailed**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicesetfailed)します。
 
 -   設定、 **UmdfDirectHardwareAccess**ディレクティブは常にリソースを接続するデバイスの必要なくなりました。 「[Specifying WDF Directives in INF Files](specifying-wdf-directives-in-inf-files.md)」 (INF ファイルに WDF ディレクティブを指定する) を参照してください。
 
@@ -102,92 +102,92 @@ Windows 10 で UMDF ドライバーの新機能については、次を参照し
 説明されている共有機能だけでなく[UMDF 入門](getting-started-with-umdf-version-2.md)、UMDF version 2.0 で追加します。
 
 -   システムが低電力状態の場合有効期限が切れる場合、システムがウェイクしないタイマーをサポートします。 詳細については、次を参照してください。[を使用してタイマー](using-timers.md)します。
--   追加**CanWakeDevice**メンバー [ **WDF\_INTERRUPT\_CONFIG** ](https://msdn.microsoft.com/library/windows/hardware/ff552347)からデバイスを使用できる割り込みをサポートする構造体、低電力 Dx 状態は、完全に D0 状態に戻ります。 詳細については、次を参照してください。 [、割り込みを使用して、デバイスのスリープを解除する](using-an-interrupt-to-wake-a-device.md)します。
--   単一コンポーネントの 1 つの状態 (F0) の電源管理 UMDF ドライバー。 詳細については、次を参照してください。 [ **WdfDeviceAssignS0IdleSettings**](https://msdn.microsoft.com/library/windows/hardware/ff545903)します。
+-   追加**CanWakeDevice**メンバー [ **WDF\_INTERRUPT\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/ns-wdfinterrupt-_wdf_interrupt_config)からデバイスを使用できる割り込みをサポートする構造体、低電力 Dx 状態は、完全に D0 状態に戻ります。 詳細については、次を参照してください。 [、割り込みを使用して、デバイスのスリープを解除する](using-an-interrupt-to-wake-a-device.md)します。
+-   単一コンポーネントの 1 つの状態 (F0) の電源管理 UMDF ドライバー。 詳細については、次を参照してください。 [ **WdfDeviceAssignS0IdleSettings**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceassigns0idlesettings)します。
 
 -   Wdfkd.dll でいくつかのデバッガー拡張機能のコマンドは、2.0 の UMDF ドライバーも今すぐに使用できます。 拡張機能ライブラリには、UMDF 2.0 ドライバーのデバッグ専用に設計された次の新しい拡張機能コマンドも含まれています。
 
-    -   [**!wdfkd.wdfumdevstack**](https://msdn.microsoft.com/library/windows/hardware/dn265379)
-    -   [**!wdfkd.wdfumdevstacks**](https://msdn.microsoft.com/library/windows/hardware/dn265380)
-    -   [**!wdfkd.wdfumdownirp**](https://msdn.microsoft.com/library/windows/hardware/dn265381)
-    -   [**!wdfkd.wdfumfile**](https://msdn.microsoft.com/library/windows/hardware/dn265382)
-    -   [**!wdfkd.wdfumirp**](https://msdn.microsoft.com/library/windows/hardware/dn265383)
-    -   [**!wdfkd.wdfumirps**](https://msdn.microsoft.com/library/windows/hardware/dn265384)
-    -   [**!wdfkd.wdfdeviceinterrupts**](https://msdn.microsoft.com/library/windows/hardware/dn265378)
+    -   [ **!wdfkd.wdfumdevstack**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfumdevstack)
+    -   [ **!wdfkd.wdfumdevstacks**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfumdevstacks)
+    -   [ **!wdfkd.wdfumdownirp**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfumdownirp)
+    -   [ **!wdfkd.wdfumfile**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfumfile)
+    -   [ **!wdfkd.wdfumirp**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfumirp)
+    -   [ **!wdfkd.wdfumirps**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfumirps)
+    -   [ **!wdfkd.wdfdeviceinterrupts**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfdeviceinterrupts)
 
     拡張機能のコマンドとフレームワークの適用性の一覧は、次を参照してください。[デバッガー拡張機能](debugger-extensions-for-kmdf-drivers.md)します。
 
 -   [フレームワークのイベント ロガー](using-the-framework-s-event-logger.md)、または*インフライト レコーダー* (IFR) が 2.0 の UMDF ドライバーの動作に更新されました。
--   2.0 の UMDF ドライバーを使用するその他の WDF デバッガー拡張が更新されました。 情報についての フレームワークに適用されますを参照してくださいものなど、拡張機能のコマンドの完全な一覧については[デバッガーの拡張機能ドライバーを WDF](debugger-extensions-for-kmdf-drivers.md)します。
--   追加**WdfIoTargetOpenLocalTargetByFile**に[ **WDF\_IO\_ターゲット\_オープン\_型**](https://msdn.microsoft.com/library/windows/hardware/ff552386) UMDF を許可するにはドライバー ファイルが関連付けられているオブジェクトを必要とするターゲットを削減するドライバーが作成した要求を送信します。 詳細については、の「解説」を参照してください。 **WDF\_IO\_ターゲット\_オープン\_型**します。
+-   2\.0 の UMDF ドライバーを使用するその他の WDF デバッガー拡張が更新されました。 情報についての フレームワークに適用されますを参照してくださいものなど、拡張機能のコマンドの完全な一覧については[デバッガーの拡張機能ドライバーを WDF](debugger-extensions-for-kmdf-drivers.md)します。
+-   追加**WdfIoTargetOpenLocalTargetByFile**に[ **WDF\_IO\_ターゲット\_オープン\_型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/ne-wdfiotarget-_wdf_io_target_open_type) UMDF を許可するにはドライバー ファイルが関連付けられているオブジェクトを必要とするターゲットを削減するドライバーが作成した要求を送信します。 詳細については、の「解説」を参照してください。 **WDF\_IO\_ターゲット\_オープン\_型**します。
 -   次の UMDF 専用であるルーチン:
 
-    -   [*EvtRequestImpersonate*](https://msdn.microsoft.com/library/windows/hardware/dn265581)
-    -   [**WDF\_IO\_ターゲット\_オープン\_PARAMS\_INIT\_オープン\_BY\_ファイル**](https://msdn.microsoft.com/library/windows/hardware/dn265641)
-    -   [**WdfDeviceAllocAndQueryInterfaceProperty**](https://msdn.microsoft.com/library/windows/hardware/dn265598)
-    -   [**WdfDeviceAssignInterfaceProperty**](https://msdn.microsoft.com/library/windows/hardware/dn265600)
-    -   [**WdfDeviceGetDeviceStackIoType**](https://msdn.microsoft.com/library/windows/hardware/dn265602)
-    -   [**WdfDeviceGetHardwareRegisterMappedAddress**](https://msdn.microsoft.com/library/windows/hardware/dn265603)
-    -   [**WdfDeviceMapIoSpace**](https://msdn.microsoft.com/library/windows/hardware/dn265605)
-    -   [**WdfDevicePostEvent**](https://msdn.microsoft.com/library/windows/hardware/dn265606)
-    -   [**WdfDeviceQueryInterfaceProperty**](https://msdn.microsoft.com/library/windows/hardware/dn265607)
-    -   [**WdfDeviceUnmapIoSpace**](https://msdn.microsoft.com/library/windows/hardware/dn265610)
-    -   [**WdfFileObjectGetInitiatorProcessId** ](https://msdn.microsoft.com/library/windows/hardware/dn265614) (KMDF 1.21 に追加)
-    -   [**WdfFileObjectGetRelatedFileObject**](https://msdn.microsoft.com/library/windows/hardware/dn265615)
-    -   [**WdfRequestGetEffectiveIoType**](https://msdn.microsoft.com/library/windows/hardware/dn265616)
-    -   [**WdfRequestGetRequestorProcessId** ](https://msdn.microsoft.com/library/windows/hardware/dn265617) (KMDF 1.21 に追加)
-    -   [**WdfRequestGetUserModeInitiatedIo**](https://msdn.microsoft.com/library/windows/hardware/dn265618)
-    -   [**WdfRequestImpersonate**](https://msdn.microsoft.com/library/windows/hardware/dn265619)
-    -   [**WdfRequestIsFromUserModeDriver**](https://msdn.microsoft.com/library/windows/hardware/dn265620)
-    -   [**WdfRequestRetrieveActivityId**](https://msdn.microsoft.com/library/windows/hardware/dn265621)
-    -   [**WdfRequestSetActivityId**](https://msdn.microsoft.com/library/windows/hardware/dn265622)
-    -   [**WdfRequestSetUserModeDriverInitiatedIo**](https://msdn.microsoft.com/library/windows/hardware/dn265623)
+    -   [*EvtRequestImpersonate*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nc-wdfrequest-evt_wdf_request_impersonate)
+    -   [**WDF\_IO\_ターゲット\_オープン\_PARAMS\_INIT\_オープン\_BY\_ファイル**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdf_io_target_open_params_init_open_by_file)
+    -   [**WdfDeviceAllocAndQueryInterfaceProperty**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceallocandqueryinterfaceproperty)
+    -   [**WdfDeviceAssignInterfaceProperty**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceassigninterfaceproperty)
+    -   [**WdfDeviceGetDeviceStackIoType**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicegetdevicestackiotype)
+    -   [**WdfDeviceGetHardwareRegisterMappedAddress**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicegethardwareregistermappedaddress)
+    -   [**WdfDeviceMapIoSpace**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicemapiospace)
+    -   [**WdfDevicePostEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicepostevent)
+    -   [**WdfDeviceQueryInterfaceProperty**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicequeryinterfaceproperty)
+    -   [**WdfDeviceUnmapIoSpace**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceunmapiospace)
+    -   [**WdfFileObjectGetInitiatorProcessId** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdffileobject/nf-wdffileobject-wdffileobjectgetinitiatorprocessid) (KMDF 1.21 に追加)
+    -   [**WdfFileObjectGetRelatedFileObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdffileobject/nf-wdffileobject-wdffileobjectgetrelatedfileobject)
+    -   [**WdfRequestGetEffectiveIoType**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestgeteffectiveiotype)
+    -   [**WdfRequestGetRequestorProcessId** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestgetrequestorprocessid) (KMDF 1.21 に追加)
+    -   [**WdfRequestGetUserModeInitiatedIo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestgetusermodedriverinitiatedio)
+    -   [**WdfRequestImpersonate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestimpersonate)
+    -   [**WdfRequestIsFromUserModeDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestisfromusermodedriver)
+    -   [**WdfRequestRetrieveActivityId**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestretrieveactivityid)
+    -   [**WdfRequestSetActivityId**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestsetactivityid)
+    -   [**WdfRequestSetUserModeDriverInitiatedIo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestsetusermodedriverinitiatedio)
 -   説明した次の KMDF/UMDF メソッド[デバイス プロパティの統合モデルにアクセスする](accessing-the-unified-device-property-model.md):
 
-    -   [**WdfDeviceAllocAndQueryPropertyEx**](https://msdn.microsoft.com/library/windows/hardware/dn265599)
-    -   [**WdfDeviceAssignProperty**](https://msdn.microsoft.com/library/windows/hardware/dn265601)
-    -   [**WdfDeviceInitSetIoTypeEx**](https://msdn.microsoft.com/library/windows/hardware/dn265604)
-    -   [**WdfDeviceQueryPropertyEx**](https://msdn.microsoft.com/library/windows/hardware/dn265608)
-    -   [**WdfFdoInitAllocAndQueryPropertyEx**](https://msdn.microsoft.com/library/windows/hardware/dn265612)
-    -   [**WdfFdoInitQueryPropertyEx**](https://msdn.microsoft.com/library/windows/hardware/dn265613)
+    -   [**WdfDeviceAllocAndQueryPropertyEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceallocandquerypropertyex)
+    -   [**WdfDeviceAssignProperty**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceassignproperty)
+    -   [**WdfDeviceInitSetIoTypeEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceinitsetiotypeex)
+    -   [**WdfDeviceQueryPropertyEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicequerypropertyex)
+    -   [**WdfFdoInitAllocAndQueryPropertyEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdffdo/nf-wdffdo-wdffdoinitallocandquerypropertyex)
+    -   [**WdfFdoInitQueryPropertyEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdffdo/nf-wdffdo-wdffdoinitquerypropertyex)
 
     詳細については、次を参照してください。[デバイス プロパティの統合モデルにアクセスする](accessing-the-unified-device-property-model.md)します。
 
--   次の USB 構成タイプのサポート[ **WdfUsbTargetDeviceSelectConfigType**](https://msdn.microsoft.com/library/windows/hardware/ff550102):
+-   次の USB 構成タイプのサポート[ **WdfUsbTargetDeviceSelectConfigType**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/ne-wdfusb-_wdfusbtargetdeviceselectconfigtype):
     -   **WdfUsbTargetDeviceSelectConfigTypeSingleInterface**
     -   **WdfUsbTargetDeviceSelectConfigTypeMultiInterface**
     -   **WdfUsbTargetDeviceSelectConfigTypeInterfacesPairs**
--   次の機能の種類のクエリでのサポート[ **WdfUsbTargetDeviceQueryUsbCapability**](https://msdn.microsoft.com/library/windows/hardware/hh439434):
+-   次の機能の種類のクエリでのサポート[ **WdfUsbTargetDeviceQueryUsbCapability**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdevicequeryusbcapability):
     -   **GUID\_USB\_機能\_デバイス\_接続\_高\_速度\_互換性**
     -   **GUID\_USB\_機能\_デバイス\_接続\_スーパー\_速度\_互換性**
--   追加[WDF 登録/ポート アクセス関数](https://msdn.microsoft.com/library/windows/hardware/dn265662)
+-   追加[WDF 登録/ポート アクセス関数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfhwaccess/)
 
 ## <a name="umdf-version-111"></a>UMDF Version 1.11
 
 
 Version 1.11 は、次のドライバーが提供するコールバック インターフェイスとイベントのコールバック関数を追加します。
 
--   [**IPnpCallbackHardware2**](https://msdn.microsoft.com/library/windows/hardware/hh439727)
+-   [**IPnpCallbackHardware2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-ipnpcallbackhardware2)
 
--   [**IPnpCallbackHardwareInterrupt**](https://msdn.microsoft.com/library/windows/hardware/hh439744)
+-   [**IPnpCallbackHardwareInterrupt**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-ipnpcallbackhardwareinterrupt)
 
 Version 1.11 は、次のフレームワークが指定したインターフェイスを追加します。
 
--   [**IWDFCmResourceList**](https://msdn.microsoft.com/library/windows/hardware/hh439762)
+-   [**IWDFCmResourceList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfcmresourcelist)
 
--   [**IWDFDevice3**](https://msdn.microsoft.com/library/windows/hardware/hh451197)
+-   [**IWDFDevice3**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfdevice3)
 
--   [**IWDFFile3**](https://msdn.microsoft.com/library/windows/hardware/hh451275)
+-   [**IWDFFile3**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdffile3)
 
--   [**IWDFInterrupt**](https://msdn.microsoft.com/library/windows/hardware/hh451283)
+-   [**IWDFInterrupt**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfinterrupt)
 
--   [**IWDFIoRequest3**](https://msdn.microsoft.com/library/windows/hardware/hh451337)
+-   [**IWDFIoRequest3**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfiorequest3)
 
--   [**IWDFUnifiedPropertyStore**](https://msdn.microsoft.com/library/windows/hardware/hh451399)
+-   [**IWDFUnifiedPropertyStore**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfunifiedpropertystore)
 
--   [**IWDFUnifiedPropertyStoreFactory**](https://msdn.microsoft.com/library/windows/hardware/hh451403)
+-   [**IWDFUnifiedPropertyStoreFactory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfunifiedpropertystorefactory)
 
--   [**IWDFWorkItem**](https://msdn.microsoft.com/library/windows/hardware/hh406734)
+-   [**IWDFWorkItem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfworkitem)
 
 Version 1.11 には、UMDF ベースのドライバーには次の機能が追加されます。
 
@@ -199,9 +199,9 @@ Version 1.11 には、UMDF ベースのドライバーには次の機能が追�
 
 -   [UMDF ドライバーの既知のセキュリティ識別子 (SID)](controlling-device-access.md)
 
--   プロパティ ストアのサポートで説明されているユニファイド[UMDF ベースのドライバーのレジストリを使用して](https://msdn.microsoft.com/library/windows/hardware/ff561381)
+-   プロパティ ストアのサポートで説明されているユニファイド[UMDF ベースのドライバーのレジストリを使用して](https://docs.microsoft.com/windows-hardware/drivers/wdf/using-the-registry-in-umdf-1-x-drivers)
 
--   [**IoGetDeviceObjectPointer** ](https://msdn.microsoft.com/library/windows/hardware/ff549198) UMDF を使用する統合されています。 以前のバージョンでは、このルーチンは、デバイスのハンドルの参照を考慮してデバイス オブジェクトを識別するハンドルを閉じます。 この動作は、すべての I/O が完了するまでデバイス オブジェクトのクリーンアップ要求は実行されません UMDF の期待と互換性がありません。
+-   [**IoGetDeviceObjectPointer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdeviceobjectpointer) UMDF を使用する統合されています。 以前のバージョンでは、このルーチンは、デバイスのハンドルの参照を考慮してデバイス オブジェクトを識別するハンドルを閉じます。 この動作は、すべての I/O が完了するまでデバイス オブジェクトのクリーンアップ要求は実行されません UMDF の期待と互換性がありません。
 
 -   [UMDF ベース HID ミニドライバーを作成します。](creating-umdf-hid-minidrivers.md)
 
@@ -214,41 +214,41 @@ Version 1.11 には、UMDF ベースのドライバーには次の機能が追�
 
 バージョン 1.9 には、次のドライバーが提供するコールバック インターフェイスが追加されます。
 
--   [IPnpCallbackRemoteInterfaceNotification](https://msdn.microsoft.com/library/windows/hardware/ff556772)
+-   [IPnpCallbackRemoteInterfaceNotification](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-ipnpcallbackremoteinterfacenotification)
 
--   [IPowerPolicyCallbackWakeFromS0](https://msdn.microsoft.com/library/windows/hardware/ff556815)
+-   [IPowerPolicyCallbackWakeFromS0](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-ipowerpolicycallbackwakefroms0)
 
--   [IPowerPolicyCallbackWakeFromSx](https://msdn.microsoft.com/library/windows/hardware/ff556825)
+-   [IPowerPolicyCallbackWakeFromSx](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-ipowerpolicycallbackwakefromsx)
 
--   [IQueueCallbackIoCanceledOnQueue](https://msdn.microsoft.com/library/windows/hardware/ff556857)
+-   [IQueueCallbackIoCanceledOnQueue](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iqueuecallbackiocanceledonqueue)
 
--   [IRemoteInterfaceCallbackEvent](https://msdn.microsoft.com/library/windows/hardware/ff556887)
+-   [IRemoteInterfaceCallbackEvent](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iremoteinterfacecallbackevent)
 
--   [IRemoteInterfaceCallbackRemoval](https://msdn.microsoft.com/library/windows/hardware/ff556891)
+-   [IRemoteInterfaceCallbackRemoval](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iremoteinterfacecallbackremoval)
 
--   [IRemoteTargetCallbackRemoval](https://msdn.microsoft.com/library/windows/hardware/ff556894)
+-   [IRemoteTargetCallbackRemoval](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iremotetargetcallbackremoval)
 
--   [IWDFRemoteInterfaceInitialize](https://msdn.microsoft.com/library/windows/hardware/ff560232)
+-   [IWDFRemoteInterfaceInitialize](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfremoteinterfaceinitialize)
 
 バージョン 1.9 には、次のフレームワークが指定したインターフェイスが追加されます。
 
--   [IWDFDevice2](https://msdn.microsoft.com/library/windows/hardware/ff556918)
+-   [IWDFDevice2](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfdevice2)
 
--   [IWDFDeviceInitialize2](https://msdn.microsoft.com/library/windows/hardware/ff556967)
+-   [IWDFDeviceInitialize2](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfdeviceinitialize2)
 
--   [IWDFFile2](https://msdn.microsoft.com/library/windows/hardware/ff558915)
+-   [IWDFFile2](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdffile2)
 
--   [IWDFIoRequest2](https://msdn.microsoft.com/library/windows/hardware/ff558988)
+-   [IWDFIoRequest2](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfiorequest2)
 
--   [IWDFIoTarget2](https://msdn.microsoft.com/library/windows/hardware/ff559175)
+-   [IWDFIoTarget2](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfiotarget2)
 
--   [IWDFNamedPropertyStore2](https://msdn.microsoft.com/library/windows/hardware/ff560168)
+-   [IWDFNamedPropertyStore2](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfnamedpropertystore2)
 
--   [IWDFPropertyStoreFactory](https://msdn.microsoft.com/library/windows/hardware/ff560223)
+-   [IWDFPropertyStoreFactory](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfpropertystorefactory)
 
--   [IWDFRemoteTarget](https://msdn.microsoft.com/library/windows/hardware/ff560247)
+-   [IWDFRemoteTarget](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfremotetarget)
 
--   [IWDFUsbTargetPipe2](https://msdn.microsoft.com/library/windows/hardware/ff560394)
+-   [IWDFUsbTargetPipe2](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nn-wudfusb-iwdfusbtargetpipe2)
 
 これらのインターフェイスは、UMDF ベースのドライバーには次の機能を追加します。
 
@@ -256,15 +256,15 @@ Version 1.11 には、UMDF ベースのドライバーには次の機能が追�
 
 -   [電源ポリシーの所有権](power-policy-ownership-in-umdf.md)
 
--   [ダイレクト I/O](https://msdn.microsoft.com/library/windows/hardware/ff554413)バッファーへのアクセス メソッド
+-   [ダイレクト I/O](https://docs.microsoft.com/windows-hardware/drivers/wdf/accessing-data-buffers-in-umdf-1-x-drivers)バッファーへのアクセス メソッド
 
--   [継続的なリーダー](https://msdn.microsoft.com/library/windows/hardware/ff561479)の USB デバイス
+-   [継続的なリーダー](https://docs.microsoft.com/windows-hardware/drivers/wdf/working-with-usb-pipes-in-umdf-1-x-drivers)の USB デバイス
 
 -   サポートの強化[デバイス インターフェイス](using-device-interfaces-in-umdf-drivers.md)
 
 -   機能の強化[I/O 要求をキャンセル](canceling-i-o-requests.md)
 
--   アクセスの強化、[レジストリ](https://msdn.microsoft.com/library/windows/hardware/ff561381)
+-   アクセスの強化、[レジストリ](https://docs.microsoft.com/windows-hardware/drivers/wdf/using-the-registry-in-umdf-1-x-drivers)
 
  
 

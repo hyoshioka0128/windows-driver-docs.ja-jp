@@ -4,12 +4,12 @@ description: 例 DownloadPreviewImage
 ms.assetid: 9b27492e-0725-4c8b-9101-3aaf5c9291d9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8387296f39b26a4d7c71d84c0a4fbef8ee0db75e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 84238d4f1e3f5527f9fb9d45ab4ed18b7a7d3794
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373100"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372590"
 ---
 # <a name="example-downloadpreviewimage"></a>以下に例を示します。DownloadPreviewImage
 
@@ -17,7 +17,7 @@ ms.locfileid: "63373100"
 
 
 
-**DownloadPreviewImage**関数は、プレビューのコンポーネントを呼び出すことによって、スキャナーからイメージ データをダウンロード**IWiaPreview::GetNewPreview**メソッド。 呼び出して、 **DetectSubregions**アプリケーションのユーザーは、下の子項目を作成する、セグメント化フィルターを呼び出す必要がある場合に機能*pWiaItem2*が検出した地域ごとにします。 について**DetectSubregions**、この例で使用されるを参照してください、 [ **IWiaSegmentationFilter::DetectRegions** ](https://msdn.microsoft.com/library/windows/hardware/ff545030)メソッド。
+**DownloadPreviewImage**関数は、プレビューのコンポーネントを呼び出すことによって、スキャナーからイメージ データをダウンロード**IWiaPreview::GetNewPreview**メソッド。 呼び出して、 **DetectSubregions**アプリケーションのユーザーは、下の子項目を作成する、セグメント化フィルターを呼び出す必要がある場合に機能*pWiaItem2*が検出した地域ごとにします。 について**DetectSubregions**、この例で使用されるを参照してください、 [ **IWiaSegmentationFilter::DetectRegions** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wia_lh/nf-wia_lh-iwiasegmentationfilter-detectregions)メソッド。
 
 この例では、アプリケーションのユーザーの設定、 *m\_bUseSegmentationFilter*パラメーター チェック ボックスをオンします。 ドライバーが呼び出すことによってセグメント化フィルターを持っていることを確認、アプリケーションでは、これをサポートする場合最初必要があります**IWiaItem2::CheckExtension**します。 について**CheckImgFilter**、この例で使用されるを参照してください、 **IWiaPreview::GetNewPreview** Microsoft Windows SDK のドキュメント内のメソッド。
 

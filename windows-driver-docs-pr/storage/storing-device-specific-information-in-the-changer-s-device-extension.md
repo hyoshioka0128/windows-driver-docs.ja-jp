@@ -8,12 +8,12 @@ keywords:
 - デバイスに固有のデータ ストレージの WDK チェンジャー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 38ed70319bd7c22cc20044f0a63296e6538674b0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 37397a7638768b4791e83fa88c7e6caa7a917d7f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389393"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383143"
 ---
 # <a name="storing-device-specific-information-in-the-changers-device-extension"></a>チェンジャーのデバイス拡張へのデバイス固有情報の格納
 
@@ -21,7 +21,7 @@ ms.locfileid: "63389393"
 ## <span id="ddk_storing_device_specific_information_in_the_changers_device_extensi"></span><span id="DDK_STORING_DEVICE_SPECIFIC_INFORMATION_IN_THE_CHANGERS_DEVICE_EXTENSI"></span>
 
 
-チェンジャー miniclass ドライバーがデバイスに固有のデータの必要なストレージを指定します、 [ **ChangerAdditionalExtensionSize** ](https://msdn.microsoft.com/library/windows/hardware/ff551400)ルーチン。 チェンジャー クラス ドライバーに代わってチェンジャー miniclass ドライバーでは、要求されたストレージが割り当てられ、miniclass ドライバーの[ **ChangerInitialize** ](https://msdn.microsoft.com/library/windows/hardware/ff551431)ルーチン。
+チェンジャー miniclass ドライバーがデバイスに固有のデータの必要なストレージを指定します、 [ **ChangerAdditionalExtensionSize** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mcd/nf-mcd-changeradditionalextensionsize)ルーチン。 チェンジャー クラス ドライバーに代わってチェンジャー miniclass ドライバーでは、要求されたストレージが割り当てられ、miniclass ドライバーの[ **ChangerInitialize** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mcd/nf-mcd-changerinitialize)ルーチン。
 
 チェンジャー miniclass ドライバーがデバイスの拡張機能にデータを格納するかどうかとどのようなデータを格納、ドライバーのデザイナーの責任です。 通常、SCSI 問い合わせデータまたはチェンジャー デバイスの SCSI 非同等を掲載しています。
 

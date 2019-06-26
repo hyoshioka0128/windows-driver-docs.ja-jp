@@ -14,12 +14,12 @@ keywords:
 - PINNAME_VIDEO_STILL
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ca096532db207df77cfa9f430bab9ca81bb14def
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 145c0d2baf0638130bc11efc3b616f69415bffc7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387929"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386665"
 ---
 # <a name="capture-preview-and-still-category"></a>キャプチャ、プレビュー、静止画カテゴリ
 
@@ -60,17 +60,17 @@ ms.locfileid: "63387929"
 <tbody>
 <tr class="odd">
 <td><p><strong>DataRange 構造体</strong></p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff567628" data-raw-source="[&lt;strong&gt;KS_DATARANGE_VIDEO&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567628)"><strong>KS_DATARANGE_VIDEO</strong> </a> (フレームのみ)</p>
-<p><a href="https://msdn.microsoft.com/library/windows/hardware/ff567629" data-raw-source="[&lt;strong&gt;KS_DATARANGE_VIDEO2&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567629)"><strong>KS_DATARANGE_VIDEO2</strong> </a> (bob またはの設定を一元管理のフィールドまたはフレームを)</p>
-<p><a href="https://msdn.microsoft.com/library/windows/hardware/ff567353" data-raw-source="[&lt;strong&gt;KS_DATARANGE_MPEG1_VIDEO&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567353)"><strong>KS_DATARANGE_MPEG1_VIDEO</strong></a></p>
-<p><a href="https://msdn.microsoft.com/library/windows/hardware/ff567362" data-raw-source="[&lt;strong&gt;KS_DATARANGE_MPEG2_VIDEO&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567362)"><strong>KS_DATARANGE_MPEG2_VIDEO</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_datarange_video" data-raw-source="[&lt;strong&gt;KS_DATARANGE_VIDEO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_datarange_video)"><strong>KS_DATARANGE_VIDEO</strong> </a> (フレームのみ)</p>
+<p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_datarange_video2" data-raw-source="[&lt;strong&gt;KS_DATARANGE_VIDEO2&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_datarange_video2)"><strong>KS_DATARANGE_VIDEO2</strong> </a> (bob またはの設定を一元管理のフィールドまたはフレームを)</p>
+<p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_datarange_mpeg1_video" data-raw-source="[&lt;strong&gt;KS_DATARANGE_MPEG1_VIDEO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_datarange_mpeg1_video)"><strong>KS_DATARANGE_MPEG1_VIDEO</strong></a></p>
+<p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_datarange_mpeg2_video" data-raw-source="[&lt;strong&gt;KS_DATARANGE_MPEG2_VIDEO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_datarange_mpeg2_video)"><strong>KS_DATARANGE_MPEG2_VIDEO</strong></a></p></td>
 </tr>
 <tr class="even">
 <td><p><strong>DataFormat 構造体</strong></p></td>
 <td><p>KS_DATAFORMAT_VIDEO (フレームのみ)</p>
 <p>KS_DATAFORMAT_VIDEO2 (bob またはの設定を一元管理のフィールドまたはフレームを)</p>
-<p><a href="https://msdn.microsoft.com/library/windows/hardware/ff567658" data-raw-source="[&lt;strong&gt;KS_MPEG1VIDEOINFO&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567658)"><strong>KS_MPEG1VIDEOINFO</strong> </a> (用 MPEG1)</p>
-<p><a href="https://msdn.microsoft.com/library/windows/hardware/ff567667" data-raw-source="[&lt;strong&gt;KS_MPEGVIDEOINFO2&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567667)"><strong>KS_MPEGVIDEOINFO2</strong> </a> (用 MPEG2)</p></td>
+<p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_mpeg1videoinfo" data-raw-source="[&lt;strong&gt;KS_MPEG1VIDEOINFO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_mpeg1videoinfo)"><strong>KS_MPEG1VIDEOINFO</strong> </a> (用 MPEG1)</p>
+<p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_mpegvideoinfo2" data-raw-source="[&lt;strong&gt;KS_MPEGVIDEOINFO2&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_mpegvideoinfo2)"><strong>KS_MPEGVIDEOINFO2</strong> </a> (用 MPEG2)</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>主な形式の GUID</strong></p></td>
@@ -87,12 +87,12 @@ ms.locfileid: "63387929"
 </tr>
 <tr class="even">
 <td><p><strong>拡張のヘッダーのサイズ</strong></p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff567645" data-raw-source="[&lt;strong&gt;KS_FRAME_INFO&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567645)"><strong>KS_FRAME_INFO</strong> </a>場合 MPEG フォーマットではありません。 MPEG、形式の場合は 0 します。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_frame_info" data-raw-source="[&lt;strong&gt;KS_FRAME_INFO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_frame_info)"><strong>KS_FRAME_INFO</strong> </a>場合 MPEG フォーマットではありません。 MPEG、形式の場合は 0 します。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>必要なプロパティ セット</strong></p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff566568" data-raw-source="[KSPROPSETID_Connection](https://msdn.microsoft.com/library/windows/hardware/ff566568)">KSPROPSETID_Connection</a></p>
-<p><a href="https://msdn.microsoft.com/library/windows/hardware/ff567806" data-raw-source="[PROPSETID_VIDCAP_DROPPEDFRAMES](https://msdn.microsoft.com/library/windows/hardware/ff567806)">PROPSETID_VIDCAP_DROPPEDFRAMES</a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/kspropsetid-connection" data-raw-source="[KSPROPSETID_Connection](https://docs.microsoft.com/windows-hardware/drivers/stream/kspropsetid-connection)">KSPROPSETID_Connection</a></p>
+<p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/propsetid-vidcap-droppedframes" data-raw-source="[PROPSETID_VIDCAP_DROPPEDFRAMES](https://docs.microsoft.com/windows-hardware/drivers/stream/propsetid-vidcap-droppedframes)">PROPSETID_VIDCAP_DROPPEDFRAMES</a></p></td>
 </tr>
 <tr class="even">
 <td><p><strong>必要なイベントのセット</strong></p></td>

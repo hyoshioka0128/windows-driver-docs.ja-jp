@@ -7,12 +7,12 @@ keywords:
 - テクスチャ管理 WDK Direct3D、検証
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 629c742b29620f8670bc4974ad47107f8cb38bb8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5b3aad9defcd7bdde4ee29df6c799f8db3bfb4bd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345568"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372827"
 ---
 # <a name="multiple-texture-validation"></a>複数テクスチャの検証
 
@@ -20,7 +20,7 @@ ms.locfileid: "63345568"
 ## <span id="ddk_multiple_texture_validation_gg"></span><span id="DDK_MULTIPLE_TEXTURE_VALIDATION_GG"></span>
 
 
-現在のハードウェア実装されていません必ずしもすべての Direct3D が表すことができます。 アプリケーションでは、目的の描画モードを最初の設定と、呼び出し元によって、特定の描画操作を実行できるかどうかを決定、 **IDirect3DDevice7::ValidateDevice**メソッド。 ドライバーが初期化時およびサポートにその機能を正確に報告する必要があります[ **D3dValidateTextureStageState** ](https://msdn.microsoft.com/library/windows/hardware/ff549064)を検証するには、その機能を許可します。 検証では、TBLEND レベルで指定された操作についても説明します。 について**IDirect3DDevice7::ValidateDevice**、Direct3D SDK のドキュメントを参照してください。
+現在のハードウェア実装されていません必ずしもすべての Direct3D が表すことができます。 アプリケーションでは、目的の描画モードを最初の設定と、呼び出し元によって、特定の描画操作を実行できるかどうかを決定、 **IDirect3DDevice7::ValidateDevice**メソッド。 ドライバーが初期化時およびサポートにその機能を正確に報告する必要があります[ **D3dValidateTextureStageState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/nc-d3dhal-lpd3dhal_validatetexturestagestatecb)を検証するには、その機能を許可します。 検証では、TBLEND レベルで指定された操作についても説明します。 について**IDirect3DDevice7::ValidateDevice**、Direct3D SDK のドキュメントを参照してください。
 
 次の表に、リターン コードを**IDirect3DDevice7::ValidateDevice**します。
 

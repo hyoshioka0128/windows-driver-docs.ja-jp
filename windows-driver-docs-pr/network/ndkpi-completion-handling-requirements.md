@@ -4,12 +4,12 @@ description: NDK コンシューマーと NDK プロバイダーは、NDKPI 完�
 ms.assetid: 87150E2F-64F2-4EAB-A8B3-8E77622BE36C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dee818f02ecc86a1657aaa076875824fd9d84958
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4fda94936acd396fa2f60ba70ddc4a1eeb2f18b9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331334"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376771"
 ---
 # <a name="ndkpi-completion-handling-requirements"></a>NDKPI 完了処理要件
 
@@ -19,20 +19,20 @@ NDK コンシューマーと NDK プロバイダーは、NDKPI 完了処理す�
 ## <a name="the-rules-for-ndkgetcqresults-ndkgetcqresultsex-and-ndkarmcq-functions"></a>NdkGetCqResults、NdkGetCqResultsEx、NdkArmCq 関数のルール
 
 
-コンシューマーで同じ完了キュー (CQ) オブジェクトでこれらのプロバイダー関数への呼び出しは常にシリアル化 ([**NDK\_CQ**](https://msdn.microsoft.com/library/windows/hardware/hh439854))。
+コンシューマーで同じ完了キュー (CQ) オブジェクトでこれらのプロバイダー関数への呼び出しは常にシリアル化 ([**NDK\_CQ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndkpi/ns-ndkpi-_ndk_cq))。
 
--   *NdkGetCqResults* ([*NDK\_FN\_GET\_CQ\_RESULTS*](https://msdn.microsoft.com/library/windows/hardware/hh439891))
--   *NdkGetCqResultsEx* ([*NDK\_FN\_GET\_CQ\_RESULTS\_EX*](https://msdn.microsoft.com/library/windows/hardware/dn265506))
--   *NdkArmCq* ([*NDK\_FN\_ARM\_CQ*](https://msdn.microsoft.com/library/windows/hardware/hh439858))
+-   *NdkGetCqResults* ([*NDK\_FN\_GET\_CQ\_RESULTS*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndkpi/nc-ndkpi-ndk_fn_get_cq_results))
+-   *NdkGetCqResultsEx* ([*NDK\_FN\_GET\_CQ\_RESULTS\_EX*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndkpi/nc-ndkpi-ndk_fn_get_cq_results_ex))
+-   *NdkArmCq* ([*NDK\_FN\_ARM\_CQ*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndkpi/nc-ndkpi-ndk_fn_arm_cq))
 
 コンシューマーは決して同じプロバイダー関数を複数回呼び出す同時ことは決してを呼び出すこともこれらの関数の任意の組み合わせに同時に同じ CQ 複数のスレッドからだけでなく意味します。
 
-**NdkOperationTypeReceiveAndInvalidate**リモート結果として発生する完了*NdkSendAndInvalidate* ([*NDK\_FN\_送信\_AND\_INVALIDATE*](https://msdn.microsoft.com/library/windows/hardware/dn265507)) 呼び出しの取得を使用する必要がある*NdkGetCqResults* (いない*NdkGetCqResultsEx*n)。 これも、受信側で指定したトークンを無効にする必要がありますが、この無効化の受信側のコンシューマーに通知しない (コンシューマーが使用する必要があります*NdkGetCqResultsEx*この情報を取得する)。 以降、 *NdkInvalidate* ([*NDK\_FN\_INVALIDATE*](https://msdn.microsoft.com/library/windows/hardware/hh439901)) を通常どおり、同じトークンが失敗します。
+**NdkOperationTypeReceiveAndInvalidate**リモート結果として発生する完了*NdkSendAndInvalidate* ([*NDK\_FN\_送信\_AND\_INVALIDATE*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndkpi/nc-ndkpi-ndk_fn_send_and_invalidate)) 呼び出しの取得を使用する必要がある*NdkGetCqResults* (いない*NdkGetCqResultsEx*n)。 これも、受信側で指定したトークンを無効にする必要がありますが、この無効化の受信側のコンシューマーに通知しない (コンシューマーが使用する必要があります*NdkGetCqResultsEx*この情報を取得する)。 以降、 *NdkInvalidate* ([*NDK\_FN\_INVALIDATE*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndkpi/nc-ndkpi-ndk_fn_invalidate)) を通常どおり、同じトークンが失敗します。
 
 ## <a name="the-rules-for-notification-callbacks"></a>通知のコールバックの規則
 
 
-プロバイダーを呼び出す必要があります、 *NdkCqNotificationCallback* ([*NDK\_FN\_CQ\_通知\_コールバック*](https://msdn.microsoft.com/library/windows/hardware/hh439870)) コールバックを 1 回だけ、コンシューマーが武装した後でのみ、 *NdkCqNotificationCallback*呼び出すことによってコールバック*NdkArmCq*します。 プロバイダーは、arm をクリアする必要がありますを呼び出すと、 *NdkCqNotificationCallback*コールバック時に呼び出し元の条件、 *NdkCqNotificationCallback*コールバックが発生する (つまり、要求したとき入力候補に入れられ、CQ)。
+プロバイダーを呼び出す必要があります、 *NdkCqNotificationCallback* ([*NDK\_FN\_CQ\_通知\_コールバック*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndkpi/nc-ndkpi-ndk_fn_cq_notification_callback)) コールバックを 1 回だけ、コンシューマーが武装した後でのみ、 *NdkCqNotificationCallback*呼び出すことによってコールバック*NdkArmCq*します。 プロバイダーは、arm をクリアする必要がありますを呼び出すと、 *NdkCqNotificationCallback*コールバック時に呼び出し元の条件、 *NdkCqNotificationCallback*コールバックが発生する (つまり、要求したとき入力候補に入れられ、CQ)。
 
 あるかどうか、CQ に既に存在する入力候補、コンシューマーを呼び出すと*NdkArmCq*プロバイダーは次のように動作します。
 

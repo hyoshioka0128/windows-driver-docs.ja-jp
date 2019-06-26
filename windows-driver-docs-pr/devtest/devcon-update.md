@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2922b2e9a0cd45183bf56d1b4145437133f1d956
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c6a6eb4e267c054a8c9ae92008b2a67ac439f2db
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346997"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371525"
 ---
 # <a name="devcon-update"></a>DevCon Update
 
@@ -38,11 +38,11 @@ ms.locfileid: "63346997"
 更新プログラムで使用される INF (情報) ファイルの完全なパスとファイル名を指定します。 パスを省略した場合、DevCon ファイルが現在のディレクトリがある前提としています。
 
 <span id="_______HardwareID______"></span><span id="_______hardwareid______"></span><span id="_______HARDWAREID______"></span> *HardwareID*   
-指定されたハードウェア ID を持つデバイスのドライバーの更新プログラム このコマンドで指定されたハードウェア ID では、デバイスのハードウェア ID を完全に一致する必要があります。 パターンが有効ではありません。 単一引用符文字を入力しないでください (**'**) をリテラル値を示します。
+指定されたハードウェア ID を持つデバイスのドライバーの更新プログラム このコマンドで指定されたハードウェア ID では、デバイスのハードウェア ID を完全に一致する必要があります。 パターンが有効ではありません。 単一引用符文字を入力しないでください ( **'** ) をリテラル値を示します。
 
 ### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>コメント
 
-**DevCon 更新**操作は、それらのドライバーが古いまたは最新のドライバーや別の INF ファイル内のドライバーよりも小さい適切な場合でも、指定した INF ファイルで最も適切なドライバーを更新を強制します。 詳細については、次を参照してください。[セットアップによるドライバーの選択](https://msdn.microsoft.com/library/windows/hardware/ff546228)します。
+**DevCon 更新**操作は、それらのドライバーが古いまたは最新のドライバーや別の INF ファイル内のドライバーよりも小さい適切な場合でも、指定した INF ファイルで最も適切なドライバーを更新を強制します。 詳細については、次を参照してください。[セットアップによるドライバーの選択](https://docs.microsoft.com/windows-hardware/drivers/install/how-setup-selects-drivers)します。
 
 使用することはできません、 **DevCon 更新**存在デバイス用のドライバーを更新するコマンド。
 

@@ -12,19 +12,19 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: afe2572d2241d694e64d9ad860a2a5a85c7060b6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5375092c38ca70da652fd98d53e45fa8fafb91f2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348698"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374210"
 ---
 # <a name="scanhardware-xml-element"></a>scanHardware XML 要素
 
 
-\[DIFx は非推奨、詳細については、「 [DIFx ガイドライン](https://msdn.microsoft.com/windows/hardware/drivers/install/difx-guidelines)します。\]
+\[DIFx は非推奨、詳細については、「 [DIFx ガイドライン](https://docs.microsoft.com/windows-hardware/drivers/install/difx-guidelines)します。\]
 
-**ScanHardware** XML 要素が空の要素を設定する、 **scanHardware**フラグをオンにします。 DPInst をインストールするを構成してこのフラグをオンに設定、[ドライバー パッケージ](https://msdn.microsoft.com/library/windows/hardware/ff544840)ドライバー パッケージに一致するコンピューターで構成されているデバイスとドライバー パッケージが適している場合にのみ、プラグ アンド プレイ (PnP) 関数ドライバー、デバイスに現在インストールされているドライバー パッケージとデバイスです。
+**ScanHardware** XML 要素が空の要素を設定する、 **scanHardware**フラグをオンにします。 DPInst をインストールするを構成してこのフラグをオンに設定、[ドライバー パッケージ](https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages)ドライバー パッケージに一致するコンピューターで構成されているデバイスとドライバー パッケージが適している場合にのみ、プラグ アンド プレイ (PnP) 関数ドライバー、デバイスに現在インストールされているドライバー パッケージとデバイスです。
 
 ### <a name="element-tag"></a>要素タグ
 
@@ -67,7 +67,7 @@ ms.locfileid: "63348698"
 
 ### <a href="" id="comments"></a>「解説」
 
-既定で、 **scanHardware**フラグが OFF に設定します。 設定することができます、 **scanHardware**を ON にフラグを含めることによって、 **scanHardware** XML 要素の子要素として、 **dpinst** DPInst 記述子ファイル、またはを使用して XML 要素、**/sh** コマンド ライン スイッチ。
+既定で、 **scanHardware**フラグが OFF に設定します。 設定することができます、 **scanHardware**を ON にフラグを含めることによって、 **scanHardware** XML 要素の子要素として、 **dpinst** DPInst 記述子ファイル、またはを使用して XML 要素、 **/sh** コマンド ライン スイッチ。
 
 次のコード例に示します、 **scanHardware**要素。
 

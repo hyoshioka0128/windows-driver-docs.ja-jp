@@ -10,12 +10,12 @@ keywords:
 - PDEV WDK GDI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: feed077997c562dc0248f53040fffc31987dfdc0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 507c77f87ddd0e2852d1647ba0b1d0355b550ea6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342371"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375800"
 ---
 # <a name="gdi-as-a-rendering-engine"></a>レンダリング エンジンとしての GDI
 
@@ -25,7 +25,7 @@ ms.locfileid: "63342371"
 
 レンダリング操作では、ドライバーを有効する必要があります最初、*画面*各*PDEV*構造体が有効になっています。 PDEV は、物理デバイスの論理表現です。 ハードウェアは、GDI 標準形式のビットマップとして設定できる場合、は、一部またはすべてのビットマップの画面に描画する GDI を使用できます。 GDI も処理できる高度な[ハーフトーン](gdi-halftoning-capabilities.md)します。
 
-有効化について*PDEVs*サーフェスを参照してください、 [ **DrvEnablePDEV** ](https://msdn.microsoft.com/library/windows/hardware/ff556211)と[ **DrvEnableSurface**](https://msdn.microsoft.com/library/windows/hardware/ff556214)関数。
+有効化について*PDEVs*サーフェスを参照してください、 [ **DrvEnablePDEV** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvenablepdev)と[ **DrvEnableSurface**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvenablesurface)関数。
 
  
 

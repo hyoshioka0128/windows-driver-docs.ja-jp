@@ -11,12 +11,12 @@ keywords:
 - ワイヤレス ディスプレイ Miracast ユーザー モード ドライバーによって実装される関数
 ms.date: 10/12/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f2f85fb73276b65a3302a432949e077bc9f52d6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: df9384f0b556cdbf83b1c48f554e6b2f00e335e6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572774"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386229"
 ---
 # <a name="wireless-displays-miracast"></a>ワイヤレス ディスプレイ (Miracast)
 
@@ -97,11 +97,11 @@ Miracast 表示のコールバック関数へのポインターが返されま�
 
 これらの追加のユーザー モードの構造および列挙体 Miracast ディスプレイをサポートし、新規または Windows 8.1 の更新。
 
--   [**DISPLAYCONFIG\_ターゲット\_ベース\_型**](https://msdn.microsoft.com/library/windows/hardware/dn362043) (新規)
--   [**DISPLAYCONFIG\_ビデオ\_信号\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff554007) (**AdditionalSignalInfo**子構造の追加)
--   [**DISPLAYCONFIG\_デバイス\_情報\_型**](https://msdn.microsoft.com/library/windows/hardware/ff553924) (**DISPLAYCONFIG\_デバイス\_情報\_取得\_ターゲット\_基本\_型**定数の追加)
--   [**D3DKMDT\_ビデオ\_信号\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff546625) (**AdditionalSignalInfo**子構造の追加)
--   [**DISPLAYCONFIG\_デバイス\_情報\_型**](https://msdn.microsoft.com/library/windows/hardware/ff553924) (**DISPLAYCONFIG\_デバイス\_情報\_取得\_ターゲット\_基本\_型**定数の追加)
+-   [**DISPLAYCONFIG\_ターゲット\_ベース\_型**](https://docs.microsoft.com/windows/desktop/api/wingdi/ns-wingdi-displayconfig_target_base_type) (新規)
+-   [**DISPLAYCONFIG\_ビデオ\_信号\_情報**](https://docs.microsoft.com/windows/desktop/api/wingdi/ns-wingdi-displayconfig_video_signal_info) (**AdditionalSignalInfo**子構造の追加)
+-   [**DISPLAYCONFIG\_デバイス\_情報\_型**](https://docs.microsoft.com/windows/desktop/api/wingdi/ne-wingdi-displayconfig_device_info_type) (**DISPLAYCONFIG\_デバイス\_情報\_取得\_ターゲット\_基本\_型**定数の追加)
+-   [**D3DKMDT\_ビデオ\_信号\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmdt/ns-d3dkmdt-_d3dkmdt_video_signal_info) (**AdditionalSignalInfo**子構造の追加)
+-   [**DISPLAYCONFIG\_デバイス\_情報\_型**](https://docs.microsoft.com/windows/desktop/api/wingdi/ne-wingdi-displayconfig_device_info_type) (**DISPLAYCONFIG\_デバイス\_情報\_取得\_ターゲット\_基本\_型**定数の追加)
 
 ### <a name="kernel-mode-ddis"></a>カーネル モード Ddi
 
@@ -136,12 +136,12 @@ Miracast インターフェイスの関数へのポインターが返されま�
 
 これらの追加のカーネル モードの構造および列挙体 Miracast ディスプレイをサポートし、新規または Windows 8.1 の更新。
 
--   [**DXGK\_MIRACAST\_キャップ**](https://msdn.microsoft.com/library/windows/hardware/dn322054)
--   [**D3DKMDT\_ビデオ\_出力\_テクノロジ**](https://msdn.microsoft.com/library/windows/hardware/ff546605) (**D3DKMDT\_VOT\_MIRACAST**定数の追加)
--   [**D3DKMDT\_ビデオ\_信号\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff546625) (**AdditionalSignalInfo**子構造の追加)
--   [**DXGK\_子\_状態**](https://msdn.microsoft.com/library/windows/hardware/ff561010) (**Miracast**子構造の追加)
--   [**DXGK\_子\_状態\_型**](https://msdn.microsoft.com/library/windows/hardware/ff561015) (**StatusMiracast**定数の追加)
--   [**DXGKARGCB\_通知\_INTERRUPT\_データ**](https://msdn.microsoft.com/library/windows/hardware/ff557538) (**MiracastEncodeChunkCompleted**子構造の追加)
+-   [**DXGK\_MIRACAST\_キャップ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/ns-dispmprt-_dxgk_miracast_caps)
+-   [**D3DKMDT\_ビデオ\_出力\_テクノロジ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmdt/ne-d3dkmdt-_d3dkmdt_video_output_technology) (**D3DKMDT\_VOT\_MIRACAST**定数の追加)
+-   [**D3DKMDT\_ビデオ\_信号\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmdt/ns-d3dkmdt-_d3dkmdt_video_signal_info) (**AdditionalSignalInfo**子構造の追加)
+-   [**DXGK\_子\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/ns-dispmprt-_dxgk_child_status) (**Miracast**子構造の追加)
+-   [**DXGK\_子\_状態\_型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/ne-dispmprt-_dxgk_child_status_type) (**StatusMiracast**定数の追加)
+-   [**DXGKARGCB\_通知\_INTERRUPT\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgkargcb_notify_interrupt_data) (**MiracastEncodeChunkCompleted**子構造の追加)
 
  
 
