@@ -1,15 +1,17 @@
 ---
 title: IFS の参照
-description: IFS リファレンスのページが含まれています。
-ms.date: 01/10/2018
+description: 追加のファイル システムに関連するリファレンス ページが含まれています。
+ms.date: 05/31/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 00969e9292c57c95dbecf6c13ec9ef675424d82e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3b7fb3affa49cc05ee1b709a1ff449445f2b0797
+ms.sourcegitcommit: 95e3fd15d9c00a341e774d58a927856d750a35e8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351150"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67410019"
 ---
-# <a name="reference"></a>リファレンス
+# <a name="additional-reference"></a>その他の参照情報
 
-このセクションには、IFS リファレンスのページが含まれています。
+ファイル システムに関連する開発に関連するほとんどのリファレンス ページにある[ファイル システム](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_ifsk/)で、[プログラミング リファレンスには、Windows Driver Kit (WDK)](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/)します。
+
+このセクションには、追加の参照ページが含まれます。 上記のシステム セクションにリンク ファイルの下にある最終的に移行されます。

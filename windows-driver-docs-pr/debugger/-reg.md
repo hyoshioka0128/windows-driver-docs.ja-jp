@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 15f071d84fa553899823c22d463db4ad51cd984d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 516c16fd216e3e39759848a6138a49e53bdf3d7d
+ms.sourcegitcommit: 16cd0355b36a6bf61d9b6685c4ea62acb98ed70d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63338919"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67406177"
 ---
 # <a name="reg"></a>!reg
 
@@ -92,7 +92,7 @@ Hive のセキュリティのキャッシュを表示します。 *HiveAddress*�
 <span id="_______hashindex_______HiveAddress_HashKey______"></span><span id="_______hashindex_______hiveaddress_hashkey______"></span><span id="_______HASHINDEX_______HIVEADDRESS_HASHKEY______"></span> **hashindex** **** \[*HiveAddress*\] **** *HashKey*   
 ハッシュ キーのハッシュ インデックスのエントリを計算します。 *HiveAddress*ハイブのアドレスを指定します。 *HashKey*キーを指定します。
 
-**注***HiveAddress* 7 以降、ターゲット コンピューターは Windows を実行している場合は必須です。
+**注** *HiveAddress* 7 以降、ターゲット コンピューターは Windows を実行している場合は必須です。
 
 
 

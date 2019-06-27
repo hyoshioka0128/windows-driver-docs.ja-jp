@@ -1,5 +1,5 @@
 ---
-title: バグ チェック コールバック ルーチンの記述
+title: バグ チェックのためのコールバック ルーチンを記述します。
 description: バグ チェック コールバック ルーチンの記述
 ms.assetid: 62aefe67-e197-4c45-b994-19bd7369dbc1
 keywords:
@@ -10,30 +10,33 @@ keywords:
 - BugCheckCallback
 ms.date: 05/02/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 98e5e77bf01984311b0c96d6f2a768cd274c00bd
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b19f4e48fddc4f9550290dedd3776feb422c77f7
+ms.sourcegitcommit: 95e3fd15d9c00a341e774d58a927856d750a35e8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67374161"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67410010"
 ---
 # <a name="writing-a-bug-check-reason-callback-routine"></a>バグ チェックのためのコールバック ルーチンを記述します。
 
-ドライバーは、システムのバグ チェックが発行するときに実行されるコールバック ルーチンを登録できます。 ドライバーは、バグ チェック コールバック ルーチンを使用して、自分のデバイスを既知の状態にリセットします。
+ドライバーが必要に応じて指定できます、 [ *KBUGCHECK_REASON_CALLBACK_ROUTINE* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kbugcheck_reason_callback_routine)クラッシュ ダンプの後、システムが呼び出すコールバック関数は、ファイルが書き込まれます。
 
-Windows でシステムの呼び出し、 [ *KBUGCHECK_REASON_CALLBACK_ROUTINE* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kbugcheck_reason_callback_routine)クラッシュ ダンプ ファイルが書き込まれた後に、コールバック関数。
+> [!NOTE]
+> この記事では、バグのチェックをについて説明します*理由*コールバック ルーチン、および not、 [ *KBUGCHECK_CALLBACK_ROUTINE* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kbugcheck_callback_routine)コールバック関数。
 
-クラッシュ ダンプ ファイルをセカンダリ データを書き込む、KBUGCHECK_REASON_CALLBACK_ROUTINE を使用できます。
- 
-ドライバーは、クラッシュ ダンプ ファイルにドライバー固有のデータ ページを追加の KBUGCHECK_REASON_CALLBACK_ROUTINE を実装できます。 登録して、コールバックの削除には、ドライバーは、次のルーチンを使用します。
+このコールバックで、ドライバーでは次のことができます。
 
-* [**KeRegisterBugCheckReasonCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keregisterbugcheckcallback)
-* [**KeDeregisterBugCheckReasonCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kederegisterbugcheckcallback)
+* ドライバー固有のデータをクラッシュ ダンプ ファイルに追加します。
+* デバイスを既知の状態をリセットします。
 
-[ *KBUGCHECK_CALLBACK_REASON 列挙*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ne-wdm-_kbugcheck_callback_reason)コールバック ルーチンの種類を指定します。
+登録およびコールバックを削除するには、次のルーチンを使用します。
+
+* [**KeRegisterBugCheckReasonCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keregisterbugcheckreasoncallback)
+* [**KeDeregisterBugCheckReasonCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kederegisterbugcheckreasoncallback)
+
+基づく動作を変更すると、このコールバックの型がオーバー ロードされた、 [ **KBUGCHECK_CALLBACK_REASON** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ne-wdm-_kbugcheck_callback_reason)登録時に指定された定数値。  この記事では、さまざまな使用シナリオについて説明します。
 
 バグ チェックのデータの詳細については、次を参照してください。[バグ チェック コールバックのデータの読み取り](https://docs.microsoft.com/windows-hardware/drivers/debugger/reading-bug-check-callback-data)します。
-
 
 ## <a name="bug-check-callback-routine-restrictions"></a>バグ チェック コールバックの日常的な制限事項
 
@@ -41,19 +44,16 @@ IRQL でバグ チェック コールバック ルーチンが実行される高
 
 バグ チェック コールバック ルーチンことはできません。
 
-- メモリの割り当て
-
-- ページング可能なメモリのアクセス
-
-- すべての同期機構を使用します。
-
-- IRQL で実行する必要がある任意のルーチンを呼び出すディスパッチ =\_レベル以下
+* メモリの割り当て
+* ページング可能なメモリのアクセス
+* すべての同期機構を使用します。
+* IRQL で実行する必要がある任意のルーチンを呼び出すディスパッチ =\_レベル以下
 
 バグ チェック コールバック ルーチンのため同期は必要ありません、中断せずに実行することが保証されます。 (バグ チェック ルーチンが任意の同期機構を使用している場合、システム デッドロックが発生します。)
 
 ドライバーのバグ チェック コールバック ルーチンが安全に使用できます、**読み取り\_ポート\_<em>XXX</em>** 、**読み取り\_登録\_<em>XXX</em>** 、**書き込み\_ポート\_<em>XXX</em>** 、および**書き込み\_レジスタ\_ <em>XXX</em>** ドライバーのデバイスと通信するルーチン。 (これらのルーチンの詳細については、次を参照してください[ハードウェア アブストラクション レイヤー ルーチン](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff546644(v=vs.85))。)。
 
-## <a name="implementing-kbcallbackaddpages-callback-routine"></a>KbCallbackAddPages コールバック ルーチンを実装します。
+## <a name="implementing-a-kbcallbackaddpages-callback-routine"></a>KbCallbackAddPages コールバック ルーチンを実装します。
 
 カーネル モード ドライバーを実装できる、 [ *KBUGCHECK_REASON_CALLBACK_ROUTINE* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kbugcheck_reason_callback_routine)型のコールバック関数<i>KbCallbackAddPages</i>がクラッシュするデータの 1 つまたは複数のページを追加するにはバグ チェックが発生した場合にファイルをダンプします。 ドライバーの呼び出しに、オペレーティング システムをこのルーチンを登録する、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keregisterbugcheckreasoncallback">KeRegisterBugCheckReasonCallback</a>ルーチン。 ドライバーをアンロードする前に呼び出す必要があります、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kederegisterbugcheckreasoncallback">KeDeregisterBugCheckReasonCallback</a>ルーチン登録を削除します。
 
@@ -83,7 +83,7 @@ A <i>KbCallbackAddPages</i>ルーチンは非常に制限されてが実行で�
 
 A <i>KbCallbackDumpIo</i>ルーチンがかかることがアクションで厳密に制限されています。 詳細については、このトピックの「バグ チェック コールバック日常的な制限事項」を参照してください。
 
-## <a name="implementing-kbcallbacksecondarydumpdata"></a>KbCallbackSecondaryDumpData を実装します。
+## <a name="implementing-a-kbcallbacksecondarydumpdata-routine"></a>KbCallbackSecondaryDumpData ルーチンを実装します。
 
 カーネル モード ドライバーを実装できる、 [ *KBUGCHECK_REASON_CALLBACK_ROUTINE* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kbugcheck_reason_callback_routine)型のコールバック関数<i>KbCallbackSecondaryDumpData</i>に追加するデータを提供するにはクラッシュ ダンプ ファイル。
 
@@ -106,7 +106,71 @@ A <i>KbCallbackDumpIo</i>ルーチンがかかることがアクションで厳�
 
 A <i>KbCallbackSecondaryDumpData</i>ルーチンは非常に制限されてが実行できるアクションにします。 詳細については、このトピックの「バグ チェック コールバック日常的な制限事項」を参照してください。
 
+## <a name="implementing-a-kbcallbacktriagedumpdata-routine"></a>KbCallbackTriageDumpData ルーチンを実装します。
 
+Windows 10、バージョンは 1809 および Windows Server 2019 以降、カーネル モード ドライバーを実装できます、 [ *KBUGCHECK_REASON_CALLBACK_ROUTINE* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kbugcheck_reason_callback_routine)型のコールバック関数*KbCallbackTriageDumpData*仮想メモリの範囲を分割したミニダンプ ファイルに追加します。  ダンプのデータが記載されて、 [ **KBUGCHECK_TRIAGE_DUMP_DATA** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_kbugcheck_triage_dump_data)構造体。
 
+次の例では、ドライバーは、トリアージ ダンプのアレイを構成し、コールバックの最小限の実装を登録し。
+
+```cpp
+// Globals 
+ 
+KBUGCHECK_REASON_CALLBACK_RECORD ExampleBugcheckCallbackRecord; 
+PKTRIAGE_DUMP_DATA_ARRAY gTriageDumpDataArray; 
+ 
+//  call this register function from DriverInit, etc.
+ 
+VOID ExampleRegisterTriageDataCallbacks() 
+{ 
+ 
+    // 
+    // Allocate a triage dump array in the non-paged pool. 
+    // 
+ 
+gTriageDumpDataArray = 
+    (PKTRIAGE_DUMP_DATA_ARRAY)ExAllocatePoolWithTag(NonPagedPoolNx, 2*PAGE_SIZE, "Xmpl"); 
+ 
+    // 
+    // Initialize the dump data block array. 
+    // 
+ 
+    KeInitializeTriageDumpDataArray( gTriageDumpDataArray, 2*PAGE_SIZE, "Example"); 
+ 
+    KeInitializeCallbackRecord( &ExampleBugcheckCallbackRecord ); 
+ 
+    KeRegisterBugCheckReasonCallback( 
+        &ExampleBugCheckCallbackRecord, 
+        ExampleBugCheckCallbackRoutine, 
+        KbCallbackTriageDumpData, 
+        "Example" 
+        ); 
+} 
+ 
+// Callback function 
+ 
+VOID 
+ExampleBugCheckCallbackRoutine( 
+    KBUGCHECK_CALLBACK_REASON Reason, 
+    PKBUGCHECK_REASON_CALLBACK_RECORD Record, 
+    PVOID Data, 
+    ULONG Length 
+    ) 
+{ 
+    PKBUGCHECK_TRIAGE_DUMP_DATA DumpData; 
+    NTSTATUS Status; 
+ 
+    DumpData = (PKBUGCHECK_TRIAGE_DUMP_DATA) Data; 
+ 
+    Status = KeAddTriageDumpDataBlock(gTriageDumpDataArray, gImportant, SizeofGImportant); 
+ 
+    // Pass our arrays back 
+ 
+    if (NT_SUCCESS(Status)) { 
+        DumpData->RequiredDataArray = gTriageDumpDataArray; 
+    } 
+ 
+    return; 
+}
+```
 
 
