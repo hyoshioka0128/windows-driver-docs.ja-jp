@@ -4,12 +4,12 @@ description: プリンター拡張アプリは、ユーザーが Windows デス�
 ms.assetid: D617A897-D93E-4006-B42D-923CA7F29D7E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b4ed731846692f7a79cb69c256a396918be138f0
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: 3a478fab0b2e59d575012a5a07974e75ae176aca
+ms.sourcegitcommit: 241983a8f5cbdb4f27914278d5e166727edecf3c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67393080"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67420004"
 ---
 # <a name="printer-extensions"></a>プリンター拡張機能
 
@@ -145,7 +145,7 @@ mgr.EnableEvents(new Guid(PrinterDriverID1));
 
 - Ngen を使用すると、インストール時にネイティブ イメージを生成します。 詳細については、次を参照してください。[ネイティブ イメージ ジェネレーター](https://docs.microsoft.com/dotnet/framework/tools/ngen-exe-native-image-generator)します。
 
-- パフォーマンス測定ツールを使用すると、読み込みのパフォーマンスの問題を検索できます。 詳細については、次を参照してください。 [Windows パフォーマンス分析ツール](https://msdn.microsoft.com/)します。
+- パフォーマンス測定ツールを使用すると、読み込みのパフォーマンスの問題を検索できます。 詳細については、次を参照してください。 [Windows パフォーマンス分析ツール](https://docs.microsoft.com/windows-hardware/test/wpt/)します。
 
 ### <a name="driverevent-handler"></a>DriverEvent ハンドラー
 
@@ -338,4 +338,4 @@ OnDriverEvent の呼び出しの後のプリンター拡張は、UI を初期化
 
 [プリンター拡張機能のサンプル](https://go.microsoft.com/fwlink/p/?LinkId=617945)
 
-[Windows パフォーマンス分析ツール](https://msdn.microsoft.com/)
+[Windows パフォーマンス分析ツール](https://docs.microsoft.com/windows-hardware/test/wpt/)

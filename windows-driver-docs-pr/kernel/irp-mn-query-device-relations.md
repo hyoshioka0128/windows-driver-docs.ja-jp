@@ -6,12 +6,12 @@ ms.assetid: 32437c5a-ad92-433c-8255-83775751a44d
 keywords:
 - IRP_MN_QUERY_DEVICE_RELATIONS カーネル モード ドライバーのアーキテクチャ
 ms.localizationpriority: medium
-ms.openlocfilehash: 6157d5924730f24258b1d989e6136d3c57794a89
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6e655cbf8e96102d7a3b388eb7c0990ab0863d41
+ms.sourcegitcommit: 46654c090f937923d9712de114fdebe7deffeaaf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383299"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67427694"
 ---
 # <a name="irpmnquerydevicerelations"></a>IRP\_MN\_クエリ\_デバイス\_リレーション
 
@@ -149,7 +149,7 @@ PnP マネージャーの問題、 **PowerRelations** 、デバイスのドラ�
 
 このクエリに応答して、ターゲット デバイス (クエリの対象となっているデバイス) のドライバーが提供する**デバイス\_リレーション**する必要があるその他のデバイスの Pdo へのポインターを含む構造体電源マネージャーで前に、ターゲット デバイスの電源をオンします。 逆に、ターゲット デバイスがオフにした後にのみこれらの他のデバイスをオフにする必要があります。 電源マネージャーは、これらのデバイスが有効になっているオンとオフを正しい順序で保証するために、クエリからの情報を使用します。
 
-この順序は保証と、S1、S2、S3 の間の遷移を含むグローバル システム スリープ状態遷移にのみ適用されます (*スリープ*)、S4 (*休止*)、および S5 (*シャットダウン*)システム電源の状態。 **PowerRelations**場合、保証は適用されませんを順序ターゲット デバイスまたはその他のデバイスが PDO が指定されて、 **PowerRelations**クエリは、低電力 Dx デバイスとの間の遷移を実行します。システムが、S0 のままの状態の電源 (*を実行している*) システムの状態。
+この順序は保証と、S1、S2、S3 の間の遷移を含むグローバル システム スリープ状態遷移にのみ適用されます (*スリープ*)、S4 (*休止*)、および S5 (*シャットダウン*)システム電源の状態。 **PowerRelations** Dx デバイスの電源の状態遷移には、システムが、S0 のままという保証は適用されませんを順序付け (*を実行している*) システムの場合を除く状態、[ダイレクト実行時の電源管理 (DFx)](https://docs.microsoft.com/windows-hardware/drivers/kernel/introduction-to-the-directed-power-management-framework)遷移します。
 
 ターゲット デバイスがデバイスの特別なファイルのパスにある場合 (など、ページング ファイル、休止状態ファイル、またはクラッシュ ダンプ ファイル)、処理する場合、ターゲット デバイスのドライバーは、追加の手順を実行する必要があります、 [ **IRP\_MN\_デバイス\_使用状況\_通知**](irp-mn-device-usage-notification.md)を IRP **InPath**は**TRUE**します。 このドライバーことを確認しますが Pdo は指定されたデバイス、 **PowerRelations**クエリは、特殊なファイルのデバイス パスになることもサポートできます。 このサポートを確認するには、ターゲット デバイスのドライバーを送信する必要があります最初、 **IRP\_MN\_デバイス\_使用状況\_通知**IRP をそれぞれのデバイス、およびこの IRP を指定する必要があります同じ**UsageNotification.Type**ターゲット デバイスとして。 この IRP を受信するすべてのデバイスが、成功状態コード IRP を完了する場合にのみ完全なターゲット デバイスのドライバーをことができますその**IRP\_MN\_デバイス\_使用状況\_通知**。IRP が正常にします。 それ以外の場合、このドライバーはエラー状態コードでは、この IRP を完了する必要があります。
 

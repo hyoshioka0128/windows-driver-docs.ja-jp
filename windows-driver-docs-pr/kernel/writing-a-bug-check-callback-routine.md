@@ -10,12 +10,12 @@ keywords:
 - BugCheckCallback
 ms.date: 05/02/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: b19f4e48fddc4f9550290dedd3776feb422c77f7
-ms.sourcegitcommit: 95e3fd15d9c00a341e774d58a927856d750a35e8
+ms.openlocfilehash: 0f53d6edc01d0bead99faaccc518c6d17d2e6eaa
+ms.sourcegitcommit: 61d5dccad989614313be2e59df6e08cd46364e76
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/27/2019
-ms.locfileid: "67410010"
+ms.locfileid: "67412219"
 ---
 # <a name="writing-a-bug-check-reason-callback-routine"></a>バグ チェックのためのコールバック ルーチンを記述します。
 
@@ -83,7 +83,7 @@ A <i>KbCallbackAddPages</i>ルーチンは非常に制限されてが実行で�
 
 A <i>KbCallbackDumpIo</i>ルーチンがかかることがアクションで厳密に制限されています。 詳細については、このトピックの「バグ チェック コールバック日常的な制限事項」を参照してください。
 
-## <a name="implementing-a-kbcallbacksecondarydumpdata-routine"></a>KbCallbackSecondaryDumpData ルーチンを実装します。
+## <a name="implementing-a-kbcallbacksecondarydumpdata-callback-routine"></a>KbCallbackSecondaryDumpData コールバック ルーチンを実装します。
 
 カーネル モード ドライバーを実装できる、 [ *KBUGCHECK_REASON_CALLBACK_ROUTINE* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kbugcheck_reason_callback_routine)型のコールバック関数<i>KbCallbackSecondaryDumpData</i>に追加するデータを提供するにはクラッシュ ダンプ ファイル。
 
@@ -106,7 +106,7 @@ A <i>KbCallbackDumpIo</i>ルーチンがかかることがアクションで厳�
 
 A <i>KbCallbackSecondaryDumpData</i>ルーチンは非常に制限されてが実行できるアクションにします。 詳細については、このトピックの「バグ チェック コールバック日常的な制限事項」を参照してください。
 
-## <a name="implementing-a-kbcallbacktriagedumpdata-routine"></a>KbCallbackTriageDumpData ルーチンを実装します。
+## <a name="implementing-a-kbcallbacktriagedumpdata-callback-routine"></a>KbCallbackTriageDumpData コールバック ルーチンを実装します。
 
 Windows 10、バージョンは 1809 および Windows Server 2019 以降、カーネル モード ドライバーを実装できます、 [ *KBUGCHECK_REASON_CALLBACK_ROUTINE* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kbugcheck_reason_callback_routine)型のコールバック関数*KbCallbackTriageDumpData*仮想メモリの範囲を分割したミニダンプ ファイルに追加します。  ダンプのデータが記載されて、 [ **KBUGCHECK_TRIAGE_DUMP_DATA** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_kbugcheck_triage_dump_data)構造体。
 
