@@ -11,12 +11,12 @@ keywords:
 - イベント ログ WDK WHEA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1788b6db8a6e6af67f789f582fb5a21a7fe77322
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: af9ba4cbe7d86f10285c774ddbe00a887d483d78
+ms.sourcegitcommit: cffd3bab903ac0a2412cc7df91584278e4fef179
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340698"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67467825"
 ---
 # <a name="querying-the-system-event-log-for-hardware-error-events"></a>ハードウェア エラー イベントに対するシステム イベント ログの照会
 
@@ -121,7 +121,7 @@ VOID QueryHwErrorEvents(VOID) {
 }
 ```
 
-**注**  のすべて、 **Evt * Xxx*** 関数と、EVT\_*XXX*に前の例で使用されていたデータ型が記載されている、 [Windows イベント ログ](https://go.microsoft.com/fwlink/p/?linkid=81187)Microsoft Windows SDK のドキュメント セクション。
+**注**  のすべて、 **Evt_Xxx_** 関数と、EVT\_*XXX*に前の例で使用されていたデータ型が記載されている、 [Windows イベント ログ](https://go.microsoft.com/fwlink/p/?linkid=81187)Microsoft Windows SDK のドキュメント セクション。
 
  
 
