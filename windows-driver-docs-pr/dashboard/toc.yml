@@ -52,7 +52,7 @@
           href: using-chids.md
         - name: 拡張 INF ファイルの使用
           href: submit-dashboard-extension-inf-files.md
-        - name: Windows のバージョンによってドライバーの配布を制限する
+        - name: ドライバーの配布を Windows のバージョンに基づいて制限または拡張する方法
           href: limit-driver-distribution.md
         - name: テスト配布用の公開
           href: publishing-for-test-distribution.md

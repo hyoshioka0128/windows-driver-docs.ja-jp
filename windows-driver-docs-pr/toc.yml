@@ -3,13 +3,11 @@
 - name: What's new in driver development
   href: what-s-new-in-driver-development.md
 - name: Windows Driver Kit (WDK) のダウンロード
-  items:
-    - name: Windows Driver Kit (WDK) のダウンロード
-      href: download-the-wdk.md
-    - name: 以前のバージョンの WDK のインストール
-      href: installing-preview-versions-wdk.md
-    - name: その他の WDK のダウンロード
-      href: other-wdk-downloads.md
+  href: download-the-wdk.md
+- name: 以前のバージョンの WDK のインストール
+  href: installing-preview-versions-wdk.md
+- name: その他の WDK のダウンロード
+  href: other-wdk-downloads.md
 - name: 起動ガイド
   href: bringup/index.md
 - name: ドライバーの開発、テスト、および展開
@@ -28,7 +26,7 @@
   href: debugger/index.md
 - name: Windows ストア デバイス アプリ
   href: devapps/index.md
-- name: デバイス テクノロジとドライバー テクノロジ
+- name: ドライバー テクノロジ
   items:
     - name: デバイス テクノロジとドライバー テクノロジ
       href: device-and-driver-technologies.md

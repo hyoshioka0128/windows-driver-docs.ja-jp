@@ -1356,7 +1356,7 @@
       href: defining-custom-error-types.md
     - name: エラー メッセージのソースとしての登録
       href: registering-as-a-source-of-error-messages.md
-    - name: バグ チェック コールバック ルーチンの記述
+    - name: バグ チェック理由コールバック ルーチンの記述
       href: writing-a-bug-check-callback-routine.md
     - name: セーフ文字列関数の使用
       href: using-safe-string-functions.md
