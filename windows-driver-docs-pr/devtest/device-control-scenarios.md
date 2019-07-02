@@ -10,12 +10,12 @@ keywords:
 - デバイス管理シナリオ WDK WSDBIT
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a23a22ab9de5580998f1bb990c479716dff1a7d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b7b65200abae6c0a230bc3333e8d37b8105aa7bf
+ms.sourcegitcommit: 289b5f97aff1b9ea1fefc9a8731e0fc16533073b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341672"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67492518"
 ---
 # <a name="device-control-scenarios"></a>デバイス制御のシナリオ
 
@@ -32,9 +32,9 @@ ms.locfileid: "63341672"
 
 呼び出し、 **OneWay**で SimpleService のメソッド。
 
--   **wsa:Action == http://schemas.example.org/SimpleService/OneWay**
+-   **wsa:Action == http:\//schemas.example.org/SimpleService/OneWay**
 
--   http://testdevice.interop/SimpleService1サービスが使用されます。
+-   Http:\//testdevice.interop/SimpleService1 サービスが使用されます。
 
 -   整数の入力が提供されます。
 
@@ -50,15 +50,15 @@ ms.locfileid: "63341672"
 
 呼び出し、 **TwoWay**で SimpleService のメソッド。
 
--   **wsa:Action == http://schemas.example.org/SimpleService/TwoWayRequest**
+-   **wsa:Action == http:\//schemas.example.org/SimpleService/TwoWayRequest**
 
--   http://testdevice.interop/SimpleService1サービスが使用されます。
+-   Http:\//testdevice.interop/SimpleService1 サービスが使用されます。
 
 -   2 つの整数の入力を指定します。
 
 使用して、クライアントに応答、 **TwoWayResponse**メソッド。
 
--   **wsa:Action == http://schemas.example.org/SimpleService/TwoWayResponse**
+-   **wsa:Action == http:\//schemas.example.org/SimpleService/TwoWayResponse**
 
 -   合計パラメーターは、2 つの入力パラメーターの合計から計算されます。
 
@@ -72,15 +72,15 @@ ms.locfileid: "63341672"
 
 呼び出し、**入力**で SimpleService のメソッド。
 
--   **wsa:Action == http://schemas.example.org/SimpleService/TypeCheckRequest**
+-   **wsa:Action == http:\//schemas.example.org/SimpleService/TypeCheckRequest**
 
--   http://testdevice.interop/SimpleService1サービスが使用されます。
+-   Http:\//testdevice.interop/SimpleService1 サービスが使用されます。
 
 -   ブール値、decimal、float、および一覧の**xs:anyURI**パラメーターを指定します。
 
 使用して、クライアントに応答、 **TypeCheckResponse**メソッド。
 
--   **wsa:Action == http://schemas.example.org/SimpleService/TypeCheckResponse**
+-   **wsa:Action == http:\//schemas.example.org/SimpleService/TypeCheckResponse**
 
 -   ブール値、decimal、float、および一覧の**xs:anyURI**パラメーターが返され、クライアントにエコー バックします。
 
@@ -94,15 +94,15 @@ ms.locfileid: "63341672"
 
 呼び出し、 **AnyCheck**で SimpleService のメソッド。
 
--   **wsa:Action == http://schemas.example.org/SimpleService/AnyCheckRequest**
+-   **wsa:Action == http:\//schemas.example.org/SimpleService/AnyCheckRequest**
 
--   http://testdevice.interop/SimpleService1サービスが使用されます
+-   Http:\//testdevice.interop/SimpleService1 サービスが使用されます
 
 -   任意の XML フラグメントは、パラメーターとして使用されます。
 
 使用して、クライアントに応答、 **TypeCheckResponse**メソッド。
 
--   **wsa:Action == http://schemas.example.org/SimpleService/AnyCheckResponse**
+-   **wsa:Action == http:\//schemas.example.org/SimpleService/AnyCheckResponse**
 
 -   任意の XML フラグメントが返され、クライアントにエコー バックします。
 

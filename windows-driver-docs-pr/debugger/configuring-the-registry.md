@@ -8,12 +8,12 @@ keywords:
 - Netsh と SymProxy
 ms.date: 03/12/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: e47fd16f420e3464a6cc1420aab93b94f8e8534a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c5c64a2a261410d16b1cec0395b68a46d2f3843c
+ms.sourcegitcommit: 2854c02cbe5b2c0010d0c64367cfe8dbd201d3f1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375585"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67499807"
 ---
 # <a name="configuring-the-registry"></a>レジストリの構成
 
@@ -78,9 +78,9 @@ HKLM/Software/Microsoft/Symbol Server Proxy
 
 **シンボル ストアの仮想ディレクトリのレジストリ キーを編集するには**
 
--   内容を編集**SymbolPath** SymProxy シンボル ストアで使用されるシンボル ストアのすべてを格納します。 使用されている 1 つ以上のシンボル ストアがある場合は、セミコロンで区切ります。 10 ストアの最大値が値ごとにサポートされています。 HTTP パスを含める必要があります、 **https:// プレフィックス**、UNC パスを含める必要があります、 **\\ \\**プレフィックス。
+-   内容を編集**SymbolPath** SymProxy シンボル ストアで使用されるシンボル ストアのすべてを格納します。 使用されている 1 つ以上のシンボル ストアがある場合は、セミコロンで区切ります。 10 ストアの最大値が値ごとにサポートされています。 HTTP パスを含める必要があります、 **https:// プレフィックス**、UNC パスを含める必要があります、 **\\ \\** プレフィックス。
 
-たとえば、仮想ディレクトリのいずれかと、シンボルが呼び出され、UNC ストアでは、アクセス対象のシンボル ストアが配置されている場合\\\\シンボル\\シンボルと HTTP ストア https://msdl.microsoft.com/download/symbols、次のレジストリの作成キー。
+たとえば、仮想ディレクトリのいずれかと、シンボルが呼び出され、UNC ストアでは、アクセス対象のシンボル ストアが配置されている場合\\\\シンボル\\シンボルと HTTP ストア https://msdl.microsoft.com/download/symbols 、次のレジストリの作成キー。
 
 ```reg
 HKLM/Software/Microsoft/Symbol Server Proxy/Web Directories/Symbols
@@ -247,17 +247,23 @@ HKLM/Software/Microsoft/Symbol Server Proxy
 <p>成功した場合、シンボル ファイルが返され、ミスを削除します。</p>
 <p>失敗した場合は、ミスは、新しいタイムアウト期間を開始する、現在の時刻 (UTC) で前方移動します。</p>
 <p>使用して、"Miss キャッシュ<em>"、ミスを監視するカウンター。</p>
-<p>• が指定されていない - (既定値) 300 秒/5 分</p>
-<p>• 0 – 機能を無効になっています</p>
-<p>• N – タイムアウト N 秒を継続します。</p></td>
+<p><ul>
+    <li>指定されていない (既定) - 300 秒/5 分</li>
+    <li>0 – 無効になっている機能</li>
+    <li>N – タイムアウト N 秒を継続します。</li>
+   </ul>
+</td>
 </tr>
 <tr class="even">
 <td align="left">MissAgeCheck</td>
 <td align="left"><p>ミスの有効期間の間の期間を確認します。 キャッシュ ミスがスキャンされ、MissAgeTimeout 秒経過したレコードが削除されます。</p>
 <p>現在の統計情報は、イベント ID 4 を使用して、イベント ログに保存されます。</p>
-<p>• が指定されていない - (既定値) 3600 秒/1 時間</p>
-<p>• 0 – 機能を無効になっています</p>
-<p>• N – N 秒のチェック間隔</p></td>
+<p><ul>
+    <li>指定されていない (既定) - 3600 (秒)/1 時間</li>
+    <li>0 – 無効になっている機能</li>
+    <li>N – N 秒のチェック間隔</li>
+   </ul>
+</td>
 </tr>
 <tr class="odd">
 <td align="left"><p>FailureTimeout</p>

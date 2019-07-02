@@ -4,12 +4,12 @@ description: このトピックでは、オーディオ処理オブジェクト 
 ms.assetid: 822FAF10-DAB3-48D1-B782-0C80B072D3FB
 ms.date: 06/19/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 7bf23da3cc25371f67ef39b62b7243f1dd819eb5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a34bf6b46e8420aa95d638c7a374abdf434fa8f1
+ms.sourcegitcommit: 2854c02cbe5b2c0010d0c64367cfe8dbd201d3f1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67359925"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67499800"
 ---
 # <a name="implementing-audio-processing-objects"></a>オーディオ処理オブジェクトの実装
 
@@ -48,23 +48,23 @@ APO を実装するには、Baseaudioprocessingobject.h ファイルで宣言さ
 -   を通じて渡されるオーディオ データのみを変更、APO その[ **IAudioProcessingObjectRT::APOProcess** ](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nf-audioenginebaseapo-iaudioprocessingobjectrt-apoprocess)ルーチン。 APO、KS トポロジを含む、基になる論理デバイスの設定は変更できません。
 -   IUnknown、だけでなく APOs は、次のインターフェイスを公開する必要があります。
 
-    • [IAudioProcessingObject](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nn-audioenginebaseapo-iaudioprocessingobject)します。 初期化とフォーマットのネゴシエーションなどのセットアップ タスクを処理するインターフェイスです。
+    - [IAudioProcessingObject](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nn-audioenginebaseapo-iaudioprocessingobject)します。 初期化とフォーマットのネゴシエーションなどのセットアップ タスクを処理するインターフェイスです。
 
-    • [IAudioProcessingObjectConfiguration](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nn-audioenginebaseapo-iaudioprocessingobjectconfiguration). 構成インターフェイスです。
+    - [IAudioProcessingObjectConfiguration](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nn-audioenginebaseapo-iaudioprocessingobjectconfiguration)します。 構成インターフェイスです。
 
-    • [IAudioProcessingObjectRT](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nn-audioenginebaseapo-iaudioprocessingobjectrt). オーディオの処理を行うリアルタイム インターフェイス。 リアルタイム処理のスレッドから呼び出すことができます。
+    - [IAudioProcessingObjectRT](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nn-audioenginebaseapo-iaudioprocessingobjectrt)します。 オーディオの処理を行うリアルタイム インターフェイス。 リアルタイム処理のスレッドから呼び出すことができます。
 
-    • [IAudioSystemEffects](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nn-audioenginebaseapo-iaudiosystemeffects)します。 インターフェイスをオーディオ エンジンは、システムの影響 APO として DLL を認識します。
+    - [IAudioSystemEffects](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nn-audioenginebaseapo-iaudiosystemeffects)します。 インターフェイスをオーディオ エンジンは、システムの影響 APO として DLL を認識します。
 
--   すべての APOs リアルタイム システムの互換性があります。 これによって、次のことが起こります。
+- すべての APOs リアルタイム システムの互換性があります。 これは次のことを意味します。
 
-    • リアルタイム インターフェイスのメンバーであるすべてのメソッドは、非ブロッキングのメンバーとして実装する必要があります。 する必要がありますいないのブロック、ページのメモリを使用して、または、ブロックしているシステム ルーチンを呼び出します。
+  - リアルタイムのインターフェイスのメンバーであるすべてのメソッドは、非ブロッキングのメンバーとして実装する必要があります。 する必要がありますいないのブロック、ページのメモリを使用して、または、ブロックしているシステム ルーチンを呼び出します。
 
-    •、APO によって処理されるすべてのバッファーは、非ページングをする必要があります。 すべてのコードと、プロセス パス内のデータは、非ページングする必要があります。
+  - APO によって処理されるすべてのバッファーは、非ページングである必要があります。 すべてのコードと、プロセス パス内のデータは、非ページングする必要があります。
 
-    • APOs は重要な待機時間をオーディオ処理チェーンに挿入する必要がありますはありません。
+  - APOs は重要な待機時間をオーディオ処理チェーンに挿入する必要がありますはありません。
 
--   カスタム APOs は IAudioProcessingObjectVBR インターフェイスを公開する必要があります。
+- カスタム APOs は IAudioProcessingObjectVBR インターフェイスを公開する必要があります。
 
 **注**  、必要なインターフェイスの詳細については、Windows キットで Audioenginebaseapo.h と Audioenginebaseapo.idl ファイルを参照してください\\&lt;ビルド番号&gt;\\ 。含める\\um フォルダー。
 

@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: fe270ca2f7e6fd79e87f418914becf893ec2c94d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 05933662a84f82ad7229fd85fbe718ba43683be4
+ms.sourcegitcommit: 289b5f97aff1b9ea1fefc9a8731e0fc16533073b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376093"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67492527"
 ---
 # <a name="dbgsrv-command-line-options"></a>DbgSrv のコマンドライン オプション
 
@@ -54,9 +54,9 @@ dbgsrv -?
 無視するコマンドラインの残りの部分をによりします。 このオプションは、アプリケーションをコマンドラインに不要なテキストを追加することがありますから DbgSrv を起動する場合に便利です。
 
 <span id="_______-pc______"></span><span id="_______-PC______"></span> **-pc**   
-無視するコマンドラインの残りの部分をによりします。 このオプションは、アプリケーションをコマンドラインに不要なテキストを追加することがありますから DbgSrv を起動する場合に便利です。 Pc が DbgSrv コマンドラインでの最後の要素の場合は、構文エラーが発生します。 Pc とは別に、この制限と同じですが、x。
+保留中のプロセスの作成と、「暗黙的なコマンド ライン」として使用するコマンドラインの残りの部分をによりします。 デバッガーが使用してこのプロセス サーバーに接続されている場合、このコマンドラインを使用は、"-cimp"。 たとえばを実行している```dbgsrv -t <ServerTransport> -pc notepad.exe```、し、実行```ntsd -premote <Transport> -cimp```ntsd dbgsrv に接続し、notepad.exe を起動すると、
 
-<span id="_______-_______"></span> **-?**   
+<span id="_______-_______"></span> **-?**    
 DbgSrv コマンドラインのヘルプ テキストを含むメッセージ ボックスが表示されます。
 
 DbgSrv の使用方法の詳細については、次を参照してください。[プロセス サーバー (ユーザー モード)](process-servers--user-mode-.md)します。

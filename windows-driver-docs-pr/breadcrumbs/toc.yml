@@ -28,7 +28,7 @@
             - name: Windows デバッグ ツール
               tocHref: /windows-hardware/drivers/debugger/
               topicHref: /windows-hardware/drivers/debugger/index
-            - name: デバイス テクノロジとドライバー テクノロジ
+            - name: ドライバー テクノロジ
               tocHref: /windows-hardware/drivers/device-and-driver-technologies/
               topicHref: /windows-hardware/drivers/device-and-driver-technologies
               items:

@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cf7de1608c61f3463f7c1381c10f35be56292597
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3a2deff3d2e6c91cc2b846c39643c9bd4c44c083
+ms.sourcegitcommit: 289b5f97aff1b9ea1fefc9a8731e0fc16533073b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347673"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67492505"
 ---
 # <a name="devcon-findall"></a>DevCon FindAll
 
@@ -31,18 +31,18 @@ ms.locfileid: "63347673"
 ## <a name="span-idddkdevconfindalltoolsspanspan-idddkdevconfindalltoolsspanparameters"></a><span id="ddk_devcon_findall_tools"></span><span id="DDK_DEVCON_FINDALL_TOOLS"></span>パラメーター
 
 
-<span id="________m___computer______"></span><span id="________M___COMPUTER______"></span> **m:\\\\**<em>コンピューター</em>   
+<span id="________m___computer______"></span><span id="________M___COMPUTER______"></span> **m:\\\\** <em>コンピューター</em>   
 指定したリモート コンピューター上のコマンドを実行します。 円記号が必要です。
 
 **注**DevCon コマンドをリモート コンピューターで実行する、グループ ポリシー設定がリモート コンピューターで実行するプラグ アンド プレイ サービスを許可する必要があります。 Windows Vista と Windows の以降のバージョンを実行しているコンピューターで、グループ ポリシーには、既定では、サービスへのリモート アクセスが無効にします。
 
 
 
-<span id="______________"></span> **\\***   
+<span id="______________"></span> **\\** *   
 コンピューター上のすべてのデバイスを表します。
 
 <span id="_______ID______"></span><span id="_______id______"></span> *ID*   
-ハードウェア ID、互換性 ID、またはデバイスのデバイス インスタンス ID のすべてまたは一部を指定します。 複数の Id を指定する場合は、各 ID の間にスペースを入力します。 アンパサンド文字を含む Id (**&**) 引用符で囲む必要があります。
+ハードウェア ID、互換性 ID、またはデバイスのデバイス インスタンス ID のすべてまたは一部を指定します。 複数の Id を指定する場合は、各 ID の間にスペースを入力します。 アンパサンド文字を含む Id ( **&** ) 引用符で囲む必要があります。
 
 次の特殊文字は、ID パラメーターを変更します。
 
@@ -72,11 +72,11 @@ ms.locfileid: "63347673"
 <td align="left"><p>リテラル文字列と一致する (正確に表示される)。 示すアスタリスクは、ID 名の一部であるし、たとえば、ワイルドカード文字ではないは、単一引用符を含む文字列の前に<strong>' * PNP0600</strong>ここで、* PNP0600 ハードウェア ID (アスタリスクを含む) です。</p></td>
 </tr>
 </tbody>
-</table>
+</table>  
 
 
 
-<span id="________class______"></span><span id="________CLASS______"></span> **=**<em>クラス</em>デバイスのデバイス セットアップ クラスを指定します。 等号 (=) (**=**) クラスの名前として文字列を識別します。
+<span id="________class______"></span><span id="________CLASS______"></span> **=** <em>クラス</em>デバイスのデバイス セットアップ クラスを指定します。 等号 (=) ( **=** ) クラスの名前として文字列を識別します。
 
 ハードウェア Id、互換性 Id、デバイス インスタンス Id、または ID パターンを次のクラス名を指定することもできます。 各 ID またはパターンの間にスペースを入力します。 DevCon は、指定した Id に一致するクラス内のデバイスを検索します。
 

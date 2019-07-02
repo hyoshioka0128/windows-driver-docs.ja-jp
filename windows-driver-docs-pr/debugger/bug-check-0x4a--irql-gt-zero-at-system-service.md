@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d69a5b67246dcd6276dafd30dbbe039c64e9fbb7
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6655eb5445c679cd5e2868dc1b6722dcda26d552
+ms.sourcegitcommit: 289b5f97aff1b9ea1fefc9a8731e0fc16533073b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367438"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67492533"
 ---
 # <a name="bug-check-0x4a-irqlgtzeroatsystemservice"></a>バグ チェック 0x4A:IRQL\_GT\_0\_で\_システム\_サービス
 
@@ -63,8 +63,9 @@ IRQL\_GT\_0\_で\_システム\_サービスのバグ チェックが 0x0000004A
 </tbody>
 </table>
 
- 
 
+## <a name="resolution"></a>解決方法 
+[ **! 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)バグ チェックに関する情報を表示拡張機能をデバッグおよび根本原因を突き止めるに役に立ちます。
  
 
  

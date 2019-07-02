@@ -12,12 +12,12 @@ keywords:
 - バスの相対メモリ領域の WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a58dfd09542b807bc7acfa707c4e2d7279d51496
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: be828c854982041d81a8334fa0502b6bc4a2f3d9
+ms.sourcegitcommit: 289b5f97aff1b9ea1fefc9a8731e0fc16533073b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386007"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67492535"
 ---
 # <a name="mapping-bus-relative-addresses-to-virtual-addresses"></a>バス相対アドレスの仮想アドレスへのマッピング
 
@@ -47,9 +47,9 @@ HAL がリソースにアクセスするデバイス (デバイスの登録) な
 
 ドライバーが受信すると、 [ **IRP\_MN\_停止\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-stop-device)または[ **IRP\_MN\_削除\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-remove-device)を呼び出して、マッピングをリリースにする必要があります、PnP マネージャーから要求[ **MmUnmapIoSpace** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmunmapiospace)のようなループ内で。 ドライバーは呼び出す必要がありますも**MmUnmapIoSpace**にする必要がありますが失敗した場合、 **IRP\_MN\_開始\_デバイス**要求。
 
-生のリソースの種類が、ドライバーを呼び出す必要がある HAL アクセス ルーチンを示します (**READ_REGISTER_* XXX * * *、**WRITE_REGISTER_* XXX * * *、**READ_PORT_* XXX * * *、**WRITE_PORT_* XXX * * *)。 ほとんどのドライバーは、ドライバー自体がリソースを要求またはドライバー開発者は、デバイスのハードウェアの性質、必要な型を知っているため、使用するこれらのルーチンの判断するために生のリソースの一覧を確認する必要はありません。
+生のリソースの種類が、ドライバーを呼び出す必要がある HAL アクセス ルーチンを示します (**読み取り\_登録\__XXX_** 、**書き込み\_レジスタ\__XXX_** 、**読み取り\_ポート\__XXX_** 、**書き込み\_ポート\_ _XXX_** )。 ほとんどのドライバーは、ドライバー自体がリソースを要求またはドライバー開発者は、デバイスのハードウェアの性質、必要な型を知っているため、使用するこれらのルーチンの判断するために生のリソースの一覧を確認する必要はありません。
 
- I/O 領域内のリソースの (**CmResourceTypePort**、 **CmResourceTypeInterrupt**、 **CmResourceTypeDma**)、ドライバーは、返されたの下位 32 ビットを使用する必要がありますリソースへのアクセス、デバイスなどを通じて、HAL の読み取りと書き込みの物理アドレス **READ_REGISTER_* XXX * * *、**WRITE_REGISTER_* XXX * * *、**READ_PORT_* * * XXX *、 **WRITE_PORT_ * XXX*** ルーチン。
+ I/O 領域内のリソースの (**CmResourceTypePort**、 **CmResourceTypeInterrupt**、 **CmResourceTypeDma**)、ドライバーは、返されたの下位 32 ビットを使用する必要がありますリソースへのアクセス、デバイスなどを通じて、HAL の読み取りと書き込みの物理アドレス**読み取り\_登録\__XXX_** 、**書き込み\_登録\__XXX_** 、**読み取り\_ポート\__XXX_** 、**書き込み\_ポート\__XXX_** ルーチン。
  
  
 

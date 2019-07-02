@@ -7,12 +7,12 @@ keywords:
 - シンボル、セットアップ
 ms.date: 10/12/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e861b78408f3a1fb5ef19c9e46d58fe09865c29
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5f861efa47e89d5d855609589ae6b025a9c044ae
+ms.sourcegitcommit: 2854c02cbe5b2c0010d0c64367cfe8dbd201d3f1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368038"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67499802"
 ---
 # <a name="offline-symbols-for-windows-update"></a>Windows Update のオフライン シンボル
 
@@ -26,9 +26,9 @@ ms.locfileid: "63368038"
  
 オフラインのマシンと同じ正確なパッチ レベルでのオンラインのマシンへのアクセスがある場合は、2 つのオプションを設定します。
 
-•[オプション 1。ETL のイベント ログをオンラインのマシンにコピーします。](#ETL)
+- [オプション 1:ETL のイベント ログをオンラインのマシンにコピーします。](#ETL)
 
-•[オプション 2。オフラインのコンピューターにシンボルをコピーします。](#OFFLINE)
+- [オプション 2:オフラインのコンピューターにシンボルをコピーします。](#OFFLINE)
 
 オンラインおよびオフラインの Pc を実行して、同じバージョン レベル確認`winver`または`ver`両方のコンピューターにします。
 

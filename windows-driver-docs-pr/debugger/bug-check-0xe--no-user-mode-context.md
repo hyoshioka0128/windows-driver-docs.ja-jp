@@ -5,7 +5,7 @@ ms.assetid: 0c3b3da9-c9e6-443d-9087-9bee9aa1e41a
 keywords:
 - バグ チェック 0xE NO_USER_MODE_CONTEXT
 - NO_USER_MODE_CONTEXT
-ms.date: 05/23/2017
+ms.date: 06/21/2019
 topic_type:
 - apiref
 api_name:
@@ -13,28 +13,18 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 33aec81fd58ffaa67901492a52c71f8a8a0b9bc0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b6853e768a0a8263072fb98ef0b89da9c3556d61
+ms.sourcegitcommit: 289b5f97aff1b9ea1fefc9a8731e0fc16533073b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367114"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67492537"
 ---
 # <a name="bug-check-0xe-nousermodecontext"></a>バグ チェック 0xE:いいえ\_ユーザー\_モード\_コンテキスト
 
-
 いいえ、\_ユーザー\_モード\_コンテキストのバグ チェックが 0x0000000E の値を持ちます。
 
-このバグ チェックが非常に少ない回数が表示されます。
+システム スレッドを開始するには、処理中、最初のスレッド プロシージャから制御が戻りますバグ チェックが発生します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
-
-
- 
-
- 
-
-
-
-
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。

@@ -4,12 +4,12 @@ description: このセクションには、ブルー スクリーンに渡され
 ms.assetid: DBA85578-97CF-4BD7-A67D-1C7AD2E9B2BB
 ms.date: 02/21/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e97477c9d3f29db52840f9d6ed849b8f9a3975e
-ms.sourcegitcommit: ece0a2affa08f1b6446368ede06040b3153aaae2
+ms.openlocfilehash: e4740460c0eb4af27c3ffde685204b9a8dad23c9
+ms.sourcegitcommit: 289b5f97aff1b9ea1fefc9a8731e0fc16533073b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56743447"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67492539"
 ---
 # <a name="bug-check-code-reference"></a>バグ チェック コード リファレンス
 
@@ -42,8 +42,8 @@ ms.locfileid: "56743447"
 | 0x0000000C | [**最大\_待機\_オブジェクト\_超過**](bug-check-0xc--maximum-wait-objects-exceeded.md)                                                           |
 | 0x0000000D | [**ミュー テックス\_レベル\_数\_違反**](bug-check-0xd--mutex-level-number-violation.md)                                                             |
 | 0x0000000E | [**いいえ\_ユーザー\_モード\_コンテキスト**](bug-check-0xe--no-user-mode-context.md)                                                                             |
-| 0x0000000F | [**スピン\_ロック\_ALREADY\_所有されています。**](bug-check-0xf--spin-lock-already-owned.md)                                                                       |
-| 0x00000010 | [**スピン\_ロック\_いない\_所有されています。**](bug-check-0x10--spin-lock-not-owned.md)                                                                              |
+| 0x0000000F | [**スピン\_ロック\_ALREADY\_所有されています。** ](bug-check-0xf--spin-lock-already-owned.md)                                                                       |
+| 0x00000010 | [**スピン\_ロック\_いない\_所有されています。** ](bug-check-0x10--spin-lock-not-owned.md)                                                                              |
 | 0x00000011 になります | [**THREAD\_NOT\_MUTEX\_OWNER**](bug-check-0x11--thread-not-mutex-owner.md)                                                                        |
 | 0x00000012 | [**トラップ\_原因\_不明**](bug-check-0x12--trap-cause-unknown.md)                                                                                 |
 | 0x00000013 | [**空\_スレッド\_リーパー\_一覧**](bug-check-0x13--empty-thread-reaper-list.md)                                                                    |
@@ -89,7 +89,7 @@ ms.locfileid: "56743447"
 | 0x0000003B | [**システム\_サービス\_例外**](bug-check-0x3b--system-service-exception.md)                                                                     |
 | 0x0000003C | [**割り込み\_アンワインド\_しようとしました**](bug-check-0x3c--interrupt-unwind-attempted.md)                                                                 |
 | 0x0000003D | [**割り込み\_例外\_いない\_処理済み**](bug-check-0x3d--interrupt-exception-not-handled.md)                                                      |
-| 0x0000003E | [**マルチプロセッサ\_構成\_いない\_サポートされています。**](bug-check-0x3e--multiprocessor-configuration-not-supported.md)                                |
+| 0x0000003E | [**マルチプロセッサ\_構成\_いない\_サポートされています。** ](bug-check-0x3e--multiprocessor-configuration-not-supported.md)                                |
 | 0x0000003F | [**いいえ\_詳細\_システム\_PTE**](bug-check-0x3f--no-more-system-ptes.md)                                                                              |
 | 0x00000040 | [**ターゲット\_MDL\_すぎます\_小さな**](bug-check-0x40--target-mdl-too-small.md)                                                                            |
 | 0x00000041 | [**必要があります\_SUCCEED\_プール\_空**](bug-check-0x41--must-succeed-pool-empty.md)                                                                      |
@@ -109,7 +109,7 @@ ms.locfileid: "56743447"
 | 0x0000004F | [**NDIS\_内部\_エラー**](bug-check-0x4f--ndis-internal-error.md)                                                                               |
 | 0x00000050 | [**ページ\_フォールト\_IN\_非ページ\_領域**](bug-check-0x50--page-fault-in-nonpaged-area.md)                                                             |
 | 0x00000051 | [**レジストリ\_エラー**](bug-check-0x51--registry-error.md)                                                                                          |
-| 0x00000052 | [**"メール スロット"\_ファイル\_システム**](bug-check-0x52--mailslot-file-system.md)                                                                             |
+| 0x00000052 | [ **"メール スロット"\_ファイル\_システム**](bug-check-0x52--mailslot-file-system.md)                                                                             |
 | 0x00000053 | [**いいえ\_ブート\_デバイス**](bug-check-0x53--no-boot-device.md)                                                                                         |
 | 0x00000054 | [**LM\_SERVER\_内部\_エラー**](bug-check-0x54--lm-server-internal-error.md)                                                                    |
 | 0x00000055 | [**データ\_コヒレンシー\_例外**](bug-check-0x55--data-coherency-exception.md)                                                                     |
@@ -163,7 +163,7 @@ ms.locfileid: "56743447"
 | 0x0000008E | [**カーネル\_モード\_例外\_いない\_処理済み**](bug-check-0x8e--kernel-mode-exception-not-handled.md)                                                 |
 | 0x0000008F | [**PP0\_初期化\_失敗**](bug-check-0x8f--pp0-initialization-failed.md)                                                                   |
 | 0x00000090 | [**PP1\_初期化\_失敗**](bug-check-0x90--pp1-initialization-failed.md)                                                                   |
-| 0x00000092 | [**\_ドライバー\_ON\_MP\_システム**](bug-check-0x92--up-driver-on-mp-system.md)                                                                       |
+| 0x00000092 | [ **\_ドライバー\_ON\_MP\_システム**](bug-check-0x92--up-driver-on-mp-system.md)                                                                       |
 | 0x00000093 | [**無効な\_カーネル\_処理**](bug-check-0x93--invalid-kernel-handle.md)                                                                           |
 | 0x00000094 | [**カーネル\_スタック\_ロック\_で\_終了**](bug-check-0x94--kernel-stack-locked-at-exit.md)                                                             |
 | 0x00000096 | [**無効な\_作業\_キュー\_項目**](bug-check-0x96--invalid-work-queue-item.md)                                                                      |
@@ -194,7 +194,7 @@ ms.locfileid: "56743447"
 | 0x000000BC | [**NETWORK\_BOOT\_DUPLICATE\_ADDRESS**](bug-check-0xbc--network-boot-duplicate-address.md)                                                        |
 | 0x000000BD | [**無効な\_HIBERNATED\_状態**](bug-check-0xbd--invalid-hibernated-state.md)                                                                     |
 | 0x000000BE | [**試行\_書き込み\_TO\_READONLY\_メモリ**](bug-check-0xbe--attempted-write-to-readonly-memory.md)                                               |
-| 0x000000BF | [**ミュー テックス\_ALREADY\_所有されています。**](bug-check-0xbf--mutex-already-owned.md)                                                                               |
+| 0x000000BF | [**ミュー テックス\_ALREADY\_所有されています。** ](bug-check-0xbf--mutex-already-owned.md)                                                                               |
 | 0x000000C1 | [**特別な\_プール\_検出\_メモリ\_破損**](bug-check-0xc1--special-pool-detected-memory-corruption.md)                                     |
 | 0x000000C2 | [**不適切な\_プール\_呼び出し元**](bug-check-0xc2--bad-pool-caller.md)                                                                                       |
 | 0x000000C4 | [**ドライバー\_VERIFIER\_検出\_違反**](bug-check-0xc4--driver-verifier-detected-violation.md)                                                |
@@ -227,7 +227,7 @@ ms.locfileid: "56743447"
 | 0x000000E0 | [**ACPI\_BIOS\_FATAL\_エラー**](bug-check-0xe0--acpi-bios-fatal-error.md)                                                                          |
 | 0x000000E1 | [**ワーカー\_スレッド\_から返された\_で\_不良\_IRQL**](bug-check-0xe1--worker-thread-returned-at-bad-irql.md)                                              |
 | 0x000000E2 | [**手動で\_INITIATED\_クラッシュ**](bug-check-0xe2--manually-initiated-crash.md)                                                                     |
-| 0x000000E3 | [**リソース\_いない\_所有されています。**](bug-check-0xe3--resource-not-owned.md)                                                                                 |
+| 0x000000E3 | [**リソース\_いない\_所有されています。** ](bug-check-0xe3--resource-not-owned.md)                                                                                 |
 | 0x000000E4 | [**ワーカー\_が無効です**](bug-check-0xe4--worker-invalid.md)                                                                                          |
 | 0x000000E6 | [**ドライバー\_VERIFIER\_DMA\_違反**](bug-check-0xe6--driver-verifier-dma-violation.md)                                                          |
 | 0x000000E7 | [**無効な\_浮動\_ポイント\_状態**](bug-check-0xe7--invalid-floating-point-state.md)                                                            |
@@ -248,7 +248,7 @@ ms.locfileid: "56743447"
 | 0x000000F7 | [**ドライバー\_OVERRAN\_スタック\_バッファー**](bug-check-0xf7--driver-overran-stack-buffer.md)                                                              |
 | 0x000000F8 | [**RAMDISK\_ブート\_初期化\_失敗**](bug-check-0xf8--ramdisk-boot-initialization-failed.md)                                                |
 | 0x000000F9 | [**ドライバー\_から返された\_状態\_再解析\_の\_ボリューム\_開く**](bug-check-0xf9--driver-returned-status-reparse-for-volume-open.md)                     |
-| 0x000000FA | [**HTTP\_ドライバー\_破損しました。**](bug-check-0xfa---http-driver-corrupted.md)                                                                          |
+| 0x000000FA | [**HTTP\_ドライバー\_破損しました。** ](bug-check-0xfa---http-driver-corrupted.md)                                                                          |
 | 0x000000FC | [**試行\_EXECUTE\_の\_NOEXECUTE\_メモリ**](bug-check-0xfc---attempted-execute-of-noexecute-memory.md)                                        |
 | 0x000000FD | [**ダーティ\_NOWRITE\_ページ\_輻輳**](bug-check-0xfd---dirty-nowrite-pages-congestion.md)                                                       |
 | 0x000000FE | [**BUGCODE\_USB\_ドライバー**](bug-check-0xfe--bugcode-usb-driver.md)                                                                                 |
@@ -352,11 +352,11 @@ ms.locfileid: "56743447"
 | 0x00000168 | [**クラスター\_CSV\_状態\_遷移\_タイムアウト\_LIVEDUMP**](bug-check-0x168--cluster-csv-state-transition-timeout-livedump.md)                       |   
 | 0x00000169 | [**クラスター\_CSV\_ボリューム\_到着\_LIVEDUMP**](bug-check-0x169--cluster-csv-volume-arival-livedump.md)                                             |      
 | 0x0000016A | [**クラスター\_CSV\_ボリューム\_削除\_LIVEDUMP**](bug-check-0x16a--cluster-csv-volume-removal-livedump.md)                                            |    
-| 0x0000016B | [**CLUSTER\_CSV_\_CLUSTER\_WATCHDOG_\LIVEDUMP**](bug-check-0x16b--cluster-csv-cluster-watchdog-livedump.md)                                       |   
+| 0x0000016B | [**クラスター\_CSV\_クラスター\_ウォッチドッグ\_LIVEDUMP**](bug-check-0x16b--cluster-csv-cluster-watchdog-livedump.md)                                       |   
 | 0x0000016C | [**無効な\_ランダウン\_保護\_フラグ**](bug-check-0x16c--invalid-rundown-protection-flags.md)                                                   |
 | 0x0000016D | [**無効な\_スロット\_アロケーター\_フラグ**](bug-check-0x16d--invalid-slot-allocator-flags.md)                                                           |
 | 0x0000016E | [**スケジュール作成\_無効な\_リリース**](bug-check-0x16e--eresource-invalid-release.md)                                                                  |
-| 0x0000016F | [**CLUSTER\_CSV_\STATE\_TRANSITION\_INTERVAL\_TIMEOUT\_LIVEDUMP**](bug-check-0x16f--cluster-csv-state-transistion-interval-livedump.md)           |
+| 0x0000016F | [**クラスター\_CSV\_状態\_遷移\_間隔\_タイムアウト\_LIVEDUMP**](bug-check-0x16f--cluster-csv-state-transistion-interval-livedump.md)           |
 | 0x00000170 | [**CRYPTO\_ライブラリ\_内部\_エラー**](bug-check-0x170--crypto-library-internal-error.md)                                                         |
 | 0x00000171 | [**クラスター\_CSV\_CLUSSVC\_切断\_ウォッチドッグ**](bug-check-0x171--cluster-csv-clussvc-disconnect-watchdog.md)                                    |
 | 0x00000173 | [**COREMSGCALL\_内部\_エラー**](bug-check-0x173--coremsgcall-internal-error.md)                                                                |
@@ -393,7 +393,7 @@ ms.locfileid: "56743447"
 | 0x000001A4 | [**DRIPS\_SW\_HW\_相違\_LIVEDUMP**](bug-check-0x1a4--drips-sw-hw-divergence-livedump.md)                                                    |
 | 0x000001A5 | [**USB\_DRIPS\_BLOCKER\_突然\_削除\_LIVEDUMP**](bug-check-0x1a5--usb-drips-blocker-surprise-removal-livedump.md)                           |
 | 0x000001A6 | [**BLUETOOTH\_エラー\_RECOVERY\_LIVEDUMP**](bug-check-0x1a6--bluetooth-error-recovery-livedump.md)                                                 |
-| 0x000001A7 | [**SMB\_リダイレクター\_LIVEDUMP**] bug-check-0x1A7--smb-redirector-livedump.md)                                                                       |
+| 0x000001A7 | [**SMB\_リダイレクター\_LIVEDUMP**](bug-check-0x1A7--smb-redirector-livedump.md)                                                                       |
 | 0x000001A8 | [**ビデオ\_DXGKRNL\_黒い\_画面\_LIVEDUMP**](bug-check-0x1a8--video-dxgkrnl-black-screen-livedump.md)                                            |
 | 0x000001B0 | [**VIDEO_MINIPORT_FAILED_LIVEDUMP**](bug-check-0x1b0--video-miniport-failed-livedump.md)                                                          |
 | 0x000001C4 | [**ドライバー\_VERIFIER\_検出\_違反\_LIVEDUMP**](bug-check-0x1c4--driver-verifier-detected-violation-livedump.md)                            |

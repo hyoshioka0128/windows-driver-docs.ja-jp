@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a587fe8c7de5344a1f16d8323c3b4c8ec54371c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1c2a852f740770cdee6239907455a16aef54e54a
+ms.sourcegitcommit: 289b5f97aff1b9ea1fefc9a8731e0fc16533073b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371400"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67492509"
 ---
 # <a name="devcon-status"></a>DevCon Status
 
@@ -72,7 +72,7 @@ ms.locfileid: "67371400"
 <td align="left"><p>リテラル文字列と一致する (正確に表示される)。 示すアスタリスクは、ID 名の一部であるし、たとえば、ワイルドカード文字ではないは、単一引用符を含む文字列の前に<strong>' * PNP0600</strong>ここで、* PNP0600 ハードウェア ID (アスタリスクを含む) です。</p></td>
 </tr>
 </tbody>
-</table>
+</table>  
 
 
 

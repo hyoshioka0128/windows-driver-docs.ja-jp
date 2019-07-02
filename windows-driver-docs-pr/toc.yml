@@ -28,7 +28,7 @@
   href: devapps/index.md
 - name: ドライバー テクノロジ
   items:
-    - name: デバイス テクノロジとドライバー テクノロジ
+    - name: ドライバー テクノロジの概要
       href: device-and-driver-technologies.md
     - name: 3D 印刷デバイス
       href: 3dprint/index.md

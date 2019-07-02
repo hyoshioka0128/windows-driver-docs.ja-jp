@@ -11,52 +11,44 @@ keywords:
 - USB キーボードとシステムのクラッシュ
 - Ps/2 キーボードとシステムのクラッシュ
 - キーボードから強制的にシステムのクラッシュ
-ms.date: 05/23/2017
+ms.date: 07/01/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 728380861030e3add4703505836eeb7ecbd807be
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 48279ae6fcf2cb74371abd44a4beeb41db7116fc
+ms.sourcegitcommit: 2854c02cbe5b2c0010d0c64367cfe8dbd201d3f1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63371700"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67499806"
 ---
 # <a name="forcing-a-system-crash-from-the-keyboard"></a>キーボードからのシステム クラッシュの強制実行
 
-
 ## <span id="ddk_forcing_a_system_crash_from_the_keyboard_dbg"></span><span id="DDK_FORCING_A_SYSTEM_CRASH_FROM_THE_KEYBOARD_DBG"></span>
 
+次の種類のキーボードでは、直接システム クラッシュを引き起こすことができます。
 
-次のキーボードのほとんどは、直接システム クラッシュを引き起こすことができます。
+<span id="________PS_2_keyboards_connected_on_i8042prt_ports_______"></span><span id="________ps_2_keyboards_connected_on_i8042prt_ports_______"></span><span id="________PS_2_KEYBOARDS_CONNECTED_ON_I8042PRT_PORTS_______"></span> **I8042prt ポートで ps/2 キーボードが接続されています。**
 
-<span id="________PS_2_keyboards_connected_on_i8042prt_ports_______"></span><span id="________ps_2_keyboards_connected_on_i8042prt_ports_______"></span><span id="________PS_2_KEYBOARDS_CONNECTED_ON_I8042PRT_PORTS_______"></span> I8042prt ポートで ps/2 キーボードが接続されています。   
 この機能は、Windows 2000 およびそれ以降のバージョンの Windows オペレーティング システムで使用できます。
 
-<span id="________USB_keyboards_______"></span><span id="________usb_keyboards_______"></span><span id="________USB_KEYBOARDS_______"></span> USB キーボード   
-この機能はあります。
+<span id="________USB_keyboards_______"></span><span id="________usb_keyboards_______"></span><span id="________USB_KEYBOARDS_______"></span> **USB キーボード**
 
--   Windows Server 2003 Service Pack 1 場合に使用可能な修正プログラム[KB 244139](https://go.microsoft.com/fwlink/p/?linkid=106065)がインストールされています。
+この機能は、Windows Vista およびそれ以降のバージョンの Windows オペレーティング システムで使用できます。
 
--   Windows Server 2003 (Service Pack 2 またはそれ以降)。
+<span id="hyper_v_keyboards_______"></span> **HYPER-V のキーボード**
 
--   Windows Vista Service Pack 1 場合に使用可能な修正プログラム[KB 971284](https://go.microsoft.com/fwlink/p/?LinkId=241349)がインストールされています。
+この機能は、Windows 10 バージョンが 1903 および以降のバージョンの Windows オペレーティング システムで使用できます。
 
--   Windows Vista Service Pack 2。
+<span id="Configuration"></span> **構成**
 
--   Windows Server 2008 Service Pack 1 場合に使用可能な修正プログラム[KB 971284](https://go.microsoft.com/fwlink/p/?LinkId=241349)がインストールされています。
--   Windows Server 2008 (Service Pack 2 またはそれ以降)。
--   Windows 7 およびそれ以降のバージョンの Windows オペレーティング システム。
+有効にするのには、次の設定を構成、キーボードを使用して、システムがクラッシュします。
 
-**注**  この機能は Windows XP では使用できません。
+1. このようなダンプ ファイルを有効にする必要があります、書き込まれるクラッシュ ダンプ ファイルを希望する場合、パスとファイル名を選択し、ダンプ ファイルのサイズを選択します。 詳細については、次を参照してください。[カーネル モードのダンプ ファイルを有効にする](enabling-a-kernel-mode-dump-file.md)します。
 
- 
+2. Ps/2 キーボードでは、レジストリにキーボードによるクラッシュを有効にする必要があります。 レジストリ キーに**HKEY\_ローカル\_マシン\\システム\\CurrentControlSet\\サービス\\i8042prt\\パラメーター**、という名前の値を作成**します**、21 と等しい設定\_DWORD 値 0x01 になります。
 
-キーボードできますシステム クラッシュが発生する前に、次の 3 つの設定を確認する必要があります。
+3. USB キーボードでレジストリにキーボードによるクラッシュを有効にする必要があります。 レジストリ キーに**HKEY\_ローカル\_マシン\\システム\\CurrentControlSet\\サービス\\kbdhid\\パラメーター、** を作成します。という名前の値**します**、21 と等しい設定\_DWORD 値 0x01 になります。
 
-1.  このようなダンプ ファイルを有効にする必要があります、書き込まれるクラッシュ ダンプ ファイルを希望する場合、パスとファイル名を選択し、ダンプ ファイルのサイズを選択します。 詳細については、次を参照してください。[カーネル モードのダンプ ファイルを有効にする](enabling-a-kernel-mode-dump-file.md)します。
-
-2.  Ps/2 キーボードでは、レジストリにキーボードによるクラッシュを有効にする必要があります。 レジストリ キーに**HKEY\_ローカル\_マシン\\システム\\CurrentControlSet\\サービス\\i8042prt\\パラメーター**、という名前の値を作成**します**、21 と等しい設定\_DWORD 値 0x01 になります。
-
-3.  USB キーボードでレジストリにキーボードによるクラッシュを有効にする必要があります。 レジストリ キーに**HKEY\_ローカル\_マシン\\システム\\CurrentControlSet\\サービス\\kbdhid\\パラメーター、** を作成します。という名前の値**します**、21 と等しい設定\_DWORD 値 0x01 になります。
+4. HYPER-V のキーボードでキーボードによるレジストリのクラッシュを有効にする必要があります。 レジストリ キーに**HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\hyperkbd\Parameters**、という値を作成**します**0x01 の REG_DWORD 値と等しく設定します。
 
 これらの設定を有効にするためにシステムを再起動する必要があります。
 
@@ -72,13 +64,17 @@ ms.locfileid: "63371700"
 
 メモリ ダンプ ファイルを生成するさまざまなキーボード ショートカットのシーケンスの次のレジストリ サブキーの下に値を構成できます。
 
--   Ps/2 キーボードの場合。
+- Ps/2 キーボードの場合。
 
     **HKEY\_LOCAL\_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\i8042prt\\crashdump**
 
--   USB キーボードの場合。
+- USB キーボードの場合。
 
     **HKEY\_LOCAL\_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\kbdhid\\crashdump**
+
+- HYPER-V でキーボードの場合。
+
+    **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\hyperkbd\crashdump**
 
 REG の次のレジストリを作成する必要があります\_これらのサブキーの下に DWORD 値。
 
@@ -126,11 +122,7 @@ REG の次のレジストリを作成する必要があります\_これらの�
 </tbody>
 </table>
 
- 
-
 **注**  割り当てることができます**Dump1Keys**キーボード ショートカットのシーケンスで使用される最初のキーとして 1 つまたは複数のキーを有効にする値。 たとえば、割り当てる**Dump1Keys**キーボード ショートカットのシーケンスの最初のキーとしての右端と左端の両方の SHIFT キーを定義するパターンの値。
-
- 
 
 <span id="Dump2Key"></span><span id="dump2key"></span><span id="DUMP2KEY"></span>**Dump2Key**  
 **Dump2Key**レジストリ値は、ターゲット コンピューターのキーボード レイアウト scancode テーブルにインデックス。 ドライバーでは、実際のテーブルを次に示します。
@@ -155,8 +147,6 @@ const UCHAR keyToScanTbl[134] = {
 
 **注**   84 キーボードに別のスキャン コードがあるために、インデックス 124 (sysreq) は特殊なケースです。
 
- 
-
 設定する必要があります、USB、ps/2 キーボードからシステムのクラッシュを強制的に代替のキーボード ショートカットを定義する場合、**します**レジストリ値を 0 またはレジストリから削除します。
 
 ### <a name="span-idlimitationsspanspan-idlimitationsspanlimitations"></a><span id="limitations"></span><span id="LIMITATIONS"></span>制限事項
@@ -164,12 +154,3 @@ const UCHAR keyToScanTbl[134] = {
 システム固定キーボード ショートカットのシーケンスは、このような方法で作業することができます。 ただし、非常にまれな場合があります。 キーボード ショートカットのシーケンスを使用して、クラッシュを開始するは、CTRL + ALT + DEL が機能しないという多数のインスタンスであっても機能します。
 
 キーボードから強制的にシステムがクラッシュしても、コンピューターが高い割り込み要求レベル (IRQL) で応答を停止した場合は機能しません。 この制限は、メモリ ダンプ プロセスの実行をできる Kbdhid.sys ドライバーが i8042prt.sys のドライバーよりも低いかどうかで動作するために存在します。
-
- 
-
- 
-
-
-
-
-

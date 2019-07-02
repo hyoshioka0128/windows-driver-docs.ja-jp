@@ -10,12 +10,12 @@ keywords:
 - 添付ファイル シナリオ WDK WSDBIT
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5875e0ad98b27392f1bc8ab8d55a57d02d1b458c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 246240232095a3660908b4d338bda7bebd8f8b4b
+ms.sourcegitcommit: 289b5f97aff1b9ea1fefc9a8731e0fc16533073b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361293"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67492522"
 ---
 # <a name="attachments-scenarios"></a>添付ファイルのシナリオ
 
@@ -38,7 +38,7 @@ ms.locfileid: "63361293"
 
 -   **wsa:Action == http://schemas.example.org/AttachmentService/OneWayAttachment**
 
--   http://testdevice.interop/AttachmentService1サービスが使用されます。
+-   Http:\//testdevice.interop/AttachmentService1 サービスが使用されます。
 
 -   参照してください[AttachmentService WSDL](attachmentservice-wsdl.md)します。
 
@@ -58,7 +58,7 @@ ms.locfileid: "63361293"
 
 -   **wsa:Action == http://schemas.example.org/AttachmentService/TwoWayAttachmentRequest**
 
--   http://testdevice.interop/AttachmentService1サービスが使用されます。
+-   Http:\//testdevice.interop/AttachmentService1 サービスが使用されます。
 
 -   参照してください[AttachmentService WSDL](attachmentservice-wsdl.md)します。
 

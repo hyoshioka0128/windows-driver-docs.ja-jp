@@ -4,12 +4,12 @@ description: このトピックでは、エンジニアをレビューして、�
 ms.assetid: 9742BFCA-CC22-497A-B11F-D3E89F0B4FE6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c54fd625e34cba642b3bd6f2288e36f33c13c510
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9ae7127def90ec16e3e87dd6c7765affb1cc86cb
+ms.sourcegitcommit: 2854c02cbe5b2c0010d0c64367cfe8dbd201d3f1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375763"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67499810"
 ---
 # <a name="mobile-broadband-class-driver-logs-event-trace-log-tracing"></a>モバイル ブロード バンド クラス ドライバー ログ:イベント トレース ログのトレース
 
@@ -64,14 +64,14 @@ ms.locfileid: "63375763"
 
 IP アドレスの構成に関する問題がある場合は場合、は、次を実行してください。
 
-1.  1. **netsh トレース開始 wwan\_dbg**
-2.  2. &lt;システムの予期しない動作につながるタスクを実行します。
-3.  3**netsh トレースの停止。**
-4.  4. 次の情報をアップロードします。
+1. **netsh トレース開始 wwan\_dbg**
+2. &lt;システムの予期しない動作につながるタスクを実行します。
+3. **netsh トレースの停止**
+4. 次の情報をアップロードします。
 
-    • 下のすべてのファイル `%localappdata%\temp\nettraces\`
+    - すべてのファイル `%localappdata%\temp\nettraces\`
 
-    • 出力の**ipconfig/all**
+    - 出力の**ipconfig/all**
 
 **データ パス**
 

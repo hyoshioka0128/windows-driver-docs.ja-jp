@@ -5,7 +5,7 @@ ms.assetid: 7d3ff54e-e61a-43fa-a378-fb8d32565586
 keywords:
 - バグ チェック 0x1A MEMORY_MANAGEMENT
 - MEMORY_MANAGEMENT
-ms.date: 03/29/2019
+ms.date: 06/29/2019
 topic_type:
 - apiref
 api_name:
@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: bc0926afdd49debe941ddc86f575fb11459b871b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8d779e543662bf815ebfd73b68c17f5058151ab7
+ms.sourcegitcommit: 289b5f97aff1b9ea1fefc9a8731e0fc16533073b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362030"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67492530"
 ---
 # <a name="bug-check-0x1a-memorymanagement"></a>バグ チェック 0x1A:メモリ\_管理
 
@@ -60,6 +60,10 @@ ms.locfileid: "67362030"
 <tr class="odd">
 <td align="left"><p>0x403</p></td>
 <td align="left"><p>ページのテーブルと PFNs 同期されていません。 これは、パラメーター 3 と 4 ビットは 1 つのみが異なる場合は特に、ハードウェア エラーでは可能性があります。</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p>0x404</p></td>
+<td align="left"><p>システム ページの削除中 ページのフレーム数 (PFN) と現在のページ テーブル エントリ (PTE) ポインター間に不整合が発生しました。 パラメーター 2 では、予想される PTE です。 3 番目のパラメーターは PTE 内容で、パラメーター 4 は PFN の PTE です。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x411</p></td>
@@ -103,6 +107,10 @@ ms.locfileid: "67362030"
 <td align="left"><p>呼び出し元は、ロックされていない (または無効な) 物理ページを含む、MDL を指定します。 2 番目のパラメーターには、MDL へのポインターが含まれています。 3 番目のパラメーターには、無効な PFN へのポインターが含まれています。 パラメーター 4 には、無効な PFN 値が含まれています。</p></td>
 </tr>
 <tr class="odd">
+<td align="left"><p>0x3300</p></td>
+<td align="left"><p>書き込みを実行するには、処理中参照先の仮想アドレスが誤ってマークされているコピーとして書き込み。 2 番目のパラメーターは、FaultingAddress です。  3 番目のパラメーターは、PTE 内容です。 パラメーター 4 では、仮想アドレス領域の種類を示します。</p></td>
+</tr>
+<tr class="odd">
 <td align="left"><p>0x3451</p></td>
 <td align="left"><p>スワップ アウトされている、カーネル スレッド スタックの Pte が破損しています。</p></td>
 </tr>
@@ -126,6 +134,10 @@ ms.locfileid: "67362030"
 <td align="left"><p>0x5200</p></td>
 <td align="left"><p>空きプール SLIST 上のページが破損しています。 ドライバー、または前のページからオーバーラン無料書き込み後にバグによって引き起こされることができます。 2 番目のパラメーターには、空きプールのブロックのアドレスが含まれています。 パラメーター 4 には、そのアドレスで予測された値が含まれています。 3 番目のパラメーターには、検出された実際の値が含まれています。</p></td>
 </tr>
+<tr class="odd">
+<td align="left"><p>0x6001</p></td>
+<td align="left"><p>アクセスできなくなる原因となるメモリ ストア コンポーネントのプライベート メモリの範囲が壊れています。 2 番目のパラメーターは、返された状態です。  3 番目のパラメーターは、ストアのプライベート メモリの範囲内の仮想アドレスです。 パラメーター 4 では、MemoryDescriptorList です。</p></td>
+</tr>
 <tr class="even">
 <td align="left"><p>0x8884</p></td>
 <td align="left"><p>(Windows の 7 のみ)。 同一のページ優先順位の値を持つことを予定していたスタンバイ リスト上の 2 つのページには、同一のページ優先順位の値を実際は必要はありませんも。 異なる値は、パラメーター 4 にキャプチャされます。</p></td>
@@ -146,6 +158,10 @@ ms.locfileid: "67362030"
 <tr class="even">
 <td align="left"><p>0x15001</p></td>
 <td align="left"><p>以前に保護されたメモリは保護されていない処理中にエラーが発生しました。  これは、呼び出し元が誤って不適切なプロセスのコンテキストで MmUnsecureVirtualMemory を呼び出した場合に発生します。</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p>0x41201</p></td>
+<td align="left"><p>プロセス仮想アドレスのクエリを実行するには、ページ フレームの Number(PFN) と現在のページ テーブル エントリ (PTE) ポインター間に不整合が発生しました。 2 番目のパラメーターは、対応する PTE です。 3 番目のパラメーターは PTE 内容で、パラメーター 4 は、仮想アドレス記述子です。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x41283</p></td>
@@ -190,6 +206,10 @@ ms.locfileid: "67362030"
 <tr class="odd">
 <td align="left"><p>0x61946</p></td>
 <td align="left"><p>作成される MDL は不備があります。 これはほぼ常に、ドライバーの呼び出し元を意味<strong>MmProbeAndLockPages</strong>障害があります。 通常、ドライバーは、求めるページング読み取りを処理するときに、書き込み MDL を作成しています。</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p>0x61948</p></td>
+<td align="left"><p>I/O 領域領域の参照がカウントをデクリメントする操作、処理中、[アカウンティング] ノードが見つかりませんでした。  通常は引数の範囲がロックされていたことはありませんか、既にロックされてを意味します。  2 番目のパラメーターは、基本の I/O フレームです。 3 番目のパラメーターは、リージョン内のページの数とパラメーター 4 は、特定の I/O フレームを持つノードが見つかりませんでした。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x61949</p></td>

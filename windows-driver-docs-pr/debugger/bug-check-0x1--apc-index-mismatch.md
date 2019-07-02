@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9396d9c9857af0d86a7925104127dcaf3826d609
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: dabfde020fde2de1d4ec64fe002011876feda59f
+ms.sourcegitcommit: 289b5f97aff1b9ea1fefc9a8731e0fc16533073b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362390"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67492531"
 ---
 # <a name="bug-check-0x1-apcindexmismatch"></a>バグ チェック 0x1:APC\_インデックス\_が一致しません
 
@@ -26,7 +26,7 @@ ms.locfileid: "67362390"
 APC\_インデックス\_の不一致のバグ チェックが 0x00000001 の値を持ちます。 APC (非同期プロシージャ コール) の状態のインデックスで不一致が生じていますが、これを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="apcindexmismatch-parameters"></a>APC\_インデックス\_不一致パラメーター
