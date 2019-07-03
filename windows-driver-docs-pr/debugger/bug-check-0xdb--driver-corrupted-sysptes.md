@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 01cb478d7c6e5ab8f37930cf03f91c10e50411d7
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d919b4bda50be1031f9e2f8b0133ecad5895d036
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361563"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67518844"
 ---
 # <a name="bug-check-0xdb-drivercorruptedsysptes"></a>バグ チェック 0xDB:ドライバー\_破損した\_SYSPTES
 
@@ -26,7 +26,7 @@ ms.locfileid: "67361563"
 ドライバー\_破損した\_SYSPTES バグ チェックが 0x000000DB の値を持ちます。 これは、おそらくシステム Pte の破損により、無効な IRQL でメモリにアクセスしようとすることを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="drivercorruptedsysptes-parameters"></a>ドライバー\_破損した\_SYSPTES パラメーター
