@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: fb8090e817e691cb5a46e6d4dcec1abafdbc9f02
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 10452bd49d8bdbf3328d809875883c134baec8c8
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367563"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519621"
 ---
 # <a name="bug-check-0x1e-kmodeexceptionnothandled"></a>バグ チェック 0x1E:KMODE\_例外\_いない\_処理済み
 
@@ -26,7 +26,7 @@ ms.locfileid: "67367563"
 KMODE\_例外\_いない\_処理済みのバグ チェックが 0x0000001E の値を持ちます。 これは、カーネル モードのプログラムがエラー ハンドラーをキャッチされなかった例外を生成することを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="kmodeexceptionnothandled-parameters"></a>KMODE\_例外\_いない\_処理済みのパラメーター

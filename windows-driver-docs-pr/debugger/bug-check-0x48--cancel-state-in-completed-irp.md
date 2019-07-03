@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c970e2c4b9a5a24fe6be2dc08a33740371085418
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: dd70dba42c02a83a87836f7053299dc29d90864a
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367444"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519421"
 ---
 # <a name="bug-check-0x48-cancelstateincompletedirp"></a>バグ チェック 0x48:キャンセル\_状態\_IN\_完了\_IRP
 
@@ -26,7 +26,7 @@ ms.locfileid: "67367444"
 キャンセル\_状態\_IN\_完了\_IRP のバグ チェックが 0x00000048 の値を持ちます。 これは、I/O 要求パケット (IRP) が完了しましたが、および、し、取り消された後を示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="cancelstateincompletedirp-parameters"></a>キャンセル\_状態\_IN\_完了\_IRP パラメーター

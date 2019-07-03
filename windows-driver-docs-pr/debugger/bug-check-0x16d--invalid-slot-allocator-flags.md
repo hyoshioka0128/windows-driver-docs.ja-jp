@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: fb929492d539fb7eac6495e1d8c914a7e9470502
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 23953f214afd9cc23f76f0a569f5c5fda3bac625
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362114"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519932"
 ---
 # <a name="bug-check-0x16d-invalidslotallocatorflags"></a>バグ チェック 0x16D:無効な\_スロット\_アロケーター\_フラグ
 
@@ -26,7 +26,7 @@ ms.locfileid: "67362114"
 無効な\_スロット\_アロケーター\_フラグのバグ チェックが 0x0000016D の値を持ちます。 これは、スロット アロケーター Api のいずれか 1 つのフラグが有効でないことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="invalidslotallocatorflags-parameters"></a>無効な\_スロット\_アロケーター\_フラグ パラメーター

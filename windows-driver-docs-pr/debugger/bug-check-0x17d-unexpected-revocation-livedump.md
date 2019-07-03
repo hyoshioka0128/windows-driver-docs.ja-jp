@@ -12,19 +12,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c7d42987c3d7f8e08ada87d2790a574330a2f50
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c72f36deea291791ca8e9cb56697b9e896858fec
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367694"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519883"
 ---
 # <a name="bug-check-0x17d-pdcunexpectedrevocationlivedump"></a>バグ チェック 0x17D の。PDC\_予期しない\_失効\_LIVEDUMP
 
 PDC\_予期しない\_失効\_LIVEDUMP バグ チェックが 0x0000017D の値を持ちます。 アクティベーターが予期せず失効したことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 

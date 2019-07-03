@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d3bcb7c824f3277099d61a447cdbd7985140756
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c037067f08aa4ae1d7762c57326beadf5a76eb2f
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362050"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519787"
 ---
 # <a name="bug-check-0x19b-ttmfatalerror"></a>バグ チェック 0x19B:TTM\_FATAL\_エラー
 
@@ -26,7 +26,7 @@ ms.locfileid: "67362050"
 TTM\_FATAL\_エラーのバグ チェックが 0x0000019B の値を持ちます。 これは、ターミナルのトポロジのマネージャーで致命的なエラーが発生したことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="ttmfatalerror-parameters"></a>TTM\_FATAL\_エラー パラメーター

@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: a5e99730a62ccf00c7c275e4d6b3326af3076d0a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3563f1f3b8f11516c711196d4c765241da481f97
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367061"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67518719"
 ---
 # <a name="bug-check-0xf8-ramdiskbootinitializationfailed"></a>バグ チェック 0xF8:RAMDISK\_ブート\_初期化\_失敗
 
@@ -26,7 +26,7 @@ ms.locfileid: "67367061"
 RAMDISK\_ブート\_初期化\_失敗のバグ チェックが 0x000000F8 の値を持ちます。 これは、RAM ディスクからの起動を試みているときに初期化エラーが発生したことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="ramdiskbootinitializationfailed-parameters"></a>RAMDISK\_ブート\_初期化\_FAILED パラメーター

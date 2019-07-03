@@ -12,19 +12,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 456fc6518efd6e951257c26970359b155a0885db
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e38b89ba37c7d73cca00161f2921e6eef86f16b3
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362022"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519737"
 ---
 # <a name="bug-check-0x1b0-videominiportfailedlivedump"></a>バグ チェック 0x1B0:ビデオ\_ミニポート\_FAILED\_LIVEDUMP
 
 ビデオ\_ミニポート\_FAILED\_LIVEDUMP バグ チェックが 0x000001B0 の値を持ちます。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="videominiportfailedlivedump-parameters"></a>ビデオ\_ミニポート\_FAILED\_LIVEDUMP パラメーター

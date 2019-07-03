@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 322a4dc5912fdaaaa4fbdefb687d006662dc3aaf
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0096fe2faf30d8d20e663243b7c14b134f82fe98
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367525"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519568"
 ---
 # <a name="bug-check-0x2a-inconsistentirp"></a>バグ チェック 0x2A:一貫性のない\_IRP
 
@@ -26,7 +26,7 @@ ms.locfileid: "67367525"
 "不整合"\_IRP のバグ チェックが 0x0000002A の値を持ちます。 これは、一貫性のない情報が含まれる IRP が見つかったことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="inconsistentirp-parameters"></a>一貫性のない\_IRP パラメーター

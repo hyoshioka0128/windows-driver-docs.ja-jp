@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 092a15498775fd6789ee923a04de9af0a21d803c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 47151abd52ddfa22da5cbe5e332d0cacd633e0a5
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367222"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519000"
 ---
 # <a name="bug-check-0xbb-networkbootinitializationfailed"></a>バグ チェック 0xBB:ネットワーク\_ブート\_初期化\_失敗
 
@@ -26,7 +26,7 @@ ms.locfileid: "67367222"
 ネットワーク\_ブート\_初期化\_失敗のバグ チェックが 0x000000BB の値を持ちます。 これは、Windows が正常にネットワークから起動に失敗したことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="networkbootinitializationfailed-parameters"></a>ネットワーク\_ブート\_初期化\_FAILED パラメーター

@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d042f7c802d96c5c63d41290871c64bcbdeb8e72
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4bbd1a7a8e42697887fa033b29449f9faf9a53ff
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367340"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519227"
 ---
 # <a name="bug-check-0x73-configlistfailed"></a>バグ チェック 0x73:CONFIG\_一覧\_失敗
 
@@ -26,7 +26,7 @@ ms.locfileid: "67367340"
 CONFIG\_一覧\_失敗のバグ チェックが 0x00000073 の値を持ちます。 このバグ チェックでは、コア システム ハイブとも呼ばれる、最上位のレジストリ キーのいずれかのレジストリ ツリーではリンクできませんを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="configlistfailed-parameters"></a>CONFIG\_一覧\_FAILED パラメーター

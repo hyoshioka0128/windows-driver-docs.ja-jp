@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d8a3e9b286a02ad6a9d191d6a17f857e964f240f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 876be74283188178d45152b7c86588ece60c1111
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362307"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67520861"
 ---
 # <a name="bug-check-0x11f-invaliddriverhandle"></a>バグ チェック 0x11F:無効な\_ドライバー\_処理
 
@@ -26,7 +26,7 @@ ms.locfileid: "67362307"
 無効な\_ドライバー\_ハンドルのバグ チェックが 0x0000011F の値を持ちます。 これは、ドライバー オブジェクトを挿入すると、ハンドルを参照してドライバーを初期のハンドルをだれかが閉じたことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="invaliddriverhandle-parameters"></a>無効な\_ドライバー\_ハンドル パラメーター

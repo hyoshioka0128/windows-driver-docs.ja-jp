@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 09901e5f697dd8749600685cd57d22c8ae21fcb6
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 285f68e93c430c184c082926d368186e1cf68cac
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361483"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67518700"
 ---
 # <a name="bug-check-0xfc-attemptedexecuteofnoexecutememory"></a>バグ チェック 0xFC:試行\_EXECUTE\_の\_NOEXECUTE\_メモリ
 
@@ -26,7 +26,7 @@ ms.locfileid: "67361483"
 試行\_EXECUTE\_の\_NOEXECUTE\_メモリのバグ チェックが 0x000000FC の値を持ちます。 これは、非実行可能メモリを実行しようとすることを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="attemptedexecuteofnoexecutememory-parameters"></a>試行\_EXECUTE\_の\_NOEXECUTE\_メモリ パラメーター

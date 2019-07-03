@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c2e3fef1557e377be9c292a6f915df8a5edc0c9f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 15b8ede4595f1fc36689231c4979cbf12f8070f5
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361840"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519385"
 ---
 # <a name="bug-check-0x50-pagefaultinnonpagedarea"></a>バグ チェック 0x50:ページ\_フォールト\_IN\_非ページ\_領域
 
@@ -26,7 +26,7 @@ ms.locfileid: "67361840"
 ページ\_フォールト\_IN\_非ページ\_領域のバグ チェックが 0x00000050 の値を持ちます。 これは、無効なシステム メモリが参照されていることを示します。 通常、メモリ アドレスが間違っているか、メモリ アドレスが解放されたメモリを指しています。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="pagefaultinnonpagedarea-parameters"></a>ページ\_フォールト\_IN\_非ページ\_領域のパラメーター

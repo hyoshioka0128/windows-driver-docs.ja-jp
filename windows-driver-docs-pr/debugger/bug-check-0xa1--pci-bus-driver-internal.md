@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 17cc1e839f40f7f0bdf36c9aa2d311a055e17041
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 038267d8160b6c245664d3652d510a08c7ec504e
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367244"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519063"
 ---
 # <a name="bug-check-0xa1-pcibusdriverinternal"></a>バグ チェック 0xA1:PCI\_BUS\_ドライバー\_内部
 
@@ -26,7 +26,7 @@ ms.locfileid: "67367244"
 PCI\_BUS\_ドライバー\_内部バグ チェックが 0x000000A1 の値を持ちます。 このバグ チェックでは、PCI バス ドライバーがその内部構造に不整合の問題を検出し、続行できませんでしたを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="pcibusdriverinternal-parameters"></a>PCI\_BUS\_ドライバー\_内部パラメーター

@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e1013f0cbe192f8e2900569e25d3b1da90231eb
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: fff7978dedd16ff934b7261e3cced913d7f5921f
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361655"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519035"
 ---
 # <a name="bug-check-0xad-videodriverdebugreportrequest"></a>バグ チェック 0xAD:ビデオ\_ドライバー\_デバッグ\_レポート\_要求
 
@@ -26,7 +26,7 @@ ms.locfileid: "67361655"
 ビデオ\_ドライバー\_デバッグ\_レポート\_バグ チェックが 0x000000AD の値を要求します。 このバグ チェックでは、ビデオ ポートに、実行時に、ビデオ ドライバーの代わりの致命的でないミニダンプが作成されたことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="videodriverdebugreportrequest-parameters"></a>ビデオ\_ドライバー\_デバッグ\_レポート\_要求パラメーター

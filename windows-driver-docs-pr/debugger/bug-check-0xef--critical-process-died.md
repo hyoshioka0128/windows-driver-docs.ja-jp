@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: fe894a975ad1cbd1cab7800baf0b0c6896672892
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: cc20ab1d020812800f1a27fabaa1932499f9a641
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367076"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67518775"
 ---
 # <a name="developer-content-bug-check-0xef-criticalprocessdied"></a>(開発者向けコンテンツ)バグ チェック 0xEF の。重要な\_プロセス\_DIED
 
@@ -30,7 +30,7 @@ CRITICAL_PROCESS_DIED のバグ チェックでは、0x000000EF の値を持ち�
 
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="criticalprocessdied-parameters"></a>重要な\_プロセス\_DIED パラメーター

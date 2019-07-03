@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b211232ccd2f2c69b1071a8079b287fa907e77e9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 384f223471e33391778b9f0a4398b8336646f112
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367614"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519738"
 ---
 # <a name="bug-check-0x1b-pfnsharecount"></a>バグ チェック 0x1B:PFN\_共有\_数
 
@@ -28,7 +28,7 @@ PFN\_共有\_数のバグ チェックが 0x0000001B の値を持ちます。
 このバグ チェック コードは、Windows オペレーティング システムでは使用されません。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
  

@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 81932127c5563badd3072ce6cb1f0f48121923af
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 267afdca7b9e47ae1d8ac06172df7614ef3e9693
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367663"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519818"
 ---
 # <a name="bug-check-0x193-videodxgkrnllivedump"></a>バグ チェック 0x193:ビデオ\_DXGKRNL\_LIVEDUMP
 
@@ -26,7 +26,7 @@ ms.locfileid: "67367663"
 ビデオ\_DXGKRNL\_LIVEDUMP バグ チェックが 0x00000193 の値を持ちます。 これを示します dxgkrnl によってトリガーされる livedump が発生しました。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="videodxgkrnllivedump-parameters"></a>ビデオ\_DXGKRNL\_LIVEDUMP パラメーター

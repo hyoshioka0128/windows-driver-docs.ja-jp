@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 23b8390a7049f7a8b8e702ca427f392735f22e33
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e5813b2a9b5b3a77f14730d8f5fda32b3dc82441
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367670"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519836"
 ---
 # <a name="developer-content-bug-check-0x19-badpoolheader"></a>(開発者向けコンテンツ)0x19 チェックをバグします。不適切な\_プール\_ヘッダー
 
@@ -26,7 +26,7 @@ ms.locfileid: "67367670"
 不適切な\_プール\_ヘッダーのバグ チェックが 0x00000019 の値を持ちます。 これは、プールのヘッダーが壊れていることを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="badpoolheader-parameters"></a>不適切な\_プール\_ヘッダー パラメーター

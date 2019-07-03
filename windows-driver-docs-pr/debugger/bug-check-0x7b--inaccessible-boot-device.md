@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 06362901f3b9ed4217448fc41697df338eb69954
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: abedcab42ac95183cc62ac15566c2eef3565ca89
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361752"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519191"
 ---
 # <a name="bug-check-0x7b-inaccessiblebootdevice"></a>バグ チェック 0x7B:アクセスできない\_ブート\_デバイス
 
@@ -26,7 +26,7 @@ ms.locfileid: "67361752"
 アクセス不可能\_ブート\_デバイス バグ チェックが 0x0000007B の値を持ちます。 このバグ チェックでは、Microsoft Windows オペレーティング システムが起動中にシステム パーティションへのアクセスを失ったことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="inaccessiblebootdevice-parameters"></a>アクセスできない\_ブート\_デバイス パラメーター

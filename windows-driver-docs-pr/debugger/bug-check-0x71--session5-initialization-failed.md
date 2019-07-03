@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: eeece7cfff1b94f6a8491e6cd413e13b11e52e11
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7e974eff15aa93c015839f19ee37d01ad29c58bf
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367336"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519230"
 ---
 # <a name="bug-check-0x71-session5initializationfailed"></a>バグ チェック 0x71:SESSION5\_初期化\_失敗
 
@@ -26,7 +26,7 @@ ms.locfileid: "67367336"
 SESSION5\_初期化\_失敗のバグ チェックが 0x00000071 の値を持ちます。 このバグ チェックでは、Microsoft Windows オペレーティング システムの初期化が失敗したことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="session5initializationfailed-parameters"></a>SESSION5\_初期化\_FAILED パラメーター

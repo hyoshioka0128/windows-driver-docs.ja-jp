@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: efeaf29ce3335473f0a65ae9d99e34f9536efbb9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: cc3b8cc2724fc69ba4041b9da773f5cc0171740a
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361528"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67518803"
 ---
 # <a name="bug-check-0xe9-activeexworkerthreadtermination"></a>バグ チェック 0xE9:アクティブな\_EX\_ワーカー\_スレッド\_終了
 
@@ -26,7 +26,7 @@ ms.locfileid: "67361528"
 アクティブな\_EX\_ワーカー\_スレッド\_終了バグ チェックが 0x000000E9 の値を持ちます。 これは、アクティブな実行ワーカー スレッドの終了を示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="activeexworkerthreadtermination-parameters"></a>アクティブな\_EX\_ワーカー\_スレッド\_終了パラメーター

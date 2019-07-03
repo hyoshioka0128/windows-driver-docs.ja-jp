@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 488ea7842a7d60e6da647df4ee6a0e03bbe027f0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ac2a0a88861aaa3d1a4826aee0d5a1686360bc2c
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367460"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519473"
 ---
 # <a name="bug-check-0x3e-multiprocessorconfigurationnotsupported"></a>バグ チェック 0x3E:マルチプロセッサ\_構成\_いない\_サポートされています。
 
@@ -26,7 +26,7 @@ ms.locfileid: "67367460"
 マルチプロセッサ、\_構成\_いない\_サポートされているバグ チェックが 0x0000003E の値を持ちます。 これは、システムが複数のプロセッサが、相互の関連非対称、ことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="multiprocessorconfigurationnotsupported-parameters"></a>マルチプロセッサ\_構成\_いない\_サポートされているパラメーター

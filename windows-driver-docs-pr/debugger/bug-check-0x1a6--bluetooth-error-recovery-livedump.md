@@ -12,19 +12,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 615d2f4456de7aa847a0a88608b74f59738c8fb1
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e5546d2377f074d94e260f66d9c73715ac5709b4
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367630"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519748"
 ---
 # <a name="bug-check-0x1a6-bluetootherrorrecoverylivedump"></a>バグ チェック 0x1A6:BLUETOOTH\_エラー\_RECOVERY\_LIVEDUMP
 
 BLUETOOTH\_エラー\_RECOVERY\_LIVEDUMP バグ チェックが 0x000001A6 の値を持ちます。 これは、Bluetooth 無線ドライバー (bthport.sys) がエラーから回復し、ラジオ、irremediable 内部の状態をリセットしようとする回復を開始したことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
  
 

@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 69a87bfb3f2f8200122dff191a83f3e5620519d0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 00bde513a9715680ae0df7f9d6f33e75d2cc9678
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367442"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519451"
 ---
 # <a name="bug-check-0x44-multipleirpcompleterequests"></a>バグ チェック 0x44:複数\_IRP\_完了\_要求
 
@@ -26,7 +26,7 @@ ms.locfileid: "67367442"
 複数\_IRP\_完了\_要求のバグ チェックが 0x00000044 の値を持ちます。 これは、ドライバーが IRP は完了要求しようとしたことを示します既にを完了します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="multipleirpcompleterequests-parameters"></a>複数\_IRP\_完了\_要求パラメーター

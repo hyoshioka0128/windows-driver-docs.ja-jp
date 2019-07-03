@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 7686752753127db0ea27cab2b2f7ca5dfd0424f0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d35077bcf09a7a7e8aeec10057c8b328d54ee417
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361942"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519575"
 ---
 # <a name="bug-check-0x27-rdrfilesystem"></a>バグ チェック 0x27:RDR\_ファイル\_システム
 
@@ -26,7 +26,7 @@ ms.locfileid: "67361942"
 RDR\_ファイル\_システムのバグ チェックが 0x00000027 の値を持ちます。 これは、SMB リダイレクターのファイル システムで問題が発生したことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="rdrfilesystem-parameters"></a>RDR\_ファイル\_システム パラメーター

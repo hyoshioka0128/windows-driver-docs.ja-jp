@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: af94df12a4341c36c6193e502db0daa6dce013b3
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a0668690b85ff640151b96e95c7fa0dc47881a6a
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362148"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519990"
 ---
 # <a name="bug-check-0x161-livesystemdump"></a>バグ チェック 0x161:LIVE\_システム\_ダンプ
 
@@ -26,7 +26,7 @@ ms.locfileid: "67362148"
 LIVE\_システム\_ダンプのバグ チェックが 0x00000161 の値を持ちます。 これは、システム管理者が、ライブ システム メモリ ダンプの収集を要求することを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="livesystemdump-parameters"></a>LIVE\_システム\_ダンプ パラメーター

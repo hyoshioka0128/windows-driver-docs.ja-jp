@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: deac160416738fceba842b4cd880d0e20d68233e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f8ddf984a18d9cfcf75e1e10a3628e85f7552c68
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367111"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67518806"
 ---
 # <a name="bug-check-0xe6-driververifierdmaviolation"></a>バグ チェック 0xE6:ドライバー\_VERIFIER\_DMA\_違反
 
@@ -26,7 +26,7 @@ ms.locfileid: "67367111"
 ドライバー\_VERIFIER\_DMA\_違反のバグ チェックが 0x000000E6 の値を持ちます。 これは、すべての Driver Verifier のバグ チェック コード**DMA の検証**違反。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="driververifierdmaviolation-parameters"></a>ドライバー\_VERIFIER\_DMA\_違反パラメーター

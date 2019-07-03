@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 5170847b3e122ecd380fcf0d0decea4fdccefb92
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3c584759aea989de4b58d5e13f8e6620f01139a3
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367098"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67518801"
 ---
 # <a name="bug-check-0xe8-invalidcanceloffileopen"></a>バグ チェック 0xE8:無効な\_キャンセル\_の\_ファイル\_開く
 
@@ -26,7 +26,7 @@ ms.locfileid: "67367098"
 無効な\_キャンセル\_の\_ファイル\_バグを開くチェックが 0x000000E8 の値を持ちます。 これは、無効なファイル オブジェクトに渡されたことを示します。 **IoCancelFileOpen**します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="invalidcanceloffileopen-parameters"></a>無効な\_キャンセル\_の\_ファイル\_パラメーターを開く

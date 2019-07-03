@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 0862bd59433415bf0cecde2d1665b7b25c3c8bc5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1d09a235a5f9b3290418280efe445e4d0439ef52
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361651"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519011"
 ---
 # <a name="bug-check-0xb8-attemptedswitchfromdpc"></a>バグ チェック 0xB8:試行\_スイッチ\_FROM\_DPC
 
@@ -26,7 +26,7 @@ ms.locfileid: "67361651"
 試行\_スイッチ\_FROM\_DPC バグ チェックが 0x000000B8 の値を持ちます。 これは、無効な操作が遅延プロシージャ呼び出し (DPC) のルーチンによって試行されたことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="attemptedswitchfromdpc-parameters"></a>試行\_スイッチ\_FROM\_DPC パラメーター

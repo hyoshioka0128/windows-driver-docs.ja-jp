@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ff3d9481fb6ac9875cd5a9fc6d2009101a4db259
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 979850e00f54135d009162f07b0d961fafcbb52e
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367880"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67520781"
 ---
 # <a name="bug-check-0x123-cryptoselftestfailure"></a>バグ チェック 0x123:CRYPTO\_セルフ\_テスト\_エラー
 
@@ -26,7 +26,7 @@ ms.locfileid: "67367880"
 CRYPTO\_セルフ\_テスト\_エラーのバグ チェックが 0x00000123 の値を持ちます。 これは、暗号化サブシステムが、必須のアルゴリズムをブートス トラップ時に自己テストが失敗したことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="cryptoselftestfailure-parameters"></a>CRYPTO\_セルフ\_テスト\_エラー パラメーター

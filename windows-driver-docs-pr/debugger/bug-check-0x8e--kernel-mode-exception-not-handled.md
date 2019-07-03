@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d495496e5ebee66857521b76621983dbdc352a5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 93662d93cbd93dd6dc41645e86d723c203e0e9ff
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367288"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519147"
 ---
 # <a name="bug-check-0x8e-kernelmodeexceptionnothandled"></a>バグ チェック 0x8E:カーネル\_モード\_例外\_いない\_処理済み
 
@@ -26,7 +26,7 @@ ms.locfileid: "67367288"
 カーネル\_モード\_例外\_いない\_処理済みのバグ チェックが 0x0000008E の値を持ちます。 このバグ チェックでは、カーネル モード アプリケーションがエラー ハンドラーをキャッチされなかった例外を生成することを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="kernelmodeexceptionnothandled-parameters"></a>カーネル\_モード\_例外\_いない\_処理済みのパラメーター

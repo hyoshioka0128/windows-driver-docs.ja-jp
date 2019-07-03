@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 86c16e3ba9ca6ae0708edbe20a3e3c67a22c3980
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: dc24da4c44399f1e548c6ee2412ed0344b3954d3
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361550"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67518851"
 ---
 # <a name="bug-check-0xd9-lockedpagestrackercorruption"></a>バグ チェック 0xD9:ロックされている\_ページ\_トラッカー\_破損
 
@@ -26,7 +26,7 @@ ms.locfileid: "67361550"
 LOCKED\_ページ\_トラッカー\_破損バグ チェックが 0x000000D9 の値を持ちます。 これは、ロックされているページ追跡の内部構造が破損していることを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="lockedpagestrackercorruption-parameters"></a>ロックされている\_ページ\_トラッカー\_破損パラメーター

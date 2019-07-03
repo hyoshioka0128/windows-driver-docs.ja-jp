@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ab2fd09b99be2d105d8aadc18cda380d73e98fbb
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 20ea652b025a52b4049c0a64bdafb1a728cbc9d1
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367238"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519012"
 ---
 # <a name="bug-check-0xb4-videodriverinitfailure"></a>バグ チェック 0xB4:ビデオ\_ドライバー\_INIT\_エラー
 
@@ -26,7 +26,7 @@ ms.locfileid: "67367238"
 ビデオ\_ドライバー\_INIT\_エラーのバグ チェックが 0x000000B4 の値を持ちます。 これは、Windows がグラフィックス モードに切り替わるできなかったことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="videodriverinitfailure-parameters"></a>ビデオ\_ドライバー\_INIT\_エラー パラメーター

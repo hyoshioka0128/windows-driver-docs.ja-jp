@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: cc98f51163dee3db710e17313be08539be64b147
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: cf418808a92609b1a6f79646b9979cf90595d466
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362198"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67520057"
 ---
 # <a name="bug-check-0x153-kernellockentryleakedonthreadtermination"></a>バグ チェック 0x153:カーネル\_ロック\_エントリ\_漏洩した\_ON\_スレッド\_終了
 
@@ -26,7 +26,7 @@ ms.locfileid: "67362198"
 カーネル\_ロック\_エントリ\_漏洩した\_ON\_スレッド\_終了バグ チェックが 0x00000153 の値を持ちます。 これは、スレッドがその AutoBoost ロック エントリを解放した前に終了したことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="kernellockentryleakedonthreadtermination-parameters"></a>カーネル\_ロック\_エントリ\_漏洩した\_ON\_スレッド\_終了パラメーター

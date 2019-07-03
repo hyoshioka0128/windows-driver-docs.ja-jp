@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e2f7bfd256f8cc759b9330cd40ce0dd5fb15604
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9901d8484f06e9dda095b5446098682c990ba45c
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367752"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519997"
 ---
 # <a name="bug-check-0x15f-connectedstandbywatchdogtimeoutlivedump"></a>バグ チェック 0x15F:接続されている\_スタンバイ\_ウォッチドッグ\_タイムアウト\_LIVEDUMP
 
@@ -26,7 +26,7 @@ ms.locfileid: "67367752"
 接続済み、\_スタンバイ\_ウォッチドッグ\_タイムアウト\_LIVEDUMP バグ チェックが 0x0000015F の値を持ちます。 これは、コネクテッド スタンバイ ウォッチドッグ タイムアウトが発生したことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="connectedstandbywatchdogtimeoutlivedump-parameters"></a>接続されている\_スタンバイ\_ウォッチドッグ\_タイムアウト\_LIVEDUMP パラメーター

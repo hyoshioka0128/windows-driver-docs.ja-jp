@@ -12,19 +12,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f4c54da079d23acd7e3b242c93c9bd93efa753b2
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1985bfffcbc58acc2247a6713f257ffa8e69cbc0
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367741"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519965"
 ---
 # <a name="bug-check-0x166-clusterresourcecalltimeoutlivedump"></a>バグ チェック 0x166:クラスター\_リソース\_呼び出す\_タイムアウト\_LIVEDUMP
 
 クラスター\_リソース\_呼び出す\_タイムアウト\_LIVEDUMP バグ チェックが 0x00000166 の値を持ちます。 これは、クラスター リソースの呼び出しが構成されたタイムアウトより長くかかったことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 

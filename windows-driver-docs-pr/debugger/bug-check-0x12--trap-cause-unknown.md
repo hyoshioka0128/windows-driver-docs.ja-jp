@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a977a8ed72c741a64c26c81da0b02b6abba6cd1
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d4e9880b46bb1e85d97c2c3d4d1644eb2986a841
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367884"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67520859"
 ---
 # <a name="bug-check-0x12-trapcauseunknown"></a>バグ チェック 0x12:トラップ\_原因\_不明
 
@@ -26,7 +26,7 @@ ms.locfileid: "67367884"
 トラップ\_原因\_不明なバグ チェックが 0x00000012 の値を持ちます。 これは、不明な例外が発生したことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="trapcauseunknown-parameters"></a>トラップ\_原因\_不明なパラメーター

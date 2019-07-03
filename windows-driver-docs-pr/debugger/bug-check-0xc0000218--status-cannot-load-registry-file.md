@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e0e92f03592c50e3728504a0e5b731f86279df00
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 616532997cb9e2a95e7846f2d4736fb9a0ec5848
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367183"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67518969"
 ---
 # <a name="bug-check-0xc0000218-statuscannotloadregistryfile"></a>バグ チェック 0xC0000218:ステータス\_できない\_ロード\_レジストリ\_ファイル
 
@@ -26,7 +26,7 @@ ms.locfileid: "67367183"
 ステータス\_できない\_ロード\_レジストリ\_ファイル バグ チェックが 0xC0000218 の値を持ちます。 これは、レジストリ ファイルが読み込めなかったことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="statuscannotloadregistryfile-parameters"></a>ステータス\_できない\_ロード\_レジストリ\_ファイル パラメーター

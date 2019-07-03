@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 38d28ca167ccf2e8ebd8937ad14d4a7c5255e117
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f5d0bdd69e57650942996cf8971f09a4c00c3e37
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362178"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67520032"
 ---
 # <a name="bug-check-0x158-illegaliommupagefault"></a>バグ チェック 0x158:無効な\_IOMMU\_ページ\_エラー
 
@@ -26,7 +26,7 @@ ms.locfileid: "67362178"
 不正な\_IOMMU\_ページ\_フォールトのバグ チェックが 0x00000158 の値を持ちます。 これは、IOMMU が、無効な ASID のページ フォールトのパケットを配信されたことを示します。 ASID が既に再利用されたため安全ではありません。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="illegaliommupagefault-parameters"></a>無効な\_IOMMU\_ページ\_フォールト パラメーター

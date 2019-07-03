@@ -12,19 +12,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 642533235616bae740ed9a1ce42aca51833f070a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8f125a11cc43334c2eaa08c44e95de377e2a3424
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362076"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519848"
 ---
 # <a name="bug-check-0x18c-hyperguardviolation"></a>バグ チェック 0x18C:HYPERGUARD\_違反 
 
 HYPERGUARD\_違反のバグ チェックが 0x0000018C の値を持ちます。 これは、カーネルの重大なカーネル コードまたはデータが壊れていることが検出されたことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 > [!NOTE] 

@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 601704e0e83f4fba1b4527619d8fdf1b87d70c3b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2f67fa1021afc11c2382d5c6845cdc7d70514c09
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361904"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519521"
 ---
 # <a name="bug-check-0x32-phase1initializationfailed"></a>バグ チェック 0x32:フェーズ 1\_初期化\_失敗
 
@@ -26,7 +26,7 @@ ms.locfileid: "67361904"
 フェーズ 1\_初期化\_失敗のバグ チェックが 0x00000032 の値を持ちます。 これは、そのシステムの初期化の失敗を示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="phase1initializationfailed-parameters"></a>フェーズ 1\_初期化\_FAILED パラメーター

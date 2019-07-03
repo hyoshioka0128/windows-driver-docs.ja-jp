@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 725e9e0a84da198bc979894d70c29bfb94b89cab
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 666c0ea32607dcf7ab6d4576212bb2f828ae9782
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367218"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519036"
 ---
 # <a name="bug-check-0xac-halmemoryallocation"></a>バグ チェック 0xAC:HAL\_メモリ\_割り当て
 
@@ -26,7 +26,7 @@ ms.locfileid: "67367218"
 HAL\_メモリ\_割り当てのバグ チェックが 0x000000AC の値を持ちます。 このバグ チェックでは、ハードウェア アブストラクション レイヤー (HAL) が十分なメモリを取得できませんでした。 ことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="halmemoryallocation-parameters"></a>HAL\_メモリ\_割り当てパラメーター

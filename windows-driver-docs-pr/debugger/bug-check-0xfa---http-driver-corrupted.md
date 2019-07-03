@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ad79360e94385965c31beb630906bb57f6612a6
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7c326bd9fbc5437fb2a3cc4f854a0eb3bd9ea192
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367040"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67518702"
 ---
 # <a name="bug-check-0xfa-httpdrivercorrupted"></a>バグ チェック 0xFA:HTTP\_ドライバー\_破損しました。
 
@@ -26,7 +26,7 @@ ms.locfileid: "67367040"
 HTTP\_ドライバー\_破損したバグ チェックが 0x000000FA の値を持ちます。 これは、HTTP カーネル ドライバー (Http.sys) が破損した状態し、回復できないことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="httpdrivercorrupted-parameters"></a>HTTP\_ドライバー\_破損したパラメーター

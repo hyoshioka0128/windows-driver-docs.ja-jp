@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d07eda994867d99cbc09b3d114974d5bd53fd692
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 63ed5fb19655c803119f4c35b429bfb8b9defb01
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361736"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519171"
 ---
 # <a name="bug-check-0x7f-unexpectedkernelmodetrap"></a>バグ チェック 0x7F:予期しない\_カーネル\_モード\_トラップ
 
@@ -28,7 +28,7 @@ ms.locfileid: "67361736"
 このトラップ可能性があります、*バインドされたトラップ*(トラップ、カーネルが許可されないをキャッチする) または*二重フォールト*(常に、システム障害の結果、以前のフォールトを処理中に発生したエラー)。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="unexpectedkernelmodetrap-parameters"></a>予期しない\_カーネル\_モード\_トラップ パラメーター

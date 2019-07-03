@@ -13,19 +13,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d80331ee15e20409f3991db52b393b116eb2e38
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 97dfcba9f0a87770cf1bf5c8d8fbe8286d4dd448
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367182"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67518927"
 ---
 # <a name="bug-check-0xc9-driververifieriomanagerviolation"></a>バグ チェック 0xC9:ドライバー\_VERIFIER\_IOMANAGER\_違反
 
 ドライバー\_VERIFIER\_IOMANAGER\_違反のバグ チェックが 0x000000C9 の値を持ちます。 これは、すべての Driver Verifier のバグ チェック コード**I/O の検証**違反。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 ## <a name="driververifieriomanagerviolation-parameters"></a>ドライバー\_VERIFIER\_IOMANAGER\_違反パラメーター
 

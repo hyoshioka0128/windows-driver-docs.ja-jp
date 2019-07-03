@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 38bb1e52ca075e84b628ee7a361f3faf0cd80bb0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 30b8213461342573b17f6ec308bcc13e7eefd8ff
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367180"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67518929"
 ---
 # <a name="bug-check-0xc7-timerordpcinvalid"></a>バグ チェック 0xC7:タイマー\_または\_DPC\_が無効です
 
@@ -26,7 +26,7 @@ ms.locfileid: "67367180"
 タイマー\_または\_DPC\_の無効なバグ チェックが 0x000000C7 の値を持ちます。 場合、カーネルのタイマーが発行または遅延プロシージャ呼び出し (DPC) が許可されていないメモリのどこかが見つかりません。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="timerordpcinvalid-parameters"></a>タイマー\_または\_DPC\_パラメーターが無効です

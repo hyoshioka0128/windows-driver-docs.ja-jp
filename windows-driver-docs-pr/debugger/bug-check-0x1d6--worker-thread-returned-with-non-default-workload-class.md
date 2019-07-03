@@ -12,19 +12,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d222523875b126bf14b060e607cdec386f6edcb
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c0c9e74c14f4115e3ebd0eca4b73e28731bed1f3
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367568"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519651"
 ---
 # <a name="bug-check-0x1d6-workerthreadreturnedwithnondefaultworkloadclass"></a>バグ チェック 0x1D6:ワーカー\_スレッド\_から返された\_WITH\_非\_既定\_ワークロード\_クラス
 
 ワーカー\_スレッド\_から返された\_WITH\_非\_既定\_ワークロード\_クラスのバグ チェックが 0x000001D6 の値を持ちます。 これは、ワーカー スレッドがそのワークロード クラスを変更し、戻る前に戻されませんでしたを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
  
 

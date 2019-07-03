@@ -12,19 +12,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 11b17c362dbd443b7cf601ffb85398f3e9e40aed
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 11748f2d0fffef755d1d4eea2758f423a0fa4688
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362031"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519753"
 ---
 # <a name="bug-check-0x1a5-usbdripsblockersurpriseremovallivedump"></a>バグ チェック 0x1A5:USB\_DRIPS\_BLOCKER\_突然\_削除\_LIVEDUMP
 
 USB\_DRIPS\_BLOCKER\_突然\_削除\_LIVEDUMP バグ チェックが 0x000001A5 の値を持ちます。 これは、USB デバイスが突然 DRIPS ファイアウォールによってブロックされているため、削除になることを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="usbdripsblockersurpriseremovallivedump-parameters"></a>USB\_DRIPS\_BLOCKER\_突然\_削除\_LIVEDUMP パラメーター

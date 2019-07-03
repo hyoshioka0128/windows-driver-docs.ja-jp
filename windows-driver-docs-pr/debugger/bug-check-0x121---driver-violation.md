@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e19a032a1ce654b7fd8ee9ec28c10c30233d9d8
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8e80b189a39ae5b36bd7ee713e47886cff963904
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367882"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67520837"
 ---
 # <a name="bug-check-0x121-driverviolation"></a>バグ チェック 0x121:ドライバー\_違反
 
@@ -26,7 +26,7 @@ ms.locfileid: "67367882"
 ドライバー\_違反のバグ チェックが 0x00000121 の値を持ちます。 このバグ チェックでは、ドライバーの違反が原因となったことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="driverviolation-parameters"></a>ドライバー\_違反パラメーター

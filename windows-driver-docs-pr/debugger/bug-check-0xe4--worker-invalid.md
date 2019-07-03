@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d3bb7091276ab45feaf6716287c87c512a03ca95
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4b76c5ee853ebf3d443cd7c9dafcd7ee2b021c75
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361522"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67518805"
 ---
 # <a name="bug-check-0xe4-workerinvalid"></a>バグ チェック 0xE4:ワーカー\_が無効です
 
@@ -26,7 +26,7 @@ ms.locfileid: "67361522"
 ワーカー\_の無効なバグ チェックが 0x000000E4 の値を持ちます。 これは、そのメモリを含めることはできません、executive の作業項目は、このような項目は含ままたは現在アクティブな作業項目がキューに入れられたことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="workerinvalid-parameters"></a>ワーカー\_パラメーターが無効です

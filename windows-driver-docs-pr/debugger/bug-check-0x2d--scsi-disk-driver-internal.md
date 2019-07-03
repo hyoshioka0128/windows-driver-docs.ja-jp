@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 538937843bfee600d4b7d4c6b6eb270592822cf5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 835e6b34eb31467e7da1105c490aa2e314ef8869
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361924"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519543"
 ---
 # <a name="bug-check-0x2d-scsidiskdriverinternal"></a>バグ チェック 0x2D:SCSI\_ディスク\_ドライバー\_内部
 
@@ -28,7 +28,7 @@ SCSI\_ディスク\_ドライバー\_内部バグ チェックが 0x0000002D の
 このバグ チェックが非常に少ない回数が表示されます。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 

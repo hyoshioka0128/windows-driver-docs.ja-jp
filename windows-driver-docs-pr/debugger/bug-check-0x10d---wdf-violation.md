@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: cee1176f702120588defdbec83d9bf5d08efe7d4
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e7e2cfcc7425fc52a2dbed725fad29885b9b379c
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367924"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67521428"
 ---
 # <a name="bug-check-0x10d-wdfviolation"></a>バグ チェック 0x10D:WDF\_違反
 
@@ -26,7 +26,7 @@ ms.locfileid: "67367924"
 WDF\_違反のバグ チェックが 0x0000010D の値を持ちます。 これは、カーネル モード ドライバー フレームワーク (KMDF) には Windows では、framework ベースのドライバーにエラーが見つかりましたが検出されたことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="wdfviolation-parameters"></a>WDF\_違反パラメーター

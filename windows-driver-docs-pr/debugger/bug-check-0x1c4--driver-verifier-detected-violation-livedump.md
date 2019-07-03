@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c30356e8c20a5f6da035f9299c905840509fc0b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6623ee07e4c59772f6e8459291de6188b834d481
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362014"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519725"
 ---
 # <a name="bug-check-0x1c4-driververifierdetectedviolationlivedump"></a>バグ チェック 0x1C4:ドライバー\_VERIFIER\_検出\_違反\_LIVEDUMP
 
@@ -26,7 +26,7 @@ ms.locfileid: "67362014"
 ドライバー\_VERIFIER\_検出\_違反\_LIVEDUMP バグ チェックが 0x000001C4 の値を持ちます。 これは、システムを破壊しようとしてデバイス ドライバーが検出されたことを示します。 これは、ドライバーは、(管理者) によって問題ありとカーネルが有効になっているこのドライバーの詳細なチェック、レジストリで指定されたためにです。 詳細については、次を参照してください。 [Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 

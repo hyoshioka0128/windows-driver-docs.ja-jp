@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 147b01c3de9bf29486a26db3c8d94a25822a8669
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0855b85ff45fc99a9141b777f1ea7f428a9027ce
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367497"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519503"
 ---
 # <a name="bug-check-bug-check-0x356-xboxeractrlcstimeout"></a>チェックのバグ チェック 0x356 をバグします。XBOX\_ERACTRL\_CS\_タイムアウト
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 XBOX_ERACTRL_CS_TIMEOUT のバグ チェックでは、0x00000356 の値を持ちます。 

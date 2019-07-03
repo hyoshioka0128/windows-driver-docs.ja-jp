@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 46927af0f08f37c77a264ac0bdeec0e0bf68fd9b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c373211e83e83c92bac016c7127312ae5c0e71c2
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367950"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67521481"
 ---
 # <a name="bug-check-0x108-thirdpartyfilesystemfailure"></a>バグ チェック 0x108:3 番目\_パーティ\_ファイル\_システム\_エラー
 
@@ -26,7 +26,7 @@ ms.locfileid: "67367950"
 3 番目\_パーティ\_ファイル\_システム\_エラーのバグ チェックが 0x00000108 の値を持ちます。 これは、サード パーティ製のファイル システムまたはファイル システム フィルターで回復できない問題が発生したことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="thirdpartyfilesystemfailure-parameters"></a>3 番目\_パーティ\_ファイル\_システム\_エラー パラメーター

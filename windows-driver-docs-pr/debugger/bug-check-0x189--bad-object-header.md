@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 492a795590eaa1baa92283ab641c2b4e75fbb04a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 20e8ecbd98159b81d3eec44970ab88bb9f970d27
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362086"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519854"
 ---
 # <a name="bug-check-0x189-badobjectheader"></a>バグ チェック 0x189:不適切な\_オブジェクト\_ヘッダー
 
@@ -26,7 +26,7 @@ ms.locfileid: "67362086"
 不適切な\_オブジェクト\_ヘッダーのバグ チェックが 0x00000189 の値を持ちます。 これが示す「オブジェクト\_ヘッダーが破損しています。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="badobjectheader-parameters"></a>不適切な\_オブジェクト\_ヘッダー パラメーター

@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b2e4c97f4f6f04d25aadc3d06558fc89d55807f5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: bd250c5652827c17dde8f02fc9724ba4310f716e
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362092"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519870"
 ---
 # <a name="bug-check-0x187-videodwminittimeoutfallbackbdd"></a>バグ チェック 0x187:ビデオ\_DWMINIT\_タイムアウト\_フォールバック\_BDD
 
@@ -26,7 +26,7 @@ ms.locfileid: "67362092"
 ビデオ\_DWMINIT\_タイムアウト\_フォールバック\_BDD のバグ チェックが 0x00000187 の値を持ちます。 これは、そのビデオは IHV ドライバーを使用するのではなく、BDD に戻りましたを示します。 これにより、ライブのダンプが常に生成されます。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="videodwminittimeoutfallbackbdd-parameters"></a>ビデオ\_DWMINIT\_タイムアウト\_フォールバック\_BDD パラメーター

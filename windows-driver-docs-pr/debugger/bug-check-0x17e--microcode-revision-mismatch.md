@@ -12,19 +12,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f298d69f0a2d569b637df401ebc9242442739b33
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6f125c34cebd91168a97d7fae08f940873efbb17
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362097"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519874"
 ---
 # <a name="bug-check-0x17e-microcoderevisionmismatch"></a>バグ チェック 0x17E の。マイクロ コード\_リビジョン\_が一致しません
 
 マイクロ コード\_リビジョン\_の不一致のバグ チェックが 0x0000017E の値を持ちます。 これは、マルチプロセッサの構成で 1 つまたは複数のプロセッサに一貫性のないマイクロ コードが読み込まれるがあることを示します。  
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
  
 

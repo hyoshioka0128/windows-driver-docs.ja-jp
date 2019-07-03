@@ -12,19 +12,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d234677ac0dc58d994e714c2439962bf5f8a8c3e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9ff7eccb84833612b495f6ebe105bada4cafd089
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367562"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519631"
 ---
 # <a name="bug-check-0x1db-ipiwatchdogtimeout"></a>バグ チェック 0x1DB:IPI\_ウォッチドッグ\_タイムアウト
 
 IPI\_ウォッチドッグ\_バグ チェックのタイムアウトが 0x000001DB の値を持ちます。 これは、プロセッサが許可されている時間より IPI ループになってされていることを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
  
 

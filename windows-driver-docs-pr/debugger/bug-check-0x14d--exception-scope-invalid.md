@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ca3829323ee5c78c3a2985587f5469545626365
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8a466e5331a0794a5891a63e3dfefed314a26b90
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367796"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67520093"
 ---
 # <a name="bug-check-0x14d-exceptionscopeinvalid"></a>バグ チェック 0x14D:例外\_スコープ\_が無効です
 
@@ -26,7 +26,7 @@ ms.locfileid: "67367796"
 例外\_スコープ\_の無効なバグ チェックが 0x0000014D の値を持ちます。 これは、例外のディスパッチ内部に矛盾が検出されたことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="exceptionscopeinvalid-parameters"></a>例外\_スコープ\_パラメーターが無効です

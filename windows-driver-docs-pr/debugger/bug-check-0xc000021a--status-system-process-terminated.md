@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 05a96b83eb73b080c713fc7f0dab981305893a5c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: afb0815a97217ceb3acc34ae688944b80b731027
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361616"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67518966"
 ---
 # <a name="bug-check-0xc000021a-statussystemprocessterminated"></a>バグ チェック 0xC000021A:ステータス\_システム\_プロセス\_終了
 
@@ -26,7 +26,7 @@ ms.locfileid: "67361616"
 ステータス\_システム\_プロセス\_TERMINATED バグ チェックが 0xC000021A の値を持ちます。 これは、ユーザー モードの重要なサブシステムでエラーが発生したことを意味します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="statussystemprocessterminated-parameters"></a>ステータス\_システム\_プロセス\_終了パラメーター

@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9dc85a4c42dc96c539d1295dd10132770bcd3eb5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a0d5c2d6c777ab47814d11a4dd02a159f7b8dc7a
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367394"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519343"
 ---
 # <a name="bug-check-0x59-pinballfilesystem"></a>バグ チェック 0x59:ピンボール\_ファイル\_システム
 
@@ -26,7 +26,7 @@ ms.locfileid: "67367394"
 ピンボール\_ファイル\_システムのバグ チェックが 0x00000059 の値を持ちます。 これは、ピンボールのファイル システムで問題が発生したことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="pinballfilesystem-parameters"></a>ピンボール\_ファイル\_システム パラメーター

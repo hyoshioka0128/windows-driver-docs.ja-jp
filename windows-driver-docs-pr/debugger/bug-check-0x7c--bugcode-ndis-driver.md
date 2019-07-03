@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a42e48d82c2eea5043a1cd71a4a2d0990c0595c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 67250d52e712905653f9f8e05133e9795465400d
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367306"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519189"
 ---
 # <a name="bug-check-0x7c-bugcodendisdriver"></a>バグ チェック 0x7C:BUGCODE\_NDIS\_ドライバー
 
@@ -26,7 +26,7 @@ ms.locfileid: "67367306"
 BUGCODE\_NDIS\_ドライバーのバグ チェックが 0x0000007C の値を持ちます。 このバグ チェックでは、オペレーティング システムに、ネットワークのドライバーでエラーが検出されたことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="bugcodendisdriver-parameters"></a>BUGCODE\_NDIS\_ドライバーのパラメーター

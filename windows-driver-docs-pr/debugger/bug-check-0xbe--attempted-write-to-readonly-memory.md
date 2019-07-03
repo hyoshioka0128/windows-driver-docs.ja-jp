@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b9bbe4961c839edb3fc4420988a3b1f094a0ba4
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9dd60b8f44e488f621860b0436e2ad681c28d02d
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361635"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67518993"
 ---
 # <a name="bug-check-0xbe-attemptedwritetoreadonlymemory"></a>バグ チェック 0xBE:試行\_書き込み\_TO\_READONLY\_メモリ
 
@@ -26,7 +26,7 @@ ms.locfileid: "67361635"
 試行\_書き込み\_TO\_READONLY\_メモリのバグ チェックが 0x000000BE の値を持ちます。 ドライバーが読み取り専用メモリ セグメントに書き込もうとしている場合に発行されます。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="attemptedwritetoreadonlymemory-parameters"></a>試行\_書き込み\_TO\_READONLY\_メモリ パラメーター

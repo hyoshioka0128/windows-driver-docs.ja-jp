@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 061309774b8463961d11b99b59b568325188e556
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b67f9ce1646426e91ad22edf7d56a32aa3bc0270
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361784"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519277"
 ---
 # <a name="bug-check-0x69-io1initializationfailed"></a>バグ チェック 0x69:IO1\_初期化\_失敗
 
@@ -26,7 +26,7 @@ ms.locfileid: "67361784"
 IO1\_初期化\_失敗のバグ チェックが 0x00000069 の値を持ちます。 このバグ チェックでは、何らかの理由により、I/O システムの初期化が失敗したことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="io1initializationfailed-parameters"></a>IO1\_初期化\_FAILED パラメーター

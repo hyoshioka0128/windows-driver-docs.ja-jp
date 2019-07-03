@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 24eae5100a55e4c18b853def0b75cbb2954d1140
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1e09adca22e10a21dde5cc95319efc0942a45b7a
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367652"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519813"
 ---
 # <a name="bug-check-0x196-loaderrollbackdetected"></a>バグ チェック 0x196:ローダー\_ロールバック\_検出
 
@@ -26,7 +26,7 @@ ms.locfileid: "67367652"
 ローダー\_ロールバック\_検出されたバグ チェックが 0x00000196 の値を持ちます。 これは、OS ローダーのバージョンでは、オペレーティング システムが一致しないことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="loaderrollbackdetected-parameters"></a>ローダー\_ロールバック\_検出パラメーター

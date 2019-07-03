@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b7156ca66f7343ea989809170e6726e5b2cb90be
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 31816333fff3cd1ce63005f8814abc47825b95d9
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362369"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67521858"
 ---
 # <a name="bug-check-0x1000007f-unexpectedkernelmodetrapm"></a>バグ チェック 0x1000007F:予期しない\_カーネル\_モード\_トラップ\_M
 
@@ -28,7 +28,7 @@ ms.locfileid: "67362369"
 バグ チェック 0x1000007F が同じ意味とパラメーターとして[**バグ チェック 0x7F** ](bug-check-0x7f--unexpected-kernel-mode-trap.md) (予期しない\_カーネル\_モード\_トラップ)。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
  

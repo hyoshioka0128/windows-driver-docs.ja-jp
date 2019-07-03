@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 7744e72eaf58edd6b254007fe08bc12d1ca85b72
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f45bc331b55b1e3213809692eb600607c73fc796
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367798"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67520099"
 ---
 # <a name="bug-check-0x149-refsfilesystem"></a>バグ チェック 0x149:REFS\_ファイル\_システム
 
@@ -26,7 +26,7 @@ ms.locfileid: "67367798"
 REFS\_ファイル\_システムのバグ チェックが 0x00000149 の値を持ちます。 これは、ファイル システム エラーが発生したことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="refsfilesystem-parameters"></a>REFS\_ファイル\_システム パラメーター

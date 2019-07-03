@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: cd8e9e0efc6d56b6cddfe409926b0d4262a7b70c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 296d9700dcb7b36d4d2455ca06151ecbe8a262e9
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367178"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67518937"
 ---
 # <a name="bug-check-0xc5-drivercorruptedexpool"></a>バグ チェック 0xC5:ドライバー\_破損した\_EXPOOL
 
@@ -26,7 +26,7 @@ ms.locfileid: "67367178"
 ドライバー\_破損した\_EXPOOL バグ チェックが 0x000000C5 の値を持ちます。 これは、システムがプロセスが高すぎる IRQL で無効なメモリへのアクセスを試行したことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="drivercorruptedexpool-parameters"></a>ドライバー\_破損した\_EXPOOL パラメーター

@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: cba9798c3cb5c97a4d0cb4f892c57b46ab0f05ff
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: daf2d7756327c6d7882780b6f1c98222f3920202
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362316"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67521043"
 ---
 # <a name="bug-check-0x119-videoschedulerinternalerror"></a>バグ チェック 0x119:ビデオ\_スケジューラ\_内部\_エラー
 
@@ -26,7 +26,7 @@ ms.locfileid: "67362316"
 ビデオ\_スケジューラ\_内部\_エラーのバグ チェックが 0x00000119 の値を持ちます。 これは、ビデオのスケジューラで致命的な違反が検出されたことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="videoschedulerinternalerror-parameters"></a>ビデオ\_スケジューラ\_内部\_エラー パラメーター

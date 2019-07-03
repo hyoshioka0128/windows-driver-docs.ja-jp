@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 740dec4fee7ab1ee4a28d78176c15ef7a254952d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 88311b70bcc13ec2d4dd7d0e23bcc13fe042963a
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361954"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519612"
 ---
 # <a name="bug-check-0x20-kernelapcpendingduringexit"></a>バグ チェック 0x20:カーネル\_APC\_PENDING\_に\_終了
 
@@ -26,7 +26,7 @@ ms.locfileid: "67361954"
 カーネル\_APC\_PENDING\_に\_終了のバグ チェックが 0x00000020 の値を持ちます。 これは、非同期プロシージャ コール (APC) がまだされたことを示します。 保留中のスレッドが終了しました。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="kernelapcpendingduringexit-parameters"></a>カーネル\_APC\_PENDING\_に\_終了パラメーター

@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f7d80b108caeb7273f42733b05cadfa7f74aed8
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8eb230d02b9b46269c851883ca6c8e4f64434936
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362212"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67520096"
 ---
 # <a name="bug-check-0x14a-kernelwmiinternal"></a>バグ チェック 0x14A:カーネル\_WMI\_内部
 
@@ -26,7 +26,7 @@ ms.locfileid: "67362212"
 カーネル\_WMI\_内部バグ チェックが 0x0000014A の値を持ちます。 これは、カーネルの内部 WMI のサブシステムに致命的なエラーが発生したことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="kernelwmiinternal-parameters"></a>カーネル\_WMI\_内部パラメーター

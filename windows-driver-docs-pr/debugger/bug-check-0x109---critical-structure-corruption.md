@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ac9d206ae39a022138322ec58e9ad7bcfd463a2
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 92ed8c35d1fbe2ebfcb6bc451296cea3c5b9362a
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362346"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67521426"
 ---
 # <a name="bug-check-0x109-criticalstructurecorruption"></a>バグ チェック 0x109:重要な\_構造\_破損
 
@@ -26,7 +26,7 @@ ms.locfileid: "67362346"
 CRITICAL\_構造\_破損バグ チェックが 0x00000109 の値を持ちます。 これは、カーネルの重大なカーネル コードまたはデータの破損が検出されたことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="criticalstructurecorruption-parameters"></a>重要な\_構造\_破損パラメーター

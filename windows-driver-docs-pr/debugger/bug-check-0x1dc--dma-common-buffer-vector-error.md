@@ -12,19 +12,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: a12ec050c1cc056fa54f911ca876ba00db82f902
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6e8997ff2d9113f1242fbba5be11abd17a54fea2
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361963"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519623"
 ---
 # <a name="bug-check-0x1dc-dmacommonbuffervectorerror"></a>バグ チェック 0x1DC:DMA\_共通\_バッファー\_ベクター\_エラー
 
 DMA\_共通\_バッファー\_ベクター\_エラーのバグ チェックが 0x000001DC の値を持ちます。 これは、ドライバーが DMA のベクトル化一般的なバッファーの Api を誤って使用することを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
  
 

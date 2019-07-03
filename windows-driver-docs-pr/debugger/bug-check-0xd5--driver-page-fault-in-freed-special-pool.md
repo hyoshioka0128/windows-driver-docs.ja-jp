@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: dab6edef93910f19e79bb622794b9bcc6e39d7ad
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9d46dc53d226c0d22f0307d7f5b36a39e82b3412
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361556"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67518865"
 ---
 # <a name="bug-check-0xd5-driverpagefaultinfreedspecialpool"></a>バグ チェック 0xD5:ドライバー\_ページ\_フォールト\_IN\_FREED\_特殊\_プール
 
@@ -26,7 +26,7 @@ ms.locfileid: "67361556"
 ドライバー\_ページ\_フォールト\_IN\_FREED\_特殊\_プールのバグ チェックが 0x000000D5 の値を持ちます。 これは、ドライバーが既に解放されているメモリを参照することを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="driverpagefaultinfreedspecialpool-parameters"></a>ドライバー\_ページ\_フォールト\_IN\_FREED\_特殊\_プールのパラメーター

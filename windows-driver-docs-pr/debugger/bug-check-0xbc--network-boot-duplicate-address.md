@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 58d4047ae3bef223726c21326d6f4bab29cd65bd
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 05f093807c9d59dd7a34e07888160790edb09ab3
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361630"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67518996"
 ---
 # <a name="bug-check-0xbc-networkbootduplicateaddress"></a>バグ チェック 0xBC:ネットワーク\_ブート\_複製\_アドレス
 
@@ -26,7 +26,7 @@ ms.locfileid: "67361630"
 ネットワーク\_ブート\_複製\_アドレス バグ チェックが 0x000000BC の値を持ちます。 これは、ネットワークから起動中にこのコンピューターに重複する IP アドレスが割り当てられたことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="networkbootduplicateaddress-parameters"></a>ネットワーク\_ブート\_複製\_アドレス パラメーター

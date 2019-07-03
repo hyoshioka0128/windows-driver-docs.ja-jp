@@ -12,19 +12,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: bd92cc837716395478957f63928b979549a48ac6
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8615654173f804d4aca5a9e4970d38d8e62255dd
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367714"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519919"
 ---
 # <a name="bug-check-0x171-clustercsvclussvcdisconnectwatchdog"></a>バグ チェック 0x171:クラスター\_CSV\_CLUSSVC\_切断\_ウォッチドッグ
 
 クラスター\_CSV\_CLUSSVC\_切断\_ウォッチドッグのバグ チェックが 0x00000171 の値を持ちます。 これは、クラスターの切断によって進行が行われていないことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 

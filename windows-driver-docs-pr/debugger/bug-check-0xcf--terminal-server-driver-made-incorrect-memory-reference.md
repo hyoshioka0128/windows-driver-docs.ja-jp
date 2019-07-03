@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: a653de117ab5069e8894ba2020e30d3010ee0f32
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a4c8f36004a3022b0a9dccd9b1446d1cee9f2d0e
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367164"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67518895"
 ---
 # <a name="bug-check-0xcf-terminalserverdrivermadeincorrectmemoryreference"></a>バグ チェック 0xCF:ターミナル\_SERVER\_ドライバー\_加えられた\_正しくない\_メモリ\_リファレンス
 
@@ -26,7 +26,7 @@ ms.locfileid: "67367164"
 ターミナル\_SERVER\_ドライバー\_加えられた\_正しくない\_メモリ\_参照のバグ チェックが 0x000000CF の値を持ちます。 これは、ことドライバーが正しくに移植されていない、ターミナル サーバーを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="terminalserverdrivermadeincorrectmemoryreference-parameters"></a>ターミナル\_SERVER\_ドライバー\_加えられた\_正しくない\_メモリ\_参照パラメーター

@@ -12,19 +12,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 96cda42698652c5d89d627a15c261a2101171ad0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: da011b955643542b7eacad2aafd80b5f4088ace2
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362120"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519925"
 ---
 # <a name="bug-check-0x16f-clustercsvstatetransitionintervaltimeoutlivedump"></a>バグ チェック 0x16F:クラスター\_CSV\_状態\_遷移\_間隔\_タイムアウト\_LIVEDUMP
 
 クラスター\_CSV\_状態\_遷移\_間隔\_タイムアウト\_LIVEDUMP バグ チェックが 0x0000016F の値を持ちます。 これは、クラスターの共有ボリュームの次の状態遷移要求が到着していないことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 

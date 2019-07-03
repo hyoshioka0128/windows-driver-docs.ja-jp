@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 0408dc7e51b0517255f4024d42249bf3e92c76ea
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 83a9e7c9ef598a29a9d303ca6e6b89004fc3c235
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361982"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519663"
 ---
 # <a name="bug-check-bug-check-0x1d1-telemetryassertslivedump"></a>チェックのバグ チェック 0x1D1 をバグします。テレメトリ\_アサート\_LIVEDUMP
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 TELEMETRY_ASSERTS_LIVEDUMP のバグ チェックでは、0x000001D1 の値を持ちます。 

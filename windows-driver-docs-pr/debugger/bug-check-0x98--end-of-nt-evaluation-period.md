@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f28f0e6e8bb945be71e3da46830819174c3f467
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4199736c6fa853390c335239d1eaeb7f77d055a3
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361711"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519109"
 ---
 # <a name="bug-check-0x98-endofntevaluationperiod"></a>バグ チェック 0x98:終了\_の\_NT\_評価\_期間
 
@@ -26,7 +26,7 @@ ms.locfileid: "67361711"
 末尾\_の\_NT\_評価\_期間のバグ チェックが 0x00000098 の値を持ちます。 このバグ チェックでは、Microsoft Windows オペレーティング システムの試用期間が終了することを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="endofntevaluationperiod-parameters"></a>終了\_の\_NT\_評価\_期間パラメーター

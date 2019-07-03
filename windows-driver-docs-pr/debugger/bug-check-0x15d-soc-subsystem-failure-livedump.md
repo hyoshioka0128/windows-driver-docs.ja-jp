@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 5caad2e010791a103f4f3d2797bf8bb14398da66
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: fa981557ef1b7328d6a90268bf2a7cb3e8e9c486
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367762"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67520015"
 ---
 # <a name="bug-check-0x15d-socsubsystemfailurelivedump"></a>バグ チェック 0x15D:SOC\_サブシステム\_エラー\_LIVEDUMP
 
@@ -26,7 +26,7 @@ ms.locfileid: "67367762"
 SOC\_サブシステム\_エラー\_LIVEDUMP バグ コードが 0x0000015D の値を持ちます。 これは、チップ (SoC) サブシステム上のシステムが重大な障害が発生したし、ライブ カーネル ダンプをキャプチャしたことを示します。 SoC のサブシステムでは、このような状況でのバグ チェックは生成されません。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="bug-check-0x14b-socsubsystemfailure-parameters"></a>バグ チェック 0x14B SOC\_サブシステム\_エラー パラメーター

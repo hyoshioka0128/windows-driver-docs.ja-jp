@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ded2761aba2bb7021cbd8a341a0c4a8dd87857b2
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6075b9ecb9cb949b3bd6d22f2ed9c995843ede08
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367049"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67518710"
 ---
 # <a name="bug-check-0xfd-dirtynowritepagescongestion"></a>バグ チェック 0xFD:ダーティ\_NOWRITE\_ページ\_輻輳
 
@@ -26,7 +26,7 @@ ms.locfileid: "67367049"
 DIRTY\_NOWRITE\_ページ\_輻輳のバグ チェックが 0x000000FD の値を持ちます。 これは、基本的なシステム操作を続行する使用可能な空きページがないことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="dirtynowritepagescongestion-parameters"></a>ダーティ\_NOWRITE\_ページ\_輻輳パラメーター

@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 04affa063862596edbcbf876280a264c5dc6b2bc
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 296b28f9a851d9e045959a8ae9d003fbea0bcc3c
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361743"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519195"
 ---
 # <a name="bug-check-0x79-mismatchedhal"></a>バグ チェック 0x79:一致しない\_HAL
 
@@ -26,7 +26,7 @@ ms.locfileid: "67361743"
 不一致\_HAL のバグ チェックが 0x00000079 の値を持ちます。 このバグ チェックでは、ハードウェア アブストラクション レイヤー (HAL) のリビジョン レベルまたは構成が一致しないこと、カーネルまたはコンピューターのことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="mismatchedhal-parameters"></a>一致しない\_HAL パラメーター

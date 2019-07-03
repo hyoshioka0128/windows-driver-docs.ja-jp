@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: acc241672d79941a4bad6a461d6b832225e8a9dc
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: f15c50c5da6354677cd7c6016becdc0f17697519
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67391982"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67520162"
 ---
 # <a name="bug-check-0x144-bugcodeusb3driver"></a>バグ チェック 0x144:BUGCODE\_USB3\_ドライバー
 
@@ -26,7 +26,7 @@ ms.locfileid: "67391982"
 **BUGCODE\_USB3\_ドライバー**バグ チェックが 0x00000144 の値を持ちます。 これは、すべての USB 3 のバグ チェックに使用されるコードです。 パラメーター 1 は、USB 3 のバグ チェックの種類を指定し、その他のパラメーターの意味では、パラメーター 1 に依存します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="bugcodeusb3driver-parameters"></a>BUGCODE\_USB3\_ドライバーのパラメーター

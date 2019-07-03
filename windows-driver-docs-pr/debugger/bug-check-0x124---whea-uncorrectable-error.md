@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 08f0b203d506a29907dbb33d59216aed6115084b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 75f7b16c3d1f8e98e20c79b8b9d11753bd7eb98e
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362288"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67520782"
 ---
 # <a name="bug-check-0x124-wheauncorrectableerror"></a>バグ チェック 0x124:WHEA\_修正不可能な\_エラー
 
@@ -26,7 +26,7 @@ ms.locfileid: "67362288"
 WHEA\_修正不可能な\_エラーのバグ チェックが 0x00000124 の値を持ちます。 このバグ チェックでは、ハードウェアの致命的なエラーが発生したことを示します。 このバグ チェックでは、Windows ハードウェア エラー アーキテクチャ (WHEA) によって提供されるエラー データを使用します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="wheauncorrectableerror-parameters"></a>WHEA\_修正不可能な\_エラー パラメーター

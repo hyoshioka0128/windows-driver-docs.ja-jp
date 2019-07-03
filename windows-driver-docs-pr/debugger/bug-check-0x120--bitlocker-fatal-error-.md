@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 7eba569afac47cdf260d9f1471afbbfeff78f131
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3cc3010801bd0a094dda733b848619cc86aec822
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362294"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67520857"
 ---
 # <a name="bug-check-0x120-bitlockerfatalerror"></a>バグ チェック 0x120:BITLOCKER\_FATAL\_エラー
 
@@ -26,7 +26,7 @@ ms.locfileid: "67362294"
 BITLOCKER\_FATAL\_エラーのバグ チェックが 0x00000120 の値を持ちます。 これは、BitLocker ドライブ暗号化に回復できない問題が発生したことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="bitlockerfatalerror-parameters"></a>BITLOCKER\_FATAL\_エラー パラメーター

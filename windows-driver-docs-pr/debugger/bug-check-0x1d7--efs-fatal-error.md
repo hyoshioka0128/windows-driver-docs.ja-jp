@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 205c2b2a04c2abd93622177433b0cdb2ea128ea4
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e2a2d19e10d2e4684412db578727f0292e5e73f2
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361972"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519637"
 ---
 # <a name="bug-check-0x1d7-efsfatalerror"></a>バグ チェック 0x1D7:EFS\_FATAL\_エラー
 
@@ -25,7 +25,7 @@ EFS\_FATAL\_エラーのバグ チェックが 0x000001D7 の値を持ちます�
 
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
  
 

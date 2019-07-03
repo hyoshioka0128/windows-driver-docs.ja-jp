@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e8f1e9d62b574c628c79d2a7ef7e53963d92e1b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2dbeceb2cda25f30b3b8f58c422bf13d475b4713
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367852"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67520483"
 ---
 # <a name="bug-check-0x130-dynamicaddprocessormismatch"></a>バグ チェック 0x130:動的\_追加\_プロセッサ\_が一致しません
 
@@ -26,7 +26,7 @@ ms.locfileid: "67367852"
 動的\_追加\_プロセッサ\_の不一致のバグ チェックが 0x00000130 の値を持ちます。 このバグチェックでは、システムに追加された新しいプロセッサの現在の構成と互換性がないことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="dynamicaddprocessormismatch-parameters"></a>動的\_追加\_プロセッサ\_不一致パラメーター

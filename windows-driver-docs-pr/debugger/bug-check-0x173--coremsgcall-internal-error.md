@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b6e15c8b774a976d5bccd10f33a0cc375e5daeb9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ab1accb7589c50f6fe145407550338e0e2559065
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362110"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519913"
 ---
 # <a name="bug-check-0x173-coremsgcallinternalerror"></a>バグ チェック 0x173:COREMSGCALL\_内部\_エラー
 
@@ -25,7 +25,7 @@ PFN\_共有\_数のバグ チェックが 0x00000173 の値を持ちます。 �
 
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
  

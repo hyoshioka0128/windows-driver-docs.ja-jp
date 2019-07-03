@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e710c28b74c23bfbf77611b44e0955ef1c2dde0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f581f160afa2bf2ebb9c33638c21d3c3ee54dc8c
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361702"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519125"
 ---
 # <a name="bug-check-0x90-pp1initializationfailed"></a>バグ チェック 0x90:PP1\_初期化\_失敗
 
@@ -26,7 +26,7 @@ ms.locfileid: "67361702"
 PP1\_初期化\_失敗のバグ チェックが 0x00000090 の値を持ちます。 このバグ チェックでは、プラグ アンド プレイ (PnP) マネージャーを初期化できなかったことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="pp1initializationfailed-parameters"></a>PP1\_初期化\_FAILED パラメーター

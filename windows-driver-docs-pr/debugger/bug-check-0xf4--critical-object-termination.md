@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 936f3140544c16a2d417d2ee21b0f333fa7d84dc
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d5a6372ca4f4375845790bfbcfda9ab63311f1d7
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367059"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67518743"
 ---
 # <a name="bug-check-0xf4-criticalobjecttermination"></a>バグ チェック 0xF4:重要な\_オブジェクト\_終了
 
@@ -26,7 +26,7 @@ ms.locfileid: "67367059"
 CRITICAL\_オブジェクト\_終了バグ チェックが 0x000000F4 の値を持ちます。 これは、ことプロセスまたはスレッド システムを操作するために重要が予期せず終了または終了したことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="criticalobjecttermination-parameters"></a>重要な\_オブジェクト\_終了パラメーター

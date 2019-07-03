@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c5842cacb818aa72bdc0a06a410e48b4f330a373
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 80ba9814fa753bef08cc0a8ffcfdcdb500321e8b
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362302"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67520785"
 ---
 # <a name="bug-check-0x122-wheainternalerror"></a>バグ チェック 0x122:WHEA\_内部\_エラー
 
@@ -26,7 +26,7 @@ ms.locfileid: "67362302"
 WHEA\_内部\_エラーのバグ チェックが 0x00000122 の値を持ちます。 このバグ チェックでは、Windows ハードウェア エラー アーキテクチャ (WHEA) で内部エラーが発生したことを示します。 エラーには、プラグイン プラットフォーム固有のハードウェア エラー ドライバー (PSHED) の実装でバグを仕入先、ファームウェアの実装のエラー レコード、またはエラー挿入のファームウェアの実装によって提供されることがあります。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="wheainternalerror-parameters"></a>WHEA\_内部\_エラー パラメーター

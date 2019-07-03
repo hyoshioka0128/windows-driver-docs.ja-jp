@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e336b8bfe76368b730b91ac57e1cec1192079d6b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e780671177311bcc54b901c85a56307fd0b5dc56
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362065"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519835"
 ---
 # <a name="bug-check-0x190-win32kcriticalfailurelivedump"></a>バグ チェック 0x190:WIN32K\_重大\_エラー\_LIVEDUMP
 
@@ -26,7 +26,7 @@ ms.locfileid: "67362065"
 WIN32K\_重大\_エラー\_LIVEDUMP バグ チェックが 0x00000190 の値を持ちます。 これは、Win32k の重大なエラーが発生したことを示します。 デバッグ情報を収集するライブのダンプがキャプチャされます。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="win32kcriticalfailurelivedump-parameters"></a>WIN32K\_重大\_エラー\_LIVEDUMP パラメーター

@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: adffccf3bd0bf8ad41da830a8b55402d322c8ac8
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c8f68a259e7d886a2a7bb7c7d169c980b5bceada
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367911"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67521096"
 ---
 # <a name="bug-check-0x117-videotdrtimeoutdetected"></a>バグ チェック 0x117:ビデオ\_TDR\_タイムアウト\_検出
 
@@ -26,7 +26,7 @@ ms.locfileid: "67367911"
 ビデオ\_TDR\_タイムアウト\_検出されたバグ チェックが 0x00000117 の値を持ちます。 これは、ディスプレイ ドライバーが適切な時間内に応答が失敗したことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="videotdrtimeoutdetected-parameters"></a>ビデオ\_TDR\_タイムアウト\_検出パラメーター

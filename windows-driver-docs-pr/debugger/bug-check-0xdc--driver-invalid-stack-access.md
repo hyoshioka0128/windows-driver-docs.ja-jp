@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c0cf202240bcfd7d4131fb98c2a3695ee3d41b8
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a4eda0f5e5ecab02f0f120fa7b7681c3620650f1
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367134"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67518843"
 ---
 # <a name="bug-check-0xdc-driverinvalidstackaccess"></a>バグ チェック 0xDC:ドライバー\_無効な\_スタック\_アクセス
 
@@ -26,7 +26,7 @@ ms.locfileid: "67367134"
 ドライバー\_無効な\_スタック\_アクセスのバグ チェックが 0x000000DC の値を持ちます。 これは、ドライバーが、スタックのスレッドのスタック ポインターの下にあるスタック アドレスをアクセスすることを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="driverinvalidstackaccess-parameters"></a>ドライバー\_無効な\_スタック\_アクセス パラメーター

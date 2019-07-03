@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 395fa20dddaca311c791b6ab4194517427770368
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8a223757bbef0685baf1a66f24749467ec8d0b36
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367948"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67521735"
 ---
 # <a name="bug-check-0x101-clockwatchdogtimeout"></a>バグ チェック 0x101:クロック\_ウォッチドッグ\_タイムアウト
 
@@ -26,7 +26,7 @@ ms.locfileid: "67367948"
 クロック\_ウォッチドッグ\_バグ チェックのタイムアウトが 0x00000101 値。 これは、マルチプロセッサ システムで、セカンダリのプロセッサで予期されるクロック割り込みが割り当てられた時間内で受信していないことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="clockwatchdogtimeout-parameters"></a>クロック\_ウォッチドッグ\_タイムアウト パラメーター

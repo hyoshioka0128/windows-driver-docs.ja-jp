@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ff8167dae85d03572f73e6c58881cd9b3a10152
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d5f5b960fdb540bc0c75de51d2fc2dfd45d168eb
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361566"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67518862"
 ---
 # <a name="bug-check-0xd7-driverunmappinginvalidview"></a>バグ チェック 0xD7:ドライバー\_UNMAPPING\_無効な\_ビュー
 
@@ -26,7 +26,7 @@ ms.locfileid: "67361566"
 ドライバー\_UNMAPPING\_無効な\_ビューのバグ チェックが 0x000000D7 の値を持ちます。 これは、マップされていないアドレスをマップ解除しようとしてドライバーを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="driverunmappinginvalidview-parameters"></a>ドライバー\_UNMAPPING\_無効な\_パラメーターの表示

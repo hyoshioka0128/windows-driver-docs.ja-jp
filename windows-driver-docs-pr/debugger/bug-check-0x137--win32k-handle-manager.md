@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b363ad12e89c5db016241ad7f7b6b7bf19ac95b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 016b773e0c2e366e95ee63fc1893bf26252a2a06
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362244"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67520394"
 ---
 # <a name="bug-check-0x137-win32khandlemanager"></a>バグ チェック 0x137:WIN32K\_処理\_マネージャー
 
@@ -26,7 +26,7 @@ ms.locfileid: "67362244"
 WIN32K\_処理\_MANAGER バグ チェックが 0x00000137 の値を持ちます。 これは、win32k/ntuser ハンドル マネージャーで致命的なエラーが検出されたことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="win32khandlemanager-parameters"></a>WIN32K\_処理\_マネージャーのパラメーター

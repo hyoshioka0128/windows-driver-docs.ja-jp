@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 22145baa0432ad4af7b7744c54d4f9c6aa8b4de8
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: fd51a46f4f6f920d015ecc1be176736ce5fac875
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367252"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519075"
 ---
 # <a name="bug-check-0xa-irqlnotlessorequal"></a>バグ チェック 0xA:IRQL\_いない\_少ない\_または\_と等しい
 
@@ -26,7 +26,7 @@ ms.locfileid: "67367252"
 IRQL\_いない\_少ない\_または\_等しいバグ チェックが 0x0000000A の値を持ちます。 これは、Microsoft Windows またはカーネル モード ドライバーにアクセスが発生した割り込み要求レベル (IRQL) で、無効なアドレスのメモリをページングを示します。 これは通常、不正なポインターまたは pageability 問題のいずれか。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="irqlnotlessorequal-parameters"></a>IRQL\_いない\_少ない\_または\_等しいパラメーター

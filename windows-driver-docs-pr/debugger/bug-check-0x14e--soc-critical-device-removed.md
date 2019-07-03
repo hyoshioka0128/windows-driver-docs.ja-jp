@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 83c96736c00c7ff4786e0ab7c9b6944bfbc29f52
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d989e9c69804131dc4c2d144ad4337bfbaca32e4
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362206"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67520086"
 ---
 # <a name="bug-check-0x14e-soccriticaldeviceremoved"></a>バグ チェック 0x14E:SOC\_重大\_デバイス\_削除しました
 
@@ -26,7 +26,7 @@ ms.locfileid: "67362206"
 SOC\_重大\_デバイス\_削除済みのバグ チェックが 0x0000014E の値を持ちます。 これは、重要な SOC デバイスが予期せず削除されたが失敗したことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="soccriticaldeviceremoved-parameters"></a>SOC\_重大\_デバイス\_削除パラメーター

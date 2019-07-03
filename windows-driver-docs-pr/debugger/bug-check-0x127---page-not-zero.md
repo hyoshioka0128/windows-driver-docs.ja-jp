@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 4043dfc9192eb6af3a538a605a0534b296fc3991
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 90f1777b449996b0cb885c76cc358757c609c8a3
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367878"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67520741"
 ---
 # <a name="bug-check-0x127-pagenotzero"></a>バグ チェック 0x127:ページ\_いない\_0
 
@@ -26,7 +26,7 @@ ms.locfileid: "67367878"
 ページ\_いない\_0 個のバグ チェックが 0x00000127 の値を持ちます。 このバグ チェックでは、ゼロで埋められたはページがなかったことを示します。 このバグ チェックは、ハードウェア エラーのために発生する可能性がありますまたはオペレーティング システムの特権を持つコンポーネントがそれを解放した後、ページを変更します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="pagenotzero-parameters"></a>ページ\_いない\_0 個のパラメーター

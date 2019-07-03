@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9bccaaa2df817815f7441fe63314256567b7d4c5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a88b31f777242b8d44a8c28f88c271c5993f0443
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361935"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519583"
 ---
 # <a name="bug-check-0x25-npfsfilesystem"></a>バグ チェック 0x25:NPFS\_ファイル\_システム
 
@@ -26,7 +26,7 @@ ms.locfileid: "67361935"
 NPFS\_ファイル\_システムのバグ チェックが 0x00000025 の値を持ちます。 これは、NPFS ファイル システムで問題が発生したことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="npfsfilesystem-parameters"></a>NPFS\_ファイル\_システム パラメーター

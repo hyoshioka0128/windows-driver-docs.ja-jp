@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c585079f426db9e71de24c4244cee03bc6ab4ef6
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 57a8b45e04f297a6cb90ee7ca1d9d6d5b4c54702
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362246"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67520205"
 ---
 # <a name="bug-check-0x13d-criticalinitializationfailure"></a>バグ チェック 0x13D:重要な\_初期化\_エラー
 
@@ -26,7 +26,7 @@ ms.locfileid: "67362246"
 CRITICAL\_初期化\_エラーのバグ チェックが 0x0000013D の値を持ちます。 これは、その初期のカーネルの初期化に失敗しましたを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="criticalinitializationfailure-parameters"></a>重要な\_初期化\_エラー パラメーター

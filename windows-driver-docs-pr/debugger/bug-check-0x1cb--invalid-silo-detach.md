@@ -12,19 +12,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 15300ced5761c3bcbee29a6a29fd0938a9abc54f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1c89eaf8799642fcad9300c980c79728327f238b
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367617"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519697"
 ---
 # <a name="bug-check-0x1cb-invalidsilodetach"></a>バグ チェック 0x1CB:無効な\_サイロ\_デタッチ
 
 無効な\_サイロ\_デタッチのバグ チェックが 0x000001CB の値を持ちます。 スレッドが終了する前に、サイロからデタッチが失敗したことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
  
 

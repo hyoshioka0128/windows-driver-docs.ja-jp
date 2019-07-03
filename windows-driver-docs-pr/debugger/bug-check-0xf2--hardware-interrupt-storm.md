@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ea024e561b37c5a175f609759f66e6aabc5bda80
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4b0b810cecb88c29640f70ad7869e0cbf232c2a7
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367064"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67518753"
 ---
 # <a name="bug-check-0xf2-hardwareinterruptstorm"></a>バグ チェック 0xF2:ハードウェア\_INTERRUPT\_STORM
 
@@ -26,7 +26,7 @@ ms.locfileid: "67367064"
 ハードウェア\_INTERRUPT\_STORM バグ チェックが 0x000000F2 の値を持ちます。 これは、カーネルに大量の割り込みが検出されたことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="hardwareinterruptstorm-parameters"></a>ハードウェア\_INTERRUPT\_STORM パラメーター

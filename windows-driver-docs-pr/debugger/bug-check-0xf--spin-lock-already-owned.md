@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ecdcf91484f89bed24a5677f882174047851d3b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 66f84c007d70a00a320849c446261a4ce227e5d6
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361509"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67518760"
 ---
 # <a name="bug-check-0xf-spinlockalreadyowned"></a>バグ チェック 0xF:スピン\_ロック\_ALREADY\_所有されています。
 
@@ -26,7 +26,7 @@ ms.locfileid: "67361509"
 スピン\_ロック\_ALREADY\_所有されているバグ チェックが 0x0000000F の値を持ちます。 これは、スピン ロックが既に所有しているときに、スピン ロックの要求が開始されたことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="spinlockalreadyowned-parameters"></a>スピン\_ロック\_ALREADY\_所有されているパラメーター

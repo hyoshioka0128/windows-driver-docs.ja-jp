@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ede59b825c1413ac59ce8c3baaab97a82eb37bf
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a68ecca5dc04da13be043a8cd99a8920ae498080
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362064"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519811"
 ---
 # <a name="bug-check-0x195-smbserverlivedump"></a>バグ チェック 0x195:SMB\_SERVER\_LIVEDUMP
 
@@ -26,7 +26,7 @@ ms.locfileid: "67362064"
 SMB\_SERVER\_LIVEDUMP バグ チェックが 0x00000195 の値を持ちます。 これには、SMB サーバーを選択し、問題を検出しましたがデバッグ情報を収集するカーネル ダンプをキャプチャしたことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="smbserverlivedump-parameters"></a>SMB\_SERVER\_LIVEDUMP パラメーター

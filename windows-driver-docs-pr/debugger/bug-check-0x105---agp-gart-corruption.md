@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: acc01c751aadaa75a220d8b2abb0a1a1ee44ad60
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ad547578ae3ac1204b4db987401d7fc7e3c959eb
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367954"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67521607"
 ---
 # <a name="bug-check-0x105-agpgartcorruption"></a>バグ チェック 0x105:AGP\_GART\_破損
 
@@ -26,7 +26,7 @@ ms.locfileid: "67367954"
 AGP\_GART\_破損バグ チェックが 0x00000105 の値を持ちます。 これは、グラフィックス Aperture 再マップ テーブル (GART) が壊れていることを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="agpgartcorruption-parameters"></a>AGP\_GART\_破損パラメーター

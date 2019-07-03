@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f12c623a1fef4f2732d5344e533c038f1f8838a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8a50dfb7ca3451e934edad2290127d382a637e1f
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362040"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519780"
 ---
 # <a name="bug-check-0x19d-clustersvhdxlivedump"></a>バグ チェック 0x19D:クラスター\_SVHDX\_LIVEDUMP
 
@@ -26,7 +26,7 @@ ms.locfileid: "67362040"
 クラスター\_SVHDX\_LIVEDUMP バグ チェックが 0x0000019D の値を持ちます。 これは、SVHDX に一貫性のない状態をデバッグする際にこの livedump が開始されたことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="clustersvhdxlivedump-parameters"></a>クラスター\_SVHDX\_LIVEDUMP パラメーター

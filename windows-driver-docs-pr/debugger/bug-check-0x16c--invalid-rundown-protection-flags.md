@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: cddadfd0919b5a0885abf451e129a9aeeb88aa4c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: bd1e964675f7ec5972c66c4ce4f8cf1aca4fd129
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367732"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519944"
 ---
 # <a name="bug-check-0x16c-invalidrundownprotectionflags"></a>バグ チェック 0x16C:無効な\_ランダウン\_保護\_フラグ
 
@@ -26,7 +26,7 @@ ms.locfileid: "67367732"
 無効な\_ランダウン\_保護\_フラグのバグ チェックが 0x0000016C の値を持ちます。 これは、ランダウン保護 Api のいずれか 1 つのフラグが有効でないことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="invalidrundownprotectionflags-parameters"></a>無効な\_ランダウン\_保護\_フラグ パラメーター

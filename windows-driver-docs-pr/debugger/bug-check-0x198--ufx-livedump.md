@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 13b4f7053cee07beb46ab6188728eb67e86c89be
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ccddbbf7d98d4e8c4326b88d96b1fb3009f00666
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367653"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519802"
 ---
 # <a name="bug-check-0x198-ufxlivedump"></a>バグ チェック 0x198:UFX\_LIVEDUMP
 
@@ -26,7 +26,7 @@ ms.locfileid: "67367653"
 UFX\_LIVEDUMP バグ チェックが 0x00000198 の値を持ちます。 これは、UFX ライブ ダンプが発生したことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="ufxlivedump-parameters"></a>UFX\_LIVEDUMP パラメーター

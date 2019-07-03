@@ -12,19 +12,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d262f47862807396cbd33f22c69f373e55074dd9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a184b3b62bf46131b7254f7f13f698c422534652
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361984"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519649"
 ---
 # <a name="bug-check-0x1d5-driverpnpwatchdog"></a>バグ チェック 0x1D5:ドライバー\_PNP\_ウォッチドッグ
 
 ドライバー\_PNP\_ウォッチドッグのバグ チェックが 0x000001D5 の値を持ちます。 これは、特定の時間内での PnP 操作を完了するドライバーが失敗したことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
  
 

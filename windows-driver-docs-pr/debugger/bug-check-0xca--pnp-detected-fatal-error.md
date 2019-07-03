@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ce82db4614c35ae0a1e3726c0f6ac6bb1579a1c9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 049b37b75d39e0f4f2a6520733847b9cd9fdd547
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361600"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67518925"
 ---
 # <a name="bug-check-0xca-pnpdetectedfatalerror"></a>バグ チェック 0xCA:PNP\_検出\_FATAL\_エラー
 
@@ -26,7 +26,7 @@ ms.locfileid: "67361600"
 PNP\_検出\_FATAL\_エラーのバグ チェックが 0x000000CA の値を持ちます。 これは、プラグ アンド プレイのマネージャーにおそらく問題のあるプラグ アンド プレイ ドライバーの結果として、重大なエラーが発生したことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="pnpdetectedfatalerror-parameters"></a>PNP\_検出\_FATAL\_エラー パラメーター

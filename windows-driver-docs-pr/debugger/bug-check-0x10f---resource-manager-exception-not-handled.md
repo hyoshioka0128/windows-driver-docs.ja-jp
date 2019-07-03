@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8bec499ee149adf1499175b867d8e8cda28b45ac
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3a853937f655a87909e7780bc9f5334bc1d8cca3
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367933"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67521335"
 ---
 # <a name="bug-check-0x10f-resourcemanagerexceptionnothandled"></a>バグ チェック 0x10F:リソース\_MANAGER\_例外\_いない\_処理済み
 
@@ -26,7 +26,7 @@ ms.locfileid: "67367933"
 リソース\_MANAGER\_例外\_いない\_処理済みのバグ チェックが 0x0000010F の値を持ちます。 これは、カーネル トランザクション マネージャーには、カーネル モードのリソース マネージャーが直接コールバックへの応答での例外を発生したことが検出されたことを示します。 リソース マネージャーは、予期しないと、回復不能な状態では。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="resourcemanagerexceptionnothandled-parameters"></a>リソース\_MANAGER\_例外\_いない\_処理済みのパラメーター

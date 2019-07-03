@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: fea570f9493851c4f6646fc89fdadfc5eea4cece
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a6ed92866c74547849eceba7fa7228fcce5d67d5
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367271"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519107"
 ---
 # <a name="bug-check-0x99-invalidregionorsegment"></a>バグ チェック 0x99:無効な\_リージョン\_または\_セグメント
 
@@ -26,7 +26,7 @@ ms.locfileid: "67367271"
 無効な\_リージョン\_または\_セグメントのバグ チェックが 0x00000099 の値を持ちます。 このバグ チェックでは、ことを示します**ExInitializeRegion**または**ExInterlockedExtendRegion**は無効なパラメーターのセットで呼び出されました。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="invalidregionorsegment-parameters"></a>無効な\_リージョン\_または\_セグメント パラメーター

@@ -12,19 +12,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: db92f67ae3f30758405554c82c1b97890686f5ec
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e2509c262725fadce3d12d5c731675502fe67c2f
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367737"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519953"
 ---
 # <a name="bug-check-0x16a-clustercsvvolumeremovallivedump"></a>バグ チェック 0x16A:クラスター\_CSV\_ボリューム\_削除\_LIVEDUMP
 
 クラスター\_CSV\_ボリューム\_削除\_LIVEDUMP バグ チェックが 0x0000016A の値を持ちます。 これは、クラスター共有ボリューム マネージャー ボリュームの削除要求がタイムアウトしたことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 

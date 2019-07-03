@@ -12,19 +12,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d433f6d2a2a9ed4804683e135dffd87af39e07ed
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 68f588ce774a160a35c61834520009b2b1cc89f8
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367600"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519709"
 ---
 # <a name="bug-check-0x1c9-usermodehealthmonitorlivedump"></a>バグ チェック 0x1C9:ユーザー\_モード\_ヘルス\_モニター\_LIVEDUMP
 
 ユーザー\_モード\_ヘルス\_モニター\_LIVEDUMP バグ チェックが 0x000001C9 の値を持ちます。 1 つまたは複数の重要なユーザー モード コンポーネントが正常性チェックを満たすために失敗したことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
  
 

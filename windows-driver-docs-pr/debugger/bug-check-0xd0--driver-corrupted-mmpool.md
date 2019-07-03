@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ecf8cc070103d06c53c73cff9376ca34dacdcc0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f0d87d85eebaf414ce7e6a4aa25afde823baf81c
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367150"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67518889"
 ---
 # <a name="bug-check-0xd0-drivercorruptedmmpool"></a>バグ チェック 0xD0:ドライバー\_破損した\_MMPOOL
 
@@ -26,7 +26,7 @@ ms.locfileid: "67367150"
 ドライバー\_破損した\_MMPOOL バグ チェックが 0x000000D0 の値を持ちます。 これは、システムがプロセスが高すぎる IRQL で無効なメモリへのアクセスを試行したことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="drivercorruptedmmpool-parameters"></a>ドライバー\_破損した\_MMPOOL パラメーター

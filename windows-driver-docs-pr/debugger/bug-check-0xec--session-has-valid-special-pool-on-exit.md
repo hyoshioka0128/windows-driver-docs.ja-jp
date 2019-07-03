@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 74026606b88161a485fc4257e3f31487cc8e4db5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6222dedb0222aad319462d6bc2418c282c71546b
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367091"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67518781"
 ---
 # <a name="bug-check-0xec-sessionhasvalidspecialpoolonexit"></a>バグ チェック 0xEC:セッション\_HAS\_有効\_特殊\_プール\_ON\_終了
 
@@ -26,7 +26,7 @@ ms.locfileid: "67367091"
 セッション\_HAS\_有効\_特殊\_プール\_ON\_終了のバグ チェックが 0x000000EC の値を持ちます。 これは、セッションのアンロードがセッションのドライバーはメモリに保持されているときに発生したことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="sessionhasvalidspecialpoolonexit-parameters"></a>セッション\_HAS\_有効\_特殊\_プール\_ON\_終了パラメーター

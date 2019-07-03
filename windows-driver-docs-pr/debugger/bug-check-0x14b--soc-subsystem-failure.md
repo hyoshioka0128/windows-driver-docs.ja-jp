@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d2e434a0297d380e27116d604efd58f79d1b5ad3
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7fb96356b7096d0291c0da35285d7d89cddf4518
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367794"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67520095"
 ---
 # <a name="bug-check-0x14b-socsubsystemfailure"></a>バグ チェック 0x14B:SOC\_サブシステム\_エラー
 
@@ -26,7 +26,7 @@ ms.locfileid: "67367794"
 SOC\_サブシステム\_エラーのバグ チェックが 0x0000014B の値を持ちます。 これは、チップ (SoC) サブシステム上のシステムに回復不能なエラーが発生したことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="bug-check-0x14b-socsubsystemfailure-parameters"></a>バグ チェック 0x14B SOC\_サブシステム\_エラー パラメーター
@@ -118,7 +118,7 @@ Windows デバッガーを使用してこの問題に取り組むを備えてい
 
 -   その他の一般的なトラブルシューティング情報を参照してください。 [**青い画面データ**](blue-screen-data.md)します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

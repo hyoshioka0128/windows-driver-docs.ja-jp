@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: be304f3a499121f57e608304868d1d8565cf5220
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0c894b88fa7e3184cf5106e23f765a4fb863cefa
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367893"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67521015"
 ---
 # <a name="bug-check-0x11e-toomanyrecursivefaults"></a>バグ チェック 0x11E:すぎる\_多く\_再帰\_エラー
 
@@ -26,7 +26,7 @@ ms.locfileid: "67367893"
 すぎます\_多く\_再帰\_エラーのバグ チェックが 0x0000011E の値を持ちます。 これは、ファイル システムが処理するリソース不足の条件下でが多すぎるの再帰的な障害を原因となったことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="toomanyrecursivefaults-parameters"></a>すぎる\_多く\_再帰\_エラー パラメーター

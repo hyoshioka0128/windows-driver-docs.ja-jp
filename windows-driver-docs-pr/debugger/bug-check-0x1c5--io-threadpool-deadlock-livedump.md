@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: a9cb007941c668b9702208b8dd72c967253e4059
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 60dec231d7b4f741f72dc0cfba0f0b9080702f83
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367609"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519722"
 ---
 # <a name="bug-check-0x1c5-iothreadpooldeadlocklivedump"></a>バグ チェック 0x1C5:IO\_THREADPOOL\_デッドロック\_LIVEDUMP
 
@@ -26,7 +26,7 @@ ms.locfileid: "67367609"
 IO\_THREADPOOL\_デッドロック\_LIVEDUMP バグ チェックが 0x000001C5 の値を持ちます。 これは、カーネル モードの threadpool にデッドロックが発生したことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
 ## <a name="iothreadpooldeadlocklivedump-parameters"></a>IO\_THREADPOOL\_デッドロック\_LIVEDUMP パラメーター
