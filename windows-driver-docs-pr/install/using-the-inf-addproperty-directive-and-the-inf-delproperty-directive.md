@@ -39,7 +39,7 @@ Windows Vista および Windows の以降のバージョンで使用できます
 追加のプロパティ-セクション内の各行には、1 つのプロパティを指定します。 プロパティ情報を指定する 2 つの可能な行形式を次に示します。 表示される最初の行の形式では、その名前でプロパティを指定します。 この形式は、DEVPKEY_DrvPkg_ でのみ使用できます*Xxx*プロパティ。 2 番目の行の形式で、プロパティのカテゴリとプロパティ識別子に対応するプロパティを指定する[プロパティ キー](property-keys.md)します。 この 2 つ目の形式は、システム定義のプロパティを指定するために使用できる、または[カスタム デバイス プロパティ](creating-custom-device-properties.md)します。
 
 **\[** <em>追加のプロパティ-セクション</em> **\]** 
-<em>プロパティ名</em> **、、、\[** <em>フラグ</em> ** \]、** <em>値</em>
+<em>プロパティ名</em> **、、、\[** <em>フラグ</em> **\]、** <em>値</em>
  **{** <em>プロパティ カテゴリの guid</em> **}、** <em>プロパティ pid</em> **、** <em>型</em> **、\[** <em>フラグ</em> ** \]、** <em>値</em>エントリの値は、次を指定します。
 
 <a href="" id="property-name"></a>*property-name*  
@@ -84,7 +84,7 @@ DeviceModel,,,,"Sample Device Model Name"
 内の各行を*del-section プロパティ*1 つのプロパティを指定します。 プロパティ情報を指定する 2 つの可能な行形式を次に示します。 表示される最初の行の形式では、その名前でプロパティを指定します。 この形式は、DEVPKEY_DrvPkg_ でのみ使用できます*Xxx*プロパティ。 2 番目の行の形式で、プロパティのカテゴリとプロパティ識別子に対応するプロパティを指定する[プロパティ キー](property-keys.md)します。 2 番目の形式は、システム定義のプロパティを指定するために使用できます、[カスタム デバイス プロパティ](creating-custom-device-properties.md)します。
 
 **\[** <em>del-section プロパティ</em> **\]** 
-*プロパティ名* \[ **、および***フラグ* \[ **、** <em>値</em>\] \] **{** <em>プロパティ カテゴリの guid</em> **}、** *プロパティ pid* \[ **、** *フラグ* \[ **、** <em>値</em>\] \]エントリの値は、次を指定します。
+*プロパティ名*\[ **、および** *フラグ* \[ **、** <em>値</em>\] \] **{** <em>プロパティ カテゴリの guid</em> **}、** *プロパティ pid* \[ **、** *フラグ* \[ **、** <em>値</em>\] \]エントリの値は、次を指定します。
 
 <a href="" id="property-name"></a>*property-name*  
 DEVPKEY_DrvPkg_ を識別する名前*Xxx*プロパティ。 たとえば、 **DeviceModel**、表す、 [ **DEVPKEY_DrvPkg_Model** ](https://docs.microsoft.com/windows-hardware/drivers/install/devpkey-drvpkg-model)プロパティ、または**DeviceVendorWebSite**を表す、 [ **DEVPKEY_Device_FriendlyName** ](https://docs.microsoft.com/windows-hardware/drivers/install/devpkey-device-friendlyname)プロパティ。

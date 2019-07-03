@@ -194,7 +194,7 @@ X86 アーキテクチャにいくつかの異なる呼び出し規則があり�
 
 呼び出し、x86 上で使用される規則の一覧を次にアーキテクチャ。
 
--   Win32 (**\_\_stdcall**)
+-   Win32 ( **\_\_stdcall**)
 
     関数のパラメーターは、左、右プッシュ、スタックに渡され、呼び出し先がスタックを消去します。
 
@@ -202,7 +202,7 @@ X86 アーキテクチャにいくつかの異なる呼び出し規則があり�
 
     関数のパラメーターは、左に右プッシュ、スタックに渡される、"this"ポインターが渡された、 **ecx**レジスタ、および呼び出し先がスタックを消去します。
 
--   COM (**\_\_stdcall** C++ メソッドの呼び出し)
+-   COM ( **\_\_stdcall** C++ メソッドの呼び出し)
 
     関数のパラメーターは、左、右プッシュ、スタックで渡され、"this"ポインターがスタックにプッシュし、関数が呼び出されています。 呼び出し先がスタックを消去します。
 
@@ -212,7 +212,7 @@ X86 アーキテクチャにいくつかの異なる呼び出し規則があり�
 
 -   **\_\_cdecl**
 
-    関数のパラメーターは、左、右プッシュ、スタックに渡され、呼び出し元がスタックを消去します。  **\_ \_Cdecl**可変長のパラメーターを持つすべての関数の使用は、呼び出し規約。
+    関数のパラメーターは、左、右プッシュ、スタックに渡され、呼び出し元がスタックを消去します。 **\_\_Cdecl**可変長のパラメーターを持つすべての関数の使用は、呼び出し規約。
 
 ### <a name="span-iddebuggerdisplayofregistersandflagsspanspan-iddebuggerdisplayofregistersandflagsspanspan-iddebuggerdisplayofregistersandflagsspandebugger-display-of-registers-and-flags"></a><span id="Debugger_Display_of_Registers_and_Flags"></span><span id="debugger_display_of_registers_and_flags"></span><span id="DEBUGGER_DISPLAY_OF_REGISTERS_AND_FLAGS"></span>デバッガーのレジスタとフラグの表示
 
