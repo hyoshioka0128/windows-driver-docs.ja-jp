@@ -24,7 +24,7 @@ ms.locfileid: "63330389"
 
 必要な**本文**要素は、イベント通知メッセージが表示されるテキストを提供します。 このテキストは、プリンターのイベントの特定の詳細、ユーザーを提供する必要があります。
 
-**本文**で要素が定義されている、 *asyncui*この URI に、名前空間:http://schemas.microsoft.com/2003/print/asyncui/v1/requestします。 (このリソースできない場合がありますのいくつかの言語および国。)
+**本文**で要素が定義されている、 *asyncui*この URI に、名前空間: http://schemas.microsoft.com/2003/print/asyncui/v1/request します。 (このリソースできない場合がありますのいくつかの言語および国。)
 
 <a name="usage"></a>使用方法
 -----

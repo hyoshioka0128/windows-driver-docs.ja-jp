@@ -24,7 +24,7 @@ ms.locfileid: "63331210"
 
 必要な**asyncPrintUIRequest**要素には、クライアント コンピューターでメッセージを作成するプリンター ドライバーによって発行された要求がについて説明します。
 
-**AsyncPrintUIRequest**で要素が定義されている、 *asyncui*この URI に、名前空間:http://schemas.microsoft.com/2003/print/asyncui/v1/requestします。
+**AsyncPrintUIRequest**で要素が定義されている、 *asyncui*この URI に、名前空間: http://schemas.microsoft.com/2003/print/asyncui/v1/request します。
 
 <a name="usage"></a>使用方法
 -----
