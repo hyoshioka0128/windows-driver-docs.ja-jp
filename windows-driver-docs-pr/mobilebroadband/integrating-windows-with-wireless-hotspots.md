@@ -1,17 +1,17 @@
 ---
-title: Windows とワイヤレス ホットスポットを統合する
-description: Windows とワイヤレス ホットスポットを統合する
+title: ワイヤレス ホット スポットと Windows の統合の概要
+description: ワイヤレス ホット スポットと Windows の統合の概要
 ms.assetid: 948660a2-7ecf-4860-9092-1cfb332cfd04
-ms.date: 04/20/2017
+ms.date: 07/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 43ecb4fc711d7d5f519b68244a25015c1f6c2fc7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 91a4315bbd856c82929133e14339f3eb0863f5ef
+ms.sourcegitcommit: 6f74454e7ed5e703e4e4b363b6816652950e6a51
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387169"
+ms.lasthandoff: 07/06/2019
+ms.locfileid: "67608507"
 ---
-# <a name="integrating-windows-with-wireless-hotspots"></a>Windows とワイヤレス ホットスポットを統合する
+# <a name="introduction-to-integrating-windows-with-wireless-hotspots"></a>ワイヤレス ホット スポットと Windows の統合の概要
 
 
 Wi-fi ホット スポットは、空港、喫茶店、ホテルなどの公共エリアできています。 このようなネットワークの演算子は、会場の所有者によっては、資金をクライアントに無料サービスまたは有料のサービスとして一般に、インターネット アクセスを提供します。

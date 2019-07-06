@@ -1,17 +1,17 @@
 ---
-title: 通信事業者の通知とシステム イベントを有効にする
-description: 通信事業者の通知とシステム イベントを有効にする
+title: Mobile operator notifications とシステム イベントの有効化の概要
+description: Mobile operator notifications とシステム イベントの有効化の概要
 ms.assetid: 988bafcc-ad8e-446d-9336-85c19cf05577
-ms.date: 04/20/2017
+ms.date: 07/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: e16f59242649b95b7eb19ca129babf43569b7bd4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: feb3916fd3eec644c5cde10ae94c67df42141d54
+ms.sourcegitcommit: 6f74454e7ed5e703e4e4b363b6816652950e6a51
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380225"
+ms.lasthandoff: 07/06/2019
+ms.locfileid: "67608539"
 ---
-# <a name="enabling-mobile-operator-notifications-and-system-events"></a>通信事業者の通知とシステム イベントを有効にする
+# <a name="introduction-to-enabling-mobile-operator-notifications-and-system-events"></a>Mobile operator notifications とシステム イベントの有効化の概要
 
 
 このトピックでは、Mobile Operator Notification システム イベントに関する情報を提供します。 SMS、USSD ベースの受信の mobile operator notifications と関連するモバイル ブロード バンドのシステム イベントを処理する UWP モバイル ブロード バンド アプリを開発するためのガイドラインを示します。

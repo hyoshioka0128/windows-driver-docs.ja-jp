@@ -1,17 +1,17 @@
 ---
-title: COSA/APN データベース
-description: COSA/APN データベース
+title: COSA/APN database の概要
+description: COSA/APN database の概要
 ms.assetid: 0E3DA610-090D-4D1E-B67E-A4747252E8BE
-ms.date: 06/23/2017
+ms.date: 07/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: daefc0dc81c7a5bace87cf02704b62925890a301
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: aa180797e13e7b649ba33d1a4363474bb2437322
+ms.sourcegitcommit: 6f74454e7ed5e703e4e4b363b6816652950e6a51
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383795"
+ms.lasthandoff: 07/06/2019
+ms.locfileid: "67608531"
 ---
-# <a name="cosaapn-database"></a>COSA/APN データベース
+# <a name="introduction-to-cosaapn-database"></a>COSA/APN database の概要
 
 このセクションには、COSA と apndatabase.xml (APN データベース) の両方に関する情報が含まれています。 COSA は、Windows 10、バージョン 1703 以降、APN データベースを使用して Windows 8 では、Windows 8.1、および Windows 10、Windows 10 バージョン 1703 より前に、のバージョンで使用される新しい形式です。
 

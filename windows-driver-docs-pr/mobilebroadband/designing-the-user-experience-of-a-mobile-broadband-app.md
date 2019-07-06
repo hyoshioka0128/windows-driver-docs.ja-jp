@@ -1,17 +1,17 @@
 ---
-title: モバイル ブロードバンド アプリのユーザー エクスペリエンスの設計
-description: モバイル ブロードバンド アプリのユーザー エクスペリエンスの設計
+title: モバイル ブロード バンドのアプリのユーザー エクスペリエンスの設計の概要
+description: モバイル ブロード バンドのアプリのユーザー エクスペリエンスの設計の概要
 ms.assetid: c84e2814-69ba-4cd0-ba11-1b035ccdfbde
-ms.date: 04/20/2017
+ms.date: 07/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 30e2494c1684b42ef518e366ce29c388cc6fdf14
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a973fa7edaf12911bb6348300b1c0993917a4539
+ms.sourcegitcommit: 6f74454e7ed5e703e4e4b363b6816652950e6a51
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67381530"
+ms.lasthandoff: 07/06/2019
+ms.locfileid: "67608533"
 ---
-# <a name="designing-the-user-experience-of-a-mobile-broadband-app"></a>モバイル ブロードバンド アプリのユーザー エクスペリエンスの設計
+# <a name="introduction-to-designing-the-user-experience-of-a-mobile-broadband-app"></a>モバイル ブロード バンドのアプリのユーザー エクスペリエンスの設計の概要
 
 
 このトピックでは、Windows 10 用 UWP モバイル ブロード バンド アプリを設計する方法についての情報を提供します。 ユーザーがモバイル ブロード バンド アカウントとサービスを管理するアプリをデザインするユーザー エクスペリエンス デザインのガイドラインを提供します。 モバイル ブロード バンド技術、Windows モバイル ブロード バンド ネットワークでは、Microsoft Store アプリのプラットフォームと使い慣れた想定します。

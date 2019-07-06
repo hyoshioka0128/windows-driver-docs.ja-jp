@@ -1,17 +1,17 @@
 ---
-title: MobileBroadbandInfo XML スキーマ
-description: MobileBroadbandInfo XML スキーマ
+title: MobileBroadbandInfo XML スキーマの概要
+description: MobileBroadbandInfo XML スキーマの概要
 ms.assetid: fdbc340c-8fed-4a25-96c4-ec185af04de9
-ms.date: 04/20/2017
+ms.date: 07/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 05cf5758726e1a38c36397f9e342f451e244ff45
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 6a74746169056b5709253d25b17e394fd10d83b3
+ms.sourcegitcommit: 6f74454e7ed5e703e4e4b363b6816652950e6a51
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578550"
+ms.lasthandoff: 07/06/2019
+ms.locfileid: "67608499"
 ---
-# <a name="mobilebroadbandinfo-xml-schema"></a>MobileBroadbandInfo XML スキーマ
+# <a name="mobilebroadbandinfo-xml-schema-overview"></a>MobileBroadbandInfo XML スキーマの概要
 
 [!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
 
@@ -23,11 +23,11 @@ ms.locfileid: "56578550"
 
  
 
-MobileBroadbandInfo XML スキーマの完了の定義については、[MobileBroadbandInfo XML スキーマ定義](mobilebroadbandinfo-xml-schema-definition.md)を参照してください。
+MobileBroadbandInfo XML スキーマの完了の定義については、次を参照してください。 [MobileBroadbandInfo XML スキーマ定義](mobilebroadbandinfo-xml-schema-definition.md)します。
 
-MobileBroadbandInfo XML スキーマで定義されている要素については、[MobileBroadbandInfo XML 要素](mobilebroadbandinfo-xml-elements.md)を参照してください。
+MobileBroadbandInfo XML スキーマで定義されている要素については、次を参照してください。 [MobileBroadbandInfo XML 要素](mobilebroadbandinfo-xml-elements.md)します。
 
-MobileBroadbandInfo XML スキーマで定義されている形式で XML データの例は、[MobileBroadbandInfo XML の例](mobilebroadbandinfo-xml-example.md)を参照してください。
+MobileBroadbandInfo XML スキーマで定義されている形式で XML データの例は、次を参照してください。 [MobileBroadbandInfo XML の例](mobilebroadbandinfo-xml-example.md)します。
 
  
 

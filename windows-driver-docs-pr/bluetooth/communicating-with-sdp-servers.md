@@ -1,6 +1,6 @@
 ---
-title: SDP サーバーとの通信
-description: SDP サーバーとの通信
+title: SDP サーバーの概要との通信
+description: SDP サーバーの概要との通信
 ms.assetid: 833f2eea-d7e6-4f19-979e-3bb4db47fa43
 keywords:
 - Bluetooth の WDK、SDP サーバー間の通信
@@ -14,14 +14,14 @@ keywords:
 - WDK の Bluetooth の広告サービス
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 69f6cb1e2dc116b8d06e565e28b0646e24e0b560
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 40c08eb94e5f354f13533b875a2f3f5bf9326d56
+ms.sourcegitcommit: 6f74454e7ed5e703e4e4b363b6816652950e6a51
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364644"
+ms.lasthandoff: 07/06/2019
+ms.locfileid: "67608470"
 ---
-# <a name="communicating-with-sdp-servers"></a>SDP サーバーとの通信
+# <a name="communicating-with-sdp-servers-overview"></a>SDP サーバーの概要との通信
 
 
 Bluetooth ドライバー スタックは、サービスの探索プロトコル (SDP) をサポートします。 このプロトコルでは、ローカルのオプションの範囲内にある Bluetooth デバイスによって提供されるサービスを検索または参照するプロファイルのドライバーを許可します。 SDP は、論理リンク コントロールと適応プロトコル (L2CAP)、トランスポート プロトコルとして使用し、クライアント/サーバー モデルに従います。

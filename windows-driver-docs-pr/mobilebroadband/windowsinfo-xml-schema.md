@@ -1,17 +1,17 @@
 ---
-title: WindowsInfo XML スキーマ
-description: WindowsInfo XML スキーマ
+title: WindowsInfo XML スキーマの概要
+description: WindowsInfo XML スキーマの概要
 ms.assetid: a9c440ec-189c-4148-8f76-d6476aa708c0
-ms.date: 04/20/2017
+ms.date: 07/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: f7c73e8c5b35824784bb414df88793a65f1c67b0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: acedb8bdab21a8a12576f063067be3c764322e84
+ms.sourcegitcommit: 6f74454e7ed5e703e4e4b363b6816652950e6a51
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323666"
+ms.lasthandoff: 07/06/2019
+ms.locfileid: "67608557"
 ---
-# <a name="windowsinfo-xml-schema"></a>WindowsInfo XML スキーマ
+# <a name="windowsinfo-xml-schema-overview"></a>WindowsInfo XML スキーマの概要
 
 [!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
 

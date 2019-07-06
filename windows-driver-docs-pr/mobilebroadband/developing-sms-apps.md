@@ -1,17 +1,17 @@
 ---
-title: SMS アプリの開発
-description: SMS アプリの開発
+title: SMS のアプリの開発の概要
+description: SMS のアプリの開発の概要
 ms.assetid: 052eb3cc-4a39-4667-8678-b18650f3b5c9
-ms.date: 04/20/2017
+ms.date: 07/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: dd269574dfc7fdf6e8f19d0fd0b3a033c9fcb3b2
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 56d28fce90ee9b456f2e3ca6a90b013af6aae63b
+ms.sourcegitcommit: 6f74454e7ed5e703e4e4b363b6816652950e6a51
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67381474"
+ms.lasthandoff: 07/06/2019
+ms.locfileid: "67608529"
 ---
-# <a name="developing-sms-apps"></a>SMS アプリの開発
+# <a name="introduction-to-developing-sms-apps"></a>SMS のアプリの開発の概要
 
 
 Windows 8、Windows 8.1、および Windows 10 UWP アプリにモバイル ネットワーク オペレーター、モバイル ブロード バンド アダプター Ihv、Oem、および SMS のアクセス権を持つ、パートナーのソフトウェア ベンダーのアプリのショート メッセージ サービス (SMS) のテキスト メッセージング プラットフォームを提供します。

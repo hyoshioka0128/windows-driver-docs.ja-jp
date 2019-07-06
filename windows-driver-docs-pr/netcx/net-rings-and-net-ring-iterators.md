@@ -1,20 +1,20 @@
 ---
-title: ネット リングとネット リングの反復子
+title: Net のリングと net リングを行う反復子の概要
 description: このトピックでは、net のリングと net リングを行う反復子について説明します。
 ms.assetid: 8A56AA21-264C-4C1A-887E-92C9071E8AB8
 keywords:
-- NetAdapterCx Net リングと net リングを行う反復子、NetCx Net リング、net のリングの反復子 NetAdapterCx PCI デバイス net リング、NetAdapterCx 非同期 I/O
-ms.date: 03/21/2019
+- リングと net リングを行う反復子、net のリングと net リングを行う反復子、NetAdapterCx PCI NetCx 概要デバイス net リング、NetAdapterCx 非同期 I/O を net NetAdapterCx の概要
+ms.date: 07/01/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 09a8b659455e676e46b1c8ca3d5f3daa36b534ca
-ms.sourcegitcommit: 91b989fc3256267fab89c36b1fa54ff039dcc687
+ms.openlocfilehash: e67eaf4d6e21b4ad7e291e8a627b25f696fd1035
+ms.sourcegitcommit: 6f74454e7ed5e703e4e4b363b6816652950e6a51
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/15/2019
-ms.locfileid: "67148532"
+ms.lasthandoff: 07/06/2019
+ms.locfileid: "67608514"
 ---
-# <a name="net-rings-and-net-ring-iterators"></a>ネット リングとネット リングの反復子
+# <a name="introduction-to-net-rings-and-net-ring-iterators"></a>Net のリングと net リングを行う反復子の概要
 
 [!include[NetAdapterCx Beta Prerelease](../netcx-beta-prerelease.md)]
 

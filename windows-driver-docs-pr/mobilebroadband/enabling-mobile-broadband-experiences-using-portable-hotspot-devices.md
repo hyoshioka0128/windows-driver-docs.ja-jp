@@ -1,17 +1,17 @@
 ---
-title: ポータブル ホット スポットのデバイスを使用してエクスペリエンス MB を有効にします。
-description: ポータブル ホット スポットのデバイスを使用してエクスペリエンス モバイル ブロード バンド (MB) を有効にします。
+title: ポータブル ホット スポットのデバイスを使用して MB の有効化の概要のエクスペリエンスします。
+description: ポータブル ホット スポットのデバイスを使用して有効にするモバイル ブロード バンド (MB) の概要のエクスペリエンスします。
 ms.assetid: bfd53d0d-d9cb-4b6a-bbad-549139c5a1ae
-ms.date: 04/20/2017
+ms.date: 07/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: ef429b8c0075126d8e3d6759f75442e50534bbf4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a1803478b675a12c8641d6f168be4a009081af80
+ms.sourcegitcommit: 6f74454e7ed5e703e4e4b363b6816652950e6a51
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380385"
+ms.lasthandoff: 07/06/2019
+ms.locfileid: "67608463"
 ---
-# <a name="enabling-mobile-broadband-mb-experiences-using-portable-hotspot-devices"></a>ポータブル ホット スポットのデバイスを使用してエクスペリエンス モバイル ブロード バンド (MB) を有効にします。
+# <a name="introduction-to-enabling-mobile-broadband-mb-experiences-using-portable-hotspot-devices"></a>ポータブル ホット スポットのデバイスを使用して有効にするモバイル ブロード バンド (MB) の概要のエクスペリエンスします。
 
 このセクションのトピックでは、Windows 8、Windows 8.1、および Windows 10 のポータブルの Wi-fi ホット スポットに関する情報を提供します。 デバイス メーカーがネイティブのモバイル ブロード バンド接続で Windows のキャンペーンのエクスペリエンスに似ています (携帯電話を含む)、モバイル ブロード バンドによってサポートされる Wi-fi ホット スポットでのエクスペリエンスを提供するためのガイドラインを提供します。
 

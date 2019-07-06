@@ -1,20 +1,20 @@
 ---
-title: ネットワーク データの転送
-description: ネットワーク データの転送
+title: NetAdapterCx データ パスの概要
+description: NetAdapterCx データ パスの概要
 ms.assetid: D2AC8269-F2D5-4FDC-A59E-6A35DBB18FF0
 keywords:
 - NetAdapterCx NetCx ネットワーク データを転送する、ネットワーク データを転送します。
-ms.date: 06/05/2017
+ms.date: 07/01/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 1dab2b55fa2da0917c440d1c3a073b2c88793f9b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b78bafb63c16758a9efdc3f109520363d0eebe32
+ms.sourcegitcommit: 6f74454e7ed5e703e4e4b363b6816652950e6a51
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369906"
+ms.lasthandoff: 07/06/2019
+ms.locfileid: "67608474"
 ---
-# <a name="transferring-network-data"></a>ネットワーク データの転送
+# <a name="introduction-to-the-netadaptercx-data-path"></a>NetAdapterCx データ パスの概要
 
 [!include[NetAdapterCx Beta Prerelease](../netcx-beta-prerelease.md)]
 
@@ -26,5 +26,5 @@ NetAdapterCx モデルでは、ネットワーク データがパケット記述
 
 - [Packet descriptors and extensions (パケットの記述子と拡張機能)](packet-descriptors-and-extensions.md)
 - [送信および受信キュー](transmit-and-receive-queues.md)
-- [Net のリングと net リングを行う反復子](net-rings-and-net-ring-iterators.md)
+- [ネット リングとネット リングの反復子](net-rings-and-net-ring-iterators.md)
 - [Network data buffer management (ネットワーク データ バッファーの管理)](network-data-buffer-management.md)

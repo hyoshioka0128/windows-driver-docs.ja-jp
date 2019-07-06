@@ -1,19 +1,19 @@
 ---
-title: Mobile のプランの付録
+title: '[全般] の付録のモバイルの計画'
 description: このトピックでは、Mobile プラン プログラムの付録の情報について説明します。
 ms.assetid: B3B478DB-78F4-4031-B041-DCBAACC15D6F
 keywords:
 - Windows Mobile プラン付録、Mobile のプランの付録モバイル演算子
-ms.date: 03/25/2019
+ms.date: 07/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 0451a6ad8243ed59e7209edfcdf09d8c5d042471
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0a1af5c5101a1493efedce5339a32495e632aa50
+ms.sourcegitcommit: 6f74454e7ed5e703e4e4b363b6816652950e6a51
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357825"
+ms.lasthandoff: 07/06/2019
+ms.locfileid: "67608550"
 ---
-# <a name="mobile-plans-appendix"></a>Mobile のプランの付録
+# <a name="mobile-plans-general-appendix"></a>[全般] の付録のモバイルの計画
 
 ## <a name="web-portal-flow-and-reference-design"></a>Web ポータルのフローと参照設計
 

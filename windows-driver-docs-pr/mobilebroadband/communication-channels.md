@@ -1,17 +1,17 @@
 ---
-title: 通信チャネル
-description: 通信チャネル
+title: ホット スポットの通信チャネルをパーソナル
+description: ホット スポットの通信チャネルをパーソナル
 ms.assetid: e26e22a2-4cc2-46a2-9d6c-02ab5df35041
-ms.date: 04/20/2017
+ms.date: 07/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 9311b6c7ad9710f31b62b2e9fed2792dda6cf3f5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a0b1a03effd7924eb1cc5eb1fadf66dd8cf8f37f
+ms.sourcegitcommit: 6f74454e7ed5e703e4e4b363b6816652950e6a51
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344322"
+ms.lasthandoff: 07/06/2019
+ms.locfileid: "67608535"
 ---
-# <a name="communication-channels"></a>通信チャネル
+# <a name="peronal-hotspot-communication-channels"></a>ホット スポットの通信チャネルをパーソナル
 
 
 次の図に示すように、モバイル ブロード バンド インターフェイスがコンピューターに直接接続されていないため、個人用ホット スポットのデバイスを使用して、演算子からの情報を交換する必要があります。

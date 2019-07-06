@@ -1,17 +1,17 @@
 ---
-title: Bluetooth LE 近接プロファイルのデバイスとアプリ
+title: Bluetooth LE 近接プロファイルの概要
 description: 近接検出では、Bluetooth 低エネルギー (LE) の一般的な用途です。
 ms.assetid: 4BF27CBE-C89A-48DC-8536-1A5111CDB0C4
-ms.date: 04/20/2017
+ms.date: 07/01/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 888c6afe2d510db4141a923a989e8678db75ceab
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 355aaf293adae94bdbb2e0850c34a5857307261c
+ms.sourcegitcommit: 6f74454e7ed5e703e4e4b363b6816652950e6a51
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328219"
+ms.lasthandoff: 07/06/2019
+ms.locfileid: "67608471"
 ---
-# <a name="bluetooth-le-proximity-profile-devices-and-apps"></a>Bluetooth LE 近接プロファイルのデバイスとアプリ
+# <a name="bluetooth-le-proximity-profile-overview"></a>Bluetooth LE 近接プロファイルの概要
 
 
 近接検出では、Bluetooth 低エネルギー (LE) の一般的な用途です。 Windows 8 で導入された Bluetooth LE サポートで Windows 8.1 を展開します。 このセクションでは、Windows 8.1 と互換性がある UWP デバイス アプリの開発に使用できる近接プロファイルのデバイスの実装を作成するためのガイドラインを提供します。

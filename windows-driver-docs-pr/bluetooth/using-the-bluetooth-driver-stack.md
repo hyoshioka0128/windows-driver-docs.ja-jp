@@ -1,6 +1,6 @@
 ---
-title: Bluetooth ドライバー スタックの使用
-description: Bluetooth ドライバー スタックの使用
+title: Bluetooth ドライバー スタックを使用する方法
+description: Bluetooth ドライバー スタックを使用する方法
 ms.assetid: c8a68c30-4cd6-4ee2-a653-7e0c1a28f4cf
 keywords:
 - Bluetooth の WDK、ドライバー スタック
@@ -20,16 +20,16 @@ keywords:
 - Ioctl WDK Bluetooth
 - WDK の Bluetooth のリモート接続
 - 接続 WDK Bluetooth
-ms.date: 04/20/2017
+ms.date: 07/01/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: af7365ef4d46da5dd6313a98efecbed179441988
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 014f124e75494acaf58f53a87ee7f20608545632
+ms.sourcegitcommit: 6f74454e7ed5e703e4e4b363b6816652950e6a51
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364604"
+ms.lasthandoff: 07/06/2019
+ms.locfileid: "67608453"
 ---
-# <a name="using-the-bluetooth-driver-stack"></a>Bluetooth ドライバー スタックの使用
+# <a name="how-to-use-the-bluetooth-driver-stack"></a>Bluetooth ドライバー スタックを使用する方法
 
 
 Windows のロードし、Bluetooth ドライバー スタックの初期化、後に、ドライバー スタックは既にペアになっているアクティブな Bluetooth デバイスを検出します。 ドライバー スタックは、すべてのペアになっているデバイスのデバイスの id (デバイス Id) を生成します。 次に、ドライバー スタックは標準のプラグ アンド プレイ (PnP) メカニズムを使用して各デバイスのプロファイルを適切なドライバーを読み込みます。 読み込まれるプロファイル ドライバーが選択し、Bluetooth ドライバー スタックが生成するようにプロファイル ドライバーとデバイスの識別子をインストールしで説明されている INF ファイルに基づく[、Bluetooth デバイスのインストール](installing-a-bluetooth-device.md)します。
