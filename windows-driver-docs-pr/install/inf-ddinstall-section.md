@@ -334,17 +334,17 @@ CopyFiles=WDM.CopyFiles.Sys, WDM.CopyFiles.Drv
 
 [**AddProperty**](inf-addproperty-directive.md)
 
-[***DDInstall *。共同インストーラー**](inf-ddinstall-coinstallers-section.md)
+[* **DDInstall *。共同インストーラー**](inf-ddinstall-coinstallers-section.md)
 
-[***DDInstall*.FactDef**](inf-ddinstall-factdef-section.md)
+[* **DDInstall*.FactDef**](inf-ddinstall-factdef-section.md)
 
-[***DDInstall *。ハードウェア**](inf-ddinstall-hw-section.md)
+[* **DDInstall *。ハードウェア**](inf-ddinstall-hw-section.md)
 
-[***DDInstall *。インターフェイス**](inf-ddinstall-interfaces-section.md)
+[* **DDInstall *。インターフェイス**](inf-ddinstall-interfaces-section.md)
 
-[***DDInstall*.LogConfigOverride**](inf-ddinstall-logconfigoverride-section.md)
+[* **DDInstall*.LogConfigOverride**](inf-ddinstall-logconfigoverride-section.md)
 
-[***DDInstall *。サービス**](inf-ddinstall-services-section.md)
+[* **DDInstall *。サービス**](inf-ddinstall-services-section.md)
 
 [**DefaultInstall**](inf-defaultinstall-section.md)
 

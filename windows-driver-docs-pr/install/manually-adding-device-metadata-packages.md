@@ -40,7 +40,7 @@ ms.locfileid: "63378362"
     %PROGRAMDATA%\Microsoft\Windows\DeviceMetadataStore\EN-US
     ```
 
-2.  デバイス メタデータ パッケージのコピーを適切な*&lt;ロケール&gt;* のサブディレクトリ、[デバイス メタデータ ストア](device-metadata-store.md)します。
+2.  デバイス メタデータ パッケージのコピーを適切な *&lt;ロケール&gt;* のサブディレクトリ、[デバイス メタデータ ストア](device-metadata-store.md)します。
 
 デバイス後メタデータ パッケージがインストールされている、[デバイス メタデータ ストア](device-metadata-store.md)、[デバイス メタデータの取得クライアント](device-metadata-retrieval-client.md)(DMRC) は、デバイス メタデータ パッケージにアクセスし、デバイス情報を表示しますデバイスとプリンターのユーザー インターフェイス。
 

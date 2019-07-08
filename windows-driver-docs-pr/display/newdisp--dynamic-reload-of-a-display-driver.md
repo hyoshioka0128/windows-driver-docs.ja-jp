@@ -28,7 +28,7 @@ ms.locfileid: "67372818"
 
  
 
-**実行する*newdisp.exe***
+**実行する *newdisp.exe***
 
 1.  すべての Direct3D や OpenGL アプリケーションを閉じます。
 

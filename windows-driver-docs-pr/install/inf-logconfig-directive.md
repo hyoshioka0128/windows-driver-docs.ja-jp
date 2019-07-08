@@ -66,7 +66,7 @@ ConfigPriority=priority-value[,config-type]
 <a href="" id="normal"></a>標準  
 論理的な構成済みより少ない最適な DESIRED します。 これは、一般的な設定です。
 
-場合、標準を指定する必要があります、*ログの構成 セクションで*で定義された、 [ * **DDInstall *。LogConfigOverride** ](inf-ddinstall-logconfigoverride-section.md)セクション、および no *config 型*値を指定することができます。
+場合、標準を指定する必要があります、*ログの構成 セクションで*で定義された、 [* **DDInstall *。LogConfigOverride**](inf-ddinstall-logconfigoverride-section.md)セクション、および no *config 型*値を指定することができます。
 
 <a href="" id="suboptimal"></a>最適ではないです。  
 論理的な構成済みより少ない最適な法線。
@@ -210,7 +210,7 @@ start-end[(attr)] | size@min-max[%align-mask][(attr)]
 Align マスクを省略すると、メモリの既定の配置は、4 K の境界 (FFFFF000) では。
 
 <a href="" id="irqconfig--irqattrs--irqnum--irqnum----"></a>**IRQConfig =** \[*IRQattrs:* \]*IRQNum*\[ **、** <em>IRQNum</em>\]...  
-*IRQattrs*デバイス bus 相対の edge によってトリガーされる IRQ を使用している場合を省略するとします。 それ以外の場合、指定**L**レベルによってトリガーされる IRQ を示すと **%.*ls**場合は、デバイスは、このエントリに記載の IRQ ラインを共有できます。
+*IRQattrs*デバイス bus 相対の edge によってトリガーされる IRQ を使用している場合を省略するとします。 それ以外の場合、指定**L**レベルによってトリガーされる IRQ を示すと **%.ls**場合は、デバイスは、このエントリに記載の IRQ ラインを共有できます。
 
 *IRQNum*デバイスを 10 進数として使用できる 1 つまたは複数のバス相対 Irq を指定します、次のコンマ (,) で区切っています。
 
@@ -323,12 +323,12 @@ PCMCIA バス上のデバイスの 8 ビット PCMCIA 構成のインデック�
 <a href="" id="attrs-"></a>*属性*   
 場合、文字に設定**A**、構成および状態のレジスタにオーディオの有効化を有効にする PCMCIA バス ドライバーに指示します。
 
-各**MfCardConfig**エントリは、多機能デバイスの 1 つの関数についての情報を提供します。 ときに一連の**LogConfig**各ディレクティブを個別参照*ログの構成 セクションで*INF ので[ * **DDInstall *。LogConfigOverride** ](inf-ddinstall-logconfigoverride-section.md)セクションの各*ログの構成 セクションで*など、そのエントリがあります。 **MfCardConfig**エントリ、同じ順序で一覧表示します。
+各**MfCardConfig**エントリは、多機能デバイスの 1 つの関数についての情報を提供します。 ときに一連の **LogConfig**各ディレクティブを個別参照 *ログの構成 セクションで* INF ので [* **DDInstall *。LogConfigOverride**](inf-ddinstall-logconfigoverride-section.md) セクションの各 *ログの構成 セクションで* など、そのエントリがあります。 **MfCardConfig**エントリ、同じ順序で一覧表示します。
 
 <a name="remarks"></a>コメント
 -------
 
-A **LogConfig**すべてあたり-の製造元、モデルごとでディレクティブを指定することができます[ **INF *DDInstall*セクション**](inf-ddinstall-section.md)または[ **INF *DDInstall*します。LogConfigOverride セクション**](inf-ddinstall-logconfigoverride-section.md)します。
+A **LogConfig**すべてあたり-の製造元、モデルごとでディレクティブを指定することができます [**INF *DDInstall*セクション**](inf-ddinstall-section.md)または [**INF *DDInstall*します。LogConfigOverride セクション**](inf-ddinstall-logconfigoverride-section.md)します。
 
 通常いくつかの代替論理構成をサポートする非 PnP デバイスに対して、INF のセットを定義する*ログ-構成-セクション*下、 *DDInstall*セクション。 各*ログの構成 セクションで*個別の論理構成リソースのセットを指定します。 含まれています、 **ConfigPriority**各論理構成に従って、デバイスとドライバーのパフォーマンスに対するその影響をランク付けのエントリが、初期化の容易さなどです。
 
@@ -336,7 +336,7 @@ PnP デバイスの場合は、PnP マネージャーは、一連の論理ハー
 
 結果として、 **LogConfig** ディレクティブを*DDInstall* PnP デバイスは、セクションは無視されます。 PnP デバイスのバスによって報告されたリソースをオーバーライドするには、 **LogConfig** ディレクティブを[ * **DDInstall *。LogConfigOverride** ](inf-ddinstall-logconfigoverride-section.md)セクション。 ここで指定のリソース、*ログの構成 セクションで*バスによって報告された代わりに使用されます。
 
-プラットフォーム拡張機能に追加できる、 *DDInstall*を含むセクションを**LogConfig**ディレクティブ、または、 [ * **DDInstall *。LogConfigOverride** ](inf-ddinstall-logconfigoverride-section.md)セクションで、プラットフォーム固有または OS 固有の論理構成を指定します。 詳細については、次を参照してください。 [INF ファイルを作成する](overview-of-inf-files.md)します。
+プラットフォーム拡張機能に追加できる、 *DDInstall*を含むセクションを**LogConfig**ディレクティブ、または、 [* **DDInstall *。LogConfigOverride**](inf-ddinstall-logconfigoverride-section.md) セクションで、プラットフォーム固有または OS 固有の論理構成を指定します。 詳細については、次を参照してください。 [INF ファイルを作成する](overview-of-inf-files.md)します。
 
 指定された*ログの構成 セクションで*名は、INF ファイルに固有である必要がありますが、それを参照できます**LogConfig**他 INF でディレクティブ*DDInstall*セクションに、同じデバイス. 各 INF ライター作成セクション名は、INF ファイル内で一意である必要があり、セクション名を定義するための一般的な規則に従う必要があります。 これらの規則の詳細については、次を参照してください。 [INF ファイルの一般的な構文規則](general-syntax-rules-for-inf-files.md)します。
 

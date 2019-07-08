@@ -3,7 +3,7 @@ title: ls、lsa (ソース行の一覧表示)
 description: Ls および lsa コマンドは、一連の現在のソース ファイルから線を表示し、現在のソース行番号を進めます。
 ms.assetid: ca5cd2f7-4920-4d36-b338-c934451bc511
 keywords:
-- '%.*ls、lsa (一覧のソース行) Windows のデバッグ'
+- ls、lsa (一覧のソース行) Windows のデバッグ
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -22,7 +22,7 @@ ms.locfileid: "63383322"
 # <a name="ls-lsa-list-source-lines"></a>ls、lsa (ソース行の一覧表示)
 
 
-**%.*Ls**と**lsa**コマンドは、一連の現在のソース ファイルからの線の表示し、現在のソース行番号に進んでください。
+**ls**と**lsa**コマンドは、一連の現在のソース ファイルからの線の表示し、現在のソース行番号に進んでください。
 
 ```dbgcmd
 ls [.] [first] [, count] 
@@ -32,8 +32,8 @@ lsa [.] address [, first [, count]]
 ## <a name="span-idddkcmdlistsourcelinesdbgspanspan-idddkcmdlistsourcelinesdbgspanparameters"></a><span id="ddk_cmd_list_source_lines_dbg"></span><span id="DDK_CMD_LIST_SOURCE_LINES_DBG"></span>パラメーター
 
 
- **.**   
-により、コマンドは、ソース ファイルを検索するデバッガー エンジンまたは[ **.srcpath (ソース パスの設定)** ](-srcpath---lsrcpath--set-source-path-.md)コマンドを使用しています。 場合、期間 (**.**) は含まれず、 **%.*ls**が最後に読み込まれたファイルを使用して、 [ **lsf (ソース ファイルの読み込み)** ](lsf--lsf---load-or-unload-source-file-.md)コマンド。
+ **.**    
+により、コマンドは、ソース ファイルを検索するデバッガー エンジンまたは[ **.srcpath (ソース パスの設定)** ](-srcpath---lsrcpath--set-source-path-.md)コマンドを使用しています。 場合、期間 ( **.** ) は含まれず、 **ls**が最後に読み込まれたファイルを使用して、 [ **lsf (ソース ファイルの読み込み)** ](lsf--lsf---load-or-unload-source-file-.md)コマンド。
 
 <span id="_______address______"></span><span id="_______ADDRESS______"></span> *address*   
 ソースの表示の開始アドレスを指定します。
@@ -74,14 +74,14 @@ lsa [.] address [, first [, count]]
 <a name="remarks"></a>コメント
 -------
 
-実行した後、 **%.*ls**または**lsa**コマンド、現在の行がさらに 1 つ表示される最後の行として再定義します。 現在の行が後で使用される **%.*ls**、 **lsa**、および[ **lsc** ](lsc--list-current-source-.md)コマンド。
+実行した後、 **ls**または**lsa**コマンド、現在の行がさらに 1 つ表示される最後の行として再定義します。 現在の行が後で使用される**ls**、 **lsa**、および[ **lsc** ](lsc--list-current-source-.md)コマンド。
 
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
-[**lsc (現在のソースの一覧)**](lsc--list-current-source-.md)
+[**lsc (現在のソースの一覧)** ](lsc--list-current-source-.md)
 
-[**lsf、lsf - (ロードまたはアンロード ソース ファイル)**](lsf--lsf---load-or-unload-source-file-.md)
+[**lsf、lsf - (ロードまたはアンロード ソース ファイル)** ](lsf--lsf---load-or-unload-source-file-.md)
 
  
 

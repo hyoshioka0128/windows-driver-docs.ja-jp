@@ -82,7 +82,7 @@ WFP リダイレクト レコードは、WFP が送信プロキシ接続を設�
 
 呼び出し元は、次の方法のいずれかでこのクエリを実行できます。
 
--   設定できる、 *OutputBuffer*に大きなサイズで約 1 KB のバッファーします。 出力バッファー サイズが十分でない場合[ **WskControlSocket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_control_socket)が返されます、**状態\_バッファー\_すぎます\_小さな***OutputSizeReturned*必要なバッファーのサイズが含まれます。 大きなバッファーを割り当てられ、 **WskControlSocket**でもう一度呼び出すと、 **SIO\_クエリ\_WFP\_接続\_リダイレクト\_レコード**要求と*OutputBuffer*より大きなバッファーを設定します。
+-   設定できる、 *OutputBuffer*に大きなサイズで約 1 KB のバッファーします。 出力バッファー サイズが十分でない場合[ **WskControlSocket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_control_socket)が返されます、**状態\_バッファー\_すぎます\_小さな** *OutputSizeReturned*必要なバッファーのサイズが含まれます。 大きなバッファーを割り当てられ、 **WskControlSocket**でもう一度呼び出すと、 **SIO\_クエリ\_WFP\_接続\_リダイレクト\_レコード**要求と*OutputBuffer*より大きなバッファーを設定します。
 -   設定できますか、 *OutputSize*パラメーターを 0 にし、 *OutputBuffer*に NULL を呼び出して[ **WskControlSocket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_control_socket)します。 完了すると、 **WskControlSocket**関数での出力バッファーのサイズ (バイト単位) 単位の取得、 *OutputSizeReturned*パラメーター。 適切なサイズのバッファーを割り当てられ、 **WskControlSocket**でもう一度呼び出すと、 **SIO\_クエリ\_WFP\_接続\_リダイレクト\_レコード**要求と*OutputBuffer*バッファーに設定します。
 
 **注**  を使用して、ユーザー モード アプリケーションでこのクエリを実行することも[ **SIO\_クエリ\_WFP\_接続\_リダイレクト\_レコード (SDK)** ](https://docs.microsoft.com/previous-versions/windows/desktop/legacy/hh859713(v=vs.85))します。

@@ -25,9 +25,9 @@ ms.locfileid: "63375606"
 
 構造の変更\*から PFeature[演習 3](gdl-exercise-3--creating-root-level-constructs.md) 2 つのバリエーションを定義することで。\*PFeature:ここをクリックし、 \*PFeature InputTray します。
 
-含まれている POption \*PFeature:用紙サイズには、次の属性があります。**\*名前**、 **\*コマンド**、  **\*Papersize**します。
+含まれている POption \*PFeature:用紙サイズには、次の属性があります。 **\*名前**、 **\*コマンド**、  **\*Papersize**します。
 
-含まれている POption \*PFeature:InputTray には、次の属性があります。**\*名前**、 **\*コマンド**、および**\*容量:**  *\#シートの*します。
+含まれている POption \*PFeature:InputTray には、次の属性があります。 **\*名前**、 **\*コマンド**、および **\*容量:** *\#シートの* します。
 
 これらの 2 種類の一般的なプロパティを抽象化するためのテンプレートを作成する\*POptions します。
 

@@ -35,11 +35,11 @@ SignTool sign /v /ac CrossCertificateFile /s SPCCertificateStore /n SPCCertifica
 
 -   **/N** *SPCCertificateName*オプションで証明書の名前を指定、 *SPCCertificateStore*証明書ストア。
 
--   **/T**  * http://timestamp.verisign.com/scripts/timstamp.dll *オプションは、VeriSign を提供するパブリックに利用可能なタイム スタンプ サーバーの URL を提供します。
+-   **/T**  *http://timestamp.verisign.com/scripts/timstamp.dll* オプションは、VeriSign を提供するパブリックに利用可能なタイム スタンプ サーバーの URL を提供します。
 
 -   *DriverFileName.sys*ドライバー ファイルの名前を指定します。
 
-次のコマンドは、内のシグネチャを埋め込みます*Toaster.sys*は"my"証明書ストアと対応するクロス証明書は、"contoso.com"をという名前で、個人証明書から生成された*Rsacertsvrcross.cer*します。 さらに、署名は、タイム スタンプ サービスによってタイムスタンプ http://timestamp.verisign.com/scripts/timstamp.dllします。 この例で*Toaster.sys*では、 *amd64*コマンドが実行されるディレクトリのサブディレクトリ。
+次のコマンドは、内のシグネチャを埋め込みます*Toaster.sys*は"my"証明書ストアと対応するクロス証明書は、"contoso.com"をという名前で、個人証明書から生成された*Rsacertsvrcross.cer*します。 さらに、署名は、タイム スタンプ サービスによってタイムスタンプ http://timestamp.verisign.com/scripts/timstamp.dll します。 この例で*Toaster.sys*では、 *amd64*コマンドが実行されるディレクトリのサブディレクトリ。
 
 ```cpp
 SignTool sign /v /ac c:\lab\rsacertsrvcross.cer /s my /n contoso.com /t http://timestamp.verisign.com/scripts/timstamp.dll amd64\toaster.sys
