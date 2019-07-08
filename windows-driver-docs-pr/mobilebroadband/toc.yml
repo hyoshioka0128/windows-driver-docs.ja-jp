@@ -2,17 +2,13 @@
   href: index.md
 - name: 概要
   items:
-    - name: 概要
-      href: overview-b-mb.md
     - name: モバイル ブロードバンドの概要
       href: overview-of-mobile-broadband.md
     - name: モバイル ブロードバンド WinRT API の概要
       items:
-        - name: モバイル ブロードバンド WinRT API の概要
-          href: mobile-broadband-winrt-api-overview.md
-        - name: モバイル ブロードバンド Windows ランタイム API の一覧
+        - name: モバイル ブロードバンド Windows ランタイム API の概要
           items:
-            - name: モバイル ブロードバンド Windows ランタイム API の一覧
+            - name: モバイル ブロードバンド Windows ランタイム API の概要
               href: list-of-mobile-broadband-windows-runtime-apis.md
             - name: 接続プロファイル API
               href: connection-profile-api.md
@@ -30,8 +26,6 @@
               href: ussd-api.md
         - name: モバイル ブロードバンド Windows ランタイム API の一般的なタスク
           items:
-            - name: モバイル ブロードバンド Windows ランタイム API の一般的なタスク
-              href: common-tasks-for-mobile-broadband-windows-runtime-apis.md
             - name: MobileBroadbandAccount オブジェクトを作成する
               href: create-a-mobilebroadbandaccount-object.md
             - name: MobileBroadbandDeviceInformation オブジェクトを作成する
@@ -68,8 +62,6 @@
               href: unlock-a-device.md
         - name: モバイル ブロードバンド Windows ランタイム API を使用するためのベスト プラクティス
           items:
-            - name: モバイル ブロードバンド Windows ランタイム API を使用するためのベスト プラクティス
-              href: best-practices-for-using-mobile-broadband-windows-runtime-api.md
             - name: アカウントの受信イベントと削除イベントを処理するためのベスト プラクティス
               href: best-practices-for-handling-account-arrival-and-removal-events.md
             - name: モバイル ブロードバンド ネットワークに接続するためのベスト プラクティス
@@ -78,40 +70,33 @@
       href: mobile-operator-hardware-overview.md
 - name: メタデータを使用してモバイル ブロードバンド エクスペリエンスを構成する
   items:
-    - name: メタデータを使用してモバイル ブロードバンド エクスペリエンスを構成する
+    - name: メタデータを使用したモバイル ブロードバンド エクスペリエンスの構成の概要
       href: using-metadata-to-configure-mobile-broadband-experiences.md
     - name: アカウントのプロビジョニング
       href: account-provisioning.md
     - name: COSA/APN データベース
       items:
-        - name: COSA/APN データベース
+        - name: COSA/APN データベースの概要
           href: cosa-apn-database.md
         - name: APN スキーマの定義
           href: apn-schema-definition.md
         - name: APN 要素
           items:
-            - name: APN 要素
+            - name: APN 要素の概要
               href: apn-elements.md
-            - name: OperatorList
               items:
                 - name: OperatorList
                   href: operatorlist.md
                 - name: 演算子
                   href: operator.md
-            - name: HardwareIdList (APN 要素)
-              items:
                 - name: HardwareIdList (APN 要素)
                   href: hardwareidlist-apnxml.md
                 - name: HardwareId (APN 要素)
                   href: hardwareid-apnxml.md
-            - name: ConnectionInfoList
-              items:
                 - name: ConnectionInfoList
                   href: connectioninfolist.md
                 - name: ConnectionInfo
                   href: connectioninfo.md
-            - name: TrustedCertificateList
-              items:
                 - name: TrustedCertificateList
                   href: trustedcertificatelist.md
                 - name: TrustedCertificate (APN 要素)
@@ -124,21 +109,17 @@
           href: apn-database-overview.md
         - name: COSA/APN データベースの提出
           items:
-            - name: COSA/APN データベースの提出
-              href: cosa-apn-database-submission.md
             - name: デスクトップ COSA/APN データベースの提出の計画
-              items:
-                - name: デスクトップ COSA/APN データベースの提出の計画
-                  href: planning-your-desktop-cosa-apn-database-submission.md
-                - name: デスクトップ COSA/APN データベースの設定
-                  href: desktop-cosa-apn-database-settings.md
+              href: planning-your-desktop-cosa-apn-database-submission.md
+            - name: デスクトップ COSA/APN データベースの設定
+              href: desktop-cosa-apn-database-settings.md
             - name: デスクトップ COSA/APN データベースの提出のテスト
               href: testing-your-desktop-cosa-apn-database-submission.md
             - name: デスクトップ COSA/APN データベースの更新の提出
               href: submitting-the-desktop-cosa-apn-database-update.md
     - name: サービス メタデータ
       items:
-        - name: サービス メタデータ
+        - name: サービス メタデータの概要
           href: service-metadata.md
         - name: MVNO 向けエクスペリエンスの提供
           href: delivering-experiences-for-mvnos.md
@@ -148,17 +129,15 @@
           href: service-identifier-ownership-updates.md
         - name: サービス メタデータ パッケージのスキーマ リファレンス
           items:
-            - name: サービス メタデータ パッケージのスキーマ リファレンス
-              href: service-metadata-package-schema-reference.md
             - name: MobileBroadbandInfo XML スキーマ
               items:
-                - name: MobileBroadbandInfo XML スキーマ
+                - name: MobileBroadbandInfo XML スキーマの概要
                   href: mobilebroadbandinfo-xml-schema.md
                 - name: MobileBroadbandInfo XML スキーマの定義
                   href: mobilebroadbandinfo-xml-schema-definition.md
                 - name: MobileBroadbandInfo XML 要素
                   items:
-                    - name: MobileBroadbandInfo XML 要素
+                    - name: MobileBroadbandInfo XML 要素の一覧
                       href: mobilebroadbandinfo-xml-elements.md
                     - name: MobileBroadbandInfo
                       href: mobilebroadbandinfo.md
@@ -174,7 +153,7 @@
                       href: allowstandarduserpinunlock.md
                     - name: AllowTethering
                       href: allowtethering.md
-                - name: ProvisioningEngine
+                - name: ProvisioningEngine 要素
                   items:
                     - name: ProvisioningEngine
                       href: provisioningengine.md
@@ -190,13 +169,13 @@
                   href: mobilebroadbandinfo-xml-example.md
             - name: PackageInfo XML スキーマ
               items:
-                - name: PackageInfo XML スキーマ
+                - name: PackageInfo XML スキーマの概要
                   href: packageinfo-xml-schema.md
                 - name: PackageInfo XML スキーマの定義
                   href: packageinfo-xml-schema-definition.md
                 - name: PackageInfo XML 要素
                   items:
-                    - name: PackageInfo XML 要素
+                    - name: PackageInfo XML 要素の一覧
                       href: packageinfo-xml-elements.md
                     - name: PackageInfo
                       href: packageinfo.md
@@ -234,21 +213,19 @@
                       href: version.md
                 - name: PackageInfo XML データ型
                   items:
-                    - name: PackageInfo XML データ型
-                      href: packageinfo-xml-data-types.md
                     - name: GUIDType
                       href: guidtype-packageinfo.md
                 - name: PackageInfo XML の例
                   href: packageinfo-xml-example.md
             - name: ServiceInfo XML スキーマ
               items:
-                - name: ServiceInfo XML スキーマ
+                - name: ServiceInfo XML スキーマの概要
                   href: serviceinfo-xml-schema.md
                 - name: ServiceInfo XML スキーマの定義
                   href: serviceinfo-xml-schema-definition.md
                 - name: ServiceInfo XML 要素
                   items:
-                    - name: ServiceInfo XML 要素
+                    - name: ServiceInfo XML 要素の一覧
                       href: serviceinfo-xml-elements.md
                     - name: ServiceInfo
                       href: serviceinfo.md
@@ -272,21 +249,19 @@
                       href: servicespecificextension.md
                 - name: ServiceInfo XML データ型
                   items:
-                    - name: ServiceInfo XML データ型
-                      href: serviceinfo-xml-data-types.md
                     - name: GUIDType
                       href: guidtype-serviceinfo.md
                 - name: ServiceInfo XML の例
                   href: serviceinfo-xml-example.md
             - name: SoftwareInfo XML スキーマ
               items:
-                - name: SoftwareInfo XML スキーマ
+                - name: SoftwareInfo XML スキーマの概要
                   href: softwareinfo-xml-schema.md
                 - name: SoftwareInfo XML スキーマの定義
                   href: softwareinfo-xml-schema-definition.md
                 - name: SoftwareInfo XML 要素
                   items:
-                    - name: SoftwareInfo XML 要素
+                    - name: SoftwareInfo XML 要素の一覧
                       href: softwareinfo-xml-elements.md
                     - name: SoftwareInfo
                       href: softwareinfo.md
@@ -314,13 +289,13 @@
                   href: softwareinfo-xml-example.md
             - name: WindowsInfo XML スキーマ
               items:
-                - name: WindowsInfo XML スキーマ
+                - name: WindowsInfo XML スキーマの概要
                   href: windowsinfo-xml-schema.md
                 - name: WindowsInfo XML スキーマの定義
                   href: windowsinfo-xml-schema-definition.md
                 - name: WindowsInfo XML 要素
                   items:
-                    - name: WindowsInfo XML 要素
+                    - name: WindowsInfo XML 要素の一覧
                       href: windowsinfo-xml-elements.md
                     - name: WindowsInfo
                       href: windowsinfo.md
@@ -352,13 +327,11 @@
           href: using-mbidgeneratorexe-to-generate-hardware-ids.md
 - name: 通信事業者のシナリオ
   items:
-    - name: 通信事業者のシナリオ
-      href: mobile-operator-scenarios-b-mb.md
     - name: モバイル通信プラン
       items:
-        - name: モバイル通信プラン
+        - name: モバイル通信プランの概要
           href: mobile-plans.md
-        - name: モバイル通信プランのユース ケース
+        - name: モバイル通信プランのシナリオ
           items:
             - name: モバイル通信プランのユース ケース
               href: mobile-plans-use-cases.md
@@ -377,8 +350,9 @@
         - name: Launch
           href: mobile-plans-launch.md
         - name: 付録
-          href: mobile-plans-appendix.md
           items:
+            - name: 一般付録
+              href: mobile-plans-appendix.md
             - name: レガシ コールバック通知
               href: mobile-plans-legacy-callback-notifications.md
     - name: 通信事業者および OEM の Windows での eSIM 管理
@@ -389,7 +363,7 @@
       href: developing-apps-using-multiple-pdp-contexts.md
     - name: SMS アプリの開発
       items:
-        - name: SMS アプリの開発
+        - name: SMS アプリの開発の概要
           href: developing-sms-apps.md
         - name: SMS デバイス ストレージの制限
           href: sms-device-storage-limits.md
@@ -405,8 +379,6 @@
           href: send-sms-by-using-custom-character-sets.md
         - name: テキスト モード インターフェイスを使用して SMS を送信する
           items:
-            - name: テキスト モード インターフェイスを使用して SMS を送信する
-              href: send-sms-by-using-the-text-mode-interface.md
             - name: 下書き SMS の文字とセグメントを計算する
               href: calculate-characters-and-segments-of-a-draft-sms.md
             - name: 携帯電話番号を指定する
@@ -419,11 +391,11 @@
           href: set-sms-declarations.md
     - name: ポータブル ホットスポット デバイスを使用してモバイル ブロードバンド エクスペリエンスを有効にする
       items:
-        - name: ポータブル ホットスポット デバイスを使用してモバイル ブロードバンド エクスペリエンスを有効にする
+        - name: ポータブル ホットスポット デバイスを使用したモバイル ブロードバンド エクスペリエンスの有効化の概要
           href: enabling-mobile-broadband-experiences-using-portable-hotspot-devices.md
         - name: 通信チャネル
           items:
-            - name: 通信チャネル
+            - name: 個人用ホットスポットの通信チャネル
               href: communication-channels.md
             - name: ネットワーク コストの情報の要素
               href: network-cost-information-element.md
@@ -431,7 +403,7 @@
               href: pnp-x-for-mobile-broadband-apps.md
     - name: 通信事業者の通知とシステム イベントを有効にする
       items:
-        - name: 通信事業者の通知とシステム イベントを有効にする
+        - name: 通信事業者の通知とシステム イベントの有効化の概要
           href: enabling-mobile-operator-notifications-and-system-events.md
         - name: MobileOperatorNotification イベントを処理するアプリを開発する
           href: develop-an-app-to-handle-the-mobileoperatornotification-event.md
@@ -441,12 +413,10 @@
           href: mobile-operator-notification-scenarios.md
     - name: Windows とワイヤレス ホットスポットを統合する
       items:
-        - name: Windows とワイヤレス ホットスポットを統合する
+        - name: Windows とワイヤレス ホットスポットの統合の概要
           href: integrating-windows-with-wireless-hotspots.md
         - name: ホットスポット認証アプリを開始する
           items:
-            - name: ホットスポット認証アプリを開始する
-              href: get-started-with-a-hotspot-authentication-app.md
             - name: ホットスポット認証サンプルを確認する
               href: review-the-hotspot-authentication-sample.md
             - name: ホットスポット認証サンプルを更新する
@@ -455,13 +425,11 @@
               href: verify-background-events.md
         - name: ホットスポット認証の方法
           items:
-            - name: ホットスポット認証の方法
-              href: hotspot-authentication-methods.md
             - name: キャプティブ ポータル
               href: captive-portals.md
             - name: WISPr 認証
               items:
-                - name: WISPr 認証
+                - name: WISPr 認証の概要
                   href: wispr-authentication.md
                 - name: ホットスポット認証のプロビジョニング
                   href: provisioning-for-hotspot-authentication.md
@@ -477,12 +445,10 @@
       href: understanding-and-configuring-windows-connection-manager.md
     - name: UWP モバイル ブロードバンド アプリ
       items:
-        - name: UWP モバイル ブロードバンド アプリ
+        - name: UWP モバイル ブロードバンド アプリの概要
           href: UWP-mobile-broadband-apps.md
         - name: モバイル ブロードバンド アプリのシナリオ
           items:
-            - name: モバイル ブロードバンド アプリのシナリオ
-              href: mobile-broadband-app-scenarios.md
             - name: アカウント管理
               href: account-management.md
             - name: アプリの起動
@@ -501,7 +467,7 @@
               href: premium-services.md
         - name: モバイル ブロードバンド アプリのユーザー エクスペリエンスの設計
           items:
-            - name: モバイル ブロードバンド アプリのユーザー エクスペリエンスの設計
+            - name: モバイル ブロードバンド アプリのユーザー エクスペリエンス設計の概要
               href: designing-the-user-experience-of-a-mobile-broadband-app.md
             - name: モバイル ブロードバンド アプリのランディング ページを設計する
               href: design-the-landing-page-of-a-mobile-broadband-app.md
