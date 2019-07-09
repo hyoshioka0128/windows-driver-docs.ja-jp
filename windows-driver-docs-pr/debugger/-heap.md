@@ -92,22 +92,22 @@ ms.locfileid: "63336531"
 
  
 
-<span id="_______-triage__Handle___Address___"></span><span id="_______-triage__handle___address___"></span><span id="_______-TRIAGE__HANDLE___ADDRESS___"></span> **-トリアージ\[** <em>処理</em> **|** <em>アドレス</em>**\]**   
+<span id="_______-triage__Handle___Address___"></span><span id="_______-triage__handle___address___"></span><span id="_______-TRIAGE__HANDLE___ADDRESS___"></span> **-トリアージ\[** <em>処理</em> **|** <em>アドレス</em> **\]**    
 デバッガーによって自動的にプロセスのヒープ内のエラーの検索をによりします。 ヒープを処理する場合は、引数として指定して、そのヒープが調べられます。それ以外の場合、特定のアドレスが含まれているすべてのヒープを検索しが調べられる 1 つが見つかった場合します。 使用して **-トリアージ**低断片化ヒープ (LFH) の破損を検証する唯一の方法です。
 
-<span id="_______-x_-v_"></span><span id="_______-X_-V_"></span> **-x** **** \[**-v**\]   
+<span id="_______-x_-v_"></span><span id="_______-X_-V_"></span> **-x** **** \[ **-v**\]   
 原因のデバッガーが、指定したアドレスを含むヒープ ブロックを検索します。 -V を追加すると、コマンドはこのヒープ ブロックへのポインターの現在のプロセスの全体の仮想メモリ空間を検索します。
 
 <span id="_______-l______"></span><span id="_______-L______"></span> **-l**   
 検出するために、デバッガーのリークの原因は、ブロックをヒープします。
 
-<span id="_______-i________Address______-h_HeapAddress______"></span><span id="_______-i________address______-h_heapaddress______"></span><span id="_______-I________ADDRESS______-H_HEAPADDRESS______"></span> **-i** **** *アドレス* **-h** *HeapAddress*   
+<span id="_______-i________Address______-h_HeapAddress______"></span><span id="_______-i________address______-h_heapaddress______"></span><span id="_______-I________ADDRESS______-H_HEAPADDRESS______"></span> **-i**  ****  *アドレス* **-h** *HeapAddress*    
 指定した情報が表示されます*ヒープ*します。
 
 <span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span> *アドレス*   
 検索対象のアドレスを指定します。
 
-<span id="_______-_______"></span> **-?**   
+<span id="_______-_______"></span> **-?**    
 デバッガー コマンド ウィンドウで、この拡張機能の簡単なヘルプ テキストを表示します。 使用 **。 ヒープのでしょうか。** 汎用的なヘルプについてと **!-p - ヒープのでしょうか。** ページ ヒープ ヘルプを参照します。
 
 ## <a name="span-idddkheapdbgspanspan-idddkheapdbgspannt-heap-parameters"></a><span id="ddk__heap_dbg"></span><span id="DDK__HEAP_DBG"></span>NT ヒープ パラメーター
@@ -221,7 +221,7 @@ ms.locfileid: "63336531"
 
  
 
-<span id="_______-i________Heap_Address______or_HeapAddress______"></span><span id="_______-i________heap_address______or_heapaddress______"></span><span id="_______-I________HEAP_ADDRESS______OR_HEAPADDRESS______"></span> **-i** **** *ヒープ* **** *アドレス***または** *HeapAddress*   
+<span id="_______-i________Heap_Address______or_HeapAddress______"></span><span id="_______-i________heap_address______or_heapaddress______"></span><span id="_______-I________HEAP_ADDRESS______OR_HEAPADDRESS______"></span> **-i**  ****  *ヒープ*  ****  *アドレス* **または** *HeapAddress*   
 指定した情報が表示されます*ヒープ*します。
 
 <span id="_______BreakAddress______"></span><span id="_______breakaddress______"></span><span id="_______BREAKADDRESS______"></span> *BreakAddress*   
