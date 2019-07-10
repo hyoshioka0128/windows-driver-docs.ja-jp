@@ -1,16 +1,16 @@
 ---
 Description: このセクションのトピックでは、USB デバイスの電源管理のプロパティを持つ WDM power モデルが対話する方法を確認します。
-title: USB クライアント ドライバーでの電源管理の実装
+title: USB クライアント ドライバーでの電源管理の実装の概要
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: baa5df03cbffcf5e42e9c4623e2df9ef2fc10d12
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: bec2d1b76c409434542eb19d1d80c65c3ef8dc0c
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67356582"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67717018"
 ---
-# <a name="implementing-power-management-in-usb-client-drivers"></a>USB クライアント ドライバーでの電源管理の実装
+# <a name="overview-of-implementing-power-management-in-usb-client-drivers"></a>USB クライアント ドライバーでの電源管理の実装の概要
 
 
 このセクションのトピックでは、USB デバイスの電源管理のプロパティを持つ WDM power モデルが対話する方法を確認します。
@@ -19,7 +19,7 @@ ms.locfileid: "67356582"
 
 カーネル モード ドライバー WDM 電源管理については、次を参照してください。[電源管理の実装](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-power-management)します。
 
-USB クライアント ドライバーは、カーネル モード ドライバー フレームワーク (KMDF) に基づいており、ユーザー モード ドライバー フレームワーク (UMDF) は、基本テクノロジや USB デバイスの電源を管理するためのそれぞれのフレームワークでサポートされているメカニズムを使用する必要があります。 KMDF ベースのクライアント ドライバーでの電源を管理する方法の詳細については、次を参照してください[PnP をサポートしていると、ドライバーでの電源管理](https://docs.microsoft.com/windows-hardware/drivers/wdf/supporting-pnp-and-power-management-in-your-driver); UMDF ベースのクライアント ドライバーでは、を参照してください[UMDFベースのドライバーでのPnPと電源管理。](https://docs.microsoft.com/windows-hardware/drivers/wdf/pnp-and-power-management-in-umdf-drivers)
+USB クライアント ドライバーは、カーネル モード ドライバー フレームワーク (KMDF) に基づいており、ユーザー モード ドライバー フレームワーク (UMDF) は、基本テクノロジや USB デバイスの電源を管理するためのそれぞれのフレームワークでサポートされているメカニズムを使用する必要があります。 KMDF ベースのクライアント ドライバーでの電源を管理する方法の詳細については、次を参照してください[PnP をサポートしていると、ドライバーでの電源管理](https://docs.microsoft.com/windows-hardware/drivers/wdf/supporting-pnp-and-power-management-in-your-driver); UMDF ベースのクライアント ドライバーでは、を参照してください[UMDFベースのドライバーでのPnPと電源管理](https://docs.microsoft.com/windows-hardware/drivers/wdf/pnp-and-power-management-in-umdf-drivers)。
 
 ## <a name="in-this-section"></a>このセクションの内容
 
