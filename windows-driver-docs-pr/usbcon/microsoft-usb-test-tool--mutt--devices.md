@@ -1,19 +1,19 @@
 ---
 Description: Microsoft USB Test Tool (MUTT) には、USB のハードウェアは Microsoft USB ドライバー スタックとの相互運用性をテストするためのデバイスのコレクションです。
-title: Microsoft USB テスト ツール (MUTT) デバイス
+title: Microsoft USB Test Tool (MUTT) デバイスの概要
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e8cabb6d20a401825b247b2157314a5ad343d22c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8ce3a2d372588aa0682e79e0e20fd0ed1fe93459
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67379096"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67717005"
 ---
-# <a name="microsoft-usb-test-tool-mutt-devices"></a>Microsoft USB テスト ツール (MUTT) デバイス
+# <a name="overview-of-microsoft-usb-test-tool-mutt-devices"></a>Microsoft USB Test Tool (MUTT) デバイスの概要
 
 
-**要約**
+**概要**
 
 -   MUTT デバイスの説明
 -   このセクションに記載の製造元は販売 MUTT ハードウェアのボードの相互運用性のテストを実行するために必要です。

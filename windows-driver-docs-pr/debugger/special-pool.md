@@ -8,12 +8,12 @@ keywords:
 - GFlags、特別なプール
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b0e21ba07f3506996d5ab113a70b32c6a949c813
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3529b5d318fb7883c0b1374cb746d2eafa082a35
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368092"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67716883"
 ---
 # <a name="special-pool"></a>Special Pool
 
@@ -140,7 +140,7 @@ X86 コンピューターでプロセッサ、ページ\_サイズは、0x1000�
 
  
 
-すべてのプロセッサを搭載したコンピューターには、アスタリスクを使用できます ( **\\** *) または 0x2A (10 進 42) システムで、すべてのメモリ割り当て用に特別なプール機能を構成します。
+すべてのプロセッサを搭載したコンピューターには、アスタリスクを使用できます ( **\*** ) または 0x2A (10 進 42) システムで、すべてのメモリ割り当て用に特別なプール機能を構成します。
 
 ### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>コメント
 

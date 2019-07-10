@@ -6,19 +6,19 @@ keywords:
 - カーネル デバッグ ストリーム、ビデオ ストリーム失速、ログ記録
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fc8b7ee79e43c7e50043218a41f278cc51753eb2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: de084788008845a03de3b2db7ff99a07b386c570
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376362"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67716880"
 ---
 # <a name="using-logging-to-track-important-events"></a>ログを使用した重要イベントの追跡
 
 
 一般に、データは、イベント、ミニドライバーの処理、およびバッファーの入力候補をトリガーすることによってのみ下流移動されます。 ハングの原因を特定または停止します。
 
-- 確認が一致しない**KsGate * Xxx*** 呼び出し。
+- 確認が一致しない**KsGate<em>Xxx</em>** 呼び出し。
 
 - 省略すると確認**Ks*Xxx*AttemptProcessing**呼び出し。
 

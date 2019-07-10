@@ -14,12 +14,12 @@ keywords:
 - Isr WDK カーネルでは、ハードウェアの優先順位
 ms.date: 05/08/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: f0d7a0488091277d33270acd4726c75b98f3b871
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0a2b9f120722c0917b198bfb99f0d7bcf26b5283
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386017"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67716962"
 ---
 # <a name="managing-hardware-priorities"></a>ハードウェアの優先度の管理
 
@@ -99,7 +99,7 @@ APC の唯一の違い\_レベルとパッシブ\_レベルから APC にプロ�
 
   ドライバーを呼び出してはならない**KeAcquireSpinLockAtDpcLevel**、 **KeReleaseSpinLockFromDpcLevel**、 **KeAcquireSpinLock**、または**KeReleaseSpinLock** IRQL での実行中に&gt;ディスパッチ\_レベル。
 
-- など、スピン ロックを使用するサポート ルーチンを呼び出す、 **ExInterlocked * Xxx*** ルーチンを発生させます IRQL、現在のプロセッサにディスパッチするいずれか\_レベルまたは DIRQL、呼び出し元が発生した IRQL で既に実行されていない場合。
+- など、スピン ロックを使用するサポート ルーチンを呼び出す、 **ExInterlocked<em>Xxx</em>** ルーチンを発生させます IRQL、現在のプロセッサにディスパッチするいずれか\_レベルまたは DIRQL、呼び出し元がない場合発生した IRQL で既に実行されています。
 
 - IRQL で実行されるドライバー コード&gt;パッシブ\_レベルが可能な限り早く実行する必要があります。 可能な限り早く実行するには、そのルーチンをチューニングする優れた全体的なパフォーマンスのためは、さらに重要なルーチンを実行するほどの IRQL します。 呼び出すドライバーなど**KeRaiseIrql**相互の呼び出しを行う必要があります**KeLowerIrql**ことだけです。
 

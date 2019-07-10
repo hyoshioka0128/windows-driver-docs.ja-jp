@@ -7,12 +7,12 @@ keywords:
 - DispatchPnP ルーチン
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3febbe9c9cc26542bcf4216038b93eef9802a28a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a7bb956681e48579ca6d2b4a973c0cd1c5c41f05
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67373418"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67716921"
 ---
 # <a name="removing-a-device-in-a-function-driver"></a>ファンクション ドライバーでのデバイスの削除
 
@@ -44,7 +44,7 @@ ms.locfileid: "67373418"
 
    かどうか、デバイスは既に以前への応答で非アクティブな**IRP\_MN\_クエリ\_削除\_デバイス**ドライバーは新しい要求を受け入れないようにデバイスをマークする必要があり、完了する必要がありますこのドライバーですべての要求がキューに登録します。 ドライバーには、デバイスへのアクセスを必要とする未処理の要求が失敗する必要があります。
 
-   ドライバーを使用できる、 **Io*Xxx*RemoveLock * Xxx*** 未処理の I/O をカウントし、その削除処理を示すイベントを設定するルーチンを続行できます。
+   ドライバーを使用できる、 **Io*Xxx*RemoveLock<em>Xxx</em>** 未処理の I/O をカウントし、その削除処理を示すイベントを設定するルーチンを続行できます。
 
 5. 電源オフ操作を実行します。
 

@@ -7,12 +7,12 @@ keywords:
 - ディスパッチ ルーチンの WDK カーネル、Irp の完了
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 588129ef2e689f021b26e654268664c5d73854db
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3c2f2bf62852eba46c340ea0789abbf56294ea1e
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67358074"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67716852"
 ---
 # <a name="when-to-complete-an-irp-in-a-dispatch-routine"></a>ディスパッチ ルーチン内で IRP を完了するタイミング
 
@@ -20,7 +20,7 @@ ms.locfileid: "67358074"
 
 
 
-通常、ドライバーを実行しないで Irp がディスパッチ ルーチン内で指定された要求のパラメーターが有効でない場合を除き、または、デバイスのドライバー、しない限り、特に**IRP\_MJ\_* XXX*** デバイス I/O は必要ありません操作です。
+通常、ドライバーを実行しないで Irp がディスパッチ ルーチン内で指定された要求のパラメーターが有効でない場合を除き、または、デバイスのドライバー、しない限り、特に**IRP\_MJ\_<em>XXX</em>** デバイス I/O 操作は必要ありません。
 
 複数層のドライバーのチェーン内のすべてのドライバーは IRP がドライバーのディスパッチ ルーチンが受信した各の独自 I/O スタックの場所のパラメーターの有効性を確認できます。 最高の可能なドライバーのディスパッチ ルーチンで無効なパラメーターを持つ Irp の完了には、ドライバーのすべてのチェーンをシステムの全体的な I/O スループットが向上します。
 

@@ -1,16 +1,16 @@
 ---
 Description: このセクションでは、USB ドライバーの開発を紹介します。
-title: USB クライアント ドライバー開発の概要
+title: USB クライアント ドライバーの開発の最初の手順
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 247073421b5cee2f198e8aa578af19d27849ca38
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: 2fdd6588651943e01b3215d26b89ac564a475655
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67391772"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67716968"
 ---
-# <a name="getting-started-with-usb-client-driver-development"></a>USB クライアント ドライバー開発の概要
+# <a name="first-steps-for-usb-client-driver-development"></a>USB クライアント ドライバーの開発の最初の手順
 
 
 このセクションでは、USB ドライバーの開発を紹介します。 ドライバーの開発に慣れていない場合に、セクションが適用されます。Microsoft が、インボックス ドライバーを行いません、USB デバイスのドライバーを実装します。 このようなドライバーと呼ばれる、 *USB クライアント ドライバー*このドキュメントで設定します。 このセクションのトピックでは、USB の高度な概念について説明し、USB クライアント ドライバーの一般的なタスクを実行する詳細な手順を提供します。 これらの概念の詳細についてでの USB 仕様を参照してください。 [USB ドキュメント](https://go.microsoft.com/fwlink/p/?linkid=617552)します。

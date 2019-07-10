@@ -1,16 +1,16 @@
 ---
 Description: このセクションでは、このトピックでは、クラス ドライバーや汎用的なクライアント ドライバーでは、Microsoft によって提供される、親複合ドライバーについて説明します。
-title: Microsoft が提供する USB ドライバー
+title: Microsoft 提供の USB ドライバーの概要
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 04cb5e5ba904b5c738b7bffbec6e30e2c6a2a79c
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: 2968cc1679b7768723d73366307a97e0d53e1377
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67393120"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67716900"
 ---
-# <a name="microsoft-provided-usb-drivers"></a>Microsoft が提供する USB ドライバー
+# <a name="overview-of-microsoft-provided-usb-drivers"></a>Microsoft 提供の USB ドライバーの概要
 
 
 このセクションでは、このトピックでは、クラス ドライバーや汎用的なクライアント ドライバーでは、Microsoft によって提供される、親複合ドライバーについて説明します。

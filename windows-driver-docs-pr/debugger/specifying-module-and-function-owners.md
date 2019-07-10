@@ -11,12 +11,12 @@ keywords:
 - 拡張機能、triage.ini ファイルを分析します。
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f27077d9553a11a96755abf3eb6897496bad6040
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 649b6ea022935354fa9b13e60465e00ba1d89251
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368081"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67716884"
 ---
 # <a name="specifying-module-and-function-owners"></a>モジュールおよび関数所有者の指定
 
@@ -73,7 +73,7 @@ mod*!functionC=Person7
 Followup:  Person3
 ```
 
-"Person3"を所有するファイルによる**module2! functionB**、"Person4"所有している**module2! 関数\\** <em>します。これらの文字列の両方の一致に渡される引数 * *! 所有者</em>* のでより完全な一致を使用します。
+"Person3"を所有するファイルによる**module2! functionB**、"Person4"所有している**module2! 関数\\** <em>します。 これらの文字列の両方の一致に渡される引数 **! 所有者**のでより完全な一致を使用します。
 
 ### <a name="span-idtriageiniandanalyzespanspan-idtriageiniandanalyzespan-triageini-and-analyze"></a><span id="triage_ini_and__analyze"></span><span id="TRIAGE_INI_AND__ANALYZE"></span> Triage.ini と! 分析
 
@@ -115,7 +115,7 @@ Followup: Person4
 
 感嘆符と関数名を省略するか、追加かどうか **!\\** * モジュール名の後に、そのモジュール内のすべての関数が示されます。 このモジュール内で関数が個別に指定されてより正確な仕様が優先されます。
 
-モジュールまたは関数名として"default"を使用する場合は、ワイルドカード文字と同じです。 たとえば、 **nt!\\** * と同じ**nt! 既定**、および**既定**と同じでは、* *\*!\\***.
+モジュールまたは関数名として"default"を使用する場合は、ワイルドカード文字と同じです。 たとえば、 **nt!\\** * と同じ**nt! 既定**、および**既定**と同じ **\*!\\\*** .
 
 単語が、一致が行われた場合**無視**デバッガーが、スタック内の次のフレームを引き続き等号 (=) の右側に表示されます。
 

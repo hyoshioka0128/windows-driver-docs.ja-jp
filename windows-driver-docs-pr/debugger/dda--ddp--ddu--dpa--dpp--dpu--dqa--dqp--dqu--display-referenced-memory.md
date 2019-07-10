@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 0141024d6efe46fce102f7880ea94f5026e8be4a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 03d4716690edf384f7aecd056d7a62f41ac89c67
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374916"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67716845"
 ---
 # <a name="dda-ddp-ddu-dpa-dpp-dpu-dqa-dqp-dqu-display-referenced-memory"></a>dda、ddp、ddu、dpa、dpp、dpu、dqa、dqp、dqu (参照メモリの表示)
 
@@ -42,7 +42,7 @@ dpu [Options] [Range]
 <span id="_______Options______"></span><span id="_______options______"></span><span id="_______OPTIONS______"></span> *オプション*   
 1 つまたは複数の表示オプションを指定します。 次のオプションを含めることができ個を超える 1 つを除く **/p** \*オプションを示すことができます。
 
-<span id="_cWidth"></span><span id="_cwidth"></span><span id="_CWIDTH"></span>* */c***Width*  
+<span id="_cWidth"></span><span id="_cwidth"></span><span id="_CWIDTH"></span> **/c**_幅_  
 表示に使用する列の数を指定します。 これを省略すると、既定の列数は、表示の種類によって異なります。 ポインターは、これらのコマンドで表示されるため、1 つのデータ列の既定値を使用することをお勧めします。
 
 <span id="_p"></span><span id="_P"></span> **/p**  

@@ -1,16 +1,16 @@
 ---
 Description: このセクションのトピックでは、クライアント ドライバーが自分のデバイスを構成する必要がある方法について説明します。
-title: USB ドライバーでの USB 構成の選択
+title: USB ドライバーの概要で USB 構成の選択の概要
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e5036268bf3b8472b75c98ac59a5330c34246bab
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 395cbcf02cecc65194073f52b6cb8248c6d26133
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67356628"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67716960"
 ---
-# <a name="selecting-a-usb-configuration-in-usb-drivers"></a>USB ドライバーでの USB 構成の選択
+# <a name="overview-of-selecting-a-usb-configuration-in-usb-drivers"></a>USB ドライバーで USB 構成の選択の概要
 
 
 このセクションのトピックでは、クライアント ドライバーが自分のデバイスを構成する必要がある方法について説明します。

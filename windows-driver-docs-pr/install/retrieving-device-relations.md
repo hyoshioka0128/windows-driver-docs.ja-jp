@@ -4,12 +4,12 @@ description: デバイスの関係の取得
 ms.assetid: 2b0ead69-1fda-4024-a7c2-d6350060b5fb
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c8d47874572f24bd181c1952da785a3effb83f4
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2bccb6d4fe33f2543255ec7bb220c24732aabb58
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67375245"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67716858"
 ---
 # <a name="retrieving-device-relations"></a>デバイスの関係の取得
 
@@ -93,7 +93,7 @@ Windows Server 2003、Windows XP、および Windows 2000 上のデバイス イ
 
 4.  呼び出す[ **CM_Get_Device_ID** ](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_device_idw)前の呼び出しによって返されたデバイス インスタンス ハンドルに関連付けられているデバイス インスタンス識別子を取得する**CM_Get_Sibling**. デバイス インスタンスへのハンドルを削除*Abc*親デバイスの最初の子デバイスの兄弟のデバイスの一覧から。
 
-このプロシージャを使用して取得した情報は、Windows Vista およびそれ以降のバージョンの統一されたデバイス プロパティのモデルの DEVPKEY_Device_Siblings プロパティによって表されるものと同じです。 場合、 **cm _ * Xxx*** このセクションで示す関数の呼び出しが成功すると、 **cm _ * Xxx*** 関数は、要求された情報を取得し、CR_SUCCESS を返します。 それ以外の場合、 **cm _ * Xxx*** プレフィックスで定義されている"CR_"でエラー コードのいずれかを返します*Cfgmgr32.h*します。
+このプロシージャを使用して取得した情報は、Windows Vista およびそれ以降のバージョンの統一されたデバイス プロパティのモデルの DEVPKEY_Device_Siblings プロパティによって表されるものと同じです。 場合、 **cm _<em>Xxx</em>** が成功すると、このセクションで示す関数の呼び出し、 **cm _<em>Xxx</em>** 関数は、要求された情報を取得し、CR_SUCCESS を返します。 それ以外の場合、 **cm _<em>Xxx</em>** 関数は、プレフィックスで定義されている"CR_"でエラー コードのいずれかを返します*Cfgmgr32.h*します。
 
  
 

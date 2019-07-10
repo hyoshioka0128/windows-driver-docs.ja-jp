@@ -1,16 +1,16 @@
 ---
 Description: このセクションでは、USB 周辺機器の製造元からのリンクを示します。
-title: Windows 用 USB デバイスの構築
+title: Windows の USB デバイスの構築の概要
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 90da4770af8bfd5b97524870ee50b8b636d8b82d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 101328caae866c005b48f9340c463760f5c9f161
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384481"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67716806"
 ---
-# <a name="building-usb-devices-for-windows"></a>Windows 用 USB デバイスの構築
+# <a name="overview-of-building-usb-devices-for-windows"></a>Windows の USB デバイスの構築の概要
 
 ## <a name="summary"></a>概要
 
@@ -35,7 +35,7 @@ IHV は、個別に提供することではなくファームウェアで情報�
 [Microsoft OS 1.0 記述子の仕様](https://go.microsoft.com/fwlink/p/?linkid=617519)  
 このドキュメントでは、Microsoft OS ディスクリプターを紹介します。 これには、OS 文字列記述子は、拡張プロパティ OS 機能の記述子、および OS 機能記述子の形式の仕様が含まれます。
 
-[Microsoft OS 2.0 記述子の仕様](https://go.microsoft.com/fwlink/p/?linkid=306681)  
+[Microsoft OS 2.0 記述子の仕様](https://docs.microsoft.com/windows-hardware/drivers/usbcon/microsoft-os-2-0-descriptors-specification)  
 このドキュメントを定義し、Microsoft OS ディスクリプターのバージョン 2.0 の実装について説明します。 Microsoft OS 2.0 記述子の目標は、制限事項と OS ディスクリプター version 1.0 での信頼性の問題に対処し、USB デバイスの新しい Windows 固有の機能を有効にすること。
 
 [Microsoft OS ディスクリプターを使用して、関数のドライバーとして Winusb.sys の読み込み](automatic-installation-of-winusb.md)  

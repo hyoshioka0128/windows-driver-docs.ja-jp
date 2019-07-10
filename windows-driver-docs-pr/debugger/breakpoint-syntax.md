@@ -5,12 +5,12 @@ ms.assetid: 86228b87-9ca3-4d0c-be9e-63446ac6ce31
 keywords: デバッガー, ブレークポイントは、メソッド、ブレークポイント、コマンド、b (ブレークポイント識別子)、リテラルの MASM 識別子、template 宣言された関数の構文規則
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b714acd984506f36205285f0c61cd90e43c839b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8003785706f0f3e2b552f9e03fd09b3d8ddf255c
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347859"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67716854"
 ---
 # <a name="breakpoint-syntax"></a>ブレークポイントの構文
 
@@ -85,7 +85,7 @@ b?[@$t0]
 
 ### <a name="span-idbreakpointpseudoregistersspanspan-idbreakpointpseudoregistersspanbreakpoint-pseudo-registers"></a><span id="breakpoint_pseudo_registers"></span><span id="BREAKPOINT_PSEUDO_REGISTERS"></span>ブレークポイントの擬似レジスタ
 
-式の中でブレークポイントのアドレスを参照する場合は、使用、[擬似レジスタ](pseudo-register-syntax.md)で、* *$bp * * * 数*構文、場所*数*はブレークポイントの ID です。 この構文の詳細については、擬似レジスタの構文を参照してください。
+式の中でブレークポイントのアドレスを参照する場合は、使用、[擬似レジスタ](pseudo-register-syntax.md)で、 **$bp**_数_構文、場所*数*はブレークポイントの ID です。 この構文の詳細については、擬似レジスタの構文を参照してください。
 
  
 

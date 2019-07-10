@@ -1,16 +1,16 @@
 ---
-Description: USB 機能コントローラー用 Windows ドライバーの開発
-title: USB 機能コントローラー用 Windows ドライバーの開発
+Description: 関数の USB コント ローラーの Windows ドライバーの開発の概要
+title: 関数の USB コント ローラーの Windows ドライバーの開発の概要
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f4b59d338829ef2a1d1f2984ea7d05872b25756f
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: 1f58909f940a6f69a77ec98301db9330f426f947
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67394029"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67716994"
 ---
-# <a name="developing-windows-drivers-for-usb-function-controllers"></a>USB 機能コントローラー用 Windows ドライバーの開発
+# <a name="overview-of-developing-windows-drivers-for-usb-function-controllers"></a>関数の USB コント ローラーの Windows ドライバーの開発の概要
 
 
 <table>

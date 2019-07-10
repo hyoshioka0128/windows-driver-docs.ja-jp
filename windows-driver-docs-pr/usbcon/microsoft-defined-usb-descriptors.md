@@ -3,20 +3,20 @@ Description: Microsoft では、一連の独自のデバイス クラスと Micr
 title: USB デバイス向けの Microsoft OS 記述子
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d08d4c9850338fc9e23ca57c2f61d3864fd513e7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6e575f2617d25a48a488785363d05dd8e9a88420
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379932"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67716945"
 ---
 # <a name="microsoft-os-descriptors-for-usb-devices"></a>USB デバイス向けの Microsoft OS 記述子
 
 
 **要約**
 
--   [Microsoft OS 1.0 記述子の仕様](https://go.microsoft.com/fwlink/p/?linkid=617154)
--   [Microsoft OS 2.0 記述子の仕様](https://go.microsoft.com/fwlink/p/?linkid=306681)
+-   [Microsoft OS 1.0 記述子の仕様](https://docs.microsoft.com/windows-hardware/drivers/usbcon/microsoft-os-1-0-descriptors-specification)
+-   [Microsoft OS 2.0 記述子の仕様](https://docs.microsoft.com/windows-hardware/drivers/usbcon/microsoft-os-2-0-descriptors-specification)
 
 Microsoft では、一連の独自のデバイス クラスと Microsoft OS ディスクリプター (カスタム設定) と呼ばれる USB 記述子を提供します。
 
@@ -70,7 +70,7 @@ Microsoft OS ディスクリプターをサポートするデバイスは、0 xe
 
 そのキーの下のレジストリ エントリを参照してください。 [USB デバイスのレジストリ エントリ](usb-device-specific-registry-settings.md)します。
 
-詳細については、次を参照してください。 [Microsoft OS ディスクリプター](https://go.microsoft.com/fwlink/p/?linkid=617154)します。
+詳細については、次を参照してください。 [Microsoft OS ディスクリプター](https://docs.microsoft.com/windows-hardware/drivers/usbcon/microsoft-os-1-0-descriptors-specification)します。
 
 ## <a name="what-types-of-os-feature-descriptors-are-supported-by-windows"></a>Windows では、どのような種類の OS 機能の記述子がサポートされているでしょうか。
 
@@ -81,8 +81,8 @@ Microsoft OS ディスクリプターをサポートするデバイスは、0 xe
 -   **拡張プロパティ**します。 現時点では、プロパティが、USB デバイスを宣言する 2 つのレベルがある: クラス レベルまたは devnode レベル。 OS 機能記述子により、ストアなどのプロパティ - 追加するためにベンダー拡張プロパティは、ページ、Url、およびアイコンでデバイスのファームウェアに役立ちます。
 
 ## <a name="related-topics"></a>関連トピック
-[Microsoft OS 1.0 記述子の仕様](https://go.microsoft.com/fwlink/p/?linkid=617154)  
-[Microsoft OS 2.0 記述子の仕様](https://go.microsoft.com/fwlink/p/?linkid=306681)  
+[Microsoft OS 1.0 記述子の仕様](https://docs.microsoft.com/windows-hardware/drivers/usbcon/microsoft-os-1-0-descriptors-specification)  
+[Microsoft OS 2.0 記述子の仕様](https://docs.microsoft.com/windows-hardware/drivers/usbcon/microsoft-os-2-0-descriptors-specification)  
 [Windows 用の USB デバイスの構築](building-usb-devices-for-windows.md)  
 
 

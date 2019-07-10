@@ -1,16 +1,16 @@
 ---
 Description: このトピックでは、Netmon を Xperf を使用して、USB トレース データを分析する方法について説明します。
-title: USB ETW での Xperf の使用
+title: Xperf を USB ETW による使用の概要
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 521ff7449b3dba99e2fd71570fbf2b87dbfd1f5a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0200b050808633ca48544849e9e1ddf51a74b3af
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357636"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67717016"
 ---
-# <a name="using-xperf-with-usb-etw"></a>USB ETW での Xperf の使用
+# <a name="overview-of-using-xperf-with-usb-etw"></a>Xperf を USB ETW による使用の概要
 
 
 このトピックでは、Netmon を Xperf を使用して、USB トレース データを分析する方法について説明します。

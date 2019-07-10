@@ -9,12 +9,12 @@ keywords:
 - WDK ストリーミング ミニドライバーの同期
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f4e5d5dfcb5c2145dda59c1c1621bb8418cd334
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d34fc1022c8f673e39d887b99be211950218eb5b
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377744"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67716942"
 ---
 # <a name="synchronization-examples"></a>同期の例
 
@@ -42,7 +42,7 @@ ms.locfileid: "67377744"
 
     ストリーム クラスの同期がオンの場合、ミニドライバーのエントリ ポイントはすべてで呼び出されますディスパッチ\_レベル。 までの処理の 1/2 を 1 ミリ秒の期間の周囲の優先順位を調整することがなく、ミニドライバーを実行できます。 ミニドライバーはごくまれにしかは複数の 1/2 ミリ秒、または場合によってはパッシブでサービスを呼び出す必要があるコードを実行する必要がある場合\_レベル (など、初期化時に)、し[ **StreamClassCallAtNewPriority** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/nf-strmini-streamclasscallatnewpriority)不足している優先度を受動的な取得に使用できる\_レベルのワーカー スレッド。 優先順位の低いコールバックが何もと同期されていないと、ミニドライバーは、新しい要求を受け取ることが (と仮定すると**ReadyForNextRequest** NotificationType パラメーターが保留中) 優先順位の低いコールバックを実行する場合。
 
--   **Stream クラスの同期にする必要があります*****いない*****するために使用**
+-   **Stream クラスの同期にする必要があります** **_いない_** **するために使用**
 
     ストリーム クラスの同期が使用する必要がありますいない状況の例を次に示します。 次のようなクラスがあります。
 

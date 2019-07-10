@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: c3d8ab2909ed84c4bbb438712c3efb837421489a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d2349d001dcb57d30b7721df143f96d5835b9814
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331275"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67716927"
 ---
 # <a name="devproptypeuint32"></a>DEVPROP_TYPE_UINT32
 
@@ -33,13 +33,13 @@ DEVPROP_TYPE_UINT32 は、のみと組み合わせることができます、 [ 
 
 **このプロパティの種類の設定**
 
-基本データ型は DEVPROP_TYPE_UINT32 プロパティを設定する呼び出し、対応する**SetupDiSet * Xxx*** プロパティ関数と set 関数は、次のようにパラメーターを入力します。
+基本データ型は DEVPROP_TYPE_UINT32 プロパティを設定する呼び出し、対応する**SetupDiSet<em>Xxx</em>** プロパティ関数と set 関数は、次のようにパラメーターを入力します。
 
 - 設定、 *PropertyType* DEVPROP_TYPE_UINT32、パラメーターの設定、 *PropertyBuffer*パラメーターを少なくとも 1 つの ULONG 値を含めることができ、設定するバッファーへのポインター、 *PropertyBufferSize*パラメーターを<strong>sizeof (</strong>ULONG<strong>)</strong>します。
 
 - プロパティを設定する、必要に応じて、他の関数の入力パラメーターを設定します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: fa50f4a4698824200407038302c1b916ae12fd15
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f716dad8dc05fffcebc36e961ce7dfbeae815ee2
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374936"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67716848"
 ---
 # <a name="d-da-db-dc-dd-dd-df-dp-dq-du-dw-display-memory"></a>d、da、db、dc、dd、dD、df、dp、dq、du、dw (表示メモリ)
 
 
-**D\\** * のコマンドは、特定の範囲内でメモリの内容を表示します。
+**D\*** コマンドは、特定の範囲内でメモリの内容を表示します。
 
 ```dbgcmd
 d{a|b|c|d|D|f|p|q|u|w|W} [Options] [Range] 
@@ -36,7 +36,7 @@ d [Options] [Range]
 <span id="_______Options______"></span><span id="_______options______"></span><span id="_______OPTIONS______"></span> *オプション*   
 1 つまたは複数の表示オプションを指定します。 次のオプションを含めることができ個を超える 1 つを除く **/p** \*オプションを示すことができます。
 
-<span id="_cWidth"></span><span id="_cwidth"></span><span id="_CWIDTH"></span>* */c***Width*  
+<span id="_cWidth"></span><span id="_cwidth"></span><span id="_CWIDTH"></span> **/c**_幅_  
 表示に使用する列の数を指定します。 これを省略すると、既定の列数は、表示の種類によって異なります。
 
 <span id="_p"></span><span id="_P"></span> **/p**  

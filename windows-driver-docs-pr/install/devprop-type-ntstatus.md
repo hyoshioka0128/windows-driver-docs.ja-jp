@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: f07412691c910f5bffc3790b7f53726eea10462f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f7aadec258bf1b81ba3799d9d0a6a8082ae16482
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383851"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67716820"
 ---
 # <a name="devproptypentstatus"></a>DEVPROP_TYPE_NTSTATUS
 
@@ -35,7 +35,7 @@ Windows Vista および Windows での以降のバージョンで、[統一さ�
 
 ### <a name="setting-a-property-of-this-type"></a>この型のプロパティを設定
 
-基本データ型は DEVPROP_TYPE_NTSTATUS プロパティを設定する呼び出し、対応する **SetupDiSet * * * Xxx*プロパティ関数と set 関数は、次のようにパラメーターを入力します。
+基本データ型は DEVPROP_TYPE_NTSTATUS プロパティを設定する呼び出し、対応する**SetupDiSet**_Xxx_プロパティ関数と set 関数は、次のようにパラメーターを入力します。
 
 - 設定、 *PropertyType* DEVPROP_TYPE_NTSTATUS パラメーター。
 

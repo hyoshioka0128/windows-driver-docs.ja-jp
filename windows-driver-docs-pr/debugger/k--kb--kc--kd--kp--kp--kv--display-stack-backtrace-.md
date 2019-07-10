@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: fad326f48550d25c1e91a806e787b9da703e811d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e16ac38e3bd4adcc77d7d9e0fe9205ac1b34023b
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367230"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67716872"
 ---
 # <a name="k-kb-kc-kd-kp-kp-kv-display-stack-backtrace"></a>k、kb、kc、kd、kp、kP、kv (スタック バックトレースの表示)
 
 
-<strong>K *\\</strong>* * のコマンド関連の情報と共に、特定のスレッドのスタック フレームを表示する.
+**K\*** コマンド関連の情報と共に、特定のスレッドのスタック フレームを表示する.
 
 ユーザー モード、x86 プロセッサ
 
@@ -216,7 +216,7 @@ X86 ベースのプロセッサでは、上、 **kv**コマンドでは、呼び
 
  
 
-**Kd**コマンド スタックの生データを表示します。 各 DWORD 値は、個別の行に表示されます。 シンボル情報には、関連付けられているシンボルと共にそれらの行が表示されます。 この形式は、他のより詳細な一覧を作成します。 **k * * *\** コマンド。 **Kd**コマンドを実行すると、 [ **dds (表示メモリ)** ](d--da--db--dc--dd--dd--df--dp--dq--du--dw--dw--dyb--dyd--display-memor.md)コマンドをパラメーターとしてのスタック アドレスを使用します。
+**Kd**コマンド スタックの生データを表示します。 各 DWORD 値は、個別の行に表示されます。 シンボル情報には、関連付けられているシンボルと共にそれらの行が表示されます。 この形式は、他のより詳細な一覧を作成します。 **k** _\*_ コマンド。 **Kd**コマンドを実行すると、 [ **dds (表示メモリ)** ](d--da--db--dc--dd--dd--df--dp--dq--du--dw--dw--dyb--dyd--display-memor.md)コマンドをパラメーターとしてのスタック アドレスを使用します。
 
 使用する場合、 **k**不適切な結果を受信する (前に、関数プロローグが実行された) 関数の先頭にあるコマンドします。 デバッガーでは、フレームのレジスタを使用して、現在のバックを計算して、このレジスタ正しく設定されていない関数のプロローグが実行されるまでです。
 

@@ -3,12 +3,12 @@ Description: このトピックでは、ユニバーサル シリアル バス (
 title: USB デバイス用の構成の選択方法
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 420990332c34a6a54c5b5331c3a712f8d54ef318
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 786df71b3cca8920ff39f3c0609209ee5ae41491
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363886"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67716963"
 ---
 # <a name="how-to-select-a-configuration-for-a-usb-device"></a>USB デバイス用の構成の選択方法
 
@@ -84,7 +84,7 @@ USB ドライバー スタックを URB を受信した後に、残りの部分�
 
 次のコード例は、の配列を作成する方法を示しています[ **USBD\_インターフェイス\_一覧\_エントリ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/ns-usbdlib-_usbd_interface_list_entry)構造と呼び出し[  **。USBD\_SelectConfigUrbAllocateAndBuild**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_selectconfigurballocateandbuild)します。 この例は、SubmitUrbSync を呼び出すことによって同期的に、要求を送信します。 SubmitUrbSync のコード例を参照してくださいを参照してください。 [、URB を送信する方法](send-requests-to-the-usb-driver-stack.md)します。
 
-```ManagedCPlusPlus
+```C++
 /*++
 
 Routine Description:
@@ -274,11 +274,11 @@ NTSTATUS CompletionRoutine ( PDEVICE_OBJECT DeviceObject,
 <a name="remarks"></a>注釈
 -------
 
-**USB デバイスの構成を無効になります。  **
+**USB デバイスの構成を無効になります。**
 
 USB デバイスを無効にするには、作成し、NULL 構成記述子を使用して、選択構成要求を送信します。 要求の種類、デバイスの構成が選択されている要求用に作成した URB を再利用できます。 代わりに、呼び出すことによって新しい URB を割り当てることができます[ **USBD\_UrbAllocate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_urballocate)します。 使用して、URB の書式を設定する必要があります、要求を送信する前に、 [ **UsbBuildSelectConfigurationRequest** ](https://docs.microsoft.com/previous-versions/ff538968(v=vs.85))マクロでは、次のコード例に示すようにします。
 
-```ManagedCPlusPlus
+```C++
 URB Urb;
 UsbBuildSelectConfigurationRequest(
   &Urb,

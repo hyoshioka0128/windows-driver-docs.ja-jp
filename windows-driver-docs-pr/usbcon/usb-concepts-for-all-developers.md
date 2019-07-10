@@ -1,22 +1,20 @@
 ---
 Description: ユニバーサル シリアル バス (USB) デバイスでは、その機能と機能の構成、インターフェイス、代替の設定、およびエンドポイントを定義します。
-title: すべての USB 開発者のための概念
+title: USB 開発を入門
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e9fa4669b9961feb10e3da824f5dd14155fdc503
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2d6565dcbc385eb9d7ecee79be053abf7d716e62
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369523"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67716902"
 ---
-#  <a name="concepts-for-all-usb-developers"></a>すべての USB 開発者のための概念
-
+# <a name="getting-started-with-usb-development"></a>USB 開発を入門
 
 ユニバーサル シリアル バス (USB) デバイスでは、その機能と機能の構成、インターフェイス、代替の設定、およびエンドポイントを定義します。 このトピックでは、それらの概念の概要を説明します。 詳細についてでの USB 仕様を参照してください。[ユニバーサル シリアル バス ドキュメント]( https://go.microsoft.com/fwlink/p/?linkid=224892)します。
 
 ## <a name="in-this-section"></a>このセクションの内容
-
 
 <table>
 <colgroup>
@@ -51,7 +49,7 @@ ms.locfileid: "67369523"
 
  
 
-## <a name="common-usb-scenarios"></a>**USB の一般的なシナリオ**
+## <a name="common-usb-scenarios"></a>USB の一般的なシナリオ
 
 
 **1: デバイス ハンドルを取得**通信および処理またはデータを送信する転送オブジェクトを取得して、使用します。

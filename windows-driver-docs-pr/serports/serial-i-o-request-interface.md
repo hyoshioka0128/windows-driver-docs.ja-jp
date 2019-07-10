@@ -4,18 +4,18 @@ description: シリアル コント ローラーで、クライアントのポ�
 ms.assetid: D536A0EC-2B8B-491B-8A14-656F4B5A3843
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e793aa4f33d9f2ee60dc2d5a7f73daa9070d5ab1
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c3f851a66f751f073e19127d8439cffb2f42a841
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67356743"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67717004"
 ---
 # <a name="serial-io-request-interface"></a>シリアル I/O 要求インターフェイス
 
 シリアル コント ローラーで、クライアントのポートに接続されている周辺機器を制御するには、アプリケーションまたは周辺機器のデバイス ドライバーは、ポートに I/O 要求を送信します。 クライアントを使って[ **IRP\_MJ\_書き込み**](https://docs.microsoft.com/previous-versions/ff546904(v=vs.85))と[ **IRP\_MJ\_読み取り**](https://docs.microsoft.com/previous-versions/ff546883(v=vs.85))データを送信し、シリアル ポートから受信したデータを要求します。 さらに、Windows では、シリアル ポートを構成するクライアントが使用できるシリアルの I/O 制御要求 (Ioctl) のセットを定義します。
 
-シリアル**IRP\_MJ\_* XXX*** シリアル I/O 要求インターフェイスは、さまざまなデバイスのシリアル コント ローラーでサポートされている要求とシリアル Ioctl 形成します。 SerCx2 または SerCx とシリアル コント ローラーの拡張機能に基づいたドライバーの組み合わせと、以下のようドライバーによって、このインターフェイスはサポートされています。
+シリアル**IRP\_MJ\_<em>XXX</em>** シリアル I/O 要求インターフェイスは、さまざまなデバイスのシリアル コント ローラーでサポートされている要求とシリアル Ioctl 形成します。 SerCx2 または SerCx とシリアル コント ローラーの拡張機能に基づいたドライバーの組み合わせと、以下のようドライバーによって、このインターフェイスはサポートされています。
 
 SerCx2、SerCx、および際に、同じシリアル Ioctl の多くをサポートします。 ただし、SerCx2、SerCx、および以下のように指定された Ioctl のさまざまなサブセットをサポート*シリアル デバイスに対する制御要求*します。 次の表は、Ioctl SerCx2、SerCx、およびスタックでサポートされているのサブセットをまとめたものです。 A**はい**テーブル内のエントリは、シリアル フレームワークの拡張機能またはドライバーが、対応する、IOCTL をサポートしていることを示します、**いいえ**エントリはしないことを示します。
 
@@ -279,4 +279,4 @@ SerCx2、SerCx、および際に、同じシリアル Ioctl の多くをサポ�
 
 5. スタックのドライバーが完了すると常に、 **IOCTL\_シリアル\_リセット\_デバイス**状態要求\_成功した場合、演算を実行しないこの要求に応答します。 SerCx2 および SerCx はサポートされません**IOCTL\_シリアル\_リセット\_デバイス**要求し、これらの要求の状態を常に完了\_いない\_実装されていません。
 
-詳細については**IOCTL\_シリアル\_* XXX*** を要求し、読み取りとシリアル コント ローラーの書き込み要求を参照してください、 [ntddser.h](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/ntddser/)ヘッダー。
+詳細については**IOCTL\_シリアル\_<em>XXX</em>** を要求し、読み取りとシリアル コント ローラーの書き込み要求を参照してください、 [ntddser.h](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/ntddser/)ヘッダー。

@@ -11,12 +11,12 @@ keywords:
 - アダプターの停止
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 926b25fa616fb48dc7082f2f9eecbbfc1781194a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a9a5d26255b8ec8a9ee8863376cf0a1b5a05d031
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67374073"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67716940"
 ---
 # <a name="halting-a-miniport-adapter"></a>ミニポート アダプターの停止
 
@@ -26,7 +26,7 @@ ms.locfileid: "67374073"
 
 NDIS 呼び出し NDIS ミニポート ドライバーの[ *MiniportHaltEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_halt)アダプターが、システムから削除されるリソースの割り当てを解除して、ハードウェアを停止する関数。 NDIS を呼び出すことができます*MiniportHaltEx*ドライバーの後に[ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)関数が正常に返されます。 詳細については*MiniportInitializeEx*を参照してください[ミニポート アダプターの初期化](initializing-a-miniport-adapter.md)します。
 
-[*MiniportHaltEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_halt)ドライバーがデバイスに割り当てられたリソースを解放する必要があります。 ドライバーの逆数を呼び出す必要があります、 **Ndis * Xxx*** いる、最初に割り当てられたリソースの関数。 一般的な規則として、 *MiniportHaltEx*関数が、相互に呼び出す必要があります**Ndis * Xxx*** 関数の初期化中に使用される逆の順序。
+[*MiniportHaltEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_halt)ドライバーがデバイスに割り当てられたリソースを解放する必要があります。 ドライバーの逆数を呼び出す必要があります、 **Ndis<em>Xxx</em>** 関数が、最初に割り当てられたリソース。 一般的な規則として、 *MiniportHaltEx*関数が、相互に呼び出す必要があります**Ndis<em>Xxx</em>** 初期化中に使用する逆の順序で関数。
 
 アダプターの割り込み、ミニポート ドライバーの生成かどうか[ *MiniportHaltEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_halt)関数は、ドライバーのによって割り込まれることができます[ *MiniportInterrupt* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_isr)行われるまで*MiniportHaltEx*割り込みを無効にします。
 

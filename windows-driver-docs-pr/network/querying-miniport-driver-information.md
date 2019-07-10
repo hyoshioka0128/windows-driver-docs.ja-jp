@@ -9,12 +9,12 @@ keywords:
 - NDIS ミニポート ドライバー WDK、情報の照会
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f0d2cfdc51bdd32b7362723d181347175866e632
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fc0fd8f294dd6678ddec8fd2703139b39fc78398
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360958"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67717012"
 ---
 # <a name="querying-miniport-driver-information"></a>ミニポート ドライバー情報のクエリ
 
@@ -22,7 +22,7 @@ ms.locfileid: "63360958"
 
 
 
-**Ndis * Xxx*** をプロトコル ドライバーは、ミニポート ドライバー情報のクエリに呼び出す関数、 *MiniportXxx*このようなクエリを満たすために使用される関数は、ミニポート ドライバーがかどうかによって異なりますコネクションレス型または接続指向です。
+**Ndis<em>Xxx</em>** プロトコル ドライバーは、ミニポート ドライバー情報のクエリを呼び出している関数と*MiniportXxx*このようなクエリを満たすために使用される関数に依存ミニポート ドライバーがコネクションレスまたは接続指向かどうか。
 
 ミニポート ドライバーは、ユーザー モードから直接照会できます。
 

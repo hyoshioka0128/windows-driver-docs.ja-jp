@@ -8,12 +8,12 @@ keywords:
 - SRB_FUNCTION_ABORT_COMMAND
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 26dd6dfd4c4e8fdb68b6049acc53c7a02397204b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 61d4d49db615e763ddba21653fe9612e6aebeea3
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67372348"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67716938"
 ---
 # <a name="handling-srbfunctionabortcommand"></a>処理 SRB\_関数\_中止\_コマンド
 
@@ -27,9 +27,9 @@ ms.locfileid: "67372348"
 
 1.  セットの入力 SRB の**SrbStatus** SRB に\_状態\_中止\_できませんでした。
 
-2.  呼び出す[ **ScsiPortNotification** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportnotification)で、 *NotificationType * * * RequestComplete** SRB の入力を使用しています。
+2.  呼び出す[ **ScsiPortNotification** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportnotification)で、 _NotificationType_**RequestComplete** SRB の入力を使用しています。
 
-3.  呼び出す**ScsiPortNotification**を使用して、* NotificationType ***NextRequest**、または**NextLuRequest** HBA は、タグが付けられたキューをサポートしているかあたり複数の要求論理ユニット。
+3.  呼び出す**ScsiPortNotification**を使用して、 _NotificationType_**NextRequest**、または**NextLuRequest** HBA がサポートしている場合タグ付けされたキューまたは論理ユニットごとの複数の要求。
 
 それ以外の場合、 *HwScsiStartIo*ルーチンは、次を実行します。
 

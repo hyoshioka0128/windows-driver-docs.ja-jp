@@ -1,16 +1,17 @@
 ---
 Description: C-USB 型システムに埋め込みコント ローラーが含まれていない場合それ以外の場合は Microsoft 提供の UCSI ドライバーをロードするコネクタ用のドライバーを記述する必要があります。
-title: USB Type-C コネクタ用 Windows ドライバーの開発
+title: USB タイプ-c コネクタ用の Windows ドライバーの開発の概要
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 32306d25f53c5cdccf58211f9a6e985704b7952c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4bcee7d92a050eff44e096df6d79c341a369d9ba
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378361"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67716984"
 ---
-# <a name="developing-windows-drivers-for-usb-type-c-connectors"></a>USB Type-C コネクタ用 Windows ドライバーの開発
+# <a name="overview-of-developing-windows-drivers-for-usb-type-c-connectors"></a>USB タイプ-c コネクタ用の Windows ドライバーの開発の概要
+
 C-USB 型システムが PD ステート マシンを実装していないまたはステート マシンの実装が非 ACPI トランスポート経由で UCSI をサポートしていませんが、コネクタのドライバーを記述する必要があります。 その場合は、Microsoft から提供されたを読み込むことができます[UCSI ドライバー](ucsi.md)します。
 
 **対象読者**

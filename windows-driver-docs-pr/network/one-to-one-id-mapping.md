@@ -9,12 +9,12 @@ keywords:
 - アップグレード前の Id の WDK ネットワーク
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b4b8d21a386c3af1bbca48b3f51cc2c33531a395
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 57c0b24ca1112cbd06866e56caa01c96d015f02c
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384225"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67716822"
 ---
 # <a name="one-to-one-id-mapping"></a>1 対 1 の ID のマッピング
 
@@ -26,11 +26,11 @@ ms.locfileid: "63384225"
 
  
 
-内のエントリを**Oem * Xxx*** ID の一対一のマッピングを指定する netmap.inf ファイルのファイルのセクションは、次の形式。
+内のエントリを**Oem<em>Xxx</em>**  ID の一対一のマッピングを指定する netmap.inf ファイルのファイルのセクションは、次の形式。
 
 *preupgrade ID* = *postupgrade ID*
 
-次に、例を示します。
+例:
 
 ```cpp
 netservice=netservice_2000

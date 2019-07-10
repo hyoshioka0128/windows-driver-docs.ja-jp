@@ -1,16 +1,16 @@
 ---
 Description: PurposeThis セクションでは Windows と相互運用可能な USB デバイス ドライバーを開発するように、Windows オペレーティング システムでのユニバーサル シリアル バス (USB) のサポートについて説明します。
-title: USB デバイス用 Windows クライアント ドライバーの開発
+title: USB デバイスの Windows クライアント ドライバーの開発の概要
 ms.date: 01/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: f5e1e0b0e3663bf166becbb658f636dacce4035e
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: 6eb88027b76e0a54ede70cfa56d8eefb07c00c2b
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67394134"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67717022"
 ---
-# <a name="developing-windows-client-drivers-for-usb-devices"></a>USB デバイス用 Windows クライアント ドライバーの開発
+# <a name="overview-of-developing-windows-client-drivers-for-usb-devices"></a>USB デバイスの Windows クライアント ドライバーの開発の概要
 
 
 <table>

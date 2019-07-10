@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b774ea44405fe0208fc293369f48ff56f2a370fc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7f50bbfd206f9c1426650220ed09c0cb351d675f
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335867"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67716850"
 ---
 # <a name="poolfind"></a>!poolfind
 
@@ -83,7 +83,7 @@ ms.locfileid: "63335867"
 
 このコマンドは、検索する必要がありますプール メモリのサイズによっては、実行に時間のかなり時間がかかることができます。 この実行の速度で COM ポートの速度が向上、 [ **CTRL + A (トグル ボー レート)** ](ctrl-a--toggle-baud-rate-.md)キー、またはを使用して、 [ **.cache (キャッシュ サイズを設定する)** ](-cache--set-cache-size-.md)(約 10 MB) にキャッシュ サイズを大きくコマンド。
 
-プール タグに渡された同じタグ、**ExAllocate * * * Xxx*ルーチンのファミリです。
+プール タグは同じタグに渡される、 **ExAllocate**_Xxx_ルーチンのファミリです。
 
 次に例を示します。 全体の非ページ プールの検索しページ プールは、検索しますが、(操作の 1 時間) の後に完了する前に、コマンドが終了しました。
 

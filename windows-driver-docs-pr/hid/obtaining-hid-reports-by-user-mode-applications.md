@@ -4,19 +4,19 @@ description: このトピックでは、ReadFile や HidD_GetXxx ルーチンを
 ms.assetid: 28f560dd-b919-4652-93f6-691051a0ffbe
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 542084df34dd6569c3a5fa808cf75f3fc1ee93d1
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0bfa1bfc3766a4122850ea91326c175ae114a6d9
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67375909"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67716808"
 ---
 # <a name="obtaining-hid-reports-by-user-mode-applications"></a>ユーザー モード アプリケーションでの HID レポートを取得します。
 
 
-このトピックでは、HID 入力レポートまたは HID 機能のレポートの取得を使用してユーザー モード アプリケーションで[ReadFile](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-readfile)または **HidD\_取得 * * * Xxx*ルーチン。
+このトピックでは、HID 入力レポートまたは HID 機能のレポートの取得を使用してユーザー モード アプリケーションで[ReadFile](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-readfile)または**HidD\_取得**_Xxx_ルーチン。
 
-ただし、アプリケーションで使用するだけ、**HidD\_取得 * * * Xxx*ルーチンは、デバイスの現在の状態を取得します。 アプリケーション使用を試みる場合[ **HidD\_GetInputReport** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidsdi/nf-hidsdi-hidd_getinputreport)入力のレポートを継続的に取得するレポートは削除できます。 さらに、一部のデバイスをサポート可能性がありますいない**HidD\_GetInputReport**、され、このルーチンを使用する場合に応答しなくなります。
+ただし、アプリケーションで使用するだけ、 **HidD\_取得**_Xxx_ルーチンは、デバイスの現在の状態を取得します。 アプリケーション使用を試みる場合[ **HidD\_GetInputReport** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidsdi/nf-hidsdi-hidd_getinputreport)入力のレポートを継続的に取得するレポートは削除できます。 さらに、一部のデバイスをサポート可能性がありますいない**HidD\_GetInputReport**、され、このルーチンを使用する場合に応答しなくなります。
 
 次のセクションでは、詳細を提供します。
 

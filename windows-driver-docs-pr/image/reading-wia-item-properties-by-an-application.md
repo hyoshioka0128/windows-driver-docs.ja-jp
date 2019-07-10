@@ -4,12 +4,12 @@ description: アプリケーションによる WIA 項目のプロパティの�
 ms.assetid: e09f604e-451e-40dc-bc12-a077d4d263ee
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aa01d064efeb26541fef14cfff387a9efb8a8eb9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b4354291206d0996660b9103cd83949b521f7200
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67374298"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67716832"
 ---
 # <a name="reading-wia-item-properties-by-an-application"></a>アプリケーションによる WIA 項目のプロパティの読み取り
 
@@ -23,7 +23,7 @@ ms.locfileid: "67374298"
 
 1.  プロパティの読み取り中に実行時の更新プログラムが必要かどうかを決定します。 WIA プロパティが読み取られるを確認するのには、WIA ミニドライバーは (Microsoft Windows SDK のドキュメントで定義されている) PROPSPEC 配列を使用できます。 WIA ミニドライバーが PROPSPEC 配列を処理する前に、項目の種類を決定することをお勧めします。 これで配列を走査する必要性が軽減すべて**IWiaMiniDrv::drvReadItemProperties**を呼び出します。 このデバイスの子項目の実行時のプロパティがない場合、のみのルート項目のプロパティでは、要求が処理する読み取り専用です。
 
-2.  呼び出すことによって、現在の値を更新、 [ **wiasWriteMultiple** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamdef/nf-wiamdef-wiaswritemultiple)または **wiasWriteProp * * * Xxx*サービス WIA プロパティの ID を使用して、すべての機能 これにより、更新、ドライバー項目に格納されている、WIA プロパティ セットと、WIA サービスは、アプリケーションに新しい値を返します。
+2.  呼び出すことによって、現在の値を更新、 [ **wiasWriteMultiple** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamdef/nf-wiamdef-wiaswritemultiple)または**wiasWriteProp**_Xxx_サービス、WIA を使用して、すべての機能プロパティの id。 これにより、更新、ドライバー項目に格納されている、WIA プロパティ セットと、WIA サービスは、アプリケーションに新しい値を返します。
 
 WIA ミニドライバーがこの関数で WIA プロパティに、実行時の調整を実行しない場合、WIA サービスは自動的にアプリケーションに現在の WIA のプロパティ値のみを返します。 この関数は、デバイスの時計などのプロパティまたはドキュメント フィーダーの状態などのハードウェア固有のチェックを必要とする WIA プロパティに対してのみ使用する必要があります。
 

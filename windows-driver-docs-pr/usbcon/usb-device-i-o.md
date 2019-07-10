@@ -1,16 +1,16 @@
 ---
 Description: このセクションのトピックでは、翻訳 I/O 要求の場合、USB パイプを示し、クライアント ドライバーがデバイス ドライバー インターフェイス (Ddi) を使用して、USB デバイスとの間のデータを転送する方法について説明します。
-title: USB クライアント ドライバーでの USB データ転送の送信
+title: USB クライアント ドライバーで USB データ転送の送信の概要
 ms.date: 01/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 8837b45d8fe3df907abb13097f924a8371a800a2
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 16f177971a8453f7cc7e080cc850d4d3d51c5366
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67356624"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67717024"
 ---
-# <a name="sending-usb-data-transfers-in-usb-client-drivers"></a>USB クライアント ドライバーでの USB データ転送の送信
+# <a name="overview-of-sending-usb-data-transfers-in-usb-client-drivers"></a>USB クライアント ドライバーで USB データ転送の送信の概要
 
 
 このセクションのトピックでは、I/O 要求の USB パイプと翻訳の詳細についての情報を提供し、クライアント ドライバーがデバイス ドライバー インターフェイス (Ddi) を使用して、USB デバイスとの間のデータを転送する方法について説明します。

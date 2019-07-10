@@ -11,12 +11,12 @@ keywords:
 - BUS_INTERFACE_STANDARD
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: be7a62b87faeeb5d15eb9614b66a8e44db9a8615
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f669fab6b62f25ceeb82143c60d3aa6d54834b86
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384933"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67716976"
 ---
 # <a name="obtaining-configuration-information-from-other-driver-stacks"></a>その他のドライバー スタックからの構成情報の取得
 
@@ -30,7 +30,7 @@ Windows NT 4.0 では、ドライバーがアクセスを使用してこのよ�
 
 Windows 2000 と Windows の以降のバージョンでは、その他のドライバー スタックに属しているハードウェアにアクセスするドライバーは許可されません。 必要な機能を提供するフィルター ドライバーを記述できます。 たとえば、ブリッジのハードウェアにアクセスする場合は、ブリッジの構成領域で必要な操作を実装するフィルター ドライバーを設計する必要があります。 PnP マネージャーは、ブリッジのデバイス ID を検出した場合に、ブリッジのドライバー スタックに、フィルター ドライバーを読み込むことができますので、ブリッジのハードウェアのハードウェア Id を指定する INF ファイルを指定することも必要があります。
 
-プログラムで使用してフィルターをインストールする代わりに、 **SetupDi * Xxx***、デバイスの共同インストーラー内の関数。
+プログラムで使用してフィルターをインストールする代わりに、 **SetupDi<em>Xxx</em>** デバイスの共同インストーラー内の関数。
 
 フィルター ドライバーにブリッジを使用して、アクセスできる、 [ **BUS\_インターフェイス\_標準**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_bus_interface_standard)インターフェイス。
 

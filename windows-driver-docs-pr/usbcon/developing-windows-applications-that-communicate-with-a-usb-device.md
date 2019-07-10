@@ -1,16 +1,16 @@
 ---
 Description: このトピックでは、UWP アプリまたは USB デバイスと通信する Windows デスクトップ アプリを作成する必要があるかどうかを決定するためのガイドラインを提供します。
-title: USB デバイス用 Windows アプリケーションの開発
+title: USB デバイス用の Windows アプリケーションの開発の概要
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fa265fd6af08b8d8ea8bb64617256acbc2f3a3e4
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: 8ef1af894c3e0a7ff8bc3118ffb51c4117497c65
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67394034"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67717000"
 ---
-# <a name="developing-windows-applications-for-usb-devices"></a>USB デバイス用 Windows アプリケーションの開発
+# <a name="overview-of-developing-windows-applications-for-usb-devices"></a>USB デバイス用の Windows アプリケーションの開発の概要
 
 
 **概要**

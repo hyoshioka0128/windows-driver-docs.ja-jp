@@ -1,16 +1,16 @@
 ---
 Description: 複合 USB デバイス上のインターフェイスは、コレクションにグループ化できます。 USB の一般的な親ドライバー (Usbccgp.sys) は、次の 4 つの方法でインターフェイスのコレクションを列挙できます。
-title: USB 複合デバイス上のインターフェイス コレクションの列挙
+title: 複合の USB デバイスのインターフェイスのコレクションの列挙体の概要
 ms.date: 01/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 41055a870798467ce78ad35d780ea70e33832451
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5801509b07079ac9a99335994fb52515df52c5b3
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67358335"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67716916"
 ---
-# <a name="enumeration-of-interface-collections-on-usb-composite-devices"></a>USB 複合デバイス上のインターフェイス コレクションの列挙
+# <a name="overview-of-enumeration-of-interface-collections-on-usb-composite-devices"></a>複合の USB デバイスのインターフェイスのコレクションの列挙体の概要
 
 
 複合 USB デバイス上のインターフェイスは、コレクションにグループ化できます。 [USB 汎用親ドライバー (Usbccgp.sys)](usb-common-class-generic-parent-driver.md) 4 つの方法でインターフェイスのコレクションを列挙できます。

@@ -10,12 +10,12 @@ keywords:
 - .pcd ですファイル
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c38dbc5d532a603fc524c6ca7b8313c3813c88f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f02db0c5ac05f93a9ccdc18d921e210a03d31401
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388071"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67717008"
 ---
 # <a name="plotter-driver-minidrivers"></a>プロッター ドライバー ミニドライバー
 
@@ -29,7 +29,7 @@ ms.locfileid: "63388071"
 
 生成します。*pcd*ファイルを作成する必要が最初に、テキスト ファイルを使用して、 [PCD ソース ファイルの形式](pcd-source-file-format.md)します。 実行するとする必要があります plotgpc.exe、これは、Windows Driver Kit (WDK) に含まれています。 このプログラムは、テキスト ファイルをバイナリは .pcd ですファイルに変換されます。 次のコマンド構文を使用します。
 
-**plotgpc***source-file-path* .txt *target-file-path* .pcd
+**plotgpc**_ソース ファイル パス_.txt*ターゲット ファイル パス*は .pcd です
 
 ソースと宛先の両方のファイルの場合は、ファイル名拡張子は明示的に指定する必要があります。既定値はサポートされていません。
 
