@@ -1,394 +1,390 @@
 - name: ユニバーサル シリアル バス (USB)
+  href: index.md
+- name: 異なるバージョンの Windows における USB に関する新機能
   items:
-    - name: ユニバーサル シリアル バス (USB)
-      href: index.md
-    - name: 異なるバージョンの Windows における USB に関する新機能
+    - name: 'Windows 10:USB の新機能'
+      href: windows-10--what-s-new-for-usb.md
+    - name: 'Windows 8.1:USB の新機能'
+      href: what-s-new-for-usb-in-windows-blue.md
+    - name: 'Windows 8:USB の新機能'
+      href: what-s-new-in-usb-in-windows-8.md
+- name: すべての USB 開発者のための概念
+  items:
+    - name: USB 開発の概要
+      href: usb-concepts-for-all-developers.md
+    - name: USB デバイスのレイアウト
+      href: usb-device-layout.md
+    - name: 標準の USB 記述子
+      href: standard-usb-descriptors.md
+    - name: USB エンドポイントとそのパイプ
+      href: usb-endpoints-and-their-pipes.md
+    - name: Windows における USB- よくあるご質問
+      href: usb-faq--introductory-level.md
+- name: Windows 用 USB デバイスの構築
+  items:
+    - name: Windows 用 USB デバイス構築の概要
+      href: building-usb-devices-for-windows.md
+    - name: USB デバイス向けの Microsoft OS 記述子
+      href: microsoft-defined-usb-descriptors.md
+    - name: OS 記述子の仕様
       items:
-        - name: 異なるバージョンの Windows における USB に関する新機能
-          href: new-for-usb-in-different-versions-of-windows.md
-        - name: 'Windows 10:USB の新機能'
-          href: windows-10--what-s-new-for-usb.md
-        - name: 'Windows 8.1:USB の新機能'
-          href: what-s-new-for-usb-in-windows-blue.md
-        - name: 'Windows 8:USB の新機能'
-          href: what-s-new-in-usb-in-windows-8.md
-    - name: すべての USB 開発者のための概念
+        - name: Microsoft OS 1.0 記述子の仕様
+          href: microsoft-os-1-0-descriptors-specification.md
+        - name: Microsoft OS 2.0 記述子の仕様
+          href: microsoft-os-2-0-descriptors-specification.md
+    - name: Windows における USB ContainerID
+      href: usb-containerids-in-windows.md
+    - name: USB 3.0 ハードウェアでの Link Power Management
       items:
-        - name: すべての USB 開発者のための概念
-          href: usb-concepts-for-all-developers.md
-        - name: USB デバイスのレイアウト
-          href: usb-device-layout.md
-        - name: 標準の USB 記述子
-          href: standard-usb-descriptors.md
-        - name: USB エンドポイントとそのパイプ
-          href: usb-endpoints-and-their-pipes.md
-        - name: Windows における USB- よくあるご質問
-          href: usb-faq--introductory-level.md
-    - name: Windows 用 USB デバイスの構築
-      items:
-        - name: Windows 用 USB デバイスの構築
-          href: building-usb-devices-for-windows.md
-        - name: USB デバイス向けの Microsoft OS 記述子
-          href: microsoft-defined-usb-descriptors.md
-        - name: Windows における USB ContainerID
-          href: usb-containerids-in-windows.md
-        - name: USB 3.0 ハードウェアでの Link Power Management
-          items:
-            - name: USB 3.0 ハードウェアでの Link Power Management
-              href: link-power-management-in-usb-3-0-hardware.md
-            - name: USB 2.0 メカニズムの制限事項
-              href: limitations-of-usb-2-0-mechanism.md
-            - name: USB 3.0 LPM メカニズム
-              href: usb-3-0-lpm-mechanism-.md
-            - name: U1 と U2 の遷移
-              href: u1-and-u2-transitions.md
-            - name: U1 または U2 の実装に関する一般的なハードウェアの問題
-              href: common-hardware-problems-with-u1-or-u2-implementation.md
+        - name: USB 2.0 メカニズムの制限事項
+          href: limitations-of-usb-2-0-mechanism.md
+        - name: USB 3.0 LPM メカニズム
+          href: usb-3-0-lpm-mechanism-.md
+        - name: U1 と U2 の遷移
+          href: u1-and-u2-transitions.md
+        - name: U1 または U2 の実装に関する一般的なハードウェアの問題
+          href: common-hardware-problems-with-u1-or-u2-implementation.md
         - name: ファームウェアのダウンロードが必要な USB デバイスの構成
           href: configuring-usb-devices-that-require-firmware-downloads.md
-    - name: USB デュアル ロール ドライバー スタック アーキテクチャ
-      href: usb-dual-role-driver-stack-architecture.md
-    - name: Windows の USB ホスト側ドライバー
-      href: usb-3-0-driver-stack-architecture.md
-    - name: Windows の USB デバイス側ドライバー
-      href: usb-device-side-drivers-in-windows.md
-    - name: USB デバイス用 Windows アプリケーションの開発
+- name: USB デュアル ロール ドライバー スタック アーキテクチャ
+  href: usb-dual-role-driver-stack-architecture.md
+- name: Windows の USB ホスト側ドライバー
+  href: usb-3-0-driver-stack-architecture.md
+- name: Windows の USB デバイス側ドライバー
+  href: usb-device-side-drivers-in-windows.md
+- name: USB デバイス用 Windows アプリケーションの開発
+  items:
+    - name: USB デバイス用 Windows アプリケーション開発の概要
+      href: developing-windows-applications-that-communicate-with-a-usb-device.md
+    - name: USB デバイス用 UWP アプリを記述する
       items:
-        - name: USB デバイス用 Windows アプリケーションの開発
-          href: developing-windows-applications-that-communicate-with-a-usb-device.md
         - name: USB デバイス用の UWP アプリ
-          items:
-            - name: USB デバイス用の UWP アプリ
-              href: writing-usb-device-companion-apps-for-microsoft-store.md
-            - name: USB デバイスとの対話、開始から終了まで (UWP アプリ)
-              href: talking-to-usb-devices-start-to-finish.md
-            - name: アプリ マニフェストへの USB デバイス機能の追加方法
-              href: updating-the-app-manifest-with-usb-device-capabilities.md
-            - name: USB デバイスへの接続方法 (UWP アプリ)
-              href: how-to-connect-to-a-usb-device--UWP-app-.md
-            - name: USB コントロール転送の送信方法 (UWP アプリ)
-              href: how-to-send-a-usb-control-transfer--UWP-app-.md
-            - name: USB 割り込み転送要求の送信方法 (UWP アプリ)
-              href: how-to-send-a-usb-interrupt-transfer--UWP-app-.md
-            - name: USB バルク転送要求の送信方法 (UWP アプリ)
-              href: how-to-send-a-usb-bulk-transfer--UWP-app-.md
-            - name: USB 記述子の取得方法 (UWP アプリ)
-              href: how-to-get-usb-descriptors--UWP-app-.md
-            - name: USB インターフェイス設定の選択方法 (UWP アプリ)
-              href: how-to-select-a-usb-interface-setting--UWP-app-.md
+          href: writing-usb-device-companion-apps-for-microsoft-store.md
+        - name: USB デバイスとの対話、開始から終了まで (UWP アプリ)
+          href: talking-to-usb-devices-start-to-finish.md
+        - name: アプリ マニフェストへの USB デバイス機能の追加方法
+          href: updating-the-app-manifest-with-usb-device-capabilities.md
+        - name: USB デバイスへの接続方法 (UWP アプリ)
+          href: how-to-connect-to-a-usb-device--UWP-app-.md
+        - name: USB コントロール転送の送信方法 (UWP アプリ)
+          href: how-to-send-a-usb-control-transfer--UWP-app-.md
+        - name: USB 割り込み転送要求の送信方法 (UWP アプリ)
+          href: how-to-send-a-usb-interrupt-transfer--UWP-app-.md
+        - name: USB バルク転送要求の送信方法 (UWP アプリ)
+          href: how-to-send-a-usb-bulk-transfer--UWP-app-.md
+        - name: USB 記述子の取得方法 (UWP アプリ)
+          href: how-to-get-usb-descriptors--UWP-app-.md
+        - name: USB インターフェイス設定の選択方法 (UWP アプリ)
+          href: how-to-select-a-usb-interface-setting--UWP-app-.md
+    - name: USB デバイス用 Windows デスクトップ アプリを記述する
+      items:
         - name: USB デバイス用の Windows デスクトップ アプリ
-          items:
-            - name: USB デバイス用の Windows デスクトップ アプリ
-              href: windows-desktop-app-for-a-usb-device.md
-            - name: WinUSB テンプレートに基づいて Windows デスクトップ アプリを記述する
-              href: how-to-write-a-windows-desktop-app-that-communicates-with-a-usb-device.md
-            - name: WinUSB 関数を使用して USB デバイスにアクセスする方法
-              href: using-winusb-api-to-communicate-with-a-usb-device.md
-            - name: WinUSB デスクトップ アプリから USB 等時性転送を送信する
-              href: getting-set-up-to-use-windows-devices-usb.md
-            - name: パイプ ポリシー修正のための WinUSB 関数
-              href: winusb-functions-for-pipe-policy-modification.md
-            - name: WinUSB 電源管理
-              href: winusb-power-management.md
-    - name: USB デバイス用 Windows クライアント ドライバーの開発
+          href: windows-desktop-app-for-a-usb-device.md
+        - name: WinUSB テンプレートに基づいて Windows デスクトップ アプリを記述する
+          href: how-to-write-a-windows-desktop-app-that-communicates-with-a-usb-device.md
+        - name: WinUSB 関数を使用して USB デバイスにアクセスする方法
+          href: using-winusb-api-to-communicate-with-a-usb-device.md
+        - name: WinUSB デスクトップ アプリから USB 等時性転送を送信する
+          href: getting-set-up-to-use-windows-devices-usb.md
+        - name: パイプ ポリシー修正のための WinUSB 関数
+          href: winusb-functions-for-pipe-policy-modification.md
+        - name: WinUSB 電源管理
+          href: winusb-power-management.md
+- name: USB デバイス用 Windows クライアント ドライバーの開発
+  items:
+    - name: USB デバイス用 Windows クライアント ドライバー開発の概要
+      href: usb-driver-development-guide.md
+    - name: USB クライアント ドライバー開発の概要
       items:
-        - name: USB デバイス用 Windows クライアント ドライバーの開発
-          href: usb-driver-development-guide.md
-        - name: USB クライアント ドライバー開発の概要
-          items:
-            - name: USB クライアント ドライバー開発の概要
-              href: getting-started-with-usb-client-driver-development.md
-            - name: USB クライアント ドライバー開発用のドライバー モデルの選択
-              href: winusb-considerations.md
-            - name: USB クライアント ドライバーに関する一般的なタスク
-              href: wdk-resources-for-usb-driver-development.md
-            - name: USB クライアント ドライバーで必要なヘッダーとライブラリ
-              href: headers-and-libraries-for-a-usb-client-driver.md
-            - name: USB ドライバーのサンプル
-              href: usb-driver-samples-in-wdk.md
+        - name: USB クライアント ドライバー開発の最初の手順
+          href: getting-started-with-usb-client-driver-development.md
+        - name: USB クライアント ドライバー開発用のドライバー モデルの選択
+          href: winusb-considerations.md
+        - name: USB クライアント ドライバーに関する一般的なタスク
+          href: wdk-resources-for-usb-driver-development.md
+        - name: USB クライアント ドライバーで必要なヘッダーとライブラリ
+          href: headers-and-libraries-for-a-usb-client-driver.md
+        - name: USB ドライバーのサンプル
+          href: usb-driver-samples-in-wdk.md
+    - name: 初めての USB クライアント ドライバーを記述する (KMDF)
+      items:
         - name: 初めての USB クライアント ドライバーの記述方法 (KMDF)
-          items:
-            - name: 初めての USB クライアント ドライバーの記述方法 (KMDF)
-              href: tutorial--write-your-first-usb-client-driver--kmdf-.md
-            - name: USB クライアント ドライバー コード構造について (KMDF)
-              href: understanding-the-kmdf-template-code-for-usb.md
+          href: tutorial--write-your-first-usb-client-driver--kmdf-.md
+        - name: USB クライアント ドライバー コード構造について (KMDF)
+          href: understanding-the-kmdf-template-code-for-usb.md
+    - name: 初めての USB クライアント ドライバーを記述する (UMDF)
+      items:
         - name: 初めての USB クライアント ドライバーの記述方法 (UMDF)
-          items:
-            - name: 初めての USB クライアント ドライバーの記述方法 (UMDF)
-              href: implement-driver-entry-for-a-usb-driver--umdf-.md
-            - name: USB クライアント ドライバー コード構造について (UMDF)
-              href: understanding-the-umdf-template-code-for-usb.md
-        - name: USB 要求ブロックについて
-          items:
-            - name: USB 要求ブロックについて
-              href: communicating-with-a-usb-device.md
-            - name: URB の割り当てと構築
-              href: how-to-add-xrb-support-for-client-drivers.md
-            - name: URB の送信方法
-              href: send-requests-to-the-usb-driver-stack.md
-            - name: 'ベスト プラクティス:URB の使用'
-              href: usb-client-driver-contract-in-windows-8.md
+          href: implement-driver-entry-for-a-usb-driver--umdf-.md
+        - name: USB クライアント ドライバー コード構造について (UMDF)
+          href: understanding-the-umdf-template-code-for-usb.md
+    - name: USB 要求ブロックについて
+      items:
+        - name: USB 要求ブロック (URB)
+          href: communicating-with-a-usb-device.md
+        - name: URB の割り当てと構築
+          href: how-to-add-xrb-support-for-client-drivers.md
+        - name: URB の送信方法
+          href: send-requests-to-the-usb-driver-stack.md
+        - name: 'ベスト プラクティス:URB の使用'
+          href: usb-client-driver-contract-in-windows-8.md
+    - name: USB 記述子について
+      items:
         - name: USB 記述子
+          href: usb-descriptors.md
+        - name: USB デバイス記述子
+          href: usb-device-descriptors.md
+        - name: USB 構成記述子
+          href: usb-configuration-descriptors.md
+        - name: USB 文字列記述子
+          href: usb-string-descriptors.md
+        - name: USB インターフェイス関連付け記述子
+          href: usb-interface-association-descriptor.md
+    - name: USB ドライバーでの USB 構成の選択
+      items:
+        - name: USB ドライバーでの USB 構成選択の概要
+          href: configuring-usb-devices.md
+        - name: USB デバイス用の構成の選択方法
+          href: how-to-select-a-configuration-for-a-usb-device.md
+        - name: USB インターフェイスにおける代替設定の選択方法
+          href: select-a-usb-alternate-setting.md
+        - name: 既定以外の USB 構成を選択するための Usbccgp.sys の構成
+          href: selecting-the-configuration-for-a-multiple-interface--composite--usb-d.md
+    - name: USB クライアント ドライバーでの USB データ転送の送信
+      items:
+        - name: USB クライアント ドライバーでの USB データ転送送信の概要
+          href: usb-device-i-o.md
+        - name: USB コントロール転送の送信方法
+          href: usb-control-transfer.md
+        - name: USB パイプの列挙方法
+          href: how-to-get-usb-pipe-handles.md
+        - name: 継続的リーダーを使用して USB パイプからデータを読み取る方法
+          href: how-to-use-the-continous-reader-for-getting-data-from-a-usb-endpoint--umdf-.md
+        - name: USB バルク転送要求の送信方法
+          href: usb-bulk-and-interrupt-transfer.md
+        - name: USB バルク エンドポイントにおける静的ストリームのオープン/クローズ方法
+          href: how-to-open-streams-in-a-usb-endpoint.md
+        - name: USB 等時性エンドポイントへのデータの転送方法
+          href: transfer-data-to-isochronous-endpoints.md
+        - name: Media-Agnostic (MA-USB) 用 USB クライアント ドライバー
+          href: usb-client-drivers-for-ma-usb.md
+        - name: チェーン化された MDL の送信方法
+          href: how-to-send-chained-mdls.md
+        - name: USB パイプ エラーからの回復方法
+          href: how-to-recover-from-usb-pipe-errors.md
+        - name: USB 帯域幅割り当て
+          href: usb-bandwidth-allocation.md
+    - name: USB クライアント ドライバーでの電源管理の実装
+      items:
+        - name: USB クライアント ドライバーでの電源管理実装の概要
+          href: usb-power-management.md
+        - name: USB デバイスの電源状態
+          href: comparing-usb-device-states-to-wdm-device-states.md
+        - name: WDF USB ドライバーにおけるセレクティブ サスペンド
           items:
-            - name: USB 記述子
-              href: usb-descriptors.md
-            - name: USB デバイス記述子
-              href: usb-device-descriptors.md
-            - name: USB 構成記述子
-              href: usb-configuration-descriptors.md
-            - name: USB 文字列記述子
-              href: usb-string-descriptors.md
-            - name: USB インターフェイス関連付け記述子
-              href: usb-interface-association-descriptor.md
-        - name: USB ドライバーでの USB 構成の選択
-          items:
-            - name: USB ドライバーでの USB 構成の選択
-              href: configuring-usb-devices.md
-            - name: USB デバイス用の構成の選択方法
-              href: how-to-select-a-configuration-for-a-usb-device.md
-            - name: USB インターフェイスにおける代替設定の選択方法
-              href: select-a-usb-alternate-setting.md
-            - name: 既定以外の USB 構成を選択するための Usbccgp.sys の構成
-              href: selecting-the-configuration-for-a-multiple-interface--composite--usb-d.md
-        - name: USB クライアント ドライバーでの USB データ転送の送信
-          items:
-            - name: USB クライアント ドライバーでの USB データ転送の送信
-              href: usb-device-i-o.md
-            - name: USB コントロール転送の送信方法
-              href: usb-control-transfer.md
-            - name: USB パイプの列挙方法
-              href: how-to-get-usb-pipe-handles.md
-            - name: 継続的リーダーを使用して USB パイプからデータを読み取る方法
-              href: how-to-use-the-continous-reader-for-getting-data-from-a-usb-endpoint--umdf-.md
-            - name: USB バルク転送要求の送信方法
-              href: usb-bulk-and-interrupt-transfer.md
-            - name: USB バルク エンドポイントにおける静的ストリームのオープン/クローズ方法
-              href: how-to-open-streams-in-a-usb-endpoint.md
-            - name: USB 等時性エンドポイントへのデータの転送方法
-              href: transfer-data-to-isochronous-endpoints.md
-            - name: Media-Agnostic (MA-USB) 用 USB クライアント ドライバー
-              href: usb-client-drivers-for-ma-usb.md
-            - name: チェーン化された MDL の送信方法
-              href: how-to-send-chained-mdls.md
-            - name: USB パイプ エラーからの回復方法
-              href: how-to-recover-from-usb-pipe-errors.md
-            - name: USB 帯域幅割り当て
-              href: usb-bandwidth-allocation.md
-        - name: USB クライアント ドライバーでの電源管理の実装
-          items:
-            - name: USB クライアント ドライバーでの電源管理の実装
-              href: usb-power-management.md
-            - name: USB デバイスの電源状態
-              href: comparing-usb-device-states-to-wdm-device-states.md
             - name: USB ドライバーにおけるセレクティブ サスペンド (WDF)
-              items:
-                - name: USB ドライバーにおけるセレクティブ サスペンド (WDF)
-                  href: selective-suspend-in-usb-drivers-wdf.md
-                - name: UMDF ドライバーにおけるセレクティブ サスペンド
-                  href: selective-suspend-in-umdf-drivers.md
-                - name: USB KMDF 機能ドライバーにおけるセレクティブ サスペンド
-                  href: selective-suspend-in-a-kmdf-function-driver.md
-            - name: USB セレクティブ サスペンド
-              href: usb-selective-suspend.md
-            - name: 複合ドライバーの登録方法
-              href: register-a-composite-driver.md
-            - name: 複合ドライバーに対する機能サスペンドの実装方法
-              href: how-to--implement-remote-and-function-wake-support.md
-            - name: USB デバイスのリモート ウェイクアップ
-              href: remote-wakeup-of-usb-devices.md
-        - name: バス ドライバー インターフェイスのクエリ
-          href: querying-for-usb-interfaces.md
-    - name: USB ホスト コントローラー用 Windows ドライバーの開発
-      items:
-        - name: USB ホスト コントローラー用 Windows ドライバーの開発
-          href: developing-windows-drivers-for-usb-host-controllers.md
-        - name: 'アーキテクチャ:USB ホスト コントローラー拡張 (UCX)'
-          href: get-started-with-host-controller-driver-development.md
-        - name: ホスト コントローラー ドライバーが使用する UCX オブジェクトとハンドル
-          href: ucx-objects-and-handles-used-by-host-controller-driver.md
-        - name: USB ホスト コントローラー ドライバー用のルート ハブ コールバック関数
-          href: manage-the-root-hub-in-a-host-controller-driver.md
-        - name: USB ホスト コントローラー ドライバーでの I/O 要求の処理
-          href: handling-i-o-requests-in-a-host-controller-driver.md
-        - name: USB ホスト コントローラー ドライバーでの USB エンドポイントの構成
-          href: configuring-usb-endpoints-in-a-host-controller-driver.md
-    - name: 列挙された USB デバイス (UDE) 用 Windows ドライバーの開発
-      items:
-        - name: 列挙された USB デバイス (UDE) 用 Windows ドライバーの開発
-          href: developing-windows-drivers-for-emulated-usb-host-controllers-and-devices.md
-        - name: 'アーキテクチャ:USB デバイス エミュレーション (UDE)'
-          href: usb-emulated-device--ude--architecture.md
-        - name: UDE クライアント ドライバーを記述する
-          href: writing-a-ude-client-driver.md
-    - name: USB 機能コントローラー用 Windows ドライバーの開発
-      items:
-        - name: USB 機能コントローラー用 Windows ドライバーの開発
-          href: developing-windows-drivers-for-usb-function-controllers.md
-        - name: 機能コントローラー ドライバー用 USB レジストリ設定
-          href: usb-registry-settings-for-a-function-controller-driver.md
-        - name: USB 機能コントローラー クライアント ドライバーを記述する
-          href: function-client-driver.md
-        - name: USB 機能クライアント ドライバーが使用する UFX オブジェクトとハンドル
-          href: ufx-objects-and-handles-used-by-a-usb-function-controller.md
-        - name: USB 充電器をサポートする USB フィルター ドライバー
-          href: usb-filter-driver-for-supporting-chargers.md
-        - name: ユーザーモード サービスから GenericUSBFn.sys と通信する
-          href: user-mode-services-ufx.md
+              href: selective-suspend-in-usb-drivers-wdf.md
+            - name: UMDF ドライバーにおけるセレクティブ サスペンド
+              href: selective-suspend-in-umdf-drivers.md
+            - name: USB KMDF 機能ドライバーにおけるセレクティブ サスペンド
+              href: selective-suspend-in-a-kmdf-function-driver.md
+        - name: USB セレクティブ サスペンド
+          href: usb-selective-suspend.md
+        - name: 複合ドライバーの登録方法
+          href: register-a-composite-driver.md
+        - name: 複合ドライバーに対する機能サスペンドの実装方法
+          href: how-to--implement-remote-and-function-wake-support.md
+        - name: USB デバイスのリモート ウェイクアップ
+          href: remote-wakeup-of-usb-devices.md
+    - name: バス ドライバー インターフェイスのクエリ
+      href: querying-for-usb-interfaces.md
+- name: USB ホスト コントローラー用 Windows ドライバーの開発
+  items:
+    - name: USB ホスト コントローラー用 Windows ドライバー開発の概要
+      href: developing-windows-drivers-for-usb-host-controllers.md
+    - name: 'アーキテクチャ:USB ホスト コントローラー拡張 (UCX)'
+      href: get-started-with-host-controller-driver-development.md
+    - name: ホスト コントローラー ドライバーが使用する UCX オブジェクトとハンドル
+      href: ucx-objects-and-handles-used-by-host-controller-driver.md
+    - name: USB ホスト コントローラー ドライバー用のルート ハブ コールバック関数
+      href: manage-the-root-hub-in-a-host-controller-driver.md
+    - name: USB ホスト コントローラー ドライバーでの I/O 要求の処理
+      href: handling-i-o-requests-in-a-host-controller-driver.md
+    - name: USB ホスト コントローラー ドライバーでの USB エンドポイントの構成
+      href: configuring-usb-endpoints-in-a-host-controller-driver.md
+- name: 列挙された USB デバイス (UDE) 用 Windows ドライバーの開発
+  items:
+    - name: 列挙された USB デバイス (UDE) 用 Windows ドライバー開発の概要
+      href: developing-windows-drivers-for-emulated-usb-host-controllers-and-devices.md
+    - name: 'アーキテクチャ:USB デバイス エミュレーション (UDE)'
+      href: usb-emulated-device--ude--architecture.md
+    - name: UDE クライアント ドライバーを記述する
+      href: writing-a-ude-client-driver.md
+- name: USB 機能コントローラー用 Windows ドライバーの開発
+  items:
+    - name: USB ファンクション コントローラー用 Windows ドライバー開発の概要
+      href: developing-windows-drivers-for-usb-function-controllers.md
+    - name: 機能コントローラー ドライバー用 USB レジストリ設定
+      href: usb-registry-settings-for-a-function-controller-driver.md
+    - name: USB 機能コントローラー クライアント ドライバーを記述する
+      href: function-client-driver.md
+    - name: USB 機能クライアント ドライバーが使用する UFX オブジェクトとハンドル
+      href: ufx-objects-and-handles-used-by-a-usb-function-controller.md
+    - name: USB 充電器をサポートする USB フィルター ドライバー
+      href: usb-filter-driver-for-supporting-chargers.md
+    - name: ユーザーモード サービスから GenericUSBFn.sys と通信する
+      href: user-mode-services-ufx.md
+- name: Windows での USB Type-C コネクタ
+  items:
     - name: USB Type-C コネクタに対する Windows サポート
+      href: oem-tasks-for-bringing-up-a-usb-typec.md
+    - name: 'ハードウェアのデザイン:USB Type-C システム'
+      href: hardware-design-of-a-usb-type-c-system.md
+    - name: USB Type-C システムの OEM タスク
+      href: oem-tasks-for-usb-type-c-systems-running-windows.md
+    - name: USB Type-C Connector System Software Interface (UCSI) ドライバー
+      href: ucsi.md
+    - name: 'よくあるご質問:Windows システムにおける USB Type-C コネクタ'
+      href: faq--usb-type-c-connector-on-a-windows-system.md
+    - name: USB Type-C コネクタ用 Windows ドライバーの開発
       items:
-        - name: USB Type-C コネクタに対する Windows サポート
-          href: oem-tasks-for-bringing-up-a-usb-typec.md
-        - name: 'ハードウェアのデザイン:USB Type-C システム'
-          href: hardware-design-of-a-usb-type-c-system.md
-        - name: USB Type-C システムの OEM タスク
-          href: oem-tasks-for-usb-type-c-systems-running-windows.md
-        - name: USB Type-C Connector System Software Interface (UCSI) ドライバー
-          href: ucsi.md
-        - name: 'よくあるご質問:Windows システムにおける USB Type-C コネクタ'
-          href: faq--usb-type-c-connector-on-a-windows-system.md
-        - name: USB Type-C コネクタ用 Windows ドライバーの開発
-          items:
-            - name: USB Type-C コネクタ用 Windows ドライバーの開発
-              href: developing-windows-drivers-for-usb-type-c-connectors.md
-            - name: 'アーキテクチャ:Windows システム向け USB Type-C デザイン'
-              href: architecture--usb-type-c-in-a-windows-system.md
-            - name: USB Type-C Windows システムにおけるファンクション コントローラーの起動
-              href: function-controller-bringup-for-a-usb-type-c-system.md
-            - name: USB Type-C Windows システムにおけるデュアルロール コントローラーの起動
-              href: dual-role-controller-bringup-for-a-usb-type-c-system.md
-            - name: USB Type-C コネクタ ドライバーを記述する
-              href: bring-up-a-usb-type-c-connector-on-a-windows-system.md
-            - name: USB Type-C ポリシー マネージャー クライアント ドライバーを記述する
-              href: policy-manager-client.md
-            - name: USB Type-C ポート コントローラー ドライバーを記述する
-              href: write-a-usb-type-c-port-controller-driver.md
-            - name: UCSI クライアント ドライバーを記述する
-              href: write-a-ucsi-driver.md
-    - name: Windows USB イベント トレーシング
+        - name: USB Type-C コネクタ用 Windows ドライバー開発の概要
+          href: developing-windows-drivers-for-usb-type-c-connectors.md
+        - name: 'アーキテクチャ:Windows システム向け USB Type-C デザイン'
+          href: architecture--usb-type-c-in-a-windows-system.md
+        - name: USB Type-C Windows システムにおけるファンクション コントローラーの起動
+          href: function-controller-bringup-for-a-usb-type-c-system.md
+        - name: USB Type-C Windows システムにおけるデュアルロール コントローラーの起動
+          href: dual-role-controller-bringup-for-a-usb-type-c-system.md
+        - name: USB Type-C コネクタ ドライバーを記述する
+          href: bring-up-a-usb-type-c-connector-on-a-windows-system.md
+        - name: USB Type-C ポリシー マネージャー クライアント ドライバーを記述する
+          href: policy-manager-client.md
+        - name: USB Type-C ポート コントローラー ドライバーを記述する
+          href: write-a-usb-type-c-port-controller-driver.md
+        - name: UCSI クライアント ドライバーを記述する
+          href: write-a-ucsi-driver.md
+- name: Windows USB イベント トレーシング
+  items:
+    - name: Windows 用 USB イベント トレーシングの概要
+      href: usb-event-tracing-for-windows.md
+    - name: Microsoft Message Analyzer を使用して USB トレースをキャプチャして表示する
+      href: capture-and-view-ing-usb-traces-with-microsoft-message-analyzer-.md
+    - name: Logman を使用して USB イベント トレースをキャプチャする方法
+      href: how-to-capture-a-usb-event-trace.md
+    - name: USB ETW トレースでのアクティビティ ID GUID の使用
+      href: using-usb-etw.md
+    - name: Netmon での USB ETW トレース
       items:
-        - name: Windows USB イベント トレーシング
-          href: usb-event-tracing-for-windows.md
-        - name: Microsoft Message Analyzer を使用して USB トレースをキャプチャして表示する
-          href: capture-and-view-ing-usb-traces-with-microsoft-message-analyzer-.md
-        - name: Logman を使用して USB イベント トレースをキャプチャする方法
-          href: how-to-capture-a-usb-event-trace.md
-        - name: USB ETW トレースでのアクティビティ ID GUID の使用
-          href: using-usb-etw.md
-        - name: Netmon での USB ETW トレース
-          items:
-            - name: Netmon での USB ETW トレース
-              href: viewing-etw-traces-in-netmon.md
-            - name: Netmon と USB ETW パーサーのインストール方法
-              href: how-to-install-netmon-and-the-netmon-usb-parser.md
-            - name: Netmon での USB ETW トレースの表示方法
-              href: how-to-examining-a-trace-file-by-using-netmon.md
-            - name: ETW イベントを使用した USB デバイスの問題のデバッグ
-              href: best-practices--debugging-usb-device-problems.md
-            - name: 'ケース スタディ:ETW と Netmon を使用した不明な USB デバイスのトラブルシューティング'
-              href: case-study--troubleshooting-an-unknown-usb-device-by-using-etw-and-netmon.md
-        - name: USB ETW での Xperf の使用
-          items:
-            - name: USB ETW での Xperf の使用
-              href: using-xperf-with-usb-etw.md
-            - name: Xperf での USB イベント トレースの表示
-              href: viewing-a-usb-event-trace-in-xperf.md
-            - name: Xperf と Netmon を使用した USB のパフォーマンスの問題の分析
-              href: analyzing-usb-performance-issues-by-using-xperf-and-netmon.md
-        - name: USB ETW と電源管理
-          href: usb-etw-and-power-management.md
-    - name: Windows での USB ハードウェア、ドライバー、アプリのテスト
+        - name: Netmon での USB ETW トレースの概要
+          href: viewing-etw-traces-in-netmon.md
+        - name: Netmon と USB ETW パーサーのインストール方法
+          href: how-to-install-netmon-and-the-netmon-usb-parser.md
+        - name: Netmon での USB ETW トレースの表示方法
+          href: how-to-examining-a-trace-file-by-using-netmon.md
+        - name: ETW イベントを使用した USB デバイスの問題のデバッグ
+          href: best-practices--debugging-usb-device-problems.md
+        - name: 'ケース スタディ:ETW と Netmon を使用した不明な USB デバイスのトラブルシューティング'
+          href: case-study--troubleshooting-an-unknown-usb-device-by-using-etw-and-netmon.md
+    - name: USB ETW での Xperf の使用
       items:
-        - name: Windows での USB ハードウェア、ドライバー、アプリのテスト
-          href: usb-driver-testing-guide.md
-        - name: Microsoft USB テスト ツール (MUTT) デバイス
-          items:
-            - name: Microsoft USB テスト ツール (MUTT) デバイス
-              href: microsoft-usb-test-tool--mutt--devices.md
-            - name: MUTT ソフトウェア パッケージに含まれるツール
-              href: mutt-software-package.md
-        - name: USB テスト ツール
-          items:
-            - name: USB テスト ツール
-              href: usb-test-tools.md
-            - name: MuttUtil
-              href: muttutil.md
-            - name: USB クライアント ドライバー検証ツール
-              href: how-to-send-a-usb-device-to-select-suspend.md
-            - name: USB ハードウェア検証ツール (USB3HWVerifierAnalyzer.exe)
-              href: how-to-retrieve-information-about-a-usb-device.md
-            - name: USBLPM
-              href: usblpm-tool.md
-            - name: USBStress
-              href: usbstress.md
-            - name: USBTCD
-              href: usbtcd.md
-            - name: USB XHCIWMI
-              href: usb-xhciwmi.md
-        - name: USB Type-C システムを USB Type-C ConnEx を使用してテストする
-          href: test-usb-type-c-systems-with-mutt-connex-c.md
-        - name: USB Type-C 手動相互運用性テスト手順
-          href: type.md
-        - name: MUTT テスト ツール実行のためのテスト システムの準備方法
-          href: mutt-testing-options.md
-        - name: MUTT デバイスのストレスおよび転送パフォーマンステストの実行方法
-          href: how-to-run-stress-and-transfer-and-super-mutt-performance-tests-for-mutt-devices.md
-        - name: Visual Studio での MUTT デバイスのシステム電源 devfund テストの実行方法
-          href: how-to-run-device-fundamental-tests-in-visual-studio-for-connected-mutt-devices.md
-        - name: MUTT デバイスを使用した BIOS/UEFI のテスト
-          href: how-to-run-bios-uefi-testing-with-the-mutt-device.md
-        - name: MUTT デバイスを使用した USB ハブのテスト
-          href: how-to-run-hub-testing-with-the-mutt-device.md
-        - name: MUTT デバイスを使用した USB ホスト コントローラーのテスト
-          href: how-to-run-controller-and-device-testing-with-the-mutt-device.md
-        - name: MUTT デバイスを使用した USB デバイスのテスト
-          href: tools-in-the-package.md
-        - name: Windows ハードウェア認定キットの USB に関するテスト
-          items:
-            - name: Windows ハードウェア認定キットの USB に関するテスト
-              href: windows-hardware-certification-kit-tests-for-usb.md
-            - name: システム開発において推奨される USB テスト
-              href: usb-tests-for-system-development.md
-            - name: USB-IF 認定テスト
-              href: usb-if-certification-tests.md
-            - name: Windows HCK における USB テストの一般的なエラー
-              href: common-failures-for-usb-tests-in-the-windows-hck.md
-    - name: Microsoft が提供する USB ドライバー
+        - name: USB ETW での Xperf 使用の概要
+          href: using-xperf-with-usb-etw.md
+        - name: Xperf での USB イベント トレースの表示
+          href: viewing-a-usb-event-trace-in-xperf.md
+        - name: Xperf と Netmon を使用した USB のパフォーマンスの問題の分析
+          href: analyzing-usb-performance-issues-by-using-xperf-and-netmon.md
+    - name: USB ETW と電源管理
+      href: usb-etw-and-power-management.md
+- name: Windows での USB ハードウェア、ドライバー、アプリのテスト
+  items:
+    - name: Microsoft USB テスト ツール (MUTT) デバイス
       items:
-        - name: Microsoft が提供する USB ドライバー
-          href: system-supplied-usb-drivers.md
-        - name: Windows に含まれる USB デバイス クラス ドライバー
-          href: supported-usb-classes.md
-        - name: USB シリアル ドライバー (Usbser.sys)
-          href: usb-driver-installation-based-on-compatible-ids.md
-        - name: Microsoft が定義する USB ドライバー フレームワーク
-          href: microsoft-defined-usb-frameworks.md
-        - name: USB デバイス レジストリ エントリ
-          href: usb-device-specific-registry-settings.md
+        - name: Microsoft USB テスト ツール (MUTT) デバイスの概要
+          href: microsoft-usb-test-tool--mutt--devices.md
+        - name: MUTT ソフトウェア パッケージに含まれるツール
+          href: mutt-software-package.md
+    - name: USB テスト ツール
+      items:
+        - name: MuttUtil
+          href: muttutil.md
+        - name: USB クライアント ドライバー検証ツール
+          href: how-to-send-a-usb-device-to-select-suspend.md
+        - name: USB ハードウェア検証ツール (USB3HWVerifierAnalyzer.exe)
+          href: how-to-retrieve-information-about-a-usb-device.md
+        - name: USBLPM
+          href: usblpm-tool.md
+        - name: USBStress
+          href: usbstress.md
+        - name: USBTCD
+          href: usbtcd.md
+        - name: USB XHCIWMI
+          href: usb-xhciwmi.md
+    - name: USB Type-C システムを USB Type-C ConnEx を使用してテストする
+      href: test-usb-type-c-systems-with-mutt-connex-c.md
+    - name: USB Type-C 手動相互運用性テスト手順
+      href: type.md
+    - name: MUTT テスト ツール実行のためのテスト システムの準備方法
+      href: mutt-testing-options.md
+    - name: MUTT デバイスのストレスおよび転送パフォーマンステストの実行方法
+      href: how-to-run-stress-and-transfer-and-super-mutt-performance-tests-for-mutt-devices.md
+    - name: Visual Studio での MUTT デバイスのシステム電源 devfund テストの実行方法
+      href: how-to-run-device-fundamental-tests-in-visual-studio-for-connected-mutt-devices.md
+    - name: MUTT デバイスを使用した BIOS/UEFI のテスト
+      href: how-to-run-bios-uefi-testing-with-the-mutt-device.md
+    - name: MUTT デバイスを使用した USB ハブのテスト
+      href: how-to-run-hub-testing-with-the-mutt-device.md
+    - name: MUTT デバイスを使用した USB ホスト コントローラーのテスト
+      href: how-to-run-controller-and-device-testing-with-the-mutt-device.md
+    - name: MUTT デバイスを使用した USB デバイスのテスト
+      href: tools-in-the-package.md
+    - name: Windows ハードウェア認定キットの USB に関するテスト
+      items:
+        - name: USB 用 Windows Hardware Lab Kit (HLK)
+          href: windows-hardware-certification-kit-tests-for-usb.md
+        - name: システム開発において推奨される USB テスト
+          href: usb-tests-for-system-development.md
+        - name: USB-IF 認定テスト
+          href: usb-if-certification-tests.md
+        - name: Windows HCK における USB テストの一般的なエラー
+          href: common-failures-for-usb-tests-in-the-windows-hck.md
+- name: Microsoft が提供する USB ドライバー
+  items:
+    - name: Microsoft が提供する USB ドライバーの概要
+      href: system-supplied-usb-drivers.md
+    - name: Windows に含まれる USB デバイス クラス ドライバー
+      href: supported-usb-classes.md
+    - name: USB シリアル ドライバー (Usbser.sys)
+      href: usb-driver-installation-based-on-compatible-ids.md
+    - name: Microsoft が定義する USB ドライバー フレームワーク
+      href: microsoft-defined-usb-frameworks.md
+    - name: USB デバイス レジストリ エントリ
+      href: usb-device-specific-registry-settings.md
+    - name: Usbccgp.sys
+      items:
         - name: USB 汎用親ドライバー (Usbccgp.sys)
+          href: usb-common-class-generic-parent-driver.md
+        - name: USB 複合デバイスの列挙
+          href: enumeration-of-the-composite-parent-device.md
+        - name: 複合 USB デバイスの記述子
+          href: descriptors-on-composite-usb-devices.md
+        - name: USB 複合デバイス上のインターフェイスの列挙
+          href: enumeration-of-interfaces-not-grouped-in-collections.md
+        - name: USB 複合デバイス上のインターフェイス コレクションの列挙
           items:
-            - name: USB 汎用親ドライバー (Usbccgp.sys)
-              href: usb-common-class-generic-parent-driver.md
-            - name: USB 複合デバイスの列挙
-              href: enumeration-of-the-composite-parent-device.md
-            - name: 複合 USB デバイスの記述子
-              href: descriptors-on-composite-usb-devices.md
-            - name: USB 複合デバイス上のインターフェイスの列挙
-              href: enumeration-of-interfaces-not-grouped-in-collections.md
-            - name: USB 複合デバイス上のインターフェイス コレクションの列挙
-              items:
-                - name: USB 複合デバイス上のインターフェイス コレクションの列挙
-                  href: support-for-interface-collections.md
-                - name: ワイヤレス モバイル コミュニケーション デバイス クラスのサポート
-                  href: support-for-the-wireless-mobile-communication-device-class--wmcdc-.md
-            - name: Usbccgp.sys のコンテンツ セキュリティ機能
-              href: content-security-features-in-the-composite-client-generic-parent-drive.md
+            - name: USB 複合デバイス上のインターフェイス コレクション列挙の概要
+              href: support-for-interface-collections.md
+            - name: ワイヤレス モバイル コミュニケーション デバイス クラスのサポート
+              href: support-for-the-wireless-mobile-communication-device-class--wmcdc-.md
+        - name: Usbccgp.sys のコンテンツ セキュリティ機能
+          href: content-security-features-in-the-composite-client-generic-parent-drive.md
+    - name: Winusb.sys
+      items:
         - name: WinUSB (Winusb.sys)
-          items:
-            - name: WinUSB (Winusb.sys)
-              href: winusb.md
-            - name: WinUSB アーキテクチャとモジュール
-              href: winusb-architecture.md
-            - name: WinUSB (Winusb.sys) のインストール
-              href: winusb-installation.md
-            - name: WinUSB デバイス
-              href: automatic-installation-of-winusb.md
+          href: winusb.md
+        - name: WinUSB アーキテクチャとモジュール
+          href: winusb-architecture.md
+        - name: WinUSB (Winusb.sys) のインストール
+          href: winusb-installation.md
+        - name: WinUSB デバイス
+          href: automatic-installation-of-winusb.md
