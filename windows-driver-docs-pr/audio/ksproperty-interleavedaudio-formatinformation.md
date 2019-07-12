@@ -11,14 +11,14 @@ api_location:
 - ksmedia.h
 api_type:
 - HeaderDef
-ms.date: 02/15/2019
+ms.date: 07/11/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 37618d62b8ffb1ec8a26dee90b75b8ede4239b9f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 58aa4738f6e6bab6c8a7f511470403cac2adb4d3
+ms.sourcegitcommit: 68544e8bc6f236758a5b74d46d69a4c1402bea42
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361006"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67828364"
 ---
 # <a name="kspropertyinterleavedaudioformatinformation"></a>KSPROPERTY\_INTERLEAVEDAUDIO_FORMATINFORMATION 
 
@@ -26,13 +26,13 @@ ms.locfileid: "67361006"
 
 ### <a name="span-idusagesummarytablespanspan-idusagesummarytablespanspan-idusagesummarytablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル
 
- |取得|設定|対象|プロパティ記述子の型|プロパティ値の型|
+ |取得|Set|移行先|プロパティ記述子の型|プロパティ値の型|
 |--- |--- |--- |--- |--- |
-|〇|いいえ|Pin|[KS_PIN](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_pin)|[INTERLEAVED_AUDIO_FORMAT_INFORMATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-interleaved-audio-format-information)|
+|はい|いいえ|Pin|[KS_PIN](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_pin)|[INTERLEAVED_AUDIO_FORMAT_INFORMATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_interleaved_audio_format_information)|
 
 ### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
 
- Get、 **KSPROPERTY\_INTERLEAVEDAUDIO_FORMATINFORMATION**を返します、 [INTERLEAVED_AUDIO_FORMAT_INFORMATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-interleaved-audio-format-information)に関する追加情報を格納する構造体、ループバック オーディオとオーディオのストリームでのオーディオのキャプチャのインターリーブします。 
+ Get、 **KSPROPERTY\_INTERLEAVEDAUDIO_FORMATINFORMATION**を返します、 [INTERLEAVED_AUDIO_FORMAT_INFORMATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_interleaved_audio_format_information)に関する追加情報を格納する構造体、ループバック オーディオとオーディオのストリームでのオーディオのキャプチャのインターリーブします。 
 
 Windows 10 以降 19 H 1、設定、KSPROPERTY\_INTERLEAVEDAUDIO_FORMATINFORMATION プロパティのキーが 1 つのストリームに、ハードウェア キーワード Spotter (HW KWS) その結合マイクとループバック オーディオをサポートするシステムの要件キーワードのバースト出力時に、AEC APO を使用するにはします。 詳細については、次を参照してください。[音声をアクティブ化](voice-activation.md)します。
 
@@ -59,7 +59,4 @@ Windows 10 以降 19 H 1、設定、KSPROPERTY\_INTERLEAVEDAUDIO_FORMATINFORMATI
 
 [KS_PIN](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_pin)
 
-
-
-
-
+[INTERLEAVED_AUDIO_FORMAT_INFORMATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_interleaved_audio_format_information) 

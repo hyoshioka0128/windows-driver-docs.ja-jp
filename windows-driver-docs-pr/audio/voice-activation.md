@@ -4,12 +4,12 @@ description: Cortana、音声のプラットフォームは、音声のすべて
 ms.assetid: 0684EF32-AA76-418B-9027-1C067A8140E3
 ms.date: 07/02/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 22a1d0ac36df21b55fddd10b42f662533ee94eb9
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 4e2cb2dfdd00df097ed3af6bbba727e93658bd22
+ms.sourcegitcommit: 9bec15f7c262f04160f8e8266f4530a15e0e201c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67518736"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67843190"
 ---
 # <a name="voice-activation"></a>音声のアクティブ化
 
@@ -152,7 +152,7 @@ SYSVAD サンプル オーディオ ドライバーの詳細については、�
 
 ドライバーは、通常どおりそのキャプチャ デバイスのフィルターを KS を公開します。 このフィルターは、いくつかの KS プロパティと構成の有効化および検出イベントを通知する KS イベントをサポートします。 フィルターには、キーワードの spotter (KWS) ピンとして識別される、追加の pin ファクトリも含まれています。 この pin は、キーワード spotter からオーディオをストリーミングに使用されます。
 
-プロパティは次のとおりです。
+次のプロパティです。
 
 -   サポートされているキーワードの種類 - [ **KSPROPERTY\_SOUNDDETECTOR\_パターン**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-sounddetector-patterns)します。 このプロパティは、構成を検出するキーワードにオペレーティング システムによって設定されます。
 -   キーワードの一覧パターンの Guid - [ **KSPROPERTY\_SOUNDDETECTOR\_SUPPORTEDPATTERNS**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-sounddetector-supportedpatterns)します。 このプロパティを使用して、サポートされているパターンの種類を識別する Guid のリストを取得できます。
@@ -384,6 +384,6 @@ KSSTATE に移行する前にキャプチャされたバースト データ\_実
 オーディオ スタックは、キーワードが検出されたことを目的のクライアントに通知すると、ウェイク データ (スピーカー ID、キーワードのトリガー、信頼レベル) の通信を担当します。
 
 
-## <a name="span-idwovvalidationspanspan-idwovvalidationspanspan-idwovvalidationspan-validation-on-modern-standby-systems"></a><span id="WOV_Validation"></span><span id="wov_validation"></span><span id="WOV_VALIDATION"></span> 最新のスタンバイ システムでの検証
+**最新のスタンバイ システムでの検証**
 
 システムのアイドル状態から WoV を検証できます[最新スタンバイ](https://docs.microsoft.com/windows-hardware/design/device-experiences/modern-standby)システムを使用して、 [AC 電源で音声の基本的なテストで、最新のスタンバイ Wake](https://docs.microsoft.com/windows-hardware/test/hlk/testref/69df7cf2-6024-4eee-92ee-1506480614ee) 、[最新のスタンバイ Wake on 音声の基本的なテストDC 電源の](https://docs.microsoft.com/windows-hardware/test/hlk/testref/614ffb93-eced-45ab-bf7b-e09291a97fd2)で、 [HLK](https://docs.microsoft.com/windows-hardware/test/hlk/)します。 これらのテストでは、システムについて、ハードウェア キーワード spotter (HW KWS) が、最も深いランタイム アイドル プラットフォームの状態 (DRIPS) を入力することし、システム再開の待機時間 1 秒以下の音声コマンドで最新のスタンバイから復帰させることがでことを確認します。 
