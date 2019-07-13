@@ -7,12 +7,12 @@ keywords:
 - リモート プロシージャ コール (RPC)
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b9632cb274dcc8b2658c111e31e883f30dce57c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b2106b1eff5fcfcbc93884d7f61b513e8329dad1
+ms.sourcegitcommit: b25275c2662bfdbddd97718f47be9bd79e6f08df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355788"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67866501"
 ---
 # <a name="overview-of-rpc-debugging"></a>RPC のデバッグの概要
 
@@ -33,8 +33,6 @@ Microsoft リモート プロシージャ コール (RPC) を簡単にプロセ�
 多くの場合で説明されたテクニックを使用して問題をトラブルシューティングできます[RPC の一般的なデバッグ手法](common-rpc-debugging-techniques.md)します。
 
 参照してください、状態情報の分析のための独自の手法を検討する場合、この情報の格納方法のしくみを確認する場合または[RPC 状態情報の内部](rpc-state-information-internals.md)します。
-
-これらのツールと手法は、Windows 2000 では機能しません。
 
  
 

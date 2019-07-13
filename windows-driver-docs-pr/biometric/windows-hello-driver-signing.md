@@ -5,15 +5,14 @@ ms.assetid: 803f4326-32ce-44b4-a2fb-6c6f245c3728
 keywords:
 - 生体認証ドライバー WDK、windows こんにちは
 - 生体認証ドライバーへの署名
-ms.author: dawnwood
 ms.date: 07/19/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c2ad4afc2031afb34057ad75f053c9065ff830c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dceaa81cf14ba7087ca2f263904a9aedecf2125a
+ms.sourcegitcommit: 7945fbc5b2c6b41e653cc2eea02cd53bec8abc02
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328353"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67860757"
 ---
 # <a name="windows-hello-steps-to-submit-a-fingerprint-driver"></a>Windows Hello:フィンガープリント ドライバーを送信する手順
 

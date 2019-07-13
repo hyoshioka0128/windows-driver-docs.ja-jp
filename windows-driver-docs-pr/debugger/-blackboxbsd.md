@@ -14,12 +14,12 @@ api_name:
 - blackboxbsd
 api_type:
 - NA
-ms.openlocfilehash: c3942865d8bbc88aa48fd69b74a929616d1d219d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7e877e718858133e836b2408cd38d31c68fb264a
+ms.sourcegitcommit: b25275c2662bfdbddd97718f47be9bd79e6f08df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336990"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67866515"
 ---
 # <a name="blackboxbsd"></a>!blackboxbsd
 
@@ -42,7 +42,7 @@ Ext.dll
 
 ## <a name="span-idremarksspanremarks"></a><span id="Remarks"></span>「解説」
 
-ドライバー開発者が呼び出すことができます、 [BugCheckSecondaryDumpDataCallback ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff540679)二次ブート情報ダンプ ファイルを追加します。 ドライバー開発者 (と OS)、ダンプ ファイルにこの情報を追加するときに決定できます。 これはすべてカーネル モードのダンプ ファイルがセカンダリ ブート情報を含めることを意味します。
+ドライバー開発者は、ダンプ ファイルをセカンダリ ブート情報を追加できます。 ドライバー開発者 (と OS)、ダンプ ファイルにこの情報を追加するときに決定できます。 これはすべてカーネル モードのダンプ ファイルがセカンダリ ブート情報を含めることを意味します。 詳細については、次を参照してください。[バグ チェック理由コールバック ルーチンを記述](https://docs.microsoft.com/windows-hardware/drivers/kernel/writing-a-bug-check-callback-routine)します。
 
 ### <a name="example-command-output"></a>コマンドの出力の例
 

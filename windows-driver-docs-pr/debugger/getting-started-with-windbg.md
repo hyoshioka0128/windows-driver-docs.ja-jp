@@ -4,12 +4,12 @@ description: WinDbg では、Windows のツールのデバッグに含まれる�
 ms.assetid: 8C2D2D0C-7E54-4711-A6FD-970E040F1C50
 ms.date: 10/09/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aaf86b6636fdc336f50ec547c37e529e0d9b7691
-ms.sourcegitcommit: 61157d026b517a86c37def552a2ab28b6c32e7b4
+ms.openlocfilehash: 09ff070bc8b49a8851b17c25988435b03866e37b
+ms.sourcegitcommit: b25275c2662bfdbddd97718f47be9bd79e6f08df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67196425"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67866532"
 ---
 # <a name="getting-started-with-windbg-user-mode"></a>WinDbg ドライバーの概要 (ユーザー モード)
 
@@ -120,7 +120,7 @@ Windows のツールのデバッグを取得する方法については、次を
 
     スタック トレースを表示するには、このコマンドを入力します。
 
-    [K](https://go.microsoft.com/fwlink/p?linkid=399389)
+    [k](https://go.microsoft.com/fwlink/p?linkid=399389)
 
     出力は次のようにします。
 
@@ -182,7 +182,7 @@ Windows のツールのデバッグを取得する方法については、次を
 
     [~ 0](https://go.microsoft.com/fwlink/p?linkid=399393)
 
-    [K](https://go.microsoft.com/fwlink/p?linkid=399389)
+    [k](https://go.microsoft.com/fwlink/p?linkid=399389)
 
     出力は次のようにします。
 
@@ -234,11 +234,11 @@ void main ()
 2.  **ファイル**] メニューの [選択**実行可能ファイルのオープン**します。 開いている実行可能ファイル ダイアログ ボックスで、c: に移動します。\\MyApp\\x64\\をデバッグします。 **ファイル名**MyApp.exe を入力します。 **[開く]** をクリックします。
 3.  これらのコマンドを入力します。
 
-    [.symfix](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/-symfix--set-symbol-store-path-)
+    [.symfix](https://docs.microsoft.com/windows-hardware/drivers/debugger/-symfix--set-symbol-store-path-)
 
-    [.sympath](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/-sympath--set-symbol-path-)+ c:\\MyApp\\x64\\デバッグ
+    [.sympath](https://docs.microsoft.com/windows-hardware/drivers/debugger/-sympath--set-symbol-path-)+ c:\\MyApp\\x64\\デバッグ
 
-    今すぐ WinDbg は、アプリケーション用のシンボルとソース コードの検索場所を認識します。 ソース コードの場所に設定する必要はここでは、 [.srcpath](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/-srcpath---lsrcpath--set-source-path-)シンボルにソース ファイルへのパスを完全に修飾するためです。
+    今すぐ WinDbg は、アプリケーション用のシンボルとソース コードの検索場所を認識します。 ソース コードの場所に設定する必要はここでは、 [.srcpath](https://docs.microsoft.com/windows-hardware/drivers/debugger/-srcpath---lsrcpath--set-source-path-)シンボルにソース ファイルへのパスを完全に修飾するためです。
 
 4.  これらのコマンドを入力します。
 

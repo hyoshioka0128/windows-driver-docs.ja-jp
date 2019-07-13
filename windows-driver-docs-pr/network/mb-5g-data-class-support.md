@@ -7,12 +7,12 @@ keywords:
 ms.date: 04/17/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: a77f816a6eaebb1a11c9558509f95b61fe9279b2
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b22b2b62bb837e690ddd8105dd4fe1a3dfb3e80f
+ms.sourcegitcommit: a5b9d47e8c063732ed5ca80f29d8132451a97831
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67374806"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67866144"
 ---
 # <a name="mb-5g-data-class-support"></a>MB 5G データ クラスのサポート
 
@@ -34,7 +34,7 @@ ms.locfileid: "67374806"
 
 ## <a name="overview"></a>概要
 
-Windows 10、バージョンが 1903 は IHV パートナーの 5 G モバイル ブロード バンドのドライバーをサポートするために最初の Windows リリースです。 名前*5 G*フレンドリ名の新しいオプション (NR) で導入されたは、 [3 gpp リリース 15 仕様](https://www.3gpp.org/release-15)します。 NR は包括的な設定が想定する真の長期的な進化を提供する標準の既存の第 4 世代 LTE テクノロジ、超ブロード バンドをナローバンドおよびに公称からすべての携帯電話の通信ニーズをカバーする可能性があります。ミッション クリティカルな待機時間の要件。 、、のテクノロジとして 10 年間-時間の長い期間が経過する 5 G が必要です。 
+Windows 10、バージョンが 1903 は IHV パートナーによって 5 G モバイル ブロード バンドのドライバーの開発のプレビュー リリースをサポートするために Windows の最初のバージョンです。 名前*5 G*フレンドリ名の新しいオプション (NR) で導入されたは、 [3 gpp リリース 15 仕様](https://www.3gpp.org/release-15)します。 NR は包括的な設定が想定する真の長期的な進化を提供する標準の既存の第 4 世代 LTE テクノロジ、超ブロード バンドをナローバンドおよびに公称からすべての携帯電話の通信ニーズをカバーする可能性があります。ミッション クリティカルな待機時間の要件。 、、のテクノロジとして 10 年間-時間の長い期間が経過する 5 G が必要です。 
 
 このトピックでは、強化されたモバイル ブロード バンド (eMBB) 5 G を超える「以外のスタンドアロン」EPC ベース NR ネットワークでデータ クラスを使用して、MBB ドライバーの開発に有効にするハードウェア パートナー サポート Windows 10 のバージョンが 1903 年に初めてリリース MBIM 拡張を示します。 データ プレーンのサポートと 5 G のスループットと商用の要件の有効化は、この Windows リリースの一部ではないと、このトピックでは説明しません。 
 
@@ -111,7 +111,7 @@ NDIS は、NDIS_HEADER のリビジョン番号をサポートします。 こ�
 
 ## <a name="mbim-service"></a>MBIM サービス
 
-| サービス名 | UUID | UUID 値 |
+| [サービス名] | UUID | UUID 値 |
 | --- | --- | --- |
 | Microsoft Basic IP 接続の拡張機能 | UUID_BASIC_CONNECT_EXTENSIONS | 3D01DCC5-FEF5-4D05-9D3A-BEF7058E9AAF |
 
@@ -133,17 +133,17 @@ MBIM Microsoft 拡張機能 2.0 をサポートする MBB ドライバーまた�
 
 |  | 設定 | クエリ | 通知 |
 | --- | --- | --- | --- |
-| コマンド | 該当なし | MBIM_VERSION_INFO | 該当なし |
-| 応答 | 該当なし | MBIM_VERSION_INFO | 該当なし |
+| コマンド | 適用なし | MBIM_VERSION_INFO | 適用なし |
+| 応答 | 適用なし | MBIM_VERSION_INFO | 適用なし |
 
-### <a name="query"></a>クエリ
+### <a name="query"></a>Query
 
 ホストのネイティブ MBIM リリース番号と MBIM 拡張機能のリリース番号のデバイスに通知します。 InformationBuffer には、次の MBIM_VERSION_INFO 構造が含まれています。
 
-| Offset | サイズ | フィールド | 種類 | 説明 |
+| Offset | サイズ | フィールド | 型 | 説明 |
 | --- | --- | --- | --- | --- |
-| 0 | 2 | bcdMBIMVersion | UINT16 | ビット 7 および 8 間の暗黙の小数点の付いた、BCD の送信者の MBIM リリース番号。 たとえば、`0x0100 == 1.00 == 1.0` と記述します。 これは、バイトが 0x00、0x01 のため、リトル エンディアン定数です。 |
-| 2 | 2 | bcdMBIMExtendedVersion | UINT16 | MBIM 拡張機能はリリース ビット 7 および 8 間の暗黙の小数点の付いた、BCD の送信者の番号です。 たとえば、`0x0100 == 1.00 == 1.0` と記述します。 これは、バイトが 0x00、0x01 のため、リトル エンディアン定数です。 |
+| 0 | 2 | bcdMBIMVersion | UINT16 | ビット 7 および 8 間の暗黙の小数点の付いた、BCD の送信者の MBIM リリース番号。 たとえば、`0x0100 == 1.00 == 1.0` のようにします。 これは、バイトが 0x00、0x01 のため、リトル エンディアン定数です。 |
+| 2 | 2 | bcdMBIMExtendedVersion | UINT16 | MBIM 拡張機能はリリース ビット 7 および 8 間の暗黙の小数点の付いた、BCD の送信者の番号です。 たとえば、`0x0100 == 1.00 == 1.0` のようにします。 これは、バイトが 0x00、0x01 のため、リトル エンディアン定数です。 |
 
 ### <a name="set"></a>Set
 
@@ -155,7 +155,7 @@ MBIM_COMMAND_DONE で InformationBuffer には MBIM_VERSION_INFO 構造体が含
 
 ### <a name="unsolicited-events"></a>要請されていないイベント
 
-適用できません。
+該当なし。
 
 ### <a name="status-codes"></a>状態コード
 
@@ -199,10 +199,10 @@ MBIM_COMMAND_DONE で InformationBuffer には MBIM_VERSION_INFO 構造体が含
 
 |  | 設定 | クエリ | 通知 |
 | --- | --- | --- | --- |
-| コマンド | MBIM_SET_REGISTRATION_STATE | 空 | 該当なし |
+| Command | MBIM_SET_REGISTRATION_STATE | Empty | 該当なし |
 | 応答 | MBIM_REGISTRATION_STATE_INFO_V2 | MBIM_REGISTRATION_STATE_INFO_V2 | MBIM_REGISTRATION_STATE_INFO_V2 |
 
-### <a name="query"></a>クエリ
+### <a name="query"></a>Query
 
 Null で、InformationBuffer と、InformationBufferLength は 0 になります。
 
@@ -216,7 +216,7 @@ MBIM_COMMAND_DONE で InformationBuffer には、次の MBIM_REGISTRATION_STATE_
 
 #### <a name="mbimregistrationstateinfov2"></a>MBIM_REGISTRATION_STATE_INFO_V2
 
-| Offset | サイズ | フィールド | 種類 | 説明 |
+| Offset | サイズ | フィールド | 型 | 説明 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | NwError | UINT32 | ネットワーク固有のエラー。 表 10 44 インチ、 [MBIM 仕様リビジョン 1.0](https://www.usb.org/sites/default/files/MBIM10Errata1_073013.zip) NwError の原因のコードについて説明します。 |
 | 4 | 4 | RegisterState | MBIM_REGISTER_STATE | テーブルに 10 46 を参照してください、 [MBIM 仕様リビジョン 1.0](https://www.usb.org/sites/default/files/MBIM10Errata1_073013.zip)します。 |
@@ -255,10 +255,10 @@ MBIM_COMMAND_DONE で InformationBuffer には、次の MBIM_REGISTRATION_STATE_
 
 |  | 設定 | クエリ | 通知 |
 | --- | --- | --- | --- |
-| コマンド | MBIM_SET_PACKET_SERVICE | 空 | 該当なし |
+| Command | MBIM_SET_PACKET_SERVICE | Empty | 該当なし |
 | 応答 | MBIM_PACKET_SERVICE_INFO_V2 | MBIM_PACKET_SERVICE_INFO_V2 | MBIM_PACKET_SERVICE_INFO_V2 |
 
-### <a name="query"></a>クエリ
+### <a name="query"></a>Query
 
 Null で、InformationBuffer と、InformationBufferLength は 0 になります。
 
@@ -272,7 +272,7 @@ MBIM_COMMAND_DONE で InformationBuffer には MBIM_PACKET_SERVICE_INFO_V2 構�
 
 #### <a name="mbimpacketserviceinfov2"></a>MBIM_PACKET_SERVICE_INFO_V2
 
-| Offset | サイズ | フィールド | 種類 | 説明 |
+| Offset | サイズ | フィールド | 型 | 説明 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | NwError | UINT32 | ネットワーク固有のエラー。 表 10 44 インチ、 [MBIM 仕様リビジョン 1.0](https://www.usb.org/sites/default/files/MBIM10Errata1_073013.zip) NwError の原因のコードについて説明します。 |
 | 4 | 4 | PacketServiceState | MBIM_PACKET_SERVICE_STATE | テーブルに 10-53 を参照してください、 [MBIM 仕様リビジョン 1.0](https://www.usb.org/sites/default/files/MBIM10Errata1_073013.zip)します。 | 
@@ -312,10 +312,10 @@ RSRP と SNR フィールドでは、有効である、対応する SystemType �
 
 |  | 設定 | クエリ | 通知 |
 | --- | --- | --- | --- |
-| コマンド | MBIM_SET_SIGNAL_STATE | 空 | 該当なし |
+| Command | MBIM_SET_SIGNAL_STATE | Empty | 該当なし |
 | 応答 | MBIM_SIGNAL_STATE_INFO_V2 | MBIM_SIGNAL_STATE_INFO_V2 | MBIM_SIGNAL_STATE_INFO_V2 |
 
-### <a name="query"></a>クエリ
+### <a name="query"></a>Query
 
 Null で、InformationBuffer と、InformationBufferLength は 0 になります。
 
@@ -329,7 +329,7 @@ MBIM_COMMAND_DONE で InformationBuffer には、次の MBIM_SIGNAL_STATE_INFO_V
 
 #### <a name="mbimsignalstateinfov2"></a>MBIM_SIGNAL_STATE_INFO_V2
 
-| Offset | サイズ | フィールド | 種類 | 説明 |
+| Offset | サイズ | フィールド | 型 | 説明 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | Rssi | UINT32 | テーブル 10.58 を参照してください、 [MBIM 仕様リビジョン 1.0](https://www.usb.org/sites/default/files/MBIM10Errata1_073013.zip)します。 |
 | 4 | 4 | ErrorRate | UINT32 | テーブル 10.58 を参照してください、 [MBIM 仕様リビジョン 1.0](https://www.usb.org/sites/default/files/MBIM10Errata1_073013.zip)します。 |
@@ -344,7 +344,7 @@ MBIM_COMMAND_DONE で InformationBuffer には、次の MBIM_SIGNAL_STATE_INFO_V
 
 次の MBIM_RSRP_SNR 構造が使用される、 **DataBuffer** MBIM_SIGNAL_STATE_INFO_V2 構造体の。
 
-| Offset | サイズ | フィールド | 種類 | 説明 |
+| Offset | サイズ | フィールド | 型 | 説明 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | elementCount | UINT32 | この要素に続く RSRP_SNR エントリの数。 |
 | 4 | 4 | DataBuffer | DATABUFFER | MBIM_RSRP_SNR_INFO 構造として指定された各 RSRP_SNR のレコードの配列。 |
@@ -358,7 +358,7 @@ MBIM_COMMAND_DONE で InformationBuffer には、次の MBIM_SIGNAL_STATE_INFO_V
         <th>Offset</th>
         <th>サイズ ></th>
         <th>フィールド</th>
-        <th>種類</th>
+        <th>型</th>
         <th>説明</th>
     </tr>
     <tr>
@@ -381,24 +381,24 @@ MBIM_COMMAND_DONE で InformationBuffer には、次の MBIM_SIGNAL_STATE_INFO_V
                     <td>1</td>
                 </tr>
                 <tr>
-                    <td>...</td>
-                    <td>...</td>
+                    <td>[...]</td>
+                    <td>[...]</td>
                 </tr>
                 <tr>
                     <td>-138 より小さい</td>
                     <td>18</td>
                 </tr>
                 <tr>
-                    <td>...</td>
-                    <td>...</td>
+                    <td>[...]</td>
+                    <td>[...]</td>
                 </tr>
                 <tr>
                     <td>-45 より小さい</td>
                     <td>111</td>
                 </tr>
                 <tr>
-                    <td>...</td>
-                    <td>...</td>
+                    <td>[...]</td>
+                    <td>[...]</td>
                 </tr>
                 <tr>
                     <td>-31 からより小さい</td>
@@ -443,8 +443,8 @@ MBIM_COMMAND_DONE で InformationBuffer には、次の MBIM_SIGNAL_STATE_INFO_V
                     <td>3</td>
                 </tr>
                 <tr>
-                    <td>...</td>
-                    <td>...</td>
+                    <td>[...]</td>
+                    <td>[...]</td>
                 </tr>
                 <tr>
                     <td>39.5 より小さい</td>

@@ -6,12 +6,12 @@ keywords:
 - カーネル デバッグ ストリーム、ビデオ ストリーム失速、ログ記録
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: de084788008845a03de3b2db7ff99a07b386c570
-ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
+ms.openlocfilehash: 8bb20d0d2880a08f635c67882b71761d52f65cc6
+ms.sourcegitcommit: b25275c2662bfdbddd97718f47be9bd79e6f08df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67716880"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67866520"
 ---
 # <a name="using-logging-to-track-important-events"></a>ログを使用した重要イベントの追跡
 
@@ -49,11 +49,11 @@ LOGENTRY g_Log [LOGSIZE];
     g_Log [i].Arg [1] = (ULONG)(arg2); \
     g_Log [i].Arg [2] = (ULONG)(arg3); \
 } while (0)
-```dbgcmd
+```
 
-Then, use a simple "dc g\_Log" to view the contents of the **g\_Log** array in the debugger.
+単純なを使用して、"dc g\_ログ"の内容を表示、 **g\_ログ**デバッガーでの配列。
 
-The following example uses the above memory-based scheme to determine the cause of a processing stall. Output is from an AVStream streaming scenario in graphedt. The following minidriver events were logged:
+次の例では、上のメモリに基づくスキームを使用して、処理の停止の原因を特定します。 出力は graphedt で AVStream ストリーミングのシナリオです。 次のミニドライバー イベントがログに記録されました。
 
 <table>
 <colgroup>
@@ -62,41 +62,41 @@ The following example uses the above memory-based scheme to determine the cause 
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Abbreviation</th>
-<th align="left">Description</th>
+<th align="left">省略形</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><em>Strt</em></p></td>
-<td align="left"><p>This event occurs when the minidriver first queues buffers for the device from within the minidriver's <em>Start</em> dispatch.</p></td>
+<td align="left"><p><em>エラー</em></p></td>
+<td align="left"><p>このイベントは、まずキュー ミニドライバーの内からデバイスのバッファーに、ミニドライバーときに発生します。<em>開始</em>ディスパッチします。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><em>Prc&lt;</em></p></td>
-<td align="left"><p>This event occurs at the start of the minidriver's <em>Process</em> dispatch.</p></td>
+<td align="left"><p><em>中華人民共和国&lt;</em></p></td>
+<td align="left"><p>このイベントは、のミニドライバーの開始時に発生します<em>プロセス</em>ディスパッチします。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><em>AddB</em></p></td>
-<td align="left"><p>This event occurs when the minidriver queues buffers to the device from within its <em>Process</em> dispatch.</p></td>
+<td align="left"><p>このイベントは、内からデバイスにバッファー キューに入れ、ミニドライバーときに発生します。 その<em>プロセス</em>ディスパッチします。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><em>DPC&lt;</em></p></td>
-<td align="left"><p>This event occurs at the start of the minidriver's <em>CallOnDPC</em>. It indicates buffer completion.</p></td>
+<td align="left"><p>このイベントは、のミニドライバーの開始時に発生します<em>CallOnDPC</em>します。 バッファーの完了を示します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><em>Atmp</em></p></td>
-<td align="left"><p>This event occurs when the minidriver calls from within the DPC to <strong>KsPinAttemptProcessing</strong>.</p></td>
+<td align="left"><p>このイベントに DPC 内から、ミニドライバーを呼び出すときに発生します。 <strong>KsPinAttemptProcessing</strong>します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><em>Dele</em></p></td>
-<td align="left"><p>This event occurs when the minidriver calls from within the DPC to delete a clone stream pointer.</p></td>
+<td align="left"><p>このイベントは、複製ストリーム ポインターを削除する DPC 内から、ミニドライバーの呼び出し時に発生します。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-Log excerpts are as follows:
+ログの抜粋は、次のとおりです。
 
 ```text
 f9494b80  3c435044 816e2c90 00000000 00000000  DPC<.,n.........

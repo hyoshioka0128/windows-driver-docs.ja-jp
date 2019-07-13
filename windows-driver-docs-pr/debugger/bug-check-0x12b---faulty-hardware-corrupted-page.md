@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f93b4456bb1d768526bdca891d02c925c1e25ef
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: f5a414b0aa9bec8934caa83784be04c41b8fb838
+ms.sourcegitcommit: b25275c2662bfdbddd97718f47be9bd79e6f08df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67520647"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67866530"
 ---
 # <a name="bug-check-0x12b-faultyhardwarecorruptedpage"></a>バグ チェック 0x12B:障害のある\_ハードウェア\_破損した\_ページ
 
@@ -114,14 +114,13 @@ ms.locfileid: "67520647"
 
 このバグチェックが物理メモリ アクセスによるメモリの破損によってのみ実行できます。 物理メモリの破損の原因は次のとおりです。
 
-1.  欠陥のある RAM ハードウェア
-2.  ドライバーまたはデバイスが正しくない DMA 操作または関連付けられている MDL 経由で物理ページを正しく変更します。
-3.  ハードウェア デバイスまたはファームウェアのファームウェアが不正に電力の変化全体で物理的なページの変更などのメモリの破損が原因で破損しています。
+1. 欠陥のある RAM ハードウェア
+2. ドライバーまたはデバイスが正しくない DMA 操作または関連付けられている MDL 経由で物理ページを正しく変更します。
+3. ハードウェア デバイスまたはファームウェアのファームウェアが不正に電力の変化全体で物理的なページの変更などのメモリの破損が原因で破損しています。
 
 注: 破損は、シングル ビット エラーによって発生したし、のバグ チェックが生成することがなく、この条件を自動的に修正がある場合、圧縮されたストア マネージャーを検出できます。 このバグチェックは、単一ビット エラーによって破損の原因がない場合、圧縮されたストア マネージャーによって報告されます。
 
-Windows メモリ マネージャーとメモリの圧縮の詳細については、次を参照してください。[内部 7 の Windows エディションのパート 1](https://docs.microsoft.com/en-us/sysinternals/learn/windows-internals) Pavel Yosifovich、E. のある Mark Russinovich、David A. Solomon、Alex Ionescu でします。
-
+Windows メモリ マネージャーとメモリの圧縮の詳細については、次を参照してください。[内部 7 の Windows エディションのパート 1](https://docs.microsoft.com/sysinternals/learn/windows-internals) Pavel Yosifovich、E. のある Mark Russinovich、David A. Solomon、Alex Ionescu でします。
 
 ## <a name="resolution"></a>解決方法
 -----
@@ -130,20 +129,11 @@ Windows メモリ マネージャーとメモリの圧縮の詳細について�
 
 このバグ チェックが RAM ハードウェアの欠陥によって発生した場合、調査には、Windows メモリ診断ツールを実行します。 コントロール パネルの検索ボックスには、メモリを入力し、クリックして *、コンピューターのメモリの問題を診断*します。テストの実行後は、イベント ビューアーを使用して、システム ログで結果を表示します。 探して、 *MemoryDiagnostics 結果*結果を表示するエントリ。
 
-
 ## <a name="see-also"></a>関連項目
 ----------
 
 [バグチェック コード リファレンス](bug-check-code-reference2.md)
 
-[Windows カーネル モードのメモリ マネージャー](https://docs.microsoft.com/en-us/windows-hardware/drivers/kernel/windows-kernel-mode-memory-manager)
+[Windows カーネル モードのメモリ マネージャー](https://docs.microsoft.com/windows-hardware/drivers/kernel/windows-kernel-mode-memory-manager)
 
 [Channel 9 ビデオ メモリ圧縮](https://channel9.msdn.com/Blogs/Seth-Juarez/Memory-Compression-in-Windows-10-RTM)
-
- 
-
- 
-
-
-
-

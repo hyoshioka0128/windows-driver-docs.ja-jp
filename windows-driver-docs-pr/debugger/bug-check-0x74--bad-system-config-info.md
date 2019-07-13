@@ -13,15 +13,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 67ec2098ba377f1bf3b54e56cf08c214da3faac8
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 837a976c122fc1f49a06186b47b80c8cd9724b20
+ms.sourcegitcommit: b25275c2662bfdbddd97718f47be9bd79e6f08df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519225"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67866525"
 ---
 # <a name="bug-check-0x74-badsystemconfiginfo"></a>バグ チェック 0x74:不適切な\_システム\_CONFIG\_情報
-
 
 不適切な\_システム\_CONFIG\_情報のバグ チェックが 0x00000074 の値を持ちます。 このバグ チェックでは、レジストリにエラーがあることを示します。
 
@@ -81,7 +80,7 @@ ms.locfileid: "67519225"
 
 [ **! 分析**](-analyze.md)バグ チェックに関する情報を表示拡張機能をデバッグおよび根本原因を突き止めるに役に立ちます。
 
-```
+```dbgcmd
 BAD_SYSTEM_CONFIG_INFO (74)
 Can indicate that the SYSTEM hive loaded by the osloader/NTLDR
 was corrupt.  This is unlikely, since the osloader will check
@@ -104,14 +103,14 @@ Arg4: ffffffffc000014c, usually the NT status code.
 
 使用して、 [! エラー](-error.md)パラメーター 4 に NTSTATUS 値に関する情報を表示する拡張機能。
 
-```
+```dbgcmd
 2: kd> !ERROR ffffffffc000014c
 Error code: (NTSTATUS) 0xc000014c (3221225804) - {The Registry Is Corrupt}  The structure of one of the files that contains Registry data is corrupt, or the image of the file in memory is corrupt, or the file could not be recovered because the alternate copy or log was absent or corrupt.
 ```
 
 使用して、 [! reg](-reg.md)拡張子レジストリ ハイブが存在する例については、レジストリに関する情報を表示します。
 
-```
+```dbgcmd
 !reg hivelist
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -127,7 +126,7 @@ Error code: (NTSTATUS) 0xc000014c (3221225804) - {The Registry Is Corrupt}  The 
 
 使用して、! reg openkeys コマンドをどのレジストリ キーが開放されていた。
 
-```
+```dbgcmd
 2: kd> !reg openkeys
 
 Hive: \REGISTRY\MACHINE\SYSTEM
@@ -147,25 +146,16 @@ Index 5:     e9dd6ce5 kcb=ffffd805e4180e48 cell=00812970 f=00200000 \REGISTRY\MA
 
 バグ チェックはオンデマンドで再現できる場合は、WinDbg のプレビューを使用してタイム トラベル トレースを取ることの可能性を調査します。 詳細については、次を参照してください。[タイム トラベルのデバッグ - 概要](time-travel-debugging-overview.md)します。
 
-
-<a name="remarks"></a>注釈
+<a name="remarks"></a>コメント
 ----------
 
 セーフ モードで起動してみてくださいし、通常どおり、OS を再起動します。 再起動に問題が解決しない場合、レジストリの破損があまり広範囲にわたってします。 次の手順を実行してください。
 
--   システム復元ポイントがある場合は、以前の復元ポイントに復元してみてください。
--   お使いの PC をリセットします。
--   インストール メディアを使用して、復元またはお使いの PC をリセットします。
--   インストール メディアを使用して、Windows を再インストールします。
+- システム復元ポイントがある場合は、以前の復元ポイントに復元してみてください。
+- お使いの PC をリセットします。
+- インストール メディアを使用して、復元またはお使いの PC をリセットします。
+- インストール メディアを使用して、Windows を再インストールします。
 
 詳細については、次を参照してください。 [Windows 10 での回復オプション](https://support.microsoft.com/help/12415/windows-10-recovery-options#)します。
 
-このサポートの記事では、このバグ チェック コードについて説明します。[エラー 0x74:Bad_system_config_info](https://support.microsoft.com/en-us/help/4028653/windows-error-0x74-badsystemconfiginfo)
-
- 
-
- 
-
-
-
-
+このサポートの記事では、このバグ チェック コードについて説明します。[エラー 0x74:Bad_system_config_info](https://support.microsoft.com/help/4028653/windows-error-0x74-badsystemconfiginfo)

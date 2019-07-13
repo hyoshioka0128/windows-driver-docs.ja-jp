@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ce3ed6ab4ad9d0e405732a342d71707cc16b485
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: bb88f819aba66830ae6e6b3e3f6fe11d6b1080e5
+ms.sourcegitcommit: b25275c2662bfdbddd97718f47be9bd79e6f08df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519713"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67866509"
 ---
 # <a name="bug-check-0x1c7-storedatastructurecorruption"></a>バグ チェック 0x1C7:ストア\_データ\_構造\_破損
 
@@ -73,7 +73,7 @@ ms.locfileid: "67519713"
 2.  ドライバーまたはデバイスが正しくない DMA 操作または関連付けられている MDL 経由で物理ページを正しく変更します。
 3.  ハードウェア デバイスまたはファームウェアのファームウェアが不正に電力の変化全体で物理的なページの変更などのメモリの破損が原因で破損しています。
 
-Windows メモリ マネージャーの詳細については、次を参照してください。[内部 7 の Windows エディションのパート 1](https://docs.microsoft.com/en-us/sysinternals/learn/windows-internals) Pavel Yosifovich、E. のある Mark Russinovich、David A. Solomon、Alex Ionescu でします。
+Windows メモリ マネージャーの詳細については、次を参照してください。[内部 7 の Windows エディションのパート 1](https://docs.microsoft.com/sysinternals/learn/windows-internals) Pavel Yosifovich、E. のある Mark Russinovich、David A. Solomon、Alex Ionescu でします。
 
 ## <a name="resolution"></a>解決方法
 -----
@@ -87,4 +87,4 @@ Windows メモリ マネージャーの詳細については、次を参照し�
 
 [バグチェック コード リファレンス](bug-check-code-reference2.md)
 
-[Windows カーネル モードのメモリ マネージャー](https://docs.microsoft.com/en-us/windows-hardware/drivers/kernel/windows-kernel-mode-memory-manager)
+[Windows カーネル モードのメモリ マネージャー](https://docs.microsoft.com/windows-hardware/drivers/kernel/windows-kernel-mode-memory-manager)

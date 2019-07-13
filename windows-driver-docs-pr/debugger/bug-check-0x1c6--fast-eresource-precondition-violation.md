@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c8f9d20afa826a86a29a6fb9757527934bd3ff0
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: b8dd793f18c7a592bd14a8490bb0399d605bb741
+ms.sourcegitcommit: b25275c2662bfdbddd97718f47be9bd79e6f08df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519717"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67866506"
 ---
 # <a name="bug-check-0x1c6-fasteresourcepreconditionviolation"></a>バグ チェック 0x1C6:高速\_÷ リソース\_PRECONDITION\_違反
 
@@ -39,7 +39,7 @@ ms.locfileid: "67519717"
 
 **違反の種類**
 
-```
+```text
             0x0 : The Irql of the caller was greater than the maximum allowed
                   Irql for the routine.
                 2 - Irql of the caller.

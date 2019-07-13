@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 735c9a5e36c12ac4b9ff14f1f5872d315970960c
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: c13dd820784cd03a995d42c235fd9074c7d065d9
+ms.sourcegitcommit: b25275c2662bfdbddd97718f47be9bd79e6f08df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67518887"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67866523"
 ---
 # <a name="bug-check-0xd1-driverirqlnotlessorequal"></a>バグ チェック 0xD1:ドライバー\_IRQL\_いない\_少ない\_または\_と等しい
 
@@ -56,8 +56,8 @@ ms.locfileid: "67518887"
 <td align="left"><p>3</p></td>
 <td align="left"><p><strong>0:</strong>Read</p>
 <p><strong>1:</strong>書き込み</p>
-<p><strong>2:</strong>実行する</p>
-<p><strong>8:</strong>実行する</p>
+<p><strong>2:</strong>Execute</p>
+<p><strong>8:</strong>Execute</p>
 </td>
 </tr>
 <tr class="even">
@@ -67,14 +67,12 @@ ms.locfileid: "67518887"
 </tbody>
 </table>
 
- 
-
 <a name="cause"></a>原因
 -----
 
 ドライバーが、アドレスはページング可能な (または完全に有効でない) にアクセスしようとした通常の IRQL が高すぎます。
 
-これは次のような事項が原因で発生します。
+考えられる原因を以下に示します。
 
 1. DISPATCH_LEVEL 以上で実行中に (NULL または解放されたポインターの場合) などの無効なポインターを逆参照します。
 2. 同じか上位 DISPATCH_LEVEL ページング可能なデータにアクセスします。
@@ -99,7 +97,7 @@ ms.locfileid: "67518887"
 
 [ **! 分析**](-analyze.md)バグ チェックに関する情報を表示拡張機能をデバッグおよび根本原因を突き止めるに役に立ちます。
 
-```
+```dbgcmd
 DRIVER_IRQL_NOT_LESS_OR_EQUAL (d1)
 An attempt was made to access a pageable (or completely invalid) address at an
 interrupt request level (IRQL) that is too high.  This is usually
@@ -118,7 +116,7 @@ Arg4: fffff808adc386a6, address which referenced memory
 
 使用して、`!IRQL`デバッガー中断する前に、ターゲット コンピューター上のプロセッサの割り込み要求レベル (IRQL) に関する情報を表示するコマンド。
 
-```
+```dbgcmd
 0: kd> !irql
 Debugger saved IRQL for processor 0x0 -- 2 (DISPATCH_LEVEL)
 ```
@@ -141,7 +139,7 @@ Debugger saved IRQL for processor 0x0 -- 2 (DISPATCH_LEVEL)
 
 Driver Verifier は、ドライバーの動作を確認するのにはリアルタイムで実行されているツールです。 たとえば、Driver Verifier は、メモリ プールなどのメモリ リソースの使用を確認します。 ドライバー コードの実行でエラーが表示される、さらに細かく検証するドライバー コードの部分を許可する例外が事前に作成されます。 ドライバー検証マネージャーは、Windows に組み込まれているしはすべての Windows Pc で使用できます。 ドライバー検証マネージャーを起動する入力*Verifer*コマンド プロンプトでします。 確認するにはどのドライバーを構成することができます。 ドライバーを検証するコードは実行時にオーバーヘッドを追加、のでお試しくださいし、可能なドライバーの最小数を確認します。 詳細については、次を参照してください。 [Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)します。
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>コメント
 -------
 
 Windows デバッガーを使用してこの問題に取り組むを備えていない場合は、基本的なトラブルシューティングの手法を使用できます。

@@ -14,12 +14,12 @@ api_name:
 - blackboxscm
 api_type:
 - NA
-ms.openlocfilehash: ccd8d70b2c02a57c6a280fa0bd7c61cb406cfc83
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0d2a99ce3a08828104582a8604e709653b26f336
+ms.sourcegitcommit: b25275c2662bfdbddd97718f47be9bd79e6f08df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334678"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67866497"
 ---
 # <a name="blackboxscm"></a>!blackboxscm
 
@@ -70,7 +70,7 @@ Ext.dll
 
 複数のサービスが一覧表示されますが表示されている最初のサービスのみ失敗の分析用の通常です。  これは、これらの要求を最初のサービスが実際には、制御要求を受信しただけの SCM (サービス コントロール マネージャー) が連続的に待機するためです。
 
-SCM の詳細については、次を参照してください。[サービス コントロール マネージャー](https://docs.microsoft.com/en-us/windows/desktop/Services/service-control-manager)します。
+SCM の詳細については、次を参照してください。[サービス コントロール マネージャー](https://docs.microsoft.com/windows/desktop/Services/service-control-manager)します。
 
 
 ### <a name="span-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span>追加情報

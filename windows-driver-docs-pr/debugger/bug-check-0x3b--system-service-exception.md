@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 69821c0fd2ba60a64abaf9734395ce7fab749b44
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 74be7142755155a4112c7fc40355f1c6452b13b1
+ms.sourcegitcommit: b25275c2662bfdbddd97718f47be9bd79e6f08df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519481"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67866527"
 ---
 # <a name="bug-check-0x3b-systemserviceexception"></a>バグ チェック 0x3B:システム\_サービス\_例外
 
@@ -74,25 +74,25 @@ ms.locfileid: "67519481"
 
 一般的な例外コードは次のとおりです。
 
--   0x80000003:ステータス\_ブレークポイント
+- 0x80000003:ステータス\_ブレークポイント
 
-    システムにカーネル デバッガーが関連付けられていない場合、ブレークポイントまたはアサートが発生しました。
+システムにカーネル デバッガーが関連付けられていない場合、ブレークポイントまたはアサートが発生しました。
 
--   0xC0000005:ステータス\_アクセス\_違反
+- 0xC0000005:ステータス\_アクセス\_違反
 
-    メモリ アクセス違反が発生しました。 (パラメーター 4 のバグ チェックは、ドライバーにアクセスしようとするアドレスです)。
+メモリ アクセス違反が発生しました。 (パラメーター 4 のバグ チェックは、ドライバーにアクセスしようとするアドレスです)。
 
 <a name="resolution"></a>解決方法
 ----------
 
 **この問題をデバッグします。** 
 
-使用して、 [ **.cxr (コンテキスト レコードの表示)** ](-cxr--display-context-record-.md)パラメーター 3 では、コマンドを使用して[ **kb (Display Stack Backtrace)** ](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)します。 また、この停止コードに至るまで、コードにブレークポイントを設定、エラーが発生したコードをシングル ステップ転送しようし、することができますも。 使用して、 [u、ub、uu (Unassemble)]()コマンドをアセンブリのプログラム コードを参照してください。
+使用して、 [ **.cxr (コンテキスト レコードの表示)** ](-cxr--display-context-record-.md)パラメーター 3 では、コマンドを使用して[ **kb (Display Stack Backtrace)** ](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)します。 また、この停止コードに至るまで、コードにブレークポイントを設定、エラーが発生したコードをシングル ステップ転送しようし、することができますも。 使用して、 [u、ub、uu (Unassemble)](u--unassemble-.md)コマンドをアセンブリのプログラム コードを参照してください。
 
 
 [ **! 分析**](-analyze.md)バグ チェックに関する情報を表示拡張機能をデバッグおよび根本原因を突き止めるに役に立ちます。
 
-```
+```dbgcmd
 SYSTEM_SERVICE_EXCEPTION (3b)
 An exception happened while executing a system service routine.
 Arguments:
@@ -113,7 +113,7 @@ Arg4: 0000000000000000, zero.
 
 使用して、 [! エラー](-error.md)パラメーター 1 で、例外コードに関する情報を表示する拡張機能。
 
-```
+```dbgcmd
 2: kd> !error 00000000c0000005
 Error code: (NTSTATUS) 0xc0000005 (3221225477) - The instruction at 0x%p referenced memory at 0x%p. The memory could not be %s.
 ```
@@ -136,7 +136,7 @@ Driver Verifier は、ドライバーの動作を確認するのにはリアル�
 バグ チェックはオンデマンドで再現できる場合は、WinDbg のプレビューを使用してタイム トラベル トレースを取ることの可能性を調査します。 詳細については、次を参照してください。[タイム トラベルのデバッグ - 概要](time-travel-debugging-overview.md)します。
 
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>コメント
 ----------
 
 Windows のバグの一般的なトラブルシューティングのコードを確認、これらの推奨事項に従ってください。
