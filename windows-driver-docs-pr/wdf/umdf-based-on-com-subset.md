@@ -1,6 +1,6 @@
 ---
-title: COM のサブセットに基づく UMDF
-description: COM のサブセットに基づく UMDF
+title: COM サブセットに基づく UMDF
+description: COM サブセットに基づく UMDF
 ms.assetid: 918459a9-a6a2-40b8-8b97-3aabe3e49bfb
 keywords:
 - WDK の UMDF オブジェクト、COM のサブセット
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1aef0031d9c1c71b255a185cb2c648993b33fa15
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531785"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "68229649"
 ---
-# <a name="umdf-based-on-com-subset"></a>COM のサブセットに基づく UMDF
+# <a name="umdf-based-on-com-subset"></a>COM サブセットに基づく UMDF
 
 
 [!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]

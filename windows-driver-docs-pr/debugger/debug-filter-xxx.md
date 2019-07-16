@@ -14,12 +14,12 @@ api_location:
 api_type:
 - HeaderDef
 ms.localizationpriority: medium
-ms.openlocfilehash: 6de3951916319eb4afbeb8a2166bc9a38f2f27a2
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9df8e3b120f5524ee29e376c0a691f5f0e297cfe
+ms.sourcegitcommit: a39a3f4c9f26968e00317574c0d8530ee8ab6f8b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367006"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "67894236"
 ---
 # <a name="debugfilterxxx"></a>デバッグ\_フィルター\_XXX
 
@@ -37,7 +37,7 @@ ms.locfileid: "67367006"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Value</th>
+<th align="left">値</th>
 <th align="left">event</th>
 </tr>
 </thead>
@@ -98,7 +98,7 @@ ms.locfileid: "67367006"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Value</th>
+<th align="left">値</th>
 <th align="left">説明</th>
 </tr>
 </thead>
@@ -137,14 +137,14 @@ ms.locfileid: "67367006"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Value</th>
+<th align="left">値</th>
 <th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>DEBUG_FILTER_GO_HANDLED</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/#wdkgloss-exception" data-raw-source="&lt;em&gt;exception&lt;/em&gt;"><em>例外</em></a>が処理されました。</p></td>
+<td align="left"><p>例外が処理されています。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>DEBUG_FILTER_GO_NOT_HANDLED</p></td>

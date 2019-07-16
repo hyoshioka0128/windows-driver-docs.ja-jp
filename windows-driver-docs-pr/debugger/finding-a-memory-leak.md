@@ -7,34 +7,22 @@ keywords:
 - メモリ リークのデバッグ
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c40c8ffec03de3610ddb26268a5f9f1bff4d698
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5730b74408fa4c8c7c25b06f3f5deaf62ddc3641
+ms.sourcegitcommit: a39a3f4c9f26968e00317574c0d8530ee8ab6f8b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348332"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "67894234"
 ---
 # <a name="finding-a-memory-leak"></a>メモリ リークの検出
-
-
-## <span id="ddk_finding_a_memory_leak_dbg"></span><span id="DDK_FINDING_A_MEMORY_LEAK_DBG"></span>
-
 
 メモリ リークが発生、プロセスは、ページまたは非ページ プールからメモリを割り当てますが、メモリを解放しません。 その結果、これらの制限付きプールのメモリが不足している Windows 速度が低下する原因と、時間の経過と共にします。 メモリが完全になくなると、エラーが表示される場合があります。
 
 このセクションで、次のとおりです。
 
--   [リークが存在するかを決定する](determining-whether-a-leak-exists.md)かわからない場合に使用できる手法について説明します、システムでメモリ リークがあるかどうか。
+- [リークが存在するかを決定する](determining-whether-a-leak-exists.md)かわからない場合に使用できる手法について説明します、システムでメモリ リークがあるかどうか。
 
--   [カーネル モード メモリ リークを検出](finding-a-kernel-mode-memory-leak.md)カーネル モード ドライバーまたはコンポーネントによってリークを検出する方法について説明します。
+- [カーネル モード メモリ リークを検出](finding-a-kernel-mode-memory-leak.md)カーネル モード ドライバーまたはコンポーネントによってリークを検出する方法について説明します。
 
--   [ユーザー モード メモリ リークを検出](finding-a-user-mode-memory-leak.md)ユーザー モード ドライバーまたはアプリケーションによって引き起こされるリークを検出する方法について説明します。
-
- 
-
- 
-
-
-
-
+- [ユーザー モード メモリ リークを検出](finding-a-user-mode-memory-leak.md)ユーザー モード ドライバーまたはアプリケーションによって引き起こされるリークを検出する方法について説明します。
 

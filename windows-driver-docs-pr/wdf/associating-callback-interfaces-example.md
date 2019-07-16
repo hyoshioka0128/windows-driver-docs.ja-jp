@@ -1,6 +1,6 @@
 ---
-title: 関連付けられたコールバック インターフェイスの例
-description: 関連付けられたコールバック インターフェイスの例
+title: コールバック インターフェイスの関連付けの例
+description: コールバック インターフェイスの関連付けの例
 ms.assetid: 6156730b-394c-451c-beea-1b25ba5a1fe3
 keywords:
 - コールバック オブジェクト WDK UMDF
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5f4be15bd42f67d4256b3917a9e1fabe33f5ed5a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557643"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "68229675"
 ---
-# <a name="associating-callback-interfaces-example"></a>関連付けられたコールバック インターフェイスの例
+# <a name="associating-callback-interfaces-example"></a>コールバック インターフェイスの関連付けの例
 
 
 [!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]

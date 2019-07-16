@@ -3,12 +3,12 @@ title: _OSI を使用して ACPI で Windows バージョンを識別する方�
 description: ホスト オペレーティング システムの識別に使用される ACPI ソース言語 (ASL) のオペレーティング システム インターフェイス レベル (\_OSI) メソッドについて説明します。
 ms.date: 11/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: c25144a88437574a1aae4b762e7a459b09637c88
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7211993eb8c4a889a3350414fc1dd6afadd76791
+ms.sourcegitcommit: 3de5c4aa7df9c21fc26dd063c8c4b65d67c83c58
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355798"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68223989"
 ---
 # <a name="how-to-identify-the-windows-version-in-acpi-by-using-osi"></a>_OSI を使用して ACPI で Windows バージョンを識別する方法
 
@@ -16,6 +16,7 @@ ms.locfileid: "67355798"
 
 この情報は、次のオペレーティング システムに適用されます。
 
+- Windows 10 バージョン 1903
 - Windows 10 Version 1809
 - Windows 10 バージョン 1803
 - Windows 10 バージョン 1709
@@ -52,7 +53,7 @@ Windows オペレーティング システムのすべての最新バージョ�
 
 ### <a name="argument"></a>引数
 
-各オペレーティング システムで定義された文字列。 例:
+各オペレーティング システムで定義された文字列。 以下に例を示します。
 
 - 「Windows 2013」for Windows 8.1 および Windows Server 2012 R2
 - Windows 8 および Windows Server 2012 の「Windows 2012」
@@ -78,12 +79,12 @@ Windows オペレーティング システムが 0 xffffffff を返す場合に�
 | OSI 文字列          | 対象 OS                     |
 |---------------------|-------------------------------|
 | Windows 2000        | Windows 2000                  |
-| Windows 2001        | Windows XP                    |
+| Windows の 2001 年        | Windows XP                    |
 | Windows 2001 SP1    | Windows XP SP1                |
 | Windows 2001.1      | Windows Server 2003           |
 | Windows 2001 SP2    | Windows XP SP2                |
 | Windows 2001.1 SP1  | Windows Server 2003 SP1       |
-| Windows 2006        | Windows Vista                 |
+| Windows の 2006 年        | Windows Vista                 |
 | Windows 2006 SP1    | Windows Vista SP1             |
 | Windows 2006.1      | Windows Server 2008           |
 | Windows 2009        | Windows 7、Win Server 2008 R2 |
@@ -95,6 +96,7 @@ Windows オペレーティング システムが 0 xffffffff を返す場合に�
 | Windows 2017.2      | Windows 10 バージョン 1709      |
 | Windows 2018        | Windows 10 バージョン 1803      |
 | Windows 2018.2      | Windows 10 Version 1809      |
+| Windows 2019        | Windows 10 バージョン 1903      |
 
 ### <a name="implementation-note"></a>実装に注意してください。
 

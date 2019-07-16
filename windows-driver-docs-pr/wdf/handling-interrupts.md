@@ -1,15 +1,15 @@
 ---
 title: UMDF ドライバーでの割り込みを処理
-description: 割り込みを処理
+description: 割り込みの処理
 ms.assetid: 5C8CB68A-EAE6-4AF9-8B10-F8B73B50DEB2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e0297939bbc09e62fdfb219e3b079fb3548b18c5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550436"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "68229647"
 ---
 # <a name="handling-interrupts-in-umdf-drivers"></a>UMDF ドライバーでの割り込みを処理
 

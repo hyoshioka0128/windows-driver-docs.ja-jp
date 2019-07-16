@@ -4,12 +4,12 @@ description: Microsoft OS 1.0 記述子の仕様
 ms.assetid: A2B00584-DDD5-42D2-BDBF-116637ABD192
 ms.date: 07/08/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: ba94eb0baf03f07e3ecc1acdacfdffd984f0abfa
-ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
+ms.openlocfilehash: 10dbb8cc465684b78adb90c37c7090e97599bf1b
+ms.sourcegitcommit: 707739250ebdcd74a26d85d8b4217fa81c9c9e95
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67717030"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68181287"
 ---
 # <a name="microsoft-os-10-descriptors-specification"></a>Microsoft OS 1.0 記述子の仕様
 
@@ -66,11 +66,11 @@ Ihv はこの問題に対処するために、Microsoft が Microsoft OS ディ�
 <div class="contentTableWrapper"><table border="0" cellpadding="0" cellspacing="0" class="grid" width="100%" summary="table">
 <tbody>
 <tr align="left" valign="top">
-<td>"11"<br>(0x31 0x31 0x00 0x00 0x00 0x00 0x00 0x00)</td>
+<td>「11」<br>(0x31 0x31 0x00 0x00 0x00 0x00 0x00 0x00)</td>
 <td>Bluetooth 無線 v1.1 に準拠し、Microsoft ドライバー スタックとの互換性</td>
 </tr>
 <tr align="left" valign="top">
-<td>"12"<br>(0x31 0x32 0x00 0x00 0x00 0x00 0x00 0x00)</td>
+<td>「12」<br>(0x31 0x32 0x00 0x00 0x00 0x00 0x00 0x00)</td>
 <td>Bluetooth 無線 v1.2 に準拠し、Microsoft ドライバー スタックとの互換性</td>
 </tr>
 <tr align="left" valign="top">
@@ -133,7 +133,7 @@ Microsoft OS ディスクリプター仕様</strong><br />
 <p>(仕様に権利が条件を作成するので、変更、またはこのような作成、変更、または配布可能性のある方法で、ライセンスの実装を配布する (a) となりますが、a)、ライセンスの作成、または Microsoft の遵守義務を作成するよう主張仕様は (または知的財産権その) または (b) grant、または与えるには、第三者に権限またはマイクロソフトの知的財産や財産権の仕様を immunities purport します。</p>
 <p>(b) その他の権限を損なう、本契約の条件に準拠するために失敗した場合、Microsoft は本契約を終了する可能性があります。 このようなイベントでは、仕様のすべてのコピーを破棄する必要があり、会社の実装をさらに配布する必要があります。</p>
 <p><strong>セクション 4 あらゆる保証の免責。</strong></p>
-<p>仕様が提供される&quot;IS として&quot;いかなる保証もなし。 適用される法令により認められる限り、さらに、Microsoft は一切の保証はありません、制限なしを含む、暗黙の商品性および特定目的に対する適合性の保証と title および非侵害の保証します。 すべての使用または仕様の性能によって生じるリスクなります。</p>
+<p>仕様は、いかなる保証も伴わず"IS"として提供されます。 適用される法令により認められる限り、さらに、Microsoft は一切の保証はありません、制限なしを含む、暗黙の商品性および特定目的に対する適合性の保証と title および非侵害の保証します。 すべての使用または仕様の性能によって生じるリスクなります。</p>
 <p><strong>セクション 5 除外派生的損害、付随的損害です。</strong></p>
 <p><strong>適用される法令により認められる限り、いかなる場合においてマイクロソフトまたはそのサプライヤー負いませんその派生的損害、付随的損害、直接、間接、特別な懲罰、またはその他の損害一切を含め、制限、損害の損失を防ぐ業務利益、業務の中断、業務の情報の損失または他の金銭損失) Microsoft がこのような損害の可能性について知らされていた場合でも、仕様を使用すること、または使用から発生しました。派生的損害または付随的損害に対する賠償責任の制限または除外事項、一部の地域が認められないため、上記の制限がするには適用されません。</strong></p>
 <p><strong>責任のセクション 6 制限します。</strong></p>

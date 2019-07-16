@@ -8,12 +8,12 @@ keywords:
 - 事前に読み込まれたドライバー パッケージ WDK デバイスのインストール
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 70c02af27baab235d5f4d857d4be127a855b8371
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 79ca37a6f43c195f4bd501709e536096b3dd7f07
+ms.sourcegitcommit: 707739250ebdcd74a26d85d8b4217fa81c9c9e95
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369445"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68181280"
 ---
 # <a name="preloading-driver-packages"></a>ドライバー パッケージの事前読み込み
 
@@ -46,6 +46,8 @@ Windows をインストールした後、[ドライバー パッケージ](drive
 %SystemRoot%\inf;...;\\DriverPackageServer\ShareName\Drivers\NIC
 ```
 
+> [!NOTE]
+> ポイントと印刷のクライアント接続を使用してマシンで DevicePath でネットワーク共有を指定すると、過剰なネットワーク共有のアクセスと印刷の遅延があります。 これは、各時間プリンターが、サーバーで変更されたため、クライアントは新しい印刷ドライバーの可用性をチェックする DevicePath ディレクトリを反復処理します。
  
 
  
