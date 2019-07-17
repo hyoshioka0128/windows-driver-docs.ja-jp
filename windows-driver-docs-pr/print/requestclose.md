@@ -24,7 +24,7 @@ ms.locfileid: "63323172"
 
 省略可能な**requestClose**要素を使用して、クライアント コンピューターのイベント通知メッセージを閉じます。
 
-**RequestClose**で要素が定義されている、 *asyncui*この URI に、名前空間:http://schemas.microsoft.com/2003/print/asyncui/v1/requestします。 (このリソースできない場合がありますのいくつかの言語および国。)
+**RequestClose**で要素が定義されている、 *asyncui*この URI に、名前空間: http://schemas.microsoft.com/2003/print/asyncui/v1/request します。 (このリソースできない場合がありますのいくつかの言語および国。)
 
 <a name="usage"></a>使用方法
 -----

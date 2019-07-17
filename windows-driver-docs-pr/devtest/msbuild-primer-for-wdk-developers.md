@@ -34,7 +34,7 @@ Build.exe と (WDK 8) の前に、WDK の以前のバージョンを使用する
 
 
 -   C++ プロジェクトのメインの MSBuild ファイルの拡張子は、.vcxproj です。
--   コマンドが変わって*タスク*、コマンド ライン プロセスの呼び出しだけではありません。 代わりに、タスクは、ビルド操作をアトミックに実行する MSBuild を使用できる実行可能コードの単位。 タスクの完全な一覧を参照してください[MSBuild タスクに固有 Visual c]( https://go.microsoft.com/fwlink/p/?linkid=236121).。
+-   コマンドが変わって*タスク*、コマンド ライン プロセスの呼び出しだけではありません。 代わりに、タスクは、ビルド操作をアトミックに実行する MSBuild を使用できる実行可能コードの単位。 タスクの完全な一覧を参照してください[MSBuild タスクに固有 Visual c]( https://go.microsoft.com/fwlink/p/?linkid=236121)。
 -   MSBuild では、その共通言語ランタイム (CLR) アセンブリからのタスクのインポート、 **UsingTask**要素として次の例を示します。
     ```
     <UsingTask TaskName="TaskName" AssemblyName="AssemblyName" />
