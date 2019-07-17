@@ -6,18 +6,14 @@ keywords:
 - シンボル、ページ アウト ヘッダーの問題
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 267b6ef8d4ad4a9286e8601146cd056277cd12c3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 959cafc3fd876175da5268c0a77c6e3ff484ff5a
+ms.sourcegitcommit: d4ade685d5401960be55f9b44861547fbd222d35
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63350548"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68246943"
 ---
 # <a name="reading-symbols-from-paged-out-headers"></a>ページアウトされたヘッダーからのシンボルの読み取り
-
-
-## <span id="ddk_reading_symbols_from_paged_out_headers_dbg"></span><span id="DDK_READING_SYMBOLS_FROM_PAGED_OUT_HEADERS_DBG"></span>
-
 
 カーネル デバッガーでは、そのモジュールに対応しているシンボルを確認するには読み込まれている各モジュールのイメージのヘッダーを読み取る必要があります。
 
@@ -25,15 +21,15 @@ ms.locfileid: "63350548"
 
 次の手順は、この問題を解決するために使用できます。
 
-**ページアウトのヘッダーのシンボルを取得するには**
+## <a name="to-acquire-symbols-for-paged-out-headers"></a>ページアウトのヘッダーのシンボルを取得するには
 
-1.  カーネル自体の 2 番目のコピーを作成します。 おそらく、これをネットワーク共有に配置する最も簡単なになります。
+1. カーネル自体の 2 番目のコピーを作成します。 おそらく、これをネットワーク共有に配置する最も簡単なになります。
 
-2.  この共有のルート ディレクトリをシンボル パスに追加します。 参照してください[シンボル パス](symbol-path.md)シンボル パスを変更する方法についてはします。
+2. この共有のルート ディレクトリをシンボル パスに追加します。 参照してください[シンボル パス](symbol-path.md)シンボル パスを変更する方法についてはします。
 
-3.  使用して、 [ **.reload (モジュールの再読み込み)** ](-reload--reload-module-.md)コマンド。
+3. 使用して、 [ **.reload (モジュールの再読み込み)** ](-reload--reload-module-.md)コマンド。
 
-4.  使用して、 [ **! sym ノイズの多い**](-sym.md)拡張機能コマンドより詳細な出力を参照してください。 これを使用する場合は、どのシンボルが、対象のコンピューター上のモジュール イメージから読み込まれ、カーネル モジュールのコピーから読み込まれてを参照してくださいできなきます。
+4. 使用して、 [ **! sym ノイズの多い**](-sym.md)拡張機能コマンドより詳細な出力を参照してください。 これを使用する場合は、どのシンボルが、対象のコンピューター上のモジュール イメージから読み込まれ、カーネル モジュールのコピーから読み込まれてを参照してくださいできなきます。
 
 この方法は、デバッガーには、元のファイルが実際にファイルのコピーに一致するかどうかを検証する方法があるないので注意して使用する必要があります。 ネットワーク共有で使用される Windows のバージョンがターゲット コンピューターで使用されているバージョンと一致することが重要です。
 
@@ -109,12 +105,3 @@ fe0c8360  Fs_Rec!ntoskrnl_NULL_THUNK_DATA
 fe0c832c  Fs_Rec!_imp__KeSetEvent
 fe0c9570  Fs_Rec!_NULL_IMPORT_DESCRIPTOR
 ```
-
- 
-
- 
-
-
-
-
-
