@@ -3,45 +3,49 @@ title: デバイスの障害の報告
 description: デバイスの障害の報告
 ms.assetid: ca536547-d51a-4450-8a83-19aac67aab92
 keywords:
-- PnP WDK KMDF、デバイスの障害
-- プラグ アンド プレイ WDK KMDF、デバイスの障害
-- デバイスの障害 WDK KMDF
-- 失敗したデバイス WDK KMDF
+- PnP WDK KMDF、デバイスエラー
+- WDK KMDF のプラグアンドプレイ、デバイスの障害
+- デバイス障害 (WDK KMDF)
+- 失敗したデバイスの WDK KMDF
 - WdfDeviceFailedAttemptRestart
 - WdfDeviceFailedNoRestart
-- デバイスの失敗 WDK KMDF の報告
+- デバイスエラーの報告 (WDK KMDF)
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 265288ede02f6bea67d4b8851ec1ae6dbc81eb1e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
-ms.translationtype: MT
+ms.openlocfilehash: bf23244c8fbc1bc2170417ad64edbfac6ed19d91
+ms.sourcegitcommit: 01291840c4d82eb8f60a723a9a8ee52dbc33a926
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67376286"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68328898"
 ---
 # <a name="reporting-device-failures"></a>デバイスの障害の報告
 
 
-デバイスの失敗を報告する 2 つの方法はあります。
+デバイスの障害を報告するには、次の3つの方法があります。
 
--   戻るときに[デバイス オブジェクトのコールバック関数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/#device-callbacks)、ドライバーは、対象の戻り値を指定できます[NT\_成功](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-ntstatus-values)(*状態*)に等しい**FALSE**します。
+-  [デバイスオブジェクトのコールバック関数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/#device-callbacks)から制御が戻るときに、ドライバーは、 [NT\_の成功](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-ntstatus-values)(*状態*) が**FALSE**になる戻り値を指定できます。
 
--   ドライバーが呼び出せる[ **WdfDeviceSetFailed**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicesetfailed)します。
+-  ドライバーは[**Wdfdevicesetfailed**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicesetfailed)を呼び出すことができます。
 
-どちらの方法では、フレームワークは実質的に、デバイスを削除します。 デバイスのドライバーでは、システム上の他のデバイスはサポートされていません、I/O マネージャーは、ドライバーをアンロードします。
+-  [*Evtdriverdeviceadd*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)コールバックルーチンから制御が戻るときに、関数ドライバーは、 [NT\_の成功](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-ntstatus-values)(*状態*) が**FALSE**になる戻り値を指定できます。 [フィルタ]( https://docs.microsoft.com/en-us/windows-hardware/drivers/install/installing-a-filter-driver)としてインストールされたドライバが[*Evtdriverdeviceadd*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)に失敗した場合、オペレーティングシステムはフィルタデバイスオブジェクトをスキップし、PnP エラーを示しません。
 
-ドライバーのデバイス オブジェクトのコールバック関数がどの NT の値を返す場合\_成功 (*状態*) と等しい**FALSE**フレームワークに通知を再起動しようとし、PnP マネージャー、バスの運転手がそのデバイスを再列挙を要求することでデバイスです。 読み込まれていた場合、ドライバーを再読み込みされます。
+上記の方法では、フレームワークによってデバイスが実質的に削除されます。 デバイスのドライバーがシステム上の他のデバイスをサポートしていない場合は、i/o マネージャーによってドライバーがアンロードされます。
 
-ドライバーを呼び出す場合[ **WdfDeviceSetFailed**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicesetfailed)デバイスを再起動するかどうかを決定する、入力引数が指定されています。 引数の値が**WdfDeviceFailedAttemptRestart**と**WdfDeviceFailedNoRestart**します。
+ドライバーのデバイスオブジェクトコールバック関数が、NT\_SUCCESS (*status*) が**FALSE**に等しい値を返す場合、フレームワークは PnP マネージャーに通知します。これにより、バスドライバーを要求することによってデバイスの再起動が試行されます。デバイスを reenumerate します。 ドライバーがアンロードされた場合は、再読み込みされます。
 
-**UMDF** A UMDF ドライバーはこの値を設定する必要があります**WdfDeviceFailedNoRestart**します。
+ドライバーが[**Wdfdevicesetfailed**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicesetfailed)を呼び出すと、デバイスを再起動するかどうかを決定する入力引数が提供されます。 引数の値は**Wdfdevicefailedattemptrestart**と**WdfDeviceFailedNoRestart**です。
 
-これらの引数値の詳細については、次を参照してください。 [ **WDF\_デバイス\_FAILED\_アクション**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/ne-wdfdevice-_wdf_device_failed_action)します。
-ドライバーのデバイスの前にオブジェクト コールバック関数が返す値を持つどの nt\_成功 (*状態*) と等しい**FALSE**、コールバック関数がを呼び出して再起動を防ぐことができます[ **WdfDeviceSetFailed** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicesetfailed)の入力引数を持つ**WdfDeviceFailedNoRestart**します。 それ以外の場合、これらのコールバック関数を呼び出す必要はありません**WdfDeviceSetFailed**します。
+**UMDF**UMDF 2.15 より前の場合、UMDF ドライバーはこの値を**WdfDeviceFailedNoRestart**に設定する必要があります。 UMDF バージョン2.15 以降では、UMDF ドライバーは、失敗した*アクション*を**Wdfdevicefailedattemptrestart**に設定して、 [**wdfdevicesetfailed**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicesetfailed)呼び出して、基になるバスドライバーが再列挙するように要求できます。 詳細については、「 [**Wdfdevicesetfailed**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicesetfailed)」を参照してください。 
 
-短時間で数回連続して再起動の試行が失敗するは、(再起動、ドライバーは、もう一度、エラーを報告) ため、フレームワークは、デバイスを再起動しようとしています。 停止します。
+UMDF ドライバーでは、この値を**WdfDeviceFailedNoRestart**に設定する必要があります。
 
-場合は、バス ドライバーの[ *EvtDeviceD0Entry* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_entry)関数は、どの NT の値を返します\_成功 (*状態*) と等しい**FALSE**、フレームワークが呼び出すことができますが、 *EvtDeviceD0Entry*関数ドライバー、バス ドライバーの子のデバイスに関連付けられているのです。
+これらの引数値の詳細については、「 [**WDF\_DEVICE\_FAILED\_ACTION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/ne-wdfdevice-_wdf_device_failed_action)」を参照してください。
+ドライバーのデバイスオブジェクトコールバック関数\_が、NT SUCCESS (*status*) が**FALSE**に設定された値を返す前に、コールバック関数は、の入力引数で[**wdfdevicesetfailed**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicesetfailed)を呼び出して再起動を防ぐことができます。**WdfDeviceFailedNoRestart**。 それ以外の場合、これらのコールバック関数は**Wdfdevicesetfailed**を呼び出す必要はありません。
+
+短時間以内に複数回の再起動が失敗した場合 (再起動されたドライバーによってエラーが再度報告される)、フレームワークはデバイスの再起動を停止します。
+
+バスドライバーの[*EvtDeviceD0Entry*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_entry)関数が、\_NT SUCCESS (*status*) が**FALSE**に等しい値を返す場合、そのバスに関連付けられているドライバーの*EvtDeviceD0Entry*関数がフレームワークによって呼び出される可能性があります。ドライバーの子デバイス。
 
  
 

@@ -5,16 +5,16 @@ ms.assetid: 963e9b5b-2b88-41b5-a103-dc4611ff41ea
 keywords:
 - プロセス、プロセス ID (PID)
 - PID (プロセス ID)
-- TList、関連する技術
+- Tlist.exe、関連技術
 - タスク マネージャー
 ms.date: 01/18/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 2add0a5362e6f9bbadf0fdddbc464c7cda144d02
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7a1adf48b784948e13a3e962fa96e0c08993d77a
+ms.sourcegitcommit: b9a65cb309bea3d35048968bdc708e0067276e68
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63371666"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68313216"
 ---
 # <a name="finding-the-process-id"></a>プロセス ID の検索
 
@@ -22,37 +22,37 @@ ms.locfileid: "63371666"
 ## <span id="ddk_finding_the_process_id_dbg"></span><span id="DDK_FINDING_THE_PROCESS_ID_DBG"></span>
 
 
-Microsoft Windows で実行されている各プロセスと呼ばれる一意の 10 進数が割り当てられて、*プロセス ID*、または*PID*します。 この数は、プロセスを指定して、デバッガーがアタッチするときに使用されます。
+Microsoft Windows で実行されている各プロセスには、プロセス ID (PID) と呼ばれる一意の10進数が割り当てられます。 この数値は、デバッガーをアタッチするときのプロセスを指定するために使用されます。
 
-特定のアプリケーションの PID を決定するいくつかの方法があります: を使用して、タスク マネージャーを使用して、 **tasklist**コマンド、TList ユーティリティを使用して、またはデバッガーを使用します。
+タスクマネージャー、 **tasklist**コマンド、tlist.exe ユーティリティ、またはデバッガーを使用して、特定のアプリの PID を特定できます。
 
-### <a name="span-idtaskmanagerspanspan-idtaskmanagerspantask-manager"></a><span id="task_manager"></span><span id="TASK_MANAGER"></span>タスク マネージャー
+## <a name="span-idtaskmanagerspanspan-idtaskmanagerspantask-manager"></a><span id="task_manager"></span><span id="TASK_MANAGER"></span>タスクマネージャー
 
-*タスク マネージャー*さまざまな方法でアクティブにすることがありますが、CTRL + ALT + DEL キーを押して、クリックして、最も簡単なは**タスク マネージャー**します。
+タスクマネージャーはさまざまな方法で開くことができますが、最も簡単な方法は、Ctrl + Alt + Del キーを押してから **[タスクマネージャー]** を選択することです。
 
-**プロセス** タブで、をクリックして、**詳細** タブに、その他の有用な情報と共に、PID を参照してください。
+**[プロセス]** タブで、 **[詳細]** を選択して、PID とその他の有用な情報を確認します。
 
-カーネルの一部のエラーは、タスク マネージャーのグラフィカル インターフェイスで遅延を引き起こす可能性があります。
+カーネルエラーによっては、タスクマネージャーのグラフィカルインターフェイスで遅延が発生することがあります。
 
-### <a name="span-idthetasklistcommandspanspan-idthetasklistcommandspanthe-tasklist-command"></a><span id="the_tasklist_command"></span><span id="THE_TASKLIST_COMMAND"></span>Tasklist コマンド
+## <a name="span-idthetasklistcommandspanspan-idthetasklistcommandspanthe-tasklist-command"></a><span id="the_tasklist_command"></span><span id="THE_TASKLIST_COMMAND"></span>**Tasklist**コマンド
 
-使用して、 **tasklist**すべてのプロセスや、Pid、さまざまなその他の詳細を表示するコマンド プロンプト ウィンドウからコマンド。
+コマンドプロンプトから**tasklist**コマンドを使用して、すべてのプロセス、その pid、およびその他のさまざまな詳細を表示します。
 
-### <a name="span-idtlistspanspan-idtlistspantlist"></a><span id="tlist"></span><span id="TLIST"></span>TList
+## <a name="span-idtlistspanspan-idtlistspantlist-utility"></a><span id="tlist"></span><span id="TLIST"></span>Tlist.exe ユーティリティ
 
-TList (タスク リスト ビューアー、tlist.exe) は、タスク、またはローカル コンピューターで現在実行中のユーザー モード プロセスの一覧を表示するコマンド ライン ユーティリティです。 TList は、Windows のツールをデバッグ パッケージに含まれます。
+タスク一覧ビューアー (Tlist.exe) または tlist.exe は、ローカルコンピューターで現在実行されているタスクまたはユーザーモードプロセスの一覧を表示するコマンドラインユーティリティです。 Tlist.exe は、Windows 用デバッグツールパッケージに含まれています。
 
-TList をコマンド プロンプトから実行すると、一意のプロセス id (PID) 番号によってメモリ内ですべてのユーザー モード プロセスの一覧表示されます。 PID、プロセス名、プロセスごとに表示し、プロセスのウィンドウで、そのウィンドウのタイトル。
+コマンドプロンプトから Tlist.exe を実行すると、メモリ内のすべてのユーザーモードプロセスの一覧が一意の PID 番号と共に表示されます。 プロセスごとに、PID、プロセス名、およびプロセスにウィンドウがある場合はそのウィンドウのタイトルが表示されます。
 
-詳細については、次を参照してください。 [TList](tlist.md)します。
+詳細については、「 [tlist.exe](tlist.md)」を参照してください。
 
-### <a name="span-idthetlistdebuggercommandspanspan-idthetlistdebuggercommandspanthe-tlist-debugger-command"></a><span id="the__tlist_debugger_command"></span><span id="THE__TLIST_DEBUGGER_COMMAND"></span>.Tlist のデバッガー コマンド
+## <a name="span-idthetlistdebuggercommandspanspan-idthetlistdebuggercommandspanthe-tlist-debugger-command"></a><span id="the__tlist_debugger_command"></span><span id="THE__TLIST_DEBUGGER_COMMAND"></span>**Tlist.exe**デバッガーコマンド
 
-問題のシステムで実行されているユーザー モード デバッガーが既にある場合、 [ **.tlist (プロセス Id の一覧)** ](-tlist--list-process-ids-.md)コマンドはそのシステム上ですべて Pid の一覧に表示されます。
+問題のシステムで実行されているユーザーモードのデバッガーが既に存在する場合は、 [**tlist.exe (List IDs)** ](-tlist--list-process-ids-.md)コマンドを実行すると、そのシステムのすべての pid の一覧が表示されます。
 
-### <a name="span-idcsrssandusermodedriversspanspan-idcsrssandusermodedriversspancsrss-and-user-mode-drivers"></a><span id="csrss_and_user_mode_drivers"></span><span id="CSRSS_AND_USER_MODE_DRIVERS"></span>CSRSS とユーザー モード ドライバー
+## <a name="span-idcsrssandusermodedriversspanspan-idcsrssandusermodedriversspancsrss-and-user-mode-drivers"></a><span id="csrss_and_user_mode_drivers"></span><span id="CSRSS_AND_USER_MODE_DRIVERS"></span>CSRSS およびユーザーモードドライバー
 
-別のコンピューターで実行されているユーザー モード ドライバーをデバッグするには、クライアント サーバー ランタイム サブシステム (CSRSS) プロセスをデバッグします。 詳細については、次を参照してください。[デバッグ CSRSS](debugging-csrss.md)します。
+別のコンピューターで実行されているユーザーモードドライバーをデバッグするには、クライアントサーバーの実行時サブシステム (CSRSS) プロセスをデバッグします。 詳細については、「 [CSRSS のデバッグ](debugging-csrss.md)」を参照してください。
 
  
 
