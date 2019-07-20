@@ -1,31 +1,31 @@
 ---
 title: パラレル ポートの I/O 要求に対するデバイス固有の操作
-description: パラレル ポートの I/O 要求の操作をデバイスに固有のドキュメントします。
+description: パラレルポートに対する i/o 要求に対するデバイス固有の操作をドキュメント化します。
 keywords:
-- WDK のパラレル ポート
-- 並列ドライバー WDK
-- 並列 IRP コード
+- パラレルポート WDK
+- パラレルドライバー WDK
+- パラレル IRP コード
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 38634b4c51f2009d3ca6ab7833a44296fa146248
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 264cfa42fde5d52792c331af296a5b94e816c663
+ms.sourcegitcommit: 1d3c82d2e549827fd9f3b8ddb91ea92147e37170
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67376960"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68349227"
 ---
 # <a name="device-specific-operations-for-io-requests-for-parallel-ports"></a>パラレル ポートの I/O 要求に対するデバイス固有の操作
-このトピックでは、パラレル ポートの I/O 要求の次のデバイスに固有の操作を説明します。
+このトピックでは、パラレルポートの i/o 要求に対する次のデバイス固有の操作について説明します。
 
 * [IRP_MJ_CREATE](#irp_mj_create)
 * [IRP_MJ_INTERNAL_DEVICE_CONTROL](#irp_mj_internal_device_control)
 
 
-##  <a name="irpmjcreate"></a>IRP_MJ_CREATE 
-[Irp_mj_create 用](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-create)要求は、パラレル ポートを開きます。
+## <a name="irp_mj_create"></a>IRP_MJ_CREATE
+[IRP_MJ_CREATE](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-create)要求によって、パラレルポートが開かれます。
 
 ### <a name="when-sent"></a>送信時
-クライアントを使用する必要があります、 [irp_mj_create 用](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-create)ポートまたはデバイスにアクセスできる前に、パラレル ポートを開く要求をポートに接続します。
+クライアントは、ポートまたはポートに接続されているデバイスにアクセスする前に、 [IRP_MJ_CREATE](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-create)要求を使用してパラレルポートを開く必要があります。
 
 ### <a name="input-parameters"></a>入力パラメーター
 なし。
@@ -34,73 +34,73 @@ ms.locfileid: "67376960"
 なし。
 
 ### <a name="io-status-block"></a>I/O ステータス ブロック
-**情報**メンバーが 0 に設定されます。
+**情報**メンバーが0に設定されています。
 
-**状態**メンバーは、次の値のいずれかに設定されます。
+**Status**メンバーは、次のいずれかの値に設定されます。
 
 
 STATUS_SUCCESS
  
-パラレル ポートが正常に開きました。
+パラレルポートが正常に開かれました。
 
 STATUS_DELETE_PENDING 
 
-デバイスは、プラグ アンド プレイ マネージャーによって削除される予定です。
+デバイスはプラグアンドプレイマネージャーによって削除されています。
 
 ### <a name="operation"></a>操作
-パラレル ポートは、共有デバイスです。 パラレル ポートのシステムによって提供される関数のドライバーでは、パラレル ポートを開く要求を受信、単にパラレル ポートの開いているファイルの数を増やします。
+パラレルポートは共有デバイスです。 パラレルポートに対してシステム提供の関数ドライバーがオープン要求を受信すると、パラレルポートで開いているファイルの数がインクリメントされます。
 
 
-##   <a name="irpmjinternaldevicecontrol"></a>IRP_MJ_INTERNAL_DEVICE_CONTROL
-[IRP_MJ_INTERNAL_DEVICE_CONTROL](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-internal-device-control)要求は、パラレル ポートの内部の動作モードを設定します。
+## <a name="irp_mj_internal_device_control"></a>IRP_MJ_INTERNAL_DEVICE_CONTROL
+[IRP_MJ_INTERNAL_DEVICE_CONTROL](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-internal-device-control)要求は、パラレルポートで内部動作モードを設定します。
 
 ### <a name="when-sent"></a>送信時
-クライアントは、次の種類の操作を実行する内部デバイス コントロール要求を送信します。
+クライアントは、次の種類の操作を実行するために、内部のデバイス制御要求を送信します。
 
-* ポートに関する情報を取得します。
-* ポートを割り当てるか、ポート上のデバイスを選択します
-* 通信モードを設定します。
+* ポートに関する情報を取得する
+* ポートを割り当てるか、ポートでデバイスを選択します。
+* 通信モードの設定
 
-参照してください[パラレル ポートの内部デバイス制御要求](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)します。
+「[パラレルポートに対する内部デバイス制御要求」を](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)参照してください。
 
 ### <a name="input-parameters"></a>入力パラメーター
-入力は、要求ごとに固有です。
+入力は要求に固有です。
 
 ### <a name="output-parameters"></a>出力パラメーター
-出力は、要求ごとに固有です。
+出力は、要求に固有のものです。
 
 ### <a name="io-status-block"></a>I/O ステータス ブロック
-情報メンバーは、要求ごとに固有です。 
+情報メンバーは、要求に固有です。 
 
-要求固有の値または汎用的な状態の値は次のいずれかに状態のメンバーに設定します。
+Status メンバーは、要求固有の値、または次の一般的な状態の値のいずれかに設定されます。
 
 
 STATUS_SUCCESS 
 
-要求が正常に完了します。
+要求は正常に完了しました。
 
 STATUS_CANCELLED 
 
-要求が取り消されました。
+要求は取り消されました。
 
 STATUS_DELETE_PENDING 
 
-ドライブは削除中です。
+ドライブが削除されています。
 
 STATUS_INVALID_PARAMETER 
 
-パラレル ポートのシステムによって提供される関数のドライバーは、要求をサポートしていません。
+並列ポート用のシステム提供の関数ドライバーは、要求をサポートしていません。
 
-STATUS_PENDING 
+あります 
 
-保留中の要求です。
+要求は保留中です。
 
 ### <a name="operation"></a>操作
-操作は、要求ごとに固有です。
+操作は、要求に固有です。
 
 ## <a name="related-topics"></a>関連トピック
 
-[パラレル ポートの内部デバイス制御の要求](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
+[パラレルポートに対する内部デバイス制御要求](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
 
-[パラレル ポートに接続されている並列のデバイスの動作](https://docs.microsoft.com/windows-hardware/drivers/parports/operating-a-parallel-device-attached-to-a-parallel-port.md)
+[パラレルポートに接続されているパラレルデバイスの操作](https://docs.microsoft.com/windows-hardware/drivers/parports/operating-a-parallel-device-attached-to-a-parallel-port.md)
 

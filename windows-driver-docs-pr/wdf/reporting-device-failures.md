@@ -12,12 +12,12 @@ keywords:
 - デバイスエラーの報告 (WDK KMDF)
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bf23244c8fbc1bc2170417ad64edbfac6ed19d91
-ms.sourcegitcommit: 01291840c4d82eb8f60a723a9a8ee52dbc33a926
-ms.translationtype: HT
+ms.openlocfilehash: 6e6d5d26f604216490df23f9455c2fd9446ea669
+ms.sourcegitcommit: 73a693bf52f07169f38e6a2a68bccaa8db8faf2a
+ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 07/19/2019
-ms.locfileid: "68328898"
+ms.locfileid: "68341189"
 ---
 # <a name="reporting-device-failures"></a>デバイスの障害の報告
 
@@ -37,8 +37,6 @@ ms.locfileid: "68328898"
 ドライバーが[**Wdfdevicesetfailed**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicesetfailed)を呼び出すと、デバイスを再起動するかどうかを決定する入力引数が提供されます。 引数の値は**Wdfdevicefailedattemptrestart**と**WdfDeviceFailedNoRestart**です。
 
 **UMDF**UMDF 2.15 より前の場合、UMDF ドライバーはこの値を**WdfDeviceFailedNoRestart**に設定する必要があります。 UMDF バージョン2.15 以降では、UMDF ドライバーは、失敗した*アクション*を**Wdfdevicefailedattemptrestart**に設定して、 [**wdfdevicesetfailed**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicesetfailed)呼び出して、基になるバスドライバーが再列挙するように要求できます。 詳細については、「 [**Wdfdevicesetfailed**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicesetfailed)」を参照してください。 
-
-UMDF ドライバーでは、この値を**WdfDeviceFailedNoRestart**に設定する必要があります。
 
 これらの引数値の詳細については、「 [**WDF\_DEVICE\_FAILED\_ACTION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/ne-wdfdevice-_wdf_device_failed_action)」を参照してください。
 ドライバーのデバイスオブジェクトコールバック関数\_が、NT SUCCESS (*status*) が**FALSE**に設定された値を返す前に、コールバック関数は、の入力引数で[**wdfdevicesetfailed**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicesetfailed)を呼び出して再起動を防ぐことができます。**WdfDeviceFailedNoRestart**。 それ以外の場合、これらのコールバック関数は**Wdfdevicesetfailed**を呼び出す必要はありません。

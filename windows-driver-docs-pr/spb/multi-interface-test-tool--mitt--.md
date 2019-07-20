@@ -1,65 +1,65 @@
 ---
 title: MITT を使用するためのハードウェアの購入
-description: 複数インタ フェース テスト ツール (ミット) を使用して、ミット ボードを作成する必要があるし、バス固有のアダプターでは、そのプラグインをボード ミット ボード上のポートに注文します。 アダプターの掲示板の種類は、テストするバスによって異なります。
+description: 複数のインターフェイステストツール (MITT) を使用するには、MITT ボードのポートにプラグインする MITT ボードとバス固有のアダプターボードが必要です。 アダプターボードの種類は、テストするバスによって異なります。
 ms.assetid: 268217FF-0F0B-4175-B2DE-A45FAF94EA79
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 686ea47ffc0fb94c0971a5705610c931698288fe
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: ede3e1a75dab3a7918bb0366edacf19cb9d59771
+ms.sourcegitcommit: 73a693bf52f07169f38e6a2a68bccaa8db8faf2a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67394123"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68341194"
 ---
 # <a name="buy-hardware-for-using-mitt"></a>MITT を使用するためのハードウェアの購入
 
 
-複数インタ フェース テスト ツール (ミット) を使用して、ミット ボードを作成する必要があるし、バス固有のアダプターでは、そのプラグインをボード ミット ボード上のポートに注文します。 アダプターの掲示板の種類は、テストするバスによって異なります。
+複数のインターフェイステストツール (MITT) を使用するには、MITT ボードのポートにプラグインする MITT ボードとバス固有のアダプターボードが必要です。 アダプターボードの種類は、テストするバスによって異なります。
 
--   **ミット ボード**
+-   **MITT board**
 
-    たとえば、FPGA 開発ボード (Nexys2)。 参照してください[Digilent から FPGA ボード](https://store.digilentinc.com/nexys-2-spartan-3e-fpga-trainer-board-retired-see-nexys-4-ddr/)します。
+    たとえば、「FPGA development board」 (Nexys2) などです。 [Digilent の「FPGA board」を](https://store.digilentinc.com/nexys-2-spartan-3e-fpga-trainer-board-retired-see-nexys-4-ddr/)参照してください。
 
-    ![ミット ボード](images/g73a5707.jpg)
+    ![mitt board](images/g73a5707.jpg)
 
--   **UART/SPI アダプター ボード**
+-   **UART/SPI アダプタボード**
 
-    参照してください[JJG テクノロジから UART/SPI アダプター ボード。](http://www.jjgtechnologies.com/UART-SPI.md)
+    「 [JJG テクノロジの UART/SPI アダプタボード」を](http://www.jjgtechnologies.com/UART-SPI)参照してください。
 
-    ![uart アダプター ボード](images/uart1.png)
+    ![uart アダプターボード](images/uart1.png)
 
--   **GPIO アダプター ボード**
+-   **GPIO アダプターボード**
 
-    参照してください[JJG テクノロジから GPIO アダプター ボード。](http://www.jjgtechnologies.com/GPIO.md)
+    「 [JJG テクノロジの GPIO アダプターボード」を](http://www.jjgtechnologies.com/GPIO)参照してください。
 
-    ![ミットの gpio アダプター](images/gpioadapter.jpg)
+    ![mitt 用の gpio アダプター](images/gpioadapter.jpg)
 
--   **I2C アダプター ボード**
+-   **I2C アダプターボード**
 
-    参照してください[JJG テクノロジから I2C アダプター ボード。](http://www.jjgtechnologies.com/I2C.md)
+    「 [JJG テクノロジの I2C アダプターボード」を](http://www.jjgtechnologies.com/I2C)参照してください。
 
-    ![ミットを i2c アダプター](images/i2cadapter.jpg)
+    ![mitt 用の i2c アダプター](images/i2cadapter.jpg)
 
 -   **MCATT 拡張ボード**
 
-    参照してください[JJG テクノロジから MCATT 拡張ボード。](http://www.jjgtechnologies.com/mcatt.md)
+    [JJG テクノロジの Mcatt 拡張ボードを](http://www.jjgtechnologies.com/mcatt)ご覧ください。
 
     ![mcatt 拡張ボード](images/mcatt-exp.jpg)
 
--   **タッチ シミュレーター パッド**
+-   **タッチシミュレーターパッド**
 
-    タッチ シミュレーター パッドと、アダプターに接続するバンド ケーブル。 MCATT ツールは、ボード接触する正確なポイントを刺激して静電容量方式タッチ デバイスをシミュレートできます。 ボードをカスタマイズしてがあるさまざまなサイズし、解像度のポイントにお問い合わせください。
+    アダプターに接続するためのタッチシミュレーターパッドとバンドケーブル。 MCATT ツールは、ボードに接続されている正確なポイントを刺激ことによって、静電容量タッチデバイスを使用できるようにします。 ボードをカスタマイズして、さまざまなサイズとコンタクトポイントの解像度を設定できます。
 
-    ![タッチ シミュレーター パッド](images/touch.jpg)
+    ![タッチシミュレーターパッド](images/touch.jpg)
 
-    これらのパッドは、テストするデバイス用にカスタマイズされました。
+    これらのパッドは、デバイスのテスト用にカスタマイズされています。
 
     -   特定のサイズ
-    -   タッチ ポイントの数
-    -   タッチ ポイント間の距離
+    -   タッチポイントの数
+    -   タッチポイント間の距離
 
 ## <a name="related-topics"></a>関連トピック
-[複数のインターフェイスのテスト ツール (ミット) でのテスト](https://docs.microsoft.com/windows-hardware/drivers/spb/testing-with-multi-interface-test-tool--mitt-)  
+[マルチインターフェイステストツール (MITT) を使用したテスト](https://docs.microsoft.com/windows-hardware/drivers/spb/testing-with-multi-interface-test-tool--mitt-)  
 
 
 

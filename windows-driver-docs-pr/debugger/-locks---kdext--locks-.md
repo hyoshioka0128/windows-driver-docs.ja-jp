@@ -1,12 +1,12 @@
 ---
-title: ロック kdext
-description: Kdextx86.dll と Kdexts.dll ロックの拡張機能では、カーネル ÷ リソースのロックに関する情報が表示されます。
+title: kdext をロックする
+description: Kdextx86 と Kdexts の locks 拡張機能によって、カーネルの負荷ロックに関する情報が表示されます。
 ms.assetid: c1be6c6c-0028-459f-9c92-61df52cbc4b6
 keywords:
-- kdext ロックの拡張機能
-- 次のロック
+- kdext ロック拡張機能
+- ÷のロック
 - デッドロック
-- Windows デバッグ kdext .locks をロックします。
+- kdext をロックします。 Windows のデバッグをロックします。
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -15,41 +15,41 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 6bcef64132d52b5f0d4af99fbb45c4353e5dd25b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9292368e6a9b374518c6c260a75db387836c646f
+ms.sourcegitcommit: 73a693bf52f07169f38e6a2a68bccaa8db8faf2a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336163"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68341191"
 ---
-# <a name="locks-kdextlocks"></a>! ロック (! kdext\*.locks)
+# <a name="locks-kdextlocks"></a>! locks (! kdext\*. locks)
 
 
-**! ロック**Kdextx86.dll と Kdexts.dll で拡張機能には、カーネル ÷ リソースのロックに関する情報が表示されます。
+Kdextx86 と Kdexts の **! locks**拡張機能には、カーネルのバージョンのロックに関する情報が表示されます。
 
-この拡張機能のコマンドと混同しないで、 [ **! ntsdexts.locks** ](-locks---ntsdexts-locks-.md)拡張機能コマンド。
+この拡張コマンドは、 [ **! ntsdexts. locks**](-locks---ntsdexts-locks-.md)拡張コマンドと混同しないようにしてください。
 
 ```dbgcmd
 !locks [Options] [Address]
 ```
 
-## <a name="span-idddkkdextlocksdbgspanspan-idddkkdextlocksdbgspanparameters"></a><span id="ddk__kdext__locks_dbg"></span><span id="DDK__KDEXT__LOCKS_DBG"></span>パラメーター
+## <a name="span-idddkkdextlocksdbgspanspan-idddkkdextlocksdbgspanparameters"></a><span id="ddk__kdext__locks_dbg"></span><span id="DDK__KDEXT__LOCKS_DBG"></span>パラメータ
 
 
-<span id="_______Options______"></span><span id="_______options______"></span><span id="_______OPTIONS______"></span> *オプション*   
-表示される情報の量を指定します。 次のオプションの任意の組み合わせを使用できます。
+<span id="_______Options______"></span><span id="_______options______"></span><span id="_______OPTIONS______"></span>*オプション*   
+表示する情報の量を指定します。 次のオプションの任意の組み合わせを使用できます。
 
-<span id="-v"></span><span id="-V"></span>**-v**  
-各ロックについての詳細を表示します。
+<span id="-v"></span><span id="-V"></span> **-v**  
+各ロックに関する詳細情報を表示します。
 
-<span id="-p"></span><span id="-P"></span>**-p**  
-パフォーマンスの統計情報をなど、ロックに関する情報をすべてを表示します。
+<span id="-p"></span><span id="-P"></span> **-p**  
+パフォーマンス統計を含む、ロックに関する利用可能なすべての情報を表示します。
 
-<span id="-d"></span><span id="-D"></span>**-d**  
-すべてのロックに関する情報を表示します。 それ以外の場合、競合とロックだけが表示されます。)
+<span id="-d"></span><span id="-D"></span> **-d.ddd...e**  
+すべてのロックに関する情報を表示します。 そうしないと、競合が発生したロックのみが表示されます)。
 
-<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span> *アドレス*   
-表示する次のロックの 16 進数のアドレスを指定します。 場合*アドレス*が 0 または省略すると、システム内のすべてのスケジュール作成ロックに関する情報が表示されます。
+<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span>*アドレス*   
+表示する場合は、表示するときには、の16進形式のアドレスを指定します。 *Address*が0または省略されている場合は、システム内のすべてのについての情報が表示されます。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
@@ -61,25 +61,25 @@ ms.locfileid: "63336163"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>Windows 2000</strong></p></td>
-<td align="left"><p>Kdextx86.dll</p></td>
+<td align="left"><p>Kdextx86</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>Windows XP 以降</strong></p></td>
-<td align="left"><p>Kdexts.dll</p></td>
+<td align="left"><p>Kdexts .dll</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>コメント
 -------
 
-**! ロック**拡張機能は、スレッドがリソースで保持されているすべてのロックを表示します。 ロックを共有することができます、他のスレッドは意味がないことができますにアクセスしたりそのリソース。 この情報は、システムでデッドロックが発生する場合に便利です。 実行中のスレッドが必要なリソースに対する排他ロックを保持する 1 つの実行中でないスレッドでデッドロックが発生します。
+**! Locks**拡張機能は、リソースに保持されているすべてのロックをスレッド別に表示します。 ロックは共有または排他的に使用できます。つまり、他のスレッドがそのリソースにアクセスできないことを意味します。 この情報は、システムでデッドロックが発生した場合に役立ちます。 デッドロックは、実行中のスレッドが必要とするリソースに対して排他ロックを保持している、実行中でないスレッドがあることが原因で発生します。
 
-通常、実行中のスレッドで必要とされるリソースに排他ロックを保持する 1 つの実行中でないスレッドを検索して Microsoft Windows 2000 のデッドロックを特定できます。 ほとんどのロックが共有されます。
+通常、実行中のスレッドが必要とするリソースに排他ロックを保持する非実行スレッドを1つ見つけることによって、Microsoft Windows 2000 でデッドロックを特定できます。 ほとんどのロックは共有されています。
 
-基本的な例を次に示します **! ロック**出力。
+基本的な **! locks**出力の例を次に示します。
 
 ```dbgcmd
 kd> !locks
@@ -99,9 +99,9 @@ Resource @ 0x80d8b0b0    Shared 1 owning threads
 2263 total locks, 3 locks currently held
 ```
 
-表示される各スレッドのアドレスがそのスレッドの数 (たとえば、「-01」) に続くことに注意してください。 スレッドが続く場合"&lt;\*&gt;"、スレッドがロックの所有者のいずれかであります。 場合によっては、最初のスレッドのアドレスには、オフセットが含まれています。 その場合は、実際のスレッドのアドレスがも表示されます。
+表示される各スレッドのアドレスの後にスレッドカウントが続きます (たとえば、"-01")。 スレッドの後に "&lt;\*&gt;" が続く場合、そのスレッドはロックの所有者の1つです。 場合によっては、最初のスレッドアドレスにオフセットが含まれます。 その場合は、実際のスレッドアドレスも表示されます。
 
-これらのリソース オブジェクトのいずれかの詳細について参照する場合は、次のアドレスを使用して、"リソース @"以降のコマンドの引数として。 前の例に示すように 2 番目のリソースを調査するために使用する可能性があります[ **dt ÷ リソース 80d8b0b0** ](dt--display-type-.md)または[ **! スレッド 80ed0020** ](-thread.md). 使用することもできます、 **! ロック**拡張機能を使用して、 **-v**オプション。
+これらのリソースオブジェクトの1つに関する詳細情報を検索する場合は、後のコマンドの\@引数として "resource" に続くアドレスを使用します。 前の例で示した2番目のリソースを調査するには、 [**dt の 80d8b0b0**](dt--display-type-.md)または[ **! thread 80ed0020**](-thread.md)を使用します。 または、 **-v**オプションを使用して、 **! locks**拡張機能をもう一度使用することもできます。
 
 ```dbgcmd
 kd> !locks -v 80d8b0b0
