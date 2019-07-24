@@ -1,63 +1,59 @@
 ---
 title: フレームワーク ライブラリのバージョン
-description: このトピックでは、カーネル モード ドライバー フレームワーク (KMDF) ライブラリとユーザー モード ドライバー フレームワーク (UMDF) ライブラリのファイル名の名前付け規則について学習します。
+description: このトピックでは、カーネルモードドライバーフレームワーク (KMDF) ライブラリとユーザーモードドライバーフレームワーク (UMDF) ライブラリのファイル名の名前付け規則について説明します。
 ms.assetid: 51db6f3c-45cb-46a7-9dd4-2bab67893fea
 keywords:
-- カーネル モード ドライバー WDK KMDF、ライブラリのバージョン
-- KMDF WDK、ライブラリのバージョン
-- カーネル モード ドライバー フレームワーク WDK、ライブラリのバージョン
-- WDK KMDF ライブラリ
-- バージョン番号を WDK KMDF
-- メジャー バージョン番号を WDK KMDF
-- マイナー バージョン番号を WDK KMDF
+- カーネルモードドライバー WDK KMDF、ライブラリバージョン
+- KMDF WDK、ライブラリバージョン
+- カーネルモードドライバーフレームワーク WDK、ライブラリバージョン
+- ライブラリ WDK KMDF
+- バージョン番号 WDK KMDF
+- メジャーバージョン番号 WDK KMDF
+- マイナーバージョン番号 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a9d811cfbc8d50d856e186c99abc120045617c4
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f67147e2201e9364928be3b1c27ad1c9ac8b85eb
+ms.sourcegitcommit: 73a693bf52f07169f38e6a2a68bccaa8db8faf2a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384463"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68341187"
 ---
 # <a name="framework-library-versioning"></a>フレームワーク ライブラリのバージョン
 
 
-このトピックでは、カーネル モード ドライバー フレームワーク (KMDF) ライブラリとユーザー モード ドライバー フレームワーク (UMDF) ライブラリのファイル名の名前付け規則について学習します。
+このトピックでは、カーネルモードドライバーフレームワーク (KMDF) ライブラリとユーザーモードドライバーフレームワーク (UMDF) ライブラリのファイル名の名前付け規則について説明します。
 
 ## <a name="kmdf"></a>KMDF
 
 
-KMDF ライブラリの各バージョンには、メジャー バージョン番号とマイナー バージョン番号が割り当てられます。 ライブラリのファイル名には、メジャー バージョン番号が含まれています。 ファイル名の形式です。
+メジャーバージョン番号とマイナーバージョン番号は、KMDF ライブラリの各バージョンに割り当てられます。 ライブラリのファイル名にメジャーバージョン番号が含まれています。 ファイル名の形式は次のとおりです。
 
-**Wdf**&lt;*MajorVersionNumber*&gt;**000. sys**
+**Wdf**&lt;MajorVersionNumber000&gt; **. sys**
 
-メジャー バージョン番号は、2 つの文字を使用します。 たとえば、ライブラリのバージョン 1.0 のファイル名は*Wdf01000.sys*します。 バージョン 1.9 や 1.11 がという名前でも*Wdf01000.sys*、ライブラリ ファイルの新しいマイナー バージョンは、ファイルの以前のバージョンを上書きします。
+メジャーバージョン番号は2文字を使用します。 たとえば、ライブラリのバージョン1.0 のファイル名は*Wdf01000*です。 バージョン1.9、1.11 なども*Wdf01000*という名前で、新しいマイナーバージョンのライブラリファイルは、以前のバージョンのファイルを上書きします。
 
-システム上にある framework のバージョンよりも新しい KMDF ライブラリのバージョンを使用して、ドライバーをビルドした場合は、後者更新しなければなりません。 フレームワーク ライブラリの更新方法の詳細については、次を参照してください。[再頒布可能フレームワーク コンポーネント](installation-components-for-kmdf-drivers.md)します。
+システム上のバージョンより新しいバージョンの KMDF ライブラリを使用してドライバーをビルドした場合は、後者を更新する必要があります。 フレームワークライブラリの更新の詳細については、「[再頒布可能フレームワークコンポーネント](installation-components-for-kmdf-drivers.md)」を参照してください。
 
-(フレームワーク co-インストーラーのファイル名が、両方のメジャーおよびマイナー バージョン番号が含まれることに注意してください。 共同インストーラーのファイル名の詳細については、次を参照してください[KMDF 共同インストーラーを使用して](installing-the-framework-s-co-installer.md)。)。
+(フレームワークの共同インストーラーのファイル名には、メジャーバージョン番号とマイナーバージョン番号の両方が含まれていることに注意してください。 共同インストーラーファイル名の詳細については、「 [KMDF 共同インストーラーの使用](installing-the-framework-s-co-installer.md)」を参照してください。
 
-ドライバーをビルドする MSBuild ユーティリティは、ドライバーを MSBuild ユーティリティを使用しているライブラリのバージョン番号を含むスタブ ファイルにリンクします。 オペレーティング システムでは、ドライバーが読み込まれたら、フレームワークのローダーは、ドライバーは、システム上にある framework ライブラリのバージョンで実行される場合を判断するドライバーのスタブのバージョン情報を確認します。
+ドライバーをビルドすると、MSBuild ユーティリティは、MSBuild ユーティリティが使用したライブラリのバージョン番号を含むスタブファイルにドライバーをリンクします。 オペレーティングシステムによってドライバーが読み込まれると、フレームワークのローダーは、ドライバーのスタブ内のバージョン情報をチェックして、ドライバーがシステム上のフレームワークライブラリのバージョンで実行されるかどうかを判断します。
 
-ドライバーを呼び出すことができます、ドライバーを実行しているライブラリのバージョンを調べるに[ **WdfDriverIsVersionAvailable** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nf-wdfdriver-wdfdriverisversionavailable)または[ **WdfDriverRetrieveVersionString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nf-wdfdriver-wdfdriverretrieveversionstring).
+ドライバーが実行されているライブラリのバージョンを確認するには、ドライバーは[**Wdfdriverisversionavailable**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nf-wdfdriver-wdfdriverisversionavailable)または[**WdfDriverRetrieveVersionString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nf-wdfdriver-wdfdriverretrieveversionstring)を呼び出すことができます。
 
-KMDF ライブラリのリリース履歴については、次を参照してください。 [KMDF バージョン履歴](kmdf-version-history.md)します。
+WDF を使用すると、ドライバーが実行されるのとは異なるバージョンの Windows を使用してドライバーをビルドできます。  詳細については、「[複数のバージョンの Windows 用の WDF ドライバーのビルド](https://docs.microsoft.com/windows-hardware/drivers/wdf/building-a-wdf-driver-for-multiple-versions-of-windows)」を参照してください。
+
+KMDF ライブラリのリリース履歴の詳細については、「 [Kmdf のバージョン履歴](kmdf-version-history.md)」を参照してください。
 
 ## <a name="umdf"></a>UMDF
 
 
-KMDF と同様、UMDF ライブラリのメジャー バージョン番号は、2 つの文字を使用します。 ただし、メジャー バージョン番号は、UMDF バージョン 2.0 以降、UMDF ライブラリ ファイル名にのみ表示されます。
+KMDF と同様に、UMDF ライブラリのメジャーバージョン番号は2文字を使用します。 ただし、メジャーバージョン番号は、umdf バージョン2.0 以降の UMDF ライブラリファイル名にのみ表示されます。
 
-UMDF バージョン 2.0 では、UMDF ライブラリのファイル名は*Wudfx02000.dll*します。
+UMDF version 2.0 では、UMDF ライブラリのファイル名は*Wudfx02000*です。
 
-UMDF バージョン 1。*x*、UMDF ライブラリのファイル名は*Wudfx.dll*します。
+UMDF バージョン1の場合。*x*の場合、UMDF ライブラリのファイル名は*wudfx .dll*です。
 
-KMDF ライブラリのリリース履歴については、次を参照してください。 [UMDF バージョン履歴](umdf-version-history.md)します。
-
-
- 
-
-
-
+KMDF ライブラリのリリース履歴の詳細については、「 [UMDF Version history](umdf-version-history.md)」を参照してください。
 
 
