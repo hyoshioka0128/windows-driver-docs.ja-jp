@@ -3,16 +3,16 @@ title: スマート カード リーダー ドライバーのインストール
 description: スマート カード リーダー ドライバーのインストール
 ms.assetid: 6e641718-d6d0-4f09-8935-6b381ad0c085
 keywords:
-- スマート カードのドライバー WDK をインストールします。
-- ベンダーから提供されたドライバー WDK のスマート カードをインストールします。
+- スマートカードドライバー WDK、インストール
+- ベンダー提供のドライバー WDK スマートカード、インストール
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1689b0e29d2cf805324d5631e8c417cb43ab5d8b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 57f21e7052f5a3e621f67bad9f2d64c22295262b
+ms.sourcegitcommit: 0d8592f210fad676c139f41fcf11d13130282e7b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67356702"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68427371"
 ---
 # <a name="installing-smart-card-reader-drivers"></a>スマート カード リーダー ドライバーのインストール
 
@@ -20,9 +20,9 @@ ms.locfileid: "67356702"
 ## <span id="_ntovr_installing_smart_card_reader_drivers"></span><span id="_NTOVR_INSTALLING_SMART_CARD_READER_DRIVERS"></span>
 
 
-このセクションでは、Microsoft Windows 2000 およびそれ以降のバージョンのオペレーティング システムのスマート カード リーダーのドライバーに固有のインストール情報を提供します。
+このセクションでは、Microsoft Windows 用のスマートカードリーダードライバーに固有のインストール情報について説明します。
 
-リーダーのドライバーを供給するベンダーがのメンバーには各ドライバーのする必要があります、 **SmartCardReader**セットアップでクラス、 [ **INF バージョン セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-version-section)ドライバーの INF ファイル。 ベンダーは、スマート カード サービスを適切に構成するセクションを追加もする必要があります。 次に、例を示します。
+独自のリーダードライバーを提供するベンダーは、ドライバーの INF ファイルの[**Inf バージョンセクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-version-section)で、各ドライバーを**smartcardreader**セットアップクラスのメンバーにする必要があります。 また、ベンダーは、スマートカードサービスを適切に構成するためのセクションも追加する必要があります。 次に、例を示します。
 
 ```cpp
 [Version]
@@ -38,16 +38,16 @@ HKLM, System\CurrentControlSet\Services\SCardSvr,Start,0x00010001,2
 HKLM, System\CurrentControlSet\Services\CertPropSvc,Start,0x00010001,2
 ```
 
-独自の UMDF リーダーのドライバーを供給するベンダーには、UMDF reflector の一番上に配置する PnP フィルター ドライバーを許可するレジストリ設定が必要があります。 具体的には、ドライバーの INF ファイルでこのエントリが必要です。
+独自の UMDF リーダードライバーを提供するベンダーには、PnP フィルタードライバーが UMDF リフレクターの上に配置されるようにするためのレジストリ設定が必要です。 具体的には、ドライバーの INF ファイルでは、次のエントリが必要です。
 
 ```cpp
 [Install.NT.Wdf]
 UmdfKernelModeClientPolicy=AllowKernelModeClients
 ```
 
-スマート カード リーダーのドライバーのインストールに関連付けられているその他の特別な要件はありません。
+スマートカードリーダーのドライバーのインストールに関連する特別な要件は他にありません。
 
-Windows 2000 およびそれ以降のバージョンのオペレーティング システムでのデバイス インストールの詳細については、次を参照してください。[デバイス インストールの概要](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-device-and-driver-installation)します。
+Windows でのデバイスのインストールに関する一般的な情報については、「[デバイスのインストールの概要](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-device-and-driver-installation)」を参照してください。
 
 
 
