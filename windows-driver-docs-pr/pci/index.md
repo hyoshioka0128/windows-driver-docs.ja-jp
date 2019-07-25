@@ -17,18 +17,15 @@ ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: e1f9558b563fcadcb3ade7461de2b88daf2f0882
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+author: EliotSeattle
+ms.openlocfilehash: dde045c85fac221b0118cae05046ab40d99b0443
+ms.sourcegitcommit: 85d02ecf7cbcfd802f41f68cea4cd4434284bdaa
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67393379"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68473510"
 ---
 # <a name="pci-driver-programming-guide"></a>PCI ドライバー プログラミング ガイド
-
-
-## <a name="supported-pcie-features-in-windows"></a>Windows でサポートされている PCIe 機能
-
 
 次の表は、さまざまなバージョンの Windows でサポートされている PCIe 機能をまとめたものです。 詳細については、[公式の PCIe の仕様](http://pcisig.com/specifications/review-zone)の指定のセクションをご覧ください。
 
@@ -104,28 +101,15 @@ ms.locfileid: "67393379"
 </tbody>
 </table>
 
-
-
-
-
 ## <a name="in-this-section"></a>このセクションの内容
 
-
--   [PCI 電源の管理とデバイス ドライバー](https://docs.microsoft.com/windows-hardware/drivers/pci/pci-power-management-and-device-drivers)
--   [PCI デバイス構成領域へのアクセス](https://docs.microsoft.com/windows-hardware/drivers/pci/accessing-pci-device-configuration-space)
--   [I/O リソース使用量の削減](https://docs.microsoft.com/windows-hardware/drivers/pci/i-o-resource-usage-reduction)
--   [開始デバイス IRP でのリソースの順序](https://docs.microsoft.com/windows-hardware/drivers/pci/order-of-resources-in-start-device-irp)
--   [PCI Express のグラフィックスに関する FAQ](https://docs.microsoft.com/windows-hardware/drivers/pci/pci-express-faq-for-graphics)
--   [PCI のサンプル](https://docs.microsoft.com/windows-hardware/drivers/pci/pci-sample)
-
+- [PCI 電源の管理とデバイス ドライバー](https://docs.microsoft.com/windows-hardware/drivers/pci/pci-power-management-and-device-drivers)
+- [PCI デバイス構成領域へのアクセス](https://docs.microsoft.com/windows-hardware/drivers/pci/accessing-pci-device-configuration-space)
+- [I/O リソース使用量の削減](https://docs.microsoft.com/windows-hardware/drivers/pci/i-o-resource-usage-reduction)
+- [開始デバイス IRP でのリソースの順序](https://docs.microsoft.com/windows-hardware/drivers/pci/order-of-resources-in-start-device-irp)
+- [PCI Express のグラフィックスに関する FAQ](https://docs.microsoft.com/windows-hardware/drivers/pci/pci-express-faq-for-graphics)
+- [PCI のサンプル](https://docs.microsoft.com/windows-hardware/drivers/pci/pci-sample)
 
 ## <a name="see-also"></a>参照
--   [公式の PCIe の仕様](http://pcisig.com/specifications/review-zone)
 
- 
-
- 
-
-
-
-
+- [公式の PCIe の仕様](http://pcisig.com/specifications/review-zone)

@@ -10,18 +10,15 @@ ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: 45dbd991bc269fcfa1b96a48817ed2f619b33a7a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+author: EliotSeattle
+ms.openlocfilehash: b79daff8941074938e46c74162f5b494553481bd
+ms.sourcegitcommit: 85d02ecf7cbcfd802f41f68cea4cd4434284bdaa
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385774"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68473476"
 ---
 # <a name="ieee-1394-bus-driver-design-guide"></a>IEEE 1394 バス ドライバー設計ガイド
-
-
-
-
 
 このセクションの内容:
 
@@ -40,11 +37,3 @@ ms.locfileid: "67385774"
 [1394 のサンプルと診断ツール](https://docs.microsoft.com/windows-hardware/drivers/ieee/1394-samples-and-diagnostic-tools)
 
 [IEC-61883 クライアント ドライバー](https://docs.microsoft.com/windows-hardware/drivers/ieee/iec-61883-client-drivers)
-
- 
-
- 
-
-
-
-

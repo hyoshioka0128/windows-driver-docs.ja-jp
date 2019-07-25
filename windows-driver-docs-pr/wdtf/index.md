@@ -6,58 +6,23 @@ ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: 384c94766125e06cbdac0d70bdb940b00cb01b0d
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+author: EliotSeattle
+ms.openlocfilehash: b6b806bc280491d8d92382898310167c5dcda855
+ms.sourcegitcommit: 85d02ecf7cbcfd802f41f68cea4cd4434284bdaa
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67393473"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68473556"
 ---
 # <a name="windows-device-testing-framework-wdtf-design-guide"></a>Windows Device Testing Framework (WDTF) 設計ガイド
-
 
 Microsoft Windows Device Testing Framework (WDTF) を使用すると、デバイスを中心としたシナリオ ベースの自動テストを作成、管理、再利用、および拡張できます。
 
 ## <a name="in-this-section"></a>このセクションの内容
 
-
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>トピック</th>
-<th>説明</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><a href="writing-a-wdtf-simpleio-plug-in-for-your-device.md" data-raw-source="[Writing a WDTF SimpleIO plug-in for your device](writing-a-wdtf-simpleio-plug-in-for-your-device.md)">デバイス用の WDTF シンプル IO プラグインの作成</a></p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamental tests](https://docs.microsoft.com/windows-hardware/drivers)">デバイスの基本テスト</a>のメリットを最大限に引き出すには、デバイスへのシンプル I/O を実行できるシンプル I/O プラグインがデバイスに必要です。 これには、WDTF に付属する既定のいずれかのシンプル I/O プラグまたはユーザーが作成した I/O プラグを使用できます。 デバイスの種類がサポートされているかどうかと、テストに固有の要件があるかどうかを確認するには、「<a href="provided-wdtf-simpleio-plug-ins.md" data-raw-source="[Provided WDTF Simple I/O plug-ins](provided-wdtf-simpleio-plug-ins.md)">提供されている WDTF シンプル I/O プラグイン</a>」をご覧ください。</p></td>
-</tr>
-<tr class="even">
-<td><p><a href="writing-tests-with-wdtf.md" data-raw-source="[Writing tests with WDTF](writing-tests-with-wdtf.md)">WDTF を使用したテストの作成</a></p></td>
-<td><p>Windows Driver Kit (WDK) で提供されるテンプレートを使用してドライバー テストの作成を開始する場合、または独自にテストを作成する場合のどちらでも、Microsoft Windows Device Testing Framework (WDTF) を使用すると、デバイスを中心としたシナリオ ベースの自動テストを作成および拡張できます。</p></td>
-</tr>
-<tr class="odd">
-<td><p><a href="triaging-wdtf-based-tests.md" data-raw-source="[Triaging WDTF-based tests](triaging-wdtf-based-tests.md)">WDTF ベースのテストのトリアージ</a></p></td>
-<td><p>WDTF ベースのテストで行われる内容についての理解を深めるために、<a href="logging-and-tracing.md" data-raw-source="[WDTF Object Logging](logging-and-tracing.md)">WDTF オブジェクト ログ</a>および <a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/wpp-software-tracing" data-raw-source="[WPP Software Tracing](https://docs.microsoft.com/windows-hardware/drivers/devtest/wpp-software-tracing)">WPP ソフトウェア トレース</a>の組み込みのサポートを使用できます。</p></td>
-</tr>
-<tr class="even">
-<td><p><a href="wdtf-overview.md" data-raw-source="[WDTF Architecture and Overview](wdtf-overview.md)">WDTF アーキテクチャと概要</a></p></td>
-<td><p>Microsoft Windows Device Testing Framework (WDTF) を使用すると、デバイスを中心としたシナリオ ベースの自動テストを作成、管理、再利用、および拡張できます。</p></td>
-</tr>
-</tbody>
-</table>
-
- 
-
- 
-
- 
-
-
-
-
+|トピック|説明|
+|----|----|
+|[デバイス用の WDTF シンプル IO プラグインの作成](writing-a-wdtf-simpleio-plug-in-for-your-device.md)|[デバイスの基本テスト](https://docs.microsoft.com/windows-hardware/drivers)のメリットを最大限に引き出すには、デバイスへのシンプル I/O を実行できるシンプル I/O プラグインがデバイスに必要です。 これには、WDTF に付属する既定のいずれかのシンプル I/O プラグまたはユーザーが作成した I/O プラグを使用できます。 デバイスの種類がサポートされているかどうかと、テストに固有の要件があるかどうかを確認するには、「[提供されている WDTF シンプル I/O プラグイン](provided-wdtf-simpleio-plug-ins.md)」をご覧ください。|
+|[WDTF を使用したテストの作成](writing-tests-with-wdtf.md)|Windows Driver Kit (WDK) で提供されるテンプレートを使用してドライバー テストの作成を開始する場合、または独自にテストを作成する場合のどちらでも、Microsoft Windows Device Testing Framework (WDTF) を使用すると、デバイスを中心としたシナリオ ベースの自動テストを作成および拡張できます。|
+|[WDTF ベースのテストのトリアージ](triaging-wdtf-based-tests.md)|WDTF ベースのテストで行われる内容についての理解を深めるために、[WDTF オブジェクト ログ](logging-and-tracing.md)および [WPP ソフトウェア トレース](https://docs.microsoft.com/windows-hardware/drivers/devtest/wpp-software-tracing)の組み込みのサポートを使用できます。|
+|[WDTF アーキテクチャと概要](wdtf-overview.md)|Microsoft Windows Device Testing Framework (WDTF) を使用すると、デバイスを中心としたシナリオ ベースの自動テストを作成、管理、再利用、および拡張できます。|

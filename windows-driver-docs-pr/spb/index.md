@@ -6,15 +6,15 @@ ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: 0de317de929ef507d68410941c61cb5c0838bdbf
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+author: EliotSeattle
+ms.openlocfilehash: 0efa5dae2495ee47b777d509950207f7ffe06c06
+ms.sourcegitcommit: 85d02ecf7cbcfd802f41f68cea4cd4434284bdaa
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67394104"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68473557"
 ---
 # <a name="simple-peripheral-bus-spb-driver-design-guide"></a>SPB (Simple Peripheral Bus) ドライバー設計ガイド
-
 
 このセクションでは、SPB ([simple peripheral bus](https://docs.microsoft.com/previous-versions/hh450903(v=vs.85))) コントローラー デバイス用、または SPB に接続された周辺機器用のドライバーを記述する方法について説明します。 SPB カテゴリには、I²C や SPI などのバスが含まれています。 SPB コントローラー デバイスのハードウェア ベンダーにより、コントローラーのハードウェア機能を管理するための SPB コントローラー ドライバーが提供されます。 このドライバーは、類似したコントローラー デバイスのファミリをサポートしている可能性があります。 SPB に接続された周辺機器のハードウェア ベンダーにより、周辺機器のハードウェア機能を管理するための SPB 周辺機器ドライバーが提供されます。 このドライバーは、互換性のある SPB を提供するさまざまなハードウェア プラットフォーム間で、周辺機器デバイスのファミリをサポートしている可能性があります。
 
@@ -32,40 +32,8 @@ SPB では、周辺機器からプロセッサに割り込み要求を伝える�
 
 ## <a name="in-this-section"></a>このセクションの内容
 
-
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>トピック</th>
-<th>説明</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/spb/spb-controller-drivers" data-raw-source="[SPB controller drivers](https://docs.microsoft.com/windows-hardware/drivers/spb/spb-controller-drivers)">SPB コントローラー ドライバー</a></p></td>
-<td><p>SPB コントローラーは、SPB (<a href="https://docs.microsoft.com/previous-versions/hh450903(v=vs.85)" data-raw-source="[simple peripheral bus](https://docs.microsoft.com/previous-versions/hh450903(v=vs.85))">simple peripheral bus</a>) を制御し、SPB に接続された周辺機器との間でデータを転送するデバイスです。 SPB コントローラーのハードウェア ベンダーにより、コントローラーのハードウェア機能を管理するための SPB コントローラー ドライバーが提供されます。</p></td>
-</tr>
-<tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/spb/spb-peripheral-device-drivers" data-raw-source="[SPB peripheral device drivers](https://docs.microsoft.com/windows-hardware/drivers/spb/spb-peripheral-device-drivers)">SPB 周辺機器ドライバー</a></p></td>
-<td><p>SPB 周辺機器デバイス ドライバーは、SPB (<a href="https://docs.microsoft.com/previous-versions/hh450903(v=vs.85)" data-raw-source="[simple peripheral bus](https://docs.microsoft.com/previous-versions/hh450903(v=vs.85))">simple peripheral bus</a>) に接続された周辺機器を制御します。 このデバイスのハードウェア レジスターは、SPB を介してのみ利用できます。 デバイスに対して読み取りまたは書き込みを行うには、ドライバーから SPB コントローラーに I/O 要求を送信する必要があります。 このコントローラーのみが、デバイスとの間で SPB を経由したデータ転送を開始できます。</p></td>
-</tr>
-<tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/spb/testing-with-multi-interface-test-tool--mitt-" data-raw-source="[Test with Multi Interface Test Tool (MITT)](https://docs.microsoft.com/windows-hardware/drivers/spb/testing-with-multi-interface-test-tool--mitt-)">Multi Interface Test Tool (MITT) によるテスト</a></p></td>
-<td><p>Multi Interface Test Tool (MITT) は、UART、I2C、SPI、GPIO などの SPB (simple peripheral bus) についてハードウェアとソフトウェアを検証するためのテスト ツールです。 MITT には、FPGA 開発ボードが使用されており、ファームウェア、テスト バイナリ、ドライバーを含む、安価なテスト ソリューションを提供するソフトウェア パッケージが組み込まれています。</p></td>
-</tr>
-</tbody>
-</table>
-
- 
-
- 
-
- 
-
-
-
-
+|トピック|説明|
+|----|----|
+|[SPB コントローラー ドライバー](https://docs.microsoft.com/windows-hardware/drivers/spb/spb-controller-drivers)|SPB コントローラーは、SPB ([simple peripheral bus](https://docs.microsoft.com/previous-versions/hh450903(v=vs.85))) を制御し、SPB に接続された周辺機器との間でデータを転送するデバイスです。 SPB コントローラーのハードウェア ベンダーにより、コントローラーのハードウェア機能を管理するための SPB コントローラー ドライバーが提供されます。|
+|[SPB 周辺機器ドライバー](https://docs.microsoft.com/windows-hardware/drivers/spb/spb-peripheral-device-drivers)|SPB 周辺機器デバイス ドライバーは、SPB ([simple peripheral bus](https://docs.microsoft.com/previous-versions/hh450903(v=vs.85))) に接続された周辺機器を制御します。 このデバイスのハードウェア レジスターは、SPB を介してのみ利用できます。 デバイスに対して読み取りまたは書き込みを行うには、ドライバーから SPB コントローラーに I/O 要求を送信する必要があります。 このコントローラーのみが、デバイスとの間で SPB を経由したデータ転送を開始できます。|
+|[Multi Interface Test Tool (MITT) によるテスト](https://docs.microsoft.com/windows-hardware/drivers/spb/testing-with-multi-interface-test-tool--mitt-)|Multi Interface Test Tool (MITT) は、UART、I2C、SPI、GPIO などの SPB (simple peripheral bus) についてハードウェアとソフトウェアを検証するためのテスト ツールです。 MITT には、FPGA 開発ボードが使用されており、ファームウェア、テスト バイナリ、ドライバーを含む、安価なテスト ソリューションを提供するソフトウェア パッケージが組み込まれています。|

@@ -11,17 +11,16 @@ ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: feee59de8c33a4a6a0c17359eb6b307ebf7090a0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+author: EliotSeattle
+ms.openlocfilehash: a2c6a675f39ba0f376c7d1da5bf2a468d04c4f1b
+ms.sourcegitcommit: 85d02ecf7cbcfd802f41f68cea4cd4434284bdaa
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384508"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68473533"
 ---
 # <a name="sd-bus-driver-design-guide"></a>SD バス ドライバー設計ガイド
 
-
-## <a name="in-this-section"></a>このセクションの内容
 [SD カードのドライバー スタック](https://docs.microsoft.com/windows-hardware/drivers/sd/sd-card-driver-stack)
 
 [SD カードのバス インターフェイスを開く、初期化する、および閉じる](https://docs.microsoft.com/windows-hardware/drivers/sd/opening--initializing-and-closing-an-sd-card-bus-interface)
@@ -29,37 +28,25 @@ ms.locfileid: "67384508"
 [SD カードの割り込みの処理](https://docs.microsoft.com/windows-hardware/drivers/sd/handling-sd-card-interrupts)
 
 [SD カードの要求](https://docs.microsoft.com/windows-hardware/drivers/sd/sd-card-requests)
- 
 
 ## <a name="sd-card-hardware-identifiers"></a>SD カードのハードウェア識別子
-
 
 セキュア デジタル (SD) デバイスの ID 文字列の詳細については、「[Identifiers for Secure Digital (SD) Devices (セキュア デジタル (SD) デバイスの識別子)](https://docs.microsoft.com/windows-hardware/drivers/install/identifiers-for-secure-digital--sd--devices)」をご覧ください。
 
 ## <a name="restrictions-on-sd-card-drivers"></a>SD カード ドライバーに関する制限事項
 
-
 SD コンボ (多機能) カード上の関数を管理するセキュア デジタル (SD) カードのデバイス ドライバーには、特定の制限事項が適用されます。 多機能カード上のさまざまなカード関数に対応するドライバー スタックは、互いに独立して動作する必要があります。 この独立性を確保するために、バス ドライバーは次の操作を拒否します。
 
--   デバイスの状態を変更する SD コマンド (SELECT\_CARD など)。
+- デバイスの状態を変更する SD コマンド (SELECT\_CARD など)。
 
--   関数ゼロを指定し、Function Basic Register (FBR) に指定されたアドレスの範囲外にある SD I/O コマンド。
+- 関数ゼロを指定し、Function Basic Register (FBR) に指定されたアドレスの範囲外にある SD I/O コマンド。
 
--   別のデバイス スタックの関数番号を指定する SD I/O コマンド。
+- 別のデバイス スタックの関数番号を指定する SD I/O コマンド。
 
 SD デバイス ドライバーでは、型 SDRF\_GET\_PROPERTY および SDRF\_SET\_PROPERTY の関数要求を使用して [**SdBusSubmitRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddsd/nf-ntddsd-sdbussubmitrequest) を呼び出すことで、ホスト コントローラーの一般的なレジスタ セットとデバイスの状態を管理できます。 これらの関数要求の型の説明については、「[**SD\_REQUEST\_FUNCTION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddsd/ne-ntddsd-sd_request_function)」をご覧ください。
 
 ## <a name="sd-bus-sample"></a>SD バスのサンプル
 
-
 これは、動作しているセキュア デジタル (SD) IO ドライバーのサンプルです。 このドライバーは、カーネルモード ドライバー フレームワークを使用して作成されます。 これは、SDIO プロトコルを実装する汎用の mars 開発ボード向けのドライバーです。追加機能はありません。
 
 GitHub から[記憶域の SDIO ドライバーのサンプル](https://go.microsoft.com/fwlink/p/?LinkId=617953)をダウンロードしてください。
-
- 
-
- 
-
-
-
-
