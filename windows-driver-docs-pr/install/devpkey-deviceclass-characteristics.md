@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: ea89e83fea9414f25ae1dd3c56ab2547e6382305
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: cbb109d7f021eabc6ec5cf8711a5281f97e283bc
+ms.sourcegitcommit: b67513efda02d3194f408326483dceda26733c79
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378102"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68671115"
 ---
 # <a name="devpkeydeviceclasscharacteristics"></a>DEVPKEY_DeviceClass_Characteristics
 
 
-DEVPKEY_DeviceClass_Characteristics デバイス プロパティは、すべてのデバイスの既定のデバイスの特性を表す、[デバイス セットアップ クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-setup-classes)します。
+DEVPKEY_DeviceClass_Characteristics device プロパティは、[デバイスセットアップクラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-setup-classes)のすべてのデバイスの既定のデバイス特性を表します。
 
 <table>
 <colgroup>
@@ -33,23 +33,23 @@ DEVPKEY_DeviceClass_Characteristics デバイス プロパティは、すべて�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>プロパティのキー</strong></p></td>
+<td align="left"><p><strong>プロパティキー</strong></p></td>
 <td align="left"><p>DEVPKEY_DeviceClass_Characteristics</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>データ型のプロパティの識別子</strong></p></td>
+<td align="left"><p><strong>プロパティ-データ型識別子</strong></p></td>
 <td align="left"><p><a href="devprop-type-int32.md" data-raw-source="[&lt;strong&gt;DEVPROP_TYPE_INT32&lt;/strong&gt;](devprop-type-int32.md)"><strong>DEVPROP_TYPE_INT32</strong></a></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>プロパティへのアクセス</strong></p></td>
-<td align="left"><p>インストール アプリケーションおよびデバイス セットアップ クラスをインストールした後、インストーラーによって、読み取り専用アクセス</p></td>
+<td align="left"><p><strong>プロパティアクセス</strong></p></td>
+<td align="left"><p>デバイスセットアップクラスがインストールされた後のインストールアプリケーションおよびインストーラーによる読み取り専用アクセス</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>対応する SPCRP_</strong><em>Xxx</em> <strong>識別子</strong></p></td>
 <td align="left"><p>SPCRP_CHARACTERISTICS</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>ローカライズか。</strong></p></td>
+<td align="left"><p><strong>た?</strong></p></td>
 <td align="left"><p>X</p></td>
 </tr>
 </tbody>
@@ -57,16 +57,14 @@ DEVPKEY_DeviceClass_Characteristics デバイス プロパティは、すべて�
 
  
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>Remarks
 -------
 
-インストール アプリケーションは、デバイス セットアップ クラスをインストールするときは、DEVPKEY_DeviceClass_Characteristics の値を設定できます。 デバイス セットアップ クラスと、このプロパティの設定をインストールする方法については、次を参照してください[ **INF ClassInstall32 セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-classinstall32-section)およびレジストリ エントリの値について **。DeviceCharacteristics**で提供されている、"特殊な*値のエントリ名*キーワード"のセクション[ **INF AddReg ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)します。
+DEVPKEY_DeviceClass_Characteristics は、デバイスセットアップクラスがインストールされ、後で変更されない場合にのみ設定する必要があります。 デバイスセットアップクラスをインストールし、このプロパティを設定する方法の詳細については、「 [**INF ClassInstall32」セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-classinstall32-section)と、 「特殊な*方法」で提供されているレジストリエントリ値 DeviceCharacteristics に関する情報を参照してください。* [**INF AddReg ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)の値エントリ名キーワード
 
-DEVPKEY_DeviceClass_Characteristics の値は、FILE_DEVICE_ のビットごとの OR*Xxx*で定義されているフラグ*Wdm.h*と*Ntddk.h*します。 デバイスの特性の詳細については、次を参照してください。、 *DeviceCharacteristics*のパラメーター、 [ **IoCreateDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatedevice)関数。
+[**Setupdigetclassproperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyw)または[**Setupdigetclasspropertyex**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyexw)を呼び出して、DEVPKEY_DeviceClass_Characteristics の値を取得できます。
 
-呼び出すことができます[ **SetupDiGetClassProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyw)または[ **SetupDiGetClassPropertyEx** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyexw) DEVPKEY_DeviceClass_ の値を取得するには特性。
-
-Windows Server 2003 および Windows XP は、このプロパティをサポートは DEVPKEY_DeviceClass_Characteristics プロパティのキーをサポートしていません。 この以前のバージョンの Windows では、このプロパティの値にアクセスするのに SPCRP_CHARACTERISTICS 識別子を使用できます。 このプロパティの値にアクセスする方法については、次を参照してください。[デバイス セットアップ クラス SPCRP_Xxx のプロパティを取得する](https://docs.microsoft.com/windows-hardware/drivers/install/retrieving-spcrp-xxx-properties)します。
+Windows Server 2003 および Windows XP では、このプロパティはサポートされていますが、DEVPKEY_DeviceClass_Characteristics プロパティキーはサポートされていません。 以前のバージョンの Windows では、SPCRP_CHARACTERISTICS 識別子を使用して、このプロパティの値にアクセスできます。 このプロパティの値にアクセスする方法の詳細については、「[デバイスセットアップクラスの取得 SPCRP_Xxx のプロパティ](https://docs.microsoft.com/windows-hardware/drivers/install/retrieving-spcrp-xxx-properties)」を参照してください。
 
 <a name="requirements"></a>要件
 ------------
@@ -79,11 +77,11 @@ Windows Server 2003 および Windows XP は、このプロパティをサポー
 <tbody>
 <tr class="odd">
 <td align="left"><p>バージョン</p></td>
-<td align="left"><p>Windows Vista および Windows の以降のバージョンで使用できます。</p></td>
+<td align="left"><p>Windows Vista 以降のバージョンの Windows で使用できます。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>Header</p></td>
-<td align="left">Devpkey.h (Devpkey.h を含む)</td>
+<td align="left">Devpkey (Devpkey を含む)</td>
 </tr>
 </tbody>
 </table>
