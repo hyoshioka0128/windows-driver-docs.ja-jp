@@ -1,74 +1,74 @@
 ---
 title: IRP ログ
-description: Driver Verifier の IRP のログ記録機能は Irp のドライバーの使用を監視し、IRP の使用状況の記録します。 このレコードは、WMI 情報として格納されます。
+description: ドライバーの検証ツールの IRP ログ機能は、ドライバーの irp の使用を監視し、IRP の使用状況を記録します。 このレコードは、WMI 情報として格納されます。
 ms.assetid: 368356df-7fa7-4555-b5cf-59c26d70075e
 keywords:
-- WDK の Driver Verifier IRP のログ記録機能
+- IRP ログ機能 WDK ドライバー検証ツール
 - DC2WMIParser ツール
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c1e3cdc8267cf6727e58c6891ecdbe30f2b52114
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ed401d922d818de7ecb11ea630550e82a6ae1bd0
+ms.sourcegitcommit: 3aee55397dda48607258697da14e11c183557603
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63350517"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68702168"
 ---
 # <a name="irp-logging"></a>IRP ログ
 
 
-Driver Verifier の IRP のログ記録機能は Irp のドライバーの使用を監視し、IRP の使用状況の記録します。 このレコードは、WMI 情報として格納されます。
+ドライバーの検証ツールの IRP ログ機能は、ドライバーの irp の使用を監視し、IRP の使用状況を記録します。 このレコードは、WMI 情報として格納されます。
 
 ## <span id="ddk_irp_logging_tools"></span><span id="DDK_IRP_LOGGING_TOOLS"></span>
 
 
-Windows Driver Kit (WDK) DC2WMIParser ツールが含まれています (dc2wmiparser.exe) この WMI レコードをテキスト ファイルに変換することができます。
+Windows Driver Kit (WDK) には、この WMI レコードをテキストファイルに変換できるツール DC2WMIParser (DC2WMIParser) が含まれています。
 
-このドライバーの検証ツールのオプションは、Windows Server 2003 で使用可能な以降のみです。
+このドライバーの検証ツールオプションは、Windows Server 2003 以降でのみ使用できます。
 
 ### <a name="span-idthewmirecordspanspan-idthewmirecordspanthe-wmi-record"></a><span id="the_wmi_record"></span><span id="THE_WMI_RECORD"></span>WMI レコード
 
-WMI のレコードでは、デバイスごとに 20 を超える Irp は含まれません。 21 番目 IRP が記録されると、最初の IRP レコードが置き換えられます。 レコードには、20 の Irp が一覧表示する場合、は、これらは、常に最新の 20 が次のうち最新のものを把握する方法はありません。
+WMI レコードは、デバイスごとに20個を超える Irp を含みません。 20番目の IRP が記録されると、最初の IRP レコードが置き換えられます。 そのため、レコードに20個の Irp が一覧表示されている場合、これらは常に最新の20になりますが、どちらが最新であるかを知る方法はありません。
 
-WMI のレコードは、メモリに保存される、ために、コンピューターが再起動されると消去されます。 そのため、DC2WMIParser を使用して、この情報をファイルに保存します。
+WMI レコードはメモリに格納されるため、コンピューターの再起動時に消去されます。 そのため、DC2WMIParser を使用して、この情報をファイルに保存します。
 
-使用する場合、 **/t**オプション、DC2WMIParser が実行する継続的に、指定された期間。 このような状況でレコードがデバイス (サンプリング期間ごとに最大 20 の Irp) あたり 20 を超える Irp を含めることができます。
+**/T**オプションを使用すると、DC2WMIParser は指定された期間、連続して実行されます。 この場合、レコードにはデバイスあたり20個を超える Irp を含めることができます (各サンプリング期間で最大20個の irp)。
 
-### <a name="span-idactivatingthisoptionspanspan-idactivatingthisoptionspanactivating-this-option"></a><span id="activating_this_option"></span><span id="ACTIVATING_THIS_OPTION"></span>このオプションをアクティブ化します。
+### <a name="span-idactivatingthisoptionspanspan-idactivatingthisoptionspanactivating-this-option"></a><span id="activating_this_option"></span><span id="ACTIVATING_THIS_OPTION"></span>このオプションをアクティブにする
 
-ドライバー検証マネージャーまたは Verifier.exe コマンドラインを使用して、1 つまたは複数のドライバーの IRP のログ記録機能をアクティブにできます。
+ドライバー検証ツールマネージャーまたは Verifier コマンドラインを使用して、1つまたは複数のドライバーの IRP ログ機能をアクティブ化できます。
 
-IRP のログ記録機能をアクティブ化する必要がありますもアクティブ化する[I/O の検証](i-o-verification.md)です。
+IRP ログ機能をアクティブ化するには、 [I/o 検証](i-o-verification.md)もアクティブ化する必要があります。
 
 -   **コマンドラインで**
 
-    によって表される IRP のログ記録オプションをコマンドラインで**0x400** (ビット 10)。
+    コマンドラインでは、IRP ログオプションは**0x400** (ビット 10) で表されます。
 
-    IRP のログ記録を有効にするには、0x410 のフラグの値を使用して、または 0x410 をフラグ値に追加します。 この値をアクティブに[I/O の検証](i-o-verification.md) (0x10) IRP のログ記録 (0x400) とします。 次に、例を示します。
+    IRP ログをアクティブにするには、フラグ値0x410 を使用するか、フラグ値に0x410 を追加します。 この値は、 [i/o 検証](i-o-verification.md) (0x10) と IRP Logging (0x400) をアクティブにします。 次に、例を示します。
 
     ```
     verifier /flags 0x410 /driver MyDriver.sys
     ```
 
-    この機能は、[次へ] の起動後にアクティブになります。
+    この機能は、次回の起動時にアクティブになります。
 
-    Windows Vista と Windows の以降のバージョンでもアクティブ化し、追加することで、コンピューターを再起動しなくても IRP のログ記録を非アクティブ化することができます、 **/volatile**パラメーターをコマンド。 次に、例を示します。
+    Windows Vista 以降のバージョンの Windows では、 **/volatile**パラメーターをコマンドに追加することで、コンピューターを再起動しなくても、IRP ログをアクティブ化および非アクティブ化することができます。 次に、例を示します。
 
     ```
     verifier /volatile /flags 0x410 /adddriver MyDriver.sys
     ```
 
-    この設定は、すぐに有効は、シャット ダウンするか、コンピューターを再起動すると失われます。 詳細については、次を参照してください。[揮発性の設定を使用する](using-volatile-settings.md)します。
+    この設定は直ちに有効になりますが、コンピューターをシャットダウンまたは再起動すると失われます。 詳細については、「 [Volatile 設定の使用](using-volatile-settings.md)」を参照してください。
 
--   **ドライバー検証マネージャーを使用します。**
-    1.  ドライバー検証マネージャーを起動します。 型**Verifier**コマンド プロンプト ウィンドウでします。
-    2.  選択 **(コード開発者) 用のカスタム設定を作成する**順にクリックします**次**します。
-    3.  選択**完全な一覧から個々 の設定を選択します。** します。
-    4.  選択 (チェック) **IRP のログ記録**と[I/O の検証](i-o-verification.md)です。
+-   **ドライバー検証マネージャーの使用**
+    1.  ドライバー検証マネージャーを起動します。 コマンドプロンプトウィンドウで「 **Verifier** 」と入力します。
+    2.  [**カスタム設定の作成] (コード開発者向け)** を選択し、 **[次へ]** をクリックします。
+    3.  [**完全な一覧から個々の設定を選択]** を選択します。
+    4.  [ **IRP ログ記録**と[i/o 検証](i-o-verification.md)] を選択します。
 
 ### <a name="span-iddc2wmiparserspanspan-iddc2wmiparserspandc2wmiparser"></a><span id="dc2wmiparser"></span><span id="DC2WMIPARSER"></span>DC2WMIParser
 
-DC2WMIParser は、Driver Verifier で作成される WMI IRP のレコードを収集するツールは、このログをテキスト ファイルに変換します。
+DC2WMIParser は、ドライバーの検証ツールによって作成された WMI IRP レコードを収集し、このログをテキストファイルに変換するツールです。
 
 DC2WMIParser 構文は次のとおりです。
 
@@ -76,35 +76,35 @@ DC2WMIParser 構文は次のとおりです。
 dc2wmiparser [/f File] [/t Time]
 ```
 
-パラメーターには、次の意味があります。
+パラメーターの意味は次のとおりです。
 
-<span id="_________fFile"></span><span id="_________ffile"></span><span id="_________FFILE"></span> * */f * * * ファイル*  
-書き込まれるログ ファイルのファイル名と完全なパスを指定します。 現在のディレクトリを基準とした相対パスが表示されます。 これを省略した場合は、現在のディレクトリにファイル名 dc2verifier.act が使用されます。
+<span id="_________fFile"></span><span id="_________ffile"></span><span id="_________FFILE"></span> **/f**_ファイル_  
+書き込むログファイルの完全なパスとファイル名を指定します。 相対パスは、現在のディレクトリに対して相対的に取得されます。 これを省略すると、現在のディレクトリのファイル名 dc2verifier が使用されます。
 
-<span id="_tTime"></span><span id="_ttime"></span><span id="_TTIME"></span>* */t * * * 時間*  
-DC2WMIParser は引き続き実行を分単位で時間の長さを指定します。 場合*時間*が 0 に等しい、DC2WMIParser はドライバーの検証ツールによって既に格納されているすべての WMI IRP 情報を記録し、終了します。 場合*時間*設定は正の値に DC2WMIParser は引き続き実行時間を指定された長さに対してが到着すると、新しい情報を格納します。 既定値は 0 です。
+<span id="_tTime"></span><span id="_ttime"></span><span id="_TTIME"></span> **/t**_時刻_  
+DC2WMIParser が継続して実行される時間の長さを分単位で指定します。 *時刻*が0の場合、DC2WMIParser は、ドライバー検証ツールによって既に格納されているすべての WMI IRP 情報を記録してから、を終了します。 *Time*が正の値に設定されている場合、DC2WMIParser は指定された時間だけ実行を続け、新しい情報を格納します。 既定値は 0 です。
 
-### <a name="span-idformatofdc2wmiparserlogfilesspanspan-idformatofdc2wmiparserlogfilesspanformat-of-dc2wmiparser-log-files"></a><span id="format_of_dc2wmiparser_log_files"></span><span id="FORMAT_OF_DC2WMIPARSER_LOG_FILES"></span>DC2WMIParser ログ ファイルの形式
+### <a name="span-idformatofdc2wmiparserlogfilesspanspan-idformatofdc2wmiparserlogfilesspanformat-of-dc2wmiparser-log-files"></a><span id="format_of_dc2wmiparser_log_files"></span><span id="FORMAT_OF_DC2WMIPARSER_LOG_FILES"></span>DC2WMIParser ログファイルの形式
 
-DC2WMIParser によって生成されたファイルは、ASCII テキスト ファイルです。
+DC2WMIParser によって生成されるファイルは、ASCII テキストファイルです。
 
-このファイルの最初の行には、ファイルに記録するデバイスの数を表す 10 進数が含まれています。
+このファイルの最初の行には、ファイルに記録されたデバイスの数を表す10進数が含まれています。
 
-最初の行には、ファイルはセクションに分かれています各セクションでは、1 つのデバイスについて説明します。
+最初の行の後に、ファイルはセクションに分割されます。各セクションでは、1つのデバイスについて説明します。
 
-各デバイス形式は次のとおりです。
+デバイスごとに、形式は次のとおりです。
 
--   **1 行の場合。** デバイスの名前。
+-   **1行:** デバイス名。
 
--   **1 行の場合。** 指定数のデバイスの種類で関数がこのデバイスを対象となる 10 進数。
+-   **1行:** このデバイスを対象とするデバイスの種類と機能の数を指定する10進数。
 
--   **各デバイスの種類と関数の 1 つの行。** コンマで区切られた、3 つ 16 進数の数値。 これらは、デバイスの種類とこのレコードに記録された最低と最高の関数を表します。
+-   **デバイスの種類と機能ごとに1行。** コンマで区切られた3つの16進数。 これらは、デバイスの種類と、このレコードに記録された最下位および最高の関数を表します。
 
--   **各デバイスの種類と関数の線の 1 つのグループ。**
-    -   現在のデバイスの種類の Ioctl の数を指定する 10 進数で、1 行。
-    -   各 IOCTL の 1 つの行。 これらの行には、コンマで区切られた 6 桁の 16 進数字が含まれています。 これらのデバイスの種類、関数、メソッド、アクセス、入力のバッファーの長さおよび出力バッファーの長さを指定します。
+-   **デバイスの種類と機能ごとに、1つの行グループに含まれます。**
+    -   現在のデバイスの種類の Ioctl の数を指定する10進数の単一行。
+    -   各 IOCTL の1行。 これらの各行には、コンマで区切られた6つの16進数が含まれています。 デバイスの種類、関数、メソッド、アクセス、入力バッファーの長さ、および出力バッファーの長さを指定します。
 
-サンプル DC2WMIParser ログ ファイルを次に示します。 実際のファイルではありません、空白、コメント、または空白の行が、これらがより明確にするには、この例に追加されました。
+DC2WMIParser ログファイルのサンプルを次に示します。 実際のファイルには、スペース、コメント、または空白行は含まれませんが、この例ではより明確になるように追加されています。
 
 ```
 2           There are two devices described by this log file.
