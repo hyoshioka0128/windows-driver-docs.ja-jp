@@ -2,61 +2,63 @@
 title: 電源管理用の標準化された INF キーワード
 description: 電源管理用の標準化された INF キーワード
 ms.assetid: bec8dd96-f64a-40eb-ade9-73c9a66a756e
-ms.date: 04/20/2017
+ms.date: 08/01/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 7af3d8209a96dbbe03acaa089831d33809b4d5ae
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b6f3f1e59367acbfc2dfb18e1087831c97d2f088
+ms.sourcegitcommit: 97cb327e20b899d386abb412af2de7e08c5aff87
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377570"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68730410"
 ---
 # <a name="standardized-inf-keywords-for-power-management"></a>電源管理用の標準化された INF キーワード
 
+電源管理の標準化されたキーワードは、デバイスドライバーの INF ファイルで定義されています。 オペレーティングシステムは、これらの標準化されたキーワードを読み取って、デバイスの現在の電源管理機能を調整します。 デバイスドライバーは、ndis [ **\_ミニポート\_\_アダプターの\_一般属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)構造で、ndis に対するデバイスのハードウェア電源管理機能を常に示す必要があります。
 
-
-
-
-電源管理の標準化されたキーワードは、デバイス ドライバーの INF ファイルで定義されます。 オペレーティング システムでは、これらの標準的なキーワードを読み込みし、デバイスの現在の電源管理機能を調整します。 デバイス ドライバーは、NDIS 内に、デバイスのハードウェアの電源管理の機能を示す必要があります常に、 [ **NDIS\_ミニポート\_アダプター\_全般\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)構造体。
-
-有効にするか、ネットワーク アダプターの電源管理機能のサポートを無効にするのには、次の標準化された INF キーワードが定義されています。
+次の標準化された INF キーワードは、ネットワークアダプターの電源管理機能のサポートを有効または無効にするために定義されています。
 
 <a href="" id="-wakeonpattern"></a> **\*WakeOnPattern**  
-ネットワーク パケットが、指定したパターンと一致する場合は、コンピューターをスリープ解除するデバイスを有効にするかどうかを示す値。
+ネットワークパケットが指定したパターンに一致した場合に、コンピューターのスリープを解除するようにデバイスを有効にするかどうかを示す値。
 
 <a href="" id="-wakeonmagicpacket"></a> **\*WakeOnMagicPacket**  
-デバイスが受信すると、コンピューターをウェイクするため、デバイスを有効にするかどうかを示す値を*マジック パケット*します。 (A*マジック パケット*パケットを受信側のネットワーク アダプターのイーサネット アドレスの 16 個の連続したコピーを含む)
+デバイスが*マジックパケット*を受信したときにコンピューターをスリープ解除するようにデバイスを有効にするかどうかを示す値。 (*マジックパケット*とは、受信側のネットワークアダプターのイーサネットアドレスの連続した16個のコピーを含むパケットです)。
+
+<a href="" id="-modernstandbywolmagicpacket"></a> **\*ModernStandyWoLMagicPacket**  
+デバイスが*マジックパケット*を受信し、システムが*S0ix*の電源状態であるときに、コンピューターのスリープを解除するためにデバイスを有効にする必要があるかどうかを示す値。 システムが*S4*の電源状態にある場合は、この設定は適用されません。
+
+> [!NOTE]
+> ModernStandyWoLMagicPacket は、NDIS 6.60 以降、または Windows 10 バージョン1607以降でサポートされています。  **\***
 
 <a href="" id="-devicesleepondisconnect"></a> **\*DeviceSleepOnDisconnect**  
-低電力状態 (スリープの状態) にデバイスを配置するデバイスを有効にするかどうかを示す値メディアが切断されていると電力の状態 (ウェイク状態) に戻り値のときにメディアが再度に接続します。
+メディアが切断されたときにデバイスを低電力状態 (スリープ状態) にするようにデバイスを有効にするかどうかを示す値。メディアが再び接続されている場合は、デバイスを電力の状態 (ウェイク状態) に戻す必要があります。
 
 <a href="" id="-pmarpoffload"></a> **\*PMARPOffload**  
-システムがスリープ状態に入ったときに、アドレス解決プロトコル (ARP) をオフロードするデバイスを有効にするかどうかを示す値。
+システムがスリープ状態になったときに、アドレス解決プロトコル (ARP) のオフロードをデバイスで有効にする必要があるかどうかを示す値。
 
 <a href="" id="-pmnsoffload"></a> **\*PMNSOffload**  
-近隣要請 (NS) の負荷を軽減して、システムがスリープ状態に入ったときに、デバイスを有効にするかどうかを示す値。
+システムがスリープ状態になったときに近隣要請 (NS) をオフロードするようにデバイスを有効にする必要があるかどうかを示す値。
 
-<a href="" id="-pmwifirekeyoffload"></a> **\*PMWiFiRekeyOffload**  
-コンピューターがスリープ状態に入ったとき、一時的なキー (GTK) がウェイク ワイヤレス、LAN (WOL) のキー更新をオフロードするデバイスを有効にするかどうかを示す値をグループ化します。
+<a href="" id="-pmwifirekeyoffload"></a> **\*Pmwi焼討 Keyoffload**  
+コンピューターがスリープ状態になったときに wake on ワイヤレス LAN (WOL) のグループテンポラル (GTK) のキー更新をオフロードするようにデバイスを有効にする必要があるかどうかを示す値。
 
-<a href="" id="-eee"></a> **\*EEE**  
-デバイスが IEEE 802.3az を有効にする必要があるかどうかを示す値エネルギー効率の高いイーサネットします。
+<a href="" id="-eee"></a> **\*ぃ**  
+デバイスで IEEE 802.3 az エネルギー効率の高いイーサネットを有効にする必要があるかどうかを示す値。
 
-このトピックの最後にテーブルの列には、列挙型のキーワードは次の属性について説明します。
+このトピックの最後にある表の列では、列挙型キーワードの次の属性について説明します。
 
 <a href="" id="subkeyname"></a>SubkeyName  
-レジストリ内の INF ファイルに指定する必要があります、キーワードの名前が表示されます。
+INF ファイルで指定する必要があり、レジストリに表示されるキーワードの名前。
 
 <a href="" id="paramdesc"></a>ParamDesc  
-SubkeyName に関連付けられているテキスト。
+SubkeyName に関連付けられている表示テキスト。
 
-<a href="" id="value"></a>値  
-リスト内の各オプションに関連付けられている列挙の整数値。 この値は**NDI\\params\\** <em>SubkeyName\\値。</em>
+<a href="" id="value"></a>数値  
+リスト内の各オプションに関連付けられている列挙整数値。 この値は、 **ndi\\params\\** <em>subkeyname\\値</em>に格納されます。
 
 <a href="" id="enumdesc"></a>EnumDesc  
 メニューに表示される各値に関連付けられている表示テキスト。
 
-次の表では、電源管理のキーワードの可能な INF エントリについて説明します。
+次の表は、電源管理のキーワードに使用できる INF エントリを示しています。
 
 <table>
 <colgroup>
@@ -76,38 +78,50 @@ SubkeyName に関連付けられているテキスト。
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong><em>WakeOnPattern</strong></p></td>
-<td align="left"><p>パターン マッチでスリープ解除します。</p></td>
+<td align="left"><p>Wake on パターン一致</p></td>
 <td align="left"><p>0</p></td>
 <td align="left"><p>Disabled</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"><p>1 (既定)</p></td>
+<td align="left"><p>1 (既定値)</p></td>
 <td align="left"><p>有効</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong></em>WakeOnMagicPacket</strong></p></td>
-<td align="left"><p>Wake on マジック パケット</p></td>
+<td align="left"><p>マジックパケットの Wake on</p></td>
 <td align="left"><p>0</p></td>
 <td align="left"><p>Disabled</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"><p>1 (既定)</p></td>
+<td align="left"><p>1 (既定値)</p></td>
+<td align="left"><p>有効</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p><strong></em>ModernStandyWoLMagicPacket</strong></p></td>
+<td align="left"><p>システムが<i>S0ix</i>の電源状態にあるときのマジックパケットの Wake on</p></td>
+<td align="left"><p>0 (既定値)</p></td>
+<td align="left"><p>無効</p></td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"><p>1</p></td>
 <td align="left"><p>有効</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong><em>DeviceSleepOnDisconnect</strong></p></td>
-<td align="left"><p>デバイスのスリープ状態を切断します。</p></td>
+<td align="left"><p>切断時にデバイスをスリープ状態にする</p></td>
 <td align="left"><p>0</p></td>
 <td align="left"><p>Disabled</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"><p>1 (既定)</p></td>
+<td align="left"><p>1 (既定値)</p></td>
 <td align="left"><p>有効</p></td>
 </tr>
 <tr class="odd">
@@ -119,7 +133,7 @@ SubkeyName に関連付けられているテキスト。
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"><p>1 (既定)</p></td>
+<td align="left"><p>1 (既定値)</p></td>
 <td align="left"><p>有効</p></td>
 </tr>
 <tr class="odd">
@@ -131,19 +145,19 @@ SubkeyName に関連付けられているテキスト。
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"><p>1 (既定)</p></td>
+<td align="left"><p>1 (既定値)</p></td>
 <td align="left"><p>有効</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong></em>PMWiFiRekeyOffload</strong></p></td>
-<td align="left"><p>WiFi のキーの再発行オフロード</p></td>
+<td align="left"><p>WiFi のキー更新のオフロード</p></td>
 <td align="left"><p>0</p></td>
 <td align="left"><p>Disabled</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"><p>1 (既定)</p></td>
+<td align="left"><p>1 (既定値)</p></td>
 <td align="left"><p>有効</p></td>
 </tr>
 <tr class="odd">
@@ -155,7 +169,7 @@ SubkeyName に関連付けられているテキスト。
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"><p>1 (既定)</p></td>
+<td align="left"><p>1 (既定値)</p></td>
 <td align="left"><p>有効</p></td>
 </tr>
 </tbody>
@@ -163,7 +177,7 @@ SubkeyName に関連付けられているテキスト。
 
  
 
-標準化された INF キーワードの詳細については、次を参照してください。[ネットワーク デバイスの標準化された INF キーワード](standardized-inf-keywords-for-network-devices.md)します。
+標準化された INF キーワードの詳細については、「[ネットワークデバイスの標準化](standardized-inf-keywords-for-network-devices.md)された inf キーワード」を参照してください。
 
  
 
