@@ -22,7 +22,7 @@ ms.locfileid: "63390666"
 
  
 
- **\*PacketCoalescing** INF キーワードは、キーワードを列挙します。 次の表に、考えられる INF エントリ、  **\*PacketCoalescing** INF キーワード。 このテーブルの列には、列挙型のキーワードは次の属性について説明します。
+**\*PacketCoalescing** INF キーワードは、キーワードを列挙します。 次の表に、考えられる INF エントリ、  **\*PacketCoalescing** INF キーワード。 このテーブルの列には、列挙型のキーワードは次の属性について説明します。
 
 <a href="" id="subkeyname"></a>SubkeyName  
 INF ファイルで指定する必要があります、キーワードの名前。 この名前は、下のレジストリにも表示されます、 **NDI\\params\\** ネットワーク アダプターのキー。
