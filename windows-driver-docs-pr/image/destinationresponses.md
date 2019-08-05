@@ -79,7 +79,7 @@ ms.locfileid: "63373175"
 <a name="remarks"></a>注釈
 -------
 
-WSD スキャン サービスは、いずれかを指定する必要があります[ **DestinationResponse** ](destinationresponse.md)内の子要素を**DestinationResponses**要素ごと[ **ScanDestination** ](scandestination.md)でクライアントを指定する要素を **&lt;wse: サブスクライブ&gt;** 要求。  **&lt;Wse: サブスクライブ&gt;** 要素は、仕様で説明します。
+WSD スキャン サービスは、いずれかを指定する必要があります[ **DestinationResponse** ](destinationresponse.md)内の子要素を**DestinationResponses**要素ごと[ **ScanDestination** ](scandestination.md)でクライアントを指定する要素を **&lt;wse: サブスクライブ&gt;** 要求。 **&lt;Wse: サブスクライブ&gt;** 要素は、仕様で説明します。
 
 ## <a name="see-also"></a>関連項目
 

@@ -21,7 +21,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "63391704"
 ---
-# <a name="devproptypestringindirect"></a>DEVPROP_TYPE_STRING_INDIRECT
+# <a name="devprop_type_string_indirect"></a>DEVPROP_TYPE_STRING_INDIRECT
 
 
 DEVPROP_TYPE_STRING_INDIRECT 識別子は、間接的な文字列の参照を含む NULL で終わる Unicode 文字列の基本データ型識別子を表します。
@@ -31,10 +31,10 @@ DEVPROP_TYPE_STRING_INDIRECT 識別子は、間接的な文字列の参照を含
 
 間接的な文字列、参照では、実際の文字列を含む文字列リソースについて説明します。 間接的な文字列参照は、次の形式のいずれかで表示できます。
 
-<a href="" id="--path--filename--resourceid"></a>**@**\[<em>path</em>**\\**\]<em>FileName</em>**,-***ResourceID*  
+<a href="" id="--path--filename--resourceid"></a> **@** \[<em>path</em> **\\** \]<em>FileName</em>* *,-***ResourceID*  
 Windows で指定されているモジュールから文字列を抽出し、*パス*と*FileName*エントリ、および文字列のリソース識別子は、によって提供される、 *ResourceID*エントリ (必要なマイナス記号を除く)。 文字列リソースは、呼び出し元の推奨される UI 言語のいずれかに最適なモジュール リソース セクションから読み込まれます。 *パス*エントリは省略可能です。 指定した場合、*パス*エントリ、モジュールは、システム定義の検索パス内にあるディレクトリに配置する必要があります。
 
-<a href="" id="-infname--strkey-"></a>**@**<em>InfName</em>**,%**<em>strkey</em>**%**  
+<a href="" id="-infname--strkey-"></a> **@** <em>InfName</em> **,%** <em>strkey</em> **%**  
 Windows では、文字列を抽出、INF から**文字列**、%systemroot% 内 INF ファイルのセクション\\*inf*ディレクトリの名前を持つがによって提供される、 *InfName*エントリ。 *Strkey*トークン識別子が内の行のキーと一致する必要があります、**文字列**呼び出し元のいずれかに最適なセクションの UI 言語を優先します。 言語に固有の場合**文字列**セクションが存在して、Windows が既定値を使用して**文字列**セクション。
 
 データ型のプロパティの修飾子のいずれかで DEVPROP_TYPE_STRING_INDIRECT を組み合わせることはできません。

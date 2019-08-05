@@ -43,18 +43,18 @@ strkey2 = "    string-with-leading-or-trailing-whitespace     "  |
 <a href="" id="strkey1--strkey2-----"></a>*strkey1*, *strkey2*, ...  
 INF ファイルでは、各文字列キーには、文字、数字、または明示的に表示されるその他の文字で構成される一意の名前を指定する必要があります。 内でこのような % 文字、 *strkey*としてトークンを表す必要があります **%%** します。
 
-<a href="" id="some-string----some-string-"></a>*一部の文字列* | **"**<em>一部の文字列</em>**"**  
+<a href="" id="some-string----some-string-"></a>*一部の文字列* |  **"** <em>一部の文字列</em> **"**  
 必要に応じて二重引用符文字 (")、具体的には英字、数字、句読点、および暗黙的に表示されるも可能性がある特定の文字が含まれていますが、内部のスペースやタブ文字を使用して区切り、文字列を指定します。 ただし、内部の二重引用符記号 (")、セミコロン (;)、改行、戻るとき、または非表示の制御文字、引用符なしの文字列を含めることはできませんし、円記号を含めることはできません (\)その最後の文字として。
 
-<a href="" id="------string-with-leading-or-trailing-whitespace-----------"></a>**"***     string-with-leading-or-trailing-whitespace*     **"** |   
+<a href="" id="------string-with-leading-or-trailing-whitespace-----------"></a> **"** *     string-with-leading-or-trailing-whitespace*     **"** |   
 
-<a href="" id="-very-long-multiline-string----"></a>**"**<em>very-long-multiline-string</em>**"** |   
+<a href="" id="-very-long-multiline-string----"></a> **"** <em>very-long-multiline-string</em> **"**  |   
 
-<a href="" id="-string-with-semicolon----"></a>**"**<em>string-with-semicolon</em>**"** |   
+<a href="" id="-string-with-semicolon----"></a> **"** <em>string-with-semicolon</em> **"**  |   
 
-<a href="" id="-string-ending-in-backslash---"></a>**"**<em>string-ending-in-backslash</em>**"** |  
+<a href="" id="-string-ending-in-backslash---"></a> **"** <em>string-ending-in-backslash</em> **"**  |  
 
-<a href="" id="--double-quoted-string-value--"></a>**"***"double-quoted-string-value"***"**  
+<a href="" id="--double-quoted-string-value--"></a> **"***"double-quoted-string-value"***"**  
 % に指定された値*strkey*% トークン*する必要があります*囲む二重引用符 (") で、次の条件を満たしている場合。
 
 -   指定した文字列にその値の一部として保持する必要があります、先頭または末尾の空白文字がある場合は、その文字列を先頭または末尾の空白文字が INF パーサーによって破棄されることを防ぐために二重引用符文字で囲む必要があります。
@@ -79,7 +79,7 @@ INF ファイルでは、各文字列キーには、文字、数字、または�
 <a name="remarks"></a>コメント
 -------
 
-システム INF パーサーが外側のいずれかからは、二重引用符最も外側の組によって削除されるため **"**<em>文字列を引用符で囲まれた</em>**"** % を定義する*strkey*システム INF ファイルの多く % トークン定義すべて %*strkey*% のトークンとして **"**<em>文字列を引用符で囲まれた</em><strong>"</strong>を回避します。先頭と末尾の空白文字の INF の解析中に予期しない損失。 使用 **"**<em>文字列を引用符で囲まれた</em><strong>"</strong>も行うことにより、行全体をラップする値が切り捨てられることはできません、非常に長い文字列とその文字列に円記号を終了INF ファイルで次の行に連結することはできません。
+システム INF パーサーが外側のいずれかからは、二重引用符最も外側の組によって削除されるため **"** <em>文字列を引用符で囲まれた</em> **"** % を定義する*strkey*システム INF ファイルの多く % トークン定義すべて %*strkey*% のトークンとして **"** <em>文字列を引用符で囲まれた</em><strong>"</strong>を回避します。先頭と末尾の空白文字の INF の解析中に予期しない損失。 使用 **"** <em>文字列を引用符で囲まれた</em><strong>"</strong>も行うことにより、行全体をラップする値が切り捨てられることはできません、非常に長い文字列とその文字列に円記号を終了INF ファイルで次の行に連結することはできません。
 
 1 つの国際 INF ファイルを作成する、INF がロケール固有のセットを持つことができます**文字列**。<em>LanguageID</em>セクションで、正式な構文のステートメントのようにします。 *LanguageID*拡張機能は次のように定義されている 16 進数の値。
 
@@ -103,7 +103,7 @@ Windows は、1 つを選択します。**文字列**すべて % を変換する
 
 % の使用*strkey*INF ファイル内の % トークンはユーザーに表示される文字列値に制限されません。 内の各トークンが定義されていれば、INF ライターに便利な方法でこれらのトークンを使用できる、**文字列**セクション。 たとえば、いくつかの Guid の仕様を必要とする INF ファイルを作成する場合があります % を作成すると便利*strkey*各 GUID 値の代わりにわかりやすい名前を使用して、guid ごと % トークンです。
 
-セットを指定する**%** <em>strkey</em>**% ="{**<em>GUID</em>**}"** INF ファイルの値**文字列**セクションでは、各明示的な GUID 値を 1 回だけ入力する必要があります。 こうと、INF ファイルで明示的な GUID 値を使用して、読みやすくの内部 INF ドキュメントを提供します。
+セットを指定する **%** <em>strkey</em> **% ="{** <em>GUID</em> **}"** INF ファイルの値**文字列**セクションでは、各明示的な GUID 値を 1 回だけ入力する必要があります。 こうと、INF ファイルで明示的な GUID 値を使用して、読みやすくの内部 INF ドキュメントを提供します。
 
 すべての %*strkey*% トークンは、参照されている INF ファイルで定義する必要があります。 持つ任意の INF ファイルのため、 **Include**と**必要がある**エントリ、含まれる、INF する必要がありますが、独自**文字列**すべて % を定義するセクション*strkey*% トークンがその INF で参照されています。
 

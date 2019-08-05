@@ -34,7 +34,7 @@ sx- [-c "Cmd1"] [-c2 "Cmd2"] {Exception|Event|*}
 sxr
 ```
 
-## <a name="span-idddkcmdsetexceptionsdbgspanspan-idddkcmdsetexceptionsdbgspanparameters"></a><span id="ddk_cmd_set_exceptions_dbg"></span><span id="DDK_CMD_SET_EXCEPTIONS_DBG"></span>パラメーター
+## <a name="span-idddk_cmd_set_exceptions_dbgspanspan-idddk_cmd_set_exceptions_dbgspanparameters"></a><span id="ddk_cmd_set_exceptions_dbg"></span><span id="DDK_CMD_SET_EXCEPTIONS_DBG"></span>パラメーター
 
 
 <span id="-c__Cmd1_"></span><span id="-c__cmd1_"></span><span id="-C__CMD1_"></span> **-c"** <em>Cmd1</em> **"**  
@@ -80,7 +80,7 @@ sxr
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
 中断状態と処理の状態、すべてのイベント コードの説明については、すべてのイベントの既定の状態の一覧と、この状態を制御するその他の方法の詳細については、次を参照してください。[を制御する例外とイベント](controlling-exceptions-and-events.md)します。
 

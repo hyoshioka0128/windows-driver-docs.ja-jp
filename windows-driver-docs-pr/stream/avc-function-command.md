@@ -19,7 +19,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 06/25/2019
 ms.locfileid: "67386757"
 ---
-# <a name="avcfunctioncommand"></a>AVC\_関数\_コマンド
+# <a name="avc_function_command"></a>AVC\_関数\_コマンド
 
 
 ## <span id="ddk_avc_function_command_ks"></span><span id="DDK_AVC_FUNCTION_COMMAND_KS"></span>
@@ -97,7 +97,7 @@ typedef struct _AVC_COMMAND_IRB {
 
 **ヘッダー:** 宣言されている*avc.h*します。 含める*avc.h*します。
 
-### <a name="span-idavccommandirbinputspanspan-idavccommandirbinputspanavccommandirb-input"></a><span id="avc_command_irb_input"></span><span id="AVC_COMMAND_IRB_INPUT"></span>AVC\_コマンド\_IRB 入力
+### <a name="span-idavc_command_irb_inputspanspan-idavc_command_irb_inputspanavc_command_irb-input"></a><span id="avc_command_irb_input"></span><span id="AVC_COMMAND_IRB_INPUT"></span>AVC\_コマンド\_IRB 入力
 
 **一般的です**  
 **関数**にこのメンバーのサブメンバーを設定する必要があります**AVC\_関数\_コマンド**、AVC から\_関数の列挙体。

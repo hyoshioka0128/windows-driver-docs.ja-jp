@@ -33,13 +33,13 @@ HTTP のシンボル サーバーは、その読み取り専用の性質によ�
 
  
 
-### <a name="span-idconfiguringthedirectoriesspanspan-idconfiguringthedirectoriesspancreating-the-symbol-directory"></a><span id="configuring_the_directories"></span><span id="CONFIGURING_THE_DIRECTORIES"></span>シンボルのディレクトリを作成します。
+### <a name="span-idconfiguring_the_directoriesspanspan-idconfiguring_the_directoriesspancreating-the-symbol-directory"></a><span id="configuring_the_directories"></span><span id="CONFIGURING_THE_DIRECTORIES"></span>シンボルのディレクトリを作成します。
 
 シンボル ストアとして使用するディレクトリを選択して開始します。 この例でこのディレクトリの c: を呼び出して\\symstore、ネットワーク上のサーバーの名前が\\SymMachineName します。
 
 シンボル ストアを設定する方法の詳細については、次を参照してください。 [SymStore](symstore.md)と[シンボルを格納フォルダー ツリー](symbol-store-folder-tree.md)します。
 
-### <a name="span-idconfiguringiisspanspan-idconfiguringiisspanconfiguring-iis"></a><span id="configuring_iis"></span><span id="CONFIGURING_IIS"></span>IIS の構成
+### <a name="span-idconfiguring_iisspanspan-idconfiguring_iisspanconfiguring-iis"></a><span id="configuring_iis"></span><span id="CONFIGURING_IIS"></span>IIS の構成
 
 インターネット インフォメーション サービス (IIS) は、仮想ディレクトリを作成および MIME の種類を構成して、シンボルを提供するように構成する必要があります。 これを実行した後に認証方法を選択することができます。
 
@@ -127,7 +127,7 @@ HTTP のシンボル サーバーは、その読み取り専用の性質によ�
 
 IIS は、すべてのシンボル ストアの種類のシンボル ファイルを処理する準備ができました。
 
-## <a name="span-idconfiguringauthenticationspanspan-idconfiguringauthenticationspanspan-idconfiguringauthenticationspanconfiguring-authentication"></a><span id="Configuring_Authentication"></span><span id="configuring_authentication"></span><span id="CONFIGURING_AUTHENTICATION"></span>認証を構成します。
+## <a name="span-idconfiguring_authenticationspanspan-idconfiguring_authenticationspanspan-idconfiguring_authenticationspanconfiguring-authentication"></a><span id="Configuring_Authentication"></span><span id="configuring_authentication"></span><span id="CONFIGURING_AUTHENTICATION"></span>認証を構成します。
 
 
 資格情報のエンドユーザーにメッセージを表示せず、クライアント (たとえば windbg.exe) は IIS に対して認証に自動的にできるように、「統合 Windows 認証」を使用するように IIS を構成することになります。
@@ -154,7 +154,7 @@ IIS は、すべてのシンボル ストアの種類のシンボル ファイ�
 
 認証のウィンドウが表示されない場合は、使用**有効にする Windows 機能のオンとオフを**機能を有効にします。 機能の場所は、Windows のバージョンごとに異なります。 インターネット インフォメーション サービスでは、Windows 8.1/Windows 2012 R2、配置が |World Wide Web サービス |セキュリティ。
 
-## <a name="span-iddisablekerberossupportspanspan-iddisablekerberossupportspanspan-iddisablekerberossupportspandisable-kerberos-support"></a><span id="Disable_Kerberos_Support"></span><span id="disable_kerberos_support"></span><span id="DISABLE_KERBEROS_SUPPORT"></span>Kerberos のサポートを無効にします。
+## <a name="span-iddisable_kerberos_supportspanspan-iddisable_kerberos_supportspanspan-iddisable_kerberos_supportspandisable-kerberos-support"></a><span id="Disable_Kerberos_Support"></span><span id="disable_kerberos_support"></span><span id="DISABLE_KERBEROS_SUPPORT"></span>Kerberos のサポートを無効にします。
 
 
 SymSrv.dll は、IIS に接続するときは、Kerberos 認証をサポートしません。 そのため、Kerberos 認証は、唯一の Windows 認証プロトコルとして設定する、IIS と NTLM のニーズに無効にする必要があります。
@@ -179,7 +179,7 @@ SymSrv.dll は、IIS に接続するときは、Kerberos 認証をサポート�
     appcmd.exe set config -section:system.webServer/security/authentication/windowsAuthentication /+"providers.[value='Negotiate,NTLM']" /commit:apphost
     ```
 
-## <a name="span-idconfiguringsymsrvclientauthenticationpromptsspanspan-idconfiguringsymsrvclientauthenticationpromptsspanspan-idconfiguringsymsrvclientauthenticationpromptsspanconfiguring-symsrv-client-authentication-prompts"></a><span id="Configuring_SymSrv_Client_Authentication_Prompts"></span><span id="configuring_symsrv_client_authentication_prompts"></span><span id="CONFIGURING_SYMSRV_CLIENT_AUTHENTICATION_PROMPTS"></span>SymSrv クライアント認証を構成するように求められます
+## <a name="span-idconfiguring_symsrv_client_authentication_promptsspanspan-idconfiguring_symsrv_client_authentication_promptsspanspan-idconfiguring_symsrv_client_authentication_promptsspanconfiguring-symsrv-client-authentication-prompts"></a><span id="Configuring_SymSrv_Client_Authentication_Prompts"></span><span id="configuring_symsrv_client_authentication_prompts"></span><span id="CONFIGURING_SYMSRV_CLIENT_AUTHENTICATION_PROMPTS"></span>SymSrv クライアント認証を構成するように求められます
 
 
 SymSrv では、認証要求を受信するとデバッガーする認証 ダイアログ ボックスを表示するか自動的に構成した方法に応じて、要求を拒否します。 使用してこの動作を構成することができます。 sym は、で求める | オフ。 画面の指示を有効にする例では、このコマンドを使用します。

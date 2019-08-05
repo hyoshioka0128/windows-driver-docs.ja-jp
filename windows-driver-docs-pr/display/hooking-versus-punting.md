@@ -40,7 +40,7 @@ ms.locfileid: "67380222"
 
 *Punting* GDI へのコールバックに対応する GDI シミュレーションへの呼び出しを配置することを意味します。 一般に、すべて*DrvXxx*グラフィックの呼び出しが対応する GDI **への Eng * * * Xxx*同じ引数を受け取る呼び出しをシミュレーションします。 ドライバーには、ビットマップ nonopaque が行われて、限り GDI シミュレーションに変更なしのすべてのパラメーターを渡されることができます。 ドライバーは、GDI に punts 呼び出しごとに、(その機能のコードを省略できます) ので、ドライバーのサイズが減少します。 ただし、エンジンに、呼び出しが所有しているため、ドライバーは、実行速度を制御がありません。 いくつかの複雑な場合、ある可能性がありますいないドライバーのサポートを提供する実際的なメリットです。
 
-### <a name="span-idhookablegdigraphicsoutputfunctionsspanspan-idhookablegdigraphicsoutputfunctionsspanspan-idhookablegdigraphicsoutputfunctionsspanhookable-gdi-graphics-output-functions"></a><span id="Hookable_GDI_Graphics_Output_Functions"></span><span id="hookable_gdi_graphics_output_functions"></span><span id="HOOKABLE_GDI_GRAPHICS_OUTPUT_FUNCTIONS"></span>フックの GDI グラフィックス出力関数
+### <a name="span-idhookable_gdi_graphics_output_functionsspanspan-idhookable_gdi_graphics_output_functionsspanspan-idhookable_gdi_graphics_output_functionsspanhookable-gdi-graphics-output-functions"></a><span id="Hookable_GDI_Graphics_Output_Functions"></span><span id="hookable_gdi_graphics_output_functions"></span><span id="HOOKABLE_GDI_GRAPHICS_OUTPUT_FUNCTIONS"></span>フックの GDI グラフィックス出力関数
 
 グラフィックは、ドライバーが接続できるし、対応する GDI シミュレーションは、次の表に記載されている関数を出力します。
 

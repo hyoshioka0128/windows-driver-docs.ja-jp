@@ -23,7 +23,7 @@ Storport の検証の機能は、ポート ドライバー、Storport ミニポ�
 
  
 
-### <a name="span-idviolationsdetectedbystorportverificationspanspan-idviolationsdetectedbystorportverificationspanviolations-detected-by-storport-verification"></a><span id="violations_detected_by_storport_verification"></span><span id="VIOLATIONS_DETECTED_BY_STORPORT_VERIFICATION"></span>Storport の確認によって検出された違反
+### <a name="span-idviolations_detected_by_storport_verificationspanspan-idviolations_detected_by_storport_verificationspanviolations-detected-by-storport-verification"></a><span id="violations_detected_by_storport_verification"></span><span id="VIOLATIONS_DETECTED_BY_STORPORT_VERIFICATION"></span>Storport の確認によって検出された違反
 
 Storport の検証の機能は、Storport ルーチンのいくつか誤ってを検出できます。 これらのチェックの一部を個別に無効にすることもできます。
 
@@ -47,7 +47,7 @@ Storport の検証を使用するバグの検査パラメーターの一覧は�
 
  
 
-### <a name="span-idactivatingthisoptionspanspan-idactivatingthisoptionspanactivating-this-option"></a><span id="activating_this_option"></span><span id="ACTIVATING_THIS_OPTION"></span>このオプションをアクティブ化します。
+### <a name="span-idactivating_this_optionspanspan-idactivating_this_optionspanactivating-this-option"></a><span id="activating_this_option"></span><span id="ACTIVATING_THIS_OPTION"></span>このオプションをアクティブ化します。
 
 Storport の確認オプションをアクティブ化するための手順は他の Driver Verifier のオプションがアクティブ化するためのプロシージャから異なります。
 
@@ -61,7 +61,7 @@ Storport の確認オプションをアクティブ化するための手順は�
 
 場合、 **VerifyLevel**値が存在しないか 0 xffffffff と等しく、Storport の検証が無効になります。
 
-### <a name="span-idactivatingwithoutrebootingspanspan-idactivatingwithoutrebootingspanactivating-without-rebooting"></a><span id="activating_without_rebooting"></span><span id="ACTIVATING_WITHOUT_REBOOTING"></span>再起動しなくてもアクティブ化します。
+### <a name="span-idactivating_without_rebootingspanspan-idactivating_without_rebootingspanactivating-without-rebooting"></a><span id="activating_without_rebooting"></span><span id="ACTIVATING_WITHOUT_REBOOTING"></span>再起動しなくてもアクティブ化します。
 
 一般に、アクティブ化または再起動 (リブート) することがなく、Storport の検証を非アクティブ化できません任意の Windows オペレーティング システム上のコンピューター。 *StorPort.sys*ドライバーの読み込み、 **VerifyLevel**これは、通常ブート時にレジストリ エントリ、読み込み時にのみです。 ただし場合、 *StorPort.sys*レジストリ エントリを追加するかアンロードし、再読み込み場合は、コンピューターを再起動せずに Windows Vista 以降のバージョンの Windows で Storport 検証が有効にすることができます、ドライバーが読み込まれていません。
 

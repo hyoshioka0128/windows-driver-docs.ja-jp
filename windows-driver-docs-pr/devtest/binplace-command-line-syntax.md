@@ -28,7 +28,7 @@ BinPlace は、コマンドラインで、次の構文を使用します。
     binplace [Options] File [ [Options] [@PlaceFile] File [...] ]
 ```
 
-## <a name="span-idddkbinplacecommandlinesyntaxtoolsspanspan-idddkbinplacecommandlinesyntaxtoolsspanparameters"></a><span id="ddk_binplace_command_line_syntax_tools"></span><span id="DDK_BINPLACE_COMMAND_LINE_SYNTAX_TOOLS"></span>パラメーター
+## <a name="span-idddk_binplace_command_line_syntax_toolsspanspan-idddk_binplace_command_line_syntax_toolsspanparameters"></a><span id="ddk_binplace_command_line_syntax_tools"></span><span id="DDK_BINPLACE_COMMAND_LINE_SYNTAX_TOOLS"></span>パラメーター
 
 
 <span id="_______Options______"></span><span id="_______options______"></span><span id="_______OPTIONS______"></span> *オプション*   
@@ -140,11 +140,11 @@ BinPlace の対象となるファイルの完全なパスとファイル名を�
 <span id="________PlaceFile______"></span><span id="________placefile______"></span><span id="________PLACEFILE______"></span> **@** <em>PlaceFile</em>   
 任意のファイル名が続く場合、アット マーク ( **@** )、ファイル名は、配置ファイルの名前を表します。 詳細については、ファイルのセクションで次に指定するパラメーターを参照してください。
 
-### <a name="span-idparsingorderspanspan-idparsingorderspanparsing-order"></a><span id="parsing_order"></span><span id="PARSING_ORDER"></span>解析の順序
+### <a name="span-idparsing_orderspanspan-idparsing_orderspanparsing-order"></a><span id="parsing_order"></span><span id="PARSING_ORDER"></span>解析の順序
 
 BinPlace は左から右へのコマンド ラインを解析します。 いくつかのオプションを指定することができます、*ファイル*パラメーター、新しいオプションは、別*ファイル*パラメーターなどです。 BinPlace の新しいオプションを検出するたびに、採用、以前に発生、矛盾するオプションをオーバーライドします。 発生したときに、*ファイル*指定子が既に発生までの累積オプションを使用して、コマンドラインでそのファイルで機能します。
 
-### <a name="span-idsupplyingparametersinafilespanspan-idsupplyingparametersinafilespansupplying-parameters-in-a-file"></a><span id="supplying_parameters_in_a_file"></span><span id="SUPPLYING_PARAMETERS_IN_A_FILE"></span>ファイル内のパラメーターを指定します。
+### <a name="span-idsupplying_parameters_in_a_filespanspan-idsupplying_parameters_in_a_filespansupplying-parameters-in-a-file"></a><span id="supplying_parameters_in_a_file"></span><span id="SUPPLYING_PARAMETERS_IN_A_FILE"></span>ファイル内のパラメーターを指定します。
 
 テキスト ファイルから BinPlace にパラメーターを渡すことになります。 これには 2 つの方法があります。
 

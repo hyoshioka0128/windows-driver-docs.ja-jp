@@ -28,7 +28,7 @@ ms.locfileid: "67371402"
     devcon drivernodes {* | ID [ID ...] | =class [ID [ID ...]]} 
 ```
 
-## <a name="span-idddkdevcondrivernodestoolsspanspan-idddkdevcondrivernodestoolsspanparameters"></a><span id="ddk_devcon_drivernodes_tools"></span><span id="DDK_DEVCON_DRIVERNODES_TOOLS"></span>パラメーター
+## <a name="span-idddk_devcon_drivernodes_toolsspanspan-idddk_devcon_drivernodes_toolsspanparameters"></a><span id="ddk_devcon_drivernodes_tools"></span><span id="DDK_DEVCON_DRIVERNODES_TOOLS"></span>パラメーター
 
 
 <span id="______________"></span> **\\** *   
@@ -79,7 +79,7 @@ ms.locfileid: "67371402"
 
 **DevCon DriverNodes**操作はセットアップの問題のトラブルシューティングに特に便利です。 たとえば、Windows INF ファイル、またはカスタマイズされたサード パーティ製 INF ファイルをデバイスで使用されたかどうかを特定するのには使用できます。
 
-### <a name="span-idsampleusagespanspan-idsampleusagespansample-usage"></a><span id="sample_usage"></span><span id="SAMPLE_USAGE"></span>サンプルの使用法
+### <a name="span-idsample_usagespanspan-idsample_usagespansample-usage"></a><span id="sample_usage"></span><span id="SAMPLE_USAGE"></span>サンプルの使用法
 
 ```
 devcon drivernodes *

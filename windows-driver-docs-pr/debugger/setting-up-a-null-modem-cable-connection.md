@@ -24,7 +24,7 @@ ms.locfileid: "63381926"
 
 デバッガーを実行しているコンピューターが呼び出されます、*ホスト コンピューター*、デバッグ中のコンピューターを呼び出すと、*対象のコンピュータ*します。
 
-## <a name="span-idsettingupthetargetcomputerspanspan-idsettingupthetargetcomputerspanspan-idsettingupthetargetcomputerspansetting-up-the-target-computer"></a><span id="Setting_Up_the_Target_Computer"></span><span id="setting_up_the_target_computer"></span><span id="SETTING_UP_THE_TARGET_COMPUTER"></span>ターゲット コンピューターをセットアップします。
+## <a name="span-idsetting_up_the_target_computerspanspan-idsetting_up_the_target_computerspanspan-idsetting_up_the_target_computerspansetting-up-the-target-computer"></a><span id="Setting_Up_the_Target_Computer"></span><span id="setting_up_the_target_computer"></span><span id="SETTING_UP_THE_TARGET_COMPUTER"></span>ターゲット コンピューターをセットアップします。
 
 
 > [!IMPORTANT]
@@ -35,7 +35,7 @@ ms.locfileid: "63381926"
 
    **bcdedit /debug on**
 
-   **bcdedit/dbgsettings シリアル debugport:**<em>n</em> **baudrate:**<em>レート</em>
+   **bcdedit/dbgsettings シリアル debugport:** <em>n</em> **baudrate:** <em>レート</em>
 
    **注**ボー レートには、ホスト コンピューターと対象のコンピュータで同じである必要があります。 推奨されるレートは、115200 です。
 
@@ -43,42 +43,42 @@ ms.locfileid: "63381926"
 
 2. ターゲット コンピューターを再起動します。
 
-## <a name="span-idstartingthedebuggingsessionspanspan-idstartingthedebuggingsessionspanspan-idstartingthedebuggingsessionspanstarting-the-debugging-session"></a><span id="Starting_the_Debugging_Session"></span><span id="starting_the_debugging_session"></span><span id="STARTING_THE_DEBUGGING_SESSION"></span>デバッグ セッションの開始
+## <a name="span-idstarting_the_debugging_sessionspanspan-idstarting_the_debugging_sessionspanspan-idstarting_the_debugging_sessionspanstarting-the-debugging-session"></a><span id="Starting_the_Debugging_Session"></span><span id="starting_the_debugging_session"></span><span id="STARTING_THE_DEBUGGING_SESSION"></span>デバッグ セッションの開始
 
 
 ホストおよびターゲット コンピューターでのデバッグ用に選択した COM ポートには、ヌル モデム ケーブルを接続します。
 
-### <a name="span-idusingwindbgspanspan-idusingwindbgspanspan-idusingwindbgspanusing-windbg"></a><span id="Using_WinDbg"></span><span id="using_windbg"></span><span id="USING_WINDBG"></span>WinDbg を使用します。
+### <a name="span-idusing_windbgspanspan-idusing_windbgspanspan-idusing_windbgspanusing-windbg"></a><span id="Using_WinDbg"></span><span id="using_windbg"></span><span id="USING_WINDBG"></span>WinDbg を使用します。
 
 ホスト コンピューターでは、WinDbg を開きます。 **ファイル**] メニューの [選択**カーネル デバッグ**します。 カーネル デバッグ ダイアログ ボックスで、開く、 **COM**タブ。**ボー レート**ボックスに、デバッグ用に選択した割合を入力します。 **ポート**ボックスに、COM の入力*n*場所*n*はホスト コンピューターでのデバッグ用に選択した COM ポート番号です。 **[OK]** をクリックします。
 
 コマンド プロンプト ウィンドウで、次のコマンドを入力して、WinDbg でセッションを開始することもできます。*n* 、ホスト コンピューターでデバッグするために使用する COM ポートの番号と*レート*ボー レートをデバッグするためには。
 
-**windbg -k com:port=COM**<em>n</em>**,baud=**<em>rate</em>
+**windbg -k com:port=COM**<em>n</em> **,baud=** <em>rate</em>
 
-### <a name="span-idusingkdspanspan-idusingkdspanspan-idusingkdspanusing-kd"></a><span id="Using_KD"></span><span id="using_kd"></span><span id="USING_KD"></span>KD を使用します。
+### <a name="span-idusing_kdspanspan-idusing_kdspanspan-idusing_kdspanusing-kd"></a><span id="Using_KD"></span><span id="using_kd"></span><span id="USING_KD"></span>KD を使用します。
 
 ホスト コンピューターでは、コマンド プロンプト ウィンドウを開き、次のコマンドを入力して場所*n* 、ホスト コンピューターでデバッグするために使用する COM ポートの数と*レート*ボー レートを使用デバッグ。
 
-**kd-k com:port COM を =**<em>n</em>**、ボー =**<em>レート</em>
+**kd-k com:port COM を =** <em>n</em> **、ボー =** <em>レート</em>
 
-## <a name="span-idusingenvironmentvariablesspanspan-idusingenvironmentvariablesspanspan-idusingenvironmentvariablesspanusing-environment-variables"></a><span id="Using_Environment_Variables"></span><span id="using_environment_variables"></span><span id="USING_ENVIRONMENT_VARIABLES"></span>環境変数の使用
+## <a name="span-idusing_environment_variablesspanspan-idusing_environment_variablesspanspan-idusing_environment_variablesspanusing-environment-variables"></a><span id="Using_Environment_Variables"></span><span id="using_environment_variables"></span><span id="USING_ENVIRONMENT_VARIABLES"></span>環境変数の使用
 
 
 ホスト コンピューターでは、COM ポートとボー レートを指定するのに環境変数を使用することができます。 デバッグ セッションを起動するたびにポートとボー レートを指定する必要はありません。 環境変数を使用して、COM ポートとボー レートを指定、コマンド プロンプト ウィンドウを開き、次のコマンドを入力する場所*n* 、ホスト コンピューターでデバッグするために使用する COM ポートの番号と*レート*ボー レートをデバッグするためには。
 
 - **設定\_NT\_デバッグ\_ポート COM を = * * * n*
-- **設定\_NT\_デバッグ\_ボー\_率 =**<em>レート</em>
+- **設定\_NT\_デバッグ\_ボー\_率 =** <em>レート</em>
 
 デバッグ セッションを開始するには、コマンド プロンプト ウィンドウを開き、次のコマンドのいずれかを入力します。
 
 -   **kd**
 -   **windbg**
 
-## <a name="span-idtroubleshootingtipsfordebuggingoveraserialcablespanspan-idtroubleshootingtipsfordebuggingoveraserialcablespanspan-idtroubleshootingtipsfordebuggingoveraserialcablespantroubleshooting-tips-for-debugging-over-a-serial-cable"></a><span id="Troubleshooting_Tips_for_Debugging_over_a_Serial_Cable"></span><span id="troubleshooting_tips_for_debugging_over_a_serial_cable"></span><span id="TROUBLESHOOTING_TIPS_FOR_DEBUGGING_OVER_A_SERIAL_CABLE"></span>シリアル ケーブル経由でのデバッグのトラブルシューティングのヒント
+## <a name="span-idtroubleshooting_tips_for_debugging_over_a_serial_cablespanspan-idtroubleshooting_tips_for_debugging_over_a_serial_cablespanspan-idtroubleshooting_tips_for_debugging_over_a_serial_cablespantroubleshooting-tips-for-debugging-over-a-serial-cable"></a><span id="Troubleshooting_Tips_for_Debugging_over_a_Serial_Cable"></span><span id="troubleshooting_tips_for_debugging_over_a_serial_cable"></span><span id="TROUBLESHOOTING_TIPS_FOR_DEBUGGING_OVER_A_SERIAL_CABLE"></span>シリアル ケーブル経由でのデバッグのトラブルシューティングのヒント
 
 
-### <a name="span-idspecifycorrectcomportonbothhostandtargetspanspan-idspecifycorrectcomportonbothhostandtargetspanspan-idspecifycorrectcomportonbothhostandtargetspanspecify-correct-com-port-on-both-host-and-target"></a><span id="Specify_correct_COM_port_on_both_host_and_target"></span><span id="specify_correct_com_port_on_both_host_and_target"></span><span id="SPECIFY_CORRECT_COM_PORT_ON_BOTH_HOST_AND_TARGET"></span>ホストとターゲットの両方で適切な COM ポートを指定します。
+### <a name="span-idspecify_correct_com_port_on_both_host_and_targetspanspan-idspecify_correct_com_port_on_both_host_and_targetspanspan-idspecify_correct_com_port_on_both_host_and_targetspanspecify-correct-com-port-on-both-host-and-target"></a><span id="Specify_correct_COM_port_on_both_host_and_target"></span><span id="specify_correct_com_port_on_both_host_and_target"></span><span id="SPECIFY_CORRECT_COM_PORT_ON_BOTH_HOST_AND_TARGET"></span>ホストとターゲットの両方で適切な COM ポートを指定します。
 
 ホストとターゲットのコンピューターでデバッグを使用する COM ポートの数を決定します。 たとえば、ターゲット コンピューター上にホスト コンピューターと COM2 で COM1 に接続されて、ヌル モデム ケーブルがあるとします。
 
@@ -91,7 +91,7 @@ ms.locfileid: "63381926"
 -   **kd-k com:port = COM1、.**
 -   **設定\_NT\_デバッグ\_ポート COM1 を =**
 
-### <a name="span-idbaudratemustbethesameonhostandtargetspanspan-idbaudratemustbethesameonhostandtargetspanspan-idbaudratemustbethesameonhostandtargetspanbaud-rate-must-be-the-same-on-host-and-target"></a><span id="Baud_rate_must_be_the_same_on_host_and_target"></span><span id="baud_rate_must_be_the_same_on_host_and_target"></span><span id="BAUD_RATE_MUST_BE_THE_SAME_ON_HOST_AND_TARGET"></span>ボー レートには、同じホストとターゲットである必要があります。
+### <a name="span-idbaud_rate_must_be_the_same_on_host_and_targetspanspan-idbaud_rate_must_be_the_same_on_host_and_targetspanspan-idbaud_rate_must_be_the_same_on_host_and_targetspanbaud-rate-must-be-the-same-on-host-and-target"></a><span id="Baud_rate_must_be_the_same_on_host_and_target"></span><span id="baud_rate_must_be_the_same_on_host_and_target"></span><span id="BAUD_RATE_MUST_BE_THE_SAME_ON_HOST_AND_TARGET"></span>ボー レートには、同じホストとターゲットである必要があります。
 
 シリアル ケーブル経由でのデバッグに使用するボー レートは、ホストとターゲットのコンピューターで同じ値に設定する必要があります。 たとえば、115200 のボー レートを選択したとします。
 
@@ -109,7 +109,7 @@ ms.locfileid: "63381926"
 
 次の表にどのようにヌル モデム ケーブルを接続します。
 
-### <a name="span-id9-pinconnectorspanspan-id9-pinconnectorspan9-pin-connector"></a><span id="9-pin_connector"></span><span id="9-PIN_CONNECTOR"></span>9 ピンのコネクタ
+### <a name="span-id9-pin_connectorspanspan-id9-pin_connectorspan9-pin-connector"></a><span id="9-pin_connector"></span><span id="9-PIN_CONNECTOR"></span>9 ピンのコネクタ
 
 | コネクタ 1 | コネクタ 2 | 信号        |
 |-------------|-------------|----------------|
@@ -123,7 +123,7 @@ ms.locfileid: "63381926"
 
  
 
-### <a name="span-id25-pinconnectorspanspan-id25-pinconnectorspan25-pin-connector"></a><span id="25-pin_connector"></span><span id="25-PIN_CONNECTOR"></span>25 ピンのコネクタ
+### <a name="span-id25-pin_connectorspanspan-id25-pin_connectorspan25-pin-connector"></a><span id="25-pin_connector"></span><span id="25-PIN_CONNECTOR"></span>25 ピンのコネクタ
 
 | コネクタ 1 | コネクタ 2 | 信号       |
 |-------------|-------------|---------------|
@@ -137,7 +137,7 @@ ms.locfileid: "63381926"
 
  
 
-### <a name="span-idsignalabbreviationsspanspan-idsignalabbreviationsspanspan-idsignalabbreviationsspansignal-abbreviations"></a><span id="Signal_Abbreviations"></span><span id="signal_abbreviations"></span><span id="SIGNAL_ABBREVIATIONS"></span>シグナルの省略形
+### <a name="span-idsignal_abbreviationsspanspan-idsignal_abbreviationsspanspan-idsignal_abbreviationsspansignal-abbreviations"></a><span id="Signal_Abbreviations"></span><span id="signal_abbreviations"></span><span id="SIGNAL_ABBREVIATIONS"></span>シグナルの省略形
 
 | 省略形 | シグナル              |
 |--------------|---------------------|
@@ -151,12 +151,12 @@ ms.locfileid: "63381926"
 
  
 
-## <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
+## <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
 
 完全なドキュメントについて、 **bcdedit**コマンドを Windows Driver Kit (WDK) ドキュメントで、ドライバーのテストおよびデバッグのブート オプションを参照してください。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
 [カーネル モードのデバッグを手動での設定](setting-up-kernel-mode-debugging-in-windbg--cdb--or-ntsd.md)

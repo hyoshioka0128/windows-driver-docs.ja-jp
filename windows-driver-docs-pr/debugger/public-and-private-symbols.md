@@ -74,13 +74,13 @@ ms.locfileid: "63362388"
 
 プライベート シンボル データと、パブリック シンボル テーブルの他の 1 つの違いがあります。 名前を持つパブリック シンボル テーブル内の項目の多く*装飾*プレフィックスやサフィックスを使用します。 これらの装飾は、C コンパイラ、C++ コンパイラ、および MASM アセンブラーによって追加されます。 一般的なプレフィックスは、一連のアンダー スコアまたは文字列を含める **\_\_imp\_** (インポートした関数の指定)。 一般的なサフィックスは、アット マークから 1 つ以上を含める ( **@** ) の後にアドレスまたはその他の識別文字列。 これらの装飾は、関数名の可能性がありますまたはグローバル変数名は、さまざまなモジュールで繰り返される可能性があるため、シンボルを解消するために、リンカーによって使用されます。 これらの装飾には、パブリック シンボル テーブルにプライベート シンボル データのサブセットがある一般的な規則の例外です。
 
-### <a name="span-idfullsymbolfilesandstrippedsymbolfilesspanspan-idfullsymbolfilesandstrippedsymbolfilesspanfull-symbol-files-and-stripped-symbol-files"></a><span id="full_symbol_files_and_stripped_symbol_files"></span><span id="FULL_SYMBOL_FILES_AND_STRIPPED_SYMBOL_FILES"></span>完全なシンボル ファイルと削除されたシンボル ファイル
+### <a name="span-idfull_symbol_files_and_stripped_symbol_filesspanspan-idfull_symbol_files_and_stripped_symbol_filesspanfull-symbol-files-and-stripped-symbol-files"></a><span id="full_symbol_files_and_stripped_symbol_files"></span><span id="FULL_SYMBOL_FILES_AND_STRIPPED_SYMBOL_FILES"></span>完全なシンボル ファイルと削除されたシンボル ファイル
 
 A*完全なシンボル ファイル*プライベート シンボルのデータと、パブリック シンボル テーブルの両方が含まれています。 この種類のファイルとして呼ば、*プライベート シンボル ファイル*が、このようなファイルには、プライベートとパブリック両方の記号が含まれているは、この名前は、誤解を招く。
 
 A*シンボル ファイルを除去*- パブリック シンボル テーブルのみを含む小さいファイルは、または場合によっては、パブリック シンボル テーブルのサブセットのみです。 このファイルとして呼ば、*パブリック シンボル ファイル*します。
 
-### <a name="span-idcreatingfullandstrippedsymbolfilesspanspan-idcreatingfullandstrippedsymbolfilesspancreating-full-and-stripped-symbol-files"></a><span id="creating_full_and_stripped_symbol_files"></span><span id="CREATING_FULL_AND_STRIPPED_SYMBOL_FILES"></span>完全および削除されたシンボル ファイルを作成します。
+### <a name="span-idcreating_full_and_stripped_symbol_filesspanspan-idcreating_full_and_stripped_symbol_filesspancreating-full-and-stripped-symbol-files"></a><span id="creating_full_and_stripped_symbol_files"></span><span id="CREATING_FULL_AND_STRIPPED_SYMBOL_FILES"></span>完全および削除されたシンボル ファイルを作成します。
 
 Visual Studio でバイナリをビルドする場合は、いずれかの完全なまたは削除されたシンボル ファイルを作成できます。 バイナリの「デバッグ ビルド」を作成するときに Visual Studio では完全なシンボル ファイルを通常作成します。 シンボル ファイルはありませんが、完全作成または除去は、通常、"製品版ビルド"、Visual Studio を構築するときは、適切なオプションが設定されている場合にシンボル ファイルが作成されます。
 
@@ -92,7 +92,7 @@ PDBCopy ツールを使用してファイルを作成、削除されたシンボ
 
 SymChk ツールを使用して、シンボル ファイルがプライベート シンボルを含むかどうかを判断できます。 詳細については、次を参照してください。 [SymChk](symchk.md)します。
 
-### <a name="span-idviewingpublicandprivatesymbolsinthedebuggerspanspan-idviewingpublicandprivatesymbolsinthedebuggerspanviewing-public-and-private-symbols-in-the-debugger"></a><span id="viewing_public_and_private_symbols_in_the_debugger"></span><span id="VIEWING_PUBLIC_AND_PRIVATE_SYMBOLS_IN_THE_DEBUGGER"></span>デバッガーでパブリックおよびプライベート シンボルの表示
+### <a name="span-idviewing_public_and_private_symbols_in_the_debuggerspanspan-idviewing_public_and_private_symbols_in_the_debuggerspanviewing-public-and-private-symbols-in-the-debugger"></a><span id="viewing_public_and_private_symbols_in_the_debugger"></span><span id="VIEWING_PUBLIC_AND_PRIVATE_SYMBOLS_IN_THE_DEBUGGER"></span>デバッガーでパブリックおよびプライベート シンボルの表示
 
 WinDbg、KD、CDB を使用するには、シンボルを表示します。 完全なシンボル ファイルにアクセスできる次のデバッガーのいずれかの場合、プライベート シンボル データに表示される情報と、パブリック シンボルの表に示す情報の両方があります。 プライベート シンボル データより詳細については、パブリック シンボル データにシンボルの装飾が含まれています。
 
@@ -127,7 +127,7 @@ WinDbg、KD、CDB を使用するには、シンボルを表示します。 完�
 00434420 <NoType> TimeTest!_typingString = <no type information> 
 ```
 
-### <a name="span-idviewingpublicandprivatesymbolswiththedbhtoolspanspan-idviewingpublicandprivatesymbolswiththedbhtoolspanviewing-public-and-private-symbols-with-the-dbh-tool"></a><span id="viewing_public_and_private_symbols_with_the_dbh_tool"></span><span id="VIEWING_PUBLIC_AND_PRIVATE_SYMBOLS_WITH_THE_DBH_TOOL"></span>パブリックおよびプライベート シンボルの DBH ツールを使用して表示します。
+### <a name="span-idviewing_public_and_private_symbols_with_the_dbh_toolspanspan-idviewing_public_and_private_symbols_with_the_dbh_toolspanviewing-public-and-private-symbols-with-the-dbh-tool"></a><span id="viewing_public_and_private_symbols_with_the_dbh_tool"></span><span id="VIEWING_PUBLIC_AND_PRIVATE_SYMBOLS_WITH_THE_DBH_TOOL"></span>パブリックおよびプライベート シンボルの DBH ツールを使用して表示します。
 
 シンボルを表示する別の方法を使用して、 [DBH ツール](dbh.md)します。 DBH は、デバッガーと同じシンボル オプションを使用します。 DBH のまま、デバッガーのような[SYMOPT\_PUBLICS\_のみ](symbol-options.md#symopt-publics-only)と[SYMOPT\_いいえ\_PUBLICS](symbol-options.md#symopt-no-publics)に、既定でオフ[SYMOPT\_UNDNAME](symbol-options.md#symopt-undname)と[SYMOPT\_自動\_PUBLICS](symbol-options.md#symopt-auto-publics)で既定では。 コマンド ライン オプションまたは DBH コマンドによって、これらの既定値をオーバーライドできます。
 

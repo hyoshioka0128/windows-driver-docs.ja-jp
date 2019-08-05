@@ -31,7 +31,7 @@ ms.locfileid: "63381916"
 
 X64 命令セットには、x86、SSE 2 などに最近追加されたものが含まれています。 X64 用にコンパイルされたプログラムは、次の手順を自由に使用できます。
 
-### <a name="span-iddatatransferspanspan-iddatatransferspanspan-iddatatransferspandata-transfer"></a><span id="Data_Transfer"></span><span id="data_transfer"></span><span id="DATA_TRANSFER"></span>データ転送
+### <a name="span-iddata_transferspanspan-iddata_transferspanspan-iddata_transferspandata-transfer"></a><span id="Data_Transfer"></span><span id="data_transfer"></span><span id="DATA_TRANSFER"></span>データ転送
 
 X64 では、64 ビットの即時定数またはメモリ アドレスを処理できる MOV 命令の新しいバリエーションを提供します。
 
@@ -107,7 +107,7 @@ X64 では、64 ビットのオペランドは 32 ビットの符号拡張、新
 
  
 
-### <a name="span-iddataconversionspanspan-iddataconversionspanspan-iddataconversionspandata-conversion"></a><span id="Data_Conversion"></span><span id="data_conversion"></span><span id="DATA_CONVERSION"></span>データ変換
+### <a name="span-iddata_conversionspanspan-iddata_conversionspanspan-iddata_conversionspandata-conversion"></a><span id="Data_Conversion"></span><span id="data_conversion"></span><span id="DATA_CONVERSION"></span>データ変換
 
 <table>
 <colgroup>
@@ -128,7 +128,7 @@ X64 では、64 ビットのオペランドは 32 ビットの符号拡張、新
 
  
 
-### <a name="span-idstringmanipulationspanspan-idstringmanipulationspanspan-idstringmanipulationspanstring-manipulation"></a><span id="String_Manipulation"></span><span id="string_manipulation"></span><span id="STRING_MANIPULATION"></span>文字列操作
+### <a name="span-idstring_manipulationspanspan-idstring_manipulationspanspan-idstring_manipulationspanstring-manipulation"></a><span id="String_Manipulation"></span><span id="string_manipulation"></span><span id="STRING_MANIPULATION"></span>文字列操作
 
 <table>
 <colgroup>

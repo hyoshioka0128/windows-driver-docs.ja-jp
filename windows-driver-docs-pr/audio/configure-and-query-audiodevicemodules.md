@@ -20,7 +20,7 @@ ms.locfileid: "63333923"
 この記事では、コマンドを送信し、UWP アプリからのオーディオ デバイス モジュールからの変更通知を受信する方法を示します。 オーディオ デバイス モジュール処理単位または他のオーディオ設定モジュール、オーディオ ドライバーで定義されたハードウェア効果があります。 この機能は、モジュール プロバイダーのユーザーを制御できるようにして、DSP で実行されているオーディオ処理モジュールからステータス情報を取得する UWP アプリを作成できるようにするために設計されました。 オーディオ デバイス モジュールのこの記事に示すように Api を使用するには、制限する必要があります指定*audioDeviceConfiguration*アプリケーション パッケージ マニフェストで機能します。
 
 ## <a name="get-an-instance-of-the-audiodevicemodulesmanager-class"></a>AudioDeviceModulesManager クラスのインスタンスを取得します。
-この記事に示すように、すべてのオーディオ デバイス モジュールの操作の開始のインスタンスを取得することによって、  **[AudioDeviceModulesManager](https://docs.microsoft.com/uwp/api/windows.media.devices.audiodevicemodulesmanager)** します。 これを最初に、静的なを呼び出すことによって行います**[GetDefaultAudioRenderId](https://docs.microsoft.com/uwp/api/windows.media.devices.mediadevice.getdefaultaudiorenderid)** のメソッド、 **[MediaDevice](https://docs.microsoft.com/uwp/api/windows.media.devices.mediadevice)** クラス。 コンス トラクターには、既定のオーディオのレンダリングのデバイスの ID を返しますこれ**AudioDeviceModulesManager**オーディオ デバイスに関連付けられているクラスのインスタンスを作成します。
+この記事に示すように、すべてのオーディオ デバイス モジュールの操作の開始のインスタンスを取得することによって、  **[AudioDeviceModulesManager](https://docs.microsoft.com/uwp/api/windows.media.devices.audiodevicemodulesmanager)** します。 これを最初に、静的なを呼び出すことによって行います **[GetDefaultAudioRenderId](https://docs.microsoft.com/uwp/api/windows.media.devices.mediadevice.getdefaultaudiorenderid)** のメソッド、 **[MediaDevice](https://docs.microsoft.com/uwp/api/windows.media.devices.mediadevice)** クラス。 コンス トラクターには、既定のオーディオのレンダリングのデバイスの ID を返しますこれ**AudioDeviceModulesManager**オーディオ デバイスに関連付けられているクラスのインスタンスを作成します。
 
 C#
 ```csharp
@@ -30,7 +30,7 @@ var audioModuleManager = new AudioDeviceModulesManager(endpointId);
 
 ## <a name="query-for-installed-audio-device-modules"></a>オーディオ デバイスがインストールされているモジュールのクエリ
 
-オーディオ デバイス モジュールを呼び出すことによってインストールされたすべてのクエリ、 **[FindAll](https://docs.microsoft.com/uwp/api/windows.media.devices.audiodevicemodulesmanager.findall)** の**[AudioDeviceModulesManager](https://docs.microsoft.com/uwp/api/windows.media.devices.audiodevicemodulesmanager)** クラス。 オーディオ デバイスのモジュールを呼び出して一連の特定のクエリ**[FindAllById](https://docs.microsoft.com/uwp/api/windows.media.devices.audiodevicemodulesmanager.findallbyid)** 要求されたモジュールの ID を渡すとします。 次の例は、一連のモジュール、呼び出しのために、ID を定義**FindAllById**の一覧を取得する**[AudioDeviceModule](https://docs.microsoft.com/uwp/api/windows.media.devices.audiodevicemodule)** オブジェクトし、それぞれの詳細を出力します。デバッグ出力するモジュール。
+オーディオ デバイス モジュールを呼び出すことによってインストールされたすべてのクエリ、 **[FindAll](https://docs.microsoft.com/uwp/api/windows.media.devices.audiodevicemodulesmanager.findall)** の **[AudioDeviceModulesManager](https://docs.microsoft.com/uwp/api/windows.media.devices.audiodevicemodulesmanager)** クラス。 オーディオ デバイスのモジュールを呼び出して一連の特定のクエリ **[FindAllById](https://docs.microsoft.com/uwp/api/windows.media.devices.audiodevicemodulesmanager.findallbyid)** 要求されたモジュールの ID を渡すとします。 次の例は、一連のモジュール、呼び出しのために、ID を定義**FindAllById**の一覧を取得する **[AudioDeviceModule](https://docs.microsoft.com/uwp/api/windows.media.devices.audiodevicemodule)** オブジェクトし、それぞれの詳細を出力します。デバッグ出力するモジュール。
 
 C#
 ```csharp
@@ -55,7 +55,7 @@ foreach (var module in modules)
 }
 ``` 
 ## <a name="send-a-command-to-an-audio-device-module-and-receive-result-data"></a>オーディオ デバイス、モジュールにコマンドを送信し、結果データを受信
-コマンドを呼び出すことによって、オーディオ デバイス モジュールに送信**[SendCommandAsync](https://docs.microsoft.com/uwp/api/windows.media.devices.audiodevicemodule.sendcommandasync)** 上、 **[AudioDeviceModule](https://docs.microsoft.com/uwp/api/windows.media.devices.audiodevicemodule)** オブジェクト。 **SendCommandAsync**メソッドは引数としてバイト配列を受け取ります。 通常このバイト配列には、コマンド識別子後に、コマンドに関連付けられたデータにはが含まれますが、コマンドの形式と値はまったくのベンダー定義し、システムによって透過的に処理されます。
+コマンドを呼び出すことによって、オーディオ デバイス モジュールに送信 **[SendCommandAsync](https://docs.microsoft.com/uwp/api/windows.media.devices.audiodevicemodule.sendcommandasync)** 上、 **[AudioDeviceModule](https://docs.microsoft.com/uwp/api/windows.media.devices.audiodevicemodule)** オブジェクト。 **SendCommandAsync**メソッドは引数としてバイト配列を受け取ります。 通常このバイト配列には、コマンド識別子後に、コマンドに関連付けられたデータにはが含まれますが、コマンドの形式と値はまったくのベンダー定義し、システムによって透過的に処理されます。
 
 **SendCommandAsync**メソッドが完了すると、取得する非同期操作を返します、 **[ModuleCommandResult](https://docs.microsoft.com/uwp/api/windows.media.devices.audiodevicemodule.sendcommandasync)** の結果を表すオブジェクト、コマンド。 **[状態](https://docs.microsoft.com/uwp/api/windows.media.devices.modulecommandresult.status)** プロパティには、システムが、コマンドを実行できるかどうかを示す列挙値が含まれています。 これは必ずしもオーディオ デバイス モジュールがコマンドが正常に実行できること。 **[結果](https://docs.microsoft.com/uwp/api/windows.media.devices.modulecommandresult.result)** プロパティには、コマンドの状態を示すために、オーディオ デバイス モジュールによって返されるバイト配列が含まれています。 通常、成功または失敗の後に、コマンドのデータの結果を示す値になります。 モジュールのコマンドと同様の応答形式のモジュールと値はベンダ定義です。
 

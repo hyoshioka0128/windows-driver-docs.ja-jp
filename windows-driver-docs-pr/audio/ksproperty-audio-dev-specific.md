@@ -21,7 +21,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "63333061"
 ---
-# <a name="kspropertyaudiodevspecific"></a>KSPROPERTY\_オーディオ\_DEV\_特定
+# <a name="ksproperty_audio_dev_specific"></a>KSPROPERTY\_オーディオ\_DEV\_特定
 
 
 `KSPROPERTY_AUDIO_DEV_SPECIFIC`デバイスに固有のノードでデバイスに固有のプロパティにアクセスするプロパティを使用 ([**KSNODETYPE\_DEV\_特定**](ksnodetype-dev-specific.md))。
@@ -29,7 +29,7 @@ ms.locfileid: "63333061"
 ## <span id="ddk_ksproperty_audio_dev_specific_ks"></span><span id="DDK_KSPROPERTY_AUDIO_DEV_SPECIFIC_KS"></span>
 
 
-### <a name="span-idusagesummarytablespanspan-idusagesummarytablespanspan-idusagesummarytablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル
+### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル
 
 <table>
 <colgroup>
@@ -65,14 +65,14 @@ ms.locfileid: "63333061"
 
 プロパティが get または set プロパティの要求をサポートしているかどうかが特定のデバイスもです。
 
-### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
+### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
 
 このプロパティは、いずれかの状態を返します\_成功またはオーディオ ドライバーのサード パーティ プロバイダーによって決定されるデバイスの特定値。
 
 <a name="remarks"></a>注釈
 -------
 
-Windows Vista および Windows では、追加のタブの以降のバージョン (というラベルの付いた**カスタム**) で提供される、**サウンド**アプレット**コントロール パネルの **。 **カスタム** タブには、自動ゲイン制御 (AGC) およびデバイス固有のプロパティのコントロールが表示されます。 次の表は、コントロールで公開されている、**サウンド**、各種のアプレット`KSPROPERTY_AUDIO_DEV_SPECIFIC`プロパティとデータ型の組み合わせ。
+Windows Vista および Windows では、追加のタブの以降のバージョン (というラベルの付いた**カスタム**) で提供される、**サウンド**アプレット**コントロール パネルの** 。 **カスタム** タブには、自動ゲイン制御 (AGC) およびデバイス固有のプロパティのコントロールが表示されます。 次の表は、コントロールで公開されている、**サウンド**、各種のアプレット`KSPROPERTY_AUDIO_DEV_SPECIFIC`プロパティとデータ型の組み合わせ。
 
 <table>
 <colgroup>
@@ -139,7 +139,7 @@ Windows Vista および Windows では、追加のタブの以降のバージョ
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
 [**KSNODETYPE\_DEV\_特定**](ksnodetype-dev-specific.md)

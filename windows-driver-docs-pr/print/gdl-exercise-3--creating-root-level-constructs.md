@@ -29,7 +29,7 @@ ms.locfileid: "63388114"
 
 -   \*PFeature には、任意のインスタンスの名前を持つことができます。
 
--   \*PFeature メンバーは、属性の名前付き**\*名前**と **\*DefaultOption**します。
+-   \*PFeature メンバーは、属性の名前付き **\*名前**と **\*DefaultOption**します。
 
 -   \*PFeature がという名前のコンス トラクター メンバー  **\*Poption**仮想化を宣言する必要があります。
 

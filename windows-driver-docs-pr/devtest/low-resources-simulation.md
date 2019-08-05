@@ -49,7 +49,7 @@ Windows 8.1 以降、低リソース シミュレーション オプションは
 -   [**MmAllocateContiguousNodeMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatecontiguousnodememory)
 -   [**MmAllocateNonCachedMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-mmallocatenoncachedmemory)
 
-### <a name="span-idcustomsettingsforlowresourcessimulationspanspan-idcustomsettingsforlowresourcessimulationspancustom-settings-for-low-resources-simulation"></a><span id="custom_settings_for_low_resources_simulation"></span><span id="CUSTOM_SETTINGS_FOR_LOW_RESOURCES_SIMULATION"></span>低リソース シミュレーション用のカスタム設定
+### <a name="span-idcustom_settings_for_low_resources_simulationspanspan-idcustom_settings_for_low_resources_simulationspancustom-settings-for-low-resources-simulation"></a><span id="custom_settings_for_low_resources_simulation"></span><span id="CUSTOM_SETTINGS_FOR_LOW_RESOURCES_SIMULATION"></span>低リソース シミュレーション用のカスタム設定
 
 Windows Vista と Windows の以降のバージョンでは、次のカスタム設定を指定できます。
 
@@ -63,13 +63,13 @@ Windows Vista と Windows の以降のバージョンでは、次のカスタム
 
 Windows Vista より前のオペレーティング システムでは、これらの設定をカスタマイズすることはできません。 オペレーティング システムには、既定値が使用されます。
 
-### <a name="span-idlowresourcessimulationwithoutrebootingspanspan-idlowresourcessimulationwithoutrebootingspanlow-resources-simulation-without-rebooting"></a><span id="low_resources_simulation_without_rebooting"></span><span id="LOW_RESOURCES_SIMULATION_WITHOUT_REBOOTING"></span>再起動しなくても、低リソース シミュレーション
+### <a name="span-idlow_resources_simulation_without_rebootingspanspan-idlow_resources_simulation_without_rebootingspanlow-resources-simulation-without-rebooting"></a><span id="low_resources_simulation_without_rebooting"></span><span id="LOW_RESOURCES_SIMULATION_WITHOUT_REBOOTING"></span>再起動しなくても、低リソース シミュレーション
 
 使用して、コンピューターを再起動しなくても Windows 2000 以降のバージョンの Windows での低リソース シミュレーションをアクティブ化することができます、 **/volatile**パラメーター。 設定が、すぐに有効が、シャット ダウンまたは再起動すると失われます。
 
 省略することで、レジストリの低リソース シミュレーションの設定を格納することも、 **/volatile**パラメーター。 これらの設定は、それらを変更するまで、有効なまま、コンピューターを再起動する場合のみ有効です。
 
-### <a name="span-idactivatingthisoptionspanspan-idactivatingthisoptionspanactivating-this-option"></a><span id="activating_this_option"></span><span id="ACTIVATING_THIS_OPTION"></span>このオプションをアクティブ化します。
+### <a name="span-idactivating_this_optionspanspan-idactivating_this_optionspanactivating-this-option"></a><span id="activating_this_option"></span><span id="ACTIVATING_THIS_OPTION"></span>このオプションをアクティブ化します。
 
 ドライバー検証マネージャーまたは Verifier.exe コマンドラインを使用して、1 つまたは複数のドライバーの低リソース シミュレーション オプションをアクティブ化することができます。 詳細については、次を参照してください。[ドライバー検証ツールのオプションの選択](selecting-driver-verifier-options.md)します。
 
@@ -117,7 +117,7 @@ Windows Vista より前のオペレーティング システムでは、これ�
     3.  選択**完全な一覧から個々 の設定を選択します。** します。
     4.  選択**低リソース シミュレーション**します。
 
-### <a name="span-idcustomizingthesettingswindowsvistaandlaterspanspan-idcustomizingthesettingswindowsvistaandlaterspancustomizing-the-settings-windows-vista-and-later"></a><span id="customizing_the_settings__windows_vista_and_later_"></span><span id="CUSTOMIZING_THE_SETTINGS__WINDOWS_VISTA_AND_LATER_"></span>設定のカスタマイズ (Windows Vista 以降)
+### <a name="span-idcustomizing_the_settings__windows_vista_and_later_spanspan-idcustomizing_the_settings__windows_vista_and_later_spancustomizing-the-settings-windows-vista-and-later"></a><span id="customizing_the_settings__windows_vista_and_later_"></span><span id="CUSTOMIZING_THE_SETTINGS__WINDOWS_VISTA_AND_LATER_"></span>設定のカスタマイズ (Windows Vista 以降)
 
 以降 Windows Vista では、遅延、確率、アプリケーションなどの既定の設定を変更して、プール タグ低リソース シミュレーション オプションのプロパティ。 ドライバー検証マネージャーまたは Verifier.exe コマンドラインを使用して、これらの設定を変更することができます。 詳細については、次を参照してください。[ドライバー検証ツールのオプションの選択](selecting-driver-verifier-options.md)します。
 
@@ -174,7 +174,7 @@ verifier /faults "" "" "" 0xa
 
 5.  遅延、確率、アプリケーション、設定を変更して、プール タグとして必要なプロパティ。
 
-### <a name="span-idviewingtheresultsspanspan-idviewingtheresultsspanviewing-the-results"></a><span id="viewing_the_results"></span><span id="VIEWING_THE_RESULTS"></span>結果を表示します。
+### <a name="span-idviewing_the_resultsspanspan-idviewing_the_resultsspanviewing-the-results"></a><span id="viewing_the_results"></span><span id="VIEWING_THE_RESULTS"></span>結果を表示します。
 
 Driver Verifier リソース割り当てがドライバーの検証ツールを表示することによって意図的に失敗した回数を監視する*フォールト挿入*グローバル カウンター。 このカウンターは、Driver Verifier は、最後の起動後意図的に失敗したリソース割り当ての合計数を表示します。
 

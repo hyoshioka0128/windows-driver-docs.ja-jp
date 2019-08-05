@@ -184,7 +184,7 @@ Subregister のみと、subregister の外側の部分のいずれも、subregis
 
 フラグ レジスタは、単一のビット フラグのコレクションです。 多くの命令では、命令の結果を示すフラグを変更します。 これらのフラグは、条件付きのジャンプ先の手順でテストできます。 参照してください[x86 フラグ](#x86-flags)詳細についてはします。
 
-### <a name="span-idcallingconventionsspanspan-idcallingconventionsspanspan-idcallingconventionsspancalling-conventions"></a><span id="Calling_Conventions"></span><span id="calling_conventions"></span><span id="CALLING_CONVENTIONS"></span>呼び出し規則
+### <a name="span-idcalling_conventionsspanspan-idcalling_conventionsspanspan-idcalling_conventionsspancalling-conventions"></a><span id="Calling_Conventions"></span><span id="calling_conventions"></span><span id="CALLING_CONVENTIONS"></span>呼び出し規則
 
 X86 アーキテクチャにいくつかの異なる呼び出し規則があります。 さいわい、これらはすべてエラーは、同じのレジスタ保存および関数の戻り値の規則に従います。
 
@@ -214,7 +214,7 @@ X86 アーキテクチャにいくつかの異なる呼び出し規則があり�
 
     関数のパラメーターは、左、右プッシュ、スタックに渡され、呼び出し元がスタックを消去します。 **\_\_Cdecl**可変長のパラメーターを持つすべての関数の使用は、呼び出し規約。
 
-### <a name="span-iddebuggerdisplayofregistersandflagsspanspan-iddebuggerdisplayofregistersandflagsspanspan-iddebuggerdisplayofregistersandflagsspandebugger-display-of-registers-and-flags"></a><span id="Debugger_Display_of_Registers_and_Flags"></span><span id="debugger_display_of_registers_and_flags"></span><span id="DEBUGGER_DISPLAY_OF_REGISTERS_AND_FLAGS"></span>デバッガーのレジスタとフラグの表示
+### <a name="span-iddebugger_display_of_registers_and_flagsspanspan-iddebugger_display_of_registers_and_flagsspanspan-iddebugger_display_of_registers_and_flagsspandebugger-display-of-registers-and-flags"></a><span id="Debugger_Display_of_Registers_and_Flags"></span><span id="debugger_display_of_registers_and_flags"></span><span id="DEBUGGER_DISPLAY_OF_REGISTERS_AND_FLAGS"></span>デバッガーのレジスタとフラグの表示
 
 サンプル デバッガーの登録の表示を次に示します。
 
@@ -226,7 +226,7 @@ cs=001b  ss=0023  ds=0023  es=0023  fs=0038  gs=0000             efl=00000286
 
 ユーザー モードのデバッグでは無視できます、**に対しては iopl**とデバッガーの表示の全体の最後の行。
 
-### <a name="span-idx86-flagsspanspan-idx86flagsspanx86-flags"></a><span id="x86-flags"></span><span id="X86_FLAGS"></span>x86 フラグします。
+### <a name="span-idx86-flagsspanspan-idx86_flagsspanx86-flags"></a><span id="x86-flags"></span><span id="X86_FLAGS"></span>x86 フラグします。
 
 2 番目の行の最後に 2 文字コードは、前の例では、*フラグ*します。 これらは単一ビット レジスタであり、さまざまな使用を持っています。
 
@@ -463,7 +463,7 @@ jz equal
 
 比較、 **eax** 、式を計算して数 5 に対して登録 (**eax** - 5) 結果に従ったフラグの設定。 減算の結果が 0 の場合、 **zr**フラグが設定されます、 **jz**ジャンプが実行されるため、条件が true になります。
 
-### <a name="span-iddatatypesspanspan-iddatatypesspanspan-iddatatypesspandata-types"></a><span id="Data_Types"></span><span id="data_types"></span><span id="DATA_TYPES"></span>データ型
+### <a name="span-iddata_typesspanspan-iddata_typesspanspan-iddata_typesspandata-types"></a><span id="Data_Types"></span><span id="data_types"></span><span id="DATA_TYPES"></span>データ型
 
 -   バイト。8 ビット
 
@@ -534,7 +534,7 @@ jz equal
 
  
 
-### <a name="span-idaddressingmodesspanspan-idaddressingmodesspanspan-idaddressingmodesspanaddressing-modes"></a><span id="Addressing_Modes"></span><span id="addressing_modes"></span><span id="ADDRESSING_MODES"></span>アドレッシング モード
+### <a name="span-idaddressing_modesspanspan-idaddressing_modesspanspan-idaddressing_modesspanaddressing-modes"></a><span id="Addressing_Modes"></span><span id="addressing_modes"></span><span id="ADDRESSING_MODES"></span>アドレッシング モード
 
 いくつかの別のアドレッシング モードがありますが、フォームを受け取る**T ptr \[expr\]** ここで、 **T**一部のデータ (データ型の前のセクションを参照してください) を入力および**expr**定数およびレジスタに関連するいくつかの式です。
 
@@ -546,7 +546,7 @@ Pentium は、1 つのクロックのティックで最大 2 つのアクショ�
 
 X86 が CISC プロセッサであるために、ジャンプ遅延スロットについて心配する必要はありません。
 
-### <a name="span-idsynchronizedmemoryaccessspanspan-idsynchronizedmemoryaccessspanspan-idsynchronizedmemoryaccessspansynchronized-memory-access"></a><span id="Synchronized_Memory_Access"></span><span id="synchronized_memory_access"></span><span id="SYNCHRONIZED_MEMORY_ACCESS"></span>同期されたメモリへのアクセス
+### <a name="span-idsynchronized_memory_accessspanspan-idsynchronized_memory_accessspanspan-idsynchronized_memory_accessspansynchronized-memory-access"></a><span id="Synchronized_Memory_Access"></span><span id="synchronized_memory_access"></span><span id="SYNCHRONIZED_MEMORY_ACCESS"></span>同期されたメモリへのアクセス
 
 読み込み、変更、および格納指示が受け取れる、**ロック**プレフィックスで、次のように命令を変更します。
 
@@ -558,7 +558,7 @@ X86 が CISC プロセッサであるために、ジャンプ遅延スロット�
 
 既定でその他のすべての命令 nonlocking します。
 
-### <a name="span-idjumppredictionspanspan-idjumppredictionspanspan-idjumppredictionspanjump-prediction"></a><span id="Jump_Prediction"></span><span id="jump_prediction"></span><span id="JUMP_PREDICTION"></span>予測をジャンプします。
+### <a name="span-idjump_predictionspanspan-idjump_predictionspanspan-idjump_predictionspanjump-prediction"></a><span id="Jump_Prediction"></span><span id="jump_prediction"></span><span id="JUMP_PREDICTION"></span>予測をジャンプします。
 
 無条件ジャンプを予測して、実行します。
 

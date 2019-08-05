@@ -16,7 +16,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 06/25/2019
 ms.locfileid: "67358185"
 ---
-# <a name="using-the-connectlinebased-version-of-ioconnectinterruptex"></a>接続を使用して\_行\_IoConnectInterruptEx のベース バージョン
+# <a name="using-the-connect_line_based-version-of-ioconnectinterruptex"></a>接続を使用して\_行\_IoConnectInterruptEx のベース バージョン
 
 
 Windows Vista 以降のオペレーティング システム、ドライバーが接続を使用できます\_行\_ベース バージョンの[ **IoConnectInterruptEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioconnectinterruptex)を登録する、 [ *InterruptService* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kservice_routine)行ベースのドライバーの割り込みのルーチンです。 (以前のオペレーティング システム用のドライバーの接続を使用できる\_完全\_の指定されたバージョン**IoConnectInterruptEx**)。

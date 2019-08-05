@@ -29,7 +29,7 @@ ls [.] [first] [, count]
 lsa [.] address [, first [, count]] 
 ```
 
-## <a name="span-idddkcmdlistsourcelinesdbgspanspan-idddkcmdlistsourcelinesdbgspanparameters"></a><span id="ddk_cmd_list_source_lines_dbg"></span><span id="DDK_CMD_LIST_SOURCE_LINES_DBG"></span>パラメーター
+## <a name="span-idddk_cmd_list_source_lines_dbgspanspan-idddk_cmd_list_source_lines_dbgspanparameters"></a><span id="ddk_cmd_list_source_lines_dbg"></span><span id="DDK_CMD_LIST_SOURCE_LINES_DBG"></span>パラメーター
 
 
  **.**    
@@ -76,7 +76,7 @@ lsa [.] address [, first [, count]]
 
 実行した後、 **ls**または**lsa**コマンド、現在の行がさらに 1 つ表示される最後の行として再定義します。 現在の行が後で使用される**ls**、 **lsa**、および[ **lsc** ](lsc--list-current-source-.md)コマンド。
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
 [**lsc (現在のソースの一覧)** ](lsc--list-current-source-.md)

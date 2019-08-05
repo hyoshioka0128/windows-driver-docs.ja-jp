@@ -30,7 +30,7 @@ l-Option
 l{+|-} 
 ```
 
-## <a name="span-idddkcmdsetsourceoptionsdbgspanspan-idddkcmdsetsourceoptionsdbgspanparameters"></a><span id="ddk_cmd_set_source_options_dbg"></span><span id="DDK_CMD_SET_SOURCE_OPTIONS_DBG"></span>パラメーター
+## <a name="span-idddk_cmd_set_source_options_dbgspanspan-idddk_cmd_set_source_options_dbgspanparameters"></a><span id="ddk_cmd_set_source_options_dbg"></span><span id="DDK_CMD_SET_SOURCE_OPTIONS_DBG"></span>パラメーター
 
 
 <span id="_________or_-"></span><span id="_________OR_-"></span> **+** または **-**  
@@ -79,7 +79,7 @@ l{+|-}
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
 ソースのデバッグと関連するコマンドの詳細については、次を参照してください。[元のモードでデバッグ](debugging-in-source-mode.md)します。 アセンブリの詳細については、デバッグ、および関連するコマンドを参照してください[モードのアセンブリでのデバッグ](debugging-in-assembly-mode.md)します。
 

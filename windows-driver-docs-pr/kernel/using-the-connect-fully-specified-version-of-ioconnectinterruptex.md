@@ -18,7 +18,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 06/25/2019
 ms.locfileid: "67355453"
 ---
-# <a name="using-the-connectfullyspecified-version-of-ioconnectinterruptex"></a>接続を使用して\_完全\_IoConnectInterruptEx の指定されたバージョン
+# <a name="using-the-connect_fully_specified-version-of-ioconnectinterruptex"></a>接続を使用して\_完全\_IoConnectInterruptEx の指定されたバージョン
 
 
 ドライバーの接続を使用できる\_完全\_の指定されたバージョン[ **IoConnectInterruptEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioconnectinterruptex)を登録する、 [ *InterruptService*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kservice_routine)ルーチンの割り込みを特定します。 ドライバーの接続を使用できる\_完全\_指定されたバージョンの Windows Vista 以降します。 Iointex.lib ライブラリにリンクすると、ドライバーが接続を使用できます\_完全\_Windows 2000、Windows XP、および Windows Server 2003 で指定されたバージョン。 詳細については、次を参照してください。[を使用して IoConnectInterruptEx する前に Windows Vista](using-ioconnectinterruptex-prior-to-windows-vista.md)します。

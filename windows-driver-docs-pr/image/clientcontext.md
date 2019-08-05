@@ -78,11 +78,11 @@ ms.locfileid: "63373186"
 
 ときの親要素、 **ClientContext**要素は[ **ScanDestination**](scandestination.md)、 **ClientContext**する文字列値を指定します。クライアントは提供中に、  **&lt;wse: サブスクライブ&gt;** を受信する要求[ **ScanAvailableEvent** ](scanavailableevent.md)イベント。
 
-親要素の場合は[ **DestinationResponse**](destinationresponse.md)、 **ClientContext**クライアントが subscribe 操作で送信するデータのコピーです。 WSD スキャン サービスでは、このコピーを返します**&lt;wse:SubscribeResponse&gt;** ときに、クライアントのサブスクリプション要求に応答します。
+親要素の場合は[ **DestinationResponse**](destinationresponse.md)、 **ClientContext**クライアントが subscribe 操作で送信するデータのコピーです。 WSD スキャン サービスでは、このコピーを返します **&lt;wse:SubscribeResponse&gt;** ときに、クライアントのサブスクリプション要求に応答します。
 
 親要素の場合は[ **ScanAvailableEvent**](scanavailableevent.md)、 **ClientContext**文字列値の一部として受信するスキャナーを含む、 **ScanAvailableEvent**サブスクリプション要求。 この文字列により、クライアントに関連付ける、 **ScanAvailableEvent**スキャナーが適切なデバイスとサービス。
 
- **&lt;Wse: サブスクライブ&gt;** と**&lt;wse:SubscribeResponse&gt;** 要素は、仕様で説明します。
+**&lt;Wse: サブスクライブ&gt;** と **&lt;wse:SubscribeResponse&gt;** 要素は、仕様で説明します。
 
 ## <a name="see-also"></a>関連項目
 

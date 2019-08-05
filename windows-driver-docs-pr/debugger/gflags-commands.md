@@ -90,7 +90,7 @@ gflags /p [/disable ImageFile] [/?]
 glags /?
 ```
 
-## <a name="span-idddkgflagscommandsdtoolsspanspan-idddkgflagscommandsdtoolsspanparameters"></a><span id="ddk_gflags_commands_dtools"></span><span id="DDK_GFLAGS_COMMANDS_DTOOLS"></span>パラメーター
+## <a name="span-idddk_gflags_commands_dtoolsspanspan-idddk_gflags_commands_dtoolsspanparameters"></a><span id="ddk_gflags_commands_dtools"></span><span id="DDK_GFLAGS_COMMANDS_DTOOLS"></span>パラメーター
 
 
 <span id="_______Flag______"></span><span id="_______flag______"></span><span id="_______FLAG______"></span> *フラグ*   

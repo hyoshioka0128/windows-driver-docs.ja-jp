@@ -34,7 +34,7 @@ Windows カーネル オブジェクト マネージャーは、ファイル オ
 
 参照カウンターには、値 0 に達すると、オブジェクトが解放する対象となります。 オブジェクト マネージャーが、すぐに解放可能性があるか、後では無料可能性があります。 Driver Verifier は、後続の呼び出しをチェック[ **ObReferenceObjectByPointer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obreferenceobjectbypointer)と[ **ObReferenceObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obfreferenceobject)同じオブジェクトに対して。 これらの呼び出しでは、0 から 1 で、ドライバーが既に解放されたオブジェクトの参照カウンターをインクリメントに参照カウンターを変更します。 これは常に他のメモリ割り当てが破損していることができます。
 
-### <a name="span-idactivatingthisoptionspanspan-idactivatingthisoptionspanactivating-this-option"></a><span id="activating_this_option"></span><span id="ACTIVATING_THIS_OPTION"></span>このオプションをアクティブ化します。
+### <a name="span-idactivating_this_optionspanspan-idactivating_this_optionspanactivating-this-option"></a><span id="activating_this_option"></span><span id="ACTIVATING_THIS_OPTION"></span>このオプションをアクティブ化します。
 
 ドライバー検証マネージャーまたは Verifier.exe コマンドラインを使用して 1 つまたは複数のドライバーのセキュリティ チェックのオプションをアクティブ化することができます。 詳細については、次を参照してください。[ドライバー検証ツールのオプションの選択](selecting-driver-verifier-options.md)します。
 

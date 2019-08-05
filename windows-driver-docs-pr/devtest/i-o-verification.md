@@ -29,7 +29,7 @@ Driver Verifier では、I/O の検証の 2 つのレベルがあります。
 
 **参照してください。** [I/O の検証の強化](enhanced-i-o-verification.md)Windows 7 および Windows オペレーティング システムの以降のバージョンでは、強化された I/O の検証は自動的にアクティブ化 I/O の検証を選択するとします。 それが利用できないか個別のオプションとして選択するために必要です。
 
-### <a name="span-idlevel1ioverificationspanspan-idlevel1ioverificationspanlevel-1-io-verification"></a><span id="level_1_i_o_verification"></span><span id="LEVEL_1_I_O_VERIFICATION"></span>第 1 レベルの I/O の検証
+### <a name="span-idlevel_1_i_o_verificationspanspan-idlevel_1_i_o_verificationspanlevel-1-io-verification"></a><span id="level_1_i_o_verification"></span><span id="LEVEL_1_I_O_VERIFICATION"></span>第 1 レベルの I/O の検証
 
 レベル 1 の I/O の検証を有効にすると、すべての Irp 経由で取得した**IoAllocateIrp**は特別なプールから割り当てられ、その使用を追跡します。
 
@@ -57,7 +57,7 @@ Driver Verifier では、I/O の検証の 2 つのレベルがあります。
 
 検証レベル 1 の I/O エラーが発生するバグ チェック 0xC9 が発行されます。 このバグ チェックの最初のパラメーターでは、どのような違反が発生したことを示します。 参照してください[**バグ チェック 0xC9** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc9--driver-verifier-iomanager-violation) (ドライバー\_VERIFIER\_IOMANAGER\_違反) 完全なパラメーターの一覧についてはします。
 
-### <a name="span-idlevel2ioverificationspanspan-idlevel2ioverificationspanlevel-2-io-verification"></a><span id="level_2_i_o_verification"></span><span id="LEVEL_2_I_O_VERIFICATION"></span>第 2 レベルの I/O の検証
+### <a name="span-idlevel_2_i_o_verificationspanspan-idlevel_2_i_o_verificationspanlevel-2-io-verification"></a><span id="level_2_i_o_verification"></span><span id="LEVEL_2_I_O_VERIFICATION"></span>第 2 レベルの I/O の検証
 
 さまざまな方法で検証レベル 2 の I/O エラーが表示されます。 カーネル デバッガーにし、クラッシュ ダンプ ファイルには、ブルー スクリーンにします。
 
@@ -101,7 +101,7 @@ Driver Verifier では、I/O の検証の 2 つのレベルがあります。
 
 Windows 7、Windows オペレーティング システムの以降のバージョンで[I/O の検証の強化された](enhanced-i-o-verification.md)I/O の検証を選択すると、自動的にアクティブ化します。
 
-### <a name="span-idactivatingthisoptionspanspan-idactivatingthisoptionspanactivating-this-option"></a><span id="activating_this_option"></span><span id="ACTIVATING_THIS_OPTION"></span>このオプションをアクティブ化します。
+### <a name="span-idactivating_this_optionspanspan-idactivating_this_optionspanactivating-this-option"></a><span id="activating_this_option"></span><span id="ACTIVATING_THIS_OPTION"></span>このオプションをアクティブ化します。
 
 ドライバー検証マネージャーまたは Verifier.exe コマンドラインを使用して、1 つまたは複数のドライバの I/O の検証機能をアクティブにできます。 詳細については、次を参照してください。[ドライバー検証ツールのオプションの選択](selecting-driver-verifier-options.md)します。
 

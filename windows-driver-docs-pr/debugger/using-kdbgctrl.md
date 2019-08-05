@@ -27,7 +27,7 @@ KDbgCtrl には、5 つの設定を制御できます。完全なカーネル �
 
 KDbgCtrl を使用するには、必要がありますが既に有効にするカーネルの最後の起動前に、ターゲット コンピューターのブート設定でのデバッグします。 KDbgCtrl は、これが行われていない場合のカーネル デバッグを有効にするのには使用できません。 参照してください[ブート デバッグを有効にするパラメーター](https://docs.microsoft.com/windows-hardware/drivers/devtest/boot-parameters-to-enable-debugging)のこれらの詳細については、設定を起動します。
 
-### <a name="span-idfullkerneldebuggingspanspan-idfullkerneldebuggingspanfull-kernel-debugging"></a><span id="full_kernel_debugging"></span><span id="FULL_KERNEL_DEBUGGING"></span>完全なカーネル デバッグ
+### <a name="span-idfull_kernel_debuggingspanspan-idfull_kernel_debuggingspanfull-kernel-debugging"></a><span id="full_kernel_debugging"></span><span id="FULL_KERNEL_DEBUGGING"></span>完全なカーネル デバッグ
 
 完全なカーネル デバッグを有効にすると、ホスト コンピューターで実行されているカーネル デバッガーは、ターゲット コンピューターに分割できます。 対象のコンピュータは、カーネル モードの例外が発生する場合、カーネル デバッガーに中断されます。 など、ホストをターゲットからメッセージ**による DbgPrint**出力、シンボルの読み込みメッセージ、およびリダイレクト ユーザー モード デバッガーも使用できます。
 
@@ -37,7 +37,7 @@ KDbgCtrl を使用するには、必要がありますが既に有効にする�
 
 使用することができます、現在の設定を確認し、バッチ ファイル内での実行を制御する場合、 **kdbgctrl cx**コマンド。 詳細については、このコマンドは、次を参照してください。 [ **KDbgCtrl コマンド ライン オプション**](kdbgctrl-command-line-options.md)します。
 
-### <a name="span-idautomatickerneldebuggingspanspan-idautomatickerneldebuggingspanautomatic-kernel-debugging"></a><span id="automatic_kernel_debugging"></span><span id="AUTOMATIC_KERNEL_DEBUGGING"></span>自動のカーネル デバッグ
+### <a name="span-idautomatic_kernel_debuggingspanspan-idautomatic_kernel_debuggingspanautomatic-kernel-debugging"></a><span id="automatic_kernel_debugging"></span><span id="AUTOMATIC_KERNEL_DEBUGGING"></span>自動のカーネル デバッグ
 
 完全なカーネルのデバッグが有効になっている場合、自動カーネル デバッグの現在の設定から素材--のすべての通信が許可されています。
 
@@ -49,7 +49,7 @@ KDbgCtrl を使用するには、必要がありますが既に有効にする�
 
 既定では自動でカーネル デバッグが無効になっています (ただし、完全なカーネル デバッグを無効にもしない限り、素材ではありません)。 現在の設定値を確認するには、使用**kdbgctrl ca**します。 この設定を無効にするには、 **kdbgctrl-da**します。 この設定を有効にするには、 **kdbgctrl ea**します。
 
-### <a name="span-idusermodeerrorhandlingspanspan-idusermodeerrorhandlingspanuser-mode-error-handling"></a><span id="user_mode_error_handling"></span><span id="USER_MODE_ERROR_HANDLING"></span>ユーザー モードのエラー処理
+### <a name="span-iduser_mode_error_handlingspanspan-iduser_mode_error_handlingspanuser-mode-error-handling"></a><span id="user_mode_error_handling"></span><span id="USER_MODE_ERROR_HANDLING"></span>ユーザー モードのエラー処理
 
 ユーザー モード エラーの処理を有効にすると、一部のユーザー モード イベントは、カーネル デバッガーを中断する対象のコンピュータになります。
 
@@ -61,7 +61,7 @@ KDbgCtrl を使用するには、必要がありますが既に有効にする�
 
 既定では、ユーザー モード エラーの処理を有効になっています。 現在の設定値を確認するには、使用**kdbgctrl-cu**します。 この設定を無効にするには、 **kdbgctrl-du**します。 この設定を有効にするには、 **kdbgctrl eu**します。
 
-### <a name="span-idblockingkerneldebuggingspanspan-idblockingkerneldebuggingspanblocking-kernel-debugging"></a><span id="blocking_kernel_debugging"></span><span id="BLOCKING_KERNEL_DEBUGGING"></span>カーネル デバッグをブロック
+### <a name="span-idblocking_kernel_debuggingspanspan-idblocking_kernel_debuggingspanblocking-kernel-debugging"></a><span id="blocking_kernel_debugging"></span><span id="BLOCKING_KERNEL_DEBUGGING"></span>カーネル デバッグをブロック
 
 場合によっては、カーネルのデバッグ対象のコンピュータを設定するをターゲット コンピューターが起動した後に、カーネルがまでデバッグを有効にする可能性があります。 カーネル デバッグをブロックしているを行うことができます。
 
@@ -94,7 +94,7 @@ kdbgctrl -eb
 
 使用することができます**kdbgctrl cb**カーネル デバッグがブロックされているかどうかを確認します。
 
-### <a name="span-idthedbgprintbuffersizespanspan-idthedbgprintbuffersizespanthe-dbgprint-buffer-size"></a><span id="the_dbgprint_buffer_size"></span><span id="THE_DBGPRINT_BUFFER_SIZE"></span>による DbgPrint のバッファー サイズ
+### <a name="span-idthe_dbgprint_buffer_sizespanspan-idthe_dbgprint_buffer_sizespanthe-dbgprint-buffer-size"></a><span id="the_dbgprint_buffer_size"></span><span id="THE_DBGPRINT_BUFFER_SIZE"></span>による DbgPrint のバッファー サイズ
 
 による DbgPrint バッファーは、ターゲット コンピューターが、カーネル デバッガーに送信されるメッセージを格納します。
 

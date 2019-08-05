@@ -28,7 +28,7 @@ ms.locfileid: "67360367"
     devcon classfilter class {upper | lower} [ = | @driver | -driver | +driver | !driver ]...
 ```
 
-## <a name="span-idddkdevconclassfiltertoolsspanspan-idddkdevconclassfiltertoolsspanparameters"></a><span id="ddk_devcon_classfilter_tools"></span><span id="DDK_DEVCON_CLASSFILTER_TOOLS"></span>パラメーター
+## <a name="span-idddk_devcon_classfilter_toolsspanspan-idddk_devcon_classfilter_toolsspanparameters"></a><span id="ddk_devcon_classfilter_tools"></span><span id="DDK_DEVCON_CLASSFILTER_TOOLS"></span>パラメーター
 
 
 <span id="_______class______"></span><span id="_______CLASS______"></span> *class*   
@@ -73,7 +73,7 @@ A **DevCon ClassFilter**コマンドは、演算子で構成される 1 つま�
 
 使用して、フィルター ドライバーの変更は、デバイスを再起動する必要があるため、 [ **DevCon 再起動**](devcon-restart.md)コマンドを含めたり、 **/r** で(再起動が条件付き)パラメーター**DevCon ClassFilter**コマンド。
 
-### <a name="span-idsampleusagespanspan-idsampleusagespansample-usage"></a><span id="sample_usage"></span><span id="SAMPLE_USAGE"></span>サンプルの使用法
+### <a name="span-idsample_usagespanspan-idsample_usagespansample-usage"></a><span id="sample_usage"></span><span id="SAMPLE_USAGE"></span>サンプルの使用法
 
 ```
 devcon classfilter mouse upper

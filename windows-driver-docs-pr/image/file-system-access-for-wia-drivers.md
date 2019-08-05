@@ -68,7 +68,7 @@ if (ExpandEnvironmentStringsW(MY_DRIVER_FILE_NAME_W,
 }
 ```
 
-ドライバーは、以外のディレクトリに含まれるファイルに書き込む必要がある場合**%** <em>userprofile</em>ファイル/ディレクトリの適切なアクセス許可が設定されていること確認 %、します。 一般に適切なアクセス許可が与えられていることを意味、 **LocalService**アカウント。 WIA サービスの実行では、Windows XP、 **LocalSystem**アカウントでは、ローカル管理者グループに属しているし、アクセス レベルが大幅に増加します。
+ドライバーは、以外のディレクトリに含まれるファイルに書き込む必要がある場合 **%** <em>userprofile</em>ファイル/ディレクトリの適切なアクセス許可が設定されていること確認 %、します。 一般に適切なアクセス許可が与えられていることを意味、 **LocalService**アカウント。 WIA サービスの実行では、Windows XP、 **LocalSystem**アカウントでは、ローカル管理者グループに属しているし、アクセス レベルが大幅に増加します。
 
 ### <a name="wia-application-and-wia-driver-common-files"></a>WIA アプリケーションおよび WIA ドライバーの一般的なファイル
 

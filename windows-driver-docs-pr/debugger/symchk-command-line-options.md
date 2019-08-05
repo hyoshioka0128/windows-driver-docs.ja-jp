@@ -52,7 +52,7 @@ symchk [/v | /q ] /om Manifest /ip ProcessFile
 symchk [/v | /q ] /om Manifest /it TextFileList
 ```
 
-## <a name="span-idddksymchkcommandlineoptionsdtoolqspanspan-idddksymchkcommandlineoptionsdtoolqspanparameters"></a><span id="ddk_symchk_command_line_options_dtoolq"></span><span id="DDK_SYMCHK_COMMAND_LINE_OPTIONS_DTOOLQ"></span>パラメーター
+## <a name="span-idddk_symchk_command_line_options_dtoolqspanspan-idddk_symchk_command_line_options_dtoolqspanparameters"></a><span id="ddk_symchk_command_line_options_dtoolq"></span><span id="DDK_SYMCHK_COMMAND_LINE_OPTIONS_DTOOLQ"></span>パラメーター
 
 
 <span id="________r______"></span><span id="________R______"></span> **/r**   
@@ -65,10 +65,10 @@ symchk [/v | /q ] /om Manifest /it TextFileList
 Quiet モードを有効にします。 すべての出力が表示されなくなります (しない限り、 **/ot**オプションが含まれる)。
 
 <span id="_______FileNames______"></span><span id="_______filenames______"></span><span id="_______FILENAMES______"></span> *FileNames*   
-シンボルがチェックするには、プログラム ファイルを指定します。 絶対パス、相対パス、および UNC パスが許可されます。 アスタリスク (**\\**<em>) ワイルドカードが許可されます。場合 * ファイル名</em>実行ディレクトリ名を指定するのにはスラッシュで終了すると、およびそのディレクトリ内のすべてのファイルがチェックされます。 場合*ファイル名*スペースが含まれることは、引用符で囲む必要があります。
+シンボルがチェックするには、プログラム ファイルを指定します。 絶対パス、相対パス、および UNC パスが許可されます。 アスタリスク ( **\\** <em>) ワイルドカードが許可されます。場合 * ファイル名</em>実行ディレクトリ名を指定するのにはスラッシュで終了すると、およびそのディレクトリ内のすべてのファイルがチェックされます。 場合*ファイル名*スペースが含まれることは、引用符で囲む必要があります。
 
 <span id="________ie_______ExeFile______"></span><span id="________ie_______exefile______"></span><span id="________IE_______EXEFILE______"></span> **/ie** *ExeFile*   
-現在実行しているプログラムの名前を指定します。 このプログラムのシンボルがチェックされます。 *ExeFile*パス情報はありませんが、ファイルとファイル拡張子 (通常は .exe) の名前を含める必要があります。 2 つの異なる実行可能ファイルと同じ名前がある場合は、このオプションは推奨されません。 *ExeFile*カーネル モード ドライバーを含む、任意のプログラムを指定できます。 場合*ExeFile*は 1 つのアスタリスク ( **\\***)、SymChk はドライバーを含むすべての実行プロセスのシンボルを確認します。
+現在実行しているプログラムの名前を指定します。 このプログラムのシンボルがチェックされます。 *ExeFile*パス情報はありませんが、ファイルとファイル拡張子 (通常は .exe) の名前を含める必要があります。 2 つの異なる実行可能ファイルと同じ名前がある場合は、このオプションは推奨されません。 *ExeFile*カーネル モード ドライバーを含む、任意のプログラムを指定できます。 場合*ExeFile*は 1 つのアスタリスク ( **\\** *)、SymChk はドライバーを含むすべての実行プロセスのシンボルを確認します。
 
 <span id="________id_______DumpFile______"></span><span id="________id_______dumpfile______"></span><span id="________ID_______DUMPFILE______"></span> **/id** *ダンプ ファイル*   
 メモリ ダンプ ファイルを指定します。 このダンプ ファイルのシンボルがチェックされます。
@@ -81,7 +81,7 @@ Quiet モードを有効にします。 すべての出力が表示されなく�
 
 - 場合*ProcessID*は 0 です ( **0** )、SymChk は実行中のすべてのドライバーのシンボルを確認します。
 
-- 場合*ProcessID*は 1 つのアスタリスク ( **\\***)、SymChk はドライバーを含むすべての実行プロセスのシンボルを確認します。
+- 場合*ProcessID*は 1 つのアスタリスク ( **\\** *)、SymChk はドライバーを含むすべての実行プロセスのシンボルを確認します。
 
 <span id="________it_______TextFileList______"></span><span id="________it_______textfilelist______"></span><span id="________IT_______TEXTFILELIST______"></span> **/it** *TextFileList*   
 プログラム ファイルの一覧を含むテキスト ファイルを指定します。 これらすべてのプログラムのシンボルがチェックされます。 *TextFileList*引用符で囲む必要がありますにスペースが含まれる場合、1 つのファイル (で相対パス、絶対パス、または UNC パスが、ワイルドカードなしで); を指定する必要があります。 このファイルでそれぞれの行を示します (相対パス、絶対パス、または UNC パス) をプログラム ファイルと、アスタリスクのワイルドカード (* *\\* * *) は許可されています。 ただし、このワイルドカードを使用して任意の行では、相対パスを使用する必要があります。
@@ -308,7 +308,7 @@ SymChk では、一度にすべてのパスを確認する代わりに個別に�
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
 SymChk の詳細については、次を参照してください。[を使用して SymChk](using-symchk.md)します。
 

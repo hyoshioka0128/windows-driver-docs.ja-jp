@@ -76,7 +76,7 @@ WSD スキャン サービスの送信、 **ScanAvailableEvent**要素をユー�
 
 WSD スキャン サービスがサブスクリプションを作成するクライアントの要求を受け入れる場合、サービスがで応答する必要があります、 **&lt;wse:SubscribeResponse&gt;** 応答操作の要素。 購読の応答にはで 1 つまたは複数の送信先の応答が含まれています、 [ **DestinationResponses** ](destinationresponses.md)拡張要素のするのに役立ちますが、使用できるデバイスのスキャンにサブスクリプションを接続します。
 
- **&lt;Wse: サブスクライブ&gt;** と**&lt;wse:SubscribeResponse&gt;** 要素は、仕様で説明します。
+**&lt;Wse: サブスクライブ&gt;** と **&lt;wse:SubscribeResponse&gt;** 要素は、仕様で説明します。
 
 <a name="examples"></a>例
 --------

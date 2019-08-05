@@ -26,7 +26,7 @@ X86 プロセッサでは、手順については、可変サイズ、パター�
 
 適切なパックされた**スイッチ**ステートメント、コンパイラは、生成データ、コード ストリームに直接これを逆アセンブル、**切り替える**ステートメントは通常 1 つ 1 つ、意味 (手順いるため、実際にデータ)。 データの末尾を見つけて、逆アセンブルを続行します。
 
-### <a name="span-idinstructionnotationspanspan-idinstructionnotationspanspan-idinstructionnotationspaninstruction-notation"></a><span id="Instruction_Notation"></span><span id="instruction_notation"></span><span id="INSTRUCTION_NOTATION"></span>命令の表記
+### <a name="span-idinstruction_notationspanspan-idinstruction_notationspanspan-idinstruction_notationspaninstruction-notation"></a><span id="Instruction_Notation"></span><span id="instruction_notation"></span><span id="INSTRUCTION_NOTATION"></span>命令の表記
 
 手順については、一般的な表記は、左側と右側のソース、宛先レジスタを置くことです。 ただし、このルールをいくつかの例外があります。
 
@@ -84,11 +84,11 @@ X86 プロセッサでは、手順については、可変サイズ、パター�
 
 さらに、ソースまたは変換先を示すパラメーターは、そのサイズのある必要があります (8、16、32) のビット サイズ サフィックスを追加できます。 たとえば、r8、8 ビット レジスタを意味します。
 
-### <a name="span-idmemorydatatransferanddataconversionspanspan-idmemorydatatransferanddataconversionspanspan-idmemorydatatransferanddataconversionspanmemory-data-transfer-and-data-conversion"></a><span id="Memory__Data_Transfer__and_Data_Conversion"></span><span id="memory__data_transfer__and_data_conversion"></span><span id="MEMORY__DATA_TRANSFER__AND_DATA_CONVERSION"></span>メモリ、データ転送、およびデータ変換
+### <a name="span-idmemory__data_transfer__and_data_conversionspanspan-idmemory__data_transfer__and_data_conversionspanspan-idmemory__data_transfer__and_data_conversionspanmemory-data-transfer-and-data-conversion"></a><span id="Memory__Data_Transfer__and_Data_Conversion"></span><span id="memory__data_transfer__and_data_conversion"></span><span id="MEMORY__DATA_TRANSFER__AND_DATA_CONVERSION"></span>メモリ、データ転送、およびデータ変換
 
 メモリとデータ転送命令では、フラグは影響しません。
 
-### <a name="span-ideffectiveaddressspanspan-ideffectiveaddressspanspan-ideffectiveaddressspaneffective-address"></a><span id="Effective_Address"></span><span id="effective_address"></span><span id="EFFECTIVE_ADDRESS"></span>有効なアドレス
+### <a name="span-ideffective_addressspanspan-ideffective_addressspanspan-ideffective_addressspaneffective-address"></a><span id="Effective_Address"></span><span id="effective_address"></span><span id="EFFECTIVE_ADDRESS"></span>有効なアドレス
 
 <table>
 <colgroup>
@@ -112,7 +112,7 @@ X86 プロセッサでは、手順については、可変サイズ、パター�
 
 たとえば、**元に戻せる eax、 \[esi + 4\]** 意味**eax** = **esi** + 4。 この命令は、算術演算を実行するよく使用されます。
 
-### <a name="span-iddatatransferspanspan-iddatatransferspanspan-iddatatransferspandata-transfer"></a><span id="Data_Transfer"></span><span id="data_transfer"></span><span id="DATA_TRANSFER"></span>データ転送
+### <a name="span-iddata_transferspanspan-iddata_transferspanspan-iddata_transferspandata-transfer"></a><span id="Data_Transfer"></span><span id="data_transfer"></span><span id="DATA_TRANSFER"></span>データ転送
 
 <table>
 <colgroup>
@@ -147,7 +147,7 @@ X86 プロセッサでは、手順については、可変サイズ、パター�
 
 **MOVSX**と**MOVZX**の特別なバージョンは、 **mov**先に元の符号拡張、または 0 個の拡張機能を実行する命令です。 これは、移行元と変換先を異なるサイズを設定できる唯一の命令です。 (また、実際には、さまざまなサイズがあります。
 
-### <a name="span-idstackmanipulationspanspan-idstackmanipulationspanspan-idstackmanipulationspanstack-manipulation"></a><span id="Stack_Manipulation"></span><span id="stack_manipulation"></span><span id="STACK_MANIPULATION"></span>スタック操作
+### <a name="span-idstack_manipulationspanspan-idstack_manipulationspanspan-idstack_manipulationspanstack-manipulation"></a><span id="Stack_Manipulation"></span><span id="stack_manipulation"></span><span id="STACK_MANIPULATION"></span>スタック操作
 
 指すは、スタック、 **esp**を登録します。 ある値**esp** (最近、最初にプッシュ ポップされます)。 スタックの一番上には古いスタック要素は、上位アドレスに存在します。
 
@@ -221,7 +221,7 @@ mov esp, ebp
 pop ebp
 ```
 
-### <a name="span-iddataconversionspanspan-iddataconversionspanspan-iddataconversionspandata-conversion"></a><span id="Data_Conversion"></span><span id="data_conversion"></span><span id="DATA_CONVERSION"></span>データ変換
+### <a name="span-iddata_conversionspanspan-iddata_conversionspanspan-iddata_conversionspandata-conversion"></a><span id="Data_Conversion"></span><span id="data_conversion"></span><span id="DATA_CONVERSION"></span>データ変換
 
 <table>
 <colgroup>
@@ -252,7 +252,7 @@ pop ebp
 
 すべての変換では、符号拡張を実行します。
 
-### <a name="span-idarithmeticandbitmanipulationspanspan-idarithmeticandbitmanipulationspanspan-idarithmeticandbitmanipulationspanarithmetic-and-bit-manipulation"></a><span id="Arithmetic_and_Bit_Manipulation"></span><span id="arithmetic_and_bit_manipulation"></span><span id="ARITHMETIC_AND_BIT_MANIPULATION"></span>算術演算子およびビット操作
+### <a name="span-idarithmetic_and_bit_manipulationspanspan-idarithmetic_and_bit_manipulationspanspan-idarithmetic_and_bit_manipulationspanarithmetic-and-bit-manipulation"></a><span id="Arithmetic_and_Bit_Manipulation"></span><span id="arithmetic_and_bit_manipulation"></span><span id="ARITHMETIC_AND_BIT_MANIPULATION"></span>算術演算子およびビット操作
 
 すべての算術演算子とビット操作命令では、フラグを変更します。
 
@@ -458,7 +458,7 @@ pop ebp
 
 場合、条件*cc*が true の場合、8 ビット値が 1 に設定します。 それ以外の場合、8 ビット値は 0 に設定されます。
 
-### <a name="span-idbinary-codeddecimalspanspan-idbinary-codeddecimalspanspan-idbinary-codeddecimalspanbinary-coded-decimal"></a><span id="Binary-coded_Decimal"></span><span id="binary-coded_decimal"></span><span id="BINARY-CODED_DECIMAL"></span>バイナリ コード化された 10 進数
+### <a name="span-idbinary-coded_decimalspanspan-idbinary-coded_decimalspanspan-idbinary-coded_decimalspanbinary-coded-decimal"></a><span id="Binary-coded_Decimal"></span><span id="binary-coded_decimal"></span><span id="BINARY-CODED_DECIMAL"></span>バイナリ コード化された 10 進数
 
 COBOL で記述されたコードをデバッグしていない場合に、次の手順を表示はされません。
 
@@ -709,7 +709,7 @@ Shift キーを押し**r1**右**cl**/\#の下位ビットに n **r2**/m。 最�
 
  
 
-### <a name="span-idcontrolflowspanspan-idcontrolflowspanspan-idcontrolflowspancontrol-flow"></a><span id="Control_Flow"></span><span id="control_flow"></span><span id="CONTROL_FLOW"></span>制御フロー
+### <a name="span-idcontrol_flowspanspan-idcontrol_flowspanspan-idcontrol_flowspancontrol-flow"></a><span id="Control_Flow"></span><span id="control_flow"></span><span id="CONTROL_FLOW"></span>制御フロー
 
 <table>
 <colgroup>
@@ -806,7 +806,7 @@ Shift キーを押し**r1**右**cl**/\#の下位ビットに n **r2**/m。 最�
 
 これらの手順は、最新のプロセッサで、x86 の CISC 遺産のゴミが長い方法を記述された同等の命令よりも実質的に遅くなります。
 
-### <a name="span-idstringmanipulationspanspan-idstringmanipulationspanspan-idstringmanipulationspanstring-manipulation"></a><span id="String_Manipulation"></span><span id="string_manipulation"></span><span id="STRING_MANIPULATION"></span>文字列操作
+### <a name="span-idstring_manipulationspanspan-idstring_manipulationspanspan-idstring_manipulationspanstring-manipulation"></a><span id="String_Manipulation"></span><span id="string_manipulation"></span><span id="STRING_MANIPULATION"></span>文字列操作
 
 <table>
 <colgroup>
@@ -902,7 +902,7 @@ Shift キーを押し**r1**右**cl**/\#の下位ビットに n **r2**/m。 最�
 
  
 
-### <a name="span-idinterlockedinstructionsspanspan-idinterlockedinstructionsspanspan-idinterlockedinstructionsspaninterlocked-instructions"></a><span id="Interlocked_Instructions"></span><span id="interlocked_instructions"></span><span id="INTERLOCKED_INSTRUCTIONS"></span>インタロックされた手順
+### <a name="span-idinterlocked_instructionsspanspan-idinterlocked_instructionsspanspan-idinterlocked_instructionsspaninterlocked-instructions"></a><span id="Interlocked_Instructions"></span><span id="interlocked_instructions"></span><span id="INTERLOCKED_INSTRUCTIONS"></span>インタロックされた手順
 
 <table>
 <colgroup>

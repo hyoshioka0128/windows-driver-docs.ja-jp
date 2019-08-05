@@ -12,7 +12,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 06/25/2019
 ms.locfileid: "67379163"
 ---
-# <a name="sioquerywfpconnectionredirectrecords-control-code"></a>SIO\_クエリ\_WFP\_接続\_リダイレクト\_レコード制御コード
+# <a name="sio_query_wfp_connection_redirect_records-control-code"></a>SIO\_クエリ\_WFP\_接続\_リダイレクト\_レコード制御コード
 
 
 **SIO\_クエリ\_WFP\_接続\_リダイレクト\_レコード**ソケット I/O 制御操作により、Winsock クライアントのリダイレクト レコードを取得します。リダイレクトされた接続。

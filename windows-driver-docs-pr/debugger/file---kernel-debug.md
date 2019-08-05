@@ -24,7 +24,7 @@ ms.locfileid: "63369772"
 
 このコマンドは、CTRL キーを押しながら K キーを押すことと同等です。 このコマンドは、WinDbg が休止モードである場合にのみ使用できます。
 
-### <a name="span-iddialogboxspanspan-iddialogboxspandialog-box"></a><span id="dialog_box"></span><span id="DIALOG_BOX"></span>ダイアログ ボックス
+### <a name="span-iddialog_boxspanspan-iddialog_boxspandialog-box"></a><span id="dialog_box"></span><span id="DIALOG_BOX"></span>ダイアログ ボックス
 
 クリックすると**カーネル デバッグ**、**カーネル デバッグ**これらのタブとダイアログ ボックスが表示されます。
 

@@ -28,7 +28,7 @@ DEFINE_CPLX_TYPE(TypeName, HelperMacroName, ArgumentType, WppMofType,"WppMofForm
 DEFINE_CPLX_TYPE(.*ls, WPP_LOGXWCS, const xwcs_t&, ItemPWString,"s", _xwcs_t_, 0, 2);
 ```
 
-### <a name="span-idformatelementsspanspan-idformatelementsspanformat-elements"></a><span id="format_elements"></span><span id="FORMAT_ELEMENTS"></span>要素の書式設定
+### <a name="span-idformat_elementsspanspan-idformat_elementsspanformat-elements"></a><span id="format_elements"></span><span id="FORMAT_ELEMENTS"></span>要素の書式設定
 
 <span id="TypeName"></span><span id="typename"></span><span id="TYPENAME"></span>*TypeName*  
 WPP は、複合型を識別するために、このフィールドを使用します。 たとえば、 **.\*%.*ls**します。

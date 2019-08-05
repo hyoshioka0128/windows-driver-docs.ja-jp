@@ -42,7 +42,7 @@ MIDI または DirectMusic*キャプチャ*フィルターが MIDI キーボー�
 
 1 つの MIDI または DirectMusic フィルターは、合成、出力、およびフィルターを表すデバイスの機能によってキャプチャ----3 つの関数の組み合わせを実行できます。 たとえば、純粋なの片方デバイスは、出力とキャプチャがない合成を実行します。
 
-### <a name="span-idmidifilterspanspan-idmidifilterspanspan-idmidifilterspanmidi-filter"></a><span id="MIDI_Filter"></span><span id="midi_filter"></span><span id="MIDI_FILTER"></span>MIDI フィルター
+### <a name="span-idmidi_filterspanspan-idmidi_filterspanspan-idmidi_filterspanmidi-filter"></a><span id="MIDI_Filter"></span><span id="midi_filter"></span><span id="MIDI_FILTER"></span>MIDI フィルター
 
 MIDI フィルターは、ポート/ミニポート ドライバーのペアとして実装されます。 MIDI フィルター ファクトリは、次のように、MIDI フィルターを作成します。
 
@@ -56,7 +56,7 @@ MIDI フィルターは、ポート/ミニポート ドライバーのペアと�
 
 MIDI 出力とシンセサイザーをサポートするためには、デバイス、MIDI ポート ドライバーには 1 ミリ秒のタイマー精度のミニポート ドライバーに生の MIDI メッセージを出力するソフトウェア sequencer が含まれています。
 
-### <a name="span-iddirectmusicfilterspanspan-iddirectmusicfilterspanspan-iddirectmusicfilterspandirectmusic-filter"></a><span id="DirectMusic_Filter"></span><span id="directmusic_filter"></span><span id="DIRECTMUSIC_FILTER"></span>DirectMusic フィルター
+### <a name="span-iddirectmusic_filterspanspan-iddirectmusic_filterspanspan-iddirectmusic_filterspandirectmusic-filter"></a><span id="DirectMusic_Filter"></span><span id="directmusic_filter"></span><span id="DIRECTMUSIC_FILTER"></span>DirectMusic フィルター
 
 DirectMusic フィルターは、MIDI フィルターの機能のスーパー セットを提供します。 スーパー セットには、これらの追加機能が含まれます。
 
@@ -80,7 +80,7 @@ DirectMusic フィルターは、ポート/ミニポート ドライバーのペ
 
 DirectMusic シンセサイザー デバイスをサポートするためには、Dmu ポート ドライバーには、MIDI イベントを再生できるようにスケジュールされているときに前のハードウェア sequencer のバッファーにタイムスタンプを出力できるは、低解像度 (1 ミリ秒) ソフトウェア sequencer が含まれています。 DirectMusic 出力デバイスをサポートするためには、ポート ドライバーのソフトウェアの sequencer で再生するには、生の MIDI メッセージを出力する構成もできます。
 
-### <a name="span-idenumeratingmidianddirectmusicdevicesspanspan-idenumeratingmidianddirectmusicdevicesspanspan-idenumeratingmidianddirectmusicdevicesspanenumerating-midi-and-directmusic-devices"></a><span id="Enumerating_MIDI_and_DirectMusic_Devices"></span><span id="enumerating_midi_and_directmusic_devices"></span><span id="ENUMERATING_MIDI_AND_DIRECTMUSIC_DEVICES"></span>MIDI と DirectMusic デバイスを列挙します。
+### <a name="span-idenumerating_midi_and_directmusic_devicesspanspan-idenumerating_midi_and_directmusic_devicesspanspan-idenumerating_midi_and_directmusic_devicesspanenumerating-midi-and-directmusic-devices"></a><span id="Enumerating_MIDI_and_DirectMusic_Devices"></span><span id="enumerating_midi_and_directmusic_devices"></span><span id="ENUMERATING_MIDI_AND_DIRECTMUSIC_DEVICES"></span>MIDI と DirectMusic デバイスを列挙します。
 
 MIDI 入力または出力を列挙する場合、Windows のマルチ メディアを使用してデバイスを**midiInXxx**または**midiOutXxx**関数、アプリケーションはミニポート ドライバーが公開WDMデバイスのみを参照できます*MIDI ピン*します。 これらは、DL とチャネルのグループなどの高度な機能のサポートが不足しているが、生の MIDI ストリームを管理する pin です。 ただし、DirectMusic を介してデバイスを列挙する場合、アプリケーション、デバイスが表示されます WDM MIDI ピンの両方と*DirectMusic ピン*します。 DirectMusic ピンは、MIDI ストリームのタイムスタンプを管理し、配布リストとチャンネルのグループをサポートします。
 
@@ -106,7 +106,7 @@ Windows Me、98/DirectMusic で同じの片方のデバイスを 2 回列挙場�
 
 MIDI シンセサイザーに表示される、Windows マルチ メディア コントロール パネル (Mmsys.cpl) WDM デバイスと同じ名前になります。
 
-### <a name="span-idsystem-suppliedportandminiportdriversspanspan-idsystem-suppliedportandminiportdriversspanspan-idsystem-suppliedportandminiportdriversspansystem-supplied-port-and-miniport-drivers"></a><span id="System-Supplied_Port_and_Miniport_Drivers"></span><span id="system-supplied_port_and_miniport_drivers"></span><span id="SYSTEM-SUPPLIED_PORT_AND_MINIPORT_DRIVERS"></span>システム指定のポートおよびミニポート ドライバー
+### <a name="span-idsystem-supplied_port_and_miniport_driversspanspan-idsystem-supplied_port_and_miniport_driversspanspan-idsystem-supplied_port_and_miniport_driversspansystem-supplied-port-and-miniport-drivers"></a><span id="System-Supplied_Port_and_Miniport_Drivers"></span><span id="system-supplied_port_and_miniport_drivers"></span><span id="SYSTEM-SUPPLIED_PORT_AND_MINIPORT_DRIVERS"></span>システム指定のポートおよびミニポート ドライバー
 
 PortCls システム ドライバーには、いくつかシステム提供 MIDI と Dmu ミニポート ドライバーが組み込まれています。
 

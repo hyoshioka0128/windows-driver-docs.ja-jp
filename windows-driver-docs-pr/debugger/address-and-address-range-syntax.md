@@ -21,7 +21,7 @@ ms.locfileid: "67161412"
 
 アドレスは、常に*仮想アドレス*とき、ドキュメント具体的には別の種類のアドレスを除き、します。 ユーザー モードでデバッガーがに従って、ディレクトリの仮想アドレスを解釈し、[現在のプロセス](controlling-processes-and-threads.md)します。 カーネル モードでデバッガーがプロセスのページ ディレクトリに従って仮想アドレスを解釈する、[プロセス コンテキスト](changing-contexts.md#process-context)を指定します。 直接設定することができます、*ユーザー モード アドレス コンテキスト*します。 ユーザー モード アドレス コンテキストに関する詳細については、次を参照してください。 [ **.context (ユーザー モード アドレス コンテキストの設定)** ](-context--set-user-mode-address-context-.md)します。
 
-### <a name="span-idaddressmodesandsegmentsupportspanspan-idaddressmodesandsegmentsupportspanaddress-modes-and-segment-support"></a><span id="address_modes_and_segment_support"></span><span id="ADDRESS_MODES_AND_SEGMENT_SUPPORT"></span>アドレス モードとセグメントのサポート
+### <a name="span-idaddress_modes_and_segment_supportspanspan-idaddress_modes_and_segment_supportspanaddress-modes-and-segment-support"></a><span id="address_modes_and_segment_support"></span><span id="ADDRESS_MODES_AND_SEGMENT_SUPPORT"></span>アドレス モードとセグメントのサポート
 
 KD、CDB は、x86 ベースのプラットフォームで、次のアドレス指定モードをサポートします。 これらのモードは、そのプレフィックスで識別されます。
 
@@ -63,7 +63,7 @@ KD、CDB は、x86 ベースのプラットフォームで、次のアドレス�
 
 現在の既定のモードではないアドレス指定モードを使用してメモリをアクセスする場合は、現在のアドレス モードをオーバーライドするモードのアドレス プレフィックスを使用できます。
 
-### <a name="span-idaddressargumentsspanspan-idaddressargumentsspanaddress-arguments"></a><span id="address_arguments"></span><span id="ADDRESS_ARGUMENTS"></span>アドレスの引数
+### <a name="span-idaddress_argumentsspanspan-idaddress_argumentsspanaddress-arguments"></a><span id="address_arguments"></span><span id="ADDRESS_ARGUMENTS"></span>アドレスの引数
 
 アドレスの引数は、変数と関数の場所を指定します。 次の表では、構文と KD、CDB で使用できるさまざまなアドレスの意味について説明します。
 
@@ -123,7 +123,7 @@ C++ の式では、ポインターは、C++ のポインターのように動作
 
 元のソース ファイル名と行番号を指定しても、アプリケーション内のアドレスを指定できます。 この情報を指定する方法の詳細については、次を参照してください。[ソース行構文](source-line-syntax.md)します。
 
-### <a name="span-idaddressrangesspanspan-idaddressrangesspanaddress-ranges"></a><span id="address_ranges"></span><span id="ADDRESS_RANGES"></span>アドレス範囲
+### <a name="span-idaddress_rangesspanspan-idaddress_rangesspanaddress-ranges"></a><span id="address_ranges"></span><span id="ADDRESS_RANGES"></span>アドレス範囲
 
 アドレスの範囲は、アドレスのペアをするか、アドレスとオブジェクトの数を指定できます。
 

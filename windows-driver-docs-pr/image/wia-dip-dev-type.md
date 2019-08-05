@@ -21,7 +21,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 06/25/2019
 ms.locfileid: "67375362"
 ---
-# <a name="wiadipdevtype"></a>WIA\_DIP\_DEV\_型
+# <a name="wia_dip_dev_type"></a>WIA\_DIP\_DEV\_型
 
 
 WIA\_DIP\_DEV\_型のプロパティには、デバイスの種類とデバイスのサブタイプが含まれています。 WIA サービスを作成してこのプロパティの保持

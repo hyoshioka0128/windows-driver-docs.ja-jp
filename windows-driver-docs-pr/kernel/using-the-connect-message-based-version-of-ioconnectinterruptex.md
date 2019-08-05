@@ -16,7 +16,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 06/25/2019
 ms.locfileid: "67365783"
 ---
-# <a name="using-the-connectmessagebased-version-of-ioconnectinterruptex"></a>接続を使用して\_メッセージ\_IoConnectInterruptEx のベース バージョン
+# <a name="using-the-connect_message_based-version-of-ioconnectinterruptex"></a>接続を使用して\_メッセージ\_IoConnectInterruptEx のベース バージョン
 
 
 Windows Vista 以降のオペレーティング システム、ドライバーが接続を使用できます\_メッセージ\_ベース バージョンの[ **IoConnectInterruptEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioconnectinterruptex)のドライバーの ISR を登録するにはメッセージ シグナル割り込みです。 ドライバーの接続の値を指定する\_メッセージ\_に基づくの*パラメーター*-&gt;**バージョン**のメンバーを使用して*パラメーター*-&gt;**MessageBased**操作の他のパラメーターを指定します。

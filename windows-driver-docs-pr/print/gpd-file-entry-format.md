@@ -22,7 +22,7 @@ ms.locfileid: "63385195"
 
 GPD ファイルのすべてのエントリは、次の形式に準拠しています。
 
-**\\*** <em>EntryName</em>**:***EntryValue* **{**<em>GPD\_FileEntry, GPD\_FileEntry, ...</em>**}**
+**\\** * <em>EntryName</em> **:** *EntryValue* **{** <em>GPD\_FileEntry, GPD\_FileEntry, ...</em> **}**
 
 *EntryName*は常に Unidrv の GPD パーサーで認識する定義済みのキーワードの前にアスタリスクでします。
 

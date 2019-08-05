@@ -28,7 +28,7 @@ DevCon (DevCon.exe) は、Windows を実行しているコンピューターに�
 devcon [/m:\\computer] [/r] command [arguments] 
 ```
 
-## <a name="span-idddkdevcongeneralcommandstoolsspanspan-idddkdevcongeneralcommandstoolsspanparameters"></a><span id="ddk_devcon_general_commands_tools"></span><span id="DDK_DEVCON_GENERAL_COMMANDS_TOOLS"></span>パラメーター
+## <a name="span-idddk_devcon_general_commands_toolsspanspan-idddk_devcon_general_commands_toolsspanparameters"></a><span id="ddk_devcon_general_commands_tools"></span><span id="DDK_DEVCON_GENERAL_COMMANDS_TOOLS"></span>パラメーター
 
 
 **注**  状態またはデバイスの構成を変更するには、コンピューターの Administrators グループのメンバーであります。
@@ -116,7 +116,7 @@ DevCon コマンドのパラメーターは、構文に示されている順序�
 
 多くの DevCon 操作には、デバイスのハードウェア ID が必要です。 DevCon の後続の操作で使用するためのコンピューター上のすべてのデバイスのハードウェア Id の一覧を作成するで始まる、 [ **DevCon HwIDs** ](devcon-hwids.md)コマンド。 詳細については、次を参照してください。[ハードウェア Id](https://docs.microsoft.com/windows-hardware/drivers/install/hardware-ids)と[識別文字列](https://docs.microsoft.com/windows-hardware/drivers/install/device-identification-strings)します。
 
-### <a name="span-idddkdevconsearchlogictoolsspanspan-idddkdevconsearchlogictoolsspanhow-devcon-searches-for-devices"></a><span id="ddk_devcon_search_logic_tools"></span><span id="DDK_DEVCON_SEARCH_LOGIC_TOOLS"></span>DevCon でデバイスを検索する方法
+### <a name="span-idddk_devcon_search_logic_toolsspanspan-idddk_devcon_search_logic_toolsspanhow-devcon-searches-for-devices"></a><span id="ddk_devcon_search_logic_tools"></span><span id="DDK_DEVCON_SEARCH_LOGIC_TOOLS"></span>DevCon でデバイスを検索する方法
 
 DevCon では、そのコンピューター名、ハードウェア ID、互換性 ID、デバイス インスタンス ID、およびデバイス セットアップ クラス別にデバイスを識別します。
 
@@ -142,7 +142,7 @@ DevCon では、オペレーティング システムを再起動する 2 つの
 
 -   **DevCon 再起動**操作は、指定したデバイスを再起動します。 ローカル コンピューターでのみ有効ですし、他の操作と組み合わせて使用できません。
 
-### <a name="span-idddkdevconreturncodestoolsspanspan-idddkdevconreturncodestoolsspandevcon-return-codes"></a><span id="ddk_devcon_return_codes_tools"></span><span id="DDK_DEVCON_RETURN_CODES_TOOLS"></span>DevCon リターン コード
+### <a name="span-idddk_devcon_return_codes_toolsspanspan-idddk_devcon_return_codes_toolsspandevcon-return-codes"></a><span id="ddk_devcon_return_codes_tools"></span><span id="DDK_DEVCON_RETURN_CODES_TOOLS"></span>DevCon リターン コード
 
 DevCon がプログラムと DevCon コマンドの成功を判断するためのスクリプトで使用できる整数を返します (たとえば、* * を返す devcon hwids = \\* * *)。
 

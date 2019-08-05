@@ -12,7 +12,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 06/25/2019
 ms.locfileid: "67369026"
 ---
-# <a name="oidgenmediasupported"></a>OID\_GEN\_メディア\_サポートされています。
+# <a name="oid_gen_media_supported"></a>OID\_GEN\_メディア\_サポートされています。
 
 
 クエリ、OID として\_GEN\_メディア\_OID のサポートは、NIC をサポートするメディアの種類が、必ずしも、NIC が現在使用しているメディアの種類を指定します。

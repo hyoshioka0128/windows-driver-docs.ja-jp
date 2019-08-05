@@ -21,7 +21,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "63344310"
 ---
-# <a name="devproptypesbyte"></a>DEVPROP_TYPE_SBYTE
+# <a name="devprop_type_sbyte"></a>DEVPROP_TYPE_SBYTE
 
 
 Windows Vista および Windows の以降のバージョンでは、DEVPROP_TYPE_BYTE 識別子は、データ型が SBYTE 型指定の符号付き整数であることを示す基本データ型識別子を表します。

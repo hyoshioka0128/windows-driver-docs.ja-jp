@@ -16,7 +16,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 06/25/2019
 ms.locfileid: "67371156"
 ---
-# <a name="handling-unsupported-srbfunctionxxx"></a>処理のサポートされていない SRB\_関数\_XXX
+# <a name="handling-unsupported-srb_function_xxx"></a>処理のサポートされていない SRB\_関数\_XXX
 
 
 ## <span id="ddk_handling_unsupported_srb_function_xxx_kg"></span><span id="DDK_HANDLING_UNSUPPORTED_SRB_FUNCTION_XXX_KG"></span>
