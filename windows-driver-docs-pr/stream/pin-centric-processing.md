@@ -3,18 +3,18 @@ title: ピン中心の処理
 description: ピン中心の処理
 ms.assetid: 0b6a02c2-e672-4568-a890-491c721ec3a7
 keywords:
-- 暗証番号 (pin) を中心としたフィルター WDK AVStream
-- 暗証番号 (pin) を中心とした AVStream WDK をフィルター処理します。
-- WDK AVStream の種類をフィルターします。
+- pin 中心のフィルター (WDK AVStream)
+- AVStream pin 中心フィルター WDK
+- フィルターの種類 WDK AVStream
 - AVStrMiniPinProcess
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 024bd85bf5d669c7a78ffc715c87d9c0942be615
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a71fcc42c6190106e1d8cc9483682a94b27ec134
+ms.sourcegitcommit: 21eb29567c7b9ae2801a4f5b002cf0a6daef3cf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67370365"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68796928"
 ---
 # <a name="pin-centric-processing"></a>ピン中心の処理
 
@@ -22,35 +22,35 @@ ms.locfileid: "67370365"
 
 
 
-2 つの処理パラダイムの 1 つを使用するフィルターを指定する、AVStream ミニドライバーを作成する場合: 暗証番号 (pin) を中心とした処理または[フィルターを中心とした処理](filter-centric-processing.md)します。
+AVStream ミニドライバーを作成するときは、ピン中心の処理と[フィルター処理を中心](filter-centric-processing.md)とした処理の2つの処理パラダイムのいずれかを使用するフィルターを指定します。
 
-暗証番号 (pin) を中心とした処理は AVStream が新しいフレームがピン留めするキューに届いたときに、ミニドライバーの暗証番号 (pin) プロセスのディスパッチ ルーチンを呼び出すことを意味します。
+ピン中心の処理とは、新しいフレームがピンキューに到着したときに AVStream がミニドライバーの pin プロセスディスパッチルーチンを呼び出すことを意味します。
 
-フィルターを中心とした処理は AVStream がデータ フレームは使用可能なインスタンス化された各ピンの場合に、ミニドライバーのフィルター処理のディスパッチ ルーチンを呼び出すことを意味します。 これらの定義が既定の動作を指定することに注意してください。ミニドライバーはフラグを設定して、既定の動作を変更することができます、 [ **KSPIN\_記述子\_EX** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_kspin_descriptor_ex)構造体。
+フィルター中心の処理では、インスタンス化された各ピンで利用可能なデータフレームがある場合、AVStream はミニドライバーのフィルター処理ディスパッチルーチンを呼び出します。 これらの定義は既定の動作を指定することに注意してください。ミニドライバーは、 [**kspin\_記述子\_EX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_kspin_descriptor_ex)構造体でフラグを設定することによって、既定の動作を変更できます。
 
-一般に、ソフトウェアのフィルターがフィルターを中心とした処理を使用し、ハードウェア フィルターは、暗証番号 (pin) を中心とした処理を使用します。 たとえば、変換またはデータをレンダリングするハードウェアでは、暗証番号 (pin) を中心としたフィルターをデータを送信する可能性があります。 これらのロールが逆にしたまれなケースがあります。
+一般に、ソフトウェアフィルターはフィルター中心の処理とハードウェアフィルターを使用して、pin 中心の処理を使用します。 たとえば、データを変換またはレンダリングするハードウェアは、ピン中心のフィルターでデータをルーティングできます。 これらの役割が逆になる場合もまれにあります。
 
-暗証番号 (pin) を中心としたフィルターを指定する、ミニドライバーはへのポインターを提供します、 *AVStrMiniPinProcess*各コールバック ルーチン[ **KSPIN\_ディスパッチ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_kspin_dispatch)構造体処理のディスパッチを指定しない、 [ **KSFILTER\_ディスパッチ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_ksfilter_dispatch)構造体。
+ピン中心のフィルターを提供するために、ミニドライバーは各[ **\_kspin ディスパッチ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_kspin_dispatch)構造体の*avstrminipinprocess*コールバックルーチンへのポインターを提供します。 [ **\_ksk フィルターディスパッチに処理ディスパッチを指定しないでください。** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_ksfilter_dispatch)構造体。
 
-かどうか、ミニドライバーは、KSPIN フラグの設定を変更しません\_記述子\_AVStream がベンダーから提供されたを呼び出し構造、EX [ *AVStrMiniPinProcess* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nc-ks-pfnkspin)コールバック ルーチン次の 3 つの場合。
+ミニドライバーが kspin\_記述子\_EX 構造体でフラグ設定を変更しない場合、avstream は、次の3つの状況でベンダーが提供する[*avstrminipinprocess*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nc-ks-pfnkspin)コールバックルーチンを呼び出します。
 
--   最小の処理状態にピン留めする遷移します。 フレームは、キューに既に存在する必要があり、暗証番号 (pin) する必要がありますからの切り替えに最低限の処理状態よりも小さい少なくとも最低限の処理状態です。
+-   Pin は、最小処理状態に遷移します。 フレームは既にキューに存在している必要があります。また、ピンは、最小処理状態から最小処理状態に移行する必要があります。
 
--   新しいフレームが到着します。 Pin に以上でなければなりません、最小の処理状態とフレームまたは前のリーディング エッジ必要があります。
+-   新しいフレームが到着します。 Pin は、少なくとも最小処理状態である必要があります。また、先頭のエッジの前または前にフレームがなければなりません。
 
--   ミニドライバーが明示的に呼び出す[ **KsPinAttemptProcessing**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-kspinattemptprocessing)します。
+-   ミニドライバーは、明示的に[**KsPinAttemptProcessing**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-kspinattemptprocessing)を呼び出します。
 
-既定では、一時停止は、最小の処理状態です。
+既定では、pause は最小処理状態です。
 
-さらに、AVStream は呼び出しません暗証番号 (pin) プロセスのディスパッチ、pin の AND ゲートが閉じられました。 使用する場合、**KSGATE * * * Xxx*を追加するルーチンに pin の入力をオフのゲートなど、プロセス、ディスパッチは呼び出されません。
+また、ピンのおよびゲートが閉じている場合、AVStream は、ピンプロセスディスパッチを呼び出しません。 **Ksk ゲート**_Xxx_ルーチンを使用して、pin のおよびゲートに入力以外の入力を追加すると、プロセスディスパッチは呼び出されません。
 
-AVStream を呼び出すと*AVStrMiniPinProcess*、使用可能なデータを含む暗証番号 (pin) オブジェクトへのポインターを提供します。 ミニドライバーの処理のディスパッチを取得できます、[リーディング エッジ ポインター](leading-and-trailing-edge-stream-pointers.md)呼び出して[ **KsPinGetLeadingEdgeStreamPointer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-kspingetleadingedgestreampointer)します。 ミニドライバーが、データを使用してストリームを操作、[ストリーム ポインター](stream-pointers.md) API。
+AVStream は*Avstrminipinprocess*を呼び出すと、使用可能なデータを持つピンオブジェクトへのポインターを提供します。 ミニドライバーの処理ディスパッチは、 [**KsPinGetLeadingEdgeStreamPointer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-kspingetleadingedgestreampointer)を呼び出すことによって、[先頭のエッジポインター](leading-and-trailing-edge-stream-pointers.md)を取得できます。 ミニドライバーは、[ストリームポインター](stream-pointers.md) API を使用してストリームデータを操作します。
 
-AVStream を呼び出すと、暗証番号 (pin) を中心とした処理を使用するミニドライバーは変更できます、 *AVStrMiniPinProcess*で関連するフラグを設定してディスパッチ[ **KSPIN\_記述子\_EX** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_kspin_descriptor_ex)構造体。 フラグの説明、KSPIN で\_記述子\_リファレンス ページ EX、暗証番号 (pin) を中心としたフィルターを実装しているベンダーに特に関連します。
+ピン中心の処理を使用するミニドライバーは、avstream が*avstrminipinprocess*ディスパッチを呼び出すときに、関連する[**kspin\_DESCRIPTOR\_EX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_kspin_descriptor_ex)構造体でフラグを設定することによって変更できます。 Kspin\_記述子\_EX のリファレンスページのフラグの説明は、ピン中心のフィルターを実装しているベンダーに特に関連しています。
 
-ミニドライバーが保持している場合は、試行の処理が失敗、[ミュー テックスを処理](processing-mutex-in-avstream.md)を通じて[ **KsPinAcquireProcessingMutex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-kspinacquireprocessingmutex)します。 問題は、ミニドライバーを使用してのゲートを直接操作する場合にも発生する可能性、**KSGATE * * *\** 呼び出し。
+ミニドライバーが[**KsPinAcquireProcessingMutex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-kspinacquireprocessingmutex)を介して[処理ミューテックス](processing-mutex-in-avstream.md)を保持している場合、処理の試行が失敗することがあります。 ミニドライバーが**ksk ゲート** _\*_ 呼び出しを使用してゲートを直接操作した場合にも、問題が発生する可能性があります。
 
-[AVStream シミュレートされたハードウェア サンプル ドライバー (AVSHwS)](https://go.microsoft.com/fwlink/p/?linkid=256083) Windows Driver Kit のサンプルでは、シミュレーションのハードウェア用のドライバーを暗証番号 (pin) を中心としたキャプチャします。 Avshws サンプルを実装する方法を示します[AVStream を通じて DMA](avstream-dma-services.md)します。
+Windows Driver Kit のサンプルに含まれる Avstream のシミュレートされた[ハードウェアサンプルドライバー (AVSHwS)](https://go.microsoft.com/fwlink/p/?linkid=256083)は、シミュレートされたハードウェア用のピン中心のキャプチャドライバーです。 Avshws サンプルは、 [AVStream を使用して DMA](avstream-dma-services.md)を実装する方法を示しています。
 
  
 
