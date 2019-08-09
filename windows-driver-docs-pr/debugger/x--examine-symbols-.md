@@ -1,9 +1,9 @@
 ---
 title: x (シンボルの検証)
-description: X コマンドでは、指定したパターンに一致するすべてのコンテキストで、シンボルが表示されます。
+description: X コマンドは、指定されたパターンに一致するすべてのコンテキストのシンボルを表示します。
 ms.assetid: 8c71c2ca-4a9d-43e4-91b3-f05b5475316d
 keywords:
-- x (シンボルの検証) Windows のデバッグ
+- x (シンボルの確認) Windows デバッグ
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,89 +12,89 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 14cf8fe0e8af0ae4eefd8de0b99998e00c7d6284
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 126db6c7b4cfdad17a2c0826302a625f267e3485
+ms.sourcegitcommit: d5f54510b9500413dd3084b59cb8869f2f6b13cf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381922"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68866766"
 ---
 # <a name="x-examine-symbols"></a>x (シンボルの検証)
 
 
-**X**コマンドは、指定したパターンに一致するすべてのコンテキストで、シンボルを表示します。
+**X**コマンドは、指定されたパターンに一致するすべてのコンテキストのシンボルを表示します。
 
 ```dbgcmd
 x [Options] Module!Symbol 
 x [Options] *
 ```
 
-## <a name="span-idddkcmdexaminesymbolsdbgspanspan-idddkcmdexaminesymbolsdbgspanparameters"></a><span id="ddk_cmd_examine_symbols_dbg"></span><span id="DDK_CMD_EXAMINE_SYMBOLS_DBG"></span>パラメーター
+## <a name="span-idddk_cmd_examine_symbols_dbgspanspan-idddk_cmd_examine_symbols_dbgspanparameters"></a><span id="ddk_cmd_examine_symbols_dbg"></span><span id="DDK_CMD_EXAMINE_SYMBOLS_DBG"></span>パラメータ
 
 
-<span id="_______Options______"></span><span id="_______options______"></span><span id="_______OPTIONS______"></span> *オプション*   
-シンボルの検索オプションを指定します。 次のオプションの 1 つ以上を使用することができます。
+<span id="_______Options______"></span><span id="_______options______"></span><span id="_______OPTIONS______"></span>*オプション*   
+シンボル検索オプションを指定します。 次のオプションの1つまたは複数を使用できます。
 
-<span id="_0"></span>**/0**  
-各シンボルのアドレスのみが表示されます。
+<span id="_0"></span> **/0**  
+各記号のアドレスのみを表示します。
 
-<span id="_1"></span>**/1**  
-各シンボルの名前のみが表示されます。
+<span id="_1"></span> **/1**  
+各記号の名前のみを表示します。
 
-<span id="_2"></span>**/2**  
-アドレスと各シンボル (データ型ではありません) の名前のみが表示されます。
+<span id="_2"></span> **</span>**  
+各記号のアドレスと名前のみを表示します (データ型ではありません)。
 
-<span id="_D"></span><span id="_d"></span>**/D**  
-使用して、出力が表示されます。[デバッガー Markup Language](debugger-markup-language-commands.md)します。
+<span id="_D"></span><span id="_d"></span>**D**  
+[デバッガーマークアップ言語](debugger-markup-language-commands.md)を使用して出力を表示します。
 
-<span id="_t"></span><span id="_T"></span>**/t**  
-データ型がわかっている場合、各シンボルのデータ型が表示されます。
+<span id="_t"></span><span id="_T"></span> **/t**  
+データ型がわかっている場合は、各シンボルのデータ型を表示します。
 
-<span id="_v"></span><span id="_V"></span>**/v**  
-各シンボルの記号の型 (ローカル、グローバル、パラメーター、関数、または不明) が表示されます。 このオプションには、各シンボルのサイズも表示されます。 関数シンボルのサイズは、メモリ内の関数のサイズです。 その他の記号のサイズは、シンボルを表すデータ型のサイズです。 サイズは常にバイト単位で測定され、16 進数形式で表示されます。
+<span id="_v"></span><span id="_V"></span> **/v**  
+各シンボルのシンボルの種類 (local、global、parameter、function、または unknown) を表示します。 このオプションでは、各記号のサイズも表示されます。 関数シンボルのサイズは、メモリ内の関数のサイズです。 その他の記号のサイズは、シンボルが表すデータ型のサイズです。 サイズは常にバイト単位で測定され、16進形式で表示されます。
 
-<span id="_s_Size"></span><span id="_s_size"></span><span id="_S_SIZE"></span>**/s** *サイズ*  
-値に表示されたシンボルのサイズ (バイト単位)、専用等しい*サイズ*します。 *サイズ*関数のシンボルはメモリ内の関数のサイズになります。 *サイズ*の他のシンボルがシンボルを表すデータ型のサイズ。 シンボルのサイズが決まることはできませんが常に表示されます。 *サイズ*0 以外の整数でなければなりません。
+<span id="_s_Size"></span><span id="_s_size"></span><span id="_S_SIZE"></span> **/s***サイズ*  
+サイズがバイト単位のシンボルだけが*サイズ*の値と等しい場合にのみ表示します。 関数シンボルの*サイズ*は、メモリ内の関数のサイズです。 その他の記号の*サイズ*は、シンボルが表すデータ型のサイズです。 サイズを特定できないシンボルは常に表示されます。 *サイズ*は0以外の整数である必要があります。
 
-<span id="_q"></span><span id="_Q"></span>**/q**  
-引用符で囲まれた形式で名前のシンボルが表示されます。
+<span id="_q"></span><span id="_Q"></span> **/q**  
+シンボル名を引用符で囲まれた形式で表示します。
 
-<span id="_p"></span><span id="_P"></span>**/p**  
-デバッガーは関数名とその引数を表示するときに、かっこの前にスペースを省略します。 この種の表示が容易関数名、引数からコピーする場合、 **x**別の場所に表示します。
+<span id="_p"></span><span id="_P"></span> **/p**  
+デバッガーが関数名とその引数を表示したときに、左中かっこの前のスペースを省略します。 このように表示されるのは、関数名と引数を**x**ディスプレイから別の場所にコピーする場合です。
 
-<span id="_f"></span><span id="_F"></span>**/f**  
-関数のデータ サイズが表示されます。
+<span id="_f"></span><span id="_F"></span> **/f**  
+関数のデータサイズを表示します。
 
-<span id="_d"></span><span id="_D"></span>**/d**  
-データのデータ サイズが表示されます。
+<span id="_d"></span><span id="_D"></span>**d**  
+データのデータサイズを表示します。
 
-<span id="_a"></span><span id="_A"></span>**/a**  
-昇順のアドレスを指定して、表示を並べ替えます。
+<span id="_a"></span><span id="_A"></span> **/a**  
+表示をアドレスで昇順に並べ替えます。
 
-<span id="_A"></span><span id="_a"></span>**/A**  
-表示をアドレス、降順で並べ替えます。
+<span id="_A"></span><span id="_a"></span> **/A**  
+表示をアドレスで降順に並べ替えます。
 
-<span id="_n"></span><span id="_N"></span>**/n**  
-表示を昇順での名前で並べ替えます。
+<span id="_n"></span><span id="_N"></span>**ms-dos**  
+表示を名前で昇順に並べ替えます。
 
-<span id="_N"></span><span id="_n"></span>**/N**  
-表示を降順での名前で並べ替えます。
+<span id="_N"></span><span id="_n"></span>**MS-DOS**  
+表示を名前で降順に並べ替えます。
 
-<span id="_z"></span><span id="_Z"></span>**/z**  
-表示サイズを昇順で並べ替えます。
+<span id="_z"></span><span id="_Z"></span> **/z**  
+表示をサイズで昇順に並べ替えます。
 
-<span id="_Z"></span><span id="_z"></span>**/Z**  
-表示サイズを降順で並べ替えます。
+<span id="_Z"></span><span id="_z"></span> **/Z**  
+ディスプレイのサイズを降順で並べ替えます。
 
-<span id="_______Module______"></span><span id="_______module______"></span><span id="_______MODULE______"></span> *モジュール*   
-検索するモジュールを指定します。 このモジュールは、.exe、.dll、または .sys ファイルであることができます。 *モジュール*さまざまなワイルドカード文字と指定子を含めることができます。 構文の詳細については、次を参照してください。[文字列のワイルドカード構文](string-wildcard-syntax.md)します。
+<span id="_______Module______"></span><span id="_______module______"></span><span id="_______MODULE______"></span>*モジュール*   
+検索するモジュールを指定します。 このモジュールは、.exe、.dll、または .sys ファイルにすることができます。 *モジュール*には、さまざまなワイルドカード文字と指定子を含めることができます。 構文の詳細については、「[文字列ワイルドカード構文](string-wildcard-syntax.md)」を参照してください。
 
-<span id="_______Symbol______"></span><span id="_______symbol______"></span><span id="_______SYMBOL______"></span> *シンボル*   
-シンボルを含める必要があるパターンを指定します。 *シンボル*さまざまなワイルドカード文字と指定子を含めることができます。 構文の詳細については、次を参照してください。[文字列のワイルドカード構文](string-wildcard-syntax.md)します。
+<span id="_______Symbol______"></span><span id="_______symbol______"></span><span id="_______SYMBOL______"></span>*シンボル*   
+シンボルに含まれている必要があるパターンを指定します。 *シンボル*には、さまざまなワイルドカード文字と指定子を含めることができます。 構文の詳細については、「[文字列ワイルドカード構文](string-wildcard-syntax.md)」を参照してください。
 
-照合が大文字小文字を区別し、1 つの先頭のアンダー スコアがないため、このパターンは、シンボルに一致すると、(\_) 任意の分量の先頭にアンダー スコアを表します。 内のスペースを追加することができます*シンボル*スペースが含まれるシンボル名を指定できるように、("operator new"などまたは"テンプレート&lt;A、B&gt;") せず、ワイルドカード文字を使用します。
+このパターンがシンボルと一致するため、一致では大文字と小文字が区別されず\_、1つの先頭のアンダースコア () は先頭のアンダースコアの任意の数量を表します。 *シンボル*内にスペースを追加すると、ワイルドカード文字を使用せずに、スペースを含むシンボル名 ("operator new&lt;" や "&gt;Template A, B" など) を指定できるようになります。
 
-### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>環境
+### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>Environment
 
 <table>
 <colgroup>
@@ -104,11 +104,11 @@ x [Options] *
 <tbody>
 <tr class="odd">
 <td align="left"><p>モード</p></td>
-<td align="left"><p>ユーザー モードでは、カーネル モード</p></td>
+<td align="left"><p>ユーザーモード、カーネルモード</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>ターゲット</p></td>
-<td align="left"><p>ライブ、クラッシュ ダンプ</p></td>
+<td align="left"><p>ライブ、クラッシュダンプ</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>プラットフォーム</p></td>
@@ -122,45 +122,45 @@ x [Options] *
 <a name="remarks"></a>注釈
 -------
 
-次のコマンドは、文字列「スピン」が含まれる MyModule ですべての記号を検索します。
+次のコマンドは、文字列 "spin" を含む MyModule 内のすべてのシンボルを検索します。
 
 ```dbgcmd
 0:000> x mymodule!*spin* 
 ```
 
-次のコマンドは、すばやく MyModule 内"DownloadMinor"と"DownloadMajor"シンボルを検索します。
+次のコマンドは、MyModule の "DownloadMinor" と "Downloadminor" の記号をすばやく検索します。
 
 ```dbgcmd
 0:000> x mymodule!downloadm??or 
 ```
 
-次のコマンドを使用して、MyModule ですべてのシンボルを表示することもできます。
+次のコマンドを使用して、MyModule 内のすべてのシンボルを表示することもできます。
 
 ```dbgcmd
 0:000> x mymodule!* 
 ```
 
-上記のコマンドもデバッガーに強制的に MyModule のシンボル情報を再読み込みします。 最小限のディスプレイを使用したモジュールのシンボルを再読み込みする場合は、次のコマンドを使用します。
+また、上記のコマンドは、MyModule からシンボル情報を再読み込みするようにデバッガーに強制します。 最小限の表示でモジュール内のシンボルを再読み込みする場合は、次のコマンドを使用します。
 
 ```dbgcmd
 0:000> x mymodule!*start* 
 ```
 
-常に、いくつかのシンボルには、文字列"start"が含まれます。 そのため、上記のコマンドは、常にコマンドが動作を確認するには、いくつか出力を表示します。 上記のコマンドの過剰な表示の長さを回避できますが、* * x mymodule!\\***.
+いくつかの記号には、常に文字列 "start" が含まれています。 したがって、上記のコマンドは、コマンドが動作することを確認するために出力を常に表示します。 ただし、上記のコマンドでは、表示長が**x mymodule\*!** を超えないようにします。
 
-各シンボルは、完全なシンボル名の開始アドレスが表示されます。 シンボルが関数名の場合は、その引数の型の一覧は、表示も含まれます。 シンボルは、グローバル変数が、その現在の値が表示されます。
+表示には、各記号の開始アドレスと完全なシンボル名が表示されます。 シンボルが関数名の場合は、その引数の型のリストも表示されます。 シンボルがグローバル変数の場合は、その現在の値が表示されます。
 
-その他の 1 つの特殊なケースがある、 **x**コマンド。 アドレスとを現在のコンテキストのすべてのローカル変数の名前を表示するには、次のコマンドを使用します。
+**X**コマンドには、他にも特殊なケースが1つあります。 現在のコンテキストのすべてのローカル変数のアドレスと名前を表示するには、次のコマンドを使用します。
 
 ```dbgcmd
 0:000> x * 
 ```
 
-**注**  プライベート シンボルが読み込まれている場合を除き、ほとんどの場合、ローカル変数にアクセスすることはできません。 このような状況の詳細については、次を参照してください[dbgerr005:。プライベート シンボルのために必要な](dbgerr005--private-symbols-required.md)します。 ローカル変数の値を表示するには、使用、 [ **dv (ローカル変数の表示)** ](dv--display-local-variables-.md)コマンド。
+**メモプライベートシンボル**が読み込まれていない場合、ほとんどの場合、ローカル変数にアクセスすることはできません。   この状況の詳細については[、「dbgerr005:プライベートシンボルが](dbgerr005--private-symbols-required.md)必要です。 ローカル変数の値を表示するには、[ [**dv (ローカル変数の表示)** ](dv--display-local-variables-.md) ] コマンドを使用します。
 
  
 
-次の例を示しています、 **/0**、 **/1**、および **/2**オプション。
+次の例は、 **/0**、 **/1**、/ **2**の各オプションを示しています。
 
 ```dbgcmd
 0:000:x86> x /0 MyApp!Add*
@@ -176,13 +176,13 @@ MyApp!AddTwoIntegers
 00b513d0          MyApp!AddTwoIntegers
 ```
 
-**/0**、 **/1**、および **/2**オプションの出力を使用する場合に便利ですが、 **x**コマンドへの入力として、 [ **.foreach** ](-foreach.md)コマンド。
+**/0**、 **/1**、 **/2**オプションは、 **x**コマンドの出力を[**foreach**](-foreach.md)コマンドへの入力として使用する場合に便利です。
 
 ```dbgcmd
 .foreach ( place { x /0 MyApp!*MySym*} ) { .echo ${place}+0x18 }
 ```
 
-次の例では、スイッチ **/f**フィルター関数モジュール notepad.exe を使用する場合。
+次の例では、スイッチ **/f**を使用してモジュール notepad.exe の関数をフィルター処理する方法を示します。
 
 ```dbgcmd
 0:000> x /f /v notepad!*main*
@@ -191,7 +191,7 @@ prv func   00000001`0000a7b0   1c notepad!WinMainCRTStartup$filt$0 (void)
 prv func   00000001`0000a540  268 notepad!WinMainCRTStartup (void)
 ```
 
-使用すると、 **/v**オプション、表示の最初の列 (ローカル、グローバル、パラメーター、関数、または不明) 記号の型を示しています。 2 番目の列は、シンボルのアドレスです。 3 番目の列は、(バイト単位)、記号のサイズです。 4 番目の列には、シンボル名とモジュールの名前が表示されます。 場合によっては、この表示の後に等号 (=) と記号のデータ型。 シンボル (パブリックまたは完全なシンボル情報) のソースが表示されます。
+**/V**オプションを使用すると、表示の最初の列にシンボルの種類 (local、global、parameter、function、または unknown) が表示されます。 2番目の列は、記号のアドレスです。 3番目の列は、記号のサイズ (バイト単位) です。 4番目の列には、モジュール名とシンボル名が表示されます。 場合によっては、この表示の後に等号 (=) が続き、その後に記号のデータ型が続きます。 シンボルのソース (パブリックまたは完全なシンボル情報) も表示されます。
 
 ```dbgcmd
 kd> x /v nt!CmType*
@@ -202,18 +202,18 @@ global 805bd7b0    0 nt!CmTypeString = unsigned short *[]
 global 805bd7b0   a8 nt!CmTypeString = unsigned short *[42]
 ```
 
-前の例では、データ型が 10 進形式で指定されたときに 16 進数形式で、サイズを指定します。 そのため、前の例の最後の行のデータ型は符号なし short 整数に 42 ポインターの配列が。 この配列のサイズは 42\*4 = 168 と 168 が 0xA8 と 16 進数形式で表示されます。
+前の例では、サイズは16進数形式で指定されていますが、データ型は10進数形式で指定されています。 このため、前の例の最後の行では、データ型は、符号なし short 整数への42ポインターの配列です。 この配列のサイズは 42\*4 = 168 で、168は、16進形式で0xa8 として表示されます。
 
-使用することができます、**/s * * * サイズ*シンボル (バイト単位)、サイズのものだけを表示するオプションは、特定の値。 たとえば、サイズが 0xA8 オブジェクトを表す記号を前の例のコマンドを制限できます。
+* */S * * * size*オプションを使用すると、サイズが特定の値であるシンボル (バイト単位) のみを表示できます。 たとえば、前の例のコマンドを、サイズが0xA8 のオブジェクトを表すシンボルに制限することができます。
 
 ```dbgcmd
 kd> x /v /s a8 nt!CmType*
 global 805bd7b0   a8 nt!CmTypeString = unsigned short *[42]
 ```
 
-**データ型の使用**
+**データ型の操作**
 
-**/T**オプションにより、デバッガーをそれぞれのシンボルのデータ型に関する情報を表示します。 多数のシンボルのこの情報が表示されていない場合にも、 **/t**オプション。 使用すると **/t**、このようなシンボルがあるそのデータ型情報を 2 回表示されます。
+**/T**オプションを指定すると、デバッガーは各シンボルのデータ型に関する情報を表示します。 多くの記号については、この情報は **/t**オプションなしでも表示されることに注意してください。 **/T**を使用すると、このような記号のデータ型情報が2回表示されます。
 
 ```dbgcmd
 0:001> x prymes!__n*
@@ -231,21 +231,21 @@ Type information missing error for _nh_malloc
 00427d14 <NoType> myModule!_NLG_Destination = <no type information>
 ```
 
-X のコマンドは、型のインスタンスが表示されます。
+X コマンドは、型のインスタンスを表示します。
 
 ```dbgcmd
 0:001> x foo!MyClassInstance
 00f4f354          foo!MyClassInstance = 0x00f78768
 ```
 
-X のコマンドは、型の名前だけに基づくものにも表示されません。
+X コマンドでは、型の名前のみに基づいて何も表示されません。
 
 ```dbgcmd
 0:001> x foo!MyClass
 0:001>
 ```
 
-型の名前を使用して型情報を表示するには、使用を検討して[ **dt (型の表示)**](dt--display-type-.md)型と型のインスタンスの両方の情報を提供します。
+型の名前を使用して型情報を表示するには、 [**dt (表示型)** ](dt--display-type-.md)の使用を検討してください。型の型とインスタンスの両方についての情報が提供されます。
 
 ```dbgcmd
 0:001> dt foo!MyClass
@@ -255,9 +255,9 @@ X のコマンドは、型の名前だけに基づくものにも表示されま
    +0x00c PtrMemberVariable : Ptr32 MyClass
 ```
 
-**テンプレートでの作業**
+**テンプレートの操作**
 
-X コマンドでワイルドカードを使用して、このサンプルで示すように、テンプレート クラスを表示することができます。
+このサンプルで示すように、ワイルドカードと x コマンドを使用して、テンプレートクラスを表示できます。
 
 ```dbgcmd
 0:001>  x Fabric!Common::ConfigEntry*TimeSpan?
@@ -265,7 +265,7 @@ X コマンドでワイルドカードを使用して、このサンプルで示
 000007f6`466a3020 Fabric!Common::ConfigEntry<Common::TimeSpan>::~ConfigEntry<Common::TimeSpan> (void)
 ```
 
-使用を検討して、 [ **dt (型の表示)** ](dt--display-type-.md)コマンド、テンプレートを使用する場合、x コマンドでは個々 のテンプレート クラスの項目は表示されません。
+テンプレートを操作するときは、[ [**dt (Display Type)** ](dt--display-type-.md) ] コマンドを使用することを検討してください。 x コマンドでは、個々のテンプレートクラス項目が表示されません。
 
 ```dbgcmd
 0:001> dt foo!Common::ConfigEntry<Common::TimeSpan>
@@ -275,12 +275,12 @@ X コマンドでワイルドカードを使用して、このサンプルで示
    +0x038 key_             : std::basic_string<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t> >
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[シンボルを確認します。](verifying-symbols.md)
+[検証 (シンボルを)](verifying-symbols.md)
 
-[**dv (ローカル変数の表示)**](dv--display-local-variables-.md)
+[**dv (ローカル変数の表示)** ](dv--display-local-variables-.md)
 
  
 

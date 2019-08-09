@@ -1,9 +1,9 @@
 ---
 title: u、ub、uu (Unassemble)
-description: U のコマンドは、メモリ内の指定したプログラム コード、アセンブリの翻訳を表示します。 このコマンドと混同しないで、~ (スレッドの固定の解除) u コマンド。
+description: U * コマンドは、指定されたプログラムコードのアセンブリ変換をメモリ内に表示します。 このコマンドは、~ u (スレッドの凍結解除) コマンドと混同しないようにしてください。
 ms.assetid: 933a308c-61d1-4ca4-89c1-5749ba1b41c1
 keywords:
-- u、ub、uu (Unassemble) Windows のデバッグ
+- u、ub、uu (Unassemble) Windows デバッグ
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,19 +12,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: a4e70cbe647cfb76cddcff3baa9e6669d1684904
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6b0931b1ff3ef4b7a3be6f97b948edf44d2808a0
+ms.sourcegitcommit: d5f54510b9500413dd3084b59cb8869f2f6b13cf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380776"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68866762"
 ---
 # <a name="u-ub-uu-unassemble"></a>u、ub、uu (Unassemble)
 
 
-**U\\*** コマンドでは、メモリ内、アセンブリの翻訳の指定したプログラム コードを表示します。
+**U\\** * コマンドは、指定されたプログラムコードのアセンブリ変換をメモリ内に表示します。
 
-このコマンドと混同しないで、 [ **~ (スレッドの固定の解除) u** ](-u--unfreeze-thread-.md)コマンド。
+このコマンドは、 [ **~ u (スレッドの凍結解除)** ](-u--unfreeze-thread-.md)コマンドと混同しないようにしてください。
 
 ```dbgcmd
 u[u|b] Range 
@@ -32,22 +32,22 @@ u[u|b] Address
 u[u|b] 
 ```
 
-## <a name="span-idddkcmdunassembledbgspanspan-idddkcmdunassembledbgspanparameters"></a><span id="ddk_cmd_unassemble_dbg"></span><span id="DDK_CMD_UNASSEMBLE_DBG"></span>パラメーター
+## <a name="span-idddk_cmd_unassemble_dbgspanspan-idddk_cmd_unassemble_dbgspanparameters"></a><span id="ddk_cmd_unassemble_dbg"></span><span id="DDK_CMD_UNASSEMBLE_DBG"></span>パラメータ
 
 
-<span id="_______Range______"></span><span id="_______range______"></span><span id="_______RANGE______"></span> *範囲*   
-逆アセンブルする指示を含む、メモリ範囲を指定します。 構文の詳細については、次を参照してください。[アドレスとアドレス範囲の構文](address-and-address-range-syntax.md)します。 使用する場合、 **b**フラグが指定する必要があります*範囲*を使用して、"*アドレス* **L * * * 長さ*"の構文、しない"、*住所 1 住所 2*"構文があります。
+<span id="_______Range______"></span><span id="_______range______"></span><span id="_______RANGE______"></span>*範囲*   
+逆アセンブルする命令を含むメモリ範囲を指定します。 構文の詳細については、「[アドレスとアドレス範囲の構文](address-and-address-range-syntax.md)」を参照してください。 **B**フラグを使用する場合は、"*Address1 Address2*" 構文ではなく "*Address* **L**_Length_" 構文を使用して*範囲*を指定する必要があります。
 
-<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span> *アドレス*   
-逆アセンブルするメモリの範囲の先頭を指定します。 (X86 ベースのプロセッサの場合) に 8 つの命令または (Itanium ベースのプロセッサの場合) の 9 つの手順については、アセンブリではありません。 構文の詳細については、次を参照してください。[アドレスとアドレス範囲の構文](address-and-address-range-syntax.md)します。
+<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span>*アドレス*   
+逆アセンブルするメモリ範囲の先頭を指定します。 8つの命令 (x86 ベースのプロセッサの場合) または9つの命令 (Itanium ベースのプロセッサの場合) は、アセンブルされません。 構文の詳細については、「[アドレスとアドレス範囲の構文](address-and-address-range-syntax.md)」を参照してください。
 
-<span id="_______b______"></span><span id="_______B______"></span> **b**   
-旧バージョンとカウントすることによって逆アセンブルするメモリの範囲を決定します。 場合**ub** *アドレス*が使用すると、逆アセンブルした範囲になりますで終わる 8 または 9 バイト範囲*アドレス*します。 構文を使用して、範囲が指定されている場合**ub** *アドレス* **L * * * 長さ*、逆アセンブルされた範囲終了に指定された長さの範囲になります*アドレス*します。
+<span id="_______b______"></span><span id="_______B______"></span>**b**   
+逆方向にカウントすることによって逆アセンブルするメモリ範囲を決定します。 **Ub** *address*が使用されている場合、逆アセンブルされた範囲は、*アドレス*で終わる8または9バイト範囲になります。 範囲が指定されている場合は、 **ub** *アドレス* **L**の_長さ_は、指定された長さの範囲の終了*アドレス*。
 
-<span id="_______u______"></span><span id="_______U______"></span> **u**   
-メモリの読み取りエラーがある場合でも、逆アセンブルは引き続きことを指定します。
+<span id="_______u______"></span><span id="_______U______"></span>**u**   
+メモリ読み取りエラーが発生した場合でも逆アセンブルを続行することを指定します。
 
-### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>環境
+### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>Environment
 
 <table>
 <colgroup>
@@ -57,14 +57,14 @@ u[u|b]
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>モード</strong></p></td>
-<td align="left"><p>ユーザー モードでは、カーネル モード</p></td>
+<td align="left"><p>ユーザーモード、カーネルモード</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>ターゲット</strong></p></td>
-<td align="left"><p>ライブ、クラッシュ ダンプ</p></td>
+<td align="left"><p>ライブ、クラッシュダンプ</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>プラットフォーム</strong></p></td>
+<td align="left"><p><strong>・</strong></p></td>
 <td align="left"><p>すべての</p></td>
 </tr>
 </tbody>
@@ -72,16 +72,16 @@ u[u|b]
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-アセンブリの詳細については、デバッグ、および関連するコマンドを参照してください[モードのアセンブリでのデバッグ](debugging-in-assembly-mode.md)します。
+アセンブリデバッグと関連コマンドの詳細については、「[アセンブリモードでのデバッグ](debugging-in-assembly-mode.md)」を参照してください。
 
 <a name="remarks"></a>コメント
 -------
 
-パラメーターを指定しない場合、 **u**コマンドを逆アセンブルが現在のアドレスで開始され、(x86 ベースまたは x64 ベース プロセッサ) で 8 つの命令 (Itanium ベースのプロセッサの場合) 上の 9 つの手順を拡張します。 使用すると**ub**逆アセンブルにはパラメーターなしでは、現在のアドレスより前に、の 8 または 9 の指示が含まれています。
+**U**コマンドのパラメーターを指定しない場合、逆アセンブリは現在のアドレスから開始し、8命令 (x86 ベースまたは x64 ベースのプロセッサの場合) または9命令 (Itanium ベースのプロセッサの場合) を拡張します。 パラメーターを指定せずに**ub**を使用すると、逆アセンブリには、現在のアドレスの前に8または9の命令が含まれます。
 
-このコマンドを混同しないでください、 [ **(物理メモリから Unassemble) を**](up--unassemble-from-physical-memory-.md)します。 **U**コマンドは、仮想メモリだけを逆アセンブル中に、**を**コマンドは、物理メモリだけを逆アセンブルします。
+このコマンドを[**up (物理メモリからアセンブル解除)** ](up--unassemble-from-physical-memory-.md)と混同しないでください。 **U**コマンドを実行すると、仮想メモリのみが逆アセンブルされますが、 **up**コマンドでは物理メモリのみが逆アセンブルされます。
 
  
 
