@@ -19,7 +19,7 @@ ms.locfileid: "68415096"
 
 ## <a name="selectionexecution-commands"></a>選択/実行コマンド
 
-### <a name="testbinaries"></a>test_binaries
+### <a name="test_binaries"></a>test_binaries
 
 実行する1つ以上のテストファイルを、スペースで区切って指定します。 ワイルドカード文字がサポートされています。
 

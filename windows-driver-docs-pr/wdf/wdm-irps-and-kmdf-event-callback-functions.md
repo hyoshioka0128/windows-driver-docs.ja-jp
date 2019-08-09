@@ -142,7 +142,7 @@ ms.locfileid: "67395214"
 
  
 
-## <a name="kmdf-callbacks-for-irpmjpnp"></a>IRP のコールバックを KMDF\_MJ\_PNP
+## <a name="kmdf-callbacks-for-irp_mj_pnp"></a>IRP のコールバックを KMDF\_MJ\_PNP
 
 
 次の表に、マイナー IRP のコードに対応する KMDF コールバックの実行の順序でリスト、 [ **IRP\_MJ\_PNP**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-pnp)します。 矢印は、スタックの上下をたどる際 WDM FDO が IRP を処理するかどうかを示します。
@@ -311,7 +311,7 @@ ms.locfileid: "67395214"
 
  
 
-## <a name="kmdf-callbacks-for-irpmjpower"></a>IRP のコールバックを KMDF\_MJ\_電源
+## <a name="kmdf-callbacks-for-irp_mj_power"></a>IRP のコールバックを KMDF\_MJ\_電源
 
 
 次の表に、マイナー IRP のコードに対応する KMDF コールバックの実行の順序でリスト、 [ **IRP\_MJ\_POWER**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-power)します。 矢印は、スタックの上下をたどる際 WDM FDO が IRP を処理するかどうかを示します。

@@ -14,7 +14,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 06/25/2019
 ms.locfileid: "67386876"
 ---
-# <a name="handling-an-irpmnsurpriseremoval-request"></a>IRP の処理\_MN\_突然\_削除要求
+# <a name="handling-an-irp_mn_surprise_removal-request"></a>IRP の処理\_MN\_突然\_削除要求
 
 
 
@@ -108,14 +108,14 @@ PnP マネージャーが送信した後、この IRP が成功し、デバイ�
 
 Windows 98 で、PnP マネージャーを送信しませんこの IRP/。 PnP マネージャーがのみに送信して、ユーザーは、最初に、適切なユーザー インターフェイスを使用せず、デバイスを削除した場合、 **IRP\_MN\_削除\_デバイス**デバイスのドライバーを要求します。 すべての WDM ドライバーは、両方を処理する必要があります**IRP\_MN\_突然\_削除**と**IRP\_MN\_削除\_デバイス**。 コードを**IRP\_MN\_削除\_デバイス**ドライバーが突然削除の前の IRP を受信し、両方のケースを処理する必要があるかどうかを確認する必要があります。
 
- ## <a name="using-guidreenumerateselfinterfacestandard"></a>GUID_REENUMERATE_SELF_INTERFACE_STANDARD を使用します。
+ ## <a name="using-guid_reenumerate_self_interface_standard"></a>GUID_REENUMERATE_SELF_INTERFACE_STANDARD を使用します。
 
 GUID_REENUMERATE_SELF_INTERFACE_STANDARD インターフェイスでは、そのデバイスが再度列挙することを要求するためのドライバーを使用します。
 
 このインターフェイスを使用するには、InterfaceType にバス ドライバーに IRP_MN_QUERY_INTERFACE IRP を送信 GUID_REENUMERATE_SELF_INTERFACE_STANDARD を = です。 バス ドライバーでは、インターフェイスの個々 のルーチンへのポインターを格納する REENUMERATE_SELF_INTERFACE_STANDARD 構造体へのポインターを提供します。 A [ReenumerateSelf ルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-preenumerate_self)バス ドライバーに子デバイスが再列挙を要求します。
 
 
-## <a name="about-pnpdevicestate"></a>PNP_DEVICE_STATE について
+## <a name="about-pnp_device_state"></a>PNP_DEVICE_STATE について
 
 PNP\_デバイス\_状態の種類は PnP デバイスの状態を記述するビットマスク。 ドライバーへの応答でこの型の値を返します、 **IRP\_MN\_クエリ\_PNP\_デバイス\_状態**要求。
 
