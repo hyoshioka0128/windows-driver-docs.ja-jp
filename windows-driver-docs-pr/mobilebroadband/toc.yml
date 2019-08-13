@@ -329,26 +329,42 @@
   items:
     - name: モバイル通信プラン
       items:
-        - name: モバイル通信プランの概要
-          href: mobile-plans.md
-        - name: モバイル通信プランのシナリオ
+        - name: モバイル通信プランの説明
           items:
-            - name: モバイル通信プランのユース ケース
-              href: mobile-plans-use-cases.md
+            - name: モバイル通信プランの概要
+              href: mobile-plans.md
+            - name: モバイル通信プランのシステム アーキテクチャ
+              href: mobile-plans-system-architecture.md
+            - name: モバイル通信プランのシナリオ
+              href: mobile-plans-scenarios.md
+        - name: モバイル通信プランの機能
+          items:
+            - name: モバイル通信プランのカタログ
+              href: mobile-plans-catalog.md
+            - name: 通信事業者ゲートウェイ ページ
+              href: mobile-plans-gateway.md
             - name: 通信事業者の Web ポータル
               href: mobile-plans-web-portal.md
             - name: コールバック通知
               href: mobile-plans-callback-notifications.md
-            - name: サービス構成
-              href: mobile-plans-service-configuration.md
             - name: eSIM ダウンロード エラーの処理
               href: mobile-plans-eSIM-error-handling.md
-            - name: Windows 10 デバイス エクスペリエンス
-              href: mobile-plans-device-experience.md
-        - name: 統合
-          href: mobile-plans-integration.md
-        - name: Launch
-          href: mobile-plans-launch.md
+            - name: アカウント管理
+              href: mobile-plans-account-management.md
+            - name: ウォールド ガーデン
+              href: mobile-plans-walled-garden.md
+            - name: トースト通知
+              href: mobile-plans-notifications.md
+        - name: モバイル通信プランのオンボード
+          items:
+            - name: オンボードの概要
+              href: mobile-plans-onboarding-overview.md
+            - name: 開発
+              href: mobile-plans-service-configuration.md
+            - name: 統合
+              href: mobile-plans-integration.md
+            - name: Launch
+              href: mobile-plans-launch.md
         - name: 付録
           items:
             - name: 一般付録

@@ -31,7 +31,7 @@ ms.locfileid: "63334517"
 !error Value [Flags]
 ```
 
-## <a name="span-idddkerrordbgspanspan-idddkerrordbgspanparameters"></a><span id="ddk__error_dbg"></span><span id="DDK__ERROR_DBG"></span>パラメーター
+## <a name="span-idddk__error_dbgspanspan-idddk__error_dbgspanparameters"></a><span id="ddk__error_dbg"></span><span id="DDK__ERROR_DBG"></span>パラメーター
 
 
 <span id="_______Value______"></span><span id="_______value______"></span><span id="_______VALUE______"></span> *値*   
@@ -72,7 +72,7 @@ ms.locfileid: "63334517"
 <a name="remarks"></a>注釈
 -------
 
-次の例を使用する方法を示します **!error**します。
+次の例を使用する方法を示します **! エラー**します。
 
 ```dbgcmd
 0:000> !error 2

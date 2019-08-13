@@ -28,19 +28,19 @@ ms.locfileid: "63334499"
 !exchain [Options]
 ```
 
-## <a name="span-idddkexchaindbgspanspan-idddkexchaindbgspanparameters"></a><span id="ddk__exchain_dbg"></span><span id="DDK__EXCHAIN_DBG"></span>パラメーター
+## <a name="span-idddk__exchain_dbgspanspan-idddk__exchain_dbgspanparameters"></a><span id="ddk__exchain_dbg"></span><span id="DDK__EXCHAIN_DBG"></span>パラメーター
 
 
 <span id="_______Options______"></span><span id="_______options______"></span><span id="_______OPTIONS______"></span> *オプション*   
 次のいずれかの値です。
 
-<span id="_c"></span><span id="_C"></span>**/c**  
+<span id="_c"></span><span id="_C"></span> **/c**  
 C のデバッグに関連する情報が表示されます**try**/**catch**このような例外が検出された場合は例外です。
 
-<span id="_C"></span><span id="_c"></span>**/C**  
+<span id="_C"></span><span id="_c"></span> **/C**  
 C のデバッグに関連する情報が表示されます**try**/**catch**例外、そのような例外が検出されない場合でもです。
 
-<span id="_f"></span><span id="_F"></span>**/f**  
+<span id="_f"></span><span id="_F"></span> **/f**  
 CRT の例外ハンドラーが検出されていない場合でも、CRT 関数のテーブルのウォークを取得する情報を表示します。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
