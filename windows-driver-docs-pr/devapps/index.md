@@ -7,12 +7,12 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 author: EliotSeattle
-ms.openlocfilehash: aa75bc9fa6c263a98b89714098cda26a295d10f4
-ms.sourcegitcommit: 85d02ecf7cbcfd802f41f68cea4cd4434284bdaa
+ms.openlocfilehash: 0e212c0b156b0ec25e87ccb52e3eebacec6d0a58
+ms.sourcegitcommit: 55171d00a4d0776ffbea40ab421f765c5432fcaa
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68473398"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68995407"
 ---
 # <a name="uwp-device-apps"></a>UWP デバイス アプリ
 
@@ -26,17 +26,14 @@ ms.locfileid: "68473398"
 
 UWP モバイル ブロードバンド アプリに関する情報を探している場合は、「[Mobile Broadband](https://go.microsoft.com/fwlink/p/?LinkID=301754)」 (モバイル ブロードバンド) を参照してください。
 
-## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>このセクションの内容
+## <a name="span-idin_this_sectionspanin-this-section"></a><span id="in_this_section"></span>このセクションの内容
 
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">トピック</th>
+<table>  
+<colgroup> <col width="50%" /> <col width="50%" /> </colgroup>  
+<thead>  
+<tr class="header">  
+<th align="left">トピック</th>  
 <th align="left">説明</th>
 </tr>
 </thead>

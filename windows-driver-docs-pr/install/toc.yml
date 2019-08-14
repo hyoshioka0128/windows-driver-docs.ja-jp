@@ -274,6 +274,8 @@
           href: software-publisher-certificate.md
         - name: 商用リリース証明書
           href: commercial-release-certificate.md
+        - name: ソフトウェア発行元証明書、商用リリース証明書、および商用テスト証明書の廃止
+          href: deprecation-of-software-publisher-certificates-and-commercial-release-certificates.md
         - name: ドライバー パッケージのリリース署名
           href: release-signing-driver-packages.md
         - name: ドライバー ファイルのリリース署名
