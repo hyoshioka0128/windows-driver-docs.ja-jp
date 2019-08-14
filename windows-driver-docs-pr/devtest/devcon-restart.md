@@ -1,9 +1,9 @@
 ---
 title: DevCon Restart
-description: 停止し、指定したデバイスを再起動します。 ローカル コンピューターでのみ有効です。
+description: 指定されたデバイスを停止して再起動します。 ローカルコンピューター上でのみ有効です。
 ms.assetid: 3d16435d-e80d-408c-8e61-fad4a5aa7b9b
 keywords:
-- DevCon 再起動ドライバーの開発ツール
+- DevCon 再起動ドライバー開発ツール
 topic_type:
 - apiref
 api_name:
@@ -12,33 +12,33 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3281b1e1b93119a92c41c7a7d36bc58eaaf47d28
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: a548b51b4e75110585da4d15367adf70a6d11e2d
+ms.sourcegitcommit: 55171d00a4d0776ffbea40ab421f765c5432fcaa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67393759"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68995401"
 ---
 # <a name="devcon-restart"></a>DevCon Restart
 
 
-停止し、指定したデバイスを再起動します。 ローカル コンピューターでのみ有効です。
+指定されたデバイスを停止して再起動します。 ローカルコンピューター上でのみ有効です。
 
 ```
     devcon [/r] restart {* | ID [ID ...] | =class [ID [ID ...]]} 
 ```
 
-## <a name="span-idddkdevconrestarttoolsspanspan-idddkdevconrestarttoolsspanparameters"></a><span id="ddk_devcon_restart_tools"></span><span id="DDK_DEVCON_RESTART_TOOLS"></span>パラメーター
+## <a name="span-idddk_devcon_restart_toolsspanspan-idddk_devcon_restart_toolsspanparameters"></a><span id="ddk_devcon_restart_tools"></span><span id="DDK_DEVCON_RESTART_TOOLS"></span>パラメータ
 
 
 <span id="________r______"></span><span id="________R______"></span> **/r**   
-条件付き再起動します。 再起動が必要な変更を有効にする場合にのみ操作を完了した後、システムを再起動します。
+条件付き再起動。 変更を有効にするために再起動が必要な場合にのみ、操作の完了後にシステムを再起動します。
 
 <span id="______________"></span> **\\** *   
 コンピューター上のすべてのデバイスを表します。
 
-<span id="_______ID______"></span><span id="_______id______"></span> *ID*   
-ハードウェア ID、互換性 ID、またはデバイスのデバイス インスタンス ID のすべてまたは一部を指定します。 複数の Id を指定する場合は、各 ID の間にスペースを入力します。 アンパサンド文字を含む Id ( **&** ) 引用符で囲む必要があります。
+<span id="_______ID______"></span><span id="_______id______"></span>*ID*   
+デバイスのハードウェア ID、互換性 ID、またはデバイスインスタンス ID のすべてまたは一部を指定します。 複数の Id を指定する場合は、各 ID の間にスペースを入力します。 アンパサンド文字 ( **&** ) を含む id は引用符で囲む必要があります。
 
 次の特殊文字は、ID パラメーターを変更します。
 
@@ -49,39 +49,41 @@ ms.locfileid: "67393759"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">文字</th>
+<th align="left">記号</th>
 <th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong><em></strong></p></td>
-<td align="left"><p>任意の文字または文字と一致します。 ワイルドカード文字を使用して (</em>) パターンを作成する、ID、たとえば、<em>ディスク</em>します。</p></td>
+<td align="left"><p>任意の文字または文字を検索しません。 ワイルドカード文字 (</em>) を使用して、<em>ディスク</em>などの ID パターンを作成します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>@</strong></p></td>
-<td align="left"><p>たとえば、デバイス インスタンス ID を示します <strong><xref href="ROOT\FTDISK\0000" data-throw-if-not-resolved="False" data-raw-source="@ROOT\FTDISK\0000"></xref></strong>します。</p></td>
+<td align="left"><p>デバイスインスタンス ID (など) <strong><xref href="ROOT\FTDISK\0000" data-throw-if-not-resolved="False" data-raw-source="@ROOT\FTDISK\0000"></xref></strong>を示します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>'</strong></p>
-<p>(一重引用符)</p></td>
-<td align="left"><p>リテラル文字列と一致する (正確に表示される)。 示すアスタリスクは、ID 名の一部であるし、たとえば、ワイルドカード文字ではないは、単一引用符を含む文字列の前に<strong>' * PNP0600</strong>ここで、* PNP0600 ハードウェア ID (アスタリスクを含む) です。</p></td>
+<p>(単一引用符)</p></td>
+<td align="left"><p>文字列を文字どおり (表示されているとおりに) 照合します。 アスタリスクが ID 名の一部で、ワイルドカード文字ではないことを示すには、文字列の前に単一引用符を付けます。たとえば、 <strong>' * PNP0600</strong>,、* PNP0600 (アスタリスクを含む) はハードウェア ID です。</p></td>
 </tr>
 </tbody>
 </table>
 
 
 
-<span id="________class______"></span><span id="________CLASS______"></span> **=** _クラス_   
-デバイスのデバイス セットアップ クラスを指定します。 等号 (=) ( **=** ) クラスの名前として文字列を識別します。
+<span id="________class______"></span><span id="________CLASS______"></span>  
 
-ハードウェア Id、互換性 Id、デバイス インスタンス Id、または ID パターンを次のクラス名を指定することもできます。 各 ID またはパターンの間にスペースを入力します。 DevCon は、指定した Id に一致するクラス内のデバイスを検索します。
+**=** _講義_   
+デバイスのデバイスセットアップクラスを指定します。 等号 ( **=** ) は、文字列をクラス名として識別します。
 
-### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>コメント
+また、クラス名の後に、ハードウェア Id、互換性のある Id、デバイスインスタンス Id、または ID パターンを指定することもできます。 各 ID またはパターンの間にスペースを入力します。 DevCon は、指定された Id に一致するデバイスをクラスで検索します。
 
-システムは、この変更を有効にするを再起動する必要があります。 DevCon システムを再起動するのには、再起動の条件付きパラメーターを追加します (/r) コマンド。
+### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>Comments
 
-### <a name="span-idsampleusagespanspan-idsampleusagespansample-usage"></a><span id="sample_usage"></span><span id="SAMPLE_USAGE"></span>サンプルの使用法
+この変更を有効にするには、システムを再起動する必要がある場合があります。 システムを DevCon で再起動するには、条件付き再起動パラメーター (/r) をコマンドに追加します。
+
+### <a name="span-idsample_usagespanspan-idsample_usagespansample-usage"></a><span id="sample_usage"></span><span id="SAMPLE_USAGE"></span>使用例
 
 ```
 devcon restart *
@@ -91,9 +93,9 @@ devcon restart =printer
 devcon restart =printer *desk*
 ```
 
-### <a name="span-idexamplespanspan-idexamplespanexample"></a><span id="example"></span><span id="EXAMPLE"></span>例
+### <a name="span-idexamplespanspan-idexamplespanexample"></a><span id="example"></span><span id="EXAMPLE"></span>よう
 
-[38 の使用例:デバイスを再起動します。](devcon-examples.md#ddk_example_38_restart_a_device_tools)
+[例 38:デバイスを再起動する](devcon-examples.md#ddk_example_38_restart_a_device_tools)
 
 
 

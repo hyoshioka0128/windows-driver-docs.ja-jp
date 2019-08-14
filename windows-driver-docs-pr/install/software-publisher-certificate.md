@@ -3,87 +3,88 @@ title: ソフトウェア発行元証明書
 description: ソフトウェア発行元証明書
 ms.assetid: eb06c630-9a3d-4f53-b00b-b1254c8bbaec
 keywords:
-- カタログ ファイル WDK ドライバーの署名、SPC
-- ソフトウェア発行元証明書の WDK ドライバーの署名
-- SPC WDK ドライバーの署名
-- パブリック リリース ドライバーの WDK、SPC の署名
-- WDK、SPC が署名をリリースします。
-- クロス証明書の WDK
+- カタログファイル WDK ドライバー署名、SPC
+- ソフトウェア発行元証明書 WDK ドライバー署名
+- SPC WDK ドライバー署名
+- パブリックリリースドライバー署名 WDK、SPC
+- リリース署名 WDK、SPC
+- クロス証明書 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1fafb1af6c37e3e8de4da2566d6089a0a7f58276
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: 8b351415e43f1bbfb007153a90ee89e8d0428a11
+ms.sourcegitcommit: 55171d00a4d0776ffbea40ab421f765c5432fcaa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67393409"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68995441"
 ---
 # <a name="software-publisher-certificate"></a>ソフトウェア発行元証明書
 
 
-準拠する、[カーネル モード コードの署名ポリシー](kernel-mode-code-signing-policy--windows-vista-and-later-.md) Windows の 64 ビット バージョンのソフトウェア発行元証明書 (SPC) を使用して、カーネル モード ドライバーに署名することができます。 SPC は、マイクロソフトがこのような証明書を発行する権限を持つサード パーティ証明機関 (CA) から取得されます。 この種類の SPC 生成された署名にも準拠して、 [PnP ドライバーの署名要件](pnp-device-installation-signing-requirements--windows-vista-and-later-.md)の 64 ビットと 32 ビット バージョンの Windows。
+64ビットバージョンの Windows の[カーネルモードコード署名ポリシー](kernel-mode-code-signing-policy--windows-vista-and-later-.md)に準拠するには、ソフトウェア発行元証明書 (SPC) を使用してカーネルモードドライバーに署名することができます。 SPC は、このような証明書を発行するために Microsoft によって承認されたサードパーティの証明機関 (CA) から取得されます。 この種類の SPC で生成される署名は、64ビット版と32ビット版の Windows の[PnP ドライバー署名要件](pnp-device-installation-signing-requirements--windows-vista-and-later-.md)にも準拠しています。
 
-**注**  デスクトップ エディション (Home、Pro、Enterprise、および Education) および Windows Server 2016 カーネル モード ドライバー用の Windows 10 は Windows ハードウェア デベロッパー センター ダッシュ ボード Windows ハードウェア デベロッパー センター ダッシュ ボードを署名する必要がありますEV 証明書が必要です。 これらの変更に関する詳細については、次を参照してください。 [Windows 10 でドライバー署名の変更](https://techcommunity.microsoft.com/t5/Windows-Hardware-Certification/bg-p/WindowsHardwareCertification)します。
+**注:**   デスクトップエディションの場合は windows 10 (Home、Pro、Enterprise、および教育) と windows Server 2016 カーネルモードドライバーは windows ハードウェアデベロッパーセンターダッシュボードに署名されている必要があり、windows hardware dev center ダッシュボードには EV が必要です。証明. これらの変更の詳細については、「 [Windows 10 でのドライバー署名の変更点](https://techcommunity.microsoft.com/t5/Windows-Hardware-Certification/bg-p/WindowsHardwareCertification)」を参照してください。
 
- 
+ > [!CAUTION] 
+ > 2021以降では、クロス証明書の大半が期限切れになります。 これらのクロス証明書が期限切れになると、これらのクロス証明書にチェーンされているコード署名証明書は、新しいカーネルモードデジタル署名を作成できなくなります。 これは、すべてのバージョンの Windows に影響します。 詳細については、「[ソフトウェア発行元証明書と商用リリース証明書の廃止](deprecation-of-software-publisher-certificates-and-commercial-release-certificates.md)」を参照してください。
 
 ## <a name="cross-certificates"></a>クロス証明書
 
-SPC を入手すると、だけでなく、クロス証明書は Microsoft によって発行されるを取得する必要があります。 クロス証明書は、SPC を発行した CA が信頼されたルート機関であることを確認に使用されます。 クロス証明書は、別の CA のルート証明書の公開キーを署名する CA によって発行された X.509 証明書です。 クロス証明書は、単一信頼された Microsoft ルート機関、SPCs を発行する商用の Ca を信頼チェーンを拡張する柔軟性も備えていて、システムを許可します。
+SPC を取得するだけでなく、Microsoft によって発行されたクロス証明書を取得する必要があります。 クロス証明書は、SPC を発行した CA が信頼されたルート証明機関であることを確認するために使用されます。 クロス証明書は、別の CA のルート証明書の公開キーに署名する CA によって発行された x.509 証明書です。 クロス証明書を使用すると、システムは1つの信頼された Microsoft ルート証明機関を持つことができますが、SPCs を発行する商用 Ca に対して信頼チェーンを柔軟に拡張することもできます。
 
-発行元をクロス証明書を配布する必要はありません、[ドライバー パッケージ](driver-packages.md)します。 クロス証明書は、ドライバー パッケージのデジタル署名に含まれている[カタログ ファイル](catalog-files.md)またはドライバーのファイルに埋め込まれている署名します。 ドライバー パッケージをインストールするユーザーは、クロス証明書の使用による追加の構成手順を実行する必要はありません。
+発行元は、[ドライバーパッケージ](driver-packages.md)を使用してクロス証明書を配布する必要はありません。 クロス証明書は、ドライバーパッケージの[カタログファイル](catalog-files.md)のデジタル署名、またはドライバーファイルに埋め込まれている署名に含まれています。 ドライバーパッケージをインストールするユーザーは、クロス証明書の使用によって発生する追加の構成手順を実行する必要はありません。
 
-SPCs を提供する証明機関の一覧については、およびクロス証明書の詳細については、「[カーネル モード コード署名用クロス証明書](https://docs.microsoft.com/windows-hardware/drivers/install/cross-certificates-for-kernel-mode-code-signing)します。 証明機関の web サイトを取得して、ドライバーに署名するコンピューターに、SPC と対応するクロス証明書をインストールする方法の手順に従います。 さらに、ドライバーに署名するローカル コンピューターの個人証明書ストアには、SPC 情報を追加する必要があります。 この要件については、次を参照してください。、 [SPC 情報を個人証明書ストアにインストール](#installing-spc-information-in-the-personal-certificate-store)します。
+SPCs を提供する証明機関の一覧と、クロス証明書の詳細については、「[カーネルモードコード署名用のクロス証明書](https://docs.microsoft.com/windows-hardware/drivers/install/cross-certificates-for-kernel-mode-code-signing)」を参照してください。 証明機関の web サイトに記載されている手順に従って、ドライバーの署名に使用するコンピューターで SPC とそれに対応するクロス証明書を取得してインストールする方法について説明します。 また、ドライバーに署名するローカルコンピューターの個人証明書ストアに SPC 情報を追加する必要があります。 この要件の詳細については、「[個人証明書ストアに SPC 情報をインストール](#installing-spc-information-in-the-personal-certificate-store)する」を参照してください。
 
-## <a name="installing-spc-information-in-the-personal-certificate-store"></a>個人証明書ストアに SPC 情報をインストールします。
+## <a name="installing-spc-information-in-the-personal-certificate-store"></a>個人証明書ストアに SPC 情報をインストールする
 
-準拠している方法でドライバーの署名に、SPC を使用するために、[カーネル モード コードの署名ポリシー](kernel-mode-code-signing-policy--windows-vista-and-later-.md)、Personal Information Exchange 証明書の情報を含める必要がありますはまず ( *.pfx*)ファイルです。 含まれている情報、 *.pfx*ドライバーに署名するローカル コンピューターの個人証明書ストアにファイルを追加し、必要があります。
+SPC を使用して、[カーネルモードのコード署名ポリシー](kernel-mode-code-signing-policy--windows-vista-and-later-.md)に準拠した方法でドライバーに署名するには、まず、証明書情報が Personal information Exchange ( *.pfx*) ファイルに含まれている必要があります。 *.Pfx*ファイルに含まれる情報は、ドライバーに署名するローカルコンピューターの個人証明書ストアに追加する必要があります。
 
-CA が発行する可能性があります、 *.pfx*必要な証明書情報を含むファイル。 そのため、追加できる場合、します。*pfx*ファイルで説明されている手順に従って個人証明書ストアを[個人用証明書ストアに .pfx ファイルをインストールする](#installing-a-pfx-file-in-the-personal-certificate-store)します。
+CA は、必要な証明書情報を含む *.pfx*ファイルを発行する場合があります。 その場合は、を追加できます。「[個人証明書ストアに .Pfx ファイルをインストール](#installing-a-pfx-file-in-the-personal-certificate-store)する」で説明されている手順に従って、 *Pfx*ファイルを個人証明書ストアに保存します。
 
-ただし、CA は、次のファイルのペアを発行する可能性があります。
+ただし、CA は次のようなファイルのペアを発行する場合があります。
 
--   A *.pvk*秘密キーの情報を含むファイル。
+-   秘密キーの情報を含む *.pvk ファイル。*
 
--   *.Spc*または *.cer*公開キー情報を含むファイル。
+-   公開キー情報を格納している *.spc*ファイルまたは *.cer*ファイル。
 
-この場合、ファイルのペア (、 *.pvk*と *.spc、* または *.pvk*と *.cer*) に変換する必要があります、 *.pfx*個人証明書ストアに証明書情報を追加するにはファイル。
+この場合、証明書情報を個人証明書ストアに追加するには、ファイルのペア ( *.pvk*と *.spc、* または *.pvk*と *.cer*) を *.pfx*ファイルに変換する必要があります。
 
-作成します。*pfx* CA によって発行されたファイルのペアからファイルを次の手順に従います。
+を作成する場合は。CA によって発行されたファイルのペアからの*pfx*ファイル。次の手順に従います。
 
--   変換する、 *.pvk*ファイルと *.spc*ファイルを *.pfx*ファイルで、次を使用して、 [ **Pvk2Pfx** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/pvk2pfx)コマンド プロンプトでコマンド:
+-   *.Pvk*ファイルと *.spc*ファイルを *.pfx*ファイルに変換するには、コマンドプロンプトで次の[**Pvk2Pfx**](https://docs.microsoft.com/windows-hardware/drivers/devtest/pvk2pfx)コマンドを使用します。
 
     ```cpp
     Pvk2Pfx -pvk mypvkfile.pvk -pi mypvkpassword -spc myspcfile.spc -pfx mypfxfile.pfx -po pfxpassword -f
     ```
 
--   変換する、 *.pvk*ファイルと *.cer*ファイルに、 *.pfx*ファイルで、コマンド プロンプトで次の Pvk2Pfx コマンドを使用します。
+-   *.Pvk*ファイルと *.cer*ファイルを *.pfx*ファイルに変換するには、コマンドプロンプトで次の Pvk2Pfx コマンドを使用します。
 
     ```cpp
     Pvk2Pfx -pvk mypvkfile.pvk -pi mypvkpassword -spc mycerfile.cer -pfx mypfxfile.pfx -po pfxpassword -f
     ```
 
-使用されるパラメーターを以下に示します、 [ **Pvk2Pfx** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/pvk2pfx)コマンド。
+次に、 [**Pvk2Pfx**](https://docs.microsoft.com/windows-hardware/drivers/devtest/pvk2pfx)コマンドで使用されるパラメーターについて説明します。
 
--   **- Pvk**  *mypvkfile.pvk*パラメーターを指定します、 *.pvk*ファイル。
+-   **-.Pvk**  *mypvkfile.* .pvk パラメーターには、 *.pvk*ファイルを指定します。
 
--   **-Pi**  *mypvkpassword*オプションのパスワードを指定します *。pvk*ファイル。
+-   **-Pi**  *mypvkpassword*オプションでは、のパスワードを指定します。 *.pvk*ファイル。
 
--   **- Spc** *myspcfile.spc*パラメーターを指定します、 *.spc*ファイルまたは **- spc**  *mycerfile.cer*パラメーターを指定します、 *.cer*ファイル。
+-   **-Spc** *myspcfile*は、 *.spc*ファイルまたは **-spc**  *myspcfile を指定します。 .cer*パラメーターは *.cer*ファイルを指定します。
 
--   **- Pfx** *mypfxfile.pfx*オプションの名前を指定する *.pfx*ファイル。
+-   **-Pfx** *mypfxfile .pfx*オプションでは、 *.pfx*ファイルの名前を指定します。
 
--   **Po** *pfxpassword*オプションのパスワードを指定します、 *.pfx*ファイル。
+-   **-Po** *pfxpassword*オプションは、 *.pfx*ファイルのパスワードを指定します。
 
--   **-F**オプション構成を置き換える既存の Pvk2Pfx *.pfx*ファイルが存在する場合。
+-   **-F**オプションは、既存の *.pfx*ファイルが存在する場合に置き換えるように Pvk2Pfx を構成します。
 
-## <a name="installing-a-pfx-file-in-the-personal-certificate-store"></a>個人用証明書ストアに .pfx ファイルをインストールします。
+## <a name="installing-a-pfx-file-in-the-personal-certificate-store"></a>個人証明書ストアに .pfx ファイルをインストールする
 
-取得した後、 *.pfx* 、CA からファイルや作成、 *.pfx*からファイルを *.pvk* 、どちらか、 *。spc*または *.cer*ファイルに、追加の情報、 *.pfx*ドライバーに署名するローカル コンピューターの個人証明書ストアにファイル。 内の情報をインポートする証明書のインポート ウィザードを使用することができます、 *.pfx*個人証明書ストアに次のようにファイルします。
+CA から *.pfx*ファイルを取得した後、または *.pvk*とのどちらかから *.pfx*ファイルを作成した場合。*spc*ファイルまたは *.cer*ファイル。 *.pfx*ファイル内の情報を、ドライバーに署名するローカルコンピューターの個人証明書ストアに追加します。 証明書のインポートウィザードを使用して、次のように *.pfx*ファイル内の情報を個人用証明書ストアにインポートできます。
 
-1.  検索、 *.pfx* Windows エクスプ ローラーでファイルし、ファイルをダブルクリックして、証明書のインポート ウィザードを開きます。
+1.  Windows エクスプローラーで *.pfx*ファイルを見つけ、ファイルをダブルクリックして、証明書のインポートウィザードを開きます。
 
-2.  コード署名証明書を個人証明書ストアにインポートする証明書のインポート ウィザードの手順に従います。
+2.  証明書のインポートウィザードの手順に従って、コード署名証明書を個人証明書ストアにインポートします。
 
 
  
