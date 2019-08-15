@@ -175,15 +175,15 @@ ms.locfileid: "63335514"
 
  
 
-### <a name="span-idchanging-the-symbol-option-settingsspanspan-idchangingthesymboloptionsettingsspanchanging-the-symbol-option-settings"></a><span id="changing-the-symbol-option-settings"></span><span id="CHANGING_THE_SYMBOL_OPTION_SETTINGS"></span>シンボルのオプションの設定を変更します。
+### <a name="span-idchanging-the-symbol-option-settingsspanspan-idchanging_the_symbol_option_settingsspanchanging-the-symbol-option-settings"></a><span id="changing-the-symbol-option-settings"></span><span id="CHANGING_THE_SYMBOL_OPTION_SETTINGS"></span>シンボルのオプションの設定を変更します。
 
 [ **.Symopt (シンボル オプションを設定する)** ](-symopt--set-symbol-options-.md)シンボルのオプション設定の表示を変更するコマンドを使用できます。 さらに、さまざまなコマンド ライン パラメーターおよびコマンドが使用するこれらの設定を変更するにはこれらは、個々 の SYMOPT に一覧表示\_*XXX*セクション。
 
-一度にすべての設定を制御することも、 **- sflags**[コマンド ライン オプション](command-line-options.md)します。 始まる 16 進数または 10 進数では、このオプションの後にすることができます**0 x**します。 これにより正しく整列シンボルのフラグから 16 進数を使用することをお勧めします。 全体のビット フィールドを設定し、すべてのシンボルのハンドラーの既定値をオーバーライドするために、このメソッドを使用して注意します。 たとえば、 **sflags 0x401**しか入らない SYMOPT\_EXACT\_SYMBOLSと SYMOPT\_CASE\_INSENSITIVE、ですが、通常は上にあるその他のすべてのオプションをオフにも既定値です。
+一度にすべての設定を制御することも、 **- sflags**[コマンド ライン オプション](command-line-options.md)します。 始まる 16 進数または 10 進数では、このオプションの後にすることができます**0 x**します。 これにより正しく整列シンボルのフラグから 16 進数を使用することをお勧めします。 全体のビット フィールドを設定し、すべてのシンボルのハンドラーの既定値をオーバーライドするために、このメソッドを使用して注意します。 たとえば、 **sflags 0x401**しか入らない SYMOPT\_EXACT\_シンボルと SYMOPT\_ケース\_INSENSITIVE、ですが、通常は上にあるその他のすべてのオプションをオフにも既定値です。
 
 合計フラグのビットの既定値は、WinDbg で 0x30237、し、KD、CDB で 0xB0227 で 0x10C13 [DBH ツール](dbh.md)、これらのプログラムがシンボルに関連するコマンド ライン オプションを指定せずに起動された場合。
 
-### <a name="span-idsymopt-case-insensitivespanspan-idsymoptcaseinsensitivespansymoptcaseinsensitive"></a><span id="symopt-case-insensitive"></span><span id="SYMOPT_CASE_INSENSITIVE"></span>SYMOPT\_CASE\_INSENSITIVE
+### <a name="span-idsymopt-case-insensitivespanspan-idsymopt_case_insensitivespansymopt_case_insensitive"></a><span id="symopt-case-insensitive"></span><span id="SYMOPT_CASE_INSENSITIVE"></span>SYMOPT\_ケース\_INSENSITIVE
 
 このシンボルのオプションではシンボルの名前を大文字をすべて検索します。
 
@@ -191,15 +191,15 @@ ms.locfileid: "63335514"
 
 このオプションは、DBH で既定でオンです。 DBH が実行されていることができますにすることオンまたはオフ symopt +1 または symopt-1 の場合をそれぞれ使用します。
 
-### <a name="span-idsymopt-undnamespanspan-idsymoptundnamespansymoptundname"></a><span id="symopt-undname"></span><span id="SYMOPT_UNDNAME"></span>SYMOPT\_UNDNAME
+### <a name="span-idsymopt-undnamespanspan-idsymopt_undnamespansymopt_undname"></a><span id="symopt-undname"></span><span id="SYMOPT_UNDNAME"></span>SYMOPT\_UNDNAME
 
 このシンボル オプションを指定する、表示されていると原因は、シンボルの装飾を無視するシンボル名の検索、装飾するパブリック シンボル名とします。 このオプションがアクティブかどうかに関係なく、このプライベート シンボルの名前が修飾されていることはありません。 シンボルの名前の装飾については、次を参照してください。[パブリックおよびプライベート シンボルの](public-and-private-symbols.md)します。
 
-このオプションは、すべてのデバッガーで既定でオンです。 デバッガーが実行されていることができますにすることオンまたはオフを使用して **.symopt+0x2**または .symopt-0x2、それぞれします。
+このオプションは、すべてのデバッガーで既定でオンです。 デバッガーが実行されていることができますにすることオンまたはオフを使用して **.symopt + 0x2**または .symopt 0x2、それぞれします。
 
 このオプションは、DBH で既定でオンです。 電源オフ、-d コマンド ライン オプションを使用する場合。 DBH が実行されていることができますにすることオンまたはオフ symopt +2 または symopt-2 をそれぞれ使用します。
 
-### <a name="span-idsymopt-deferred-loadsspanspan-idsymoptdeferredloadsspansymoptdeferredloads"></a><span id="symopt-deferred-loads"></span><span id="SYMOPT_DEFERRED_LOADS"></span>SYMOPT\_DEFERRED\_LOADS
+### <a name="span-idsymopt-deferred-loadsspanspan-idsymopt_deferred_loadsspansymopt_deferred_loads"></a><span id="symopt-deferred-loads"></span><span id="SYMOPT_DEFERRED_LOADS"></span>SYMOPT\_延期\_読み込み
 
 このシンボルのオプションの名前は*シンボルの読み込みの遅延*または*シンボルの遅延読み込み*します。 アクティブになっているときにシンボルが実際に読み込まれていないターゲット モジュールが読み込まれるときにします。 代わりに、必要とされるため、シンボルは、デバッガーによって読み込まれます。 詳細については、[シンボルの読み込みの遅延](deferred-symbol-loading.md)を参照してください。
 
@@ -207,7 +207,7 @@ ms.locfileid: "63335514"
 
 このオプションは、既定で DBH でオフにします。 DBH が実行されていることができますにすることオンまたはオフ symopt +4 または symopt-4 でをそれぞれ使用します。
 
-### <a name="span-idsymopt-no-cppspanspan-idsymoptnocppspansymoptnocpp"></a><span id="symopt-no-cpp"></span><span id="SYMOPT_NO_CPP"></span>SYMOPT\_NO\_CPP
+### <a name="span-idsymopt-no-cppspanspan-idsymopt_no_cppspansymopt_no_cpp"></a><span id="symopt-no-cpp"></span><span id="SYMOPT_NO_CPP"></span>SYMOPT\_いいえ\_CPP
 
 このシンボルのオプションは、C++ の変換をオフにします。 このシンボル オプションを設定すると、 **::** は置き換え **\_ \_** ですべてのシンボルです。
 
@@ -215,7 +215,7 @@ ms.locfileid: "63335514"
 
 このオプションは、既定で DBH でオフにします。 DBH が実行されていることができますにすることオンまたはオフ symopt +8 または symopt である-8 をそれぞれ使用します。
 
-### <a name="span-idsymopt-load-linesspanspan-idsymoptloadlinesspansymoptloadlines"></a><span id="symopt-load-lines"></span><span id="SYMOPT_LOAD_LINES"></span>SYMOPT\_LOAD\_LINES
+### <a name="span-idsymopt-load-linesspanspan-idsymopt_load_linesspansymopt_load_lines"></a><span id="symopt-load-lines"></span><span id="SYMOPT_LOAD_LINES"></span>SYMOPT\_ロード\_行
 
 このシンボルのオプションは、ソース ファイルから読み取る行番号情報を使用できます。 このオプションは、ソースが正常に動作するデバッグの上にする必要があります。
 
@@ -223,71 +223,71 @@ KD、CDB でこのオプションは既定で無効です。このオプショ�
 
 このオプションは、DBH で既定でオンです。 DBH が実行されていることができますにすることオンまたはオフ symopt +10 または symopt、-10 をそれぞれ使用します。
 
-### <a name="span-idsymopt-omap-find-nearestspanspan-idsymoptomapfindnearestspansymoptomapfindnearest"></a><span id="symopt-omap-find-nearest"></span><span id="SYMOPT_OMAP_FIND_NEAREST"></span>SYMOPT\_OMAP\_FIND\_NEAREST
+### <a name="span-idsymopt-omap-find-nearestspanspan-idsymopt_omap_find_nearestspansymopt_omap_find_nearest"></a><span id="symopt-omap-find-nearest"></span><span id="SYMOPT_OMAP_FIND_NEAREST"></span>SYMOPT\_OMAP\_検索\_NEAREST
 
 コードが最適化されているし、予期される場所でシンボルはありません、このオプションは、代わりに使用される最も近いシンボルとなります。
 
-このオプションは、すべてのデバッガーで既定でオンです。 デバッガーが実行されていることができますにすることオンまたはオフを使用して **.symopt+0x20**または .symopt-0x20、それぞれします。
+このオプションは、すべてのデバッガーで既定でオンです。 デバッガーが実行されていることができますにすることオンまたはオフを使用して **.symopt + 0x20**または .symopt 0x20、それぞれします。
 
 このオプションは、DBH で既定でオンです。 DBH が実行されていることができますにすることオンまたはオフ symopt +20 または symopt、-20 をそれぞれ使用します。
 
-### <a name="span-idsymopt-load-anythingspanspan-idsymoptloadanythingspansymoptloadanything"></a><span id="symopt-load-anything"></span><span id="SYMOPT_LOAD_ANYTHING"></span>SYMOPT\_LOAD\_ANYTHING
+### <a name="span-idsymopt-load-anythingspanspan-idsymopt_load_anythingspansymopt_load_anything"></a><span id="symopt-load-anything"></span><span id="SYMOPT_LOAD_ANYTHING"></span>SYMOPT\_ロード\_すべて
 
 このシンボルのオプションでは、シンボルと一致する際に、シンボル ハンドラーの pickiness が減少します。
 
-このオプションは既定ではすべてのデバッガーではオフです。 デバッガーが実行されていることができますにすることオンまたはオフを使用して **.symopt+0x40**または .symopt 0x40、それぞれします。
+このオプションは既定ではすべてのデバッガーではオフです。 デバッガーが実行されていることができますにすることオンまたはオフを使用して **.symopt + 0x40**または .symopt 0x40、それぞれします。
 
 このオプションは、既定で DBH でオフにします。 DBH が実行されていることができますにすることオンまたはオフ symopt +40 または symopt-40, をそれぞれ使用します。
 
-### <a name="span-idsymopt-ignore-cvrecspanspan-idsymoptignorecvrecspansymoptignorecvrec"></a><span id="symopt-ignore-cvrec"></span><span id="SYMOPT_IGNORE_CVREC"></span>SYMOPT\_IGNORE\_CVREC
+### <a name="span-idsymopt-ignore-cvrecspanspan-idsymopt_ignore_cvrecspansymopt_ignore_cvrec"></a><span id="symopt-ignore-cvrec"></span><span id="SYMOPT_IGNORE_CVREC"></span>SYMOPT\_無視\_CVREC
 
 このシンボルのオプションではシンボルを検索するときに読み込まれたイメージ ヘッダーの CV レコードを無視するシンボル ハンドラー。
 
-このオプションは既定ではすべてのデバッガーではオフです。 これは、-sicv コマンド ライン オプションを使用してアクティブにできます。 デバッガーが実行されていることができますにすることオンまたはオフを使用して **.symopt+0x80**または .symopt-0x80、それぞれします。
+このオプションは既定ではすべてのデバッガーではオフです。 これは、-sicv コマンド ライン オプションを使用してアクティブにできます。 デバッガーが実行されていることができますにすることオンまたはオフを使用して **.symopt + 0x80**または .symopt 0x80、それぞれします。
 
 このオプションは、既定で DBH でオフにします。 DBH が実行されていることができますにすることオンまたはオフ symopt+80 または symopt-80 をそれぞれ使用します。
 
-### <a name="span-idsymopt-no-unqualified-loadsspanspan-idsymoptnounqualifiedloadsspansymoptnounqualifiedloads"></a><span id="symopt-no-unqualified-loads"></span><span id="SYMOPT_NO_UNQUALIFIED_LOADS"></span>SYMOPT\_NO\_UNQUALIFIED\_LOADS
+### <a name="span-idsymopt-no-unqualified-loadsspanspan-idsymopt_no_unqualified_loadsspansymopt_no_unqualified_loads"></a><span id="symopt-no-unqualified-loads"></span><span id="SYMOPT_NO_UNQUALIFIED_LOADS"></span>SYMOPT\_いいえ\_UNQUALIFIED\_読み込み
 
 このシンボルのオプションには、モジュールのシンボル ハンドラーの自動読み込みが無効にします。 このオプションを設定すると、デバッガーがシンボルを照合しようとした場合、既に読み込まれているモジュールのみが検索されます。
 
 このオプションは、シンボル名の入力ミスからの防御として使用できます。 通常、入力の間違いシンボルでは、デバッガーはすべてのアンロードのシンボル ファイルを検索中に一時停止が発生します。 このオプションは、アクティブと入力の間違いシンボルが読み込まれたモジュールでは見つかりませんが、検索は終了し。
 
-このオプションは既定ではすべてのデバッガーではオフです。 これは、-snul コマンド ライン オプションを使用してアクティブにできます。 デバッガーが実行されていることができますにすることオンまたはオフを使用して **.symopt+0x100**または .symopt-0x100、それぞれします。
+このオプションは既定ではすべてのデバッガーではオフです。 これは、-snul コマンド ライン オプションを使用してアクティブにできます。 デバッガーが実行されていることができますにすることオンまたはオフを使用して **.symopt + 0x100**または .symopt 0x100、それぞれします。
 
 このオプションは、既定で DBH でオフにします。 DBH が実行されていることができますにすることオンまたはオフ symopt+100 または symopt-100 をそれぞれ使用します。
 
-### <a name="span-idsymopt-fail-critical-errorsspanspan-idsymoptfailcriticalerrorsspansymoptfailcriticalerrors"></a><span id="symopt-fail-critical-errors"></span><span id="SYMOPT_FAIL_CRITICAL_ERRORS"></span>SYMOPT\_FAIL\_CRITICAL\_ERRORS
+### <a name="span-idsymopt-fail-critical-errorsspanspan-idsymopt_fail_critical_errorsspansymopt_fail_critical_errors"></a><span id="symopt-fail-critical-errors"></span><span id="SYMOPT_FAIL_CRITICAL_ERRORS"></span>SYMOPT\_失敗\_重大\_エラー
 
 このシンボルのオプションは、抑制する ダイアログ ボックスをファイル アクセス エラーになります。
 
 このオプションがオフの場合は、ダイアログ ボックスが表示されると、「準備ができていませんドライブ」などのファイル アクセス エラーがシンボルの読み込み中に発生したなります。 このオプションがオンの場合は、これらのボックスが抑制され、すべてのアクセス エラーが「失敗」の応答を受信します。
 
-このオプションは、すべてのデバッガーで既定でオンです。 -Sdce コマンド ライン オプションを使用して、非アクティブにできます。 デバッガーが実行されていることができますにすることオンまたはオフを使用して **.symopt+0x200**または .symopt-0x200、それぞれします。
+このオプションは、すべてのデバッガーで既定でオンです。 -Sdce コマンド ライン オプションを使用して、非アクティブにできます。 デバッガーが実行されていることができますにすることオンまたはオフを使用して **.symopt + 0x200**または .symopt 0x200、それぞれします。
 
 このオプションは、既定で DBH でオフにします。 DBH が実行されていることができますにすることオンまたはオフ symopt +200 または symopt -200 をそれぞれ使用します。
 
-### <a name="span-idsymopt-exact-symbolsspanspan-idsymoptexactsymbolsspansymoptexactsymbols"></a><span id="symopt-exact-symbols"></span><span id="SYMOPT_EXACT_SYMBOLS"></span>SYMOPT\_EXACT\_SYMBOLS
+### <a name="span-idsymopt-exact-symbolsspanspan-idsymopt_exact_symbolsspansymopt_exact_symbols"></a><span id="symopt-exact-symbols"></span><span id="SYMOPT_EXACT_SYMBOLS"></span>SYMOPT\_EXACT\_シンボル
 
 このシンボル オプションでは、すべてのシンボル ファイルの厳密な評価を実行するデバッガーをによりします。
 
 このオプションがオンのときにシンボル ファイルとシンボル ハンドラーの期待もわずか不一致が無視するシンボルに発生します。
 
-このオプションは既定ではすべてのデバッガーではオフです。 Ses-コマンド ライン オプションを使用して、それをアクティブにできます。 デバッガーが実行されていることができますにすることオンまたはオフを使用して **.symopt+0x400**または .symopt-0x400、それぞれします。
+このオプションは既定ではすべてのデバッガーではオフです。 Ses-コマンド ライン オプションを使用して、それをアクティブにできます。 デバッガーが実行されていることができますにすることオンまたはオフを使用して **.symopt + 0x400**または .symopt 0x400、それぞれします。
 
--Failinc コマンド ライン オプションもオン SYMOPT\_EXACT\_SYMBOLS。 さらに、ユーザー モードのミニダンプまたはカーネル モードのミニダンプをデバッグする場合 - failinc は、デバッガーからのイメージをマップすることはできませんのすべてのモジュールの読み込みできません。
+-Failinc コマンド ライン オプションもオン SYMOPT\_EXACT\_シンボル。 さらに、ユーザー モードのミニダンプまたはカーネル モードのミニダンプをデバッグする場合 - failinc は、デバッガーからのイメージをマップすることはできませんのすべてのモジュールの読み込みできません。
 
 このオプションは、DBH で既定でオンです。 DBH が実行されていることができますにすることオンまたはオフ symopt +400 または symopt-400 をそれぞれ使用します。
 
-### <a name="span-idsymopt-allow-absolute-symbolsspanspan-idsymoptallowabsolutesymbolsspansymoptallowabsolutesymbols"></a><span id="symopt-allow-absolute-symbols"></span><span id="SYMOPT_ALLOW_ABSOLUTE_SYMBOLS"></span>SYMOPT\_ALLOW\_ABSOLUTE\_SYMBOLS
+### <a name="span-idsymopt-allow-absolute-symbolsspanspan-idsymopt_allow_absolute_symbolsspansymopt_allow_absolute_symbols"></a><span id="symopt-allow-absolute-symbols"></span><span id="SYMOPT_ALLOW_ABSOLUTE_SYMBOLS"></span>SYMOPT\_許可\_絶対\_シンボル
 
 このシンボルのオプションでは、メモリ内の絶対アドレスに格納されているシンボルを読み取る DbgHelp をできます。 このオプションは、ほとんどの場合では必要ありません。
 
-このオプションは既定ではすべてのデバッガーではオフです。 デバッガーが実行されていることができますにすることオンまたはオフを使用して **.symopt+0x800**または .symopt-0x800、それぞれします。
+このオプションは既定ではすべてのデバッガーではオフです。 デバッガーが実行されていることができますにすることオンまたはオフを使用して **.symopt + 0x800**または .symopt 0x800、それぞれします。
 
 このオプションは、DBH で既定でオンです。 DBH が実行されていることができますにすることオンまたはオフ symopt 当社は 800 以上または symopt-800 をそれぞれ使用します。
 
-### <a name="span-idsymopt-ignore-nt-sympathspanspan-idsymoptignorentsympathspansymoptignorentsympath"></a><span id="symopt-ignore-nt-sympath"></span><span id="SYMOPT_IGNORE_NT_SYMPATH"></span>SYMOPT\_IGNORE\_NT\_SYMPATH
+### <a name="span-idsymopt-ignore-nt-sympathspanspan-idsymopt_ignore_nt_sympathspansymopt_ignore_nt_sympath"></a><span id="symopt-ignore-nt-sympath"></span><span id="SYMOPT_IGNORE_NT_SYMPATH"></span>SYMOPT\_無視\_NT\_SYMPATH
 
 このシンボル オプションを指定、デバッガーのシンボル パスと、実行可能イメージ パス環境変数の設定を無視するとします。
 
@@ -295,7 +295,7 @@ KD、CDB でこのオプションは既定で無効です。このオプショ�
 
 このオプションは、DBH で既定でオフは、すべてのケースで DBH は無視されます。
 
-### <a name="span-idsymopt-publics-onlyspanspan-idsymoptpublicsonlyspansymoptpublicsonly"></a><span id="symopt-publics-only"></span><span id="SYMOPT_PUBLICS_ONLY"></span>SYMOPT\_PUBLICS\_ONLY
+### <a name="span-idsymopt-publics-onlyspanspan-idsymopt_publics_onlyspansymopt_publics_only"></a><span id="symopt-publics-only"></span><span id="SYMOPT_PUBLICS_ONLY"></span>SYMOPT\_PUBLICS\_のみ
 
 このシンボルのオプションでは DbgHelp プライベート シンボルのデータを無視して、シンボル情報をパブリック シンボル テーブルのみを検索します。 これは、動作をエミュレートします DbgHelp のサポートする前にこれらの型が追加されました。 [パブリック シンボルとプライベート シンボル](public-and-private-symbols.md)参照してください。
 
@@ -303,31 +303,31 @@ KD、CDB でこのオプションは既定で無効です。このオプショ�
 
 このオプションは、既定で DBH でオフにします。 -D コマンド ライン オプションを使用する場合にオンです。 DBH が実行されていることができますにすることオンまたはオフ symopt +4000 または symopt-4000 をそれぞれ使用します。
 
-### <a name="span-idsymopt-no-publicsspanspan-idsymoptnopublicsspansymoptnopublics"></a><span id="symopt-no-publics"></span><span id="SYMOPT_NO_PUBLICS"></span>SYMOPT\_NO\_PUBLICS
+### <a name="span-idsymopt-no-publicsspanspan-idsymopt_no_publicsspansymopt_no_publics"></a><span id="symopt-no-publics"></span><span id="SYMOPT_NO_PUBLICS"></span>SYMOPT\_いいえ\_PUBLICS
 
-このシンボルのオプションでは、DbgHelp がパブリック シンボル テーブルを検索できなくなります。 これにより、symbol 列挙型、シンボルの検索がはるかに高速です。 検索の速度、SYMOPT のみに関係するかどうかは\_AUTO\_PUBLICS オプションはこのことをお勧めします。 パブリック シンボル テーブルについては、[パブリック シンボルとプライベート シンボル](public-and-private-symbols.md)を参照してください。
+このシンボルのオプションでは、DbgHelp がパブリック シンボル テーブルを検索できなくなります。 これにより、symbol 列挙型、シンボルの検索がはるかに高速です。 検索の速度、SYMOPT のみに関係するかどうかは\_自動\_PUBLICS オプションはこのことをお勧めします。 パブリック シンボル テーブルについては、次を参照してください。[パブリックおよびプライベート シンボルの](public-and-private-symbols.md)します。
 
-このオプションは既定ではすべてのデバッガーではオフです。 デバッガーが実行されていることができますにすることオンまたはオフを使用して **.symopt+0x8000**または .symopt-0x8000、それぞれします。
+このオプションは既定ではすべてのデバッガーではオフです。 デバッガーが実行されていることができますにすることオンまたはオフを使用して **.symopt + 0x8000**または .symopt 0x8000、それぞれします。
 
 このオプションは、既定で DBH でオフにします。 DBH が実行されていることができますにすることオンまたはオフ symopt +8000 または symopt-8000 をそれぞれ使用します。
 
-### <a name="span-idsymopt-auto-publicsspanspan-idsymopt-auto-publicsspansymoptautopublics"></a><span id="symopt-auto-publics"></span><span id="SYMOPT-AUTO-PUBLICS"></span>SYMOPT\_AUTO\_PUBLICS
+### <a name="span-idsymopt-auto-publicsspanspan-idsymopt-auto-publicsspansymopt_auto_publics"></a><span id="symopt-auto-publics"></span><span id="SYMOPT-AUTO-PUBLICS"></span>SYMOPT\_自動\_PUBLICS
 
 このシンボルのオプションは、最後の手段としての .pdb ファイルに、パブリック シンボル テーブルを検索する DbgHelp とします。 プライベート シンボル データを検索するときに、一致が見つかった場合、パブリック シンボルは検索されません。 これにより、シンボルの検索の速度が向上します。
 
-このオプションは、すべてのデバッガーで既定でオンです。 使用して非アクティブ化することができます、sup コマンド ライン オプション。 デバッガーが実行されていることができますにすることオンまたはオフを使用して **.symopt+0x10000**または .symopt-0x10000、それぞれします。
+このオプションは、すべてのデバッガーで既定でオンです。 使用して非アクティブ化することができます、sup コマンド ライン オプション。 デバッガーが実行されていることができますにすることオンまたはオフを使用して **.symopt + 0x10000**または .symopt 0x10000、それぞれします。
 
 このオプションは、DBH で既定でオンです。 電源オフ、-d コマンド ライン オプションを使用する場合。 DBH が実行されていることができますにすることオンまたはオフ symopt +10000 または symopt-10000 をそれぞれ使用します。
 
-### <a name="span-idsymopt-no-image-searchspanspan-idsymopt-no-image-searchspansymoptnoimagesearch"></a><span id="symopt-no-image-search"></span><span id="SYMOPT-NO-IMAGE-SEARCH"></span>SYMOPT\_NO\_IMAGE\_SEARCH
+### <a name="span-idsymopt-no-image-searchspanspan-idsymopt-no-image-searchspansymopt_no_image_search"></a><span id="symopt-no-image-search"></span><span id="SYMOPT-NO-IMAGE-SEARCH"></span>SYMOPT\_いいえ\_イメージ\_検索
 
 このシンボルのオプションでは、DbgHelp がシンボルが読み込まれるときに、ディスク上のイメージのコピーを検索できなくなります。
 
-このオプションは、すべてのデバッガーで既定でオンです。 デバッガーが実行されていることができますにすることオンまたはオフを使用して **.symopt+0x20000**または .symopt-0x20000、それぞれします。
+このオプションは、すべてのデバッガーで既定でオンです。 デバッガーが実行されていることができますにすることオンまたはオフを使用して **.symopt + 0x20000**または .symopt 0x20000、それぞれします。
 
 このオプションは、既定で DBH でオフにします。 DBH が実行されていることができますにすることオンまたはオフ symopt +20000 または symopt-20000 をそれぞれ使用します。
 
-### <a name="span-idsymopt-securespanspan-idsymoptsecurespansymoptsecure"></a><span id="symopt-secure"></span><span id="SYMOPT_SECURE"></span>SYMOPT\_SECURE
+### <a name="span-idsymopt-securespanspan-idsymopt_securespansymopt_secure"></a><span id="symopt-secure"></span><span id="SYMOPT_SECURE"></span>SYMOPT\_SECURE
 
 (カーネル モードのみ)このシンボル オプションを指定するかどうか[保護モード](secure-mode.md)がアクティブです。
 
@@ -337,13 +337,13 @@ KD、CDB でこのオプションは既定で無効です。このオプショ�
 
 アクティブ化すると、セキュリティで保護されたモードをオフにしないことができます。
 
-### <a name="span-idsymopt-no-promptsspanspan-idsymoptnopromptsspansymoptnoprompts"></a><span id="symopt-no-prompts"></span><span id="SYMOPT_NO_PROMPTS"></span>SYMOPT\_NO\_PROMPTS
+### <a name="span-idsymopt-no-promptsspanspan-idsymopt_no_promptsspansymopt_no_prompts"></a><span id="symopt-no-prompts"></span><span id="SYMOPT_NO_PROMPTS"></span>SYMOPT\_NO\_PROMPTS
 
 このシンボルのオプションは、プロキシ サーバーからの認証ダイアログ ボックスを表示しません。 これにより、SymSrv がインターネット上のシンボル ストアにアクセスできない可能性があります。
 
-詳細については、[ファイアウォールとプロキシ サーバー](firewalls-and-proxy-servers.md)を参照してください。
+詳細については、次を参照してください。[ファイアウォールとプロキシ サーバー](firewalls-and-proxy-servers.md)します。
 
-KD、CDB でこのオプションが既定でオンです。WinDbg では、このオプションは、既定でオフは。 デバッガーが実行されていることができますにすることオンまたはオフを使用して **.symopt+0x80000**または .symopt-0x80000 はそれぞれ、後ろ、 [ **.reload (Reload Module)** ](-reload--reload-module-.md)コマンド。 これは、ことができますにすることもオンとオフを使用して、 [ **!sym prompts off**](-sym.md)と **!sym prompts**拡張機能のコマンドを続けて、 **.reload (Reload Module)** コマンド。
+KD、CDB でこのオプションが既定でオンです。WinDbg では、このオプションは、既定でオフは。 デバッガーが実行されていることができますにすることオンまたはオフを使用して **.symopt + 0x80000**または .symopt 0x80000 はそれぞれ、後ろ、 [ **.reload (モジュールの再読み込み)** ](-reload--reload-module-.md)コマンド。 これは、ことができますにすることもオンとオフを使用して、 [ **! オフ sym が求められます**](-sym.md)と **! sym メッセージが表示されます**拡張機能のコマンドを続けて、 **.reload (モジュール)** コマンド。
 
 このオプションは、既定で DBH でオフにします。 DBH が実行されていることができますにすることオンまたはオフ symopt +80000 または symopt-80000 をそれぞれ使用します。
 
@@ -351,7 +351,7 @@ KD、CDB でこのオプションが既定でオンです。WinDbg では、こ�
 
 ### <span id="symopt_disable_symsrv_timeout"></span>
 
-### <a name="span-idsymopt-debugspan-symoptdebug"></a><span id="symopt-debug"></span>-SYMOPT\_DEBUG
+### <a name="span-idsymopt-debugspan-symopt_debug"></a><span id="symopt-debug"></span>-SYMOPT\_デバッグ
 
 このシンボル オプションをオンに*ノイズの多いシンボルの読み込み*します。 これには、デバッガーのシンボルの検索についての情報を表示するように指示します。
 
@@ -359,7 +359,7 @@ KD、CDB でこのオプションが既定でオンです。WinDbg では、こ�
 
 シンボル ヘッダー情報を回復するためだけにイメージ ファイルが読み込まれる場合もこの表示されます。
 
-このオプションは既定ではすべてのデバッガーではオフです。 これは、-n コマンド ライン オプションを使用してアクティブにできます。 デバッガーが実行されていることができますにすることオンまたはオフを使用して **.symopt + 0x80000000**または .symopt 0x80000000、それぞれします。 これにすることもオンとオフを使用して、 [ **!sym noisy**](-sym.md)と **!sym quiet**拡張コマンド。
+このオプションは既定ではすべてのデバッガーではオフです。 これは、-n コマンド ライン オプションを使用してアクティブにできます。 デバッガーが実行されていることができますにすることオンまたはオフを使用して **.symopt + 0x80000000**または .symopt 0x80000000、それぞれします。 これにすることもオンとオフを使用して、 [ **! sym ノイズの多い**](-sym.md)と **! sym quiet**拡張コマンド。
 
 **注**  ノイズの多いと、このオプションを混同しない必要があります*ソース*--読み込みによって制御される、 [ **.srcnoisy (Noisy Source Loading)** ](-srcnoisy--noisy-source-loading-.md)コマンド。
 
