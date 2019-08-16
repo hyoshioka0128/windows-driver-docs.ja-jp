@@ -4,12 +4,12 @@ description: ターゲット コンピューターやテスト コンピュー�
 ms.assetid: A2615EE9-316E-4AE2-BBAA-B9E153090016
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 672f1eba11799e6b110d7c6e898551e9576cb3f4
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 87235f26ee0edc594e6c4aa6a0566cddc79870b2
+ms.sourcegitcommit: 46654c090f937923d9712de114fdebe7deffeaaf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63371346"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67427690"
 ---
 # <a name="provision-a-computer-for-driver-deployment-and-testing-wdk-10"></a>ドライバーの展開およびテストのためのコンピューターのプロビジョニング (WDK 10)
 
@@ -23,7 +23,7 @@ ms.locfileid: "63371346"
 > [!TIP]
 > WDK の自動プロビジョニング プロセスでは、仮想マシンのプロビジョニングはサポートされません。 ただし、[ステップ バイ ステップ ラボ (Echo カーネル モード)](../debugger/debug-universal-drivers---step-by-step-lab--echo-kernel-mode-.md) の説明に従って手動でターゲット VM をセットアップすると、VM 上のドライバーをテストできます。
 
-## <a name="span-idpreparingthetargetcomputerforprovisioningspanspan-idpreparingthetargetcomputerforprovisioningspanprepare-the-target-computer-for-provisioning"></a><span id="preparing_the_target_computer_for_provisioning"></span><span id="PREPARING_THE_TARGET_COMPUTER_FOR_PROVISIONING"></span>ターゲット コンピューターのプロビジョニングの準備
+## <a name="span-idpreparing_the_target_computer_for_provisioningspanspan-idpreparing_the_target_computer_for_provisioningspanprepare-the-target-computer-for-provisioning"></a><span id="preparing_the_target_computer_for_provisioning"></span><span id="PREPARING_THE_TARGET_COMPUTER_FOR_PROVISIONING"></span>ターゲット コンピューターのプロビジョニングの準備
 
 
 1.  ターゲット コンピューターには、ドライバーの実行とテストに使うオペレーティング システムをインストールします。
@@ -51,9 +51,9 @@ ms.locfileid: "63371346"
 1.  ターゲット コンピューターのコントロール パネルで、 **[ネットワークとインターネット] &gt; [ネットワークと共有センター]** の順にクリックします。 アクティブなネットワークに注目します。 これは、 **[パブリック ネットワーク]** 、 **[プライベート ネットワーク]** 、 **[ドメイン]** のどれかになります。
 2.  ターゲット コンピューターのコントロール パネルで、 **[システムとセキュリティ] &gt; [Windows ファイアウォール] &gt; [詳細設定] &gt; [受信の規則]** の順にクリックします。
 3.  受信の規則の一覧で、アクティブなネットワークのネットワーク探索の規則をすべて特定します (たとえば、 **[プロファイル]** が **[プライベート]** になっているネットワーク探索の規則をすべて特定します)。それらの各規則をダブルクリックし、 **[スコープ]** タブを開きます。 **[リモート IP アドレス]** で、 **[任意の IP アドレス]** をクリックします。
-4.  受信の規則の一覧で、アクティブなファイルとプリンターの共有の規則をすべて特定します。 それらの規則ごとに、規則をダブルクリックし、 **[スコープ]** タブを開きます。[リモート IP アドレス] で、 **[任意の IP アドレス]** をクリックします。
+4.  受信の規則の一覧で、アクティブなファイルとプリンターの共有の規則をすべて特定します。 それらの規則ごとに、規則をダブルクリックし、 **[スコープ]** タブを開きます。 **[リモート IP アドレス]** で、 **[任意の IP アドレス]** をクリックします。
 
-## <a name="span-idprovisionthetargetcomputerspanspan-idprovisionthetargetcomputerspanspan-idprovisionthetargetcomputerspanprovision-the-target-computer"></a><span id="Provision_the_target_computer"></span><span id="provision_the_target_computer"></span><span id="PROVISION_THE_TARGET_COMPUTER"></span>ターゲット コンピューターのプロビジョニング
+## <a name="span-idprovision_the_target_computerspanspan-idprovision_the_target_computerspanspan-idprovision_the_target_computerspanprovision-the-target-computer"></a><span id="Provision_the_target_computer"></span><span id="provision_the_target_computer"></span><span id="PROVISION_THE_TARGET_COMPUTER"></span>ターゲット コンピューターのプロビジョニング
 
 
 ホスト コンピューター上の Visual Studio でターゲット コンピューターをプロビジョニングする準備ができました。
@@ -75,7 +75,9 @@ ms.locfileid: "63371346"
 4.  プロビジョニング プロセスには数分かかり、ターゲット コンピューターが自動的に 1 回か 2 回、再起動されます。 プロビジョニングが完了したら、 **[完了]** をクリックします。
 
  
+## <a name="see-also"></a>参照
 
+[テスト コンピューターへのドライバーの展開](https://docs.microsoft.com/windows-hardware/drivers/develop/deploying-a-driver-to-a-test-computer)
  
 
 

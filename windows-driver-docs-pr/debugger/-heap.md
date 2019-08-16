@@ -44,7 +44,7 @@ ms.locfileid: "63336531"
 !heap -triage [Handle | Address] 
 ```
 
-## <a name="span-idsegmentandntheapparametersspanspan-idsegmentandntheapparametersspanspan-idsegmentandntheapparametersspansegment-and-nt-heap-parameters"></a><span id="Segment_and_NT_Heap_Parameters"></span><span id="segment_and_nt_heap_parameters"></span><span id="SEGMENT_AND_NT_HEAP_PARAMETERS"></span>セグメントと NT ヒープ パラメーター
+## <a name="span-idsegment_and_nt_heap_parametersspanspan-idsegment_and_nt_heap_parametersspanspan-idsegment_and_nt_heap_parametersspansegment-and-nt-heap-parameters"></a><span id="Segment_and_NT_Heap_Parameters"></span><span id="segment_and_nt_heap_parameters"></span><span id="SEGMENT_AND_NT_HEAP_PARAMETERS"></span>セグメントと NT ヒープ パラメーター
 
 
 これらのパラメーターは、セグメントと NT ヒープ機能します。
@@ -72,11 +72,11 @@ ms.locfileid: "63336531"
 <td align="left"><p>すべてのデータ ブロックを確認します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>-b</strong> <strong></strong> <em>BucketSize</em></p></td>
+<td align="left"><p><strong>-b</strong> <em>BucketSize</em></p></td>
 <td align="left"><p>バケットのサイズを指定します。 既定では 1024 ビットです。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>-d</strong> <strong></strong> <em>DumpBlockSize</em></p></td>
+<td align="left"><p><strong>-d</strong> <em>DumpBlockSize</em></p></td>
 <td align="left"><p>バケットのサイズを指定します。</p></td>
 </tr>
 <tr class="even">
@@ -110,7 +110,7 @@ ms.locfileid: "63336531"
 <span id="_______-_______"></span> **-?**    
 デバッガー コマンド ウィンドウで、この拡張機能の簡単なヘルプ テキストを表示します。 使用 **。 ヒープのでしょうか。** 汎用的なヘルプについてと **!-p - ヒープのでしょうか。** ページ ヒープ ヘルプを参照します。
 
-## <a name="span-idddkheapdbgspanspan-idddkheapdbgspannt-heap-parameters"></a><span id="ddk__heap_dbg"></span><span id="DDK__HEAP_DBG"></span>NT ヒープ パラメーター
+## <a name="span-idddk__heap_dbgspanspan-idddk__heap_dbgspannt-heap-parameters"></a><span id="ddk__heap_dbg"></span><span id="DDK__HEAP_DBG"></span>NT ヒープ パラメーター
 
 
 これらのパラメーターは、NT ヒープでのみ動作します。
@@ -258,19 +258,19 @@ ms.locfileid: "63336531"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>-h</strong> <strong></strong>  <em>処理</em></p></td>
+<td align="left"><p><strong>-h</strong> <em>処理</em></p></td>
 <td align="left"><p>デバッガーがハンドルを持つページ ヒープに関する詳細情報を表示<em>処理</em>します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>-</strong> <strong></strong>  <em>アドレス</em></p></td>
+<td align="left"><p><strong>-</strong> <em>アドレス</em></p></td>
 <td align="left"><p>デバッガーが持つブロックが含まれるページ ヒープを見つける<em>アドレス</em>します。 このアドレスは、ページ ヒープの場合、そのオフセット、ブロック内の一部かどうかと、ブロックが割り当てられているまたは解放されたかどうか、このアドレスが完全ページ ヒープ ブロックに関連付ける方法の完全な詳細情報が含められます。 使用可能な場合、スタック トレースが含まれます。 このオプションを使用する場合は、ヒープ割り当ての粒度の倍数単位のサイズが表示されます。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>-t</strong>[<strong>c</strong>|<strong>s</strong>] <strong></strong> [<em>Traces</em>]</p></td>
+<td align="left"><p><strong>-t</strong>[<strong>c</strong>|<strong>s</strong>] [<em>Traces</em>]</p></td>
 <td align="left"><p>原因のデバッガーがヒープの負荷の高いユーザーの収集されたトレースを表示します。 <em>トレース</em>; を表示するトレースの数を指定します。 既定値は 4 つです。 指定した数よりも多くのトレースがある場合は、最も古いトレースが表示されます。 場合<strong>-t</strong>または<strong>-tc</strong>が使用すると、トレースが数の使用量により並べ替えられました。 場合<strong>ts</strong>が使用すると、トレースはサイズに基づいて並べ替えられています。 (、 <strong>-Tc</strong>と<strong>ts</strong>オプションは Windows XP でのみサポートされて、 <strong>-t</strong>オプションは、Windows XP および Windows の以前のバージョンでのみサポートされます)。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>-fi</strong> <strong></strong>  [<em>トレース</em>]</p></td>
+<td align="left"><p><strong>-fi</strong> [<em>トレース</em>]</p></td>
 <td align="left"><p>原因のデバッガーが最新のフォールト インジェクション トレースを表示します。 <em>トレース</em>数量を表示する; 指定、既定値は 4 です。</p></td>
 </tr>
 <tr class="odd">
@@ -351,11 +351,11 @@ ms.locfileid: "63336531"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>s</strong> <strong></strong>  <em>サイズ</em></p></td>
+<td align="left"><p><strong>s</strong> <em>サイズ</em></p></td>
 <td align="left"><p>指定したサイズのヒープのみが表示を制限します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>r</strong> <strong></strong>  <em>SizeMin</em> <strong></strong>  <em>SizeMax</em></p></td>
+<td align="left"><p><strong>r</strong> <em>SizeMin</em> <em>SizeMax</em></p></td>
 <td align="left"><p>指定したサイズの範囲内でヒープのみが表示を制限します。</p></td>
 </tr>
 </tbody>
@@ -422,7 +422,7 @@ Ext.dll Exts.dll</td>
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
 ヒープの詳細については、Microsoft Windows SDK ドキュメントに、Windows Driver Kit (WDK) ドキュメントを参照してくださいと*Microsoft Windows internals 』* Mark Russinovich と David Solomon します。 (これらのリソースできない場合がありますのいくつかの言語および国。)
 

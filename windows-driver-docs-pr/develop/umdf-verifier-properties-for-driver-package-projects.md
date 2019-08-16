@@ -4,22 +4,22 @@ title: ドライバー パッケージ プロジェクトの UMDF 検証ツー�
 description: テスト コンピューター上の UMDF 検証ツールのプロパティを設定します。 ドライバーをビルドしてテスト コンピューターに展開するときに、これらの設定を使うことができます。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9708097e195c7c8da785ae49e45008c20ed0d201
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 4a35afe6236b5018df0cf51f4384d9d81cf8fc6c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63344108"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364204"
 ---
 # <a name="umdf-verifier-properties-for-driver-package-projects"></a>ドライバー パッケージ プロジェクトの UMDF 検証ツール プロパティ
 
 テスト コンピューター上の UMDF 検証ツールのプロパティを設定します。 ドライバーをビルドしてテスト コンピューターに展開するときに、これらの設定を使うことができます。
 
-展開について詳しくは、「[ドライバーの展開およびテストのためのコンピューターのプロビジョニング (WDK 8.1)](https://msdn.microsoft.com/Library/Windows/Hardware/Dn745909)」と「[テスト コンピューターへのドライバーの展開](deploying-a-driver-to-a-test-computer.md)」をご覧ください。
+展開について詳しくは、「[ドライバーの展開およびテストのためのコンピューターのプロビジョニング (WDK 8.1)](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/provision-a-target-computer-wdk-8-1)」と「[テスト コンピューターへのドライバーの展開](deploying-a-driver-to-a-test-computer.md)」をご覧ください。
 
-UMDF ドライバーのデバッグについて詳しくは、「[UMDF ドライバーのデバッグを有効にする方法](https://msdn.microsoft.com/Library/Windows/Hardware/Ff554716)」と「[WDF 検証ツールの制御アプリケーション](https://msdn.microsoft.com/Library/Windows/Hardware/Ff556129)」をご覧ください。
+UMDF ドライバーのデバッグについて詳しくは、「[UMDF ドライバーのデバッグを有効にする方法](https://docs.microsoft.com/windows-hardware/drivers/wdf/enabling-a-debugger)」と「[WDF 検証ツールの制御アプリケーション](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdf-verifier-control-application)」をご覧ください。
 
-## <a name="span-idsettingumdfverifierpropertiesfordriverprojectsspanspan-idsettingumdfverifierpropertiesfordriverprojectsspanspan-idsettingumdfverifierpropertiesfordriverprojectsspansetting-umdf-verifier-properties-for-driver-projects"></a><span id="Setting_UMDF_Verifier_properties_for_driver_projects"></span><span id="setting_umdf_verifier_properties_for_driver_projects"></span><span id="SETTING_UMDF_VERIFIER_PROPERTIES_FOR_DRIVER_PROJECTS"></span>ドライバー プロジェクト用の UMDF 検証ツール プロパティの設定
+## <a name="span-idsetting_umdf_verifier_properties_for_driver_projectsspanspan-idsetting_umdf_verifier_properties_for_driver_projectsspanspan-idsetting_umdf_verifier_properties_for_driver_projectsspansetting-umdf-verifier-properties-for-driver-projects"></a><span id="Setting_UMDF_Verifier_properties_for_driver_projects"></span><span id="setting_umdf_verifier_properties_for_driver_projects"></span><span id="SETTING_UMDF_VERIFIER_PROPERTIES_FOR_DRIVER_PROJECTS"></span>ドライバー プロジェクト用の UMDF 検証ツール プロパティの設定
 
 
 1.  ドライバー パッケージのプロパティ ページを開きます。 ソリューション エクスプローラーでドライバー パッケージ プロジェクトを右クリックし、 **[プロパティ]** をクリックします。
@@ -96,11 +96,11 @@ UMDF ドライバーのデバッグについて詳しくは、「[UMDF ドライ
 
  
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
 * [ユーザー モード ドライバー フレームワーク](https://docs.microsoft.com/windows-hardware/drivers/wdf/)
-* [ドライバーの検証ツール](https://msdn.microsoft.com/Library/Windows/Hardware/Ff545448)
+* [ドライバーの検証ツール](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)
 * [テスト コンピューターへのドライバーの展開](deploying-a-driver-to-a-test-computer.md)
  
 

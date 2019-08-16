@@ -3,12 +3,12 @@ title: Windows 10 Mobile へのドライバーのインストール
 description: Windows 10 Mobile へのドライバーのインストールについて説明します。
 ms.date: 06/02/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e7a4910567ed8a23df6b4218341e28cd9243d2e1
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 34d19520e79745f3f0833010abac96767709dae9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63344044"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364185"
 ---
 # <a name="installing-a-driver-on-windows-10-mobile"></a>Windows 10 Mobile へのドライバーのインストール
 
@@ -26,7 +26,7 @@ WDK 10 には、パッケージ ファイルを生成する PkgGen というツ
 
 パッケージ ファイルの内容を確認するには、ファイル名に .cab というサフィックスを追加して、その cab ファイルをエクスプローラーで開きます。
 
-Visual Studio の外部での PkgGen の実行については、「[モバイル パッケージの作成](https://msdn.microsoft.com/Library/Windows/Hardware/Dn756642)」をご覧ください。
+Visual Studio の外部での PkgGen の実行については、「[モバイル パッケージの作成](https://docs.microsoft.com/previous-versions/windows/hardware/packaging/dn756642(v=vs.85))」をご覧ください。
 
 モバイル ドライバー パッケージ (.spkg ファイル) をインストールするには、2 つのオプションがあります。
 
@@ -43,12 +43,12 @@ Visual Studio の外部での PkgGen の実行については、「[モバイル
        IUTool -p MyKmdfDriver.spkg
        ```
 
-2.  詳しくは、「[テスト イメージへのドライバーの追加](https://msdn.microsoft.com/Library/Windows/Hardware/Mt131832)」をご覧ください。
+2.  詳しくは、「[テスト イメージへのドライバーの追加](https://docs.microsoft.com/previous-versions/mt131832(v=vs.85))」をご覧ください。
 
 **ImgGen を使用した、ドライバー パッケージ (.spkg) のモバイル OS イメージ (.ffu) への追加**
 
 1.  Visual Studio をインストールしたら、スタート画面で [Visual Studio 2015] フォルダーをクリックします。 **[開発者コマンド プロンプト for VS2015]** を右クリックし、 **[管理者として実行]** を選びます。
 
-## <a name="span-idflashingamobileosimageffuspanspan-idflashingamobileosimageffuspanflashing-a-mobile-os-image-ffu"></a><span id="flashing_a_mobile_os_image__.ffu_"></span><span id="FLASHING_A_MOBILE_OS_IMAGE__.FFU_"></span>モバイル OS イメージ (.ffu) のフラッシュ
+## <a name="span-idflashing_a_mobile_os_image__ffu_spanspan-idflashing_a_mobile_os_image__ffu_spanflashing-a-mobile-os-image-ffu"></a><span id="flashing_a_mobile_os_image__.ffu_"></span><span id="FLASHING_A_MOBILE_OS_IMAGE__.FFU_"></span>モバイル OS イメージ (.ffu) のフラッシュ
 
 デバイスにイメージをフラッシュするには、Microsoft から提供された FFUTool を使うか、カスタム OEM フラッシュ ツールを開発します。

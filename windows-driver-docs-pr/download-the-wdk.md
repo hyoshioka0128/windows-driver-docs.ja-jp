@@ -10,12 +10,12 @@ keywords:
 ms.date: 08/06/2018
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 2b8512d6eecdafe700d710356ca221acaa2b6815
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 9b5474cc1f29ed61568ff616ca941252008da284
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66686950"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372010"
 ---
 # <a name="download-the-windows-driver-kit-wdk"></a>Windows Driver Kit (WDK) のダウンロード
 
@@ -68,7 +68,7 @@ EWDK は、ドライバーを構築するためのスタンドアロン自己完
 
 WDK には Visual Studio が必要です。Visual Studio に関するシステム要件の詳細については、[Visual Studio 2019 のシステム要件](https://docs.microsoft.com/visualstudio/releases/2019/system-requirements)に関する記事を参照してください。
 
-EWDK では、さらに .NET 4.7.2 も必要になります。.NET を実行するための要件の詳細については、[.NET Framework のシステム要件](https://docs.microsoft.com/dotnet/framework/get-started/system-requirements)に関する記事を参照してください。
+EWDK では、さらに .NET 4.7.2 も必要になります .NET を実行するための要件の詳細については、[.NET Framework のシステム要件](https://docs.microsoft.com/dotnet/framework/get-started/system-requirements)に関する記事を参照してください。
 
 WDK を使うと、次のオペレーティング システムで動作するドライバーを開発できます。
 
@@ -91,7 +91,7 @@ Windows 7|Windows Server 2008 R2 SP1|
 
 * [WDK Insider Preview のダウンロード](https://www.microsoft.com/software-download/windowsinsiderpreviewWDK)
 * [以前のバージョンの WDK のダウンロード](other-wdk-downloads.md)
-* [Windows アセスメント & デプロイメント キット (Windows ADK) のダウンロード](https://developer.microsoft.com/windows/hardware/windows-assessment-deployment-kit)
-* [Windows HLK、HCK、Logo Kit のダウンロード](https://developer.microsoft.com/windows/hardware/windows-hardware-lab-kit)
-* [Windows 向けデバッグ ツール (WinDbg) のダウンロード](https://developer.microsoft.com/windows/hardware/download-windbg)
-* [Windows シンボル パッケージのダウンロード](https://developer.microsoft.com/windows/hardware/download-symbols)
+* [Windows アセスメント & デプロイメント キット (Windows ADK) のダウンロード](https://docs.microsoft.com/windows-hardware/get-started/adk-install)
+* [Windows HLK、HCK、Logo Kit のダウンロード](https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit)
+* [Windows 向けデバッグ ツール (WinDbg) のダウンロード](https://docs.microsoft.com/windows-hardware/drivers/debugger/debugger-download-tools)
+* [Windows シンボル パッケージのダウンロード](https://docs.microsoft.com/windows-hardware/drivers/debugger/debugger-download-symbols)

@@ -32,7 +32,7 @@ ms.locfileid: "63336615"
 .fpo Address 
 ```
 
-## <a name="span-idddkmetacontrolfpooverridesdbgspanspan-idddkmetacontrolfpooverridesdbgspanparameters"></a><span id="ddk_meta_control_fpo_overrides_dbg"></span><span id="DDK_META_CONTROL_FPO_OVERRIDES_DBG"></span>パラメーター
+## <a name="span-idddk_meta_control_fpo_overrides_dbgspanspan-idddk_meta_control_fpo_overrides_dbgspanparameters"></a><span id="ddk_meta_control_fpo_overrides_dbg"></span><span id="DDK_META_CONTROL_FPO_OVERRIDES_DBG"></span>パラメーター
 
 
 <span id="_______-s______"></span><span id="_______-S______"></span> **-s**   
@@ -66,23 +66,23 @@ ms.locfileid: "63336615"
 <td align="left"><p>セット<strong>cbFrame</strong> FRAME_NONFPO を等しくします。 (既定では、cbFrame に設定 FRAME_FPO。)</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>l</strong> <strong></strong>  <em>用語</em></p></td>
+<td align="left"><p><strong>l</strong> <em>用語</em></p></td>
 <td align="left"><p>セット<strong>cdwLocals</strong>等しく<em>用語</em>します。 <em>用語</em>するローカル DWORD 数を指定する必要があります。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>p</strong> <strong></strong>  <em>用語</em></p></td>
+<td align="left"><p><strong>p</strong> <em>用語</em></p></td>
 <td align="left"><p>セット<strong>cdwParams</strong>等しく<em>用語</em>します。 <em>用語</em>する DWORD カウント パラメーターを指定する必要があります。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>r</strong> <strong></strong>  <em>用語</em></p></td>
+<td align="left"><p><strong>r</strong> <em>用語</em></p></td>
 <td align="left"><p>セット<strong>cbRegs</strong>等しく<em>用語</em>します。 <em>用語</em>するレジスタの数を指定する必要があります。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>s</strong> <strong></strong>  <em>用語</em></p></td>
+<td align="left"><p><strong>s</strong> <em>用語</em></p></td>
 <td align="left"><p>セット<strong>cbProcSize</strong>等しく<em>用語</em>します。 <em>用語</em>するプロシージャのサイズを指定する必要があります。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>t</strong> <strong></strong>  <em>用語</em></p></td>
+<td align="left"><p><strong>t</strong> <em>用語</em></p></td>
 <td align="left"><p>セット<strong>cbFrame</strong>等しく<em>用語</em>します。 <em>用語</em>フレームの種類は次のいずれかを指定する必要があります。</p>
 <ul>
 <li><p>FRAME_FPO 0</p></li>
