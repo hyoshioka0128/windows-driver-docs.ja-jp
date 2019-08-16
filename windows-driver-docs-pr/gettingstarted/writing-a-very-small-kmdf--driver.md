@@ -6,17 +6,17 @@ keywords:
 - KMDF Hello World
 ms.date: 04/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 899a17605bdc0f2200b95c3a9c6c6889c33fda74
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: d41c513bf9ad3a7ae05b15c59028c85af430e77e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63371182"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359288"
 ---
 # <a name="write-a-universal-hello-world-driver-kmdf"></a>ユニバーサル Hello World ドライバー (KMDF) の作成
 
 
-このトピックでは、カーネルモード ドライバー フレームワーク (KMDF) を使って非常に小さい[ユニバーサル Windows ドライバー](https://msdn.microsoft.com/windows-drivers/develop/getting_started_with_universal_drivers)を作成し、ドライバーをインストールして個別のコンピューターに展開する方法について説明します。 
+このトピックでは、カーネルモード ドライバー フレームワーク (KMDF) を使って非常に小さい[ユニバーサル Windows ドライバー](https://docs.microsoft.com/windows-hardware/drivers)を作成し、ドライバーをインストールして個別のコンピューターに展開する方法について説明します。 
 
 最初に、[Microsoft Visual Studio](https://go.microsoft.com/fwlink/p/?LinkId=698539)、[Windows SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk)、および [Windows Driver Kit (WDK)](https://go.microsoft.com/fwlink/p/?LinkId=733614) がインストールされていることを確認します。
 
@@ -240,7 +240,7 @@ ms.locfileid: "63371182"
 > [!TIP]
 > ドライバーのビルド時に `DriverVer set to a date in the future` が表示された場合、ドライバー プロジェクトの設定を Inf2Cat が `/uselocaltime` を設定するように変更します。 このためには、 **[構成プロパティ] -> [Inf2Cat] -> [全般] -> [Use Local Time]\(現地時刻の使用\)** を使用します。 これで、[Stampinf](../devtest/stampinf-command-options.md) と Inf2Cat の両方で現地時刻が使用されます。
 
-## <a name="span-iddeploythedriverspanspan-iddeploythedriverspanspan-iddeploythedriverspandeploy-the-driver"></a><span id="Deploy_the_driver"></span><span id="deploy_the_driver"></span><span id="DEPLOY_THE_DRIVER"></span>ドライバーの展開
+## <a name="span-iddeploy_the_driverspanspan-iddeploy_the_driverspanspan-iddeploy_the_driverspandeploy-the-driver"></a><span id="Deploy_the_driver"></span><span id="deploy_the_driver"></span><span id="DEPLOY_THE_DRIVER"></span>ドライバーの展開
 
 通常、ドライバーのテストと展開には、デバッガーとドライバーがそれぞれ別のコンピューター上で実行されます。 デバッガーを実行するコンピューターを*ホスト コンピューター*、ドライバーを実行するコンピューターを*ターゲット コンピューター*と呼びます。 ターゲット コンピューターは*テスト コンピューター*とも呼ばれます。
 
@@ -335,7 +335,7 @@ ms.locfileid: "63371182"
 
 リモート デバッグの詳細については、「[WinDbg を使用したリモート デバッグ](../debugger/remode-debugging-using-windbg.md)」を参照してください。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 [ドライバーの開発、テスト、および展開](https://go.microsoft.com/fwlink/p?linkid=399234)
 

@@ -4,12 +4,12 @@ title: WDK 8.1 の HCK テスト スイートを実行する方法
 description: WDK で Windows ドライバーをより簡単にテストできるようにするために、WDK 8.1 以降では、テスト コンピューターで実行する HCK テスト スイートを選べるようになりました。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d235dc838ee3edc0d164e51f502ac1a806fb0ac
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 90fa4555a0c1a09756b617cecb8143499b494e29
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63378490"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364250"
 ---
 # <a name="how-to-run-the-hck-test-suites-in-wdk-81"></a>WDK 8.1 の HCK テスト スイートを実行する方法
 
@@ -20,10 +20,10 @@ HCK テストは、コマンド プロンプト ウィンドウまたは Visual 
 -   [Visual Studio を使ったテスト コンピューターでの HCK テスト スイートの実行](#run_hck_from_vs)
 -   [コマンド プロンプト ウィンドウからの HCK テスト スイートの実行](#run_hck_script)
 
-## <a name="span-idrunhckfromvsspanspan-idrunhckfromvsspanrunning-the-hck-test-suites-on-a-test-computer-using-visual-studio"></a><span id="run_hck_from_vs"></span><span id="RUN_HCK_FROM_VS"></span>Visual Studio を使ったテスト コンピューターでの HCK テスト スイートの実行
+## <a name="span-idrun_hck_from_vsspanspan-idrun_hck_from_vsspanrunning-the-hck-test-suites-on-a-test-computer-using-visual-studio"></a><span id="run_hck_from_vs"></span><span id="RUN_HCK_FROM_VS"></span>Visual Studio を使ったテスト コンピューターでの HCK テスト スイートの実行
 
 
-まだ準備ができていない場合は、「[ドライバーの展開およびテストのためのコンピューターのプロビジョニング (WDK 8.1)](https://msdn.microsoft.com/Library/Windows/Hardware/Dn745909)」の指示に従ってください。 テスト コンピューターの構成が終わったら、テスト コンピューターの名前がツール バーに表示されます。 HCK テスト スイートでテストするデバイス用に構成したテスト コンピューターを選んでいることを確認します。
+まだ準備ができていない場合は、「[ドライバーの展開およびテストのためのコンピューターのプロビジョニング (WDK 8.1)](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/provision-a-target-computer-wdk-8-1)」の指示に従ってください。 テスト コンピューターの構成が終わったら、テスト コンピューターの名前がツール バーに表示されます。 HCK テスト スイートでテストするデバイス用に構成したテスト コンピューターを選んでいることを確認します。
 
 デバイスとドライバー、およびテスト トポロジの追加要件がある場合 (テストするデバイスの HCK テスト前提条件を参照) はそれらをインストールして、必要に応じてテスト コンピューターを準備します。 HCK Studio と HCK コントローラーの代わりに、Visual Studio と WDK 8.1 を使ってテストを実行できます。
 
@@ -47,7 +47,7 @@ HCK テストは、コマンド プロンプト ウィンドウまたは Visual 
 2.  テスト スイートのコピー先フォルダーを選択します。 テスト スイートは、ネットワーク共有または USB フラッシュ ドライブにエクスポートできます。
 3.  HCK テスト スイートを実行するには、テスト コンピューターで管理者特権のアクセス許可を使ってコマンド プロンプト ウィンドウを開きます。 コピー先ディレクトリに移動して **RunMe.cmd** スクリプトを実行します。 詳しくは、「[コマンド プロンプト ウィンドウから HCK テスト スイートを実行するには](#RunMe)」を参照してください。
 
-## <a name="span-idrunhckscriptspanspan-idrunhckscriptspanrunning-the-hck-test-suites-from-a-command-prompt-window"></a><span id="run_hck_script"></span><span id="RUN_HCK_SCRIPT"></span>コマンド プロンプト ウィンドウからの HCK テスト スイートの実行
+## <a name="span-idrun_hck_scriptspanspan-idrun_hck_scriptspanrunning-the-hck-test-suites-from-a-command-prompt-window"></a><span id="run_hck_script"></span><span id="RUN_HCK_SCRIPT"></span>コマンド プロンプト ウィンドウからの HCK テスト スイートの実行
 
 
 **HCK テスト スイートのコピー**
@@ -117,7 +117,7 @@ HCK テストは、コマンド プロンプト ウィンドウまたは Visual 
 
      
 
-## <a name="span-idhcktestsuitesspanspan-idhcktestsuitesspanspan-idhcktestsuitesspanhct-test-suites"></a><span id="HCK_test_suites"></span><span id="hck_test_suites"></span><span id="HCK_TEST_SUITES"></span>HCT テスト スイート
+## <a name="span-idhck_test_suitesspanspan-idhck_test_suitesspanspan-idhck_test_suitesspanhct-test-suites"></a><span id="HCK_test_suites"></span><span id="hck_test_suites"></span><span id="HCK_TEST_SUITES"></span>HCT テスト スイート
 
 
 -   [HCK Tests.Basic.Device.Device Fundamentals Test Suite](#HCK_devfund)
@@ -129,7 +129,7 @@ HCK テストは、コマンド プロンプト ウィンドウまたは Visual 
 
 テスト パラメーターの指定について詳しくは、「[Device Fundamental テストのパラメーター](how-to-select-and-configure-the-device-fundamental-tests.md)」を参照してください。 テスト中のデバイスまたはその子デバイスのいずれかが、WiFi アダプターまたはネットワーク デバイスの場合、*Wpa2PskAesSsid*、*Wpa2PskPassword*、または *WDTFREMOTESYSTEM* の各パラメーターの設定が必要なことがあります。
 
-### <a name="span-idhckdevfundspanspan-idhckdevfundspanspan-idhckdevfundspanhck-testsbasicdevicedevice-fundamentals-test-suite"></a><span id="HCK_devfund"></span><span id="hck_devfund"></span><span id="HCK_DEVFUND"></span>HCK Tests.Basic.Device.Device Fundamentals Test Suite
+### <a name="span-idhck_devfundspanspan-idhck_devfundspanspan-idhck_devfundspanhck-testsbasicdevicedevice-fundamentals-test-suite"></a><span id="HCK_devfund"></span><span id="hck_devfund"></span><span id="HCK_DEVFUND"></span>HCK Tests.Basic.Device.Device Fundamentals Test Suite
 
 あらゆるデバイスの種類の全般的な信頼性テストを行うには、このテスト スイートを使います。 [Device.Fundamentals の信頼性テストの前提条件](https://go.microsoft.com/fwlink/p/?linkid=309665)に関するページに記載された HCK テストのハードウェア要件、ソフトウェア要件、テスト要件に従う必要があります。 HCK Studio と HCK コントローラーの代わりに、Visual Studio と WDK 8.1 を使って基本的なテストを実行できます。
 
@@ -159,7 +159,7 @@ HCK テストは、コマンド プロンプト ウィンドウまたは Visual 
 
  
 
-### <a name="span-idhckgraphicsspanspan-idhckgraphicsspanspan-idhckgraphicsspanhck-testsbasicdevicegraphics-test-suite"></a><span id="HCK_graphics"></span><span id="hck_graphics"></span><span id="HCK_GRAPHICS"></span>HCK Tests.Basic.Device.Graphics Test Suite
+### <a name="span-idhck_graphicsspanspan-idhck_graphicsspanspan-idhck_graphicsspanhck-testsbasicdevicegraphics-test-suite"></a><span id="HCK_graphics"></span><span id="hck_graphics"></span><span id="HCK_GRAPHICS"></span>HCK Tests.Basic.Device.Graphics Test Suite
 
 グラフィックス アダプターまたはチップセットをテストするには、このテスト スイートを使います。 [グラフィック アダプターまたはチップセットのテストの前提条件](https://go.microsoft.com/fwlink/p/?linkid=309671)に関するページに記載された HCK テストのハードウェア要件、ソフトウェア要件、テスト要件に従う必要があります。 HCK Studio と HCK コントローラーの代わりに、Visual Studio と WDK 8.1 を使って基本的なテストを実行できます。
 
@@ -188,7 +188,7 @@ HCK テストは、コマンド プロンプト ウィンドウまたは Visual 
 
  
 
-### <a name="span-idhckimagingspanspan-idhckimagingspanspan-idhckimagingspanhck-testsbasicdeviceimaging-test-suite"></a><span id="HCK_imaging"></span><span id="hck_imaging"></span><span id="HCK_IMAGING"></span>HCK Tests.Basic.Device.Imaging Test Suite
+### <a name="span-idhck_imagingspanspan-idhck_imagingspanspan-idhck_imagingspanhck-testsbasicdeviceimaging-test-suite"></a><span id="HCK_imaging"></span><span id="hck_imaging"></span><span id="HCK_IMAGING"></span>HCK Tests.Basic.Device.Imaging Test Suite
 
 プリンターをテストするには、このテスト スイートを使います。 このテスト スイートでは、HCK [Device.Imaging テスト](https://go.microsoft.com/fwlink/p/?linkid=309673)の一部になっているテストが使われます。 HCK Studio と HCK コントローラーの代わりに、Visual Studio と WDK 8.1 を使って基本的なテストを実行できます。
 
@@ -217,7 +217,7 @@ HCK テストは、コマンド プロンプト ウィンドウまたは Visual 
 
  
 
-### <a name="span-idhckcdmaspanspan-idhckcdmaspanhck-testsbasicdevicenetworkmobilebroadbandcdma-test-suite"></a><span id="HCK_CDMA"></span><span id="hck_cdma"></span>HCK Tests.Basic.Device.Network.MobileBroadband.CDMA Test Suite
+### <a name="span-idhck_cdmaspanspan-idhck_cdmaspanhck-testsbasicdevicenetworkmobilebroadbandcdma-test-suite"></a><span id="HCK_CDMA"></span><span id="hck_cdma"></span>HCK Tests.Basic.Device.Network.MobileBroadband.CDMA Test Suite
 
 モバイル ブロードバンド CDMA デバイスをテストするには、このテスト スイートを使います。 [モバイル ブロードバンドのテストの前提条件](https://go.microsoft.com/fwlink/p/?linkid=309676)に関するページに記載されたデバイスのセットアップと構成のガイドラインに従います。 HCK Studio と HCK コントローラーの代わりに、Visual Studio と WDK 8.1 を使って基本的なテストを実行できます。
 
@@ -246,7 +246,7 @@ HCK テストは、コマンド プロンプト ウィンドウまたは Visual 
 
  
 
-### <a name="span-idhckgsmspanspan-idhckgsmspanhck-testsbasicdevicenetworkmobilebroadbandgsm-test-suite"></a><span id="HCK_GSM"></span><span id="hck_gsm"></span>HCK Tests.Basic.Device.Network.MobileBroadband.GSM Test Suite
+### <a name="span-idhck_gsmspanspan-idhck_gsmspanhck-testsbasicdevicenetworkmobilebroadbandgsm-test-suite"></a><span id="HCK_GSM"></span><span id="hck_gsm"></span>HCK Tests.Basic.Device.Network.MobileBroadband.GSM Test Suite
 
 モバイル ブロードバンド GSM デバイスをテストするには、このテスト スイートを使います。 [モバイル ブロードバンドのテストの前提条件](https://go.microsoft.com/fwlink/p/?linkid=309676)に関するページに記載されたデバイスのセットアップと構成のガイドラインに従います。 HCK Studio と HCK コントローラーの代わりに、Visual Studio と WDK 8.1 を使って基本的なテストを実行できます。
 
@@ -275,7 +275,7 @@ HCK テストは、コマンド プロンプト ウィンドウまたは Visual 
 
  
 
-### <a name="span-idhckwlanspanspan-idhckwlanspanhck-testsbasicdevicenetworkwlan-test-suite"></a><span id="HCK_WLAN"></span><span id="hck_wlan"></span>HCK Tests.Basic.Device.Network.WLAN Test Suite
+### <a name="span-idhck_wlanspanspan-idhck_wlanspanhck-testsbasicdevicenetworkwlan-test-suite"></a><span id="HCK_WLAN"></span><span id="hck_wlan"></span>HCK Tests.Basic.Device.Network.WLAN Test Suite
 
 ワイヤレス LAN (802.11) デバイスをテストするには、このテスト スイートを使います。 HCK の[ワイヤレス LAN (802.11) のテストの前提条件](https://go.microsoft.com/fwlink/p/?linkid=309679)に関するページに記載されたデバイスのセットアップと構成のガイドラインに従います。 HCK Studio と HCK コントローラーの代わりに、Visual Studio と WDK 8.1 を使って基本的なテストを実行できます。
 
@@ -304,13 +304,13 @@ HCK テストは、コマンド プロンプト ウィンドウまたは Visual 
 
  
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
 * [Visual Studio を使って実行時にドライバーをテストする方法](testing-a-driver-at-runtime.md)
 * [Device Fundamental テストを選んで構成する方法](how-to-select-and-configure-the-device-fundamental-tests.md)
 * [テスト コンピューターへのドライバーの展開](deploying-a-driver-to-a-test-computer.md)
-* [Visual Studio でのカーネル モード デバッグの設定](https://msdn.microsoft.com/windows/hardware/hh439376)
+* [Visual Studio でのカーネル モード デバッグの設定](https://docs.microsoft.com/windows-hardware/drivers/debugger/setting-up-kernel-mode-debugging-in-visual-studio)
 * [ハードウェア認定プログラム](https://go.microsoft.com/fwlink/p/?linkid=227016)
 * [Windows ハードウェア認定キット (HCK)](https://go.microsoft.com/fwlink/p/?linkid=254893)
 * [コマンド プロンプトから実行時にドライバーをテストする方法](how-to-test-a-driver-at-runtime-from-a-command-prompt.md)

@@ -7,19 +7,19 @@ keywords:
 - デバイス スタック
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 693337e45cc83ba7443a1e0f1910aaa24c605591
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 99befc5f4c2bc04430dbdcbc164c3681d5d95621
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63371516"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371975"
 ---
 # <a name="device-nodes-and-device-stacks"></a>デバイス ノードとデバイス スタック
 
 
 Windows では、デバイスはプラグ アンド プレイ (PnP) デバイス ツリーのデバイス ノードによって表されます。 通常、デバイスに I/O 要求が送られると、複数のドライバーがその要求の処理をサポートします。 これらのドライバーはそれぞれデバイス オブジェクトに関連付けられ、デバイス オブジェクトはスタックに配置されます。 デバイス オブジェクトとデバイス オブジェクトに関連付けられているドライバーのシーケンスをデバイス スタックと呼びます。 デバイス ノードにはそれぞれ、独自のデバイス スタックがあります。
 
-## <a name="span-iddevicenodesandtheplugandplaydevicetreespanspan-iddevicenodesandtheplugandplaydevicetreespanspan-iddevicenodesandtheplugandplaydevicetreespandevice-nodes-and-the-plug-and-play-device-tree"></a><span id="Device_nodes_and_the_Plug_and_Play_device_tree"></span><span id="device_nodes_and_the_plug_and_play_device_tree"></span><span id="DEVICE_NODES_AND_THE_PLUG_AND_PLAY_DEVICE_TREE"></span>デバイス ノードとプラグ アンド プレイ デバイス ツリー
+## <a name="span-iddevice_nodes_and_the_plug_and_play_device_treespanspan-iddevice_nodes_and_the_plug_and_play_device_treespanspan-iddevice_nodes_and_the_plug_and_play_device_treespandevice-nodes-and-the-plug-and-play-device-tree"></a><span id="Device_nodes_and_the_Plug_and_Play_device_tree"></span><span id="device_nodes_and_the_plug_and_play_device_tree"></span><span id="DEVICE_NODES_AND_THE_PLUG_AND_PLAY_DEVICE_TREE"></span>デバイス ノードとプラグ アンド プレイ デバイス ツリー
 
 
 Windows では、デバイスを "*プラグ アンド プレイ デバイス ツリー*" または単に "*デバイス ツリー*" と呼ばれるツリー構造にまとめます。 一般に、デバイス ツリーのノードは、1 つのデバイスまたは複合デバイス上の個々の機能を表します。 ただし、物理デバイスと関係のないソフトウェア コンポーネントを表すノードもあります。
@@ -34,10 +34,10 @@ PCI バスに接続されているデバイスの一部は、それら自体が�
 
 ノードがデバイスを表すと考えるかバスを表すと考えるかは、ユーザーの観点によって異なります。 たとえば、ディスプレイ アダプターは、画面に表示されるフレームの作成に重要な役割を果たすデバイスであると考えることができます。 しかし、同じディスプレイ アダプターを接続されているモニターを検出、列挙するバスと考えることもできます。
 
-## <a name="span-iddeviceobjectsanddevicestacksspanspan-iddeviceobjectsanddevicestacksspanspan-iddeviceobjectsanddevicestacksspandevice-objects-and-device-stacks"></a><span id="Device_objects_and_device_stacks"></span><span id="device_objects_and_device_stacks"></span><span id="DEVICE_OBJECTS_AND_DEVICE_STACKS"></span>デバイス オブジェクトとデバイス スタック
+## <a name="span-iddevice_objects_and_device_stacksspanspan-iddevice_objects_and_device_stacksspanspan-iddevice_objects_and_device_stacksspandevice-objects-and-device-stacks"></a><span id="Device_objects_and_device_stacks"></span><span id="device_objects_and_device_stacks"></span><span id="DEVICE_OBJECTS_AND_DEVICE_STACKS"></span>デバイス オブジェクトとデバイス スタック
 
 
-"*デバイス オブジェクト*" は、[**DEVICE\_OBJECT**](https://msdn.microsoft.com/library/windows/hardware/ff543147) 構造のインスタンスです。 PnP デバイス ツリーの各デバイス ノードには順序が付けられたデバイス オブジェクトの一覧があり、これらの各デバイス オブジェクトはドライバーに関連付けられています。 順序が付けられたデバイス オブジェクトの一覧と、関連付けられているドライバーを、デバイス ノードの*デバイス スタック*と呼びます。
+"*デバイス オブジェクト*" は、[**DEVICE\_OBJECT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_object) 構造のインスタンスです。 PnP デバイス ツリーの各デバイス ノードには順序が付けられたデバイス オブジェクトの一覧があり、これらの各デバイス オブジェクトはドライバーに関連付けられています。 順序が付けられたデバイス オブジェクトの一覧と、関連付けられているドライバーを、デバイス ノードの*デバイス スタック*と呼びます。
 
 デバイス スタックは、いく通りかに考えることができます。 正式な意味では、デバイス スタックは順序が付けられた (デバイス オブジェクト、ドライバー) のペアです。 ただし、特定のコンテキストでは、デバイス スタックを順序が付けられたデバイス オブジェクトの一覧と考えると便利です。 また、他のコンテキストでは、デバイス スタックを順序が付けられたドライバーの一覧と考えると便利です。
 
@@ -47,7 +47,7 @@ PCI バスに接続されているデバイスの一部は、それら自体が�
 
 ![Proseware Gizmo デバイス ノードと PCI デバイス ノードのデバイス スタックに並べられたデバイス オブジェクトを示す図](images/prosewaredevicenode01.png)
 
-## <a name="span-idhowdoesadevicestackgetconstructedspanspan-idhowdoesadevicestackgetconstructedspanspan-idhowdoesadevicestackgetconstructedspanhow-does-a-device-stack-get-constructed"></a><span id="How_does_a_device_stack_get_constructed_"></span><span id="how_does_a_device_stack_get_constructed_"></span><span id="HOW_DOES_A_DEVICE_STACK_GET_CONSTRUCTED_"></span>デバイス スタックはどのように構築されるか
+## <a name="span-idhow_does_a_device_stack_get_constructed_spanspan-idhow_does_a_device_stack_get_constructed_spanspan-idhow_does_a_device_stack_get_constructed_spanhow-does-a-device-stack-get-constructed"></a><span id="How_does_a_device_stack_get_constructed_"></span><span id="how_does_a_device_stack_get_constructed_"></span><span id="HOW_DOES_A_DEVICE_STACK_GET_CONSTRUCTED_"></span>デバイス スタックはどのように構築されるか
 
 
 起動時に、PnP マネージャーは各バスのドライバーに、バスに接続されている子デバイスを列挙するように求めます。 たとえば、PnP マネージャーは PCI バス ドライバー (Pci.sys) に PCI バスに接続されているデバイスを列挙するように求めます。 この要求に応えて、Pci.sys は PCI バスに接続されている各デバイスのデバイス オブジェクトを作ります。 これらの各デバイス オブジェクトを、*物理デバイス オブジェクト* (PDO) と呼びます。 Pci.sys が PDO のセットを作成した直後のデバイス ツリーは次の図にようになります。
@@ -66,14 +66,14 @@ PDO は常にデバイス スタックの最下部のデバイス オブジェ�
 
  
 
-## <a name="span-idbusdriversspanspan-idbusdriversspanspan-idbusdriversspanbus-drivers"></a><span id="Bus_drivers"></span><span id="bus_drivers"></span><span id="BUS_DRIVERS"></span>バス ドライバー
+## <a name="span-idbus_driversspanspan-idbus_driversspanspan-idbus_driversspanbus-drivers"></a><span id="Bus_drivers"></span><span id="bus_drivers"></span><span id="BUS_DRIVERS"></span>バス ドライバー
 
 
 この図では、ドライバー Pci.sys は 2 つの役割を果たしています。 まず、Pci.sys は PCI バス デバイス ノードの FDO に関連付けられています。 実際に、Pci.sys は PCI バス デバイス ノードの FDO を作成しました。 このため、Pci.sys は PCI バスのファンクション ドライバーです。 次に、Pci.sys は PCI バス ノードのそれぞれの子の PDO に関連付けられています。 Pci.sys が子デバイスの PDO を作成したことを思い出してください。 デバイス ノードの PDO を作成するドライバーを、ノードの "*バス ドライバー*" と呼びます。
 
 PCI バスを基準とする場合、Pci.sys はファンクション ドライバーです。 しかし、Proseware Gizmo デバイスを基準とする場合、Pci.sys はバス ドライバーです。 PnP デバイス ツリーでは、このような 2 つの役割があることは一般的です。 バスのファンクション ドライバーとして機能するドライバーは、そのバスの子デバイスのバス ドライバーとしても機能します。
 
-## <a name="span-iduser-modedevicestacksspanspan-iduser-modedevicestacksspanspan-iduser-modedevicestacksspanuser-mode-device-stacks"></a><span id="User-mode_device_stacks"></span><span id="user-mode_device_stacks"></span><span id="USER-MODE_DEVICE_STACKS"></span>ユーザー モード デバイス スタック
+## <a name="span-iduser-mode_device_stacksspanspan-iduser-mode_device_stacksspanspan-iduser-mode_device_stacksspanuser-mode-device-stacks"></a><span id="User-mode_device_stacks"></span><span id="user-mode_device_stacks"></span><span id="USER-MODE_DEVICE_STACKS"></span>ユーザー モード デバイス スタック
 
 
 ここまで、カーネル モード デバイス スタックについて説明しました。 カーネル モード デバイス スタックでは、スタックのドライバーはカーネル モードで実行され、デバイス オブジェクトはシステム空間にマップされます。システム空間は、カーネル モードで実行するコードでのみ使用可能なアドレス空間です。 カーネル モードとユーザー モードの違いについて詳しくは、「[ユーザー モードとカーネル モード](user-mode-and-kernel-mode.md)」をご覧ください。
@@ -84,7 +84,7 @@ PCI バスを基準とする場合、Pci.sys はファンクション ドライ�
 
 ![ユーザー モード デバイス スタックとカーネル モード デバイス スタックを示す図](images/userandkerneldevicestacks01.png)
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
 [すべてのドライバー開発者のための概念](concepts-and-knowledge-for-all-driver-developers.md)

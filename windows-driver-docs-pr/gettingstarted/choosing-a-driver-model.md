@@ -7,12 +7,12 @@ keywords:
 - ドライバー設計
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 76bab3e2e74f91d091f27b4d80a6668154b4348a
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: fd9c1e5138295c5f49d8e5c9a559c3ebe37ea4c0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63371442"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371971"
 ---
 # <a name="choosing-a-driver-model"></a>ドライバー モデルの選択
 
@@ -27,7 +27,7 @@ Microsoft Windows には、ドライバーの作成に使うことができる�
 
 さまざまな種類のドライバーの違いについては、「[ドライバーとは](what-is-a-driver-.md)」と「[デバイス ノードとデバイス スタック](device-nodes-and-device-stacks.md)」をご覧ください。 次のセクションでは、ドライバーの種類ごとにモデルの選択方法について説明します。
 
-## <a name="span-idchoosingadrivermodelforadevicefunctiondriverspanspan-idchoosingadrivermodelforadevicefunctiondriverspanchoosing-a-driver-model-for-a-device-function-driver"></a><span id="choosing_a_driver_model_for_a_device_function_driver"></span><span id="CHOOSING_A_DRIVER_MODEL_FOR_A_DEVICE_FUNCTION_DRIVER"></span>デバイス ファンクション ドライバーのドライバー モデルの選択
+## <a name="span-idchoosing_a_driver_model_for_a_device_function_driverspanspan-idchoosing_a_driver_model_for_a_device_function_driverspanchoosing-a-driver-model-for-a-device-function-driver"></a><span id="choosing_a_driver_model_for_a_device_function_driver"></span><span id="CHOOSING_A_DRIVER_MODEL_FOR_A_DEVICE_FUNCTION_DRIVER"></span>デバイス ファンクション ドライバーのドライバー モデルの選択
 
 
 ハードウェア デバイスを設計するときには、ファンクション ドライバーを作る必要があるかどうかをまず検討する必要があります。 以下の点を確認してください。
@@ -52,14 +52,14 @@ Microsoft Windows には、ドライバーの作成に使うことができる�
 
 「[デバイスとドライバーのテクノロジ](https://docs.microsoft.com/windows-hardware/drivers/device-and-driver-technologies)」に一覧表示されているテクノロジのすべてに、専用のミニドライバー モデルがあるわけではありません。 ある特定のテクノロジのドキュメントでは[カーネル モード ドライバー フレームワーク (KMDF)](https://docs.microsoft.com/windows-hardware/drivers/wdf/) を、他のテクノロジのドキュメントでは[ユーザー モード ドライバー フレームワーク (UMDF)](https://docs.microsoft.com/windows-hardware/drivers/wdf/) を使うよう勧められていることがあります。 重要なのは、特定のデバイス テクノロジのドキュメントを研究することから始める必要があるという点です。 デバイス テクノロジにミニドライバー モデルがある場合、そのミニドライバー モデルを使う必要があります。 それ以外の場合は、UMDF、KMDF、Windows Driver Model (WDM) のどれを使うかについて、テクノロジ固有のドキュメントの助言に従います。
 
-## <a name="span-idchoosingadrivermodelforadevicefilterdriverspanspan-idchoosingadrivermodelforadevicefilterdriverspanspan-idchoosingadrivermodelforadevicefilterdriverspanchoosing-a-driver-model-for-a-device-filter-driver"></a><span id="Choosing_a_driver_model_for_a_device_filter_driver"></span><span id="choosing_a_driver_model_for_a_device_filter_driver"></span><span id="CHOOSING_A_DRIVER_MODEL_FOR_A_DEVICE_FILTER_DRIVER"></span>デバイス フィルター ドライバーのドライバー モデルの選択
+## <a name="span-idchoosing_a_driver_model_for_a_device_filter_driverspanspan-idchoosing_a_driver_model_for_a_device_filter_driverspanspan-idchoosing_a_driver_model_for_a_device_filter_driverspanchoosing-a-driver-model-for-a-device-filter-driver"></a><span id="Choosing_a_driver_model_for_a_device_filter_driver"></span><span id="choosing_a_driver_model_for_a_device_filter_driver"></span><span id="CHOOSING_A_DRIVER_MODEL_FOR_A_DEVICE_FILTER_DRIVER"></span>デバイス フィルター ドライバーのドライバー モデルの選択
 
 
 デバイスからのデータ読み取りのような単一の I/O 要求に複数のドライバーが関与していることがよくあります。 ドライバーは 1 つのスタック上に重ねて置かれます。スタックの状態を視覚的に捉えるために、最初のドライバーが最上部に、最後のドライバーが最下部にそれぞれ置かれているイメージにたとえる方法がよく用いられます。 スタックには 1 つのファンクション ドライバーがあり、フィルター ドライバーを置くこともできます。 ファンクション ドライバーとフィルター ドライバーについては、「[ドライバーとは](what-is-a-driver-.md)」と「[デバイス ノードとデバイス スタック](device-nodes-and-device-stacks.md)」をご覧ください。
 
 デバイスのフィルター ドライバーを作る準備をしている場合、「[デバイスとドライバーのテクノロジ](https://docs.microsoft.com/windows-hardware/drivers/device-and-driver-technologies)」に説明されているテクノロジの一覧で、デバイスが適合する箇所を特定します。 特定したテクノロジのドキュメントに、フィルター ドライバー モデルの選択に関するガイダンスがあるかどうかを確認します。 デバイス テクノロジのドキュメントにガイダンスがない場合は、まず UMDF をドライバー モデルとして使うことを検討します。 フィルター ドライバーが、UMDF からは利用できないデータ構造にアクセスする必要がある場合は、KMDF をドライバー モデルとして使うことを検討します。 非常にまれなケースですが、ドライバーが KMDF からは利用できないデータ構造にアクセスする必要がある場合は、WDM をドライバー モデルとして使います。
 
-## <a name="span-idchoosingadrivermodelforasoftwaredriverspanspan-idchoosingadrivermodelforasoftwaredriverspanspan-idchoosingadrivermodelforasoftwaredriverspanchoosing-a-driver-model-for-a-software-driver"></a><span id="Choosing_a_driver_model_for_a_software_driver"></span><span id="choosing_a_driver_model_for_a_software_driver"></span><span id="CHOOSING_A_DRIVER_MODEL_FOR_A_SOFTWARE_DRIVER"></span>ソフトウェア ドライバーのドライバー モデルの選択
+## <a name="span-idchoosing_a_driver_model_for_a_software_driverspanspan-idchoosing_a_driver_model_for_a_software_driverspanspan-idchoosing_a_driver_model_for_a_software_driverspanchoosing-a-driver-model-for-a-software-driver"></a><span id="Choosing_a_driver_model_for_a_software_driver"></span><span id="choosing_a_driver_model_for_a_software_driver"></span><span id="CHOOSING_A_DRIVER_MODEL_FOR_A_SOFTWARE_DRIVER"></span>ソフトウェア ドライバーのドライバー モデルの選択
 
 
 デバイスに関連付けられていないドライバーは、*ソフトウェア ドライバー*と呼ばれます。 ソフトウェア ドライバーついては、「[ドライバーとは](what-is-a-driver-.md)」をご覧ください。 ソフトウェア ドライバーは、カーネル モードで実行可能であり、そのため保護されたオペレーティング システム データにアクセスできるので便利です。 プロセッサ モードについては、「[ユーザー モードとカーネル モード](user-mode-and-kernel-mode.md)」をご覧ください。
@@ -70,23 +70,23 @@ KMDF を使い慣れている場合は特に、KMDF を使うことをお勧め�
 
 **注**  非常にまれなケースですが、PnP または電源イベントを認識するソフトウェア ドライバーを作る必要があり、ドライバーが KMDF からは利用できないデータにアクセスする必要がある場合は、WDM を使う必要があります。
 
-## <a name="span-idchoosingadrivermodelforafilesystemdriverspanspan-idchoosingadrivermodelforafilesystemdriverspanspan-idchoosingadrivermodelforafilesystemdriverspanchoosing-a-driver-model-for-a-file-system-driver"></a><span id="Choosing_a_driver_model_for_a_file_system_driver"></span><span id="choosing_a_driver_model_for_a_file_system_driver"></span><span id="CHOOSING_A_DRIVER_MODEL_FOR_A_FILE_SYSTEM_DRIVER"></span>ファイル システム ドライバーのドライバー モデルの選択
+## <a name="span-idchoosing_a_driver_model_for_a_file_system_driverspanspan-idchoosing_a_driver_model_for_a_file_system_driverspanspan-idchoosing_a_driver_model_for_a_file_system_driverspanchoosing-a-driver-model-for-a-file-system-driver"></a><span id="Choosing_a_driver_model_for_a_file_system_driver"></span><span id="choosing_a_driver_model_for_a_file_system_driver"></span><span id="CHOOSING_A_DRIVER_MODEL_FOR_A_FILE_SYSTEM_DRIVER"></span>ファイル システム ドライバーのドライバー モデルの選択
 
 
 ファイル システム フィルター ドライバーのモデルの選択については、「[File system driver samples](https://docs.microsoft.com/windows-hardware/drivers/samples/file-system-driver-samples)」(ファイル システム ドライバーのサンプル) をご覧ください。 ファイル システム ドライバーは非常に複雑になる場合があり、ドライバー開発の高度な概念に関する知識が必要になることがあります。
 
 
-## <a name="span-idchoosingadrivermodelforafilesystemfilterdriverspanspan-idchoosingadrivermodelforafilesystemfilterdriverspanspan-idchoosingadrivermodelforafilesystemfilterdriverspanchoosing-a-driver-model-for-a-file-system-filter-driver"></a><span id="Choosing_a_driver_model_for_a_file_system_filter_driver"></span><span id="choosing_a_driver_model_for_a_file_system_filter_driver"></span><span id="CHOOSING_A_DRIVER_MODEL_FOR_A_FILE_SYSTEM_FILTER_DRIVER"></span>ファイル システム フィルター ドライバーのドライバー モデルの選択
+## <a name="span-idchoosing_a_driver_model_for_a_file_system_filter_driverspanspan-idchoosing_a_driver_model_for_a_file_system_filter_driverspanspan-idchoosing_a_driver_model_for_a_file_system_filter_driverspanchoosing-a-driver-model-for-a-file-system-filter-driver"></a><span id="Choosing_a_driver_model_for_a_file_system_filter_driver"></span><span id="choosing_a_driver_model_for_a_file_system_filter_driver"></span><span id="CHOOSING_A_DRIVER_MODEL_FOR_A_FILE_SYSTEM_FILTER_DRIVER"></span>ファイル システム フィルター ドライバーのドライバー モデルの選択
 
 
-ファイル システム フィルター ドライバーのモデルの選択については、「ファイル システム ミニフィルター ドライバー」と「[File system filter drivers](https://msdn.microsoft.com/library/windows/hardware/ff540382)」(ファイル システム フィルター ドライバー) をご覧ください。
+ファイル システム フィルター ドライバーのモデルの選択については、「ファイル システム ミニフィルター ドライバー」と「[File system filter drivers](https://docs.microsoft.com/windows-hardware/drivers/ifs/file-system-filter-drivers)」(ファイル システム フィルター ドライバー) をご覧ください。
 
-## <a name="span-idchoosingadrivermodelforafilesystemminifilterdriverspanspan-idchoosingadrivermodelforafilesystemminifilterdriverspanspan-idchoosingadrivermodelforafilesystemminifilterdriverspanchoosing-a-driver-model-for-a-file-system-minifilter-driver"></a><span id="Choosing_a_driver_model_for_a_file_system_minifilter_driver"></span><span id="choosing_a_driver_model_for_a_file_system_minifilter_driver"></span><span id="CHOOSING_A_DRIVER_MODEL_FOR_A_FILE_SYSTEM_MINIFILTER_DRIVER"></span>ファイル システム ミニフィルター ドライバーのドライバー モデルの選択
+## <a name="span-idchoosing_a_driver_model_for_a_file_system_minifilter_driverspanspan-idchoosing_a_driver_model_for_a_file_system_minifilter_driverspanspan-idchoosing_a_driver_model_for_a_file_system_minifilter_driverspanchoosing-a-driver-model-for-a-file-system-minifilter-driver"></a><span id="Choosing_a_driver_model_for_a_file_system_minifilter_driver"></span><span id="choosing_a_driver_model_for_a_file_system_minifilter_driver"></span><span id="CHOOSING_A_DRIVER_MODEL_FOR_A_FILE_SYSTEM_MINIFILTER_DRIVER"></span>ファイル システム ミニフィルター ドライバーのドライバー モデルの選択
 
 
-ファイル システム ミニフィルター ドライバーのモデルの選択については、「[File System Minifilter Drivers](https://msdn.microsoft.com/library/windows/hardware/ff540402)」(ファイル システム ミニフィルター ドライバー) をご覧ください。
+ファイル システム ミニフィルター ドライバーのモデルの選択については、「[File System Minifilter Drivers](https://docs.microsoft.com/windows-hardware/drivers/ifs/file-system-minifilter-drivers)」(ファイル システム ミニフィルター ドライバー) をご覧ください。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
 [カーネル モード ドライバー フレームワーク](https://docs.microsoft.com/windows-hardware/drivers/wdf/)

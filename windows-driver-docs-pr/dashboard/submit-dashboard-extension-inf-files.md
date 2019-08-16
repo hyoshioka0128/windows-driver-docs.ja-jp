@@ -4,12 +4,12 @@ description: Windows ハードウェア デベロッパー センターで拡張
 ms.topic: article
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: de83c5c7582af5633ace0273748e6663f93b4d55
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 6803f0632e501678688a48a50fc457dfa58fb359
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63334931"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364416"
 ---
 # <a name="working-with-extension-infs-in-the-partner-center"></a>パートナー センターでの拡張 INF の使用
 
@@ -67,7 +67,7 @@ Windows Update に拡張 INF を公開するには、出荷ラベルで自動ド
 
 #### <a name="extensionid"></a>ExtensionID
 
-ExtensionID は、生成する GUID で、ドライバーの系列 ID とバージョン管理に使用されます。 ExtensionID は、ハードウェア デバイスの部品または部品の系列を記述したもので、それを提出した SellerID に[自動的に登録されます](https://blogs.msdn.microsoft.com/windows_hardware_certification/2017/11/08/hardware-dev-center-now-automatically-registers-extension-ids/)。 この SellerID の所有者は、CHID の管理と同様に、ExtensionID 使用状況とマッピングの追跡を行います。 
+ExtensionID は、生成する GUID で、ドライバーの系列 ID とバージョン管理に使用されます。 ExtensionID は、ハードウェア デバイスの部品または部品の系列を記述したもので、それを提出した SellerID に[自動的に登録されます](https://techcommunity.microsoft.com/t5/Windows-Hardware-Certification/bg-p/WindowsHardwareCertification)。 この SellerID の所有者は、CHID の管理と同様に、ExtensionID 使用状況とマッピングの追跡を行います。 
 
 たとえば、新しいシステムの部品に ExtensionID を作成する場合は、次のようになります。
 

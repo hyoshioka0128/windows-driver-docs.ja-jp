@@ -5,12 +5,12 @@ ms.assetid: EC27412D-1695-4B14-AAB2-2ECE636265C0
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 62c300d9742208ffac1914fbc3de14bddb2960cf
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 414db29a9733cff206a1eddc256d4f6f8fa6c6d8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63334891"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364390"
 ---
 # <a name="view-partner-shipping-labels-for-a-shared-driver"></a>パートナーによる共有ドライバーの出荷ラベルを表示する
 
@@ -23,11 +23,11 @@ ms.locfileid: "63334891"
 
     ![共有された提出の出荷ラベルを示すスクリーンショット](images/publish-view-label.png)
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 - [パートナーとのドライバーの共有](sharing-drivers-with-your-partners.md)
 
-- [Windows Update に共有ドライバーを公開する](https://msdn.microsoft.com/library/windows/hardware/mt786464)
+- [Windows Update に共有ドライバーを公開する](https://docs.microsoft.com/previous-versions/mt786464(v=vs.85))
 
  
 

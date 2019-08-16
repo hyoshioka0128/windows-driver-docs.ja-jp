@@ -5,17 +5,17 @@ ms.assetid: b96b02b8-8804-403e-9513-7a5d1b730fcd
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5fe5d3951ff1d8cc17020dab8ae9a52ad0558c98
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 1424706a511a53ad2167966ac4c1fa6af9078a58
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63334905"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363827"
 ---
 # <a name="submit-a-pc-device-manifest-package"></a>PC デバイス マニフェスト パッケージの提出
 
 
-## <a name="span-idsubmittingapcdevicemanifestpackagespanspan-idsubmittingapcdevicemanifestpackagespanspan-idsubmittingapcdevicemanifestpackagespansubmitting-a-pc-device-manifest-package"></a><span id="Submitting_a_PC_device_manifest_package"></span><span id="submitting_a_pc_device_manifest_package"></span><span id="SUBMITTING_A_PC_DEVICE_MANIFEST_PACKAGE"></span>PC デバイス マニフェスト パッケージの提出
+## <a name="span-idsubmitting_a_pc_device_manifest_packagespanspan-idsubmitting_a_pc_device_manifest_packagespanspan-idsubmitting_a_pc_device_manifest_packagespansubmitting-a-pc-device-manifest-package"></a><span id="Submitting_a_PC_device_manifest_package"></span><span id="submitting_a_pc_device_manifest_package"></span><span id="SUBMITTING_A_PC_DEVICE_MANIFEST_PACKAGE"></span>PC デバイス マニフェスト パッケージの提出
 
 
 同じ方法を使って、パッケージをプレビュー用またはリリース用に提出できます。
@@ -30,7 +30,7 @@ ms.locfileid: "63334905"
 
 4.  新しい devicemanifest-ms パッケージを参照して選び、 **[Submit]** (送信) をクリックします。
 
-## <a name="span-idcreatingadevicemanifestsubmissionpackagespanspan-idcreatingadevicemanifestsubmissionpackagespanspan-idcreatingadevicemanifestsubmissionpackagespancreating-a-device-manifest-submission-package"></a><span id="Creating_a_Device_Manifest_Submission_Package"></span><span id="creating_a_device_manifest_submission_package"></span><span id="CREATING_A_DEVICE_MANIFEST_SUBMISSION_PACKAGE"></span>デバイス マニフェスト サブミッション パッケージの作成
+## <a name="span-idcreating_a_device_manifest_submission_packagespanspan-idcreating_a_device_manifest_submission_packagespanspan-idcreating_a_device_manifest_submission_packagespancreating-a-device-manifest-submission-package"></a><span id="Creating_a_Device_Manifest_Submission_Package"></span><span id="creating_a_device_manifest_submission_package"></span><span id="CREATING_A_DEVICE_MANIFEST_SUBMISSION_PACKAGE"></span>デバイス マニフェスト サブミッション パッケージの作成
 
 
 デバイス マニフェスト サブミッション パッケージは、すべての PC デバイスのメタデータをハードウェア デベロッパー センターに提出する必要がある場合に使われるパッケージ形式です。
@@ -41,7 +41,7 @@ ms.locfileid: "63334905"
 
 ハードウェア デベロッパー センターのユーザー インターフェイスのバルク (一括) アップロード用ボックスを除くすべてのファイル アップロード ボックスで、デバイス マニフェスト サブミッション パッケージを指定できます。
 
-### <a name="span-iddevicemanifestsubmissionpackagecontentsspanspan-iddevicemanifestsubmissionpackagecontentsspanspan-iddevicemanifestsubmissionpackagecontentsspandevice-manifest-submission-package-contents"></a><span id="Device_Manifest_Submission_Package_Contents"></span><span id="device_manifest_submission_package_contents"></span><span id="DEVICE_MANIFEST_SUBMISSION_PACKAGE_CONTENTS"></span>デバイス マニフェスト サブミッション パッケージの内容
+### <a name="span-iddevice_manifest_submission_package_contentsspanspan-iddevice_manifest_submission_package_contentsspanspan-iddevice_manifest_submission_package_contentsspandevice-manifest-submission-package-contents"></a><span id="Device_Manifest_Submission_Package_Contents"></span><span id="device_manifest_submission_package_contents"></span><span id="DEVICE_MANIFEST_SUBMISSION_PACKAGE_CONTENTS"></span>デバイス マニフェスト サブミッション パッケージの内容
 
 デバイス マニフェスト サブミッション パッケージは、それぞれ次のコンポーネントで構成されます。
 
@@ -67,7 +67,7 @@ ms.locfileid: "63334905"
 
  
 
-### <a name="span-idstructureofapcdevicemanifestsubmissionpackagespanspan-idstructureofapcdevicemanifestsubmissionpackagespanspan-idstructureofapcdevicemanifestsubmissionpackagespanstructure-of-a-pc-device-manifest-submission-package"></a><span id="Structure_of_a_PC_Device_Manifest_Submission_Package"></span><span id="structure_of_a_pc_device_manifest_submission_package"></span><span id="STRUCTURE_OF_A_PC_DEVICE_MANIFEST_SUBMISSION_PACKAGE"></span>PC デバイス マニフェスト サブミッション パッケージの構造
+### <a name="span-idstructure_of_a_pc_device_manifest_submission_packagespanspan-idstructure_of_a_pc_device_manifest_submission_packagespanspan-idstructure_of_a_pc_device_manifest_submission_packagespanstructure-of-a-pc-device-manifest-submission-package"></a><span id="Structure_of_a_PC_Device_Manifest_Submission_Package"></span><span id="structure_of_a_pc_device_manifest_submission_package"></span><span id="STRUCTURE_OF_A_PC_DEVICE_MANIFEST_SUBMISSION_PACKAGE"></span>PC デバイス マニフェスト サブミッション パッケージの構造
 
 デバイス マニフェスト パッケージの構造は、含まれているデバイス メタデータが PC 用とモバイル ブロードバンド用のどちらであるかと、複数のロケールのサポートが含まれているかどうかに依存します。
 
@@ -124,10 +124,10 @@ N .\PCFiles\ GUID.devicemanifest-ms
 
 このツールについて詳しくは、[Cabarc の概要](https://go.microsoft.com/fwlink/p/?LinkId=248843)に関するページをご覧ください。
 
-## <a name="span-idcreatingpcmetadatasubmissionxmlspanspan-idcreatingpcmetadatasubmissionxmlspancreating-pcmetadatasubmissionxml"></a><span id="creating_pcmetadatasubmission.xml"></span><span id="CREATING_PCMETADATASUBMISSION.XML"></span>PcMetadataSubmission.xml の作成
+## <a name="span-idcreating_pcmetadatasubmissionxmlspanspan-idcreating_pcmetadatasubmissionxmlspancreating-pcmetadatasubmissionxml"></a><span id="creating_pcmetadatasubmission.xml"></span><span id="CREATING_PCMETADATASUBMISSION.XML"></span>PcMetadataSubmission.xml の作成
 
 
-### <a name="span-idpcmetadatasubmissionxmlschemaspanspan-idpcmetadatasubmissionxmlschemaspanspan-idpcmetadatasubmissionxmlschemaspanpcmetadatasubmission-xml-schema"></a><span id="PcMetadataSubmission_XML_Schema"></span><span id="pcmetadatasubmission_xml_schema"></span><span id="PCMETADATASUBMISSION_XML_SCHEMA"></span>PcMetadataSubmission XML スキーマ
+### <a name="span-idpcmetadatasubmission_xml_schemaspanspan-idpcmetadatasubmission_xml_schemaspanspan-idpcmetadatasubmission_xml_schemaspanpcmetadatasubmission-xml-schema"></a><span id="PcMetadataSubmission_XML_Schema"></span><span id="pcmetadatasubmission_xml_schema"></span><span id="PCMETADATASUBMISSION_XML_SCHEMA"></span>PcMetadataSubmission XML スキーマ
 
 デバイス マニフェスト サブミッション パッケージには、PcMetadataSubmission.xml ドキュメントを 1 つ含めることができます。このドキュメントの情報は、PackageInfo.xml 内の Computer HardwareID を検証する際にハードウェア デベロッパー センター サイトで使われます。
 
@@ -308,7 +308,7 @@ PcMetadataSubmissionv2 XML スキーマの定義は、以下のとおりです�
 </xs:schema>
 ```
 
-### <a name="span-idpcmetadatasubmissionxmlschemareferencespanspan-idpcmetadatasubmissionxmlschemareferencespanspan-idpcmetadatasubmissionxmlschemareferencespanpcmetadatasubmission-xml-schema-reference"></a><span id="PcMetadataSubmission_XML_Schema_Reference"></span><span id="pcmetadatasubmission_xml_schema_reference"></span><span id="PCMETADATASUBMISSION_XML_SCHEMA_REFERENCE"></span>PcMetadataSubmission XML スキーマ リファレンス
+### <a name="span-idpcmetadatasubmission_xml_schema_referencespanspan-idpcmetadatasubmission_xml_schema_referencespanspan-idpcmetadatasubmission_xml_schema_referencespanpcmetadatasubmission-xml-schema-reference"></a><span id="PcMetadataSubmission_XML_Schema_Reference"></span><span id="pcmetadatasubmission_xml_schema_reference"></span><span id="PCMETADATASUBMISSION_XML_SCHEMA_REFERENCE"></span>PcMetadataSubmission XML スキーマ リファレンス
 
 PcMetadataSubmission XML スキーマで定義される要素と属性は以下のとおりです。
 
@@ -886,7 +886,7 @@ SKUNumber 要素によって指定される値は、ターゲット PC の SMBIO
 
 SMBIOS フィールドについて詳しくは、[System Management BIOS (SMBIOS) 仕様](https://go.microsoft.com/fwlink/p/?LinkId=145867)をご覧ください。
 
-### <a name="span-idpcmetadatasubmissionxmlexamplespanspan-idpcmetadatasubmissionxmlexamplespanspan-idpcmetadatasubmissionxmlexamplespanpcmetadatasubmission-xml-example"></a><span id="PcMetadataSubmission_XML_Example"></span><span id="pcmetadatasubmission_xml_example"></span><span id="PCMETADATASUBMISSION_XML_EXAMPLE"></span>PcMetadataSubmission XML の例
+### <a name="span-idpcmetadatasubmission_xml_examplespanspan-idpcmetadatasubmission_xml_examplespanspan-idpcmetadatasubmission_xml_examplespanpcmetadatasubmission-xml-example"></a><span id="PcMetadataSubmission_XML_Example"></span><span id="pcmetadatasubmission_xml_example"></span><span id="PCMETADATASUBMISSION_XML_EXAMPLE"></span>PcMetadataSubmission XML の例
 
 次に示す XML ドキュメントでは、PcMetadataSubmission XML スキーマを使って、ターゲット コンピューターの PcMetadataSubmission 情報のコンポーネントを指定しています。
 
@@ -909,10 +909,10 @@ SMBIOS フィールドについて詳しくは、[System Management BIOS (SMBIOS
 </PcMetadataSubmission>
 ```
 
-## <a name="span-idcreatinglocaleinfoxmlspanspan-idcreatinglocaleinfoxmlspancreating-localeinfoxml"></a><span id="creating_localeinfo.xml"></span><span id="CREATING_LOCALEINFO.XML"></span>LocaleInfo.xml の作成
+## <a name="span-idcreating_localeinfoxmlspanspan-idcreating_localeinfoxmlspancreating-localeinfoxml"></a><span id="creating_localeinfo.xml"></span><span id="CREATING_LOCALEINFO.XML"></span>LocaleInfo.xml の作成
 
 
-Localeinfo.xml ファイルを申請用に作成する方法について詳しくは、「[LocaleInfo.xml サブミッション ファイルの作成](https://msdn.microsoft.com/library/windows/hardware/hh801885.aspx)」をご覧ください。
+Localeinfo.xml ファイルを申請用に作成する方法について詳しくは、「[LocaleInfo.xml サブミッション ファイルの作成](https://docs.microsoft.com/windows-hardware/drivers/dashboard/)」をご覧ください。
 
  
 

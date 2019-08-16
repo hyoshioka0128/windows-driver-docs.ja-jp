@@ -4,22 +4,22 @@ title: コンピューターのプロビジョニングで実行される処理 
 description: ここでは、Version 8.0 の Windows Driver Kit (WDK) を使ったターゲット コンピューターのプロビジョニングで実行される処理について説明します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c4effdc9c3609072ea8f82aab32987889bd2b5a
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 7cdf440bc787828d3d5bda4db778d6a08a843a79
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63344096"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364174"
 ---
 # <a name="what-happens-when-you-provision-a-computer-wdk-80"></a>コンピューターのプロビジョニングで実行される処理 (WDK 8.0)
 
-ドライバーの展開とドライバーのテストに必要な構成とセットアップは、Microsoft Visual Studio を使って行うことができます。これを "*ターゲット コンピューターのプロビジョニング*" または "*テスト コンピューターのプロビジョニング*" といいます。 Windows Driver Kit (WDK) 8 でのプロビジョニングについては、「[ドライバーの展開およびテストのためのコンピューターのプロビジョニング (WDK 8)](https://msdn.microsoft.com/Library/Windows/Hardware/Hh698272)」をご覧ください。 ここでは、Version 8.0 の Windows Driver Kit (WDK) を使ったターゲット コンピューターのプロビジョニングで実行される処理について説明します。
+ドライバーの展開とドライバーのテストに必要な構成とセットアップは、Microsoft Visual Studio を使って行うことができます。これを "*ターゲット コンピューターのプロビジョニング*" または "*テスト コンピューターのプロビジョニング*" といいます。 Windows Driver Kit (WDK) 8 でのプロビジョニングについては、「[ドライバーの展開およびテストのためのコンピューターのプロビジョニング (WDK 8)](https://docs.microsoft.com/previous-versions/hh698272(v=vs.85))」をご覧ください。 ここでは、Version 8.0 の Windows Driver Kit (WDK) を使ったターゲット コンピューターのプロビジョニングで実行される処理について説明します。
 
-**注**  WDK 8 は、WDK の最新バージョンではありません。 WDK の最新バージョンを入手し、[ここで説明するプロビジョニングの手順](https://msdn.microsoft.com/Library/Windows/Hardware/Hh698272)に従ってターゲット コンピューターをプロビジョニングすることをお勧めします。
+**注**  WDK 8 は、WDK の最新バージョンではありません。 WDK の最新バージョンを入手し、[ここで説明するプロビジョニングの手順](https://docs.microsoft.com/previous-versions/hh698272(v=vs.85))に従ってターゲット コンピューターをプロビジョニングすることをお勧めします。
 
  
 
-## <a name="span-idwhenyouprovisionacomputerwdk80spanspan-idwhenyouprovisionacomputerwdk80spanwhen-you-provision-a-computer-wdk-80"></a><span id="when_you_provision_a_computer_wdk_8_0"></span><span id="WHEN_YOU_PROVISION_A_COMPUTER_WDK_8_0"></span>コンピューターをプロビジョニングする場合 (WDK 8.0)
+## <a name="span-idwhen_you_provision_a_computer_wdk_8_0spanspan-idwhen_you_provision_a_computer_wdk_8_0spanwhen-you-provision-a-computer-wdk-80"></a><span id="when_you_provision_a_computer_wdk_8_0"></span><span id="WHEN_YOU_PROVISION_A_COMPUTER_WDK_8_0"></span>コンピューターをプロビジョニングする場合 (WDK 8.0)
 
 
 コンピューターのプロビジョニングでは、以下のタスクが実行されます。
@@ -28,9 +28,9 @@ ms.locfileid: "63344096"
 -   WDKRemoteUser という名前のユーザーを作成し、そのユーザーに切り替える
 -   まだインストールされていない場合は、.NET 4.0 をインストールする
 -   Microsoft Visual C++ 再頒布可能パッケージ
--   [TAEF (Test Authoring and Execution Framework)](https://msdn.microsoft.com/Library/Windows/Hardware/Hh439725) (WDK クライアント) をインストールする
+-   [TAEF (Test Authoring and Execution Framework)](https://docs.microsoft.com/windows-hardware/drivers/taef/index) (WDK クライアント) をインストールする
 -   デバッガーをインストールする
--   [WDTF (Windows Device Testing Framework)](https://msdn.microsoft.com/Library/Windows/Hardware/Ff539547) をインストールする
+-   [WDTF (Windows Device Testing Framework)](https://docs.microsoft.com/windows-hardware/drivers/wdtf/index) をインストールする
 -   AutoReboot をオフにする
 -   カーネル メモリ クラッシュ ダンプを有効にする
 -   スクリーン セーバーを無効にする
@@ -43,7 +43,7 @@ ms.locfileid: "63344096"
 -   必要に応じてターゲット コンピューターを再起動する
 -   システムの復元ポイントを作る
 
-## <a name="span-idremovingprovisioningfromthetargetcomputerspanspan-idremovingprovisioningfromthetargetcomputerspanspan-idremovingprovisioningfromthetargetcomputerspanremoving-provisioning-from-the-target-computer"></a><span id="Removing_provisioning_from_the_target_computer"></span><span id="removing_provisioning_from_the_target_computer"></span><span id="REMOVING_PROVISIONING_FROM_THE_TARGET_COMPUTER"></span>ターゲット コンピューターからのプロビジョニングの削除
+## <a name="span-idremoving_provisioning_from_the_target_computerspanspan-idremoving_provisioning_from_the_target_computerspanspan-idremoving_provisioning_from_the_target_computerspanremoving-provisioning-from-the-target-computer"></a><span id="Removing_provisioning_from_the_target_computer"></span><span id="removing_provisioning_from_the_target_computer"></span><span id="REMOVING_PROVISIONING_FROM_THE_TARGET_COMPUTER"></span>ターゲット コンピューターからのプロビジョニングの削除
 
 
 ターゲット コンピューターをプロビジョニングすると、プロビジョニングを完全に削除することはできなくなります。 ただし、ホスト コンピューター上の Visual Studio を使って、ターゲット コンピューターからほとんどのプロビジョニングを削除できます。 手順は次のとおりです。
@@ -53,7 +53,7 @@ ms.locfileid: "63344096"
 3.  **[Remove provisioning and delete computer]** (プロビジョニングを削除してコンピューターを削除) を選びます。 **[次へ]** をクリックします。
 4.  削除処理が完了したら、 **[Finish]** (完了) をクリックします。
 
-## <a name="span-idwhenyouremoveprovisioningwdk80spanspan-idwhenyouremoveprovisioningwdk80spanwhen-you-remove-provisioning-wdk-80"></a><span id="when_you_remove_provisioning__wdk_8.0_"></span><span id="WHEN_YOU_REMOVE_PROVISIONING__WDK_8.0_"></span>プロビジョニングを削除する場合 (WDK 8.0)
+## <a name="span-idwhen_you_remove_provisioning__wdk_80_spanspan-idwhen_you_remove_provisioning__wdk_80_spanwhen-you-remove-provisioning-wdk-80"></a><span id="when_you_remove_provisioning__wdk_8.0_"></span><span id="WHEN_YOU_REMOVE_PROVISIONING__WDK_8.0_"></span>プロビジョニングを削除する場合 (WDK 8.0)
 
 
 ターゲット コンピューターからプロビジョニングを削除すると、以下のものが削除されます。

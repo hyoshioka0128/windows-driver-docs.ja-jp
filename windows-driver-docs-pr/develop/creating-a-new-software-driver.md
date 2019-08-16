@@ -5,25 +5,25 @@ description: このトピックでは、Visual Studio を使って新しいソ�
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 35193495b1b556bf16f6c14a3ca153bf146b88f5
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: bcaf5c2e7e27eb5d4791f6825f9a7412768123e3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63382416"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370773"
 ---
 # <a name="creating-a-new-software-driver"></a>新しいソフトウェア ドライバーの作成
 
-このトピックでは、Visual Studio を使って新しいソフトウェア ドライバーの作成を始める方法について説明します。 ソフトウェア ドライバーは、デバイス ファンクション ドライバー、フィルター ドライバー、ファイル システム ドライバーとは異なります。それらのドライバーについては、別のトピックで説明しています。 ソフトウェア ドライバーと、他の種類のドライバーとの違いについて詳しくは、「[ドライバーとは](https://msdn.microsoft.com/Library/Windows/Hardware/Ff554678)」と「[ドライバー モデルの選択](https://msdn.microsoft.com/Library/Windows/Hardware/Ff554652)」をご覧ください。
+このトピックでは、Visual Studio を使って新しいソフトウェア ドライバーの作成を始める方法について説明します。 ソフトウェア ドライバーは、デバイス ファンクション ドライバー、フィルター ドライバー、ファイル システム ドライバーとは異なります。それらのドライバーについては、別のトピックで説明しています。 ソフトウェア ドライバーと、他の種類のドライバーとの違いについて詳しくは、「[ドライバーとは](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/what-is-a-driver-)」と「[ドライバー モデルの選択](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/choosing-a-driver-model)」をご覧ください。
 
-まず、どのドライバー モデルがソフトウェア ドライバーに適しているかを判断します。 選択肢は、カーネル モード ドライバー フレームワーク (KMDF)、従来の NT ドライバー モデル、Windows Driver Model (WDM) の 3 つです。 どのモデルが最適かの判断については、「[ドライバー モデルの選択](https://msdn.microsoft.com/Library/Windows/Hardware/Ff554652)」をご覧ください。
+まず、どのドライバー モデルがソフトウェア ドライバーに適しているかを判断します。 選択肢は、カーネル モード ドライバー フレームワーク (KMDF)、従来の NT ドライバー モデル、Windows Driver Model (WDM) の 3 つです。 どのモデルが最適かの判断については、「[ドライバー モデルの選択](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/choosing-a-driver-model)」をご覧ください。
 
 ## <a name="case-1-you-want-to-use-kmdf"></a>ケース 1:KMDF を使用する
 
 1. Visual Studio の **[ファイル]** メニューで、 **[新規作成]、[プロジェクト]** の順にクリックします。
 2. [新しいプロジェクト] ダイアログ ボックスの左側のウィンドウで、 **[WDF]** を探してクリックします。
 3. 中央のウィンドウで、 **[Kernel Mode Driver (KMDF)] (カーネル モード ドライバー (KMDF))** をクリックします。
-4. **[名前]** ボックスと **[場所]** ボックスに入力し、 **[OK]** をクリックします。 詳しくは、「[テンプレートを使った KMDF ドライバーの作成](https://msdn.microsoft.com/Library/Windows/Hardware/Hh439654)」をご覧ください。
+4. **[名前]** ボックスと **[場所]** ボックスに入力し、 **[OK]** をクリックします。 詳しくは、「[テンプレートを使った KMDF ドライバーの作成](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/writing-a-kmdf-driver-based-on-a-template)」をご覧ください。
     > [!NOTE]
     > 新しい KMDF ドライバーを作成する場合、32 文字以下のドライバー名を選ぶ必要があります。 この長さの制限は、wdfglobals.h で定義されています。
 5. この時点で、ほとんどの KMDF ドライバーに必要な一般的なコードを実装したドライバー プロジェクトができています。 これで、ソフトウェア ドライバー固有のコードを追加できるようになりました。

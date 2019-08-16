@@ -5,12 +5,12 @@ ms.assetid: 19a0ced7-bb31-4899-abb4-2de803f179a6
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6fd3cefa63d4bb457dec2c6330d9998eb38db0ed
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: da04406434d834d2daf2a7528ec1557152e50703
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63335039"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364473"
 ---
 # <a name="device-metadata-business-rules"></a>デバイス メタデータのビジネス規則
 
@@ -23,7 +23,7 @@ ms.locfileid: "63335039"
 
 -   プレビュー パッケージがリリース パッケージとしてダウンロードされないようにする。
 
-## <a name="span-idinthistopicspanspan-idinthistopicspanspan-idinthistopicspanin-this-topic"></a><span id="In_this_topic"></span><span id="in_this_topic"></span><span id="IN_THIS_TOPIC"></span>このトピックの内容
+## <a name="span-idin_this_topicspanspan-idin_this_topicspanspan-idin_this_topicspanin-this-topic"></a><span id="In_this_topic"></span><span id="in_this_topic"></span><span id="IN_THIS_TOPIC"></span>このトピックの内容
 
 
 [デバイス メタデータ提出の一般規則](#devicemetadatabusrules-submission)
@@ -171,13 +171,13 @@ ms.locfileid: "63335039"
 
 ### <a name="span-idbkmk-uniquespanunique-device-stage-metadata-submissions"></a><span id="bkmk-unique"></span>固有の Device Stage メタデータの申請
 
-PC メタデータ パッケージを提出する方法については、「[PC デバイス マニフェスト パッケージの提出](https://msdn.microsoft.com/library/windows/hardware/hh801890.aspx)」をご覧ください。
+PC メタデータ パッケージを提出する方法については、「[PC デバイス マニフェスト パッケージの提出](https://docs.microsoft.com/windows-hardware/drivers/dashboard/)」をご覧ください。
 
-モバイル ブロードバンド メタデータ パッケージを提出する方法については、「[モバイル ブロードバンド デバイス マニフェスト パッケージの提出](https://msdn.microsoft.com/library/windows/hardware/hh801891.aspx)」をご覧ください。
+モバイル ブロードバンド メタデータ パッケージを提出する方法については、「[モバイル ブロードバンド デバイス マニフェスト パッケージの提出](https://docs.microsoft.com/windows-hardware/drivers/dashboard/)」をご覧ください。
 
-複数ロケールのメタデータ パッケージを提出する方法については、「[複数ロケールのデバイス マニフェスト パッケージの提出](https://msdn.microsoft.com/library/windows/hardware/hh801889.aspx)」をご覧ください。
+複数ロケールのメタデータ パッケージを提出する方法については、「[複数ロケールのデバイス マニフェスト パッケージの提出](https://docs.microsoft.com/windows-hardware/drivers/dashboard/)」をご覧ください。
 
-### <a name="span-idwindowsstoredeviceapplimitsspanspan-idwindowsstoredeviceapplimitsspanspan-idwindowsstoredeviceapplimitsspanuwp-device-app-limits"></a><span id="Windows_Store_device_app_limits"></span><span id="windows_store_device_app_limits"></span><span id="WINDOWS_STORE_DEVICE_APP_LIMITS"></span>UWP デバイス アプリの制限
+### <a name="span-idwindows_store_device_app_limitsspanspan-idwindows_store_device_app_limitsspanspan-idwindows_store_device_app_limitsspanuwp-device-app-limits"></a><span id="Windows_Store_device_app_limits"></span><span id="windows_store_device_app_limits"></span><span id="WINDOWS_STORE_DEVICE_APP_LIMITS"></span>UWP デバイス アプリの制限
 
 デバイスの製造元が、自動インストールとアプリの特権のためにデバイス メタデータで指定できる UWP アプリの数には制限があります。 たとえば、周辺機器製造元 (IHV) は、自動インストールが構成されたアプリと、特権アプリとして指定されたアプリを、それぞれ最大 1 つずつ提出できます。 IHV は、両方の制限を満たす 1 つのアプリか、それぞれいずれかの制限を満たす 2 つのアプリを提出できます。
 
@@ -223,14 +223,14 @@ PC メタデータ パッケージを提出する方法については、「[PC 
 
  
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
-- [デバイス メタデータ エクスペリエンスの作成](https://msdn.microsoft.com/library/windows/hardware/br230794.aspx)
+- [デバイス メタデータ エクスペリエンスの作成](https://docs.microsoft.com/windows-hardware/drivers/dashboard/)
 
-- [デバイス メタデータ エクスペリエンスを管理する](https://msdn.microsoft.com/library/windows/hardware/br230797.aspx)
+- [デバイス メタデータ エクスペリエンスを管理する](https://docs.microsoft.com/windows-hardware/drivers/dashboard/)
 
-- [デバイス メタデータ パッケージを申請する (ダッシュボード ヘルプ)](https://msdn.microsoft.com/library/windows/hardware/br230807.aspx)
+- [デバイス メタデータ パッケージを申請する (ダッシュボード ヘルプ)](https://docs.microsoft.com/windows-hardware/drivers/dashboard/)
 
  
 

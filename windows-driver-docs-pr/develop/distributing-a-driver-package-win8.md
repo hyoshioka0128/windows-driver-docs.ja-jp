@@ -4,12 +4,12 @@ title: ドライバー パッケージの配布
 description: ドライバー パッケージの配布
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1324c5771328a6a121554d1a4aa4bf803b09051a
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 1afd0b5a442c7f1e31204a7b306123a089301caf
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64368617"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370756"
 ---
 # <a name="distributing-a-driver-package"></a>ドライバー パッケージの配布
 
@@ -18,16 +18,16 @@ ms.locfileid: "64368617"
 
 このトピックでは、ドライバー パッケージを安全に配布する方法について説明します。 Microsoft Windows Update プログラムを通じてドライバー パッケージを配布する方法についての情報も含まれています。 ここでは、Windows がシステム ファイルをどのように保護するかについても説明します。
 
-## <a name="span-idddkwindowsupdatepgspanspan-idddkwindowsupdatepgspanwindows-update"></a><span id="ddk_windows_update_pg"></span><span id="DDK_WINDOWS_UPDATE_PG"></span>Windows Update
+## <a name="span-idddk_windows_update_pgspanspan-idddk_windows_update_pgspanwindows-update"></a><span id="ddk_windows_update_pg"></span><span id="DDK_WINDOWS_UPDATE_PG"></span>Windows Update
 
 
-* [Windows ハードウェア認定キット (HCK)](https://msdn.microsoft.com/Library/Windows/Hardware/Ff544840) のテストに合格した[ドライバー パッケージ](https://go.microsoft.com/fwlink/p/?linkid=254893)は、WHQL でデジタル署名することができます。 ドライバー パッケージが WHQL によってデジタル署名されると、Windows Update プログラムや Microsoft がサポートする他の配布メカニズムによって配布することができます。
+* [Windows ハードウェア認定キット (HCK)](https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages) のテストに合格した[ドライバー パッケージ](https://go.microsoft.com/fwlink/p/?linkid=254893)は、WHQL でデジタル署名することができます。 ドライバー パッケージが WHQL によってデジタル署名されると、Windows Update プログラムや Microsoft がサポートする他の配布メカニズムによって配布することができます。
 
-WHQL リリース署名の取得は、[Windows ハードウェア認定キット (HCK)](https://go.microsoft.com/fwlink/p/?linkid=254893) の一部です。 WHQL リリース署名は、デジタル署名された[カタログ ファイル](https://msdn.microsoft.com/Library/Windows/Hardware/Ff537872)から成ります。 テスト向けに提出するドライバーのバイナリ ファイルや INF ファイルがデジタル署名によって変更されることはありません。
+WHQL リリース署名の取得は、[Windows ハードウェア認定キット (HCK)](https://go.microsoft.com/fwlink/p/?linkid=254893) の一部です。 WHQL リリース署名は、デジタル署名された[カタログ ファイル](https://docs.microsoft.com/windows-hardware/drivers/install/catalog-files)から成ります。 テスト向けに提出するドライバーのバイナリ ファイルや INF ファイルがデジタル署名によって変更されることはありません。
 
 ドライバー パッケージが以下の条件を満たせば、Windows Update プログラムを通じてドライバー パッケージを配布できます。
 
--   WHQL テスト プログラムに合格し、[WHQL リリース署名](https://msdn.microsoft.com/Library/Windows/Hardware/Ff553976)を取得する。
+-   WHQL テスト プログラムに合格し、[WHQL リリース署名](https://docs.microsoft.com/windows-hardware/drivers/install/whql-release-signature)を取得する。
 
 -   Windows 認定プログラムの資格を得る。
 
@@ -35,7 +35,7 @@ WHQL リリース署名の取得は、[Windows ハードウェア認定キット
 
 Windows Update プログラムの要件は頻繁に更新されるため、[Windows Update でのドライバーの公開](https://go.microsoft.com/fwlink/p/?linkid=8712)に関する Web サイトを定期的に確認する必要があります。
 
-## <a name="span-idddkprotectionforsystemfilespgspanspan-idddkprotectionforsystemfilespgspanprotection-for-system-files"></a><span id="ddk_protection_for_system_files_pg"></span><span id="DDK_PROTECTION_FOR_SYSTEM_FILES_PG"></span>システム ファイルの保護
+## <a name="span-idddk_protection_for_system_files_pgspanspan-idddk_protection_for_system_files_pgspanprotection-for-system-files"></a><span id="ddk_protection_for_system_files_pg"></span><span id="DDK_PROTECTION_FOR_SYSTEM_FILES_PG"></span>システム ファイルの保護
 
 
 Windows ファイル保護 (WFP) では、Windows オペレーティング システム ファイルが不明なバージョンや互換性のないバージョンに置き換えられないように保護します。
@@ -44,7 +44,7 @@ Windows ファイル保護 (WFP) では、Windows オペレーティング シ�
 
 WFP が保護するシステム ファイルの種類は、オペレーティング システムに付属して提供される .sys、.exe、.ocx、.dll ファイルなどです。
 
-WHQL テスト中に、[**Signability**](https://msdn.microsoft.com/Library/Windows/Hardware/Ff547089) プログラムによって、ドライバーの INF ファイルがシステム ファイルを置換しようとしないことが確認されます。 システム ファイルを置換しようとするドライバー パッケージは、デジタル署名を取得できません。 ただし、ドライバー パッケージには、Windows 2000 以降のバージョンのオペレーティング システムに同梱するためにベンダーが Microsoft に提供したファイルの更新されたバージョンを含めることはできます。
+WHQL テスト中に、[**Signability**](https://docs.microsoft.com/windows-hardware/drivers/devtest/inf2cat) プログラムによって、ドライバーの INF ファイルがシステム ファイルを置換しようとしないことが確認されます。 システム ファイルを置換しようとするドライバー パッケージは、デジタル署名を取得できません。 ただし、ドライバー パッケージには、Windows 2000 以降のバージョンのオペレーティング システムに同梱するためにベンダーが Microsoft に提供したファイルの更新されたバージョンを含めることはできます。
 
 Windows ファイル保護に関する追加情報については、Windows SDK ドキュメントをご覧ください。
 

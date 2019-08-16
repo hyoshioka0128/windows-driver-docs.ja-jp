@@ -4,12 +4,12 @@ title: ドライバー プロジェクトのドライバー モデル設定プ�
 description: WDF ライブラリのバージョン、プリプロセッサ定義など、カーネル モード ドライバーまたはユーザー モード ドライバーの基本的なプロパティを設定します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 544dc763cc9dde3335928125f4d1850e90ceda17
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: e0dcb1641d50051d2d743e313fe09bf601857237
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63391518"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370750"
 ---
 # <a name="driver-model-settings-properties-for-driver-projects"></a>ドライバー プロジェクトのドライバー モデル設定プロパティ
 
@@ -29,18 +29,18 @@ WDF ライブラリのバージョン、プリプロセッサ定義など、カ�
 
 * **[WDM]** (NDIS、StorPort など、すべてのミニポート/ポート ドライバーを含む)。
 * **[KMDF]** KMDF ドライバー。
-* **[Export driver (WDM) (エクスポート ドライバー (WDM))]** (エクスポート ドライバー (WDM)) 他のドライバーが呼び出せる関数をエクスポートする WDM ドライバー。 詳しくは、「[エクスポート ドライバーの作成](https://msdn.microsoft.com/Library/Windows/Hardware/Ff542891)」をご覧ください。
+* **[Export driver (WDM) (エクスポート ドライバー (WDM))]** (エクスポート ドライバー (WDM)) 他のドライバーが呼び出せる関数をエクスポートする WDM ドライバー。 詳しくは、「[エクスポート ドライバーの作成](https://docs.microsoft.com/windows-hardware/drivers/kernel/creating-export-drivers)」をご覧ください。
 
 **KMDF Version Major (KMDF バージョン メジャー)**  
 ドライバーの種類が KMDF である場合、このオプションはドライバーのコンパイル時に使われる KMDF のメジャー バージョンを指定します。
 
 KMDF\_VERSION\_MAJOR エントリは、ドライバーを KMDF ライブラリにリンクするように MSBuild ユーティリティに指示します。
 
-詳細については、「[フレームワーク ライブラリのバージョン](https://msdn.microsoft.com/Library/Windows/Hardware/Ff542842)」を参照してください。
+詳細については、「[フレームワーク ライブラリのバージョン](https://docs.microsoft.com/windows-hardware/drivers/wdf/framework-library-versioning)」を参照してください。
 
 **KMDF バージョン マイナー (ターゲット バージョン)** (Windows 10 バージョン 1803 以前では **KMDF バージョン マイナー**でした) ドライバーの種類が KMDF である場合、このオプションにより、ドライバーをコンパイルするときに使用される KMDF のマイナー バージョンが指定されます。
 
-詳細については、「[フレームワーク ライブラリのバージョン](https://msdn.microsoft.com/Library/Windows/Hardware/Ff542842)」を参照してください。 **KMDF バージョン マイナー (ターゲット バージョン)** を指定しない場合、Visual Studio は次の既定値を使用します。
+詳細については、「[フレームワーク ライブラリのバージョン](https://docs.microsoft.com/windows-hardware/drivers/wdf/framework-library-versioning)」を参照してください。 **KMDF バージョン マイナー (ターゲット バージョン)** を指定しない場合、Visual Studio は次の既定値を使用します。
 * Windows 10:1.15
 * Windows 8/Windows 8.1: 1.11
 * Windows 7: 1.9
@@ -50,7 +50,7 @@ KMDF\_VERSION\_MAJOR エントリは、ドライバーを KMDF ライブラリ�
 詳細については、「[複数のバージョンの Windows の WDF ドライバーをビルドする](../wdf/building-a-wdf-driver-for-multiple-versions-of-windows.md)」を参照してください。
 
 **UMDF Version Major (UMDF バージョン メジャー)**  
-UMDF ドライバーの場合、このオプションはドライバーのコンパイル時に使われる UMDF のメジャー バージョンを指定します。 「[UMDF バージョン履歴](https://msdn.microsoft.com/Library/Windows/Hardware/Ff561356)」をご覧ください。 UMDF ドライバーの場合、 **[構成の種類]** は **[ダイナミック ライブラリ (.dll)]** です。
+UMDF ドライバーの場合、このオプションはドライバーのコンパイル時に使われる UMDF のメジャー バージョンを指定します。 「[UMDF バージョン履歴](https://docs.microsoft.com/windows-hardware/drivers/wdf/umdf-version-history)」をご覧ください。 UMDF ドライバーの場合、 **[構成の種類]** は **[ダイナミック ライブラリ (.dll)]** です。
 
 **UMDF バージョン マイナー (ターゲット バージョン)** (Windows 10 バージョン 1803 以前では **UMDF バージョン マイナー**でした) UMDF ドライバーがある場合、このオプションにより、ドライバーをコンパイルするときに使用される UMDF のマイナー バージョンが指定されます。 **UMDF バージョン マイナー (ターゲット バージョン)** を指定しない場合、Visual Studio は次の既定値を使用します。
 
@@ -77,11 +77,11 @@ Windows 10 バージョン 1803 (Redstone 4) の KMDF バージョン 1.25 お�
 ## <a name="related-topics"></a>関連トピック
 
 
-* [フレームワーク ライブラリのバージョン](https://msdn.microsoft.com/Library/Windows/Hardware/Ff542842)
-* [フレームワーク ベースのドライバーのビルドと読み込み](https://msdn.microsoft.com/Library/Windows/Hardware/Ff540730)
-* [UMDF バージョン履歴](https://msdn.microsoft.com/Library/Windows/Hardware/Ff561356)
-* [UMDF ドライバーのビルド](https://msdn.microsoft.com/Library/Windows/Hardware/Ff540730)
-* [エクスポート ドライバーの作成](https://msdn.microsoft.com/Library/Windows/Hardware/Ff542891)
+* [フレームワーク ライブラリのバージョン](https://docs.microsoft.com/windows-hardware/drivers/wdf/framework-library-versioning)
+* [フレームワーク ベースのドライバーのビルドと読み込み](https://docs.microsoft.com/windows-hardware/drivers/wdf/building-and-loading-a-kmdf-driver)
+* [UMDF バージョン履歴](https://docs.microsoft.com/windows-hardware/drivers/wdf/umdf-version-history)
+* [UMDF ドライバーのビルド](https://docs.microsoft.com/windows-hardware/drivers/wdf/building-and-loading-a-kmdf-driver)
+* [エクスポート ドライバーの作成](https://docs.microsoft.com/windows-hardware/drivers/kernel/creating-export-drivers)
  
 
  

@@ -13,21 +13,21 @@ keywords:
 - ファイル WDK ヘッダー ファイル
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4968e2e0508c5dbd86687bd15b57d76321d9edc3
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 4d517eb0cf67d274bbffd80403f7927400793a76
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63371536"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371965"
 ---
 # <a name="header-files-in-the-windows-driver-kit"></a>Windows Driver Kit (WDK) のヘッダー ファイル
 
 
-[Windows Driver Kit (WDK)](https://msdn.microsoft.com/library/windows/hardware/ff557573) には、カーネル モード ドライバーとユーザー モード ドライバーをビルドする際に必要となるすべてのヘッダー ファイル (.h ファイル) が含まれています。 ヘッダー ファイルは WDK インストール フォルダー内の Include フォルダーにあります。 以下に例を示します。C:\\Program Files (x86)\\Windows Kits\\10\\Include
+[Windows Driver Kit (WDK)](https://docs.microsoft.com/windows-hardware/drivers/) には、カーネル モード ドライバーとユーザー モード ドライバーをビルドする際に必要となるすべてのヘッダー ファイル (.h ファイル) が含まれています。 ヘッダー ファイルは WDK インストール フォルダー内の Include フォルダーにあります。 以下に例を示します。C:\\Program Files (x86)\\Windows Kits\\10\\Include
 
 ヘッダー ファイルには、バージョン情報も含まれているため、ドライバーを実行する Windows のバージョンには関係なく、同じヘッダー ファイル セットを使用できます。
 
-## <a name="span-idconstantsthatrepresentwindowsversionsspanspan-idconstantsthatrepresentwindowsversionsspanspan-idconstantsthatrepresentwindowsversionsspanconstants-that-represent-windows-versions"></a><span id="Constants_that_represent_Windows_versions"></span><span id="constants_that_represent_windows_versions"></span><span id="CONSTANTS_THAT_REPRESENT_WINDOWS_VERSIONS"></span>Windows バージョンを表す定数
+## <a name="span-idconstants_that_represent_windows_versionsspanspan-idconstants_that_represent_windows_versionsspanspan-idconstants_that_represent_windows_versionsspanconstants-that-represent-windows-versions"></a><span id="Constants_that_represent_Windows_versions"></span><span id="constants_that_represent_windows_versions"></span><span id="CONSTANTS_THAT_REPRESENT_WINDOWS_VERSIONS"></span>Windows バージョンを表す定数
 
 
 WDK 中のヘッダー ファイルには、Windows オペレーティング システムの特定のバージョンでのみ利用できるプログラミング要素を指定する条件ステートメントが含まれています。 バージョン付きの要素には、関数、列挙、構造体と構造体メンバーがあります。
@@ -99,7 +99,7 @@ KeSetTargetProcessorDpcEx (
 #endif
 ```
 
-この例で、[**KeSetTargetProcessorDpcEx**](https://msdn.microsoft.com/library/windows/hardware/ff553279) 関数は Windows 7 とそれ以降の Windows バージョンでのみ利用できることがわかります。
+この例で、[**KeSetTargetProcessorDpcEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesettargetprocessordpcex) 関数は Windows 7 とそれ以降の Windows バージョンでのみ利用できることがわかります。
 
 この条件付き宣言は、Winspool.h ヘッダー ファイルにあります。このヘッダー ファイルは、ユーザー モード ドライバーに含まれることがあります。
 
@@ -115,9 +115,9 @@ GetPrintExecutionData(
 #endif // (NTDDI_VERSION >= NTDDI_WIN7)
 ```
 
-この例で、[**GetPrintExecutionData**](https://msdn.microsoft.com/library/windows/desktop/ee264322) 関数は Windows 7 とそれ以降の Windows バージョンでのみ利用できることがわかります。
+この例で、[**GetPrintExecutionData**](https://docs.microsoft.com/windows/desktop/printdocs/getprintexecutiondata) 関数は Windows 7 とそれ以降の Windows バージョンでのみ利用できることがわかります。
 
-## <a name="span-idheaderfilesforthekernelmodedriverframeworkspanspan-idheaderfilesforthekernelmodedriverframeworkspanspan-idheaderfilesforthekernelmodedriverframeworkspanheader-files-for-the-kernel-mode-driver-framework"></a><span id="Header_files_for_the_Kernel_Mode_Driver_Framework"></span><span id="header_files_for_the_kernel_mode_driver_framework"></span><span id="HEADER_FILES_FOR_THE_KERNEL_MODE_DRIVER_FRAMEWORK"></span>カーネル モード ドライバー フレームワークのヘッダー ファイル
+## <a name="span-idheader_files_for_the_kernel_mode_driver_frameworkspanspan-idheader_files_for_the_kernel_mode_driver_frameworkspanspan-idheader_files_for_the_kernel_mode_driver_frameworkspanheader-files-for-the-kernel-mode-driver-framework"></a><span id="Header_files_for_the_Kernel_Mode_Driver_Framework"></span><span id="header_files_for_the_kernel_mode_driver_framework"></span><span id="HEADER_FILES_FOR_THE_KERNEL_MODE_DRIVER_FRAMEWORK"></span>カーネル モード ドライバー フレームワークのヘッダー ファイル
 
 
 WDK では、複数のバージョンの Windows がサポートされており、カーネル モード ドライバー フレームワーク (KMDF) とユーザー モード ドライバー フレームワーク (UMDF) も複数のバージョンがサポートされています。 WDK ヘッダー ファイルのバージョン情報は、Windows バージョンに関するものであり、KMDF や UMDF のバージョンに関する情報ではありません。 KMDF と UMDF の異なるバージョンのヘッダー ファイルは、別のディレクトリに格納されています。

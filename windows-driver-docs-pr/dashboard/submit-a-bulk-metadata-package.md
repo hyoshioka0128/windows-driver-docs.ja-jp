@@ -5,17 +5,17 @@ ms.assetid: c8e248d4-a419-48e1-839d-1bbb9adda382
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 234f587de393dad428b14041e3d25a55e56979cf
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 04c789f0b204b1752d652073e463989eb4575a7f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63334921"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364432"
 ---
 # <a name="submit-a-bulk-metadata-package"></a>バルク メタデータ パッケージの提出
 
 
-## <a name="span-idsubmittingabulkmetadatapackagespanspan-idsubmittingabulkmetadatapackagespanspan-idsubmittingabulkmetadatapackagespansubmitting-a-bulk-metadata-package"></a><span id="Submitting_a_bulk_metadata_package"></span><span id="submitting_a_bulk_metadata_package"></span><span id="SUBMITTING_A_BULK_METADATA_PACKAGE"></span>バルク メタデータ パッケージの提出
+## <a name="span-idsubmitting_a_bulk_metadata_packagespanspan-idsubmitting_a_bulk_metadata_packagespanspan-idsubmitting_a_bulk_metadata_packagespansubmitting-a-bulk-metadata-package"></a><span id="Submitting_a_bulk_metadata_package"></span><span id="submitting_a_bulk_metadata_package"></span><span id="SUBMITTING_A_BULK_METADATA_PACKAGE"></span>バルク メタデータ パッケージの提出
 
 
 **バルク メタデータ パッケージを提出するには**
@@ -28,7 +28,7 @@ ms.locfileid: "63334921"
 
 4.  新しいバルク メタデータ パッケージを参照して選び、 **[Submit]** (送信) をクリックします。
 
-## <a name="span-idcreatingabulksubmissionpackagespanspan-idcreatingabulksubmissionpackagespanspan-idcreatingabulksubmissionpackagespancreating-a-bulk-submission-package"></a><span id="Creating_a_Bulk_Submission_Package"></span><span id="creating_a_bulk_submission_package"></span><span id="CREATING_A_BULK_SUBMISSION_PACKAGE"></span>バルク メタデータ サブミッション パッケージの作成
+## <a name="span-idcreating_a_bulk_submission_packagespanspan-idcreating_a_bulk_submission_packagespanspan-idcreating_a_bulk_submission_packagespancreating-a-bulk-submission-package"></a><span id="Creating_a_Bulk_Submission_Package"></span><span id="creating_a_bulk_submission_package"></span><span id="CREATING_A_BULK_SUBMISSION_PACKAGE"></span>バルク メタデータ サブミッション パッケージの作成
 
 
 バルク メタデータ サブミッション パッケージは、複数のデバイス メタデータ パッケージをダッシュボードに提出する場合に使われるパッケージ形式です。
@@ -39,7 +39,7 @@ ms.locfileid: "63334921"
 
 Device Metadata Submission (デバイス メタデータの提出) ウィザードを使って一括メタデータ パッケージを作る方法について詳しくは、[Visual Studio でのデバイス メタデータ提出パッケージの作成に関するページ](https://go.microsoft.com/fwlink/p/?LinkId=251705)をご覧ください。
 
-### <a name="span-idbulkmetadatasubmissionpackagecontentsspanspan-idbulkmetadatasubmissionpackagecontentsspanspan-idbulkmetadatasubmissionpackagecontentsspanbulk-metadata-submission-package-contents"></a><span id="Bulk_Metadata_Submission_Package_Contents"></span><span id="bulk_metadata_submission_package_contents"></span><span id="BULK_METADATA_SUBMISSION_PACKAGE_CONTENTS"></span>バルク メタデータ サブミッション パッケージの内容
+### <a name="span-idbulk_metadata_submission_package_contentsspanspan-idbulk_metadata_submission_package_contentsspanspan-idbulk_metadata_submission_package_contentsspanbulk-metadata-submission-package-contents"></a><span id="Bulk_Metadata_Submission_Package_Contents"></span><span id="bulk_metadata_submission_package_contents"></span><span id="BULK_METADATA_SUBMISSION_PACKAGE_CONTENTS"></span>バルク メタデータ サブミッション パッケージの内容
 
 バルク メタデータ サブミッション パッケージは、それぞれ次のコンポーネントで構成されます。
 
@@ -61,7 +61,7 @@ Device Metadata Submission (デバイス メタデータの提出) ウィザー�
 
  
 
-### <a name="span-idstructureofabulkmetadatasubmissionpackagespanspan-idstructureofabulkmetadatasubmissionpackagespanspan-idstructureofabulkmetadatasubmissionpackagespanstructure-of-a-bulk-metadata-submission-package"></a><span id="Structure_of_a_Bulk_Metadata_Submission_Package"></span><span id="structure_of_a_bulk_metadata_submission_package"></span><span id="STRUCTURE_OF_A_BULK_METADATA_SUBMISSION_PACKAGE"></span>バルク メタデータ サブミッション パッケージの構造
+### <a name="span-idstructure_of_a_bulk_metadata_submission_packagespanspan-idstructure_of_a_bulk_metadata_submission_packagespanspan-idstructure_of_a_bulk_metadata_submission_packagespanstructure-of-a-bulk-metadata-submission-package"></a><span id="Structure_of_a_Bulk_Metadata_Submission_Package"></span><span id="structure_of_a_bulk_metadata_submission_package"></span><span id="STRUCTURE_OF_A_BULK_METADATA_SUBMISSION_PACKAGE"></span>バルク メタデータ サブミッション パッケージの構造
 
 バルク メタデータ サブミッション パッケージのコンポーネントは、圧縮キャビネット ファイルに格納されています。 ファイル名には ".bulkmetadata-ms" というサフィックスを含める必要があります。
 
@@ -84,7 +84,7 @@ BulkMetadataSubmission.xml を作成する方法については、以下をご�
 
 デバイス メタデータ パッケージ (\*.devicemetadata-ms) を開発する方法について詳しくは、[Windows 8 のデバイス メタデータ パッケージのスキーマ レファレンス](https://go.microsoft.com/fwlink/p/?LinkId=226753)に関するページをご覧ください。
 
-デバイス マニフェスト パッケージ (\*.devicemanifest-ms) を開発するには、「[PC デバイス マニフェスト パッケージの提出](https://msdn.microsoft.com/library/windows/hardware/hh801890.aspx)」をご覧ください。
+デバイス マニフェスト パッケージ (\*.devicemanifest-ms) を開発するには、「[PC デバイス マニフェスト パッケージの提出](https://docs.microsoft.com/windows-hardware/drivers/dashboard/)」をご覧ください。
 
 Cabarc ツールを使って、このような CAB パッケージを作成できます。 このツールについて詳しくは、[Cabarc の概要](https://go.microsoft.com/fwlink/p/?LinkId=248843)に関するページをご覧ください。
 
@@ -127,10 +127,10 @@ N .\BulkFiles\ DDMMYYYY.bulkmetadata-ms
 
  
 
-## <a name="span-idcreatingbulkmetadatasubmissionxmlspanspan-idcreatingbulkmetadatasubmissionxmlspancreating-bulkmetadatasubmissionxml"></a><span id="creating_bulkmetadatasubmission.xml"></span><span id="CREATING_BULKMETADATASUBMISSION.XML"></span>BulkMetadataSubmission.xml の作成
+## <a name="span-idcreating_bulkmetadatasubmissionxmlspanspan-idcreating_bulkmetadatasubmissionxmlspancreating-bulkmetadatasubmissionxml"></a><span id="creating_bulkmetadatasubmission.xml"></span><span id="CREATING_BULKMETADATASUBMISSION.XML"></span>BulkMetadataSubmission.xml の作成
 
 
-### <a name="span-idbulkmetadatasubmissionxmlschemaspanspan-idbulkmetadatasubmissionxmlschemaspanspan-idbulkmetadatasubmissionxmlschemaspanbulkmetadatasubmission-xml-schema"></a><span id="BulkMetadataSubmission_XML_Schema"></span><span id="bulkmetadatasubmission_xml_schema"></span><span id="BULKMETADATASUBMISSION_XML_SCHEMA"></span>BulkMetadataSubmission XML スキーマ
+### <a name="span-idbulkmetadatasubmission_xml_schemaspanspan-idbulkmetadatasubmission_xml_schemaspanspan-idbulkmetadatasubmission_xml_schemaspanbulkmetadatasubmission-xml-schema"></a><span id="BulkMetadataSubmission_XML_Schema"></span><span id="bulkmetadatasubmission_xml_schema"></span><span id="BULKMETADATASUBMISSION_XML_SCHEMA"></span>BulkMetadataSubmission XML スキーマ
 
 バルク メタデータ サブミッション パッケージには、BulkMetadataSubmission.xml という名前のドキュメントが 1 つ含まれています。ダッシュボードは、このドキュメントに含まれている情報に基づいて、フレンドリ名を持つエクスペリエンスの作成、パッケージのエクスペリエンスへの構成、エクスペリエンスの更新、個々のパッケージのプレビューとしてのマーキングを行います。
 
@@ -301,7 +301,7 @@ BulkMetadataSubmission XML スキーマのメタデータは以下のとおり�
 </xs:schema>
 ```
 
-### <a name="span-idbulkmetadatasubmissionxmlschemareferencespanspan-idbulkmetadatasubmissionxmlschemareferencespanspan-idbulkmetadatasubmissionxmlschemareferencespanbulkmetadatasubmission-xml-schema-reference"></a><span id="BulkMetadataSubmission_XML_Schema_Reference"></span><span id="bulkmetadatasubmission_xml_schema_reference"></span><span id="BULKMETADATASUBMISSION_XML_SCHEMA_REFERENCE"></span>BulkMetadataSubmission XML スキーマ リファレンス
+### <a name="span-idbulkmetadatasubmission_xml_schema_referencespanspan-idbulkmetadatasubmission_xml_schema_referencespanspan-idbulkmetadatasubmission_xml_schema_referencespanbulkmetadatasubmission-xml-schema-reference"></a><span id="BulkMetadataSubmission_XML_Schema_Reference"></span><span id="bulkmetadatasubmission_xml_schema_reference"></span><span id="BULKMETADATASUBMISSION_XML_SCHEMA_REFERENCE"></span>BulkMetadataSubmission XML スキーマ リファレンス
 
 BulkMetadataSubmission XML スキーマで定義される要素と属性は以下のとおりです。
 
@@ -563,7 +563,7 @@ update 属性は、エクスペリエンスを更新するかどうかを指定�
 <xs:attribute name="update" type="xs:boolean" use="required"/>
 ```
 
-### <a name="span-idbulkmetadatasubmissionxmlexamplespanspan-idbulkmetadatasubmissionxmlexamplespanspan-idbulkmetadatasubmissionxmlexamplespanbulkmetadatasubmission-xml-example"></a><span id="BulkMetadataSubmission_XML_Example"></span><span id="bulkmetadatasubmission_xml_example"></span><span id="BULKMETADATASUBMISSION_XML_EXAMPLE"></span>BulkMetadataSubmission XML の例
+### <a name="span-idbulkmetadatasubmission_xml_examplespanspan-idbulkmetadatasubmission_xml_examplespanspan-idbulkmetadatasubmission_xml_examplespanbulkmetadatasubmission-xml-example"></a><span id="BulkMetadataSubmission_XML_Example"></span><span id="bulkmetadatasubmission_xml_example"></span><span id="BULKMETADATASUBMISSION_XML_EXAMPLE"></span>BulkMetadataSubmission XML の例
 
 以下の XML ドキュメントでは、BulkMetadataSubmission XML ドキュメントのコンポーネントが BulkMetadataSubmission XML スキーマを使って指定されています。
 

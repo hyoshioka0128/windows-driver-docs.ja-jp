@@ -4,22 +4,22 @@ title: テスト メタデータを追加する方法
 description: Windows Driver Kit (WDK) と Test Authoring and Execution Framework (TAEF) を使って、Windows 8 用のテスト コンテンツを作成します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ff7f628c3c325724fbd9c433a04bb450ddac8eb8
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: d28281ed52474270cdd340d9bd9cf7e03db7e4a2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63344120"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364208"
 ---
 # <a name="how-to-add-test-metadata"></a>テスト メタデータを追加する方法
 
-Windows 8 の Windows Driver Kit (WDK) では、テスト コンテンツの作成に [Test Authoring and Execution Framework (TAEF)](https://msdn.microsoft.com/Library/Windows/Hardware/Hh439725) が使われます。 TAEF テストは、複数のメソッドを含むダイナミック リンク ライブラリ (DLL) として実装されたオブジェクトで、各メソッドは特定のテスト シナリオにマップされています。 TAEF オブジェクトは、関連するメソッドを組み合わせてテストのグループを作ります。 各テストに対して、テストについて説明する一連のメタデータがあります。 テストの移植性とカプセル化を向上させるため、TAEF はテストのメタデータをテスト オブジェクト自体と共に格納します。 ドライバー テスト テンプレートを使って独自のドライバー テストを作った場合、ドライバー テストを利用可能にして Visual Studio を使って展開できるように、このメタデータを追加する必要があります。
+Windows 8 の Windows Driver Kit (WDK) では、テスト コンテンツの作成に [Test Authoring and Execution Framework (TAEF)](https://docs.microsoft.com/windows-hardware/drivers/taef/index) が使われます。 TAEF テストは、複数のメソッドを含むダイナミック リンク ライブラリ (DLL) として実装されたオブジェクトで、各メソッドは特定のテスト シナリオにマップされています。 TAEF オブジェクトは、関連するメソッドを組み合わせてテストのグループを作ります。 各テストに対して、テストについて説明する一連のメタデータがあります。 テストの移植性とカプセル化を向上させるため、TAEF はテストのメタデータをテスト オブジェクト自体と共に格納します。 ドライバー テスト テンプレートを使って独自のドライバー テストを作った場合、ドライバー テストを利用可能にして Visual Studio を使って展開できるように、このメタデータを追加する必要があります。
 
 ### <a name="span-idprerequisitesspanspan-idprerequisitesspanspan-idprerequisitesspanprerequisites"></a><span id="Prerequisites"></span><span id="prerequisites"></span><span id="PREREQUISITES"></span>前提条件
 
 -   ドライバー テスト テンプレートのいずれかを使って作ったドライバー テストのソース コード。 詳しくは、「[ドライバー テスト テンプレートを使ってドライバー テストを作成する方法](how-to-write-a-driver-test-.md)」をご覧ください。
 
-### <a name="span-idtoaddtestmetadataattributesspanspan-idtoaddtestmetadataattributesspanspan-idtoaddtestmetadataattributesspanto-add-test-metadata-attributes"></a><span id="To_add_test_metadata_attributes"></span><span id="to_add_test_metadata_attributes"></span><span id="TO_ADD_TEST_METADATA_ATTRIBUTES"></span>テスト メタデータ属性を追加するには
+### <a name="span-idto_add_test_metadata_attributesspanspan-idto_add_test_metadata_attributesspanspan-idto_add_test_metadata_attributesspanto-add-test-metadata-attributes"></a><span id="To_add_test_metadata_attributes"></span><span id="to_add_test_metadata_attributes"></span><span id="TO_ADD_TEST_METADATA_ATTRIBUTES"></span>テスト メタデータ属性を追加するには
 
 1.  必要なテスト プロパティ メタデータをテストのソース ファイルに追加します。
 2.  たとえば、ドライバー テスト テンプレートを使って独自の SurpriseRemove テストを作った場合、次のメタデータが追加されます。 テストの説明、表示名、カテゴリ、結果ファイルの属性を編集します。
@@ -375,9 +375,9 @@ Windows 8 の Windows Driver Kit (WDK) では、テスト コンテンツの作
     </table>
 
     <span id="Deploymentitem"></span><span id="deploymentitem"></span><span id="DEPLOYMENTITEM"></span>**Deploymentitem**  
-    テストの依存関係としてファイルやフォルダーを識別します。 テストの実行に必要な任意のリソースが含まれる場合があります。 このメタデータの使用について詳しくは、「[項目メタデータの展開](https://msdn.microsoft.com/Library/Windows/Hardware/Hh439604)」をご覧ください。
+    テストの依存関係としてファイルやフォルダーを識別します。 テストの実行に必要な任意のリソースが含まれる場合があります。 このメタデータの使用について詳しくは、「[項目メタデータの展開](https://docs.microsoft.com/windows-hardware/drivers/taef/deploymentitem-metadata)」をご覧ください。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
 * [ドライバー テスト テンプレートを使ってドライバー テストを作成する方法](how-to-write-a-driver-test-.md)

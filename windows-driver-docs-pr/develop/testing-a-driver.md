@@ -4,18 +4,18 @@ title: ドライバーのテスト
 description: ドライバーのテスト
 ms.date: 06/28/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 476e61e300d808cfbfe9ffb8aa74ee7c2e001804
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 53fa185c23d5d2b7c3f99e74d27482ff065f4d2c
+ms.sourcegitcommit: 46654c090f937923d9712de114fdebe7deffeaaf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63344157"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67427688"
 ---
 # <a name="testing-a-driver"></a>ドライバーのテスト
 
 WDK は Visual Studio にドライバー テスト インターフェイスを追加して、ネットワーク上のリモート テスト コンピューターでドライバーのビルド、展開、インストール、テストを実行できるようにします。 WDK にはデバイス ドライバー テストのコレクションも用意されていて、ドライバーの機能のテストに使うことができます。 Visual Studio のドライバー テスト テンプレートを使って、テストをカスタマイズしたり、独自のドライバー テストを作ることもできます。
 
-## <a name="span-idvideodemonstrationspanspan-idvideodemonstrationspanspan-idvideodemonstrationspanvideo-demonstration"></a><span id="Video_Demonstration"></span><span id="video_demonstration"></span><span id="VIDEO_DEMONSTRATION"></span>ビデオ デモンストレーション
+## <a name="span-idvideo_demonstrationspanspan-idvideo_demonstrationspanspan-idvideo_demonstrationspanvideo-demonstration"></a><span id="Video_Demonstration"></span><span id="video_demonstration"></span><span id="VIDEO_DEMONSTRATION"></span>ビデオ デモンストレーション
 
 
 このビデオでは、テスト グループでドライバー関連のテストを実行する方法について説明します。
@@ -58,9 +58,9 @@ WDK は、テスト バイナリと、コマンド ラインから Device Fundam
 </tbody>
 </table>
 
- 
+## <a name="see-also"></a>参照
 
- 
+[ドライバーの検証用ツール](https://docs.microsoft.com/windows-hardware/drivers/devtest/tools-for-verifying-drivers)
 
  
 

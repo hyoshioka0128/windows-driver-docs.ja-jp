@@ -5,12 +5,12 @@ ms.assetid: ce018a26-f5ce-4fbb-8339-b3207ca5ed68
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d01802185f3436773f419af5435f8c51452c079
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: b000e700b8639bb44653fd4abbf6a8c55a07266a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63337211"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363824"
 ---
 # <a name="service-icon-requirements"></a>サービス アイコンの要件
 
@@ -58,11 +58,11 @@ ms.locfileid: "63337211"
 
  
 
-サービス アイコンは、サービス メタデータ パッケージの [ServiceInfo XML スキーマ](https://msdn.microsoft.com/library/windows/hardware/dn973167)の [ServiceIconFile](https://msdn.microsoft.com/library/windows/hardware/dn973162) 要素に関連付けられます。
+サービス アイコンは、サービス メタデータ パッケージの [ServiceInfo XML スキーマ](https://docs.microsoft.com/windows-hardware/drivers/mobilebroadband/serviceinfo-xml-schema)の [ServiceIconFile](https://docs.microsoft.com/windows-hardware/drivers/mobilebroadband/serviceiconfile) 要素に関連付けられます。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
-- [モバイル ブロードバンド エクスペリエンスを作成する](https://msdn.microsoft.com/library/windows/hardware/dn236414.aspx)
+- [モバイル ブロードバンド エクスペリエンスを作成する](https://docs.microsoft.com/windows-hardware/drivers/dashboard/create-a-mobile-broadband-experience)
 
  
 

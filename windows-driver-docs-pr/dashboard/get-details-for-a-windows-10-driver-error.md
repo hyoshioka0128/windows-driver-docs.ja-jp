@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 08/28/2018
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, エラー, 詳細
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c252ef1f79a868a1ceb8e5668181e727b0cc6bf
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 9bc3240c09fafe9e7cc5281d90c37300b0a2158c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63337230"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353901"
 ---
 # <a name="get-details-for-a-windows-10-driver-error"></a>Windows 10 のドライバー エラーに関する詳細を取得する
 
@@ -29,7 +29,7 @@ ms.locfileid: "63337230"
 Windows 10 の特定のドライバー エラーに関する詳細データを JSON 形式で取得するには、Microsoft Store 分析 API の以下のメソッドを使います。 このメソッドを使うには、事前に[ Windows 10 のドライバーに関するエラー報告データを取得する](get-error-reporting-data-for-windows-10-drivers.md)メソッドを使用し、必要な詳細情報の対象となるエラーの ID を取得しておく必要があります。
 
 > [!NOTE]
-> このメソッドは、[Windows ハードウェア デベロッパー センター プログラム](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/get-started-with-the-hardware-dashboard)に参加している開発者アカウントでのみ使用できます。
+> このメソッドは、[Windows ハードウェア デベロッパー センター プログラム](https://docs.microsoft.com/windows-hardware/drivers/dashboard/get-started-with-the-hardware-dashboard)に参加している開発者アカウントでのみ使用できます。
 
 ## <a name="prerequisites"></a>前提条件
 

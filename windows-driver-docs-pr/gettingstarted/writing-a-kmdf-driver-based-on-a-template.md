@@ -6,16 +6,16 @@ keywords:
 - KMDF ドライバーの作成
 ms.date: 04/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 4afffd32b35b77560354b56e88d2a997394cbe9d
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 93b1d7ec9576a9ec817ef6f7aa1f64797a5fa1f6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66840863"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359295"
 ---
 # <a name="write-a-universal-windows-driver-kmdf-based-on-a-template"></a>テンプレートを使ったユニバーサル Windows ドライバー (KMDF) の作成
 
-このトピックでは、カーネルモード ドライバー フレームワーク (KMDF) を使って[ユニバーサル Windows ドライバー](https://msdn.microsoft.com/windows-drivers/develop/getting_started_with_universal_drivers)を作成する方法について説明します。 Microsoft Visual Studio テンプレートを使って開始し、別のコンピューターにドライバーを展開してインストールします。
+このトピックでは、カーネルモード ドライバー フレームワーク (KMDF) を使って[ユニバーサル Windows ドライバー](https://docs.microsoft.com/windows-hardware/drivers)を作成する方法について説明します。 Microsoft Visual Studio テンプレートを使って開始し、別のコンピューターにドライバーを展開してインストールします。
 
 最初に、[Microsoft Visual Studio 2015](https://go.microsoft.com/fwlink/p/?LinkId=698539) と [Windows Driver Kit (WDK) 10](https://go.microsoft.com/fwlink/p/?LinkId=733614) がインストールされていることを確認します。
 

@@ -4,52 +4,52 @@ title: Device Fundamental テストを選んで構成する方法
 description: Windows 8 用 WDK には、Device Fundamental テストと呼ばれる一連のテストを含むドライバー テスト フレームワークが用意されています。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 20842ec8fd3dd48672fe9ea1f7301739c36d00aa
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 1ea15e3628e9de1a3171bb0bb24428218135e2bc
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "57349145"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67393534"
 ---
 # <a name="how-to-select-and-configure-the-device-fundamentals-tests"></a>Device Fundamental テストを選んで構成する方法
 
 Windows 8 用 WDK には、Device Fundamental テストと呼ばれる一連のテストを含むドライバー テスト フレームワークが用意されています。 Device Fundamental テストはテストのコレクションで、Windows と WDK に同梱されるドライバーやドライバー サンプルのテスト用に Microsoft 社内で使われることも、[Windows ハードウェア認定プログラム](https://go.microsoft.com/fwlink/p/?linkid=8705)の一環として外部で使われることもあります。 このテストは開発環境から実行できます。 テストを実行するときは、Windows 認定のテストで使ったのと同じパラメーターを使ったり、テストやデバッグのニーズに応じてランタイム パラメーターの構成やカスタマイズを行ったりできます。
 
-## <a name="span-idgettingthemostfromthedevicefundamentalstestsspanspan-idgettingthemostfromthedevicefundamentalstestsspanspan-idgettingthemostfromthedevicefundamentalstestsspangetting-the-most-from-the-device-fundamentals-tests"></a><span id="Getting_the_most_from_the_Device_Fundamentals_tests"></span><span id="getting_the_most_from_the_device_fundamentals_tests"></span><span id="GETTING_THE_MOST_FROM_THE_DEVICE_FUNDAMENTALS_TESTS"></span>Device Fundamental テストの有効活用
+## <a name="span-idgetting_the_most_from_the_device_fundamentals_testsspanspan-idgetting_the_most_from_the_device_fundamentals_testsspanspan-idgetting_the_most_from_the_device_fundamentals_testsspangetting-the-most-from-the-device-fundamentals-tests"></a><span id="Getting_the_most_from_the_Device_Fundamentals_tests"></span><span id="getting_the_most_from_the_device_fundamentals_tests"></span><span id="GETTING_THE_MOST_FROM_THE_DEVICE_FUNDAMENTALS_TESTS"></span>Device Fundamental テストの有効活用
 
 
-Device Fundamental テストを最大限に有効活用するには、デバイスが既定の I/O プラグインでサポートされている必要があります。デバイスの種類がサポートされているかどうかと、テストに固有の要件があるかどうかを確認するには、「[提供されている WDTF シンプル I/O プラグイン](https://msdn.microsoft.com/Library/Windows/Hardware/Hh781398)」をご覧ください。Device Fundamental テストには、デバイスがサポートされているかどうかの確認テストに使うことができるユーティリティも含まれています。 デバイスがサポートされていない場合は、WDTF シンプル I/O プラグインを Visual Studio で作ることができます。 詳しくは、「[WDTF シンプル I/O アクション プラグインを使ってデバイスの I/O をカスタマイズする方法](https://msdn.microsoft.com/Library/Windows/Hardware/Hh706277)」をご覧ください。
+Device Fundamental テストを最大限に有効活用するには、デバイスが既定の I/O プラグインでサポートされている必要があります。デバイスの種類がサポートされているかどうかと、テストに固有の要件があるかどうかを確認するには、「[提供されている WDTF シンプル I/O プラグイン](https://docs.microsoft.com/windows-hardware/drivers/wdtf/provided-wdtf-simpleio-plug-ins)」をご覧ください。Device Fundamental テストには、デバイスがサポートされているかどうかの確認テストに使うことができるユーティリティも含まれています。 デバイスがサポートされていない場合は、WDTF シンプル I/O プラグインを Visual Studio で作ることができます。 詳しくは、「[WDTF シンプル I/O アクション プラグインを使ってデバイスの I/O をカスタマイズする方法](https://docs.microsoft.com/windows-hardware/drivers/wdtf/to-customize-i-o-for-your-device-using-the-wdtf-simple-i-o-action-plug-in)」をご覧ください。
 
-## <a name="span-idaboutthedevicefundamentalstestsspanspan-idaboutthedevicefundamentalstestsspanspan-idaboutthedevicefundamentalstestsspanabout-the-device-fundamentals-tests"></a><span id="About_the_Device_Fundamentals_Tests"></span><span id="about_the_device_fundamentals_tests"></span><span id="ABOUT_THE_DEVICE_FUNDAMENTALS_TESTS"></span>Device Fundamental テストについて
+## <a name="span-idabout_the_device_fundamentals_testsspanspan-idabout_the_device_fundamentals_testsspanspan-idabout_the_device_fundamentals_testsspanabout-the-device-fundamentals-tests"></a><span id="About_the_Device_Fundamentals_Tests"></span><span id="about_the_device_fundamentals_tests"></span><span id="ABOUT_THE_DEVICE_FUNDAMENTALS_TESTS"></span>Device Fundamental テストについて
 
 
 WDK には、"基本" と "認定" の 2 つの構成の Device Fundamental テストが用意されています。 どちらの構成でも、対象のデバイスやドライバーをどのようにテストするかに応じてテスト パラメーターを編集し、テストの長さや実行するテスト サイクルの数などを変えることができます。 基本構成は、一般的なドライバーとデバイスのテストとデバッグを対象としています。 開発サイクルの初期段階とサイクル全体で、基本構成を使います。 基本構成のテストの設定は、実行時間が短いことを除いて、Windows 認定のテストで使う設定と同じです。 認定構成では、テストの設定は Windows 認定のテストで使う設定と同じです。 デバイスやドライバーについて、[Windows ハードウェア認定プログラム](https://go.microsoft.com/fwlink/p/?linkid=8705)のテストの準備が整っているかどうかを確認するには、認定構成を使います。
 
-[Device Fundamental テスト](https://msdn.microsoft.com/Library/Windows/Hardware/JJ673011)には、次のカテゴリのテストが含まれています。
+[Device Fundamental テスト](https://docs.microsoft.com/windows-hardware/drivers/devtest/device-fundamentals-tests)には、次のカテゴリのテストが含まれています。
 
--   [CHAOS テスト (Device Fundamental)](https://msdn.microsoft.com/Library/Windows/Hardware/JJ673008)
--   [カバレッジ テスト (Device Fundamental)](https://msdn.microsoft.com/Library/Windows/Hardware/JJ673009)
--   [CPUStress テスト (Device Fundamental)](https://msdn.microsoft.com/Library/Windows/Hardware/JJ673010)
--   [Driver Install テスト (Device Fundamental)](https://msdn.microsoft.com/Library/Windows/Hardware/JJ673012)
--   [I/O テスト (Device Fundamental)](https://msdn.microsoft.com/Library/Windows/Hardware/JJ673013)
--   [侵入テスト (Device Fundamental)](https://msdn.microsoft.com/Library/Windows/Hardware/JJ673014)
--   [PNP テスト (Device Fundamental)](https://msdn.microsoft.com/Library/Windows/Hardware/JJ673015)
--   [再起動テスト (Device Fundamental)](https://msdn.microsoft.com/Library/Windows/Hardware/JJ673016)
--   [スリープ テスト (Device Fundamental)](https://msdn.microsoft.com/Library/Windows/Hardware/JJ673017)
+-   [CHAOS テスト (Device Fundamental)](https://docs.microsoft.com/windows-hardware/drivers/devtest/chaos-tests--device-fundamentals-)
+-   [カバレッジ テスト (Device Fundamental)](https://docs.microsoft.com/windows-hardware/drivers/devtest/coverage-tests--device-fundamentals-)
+-   [CPUStress テスト (Device Fundamental)](https://docs.microsoft.com/windows-hardware/drivers/devtest/cpustress-tests--device-fundamentals-)
+-   [Driver Install テスト (Device Fundamental)](https://docs.microsoft.com/windows-hardware/drivers/devtest/driverinstall-tests--device-fundamentals-)
+-   [I/O テスト (Device Fundamental)](https://docs.microsoft.com/windows-hardware/drivers/devtest/i-o-tests--device-fundamentals-)
+-   [侵入テスト (Device Fundamental)](https://docs.microsoft.com/windows-hardware/drivers/devtest/penetration-tests--device-fundamentals-)
+-   [PNP テスト (Device Fundamental)](https://docs.microsoft.com/windows-hardware/drivers/devtest/pnp-tests--device-fundamentals-)
+-   [再起動テスト (Device Fundamental)](https://docs.microsoft.com/windows-hardware/drivers/devtest/reboot-tests--device-fundamentals-)
+-   [スリープ テスト (Device Fundamental)](https://docs.microsoft.com/windows-hardware/drivers/devtest/sleep-tests--device-fundamentals-)
 -   [ユーティリティ](#utility_tests)
 -   [ドライバーの検証ツール](#utility_tests)
 
-### <a name="span-idsettingtherun-timetestparametersspanspan-idsettingtherun-timetestparametersspanspan-idsettingtherun-timetestparametersspansetting-the-run-time-test-parameters"></a><span id="Setting_the_run-time_test_parameters"></span><span id="setting_the_run-time_test_parameters"></span><span id="SETTING_THE_RUN-TIME_TEST_PARAMETERS"></span>実行時テスト パラメーターの設定
+### <a name="span-idsetting_the_run-time_test_parametersspanspan-idsetting_the_run-time_test_parametersspanspan-idsetting_the_run-time_test_parametersspansetting-the-run-time-test-parameters"></a><span id="Setting_the_run-time_test_parameters"></span><span id="setting_the_run-time_test_parameters"></span><span id="SETTING_THE_RUN-TIME_TEST_PARAMETERS"></span>実行時テスト パラメーターの設定
 
 多くの Device Fundamental テストで、ランタイム パラメーターを編集できます。 [Driver Test Group] (ドライバー テスト グループ) ウィンドウで、テスト名の横に表示される矢印 (») は、そのテストに変更できるパラメーターがあることを示しています。 矢印 (») をクリックして、実行時パラメーターを表示します。
 
-最も有用なパラメーターの 1 つは *DQ* で、テスト対象のデバイスを指定します。 既定値 (**IsDevice**) の場合は、ターゲット コンピューター上のすべてのデバイスがテストされます。 *DQ* パラメーターは、対象のデバイスを特定する [**WDTF**](https://msdn.microsoft.com/Library/Windows/Hardware/Ff539547) [SDEL](https://msdn.microsoft.com/Library/Windows/Hardware/Ff539571) クエリを受け取ります。 特定のデバイスをテスト対象に指定できます。たとえば、
+最も有用なパラメーターの 1 つは *DQ* で、テスト対象のデバイスを指定します。 既定値 (**IsDevice**) の場合は、ターゲット コンピューター上のすべてのデバイスがテストされます。 *DQ* パラメーターは、対象のデバイスを特定する [**WDTF**](https://docs.microsoft.com/windows-hardware/drivers/wdtf/index) [SDEL](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index) クエリを受け取ります。 特定のデバイスをテスト対象に指定できます。たとえば、
 
 **DeviceID=’USB\\ROOT\_HUB\\4&1CD5D022&0’** は、**DeviceID** で指定されたデバイスのみをテスト対象として選択します。
 
 *DQ* パラメーターとその他のランタイム パラメーターについて詳しくは、「[Device Fundamental テストのパラメーター](#DevFund_Params)」をご覧ください。
 
-## <a name="span-iddevfundparamsspanspan-iddevfundparamsspanspan-iddevfundparamsspandevice-fundamentals-test-parameters"></a><span id="DevFund_Params"></span><span id="devfund_params"></span><span id="DEVFUND_PARAMS"></span>Device Fundamental テストのパラメーター
+## <a name="span-iddevfund_paramsspanspan-iddevfund_paramsspanspan-iddevfund_paramsspandevice-fundamentals-test-parameters"></a><span id="DevFund_Params"></span><span id="devfund_params"></span><span id="DEVFUND_PARAMS"></span>Device Fundamental テストのパラメーター
 
 
 <table>
@@ -66,7 +66,7 @@ WDK には、"基本" と "認定" の 2 つの構成の Device Fundamental テ�
 <tbody>
 <tr class="odd">
 <td align="left"><p><span id="DQ"></span><span id="dq"></span><em>DQ</em></p></td>
-<td align="left"><p>テストに使うデバイスを特定します。 <em>DQ</em> パラメーターは、対象のデバイスを特定する <a href="https://msdn.microsoft.com/Library/Windows/Hardware/Ff539547" data-raw-source="[&lt;strong&gt;WDTF&lt;/strong&gt;](https://msdn.microsoft.com/Library/Windows/Hardware/Ff539547)"><strong>WDTF</strong></a><a href="https://msdn.microsoft.com/Library/Windows/Hardware/Ff539571" data-raw-source="[SDEL](https://msdn.microsoft.com/Library/Windows/Hardware/Ff539571)">SDEL</a> クエリを受け取ります。 このクエリは非常に柔軟で、任意の数のデバイス (1 つのデバイスからシステム内のすべてのデバイスまで) を表すのに使うことができます。</p>
+<td align="left"><p>テストに使うデバイスを特定します。 <em>DQ</em> パラメーターは、対象のデバイスを特定する <a href="https://docs.microsoft.com/windows-hardware/drivers/wdtf/index" data-raw-source="[&lt;strong&gt;WDTF&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/wdtf/index)"><strong>WDTF</strong></a><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index" data-raw-source="[SDEL](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)">SDEL</a> クエリを受け取ります。 このクエリは非常に柔軟で、任意の数のデバイス (1 つのデバイスからシステム内のすべてのデバイスまで) を表すのに使うことができます。</p>
 <p>一般的な例:</p>
 <p></p>
 <dl>
@@ -77,7 +77,7 @@ WDK には、"基本" と "認定" の 2 つの構成の Device Fundamental テ�
 </dd>
 <dt><span id="To_test_a_device_with_a_specific_Device_Id__"></span><span id="to_test_a_device_with_a_specific_device_id__"></span><span id="TO_TEST_A_DEVICE_WITH_A_SPECIFIC_DEVICE_ID__"></span>特定のデバイス ID を持つデバイスをテストするには: </dt>
 <dd><p><strong>DeviceId=’</strong><em>DeviceId</em><strong>’</strong></p>
-<p>例: <strong>DeviceID=’USB\ROOT_HUB\4&amp;1CD5D022&amp;0’</strong></p>
+<p>例: <strong>DeviceID=’USB\ROOT_HUB\4&1CD5D022&0’</strong></p>
 </dd>
 <dt><span id="_To_test_a_device_with_a_specific_interface_"></span><span id="_to_test_a_device_with_a_specific_interface_"></span><span id="_TO_TEST_A_DEVICE_WITH_A_SPECIFIC_INTERFACE_"></span> 特定のインターフェイスを持つデバイスをテストするには:</dt>
 <dd><p><strong>Interfaces::</strong><em>InterfaceGUID</em></p>
@@ -109,7 +109,7 @@ WDK には、"基本" と "認定" の 2 つの構成の Device Fundamental テ�
 </tr>
 <tr class="odd">
 <td align="left"><p><span id="DoConcurrentIO"></span><span id="doconcurrentio"></span><span id="DOCONCURRENTIO"></span><em>DoConcurrentIO</em></p></td>
-<td align="left"><p>True または False。 <a href="https://msdn.microsoft.com/Library/Windows/Hardware/Ff539547" data-raw-source="[WDTF](https://msdn.microsoft.com/Library/Windows/Hardware/Ff539547)">WDTF</a> 同時 I/O インターフェイスを使って、PNP 操作の実行中に対象のデバイス スタックに I/O 要求を送信します。</p></td>
+<td align="left"><p>True または False。 <a href="https://docs.microsoft.com/windows-hardware/drivers/wdtf/index" data-raw-source="[WDTF](https://docs.microsoft.com/windows-hardware/drivers/wdtf/index)">WDTF</a> 同時 I/O インターフェイスを使って、PNP 操作の実行中に対象のデバイス スタックに I/O 要求を送信します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><span id="FillZeroPageWithNull"></span><span id="fillzeropagewithnull"></span><span id="FILLZEROPAGEWITHNULL"></span><em>FillZeroPageWithNull</em></p></td>
@@ -215,7 +215,7 @@ WDK には、"基本" と "認定" の 2 つの構成の Device Fundamental テ�
 
  
 
-## <a name="span-idutilitytestsspanspan-idutilitytestsspanutility-tests"></a><span id="utility_tests"></span><span id="UTILITY_TESTS"></span>ユーティリティ テスト
+## <a name="span-idutility_testsspanspan-idutility_testsspanutility-tests"></a><span id="utility_tests"></span><span id="UTILITY_TESTS"></span>ユーティリティ テスト
 
 
 <table>
@@ -247,7 +247,7 @@ WDK には、"基本" と "認定" の 2 つの構成の Device Fundamental テ�
 
  
 
-## <a name="span-iddvrftestsspanspan-iddvrftestsspandriver-verifier"></a><span id="dvrf_tests"></span><span id="DVRF_TESTS"></span>ドライバーの検証ツール
+## <a name="span-iddvrf_testsspanspan-iddvrf_testsspandriver-verifier"></a><span id="dvrf_tests"></span><span id="DVRF_TESTS"></span>ドライバーの検証ツール
 
 
 <table>
@@ -264,26 +264,26 @@ WDK には、"基本" と "認定" の 2 つの構成の Device Fundamental テ�
 <tbody>
 <tr class="odd">
 <td align="left"><p><span id="Disable_Driver_Verifier"></span><span id="disable_driver_verifier"></span><span id="DISABLE_DRIVER_VERIFIER"></span>Disable Driver Verifier (ドライバーの検証ツールの無効化)</p></td>
-<td align="left"><p>テスト コンピューターで<a href="https://msdn.microsoft.com/Library/Windows/Hardware/Ff545448" data-raw-source="[Driver Verifier](https://msdn.microsoft.com/Library/Windows/Hardware/Ff545448)">ドライバーの検証ツール</a>を無効にします。</p>
+<td align="left"><p>テスト コンピューターで<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier" data-raw-source="[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)">ドライバーの検証ツール</a>を無効にします。</p>
 <p><strong>パラメータ:</strong>なし</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><span id="Enable_Driver_Verifier"></span><span id="enable_driver_verifier"></span><span id="ENABLE_DRIVER_VERIFIER"></span>Enable Driver Verifier (ドライバーの検証ツールの有効化)</p></td>
-<td align="left"><p>このテストを使うと、テスト コンピューター上の 1 つ (または複数の) デバイスのドライバーすべてに対して、<a href="https://msdn.microsoft.com/Library/Windows/Hardware/Ff545448" data-raw-source="[Driver Verifier](https://msdn.microsoft.com/Library/Windows/Hardware/Ff545448)">ドライバーの検証ツール</a>を有効にすることができます。</p>
-<p><strong>パラメータ:</strong>- 「<a href="https://msdn.microsoft.com/library/windows/hardware/ff545470" data-raw-source="[Driver Verifier Options](https://msdn.microsoft.com/library/windows/hardware/ff545470)">ドライバーの検証ツールのオプション</a>」をご覧ください。</p></td>
+<td align="left"><p>このテストを使うと、テスト コンピューター上の 1 つ (または複数の) デバイスのドライバーすべてに対して、<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier" data-raw-source="[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)">ドライバーの検証ツール</a>を有効にすることができます。</p>
+<p><strong>パラメータ:</strong>- 「<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier-options" data-raw-source="[Driver Verifier Options](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier-options)">ドライバーの検証ツールのオプション</a>」をご覧ください。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
 * [Visual Studio を使って実行時にドライバーをテストする方法](testing-a-driver-at-runtime.md)
-* [Device Fundamental のテスト](https://msdn.microsoft.com/Library/Windows/Hardware/JJ673011)
-* [提供されている WDTF シンプル I/O プラグイン](https://msdn.microsoft.com/Library/Windows/Hardware/Hh781398)
-* [WDTF シンプル I/O アクション プラグインを使ってデバイスの I/O をカスタマイズする方法](https://msdn.microsoft.com/Library/Windows/Hardware/Hh706277)
+* [Device Fundamental のテスト](https://docs.microsoft.com/windows-hardware/drivers/devtest/device-fundamentals-tests)
+* [提供されている WDTF シンプル I/O プラグイン](https://docs.microsoft.com/windows-hardware/drivers/wdtf/provided-wdtf-simpleio-plug-ins)
+* [WDTF シンプル I/O アクション プラグインを使ってデバイスの I/O をカスタマイズする方法](https://docs.microsoft.com/windows-hardware/drivers/wdtf/to-customize-i-o-for-your-device-using-the-wdtf-simple-i-o-action-plug-in)
  
 
  

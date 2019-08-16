@@ -3,12 +3,12 @@ title: ユニバーサル ドライバーのシナリオ
 description: 'DCHU ユニバーサル ドライバーのサンプルに、DCHU 設計原則 (Declarative: 宣言型、Componentized: コンポーネント化済み、Hardware Support Apps [HSA]: ハードウェア サポート アプリ、Universal API Compliance: ユニバーサル API 準拠) がどのように適用されているかについて説明します。'
 ms.date: 04/04/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 55ab2413f70f424fff93a4e4967c6b1063087f4c
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: da943cd371aeb509cb346afd13ab78cae06f9280
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63344068"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364182"
 ---
 # <a name="universal-driver-scenarios"></a>ユニバーサル ドライバーのシナリオ
 
@@ -122,7 +122,7 @@ osrfx2_DCHU_componentsoftware.exe
 
 [Win32 アプリのソース コード](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/DCHU/osrfx2_DCHU_extension_loose/osrfx2_DCHU_componentsoftware)は、DCHU サンプルに含まれます。
 
-[Windows ハードウェア デベロッパー センター ダッシュボード](https://developer.microsoft.com/dashboard/Registration/Hardware)でターゲット指定が設定されているため、このコンポーネント ドライバー パッケージは デスクトップ SKU のみに配布されることに注意してください。  詳しくは、「[Windows Update にドライバーを公開する](https://docs.microsoft.com/windows-hardware/drivers/dashboard/publish-a-driver-to-windows-update)」をご覧ください。
+[Windows ハードウェア デベロッパー センター ダッシュボード](https://partner.microsoft.com/dashboard/Registration/Hardware)でターゲット指定が設定されているため、このコンポーネント ドライバー パッケージは デスクトップ SKU のみに配布されることに注意してください。  詳しくは、「[Windows Update にドライバーを公開する](https://docs.microsoft.com/windows-hardware/drivers/dashboard/publish-a-driver-to-windows-update)」をご覧ください。
 
 ## <a name="allow-communication-with-a-hardware-support-app"></a>ハードウェア サポート アプリとの通信を許可する
 
@@ -246,7 +246,7 @@ AddReg = Example_Add_Interface_Section.AddReg
 [Example_Add_Interface_Section.AddReg]
 HKR,,ExampleValue,,%13%\ExampleFile.dll
 ```
-上記の例では、空フラグの値が使用されているため、REG_SZ レジストリ値になります。 これにより、 **%13%** が完全修飾ユーザー モード ファイル パスに変換されます。 多くの場合、このパスは環境変数の相対パスであることが望ましいです。 フラグ値 **0x20000** を使用すると、レジストリ値はタイプ REG_EXPAND_SZ となり、 **%13%** は適切な環境変数で変換され、パスの場所が抽象化されます。 このレジストリ値を取得する場合、[**ExpandEnvironmentStrings**](https://msdn.microsoft.com/library/windows/desktop/ms724265) を呼び出して、パスの環境変数を解決します。 
+上記の例では、空フラグの値が使用されているため、REG_SZ レジストリ値になります。 これにより、 **%13%** が完全修飾ユーザー モード ファイル パスに変換されます。 多くの場合、このパスは環境変数の相対パスであることが望ましいです。 フラグ値 **0x20000** を使用すると、レジストリ値はタイプ REG_EXPAND_SZ となり、 **%13%** は適切な環境変数で変換され、パスの場所が抽象化されます。 このレジストリ値を取得する場合、[**ExpandEnvironmentStrings**](https://docs.microsoft.com/windows/desktop/api/rrascfg/nn-rrascfg-ieapproviderconfig) を呼び出して、パスの環境変数を解決します。 
 
 カーネル モード コンポーネントによってこの値を読み取る必要がある場合、値は REG_SZ 値でなければなりません。 カーネル モード コンポーネントはこの値を読み取るときに、先頭に `\??\` を付けてから、[**ZwOpenFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwopenfile) などの API に渡す必要があります。 
 
@@ -260,7 +260,7 @@ HKR,,ExampleValue,,%13%\ExampleFile.dll
 
 また、デバイス インターフェイスの接続や削除の通知を受けるために、[**CM_Register_Notification**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_register_notification) を使用できます。これにより、コードではインターフェイスが有効化されたときに通知を受け、状態を取得できます。 上記の API で使用されるデバイス インターフェイス クラスには、複数のデバイス インターフェイスがある可能性があります。  これらのインターフェイスを確認し、設定を読み込むために適切なインターフェイスを特定します。
 
-適切なインターフェイスが見つかったら、[**CM_Open_Device_Interface_Key**](https://msdn.microsoft.com/library/windows/hardware/hh780223(v=vs.85).aspx) を呼び出します。
+適切なインターフェイスが見つかったら、[**CM_Open_Device_Interface_Key**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_open_device_interface_keyw) を呼び出します。
 
 カーネル モード コードでは、状態を取得するデバイス インターフェイスのシンボリック リンク名を取得できます。 そのためには、[**IoRegisterPlugPlayNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterplugplaynotification) を呼び出して、適切なデバイス インターフェイス クラスでデバイス インターフェイス通知に登録します。  別の方法として、システム上の現在のデバイス インターフェイスの一覧を取得するために [**IoGetDeviceInterfaces**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdeviceinterfaces) を呼び出すこともできます。  上記の API で使用されるデバイス インターフェイス クラスには、複数のデバイス インターフェイスがある可能性があります。  これらのインターフェイスを確認し、読み込まれる設定を持つ適切なインターフェイスを特定します。
 
@@ -271,7 +271,7 @@ HKR,,ExampleValue,,%13%\ExampleFile.dll
 
 ## <a name="summary"></a>概要
 
-次の図は、Fabrikam と Contoso がユニバーサル Windows ドライバー用に作成したドライバー パッケージを示したものです。  疎結合の例では、[Windows ハードウェア デベロッパー センター ダッシュボード](https://developer.microsoft.com/dashboard/Registration/Hardware)で、基本パッケージ、拡張パッケージ、コンポーネントパッケージの 3 回にわたってパッケージが別個に提出されます。  密結合の例では、基本パッケージと拡張/コンポーネント パッケージの 2 つが提出されます。
+次の図は、Fabrikam と Contoso がユニバーサル Windows ドライバー用に作成したドライバー パッケージを示したものです。  疎結合の例では、[Windows ハードウェア デベロッパー センター ダッシュボード](https://partner.microsoft.com/dashboard/Registration/Hardware)で、基本パッケージ、拡張パッケージ、コンポーネントパッケージの 3 回にわたってパッケージが別個に提出されます。  密結合の例では、基本パッケージと拡張/コンポーネント パッケージの 2 つが提出されます。
 
 ![拡張、基本、コンポーネントの各ドライバー パッケージ](images/universal-scenarios.png)
 

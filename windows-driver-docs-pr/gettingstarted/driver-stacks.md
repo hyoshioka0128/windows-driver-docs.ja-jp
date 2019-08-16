@@ -4,19 +4,19 @@ description: デバイス ドライバーに送信される要求のほとんど
 ms.assetid: 8D55CB83-C50A-48B8-9379-ECF2CF30AEE5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 41d50497c8343d8ae5f7a54b77d97a86f06f0d2a
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 0813e3d13bc4a74b2331dbd4965ab4fd60ea31e3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63371328"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371988"
 ---
 # <a name="driver-stacks"></a>ドライバー スタック
 
 
 デバイス ドライバーに送信される要求のほとんどは、[I/O 要求パケット](i-o-request-packets.md) (IRP) にパッケージ化されます。 個々のデバイスは、1 つのデバイス ノードで表され、各デバイス ノードには 1 つのデバイス スタックが含まれます。 詳しくは、「[デバイス ノードとデバイス スタック](device-nodes-and-device-stacks.md)」をご覧ください。 デバイスに対して読み取り、書き込み、または制御の要求を送るために、I/O マネージャーは、デバイスのデバイス ノードを探し、そのノードのデバイス スタックに IRP を送信します。 I/O 要求の処理に複数のデバイス スタックが関与する場合があります。 関与するデバイス スタックの数に関係なく、ある I/O 要求に関与するドライバー全体のシーケンスのことを、要求に対する*ドライバー スタック*と呼びます。 また、特定のテクノロジに対応してレイヤー化された一連のドライバーの表すときに、*ドライバー スタック*という用語を使うこともあります。
 
-## <a name="span-idiorequeststhatareprocessedbyseveraldevicestacksspanspan-idiorequeststhatareprocessedbyseveraldevicestacksspanspan-idiorequeststhatareprocessedbyseveraldevicestacksspanio-requests-that-are-processed-by-several-device-stacks"></a><span id="I_O_requests_that_are_processed_by_several_device_stacks"></span><span id="i_o_requests_that_are_processed_by_several_device_stacks"></span><span id="I_O_REQUESTS_THAT_ARE_PROCESSED_BY_SEVERAL_DEVICE_STACKS"></span>複数のデバイス スタックで処理される I/O 要求
+## <a name="span-idi_o_requests_that_are_processed_by_several_device_stacksspanspan-idi_o_requests_that_are_processed_by_several_device_stacksspanspan-idi_o_requests_that_are_processed_by_several_device_stacksspanio-requests-that-are-processed-by-several-device-stacks"></a><span id="I_O_requests_that_are_processed_by_several_device_stacks"></span><span id="i_o_requests_that_are_processed_by_several_device_stacks"></span><span id="I_O_REQUESTS_THAT_ARE_PROCESSED_BY_SEVERAL_DEVICE_STACKS"></span>複数のデバイス スタックで処理される I/O 要求
 
 
 場合によっては、IRP の処理に複数のデバイス スタックが関与することがあります。 次の図は、1 つの IRP を処理するときに 4 つのデバイス スタックが関与する例を示しています。
@@ -34,7 +34,7 @@ ms.locfileid: "63371328"
 
     Usbuhci.sys はミニポート ドライバー、Usbport.sys はポート ドライバーです。 (ミニポート、ポート) のペアは、1 つのドライバーの役割を果たします。 この場合は、ミニポート ドライバーとポート ドライバーの両方が Microsoft によって作られています。 (Usbuhci.sys、Usbport.sys) のペアは USB Root Hub ノードの PDO ドライバーであり、同時に (Usbuhci.sys、Usbport.sys) のペアは USB Host Controller ノードの FDO ドライバーでもあります。 (Usbuhci.sys、Usbport.sys) のペアは実際に、ホスト コントローラー ハードウェアと通信し、これを受けてホスト コントローラー ハードウェアは、物理的な USB ストレージ装置と通信します。
 
-## <a name="span-idthedriverstackforaniorequestspanspan-idthedriverstackforaniorequestspanspan-idthedriverstackforaniorequestspanthe-driver-stack-for-an-io-request"></a><span id="The_driver_stack_for_an_I_O_request"></span><span id="the_driver_stack_for_an_i_o_request"></span><span id="THE_DRIVER_STACK_FOR_AN_I_O_REQUEST"></span>I/O 要求のドライバー スタック
+## <a name="span-idthe_driver_stack_for_an_i_o_requestspanspan-idthe_driver_stack_for_an_i_o_requestspanspan-idthe_driver_stack_for_an_i_o_requestspanthe-driver-stack-for-an-io-request"></a><span id="The_driver_stack_for_an_I_O_request"></span><span id="the_driver_stack_for_an_i_o_request"></span><span id="THE_DRIVER_STACK_FOR_AN_I_O_REQUEST"></span>I/O 要求のドライバー スタック
 
 
 前の図に示した I/O 要求に関与する 4 つのドライバーのシーケンスを考えてみましょう。 個々のデバイス ノードやそこに含まれる各デバイス スタックではなく、ドライバーそのものを重点的に捉えることにより、シーケンスを別の角度から見ることができます。 次の図に、ドライバーのシーケンスを上から下に見た状態を示します。 Disk.sys は、1 つのデバイス オブジェクトに関連付けられていますが、他の 3 つのドライバーは 2 つのデバイス オブジェクトに関連付けられています。
@@ -45,7 +45,7 @@ I/O 要求に関与するドライバーのシーケンスは、"*I/O 要求の�
 
 I/O 要求のドライバー スタックは、デバイス ノードに対するデバイス スタックとはまったく異なることがわかります。 また、I/O 要求のドライバー スタックは必ずしも、デバイス ツリーの一部分で維持されるわけではありません。
 
-## <a name="span-idtechnologydriverstacksspanspan-idtechnologydriverstacksspanspan-idtechnologydriverstacksspantechnology-driver-stacks"></a><span id="Technology_driver_stacks"></span><span id="technology_driver_stacks"></span><span id="TECHNOLOGY_DRIVER_STACKS"></span>テクノロジ ドライバー スタック
+## <a name="span-idtechnology_driver_stacksspanspan-idtechnology_driver_stacksspanspan-idtechnology_driver_stacksspantechnology-driver-stacks"></a><span id="Technology_driver_stacks"></span><span id="technology_driver_stacks"></span><span id="TECHNOLOGY_DRIVER_STACKS"></span>テクノロジ ドライバー スタック
 
 
 前の図に示した I/O 要求のドライバー スタックを考えてみましょう。 個々のドライバーにフレンドリ名を付け、図に多少の変更を加えることにより、Windows Driver Kit (WDK) ドキュメントに数多く見られるブロック図に似た図ができ上がります。
@@ -60,11 +60,11 @@ I/O 要求のドライバー スタックは、デバイス ノードに対す�
 
 特定のテクノロジ、またはオペレーティング システムに含まれる特定のコンポーネントや部分に対するドライバーをすべて記載したブロック図のことを、"*テクノロジ ドライバー スタック*" と呼びます。 通常、テクノロジ ドライバー スタックには USB Core Driver Stack、Storage Stack、1394 Driver Stack、Audio Driver Stack などの名前が付けられています。
 
-**注**  このトピックの USB コア ブロック図は、USB 1.0 と 2.0 のテクノロジ ドライバー スタックを表す各種の方法のうちの 1 つを表しています。 USB 1.0、2.0 と 3.0 のドライバー スタックの正式な図については、「[USB ドライバー スタック アーキテクチャ](https://msdn.microsoft.com/library/windows/hardware/hh406256)」をご覧ください。
+**注**  このトピックの USB コア ブロック図は、USB 1.0 と 2.0 のテクノロジ ドライバー スタックを表す各種の方法のうちの 1 つを表しています。 USB 1.0、2.0 と 3.0 のドライバー スタックの正式な図については、「[USB ドライバー スタック アーキテクチャ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)」をご覧ください。
 
  
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
 [デバイス ノードとデバイス スタック](device-nodes-and-device-stacks.md)

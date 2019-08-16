@@ -4,12 +4,12 @@ description: Sharks Cove は、Windows 向けのハードウェアやドライ�
 ms.assetid: D86546BB-B613-4CEE-9A76-3FD269137EE9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 84f4305c71debf567516b5d5e6680214371a9eb2
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: c6d8f91d435020e2314a071c71f959df24c6e8e6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63371280"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385171"
 ---
 # <a name="sharks-cove-hardware-development-board"></a>Sharks Cove ハードウェア開発ボード
 
@@ -24,14 +24,14 @@ Sharks Cove ボードに関連するダウンロードについては、[Sharks 
 
 詳細な仕様については、[Sharks Cove の技術仕様に関するページ](https://go.microsoft.com/fwlink/p?linkid=403169)をご覧ください。
 
-## <a name="span-idbeforeyoustartspanspan-idbeforeyoustartspanspan-idbeforeyoustartspanbefore-you-start"></a><span id="Before_you_start"></span><span id="before_you_start"></span><span id="BEFORE_YOU_START"></span>始める前に
+## <a name="span-idbefore_you_startspanspan-idbefore_you_startspanspan-idbefore_you_startspanbefore-you-start"></a><span id="Before_you_start"></span><span id="before_you_start"></span><span id="BEFORE_YOU_START"></span>始める前に
 
 
 ここで説明する手順を実行するには、Windows 10、Windows 8.1、または Windows 7 を実行している必要があります。 これらの手順は、Windows 8 を実行している場合は使用できません。
 
 Windows 7 を実行している場合は、[PowerShell 4.0](https://go.microsoft.com/fwlink/p?linkid=507377) と [Windows 8.1 Update 用 Windows アセスメント & デプロイメント キット (ADK)](https://go.microsoft.com/fwlink/p/?linkid=239721) をインストールする必要があります。 その後で、 **[スタート]** メニューから、 **[すべてのプログラム] &gt; [Windows キット] &gt; [Windows ADK] &gt; [展開およびイメージング ツール環境]** の順にクリックします。 このコマンド プロンプト ウィンドウを管理者として開きます。 以下の各手順で説明するコマンドを入力するときは、このコマンド プロンプト ウィンドウを使います。
 
-## <a name="span-idstep1gettheboardandrelatedhardwarespanspan-idstep1gettheboardandrelatedhardwarespanspan-idstep1gettheboardandrelatedhardwarespanstep-1-get-the-board-and-related-hardware"></a><span id="Step_1__Get_the_board_and_related_hardware"></span><span id="step_1__get_the_board_and_related_hardware"></span><span id="STEP_1__GET_THE_BOARD_AND_RELATED_HARDWARE"></span>手順 1: ボードおよび関連するハードウェアを入手する
+## <a name="span-idstep_1__get_the_board_and_related_hardwarespanspan-idstep_1__get_the_board_and_related_hardwarespanspan-idstep_1__get_the_board_and_related_hardwarespanstep-1-get-the-board-and-related-hardware"></a><span id="Step_1__Get_the_board_and_related_hardware"></span><span id="step_1__get_the_board_and_related_hardware"></span><span id="STEP_1__GET_THE_BOARD_AND_RELATED_HARDWARE"></span>手順 1: ボードおよび関連するハードウェアを入手する
 
 
 次のハードウェアが必要です。
@@ -45,7 +45,7 @@ Windows 7 を実行している場合は、[PowerShell 4.0](https://go.microsof
 
 Sharks Cove ボードは、[Mouser Electronics](https://go.microsoft.com/fwlink/p?linkid=403172) で入手できます。
 
-## <a name="span-idstep2downloadkitsandtoolsspanspan-idstep2downloadkitsandtoolsspanspan-idstep2downloadkitsandtoolsspanstep-2-download-kits-and-tools"></a><span id="Step_2__Download_kits_and_tools"></span><span id="step_2__download_kits_and_tools"></span><span id="STEP_2__DOWNLOAD_KITS_AND_TOOLS"></span>手順 2: キットとツールのダウンロード
+## <a name="span-idstep_2__download_kits_and_toolsspanspan-idstep_2__download_kits_and_toolsspanspan-idstep_2__download_kits_and_toolsspanstep-2-download-kits-and-tools"></a><span id="Step_2__Download_kits_and_tools"></span><span id="step_2__download_kits_and_tools"></span><span id="STEP_2__DOWNLOAD_KITS_AND_TOOLS"></span>手順 2: キットとツールのダウンロード
 
 
 ドライバー開発環境には、*ホスト コンピューター*と*ターゲット コンピューター*という、2 台のコンピューターがあります。 ターゲット コンピューターは*テスト コンピューター*とも呼ばれます。 ドライバーの開発とビルドは、ホスト コンピューター上の Microsoft Visual Studio で行います。 デバッガーはホスト コンピューター上で実行され、Visual Studio のユーザー インターフェイスで利用できます。 ドライバーのテストとデバッグを行うときは、ドライバーをターゲット コンピューター上で実行します。 この場合、Sharks Cove ボードがターゲット コンピューターになります。
@@ -65,7 +65,7 @@ Debugging Tools for Windows のオンライン ドキュメントについては
 
 Debugging Tools for Windows のドキュメントは、インストール ディレクトリに CHM ファイルとしても保存されています 以下に例を示します。C:\\Program Files (x86)\\Windows Kits\\8.1\\Debuggers\\x64\\debugger.chm
 
-## <a name="span-idstep3installwindowsonthesharkscoveboardspanspan-idstep3installwindowsonthesharkscoveboardspanspan-idstep3installwindowsonthesharkscoveboardspanstep-3-install-windows-on-the-sharks-cove-board"></a><span id="Step_3__Install_Windows_on_the_Sharks_Cove_board"></span><span id="step_3__install_windows_on_the_sharks_cove_board"></span><span id="STEP_3__INSTALL_WINDOWS_ON_THE_SHARKS_COVE_BOARD"></span>手順 3: Sharks Cove ボードに Windows をインストールする
+## <a name="span-idstep_3__install_windows_on_the_sharks_cove_boardspanspan-idstep_3__install_windows_on_the_sharks_cove_boardspanspan-idstep_3__install_windows_on_the_sharks_cove_boardspanstep-3-install-windows-on-the-sharks-cove-board"></a><span id="Step_3__Install_Windows_on_the_Sharks_Cove_board"></span><span id="step_3__install_windows_on_the_sharks_cove_board"></span><span id="STEP_3__INSTALL_WINDOWS_ON_THE_SHARKS_COVE_BOARD"></span>手順 3: Sharks Cove ボードに Windows をインストールする
 
 
 次のいずれかのバージョンの Windows を Sharks Cove ボードにインストールできます。
@@ -196,7 +196,7 @@ USB フラッシュ ドライブの名前 (**fs1**: など) を覚えておき�
 
 **bootia32.efi** 画面に示される Windows セットアップの指示に従います。
 
-## <a name="span-idstep4provisionthesharkscoveboardfordriverdeploymentandtestingspanspan-idstep4provisionthesharkscoveboardfordriverdeploymentandtestingspanspan-idstep4provisionthesharkscoveboardfordriverdeploymentandtestingspanstep-4-provision-the-sharks-cove-board-for-driver-deployment-and-testing"></a><span id="Step_4__Provision_the_Sharks_Cove_board_for_driver_deployment_and_testing"></span><span id="step_4__provision_the_sharks_cove_board_for_driver_deployment_and_testing"></span><span id="STEP_4__PROVISION_THE_SHARKS_COVE_BOARD_FOR_DRIVER_DEPLOYMENT_AND_TESTING"></span>手順 4: ドライバーの展開とテストのために Sharks Cove ボードをプロビジョニングする
+## <a name="span-idstep_4__provision_the_sharks_cove_board_for_driver_deployment_and_testingspanspan-idstep_4__provision_the_sharks_cove_board_for_driver_deployment_and_testingspanspan-idstep_4__provision_the_sharks_cove_board_for_driver_deployment_and_testingspanstep-4-provision-the-sharks-cove-board-for-driver-deployment-and-testing"></a><span id="Step_4__Provision_the_Sharks_Cove_board_for_driver_deployment_and_testing"></span><span id="step_4__provision_the_sharks_cove_board_for_driver_deployment_and_testing"></span><span id="STEP_4__PROVISION_THE_SHARKS_COVE_BOARD_FOR_DRIVER_DEPLOYMENT_AND_TESTING"></span>手順 4: ドライバーの展開とテストのために Sharks Cove ボードをプロビジョニングする
 
 
 "*プロビジョニング*" は、自動ドライバー展開、テスト、デバッグ用にコンピューターを構成するプロセスです。
@@ -217,21 +217,21 @@ Sharks Cove ボードのプロビジョニングは、他のコンピュータ�
 
 
 
-## <a name="span-idstep5writeasoftwaredriverforthesharkscoveboardspanspan-idstep5writeasoftwaredriverforthesharkscoveboardspanspan-idstep5writeasoftwaredriverforthesharkscoveboardspanstep-5-write-a-software-driver-for-the-sharks-cove-board"></a><span id="Step_5__Write_a_software_driver_for_the_Sharks_Cove_board"></span><span id="step_5__write_a_software_driver_for_the_sharks_cove_board"></span><span id="STEP_5__WRITE_A_SOFTWARE_DRIVER_FOR_THE_SHARKS_COVE_BOARD"></span>手順 5: Sharks Cove ボードでソフトウェア ドライバーを作成する
+## <a name="span-idstep_5__write_a_software_driver_for_the_sharks_cove_boardspanspan-idstep_5__write_a_software_driver_for_the_sharks_cove_boardspanspan-idstep_5__write_a_software_driver_for_the_sharks_cove_boardspanstep-5-write-a-software-driver-for-the-sharks-cove-board"></a><span id="Step_5__Write_a_software_driver_for_the_Sharks_Cove_board"></span><span id="step_5__write_a_software_driver_for_the_sharks_cove_board"></span><span id="STEP_5__WRITE_A_SOFTWARE_DRIVER_FOR_THE_SHARKS_COVE_BOARD"></span>手順 5: Sharks Cove ボードでソフトウェア ドライバーを作成する
 
 
 Sharks Cove ボードでデバイス ドライバーを作る前に、ソフトウェア ドライバーを作って、ドライバー開発ツールについて理解しておくことをお勧めします。 その手順は、他のターゲット コンピューターでのソフトウェア ドライバーの作成に似ています。 最初に、次の実践的な演習を行ってください。
 
 -   [初めてのドライバーの作成](writing-your-first-driver.md)
 
-## <a name="span-idstep6alterthesecondarysystemdescriptiontablessdtspanspan-idstep6alterthesecondarysystemdescriptiontablessdtspanspan-idstep6alterthesecondarysystemdescriptiontablessdtspanstep-6-alter-the-secondary-system-description-table-ssdt"></a><span id="Step_6__Alter_the_Secondary_System_Description_Table__SSDT_"></span><span id="step_6__alter_the_secondary_system_description_table__ssdt_"></span><span id="STEP_6__ALTER_THE_SECONDARY_SYSTEM_DESCRIPTION_TABLE__SSDT_"></span>手順 6: Secondary System Description Table (SSDT) を変更する
+## <a name="span-idstep_6__alter_the_secondary_system_description_table__ssdt_spanspan-idstep_6__alter_the_secondary_system_description_table__ssdt_spanspan-idstep_6__alter_the_secondary_system_description_table__ssdt_spanstep-6-alter-the-secondary-system-description-table-ssdt"></a><span id="Step_6__Alter_the_Secondary_System_Description_Table__SSDT_"></span><span id="step_6__alter_the_secondary_system_description_table__ssdt_"></span><span id="STEP_6__ALTER_THE_SECONDARY_SYSTEM_DESCRIPTION_TABLE__SSDT_"></span>手順 6: Secondary System Description Table (SSDT) を変更する
 
 
 Sharks Cove ボード上の Simple Peripheral Bus (SPB) に接続されるデバイスのドライバーを作る場合は、Sharks Cove ファームウェアの Secondary System Description Table (SSDT) を更新する必要があります。 このようなドライバーの作成の例として、I2C バス経由でデータを転送し、汎用 I/O (GPIO) ピンを介して割り込みを生成する加速度計のドライバーの作成が挙げられます。 詳しくは、[Simple Peripheral Bus に関するページ](https://go.microsoft.com/fwlink/p?linkid=399232)をご覧ください。
 
 SSDT の変更例を次に示します。 ここでは、[ADXL345](https://go.microsoft.com/fwlink/p?linkid=401463) 加速度計のテーブル エントリを追加します。
 
-**注**[SpbAccelerometer サンプル ドライバー](https://go.microsoft.com/fwlink/p?linkid=506965)と ADXL345 加速度計の手順ガイドについては、「[SpbAccelerometer ドライバー クックブック](https://msdn.microsoft.com/library/windows/hardware/dn760712)」をご覧ください。
+**注**[SpbAccelerometer サンプル ドライバー](https://go.microsoft.com/fwlink/p?linkid=506965)と ADXL345 加速度計の手順ガイドについては、「[SpbAccelerometer ドライバー クックブック](https://docs.microsoft.com/windows-hardware/drivers/sensors/spbaccelerometer-driver-cookbook)」をご覧ください。
 
 
 
@@ -391,7 +391,7 @@ testsigning             Yes
 
     Sharks Cove ボードを再起動します。
 
-## <a name="span-idstep7connectyourdevicetothesharkscoveboardspanspan-idstep7connectyourdevicetothesharkscoveboardspanspan-idstep7connectyourdevicetothesharkscoveboardspanstep-7-connect-your-device-to-the-sharks-cove-board"></a><span id="Step_7__Connect_your_device_to_the_Sharks_Cove_board"></span><span id="step_7__connect_your_device_to_the_sharks_cove_board"></span><span id="STEP_7__CONNECT_YOUR_DEVICE_TO_THE_SHARKS_COVE_BOARD"></span>手順 7: デバイスを Sharks Cove ボードに接続する
+## <a name="span-idstep_7__connect_your_device_to_the_sharks_cove_boardspanspan-idstep_7__connect_your_device_to_the_sharks_cove_boardspanspan-idstep_7__connect_your_device_to_the_sharks_cove_boardspanstep-7-connect-your-device-to-the-sharks-cove-board"></a><span id="Step_7__Connect_your_device_to_the_Sharks_Cove_board"></span><span id="step_7__connect_your_device_to_the_sharks_cove_board"></span><span id="STEP_7__CONNECT_YOUR_DEVICE_TO_THE_SHARKS_COVE_BOARD"></span>手順 7: デバイスを Sharks Cove ボードに接続する
 
 
 Sharks Cove ヘッダーとピンの仕様を、[ここ](https://go.microsoft.com/fwlink/p?linkid=506966)で入手します。
@@ -413,7 +413,7 @@ I2CSerialBus(... "\\_SB.I2C3", , )
 GpioInt(... "\\_SB.GPO2") {0x17}
 ```
 
-## <a name="span-idstep8writebuildanddeployadriverforyourdevicespanspan-idstep8writebuildanddeployadriverforyourdevicespanspan-idstep8writebuildanddeployadriverforyourdevicespanstep-8-write-build-and-deploy-a-driver-for-your-device"></a><span id="Step_8__Write__build__and_deploy_a_driver_for_your_device"></span><span id="step_8__write__build__and_deploy_a_driver_for_your_device"></span><span id="STEP_8__WRITE__BUILD__AND_DEPLOY_A_DRIVER_FOR_YOUR_DEVICE"></span>手順 8: デバイス ドライバーの作成、ビルド、展開を行う
+## <a name="span-idstep_8__write__build__and_deploy_a_driver_for_your_devicespanspan-idstep_8__write__build__and_deploy_a_driver_for_your_devicespanspan-idstep_8__write__build__and_deploy_a_driver_for_your_devicespanstep-8-write-build-and-deploy-a-driver-for-your-device"></a><span id="Step_8__Write__build__and_deploy_a_driver_for_your_device"></span><span id="step_8__write__build__and_deploy_a_driver_for_your_device"></span><span id="STEP_8__WRITE__BUILD__AND_DEPLOY_A_DRIVER_FOR_YOUR_DEVICE"></span>手順 8: デバイス ドライバーの作成、ビルド、展開を行う
 
 
 Sharks Cove ボードでのデバイス ドライバーの作成は、他のコンピューターでのデバイス ドライバーの作成に似ています。 Visual Studio で、ドライバー テンプレートを使って作業を始めるか、ドライバー サンプルを使って作業を始めます。
@@ -447,7 +447,7 @@ Sharks Cove ボードでドライバーをテストする準備ができたら�
 
 7.  読み込まれたモジュールを表示するには、「**lm**」と入力します。 ドライバーが、読み込まれたモジュールの一覧に表示されることを確認します。
 
-## <a name="span-idusingwindbgtodebugthesharkscoveboardspanspan-idusingwindbgtodebugthesharkscoveboardspanspan-idusingwindbgtodebugthesharkscoveboardspanusing-windbg-to-debug-the-sharks-cove-board"></a><span id="Using_WinDbg_to_debug_the_Sharks_Cove_board"></span><span id="using_windbg_to_debug_the_sharks_cove_board"></span><span id="USING_WINDBG_TO_DEBUG_THE_SHARKS_COVE_BOARD"></span>WinDbg を使った Sharks Cove ボードのデバッグ
+## <a name="span-idusing_windbg_to_debug_the_sharks_cove_boardspanspan-idusing_windbg_to_debug_the_sharks_cove_boardspanspan-idusing_windbg_to_debug_the_sharks_cove_boardspanusing-windbg-to-debug-the-sharks-cove-board"></a><span id="Using_WinDbg_to_debug_the_Sharks_Cove_board"></span><span id="using_windbg_to_debug_the_sharks_cove_board"></span><span id="USING_WINDBG_TO_DEBUG_THE_SHARKS_COVE_BOARD"></span>WinDbg を使った Sharks Cove ボードのデバッグ
 
 
 Visual Studio を使ってカーネル モード デバッグをセットアップするのではなく、手動でセットアップすることができます。 次のトピックはオンライン ドキュメントまたは debugger.chm で確認できます。
@@ -458,20 +458,20 @@ Visual Studio を使ってカーネル モード デバッグをセットアッ�
 
 Visual Studio を使う場合でも、WinDbg を使う場合でも、デバッガー コマンドについて学習する際は、次の実践的なガイドが役立ちます。
 
--   [WinDbg ドライバーの概要 (ユーザー モード)](https://msdn.microsoft.com/library/windows/hardware/dn745911)
--   [WinDbg ドライバーの概要 (カーネル モード)](https://msdn.microsoft.com/library/windows/hardware/dn745912)
+-   [WinDbg ドライバーの概要 (ユーザー モード)](https://docs.microsoft.com/windows-hardware/drivers/debugger/getting-started-with-windbg)
+-   [WinDbg ドライバーの概要 (カーネル モード)](https://docs.microsoft.com/windows-hardware/drivers/debugger/getting-started-with-windbg--kernel-mode-)
 
-## <a name="span-idsampledrivercodespanspan-idsampledrivercodespanspan-idsampledrivercodespansample-driver-code"></a><span id="Sample_driver_code"></span><span id="sample_driver_code"></span><span id="SAMPLE_DRIVER_CODE"></span>サンプルのドライバー コード
+## <a name="span-idsample_driver_codespanspan-idsample_driver_codespanspan-idsample_driver_codespansample-driver-code"></a><span id="Sample_driver_code"></span><span id="sample_driver_code"></span><span id="SAMPLE_DRIVER_CODE"></span>サンプルのドライバー コード
 
 
 -   [SpbAccelerometer サンプル ドライバー (UMDF バージョン 1)](https://go.microsoft.com/fwlink/p?linkid=506965)
 
-## <a name="span-idunderstandingsimpleperipheralbusesspanspan-idunderstandingsimpleperipheralbusesspanspan-idunderstandingsimpleperipheralbusesspanunderstanding-simple-peripheral-buses"></a><span id="Understanding_simple_peripheral_buses"></span><span id="understanding_simple_peripheral_buses"></span><span id="UNDERSTANDING_SIMPLE_PERIPHERAL_BUSES"></span>Simple Peripheral Bus について
+## <a name="span-idunderstanding_simple_peripheral_busesspanspan-idunderstanding_simple_peripheral_busesspanspan-idunderstanding_simple_peripheral_busesspanunderstanding-simple-peripheral-buses"></a><span id="Understanding_simple_peripheral_buses"></span><span id="understanding_simple_peripheral_buses"></span><span id="UNDERSTANDING_SIMPLE_PERIPHERAL_BUSES"></span>Simple Peripheral Bus について
 
 
 Windows ドライバーでの Simple Peripheral Bus の操作方法については、「[Simple Peripheral Bus](https://go.microsoft.com/fwlink/p?linkid=399232)」をご覧ください。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
 [SharksCove.org](https://go.microsoft.com/fwlink/p?linkid=403167)

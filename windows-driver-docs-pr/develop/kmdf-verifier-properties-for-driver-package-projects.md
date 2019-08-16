@@ -4,20 +4,20 @@ title: ドライバー パッケージ プロジェクトの KMDF 検証ツー�
 description: リモート コンピューター上の KMDF 検証ツールのプロパティを設定します。  これらの設定を使って、KMDF ドライバーをビルドし、テスト コンピューターに展開します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ae1c204b9819dc9039de47a8af54396894b3159
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 9b319b3c54012151bc2f27f2504ea471fe85937a
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63344134"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67393450"
 ---
 # <a name="kmdf-verifier-properties-for-driver-package-projects"></a>ドライバー パッケージ プロジェクトの KMDF 検証ツール プロパティ
 
 リモート コンピューター上の KMDF 検証ツール (またはフレームワーク検証ツール) のプロパティを設定します。 KMDF ドライバーをビルドしてテスト コンピューターに展開するときに、これらの設定を使うことができます。 KMDF ドライバーについて詳しくは、「[カーネル モード ドライバー フレームワーク](https://docs.microsoft.com/windows-hardware/drivers/wdf/)」をご覧ください。
 
-フレームワーク検証ツールについて詳しくは、「[フレームワーク検証ツールの使用](https://msdn.microsoft.com/Library/Windows/Hardware/Ff545540)」と「[WDF 検証ツールの制御アプリケーション](https://msdn.microsoft.com/Library/Windows/Hardware/Ff556129)」をご覧ください。
+フレームワーク検証ツールについて詳しくは、「[フレームワーク検証ツールの使用](https://docs.microsoft.com/windows-hardware/drivers/wdf/using-kmdf-verifier)」と「[WDF 検証ツールの制御アプリケーション](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdf-verifier-control-application)」をご覧ください。
 
-## <a name="span-idsettingkmdfverifierpropertiesfordriverpackageprojectsspanspan-idsettingkmdfverifierpropertiesfordriverpackageprojectsspanspan-idsettingkmdfverifierpropertiesfordriverpackageprojectsspansetting-kmdf-verifier-properties-for-driver-package-projects"></a><span id="Setting_KMDF_Verifier_properties_for_driver_package_projects"></span><span id="setting_kmdf_verifier_properties_for_driver_package_projects"></span><span id="SETTING_KMDF_VERIFIER_PROPERTIES_FOR_DRIVER_PACKAGE_PROJECTS"></span>ドライバー パッケージ プロジェクトの KMDF 検証ツール プロパティの設定
+## <a name="span-idsetting_kmdf_verifier_properties_for_driver_package_projectsspanspan-idsetting_kmdf_verifier_properties_for_driver_package_projectsspanspan-idsetting_kmdf_verifier_properties_for_driver_package_projectsspansetting-kmdf-verifier-properties-for-driver-package-projects"></a><span id="Setting_KMDF_Verifier_properties_for_driver_package_projects"></span><span id="setting_kmdf_verifier_properties_for_driver_package_projects"></span><span id="SETTING_KMDF_VERIFIER_PROPERTIES_FOR_DRIVER_PACKAGE_PROJECTS"></span>ドライバー パッケージ プロジェクトの KMDF 検証ツール プロパティの設定
 
 
 1.  ドライバー パッケージのプロパティ ページを開きます。 ソリューション エクスプローラーでドライバー パッケージ プロジェクトを右クリックし、 **[プロパティ]** をクリックします。
@@ -38,7 +38,7 @@ ms.locfileid: "63344134"
 <tbody>
 <tr class="odd">
 <td align="left"><p><span id="Enable_KMDF_Verifier"></span><span id="enable_kmdf_verifier"></span><span id="ENABLE_KMDF_VERIFIER"></span><strong>Enable KMDF Verifier (KMDF 検証ツールを有効にする)</strong></p></td>
-<td align="left"><p>テスト コンピューターで KMDF 検証ツールを有効にします。 選択できるオプションは、<strong>[KMDF verifier is always on] (KMDF 検証ツールは常にオン)</strong> または <strong>[KMDF verifer is off] (KMDF 検証ツールはオフ)</strong> です。 KMDF 検証ツールが有効になっていなくて KMDF のバージョンが 1.9 以上である場合、基本的なフレームワークの検証は、<a href="https://msdn.microsoft.com/Library/Windows/Hardware/Ff545448" data-raw-source="[Driver Verifier](https://msdn.microsoft.com/Library/Windows/Hardware/Ff545448)">ドライバーの検証ツール</a>の一部として有効になります。</p></td>
+<td align="left"><p>テスト コンピューターで KMDF 検証ツールを有効にします。 選択できるオプションは、<strong>[KMDF verifier is always on] (KMDF 検証ツールは常にオン)</strong> または <strong>[KMDF verifer is off] (KMDF 検証ツールはオフ)</strong> です。 KMDF 検証ツールが有効になっていなくて KMDF のバージョンが 1.9 以上である場合、基本的なフレームワークの検証は、<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier" data-raw-source="[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)">ドライバーの検証ツール</a>の一部として有効になります。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><span id="KMDF_Service_Names"></span><span id="kmdf_service_names"></span><span id="KMDF_SERVICE_NAMES"></span><strong>KMDF Service Names (KMDF サービス名)</strong></p></td>
@@ -85,11 +85,11 @@ ms.locfileid: "63344134"
 
  
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
 * [カーネル モード ドライバー フレームワーク](https://docs.microsoft.com/windows-hardware/drivers/wdf/)
-* [ドライバー検証ツール](https://msdn.microsoft.com/Library/Windows/Hardware/Ff545448)
+* [ドライバー検証ツール](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)
 * [テスト コンピューターへのドライバーの展開](deploying-a-driver-to-a-test-computer.md)
  
 

@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 03/17/2017
 keywords: Windows 10, UWP, Microsoft Store 分析 API, CAB のダウンロード
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f48fcef5294e075858c62288c287a451f95fff0
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: c618fd5e8b87e211dbb97985539661a576522ccb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63335044"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353907"
 ---
 # <a name="download-the-cab-file-for-an-oem-hardware-error"></a>OEM ハードウェア エラーの CAB ファイルをダウンロードする
 
@@ -31,7 +31,7 @@ ms.locfileid: "63335044"
 Microsoft Store 分析 API の [OEM ハードウェア エラー報告データを取得する](get-oem-hardware-error-reporting-data.md)メソッドと [OEM ハードウェア エラーの詳細を取得する](get-details-for-an-oem-hardware-error.md)メソッドを使うと、OEM ハードウェア エラーに関する他の情報を取得できます。
 
 > [!NOTE]
-> このメソッドは、[パートナー センター プログラム](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/get-started-with-the-hardware-dashboard)に参加している開発者アカウントでのみ使用できます。
+> このメソッドは、[パートナー センター プログラム](https://docs.microsoft.com/windows-hardware/drivers/dashboard/get-started-with-the-hardware-dashboard)に参加している開発者アカウントでのみ使用できます。
 
 ## <a name="prerequisites"></a>前提条件
 

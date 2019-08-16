@@ -4,12 +4,12 @@ description: 仮想アドレス領域
 ms.assetid: 5A3E1918-E5A4-4129-B0C2-45B6EEB7EFB3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b4d528c5f4cdf622221a79efcccc4c03b7c88c5b
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 778e9a60127f2dfc852aca940cd5faf153fa6f1d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63371177"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358665"
 ---
 # <a name="virtual-address-spaces"></a>仮想アドレス領域
 
@@ -30,7 +30,7 @@ ms.locfileid: "63371177"
 
 図は、次の 2 つの 64 ビット プロセスに対する仮想アドレス領域を示しています:Notepad.exe と MyApp.exe。 各プロセスに 0x000'00000000 ～ 0x7FF'FFFFFFFF の範囲の独自の仮想アドレス領域がそれぞれ割り当てられます。 影が付いた部分は、仮想メモリまたは物理メモリの 1 ページ (サイズ 4 KB) に相当します。 Notepad プロセスでは、0x7F7'93950000 から始まる 3 ページ分の連続した仮想アドレスを使います。 ただし、この連続した 3 ページの仮想アドレスは、物理メモリではそれぞれ連続しないページにマッピングされます。 また両プロセスとも、0x7F7'93950000 から開始する仮想メモリのページを使っていますが、各仮想ページは、物理メモリでは別のページにマッピングされます。
 
-## <a name="span-iduserspaceandsystemspacespanspan-iduserspaceandsystemspacespanspan-iduserspaceandsystemspacespanuser-space-and-system-space"></a><span id="User_space_and_system_space"></span><span id="user_space_and_system_space"></span><span id="USER_SPACE_AND_SYSTEM_SPACE"></span>ユーザー空間とシステム空間
+## <a name="span-iduser_space_and_system_spacespanspan-iduser_space_and_system_spacespanspan-iduser_space_and_system_spacespanuser-space-and-system-space"></a><span id="User_space_and_system_space"></span><span id="user_space_and_system_space"></span><span id="USER_SPACE_AND_SYSTEM_SPACE"></span>ユーザー空間とシステム空間
 
 
 Notepad.exe や MyApp.exe などのプロセスはユーザー モードで実行されます。 オペレーティング システムのコア コンポーネントや多くのドライバーは、より特権レベルの高いカーネル モードで実行されます。 プロセッサ モードについて詳しくは、「[ユーザー モードとカーネル モード](user-mode-and-kernel-mode.md)」をご覧ください。 各ユーザー モード プロセスには、それぞれ個別のプライベート仮想アドレス領域が割り当てられますが、カーネル モードで実行されるコードはすべて、*システム空間*と呼ばれる単一の仮想アドレス領域を共有します。 ユーザー モード プロセスに対する仮想アドレス領域は、*ユーザー空間*と呼ばれます。
@@ -39,7 +39,7 @@ Notepad.exe や MyApp.exe などのプロセスはユーザー モードで実�
 
 ![システム空間の図](images/virtualaddressspace02.png)
 
-32 ビット Windows の場合は、2 GB を超える空間をユーザー空間として割り当てるようにブート時に指定することができます。 このように指定すると、システム空間に割り当てられる仮想アドレスの容量が少なくなります。 ユーザー空間のサイズは、3 GB まで拡張することができます。この場合、システム空間として利用できる容量はわずか 1 GB になります。 ユーザー空間のサイズを増やすには、[**BCDEdit /set increaseuserva**](https://msdn.microsoft.com/library/windows/hardware/ff542202) を使います。
+32 ビット Windows の場合は、2 GB を超える空間をユーザー空間として割り当てるようにブート時に指定することができます。 このように指定すると、システム空間に割り当てられる仮想アドレスの容量が少なくなります。 ユーザー空間のサイズは、3 GB まで拡張することができます。この場合、システム空間として利用できる容量はわずか 1 GB になります。 ユーザー空間のサイズを増やすには、[**BCDEdit /set increaseuserva**](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcdedit--set) を使います。
 
 64 ビット Windows の場合、仮想アドレス領域の容量は理論上、2^64 バイト (16 エクサバイト) になりますが、実際に使うのは 16 エクサバイトの範囲のうちわずかにすぎません。 ユーザー空間には、0x000'00000000 ～ 0x7FF'FFFFFFFF の 8 TB 分が使われます。システム空間には 0xFFFF0800'00000000 ～ 0xFFFFFFFF'FFFFFFFF の 248 TB 分が使われます。
 
@@ -56,7 +56,7 @@ Notepad.exe や MyApp.exe などのプロセスはユーザー モードで実�
 3.  後で、デバイスは、その時点で実行されている任意のスレッドに割り込んで、読み取り動作が完了したことを伝えます。 割り込みは、ある任意のプロセスに属している、この任意のスレッドの実行を担当しているカーネル モード ドライバー ルーチンによって処理されます。
 4.  この時点で、手順 1 でユーザー モード プログラムから指定される開始アドレスに対し、ドライバーがデータを書き込まないようにします。 このアドレスは、要求側プロセスの仮想アドレス領域に置かれるため、現在のプロセスのアドレスと競合することはまずありません。
 
-## <a name="span-idpagedpoolandnonpagedpoolspanspan-idpagedpoolandnonpagedpoolspanspan-idpagedpoolandnonpagedpoolspanpaged-pool-and-nonpaged-pool"></a><span id="Paged_pool_and_Nonpaged_pool"></span><span id="paged_pool_and_nonpaged_pool"></span><span id="PAGED_POOL_AND_NONPAGED_POOL"></span>ページ プールと非ページ プール
+## <a name="span-idpaged_pool_and_nonpaged_poolspanspan-idpaged_pool_and_nonpaged_poolspanspan-idpaged_pool_and_nonpaged_poolspanpaged-pool-and-nonpaged-pool"></a><span id="Paged_pool_and_Nonpaged_pool"></span><span id="paged_pool_and_nonpaged_pool"></span><span id="PAGED_POOL_AND_NONPAGED_POOL"></span>ページ プールと非ページ プール
 
 
 ユーザー空間では、必要に応じてすべての物理メモリ ページをディスク ファイルにページ アウトできます。 システム空間の物理ページには、ページ アウトできるものとできないものがあります。 システム空間では、ページ プールと非ページ プールという 2 つの領域にメモリを動的に割り当てます。 
@@ -65,7 +65,7 @@ Notepad.exe や MyApp.exe などのプロセスはユーザー モードで実�
 
 ![ページ プールと非ページ プールのメモリ割り当ての比較図](images/virtualaddressspace04.png)
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
 [ユーザー モードとカーネル モード](user-mode-and-kernel-mode.md)

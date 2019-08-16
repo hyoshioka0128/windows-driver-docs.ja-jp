@@ -5,12 +5,12 @@ ms.assetid: 120AA970-D981-4E7D-A9BD-68125D90A0EE
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 11d35f1f576671440568259c0f0c42a886dd4f20
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 9e1878f3283ecdb3877c80299906370818b09c47
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63337092"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364398"
 ---
 # <a name="add-or-update-a-code-signing-certificate"></a>コード署名証明書の追加または更新
 
@@ -18,20 +18,20 @@ ms.locfileid: "63337092"
 
 パートナー センターでは、1 つのアカウントに関連付けられた複数の証明書をサポートします。  追加の証明書を追加する場合は、これと同じプロセスを使用します。
 
-会社を初めてダッシュボードに登録する場合は、「[新しい会社の開設](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/establish-a-new-company)」をご覧ください。
+会社を初めてダッシュボードに登録する場合は、「[新しい会社の開設](https://docs.microsoft.com/windows-hardware/drivers/dashboard/establish-a-new-company)」をご覧ください。
 
 > [!IMPORTANT]
 > パートナー センターのすべての申請パッケージ用にアップロードおよび使用される証明書について、以下の変更が実施されました。
 >
 > * 拡張検証 (EV) コード署名証明書は、**すべて**の申請に必要です。  
 > * すべての証明書は SHA2 である必要があり、 **/fd sha256** signtool コマンド ライン スイッチを使用して署名される必要があります
-> * (詳しくは、[HLK ブログの投稿](https://blogs.msdn.microsoft.com/windows_hardware_certification/2017/11/13/starting-in-february-2018-packages-signed-using-a-sha-1-digest-algorithm-and-certificate-chain-will-no-longer-be-accepted/)をご覧ください)。
+> * (詳しくは、[HLK ブログの投稿](https://techcommunity.microsoft.com/t5/Windows-Hardware-Certification/bg-p/WindowsHardwareCertification)をご覧ください)。
 
 ## <a name="to-add-or-update-a-code-signing-certificate"></a>コード署名証明書を追加または更新するには
 
 ### <a name="step-1-renew-your-code-signing-certificate-if-needed"></a>手順 1:必要に応じてコード署名証明書を更新する  
 
-1. 必要なコード署名証明書の種類を確認します (詳しくは、「[コード署名証明書の取得](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/get-a-code-signing-certificate)」をご覧ください)。
+1. 必要なコード署名証明書の種類を確認します (詳しくは、「[コード署名証明書の取得](https://docs.microsoft.com/windows-hardware/drivers/dashboard/get-a-code-signing-certificate)」をご覧ください)。
 
 2. 新しい証明書を取得するか、既にある証明書を再利用します。
 
@@ -53,10 +53,10 @@ ms.locfileid: "63337092"
 
 ## <a name="related-topics"></a>関連トピック
 
-* [サインインする前に](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/before-you-sign-in)
+* [サインインする前に](https://docs.microsoft.com/windows-hardware/drivers/dashboard/before-you-sign-in)
 
-* [新しい会社の開設](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/establish-a-new-company)
+* [新しい会社の開設](https://docs.microsoft.com/windows-hardware/drivers/dashboard/establish-a-new-company)
 
-* [ハードウェア認定の申請](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/hardware-certification-submissions)
+* [ハードウェア認定の申請](https://docs.microsoft.com/windows-hardware/drivers/dashboard/hardware-certification-submissions)
 
-* [認定取得のためのアプリの提出](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/app-certification-submissions)
+* [認定取得のためのアプリの提出](https://docs.microsoft.com/windows-hardware/drivers/dashboard/app-certification-submissions)

@@ -4,12 +4,12 @@ title: 一般リリース用のドライバーへの署名
 description: ドライバー パッケージを一般にリリースする前に、パッケージの認定依頼を提出することをお勧めします。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 84fa5796983bdc5aac50af88d47262906983a605
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 0a0e381540ef439e45300df2e0d8852d687acc90
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63378620"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67393067"
 ---
 # <a name="signing-a-driver-for-public-release"></a>一般リリース用のドライバーへの署名
 
@@ -17,7 +17,7 @@ ms.locfileid: "63378620"
 
 Verisign から、秘密キー ファイル (PVK) とソフトウェア発行元証明書 (SPC) の一対のファイルを取得済みだとします。 また、MyDriver という名前のドライバー プロジェクトと MyDriver Package という名前のドライバー パッケージ プロジェクトを含む Microsoft Visual Studio ソリューションもあるとします。 ドライバー パッケージに署名するには、次の手順を実行します。
 
-1.  [  **Pvk2Pfx**](https://msdn.microsoft.com/Library/Windows/Hardware/Ff550672) ツールを使って、Personal Information Exchange (PFX) 証明書を作ります。 **Pvk2Pfx** ツールは PVK ファイルと SPC ファイルを入力として取り、1 つの PFX ファイルを作ります。 この作業では、PFX ファイルの名前を MyCert.pfx とします。
+1.  [  **Pvk2Pfx**](https://docs.microsoft.com/windows-hardware/drivers/devtest/pvk2pfx) ツールを使って、Personal Information Exchange (PFX) 証明書を作ります。 **Pvk2Pfx** ツールは PVK ファイルと SPC ファイルを入力として取り、1 つの PFX ファイルを作ります。 この作業では、PFX ファイルの名前を MyCert.pfx とします。
 
     **注**  PFX ファイルを作っておくと、他のドライバー プロジェクトや他のドライバー開発コンピューターで再利用することができます。
 2.  必要なクロス証明書を確認するには、[カーネル モードのコード署名用のクロス証明書に関するページ](https://go.microsoft.com/fwlink/p/?LinkID=248296)をご覧ください。 必要なクロス証明書が $(BASEDIR)\\CrossCertificates にあることを確認します。$(BASEDIR) は、Windows キットの基本ディレクトリです (c:\\Program Files (x86)\\Windows Kits\\8.0\\CrossCertificates など)。 必要なクロス証明書がない場合は、Microsoft からクロス証明書をダウンロードして $(BASEDIR)\\CrossCertificates にコピーします。
@@ -41,25 +41,25 @@ Verisign から、秘密キー ファイル (PVK) とソフトウェア発行元
 8.  ドライバー プロジェクト **[MyDriver]** を右クリックし、 **[プロパティ]** をクリックします。
 9.  ドライバーのプロパティ ページで、 **[Configuration Properties (構成プロパティ)] &gt; [Driver Signing (ドライバーの署名)] &gt; [全般]** の順に移動します。 **[TimeStampServer (TimeStampServer)]** を、ドライバー パッケージのプロパティで使った値と同じ値に設定します。 **[Sign Mode] (署名モード)** を **[Production Sign] (実稼働署名)** に設定し、 **[Production Certificate] (実稼働証明書)** をドライバー パッケージのプロパティで使った値と同じ値に設定します。
 
-10. ドライバー パッケージをビルドする準備ができたら、**F5** キーを押します。 Visual Studio によって、パッケージとドライバー ファイルが自動的に署名されます。 展開するように構成してある場合は、署名されたドライバー パッケージは Visual Studio によってテスト コンピューターに展開されます。 詳しくは、「[ドライバーの展開およびテストのためのコンピューターのプロビジョニング (WDK 8.1)](https://msdn.microsoft.com/Library/Windows/Hardware/Dn745909)」をご覧ください。
+10. ドライバー パッケージをビルドする準備ができたら、**F5** キーを押します。 Visual Studio によって、パッケージとドライバー ファイルが自動的に署名されます。 展開するように構成してある場合は、署名されたドライバー パッケージは Visual Studio によってテスト コンピューターに展開されます。 詳しくは、「[ドライバーの展開およびテストのためのコンピューターのプロビジョニング (WDK 8.1)](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/provision-a-target-computer-wdk-8-1)」をご覧ください。
 
-## <a name="span-idviewingthedriverpackagefilesspanspan-idviewingthedriverpackagefilesspanspan-idviewingthedriverpackagefilesspanviewing-the-driver-package-files"></a><span id="Viewing_the_driver_package_files"></span><span id="viewing_the_driver_package_files"></span><span id="VIEWING_THE_DRIVER_PACKAGE_FILES"></span>ドライバー パッケージ ファイルの表示
+## <a name="span-idviewing_the_driver_package_filesspanspan-idviewing_the_driver_package_filesspanspan-idviewing_the_driver_package_filesspanviewing-the-driver-package-files"></a><span id="Viewing_the_driver_package_files"></span><span id="viewing_the_driver_package_files"></span><span id="VIEWING_THE_DRIVER_PACKAGE_FILES"></span>ドライバー パッケージ ファイルの表示
 
 
-ソリューションをビルドした後、エクスプローラーで、ドライバー パッケージを含むフォルダーに移動します。 パッケージ内のファイルの 1 つはカタログ ファイルです。 カタログ ファイルには、パッケージのデジタル署名が含まれています。 署名されたパッケージ内のファイルを表示する例については、「[テンプレートを使った KMDF ドライバーの作成](https://msdn.microsoft.com/Library/Windows/Hardware/Hh439654)」をご覧ください。
+ソリューションをビルドした後、エクスプローラーで、ドライバー パッケージを含むフォルダーに移動します。 パッケージ内のファイルの 1 つはカタログ ファイルです。 カタログ ファイルには、パッケージのデジタル署名が含まれています。 署名されたパッケージ内のファイルを表示する例については、「[テンプレートを使った KMDF ドライバーの作成](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/writing-a-kmdf-driver-based-on-a-template)」をご覧ください。
 
-## <a name="span-idgettingawhqlreleasesignaturespanspan-idgettingawhqlreleasesignaturespanspan-idgettingawhqlreleasesignaturespangetting-a-whql-release-signature"></a><span id="Getting_a_WHQL_release_signature"></span><span id="getting_a_whql_release_signature"></span><span id="GETTING_A_WHQL_RELEASE_SIGNATURE"></span>WHQL リリース署名の取得
+## <a name="span-idgetting_a_whql_release_signaturespanspan-idgetting_a_whql_release_signaturespanspan-idgetting_a_whql_release_signaturespangetting-a-whql-release-signature"></a><span id="Getting_a_WHQL_release_signature"></span><span id="getting_a_whql_release_signature"></span><span id="GETTING_A_WHQL_RELEASE_SIGNATURE"></span>WHQL リリース署名の取得
 
 
 ドライバー パッケージが認定テストに合格すると、Windows Hardware Quality Labs (WHQL) がこのドライバー パッケージに署名できるようになります。 ドライバー パッケージが WHQL によって署名されると、Windows Update プログラムや Microsoft がサポートする他の配布メカニズムによって配布することができます。
 
 Windows 10、8.1、8、7 にインストールする場合、ドライバー パッケージは SHA1 署名を 1 つ持つことができます。
 
-Windows 10 以降では、新しい Windows 10 カーネル モード ドライバーを [Windows ハードウェア デベロッパー センター ダッシュボード ポータル](https://msdn.microsoft.com/windows/hardware/gg236587.aspx)でデジタル署名を受けるために提出する必要もあります。  カーネル モードとユーザー モードどちらのドライバーの提出でも、有効な[拡張検証 (“EV”) コード署名証明書](https://msdn.microsoft.com/library/windows/hardware/hh801887.aspx)が必要です。
+Windows 10 以降では、新しい Windows 10 カーネル モード ドライバーを [Windows ハードウェア デベロッパー センター ダッシュボード ポータル](https://msdn.microsoft.com/windows/hardware/gg236587.aspx)でデジタル署名を受けるために提出する必要もあります。  カーネル モードとユーザー モードどちらのドライバーの提出でも、有効な[拡張検証 (“EV”) コード署名証明書](https://docs.microsoft.com/windows-hardware/drivers/dashboard/)が必要です。
 
-**注**  SHA1 の廃止はドライバーに適用されません。  Windows での SHA1 のサポート終了について詳しくは、「[Windows における Authenticode コード署名の強制とタイムスタンプ](http://social.technet.microsoft.com/wiki/contents/articles/32288.windows-enforcement-of-authenticode-code-signing-and-timestamping.aspx)」をご覧ください。
+**注**  SHA1 の廃止はドライバーに適用されません。  Windows での SHA1 のサポート終了について詳しくは、「[Windows における Authenticode コード署名の強制とタイムスタンプ](https://social.technet.microsoft.com/wiki/contents/articles/32288.windows-enforcement-of-authenticode-code-signing-and-timestamping.aspx)」をご覧ください。
 
-## <a name="span-idsigningapackagecomparedtosigninganindividualdriverfilespanspan-idsigningapackagecomparedtosigninganindividualdriverfilespanspan-idsigningapackagecomparedtosigninganindividualdriverfilespansigning-a-package-compared-to-signing-an-individual-driver-file"></a><span id="Signing_a_package_compared_to_signing_an_individual_driver_file"></span><span id="signing_a_package_compared_to_signing_an_individual_driver_file"></span><span id="SIGNING_A_PACKAGE_COMPARED_TO_SIGNING_AN_INDIVIDUAL_DRIVER_FILE"></span>パッケージへの署名と個々のドライバー ファイルへの署名の比較
+## <a name="span-idsigning_a_package_compared_to_signing_an_individual_driver_filespanspan-idsigning_a_package_compared_to_signing_an_individual_driver_filespanspan-idsigning_a_package_compared_to_signing_an_individual_driver_filespansigning-a-package-compared-to-signing-an-individual-driver-file"></a><span id="Signing_a_package_compared_to_signing_an_individual_driver_file"></span><span id="signing_a_package_compared_to_signing_an_individual_driver_file"></span><span id="SIGNING_A_PACKAGE_COMPARED_TO_SIGNING_AN_INDIVIDUAL_DRIVER_FILE"></span>パッケージへの署名と個々のドライバー ファイルへの署名の比較
 
 
 ドライバー パッケージには、複数のファイルが含まれます。 ドライバー パッケージには通常、1 つ以上のドライバー ファイル、情報ファイル (INF ファイル)、カタログ ファイルが含まれます。 カタログ ファイルには、パッケージ内の他のファイルに関する情報が含まれています。 カタログ ファイルに署名すると、カタログ ファイル内の署名は、ドライバー パッケージ全体の署名として機能します。 つまり、"*カタログ ファイルへの署名*" は "*ドライバー パッケージへの署名*" と同じです。
@@ -74,20 +74,20 @@ MyDriver という名前のドライバー プロジェクトと MyDriver Packag
 
      
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
-* [Windows 10 のドライバー署名の変更点](http://blogs.msdn.com/b/windows_hardware_certification/archive/2015/04/01/driver-signing-changes-in-windows-10.aspx)
-* [Windows 7 および Windows Server 2008 R2 で SHA-2 コード署名サポートを利用可能](https://technet.microsoft.com/library/security/3033929)
+* [Windows 10 のドライバー署名の変更点](https://techcommunity.microsoft.com/t5/Windows-Hardware-Certification/bg-p/WindowsHardwareCertification)
+* [Windows 7 および Windows Server 2008 R2 で SHA-2 コード署名サポートを利用可能](https://docs.microsoft.com/security-updates/SecurityAdvisories/2015/3033929)
 * [ドライバーへの署名](signing-a-driver.md)
 * [Windows ハードウェア認定](https://go.microsoft.com/fwlink/p/?LinkID=248337)
 * [ハードウェア ダッシュボード サービス](https://go.microsoft.com/fwlink/p/?LinkID=248336)
 * [Windows のドライバー署名の要件](https://go.microsoft.com/fwlink/p/?linkid=617515)
 * [カーネル モードのコード署名のクロス証明書](https://go.microsoft.com/fwlink/p/?LinkID=248296)
 * [カーネル モードのコード署名の手順](https://go.microsoft.com/fwlink/p/?linkid=617516)
-* [ドライバーの署名](https://msdn.microsoft.com/Library/Windows/Hardware/Ff544865)
-* [ブート開始ドライバーのインストール](https://msdn.microsoft.com/Library/Windows/Hardware/Ff547570)
-* [ドライバーの署名用ツール](https://msdn.microsoft.com/Library/Windows/Hardware/Ff552958)
+* [ドライバーの署名](https://docs.microsoft.com/windows-hardware/drivers/install/driver-signing)
+* [ブート開始ドライバーのインストール](https://docs.microsoft.com/windows-hardware/drivers/install/installing-a-boot-start-driver)
+* [ドライバーの署名用ツール](https://docs.microsoft.com/windows-hardware/drivers/devtest/tools-for-signing-drivers)
  
 
  

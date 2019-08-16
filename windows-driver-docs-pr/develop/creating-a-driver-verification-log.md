@@ -4,12 +4,12 @@ title: ドライバー検証ツール ログの作成
 description: Windows Server 2012 ハードウェア認定プログラムでは、該当するドライバーを提出するときに、ドライバー検証ツール ログ (DVL) を含める必要があります。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8199e7671bc8cfc1790f3ba8ea59962f747d3967
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 7f01f04912ab214dc178817e350d382d5faf0dae
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63382427"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370788"
 ---
 # <a name="creating-a-driver-verification-log"></a>ドライバー検証ツール ログの作成
 
@@ -19,8 +19,8 @@ Windows Server [ハードウェア認定プログラム](https://docs.microsoft
 
 1.  コード分析ツールを実行する前に、最新の Windows Driver Kit (WDK) を使ってドライバーのビルドとリンクができることを確認します。
 2.  ドライバー ソリューションでは、ソリューション構成としてリリース構成、ソリューション プラットフォームとして x64 が選択されていることを確認します。
-3.  [静的ドライバー検証ツール](https://msdn.microsoft.com/Library/Windows/Hardware/Ff552808)を実行します。 ログ ファイルの作成方法については、「[静的ドライバー検証ツールのログ ファイルの作成](creating-a-log-file-for-static-driver-verifier.md)」と「[ドライバーの不具合を見つけるための静的ドライバー検証ツールの使用](https://msdn.microsoft.com/Library/Windows/Hardware/Hh454281)」をご覧ください。
-4.  ドライバーのコード分析ツールを実行します。 見つかった欠陥に対処し、修正します。 「[コード分析ツールのログ ファイルの作成](creating-a-log-file-for-the-code-analysis-tool.md)」と「[ドライバーのコード分析を実行する方法](https://msdn.microsoft.com/Library/Windows/Hardware/Hh454219)」をご覧ください。 コード分析について詳しくは、[コード分析による C/C++ コード品質の分析に関するページ](https://go.microsoft.com/fwlink/p/?linkid=226836)をご覧ください。
+3.  [静的ドライバー検証ツール](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier)を実行します。 ログ ファイルの作成方法については、「[静的ドライバー検証ツールのログ ファイルの作成](creating-a-log-file-for-static-driver-verifier.md)」と「[ドライバーの不具合を見つけるための静的ドライバー検証ツールの使用](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers)」をご覧ください。
+4.  ドライバーのコード分析ツールを実行します。 見つかった欠陥に対処し、修正します。 「[コード分析ツールのログ ファイルの作成](creating-a-log-file-for-the-code-analysis-tool.md)」と「[ドライバーのコード分析を実行する方法](https://docs.microsoft.com/windows-hardware/drivers/devtest/how-to-run-code-analysis-for-drivers)」をご覧ください。 コード分析について詳しくは、[コード分析による C/C++ コード品質の分析に関するページ](https://go.microsoft.com/fwlink/p/?linkid=226836)をご覧ください。
 5.  ドライバーの検証ツール ログを作成します。 **[ドライバー]** メニューの **[Create Driver Verification Log]** (ドライバーの検証ツール ログの作成) をクリックします。
 6.  コード分析ログと静的ドライバー検証ツール ログの両方のファイルが検出されていることを確認します。 **[作成]** をクリックします。
 
@@ -47,15 +47,15 @@ Visual Studio コマンド プロンプト ウィンドウから、Visual Studio
 msbuild.exe <vcxprojectfile> /target:dvl /p:Configuration="Release" /P:Platform=x64
 ```
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
 * [静的ドライバー検証ツールのログ ファイルの作成](creating-a-log-file-for-static-driver-verifier.md)
 * [コード分析ツールのログ ファイルの作成](creating-a-log-file-for-the-code-analysis-tool.md)
 * [ハードウェア認定プログラム](https://go.microsoft.com/fwlink/p/?linkid=227016)
 * [コード分析ツールによるドライバー品質の分析](analyzing-driver-quality-by-using-code-analysis-tools.md)
-* [ドライバーのコード分析を実行する方法](https://msdn.microsoft.com/Library/Windows/Hardware/Hh454219)
-* [ドライバーの不具合を見つけるための静的ドライバー検証ツールの使用](https://msdn.microsoft.com/Library/Windows/Hardware/Hh454281)
+* [ドライバーのコード分析を実行する方法](https://docs.microsoft.com/windows-hardware/drivers/devtest/how-to-run-code-analysis-for-drivers)
+* [ドライバーの不具合を見つけるための静的ドライバー検証ツールの使用](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers)
  
 
  

@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 06/04/2018
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, エラー, 詳細
 ms.localizationpriority: medium
-ms.openlocfilehash: 181733bd82bcfd1684e7b89b2dafff01feb4cb4d
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: e1fbd6444a70d54344e2c4b6602abc99e72c6c60
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63335075"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353885"
 ---
 # <a name="get-details-for-an-oem-hardware-error"></a>OEM ハードウェア エラーの詳細を取得する
 
@@ -30,7 +30,7 @@ ms.locfileid: "63335075"
 特定の OEM ハードウェア エラーに関する詳細データを JSON 形式で取得するには、Microsoft Store 分析 API の以下のメソッドを使います。 このメソッドを使うには、事前に[ OEM ハードウェア エラー報告データを取得する](get-oem-hardware-error-reporting-data.md)メソッドを使用し、必要な詳細情報の対象となるエラーの ID を取得しておく必要があります。
 
 > [!NOTE]
-> このメソッドは、[Windows ハードウェア デベロッパー センター プログラム](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/get-started-with-the-hardware-dashboard)に参加している開発者アカウントでのみ使用できます。
+> このメソッドは、[Windows ハードウェア デベロッパー センター プログラム](https://docs.microsoft.com/windows-hardware/drivers/dashboard/get-started-with-the-hardware-dashboard)に参加している開発者アカウントでのみ使用できます。
 
 ## <a name="prerequisites"></a>前提条件
 

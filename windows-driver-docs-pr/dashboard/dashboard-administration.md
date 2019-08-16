@@ -5,12 +5,12 @@ ms.assetid: 078FDCAE-0012-481A-8328-0EF0A199C0ED
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 53e30bc9de4ae2b37eaee8c0a454660e167c689e
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 6518442161f1ebe65d5e7323d44b477d0ea2d3fd
+ms.sourcegitcommit: 289b5f97aff1b9ea1fefc9a8731e0fc16533073b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63337267"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67492519"
 ---
 # <a name="dashboard-administration"></a>ダッシュボードの管理
 
@@ -18,6 +18,5 @@ ms.locfileid: "63337267"
 
 - [ハードウェア プログラムの概要](get-started-with-the-hardware-dashboard.md)
 - [ハードウェア プログラムの登録](register-for-the-hardware-program.md)
-- [ドライバー エラー レポート](driver-failure-reporting.md)
 - [ユーザーの追加または削除](adding-or-removing-users.md)
 - [ユーザー ロールの管理](managing-user-roles.md)

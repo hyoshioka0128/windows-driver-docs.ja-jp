@@ -4,25 +4,25 @@ title: ドライバー プロジェクトのカウンター マニフェスト �
 description: カウンター マニフェストの解析と検証を行う CTRPP ツールのプロパティを設定します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e66c284106594c31d6499f929abb42f1129c5ca
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: f33684b24b51557b594f9153c82048a3e396cae3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63382539"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370819"
 ---
 # <a name="counters-manifest-preprocessor-properties-for-driver-projects"></a>ドライバー プロジェクトのカウンター マニフェスト プリプロセッサ プロパティ
 
-カウンター マニフェストの解析と検証を行う [CTRPP](https://msdn.microsoft.com/library/windows/desktop/aa372128) ツールのプロパティを設定します。 パフォーマンス カウンターの操作について詳しくは、「[パフォーマンス カウンター](https://msdn.microsoft.com/Library/Windows/Desktop/aa373083)」をご覧ください。 カーネル モード Windows ドライバーでのパフォーマンス カウンターの使用方法については、「[カーネル モードのパフォーマンスの監視](https://msdn.microsoft.com/Library/Windows/Hardware/Ff548159)」をご覧ください。
+カウンター マニフェストの解析と検証を行う [CTRPP](https://docs.microsoft.com/windows/desktop/PerfCtrs/ctrpp) ツールのプロパティを設定します。 パフォーマンス カウンターの操作について詳しくは、「[パフォーマンス カウンター](https://docs.microsoft.com/windows/desktop/PerfCtrs/performance-counters-portal)」をご覧ください。 カーネル モード Windows ドライバーでのパフォーマンス カウンターの使用方法については、「[カーネル モードのパフォーマンスの監視](https://docs.microsoft.com/windows-hardware/drivers/devtest/kernel-mode-performance-monitoring)」をご覧ください。
 
-## <a name="span-idsettingthecountersmanifestpreprocessorpropertiesfordriverprojectsspanspan-idsettingthecountersmanifestpreprocessorpropertiesfordriverprojectsspanspan-idsettingthecountersmanifestpreprocessorpropertiesfordriverprojectsspansetting-the-counters-manifest-preprocessor-properties-for-driver-projects"></a><span id="Setting_the_Counters_Manifest_Preprocessor_properties_for_driver_projects"></span><span id="setting_the_counters_manifest_preprocessor_properties_for_driver_projects"></span><span id="SETTING_THE_COUNTERS_MANIFEST_PREPROCESSOR_PROPERTIES_FOR_DRIVER_PROJECTS"></span>ドライバー プロジェクトのカウンター マニフェスト プリプロセッサ プロパティの設定
+## <a name="span-idsetting_the_counters_manifest_preprocessor_properties_for_driver_projectsspanspan-idsetting_the_counters_manifest_preprocessor_properties_for_driver_projectsspanspan-idsetting_the_counters_manifest_preprocessor_properties_for_driver_projectsspansetting-the-counters-manifest-preprocessor-properties-for-driver-projects"></a><span id="Setting_the_Counters_Manifest_Preprocessor_properties_for_driver_projects"></span><span id="setting_the_counters_manifest_preprocessor_properties_for_driver_projects"></span><span id="SETTING_THE_COUNTERS_MANIFEST_PREPROCESSOR_PROPERTIES_FOR_DRIVER_PROJECTS"></span>ドライバー プロジェクトのカウンター マニフェスト プリプロセッサ プロパティの設定
 
 
 1.  ドライバー プロジェクトのプロパティ ページを開きます。 **ソリューション エクスプローラー**でドライバー プロジェクトを右クリックして、 **[プロパティ]** をクリックします。
 2.  ドライバー プロジェクトのプロパティ ページで、 **[構成プロパティ]** をクリックし、 **[Counters Manifest Preprocessor Properties]** (カウンター マニフェスト プリプロセッサ プロパティ) をクリックします。
 3.  プロジェクトのプロパティを設定します。
 
-このプロパティ ページをプロジェクトに追加して、ビルド プロセス中に CTRPP ツールを実行できるようにする方法については、「[WDK と Visual Studio のビルド環境](https://msdn.microsoft.com/Library/Windows/Hardware/Hh454286)」と「[Ctrpp タスク](https://msdn.microsoft.com/Library/Windows/Hardware/Hh454206)」をご覧ください。
+このプロパティ ページをプロジェクトに追加して、ビルド プロセス中に CTRPP ツールを実行できるようにする方法については、「[WDK と Visual Studio のビルド環境](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdk-and-visual-studio-build-environment)」と「[Ctrpp タスク](https://docs.microsoft.com/windows-hardware/drivers/devtest/ctrpp-task)」をご覧ください。
 
 <table>
 <colgroup>
@@ -42,7 +42,7 @@ ms.locfileid: "63382539"
 </tr>
 <tr class="even">
 <td align="left"><p><span id="Additional_Options"></span><span id="additional_options"></span><span id="ADDITIONAL_OPTIONS"></span>追加オプション</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/Library/Windows/Desktop/aa372128" data-raw-source="[&lt;strong&gt;CTRPP&lt;/strong&gt;](https://msdn.microsoft.com/Library/Windows/Desktop/aa372128)"><strong>CTRPP</strong></a> ツールへの追加オプションを指定します。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/PerfCtrs/ctrpp" data-raw-source="[&lt;strong&gt;CTRPP&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/PerfCtrs/ctrpp)"><strong>CTRPP</strong></a> ツールへの追加オプションを指定します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><span id="Backward_Compatibility"></span><span id="backward_compatibility"></span><span id="BACKWARD_COMPATIBILITY"></span>下位互換性</p></td>
@@ -50,7 +50,7 @@ ms.locfileid: "63382539"
 </tr>
 <tr class="even">
 <td align="left"><p><span id="Enable_Legacy"></span><span id="enable_legacy"></span><span id="ENABLE_LEGACY"></span>Enable Legacy (レガシを有効にする)</p></td>
-<td align="left"><p>Windows Vista のコード テンプレートを使うコード生成に戻します。 このオプションを指定すると、<a href="https://msdn.microsoft.com/Library/Windows/Desktop/aa372128" data-raw-source="[&lt;strong&gt;CTRPP&lt;/strong&gt;](https://msdn.microsoft.com/Library/Windows/Desktop/aa372128)"><strong>CTRPP</strong></a> によって 4 つの出力ファイル (2 つのヘッダー ファイル (.h、_r.h)、1 つのリソース ファイル (.rc)、1 つのソース コード ファイル (c)) が生成されます。 (<strong>-legacy</strong>)</p></td>
+<td align="left"><p>Windows Vista のコード テンプレートを使うコード生成に戻します。 このオプションを指定すると、<a href="https://docs.microsoft.com/windows/desktop/PerfCtrs/ctrpp" data-raw-source="[&lt;strong&gt;CTRPP&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/PerfCtrs/ctrpp)"><strong>CTRPP</strong></a> によって 4 つの出力ファイル (2 つのヘッダー ファイル (.h、_r.h)、1 つのリソース ファイル (.rc)、1 つのソース コード ファイル (c)) が生成されます。 (<strong>-legacy</strong>)</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><span id="Generate_header_file_for_containing_counter_names_and_GUIDs"></span><span id="generate_header_file_for_containing_counter_names_and_guids"></span><span id="GENERATE_HEADER_FILE_FOR_CONTAINING_COUNTER_NAMES_AND_GUIDS"></span>Generate header file for containing counter names and GUIDs (カウンター名と GUID を格納するためのヘッダー ファイルを生成する)</p></td>
@@ -102,14 +102,14 @@ ms.locfileid: "63382539"
 ## <a name="span-idcommentspanspan-idcommentspanspan-idcommentspancomment"></a><span id="Comment"></span><span id="comment"></span><span id="COMMENT"></span>コメント
 
 
-ツールが生成するファイルの既定の名前は、[**CTRPP**](https://msdn.microsoft.com/Library/Windows/Desktop/aa372128) ツールに渡すマニフェスト ファイルの名前に基づいて決定されます。
+ツールが生成するファイルの既定の名前は、[**CTRPP**](https://docs.microsoft.com/windows/desktop/PerfCtrs/ctrpp) ツールに渡すマニフェスト ファイルの名前に基づいて決定されます。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
-* [**CTRPP**](https://msdn.microsoft.com/Library/Windows/Desktop/aa372128)
-* [パフォーマンス カウンター](https://msdn.microsoft.com/Library/Windows/Desktop/aa373083)
-* [カーネル モードのパフォーマンスの監視](https://msdn.microsoft.com/Library/Windows/Hardware/Ff548159)
+* [**CTRPP**](https://docs.microsoft.com/windows/desktop/PerfCtrs/ctrpp)
+* [パフォーマンス カウンター](https://docs.microsoft.com/windows/desktop/PerfCtrs/performance-counters-portal)
+* [カーネル モードのパフォーマンスの監視](https://docs.microsoft.com/windows-hardware/drivers/devtest/kernel-mode-performance-monitoring)
  
 
  

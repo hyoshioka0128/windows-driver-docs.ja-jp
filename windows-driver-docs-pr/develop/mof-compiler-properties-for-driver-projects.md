@@ -4,18 +4,18 @@ title: ドライバー プロジェクトの MOF コンパイラ プロパティ
 description: 管理オブジェクト フォーマット (MOF) コンパイラ (mofcomp.exe) は、MOF ファイルを解析し、MOF ファイルで定義されているクラスとクラス インスタンスを WMI リポジトリに追加します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0309c49ef2cadd6015957af10c9c98cb13b9ee66
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: c5fe74aba3fe87b75c37285202bd714eb7e64784
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63344110"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364252"
 ---
 # <a name="mof-compiler-properties-for-driver-projects"></a>ドライバー プロジェクトの MOF コンパイラ プロパティ
 
-管理オブジェクト フォーマット (MOF) コンパイラ (mofcomp.exe) は、MOF ファイルを解析し、MOF ファイルで定義されているクラスとクラス インスタンスを WMI リポジトリに追加します。 ドライバーで MOF ファイルをコンパイルするには、Mofcomp プロパティ ページを使います。 Mofcomp.exe と WMI について詳しくは、「[**mofcomp**](https://msdn.microsoft.com/Library/Windows/Hardware/Aa392389)」、「[MOF ファイルのコンパイル](https://msdn.microsoft.com/Library/Windows/Hardware/Aa389240)」、「[ドライバーの MOF ファイルのコンパイル](https://msdn.microsoft.com/Library/Windows/Hardware/Ff542012)」をご覧ください。
+管理オブジェクト フォーマット (MOF) コンパイラ (mofcomp.exe) は、MOF ファイルを解析し、MOF ファイルで定義されているクラスとクラス インスタンスを WMI リポジトリに追加します。 ドライバーで MOF ファイルをコンパイルするには、Mofcomp プロパティ ページを使います。 Mofcomp.exe と WMI について詳しくは、「[**mofcomp**](https://docs.microsoft.com/windows/desktop/WmiSdk/mofcomp)」、「[MOF ファイルのコンパイル](https://docs.microsoft.com/windows/desktop/WmiSdk/compiling-mof-files)」、「[ドライバーの MOF ファイルのコンパイル](https://docs.microsoft.com/windows-hardware/drivers/kernel/compiling-a-driver-s-mof-file)」をご覧ください。
 
-## <a name="span-idsettingmanagedobjectformatmofcompilerpropertiesfordriverprojectsspanspan-idsettingmanagedobjectformatmofcompilerpropertiesfordriverprojectsspanspan-idsettingmanagedobjectformatmofcompilerpropertiesfordriverprojectsspansetting-managed-object-format-mof-compiler-properties-for-driver-projects"></a><span id="Setting_Managed_Object_Format__MOF__Compiler_properties_for_driver_projects"></span><span id="setting_managed_object_format__mof__compiler_properties_for_driver_projects"></span><span id="SETTING_MANAGED_OBJECT_FORMAT__MOF__COMPILER_PROPERTIES_FOR_DRIVER_PROJECTS"></span>ドライバー プロジェクト用の管理オブジェクト フォーマット (MOF) コンパイラ プロパティの設定
+## <a name="span-idsetting_managed_object_format__mof__compiler_properties_for_driver_projectsspanspan-idsetting_managed_object_format__mof__compiler_properties_for_driver_projectsspanspan-idsetting_managed_object_format__mof__compiler_properties_for_driver_projectsspansetting-managed-object-format-mof-compiler-properties-for-driver-projects"></a><span id="Setting_Managed_Object_Format__MOF__Compiler_properties_for_driver_projects"></span><span id="setting_managed_object_format__mof__compiler_properties_for_driver_projects"></span><span id="SETTING_MANAGED_OBJECT_FORMAT__MOF__COMPILER_PROPERTIES_FOR_DRIVER_PROJECTS"></span>ドライバー プロジェクト用の管理オブジェクト フォーマット (MOF) コンパイラ プロパティの設定
 
 
 1.  ドライバー プロジェクトのプロパティ ページを開きます。 **ソリューション エクスプローラー**でドライバー プロジェクトを右クリックして、 **[プロパティ]** をクリックします。
@@ -38,7 +38,7 @@ ms.locfileid: "63344110"
 <tbody>
 <tr class="odd">
 <td align="left"><p><span id="Additional_Options"></span><span id="additional_options"></span><span id="ADDITIONAL_OPTIONS"></span><strong>Additional Options (追加オプション)</strong></p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/Library/Windows/Hardware/Aa392389" data-raw-source="[&lt;strong&gt;mofcomp&lt;/strong&gt;](https://msdn.microsoft.com/Library/Windows/Hardware/Aa392389)"><strong>mofcomp</strong></a> ツールに渡す追加オプションを指定します。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/WmiSdk/mofcomp" data-raw-source="[&lt;strong&gt;mofcomp&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/WmiSdk/mofcomp)"><strong>mofcomp</strong></a> ツールに渡す追加オプションを指定します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><span id="Amendement"></span><span id="amendement"></span><span id="AMENDEMENT"></span><strong>Amendment (修正)</strong></p></td>
@@ -72,7 +72,7 @@ ms.locfileid: "63344110"
 <p><strong>Safe Update (安全な更新) (-class:safeupdate)</strong>: 子クラスが存在しても、変更によって子クラスで競合が発生しない場合に限り、クラスの更新を許可します。</p>
 <p><strong>Update Only (更新のみ) (-class:updateonly)</strong>: コンパイラが新しいクラスを作らないよう要求します。</p>
 <p></p>
-<p>詳しくは、「<a href="https://msdn.microsoft.com/Library/Windows/Hardware/Aa392389" data-raw-source="[&lt;strong&gt;mofcomp&lt;/strong&gt;](https://msdn.microsoft.com/Library/Windows/Hardware/Aa392389)"><strong>mofcomp</strong></a>」をご覧ください。</p></td>
+<p>詳しくは、「<a href="https://docs.microsoft.com/windows/desktop/WmiSdk/mofcomp" data-raw-source="[&lt;strong&gt;mofcomp&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/WmiSdk/mofcomp)"><strong>mofcomp</strong></a>」をご覧ください。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><span id="NamespacePath"></span><span id="namespacepath"></span><span id="NAMESPACEPATH"></span><strong>NamespacePath</strong></p></td>
@@ -99,12 +99,12 @@ ms.locfileid: "63344110"
 
  
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
-* [MOF ファイルのコンパイル](https://msdn.microsoft.com/Library/Windows/Hardware/Aa389240)
-* [ドライバーの MOF ファイルのコンパイル](https://msdn.microsoft.com/Library/Windows/Hardware/Ff542012)
-* [**mofcomp**](https://msdn.microsoft.com/Library/Windows/Hardware/Aa392389)
+* [MOF ファイルのコンパイル](https://docs.microsoft.com/windows/desktop/WmiSdk/compiling-mof-files)
+* [ドライバーの MOF ファイルのコンパイル](https://docs.microsoft.com/windows-hardware/drivers/kernel/compiling-a-driver-s-mof-file)
+* [**mofcomp**](https://docs.microsoft.com/windows/desktop/WmiSdk/mofcomp)
  
 
  

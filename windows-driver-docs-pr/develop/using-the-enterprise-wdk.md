@@ -4,12 +4,12 @@ description: 組織で WDK を使うためにコマンド ライン ベースの
 author: Dansimp
 ms.date: 08/25/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 76e22cf1f7bd128c0a60cd49fe1144b404c71b63
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 3ff60bb0abbb7107fe94bff95aa5923f8e3f8bba
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63344072"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364184"
 ---
 # <a name="using-the-enterprise-wdk-10"></a>Enterprise WDK 10 の使用
 
@@ -46,4 +46,4 @@ Enterprise WDK には、ドライバーと基本的な Win32 ドライバー テ
 
 ## <a name="see-also"></a>参照
 
-[MSBuild リファレンス](https://msdn.microsoft.com/library/0k6kkbsd.aspx)
+[MSBuild リファレンス](https://docs.microsoft.com/visualstudio/msbuild/msbuild-reference?view=vs-2015)

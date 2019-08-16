@@ -4,20 +4,20 @@ title: ドライバー プロジェクトのメッセージ コンパイラ プ�
 description: Message Compiler (MC.exe) ツール用のプロパティを設定します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a125df236bbb43ecf4a73bb2b4861ba290b505f
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 1f5cbea73bb79d260dc703c226a5898c2784ecf5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63344132"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364258"
 ---
 # <a name="message-compiler-properties-for-driver-projects"></a>ドライバー プロジェクトのメッセージ コンパイラ プロパティ
 
-[  **Message Compiler (MC.exe)** ](https://msdn.microsoft.com/Library/Windows/Hardware/Aa385638) ツール用のプロパティを設定します。 コンパイラは、プロジェクトに追加できるメッセージ リソース ファイルを生成します。
+[  **Message Compiler (MC.exe)** ](https://docs.microsoft.com/windows/desktop/WES/message-compiler--mc-exe-) ツール用のプロパティを設定します。 コンパイラは、プロジェクトに追加できるメッセージ リソース ファイルを生成します。
 
-たとえば、[Windows イベント トレーシング (ETW)](https://msdn.microsoft.com/Library/Windows/Hardware/Ff545699) カーネル モード API を使ってカーネル モード ドライバーにイベント トレーシングを追加している場合、メッセージ コンパイラを使って、イベント プロバイダー、イベント属性、チャネル、イベントの定義を含むヘッダー ファイルを作ることができます。 ソース コードには、このヘッダー ファイルをインクルードする必要があります。 メッセージ コンパイラでは、プロジェクト ファイルに追加するリソース コンパイラ スクリプト (\*.rc) が作成されます。
+たとえば、[Windows イベント トレーシング (ETW)](https://docs.microsoft.com/windows-hardware/drivers/devtest/event-tracing-for-windows--etw-) カーネル モード API を使ってカーネル モード ドライバーにイベント トレーシングを追加している場合、メッセージ コンパイラを使って、イベント プロバイダー、イベント属性、チャネル、イベントの定義を含むヘッダー ファイルを作ることができます。 ソース コードには、このヘッダー ファイルをインクルードする必要があります。 メッセージ コンパイラでは、プロジェクト ファイルに追加するリソース コンパイラ スクリプト (\*.rc) が作成されます。
 
-## <a name="span-idsettingmessagecompilerpropertiesfordriverprojectsspanspan-idsettingmessagecompilerpropertiesfordriverprojectsspanspan-idsettingmessagecompilerpropertiesfordriverprojectsspansetting-message-compiler-properties-for-driver-projects"></a><span id="Setting_Message_Compiler_properties_for_driver_projects"></span><span id="setting_message_compiler_properties_for_driver_projects"></span><span id="SETTING_MESSAGE_COMPILER_PROPERTIES_FOR_DRIVER_PROJECTS"></span>ドライバー プロジェクト用のメッセージ コンパイラ プロパティの設定
+## <a name="span-idsetting_message_compiler_properties_for_driver_projectsspanspan-idsetting_message_compiler_properties_for_driver_projectsspanspan-idsetting_message_compiler_properties_for_driver_projectsspansetting-message-compiler-properties-for-driver-projects"></a><span id="Setting_Message_Compiler_properties_for_driver_projects"></span><span id="setting_message_compiler_properties_for_driver_projects"></span><span id="SETTING_MESSAGE_COMPILER_PROPERTIES_FOR_DRIVER_PROJECTS"></span>ドライバー プロジェクト用のメッセージ コンパイラ プロパティの設定
 
 
 1.  ドライバー プロジェクトのプロパティ ページを開きます。 **ソリューション エクスプローラー**でドライバー プロジェクトを右クリックして、 **[プロパティ]** をクリックします。
@@ -40,7 +40,7 @@ ms.locfileid: "63344132"
 <tbody>
 <tr class="odd">
 <td align="left"><p><span id="Additional_Options"></span><span id="additional_options"></span><span id="ADDITIONAL_OPTIONS"></span><strong>追加オプション</strong></p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/Library/Windows/Hardware/Aa385638" data-raw-source="[&lt;strong&gt;Message Compiler (MC.exe)&lt;/strong&gt;](https://msdn.microsoft.com/Library/Windows/Hardware/Aa385638)"><strong>メッセージ コンパイラ (MC.exe)</strong></a> ツールに渡す追加オプションを指定します。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/WES/message-compiler--mc-exe-" data-raw-source="[&lt;strong&gt;Message Compiler (MC.exe)&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/WES/message-compiler--mc-exe-)"><strong>メッセージ コンパイラ (MC.exe)</strong></a> ツールに渡す追加オプションを指定します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><span id="Ansi_Input_File"></span><span id="ansi_input_file"></span><span id="ANSI_INPUT_FILE"></span><strong>Ansi Input File (ANSI 入力ファイル)</strong></p></td>
@@ -173,12 +173,12 @@ ms.locfileid: "63344132"
 
  
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
-* [メッセージ コンパイラ (MC.exe)](https://msdn.microsoft.com/Library/Windows/Hardware/Hh454227)
-* [WDK と Visual Studio のビルド環境](https://msdn.microsoft.com/Library/Windows/Hardware/Hh454286)メッセージ コンパイラー タスク
-* [Windows イベント トレーシング (ETW)](https://msdn.microsoft.com/Library/Windows/Hardware/Ff545699)
+* [メッセージ コンパイラ (MC.exe)](https://docs.microsoft.com/windows-hardware/drivers/devtest/message-compiler-task)
+* [WDK と Visual Studio のビルド環境](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdk-and-visual-studio-build-environment)メッセージ コンパイラー タスク
+* [Windows イベント トレーシング (ETW)](https://docs.microsoft.com/windows-hardware/drivers/devtest/event-tracing-for-windows--etw-)
  
 
  

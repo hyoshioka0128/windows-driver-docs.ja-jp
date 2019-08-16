@@ -5,12 +5,12 @@ ms.assetid: b6748bff-d730-434e-9316-dc7b7222b727
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 37375718767a55e5c71061965f6bbb0092dc8b13
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 619f566be357fd74d462213ff6d05f69bf8b94bb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63334915"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364404"
 ---
 # <a name="submit-a-multiple-locale-device-manifest-package"></a>複数ロケールのデバイス マニフェスト パッケージの提出
 
@@ -113,4 +113,4 @@ N .\ManifestFiles\ GUID.devicemanifest-ms
 
 ## <a name="creating-localeinfoxml"></a>LocaleInfo.xml の作成
 
-Localeinfo.xml ファイルを申請用に作成する方法について詳しくは、「[LocaleInfo.xml サブミッション ファイルの作成](https://msdn.microsoft.com/library/windows/hardware/hh801885.aspx)」をご覧ください。
+Localeinfo.xml ファイルを申請用に作成する方法について詳しくは、「[LocaleInfo.xml サブミッション ファイルの作成](https://docs.microsoft.com/windows-hardware/drivers/dashboard/)」をご覧ください。

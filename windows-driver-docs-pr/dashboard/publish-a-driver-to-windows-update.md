@@ -5,12 +5,12 @@ ms.assetid: E62AADCF-E481-40CA-98F1-BE4629C3EE35
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f991824cba8ebda7fdd053c89776b6f2cd2458db
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 6684c1ca80719a6f2ab7de13b678ea0f32b21bfe
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65996959"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67392030"
 ---
 # <a name="publish-a-driver-to-windows-update"></a>Windows Update にドライバーを公開する
 
@@ -51,7 +51,7 @@ Windows Update にドライバーを公開するには、[ハードウェア提�
    </tr>
    <tr class="even">
    <td><p><strong>Specify the partner (if any) that is allowed visibility into this request (この要求を確認できるパートナーを指定する (パートナーがいる場合))</strong></p></td>
-   <td><p>ドライバーや出荷ラベルに対する読み取り専用アクセス許可を持つパートナーを入力します。 このフィールドは、パートナーの代わりにドライバーを公開する場合など、この出荷ラベルの要求をパートナーに通知する必要がある場合に使用します。 詳しくは、<a href="https://msdn.microsoft.com/library/windows/hardware/mt786462" data-raw-source="[Publish a driver on behalf of a partner](https://msdn.microsoft.com/library/windows/hardware/mt786462)">パートナーの代わりにドライバーを公開する方法に関するページ</a>をご覧ください。</p></td>
+   <td><p>ドライバーや出荷ラベルに対する読み取り専用アクセス許可を持つパートナーを入力します。 このフィールドは、パートナーの代わりにドライバーを公開する場合など、この出荷ラベルの要求をパートナーに通知する必要がある場合に使用します。 詳しくは、<a href="https://docs.microsoft.com/previous-versions/mt786462(v=vs.85)" data-raw-source="[Publish a driver on behalf of a partner](https://docs.microsoft.com/previous-versions/mt786462(v=vs.85))">パートナーの代わりにドライバーを公開する方法に関するページ</a>をご覧ください。</p></td>
    </tr>
    <tr class="odd">
    <td><p><strong>Driver promotions (ドライバーのプロモーション)</strong></p></td>

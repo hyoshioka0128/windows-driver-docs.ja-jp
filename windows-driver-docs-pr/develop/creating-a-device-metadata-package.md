@@ -4,18 +4,18 @@ title: デバイス メタデータ パッケージの作成
 description: Device Metadata Authoring (デバイス メタデータの作成) ウィザードを使って Visual Studio でデバイスのデバイス メタデータ パッケージを直接作成する方法について説明します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 115a53d32c3dd2ef1c9aed9406c5497cfd1d3832
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 4dea0b545e7d808fa88ef5e438f17683598d657d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63382480"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370818"
 ---
 # <a name="creating-a-device-metadata-package"></a>デバイス メタデータ パッケージの作成
 
 デバイスのデバイス メタデータ パッケージを、Visual Studio で直接作成できます。 **[ドライバー]** メニューにある Device Metadata Authoring (デバイス メタデータの作成) ウィザードを使うと、デバイスのアイコンや名前など、Windows でエンド ユーザーに表示される固有の情報を作成できます。 デバイスに UWP デバイス アプリを関連付けて、ユーザーが初めてデバイスに接続したときに自動的にインストールすることもできます。
 
-Device Metadata Authoring (デバイス メタデータの作成) ウィザードを使う方法について詳しくは、「[Device Metadata Authoring (デバイス メタデータの作成) ウィザード](https://msdn.microsoft.com/Library/Windows/Hardware/Hh454213)」をご覧ください。
+Device Metadata Authoring (デバイス メタデータの作成) ウィザードを使う方法について詳しくは、「[Device Metadata Authoring (デバイス メタデータの作成) ウィザード](https://docs.microsoft.com/windows-hardware/drivers/devtest/device-metadata-authoring-wizard-portal)」をご覧ください。
 
  
 

@@ -5,12 +5,12 @@ ms.assetid: 49880681-480d-4f2d-bf8f-d621ac275244
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 04083c0274c82db88d208e187ca08889e26b156d
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 09b7376a8df2c4f4aebdfd3f36bf04f430b00726
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63335061"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353915"
 ---
 # <a name="creating-a-preview-package"></a>プレビュー パッケージの作成
 
@@ -50,8 +50,8 @@ ms.locfileid: "63335061"
 
 ## <a name="related-topics"></a>関連トピック
 
-[デバイス メタデータ エクスペリエンスの作成](https://msdn.microsoft.com/library/windows/hardware/br230794.aspx)
+[デバイス メタデータ エクスペリエンスの作成](https://docs.microsoft.com/windows-hardware/drivers/dashboard/)
 
-[デバイス メタデータ パッケージを申請する (ダッシュボード ヘルプ)](https://msdn.microsoft.com/library/windows/hardware/br230807.aspx)
+[デバイス メタデータ パッケージを申請する (ダッシュボード ヘルプ)](https://docs.microsoft.com/windows-hardware/drivers/dashboard/)
 
-[デバイス メタデータのビジネス規則](https://msdn.microsoft.com/library/windows/hardware/br230767.aspx)
+[デバイス メタデータのビジネス規則](https://docs.microsoft.com/windows-hardware/drivers/dashboard/)

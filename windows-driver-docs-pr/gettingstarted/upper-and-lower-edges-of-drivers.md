@@ -4,12 +4,12 @@ description: I/O 要求に関与するドライバーのシーケンスは、要
 ms.assetid: EA1C36F4-B9BD-4A9E-A6D4-6B4EC5455030
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ea0ac828ce26598c847b125aa1686145415a188
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: f050749d4d784809238816968c1f79dc0fd76247
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63371430"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385174"
 ---
 # <a name="upper-and-lower-edges-of-drivers"></a>ドライバーの上端と下端
 
@@ -24,7 +24,7 @@ I/O 要求は、まずドライバー スタックの一番上のドライバー
 
 下位ドライバーが呼び出すことができる一連の関数がドライバーに実装された場合、その一連の関数はドライバーの*下端*またはドライバーの*下端インターフェイス*と呼ばれます。
 
-### <a name="span-idaudioexamplespanspan-idaudioexamplespanspan-idaudioexamplespanaudio-example"></a><span id="Audio_example"></span><span id="audio_example"></span><span id="AUDIO_EXAMPLE"></span>オーディオの例
+### <a name="span-idaudio_examplespanspan-idaudio_examplespanspan-idaudio_examplespanaudio-example"></a><span id="Audio_example"></span><span id="audio_example"></span><span id="AUDIO_EXAMPLE"></span>オーディオの例
 
 ドライバー スタックにおいて、オーディオ ポート ドライバーの下にあるオーディオ ミニポート ドライバーについて考えます。 ポート ドライバーは、ミニポート ドライバーの上端を呼び出します。 ミニポート ドライバーは、ポート ドライバーの下端を呼び出します。
 
@@ -44,9 +44,9 @@ I/O 要求は、まずドライバー スタックの一番上のドライバー
 
 重要なポイントは、ポート ドライバーがミニポート ドライバーの上端インターフェイスを呼び出すということは、I/O 要求をデバイス スタックの下方に渡すことと同じではないという点です。 ドライバー スタック (デバイス スタックではなく) では、ポート ドライバーをミニポート ドライバーの上に配置することを選ぶことができますが、これはデバイス スタックにおいてポート ドライバーがミニポート ドライバーの上にあることを意味するわけではありません。
 
-### <a name="span-idndisexamplespanspan-idndisexamplespanspan-idndisexamplespanndis-example"></a><span id="NDIS_example"></span><span id="ndis_example"></span><span id="NDIS_EXAMPLE"></span>NDIS の例
+### <a name="span-idndis_examplespanspan-idndis_examplespanspan-idndis_examplespanndis-example"></a><span id="NDIS_example"></span><span id="ndis_example"></span><span id="NDIS_EXAMPLE"></span>NDIS の例
 
-場合によっては、ドライバーが下位ドライバーの上端を間接的に呼び出すことがあります。 たとえば、ドライバー スタックにおいて、[TCP/IP プロトコル ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff556929)が [NDIS](https://msdn.microsoft.com/library/windows/hardware/ff565448) ミニポート ドライバーの上にある場合について考えてみます。 ミニポート ドライバーは、ミニポート ドライバーの上端を形成する一連の *MiniportXxx* 関数を実装しています。 TCP/IP プロトコル ドライバーが、NDIS ミニポート ドライバーの上端に*バインド*しているとします。 しかし、TCP/IP ドライバーは *MiniportXxx* 関数を直接呼び出すわけではありません。 代わりに、NDIS ライブラリ内の関数を呼び出し、それらの関数が *MiniportXxx* 関数を呼び出します。
+場合によっては、ドライバーが下位ドライバーの上端を間接的に呼び出すことがあります。 たとえば、ドライバー スタックにおいて、[TCP/IP プロトコル ドライバー](https://docs.microsoft.com/windows-hardware/drivers/network/introduction-to-ndis-protocol-drivers)が [NDIS](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-drivers) ミニポート ドライバーの上にある場合について考えてみます。 ミニポート ドライバーは、ミニポート ドライバーの上端を形成する一連の *MiniportXxx* 関数を実装しています。 TCP/IP プロトコル ドライバーが、NDIS ミニポート ドライバーの上端に*バインド*しているとします。 しかし、TCP/IP ドライバーは *MiniportXxx* 関数を直接呼び出すわけではありません。 代わりに、NDIS ライブラリ内の関数を呼び出し、それらの関数が *MiniportXxx* 関数を呼び出します。
 
 ![TCP/IP と NDIS ミニポート スタックの図](images/upperloweredge03.png)
 
@@ -63,7 +63,7 @@ I/O 要求は、まずドライバー スタックの一番上のドライバー
 
 *上端*および*下端*という用語は、スタック内のドライバーが互いにやり取りするために使うインターフェイスを表すために使われています。 [  *ドライバー スタック*](driver-stacks.md)は、[*デバイス スタック*](device-nodes-and-device-stacks.md)と同じものではありません。 ドライバー スタックで縦に並んでいる 2 つのドライバーは、デバイス スタックの単一のレベルに存在するドライバー ペアを形成することがあります。 ドライバーによっては、PnP デバイス ツリーの一部ではない場合があります。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
 [すべてのドライバー開発者のための概念](concepts-and-knowledge-for-all-driver-developers.md)
@@ -72,9 +72,9 @@ I/O 要求は、まずドライバー スタックの一番上のドライバー
 
 [ドライバー スタック](driver-stacks.md)
 
-[オーディオ デバイス](https://msdn.microsoft.com/library/windows/hardware/ff537760)
+[オーディオ デバイス](https://docs.microsoft.com/windows-hardware/drivers/audio/portal-audio-ref)
 
-[Windows Vista 以降のネットワーク ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff570021)
+[Windows Vista 以降のネットワーク ドライバー](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff570021(v=vs.85))
 
  
 

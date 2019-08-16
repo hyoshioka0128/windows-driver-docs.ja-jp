@@ -9,12 +9,12 @@ keywords:
 ms.date: 05/07/2018
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 97ebdb06db555331f2a41700acddf4e76b0ad9d7
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 44158f2c619b4ede0cb4edfccdfe01e4669aa861
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63373555"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385991"
 ---
 # <a name="other-wdk-downloads"></a>その他の WDK のダウンロード
 
@@ -30,7 +30,7 @@ Windows Driver Kit (WDK) は、Windows ドライバーの開発、テスト、�
 
 | Windows の対象バージョン      | Visual Studio のエディション            |
 |--------------------------|----------------------------------------|
-| Windows 10 Version 1809 <br/>Windows 10 バージョン 1803 <br/>Windows 10 バージョン 1709 | [Visual Studio Community 2017](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Community&rel=15) <br/>[Visual Studio Professional 2017](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Professional&rel=15) <br/>[Visual Studio Enterprise 2017](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Enterprise&rel=15) |
+| Windows 10 Version 1809 <br/>Windows 10 バージョン 1803 <br/>Windows 10 バージョン 1709 | [Visual Studio Community 2017](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&rel=15) <br/>[Visual Studio Professional 2017](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Professional&rel=15) <br/>[Visual Studio Enterprise 2017](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Enterprise&rel=15) |
 | Windows 10 Version 1703 <br/>Windows 10 Version 1607 | [Visual Studio Express 2015 for Desktop](https://go.microsoft.com/fwlink/?linkid=875331) <br/>[Visual Studio Community 2015](https://go.microsoft.com/fwlink/p/?LinkId=534599) <br/>[Visual Studio Professional 2015](https://go.microsoft.com/fwlink/p/?LinkId=619628) <br/>[Visual Studio Enterprise 2015](https://go.microsoft.com/fwlink/p/?LinkId=619629) |
 | Windows 8.1 Update <br/>Windows 8.1 | [Visual Studio 2013](https://go.microsoft.com/fwlink/?linkid=875331) |
 | Windows 8                | [Visual Studio Professional 2012](https://go.microsoft.com/fwlink/p/?LinkID=255976) <br/>[Visual Studio Ultimate 2012](https://go.microsoft.com/fwlink/p/?LinkID=255982) |
@@ -92,8 +92,8 @@ EWDK の詳細については、「[Enterprise WDK 10 の使用](https://docs.mi
 |-----------------------------------|-----------------------------------|
 | Windows 10 Version 1809          | [EWDK for Windows 10 Version 1809](https://developer.microsoft.com/windows/hardware/license-terms-EWDK) |
 | Windows 10 バージョン 1803          | [EWDK for Windows 10 Version 1803](https://developer.microsoft.com/windows/hardware/license-terms-EWDK) |
-| Windows 10 バージョン 1709          | [EWDK for Visual Studio with Build Tools 15.6](https://developer.microsoft.com/windows/hardware/license-terms-enterprise-wdk-1709-VS15-6) (推奨) <br/>[EWDK for Visual Studio with Build Tools 15.4](https://developer.microsoft.com/windows/hardware/license-terms-enterprise-wdk-1709-VS15-4) <br/>[EWDK for Visual Studio with Build Tools 15.2](https://developer.microsoft.com/windows/hardware/license-terms-enterprise-wdk-1709) |
-| Windows 10 Version 1703          | [EWDK for Windows 10 Version 1703](https://developer.microsoft.com/windows/hardware/license-terms-enterprise-wdk-1703) |
+| Windows 10 バージョン 1709          | [EWDK for Visual Studio with Build Tools 15.6](https://developer.microsoft.com/windows/hardware/license-terms-EWDK) (推奨) <br/>[EWDK for Visual Studio with Build Tools 15.4](https://developer.microsoft.com/windows/hardware/license-terms-EWDK) <br/>[EWDK for Visual Studio with Build Tools 15.2](https://developer.microsoft.com/windows/hardware/license-terms-EWDK) |
+| Windows 10 Version 1703          | [EWDK for Windows 10 Version 1703](https://developer.microsoft.com/windows/hardware/license-terms-enterprise-wdk) |
 
 > [!Note]
 > Windows 10 バージョン 1709 以降、EWDK は ISO ベースです。ased. まず、ISO をダウンロードしてマウントした後、**LaunchBuildEnv** を実行します。
@@ -102,7 +102,7 @@ EWDK の詳細については、「[Enterprise WDK 10 の使用](https://docs.mi
 
 HAL 拡張機能を使用するには、Windows 10 バージョン 1709 または新しいバージョンの Windows 10 を実行している開発システムの準備を行います。 また、WDK または EWDK をインストールしてから、**Windows OEM HAL Extension Test Cert 2017 (テストのみ)** の更新されたバージョンをインストールします。これは、ZIP ファイルでダウンロードできます([HAL_Extension_Test_Cert_2017.zip](https://go.microsoft.com/fwlink/?linkid=872294))。
 
-この更新された証明書の使用に関する詳細については、Windows サポートの「[Update for "Windows OEM HAL Extension Test Cert 2017 (TEST ONLY)" test certificate](https://support.microsoft.com/help/4131991)」("Windows OEM HAL Extension Test Cert 2017 (テストのみ)" のテスト証明書の更新) を参照してください。
+この更新された証明書の使用に関する詳細については、Windows サポートの「[Update for "Windows OEM HAL Extension Test Cert 2017 (TEST ONLY)" test certificate](https://support.microsoft.com/help/4131991/update-for-windows-oem-hal-extension-test-cert-2017-test-only-test-cer)」("Windows OEM HAL Extension Test Cert 2017 (テストのみ)" のテスト証明書の更新) を参照してください。
 
 ## <a name="optional-install-windbg-preview"></a>省略可能: WinDbg Preview をインストールする
 
@@ -122,8 +122,8 @@ Windows XP、Windows Server 2003、Windows Vista、または Windows Server 2008
 Debugging Tools for Windows をスタンドアロン コンポーネントとしてインストールするには、SDK インストーラーを起動し、インストール ウィザードで **Debugging Tools for Windows** を選択し、他のすべてのコンポーネントを選択解除します。
 
 ### <a name="related-downloads"></a>関連するダウンロード
-* [Windows アセスメント & デプロイメント キット (Windows ADK) のダウンロード](https://developer.microsoft.com/windows/hardware/windows-assessment-deployment-kit)
-* [Windows HLK、HCK、Logo Kit のダウンロード](https://developer.microsoft.com/windows/hardware/windows-hardware-lab-kit)
-* [Windows 向けデバッグ ツール (WinDbg) のダウンロード](https://developer.microsoft.com/windows/hardware/download-windbg)
-* [Windows シンボル パッケージのダウンロード](https://developer.microsoft.com/windows/hardware/download-symbols)
+* [Windows アセスメント & デプロイメント キット (Windows ADK) のダウンロード](https://docs.microsoft.com/windows-hardware/get-started/adk-install)
+* [Windows HLK、HCK、Logo Kit のダウンロード](https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit)
+* [Windows 向けデバッグ ツール (WinDbg) のダウンロード](https://docs.microsoft.com/windows-hardware/drivers/debugger/debugger-download-tools)
+* [Windows シンボル パッケージのダウンロード](https://docs.microsoft.com/windows-hardware/drivers/debugger/debugger-download-symbols)
 * [WDK Insider Preview のダウンロード](https://www.microsoft.com/software-download/windowsinsiderpreviewWDK)

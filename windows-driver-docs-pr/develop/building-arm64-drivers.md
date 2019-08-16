@@ -3,12 +3,12 @@ title: WDK を使った ARM64 ドライバーのビルド
 description: このトピックでは、Windows Driver Kit (WDK) で ARM64 ドライバーをビルドする方法について説明します。
 ms.date: 01/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ed6c60f9bba51e679797cc625ec4770f2150ede
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 6f087caa719f84620358aafbcb1904e30835824e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63353973"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370364"
 ---
 # <a name="building-arm64-drivers-with-the-wdk"></a>WDK を使った ARM64 ドライバーのビルド
 
@@ -16,7 +16,7 @@ ms.locfileid: "63353973"
 
 ## <a name="setup"></a>セットアップ
 
-1. [Visual Studio 2017 Preview](https://www.visualstudio.com/vs/preview/) をダウンロードします。  15\.4.0 Preview 2.0 以上のバージョンが必要です。
+1. [Visual Studio 2017 Preview](https://visualstudio.microsoft.com/vs/preview/) をダウンロードします。  15.4.0 Preview 2.0 以上のバージョンが必要です。
 2. Windows のスタート メニューで、「**Visual Studio インストーラー**」と入力します。  次に、 **[ワークロード]** タブの **[C++ によるデスクトップ開発]** を選択します。  
 ![[ワークロード] タイルの [Windows] オプションから [C++ によるデスクトップ開発] を選択する](images/VS-workloads.png)
 

@@ -4,12 +4,12 @@ description: 製品のハードウェア ダッシュボード申請を管理し
 ms.topic: article
 ms.date: 04/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: d6438ed3d56dceea65e90d42753aa4954d90f3b2
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 11e4228e3a54079e6ae74d988a6f8e043a1ea026
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66400870"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364430"
 ---
 # <a name="manage-product-submissions"></a>製品申請の管理
 
@@ -49,10 +49,10 @@ https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/
     https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/{productID}/submissions/
     ```
 
-    応答本文に含まれる[申請のリソース](get-product-data.md#submission-resource)には、申請の ID、申請の製品 (ドライバー) パッケージを Azure Blob Storage にアップロードするための共有アクセス署名 (SAS) URI が含まれます。 [!NOTE] > SAS URI では、アカウント キーを必要とせずに、Azure Storage 内のセキュリティで保護されたリソースにアクセスできます。 SAS URI の背景情報と Azure Blob Storage での SAS URI の使用については、[Shared Access Signature 第 1 部: SAS モデルにの概要](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1)に関する記事と、「[Shared Access Signature、第 2 部: BLOB ストレージでの SAS の作成と使用](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-2/)」をご覧ください。
+    応答本文に含まれる[申請のリソース](get-product-data.md#submission-resource)には、申請の ID、申請の製品 (ドライバー) パッケージを Azure Blob Storage にアップロードするための共有アクセス署名 (SAS) URI が含まれます。 [!NOTE] > SAS URI では、アカウント キーを必要とせずに、Azure Storage 内のセキュリティで保護されたリソースにアクセスできます。 SAS URI の背景情報と Azure Blob Storage での SAS URI の使用については、[Shared Access Signature 第 1 部: SAS モデルにの概要](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1/)に関する記事と、「[Shared Access Signature、第 2 部: BLOB ストレージでの SAS の作成と使用](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-2/)」をご覧ください。
 
 5. 前の手順の SAS URI で指定された場所にある Azure Blob Storage に**パッケージをアップロードします**。
-次の C# コード例は、.NET 用 Azure Storage クライアント ライブラリの [CloudBlockBlob](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.storage.blob.cloudblockblob.aspx) クラスを使用して Azure Blob Storage にパッケージをアップロードする方法を示しています。 この例では、パッケージが既にストリーム オブジェクトに書き込まれていることを前提としています。
+次の C# コード例は、.NET 用 Azure Storage クライアント ライブラリの [CloudBlockBlob](https://docs.microsoft.com/dotnet/api/microsoft.windowsazure.storage.blob.cloudblockblob?redirectedfrom=MSDN) クラスを使用して Azure Blob Storage にパッケージをアップロードする方法を示しています。 この例では、パッケージが既にストリーム オブジェクトに書き込まれていることを前提としています。
 
     ```json
     string sasUrl = "https://productingestionbin1.blob.core.windows.net/ingestion/26920f66-b592-4439-9a9d-fb0f014902ec?sv=2014-02-14&sr=b&sig=usAN0kNFNnYE2tGQBI%2BARQWejX1Guiz7hdFtRhyK%2Bog%3D&se=2016-06-17T20:45:51Z&sp=rwl";

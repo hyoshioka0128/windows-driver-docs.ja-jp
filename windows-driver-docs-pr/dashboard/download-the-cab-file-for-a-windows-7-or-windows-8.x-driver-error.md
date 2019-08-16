@@ -6,12 +6,12 @@ ms.date: 08/28/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 分析 API, CAB のダウンロード
 ms.localizationpriority: medium
-ms.openlocfilehash: 672b085f6f02f096a01994d9fe598e21afba68d1
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 4dbe3066f1b43eb8394f11a6edb887bbc48a8f67
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63337253"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364470"
 ---
 # <a name="download-the-cab-file-for-a-windows-7-or-windows-8x-driver-error"></a>Windows 7 や Windows 8.x のドライバー エラーに関する CAB ファイルをダウンロードする
 
@@ -31,7 +31,7 @@ Windows 7 や Windows 8.x の特定のドライバー エラーに関連付け�
 Microsoft Store 分析 API に含まれる、[Windows 7 や Windows 8.x のドライバーに関するエラー報告データを取得する](get-error-reporting-data-for-windows-7-and-windows-8.x-drivers.md)メソッドおよび [Windows 7 や Windows 8.x のドライバー エラーに関する詳細を取得する](get-details-for-a-windows-7-or-windows-8.x-driver-error.md)メソッドを使うと、Windows 7 や Windows 8.x のドライバー エラーに関する他の情報を取得できます。
 
 > [!NOTE]
-> このメソッドは、[パートナー センター プログラム](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/get-started-with-the-hardware-dashboard)に参加している開発者アカウントでのみ使用できます。
+> このメソッドは、[パートナー センター プログラム](https://docs.microsoft.com/windows-hardware/drivers/dashboard/get-started-with-the-hardware-dashboard)に参加している開発者アカウントでのみ使用できます。
 
 ## <a name="prerequisites"></a>前提条件
 

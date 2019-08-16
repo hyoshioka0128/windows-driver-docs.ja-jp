@@ -5,12 +5,12 @@ ms.assetid: 519384F5-986C-4109-8C91-4352DEFF46F9
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 67d1b2c8e08ee33c672b45cb49f5fd46be7d999a
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 2c6d70012306391ab0b95550962673213e43d1d3
+ms.sourcegitcommit: cdb75f4fae5b4da47c860205e407c5a7a44b89b6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63335162"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68446388"
 ---
 # <a name="get-drivers-signed-by-microsoft-for-multiple-windows-versions"></a>複数の Windows バージョンで Microsoft によって署名されたドライバーを取得する
 
@@ -20,14 +20,14 @@ ms.locfileid: "63335162"
 
 ダッシュボード申請を Windows 10 以前のバージョンの Windows に適用するには、次の 2 つの方法があります。
 
-1. Windows 10 に対する申請をテストする場合は Hardware Lab Kit (HCK) を使い、Windows 10 より古いバージョンの Windows に対してテストする場合はハードウェア認定キット (HLK) を使います。 次に、[マージした HLK/HCK テスト結果](https://msdn.microsoft.com/library/windows/hardware/dn939938.aspx)すべてを含むダッシュボード申請を作成します。 申請処理中は、このトピックの後半に示すように、Windows Vista と Windows XP の無料の署名を取得するためにオプトインすることができます。 Windows Server 2008 についてオプトインするには、[Windows Logo Kit (WLK)](https://www.microsoft.com/download/details.aspx?id=39359) 申請の申請 ID を指定します。 この方法でのみ、申請をすべての Windows バージョンに適用できます。
-2. HLK と HCK でテストする代わりに、ドライバーに自分で[クロス署名](https://msdn.microsoft.com/library/windows/hardware/dn170454.aspx)し、Windows 10 でも動作するようにダッシュボードに[構成証明署名](attestation-signing-a-kernel-driver-for-public-release.md)を申請することもできます。 この方法のほうが複雑ですが、有効な選択肢です。 とはいえ、この方法で署名された申請は Windows Server 2016 では機能しないことに注意してください。 ドライバーに構成証明署名する方法について詳しくは、「[一般リリースのためのカーネル ドライバーへの構成証明署名](attestation-signing-a-kernel-driver-for-public-release.md)」をご覧ください。
+1. Windows 10 に対する申請をテストする場合は Hardware Lab Kit (HCK) を使い、Windows 10 より古いバージョンの Windows に対してテストする場合はハードウェア認定キット (HLK) を使います。 次に、[マージした HLK/HCK テスト結果](https://docs.microsoft.com/windows-hardware/test/hlk/user/merge-packages)すべてを含むダッシュボード申請を作成します。 申請処理中は、このトピックの後半に示すように、Windows Vista と Windows XP の無料の署名を取得するためにオプトインすることができます。 Windows Server 2008 についてオプトインするには、[Windows Logo Kit (WLK)](https://www.microsoft.com/download/details.aspx?id=39359) 申請の申請 ID を指定します。 この方法でのみ、申請をすべての Windows バージョンに適用できます。
+2. HLK と HCK でテストする代わりに、ドライバーに自分で[クロス署名](https://docs.microsoft.com/windows-hardware/drivers/install/cross-certificates-for-kernel-mode-code-signing)し、Windows 10 でも動作するようにダッシュボードに[構成証明署名](attestation-signing-a-kernel-driver-for-public-release.md)を申請することもできます。 この方法のほうが複雑ですが、有効な選択肢です。 ドライバーに構成証明署名する方法について詳しくは、「[一般リリースのためのカーネル ドライバーへの構成証明署名](attestation-signing-a-kernel-driver-for-public-release.md)」をご覧ください。
     > [!IMPORTANT]
     > パートナー センターからドライバーの署名を入手できるようになるまで、[ハードウェア デベロッパー センター (Sysdev)](dashboard-services.md) でドライバーに構成証明署名する必要があります。
 
 このトピックでは、コンテキストとしてダッシュボードに関する背景情報について説明し、HLK/HCK を使うための手順を説明します。
 
-ダッシュボードには、申請の署名に関連して 2 つのオプションがあります。どちらの方法でも、Microsoft が署名したドライバーを得ることができます。 ハードウェアの互換性オプションは、貴社が一層の努力をして [Windows ハードウェアの互換性プログラム](https://msdn.microsoft.com/library/windows/hardware/dn922588.aspx)要件を満たしたことを意味します。 これにより、Microsoft SmartScreen での好評価や、認定製品一覧にリストされるなどのビジネス上の利点を得ることができます。
+ダッシュボードには、申請の署名に関連して 2 つのオプションがあります。どちらの方法でも、Microsoft が署名したドライバーを得ることができます。 ハードウェアの互換性オプションは、貴社が一層の努力をして [Windows ハードウェアの互換性プログラム](https://docs.microsoft.com/windows-hardware/design/compatibility/index)要件を満たしたことを意味します。 これにより、Microsoft SmartScreen での好評価や、認定製品一覧にリストされるなどのビジネス上の利点を得ることができます。
 
 背景には、検討すべきコード署名操作として次の 2 つの操作があります。
 
@@ -38,11 +38,11 @@ ms.locfileid: "63335162"
 
 [ハードウェア デベロッパー センター (Sysdev)](dashboard-services.md) 内で、組織の識別に使う証明書を確認するには、組織のアカウントの管理者としてログインする必要があります。 **[管理]** &gt; **[Upload a new digital certificate]** (新しいデジタル証明書をアップロード) の順にクリックします。
 
-パートナー センター内で、組織の識別に使う証明書を確認する場合は、「[コード署名証明書の更新](https://msdn.microsoft.com/library/windows/hardware/mt786467)」をご覧ください。
+パートナー センター内で、組織の識別に使う証明書を確認する場合は、「[コード署名証明書の更新](https://docs.microsoft.com/windows-hardware/drivers/dashboard/update-a-code-signing-certificate)」をご覧ください。
 
 パートナー センターにサインインし、申請に署名する準備ができると、標準的なコード署名証明書か EV コード署名証明書のどちらかを使うことができます。このことは、Windows 10 だけでなくすべてのオペレーティング システム バージョンに当てはまります。
 
-これは、[ポリシーに最近加えられた変更](http://blogs.msdn.com/b/windows_hardware_certification/archive/2015/10/20/update-on-sysdev-ev-certificate-requirement.aspx)です。 組織のアカウントにバインドされている EV 証明書があれば、準備はできています。つまり、パッケージを申請するときにも、標準的な SHA-2 証明書を使い続けることができます。
+これは、[ポリシーに最近加えられた変更](https://techcommunity.microsoft.com/t5/Windows-Hardware-Certification/bg-p/WindowsHardwareCertification)です。 組織のアカウントにバインドされている EV 証明書があれば、準備はできています。つまり、パッケージを申請するときにも、標準的な SHA-2 証明書を使い続けることができます。
 
 ## <a name="how-to-submit-hlk-test-results"></a>HLK テストの結果を提出する方法
 

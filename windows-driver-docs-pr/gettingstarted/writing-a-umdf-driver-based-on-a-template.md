@@ -6,16 +6,16 @@ keywords:
 - UMDF ドライバーの作成
 ms.date: 04/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 604ad2a871eb0b341cc23c11660e10e7e9264f24
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 22d87ddd88af414359d0f792cb4bc21987db7e4b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66840865"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359293"
 ---
 # <a name="write-a-universal-windows-driver-umdf-2-based-on-a-template"></a>テンプレートを使ったユニバーサル Windows ドライバー (UMDF 2) の作成
 
-このトピックでは、ユーザーモード ドライバー フレームワーク (UMDF) 2 を使って[ユニバーサル Windows ドライバー](https://msdn.microsoft.com/windows-drivers/develop/getting_started_with_universal_drivers)を作成する方法について説明します。 Microsoft Visual Studio テンプレートを使って開始し、別のコンピューターにドライバーを展開してインストールします。
+このトピックでは、ユーザーモード ドライバー フレームワーク (UMDF) 2 を使って[ユニバーサル Windows ドライバー](https://docs.microsoft.com/windows-hardware/drivers)を作成する方法について説明します。 Microsoft Visual Studio テンプレートを使って開始し、別のコンピューターにドライバーを展開してインストールします。
 
 最初に、最新バージョンの Microsoft Visual Studio と Windows Driver Kit (WDK) があることを確認します。 ダウンロード リンクについては、「[Windows Driver Kit (WDK) のダウンロード](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk)」をご覧ください。
 

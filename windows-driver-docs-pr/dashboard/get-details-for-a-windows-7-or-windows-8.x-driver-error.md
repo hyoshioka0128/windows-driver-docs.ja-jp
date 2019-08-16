@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 08/28/2018
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, エラー, 詳細
 ms.localizationpriority: medium
-ms.openlocfilehash: 5adb0a9c729c45d898c6491d82e20d28cd949eeb
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: ddffc08713817810a7570caca90fb79091923785
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63335073"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364452"
 ---
 # <a name="get-details-for-a-windows-7-or-windows-8x-driver-error"></a>Windows 7 や Windows 8.x のドライバー エラーに関する詳細を取得する
 
@@ -29,7 +29,7 @@ ms.locfileid: "63335073"
 Windows 7 や Windows 8.x の特定のドライバー エラーに関する詳細データを JSON 形式で取得するには、Microsoft Store 分析 API の以下のメソッドを使います。 このメソッドを使うには、事前に [Windows 7 や Windows 8.x のドライバーに関するエラー報告データを取得する](get-error-reporting-data-for-windows-7-and-windows-8.x-drivers.md)メソッドを使用して、必要な詳細情報の対象となるエラーの ID を取得しておく必要があります。
 
 > [!NOTE]
-> このメソッドは、[Windows ハードウェア デベロッパー センター プログラム](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/get-started-with-the-hardware-dashboard)に参加している開発者アカウントでのみ使用できます。
+> このメソッドは、[Windows ハードウェア デベロッパー センター プログラム](https://docs.microsoft.com/windows-hardware/drivers/dashboard/get-started-with-the-hardware-dashboard)に参加している開発者アカウントでのみ使用できます。
 
 ## <a name="prerequisites"></a>前提条件
 

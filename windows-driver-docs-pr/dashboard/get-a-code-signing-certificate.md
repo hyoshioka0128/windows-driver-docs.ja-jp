@@ -5,12 +5,12 @@ ms.assetid: 6CF4111A-C645-40F5-8D45-55F46B3C0740
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fe34a75d166e8e03999c93c9588233e94fb9801c
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: db4c7aa1e3616e65f7ab6245e63bcb6aca8cae79
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63335053"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67391968"
 ---
 # <a name="get-a-code-signing-certificate"></a>コード署名証明書の取得
 
@@ -61,8 +61,8 @@ ms.locfileid: "63335053"
 
 ここでは、Windows 10 のコード署名についてよく寄せられる質問に対してお答えします。 その他のコード署名情報は、Windows ハードウェア認定に関するブログでご確認いただけます。
 
-- [Windows 10 のドライバー署名の変更点に関するページ](http://blogs.msdn.com/b/windows_hardware_certification/archive/2015/04/01/driver-signing-changes-in-windows-10.aspx)
-- [Sysdev EV 証明書要件の更新に関するページ](http://blogs.msdn.com/b/windows_hardware_certification/archive/2015/10/20/update-on-sysdev-ev-certificate-requirement.aspx)
+- [Windows 10 のドライバー署名の変更点に関するページ](https://techcommunity.microsoft.com/t5/Windows-Hardware-Certification/bg-p/WindowsHardwareCertification)
+- [Sysdev EV 証明書要件の更新に関するページ](https://techcommunity.microsoft.com/t5/Windows-Hardware-Certification/bg-p/WindowsHardwareCertification)
 
 ### <a name="hlk-tested-and-dashboard-signed-drivers"></a>HLK テスト済みのダッシュボードで署名されたドライバー
 
@@ -88,14 +88,14 @@ ms.locfileid: "63335053"
 - 修正プログラムを適用する場合は、Windows 7 でも、SHA-256 をサポートします。 修正プログラムを適用していない Windows 7 を実行するデバイスをサポートする必要がある場合は、SHA-1 証明書を使ってクロス署名するか、署名するためにダッシュボードに提出する必要があります。 それ以外の場合は、SHA-1 または SHA-2 証明書を使ってクロス署名するか、署名用の HLK/HCK 申請を作成することができます。
 - Windows Vista では SHA-256 はサポートされないため、SHA-1 証明書を使ってクロス署名するか、Windows Vista のドライバー署名用の HLK/HCK 申請を作成する必要があります。
 - 2015 年 7 月 29 日より前に発行された SHA-256 証明書 (EV 証明書を含む) を使ってクロス署名されたドライバーは、Windows 8 以降で動作します。 Windows Vista または Windows Server 2008 では動作しません。
-- Windows Update を通じて今年の前半に発行された更新プログラムが適用されている場合は、Windows 7 または Server 2008 R2 でも、2015 年 7 月 29 日より前に発行された SHA-256 証明書 (EV 証明書を含む) を使ってクロス署名されたドライバーが動作します。 詳しくは、「[Windows 7 および Windows Server 2008 R2 で SHA-2 ハッシュ アルゴリズムを利用可能](https://technet.microsoft.com/library/security/2949927.aspx)」と「[マイクロソフト セキュリティ アドバイザリ:Windows 7 および Windows Server 2008 R2 で SHA-2 コード署名サポートを利用可能(2015 年 3 月 10 日)](https://support.microsoft.com/kb/3033929)」をご覧ください。
+- Windows Update を通じて今年の前半に発行された更新プログラムが適用されている場合は、Windows 7 または Server 2008 R2 でも、2015 年 7 月 29 日より前に発行された SHA-256 証明書 (EV 証明書を含む) を使ってクロス署名されたドライバーが動作します。 詳しくは、「[Windows 7 および Windows Server 2008 R2 で SHA-2 ハッシュ アルゴリズムを利用可能](https://docs.microsoft.com/security-updates/SecurityAdvisories/2014/2949927)」と「[マイクロソフト セキュリティ アドバイザリ:Windows 7 および Windows Server 2008 R2 で SHA-2 コード署名サポートを利用可能(2015 年 3 月 10 日)](https://support.microsoft.com/help/3033929/microsoft-security-advisory-availability-of-sha-2-code-signing-support)」をご覧ください。
 - 2015 年 7 月 29 日より前に発行された SHA-1 証明書を使ってクロス署名されたドライバーは、Windows Vista から Windows 10 までのすべてのプラットフォームで動作します。
 - Windows 10 では、2015 年 7 月 29 日より後に発行された SHA-1 または SHA-256 証明書を使ってクロス署名されたドライバーは推奨されません。
-- SHA-256 証明書への移行作業について詳しくは [Windows における Authenticode コード署名の強制とタイムスタンプに関するページ](http://social.technet.microsoft.com/wiki/contents/articles/32288.windows-enforcement-of-authenticode-code-signing-and-timestamping.aspx)をご覧ください。
+- SHA-256 証明書への移行作業について詳しくは [Windows における Authenticode コード署名の強制とタイムスタンプに関するページ](https://social.technet.microsoft.com/wiki/contents/articles/32288.windows-enforcement-of-authenticode-code-signing-and-timestamping.aspx)をご覧ください。
 
 ### <a name="device-guard"></a>Device Guard
 
-- 企業は、Windows 10 Enterprise edition を使って、ドライバーの署名要件を変更する Device Guard ポリシーを実装することができます。 Device Guard では、企業が定義したコードの整合性ポリシーを提供します。このポリシーは、少なくとも構成証明署名されたドライバーを必要とするように構成できます。 Device Guard について詳しくは、「[Device Guard による証明と法令遵守](https://technet.microsoft.com/library/mt219733.aspx)」をご覧ください。
+- 企業は、Windows 10 Enterprise edition を使って、ドライバーの署名要件を変更する Device Guard ポリシーを実装することができます。 Device Guard では、企業が定義したコードの整合性ポリシーを提供します。このポリシーは、少なくとも構成証明署名されたドライバーを必要とするように構成できます。 Device Guard について詳しくは、「[Device Guard による証明と法令遵守](https://docs.microsoft.com/windows/keep-secure/device-guard-certification-and-compliance)」をご覧ください。
 
 ### <a name="windows-server"></a>Windows Server
 
@@ -128,6 +128,6 @@ ms.locfileid: "63335053"
 | Windows IoT Enterprise - DG 有効 | \*構成による      | \*構成による          | \*構成による                                                      |
 | Windows IoT Core(1)                | 要 (必須ではない)             | 要 (必須ではない)                 | 要 (2015 年 7 月 29 日以降後に発行された証明書ではクロス署名も機能します) |
 
-\*構成による - Windows 10 Enterprise エディションでは、組織は、カスタム ドライバーの署名要件を定義する Device Guard を使えます。 Device Guard について詳しくは、「[Device Guard による証明と法令遵守](https://technet.microsoft.com/library/mt219733.aspx)」をご覧ください。
+\*構成による - Windows 10 Enterprise エディションでは、組織は、カスタム ドライバーの署名要件を定義する Device Guard を使えます。 Device Guard について詳しくは、「[Device Guard による証明と法令遵守](https://docs.microsoft.com/windows/keep-secure/device-guard-certification-and-compliance)」をご覧ください。
 
 (1) IoT Core を使って小売製品 (開発目的ではない製品) を構築する製造元には、ドライバーの署名が必要です。 承認済みの証明機関 (CA) の一覧については、「[カーネル モードのコード署名用クロス証明書](https://docs.microsoft.com/windows-hardware/drivers/install/cross-certificates-for-kernel-mode-code-signing)」をご覧ください。 UEFI セキュア ブートが有効な場合、ドライバーは署名されている必要があります。

@@ -4,12 +4,12 @@ author: DOMARS
 redirect_url: https://msdn.microsoft.com/library/windows/hardware/mt786448
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ce4cd26934d8e9a77cec307504b66f986b460794
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 030e3a006ed1170004c28fae84836c5172b81b86
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63353044"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369898"
 ---
 # <a name="attestation-signing-a-kernel-driver-for-public-release"></a>一般リリースのためのカーネル ドライバーへの構成証明署名
 
@@ -24,7 +24,7 @@ ms.locfileid: "63353044"
 
 
 
-## <a name="span-idattestationsigningakernelmodedriverspanspan-idattestationsigningakernelmodedriverspanspan-idattestationsigningakernelmodedriverspanattestation-signing-a-kernel-mode-driver"></a><span id="Attestation_Signing_a_Kernel_Mode_Driver"></span><span id="attestation_signing_a_kernel_mode_driver"></span><span id="ATTESTATION_SIGNING_A_KERNEL_MODE_DRIVER"></span>カーネル モード ドライバーへの構成証明署名
+## <a name="span-idattestation_signing_a_kernel_mode_driverspanspan-idattestation_signing_a_kernel_mode_driverspanspan-idattestation_signing_a_kernel_mode_driverspanattestation-signing-a-kernel-mode-driver"></a><span id="Attestation_Signing_a_Kernel_Mode_Driver"></span><span id="attestation_signing_a_kernel_mode_driver"></span><span id="ATTESTATION_SIGNING_A_KERNEL_MODE_DRIVER"></span>カーネル モード ドライバーへの構成証明署名
 
 
 カーネル モード ドライバーに構成証明署名するには、次の手順を実行します。
@@ -41,23 +41,23 @@ ms.locfileid: "63353044"
 
 署名されるバイナリ ファイルをダッシュボードを使って提出する前に、デジタル情報を保護するための拡張検証 (EV) コード署名証明書を取得する必要があります。 この証明書は、提出するコードに対する会社の所有権を確立するための公認されている標準です。 .exe、.cab、.dll、.ocx、.msi、.xpi、.xap ファイルなどの PE バイナリにデジタル署名できます。
 
-「[コード署名証明書の取得](https://msdn.microsoft.com/library/windows/hardware/hh801887.aspx)」で説明されているプロセスに従って、必要な EV コード署名証明書を取得してください。
+「[コード署名証明書の取得](https://docs.microsoft.com/windows-hardware/drivers/dashboard/)」で説明されているプロセスに従って、必要な EV コード署名証明書を取得してください。
 
-## <a name="span-idregisteryourcompanyforwindowshardwaredashboardservicesspanspan-idregisteryourcompanyforwindowshardwaredashboardservicesspanspan-idregisteryourcompanyforwindowshardwaredashboardservicesspanregister-your-company-for-windows-hardware-dashboard-services"></a><span id="Register_your_company_for_Windows_Hardware_Dashboard_Services"></span><span id="register_your_company_for_windows_hardware_dashboard_services"></span><span id="REGISTER_YOUR_COMPANY_FOR_WINDOWS_HARDWARE_DASHBOARD_SERVICES"></span>Windows ハードウェア ダッシュボード サービスに会社を登録する
+## <a name="span-idregister_your_company_for_windows_hardware_dashboard_servicesspanspan-idregister_your_company_for_windows_hardware_dashboard_servicesspanspan-idregister_your_company_for_windows_hardware_dashboard_servicesspanregister-your-company-for-windows-hardware-dashboard-services"></a><span id="Register_your_company_for_Windows_Hardware_Dashboard_Services"></span><span id="register_your_company_for_windows_hardware_dashboard_services"></span><span id="REGISTER_YOUR_COMPANY_FOR_WINDOWS_HARDWARE_DASHBOARD_SERVICES"></span>Windows ハードウェア ダッシュボード サービスに会社を登録する
 
 
 ハードウェア デベロッパー センター ダッシュボードを使うと、ハードウェア認定を受けるためにデバイスとアプリを認定することができます。 ハードウェア デベロッパー センター ダッシュボードにアクセスするには、会社を登録し、コード署名証明書を取得する必要があります。
 
-「[サインインする前に](https://msdn.microsoft.com/library/windows/hardware/br230782)」で説明されているプロセスに従って、ダッシュボードで必要となるアカウントをセットアップしてください。
+「[サインインする前に](https://docs.microsoft.com/windows-hardware/drivers/dashboard/)」で説明されているプロセスに従って、ダッシュボードで必要となるアカウントをセットアップしてください。
 
-## <a name="span-iddownloadandinstallthewindowsdriverkitspanspan-iddownloadandinstallthewindowsdriverkitspanspan-iddownloadandinstallthewindowsdriverkitspan-download-and-install-the-windows-driver-kit"></a><span id="_Download_and_install_the_Windows_Driver_Kit"></span><span id="_download_and_install_the_windows_driver_kit"></span><span id="_DOWNLOAD_AND_INSTALL_THE_WINDOWS_DRIVER_KIT"></span>Windows Driver Kit をダウンロードしてインストールする
+## <a name="span-id_download_and_install_the_windows_driver_kitspanspan-id_download_and_install_the_windows_driver_kitspanspan-id_download_and_install_the_windows_driver_kitspan-download-and-install-the-windows-driver-kit"></a><span id="_Download_and_install_the_Windows_Driver_Kit"></span><span id="_download_and_install_the_windows_driver_kit"></span><span id="_DOWNLOAD_AND_INSTALL_THE_WINDOWS_DRIVER_KIT"></span>Windows Driver Kit をダウンロードしてインストールする
 
 
 バイナリ ファイルへの署名に使うツールにアクセスするために、Windows Driver Kit (WDK) をダウンロードしてインストールする必要があります。
 
 「[Windows 10 用のキットとツールのダウンロード](https://msdn.microsoft.com/windows/hardware/dn913721.aspx)」で説明されているプロセスに従って、WDK をダウンロードしインストールしてください。
 
-## <a name="span-idcreateacabfilessubmissionspanspan-idcreateacabfilessubmissionspanspan-idcreateacabfilessubmissionspancreate-a-cab-files-submission"></a><span id="Create_a_CAB_Files_Submission"></span><span id="create_a_cab_files_submission"></span><span id="CREATE_A_CAB_FILES_SUBMISSION"></span>CAB ファイルの申請を作成する
+## <a name="span-idcreate_a_cab_files_submissionspanspan-idcreate_a_cab_files_submissionspanspan-idcreate_a_cab_files_submissionspancreate-a-cab-files-submission"></a><span id="Create_a_CAB_Files_Submission"></span><span id="create_a_cab_files_submission"></span><span id="CREATE_A_CAB_FILES_SUBMISSION"></span>CAB ファイルの申請を作成する
 
 
 ダッシュボード用に CAB ファイル提出を作成するには、次の手順を実行します。
@@ -179,7 +179,7 @@ ms.locfileid: "63353044"
 
 5. Disk1 サブディレクトリにある CAB ファイルを探します。 エクスプローラーで CAB ファイルをクリックすると、必要なファイルが含まれているかどうかを確認できます。
 
-## <a name="span-idsignthesubmissioncabfilewithyourevcertspanspan-idsignthesubmissioncabfilewithyourevcertspanspan-idsignthesubmissioncabfilewithyourevcertspansign-the-submission-cab-file-with-your-ev-cert"></a><span id="Sign_the_Submission_Cab_File__with_your_EV_Cert"></span><span id="sign_the_submission_cab_file__with_your_ev_cert"></span><span id="SIGN_THE_SUBMISSION_CAB_FILE__WITH_YOUR_EV_CERT"></span>EV 証明書を使って CAB ファイル提出に署名する
+## <a name="span-idsign_the_submission_cab_file__with_your_ev_certspanspan-idsign_the_submission_cab_file__with_your_ev_certspanspan-idsign_the_submission_cab_file__with_your_ev_certspansign-the-submission-cab-file-with-your-ev-cert"></a><span id="Sign_the_Submission_Cab_File__with_your_EV_Cert"></span><span id="sign_the_submission_cab_file__with_your_ev_cert"></span><span id="SIGN_THE_SUBMISSION_CAB_FILE__WITH_YOUR_EV_CERT"></span>EV 証明書を使って CAB ファイル提出に署名する
 
 
 1. EV 証明書プロバイダーで推奨されるプロセスに従い、EV 証明書を使って CAB ファイルに署名します。たとえば、signtool を使う場合があります。また、Verisign を利用しているときは、タイムスタンプ サーバーを指定する場合もあります。
@@ -200,10 +200,10 @@ ms.locfileid: "63353044"
 
 
 
-## <a name="span-idsubmittheevsignedcabfileusingthewindowshardwaredevelopercenterdashboardspanspan-idsubmittheevsignedcabfileusingthewindowshardwaredevelopercenterdashboardspanspan-idsubmittheevsignedcabfileusingthewindowshardwaredevelopercenterdashboardspansubmit-the-ev-signed-cab-file-using-the-hardware-dev-center-dashboard"></a><span id="Submit_the_EV_signed_Cab_file_using_the__Windows_Hardware_Developer_Center_Dashboard"></span><span id="submit_the_ev_signed_cab_file_using_the__windows_hardware_developer_center_dashboard"></span><span id="SUBMIT_THE_EV_SIGNED_CAB_FILE_USING_THE__WINDOWS_HARDWARE_DEVELOPER_CENTER_DASHBOARD"></span>ハードウェア デベロッパー センター ダッシュボードを使用して、EV で署名された CAB ファイルを申請する
+## <a name="span-idsubmit_the_ev_signed_cab_file_using_the__windows_hardware_developer_center_dashboardspanspan-idsubmit_the_ev_signed_cab_file_using_the__windows_hardware_developer_center_dashboardspanspan-idsubmit_the_ev_signed_cab_file_using_the__windows_hardware_developer_center_dashboardspansubmit-the-ev-signed-cab-file-using-the-hardware-dev-center-dashboard"></a><span id="Submit_the_EV_signed_Cab_file_using_the__Windows_Hardware_Developer_Center_Dashboard"></span><span id="submit_the_ev_signed_cab_file_using_the__windows_hardware_developer_center_dashboard"></span><span id="SUBMIT_THE_EV_SIGNED_CAB_FILE_USING_THE__WINDOWS_HARDWARE_DEVELOPER_CENTER_DASHBOARD"></span>ハードウェア デベロッパー センター ダッシュボードを使用して、EV で署名された CAB ファイルを申請する
 
 
-1. ハードウェア デベロッパー センター ダッシュボードを使って、EV 署名された CAB ファイルを提出します。 詳しくは、「[ドライバーの署名のプロパティ](driver-signing-properties.md)」と「[ファイル署名サービス](https://msdn.microsoft.com/Library/Windows/Hardware/Dn771767.aspx)」をご覧ください。
+1. ハードウェア デベロッパー センター ダッシュボードを使って、EV 署名された CAB ファイルを提出します。 詳しくは、「[ドライバーの署名のプロパティ](driver-signing-properties.md)」と「[ファイル署名サービス](https://docs.microsoft.com/windows-hardware/drivers/dashboard/)」をご覧ください。
 
 提出プロセスの一環として、提出に含まれるすべてのドライバーがサポートするアーキテクチャを指定します。 チェック ボックスで 3 つのオプションを利用できます。
 
@@ -220,7 +220,7 @@ CAB ファイル内のすべてのドライバー フォルダーは、同じア
 ![ドライバーの署名の提出オプション](images/attestation-driver-signing-submission-dashboard.png)
 
 2. 署名プロセスが完了したら、ハードウェア デベロッパー センター ダッシュボードから署名されたドライバーをダウンロードします。
-   ## <a name="span-idvalidatethatthedriverwasproperlysignedspanspan-idvalidatethatthedriverwasproperlysignedspanspan-idvalidatethatthedriverwasproperlysignedspanvalidate-that-the-driver-was-properly-signed"></a><span id="Validate_that_the_driver_was_properly_signed"></span><span id="validate_that_the_driver_was_properly_signed"></span><span id="VALIDATE_THAT_THE_DRIVER_WAS_PROPERLY_SIGNED"></span>ドライバーが正しく署名されていることを検証する
+   ## <a name="span-idvalidate_that_the_driver_was_properly_signedspanspan-idvalidate_that_the_driver_was_properly_signedspanspan-idvalidate_that_the_driver_was_properly_signedspanvalidate-that-the-driver-was-properly-signed"></a><span id="Validate_that_the_driver_was_properly_signed"></span><span id="validate_that_the_driver_was_properly_signed"></span><span id="VALIDATE_THAT_THE_DRIVER_WAS_PROPERLY_SIGNED"></span>ドライバーが正しく署名されていることを検証する
 
 
 次の手順を実行して、ドライバーが正しく署名されていることを検証します。
@@ -271,7 +271,7 @@ CAB ファイル内のすべてのドライバー フォルダーは、同じア
 -   ドライバーのバイナリが顧客によって独自の証明書を使って埋め込み署名されている場合、それらの署名は上書きされません。
 -   新しいカタログ ファイルを作成し、SHA2 Microsoft 証明書を使って署名します。 顧客が提供した既存のカタログは、このカタログに置き換えられます。
 
-## <a name="span-idtestyourdriveronwindows10fordesktopspanspan-idtestyourdriveronwindows10fordesktopspanspan-idtestyourdriveronwindows10fordesktopspantest-your-driver-on-windows-10-for-desktop"></a><span id="Test_your_driver_on_Windows_10_for_Desktop"></span><span id="test_your_driver_on_windows_10_for_desktop"></span><span id="TEST_YOUR_DRIVER_ON_WINDOWS_10_FOR_DESKTOP"></span>デスクトップ用 Windows 10 でドライバーをテストする
+## <a name="span-idtest_your_driver_on_windows_10_for_desktopspanspan-idtest_your_driver_on_windows_10_for_desktopspanspan-idtest_your_driver_on_windows_10_for_desktopspantest-your-driver-on-windows-10-for-desktop"></a><span id="Test_your_driver_on_Windows_10_for_Desktop"></span><span id="test_your_driver_on_windows_10_for_desktop"></span><span id="TEST_YOUR_DRIVER_ON_WINDOWS_10_FOR_DESKTOP"></span>デスクトップ用 Windows 10 でドライバーをテストする
 
 
 次の手順に従って、サンプル ドライバーをインストールします。
@@ -294,7 +294,7 @@ CAB ファイル内のすべてのドライバー フォルダーは、同じア
 
 3. ドライバーのインストール プロセスで、"ドライバー ソフトウェアの発行元を検証できません" というメッセージが表示されないことを確認します。 [Windows セキュリティ] ダイアログ ボックス
 
-## <a name="span-idcreateamultipledriversubmissionspanspan-idcreateamultipledriversubmissionspanspan-idcreateamultipledriversubmissionspancreate-a-multiple-driver-submission"></a><span id="Create_a_Multiple_Driver_Submission"></span><span id="create_a_multiple_driver_submission"></span><span id="CREATE_A_MULTIPLE_DRIVER_SUBMISSION"></span>複数のドライバーの申請を作成する
+## <a name="span-idcreate_a_multiple_driver_submissionspanspan-idcreate_a_multiple_driver_submissionspanspan-idcreate_a_multiple_driver_submissionspancreate-a-multiple-driver-submission"></a><span id="Create_a_Multiple_Driver_Submission"></span><span id="create_a_multiple_driver_submission"></span><span id="CREATE_A_MULTIPLE_DRIVER_SUBMISSION"></span>複数のドライバーの申請を作成する
 
 
 一度に複数のドライバーを提出するには、次に示すようにドライバーごとにサブディレクトリを作成します。
@@ -334,7 +334,7 @@ C:\DriverFiles\DriverPackage2\Driver2.inf
 
 
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
 * [ドライバーへの署名](signing-a-driver.md)

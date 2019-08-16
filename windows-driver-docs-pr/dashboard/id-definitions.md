@@ -4,12 +4,12 @@ description: Windows パートナー センターの ID 定義
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 71e176d4a0e6238885e1659df95b75c7d54fca60
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 1cb44f0d544f52e7025949b95d0f2ef7756d9638
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63334978"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353883"
 ---
 # <a name="dashboard-id-definitions"></a>ダッシュボード ID 定義
 
@@ -46,7 +46,7 @@ Windows ハードウェア デベロッパー センター内では、各ドラ�
 </tr>
 <tr class="odd">
 <td><p>提出 ID</p></td>
-<td><p>この識別子は、製品にアップロードした個々のパッケージを表します。 最初の提出と、すべての提出の更新それぞれに一意の識別子があります。 この ID は、製品内で Driver Update Acceptable (DUA) プロセスを使って更新を追跡する場合に最も役立ちます。 詳しくは、<a href="https://msdn.microsoft.com/windows/hardware/drivers/dashboard/manage-your-hardware-submissions" data-raw-source="[Manage your hardware submissions](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/manage-your-hardware-submissions)">ハードウェア提出の管理に関するページ</a>をご覧ください。 </p></td>
+<td><p>この識別子は、製品にアップロードした個々のパッケージを表します。 最初の提出と、すべての提出の更新それぞれに一意の識別子があります。 この ID は、製品内で Driver Update Acceptable (DUA) プロセスを使って更新を追跡する場合に最も役立ちます。 詳しくは、<a href="https://docs.microsoft.com/windows-hardware/drivers/dashboard/manage-your-hardware-submissions" data-raw-source="[Manage your hardware submissions](https://docs.microsoft.com/windows-hardware/drivers/dashboard/manage-your-hardware-submissions)">ハードウェア提出の管理に関するページ</a>をご覧ください。 </p></td>
 </tr>
 </tbody>
 </table>
@@ -60,6 +60,6 @@ Windows ハードウェア デベロッパー センター内では、各ドラ�
 
 ## <a name="related-topics"></a>関連トピック
 
-* [ハードウェア申請の管理](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/manage-your-hardware-submissions)
+* [ハードウェア申請の管理](https://docs.microsoft.com/windows-hardware/drivers/dashboard/manage-your-hardware-submissions)
 
-* [配送先住所ラベルでドライバーの配布を管理する](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/manage-driver-distribution-by-submission)
+* [配送先住所ラベルでドライバーの配布を管理する](https://docs.microsoft.com/windows-hardware/drivers/dashboard/manage-driver-distribution-by-submission)

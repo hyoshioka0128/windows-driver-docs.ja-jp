@@ -5,12 +5,12 @@ ms.assetid: 5502AAF9-2400-4338-A646-C746B29F9A44
 ms.date: 06/04/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: f60441488e80443a78e6114285601c6cfe1c096b
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 4c8f9325984b275a24087811991074b7212ea6a8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66813592"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368030"
 ---
 # <a name="top"></a>ドライバー開発に関する最新情報
 
@@ -456,7 +456,7 @@ Windows 10 Version 1903 では、WHEA へのインターフェイスが簡単に
 
 Windows 10 Version 1809 では、ディスプレイ ドライバー開発に関する次の更新が行われました。
 
-* **レイトレーシング** ハードウェア アクセラレータによるレイトレーシングをサポートするために、Direct3D API と平行して新しい Direct3D DDI が作成されました。 次のような DDI があります。[PFND3D12DDI_BUILD_RAYTRACING_ACCELERATION_STRUCTURE_0054](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_build_raytracing_acceleration_structure_0054)、[PFND3D12DDI_COPY_RAYTRACING_ACCELERATION_STRUCTURE_0054](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_copy_raytracing_acceleration_structure_0054)。 レイトレーシングについて詳しくは、[Microsoft DirectX レイトレーシングに関する発表](https://blogs.msdn.microsoft.com/directx/2018/03/19/announcing-microsoft-directx-raytracing/)をご覧ください。
+* **レイトレーシング** ハードウェア アクセラレータによるレイトレーシングをサポートするために、Direct3D API と平行して新しい Direct3D DDI が作成されました。 次のような DDI があります。[PFND3D12DDI_BUILD_RAYTRACING_ACCELERATION_STRUCTURE_0054](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_build_raytracing_acceleration_structure_0054)、[PFND3D12DDI_COPY_RAYTRACING_ACCELERATION_STRUCTURE_0054](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_copy_raytracing_acceleration_structure_0054)。 レイトレーシングについて詳しくは、[Microsoft DirectX レイトレーシングに関する発表](https://devblogs.microsoft.com/directx/announcing-microsoft-directx-raytracing/)をご覧ください。
 
 * **ユニバーサル ドライバーの要件** WDDM 2.5 ドライバーでは、DirectX11 UMD、DirectX12 UMD、KMD、およびこれらのコンポーネントによって読み込まれるその他すべての DLL を、ユニバーサル API に確実に準拠させる必要があります。
 
@@ -575,7 +575,7 @@ Windows 10 Version 1803 では MBBCx のプレビュー コンテンツが提供
 
 たとえば、温熱条件に基づいてデバイスの充電を制御して、デバイスの過熱を防ぐことができます。
 
-* [Write a USB Type-C Policy Manager client driver (USB Type-C ポリシー マネージャー クライアント ドライバーの作成)](https://microsoft.com/windows-hardware/drivers/usbcon/policy-manager-client)
+* [Write a USB Type-C Policy Manager client driver (USB Type-C ポリシー マネージャー クライアント ドライバーの作成)](https://www.microsoft.com/windows-hardware/drivers/usbcon/policy-manager-client)
 * [Usbpmapi.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbpmapi/) で利用可能な新しい API
 
 **エミュレートされた USB デバイス (UDE) で利用可能なクラス拡張機能の新しいバージョン-- 1.1 および USB ホスト コントローラー (Ucx) 1.5:**
@@ -946,7 +946,7 @@ USB フレームやマイクロフレームと同期するシステム OPC の�
 * [USB_STOP_TRACKING_FOR_TIME_SYNC_INFORMATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ns-usbioctl-_usb_stop_tracking_for_time_sync_information)
 * [USB_FRAME_NUMBER_AND_QPC_FOR_TIME_SYNC_INFORMATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ns-usbioctl-_usb_frame_number_and_qpc_for_time_sync_information)
 
-#### <a name="ioctlucmtcpciportcontrollerdisplayportdisplayoutstatuschanged"></a>IOCTL_UCMTCPCI_PORT_CONTROLLER_DISPLAYPORT_DISPLAY_OUT_STATUS_CHANGED
+#### <a name="ioctl_ucmtcpci_port_controller_displayport_display_out_status_changed"></a>IOCTL_UCMTCPCI_PORT_CONTROLLER_DISPLAYPORT_DISPLAY_OUT_STATUS_CHANGED
 
 [IOCTL_UCMTCPCI_PORT_CONTROLLER_DISPLAYPORT_DISPLAY_OUT_STATUS_CHANGED](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucmtcpciportcontrollerrequests/ni-ucmtcpciportcontrollerrequests-ioctl_ucmtcpci_port_controller_displayport_display_out_status_changed) 要求は、USB Type-C ポート コントローラー インターフェイス フレームワーク拡張機能の新しい要求です。 この要求は、DisplayPort 接続のディスプレイ出力の状態が変更されたことをクライアント ドライバーに通知します。
 
@@ -1023,7 +1023,7 @@ Windows 10 Version 1703 では、POS に関する次のトピックが新たに�
 
 ### <a name="usb-1703"></a>USB
 
-Windows 10 Version 1703 では、USB Type-C ポート コントローラー インターフェイス仕様をサポートする新しいクラス拡張機能 (UcmTcpciCx.sys) が提供されます。 USB Type-C コネクタ ドライバーで内部の PD/Type-C 状態を保持しておく必要はありません。 USB Type-C コネクタと USB 電源供給 (PD) ステート マシンの複雑な管理はシステムによって処理されます。 必要なのは、クラス拡張機能を介してハードウェアのイベントをシステムに通信するクライアント ドライバーを作成することだけです。 詳しくは、[USB Type-C コントローラー インターフェイスのドライバー クラス拡張機能のリファレンス](https://msdn.microsoft.com/library/windows/hardware/mt805826)をご覧ください。
+Windows 10 Version 1703 では、USB Type-C ポート コントローラー インターフェイス仕様をサポートする新しいクラス拡張機能 (UcmTcpciCx.sys) が提供されます。 USB Type-C コネクタ ドライバーで内部の PD/Type-C 状態を保持しておく必要はありません。 USB Type-C コネクタと USB 電源供給 (PD) ステート マシンの複雑な管理はシステムによって処理されます。 必要なのは、クラス拡張機能を介してハードウェアのイベントをシステムに通信するクライアント ドライバーを作成することだけです。 詳しくは、[USB Type-C コントローラー インターフェイスのドライバー クラス拡張機能のリファレンス](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt805826(v=vs.85))をご覧ください。
 
 ## <a name="whats-new-in-windows-10-version-1607"></a>Windows 10 バージョン 1607 の新着情報
 
@@ -1146,8 +1146,8 @@ Windows 8.1 と Windows Phone の[ディスプレイ ドライバー モデル](
 
 Windows 10 には、複雑なドライバー操作を処理する新しいクラス拡張モジュール Wudfsmcclassext.dll が含まれています。 スマート カード ハードウェアに固有のタスクは、クライアント ドライバーによって処理されます。 クライアント ドライバーが要求を処理できるように、カードに関する情報をクラス拡張機能に送信するための新しいプログラミング インターフェイスがあります。 これらのドライバー プログラミング インターフェイスは、OneCoreUAP ベースの Windows エディションに含まれています。
 
-* [スマート カード クライアント ドライバーのイベント コールバック関数](https://msdn.microsoft.com/library/windows/hardware/dn946583)
-* [スマート カード クライアント ドライバーのサポート メソッド](https://msdn.microsoft.com/library/windows/hardware/dn946584)
+* [スマート カード クライアント ドライバーのイベント コールバック関数](https://docs.microsoft.com/previous-versions/dn946583(v=vs.85))
+* [スマート カード クライアント ドライバーのサポート メソッド](https://docs.microsoft.com/previous-versions/dn946584(v=vs.85))
 
 ### <a name="storage-1507"></a>ストレージ
 

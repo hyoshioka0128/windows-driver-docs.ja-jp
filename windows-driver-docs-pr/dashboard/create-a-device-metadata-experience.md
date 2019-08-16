@@ -5,12 +5,12 @@ ms.assetid: 964ad06e-0f29-441d-b184-61f80a614914
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eaa44cd33141f2c57e83d430d87a73435d61a3ac
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 47ae6c7fdeeb735b1a2c827804cd147527206d36
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63337279"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364466"
 ---
 # <a name="create-a-device-metadata-experience"></a>デバイス メタデータ エクスペリエンスの作成
 
@@ -19,7 +19,7 @@ ms.locfileid: "63337279"
 
 devicemanifest-ms ファイルは .cab ファイルであり、devicemetadata-ms ファイルと、複数ロケール パッケージ、コンピューター パッケージ、モバイル ブロードバンド アカウント エクスペリエンス パッケージの追加情報が含まれます。 すべての devicemanifest-ms パッケージに、追加情報として LocaleInfo.xml ファイルを含める必要があります。 詳しくは、PcMetadataSubmission.xml と MobileBroadbandMetadataSubmission.xml の作成に関するページをご覧ください。
 
-## <a name="span-idcreatingadevicemetadataexperiencepackagespanspan-idcreatingadevicemetadataexperiencepackagespanspan-idcreatingadevicemetadataexperiencepackagespancreating-a-device-metadata-experience-package"></a><span id="Creating_a_device_metadata_experience_package"></span><span id="creating_a_device_metadata_experience_package"></span><span id="CREATING_A_DEVICE_METADATA_EXPERIENCE_PACKAGE"></span>デバイス メタデータ エクスペリエンス パッケージの作成
+## <a name="span-idcreating_a_device_metadata_experience_packagespanspan-idcreating_a_device_metadata_experience_packagespanspan-idcreating_a_device_metadata_experience_packagespancreating-a-device-metadata-experience-package"></a><span id="Creating_a_device_metadata_experience_package"></span><span id="creating_a_device_metadata_experience_package"></span><span id="CREATING_A_DEVICE_METADATA_EXPERIENCE_PACKAGE"></span>デバイス メタデータ エクスペリエンス パッケージの作成
 
 
 ロゴ認定のためにファイルを提出する前に、ファイルをエクスペリエンスにパッケージ化する必要があります。 このエクスペリエンスを利用することで、ハードウェア ID とモデル ID のセットが同一でロケールだけが違うデバイスのデバイス メタデータ パッケージをグループ化することもできます。
@@ -58,7 +58,7 @@ devicemanifest-ms ファイルは .cab ファイルであり、devicemetadata-ms
    </tr>
    <tr class="even">
    <td><p>Preview package (プレビュー パッケージ)</p></td>
-   <td><p>選択したすべてのパッケージをプレビュー パッケージとして提出する場合に選びます。 詳しくは、「<a href="https://msdn.microsoft.com/library/windows/hardware/br230780.aspx" data-raw-source="[Creating a Preview Package](https://msdn.microsoft.com/library/windows/hardware/br230780.aspx)">プレビュー パッケージの作成</a>」をご覧ください。</p></td>
+   <td><p>選択したすべてのパッケージをプレビュー パッケージとして提出する場合に選びます。 詳しくは、「<a href="https://docs.microsoft.com/windows-hardware/drivers/dashboard/" data-raw-source="[Creating a Preview Package](https://docs.microsoft.com/windows-hardware/drivers/dashboard/)">プレビュー パッケージの作成</a>」をご覧ください。</p></td>
    </tr>
    <tr class="odd">
    <td><p>Bind to logo submissions (ロゴの提出にバインドする)</p></td>
@@ -76,16 +76,16 @@ devicemanifest-ms ファイルは .cab ファイルであり、devicemetadata-ms
 
 4. **[送信]** をクリックします。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
-[デバイス メタデータ エクスペリエンスを管理する](https://msdn.microsoft.com/library/windows/hardware/br230797.aspx)
+[デバイス メタデータ エクスペリエンスを管理する](https://docs.microsoft.com/windows-hardware/drivers/dashboard/)
 
-[バルク メタデータ パッケージの提出](https://msdn.microsoft.com/library/windows/hardware/hh801895.aspx)
+[バルク メタデータ パッケージの提出](https://docs.microsoft.com/windows-hardware/drivers/dashboard/)
 
-[デバイス メタデータ エクスペリエンスを申請する際のエラーと解決方法](https://msdn.microsoft.com/library/windows/hardware/br230786.aspx)
+[デバイス メタデータ エクスペリエンスを申請する際のエラーと解決方法](https://docs.microsoft.com/windows-hardware/drivers/dashboard/)
 
-[デバイス メタデータのビジネス規則](https://msdn.microsoft.com/library/windows/hardware/br230767.aspx)
+[デバイス メタデータのビジネス規則](https://docs.microsoft.com/windows-hardware/drivers/dashboard/)
 
  
 

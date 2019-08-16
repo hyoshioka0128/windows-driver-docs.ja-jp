@@ -6,12 +6,12 @@ ms.date: 08/28/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 分析 API, CAB のダウンロード
 ms.localizationpriority: medium
-ms.openlocfilehash: a98d6fcf72cc8390aafe1a5afa5447e26284ece4
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 9a7a534b4dc01d3d67ac4d4efda3e431868b4043
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66840857"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353914"
 ---
 # <a name="download-the-cab-file-for-a-windows-10-driver-error"></a>Windows 10 のドライバー エラーに関する CAB ファイルをダウンロードする
 
@@ -30,7 +30,7 @@ Windows 10 の特定のドライバー エラーに関連付けられている C
 Microsoft Store 分析 API の [Windows 10 のドライバーに関するエラー報告データを取得する](get-error-reporting-data-for-windows-10-drivers.md)メソッドおよび [Windows 10 のドライバー エラーに関する詳細を取得する](get-details-for-a-windows-10-driver-error.md)メソッドを使うと、OEM ハードウェア エラーに関する他の情報を取得できます。
 
 > [!NOTE]
-> このメソッドは、[パートナー センター プログラム](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/get-started-with-the-hardware-dashboard)に参加している開発者アカウントでのみ使用できます。
+> このメソッドは、[パートナー センター プログラム](https://docs.microsoft.com/windows-hardware/drivers/dashboard/get-started-with-the-hardware-dashboard)に参加している開発者アカウントでのみ使用できます。
 
 ## <a name="prerequisites"></a>前提条件
 
