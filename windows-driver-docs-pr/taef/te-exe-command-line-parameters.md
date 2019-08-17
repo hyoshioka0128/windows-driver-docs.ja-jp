@@ -4,18 +4,18 @@ description: Te.exe のコマンド オプション
 ms.assetid: E9A9292D-FA30-410d-9322-BD0F321314F9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 502964d420b44ff3a1e89960930ef4d565c0e53b
-ms.sourcegitcommit: 69261fa09a48b70a681bec0b4cf7afa8b84c73b2
+ms.openlocfilehash: 0d71cb48a3e99edfaba7a03abc0704f544d3d5ff
+ms.sourcegitcommit: f89a978ee23b9d2f925b13ea56b2c6cd48b4603a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2019
+ms.lasthandoff: 08/12/2019
 ms.locfileid: "68415096"
 ---
 # <a name="teexe-command-options"></a>Te.exe のコマンド オプション
 
 ## <a name="usage"></a>使用方法
 
-**:::no-loc text="te.exe":::** \<[:::no-loc text="test\_binaries":::](#test_binaries)> \[[:::no-loc text="/appendWttLogging":::](#appendwttlogging)\] \[[:::no-loc text="/breakOnCreate":::](#breakoncreate)\] \[[:::no-loc text="/breakOnError":::](#breakonerror)\] \[[:::no-loc text="/breakOnInvoke":::](#breakoninvoke)\] \[[:::no-loc text="/coloredConsoleOutput":::](#coloredconsoleoutputtruefalse) \] \[ [:::no-loc text="/console:flushWrites":::](#consoleflushwrites) \] \[ [ :::no-loc text="/console:position=\[x,y | current"::: \] ](#consolepositionxy--current-) \[ [ :::no-loc text="/console:size=&lt;x,y&gt;"::: \] ](#consolesize-xy--current-) \[ [ :::no-loc text="/console:topmost":::\]](#consoletopmost) [\[:::no-loc text="/defaultAppDomain":::\]](#defaultappdomain) \[[:::no-loc text="/disableConsoleLogging":::](#disableconsolelogging)\] \[[:::no-loc text="/disableTimeouts":::](#disabletimeouts)\] \[[:::no-loc text="/dpiaware":::](#dpiaware) \] \[[:::no-loc text="/enableWttLogging":::](#enablewttlogging) \] \[ [:::no-loc text="/inproc":::](#inproc) \] \[ [:::no-loc text="/isolationLevel":::](#isolationlevellevel) \] \[ [:::no-loc text="/labMode":::](#labmode) \] \[[:::no-loc text="/list":::](#list)\] \[[:::no-loc text="/listProperties":::](#listproperties)\] \[[:::no-loc text="/logFile:&lt;name&gt;":::](#logfilename)\] \[[:::no-loc text="/logOutput:&lt;mode&gt;":::](#logoutputmode)\] \[[:::no-loc text="/miniDumpOnCrash":::](#minidumponcrash)\] \[[:::no-loc text="/miniDumpOnError":::](#minidumponerror)\] \[[:::no-loc text="/name:&lt;testname&gt;":::](#nametestname)\] \[[:::no-loc text="/outputFolder:&lt;folderName&gt;":::](#outputfolderfoldername)\] \[[:::no-loc text="/p:&lt;ParamName&gt;=&lt;ParamValue&gt;":::](#pparamnameparamvalue) \] \[ [:::no-loc text="/parallel":::](#parallel) \] \[ [:::no-loc text="/persistPictResults":::](#persistpictresults) \] \[ [:::no-loc text="/pict:&lt;OptionName&gt;=&lt;OptionValue&gt;":::](#pictoptionnameoptionvalue) \] [ \[:::no-loc text="/rebootStateFile":::\]](#rebootstatefile) \[[:::no-loc text="/reportLoadingIssue":::](#reportloadingissue)\] \[[:::no-loc text="/runas:&lt;RunAsType&gt;":::](#runasrunastype)\] \[[:::no-loc text="/runIgnoredTests":::](#runignoredtests)\]<s></s>
+**te.exe** \<[テスト\_バイナリ](#test_binaries)> \[[/appendWttLogging](#appendwttlogging)\] \[[/breakOnCreate](#breakoncreate)\] \[[/breakOnError](#breakonerror)\] \[[/breakOnInvoke](#breakoninvoke)\] \[[/coloredConsoleOutput](#coloredconsoleoutputtruefalse)\] \[ [/console:flushWrites](#consoleflushwrites)\] \[[/console:position=\[x,y | 現在の\]](#consolepositionxy--current-) \[[/console:size=&lt;x,y&gt;\]](#consolesize-xy--current-) \[ [/console:最上位 \]](#consoletopmost) [\[/defaultAppDomain\]](#defaultappdomain) \[[/disableConsoleのログ](#disableconsolelogging)\] \[[/disableタイムアウト](#disabletimeouts)\] \[[/dpiaware](#dpiaware) \] \[[/enableWttLogging](#enablewttlogging)\] \[[/inproc](#inproc)\] \[[/isolationLevel](#isolationlevellevel)\] \[[/labMode](#labmode)\] \[[/list](#list)\] \[[/listProperties](#listproperties)\] \[[/logFile:&lt;名前&gt;](#logfilename)\] \[[/logOutput:&lt;モード&gt;](#logoutputmode)\] \[[/miniDumpOnCrash](#minidumponcrash)\] \[[/miniDumpOnError](#minidumponerror)\] \[[/name:&lt;testname&gt;](#nametestname)\] \[[/outputFolder:&lt;folderName&gt;](#outputfolderfoldername)\] \[[/p:&lt;ParamName&gt;=&lt;ParamValue&gt;](#pparamnameparamvalue)\] \[[/並列](#parallel)\] \[[/persistPict結果](#persistpictresults)\] \[[/pict:&lt;OptionName&gt;=&lt;OptionValue&gt;](#pictoptionnameoptionvalue)\] [\[/rebootStateFile\]](#rebootstatefile) \[[/reportLoadingIssue](#reportloadingissue)\] \[[/runas:&lt;RunAsType&gt;](#runasrunastype)\] \[[/runIgnoredTests](#runignoredtests)\] \[[/runon:&lt;MachineName&gt;](#runonmachinename)\] \[[/screenCaptureOnError](#screencaptureonerror)\] \[[/select:&lt;query&gt;](#selectquery)\] \[[/sessionTimeout:&lt;value&gt;](#sessiontimeoutvalue)\] \[[/stackFrameCount:&lt;value&gt;](#stackframecountvalue)\] \[[/stackTraceOnError](#stacktraceonerror)\] \[[/terminateOnFirstFailure](#terminateonfirstfailure)\] \[[/testDependencies:&lt;files&gt;](#testdependenciesfiles)\] \[[/testmode:Loop](#testmodeloop)\] \[[/testmode:Stress](#testmodestress)\] \[[/testTimeout:&lt;value&gt;](#testtimeoutvalue)\] \[[/unicodeOutput:&lt;true/false&gt;](#unicodeoutputtruefalse)\] [\[/version\]](#version) \[[/wttDeviceString:&lt;value&gt;](#wttdevicestringvalue)\] \[[/wttDeviceStringSuffix:&lt;value&gt;](#wttdevicestringsuffixvalue)\]
 
 ## <a name="selectionexecution-commands"></a>選択/実行コマンド
 
@@ -55,7 +55,7 @@ TE でのコンソールの使用を構成するためのオプションを提�
 
 #### <a name="consolesize-ltxygt--current-"></a>/console: size =\[ &lt;x、y&gt; | current\]
 
-コンソールウィンドウのサイズを文字単位で設定します。 必要に応じて、ウィンドウのサイズに合わせて画面バッファーサイズが増加します。 Current**の値**を使用して、再起動から再開するときに現在のコンソールサイズを格納して使用することを指定します。
+コンソールウィンドウのサイズを文字単位で設定します。 必要に応じて、ウィンドウのサイズに合わせて画面バッファーサイズが増加します。 Current の値を使用して、再起動から再開するときに現在のコンソールサイズを格納して使用することを指定します。
 
 #### <a name="consoletopmost"></a>/console: 最上位
 
