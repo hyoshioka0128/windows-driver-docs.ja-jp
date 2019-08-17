@@ -1,67 +1,67 @@
 ---
-title: NVGRE タスク オフロード
-description: このセクションでは、Network Virtualization using Generic Routing Encapsulation (NVGRE) タスク オフロードをについて説明します
+title: 汎用ルーティングカプセル化を使用したネットワーク仮想化について (NVGRE)
+description: このセクションでは、汎用ルーティングカプセル化 (NVGRE) タスクオフロードを使用したネットワーク仮想化について説明します。
 ms.assetid: D1BE5659-4491-411B-9D32-9CB7A141A240
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d0fb599d7766d119fa8ba2c998f0eb8645f8817
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: fd96a293f7351d2139acb157b8360eaec1929fc6
+ms.sourcegitcommit: fec48fa5342d9cd4cd5ccc16aaa06e7c3d730112
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371219"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69565134"
 ---
-# <a name="network-virtualization-using-generic-routing-encapsulation-nvgre-task-offload"></a>汎用ルーティング カプセル化 (NVGRE) タスク オフロードを使用したネットワークの仮想化
+# <a name="about-network-virtualization-using-generic-routing-encapsulation-nvgre"></a>汎用ルーティングカプセル化を使用したネットワーク仮想化について (NVGRE)
 
-HYPER-V ネットワーク仮想化では、Generic Routing Encapsulation (NVGRE) を IP アドレスを仮想化メカニズムとして使用するネットワーク仮想化をサポートします。 Nvgre で仮想マシンのパケットに別のパケット カプセル化します。 この新しい、NVGRE でフォーマットされたパケットのヘッダーは、適切なソースと変換先プロバイダーの領域 (PA) の IP アドレスを持ちます。 さらに、24 ビット仮想サブネット ID (VSID)、新しいパケットの GRE ヘッダーに格納されているがあります。
+Hyper-v ネットワーク仮想化では、IP アドレスを仮想化するメカニズムとして、汎用ルーティングカプセル化 (NVGRE) を使用したネットワーク仮想化がサポートされています。 NVGRE では、仮想マシンのパケットは別のパケット内にカプセル化されます。 この新しい NVGRE 形式のパケットのヘッダーには、適切な送信元と送信先のプロバイダー領域 (PA) IP アドレスが含まれています。 また、新しいパケットの GRE ヘッダーに格納されている、24ビットの仮想サブネット ID (VSID) を備えています。
 
-次の図は、GRE カプセル化パケットを示します。 は、NVGRE カプセル化パケットは外部の IP ヘッダーのペイロード (イーサネット ヘッダーを含む)、GRE カプセル化された IP パケットがある点が、IP over Ethernet のパケットのようになります。
+次の図は、GRE でカプセル化されたパケットを示しています。 ネットワーク上では、NVGRE でカプセル化されたパケットは IP over Ethernet パケットのように見えますが、外側の IP ヘッダーのペイロードは、GRE でカプセル化された IP パケット (イーサネットヘッダーを含む) である点が異なります。
 
-![元のパケットと gre カプセル化パケットを比較します。 mac を含む (gre を含む内部 mac)、ip ヘッダー (gre を含む内部の ip ヘッダー)、tcp ヘッダー、および tcp ユーザー データ。 さらに、gre のカプセル化パケットには、外部の mac、外部の ip ヘッダー、および gre が含まれています。](images/nvgre.png)
+![元のパケットと gre カプセル化のパケットの比較。 両方に mac (gre が内部 mac を含む)、ip ヘッダー (gre が内部 ip ヘッダーを含む)、tcp ヘッダー、および tcp ユーザーデータが含まれています。 さらに、gre カプセル化のパケットには、外部 mac、外部 ip ヘッダー、および gre が含まれています。](images/nvgre.png)
 
-NDIS 6.30 (Windows Server 2012 で使用可能な以降) では、NVGRE でフォーマットされたパケットを使用することができます NVGRE タスク オフロード、導入されています。
+NDIS 6.30 (Windows Server 2012 以降で使用可能) では、NVGRE タスクオフロードが導入されています。これにより、NVGRE 形式のパケットを以下で使用できるようになります。
 
 -   Large Send Offload (LSO)
 -   仮想マシン キュー (VMQ)
--   送信 (テキサス州) チェックサム オフロード (IPv4、TCP、UDP)
--   受信 (Rx) チェックサム オフロード (IPv4、TCP、UDP)
+-   送信 (Tx) チェックサムオフロード (IPv4、TCP、UDP)
+-   受信 (Rx) チェックサムオフロード (IPv4、TCP、UDP)
 
-**注**  内側と外側の IP ヘッダーのバージョンの異なるパケットをつまり、オフロード「混合モード」パケットのプロトコル ドライバー可能性があります。 たとえば、パケットは、外部の IP ヘッダーと IPv6 と IPv4 の内部 IP ヘッダー可能性があります。
-
- 
-
-**注**  がプロトコル ドライバー内部の TCP または UDP ヘッダーを持たない NVGRE 形式のパケットをオフロードすることもできます。 たとえば、IP パケットには、インターネット制御メッセージ プロトコル (ICMP) パケットである内部のペイロード可能性があります。
+**注:**   プロトコルドライバーが "混合モード" パケットをオフロードする可能性があります。これは、内部および外部の IP ヘッダーバージョンが異なるパケットを意味します。 たとえば、パケットには、IPv6 としての外部 IP ヘッダーと、IPv4 としての内部 IP ヘッダーを含めることができます。
 
  
 
-NVGRE の詳細については、次のインターネット ドラフトを参照してください。
+また、プロトコルドライバーは、内部 TCP ヘッダーまたは UDP ヘッダーのない nvgre 形式のパケットをオフロードすることもできます。   たとえば、IP パケットは、インターネット制御メッセージプロトコル (ICMP) パケットである内部ペイロードを持つことができます。
 
--   [NVGRE:Generic Routing Encapsulation によるネットワーク仮想化](http://ietfreport.isoc.org/idref/draft-sridharan-virtualization-nvgre/)
+ 
 
-NVGRE は、Generic Routing Encapsulation (GRE) に基づいています。 GRE の詳細については、次のリソースを参照してください。
+NVGRE の詳細については、次のインターネットドラフトを参照してください。
 
--   [RFC 2784:汎用ルーティング カプセル化 (GRE)](https://tools.ietf.org/html/rfc2784)
--   [RFC 2890:GRE をキーとシーケンス番号の拡張機能](https://tools.ietf.org/html/rfc2890)
+-   [NVGRE汎用ルーティングカプセル化を使用したネットワーク仮想化](http://ietfreport.isoc.org/idref/draft-sridharan-virtualization-nvgre/)
+
+NVGRE は、汎用ルーティングカプセル化 (GRE) に基づいています。 GRE の詳細については、次のリソースを参照してください。
+
+-   [RFC 2784:汎用ルーティングカプセル化 (GRE)](https://tools.ietf.org/html/rfc2784)
+-   [RFC 2890:GRE のキーおよびシーケンス番号の拡張機能](https://tools.ietf.org/html/rfc2890)
 
 このセクションの内容:
 
--   [Generic Routing Encapsulation (NVGRE) タスク オフロードを使用してネットワーク仮想化の概要](overview-of-network-virtualization-using-generic-routing-encapsulation--nvgre--task-offload.md)
--   [大量送信オフロード (LSO) で NVGRE をサポートしています。](supporting-nvgre-in-large-send-offload--lso-.md)
--   [チェックサム オフロードで NVGRE をサポートしています。](supporting-nvgre-in-checksum-offload.md)
--   [NVGRE サポートの RSS および VMQ 受信タスク オフロード](supporting-nvgre-in-rss-and-vmq-receive-task-offloads.md)
--   [内のパケットをカプセル化されたトランスポート ヘッダーを検索する、パスが表示されます。](locating-the-transport-header-for-encapsulaged-packets-in-the-receive-path.md)
--   [ネットワーク アダプターの NVGRE タスク オフロード機能を判断します。](determining-the-nvgre-task-offload-capabilities-of-a-network-adapter.md)
--   [クエリを実行して、NVGRE タスク オフロードの状態を変更します。](querying-and-changing-nvgre-task-offload-state.md)
--   [NVGRE タスク オフロード用の標準化された INF キーワード](standardized-inf-keywords-for-nvgre-task-offload.md)
+-   [汎用ルーティングカプセル化 (NVGRE) タスクオフロードを使用したネットワーク仮想化の概要](overview-of-network-virtualization-using-generic-routing-encapsulation--nvgre--task-offload.md)
+-   [Large Send Offload (LSO) での NVGRE のサポート](supporting-nvgre-in-large-send-offload--lso-.md)
+-   [チェックサムオフロードでの NVGRE のサポート](supporting-nvgre-in-checksum-offload.md)
+-   [RSS および VMQ 受信タスクのオフロードでの NVGRE のサポート](supporting-nvgre-in-rss-and-vmq-receive-task-offloads.md)
+-   [受信パスでカプセル化されたパケットのトランスポートヘッダーを検索する](locating-the-transport-header-for-encapsulaged-packets-in-the-receive-path.md)
+-   [ネットワークアダプターの NVGRE タスクオフロード機能を確認する](determining-the-nvgre-task-offload-capabilities-of-a-network-adapter.md)
+-   [NVGRE タスクオフロード状態のクエリと変更](querying-and-changing-nvgre-task-offload-state.md)
+-   [NVGRE タスクオフロード用の標準化された INF キーワード](standardized-inf-keywords-for-nvgre-task-offload.md)
 
 ## <a name="related-topics"></a>関連トピック
 
 
-[チェックサム タスクをオフロードします。](offloading-checksum-tasks.md)
+[チェックサムタスクのオフロード](offloading-checksum-tasks.md)
 
-[大きな TCP パケットのセグメント化をオフロード](offloading-the-segmentation-of-large-tcp-packets.md)
+[大きな TCP パケットのセグメント化のオフロード](offloading-the-segmentation-of-large-tcp-packets.md)
 
-[TCP/IP タスク オフロード](task-offload.md)
+[TCP/IP タスクオフロード](task-offload.md)
 
  
 

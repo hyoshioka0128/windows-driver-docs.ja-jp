@@ -1,33 +1,32 @@
 ---
-title: ワイヤレス ネットワーキング
-description: ワイヤレス ネットワーキング
+title: ワイヤレスネットワークに関するトピック
+description: ワイヤレスネットワークに関するトピック
 ms.assetid: 256d46d1-830c-4e6b-9658-bc2fdeb78455
 keywords:
-- ネットワーク ドライバー WDK、ワイヤレス ネットワーク
-- NDIS WDK、ワイヤレス ネットワーク接続
-- ワイヤレス ネットワークの WDK
+- ネットワークドライバー WDK、ワイヤレスネットワーク
+- NDIS WDK、ワイヤレスネットワーク
+- ワイヤレスネットワーク WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 418c5ce7479cb8a2a3a972aea006c1ffcb8f86cb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1b5c75efcbe84f09b9b57581a5d396baf8c06455
+ms.sourcegitcommit: fec48fa5342d9cd4cd5ccc16aaa06e7c3d730112
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379794"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69565603"
 ---
-# <a name="wireless-networking"></a>ワイヤレス ネットワーキング
-
+# <a name="wireless-networking-topics"></a>ワイヤレスネットワークに関するトピック
 
 ここでは、次のトピックについて説明します。
 
-[WLAN のユニバーサル Windows ドライバー モデル](wifi-universal-driver-model.md)
+[WLAN ユニバーサル Windows ドライバーモデル](wifi-universal-driver-model.md)
 
-[携帯電話のアーキテクチャと実装](cellular-architecture-and-driver-model.md)
+[携帯ネットワークのアーキテクチャと実装](cellular-architecture-and-driver-model.md)
 
-[モバイル ブロード バンド (MB) の設計ガイド](mobile-broadband--mb--design-guide.md)
+[モバイルブロードバンド (MB) 設計ガイド](mobile-broadband--mb--design-guide.md)
 
-[WLAN の機能の情報](wlan-feature-information.md)
+[WLAN 機能の情報](wlan-feature-information.md)
 
-[WDI ミニポート ドライバーの設計ガイド](wdi-miniport-driver-design-guide.md)
+[WDI ミニポートドライバーの設計ガイド](wdi-miniport-driver-design-guide.md)
 
-[Wi-fi ホット スポットのガイドをオフロードします。](wi-fi-hotspot-offloading-guide.md)
+[Wi-fi ホットスポットオフロードガイド](wi-fi-hotspot-offloading-guide.md)

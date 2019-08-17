@@ -1,42 +1,37 @@
 ---
-title: VMQ ドライバーの作成
-description: このセクションでは、NDIS 仮想マシン キュー (VMQ) ドライバーの開発についての情報を提供します。 既に、このセクションを読む前に、仮想マシン キュー アーキテクチャを理解する必要があります。
+title: VMQ ドライバーの書き込みはじめに
+description: このセクションでは、NDIS virtual machine queue (VMQ) ドライバーの記述について説明します。 このセクションを読む前に、仮想マシンキューアーキテクチャについて理解しておく必要があります。
 ms.assetid: 877d3d95-2ec5-4d2e-9bcc-cd2adfc2a667
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e5dae3e783613f339f2f1ac3f97b6bbb2dd2941
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b1a9194ec15d9559d96bdef69b20d750bdb927a5
+ms.sourcegitcommit: fec48fa5342d9cd4cd5ccc16aaa06e7c3d730112
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340913"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69565704"
 ---
-# <a name="writing-vmq-drivers"></a>VMQ ドライバーの作成
+# <a name="getting-started-writing-vmq-drivers"></a>VMQ ドライバーの書き込みはじめに
 
 
-このセクションでは、NDIS 仮想マシン キュー (VMQ) ドライバーの開発についての情報を提供します。 既に理解する必要があります、[仮想マシン キュー アーキテクチャ](virtual-machine-queue-architecture.md)このセクションを読む前にします。
+このセクションでは、NDIS virtual machine queue (VMQ) ドライバーの記述について説明します。 このセクションを読む前に、[仮想マシンキューアーキテクチャ](virtual-machine-queue-architecture.md)について理解しておく必要があります。
 
-**注**  学習してください、 [NDIS 仮想ミニポート ドライバー サンプル](https://go.microsoft.com/fwlink/p/?LinkId=617918)、特に vmq.c と vmq.h ソース ファイル。
+注   [NDIS 仮想ミニポートドライバーのサンプル](https://go.microsoft.com/fwlink/p/?LinkId=617918)(特に、vmq と vmq のソースファイル) を確認してください。
 
- 
+VMQ をサポートするミニポートドライバーは、VMQ ハードウェアサポートを提供する Nic を管理します。 このような NIC は、受信ネットワークデータをフィルター処理して VM 受信キューに割り当てるためのハードウェアサービスを提供します。
 
-
-
-
-VMQ をサポートしているミニポート ドライバーでは、VMQ ハードウェアのサポートを提供するための Nic を管理します。 このような NIC では、受信ネットワーク データをフィルター処理を VM に割り当てるハードウェア サービスの受信キューで提供します。
-
-このセクションでは、ドライバーが重なって、基になるネットワーク アダプターに関する情報を取得し、設定方法 VMQ 構成について説明します。 ドライバーとアプリケーションのユーザーに関連、現在の構成を取得し、有効または無効に VMQ 機能。
+このセクションでは、前のドライバーが基になるネットワークアダプターに関する情報を取得し、VMQ の構成を設定する方法について説明します。 それまでのドライバーやユーザーアプリケーションは、現在の構成を取得し、VMQ 機能を有効または無効にすることができます。
 
 ここでは、次のトピックについて説明します。
 
 -   [VMQ ドライバーの構成](vmq-driver-configuration.md)
 -   [キューの状態と操作](queue-states-and-operations.md)
--   [VMQ 割り込みの要件](vmq-interrupt-requirements.md)
--   [割り当てと解放 VM キュー](allocating-and-freeing-vm-queues.md)
--   [設定および VMQ のフィルターをクリア](setting-and-clearing-vmq-filters.md)
--   [取得して、VM キュー パラメーターの更新](obtaining-and-updating-vm-queue-parameters.md)
--   [VMQ 送受信操作](vmq-send-and-receive-operations.md)
--   [VMQ の情報を取得します。](obtaining-vmq-information.md)
+-   [VMQ の割り込み要件](vmq-interrupt-requirements.md)
+-   [VM キューの割り当てと解放](allocating-and-freeing-vm-queues.md)
+-   [VMQ フィルターの設定とクリア](setting-and-clearing-vmq-filters.md)
+-   [VM キューパラメーターの取得と更新](obtaining-and-updating-vm-queue-parameters.md)
+-   [VMQ の送信と受信の操作](vmq-send-and-receive-operations.md)
+-   [VMQ 情報の取得](obtaining-vmq-information.md)
 
  
 

@@ -1,31 +1,31 @@
 ---
-title: 802.11 WLAN アダプターの管理
-description: 802.11 WLAN アダプターの管理
+title: 802.11 WLAN アダプターの管理に関するトピック
+description: 802.11 WLAN アダプターの管理に関するトピック
 ms.assetid: 8959ed34-b507-4895-925e-329a9e5b32cd
 keywords:
-- IHV 拡張 DLL WDK ネイティブ 802.11、アダプターの管理
-- WDK 802.11 WLAN のアダプター
+- IHV 拡張機能 DLL WDK ネイティブ802.11、アダプター管理
+- アダプター WDK 802.11 WLAN
 - WLAN アダプター WDK
-- ネイティブ 802.11 IHV 拡張 DLL WDK、アダプターの管理
+- ネイティブ 802.11 IHV 拡張 DLL WDK、アダプター管理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b2416633f697ce8c31eb1bf09cc2f8dacce50a6d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c2e42148fa793c89ab0d3e014754a8eb126bbae4
+ms.sourcegitcommit: fec48fa5342d9cd4cd5ccc16aaa06e7c3d730112
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367844"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69565768"
 ---
-# <a name="80211-wlan-adapter-management"></a>802.11 WLAN アダプターの管理
+# <a name="80211-wlan-adapter-management-topics"></a>802.11 WLAN アダプターの管理に関するトピック
 
 
 
 
  
 
-このセクションでは、IHV の拡張 DLL でワイヤレス LAN (WLAN) アダプターの管理について説明し、次のトピックが含まれています。
+ここでは、IHV 拡張 DLL によるワイヤレス LAN (WLAN) アダプターの管理について説明し、次のトピックを示します。
 
-[802.11 WLAN アダプター到着](802-11-wlan-adapter-arrival.md)
+[802.11 WLAN アダプターの到着](802-11-wlan-adapter-arrival.md)
 
 [802.11 WLAN アダプターの削除](802-11-wlan-adapter-removal.md)
 

@@ -1,28 +1,28 @@
 ---
-title: WDI 設計ガイド
-description: このセクションでは、要件と WLAN のドライバーの機能をサポートするための推奨事項について説明します。
+title: WDI 設計ガイドに関するトピック
+description: このセクションでは、WLAN ドライバーの機能をサポートするための要件と推奨事項について説明します。
 ms.assetid: 71DFA31C-019E-4602-83F6-71E235B9DB66
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3965494ffcf4eb7a556b53128d05b167922fd63b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c36509b25f8bca5eb860c53f577edf8200b96995
+ms.sourcegitcommit: fec48fa5342d9cd4cd5ccc16aaa06e7c3d730112
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330736"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69565722"
 ---
-# <a name="wdi-design-guide"></a>WDI 設計ガイド
+# <a name="wdi-design-guide-topics"></a>WDI 設計ガイドに関するトピック
 
 
-このセクションでは、要件と WLAN のドライバーの機能をサポートするための推奨事項について説明します。
+このセクションでは、WLAN ドライバーの機能をサポートするための要件と推奨事項について説明します。
 
-[WDI 低待機時間の接続の品質](wdi-low-latency-connection-quality.md)
+[WDI 低待機時間の接続品質](wdi-low-latency-connection-quality.md)
 
-[WDI 拡張チャネル スイッチのお知らせ](wdi-extended-channel-switch-announcement--ecsa-.md)
+[WDI 拡張チャネルスイッチのアナウンス](wdi-extended-channel-switch-announcement--ecsa-.md)
 
-[WDI IHV 拡張可能な型](wdi-ihv-extensible-types.md)
+[WDI IHV 拡張型](wdi-ihv-extensible-types.md)
 
-[開発し、回復のリセットの WDI ドライバーの検証](wdi-develop-and-validate-wdi-drivers-for-reset-recovery.md)
+[リセット回復用の WDI ドライバーの開発と検証](wdi-develop-and-validate-wdi-drivers-for-reset-recovery.md)
 
  
 

@@ -1,43 +1,43 @@
 ---
-title: WAN パケット フレーミング
-description: WAN パケット フレーミング
+title: WAN パケットフレーミングの概要
+description: WAN パケットフレーミングの概要
 ms.assetid: 11a6fbf5-c7a9-474b-811e-c77a36e834f3
 keywords:
-- WAN ミニポート ドライバー WDK ネットワー キング、パケット
-- ドライバー WDK ネットワーク、WAN いる CoNDIS パケット
-- パケットのフレーミング WDK WAN
-- ネットワーク NDISWAN WDK
-- WAN のパケットのフレーミング WDK ネットワーク
-- WAN のパケットのフレーミングの WDK WAN のフレーム化パケット
-- WAN パケットのフレーミング WDK ネットワーク、WAN パケットのフレーミングについて
+- WAN ミニポートドライバー WDK ネットワーク、パケット
+- CoNDIS WAN ドライバー WDK ネットワーク、パケット
+- パケットフレーミング WDK WAN
+- NDISWAN WDK ネットワーク
+- WAN パケットフレーミング WDK ネットワーク
+- パケットフレーミング WDK WAN、WAN パケットフレームについて
+- Wan パケットフレーミング WDK ネットワーク、WAN パケットフレームについて
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b47073f18d34134dab135939bab30f46d7fc81ff
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 33b1490e986bd03a1a8a33eb2e5581458a332aad
+ms.sourcegitcommit: fec48fa5342d9cd4cd5ccc16aaa06e7c3d730112
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384349"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69565625"
 ---
-# <a name="wan-packet-framing"></a>WAN パケット フレーミング
+# <a name="wan-packet-framing-overview"></a>WAN パケットフレーミングの概要
 
 
 
 
 
-このセクションでは、WAN パケットのフレーミングについての情報を提供します。
+ここでは、WAN パケットフレーミングについて説明します。
 
-NDISWAN 中間ドライバーに、ミニポート ドライバーの応答から WAN ミニポート ドライバーによって実行される WAN パケット フレームに関する情報を取得する、 [OID\_WAN\_MEDIUM\_サブタイプ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff561216(v=vs.85))クエリ情報の要求。
+NDISWAN 中間ドライバーは、wan ミニポートドライバーによって実行される wan パケットフレームに関する情報を、 [OID\_wan\_\_MEDIUM サブタイプ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff561216(v=vs.85))クエリ情報に対するミニポートドライバーの応答から取得します。申請.
 
-NDISWAN は、LAN から、発信パケット PPP 形式に変換します。 NDISWAN では、単純な HDLC フレームを使用します。 ミニポート ドライバーでは、メディア固有のフレームの大部分を実行する必要があります。
+NDISWAN は、パケットを LAN から PPP 形式に変換します。 NDISWAN は、単純な HDLC フレームを使用します。 メディア固有のフレームの大部分は、ミニポートドライバーによって実行される必要があります。
 
-WAN ミニポート ドライバーの送信機能にパケットを送信する前に、NDISWAN は、単純な HDLC の PPP フレームを行います。 単純な HDLC の PPP フレームは、PPP の HDLC のフレーミング、FC、ビットやバイト作業を手伝えば、先頭または末尾フラグのいずれかです。
+WAN ミニポートドライバーの send 関数にパケットを送信する前に、NDISWAN は単純な PPP HDLC フレーミングを行います。 単純な PPP HDLC フレームは、FC、ビットまたはバイトの手紙、および開始または終了フラグのない PPP の HDLC です。
 
-次のトピックでは、WAN のパケットのフレーミングに関する追加情報を提供します。
+次のトピックでは、WAN パケットフレーミングに関する追加情報を提供します。
 
 [非同期フレーム](asynchronous-framing.md)
 
-[ISDN および交換 56 K フレーム](isdn-and-switched-56k-framing.md)
+[ISDN とスイッチ-56K フレーム](isdn-and-switched-56k-framing.md)
 
  
 

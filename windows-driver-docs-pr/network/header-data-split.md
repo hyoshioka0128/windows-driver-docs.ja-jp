@@ -1,46 +1,42 @@
 ---
-title: ヘッダー データの分割
-description: ヘッダー データの分割
+title: ヘッダーの概要-データの分割
+description: ヘッダーの概要-データの分割
 ms.assetid: ecbf4b08-8be4-42ca-8a65-1cb8124bee33
 keywords:
-- ヘッダー データは、WDK を分割
-- ヘッダーとデータを別のバッファーの分割
-- WDK のヘッダー データ バッファーを分割します。
-- 受信側のデータの WDK ネットワーク
-- WDK のヘッダー データ フレームに分割します。
-- フレーム WDK ヘッダー以外のデータの分割を分割します。
-- 記憶域 WDK ヘッダー以外のデータの分割
-- 容量管理
+- ヘッダー-データの分割 (WDK)
+- ヘッダーとデータを別々のバッファーに分割する
+- バッファー WDK ヘッダー-データ分割
+- データを受信する WDK ネットワーク
+- フレーム WDK ヘッダー-データの分割
+- フレームの分割 WDK ヘッダー-データの分割
+- storage WDK ヘッダー-データの分割
+- スペース management
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c4097ae3ab00bdf04ed2addff44b895bf9de31a5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d0bbe6a27bbf26d2bb40bb0022423e3e7f4088e1
+ms.sourcegitcommit: fec48fa5342d9cd4cd5ccc16aaa06e7c3d730112
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63349649"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69565682"
 ---
-# <a name="header-data-split"></a>ヘッダー データの分割
+# <a name="introduction-to-header-data-split"></a>ヘッダーの概要-データの分割
 
-
-
-
-
-このセクションでは、ヘッダー データの分割 NDIS 6.1 以降で利用できるサービスについて説明します。 *ヘッダー データが分割*を別のバッファーにヘッダーと受信のイーサネット フレーム内のデータを分割することでネットワークのパフォーマンスが向上します。 ヘッダーとデータを分離するには、メモリの領域が小さい方にまとめて収集するヘッダーができるようにします。 その結果、ヘッダーの詳細については、1 つのメモリ ページに収まるし、ドライバー スタックのメモリ アクセスのオーバーヘッドが軽減ように追加のヘッダーはシステム キャッシュに表示されます。
+このセクションでは、NDIS 6.1 以降のバージョンで使用できるヘッダーデータ分割サービスについて説明します。 *ヘッダーとデータを分割*すると、受信したイーサネットフレーム内のヘッダーとデータが別々のバッファーに分割されるため、ネットワークのパフォーマンスが向上します。 ヘッダーとデータを分離すると、ヘッダーを1つのメモリ領域にまとめて収集できます。 その結果、より多くのヘッダーが1つのメモリページに格納され、さらに多くのヘッダーがシステムキャッシュに格納されるため、ドライバースタックでのメモリアクセスのオーバーヘッドが削減されます。
 
 このセクションの内容:
 
-[ヘッダー データの分割の概要](header-data-split-overview.md)
+[ヘッダーデータの分割の概要](header-data-split-overview.md)
 
-[ヘッダー データの分割プロバイダーの初期化](initializing-a-header-data-split-provider.md)
+[ヘッダーデータ分割プロバイダーの初期化](initializing-a-header-data-split-provider.md)
 
-[イーサネット フレームの分割](splitting-ethernet-frames.md)
+[イーサネットフレームの分割](splitting-ethernet-frames.md)
 
-[受信ヘッダー データの分割を表示](receive-indications-with-header-data-split.md)
+[ヘッダーを使用した通知の受信-データの分割](receive-indications-with-header-data-split.md)
 
-[ヘッダー データの分割の管理と構成](header-data-split-administration-and-configuration.md)
+[ヘッダー-データの分割管理と構成](header-data-split-administration-and-configuration.md)
 
-[プロトコル ドライバーおよびフィルター ドライバーでヘッダー データの分割のサポート](supporting-header-data-split-in-protocol-driver-and-filter-drivers.md)
+[サポートヘッダー-プロトコルドライバーとフィルタードライバーでのデータの分割](supporting-header-data-split-in-protocol-driver-and-filter-drivers.md)
 
  
 

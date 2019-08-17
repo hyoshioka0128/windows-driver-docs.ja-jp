@@ -1,31 +1,31 @@
 ---
-title: 関連付け前の操作
-description: 関連付け前の操作
+title: 関連付け前の操作に関するトピック
+description: 関連付け前の操作に関するトピック
 ms.assetid: fc9a8548-24f0-48f9-9e3f-ad85a90f91ed
 keywords:
-- IHV 拡張 DLL WDK ネイティブ 802.11、関連付け前の操作
+- IHV 拡張 DLL WDK ネイティブ802.11、関連付け前の操作
 - ネイティブ 802.11 IHV 拡張 DLL WDK、関連付け前の操作
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b3fe7a1fcbf3cba2685f24f29495e1a188a3c1b6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1f3e7640b813d4da1066049174e69de77294e7c6
+ms.sourcegitcommit: fec48fa5342d9cd4cd5ccc16aaa06e7c3d730112
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355209"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69565124"
 ---
-# <a name="pre-association-operations"></a>関連付け前の操作
+# <a name="pre-association-operations-topics"></a>関連付け前の操作に関するトピック
 
 
 
 
  
 
-このセクションでは、前の関連付け操作および IHV 拡張 dll の実行方法について説明します。 このセクションでは、次のトピックがあります。
+このセクションでは、事前関連付け操作と、IHV 拡張 DLL によるその実行方法について説明します。 ここでは、次のトピックについて説明します。
 
-[前の関連付け操作の概要](pre-association-operation-overview.md)
+[関連付け前の操作の概要](pre-association-operation-overview.md)
 
-[前の関連付け操作のガイドライン](pre-association-operation-guidelines.md)
+[事前関連付け操作のガイドライン](pre-association-operation-guidelines.md)
 
  
 

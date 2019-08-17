@@ -1,48 +1,48 @@
 ---
-title: NDIS MSI-X
-description: NDIS MSI-X
+title: NDIS MSI-X の概要
+description: NDIS MSI-X の概要
 ms.assetid: 5bb374c8-9354-42d3-9754-42e8ff42bdb9
 keywords:
-- ミニポート ドライバー WDK ネットワー キング、MSI X
-- NDIS ミニポート ドライバー WDK、MSI X
-- MSI X WDK ネットワーク
-- メッセージ シグナル割り込み WDK ネットワーク
+- ミニポートドライバー WDK ネットワーク、MSI-X
+- NDIS ミニポートドライバー WDK、MSI-X
+- MSI-X WDK ネットワーク
+- メッセージシグナル割り込み (WDK ネットワーク)
 - Msi WDK ネットワーク
-- WDK のネットワークを中断します。
+- WDK ネットワークを中断する
 - 割り込みアフィニティ WDK ネットワーク
-- net WDK の割り込み
+- WDK ネットワークを中断します
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8228dcc831573067e11d94bd0c7da2caf54f766a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ea37bf478cac493a78e5a0fbd1a38b1a9d92c5ef
+ms.sourcegitcommit: fec48fa5342d9cd4cd5ccc16aaa06e7c3d730112
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378355"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69565650"
 ---
-# <a name="ndis-msi-x"></a>NDIS MSI-X
+# <a name="overview-of-ndis-msi-x"></a>NDIS MSI-X の概要
 
 
 
 
 
-メッセージ シグナル割り込み (Msi) は、ネットワーク デバイスとそのミニポート ドライバーが使用できる従来の行ベースの割り込みの代替を提供します。 Windows Vista 以降のオペレーティング システムには、Msi の 2 種類がサポートされています。PCI V2.2 MSI and PCI V3.0 MSI-X.
+メッセージシグナル割り込み (Msi) は、ネットワークデバイスとそのミニポートドライバーが使用できる従来の行ベースの割り込みに代わる手段を提供します。 Windows Vista 以降のオペレーティングシステムでは、次の2種類の Msi がサポートされています。PCI v1.0 MSI および PCI v1.0 MSI-X。
 
-MSI をサポートするミニポート ドライバーを指定できます、*割り込みアフィニティ*ドライバーのメッセージの割り込みサービス ルーチンは、上で実行される中央処理装置 (Cpu) のサブセットであります。 MSI X メッセージごとに--割り込みアフィニティを指定するなどを指定できます、Non-uniform Memory Access (NUMA) アーキテクチャについて特定の Cpu に自分のデバイスの「近接」でコンピューターとのアフィニティを中断します。
+MSI をサポートするミニポートドライバーでは、*割り込みアフィニティ*を指定できます。これは、ドライバーのメッセージ割り込みサービスルーチンが実行される中央処理ユニット (cpu) のサブセットです。 各 MSI-X メッセージに対して割り込みの関係を指定できます。たとえば、デバイスの "近接" に関して、Non-uniform Memory Access (NUMA) アーキテクチャを使用しているコンピューターで、割り込みのアフィニティを指定できます。
 
-MSI X のサポートは、特にのネットワーク インターフェイス カード (Nic) のサポートが側 scaling (RSS) を受信する場合の大幅なパフォーマンスの利点を提供できます。 詳細については、受信側のスケーリングを参照してください[Receive Side Scaling](ndis-receive-side-scaling2.md)します。
+MSI-X サポートは、特に receive side scaling (RSS) をサポートするネットワークインターフェイスカード (Nic) に対して、大きなパフォーマンス上の利点を提供できます。 Receive side scaling の詳細については、「 [Receive Side scaling](ndis-receive-side-scaling2.md)」を参照してください。
 
-詳細については、行ベースの割り込みは、次を参照してください。[管理の割り込み](managing-interrupts.md)します。
+行ベースの割り込みの詳細については、「[割り込みの管理](managing-interrupts.md)」を参照してください。
 
 このセクションの内容:
 
-[MSI X の初期化](msi-x-initialization.md)
+[MSI-X の初期化](msi-x-initialization.md)
 
-[MSI 割り込みを処理します。](handling-an-msi-interrupt.md)
+[MSI 割り込みの処理](handling-an-msi-interrupt.md)
 
 [MSI 割り込みとの同期](synchronizing-with-an-msi-interrupt.md)
 
-[MSI X テーブル エントリの CPU 関係を変更します。](changing-the-cpu-affinity-of-msi-x-table-entries.md)
+[MSI-X テーブルエントリの CPU 関係の変更](changing-the-cpu-affinity-of-msi-x-table-entries.md)
 
  
 

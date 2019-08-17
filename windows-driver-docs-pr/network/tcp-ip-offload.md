@@ -1,58 +1,54 @@
 ---
-title: TCP/IP オフロード
-description: TCP/IP オフロード
+title: TCP/IP オフロードの概要
+description: TCP/IP オフロードの概要
 ms.assetid: 1f074ce5-2614-47a5-9ee0-a5e43f05273d
 keywords:
-- ネットワーク ドライバー WDK では、TCP/IP の負荷を軽減します。
+- ネットワークドライバー WDK、TCP/IP オフロード
 - TCP/IP オフロード WDK ネットワーク
-- WDK TCP/IP トランスポートの負荷を軽減します。
-- TCP/IP のオフロードの詳細について、オフロード WDK の TCP/IP のネットワーク、
-- TCP/IP のオフロードは、WDK TCP/IP トランスポートの負荷を軽減します。
-- タスクのオフロード WDK TCP/IP トランスポート
-- WDK TCP/IP トランスポート接続の負荷を軽減します。
-- パケット WDK ネットワー キング、TCP/IP のオフロード
+- WDK TCP/IP トランスポートのオフロード
+- Tcp/ip オフロード WDK ネットワーク、TCP/IP オフロードについて
+- WDK TCP/IP トランスポートのオフロード、TCP/IP オフロードについて
+- タスクオフロード WDK TCP/IP トランスポート
+- 接続オフロード WDK TCP/IP トランスポート
+- パケット WDK ネットワーク、TCP/IP オフロード
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5924e6c230c51f5a84a4028b3eb610748941266f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9c55134ba2d320e4791dbb412a6450ca45bfd1f6
+ms.sourcegitcommit: fec48fa5342d9cd4cd5ccc16aaa06e7c3d730112
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63350831"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69565634"
 ---
-# <a name="tcpip-offload"></a>TCP/IP オフロード
+# <a name="tcpip-offload-overview"></a>TCP/IP オフロードの概要
 
+Microsoft TCP/IP トランスポートでは、パフォーマンスを向上させるために、適切な TCP/IP オフロード機能を備えた NIC へのタスクまたは接続をオフロードすることができます。
 
+Windows Vista 以降、Windows オペレーティングシステムでは、次の TCP/IP オフロードサービスがサポートされています。
 
+-   チェックサムタスク
 
+-   アプリケーションのインターネットプロトコルセキュリティ (IPsec) オフロードバージョン1
 
-そのパフォーマンスを向上させるのには、Microsoft TCP/IP トランスポートはタスクまたは適切な TCP/IP オフロード機能を備えている NIC への接続をオフロードできます。
+-   IPsec オフロードバージョン2
+    - \[IPsec タスクオフロード機能は非推奨とされており、使用しないでください。\]
 
-Windows Vista 以降、Windows オペレーティング システムのサポートしている次の TCP/IP のオフロード サービス。
+-   Large send offload version 1
 
--   チェックサム タスク
-
--   アプリケーションのインターネット プロトコル セキュリティ (IPsec) は、バージョン 1 をオフロードします。
-
--   IPsec オフロード バージョン 2
-    - \[IPsec タスク オフロード機能は非推奨し、は使用できません。\]
-
--   大量送信オフロード バージョン 1
-
--   大量送信オフロード バージョン 2
+-   L 送信オフロードバージョン2
 
 -   接続のオフロード
 
-Windows Vista 以降を装備されている TCP/IP トランスポートは、IPv4 と IPv6 の両方のパケットの TCP/IP のオフロード サービスをサポートします。
+Windows Vista 以降で提供される TCP/IP トランスポートでは、IPv4 と IPv6 の両方のパケットに対して TCP/IP オフロードサービスがサポートされています。
 
-NDIS 6.0 とそれ以降のミニポート ドライバーは、複数のプロトコル ドライバー環境で TCP/IP オフロード サービスをサポートします。 複数の NDIS 6.0 と TCP/IP のオフロード対応ミニポート アダプターにバインドされている以降のプロトコル ドライバーには、TCP/IP オフロード サービスを構成できます。
+NDIS 6.0 以降のミニポートドライバーでは、マルチプロトコルドライバー環境で TCP/IP オフロードサービスがサポートされています。 TCP/IP オフロード対応のミニポートアダプターにバインドされている複数の NDIS 6.0 およびそれ以降のプロトコルドライバーは、TCP/IP オフロードサービスを構成できます。
 
 このセクションの内容:
 
--   [NET TCP/IP にアクセスする負荷を軽減\_バッファー\_情報を一覧表示](accessing-tcp-ip-offload-net-buffer-list-information.md)
--   [TCP/IP のオフロード管理者インターフェイスを使用します。](using-the-tcp-ip-offload-administrator-interface.md)
--   [オフロード対応ミニポート ドライバーのセキュリティ ガイドライン](security-guidelines-for-offload-capable-miniport-drivers.md)
--   [TCP/IP タスク オフロード](task-offload.md)
+-   [Tcp/ip オフロードの NET\_BUFFER\_LIST 情報へのアクセス](accessing-tcp-ip-offload-net-buffer-list-information.md)
+-   [TCP/IP オフロード管理者インターフェイスの使用](using-the-tcp-ip-offload-administrator-interface.md)
+-   [オフロード対応ミニポートドライバーのセキュリティガイドライン](security-guidelines-for-offload-capable-miniport-drivers.md)
+-   [TCP/IP タスクオフロード](task-offload.md)
 -   [接続のオフロード](connection-offload.md)
 
  

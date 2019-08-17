@@ -1,46 +1,46 @@
 ---
-title: HID over I2C
-description: Windows 8 では、Microsoft は、Inter-Integrated 回線 (I²C) バス経由で通信するためにデバイスを許可する新しい HID ミニポート ドライバーを作成します。
+title: I2C での HID の概要
+description: Windows 8 の場合、Microsoft では、デバイスが統合回線 (I ² C) バスを介して通信できるようにする新しい HID ミニポートドライバーを作成しました。
 ms.assetid: E8A056C0-B10F-48E2-B8E3-67B00AAC87D8
 keywords:
-- HID のミニポート ドライバー
-- 回線の間の統合
+- HID ミニポートドライバー
+- 統合された回線
 - I2C バス
 - HIDI2C.sys
-- シンプルな周辺機器のバス
+- 単純な周辺機器バス
 - SPB
 - GPIO
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 06a6a6e5869eb5c95eff5bb6f5449e31d07ac975
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: af265af5a99022b0472d5429f5c2e35d49c3c84d
+ms.sourcegitcommit: fec48fa5342d9cd4cd5ccc16aaa06e7c3d730112
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388808"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69565622"
 ---
-# <a name="hid-over-i2c"></a>HID over I2C
+# <a name="introduction-to-hid-over-i2c"></a>I2C での HID の概要
 
 
-Windows 8 では、Microsoft は、Inter-Integrated 回線 (I²C) バス経由で通信するためにデバイスを許可する新しい HID ミニポート ドライバーを作成します。
+Windows 8 の場合、Microsoft では、デバイスが統合回線 (I ² C) バスを介して通信できるようにする新しい HID ミニポートドライバーを作成しました。
 
-新しい HID ミニポート ソリューションでは、USB と Bluetooth、I²C デバイスをサポートする以外に、HID プロトコルを拡張します。 I²C は単純ですが、効率的なプロトコルであるため、電話と埋め込みのプラットフォームで 10 年以上に使用されました。 このプロトコルは、Windows 8 で HIDI2C.sys という名前のインボックス KMDF ドライバーでサポートされます。
+新しい HID ミニポートソリューションは、USB および Bluetooth 以外の HID プロトコルを拡張して、I ² C デバイスをサポートします。 I ² C は、単純かつ効率的なプロトコルで、電話および埋め込みプラットフォームで10年以上にわたって使用されています。 このプロトコルは、HIDI2C という名前の組み込みの KMDF ドライバーによって Windows 8 でサポートされています。
 
-I²C HID 経由で受信トレイのドライバーでこの結合されたサポートにより、ハードウェア メーカーが自分のデバイス ドライバーを作成する必要もありません、windows で迅速に実行を取得します。
+このように、受信トレイドライバーでは、"I ² C" を使用して、デバイスを windows 上ですばやく実行できるようになりました。ドライバーを作成する必要はありません。
 
-ACPI の複数のリソースを持つシステムで正しく動作するには、次の 2 つのリソースを最初に表示する必要があります。
+複数の ACPI リソースがあるシステムで正しい動作を確保するために、次の2つのリソースが最初に表示される必要があります。
 
--   HID I²C 接続
+-   HID I ² C 接続
 -   デバイスの割り込み
 
-これらのリソースを定義したら、その他の型の ACPI の他のリソースに従います。
+これらのリソースを定義した後は、他の種類の追加の ACPI リソースが必要になる可能性があります。
 
 *重要な注意事項:*
 
--   今日では、HID I²C ドライバーは、単純な周辺機器バス (SPB) と GPIO をサポートする SoC システムを対象とします。 将来的には、Microsoft では、SoC 以外のシステムでこのドライバーをサポートする場合があります。
--   HID I²C ドライバーは HID のすべてのクライアントをサポートするために最適化されています。
--   HID I²C ドライバーを使用すると、デバイスと、キーボード、タッチパッドのような一般的なデバイスの種類をサポートするために開発する必要があるドライバーの合計数を減らすシステム製造元タッチ画面やセンサー。
--   HID I²C ドライバーは、すべてクライアント Sku の Windows で使用可能な WinPE に含まれています。
+-   現在、HID I ² C ドライバーは、単純な周辺機器バス (SPB) と GPIO をサポートする SoC システムを対象としています。 今後、Microsoft はこのドライバーを SoC 以外のシステムでサポートする場合があります。
+-   HID I ² C ドライバーは、すべての HID クライアントをサポートするように最適化されています。
+-   HID I ² C ドライバーを使用すると、デバイスとシステム製造元は、キーボード、タッチパッド向け、タッチスクリーン、センサーなどの一般的なデバイスの種類をサポートするために開発する必要のあるドライバーの合計数を減らすことができます。
+-   HID I ² C ドライバーは、Windows のすべてのクライアント Sku で使用でき、WinPE に含まれています。
 
  
 

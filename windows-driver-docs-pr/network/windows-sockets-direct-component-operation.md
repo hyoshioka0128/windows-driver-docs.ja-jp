@@ -1,46 +1,46 @@
 ---
-title: Windows ソケット ダイレクト コンポーネント操作
-description: Windows ソケット ダイレクト コンポーネント操作
+title: Windows ソケットダイレクトコンポーネント操作に関するトピック
+description: Windows ソケットダイレクトコンポーネント操作に関するトピック
 ms.assetid: 6fa4a89c-f147-48bd-8fdc-562743f81bcd
 keywords:
-- Windows ソケットは、WDK、操作を直接します。
-- WDK の SAN サービス プロバイダー
+- Windows Sockets Direct WDK、操作
+- SAN サービスプロバイダー WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4246207a99b89d8cbf21e0ac1039bd5a2fa3e14f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1ac3406b0860674769ceba7d7fc09f075ae06f86
+ms.sourcegitcommit: fec48fa5342d9cd4cd5ccc16aaa06e7c3d730112
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335312"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69565714"
 ---
-# <a name="windows-sockets-direct-component-operation"></a>Windows ソケット ダイレクト コンポーネント操作
+# <a name="windows-sockets-direct-component-operation-topics"></a>Windows ソケットダイレクトコンポーネント操作に関するトピック
 
 
 
 
 
-このセクションでは Windows Sockets 直接 Windows ソケットの動作も含め、操作を切り替えるには、SAN サービス プロバイダーは、について説明し、SAN サービス プロバイダーの関連付けられているプロキシ ドライバー。
+このセクションでは、windows ソケットスイッチ、SAN サービスプロバイダー、および SAN サービスプロバイダーに関連付けられているプロキシドライバーの動作など、Windows ソケットの直接操作について説明します。
 
 ここでは、次のトピックについて説明します。
 
-[インストールの Windows ソケットは、コンポーネントを直接します。](installing-windows-sockets-direct-components.md)
+[Windows Sockets Direct コンポーネントのインストール](installing-windows-sockets-direct-components.md)
 
 [SAN の使用を初期化しています](initializing-the-use-of-a-san.md)
 
-[SAN 接続を設定します。](setting-up-a-san-connection.md)
+[SAN 接続のセットアップ](setting-up-a-san-connection.md)
 
-[SAN 上にデータを転送](transferring-data-on-a-san.md)
+[SAN 上のデータの転送](transferring-data-on-a-san.md)
 
-[同期処理、SAN 上](synchronizing-operations-on-a-san.md)
+[SAN での操作の同期](synchronizing-operations-on-a-san.md)
 
-[SAN の使用をシャット ダウン](shutting-down-the-use-of-a-san.md)
+[SAN の使用をシャットダウンする](shutting-down-the-use-of-a-san.md)
 
-[SAN の呼び出しをブロック](blocking-calls-for-a-san.md)
+[SAN のブロック呼び出し](blocking-calls-for-a-san.md)
 
-[ソケットの複製を SAN を処理します。](duplicating-socket-handles-for-a-san.md)
+[SAN のソケットハンドルの複製](duplicating-socket-handles-for-a-san.md)
 
-[SAN のソケット オプションと制御コードの処理](handling-socket-options-and-control-codes-for-a-san.md)
+[SAN のソケットオプションと制御コードの処理](handling-socket-options-and-control-codes-for-a-san.md)
 
 [Windows ソケットに対する Microsoft 拡張機能の処理](handling-microsoft-extensions-to-windows-sockets.md)
 

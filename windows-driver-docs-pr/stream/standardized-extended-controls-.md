@@ -1,45 +1,48 @@
 ---
 title: 拡張カメラ コントロール
-description: 拡張コントロールは、アプリケーションにカメラ コントロールを公開するのに KSPROPERTY メカニズムを使用します。
+description: 拡張コントロールは、KSK プロパティ機構を使用して、カメラコントロールをアプリケーションに公開します。
 ms.assetid: B480C007-7DCA-4CFB-9169-BE2D0B2D2137
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 648b53e5828d4af6179feeacc0fba072b42c5be1
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e41705876d0bcd6f910a54f9f1cd7443a40dbab7
+ms.sourcegitcommit: fec48fa5342d9cd4cd5ccc16aaa06e7c3d730112
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377841"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69565600"
 ---
 # <a name="extended-camera-controls"></a>拡張カメラ コントロール
 
+拡張コントロールは、 **Ksk プロパティ**機構を使用して、カメラコントロールをアプリケーションに公開します。
 
-コントロールの使用の拡張、 **KSPROPERTY**カメラ コントロールをアプリケーションを公開するためのメカニズムです。
+(メディアファンデーションによって定義された) 次の標準化された拡張コントロールの一覧では、追加の Windows カメラ機能が有効になります。
 
-(Media Foundation によって定義される) 標準の拡張コントロールの次の一覧には、Windows のカメラの追加機能が有効にします。
+- [メタデータ](#metadata)
+- [優先順位](#focus-priority)
+- [フォーカス状態](#focus-state)
+- [対象となる拡張領域 (ROI)](#extended-region-of-interest-roi)
+- [写真の確認](#photo-confirmation)
+- [フォトシーケンスサブモード](#photo-sequence-submode)
+- [EXIF および HW JPEG エンコーダー](#exif-and-hw-jpeg-encoder)
+- [整数 ISO](#integer-iso)
+- [高度なフォーカス](#advanced-focus)
+- [『](#flash)
+- [[ズーム]](#zoom)
+- [シーンモード](#scene-mode)
 
--   [メタデータ](#metadata)
--   [フォーカスの優先順位](#focus-priority)
--   [フォーカス状態](#focus-state)
--   [拡張 (ROI) の関心領域](#extended-region-of-interest-roi)
--   [写真の確認](#photo-confirmation)
--   [フォト シーケンス サブモード](#photo-sequence-submode)
--   [フォト キャプチャ フィードバックが適用されるデバイスの設定](#photo-capture-feedback-applied-device-settings)
--   [ISO の整数](#integer-iso)
--   [高度なフォーカス](#advanced-focus)
--   [フラッシュ](#flash)
--   [[ズーム]](#zoom)
--   [シーンのモード](#scene-mode)
+一部のコントロールは非同期コントロールとしてアプリケーションに公開され、他のコントロールは同期コントロールとして公開されます。
 
-コントロールの一部は非同期のコントロールとしてのアプリケーションに公開して、同期コントロールとして他のユーザーに公開されます。
+## <a name="synchronous-controls"></a>同期コントロール
 
--   **同期コントロール**-キャプチャ パイプラインの問題、これらのコントロールの**KSPROPERTY**カメラ制御構造体とは同期的に要求を返すことが必要です。
+これらのコントロールでは、キャプチャパイプラインは**Ksk プロパティ**のカメラコントロール構造を発行し、ドライバーが同期的に要求を返すことを想定しています。
 
--   **非同期コントロール**-キャプチャ パイプラインの問題、これらのコントロールの**KSPROPERTY**、により、 **KSEVENT**に関連付けられて、そのプロパティ、および通知を取得するイベントで発生する待機します。 ドライバーを完了する必要があります、 **KSPROPERTY**同期的に非同期操作を開始するトリガーとして使用するとします。 非同期操作を完了すると、ドライバーは、関連付けられている通知する必要があります**KSEVENT**キャプチャ パイプラインが待機しています。 キャプチャ パイプラインは、シグナルを受信するときに、アプリケーションについて、操作の完了を通知します。
+## <a name="asynchronous-controls"></a>非同期コントロール
 
-    フラグを指定する必要がありますが、非同期のコントロールをキャンセルできる場合**KSCAMERA\_EXTENDEDPROP\_フラグ\_CANCELOPERATION**コントロール。 コントロールがキャンセルされた場合コントロールの操作が 5 ミリ秒を超えない必要があります。
+これらのコントロールの場合、キャプチャパイプラインは**Ksk プロパティ**を発行し、そのプロパティに関連付けられた**KSEVENT**を有効にして、イベントを待機してシグナル状態にします。 ドライバーは**Ksk プロパティ**を同期的に完了し、それをトリガーとして使用して非同期操作を開始する必要があります。 非同期操作の完了時に、ドライバーは、キャプチャパイプラインが待機している関連する**KSEVENT**を通知する必要があります。 キャプチャパイプラインは、シグナルを受信したときの操作の完了をアプリケーションに通知します。
 
-Ksmedia.h で定義されている次の KS プロパティの一部であるこれらのコントロールを拡張します。
+非同期コントロールをキャンセルできる場合は、コントロールで**KSCAMERA\_extendedprop\_フラグ\_CANCELOPERATION**フラグを指定する必要があります。 コントロールをキャンセルできない場合、コントロールの操作は5ミリ秒を超えることはできません。
+
+これらの拡張コントロールは、ksmedia. h で定義されている次の KS プロパティセットの一部です。
 
 ```cpp
 #define STATIC_KSPROPERTYSETID_ExtendedCameraControl \
@@ -50,44 +53,40 @@ DEFINE_GUIDSTRUCT("1CB79112-C0D2-4213-9CA6-CD4FDB927972", KSPROPERTYSETID_Extend
 
 ## <a name="metadata"></a>メタデータ
 
+メタデータを取得するには、ユーザーモードコンポーネント (DevProxy) がドライバーにメタデータバッファー要件を照会する必要があります。 ユーザーモードコンポーネントがこの情報を取得すると、ドライバーが入力してユーザーモードコンポーネントに返すための適切なメタデータバッファーが割り当てられます。
 
-メタデータを取得するには、ユーザー モード コンポーネント (DevProxy) が必要なメタデータ バッファーのドライバーのクエリを実行する必要があります。 ユーザー モード コンポーネントは、この情報には後、は、ドライバーを入力し、ユーザー モード コンポーネントに戻すの適切なメタデータ バッファーを割り当てます。
+Ksproperty [ **\_\_CAMERACONTROL拡張プロパティに定義されているCAMERACONTROL\_拡張メタデータ**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-extended-metadata)プロパティ ID [ **\_\_\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ne-ksmedia-ksproperty_cameracontrol_extended_property)列挙体は、メタデータバッファー割り当てのために必要なメタデータのサイズ、メモリアラインメントの要件、必要なメモリ割り当ての種類などのメタデータバッファー要件を照会するために、クライアントによって使用されます。
 
-[ **KSPROPERTY\_CAMERACONTROL\_拡張\_メタデータ**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-extended-metadata)で定義されているプロパティ ID、 [ **KSPROPERTY\_CAMERACONTROL\_拡張\_プロパティ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ne-ksmedia-ksproperty_cameracontrol_extended_property)列挙型がメタデータ バッファー要件は、必要なメタデータのサイズ、メモリのアラインメント要件など、クライアントへのクエリで使用し、メタデータのバッファーの割り当て用のメモリ割り当ての種類が必要です。
+ユーザーモードコンポーネントがドライバーからメタデータバッファー要件を取得すると、適切にサイズ設定されたメタデータバッファーが、目的のメモリプールから必要なメモリアラインメントに割り当てられます。 このメタデータバッファーは、実際のフレームバッファーと共にドライバーに送信され、満たされた後、ユーザーモードコンポーネントがいっぱいになったときに戻されます。 マルチショットのシナリオでは、割り当てられた各フレームバッファーに対応するメタデータバッファーが割り当てられ、カメラドライバーに配信されます。
 
-ユーザー モード コンポーネントは、ドライバーからメタデータ、バッファーの要件を入手が、目的のメモリ プールから目的のメモリ アラインメント メタデータの適切なサイズのバッファーを割り当てます。 実際のフレーム バッファーと共に、このメタデータのバッファーを満たすために、ドライバーに送信し、いっぱいになると、ユーザー モード コンポーネントにし、返されます。 Multishot のシナリオでは、対応するメタデータのバッファーが割り当てられ、割り当てられた各フレーム バッファーのカメラのドライバーに配信。
-
-[ **KSSTREAM\_メタデータ\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksstream_metadata_info)ドライバーにメタデータのバッファーを送信する構造体には、次のフラグとを使用します。
+次のフラグと共に[**ksk ストリーム\_\_メタデータ情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksstream_metadata_info)の構造を使用して、メタデータバッファーをドライバーに送信します。
 
 ```cpp
 #define KSSTREAM_HEADER_OPTIONSF_METADATA           0x00001000
 ```
 
-(メタデータ + フレーム) のバッファーは、ドライバーをキューに置かれた、DevProxy 送信標準[ **KSSTREAM\_ヘッダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksstream_header)続く構造を[ **KS\_フレーム\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_frame_info)構造体、および後に、 **KSSTREAM\_メタデータ\_情報**構造体。 DevProxy はさらにマスク**KSSTREAM\_ヘッダー。OptionFlags**で**KSSTREAM\_ヘッダー\_OPTIONSF\_メタデータ**ドライバーにバッファーを渡す前にします。
+バッファー (メタデータ + フレーム) がドライバーのキューに登録されると、devproxy は標準の[**ksk ストリーム\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksstream_header)構造を送信し、その後に[**KS\_フレーム\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_frame_info)構造を送信し、その後に**ksk ストリーム\_を送信します。メタデータ\_情報**の構造。 Devproxy は、さらに**ksk\_ストリームヘッダーをマスクします。オプションフラグ**を**ksk ストリーム\_ヘッダー\_オプション\_** を使用して、バッファーをドライバーに渡します。
 
-ドライバーは、メタデータをサポートしていない場合、または場合**KSPROPERTY\_CAMERACONTROL\_拡張\_メタデータ**は実装されていません、 **KSPROPERTY\_CAMERACONTROL\_拡張\_メタデータ**プロパティ コントロールは失敗します。 この場合、DevProxy はメタデータのバッファーを割り当てられません、DevProxy からドライバーに渡されたペイロードにが含まれていない、 **KSSTREAM\_メタデータ\_情報**構造体。
+ドライバーがメタデータをサポートしていない場合、または**ksk プロパティ\_CAMERACONTROL\_拡張\_メタデータ**が実装されていない場合は、 **ksk プロパティ\_CAMERACONTROL\_が拡張\_されます。メタデータ**プロパティコントロールは失敗します。 この場合、devproxy はメタデータバッファーを割り当てません。また、devproxy からドライバーに渡されたペイロードには、 **ksk ストリーム\_メタ\_データ情報**の構造体が含まれません。
 
-ドライバーは、メタデータをサポートしているクライアントには、すべてのメタデータはしない場合は、DevProxy はメタデータのバッファーの割り当ても渡す**KSSTREAM\_メタデータ\_情報**ドライバーにバッファーを送信するときにします。 この動作は、アプリが与えられた暗証番号 (pin) のメタデータをしない場合に、不要なメタデータのメモリ割り当てを減らします。
+ドライバーがメタデータをサポートし、クライアントがメタデータを必要としない場合、devproxy は、バッファーをドライバーに送信するときに、メタデータバッファーを割り当てず、 **ksk ストリーム\_\_メタデータ情報**を渡しません。 この動作により、アプリが特定の pin でメタデータを必要としない場合に、不要なメタデータのメモリ割り当てが減少します。
 
-次の構造体には、メタデータ、バッファー内のカメラのドライバーが格納されるメタデータ項目のレイアウトについて説明します。
+次の構造体は、メタデータバッファー内のカメラドライバーによって格納されるメタデータ項目のレイアウトを示します。
 
--   [**KSCAMERA\_MetadataId**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ne-ksmedia-kscamera_metadataid)
+- [**KSCAMERA\_metadataid**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ne-ksmedia-kscamera_metadataid)
+- [**KSCAMERA\_METADATA\_ITEMHEADER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_metadata_itemheader)
+- [**KSCAMERA\_メタ\_データ PHOTOCONFIRMATION 確認**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_metadata_photoconfirmation)
 
--   [**KSCAMERA\_メタデータ\_ITEMHEADER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_metadata_itemheader)
+次の一覧には、メタデータ項目のレイアウトが含まれています。 これは8バイトでアラインされている必要があります。
 
--   [**KSCAMERA\_METADATA\_PHOTOCONFIRMATION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_metadata_photoconfirmation)
+- [**KSCAMERA\_METADATA\_ITEMHEADER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_metadata_itemheader)
+- メタデータ
 
-以下の一覧には、メタデータ項目のレイアウトが含まれています。 これには、8 バイトでアラインがあります。
+画像確認メタデータは、 **metadataid\_photoconfirmation**によって識別されます。 表示されている場合は、関連付けられているプレビューフレームがフォト確認フレームであることを示します。 フォト確認メタデータは、DevProxy によって解析されます。
 
--   [**KSCAMERA\_メタデータ\_ITEMHEADER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_metadata_itemheader)
+カスタムメタデータは、 **metadataid\_カスタム\_スタート**から開始する**metadataid**によって識別されます。 カスタムメタデータ項目にはメタデータの blob を含めることができます。これは、プレビューピン、EXIF、またはイメージ pin の OEM メタデータに対して検出された、フォーカス状態や顔になります。 カスタム blob の正確な形式は、ドライバーと MFT0 を実装する OEM によって決まります。 MFT0 は、カスタム blob を解析し、各メタデータ項目を、 **mfsampleextension\_CaptureMetadata**属性バッグの下にグループ化された属性として、MF のキャプチャパイプラインおよび/または WinRT で読み取り可能な形式でアタッチします。
 
--   メタデータ
-
-確認の写真のメタデータがで識別される**MetadataId\_PhotoConfirmation**します。 存在する場合、関連付けられている、プレビュー フレームがフォト確認のフレームを示します。 確認の写真のメタデータは、DevProxy によって解析されます。
-
-カスタムのメタデータがで識別される、 **MetadataId**から始まる**MetadataId\_カスタム\_開始**します。 カスタム メタデータ項目は、フォーカスの状態やプレビューの暗証番号 (pin)、EXIF やイメージのピン留めの OEM メタデータの検出された顔可能性のあるメタデータの blob を含めることができます。 カスタムの blob の正確な形式については、ドライバーを実装する OEM と MFT0 によって決まります。 カスタムの blob を解析し、下にグループ化属性として、各メタデータ項目を接続、MFT0 責任を負います、 **MFSampleExtension\_CaptureMetadata** MF キャプチャによって読み取り可能な形式で属性バッグパイプラインや WinRT します。
-
-次の IMFAttributes がで定義されている**mfapi.h**します。 これらは、MF キャプチャ パイプラインや WinRT で必要とします。 MFT0 は設定されていないこと、IMFAttributes フォト確認 DevProxy を超えての写真確認フレームのフローがないので注意してください。
+次の IMFAttributes は、 **mfapi .h**で定義されています。 これらは、MF キャプチャパイプラインおよび WinRT で必要です。 MFT0 は、フォト確認フレームが DevProxy を超えてフローしないため、フォト確認用の IMFAttributes を設定しないことに注意してください。
 
 | 属性 (GUID)                            | データの種類 |
 |---------------------------------------------|-----------|
@@ -95,217 +94,105 @@ DEFINE_GUIDSTRUCT("1CB79112-C0D2-4213-9CA6-CD4FDB927972", KSPROPERTYSETID_Extend
 | **MF\_キャプチャ\_メタデータ\_FACEROIS**         | Blob      |
 | **MF\_キャプチャ\_メタデータ\_フレーム\_RAWSTREAM** | IUnknown  |
 
- 
+**MF\_キャプチャメタ\_データ\_フレームrawstreamimfattributesが作成され、devproxyによってCaptureMetadataにアタッチされます。この拡張機能には、\_** **\_** 生のメタデータバッファーに関連付けられている IMFMediaBuffer インターフェイスへのポインター (**ksk ストリーム\_メタ\_データ情報)。データ**)。
 
-**MF\_キャプチャ\_メタデータ\_フレーム\_RAWSTREAM** IMFAttributes が作成されに接続されている**MFSampleExtension\_CaptureMetadata**これによって、DevProxy 未処理のメタデータのバッファーに関連付けられた IMFMediaBuffer インターフェイスへのポインターが含まれています (**KSSTREAM\_メタデータ\_情報。データ**)。 MFT0、IMFSample を受信する場合から未処理のメタデータのバッファーを取得します。、 **MF\_キャプチャ\_メタデータ\_フレーム\_RAWSTREAM**し、追加のカスタム メタデータ項目を解析します。変換に対応する IMFAttributes 上で定義およびそれらに接続し、フォーカス状態など、 **MFSampleExtension\_CaptureMetadata**属性バッグ。
-
-未処理のメタデータのバッファーにアクセスするには、MFT0 は、次を行います。
-
-1.  呼び出し**GetUnknown**で**MFSampleExtension\_CaptureMetadata** IMFAttributes インターフェイス、属性のバッグを取得する IMFSample インターフェイスから。
-
-2.  呼び出し**GetUnknown**で**MF\_キャプチャ\_メタデータ\_フレーム\_RAWSTREAM** 、前の手順から取得した IMFAttributes インターフェイスからIMFMediaBuffer インターフェイスを取得します。
-
-3.  IMFMediaBuffer に関連付けられているメタデータの生バッファーを取得するロックを呼び出します。
-
-必要な IMFAttributes を追加する、 **MFSampleExtension\_CaptureMetadata**属性バッグ、MFT0 は次を実行します。
-
-1.  呼び出し**GetUnknown**で**MFSampleExtension\_CaptureMetadata** IMFAttributes インターフェイス、属性のバッグを取得する IMFSample インターフェイスから。
-
-2.  呼び出し**SetUINT32**、 **SetBlob**、または**SetUnknown**で**MF\_キャプチャ\_メタデータ\_XXX**IMFAttributes インターフェイス上の表で指定された GUID とデータの種類に基づいて、前の手順から取得したからです。
-
-## <a name="focus-priority"></a>フォーカスの優先順位
-
-
-[ **KSPROPERTY\_CAMERACONTROL\_拡張\_FOCUSPRIORITY** ](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-extended-focuspriority)プロパティ ID は、フォーカスの優先度 DDI に関連付けられている唯一のコントロール。
-
-## <a name="focus-state"></a>フォーカス状態
-
-
-[ **KSPROPERTY\_CAMERACONTROL\_拡張\_FOCUSSTATE** ](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-extended-focusstate)プロパティ ID はフォーカス状態 DDI に関連付けられている唯一のコントロール。
-
-## <a name="extended-region-of-interest-roi"></a>ROI を関心のある領域を拡張
-
-
-次のプロパティ Id は、ROI DDI に関連付けられているコントロールです。
-
--   [**KSPROPERTY\_CAMERACONTROL\_拡張\_ROI\_CONFIGCAPS**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-extended-roi-configcaps)
-
--   [**KSPROPERTY\_CAMERACONTROL\_拡張\_ROI\_ISPCONTROL**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-extended-roi-ispcontrol)
-
-## <a name="photo-confirmation"></a>写真の確認
-
-
-[ **KSPROPERTY\_CAMERACONTROL\_拡張\_PHOTOCONFIRMATION** ](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-extended-photoconfirmation)プロパティ ID は、フォト確認 DDI に関連付けられている唯一のコントロール。
-
-## <a name="photo-sequence-submode"></a>フォト シーケンス サブモード
-
-
-[ **KSPROPERTY\_CAMERACONTROL\_拡張\_PHOTOMODE** ](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-extended-photomode)プロパティ ID は、フォト シーケンス DDI に関連付けられている唯一のコントロール。
-
-## <a name="photo-capture-feedback-applied-device-settings"></a>フォト キャプチャ フィードバックが適用されるデバイスの設定
-
-
-MFT0 IMFAttributes にドライバーと接続の適用の必要なデバイスの設定によって提供されるメタデータ バッファーの解析、 **MFSampleExtension\_CaptureMetadata**各 IMFSample に関連付けられている属性のバッグ。 MF パイプラインによって次の IMFAttributes を実行する必要があり、任意のサードパーティの仕様を提供します。
+MFT0 は imfsample を受け取ると、 **MF\_キャプチャ\_メタデータ\_\_フレーム rawstream**から生のメタデータバッファーを取得し、フォーカス状態などの追加のカスタムメタデータ項目を解析します。は、上記で定義されている対応する imfattributes に変換し、それらを**mfsampleextension\_CaptureMetadata**属性バッグに添付します。
+次の IMFAttributes は、MF パイプラインおよびサードパーティ提供の MFTs によって引き継がれる必要があります。
 
 | 名前                                           | 種類                          |
 |------------------------------------------------|-------------------------------|
-| **MFSampleExtension\_CaptureMetadata**         | **IUnknown** (IMFAttributes)  |
-| **MFSampleExtension\_EOS**                     | **UINT32** (ブール値)          |
-| **MFSampleExtension\_PhotoThumbnail**          | **IUnknown** (IMFMediaBuffer) |
-| **MFSampleExtension\_PhotoThumbnailMediaType** | **IUnknown** (IMFMediaType)   |
+| **Mfsampleextension\_CaptureMetadata**         | **IUnknown**(IMFAttributes)  |
+| **Mfsampleextension\_EOS**                     | **UINT32**演算          |
+| **Mfsampleextension\_photothumbnail**          | **IUnknown**(IMFMediaBuffer) |
+| **Mfsampleextension\_PhotoThumbnailMediaType** | **IUnknown**(IMFMediaType)   |
 
- 
+生のメタデータバッファーにアクセスするために、MFT0 は次のことを行います。
 
-**必須のメタデータ属性**
+1. Imfsample インターフェイスから、属性バッグの imfsample インターフェイスを取得するために、 **CaptureMetadata\_** で**既知の getunknown**を呼び出します。
+2. IMFMediaBuffer インターフェイスを取得するために、前の手順で取得した imfattributes インターフェイスから、 **\_\_\_MF\_** によって認識される**getunknown**呼び出します。
+3. ロックを呼び出して、IMFMediaBuffer に関連付けられている未加工のメタデータバッファーを取得します。
 
-**MFSampleExtension\_CaptureMetaData**はメタデータ属性のバッグを次の属性を持つことができます。
+必要な imfattributes を**mfsampleextension\_CaptureMetadata**属性バッグに追加すると、MFT0 は次のことを実行します。
 
-<table>
-<colgroup>
-<col width="33%" />
-<col width="33%" />
-<col width="33%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>名前</th>
-<th>種類</th>
-<th>説明</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>MF_CAPTURE_METADATA_REQUESTED_FRAME_SETTING_ID</strong></td>
-<td><strong>UINT32</strong></td>
-<td>この属性には、変数の写真のシーケンス内の対応するフレームのフレーム ID が含まれています。 この属性は、変数フォト シーケンスのキャプチャのみ設定されます。</td>
-</tr>
-<tr class="even">
-<td><strong>MF_CAPTURE_METADATA_EXPOSURE_TIME</strong></td>
-<td><strong>UINT64</strong></td>
-<td>この属性には、公開期間適用 (100 ナノ秒単位) にはが含まれています。</td>
-</tr>
-<tr class="odd">
-<td><strong>MF_CAPTURE_METADATA_EXPOSURE_COMPENSATION</strong></td>
-<td><strong>Blob</strong></td>
-<td>この属性には、EV 補正手順フラグと写真をキャプチャしたときに、ドライバーが適用されたステップ単位で EV 報酬値が含まれています。 <a href="https://docs.microsoft.com/windows/desktop/api/mfapi/ns-mfapi-tagcapturedmetadataexposurecompensation" data-raw-source="[&lt;strong&gt;CapturedMetadataExposureCompensation&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/mfapi/ns-mfapi-tagcapturedmetadataexposurecompensation)"> <strong>CapturedMetadataExposureCompensation</strong> </a>データ構造体には、この属性にのみ blob の形式がについて説明します。 EV 補正のメタデータ項目構造体の形式 (<strong>KSCAMERA_METADATA_ITEMHEADER</strong> + EV 補正メタデータ ペイロード) は、ドライバーによって提供され、8 バイトで整列をする必要があります。</td>
-</tr>
-<tr class="even">
-<td><strong>MF_CAPTURE_METADATA_ISO_SPEED</strong></td>
-<td><strong>UINT32</strong></td>
-<td>この属性には、整数として適用される ISO 速度の値が含まれています。</td>
-</tr>
-<tr class="odd">
-<td><strong>MF_CAPTURE_METADATA_LENS_POSITION</strong></td>
-<td><strong>UINT32</strong></td>
-<td>この属性は、フォーカスがキャプチャされた写真に適用されたときに、レンズの論理位置を格納します。 この値には、特定の単位はありません。</td>
-</tr>
-<tr class="even">
-<td><strong>MF_CAPTURE_METADATA_SCENE_MODE</strong></td>
-<td><strong>UINT64</strong></td>
-<td>この属性には、シーンのモードとして適用、 <strong>UINT64KSCAMERA_EXTENDEDPROP_SCENEMODE_XXX</strong>フラグ。</td>
-</tr>
-<tr class="odd">
-<td><strong>MF_CAPTURE_METADATA_FLASH</strong></td>
-<td><p><strong>UINT32</strong></p>
-<p>(Boolean)</p></td>
-<td>この属性には、フラッシュの状態を含むブール値が含まれています。 値 1 は、flash し、値 0 では、キャプチャされた写真のオフ、flash であることを指定することを指定します。</td>
-</tr>
-<tr class="even">
-<td><strong>MF_CAPTURE_METADATA_FLASH_POWER</strong></td>
-<td><p><strong>UINT32</strong></p></td>
-<td>この属性には、0 ~ 100 のパーセント値として適用フラッシュの電源が含まれています。</td>
-</tr>
-<tr class="odd">
-<td><strong>MF_CAPTURE_METADATA_WHITEBALANCE</strong></td>
-<td><p><strong>UINT32</strong></p>
-<p>(ケルビン)</p></td>
-<td>この属性には、ケルビンで値として適用ホワイト バランスが含まれています。</td>
-</tr>
-<tr class="even">
-<td><strong>MF_CAPTURE_METADATA_ZOOMFACTOR</strong></td>
-<td><p><strong>UINT32</strong></p>
-<p>(Q16)</p></td>
-<td>この属性がからクエリを実行できるのと同じ値を適用するズームの値が含まれています、 <a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-extended-zoom" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_EXTENDED_ZOOM&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-extended-zoom)"> <strong>KSPROPERTY_CAMERACONTROL_EXTENDED_ZOOM</strong> </a> GET 呼び出しで。 値は、Q16 である必要があります。</td>
-</tr>
-<tr class="odd">
-<td><strong>MF_CAPTURE_METADATA_FRAME_ILLUMINATION</strong></td>
-<td><strong>UINT64</strong></td>
-<td><p><strong>MF_CAPTURE_METADATA_FRAME_ILLUMINATION</strong> IR カメラの属性は、フレームがアクティブな IR 照明を使用しているしと組み合わせて使用する必要があるかどうかを指定します<strong>FACEAUTH_MODE_ALTERNATIVE_FRAME_。照明</strong>します。 IR サンプルの使用のみと、カメラが赤外線と色の両方のサンプルをサポートしている場合に RGB フレーム上に存在できないする必要があります。</p>
-<p>アクティブな照明が上、照明がフレームをキャプチャするときに存在しない場合は、0xXXXXXXXXXXXXXXX0 に設定すると、フレームをキャプチャした場合、0xXXXXXXXXXXXXXXX1 に値を設定する必要があります。</p></td>
-</tr>
-<tr class="even">
-<td>任意のカスタム GUID</td>
-<td>任意のバリアント型</td>
-<td>この属性には、カスタム GUID に関連付けられているカスタム データが含まれています。</td>
-</tr>
-</tbody>
-</table>
+1. Imfsample インターフェイスから、属性バッグの imfsample インターフェイスを取得するために、 **CaptureMetadata\_** で**既知の getunknown**を呼び出します。
+2. 指定された GUID とデータ型に基づいて、前の手順で取得した imfattributes インターフェイスから、**メイン\_フレームキャプチャ\_\_メタデータ XXX**の**SetUINT32**、 **setblob**、または**setblob**を呼び出します。上の表を例に示します。
 
- 
+### <a name="mandatory-metadata-attributes"></a>必須のメタデータ属性
 
-**EXIF と HW JPEG エンコーダー**
+利用可能なメタデータ属性の完全な一覧については、「 [Capture Stats Metadata attributes](mf-capture-metadata.md) 」を参照してください。
 
-パイプラインは、HW JPEG エンコーダー; の EXIF データを warp または処理する必要はありません。ドライバー、MFT0、および OEM ハードウェア JPEG EXIF のデータ形式を提供するそのため、エンコーダー。 Oem パートナーは、任意のカスタム属性の GUID と EXIF 属性のバリアントの型を定義し、アタッチ先、 **MFSampleExtension\_CaptureMetaData**属性バッグに OEM コンポーネントによって使用されます。 パイプライン フォト シンク コンポーネントは HW JPEG エンコーダーをロードし、保持されている EXIF データを設定 HW JPEG エンコーダーを使用できる場合、 **MFSampleExtension\_CaptureMetaData** EXIF として HW JPEG エンコーダーに属性バッグエンコーダーのオプションを使用して、 [IPropertyBag2::Write](https://go.microsoft.com/fwlink/?LinkId=331589)メソッド。
+## <a name="focus-priority"></a>優先順位
 
-エンコーダーのオプションのプロパティ バッグには、使用可能なエンコーディング オプション プロパティを指定する PROPBAG2 構造体の配列が含まれています。 HW JPEG エンコーダーに設定された EXIF エンコーダー オプションは、エンコーダーのオプションのプロパティ バッグ内の次のプロパティによって識別されます。
+[**Ksk プロパティ\_CAMERACONTROL\_EXTENDEDFOCUSPRIORITYプロパティIDは、フォーカス優先度DDIに関連付けられている唯一のコントロールです。\_** ](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-extended-focuspriority)
 
-| プロパティ名      | VARTYPE         | Value                                                                                                                                                       | 適用可能なコーデック |
+## <a name="focus-state"></a>フォーカス状態
+
+[**Ksk プロパティ\_CAMERACONTROL\_EXTENDEDFOCUSSTATEプロパティIDは、フォーカス状態DDIに関連付けられている唯一のコントロールです。\_** ](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-extended-focusstate)
+
+## <a name="extended-region-of-interest-roi"></a>目標とする ROI の拡張領域
+
+次のプロパティ Id は、ROI DDI に関連付けられているコントロールです。
+
+- [**KSK プロパティ\_CAMERACONTROL\_拡張\_ROI\_CONFIGCAPS**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-extended-roi-configcaps)
+
+- [**KSK プロパティ\_CAMERACONTROL\_拡張\_ROI\_ISPCONTROL**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-extended-roi-ispcontrol)
+
+## <a name="photo-confirmation"></a>写真の確認
+
+[**Ksk プロパティ\_CAMERACONTROL\_拡張photoconfirmationプロパティIDは、フォト確認DDIに関連付けられている唯一のコントロールです。\_** ](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-extended-photoconfirmation)
+
+## <a name="photo-sequence-submode"></a>フォトシーケンスサブモード
+
+[**Ksk プロパティ\_CAMERACONTROL\_拡張photomodeプロパティIDは、フォトシーケンスDDIに関連付けられている唯一のコントロールです。\_** ](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-extended-photomode)
+
+## <a name="exif-and-hw-jpeg-encoder"></a>EXIF および HW JPEG エンコーダー
+
+このパイプラインでは、ハードウェア JPEG エンコーダーの EXIF データを処理またはワープする必要はありません。そのため、EXIF データ形式は driver、MFT0、および OEM HW JPEG encoder によって提供されます。 Oem パートナーは、EXIF 属性のカスタム属性 GUID とバリアント型を定義し、それを **\_CaptureMetaData**属性バッグにアタッチして、oem コンポーネントが使用できるようにすることができます。 ハードウェア jpeg エンコーダーが使用可能な場合、パイプラインのフォトシンクコンポーネントは、ハードウェア jpeg エンコーダーを読み込み、その後、を使用して、 **\_CaptureMetaData**属性バッグに保持されている exif データを exif エンコーダーオプションとして hw jpeg エンコーダーに設定します。[IPropertyBag2:: Write](https://go.microsoft.com/fwlink/?LinkId=331589)メソッド。
+
+エンコーダーオプションのプロパティバッグには、使用可能なエンコードオプションのプロパティを指定する PROPBAG2 構造体の配列が含まれています。 ハードウェア JPEG エンコーダーに設定されている EXIF エンコーダーオプションは、encoder option プロパティバッグの次のプロパティによって識別されます。
+
+| プロパティ名      | VARTYPE         | 値                                                                                                                                                       | 適用可能なコーデック |
 |--------------------|-----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------|
-| **SampleMetaData** | **VT\_不明** | IMFAttributes インターフェイスへのポインター **MFSampleExtension\_CaptureMetaData** EXIF データを格納している OEM sub 属性を含む属性のバッグ。 | JPEG              |
+| **SampleMetaData** | **VT\_不明** | EXIF データを含む OEM サブ属性を含む、 **mfsampleextension\_CaptureMetaData**属性バッグの imfattributes インターフェイスへのポインター。 | JPEG              |
 
- 
+**Mfsampleextension\_CaptureMetaData**属性バッグには、MFT0 および HW JPEG エンコーダーが exif データを保持するために読み取ることができる OEM 定義の exif サブ属性のみを含めることができます。 ドライバーからハードウェア JPEG エンコーダーに EXIF データを渡すには、ドライバーと MFT0 は次の操作を行う必要があります。
 
-**MFSampleExtension\_CaptureMetaData**属性バッグだけを含めたりする OEM に EXIF データを保持するために読み取ることができる MFT0 と HW JPEG エンコーダー EXIF sub 属性が定義されています。 EXIF データをドライバーから HW JPEG エンコーダーに渡す、ドライバーと MFT0 に、次は必要があります。
+1. このドライバーは、パイプラインによって提供されるメタデータバッファーにカスタム EXIF メタデータを提供します。 これは、サンプルが返されたときに、devproxy によって、 **mfsampleextension\_CaptureMetadata** **\_\_\_\_** に関連付けられます。DevProxy。
 
-1.  ドライバーは、パイプラインによって指定されたメタデータのバッファーでのカスタムの EXIF メタデータを提供します。 これに接続されている**MFSampleExtension\_CaptureMetadata**として、 **MF\_キャプチャ\_メタデータ\_フレーム\_RAWSTREAM**DevProxy DevProxy にサンプルが返されるときに、IMFAttribute します。
+2. MFT0 は imfsample を受け取ると、 **MF\_キャプチャ\_メタデータ\_\_フレーム rawstream**から生のメタデータバッファーを取得し、カスタム EXIF メタデータ項目を解析して、OEM 定義に変換します。Imfattribute を行い、それを**mfsampleextension\_CaptureMetadata**属性バッグに添付します。
 
-2.  MFT0、IMFSample を受信する場合から未処理のメタデータのバッファーを取得します**MF\_キャプチャ\_メタデータ\_フレーム\_RAWSTREAM**とカスタムの EXIF メタデータ項目を解析して変換。OEM に IMFAttribute を定義およびにアタッチします、 **MFSampleExtension\_CaptureMetadata**属性バッグ。
+MFT0 から HW JPEG エンコーダーに EXIF データを渡すために、パイプラインの写真シンクは次の処理を実行します。
 
-EXIF データを MFT0 から HW JPEG エンコーダーに渡す、パイプラインの写真のシンクは、次の。
+1. Imfsample が受信されたときに属性バッグの imfsample インターフェイスを取得するために、imfsample から**CaptureMetadata\_** で**既知の getunknown**を呼び出します。
 
-1.  呼び出し**GetUnknown**で**MFSampleExtension\_CaptureMetadata** IMFSample IMFSample が受信したときに、属性のバッグ IMFAttributes インターフェイスを取得するからです。
+2. [IPropertyBag2:: Write](https://go.microsoft.com/fwlink/?LinkId=331589)を呼び出して、SampleMetadata によって識別されるエンコーダーオプションプロパティを HW JPEG エンコーダーに設定します。 エンコーダオプションプロパティには、前の手順で取得した IMFAttributes インターフェイスが含まれています。 このインターフェイスには、OEM EXIF サブ属性を含むすべてのカスタムサブ属性と、このトピックで既に説明した**メタデータ**セクションの標準化されたサブ属性が含まれています。
 
-2.  呼び出し[IPropertyBag2::Write](https://go.microsoft.com/fwlink/?LinkId=331589) HW JPEG エンコーダーに SampleMetadata で識別されるエンコーダー オプションのプロパティを設定します。 エンコーダーのオプションのプロパティには、前の手順から取得した IMFAttributes インターフェイスが含まれています。 このインターフェイスには、OEM EXIF sub 属性を含むすべてのユーザー定義のサブ属性とで標準化されたサブ属性が含まれています、**メタデータ**セクションでは、このトピックで前述しました。
+さらに処理するために EXIF データを取得するために、HW JPEG エンコーダーは次の処理を実行します。
 
-さらに処理するための EXIF データを取得するには、HW JPEG エンコーダーは、次を行います。
+1. **IPropertyBag2:: Read**を呼び出して、SampleMetadata プロパティ名と **\_VT UNKNOWN**型によって識別されるプロパティのプロパティ値を取得します。 返された場合、 **punkVal**は、 **\_mfsampleextension CaptureMetadata**の imfattributes インターフェイスを受け取ります。
 
-1.  呼び出し**IPropertyBag2::Read** SampleMetadata プロパティ名で識別されるプロパティのプロパティ値を取得し、 **VT\_不明な**型。 返されると、 **VARIANT.punkVal**の IMFAttributes インターフェイスを受け取る**MFSampleExtension\_CaptureMetadata**します。
+2. Oem exif サブ属性の GUID とデータ型に基づいて EXIF データ blob を取得するために、前の手順で取得したインターフェイスから、OEM EXIF サブ属性に対して**Getblob**または**getunknown**を呼び出します。
 
-2.  呼び出し**GetBlob**または**GetUnknown** OEM EXIF EXIF データ blob を取得する前の手順から取得したインターフェイスからサブ属性に基づいて OEM EXIF sub 属性の GUID とデータ型。
+## <a name="thumbnail"></a>サムネイル
 
-**サムネイル**
+MFT0 は、カメラドライバーのサムネイルを生成するためには必要ありません。 カメラアプリは、独自のサムネイルを生成することが想定されています。 サムネイルは、写真の確認画像、HW JPEG エンコーダー、またはフルサイズのイメージのサイズ変更から生成されます。 これはアプリの開発者にとってです。 Windows 8.1 アプリとの API およびアプリの互換性を維持するには、カメラドライバーが**ksk\_プロパティ\_CAMERACONTROL\_拡張 photothumbnail**コントロールを実装してはいけません。
 
-MFT0 がカメラのドライバーのサムネイルを生成するために必要ではありません。 独自のサムネイルを生成するには、カメラ アプリが必要です。 写真の確認イメージ、HW JPEG エンコーダーからサムネイルを生成できなかったまたはフル サイズの画像のサイズを変更します。 これは、アプリ開発者です。 Windows 8.1 アプリと API およびアプリの互換性を維持するためにカメラのドライバーを実装する必要がありますいない、 **KSPROPERTY\_CAMERACONTROL\_拡張\_PHOTOTHUMBNAIL**コントロール。
+## <a name="integer-iso"></a>整数 ISO
 
-## <a name="integer-iso"></a>ISO の整数
-
-
-[ **KSPROPERTY\_CAMERACONTROL\_拡張\_ISO\_詳細**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-extended-iso-advanced)プロパティ ID は整数 ISO DDI に関連付けられている唯一のコントロール。
+[ **\_Ksk プロパティ CAMERACONTROL\_拡張\_iso詳細プロパティIDは、整数ISODDIに関連付けられている唯一の制御です。\_** ](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-extended-iso-advanced)
 
 ## <a name="advanced-focus"></a>高度なフォーカス
 
-
-[ **KSPROPERTY\_CAMERACONTROL\_拡張\_FOCUSMODE** ](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-extended-focusmode)プロパティ ID は整数 ISO DDI に関連付けられている唯一のコントロール。
+[**Ksk プロパティ\_CAMERACONTROL\_EXTENDEDFOCUSMODEプロパティIDは、整数ISODDIに関連付けられている唯一の制御です。\_** ](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-extended-focusmode)
 
 ## <a name="flash"></a>Flash
 
-
-[ **KSPROPERTY\_CAMERACONTROL\_拡張\_FLASHMODE** ](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-extended-flashmode)プロパティ ID はフラッシュ DDI に関連付けられている唯一のコントロール。
+[**Ksk プロパティ\_CAMERACONTROL\_EXTENDEDFLASHMODEプロパティIDは、flashDDIに関連付けられている唯一のコントロールです。\_** ](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-extended-flashmode)
 
 ## <a name="zoom"></a>ズーム
 
+[**Ksk プロパティ\_CAMERACONTROL\_EXTENDEDzoomプロパティIDは、zoomDDIに関連付けられている唯一のコントロールです。\_** ](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-extended-zoom)
 
-[ **KSPROPERTY\_CAMERACONTROL\_拡張\_ズーム**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-extended-zoom)プロパティ ID はズーム DDI に関連付けられている唯一のコントロール。
+## <a name="scene-mode"></a>シーンモード
 
-## <a name="scene-mode"></a>シーンのモード
-
-
-[ **KSPROPERTY\_CAMERACONTROL\_拡張\_SCENEMODE** ](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-extended-scenemode)プロパティ ID は、シーン モード DDI に関連付けられている唯一のコントロール。
-
- 
-
- 
-
-
-
-
+[**Ksk プロパティ\_CAMERACONTROL\_EXTENDEDSCENEMODEプロパティIDは、シーンモードDDIに関連付けられている唯一のコントロールです。\_** ](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-extended-scenemode)

@@ -1,48 +1,35 @@
 ---
-title: 仮想マシン キュー (VMQ)
-description: 仮想マシン キュー (VMQ)
+title: 仮想マシンキュー (VMQ) の概要
+description: 仮想マシンキュー (VMQ) の概要
 ms.assetid: c502c7d6-bdf1-4656-b5a5-339250910f08
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 285e8d2e07bf8519ab13fff81a5759a6f9698108
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 303376a8c5bdfae7e44a8e62798ec90f5153a50b
+ms.sourcegitcommit: fec48fa5342d9cd4cd5ccc16aaa06e7c3d730112
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67353638"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69565728"
 ---
-# <a name="virtual-machine-queue-vmq"></a>仮想マシン キュー (VMQ)
+# <a name="virtual-machine-queue-vmq-overview"></a>仮想マシンキュー (VMQ) の概要
 
+このセクションでは、NDIS virtual machine queue (VMQ) インターフェイスについて説明します。 VMQ インターフェイスでは、Windows Server 2008 R2 以降のバージョンの Windows Server で、Microsoft Hyper-v ネットワークパフォーマンス6.20 の向上がサポートされています。
 
+[仮想マシンキューアーキテクチャ](virtual-machine-queue-architecture.md)のドキュメントでは、VMQ アーキテクチャの概要について説明します。 [Vmq ドライバーの記述](writing-vmq-drivers.md)に関するドキュメントには、NDIS VMQ ドライバーの記述に関する詳細情報が記載されています。
 
-
-
-このセクションでは、NDIS 仮想マシン キュー (VMQ) インターフェイスについて説明します。 VMQ インターフェイスは、NDIS 6.20 が動作では Windows Server 2008 R2 およびそれ以降のバージョンの Windows Server に後で、Microsoft、HYPER-V ネットワーク パフォーマンスの向上をサポートしています。
-
-[仮想マシン キュー アーキテクチャ](virtual-machine-queue-architecture.md)VMQ アーキテクチャの大まかな概念について説明します。 [VMQ ドライバーの記述](writing-vmq-drivers.md)ドキュメントは VMQ の NDIS ドライバーの開発についてより詳細な情報を提供します。
-
-**注**  学習してください、 [NDIS 仮想ミニポート ドライバー サンプル](https://go.microsoft.com/fwlink/p/?LinkId=617918)、特に vmq.c と vmq.h ソース ファイル。
+注   [NDIS 仮想ミニポートドライバーのサンプル](https://go.microsoft.com/fwlink/p/?LinkId=617918)(特に、vmq と vmq のソースファイル) を確認してください。
 
  
 
-VMQ インターフェイスをサポートします。
+VMQ インターフェイスでは、次の機能がサポートされます。
 
--   分類別に、パケットをルーティングする先のメディア アクセス制御 (MAC) アドレスを使用して、ネットワーク アダプターのハードウェアで受信したパケットのキューが表示されます。
+-   宛先メディアアクセス制御 (MAC) アドレスを使用してパケットを別の受信キューにルーティングすることによって、ネットワークアダプターハードウェアで受信したパケットの分類。
 
--   DMA を使用して仮想マシンに直接パケットを転送する NIC 機能は、メモリを共有します。 共有メモリの詳細については、次を参照してください。 [NDIS メモリ管理インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)します。
+-   NIC は、DMA を使用して、仮想マシンの共有メモリにパケットを直接転送できます。 共有メモリの詳細については、「 [NDIS Memory Management Interface](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)」を参照してください。
 
--   異なるプロセッサ上の別の仮想マシンのパケットを処理することによって、複数のプロセッサをスケーリングします。
+-   異なるプロセッサ上の異なる仮想マシンのパケットを処理することにより、複数のプロセッサにスケーリングします。
 
 ここでは、次のトピックについて説明します。
 
--   [仮想マシン キューのアーキテクチャ](virtual-machine-queue-architecture.md)
--   [書き込み VMQ ドライバー](writing-vmq-drivers.md)
-
- 
-
- 
-
-
-
-
-
+-   [仮想マシンキューアーキテクチャ](virtual-machine-queue-architecture.md)
+-   [VMQ ドライバーの記述](writing-vmq-drivers.md)

@@ -1,65 +1,65 @@
 ---
-title: HID トランスポート
-description: HID トランスポート
+title: HID トランスポートの概要
+description: HID トランスポートの概要
 ms.assetid: E442CB87-992B-475A-A97F-9C22468BA877
 keywords:
 - HID トランスポート
 - USB トランスポート
-- Bluetooth のトランスポート
+- Bluetooth トランスポート
 - Bluetooth
 - Bluetooth LE
 - I2C
-- トランスポート ミニドライバー
+- トランスポートミニドライバー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5dbf85aa78472a96705a91a4b3584838def0463c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: fbc7dcd173b88e1af43462e8ee01ba116a82c890
+ms.sourcegitcommit: fec48fa5342d9cd4cd5ccc16aaa06e7c3d730112
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363549"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69565585"
 ---
-# <a name="hid-transports"></a>HID トランスポート
+# <a name="hid-transport-overview"></a>HID トランスポートの概要
 
 
-HID トランスポートが Windows の現在と以前のバージョンでサポートされています。
+HID トランスポートは、現在と以前のバージョンの Windows でサポートされています。
 
-| [トランスポート]    | インボックス ミニドライバー | バージョン               |  メモ |
+| [トランスポート]    | インボックスミニドライバー | バージョン               |  メモ |
 | ------------ | ----------------- | --------------------- | ---------- | 
-| USB          | Hidusb.sys        | Windows 7 以降。  | USB HID 1.11 + のサポートは、Windows 2000 年代の Windows オペレーティング システムで提供されます。       |
-| Bluetooth    | Hidbth.sys        | Windows 7 以降。  | Bluetooth HID 1.1 + のサポートは、Windows Vista までさかのぼる Windows オペレーティング システムで提供されます。 |
-| Bluetooth LE | HidBthLE.dll      | Windows 8 以降。  | Windows 8 では、Bluetooth LE 経由での HID サポートが導入されています。                                               |
-| I²C          | Hidi2c.sys        | Windows 8 以降。  | Windows 8 では、I2C 経由での HID サポートが導入されています。                                                        |
-| GPIO         | Hidinterrupt.sys  | Windows 10 以降。 | Windows 10 の Windows には、汎用の I/O (GPIO) ボタンのサポートが導入されています。                         |
+| USB          | Hidusb .sys        | Windows 7 以降。  | Windows 2000 に戻る前に、Windows オペレーティングシステムで USB HID 1.11 + のサポートが提供されています。       |
+| Bluetooth    | Hidbth. sys        | Windows 7 以降。  | Windows Vista 以降では、Windows オペレーティングシステムで Bluetooth HID 1.1 以降がサポートされています。 |
+| Bluetooth LE | HidBthLE .dll      | Windows 8 以降。  | Windows 8 では、Bluetooth LE に対する HID のサポートが導入されています。                                               |
+| I ² C          | Hidi2c        | Windows 8 以降。  | Windows 8 では、I2C に対する HID のサポートが導入されています。                                                        |
+| GPIO         | Hidinterrupt .sys  | Windows 10 以降。 | Windows 10 では、汎用 i/o (GPIO) ボタンのサポートが導入されています。                         |
 
  
 
-マイクロソフトを可能であれば、上記の表に示したトランスポート インボックス ドライバーを使用して推奨します。
+Microsoft では、可能な限り、前の表に記載されているトランスポートにインボックスドライバーを使用することをお勧めします。
 
-説明されているミニポート ドライバーを開発するには、デバイスは、USB、Bluetooth、Bluetooth LE、I²C 以外のトランスポートを必要とする場合、[トランスポート ミニドライバー](transport-minidrivers.md)トピック
+デバイスで USB、Bluetooth、Bluetooth LE、I ² C 以外のトランスポートが必要な場合は、「 [Transport ミニドライバー](transport-minidrivers.md) 」トピックで説明されているミニポートドライバーを開発できます。
 
-## <a name="hid-transport-limits"></a>HID のトランスポートの制限
+## <a name="hid-transport-limits"></a>HID トランスポートの制限
 
 
 -   **レポート記述子の長さ**
 
-    トランスポート ミニドライバーで Hidclass へのレポート記述子の送信、 [ **HID\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidport/ns-hidport-_hid_descriptor)構造体。 自分のデバイスでの HID レポート記述子を転送するためのトランスポート プロトコルによって定義されたサイズに関係なく、実際のレポート記述子のサイズは Hidclass と HID ミニドライバーの間の通信中に制限されます。
+    トランスポートミニドライバーは、 [**HID\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidport/ns-hidport-_hid_descriptor)構造内の Hidclass にレポート記述子を送信します。 HID レポート記述子をデバイスに転送するためにトランスポートプロトコルによって定義されるサイズに関係なく、実際のレポート記述子のサイズは Hidclass と HID ミニドライバー間の通信中に制限されます。
 
--   **レポート記述子 TLCs**
+-   **レポート記述子での TLCs**
 
-    Hidclass Hidparse/ドライバーのペアは TLCs レポート記述子の数に注意してください。 HID のミニポート ドライバーには、その情報がわかりません。 各 TLC では、コレクションとコレクションを終了する 1 バイトを開始するには少なくとも 2 バイトを持ちます。
+    Hidclass/Hidparse ドライバーペアは、レポート記述子に含まれる TLCs の数を認識します。 HID ミニポートドライバーでは、その情報は認識されません。 各 TLC は、コレクションを開始するために少なくとも2バイト、コレクションを終了するために1バイトを持ちます。
 
--   **入力/出力/機能をレポートの長さ**
+-   **入力/出力/機能レポートの長さ**
 
-    Hidclass Hidparse/ドライバーのペアは、非表示の入力、出力、および機能のレポートの長さを定義します。 (マイナス 1 ビット) は 8 KB を制限します。 場合でも、HID ミニドライバーは、レポートの複数の 8 KB の転送を要求できます、8 KB 未満のレポートのみが正常に転送されます。
+    Hidclass/Hidparse ドライバーペアは、HID 入力、出力、および機能レポートの長さを定義します。 制限は 8 KB (-1 ビット) です。 HID ミニドライバーがレポートに対して 8 KB を超える転送を要求できる場合でも、8 KB より小さいレポートのみが正常に転送されます。
 
-| インボックス ミニドライバー | レポート記述子の長さ | 1 つのレポート記述子 TLCs | 入力/出力/機能をレポートの長さ |
+| インボックスミニドライバー | レポート記述子の長さ | 1つのレポート記述子での TLCs | 入力/出力/機能レポートの長さ |
 | ----------------- | ------------------------ | ----------------------------- | ---------------------------------- |
-| Hidclass/Hidparse | サイズが 65535 バイト              | 21845                         | 8 KB の 1 ビット                       |
-| Hidusb            | サイズが 65535 バイト              | なし                           | 64 KB                              |
-| Hidbth            | サイズが 65535 バイト              | なし                           | 64 KB                              |
-| HidBthLE          | サイズが 65535 バイト              | なし                           | 64 KB                              |
-| Hidi2c            | サイズが 65535 バイト              | なし                           | 64 KB                              |
+| Hidclass/Hidparse | 65535バイト              | 21845                         | 8 KB-1 ビット                       |
+| Hidusb            | 65535バイト              | なし                           | 64 KB                              |
+| Hidbth            | 65535バイト              | なし                           | 64 KB                              |
+| HidBthLE          | 65535バイト              | なし                           | 64 KB                              |
+| Hidi2c            | 65535バイト              | なし                           | 64 KB                              |
 
  
 

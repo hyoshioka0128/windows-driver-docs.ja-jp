@@ -1,38 +1,34 @@
 ---
-title: NDIS 中間ドライバーの作成
-description: NDIS 中間ドライバーの作成
+title: NDIS 中間ドライバーの記述の概要
+description: NDIS 中間ドライバーの記述の概要
 ms.assetid: c37224b2-8d96-44c2-8b56-884089b9cfcd
 keywords:
 - 中間ドライバー WDK ネットワーク
-- ネットワーク ドライバー WDK、中間ドライバー
-- WDK NDIS 中間ドライバ
+- ネットワークドライバー WDK、中間ドライバー
+- NDIS WDK、中間ドライバー
 - NDIS 中間ドライバー WDK
 - NDIS 中間ドライバー WDK、NDIS 6.0
-- 中間ドライバー WDK ネットワー キング、NDIS 6.0
+- 中間ドライバー WDK ネットワーク、NDIS 6.0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 778305aac1f12c04b2a1569e32533e7aba4fe4f5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 927f6f1076f0a70f9b419d976cc8fdf90a063740
+ms.sourcegitcommit: fec48fa5342d9cd4cd5ccc16aaa06e7c3d730112
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379776"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69565707"
 ---
-# <a name="writing-ndis-intermediate-drivers"></a>NDIS 中間ドライバーの作成
+# <a name="getting-started-writing-ndis-intermediate-drivers"></a>NDIS 中間ドライバーの記述の概要
 
+特に明記されていない限り、NDIS 中間ドライバーはミニポートドライバーおよびプロトコルドライバーと同じサービスを提供します。 中間ドライバーのミニポートエッジは、ミニポートドライバーサービスを提供し、プロトコルエッジはプロトコルドライバーサービスを提供します。 (詳細については、「 [Ndis ミニポートドライバーの記述](writing-ndis-miniport-drivers.md)」および「 [ndis プロトコルドライバーの記述](writing-ndis-protocol-drivers.md)」を参照してください)。NDIS 6.0 以降の中間ドライバーの初期化は、レガシ中間ドライバーの初期化とは異なります。 また、NDIS 6.0 以降のドライバーは、ミニポート中間ドライバーとして登録できます。
 
+次のトピックでは、中間ドライバーの初期化の詳細について説明します。
 
-
-
-明記しない限り、NDIS 中間ドライバは、ミニポート ドライバーとプロトコル ドライバーとして同じサービスを提供します。 中間ドライバーのミニポート edge は、ミニポート ドライバー サービスを提供し、プロトコルのエッジはドライバー サービスのプロトコルを提供します。 (詳細については、次を参照してください[書き込み NDIS ミニポート ドライバー](writing-ndis-miniport-drivers.md)と[書き込み NDIS プロトコル ドライバー](writing-ndis-protocol-drivers.md)。)。NDIS 6.0 と後で中間ドライバーの初期化は、従来の中間ドライバーの初期化と異なります。 また、NDIS 6.0 とそれ以降のドライバーは、結合されたミニポート中間ドライバーとして登録できます。
-
-中間のドライバーの初期化の詳細については、以下のトピックです。
-
--   [中間のドライバーの初期化](initializing-an-intermediate-driver.md)
+-   [中間ドライバーの初期化](initializing-an-intermediate-driver.md)
 -   [ミニポート中間ドライバーの初期化](initializing-a-miniport-intermediate-driver.md)
--   [中間のドライバーをアンロード](unloading-an-intermediate-driver.md)
+-   [中間ドライバーのアンロード](unloading-an-intermediate-driver.md)
 -   [仮想ミニポートの初期化](initializing-a-virtual-miniport.md)
--   [仮想ミニポートを停止します。](halting-a-virtual-miniport.md)
+-   [仮想ミニポートの停止](halting-a-virtual-miniport.md)
 
  
 

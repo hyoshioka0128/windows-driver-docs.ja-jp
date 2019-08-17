@@ -1,59 +1,55 @@
 ---
-title: イーサネット フレームの分割
-description: イーサネット フレームの分割
+title: イーサネットフレームの分割の概要
+description: イーサネットフレームの分割の概要
 ms.assetid: 7b857dee-2805-4004-8f31-452f0cff0e0c
 keywords:
-- ヘッダー データの分割 WDK、イーサネット フレームの分割
-- イーサネット フレームの分割
-- WDK のネットワークを分割するイーサネット フレーム
-- イーサネット フレームの WDK ネットワー キング、イーサネット フレームの分割についての分割
-- ヘッダー データ プロバイダー WDK の分割
+- ヘッダー-データ分割 WDK、イーサネットフレーム分割
+- イーサネットフレームの分割
+- イーサネットフレーム分割 WDK ネットワーク
+- イーサネットフレーム分割 WDK ネットワーク、イーサネットフレーム分割について
+- ヘッダー-データ分割プロバイダー WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b695d718f2bc5119b80d7524b2e5384678642ab1
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 544fedc51c2c7a8cbf03ce252aab74ed2ddb5cee
+ms.sourcegitcommit: fec48fa5342d9cd4cd5ccc16aaa06e7c3d730112
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383629"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69565700"
 ---
-# <a name="splitting-ethernet-frames"></a>イーサネット フレームの分割
+# <a name="splitting-ethernet-frames-overview"></a>イーサネットフレームの分割の概要
 
+このセクションでは、プロバイダーが分割しているイーサネットフレームの種類に応じて、ヘッダーデータ分割プロバイダーに適用される特定のヘッダーデータの分割要件について説明します。
 
-
-
-
-このセクションでは、プロバイダーの分割がイーサネット フレームの種類に応じて、ヘッダー データの分割プロバイダーに適用される特定のヘッダー データの分割要件について説明します。
-
-**注**  イーサネット フレームの種類ごとに特定の要件を理解する以降のトピックを使用するこのトピックの「一般的な要件を読むことができます。 後半のトピックは、以前のトピックの要件をビルドします。 たとえば、フレームに IPv4 と UDP の情報が含まれている場合お読みください、 [IPv4 フレームの分割](splitting-ipv4-frames.md)と[UDP ペイロードにフレームを分割](splitting-frames-at-the-udp-payload.md)トピック。
+**注このトピック**の一般的な要件を読み終えたら、次のトピックを使用して、各種類のイーサネットフレームの特定の要件を理解することができます。   以降のトピックでは、前のトピックの要件について説明します。 たとえば、フレームに IPv4 と UDP の情報が含まれている場合は、 [UDP ペイロード](splitting-frames-at-the-udp-payload.md)のトピックの「 [Ipv4 フレームの分割](splitting-ipv4-frames.md)とフレームの分割」を参照してください。
 
  
 
-ヘッダー データに準拠しているフレームの要件を指定された分割ヘッダー データ プロバイダーの分割を分割する場合は[ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)構造があります、NDIS\_NBL\_フラグ\_HD\_分割フラグを設定、 **NblFlags**メンバー。 フラグのクリア ヘッダー データの分割プロバイダーがフレームを分割されていない場合、フレームを示す必要があります**NblFlags** :
+ヘッダーデータ分割プロバイダーがヘッダーデータの分割要件に対応してフレームを分割する場合、指定された[ **\_ネットワークバッファー\_のリスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)構造には NDIS\_NBL\_フラグ\_が必要です。\_ **Nblflags**メンバーに HD 分割フラグが設定されています。 ヘッダーデータの分割プロバイダーでフレームが分割されない場合は、 **Nblflags**で次のフラグがクリアされた状態でフレームが示される必要があります。
 
--   NDIS\_NBL\_フラグ\_HD\_分割
+-   NDIS\_NBL\_フラグHD\_SPLIT\_
 
--   NDIS\_NBL\_フラグ\_分割\_で\_上限\_レイヤー\_プロトコル\_ヘッダー
+-   上層\_\_\_のプロトコル\_ヘッダーで分割\_した NDIS NBL フラグ\_\_\_
 
--   NDIS\_NBL\_フラグ\_分割\_で\_上限\_レイヤー\_プロトコル\_ペイロード
+-   上層\_\_\_のプロトコル\_ペイロードで分割\_した NDIS NBL フラグ\_\_\_
 
-ヘッダー データの設定の詳細については、NET を分割の\_バッファー\_フラグの一覧およびその他の要件を示す値を受信しを参照してください[ヘッダー データの分割と受信の兆候](receive-indications-with-header-data-split.md)します。
+ヘッダーデータを分割\_\_する方法の詳細については、「ヘッダーデータの[分割](receive-indications-with-header-data-split.md)」を参照してください。
 
-ヘッダー データの分割プロバイダーがヘッダー データの分割プロバイダーの要件の外部で受信したフレームを分割できる場合があります。 このような場合は、プロバイダー分割する必要があることはありません IP ヘッダー、IPv4 のオプション、IPsec のヘッダー、IPv6 拡張ヘッダー、またはプロトコル レイヤー上のヘッダー、途中でイーサネット フレームの最初の MDL にように NDIS に指定された数以上のバイトが含まれていない場合、先読みのサイズ。 先読みサイズの詳細については、次を参照してください。 [OID\_GEN\_現在\_先読み](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-current-lookahead)します。
+ヘッダーデータ分割プロバイダーが、受信したフレームをヘッダーデータ分割プロバイダーの要件の外側に分割できる場合もあります。 このような場合、プロバイダーは IP ヘッダー、IPv4 オプション、IPsec ヘッダー、IPv6 拡張ヘッダー、または上位層プロトコルのヘッダーの途中でイーサネットフレームを分割しないでください。ただし、最初の MDL には、先読みサイズ。 先読みサイズの詳細については、 [「\_OID\_GEN\_CURRENT 先読み](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-current-lookahead)」を参照してください。
 
 このセクションの内容:
 
-[IPv4 のフレームの分割](splitting-ipv4-frames.md)
+[IPv4 フレームの分割](splitting-ipv4-frames.md)
 
-[IPv6 のフレームの分割](splitting-ipv6-frames.md)
+[IPv6 フレームの分割](splitting-ipv6-frames.md)
 
-[IP のフレームをフラグメント化分割](splitting-fragmented-ip-frames.md)
+[断片化された IP フレームの分割](splitting-fragmented-ip-frames.md)
 
-[上のレイヤー プロトコル ヘッダーの先頭のフレームの分割](splitting-frames-at-the-beginning-of-the-upper-layer-protocol-headers.md)
+[上位層のプロトコルヘッダーの先頭にフレームを分割する](splitting-frames-at-the-beginning-of-the-upper-layer-protocol-headers.md)
 
-[TCP ペイロードのフレームの分割](splitting-frames-at-the-tcp-payload.md)
+[TCP ペイロードでフレームを分割する](splitting-frames-at-the-tcp-payload.md)
 
-[UDP ペイロードにフレームの分割](splitting-frames-at-the-udp-payload.md)
+[UDP ペイロードでフレームを分割する](splitting-frames-at-the-udp-payload.md)
 
 [TCP と UDP 以外のフレームの分割](splitting-frames-other-than-tcp-and-udp.md)
 

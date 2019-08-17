@@ -1,69 +1,69 @@
 ---
-title: TCP/IP タスク オフロード
-description: TCP/IP タスク オフロード
+title: TCP/IP タスクオフロードの概要
+description: TCP/IP タスクオフロードの概要
 ms.assetid: e73cc4e8-574b-438b-acd2-f0aaf5c20589
 keywords:
-- TCP/IP のオフロード WDK のネットワー キング、タスクのオフロード
-- WDK TCP/IP トランスポート、タスク オフロードをオフロードします。
-- タスクのオフロード WDK TCP/IP トランスポート
-- タスクのオフロード WDK TCP/IP トランスポートは、タスク オフロードの詳細について
-- 機能 WDK TCP/IP の負荷を軽減します。
+- TCP/IP オフロード WDK ネットワーク、タスクオフロード
+- WDK TCP/IP トランスポートのオフロード、タスクオフロード
+- タスクオフロード WDK TCP/IP トランスポート
+- タスクオフロード WDK TCP/IP トランスポート、タスクオフロードについて
+- 機能 WDK TCP/IP オフロード
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eb2d2343f1cedb336344ac53cc2f749f562605e0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2757c34d2b720fc5173d47229c9c1aff6b8c6083
+ms.sourcegitcommit: fec48fa5342d9cd4cd5ccc16aaa06e7c3d730112
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327580"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69565696"
 ---
-# <a name="tcpip-task-offload"></a>TCP/IP タスク オフロード
+# <a name="tcpip-task-offload-overview"></a>TCP/IP タスクオフロードの概要
 
 
 
 
 
-パフォーマンスを向上させるには、Microsoft TCP/IP トランスポートを適切なタスクをオフロード機能を持つネットワーク インターフェイス カード (NIC) にタスクをオフロードできます。
+Microsoft TCP/IP トランスポートでは、パフォーマンスを向上させるために、適切なタスクオフロード機能を備えたネットワークインターフェイスカード (NIC) にタスクをオフロードすることができます。
 
-以降、Windows Vista、Windows オペレーティング システムがサポートでは、次のタスクのオフロード サービス。
+Windows Vista 以降の Windows オペレーティングシステムでは、次のタスクオフロードサービスがサポートされています。
 
-### <a name="checksum-tasks"></a>チェックサム タスク
+### <a name="checksum-tasks"></a>チェックサムタスク
 
-TCP/IP トランスポートは、計算と ip アドレスと TCP チェックサムの検証をオフロードできます。
+TCP/IP トランスポートは、IP および TCP チェックサムの計算と検証をオフロードできます。
 
-### <a name="internet-protocol-security-ipsec-offload-version-1-ipsecov1"></a>インターネット プロトコル セキュリティ (IPsec) の負荷を軽減バージョン 1 (IPsecOV1)
+### <a name="internet-protocol-security-ipsec-offload-version-1-ipsecov1"></a>インターネットプロトコルセキュリティ (IPsec) オフロードバージョン 1 (IPsecOV1)
 
-\[IPsec タスク オフロード機能は非推奨し、は使用できません。\]
+\[IPsec タスクオフロード機能は非推奨とされており、使用しないでください。\]
 
-TCP/IP トランスポートは、計算とセキュリティ ペイロード (ESP)、またはその両方をカプセル化する、認証ヘッダー (AH) の暗号化チェックサムの検証をオフロードできます。 TCP/IP トランスポートも、暗号化と ESP ペイロードの暗号化解除と暗号化とユーザー データグラム プロトコル (UDP) の復号化をオフロードできます-ESP データ パケットをカプセル化します。
+TCP/IP トランスポートでは、認証ヘッダー (AH)、カプセル化セキュリティペイロード (ESP)、またはその両方の暗号化されたチェックサムの計算と検証をオフロードできます。 TCP/IP トランスポートでは、ESP ペイロードの暗号化と復号化、およびユーザーデータグラムプロトコル (UDP) でカプセル化された ESP データパケットの暗号化と復号化をオフロードすることもできます。
 
-IPsecOV1 の詳細については、次を参照してください。 [IPsec オフロード バージョン 1](ipsec-offload-version-1.md)します。
+IPsecOV1 の詳細については、「 [IPsec オフロードバージョン 1](ipsec-offload-version-1.md)」を参照してください。
 
-### <a name="internet-protocol-security-ipsec-offload-version-2-ipsecov2"></a>インターネット プロトコル セキュリティ (IPsec) の負荷を軽減バージョン 2 (IPsecOV2)
+### <a name="internet-protocol-security-ipsec-offload-version-2-ipsecov2"></a>インターネットプロトコルセキュリティ (IPsec) のオフロードバージョン 2 (IPsecOV2)
 
-\[IPsec タスク オフロード機能は非推奨し、は使用できません。\]
+\[IPsec タスクオフロード機能は非推奨とされており、使用しないでください。\]
 
-TCP/IP トランスポートは、計算とセキュリティ ペイロード (ESP)、またはその両方をカプセル化する、認証ヘッダー (AH) の暗号化チェックサムの検証をオフロードできます。 TCP/IP トランスポートも、暗号化と ESP ペイロードの暗号化解除と暗号化とユーザー データグラム プロトコル (UDP) の復号化をオフロードできます-ESP データ パケットをカプセル化します。 IPsecOV2 は NDIS 6.1 以降でサポートされています。
+TCP/IP トランスポートでは、認証ヘッダー (AH)、カプセル化セキュリティペイロード (ESP)、またはその両方の暗号化されたチェックサムの計算と検証をオフロードできます。 TCP/IP トランスポートでは、ESP ペイロードの暗号化と復号化、およびユーザーデータグラムプロトコル (UDP) でカプセル化された ESP データパケットの暗号化と復号化をオフロードすることもできます。 IPsecOV2 は、NDIS 6.1 以降のバージョンでサポートされています。
 
-IPsecOV2 の詳細については、次を参照してください。 [IPsec オフロード バージョン 2](ipsec-offload-version-2.md)します。
+IPsecOV2 の詳細については、「 [IPsec Offload Version 2](ipsec-offload-version-2.md)」を参照してください。
 
-### <a name="large-send-offload-version-1-lsov1"></a>大量送信オフロード バージョン 1 (LSOV1)
+### <a name="large-send-offload-version-1-lsov1"></a>Large send offload バージョン 1 (LSOV1)
 
-TCP/IP トランスポートは、大量送信オフロード バージョン 1 (LSOV1) をサポートします。 TCP/IP トランスポートは LSOV1 に大きな (最大 64 kb の IP ヘッダーを含む) のセグメント化をオフロードすることができますの IPv4 TCP パケット。
+TCP/IP トランスポートでは、large send offload version 1 (LSOV1) がサポートされています。 LSOV1 を使用すると、TCP/IP トランスポートは IPv4 の TCP パケットを含む大容量 (IP ヘッダーを含む最大 64 KB) のセグメント化をオフロードできます。
 
-### <a name="large-send-offload-version-2-lsov2"></a>大量送信オフロード バージョン 2 (LSOV2)
+### <a name="large-send-offload-version-2-lsov2"></a>Large send offload version 2 (LSOV2)
 
-大量の送信は、バージョン 2 (LSOV2) インターフェイスが LSOV1 の拡張のバージョンをオフロードします。 LSOV2 は 64 K より大きな TCP パケットの IPv6、IPv4、およびセグメント化をサポートします。 大きなパケットのセグメント化オフロードの詳細については、次を参照してください。 [、セグメント化の大きな TCP パケットのオフロード](offloading-the-segmentation-of-large-tcp-packets.md)します。
+Large send offload version 2 (LSOV2) インターフェイスは、LSOV1 の拡張バージョンです。 LSOV2 では、64K を超える大きな TCP パケットの IPv6、IPv4、およびセグメンテーションがサポートされています。 大きいパケットのセグメント化のオフロードの詳細については、「[大きな TCP パケットのセグメント化のオフロード](offloading-the-segmentation-of-large-tcp-packets.md)」を参照してください。
 
-Windows 8 および Windows Server 2012 以降、Windows オペレーティング システムには、次の追加のタスクのオーバー ロードのサービスがサポートされています。
+Windows 8 と windows Server 2012 以降では、Windows オペレーティングシステムは、次の追加のタスクオーバーロードサービスをサポートしています。
 
 ### <a name="receive-segment-coalescing-rsc"></a>Receive Segment Coalescing (RSC)
 
-Coalescing (RSC) 有効のネットワーク カードのミニポート ドライバーは複数の TCP セグメントを結合し、オペレーティング システムのネットワーク サブシステムにまとめられた 1 つの単位 (SCU) として示すためにセグメントが表示されます。
+受信セグメント合体 (RSC) を使用すると、ネットワークカードミニポートドライバーは複数の TCP セグメントを結合し、オペレーティングシステムのネットワークサブシステムに対して1つの結合された単位 (SCU) として示すことができます。
 
 ### <a name="network-virtualization-using-generic-routing-encapsulation-nvgre-task-offload"></a>汎用ルーティング カプセル化 (NVGRE) タスク オフロードを使用したネットワークの仮想化
 
-[ネットワーク仮想化の Generic Routing Encapsulation (NVGRE) タスク オフロードを使用して](network-virtualization-using-generic-routing-encapsulation--nvgre--task-offload.md)Generic Routing Encapsulation GRE カプセル化パケットを使用することになります。
+[汎用ルーティングカプセル化 (NVGRE) タスクオフロードを使用したネットワーク仮想化](network-virtualization-using-generic-routing-encapsulation--nvgre--task-offload.md)により、汎用ルーティングカプセル化 (GRE) でカプセル化されたパケットを使用できるようになります。
 
 -   Large Send Offload (LSO)
 -   Receive Side Scaling (RSS)
@@ -71,15 +71,15 @@ Coalescing (RSC) 有効のネットワーク カードのミニポート ドラ�
 
 このセクションの内容:
 
--   [タスクのオフロード機能を判断します。](determining-task-offload-capabilities.md)
--   [オフロード サービスを有効にして、タスクを無効化](enabling-and-disabling-task-offload-services.md)
--   [現在のタスクのオフロード設定を決定します。](determining-the-current-task-offload-settings.md)
--   [タスクの型を結合する負荷を軽減します。](combining-types-of-task-offloads.md)
--   [レジストリ値を使用してタスク オフロードを無効にするには](using-registry-values-to-enable-and-disable-task-offloading.md)
--   [チェックサム タスクをオフロードします。](offloading-checksum-tasks.md)
--   [IPsec タスクをオフロード](offloading-ipsec-tasks.md)
-    - \[IPsec タスク オフロード機能は非推奨し、は使用できません。\]
--   [大きな TCP パケットのセグメント化をオフロード](offloading-the-segmentation-of-large-tcp-packets.md)
+-   [タスクオフロード機能の決定](determining-task-offload-capabilities.md)
+-   [タスクオフロードサービスの有効化と無効化](enabling-and-disabling-task-offload-services.md)
+-   [現在のタスクのオフロード設定を確認しています](determining-the-current-task-offload-settings.md)
+-   [タスクのオフロードの種類の組み合わせ](combining-types-of-task-offloads.md)
+-   [レジストリ値を使用してタスクオフロードを有効または無効にする](using-registry-values-to-enable-and-disable-task-offloading.md)
+-   [チェックサムタスクのオフロード](offloading-checksum-tasks.md)
+-   [IPsec タスクのオフロード](offloading-ipsec-tasks.md)
+    - \[IPsec タスクオフロード機能は非推奨とされており、使用しないでください。\]
+-   [大きな TCP パケットのセグメント化のオフロード](offloading-the-segmentation-of-large-tcp-packets.md)
 
  
 

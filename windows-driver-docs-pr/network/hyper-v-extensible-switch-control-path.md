@@ -1,28 +1,28 @@
 ---
-title: Hyper-V 拡張可能スイッチ制御パス
-description: Hyper-V 拡張可能スイッチ制御パス
+title: Hyper-v 拡張可能スイッチ制御パスに関するトピック
+description: Hyper-v 拡張可能スイッチ制御パスに関するトピック
 ms.assetid: 15F651F2-4C46-44CE-89CE-3B86AE48A851
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 69e103c91c92e1d1de39b17e09cbcaa12d747181
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 40d7c15d602c97c52e9e87186954a815710ea35d
+ms.sourcegitcommit: fec48fa5342d9cd4cd5ccc16aaa06e7c3d730112
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341908"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69565757"
 ---
-# <a name="hyper-v-extensible-switch-control-path"></a>Hyper-V 拡張可能スイッチ制御パス
+# <a name="hyper-v-extensible-switch-control-path-topics"></a>Hyper-v 拡張可能スイッチ制御パスに関するトピック
 
 
-このセクションでは、HYPER-V 拡張可能スイッチのオブジェクト識別子 (OID) を要求し、NDIS 状態インジケーターの間で移動するコントロールのパスについて説明します。
+このセクションでは、Hyper-v 拡張可能スイッチオブジェクト識別子 (OID) 要求と NDIS ステータスを示すコントロールパスについて説明します。
 
 ここでは、次のトピックについて説明します。
 
-[OID 要求の HYPER-V 拡張可能スイッチ コントロール パス](hyper-v-extensible-switch-control-path-for-oid-requests.md)
+[OID 要求の hyper-v 拡張可能スイッチ制御パス](hyper-v-extensible-switch-control-path-for-oid-requests.md)
 
-[NDIS 状態インジケーターの HYPER-V 拡張可能スイッチ コントロール パス](hyper-v-extensible-switch-control-path-for-ndis-status-indications.md)
+[NDIS ステータスを示すための hyper-v 拡張可能スイッチ制御パス](hyper-v-extensible-switch-control-path-for-ndis-status-indications.md)
 
-**注**  、拡張可能スイッチのインターフェイスで NDIS フィルター ドライバーと呼ばれる*拡張可能スイッチの拡張機能*と呼ばれるドライバー スタック、*拡張可能スイッチ ドライバー スタック*.
+注  拡張可能なスイッチインターフェイスでは、NDIS フィルタードライバーは*拡張可能なスイッチ拡張機能*と呼ばれ、ドライバースタックは*拡張可能なスイッチドライバースタック*と呼ばれます。
 
  
 

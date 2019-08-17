@@ -1,32 +1,32 @@
 ---
-title: WDI USB セレクティブ サスペンド
-description: 電力を節約するには、USB 上の Wi-fi NIC) などの USB デバイスは、アイドル状態のときに、低電力状態に移動可能性があります。 WDI は、USB セレクティブ サスペンドの NDIS のネイティブ サポートを利用することで、LE をサポートします。
+title: WDI USB 選択的中断に関するトピック
+description: 電力を節約するために、USB デバイス (USB 上の Wi-fi NIC など) がアイドル状態になると、電力が低下する可能性があります。 WDI は、USB のセレクティブサスペンドのために NDIS ネイティブサポートを利用して LE をサポートしています。
 ms.assetid: 8147D735-6E6D-4B98-93A2-5C00D7944D61
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a5d3fca5e21b52173c6cd0e4dd6d1e92e066c655
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 07a30308600fb48e6bf44da829da819f1f2eeaf7
+ms.sourcegitcommit: fec48fa5342d9cd4cd5ccc16aaa06e7c3d730112
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373758"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69565744"
 ---
-# <a name="wdi-usb-selective-suspend"></a>WDI USB セレクティブ サスペンド
+# <a name="wdi-usb-selective-suspend-topics"></a>WDI USB 選択的中断に関するトピック
 
 
-電力を節約するには、USB 上の Wi-fi NIC) などの USB デバイスは、アイドル状態のときに、低電力状態に移動可能性があります。 WDI は、USB セレクティブ サスペンドの NDIS のネイティブ サポートを利用することで、LE をサポートします。
+電力を節約するために、USB デバイス (USB 上の Wi-fi NIC など) がアイドル状態になると、電力が低下する可能性があります。 WDI は、USB のセレクティブサスペンドのために NDIS ネイティブサポートを利用して LE をサポートしています。
 
 このセクションの内容
 
-[WDI NDIS アイドル状態の検出](wdi-ndis-idle-detection.md)
+[WDI NDIS アイドル検出](wdi-ndis-idle-detection.md)
 
-[WDI および WLAN セレクティブ サスペンドの機能](wdi-and-wlan-selective-suspend-capability.md)
+[WDI と WLAN のセレクティブサスペンド機能](wdi-and-wlan-selective-suspend-capability.md)
 
-[WDI USB シーケンスを中断します。](wdi-usb-suspend-sequence.md)
+[WDI USB 中断シーケンス](wdi-usb-suspend-sequence.md)
 
 [WDI USB 再開シーケンス](wdi-usb-resume-sequence.md)
 
-[WDI USB リモート ウェイクのシーケンス](wdi-usb-remote-wake-sequence.md)
+[WDI USB リモートウェイクシーケンス](wdi-usb-remote-wake-sequence.md)
  
 
  

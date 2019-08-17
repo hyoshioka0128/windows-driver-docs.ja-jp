@@ -1,42 +1,42 @@
 ---
-title: Windows フィルタリング プラットフォーム コールアウト ドライバー
-description: Windows フィルタリング プラットフォーム コールアウト ドライバー
+title: Windows フィルタリングプラットフォームのコールアウトドライバーに関するトピック
+description: Windows フィルタリングプラットフォームのコールアウトドライバーに関するトピック
 ms.assetid: 494dd2be-ac1b-432b-8966-278534eca162
 keywords:
-- Windows Filtering Platform コールアウト ドライバー WDK
-- コールアウト ドライバー WDK Windows フィルタ リング プラットフォーム
-- ネットワーク WFP WDK
+- Windows フィルタリングプラットフォームのコールアウトドライバーの WDK
+- コールアウトドライバー WDK Windows フィルタリングプラットフォーム
+- WFP WDK ネットワーク
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 294e7b189c873f2829983fc7fbde1e32d0e3cd66
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: fd7beaf750c244019c6253a0f92aa5c2dbb1bac4
+ms.sourcegitcommit: fec48fa5342d9cd4cd5ccc16aaa06e7c3d730112
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382606"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69565715"
 ---
-# <a name="windows-filtering-platform-callout-drivers"></a>Windows フィルタリング プラットフォーム コールアウト ドライバー
+# <a name="windows-filtering-platform-callout-driver-topics"></a>Windows フィルタリングプラットフォームのコールアウトドライバーに関するトピック
 
 
-このセクションでは、Windows フィルタ リング プラットフォーム (WFP) コールアウト ドライバーをについて説明し、次のトピックが含まれています。
+このセクションでは、Windows Filtering Platform (WFP) コールアウトドライバーについて説明し、次のトピックを示します。
 
--   [WFP コールアウト ドライバーを開発するためのロードマップ](roadmap-for-developing-wfp-callout-drivers.md)
--   [Windows プラットフォームのコールアウト ドライバーをフィルタ リングの概要](introduction-to-windows-filtering-platform-callout-drivers.md)
+-   [WFP コールアウトドライバーを開発するためのロードマップ](roadmap-for-developing-wfp-callout-drivers.md)
+-   [Windows フィルタリングプラットフォームのコールアウトドライバーの概要](introduction-to-windows-filtering-platform-callout-drivers.md)
 -   [WFP の新しい情報](new-information-for-wfp.md)
--   [Windows プラットフォームのコールアウト ドライバーの定義をフィルター処理](wfp-callout-drivers-definitions.md)
--   [Windows フィルタ リング プラットフォーム アーキテクチャの概要](windows-filtering-platform-architecture-overview.md)
--   [コールアウト ドライバーの動作](callout-driver-operations.md)
--   [コールアウト ドライバーのインストール](callout-driver-installation.md)
--   [コールアウト ドライバーのプログラミングに関する考慮事項](callout-driver-programming-considerations.md)
--   [パケット処理ドライバーおよび WFP をアプリの移植](porting-packet-processing-drivers-and-apps-to-wfp.md)
--   [IPsec と互換性のあるコールアウト ドライバーの開発](developing-ipsec-compatible-callout-drivers.md)
--   [その他の Windows をフィルター処理プラットフォーム関数を呼び出す](calling-other-windows-filtering-platform-functions.md)
--   [Windows Filtering Platform 定数](windows-filtering-platform-constants.md)
--   [その他の Windows フィルタ リング プラットフォーム機能](other-windows-filtering-platform-functions.md)
+-   [Windows フィルタリングプラットフォームのコールアウトドライバーの定義](wfp-callout-drivers-definitions.md)
+-   [Windows フィルタリングプラットフォームのアーキテクチャの概要](windows-filtering-platform-architecture-overview.md)
+-   [コールアウトドライバーの操作](callout-driver-operations.md)
+-   [コールアウトドライバーのインストール](callout-driver-installation.md)
+-   [コールアウトドライバーのプログラミングに関する考慮事項](callout-driver-programming-considerations.md)
+-   [パケット処理ドライバーとアプリを WFP に移植する](porting-packet-processing-drivers-and-apps-to-wfp.md)
+-   [IPsec と互換性のあるコールアウトドライバーの開発](developing-ipsec-compatible-callout-drivers.md)
+-   [その他の Windows フィルタリングプラットフォーム関数の呼び出し](calling-other-windows-filtering-platform-functions.md)
+-   [Windows フィルタリングプラットフォーム定数](windows-filtering-platform-constants.md)
+-   [その他の Windows フィルタリングプラットフォーム関数](other-windows-filtering-platform-functions.md)
 
-WFP の概要については、次を参照してください。 [Windows フィルタ リング プラットフォーム](https://docs.microsoft.com/windows/desktop/FWP/windows-filtering-platform-start-page)します。
+WFP の概要については、「 [Windows Filtering Platform](https://docs.microsoft.com/windows/desktop/FWP/windows-filtering-platform-start-page)」を参照してください。
 
-WFP リファレンス情報は、次を参照してください。 [Windows フィルタ リング プラットフォーム コールアウト ドライバー](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)します。
+WFP のリファレンス情報については、「 [Windows フィルタリングプラットフォームのコールアウトドライバー](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)」を参照してください。
 
  
 

@@ -1,120 +1,120 @@
 ---
-title: SIM ツールキット
-description: SIM ツールキット
+title: SIM toolkit の概要
+description: SIM toolkit の概要
 ms.assetid: 39869948-d61c-438c-a90c-05dcb099acad
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c3199bf2d87d413af845b308c11c2c36cb8c84f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e7eedc74a4bd6a9651ddc5c478eac63bdf0a4b0a
+ms.sourcegitcommit: fec48fa5342d9cd4cd5ccc16aaa06e7c3d730112
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67380816"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69565640"
 ---
-# <a name="sim-toolkit"></a>SIM ツールキット
+# <a name="sim-toolkit-overview"></a>SIM toolkit の概要
 
 
-SIM toolkit には、ネットワーク イベントまたはユーザーの操作によってアクティブにできる SIM 上のアプリケーションのセットです。 SIM toolkit アプリケーションは、3 gpp と ETSI 仕様で定義されている事前対応型のコマンドで表されます。 Windows 10 Mobile には、SIM toolkit コマンドのサブセットがサポートされています。 サポートされているコマンドの一覧は、次を参照してください。 [SIM toolkit コマンド](sim-toolkit-commands.md)します。
+SIM toolkit は、ネットワークイベントまたはユーザーのアクションによってライセンス認証を行うことができる、SIM 上の一連のアプリケーションです。 SIM toolkit アプリケーションは、3GPP および ETSI 仕様で定義されているプロアクティブコマンドによって表されます。 Windows 10 Mobile は、SIM toolkit コマンドのサブセットをサポートしています。 サポートされているコマンドの一覧については、「 [SIM toolkit コマンド](sim-toolkit-commands.md)」を参照してください。
 
-## <a name="sim-toolkit-components"></a>SIM のツールキット コンポーネント全般
+## <a name="sim-toolkit-components"></a>SIM toolkit のコンポーネント
 
 
-SIM toolkit の 3 つの主要なコンポーネントは次のとおりです。
+SIM toolkit には、次の3つの主要なコンポーネントがあります。
 
--   モデムと無線シリコン ベンダーから提供された層 (RIL) ソフトウェアをインターフェイスします。
+-   シリコンベンダが提供するモデムおよび無線インターフェイスレイヤー (RIL) ソフトウェア。
 
--   ネイティブ コード DLL は、サービスです。
+-   サービス。ネイティブコード DLL です。
 
--   ユーザー インターフェイス (UI)。
+-   ユーザーインターフェイス (UI)。
 
-SIM toolkit サービスとユーザー インターフェイスの両方は、Microsoft によって提供されます。
+SIM toolkit サービスとユーザーインターフェイスは、どちらも Microsoft によって提供されます。
 
 次の図は、SIM toolkit の主要なコンポーネントを示しています。
 
-![sim のツールキット コンポーネント全般](images/sim-toolkit-components.png)
+![sim toolkit のコンポーネント](images/sim-toolkit-components.png)
 
 ### <a name="sim-toolkit-service"></a>SIM toolkit サービス
 
-SIM toolkit サービスは、Windows 10 Mobile のオペレーティング システムの一部です。 バック グラウンド タスクとして実行し、SIM と SIM toolkit UI アプリケーションの間、コマンド インタープリターとして機能します。
+SIM toolkit サービスは、Windows 10 Mobile OS の一部です。 バックグラウンドタスクとして実行され、SIM と SIM toolkit UI アプリケーションの間のコマンドインタープリターとして機能します。
 
 ### <a name="sim-toolkit-ui-application"></a>SIM toolkit UI アプリケーション
 
-SIM toolkit UI には、SIM toolkit サービスによって指定されたテキストが表示されます。
+SIM toolkit UI には、SIM toolkit サービスによって指示されたテキストが表示されます。
 
-SIM toolkit UI アプリケーションでは、2 種類のテキスト文字列が表示されます。
+SIM toolkit UI アプリケーションでは、次の2種類のテキスト文字列が表示されます。
 
--   アプリケーション管理の文字列は、SIM toolkit UI の一部です。 Microsoft は、これらの文字列を Windows でサポートされる言語にローカライズします。
+-   アプリケーション管理文字列は、SIM toolkit UI の一部です。 Microsoft では、これらの文字列を Windows でサポートされている言語にローカライズしています。
 
--   SIM とメッセージの相互作用の一部として表示されるテキスト文字列は、携帯電話会社によって提供されます。 Microsoft は、これらのテキスト文字列をローカライズしていません。
+-   SIM とのメッセージ操作の一部として表示されるテキスト文字列は、携帯電話会社が提供します。 Microsoft では、これらのテキスト文字列をローカライズしていません。
 
-SIM toolkit UI アプリケーションは音を再生し、ブラウザーを起動できます。
+SIM toolkit UI アプリケーションは、トーンを再生し、ブラウザーを起動することもできます。
 
 ### <a name="sim-toolkit-customizations"></a>SIM toolkit のカスタマイズ
 
-Oem は、既定値は、携帯電話会社の要件を満たしていない場合、特定のダイアログ ボックスまたはメッセージの表示期間を変更できます。 これらのカスタマイズ設定 MCSF とプロビジョニングを使用する方法を選択できるように Windows の両方で利用できます。 既定の表示時間は次のとおりです。
+Oem は、既定値が携帯電話会社の要件を満たしていない場合に、特定のダイアログまたはメッセージの表示期間を変更できます。 これらのカスタマイズ設定は、使用する方法を選択できるように、MCSF と Windows の両方のプロビジョニングで使用できます。 既定の表示時刻は次のとおりです。
 
--   GETINPUT:120 秒
+-   GETINPUT T>120秒
 
--   表示テキスト。60 秒
+-   折り返し60秒
 
--   SELECTITEM:60 秒
+-   SELECTITEM:60秒
 
--   GETINKEY:60 秒
+-   GETINKEY:60秒
 
-これらのカスタマイズについては、次を参照してください。[カスタマイズ SIM toolkit](https://docs.microsoft.com/windows-hardware/customize/mobile/mcsf/customize-the-sim-toolkit)します。
+これらのカスタマイズの詳細については、「 [SIM toolkit をカスタマイズする](https://docs.microsoft.com/windows-hardware/customize/mobile/mcsf/customize-the-sim-toolkit)」を参照してください。
 
-### <a name="example-of-processing-a-sim-toolkit-command"></a>SIM toolkit コマンドの処理の例
+### <a name="example-of-processing-a-sim-toolkit-command"></a>SIM toolkit コマンドを処理する例
 
-SIM toolkit 表示テキスト コマンドの処理の例を次に示します。
+SIM toolkit の表示テキストコマンドを処理する例を次に示します。
 
--   SIM では、表示するテキスト コマンドを送信します。
+-   SIM によって、[テキストの表示] コマンドが送信されます。
 
--   SIM toolkit サービスは、表示テキストを受信し、SIM toolkit UI にコマンドを渡します。
+-   SIM toolkit サービスは、表示テキストを受け取り、コマンドを SIM toolkit UI に渡します。
 
 -   SIM toolkit UI には、テキスト文字列が表示されます。
 
-## <a name="starting-the-sim-toolkit-ui-application"></a>SIM toolkit UI アプリケーションの起動
+## <a name="starting-the-sim-toolkit-ui-application"></a>SIM toolkit UI アプリケーションを起動しています
 
 
-SIM toolkit UI アプリケーションがインストールされている場合、 **SIM アプリケーション**ボタンに表示されます、**設定** &gt; **ネットワークとワイヤレス** &gt;**移動体通信および SIM** &gt; **詳細オプション**画面。 アプリケーションを開始するには、ボタンをタップします。
+Sim toolkit UI アプリケーションがインストールされていると、**設定** &gt; **ネットワーク & ワイヤレス** &gt; **携帯電話 & sim** &gt; **詳細オプション**に **[sim アプリケーション]** ボタンが表示されます。ウィンドウ. アプリケーションを起動するには、[] ボタンをタップします。
 
-**SIM アプリケーション**場合、次のいずれかのボタンは表示されません。
+次のいずれかに該当する場合、 **[SIM アプリケーション]** ボタンは非表示になります。
 
--   SIM 暗証番号 (pin) が (2 G SIM) のロック
+-   SIM PIN がロックされている (2G SIM 用)
 
--   PUK (個人的には、キーがロックを解除) (2 G SIM) のロック
+-   PUK (パーソナルロック解除キー) がロックされています (2G SIM 用)
 
--   SIM の SIM アプリケーションがありません。
+-   Sim に SIM アプリケーションがありません
 
--   存在しない SIM
+-   SIM が存在しません
 
-SIM toolkit UI アプリケーションが正常に開始されると、SIM toolkit UI では、オプションを選択するユーザーを表示します。 オプションは、SIM 上のアプリケーションによって決定されます。
+SIM toolkit UI アプリケーションが正常に起動すると、SIM toolkit UI にユーザーが選択するオプションが表示されます。 オプションは、SIM 上のアプリケーションによって決定されます。
 
-## <a name="launching-the-sim-toolkit-using-another-app"></a>別のアプリを使用して、SIM toolkit を起動します。
+## <a name="launching-the-sim-toolkit-using-another-app"></a>別のアプリを使用して SIM ツールキットを起動する
 
 
-SIM toolkit を発見しやすくするためには、パートナーは CPL SIM アプリケーションを起動するのに UWP アプリを有効にするのに予約済みの URI スキームを使用できます。 これを行う方法の詳細については、次を参照してください。 [SIM toolkit を起動する予約済み URI](reserved-uri-to-launch-sim-toolkit.md)します。
+SIM toolkit をより見つけやすくするために、パートナーは予約済みの URI スキームを使用して、UWP アプリで SIM アプリケーション CPL を起動できるようにします。 これを行う方法の詳細については、「予約済み URI」を参照して、 [SIM toolkit を起動](reserved-uri-to-launch-sim-toolkit.md)してください。
 
 ## <a name="sim-toolkit-ui-notifications"></a>SIM toolkit UI の通知
 
 
-電話のダイヤラー画面で SIM コマンドを受信した場合は、SIM アプリケーション UI は表示されません。 この場合は、画面の上部にある通知のトーストが表示されます。 SIM アプリケーション UI を起動、トーストをタップします。 他のすべてのシナリオでは、SIM toolkit UI アプリケーションが起動し、全体の画面に表示します。
+Sim アプリケーション UI は、電話ダイヤラー画面で SIM コマンドを受信した場合には表示されません。 この場合、通知トーストが画面の上部に表示されます。 トーストをタップすると、SIM アプリケーション UI が起動します。 それ以外のすべてのシナリオでは、SIM toolkit UI アプリケーションが起動され、画面全体に表示されます。
 
 ## <a name="additional-reference"></a>その他の参照情報
 
 
-次の設定がお勧めします。
+次の設定をお勧めします。
 
--   Never にロック画面がテストに干渉しないように、テストの実行中にロック画面のタイムアウトを設定します。 既定では、1 分に設定されます。
+-   テストの実行中にロック画面のタイムアウトを [なし] に設定します。これにより、ロック画面はテストに干渉しません。 既定では、1分に設定されています。
 
--   CDMA デバイスは、APN がデバイスの設定を確認します。
+-   CDMA デバイスの場合は、APN がデバイスに設定されていることを確認します。
 
--   テスト スイートの一部では、90 秒の既定のタイマー値があります。 該当する場合は、タイムアウトのカスタマイズのレジストリ値がそれに応じて設定を確認します。
+-   一部のテストスイートでは、タイマーの既定値が90秒に設定されています。 必要に応じて、タイムアウトのカスタマイズのレジストリ値が適切に設定されていることを確認します。
 
 ## <a name="related-topics"></a>関連トピック
 
 
-[SIM toolkit コマンド](sim-toolkit-commands.md)
+[SIM toolkit のコマンド](sim-toolkit-commands.md)
 
  
 

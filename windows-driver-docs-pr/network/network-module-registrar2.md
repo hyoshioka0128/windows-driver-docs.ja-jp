@@ -1,40 +1,40 @@
 ---
-title: ネットワーク モジュール レジストラー
-description: ネットワーク モジュール レジストラー
+title: ネットワークモジュールレジストラーに関するトピック
+description: ネットワークモジュールレジストラーに関するトピック
 ms.assetid: 23c15c42-94aa-410b-8551-fafa8b24ad86
 keywords:
-- ネットワーク モジュール レジストラー WDK
+- ネットワークモジュールレジストラー WDK
 - NMR WDK
-- モジュール WDK ネットワーク モジュールのレジストラー
-- 登録されているネットワーク モジュール WDK ネットワーク モジュールのレジストラー
-- ソフトウェア モジュール WDK ネットワーク モジュールのレジストラー
+- モジュール WDK ネットワークモジュールレジストラー
+- 登録済みネットワークモジュール WDK ネットワークモジュールレジストラー
+- ソフトウェアモジュール WDK ネットワークモジュールレジストラー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fa2fe60c1528355adff70664ca9744933d75b580
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: fdf5e2a94878e9fd0ef8fbfa38d678e6d7da51c7
+ms.sourcegitcommit: fec48fa5342d9cd4cd5ccc16aaa06e7c3d730112
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386322"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69565742"
 ---
-# <a name="network-module-registrar"></a>ネットワーク モジュール レジストラー
+# <a name="network-module-registrar-topics"></a>ネットワークモジュールレジストラーに関するトピック
 
 
-このセクションでは、ネットワーク モジュールの登録について説明し、次のトピックが含まれています。
+このセクションでは、ネットワークモジュールレジストラーについて説明し、次のトピックを示します。
 
-[ネットワーク モジュールの登録の概要](introduction-to-the-network-module-registrar.md)
+[ネットワークモジュールレジストラーの概要](introduction-to-the-network-module-registrar.md)
 
-[ネットワーク モジュールのレジストラーの定義](nmr-definitions.md)
+[ネットワークモジュールレジストラーの定義](nmr-definitions.md)
 
 [アーキテクチャの概要](architecture-overview.md)
 
-[モジュールのクライアントの操作](client-module-operations.md)
+[クライアントモジュールの操作](client-module-operations.md)
 
-[プロバイダー モジュールの操作](provider-module-operations.md)
+[プロバイダーモジュールの操作](provider-module-operations.md)
 
 [プログラミングに関する考慮事項](programming-considerations.md)
 
-使用して、 [ **WskRegister** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nf-wsk-wskregister)と[ **WskDeregister** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nf-wsk-wskderegister)関数は、推奨される方法の登録と WSK を登録解除アプリケーション。 ネットワーク モジュールのレジストラーは、互換性のために使用可能なままです。 詳細については、次を参照してください。 [Winsock カーネル アプリケーションを登録する](registering-a-winsock-kernel-application.md)します。
+WSK アプリケーションを登録および登録解除するには、 [**Wskregister**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nf-wsk-wskregister)関数と[**wskregister**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nf-wsk-wskderegister)関数を使用することをお勧めします。 ネットワークモジュールレジストラーは、互換性のために引き続き使用できます。 詳細については、「 [Winsock カーネルアプリケーションの登録](registering-a-winsock-kernel-application.md)」を参照してください。
 
  
 

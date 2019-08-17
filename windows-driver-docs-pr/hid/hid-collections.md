@@ -1,58 +1,58 @@
 ---
-title: HID コレクション
-description: HID コレクションは、HID コントロールと、それぞれの HID の使用の意味のあるグループです。
+title: HID コレクションの概要
+description: HID コレクションは、HID コントロールとそれぞれの HID 使用法を意味的にグループ化したものです。
 ms.assetid: 2d3efb38-4eba-43db-8cff-9fac30209952
 keywords:
-- ヒューマン インターフェイス デバイス WDK、コレクション
+- ヒューマンインターフェイスデバイス WDK、コレクション
 - HID WDK、コレクション
 - 対話型の入力デバイス WDK、コレクション
-- デバイス コレクション、WDK を入力します。
-- WDK の HID コレクション
-- コレクションは WDK を非表示に、HID コレクションについて
-- WDK の HID サブコレクション
-- ヒューマン インターフェイス デバイス WDK、コントロール
+- 入力デバイス WDK、コレクション
+- コレクション WDK HID
+- コレクション WDK HID、HID コレクションについて
+- WDK HID のサブコレクション
+- ヒューマンインターフェイスデバイス WDK、コントロール
 - HID WDK、コントロール
 - 対話型の入力デバイス WDK、コントロール
 - 入力デバイス WDK、コントロール
-- WDK を非表示コントロール
-- HID コレクション WDK
+- WDK HID を制御します
+- HID コレクション (WDK)
 - HID コレクション WDK、HID コレクションについて
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ce277d5ec85cadb9ebfe59c1ef40e01c4daf0af
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4529cf8b912cf10db10aaa8e41a6a35b2ac9fa04
+ms.sourcegitcommit: fec48fa5342d9cd4cd5ccc16aaa06e7c3d730112
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388810"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69565624"
 ---
-# <a name="hid-collections"></a>HID コレクション
+# <a name="hid-collections-overview"></a>HID コレクションの概要
 
 
-A *HID コレクション*HID コントロールと、それぞれの意味のあるグループは、 [HID の使用](hid-usages.md)します。
+*Hid コレクション*は、hid コントロールとそれぞれの[hid 使用法](hid-usages.md)を意味的にグループ化したものです。
 
-コントロールはの論理的な関係または互いに機能的に依存する場合、まとめてグループ化する必要があります。 たとえば、SHIFT キーおよびキーボードの文字キーがコレクションを分離する属していません。 コレクションを入れ子に*サブコレクション*とも呼ば[リンク コレクション](link-collections.md)します。 1 つまたは複数のレポート記述子の定義[最上位のコレクション](top-level-collections.md)、し、各コレクションに関連付けられているレポート アイテムは、1 つまたは複数の HID レポートを定義します。
-
-
+コントロールは、論理的に関連している場合や、互いに機能的に依存している場合に、グループ化する必要があります。 たとえば、キーボードの SHIFT キーと letter キーは、個別のコレクションに属さないようにする必要があります。 コレクションには、入れ子になったサブ*コレクション*([リンクコレクション](link-collections.md)とも呼ばれます) を含めることができます。 レポート記述子では、[最上位レベルのコレクション](top-level-collections.md)が1つ以上定義され、各コレクションに関連付けられたレポートアイテムによって1つ以上の HID レポートが定義されます。
 
 
-Windows は、以下を含む HID コレクションの概念を拡張します。
 
-[最上位のコレクション](top-level-collections.md)
 
-[システムの Windows によって開かれた最上位のコレクションを使用して、](top-level-collections-opened-by-windows-for-system-use.md)
+Windows は、次のものを含むように、HID コレクションの概念を拡張します。
 
-[Preparsed データ](preparsed-data.md)
+[最上位レベルのコレクション](top-level-collections.md)
 
-[リンクのコレクション](link-collections.md)
+[システムで使用するために Windows によって開かれた最上位レベルのコレクション](top-level-collections-opened-by-windows-for-system-use.md)
 
-[コレクションの機能](collection-capability.md)
+[データの Preparsed](preparsed-data.md)
 
-[ボタンの機能の配列](button-capability-arrays.md)
+[コレクションのリンク](link-collections.md)
 
-[機能の値の配列](value-capability-arrays.md)
+[コレクション機能](collection-capability.md)
 
-[データのインデックス](data-indices.md)
+[ボタン機能配列](button-capability-arrays.md)
+
+[値機能配列](value-capability-arrays.md)
+
+[データインデックス](data-indices.md)
 
  
 

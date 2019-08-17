@@ -1,36 +1,36 @@
 ---
-title: Hyper-V 拡張可能スイッチの拡張機能の作成
-description: Hyper-V 拡張可能スイッチの拡張機能の作成
+title: Hyper-v 拡張可能スイッチ拡張機能の記述に関するトピック
+description: Hyper-v 拡張可能スイッチ拡張機能の記述に関するトピック
 ms.assetid: 282CEE4D-0818-4091-A327-68FDD7B0D12F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aebf088eb0d06c5f62c1d4f6a65a8ed873333f2d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6468809629802f585fb7b2cc4bb2e8ba395ac7e8
+ms.sourcegitcommit: fec48fa5342d9cd4cd5ccc16aaa06e7c3d730112
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379780"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69565710"
 ---
-# <a name="writing-hyper-v-extensible-switch-extensions"></a>Hyper-V 拡張可能スイッチの拡張機能の作成
+# <a name="writing-hyper-v-extensible-switch-extensions-topics"></a>Hyper-v 拡張可能スイッチ拡張機能の記述に関するトピック
 
 
-次のトピックでは、HYPER-V 拡張可能スイッチの拡張機能を記述する方法についてを説明します。
+次のトピックでは、Hyper-v 拡張可能スイッチ拡張機能の記述方法について説明します。
 
-[HYPER-V 拡張可能スイッチの送信し、受信操作](hyper-v-extensible-switch-send-and-receive-operations.md)
+[Hyper-v 拡張可能スイッチの送信と受信の操作](hyper-v-extensible-switch-send-and-receive-operations.md)
 
-[HYPER-V 拡張可能スイッチ OID 要求](hyper-v-extensible-switch-oid-requests.md)
+[Hyper-v 拡張可能スイッチ OID 要求](hyper-v-extensible-switch-oid-requests.md)
 
-[HYPER-V 拡張可能スイッチのソースおよび宛先ポートのデータを管理します。](managing-hyper-v-extensible-switch-source-and-destination-port-data.md)
+[Hyper-v 拡張可能スイッチのソースと宛先のポートデータを管理する](managing-hyper-v-extensible-switch-source-and-destination-port-data.md)
 
-[HYPER-V 拡張可能スイッチのポリシーの管理](managing-hyper-v-extensible-switch-extensibility-policies.md)
+[Hyper-v 拡張可能スイッチポリシーの管理](managing-hyper-v-extensible-switch-extensibility-policies.md)
 
-[HYPER-V 拡張可能スイッチ機能の状態情報を管理します。](managing-hyper-v-extensible-switch-feature-status-information.md)
+[Hyper-v 拡張可能スイッチ機能の状態情報の管理](managing-hyper-v-extensible-switch-feature-status-information.md)
 
-[HYPER-V 拡張可能スイッチの実行時データを管理します。](managing-hyper-v-extensible-switch-run-time-data.md)
+[Hyper-v 拡張可能スイッチの実行時データの管理](managing-hyper-v-extensible-switch-run-time-data.md)
 
-[物理ネットワーク アダプターを管理します。](managing-physical-network-adapters.md)
+[物理ネットワークアダプターの管理](managing-physical-network-adapters.md)
 
-**注**  拡張可能スイッチの拡張機能は、NDIS フィルター ドライバーのアーキテクチャに基づいています。 詳細については、次を参照してください。 [NDIS フィルター ドライバー](ndis-filter-drivers.md)します。
+**メモ拡張可能**なスイッチ拡張機能は、NDIS フィルタードライバーのアーキテクチャに基づいています。   詳細については、「 [NDIS フィルタードライバー](ndis-filter-drivers.md)」を参照してください。
 
  
 

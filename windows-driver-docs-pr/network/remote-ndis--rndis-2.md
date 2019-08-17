@@ -1,39 +1,39 @@
 ---
-title: リモート NDIS (RNDIS)
-description: リモート NDIS (RNDIS)
+title: リモート NDIS の概要 (RNDIS)
+description: リモート NDIS の概要 (RNDIS)
 ms.assetid: 857cec9c-6098-4fd3-9528-fa592da997f4
 keywords:
-- リモートの NDIS WDK ネットワーク
-- ネットワーク ドライバー WDK、リモートの NDIS
+- リモート NDIS WDK ネットワーク
+- ネットワークドライバー WDK、リモート NDIS
 - RNDIS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fc549cad806a7863478d06a1c728d0c580912bbb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: ad9a4499897ed2b382e450b6c1dee4f71bdc4fd4
+ms.sourcegitcommit: fec48fa5342d9cd4cd5ccc16aaa06e7c3d730112
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574008"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69565702"
 ---
-# <a name="remote-ndis-rndis"></a>リモート NDIS (RNDIS)
+# <a name="introduction-to-remote-ndis-rndis"></a>リモート NDIS の概要 (RNDIS)
 
 
 
 
 
-リモート NDIS (RNDIS) は、1394、Bluetooth、または InfiniBand イーサネット (802.3) ネットワーク デバイス、USB などの動的のプラグ アンド プレイ (PnP) バスのバスに依存しないクラス仕様です。 リモートの NDIS は、抽象コントロールとデータ チャネル経由でのホスト コンピューターとリモートの NDIS デバイス間のバスに依存しないメッセージ プロトコルを定義します。 リモートの NDIS は、ホスト コンピューターでリモート NDIS デバイスのベンダーに依存しないクラス ドライバーのサポートを許可するのに十分な正確です。
+リモート NDIS (RNDIS) は、USB、1394、Bluetooth、InfiniBand などの動的プラグアンドプレイ (PnP) バス上のイーサネット (802.3) ネットワークデバイス向けのバス非依存クラス仕様です。 リモート NDIS は、抽象コントロールとデータチャネルを介して、ホストコンピューターとリモート NDIS デバイスとの間でバスに依存しないメッセージプロトコルを定義します。 リモート NDIS は、ホストコンピューター上のリモート NDIS デバイスに対してベンダーに依存しないクラスドライバーのサポートを許可するのに十分な精度を備えています。
 
-Microsoft Windows のバージョン Windows XP 以降にはでは、USB デバイス用のリモート NDIS ドライバーが含まれます。 IHV の USB デバイスには、このドライバーを使用して、テンプレートに続く INF ファイルを提供する必要があります[リモート NDIS INF テンプレート](remote-ndis-inf-template.md)します。
+Windows XP 以降の Microsoft Windows のバージョンには、USB デバイス用のリモート NDIS ドライバーが含まれています。 このドライバーを USB デバイスで使用するには、IHV が、[リモート NDIS Inf テンプレート](remote-ndis-inf-template.md)のテンプレートに従う INF ファイルを提供する必要があります。
 
-リモートの NDIS メッセージは、ホストから NDIS リモート デバイスに送信され、リモート NDIS デバイスが適切な完了メッセージを返します。 メッセージはもホストにリモート NDIS デバイスから要請されていない方法で送信します。
+リモート ndis メッセージはホストからリモート NDIS デバイスに送信され、リモート NDIS デバイスは適切な完了メッセージで応答します。 また、リモート NDIS デバイスからホストにメッセージが送信されることもありません。
 
 このセクションの内容:
 
-[リモートの NDIS (RNDIS) の概要](overview-of-remote-ndis--rndis-.md)
+[リモート NDIS の概要 (RNDIS)](overview-of-remote-ndis--rndis-.md)
 
-[リモートの NDIS 通信](remote-ndis-communication.md)
+[リモート NDIS 通信](remote-ndis-communication.md)
 
-[リモートの NDIS と USB のマッピング](remote-ndis-to-usb-mapping.md)
+[リモート NDIS から USB へのマッピング](remote-ndis-to-usb-mapping.md)
 
 
  

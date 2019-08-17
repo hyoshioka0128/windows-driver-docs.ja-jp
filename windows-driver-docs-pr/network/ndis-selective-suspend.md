@@ -1,36 +1,36 @@
 ---
-title: NDIS セレクティブ サスペンド
-description: NDIS セレクティブ サスペンド
+title: NDIS の選択的中断の概要
+description: NDIS の選択的中断の概要
 ms.assetid: B0D44AE3-5197-4264-9838-83FB5EFEB0B0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e487e400ccb97482ca7fa3adae88d03f20fc38f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1e5d62e9a21e3c2de22121062a3e8e45f0c3f31a
+ms.sourcegitcommit: fec48fa5342d9cd4cd5ccc16aaa06e7c3d730112
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387148"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69565662"
 ---
-# <a name="ndis-selective-suspend"></a>NDIS セレクティブ サスペンド
+# <a name="introduction-to-ndis-selective-suspend"></a>NDIS の選択的中断の概要
 
 
-NDIS 6.30 以降では、選択的 NDIS 中断インターフェイスでは、アダプターを低電力状態に遷移することによって、アイドル状態のネットワーク アダプターを中断する NDIS できます。 これにより、CPU とネットワーク アダプターのオーバーヘッドが電力を減らすため、システムができます。
+Ndis 6.30 以降では、ndis の選択的中断インターフェイスを使用して、アダプターを低電力状態に移行することによって、NDIS でアイドル状態のネットワークアダプターを中断できます。 これにより、システムは CPU とネットワークアダプターの電力オーバーヘッドを軽減できます。
 
 ここでは、次のトピックについて説明します。
 
-[選択的 NDIS の概要を中断します。](overview-of-ndis-selective-suspend.md)
+[NDIS の選択的中断の概要](overview-of-ndis-selective-suspend.md)
 
-[レポートの NDIS 選択的な機能を中断します。](reporting-ndis-selective-suspend-capabilities.md)
+[NDIS の選択的中断機能を報告する](reporting-ndis-selective-suspend-capabilities.md)
 
-[選択的登録 NDIS 中断ハンドラー関数](registering-ndis-selective-suspend-handler-functions.md)
+[NDIS の選択的中断ハンドラー関数を登録しています](registering-ndis-selective-suspend-handler-functions.md)
 
-[選択的 NDIS がアイドル状態の通知を中断します。](ndis-selective-suspend-idle-notifications.md)
+[NDIS の選択的中断のアイドル状態の通知](ndis-selective-suspend-idle-notifications.md)
 
-[NDIS オプションを選択するための標準化された INF キーワードを中断します。](standardized-inf-keywords-for-ndis-selective-suspend.md)
+[NDIS 選択的中断の標準化された INF キーワード](standardized-inf-keywords-for-ndis-selective-suspend.md)
 
-[選択的 NDIS 中断実装ガイドライン](ndis-selective-suspend-implementation-guidelines.md)
+[NDIS 選択的中断実装ガイドライン](ndis-selective-suspend-implementation-guidelines.md)
 
-**注**  インターフェイスは USB のネットワーク アダプターに特に便利です、インターフェイスがバスに依存しないが、選択的 NDIS を中断します。 その結果、ミニポート ドライバーでは、CPU を削減し、オーバーヘッドの電源をするために他のバスの種類のネットワーク アダプターのインターフェイスを使用することができます。
+**注:**   NDIS の選択的中断インターフェイスは、USB ネットワークアダプターに特に便利ですが、インターフェイスはバスに依存しません。 その結果、ミニポートドライバーは、CPU と電力のオーバーヘッドを減らすために、他の種類のバスのネットワークアダプターのインターフェイスを使用できます。
 
  
 

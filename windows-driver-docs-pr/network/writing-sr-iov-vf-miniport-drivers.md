@@ -1,30 +1,30 @@
 ---
-title: SR-IOV VF ミニポート ドライバーの作成
-description: SR-IOV VF ミニポート ドライバーの作成
+title: SR-IOV VF ミニポートドライバーの概要の記述
+description: SR-IOV VF ミニポートドライバーの概要の記述
 ms.assetid: 15CA65DD-AAAB-4EDA-8743-8A3E63E50190
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 18b19c6952f39e872b34600d985013593df70732
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4b1e27c5eafca5e835f36147557012f965d92a68
+ms.sourcegitcommit: fec48fa5342d9cd4cd5ccc16aaa06e7c3d730112
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379756"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69565602"
 ---
-# <a name="writing-sr-iov-vf-miniport-drivers"></a>SR-IOV VF ミニポート ドライバーの作成
+# <a name="writing-sr-iov-vf-miniport-drivers-overview"></a>SR-IOV VF ミニポートドライバーの概要の記述
 
 
-このセクションでは、要件との PCI Express (PCIe) 仮想機能 (VF) シングル ルート I/O 仮想化 (SR-IOV) ネットワーク アダプターの NDIS ミニポート ドライバーの記述に関するガイドラインについて説明します。
+このセクションでは、シングルルート i/o 仮想化 (SR-IOV) ネットワークアダプターの PCI Express (PCIe) 仮想機能 (VF) 用の NDIS ミニポートドライバーを作成するための要件とガイドラインについて説明します。
 
 ここでは、次のトピックについて説明します。
 
-[VF のミニポート ドライバーの初期化](initializing-a-vf-miniport-driver.md)
+[VF ミニポートドライバーの初期化](initializing-a-vf-miniport-driver.md)
 
-[VF のミニポート ドライバーを停止します。](halting-a-vf-miniport-driver.md)
+[VF ミニポートドライバーの停止](halting-a-vf-miniport-driver.md)
 
-[VF ミニポート ドライバーの INF 要件](inf-requirements-for-vf-miniport-drivers.md)
+[VF ミニポートドライバーの INF 要件](inf-requirements-for-vf-miniport-drivers.md)
 
-**注**  の PCIe 物理機能 (PF)、SR-IOV ネットワーク アダプターのミニポート ドライバーを記述する方法については、次を参照してください。[書き込み SR-IOV PF ミニポート ドライバー](writing-sr-iov-pf-miniport-drivers.md)します。
+注  sr-iov ネットワークアダプターの PCIe 物理機能 (PF) 用のミニポートドライバーを作成する方法については、「sr-iov [PF ミニポートドライバーの記述](writing-sr-iov-pf-miniport-drivers.md)」を参照してください。
 
  
 

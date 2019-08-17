@@ -1,35 +1,35 @@
 ---
-title: ミニポート アダプターの起動と一時停止
-description: ミニポート アダプターの起動と一時停止
+title: ミニポートアダプターの開始と一時停止の概要
+description: ミニポートアダプターの開始と一時停止の概要
 ms.assetid: d278b331-90d9-4d19-bf00-732981962522
 keywords:
-- ミニポート アダプタの WDK ネットワーク、開始
-- アダプターの WDK ネットワーク、開始
-- ミニポート アダプタ WDK ネットワーク、一時停止
-- アダプター WDK ネットワーク、一時停止
+- ミニポートアダプター WDK ネットワーク、開始
+- WDK ネットワークのアダプター、開始
+- ミニポートアダプター WDK ネットワーク、一時停止
+- WDK ネットワークのアダプター、一時停止
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f7cc9ef56c74eb8644c19128be1503737d942f76
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 46dbbb373a15d1defa6cab7341fcc18f5d55888e
+ms.sourcegitcommit: fec48fa5342d9cd4cd5ccc16aaa06e7c3d730112
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390631"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69565740"
 ---
-# <a name="starting-and-pausing-a-miniport-adapter"></a>ミニポート アダプターの起動と一時停止
+# <a name="starting-and-pausing-a-miniport-adapter-overview"></a>ミニポートアダプターの開始と一時停止の概要
 
 
 
 
 
-NDIS は、フィルター ドライバー、または NIC のパケット フィルターまたはマルチキャスト アドレスの一覧の設定などの要求は、追加または削除などのプラグ アンド プレイ操作を妨げる可能性があるデータ フローを終了するためのアダプターを一時停止します。 実行中のドライバー スタックを変更する方法の詳細については、次を参照してください。[変更を実行しているドライバー スタック](modifying-a-running-driver-stack.md)します。
+NDIS は、アダプターを一時停止して、フィルタードライバーの追加や削除などのプラグアンドプレイ操作や、NIC でのパケットフィルターやマルチキャストアドレス一覧の設定などの要求を妨げる可能性のあるデータフローを停止します。 実行中のドライバースタックを変更する方法の詳細については、「[実行中のドライバースタックの変更](modifying-a-running-driver-stack.md)」を参照してください。
 
-NDIS は、一時停止状態からアダプターを再起動します。 アダプターの初期化が完了した後、または一時停止操作が完了した後、アダプターは一時停止の開始を入力します。
+NDIS は、アダプターを一時停止状態から再開します。 アダプターの初期化が完了した後、または一時停止操作が完了した後に、アダプターは一時停止した開始を入力します。
 
-開始、一時停止およびアダプターの詳細については、以下のトピックです。
+次のトピックでは、開始と一時停止およびアダプターの詳細について説明します。
 
--   [アダプターの開始](starting-an-adapter.md)
--   [アダプターを一時停止](pausing-an-adapter.md)
+-   [アダプターを開始する](starting-an-adapter.md)
+-   [アダプターの一時停止](pausing-an-adapter.md)
 
  
 

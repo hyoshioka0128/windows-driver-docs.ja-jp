@@ -1,25 +1,25 @@
 ---
-title: Wi-Fi ホット スポット オフロード ガイド
-description: Wi-Fi ホット スポット オフロード ガイド
+title: Wi-fi ホットスポットオフロードの概要
+description: Wi-fi ホットスポットオフロードの概要
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5462e35d31281d449db27b5e279d49bc2ee4de57
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fca5ab51153a42d175f3517048132f1bd64591fb
+ms.sourcegitcommit: fec48fa5342d9cd4cd5ccc16aaa06e7c3d730112
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63385806"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69565630"
 ---
-# <a name="wi-fi-hotspot-offloading-guide"></a>Wi-Fi ホット スポット オフロード ガイド
+# <a name="wi-fi-hotspot-offloading-overview"></a>Wi-fi ホットスポットオフロードの概要
 
 [!include[Wi-Fi Hotspot Offloading deprecation](wi-fi-hotspot-offloading-deprecation.md)]
 
-Wi-fi ホット スポットのオフロードにより、自動的に識別し、「ホット スポット」と指定したローカルの Wi-fi ネットワークに接続する Windows 10 Mobile Wi-fi ホット スポットのオフロード フレームワークには、携帯電話、Wi-fi ホット スポットのオフロードのカスタマイズされたホット スポットのプラグインで事前構成済みの出荷が可能です。
+Wi-fi ホットスポットオフロードにより、Windows 10 Mobile は、"ホットスポット" として指定されたローカル Wi-fi ネットワークを自動的に識別し、接続することができます。 Wi-fi ホットスポットオフロードフレームワークを使用すると、モバイルオペレーターは、Wi-fi ホットスポットオフロード用にカスタマイズされたホットスポットプラグインを使用して事前に構成された携帯電話を出荷できます。
 
 ## <a name="in-this-section"></a>このセクションの内容
 
-* [Wi-fi ホット スポットのアーキテクチャのオフロード](wi-fi-hotspot-offloading-architecture.md)
-* [Wi-fi ホット スポットのプラグインのオフロード](wi-fi-hotspot-offloading-plugin.md)
+* [Wi-fi ホットスポットオフロードアーキテクチャ](wi-fi-hotspot-offloading-architecture.md)
+* [Wi-fi ホットスポットオフロードプラグイン](wi-fi-hotspot-offloading-plugin.md)
 * [Wi-fi 探索サービス](wi-fi-discovery-service.md)
-* [Wi-fi ホット スポットの参照をオフロードします。](wi-fi-hotspot-offloading-reference.md)
+* [Wi-fi ホットスポットオフロードのリファレンス](wi-fi-hotspot-offloading-reference.md)
 

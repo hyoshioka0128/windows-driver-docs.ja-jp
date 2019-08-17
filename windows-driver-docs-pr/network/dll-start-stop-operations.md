@@ -1,24 +1,24 @@
 ---
-title: DLL 開始/停止操作
-description: DLL 開始/停止操作
+title: DLL の開始/停止操作に関するトピック
+description: DLL の開始/停止操作に関するトピック
 ms.assetid: be6a2e20-172a-4ce4-a134-1a59345af6da
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 099671977f2e415db03f5bd721919f5262778511
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 96beeb1a8ba08d84c2d0b30470b7483ffb19d765
+ms.sourcegitcommit: fec48fa5342d9cd4cd5ccc16aaa06e7c3d730112
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379552"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69565684"
 ---
-# <a name="dll-startstop-operations"></a>DLL 開始/停止操作
+# <a name="dll-startstop-operations-topics"></a>DLL の開始/停止操作に関するトピック
 
 
 
 
  
 
-このセクションでは、オペレーティング システムによる開始方法と、IHV 拡張 DLL を停止する方法、および、次のトピックが含まれて 方法について説明します。
+このセクションでは、オペレーティングシステムが IHV 拡張 DLL を開始および停止する方法について説明し、次のトピックを示します。
 
 [DLL の開始操作](dll-start-operations.md)
 

@@ -1,52 +1,52 @@
 ---
-title: Windows ソケット ダイレクト
-description: Windows ソケット ダイレクト
+title: Windows ソケットダイレクトの概要
+description: Windows ソケットダイレクトの概要
 ms.assetid: 9e153a77-c4d4-4425-8f36-5ab9d6a80386
 keywords:
-- システム エリア ネットワーク、WDK Windows Sockets ダイレクト
-- SAN の WDK、Windows ソケットのダイレクト
-- Windows ソケットは、WDK を直接します。
-- Windows ソケットの WDK から Windows Sockets についての直接直接します。
-- Windows Sockets 直接スイッチ WDK
-- WDK Windows Sockets 直接スイッチ
-- WDK Windows Sockets 直接ソケット
-- San 用の SAN NIC WDK
+- システムエリアネットワーク WDK、Windows ソケットダイレクト
+- SAN WDK、Windows ソケットダイレクト
+- Windows Sockets Direct WDK
+- Windows sockets Direct WDK、Windows ソケットダイレクトについて
+- Windows Sockets Direct スイッチ WDK
+- WDK Windows ソケットダイレクトの切り替え
+- ソケット WDK Windows ソケットダイレクト
+- SAN NIC WDK San
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 22a12c4b7fac8a1cae06537d89a6b499bfd8bb86
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1fdc47682455939532267c771cbd4c05f340c54c
+ms.sourcegitcommit: fec48fa5342d9cd4cd5ccc16aaa06e7c3d730112
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335453"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69565613"
 ---
-# <a name="windows-sockets-direct"></a>Windows ソケット ダイレクト
+# <a name="windows-sockets-direct-overview"></a>Windows ソケットダイレクトの概要
 
 
 
 
 
-Microsoft Windows Sockets Direct は、可能であれば、高速および高パフォーマンスとの間の TCP/IP トランスポートおよび NDIS ミニポート ドライバーではなくシステム エリア ネットワーク (SAN) 経由で Windows ソケット アプリケーションを使用したデータをルーティングするテクノロジです。
+Microsoft Windows Sockets Direct は、可能な場合は、TCP/IP トランスポートや NDIS ミニポートドライバーではなく、System Area Network (SAN) を介して、Windows ソケットアプリケーションとの間で高速かつ高パフォーマンスのデータをルーティングするテクノロジです。
 
-Windows Sockets ダイレクトに含まれます。
+Windows ソケットダイレクトは、次のものに含まれています。
 
 -   Microsoft Windows 2000 Datacenter Server
 
 -   Microsoft Windows 2000 Advanced Server SP2
 
--   Microsoft Windows 2000 Server Appliance Kit SP2
+-   Microsoft Windows 2000 Server アプライアンスキット SP2
 
 -   Microsoft Windows Server 2003
 
-次のトピックでは、Windows Sockets ダイレクトの機能と操作、Windows Sockets Direct、および SAN サービス プロバイダーとその関連付けられているプロキシ ドライバーを記述するための要件を有効にするソフトウェア コンポーネントについて説明します。
+次のトピックでは、Windows Sockets Direct の機能と操作、Windows ソケットダイレクトを有効にするソフトウェアコンポーネント、および SAN サービスプロバイダとそれに関連付けられたプロキシドライバを作成するための要件について説明します。
 
-[Windows ソケットは、アーキテクチャを直接します。](windows-sockets-direct-architecture.md)
+[Windows Sockets Direct アーキテクチャ](windows-sockets-direct-architecture.md)
 
-[Windows ソケットは、コンポーネントの操作を直接します。](windows-sockets-direct-component-operation.md)
+[Windows ソケットダイレクトコンポーネント操作](windows-sockets-direct-component-operation.md)
 
-[San サービス プロバイダーを作成します。](creating-a-service-provider-for-a-san.md)
+[SAN 用のサービスプロバイダーの作成](creating-a-service-provider-for-a-san.md)
 
-[SAN サービス プロバイダーのプロキシ ドライバーを作成します。](creating-a-proxy-driver-for-a-san-service-provider.md)
+[SAN サービスプロバイダーのプロキシドライバーの作成](creating-a-proxy-driver-for-a-san-service-provider.md)
 
  
 

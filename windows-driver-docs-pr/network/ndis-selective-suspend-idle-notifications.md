@@ -1,32 +1,32 @@
 ---
-title: NDIS セレクティブ サスペンド アイドル通知
-description: NDIS セレクティブ サスペンド アイドル通知
+title: NDIS セレクティブサスペンドアイドル通知の概要
+description: NDIS セレクティブサスペンドアイドル通知の概要
 ms.assetid: 958A2588-A847-4699-9906-95FB47CA1CDC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e2e6759c3617c1bf5342bd3eae75e1df3baa16f2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7ffc791350d572f62368134565e450f071ced315
+ms.sourcegitcommit: fec48fa5342d9cd4cd5ccc16aaa06e7c3d730112
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342312"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69565645"
 ---
-# <a name="ndis-selective-suspend-idle-notifications"></a>NDIS セレクティブ サスペンド アイドル通知
+# <a name="overview-of-ndis-selective-suspend-idle-notifications"></a>NDIS セレクティブサスペンドアイドル通知の概要
 
 
-ミニポート ドライバーが有効にし、選択的 NDIS のサポートを登録、中断、NDIS が基になるネットワーク アダプターの I/O アクティビティを監視します。 NDIS ドライバーとアダプターがアイドル状態である NDIS 実行と判断した場合、セレクティブ サスペンド操作。 この操作では、アダプターを低電力状態に遷移することによって、ネットワーク アダプターが中断します。
+ミニポートドライバーが有効になっていて、NDIS の選択的中断がサポートされている場合、NDIS は基になるネットワークアダプターの i/o アクティビティを監視します。 NDIS がドライバーとアダプターがアイドル状態であると判断した場合、NDIS はセレクティブサスペンド操作を実行します。 この操作では、アダプターを低電力状態に移行することで、ネットワークアダプターを中断します。
 
-NDIS 開始、セレクティブ サスペンド操作ミニポート ドライバーにアイドル状態の通知を発行しています。 低電力状態で、ネットワーク アダプターが中断されると、アダプターは、アイドル状態の通知が取り消された場合にのみ電力状態に再開できます。 セレクティブ サスペンド操作後、通知は取り消され、アダプターが電力状態を完了します。
+NDIS は、ミニポートドライバーにアイドル通知を発行することによって、セレクティブサスペンド操作を開始します。 ネットワークアダプターが低電力状態で中断されている場合、アダプターはアイドル状態の通知が取り消された場合にのみ、フルパワー状態に再開できます。 通知が取り消され、アダプターがフルパワー状態になると、セレクティブサスペンド操作が完了します。
 
-次のトピックで詳細を提供する選択的 NDIS 中断操作とアイドル状態の通知。
+次のトピックでは、NDIS のセレクティブサスペンド操作とアイドル状態の通知について詳しく説明します。
 
-[NDIS がアイドル状態のネットワーク アダプターを検出する方法](how-ndis-detects-idle-network-adapters.md)
+[NDIS がアイドル状態のネットワークアダプターを検出する方法](how-ndis-detects-idle-network-adapters.md)
 
-[アイドル状態の通知を中断する選択的 NDIS の処理](handling-the-ndis-selective-suspend-idle-notification.md)
+[NDIS の選択的中断を待機する通知の処理](handling-the-ndis-selective-suspend-idle-notification.md)
 
-[アイドル状態の通知を中断する選択的 NDIS のキャンセル](canceling-the-ndis-selective-suspend-idle-notification.md)
+[NDIS の選択的中断のアイドル通知をキャンセルしています](canceling-the-ndis-selective-suspend-idle-notification.md)
 
-[アイドル状態の通知を中断する選択的 NDIS の完了](completing-the-ndis-selective-suspend-idle-notification.md)
+[NDIS の選択的中断のアイドル通知を完了しています](completing-the-ndis-selective-suspend-idle-notification.md)
 
  
 

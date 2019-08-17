@@ -1,35 +1,31 @@
 ---
-title: システム エリア ネットワーク
-description: システム エリア ネットワーク
+title: システムエリアネットワークの概要
+description: システムエリアネットワークの概要
 ms.assetid: 6fbcc1d5-151d-4f17-8df9-79a463e3c149
 keywords:
-- システム エリア ネットワーク WDK
+- システムエリアネットワーク WDK
 - SAN WDK
-- WDK San 接続
-- WDK の San のアドレス
-- リンクのコンピューター クラスター WDK San
+- WDK San の接続
+- WDK San に対処する
+- コンピュータクラスターの WDK San のリンク
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d792c2c4a6809b794b8e41a84c03ad01a915bf13
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4f8bd24f7e21ecdf9dbb3b2e5422e9a4f09738c0
+ms.sourcegitcommit: fec48fa5342d9cd4cd5ccc16aaa06e7c3d730112
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362542"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69565730"
 ---
-# <a name="system-area-networks"></a>システム エリア ネットワーク
+# <a name="system-area-networks-overview"></a>システムエリアネットワークの概要
 
-
-
-
-
-A*システム エリア ネットワーク*(SAN) は、高速で高性能な接続によってリンクされているデバイスのグループ。 SAN 接続によって割り当てられている TCP/IP 各 SAN ネットワーク インターフェイス コント ローラー (NIC) をデータ ルーティングを決定するインターネット プロトコル (IP) アドレスを使用します。 SAN に組み込まれている、信頼性の高い、トランスポートを使用してもデータ配信を行います。 SAN 含めることができます、たとえば、クライアントとサーバーのコンピューターのクラスター。
+*System Area Network* (SAN) は、高速で高パフォーマンスな接続によってリンクされるデバイスのグループです。 SAN 接続では、各 SAN ネットワークインターフェイスコントローラー (NIC) に TCP/IP によって割り当てられたインターネットプロトコル (IP) アドレスを使用して、データのルーティングを決定します。 また、SAN に組み込まれている信頼性の高いトランスポートを使用して、データ配信を行います。 SAN には、たとえばクライアントコンピューターとサーバーコンピューターのクラスターを含めることができます。
 
 このセクションの内容:
 
-[システム エリア ネットワークのサポート](supporting-system-area-networks.md)
+[システムエリアネットワークのサポート](supporting-system-area-networks.md)
 
-[Windows ソケットのダイレクト](windows-sockets-direct.md)
+[Windows ソケットダイレクト](windows-sockets-direct.md)
 
  
 

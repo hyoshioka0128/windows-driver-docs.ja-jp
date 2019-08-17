@@ -1,158 +1,158 @@
 ---
-title: Windows こんにちはカメラのドライバー ガイドを表示します。
-description: このトピックでは、赤外線 (IR) カメラの顔認証を有効にする方法について説明し、相手先ブランド供給 (Oem) および独立系ハードウェア ベンダー (Ihv) のためのものです。
+title: Windows Hello カメラドライバーの導入ガイド
+description: このトピックでは、赤外線 (IR) カメラの顔認証を有効にする方法について説明します。これは、相手先ブランド供給メーカー (Oem) および独立系ハードウェアベンダー (Ihv) を対象としています。
 ms.assetid: 5CE619F4-E136-4F8F-8F90-F7F96DE4642E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a5c36f71847f5565d0312721c72f053d8f126260
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9a573ed83a4e40ba1d4d1dee059fcd8a31901035
+ms.sourcegitcommit: fec48fa5342d9cd4cd5ccc16aaa06e7c3d730112
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385357"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69565690"
 ---
 # <a name="camera-driver-bring-up-guide"></a>カメラ ドライバー構築ガイド
 
-このトピックでは、赤外線 (IR) カメラの場合、顔認証を有効にする方法について説明し、相手先ブランド供給 (Oem) および独立系ハードウェア ベンダー (Ihv) が自分のデバイスでこの機能を提供するものです。
+このトピックでは、赤外線 (IR) カメラの顔認証を有効にする方法について説明します。これは、相手先ブランド供給業者 (Oem) と、デバイスにこの機能を提供する独立系ハードウェアベンダー (Ihv) を対象としています。
 
 ## <a name="frameserver"></a>FrameServer
 
-次の図は、FrameServer を通じて新しいドライバー スタックでの顔認証のしくみを示しています。
+次の図は、FrameServer が新しいドライバースタックでどのように動作するかを示しています。
 
-![windows こんにちはおよび frameserver](images/windows-hello-device-model.png)
+![windows hello および frameserver](images/windows-hello-device-model.png)
 
-## <a name="face-authentication-ddis"></a>顔認証 Ddi
+## <a name="face-authentication-ddis"></a>顔認証 DDIs
 
-Windows 10 バージョン 1607 を Windows こんにちはをサポートするために使用できる新しい 2 つの顔認証 DDI コンストラクトは。
+Windows 10 バージョン1607では、Windows Hello をサポートする2つの新しい face authentication DDI コンストラクトが用意されています。
 
--   **KSPROPERTY\_CAMERACONTROL\_拡張\_FACEAUTH\_モード**
+-   **KSK プロパティ\_CAMERACONTROL\_EXTENDED\_FACEAUTHモード\_**
 
-    このプロパティ ID は有効にして、次のフラグを使用して、ドライバーでの顔認証の構成を使用します。
+    このプロパティ ID は、次のフラグを使用してドライバーで顔認証を有効にし、構成するために使用されます。
 
-    -   **KSCAMERA\_EXTENDEDPROP\_FACEAUTH\_モード\_無効になっています。**
+    -   **KSCAMERA\_EXTENDEDPROP\_FACEAUTH\_モード\_が無効になりました**
 
-    -   **KSCAMERA\_EXTENDEDPROP\_FACEAUTH\_MODE\_ALTERNATIVE\_FRAME\_ILLUMINATION**
+    -   **KSCAMERA\_EXTENDEDPROP\_FACEAUTH\_モードの代替\_フレーム照明\_\_**
 
-    -   **KSCAMERA\_EXTENDEDPROP\_FACEAUTH\_モード\_バック グラウンド\_減算**
+    -   **KSCAMERA\_EXTENDEDPROP\_FACEAUTH\_MODEバックグラウンド\_減算\_**
 
-    このコントロールは、ビット フラグを使用して、顔の認証モードを設定する方法の詳細については、次を参照してください、 [ **KSPROPERTY\_CAMERACONTROL\_拡張\_FACEAUTH\_モード。** ](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-extended-faceauth-mode)トピック。
+    このコントロールの詳細と、ビットフラグを使用して顔認証モードを設定する方法の詳細については、「 [**ksk プロパティ\_CAMERACONTROL\_\_EXTENDED FACEAUTH\_mode**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-extended-faceauth-mode) 」を参照してください。
 
--   **MF\_CAPTURE\_METADATA\_FRAME\_ILLUMINATION**
+-   **MF\_キャプチャ\_メタデータ\_フレーム\_の照明**
 
-    IR のカメラの場合は、このメタデータ属性では、フレームがアクティブな IR 照明を使用していることを指定します。 詳細については、次を参照してください。、**必須のメタデータ属性**テーブルに、[フォト キャプチャ フィードバック](standardized-extended-controls-.md#photo-capture-feedback-applied-device-settings)のセクション、[カメラ コントロールを拡張](standardized-extended-controls-.md)トピック。
+    IR カメラのこのメタデータ属性は、フレームがアクティブな IR 照明を使用していることを指定します。 詳細については、「 [Capture Stats Metadata attributes](mf-capture-metadata.md) 」トピックの「必須メタデータ属性」の表を参照してください。
 
 ## <a name="usb-camera-support"></a>USB カメラのサポート
 
-赤外線デバイスでカメラの場合、顔認証を有効にするには、USB ビデオ クラス (UVC) 拡張機能の単位を DeviceMFT コンポーネントが正しく構成されているを提供する必要があります。
+デバイスで赤外線カメラの顔認証を有効にするには、適切に構成された DeviceMFT コンポーネントと USB Video Class (UVC) 拡張機能ユニットを提供する必要があります。
 
-### <a name="configure-the-devicemft-component"></a>DeviceMFT コンポーネントを構成します。
+### <a name="configure-the-devicemft-component"></a>DeviceMFT コンポーネントの構成
 
-開始点としてお使いのデバイスで顔認証をサポートしている DeviceMFT コンポーネントを構築することができますを使用する、 [sampledevicemft](https://github.com/Microsoft/Windows-driver-samples/tree/master/avstream/sampledevicemft)サンプル、 [Windows ドライバー サンプル](https://github.com/Microsoft/Windows-driver-samples)リポジトリGitHub します。
+デバイスで顔認証をサポートする DeviceMFT コンポーネントを構築するための出発点として、GitHub の[Windows ドライバーサンプル](https://github.com/Microsoft/Windows-driver-samples)リポジトリにある[sampledevicemft](https://github.com/Microsoft/Windows-driver-samples/tree/master/avstream/sampledevicemft)サンプルを使用できます。
 
-ドライバーのサンプルを変更するには、ダウンロードして抽出[Windows ドライバーのサンプル-master.zip](https://github.com/Microsoft/Windows-driver-samples/archive/master.zip)、または、開発用コンピューターに Windows ドライバーのサンプル リポジトリを複製する git を使用します。 移動し、 **sampledevicemft**サンプル、 **avstream**ソース コードのフォルダーと、次のサンプルに変更を行います。
+ドライバーサンプルを変更するには、 [Windows-driver-samples-master](https://github.com/Microsoft/Windows-driver-samples/archive/master.zip)をダウンロードして抽出するか、git を使用して Windows ドライバーサンプルリポジトリを開発用コンピューターに複製します。 **Avstream**フォルダーにある**sampledevicemft**サンプルに移動し、サンプルソースコードに次の変更を加えます。
 
-1.  DeviceMFT コンポーネントのソースの種類の情報を追加します。
+1.  DeviceMFT コンポーネントでソースの種類の情報を追加する
 
-2.  タグ DeviceMFT コンポーネントで照明フラグ
+2.  DeviceMFT コンポーネントの照明フラグにタグを付ける
 
-3.  次のセクションで作成 UVC 拡張ユニットとの通信に DeviceMFT コンポーネントで IKSControl を変換します。
+3.  DeviceMFT コンポーネントの Iksk コントロールを変換し、次のセクションで作成する UVC 拡張機能ユニットと通信します。
 
-### <a name="build-a-usb-video-class-uvc-extension-unit"></a>USB ビデオ クラス (UVC) 拡張機能ユニットを作成します。
+### <a name="build-a-usb-video-class-uvc-extension-unit"></a>USB Video Class (UVC) 拡張機能ユニットを作成する
 
-デバイスの UVC 拡張ユニットをビルドする手順については、[単位の拡張機能サンプル コントロールを作成](building-the-extension-unit-sample-control.md)です。 このトピックでは、必要なプロジェクト ファイルを作成する方法について説明し、サンプル コードで、次のトピックへのリンクを提供します。
+デバイスの UVC 拡張機能ユニットをビルドするには、「[拡張機能単体サンプルコントロールのビルド](building-the-extension-unit-sample-control.md)」の手順に従います。 このトピックでは、必要なプロジェクトファイルの作成について説明し、次のトピックのサンプルコードへのリンクを示します。
 
-[UVC 拡張機能のユニットのインターフェイスのサンプル](sample-interface-for-uvc-extension-units.md)(が含まれています*Interface.idl*)
+[UVC 拡張機能ユニットのサンプルインターフェイス](sample-interface-for-uvc-extension-units.md)( *.idl を*含む)
 
-[サンプル拡張ユニット プラグイン DLL](sample-extension-unit-plug-in-dll.md) (が含まれています*Xuproxy.h*と*Xuproxy.cpp*)
+[サンプル拡張機能単体プラグイン DLL](sample-extension-unit-plug-in-dll.md)( *xuproxy .h*と*xuproxy .cpp*を含む)
 
-[UVC 拡張機能の単位用のレジストリ エントリのサンプル](sample-registry-entry-for-uvc-extension-units.md)(が含まれています*Xusample.rgs*)
+[UVC 拡張機能ユニットのサンプルレジストリエントリ](sample-registry-entry-for-uvc-extension-units.md)( *Xusample .rgs を*含む))
 
-[サンプル アプリケーション UVC 拡張ユニット](sample-application-for-uvc-extension-units.md)(が含まれています*TestApp.cpp*)
+[UVC 拡張機能ユニットのサンプルアプリケーション](sample-application-for-uvc-extension-units.md)( *TestApp を*含む)
 
-[拡張機能単位にイベントを自動更新をサポートしています。](supporting-autoupdate-events-with-extension-units.md)
+[拡張機能ユニットを使用した自動更新イベントのサポート](supporting-autoupdate-events-with-extension-units.md)
 
-[サンプル拡張機能ユニット記述子](sample-extension-unit-descriptor.md)
+[拡張機能の単位記述子のサンプル](sample-extension-unit-descriptor.md)
 
-[UVC INF ファイルを提供します。](providing-a-uvc-inf-file.md)
+[UVC INF ファイルの提供](providing-a-uvc-inf-file.md)
 
-参照してください、[拡張ユニット プラグイン アーキテクチャ](extension-unit-plug-in-architecture.md)サンプル コードのモジュールの動作の詳細についてはトピック。
+サンプルコードモジュールを連携させる方法の詳細については、[拡張機能単体プラグインアーキテクチャ](extension-unit-plug-in-architecture.md)に関するトピックを参照してください。
 
 ## <a name="inf-file-entries"></a>INF ファイルのエントリ
 
 
-UVC デバイスを登録する**KSCATEGORY\_センサー\_カメラ**センサーのカメラの昇格フラグを指定する必要があります。
+**KSCATEGORY\_センサー\_カメラ**で uvc デバイスを登録するには、センサーカメラの昇格フラグを指定する必要があります。
 
 ```INF
 HKR,,SensorCameraMode,0x00010001,0x00000001
 ```
 
-RGB ストリームがあるないため、このカメラ通常のカメラ アプリからを非表示には、ようスキップ列挙型のフラグを使用します。
+RGB ストリームがないため、このカメラを通常のカメラアプリから非表示にするには、次のように、skip 列挙フラグを使用します。
 
 ```INF
 HKR,,SkipCameraEnumeration,0x00010001,0x00000001
 ```
 
-これにより、カメラから**KSCATEGORY\_ビデオ**、従来の列挙体を通常のカメラ アプリで列挙されてから、ブロックされます。
+これにより、カメラ**が\_KSCATEGORY ビデオ**から削除されます。これにより、通常のカメラアプリによる従来の列挙によって、このカメラが列挙されるのを防ぐことができます。
 
-両方の**SkipCameraEnumeration**と**SensorCameraMode**でエントリを配置する必要があります、 **DDInstall.HW** INF ファイルのセクション。
+**SkipCameraEnumeration**と**SensorCameraMode**の両方のエントリは、INF ファイルの**ddinstall. HW**セクションに配置する必要があります。
 
-## <a name="hlk-tests-for-kscategorysensorcamera-to-assist-driver-testing"></a>KSCATEGORY HLK テスト\_センサー\_ドライバーのテストを支援するためにカメラ
+## <a name="hlk-tests-for-kscategory_sensor_camera-to-assist-driver-testing"></a>ドライバーのテストを\_支援\_する KSCATEGORY センサーカメラの HLK テスト
 
 
-ハードウェア ロゴ キット (HLK) のテストは、IR および RGB の両方のカメラ モジュールに必要です。 このテストは、Windows こんにちは顔認証に使用される RGB と IR のカメラの基本的な機能を確認します。 RGB カメラの要件は HLK テスト スイートで既に指定されています。
+ハードウェアロゴキット (HLK) のテストは、IR および RGB カメラモジュールの両方に必要です。 このテストでは、Windows Hello face authentication で使用される RGB および IR カメラの基本機能を確認します。 RGB カメラの要件は、HLK テストスイートで既に指定されています。
 
-これらは、IR カメラ モジュールを有効にするのに渡す必要があるテストです。
+IR カメラモジュールを有効にするために渡す必要があるテストは次のとおりです。
 
-1.  KS センサー カテゴリのすべてのカメラを列挙します。
+1.  すべての KS センサーカテゴリカメラを列挙します:
 
-    -   IR のストリームをサポートするデバイスがセンサーの下にする必要がある\_カメラのカテゴリ。
+    -   IR ストリームをサポートするデバイスは、[センサー\_カメラ] カテゴリの下にある必要があります。
 
-    -   RGB のストリームをサポートするデバイスは、ビデオの下に移動して\_カメラのカテゴリ。
+    -   RGB ストリームをサポートするデバイスは、[\_ビデオカメラ] カテゴリの下に表示されます。
 
-    -   IR および RGB のストリームをサポートする、1 つのカメラ デバイスに対してのみ両方 KSCAMERA カテゴリの下のデバイスを登録する必要があります。センサー\_カメラおよびビデオ\_カメラ。
+    -   IR と RGB ストリームをサポートする1つのカメラデバイスに対してのみ、デバイスを両方の KSCAMERA カテゴリに登録する必要があります。センサー\_カメラとビデオ\_カメラ。
 
-2.  検索のストリームが、 **MF\_DEVICESTREAM\_属性\_FACEAUTH\_機能**属性が定義されています。
+2.  次のように、 **MF\_devicestream\_attribute\_FACEAUTH\_機能**属性が定義されているストリームを検索します。
 
-    -   ストリームが存在しない場合、 **MF\_DEVICESTREAM\_属性\_FACEAUTH\_機能**属性が定義されている場合、このテストをスキップします。
+    -   どのストリームにも、 **MF\_devicestream\_attribute\_FACEAUTH\_機能**属性が定義されていない場合は、テストをスキップします。
 
-    -   複数のストリームがある場合、 **MF\_DEVICESTREAM\_属性\_FACEAUTH\_機能**属性が定義されている場合、1 つだけストリームする必要があります Windows こんにちは対応として、テストは失敗します。
+    -   複数のストリームで、 **MF\_devicestream\_attribute\_FACEAUTH\_機能**属性が定義されている場合、テストは失敗します。これは、Windows Hello 対応のストリームが1つだけであるためです。
 
-    -   場合**MF\_DEVICESTREAM\_属性\_FRAMESOURCE\_型**されませんが設定されている IR をこのストリームのテストに失敗がこのストリームで RGB メディアの種類を指定できますできません。
+    -   このストリームに対して、 **\_MF\_devicestream\_\_属性の framesource の種類**が IR に設定されていない場合、このストリームには RGB メディアの種類が存在しないため、テストは失敗します。
 
-    -   このストリームを選択し、メディアの種類が Windows こんにちは対応 (MJPG/L8/NV12) と解像度が 320 x 320 ピクセル以上のことを検証します。
+    -   このストリームを選択し、メディアの種類が Windows Hello 対応 (MJPG/L8/NV12) であり、解像度が 320 x 320 ピクセル以上であることを確認します。
 
-        1.  顔認証プロファイルがサポートされている場合は、プロファイルのメディアの種類には、このストリームを検証します。
+        1.  Face Authentication プロファイルがサポートされている場合は、プロファイルメディアの種類に対してこのストリームを検証します。
 
-        2.  顔認証プロファイルがサポートされていない場合は、このストリームの既定のメディアの種類を検証します。
+        2.  Face Authentication プロファイルがサポートされていない場合は、このストリームの既定のメディアの種類を検証します。
 
-    -   顔認証 DDI 内のプロパティの 1 つに対するサポートを確認します。照らさ/未適用 illuminated またはアンビエント減算します。
+    -   Face authentication DDI で、次のいずれかのプロパティがサポートされていることを確認します。照明/非光またはアンビエント減算。
 
-    -   サポートされている 1 つに、KS プロパティを設定します。
+    -   KS プロパティを、サポートされているものに設定します。
 
-    -   ストリーミングを開始します。
+    -   ストリーミングの開始
 
 3.  実行時のプロパティを確認します。
 
-    -   タイムスタンプの有効桁数 (メタ データでの顔認証のプレビューのテスト) を確認します。
+    -   タイムスタンプの精度を確認します (Meta Data による顔認証のプレビューテスト)。
 
-    -   起動がより小さい 500 ミリ秒 (メタ データでの顔認証のプレビューのテスト) であることを確認します。
+    -   スタートアップが500ミリ秒未満であることを確認します (Meta Data による顔認証のプレビューテスト)。
 
-    -   次のパラメーターを持つ最小のフレーム レートでのストリーミングを確認します。明るいと 15 15 FPS アンビエント FPS アンビエントまたは 15 FPS 減算、メディア、320 x 320 ピクセル以上の解像度は、サンプルに L8/NV12、正のストライドを入力します。
+    -   次のパラメーターを使用して、ストリーミングを最小フレームレートで検証します。15 FPS の点灯と 15 FPS のアンビエントまたは 15 fps のアンビエント減算、解像度が 320 x 320 ピクセル以上、メディアの種類 L8/NV12、サンプルの肯定 stride。
 
-        1.  明るいプロパティが有効になっている場合は、フレーム (15 FPS で点灯/非-照らさペア フレーム) のメタデータを確認します。
+        1.  "照明" プロパティが有効になっている場合は、フレームのメタデータを確認します (照明された、またはオフになっている、15 FPS のペアのフレーム)。
 
-        2.  減算のアンビエント プロパティが有効になっている場合は、フレーム (15 fps アンビエント フレーム) でメタデータを確認します。
+        2.  アンビエント減算プロパティが有効になっている場合は、フレームにメタデータがないかどうかを確認します (15 FPS のアンビエントフレーム)。
 
 4.  [ストリーミング停止]
 
-5.  Unset KS コントロール
+5.  KS コントロールの設定を解除します。
 
-6.  RGB + IR の同時実行制御: カメラ プロファイルで定義されている場合は、テスト
+6.  RGB + IR の同時実行: カメラプロファイルで定義されているかどうかをテストします
 
-上に示した HLK テストが渡されないと、Microsoft は、OEM に署名されたドライバーを発行しませんし、Windows こんにちはは動作しません。
+上記の HLK テストが渡されない場合、Microsoft は OEM に署名されたドライバーを発行せず、Windows Hello は動作しません。
 
 ## <a name="related-topics"></a>関連トピック
 
 [MediaCapture を使った写真とビデオのキャプチャ](https://docs.microsoft.com/windows/uwp/audio-video-camera/capture-photos-and-video-with-mediacapture)  
 
-[Windows.Media.Capture 名前空間](https://docs.microsoft.com/uwp/api/Windows.Media.Capture)  
+[Windows. Media. 名前空間](https://docs.microsoft.com/uwp/api/Windows.Media.Capture)  

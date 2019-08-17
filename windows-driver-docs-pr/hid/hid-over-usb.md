@@ -1,36 +1,36 @@
 ---
-title: HID over USB
-description: USB は、Windows オペレーティング システムでサポートされている最初の HID トランスポートをしました。
+title: USB 経由の HID の概要
+description: USB は、Windows オペレーティングシステムで最初にサポートされている HID トランスポートです。
 ms.assetid: F892C910-BA33-4795-A803-9D3FD55782BC
 keywords:
-- HID のミニポート ドライバー
+- HID ミニポートドライバー
 - USB
 - USB 1.1
 - USB 2.0
 - USB 3.0
-- USB HID
+- USB、HID
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f9bcebf453540dceeb8d32217a17490373dbbf20
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ff088091329327f6063bba24c7f9c92d4827661b
+ms.sourcegitcommit: fec48fa5342d9cd4cd5ccc16aaa06e7c3d730112
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388807"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69565575"
 ---
-# <a name="hid-over-usb"></a>HID over USB
+# <a name="hid-over-usb-overview"></a>USB 経由の HID の概要
 
 
-USB は、Windows オペレーティング システムでサポートされている最初の HID トランスポートをしました。 受信トレイに対応するドライバーは、Windows 2000 で導入されたし、それ以降すべてのオペレーティング システムで使用できる、されました。
+USB は、Windows オペレーティングシステムで最初にサポートされている HID トランスポートです。 対応する受信トレイドライバーは Windows 2000 で導入され、以降のすべてのオペレーティングシステムで使用可能になりました。
 
-Windows 8 を使用して、USB 上の HID のサポートを続け、タッチパッドやキーボードからセンサーと仕入先の特定のデバイスの種類への HID デバイスの新しいクラスを含めるに拡張されています。
+Windows 8 は、USB 経由の HID を引き続きサポートしています。また、タッチパッド向けからの HID デバイスの新しいクラスと、センサーおよびベンダー固有のデバイスの種類を含むように強化されています。
 
-HID over USB は選択的活用するためにも最適化が中断します。 (この機能は、ベンダー提供の INF または Microsoft オペレーティング システムの記述子を使用してサポートが必要)。
+HID は、選択的中断を活用するように最適化されています。 (この機能を使用するには、ベンダーから提供されている INF または Microsoft オペレーティングシステム記述子によるサポートが必要です)。
 
-USB 経由で HID に最新の更新プログラムがあります。
+USB を使用した HID の最近の更新には、次のものも含まれます。
 
--   USB 1.1 では、USB 2.0 および USB 3.0 サポートします。
--   USB ドライバーの HID は、すべてクライアント Sku の Windows で使用可能な WinPE に含まれています。
+-   USB 1.1、USB 2.0、および USB 3.0 のサポート。
+-   HID over USB ドライバーは、Windows のすべてのクライアント Sku で使用でき、WinPE に含まれています。
 
  
 

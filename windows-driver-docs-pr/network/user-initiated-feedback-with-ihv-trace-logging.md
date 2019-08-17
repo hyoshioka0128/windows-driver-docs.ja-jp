@@ -1,22 +1,22 @@
 ---
-title: IHV トレース ログによるユーザーが開始したフィードバック
-description: このセクションでは、このトピックでは、フィードバック ツールを使用して送信されたユーザーが開始したフィードバック (し) レポートの中に詳細の IHV トレース ログを収集するために必要な手順を説明します。
+title: IHV トレースログを使用したユーザーによるフィードバックの概要
+description: このセクションのこのトピックでは、フィードバックツールを使用して送信されたユーザーによるフィードバック (UIF) レポートで、詳細な IHV トレースログを収集するために必要な手順の概要を示します。
 ms.assetid: BDD02AA2-A771-4AC1-B9D2-E9E8FA073B7A
 ms.date: 06/15/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 28e4767318dff87b7f98c3db24d783f72ac7960c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1910110cc2507a08ece4bbb8ed717b63341eaa98
+ms.sourcegitcommit: fec48fa5342d9cd4cd5ccc16aaa06e7c3d730112
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362494"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69565694"
 ---
-# <a name="user-initiated-feedback-with-ihv-trace-logging"></a>IHV トレース ログによるユーザーが開始したフィードバック
+# <a name="user-initiated-feedback-with-ihv-trace-logging-overview"></a>IHV トレースログを使用したユーザーによるフィードバックの概要
 
-このセクションでは、このトピックでは、フィードバック ツールを使用して送信されたユーザーが開始したフィードバック (し) レポートの中に詳細の IHV トレース ログを収集するために必要な手順を説明します。 フィードバック ツールがログを収集する 2 つの独立したシナリオがあります。 最初のシナリオでは、ユーザーがフィードバックを開始する時に、システムのスナップショットです。 この期間中は、Windows は、WMI の自動ロガーとその他のいくつかのスナップショット データを収集します。 2 番目のシナリオでは、ユーザーの問題を再現する必要があります。 このフィードバックは、中には、Windows は、詳細ログ記録と大きなファイル サイズの再現コードでは、できるだけ多くのデータをキャプチャするロガーを開始します。 このセクションでは、ihv 向けの期待するは、各フィードバック シナリオについて説明します。
+このセクションのこのトピックでは、フィードバックツールを使用して送信されたユーザーによるフィードバック (UIF) レポートで、詳細な IHV トレースログを収集するために必要な手順の概要を示します。 フィードバックツールがログを収集するシナリオは2つあります。 最初のシナリオは、ユーザーがフィードバックを開始した時点でのシステムのスナップショットです。 この期間中、Windows は WMI 自動ロガーとその他のスナップショットデータを収集します。 2番目のシナリオでは、ユーザーが問題を再現します。 このフィードバック中に、Windows は詳細ログ記録を行い、ファイルサイズを大きくして、再現できる限り多くのデータをキャプチャする logger を開始します。 このセクションでは、これらのフィードバックシナリオごとに Ihv が期待することについて説明します。
 
 このセクションの内容
 
-- [ログ記録シナリオ](logging-scenarios.md)
-- [ユーザーによって開始されたフィードバック - 標準モード](user-initiated-feedback-normal-mode.md)
-- [ユーザーが開始したフィードバックの再現コード モード](user-initiated-feedback-repro-mode.md)
+- [ログ記録のシナリオ](logging-scenarios.md)
+- [ユーザーが開始したフィードバック-標準モード](user-initiated-feedback-normal-mode.md)
+- [ユーザーが開始したフィードバック-再現モード](user-initiated-feedback-repro-mode.md)
