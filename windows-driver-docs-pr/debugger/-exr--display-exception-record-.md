@@ -46,15 +46,15 @@ ms.locfileid: "63336755"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>モード</strong></p></td>
+<td align="left"><p><strong>Modes</strong></p></td>
 <td align="left"><p>ユーザー モードでは、カーネル モード</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>ターゲット</strong></p></td>
+<td align="left"><p><strong>Targets</strong></p></td>
 <td align="left"><p>ライブ、クラッシュ ダンプ</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>プラットフォーム</strong></p></td>
+<td align="left"><p><strong>Platforms</strong></p></td>
 <td align="left"><p>すべての</p></td>
 </tr>
 </tbody>
@@ -69,7 +69,7 @@ ms.locfileid: "63336755"
 
 通常取得することができます、*アドレス*を使用して、 [ **! pcr** ](-pcr.md)拡張機能。
 
-**.Exr** 0x1E のバグ チェックをデバッグする多くの場合、コマンドを使用します。 詳細と例では、次を参照してください。 [**バグ チェック 0x1E** ](bug-check-0x1e--kmode-exception-not-handled.md) (KMODE\_例外\_いない\_処理済み)。
+**.Exr** 0x1E のバグ チェックをデバッグする多くの場合、コマンドを使用します。 詳細と例では、[**バグ チェック 0x1E** ](bug-check-0x1e--kmode-exception-not-handled.md) (KMODE_EXCEPTION_NOT_HANDLED)を参照してください。
 
  
 
