@@ -20,7 +20,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 07/02/2019
 ms.locfileid: "67519621"
 ---
-# <a name="bug-check-0x1e-kmodeexceptionnothandled"></a>バグ チェック 0x1E:KMODE\_例外\_いない\_処理済み
+# <a name="bug-check-0x1e-kmodeexceptionnothandled"></a>バグ チェック 0x1E:KMODE_EXCEPTION_NOT_HANDLED
 
 
 KMODE\_例外\_いない\_処理済みのバグ チェックが 0x0000001E の値を持ちます。 これは、カーネル モードのプログラムがエラー ハンドラーをキャッチされなかった例外を生成することを示します。
@@ -29,7 +29,7 @@ KMODE\_例外\_いない\_処理済みのバグ チェックが 0x0000001E の�
 > このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
-## <a name="kmodeexceptionnothandled-parameters"></a>KMODE\_例外\_いない\_処理済みのパラメーター
+## <a name="kmodeexceptionnothandled-parameters"></a>KMODE_EXCEPTION_NOT_HANDLEDのパラメーター
 
 
 <table>
@@ -72,15 +72,15 @@ KMODE\_例外\_いない\_処理済みのバグ チェックが 0x0000001E の�
 
 一般的な例外コードは次のとおりです。
 
--   0x80000002:ステータス\_DATATYPE\_不整合
+-   0x80000002: STATUS_DATATYPE_MISALIGNMENT
 
     アラインされていないデータの参照が発生しました。
 
--   0x80000003:ステータス\_ブレークポイント
+-   0x80000003: STATUS_BREAKPOINT
 
     システムにカーネル デバッガーが関連付けられていない場合、ブレークポイントまたはアサートが発生しました。
 
--   0xC0000005:ステータス\_アクセス\_違反
+-   0xC0000005: STATUS_ACCESS_VIOLATION
 
     メモリ アクセス違反が発生しました。 (パラメーター 4 のバグ チェックは、ドライバーにアクセスしようとするアドレスです)。
 
