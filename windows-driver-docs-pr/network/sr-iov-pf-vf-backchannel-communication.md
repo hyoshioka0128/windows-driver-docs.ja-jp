@@ -1,28 +1,28 @@
 ---
-title: SR-IOV PF/VF バックチャネル通信
-description: SR-IOV PF/VF バックチャネル通信
+title: SR-IOV PF/VF バックチャネル通信の概要
+description: SR-IOV PF/VF バックチャネル通信の概要
 ms.assetid: 66D40452-1286-449E-BD6B-AFAD466E03A1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1416a113c4563a2c54963b5fc4930d9175cc88c7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 973626fc5f4a19a39892412b1c0797bba06d5dd1
+ms.sourcegitcommit: fec48fa5342d9cd4cd5ccc16aaa06e7c3d730112
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346038"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69565636"
 ---
-# <a name="sr-iov-pfvf-backchannel-communication"></a>SR-IOV PF/VF バックチャネル通信
+# <a name="sr-iov-pfvf-backchannel-communication-overview"></a>SR-IOV PF/VF バックチャネル通信の概要
 
 
-シングル ルート I/O 仮想化 (SR-IOV) のインターフェイスは、通信チャネルを提供します。 または*backchannel*、ミニポート ドライバー、PCI Express (PCIe) 仮想機能 (VF) と PCIe 物理機能 (PF) の間。 各 VF ミニポート ドライバーは、PF ミニポート ドライバーに、バック チャネル経由で要求を発行できます。 PF のミニポート ドライバーは、個々 の VF のミニポート ドライバーのバック チャネル経由で状態の通知を発行できます。
+シングルルート i/o 仮想化 (SR-IOV) インターフェイスは、PCI Express (PCIe) 仮想機能 (VF) と PCIe 物理機能 (PF) のミニポートドライバーの間に通信チャネル ( *backchannel*) を提供します。 各 VF ミニポートドライバーは、バックチャネル経由で PF ミニポートドライバーに要求を発行できます。 PF ミニポートドライバーは、バックチャネル経由で個別の VF ミニポートドライバーに状態通知を発行できます。
 
-バック チャネル インターフェイスを介して PF と VF のミニポート ドライバーの間で交換されるデータの使用では、 *VF 構成ブロック*します。 各 VF 構成ブロックは、各ブロックに独自の書式設定、長さ、およびブロック識別子がである、プロセス間通信 (IPC) メッセージと似た概念です。 独立系ハードウェア ベンダー (IHV) は、PF と VF ミニポート ドライバーの 1 つ以上の VF 構成ブロックを定義できます。
+Backchannel インターフェイス経由で PF および VF ミニポートドライバー間で交換されるデータには、 *VF 構成ブロック*を使用する必要があります。 各 VF 構成ブロックは、概念的にはプロセス間通信 (IPC) メッセージと似ていますが、各ブロックには専用の形式、長さ、ブロック識別子があります。 独立系ハードウェアベンダー (IHV) は、PF および VF ミニポートドライバー用に1つまたは複数の VF 構成ブロックを定義できます。
 
 ここでは、次のトピックについて説明します。
 
-[VF のミニポート ドライバーからのバック チャネル通信](backchannel-communication-from-a-vf-miniport-driver.md)
+[VF ミニポートドライバーからのバックチャネル通信](backchannel-communication-from-a-vf-miniport-driver.md)
 
-[PF のミニポート ドライバーからのバック チャネル通信](backchannel-communication-from-the-pf-miniport-driver.md)
+[PF ミニポートドライバーからのバックチャネル通信](backchannel-communication-from-the-pf-miniport-driver.md)
 
  
 
