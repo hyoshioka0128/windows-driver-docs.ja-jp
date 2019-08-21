@@ -24,6 +24,8 @@
       href: supporting-asynchronous-i-o.md
     - name: サンプル カーネルモード ドライバー
       href: sample-kernel-mode-drivers.md
+    - name: Surface Team ドライバー開発ベスト プラクティス
+      href: surface-team-driver-development-best-practices.md
 - name: コンポーネント
   items:
     - name: Windows カーネルモード オブジェクト マネージャー
