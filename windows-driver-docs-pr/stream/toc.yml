@@ -3,29 +3,61 @@
 - name: 共同インストーラーを使用しない USB デバイスのデバイス ファームウェアの更新
   href: device-firmware-update-for-usb-devices-without-using-a-co-installer.md
 - name: USB ビデオ クラス (UVC) カメラ実装ガイド
-  href: uvc-camera-implementation-guide.md
-- name: フレーム サーバーのカスタム メディア ソース
-  href: frame-server-custom-media-source.md
-- name: 360 カメラのビデオ キャプチャ
-  href: 360-camera-video-capture.md
-- name: カメラの組み込み
-  href: camera-intrinsics.md
-- name: UVC デバイス用の DShow Bridge 実装ガイダンス
-  href: dshow-bridge-implementation-guidance-for-usb-video-class-devices.md
-- name: ユニバーサル カメラ ドライバーのカメラ クラス INF ファイルの設定
-  href: camera-driver-inf-file-class-setting.md
-- name: USB ビデオ クラス (UVC) ドライバー実装チェックリスト
   items:
+    - name: USB ビデオ クラス (UVC) カメラ実装ガイド
+      href: uvc-camera-implementation-guide.md
+    - name: カメラの組み込み
+      href: camera-intrinsics.md
+    - name: カメラ キャプチャのメタデータ
+      href: mf-capture-metadata.md
+    - name: カメラ デバイスの向き
+      href: camera-device-orientation.md
+    - name: カメラ プロファイル
+      href: camera-profiles.md
+    - name: UVC デバイス用の DShow Bridge 実装ガイダンス
+      href: dshow-bridge-implementation-guidance-for-usb-video-class-devices.md
     - name: USB ビデオ クラス (UVC) ドライバー実装チェックリスト
       href: uvc-driver-implementation-checklist.md
     - name: デバイス MFT 設計ガイド
       href: dmft-design.md
     - name: UVC での赤外線ストリームのサポート
       href: infrared-stream-support-in-uvc.md
+    - name: ユニバーサル カメラ ドライバーのカメラ クラス INF ファイルの設定
+      href: camera-driver-inf-file-class-setting.md
     - name: USB ビデオ クラス 1.5 仕様に対する Microsoft の拡張機能
       href: uvc-extensions-1-5.md
-- name: カメラ デバイスの向き
-  href: camera-device-orientation.md
+- name: Windows Hello カメラ ドライバー構築ガイド
+  href: windows-hello-camera-driver-bring-up-guide.md
+- name: 拡張カメラ コントロール
+  href: standardized-extended-controls-.md
+- name: フレーム サーバーのカスタム メディア ソース
+  href: frame-server-custom-media-source.md
+- name: 360 カメラのビデオ キャプチャ
+  href: 360-camera-video-capture.md
+- name: フラッシュライト (照明) のサポート
+  href: flashlight-support.md
+- name: ストリーミング メディアのサンプル
+  href: streaming-media-samples.md
+- name: Windows 10 組み込みカメラ アプリの設定に関する OEM ガイダンス
+  href: oem-guidance-on-settings-for-the-windows-10-in-box-camera-app.md
+- name: ビデオ手ブレ補正のレジストリ設定
+  href: oem-guidance-on-registry-keys-for-video-stabilization.md
+- name: Windows 10 用の汎用カメラ ドライバー モデル
+  items:
+    - name: Windows 10 用の汎用カメラ ドライバー モデル
+      href: windows-10-technical-preview-camera-drivers-design-guide.md
+    - name: Windows 10 用の新しいカメラ ドライバー インターフェイス
+      items:
+        - name: Windows 10 用の新しいカメラ ドライバー インターフェイス
+          href: windows-10-technical-preview-camera-drivers-reference.md
+        - name: Windows 10 用の新しいカメラ ドライバー コントロール
+          href: camera-driver-controls.md
+        - name: Windows 10 用の新しいカメラ ドライバーの列挙
+          href: camera-driver-enumerations.md
+        - name: Windows 10 用の新しいカメラ ドライバー機能
+          href: camera-driver-functions.md
+        - name: Windows 10 用の新しいカメラ ドライバー構造
+          href: camera-driver-structures.md
 - name: AVStream ミニドライバー設計ガイド
   items:
     - name: AVStream ミニドライバー設計ガイド
@@ -708,32 +740,6 @@
       href: interface-handler-plug-in.md
     - name: プロパティ ページ プラグイン
       href: property-page-plug-in.md
-- name: ストリーミング メディアのサンプル
-  href: streaming-media-samples.md
-- name: Windows 10 組み込みカメラ アプリの設定に関する OEM ガイダンス
-  href: oem-guidance-on-settings-for-the-windows-10-in-box-camera-app.md
-- name: ビデオ手ブレ補正のレジストリ設定
-  href: oem-guidance-on-registry-keys-for-video-stabilization.md
-- name: 拡張カメラ コントロール
-  href: standardized-extended-controls-.md
-- name: カメラ ドライバー構築ガイド
-  href: windows-hello-camera-driver-bring-up-guide.md
-- name: Windows 10 用の汎用カメラ ドライバー モデル
-  items:
-    - name: Windows 10 用の汎用カメラ ドライバー モデル
-      href: windows-10-technical-preview-camera-drivers-design-guide.md
-    - name: Windows 10 用の新しいカメラ ドライバー インターフェイス
-      items:
-        - name: Windows 10 用の新しいカメラ ドライバー インターフェイス
-          href: windows-10-technical-preview-camera-drivers-reference.md
-        - name: Windows 10 用の新しいカメラ ドライバー コントロール
-          href: camera-driver-controls.md
-        - name: Windows 10 用の新しいカメラ ドライバーの列挙
-          href: camera-driver-enumerations.md
-        - name: Windows 10 用の新しいカメラ ドライバー機能
-          href: camera-driver-functions.md
-        - name: Windows 10 用の新しいカメラ ドライバー構造
-          href: camera-driver-structures.md
 - name: AVStream のプロパティ セット
   items:
     - name: AVStream のプロパティ セット

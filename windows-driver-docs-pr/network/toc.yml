@@ -2,13 +2,13 @@
   href: index.md
 - name: ネットワーク ドライバーの概要
   items:
-    - name: ネットワーク ドライバーの概要
+    - name: ネットワーク ドライバーの概要に関するトピック
       href: introduction-to-network-drivers.md
     - name: NDIS ドライバーの開発のロードマップ
       href: roadmap-for-developing-ndis-drivers.md
     - name: ネットワーク ドライバー設計ガイドの使用
       items:
-        - name: ネットワーク ドライバー設計ガイドの使用
+        - name: ネットワーク ドライバー設計ガイドのナビゲーション
           href: using-the-network-driver-design-guide.md
         - name: ミニポート ドライバーについて
           href: learning-about-miniport-drivers.md
@@ -20,11 +20,9 @@
           href: learning-about-intermediate-drivers.md
     - name: カーネル モード ドライバーのネットワーク アーキテクチャ
       items:
-        - name: カーネル モード ドライバーのネットワーク アーキテクチャ
-          href: network-architecture-for-kernel-mode-drivers.md
         - name: Windows ネットワーク アーキテクチャと OSI モデル
           href: windows-network-architecture-and-the-osi-model.md
-        - name: NDIS ドライバーの種類
+        - name: NDIS ドライバー
           items:
             - name: NDIS ドライバーの種類
               href: ndis-drivers.md
@@ -38,13 +36,11 @@
               href: ndis-intermediate-drivers.md
         - name: ネットワーク ドライバー環境
           items:
-            - name: ネットワーク ドライバー環境
-              href: network-driver-environments.md
             - name: ネットワーク ドライバーのコネクションレス環境
               href: connectionless-environment-for-network-drivers.md
             - name: ネットワーク ドライバーの接続指向環境
               href: connection-oriented-environment-for-network-drivers.md
-    - name: ネットワーク ドライバーのプログラミングに関する考慮事項
+    - name: ネットワーク ドライバーのプログラミングのガイドライン
       items:
         - name: ネットワーク ドライバーのプログラミングに関する考慮事項
           href: network-driver-programming-considerations.md
@@ -68,7 +64,7 @@
           href: asynchronous-i-o-and-completion-functions-in-network-drivers.md
         - name: ネットワーク ドライバーのセキュリティの問題
           href: security-issues-for-network-drivers.md
-    - name: ドライバー スタック管理
+    - name: NDIS ドライバー スタックの概要
       items:
         - name: ドライバー スタック管理
           href: driver-stack-management.md
@@ -82,8 +78,6 @@
           href: module-states-of-a-filter-driver.md
         - name: NDIS スタック操作
           items:
-            - name: NDIS スタック操作
-              href: ndis-stack-operations.md
             - name: ドライバー スタックの起動
               href: starting-a-driver-stack.md
             - name: ドライバー スタックの停止
@@ -94,11 +88,11 @@
               href: restarting-a-driver-stack.md
             - name: 実行中のドライバー スタックの変更
               href: modifying-a-running-driver-stack.md
-    - name: NET_BUFFER アーキテクチャ
+    - name: NET_BUFFER の設計概念
       items:
         - name: NET_BUFFER アーキテクチャ
           href: net-buffer-architecture.md
-        - name: ネットワーク データ構造
+        - name: NDIS のネットワーク データ構造
           items:
             - name: ネットワーク データ構造
               href: network-data-structures.md
@@ -108,7 +102,7 @@
               href: net-buffer-list-structure.md
             - name: NET_BUFFER_LIST_CONTEXT 構造
               href: net-buffer-list-context-structure.md
-        - name: リトリートおよびアドバンス操作
+        - name: NET_BUFFER リトリートおよびアドバンス操作
           items:
             - name: リトリートおよびアドバンス操作
               href: retreat-and-advance-operations.md
@@ -120,7 +114,7 @@
           href: obtaining-pool-handles.md
         - name: ディスパッチ IRQL の追跡
           href: dispatch-irql-tracking.md
-        - name: 送信および受信操作
+        - name: ネットワーク データの転送
           items:
             - name: 送信および受信操作
               href: send-and-receive-operations.md
@@ -132,7 +126,7 @@
               href: receiving-network-data.md
             - name: NDIS パケットのループ バック
               href: looping-back-ndis-packets.md
-        - name: イーサネット送信および受信操作
+        - name: イーサネットでのネットワーク データの転送
           items:
             - name: イーサネット送信および受信操作
               href: ethernet-send-and-receive-operations.md
@@ -140,7 +134,7 @@
               href: sending-ethernet-frames.md
             - name: 受信済みイーサネット フレームの表示
               href: indicating-received-ethernet-frames.md
-        - name: 派生 NET_BUFFER_LIST 構造
+        - name: 派生 NET_BUFFER_LIST 構造の概要
           items:
             - name: 派生 NET_BUFFER_LIST 構造
               href: derived-net-buffer-list-structures.md
@@ -154,7 +148,7 @@
               href: reassembled-net-buffer-list-structures.md
     - name: NDIS PDPI の概要
       href: introduction-to-ndis-pdpi.md
-- name: NDIS バージョン ガイド
+- name: NDIS バージョン
   items:
     - name: NDIS バージョン ガイド
       href: ndis-version-guide.md
@@ -162,19 +156,17 @@
       href: overview-of-ndis-versions.md
     - name: NDIS 6.0 以降の概要
       items:
-        - name: NDIS 6.0 以降の概要
-          href: introductions-to-ndis-6-0-and-later.md
         - name: NDIS 6.83 の概要
           href: introduction-to-ndis-6-83.md
         - name: NDIS 6.82 の概要
           href: introduction-to-ndis-6-82.md
         - name: NDIS 6.81 の概要
           href: introduction-to-ndis-6-81.md
-        - name: NDIS 6.80 の概要
+        - name: NDIS 6.80 の変更点
           items:
             - name: NDIS 6.80 の概要
               href: introduction-to-ndis-6-80.md
-            - name: NDIS 6.80 の同期 OID 要求インターフェイス
+            - name: 同期 OID 要求インターフェイス
               items:
                 - name: NDIS 6.80 の同期 OID 要求インターフェイス
                   href: synchronous-oid-request-interface-in-ndis-6-80.md
@@ -190,7 +182,7 @@
           href: introduction-to-ndis-6-60.md
         - name: NDIS 6.50 の概要
           href: introduction-to-ndis-6-50.md
-        - name: NDIS 6.40 の概要
+        - name: NDIS 6.40 の変更点
           items:
             - name: NDIS 6.40 の概要
               href: introduction-to-ndis-6-40.md
@@ -200,7 +192,7 @@
               href: using-ndis-6-40-data-structures.md
             - name: NDIS 6.40 ドライバーのコンパイル
               href: compiling-an-ndis-6-40-driver.md
-        - name: NDIS 6.30 の概要
+        - name: NDIS 6.30 の変更点
           items:
             - name: NDIS 6.30 の概要
               href: introduction-to-ndis-6-30.md
@@ -220,7 +212,7 @@
               href: using-ndis-6-30-data-structures.md
             - name: NDIS 6.30 ドライバーのコンパイル
               href: compiling-an-ndis-6-30-driver.md
-        - name: NDIS 6.20 の概要
+        - name: NDIS 6.20 の変更点
           items:
             - name: NDIS 6.20 の概要
               href: introduction-to-ndis-6-20.md
@@ -240,7 +232,7 @@
               href: using-ndis-6-20-data-structures.md
             - name: NDIS 6.20 ドライバーのコンパイル
               href: compiling-an-ndis-6-20-driver.md
-        - name: NDIS 6.1 の概要
+        - name: NDIS 6.1 の変更点
           items:
             - name: NDIS 6.1 の概要
               href: introduction-to-ndis-6-1.md
@@ -258,13 +250,13 @@
               href: using-ndis-6-1-data-structures.md
             - name: NDIS 6.1 ドライバーのコンパイル
               href: compiling-an-ndis-6-1-driver.md
-        - name: NDIS 6.0 の概要
+        - name: NDIS 6.0 の変更点
           items:
             - name: NDIS 6.0 の概要
               href: introduction-to-ndis-6-0.md
             - name: NDIS 6.0 の設計目標
               href: ndis-6-0-design-objectives.md
-            - name: パフォーマンスとスケーラビリティの拡張
+            - name: NDIS 6.0 のパフォーマンスとスケーラビリティの拡張
               items:
                 - name: パフォーマンスとスケーラビリティの拡張
                   href: enhanced-performance-and-scalability.md
@@ -282,7 +274,7 @@
                   href: filter-drivers.md
                 - name: 完全な TCP オフロード
                   href: full-tcp-offload.md
-            - name: 簡略化されたドライバー モデル
+            - name: NDIS 6.0 の簡略化されたドライバー モデル
               items:
                 - name: 簡略化されたドライバー モデル
                   href: simplified-driver-model.md
@@ -296,7 +288,7 @@
                   href: ndis-interface-information.md
                 - name: 作成が簡単なフィルター ドライバー
                   href: easier-to-write-filter-drivers.md
-    - name: NDIS バージョン情報の指定
+    - name: NDIS バージョン情報の指定と取得
       items:
         - name: NDIS バージョン情報の指定
           href: specifying-ndis-version-information.md
@@ -312,8 +304,6 @@
           href: ndis-object-version-issues-for-wmi.md
     - name: NDIS ドライバーの新しい NDIS バージョンへの移植
       items:
-        - name: NDIS ドライバーの新しい NDIS バージョンへの移植
-          href: porting-ndis-drivers-to-newer-ndis-versions.md
         - name: NDIS 6.x ドライバーの NDIS 6.83 への移植
           href: porting-ndis-6-x-drivers-to-ndis-6-83.md
         - name: NDIS 6.x ドライバーの NDIS 6.82 への移植
@@ -330,7 +320,7 @@
           href: porting-ndis-6-x-drivers-to-ndis-6-50.md
         - name: NDIS 6.x ドライバーの NDIS 6.40 への移植
           href: porting-ndis-6-x-drivers-to-ndis-6-40.md
-        - name: NDIS 6.x ドライバーの NDIS 6.30 への移植
+        - name: NDIS 6.30 への移植
           items:
             - name: NDIS 6.x ドライバーの NDIS 6.30 への移植
               href: porting-ndis-6-x-drivers-to-ndis-6-30.md
@@ -342,7 +332,7 @@
               href: summary-of-changes-required-to-port-a-protocol-or-filter-driver-to-ndis-6-30.md
             - name: 中間ドライバーを NDIS 6.30 に移植するために必要な変更の概要
               href: summary-of-changes-required-to-port-an-intermediate-driver-to-ndis-6-30.md
-        - name: NDIS 6.x ドライバーの NDIS 6.20 への移植
+        - name: NDIS 6.20 への移植
           items:
             - name: NDIS 6.x ドライバーの NDIS 6.20 への移植
               href: porting-ndis-6-x-drivers-to-ndis-6-20.md
@@ -362,22 +352,16 @@
               href: summary-of-changes-required-to-port-an-intermediate-driver-to-ndis-6-2.md
 - name: NDIS コア機能
   items:
-    - name: NDIS コア機能
+    - name: NDIS ドライバーおよびサービス
       href: ndis-core-functionality2.md
     - name: NDIS ミニポート ドライバー
       items:
-        - name: NDIS ミニポート ドライバー
-          href: ndis-miniport-drivers.md
         - name: NDIS ミニポート ドライバーの開発のロードマップ
           href: roadmap-for-developing-ndis-miniport-drivers.md
         - name: NDIS ミニポート ドライバーの概要
           items:
-            - name: NDIS ミニポート ドライバーの概要
-              href: introduction-to-ndis-miniport-drivers.md
             - name: NDIS ミニポート ドライバーの種類
               items:
-                - name: NDIS ミニポート ドライバーの種類
-                  href: types-of-ndis-miniport-drivers.md
                 - name: 逆シリアル化された NDIS ミニポート ドライバー
                   href: deserialized-ndis-miniport-drivers.md
                 - name: シリアル化された NDIS ミニポート ドライバー
@@ -390,8 +374,6 @@
               href: network-interface-card-support.md
             - name: ミニポート ドライバー コードの重要な機能
               items:
-                - name: ミニポート ドライバー コードの重要な機能
-                  href: important-features-of-miniport-driver-code.md
                 - name: MiniportXxx 関数
                   href: miniportxxx-functions.md
                 - name: NDIS ライブラリへのリンク
@@ -406,8 +388,6 @@
               href: sample-ndis-miniport-drivers.md
         - name: NDIS ミニポート ドライバーの作成
           items:
-            - name: NDIS ミニポート ドライバーの作成
-              href: writing-ndis-miniport-drivers.md
             - name: ミニポート ドライバーの初期化
               href: initializing-a-miniport-driver.md
             - name: ミニポート ドライバーのアンロード
@@ -420,7 +400,7 @@
               href: halting-a-miniport-adapter.md
             - name: ミニポート アダプターの起動と一時停止
               items:
-                - name: ミニポート アダプターの起動と一時停止
+                - name: ミニポート アダプターの起動と一時停止の概要
                   href: starting-and-pausing-a-miniport-adapter.md
                 - name: アダプターの起動
                   href: starting-an-adapter.md
@@ -428,7 +408,7 @@
                   href: pausing-an-adapter.md
             - name: オプションのミニポート ドライバー サービスの構成
               href: configuring-optional-miniport-driver-services.md
-            - name: ミニポート ドライバーの送信および受信操作
+            - name: ミニポート ドライバーでのネットワーク データの転送
               items:
                 - name: ミニポート ドライバーの送信および受信操作
                   href: miniport-driver-send-and-receive-operations.md
@@ -442,8 +422,6 @@
                   href: indicating-received-data-from-a-miniport-driver.md
             - name: 割り込みの管理
               items:
-                - name: 割り込みの管理
-                  href: managing-interrupts.md
                 - name: 割り込みの登録および登録解除
                   href: registering-and-deregistering-interrupts.md
                 - name: 割り込みの処理
@@ -452,7 +430,7 @@
                   href: synchronizing-with-interrupts.md
                 - name: 割り込み節度
                   href: interrupt-moderation.md
-            - name: ミニポート アダプター OID 要求
+            - name: ミニポート アダプター OID
               items:
                 - name: ミニポート アダプター OID 要求
                   href: miniport-adapter-oid-requests.md
@@ -474,14 +452,10 @@
               href: miniport-adapter-shutdown.md
         - name: ミニポート ドライバー情報の取得および設定と WMI の NDIS サポート
           items:
-            - name: ミニポート ドライバー情報の取得および設定と WMI の NDIS サポート
-              href: obtaining-and-setting-miniport-driver-information-and-ndis-support-for.md
             - name: NDIS 管理情報と OID
               href: ndis-management-information-and-oids.md
             - name: ミニポート ドライバー情報のクエリ
               items:
-                - name: ミニポート ドライバー情報のクエリ
-                  href: querying-miniport-driver-information.md
                 - name: コネクションレス ミニポート ドライバーのクエリ
                   href: querying-a-connectionless-miniport-driver.md
                 - name: 接続指向ミニポート ドライバーのクエリ
@@ -492,8 +466,6 @@
                   href: querying-64-bit-statistics-oids.md
             - name: ミニポート ドライバー情報の設定
               items:
-                - name: ミニポート ドライバー情報の設定
-                  href: setting-miniport-driver-information.md
                 - name: コネクションレス ミニポート ドライバーの情報の設定
                   href: setting-information-for-a-connectionless-miniport-driver.md
                 - name: 接続指向ミニポート ドライバーの情報の設定
@@ -504,7 +476,7 @@
               href: reporting-hardware-status.md
             - name: 接続状態の表示
               href: indicating-connection-status.md
-            - name: WMI の NDIS サポート
+            - name: NDIS ドライバーでの WMI の使用
               items:
                 - name: WMI の NDIS サポート
                   href: ndis-support-for-wmi.md
@@ -518,13 +490,11 @@
                   href: ndis-supported-wmi-operations.md
                 - name: 標準 WMI OID と状態表示
                   items:
-                    - name: 標準 WMI OID と状態表示
-                      href: standard-wmi-oids-and-status-indications.md
                     - name: WMI に登録されている標準ミニポート ドライバー OID
                       href: standard-miniport-driver-oids-registered-with-wmi.md
                     - name: WMI に登録されている標準ミニポート ドライバー状態表示
                       href: standard-miniport-driver-status-indications-registered-with-wmi.md
-                - name: カスタマイズされた OID と状態の表示
+                - name: カスタム OID と状態の表示の作成
                   items:
                     - name: カスタマイズされた OID と状態の表示
                       href: customized-oids-and-status-indications.md
@@ -534,8 +504,6 @@
                       href: including-a-mof-file.md
                 - name: NDIS WMI GUID
                   items:
-                    - name: NDIS WMI GUID
-                      href: ndis-wmi-guids.md
                     - name: GUID_NDIS_STATUS_LINK_STATE
                       href: guid-ndis-status-link-state.md
                     - name: GUID_NDIS_STATUS_OPER_STATUS
@@ -578,9 +546,9 @@
                       href: guid-ndis-status-offload-hw-capabilities.md
         - name: NDIS MSI-X
           items:
-            - name: NDIS MSI-X
+            - name: NDIS MSI-X の概要
               href: ndis-msi-x.md
-            - name: MSI-X の初期化
+            - name: MSI-X の準備
               items:
                 - name: MSI-X の初期化
                   href: msi-x-initialization.md
@@ -600,8 +568,6 @@
           href: ndis-scatter-gather-dma.md
         - name: NDIS ミニポート ドライバーのプラグ アンド プレイ
           items:
-            - name: NDIS ミニポート ドライバーのプラグ アンド プレイ
-              href: plug-and-play-for-ndis-miniport-drivers.md
             - name: MiniportDevicePnPEventNotify 関数のエクスポート
               href: exporting-a-miniportdevicepnpeventnotify-function.md
             - name: NIC の突然の取り外しの処理
@@ -610,7 +576,7 @@
               href: handling-a-change-in-the-system-s-power-source.md
             - name: NDIS のプラグ アンド プレイ イベントの処理
               items:
-                - name: NDIS のプラグ アンド プレイ イベントの処理
+                - name: NDIS のプラグ アンド プレイ イベントの処理の概要
                   href: ndis-processing-of-plug-and-play-events.md
                 - name: NIC の追加
                   href: adding-a-nic.md
@@ -622,23 +588,19 @@
                   href: removing-a-nic.md
                 - name: NIC の突然の取り外しの処理
                   items:
-                    - name: NIC の突然の取り外しの処理
-                      href: processing-the-surprise-removal-of-a-nic.md
                     - name: NIC の突然の取り外しの処理 (Windows Vista)
                       href: processing-the-surprise-removal-of-a-nic--windows-vista-.md
                     - name: NIC の突然の取り外しの処理 (Windows 7 以降のバージョン)
                       href: processing-the-surprise-removal-of-a-nic--windows-7-and-later-versions-.md
         - name: ミニポート ドライバーのリセットおよび停止関数
           items:
-            - name: ミニポート ドライバーのリセットおよび停止関数
-              href: reset--halt--and-shutdown-functions.md
             - name: ミニポート ドライバー ハードウェア リセット
               href: hardware-reset.md
             - name: ミニポート ドライバー停止ハンドラー
               href: halt-handler.md
         - name: WDM の下位インターフェイスを含むミニポート ドライバー
           items:
-            - name: WDM の下位インターフェイスを含むミニポート ドライバー
+            - name: WDM の下位インターフェイスを含むミニポート ドライバーの概要
               href: miniport-drivers-with-a-wdm-lower-interface.md
             - name: WDM の下端を含むミニポート ドライバー
               href: miniport-driver-with-a-wdm-lower-edge.md
@@ -658,11 +620,11 @@
               href: installing-ndis-wdm-miniport-drivers.md
         - name: WAN ミニポート ドライバー
           items:
-            - name: WAN ミニポート ドライバー
+            - name: WAN ミニポート ドライバーの概要
               href: wan-miniport-drivers.md
             - name: WAN ドライバー モデルの選択
               items:
-                - name: WAN ドライバー モデルの選択
+                - name: WAN ドライバー モデルの選択の概要
                   href: choosing-a-wan-driver-model.md
                 - name: CoNDIS WAN は柔軟性が高い
                   href: condis-wan-is-more-flexible.md
@@ -672,7 +634,7 @@
                   href: other-benefits-of-condis-wan.md
                 - name: CoNDIS WAN ドライバーが利用できるその他の NDIS 機能
                   href: other-ndis-features-available-to-condis-wan-drivers.md
-            - name: WAN アーキテクチャの概要
+            - name: WAN アーキテクチャ
               items:
                 - name: WAN アーキテクチャの概要
                   href: overview-of-the-wan-architecture.md
@@ -686,7 +648,7 @@
                   href: ndistapi-overview.md
                 - name: NDPROXY の概要
                   href: ndproxy-overview.md
-            - name: CoNDIS WAN ミニポート ドライバーの実装
+            - name: CoNDIS WAN ミニポート ドライバーの作成
               items:
                 - name: CoNDIS WAN ミニポート ドライバーの実装
                   href: implementing-condis-wan-miniport-drivers.md
@@ -706,7 +668,7 @@
                   href: indicating-received-data-from-a-condis-wan-miniport-driver.md
                 - name: CoNDIS WAN ミニポート ドライバー状態の表示
                   href: indicating-condis-wan-miniport-driver-status.md
-            - name: 電話サービスをサポートしている CoNDIS WAN 操作
+            - name: CoNDIS WAN ミニポート ドライバーの電話サービス
               items:
                 - name: 電話サービスをサポートしている CoNDIS WAN 操作
                   href: condis-wan-operations-that-support-telephonic-services.md
@@ -722,8 +684,6 @@
                   href: condis-tapi-shutdown.md
                 - name: 音声ストリーミングについてのコール マネージャー要件
                   items:
-                    - name: 音声ストリーミングについてのコール マネージャー要件
-                      href: call-manager-requirements-for-voice-streaming.md
                     - name: OID_CO_TAPI_LINE_CAPS クエリへの応答
                       href: responding-to-an-oid-co-tapi-line-caps-query.md
                     - name: 発信呼び出しのパラメーターの指定
@@ -734,7 +694,7 @@
                   href: non-wan-specific-extensions-to-support-telephonic-services-over-connec.md
             - name: WAN パケット フレーミング
               items:
-                - name: WAN パケット フレーミング
+                - name: WAN パケット フレーミングの概要
                   href: wan-packet-framing.md
                 - name: 非同期フレーミング
                   href: asynchronous-framing.md
@@ -742,7 +702,7 @@
                   href: isdn-and-switched-56k-framing.md
             - name: WAN ミニポート ドライバー ビルド パラメーター
               href: wan-miniport-driver-build-parameters.md
-        - name: ネットワーク デバイス用の標準化された INF キーワード
+        - name: ネットワーク デバイス用の INF キーワード
           items:
             - name: ネットワーク デバイス用の標準化された INF キーワード
               href: standardized-inf-keywords-for-network-devices.md
@@ -754,16 +714,12 @@
               href: keywords-not-displayed-in-the-user-interface.md
     - name: NDIS プロトコル ドライバー
       items:
-        - name: NDIS プロトコル ドライバー
-          href: ndis-protocol-drivers.md
         - name: NDIS プロトコル ドライバーの開発のロードマップ
           href: roadmap-for-developing-ndis-protocol-drivers.md
         - name: NDIS プロトコル ドライバーの概要
           href: introduction-to-ndis-protocol-drivers.md
         - name: NDIS プロトコル ドライバーの作成
           items:
-            - name: NDIS プロトコル ドライバーの作成
-              href: writing-ndis-protocol-drivers.md
             - name: プロトコル ドライバーの初期化
               href: initializing-a-protocol-driver.md
             - name: プロトコル バインドの状態と操作
@@ -772,7 +728,7 @@
               href: binding-to-an-adapter.md
             - name: アダプターからのバインド解除
               href: unbinding-from-an-adapter.md
-            - name: バインドの開始と一時停止
+            - name: プロトコル バインドの開始と一時停止
               items:
                 - name: バインドの開始と一時停止
                   href: starting-and-pausing-a-binding.md
@@ -782,7 +738,7 @@
                   href: pausing-a-binding.md
             - name: オプションのプロトコル ドライバー サービスの構成
               href: configuring-optional-protocol-driver-services.md
-            - name: プロトコル ドライバーの送信および受信操作
+            - name: プロトコル ドライバーでのネットワーク データの転送
               items:
                 - name: プロトコル ドライバーの送信および受信操作
                   href: protocol-driver-send-and-receive-operations.md
@@ -792,7 +748,7 @@
                   href: sending-data-from-a-protocol-driver.md
                 - name: プロトコル ドライバーのデータの受信
                   href: receiving-data-in-protocol-drivers.md
-            - name: プロトコル ドライバー OID 要求
+            - name: プロトコル ドライバー OID
               items:
                 - name: プロトコル ドライバー OID 要求
                   href: protocol-driver-oid-requests.md
@@ -810,8 +766,6 @@
           href: ndis-protocol-driver-installation.md
         - name: プロトコル ドライバーの設計概念
           items:
-            - name: プロトコル ドライバーの設計概念
-              href: protocol-driver-design-concepts.md
             - name: プロトコル ドライバーのページ可能で破棄可能なコード
               href: pageable-and-discardable-code-in-a-protocol-driver.md
             - name: プロトコル ドライバー リセット操作
@@ -826,8 +780,6 @@
               href: status-indications-in-a-protocol-driver.md
     - name: NDIS フィルター ドライバー
       items:
-        - name: NDIS フィルター ドライバー
-          href: ndis-filter-drivers2.md
         - name: NDIS フィルター ドライバーの開発のロードマップ
           href: roadmap-for-developing-ndis-filter-drivers.md
         - name: NDIS フィルター ドライバーの概要
@@ -844,8 +796,6 @@
               href: mandatory-filter-drivers.md
         - name: NDIS フィルター ドライバーの作成
           items:
-            - name: NDIS フィルター ドライバーの作成
-              href: writing-ndis-filter-drivers.md
             - name: フィルター ドライバーの初期化
               href: initializing-a-filter-driver.md
             - name: フィルター ドライバーのアンロード
@@ -868,7 +818,7 @@
               href: data-bypass-mode.md
             - name: オプションのフィルター ドライバー サービスの構成
               href: configuring-optional-filter-driver-services.md
-            - name: フィルター モジュールの送信および受信操作
+            - name: フィルター モジュールでのネットワーク データの転送
               items:
                 - name: フィルター モジュールの送信および受信操作
                   href: filter-module-send-and-receive-operations.md
@@ -880,7 +830,7 @@
                   href: canceling-a-send-request-in-a-filter-driver.md
                 - name: フィルター ドライバーのデータの受信
                   href: receiving-data-in-a-filter-driver.md
-            - name: フィルター モジュール OID 要求
+            - name: フィルター モジュール OID
               items:
                 - name: フィルター モジュール OID 要求
                   href: filter-module-oid-requests.md
@@ -914,7 +864,7 @@
               href: accessing-configuration-information-for-a-filter-driver.md
     - name: NDIS 中間ドライバー
       items:
-        - name: NDIS 中間ドライバー
+        - name: NDIS 中間ドライバー ガイド
           href: ndis-intermediate-drivers2.md
         - name: NDIS 中間ドライバーの開発のロードマップ
           href: roadmap-for-developing-ndis-intermediate-drivers.md
@@ -928,7 +878,7 @@
               href: ndis-mux-intermediate-drivers.md
         - name: NDIS 中間ドライバーの作成
           items:
-            - name: NDIS 中間ドライバーの作成
+            - name: NDIS 中間ドライバーの作成の概要
               href: writing-ndis-intermediate-drivers.md
             - name: 中間ドライバーの初期化
               href: initializing-an-intermediate-driver.md
@@ -940,11 +890,11 @@
               href: initializing-a-virtual-miniport.md
             - name: 仮想ミニポートの停止
               href: halting-a-virtual-miniport.md
-        - name: 中間ドライバー設計の概念
+        - name: NDIS 中間ドライバーの設計
           items:
             - name: 中間ドライバー設計の概念
               href: intermediate-driver-design-concepts.md
-            - name: 中間ドライバー DriverEntry 関数
+            - name: 中間ドライバーのエントリと登録
               items:
                 - name: 中間ドライバー DriverEntry 関数
                   href: intermediate-driver-driverentry-function.md
@@ -978,8 +928,6 @@
               href: intermediate-driver-network-data-management.md
             - name: 中間ドライバーでのデータの受信
               items:
-                - name: 中間ドライバーでのデータの受信
-                  href: receiving-data-in-an-intermediate-driver.md
                 - name: コネクションレスの下端を含む中間ドライバーでのデータの受信
                   href: receiving-data-in-an-intermediate-driver-with-a-connectionless-lower-e.md
                 - name: 接続指向の下端を含む中間ドライバーでのデータの受信
@@ -988,7 +936,7 @@
                   href: indicating-receive-network-data-to-higher-level-drivers.md
             - name: 中間ドライバー経由のネットワーク データの転送
               href: transmitting-network-data-through-an-intermediate-driver.md
-            - name: 中間ドライバーでの PnP イベントおよび電源管理イベントの処理
+            - name: 中間ドライバーの PnP イベントおよび電源管理イベント
               items:
                 - name: 中間ドライバーでの PnP イベントおよび電源管理イベントの処理
                   href: handling-pnp-events-and-power-management-events-in-an-intermediate-dri.md
@@ -1016,11 +964,11 @@
               href: intermediate-driver-notify-object.md
     - name: 接続指向 NDIS
       items:
-        - name: 接続指向 NDIS
+        - name: 接続指向 NDIS の概要
           href: connection-oriented-ndis.md
         - name: 接続指向環境
           href: connection-oriented-environment.md
-        - name: AF、VC、SAP、およびパーティーの使用
+        - name: CoNDIS の AF、VC、SAP、およびパーティー
           items:
             - name: AF、VC、SAP、およびパーティーの使用
               href: using-afs--vcs--saps--and-parties.md
@@ -1034,7 +982,7 @@
               href: parties.md
         - name: サービスの品質 (QoS)
           href: quality-of-service.md
-        - name: MCM ドライバーとコール マネージャー
+        - name: MCM ドライバーとコール マネージャーの違い
           items:
             - name: MCM ドライバーとコール マネージャー
               href: mcm-drivers-vs--call-managers.md
@@ -1048,8 +996,6 @@
           href: connection-oriented-timing-features.md
         - name: CoNDIS 登録
           items:
-            - name: CoNDIS 登録
-              href: condis-registration.md
             - name: CoNDIS ミニポート ドライバー登録
               href: condis-miniport-driver-registration.md
             - name: CoNDIS クライアント登録
@@ -1060,12 +1006,8 @@
               href: condis-mcm-registration.md
         - name: 接続指向操作
           items:
-            - name: 接続指向操作
-              href: connection-oriented-operations.md
             - name: 接続指向操作の概要
               items:
-                - name: 接続指向操作の概要
-                  href: summary-of-connection-oriented-operations.md
                 - name: クライアントによって実行される接続指向操作
                   href: connection-oriented-operations-performed-by-clients.md
                 - name: コール マネージャーによって実行される接続指向操作
@@ -1084,7 +1026,7 @@
                   href: deregistering-a-sap.md
                 - name: アドレス ファミリを閉じる
                   items:
-                    - name: アドレス ファミリを閉じる
+                    - name: アドレス ファミリを閉じる操作の概要
                       href: closing-an-address-family.md
                     - name: CoNDIS コール マネージャーまたは MCM を閉じる
                       href: closing-a-condis-call-manager-or-mcm.md
@@ -1092,8 +1034,6 @@
                       href: closing-an-address-family-in-a-condis-client.md
             - name: VC の操作
               items:
-                - name: VC の操作
-                  href: operations-on-vcs.md
                 - name: VC の作成
                   href: creating-a-vc.md
                 - name: VC のアクティブ化
@@ -1104,31 +1044,25 @@
                   href: deleting-a-vc.md
             - name: 呼び出しのセットアップ
               items:
-                - name: 呼び出しのセットアップ
-                  href: setting-up-a-call.md
                 - name: 呼び出しの実行
                   href: making-a-call.md
                 - name: 着信呼び出しの表示
                   href: indicating-an-incoming-call.md
             - name: アクティブ VC の QoS の変更
               items:
-                - name: アクティブ VC の QoS の変更
-                  href: changing-the-qos-of-an-active-vc.md
                 - name: 呼び出しパラメーターを変更するためのクライアントが開始した要求
                   href: client-initiated-request-to-change-call-parameters.md
                 - name: 呼び出しパラメーターを変更するための着信要求
                   href: incoming-request-to-change-call-parameters.md
             - name: パーティーの追加と削除
               items:
-                - name: パーティーの追加と削除
-                  href: adding-and-dropping-parties.md
                 - name: マルチポイント呼び出しへのパーティーの追加
                   href: adding-a-party-to-a-multipoint-call.md
                 - name: マルチポイント呼び出しからのパーティーの削除
                   href: dropping-a-party-from-a-multipoint-call.md
                 - name: マルチポイント呼び出しからパーティーを削除するための着信要求
                   href: incoming-request-to-drop-a-party-from-a-multipoint-call.md
-            - name: CoNDIS でのデータの送信と受信
+            - name: CoNDIS でのネットワーク データの転送
               items:
                 - name: CoNDIS でのデータの送信と受信
                   href: sending-and-receiving-data2.md
@@ -1138,17 +1072,13 @@
                   href: receiving-net-buffer-structures-in-condis-drivers.md
             - name: 呼び出しの破棄
               items:
-                - name: 呼び出しの破棄
-                  href: tearing-down-a-call.md
                 - name: 呼び出しを閉じるためのクライアントが開始した要求
                   href: client-initiated-request-to-close-a-call.md
                 - name: 呼び出しを閉じるための着信要求
                   href: incoming-request-to-close-a-call.md
             - name: 情報の取得と設定
               items:
-                - name: 情報の取得と設定
-                  href: obtaining-and-setting-information.md
-                - name: 情報のクエリと設定
+                - name: クエリおよび設定 OID 要求
                   items:
                     - name: 情報のクエリと設定
                       href: querying-or-setting-information.md
@@ -1158,7 +1088,7 @@
                       href: condis-protocol-driver-oid-requests.md
                     - name: CoNDIS MCM OID 要求
                       href: condis-mcm-oid-requests.md
-                - name: ミニポート ドライバーの状態の表示
+                - name: CoNDIS での状態の表示
                   items:
                     - name: ミニポート ドライバーの状態の表示
                       href: indicating-miniport-driver-status.md
@@ -1170,9 +1100,9 @@
               href: reset.md
     - name: NDIS ネットワーク インターフェイス
       items:
-        - name: NDIS ネットワーク インターフェイス
-          href: ndis-network-interfaces2.md
         - name: NDIS ネットワーク インターフェイスの概要
+          href: ndis-network-interfaces2.md
+        - name: NDIS ネットワーク インターフェイスについて
           items:
             - name: NDIS ネットワーク インターフェイスの概要
               href: overview-of-ndis-network-interfaces.md
@@ -1210,7 +1140,7 @@
               href: net-luid-values-for-miniport-adapters-and-filter-modules.md
             - name: ネットワーク インターフェイス スタックの保守
               href: maintaining-a-network-interface-stack.md
-        - name: NDIS インターフェイス プロバイダーでの OID クエリおよび設定要求の処理
+        - name: NDIS インターフェイス プロバイダーの OID クエリおよび設定要求
           items:
             - name: NDIS インターフェイス プロバイダーでの OID クエリおよび設定要求の処理
               href: handling-oid-query-and-set-requests-in-an-ndis-interface-provider.md
@@ -1222,8 +1152,6 @@
           href: mapping-of-ndis-network-interfaces-to-ndis-oids.md
         - name: NDIS MDL インターフェイス
           items:
-            - name: NDIS MDL インターフェイス
-              href: ndis-mdl-interface.md
             - name: NDIS_MDL_LINKAGE
               href: ndis-mdl-linkage.md
             - name: NDIS_MDL_TO_SPAN_PAGES
@@ -1238,8 +1166,6 @@
               href: ndisquerymdloffset.md
     - name: NDIS ポート
       items:
-        - name: NDIS ポート
-          href: ndis-ports.md
         - name: NDIS ポートの概要
           items:
             - name: NDIS ポートの概要
@@ -1264,7 +1190,7 @@
               href: managing-an-ndis-port.md
             - name: NDIS ポートの送信および受信操作
               href: ndis-port-send-and-receive-operations.md
-            - name: NDIS ポート OID 要求
+            - name: NDIS ポート OID 要求の処理
               items:
                 - name: NDIS ポート OID 要求
                   href: ndis-port-oid-requests.md
@@ -1278,7 +1204,7 @@
               href: handling-ndis-ports-status-indications.md
             - name: NDIS ポート PnP イベント通知の処理
               items:
-                - name: NDIS ポート PnP イベント通知の処理
+                - name: NDIS ポート PnP イベント通知
                   href: handling-ndis-ports-pnp-event-notifications.md
                 - name: ポート アクティブ化 PnP イベントの処理
                   href: handling-the-port-activation-pnp-event.md
@@ -1290,30 +1216,24 @@
           href: creating-ndis-interfaces-for-ndis-ports.md
     - name: NDIS 電源管理
       items:
-        - name: NDIS 電源管理
-          href: ndis-power-management.md
-        - name: 電源管理 (NDIS 6.30)
+        - name: NDIS 6.30 の電源管理
           items:
             - name: 電源管理 (NDIS 6.30)
               href: power-management--ndis-6-30-.md
             - name: NDIS パケット結合
               items:
-                - name: NDIS パケット結合
+                - name: NDIS パケット結合の概要
                   href: ndis-packet-coalescing.md
                 - name: パケット結合の概要
-                  items:
-                    - name: パケット結合の概要
-                      href: overview-of-packet-coalescing.md
-                    - name: パケット結合受信フィルター
-                      href: packet-coalescing-receive-filters.md
+                  href: overview-of-packet-coalescing.md
+                - name: パケット結合受信フィルター
+                  href: packet-coalescing-receive-filters.md
                 - name: パケット結合機能のレポート
                   href: reporting-packet-coalescing-capabilities.md
                 - name: パケット結合機能のクエリ
                   href: querying-packet-coalescing-capabilities.md
                 - name: パケット結合受信フィルターの管理
                   items:
-                    - name: パケット結合受信フィルターの管理
-                      href: managing-packet-coalescing-receive-filters.md
                     - name: パケット結合受信フィルターを管理するためのガイドライン
                       href: guidelines-for-managing-packet-coalescing-receive-filters.md
                     - name: パケット結合受信フィルターの指定
@@ -1334,7 +1254,7 @@
                   href: standardized-inf-keywords-for-packet-coalescing.md
             - name: NDIS セレクティブ サスペンド
               items:
-                - name: NDIS セレクティブ サスペンド
+                - name: NDIS セレクティブ サスペンドの概要
                   href: ndis-selective-suspend.md
                 - name: NDIS セレクティブ サスペンドの概要
                   href: overview-of-ndis-selective-suspend.md
@@ -1344,7 +1264,7 @@
                   href: registering-ndis-selective-suspend-handler-functions.md
                 - name: NDIS セレクティブ サスペンド アイドル通知
                   items:
-                    - name: NDIS セレクティブ サスペンド アイドル通知
+                    - name: NDIS セレクティブ サスペンド アイドル通知の概要
                       href: ndis-selective-suspend-idle-notifications.md
                     - name: NDIS がアイドル状態のネットワーク アダプターを検出する方法
                       href: how-ndis-detects-idle-network-adapters.md
@@ -1358,8 +1278,6 @@
                   href: standardized-inf-keywords-for-ndis-selective-suspend.md
                 - name: NDIS セレクティブ サスペンド実装ガイドライン
                   items:
-                    - name: NDIS セレクティブ サスペンド実装ガイドライン
-                      href: ndis-selective-suspend-implementation-guidelines.md
                     - name: NDIS セレクティブ サスペンドの IRP リソースの管理
                       href: managing-irp-resources-for-ndis-selective-suspend.md
                     - name: MiniportIdleNotification ハンドラー関数の実装
@@ -1372,19 +1290,15 @@
                       href: implementing-a-usb-idle-request-irp-completion-routine.md
             - name: NDIS ウェイク理由状態表示
               items:
-                - name: NDIS ウェイク理由状態表示
-                  href: ndis-wake-reason-status-indications.md
                 - name: NDIS ウェイク理由状態表示の概要
                   href: overview-of-ndis-wake-reason-statue-indications.md
                 - name: NDIS ウェイク理由状態表示機能のレポート
                   href: reporting-wake-reason-status-indication-capabilities.md
                 - name: NDIS ウェイク理由状態表示の発行
                   href: issuing-ndis-wake-reason-indications.md
-        - name: 電源管理 (NDIS 6.20)
+        - name: NDIS 6.20 の電源管理
           items:
-            - name: 電源管理 (NDIS 6.20)
-              href: power-management--ndis-6-20-.md
-            - name: NDIS 電源管理の概要
+            - name: NDIS 6.20 以降の NDIS 電源管理の概要
               items:
                 - name: NDIS 電源管理の概要
                   href: ndis-power-management-overview.md
@@ -1416,8 +1330,6 @@
               href: low-power-on-media-disconnect.md
             - name: 電源管理状態表示
               items:
-                - name: 電源管理状態表示
-                  href: power-management-status-indications.md
                 - name: NDIS_STATUS_PM_CAPABILITIES_CHANGE
                   href: ndis-status-pm-capabilities-change.md
                 - name: NDIS_STATUS_PM_HARDWARE_CAPABILITIES
@@ -1426,17 +1338,15 @@
                   href: ndis-status-pm-offload-rejected.md
                 - name: NDIS_STATUS_PM_WOL_PATTERN_REJECTED
                   href: ndis-status-pm-wol-pattern-rejected.md
-        - name: 電源管理 (NDIS 6.0 および NDIS 6.1)
+        - name: NDIS 6.0 および NDIS 6.1 の電源管理
           items:
-            - name: 電源管理 (NDIS 6.0 および NDIS 6.1)
-              href: power-management--ndis-6-0-and-ndis-6-1-.md
             - name: 電源管理用の必須およびオプションの OID
               href: required-and-optional-oids-for-power-management.md
             - name: ネットワーク アダプターのデバイス電源状態
               href: device-power-states-for-network-adapters.md
             - name: ネットワーク ウェイクアップ イベント
               items:
-                - name: ネットワーク ウェイクアップ イベント
+                - name: ネットワーク ウェイクアップ イベントについて
                   href: network-wake-up-events.md
                 - name: ウェイクアップ イベントの有効化
                   href: enabling-wake-up-events.md
@@ -1446,8 +1356,6 @@
               href: handling-an-oid-pnp-query-power-oid.md
             - name: OID_PNP_SET_POWER OID の処理
               items:
-                - name: OID_PNP_SET_POWER OID の処理
-                  href: handling-an-oid-pnp-set-power-oid.md
                 - name: スリープ状態への遷移
                   href: transitioning-to-a-sleeping-state.md
                 - name: 稼働状態への遷移
@@ -1462,15 +1370,13 @@
               href: avoiding-ndis-power-management-problems.md
     - name: NDIS のデータ センター ブリッジングの QoS
       items:
-        - name: NDIS のデータ センター ブリッジングの QoS
+        - name: NDIS のデータ センター ブリッジングの QoS の概要
           href: ndis-qos-for-data-center-bridging.md
         - name: データ センター ブリッジングの概要
           href: overview-of-data-center-bridging.md
         - name: NDIS のデータ センター ブリッジングの QoS の概要
           items:
-            - name: NDIS のデータ センター ブリッジングの QoS の概要
-              href: overview-of-ndis-qos-for-data-center-bridging.md
-            - name: NDIS のデータ センター ブリッジングの QoS アーキテクチャ
+            - name: NDIS のデータ センター ブリッジングの QoS のアーキテクチャ
               items:
                 - name: NDIS のデータ センター ブリッジングの QoS アーキテクチャ
                   href: ndis-qos-architecture-for-data-center-bridging.md
@@ -1480,14 +1386,12 @@
                   href: vendor-provided-dcb-components.md
             - name: NDIS のデータ センター ブリッジングの QoS 要件
               href: ndis-qos-requirements-for-data-center-bridging.md
-            - name: NDIS QoS トラフィック クラス
+            - name: トラフィック クラス
               items:
                 - name: NDIS QoS トラフィック クラス
                   href: ndis-qos-traffic-classes.md
                 - name: 優先順位のレベルとフロー制御
                   items:
-                    - name: 優先順位のレベルとフロー制御
-                      href: priority-levels-and-flow-control.md
                     - name: IEEE 802.1p 優先順位のレベル
                       href: ieee-802-1p-priority-levels.md
                     - name: 優先順位ベースのフロー制御 (PFC)
@@ -1496,7 +1400,7 @@
                   href: transmission-selection-algorithms--tsas-.md
                 - name: 厳密な優先順位アルゴリズム
                   href: strict-priority-algorithm.md
-                - name: 拡張送信選択 (ETS) アルゴリズム
+                - name: 拡張送信選択 (ETS)
                   items:
                     - name: 拡張送信選択 (ETS) アルゴリズム
                       href: enhanced-transmission-selection--ets--algorithm.md
@@ -1508,16 +1412,12 @@
               href: ndis-qos-traffic-classifications.md
         - name: NDIS QoS 機能の管理
           items:
-            - name: NDIS QoS 機能の管理
-              href: managing-ndis-qos-capabilities.md
             - name: NDIS QoS 機能の登録
               href: registering-ndis-qos-capabilities.md
             - name: NDIS QoS 機能のクエリ
               href: querying-ndis-qos-capabilities.md
         - name: NDIS QoS パラメーターの管理
           items:
-            - name: NDIS QoS パラメーターの管理
-              href: managing-ndis-qos--parameters.md
             - name: NDIS QoS パラメーターの概要
               href: overview-of-ndis-qos-parameters.md
             - name: ローカル DCBX Willing 状態の管理
@@ -1542,8 +1442,6 @@
           href: standardized-inf-keywords-for-ndis-qos.md
     - name: NDIS タイマー サービス
       items:
-        - name: NDIS タイマー サービス
-          href: ndis-timer-services2.md
         - name: NDIS タイマーの初期化
           href: initializing-ndis-timers.md
         - name: タイマーの設定とクリア
@@ -1552,8 +1450,6 @@
           href: servicing-timers.md
     - name: その他の NDIS 関数
       items:
-        - name: その他の NDIS 関数
-          href: miscellaneous-ndis-functions.md
         - name: NDIS 構成関数
           href: ndis-configuration-functions.md
         - name: NDIS オブジェクト
@@ -1562,20 +1458,14 @@
           href: ndis-i-o-work-items.md
     - name: ネットワーク コンポーネントのインストールとアップグレード
       items:
-        - name: ネットワーク コンポーネントのインストールとアップグレード
-          href: installing-and-upgrading-network-components.md
         - name: ネットワーク コンポーネントをインストールするためのプロセス
           items:
-            - name: ネットワーク コンポーネントをインストールするためのプロセス
-              href: installing-network-components2.md
             - name: ネットワーク コンポーネントのインストールに使用されるコンポーネントとファイル
               href: components-and-files-used-for-network-component-installation.md
             - name: ネットワーク INF ファイルの作成
               href: creating-network-inf-files.md
             - name: ネットワーク INF ファイル内のセクション
               items:
-                - name: ネットワーク INF ファイル内のセクション
-                  href: sections-in-a-network-inf-file.md
                 - name: ネットワーク INF ファイル内の Version セクション
                   href: version-section-in-a-network-inf-file.md
                 - name: ネットワーク INF ファイル内の Models セクション
@@ -1586,7 +1476,7 @@
                   href: remove-section-in-a-network-inf-file.md
                 - name: ネットワーク INF ファイル内の ControlFlags セクション
                   href: controlflags-section-in-a-network-inf-file.md
-                - name: ネットワーク INF ファイル内のレジストリの追加セクション
+                - name: ネットワーク INF ファイルのレジストリの追加セクション
                   items:
                     - name: ネットワーク INF ファイル内のレジストリの追加セクション
                       href: add-registry-sections-in-a-network-inf-file.md
@@ -1620,7 +1510,7 @@
                       href: ndi-values-and-keys-not-used-in-windows-2000-and-later-versions.md
                 - name: ネットワーク INF ファイル内の DDInstall.Services セクション
                   href: ddinstall-services-section-in-a-network-inf-file.md
-                - name: ネットワーク INF ファイル内の NetworkProvider および PrintProvider セクション
+                - name: ネットワーク INF ファイルの NetworkProvider および PrintProvider セクション
                   items:
                     - name: ネットワーク INF ファイル内の NetworkProvider および PrintProvider セクション
                       href: networkprovider-and-printprovider-sections-in-a-network-inf-file.md
@@ -1632,8 +1522,6 @@
                   href: winsock-sections-in-a-network-inf-file.md
             - name: ネットワーク コンポーネントのインストール要件
               items:
-                - name: ネットワーク コンポーネントのインストール要件
-                  href: installation-requirements-for-network-components.md
                 - name: ネットワーク アダプターのインストール要件
                   href: installation-requirements-for-network-adapters.md
                 - name: ネットワーク プロトコルのインストール要件
@@ -1652,7 +1540,7 @@
           items:
             - name: ネットワーク コンポーネントの通知オブジェクト
               href: notify-objects-for-network-components.md
-            - name: 通知オブジェクトについて
+            - name: 通知オブジェクトの概要
               items:
                 - name: 通知オブジェクトについて
                   href: about-notify-objects.md
@@ -1686,7 +1574,7 @@
                   href: creating-property-pages-for-the-component.md
                 - name: プロパティを表示するコンテキストの設定
                   href: setting-context-to-display-properties.md
-                - name: ネットワーク構成の変更の評価
+                - name: ネットワーク構成の変更
                   items:
                     - name: ネットワーク構成の変更の評価
                       href: evaluating-changes-to-network-configuration.md
@@ -1700,7 +1588,7 @@
                   href: configuring-the-component-s-driver.md
                 - name: ネットワーク構成インターフェイス ポインターの取得
                   href: retrieving-network-configuration-interface-pointers.md
-        - name: ネットワーク コンポーネントのアップグレードのプロセス
+        - name: ネットワーク コンポーネントのアップグレード
           items:
             - name: ネットワーク コンポーネントのアップグレードのプロセス
               href: upgrading-network-components.md
@@ -1710,7 +1598,7 @@
                   href: customizing-the-network-upgrade-process.md
                 - name: Netupg.inf ファイルの作成
                   href: creating-a-netupg-inf-file.md
-            - name: ネットワーク アップグレード プロセス
+            - name: ネットワーク アップグレード プロセスの概要
               items:
                 - name: ネットワーク アップグレード プロセス
                   href: the-network-upgrade-process.md
@@ -1726,7 +1614,7 @@
               items:
                 - name: Netmap.inf ファイルの作成
                   href: creating-a-netmap-inf-file.md
-                - name: Netmap.inf ファイル内の ID のマッピング
+                - name: Netmap.inf ファイルの ID のマッピング
                   items:
                     - name: Netmap.inf ファイル内の ID のマッピング
                       href: mapping-ids-in-a-netmap-inf-file.md
@@ -1740,20 +1628,14 @@
                   href: specifying-alternative-help-message-files-in-a-netmap-inf-file.md
             - name: ネットワーク コンポーネントのアップグレードのテスト
               items:
-                - name: ネットワーク コンポーネントのアップグレードのテスト
-                  href: testing-the-upgrade-of-network-components.md
                 - name: テスト システムのセットアップ
                   href: setting-up-the-test-system.md
                 - name: アップグレード テストの実行と結果の調査
-                  items:
-                    - name: アップグレード テストの実行と結果の調査
-                      href: running-the-upgrade-test-and-examining-the-results.md
-                    - name: AnswerFile の調査
-                      href: examining-the-answerfile.md
+                  href: running-the-upgrade-test-and-examining-the-results.md
+                - name: AnswerFile の調査
+                  href: examining-the-answerfile.md
     - name: NDIS コア機能 OID
       items:
-        - name: NDIS コア機能 OID
-          href: ndis-core-functionality-oids.md
         - name: NDIS 一般統計情報 OID
           href: ndis-general-statistics-oids.md
         - name: NDIS ネットワーク インターフェイス OID
@@ -1764,8 +1646,6 @@
           href: ethernet-statistics-oids.md
         - name: 接続指向 OID
           items:
-            - name: 接続指向 OID
-              href: connection-oriented-oids.md
             - name: 接続指向ミニポート ドライバーの一般操作 OID
               href: general-operational-oids-for-connection-oriented-miniport-drivers.md
             - name: 接続指向ミニポート ドライバーの一般統計情報 OID
@@ -1776,12 +1656,8 @@
               href: tapi-extension-oids-for-connection-oriented-ndis.md
     - name: NDIS コア機能の状態表示
       items:
-        - name: NDIS コア機能の状態表示
-          href: ndis-core-functionality-status-indications.md
         - name: NDIS 一般状態表示
           items:
-            - name: NDIS 一般状態表示
-              href: ndis-general-status-indications.md
             - name: NDIS_STATUS_MEDIA_CONNECT
               href: ndis-status-media-connect.md
             - name: NDIS_STATUS_MEDIA_DISCONNECT
@@ -1808,30 +1684,22 @@
               href: ndis-status-packet-filter.md
         - name: 受信フィルター状態表示
           items:
-            - name: 受信フィルター状態表示
-              href: receive-filter-status-indications.md
             - name: NDIS_STATUS_RECEIVE_FILTER_CURRENT_CAPABILITIES
               href: ndis-status-receive-filter-current-capabilities.md
             - name: NDIS_STATUS_RECEIVE_FILTER_HARDWARE_CAPABILITIES
               href: ndis-status-receive-filter-hardware-capabilities.md
         - name: NDIS QoS 状態表示
           items:
-            - name: NDIS QoS 状態表示
-              href: ndis-qos-status-indications.md
             - name: NDIS_STATUS_QOS_OPERATIONAL_PARAMETERS_CHANGE
               href: ndis-status-qos-operational-parameters-change.md
             - name: NDIS_STATUS_QOS_REMOTE_PARAMETERS_CHANGE
               href: ndis-status-qos-remote-parameters-change.md
         - name: NDIS ウェイク理由状態表示
           items:
-            - name: NDIS ウェイク理由状態表示
-              href: ndis-wake-reason-status-indications-ref.md
             - name: NDIS_STATUS_PM_WAKE_REASON
               href: ndis-status-pm-wake-reason.md
         - name: NDIS WAN 状態表示
           items:
-            - name: NDIS WAN 状態表示
-              href: ndis-wan-status-indications.md
             - name: NDIS_STATUS_WAN_LINE_UP
               href: ndis-status-wan-line-up.md
             - name: NDIS_STATUS_WAN_LINE_DOWN
@@ -1852,16 +1720,12 @@
               href: ndis-status-wan-co-mtulinkparams.md
 - name: スケーラブル ネットワーク
   items:
-    - name: スケーラブル ネットワーク
-      href: scalable-networking2.md
     - name: ヘッダー データの分割
       items:
-        - name: ヘッダー データの分割
+        - name: ヘッダー データの分割の概要
           href: header-data-split.md
         - name: ヘッダー データの分割の概要
           items:
-            - name: ヘッダー データの分割の概要
-              href: header-data-split-overview.md
             - name: ヘッダー データの分割のアーキテクチャ
               href: header-data-split-architecture.md
             - name: ヘッダーとデータを分割する場所
@@ -1872,15 +1736,13 @@
               href: minimum-requirements-for-supporting-header-data-split.md
             - name: ヘッダー データの分割の状態表示
               items:
-                - name: ヘッダー データの分割の状態表示
-                  href: header-data-split-status-indications.md
                 - name: NDIS_STATUS_HD_SPLIT_CURRENT_CONFIG
                   href: ndis-status-hd-split-current-config.md
         - name: ヘッダー データの分割プロバイダーの初期化
           href: initializing-a-header-data-split-provider.md
         - name: イーサネット フレームの分割
           items:
-            - name: イーサネット フレームの分割
+            - name: イーサネット フレームの分割の概要
               href: splitting-ethernet-frames.md
             - name: IPv4 フレームの分割
               href: splitting-ipv4-frames.md
@@ -1896,13 +1758,11 @@
               href: splitting-frames-at-the-udp-payload.md
             - name: TCP と UDP 以外のフレームの分割
               items:
-                - name: TCP と UDP 以外のフレームの分割
-                  href: splitting-frames-other-than-tcp-and-udp.md
                 - name: ICMP フレームとその他の上位層プロトコル フレームの分割
                   href: splitting-icmp-frames-and-other-upper-layer-protocol-frames.md
                 - name: IPsec フレームの分割
                   href: splitting-ipsec-frames.md
-        - name: ヘッダー データ分割による受信表示
+        - name: ヘッダー データ分割の受信表示
           items:
             - name: ヘッダー データ分割による受信表示
               href: receive-indications-with-header-data-split.md
@@ -1914,8 +1774,6 @@
               href: setting-net-buffer-list-information.md
         - name: ヘッダー データの分割の管理と構成
           items:
-            - name: ヘッダー データの分割の管理と構成
-              href: header-data-split-administration-and-configuration.md
             - name: 現在のヘッダー データの分割構成の設定
               href: setting-the-current-header-data-split-configuration.md
             - name: 現在のヘッダー データの分割構成の取得
@@ -1928,8 +1786,6 @@
           href: supporting-header-data-split-in-protocol-driver-and-filter-drivers.md
     - name: Network Direct Kernel Provider Interface (NDKPI)
       items:
-        - name: Network Direct Kernel Provider Interface (NDKPI)
-          href: network-direct-kernel-programming-interface--ndkpi-.md
         - name: Network Direct Kernel Provider Interface (NDKPI) の概要
           href: overview-of-network-direct-kernel-provider-interface--ndkpi-.md
         - name: NDKPI の用語
@@ -1960,7 +1816,7 @@
           href: ndkpi-deferred-processing-scheme.md
     - name: 汎用ルーティング カプセル化 (NVGRE) タスク オフロードを使用したネットワークの仮想化
       items:
-        - name: 汎用ルーティング カプセル化 (NVGRE) タスク オフロードを使用したネットワークの仮想化
+        - name: 汎用ルーティング カプセル化 (NVGRE) を使用したネットワークの仮想化について
           href: network-virtualization-using-generic-routing-encapsulation--nvgre--task-offload.md
         - name: 汎用ルーティング カプセル化 (NVGRE) タスク オフロードを使用したネットワークの仮想化の概要
           href: overview-of-network-virtualization-using-generic-routing-encapsulation--nvgre--task-offload.md
@@ -1980,9 +1836,7 @@
           href: standardized-inf-keywords-for-nvgre-task-offload.md
     - name: Receive Segment Coalescing (RSC)
       items:
-        - name: Receive Segment Coalescing (RSC)
-          href: receive-segment-coalescing--rsc-.md
-        - name: Receive Segment Coalescing の概要
+        - name: Receive Segment Coalescing (RSC) について
           items:
             - name: Receive Segment Coalescing の概要
               href: overview-of-receive-segment-coalescing.md
@@ -1998,8 +1852,6 @@
               href: exception-conditions-that-terminate-coalescing.md
         - name: RSC ドライバーの作成
           items:
-            - name: RSC ドライバーの作成
-              href: writing-rsc-drivers.md
             - name: ネットワーク アダプターの RSC 機能の判断
               href: determining-the-rsc-capabilities-of-a-network-adapter.md
             - name: RSC 状態のクエリと変更
@@ -2010,8 +1862,6 @@
               href: programming-considerations-for-rsc-drivers.md
     - name: Receive Side Scaling
       items:
-        - name: Receive Side Scaling
-          href: ndis-receive-side-scaling2.md
         - name: Receive Side Scaling の概要
           href: introduction-to-receive-side-scaling.md
         - name: Receive Side Scaling Version 2 (RSSv2)
@@ -2034,8 +1884,6 @@
           href: rss-configuration.md
         - name: RSS CPU 構成の設定
           items:
-            - name: RSS CPU 構成の設定
-              href: setting-the-rss-cpu-configuration.md
             - name: アプリケーション用のプロセッサの予約
               href: reserving-processors-for-applications.md
             - name: RSS プロセッサの数の設定
@@ -2048,7 +1896,7 @@
           href: supporting-rss-in-intermediate-drivers-or-filter-drivers.md
     - name: TCP/IP オフロード
       items:
-        - name: TCP/IP オフロード
+        - name: TCP/IP オフロードの概要
           href: tcp-ip-offload.md
         - name: TCP/IP オフロード NET_BUFFER_LIST 情報へのアクセス
           href: accessing-tcp-ip-offload-net-buffer-list-information.md
@@ -2056,7 +1904,7 @@
           href: using-the-tcp-ip-offload-administrator-interface.md
         - name: オフロード対応ミニポート ドライバーのセキュリティ ガイドライン
           items:
-            - name: オフロード対応ミニポート ドライバーのセキュリティ ガイドライン
+            - name: オフロード対応ミニポート ドライバーのセキュリティ ガイドラインの概要
               href: security-guidelines-for-offload-capable-miniport-drivers.md
             - name: NDIS ドライバーのセキュリティ攻撃への脆弱性
               href: vulnerability-to-security-attacks-in-ndis-drivers.md
@@ -2068,9 +1916,9 @@
               href: security-checklist-for-ndis-drivers.md
         - name: TCP/IP タスク オフロード
           items:
-            - name: TCP/IP タスク オフロード
+            - name: TCP/IP タスク オフロードの概要
               href: task-offload.md
-            - name: タスク オフロード機能の判断
+            - name: タスク オフロード機能のレポート
               items:
                 - name: タスク オフロード機能の判断
                   href: determining-task-offload-capabilities.md
@@ -2094,12 +1942,8 @@
               href: offloading-checksum-tasks.md
             - name: IPsec Offload Version 1
               items:
-                - name: IPsec Offload Version 1
-                  href: ipsec-offload-version-1.md
                 - name: ESP および AH で保護されたパケットの処理のオフロード
                   items:
-                    - name: ESP および AH で保護されたパケットの処理のオフロード
-                      href: offloading-the-processing-of-esp-protected-and-ah-protected-packets.md
                     - name: IPsec でのバック グラウンド読み取り
                       href: background-reading-on-ipsec.md
                     - name: IPsec オフロードに適用される要件と制限
@@ -2116,8 +1960,6 @@
                       href: impact-of-network-interface-changes-on-ipsec-offloads.md
                 - name: UDP カプセル化 ESP パケットの処理のオフロード
                   items:
-                    - name: UDP カプセル化 ESP パケットの処理のオフロード
-                      href: offloading-the-processing-of-udp-encapsulated-esp-packets.md
                     - name: ESP パケットの UDP カプセル化でのバック グラウンド読み取り
                       href: background-reading-on-udp-encapsulation-of-esp-packets.md
                     - name: UDP カプセル化 ESP パケットを使用した NAT と NAPT の走査
@@ -2132,8 +1974,6 @@
                       href: processing-udp-encapsulated-esp-packets.md
             - name: IPsec Offload Version 2
               items:
-                - name: IPsec Offload Version 2
-                  href: ipsec-offload-version-2.md
                 - name: IPsec Offload Version 2 の概要
                   href: introduction-to-ipsec-offload-version-2.md
                 - name: NIC の IPsec Offload Version 2 の機能のレポート
@@ -2150,7 +1990,7 @@
               href: offloading-the-segmentation-of-large-tcp-packets.md
         - name: 接続オフロード
           items:
-            - name: 接続オフロード
+            - name: 接続オフロードの概要
               href: connection-offload.md
             - name: 接続オフロード機能の判断
               href: determining-connection-offload-capabilities.md
@@ -2168,8 +2008,6 @@
           href: task-offload-oids.md
         - name: NDIS TCP/IP オフロード状態表示
           items:
-            - name: NDIS TCP/IP オフロード状態表示
-              href: ndis-tcp-ip-offload-status-indications.md
             - name: NDIS_STATUS_TASK_OFFLOAD_CURRENT_CONFIG
               href: ndis-status-task-offload-current-config.md
             - name: NDIS_STATUS_TASK_OFFLOAD_HARDWARE_CAPABILITIES
@@ -2180,26 +2018,20 @@
               href: ndis-status-tcp-connection-offload-hardware-capabilities.md
         - name: PacketDirect プロバイダー インターフェイス (PDPI) 状態表示
           items:
-            - name: PacketDirect プロバイダー インターフェイス (PDPI) 状態表示
-              href: packetdirect-provider-interface--pdpi--status-indications.md
             - name: NDIS_STATUS_PD_CURRENT_CONFIG
               href: ndis-status-pd-current-config.md
 - name: 仮想化ネットワーク
   items:
-    - name: 仮想化ネットワーク
+    - name: 仮想ネットワークに関するトピック
       href: virtualized-networking.md
     - name: 仮想化ネットワークの概念と用語
       href: virtualized-networking-concepts-and-terms.md
     - name: 仮想化ネットワークの概要
       items:
-        - name: 仮想化ネットワークの概要
-          href: overview-of-virtualized-networking.md
         - name: Hyper-V の概要
           href: overview-of-hyper-v.md
         - name: Hyper-V での仮想化ネットワーク インターフェイス
           items:
-            - name: Hyper-V での仮想化ネットワーク インターフェイス
-              href: virtualized-networking-interfaces-in-hyper-v.md
             - name: シングル ルート I/O 仮想化 (SR-IOV) インターフェイス
               href: single-root-i-o-virtualization--sr-iov--interface.md
             - name: 仮想マシン キュー (VMQ) インターフェイス
@@ -2210,13 +2042,13 @@
           href: potential-performance-bottlenecks-in-an-ndis-virtualized-networking-environment.md
     - name: シングル ルート I/O 仮想化 (SR-IOV)
       items:
-        - name: シングル ルート I/O 仮想化 (SR-IOV)
-          href: single-root-i-o-virtualization--sr-iov-.md
         - name: シングル ルート I/O 仮想化 (SR-IOV) の概要
+          href: single-root-i-o-virtualization--sr-iov-.md
+        - name: SR-IOV の概要
           items:
             - name: シングル ルート I/O 仮想化 (SR-IOV) の概要
               href: overview-of-single-root-i-o-virtualization--sr-iov-.md
-            - name: SR-IOV アーキテクチャ
+            - name: SR-IOV のアーキテクチャとコンポーネント
               items:
                 - name: SR-IOV アーキテクチャ
                   href: sr-iov-architecture.md
@@ -2228,7 +2060,7 @@
                   href: nic-switches.md
                 - name: 仮想ポート (VPort)
                   href: virtual-ports--vports-.md
-            - name: SR-IOV データ パス
+            - name: SR-IOV データ パスとフェールオーバー
               items:
                 - name: SR-IOV データ パス
                   href: sr-iov-data-paths.md
@@ -2242,11 +2074,11 @@
                   href: sr-iov-vf-failover-and-live-migration-support.md
         - name: SR-IOV PF ミニポート ドライバーの作成
           items:
-            - name: SR-IOV PF ミニポート ドライバーの作成
+            - name: SR-IOV PF ミニポート ドライバーの作成の概要
               href: writing-sr-iov-pf-miniport-drivers.md
             - name: PF ミニポート ドライバーの初期化
               items:
-                - name: PF ミニポート ドライバーの初期化
+                - name: PF ミニポート ドライバーの初期化に関するトピック
                   href: initializing-a-pf-miniport-driver.md
                 - name: SR-IOV 機能の判断
                   href: determining-sr-iov-capabilities.md
@@ -2322,7 +2154,7 @@
               items:
                 - name: 仮想関数の管理
                   href: managing-virtual-functions.md
-                - name: 仮想関数の初期化と切断の概要
+                - name: 仮想関数の初期化と切断
                   items:
                     - name: 仮想関数の初期化と切断の概要
                       href: overview-of-virtual-function-initialization-and-teardown.md
@@ -2350,7 +2182,7 @@
                   href: enumerating-virtual-functions-on-a-network-adapter.md
                 - name: 仮想関数のパラメーターのクエリ
                   href: querying-the-parameters-of-a-virtual-function.md
-                - name: 仮想関数の PCI 構成領域へのアクセス
+                - name: 仮想関数の PCI 構成領域のクエリと設定
                   items:
                     - name: 仮想関数の PCI 構成領域へのアクセス
                       href: accessing-the-pci-configuration-space-of-a-virtual-function.md
@@ -2368,7 +2200,7 @@
                   href: resetting-a-virtual-function.md
             - name: PF ミニポート ドライバーの停止
               href: halting-a-pf-miniport-driver.md
-            - name: PF ミニポート ドライバーの INF 要件
+            - name: PF ミニポート ドライバーの INF ファイル
               items:
                 - name: PF ミニポート ドライバーの INF 要件
                   href: inf-requirements-for-pf-miniport-drivers.md
@@ -2380,7 +2212,7 @@
                   href: handling-sr-iov--vmq--and-rss-standardized-inf-keywords.md
         - name: SR-IOV VF ミニポート ドライバーの作成
           items:
-            - name: SR-IOV VF ミニポート ドライバーの作成
+            - name: SR-IOV VF ミニポート ドライバーの作成の概要
               href: writing-sr-iov-vf-miniport-drivers.md
             - name: VF ミニポート ドライバーの初期化
               href: initializing-a-vf-miniport-driver.md
@@ -2390,7 +2222,7 @@
               href: inf-requirements-for-vf-miniport-drivers.md
         - name: SR-IOV PF/VF バックチャネル通信
           items:
-            - name: SR-IOV PF/VF バックチャネル通信
+            - name: SR-IOV PF/VF バックチャネル通信の概要
               href: sr-iov-pf-vf-backchannel-communication.md
             - name: VF ミニポート ドライバーからのバックチャネル通信
               href: backchannel-communication-from-a-vf-miniport-driver.md
@@ -2400,21 +2232,19 @@
           href: sr-iov-oids.md
         - name: SR-IOV 状態表示
           items:
-            - name: SR-IOV 状態表示
-              href: sr-iov-status-indications.md
             - name: NDIS_STATUS_NIC_SWITCH_CURRENT_CAPABILITIES
               href: ndis-status-nic-switch-current-capabilities.md
             - name: NDIS_STATUS_NIC_SWITCH_HARDWARE_CAPABILITIES
               href: ndis-status-nic-switch-hardware-capabilities.md
     - name: 仮想マシン キュー (VMQ)
       items:
-        - name: 仮想マシン キュー (VMQ)
+        - name: 仮想マシン キュー (VMQ) の概要
           href: virtual-machine-queue--vmq-.md
-        - name: 仮想マシン キュー アーキテクチャ
+        - name: VVMQ アーキテクチャ
           items:
             - name: 仮想マシン キュー アーキテクチャ
               href: virtual-machine-queue-architecture.md
-            - name: NDIS 仮想マシン キュー (VMQ) の概要
+            - name: NDIS 仮想マシン キュー (VMQ) について
               items:
                 - name: NDIS 仮想マシン キュー (VMQ) の概要
                   href: introduction-to-ndis-virtual-machine-queue--vmq-.md
@@ -2432,9 +2262,9 @@
               href: ndis-virtual-machine-queue-states.md
         - name: VMQ ドライバーの作成
           items:
-            - name: VMQ ドライバーの作成
+            - name: VMQ ドライバーの作成の概要
               href: writing-vmq-drivers.md
-            - name: VMQ ドライバー構成
+            - name: VMQ ドライバーの構成
               items:
                 - name: VMQ ドライバー構成
                   href: vmq-driver-configuration.md
@@ -2458,7 +2288,7 @@
                   href: shared-memory-resource-allocation.md
                 - name: 割り当て済みキューの列挙
                   href: enumerating-the-allocated-queues.md
-            - name: VMQ フィルターの設定とクリア
+            - name: VMQ フィルター
               items:
                 - name: VMQ フィルターの設定とクリア
                   href: setting-and-clearing-vmq-filters.md
@@ -2470,7 +2300,7 @@
                   href: enumerating-filters-on-a-vmq.md
             - name: VM キュー パラメーターの取得と更新
               href: obtaining-and-updating-vm-queue-parameters.md
-            - name: VMQ 送信および受信操作
+            - name: VMQ でのネットワーク データの転送
               items:
                 - name: VMQ 送信および受信操作
                   href: vmq-send-and-receive-operations.md
@@ -2486,7 +2316,7 @@
               href: obtaining-vmq-information.md
     - name: Hyper-V 拡張可能スイッチ
       items:
-        - name: Hyper-V 拡張可能スイッチ
+        - name: Hyper-V 拡張可能スイッチの概要
           href: hyper-v-extensible-switch.md
         - name: Hyper-V 拡張可能スイッチ拡張機能の作成の開始
           href: getting-started-writing-a-hyper-v-extensible-switch-extension.md
@@ -2494,15 +2324,15 @@
           href: overview-of-the-hyper-v-extensible-switch.md
         - name: Hyper-V 拡張可能スイッチ アーキテクチャ
           items:
-            - name: Hyper-V 拡張可能スイッチ アーキテクチャ
+            - name: Hyper-V 拡張可能スイッチ アーキテクチャに関するトピック
               href: hyper-v-extensible-switch-architecture.md
             - name: Hyper-V 拡張可能スイッチ コンポーネント
               items:
-                - name: Hyper-V 拡張可能スイッチ コンポーネント
+                - name: Hyper-V 拡張可能スイッチ コンポーネントの概要
                   href: hyper-v-extensible-switch-components.md
                 - name: Hyper-V 拡張可能スイッチ拡張機能
                   items:
-                    - name: Hyper-V 拡張可能スイッチ拡張機能
+                    - name: Hyper-V 拡張可能スイッチ拡張機能の概要
                       href: hyper-v-extensible-switch-extensions.md
                     - name: キャプチャ拡張機能
                       href: capturing-extensions.md
@@ -2516,7 +2346,7 @@
                       href: hybrid-forwarding.md
                 - name: Hyper-V 拡張可能スイッチ ポート
                   items:
-                    - name: Hyper-V 拡張可能スイッチ ポート
+                    - name: Hyper-V 拡張可能スイッチ ポートに関するトピック
                       href: hyper-v-extensible-switch-ports.md
                     - name: Hyper-V 拡張可能スイッチ ポートの概要
                       href: overview-of-hyper-v-extensible-switch-ports.md
@@ -2524,7 +2354,7 @@
                       href: validation-ports.md
                     - name: 操作ポート
                       href: operational-ports.md
-                - name: Hyper-V 拡張可能スイッチ ネットワーク アダプター
+                - name: Hyper-V 拡張可能スイッチ ネットワーク アダプターに関するトピック
                   items:
                     - name: Hyper-V 拡張可能スイッチ ネットワーク アダプター
                       href: hyper-v-extensible-switch-network-adapters.md
@@ -2544,7 +2374,7 @@
                   href: hyper-v-extensible-switch-port-and-network-adapter-states.md
             - name: Hyper-V 拡張可能スイッチ データ パス
               items:
-                - name: Hyper-V 拡張可能スイッチ データ パス
+                - name: Hyper-V 拡張可能スイッチ データ パスに関するトピック
                   href: hyper-v-extensible-switch-data-path.md
                 - name: Hyper-V 拡張可能スイッチ データ パスの概要
                   items:
@@ -2556,7 +2386,7 @@
                       href: packet-management-guidelines-for-the-extensible-switch-data-path.md
                 - name: Hyper-V 拡張可能スイッチ転送コンテキスト
                   items:
-                    - name: Hyper-V 拡張可能スイッチ転送コンテキスト
+                    - name: Hyper-V 拡張可能スイッチ転送コンテキストの概要
                       href: hyper-v-extensible-switch-forwarding-context.md
                     - name: Hyper-V 拡張可能スイッチ転送コンテキスト データの種類
                       href: hyper-v-extensible-switch-forwarding-context-data-types.md
@@ -2566,7 +2396,7 @@
                   href: hyper-v-extensible-switch-send-and-receive-flags.md
             - name: Hyper-V 拡張可能スイッチ制御パス
               items:
-                - name: Hyper-V 拡張可能スイッチ制御パス
+                - name: Hyper-V 拡張可能スイッチ制御パスに関するトピック
                   href: hyper-v-extensible-switch-control-path.md
                 - name: OID 要求用の Hyper-V 拡張可能スイッチ制御パス
                   href: hyper-v-extensible-switch-control-path-for-oid-requests.md
@@ -2574,11 +2404,11 @@
                   href: hyper-v-extensible-switch-control-path-for-ndis-status-indications.md
             - name: Hyper-V 拡張可能スイッチ ポリシー
               items:
-                - name: Hyper-V 拡張可能スイッチ ポリシー
+                - name: Hyper-V 拡張可能スイッチ ポリシーに関するトピック
                   href: hyper-v-extensible-switch-policies.md
                 - name: Hyper-V 拡張可能スイッチ ポリシーの概要
                   href: overview-of-hyper-v-extensible-switch-policies.md
-                - name: ポート ポリシー
+                - name: ポートの Hyper-V 拡張可能スイッチ ポリシー
                   items:
                     - name: ポート ポリシー
                       href: port-policies.md
@@ -2586,7 +2416,7 @@
                       href: overview-of-port-policies.md
                     - name: カスタム ポート プロパティの定義と登録
                       href: custom-port-property-definition-and-registration.md
-                - name: スイッチ ポリシー
+                - name: スイッチの Hyper-V 拡張可能スイッチ ポリシー
                   items:
                     - name: スイッチ ポリシー
                       href: switch-policies.md
@@ -2596,7 +2426,7 @@
                       href: custom-switch-property-definition-and-registration.md
             - name: Hyper-V 拡張可能スイッチ機能の状態情報
               items:
-                - name: Hyper-V 拡張可能スイッチ機能の状態情報
+                - name: Hyper-V 拡張可能スイッチ機能の状態情報の概要
                   href: hyper-v-extensible-switch-feature-status-information.md
                 - name: カスタム ポート機能の状態
                   href: custom-port-feature-status.md
@@ -2604,7 +2434,7 @@
                   href: custom-switch-feature-status.md
             - name: Hyper-V 拡張可能スイッチの保存および復元操作
               items:
-                - name: Hyper-V 拡張可能スイッチの保存および復元操作
+                - name: Hyper-V 拡張可能スイッチの保存および復元操作の概要
                   href: hyper-v-extensible-switch-save-and-restore-operations.md
                 - name: Hyper-V 拡張可能スイッチの保存操作
                   href: hyper-v-extensible-switch-save-operations.md
@@ -2614,9 +2444,9 @@
                   href: hyper-v-extensible-switch-live-migration-support.md
         - name: Hyper-V 拡張可能スイッチの拡張機能の作成
           items:
-            - name: Hyper-V 拡張可能スイッチの拡張機能の作成
+            - name: Hyper-V 拡張可能スイッチの拡張機能の作成に関するトピック
               href: writing-hyper-v-extensible-switch-extensions.md
-            - name: Hyper-V 拡張可能スイッチの送信および受信操作
+            - name: Hyper-V 拡張可能スイッチでのネットワーク データの転送
               items:
                 - name: Hyper-V 拡張可能スイッチの送信および受信操作
                   href: hyper-v-extensible-switch-send-and-receive-operations.md
@@ -2626,7 +2456,7 @@
                   href: cloning-or-duplicating-packet-traffic.md
                 - name: Hyper-V 拡張可能スイッチ ポートへのパケットの転送
                   href: forwarding-packets-to-hyper-v-extensible-switch-ports.md
-            - name: Hyper-V 拡張可能スイッチ OID 要求
+            - name: Hyper-V 拡張可能スイッチ OID の処理
               items:
                 - name: Hyper-V 拡張可能スイッチ OID 要求
                   href: hyper-v-extensible-switch-oid-requests.md
@@ -2684,7 +2514,7 @@
                   href: managing-physical-network-adapter-connection-status.md
                 - name: 物理ネットワーク アダプターへのパケットの転送
                   href: forwarding-packets-to-physical-network-adapters.md
-                - name: 物理ネットワーク アダプターへの OID 要求の管理
+                - name: 物理ネットワーク アダプターへの OID 要求
                   items:
                     - name: 物理ネットワーク アダプターへの OID 要求の管理
                       href: managing-oid-requests-to-physical-network-adapters.md
@@ -2692,7 +2522,7 @@
                       href: forwarding-oid-requests-to-physical-network-adapters.md
                     - name: 物理ネットワーク アダプターへのハードウェア オフロード OID 要求の管理
                       href: managing-hardware-offload-oid-requests-to-physical-network-adapters.md
-                - name: 物理ネットワーク アダプターからの NDIS 状態表示の管理
+                - name: 物理ネットワーク アダプターからの NDIS 状態表示
                   items:
                     - name: 物理ネットワーク アダプターからの NDIS 状態表示の管理
                       href: managing-ndis-status-indications-from-physical-network-adapters.md
@@ -2726,16 +2556,12 @@
           href: hyper-v-extensible-switch-oids.md
         - name: Hyper-V 拡張可能スイッチの状態表示
           items:
-            - name: Hyper-V 拡張可能スイッチの状態表示
-              href: hyper-v-extensible-switch-status-indications.md
             - name: NDIS_STATUS_SWITCH_NIC_STATUS
               href: ndis-status-switch-nic-status.md
             - name: NDIS_STATUS_SWITCH_PORT_REMOVE_VF
               href: ndis-status-switch-port-remove-vf.md
         - name: VMQ 状態表示
           items:
-            - name: VMQ 状態表示
-              href: virtual-machine-queue-status-indications.md
             - name: NDIS_STATUS_ISOLATION_PARAMETERS_CHANGE
               href: ndis-status-isolation-parameters-change.md
             - name: NDIS_STATUS_RECEIVE_FILTER_QUEUE_PARAMETERS
@@ -2744,11 +2570,11 @@
               href: ndis-status-receive-queue-state.md
 - name: ワイヤレス ネットワーキング
   items:
-    - name: ワイヤレス ネットワーキング
+    - name: ワイヤレス ネットワーキングに関するトピック
       href: wireless-networking2.md
     - name: WLAN ユニバーサル Windows ドライバー モデル
       href: wifi-universal-driver-model.md
-    - name: 携帯ネットワークのアーキテクチャと実装
+    - name: 携帯ネットワークのアーキテクチャと概要
       items:
         - name: 携帯ネットワークのアーキテクチャと実装
           href: cellular-architecture-and-driver-model.md
@@ -2758,13 +2584,13 @@
           href: sim-lock.md
         - name: SIM ツールキット
           items:
-            - name: SIM ツールキット
+            - name: SIM ツールキットの概要
               href: sim-toolkit.md
             - name: SIM ツールキット コマンド
               href: sim-toolkit-commands.md
             - name: SIM ツールキットを起動するための予約済み URI
               href: reserved-uri-to-launch-sim-toolkit.md
-        - name: 携帯ネットワーク COM API 設計ガイド
+        - name: 携帯ネットワーク COM API
           items:
             - name: 携帯ネットワーク COM API 設計ガイド
               href: cellular-com-api-design-guide.md
@@ -2774,13 +2600,13 @@
               href: communicate-with-the-ril-driver-by-using-the-ioemcellularmodem-interface.md
     - name: モバイル ブロード バンド (MB) 設計ガイド
       items:
-        - name: モバイル ブロード バンド (MB) 設計ガイド
+        - name: モバイル ブロード バンド (MB) 設計ガイドに関するトピック
           href: mobile-broadband--mb--design-guide.md
         - name: MB ミニポート ドライバーの開発のロードマップ
           href: roadmap-to-develop-mb-miniport-drivers.md
         - name: MB インターフェイス モデル
           items:
-            - name: MB インターフェイス モデル
+            - name: MB インターフェイス モデルの概要
               href: mb-interface-model.md
             - name: MB インターフェイスの用語
               href: mb-interface-terms.md
@@ -2788,7 +2614,7 @@
               href: mb-union-function-descriptors.md
             - name: MB ID モーフィング
               items:
-                - name: MB ID モーフィング
+                - name: MB ID モーフィングの概要
                   href: mb-identity-morphing.md
                 - name: MB ID モーフィング ソリューションの概要
                   href: mb-identity-morphing-solution-overview.md
@@ -2796,7 +2622,7 @@
                   href: mb-identity-morphing-solution-details.md
             - name: MB インターフェイス モデルに関する補足条項
               href: mb-interface-model-supplement.md
-        - name: MB インターフェイスの概要
+        - name: MB ドライバー モデル
           items:
             - name: MB インターフェイスの概要
               href: mb-interface-overview.md
@@ -2824,7 +2650,7 @@
               href: mb-miniport-driver-performance-requirements.md
         - name: MB 操作フローチャート
           items:
-            - name: MB 操作フローチャート
+            - name: MB 操作フローチャートに関するトピック
               href: mb-operation-flowcharts.md
             - name: MB ミニポート ドライバーの初期化
               href: mb-miniport-driver-initialization.md
@@ -2890,7 +2716,7 @@
               href: mb-uicc-application-and-file-system-access.md
         - name: MB のリセットと回復
           items:
-            - name: MB デバイスベースのリセットと回復
+            - name: MB デバイスベースのリセットと回復、およびハング検出
               items:
                 - name: MB デバイスベースのリセットと回復
                   href: mb-device-based-reset-and-recovery.md
@@ -2914,8 +2740,6 @@
           href: mb-esim-mbim-ready-state-guidance.md
         - name: MB NDIS 状態通知
           items:
-            - name: MB NDIS 状態通知
-              href: mb-ndis-status-notifications.md
             - name: NDIS_STATUS_WWAN_AUTH_RESPONSE
               href: ndis-status-wwan-auth-response.md
             - name: NDIS_STATUS_WWAN_BASE_STATIONS_INFO
@@ -3030,7 +2854,7 @@
               href: ndis-status-wwan-visible-providers.md
         - name: MB に関する補足ドキュメント
           items:
-            - name: MB に関する補足ドキュメント
+            - name: MB に関する補足ドキュメントについてのトピック
               href: supplemental-mb-documentation.md
             - name: ホスト シャットダウン デバイス サービス
               href: host-shutdown-device-service.md
@@ -3042,13 +2866,13 @@
               href: mobile-broadband-class-driver-logs--event-trace-log-tracing.md
             - name: USB デバイスのモバイル ブロード バンド実装ガイドライン
               href: mobile-broadband-implementation-guidelines-for-usb-devices.md
-    - name: WLAN 機能情報
+    - name: WLAN ネットワークの基本設定とローミング
       items:
         - name: WLAN 機能情報
           href: wlan-feature-information.md
         - name: 802.11 k、802.11v、および 802.11r による高速ローミング
           href: fast-roaming-with-802-11k--802-11v--and-802-11r.md
-    - name: WDI ミニポート ドライバー設計ガイド
+    - name: WLAN デバイス ドライバー インターフェイス (WDI) ミニポート ドライバー設計ガイド
       items:
         - name: WDI ミニポート ドライバー設計ガイド
           href: wdi-miniport-driver-design-guide.md
@@ -3056,7 +2880,7 @@
           href: wdi-communication-model.md
         - name: WDI ハング検出および回復
           items:
-            - name: WDI ハング検出および回復
+            - name: ハング検出および回復
               href: wdi-hang-detection-and-recovery.md
             - name: WDI UE ハング検出および回復フロー
               href: wdi-ue-hang-detection-and-recovery-flow.md
@@ -3078,7 +2902,7 @@
           href: wdi-initialization.md
         - name: WDI タスク コマンドの優先順位と既存の状態
           href: wdi-task-command-priority-and-existing-state.md
-        - name: WDI データ転送
+        - name: WDI でのネットワーク データの転送
           items:
             - name: WDI データ転送
               href: wdi-data-transfer.md
@@ -3114,7 +2938,7 @@
               href: wdi-non-tlv-versioning.md
             - name: IHV トレース ログによるユーザーが開始したフィードバック
               items:
-                - name: IHV トレース ログによるユーザーが開始したフィードバック
+                - name: IHV トレース ログによるユーザーが開始したフィードバックの概要
                   href: user-initiated-feedback-with-ihv-trace-logging.md
                 - name: ログ シナリオ
                   href: logging-scenarios.md
@@ -3124,7 +2948,7 @@
                   href: user-initiated-feedback-repro-mode.md
         - name: WDI TLV ジェネレーター/パーサー
           items:
-            - name: WDI TLV ジェネレーター/パーサー
+            - name: WDI TLV ジェネレーター/パーサーに関するトピック
               href: wdi-tlv-generator-parser.md
             - name: WDI TLV パーサー インターフェイスの概要
               href: wdi-tlv-parser-interface-overview.md
@@ -3144,8 +2968,6 @@
               href: wdi-tlv-dumpers.md
         - name: WDI TLV
           items:
-            - name: WDI TLV
-              href: wdi-miniport-driver-tlvs.md
             - name: WDI_TLV_ACCESS_NETWORK_TYPE
               href: wdi-tlv-access-network-type.md
             - name: WDI_TLV_ACTION_FRAME_BODY
@@ -3800,7 +3622,7 @@
               href: wdi-tlv-wfd-association-status.md
         - name: WDI USB セレクティブ サスペンド
           items:
-            - name: WDI USB セレクティブ サスペンド
+            - name: WDI USB セレクティブ サスペンドに関するトピック
               href: wdi-usb-selective-suspend.md
             - name: WDI NDIS アイドル状態の検出
               href: wdi-ndis-idle-detection.md
@@ -3816,7 +3638,7 @@
               href: wdi-usb-remote-wake-sequence.md
         - name: WDI 設計ガイド
           items:
-            - name: WDI 設計ガイド
+            - name: WDI 設計ガイドに関するトピック
               href: wdi-design-guide.md
             - name: WDI 低待機時間接続品質
               href: wdi-low-latency-connection-quality.md
@@ -3828,8 +3650,6 @@
               href: wdi-develop-and-validate-wdi-drivers-for-reset-recovery.md
         - name: WDI タスク OID
           items:
-            - name: WDI タスク OID
-              href: wdi-miniport-driver-task-oids.md
             - name: OID_WDI_TASK_CHANGE_OPERATION_MODE
               href: oid-wdi-task-change-operation-mode.md
             - name: OID_WDI_TASK_CLOSE
@@ -3874,8 +3694,6 @@
               href: oid-wdi-task-stop-ap.md
         - name: WDI プロパティ OID
           items:
-            - name: WDI プロパティ OID
-              href: wdi-miniport-driver-property-oids.md
             - name: OID_WDI_ABORT_TASK
               href: oid-wdi-abort-task.md
             - name: OID_WDI_GET_ADAPTER_CAPABILITIES
@@ -3956,8 +3774,6 @@
               href: oid-wdi-tcp-rsc-statistics.md
         - name: WDI 状態表示
           items:
-            - name: WDI 状態表示
-              href: wdi-miniport-driver-status-indications.md
             - name: NDIS_STATUS_WDI_INDICATION_ACTION_FRAME_RECEIVED
               href: ndis-status-wdi-indication-action-frame-received.md
             - name: NDIS_STATUS_WDI_INDICATION_AP_ASSOCIATION_REQUEST_RECEIVED
@@ -4052,8 +3868,6 @@
               href: ndis-status-wdi-indication-wake-reason.md
         - name: その他の WDI データ型
           items:
-            - name: その他の WDI データ型
-              href: other-wdi-data-types.md
             - name: WDI_BAND_ID
               href: wdi-band-id.md
             - name: WDI_CHANNEL_NUMBER
@@ -4076,7 +3890,7 @@
           href: wdi-doc-change-history.md
     - name: ネイティブ 802.11 IHV 拡張機能
       items:
-        - name: ネイティブ 802.11 IHV 拡張機能
+        - name: ネイティブ 802.11 IHV 拡張機能に関するトピック
           href: native-802-11-ihv-extensions.md
         - name: IHV 拡張性の概要
           href: overview-of-ihv-extensibility.md
@@ -4084,7 +3898,7 @@
           href: installing-native-802-11-ihv-extensions.md
         - name: ネイティブ 802.11 IHV 拡張 DLL
           items:
-            - name: ネイティブ 802.11 IHV 拡張 DLL
+            - name: ネイティブ 802.11 IHV 拡張 DLL に関するトピック
               href: native-802-11-ihv-extensions-dll4.md
             - name: ネイティブ 802.11 IHV 拡張 DLL の概要
               href: native-802-11-ihv-extensions-dll-overview.md
@@ -4096,7 +3910,7 @@
               href: native-802-11-ihv-extensions-dll-implementation-guidelines.md
             - name: DLL 開始/停止操作
               items:
-                - name: DLL 開始/停止操作
+                - name: DLL 開始/停止操作に関するトピック
                   href: dll-start-stop-operations.md
                 - name: DLL 開始操作
                   href: dll-start-operations.md
@@ -4104,7 +3918,7 @@
                   href: dll-stop-operations.md
             - name: 802.11 WLAN アダプターの管理
               items:
-                - name: 802.11 WLAN アダプターの管理
+                - name: 802.11 WLAN アダプターの管理に関するトピック
                   href: 802-11-wlan-adapter-management.md
                 - name: 802.11 WLAN アダプターの接続
                   href: 802-11-wlan-adapter-arrival.md
@@ -4124,7 +3938,7 @@
                   href: creating-network-profile-extensions.md
                 - name: ネットワーク プロファイル拡張機能の検証
                   href: validating-network-profile-extensions.md
-            - name: ユーザーとの対話
+            - name: ユーザー操作
               items:
                 - name: ユーザーとの対話
                   href: interaction-with-the-user.md
@@ -4134,7 +3948,7 @@
                   href: processing-session-changes.md
             - name: 関連付け前の操作
               items:
-                - name: 関連付け前の操作
+                - name: 関連付け前の操作に関するトピック
                   href: pre-association-operations.md
                 - name: 関連付け前の操作の概要
                   href: pre-association-operation-overview.md
@@ -4142,7 +3956,7 @@
                   href: pre-association-operation-guidelines.md
             - name: 関連付け後の操作
               items:
-                - name: 関連付け後の操作
+                - name: 関連付け後の操作の概要
                   href: post-association-operations.md
                 - name: 関連付け後の操作の実行
                   href: performing-a-post-association-operation.md
@@ -4150,7 +3964,7 @@
                   href: stopping-a-post-association-operation.md
                 - name: ネイティブ 802.11 802.1X モジュールへのインターフェイス
                   href: interface-to-the-native-802-11-802-1x-module.md
-            - name: ネイティブ 802.11 IHV 拡張送信および受信操作
+            - name: ネイティブ 802.11 IHV 拡張機能でのネットワーク データの転送
               items:
                 - name: ネイティブ 802.11 IHV 拡張送信および受信操作
                   href: send-and-receive-operations3.md
@@ -4160,7 +3974,7 @@
                   href: send-operations.md
                 - name: 受信操作
                   href: receive-operations.md
-            - name: 通知操作
+            - name: 通知の送信と受信
               items:
                 - name: 通知操作
                   href: notification-operations.md
@@ -4172,7 +3986,7 @@
               href: virtual-station.md
         - name: ネイティブ 802.11 IHV UI 拡張 DLL
           items:
-            - name: ネイティブ 802.11 IHV UI 拡張 DLL
+            - name: ネイティブ 802.11 IHV UI 拡張 DLL に関するトピック
               href: native-802-11-ihv-ui-extensions-dll2.md
             - name: Windows SDK のリファレンス
               href: windows-sdk-references.md
@@ -4185,20 +3999,18 @@
                 - name: ワイヤレス ネットワーク プロファイルのプロパティの拡張
                   href: extending-the-properties-for-wireless-network-profiles.md
                 - name: ワイヤレス接続プロパティの拡張
-                  items:
-                    - name: ワイヤレス接続プロパティの拡張
-                      href: extending-wireless-connection-properties.md
-                    - name: ワイヤレス セキュリティ プロパティの拡張
-                      href: extending-wireless-security-properties.md
-                    - name: Microsoft 802.1X セキュリティ設定の拡張
-                      href: extending-microsoft-802-1x-security-settings.md
-                    - name: 独自の 802.1X セキュリティ メソッドの UI の拡張
-                      href: extending-the-ui-for-proprietary-802-1x-security-methods.md
-                    - name: 標準 802.1X セキュリティ メソッドの UI の拡張
-                      href: extending-the-ui-for-standard-802-1x-security-methods.md
+                  href: extending-wireless-connection-properties.md
+                - name: ワイヤレス セキュリティ プロパティの拡張
+                  href: extending-wireless-security-properties.md
+                - name: Microsoft 802.1X セキュリティ設定の拡張
+                  href: extending-microsoft-802-1x-security-settings.md
+                - name: 独自の 802.1X セキュリティ メソッドの UI の拡張
+                  href: extending-the-ui-for-proprietary-802-1x-security-methods.md
+                - name: 標準 802.1X セキュリティ メソッドの UI の拡張
+                  href: extending-the-ui-for-standard-802-1x-security-methods.md
             - name: ワイヤレス ネットワーク アダプターの詳細プロパティの拡張
               href: extending-the-advanced-properties-for-wireless-network-adapters.md
-            - name: カスタム UI の表示の要求の処理
+            - name: カスタム UI の表示の要求
               items:
                 - name: カスタム UI の表示の要求の処理
                   href: handling-requests-for-the-display-of-a-custom-ui.md
@@ -4214,7 +4026,7 @@
                   href: accessing-profile-and-context-data.md
     - name: Wi-Fi ホット スポット オフロード ガイド
       items:
-        - name: Wi-Fi ホット スポット オフロード ガイド
+        - name: Wi-Fi ホット スポット オフロードの概要
           href: wi-fi-hotspot-offloading-guide.md
         - name: Wi-Fi ホット スポット オフロード アーキテクチャ
           href: wi-fi-hotspot-offloading-architecture.md
@@ -4222,11 +4034,11 @@
           href: wi-fi-hotspot-offloading-plugin.md
         - name: Wi-Fi 探索サービス
           items:
-            - name: Wi-Fi 探索サービス
+            - name: Wi-Fi 探索サービスの概要
               href: wi-fi-discovery-service.md
             - name: Wi-Fi ホット スポット データ送信形式
               href: wi-fi-hotspot-data-submission-format.md
-        - name: Wi-Fi ホット スポット オフロード リファレンス
+        - name: Wi-Fi ホット スポット オフロード API リファレンス
           items:
             - name: Wi-Fi ホット スポット オフロード リファレンス
               href: wi-fi-hotspot-offloading-reference.md
@@ -4234,8 +4046,6 @@
               href: wi-fi-hotspot-offloading-constants.md
             - name: Wi-Fi ホット スポット オフロード構造
               items:
-                - name: Wi-Fi ホット スポット オフロード構造
-                  href: wi-fi-hotspot-offloading-structures.md
                 - name: HOTSPOT_HOST_HANDLERS
                   href: hotspot-host-handlers.md
                 - name: HOTSPOT_PLUGIN_APIS
@@ -4266,8 +4076,6 @@
                   href: hs-sim-identity.md
             - name: Wi-Fi ホット スポット オフロード関数
               items:
-                - name: Wi-Fi ホット スポット オフロード関数
-                  href: wi-fi-hotspot-offloading-functions.md
                 - name: HSPluginGetVersion
                   href: hsplugingetversion.md
                 - name: HSPluginInitPlugin
@@ -4310,8 +4118,6 @@
                   href: hs-host-update-configuration-completion.md
             - name: Wi-Fi ホット スポット オフロード列挙
               items:
-                - name: Wi-Fi ホット スポット オフロード列挙
-                  href: wi-fi-hotspot-offloading-enumerations.md
                 - name: eHS_AUTHENTICATION_RESULT
                   href: ehs-authentication-result.md
                 - name: eHS_NETWORK_STATE
@@ -4322,14 +4128,12 @@
                   href: ehs-update-result.md
 - name: ネットワーク モジュール レジストラー
   items:
-    - name: ネットワーク モジュール レジストラー
+    - name: ネットワーク モジュール レジストラーに関するトピック
       href: network-module-registrar2.md
     - name: ネットワーク モジュール レジストラーの概要
       href: introduction-to-the-network-module-registrar.md
     - name: ネットワーク モジュール レジストラーの定義
       items:
-        - name: ネットワーク モジュール レジストラーの定義
-          href: nmr-definitions.md
         - name: ネットワーク モジュール
           href: network-module.md
         - name: プロバイダー モジュール
@@ -4340,7 +4144,7 @@
           href: network-programming-interface.md
     - name: アーキテクチャの概要
       items:
-        - name: アーキテクチャの概要
+        - name: ネットワーク モジュール レジストラーのアーキテクチャの概要
           href: architecture-overview.md
         - name: ネットワーク モジュールのアタッチ
           href: network-module-attachment.md
@@ -4348,8 +4152,6 @@
           href: network-module-detachment.md
     - name: クライアント モジュールの操作
       items:
-        - name: クライアント モジュールの操作
-          href: client-module-operations.md
         - name: クライアント モジュールの初期化と登録
           href: initializing-and-registering-a-client-module.md
         - name: クライアント モジュールのプロバイダー モジュールへのアタッチ
@@ -4362,8 +4164,6 @@
           href: unloading-a-client-module.md
     - name: プロバイダー モジュールの操作
       items:
-        - name: プロバイダー モジュールの操作
-          href: provider-module-operations.md
         - name: プロバイダー モジュールの初期化と登録
           href: initializing-and-registering-a-provider-module.md
         - name: クライアント モジュールへのプロバイダー モジュールのアタッチ
@@ -4378,7 +4178,7 @@
       href: programming-considerations.md
 - name: Winsock カーネル
   items:
-    - name: Winsock カーネル
+    - name: Winsock カーネルに関するトピック
       href: winsock-kernel4.md
     - name: Winsock カーネルによるネットワーク ドライバーの開発のロードマップ
       href: roadmap-for-developing-network-drivers-with-winsock-kernel.md
@@ -4386,7 +4186,7 @@
       href: introduction-to-winsock-kernel.md
     - name: Winsock カーネルの概要
       items:
-        - name: Winsock カーネルの概要
+        - name: Winsock カーネルの概要に関するトピック
           href: winsock-kernel-overview.md
         - name: Winsock カーネルのアーキテクチャ
           href: winsock-kernel-architecture.md
@@ -4406,7 +4206,7 @@
           href: using-irps-with-winsock-kernel-functions.md
     - name: Winsock カーネルの操作
       items:
-        - name: Winsock カーネルの操作
+        - name: Winsock カーネルの操作に関するトピック
           href: winsock-kernel-operations.md
         - name: Winsock カーネル アプリケーションの登録
           href: registering-a-winsock-kernel-application.md
@@ -4424,7 +4224,7 @@
           href: listening-for-and-accepting-incoming-connections.md
         - name: 宛先との接続の確立
           href: establishing-a-connection-with-a-destination.md
-        - name: WSK ソケット経由でのデータの送受信
+        - name: WSK ソケット経由でのネットワーク データの転送
           items:
             - name: WSK ソケット経由でのデータの送受信
               href: sending-and-receiving-data.md
@@ -4448,8 +4248,6 @@
           href: resolving-host-names-and-ip-addresses.md
         - name: WSK クライアント制御操作
           items:
-            - name: WSK クライアント制御操作
-              href: wsk-client-control-operations.md
             - name: WSK_CACHE_SD
               href: wsk-cache-sd.md
             - name: WSK_RELEASE_SD
@@ -4466,8 +4264,6 @@
               href: wsk-transport-list-query.md
         - name: WSK ソケット IOCTL 操作
           items:
-            - name: WSK ソケット IOCTL 操作
-              href: wsk-socket-ioctl-operations.md
             - name: SIO_WSK_QUERY_IDEAL_SEND_BACKLOG
               href: sio-wsk-query-ideal-send-backlog.md
             - name: SIO_WSK_QUERY_INSPECT_ID
@@ -4484,29 +4280,23 @@
               href: sio-wsk-set-tcp-silent-mode.md
         - name: WSK ソケット オプション
           items:
-            - name: WSK ソケット オプション
-              href: wsk-socket-options.md
             - name: SO_WSK_EVENT_CALLBACK
               href: so-wsk-event-callback.md
             - name: SO_WSK_SECURITY
               href: so-wsk-security.md
         - name: WSK データ型
           items:
-            - name: WSK データ型
-              href: wsk-data-types.md
             - name: WSK_CLIENT
               href: wsk-client.md
     - name: Winsock カーネル プログラミングに関する考慮事項
       items:
-        - name: Winsock カーネル プログラミングに関する考慮事項
-          href: winsock-kernel-programming-considerations.md
         - name: Winsock カーネルへの TDI ドライバーの移植
           href: porting-tdi-drivers-to-winsock-kernel.md
         - name: トランスポート アドレスの共有
           href: sharing-transport-addresses.md
         - name: TDI トランスポートの使用
           href: using-tdi-transports.md
-        - name: WSK の登録と登録解除への NMR の使用
+        - name: WSK の登録と登録解除へのネットワーク モジュール レジストラー (NMR) の使用
           items:
             - name: WSK の登録と登録解除への NMR の使用
               href: using-nmr-for-wsk-registration-and-unregistration.md
@@ -4518,13 +4308,13 @@
               href: unregistering-and-unloading-the-wsk-client.md
 - name: IP ヘルパー
   items:
-    - name: IP ヘルパー
+    - name: IP ヘルパーの概要
       href: ip-helper.md
     - name: IP ヘルパーのヘッダー ファイルを含める
       href: including-header-files-for-ip-helper.md
 - name: Windows フィルタリング プラットフォーム コールアウト ドライバー
   items:
-    - name: Windows フィルタリング プラットフォーム コールアウト ドライバー
+    - name: Windows フィルタリング プラットフォーム コールアウト ドライバーに関するトピック
       href: windows-filtering-platform-callout-drivers2.md
     - name: WFP コールアウト ドライバーの開発のロードマップ
       href: roadmap-for-developing-wfp-callout-drivers.md
@@ -4532,8 +4322,6 @@
       href: introduction-to-windows-filtering-platform-callout-drivers.md
     - name: WFP に関する新しい情報
       items:
-        - name: WFP に関する新しい情報
-          href: new-information-for-wfp.md
         - name: Windows 8 での WFP の変更
           href: wfp-changes-for-windows-8.md
         - name: Windows 7 での WFP の変更
@@ -4542,8 +4330,6 @@
           href: wfp-changes-for-windows-vista-sp1-and-windows-server-2008.md
     - name: Windows フィルタリング プラットフォーム コールアウト ドライバーの定義
       items:
-        - name: Windows フィルタリング プラットフォーム コールアウト ドライバーの定義
-          href: wfp-callout-drivers-definitions.md
         - name: コールアウト
           href: callout.md
         - name: コールアウト ドライバー
@@ -4560,7 +4346,7 @@
       href: windows-filtering-platform-architecture-overview.md
     - name: コールアウト ドライバーの操作
       items:
-        - name: コールアウト ドライバーの操作
+        - name: コールアウト ドライバーの操作に関するトピック
           href: callout-driver-operations.md
         - name: コールアウト ドライバーの初期化
           items:
@@ -4584,8 +4370,6 @@
               href: using-a-callout-for-deep-inspection-of-stream-data.md
             - name: パケットおよびストリーム データの検査
               items:
-                - name: パケットおよびストリーム データの検査
-                  href: inspecting-packet-and-stream-data.md
                 - name: パケット検査ポイント
                   href: packet-inspection-points.md
                 - name: WFP レイヤーの要件と制限
@@ -4640,7 +4424,7 @@
       href: porting-packet-processing-drivers-and-apps-to-wfp.md
     - name: IPsec 互換コールアウト ドライバーの開発
       href: developing-ipsec-compatible-callout-drivers.md
-    - name: その他の Windows フィルター プラットフォーム関数の呼び出し
+    - name: Windows フィルタリング プラットフォーム管理関数
       items:
         - name: その他の Windows フィルター プラットフォーム関数の呼び出し
           href: calling-other-windows-filtering-platform-functions.md
@@ -4648,7 +4432,7 @@
           href: opening-a-session-to-the-filter-engine.md
         - name: フィルター エンジンへのセッションを閉じる
           href: closing-a-session-to-the-filter-engine.md
-    - name: Windows フィルタリング プラットフォーム定数
+    - name: Windows フィルタリング プラットフォーム識別子
       items:
         - name: Windows フィルタリング プラットフォーム定数
           href: windows-filtering-platform-constants.md
@@ -4656,16 +4440,12 @@
           href: built-in-callout-identifiers.md
         - name: フィルター レイヤー識別子
           items:
-            - name: フィルター レイヤー識別子
-              href: filtering-layer-identifiers.md
             - name: 管理フィルター レイヤー識別子
               href: management-filtering-layer-identifiers.md
             - name: 実行時フィルター レイヤー識別子
               href: run-time-filtering-layer-identifiers.md
         - name: フィルター条件
           items:
-            - name: フィルター条件
-              href: filtering-conditions.md
             - name: フィルター条件識別子
               href: filtering-condition-identifiers.md
             - name: フィルター条件フラグ
@@ -4678,8 +4458,6 @@
               href: filtering-conditions-available-at-each-filtering-layer.md
         - name: メタデータ フィールド
           items:
-            - name: メタデータ フィールド
-              href: metadata-fields.md
             - name: メタデータ フィールド識別子
               href: metadata-field-identifiers.md
             - name: メタデータ フィールド L2 識別子
@@ -4692,8 +4470,6 @@
           href: data-offset-positions.md
         - name: 破棄理由識別子
           items:
-            - name: 破棄理由識別子
-              href: discard-reason-identifiers.md
             - name: 一般的な破棄理由
               href: general-discard-reasons.md
             - name: ネットワーク レイヤー破棄理由
@@ -4702,8 +4478,6 @@
               href: transport-layer-discard-reasons.md
     - name: その他の Windows フィルタリング プラットフォーム関数
       items:
-        - name: その他の Windows フィルタリング プラットフォーム関数
-          href: other-windows-filtering-platform-functions.md
         - name: WFP ユーザー モード管理関数
           href: wfp-user-mode-management-functions.md
         - name: インターネット キー交換関数
@@ -4712,11 +4486,11 @@
           href: ipsec-functions.md
 - name: システム エリア ネットワーク
   items:
-    - name: システム エリア ネットワーク
+    - name: システム エリア ネットワークの概要
       href: system-area-networks.md
     - name: システム エリア ネットワークのサポート
       items:
-        - name: システム エリア ネットワークのサポート
+        - name: システム エリア ネットワークのサポートに関するトピック
           href: supporting-system-area-networks.md
         - name: システム エリア ネットワークの概要
           href: introduction-to-system-area-networks.md
@@ -4728,13 +4502,13 @@
           href: virtual-interface-architecture-and-support-for-san.md
     - name: Windows ソケット ダイレクト
       items:
-        - name: Windows ソケット ダイレクト
+        - name: Windows ソケット ダイレクトの概要
           href: windows-sockets-direct.md
         - name: Windows ソケット ダイレクト アーキテクチャ
           href: windows-sockets-direct-architecture.md
         - name: Windows ソケット ダイレクト コンポーネント操作
           items:
-            - name: Windows ソケット ダイレクト コンポーネント操作
+            - name: Windows ソケット ダイレクト コンポーネント操作に関するトピック
               href: windows-sockets-direct-component-operation.md
             - name: Windows ソケット ダイレクト コンポーネントのインストール
               items:
@@ -4744,7 +4518,7 @@
                   href: installing-the-windows-sockets-switch.md
                 - name: SAN サービス プロバイダーのインストール
                   href: installing-a-san-service-provider.md
-            - name: SAN の使用の初期化
+            - name: SAN の使用の準備
               items:
                 - name: SAN の使用の初期化
                   href: initializing-the-use-of-a-san.md
@@ -4768,7 +4542,7 @@
                   href: registering-memory-for-operations-on-a-san.md
                 - name: 登録済みメモリのキャッシュ
                   href: caching-registered-memory.md
-            - name: SAN でのデータの転送
+            - name: SAN でのネットワーク データの転送
               items:
                 - name: SAN でのデータの転送
                   href: transferring-data-on-a-san.md
@@ -4798,7 +4572,7 @@
               href: handling-socket-options-and-control-codes-for-a-san.md
             - name: Windows ソケットに対する Microsoft 拡張機能の処理
               href: handling-microsoft-extensions-to-windows-sockets.md
-        - name: SAN のサービス プロバイダーの作成
+        - name: SAN サービス プロバイダーの作成
           items:
             - name: SAN のサービス プロバイダーの作成
               href: creating-a-service-provider-for-a-san.md
@@ -4808,7 +4582,7 @@
               href: windows-sockets-spi-functions-not-required-for-sans.md
             - name: SAN 用の Windows ソケット SPI 拡張機能
               href: windows-sockets-spi-extensions-for-sans.md
-        - name: SAN サービス プロバイダー向けのプロキシ ドライバーの作成
+        - name: SAN サービス プロバイダーのプロキシ ドライバーの作成
           items:
             - name: SAN サービス プロバイダー向けのプロキシ ドライバーの作成
               href: creating-a-proxy-driver-for-a-san-service-provider.md
@@ -4826,9 +4600,9 @@
               href: implementing-ioctls-for-a-san-service-provider.md
 - name: リモート NDIS (RNDIS)
   items:
-    - name: リモート NDIS (RNDIS)
-      href: remote-ndis--rndis-2.md
     - name: リモート NDIS (RNDIS) の概要
+      href: remote-ndis--rndis-2.md
+    - name: RNDIS の概要
       items:
         - name: リモート NDIS (RNDIS) の概要
           href: overview-of-remote-ndis--rndis-.md
@@ -4846,14 +4620,12 @@
           href: remote-ndis-inf-template.md
         - name: リモート NDIS デバイスの種類
           href: types-of-remote-ndis-devices.md
-    - name: リモート NDIS 通信
+    - name: RNDIS 通信
       items:
         - name: リモート NDIS 通信
           href: remote-ndis-communication.md
-        - name: リモート NDIS 制御メッセージ
+        - name: RNDIS 制御メッセージ
           items:
-            - name: リモート NDIS 制御メッセージ
-              href: remote-ndis-control-messages.md
             - name: REMOTE_NDIS_INITIALIZE_MSG
               href: remote-ndis-initialize-msg.md
             - name: REMOTE_NDIS_INITIALIZE_CMPLT
@@ -4878,7 +4650,7 @@
               href: remote-ndis-keepalive-msg.md
             - name: REMOTE_NDIS_KEEPALIVE_CMPLT
               href: remote-ndis-keepalive-cmplt.md
-        - name: リモート NDIS データ メッセージ
+        - name: RNDIS データ メッセージ
           items:
             - name: リモート NDIS データ メッセージ
               href: remote-ndis-data-message.md
@@ -4890,7 +4662,7 @@
           href: setting-device-specific-parameters.md
         - name: コネクションレス (802.3) 初期化シーケンスの例
           href: example-connectionless--802-3--initialization-sequence.md
-        - name: リモート NDIS OID
+        - name: RNDIS OID
           items:
             - name: リモート NDIS OID
               href: remote-ndis-oids.md
@@ -4910,13 +4682,13 @@
           href: remote-ndis-version.md
         - name: 状態値
           href: status-values.md
-    - name: リモート NDIS と USB のマッピング
+    - name: RNDIS と USB のマッピング
       items:
         - name: リモート NDIS と USB のマッピング
           href: remote-ndis-to-usb-mapping.md
         - name: 概要
           href: overview.md
-        - name: USB レベルの初期化
+        - name: RNDIS USB レベルの初期化
           items:
             - name: USB レベルの初期化
               href: usb-level-initialization.md
@@ -4932,7 +4704,7 @@
           href: usb-level-termination.md
         - name: 'コントロール チャネルの特性 '
           href: control-channel-characteristics.md
-        - name: データ チャネルの特性
+        - name: RNDIS データ チャネルの特性
           items:
             - name: データ チャネルの特性
               href: data-channel-characteristics.md
@@ -4944,7 +4716,7 @@
           href: power-management.md
         - name: タイマー定数
           href: timer-constants.md
-        - name: USB 802.3 デバイス サンプル
+        - name: RNDIS の USB 802.3 デバイス サンプル
           items:
             - name: USB 802.3 デバイス サンプル
               href: usb-802-3-device-sample.md
@@ -4964,12 +4736,8 @@
               href: data-out-endpoint-descriptor.md
 - name: ネットワーク ドライバーのカーネル モード SDK に関するトピック
   items:
-    - name: ネットワーク ドライバーのカーネル モード SDK に関するトピック
-      href: kernel-mode-sdk-topics-for-network-drivers.md
     - name: Mstcpip.h
       items:
-        - name: Mstcpip.h
-          href: mstcpip-h.md
         - name: SIO_LOOPBACK_FAST_PATH 制御コード
           href: sio-loopback-fast-path.md
         - name: SIO_QUERY_WFP_CONNECTION_REDIRECT_CONTEXT 制御コード
@@ -4980,8 +4748,6 @@
           href: sio-set-wfp-connection-redirect-records.md
     - name: Ntddndis.h
       items:
-        - name: Ntddndis.h
-          href: ntddndis-h.md
         - name: GUID_NDIS_GEN_PCI_DEVICE_CUSTOM_PROPERTIES
           href: guid-ndis-gen-pci-device-custom-properties.md
         - name: OID_802_3_ADD_MULTICAST_ADDRESS
@@ -5664,8 +5430,6 @@
           href: oid-wwan-visible-providers.md
     - name: Ws2def.h
       items:
-        - name: Ws2def.h
-          href: ws2def-h.md
         - name: AF_INET
           href: af-inet.md
         - name: AF_INET6
@@ -5688,8 +5452,6 @@
           href: so-reuseaddr.md
 - name: ネットワーク ドライバーの以前のバージョン
   items:
-    - name: ネットワーク ドライバーの以前のバージョン
-      href: previous-versions-of-network-drivers.md
     - name: Windows Vista 以前のネットワーク ドライバー
       href: network-drivers-prior-to-windows-vista.md
     - name: ネイティブ 802.11 ワイヤレス LAN ドライバー
