@@ -64,7 +64,7 @@ Microsoft OS ディスクリプターをサポートするデバイスは、0 xe
 
 オペレーティング システムでは、デバイスから Microsoft OS 文字列記述子が要求をした後は、次のレジストリ キーが作成されます。
 
-**HLKM\\SYSTEM\\CurrentControlSet\\Control\\UsbFlags\\*vvvvpppprrrrr***
+**HLKM\\SYSTEM\\CurrentControlSet\\Control\\UsbFlags\\ *vvvvpppprrrrr***
 
 オペレーティング システムの作成という名前のレジストリ エントリを**osvc**、このデバイスで Microsoft OS ディスクリプターをサポートするかどうかを示すレジストリ キーの下。 デバイスが提供されない場合、最初の有効な応答時間をオペレーティング システムのクエリ Microsoft OS 文字列記述子、オペレーティング システムのことが要求しないようにさらにその記述子。
 

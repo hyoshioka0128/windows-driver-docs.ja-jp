@@ -20,7 +20,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 07/02/2019
 ms.locfileid: "67521428"
 ---
-# <a name="bug-check-0x10d-wdfviolation"></a>バグ チェック 0x10D:WDF\_違反
+# <a name="bug-check-0x10d-wdf_violation"></a>バグ チェック 0x10D:WDF\_違反
 
 
 WDF\_違反のバグ チェックが 0x0000010D の値を持ちます。 これは、カーネル モード ドライバー フレームワーク (KMDF) には Windows では、framework ベースのドライバーにエラーが見つかりましたが検出されたことを示します。
@@ -29,7 +29,7 @@ WDF\_違反のバグ チェックが 0x0000010D の値を持ちます。 これ�
 > このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
 
 
-## <a name="wdfviolation-parameters"></a>WDF\_違反パラメーター
+## <a name="wdf_violation-parameters"></a>WDF\_違反パラメーター
 
 
 パラメーター 1 では、特定のエラー コードのバグ チェックを示します。 パラメーター 4 が予約されています。
@@ -243,7 +243,7 @@ kd> !wdfkd.wdflogdump <WDF_Driver_Name>
 
 パラメーター 1 と等しい場合**0x4**を使用して、 [ **ln デバッガー** ](ln--list-nearest-symbols-.md)コマンドの値と*パラメーター 3*判断するために、引数として関数に必要な以外**NULL**パラメーター。
 
-パラメーター 1 と等しい場合**0x7**を使用して、* *! wdfkd.wdfhandle***Parameter 2*ハンドルの種類を決定する拡張機能コマンド。
+パラメーター 1 と等しい場合**0x7**を使用して、* *!wdfkd.wdfhandle** *Parameter 2*ハンドルの種類を決定する拡張機能コマンド。
 
 パラメーター 1 と等しい場合**0 xa**、WDF し\_キュー\_FATAL\_エラー\_データ構造は、問題のある要求またはキュー ハンドルのいずれかを示します。 NTSTATUS、場合なく状態も示されます\_成功すると、使用可能な場合。
 
