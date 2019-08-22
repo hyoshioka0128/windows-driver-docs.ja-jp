@@ -5,12 +5,12 @@ ms.assetid: f7a34ee3-0532-465b-acb0-1ff80e2d4cb8
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 62203365b81b3cfd73864d5d1f00b07ccb4b475f
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 7273640dd6d764bd79efbdf39d6584ae62dad092
+ms.sourcegitcommit: ebf7371cb1b70330b9251bc2d2703d2b6de6fad1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63334875"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68917853"
 ---
 # <a name="winqual-submission-tool-winqualexe"></a>Winqual Submission Tool (winqual.exe)
 
@@ -24,7 +24,7 @@ Winqual Submission Tool (Winqual.exe) を使うと、Microsoft Windows ハード
 
 1.  ダッシュボードに Microsoft アカウントでサインインします。
 
-2.  左側のナビゲーション メニューの **[ドライバー]** をクリックします。 **[Get the essentials]** (必須項目の取得) セクションで、 **[Winqual Submission Tool (WST)]** をクリックします。
+2.  左側のナビゲーション メニューの **[ドライバー]** をクリックします。 ページの下部にある **[Get the essentials]\(必須項目の取得\)** セクションで、 **[Winqual Submission Tool (WST)]** をクリックします。
 
 3.  **[ファイルのダウンロード - セキュリティの警告]** ダイアログ ボックスで、 **[実行]** をクリックします。
 
@@ -40,7 +40,7 @@ Winqual Submission Tool (Winqual.exe) を使うと、Microsoft Windows ハード
 
 9.  **[Close]** (閉じる) をクリックしてインストール プロセスを終了します。
 
-## <a name="span-idhowtousewstspanspan-idhowtousewstspanspan-idhowtousewstspanhow-to-use-wst"></a><span id="How_to_use_WST"></span><span id="how_to_use_wst"></span><span id="HOW_TO_USE_WST"></span>WST の使用方法
+## <a name="span-idhow_to_use_wstspanspan-idhow_to_use_wstspanspan-idhow_to_use_wstspanhow-to-use-wst"></a><span id="How_to_use_WST"></span><span id="how_to_use_wst"></span><span id="HOW_TO_USE_WST"></span>WST の使用方法
 
 
 Windows Submission Tool (WST) を使用するには:
@@ -73,7 +73,7 @@ WST では、次の操作を行うこともできます。
 
 -   提出パッケージには、オプションの Read-me ファイル ( **.docx**、 **.doc**、 **.txt**) ファイルを含めることができます。
 
-## <a name="span-idhowtocreateasystemssubmissionpackagespanspan-idhowtocreateasystemssubmissionpackagespanspan-idhowtocreateasystemssubmissionpackagespanhow-to-create-a-systems-submission-package"></a><span id="How_to_create_a_systems_submission_package"></span><span id="how_to_create_a_systems_submission_package"></span><span id="HOW_TO_CREATE_A_SYSTEMS_SUBMISSION_PACKAGE"></span>システム提出パッケージを作成する方法
+## <a name="span-idhow_to_create_a_systems_submission_packagespanspan-idhow_to_create_a_systems_submission_packagespanspan-idhow_to_create_a_systems_submission_packagespanhow-to-create-a-systems-submission-package"></a><span id="How_to_create_a_systems_submission_package"></span><span id="how_to_create_a_systems_submission_package"></span><span id="HOW_TO_CREATE_A_SYSTEMS_SUBMISSION_PACKAGE"></span>システム提出パッケージを作成する方法
 
 
 1.  メイン画面で、 **[Add]** (追加) ボタンをクリックします。
@@ -90,7 +90,7 @@ WST では、次の操作を行うこともできます。
 
 7.  すべてのエラーを修正した後、提出パッケージを作成できます。 提出パッケージは、.xml ファイルと同じ名前で同じ場所に作成されます。
 
-## <a name="span-idhowtocreateadevicesubmissionpackagespanspan-idhowtocreateadevicesubmissionpackagespanspan-idhowtocreateadevicesubmissionpackagespanhow-to-create-a-device-submission-package"></a><span id="How_to_create_a_device_submission_package"></span><span id="how_to_create_a_device_submission_package"></span><span id="HOW_TO_CREATE_A_DEVICE_SUBMISSION_PACKAGE"></span>デバイス提出パッケージを作成する方法
+## <a name="span-idhow_to_create_a_device_submission_packagespanspan-idhow_to_create_a_device_submission_packagespanspan-idhow_to_create_a_device_submission_packagespanhow-to-create-a-device-submission-package"></a><span id="How_to_create_a_device_submission_package"></span><span id="how_to_create_a_device_submission_package"></span><span id="HOW_TO_CREATE_A_DEVICE_SUBMISSION_PACKAGE"></span>デバイス提出パッケージを作成する方法
 
 
 1.  メイン画面で、 **[Add]** (追加) ボタンをクリックします。

@@ -5,12 +5,12 @@ ms.assetid: 7EFA9617-CF1D-4259-B0C4-A9DDCF5C3A1F
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a1920cbd7bbec599f6d50679a8d994af5bd64bb1
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: b26a9cdea2a31f4a04486ed09b5bcb694c128509
+ms.sourcegitcommit: 7773f6edfc981865c8b0255f858e0f6c0cff5213
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63334986"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68483073"
 ---
 # <a name="hardware-submissions"></a>ハードウェアの提出
 
@@ -23,7 +23,7 @@ Windows ハードウェア互換性プログラム (Windows 10 の場合) と Wi
 製品を開発しテストしたら、ハードウェア提出で結果を提出できます。
 
 > [!NOTE]
-> HLK パッケージの一部としてパブリック ドライバー シンボルを含めることを強くお勧めします。 シンボルを含めた場合、[ドライバー信頼性レポート](driver-failure-reporting.md)に返されるデータの質が向上し、外部と共有されることはありません。  パブリック シンボルを作成する方法については、「[パブリック シンボルとプライベート シンボル](../devtest/public-symbols-and-private-symbols.md)」をご覧ください。  「[Step 8: Create a submission package (手順 8: 申請パッケージを作成する)](https://docs.microsoft.com/windows-hardware/test/hlk/getstarted/step-8-create-a-submission-package)」で、パッケージにシンボルを含める方法をご覧ください。 申請内の .pdb ファイルは公開される前に削除されることに注意してください。
+> HLK パッケージの一部としてパブリック ドライバー シンボルを含めることを強くお勧めします。 パブリック シンボルを作成する方法については、「[パブリック シンボルとプライベート シンボル](../devtest/public-symbols-and-private-symbols.md)」をご覧ください。  「[Step 8: Create a submission package (手順 8: 申請パッケージを作成する)](https://docs.microsoft.com/windows-hardware/test/hlk/getstarted/step-8-create-a-submission-package)」で、パッケージにシンボルを含める方法をご覧ください。 申請内の .pdb ファイルは公開される前に削除されることに注意してください。
 
 - HLK パッケージまたは HCK パッケージを提出するには、「[新しいハードウェア提出の作成](create-a-new-hardware-submission.md)」をご覧ください。
 
@@ -135,7 +135,10 @@ DUA シェル パッケージをダウンロードするには、 **[Download DU
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr class="even">
+<td><p>Retpoline Compiled (Retpoline でコンパイル済み)</p></td>
+<td><p>ドライバーが Retpoline フラグを使用してコンパイルされたかどうかを示します。  チェック マーク付き = True、X = False。  この変更の詳細については、<a href="https://techcommunity.microsoft.com/t5/Hardware-Dev-Center/Upcoming-Hardware-Dev-Center-changes-that-enable-support-for/ba-p/504574">ブログの投稿</a>を参照してください。 </p></td>
+</tr><tr class="even">
 <td><p>Is this a Universal Windows driver? (これはユニバーサル Windows ドライバーですか?)</p></td>
 <td><p>ドライバーがユニバーサル Windows プラットフォームの要件を満たしているかどうかを示します。 詳しくは、「<a href="https://docs.microsoft.com/windows-hardware/drivers/develop/getting-started-with-universal-drivers" data-raw-source="[Getting Started with Universal Windows drivers](https://docs.microsoft.com/windows-hardware/drivers/develop/getting-started-with-universal-drivers)">ユニバーサル Windows ドライバーの概要</a>」をご覧ください。</p></td>
 </tr>
@@ -164,7 +167,7 @@ DUA シェル パッケージをダウンロードするには、 **[Download DU
 </tbody>
 </table>
 
-申請には、申請のコンテンツ全体に基づく宣言属性およびユニバーサル属性が自動的に割り当てられます。  申請を `Declarative=True` または `Universal=True` としてマークする場合、申請内のすべてのファイルと INF は適切な属性に準拠している必要があります。  たとえば、マージされた HLK パッケージには、さまざまな OS 認定のための 2 つのドライバー セットを含めることができます。 1 つのセットが宣言で、もう 1 つのセットが宣言ではない場合は、申請全体を `Declarative=False` としてマークします。 各セットは、2 つの申請に分けて、適切にマークする必要があります。 
+申請には、申請のコンテンツ全体に基づく宣言属性およびユニバーサル属性が自動的に割り当てられます。  申請を `Declarative=True` または `Universal=True` としてマークする場合、申請内のすべてのファイルと INF は適切な属性に準拠している必要があります。  たとえば、マージされた HLK パッケージには、さまざまな OS 認定のための 2 つのドライバー セットを含めることができます。 1 つのセットが宣言で、もう 1 つのセットが宣言ではない場合は、申請全体を `Declarative=False` としてマークします。 検証するバイナリがないため、INF のみのパッケージの [Universal]\(ユニバーサル\) は淡色表示されます。  各セットは、2 つの申請に分けて、適切にマークする必要があります。 
 
 発表日を追加または更新する場合、 **[Announcement date (UTC)]** (発表日 (UTC)) フィールドで、 **[Submit]** (提出) を選びます。
 

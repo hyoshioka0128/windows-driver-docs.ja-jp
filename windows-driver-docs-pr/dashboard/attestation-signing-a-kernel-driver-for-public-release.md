@@ -5,12 +5,12 @@ ms.assetid: A292B15D-37FD-407E-998C-728D9423E712
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 15707af8315979b394f9958d720adff480591651
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 79e0c8faf10a35161765404a814d368fccab4414
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63337307"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364496"
 ---
 # <a name="attestation-signing-a-kernel-driver-for-public-release"></a>一般リリースのためのカーネル ドライバーへの構成証明署名
 
@@ -82,7 +82,7 @@ ms.locfileid: "63337307"
 - カタログ .CAT ファイルは必須で、会社の検証用にのみ使用されます。 Microsoft では、カタログ ファイルを再生成し、提出されたカタログ ファイルを置き換えます。
 
   > [!NOTE]
-  > CAB ファイル内のすべてのドライバー フォルダーは、同じアーキテクチャのセットをサポートする必要があります。 たとえば、これらがすべて x86 または x64 をサポートしているか、x86 と x64 の両方をサポートしている必要があります。
+  > CAB ファイル内の各ドライバー フォルダーは、同じアーキテクチャのセットをサポートする必要があります。 たとえば、これらが x86 または x64 をサポートしているか、x86 と x64 の両方をサポートしている必要があります。
   > - ドライバーの場所を参照する際には、UNC ファイル共有パス (\\\server\share) は使わないでください。  CAB を検証するには、マップ済みのドライブ文字を使用する必要があります。 
 
 2. MakeCab.exe を使って DDF ファイルを処理し、CAB ファイルを作成します。
@@ -172,12 +172,12 @@ C:\Echo> SignTool sign /ac "C:\MyEVCert.cer" /s MY /n "Company Name" /fd sha256 
 
 ## <a name="submit-the-ev-signed-cab-file-using-the-partner-center"></a>パートナー センターを使って、EV 署名された CAB ファイルを提出する
 
-1. パートナー センターを使って、EV 署名された CAB ファイルを提出します。 詳しくは、「[ドライバーの署名のプロパティ](https://msdn.microsoft.com/windows/hardware/drivers/develop/driver-signing-properties)」をご覧ください。
+1. パートナー センターを使って、EV 署名された CAB ファイルを提出します。 詳しくは、「[ドライバーの署名のプロパティ](https://docs.microsoft.com/windows-hardware/drivers/develop/driver-signing-properties)」をご覧ください。
 
-   * 申請プロセスでは、[ユニバーサル ドライバー](https://msdn.microsoft.com/windows/hardware/drivers/develop/getting-started-with-universal-drivers)を提出するかどうかを指定する必要があります。
+   * 構成証明の申請プロセスの一環として、以下で強調表示されているどの [テスト署名] ボックスもオンにしないでください。  これらはオフのままにしておきます。
 
    * 次のスクリーン ショットは、署名用に Echo ドライバーを提出するためのオプションを示しています。
-    ![署名用に Echo ドライバーを提出するためのオプションを示すスクリーン ショット](images/attestation-driver-signing-submission-dashboard.png)
+    ![署名用に Echo ドライバーを提出するためのオプションを示すスクリーン ショット](images/Attestation-Flow.PNG)
 
 2. 署名プロセスが完了したら、ハードウェア ダッシュボードから署名されたドライバーをダウンロードします。
 

@@ -5,17 +5,17 @@ ms.assetid: 45DCAED5-8D20-4A31-B316-0460AB030DAD
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 44b223e99c2be3f0efeeed7360e0620c35d0462f
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 9ad7467b621ce12ca4429506be87f9a30c763b56
+ms.sourcegitcommit: 7773f6edfc981865c8b0255f858e0f6c0cff5213
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63334879"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68483068"
 ---
 # <a name="using-computer-hardware-ids-chids"></a>コンピューター ハードウェア ID (CHID) の使用
 
 
-コンピューター ハードウェア ID (CHID) の定義については、[コンピューターのハードウェア ID の指定に関するページ](https://msdn.microsoft.com/windows/hardware/drivers/install/specifying-hardware-ids-for-a-computer)をご覧ください。
+コンピューター ハードウェア ID (CHID) の定義については、[コンピューターのハードウェア ID の指定に関するページ](https://docs.microsoft.com/windows-hardware/drivers/install/specifying-hardware-ids-for-a-computer)をご覧ください。
 
 Windows 10 では、ベースボード製造元とベースボード製品情報を組み込んだいくつかの新しい CHID が追加されています。 次の表に示すように、これらの新しい CHID は CHID 階層に含まれています。 次の表では、限定性の高い順に階層を示しています。 Windows 10 で新しく追加された CHID は、はっきりわかるように太字で示されています。
 
@@ -96,7 +96,7 @@ Windows 10 では、ベースボード製造元とベースボード製品情報
 
  
 
-OEM は、ドライバーの発行者に正しい CHID 情報を提供する必要があります。 Windows Desktop Tools SDK に含まれている [ComputerHardwareIds](https://msdn.microsoft.com/library/windows/hardware/ff543505) ツールは、既知の System Management BIOS (SMBIOS) の値のセットから CHID を報告するのに役立ちます。 ComputerHardwareIds は 2 種類のタスクを実行します。
+OEM は、ドライバーの発行者に正しい CHID 情報を提供する必要があります。 Windows Desktop Tools SDK に含まれている [ComputerHardwareIds](https://docs.microsoft.com/windows-hardware/drivers/devtest/computerhardwareids) ツールは、既知の System Management BIOS (SMBIOS) の値のセットから CHID を報告するのに役立ちます。 ComputerHardwareIds は 2 種類のタスクを実行します。
 
 1.  既定の動作:ツールでは、システムの SMBIOS 値と生成された CHID が報告されます。
 
@@ -106,7 +106,7 @@ OEM は、ドライバーの発行者に正しい CHID 情報を提供する必�
 
     シミュレートされた SMBIOS 値 (製造元、ファミリ、SKU など) を指定してツールを実行することにより、生成された CHID のリストを取得できます。 これにより、特定の SMBIOS データ値を持つシステムで生成される CHID を確認できます。
 
-## <a name="span-idtipsforconsistentchidsspanspan-idtipsforconsistentchidsspanspan-idtipsforconsistentchidsspantips-for-consistent-chids"></a><span id="Tips_for_consistent_CHIDs"></span><span id="tips_for_consistent_chids"></span><span id="TIPS_FOR_CONSISTENT_CHIDS"></span>一貫性のある CHID のためのヒント
+## <a name="span-idtips_for_consistent_chidsspanspan-idtips_for_consistent_chidsspanspan-idtips_for_consistent_chidsspantips-for-consistent-chids"></a><span id="Tips_for_consistent_CHIDs"></span><span id="tips_for_consistent_chids"></span><span id="TIPS_FOR_CONSISTENT_CHIDS"></span>一貫性のある CHID のためのヒント
 
 
 CHID は、大文字と小文字を区別した SMBIOS 値に基づいて生成されます。 システムで、SMBIOS テキスト値で大文字と小文字が混在しないように注意する必要があります。 同様に、UNICODE 文字は特別に扱われません。 大文字と小文字のバージョンの特殊文字 (トルコ語のドット付きとドットなしの I など) は一意に処理されます。I、ı、İ、および i は同じではありません。
@@ -116,7 +116,84 @@ ComputerHardwareIds ツールは、必要な SMBIOS 値が利用可能である�
 CHID について詳しくは、「[Specifying Hardware IDs for a Computer (コンピューターのハードウェア ID の指定)](https://docs.microsoft.com/windows-hardware/drivers/install/specifying-hardware-ids-for-a-computer)」をご覧ください。
 
  
+## <a name="span-idhow_windows_update_uses_chidspanspan-idhow_windows_update_uses_chidspanspan-idhow_windows_update_uses_chidspanhow-the-windows-update-service-uses-chid"></a><span id="How_Windows_Update_uses_CHID"></span><span id="how_windows_update_uses_chid"></span><span id="HOW_WINDOWS_UPDATE_USES_CHID"></span>Windows Update サービスで CHID を使用する方法
 
+
+Windows Update サービスでは、CHID を使用して "ドライバーが適用できるシステムの数を減らします"。  この削減は、PnP ランキングが行われる前に最初に行われる処理です。
+
+Windows Update サービスでは、インストールされている Windows OS レベルに応じて CHID の処理方法が異なります。  
+
+<table>
+<colgroup>
+<col width="40%" />
+<col width="60%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Windows 10 のバージョン</th>
+<th>Windows Update の動作</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>1507 から 1703</p></td>
+<td><p>Windows Update によって、各 CHID は CHID-0 から CHID-14 に順位付けされます (CHID-0 は CHID-14 よりも上位です)。</p></td>
+</tr>
+<tr class="even">
+<td><p>1709 以降</p></td>
+<td><p>CHID レベルは順位付けされません。 CHID-0 から CHID-14 の適用可能な CHID の対象となるすべてのドライバーは、グループ化されてから、グループ全体に対して PnP の順位付けが行われます。</p></td>
+</tr> 
+</tbody>
+</table>
+
+
+次に例を示します。
+
+
+Contoso は、同じ HWID をターゲットとして CHID が異なる次の 2 つのドライバーを自動として公開しています。  
+
+    Distribution 1 - targeting CHID-4 (Manufacturer + Family + Product Name + SKU Number)
+
+    Distribution 2 - targeting CHID-5 (Manufacturer + Family + Product Name)
+
+CHID-5 に一致するシステムの Windows Update サービスによって選択されるのはどちらでしょうか。
+
+<table>
+<colgroup>
+<col width="40%" />
+<col width="30%" />
+<col width="30%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Contoso システム</th>
+<th>Windows OS レベル</th>
+<th>提供されるドライバー</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>CHID-5 は一致しますが、CHID-4 は一致しません</p></td>
+<td><p>Windows 10 1703 以前</p></td>
+<td><p>ディストリビューション 2</p></td>
+</tr>
+<tr class="even">
+<td><p>CHID-5 は一致しますが、CHID-4 は一致しません</p></td>
+<td><p>Windows 10 1709 以降</p></td>
+<td><p>ディストリビューション 2</p></td>
+</tr>
+<tr class="odd">
+<td><p>CHID-5 が一致し、<strong>かつ</strong> CHID-4 が一致します</p></td>
+<td><p>Windows 10 1703 以前</p></td>
+<td><p>ディストリビューション 1</p></td>
+</tr>
+<tr class="even">
+<td><p>CHID-5 が一致し、<strong>かつ</strong> CHID-4 が一致します</p></td>
+<td><p>Windows 10 1709 以降</p></td>
+<td><p>両方が提供されます。   PnP の順位付けによって、これら 2 つのインストールに最適な一致が選択されます。</p></td>
+</tr>
+</tbody>
+</table>
  
 
 

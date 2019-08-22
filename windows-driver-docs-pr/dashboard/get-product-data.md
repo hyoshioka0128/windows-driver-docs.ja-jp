@@ -4,12 +4,12 @@ description: Microsoft ハードウェア API の以下のメソッドは、デ�
 ms.topic: article
 ms.date: 04/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 8681d5544a66298e9e51bb35ffb57f6de68bae48
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: f6414d39670cb29c5561df3459a2ef8852b95f92
+ms.sourcegitcommit: 62729233228955089d872d8010c99d48ad50f01e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66813565"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68570817"
 ---
 # <a name="get-product-data"></a>製品データの取得
 
@@ -395,6 +395,7 @@ Microsoft ハードウェア API に関するすべての[前提条件](dashboar
 | Windows_v100Server_RS5 | Windows Server 2019 |
 | Windows_v100_RS5 | Windows 10 RS5 x86 |
 | Windows_v100_RS5 | Windows 10 RS5 x64 |
+| Windows_v100_19H1 | Windows 10 19H1 更新プログラム |
 
 ### <a name="list-of-operating-system-codes"></a>オペレーティング システム コードの一覧
 
@@ -449,9 +450,12 @@ Microsoft ハードウェア API に関するすべての[前提条件](dashboar
 |WINDOWS_v100_RS4_FULL|Windows 10 RS4 クライアント|
 |WINDOWS_v100_X64_RS4_FULL|Windows 10 RS4 クライアント x64|
 |WINDOWS_v100_ARM64_RS4_FULL|Windows 10 RS4 クライアント ARM64|
-| WINDOWS_v100_SERVER_X64_RS5_FULL | Windows Server 2019 |
-| WINDOWS_v100_RS5_FULL | Windows 10 RS5 x86 |
-| WINDOWS_v100_X64_RS5_FULL | Windows 10 RS5 x64 |
+|WINDOWS_v100_SERVER_X64_RS5_FULL | Windows Server 2019 |
+|WINDOWS_v100_RS5_FULL | Windows 10 RS5 x86 |
+|WINDOWS_v100_X64_RS5_FULL | Windows 10 RS5 クライアント x64 |
+|WINDOWS_v100_19H1_FULL |Windows 19H1 クライアント x86 |
+|WINDOWS_v100_X64_19H1_FULL |Windows 19H1 クライアント x64 |
+|WINDOWS_v100_ARM64_19H1_FULL | Windows 19H1 クライアント ARM64 |
 
 ## <a name="error-codes"></a>エラー コード
 

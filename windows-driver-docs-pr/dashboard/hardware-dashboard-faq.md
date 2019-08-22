@@ -5,12 +5,12 @@ ms.assetid: AA3D1147-7015-4D21-84A6-D127F57DDC97
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 911a3dc086bb07f691ca1fd9bc41548952d22bbb
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: a5428bfce09d725cd1bd781d393054faa0f0de2c
+ms.sourcegitcommit: c466ccb35634d7b57a97326764db6d7bff232cf2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65106397"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68533205"
 ---
 # <a name="hardware-dashboard-faq"></a>ハードウェア ダッシュボードに関する FAQ
 
@@ -18,7 +18,11 @@ ms.locfileid: "65106397"
 
 ## <a name="how-do-i-contact-partner-center-support"></a>パートナー センターのサポートに問い合わせるにはどうすればよいですか。
 
-ダッシュボードにアクセスできない場合や、ダッシュボード サポートが必要な場合は、こちらからサポート チケットを開いてください: https://developer.microsoft.com/windows/support 。  **[お問い合わせ先]** を選択し、ドロップダウン リストから **[ダッシュボードの問題]** と **[ハードウェアの申請と署名 (すべての OS バージョン)]** をそれぞれ選択してください。  ライブ チャットと電子メール サポートの受付時間は、月曜日から金曜日の午前 8 時から午後 8 時 (CST) です。  電子メール サポートの初回応答の SLA は、24 時間から 48 時間です。
+ダッシュボードにアクセスできない場合や、ダッシュボード サポートが必要な場合は、こちらからサポート チケットを開いてください: https://developer.microsoft.com/windows/support 。  
+
+アカウントや申請に関する質問については、パートナー センターのハードウェア ダッシュボードのユーザー名とパスワードを使用してサインインする必要があります。
+
+**[お問い合わせ先]** を選択し、ドロップダウン リストから **[ダッシュボードの問題]** と **[ハードウェアの申請と署名 (すべての OS バージョン)]** をそれぞれ選択してください。  ライブ チャットと電子メール サポートの受付時間は、月曜日から金曜日の午前 8 時から午後 8 時 (CST) です。  電子メール サポートの初回応答の SLA は、24 時間から 48 時間です。
 
 ## <a name="can-i-associate-multiple-certificates-with-a-dashboard-account"></a>ダッシュボード アカウントに複数の証明書を関連付けることができますか。
 
@@ -31,15 +35,19 @@ ms.locfileid: "65106397"
 次の契約には、登録プロセスの一環として署名できます。
 
 > [!NOTE]
-> Windows ハードウェア互換性プログラムのテスト契約への署名は、すべての登録における要件です。 その他のすべての契約は、関連するその他の契約の機能またはアセットを使用している場合を除き、省略できます。 
+> Windows ハードウェア互換性プログラムとドライバーの品質評価テスト契約に署名することは、すべての登録の要件です。 その他のすべての契約は、関連するその他の契約の機能またはアセットを使用している場合を除き、省略できます。 
 
-* Windows ハードウェア互換性プログラムのテスト契約 (バージョン 2.0)
+* Windows ハードウェア互換性プログラムおよびドライバー品質評価テスト契約 (ver 2.0)
 
-* ハードウェア用のロゴ使用許諾契約書 (バージョン 2017)
+* Windows ロゴ ライセンス契約 (ver 2018)
 
-* UEFI 補遺
+* UEFI (Unified Extensible Firmware Interface) ファームウェア契約 (ver 1.0)
 
-* Windows エラー報告 (WER) 契約 (バージョン 1.3)
+* Windows Analytics 契約 (ver 2.0)
+
+* Microsoft Collaborate プログラム契約 (ver 1.0)
+
+* Windows デスクトップ アプリケーション プログラム契約 (ver 1.0)
 
 ## <a name="how-do-i-add-additional-users-or-grant-additional-roles-to-users-in-my-company"></a>ユーザーを追加する方法と社内のユーザーに他の役割を付与する方法を教えてください。
 
@@ -101,4 +109,4 @@ Windows 10 では、パフォーマンスに影響を与えずに安全性を�
 
 ### <a name="the-dua-package-error-shows-failed-to-open-package-with-the-error-not-compatible-with-a-version-3200-with-this-instance-package-manager"></a>DUA パッケージのエラーで、"Failed to open package (このファイルを開けません)" と共にエラー "Not compatible with a version (3.2.0.0) with this instance package manager (このインスタンスのパッケージ マネージャーはバージョン (3.2.0.0) と互換性がありません)" が表示されます
 
-* [HLK Studio](https://msdn.microsoft.com/library/windows/hardware/dn939927) のページを使用して、ダウンロード済みの DUA シェル パッケージを開き、DUA 申請を作成します。
+* [HLK Studio](https://docs.microsoft.com/windows-hardware/test/hlk/user/install-standalone-hlk-studio) のページを使用して、ダウンロード済みの DUA シェル パッケージを開き、DUA 申請を作成します。

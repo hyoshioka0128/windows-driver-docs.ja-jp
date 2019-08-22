@@ -4,19 +4,19 @@ description: Microsoft ハードウェア API では、組織のパートナー 
 ms.topic: article
 ms.date: 09/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a378280a820df31b1885a7655fad7d72ae4ba53
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 1e996a8ae33dc4e491eef281398f65e6e31c7a00
+ms.sourcegitcommit: 202a9dd161090af3e3815e3fbf3da0bcad993e0e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65701737"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68685593"
 ---
 # <a name="hardware-dashboard-api"></a>ハードウェア ダッシュボード API
 
 組織のパートナー センター アカウント内でハードウェア製品の申請をプログラムで照会したり、作成したりするには、*Microsoft Hardware API* を使用します。 これらの API は、アカウントで多数の製品を管理していて、それらのアセットの申請プロセスを自動化して最適化する必要がある場合に役立ちます。 これらの API は、Azure Active Directory (Azure AD) を使って、アプリまたはサービスからの呼び出しを認証します。
 この手順では、Microsoft ハードウェア API を使用した場合のプロセスについて詳しく説明します。
 
-1. これらの API は、[パートナー センター プログラム](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/get-started-with-the-hardware-dashboard)に参加している開発者アカウントでのみ使用できます。
+1. これらの API は、ハードウェア [パートナー センター プログラム](https://docs.microsoft.com/windows-hardware/drivers/dashboard/get-started-with-the-hardware-dashboard)に参加しているアカウントでのみ使用できます。
 
 2. 下の前提条件を完了したことを確認します。
 
@@ -26,38 +26,30 @@ ms.locfileid: "65701737"
 
 ## <a name="complete-the-prerequisites-for-using-the-microsoft-hardware-api"></a>Microsoft ハードウェア API を使うための前提条件を満たす
 
-Microsoft ハードウェア API を呼び出すコードの作成を開始する前に、次の前提条件が完了していることを確認します。
+Microsoft ハードウェア API を呼び出すコードの作成を開始する前に、次の必須の前提条件を満たしていることを確認します。
 
-* ユーザー (またはユーザーの組織) は、Azure AD ディレクトリと、そのディレクトリに対する[全体管理者](https://go.microsoft.com/fwlink/?LinkId=746654)のアクセス許可を持っている必要があります。 Office 365 または Microsoft の他のビジネス サービスを既に使っている場合は、既に Azure AD ディレクトリをお持ちです。 それ以外の場合は、追加料金なしに[パートナー センターで新しい Azure AD を作成](https://docs.microsoft.com/windows/uwp/publish/associate-azure-ad-with-dev-center#create-a-brand-new-azure-ad-to-associate-with-your-dev-center-account)できます。
+* ユーザー (またはユーザーの組織) は、Azure AD ディレクトリと、そのディレクトリに対する[全体管理者](https://go.microsoft.com/fwlink/?LinkId=746654)のアクセス許可を持っている必要があります。 Office 365 または Microsoft の他のビジネス サービスを既に使っている場合は、既に Azure AD ディレクトリをお持ちです。 それ以外の場合は、追加料金なしに[パートナー センターで新しい Azure AD を作成](https://docs.microsoft.com/windows/uwp/publish/associate-azure-ad-with-partner-center#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account)できます。
 
-* [Azure AD アプリケーションをパートナー センター アカウントに関連付け](https://docs.microsoft.com/windows/uwp/monetize/create-and-manage-submissions-using-windows-store-services#associate-an-azure-ad-application-with-your-windows-dev-center-account)、テナント ID、クライアント ID、キーを取得する必要があります。 これらの値は、Microsoft ハードウェア API の呼び出しで使用する Azure AD アクセス トークンを取得するために必要です。
+* Azure AD アプリケーションがまだ存在しない場合は、[それを作成する必要があります](https://docs.microsoft.com/windows/uwp/publish/add-users-groups-and-azure-ad-applications#create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-partner-center-account)。
 
-## <a name="associate-an-azure-ad-application-with-your-windows-partner-center-account"></a>Azure AD アプリケーションと Windows パートナー センター アカウントの関連付け
+* [Azure AD アプリケーションをパートナー センター アカウントに関連付け](https://docs.microsoft.com/windows/uwp/publish/associate-azure-ad-with-partner-center)、**マネージャー** ロールを割り当てる必要があります。
 
-Microsoft Hardware API を使うには、事前に Azure AD アプリケーションをパートナー センター アカウントに関連付け、アプリケーションのテナント ID とクライアント ID を取得して、キーを生成しておく必要があります。 Azure AD アプリケーションは、Microsoft ハードウェア API の呼び出し元のアプリまたはサービスを表します。 テナント ID、クライアント ID、およびキーは、API に渡す Azure AD アクセス トークンを取得するために必要です。
+* 自分の [Azure AD アプリケーション テナント ID、クライアント ID、キー](https://docs.microsoft.com/windows/uwp/publish/add-users-groups-and-azure-ad-applications#manage-keys-for-an-azure-ad-application)を集めます。  **必ずこのキー情報を印刷またはコピーしてください。このキー作成ページを閉じると、この情報にはアクセスできなくなります。** 
 
-1. パートナー センターで、 **[アカウント]** 設定に移動して **[ユーザー]** 管理をクリックし、[組織のパートナー センター アカウントを組織の Azure AD ディレクトリに関連付け](https://docs.microsoft.com/windows/uwp/publish/associate-azure-ad-with-dev-center)ます。
-2. **[ユーザーの管理]** ページで、 **[Add Azure AD applications]\(Azure AD アプリケーションの追加\)** をクリックして、パートナー センター アカウントの申請へのアクセスに使うアプリやサービスを表す Azure AD アプリケーションを追加し、**マネージャー** ロールを割り当てます。 このアプリケーションが既に Azure AD ディレクトリに存在する場合、 **[Add Azure AD applications]\(Azure AD アプリケーションの追加\)** ページで選んでパートナー センター アカウントに追加できます。 それ以外の場合、 **[Azure AD アプリケーションの追加]** ページで新しい Azure AD アプリケーションを作成できます。 詳しくは、「[Add Azure AD applications to your Partner Center account (Azure AD アプリケーションをパートナー センター アカウントに追加する)](https://docs.microsoft.com/windows/uwp/publish/add-users-groups-and-azure-ad-applications#azure-ad-applications)」をご覧ください。
+## <a name="assigning-the-appropriate-hardware-roles-to-your-azure-ad-application"></a>Azure AD アプリケーションに適切なハードウェア ロールを割り当てる
 
-3. **[ユーザーの管理]** ページに戻り、Azure AD アプリケーションの名前をクリックしてアプリケーション設定に移動し、 **[テナント ID]** と **[クライアント ID]** の値を書き留めます。
+上記の前提条件を満たしたら、Azure AD アプリケーションで申請および配送先住所ラベルを作成および管理できるように、適切なロールを割り当てる必要があります。
 
-4. **[新しいキーの追加]** をクリックします。 次の画面で、 **[キー]** の値を書き留めます。 このページから離れると、この情報に再度アクセスすることはできません。 詳しくは、「[Azure AD アプリケーションのキーを管理する方法](https://docs.microsoft.com/windows/uwp/publish/add-users-groups-and-azure-ad-applications#manage-keys)」をご覧ください。
+1. パートナー センターで、歯車アイコン (ダッシュボードの右上隅の近く) を選択し、 **[開発者向け設定]** を選択します。 **[設定]** メニューで **[ユーザー]** を選択します。
 
-5. 最後に、AD アプリケーションがドライバーの提出を管理し公開するのに必要な役割を持っていることを確認します。 最初に、パートナー センターの **[設定]** パネルで、 **[ユーザー]** をクリックします。
+2. **[ユーザー]** ページで、 **[Azure AD アプリケーション]** を選択し、パートナー センター アカウントの送信へのアクセスに使用するアプリまたはサービスを表す Azure AD アプリケーションを選択します。  
 
-    ![[設定] メニューの [ユーザー] オプションを示す画像](images/settings-menu-users-option.png)
-
-    [ユーザー] ページで、 **[Azure AD applications]\(Azure AD アプリケーション\)** をクリックします。
-
-    ![[Azure AD アプリケーション] タブを示す画像](images/azure-ad-applications-tab.png)
-
-    関連付けた Azure AD アプリケーションの名前をクリックします。 これにより、Azure AD アプリケーションの詳細ページが読み込まれます。 このページで、 **[Roles]\(役割\)** の下の **[ハードウェア]** をクリックします。
+3. このページで、 **[Roles]\(役割\)** の下の **[ハードウェア]** をクリックします。
 
     ![[役割] セクションの [ハードウェア] タブを示す画像](images/hardware-tab-in-roles-section.png)
 
-    **[Driver Submitter]\(ドライバーの提出者\)** と **[Shipping Label owner]\(配送先住所ラベルの所有者\)** がオンになっていることを確認します。
-
-    ![[ドライバーの提出者] と [配送先住所ラベルの所有者] チェック ボックスを示す画像](images/driver-submitter-and-shipping-label-owners-checkboxes.png)
+    **[Driver Submitter]\(ドライバーの送信者\)** 、 **[Shipping Label owner]\(配送先住所ラベルの所有者\)** 、(使用できる場合は) **[Shipping Label promoter]\(配送先住所ラベルのプロモーター\)** を選択します。  [これらのロールに関する詳細情報](https://docs.microsoft.com/windows-hardware/drivers/dashboard/managing-user-roles)
+    
 
 ## <a name="obtain-an-azure-ad-access-token"></a>Azure AD アクセス トークンの取得
 
@@ -98,7 +90,7 @@ Azure AD アクセス トークンを取得したら、Microsoft ハードウェ
 
 ## <a name="additional-help"></a>追加のヘルプ
 
-Microsoft Store 申請 API について質問がある場合や、この API を使った申請の管理に関してサポートが必要な場合は、[サポート ページ](https://developer.microsoft.com/dashboard/account/help?returnUri=https://developer.microsoft.com/dashboard/hardware)にアクセスしてサポートを要求してください。
+Microsoft Store 申請 API について質問がある場合や、この API を使った申請の管理に関してサポートが必要な場合は、[サポート ページ](https://partner.microsoft.com/dashboard/account/help?returnUri=https://developer.microsoft.com/dashboard/hardware)にアクセスしてサポートを要求してください。
 
 ## <a name="related-topics"></a>関連トピック
 

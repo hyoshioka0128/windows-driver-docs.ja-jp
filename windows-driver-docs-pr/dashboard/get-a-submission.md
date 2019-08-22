@@ -1,17 +1,15 @@
 ---
-title: ''
-description: ''
-author: balapv
-ms.author: balapv
+title: 申請の取得
+description: Microsoft パートナー センターで、ハードウェア ダッシュボードへの製品の特定の申請に関するデータを取得します。
 ms.topic: article
 ms.date: 04/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d65e4bae3389d86051a2ee9f80c5043716ddac9
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 71e94fc186e6302964e147b8c3232457ce411702
+ms.sourcegitcommit: 3de5c4aa7df9c21fc26dd063c8c4b65d67c83c58
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66813570"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68223982"
 ---
 # <a name="get-a-submission"></a>申請の取得
 
