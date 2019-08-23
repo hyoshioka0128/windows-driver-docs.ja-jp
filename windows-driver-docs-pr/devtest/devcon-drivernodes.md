@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d23b1f6502ad5a1f715ec7bea3abb591d9143f40
-ms.sourcegitcommit: 55171d00a4d0776ffbea40ab421f765c5432fcaa
+ms.openlocfilehash: 7899295f10dd5bffd7241a8af130c2ccf83c5db9
+ms.sourcegitcommit: 1ca0637648ea03c0dc0b3daf0c5c4025d1406c70
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68995410"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69976073"
 ---
 # <a name="devcon-drivernodes"></a>DevCon DriverNodes
 
@@ -39,13 +39,10 @@ ms.locfileid: "68995410"
 
 次の特殊文字は、ID パラメーターを変更します。
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
+<table>  
+<colgroup> <col width="50%" /> <col width="50%" /> </colgroup>  
+<thead>  
+<tr class="header">  
 <th align="left">記号</th>
 <th align="left">説明</th>
 </tr>
