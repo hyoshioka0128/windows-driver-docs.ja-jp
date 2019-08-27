@@ -1,11 +1,11 @@
 ---
-title: irql の拡張機能コマンド
-description: Irql の拡張機能では、デバッガー中断する前に、ターゲット コンピューター上のプロセッサの割り込み要求レベル (IRQL) が表示されます。
+title: irql 拡張コマンド
+description: Irql 拡張は、デバッガーが中断する前に、ターゲットコンピューター上のプロセッサの割り込み要求レベル (IRQL) を表示します。
 ms.assetid: 52dd3b9f-c03c-4b90-a01b-25289de67f5a
 keywords:
 - IRQL
 - 割り込み要求レベル
-- Windows デバッグ irql
+- irql Windows デバッグ
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -14,31 +14,31 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 26bc88907e058772072f87d6d23c73f359bb9d83
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5cbe459095b0e498b8895d445a115ea50785582f
+ms.sourcegitcommit: 424c435700d8f8a85bdaa83e8ddaab9568c8d347
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364310"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70025233"
 ---
 # <a name="irql"></a>!irql
 
 
-**! Irql**拡張機能では、デバッガー中断する前に、ターゲット コンピューター上のプロセッサの割り込み要求レベル (IRQL) が表示されます。
+**! Irql** extension は、デバッガーが中断する前に、ターゲットコンピューター上のプロセッサの割り込み要求レベル (irql) を表示します。
 
 ```dbgcmd
 !irql [Processor] 
 ```
 
-## <a name="span-idddkirqldbgspanspan-idddkirqldbgspanparameters"></a><span id="ddk__irql_dbg"></span><span id="DDK__IRQL_DBG"></span>パラメーター
+## <a name="span-idddk__irql_dbgspanspan-idddk__irql_dbgspanparameters"></a><span id="ddk__irql_dbg"></span><span id="DDK__IRQL_DBG"></span>パラメータ
 
 
-<span id="_______Processor______"></span><span id="_______processor______"></span><span id="_______PROCESSOR______"></span> *プロセッサ*   
-プロセッサを指定します。 プロセッサ番号を入力します。 このパラメーターを省略した場合、デバッガーには、現在のプロセッサの IRQL が表示されます。
+<span id="_______Processor______"></span><span id="_______processor______"></span><span id="_______PROCESSOR______"></span>*プロセッサ*   
+プロセッサを指定します。 プロセッサ番号を入力します。 このパラメーターを省略した場合、デバッガーは現在のプロセッサの IRQL を表示します。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
-**! Irql**拡張機能は Windows Server 2003 および以降のバージョンの Windows で使用できるのみです。
+**! Irql**拡張機能は、windows Server 2003 以降のバージョンの windows でのみ使用できます。
 
 <table>
 <colgroup>
@@ -56,31 +56,31 @@ ms.locfileid: "67364310"
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>Windows Server 2003 以降</strong></p></td>
-<td align="left"><p>Kdexts.dll</p></td>
+<td align="left"><p>Kdexts .dll</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-Irql の詳細については、Windows Driver Kit (WDK) ドキュメントを参照してくださいと*Microsoft Windows internals 』* Mark Russinovich と David Solomon します。 (これらのリソースできない場合がありますのいくつかの言語および国。)
+IRQLs の詳細については、Windows Driver Kit (WDK) のドキュメントおよび*Microsoft windows の内部*(Mark Russinovich と David ソロモン) を参照してください。
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>コメント
 -------
 
-ときに、ターゲット コンピューターは、デバッガー、IRQL の変更が、デバッガー中断が保存される直前に有効であったの IRQL に分割します。 **! Irql**拡張機能には、保存した IRQL が表示されます。
+対象のコンピューターがデバッガーに侵入すると、IRQL は変わりますが、デバッガーの中断直前に有効だった IRQL が保存されます。 **! Irql** extension には、保存された irql が表示されます。
 
-同様に、バグ チェックが発生し、クラッシュ ダンプ ファイルが作成されると、クラッシュ ダンプ ファイルに保存された IRQL は、位置 IRQL ではないのバグ チェックする直前に 1 つ、 [ **KeBugCheckEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kebugcheckex)ルーチンが実行されます。
+同様に、バグチェックが発生し、クラッシュダンプファイルが作成された場合、クラッシュダンプファイルに保存されている IRQL は、 [**kebug Checkex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kebugcheckex)ルーチンが実行された irql ではなく、バグチェックの直前のものになります。
 
-どちらの場合も、現在の IRQL がディスパッチに対して発生\_レベル、以外である x86 アーキテクチャ。 したがって、このような 1 つ以上のイベントが発生する場合は、表示の IRQL もなりますディスパッチ\_レベル、デバッグ目的で役に立たなくなります。
+どちらの場合も、x86 アーキテクチャを除き、現在\_の IRQL はディスパッチレベルに発生します。 そのため、このようなイベントが複数発生した場合、表示される\_IRQL はディスパッチレベルでもあり、デバッグ目的では役に立ちません。
 
-[ **! Pcr** ](-pcr.md)拡張機能では、すべてのバージョンの Windows では、現在の IRQL が表示されますが、現在の IRQL は通常、役に立ちません。 直前に、バグを確認またはデバッガーの接続が存在していた IRQL がさらに興味深いとでのみ表示されるこの **! irql**します。
+[ **! Pcr**](-pcr.md)拡張機能では、すべてのバージョンの Windows で現在の irql が表示されますが、現在の irql は通常は役に立ちません。 バグチェックまたはデバッガー接続の直前に存在していた IRQL はさらに興味深いものであり、 **! irql**を使用した場合にのみ表示されます。
 
-カーネルの破損が発生しました、無効なプロセッサ数を指定する、または、デバッガーは、「PRCB アドレスを取得できません」メッセージを表示します。
+無効なプロセッサ番号を指定した場合、またはカーネルが破損している場合は、"PRCB アドレスを取得できません" というメッセージが表示されます。
 
-デュアル プロセッサ x86 のコンピューターからこの拡張機能からの出力の例を次に示します。
+デュアルプロセッサ x86 コンピューターからのこの拡張機能からの出力の例を次に示します。
 
 ```dbgcmd
 kd> !irql 0
@@ -90,14 +90,14 @@ kd> !irql 1
 Debugger saved IRQL for processor 0x1 -- 0 (LOW_LEVEL)
 ```
 
-デバッガーの詳細モードである場合は、IRQL 自体の説明が含まれます。 Itanium プロセッサから例を次に示します。
+デバッガーが詳細モードの場合は、IRQL 自体の説明が含まれます。 Itanium プロセッサの例を次に示します。
 
 ```dbgcmd
 kd> !irql
 Debugger saved IRQL for processor 0x0 -- 12 (PC_LEVEL) [Performance counter level]
 ```
 
-多くの場合、IRQL の数値の意味は、プロセッサによって異なります。 X64 から例を次に示しますプロセッサ。 IRQL 番号が同じで、前の例のように IRQL 意味が異なることに注意してください。
+IRQL 番号の意味は、多くの場合、プロセッサに依存します。 X64 プロセッサの例を次に示します。 IRQL 番号は前の例と同じですが、IRQL の意味が異なることに注意してください。
 
 ```dbgcmd
 kd> !irql

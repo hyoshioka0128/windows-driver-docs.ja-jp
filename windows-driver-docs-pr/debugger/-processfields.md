@@ -1,9 +1,9 @@
 ---
 title: processfields
-description: Processfields 拡張機能では、名前と、executive プロセス」(プロセス) ブロック内のフィールドのオフセットが表示されます。
+description: Processfields 拡張機能には、executive プロセス (EPROCESS) ブロック内のフィールドの名前とオフセットが表示されます。
 ms.assetid: d1d4c49e-3566-4cf6-8b08-656668c92d6c
 keywords:
-- Windows デバッグ processfields
+- processfields Windows デバッグ
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 18230025e28ce931b958583c0c2add0b70440b84
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0745a8c1e9abe4fefff1007fb084a6d1b86f3145
+ms.sourcegitcommit: 424c435700d8f8a85bdaa83e8ddaab9568c8d347
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335745"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70025164"
 ---
 # <a name="processfields"></a>!processfields
 
 
-**! Processfields**拡張機能は、名前と、executive プロセス」(プロセス) ブロック内のフィールドのオフセットが表示されます。
+**! Processfields**拡張機能には、executive プロセス (eprocess) ブロック内のフィールドの名前とオフセットが表示されます。
 
 ```dbgcmd
 !processfields
@@ -41,31 +41,31 @@ ms.locfileid: "63335745"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>Windows 2000</strong></p></td>
-<td align="left"><p>Kdextx86.dll</p></td>
+<td align="left"><p>Kdextx86</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>Windows XP 以降</strong></p></td>
-<td align="left"><p>利用不可 (「解説」を参照してください)</p></td>
+<td align="left"><p>使用できません (「解説」セクションを参照してください)</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-」プロセス ブロックについては、次を参照してください。 *Microsoft Windows internals 』*、Mark Russinovich と David Solomon します。 (これらのリソースできない場合がありますのいくつかの言語および国。)
+EPROCESS ブロックの詳細については、「 *Microsoft Windows の内部*」 (Mark Russinovich と David ソロモン) を参照してください。
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>コメント
 -------
 
-この拡張機能のコマンドは、Windows XP または Windows の以降のバージョンでご利用いただけません。 代わりに、使用、 [ **dt (表示の種類)** ](dt--display-type-.md) 」プロセスの構造体を直接表示するコマンド。
+この拡張機能コマンドは、Windows XP 以降のバージョンの Windows では使用できません。 代わりに、 [**dt (Display Type)** ](dt--display-type-.md)コマンドを使用して、eprocess 構造を直接表示します。
 
 ```dbgcmd
 kd> dt nt!_EPROCESS 
 ```
 
-次の例に示します **! processfields** Windows 2000 システムから。
+Windows 2000 システムの **! processfields**の例を次に示します。
 
 ```dbgcmd
 kd> !processfields

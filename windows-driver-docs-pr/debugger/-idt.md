@@ -1,11 +1,11 @@
 ---
 title: idt
-description: Idt 拡張機能では、指定した割り込みディスパッチ テーブル (IDT) の割り込みサービス ルーチン (Isr) が表示されます。
+description: Idt 拡張機能では、指定された割り込みディスパッチテーブル (IDT) の割り込みサービスルーチン (Isr) が表示されます。
 ms.assetid: 6b289fde-85a3-4a40-8354-db6861ca8cb2
 keywords:
-- ISR (割り込みサービス ルーチン)
-- IDT (割り込みディスパッチ テーブル)
-- Windows デバッグ idt
+- ISR (割り込みサービスルーチン)
+- IDT (割り込みディスパッチテーブル)
+- idt Windows のデバッグ
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -14,17 +14,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c65570198a00701ea15c301c1afeb15ed535525b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 667bfdf8cb59d41bea4b7795d5f0c6c5c3985747
+ms.sourcegitcommit: 424c435700d8f8a85bdaa83e8ddaab9568c8d347
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336467"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70025234"
 ---
 # <a name="idt"></a>!idt
 
 
-**! Idt**拡張機能では、指定した割り込みディスパッチ テーブル (IDT) の割り込みサービス ルーチン (Isr) が表示されます。
+**! Idt**拡張機能では、指定された割り込みディスパッチテーブル (idt) の割り込みサービスルーチン (isr) が表示されます。
 
 ```dbgcmd
 !idt IDT 
@@ -32,17 +32,17 @@ ms.locfileid: "63336467"
 !idt -? 
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>パラメーター
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>パラメータ
 
 
-<span id="_______IDT______"></span><span id="_______idt______"></span> *IDT*   
+<span id="_______IDT______"></span><span id="_______idt______"></span>*IDT*   
 表示する IDT を指定します。
 
-<span id="_______-a______"></span><span id="_______-A______"></span> **-**   
-ときに*IDT*が指定されていない、デバッガーが省略された形式でターゲット コンピューター上のすべてのプロセッサ IDTs を表示します。 場合 **-a**を指定すると、各 IDT の Isr も表示されます。
+<span id="_______-a______"></span><span id="_______-A______"></span> **-a**   
+*IDT*が指定されていない場合、デバッガーはターゲットコンピューター上のすべてのプロセッサの idts を省略形式で表示します。 **-A**が指定されている場合は、各 IDT の isr も表示されます。
 
-<span id="_______-_______"></span> **-?**   
-この拡張機能のデバッガー コマンド ウィンドウでヘルプを表示します。
+<span id="_______-_______"></span> **-?**    
+デバッガーコマンドウィンドウでこの拡張機能のヘルプを表示します。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
@@ -58,20 +58,20 @@ ms.locfileid: "63336467"
 </tr>
 <tr class="even">
 <td align="left"><p><strong>Windows XP 以降</strong></p></td>
-<td align="left"><p>Kdexts.dll</p></td>
+<td align="left"><p>Kdexts .dll</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-この拡張機能のコマンドは、x64 ベースまたは x86 ベースの対象コンピューターにのみ使用できます。
+この拡張機能コマンドは、x64 ベースまたは x86 ベースのターゲットコンピューターでのみ使用できます。
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-Isr を特定および IDTs については、Windows Driver Kit (WDK) ドキュメントを参照してくださいと*Microsoft Windows internals 』* Mark Russinovich と David Solomon します。 (これらのリソースできない場合がありますのいくつかの言語および国。)
+Isr と IDTs の詳細については、Windows Driver Kit (WDK) のドキュメントと*Microsoft windows の内部*(Mark Russinovich と David ソロモン) を参照してください。
 
-Itanium のターゲット コンピューターでの割り込みのベクター テーブルを表示する方法の詳細については、次を参照してください。 [ **! ivt**](-ivt.md)します。
+Itanium ターゲットコンピューターで割り込みベクターテーブルを表示する方法の詳細については、「 [ **! ivt**](-ivt.md)」を参照してください。
 
 <a name="remarks"></a>コメント
 -------

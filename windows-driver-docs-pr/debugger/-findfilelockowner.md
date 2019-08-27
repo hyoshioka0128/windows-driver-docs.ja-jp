@@ -1,9 +1,9 @@
 ---
 title: findfilelockowner
-description: Findfilelockowner 拡張機能がブロックされているスレッドのすべてのスレッドを調べることで、ファイル オブジェクトのロックの所有者を検索しようとするとします。
+description: Findfilelockowner 拡張機能は、ブロックされているスレッドのすべてのスレッドを調べることによって、ファイルオブジェクトロックの所有者の検索を試みます。
 ms.assetid: 0d6eabf4-e7ac-4536-beab-d3027720efa8
 keywords:
-- Windows デバッグ findfilelockowner
+- findfilelockowner Windows のデバッグ
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,27 +12,27 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 331d20203285de5a75eda12d785b5e767c7b9ff2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2993e3e7147c9c60fe9300820e98e9c8ac5e9e5a
+ms.sourcegitcommit: 424c435700d8f8a85bdaa83e8ddaab9568c8d347
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337118"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70025307"
 ---
 # <a name="findfilelockowner"></a>!findfilelockowner
 
 
-**! Findfilelockowner**拡張機能を持つファイル オブジェクトをパラメーターとして IopSynchronousServiceTail アサートでブロックされたスレッドのすべてのスレッドを調べることで、ファイル オブジェクトのロックの所有者を検索しようとしました。
+**! Findfilelockowner**拡張機能は、IopSynchronousServiceTail assert でブロックされていて、ファイルオブジェクトをパラメーターとして持つスレッドのすべてのスレッドを調べることによって、ファイルオブジェクトロックの所有者の検索を試みます。
 
 ```dbgcmd
 !findfilelockowner [FileObject]
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>パラメーター
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>パラメータ
 
 
-<span id="_______FileObject______"></span><span id="_______fileobject______"></span><span id="_______FILEOBJECT______"></span> *FileObject*   
-ファイル オブジェクトのアドレスを指定します。 場合*FileObject*を省略すると、任意のスレッドでスタックしている現在のプロセスで、拡張機能を検索**IopAcquireFileObjectLock**およびスタック トレースからのファイル オブジェクトのアドレスを取得します。
+<span id="_______FileObject______"></span><span id="_______fileobject______"></span><span id="_______FILEOBJECT______"></span>*FileObject*   
+ファイルオブジェクトのアドレスを指定します。 *FileObject*を省略した場合、拡張機能は、 **IopAcquireFileObjectLock**でスタックしている現在のプロセス内のスレッドを検索し、スタックトレースからファイルオブジェクトアドレスを取得します。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
@@ -48,23 +48,23 @@ ms.locfileid: "63337118"
 </tr>
 <tr class="even">
 <td align="left"><p><strong>Windows XP 以降</strong></p></td>
-<td align="left"><p>Kdexts.dll</p></td>
+<td align="left"><p>Kdexts .dll</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-ファイル オブジェクトについては、Microsoft Windows SDK ドキュメントに、Windows Driver Kit (WDK) ドキュメントを参照してくださいと*Microsoft Windows internals 』* Mark Russinovich と David Solomon します。 (これらのリソースできない場合がありますのいくつかの言語および国。)
+ファイルオブジェクトの詳細については、Microsoft Windows SDK のドキュメント、Windows Driver Kit (WDK) のドキュメント、および Mark Russinovich と David ソロモンによる*Microsoft windows の内部構造*に関するドキュメントを参照してください。
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>コメント
 -------
 
-内のファイルを待機していたスレッドがタイムアウトするクリティカル セクション タイムアウト後にこの拡張機能は最も役に立つ**IopAcquireFileObjectLock**します。 問題のあるスレッドが見つかると、要求に使用された IRP を回復して、IRP を処理しているドライバーを表示する、拡張機能と試行されます。
+この拡張機能は、タイムアウトしたスレッドが**IopAcquireFileObjectLock**内のファイルを待機していた、クリティカルセクションのタイムアウトの後に最も役立ちます。 問題のあるスレッドが見つかると、この拡張機能は、要求に使用された IRP の復旧を試み、IRP を処理していたドライバーを表示しようとします。
 
-拡張機能では、問題のあるスレッドが見つかるまで、システムですべてのスレッドのスタックを走査、ために、完了に時間がかかります。停止する\`(WinDbg) では、CTRL + BREAK または (KD) では、CTRL + C を押して任意の時点。
+拡張機能は、問題のあるスレッドが見つかるまでシステム内のすべてのスレッドのスタックを調べるため、完了するまでに時間がかかります。任意の時点\`で、ctrl キーを押しながら BREAK キー (WinDbg の場合) または ctrl + C (KD の場合) を押すことによって停止できます。
 
  
 

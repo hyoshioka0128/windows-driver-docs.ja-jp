@@ -1,9 +1,9 @@
 ---
 title: wsle
-description: Wsle 拡張機能では、すべての作業セット一覧エントリ (WSLEs) が表示されます。
+description: Wsle 拡張機能では、すべての作業セットリストエントリ (wsle が表示されます。
 ms.assetid: 9540ac44-a44b-4af6-acdd-baa275e8d004
 keywords:
-- Windows デバッグ wsle
+- wsle Windows のデバッグ
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 22fc6a421e0743ffdfda17f6d49435cd9ce2d6bd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5be76a7c7b1c9aa173203eed745b2fc4e0819a12
+ms.sourcegitcommit: 424c435700d8f8a85bdaa83e8ddaab9568c8d347
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347975"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70025334"
 ---
 # <a name="wsle"></a>!wsle
 
 
-**! Wsle**拡張機能には、すべての作業セット一覧エントリ (WSLEs) が表示されます。
+**! Wsle**拡張機能では、すべての作業セットリストエントリ (wsle が表示されます。
 
 構文
 
@@ -54,7 +54,7 @@ Kdexts.dll
 
 ### <span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>Additional Information
 
-For information about working sets, see the Windows Driver Kit (WDK) documentation and *Microsoft Windows Internals*, by Mark Russinovich and David Solomon. (These resources may not be available in some languages and countries.)
+For information about working sets, see the Windows Driver Kit (WDK) documentation and *Microsoft Windows Internals*, by Mark Russinovich and David Solomon.
 
 Remarks
 -------

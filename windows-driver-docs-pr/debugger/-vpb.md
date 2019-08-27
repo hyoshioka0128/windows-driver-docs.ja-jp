@@ -1,9 +1,9 @@
 ---
 title: vpb
-description: Vpb 拡張機能では、ボリューム パラメーター ブロック (VPB) が表示されます。
+description: Vpb 拡張機能により、ボリュームパラメーターブロック (VPB) が表示されます。
 ms.assetid: 978d4ec8-6141-4656-9e5c-266de91c9440
 keywords:
-- Windows デバッグ vpb
+- vpb Windows デバッグ
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,27 +12,27 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 58da7d63373faad05c66ee3e3eec7c9a16083afd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 90f04f4146409059716449aab33c9070a7b3e1df
+ms.sourcegitcommit: 424c435700d8f8a85bdaa83e8ddaab9568c8d347
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323478"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70025152"
 ---
 # <a name="vpb"></a>!vpb
 
 
-**! Vpb**拡張機能には、ボリューム パラメーター ブロック (VPB) が表示されます。
+**! Vpb**拡張機能により、ボリュームパラメーターブロック (vpb) が表示されます。
 
 ```dbgcmd
 !vpb Address
 ```
 
-## <a name="span-idddkvpbdbgspanspan-idddkvpbdbgspanparameters"></a><span id="ddk__vpb_dbg"></span><span id="DDK__VPB_DBG"></span>パラメーター
+## <a name="span-idddk__vpb_dbgspanspan-idddk__vpb_dbgspanparameters"></a><span id="ddk__vpb_dbg"></span><span id="DDK__VPB_DBG"></span>パラメータ
 
 
-<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span> *アドレス*   
-VPB の 16 進数のアドレスを指定します。
+<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span>*アドレス*   
+VPB の16進数のアドレスを指定します。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
@@ -44,25 +44,25 @@ VPB の 16 進数のアドレスを指定します。
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>Windows 2000</strong></p></td>
-<td align="left"><p>Kdextx86.dll</p></td>
+<td align="left"><p>Kdextx86</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>Windows XP 以降</strong></p></td>
-<td align="left"><p>Kdexts.dll</p></td>
+<td align="left"><p>Kdexts .dll</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-Vpb については、Windows Driver Kit (WDK) ドキュメントを参照してくださいと*Microsoft Windows internals 』*、Mark Russinovich と David Solomon します。 (これらのリソースできない場合がありますのいくつかの言語および国。)
+VPBs の詳細については、「Windows Driver Kit (WDK)」のドキュメントと*Microsoft windows の内部*(Mark Russinovich と David ソロモン) を参照してください。
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>コメント
 -------
 
-次に例を示します。 最初に、デバイス ツリーが表示されます、 [ **! devnode** ](-devnode.md)拡張機能。
+次に例を示します。 まず、デバイスツリーが[ **! devnode**](-devnode.md)拡張機能と共に表示されます。
 
 ```dbgcmd
 kd> !devnode 0 1
@@ -90,7 +90,7 @@ DevNode 0x80e203b8 for PDO 0x80e204f8
     .....
 ```
 
-表示される最後のデバイス ノードは、ボリュームです。 その物理デバイス オブジェクト (PDO) を調べて、 [ **! devobj** ](-devobj.md)拡張機能。
+一覧に表示されている最後のデバイスノードはボリュームです。 [ **! Devobj**](-devobj.md)拡張機能を使用して、その物理デバイスオブジェクト (PDO) を確認します。
 
 ```dbgcmd
 kd> !devobj 80e15cb8
@@ -103,7 +103,7 @@ AttachedDevice (Upper) 80e14c60 \Driver\VolSnap
 Device queue is not busy.
 ```
 
-このデバイスの VPB のアドレスは、この一覧に含まれます。 このアドレスを使用して、 **! vpb**拡張機能。
+このリストには、このデバイスの VPB のアドレスが含まれています。 このアドレスは、 **! vpb**拡張機能と共に使用します。
 
 ```dbgcmd
 kd> !vpb 80e15c30

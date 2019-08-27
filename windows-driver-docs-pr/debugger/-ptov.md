@@ -1,9 +1,9 @@
 ---
 title: ptov
-description: Ptov 拡張機能は、特定のプロセスの物理-バーチャル マップ全体を表示します。
+description: Ptov 拡張機能は、特定のプロセスの物理-仮想マップ全体を表示します。
 ms.assetid: 82352d12-4e81-4746-9333-b2cc98eb7a9d
 keywords:
-- Windows デバッグ ptov
+- ptov Windows デバッグ
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,27 +12,27 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 586f99d53184a7a0110ee06855beed897f1db97a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 12c1db265f222894e8b89c851b76ca61b6107aba
+ms.sourcegitcommit: 424c435700d8f8a85bdaa83e8ddaab9568c8d347
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334329"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70025148"
 ---
 # <a name="ptov"></a>!ptov
 
 
-**! Ptov**拡張機能は、特定のプロセスの物理-バーチャル マップ全体を表示します。
+**! Ptov**拡張機能は、特定のプロセスの物理-仮想マップ全体を表示します。
 
 ```dbgcmd
 !ptov DirBase
 ```
 
-## <a name="span-idddkptovdbgspanspan-idddkptovdbgspanparameters"></a><span id="ddk__ptov_dbg"></span><span id="DDK__PTOV_DBG"></span>パラメーター
+## <a name="span-idddk__ptov_dbgspanspan-idddk__ptov_dbgspanparameters"></a><span id="ddk__ptov_dbg"></span><span id="DDK__PTOV_DBG"></span>パラメータ
 
 
-<span id="_______DirBase______"></span><span id="_______dirbase______"></span><span id="_______DIRBASE______"></span> *DirBase*   
-プロセスの基本クラスをディレクトリを指定します。 ディレクトリ情報を調べるには、 [ **! プロセス**](-process.md)コマンド、および DirBase に表示される値を確認します。
+<span id="_______DirBase______"></span><span id="_______dirbase______"></span><span id="_______DIRBASE______"></span>*Dirbase*   
+プロセスのディレクトリベースを指定します。 ディレクトリベースを特定するには、 [ **! process**](-process.md)コマンドを使用して、dirbase に対して表示される値を確認します。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
@@ -44,11 +44,11 @@ ms.locfileid: "63334329"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>Windows 2000</strong></p></td>
-<td align="left"><p>Kdextx86.dll</p></td>
+<td align="left"><p>Kdextx86</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>Windows XP 以降</strong></p></td>
-<td align="left"><p>Kdexts.dll</p></td>
+<td align="left"><p>Kdexts .dll</p></td>
 </tr>
 </tbody>
 </table>
@@ -58,7 +58,7 @@ ms.locfileid: "63334329"
 <a name="remarks"></a>注釈
 -------
 
-次に例を示します。 最初に、使用[ **.process** ](-process--set-process-context-.md)と[ **! プロセス**](-process.md)現在のプロセスのディレクトリの基数を判断します。
+次に例を示します。 まず、 [ **. process**](-process--set-process-context-.md)および[ **! process**](-process.md)を使用して、現在のプロセスのディレクトリベースを決定します。
 
 ```dbgcmd
 1: kd> .process
@@ -70,7 +70,7 @@ PROCESS 852b4040  SessionId: none  Cid: 0004    Peb: 00000000  ParentCid: 0000
     ...
 ```
 
-この場合は、ディレクトリ ベースは、0x00185000 です。 このアドレスを渡す **! ptov**:
+この場合、ディレクトリベースは0x00185000 です。 このアドレスを **! ptov**に渡します。
 
 ```dbgcmd
 1: kd> !ptov 185000
@@ -88,11 +88,11 @@ d71000 77510000
 ...
 ```
 
-左側の列の数値は、このプロセスにマップされている各メモリ ページの物理アドレスです。 右側の列の数値は、マップ先の仮想アドレスです。
+左の列の数値は、このプロセスのマッピングを持つ各メモリページの物理アドレスです。 右側の列の数値は、マップされている仮想アドレスです。
 
-合計の表示は、非常に長いです。
+合計表示は非常に長いです。
 
-64 ビットの例を次に示します。
+64ビットの例を次に示します。
 
 ```dbgcmd
 3: kd> .process
@@ -116,11 +116,11 @@ ceefb000 fffff680`00008000
 ...
 ```
 
-ディレクトリ ベースは、仮想アドレス変換で使用されている最初のテーブルの物理アドレスです。 このテーブルは、対象のオペレーティング システムとターゲットのオペレーティング システムの物理アドレス拡張 (PAE) が有効になっているかどうかのビット数に応じて、異なる名前を持っています。
+ディレクトリベースは、仮想アドレス変換で使用される最初のテーブルの物理アドレスです。 このテーブルの名前は、ターゲットオペレーティングシステムのビット数と、ターゲットオペレーティングシステムに対して物理アドレス拡張 (PAE) が有効になっているかどうかによって異なります。
 
-64 ビットの Windows ディレクトリ ベースは、ページ マップ レベル 4 (PML4) テーブルの物理アドレスです。 32 ビットの Windows では、PAE を有効に、ディレクトリ ベースは、ページ ディレクトリ ポインター (PDP) テーブルの物理アドレスです。 32 ビットの Windows で無効になっている PAE、ディレクトリの bas はページ ディレクトリ (PD) テーブルの物理アドレス。
+64ビット Windows の場合、ディレクトリベースはページマップレベル 4 (PML4) テーブルの物理アドレスです。 PAE が有効になっている32ビットの Windows の場合、ディレクトリベースはページディレクトリポインター (PDP) テーブルの物理アドレスです。 PAE が無効になっている32ビットの Windows では、ディレクトリ bas はページディレクトリ (PD) テーブルの物理アドレスです。
 
-関連トピックについては、次を参照してください。 [ **! vtop** ](-vtop.md)と[仮想のアドレスを物理アドレスを変換する](converting-virtual-addresses-to-physical-addresses.md)します。 仮想アドレス変換の詳細については、次を参照してください。 *Microsoft Windows internals 』*、Mark Russinovich と David Solomon します。 (これらのリソースできない場合がありますのいくつかの言語および国。)
+関連トピックについては、「 [ **! vtop**](-vtop.md) 」と「[仮想アドレスを物理アドレスに変換する](converting-virtual-addresses-to-physical-addresses.md)」を参照してください。 仮想アドレス変換の詳細については、「 *Microsoft Windows の内部*」 (Mark Russinovich と David ソロモン) を参照してください。
 
  
 

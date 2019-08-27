@@ -1,9 +1,9 @@
 ---
 title: poolused
-description: Poolused 拡張機能では、各プールの割り当てに使用されるタグに基づいて、メモリ使用の概要が表示されます。
+description: Poolused 拡張機能では、各プール割り当てに使用されるタグに基づいて、メモリ使用量の概要が表示されます。
 ms.assetid: e801342d-2536-43a3-992b-99942eb3c5ae
 keywords:
-- Windows デバッグ poolused
+- poolused Windows デバッグ
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,46 +12,46 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 52af1d34c077699dc9401fb163a0008f8c947be9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ef77fb5afa09c0669db9fa72ce8583453208897d
+ms.sourcegitcommit: 424c435700d8f8a85bdaa83e8ddaab9568c8d347
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334377"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70025192"
 ---
 # <a name="poolused"></a>!poolused
 
 
-**! Poolused**拡張機能には、各プールの割り当てに使用されるタグに基づいて、メモリ使用の概要が表示されます。
+**! Poolused**拡張機能では、各プール割り当てに使用されるタグに基づいて、メモリ使用量の概要が表示されます。
 
 ```dbgcmd
 !poolused [Flags [TagString]] 
 ```
 
-## <a name="span-idddkpooluseddbgspanspan-idddkpooluseddbgspanparameters"></a><span id="ddk__poolused_dbg"></span><span id="DDK__POOLUSED_DBG"></span>パラメーター
+## <a name="span-idddk__poolused_dbgspanspan-idddk__poolused_dbgspanparameters"></a><span id="ddk__poolused_dbg"></span><span id="DDK__POOLUSED_DBG"></span>パラメータ
 
 
-<span id="_______Flags______"></span><span id="_______flags______"></span><span id="_______FLAGS______"></span> *フラグ*   
-表示される出力の量と、出力の並べ替え方法を指定します。 ビット 1 (0x2) および 2 (0x4) を同時に使用できないことを除いては、次のビット値の任意の組み合わせにできます。 既定値は、0x0 で、プール タグを使用して並べ替え、集計情報を生成します。
+<span id="_______Flags______"></span><span id="_______flags______"></span><span id="_______FLAGS______"></span>*フラグ*   
+表示する出力の量と、出力を並べ替える方法を指定します。 これは、ビット 1 (0x2) と 2 (0x4) を同時に使用できない点を除いて、次のビット値の任意の組み合わせにすることができます。 既定値は0x0 で、プールタグによって並べ替えられた概要情報を生成します。
 
 <span id="Bit_0__0x1_"></span><span id="bit_0__0x1_"></span><span id="BIT_0__0X1_"></span>ビット 0 (0x1)  
-(詳細) のより詳細な情報が表示されます。
+詳細情報を表示します。
 
 <span id="Bit_1__0x2_"></span><span id="bit_1__0x2_"></span><span id="BIT_1__0X2_"></span>ビット 1 (0x2)  
-並べ替え、非ページ メモリの量の表示を使用します。
+非ページメモリ使用量によってディスプレイを並べ替えます。
 
 <span id="Bit_2__0x4_"></span><span id="bit_2__0x4_"></span><span id="BIT_2__0X4_"></span>ビット 2 (0x4)  
-ページングされたメモリの使用量の表示を並べ替えます。
+ページングされたメモリ使用量で表示を並べ替えます。
 
 <span id="Bit_3__0x8_"></span><span id="bit_3__0x8_"></span><span id="BIT_3__0X8_"></span>ビット 3 (0x8)  
-(Windows Server 2003 以降)Standard プールではなく、セッションのプールを表示します。
+(Windows Server 2003 以降)標準プールではなくセッションプールを表示します。
 
-**注**  を使用することができます、 [ **! セッション**](-session.md)セッション間で切り替えコマンド。
+**注:**   セッションを切り替えるには、 [ **! session**](-session.md)コマンドを使用します。
 
  
 
-<span id="_______TagString______"></span><span id="_______tagstring______"></span><span id="_______TAGSTRING______"></span> *TagString*   
-プール タグを指定します。 *TagString*大文字の ASCII 文字列です。 アスタリスク (\*) 任意の文字数を表すために使用することができます。 1 文字を表すために使用する、疑問符 (?) は。 アスタリスクを使用すると、しない限り、 *TagString*に 4 文字の長さでなければなりません。
+<span id="_______TagString______"></span><span id="_______tagstring______"></span><span id="_______TAGSTRING______"></span>*Tagstring*   
+プールタグを指定します。 *Tagstring*は、大文字と小文字を区別する ASCII 文字列です。 アスタリスク (\*) を使用すると、任意の数の文字を表すことができます。疑問符 (?) を使用すると、正確に1文字を表すことができます。 アスタリスクを使用しない限り、 *Tagstring*の長さは4文字にする必要があります。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
@@ -63,31 +63,31 @@ ms.locfileid: "63334377"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>Windows 2000</strong></p></td>
-<td align="left"><p>Kdextx86.dll</p></td>
+<td align="left"><p>Kdextx86</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>Windows XP 以降</strong></p></td>
-<td align="left"><p>Kdexts.dll</p></td>
+<td align="left"><p>Kdexts .dll</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-メモリ プールおよびプール タグについては、Windows Driver Kit (WDK) ドキュメントを参照してくださいと*Microsoft Windows internals 』*、Mark Russinovich と David Solomon します。 (これらのリソースできない場合がありますのいくつかの言語および国。)
+メモリプールとプールタグの詳細については、「Windows Driver Kit (WDK)」のドキュメントと*Microsoft windows の内部構造*を参照してください。これには、Mark Russinovich と David ソロモンが使用されます。
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>コメント
 -------
 
-**! Poolused**拡張機能は、Windows の機能をタグ付け、プールからデータを収集します。 プールのタグ付けは無期限に Windows Server 2003 および以降のバージョンの Windows で有効にします。 Windows XP および Windows の以前のバージョンでは、プールを使用してタグ付けを有効にする必要があります[Gflags](gflags.md)します。
+**! Poolused**拡張機能は、Windows のプールタグ付け機能からデータを収集します。 プールのタグ付けは、Windows Server 2003 以降のバージョンの Windows で完全に有効になります。 Windows XP 以前のバージョンの Windows では、 [Gflags](gflags.md)を使用してプールのタグ付けを有効にする必要があります。
 
-完了前に、拡張機能の実行を停止した場合、デバッガーには、部分的な結果が表示されます。
+完了前に拡張機能の実行を停止した場合、デバッガーは部分的な結果を表示します。
 
-このコマンドの表示と非ページ プールのページ プールの各タグのメモリ使用を示します。 どちらの場合で、表示には、特定のタグの現在未解決の割り当ての数とそれらの割り当てで消費されるバイト数が含まれます。
+このコマンドの表示では、ページングプールおよび非ページプールの各タグのメモリ使用量が表示されます。 どちらの場合も、表示には、指定されたタグに対する現在未解決の割り当ての数と、それらの割り当てによって使用されているバイト数が含まれます。
 
-この拡張機能からの出力の部分的な例を次に示します。
+この拡張機能からの出力の例を次に示します。
 
 ```dbgcmd
 0: kd> !poolused

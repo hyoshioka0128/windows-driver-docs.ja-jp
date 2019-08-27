@@ -3,69 +3,69 @@ title: ドライバー ファイルのテスト署名
 description: ドライバー ファイルのテスト署名
 ms.assetid: 3d73d632-e910-43e7-a8fd-c78a11df0206
 keywords:
-- テスト署名ドライバー パッケージにドライバー ファイル
-- テスト署名を埋め込み、WDK のドライバー パッケージの署名
-- WDK のドライバー ファイルの埋め込み署名
-- 埋め込まれた、WDK の署名
-- デジタル署名 WDK、埋め込まれました。
-- テスト証明書の MakeCert WDK
-- テスト署名ドライバー ファイル WDK
-- 市販のテスト証明書 WDK
+- テスト署名ドライバーパッケージ WDK、ドライバーファイル
+- テスト署名ドライバーパッケージ WDK、埋め込み署名
+- ドライバーファイルに署名を埋め込む (WDK)
+- 署名 WDK、埋め込み
+- デジタル署名 WDK、埋め込み
+- MakeCert テスト証明書 WDK
+- 署名ドライバーファイルのテスト WDK
+- 商用テスト証明書 WDK
 - エンタープライズ CA テスト証明書 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 34cbf360689a8c845a856dab98a300d6644e1662
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3e0da346b0c5152439711585f23d372a0b7e0138
+ms.sourcegitcommit: 424c435700d8f8a85bdaa83e8ddaab9568c8d347
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377246"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70025122"
 ---
 # <a name="test-signing-a-driver-file"></a>ドライバー ファイルのテスト署名
 
 
-使用[ **SignTool** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/signtool)次のトピックの説明に従って、ドライバー ファイルに署名を埋め込むには。
+[**SignTool**](https://docs.microsoft.com/windows-hardware/drivers/devtest/signtool)を使用して、次のトピックで説明するように、ドライバーファイルに署名を埋め込みます。
 
-[MakeCert テスト証明書または市販のテスト証明書を使用して、ドライバー ファイルにテスト署名を埋め込むには](#using-a-makecert-test-certificate-or-a-commercial-test-certificate-to-)
+[MakeCert テスト証明書または商用テスト証明書を使用して、テスト署名をドライバーファイルに埋め込む](#using-a-makecert-test-certificate-or-a-commercial-test-certificate-to-)
 
-[エンタープライズ CA のテスト証明書を使用して、ドライバー ファイルにテスト署名を埋め込むには](#using-an-enterprise-ca-test-certificate-to-embed-a-test-signature-in-a)
+[エンタープライズ CA テスト証明書を使用して、テスト署名をドライバーファイルに埋め込む](#using-an-enterprise-ca-test-certificate-to-embed-a-test-signature-in-a)
 
-### <a href="" id="using-a-makecert-test-certificate-or-a-commercial-test-certificate-to-"></a> MakeCert テスト証明書または市販のテスト証明書を使用して、ドライバー ファイルにテスト署名を埋め込むには
+### <a href="" id="using-a-makecert-test-certificate-or-a-commercial-test-certificate-to-"></a>MakeCert テスト証明書または商用テスト証明書を使用して、テスト署名をドライバーファイルに埋め込む
 
-使用して、ドライバー ファイルに署名を埋め込むには次の SignTool コマンドを使用して、 [MakeCert テスト証明書](makecert-test-certificate.md)または[市販のテスト証明書](commercial-test-certificate.md)します。
+[MakeCert テスト証明](makecert-test-certificate.md)書または[商用テスト証明書](commercial-test-certificate.md)を使用して、ドライバーファイルに署名を埋め込むには、次の SignTool コマンドを使用します。
 
 ```cpp
-SignTool sign /v /s TestCertStoreName /n TestCertName /t http://timestamp.verisign.com/scripts/timstamp.dll DriverFileName.sys
+SignTool sign /v /s TestCertStoreName /n TestCertName /t http://timestamp.digicert.com DriverFileName.sys
 ```
 
 各項目の意味は次のとおりです。
 
--   Sign コマンドでは、SignTool DriverFileName.sys ドライバー ファイルに署名を埋め込むには構成します。
+-   Sign コマンドは、ドライバーファイル DriverFileName に署名を埋め込むように SignTool を構成します。
 
--   **/V** /verbose オプションを実行し、警告メッセージを印刷する SignTool を構成します。
+-   **/V** verbose オプションは、実行および警告メッセージを出力するように SignTool を構成します。
 
--   **/S** *TestCertStoreName*オプションという名前のテスト証明書を含むテスト証明書ストアの名前を提供する*TestCertName*します。
+-   **/S** *TestCertStoreName*オプションは、 *testcertname*という名前のテスト証明書を含むテスト証明書ストアの名前を指定します。
 
--   **/N** *TestCertName*オプションという名前の証明書ストアにインストールされているテスト証明書の名前を提供する*TestCertStoreName*します。 テスト証明書には、MakeCert テスト証明書または市販のテスト証明書のいずれかを指定できます。
+-   **/N** *testcertname*オプションは、 *TestCertStoreName*という名前の証明書ストアにインストールされているテスト証明書の名前を指定します。 テスト証明書には、MakeCert テスト証明書または商用テスト証明書のいずれかを指定できます。
 
--   **/T**  * http://timestamp.verisign.com/scripts/timstamp.dll *オプションは、VeriSign を提供するパブリックに利用可能なタイム スタンプ サーバーの URL を提供します。
+-   **/T**  *http://timestamp.digicert.com* オプションは、VeriSign を提供するパブリックに利用可能なタイム スタンプ サーバーの URL を提供します。
 
--   *DriverFileName.sys*ドライバー ファイルの名前を指定します。
+-   *Driverfilename .sys*は、ドライバーファイルの名前です。
 
-次のコマンドは、テスト署名ドライバー ファイルを SignTool を使用する方法を示します。 この例での署名を埋め込みます*Toaster.sys*、これは、 *amd64*コマンドが実行されるディレクトリのサブディレクトリ。 テスト証明書の名前は"contoso.com(test)"と"PrivateCertStore"という名前の証明書ストアにインストールされます。
+次のコマンドは、SignTool を使用してドライバーファイルをテストする方法を示しています。 この例では、*トースター*に署名を埋め込みます。これは、コマンドが実行されるディレクトリの下の*amd64*サブディレクトリにあります。 テスト証明書の名前は "contoso .com (test)" であり、"PrivateCertStore" という名前の証明書ストアにインストールされています。
 
 ```cpp
-SignTool sign /v /s PrivateCertStore /n contoso.com(test) /t http://timestamp.verisign.com/scripts/timstamp.dll amd64\toaster.sys
+SignTool sign /v /s PrivateCertStore /n contoso.com(test) /t http://timestamp.digicert.com amd64\toaster.sys
 ```
 
-### <a href="" id="using-an-enterprise-ca-test-certificate-to-embed-a-test-signature-in-a"></a>**エンタープライズ CA のテスト証明書を使用して、ドライバー ファイルにテスト署名を埋め込むには**
+### <a href="" id="using-an-enterprise-ca-test-certificate-to-embed-a-test-signature-in-a"></a>**エンタープライズ CA テスト証明書を使用して、テスト署名をドライバーファイルに埋め込む**
 
-次の SignTool コマンドでは、エンタープライズ CA が、テストへの署名を使用したテスト証明書を発行する前提としています、[ドライバー パッケージ](driver-packages.md)します。 場合、[テスト証明書をエンタープライズ CA](enterprise-ca-test-certificate.md) 、証明書ストアに存在する唯一のテスト証明書は、次のコマンドを使用できますのみ指定する、 **/a**オプションとの名前、ドライバー ファイルです。 このような状況では、SignTool は検索し、既定では、エンタープライズ CA テスト証明書を使用します。
+次の SignTool コマンドは、エンタープライズ CA が[ドライバーパッケージ](driver-packages.md)のテスト署名に使用するテスト証明書を発行することを前提としています。 [エンタープライズ CA テスト証明書](enterprise-ca-test-certificate.md)が証明書ストアに存在する唯一のテスト証明書である場合は、次のコマンドを使用できます。ここでは、 **/a**オプションとドライバーファイルの名前のみを指定します。 この場合、SignTool は既定でエンタープライズ CA テスト証明書を検索して使用します。
 
-エンタープライズ CA のテスト証明書だけでなく他のテスト証明書を取得または作成した場合は、SignTool オプションを使用する必要があります **/s**と **/n**テスト証明書ストアの名前を指定してテスト証明書ストアにインストールされているテスト証明書の名前。
+エンタープライズ CA テスト証明書に加えて他のテスト証明書を作成または取得した場合は、SignTool オプション **/s**と **/n**を使用して、テスト証明書ストアの名前とテスト証明書の名前を指定する必要があります。テスト証明書ストアにインストールされます。
 
 ```cpp
-SignTool sign /v /a /t http://timestamp.verisign.com/scripts/timstamp.dll DriverFileName.sys
+SignTool sign /v /a /t http://timestamp.digicert.com DriverFileName.sys
 ```
 
  

@@ -1,10 +1,10 @@
 ---
 title: filecache
-description: Filecache 拡張機能では、システム ファイル キャッシュ メモリと PTE 使用に関する情報が表示されます。
+description: Filecache 拡張機能には、システムファイルキャッシュのメモリおよび PTE の使用に関する情報が表示されます。
 ms.assetid: 38dbff14-5144-455c-a9b8-1ac6292f4200
 keywords:
-- ファイルのキャッシュ
-- Windows デバッグ filecache
+- ファイルキャッシュ
+- filecache Windows のデバッグ
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -13,45 +13,45 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 494d76d1cb348f9018dd75b693306d2e63b8e5ab
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: eb47cb3021a3072143f8197125e9dd32403fb527
+ms.sourcegitcommit: 424c435700d8f8a85bdaa83e8ddaab9568c8d347
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336743"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70025244"
 ---
 # <a name="filecache"></a>!filecache
 
 
-**! Filecache**拡張機能は、システム ファイル キャッシュ メモリに関する情報を表示および PTE を使用します。
+**! Filecache**拡張機能には、システムファイルキャッシュのメモリおよび PTE の使用に関する情報が表示されます。
 
 ```dbgcmd
 !filecache [Flags]
 ```
 
-## <a name="span-idddkfilelockdbgspanspan-idddkfilelockdbgspanparameters"></a><span id="ddk__filelock_dbg"></span><span id="DDK__FILELOCK_DBG"></span>パラメーター
+## <a name="span-idddk__filelock_dbgspanspan-idddk__filelock_dbgspanparameters"></a><span id="ddk__filelock_dbg"></span><span id="DDK__FILELOCK_DBG"></span>パラメータ
 
 
-<span id="_______Flags"></span><span id="_______flags"></span><span id="_______FLAGS"></span> *フラグ*  
-任意。 既定値は、「0x0」です。 設定*フラグ*共有キャッシュのマップの出力を並べ替えるには 0x1 です。 この方法では、特定の制御領域のすべてのシステム キャッシュのビューを見つけることができます。
+<span id="_______Flags"></span><span id="_______flags"></span><span id="_______FLAGS"></span>*フラグ*  
+任意。 既定値は0x0 です。 共有キャッシュマップによって出力を並べ替えるには、*フラグ*を0x1 に設定します。 これにより、特定のコントロール領域のすべてのシステムキャッシュビューを見つけることができます。
 
 ## <span id="ddk__filecache_dbg"></span><span id="DDK__FILECACHE_DBG"></span>
 
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
-Kdexts.dll
+Kdexts .dll
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-ファイル システム ドライバーについては、Windows Driver Kit (WDK) ドキュメントを参照してくださいと*Microsoft Windows internals 』* Mark Russinovich と David Solomon します。 (これらのリソースできない場合がありますのいくつかの言語および国。)
+ファイルシステムドライバーの詳細については、Windows Driver Kit (WDK) のドキュメントと、Mark Russinovich と David ソロモンによる*Microsoft windows の内部構造*に関するドキュメントを参照してください。
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>コメント
 -------
 
-この拡張機能の出力の各行は、仮想アドレス制御ブロック (VACB) を表します。 名前付きのファイルが、VACB にマッピングされると、これらのファイルの名前が表示されます。 「ファイルの名前がありません」が指定されている場合は、この VACB がメタデータをキャッシュに使用されていることを意味します。
+この拡張機能の出力の各行は、仮想アドレス制御ブロック (VACB) を表します。 名前付きファイルが VACB にマップされると、これらのファイルの名前が表示されます。 "ファイルの名前が指定されていません" が指定されている場合は、この VACB がメタデータのキャッシュに使用されていることを意味します。
 
-Windows XP システムからこの拡張機能からの出力の例を次に示します。
+Windows XP システムからのこの拡張機能からの出力の例を次に示します。
 
 ```dbgcmd
 kd> !filecache

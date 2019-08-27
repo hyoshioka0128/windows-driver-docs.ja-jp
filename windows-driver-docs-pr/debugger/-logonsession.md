@@ -1,10 +1,10 @@
 ---
 title: logonsession
-description: Logonsession 拡張機能には、指定されたログオン セッションに関する情報が表示されます。
+description: Logonsession 拡張機能には、指定されたログオンセッションに関する情報が表示されます。
 ms.assetid: 95746bc0-ab36-43a7-83ad-9f6fdbb15b39
 keywords:
-- ログオン セッション
-- Windows デバッグ logonsession
+- ログオンセッション
+- logonsession Windows デバッグ
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -13,40 +13,40 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 31b45551a4bf8fb778878793b428dd53e69703e2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 706f6931b69b29ffa645bfeafe3cee4347ff1318
+ms.sourcegitcommit: 424c435700d8f8a85bdaa83e8ddaab9568c8d347
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336129"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70025228"
 ---
 # <a name="logonsession"></a>!logonsession
 
 
-**! Logonsession**拡張機能は、指定されたログオン セッションに関する情報を表示します。
+**! Logonsession**拡張機能には、指定されたログオンセッションに関する情報が表示されます。
 
-無料のビルドの構文
+無料のビルド構文
 
 ```dbgcmd
 !logonsession LUID
 ```
 
-チェック ビルド構文
+チェックされたビルド構文
 
 ```dbgcmd
 !logonsession LUID [InfoLevel]
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>パラメーター
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>パラメータ
 
 
-<span id="_______LUID______"></span><span id="_______luid______"></span> *LUID*   
-ログオン セッションを表示するには、ローカル一意識別子 (LUID) を指定します。 場合*LUID*は 0、すべてのログオン セッションに関する情報が表示されます。
+<span id="_______LUID______"></span><span id="_______luid______"></span>*LUID*   
+表示するログオンセッションのローカル一意識別子 (LUID) を指定します。 *LUID*が0の場合、すべてのログオンセッションに関する情報が表示されます。
 
-チェック ビルドでは、システムのセッションとシステムのすべてのトークンに関する情報を表示するには、入力 **! logonsession 3e7 1**します。
+チェックされたビルドのシステムセッションとすべてのシステムトークンに関する情報を表示するには、「 **! logonsession 3e7 1**」と入力します。
 
-<span id="_______InfoLevel______"></span><span id="_______infolevel______"></span><span id="_______INFOLEVEL______"></span> *InfoLevel*   
-(チェック ビルドのみ)トークン情報の量が表示されますを指定します。 *InfoLevel*パラメーターが 0 から 0 は最小限の情報と、最も多くの情報を表す 4、4 の値を取ることができます。
+<span id="_______InfoLevel______"></span><span id="_______infolevel______"></span><span id="_______INFOLEVEL______"></span>*InfoLevel*   
+(チェックされたビルドのみ)表示するトークン情報の量を指定します。 *InfoLevel*パラメーターには、0 ~ 4 の値を指定できます。0は最も少ない情報を表し、4は最も多くの情報を表します。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
@@ -62,21 +62,21 @@ ms.locfileid: "63336129"
 </tr>
 <tr class="even">
 <td align="left"><p><strong>Windows XP 以降</strong></p></td>
-<td align="left"><p>Kdexts.dll</p></td>
+<td align="left"><p>Kdexts .dll</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-ログオン セッションについては、Microsoft Windows SDK のマニュアルを参照し、 *Microsoft Windows internals 』* Mark Russinovich と David Solomon します。 (これらのリソースできない場合がありますのいくつかの言語および国。)
+ログオンセッションの詳細については、Microsoft Windows SDK のドキュメントと、Mark Russinovich と David ソロモンを参照してください。 
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>コメント
 -------
 
-無料のビルドでは、この拡張機能からの出力の例を次に示します。
+無料のビルドでのこの拡張機能からの出力の例を次に示します。
 
 ```dbgcmd
 kd> !logonsession 0
@@ -128,7 +128,7 @@ Dumping all logon sessions.
 14 sessions in the system.
 ```
 
-任意の時点での実行を停止するには、CTRL + BREAK (WinDbg) で、または (KD) では、CTRL + C キーを押します。
+任意のポイントで実行を停止するには、CTRL + BREAK (WinDbg の場合) または CTRL + C (KD の場合) を押します。
 
  
 

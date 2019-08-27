@@ -4,65 +4,65 @@ description: 埋め込みの署名を使用したドライバーのリリース�
 ms.assetid: ffea2479-83ee-4d94-a5e6-73ecea9fc17d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c4195a48cdaf119b6d7def9d495929203f51bde8
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2b118cb143182722d0f65afefe8ba9bf132a0c7d
+ms.sourcegitcommit: 424c435700d8f8a85bdaa83e8ddaab9568c8d347
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67387313"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70025338"
 ---
 # <a name="release-signing-a-driver-through-an-embedded-signature"></a>埋め込みの署名を使用したドライバーのリリース署名
 
 
-符号付き[カタログ ファイル](catalog-files.md)を正しくインストールして、ほとんどを読み込むことが必要、[ドライバー パッケージ](driver-packages.md)します。 ただし、埋め込まれた署名可能性がありますも選択肢になります。 カタログ ファイルにデジタル署名を保存せずに、ドライバーのバイナリ イメージ ファイル自体にデジタル署名を追加するには埋め込まれた署名です。 その結果、ドライバーが埋め込みで署名されたドライバーのバイナリ イメージが変更されます。
+ほとんどの[ドライバーパッケージ](driver-packages.md)を正しくインストールして読み込むには、署名された[カタログファイル](catalog-files.md)が必要です。 ただし、埋め込み署名はオプションである場合もあります。 埋め込み署名とは、デジタル署名をカタログファイルに保存するのではなく、ドライバーのバイナリイメージファイル自体に追加することを意味します。 その結果、ドライバーが埋め込まれている場合、ドライバーのバイナリイメージが変更されます。
 
-カーネル モード バイナリの埋め込まれた署名 (たとえば、ドライバーと関連付けられている .dll ファイル) に必要なときに。
+カーネルモードバイナリ (ドライバー、関連付けられている .dll ファイルなど) の埋め込み署名は、次の場合に必要です。
 
--   ドライバーは、*ブート開始ドライバー*します。 Windows Vista および Windows での以降のバージョンの 64 ビット バージョンでは、[カーネル モード コード署名の要件](kernel-mode-code-signing-requirements--windows-vista-and-later-.md)状態を*ブート開始ドライバー*埋め込みの署名が必要です。 これは、ドライバーのドライバー パッケージがデジタル署名済みカタログ ファイルを持つかどうかに関係なく必要です。
+-   ドライバーは、*ブート開始ドライバー*です。 Windows Vista 以降のバージョンの windows 64 では、[カーネルモードのコード署名の要件](kernel-mode-code-signing-requirements--windows-vista-and-later-.md)は、*ブート開始ドライバー*に埋め込まれた署名が必要であることを前提としています。 これは、ドライバーのドライバーパッケージにデジタル署名されたカタログファイルがあるかどうかに関係なく必要です。
 
--   カタログ ファイルが含まれていないドライバー パッケージをドライバーがインストールされます。
+-   ドライバーは、カタログファイルが含まれていないドライバーパッケージを使用してインストールされます。
 
-同様[カタログ ファイル](catalog-files.md)、 [ **SignTool** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/signtool)ツールを使用して、テスト証明書を使用してカーネル モード バイナリ ファイル内のデジタル署名を埋め込みます。 次のコマンドラインは、署名ツールは、次を実行する方法を示します。
+[カタログファイル](catalog-files.md)と同様に、 [**SignTool**](https://docs.microsoft.com/windows-hardware/drivers/devtest/signtool)ツールを使用して、テスト証明書を使用してカーネルモードのバイナリファイル内にデジタル署名を埋め込みます。 次のコマンドラインは、SignTool を実行して次の操作を実行する方法を示しています。
 
--   テスト署名 Toastpkg サンプルの 64 ビット バージョンのバイナリ ファイル、toaster.sys します。 WDK のインストール ディレクトリ内でこのファイルにある、 *src\\全般\\トースター\\toastpkg\\toastcd\\amd64*ディレクトリ。
+-   64ビット版の Toastpkg サンプルのバイナリファイルトースターをテストします。 WDK インストールディレクトリ内では、このファイルは*src\\general\\トースター\\toastpkg\\\\toastpkg amd64*ディレクトリにあります。
 
--   使用して、[ソフトウェア発行元証明書 (SPC)](software-publisher-certificate.md)商用証明書機関 (CA) によって発行されました。
+-   商用の証明機関 (CA) によって発行された[ソフトウェア発行元証明書 (SPC)](software-publisher-certificate.md)を使用します。
 
--   SPC の互換性のある複数の証明書を使用します。
+-   SPC に互換性のあるクロス証明書を使用します。
 
--   タイム スタンプ機関 (TSA) 経由のデジタル署名にタイムスタンプを割り当てます。
+-   タイムスタンプ機関 (TSA) を使用してデジタル署名にタイムスタンプを割り当てます。
 
-テスト署名、 *toaster.sys*ファイルを次のコマンドラインを実行します。
+*トースター*ファイルをテストするには、次のコマンドラインを実行します。
 
 ```cpp
-Signtool sign /v /fd sha256 /ac MSCV-VSClass3.cer /s MyPersonalStore /n contoso.com /t http://timestamp.verisign.com/scripts/timstamp.dll amd64\toaster.sys
+Signtool sign /v /fd sha256 /ac MSCV-VSClass3.cer /s MyPersonalStore /n contoso.com /t http://timestamp.digicert.com amd64\toaster.sys
 ```
 
 各項目の意味は次のとおりです。
 
--   **サインオン**コマンドは、指定されたカーネル モード バイナリ ファイルに署名する署名ツールを構成します。 *amd64\\toaster.sys*します。
+-   **Sign**コマンドは、指定されたカーネルモードのバイナリファイル*amd64\\トースター*に署名するように SignTool を構成します。
 
--   **/V**で SignTool の表示が正常に実行し、警告メッセージの詳細な操作を有効にします。
+-   **/V**オプションは、SignTool が成功した実行と警告メッセージを表示する詳細な操作を有効にします。
 
--   **/Fd**オプションは、ファイルの署名を作成するために使用するファイル ダイジェスト アルゴリズムを指定します。 既定値には SHA1 です。
+-   **/Fd**オプションは、ファイル署名の作成に使用するファイルダイジェストアルゴリズムを指定します。 既定値は SHA1 です。
 
--   **/Ac**オプションは、クロス証明書を格納するファイルの名前を指定します (*MSCV VSClass3.cer*)、CA から取得します。 クロス証明書は、現在のディレクトリにない場合は、完全なパス名を使用します。
+-   **/Ac**オプションは、CA から取得したクロス証明書 (*MSCV-VSClass3*) を含むファイルの名前を指定します。 クロス証明書が現在のディレクトリにない場合は、完全なパス名を使用します。
 
--   **/S**オプションを個人証明書ストアの名前を指定します (*MyPersonalStore)* SPC を格納しています。
+-   **/S**オプションは、SPC を含む個人証明書ストア (*myのストア)* の名前を指定します。
 
--   **/N**オプションは、証明書の名前を指定します (*Contoso.com)* は指定された証明書ストアにインストールされています。
+-   **/N**オプションは、指定された証明書ストアにインストールされている証明書 (*Contoso.com)* の名前を指定します。
 
--   **/T**オプション、TSA の URL を指定します ( *http://timestamp.verisign.com/scripts/timstamp.dll* ) タイムスタンプをデジタル署名がこれです。
+-   **/T**オプションは、デジタル署名のタイムスタンプ *http://timestamp.digicert.com* となる TSA () の URL を指定します。
 
-    **重要な**  キーの失効がコード署名の秘密キーの署名者の場合は、侵害の必要な情報を提供するタイムスタンプを含むです。
+    **重要-署名**者のコード署名の秘密キーが侵害された場合に、キーの失効に必要な情報は、タイムスタンプを含めて提供されます。  
 
      
 
--   *amd64\\toaster.sys*埋め込まれた署名されるカーネル モード バイナリ ファイルの名前を指定します。
+-   amd64 トースターは、埋め込み署名されるカーネルモードバイナリファイルの名前を指定します *\\。*
 
-SignTool とコマンドライン引数の詳細については、次を参照してください。 [ **SignTool**](https://docs.microsoft.com/windows-hardware/drivers/devtest/signtool)します。
+SignTool とそのコマンドライン引数の詳細については、 [**SignTool**](https://docs.microsoft.com/windows-hardware/drivers/devtest/signtool)を参照してください。
 
-埋め込みの署名でのドライバーをリリース署名の詳細については、次を参照してください。[ドライバー パッケージのリリース署名](release-signing-driver-packages.md)と[ドライバー ファイルをリリース署名](release-signing-a-driver-file.md)します。
+埋め込み署名を使用したドライバーのリリースの詳細については、「ドライバー[パッケージのリリース](release-signing-driver-packages.md)と[ドライバーファイルのリリース](release-signing-a-driver-file.md)署名」を参照してください。
 
  
 

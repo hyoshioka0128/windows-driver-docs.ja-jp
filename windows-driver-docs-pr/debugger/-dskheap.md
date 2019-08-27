@@ -1,10 +1,10 @@
 ---
 title: dskheap
-description: Dskheap 拡張機能には、指定したセッションのデスクトップ ヒープの情報が表示されます。
+description: Dskheap 拡張機能は、指定されたセッションのデスクトップヒープ情報を表示します。
 ms.assetid: e49c816f-963c-4383-a3bf-c03b2c0cfa39
 keywords:
 - デスクトップ
-- Windows デバッグ dskheap
+- dskheap Windows のデバッグ
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -13,30 +13,30 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 55c3f4b6f9bfc773e2ade5f939ab2cc414980191
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f640ae7501110efd8c1bba2def61cf2e6dc72b32
+ms.sourcegitcommit: 424c435700d8f8a85bdaa83e8ddaab9568c8d347
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334533"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70025260"
 ---
 # <a name="dskheap"></a>!dskheap
 
 
-**! Dskheap**拡張機能は、指定したセッションのデスクトップ ヒープの情報を表示します。
+**! Dskheap**拡張機能は、指定されたセッションのデスクトップヒープ情報を表示します。
 
 ```dbgcmd
 !dskheap [-v] [-s SessionID]
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>パラメーター
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>パラメータ
 
 
 <span id="_______-v______"></span><span id="_______-V______"></span> **-v**   
-詳細な出力が表示をによりします。
+表示により詳細な出力が含まれるようにします。
 
-<span id="_______-s_SessionID"></span><span id="_______-s_sessionid"></span><span id="_______-S_SESSIONID"></span> **-s** **** *SessionID*  
-セッションを指定します。 このパラメーターを省略すると、セッション 0 のデスクトップ ヒープ情報が表示されます。
+<span id="_______-s_SessionID"></span><span id="_______-s_sessionid"></span><span id="_______-S_SESSIONID"></span> **-s** ****  *SessionID*  
+セッションを指定します。 このパラメーターを省略すると、セッション0のデスクトップヒープ情報が表示されます。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
@@ -52,23 +52,23 @@ ms.locfileid: "63334533"
 </tr>
 <tr class="even">
 <td align="left"><p><strong>Windows XP 以降</strong></p></td>
-<td align="left"><p>Kdexts.dll</p></td>
+<td align="left"><p>Kdexts .dll</p></td>
 </tr>
 </tbody>
 </table>
 
 
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-デスクトップまたはデスクトップ ヒープの詳細については、Microsoft Windows SDK のマニュアルを参照し、 *Microsoft Windows internals 』* Mark Russinovich と David Solomon します。 (これらのリソースできない場合がありますのいくつかの言語および国。)
+デスクトップまたはデスクトップヒープの詳細については、Microsoft Windows SDK のドキュメントと、Mark Russinovich と David ソロモンによる*Microsoft Windows の内部構造*に関するドキュメントを参照してください。
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>コメント
 -------
 
-セッションのデスクトップ ヒープ情報がウィンドウ ステーションで配置されます。
+セッションのデスクトップヒープ情報は、ウィンドウステーション別に配置されます。
 
-いくつかの例を次に示します。
+次に例をいくつか示します。
 
 ```dbgcmd
 kd> !dskheap -s 3

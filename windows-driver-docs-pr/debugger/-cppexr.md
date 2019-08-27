@@ -1,10 +1,10 @@
 ---
 title: cppexr
-description: Cppexr 拡張機能には、C++ 例外レコードの内容が表示されます。
+description: Cppexr 拡張機能によって、 C++例外レコードの内容が表示されます。
 ms.assetid: 568c98e9-31d9-4c49-9b7a-bc8eccfed24a
 keywords:
 - 例外レコード
-- Windows デバッグ cppexr
+- cppexr Windows デバッグ
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -13,27 +13,27 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 327c2e2ab4bfde70b0363f6d66e48fdf1d1e9820
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ff22aa889368d13e27baa86891df6b2f32e298a1
+ms.sourcegitcommit: 424c435700d8f8a85bdaa83e8ddaab9568c8d347
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336883"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70025272"
 ---
 # <a name="cppexr"></a>!cppexr
 
 
-**! Cppexr**拡張機能は、C++ 例外レコードの内容を表示します。
+**! Cppexr**拡張機能は、 C++例外レコードの内容を表示します。
 
 ```dbgsyntax
     !cppexr Address 
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>パラメーター
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>パラメータ
 
 
-<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span> *アドレス*   
-表示する C++ 例外レコードのアドレスを指定します。
+<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span>*アドレス*   
+表示するC++例外レコードのアドレスを指定します。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
@@ -45,29 +45,29 @@ ms.locfileid: "63336883"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>Windows 2000</strong></p></td>
-<td align="left"><p>Ext.dll</p></td>
+<td align="left"><p>Ext .dll</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>Windows XP 以降</strong></p></td>
-<td align="left"><p>Ext.dll</p></td>
+<td align="left"><p>Ext .dll</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-例外の詳細については、次を参照してください[を制御する例外とイベント](controlling-exceptions-and-events.md)、Windows Driver Kit (WDK) ドキュメント、Windows SDK のドキュメントと*Microsoft Windows internals 』* マーク。Russinovich と David Solomon します。 (これらのリソースできない場合がありますのいくつかの言語および国。)使用して、 [ **.exr** ](-exr--display-exception-record-.md)他の例外レコードを表示するコマンド。
+例外の詳細については、「[例外とイベントの制御](controlling-exceptions-and-events.md)」、「Windows Driver KIT (WDK)」のドキュメント、Windows SDK のドキュメント」、および「 *Microsoft Windows の内部構造*(Mark Russinovich と David ソロモン)」を参照してください。 他の例外レコードを表示するには、 [ **. exr**](-exr--display-exception-record-.md)コマンドを使用します。
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>コメント
 -------
 
-**! Cppexr**拡張機能には、ターゲットが検出されると、例外コード、例外と例外フラグのアドレスを含む C++ 例外に関連する情報が表示されます。 この例外は、Msvcrt.dll で定義されている標準の C++ 例外のいずれかを指定する必要があります。
+**! Cppexr**拡張機能には、例外コード、例外C++のアドレス、例外フラグなど、ターゲットが検出した例外に関連する情報が表示されます。 この例外は、Msvcrt.dll で定義さC++れている標準の例外の1つである必要があります。
 
-通常取得することができます、*アドレス*パラメーターを使用して、 [ **! 分析-v** ](-analyze.md)コマンド。
+通常、 *Address*パラメーターを取得するには、 [ **! analyze-v**](-analyze.md)コマンドを使用します。
 
-**! Cppexr**拡張機能は C++ 例外の種類を決定するために便利です。
+**! Cppexr**拡張機能は、 C++例外の種類を特定するのに役立ちます。
 
  
 

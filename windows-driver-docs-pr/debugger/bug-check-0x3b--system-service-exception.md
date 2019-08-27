@@ -1,9 +1,9 @@
 ---
-title: バグ チェック 0x3B SYSTEM_SERVICE_EXCEPTION
-description: SYSTEM_SERVICE_EXCEPTION のバグ チェックでは、0x0000003B の値を持ちます。 これは、特権のないコードから特権を持つコードに遷移するルーチンを実行中に例外が発生したことを示します。
+title: バグチェック 0x3B SYSTEM_SERVICE_EXCEPTION
+description: SYSTEM_SERVICE_EXCEPTION のバグチェックの値は0x0000003B です。 これは、特権のないコードから特権コードに遷移するルーチンの実行中に例外が発生したことを示します。
 ms.assetid: 0e2c230e-d942-4f32-ae8e-7a54aceb4c19
 keywords:
-- バグ チェック 0x3B SYSTEM_SERVICE_EXCEPTION
+- バグチェック 0x3B SYSTEM_SERVICE_EXCEPTION
 - SYSTEM_SERVICE_EXCEPTION
 ms.date: 03/24/2019
 topic_type:
@@ -13,23 +13,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 74be7142755155a4112c7fc40355f1c6452b13b1
-ms.sourcegitcommit: b25275c2662bfdbddd97718f47be9bd79e6f08df
+ms.openlocfilehash: 5a3f803e82c3a2320c8ca2dd6829f863d260f29e
+ms.sourcegitcommit: 424c435700d8f8a85bdaa83e8ddaab9568c8d347
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67866527"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70025331"
 ---
-# <a name="bug-check-0x3b-systemserviceexception"></a>バグ チェック 0x3B:システム\_サービス\_例外
+# <a name="bug-check-0x3b-system_service_exception"></a>バグ チェック 0x3B:システム\_サービス\_の例外
 
 
-システム\_サービス\_例外のバグ チェックが 0x0000003B の値を持ちます。 これは、特権のないコードから特権を持つコードに遷移するルーチンを実行中に例外が発生したことを示します。
+システム\_サービス\_の例外のバグチェックの値は0x0000003b です。 これは、特権のないコードから特権コードに遷移するルーチンの実行中に例外が発生したことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
+> このトピックはプログラマーを対象としています。 コンピューターの使用中にブルースクリーンのエラーコードが表示された顧客の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://www.windows.com/stopcode)」を参照してください。
 
 
-## <a name="systemserviceexception-parameters"></a>システム\_サービス\_例外パラメーター
+## <a name="system_service_exception-parameters"></a>システム\_サービス\_の例外パラメーター
 
 
 <table>
@@ -39,22 +39,22 @@ ms.locfileid: "67866527"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">パラメーター</th>
+<th align="left">引き</th>
 <th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>1</p></td>
-<td align="left"><p>バグ チェックを原因となった例外。 </p></td>
+<td align="left"><p>バグチェックの原因となった例外。 </p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>2</p></td>
-<td align="left"><p>バグ チェックの原因となった命令のアドレス</p></td>
+<td align="left"><p>バグチェックの原因となった命令のアドレス。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>3</p></td>
-<td align="left"><p>バグ チェックの原因となった例外のコンテキスト レコードのアドレス</p></td>
+<td align="left"><p>バグチェックの原因となった例外のコンテキストレコードのアドレス。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>4</p></td>
@@ -68,29 +68,29 @@ ms.locfileid: "67866527"
 <a name="cause"></a>原因
 -----
 
-停止コードでは、例外が発生し、その下にあったスレッドがあったコードを実行することを示すシステム スレッドです。
+Stop コードは、実行中のコードに例外があり、その下にあるスレッドがシステムスレッドであることを示しています。
 
-パラメーター 1 で返される例外情報が記載[NTSTATUS 値](https://docs.microsoft.com/openspecs/windows_protocols/ms-erref/596a1078-e883-4972-9bbc-49e60bebca55)は、Windows Driver Kit の inc ディレクトリにある ntstatus.h ファイルでも。 
+パラメーター1で返された例外情報は、 [Ntstatus 値](https://docs.microsoft.com/openspecs/windows_protocols/ms-erref/596a1078-e883-4972-9bbc-49e60bebca55)に一覧表示されます。また、Windows Driver Kit の inc. ディレクトリにある ntstatus ファイルでも使用できます。 
 
 一般的な例外コードは次のとおりです。
 
 - 0x80000003:ステータス\_ブレークポイント
 
-システムにカーネル デバッガーが関連付けられていない場合、ブレークポイントまたはアサートが発生しました。
+カーネルデバッガーがシステムにアタッチされていないときに、ブレークポイントまたはアサートが発生しました。
 
-- 0xC0000005:ステータス\_アクセス\_違反
+- 0XC0000005ステータス\_アクセス\_違反
 
-メモリ アクセス違反が発生しました。 (パラメーター 4 のバグ チェックは、ドライバーにアクセスしようとするアドレスです)。
+メモリアクセス違反が発生しました。 (バグチェックのパラメーター4は、ドライバーがアクセスしようとしたアドレスです)。
 
 <a name="resolution"></a>解決方法
 ----------
 
-**この問題をデバッグします。** 
+**この問題をデバッグするには:** 
 
-使用して、 [ **.cxr (コンテキスト レコードの表示)** ](-cxr--display-context-record-.md)パラメーター 3 では、コマンドを使用して[ **kb (Display Stack Backtrace)** ](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)します。 また、この停止コードに至るまで、コードにブレークポイントを設定、エラーが発生したコードをシングル ステップ転送しようし、することができますも。 使用して、 [u、ub、uu (Unassemble)](u--unassemble-.md)コマンドをアセンブリのプログラム コードを参照してください。
+パラメーター3を指定した[**cxr (コンテキストレコードの表示)** ](-cxr--display-context-record-.md)コマンドを使用し、 [**Kb (スタックバックトレースの表示)** ](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)を使用します。 また、コード内でこの停止コードまでのブレークポイントを設定し、エラーが発生したコードへのシングルステップフォワードを試行することもできます。 [U, ub, uu (Unassemble)](u--unassemble-.md)コマンドを使用して、アセンブリプログラムコードを表示します。
 
 
-[ **! 分析**](-analyze.md)バグ チェックに関する情報を表示拡張機能をデバッグおよび根本原因を突き止めるに役に立ちます。
+! [デバッグ拡張機能の[**分析**](-analyze.md)] には、バグチェックに関する情報が表示され、根本原因を特定するのに役立ちます。
 
 ```dbgcmd
 SYSTEM_SERVICE_EXCEPTION (3b)
@@ -105,51 +105,46 @@ Arg4: 0000000000000000, zero.
 
 詳細については、以下のトピックを参照してください。
 
-[使用して、! 拡張機能の分析](using-the--analyze-extension.md) 
+[! Analyze 拡張機能の使用](using-the--analyze-extension.md) 
 
-[WinDbg をカーネル モードのダンプ ファイルの分析](analyzing-a-kernel-mode-dump-file-with-windbg.md)
+[WinDbg を使用したカーネルモードのダンプファイルの分析](analyzing-a-kernel-mode-dump-file-with-windbg.md)
 
-その名前がブルー スクリーンに印刷し、場所のメモリに格納されている場合は、エラーのドライバーを識別できます (PUNICODE\_文字列) **KiBugCheckDriver**します。 デバッガーを使用する[ **dx (表示デバッガー オブジェクト モデル表現)** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/dx--display-visualizer-variables-) - これを表示するコマンドを`dx KiBugCheckDriver`します。
+エラーの原因となっているドライバーを識別できる場合、その名前は青い画面に出力され、メモリ内の場所 (punicode\_文字列) **KiBugCheckDriver**に格納されます。 デバッガーの[**dx (Display Debugger Object Model Expression)** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/dx--display-visualizer-variables-)コマンドを使用して、この- `dx KiBugCheckDriver`を表示できます。
 
-使用して、 [! エラー](-error.md)パラメーター 1 で、例外コードに関する情報を表示する拡張機能。
+パラメーター1の例外コードに関する情報を表示するには、 [! error](-error.md)拡張機能を使用します。
 
 ```dbgcmd
 2: kd> !error 00000000c0000005
 Error code: (NTSTATUS) 0xc0000005 (3221225477) - The instruction at 0x%p referenced memory at 0x%p. The memory could not be %s.
 ```
 
-障害が発生したときに実行されていたものでスタック テキスト手がかりを確認します。 複数のダンプ ファイルが使用可能な場合は、情報を探す、スタックに共通のコードを比較します。 使用率などのデバッガー コマンドを使用して[ **kb (Display Stack Backtrace)** ](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)エラーが発生したコードを調査します。
+エラーが発生したときに実行されていたことに関する手掛かりについては、スタックテキストを参照してください。 複数のダンプファイルが使用可能な場合は、情報を比較して、スタック内の共通コードを探します。 [**Kb (スタックバックトレースの表示)** ](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)などのデバッガーコマンドを使用して、エラーが発生しているコードを調査します。
 
-使用して、`lm t n`メモリに読み込まれたモジュールを一覧表示します。 
+`lm t n`を使用して、メモリに読み込まれているモジュールの一覧を表示します。 
 
-使用`!memusage`と、システム メモリの [全般] の状態を確認します。 `!pte`と`!pool`コマンドがメモリの特定の領域を確認することも可能性があります。 
+および`!memusage`を使用して、システムメモリの一般的な状態を確認します。 `!pte` および`!pool`コマンドを使用して、メモリの特定の領域を調べることもできます。 
 
-以前は、このエラーは、ページ プールの過剰な使用状況にリンクされているし、カーネル コード ユーザー モード グラフィックス ドライバー クロス オーバーを渡して不適切なデータことにより行われる可能性があります。 これは、大文字と小文字が疑われる場合は、追加情報を収集するドライバーの検証ツールのプール オプションを使用します。
+以前は、このエラーは過剰なページングプールの使用に関連付けられており、ユーザーモードのグラフィックドライバーが過剰なデータをカーネルコードに渡すことによって発生する可能性があります。 この問題が発生していると思われる場合は、ドライバーの検証ツールのプールオプションを使用して、追加情報を収集します。
 
 **ドライバーの検証ツール**
 
-Driver Verifier は、ドライバーの動作を確認するのにはリアルタイムで実行されているツールです。 たとえば、Driver Verifier は、メモリ プールなどのメモリ リソースの使用を確認します。 ドライバー コードの実行でエラーが表示される、さらに細かく検証するドライバー コードの部分を許可する例外が事前に作成されます。 ドライバー検証マネージャーは、Windows に組み込まれているしはすべての Windows Pc で使用できます。 ドライバー検証マネージャーを起動する入力*Verifer*コマンド プロンプトでします。 確認するにはどのドライバーを構成することができます。 ドライバーを検証するコードは実行時にオーバーヘッドを追加、のでお試しくださいし、可能なドライバーの最小数を確認します。 詳細については、次を参照してください。 [Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)します。
-
-
-**旅行時間のトレース**
-
-バグ チェックはオンデマンドで再現できる場合は、WinDbg のプレビューを使用してタイム トラベル トレースを取ることの可能性を調査します。 詳細については、次を参照してください。[タイム トラベルのデバッグ - 概要](time-travel-debugging-overview.md)します。
+ドライバーの検証ツールは、ドライバーの動作を確認するためにリアルタイムで実行されるツールです。 たとえば、ドライバーの検証ツールは、メモリプールなどのメモリリソースの使用を確認します。 ドライバーコードの実行中にエラーが発生した場合は、ドライバーコードのその部分をさらに詳しく調査できるように、例外を事前に作成します。 Driver verifier マネージャーは Windows に組み込まれており、すべての Windows Pc で使用できます。 ドライバー検証マネージャーを起動するには、コマンドプロンプトで「 *Verifer* 」と入力します。 確認するドライバーを構成できます。 ドライバーを検証するコードは、実行中のオーバーヘッドを追加するので、可能な限り最小のドライバー数を試してみてください。 詳細については、「 [Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)」を参照してください。
 
 
 <a name="remarks"></a>コメント
 ----------
 
-Windows のバグの一般的なトラブルシューティングのコードを確認、これらの推奨事項に従ってください。
+Windows バグチェックコードの一般的なトラブルシューティングについては、次の推奨事項に従ってください。
 
--   新しいデバイス ドライバまたはシステム サービスを最近では、追加されている場合を削除するか、それらを更新してみてください。 表示する新しいチェック コードをバグの原因となったシステムで変更内容を調べてください。
+-   新しいデバイスドライバーまたはシステムサービスが最近追加された場合は、それらを削除または更新してみてください。 新しいバグチェックコードが表示される原因となったシステムの変更内容を確認します。
 
--   検索対象**デバイス マネージャー**を任意のデバイスの感嘆符 (!) が付いてを参照してください。 任意のエラーが発生したドライバーのドライバーのプロパティに表示されるイベント ログを確認します。 関連するドライバーを更新してみてください。
+-   **デバイスマネージャー**を検索して、感嘆符 (!) でマークされているデバイスがあるかどうかを確認します。 [ドライバーのプロパティ] に表示されている、エラーが発生しているドライバーのイベントログを確認します。 関連するドライバーを更新してみてください。
 
--   デバイスまたはエラーの原因となっているドライバーの特定に役立つ可能性がある追加のエラー メッセージをイベント ビューアーのシステム ログを確認します。 詳細については、次を参照してください。[イベント ビューアーを開く](https://support.microsoft.com/hub/4338813/windows-help#1TC=windows-7)します。 ブルー スクリーンに同じ期間に発生したシステム ログの重大なエラーを探します。
+-   エラーの原因となっているデバイスまたはドライバーの特定に役立つ可能性のある追加のエラーメッセージについては、イベントビューアーのシステムログを確認してください。 詳細については、「 [Open イベントビューアー](https://support.microsoft.com/hub/4338813/windows-help#1TC=windows-7)」を参照してください。 ブルースクリーンと同じ時間枠内に発生したシステムログの重大なエラーを探します。
 
--   最近削除または置換することをお試し、システムにハードウェアを追加した場合 または、更新プログラムが利用可能な製造元に確認します。
+-   最近システムにハードウェアを追加した場合は、削除または交換してみてください。 または、製造元に確認して、修正プログラムが利用可能かどうかを確認してください。
 
--   その他の一般的なトラブルシューティング情報を参照してください。 [**青い画面データ**](blue-screen-data.md)します。
+-   一般的なトラブルシューティング情報については、「 [**Blue Screen Data**](blue-screen-data.md)」を参照してください。
 
 
  

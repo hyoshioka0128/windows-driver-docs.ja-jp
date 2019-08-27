@@ -1,12 +1,12 @@
 ---
-title: irp の拡張機能コマンド
-description: Irp の拡張機能では、I/O 要求パケット (IRP) に関する情報が表示されます。
+title: irp 拡張コマンド
+description: Irp 拡張機能には、i/o 要求パケット (IRP) に関する情報が表示されます。
 ms.assetid: 2260255d-813b-4b89-8dbe-6ce7e5596ccf
 keywords:
 - IRP
 - IRP
 - IO 要求パケット
-- Windows デバッグ irp
+- irp Windows デバッグ
 ms.date: 08/23/2018
 topic_type:
 - apiref
@@ -15,30 +15,30 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 53ac61939065cfdc70709eed6d885f8d5cb6696f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0aaecd8295d8ad58a0fcdf6746535d2ce2a684a1
+ms.sourcegitcommit: 424c435700d8f8a85bdaa83e8ddaab9568c8d347
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362494"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70025230"
 ---
 # <a name="irp"></a>!irp
 
 
-**! Irp**拡張機能は、I/O 要求パケット (IRP) に関する情報を表示します。
+**! Irp**拡張機能には、i/o 要求パケット (irp) に関する情報が表示されます。
 
 ```dbgcmd
 !irp Address [Detail] 
 ```
 
-## <a name="span-idddkirpdbgspanspan-idddkirpdbgspanparameters"></a><span id="ddk__irp_dbg"></span><span id="DDK__IRP_DBG"></span>パラメーター
+## <a name="span-idddk__irp_dbgspanspan-idddk__irp_dbgspanparameters"></a><span id="ddk__irp_dbg"></span><span id="DDK__IRP_DBG"></span>パラメータ
 
 
-<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span> *アドレス*   
-IRP の 16 進数のアドレスを指定します。
+<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span>*アドレス*   
+IRP の16進数のアドレスを指定します。
 
-<span id="_______Detail______"></span><span id="_______detail______"></span><span id="_______DETAIL______"></span> *詳細*   
-出力には、IRP の状態、そのメモリ記述子のリスト (MDL)、所有元のスレッドと、I/O スタックのすべてのスタック情報および IRP の各スタックの場所に関する情報のアドレスが含まれます場合、このパラメーターは 1 などの任意の値に含まれています、16 進数のバージョンの主要な関数のコードおよびマイナーの関数のコードを含むです。 このパラメーターを省略すると、出力には、情報の概要のみが含まれています。
+<span id="_______Detail______"></span><span id="_______detail______"></span><span id="_______DETAIL______"></span>*詳細*   
+このパラメーターが1などの任意の値に含まれている場合、出力には、IRP の状態、メモリ記述子リスト (MDL) のアドレス、所有スレッド、そのすべての i/o スタックのスタック情報、および IRP の各スタックの場所に関する情報が含まれます。メジャー関数コードの16進数バージョンとマイナー関数コードを含みます。 このパラメーターを省略した場合、出力には情報の概要のみが含まれます。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
@@ -50,42 +50,42 @@ IRP の 16 進数のアドレスを指定します。
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>Windows XP 以降</strong></p></td>
-<td align="left"><p>Kdexts.dll</p></td>
+<td align="left"><p>Kdexts .dll</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-参照してください[プラグ アンド プレイ デバッグ](plug-and-play-debugging.md)と[デバッグ中断ストーム](debugging-an-interrupt-storm.md)この拡張機能コマンドのアプリケーション。 Irp の詳細については、Windows Driver Kit (WDK) ドキュメントを参照してくださいと*Microsoft Windows internals 』* Mark Russinovich と David Solomon します。 メジャーおよびマイナーの関数コードの詳細については、Windows Driver Kit (WDK) ドキュメントを参照してください。 (これらのリソースできない場合がありますのいくつかの言語および国。)
+この拡張機能コマンドのアプリケーションについては、「プラグアンドプレイの[割り込みストーム](debugging-an-interrupt-storm.md)の[デバッグ](plug-and-play-debugging.md)とデバッグ」を参照してください。 Irp の詳細については、Windows Driver Kit (WDK) のドキュメントと*Microsoft windows の内部*(Mark Russinovich と David ソロモン) を参照してください。 主要な関数コードとマイナー関数コードの詳細については、Windows Driver Kit (WDK) のドキュメントを参照してください。
 
-このトピックで説明、IRP 構造[ **IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_irp)します。
+このトピックでは、irp 構造体、 [**irp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_irp)について説明します。
 
-返される引数を含む IRP の構造体をデコードの詳細については、次のリソースを参照してください。
+返された引数を含む IRP 構造体のデコードの詳細については、次のリソースを参照してください。
 
-- E. のある Mark Russinovich、David A. Solomon Alex Ionescu、Windows の内部構造
-- Windows Driver Foundation Guy Smith、小額 Orwick とドライバーの開発
+- Windows の内部構造をマーク Russinovich、David A ソロモン、Alex Ionescu
+- Windows Driver Foundation Guy Smith および小額 Orwick を使用したドライバーの開発
 
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>コメント
 -------
 
-出力も IRP が完了し、スタックの場所が処理された後どのような条件下で各スタックの場所の完了ルーチンが呼び出されることを示します。 次の 3 つの可能性があります。
+また、IRP の完了後にスタックの場所が処理されると、各スタックの場所の完了ルーチンが呼び出される条件も示されます。 次の3つの可能性があります。
 
-<span id="________Success"></span><span id="________success"></span><span id="________SUCCESS"></span> **成功**  
-IRP が"成功"のコードが完了したら、完了ルーチンが呼び出されることを示します。
+<span id="________Success"></span><span id="________success"></span><span id="________SUCCESS"></span>**成功**  
+IRP が成功コードで完了したときに、完了ルーチンが呼び出されることを示します。
 
-<span id="________Error"></span><span id="________error"></span><span id="________ERROR"></span> **エラー**  
-完了ルーチンがエラー コードで IRP が完了したときに呼び出されることを示します。
+<span id="________Error"></span><span id="________error"></span><span id="________ERROR"></span>**エラー**  
+IRP がエラーコードで完了したときに、完了ルーチンが呼び出されることを示します。
 
-<span id="________Cancel"></span><span id="________cancel"></span><span id="________CANCEL"></span> **キャンセル**  
-IRP をキャンセルしようとした場合、完了ルーチンが呼び出されることを示します。
+<span id="________Cancel"></span><span id="________cancel"></span><span id="________CANCEL"></span>**取り消し**  
+IRP をキャンセルしようとした場合に、完了ルーチンが呼び出されることを示します。
 
-これらの 3 つの任意の組み合わせが表示され、表示条件のいずれかが満たされている場合、完了ルーチンが呼び出されます。 直後に、適切な値が各スタックの場所に関する情報の最初の行の末尾に記載されている、**完了コンテキスト**エントリ。
+これら3つの組み合わせが表示される場合があり、表示されている条件のいずれかが満たされると、完了ルーチンが呼び出されます。 適切な値は、各スタックの場所に関する情報の最初の行の末尾に、**完了コンテキスト**エントリの直後に一覧表示されます。
 
-Windows 10 用のこの拡張機能からの出力の例を次に示します。
+Windows 10 のこの拡張機能からの出力の例を次に示します。
 
 ```dbgcmd
 0: kd> !irp ac598dc8
@@ -102,11 +102,11 @@ Irp is active with 2 stacks 1 is current (= 0xac598e38)
             Args: 00000000 00000000 0x00110008 00000000
 ```
 
-IRP のメジャーおよびマイナーのコードのテキストに、Windows 10 以降が表示されます、たとえば、"IRP\_MJ\_ファイル\_システム\_コントロール"コード値は、この例の"(d)"では、16 進数も表示されます。
+Windows 10 以降では、irp のメジャーとマイナーのコードテキストが表示されます\_。\_たとえば、\_"irp MJ FILE\_SYSTEM CONTROL" というコード値も16進数で表示されます (この例では "(d)")。
 
-表示出力では、3 番目の引数は、IOCTL コードです。 使用して、 [ **! ioctldecode** ](-ioctldecode.md) IOCTL に関する情報を表示するコマンド。
+出力に表示される3番目の引数は、IOCTL コードです。 IOCTL に関する情報を表示するには、 [ **! ioctldecode**](-ioctldecode.md)コマンドを使用します。
 
-Windows Vista からこの拡張機能からの出力の例を次に示します。
+Windows Vista からのこの拡張機能からの出力の例を次に示します。
 
 ```dbgcmd
 0: kd> !irp 0x831f4a00
@@ -139,13 +139,13 @@ Irp is active with 8 stacks 5 is current (= 0x831f4b00)
                         Args: 00007000 00000000 00018400 00000000
 ```
 
-ドライバー名の横にある完了ルーチンは、そのスタックの場所に設定し、下の行で、ドライバーによって設定されていることに注意してください。 前の例では、 **Ntfs! NtfsMasterIrpSyncCompletionRoutine**によって設定された **\\FileSystem\\Ntfs**します。 **完了コンテキスト**上記のエントリ**Ntfs! NtfsMasterIrpSyncCompletionRoutine**、 **847eeed0 829e2ba8**も完了ルーチンのアドレスを示します渡されるコンテキストとして**Ntfs! NtfsMasterIrpSyncCompletionRoutine**します。 このことを確認できますのアドレス**Ntfs! NtfsMasterIrpSyncCompletionRoutine**は**847eeed0**が呼び出されると、このルーチンに渡されるコンテキストと**829e2ba8**.
+ドライバー名の横にある完了ルーチンはスタックの場所に設定され、次の行のドライバーによって設定されていることに注意してください。 前の例では、 **ntfs! NtfsMasterIrpSyncCompletionRoutine**が **\\ファイルシステム\\ntfs**によって設定されていました。 **Ntfs! NtfsMasterIrpSyncCompletionRoutine**の上の**完了コンテキスト**エントリ ( **847 eeed0-829e2ba8**) は、完了ルーチンのアドレスと、ntfs に渡されるコンテキストを示します **。NtfsMasterIrpSyncCompletionRoutine**。 これにより、 **Ntfs! NtfsMasterIrpSyncCompletionRoutine**のアドレスが**847 eeed0**であることがわかります。このルーチンが呼び出されたときにこのルーチンに渡されるコンテキストは**829e2ba8**です。
 
-**IRP の主な機能コード**
+**IRP 主要関数コード**
 
-次の情報は、この拡張機能コマンドの出力を解釈するのに役立つに含まれています。
+この拡張機能コマンドの出力を解釈するために、次の情報が含まれています。
 
-IRP の主要な関数のコードは次のとおりです。
+IRP の主要な関数コードは次のとおりです。
 
 <table>
 <colgroup>
@@ -154,8 +154,8 @@ IRP の主要な関数のコードは次のとおりです。
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">主要な関数のコード</th>
-<th align="left">16 進コード</th>
+<th align="left">主要な関数コード</th>
+<th align="left">16進コード</th>
 </tr>
 </thead>
 <tbody>
@@ -278,7 +278,7 @@ IRP_MJ_PNP IRP_MJ_MAXIMUM_FUNCTION</td>
 
  
 
-プラグ アンド プレイ マイナー関数のコードは次のとおりです。
+プラグアンドプレイのマイナー関数コードは次のとおりです。
 
 <table>
 <colgroup>
@@ -287,8 +287,8 @@ IRP_MJ_PNP IRP_MJ_MAXIMUM_FUNCTION</td>
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">マイナー関数のコード</th>
-<th align="left">16 進コード</th>
+<th align="left">マイナー関数コード</th>
+<th align="left">16進コード</th>
 </tr>
 </thead>
 <tbody>
@@ -393,7 +393,7 @@ IRP_MJ_PNP IRP_MJ_MAXIMUM_FUNCTION</td>
 
  
 
-WMI のマイナー関数コードは次のとおりです。
+WMI のマイナー関数のコードは次のとおりです。
 
 <table>
 <colgroup>
@@ -402,8 +402,8 @@ WMI のマイナー関数コードは次のとおりです。
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">マイナー関数のコード</th>
-<th align="left">16 進コード</th>
+<th align="left">マイナー関数コード</th>
+<th align="left">16進コード</th>
 </tr>
 </thead>
 <tbody>
@@ -452,7 +452,7 @@ WMI のマイナー関数コードは次のとおりです。
 
  
 
-電源管理のマイナー関数コードは次のとおりです。
+電源管理のマイナー関数のコードは次のとおりです。
 
 <table>
 <colgroup>
@@ -461,8 +461,8 @@ WMI のマイナー関数コードは次のとおりです。
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">マイナー関数のコード</th>
-<th align="left">16 進コード</th>
+<th align="left">マイナー関数コード</th>
+<th align="left">16進コード</th>
 </tr>
 </thead>
 <tbody>
@@ -487,7 +487,7 @@ WMI のマイナー関数コードは次のとおりです。
 
  
 
-SCSI マイナー関数のコードは次のとおりです。
+SCSI のマイナー関数のコードは次のとおりです。
 
 <table>
 <colgroup>
@@ -496,8 +496,8 @@ SCSI マイナー関数のコードは次のとおりです。
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">マイナー関数のコード</th>
-<th align="left">16 進コード</th>
+<th align="left">マイナー関数コード</th>
+<th align="left">16進コード</th>
 </tr>
 </thead>
 <tbody>
@@ -510,14 +510,14 @@ SCSI マイナー関数のコードは次のとおりです。
 
  
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
 [**IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_irp)
 
 [ **! irpfind**](-irpfind.md)
 
-[ **! ioctldecode**](-ioctldecode.md)
+[ **!ioctldecode**](-ioctldecode.md)
 
  
 

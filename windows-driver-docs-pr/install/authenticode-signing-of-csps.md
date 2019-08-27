@@ -1,63 +1,63 @@
 ---
 title: サード パーティ製の CSP の Authenticode での署名
-description: サード パーティ製 Authenticode のカスタム暗号化サービス プロバイダー (Csp) の署名は、以降、Windows Vista で利用可能されており、Windows XP SP3 および、2013 年 5 月の時点での Windows Server 2003 SP2 にこのダウンロードを使用して戻る移植されました。
+description: カスタム暗号化サービスプロバイダー (Csp) のサードパーティの Authenticode 署名は、Windows Vista 以降で使用可能になりました。このダウンロードでは、2013年5月以降、Windows XP SP3 および Windows Server 2003 SP2 に移植されています。
 ms.assetid: DBAA575A-F0B5-4725-A7B1-D6EA84977212
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ed60a7e741de3a171fcae5512ad1ad70ad64f60
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: fa86373ca04df46c39909f9f8dc999d34cd77227
+ms.sourcegitcommit: 424c435700d8f8a85bdaa83e8ddaab9568c8d347
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385299"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70025344"
 ---
 # <a name="authenticode-signing-of-third-party-csps"></a>サード パーティ製の CSP の Authenticode での署名
 
 
-使用して Windows XP SP3 および、2013 年 5 月の時点での Windows Server 2003 SP2 に移植カスタム暗号化サービス プロバイダー (Csp) されて以降、Windows Vista で利用可能とバックアップされていますが、サード パーティ製の Authenticode 署名[このダウンロード](https://support.microsoft.com/help/2836198).
+カスタム暗号化サービスプロバイダー (Csp) のサードパーティの Authenticode 署名は、Windows Vista 以降で使用可能になりました。[このダウンロード](https://support.microsoft.com/help/2836198)では、2013年5月以降、WINDOWS XP SP3 および windows SERVER 2003 SP2 に移植されています。
 
-その結果、Microsoft は、Csp に署名できなくおよび署名サービス手動 CSP は廃止されました。 送信される電子メールや Cspcspsign@microsoft.comまたはcecspsig@microsoft.comに署名できなくによって処理される Microsoft。
+その結果、Microsoft は Csp に署名しなくなり、CSP 署名サービスは手動で廃止されました。 署名にcspsign@microsoft.com cecspsig@microsoft.com送信された電子メールと csp は、Microsoft によって処理されなくなります。
 
-代わりに、すべてのサード パーティ製 Csp 今すぐ自己署名できる次の手順で。
+代わりに、次の手順に従って、すべてのサードパーティの Csp を自己署名できるようになりました。
 
-1.  コード署名証明書、証明書機関 (CA) から Microsoft も発行するクロス証明書を購入します。 [カーネル モード コード署名用クロス証明書](cross-certificates-for-kernel-mode-code-signing.md)トピックでは、Microsoft も提供するクロス証明書と対応するクロス証明書の Ca の一覧を示します。 これらは、のみクロス証明書を"Microsoft コード検証 Root"により、サード パーティ製の Csp を実行する Windows、Microsoft によって発行されるまでチェーンであることに注意してください。
-2.  使用することができます、CA と一致するクロス証明書から証明書を作成したら、 [ **SignTool** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/signtool) CSP のすべてのバイナリに署名します。
-3.  SignTool は、最新バージョンの Visual Studio に含まれます。 WDK バージョン 7.0 と新しいバージョンにも含まれます。 以前のバージョンの WDK に付属する SignTool はクロス証明書と互換性がないと、バイナリの署名に使用されることはできませんに注意してください。
+1.  Microsoft がクロス証明書を発行する証明機関 (CA) からコード署名証明書を購入します。 「[カーネルモードのクロス証明書のコード署名](cross-certificates-for-kernel-mode-code-signing.md)」トピックでは、Microsoft がクロス証明書と対応するクロス証明書を提供する ca の一覧を示します。 これらは、Microsoft によって発行された "Microsoft コード検証ルート" にチェーンされる唯一のクロス証明書であり、Windows でサードパーティの Csp を実行することができます。
+2.  CA から証明書を取得し、一致するクロス証明書を取得した後、 [**SignTool**](https://docs.microsoft.com/windows-hardware/drivers/devtest/signtool)を使用してすべての CSP バイナリに署名することができます。
+3.  SignTool は、最新バージョンの Visual Studio に含まれています。 また、WDK バージョン7.0 以降のバージョンにも含まれています。 以前のバージョンの WDK に付属する SignTool は、クロス証明書と互換性がないため、バイナリの署名には使用できないことに注意してください。
 
-**注**  Windows 8 以降、できなくなった要件の Csp を署名する必要があります。
+**注 Windows 8**以降では、csp に署名が必要であるという要件はなくなりました。  
 
  
 
-、コマンドラインからのバイナリに署名したり、Visual Studio 2012 以降の、統合ビルド ステップとしてサインインできます。
+コマンドラインからバイナリに署名することも、Visual Studio 2012 以降の統合ビルドステップとして署名することもできます。
 
-コマンドを[ **SignTool** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/signtool)は。
+[**SignTool**](https://docs.microsoft.com/windows-hardware/drivers/devtest/signtool)するコマンドは次のとおりです。
 
 ```cpp
 signtool.exe sign /ac <cross-certificate_from_ms> /sha1 <sha1_hash> /t <timestamp_server> /d <”optional_description_in_double_quotes”> <binary_file.ext>
 ```
 
--   &lt;クロス certificate_from_ca&gt;は Microsoft からダウンロードしたクロス証明書ファイル
--   &lt;sha1_hash&gt;はコード署名証明書に対応する SHA1 拇印です
--   &lt;timestamp_server&gt;タイムスタンプ署名操作に使用されるサーバー
--   &lt;"optional_description_in_double_quotes"&gt;省略可能な説明のわかりやすい名前
--   &lt;binary_file.ext&gt;署名するファイルは、
+-   &lt;クロス certificate_from_ca&gt;は、Microsoft からダウンロードしたクロス証明書ファイルです。
+-   &lt;sha1_hash&gt;は、コード署名証明書に対応する SHA1 拇印です。
+-   &lt;timestamp_server&gt;は、署名操作のタイムスタンプに使用されるサーバーです。
+-   &lt;"optional_description_in_double_quotes"&gt;は省略可能なフレンドリ名の説明です。
+-   &lt;binary_file&gt;は、署名するファイルです。
 
-次に、例を示します。
+以下に例を示します。
 
 ```cpp
-signtool.exe sign /ac certificate.cer /sha1 553e39af9e0ea8c9edcd802abbf103166f81fa50 /t "http://timestamp.verisign.com/scripts/timstamp.dll" /d "My Cryptographic Service Provider" csp.dll
+signtool.exe sign /ac certificate.cer /sha1 553e39af9e0ea8c9edcd802abbf103166f81fa50 /t "http://timestamp.digicert.com" /d "My Cryptographic Service Provider" csp.dll
 ```
 
-**注**  リソース ID を含める必要はありません\#666 CSP DLL、またはが以前の CSP の署名に必要なため、レジストリで署名します。
+**ただし、古い**csp 署名に必要で\#あったように、csp DLL またはレジストリの署名にリソース ID 666 を含める必要はありません。  
 
  
 
-## <a name="additional-help-and-support"></a>追加のヘルプとサポート
+## <a name="additional-help-and-support"></a>その他のヘルプとサポート
 
 
-参照してください、[トラブルシューティングとサポート](https://msdn.microsoft.com/hh361695)追加のヘルプとサポートのページ。
+追加のヘルプとサポートについては、[トラブルシューティングとサポート](https://msdn.microsoft.com/hh361695)に関するページを参照してください。
 
-確認することも、[アプリケーション セキュリティ for Windows Desktop](https://social.msdn.microsoft.com/Forums/home?forum=windowssecurity)アシスタンスのフォーラムです。
+詳細については、 [Windows デスクトップのアプリケーションセキュリティに](https://social.msdn.microsoft.com/Forums/home?forum=windowssecurity)関するフォーラムを確認することもできます。
 
  
 

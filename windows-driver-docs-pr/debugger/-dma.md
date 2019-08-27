@@ -1,10 +1,10 @@
 ---
 title: dma
-description: Dma 拡張機能では、ダイレクト メモリ アクセス (DMA) サブシステムおよび Driver Verifier の DMA の検証オプションについての情報が表示されます。
+description: Dma 拡張機能には、ダイレクトメモリアクセス (DMA) サブシステムに関する情報と、Driver Verifier の DMA 検証オプションが表示されます。
 ms.assetid: 4ccf679f-5804-4644-935a-18ff8711ae9a
 keywords:
-- DMA の検証 (Driver Verifier)
-- Windows デバッグ dma
+- DMA の検証 (ドライバーの検証ツール)
+- dma Windows デバッグ
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -13,49 +13,49 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 87d2e51a4c4170d2d4a22b91b52d3802270b4546
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c1d4a83031e8d8b568f93c92d8b8cdd95b741187
+ms.sourcegitcommit: 424c435700d8f8a85bdaa83e8ddaab9568c8d347
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334569"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70025274"
 ---
 # <a name="dma"></a>!dma
 
 
-**! Dma**拡張機能は、ダイレクト メモリ アクセス (DMA) サブシステムに関する情報を表示し、 **DMA Verifier** Driver Verifier のオプション。
+**! Dma**拡張機能には、ダイレクトメモリアクセス (dma) サブシステムに関する情報と、Driver Verifier の**dma 検証**オプションが表示されます。
 
 ```dbgcmd
 !dma 
 !dma Adapter [Flags]
 ```
 
-## <a name="span-idddkdmapgspanspan-idddkdmapgspanparameters"></a><span id="ddk__dma_pg"></span><span id="DDK__DMA_PG"></span>パラメーター
+## <a name="span-idddk__dma_pgspanspan-idddk__dma_pgspanparameters"></a><span id="ddk__dma_pg"></span><span id="DDK__DMA_PG"></span>パラメータ
 
 
-<span id="_______Adapter______"></span><span id="_______adapter______"></span><span id="_______ADAPTER______"></span> *アダプター*   
-表示される DMA アダプターの 16 進数のアドレスを指定します。 これは、0、DMA のすべてのアダプターが表示されます。
+<span id="_______Adapter______"></span><span id="_______adapter______"></span><span id="_______ADAPTER______"></span>*アダプター*   
+表示する DMA アダプターの16進数のアドレスを指定します。 0の場合は、すべての DMA アダプターが表示されます。
 
-<span id="_______Flags______"></span><span id="_______flags______"></span><span id="_______FLAGS______"></span> *フラグ*   
-表示に含める情報を指定します。 次のビットの任意の組み合わせを指定できます。 既定では 0x1 です。
+<span id="_______Flags______"></span><span id="_______flags______"></span><span id="_______FLAGS______"></span>*フラグ*   
+表示に含める情報を指定します。 これは、次のビットの任意の組み合わせにすることができます。 既定値は0x1 です。
 
 <span id="Bit_0__0x1_"></span><span id="bit_0__0x1_"></span><span id="BIT_0__0X1_"></span>ビット 0 (0x1)  
-汎用アダプターの情報が追加表示をによりします。
+表示に汎用アダプター情報が含まれるようにします。
 
 <span id="Bit_1__0x2_"></span><span id="bit_1__0x2_"></span><span id="BIT_1__0X2_"></span>ビット 1 (0x2)  
-マップの登録情報が追加ディスプレイをによりします。 (だけ DMA の検証がアクティブです。)
+表示にマップレジスタ情報が含まれるようにします。 (DMA 検証がアクティブである場合のみ)。
 
 <span id="Bit_2__0x4_"></span><span id="bit_2__0x4_"></span><span id="BIT_2__0X4_"></span>ビット 2 (0x4)  
-バッファーの一般的な情報が追加ディスプレイをによりします。 (だけ DMA の検証がアクティブです。)
+表示に共通のバッファー情報が含まれるようにします。 (DMA 検証がアクティブである場合のみ)。
 
 <span id="Bit_3__0x8_"></span><span id="bit_3__0x8_"></span><span id="BIT_3__0X8_"></span>ビット 3 (0x8)  
-スキャッター/ギャザー一覧の情報が追加ディスプレイをによりします。 (だけ DMA の検証がアクティブです。)
+表示にスキャッター/ギャザーリスト情報が含まれるようにします。 (DMA 検証がアクティブである場合のみ)。
 
 <span id="Bit_4__0x10_"></span><span id="bit_4__0x10_"></span><span id="BIT_4__0X10_"></span>ビット 4 (0x10)  
-ハードウェア デバイスのデバイスの説明が表示をによりします。 (だけ DMA の検証がアクティブです。)
+ハードウェアデバイスのデバイスの説明が表示されます。 (DMA 検証がアクティブである場合のみ)。
 
-<span id="Bit_5__0x20_"></span><span id="bit_5__0x20_"></span><span id="BIT_5__0X20_"></span>Bit 5 (0x20)  
-待機コンテキスト ブロック情報が追加ディスプレイをによりします。
+<span id="Bit_5__0x20_"></span><span id="bit_5__0x20_"></span><span id="BIT_5__0X20_"></span>ビット 5 (0x20)  
+表示に待機コンテキストブロック情報が含まれるようにします。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
@@ -71,25 +71,25 @@ ms.locfileid: "63334569"
 </tr>
 <tr class="even">
 <td align="left"><p><strong>Windows XP 以降</strong></p></td>
-<td align="left"><p>Kdexts.dll</p></td>
+<td align="left"><p>Kdexts .dll</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-Driver Verifier については、Windows Driver Kit (WDK) ドキュメントを参照してください。 DMA の詳細については、Windows Driver Kit (WDK) ドキュメントを参照してくださいと*Microsoft Windows internals 』* Mark Russinovich David Solomon、します。 (これらのリソースできない場合がありますのいくつかの言語および国。)
+ドライバーの検証機能の詳細については、Windows Driver Kit (WDK) のドキュメントを参照してください。 DMA の詳細については、Windows Driver Kit (WDK) のドキュメントおよび*Microsoft windows の内部*(Mark Russinovich David ソロモン) を参照してください。
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>コメント
 -------
 
-引数が無効です (たとえば、 **! dma 1**) 簡単なヘルプ テキストを生成します。
+無効な引数 (例、 **! dma 1**) は、簡単なヘルプテキストを生成します。
 
-ときに、 **! dma**パラメーターなしで拡張機能が使用される、DMA のすべてのアダプターとその住所の正確な一覧が表示されます。 このコマンドの長いバージョンで使用するため、アダプターのアドレスを取得するために使用できます。
+パラメーターなしで **! dma**拡張を使用すると、すべての dma アダプターとそのアドレスの簡潔な一覧が表示されます。 これは、このコマンドの長いバージョンで使用するアダプターのアドレスを取得するために使用できます。
 
-この拡張機能をする方法の例を次に示す際に使用される Driver Verifier の**DMA の検証**オプションがアクティブ。
+ドライバー検証ツールの**DMA 検証**オプションがアクティブになっている場合に、この拡張機能を使用する方法の例を次に示します。
 
 ```dbgcmd
 0:kd> !dma
@@ -102,7 +102,7 @@ Adapter: 82f06cd0     Owner: NDIS!NdisMAllocateMapRegisters
 Master adapter: 80076800
 ```
 
-この出力から、システムの 3 つの DMA アダプターがあることがわかります。 SCSIPORT を所有する 2 つと、NDIS は、3 つ目を所有しています。 NDIS アダプターの詳細を確認するには、使用、 **! dma**アドレスを持つ拡張機能。
+この出力から、システムに3つの DMA アダプターがあることがわかります。 SCSI ポート2と NDIS は、3番目のを所有します。 NDIS アダプターの詳細を確認するには、次のように、 **! dma**拡張機能とそのアドレスを使用します。
 
 ```dbgcmd
 0:kd> !dma  82f06cd0
@@ -122,7 +122,7 @@ Adapter: 82f06cd0     Owner: NDIS!NdisMAllocateMapRegisters (0x9fe24351)
    Bytes mapped since last flush: 000000f2
 ```
 
-データの最初のブロックは、問題をデバッグする HAL の開発者が使用できる特定の情報です。 「Dma の検証ツールの追加情報」の下のデータが、目的には興味深いです。 この例では、NDIS が 0x840 マップ レジスタを割り当てられることが表示されます。 これは、NDIS の 2 つのマップのレジスタの最大値を使用することが予定されていた示されるため、特に膨大な数です。 どうやら、このアダプターは、スキャッター/ギャザーのリストを使用しませんし、そのアダプターのすべてのチャネルを作るにします。 さらに詳しくマップ レジスタを見てください。
+最初のデータブロックは、HAL 開発者が問題をデバッグするために使用できる固有の情報です。 目的に応じて、"Dma 検証ツールの追加情報" の下にあるデータは興味深いものです。 この例では、NDIS によって0x840 マップレジスタが割り当てられていることがわかります。 これは、特に、最大2つのマップレジスタを使用することが計画されていることを示すため、非常に大きな数値です。 このアダプターは、スキャッター/ギャザーリストを使用せず、すべてのアダプターチャネルを使用しません。 マップレジスタの詳細については、次を参照してください。
 
 ```dbgcmd
 0:kd> !dma  82f06cd0 2
@@ -149,13 +149,13 @@ Adapter: 82f06cd0     Owner: NDIS!NdisMAllocateMapRegisters
 ...
 ```
 
-この例では、特定のマップのレジスタが割り当てられていることが表示されます。 各*マップ登録ファイル*がドライバーによってマップ レジスタ割り当てられます。 つまり、1 回の呼び出しを表す**AllocateAdapterChannel**します。 NDIS は、一部のドライバーを作成してそれらの dispose の日時に 1 つが終了したら、これらのマップ登録ファイルの数が多いを収集します。
+この例では、特定のマップレジスタがマップされていることがわかります。 各*マップレジスタファイル*は、ドライバーによってマップレジスタが割り当てられます。 つまり、 **Allocateadapterchannel**の1回の呼び出しを表します。 NDIS は、多数のマップレジスタファイルを収集します。一部のドライバーでは、それらを一度に1つずつ作成し、完了時に破棄します。
 
-マップの登録ファイルも、デバイス名"MapRegisterBase"の下に返されるアドレス。 DMA の検証ツールが各ドライバーの最初の 64 個のマップ レジスタのみフックすることに注意してください。 (各マップ レジスタは、次の 3 つの物理ページを表します) 領域の上の理由から残りの部分は無視されます。
+マップレジスタファイルは、"MapRegisterBase" という名前の下にあるデバイスに返されるアドレスでもあります。 DMA 検証ツールでは、各ドライバーの最初の64マップレジスタのみがフックされることに注意してください。 領域の理由では、残りは無視されます (各マップレジスタは3つの物理ページを表します)。
 
-この例では、2 つのマップのファイルが使用されて登録をします。 これは、ハードウェアに表示されるように、ドライバーでバッファーがマップすることを意味します。 最初のケースでは、0xBC バイトは、システムの仮想アドレス 0xF83C003C にマップされます。
+この例では、2つのマップレジスタファイルが使用されています。 これは、ドライバーがハードウェアから認識できるようにバッファーをマップしたことを意味します。 最初の例では、0xBC バイトはシステム仮想アドレス0xF83C003C にマップされます。
 
-一般的なバッファーの検査が表示されます。
+共通バッファーを調べると、次のようになります。
 
 ```dbgcmd
 0:kd> !dma  82f06cd0 4
@@ -182,7 +182,7 @@ Adapter: 82f06cd0     Owner: NDIS!NdisMAllocateMapRegisters
       Physical address: 2a9d400
 ```
 
-これはかなり単純です。さまざまな長さの 4 つの一般的なバッファーがあります。 物理および仮想のアドレスがすべて提供されます。
+これは非常に簡単です。長さが異なる4つの一般的なバッファーがあります。 物理アドレスと仮想アドレスはすべて指定されています。
 
  
 

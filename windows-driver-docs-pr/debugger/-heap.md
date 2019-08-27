@@ -1,12 +1,12 @@
 ---
 title: ヒープ
-description: ヒープの拡張機能ヒープ使用量の情報を表示するには、ヒープ マネージャー内のブレークポイントを制御、検出し、リークしたヒープ ブロックをヒープのブロックを検索またはページ ヒープ情報が表示されます。
+description: ヒープ拡張機能では、ヒープの使用状況に関する情報の表示、ヒープマネージャーでのブレークポイントの制御、リークしたヒープブロックの検出、ヒープブロックの検索、またはページヒープ情報の表示を行います。
 ms.assetid: 70947b56-1a8c-4e78-85d0-d5df87f3150c
 keywords:
 - ヒープ使用量
-- GFlags、ページ ヒープを有効にします。
-- Windows デバッグ ヒープ
-ms.date: 05/23/2017
+- GFlags、ページヒープの有効化
+- ヒープ Windows デバッグ
+ms.date: 08/23/2019
 topic_type:
 - apiref
 api_name:
@@ -14,19 +14,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 5551b7ee85e5b7cd7f01635e76a7f87bad472c87
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8ffc629793b5dba6561f6b6dfda7af6b68558141
+ms.sourcegitcommit: 424c435700d8f8a85bdaa83e8ddaab9568c8d347
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336531"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70025238"
 ---
 # <a name="heap"></a>!heap
 
 
-**! ヒープ**拡張機能のヒープ使用量の情報が表示されます、ヒープ マネージャー内のブレークポイントを制御、検出し、リークしたヒープ ブロックをヒープのブロックを検索またはページ ヒープ情報が表示されます。
+**! Heap**拡張機能では、ヒープ使用量の情報の表示、ヒープマネージャーでのブレークポイントの制御、リークしたヒープブロックの検出、ヒープブロックの検索、またはページヒープ情報の表示を行います。
 
-この拡張機能は、セグメント ヒープと NT ヒープをサポートします。 使用! ヒープを使用するとすべてのヒープとその型を一覧表示します。
+この拡張機能は、セグメントヒープと NT ヒープをサポートします。 すべてのヒープとその型を一覧表示するには、パラメーターを指定せずに! heap を使用します。
 
 ```dbgcmd
 !heap [HeapOptions] [ValidationOptions] [Heap] 
@@ -44,16 +44,16 @@ ms.locfileid: "63336531"
 !heap -triage [Handle | Address] 
 ```
 
-## <a name="span-idsegment_and_nt_heap_parametersspanspan-idsegment_and_nt_heap_parametersspanspan-idsegment_and_nt_heap_parametersspansegment-and-nt-heap-parameters"></a><span id="Segment_and_NT_Heap_Parameters"></span><span id="segment_and_nt_heap_parameters"></span><span id="SEGMENT_AND_NT_HEAP_PARAMETERS"></span>セグメントと NT ヒープ パラメーター
+## <a name="span-idsegment_and_nt_heap_parametersspanspan-idsegment_and_nt_heap_parametersspanspan-idsegment_and_nt_heap_parametersspansegment-and-nt-heap-parameters"></a><span id="Segment_and_NT_Heap_Parameters"></span><span id="segment_and_nt_heap_parameters"></span><span id="SEGMENT_AND_NT_HEAP_PARAMETERS"></span>セグメントおよび NT ヒープパラメーター
 
 
-これらのパラメーターは、セグメントと NT ヒープ機能します。
+これらのパラメーターは、セグメントおよび NT ヒープで動作します。
 
 <span id="_______-s______"></span><span id="_______-S______"></span> **-s**   
-概要情報が要求されていることを指定します。 場合*SummaryOptions*と*StatHeapAddress*を省略した場合、ヒープ、現在のプロセスに関連付けられているすべての概要情報が表示されます。
+概要情報を要求することを指定します。 場合、summary*オプション*と指定した場合は、現在のプロセスに関連付けられているすべてのヒープの概要情報が表示されます。
 
-<span id="_______SummaryOptions______"></span><span id="_______summaryoptions______"></span><span id="_______SUMMARYOPTIONS______"></span> *SummaryOptions*   
-次のオプションの組み合わせにすることができます。 *SummaryOptions*小文字は区別されません。 型。 ヒープの-s - でしょうか。 詳細についてはします。
+<span id="_______SummaryOptions______"></span><span id="_______summaryoptions______"></span><span id="_______SUMMARYOPTIONS______"></span>概要*オプション*   
+には、次のオプションの任意の組み合わせを指定できます。 [概要 *] オプション*では、大文字と小文字は区別されません。 「! Heap-s-?」と入力します。 を参照してください。
 
 <table>
 <colgroup>
@@ -69,19 +69,19 @@ ms.locfileid: "63336531"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>-v</strong></p></td>
-<td align="left"><p>すべてのデータ ブロックを確認します。</p></td>
+<td align="left"><p>すべてのデータブロックを検証します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>-b</strong> <em>BucketSize</em></p></td>
-<td align="left"><p>バケットのサイズを指定します。 既定では 1024 ビットです。</p></td>
+<td align="left"><p>バケットのサイズを指定します。 既定値は1024ビットです。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>-d</strong> <em>DumpBlockSize</em></p></td>
+<td align="left"><p><strong>-d</strong> <em>Dumpblocksize</em></p></td>
 <td align="left"><p>バケットのサイズを指定します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>-</strong></p></td>
-<td align="left"><p>ヒープのすべてのブロックをダンプします。</p></td>
+<td align="left"><p><strong>-a</strong></p></td>
+<td align="left"><p>すべてのヒープブロックをダンプします。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>-c</strong></p></td>
@@ -92,31 +92,31 @@ ms.locfileid: "63336531"
 
  
 
-<span id="_______-triage__Handle___Address___"></span><span id="_______-triage__handle___address___"></span><span id="_______-TRIAGE__HANDLE___ADDRESS___"></span> **-トリアージ\[** <em>処理</em> **|** <em>アドレス</em> **\]**    
-デバッガーによって自動的にプロセスのヒープ内のエラーの検索をによりします。 ヒープを処理する場合は、引数として指定して、そのヒープが調べられます。それ以外の場合、特定のアドレスが含まれているすべてのヒープを検索しが調べられる 1 つが見つかった場合します。 使用して **-トリアージ**低断片化ヒープ (LFH) の破損を検証する唯一の方法です。
+<span id="_______-triage__Handle___Address___"></span><span id="_______-triage__handle___address___"></span><span id="_______-TRIAGE__HANDLE___ADDRESS___"></span> **-トリアージ\[** <em>ハンドル</em>アドレス **|** **\]**    
+デバッガーがプロセスのヒープ内のエラーを自動的に検索します。 ヒープハンドルが引数として指定されている場合、そのヒープが検査されます。それ以外の場合は、指定されたアドレスを含むすべてのヒープが検索され、見つかった場合は検査されます。 **-トリアージ**を使用するのは、低断片化ヒープ (lfh) の破損を検証する唯一の方法です。
 
-<span id="_______-x_-v_"></span><span id="_______-X_-V_"></span> **-x** **** \[ **-v**\]   
-原因のデバッガーが、指定したアドレスを含むヒープ ブロックを検索します。 -V を追加すると、コマンドはこのヒープ ブロックへのポインターの現在のプロセスの全体の仮想メモリ空間を検索します。
+<span id="_______-x_-v_"></span><span id="_______-X_-V_"></span> **-x** **** -v \[\]   
+指定されたアドレスを含むヒープブロックをデバッガーが検索します。 -V を追加すると、コマンドは、現在のプロセスの仮想メモリ領域全体で、このヒープブロックへのポインターを検索します。
 
 <span id="_______-l______"></span><span id="_______-L______"></span> **-l**   
-検出するために、デバッガーのリークの原因は、ブロックをヒープします。
+デバッガーがリークしたヒープブロックを検出するようにします。
 
 <span id="_______-i________Address______-h_HeapAddress______"></span><span id="_______-i________address______-h_heapaddress______"></span><span id="_______-I________ADDRESS______-H_HEAPADDRESS______"></span> **-i**  ****  *アドレス* **-h** *HeapAddress*    
-指定した情報が表示されます*ヒープ*します。
+指定した*ヒープ*に関する情報を表示します。
 
-<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span> *アドレス*   
-検索対象のアドレスを指定します。
+<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span>*アドレス*   
+検索するアドレスを指定します。
 
 <span id="_______-_______"></span> **-?**    
-デバッガー コマンド ウィンドウで、この拡張機能の簡単なヘルプ テキストを表示します。 使用 **。 ヒープのでしょうか。** 汎用的なヘルプについてと **!-p - ヒープのでしょうか。** ページ ヒープ ヘルプを参照します。
+デバッガーコマンドウィンドウにこの拡張機能の簡単なヘルプテキストを表示します。 **! Heap-?** を使用します。 一般的なヘルプと **! heap-p-?** ページヒープのヘルプを参照してください。
 
-## <a name="span-idddk__heap_dbgspanspan-idddk__heap_dbgspannt-heap-parameters"></a><span id="ddk__heap_dbg"></span><span id="DDK__HEAP_DBG"></span>NT ヒープ パラメーター
+## <a name="span-idddk__heap_dbgspanspan-idddk__heap_dbgspannt-heap-parameters"></a><span id="ddk__heap_dbg"></span><span id="DDK__HEAP_DBG"></span>NT ヒープパラメーター
 
 
-これらのパラメーターは、NT ヒープでのみ動作します。
+これらのパラメーターは、NT ヒープでのみ機能します。
 
-<span id="_______HeapOptions______"></span><span id="_______heapoptions______"></span><span id="_______HEAPOPTIONS______"></span> *HeapOptions*   
-次のオプションの組み合わせにすることができます。 *HeapOptions*値小文字は区別されます。
+<span id="_______HeapOptions______"></span><span id="_______heapoptions______"></span><span id="_______HEAPOPTIONS______"></span>*Heapoptions*   
+には、次のオプションの任意の組み合わせを指定できます。 *Heapoptions*値では大文字と小文字が区別されます。
 
 <table>
 <colgroup>
@@ -132,61 +132,61 @@ ms.locfileid: "63336531"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>-v</strong></p></td>
-<td align="left"><p>指定されたヒープの検証にデバッガーとします。</p>
+<td align="left"><p>指定されたヒープをデバッガーが検証します。</p>
 <div class="alert">
-<strong>注</strong>  このオプションは低断片化 (LFH) をヒープの破損を検出しません。 使用<strong>-トリアージ</strong>代わりにします。
+<strong></strong>注  このオプションでは、低い断片化ヒープ (lfh) の破損は検出されません。 代わりに<strong>-トリアージ</strong>を使用してください。
 </div>
 <div>
  
 </div></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>-</strong></p></td>
-<td align="left"><p>指定されたヒープのすべての情報が表示をによりします。 サイズ、ここでは切り上げヒープ粒度にします。 (を実行している<strong>! ヒープ</strong>で、 <strong>-</strong>オプションは次の 3 つのオプションを使用して実行することに相当<strong>-h f-m</strong>、この時間がかかることができます)。</p></td>
+<td align="left"><p><strong>-a</strong></p></td>
+<td align="left"><p>指定したヒープのすべての情報が表示されます。 この場合のサイズは、ヒープの粒度に切り上げられます。 (を実行すると、 <strong>-a</strong>オプションを指定して実行することは、3つのオプションを使用して実行することと同じです。 <strong>-h-f-m</strong>には時間がかかることがあります)。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>-h</strong></p></td>
-<td align="left"><p>指定されたヒープのすべての非 LFH エントリを含めるに表示をによりします。</p></td>
+<td align="left"><p>指定されたヒープのすべての LFH 以外のエントリを表示に含めます。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>-hl</strong></p></td>
-<td align="left"><p>LFH エントリを含む、指定されたヒープのすべてのエントリを含めるにディスプレイをによりします。</p></td>
+<td align="left"><p>指定したヒープのすべてのエントリ (LFH エントリを含む) が表示されます。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>-f</strong></p></td>
-<td align="left"><p>指定されたヒープのすべてのフリー リスト エントリを含めるにディスプレイをによりします。</p></td>
+<td align="left"><p>指定されたヒープのすべてのフリーリストエントリを表示に含めます。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>-m</strong></p></td>
-<td align="left"><p>指定されたヒープのセグメントのすべてのエントリが表示をによりします。</p></td>
+<td align="left"><p>指定されたヒープのすべてのセグメントエントリを表示に含めます。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>-t</strong></p></td>
-<td align="left"><p>指定されたヒープのタグ情報が追加表示をによりします。</p></td>
+<td align="left"><p>指定したヒープのタグ情報を表示に含めます。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>-T</strong></p></td>
-<td align="left"><p>指定されたヒープの擬似タグ エントリを含めるに表示をによりします。</p></td>
+<td align="left"><p>指定されたヒープの疑似タグエントリを表示に含めます。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>-g</strong></p></td>
-<td align="left"><p>グローバルのタグ情報が追加ディスプレイをによりします。 グローバルのタグは、各タグなしの割り当てに関連付けられます。</p></td>
+<td align="left"><p>表示にグローバルタグ情報が含まれるようにします。 グローバルタグは、タグなしの各割り当てに関連付けられています。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>-s</strong></p></td>
-<td align="left"><p>指定されたヒープの概要情報が表示をによりします。</p></td>
+<td align="left"><p>指定したヒープの概要情報を表示に含めます。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>-k</strong></p></td>
-<td align="left"><p>(x86 ベース ターゲットのみ)各エントリに関連付けられている stack backtrace 表示をによりします。</p></td>
+<td align="left"><p>(x86 ベースのターゲットのみ)各エントリに関連付けられているスタックバックトレースを表示に含めます。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-<span id="_______ValidationOptions______"></span><span id="_______validationoptions______"></span><span id="_______VALIDATIONOPTIONS______"></span> *ValidationOptions*   
-次のオプションのいずれかの 1 つができます。 *ValidationOptions*小文字が区別されます。
+<span id="_______ValidationOptions______"></span><span id="_______validationoptions______"></span><span id="_______VALIDATIONOPTIONS______"></span>*Validationoptions*   
+次のオプションのいずれか1つを指定できます。 *Validationoptions*では大文字と小文字が区別されます。
 
 <table>
 <colgroup>
@@ -202,19 +202,19 @@ ms.locfileid: "63336531"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>-D</strong></p></td>
-<td align="left"><p>検証で-得るために、指定したヒープのを無効にします。</p></td>
+<td align="left"><p>指定されたヒープの呼び出しの検証を無効にします。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>-E</strong></p></td>
-<td align="left"><p>検証で-得るために、指定したヒープのを有効にします。</p></td>
+<td align="left"><p>指定したヒープに対する呼び出しの検証を有効にします。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>-d</strong></p></td>
-<td align="left"><p>ヒープの指定されたヒープのチェックを無効にします。</p></td>
+<td align="left"><p>指定したヒープのヒープチェックを無効にします。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>-e</strong></p></td>
-<td align="left"><p>ヒープの指定されたヒープのチェックを有効にします。</p></td>
+<td align="left"><p>指定したヒープのヒープチェックを有効にします。</p></td>
 </tr>
 </tbody>
 </table>
@@ -222,28 +222,28 @@ ms.locfileid: "63336531"
  
 
 <span id="_______-i________Heap_Address______or_HeapAddress______"></span><span id="_______-i________heap_address______or_heapaddress______"></span><span id="_______-I________HEAP_ADDRESS______OR_HEAPADDRESS______"></span> **-i**  ****  *ヒープ*  ****  *アドレス* **または** *HeapAddress*   
-指定した情報が表示されます*ヒープ*します。
+指定した*ヒープ*に関する情報を表示します。
 
-<span id="_______BreakAddress______"></span><span id="_______breakaddress______"></span><span id="_______BREAKADDRESS______"></span> *BreakAddress*   
-ブレークポイントが設定または削除がブロックのアドレスを指定します。
+<span id="_______BreakAddress______"></span><span id="_______breakaddress______"></span><span id="_______BREAKADDRESS______"></span>*Breakaddress*   
+ブレークポイントを設定または削除するブロックのアドレスを指定します。
 
 <span id="_______-b______"></span><span id="_______-B______"></span> **-b**   
-原因のデバッガーが、ヒープ マネージャーで条件付きブレークポイントを作成します。 **-B**オプションの後に**アロケーション**、 **realloc**、または**無料**; で、ブレークポイントが有効にするかどうかを指定します割り当て、再割り当て、またはメモリを解放します。 場合*BreakAddress*はブロックのアドレスを指定するために、ブレークポイントの種類を省略できます。 場合*ヒープ*はヒープ インデックスまたはヒープのアドレスを指定するために使用、型でなければなりません、含まれるだけでなく*タグ*パラメーター。
+デバッガーによって、ヒープマネージャーで条件付きブレークポイントが作成されます。 **-B**オプションの後には、 **alloc**、 **realloc**、または**free**を指定できます。メモリの割り当て、再割り当て、または解放によってブレークポイントをアクティブにするかどうかを指定します。 *Breakaddress*を使用してブロックのアドレスを指定した場合は、ブレークポイントの種類を省略できます。 ヒープアドレスまたはヒープインデックスを指定するために*ヒープ*を使用する場合は、*タグ*パラメーターに加えて、型を含める必要があります。
 
-<span id="_______Tag______"></span><span id="_______tag______"></span><span id="_______TAG______"></span> *タグ*   
+<span id="_______Tag______"></span><span id="_______tag______"></span><span id="_______TAG______"></span>*タグ*   
 ヒープ内のタグ名を指定します。
 
-<span id="_______-B______"></span><span id="_______-b______"></span> **B**   
-原因のデバッガーが、ヒープ マネージャーから条件付きブレークポイントを削除します。 ブレークポイントの種類 (**アロケーション**、 **realloc**、または**無料**) を指定してで使用すると同じである必要があります、 **-b**オプション。
+<span id="_______-B______"></span><span id="_______-b______"></span> **-B**   
+デバッガーによって、ヒープマネージャーから条件付きブレークポイントが削除されます。 ブレークポイントの種類 (**alloc**、 **realloc**、または**free**) を指定する必要があり、 **-b**オプションで使用されているものと同じである必要があります。
 
-<span id="_______StatHeapAddress______"></span><span id="_______statheapaddress______"></span><span id="_______STATHEAPADDRESS______"></span> *StatHeapAddress*   
-ヒープのアドレスを指定します。 これは、0 または省略すると、ヒープ、現在のプロセスに関連付けられているすべてが表示されます。
+<span id="_______StatHeapAddress______"></span><span id="_______statheapaddress______"></span><span id="_______STATHEAPADDRESS______"></span>すべての*ip アドレス*   
+ヒープのアドレスを指定します。 0または省略した場合は、現在のプロセスに関連付けられているすべてのヒープが表示されます。
 
 <span id="_______-p______"></span><span id="_______-P______"></span> **-p**   
-ページ ヒープの情報が要求されていることを指定します。 なく、使用される場合*PageHeapOptions*、すべてのページがヒープが表示されます。
+ページヒープ情報が要求されていることを指定します。 このオプションを使用して*Pageheapoptions*を指定しない場合は、すべてのページヒープが表示されます。
 
-<span id="_______PageHeapOptions______"></span><span id="_______pageheapoptions______"></span><span id="_______PAGEHEAPOPTIONS______"></span> *PageHeapOptions*   
-次のオプションのいずれかの 1 つができます。 *PageHeapOptions*小文字が区別されます。 オプションが指定されていない場合はすべての可能なページ ヒープ ハンドルが表示されます。
+<span id="_______PageHeapOptions______"></span><span id="_______pageheapoptions______"></span><span id="_______PAGEHEAPOPTIONS______"></span>*Pageheapoptions*   
+次のオプションのいずれか1つを指定できます。 *Pageheapoptions*では大文字と小文字が区別されます。 オプションが指定されていない場合、使用可能なすべてのページヒープハンドルが表示されます。
 
 <table>
 <colgroup>
@@ -258,44 +258,44 @@ ms.locfileid: "63336531"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>-h</strong> <em>処理</em></p></td>
-<td align="left"><p>デバッガーがハンドルを持つページ ヒープに関する詳細情報を表示<em>処理</em>します。</p></td>
+<td align="left"><p><strong>-h</strong> <em>ハンドル</em></p></td>
+<td align="left"><p>デバッガーで、ハンドル<em>ハンドル</em>を持つページヒープに関する詳細情報を表示します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>-</strong> <em>アドレス</em></p></td>
-<td align="left"><p>デバッガーが持つブロックが含まれるページ ヒープを見つける<em>アドレス</em>します。 このアドレスは、ページ ヒープの場合、そのオフセット、ブロック内の一部かどうかと、ブロックが割り当てられているまたは解放されたかどうか、このアドレスが完全ページ ヒープ ブロックに関連付ける方法の完全な詳細情報が含められます。 使用可能な場合、スタック トレースが含まれます。 このオプションを使用する場合は、ヒープ割り当ての粒度の倍数単位のサイズが表示されます。</p></td>
+<td align="left"><p><strong>-a</strong> <em>アドレス</em></p></td>
+<td align="left"><p>デバッガーが、ブロックに<em>アドレス</em>を含むページヒープを検索します。 このアドレスがページヒープの一部であるかどうか、ブロック内のオフセット、ブロックが割り当てられているか解放されたかなど、このアドレスがフルページヒープブロックにどのように関連しているかの詳細が含まれます。 スタックトレースは、使用可能な場合は常に含まれます。 このオプションを使用する場合、サイズは、ヒープ割り当ての粒度の倍数で表示されます。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>-t</strong>[<strong>c</strong>|<strong>s</strong>] [<em>Traces</em>]</p></td>
-<td align="left"><p>原因のデバッガーがヒープの負荷の高いユーザーの収集されたトレースを表示します。 <em>トレース</em>; を表示するトレースの数を指定します。 既定値は 4 つです。 指定した数よりも多くのトレースがある場合は、最も古いトレースが表示されます。 場合<strong>-t</strong>または<strong>-tc</strong>が使用すると、トレースが数の使用量により並べ替えられました。 場合<strong>ts</strong>が使用すると、トレースはサイズに基づいて並べ替えられています。 (、 <strong>-Tc</strong>と<strong>ts</strong>オプションは Windows XP でのみサポートされて、 <strong>-t</strong>オプションは、Windows XP および Windows の以前のバージョンでのみサポートされます)。</p></td>
+<td align="left"><p><strong>-t</strong>[<strong>c</strong>|<strong>s</strong>] [<em>トレース</em>]</p></td>
+<td align="left"><p>大量のヒープユーザーの収集されたトレースをデバッガーに表示させます。 <em>トレース</em>は、表示するトレースの数を指定します。既定値は4です。 指定した数よりも多くのトレースがある場合は、最も古いトレースが表示されます。 <strong>-T</strong>または<strong>-tc</strong>が使用されている場合、トレースは count usage で並べ替えられます。 <strong>-Ts</strong>を使用する場合、トレースはサイズ順に並べ替えられます。 ( <strong>-Tc</strong>オプションと<strong>-Ts</strong>オプションは windows xp でのみサポートされています。 <strong>-t</strong>オプションは、windows xp およびそれ以前のバージョンの windows でのみサポートされています)。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>-fi</strong> [<em>トレース</em>]</p></td>
-<td align="left"><p>原因のデバッガーが最新のフォールト インジェクション トレースを表示します。 <em>トレース</em>数量を表示する; 指定、既定値は 4 です。</p></td>
+<td align="left"><p>デバッガーが最新のフォールト挿入トレースを表示します。 <em>トレース</em>は、表示する数量を指定します。既定値は4です。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>-すべて</strong></p></td>
-<td align="left"><p>原因のデバッガーがヒープにすべてのページに関する詳細情報を表示します。</p></td>
+<td align="left"><p>デバッガーですべてのページヒープに関する詳細情報を表示します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>-?</strong></p></td>
-<td align="left"><p>ヒープ ブロックのダイアグラムを含むページ ヒープのヘルプを表示するデバッガーをによりします。 (これらの図もでわかるように、次の「解説」です。)</p></td>
+<td align="left"><p>ヒープブロックのダイアグラムを含むページヒープのヘルプを表示します。 (これらの図については、次の「解説」を参照してください)。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-いずれかを使用する前に **。 ヒープの-p**拡張機能のコマンドを、ターゲット プロセスのページ ヒープを有効にする必要があります。 次の「解説」で詳細を参照してください。
+**! Heap-p**拡張コマンドを使用する前に、ターゲットプロセスに対してページヒープを有効にする必要があります。 詳細については、次の「解説」を参照してください。
 
 <span id="_______-srch______"></span><span id="_______-SRCH______"></span> **-srch**   
-指定したパターンのすべてのヒープをスキャンします。
+指定されたパターンのすべてのヒープをスキャンします。
 
-<span id="_______Pattern______"></span><span id="_______pattern______"></span><span id="_______PATTERN______"></span> *パターン*   
-検索対象のパターンを指定します。
+<span id="_______Pattern______"></span><span id="_______pattern______"></span><span id="_______PATTERN______"></span>*パターン*   
+検索するパターンを指定します。
 
-<span id="_______Size______"></span><span id="_______size______"></span><span id="_______SIZE______"></span> *サイズ*   
-次のオプションのいずれかの 1 つができます。 これには、パターンのサイズを指定します。 '-' が必要です。
+<span id="_______Size______"></span><span id="_______size______"></span><span id="_______SIZE______"></span>*サイズ*   
+次のオプションのいずれか1つを指定できます。 パターンのサイズを指定します。 '-' が必要です。
 
 <table>
 <colgroup>
@@ -311,32 +311,32 @@ ms.locfileid: "63336531"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>-b</strong></p></td>
-<td align="left"><p>パターンのサイズは 1 バイトです。</p></td>
+<td align="left"><p>パターンは、1バイトのサイズです。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>-w</strong></p></td>
-<td align="left"><p>パターンは、サイズの 1 つの単語です。</p></td>
+<td align="left"><p>パターンは、1つの単語のサイズになります。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>-d</strong></p></td>
-<td align="left"><p>パターンは、1 つの DWORD のサイズです。</p></td>
+<td align="left"><p>パターンは、1つの DWORD サイズです。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>-q</strong></p></td>
-<td align="left"><p>パターンは、1 つの QWORD サイズです。</p></td>
+<td align="left"><p>パターンは、1つの QWORD のサイズです。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-指定しないと、上記の場合は、マシン ポインターと同じサイズであるパターンが使用されます。
+上記のいずれも指定されていない場合、パターンはコンピューターポインターと同じサイズであると見なされます。
 
 <span id="_______-flt______"></span><span id="_______-FLT______"></span> **-flt**   
-指定したサイズまたはサイズの範囲でヒープのみが表示を制限します。
+指定されたサイズまたはサイズ範囲のヒープだけを含むように表示を制限します。
 
-<span id="_______FilterOptions______"></span><span id="_______filteroptions______"></span><span id="_______FILTEROPTIONS______"></span> *FilterOptions*   
-次のオプションのいずれかの 1 つができます。 *FilterOptions*小文字が区別されます。
+<span id="_______FilterOptions______"></span><span id="_______filteroptions______"></span><span id="_______FILTEROPTIONS______"></span>*Filteroptions*   
+次のオプションのいずれか1つを指定できます。 *Filteroptions*では大文字と小文字が区別されます。
 
 <table>
 <colgroup>
@@ -352,11 +352,11 @@ ms.locfileid: "63336531"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>s</strong> <em>サイズ</em></p></td>
-<td align="left"><p>指定したサイズのヒープのみが表示を制限します。</p></td>
+<td align="left"><p>指定されたサイズのヒープだけを含むように表示を制限します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>r</strong> <em>SizeMin</em> <em>SizeMax</em></p></td>
-<td align="left"><p>指定したサイズの範囲内でヒープのみが表示を制限します。</p></td>
+<td align="left"><p><strong>r</strong> SizeMin <em>SizeMax</em></p></td>
+<td align="left"><p>指定されたサイズ範囲内のヒープのみを含むように表示を制限します。</p></td>
 </tr>
 </tbody>
 </table>
@@ -364,13 +364,13 @@ ms.locfileid: "63336531"
  
 
 <span id="_______-stat______"></span><span id="_______-STAT______"></span> **-stat**   
-指定されたヒープの使用状況の統計を表示します。
+指定したヒープの使用状況の統計情報を表示します。
 
-<span id="_______-h________Handle______"></span><span id="_______-h________handle______"></span><span id="_______-H________HANDLE______"></span> **-h** *処理*   
-使用状況の統計、ヒープにのみ発生*処理*に表示されます。 場合*処理*が 0 または省略すると、すべてのヒープ使用量の統計が表示されます。
+<span id="_______-h________Handle______"></span><span id="_______-h________handle______"></span><span id="_______-H________HANDLE______"></span> **-h***ハンドル*   
+*ハンドル*のヒープのみの使用状況の統計を表示します。 *Handle*が0であるか省略されている場合は、すべてのヒープの使用状況の統計が表示されます。
 
-<span id="_______-grp________GroupBy______"></span><span id="_______-grp________groupby______"></span><span id="_______-GRP________GROUPBY______"></span> **-grp** **** *GroupBy*   
-指定された表示を並べ替えます*GroupBy*します。 オプション*GroupBy*は次の表にあります。
+<span id="_______-grp________GroupBy______"></span><span id="_______-grp________groupby______"></span><span id="_______-GRP________GROUPBY______"></span> **-grp** ****  *GroupBy*   
+*GroupBy*によって指定されたとおりに表示を並べ替えます。 *GroupBy*のオプションについては、次の表を参照してください。
 
 <table>
 <colgroup>
@@ -385,24 +385,24 @@ ms.locfileid: "63336531"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>A</strong></p></td>
-<td align="left"><p>アロケーション サイズに従って使用状況の統計を表示します。</p></td>
+<td align="left"><p><strong>ある</strong></p></td>
+<td align="left"><p>割り当てサイズに従って使用状況の統計情報を表示します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>B</strong></p></td>
-<td align="left"><p>ブロック数に従って使用状況の統計を表示します。</p></td>
+<td align="left"><p>ブロックカウントに従って使用状況の統計情報を表示します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>S</strong></p></td>
-<td align="left"><p>各割り当ての合計サイズに応じて使用状況の統計を表示します。</p></td>
+<td align="left"><p>各割り当ての合計サイズに従って使用状況の統計情報を表示します。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-<span id="_______MaxDisplay______"></span><span id="_______maxdisplay______"></span><span id="_______MAXDISPLAY______"></span> *MaxDisplay*   
-出力のみを制限します*MaxDisplay*行の数。
+<span id="_______MaxDisplay______"></span><span id="_______maxdisplay______"></span><span id="_______MAXDISPLAY______"></span>*Maxdisplay*   
+出力を*Maxdisplay*行数のみに制限します。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
@@ -415,41 +415,47 @@ ms.locfileid: "63336531"
 <tr class="odd">
 <td align="left"><p><strong>Windows XP 以降</strong></p></td>
 <td align="left"><p></p>
-Ext.dll Exts.dll</td>
+Ext .dll の .dll</td>
 </tr>
 </tbody>
 </table>
 
- 
-
 ### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-ヒープの詳細については、Microsoft Windows SDK ドキュメントに、Windows Driver Kit (WDK) ドキュメントを参照してくださいと*Microsoft Windows internals 』* Mark Russinovich と David Solomon します。 (これらのリソースできない場合がありますのいくつかの言語および国。)
+ヒープの詳細については、次のリソースを参照してください。
 
-<a name="remarks"></a>注釈
+手順Mark Russinovich と David ソロモンによる*Microsoft Windows の内部構造*。
+
+[例 11:ページヒープ検証の有効化](example-11---enabling-page-heap-verification.md)
+
+[例 12:ページヒープ検証を使用したバグの検出](example-12---using-page-heap-verification-to-find-a-bug.md)
+
+ヒープメモリプロセスロガーの使用方法の詳細につい[ては、次を参照してください。例 11:プライベートトレースセッションを開始しています](https://docs.microsoft.com/windows-hardware/drivers/devtest/example-11--starting-a-private-trace-session)
+
+<a name="remarks"></a>コメント
 -------
 
-この拡張機能のコマンドは、さまざまなタスクの実行に使用できます。
+この拡張機能コマンドを使用すると、さまざまなタスクを実行できます。
 
-標準 **! ヒープ**コマンドを使用して、現在のプロセスのヒープの情報を表示します。 (ユーザー モード プロセスに対してのみこの使用する必要があります。 [ **! プール**](-pool.md)システム プロセスの拡張機能のコマンドを使用する必要があります)。
+Standard **! heap**コマンドは、現在のプロセスのヒープ情報を表示するために使用されます。 (これは、ユーザーモードプロセスでのみ使用してください。 システムプロセスには、 [ **! pool**](-pool.md) extension コマンドを使用する必要があります。)
 
-**! ヒープ-b**と **!-b をヒープ**コマンドを使用して作成し、ヒープ マネージャーで条件付きブレークポイントを削除します。
+**! Heap-b**および **! heap-b**コマンドは、ヒープマネージャーで条件付きブレークポイントを作成および削除するために使用されます。
 
-**。 ヒープの-l**コマンドがリークしたヒープ ブロックを検出します。 プロセスのアドレス空間内で参照されていないヒープからのすべての使用中ブロックを検出するために、ガベージ コレクターのアルゴリズムを使用します。 大きなアプリケーションでは、完了に数分をかかります。 このコマンドは、Windows XP および Windows の以降のバージョンで使用できるだけです。
+**! Heap-l**コマンドは、リークしたヒープブロックを検出します。 ガベージコレクターアルゴリズムを使用して、プロセスアドレス空間のどこでも参照されていないすべてのビジーブロックをヒープから検出します。 大規模なアプリケーションでは、完了までに数分かかることがあります。 このコマンドは、Windows XP 以降のバージョンの Windows でのみ使用できます。
 
-**! ヒープ-x**コマンド、特定のアドレスを含むヒープ ブロックを検索します。 場合、 **-v**オプションを使用すると、このコマンドはこのヒープ ブロックへのポインターの現在のプロセスの全体の仮想メモリ空間を検索してさらにします。 このコマンドは、Windows XP および Windows の以降のバージョンで使用できるだけです。
+**! Heap-x**コマンドは、指定されたアドレスを含むヒープブロックを検索します。 **-V**オプションを使用した場合、このコマンドは、現在のプロセスの仮想メモリ領域全体で、このヒープブロックへのポインターを検索します。 このコマンドは、Windows XP 以降のバージョンの Windows でのみ使用できます。
 
-**。 ヒープの-p**コマンドは、さまざまな形式のページ ヒープの情報を表示します。 使用する前に **。 ヒープの-p**、ターゲット プロセスのページ ヒープを有効にする必要があります。 これは、グローバル フラグ (gflags.exe) ユーティリティを使用します。 これを行うには、ユーティリティを起動し、ターゲット アプリケーションの名前を入力、**イメージ ファイル名**テキスト ボックスで、 **Image File Options**と**ページ ヒープを有効にする**、 をクリック**適用**します。 」と入力してコマンド プロンプト ウィンドウからグローバル フラグ ユーティリティを起動する代わりに、 **gflags/i** *xxx.exe* **+ hpa**ここで、 *xxx.exe*対象アプリケーションの名前を指定します。
+**! Heap-p**コマンドは、さまざまな形式のページヒープ情報を表示します。 **! Heap-p**を使用する前に、ターゲットプロセスのページヒープを有効にする必要があります。 これは、グローバルフラグ (msbuild.exe) ユーティリティを使用して行います。 これを行うには、ユーティリティを起動して、対象アプリケーションの名前を **[イメージファイル名]** ボックスに入力し、 **[イメージファイルのオプション]** を選択して**ページヒープを有効に**し、 **[適用]** をクリックします。 または、コマンドプロンプトウィンドウで「 **gflags/i** *xxx. .exe* **+ hpa**」と入力してグローバルフラグユーティリティを起動することもできます。ここで、 *xxx*はターゲットアプリケーションの名前です。
 
-**!-P t をヒープ\[c | s\]** コマンドは、Windows XP 以外はサポートされていません。 使用して、 [UMDH](umdh.md)のような結果を得るためのデバッガー パッケージで提供されるツールです。
+**! Heap-p-t\[c | s\]** コマンドは、Windows XP 以降ではサポートされていません。 デバッガーパッケージに用意されている[UMDH](umdh.md)ツールを使用して、同様の結果を取得します。
 
-**! ヒープ - srch**コマンドは、特定の指定したパターンが含まれているこれらのヒープ エントリを表示します。
+**! Heap-srch**コマンドは、指定された特定のパターンを含むヒープエントリを表示します。
 
-**! ヒープ - flt**コマンドにのみ、指定したサイズの割り当てをヒープに制限します。
+**! Flt**コマンドは、指定されたサイズのヒープ割り当てのみを表示するように制限します。
 
-**! ヒープ - stat**コマンドは、ヒープの使用状況の統計を表示します。
+**! Heap-stat**コマンドでは、ヒープ使用量の統計情報が表示されます。
 
-標準の例を次に示します **! ヒープ**コマンド。
+Standard **! heap**コマンドの例を次に示します。
 
 ```dbgcmd
 0:000> !ntsdexts.heap -a
@@ -568,7 +574,7 @@ Address   Size    Size  flags       (Bytes used)    (Tag name)
 002a6000:      000aa000      - uncommitted bytes.
 ```
 
-次の例に示します、 **。 ヒープの-l**コマンド。
+**! Heap-l**コマンドの例を次に示します。
 
 ```dbgcmd
 1:0:011> !heap -l
@@ -609,9 +615,9 @@ Scanning VM ...
 21 leaks detected.
 ```
 
-この例では、テーブルには、検出されたすべての 21 リークが含まれています。
+この例の表には、検出された21個のリークがすべて含まれています。
 
-次の例に示します、 **! ヒープ-x**コマンド。
+**! Heap-x**コマンドの例を次に示します。
 
 ```dbgcmd
 0:011> !heap 002057b8 -x
@@ -620,7 +626,7 @@ Scanning VM ...
 002057a8  002057b0  00170000  00170640        58        58  busy extra
 ```
 
-次の例に示します、 **! ヒープ-x v**コマンド。
+**! Heap-x-v**コマンドの例を次に示します。
 
 ```dbgcmd
 1:0:011> !heap 002057b8 -x -v
@@ -631,25 +637,25 @@ Scanning VM ...
 Search VM for address range 002057a8 - 002057ff : 00205990 (002057d0),
 ```
 
-この例では、アドレス 0x00205990 でこのヒープ ブロックへのポインターです。
+この例では、アドレス0x00205990 のこのヒープブロックへのポインターが存在します。
 
-次の例に示します、 **! ヒープ - flt s**コマンド。
+**! Flt s**コマンドの例を次に示します。
 
 ```dbgcmd
 0:001>!heap -flt s 0x50
 ```
 
-これは、すべて 0x50 のサイズの割り当てに表示されます。
+これにより、サイズ0x50 のすべての割り当てが表示されます。
 
-次の例に示します、 **! ヒープ - flt r**コマンド。
+**! Flt r**コマンドの例を次に示します。
 
 ```dbgcmd
 0:001>!heap -flt r 0x50 0x80
 ```
 
-各割り当てのサイズは 0x50 とから 0x7f までの間が表示されます。
+これにより、サイズが0x50 から0x7F までの各割り当てが表示されます。
 
-次の例に示します、 **! ヒープ - srch**コマンド。
+次に、 **! heap-srch**コマンドの例を示します。
 
 ```dbgcmd
 0:001> !heap -srch 77176934
@@ -663,9 +669,9 @@ Search VM for address range 002057a8 - 002057ff : 00205990 (002057d0),
           ole32!CALLFRAME_CACHE<INTERFACE_HELPER_CLSID>::`vftable'
 ```
 
-次の図は、ヒープ ブロックの並べ替え方法を示します。
+次の図は、ヒープブロックの配置を示しています。
 
-割り当てられた - 簡易ページ ヒープ ブロック:
+ライトページヒープブロック-割り当て済み:
 
 ```dbgcmd
  +-----+---------------+---+                                  
@@ -677,7 +683,7 @@ Search VM for address range 002057a8 - 002057ff : 00205990 (002057d0),
     Block header (starts with 0xABCDAAAA and ends with 0xDCBAAAAA) 
 ```
 
-簡易ページ ヒープ ブロック--解放:
+ライトページヒープブロック--解放された:
 
 ```dbgcmd
  +-----+---------------+---+                                  
@@ -689,7 +695,7 @@ Search VM for address range 002057a8 - 002057ff : 00205990 (002057d0),
     Block header (starts with 0xABCDAAA9 and ends with 0xDCBAAA9) 
 ```
 
-割り当てられた--完全ページ ヒープ ブロック:
+ページヒープブロック全体: 割り当て済み:
 
 ```dbgcmd
  +-----+---------+---+-------                                 
@@ -702,7 +708,7 @@ Search VM for address range 002057a8 - 002057ff : 00205990 (002057d0),
     Block header (starts with 0xABCDBBBB and ends with 0xDCBABBBB) 
 ```
 
-完全ページ ヒープ ブロック--解放:
+完全なページヒープブロック--解放されています:
 
 ```dbgcmd
  +-----+---------+---+-------                                 
@@ -714,13 +720,4 @@ Search VM for address range 002057a8 - 002057ff : 00205990 (002057d0),
     Block header (starts with 0xABCDBBA and ends with 0xDCBABBBA) 
 ```
 
-割り当てのスタック トレースまたはヒープ ブロックまたは完全ページ ヒープ ブロックの解放を表示する[ **dt DPH\_ブロック\_情報**](dt--display-type-.md) 続けて、ヘッダーのアドレスを使用[**dds** ](dds--dps--dqs--display-words-and-symbols-.md)ブロックの**StackTrace**フィールド。
-
- 
-
- 
-
-
-
-
-
+ヒープブロックまたは完全ページヒープブロックの割り当てまたは解放のスタックトレースを表示するには、ヘッダーアドレスを含む[**dt dph\_\_ブロック情報**](dt--display-type-.md)を使用し、その後、ブロックの**StackTrace**フィールドで[**dds**](dds--dps--dqs--display-words-and-symbols-.md)を使用します。

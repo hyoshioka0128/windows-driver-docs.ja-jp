@@ -1,10 +1,10 @@
 ---
-title: ルック アサイド
-description: ルック アサイドの拡張機能は、ルック アサイド リストに関する情報が表示されます、ルック アサイド リストのカウンターをリセットします。 または、ルック アサイド リストの深さを変更します。
+title: ルック
+description: ルックアサイドの拡張機能では、ルックアップリストに関する情報が表示されます。また、ルックアサイドリストのカウンターがリセットされます。または、ルックアップリストの深さが変更されます。
 ms.assetid: ec343563-f293-4ddf-96c8-69fc7b9b4377
 keywords:
-- ルック アサイド リスト
-- ルック アサイドの Windows デバッグ
+- ルックアサイドリスト
+- ルックアサイド Windows デバッグ
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -15,17 +15,17 @@ api_location:
 api_type:
 - DllExport
 ms.localizationpriority: medium
-ms.openlocfilehash: a94732fc070f29d09aa343e8ad31f54fe53af299
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6bd117702ffff4e3124ea83a884397b65d9f4dac
+ms.sourcegitcommit: 424c435700d8f8a85bdaa83e8ddaab9568c8d347
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67365792"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70025223"
 ---
 # <a name="lookaside"></a>!lookaside
 
 
-**! ルック アサイド**拡張子ルック アサイド リストに関する情報が表示されます、ルック アサイド リストのカウンターをリセットまたはルック アサイド リストの深さを変更します。
+**! ルックアサイド**拡張機能では、ルックアップリストに関する情報が表示されます。また、ルックアサイドリストのカウンターがリセットされます。または、ルックアップリストの深さが変更されます。
 
 ```dbgcmd
 !lookaside [Address [Options [Depth]]]
@@ -33,43 +33,43 @@ ms.locfileid: "67365792"
 !lookaside 0 [-all]
 ```
 
-## <a name="span-idddklookasidedbgspanspan-idddklookasidedbgspanparameters"></a><span id="ddk__lookaside_dbg"></span><span id="DDK__LOOKASIDE_DBG"></span>パラメーター
+## <a name="span-idddk__lookaside_dbgspanspan-idddk__lookaside_dbgspanparameters"></a><span id="ddk__lookaside_dbg"></span><span id="DDK__LOOKASIDE_DBG"></span>パラメータ
 
 
-<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span> *アドレス*   
-ルック アサイド リストを表示または変更の 16 進数のアドレスを指定します。
+<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span>*アドレス*   
+表示または変更するルックアップリストの16進数のアドレスを指定します。
 
-場合*アドレス*を省略すると (または 0) および **-すべて**オプションが指定されていない、よく知られている、標準のシステムのルック アサイド リストのセットが表示されます。 リストのセットはすべてを網羅します。つまり、すべてのシステムのルック アサイド リストは含まれません。 また、セットにはカスタム ルック アサイド リストへの呼び出しによって作成された含まれません[ **ExInitializePagedLookasideList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exinitializepagedlookasidelist)または[ **ExInitializeNPagedLookasideList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exinitializenpagedlookasidelist).
+*Address*が省略されている場合 (または 0)、 **-all**オプションが指定されていない場合は、既知の標準システムのルックアップリストが表示されます。 リストのセットは完全ではありません。つまり、すべてのシステムのルックアップリストが含まれているわけではありません。 また、このセットには、 [**ExInitializePagedLookasideList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exinitializepagedlookasidelist)または[**ExInitializeNPagedLookasideList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exinitializenpagedlookasidelist)の呼び出しによって作成されたカスタムのルックアサイドリストは含まれません。
 
-場合*アドレス*を省略すると (または 0) および **-すべて**オプションを指定すると、すべてのルック アサイド リストが表示されます。
+*Address*が省略されている場合 (または 0)、 **-all**オプションが指定されている場合は、すべてのルックアップリストが表示されます。
 
-<span id="_______Options______"></span><span id="_______options______"></span><span id="_______OPTIONS______"></span> *オプション*   
-どのような操作が実行を制御します。 次の考えられる*オプション*はサポートされています。 既定値は、0 です。
+<span id="_______Options______"></span><span id="_______options______"></span><span id="_______OPTIONS______"></span>*オプション*   
+実行する操作を制御します。 次の*オプション*がサポートされています。 既定値は0です。
 
 <span id="0"></span>0  
-指定されたルック アサイド リストまたはリストに関する情報が表示されます。
+指定したルックアップリストまたはリストに関する情報を表示します。
 
 <span id="1"></span>1  
-指定されたルック アサイド リストのカウンターをリセットします。
+指定したルックアップリストのカウンターをリセットします。
 
-<span id="2"></span>2  
-指定されたルック アサイド リストの深さを変更します。 このオプションは、場合にのみ使用できます*アドレス*が 0 以外。
+<span id="2"></span>3  
+指定したルックアップリストの深さを変更します。 このオプションは、*アドレス*が0以外の場合にのみ使用できます。
 
-<span id="_______Depth______"></span><span id="_______depth______"></span><span id="_______DEPTH______"></span> *深さ*   
-指定されたルック アサイド リストの新しい最大の深さを指定します。 場合にのみ、このパラメーターは許可されて*アドレス*が 0 以外と*オプション*が 2 と等しい。
+<span id="_______Depth______"></span><span id="_______depth______"></span><span id="_______DEPTH______"></span>*深さ*   
+指定された検索除外リストの新しい最大深度を指定します。 このパラメーターは、 *Address*が0以外で、*オプション*が2に等しい場合にのみ許可されます。
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-ルック アサイド リストについては、次を参照してください。、 [Windows Driver Kit (WDK) ドキュメント](https://go.microsoft.com/fwlink/p/?linkid=201141)と*Microsoft Windows internals 』* 、Mark Russinovich と David Solomon します。 (これらのリソースできない場合がありますのいくつかの言語および国。)
+ルックアサイドリストの詳細については、「 [Windows Driver Kit (WDK)](https://go.microsoft.com/fwlink/p/?linkid=201141) 」のドキュメントと*Microsoft windows の内部*(Mark Russinovich と David ソロモン) を参照してください。
 
 <a name="remarks"></a>コメント
 -------
 
-ルック アサイド リストは、ページ、または非ページ メモリからエントリの固定サイズのプールを管理するためのマルチプロセッサの安全なメカニズムです。
+ルックアサイドリストは、ページ分割されたメモリまたはページングされていないメモリの固定サイズのエントリのプールを管理するためのマルチプロセッサセーフメカニズムです。
 
-ルック アサイド リストは、ルーチンはほとんどのプラットフォームでスピン ロックを使用しないため、効率的です。
+ルーチンではほとんどのプラットフォームでスピンロックが使用されないため、ルックアサイドリストは効率的です。
 
-ルック アサイド リストの現在の深さがそのリストに関連付けられている構造体を解放し、そのリストの最大の深さを超えた場合と、メモリの一覧表示ではなく、プールのメモリに解放することに注意してください。
+検索対象リストの現在の深さがそのリストの最大深度を超える場合、そのリストに関連付けられている構造体を解放すると、リストメモリではなくプールメモリに解放されることに注意してください。
 
 この拡張機能からの出力の例を次に示します。
 
@@ -96,7 +96,7 @@ Lookaside "" @ 0xfffff88001294f80  Tag(hex): 0x7366744e "Ntfs"
 <tbody>
 <tr class="odd">
 <td align="left"><p>DLL</p></td>
-<td align="left">Kdexts.dll</td>
+<td align="left">Kdexts .dll</td>
 </tr>
 </tbody>
 </table>

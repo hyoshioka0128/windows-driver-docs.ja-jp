@@ -1,9 +1,9 @@
 ---
-title: バグ チェック 0x74 BAD_SYSTEM_CONFIG_INFO
-description: BAD_SYSTEM_CONFIG_INFO のバグ チェックでは、0x00000074 の値を持ちます。 このバグ チェックでは、レジストリにエラーがあることを示します。
+title: バグチェック 0x74 BAD_SYSTEM_CONFIG_INFO
+description: BAD_SYSTEM_CONFIG_INFO のバグチェックの値は0x00000074 です。 このバグチェックは、レジストリにエラーがあることを示します。
 ms.assetid: c59ddc44-d860-4fbb-a975-ae7226fdce86
 keywords:
-- バグ チェック 0x74 BAD_SYSTEM_CONFIG_INFO
+- バグチェック 0x74 BAD_SYSTEM_CONFIG_INFO
 - BAD_SYSTEM_CONFIG_INFO
 ms.date: 03/24/2019
 topic_type:
@@ -13,22 +13,22 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 837a976c122fc1f49a06186b47b80c8cd9724b20
-ms.sourcegitcommit: b25275c2662bfdbddd97718f47be9bd79e6f08df
+ms.openlocfilehash: ea373249c79876070cc58c569e9a66295707e01d
+ms.sourcegitcommit: 424c435700d8f8a85bdaa83e8ddaab9568c8d347
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67866525"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70025324"
 ---
-# <a name="bug-check-0x74-badsystemconfiginfo"></a>バグ チェック 0x74:不適切な\_システム\_CONFIG\_情報
+# <a name="bug-check-0x74-bad_system_config_info"></a>バグ チェック 0x74:システム\_構成情報\_が正しくありません\_
 
-不適切な\_システム\_CONFIG\_情報のバグ チェックが 0x00000074 の値を持ちます。 このバグ チェックでは、レジストリにエラーがあることを示します。
+不適切\_なシステム\_構成\_情報のバグチェックには、0x00000074 の値が設定されています。 このバグチェックは、レジストリにエラーがあることを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
+> このトピックはプログラマーを対象としています。 コンピューターの使用中にブルースクリーンのエラーコードが表示された顧客の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://www.windows.com/stopcode)」を参照してください。
 
 
-## <a name="badsystemconfiginfo-parameters"></a>不適切な\_システム\_CONFIG\_情報パラメーター
+## <a name="bad_system_config_info-parameters"></a>システム\_構成情報\_の無効なパラメーター\_
 
 
 <table>
@@ -38,7 +38,7 @@ ms.locfileid: "67866525"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">パラメーター</th>
+<th align="left">引き</th>
 <th align="left">説明</th>
 </tr>
 </thead>
@@ -57,7 +57,7 @@ ms.locfileid: "67866525"
 </tr>
 <tr class="even">
 <td align="left"><p>4</p></td>
-<td align="left"><p>NT ステータス値/コード (使用可能な場合)</p></td>
+<td align="left"><p>NT 状態の値/コード (使用可能な場合)</p></td>
 </tr>
 </tbody>
 </table>
@@ -67,18 +67,18 @@ ms.locfileid: "67866525"
 <a name="cause"></a>原因
 -----
 
-不適切な\_システム\_CONFIG\_情報のバグ チェックは、システムのシステム ハイブが壊れている場合に発生します。 ただし、この破損は、ハイブの読み込み時に、ブート ローダーのチェック ハイブが破損していないため、可能性があります。
+システムハイブ\_が\_破損\_している場合は、不適切なシステム構成情報のバグチェックが発生します。 ただし、この破損が発生する可能性はほとんどありません。これは、ブートローダーが hive の読み込み時にハイブが破損していることを確認するためです。
 
-このバグ チェックは、いくつかの重要なレジストリ キーと値が存在しない場合にも発生します。 ユーザーが手動でレジストリを編集する場合、または、アプリケーションまたはサービスに、レジストリが破損している場合に、キーと値を不足していることがあります。
+このバグチェックは、いくつかの重要なレジストリキーと値が不足している場合にも発生する可能性があります。 ユーザーが手動でレジストリを編集した場合、またはアプリケーションまたはサービスがレジストリを破損した場合、キーと値が欠落している可能性があります。
 
-追加情報を参照してくださいパラメーター 4 で返された NT ステータス値を調べることができます[NTSTATUS 値](https://docs.microsoft.com/openspecs/windows_protocols/ms-erref/596a1078-e883-4972-9bbc-49e60bebca55)一覧についてはします。 
+パラメーター4で返された NT 状態の値を参照すると、追加情報が提供されます。一覧については、「 [NTSTATUS 値](https://docs.microsoft.com/openspecs/windows_protocols/ms-erref/596a1078-e883-4972-9bbc-49e60bebca55)」を参照してください。 
 
 <a name="resolution"></a>解決方法
 ----------
 
-エラー イベントに関連するかどうかは、任意のレジストリを参照してください。 Windows システム イベント ログで確認します。 ある場合は、hive または特定のキーでエラーが発生したかどうか、イベントが一覧表示を参照してください。
+Windows システムのイベントログで、レジストリに関連するエラーイベントがあるかどうかを確認します。 イベントに、エラーが発生した hive または特定のキーが表示されているかどうかを確認できます。
 
-[ **! 分析**](-analyze.md)バグ チェックに関する情報を表示拡張機能をデバッグおよび根本原因を突き止めるに役に立ちます。
+! [デバッグ拡張機能の[**分析**](-analyze.md)] には、バグチェックに関する情報が表示され、根本原因を特定するのに役立ちます。
 
 ```dbgcmd
 BAD_SYSTEM_CONFIG_INFO (74)
@@ -99,16 +99,16 @@ Arg4: ffffffffc000014c, usually the NT status code.
 
 ```
 
-すべてによって返される情報の確認、!、エラーの詳細について分析します。
+! Analyze によって返されたすべての情報を確認して、エラーの詳細を確認します。
 
-使用して、 [! エラー](-error.md)パラメーター 4 に NTSTATUS 値に関する情報を表示する拡張機能。
+パラメーター4の NTSTATUS 値に関する情報を表示するには、 [! error](-error.md)拡張機能を使用します。
 
 ```dbgcmd
 2: kd> !ERROR ffffffffc000014c
 Error code: (NTSTATUS) 0xc000014c (3221225804) - {The Registry Is Corrupt}  The structure of one of the files that contains Registry data is corrupt, or the image of the file in memory is corrupt, or the file could not be recovered because the alternate copy or log was absent or corrupt.
 ```
 
-使用して、 [! reg](-reg.md)拡張子レジストリ ハイブが存在する例については、レジストリに関する情報を表示します。
+レジストリに存在するハイブなど、レジストリに関する情報を表示するには、 [! reg](-reg.md) extenstion を使用します。
 
 ```dbgcmd
 !reg hivelist
@@ -124,7 +124,7 @@ Error code: (NTSTATUS) 0xc000014c (3221225804) - {The Registry Is Corrupt}  The 
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 ```
 
-使用して、! reg openkeys コマンドをどのレジストリ キーが開放されていた。
+! Reg sys.openkeys コマンドを使用して、どのレジストリキーが開いていたかを確認します。
 
 ```dbgcmd
 2: kd> !reg openkeys
@@ -141,21 +141,16 @@ Index 5:     e9dd6ce5 kcb=ffffd805e4180e48 cell=00812970 f=00200000 \REGISTRY\MA
 
 ```
 
-
-**旅行時間のトレース**
-
-バグ チェックはオンデマンドで再現できる場合は、WinDbg のプレビューを使用してタイム トラベル トレースを取ることの可能性を調査します。 詳細については、次を参照してください。[タイム トラベルのデバッグ - 概要](time-travel-debugging-overview.md)します。
-
 <a name="remarks"></a>コメント
 ----------
 
-セーフ モードで起動してみてくださいし、通常どおり、OS を再起動します。 再起動に問題が解決しない場合、レジストリの破損があまり広範囲にわたってします。 次の手順を実行してください。
+セーフモードで起動し、OS を通常どおりに再起動します。 再起動によって問題が解決されない場合は、レジストリの破損が大きすぎます。 次の手順を試してください。
 
-- システム復元ポイントがある場合は、以前の復元ポイントに復元してみてください。
-- お使いの PC をリセットします。
-- インストール メディアを使用して、復元またはお使いの PC をリセットします。
-- インストール メディアを使用して、Windows を再インストールします。
+- システムの復元ポイントがある場合は、以前の復元ポイントに復元してみてください。
+- PC をリセットします。
+- インストールメディアを使用して、PC を復元またはリセットします。
+- インストールメディアを使用して Windows を再インストールします。
 
-詳細については、次を参照してください。 [Windows 10 での回復オプション](https://support.microsoft.com/help/12415/windows-10-recovery-options#)します。
+詳細については、「 [Windows 10 の回復オプション](https://support.microsoft.com/help/12415/windows-10-recovery-options#)」を参照してください。
 
-このサポートの記事では、このバグ チェック コードについて説明します。[エラー 0x74:Bad_system_config_info](https://support.microsoft.com/help/4028653/windows-error-0x74-badsystemconfiginfo)
+このサポート記事では、次のバグチェックコードについて説明します。[エラー 0x74:Bad_system_config_info](https://support.microsoft.com/help/4028653/windows-error-0x74-badsystemconfiginfo)

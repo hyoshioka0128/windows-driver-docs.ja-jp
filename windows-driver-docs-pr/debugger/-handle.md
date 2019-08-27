@@ -1,11 +1,11 @@
 ---
 title: ハンドル
-description: ハンドルの拡張機能がハンドルに関する情報を表示またはそのいずれかの処理またはターゲット システムのすべてのプロセスを所有します。
+description: ハンドルの拡張機能には、ターゲットシステム内の1つまたはすべてのプロセスが所有するハンドルまたはハンドルに関する情報が表示されます。
 ms.assetid: ae3b7e7e-cdc1-4b83-88d7-63fe207044e3
 keywords:
 - ハンドル
-- ハンドル、ハンドルの拡張機能
-- Windows デバッグ ハンドル
+- ハンドル、ハンドル拡張機能
+- Windows のデバッグを処理する
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -14,78 +14,78 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e4d4c011d120c66d8cd9ade7d019832bf63cca6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f0f1b81b8f88633f7d64fe6e245f1917fa0ceb71
+ms.sourcegitcommit: 424c435700d8f8a85bdaa83e8ddaab9568c8d347
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336559"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70025240"
 ---
 # <a name="handle"></a>!handle
 
 
-**! 処理**ターゲット システムのすべてのプロセスを所有または拡張機能は、ハンドルに関する情報を表示またはそのいずれかを処理します。
+**! ハンドル**拡張機能には、ターゲットシステム内の1つまたはすべてのプロセスが所有するハンドルまたはハンドルに関する情報が表示されます。
 
-ユーザー モード
+ユーザーモード
 
 ```dbgcmd
 !handle [Handle [UMFlags [TypeName]]] 
 !handle -?
 ```
 
-カーネル モード
+カーネルモード
 
 ```dbgcmd
     !handle [Handle [KMFlags [Process [TypeName]]]] 
 ```
 
-## <a name="span-idddkhandledbgspanspan-idddkhandledbgspanparameters"></a><span id="ddk__handle_dbg"></span><span id="DDK__HANDLE_DBG"></span>パラメーター
+## <a name="span-idddk__handle_dbgspanspan-idddk__handle_dbgspanparameters"></a><span id="ddk__handle_dbg"></span><span id="DDK__HANDLE_DBG"></span>パラメータ
 
 
-<span id="_______Handle______"></span><span id="_______handle______"></span><span id="_______HANDLE______"></span> *ハンドル*   
-表示を識別するハンドルのインデックスを指定します。 場合*処理*は-1 です。 または、デバッガーが、現在のプロセスに関連付けられているすべてのハンドルのデータを表示するこのパラメーターを省略した場合。 場合*処理*が 0 の場合、デバッガーは、すべてのハンドルのデータを表示します。
+<span id="_______Handle______"></span><span id="_______handle______"></span><span id="_______HANDLE______"></span>*ハンドル*   
+表示するハンドルのインデックスを指定します。 *Handle*が-1 の場合、またはこのパラメーターを省略した場合、デバッガーは、現在のプロセスに関連付けられているすべてのハンドルのデータを表示します。 *Handle*が0の場合、デバッガーはすべてのハンドルのデータを表示します。
 
-<span id="_______UMFlags______"></span><span id="_______umflags______"></span><span id="_______UMFLAGS______"></span> *UMFlags*   
-(ユーザー モードのみ)表示に含める必要がありますを指定します。 このパラメーターは、次のビット値のいずれかの合計を指定できます。 (既定値は 0x1 です)。
+<span id="_______UMFlags______"></span><span id="_______umflags______"></span><span id="_______UMFLAGS______"></span>*Umflags*   
+(ユーザーモードのみ)表示に含める内容を指定します。 このパラメーターには、次のいずれかのビット値を合計することができます。 (既定値は0x1 です)。
 
 <span id="Bit_0__0x1_"></span><span id="bit_0__0x1_"></span><span id="BIT_0__0X1_"></span>ビット 0 (0x1)  
-型情報の処理が表示されます。
+ハンドルの種類の情報を表示します。
 
 <span id="Bit_1__0x2_"></span><span id="bit_1__0x2_"></span><span id="BIT_1__0X2_"></span>ビット 1 (0x2)  
-ハンドルの基本的な情報が表示されます。
+基本的なハンドル情報を表示します。
 
 <span id="Bit_2__0x4_"></span><span id="bit_2__0x4_"></span><span id="BIT_2__0X4_"></span>ビット 2 (0x4)  
-表示名の情報を処理します。
+ハンドル名の情報を表示します。
 
 <span id="Bit_3__0x8_"></span><span id="bit_3__0x8_"></span><span id="BIT_3__0X8_"></span>ビット 3 (0x8)  
-オブジェクト固有のハンドルは、使用可能な場合に表示されます。
+オブジェクト固有のハンドル情報 (使用可能な場合) を表示します。
 
-<span id="_______KMFlags______"></span><span id="_______kmflags______"></span><span id="_______KMFLAGS______"></span> *KMFlags*   
-(カーネル モードのみ)表示に含める必要がありますを指定します。 このパラメーターは、次のビット値のいずれかの合計を指定できます。 (既定値は、0x3 です)。
+<span id="_______KMFlags______"></span><span id="_______kmflags______"></span><span id="_______KMFLAGS______"></span>*KMFlags*   
+(カーネルモードのみ)表示に含める内容を指定します。 このパラメーターには、次のいずれかのビット値を合計することができます。 (既定値は0x3 です)。
 
 <span id="Bit_0__0x1_"></span><span id="bit_0__0x1_"></span><span id="BIT_0__0X1_"></span>ビット 0 (0x1)  
-ハンドルの基本的な情報が表示されます。
+基本的なハンドル情報を表示します。
 
 <span id="Bit_1__0x2_"></span><span id="bit_1__0x2_"></span><span id="BIT_1__0X2_"></span>ビット 1 (0x2)  
 オブジェクトに関する情報を表示します。
 
 <span id="Bit_2__0x4_"></span><span id="bit_2__0x4_"></span><span id="BIT_2__0X4_"></span>ビット 2 (0x4)  
-無料の表示では、エントリを処理します。 このビットを設定しないかどうかを省略して*処理*またはセット ハンドルを解放して 0、表示されるハンドルの一覧には含まれません。 場合*処理*、無料の単一のハンドルを指定します。 このビットを設定しない場合でも表示されます。
+空きハンドルエントリを表示します。 このビットを設定せず、 *Handle*を省略した場合、または0に設定した場合、表示されるハンドルの一覧には、空きハンドルは含まれません。 *Handle*が1つのフリーハンドルを指定すると、このビットを設定しない場合でも表示されます。
 
 <span id="Bit_4__0x10_"></span><span id="bit_4__0x10_"></span><span id="BIT_4__0X10_"></span>ビット 4 (0x10)  
-現在のプロセスではなくカーネル ハンドル テーブルからハンドルを表示します。
+現在のプロセスではなく、カーネルハンドルテーブルからのハンドルを表示します。
 
-<span id="Bit_5__0x20_"></span><span id="bit_5__0x20_"></span><span id="BIT_5__0X20_"></span>Bit 5 (0x20)  
-スレッド ID またはプロセス ID としてハンドルを解釈し、対応するカーネル オブジェクトに関する情報を表示します。
+<span id="Bit_5__0x20_"></span><span id="bit_5__0x20_"></span><span id="BIT_5__0X20_"></span>ビット 5 (0x20)  
+ハンドルをスレッド ID またはプロセス ID として解釈し、対応するカーネルオブジェクトに関する情報を表示します。
 
-<span id="_______Process______"></span><span id="_______process______"></span><span id="_______PROCESS______"></span> *プロセス*   
-(カーネル モードのみ)プロセスを指定します。 プロセス ID またはプロセス オブジェクトの 16 進数のアドレスを使用することができます。 このパラメーターは、ターゲット システムで現在実行中のプロセスを参照する必要があります。 このパラメーターが-1 の場合、または省略した場合は、現在のプロセスが使用されます。 このパラメーターが 0 の場合は、すべてのプロセスからのハンドルの情報が表示されます。
+<span id="_______Process______"></span><span id="_______process______"></span><span id="_______PROCESS______"></span>*プロセス*   
+(カーネルモードのみ)プロセスを指定します。 プロセスオブジェクトのプロセス ID または16進数のアドレスを使用できます。 このパラメーターは、ターゲットシステムで現在実行中のプロセスを参照する必要があります。 このパラメーターが-1 の場合、またはこのパラメーターを省略した場合は、現在のプロセスが使用されます。 このパラメーターが0の場合、すべてのプロセスの情報を処理します。
 
-<span id="_______TypeName______"></span><span id="_______typename______"></span><span id="_______TYPENAME______"></span> *TypeName*   
-確認するハンドルの種類を指定します。 この型に一致するハンドルのみが表示されます。 *TypeName*は大文字小文字を区別します。 有効な型イベント、セクション、ファイル、ポート、ディレクトリ、SymbolicLink、変異形、WindowStation、セマフォ、キー、トークン、プロセス、スレッド、デスクトップ、IoCompletion、タイマー、ジョブ、および含める WaitablePort します。
+<span id="_______TypeName______"></span><span id="_______typename______"></span><span id="_______TYPENAME______"></span>*TypeName*   
+確認するハンドルの種類を指定します。 この型に一致するハンドルのみが表示されます。 *TypeName*では大文字と小文字が区別されます。 有効な型には、Event、Section、File、Port、Directory、SymbolicLink、ミュータント、WindowStation、セマフォ、Key、Token、Process、Thread、Desktop、IoCompletion、Timer、Job、および WaitablePort があります。
 
-<span id="_______-_______"></span> **-?**   
-(ユーザー モードのみ)この拡張機能のいくつかのヘルプ テキストが表示されます、[デバッガー コマンド ウィンドウ](debugger-command-window.md)します。
+<span id="_______-_______"></span> **-?**    
+(ユーザーモードのみ)[デバッガーコマンドウィンドウ](debugger-command-window.md)にこの拡張機能のヘルプテキストを表示します。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
@@ -98,30 +98,30 @@ ms.locfileid: "63336559"
 <tr class="odd">
 <td align="left"><p><strong>Windows 2000</strong></p></td>
 <td align="left"><p></p>
-Kdextx86.dll Uext.dll Ntsdexts.dll</td>
+Kdextx86 Usdexを .dll にします。</td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>Windows XP 以降</strong></p></td>
 <td align="left"><p></p>
-Kdexts.dll Uext.dll Ntsdexts.dll</td>
+Kdexts .dll Uext .dll (.dll)</td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-ハンドルの詳細については、次を参照してください、 [ **! htrace** ](-htrace.md)拡張機能、Microsoft Windows SDK のドキュメントと*Microsoft Windows internals 』* Mark Russinovich が、。David Solomon します。 (これらのリソースできない場合がありますのいくつかの言語および国。)
+ハンドルの詳細については、 [ **! htrace**](-htrace.md)拡張機能、Microsoft Windows SDK のドキュメント、および*Microsoft Windows の内部構造*(Mark Russinovich と David ソロモン) を参照してください。
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>コメント
 -------
 
-使用することができます、 **! 処理**ユーザー モードおよびカーネル モードのライブ デバッグ中に拡張します。 カーネル モードのダンプ ファイルでこの拡張機能を使用することもできます。 ただし、ハンドルの情報を具体的に作成していない場合は、ユーザー モード ダンプのファイルでこの拡張機能を使用できません。 (このようなダンプ ファイルを使用して作成することができます、 [ **.dump/mh (ダンプ ファイルの作成)** ](-dump--create-dump-file-.md)コマンド)。
+ユーザーモードとカーネルモードのライブデバッグ中に、 **! handle**拡張機能を使用できます。 この拡張機能は、カーネルモードのダンプファイルでも使用できます。 ただし、ハンドル情報を使用して明示的に作成しない限り、ユーザーモードのダンプファイルでこの拡張機能を使用することはできません。 (ダンプファイルを作成するには、 [ **. dump/mh (ダンプファイルの作成)** ](-dump--create-dump-file-.md)コマンドを使用します)。
 
-ライブ ユーザー モードでは、デバッグ時に使用することができます、 [ **(ハンドルを閉じる) .closehandle** ](-closehandle--close-handle-.md) 1 つまたは複数のハンドルを閉じるコマンド。
+ユーザーモードのライブデバッグ時には、 [**closehandle (ハンドルを閉じる)** ](-closehandle--close-handle-.md)コマンドを使用して1つ以上のハンドルを閉じることができます。
 
-次の例のユーザー モードの使用例、 **! 処理**拡張機能。 次のコマンドは、すべてのハンドルの一覧を表示します。
+次の例は、 **! handle**拡張機能のユーザーモードの例です。 次のコマンドは、すべてのハンドルの一覧を表示します。
 
 ```dbgcmd
 0:000> !handle
@@ -145,7 +145,7 @@ File            1
 Directory       1
 ```
 
-次のコマンドでは、ハンドル 0x8 に関する詳細情報が表示されます。
+次のコマンドは、0x8 を処理するための詳細情報を表示します。
 
 ```dbgcmd
 0:000> !handle 8 f
@@ -163,7 +163,7 @@ Handle 8
     Event is Waiting
 ```
 
-次の例のカーネル モードの使用例 **! 処理**します。 次のコマンドでは、空きハンドルを含む、すべてのハンドルが一覧表示します。
+次の例は、 **! handle**のカーネルモードの例です。 次のコマンドは、すべてのハンドル (無料ハンドルを含む) を一覧表示します。
 
 ```dbgcmd
 kd> !handle 0 4
@@ -187,7 +187,7 @@ New version of handle table at e1002000 with 380 Entries in use
 ......
 ```
 
-次のコマンドは、カーネル ハンドル テーブル内のハンドル 0x14 に関する詳細情報を表示します。
+次のコマンドは、カーネルハンドルテーブルの0x14 の処理に関する詳細情報を表示します。
 
 ```dbgcmd
 kd> !handle 14 13
@@ -204,7 +204,7 @@ Object: e12751d0  Type: (80ec8db8) Key
         Directory Object: 00000000  Name: \REGISTRY\MACHINE\SYSTEM\CONTROLSET001\CONTROL\SESSION MANAGER\EXECUTIVE
 ```
 
-次のコマンドは、すべてのプロセスでセクション オブジェクトに対してすべてのハンドルに関する情報を示します。
+次のコマンドは、すべてのプロセスのセクションオブジェクトへのすべてのハンドルに関する情報を表示します。
 
 ```dbgcmd
 !handle 0 3 0 Section

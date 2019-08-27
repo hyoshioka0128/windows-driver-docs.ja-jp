@@ -1,10 +1,10 @@
 ---
 title: htrace
-description: Htrace 拡張機能が表示されますスタック トレース情報の 1 つまたは複数のハンドル。
+description: Htrace 拡張機能では、1つまたは複数のハンドルのスタックトレース情報が表示されます。
 ms.assetid: 1da92c8d-8f77-4b30-a908-bcc33ad05cce
 keywords:
 - ハンドル、htrace 拡張機能
-- Windows デバッグ htrace
+- htrace Windows デバッグ
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -13,19 +13,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e74f5d92ba334153c61b8c92c0d49c7619d71287
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4245fa9056c587f1592d52e4e678c2f15a8145f6
+ms.sourcegitcommit: 424c435700d8f8a85bdaa83e8ddaab9568c8d347
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336477"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70025237"
 ---
 # <a name="htrace"></a>!htrace
 
 
-**! Htrace**ハンドルの 1 つまたは複数の拡張機能が表示されますスタック トレース情報。
+**! Htrace**拡張機能は、1つまたは複数のハンドルのスタックトレース情報を表示します。
 
-ユーザー モードの構文
+ユーザーモードの構文
 
 ```dbgcmd
 !htrace [Handle [Max_Traces]] 
@@ -36,39 +36,39 @@ ms.locfileid: "63336477"
 !htrace -? 
 ```
 
-カーネル モードの構文
+カーネルモード構文
 
 ```dbgcmd
     !htrace [Handle [Process [Max_Traces]]] 
 !htrace -? 
 ```
 
-## <a name="span-idddkhtracedbgspanspan-idddkhtracedbgspanparameters"></a><span id="ddk__htrace_dbg"></span><span id="DDK__HTRACE_DBG"></span>パラメーター
+## <a name="span-idddk__htrace_dbgspanspan-idddk__htrace_dbgspanparameters"></a><span id="ddk__htrace_dbg"></span><span id="DDK__HTRACE_DBG"></span>パラメータ
 
 
-<span id="_______Handle______"></span><span id="_______handle______"></span><span id="_______HANDLE______"></span> *ハンドル*   
-スタック トレースが表示されるハンドルを指定します。 場合*処理*が 0 または省略すると、プロセス内のすべてのハンドルのスタック トレースが表示されます。
+<span id="_______Handle______"></span><span id="_______handle______"></span><span id="_______HANDLE______"></span>*ハンドル*   
+スタックトレースを表示するハンドルを指定します。 *Handle*が0または省略された場合、プロセス内のすべてのハンドルのスタックトレースが表示されます。
 
-<span id="_______Process______"></span><span id="_______process______"></span><span id="_______PROCESS______"></span> *プロセス*   
-(カーネル モードのみ)表示されるハンドルを持つプロセスを指定します。 場合*プロセス*が 0 または省略すると、現在プロセスが使用されます。 ユーザー モードでは、現在のプロセスが常に使用します。
+<span id="_______Process______"></span><span id="_______process______"></span><span id="_______PROCESS______"></span>*プロセス*   
+(カーネルモードのみ)ハンドルを表示するプロセスを指定します。 *Process*が0であるか省略されている場合は、現在のプロセスが使用されます。 ユーザーモードでは、現在のプロセスが常に使用されます。
 
-<span id="_______Max_Traces______"></span><span id="_______max_traces______"></span><span id="_______MAX_TRACES______"></span> *最大\_トレース*   
-表示するスタック トレースの最大数を指定します。 ユーザー モードで、このパラメーターを省略した場合、ターゲット プロセスのすべてのスタック トレースが表示されます。
+<span id="_______Max_Traces______"></span><span id="_______max_traces______"></span><span id="_______MAX_TRACES______"></span>*最大\_トレース数*   
+表示するスタックトレースの最大数を指定します。 ユーザーモードでは、このパラメーターを省略すると、ターゲットプロセスのすべてのスタックトレースが表示されます。
 
 <span id="_______-enable______"></span><span id="_______-ENABLE______"></span> **-enable**   
-(ユーザー モードのみ)ハンドルのトレースを有効にし、初期状態として使用するハンドル情報の最初のスナップショットを取得、 **- 差分**オプション。
+(ユーザーモードのみ)ハンドルトレースを有効にし、 **-diff**オプションによって初期状態として使用するハンドル情報の最初のスナップショットを取得します。
 
-<span id="_______-snapshot______"></span><span id="_______-SNAPSHOT______"></span> **-snapshot**   
-(ユーザー モードのみ)現在のハンドルを初期状態として使用する情報のスナップショットを取得、 **- 差分**オプション。
+<span id="_______-snapshot______"></span><span id="_______-SNAPSHOT______"></span> **-スナップショット**   
+(ユーザーモードのみ) **-Diff**オプションによって初期状態として使用される、現在のハンドル情報のスナップショットを取得します。
 
-<span id="_______-diff______"></span><span id="_______-DIFF______"></span> **差分-**   
-(ユーザー モードのみ)取得されたハンドル情報の最後のスナップショットを使用して現在のハンドル情報を比較します。 まだ開いているすべてのハンドルを表示します。
+<span id="_______-diff______"></span><span id="_______-DIFF______"></span> **-diff**   
+(ユーザーモードのみ)現在のハンドル情報を、取得したハンドル情報の最後のスナップショットと比較します。 開いているすべてのハンドルを表示します。
 
-<span id="_______-disable______"></span><span id="_______-DISABLE______"></span> **-を無効にします。**   
-(ユーザー モードだけです。Windows Server 2003 および以降のみ) を無効には、トレースを処理します。 Windows XP では、ターゲット プロセスを終了することによってのみハンドルのトレースを無効にできます。
+<span id="_______-disable______"></span><span id="_______-DISABLE______"></span> **-disable**   
+(ユーザーモードのみです。Windows Server 2003 以降のみ) ハンドルトレースを無効にします。 Windows XP では、ハンドルトレースはターゲットプロセスを終了することによってのみ無効にできます。
 
-<span id="_______-_______"></span> **-?**   
-デバッガー コマンド ウィンドウで、この拡張機能の簡単なヘルプ テキストを表示します。
+<span id="_______-_______"></span> **-?**    
+デバッガーコマンドウィンドウにこの拡張機能の簡単なヘルプテキストを表示します。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
@@ -85,29 +85,29 @@ ms.locfileid: "63336477"
 <tr class="even">
 <td align="left"><p><strong>Windows XP 以降</strong></p></td>
 <td align="left"><p></p>
-Kdexts.dll Ntsdexts.dll</td>
+Kdexts .dll (.dll)</td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-ハンドルの詳細については、Microsoft Windows SDK のドキュメントを参照してくださいと*Microsoft Windows internals 』* Mark Russinovich と David Solomon します。 (これらのリソースできない場合がありますのいくつかの言語および国。)さらに特定のハンドルに関する情報を表示するには、使用、 [ **! 処理**](-handle.md)拡張機能。
+ハンドルの詳細については、Microsoft Windows SDK のドキュメントと、Mark Russinovich と David ソロモンを参照してください。 特定のハンドルに関する詳細情報を表示するには、 [ **! handle**](-handle.md)拡張を使用します。
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>コメント
 -------
 
-前に **! htrace**使用できる処理は、トレースを有効にする必要があります。 ハンドルのトレースを有効にする方法の 1 つは、入力する、 **! htrace-有効にする**コマンド。 スタック トレース情報がそれぞれ保存はハンドルのトレースが有効にすると、プロセスが、ハンドルを開いたときは、ハンドルを閉じるか、または無効なハンドルを参照します。 このスタック トレース情報を **! htrace**が表示されます。
+**! Htrace**を使用する前に、ハンドルのトレースを有効にする必要があります。 ハンドルトレースを有効にする方法の1つとして、 **! htrace-enable**コマンドを入力する方法があります。 ハンドルトレースが有効になっている場合、プロセスがハンドルを開くかハンドルを閉じるか、または無効なハンドルを参照するたびに、スタックトレース情報が保存されます。 このスタックトレース情報は、 **! htrace**によって表示されます。
 
-**注**  ハンドル Application Verifier をターゲット プロセスのアクティブ化を選択してトレースを有効することも、**処理**オプション。
+また、ターゲットプロセスのアプリケーション検証ツールをアクティブ化し、[ハンドル] オプションを選択して、ハンドルトレースを有効にすることもできます。   
 
  
 
-によって報告されたトレースの一部 **! htrace**別のプロセスのコンテキストからがあります。 この場合、戻り値のアドレスは、プロセスの現在のコンテキストで正しく解決できない場合がありますか、間違ったシンボルに解決する可能性があります。
+**! Htrace**によって報告されたトレースのいくつかは、別のプロセスコンテキストからのものである可能性があります。 この場合、現在のプロセスコンテキストで返されるアドレスが正しく解決されないか、間違ったシンボルに解決される可能性があります。
 
-次の例では、プロセス 0x81400300 ですべてハンドルに関する情報が表示されます。
+次の例では、プロセス0x81400300 のすべてのハンドルに関する情報を表示します。
 
 ```dbgcmd
 kd> !htrace 0 81400300

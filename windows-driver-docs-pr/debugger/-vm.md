@@ -1,6 +1,6 @@
 ---
 title: vm
-description: Vm 拡張機能は、ターゲット システム上の仮想メモリの使用の統計に関する概要情報を表示します。
+description: Vm 拡張機能には、ターゲットシステムの仮想メモリ使用統計に関する概要情報が表示されます。
 ms.assetid: 25e4f80c-d4ca-407c-991d-e8ee5dfbb309
 keywords:
 - vm の Windows デバッグ
@@ -12,51 +12,51 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: eb4ae55dd673f84744b856e7154b9e8b2b1158c9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: eaaa9cf742780e9f186c9eded8a13a777d7899f1
+ms.sourcegitcommit: 424c435700d8f8a85bdaa83e8ddaab9568c8d347
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342105"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70025160"
 ---
 # <a name="vm"></a>!vm
 
 
-**! Vm**拡張機能では、ターゲット システムの仮想メモリの使用の統計に関する概要情報が表示されます。
+**! Vm**拡張機能には、ターゲットシステムの仮想メモリ使用統計に関する概要情報が表示されます。
 
 ```dbgcmd
 !vm [Flags]
 ```
 
-## <a name="span-idddkvmdbgspanspan-idddkvmdbgspanparameters"></a><span id="ddk__vm_dbg"></span><span id="DDK__VM_DBG"></span>パラメーター
+## <a name="span-idddk__vm_dbgspanspan-idddk__vm_dbgspanparameters"></a><span id="ddk__vm_dbg"></span><span id="DDK__VM_DBG"></span>パラメータ
 
 
-<span id="_______Flags______"></span><span id="_______flags______"></span><span id="_______FLAGS______"></span> *フラグ*   
-このコマンドの出力で表示する情報を指定します。 これは、次のビットの任意の合計を指定できます。 既定値は、0 で、システム全体の仮想メモリの統計情報と各プロセスのメモリ統計情報が表示されます。
+<span id="_______Flags______"></span><span id="_______flags______"></span><span id="_______FLAGS______"></span>*フラグ*   
+このコマンドの出力に表示される情報を指定します。 これには、次のビットの合計を指定できます。 既定値は0です。これにより、システム全体の仮想メモリ統計と、各プロセスのメモリ統計情報が表示されます。
 
 <span id="Bit_0__0x1_"></span><span id="bit_0__0x1_"></span><span id="BIT_0__0X1_"></span>ビット 0 (0x1)  
-プロセス固有の統計情報を省略するためにディスプレイをによりします。
+表示でプロセス固有の統計を省略します。
 
 <span id="Bit_1__0x2_"></span><span id="bit_1__0x2_"></span><span id="BIT_1__0X2_"></span>ビット 1 (0x2)  
-メモリ管理スレッド スタックが表示をによりします。
+表示にメモリ管理スレッドスタックを含めます。
 
 <span id="Bit_2__0x4_"></span><span id="bit_2__0x4_"></span><span id="BIT_2__0X4_"></span>ビット 2 (0x4)  
-ターミナル サーバーのメモリ使用量が表示をによりします。
+ターミナルサーバーのメモリ使用量が表示されます。
 
 <span id="Bit_3__0x8_"></span><span id="bit_3__0x8_"></span><span id="BIT_3__0X8_"></span>ビット 3 (0x8)  
-ページのファイル書き込みログが表示をによりします。
+表示にページファイル書き込みログを含めます。
 
 <span id="Bit_4__0x10_"></span><span id="bit_4__0x10_"></span><span id="BIT_4__0X10_"></span>ビット 4 (0x10)  
-作業セットの所有者のスレッドのスタックが表示をによりします。
+表示に、ワーキングセット所有者のスレッドスタックが含まれるようにします。
 
-<span id="Bit_5__0x20_"></span><span id="bit_5__0x20_"></span><span id="BIT_5__0X20_"></span>Bit 5 (0x20)  
-(Windows Vista 以降)カーネルの仮想アドレスの使用状況が表示をによりします。
+<span id="Bit_5__0x20_"></span><span id="bit_5__0x20_"></span><span id="BIT_5__0X20_"></span>ビット 5 (0x20)  
+(Windows Vista 以降)ディスプレイにカーネル仮想アドレスの使用法が含まれるようにします。
 
-### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>環境
+### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>Environment
 
 |       |                  |
 |-------|------------------|
-| モード | カーネル モードのみ |
+| モード | カーネルモードのみ |
 
  
 
@@ -70,25 +70,25 @@ ms.locfileid: "63342105"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>Windows 2000</strong></p></td>
-<td align="left"><p>Kdextx86.dll</p></td>
+<td align="left"><p>Kdextx86</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>Windows XP 以降</strong></p></td>
-<td align="left"><p>Kdexts.dll</p></td>
+<td align="left"><p>Kdexts .dll</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-[ **! Memusage** ](-memusage.md)物理メモリ使用量を分析する拡張機能のコマンドを使用できます。 メモリ管理の詳細については、次を参照してください。 *Microsoft Windows internals 』*、Mark Russinovich と David Solomon します。 (これらのリソースできない場合がありますのいくつかの言語および国。)
+[ **! Memusage**](-memusage.md)拡張コマンドを使用すると、物理メモリの使用量を分析できます。 メモリ管理の詳細については、「 *Microsoft Windows の内部*」 (Mark Russinovich と David ソロモン) を参照してください。
 
 <a name="remarks"></a>コメント
 -------
 
-ときに生成される短い出力の例を次に示します*フラグ*1 には。
+*フラグ*が1の場合に生成される短い出力の例を次に示します。
 
 ```dbgcmd
 kd> !vm 1
@@ -121,7 +121,7 @@ kd> !vm 1
       Commit limit:        36256   (  145024 Kb)
 ```
 
-すべてのメモリ (キロバイト単位) とページの使用が一覧表示します。 この表示で最も有用な情報は次のです。
+すべてのメモリ使用量は、ページとキロバイト単位で表示されます。 この表示には、次のような最も役に立つ情報が表示されます。
 
 <table>
 <colgroup>
@@ -130,22 +130,22 @@ kd> !vm 1
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">パラメーター</th>
+<th align="left">引き</th>
 <th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>物理メモリ</strong></p></td>
-<td align="left"><p>システムの物理メモリの合計。</p></td>
+<td align="left"><p>システム内の合計物理メモリ。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>使用可能なページ</strong></p></td>
-<td align="left"><p>システム、仮想および物理の両方で使用できるメモリのページの数。</p></td>
+<td align="left"><p><strong>利用可能なページ</strong></p></td>
+<td align="left"><p>システムで使用可能なメモリのページ数 (仮想と物理の両方)。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>非ページ プールの使用率</strong></p></td>
-<td align="left"><p>非ページ プールに割り当てられたページの量。 非ページ プールでは、メモリ スワップ アウトできません、ページング ファイルにも常に物理メモリを使用する必要がありますのでです。 この数が多すぎて、メモリ リークどこかでがシステムを示す値を通常、これは。</p></td>
+<td align="left"><p><strong>非ページプールの使用</strong></p></td>
+<td align="left"><p>非ページプールに割り当てられたページの量。 非ページプールは、ページングファイルにスワップアウトできないメモリであるため、常に物理メモリを占有する必要があります。 この数値が大きすぎる場合、通常は、システム内のどこかにメモリリークが発生していることを示します。</p></td>
 </tr>
 </tbody>
 </table>

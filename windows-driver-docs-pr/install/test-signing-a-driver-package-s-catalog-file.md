@@ -4,58 +4,58 @@ description: ドライバー パッケージのカタログ ファイルのテ�
 ms.assetid: 8cc54f57-bac3-45a1-b780-48626943b446
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ff416c6bdd9a774846d0166876ab723457e8a7f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1ac1de7ec58796cfddc9daa07c199581d184c7dc
+ms.sourcegitcommit: 424c435700d8f8a85bdaa83e8ddaab9568c8d347
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67380994"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70025341"
 ---
 # <a name="test-signing-a-driver-packages-catalog-file"></a>ドライバー パッケージのカタログ ファイルのテスト署名
 
 
-後に、[カタログ ファイル](catalog-files.md)の[ドライバー パッケージ](driver-packages.md)が作成または更新されると、カタログでファイルを署名することも[ **SignTool**](https://docs.microsoft.com/windows-hardware/drivers/devtest/signtool)。 署名済み後、は、ドライバー パッケージのすべてのコンポーネントが変更された場合、カタログ ファイル内に格納されたデジタル署名が無効にします。
+[ドライバーパッケージ](driver-packages.md)の[カタログファイル](catalog-files.md)が作成または更新された後、 [**SignTool**](https://docs.microsoft.com/windows-hardware/drivers/devtest/signtool)を使用してカタログファイルに署名できます。 署名した後、ドライバーパッケージのコンポーネントが変更された場合、カタログファイル内に格納されているデジタル署名は無効になります。
 
-カタログ ファイルにデジタル署名すると、SignTool はカタログ ファイル内でデジタル署名を保存します。 ドライバー パッケージのコンポーネントは、SignTool によっては変更されません。 ただし、カタログ ファイルには、ドライバー パッケージのコンポーネントのハッシュ値が格納されている、ためには、カタログ ファイル内でデジタル署名は、コンポーネントが同じ値にハッシュ限り維持されます。
+カタログファイルにデジタル署名すると、SignTool によって、デジタル署名がカタログファイル内に保存されます。 ドライバーパッケージのコンポーネントは、SignTool によって変更されません。 ただし、カタログファイルには、ドライバーパッケージのコンポーネントのハッシュ値が含まれているため、コンポーネントが同じ値にハッシュされる限り、カタログファイル内のデジタル署名が保持されます。
 
-SignTool は、デジタル署名にタイムスタンプを追加することもできます。 タイムスタンプ署名の作成時に決定することができ、必要な場合より柔軟な証明書の失効オプションをサポートしています。
+SignTool では、デジタル署名にタイムスタンプを追加することもできます。 タイムスタンプを使用すると、署名がいつ作成されたかを判断し、必要に応じてより柔軟な証明書失効オプションをサポートできます。
 
-次のコマンドラインは、署名ツールは、次を実行する方法を示します。
+次のコマンドラインは、SignTool を実行して次の操作を実行する方法を示しています。
 
--   テスト署名、 *tstamd64.cat*のカタログ ファイル、 *ToastPkg*サンプル[ドライバー パッケージ](driver-packages.md)します。 詳細についてはこの[カタログ ファイル](catalog-files.md)が作成されるを参照してください[ドライバー パッケージのテスト署名カタログ ファイルを作成する](creating-a-catalog-file-for-test-signing-a-driver-package.md)します。
+-   *Toastpkg*サンプル[ドライバーパッケージ](driver-packages.md)の*tstamd64.cat*カタログファイルにテスト署名します。 この[カタログファイル](catalog-files.md)の作成方法の詳細については、「[ドライバーパッケージのテスト署名用のカタログファイルの作成](creating-a-catalog-file-for-test-signing-a-driver-package.md)」を参照してください。
 
--   テスト署名、PrivateCertStore から Contoso.com(Test) 証明書を使用します。 この証明書の作成方法の詳細については、次を参照してください。[テスト証明書を作成する](creating-test-certificates.md)します。
+-   テスト署名には、PrivateCertStore の Contoso .com (Test) 証明書を使用します。 この証明書の作成方法の詳細については、「[テスト証明書の作成](creating-test-certificates.md)」を参照してください。
 
--   タイム スタンプ機関 (TSA) 経由のデジタル署名のタイムスタンプ。
+-   タイムスタンプ機関 (TSA) を使用したデジタル署名のタイムスタンプ。
 
-テスト署名、 *tstamd64.cat*カタログ ファイルを次のコマンドラインを実行します。
+*Tstamd64.cat*カタログファイルのテストに署名するには、次のコマンドラインを実行します。
 
 ```cpp
-Signtool sign /v /fd sha256 /s PrivateCertStore /n Contoso.com(Test) /t http://timestamp.verisign.com/scripts/timstamp.dll tstamd64.cat
+Signtool sign /v /fd sha256 /s PrivateCertStore /n Contoso.com(Test) /t http://timestamp.digicert.com tstamd64.cat
 ```
 
 各項目の意味は次のとおりです。
 
--   **サインオン**コマンドは、指定したカタログ ファイルの署名に SignTool を構成します。 tstamd64.cat します。
+-   **Sign**コマンドは、指定されたカタログファイル tstamd64.cat に署名するように SignTool を構成します。
 
--   **/V**で SignTool の表示が正常に実行し、警告メッセージの詳細な操作を有効にします。
+-   **/V**オプションは、SignTool が成功した実行と警告メッセージを表示する詳細な操作を有効にします。
 
--   **/Fd**オプションは、ファイルの署名を作成するために使用するファイル ダイジェスト アルゴリズムを指定します。 既定値には SHA1 です。
+-   **/Fd**オプションは、ファイル署名の作成に使用するファイルダイジェストアルゴリズムを指定します。 既定値は SHA1 です。
 
--   **/S**オプションは、証明書ストアの名前を指定します (*PrivateCertStore)* テスト証明書を格納しています。
+-   **/S**オプションは、テスト証明書を含む証明書ストア (*PrivateCertStore)* の名前を指定します。
 
--   **/N**オプションは、証明書の名前を指定します (*Contoso.com(Test))* 指定された証明書ストアにインストールされています。
+-   **/N**オプションは、指定された証明書ストアにインストールされている証明書 (*Contoso .com (Test))* の名前を指定します。
 
--   **/T**オプション、TSA の URL を指定します ( *http://timestamp.verisign.com/scripts/timstamp.dll* ) が、タイムスタンプ、デジタル署名します。
-    **重要な**  キーの失効がコード署名の秘密キーの署名者の場合は、侵害の必要な情報を提供するタイムスタンプを含むです。
+-   **/T**オプションは、デジタル署名のタイムスタンプ *http://timestamp.digicert.com* となる TSA () の URL を指定します。
+    **重要-署名**者のコード署名の秘密キーが侵害された場合に、キーの失効に必要な情報は、タイムスタンプを含めて提供されます。  
 
      
 
--   *tstamd64.cat*デジタル署名されるカタログ ファイルの名前を指定します。
+-   *tstamd64.cat*は、デジタル署名されるカタログファイルの名前を指定します。
 
-SignTool とコマンドライン引数の詳細については、次を参照してください。 [ **SignTool**](https://docs.microsoft.com/windows-hardware/drivers/devtest/signtool)します。
+SignTool とそのコマンドライン引数の詳細については、 [**SignTool**](https://docs.microsoft.com/windows-hardware/drivers/devtest/signtool)を参照してください。
 
-テスト署名の詳細については、ドライバー パッケージのカタログ ファイルを参照してください[カタログ ファイルのテスト署名](test-signing-a-catalog-file.md)します。
+ドライバーパッケージのカタログファイルのテスト署名の詳細については、「[カタログファイルのテスト署名](test-signing-a-catalog-file.md)」を参照してください。
 
  
 
