@@ -12,16 +12,20 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 294aaee6a23057eecfe6afc3767e397b33f22f88
-ms.sourcegitcommit: 424c435700d8f8a85bdaa83e8ddaab9568c8d347
+ms.openlocfilehash: 20701b8f00bda2228900a43d425fc422f99d69e1
+ms.sourcegitcommit: 238308264c1ee2c74ec0c8c303258dc00c79b902
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70025265"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70063901"
 ---
 # <a name="drivers"></a>!drivers
 
-Windows XP 以降のバージョンの Windows では、 **! drivers**拡張機能は廃止されています。 読み込まれたドライバーおよびその他のモジュールに関する情報を表示するには、 [**lm**](lm--list-loaded-modules-.md)コマンドを使用します。 Lm のコマンドでは、古い **! drivers**拡張子とよく似た形式で情報が表示されます。 ただし、このコマンドでは、ドライバーの拡張機能と同じように 、ドライバーのメモリ使用量が表示されません。 ドライバーの開始アドレスと終了アドレス、イメージ名、タイムスタンプのみが表示されます。 [ **! Vm**](-vm.md)および[ **! memusage**](-memusage.md)拡張機能を使用して、メモリ使用量の統計情報を表示できます。
+>[!NOTE] 
+> Windows XP 以降のバージョンの Windows では、 **! drivers**拡張機能は廃止されています。 読み込まれたドライバーおよびその他のモジュールに関する情報を表示するには、 [**lm**](lm--list-loaded-modules-.md)コマンドを使用します。 
+>
+
+Lm のコマンドでは、古い **! drivers**拡張子とよく似た形式で情報が表示されます。 ただし、このコマンドでは、ドライバーの拡張機能と同じように 、ドライバーのメモリ使用量が表示されません。 ドライバーの開始アドレスと終了アドレス、イメージ名、タイムスタンプのみが表示されます。 [ **! Vm**](-vm.md)および[ **! memusage**](-memusage.md)拡張機能を使用して、メモリ使用量の統計情報を表示できます。
 
 ```dbgcmd
 !drivers [Flags]

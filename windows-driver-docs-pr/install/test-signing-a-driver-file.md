@@ -14,12 +14,12 @@ keywords:
 - エンタープライズ CA テスト証明書 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e0da346b0c5152439711585f23d372a0b7e0138
-ms.sourcegitcommit: 424c435700d8f8a85bdaa83e8ddaab9568c8d347
+ms.openlocfilehash: c5f789336df1cb15930f150e8911710a99f38792
+ms.sourcegitcommit: 238308264c1ee2c74ec0c8c303258dc00c79b902
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70025122"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70063929"
 ---
 # <a name="test-signing-a-driver-file"></a>ドライバー ファイルのテスト署名
 
@@ -48,7 +48,7 @@ SignTool sign /v /s TestCertStoreName /n TestCertName /t http://timestamp.digice
 
 -   **/N** *testcertname*オプションは、 *TestCertStoreName*という名前の証明書ストアにインストールされているテスト証明書の名前を指定します。 テスト証明書には、MakeCert テスト証明書または商用テスト証明書のいずれかを指定できます。
 
--   **/T**  *http://timestamp.digicert.com* オプションは、VeriSign を提供するパブリックに利用可能なタイム スタンプ サーバーの URL を提供します。
+-    */T http://timestamp.digicert.com* オプションは、DigiCert が提供するパブリックに使用できるタイムスタンプサーバーの URL を指定します。
 
 -   *Driverfilename .sys*は、ドライバーファイルの名前です。
 

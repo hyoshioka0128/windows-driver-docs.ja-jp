@@ -7,12 +7,12 @@ keywords:
 - ドライバーファイルのリリース署名 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 086bae5bf2b76aca3bc3031f88a131087ab340d2
-ms.sourcegitcommit: 2231d322eb4e9597ad7f537a4aa82b83422bd46a
+ms.openlocfilehash: 2de976dd3d536522d755c28da416340c584185d2
+ms.sourcegitcommit: 238308264c1ee2c74ec0c8c303258dc00c79b902
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70020635"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70063936"
 ---
 # <a name="release-signing-a-driver-file"></a>ドライバー ファイルのリリース署名
 
@@ -35,7 +35,7 @@ SignTool sign /v /ac CrossCertificateFile /s SPCCertificateStore /n SPCCertifica
 
 -   **/N** *Spcは*、 *spccertificatename*証明書ストア内の証明書の名前を指定します。
 
--   **/T**  *http://timestamp.digicert.com オプションは、VeriSign を提供するパブリックに利用可能なタイム スタンプ サーバーの URL を提供します。
+-   **/T**   オプションは* 、DigiCert が提供するパブリックに使用できるタイムスタンプサーバーの URL を指定します。 http://timestamp.digicert.com
 
 -   *Driverfilename .sys*は、ドライバーファイルの名前です。
 

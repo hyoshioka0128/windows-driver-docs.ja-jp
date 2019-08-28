@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8fff3d493a9c6d2dfdc9470015206318b51f6c79
-ms.sourcegitcommit: 424c435700d8f8a85bdaa83e8ddaab9568c8d347
+ms.openlocfilehash: baef109a7cd61805247c469596adb258804effc1
+ms.sourcegitcommit: 238308264c1ee2c74ec0c8c303258dc00c79b902
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70025336"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70063946"
 ---
 # <a name="signtool"></a>SignTool
 
@@ -265,7 +265,7 @@ SignTool パラメーターの完全な一覧については、Microsoft [SignTo
 
 ソフトウェア発行元証明書 (SPC) と対応するクロス証明書を使用して、[ドライバーパッケージの](https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages)カタログファイルに署名する方法の例を次に示します。 この例は、カーネルモードのコード署名ポリシーを適用する Windows Vista 以降のバージョンの windows で、ドライバー64パッケージに署名する場合に有効です。 この例では、ドライバーパッケージのカタログファイル AbcCatFileName.cat に署名します。 カタログファイルに署名するために、この例では、クロス証明書の AbcCrossCertificate と AbcSPCCertificate 証明書を使用します。 AbcSPCCertificate 証明書は、AbcCertificateStore 証明書ストアにあります。
 
-また、この例では、一般公開されているタイムスタンプサーバーを使用してカタログファイルに署名します。 タイムスタンプサーバーは VeriSign によって提供され http://timestamp.digicert.com 、その URL はです。
+また、この例では、一般公開されているタイムスタンプサーバーを使用してカタログファイルに署名します。 タイムスタンプサーバーは DigiCert によって提供され http://timestamp.digicert.com 、その URL はです。
 
 ```
 SignTool sign /ac AbcCrossCertificate.cer /s AbcCertificateStore /n AbcSPCCertificate /t http://timestamp.digicert.com AbcCatFileName.cat

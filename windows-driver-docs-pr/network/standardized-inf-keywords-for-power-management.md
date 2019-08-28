@@ -4,12 +4,12 @@ description: 電源管理用の標準化された INF キーワード
 ms.assetid: bec8dd96-f64a-40eb-ade9-73c9a66a756e
 ms.date: 08/01/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: b6f3f1e59367acbfc2dfb18e1087831c97d2f088
-ms.sourcegitcommit: 97cb327e20b899d386abb412af2de7e08c5aff87
+ms.openlocfilehash: 204e218590a8a6706f9dba7a2d004d8b0fcf62c2
+ms.sourcegitcommit: 238308264c1ee2c74ec0c8c303258dc00c79b902
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68730410"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70063904"
 ---
 # <a name="standardized-inf-keywords-for-power-management"></a>電源管理用の標準化された INF キーワード
 
@@ -60,15 +60,10 @@ SubkeyName に関連付けられている表示テキスト。
 
 次の表は、電源管理のキーワードに使用できる INF エントリを示しています。
 
-<table>
-<colgroup>
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-</colgroup>
-<thead>
-<tr class="header">
+<table>  
+<colgroup> <col width="25%" /> <col width="25%" /> <col width="25%" /> <col width="25%" /> </colgroup>  
+<thead>  
+<tr class="header">  
 <th align="left">SubkeyName</th>
 <th align="left">ParamDesc</th>
 <th align="left">[値]</th>

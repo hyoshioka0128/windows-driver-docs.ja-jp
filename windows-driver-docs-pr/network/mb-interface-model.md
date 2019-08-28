@@ -1,17 +1,17 @@
 ---
-title: MB インターフェイスモデルの概要
+title: MB インターフェイス モデルの概要
 description: ここでは、モバイルブロードバンドインターフェイスモデル (MBIM) 仕様に基づいて実装されているモバイルブロードバンドデバイスについて説明します。
 ms.assetid: B1C6D5F4-63E2-4C46-8038-71B8144AB474
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f30383a002d8cc2cfb4d32ca4f647e8dff72565a
-ms.sourcegitcommit: fec48fa5342d9cd4cd5ccc16aaa06e7c3d730112
+ms.openlocfilehash: abfa4ee22a47361168ff3822cef2ee662838b6bf
+ms.sourcegitcommit: 238308264c1ee2c74ec0c8c303258dc00c79b902
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2019
-ms.locfileid: "69565657"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70063912"
 ---
-# <a name="mb-interface-model-overview"></a>MB インターフェイスモデルの概要
+# <a name="mb-interface-model-overview"></a>MB インターフェイス モデルの概要
 
 
 ここでは、モバイルブロードバンドインターフェイスモデル (MBIM) 仕様に基づいて実装されているモバイルブロードバンドデバイスについて説明します。
@@ -28,14 +28,10 @@ Id のモーフィングを示すモバイルブロードバンドデバイス�
 
 *Microsoft OS 互換 Id*
 
-<table>
-<colgroup>
-<col width="33%" />
-<col width="33%" />
-<col width="33%" />
-</colgroup>
-<thead>
-<tr class="header">
+<table>  
+<colgroup> <col width="33%" /> <col width="33%" /> <col width="33%" /> </colgroup>  
+<thead>  
+<tr class="header">  
 <th align="left">Microsoft OS 互換 ID</th>
 <th align="left">Microsoft OS の下位互換性 ID</th>
 <th align="left">シナリオに必要</th>

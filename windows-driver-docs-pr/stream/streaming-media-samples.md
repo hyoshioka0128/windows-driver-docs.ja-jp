@@ -3,27 +3,28 @@ title: ストリーミング メディアのサンプル
 description: ストリーミング メディアのサンプル
 ms.assetid: 797763a6-cd13-4d76-8ddb-75d812a8dde3
 keywords:
-- ストリーミング メディア サンプル WDK
-- ストリーミング メディアの WDK サンプル
+- ストリーミングメディアのサンプル WDK
+- WDK ストリーミングメディアのサンプル
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f559224f9dcd5b2d2097eb01ab355bdf3fda4b72
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 882211ebd73768a158ec13fe910798d1568ca184
+ms.sourcegitcommit: 44f09d983954f27fd90b737a2dd142aad7dffd9d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359632"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70059170"
 ---
 # <a name="streaming-media-samples"></a>ストリーミング メディアのサンプル
 
+[Microsoft サンプルポータル](https://docs.microsoft.com/samples/browse/?products=windows-wdk)では、個々の Windows 10 ドライバーのサンプルを参照してダウンロードできます。 GitHub で[Windows ドライバーのサンプル](https://github.com/Microsoft/Windows-driver-samples)リポジトリを複製、フォーク、またはダウンロードすることもできます。
 
-### <a href="" id="streaming-media-samples"></a>
+以前のバージョンの Windows ドライバーサンプルは、次の場所にアーカイブされています。
 
-Windows 10 以降、[Windows ドライバーのサンプル リポジトリ](https://go.microsoft.com/fwlink/p/?LinkId=616507)は GitHub で入手できます。
+- [Windows 8.1 ドライバーのサンプル](https://go.microsoft.com/fwlink/p/?LinkId=618052)
 
-[Windows 8 ドライバー サンプル](https://go.microsoft.com/fwlink/p/?LinkId=616509)と[Windows 8.1 ドライバー サンプル](https://go.microsoft.com/fwlink/p/?LinkId=618052)からダウンロードできます、 [Windows ハードウェア デベロッパー センター](https://go.microsoft.com/fwlink/p/?LinkId=616506)します。
+- [Windows 8 ドライバーのサンプル](https://go.microsoft.com/fwlink/p/?LinkId=616509)
 
-Windows 7 では、サンプルには、Windows Driver Kit (WDK) では含まれます。
+Windows 7 では、サンプルは Windows Driver Kit (WDK) に含まれていました。
 
 <table style="width:100%;">
 <colgroup>
@@ -37,63 +38,63 @@ Windows 7 では、サンプルには、Windows Driver Kit (WDK) では含まれ
 <thead>
 <tr class="header">
 <th>サンプル名</th>
-<th>環境を構築します。</th>
-<th>対象のオペレーティング システム</th>
+<th>ビルド環境</th>
+<th>ターゲットオペレーティングシステム</th>
 <th>PnP ドライバー</th>
-<th>インボックス ドライバー</th>
+<th>インボックスドライバー</th>
 <th>サンプルの説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>AVStream フィルター中心のシミュレートされたキャプチャ ドライバー (Avssamp)</p></td>
+<td><p>AVStream フィルター中心のシミュレートされたキャプチャドライバー (Avssamp)</p></td>
 <td><p>Windows 8.1</p>
 <p>Windows 8</p>
 <p>Windows 7</p></td>
 <td><p>Windows 8.1</p>
 <p>Windows 8</p>
 <p>Windows 7</p></td>
-<td><p>X</p></td>
-<td><p>X</p></td>
-<td><p>オーディオの機能に関するフィルターを中心とした AVStream キャプチャ ドライバーを提供します。 ドライバーは、ユーザー指定のパルス コード変調 (PCM) wave オーディオ ファイルをループでの再生中に RGB24 または YUV422 形式で 320 x 240 解像度でキャプチャを実行します。 このサンプルでは、フィルターを中心とした AVStream ミニドライバーを記述する方法を示します。</p></td>
+<td><p>いいえ</p></td>
+<td><p>いいえ</p></td>
+<td><p>フィルター中心の AVStream キャプチャドライバーを機能オーディオと共に提供します。 このドライバーは、ループ内でユーザーが指定したパルスコード変調 (PCM) wave オーディオファイルの再生中に、RGB24 または YUV422 形式の 320 x 240 解像度でキャプチャを実行します。 このサンプルでは、フィルター中心の AVStream ミニドライバーを記述する方法を示します。</p></td>
 </tr>
 <tr class="even">
-<td><p>AVStream シミュレートされたハードウェア サンプル ドライバー (Avshws)</p></td>
+<td><p>AVStream のシミュレートされたハードウェアサンプルドライバー (Avshws)</p></td>
 <td><p>Windows 8.1</p>
 <p>Windows 8</p>
 <p>Windows 7</p></td>
 <td><p>Windows 8.1</p>
 <p>Windows 8</p>
 <p>Windows 7</p></td>
-<td><p>X</p></td>
-<td><p>X</p></td>
-<td><p>シミュレーションのハードウェアの暗証番号 (pin) を中心とした AVStream キャプチャ ドライバーを提供します。 ドライバーは、キャプチャ バッファーに直接 DMA 経由 RGB24 または YUV422 のいずれかの形式で 320 x 240 でキャプチャを実行します。</p>
-<p>サンプルでは、暗証番号 (pin) を中心とした AVStream ミニドライバーを作成する方法について説明します。 このサンプルでは、AVStream の関連機能を使用して、DMA を実装する方法も示します。</p>
-<p>このサンプルの機能には、パラメーターの検証とオーバーフローの検出が強化されています。</p></td>
+<td><p>いいえ</p></td>
+<td><p>いいえ</p></td>
+<td><p>シミュレートされたハードウェアのための、ピン中心の AVStream キャプチャドライバーを提供します。 ドライバーは、直接 DMA によってキャプチャバッファーに RGB24 または YUV422 形式で 240 320 キャプチャを実行します。</p>
+<p>このサンプルの目的は、ピン中心の AVStream ミニドライバーを記述する方法を示すことです。 このサンプルでは、AVStream が提供する関連機能を使用して、DMA を実装する方法も示しています。</p>
+<p>このサンプルでは、強化されたパラメーターの検証とオーバーフロー検出を行います。</p></td>
 </tr>
 <tr class="odd">
-<td><p>SonyDCam 1394 web カメラ ドライバー</p></td>
+<td><p>SonyDCam 1394 Webcam Driver</p></td>
 <td><p>Windows 7</p></td>
 <td><p>Windows 7</p></td>
-<td><p>X</p></td>
-<td><p>〇</p></td>
-<td><p>1394 貿易からデジタル カメラの仕様に準拠する 1394 に基づくデジタル カメラをサポートする Microsoft Windows Driver Model (WDM) Stream クラス ビデオ キャプチャ ドライバー。</p></td>
+<td><p>いいえ</p></td>
+<td><p>はい</p></td>
+<td><p>1394貿易アソシエーションからのデジタルカメラ仕様に準拠した1394ベースのデジタルカメラをサポートする、Microsoft Windows Driver Model (WDM) ストリームクラスのビデオキャプチャドライバー。</p></td>
 </tr>
 <tr class="even">
-<td><p>USBIntel web カメラ ドライバー</p></td>
+<td><p>USBIntel Webcam Driver</p></td>
 <td><p>Windows 7</p></td>
 <td><p>Windows 7</p></td>
-<td><p>X</p></td>
-<td><p>〇</p></td>
-<td><p>Microsoft Windows Driver Model (WDM) ストリーム クラス ビデオ キャプチャ ドライバー。</p></td>
+<td><p>いいえ</p></td>
+<td><p>はい</p></td>
+<td><p>Microsoft Windows Driver Model (WDM) ストリームクラスのビデオキャプチャドライバー。</p></td>
 </tr>
 <tr class="odd">
 <td><p>SW チューナー</p></td>
 <td><p>Windows 7</p></td>
 <td><p>Windows 7</p></td>
-<td><p>X</p></td>
-<td><p>X</p></td>
-<td><p>いくつかのデジタル ネットワークの種類を示します。</p></td>
+<td><p>いいえ</p></td>
+<td><p>いいえ</p></td>
+<td><p>複数のデジタルネットワークの種類を示します。</p></td>
 </tr>
 </tbody>
 </table>

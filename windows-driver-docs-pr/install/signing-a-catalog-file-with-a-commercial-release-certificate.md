@@ -4,12 +4,12 @@ description: 商用リリース証明書でのカタログ ファイルの署名
 ms.assetid: 362b0c79-50b9-4749-80e2-62601d76e9e3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f42fea9e76753988760af4e1de1e390b3e5aa555
-ms.sourcegitcommit: 424c435700d8f8a85bdaa83e8ddaab9568c8d347
+ms.openlocfilehash: d34040af840d1d2b3291cb7fd24807f2fc761d50
+ms.sourcegitcommit: 238308264c1ee2c74ec0c8c303258dc00c79b902
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70025302"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70063932"
 ---
 # <a name="signing-a-catalog-file-with-a-commercial-release-certificate"></a>商用リリース証明書でのカタログ ファイルの署名
 
@@ -34,7 +34,7 @@ SignTool sign /v /s CertificateStore /n CertificateName /t http://timestamp.digi
 
 -   **/N**の指定された *ename*オプションは、 *certificatestore*証明書ストア内の証明書の名前を指定します。
 
--   **/T**   *http://timestamp.digicert.com* オプションは、VeriSign を提供するパブリックに利用可能なタイム スタンプ サーバーの URL を提供します。
+-     */T http://timestamp.digicert.com* オプションは、DigiCert が提供するパブリックに使用できるタイムスタンプサーバーの URL を指定します。
 
 -   *CatalogFileName.cat*カタログファイルの名前を指定します。
 

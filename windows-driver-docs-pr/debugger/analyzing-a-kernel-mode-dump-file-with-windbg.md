@@ -3,16 +3,16 @@ title: WinDbg によるカーネルモード ダンプ ファイルの分析
 description: WinDbg によるカーネルモード ダンプ ファイルの分析
 ms.assetid: a1493740-5bb5-4335-b177-ee94b93f716b
 keywords:
-- WinDbg をカーネル モードのダンプ ファイルの分析
-- Windbg のカーネル モードのダンプ ファイルを分析、ダンプ ファイルを含む CAB ファイル
+- WinDbg、カーネルモードのダンプファイルの分析
+- ダンプファイルを含む CAB ファイル、WinDbg によるカーネルモードダンプファイルの分析
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c13edb4ef565012cb9e3aadf13242ccbe1d7da6e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3459871e3ec04151e6d8cd0140a0027fdab8ce33
+ms.sourcegitcommit: 238308264c1ee2c74ec0c8c303258dc00c79b902
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355438"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70063878"
 ---
 # <a name="analyzing-a-kernel-mode-dump-file-with-windbg"></a>WinDbg によるカーネルモード ダンプ ファイルの分析
 
@@ -20,53 +20,53 @@ ms.locfileid: "63355438"
 ## <span id="ddk_analyzing_a_kernel_mode_dump_file_with_windbg_dbg"></span><span id="DDK_ANALYZING_A_KERNEL_MODE_DUMP_FILE_WITH_WINDBG_DBG"></span>
 
 
-WinDbg では、カーネル モード メモリ ダンプ ファイルを分析できます。 プロセッサやダンプ ファイルが作成されている Windows バージョンは KD が実行されているプラットフォームを一致させる必要はありません。
+カーネルモードのメモリダンプファイルは、WinDbg で分析できます。 ダンプファイルが作成されたプロセッサまたは Windows のバージョンは、KD が実行されているプラットフォームと一致する必要はありません。
 
-### <a name="span-idstartingwindbgspanspan-idstartingwindbgspanstarting-windbg"></a><span id="starting_windbg"></span><span id="STARTING_WINDBG"></span>WinDbg の開始
+### <a name="span-idstarting_windbgspanspan-idstarting_windbgspanstarting-windbg"></a><span id="starting_windbg"></span><span id="STARTING_WINDBG"></span>WinDbg の開始
 
-ダンプ ファイルを分析するには、WinDbg を開始、 **-z**コマンド ライン オプション。
+ダンプファイルを分析するには、 **-z**コマンドラインオプションを使用して WinDbg を開始します。
 
 **windbg -y** *SymbolPath* **-i** *ImagePath* **-z** *DumpFileName*
 
-**-V**オプション (詳細モード) も便利です。 オプションの一覧については、次を参照してください。 [ **WinDbg コマンド ライン オプション**](windbg-command-line-options.md)します。
+**-V**オプション (詳細モード) も便利です。 オプションの完全な一覧については、「 [**WinDbg のコマンドラインオプション**](windbg-command-line-options.md)」を参照してください。
 
-WinDbg が既に実行中、休止モードでは、選択して、クラッシュ ダンプを開くことができます、**ファイル |クラッシュ ダンプを開く**メニュー コマンドまたは CTRL + D ショートカット キーを押します。 ときに、**クラッシュ ダンプを開く**でクラッシュ ダンプ ファイルの名前と完全なパスを入力してください ダイアログ ボックスが表示されたら、**ファイル名**テキスト ボックス、または適切なパスとファイル名を選択するダイアログ ボックスを使用します。 適切なファイルを選択すると、クリックして**オープン**します。
+WinDbg が既に実行されていて、休止モードになっている場合は、ファイルを選択してクラッシュダンプを開くことができます。 **クラッシュダンプ**メニューコマンドを開くか、CTRL + D ショートカットキーを押します。 **[クラッシュダンプを開く]** ダイアログボックスが表示されたら、クラッシュダンプファイルの完全なパスと名前を **[ファイル名]** テキストボックスに入力するか、またはダイアログボックスを使用して適切なパスとファイル名を選択します。 適切なファイルが選択されたら、 **[開く]** をクリックします。
 
-使用して、デバッガーを実行した後も、ダンプ ファイルを開くことができます、 [ **.opendump (ダンプ ファイルを開く)** ](-opendump--open-dump-file-.md)とそれに続くコマンド[ **g (移動)** ](g--go-.md).
+また、 [**opendump ([ダンプファイルを開く])** ](-opendump--open-dump-file-.md)コマンドを使用し、その後に[**g (enter)** ](g--go-.md)を使用して、デバッガーの実行後にダンプファイルを開くこともできます。
 
-同時に複数のダンプ ファイルをデバッグすることになります。 これを行う複数を含む **-z** (それぞれが別のファイル名が後に) コマンド ラインでまたはを使用してスイッチ[ **.opendump** ](-opendump--open-dump-file-.md)として追加のダンプ ファイルを追加するにはデバッガーのターゲット。 複数のターゲットのセッションを制御する方法については、次を参照してください。[複数のターゲットのデバッグ](debugging-multiple-targets.md)します。
+複数のダンプファイルを同時にデバッグすることができます。 これを行うには、コマンドラインに複数**の z**スイッチを含めるか (それぞれに別のファイル名を付ける)、または[ **. opendump**](-opendump--open-dump-file-.md)を使用してデバッガーターゲットとして追加のダンプファイルを追加します。 複数のターゲットセッションを制御する方法の詳細については、「[複数のターゲットのデバッグ](debugging-multiple-targets.md)」を参照してください。
 
-ダンプ ファイルは、一般に、拡張子 .dmp または .mdmp で終了します。 ネットワーク共有または汎用名前付け規則 (UNC) のメモリ ダンプ ファイルの名前のファイルを使用することができます。
+通常、ダンプファイルは拡張子 .dmp または mdmp で終わります。 メモリダンプファイルには、ネットワーク共有または UNC (汎用名前付け規則) ファイル名を使用できます。
 
-ダンプ ファイルを CAB ファイルにパックするための一般的なもできます。 後 (.cab 拡張子を含む)、ファイル名を指定しない場合、 **-z**オプションまたは引数として、 [ **.opendump** ](-opendump--open-dump-file-.md)コマンド、デバッガーは、ダンプ ファイルを読み取ることができますcab ファイルから直接。 ただし、1 つの cab ファイルに格納されている複数のダンプ ファイルがある場合、デバッガーのみうち 1 つを読めるようにします。 デバッガーがシンボル ファイルまたはダンプ ファイルに関連付けられているその他のファイルがいた場合でも、その他のファイルを CAB から読み取ることが。
+また、ダンプファイルが CAB ファイルにパックされることもよくあります。 **-Z**オプションの後にファイル名 (.cab 拡張子を含む) を指定した場合、または[**opendump**](-opendump--open-dump-file-.md)コマンドの引数として指定した場合、デバッガーは、cab から直接、ダンプファイルを読み取ることができます。 ただし、1つの CAB に複数のダンプファイルが格納されている場合、デバッガーはそのうちの1つだけを読み取ることができます。 デバッガーは、シンボルファイルまたはダンプファイルに関連付けられたその他のファイルであっても、CAB から追加ファイルを読み取りません。
 
-### <a name="span-idanalyzingthedumpfilespanspan-idanalyzingthedumpfilespananalyzing-the-dump-file"></a><span id="analyzing_the_dump_file"></span><span id="ANALYZING_THE_DUMP_FILE"></span>ダンプ ファイルの分析
+### <a name="span-idanalyzing_the_dump_filespanspan-idanalyzing_the_dump_filespananalyzing-the-dump-file"></a><span id="analyzing_the_dump_file"></span><span id="ANALYZING_THE_DUMP_FILE"></span>ダンプファイルの分析
 
-カーネル メモリ ダンプまたは小さいメモリ ダンプを分析する場合は、クラッシュの時点で、メモリに読み込まれている可能性がありますすべての実行可能ファイルをポイントする実行可能イメージのパスを設定する必要があります。
+カーネルメモリダンプまたは小さいメモリダンプを分析する場合は、クラッシュ時にメモリに読み込まれた可能性のある実行可能ファイルを指すように、実行可能イメージのパスを設定する必要があります。
 
-ダンプ ファイルの分析は、ライブ デバッグ セッションの分析に似ています。 参照してください、[デバッガー コマンド](debugger-commands.md)コマンドはカーネル モードでのダンプ ファイルのデバッグに使用できる詳細セクションを参照します。
+ダンプファイルの分析は、ライブデバッグセッションの分析に似ています。 カーネルモードでダンプファイルをデバッグするために使用できるコマンドの詳細については、「[デバッガーコマンド](debugger-commands.md)のリファレンス」セクションを参照してください。
 
-ほとんどの場合を使用して開始する必要があります[ **! 分析**](-analyze.md)します。 この拡張機能コマンドでは、ダンプ ファイルの自動分析を実行し、多くの有用な情報の多くの場合がします。
+ほとんどの場合、最初に[ **! analyze**](-analyze.md)を使用する必要があります。 この拡張コマンドを実行すると、ダンプファイルの自動分析が実行されるため、多くの場合、有用な情報が得られます。
 
-[ **.Bugcheck (表示バグ データを確認する)** ](-bugcheck--display-bug-check-data-.md)チェック コードとそのパラメーターは、バグを示しています。 検索では、このバグ チェック、[バグ チェック コード参照](bug-check-code-reference2.md)については、特定のエラー。
+バグチェックコードとそのパラメーターがバグチェックコードと共に表示され[**ます (バグチェックデータの表示)。** ](-bugcheck--display-bug-check-data-.md) 特定のエラーに関する情報については、[バグチェックコードリファレンス](bug-check-code-reference2.md)でこのバグチェックを参照してください。
 
-次のデバッガー拡張機能は、カーネル モードのクラッシュ ダンプを分析するために特に便利です。
+次のデバッガー拡張機能は、カーネルモードのクラッシュダンプを分析する場合に特に役立ちます。
 
-[**! ドライバー**](-drivers.md)
+[**lm**](lm--list-loaded-modules-.md)
 
-[**!kdext\*.locks**](-locks---kdext--locks-.md)
+[ **! kdext\*. locks**](-locks---kdext--locks-.md)
 
-[**! memusage**](-memusage.md)
+[ **! memusage**](-memusage.md)
 
-[**!vm**](-vm.md)
+[ **!vm**](-vm.md)
 
-[**!errlog**](-errlog.md)
+[ **! errlog**](-errlog.md)
 
-[**!process 0 0**](-process.md)
+[ **! プロセス 0 0**](-process.md)
 
-[**!process 0 7**](-process.md)
+[ **! プロセス 0 7**](-process.md)
 
-ダンプ ファイルから特定の種類の情報の読み取りに使用できる方法では、次を参照してください。[ダンプ ファイルから情報を抽出](extracting-information-from-a-dump-file.md)します。
+ダンプファイルから特定の種類の情報を読み取る方法については、「[ダンプファイルからの情報の抽出](extracting-information-from-a-dump-file.md)」を参照してください。
 
  
 
