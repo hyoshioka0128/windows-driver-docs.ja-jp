@@ -34,6 +34,12 @@
           href: device-unique-identifiers--duids--for-storage-devices.md
         - name: 一般的なストレージの I/O 制御コード
           href: general-storage-io-control-codes.md
+        - name: ストレージ データ セット管理 (DSM)
+          items:
+            - name: データ セット管理の概要
+              href: data-set-management-overview.md
+            - name: DEVICE_DSM_ACTION の説明
+              href: device-dsm-action-descriptions.md
         - name: LSI_U3 デバイスの Storport ミニポート ドライバーのサンプル
           items:
             - name: LSI_U3 デバイスの Storport ミニポート ドライバーのサンプル
@@ -240,8 +246,6 @@
                   href: hardware-initialization-with-storport.md
                 - name: Storport でのポート構成情報の設定
                   href: setting-port-configuration-information-with-storport.md
-            - name: DEVICE_DATA_MANAGEMENT_SET_ACTION
-              href: device-data-management-set-action.md
         - name: ATA ポート ドライバー
           items:
             - name: ATA ポート ドライバー
