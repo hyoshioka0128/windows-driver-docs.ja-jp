@@ -8,12 +8,12 @@ ms.date: 04/20/2017
 ms.topic: landing-page
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: 88b863a983e13fcfb08849bd70105b974d9835ff
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 412658066c484d02a25e36c9e62c1da77d9b0b4b
+ms.sourcegitcommit: 6fc350ed59c2b297da2e1caaccaac30de52e0aac
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385024"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70117851"
 ---
 # <a name="windows-driver-kit-documentation"></a>Windows Driver Kit のドキュメント
 
@@ -109,7 +109,7 @@ Windows Driver Kit (WDK) 10 は Microsoft Visual Studio 2017 および [Debuggin
                     <div class="cardText">
                         <h3>コード サンプル</h3>
                         <p>
-                            <a href="https://github.com/Microsoft/Windows-driver-samples">ユニバーサル Windows ドライバーのサンプル</a>
+                            <a href="https://docs.microsoft.com/samples/browse/?products=windows-wdk">ユニバーサル Windows ドライバーのサンプル</a>
                         </p>
                     </div>
                 </div>
