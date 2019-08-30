@@ -46,7 +46,7 @@ ms.locfileid: "63335492"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>遅延</strong></p></td>
+<td align="left"><p><strong>deferred</strong></p></td>
 <td align="left"><p>モジュールが読み込まれたが、デバッガーがシンボルを読み込むには試行されません。 必要なときにシンボルが読み込まれます。 参照してください<a href="deferred-symbol-loading.md" data-raw-source="[Deferred Symbol Loading](deferred-symbol-loading.md)">シンボルの読み込みの遅延</a>詳細についてはします。</p></td>
 </tr>
 <tr class="even">
@@ -66,7 +66,7 @@ ms.locfileid: "63335492"
 <td align="left"><p>シンボル ファイルは、デバッグ インターフェイスへのアクセス (DIA) 経由で読み込まれました。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>[エクスポート]</strong></p></td>
+<td align="left"><p><strong>Export</strong></p></td>
 <td align="left"><p>シンボル情報は、バイナリ ファイルのエクスポート テーブルから抽出されたため、実際のシンボル ファイルがありませんでした。</p></td>
 </tr>
 <tr class="odd">
@@ -74,15 +74,15 @@ ms.locfileid: "63335492"
 <td align="left"><p>シンボル ファイルと実行可能ファイル、そのタイムスタンプかチェックサムの不一致があります。 ただし、シンボル ファイルは、シンボルのオプション設定が原因か読み込まれています。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>パフォーマンス</strong></p></td>
+<td align="left"><p><strong>PERF</strong></p></td>
 <td align="left"><p>このバイナリを含む<a href="debugging-performance-optimized-code.md" data-raw-source="[performance-optimized code](debugging-performance-optimized-code.md)">コードのパフォーマンスが最適化された</a>します。 標準アドレス算術演算では、正しい結果が得られない可能性があります。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>削除</strong></p></td>
+<td align="left"><p><strong>Stripped</strong></p></td>
 <td align="left"><p>デバッグ情報がイメージ ファイルから削除されます。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>PDB ファイル</strong></p></td>
+<td align="left"><p><strong>PDB</strong></p></td>
 <td align="left"><p>シンボルは .pdb 形式です。</p></td>
 </tr>
 <tr class="odd">

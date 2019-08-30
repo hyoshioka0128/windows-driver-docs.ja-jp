@@ -183,7 +183,7 @@ ms.locfileid: "63335514"
 
 合計フラグのビットの既定値は、WinDbg で 0x30237、し、KD、CDB で 0xB0227 で 0x10C13 [DBH ツール](dbh.md)、これらのプログラムがシンボルに関連するコマンド ライン オプションを指定せずに起動された場合。
 
-### <a name="span-idsymopt-case-insensitivespanspan-idsymopt_case_insensitivespansymopt_case_insensitive"></a><span id="symopt-case-insensitive"></span><span id="SYMOPT_CASE_INSENSITIVE"></span>SYMOPT\_ケース\_INSENSITIVE
+### <a name="span-idsymopt-case-insensitivespanspan-idsymopt_case_insensitivespansymopt_case_insensitive"></a><span id="symopt-case-insensitive"></span><span id="SYMOPT_CASE_INSENSITIVE"></span>SYMOPT\_CASE\_INSENSITIVE
 
 このシンボルのオプションではシンボルの名前を大文字をすべて検索します。
 
@@ -207,7 +207,7 @@ ms.locfileid: "63335514"
 
 このオプションは、既定で DBH でオフにします。 DBH が実行されていることができますにすることオンまたはオフ symopt +4 または symopt-4 でをそれぞれ使用します。
 
-### <a name="span-idsymopt-no-cppspanspan-idsymopt_no_cppspansymopt_no_cpp"></a><span id="symopt-no-cpp"></span><span id="SYMOPT_NO_CPP"></span>SYMOPT\_いいえ\_CPP
+### <a name="span-idsymopt-no-cppspanspan-idsymopt_no_cppspansymopt_no_cpp"></a><span id="symopt-no-cpp"></span><span id="SYMOPT_NO_CPP"></span>SYMOPT\_NO\_CPP
 
 このシンボルのオプションは、C++ の変換をオフにします。 このシンボル オプションを設定すると、 **::** は置き換え **\_ \_** ですべてのシンボルです。
 
@@ -215,7 +215,7 @@ ms.locfileid: "63335514"
 
 このオプションは、既定で DBH でオフにします。 DBH が実行されていることができますにすることオンまたはオフ symopt +8 または symopt である-8 をそれぞれ使用します。
 
-### <a name="span-idsymopt-load-linesspanspan-idsymopt_load_linesspansymopt_load_lines"></a><span id="symopt-load-lines"></span><span id="SYMOPT_LOAD_LINES"></span>SYMOPT\_ロード\_行
+### <a name="span-idsymopt-load-linesspanspan-idsymopt_load_linesspansymopt_load_lines"></a><span id="symopt-load-lines"></span><span id="SYMOPT_LOAD_LINES"></span>SYMOPT\_LOAD\_LINES
 
 このシンボルのオプションは、ソース ファイルから読み取る行番号情報を使用できます。 このオプションは、ソースが正常に動作するデバッグの上にする必要があります。
 
@@ -223,27 +223,27 @@ KD、CDB でこのオプションは既定で無効です。このオプショ�
 
 このオプションは、DBH で既定でオンです。 DBH が実行されていることができますにすることオンまたはオフ symopt +10 または symopt、-10 をそれぞれ使用します。
 
-### <a name="span-idsymopt-omap-find-nearestspanspan-idsymopt_omap_find_nearestspansymopt_omap_find_nearest"></a><span id="symopt-omap-find-nearest"></span><span id="SYMOPT_OMAP_FIND_NEAREST"></span>SYMOPT\_OMAP\_検索\_NEAREST
+### <a name="span-idsymopt-omap-find-nearestspanspan-idsymopt_omap_find_nearestspansymopt_omap_find_nearest"></a><span id="symopt-omap-find-nearest"></span><span id="SYMOPT_OMAP_FIND_NEAREST"></span>SYMOPT\_OMAP\_FIND\_NEAREST
 
 コードが最適化されているし、予期される場所でシンボルはありません、このオプションは、代わりに使用される最も近いシンボルとなります。
 
-このオプションは、すべてのデバッガーで既定でオンです。 デバッガーが実行されていることができますにすることオンまたはオフを使用して **.symopt + 0x20**または .symopt 0x20、それぞれします。
+このオプションは、すべてのデバッガーで既定でオンです。 デバッガーが実行されていることができますにすることオンまたはオフを使用して **.symopt+0x20**または .symopt-0x20、それぞれします。
 
 このオプションは、DBH で既定でオンです。 DBH が実行されていることができますにすることオンまたはオフ symopt +20 または symopt、-20 をそれぞれ使用します。
 
-### <a name="span-idsymopt-load-anythingspanspan-idsymopt_load_anythingspansymopt_load_anything"></a><span id="symopt-load-anything"></span><span id="SYMOPT_LOAD_ANYTHING"></span>SYMOPT\_ロード\_すべて
+### <a name="span-idsymopt-load-anythingspanspan-idsymopt_load_anythingspansymopt_load_anything"></a><span id="symopt-load-anything"></span><span id="SYMOPT_LOAD_ANYTHING"></span>SYMOPT\_LOAD\_ANYTHING
 
 このシンボルのオプションでは、シンボルと一致する際に、シンボル ハンドラーの pickiness が減少します。
 
-このオプションは既定ではすべてのデバッガーではオフです。 デバッガーが実行されていることができますにすることオンまたはオフを使用して **.symopt + 0x40**または .symopt 0x40、それぞれします。
+このオプションは既定ではすべてのデバッガーではオフです。 デバッガーが実行されていることができますにすることオンまたはオフを使用して **.symopt+0x40**または .symopt-0x40、それぞれします。
 
 このオプションは、既定で DBH でオフにします。 DBH が実行されていることができますにすることオンまたはオフ symopt +40 または symopt-40, をそれぞれ使用します。
 
-### <a name="span-idsymopt-ignore-cvrecspanspan-idsymopt_ignore_cvrecspansymopt_ignore_cvrec"></a><span id="symopt-ignore-cvrec"></span><span id="SYMOPT_IGNORE_CVREC"></span>SYMOPT\_無視\_CVREC
+### <a name="span-idsymopt-ignore-cvrecspanspan-idsymopt_ignore_cvrecspansymopt_ignore_cvrec"></a><span id="symopt-ignore-cvrec"></span><span id="SYMOPT_IGNORE_CVREC"></span>SYMOPT\_IGNORE\_CVREC
 
 このシンボルのオプションではシンボルを検索するときに読み込まれたイメージ ヘッダーの CV レコードを無視するシンボル ハンドラー。
 
-このオプションは既定ではすべてのデバッガーではオフです。 これは、-sicv コマンド ライン オプションを使用してアクティブにできます。 デバッガーが実行されていることができますにすることオンまたはオフを使用して **.symopt + 0x80**または .symopt 0x80、それぞれします。
+このオプションは既定ではすべてのデバッガーではオフです。 これは、-sicv コマンド ライン オプションを使用してアクティブにできます。 デバッガーが実行されていることができますにすることオンまたはオフを使用して **.symopt+0x80**または .symopt-0x80、それぞれします。
 
 このオプションは、既定で DBH でオフにします。 DBH が実行されていることができますにすることオンまたはオフ symopt+80 または symopt-80 をそれぞれ使用します。
 

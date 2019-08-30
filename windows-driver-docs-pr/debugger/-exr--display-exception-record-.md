@@ -31,7 +31,7 @@ ms.locfileid: "63336755"
 .exr -1
 ```
 
-## <a name="span-idddkmetadisplayexceptionrecorddbgspanspan-idddkmetadisplayexceptionrecorddbgspanparameters"></a><span id="ddk_meta_display_exception_record_dbg"></span><span id="DDK_META_DISPLAY_EXCEPTION_RECORD_DBG"></span>パラメーター
+## <a name="span-idddk_meta_display_exception_record_dbgspanspan-idddk_meta_display_exception_record_dbgspanparameters"></a><span id="ddk_meta_display_exception_record_dbg"></span><span id="DDK_META_DISPLAY_EXCEPTION_RECORD_DBG"></span>パラメーター
 
 
 <span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span> *アドレス*   
@@ -69,7 +69,7 @@ ms.locfileid: "63336755"
 
 通常取得することができます、*アドレス*を使用して、 [ **! pcr** ](-pcr.md)拡張機能。
 
-**.Exr** 0x1E のバグ チェックをデバッグする多くの場合、コマンドを使用します。 詳細と例では、[**バグ チェック 0x1E** ](bug-check-0x1e--kmode-exception-not-handled.md) (KMODE_EXCEPTION_NOT_HANDLED)を参照してください。
+**.Exr** 0x1E のバグ チェックをデバッグする多くの場合、コマンドを使用します。 詳細と例では、[**バグ チェック 0x1E** ](bug-check-0x1e--kmode-exception-not-handled.md) (KMODE\_EXCEPTION\_NOT\_HANDLED)を参照してください。
 
  
 

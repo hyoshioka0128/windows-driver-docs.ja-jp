@@ -20,7 +20,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 08/26/2019
 ms.locfileid: "70025332"
 ---
-# <a name="bug-check-0x1e-kmode_exception_not_handled"></a>バグ チェック 0x1E:KMODE\_例外\_は\_処理されません
+# <a name="bug-check-0x1e-kmode_exception_not_handled"></a>バグ チェック 0x1E:KMODE\_EXCEPTION\_NOT\_HANDLED
 
 
 Kmode\_例外\_がハンドル\_されていませんバグチェックの値は0x0000001e です。 これは、カーネルモードプログラムが、エラーハンドラーがキャッチしなかった例外を生成したことを示します。
@@ -29,7 +29,7 @@ Kmode\_例外\_がハンドル\_されていませんバグチェックの値は
 > このトピックはプログラマーを対象としています。 コンピューターの使用中にブルースクリーンのエラーコードが表示された顧客の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://www.windows.com/stopcode)」を参照してください。
 
 
-## <a name="kmode_exception_not_handled-parameters"></a>Kmode\_例外\_が\_処理されていないパラメーター
+## <a name="kmode_exception_not_handled-parameters"></a>Kmode\_EXCEPTION\_NOT\_HANDLEDのパラメーター
 
 
 <table>
