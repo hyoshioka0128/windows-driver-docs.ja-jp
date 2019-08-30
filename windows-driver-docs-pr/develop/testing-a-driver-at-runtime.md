@@ -4,12 +4,12 @@ title: Visual Studio を使って実行時にドライバーをテストする�
 description: Visual Studio の WDK 拡張機能を使うと、ネットワーク上のテスト コンピューターで簡単にドライバーのビルド、展開、インストール、テストを実行できます。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 94636f9b606187f41771218439641922f23a2350
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d6cad70926d45baf1d07436d86a26448ec1b1db5
+ms.sourcegitcommit: 2231d322eb4e9597ad7f537a4aa82b83422bd46a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364215"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70020625"
 ---
 # <a name="how-to-test-a-driver-at-runtime-using-visual-studio"></a>Visual Studio を使って実行時にドライバーをテストする方法
 
@@ -98,7 +98,7 @@ WDK 8.1 以降では、テスト コンピューターで実行する HCK テス
 * [WDK 8.1 の HCK テスト スイートを実行する方法](run-the-hck-test-suites-in-the-wdk.md)
 * [Device Fundamental テストを選んで構成する方法](how-to-select-and-configure-the-device-fundamental-tests.md)
 * [テスト コンピューターへのドライバーの展開](deploying-a-driver-to-a-test-computer.md)
-* [Visual Studio でのカーネル モード デバッグの設定](https://docs.microsoft.com/windows-hardware/drivers/debugger/setting-up-kernel-mode-debugging-in-visual-studio)
+* [Windows のデバッグの概要](https://docs.microsoft.com/windows-hardware/drivers/debugger/getting-started-with-windows-debugging)
 * [ハードウェア認定プログラム](https://go.microsoft.com/fwlink/p/?linkid=227016)
 * [Windows ハードウェア認定キット (HCK)](https://go.microsoft.com/fwlink/p/?linkid=254893)
 * [コマンド プロンプトから実行時にドライバーをテストする方法](how-to-test-a-driver-at-runtime-from-a-command-prompt.md)
