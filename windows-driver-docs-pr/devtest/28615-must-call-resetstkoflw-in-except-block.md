@@ -1,6 +1,6 @@
 ---
 title: C28615
-description: _ _Try ブロックで _alloca を呼び出すときに、_ _except() ブロックで _resetstkoflw を呼び出す警告 C28615 する必要があります。 Catch() ブロック内から _resetstkoflw を呼び出さないでください。
+description: __Try ブロックで _alloca を呼び出すときに、__except() ブロックで _resetstkoflw を呼び出す警告 C28615 する必要があります。 Catch() ブロック内から _resetstkoflw を呼び出さないでください。
 ms.assetid: bccfc846-58b9-4c20-bbe7-383ecf836165
 ms.date: 04/20/2017
 ms.localizationpriority: medium
