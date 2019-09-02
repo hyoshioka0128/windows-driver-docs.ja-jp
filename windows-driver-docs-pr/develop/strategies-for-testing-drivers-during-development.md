@@ -4,12 +4,12 @@ title: ドライバー コードとドライバー パッケージのテスト�
 description: テストを開始するタイミング。 ドライバーの要件がある場合はすぐに、テスト ケースの設計を開始して、重要な要件が実装されていることをテストできます。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d7df260a28c7469baa60a2144109adc226eca29
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2273cafe071233a29c0af92a2728a78c2be8c7f9
+ms.sourcegitcommit: 2231d322eb4e9597ad7f537a4aa82b83422bd46a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364221"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70020630"
 ---
 # <a name="tips-for-testing-drivers-during-development"></a>開発中のドライバーのテストに関するヒント
 
@@ -48,7 +48,8 @@ ms.locfileid: "67364221"
 
 -   WDK に含まれている Device Fundamental テストを実行します。 「[Visual Studio を使って実行時にドライバーをテストする方法](testing-a-driver-at-runtime.md)」と「[Device Fundamental テストを選んで構成する方法](how-to-select-and-configure-the-device-fundamental-tests.md)」をご覧ください。
 
--   デバッガーを設定して、テスト結果のトラブルシューティングとデバッグを実行できるようにします。 詳しくは、「[Visual Studio でのカーネル モード デバッグの設定](https://docs.microsoft.com/windows-hardware/drivers/debugger/setting-up-kernel-mode-debugging-in-visual-studio)」をご覧ください。
+-   デバッガーを設定して、テスト結果のトラブルシューティングとデバッグを実行できるようにします。 詳しくは、「[Windows のデバッグの概要](https://docs.microsoft.com/windows-hardware/drivers/debugger/getting-started-with-windows-debugging)」をご覧ください。
+ 
 -   展開に使うテスト コンピューターで、ドライバーの検証ツールを有効にします。「[ドライバー プロジェクトのドライバーの検証ツール プロパティ](driver-verifier-properties-for--driver-projects.md)」をご覧ください。 [[DDI 準拠の検査]](https://docs.microsoft.com/windows-hardware/drivers/devtest/ddi-compliance-checking) オプションを選択します。 DDI 準拠の検査でドライバーが失敗した場合は、[静的ドライバー検証](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier)ツールを実行して、失敗の原因となったルールを明確にします。 静的ドライバー検証ツールは、ソース ファイル内でバグの原因を見つけるのに役立ちます。
 -   できる限り多くの異なるハードウェア構成で、ドライバーとデバイスをテストします。 さまざまなハードウェアを使うと、デバイス間の競合や、デバイス操作でのその他のエラーを見つけるのに役立ちます。 たとえば、プロセッサ アーキテクチャが異なる複数のコンピューターや、32 ビット バージョンと 64 ビット バージョンの Windows がそれぞれ動作するコンピューターで、ドライバーとデバイスをテストする必要があります。
 
@@ -56,12 +57,3 @@ ms.locfileid: "67364221"
 -   マルチプロセッサ システムで、ドライバーとデバイスをテストします。 他では見つからない競合条件やその他のタイミングの問題が、マルチプロセッサ システムでは明らかになります。 「[Device Fundamental テストを選んで構成する方法](how-to-select-and-configure-the-device-fundamental-tests.md)」と「[複数のプロセッサ グループをサポートするためのテスト ドライバーのブート パラメーター](https://docs.microsoft.com/windows-hardware/drivers/devtest/boot-parameters-to-test-drivers-for-multiple-processor-group-support)」をご覧ください。
 
 -   特定のシステムとハードウェアの条件、特に周辺条件について、ドライバーとデバイスをテストします。 たとえば、"D3 hot (D3 ホット)" や "D3 cold (D3 コールド)" などの条件があります。 デバイスの電源状態 "D3 hot (D3 ホット)" (電源が失われていない) と "D3 cold (D3 コールド)" (電源がデバイスから削除されている) から、ドライバーとデバイスが適切に復帰することを確認します。 詳しくは、「[Device Fundamental テストを選んで構成する方法](how-to-select-and-configure-the-device-fundamental-tests.md)」をご覧ください。
-
- 
-
- 
-
-
-
-
-

@@ -1,15 +1,15 @@
 ---
 ms.assetid: 328404BD-E888-4AAA-AA24-B57FD01E9E54
 title: テスト コンピューターへのドライバーの展開
-description: Visual Studio では、WDK が提供するテスト機能を使って、テスト用コンピューターでドライバーをビルド、展開、デバッグすることができます。
+description: Visual Studio では、WDK が提供するテスト機能を使って、テスト コンピューター上でドライバーをビルド、配置することができます。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 613870a14b456ec66946a628f0ef1785a0202009
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b0f336f87cdc4e6151c9026d5695f9a316936afd
+ms.sourcegitcommit: 2231d322eb4e9597ad7f537a4aa82b83422bd46a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67370768"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70020673"
 ---
 # <a name="deploying-a-driver-to-a-test-computer"></a>テスト コンピューターへのドライバーの展開
 

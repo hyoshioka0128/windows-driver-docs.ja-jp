@@ -10,12 +10,12 @@ keywords:
 ms.date: 08/06/2018
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 9b5474cc1f29ed61568ff616ca941252008da284
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3db8d0129bc520fe43bc9a5e27950fa50e9b356e
+ms.sourcegitcommit: 44f09d983954f27fd90b737a2dd142aad7dffd9d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67372010"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70059188"
 ---
 # <a name="download-the-windows-driver-kit-wdk"></a>Windows Driver Kit (WDK) のダウンロード
 
@@ -85,7 +85,7 @@ Windows 7|Windows Server 2008 R2 SP1|
 
 * [GitHub](https://github.com/Microsoft/Windows-driver-samples) のドライバー サンプル ページにアクセスし、ページの右側にある **[Clone or download] (クローンまたはダウンロード) > [Download ZIP] (ZIP をダウンロード)** をクリックします。
 * [GitHub Extension for Visual Studio](https://visualstudio.github.com/) をダウンロードして、GitHub リポジトリに接続します。
-* [ドライバー サンプルの最新情報をご覧ください](https://developer.microsoft.com/windows/hardware/drivers-code-samples)。
+* [Microsoft サンプル ポータル上でドライバーのサンプルを参照します](https://docs.microsoft.com/en-us/samples/browse/?products=windows-wdk)。
 
 ## <a name="related-downloads"></a>関連するダウンロード
 

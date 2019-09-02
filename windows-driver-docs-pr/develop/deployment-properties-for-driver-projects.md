@@ -4,12 +4,12 @@ title: ドライバー パッケージ プロジェクトの展開プロパテ�
 description: プロジェクトの各構成で、リモート テスト コンピューターにドライバー パッケージを自動的に展開するように構成できます。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1580a9c8d54c9e2064bf1069a9926ba3dc9a544a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a8670f7bb647998ee7cc7b88e636034b5256b86e
+ms.sourcegitcommit: 2231d322eb4e9597ad7f537a4aa82b83422bd46a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67370754"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70020656"
 ---
 # <a name="deployment-properties-for-driver-package-projects"></a>ドライバー パッケージ プロジェクトの展開プロパティ
 
@@ -39,7 +39,9 @@ ms.locfileid: "67370754"
 ## <a name="span-idtarget_computer_namespanspan-idtarget_computer_namespanspan-idtarget_computer_namespantarget-computer-name"></a><span id="Target_computer_name"></span><span id="target_computer_name"></span><span id="TARGET_COMPUTER_NAME"></span>ターゲット コンピューター名
 
 
-展開とテストに使うターゲット コンピューターを選ぶことができます。 テスト コンピューターを構成済みの場合は、この一覧から選ぶことができます。 テスト コンピューターが構成されていない場合は、 **[参照]** ボタンを使って構成できます。 テスト コンピューターの構成について詳しくは、「[テスト コンピューターへのドライバーの展開](deploying-a-driver-to-a-test-computer.md)」をご覧ください。 プロジェクト構成とプラットフォームが、テスト システムのターゲット アーキテクチャと必ず一致するようにしてください。 よく発生する展開エラーは、x64 バージョンの Windows を実行しているシステムに x86 (Win32) ドライバーをインストールしようとする場合です。 テスト コンピューターを構成するときに、カーネル モード デバッガーを実行することもできます。 詳しくは、「[Setting Up Kernel-Mode Debugging in Visual Studio (Visual Studio でのカーネル モード デバッグの設定)](https://docs.microsoft.com/windows-hardware/drivers/debugger/setting-up-kernel-mode-debugging-in-visual-studio)」をご覧ください。
+展開とテストに使うターゲット コンピューターを選ぶことができます。 テスト コンピューターを構成済みの場合は、この一覧から選ぶことができます。 テスト コンピューターが構成されていない場合は、 **[参照]** ボタンを使って構成できます。 テスト コンピューターの構成について詳しくは、「[テスト コンピューターへのドライバーの展開](deploying-a-driver-to-a-test-computer.md)」をご覧ください。 プロジェクト構成とプラットフォームが、テスト システムのターゲット アーキテクチャと必ず一致するようにしてください。 よく発生する展開エラーは、x64 バージョンの Windows を実行しているシステムに x86 (Win32) ドライバーをインストールしようとする場合です。 
+
+デバッガーの操作について詳しくは、「[Windows のデバッグの概要](https://docs.microsoft.com/windows-hardware/drivers/debugger/getting-started-with-windows-debugging)」をご覧ください。
 
 ## <a name="span-iddriver_installation_optionsspanspan-iddriver_installation_optionsspanspan-iddriver_installation_optionsspandriver-installation-options"></a><span id="Driver_installation_options"></span><span id="driver_installation_options"></span><span id="DRIVER_INSTALLATION_OPTIONS"></span>ドライバーのインストールのオプション
 
@@ -64,7 +66,7 @@ ms.locfileid: "67370754"
 
 * [テスト コンピューターへのドライバーの展開](deploying-a-driver-to-a-test-computer.md)
 * [Visual Studio を使って実行時にドライバーをテストする方法](testing-a-driver-at-runtime.md)
-* [Visual Studio でのカーネル モード デバッグの設定](https://docs.microsoft.com/windows-hardware/drivers/debugger/setting-up-kernel-mode-debugging-in-visual-studio)
+* [Windows のデバッグの概要](https://docs.microsoft.com/windows-hardware/drivers/debugger/getting-started-with-windows-debugging)
  
 
  

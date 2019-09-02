@@ -4,18 +4,18 @@ title: ドライバー パッケージ プロジェクトのドライバーの�
 description: ドライバー検証ツールは、ドライバーのテストの効果を高める、実行時検証ツールです。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fb1f628118afd80607076e94d3d8ba15915b95de
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7b3537290ee321df517088dd181c556960f3d643
+ms.sourcegitcommit: 2231d322eb4e9597ad7f537a4aa82b83422bd46a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67370741"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70020652"
 ---
 # <a name="driver-verifier-properties-for-driver-package-projects"></a>ドライバー パッケージ プロジェクトのドライバーの検証ツール プロパティ
 
 [ドライバー検証ツール](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)は、ドライバーのテストの効果を高める、実行時検証ツールです。 ドライバーの検証ツールを有効化して構成し、ドライバーをテスト用に展開するときにすべてのテスト コンピューター上で実行されるようにすることができます。
 
-リモート テスト コンピューターでドライバーの検証ツールを有効にする場合は、常にテスト コンピューターとのカーネル モード デバッグ接続をセットアップする必要があります。 ターゲット コンピューターの構成と、デバッグ ケーブルの設定について詳しくは、「[Setting Up Kernel-Mode Debugging in Visual Studio (Visual Studio でのカーネル モード デバッグの設定)](https://docs.microsoft.com/windows-hardware/drivers/debugger/setting-up-kernel-mode-debugging-in-visual-studio)」をご覧ください。
+リモート テスト コンピューターでドライバーの検証ツールを有効にする場合は、常にテスト コンピューターとのカーネル モード デバッグ接続をセットアップする必要があります。 ターゲット コンピューターの構成と、デバッグ ケーブルの設定について詳しくは、「[Windows のデバッグの概要](https://docs.microsoft.com/windows-hardware/drivers/debugger/getting-started-with-windows-debugging)」をご覧ください。
 
 ## <a name="span-idsetting_driver_verifier_properties_for_driver_package_projectsspanspan-idsetting_driver_verifier_properties_for_driver_package_projectsspanspan-idsetting_driver_verifier_properties_for_driver_package_projectsspansetting-driver-verifier-properties-for-driver-package-projects"></a><span id="Setting_Driver_Verifier_properties_for_driver_package_projects"></span><span id="setting_driver_verifier_properties_for_driver_package_projects"></span><span id="SETTING_DRIVER_VERIFIER_PROPERTIES_FOR_DRIVER_PACKAGE_PROJECTS"></span>ドライバー パッケージ プロジェクトのドライバー検証ツール プロパティの設定
 
@@ -139,8 +139,8 @@ ms.locfileid: "67370741"
 
 * [ドライバーの検証ツール](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)
 * [Visual Studio を使って実行時にドライバーをテストする方法](testing-a-driver-at-runtime.md)
-* [Visual Studio でのカーネル モード デバッグの設定](https://docs.microsoft.com/windows-hardware/drivers/debugger/setting-up-kernel-mode-debugging-in-visual-studio)
 * [テスト コンピューターへのドライバーの展開](deploying-a-driver-to-a-test-computer.md)
+* [Windows のデバッグの概要](https://docs.microsoft.com/windows-hardware/drivers/debugger/getting-started-with-windows-debugging)
  
 
  

@@ -4,12 +4,12 @@ title: WDK 8.1 の HCK テスト スイートを実行する方法
 description: WDK で Windows ドライバーをより簡単にテストできるようにするために、WDK 8.1 以降では、テスト コンピューターで実行する HCK テスト スイートを選べるようになりました。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 90fa4555a0c1a09756b617cecb8143499b494e29
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 186461bfda62753dd3e9e5998e8dd257d476df1e
+ms.sourcegitcommit: 2231d322eb4e9597ad7f537a4aa82b83422bd46a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364250"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70020668"
 ---
 # <a name="how-to-run-the-hck-test-suites-in-wdk-81"></a>WDK 8.1 の HCK テスト スイートを実行する方法
 
@@ -302,24 +302,12 @@ HCK テストは、コマンド プロンプト ウィンドウまたは Visual 
 </tbody>
 </table>
 
- 
-
 ## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
-
 
 * [Visual Studio を使って実行時にドライバーをテストする方法](testing-a-driver-at-runtime.md)
 * [Device Fundamental テストを選んで構成する方法](how-to-select-and-configure-the-device-fundamental-tests.md)
 * [テスト コンピューターへのドライバーの展開](deploying-a-driver-to-a-test-computer.md)
-* [Visual Studio でのカーネル モード デバッグの設定](https://docs.microsoft.com/windows-hardware/drivers/debugger/setting-up-kernel-mode-debugging-in-visual-studio)
+* [Windows のデバッグの概要](https://docs.microsoft.com/windows-hardware/drivers/debugger/getting-started-with-windows-debugging)
 * [ハードウェア認定プログラム](https://go.microsoft.com/fwlink/p/?linkid=227016)
 * [Windows ハードウェア認定キット (HCK)](https://go.microsoft.com/fwlink/p/?linkid=254893)
 * [コマンド プロンプトから実行時にドライバーをテストする方法](how-to-test-a-driver-at-runtime-from-a-command-prompt.md)
- 
-
- 
-
-
-
-
-
-

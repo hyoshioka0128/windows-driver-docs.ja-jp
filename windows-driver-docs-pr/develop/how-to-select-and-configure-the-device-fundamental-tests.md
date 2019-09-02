@@ -4,12 +4,12 @@ title: Device Fundamental テストを選んで構成する方法
 description: Windows 8 用 WDK には、Device Fundamental テストと呼ばれる一連のテストを含むドライバー テスト フレームワークが用意されています。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ea15e3628e9de1a3171bb0bb24428218135e2bc
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: d711a7140ce1c284d80122efa70adf8f739efeac
+ms.sourcegitcommit: 2231d322eb4e9597ad7f537a4aa82b83422bd46a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67393534"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70020644"
 ---
 # <a name="how-to-select-and-configure-the-device-fundamentals-tests"></a>Device Fundamental テストを選んで構成する方法
 
@@ -72,8 +72,9 @@ WDK には、"基本" と "認定" の 2 つの構成の Device Fundamental テ�
 <dl>
 <dt><span id="To_test_all_devices_that_were_installed_with_a_specific_INF_File_"></span><span id="to_test_all_devices_that_were_installed_with_a_specific_inf_file_"></span><span id="TO_TEST_ALL_DEVICES_THAT_WERE_INSTALLED_WITH_A_SPECIFIC_INF_FILE_"></span>特定の INF ファイルを使ってインストールされたすべてのデバイスをテストするには:</dt>
 <dd><p><strong>INF::FileName=</strong><em>INF_File_Name</em></p>
-<p>例: <strong>INF::OriginalInfFileName='%InfFileName%'</strong></p>
-<p>これが既定値です。</p>
+<p>例: <strong>INF::OriginalInfFileName='KMDFTest.inf'</strong></p>
+ <p><strong>Inf::OriginalInFileName は任意の INF と共に使用できます。</strong></p>
+
 </dd>
 <dt><span id="To_test_a_device_with_a_specific_Device_Id__"></span><span id="to_test_a_device_with_a_specific_device_id__"></span><span id="TO_TEST_A_DEVICE_WITH_A_SPECIFIC_DEVICE_ID__"></span>特定のデバイス ID を持つデバイスをテストするには: </dt>
 <dd><p><strong>DeviceId=’</strong><em>DeviceId</em><strong>’</strong></p>
@@ -82,13 +83,31 @@ WDK には、"基本" と "認定" の 2 つの構成の Device Fundamental テ�
 <dt><span id="_To_test_a_device_with_a_specific_interface_"></span><span id="_to_test_a_device_with_a_specific_interface_"></span><span id="_TO_TEST_A_DEVICE_WITH_A_SPECIFIC_INTERFACE_"></span> 特定のインターフェイスを持つデバイスをテストするには:</dt>
 <dd><p><strong>Interfaces::</strong><em>InterfaceGUID</em></p>
 </dd>
+ 
 <dt><span id="To_test_a_device_with_a_specific_driver_letter_"></span><span id="to_test_a_device_with_a_specific_driver_letter_"></span><span id="TO_TEST_A_DEVICE_WITH_A_SPECIFIC_DRIVER_LETTER_"></span>特定のドライブ文字を持つデバイスをテストするには:</dt>
 <dd><p><strong>Volume::DriverLetter=’</strong><em>DriveLetter</em><strong>’</strong></p>
 <p>例: <strong>Volume::DriverLetter=’c:\’</strong></p>
 </dd>
 <dt><span id="To_test_a_device_with_a_specific_driver____"></span><span id="to_test_a_device_with_a_specific_driver____"></span><span id="TO_TEST_A_DEVICE_WITH_A_SPECIFIC_DRIVER____"></span>特定のドライバーを持つデバイスをテストするには:</dt>
 <dd><p><strong>DriverBinaryNames=</strong><em>mydriver.sys</em></p>
+
+ここで、<strong>KMDFTest.inf</strong> はドライバーのインストールに使用される inf です。 <strong>KMDFTest.sys</strong> ドライバーを使用する以下の対象デバイスを使用することもできます。</p>
+(<strong>DriverBinaryNames</strong>='<strong>KMDFTest.sys</strong>') は機能します。
+
+SDEL を正しく設定した後、テストを実行すると、コンソールに次の出力が表示されます。
+
+WDTF_TARGETS              :INFO  :  - Query("IsDevice AND ((Inf::OriginalInfFileName='KMDFTest.inf'))") WDTF_TARGETS              :INFO  :        ターゲット:KMDFTest Device ROOT\SAMPLE\0000 WDTF_TEST                 :INFO  :警告:The test is not enforcing that Driver Verifier is enabled.
+WDTF_TEST :INFO  :DV is enabled with Flag:=0x209bb WDTF_TEST                 :INFO  :DV is successfully enabled for all drivers of this devnode(UniqueTargetName):=KMDFTest Device ROOT\SAMPLE\0000 WDTF_TARGET               :INFO  :  - GetInterface("Support") WDTF_TARGET               :INFO  :        ターゲット:DESKTOP-2OVFH3G WDTF_TARGETS              :INFO  :  - Query("IsDevice") WDTF_TARGETS              :INFO  :        ターゲット:KMDFTest Device ROOT\SAMPLE\0000 WDTF_TARGETS              :INFO  :  - GetRelations("below-or-self/","IsDevice") WDTF_TARGETS              :INFO  :        ターゲット:KMDFTest Device ROOT\SAMPLE\0000 WDTF_TARGETS              :INFO  :  - GetInterfacesIfExist("SimpleIOStressProc") WDTF_SIMPLE_IO            :INFO  :  - For Target:KMDFTest Device ROOT\SAMPLE\0000  no Simple IO Interface was found.
+WDTF_SIMPLE_IO            :INFO  :  - For Target:KMDFTest Device ROOT\SAMPLE\0000  WDTF will use the ANY Simple IO Interface.
+
+See attached files config and log files for more details. WDTF_TARGETS              :INFO  :        ターゲット:KMDFTest Device ROOT\SAMPLE\0000 WDTF_TEST                 :INFO  :Perform 1 cycle(s) of I/O termination test WDTF_TEST                 :INFO  :I/O termination cycle #1 WDTF_SIMPLEIO_STRESS_PROC :INFO  :  - StartAsync(KMDFTest Device ROOT\SAMPLE\0000 ) WDTF_SIMPLEIO_STRESS_PROC :INFO  :  - WaitAsyncCompletion(KMDFTest Device ROOT\SAMPLE\0000 ) WDTF_SIMPLE_IO            :INFO  :  - For Target:KMDFTest Device ROOT\SAMPLE\0000  no Simple IO Interface was found.
+WDTF_SIMPLE_IO            :INFO  :  - For Target:KMDFTest Device ROOT\SAMPLE\0000  WDTF will use the ANY Simple IO Interface.
+WDTF_SIMPLE_IO            :INFO  :  - Open(KMDFTest Device ROOT\SAMPLE\0000 ) Try count 1 WDTF_SUPPORT              :INFO  :  - WaitForMinutes :1 WDTF_SIMPLE_IO            :INFO  :  - PerformIO(KMDFTest Device ROOT\SAMPLE\0000 ) Count 1 WDTF_SIMPLEIO_STRESS_PROC :INFO  :  - Terminate(KMDFTest Device ROOT\SAMPLE\0000 ) process
+
+
 </dd>
+ 
+ 
 <dt><span id="____To_test_all_device_of_a_specific_device_Class___________________"></span><span id="____to_test_all_device_of_a_specific_device_class___________________"></span><span id="____TO_TEST_ALL_DEVICE_OF_A_SPECIFIC_DEVICE_CLASS___________________"></span> 特定のデバイス クラスのすべてのデバイスをテストするには:</dt>
 <dd><p>たとえば、<strong>Class=CDROM</strong> は CDROM クラスのすべてのデバイスをテストします。</p>
 <p>たとえば、<strong>ClassGUID= {36fc9e60-c465-11cf-8056-444553540000}</strong> は、クラス GUID が指定した GUID と一致するすべてのデバイスをテストします。 この例では、GUID は USB クラスの GUID です。</p>
