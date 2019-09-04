@@ -4,12 +4,12 @@ description: ポーリング イベントのサポートの追加
 ms.assetid: 7c7617d4-22d6-48a8-b69c-dd0347f078dd
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 49cadc544658f1279c73dae86f47ef620d76a25a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7c537f62660a010ed4f5be585c02d7466d1e7cf1
+ms.sourcegitcommit: 06f357860a18d28ee875f33f89a5a0ac2ff02b3f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383409"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70225336"
 ---
 # <a name="adding-polling-event-support"></a>ポーリング イベントのサポートの追加
 
@@ -17,42 +17,42 @@ ms.locfileid: "67383409"
 
 
 
-レポートのイベントのポーリングはを WIA ドライバーを正しく設定するには、次の操作を行います。
+ポーリングイベントを報告するように WIA ドライバーを適切に設定するには、次の手順を実行します。
 
-1.  設定**機能 = 0x33**デバイスの INF ファイルにします。 (を参照してください[WIA デバイスの INF ファイル](inf-files-for-wia-devices.md)詳細についてはします)。
+1.  デバイスの INF ファイルに  **Capabilities = 0x33**を設定します。 (詳細については、「 [WIA デバイスの INF ファイル](inf-files-for-wia-devices.md)」を参照してください)。
 
-2.  レポート STI\_GENCAP\_通知と STI\_USD\_GENCAP\_ネイティブ\_で PUSHSUPPORT、 [ **IStiUSD::GetCapabilities**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-getcapabilities)メソッド。
+2.  \_\_ [**Ib usd:: getcapabilities**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-getcapabilities)メソッド\_でのレポートの\_\_GENCAP通知と sti USD GENCAP NATIVE pushsupport。\_
 
-3.  サポートされているレポートのすべてのイベント、 [ **IWiaMiniDrv::drvGetCapabilities** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvgetcapabilities)メソッド。
+3.  [**IWiaMiniDrv::D rvgetcapabilities**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvgetcapabilities)メソッドでサポートされているすべてのイベントを報告します。
 
-4.  呼び出しに応答、 [ **IStiUSD::GetStatus** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-getstatus)メソッド。 WIA サービスは、INF ファイルで構成可能な事前設定された間隔で、このメソッドを呼び出します。 既定の設定は、1 秒間隔です。
+4.  [**Ib usd:: GetStatus**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-getstatus)メソッドの呼び出しに応答します。 WIA サービスは、INF ファイルで構成できる事前設定された間隔でこのメソッドを呼び出します。 既定の設定は1秒間隔です。
 
-5.  適切なイベント情報の対応を報告、 [ **IStiUSD::GetNotificationData** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-getnotificationdata)メソッド。
+5.  [**Ib usd:: GetNotificationData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-getnotificationdata)メソッドで、適切なイベント情報の応答を報告します。
 
-WIA サービスの呼び出し、 **IStiUSD::GetStatus**メソッドの 2 つの主要な操作。
+次の2つの主要な操作については、WIA サービスは**ib usd:: GetStatus**メソッドを呼び出します。
 
 1.  デバイスのオンライン状態を確認しています。
 
-2.  プッシュ ボタンのイベントなどのデバイス イベントのポーリングを行います。
+2.  プッシュボタンイベントなどのデバイスイベントのポーリング。
 
-操作要求を決定することができるようチェック、 **StatusMask**のメンバー、 [ **STI\_デバイス\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sti/ns-sti-_sti_device_status)構造体。 **StatusMask**メンバーには、次の要求のいずれかを指定できます。
+操作要求を特定するには、 [**STI\_デバイス\_の状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sti/ns-sti-_sti_device_status)構造の**statusmask**メンバーをチェックします。 **Statusmask**メンバーは、次の要求のいずれかになります。
 
-<a href="" id="sti-devstatus-online-state"></a>STI\_DEVSTATUS\_オンライン\_状態  
-この操作の要求は、デバイスがオンラインであり、設定を入力する必要があるかどうかを確認します。、 **dwOnlinesState** 、STI のメンバー\_デバイス\_ステータス構造体。
+<a href="" id="sti-devstatus-online-state"></a>STI\_DEVSTATUS\_の\_オンライン状態  
+この操作要求は、デバイスがオンラインであるかどうかを確認し、デバイスの\_状態構造\_の**dwOnlinesState**メンバーを設定して入力する必要があります。
 
-<a href="" id="sti-devstatus-events-state"></a>STI\_DEVSTATUS\_イベント\_状態  
-この操作の要求は、デバイスのイベントを確認します。 設定して指定する必要があります、 **dwEventHandlingState** 、STI のメンバー\_デバイス\_ステータス構造体。 使用する必要がある値は STI\_様々\_保留します。 (デバイスが保留中のイベントを待機している、WIA サービスに報告します。)
+<a href="" id="sti-devstatus-events-state"></a>STI\_DEVSTATUS\_イベント\_の状態  
+この操作要求は、デバイスイベントを確認します。 これは、STI\_デバイス\_の状態構造の**dwEventHandlingState**メンバーを設定して入力する必要があります。 使用する必要がある値は、\_STI\_EVENTHANDLING PENDING です。 (デバイスには保留中のイベントがあり、WIA サービスへのレポートを待機しています)。
 
-STI\_様々\_PENDING に設定されている、WIA サービスが WIA ドライバーでイベントが発生したことを通知します。 WIA サービスの呼び出し、 **IStiUSD::GetNotificationData**イベントに関する詳細を取得します。
+[STI\_EVENTHANDLING\_PENDING] が設定されている場合、wia サービスは、wia ドライバーでイベントが発生したことを通知します。 WIA サービスは、 **ib usd:: GetNotificationData**メソッドを呼び出して、イベントに関する詳細情報を取得します。
 
-**IStiUSD::GetNotificationData**ポーリングされたイベントと割り込みイベント メソッドが呼び出されます。 WIA サービスに戻るに適切なイベント情報を入力する必要がありますが、このメソッドになります。
+**I、usd:: GetNotificationData**メソッドは、ポーリングイベントと割り込みイベントに対して呼び出されます。 この方法では、適切なイベント情報を入力して、WIA サービスに返す必要があります。
 
-**注**  * * *、STI を常にオフ\_様々\_保留中のフラグ、 **dwEventHandlingState**デバイス イベントの発生時に正しく設定されていることを確認するにはメンバー。
-この WIA ドライバーを設定する必要があります、 *m\_guidLastEvent*クラス メンバー変数を適切なイベントのイベントが検出されたときに GUID をします。 *M\_guidLastEvent* WIA サービスを呼び出すと、後でオンになって、 **IStiUSD::GetNotificationData**メソッド。 *M\_guidLastEvent*でメンバー変数が定義されている、 **CWIADevice**シグナル状態に (次のコード スニペット)、クラスが、最後のイベントをキャッシュするために使用します。 GUID に常に設定されている、WIA サービスでこのメンバー変数を要求すると、\_NULL。
+**注**\_\_デバイスイベントが発生したときに適切に設定されるようにするには、dwEventHandlingState メンバーの [STI EVENTHANDLING PENDING] フラグを常にオフにします。  
+この WIA ドライバーでは、イベントが検出されたときに、 *m\_guidlastevent*クラスのメンバー変数を適切なイベント GUID に設定する必要があります。 後で、WIA サービスが**ib usd:: getnotificationdata**メソッドを呼び出すときに、 *m\_guidlastevent*がチェックされます。 *M\_guidlastevent*メンバー変数は、最後にシグナル状態になったイベントをキャッシュするために使用される**cwiadevice**クラス (次のコードスニペット) で定義されています。 このメンバー変数は、WIA サービスによって要求された後、常に\_GUID NULL に設定されます。
 
  
 
-次の例の実装を示しています、 [ **IStiUSD::GetStatus** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-getstatus)メソッド。
+次の例は、 [**IGetStatus**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-getstatus)メソッドの実装を示しています。
 
 ```cpp
 STDMETHODIMP CWIADevice::GetStatus(PSTI_DEVICE_STATUS pDevStatus)
