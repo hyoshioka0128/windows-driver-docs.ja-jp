@@ -6,7 +6,7 @@
       href: hardware-dashboard-faq.md
     - name: ハードウェアの提出
       items:
-        - name: ハードウェアの提出
+        - name: ハードウェア申請の概要
           href: hardware-certification-submissions.md
         - name: 新しいハードウェア申請の作成
           href: create-a-new-hardware-submission.md
@@ -14,11 +14,11 @@
           href: manage-your-hardware-submissions.md
         - name: ハードウェア申請を検索する
           href: find-hardware-submission.md
-        - name: 新しい WLK デバイス認定申請の作成
+        - name: WLK デバイス認定を申請する
           items:
-            - name: 新しい WLK デバイス認定申請の作成
+            - name: 新しい WLK デバイス認定申請を作成する
               href: create-a-new-hardware-logo-submission.md
-            - name: Winqual Submission Tool (winqual.exe)
+            - name: Winqual Submission Tool を使用する (winqual.exe)
               href: winqual-submission-tool--winqualexe-.md
         - name: ID の定義
           href: id-definitions.md
@@ -27,12 +27,132 @@
         - name: 複数のバージョンの Windows で Microsoft によって署名されたドライバーを取得する方法
           href: get-drivers-signed-by-microsoft-for-multiple-windows-versions.md
         - name: ドライバーのフライティング
-          href: driver-flighting.md
+          items:
+            - name: 概要
+              href: driver-flighting.md
+            - name: Microsoft ドライバーの測定値
+              href: overview-of-microsoft-driver-measure-dictionary.md
+            - name: ドライバー測定の属性
+              href: measure-attributes.md
+            - name: 全体的な測定値
+              items:
+                - name: ドライバー インストールの測定値
+                  items:
+                    - name: ドライバー インストール プロセスが正常に完了したマシンの割合
+                      href: pct-machines-where-driver-install-completes-successfully.md
+                    - name: ドライバーの更新プログラムがインストールされ、インストールから 2 日以内に PnP エラー コードが報告されたマシンの割合
+                      href: pct-machines-installed-driver-update-and-reported-pnp-error-within-2-days.md
+                - name: 信頼性の測定値
+                  items:
+                    - name: カーネル モード クラッシュなしのマシンの割合
+                      href: pct-machines-without-kernel-mode-crash.md
+                    - name: ライブ カーネル ダンプなしのマシンの割合
+                      href: pct-machines-without-live-kernel-dump.md
+            - name: デバイス クラスの測定値
+              items:
+                - name: オーディオ
+                  items:
+                    - name: オーディオの測定値
+                      href: audio-measures.md
+                    - name: 少なくとも 1 つのオーディオ ストリーム初期化エラーが発生したマシンの割合
+                      href: pct-machines-with-at-least-one-audio-stream-initialization-failure.md
+                    - name: subpar ストリーム初期化成功率のあるマシンの割合
+                      href: pct-machines-with-subpar-stream-initialization-success-rate.md
+                    - name: 少なくとも 1 つのオーディオ クラッシュが発生したマシンの割合
+                      href: percent-machines-with-at-least-one-audio-crash.md
+                    - name: 少なくとも 1 つのオーディオ ハングが発生したマシンの割合
+                      href: pct-machines-with-at-least-one-audio-hang.md
+                - name: Bluetooth
+                  items:
+                    - name: Bluetooth の測定値
+                      href: bluetooth-measures.md
+                    - name: Bluetooth ペアリング エラー率
+                      href: bluetooth-pairing-failure-rate-per-machine.md
+                    - name: Bluetooth 接続エラー率
+                      href: bluetooth-connect-failure-rate-for-machines-with-the-driver.md
+                - name: Camera
+                  items:
+                    - name: カメラの測定値
+                      href: camera-measures.md
+                    - name: カメラの初期化エラー率
+                      href: camera-initialization-failure-rate.md
+                    - name: カメラのプレビュー エラー率
+                      href: camera-preview-failure-rate.md
+                    - name: カメラの写真キャプチャ エラー率
+                      href: camera-photo-failure-rate.md
+                    - name: カメラのビデオおよびストリーム エラー率
+                      href: camera-video-and-stream-failure-rate.md
+                - name: グラフィックス
+                  items:
+                    - name: グラフィックスの計測値
+                      href: graphics-measures.md
+                    - name: 標準および拡張対象ユーザーの測定値
+                      items:
+                        - name: グラフィックス ドライバー バイナリのクラッシュによってブルー スクリーンが表示されたマシンの数
+                          href: number-of-machines-that-had-blue-screen-caused-by-crash-in-graphics-driver-binary-expanded.md
+                        - name: グラフィックス カーネルのクラッシュによってブルー スクリーンが表示されたマシンの数
+                          href: number-of-machines-that-had-blue-screen-caused-by-crash-in-graphics-kernel.md
+                        - name: グラフィックス ドライバー バイナリのクラッシュによって TDR が発生したマシンの数
+                          href: number-of-machines-that-had-tdr-caused-by-crash-in-graphics-driver-binary-expanded.md
+                        - name: グラフィックス ドライバー バイナリのクラッシュによって LKE が発生したマシンの数
+                          href: number-of-machines-that-had-lke-caused-by-crash-in-graphics-driver-binary-expanded.md
+                        - name: Microsoft フォト アプリでのユーザー モード クラッシュの数
+                          href: user-mode-reliability-for-crashes-in-microsoft-photos-app-expanded.md
+                        - name: クリエイティブ アプリケーションでクラッシュが発生したユーザー モードの数
+                          href: graphics-drivers-health-user-mode-reliability-for-crashes-in-creative-apps-expanded.md
+                        - name: Microsoft のトップ アプリでのユーザー モード クラッシュの数
+                          href: number-of-user-mode-crashes-in-top-microsoft-apps-normalized-by-usage-in-year-long-scale-expanded.md
+                        - name: Microsoft Edge でのユーザー モード クラッシュの数
+                          href: user-mode-crashes-in-microsoft-edge-normalized-by-usage-in-a-year-long-scale-expanded.md
+                        - name: Windows コンポーネントでのユーザー モード クラッシュの数
+                          href: user-mode-reliability-for-crashes-in-windows-components.md
+                        - name: Microsoft Edge と Internet Explorer での YouTube ビデオ再生エラーの割合
+                          href: percent-of-youtube-video-playback-failures-in-microsoft-edge-and-internet-explorer.md
+                    - name: エコシステム対象ユーザーの測定値
+                      items:
+                        - name: グラフィックス ドライバー バイナリのクラッシュによってブルー スクリーンが表示されたマシンの数
+                          href: number-of-machines-with-bluescreen-caused-by-crash-in-graphics-driver-binary-ecosystem.md
+                        - name: グラフィックス ドライバー バイナリのクラッシュによって LKE が発生したマシンの数
+                          href: number-of-machines-that-had-lke-caused-by-crash-in-graphics-driver-binary-ecosystem.md
+                        - name: Microsoft Edge でのユーザー モード クラッシュの数
+                          href: user-mode-crashes-in-microsoft-edge-normalized-by-usage-in-a-year-long-scale.md
+                        - name: Microsoft のトップ アプリでのユーザー モード クラッシュの数
+                          href: number-of-user-mode-crashes-in-top-microsoft-apps-normalized-by-usage-in-year-long-scale.md
+                        - name: クリエイティブ アプリケーションでのユーザー モード クラッシュの数
+                          href: graphics-drivers-health-user-mode-reliability-for-crashes-in-creative-apps.md
+                        - name: Microsoft フォト アプリでのユーザー モード クラッシュの数
+                          href: user-mode-reliability-for-crashes-in-microsoft-photos-app.md
+                        - name: Windows コンポーネントでのユーザー モード クラッシュの数
+                          href: user-mode-reliability-for-crashes-in-windows-components-ecosystem.md
+                        - name: UWP ゲームでのクラッシュとハングの数
+                          href: number-crashes-and-hangs-in-uwp-games.md
+                        - name: Win32 ゲームでのクラッシュとハングの数
+                          href: number-crashes-and-hangs-in-win32-games.md
+                        - name: Netflix での SWDRM 再生エラーの割合
+                          href: pct-swdrm-playback-failures-on-netflix.md
+                        - name: 低電力状態からの再開時に表示の問題が発生したマシンの割合
+                          href: graphics-display-health-percent-devices-with-display-issues-resume-from-low-power.md
+                        - name: エコシステム Netflix HWDRM 品質比較
+                          href: ecosystem-netflix-hwdrm-quality-comparison.md
+                - name: Wi-Fi
+                  items:
+                    - name: Wi-Fi の測定値
+                      href: wi-fi-measures.md
+                    - name: 'Wi-Fi 接続エラーの割合 (デバイスとアクセスポイントのペアの上位 95% から) '
+                      href: percent-of-wifi-connection-failures-from-the-top-95-percent-of-device-ap-pairs.md
+                    - name: インターネット接続エラーの割合 (信号品質が 50% を超えるデバイスとアクセスポイントのペアの上位 95% から)
+                      href: percent-of-internet-connection-failures-from-the-top-95-percent-of-device-ap-pairs.md
+                    - name: 予期しない切断で終了した Wi-Fi セッションの割合
+                      href: pct-wi-fi-sessions-ending-in-unexpected-disconnect.md
+            - name: 付録
+              href: measure-appendix.md
+            - name: 用語集
+              href: measures-glossary.md
         - name: 拡張 INF ファイルの使用
           href: submit-dashboard-extension-inf-files.md
         - name: バグ管理
           href: bug-management.md
-    - name: 出荷ラベルによるドライバーの配布の管理
+    - name: 配送先住所ラベル
       items:
         - name: 出荷ラベルによるドライバーの配布の管理
           href: manage-driver-distribution-by-submission.md
@@ -60,9 +180,9 @@
           href: gradual-rollout.md
     - name: ハードウェア ダッシュボード API
       items:
-        - name: ハードウェア ダッシュボード API
+        - name: ハードウェア ダッシュボード API の概要
           href: dashboard-api.md
-        - name: 製品データの取得
+        - name: 製品データ API
           items:
             - name: 製品データの取得
               href: get-product-data.md
@@ -74,7 +194,7 @@
               href: get-all-submissions.md
             - name: 申請の取得
               href: get-a-submission.md
-        - name: 製品申請の管理
+        - name: 製品申請 API
           items:
             - name: 製品申請の管理
               href: manage-product-submissions.md
@@ -88,7 +208,7 @@
               href: update-submission-data.md
             - name: 製品データの更新
               href: update-product-data.md
-        - name: 配送先住所ラベルのデータを取得する
+        - name: 配送先住所ラベルのデータを取得するための API
           items:
             - name: 配送先住所ラベルのデータを取得する
               href: get-shipping-labels.md
@@ -96,7 +216,7 @@
               href: get-all-shipping-labels.md
             - name: 配送先住所ラベルの取得
               href: get-a-shipping-label.md
-        - name: 配送先住所ラベルを管理する
+        - name: 配送先住所ラベル管理用の API
           items:
             - name: 配送先住所ラベルを管理する
               href: manage-shipping-labels.md
@@ -108,58 +228,10 @@
           href: get-audience-data.md
         - name: ドライバー パッケージ メタデータ
           href: driver-package-metadata.md
-        - name: ドライバー エラー詳細のカスタム レポートをスケジュールする
-          items:
-            - name: ドライバー エラー詳細のカスタム レポートをスケジュールする
-              href: schedule-custom-reports-for-driver-failure-details.md
-            - name: セキュリティ保護されたデータ共有を有効にする
-              href: enable-secure-data-sharing.md
-            - name: 新しいレポート テンプレートを作成する
-              href: create-a-new-report-template.md
-            - name: 新しいレポートをスケジュールする
-              href: schedule-a-new-report.md
-            - name: レポート データの取得
-              href: get-report-data.md
-            - name: エラー CAB をダウンロードする
-              href: download-failure-cabs.md
-        - name: レポート テンプレートとスケジュールされたレポートを管理する
-          href: manage-report-templates-and-scheduled-reports.md
-        - name: サンプル レポート テンプレート
-          href: sample-report-templates.md
-        - name: 従来のエラー レポート データの処理
-          items:
-            - name: 従来のエラー レポート データの処理
-              href: legacy-error-reporting-data-process.md
-            - name: Windows 10 のドライバーに関するエラー報告データを取得する
-              items:
-                - name: Windows 10 のドライバーに関するエラー報告データを取得する
-                  href: get-error-reporting-data-for-windows-10-drivers.md
-                - name: Windows 10 のドライバー エラーに関する詳細を取得する
-                  href: get-details-for-a-windows-10-driver-error.md
-                - name: Windows 10 のドライバー エラーに関する CAB ファイルをダウンロードする
-                  href: download-the-cab-file-for-a-windows-10-driver-error.md
-            - name: Windows 7 や Windows 8.x のドライバーに関するエラー報告データを取得する
-              items:
-                - name: Windows 7 や Windows 8.x のドライバーに関するエラー報告データを取得する
-                  href: get-error-reporting-data-for-windows-7-and-windows-8.x-drivers.md
-                - name: Windows 7 や Windows 8.x のドライバー エラーに関する詳細を取得する
-                  href: get-details-for-a-windows-7-or-windows-8.x-driver-error.md
-                - name: Windows 7 や Windows 8.x のドライバー エラーに関する CAB ファイルをダウンロードする
-                  href: download-the-cab-file-for-a-windows-7-or-windows-8.x-driver-error.md
-            - name: OEM ハードウェア エラー報告データを取得する
-              items:
-                - name: OEM ハードウェア エラー報告データを取得する
-                  href: get-oem-hardware-error-reporting-data.md
-                - name: OEM ハードウェア エラーの詳細を取得する
-                  href: get-details-for-an-oem-hardware-error.md
-                - name: OEM ハードウェア エラーの CAB ファイルをダウンロードする
-                  href: download-the-cab-file-for-an-oem-hardware-error.md
     - name: LSA プラグインと UEFI ファームウェアのファイル署名
       href: lsa-and-uefi-file-signing.md
     - name: ダッシュボードの管理
       items:
-        - name: ダッシュボードの管理
-          href: dashboard-administration.md
         - name: ハードウェア プログラムの概要
           href: get-started-with-the-hardware-dashboard.md
         - name: ハードウェア プログラムの登録
@@ -174,9 +246,7 @@
           href: update-a-code-signing-certificate.md
     - name: デバイス メタデータ
       items:
-        - name: デバイス メタデータ
-          href: device-metadata.md
-        - name: デバイス メタデータ エクスペリエンスの作成
+        - name: デバイス メタデータ エクスペリエンス
           items:
             - name: デバイス メタデータ エクスペリエンスの作成
               href: create-a-device-metadata-experience.md
@@ -184,9 +254,9 @@
               href: creating-a-preview-package.md
         - name: デバイス メタデータ エクスペリエンスの管理
           href: manage-device-metadata-experiences.md
-        - name: デバイス メタデータ パッケージの提出 (ダッシュボード ヘルプ)
+        - name: デバイス メタデータ パッケージの申請
           items:
-            - name: デバイス メタデータ パッケージの提出 (ダッシュボード ヘルプ)
+            - name: 申請と確認
               href: submit-a-device-metadata-package--dashboard-help-.md
             - name: LocaleInfo.xml サブミッション ファイルの作成
               href: create-the-localeinfoxml-submission-file.md
@@ -202,7 +272,7 @@
               href: errors-and-solutions-when-submitting-device-metadata-experiences.md
         - name: デバイス メタデータのビジネス規則
           href: device-metadata-business-rules.md
-        - name: モバイル ブロードバンド エクスペリエンスの作成
+        - name: モバイル ブロードバンド エクスペリエンス
           items:
             - name: モバイル ブロードバンド エクスペリエンスの作成
               href: create-a-mobile-broadband-experience.md
