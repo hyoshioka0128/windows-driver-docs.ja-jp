@@ -16,7 +16,7 @@ ms.locfileid: "63384129"
 # <a name="c28615"></a>C28615
 
 
-C28615 を警告します。呼び出す必要があります\_で resetstkoflw、 \_\_except() のブロックを呼び出すときに\_での alloca、 \_\_ブロックを実行してください。 呼び出さない\_catch() ブロック内から resetstkoflw
+C28615 を警告します。呼び出す必要があります\_で resetstkoflw、 \_ \_except() のブロックを呼び出すときに\_での alloca、 \_\_ブロックを実行してください。 呼び出さない\_catch() ブロック内から resetstkoflw
 
 コード分析ツールは、アプリケーションを呼び出すときに、この警告を報告、  **\_resetstkoflw**関数は、catch ブロック内、またはアプリケーションを呼び出す**alloca**呼び出さずに try ブロックで **\_resetstkoflw**で、ブロックを除く。
 
