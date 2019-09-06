@@ -10,16 +10,16 @@ keywords:
 ms.author: eliotgra
 ms.date: 07/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: c034286186c88f231f032c2de031c2780ff04eb3
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: aa0665e141954bb04e37335657e0bee9f731d4a0
+ms.sourcegitcommit: 2c3b8e0ea0e75b72067d2e22dc530390bc19b11e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63339148"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70174698"
 ---
 # <a name="installing-preview-versions-of-the-windows-driver-kit-wdk"></a>プレビュー バージョンの Windows Driver Kit (WDK) のインストール
 
-このページでは、Insider Preview (プレリリース) バージョンの Windows Driver Kit (WDK) のインストール手順について説明します。 最新のプレリリース バージョンの WDK と EWDK はこちらのリンク [https://www.microsoft.com/software-download/windowsinsiderpreviewWDK](https://www.microsoft.com/software-download/windowsinsiderpreviewWDK) からダウンロードできます。  
+このページでは、Insider Preview (プレリリース) バージョンの Windows Driver Kit (WDK) のインストール手順について説明します。 最新のプレリリース バージョンの WDK と EWDK はこちらのリンク [https://www.microsoft.com/software-download/windowsinsiderpreviewWDK](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewWDK) からダウンロードできます。  
 
 最新の**リリース済み**バージョンの WDK については、「[Download the Windows Driver Kit (WDK) (Windows Driver Kit (WDK) のダウンロード)](download-the-wdk.md)」をご覧ください。 以前のバージョンの WDK のダウンロードについては、「[Other WDK downloads (その他の WDK のダウンロード)](other-wdk-downloads.md)」をご覧ください。  
 
