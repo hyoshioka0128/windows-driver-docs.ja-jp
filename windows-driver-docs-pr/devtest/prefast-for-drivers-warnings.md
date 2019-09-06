@@ -32,7 +32,7 @@ ms.locfileid: "67358269"
 
 -   **メモリ割り当ての警告**(30029 30035)。これらは、メモリ割り当ての警告です。
 
-## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>このセクションの内容
+## <a name="span-idin_this_sectionspanin-this-section"></a><span id="in_this_section"></span>このセクションの内容
 
 
 <table>
