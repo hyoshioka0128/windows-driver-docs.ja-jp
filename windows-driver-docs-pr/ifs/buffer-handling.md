@@ -41,15 +41,15 @@ ms.locfileid: "67369290"
 
 -   アドレスで、高ビットが設定されていることを確認しています。 これでは機能しません、システムは、4 ギガバイト チューニング (4 gt) を使用している x86 ベースのコンピューター上で、Boot.ini ファイルで/3 GB オプションを設定します。 その場合は、ユーザー モードのアドレスは、アドレス空間の 3 つ目のギガバイト (GB) の上位ビットを設定します。
 
--   使用して[ **ProbeForRead** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-probeforread)と[ **ProbeForWrite** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-probeforwrite)アドレスを検証します。 ユーザー モードの有効なアドレスのアドレスは、プローブ時に、これにより、中に何もないプローブ操作後に有効のままにする必要があります。 したがって、この手法では、定期的な再現がクラッシュする可能性のある微妙な競合状態が導入されています。 **ProbeForRead**と**ProbeForWrite**呼び出しは、別の理由のために必要な: はユーザー モード アドレスかどうかと、バッファーの長さは、ユーザーのアドレス範囲内で、検証します。 によってキャッチしませんが、有効なカーネル モードのアドレスのユーザーを渡すことができます、プローブを省略した場合、 \_\_try と\_\_ブロック (構造化例外処理) を除くし、大きなセキュリティ ホールが開きます。 したがって**ProbeForRead**と**ProbeForWrite**呼び出しは配置と、ユーザー モード アドレスに加えて、長さが、ユーザーのアドレスの範囲内にあることを確認するために必要です。 ただし、 \_\_try と\_\_ブロックがアクセスを防ぐために必要な点が異なります。
+- [ **ProbeForRead** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-probeforread) と [ **ProbeForWrite** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-probeforwrite) を使用してアドレスを検証します。 これは、プローブ時のアドレスが有効なユーザー モードアドレスであることが保証されますが、プローブ操作後もアドレスを有効のままにする必要はありません。 したがって、この手法では、再現性のない定期的なクラッシュを引き起こす可能性のある微妙な競合状態が発生します。 **ProbeForRead** と **ProbeForWrite** 呼び出しは、別の理由で必要です。アドレスがユーザー モードアドレスであるかかどうかと、バッファーの長さが、ユーザーのアドレス範囲内であるかどうかを検証します。プローブを省略した場合、ユーザーは有効なカーネル モードのアドレスのを渡すことができます、これは、\_\_try と\_\_except ブロック (構造化例外処理) でキャッチされず、大きなセキュリティ ホールを開きます。 したがって **ProbeForRead** と **ProbeForWrite** 呼び出しはアラインメントを保証し、ユーザー モード アドレスに加えて、長さをユーザーのアドレスの範囲内に収めるために必要です。 ただし、アクセスを防ぐためには、 \_\_try と\_\_except ブロックが必要です。
 
     なお[ **ProbeForRead** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-probeforread)のみを検証する (わずか 2 GB 未満の例では、4 gt ことがなくシステム)、可能なユーザー モード アドレスの範囲内のアドレスと長さの fall いないかどうか、メモリアドレスは有効です。 これに対し、 [ **ProbeForWrite** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-probeforwrite)これらが有効なメモリ アドレスであることを確認する指定された長さの各ページの最初のバイトへのアクセスを試みます。
 
 -   メモリ マネージャーの機能に依存 ([**MmIsAddressValid**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-mmisaddressvalid)など)、アドレスが有効であることを確認します。 プローブの関数と同様、再現がクラッシュする可能性のある競合状態が導入されます。
 
--   構造化例外処理の使用の失敗。 \_\_try と\_\_コンパイラ内の関数では、オペレーティング システム レベルのサポートを使用して、例外処理の点が異なります。 カーネル レベルでの例外は呼び出すことによってバックアップ スロー [ **ExRaiseStatus**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exraisestatus)、または、関連する関数の 1 つ。 バグ チェックにより、構造化例外処理、例外を発生させる可能性がありますすべての呼び出しの周りの使用に失敗するドライバー (通常 KMODE\_例外\_いない\_処理済み)。
+- 構造化例外処理の使用の失敗。コンパイラ内の \_\_try と\_\_except 関数は、例外処理のためにオペレーティング システム レベルのサポートを使用します。 カーネル レベルでの例外は [ **ExRaiseStatus**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exraisestatus)、または、関連する関数のいずれかを呼び出すことによってスローバックされます。ドライバーは、例外を発生させる可能性のある呼び出しで構造化例外処理をしないと、バグ チェック(通常 KMODE\_ EXCEPTION \_ NOT \_ HANDLED)につながります。
 
-    構造化例外処理が、エラーが発生する予期しないコードの周りを使用するの間違いであるに注意してください。 これは、だけマスク実際バグを見つけるとします。 配置すること、 \_\_try と\_\_except、ラッパー ルーチンのディスパッチの最上位レベルではありません、この問題に適切なソリューションが、ドライバー作成者が試みたリフレックス ソリューションがあります。
+    エラーの発生が予想されないコードの周囲で構造化例外処理を使用するの間違いです。これは、そうでなければ発見されるであろう実際のバグをマスクするだけです。ルーチンの最上位のディスパッチレベルに、\_\_try と\_\_exceptを配置することは、この問題の適切なソリューションではありませんが、ドライバー作成者が試みるリフレックス ソリューションである場合があります。
 
 -   残っている安定したユーザーのメモリの内容に依存します。 たとえば、ドライバーが、ユーザー モードのメモリ位置に値を書き込むし、同じルーチンで、後でそのメモリ位置を参照してください。 悪意のあるアプリケーションでしたそのメモリを積極的に変更し、クラッシュするドライバーにより、その結果。
 
@@ -61,7 +61,7 @@ WDK には FASTFAT と cdfs を含むファイル システムのサンプル �
 
 -   **FatGetVolumeBitmap** fastfat 関数\\fsctl.c 使用[ **ProbeForRead** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-probeforread)と[ **ProbeForWrite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-probeforwrite)デフラグ API でユーザーのバッファーを検証します。
 
--   cdfs \\ read.c の **CdCommonRead** 関数は、ユーザーバッファーをゼロにするコードの周りで \_\_try と \_\_except を使用します。 サンプルのコードで注意**CdCommonRead** try を使用して、キーワードを除くが表示されます。 コンパイラの拡張機能の観点から、WDK 環境で C でのこれらのキーワードが定義されている\_\_try と\_\_except。 ネイティブ コンパイラ型を使用して、例外を適切に処理する必要があります C++ コードを使用してすべてのユーザーとして\_\_try は C++ のキーワードが C キーワードではなく、およびカーネル ドライバーに対して有効でない C++ 例外処理の形式を提供します。
+- cdfs \\ read.c の **CdCommonRead** 関数は、ユーザーバッファーをゼロにするコードの周りで \_\_try と \_\_except を使用します。**CdCommonRead** のサンプルのコードでは、try キーワードと except キーワードを使用しているように見えることに注意してください。WDK 環境では、C でのこれらのキーワードはコンパイラの拡張機能 \_\_try と\_\_exceptによって定義されています。\_\_try は C++ のキーワードであり、 C キーワードではないため、C++ コードを使用するユーザーはネイティブ コンパイラ型を使用して、例外を適切に処理する必要があり、カーネル ドライバーに対して有効でない C++ 例外処理の形式を提供します。
 
  
 
