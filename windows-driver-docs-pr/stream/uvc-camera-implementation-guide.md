@@ -3,12 +3,12 @@ title: Windows 10 UVC カメラ実装ガイド
 description: 受信トレイドライバーを使用して、USB ビデオクラスに準拠しているカメラの特定の機能をアプリケーションに公開する方法について説明します。
 ms.date: 08/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 59f52355422699cff5cc7a7797ab6f75bb380baf
-ms.sourcegitcommit: fec48fa5342d9cd4cd5ccc16aaa06e7c3d730112
+ms.openlocfilehash: eca9d97a2e6bbccf39cb0f2211303a7e9d58073d
+ms.sourcegitcommit: dff3834724bd5204c4a47204540fe8125dd37b20
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2019
-ms.locfileid: "69565590"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70750051"
 ---
 # <a name="windows-10-uvc-camera-implementation-guide"></a>Windows 10 UVC カメラ実装ガイド
 
@@ -514,6 +514,10 @@ INF の上記の2つの AddReg エントリに加えて、カスタムカテゴ�
 ## <a name="camera-rotation"></a>カメラの回転
 
 [カメラデバイスの向き](camera-device-orientation.md)を確認する
+
+## <a name="uvc-control-cache"></a>UVC コントロールキャッシュ
+
+[Uvc コントロールキャッシュ](camera-device-uvc-control-cache.md)を参照してください。
 
 ## <a name="bos-and-ms-os-20-descriptor"></a>BOS および MS OS 2.0 記述子
 
