@@ -1,66 +1,65 @@
 ---
-title: E (Windows デバッガーの用語集)
-description: 用語集ページ - E
-Robots: noindex, nofollow
+title: E (Windows デバッガー用語集)
+description: 用語集のページ-E
 ms.assetid: 1e32bd40-8c77-4c6b-913c-6ec26707ed36
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c2830a5993f99302faded714c495df346f1e352
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b3eb798f05c3c0bf5440ff4344fbf565f6642d12
+ms.sourcegitcommit: 48c4b6d3a504583d2f588ed892a4a281d4b58301
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67366898"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70387079"
 ---
 # <a name="e"></a>E
 
 
 <span id="effective_processor_type"></span><span id="EFFECTIVE_PROCESSOR_TYPE"></span>**有効なプロセッサの種類**  
-プロセッサの種類、デバッガーは、対象のコンピュータを扱うときに使用します。 有効なプロセッサの種類は、どのデバッガー ブレークポイントを設定します、レジスタにアクセス、スタック トレースを取得およびその他のプロセッサに固有の操作を実行しますに影響します。
+対象のコンピューターを処理するときにデバッガーが使用するプロセッサの種類。 有効なプロセッサの種類は、デバッガーがブレークポイントを設定する方法、レジスタにアクセスする方法、スタックトレースを取得する方法、およびその他のプロセッサ固有のアクションを実行する方法に影響します。
 
-<span id="engine"></span><span id="ENGINE"></span>**エンジン**  
-デバッガー エンジンを参照してください。
+<span id="engine"></span><span id="ENGINE"></span>**双発**  
+「デバッガーエンジン」を参照してください。
 
-<span id="event"></span><span id="EVENT"></span>**イベント**  
-デバッガー エンジンは、いくつかのターゲットで発生するイベントを監視します。 トリガーされるブレークポイント、例外、スレッドとプロセスの作成、モジュールの読み込み、および内部デバッガー エンジンの変更が含まれます。
+<span id="event"></span><span id="EVENT"></span>**場合**  
+デバッガーエンジンは、ターゲットで発生するイベントの一部を監視します。 これには、トリガーされるブレークポイント、例外、スレッドとプロセスの作成、モジュールの読み込み、および内部デバッガーエンジンの変更が含まれます。
 
-<span id="event_filter"></span><span id="EVENT_FILTER"></span>**イベント フィルター**  
-デバッガー エンジンがターゲットのイベントが発生した後に続行方法に影響する規則のコレクション。 イベント フィルターの 3 つの種類があります。 特定のイベントのフィルター、特定の例外フィルター、および任意の例外フィルター。
+<span id="event_filter"></span><span id="EVENT_FILTER"></span>**イベントフィルター**  
+ターゲットでイベントが発生した後のデバッガーエンジンの処理方法に影響を与えるルールのコレクション。 イベントフィルターには、特定のイベントフィルター、特定の例外フィルター、任意の例外フィルターの3種類があります。
 
-<span id="event_callback_objects"></span><span id="EVENT_CALLBACK_OBJECTS"></span>**イベントのコールバック オブジェクト**  
-インスタンス、 [IDebugEventCallbacks](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nn-dbgeng-idebugeventcallbacks)クライアントに登録されているインターフェイス。 エンジンは、イベントが発生するイベントのコールバックを通知します。
+<span id="event_callback_objects"></span><span id="EVENT_CALLBACK_OBJECTS"></span>**イベントコールバックオブジェクト**  
+クライアントに登録されている[IDebugEventCallbacks](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nn-dbgeng-idebugeventcallbacks)インターフェイスのインスタンス。 イベントが発生するたびに、エンジンによってイベントコールバックが通知されます。
 
-<span id="event_callbacks"></span><span id="EVENT_CALLBACKS"></span>**イベントのコールバック**  
-イベントのコールバック オブジェクトを参照してください。
+<span id="event_callbacks"></span><span id="EVENT_CALLBACKS"></span>**イベントコールバック**  
+「イベントコールバックオブジェクト」を参照してください。
 
-<span id="event_process"></span><span id="EVENT_PROCESS"></span>**イベント処理**  
-最後のイベントが発生したプロセスです。
+<span id="event_process"></span><span id="EVENT_PROCESS"></span>**イベントプロセス**  
+最後のイベントが発生したプロセス。
 
-<span id="event_target"></span><span id="EVENT_TARGET"></span>**イベント ターゲット**  
-最後のイベントが発生したターゲット。
+<span id="event_target"></span><span id="EVENT_TARGET"></span>**イベントターゲット**  
+最後のイベントが発生した対象。
 
-<span id="event_thread"></span><span id="EVENT_THREAD"></span>**イベントのスレッド**  
-最後のイベントが発生したスレッドです。
+<span id="event_thread"></span><span id="EVENT_THREAD"></span>**イベントスレッド**  
+最後のイベントが発生したスレッド。
 
-<span id="executing_processor_type"></span><span id="EXECUTING_PROCESSOR_TYPE"></span>**プロセッサの種類を実行します。**  
-プロセッサの現在のコンテキストでプロセッサの種類。
+<span id="executing_processor_type"></span><span id="EXECUTING_PROCESSOR_TYPE"></span>**実行中のプロセッサの種類**  
+現在のプロセッサコンテキストでのプロセッサの種類。
 
-<span id="exception"></span><span id="EXCEPTION"></span>**exception**  
-特定のマシン命令の実行から、またはエラーが発生したことを示す、ターゲットからの結果としてエラー条件。 例外は、ハードウェアまたはソフトウェアに関連するエラーを指定できます。
+<span id="exception"></span><span id="EXCEPTION"></span>**例外的**  
+特定のコンピューター命令を実行した結果、またはターゲットからエラーが発生したことを示すエラー状態。 例外には、ハードウェアまたはソフトウェアに関連するエラーがあります。
 
-例外で識別されると、します。
+例外はであり、によって識別されます。
 
 <span id="exception_code"></span><span id="EXCEPTION_CODE"></span>**例外コード**  
-例外イベントの種類を決定するための識別子です。
+例外イベントの種類を決定する識別子。
 
 <span id="exception_filter"></span><span id="EXCEPTION_FILTER"></span>**例外フィルター**  
-例外コードで指定された例外イベントのイベント フィルター。
+例外コードによって指定された例外イベントのイベントフィルター。
 
-<span id="extension"></span><span id="EXTENSION"></span>**拡張機能**  
-デバッガーの拡張機能を参照してください。
+<span id="extension"></span><span id="EXTENSION"></span>**番号**  
+「デバッガー拡張機能」を参照してください。
 
-<span id="extension_command"></span><span id="EXTENSION_COMMAND"></span>**拡張機能コマンド**  
-デバッガーの拡張機能を参照してください。
+<span id="extension_command"></span><span id="EXTENSION_COMMAND"></span>**拡張コマンド**  
+「デバッガー拡張機能」を参照してください。
 
  
 

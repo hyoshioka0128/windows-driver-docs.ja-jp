@@ -4,12 +4,12 @@ description: Windows 64-bit edition では、ドライバーを含め、カー�
 ms.assetid: 52F309E4-9553-456B-BBD6-217318FC7222
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bf77cdb05cc6ff7c2354835d56a7f8d6cf2eb41e
-ms.sourcegitcommit: 424c435700d8f8a85bdaa83e8ddaab9568c8d347
+ms.openlocfilehash: 024e304efda69539f416d0f7998f4f32b394ff72
+ms.sourcegitcommit: 17052bc92153522fbd05aed21cee87ff037cfeca
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70025348"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70301191"
 ---
 # <a name="test-signing"></a>テスト署名
 
@@ -237,7 +237,7 @@ tstamd64.cat は、デジタル署名されるカタログファイルの名前�
     カーネルモードドライバーのバイナリファイルに署名するコマンドを次に示します。
 
     ```cpp
-    signtool sign  /v  /s  PrivateCertStore  /n  Contoso.com(Test)  /t http://timestamp.verisign.com/scripts/timestamp.dll   amd64\toaster.sys
+    signtool sign  /v  /s  PrivateCertStore  /n  Contoso.com(Test)  /t http://timestamp.digicert.com   amd64\toaster.sys
     ```
 
     amd64\\トースターは、埋め込み署名されるカーネルモードバイナリファイルの名前を指定します。

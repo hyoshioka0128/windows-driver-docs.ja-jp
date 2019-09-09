@@ -1,27 +1,27 @@
 ---
-title: ほぼフィールド通信 (NFC) ドライバーのサンプル
-description: このディレクトリに、NFC ドライバーのサンプルは、デバイス用のカスタム ドライバーを記述するための開始点を提供します。
+title: 近距離無線通信 (NFC) ドライバーのサンプル
+description: このディレクトリの NFC ドライバーサンプルは、デバイスのカスタムドライバーを作成するための開始点となります。
 ms.assetid: 89DC24ED-ADA8-4703-8619-A2B7E000C044
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6a0946699398a93a2274eca5aac73d95f83b81dd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dff3834724bd5204c4a47204540fe8125dd37b20
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558939"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70749993"
 ---
-# <a name="near-field-communication-nfc-driver-samples"></a>ほぼフィールド通信 (NFC) ドライバーのサンプル
+# <a name="near-field-communication-nfc-driver-samples"></a>近距離無線通信 (NFC) ドライバーのサンプル
 
 
-このディレクトリにドライバーのサンプルでは、デバイス用のカスタム ドライバーを記述するための開始点を提供します。
+このディレクトリのドライバーサンプルは、デバイスのカスタムドライバーを作成するための開始点となります。
 
 ## <a name="near-field-communication-nfc"></a>近距離無線通信 (NFC)
 
 
 | サンプル名                 | ソリューション                                                        | 説明                                                                                                                                     |
 |-----------------------------|-----------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
-| NFC シミュレーター ドライバーのサンプル | [NfcSimulator](https://go.microsoft.com/fwlink/p/?LinkId=620199) | ユーザー モード ドライバー フレームワーク (UMDF) を使用して、ベスト プラクティスと共に Near 近距離通信 (NFC) ユニバーサル ドライバーを作成する方法を示します。 |
+| NFC シミュレータードライバーのサンプル | [NfcSimulator](https://go.microsoft.com/fwlink/p/?LinkId=620199) | ユーザーモードドライバーフレームワーク (UMDF) を使用して、短期的な通信 (NFC) ユニバーサルドライバーをベストプラクティスと共に記述する方法を示します。 |
 
  
 

@@ -13,16 +13,16 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 45b67e238ba31c2ddafaebcbe1cf552113ee25d4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dff3834724bd5204c4a47204540fe8125dd37b20
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538431"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70749996"
 ---
-# <a name="difaddpropertypagebasic"></a>DIF_ADDPROPERTYPAGE_BASIC
+# <a name="dif_addpropertypage_basic"></a>DIF_ADDPROPERTYPAGE_BASIC
 
 
-この差分コードは、システムの使用に予約されています。 ベンダーから提供されたインストーラーは、この要求を処理する必要があります。
+この差分コードはシステムで使用するために予約されています。 ベンダーから提供されたインストーラーでは、この要求を処理できません。
 
  
 

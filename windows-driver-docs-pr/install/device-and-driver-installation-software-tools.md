@@ -5,18 +5,18 @@ ms.assetid: 05528866-1b9e-487c-a3f0-adf4f2214f81
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 73ca44d8a239d9bf99b13d6528d9a33495d3349d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dff3834724bd5204c4a47204540fe8125dd37b20
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559383"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70749997"
 ---
 # <a name="device-and-driver-installation-software-tools"></a>デバイスとドライバーのインストール ソフトウェア ツール
 
 
-このセクションには、Api とツールを使用してデバイスとドライバーのインストールでのソフトウェア コンポーネントを記述するために使用する次のトピックが含まれています。
+ここでは、を使用して、デバイスとドライバーのインストール用のソフトウェアコンポーネントを作成するために使用する Api とツールについて説明します。
 
--   [SetupAPI](setupapi.md)
+-   [Setupapi.log](setupapi.md)
 -   [DIFx ガイドライン](difx-guidelines.md)
 
  

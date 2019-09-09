@@ -1,9 +1,9 @@
 ---
 title: FormatsSupported 要素
-description: 必要な FormatsSupported 要素は、スキャナーをサポートするドキュメントのファイル形式を一覧表示する要素のコレクションです。
+description: Required FormatsSupported 要素は、スキャナーがサポートするドキュメントファイル形式を一覧表示する要素のコレクションです。
 ms.assetid: bb4b6630-f865-4ec7-b7d1-8be424eea345
 keywords:
-- FormatsSupported 要素イメージング デバイス
+- FormatsSupported 要素イメージングデバイス
 topic_type:
 - apiref
 api_name:
@@ -13,16 +13,16 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2bad45d7596eaa74b301cac0ee71f9cde250329a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dff3834724bd5204c4a47204540fe8125dd37b20
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579041"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70750047"
 ---
 # <a name="formatssupported-element"></a>FormatsSupported 要素
 
 
-必要な**FormatsSupported**要素は、スキャナーをサポートするドキュメントのファイル形式を一覧表示する要素のコレクション。
+Required **FormatsSupported**要素は、スキャナーがサポートするドキュメントファイル形式を一覧表示する要素のコレクションです。
 
 <a name="usage"></a>使用方法
 -----
@@ -79,7 +79,7 @@ ms.locfileid: "56579041"
 <a name="remarks"></a>コメント
 -------
 
-各[ **FormatValue** ](formatvalue.md)要素は、ファイルの種類と圧縮の種類を記述するファイル形式を指定します。
+各[**Formatvalue**](formatvalue.md)要素は、ファイルの種類と圧縮の種類の両方を記述するファイル形式を指定します。
 
 ## <a name="see-also"></a>関連項目
 
