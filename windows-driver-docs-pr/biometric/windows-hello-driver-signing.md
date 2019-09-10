@@ -1,6 +1,6 @@
 ---
-title: Windows こんにちはフィンガー プリント ドライバー署名の処理
-description: Windows こんにちはフィンガー プリント ドライバー署名の処理
+title: Windows Hello フィンガー プリント ドライバー署名の処理
+description: Windows Hello フィンガー プリント ドライバー署名の処理
 ms.assetid: 803f4326-32ce-44b4-a2fb-6c6f245c3728
 keywords:
 - 生体認証ドライバー WDK、windows こんにちは
@@ -17,8 +17,8 @@ ms.locfileid: "67860757"
 # <a name="windows-hello-steps-to-submit-a-fingerprint-driver"></a>Windows Hello:フィンガープリント ドライバーを送信する手順
 
 
-## <a name="submitting-a-fingerprint-driver-for-windows-hello-compatibility"></a>Windows こんにちはの互換性のためのフィンガー プリント ドライバーを送信します。 
-Microsoft には、Windows こんにちは品質ガイドラインに準拠する生態認証センサーに関して新しい要件が導入されています。 新しい手動レビュー プロセスは、Windows こんにちはと相互運用する承認を取得する必要があります。 プロセスが OS に適用されます、特定の Windows デベロッパー センター経由で取得したシグネチャのチェック (ここで: https://developer.microsoft.com/) をこのドキュメントでは、プロセスの中でのみ取得できます。 作成され、6/1/17 の前に、WHQL によって署名されているドライバーが grandfathered します。 この日以降後はこの署名を取得できません新規および更新されたドライバーは、Windows こんにちはとまたは実施日後に、Window 10 バージョン 1703 では機能しません。
+## <a name="submitting-a-fingerprint-driver-for-windows-hello-compatibility"></a>Windows Hello の互換性のためのフィンガー プリント ドライバーを送信します。 
+Microsoft には、Windows Hello 品質ガイドラインに準拠する生態認証センサーに関して新しい要件が導入されています。 新しい手動レビュー プロセスは、Windows Hello と相互運用する承認を取得する必要があります。 このプロセスは、の Windows デベロッパー センター (ここでは https://developer.microsoft.com/) 経由で取得した特定のシグネチャの OS チェックに適用されます、をこのドキュメントでは、プロセスの中でのみ取得できます。 2017 年 1 月 6 日より前にWHQL によって作成、署名されているドライバーが grandfathered します。 この日以降にこのシグネチャを取得しない新規および更新されたドライバーは、施行日後の Window 10 バージョン 1703 以降の Windows Hello では動作しません。
 
 ドライバーには常に Windows こんにちはの署名の取得を手動で承認が行われます。 承認済みのドライバー更新プログラムは、高速化の承認の前の送信を参照できます。 ドライバーは新しいセンサーに適用される場合、またはその影響まで、FRR、またはプレゼンテーション攻撃の検出、対応するエンジンへの変更が発生した場合、新しいレビューを受ける必要があります。 
 
