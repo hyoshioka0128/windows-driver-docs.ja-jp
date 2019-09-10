@@ -14,10 +14,10 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 12de66c44cafd8e06ceb3277510b447f94052a6a
-ms.sourcegitcommit: 424c435700d8f8a85bdaa83e8ddaab9568c8d347
+ms.sourcegitcommit: dff3834724bd5204c4a47204540fe8125dd37b20
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/26/2019
+ms.lasthandoff: 09/09/2019
 ms.locfileid: "70025332"
 ---
 # <a name="bug-check-0x1e-kmode_exception_not_handled"></a>バグ チェック 0x1E:KMODE\_EXCEPTION\_NOT\_HANDLED
@@ -39,7 +39,7 @@ Kmode\_例外\_がハンドル\_されていませんバグチェックの値は
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">引き</th>
+<th align="left">パラメーター</th>
 <th align="left">説明</th>
 </tr>
 </thead>
@@ -72,15 +72,15 @@ Kmode\_例外\_がハンドル\_されていませんバグチェックの値は
 
 一般的な例外コードは次のとおりです。
 
--   0x80000002ステータス\_データ\_型が不適切です
+-   0x80000002STATUS\_DATATYPE\_MISALIGNMENT
 
     整列されていないデータ参照が見つかりました。
 
--   0x80000003:ステータス\_ブレークポイント
+-   0x80000003:STATUS\_BREAKPOINT
 
     カーネルデバッガーがシステムにアタッチされていないときに、ブレークポイントまたはアサートが発生しました。
 
--   0XC0000005ステータス\_アクセス\_違反
+-   0XC0000005STATUS\_ACCESS\_VIOLATION
 
     メモリアクセス違反が発生しました。 (バグチェックのパラメーター4は、ドライバーがアクセスしようとしたアドレスです)。
 
