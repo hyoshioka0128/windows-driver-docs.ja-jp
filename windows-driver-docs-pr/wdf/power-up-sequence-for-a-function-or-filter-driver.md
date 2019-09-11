@@ -4,23 +4,23 @@ description: 機能ドライバーまたはフィルター ドライバーの電
 ms.assetid: 3E904641-A1E2-400C-A201-2D1D2D359657
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ee3e01022ba97e1c3778204f41b5a34ddb68186d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 09bea8282d0e3dfeabcbad154f31e36e7ddaad2b
+ms.sourcegitcommit: 6622ea3b128ae3c3e62274b0230438c86fac4f35
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67376340"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70863862"
 ---
 # <a name="power-up-sequence-for-a-function-or-filter-driver"></a>機能ドライバーまたはフィルター ドライバーの電源投入シーケンス
 
 
-次の図は、図の下部にあるデバイスが挿入された状態から開始、完全に operational 状態へのデバイスの追加時に、フレームワーク、KMDF 関数またはフィルター ドライバーのイベントのコールバック関数を呼び出す順序を示します。
+次の図は、デバイスを完全に動作状態にするときに、図の下部にあるデバイスが挿入された状態から開始するときに、フレームワークが WDF (KMDF and UMDF V2) 関数またはフィルタードライバーのイベントコールバック関数を呼び出す順序を示しています。
 
-![関数またはフィルター ドライバーのデバイスの列挙と電源投入シーケンス](images/fdo-fido-powerup.png)
+![関数またはフィルタードライバーのデバイス列挙と電源投入シーケンス](images/fdo-fido-powerup.png)
 
-広範な水平の線は、デバイスの起動に関連するステップをマークします。 図の左側にある列について、手順を説明し、右側の列には、そのイベントのコールバックが一覧表示されます。
+水平線は、デバイスの起動に関係する手順を示しています。 図の左側の列には手順が記述されており、右側の列には、それを実現するイベントコールバックが一覧表示されます。
 
-図の下部には、デバイスは、システムに存在しません。 フレームワークを呼び出してドライバーの開始、ユーザーがデバイスを挿入するとき[ *EvtDriverDeviceAdd* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)コールバック、ドライバーは、デバイスを表すデバイス オブジェクトを作成できるようにします。 フレームワークでは、ドライバーのコールバック ルーチンを呼び出すことによって、デバイスは稼働までのシーケンスを経由の進行が続行されます。 フレームワークは、ために下から順に順番の図に示すようにイベント コールバックを呼び出すことに注意してください[ *EvtDeviceFilterRemoveResourceRequirements* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdffdo/nc-wdffdo-evt_wdf_device_filter_resource_requirements)前に呼び出されます[ *。EvtDeviceFilterAddResourceRequirements* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdffdo/nc-wdffdo-evt_wdf_device_filter_resource_requirements)という具合です。 デバイスがリソースを再調整を停止したか、物理的に存在していた場合は、低電力状態にすべての手順は、図に示すように、必要です。
+図の下部には、デバイスがシステム上に存在していません。 ユーザーがデバイスを挿入すると、まず、ドライバーの[*Evtdriverdeviceadd*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)コールバックを呼び出して、ドライバーがデバイスを表すデバイスオブジェクトを作成できるようにします。 フレームワークは、デバイスが動作するまで順番を進めることで、ドライバーのコールバックルーチンの呼び出しを続けます。 フレームワークは、図に示すように、下から順にイベントコールバックを呼び出します。したがって、 [*EvtDeviceFilterRemoveResourceRequirements*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdffdo/nc-wdffdo-evt_wdf_device_filter_resource_requirements)は[*EvtDeviceFilterAddResourceRequirements*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdffdo/nc-wdffdo-evt_wdf_device_filter_resource_requirements)の前に呼び出されます。 デバイスがリソースの再調整のために停止された場合、または物理的に存在するが低電力状態の場合は、図に示すように、すべての手順が必要になるわけではありません。
 
  
 
