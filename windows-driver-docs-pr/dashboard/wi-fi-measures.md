@@ -1,0 +1,22 @@
+---
+title: Wi-Fi の測定値
+description: カメラの測定値では、Bluetooth ドライバーのフライティング時に、良性の初期化エラーがフィルターで除外されます
+ms.topic: article
+ms.date: 05/20/2019
+ms.author: paslote
+author: parkeratmicrosoft
+ms.localizationpriority: medium
+ms.openlocfilehash: 63fad9902c000ff3af5b6dbc56ea9fdbccdb7ce2
+ms.sourcegitcommit: 04da1962e34908adeca54fcf5bbfbaa456efca5f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70223886"
+---
+# <a name="wi-fi-measures"></a>Wi-Fi の測定値
+
+## <a name="description"></a>説明
+
+Microsoft は、WLAN デバイスの製造元に WLAN デバイス ドライバー インターフェイス (WDI) を提供します。 製造元は WDI 対応ドライバーとして、デバイス プラットフォーム上で機能的で、WLAN ドライバーの品質が高く、ドライバー パッケージが複雑でないユニバーサル ドライバーを開発できます。 WDI 対応ドライバーをマシンに使用することで、その Wi-Fi コンポーネントおよび Windows OS が通信可能になり、エンド ユーザーがワイヤレス ネットワークを利用できるようになります。 WDI ドライバー開発の情報について詳しくは、「[WLAN ユニバーサル Windows ドライバー モデル](https://docs.microsoft.com/windows-hardware/drivers/network/wifi-universal-driver-model)」を参照してください。
+
+Wi-Fi の測定値では、マシンの信号品質に基づいてイベントをフィルターで除外します。Wi-Fi 接続のうち最も品質の低い 5% をフィルターで除外する場合もあります。 これにより、品質を評価する際のノイズが減少します。 さらに、Wi-Fi と Bluetooth のコンポーネントは相互に作用することが多く、同じデバイスに統合できるので、Wi-Fi ドライバーは [Bluetooth の測定値](bluetooth-measures.md)でも評価されます。
