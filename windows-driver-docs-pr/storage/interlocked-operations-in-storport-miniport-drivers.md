@@ -4,12 +4,12 @@ description: Windows アプリケーションで使用できるインタロッ�
 ms.assetid: F3868AF4-545F-4B8E-8655-5AAD888C4B40
 ms.date: 06/13/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e9b3f2d61225419ddd8bd58c4892b0336db5188
-ms.sourcegitcommit: 238308264c1ee2c74ec0c8c303258dc00c79b902
+ms.openlocfilehash: f77a33df8fe404a160b5e330f6411a2fcfa400a4
+ms.sourcegitcommit: b795323cafe6b38918a33d3ecdf6b1a46215693e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70063907"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70839648"
 ---
 # <a name="interlocked-operations-in-storport-miniport-drivers"></a>Storport ミニポート ドライバーのインタロックされた操作
 
@@ -18,4 +18,4 @@ ms.locfileid: "70063907"
 
 インタロック操作の詳細については、「[インタロック変数アクセス](https://docs.microsoft.com/windows/desktop/Sync/interlocked-variable-access)」を参照してください。
 
-**注:**   インタロックされた *** Xxx***関数は、32ビット (x86) ドライバーの場合は、 *storport*で宣言します。
+**メモ** **インタロック**された * Xxx * 関数は、storport で *、または*32 ビット (x86) ドライバーの場合は*storport*で宣言されます。

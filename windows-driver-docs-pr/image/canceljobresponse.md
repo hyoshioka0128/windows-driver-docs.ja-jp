@@ -1,9 +1,9 @@
 ---
 title: CancelJobResponse 要素
-description: CancelJobResponse 操作の必要な要素は、クライアントのジョブのキャンセル要求を確認します。
+description: 必須の CancelJobResponse operation 要素は、クライアントのジョブキャンセル要求を確認します。
 ms.assetid: 754b6cf0-3581-4530-9ad6-6b3a19b540f1
 keywords:
-- CancelJobResponse 要素イメージング デバイス
+- CancelJobResponse 要素のイメージングデバイス
 topic_type:
 - apiref
 api_name:
@@ -13,16 +13,16 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d1017a33603e0ea7cf0798454b007039b8d101ef
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dff3834724bd5204c4a47204540fe8125dd37b20
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570090"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70750045"
 ---
 # <a name="canceljobresponse-element"></a>CancelJobResponse 要素
 
 
-必要な**CancelJobResponse**操作の要素は、クライアントのジョブのキャンセル要求を確認します。
+必須の**Canceljobresponse** operation 要素は、クライアントのジョブキャンセル要求を確認します。
 
 <a name="usage"></a>使用方法
 -----
@@ -57,7 +57,7 @@ ms.locfileid: "56570090"
 
 [**CancelJobRequest**](canceljobrequest.md)
 
-WSD スキャン サービスの送信、 **CancelJobResponse**クライアント、クライアントの正常に処理するときに操作[ **CancelJobRequest** ](canceljobrequest.md)操作。
+WSD Scan サービスは、クライアントの[**Canceljobresponse**](canceljobrequest.md)操作を正常に処理したときに、 **canceljobresponse**操作をクライアントに送信します。
 
 ## <a name="see-also"></a>関連項目
 

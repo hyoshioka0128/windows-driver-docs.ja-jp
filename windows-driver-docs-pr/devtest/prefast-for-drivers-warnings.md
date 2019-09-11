@@ -32,7 +32,7 @@ ms.locfileid: "67358269"
 
 -   **メモリ割り当ての警告**(30029 30035)。これらは、メモリ割り当ての警告です。
 
-## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>このセクションの内容
+## <a name="span-idin_this_sectionspanin-this-section"></a><span id="in_this_section"></span>このセクションの内容
 
 
 <table>
@@ -257,7 +257,7 @@ ms.locfileid: "67358269"
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="28615-must-call-resetstkoflw-in-except-block.md" data-raw-source="[C28615](28615-must-call-resetstkoflw-in-except-block.md)">C28615</a></p></td>
-<td align="left"><p>C28615 を警告します。\_\_Try ブロックで _alloca を呼び出すときに、\_\_except() ブロックで _resetstkoflw を呼び出す必要があります。 Catch() ブロック内から _resetstkoflw を呼び出さないでください。</p></td>
+<td align="left"><p>C28615 を警告します。__Try ブロックで _alloca を呼び出すときに、__except() ブロックで _resetstkoflw を呼び出す必要があります。 Catch() ブロック内から _resetstkoflw を呼び出さないでください。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="28616-multithreaded-av-condition.md" data-raw-source="[C28616](28616-multithreaded-av-condition.md)">C28616</a></p></td>
