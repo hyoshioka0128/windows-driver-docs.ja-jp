@@ -3,472 +3,290 @@ title: 拡張形式の詳細
 description: 拡張形式の詳細
 ms.assetid: e9cd2bc7-99c1-4aca-91b0-9faefa4a856d
 keywords:
-- 拡張形式、Direct3D バージョン 10.1 WDK Windows 7 表示
-- Windows 7 の WDK の形式の表示を拡張
+- Direct3D バージョン 10.1 WDK Windows 7 display、extended format
+- 拡張形式 WDK Windows 7 ディスプレイ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a1983f4c5acfde48a2051a00e450df326ab3187
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 137f4763413bcd2c3ba555ca2c9da76b21d4460b
+ms.sourcegitcommit: 9b0ddcdba8c56987b45e538948b2ac8c60ef1287
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348833"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70876926"
 ---
 # <a name="details-of-the-extended-format"></a>拡張形式の詳細
 
-
-このセクションでは、Windows 7 およびそれ以降のオペレーティング システムにのみ適用されます。
-
-次の表に、形式名の XR 一部見なすことができます UNORM やシント ・ ビットの新しいシェーダー解釈します。 XR\_形式名の一部をバイアスは特殊なケースでこの解釈のセマンティクスを追加のメタデータをオーバー ロードします。 このメタデータことを示します形式する必要がありますが明示的にオフセット シェーダーとの間の遷移でシェーダー コードのバイアスします。 ドライバーはこの biasing 作業を実行する必要はありません。アプリケーションにそのままです。
-
-次の表には、ハードウェアは、これらの属性を含むリソースのこれらの拡張形式をサポートしているかは、それらのリソースに省略可能な形式を拡張する場合は、拡張の形式を使用する特定の属性を持つリソースが表示されます。
-
-書式設定 (DXGI\_形式\_\*) B8G8R8A8 B8G8R8A8 B8G8R8X8 B8G8R8X8 R10G10B10 リソース B8G8R8A8 \_UNORM \_UNORM B8G8R8X8 \_UNORM \_UNORM R10G10B10A2 \_XR\_バイアス属性\_(既存) TYPELESS \_SRGB \_(既存) TYPELESS \_SRGB \_TYPELESS \_A2\_UNORM バッファー
-
-なし
-
-R
-
-(変更)
-
-なし
-
-なし
-
-R
-
-(変更)
-
-なし
-
-なし
-
-なし
-
-入力
-
-アセンブラー
-
-頂点
-
-バッファー
-
-なし
-
-R
-
-(変更)
-
-なし
-
-なし
-
-R
-
-(変更)
-
-なし
-
-なし
-
-なし
-
-Texture1D
-
-R
-
-R
-
-(変更)
-
-R
-
-R
-
-R
-
-(変更)
-
-R
-
-R
-
-なし
-
-Texture2D
-
-R
-
-R
-
-(変更)
-
-R
-
-R
-
-R
-
-R
-
-R
-
-R
-
-Texture3D
-
-R
-
-R
-
-(変更)
-
-R
-
-R
-
-R
-
-(変更)
-
-R
-
-R
-
-なし
-
-テクスチャ
-
-Cube
-
-R
-
-R
-
-(変更)
-
-R
-
-R
-
-R
-
-(変更)
-
-R
-
-R
-
-なし
-
-シェーダーの ID
-
-なし
-
-R
-
-R
-
-なし
-
-R
-
-R
-
-なし
-
-なし
-
-シェーダー
-
-サンプル
-
-(フィルター)
-
-なし
-
-R
-
-R
-
-なし
-
-R
-
-R
-
-なし
-
-なし
-
-MIP マップ
-
-テクスチャ
-
-R
-
-R
-
-(変更)
-
-R
-
-R
-
-R
-
-(変更)
-
-R
-
-R
-
-なし
-
-MIP マップ
-
-自動-
-
-生成
-
-なし
-
-R
-
-(変更)
-
-R
-
-なし
-
-R
-
-(変更)
-
-R
-
-なし
-
-なし
-
-Render
-
-対象
-
-なし
-
-R
-
-R
-
-なし
-
-R
-
-R
-
-なし
-
-なし
-
-Blendable
-
-Render
-
-対象
-
-なし
-
-R
-
-R
-
-なし
-
-R
-
-R
-
-なし
-
-なし
-
-CPU
-
-Lockable
-
-R
-
-R
-
-R
-
-R
-
-R
-
-R
-
-R
-
-R
-
-マルチ
-
-サンプル
-
-Render
-
-対象
-
-なし
-
-O
-
-O
-
-なし
-
-O
-
-O
-
-なし
-
-なし
-
-マルチ
-
-サンプル
-
-解決
-
-なし
-
-R
-
-(変更)
-
-R
-
-なし
-
-R
-
-(変更)
-
-R
-
-なし
-
-なし
-
-マルチ
-
-サンプル
-
-Load
-
-なし
-
-R
-
-R
-
-なし
-
-R
-
-R
-
-なし
-
-なし
-
-ディスプレイ
-
-スキャンします。
-
-なし
-
-R
-
-(変更)
-
-R
-
-なし
-
-なし
-
-なし
-
-なし
-
-R
-
-キャスト
-
-ビット内
-
-レイアウト
-
-R
-
-R
-
-(変更)
-
-R
-
-R
-
-R
-
-R
-
-R
-
-R
-
- 
-
-**注**  上の表では、セルのエントリは次の意味を持ちます。
--   "R"では、ハードウェアのサポートが必要であることを示します
-
--   "o"は、ハードウェアのサポートが省略可能であることを示します
-
--   該当なしリソース属性拡張の形式には適用されません、またはを示します拡張形式を許可しません。
-
- 
-
-**注**   、DXGI\_形式\_B8G8R8A8\_UNORM と DXGI\_形式\_B8G8R8X8\_UNORM 形式は、DXGI に既に存在していた\_形式の列挙体です。 ただし、適切な新しいファミリのメンバー、今すぐと見なされます。 要件は、元の定義の比較対象に変更されました。
-
- 
-
-**注**   "入力アセンブラー インデックス バッファーに"行"シェーダー サンプル\_c (フィルターの比較)"、"シェーダー sample (mono 1 ビット フィルター)"、"シェーダー gather4"および「深度ステンシルのターゲット」リソースの属性には含まれません読みやすくするため、前の表。 これらのリソース属性のすべての意味は、該当なしです。
-
- 
+このセクションは、Windows 7 以降のオペレーティングシステムにのみ適用されます。
+
+次の表では、フォーマット名の XR 部分は、UNORM またはシントに類似したビットの新しいシェーダー解釈と見なすことができます。 形式名\_の XR バイアス部分は、この解釈のセマンティックを追加のメタデータと共にオーバーロードする特殊なケースです。 このメタデータは、シェーダーとの間の遷移のシェーダーコードで、明示的にオフセットおよびバイアスする必要があることを示します。 ドライバーは、このような双方向の作業を実行する必要はありません。アプリケーション全体に残されます。
+
+## <a name="table-of-extended-formats"></a>拡張形式の表
+
+次の表は、拡張形式を使用する特定の属性を持つリソースを示しています。これらの属性を持つリソースの拡張形式がハードウェアでサポートされている場合、または、これらのリソースの拡張形式がオプションである場合は、
+
+<table>
+<head>
+    <tr>
+        <th colspan="9">形式 (DXGI_FORMAT_ *)</th>
+    </tr>
+    <tr>
+        <th></th>
+        <th></th>
+        <th>B8G8R8A8</th>
+        <th>B8G8R8A8</th>
+        <th></th>
+        <th>B8G8R8X8</th>
+        <th>B8G8R8X8</th>
+        <th></th>
+        <th>R10G10B10</th>
+    </tr>
+    <tr>
+        <th>リソース</th>
+        <th>B8G8R8A8</th>
+        <th>UNORM (_C)</th>
+        <th>UNORM (_C)</th>
+        <th>B8G8R8X8</th>
+        <th>UNORM (_C)</th>
+        <th>UNORM (_C)</th>
+        <th>R10G10B10A2</th>
+        <th>_XR_BIAS</th>
+    </tr>
+    <tr>
+        <th>attribute</th>
+        <th>タイプレス (_C)</th>
+        <th>既存</th>
+        <th>SRGB (_D)</th>
+        <th>タイプレス (_C)</th>
+        <th>既存</th>
+        <th>SRGB (_D)</th>
+        <th>タイプレス (_C)</th>
+        <th>_A2_UNORM</th>
+    </tr>
+</head>
+<body>
+    <tr>
+        <td>バッファー</td>
+        <td>なし</td>
+        <td>R (変更済み)</td>
+        <td>なし</td>
+        <td>なし</td>
+        <td>R (変更済み)</td>
+        <td>なし</td>
+        <td>なし</td>
+        <td>なし</td>
+    </tr>
+    <tr>
+        <td>入力アセンブラー頂点バッファー</td>
+        <td>なし</td>
+        <td>R (変更済み)</td>
+        <td>なし</td>
+        <td>なし</td>
+        <td>R (変更済み)</td>
+        <td>なし</td>
+        <td>なし</td>
+        <td>なし</td>
+    </tr>
+    <tr>
+        <td>Texture1D</td>
+        <td>R</td>
+        <td>R (変更済み)</td>
+        <td>R</td>
+        <td>R</td>
+        <td>R (変更済み)</td>
+        <td>R</td>
+        <td>R</td>
+        <td>なし</td>
+    </tr>
+    <tr>
+        <td>Texture2D</td>
+        <td>R</td>
+        <td>R (変更済み)</td>
+        <td>R</td>
+        <td>R</td>
+        <td>R</td>
+        <td>R</td>
+        <td>R</td>
+        <td>R</td>
+    </tr>    <tr>
+        <td>Texture3D</td>
+        <td>R</td>
+        <td>R (変更済み)</td>
+        <td>R</td>
+        <td>R</td>
+        <td>R (変更済み)</td>
+        <td>R</td>
+        <td>R</td>
+        <td>なし</td>
+    </tr>
+    <tr>
+        <td>テクスチャキューブ</td>
+        <td>R</td>
+        <td>R (変更済み)</td>
+        <td>R</td>
+        <td>R</td>
+        <td>R (変更済み)</td>
+        <td>R</td>
+        <td>R</td>
+        <td>なし</td>
+    </tr>
+    <tr>
+        <td>シェーダー ID</td>
+        <td>なし</td>
+        <td>R</td>
+        <td>R</td>
+        <td>なし</td>
+        <td>R</td>
+        <td>R</td>
+        <td>なし</td>
+        <td>なし</td>
+    </tr>
+    <tr>
+        <td>シェーダーのサンプル (任意のフィルター)</td>
+        <td>なし</td>
+        <td>R</td>
+        <td>R</td>
+        <td>なし</td>
+        <td>R</td>
+        <td>R</td>
+        <td>なし</td>
+        <td>なし</td>
+    </tr>
+    <tr>
+        <td>MIP-マップテクスチャ</td>
+        <td>R</td>
+        <td>R (変更済み)</td>
+        <td>R</td>
+        <td>R</td>
+        <td>R (変更済み)</td>
+        <td>R</td>
+        <td>R</td>
+        <td>なし</td>
+    </tr>
+    <tr>
+        <td>MIP マップ自動生成</td>
+        <td>なし</td>
+        <td>R (変更済み)</td>
+        <td>R</td>
+        <td>なし</td>
+        <td>R (変更済み)</td>
+        <td>R</td>
+        <td>なし</td>
+        <td>なし</td>
+    </tr>
+    <tr>
+        <td>レンダーターゲット</td>
+        <td>なし</td>
+        <td>R</td>
+        <td>R</td>
+        <td>なし</td>
+        <td>R</td>
+        <td>R</td>
+        <td>なし</td>
+        <td>なし</td>
+    </tr>
+    <tr>
+        <td>Blendable レンダーターゲット</td>
+        <td>なし</td>
+        <td>R</td>
+        <td>R</td>
+        <td>なし</td>
+        <td>R</td>
+        <td>R</td>
+        <td>なし</td>
+        <td>なし</td>
+    </tr>
+    <tr>
+        <td>CPU のロック可能</td>
+        <td>R</td>
+        <td>R</td>
+        <td>R</td>
+        <td>R</td>
+        <td>R</td>
+        <td>R</td>
+        <td>R</td>
+        <td>R</td>
+    </tr>
+    <tr>
+        <td>複数サンプルのレンダーターゲット</td>
+        <td>なし</td>
+        <td>O</td>
+        <td>O</td>
+        <td>なし</td>
+        <td>O</td>
+        <td>O</td>
+        <td>なし</td>
+        <td>なし</td>
+    </tr>
+    <tr>
+        <td>複数サンプルの解決</td>
+        <td>なし</td>
+        <td>R (変更済み)</td>
+        <td>R</td>
+        <td>なし</td>
+        <td>R (変更済み)</td>
+        <td>R</td>
+        <td>なし</td>
+        <td>なし</td>
+    </tr>
+    <tr>
+        <td>複数サンプルの負荷</td>
+        <td>なし</td>
+        <td>R</td>
+        <td>R</td>
+        <td>なし</td>
+        <td>R</td>
+        <td>R</td>
+        <td>なし</td>
+        <td>なし</td>
+    </tr>
+    <tr>
+        <td>スキャンアウトを表示する</td>
+        <td>なし</td>
+        <td>R (変更済み)</td>
+        <td>R</td>
+        <td>なし</td>
+        <td>なし</td>
+        <td>なし</td>
+        <td>なし</td>
+        <td>R</td>
+    </tr>
+    <tr>
+        <td>ビットレイアウト内でのキャスト</td>
+        <td>R</td>
+        <td>R (変更済み)</td>
+        <td>R</td>
+        <td>R</td>
+        <td>R</td>
+        <td>R</td>
+        <td>R</td>
+        <td>R</td>
+    </tr>
+</body>
+</table>
+
+>[!NOTE]
+>上の表では、セルエントリの意味は次のとおりです。
+>
+>- "R" は、ハードウェアのサポートが必要であることを示します。
+>- "o" は、ハードウェアのサポートが省略可能であることを示します。
+>- N/A は、リソース属性が拡張形式に適用されない、または拡張形式が許可されていないことを示します。
+
+>[!NOTE]
+>\_\_\_Dxgi 形式\_の\_B8G8R8A8 unorm 形式と dxgi 形式の B8G8R8X8 unorm 形式は、既に dxgi 形式の列挙に存在しています。\_\_ ただし、これらのメンバーは、適切な新しいファミリのメンバーと見なされるようになりました。 これらの要件は、元の定義と比較して変更されています。
+
+>[!NOTE]
+>読みやすくするために、"入力アセンブラーインデックスバッファー"、\_"シェーダーのサンプル c (比較フィルター)"、"シェーダーのサンプル (mono 1 ビットフィルター)"、"shader gather4"、および "奥行-ステンシルターゲット" の行は、前の表には含まれていません。 これらのリソース属性のすべての意味は、"N/A" です。
 
 次のセクションでは、新しい拡張形式の詳細について説明します。
 
 [XR レイアウト](xr-layout.md)
 
-[XR 形式のアルファ コンテンツ](xr-format-alpha-content.md)
+[XR のアルファコンテンツの書式設定](xr-format-alpha-content.md)
 
-[DXGI\_形式\_R10G10B10\_XR\_バイアス\_A2\_UNORM](dxgi-format-r10g10b10-xr-bias-a2-unorm.md)
+[DXGI\_形式\_R10G10B10XR\_バイアス\_A2UNORM\_\_](dxgi-format-r10g10b10-xr-bias-a2-unorm.md)
 
 [XR 形式のキャスト機能](casting-ability-of-xr-formats.md)
 
-[XR\_バイアス カラー チャネルの変換規則](xr-bias-color-channel-conversion-rules.md)
+[XR\_バイアスカラーチャネル変換ルール](xr-bias-color-channel-conversion-rules.md)
 
-[チャネル X の解釈](interpretation-of-x-channel.md)
-
- 
-
- 
-
-
-
-
-
+[X チャネルの解釈](interpretation-of-x-channel.md)

@@ -4,12 +4,12 @@ description: プラグ アンド プレイのマイナー IRP
 ms.date: 08/12/2017
 ms.assetid: eeb7dafd-fb44-4fb7-b5f0-314059ee0093
 ms.localizationpriority: medium
-ms.openlocfilehash: 559e226036022cc7c04b91a0422798c1d490d585
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 356aa08a1c06571a401545050b93de0caa87721c
+ms.sourcegitcommit: 9b0ddcdba8c56987b45e538948b2ac8c60ef1287
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67380944"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70876930"
 ---
 # <a name="plug-and-play-minor-irps"></a>プラグ アンド プレイのマイナー IRP
 
@@ -17,59 +17,59 @@ ms.locfileid: "67380944"
 
 
 
-このセクションには、ドライバーに送信される PnP Irp がについて説明します。 コードが主な機能であるすべての PnP Irp [ **IRP\_MJ\_PNP** ](irp-mj-pnp.md)とマイナー関数を特定の PnP 要求を示すコード。
+このセクションでは、ドライバーに送信される PnP Irp について説明します。 すべての pnp irp には、主要な関数コードの[ **\_IRP MJ\_PnP**](irp-mj-pnp.md)と、特定の pnp 要求を示すマイナー関数コードがあります。
 
-このセクションでは、個々 の Irp のリファレンス情報を提供します。 参照してください[プラグ アンド プレイ](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)Irp が送信される、Irp を処理する方法については、順序の説明については[DispatchPnP ルーチン](https://docs.microsoft.com/windows-hardware/drivers/kernel/dispatchpnp-routines)、PnP の概念と用語の一般的なディスカッションとします。
+ここでは、個々の Irp に関するリファレンス情報を提供します。 Irp が送信される順序の説明、 [DispatchPnP ルーチン](https://docs.microsoft.com/windows-hardware/drivers/kernel/dispatchpnp-routines)での irp の処理方法の説明、PnP の概念と用語に関する一般的な説明については、「[プラグアンドプレイ](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)」を参照してください。
 
-各 IRP とドライバーの種類ごとでは、ドライバーとは、IRP を必要に応じて処理できる、IRP を処理するために必要なのか、または IRP を処理する必要があります。 ドライバーは処理し、個々 の Irp については、リファレンス ページを参照する Irp を識別するために次の表を参照してください。 Irp は IRP のリファレンス ページでアルファベット順にテーブルの機能の順序で表示されます。
+各 IRP および各種類のドライバーについて、IRP を処理するためにドライバーが必要であるか、必要に応じて IRP を処理するか、または IRP を処理しないようにする必要があります。 次の表を参照して、ドライバーが処理する Irp を特定し、各 Irp の詳細についてリファレンスページを参照してください。 Irp は、テーブル内の機能順と、IRP 参照ページのアルファベット順で一覧表示されます。
 
-IRP が"No"テーブルには、特定のドライバーをマークされている場合そのドライバーは IRP を処理する必要があります。 ドライバーは IRP のリファレンス ページの説明に従って、デバイス スタックでは、次のドライバーに IRP を渡す必要があります。
+特定のドライバーのテーブルで IRP が "No" とマークされている場合、そのドライバーは IRP を処理できません。 IRP の参照ページで説明されているように、ドライバーは IRP をデバイススタックの次のドライバーに渡す必要があります。
 
-Irp これら PnP マネージャーに送信します。 PnP ドライバーには、だけのこのセクションではそのように記載されますが、これらの Irp の一部を送信できます。
+これらの Irp は、PnP マネージャーによって送信されます。 PnP ドライバーはこれらの Irp の一部を送信できますが、このセクションに記載されているもののみを送信できます。
 
-次に、PnP Irp、およびその処理を行うドライバーの種類のマイナー関数コードを示します。
+PnP Irp のマイナー関数コードとそれらを処理するドライバーの種類を次に示します。
 
 
-|                              PnP IRP マイナー関数コード                              | Nonbus デバイス用の関数またはフィルター ドライバー | バスのデバイス (バス FDO) 用のドライバーを関数 | バス ドライバーまたは (子 Pdo) 用のバス フィルター ドライバー |
+|                              PnP IRP minor 関数コード                              | 非バスデバイス用の関数またはフィルタードライバー | バスデバイス用の関数ドライバー (bus FDO 用) | バスドライバーまたはバスフィルタードライバー (子 PDOs 用) |
 |---------------------------------------------------------------------------------------|---------------------------------------------|----------------------------------------------|--------------------------------------------------|
-|                 [**IRP\_MN\_START\_DEVICE**](irp-mn-start-device.md)                  |                  必須                   |                   必須                   |                     必須                     |
-|            [**IRP\_MN\_クエリ\_停止\_デバイス**](irp-mn-query-stop-device.md)            |                  必須                   |                   必須                   |                     必須                     |
-|                  [**IRP\_MN\_停止\_デバイス**](irp-mn-stop-device.md)                   |                  必須                   |                   必須                   |                     必須                     |
-|           [**IRP\_MN\_CANCEL\_STOP\_DEVICE**](irp-mn-cancel-stop-device.md)           |                  必須                   |                   必須                   |                     必須                     |
-|          [**IRP\_MN\_クエリ\_削除\_デバイス**](irp-mn-query-remove-device.md)          |                  必須                   |                   必須                   |                     必須                     |
-|                [**IRP\_MN\_REMOVE\_DEVICE**](irp-mn-remove-device.md)                 |                  必須                   |                   必須                   |                     必須                     |
-|         [**IRP\_MN\_CANCEL\_REMOVE\_DEVICE**](irp-mn-cancel-remove-device.md)         |                  必須                   |                   必須                   |                     必須                     |
-|             [**IRP\_MN\_SURPRISE\_REMOVAL**](irp-mn-surprise-removal.md)              |                  必須                   |                   必須                   |                     必須                     |
-|           [**IRP\_MN\_クエリ\_機能**](irp-mn-query-capabilities.md)            |                  省略可能                   |              省略可能なために必要な               |                                                  |
-|      [**IRP\_MN\_クエリ\_PNP\_デバイス\_状態**](irp-mn-query-pnp-device-state.md)       |                  省略可能                   |                   省略可能                   |                     省略可能                     |
-| [**IRP\_MN\_フィルター\_リソース\_要件**](irp-mn-filter-resource-requirements.md) |                省略可能 (1)                 |                 省略可能 (1)                 |                        X                        |
-|    [**IRP\_MN\_デバイス\_使用状況\_通知**](irp-mn-device-usage-notification.md)    |                必要な (1)                 |                 必要な (1)                 |                   必要な (1)                   |
-|       [**IRP\_MN\_クエリ\_デバイス\_リレーション**](irp-mn-query-device-relations.md)       |                                             |                                              |                                                  |
+|                 [**IRP\_の全\_開始デバイス\_** ](irp-mn-start-device.md)                  |                  必須                   |                   必須                   |                     必須                     |
+|            [**IRP\_の全クエリ\_の停止\_デバイス\_** ](irp-mn-query-stop-device.md)            |                  必須                   |                   必須                   |                     必須                     |
+|                  [**IRP\_の全\_停止デバイス\_** ](irp-mn-stop-device.md)                   |                  必須                   |                   必須                   |                     必須                     |
+|           [**IRP が終了し\_たときにデバイスを停止する\_\_\_** ](irp-mn-cancel-stop-device.md)           |                  必須                   |                   必須                   |                     必須                     |
+|          [**IRP\_を実行\_する\_クエリデバイスの削除\_** ](irp-mn-query-remove-device.md)          |                  必須                   |                   必須                   |                     必須                     |
+|                [**IRP\_のすべてのデバイスの削除\_\_** ](irp-mn-remove-device.md)                 |                  必須                   |                   必須                   |                     必須                     |
+|         [**IRP を終了する\_デバイスの削除\_\_\_** ](irp-mn-cancel-remove-device.md)         |                  必須                   |                   必須                   |                     必須                     |
+|             [**IRP\_の突然\_の削除\_** ](irp-mn-surprise-removal.md)              |                  必須                   |                   必須                   |                     必須                     |
+|           [**IRP\_の全\_クエリ機能\_** ](irp-mn-query-capabilities.md)            |                  省略可                   |              省略可 | 必須               |                                                  |
+|      [ **\_IRPの全クエリ\_のPNP\_デバイス\_の状態\_** ](irp-mn-query-pnp-device-state.md)       |                  省略可                   |                   省略可能                   |                     省略可                     |
+| [**IRP\_の全フィルター\_のリソース\_要件\_** ](irp-mn-filter-resource-requirements.md) |                省略可能 (1)                 |                 省略可能 (1)                 |                        いいえ                        |
+|    [**IRP\_デバイス使用量\_の通知\_\_** ](irp-mn-device-usage-notification.md)    |                必須 (1)                 |                 必須 (1)                 |                   必須 (1)                   |
+|       [**IRP\_の全クエリ\_のデバイス\_の関係\_** ](irp-mn-query-device-relations.md)       |                                             |                                              |                                                  |
 |                                 -   **BusRelations**                                  |                省略可能 (1)                 |                   必須                   |                      いいえ (2)                      |
-|                               -   **EjectionRelations**                               |                     X                      |                      X                      |                     省略可能                     |
-|                               -   **RemovalRelations**                                |                  省略可能                   |                   オプション                   |                        X                        |
-|                             -   **TargetDeviceRelation**                              |                     X                      |                      X                      |                     必須                     |
-|              [**IRP\_MN\_クエリ\_リソース**](irp-mn-query-resources.md)               |                     X                      |                      X                      |                   必要な (1)                   |
-|  [**IRP\_MN\_クエリ\_リソース\_要件**](irp-mn-query-resource-requirements.md)  |                     X                      |                      X                      |                   必要な (1)                   |
-|                     [**IRP\_MN\_QUERY\_ID**](irp-mn-query-id.md)                      |                                             |                                              |                                                  |
-|                               -   **BusQueryDeviceID**                                |                     X                      |                      X                      |                     必須                     |
-|                              -   **BusQueryHardwareIDs**                              |                     X                      |                      X                      |                     省略可能                     |
-|                             -   **BusQueryCompatibleIDs**                             |                     X                      |                  NoOptional                  |                                                  |
-|                              -   **BusQueryInstanceID**                               |                     X                      |                      X                      |                     省略可能                     |
-|                              -   **BusQueryContainerID**                              |                     X                      |                      X                      |                   必要な (3)                   |
-|            [**IRP\_MN\_QUERY\_DEVICE\_TEXT**](irp-mn-query-device-text.md)            |                     X                      |                      X                      |                   必要な (1)                   |
-|        [**IRP\_MN\_クエリ\_BUS\_情報**](irp-mn-query-bus-information.md)        |                     X                      |                      X                      |                   必要な (1)                   |
-|              [**IRP\_MN\_クエリ\_インターフェイス**](irp-mn-query-interface.md)               |                  省略可能                   |                   省略可能                   |                   必要な (1)                   |
-|                  [**IRP\_MN\_READ\_CONFIG**](irp-mn-read-config.md)                   |                     X                      |                      X                      |                   必要な (1)                   |
-|                 [**IRP\_MN\_WRITE\_CONFIG**](irp-mn-write-config.md)                  |                     X                      |                      X                      |                   必要な (1)                   |
-|            [**IRP\_MN\_デバイス\_列挙**](irp-mn-device-enumerated.md)             |                     X                      |                      X                      |                   必要な (1)                   |
-|                     [**IRP\_MN\_SET\_LOCK**](irp-mn-set-lock.md)                      |                     X                      |                      X                      |                   必要な (1)                   |
+|                               -   **EjectionRelations**                               |                     いいえ                      |                      X                      |                     省略可                     |
+|                               -   **RemovalRelations**                                |                  省略可                   |                   オプション                   |                        いいえ                        |
+|                             -   **TargetDeviceRelation**                              |                     いいえ                      |                      X                      |                     必須                     |
+|              [**IRP\_の全\_クエリリソース\_** ](irp-mn-query-resources.md)               |                     いいえ                      |                      いいえ                      |                   必須 (1)                   |
+|  [**IRP\_の全クエリ\_のリソース\_要件\_** ](irp-mn-query-resource-requirements.md)  |                     いいえ                      |                      いいえ                      |                   必須 (1)                   |
+|                     [**IRP\_の全\_クエリ ID\_** ](irp-mn-query-id.md)                      |                                             |                                              |                                                  |
+|                               -   **BusQueryDeviceID**                                |                     いいえ                      |                      X                      |                     必須                     |
+|                              -   **Busqueryハードウェア Id**                              |                     いいえ                      |                      X                      |                     省略可                     |
+|                             -   **Busquery互換 Id**                             |                     いいえ                      |                  X  |  省略可                  |                                                  |
+|                              -   **BusQueryInstanceID**                               |                     いいえ                      |                      X                      |                     省略可                     |
+|                              -   **BusQueryContainerID**                              |                     いいえ                      |                      いいえ                      |                   必須 (3)                   |
+|            [**IRP\_の全クエリ\_のデバイス\_テキスト\_** ](irp-mn-query-device-text.md)            |                     いいえ                      |                      いいえ                      |                   必須 (1)                   |
+|        [**IRP\_の全クエリ\_バス情報\_\_** ](irp-mn-query-bus-information.md)        |                     いいえ                      |                      いいえ                      |                   必須 (1)                   |
+|              [**IRP\_の全\_クエリインターフェイス\_** ](irp-mn-query-interface.md)               |                  省略可                   |                   省略可                   |                   必須 (1)                   |
+|                  [**IRP\_の読み取り\_の構成\_** ](irp-mn-read-config.md)                   |                     いいえ                      |                      いいえ                      |                   必須 (1)                   |
+|                 [**IRP\_の全書き込み\_の構成\_** ](irp-mn-write-config.md)                  |                     いいえ                      |                      いいえ                      |                   必須 (1)                   |
+|            [**IRP\_全デバイス\_列挙型\_** ](irp-mn-device-enumerated.md)             |                     いいえ                      |                      いいえ                      |                   必須 (1)                   |
+|                     [**IRP\_の全セット\_のロック\_** ](irp-mn-set-lock.md)                      |                     いいえ                      |                      いいえ                      |                   必須 (1)                   |
 
-(1) は、必須または特定の状況では省略可能。 詳細については IRP のリファレンス ページを参照してください。
+(1) 特定の状況では必須または省略可能。 詳細については、IRP のリファレンスページを参照してください。
 
-(バス 2) フィルター ドライバーでのクエリが処理**BusRelations**します。
+(2) バスフィルタードライバーが**Busrelations**のクエリを処理する場合があります。
 
-(3) Windows 7 および Windows の以降のバージョンでサポートされています。
+(3) Windows 7 以降のバージョンの Windows でサポートされています。
 
 
 
