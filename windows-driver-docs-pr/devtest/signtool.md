@@ -181,7 +181,7 @@ RFC 3161 タイムスタンプサーバーで使用されるダイジェスト�
 <span id="_as"></span><span id="_AS"></span> **/as**  
 ファイルがサインインしているカタログを検索するシステムコンポーネント (ドライバー) カタログデータベースのみを指定します。
 
-<span id="_ag_CatDBGUID"></span><span id="_ag_catdbguid"></span><span id="_AG_CATDBGUID"></span>**ag***Catdbguid*  
+<span id="_ag_CatDBGUID"></span><span id="_ag_catdbguid"></span><span id="_AG_CATDBGUID"></span>**ag** *Catdbguid*  
 ファイルがサインインされたカタログを検索するために、 *Catdbguid*引数で識別されるカタログデータベースのみを指定します。
 
 <span id="_c___CatalogFileName"></span><span id="_c___catalogfilename"></span><span id="_C___CATALOGFILENAME"></span> **/c** *Catalogfilename*  
