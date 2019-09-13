@@ -18,4 +18,4 @@ ms.locfileid: "70839648"
 
 インタロック操作の詳細については、「[インタロック変数アクセス](https://docs.microsoft.com/windows/desktop/Sync/interlocked-variable-access)」を参照してください。
 
-**メモ** **インタロックされた*Xxx*** 関数は、storport で *、または*32 ビット (x86) ドライバーの場合は*storport*で宣言されます。
+**メモ** **インタロックされた *Xxx*** 関数は、storport で *、または*32 ビット (x86) ドライバーの場合は*storport*で宣言されます。
