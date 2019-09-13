@@ -3,59 +3,60 @@ title: PDBCopy の使用
 description: PDBCopy の使用
 ms.assetid: f8207b09-5a1b-4ff3-b99d-20daa88cfe10
 keywords:
-- PDBCopy を使用して
-ms.date: 05/23/2017
+- PDBCopy、使用
+ms.date: 09/11/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: e0f5d61816aa99cb20dd7c91db0f2ca4ba266b12
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c09cf8b8cc181469343c3523ccb2c3fc9cfe1ee5
+ms.sourcegitcommit: 3b7c8b3cb59031e0f4e39dac106c1598ad108828
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376318"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70930268"
 ---
 # <a name="using-pdbcopy"></a>PDBCopy の使用
 
+PDBCopy は、完全なシンボルファイルから削除されたシンボルファイルを作成するコマンドラインツールです。 つまり、プライベートシンボルデータとパブリックシンボルテーブルの両方を含むシンボルファイルを受け取り、そのファイルのコピーを作成します。このファイルには、パブリックシンボルテーブルだけが含まれています。 使用する PDBCopy オプションに応じて、削除されたシンボルファイルには、パブリックシンボルテーブル全体またはパブリックシンボルテーブルの指定したサブセットのいずれかが含まれます。
 
-PDBCopy は、完全なシンボル ファイルから削除されたシンボル ファイルを作成するコマンド ライン ツールです。 つまり、プライベート シンボル データと、パブリック シンボル テーブルの両方が含まれていて、パブリック シンボル テーブルのみを含むファイルのコピーが作成されるシンボル ファイルがかかります。 PDBCopy オプションの使用によって削除されたシンボル ファイルには、全体のパブリック シンボルの表に、またはパブリック シンボル テーブルの指定したサブセットのいずれかが含まれています。
+WDK の PDBCopy の場所については、「 [Windows 用デバッグツールに含まれるツール](extra-tools.md#installation-directory)の**インストールディレクトリ**」を参照してください。
 
-PDB 形式シンボル ファイル (ファイル名拡張子 .pdb) と連携 PDBCopy は古い形式 (.dbg) シンボル ファイル使用できません。
+PDBCopy は、(ファイル名拡張子 .pdb を持つ) 任意の PDB 形式のシンボルファイルで動作しますが、古い形式 (dbg) のシンボルファイルは使用できません。
 
-パブリック シンボル テーブルとプライベート シンボル データの説明は、次を参照してください。[パブリックおよびプライベート シンボルの](public-and-private-symbols.md)します。
+パブリックシンボルテーブルとプライベートシンボルデータの説明については、「[パブリックシンボルとプライベート](public-and-private-symbols.md)シンボル」を参照してください。
 
-### <a name="span-idremovingprivatesymbolsspanspan-idremovingprivatesymbolsspanremoving-private-symbols"></a><span id="removing_private_symbols"></span><span id="REMOVING_PRIVATE_SYMBOLS"></span>プライベート シンボルの削除
+### <a name="span-idremoving_private_symbolsspanspan-idremoving_private_symbolsspanremoving-private-symbols"></a><span id="removing_private_symbols"></span><span id="REMOVING_PRIVATE_SYMBOLS"></span>プライベートシンボルの削除
 
-含む、すべてのパブリック シンボルとプライベート シンボルの削除されたシンボル ファイルを作成する場合は、3 つのパラメーターで PDBCopy を使用します。 ファイル、パスと、新しいシンボル ファイルとは、-p オプションの名前のシンボル パスと、元の名前。
+すべてのパブリックシンボルを含み、プライベートシンボルを含まない、削除されたシンボルファイルを作成する場合は、3つのパラメーター (元のシンボルファイルのパスと名前、新しいシンボルファイルのパスと名前、-p オプション) を指定して PDBCopy を使用します。
 
-たとえば、次のコマンドは、mysymbols.pdb と同じパブリック シンボル テーブルが含まれていますが、プライベート シンボル データの含まれていませんが、publicsymbols.pdb という名前の新しいファイルを作成します。
+たとえば、次のコマンドは、publicsymbols という名前の新しいファイルを作成します。このファイルには、mysymbols と同じパブリックシンボルテーブルが含まれていますが、プライベートシンボルデータは含まれていません。
 
-**pdbcopy mysymbols.pdb publicsymbols.pdb -p**
+**pdbcopy mysymbols. .pdb-p**
 
-Mysymbols.pdb が既に削除されたシンボル ファイルである場合、新しいファイルと、古いファイルのシンボリック コンテンツが同じになります。
+Mysymbols .pdb が既に削除されたシンボルファイルである場合、新しいファイルのシンボリックコンテンツと古いファイルは同じになります。
 
-このコマンドを実行した後は必要があります、新しいファイルを新しい場所に移動し、シンボル ファイルの元の名前に変更します (この例で mysymbols.pdb) ほとんどのデバッグ プログラムとシンボルの展開プログラムが特定のファイルに基づくシンボルを検索するため、名前。 または、別のディレクトリが指定されている限り、入力ファイルと PDBCopy コマンドラインに出力ファイルの同じファイル名を使用できます。
+このコマンドを発行した後、新しいファイルを新しい場所に移動して、シンボルファイルの元の名前 (この例では、mysymbols .pdb) に変更する必要があります。これは、ほとんどのデバッグプログラムおよびシンボル抽出プログラムは、特定のファイルに基づいてシンボルを検索するためです。指定. また、別のディレクトリが指定されている場合は、PDBCopy コマンドラインで入力ファイルと出力ファイルに同じファイル名を使用することもできます。
 
-**pdbcopy c:\\dir1\\mysymbols.pdb c:\\dir2\\mysymbols.pdb -p**
+**pdbcopy c:\\dir1\\mysymbols .pdb c:\\dir2\\mysymbols. .pdb-p**
 
-**注**  PDBCopy の実行前に、コピー先ファイルが存在しない必要があります。 この名前のファイルが存在する場合は、さまざまなエラーが発生します。
+  PDBCopy を実行する前に、コピー先のファイルが存在していないことに注意してください。 この名前のファイルが存在する場合は、さまざまなエラーが発生する可能性があります。
 
  
 
-### <a name="span-idremovingprivatesymbolsandselectedpublicsymbolsspanspan-idremovingprivatesymbolsandselectedpublicsymbolsspanremoving-private-symbols-and-selected-public-symbols"></a><span id="removing_private_symbols_and_selected_public_symbols"></span><span id="REMOVING_PRIVATE_SYMBOLS_AND_SELECTED_PUBLIC_SYMBOLS"></span>削除するプライベート シンボルし、パブリック シンボルを選択
+### <a name="span-idremoving_private_symbols_and_selected_public_symbolsspanspan-idremoving_private_symbols_and_selected_public_symbolsspanremoving-private-symbols-and-selected-public-symbols"></a><span id="removing_private_symbols_and_selected_public_symbols"></span><span id="REMOVING_PRIVATE_SYMBOLS_AND_SELECTED_PUBLIC_SYMBOLS"></span>プライベートシンボルと選択されたパブリックシンボルの削除
 
-だけでなく、プライベート シンボル データを削除もパブリック シンボルの表の情報の量を削減する場合は、削除するにはパブリック シンボルの一覧を指定する-f オプションを使用できます。
+プライベートシンボルデータを削除するだけでなく、パブリックシンボルテーブルの情報量を減らしたい場合は、-f オプションを使用して、削除するパブリックシンボルの一覧を指定できます。
 
 次の例は、この手順を示しています。
 
-1.  削除するシンボルの装飾を含め、完全な名前を決定します。 シンボルの装飾名の確信できない場合は使用できます、 [DBH](dbh.md)それらを判断するためのツール。 詳細については、特定の記号の文字装飾を決定するを参照してください。 この例でお知らせがあるとすることを削除するシンボルの装飾名 **\_myGlobal1**と **\_myGlobal2**します。
+1.  削除するシンボルの完全な名前 (装飾を含む) を決定します。 修飾されたシンボル名がわからない場合は、 [Dbh](dbh.md)ツールを使用してそれらを判別できます。 詳細については、「特定のシンボルの装飾を決定する」を参照してください。 この例では、削除するシンボルの装飾された名前が **\_myGlobal1**および **\_myGlobal2**であるとします。
 
-2.  削除するシンボルの一覧を含むテキスト ファイルを作成します。 このファイル内の各行には、装飾を含みますが、モジュール名を含まない 1 つのシンボルの名前を含める必要があります。 この例で、ファイルには次の 2 つの行が含まれます。
+2.  削除するシンボルの一覧を含むテキストファイルを作成します。 このファイルの各行には、装飾を含む1つの記号の名前を含める必要がありますが、モジュール名は含めません。 この例では、ファイルに次の2つの行が含まれています。
 
     ```text
     _myGlobal1
     _myGlobal2 
     ```
 
-    ファイルには、選択した任意の名前を指定できます。 このファイル listfile.txt という名前をし、c: ディレクトリ内に配置したことをお知らせと\\Temp します。
+    ファイルには任意の名前を付けることができます。 このファイルに listfile という名前を指定し、ディレクトリ C:\\Temp に配置したとします。
 
 3.  次の PDBCopy コマンドラインを使用します。
 
@@ -63,7 +64,7 @@ Mysymbols.pdb が既に削除されたシンボル ファイルである場合�
     pdbcopy OldPDB NewPDB-p -f:@TextFile 
     ```
 
-    場所*OldPDB*と*NewPDB*は元のシンボル ファイルと、新しいシンボル ファイルおよび*TextFile*は 2 つの手順で作成したファイルです。 特定のパブリック シンボルが、削除するには、(マーク @)、アンパサンドは、指定したテキスト ファイルで、これらのシンボルが表示されていることを示すことを-f オプションを示します。
+    *Oldpdb*と*newpdb*は元のシンボルファイルと新しいシンボルファイルで、 *TextFile*は手順 2. で作成したファイルです。 -F オプションは、特定のパブリックシンボルが削除されることを示し、アンパサンド (@) は、これらのシンボルが指定されたテキストファイルに一覧表示されることを示します。
 
     現在の例では、コマンドは次のようになります。
 
@@ -71,41 +72,41 @@ Mysymbols.pdb が既に削除されたシンボル ファイルである場合�
     pdbcopy c:\dir1\mysymbols.pdb c:\dir3\mysymbols.pdb -p -f:@c:\temp\listfile.txt 
     ```
 
-    新しいシンボル ファイルでは、c: が作成されます\\ディレクトリ 2\\mysymbols.pdb、任意のプライベート シンボルが含まれていないあり listfile.txt で表示されている 2 つのグローバル変数が含まれていません。
+    これにより、新しいシンボルファイル C:\\dir2\\が作成されます。このファイルには、プライベートシンボルが含まれておらず、listfile に表示されている2つのグローバル変数が含まれていません。
 
-この例に示すように、PDBCopy の-f オプションは、特定のパブリック シンボルの一覧を削除します。 (マーク @)、アンパサンドは、テキスト ファイルで、これらのシンボルが表示されていることを示します。 別の方法では、アンパサンドせず-f オプションを使用して、コマンドラインですべてのシンボルを一覧表示します。 したがって、次のコマンドラインは、上記の手順の例と同等です。
+この例に示すように、PDBCopy の-f オプションは、パブリックシンボルの特定のリストを削除します。 アンパサンド (@) は、これらのシンボルがテキストファイルに含まれていることを示します。 別の方法として、アンパサンドなしで-f オプションを使用して、コマンドライン上のすべてのシンボルを一覧表示することもできます。 したがって、次のコマンドラインは、上記の手順の例と同じです。
 
-**pdbcopy c:\\dir1\\mysymbols.pdb c:\\dir3\\mysymbols.pdb -p -f:\_myGlobal1 -f:\_myGlobal2**
+**pdbcopy c:\\dir1\\mysymbols. .pdb c:\\dir3\\mysymbols:\_myGlobal1-f--f:\_myGlobal2**
 
-1 つまたは 2 つのシンボルを削除するには、しない限りにコマンドラインでそれらを一覧するよりもテキスト ファイルを使用するが簡単です。
+1つまたは2つのシンボルのみを削除する場合を除き、テキストファイルをコマンドラインに表示するよりも簡単に使用できます。
 
-.Pdb ファイルからほとんどのパブリック シンボルを削除する場合は、-f オプションは、最も簡単な方法です。 -F オプションを削除するこれらのパブリック シンボルを一覧表示する必要があります、-f オプションでは、これらのパブリック シンボルを削除したくないを一覧表示する必要があります。 その他のすべてのパブリック シンボル (およびそのすべてのプライベート シンボル) は削除されます。 -F オプション-f オプションと同じ 2 つの構文オプションをサポートしています: F が後にシンボルの名前を保持するまたは @ f: のいずれかの後に保持するシンボルの一覧を含むテキスト ファイルの名前。 どちらの場合は、シンボル名を使用する必要がありますを装飾します。
+.Pdb ファイルから大部分のパブリックシンボルを削除する場合は、-F オプションが最も簡単な方法です。 -F オプションを使用すると、削除するパブリックシンボルを一覧表示する必要がありますが、-F オプションでは削除しないパブリックシンボルを一覧表示する必要があります。 その他のすべてのパブリックシンボル (およびすべてのプライベートシンボル) は削除されます。 -F オプションでは、-f オプションと同じ2つの構文オプションがサポートされています。-f: の後に保持するシンボルの名前、-F: @、保持するシンボルの一覧を含むテキストファイルの名前の順に指定します。 どちらの場合も、装飾されたシンボル名を使用する必要があります。
 
-次のコマンドがすべてプライベート シンボルとシンボルのみを残して、ほぼすべてのパブリック シンボルを削除するなど、  **\_myFunction5**と **\_myGlobal7**:
+たとえば、次のコマンドは、すべてのプライベートシンボルとほとんどすべてのパブリックシンボルを削除して、シンボル **\_myFunction5**と **\_myGlobal7**だけを残します。
 
 **pdbcopy c:\\dir1\\mysymbols.pdb c:\\dir3\\mysymbols.pdb -p -F:\_myFunction5 -F:\_myGlobal7**
 
-1 行で-f オプションの複数のインスタンスを結合する場合は、指定したすべてのシンボルが削除されます。 1 行で-f オプションの複数のインスタンスを結合する場合は、指定したすべてのシンボルが保持される場合およびその他のすべてのシンボルが削除されます。 -F で-f を組み合わせることはできません。
+-F オプションの複数のインスタンスを1行に結合すると、指定したすべてのシンボルが削除されます。 -F オプションの複数のインスタンスを1行に結合すると、指定したすべてのシンボルが保持され、他のすべてのシンボルは削除されます。 -F と-F を組み合わせることはできません。
 
-プライベート シンボルのすべてのデータが削除され-p オプションを指定せず、-f および-f オプションを使用できません。 元のファイルにプライベート シンボルが含まれていない場合でも (ただし、影響を与えませんこの場合) は、-p オプションを含める必要があります。
+-F オプションと-F オプションは、-p オプションを指定せずに使用することはできません。これにより、すべてのプライベートシンボルデータが削除されます。 元のファイルにプライベートシンボルが含まれていない場合でも、-p オプションを含める必要があります (ただし、この場合は効果がありません)。
 
-プライベート シンボル データが削除されないようにするのには、-f オプションを使用できません。 パブリック シンボル テーブルに含まれていないシンボルでこのオプションを使用する場合は、PDBCopy 無視します。
+-F オプションを使用して、プライベートシンボルデータが削除されないようにすることはできません。 このオプションを、パブリックシンボルテーブルに含まれていないシンボルと共に使用すると、PDBCopy は無視されます。
 
-### <a name="span-idthemspdbdllfilespanspan-idthemspdbdllfilespanthe-mspdbdll-file"></a><span id="the_mspdb__dll_file"></span><span id="THE_MSPDB__DLL_FILE"></span>Mspdb\*.dll ファイル
+### <a name="span-idthe_mspdb__dll_filespanspan-idthe_mspdb__dll_filespanthe-mspdbdll-file"></a><span id="the_mspdb__dll_file"></span><span id="THE_MSPDB__DLL_FILE"></span>Mspdb\*.dll ファイル
 
-PDBCopy では、Mspdb80.dll ファイルまたは Mspdb60.dll ファイルのいずれかを実行するためにアクセスする必要があります。 既定では、PDBCopy は、Visual Studio .NET 2002 および Visual Studio の以降のバージョンで使用されるバージョンである Mspdb80.dll で使用します。 指定できるかどうか、Visual Studio 6.0 または以前のバージョンを使用して、シンボルが作成されたは、vc6 コマンド ライン オプションためその PDBCopy を使用して Mspdb60.dll 代わりに、これは必要ありませんの。 PDBCopy があっても、適切なファイルを探し、vc6 オプションは使用されません。 Visual Studio、Platform SDK、または Windows Driver Kit (WDK) のインストール内では、これらのファイルを検索できます。
+PDBCopy を実行するには、Mspdb80 ファイルまたは Mspdb60 ファイルのいずれかにアクセスする必要があります。 既定では、PDBCopy は Mspdb80 を使用します。これは、visual Studio .NET 2002 以降のバージョンの Visual Studio で使用されるバージョンです。 シンボルが Visual Studio 6.0 またはそれ以前のバージョンを使用して作成されている場合は、-vc6.dll コマンドラインオプションを指定すると、PDBCopy は代わりに Mspdb60 を使用します。ただし、これは必須ではありません。 PDBCopy は、-vc6.dll オプションが使用されていない場合でも、適切なファイルを検索します。 これらのファイルは、Visual Studio、Platform SDK、または Windows Driver Kit (WDK) のインストール内で見つけることができます。
 
-PDBCopy を実行する前に必ず正しいバージョンの mspdb\*の .dll ファイルは、コンピューターにアクセスとその場所がコマンドのパスの一部であることを確認します。 使用する必要がありますがない場合、**パス**コマンド パスにこの場所を追加するコマンド。
+PDBCopy を実行する前に、正しいバージョンの mspdb\*.dll ファイルがコンピューターにアクセスできることを確認し、その場所がコマンドパスの一部であることを確認してください。 そうでない場合は、 **path**コマンドを使用して、この場所をコマンドパスに追加する必要があります。
 
-### <a name="span-idthefilesignatureandthesymsrvindexspanspan-idthefilesignatureandthesymsrvindexspanthe-file-signature-and-the-symsrv-index"></a><span id="the_file_signature_and_the_symsrv_index"></span><span id="THE_FILE_SIGNATURE_AND_THE_SYMSRV_INDEX"></span>ファイルの署名と SymSrv インデックス
+### <a name="span-idthe_file_signature_and_the_symsrv_indexspanspan-idthe_file_signature_and_the_symsrv_indexspanthe-file-signature-and-the-symsrv-index"></a><span id="the_file_signature_and_the_symsrv_index"></span><span id="THE_FILE_SIGNATURE_AND_THE_SYMSRV_INDEX"></span>ファイルの署名と SymSrv インデックス
 
-各シンボル ファイルには、一意に識別されている固定の署名があります。 SymSrv では、署名を使用して、一意「インデックス値を」ファイルを生成します。 2 つのファイルには、さまざまな内容または別の作成時間がある、個別の署名と個別の SymSrv インデックス値があります。
+各シンボルファイルには、それを一意に識別する固定署名があります。 SymSrv は、署名を使用して、ファイルの一意な "インデックス値" を生成します。 2つのファイルの内容が異なる場合、または作成時間が異なる場合は、個別の署名と異なる SymSrv インデックス値も保持されます。
 
-PDBCopy で作成したファイルには、ルールの一意のインデックス値の例外です。 PDBCopy では、新しいシンボル ファイルを作成するとき、古いファイルとして、SymSrv のインデックス値と同じシグネチャがあります。 この機能は、シンボルに関連するツールの動作を変更することがなく、他の置き換えられる 1 つのファイルを使用できます。
+PDBCopy で作成されたファイルは、一意のインデックス値のルールの例外です。 PDBCopy によって新しいシンボルファイルが作成されると、古いファイルと同じ署名と SymSrv インデックス値が生成されます。 この機能により、シンボル関連のツールの動作を変更することなく、1つのファイルを別のファイルに置き換えることができます。
 
-新しいファイルを個別の署名と SymSrv インデックスがある場合は、-s オプションを使用します。 ほとんどの場合 PDBCopy の最も一般的な用途は、不一致を発生させることがなく、古いファイルを置き換えることができる変更のシンボル ファイルを作成するために、このオプションを使用するはありません。 新しい署名に新しいファイルが古いものを正しく交換するを防ぐ、古いファイルより新しいファイルに別のインデックス値を代入する SymSrv があります。
+新しいファイルに個別の署名と SymSrv インデックスを作成する場合は、-s オプションを使用します。 ほとんどの場合、このオプションは使用しません。これは、PDBCopy の最も一般的な用途は、変更されたシンボルファイルを作成して、不一致が発生することなく古いファイルを置き換えることができるためです。 新しい署名があると、SymSrv によって古いファイルとは異なるインデックス値が新しいファイルに割り当てられ、新しいファイルが古いファイルを適切に置き換えることができなくなる可能性があります。
 
-完全なコマンドラインの構文を参照してください。 [ **PDBCopy コマンド ライン オプション**](pdbcopy-command-line-options.md)します。
+コマンドラインの完全な構文については、「 [**PDBCopy のコマンドラインオプション**](pdbcopy-command-line-options.md)」を参照してください。
 
  
 

@@ -1,74 +1,46 @@
 ---
 title: Debugger Data Model C++ のその他のインターフェイス
-description: このトピックでは、メタデータ、概念とオブジェクトの列挙など、デバッガーの C++ のデータ モデルに関連付けられている追加のインターフェイスについて説明します。
-ms.date: 10/05/2018
-ms.openlocfilehash: 3c0a9f9f11accd8d78a90b110cfae38d77257412
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+description: このトピックでは、メタデータ、概念C++ 、オブジェクトの列挙など、デバッガーデータモデルに関連付けられている追加のインターフェイスについて説明します。
+ms.date: 09/12/2018
+ms.openlocfilehash: 9821136cbe22c8791a2dde379ccb149775c4ee9d
+ms.sourcegitcommit: 3b7c8b3cb59031e0f4e39dac106c1598ad108828
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374962"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70930386"
 ---
 # <a name="debugger-data-model-c-additional-interfaces"></a>Debugger Data Model C++ のその他のインターフェイス
 
-このトピックでは、メタデータ、概念とオブジェクトの列挙など、デバッガーの C++ のデータ モデルに関連付けられているいくつか追加のインターフェイスについて説明します。
+このトピックでは、メタデータ、概念、 C++オブジェクトの列挙など、デバッガーデータモデルに関連付けられているいくつかの追加のインターフェイスについて説明します。
 
-このトピックでは、C、C++ ベースのデバッガーの拡張機能の構築に使用する方法および作成する方法からアクセスできるインターフェイスについて説明するシリーズのパートの他のデータ モデルの構成要素を使用して (例。JavaScript または NatVis) C データ モデルの拡張機能から。
+## <a name="span-idmetadatainterfacesspan-debugger-data-model-metadata-interfaces"></a><span id="metadatainterfaces"></span>デバッガーデータモデルのメタデータインターフェイス
 
----
+データモデルの主要な概念の1つは、オブジェクト (特に合成型) が、キー/値/メタデータの組のディクショナリであることです。 各キーには、関連付けられているメタデータのストア全体を含めることができます。これにより、キーとその可能性のある値を囲むさまざまな要素が記述されます。 メタデータは、どのような方法でもキーの値を変更しないことに注意してください。 キーとその値に関連付けられている補助的な情報のみが、キーとその値のプレゼンテーションやその他の関連属性に影響を与える可能性があります。 
 
-[デバッガー データ モデルの C++ の概要](data-model-cpp-overview.md)
+いくつかの点で、メタデータストアは、データモデル内のオブジェクトの本質であるキー/値/メタデータタプルとは異なるものではありません。 ただし、このビューでは簡略化されています。 メタデータストアは、IKeyStore ストアインターフェイスによって表されます。 また、キー/値/メタデータの組のコレクションでも、メタデータキーストアとモデルオブジェクトを使用して実行できることには制限があります。 
 
-[デバッガーのデータ モデルの C++ インターフェイス](data-model-cpp-interfaces.md)
+- キーストアには、親ストアを1つだけ含めることができます。親モデルの任意のチェーンを持つことはできません。
+- キーストアには概念がありません。 キー/値/メタデータタプルの辞書のみを持つことができます。 これは、キーストアに存在するキーが静的であることを意味します。 動的言語システムで要求時に作成することはできません。
+- 規則により、メタデータで定義されたキーストア内の値は、基本値 (組み込みおよびプロパティアクセサー) に制限されます。
 
-[デバッガーのデータ モデルの C++ オブジェクト](data-model-cpp-objects.md)
+キーストアはキーの任意の数 (および任意の名前付け) を持つことができますが、セマンティック値が定義されている特定の名前があります。 現在、これらの名前は次のとおりです。 
 
-[デバッガーのデータ モデルの C++ の追加インターフェイス](data-model-cpp-additional-interfaces.md)
-
-[デバッガーのデータ モデルの C の概念](data-model-cpp-concepts.md)
-
-[デバッガー データ モデルの C++ のスクリプト](data-model-cpp-scripting.md)
-
----
-
-## <a name="topic-sections"></a>トピックのセクション
-
-このトピックは次のセクションで構成されます。
-
-[デバッガーのデータ モデルのメタデータ インターフェイス](#metadatainterfaces)
-
-[データ モデルのオブジェクトの列挙](#object)
-
----
-
-## <a name="span-idmetadatainterfacesspan-debugger-data-model-metadata-interfaces"></a><span id="metadatainterfaces"></span> デバッガーのデータ モデルのメタデータ インターフェイス
-
-データ モデルの中核となる概念の 1 つは、オブジェクト (特に代理 1) が組のキー/値/メタデータのディクショナリです。 各キーには、ストア全体のさまざまなキーとその潜在的な値を囲むことを説明する、関連付けられているメタデータのことができます。 メタデータ、何らかの方法で変わらないこと、キーの値に注意してください。 キーと、プレゼンテーションやキーの関連付けられているその他の属性に影響を与える可能性があります、値とその値に関連付けられた補助的な情報のみになります。 
-
-ある意味のメタデータ ストアは、データ モデル内のオブジェクトの最も重要な部分であるメタデータ/キー/値のタプルを変わりありません。 ただし、このビューから簡略化します。 メタデータ ストアは IKeyStore インターフェイスによって表されます。 メタデータ/キー/値の組のコレクションも、中には、モデル オブジェクトとメタデータのキー ストアと何ができるには制限があります。 
-
-- キー ストアでは、1 つの親ストアを持つことができますのみ - 親モデルの任意のチェーンを持つことはできません。
-- キー ストアには、概念がありません。 メタデータ/キー/値の組のディクショナリのみができます。 つまり、キー ストアに存在するキーは静的です。 作成できませんオンデマンドで動的言語システムで。
-- 慣例としてのみ、定義されているメタデータのキー ストア内の値が (組み込み関数とプロパティのアクセサー) の基本的な値に制限されます。
-
-キー ストアには、キーの任意の数 (と任意の名前付け) ことができますが、セマンティックの値が定義されている特定の名前があります。 現在、その名前には。 
-
-キー名 | 値の種類 | 説明
+キー名 | 値型 | 説明
 |--------------|------------------|--------------|
-PreferredRadix | 整数:2、8、10、または 16 | 序数値を表示するか、どのような基数を示します
-PreferredFormat | 整数: PreferredFormat 列挙体によって定義されています。 | 値の表示優先書式設定の種類を示します
-PreferredLength | 整数型 | 配列とその他のコンテナーは、既定では、要素の数を表示するかを示します
-FindDerivation | ブール値 | デバッグ ホストが使用する前に、値の派生型の分析を実行する必要があるかどうかを示します (例:: を表示する)
-Help | String | スタイルのヘルプに関するツールヒントのテキストを適切に便利な方法でユーザー インターフェイスで表示可能なキー。
-アクション名 | String | (1 つの引数を受け取らないし、値は返されませんが) 特定のメソッドがアクションであることを示します。 アクションの名前は、メタデータで指定されます。 ユーザー インターフェイスは、コンテキスト メニューまたはその他の適切なインターフェイスのオプションを表示するには、この名前を利用できます。
-ActionIsDefault | ブール値 | キーを指定すると、アクション名は、これは、オブジェクトの既定のアクションであることを示している場合にのみ有効です。
-ActionDescription | String | 唯一の有効なアクションのツール ヒントのスタイルの説明は、この ActionName キーが指定されている場合。 そのようなテキストは、適切に便利な方法で、ユーザー インターフェイスで表示できます。
+PreferredRadix | 以外2、8、10、または16 | 序数値を表示する基数を示します。
+PreferredFormat | 整数: PreferredFormat 列挙体で定義されているとおり | 値の表示に適した書式設定の種類を示します。
+PreferredLength | 整数型 | 配列とその他のコンテナーについては、既定で表示される要素の数を示します。
+FindDerivation | ブール値 | を使用する前に、デバッグホストが値に対して派生型の分析を実行する必要があるかどうかを示します (例: 表示)
+Help | String | ツールヒントスタイルユーザーインターフェイスによって適切に表示できるキーのヘルプテキスト。
+actionName | String | 指定されたメソッド (引数を取らず、値を返さないメソッド) がアクションであることを示します。 アクションの名前はメタデータで指定されます。 ユーザーインターフェイスは、この名前を使用して、コンテキストメニューやその他の適切なインターフェイスにオプションを表示することができます。
+ActionIsDefault | ブール値 | ActionName キーが指定されている場合にのみ有効です。は、これがオブジェクトの既定のアクションであることを示します。
+ActionDescription | String | ActionName キーが指定されている場合にのみ有効です。これにより、アクションのツールヒントスタイルの説明が提供されます。 このようなテキストは、適切な方法でユーザーインターフェイスに表示できます。
 
-このような使用は現在ありませんの間は、メタデータ ストアのキーは、独自のメタデータ (ad infiniteum) を設定できます。 ほとんどの呼び出し元は、メタデータ パラメーター IKeyStore インターフェイスのメソッドの null を指定します。 
+メタデータストア内のキーには独自のメタデータ (ad infiniteum) を含めることができますが、現時点ではこのような機能は使用されていないことに注意してください。 ほとんどの呼び出し元は、IKeyStore ストアインターフェイスのメソッドのメタデータパラメーターに null を指定します。 
 
-**コア メタデータ インターフェイス:IKeyStore**
+**コアメタデータインターフェイス:IKeyStore ストア**
 
-IKeyStore インターフェイスの定義は次のとおりです。 
+IKeyStore ストアインターフェイスは、次のように定義されています。 
 
 ```cpp
 DECLARE_INTERFACE_(IKeyStore, IUnknown)
@@ -83,40 +55,40 @@ DECLARE_INTERFACE_(IKeyStore, IUnknown)
 
 [GetKey](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-ikeystore-getkey)
 
-GetKey メソッドは、IModelObject GetKey メソッドに似ています。 キー ストアまたはキー ストアの親ストアに存在する場合は、指定したキーの値を返します。 キーの値がプロパティのアクセサーの場合は、GetValue メソッドは呼び出されませんプロパティのアクセサーに注意してください。 実際の IModelPropertyAccessor、IModelObject にボックス化が返されます。 クライアントがこのため GetKeyValue を呼び出すことが一般的です。 
+GetKey メソッドは、IModelObject の GetKey メソッドに似ています。 キーストアまたはキーストアの親ストアに存在する場合は、指定されたキーの値が返されます。 キーの値がプロパティアクセサーの場合は、プロパティアクセサーで GetValue メソッドが呼び出されないことに注意してください。 IModelObject にボックス化された実際の IModelPropertyAccessor が返されます。 通常は、クライアントがこの理由で GetKeyValue を呼び出すことになります。 
 
 [SetKey](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-ikeystore-setkey)
 
-SetKey メソッドは、IModelObject SetKey メソッドに似ています。 キーの作成と、キー ストア内でそのメタデータを関連付けることのできる唯一の方法になります。 
+SetKey メソッドは、IModelObject の SetKey メソッドに似ています。 キーを作成し、メタデータをキーストア内で関連付けることができる唯一の方法です。 
 
 [GetKeyValue](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-ikeystore-getkeyvalue)
 
-GetKeyValue メソッドは、最初のメソッドが、クライアントは、メタデータ ストア内で特定のキーの値を検索するために移動します。 キーの引数で指定されたキーが存在する場合、ストア (または親ストア) 内でそのキーとそれに関連付けられたメタデータの値が返されます。 キーの値がプロパティのアクセサー (、IModelObject にボックス化 IModelPropertyAccessor) の場合は、プロパティ アクセサーの GetValue メソッドに自動的に GetKeyValue して返されるプロパティの値を基になると呼ばれます。 
+GetKeyValue メソッドは、メタデータストア内の特定のキーの値を検索するためにクライアントが最初に実行するメソッドです。 キー引数で指定されたキーがストア (またはその親ストア) 内に存在する場合、そのキーの値とそれに関連付けられているメタデータが返されます。 キーの値がプロパティアクセサー (IModelObject にボックス化された IModelPropertyAccessor) である場合は、プロパティアクセサーの GetValue メソッドが GetKeyValue によって自動的に呼び出され、返されるプロパティの基になる値が返されます。 
 
 [SetKeyValue](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-ikeystore-setkeyvalue)
 
-SetKeyValue メソッドは、IModelObject SetKeyValue メソッドに似ています。 このメソッドでは、メタデータ ストア内の新しいキーを作成することはできません。 キーの引数で示されている既存のキーがある場合は、記載されてその値が設定されます。 キーがプロパティのアクセサーの場合は、SetValue メソッドが基になる値を設定するにはプロパティのアクセサーに呼び出されます。 そのメタデータは、作成すると通常は静的に注意してください。 メタデータのキー ストアでは、このメソッドの使用が頻繁にあります。 
+SetKeyValue メソッドは、IModelObject の SetKeyValue メソッドに似ています。 このメソッドでは、メタデータストア内に新しいキーを作成することはできません。 キー引数で示されているような既存のキーがある場合、その値は示すように設定されます。 キーがプロパティアクセサーの場合は、基になる値を設定するために、プロパティアクセサーで SetValue メソッドが呼び出されます。 メタデータは、通常、作成されると静的であることに注意してください。 メタデータキーストアでこのメソッドを使用することは、頻繁に行わないようにしてください。 
 
 [ClearKeys](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-ikeystore-clearkeys)
 
-ClearKeys メソッドは、IModelObject ClearKeys メソッドに似ています。 特定のメタデータ ストアからのすべてのキーが削除されます。 このメソッドには、任意の親ストアへの影響がありません。 
+ClearKeys メソッドは、IModelObject の ClearKeys メソッドに似ています。 このメソッドは、指定されたメタデータストアからすべてのキーを削除します。 このメソッドは、どの親ストアにも影響しません。 
 
 
-## <a name="span-idobjectspan-object-enumeration-in-the-data-model"></a><span id="object"></span> データ モデルのオブジェクトの列挙
+## <a name="span-idobjectspan-object-enumeration-in-the-data-model"></a><span id="object"></span>データモデルのオブジェクト列挙型
 
-**データ モデル内のオブジェクトを列挙します。**
+**データモデル内のオブジェクトの列挙**
 
-データ モデルには、2 つの中核となるキーの列挙体インターフェイスがあります。IKeyEnumerator IRawEnumerator. 2 つのコア インターフェイスのうちには、3 つのスタイルのいずれかでオブジェクトを列挙するために使用できます。 
+データモデルには、次の2つのコアキー列挙インターフェイスがあります。IKeyEnumerator および Ikeyenumerator。 これらは2つのコアインターフェイスですが、次の3つのスタイルのいずれかでオブジェクトを列挙するために使用できます。 
 
-*キー* -EnumerateKeys すべて基になるプロパティ アクセサーを解決せず、オブジェクトとその値/メタデータのキーを列挙するための呼び出しを使用して、IKeyEnumerator インターフェイスを取得できます。 列挙体のこのスタイルでは、IModelObjects にボックス化された生の IModelPropertyAccessor 値を返すことができます。
+*Keys* -IKeyEnumerator インターフェイスは、基になるプロパティアクセサーを解決せずに、オブジェクトのキーとその値/メタデータを列挙するために、EnumerateKeys の呼び出しによって取得できます。 この列挙型は、IModelObjects にボックス化された生の IModelPropertyAccessor 値を返すことができます。
 
-*値*-EnumerateKeyValues または EnumerateRawValues オブジェクトとその値/メタデータ/生のキー値を列挙するための呼び出しを使用して、IKeyEnumerator および IRawEnumerator インターフェイスを取得できます。 列挙体に存在するすべてのプロパティ アクセサーは、このような列挙体の中に、基になる GetValue メソッドの呼び出しを使用して自動的に解決されます。
+*値*-ikeyenumerator インターフェイスと ikeyenumerator インターフェイスは、オブジェクトのキー/生の値とその値/メタデータを列挙するために、EnumerateKeyValues または列挙値のいずれかの呼び出しによって取得できます。 列挙体に存在するプロパティアクセサーは、そのような列挙中に基になる GetValue メソッドの呼び出しによって自動的に解決されます。
 
-*参照*-EnumerateKeyReferences または EnumerateRawReferences オブジェクトのキー/生の値への参照を列挙するための呼び出しを使用して、IKeyEnumerator および IRawEnumerator インターフェイスを取得できます。 このような参照を保存して後で取得または基になるキーまたは生の値を設定するために使用できます。
+*参照*-ikeyenumerator インターフェイスと ikeyenumerator インターフェイスは、オブジェクトのキー/生の値への参照を列挙するために、EnumerateKeyReferences または列挙のいずれかの参照を使用して取得できます。 このような参照を保存し、後で使用して基になるキーまたは生の値を取得または設定することができます。
 
-**KeyEnumerator:代理キーの列挙**
+**KeyEnumerator:統合キーの列挙**
 
-IKeyEnumerator インターフェイスは、インスタンス オブジェクトとその親モデル チェーン内のすべての関連付けられている親モデル内の (キー、値、または参照) をすべてのキーの列挙体の 1 つのインターフェイスです。 インターフェイスの定義は次のとおりです。 
+IKeyEnumerator インターフェイスは、インスタンスオブジェクト内のすべてのキー (キー、値、または参照) の列挙型の単一のインターフェイスで、親モデルチェーン内のすべての関連付けられた親モデルに対応しています。 インターフェイスは次のように定義されます。 
 
 ```cpp
 DECLARE_INTERFACE_(IKeyEnumerator, IUnknown)
@@ -128,16 +100,16 @@ DECLARE_INTERFACE_(IKeyEnumerator, IUnknown)
 
 [リセット](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-ikeyenumerator-reset)
 
-Reset メソッドに最初に取得した位置に、列挙子をリセットします (例:: 列挙型の最初の要素の前に)。 GetNext 後続の呼び出しでは、最初に列挙されたキーを返します。 
+Reset メソッドは、列挙子を最初に取得した位置 (たとえば、列挙体の最初の要素の前) にリセットします。 次に GetNext を呼び出すと、最初に列挙されたキーが返されます。 
 
 [GetNext](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-ikeyenumerator-getnext)
 
-GetNext メソッドは、列挙子を前方に移動し、列挙体では、その位置にあるキーを返します。
+GetNext メソッドは、列挙子を前方に移動し、列挙体のその位置にあるキーを返します。
 
 
-**IRawEnumerator:ネイティブまたは基になる言語 (C/C++) の列挙型を構築します**
+**IRawEnumerator:ネイティブまたは基になる言語 (CC++/) コンストラクトの列挙体**
 
-IRawEnumerator インターフェイスは、(値または参照) によって、デバッグ対象のアドレス空間内にネイティブ コンストラクトを表すオブジェクト内のすべてのネイティブ/言語コンストラクトの列挙体の 1 つのインターフェイスです。 インターフェイスの定義は次のとおりです。 
+IRawEnumerator インターフェイスは、デバッグターゲットのアドレス空間内のネイティブコンストラクトを表すオブジェクト内のすべてのネイティブ/言語コンストラクト (値または参照) の列挙体の単一のインターフェイスです。 インターフェイスは次のように定義されます。 
 
 ```cpp
 DECLARE_INTERFACE_(IRawEnumerator, IUnknown)
@@ -149,26 +121,26 @@ DECLARE_INTERFACE_(IRawEnumerator, IUnknown)
 
 [リセット](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-irawenumerator-reset)
 
-Reset メソッドに最初に取得した位置に、列挙子をリセットします (例:: 列挙型の最初の要素の前に)。 GetNext 後続の呼び出しでは、最初列挙型のネイティブ/言語構成要素を返します。 
+Reset メソッドは、列挙子を最初に取得した位置 (たとえば、列挙体の最初の要素の前) にリセットします。 次に GetNext を呼び出すと、最初に列挙されたネイティブ/言語構成体が返されます。 
 
 [GetNext](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-irawenumerator-getnext)
 
-GetNext メソッド両方は、列挙子を前方に移動し、列挙体では、その位置にあるネイティブ/言語構成要素を返します。 
-
+GetNext メソッドは、両方とも列挙子を前方に移動し、列挙体のその位置にあるネイティブ/言語コンストラクトを返します。 
 
 ---
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
-[デバッガー データ モデルの C++ の概要](data-model-cpp-overview.md)
+このトピックは、からC++アクセス可能なインターフェイス、それらを使用してC++ベースのデバッガー拡張機能を構築する方法、および他のデータモデル構造を使用する方法について説明したシリーズの一部です (例:JavaScript または NatVis) をC++データモデル拡張機能から。
 
-[デバッガーのデータ モデルの C++ インターフェイス](data-model-cpp-interfaces.md)
+[デバッガーデータモデルC++の概要](data-model-cpp-overview.md)
 
-[デバッガーのデータ モデルの C++ オブジェクト](data-model-cpp-objects.md)
+[デバッガーデータモデルC++のインターフェイス](data-model-cpp-interfaces.md)
 
-[デバッガーのデータ モデルの C++ の追加インターフェイス](data-model-cpp-additional-interfaces.md)
+[デバッガーデータモデルC++オブジェクト](data-model-cpp-objects.md)
 
-[デバッガーのデータ モデルの C の概念](data-model-cpp-concepts.md)
+[デバッガーデータモデルC++の追加インターフェイス](data-model-cpp-additional-interfaces.md)
 
-[デバッガー データ モデルの C++ のスクリプト](data-model-cpp-scripting.md)
+[デバッガーデータモデルC++の概念](data-model-cpp-concepts.md)
 
+[デバッガーデータモデルC++のスクリプト](data-model-cpp-scripting.md)

@@ -1,99 +1,70 @@
 ---
 title: Debugger Data Model C++ のオブジェクト
-description: このトピックでは、デバッガーのデータ モデルの C++ オブジェクトを使用する方法と、デバッガーの機能を拡張する方法について説明します。
-ms.date: 10/08/2018
-ms.openlocfilehash: df747dd779761f71a07ec23085f991287c36f518
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+description: このトピックでは、デバッガーデータモデルC++オブジェクトの使用方法と、デバッガーの機能を拡張する方法について説明します。
+ms.date: 09/12/2019
+ms.openlocfilehash: 6f124666cf8424080b8bddd93bce6efd4e948263
+ms.sourcegitcommit: 3b7c8b3cb59031e0f4e39dac106c1598ad108828
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376128"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70930374"
 ---
 # <a name="debugger-data-model-c-objects"></a>Debugger Data Model C++ のオブジェクト
 
-このトピックでは、デバッガーのデータ モデルの C++ オブジェクトを使用する方法と、デバッガーの機能を拡張する方法について説明します。
+このトピックでは、デバッガーデータモデルC++オブジェクトの使用方法と、デバッガーの機能を拡張する方法について説明します。
 
-このトピックでは、C、C++ ベースのデバッガーの拡張機能の構築に使用する方法および作成する方法からアクセスできるインターフェイスについて説明するシリーズのパートの他のデータ モデルの構成要素を使用して (例。JavaScript または NatVis) C データ モデルの拡張機能から。
+## <a name="span-idcore--the-core-debugger-object-model"></a><span id="core">コアデバッガーオブジェクトモデル
 
+データモデルに関する最も基本的な機能の1つは、オブジェクトの定義とオブジェクトとの相互作用を標準化することです。 *Imodelobject*インターフェイスは、オブジェクトの概念をカプセル化しています。オブジェクトが整数、浮動小数点値、文字列、デバッガーのターゲットアドレス空間内のいくつかの複合型、またはプロセスの概念などのデバッガーの概念です。第.
 
-[デバッガー データ モデルの C++ の概要](data-model-cpp-overview.md)
+*Imodelobject*で保持 (またはボックス化) できるいくつかの異なる点があります。
 
-[デバッガーのデータ モデルの C++ インターフェイス](data-model-cpp-interfaces.md)
+-   **組み込み値**- *Imodelobject*は、さまざまな基本型のコンテナーにすることができます。8、16、32、または64ビット符号付き整数、符号なし整数、ブール値、文字列、エラー、または空の概念。
 
-[デバッガーのデータ モデルの C++ オブジェクト](data-model-cpp-objects.md)
-
-[デバッガーのデータ モデルの C++ の追加インターフェイス](data-model-cpp-additional-interfaces.md)
-
-[デバッガーのデータ モデルの C の概念](data-model-cpp-concepts.md)
-
-[デバッガー データ モデルの C++ のスクリプト](data-model-cpp-scripting.md)
-
----
-
-## <a name="topic-sections"></a>トピックのセクション
-
-このトピックは次のセクションで構成されます。
-
-[コア デバッガー オブジェクト モデル](#core)
-
-[デバッガーのデータ モデルの中核となるオブジェクトの種類](#objecttypes)
-
-[デバッガー データ モデルのマネージャー](#modelmanager)
-
----
-
-## <a name="span-idcore--the-core-debugger-object-model"></a><span id="core">  コア デバッガー オブジェクト モデル
-
-データ モデルの最も基本的かつ強力な点の 1 つは、どのようなオブジェクトおよびオブジェクトと対話するいずれかの方法の定義を標準化します。 そのことです。 *IModelObject*インターフェイスは、そのオブジェクトは、整数、浮動小数点値、文字列、デバッガーのターゲット アドレス空間にいくつかの複合型またはなどのいくつかのデバッガーの概念に--オブジェクトの概念をカプセル化しますプロセスまたはモジュールの概念です。
-
-いくつかの異なる方法で保持されている (またはできるにボックス化)、 *IModelObject*:
-
--   **組み込まれている値**- *IModelObject*の基本的な種類のコンテナーを指定できます。8、16、32、または 64 ビット符号付きまたは符号なしの整数、ブール値、文字列、エラー、または空の概念です。
-
--   **ネイティブ オブジェクト**- *IModelObject*は複合型 (デバッガーの型システムで定義) されたデバッガーが対象とする任意のアドレス空間内 
+-   **ネイティブオブジェクト**- *Imodelobject*は、デバッガーが対象とするすべてのアドレス空間内で複合型 (デバッガーの型システムによって定義されている) を表すことができます。 
     
--   **合成オブジェクト**- *IModelObject*場合は、動的オブジェクト--ディクショナリであることができます: キーのコレクション/値/メタデータの組と一連の**概念**動作を定義するします。単にキーによって表される/値のペア。
+-   **合成オブジェクト**- *Imodelobject*は動的オブジェクトにすることができます。これは、キー/値/メタデータの組のコレクション、およびキーと値のペアで単に表されない動作を定義する一連の**概念**です。
 
--   **プロパティ**- *IModelObject*プロパティを表すことができます。 何かの値を取得またはメソッドの呼び出しで変更されることができます。 内のプロパティ、 *IModelObject*は実質的には、 *IModelPropertyAccessor*にボックス化されたインターフェイス、 *IModelObject*
+-   **プロパティ**- *Imodelobject*は、プロパティを表すことができます。値を取得したり、メソッド呼び出しで変更したりできます。 *Imodelobject*内のプロパティは、事実上、 *imodelobject*にボックス化された*IModelPropertyAccessor*インターフェイスです。
 
--   **メソッド**- *IModelObject*メソッドを表すことができます。 何かできるを呼び出し一連の引数と戻り値を取得します。 内のメソッド、 *IModelObject*は実質的には、 *IModelMethod*にボックス化されたインターフェイス、 *IModelObject*
+-   **メソッド**- *Imodelobject*は、メソッドを表すことができます。一連の引数を指定して呼び出すことができ、戻り値を取得できます。 *Imodelobject*内のメソッドは実質的に*imodelmethod*インターフェイスであり、 *imodelobject*にボックス化されます。
 
-### <a name="extensibility-within-the-object-model"></a>オブジェクト モデル内の機能拡張
+### <a name="extensibility-within-the-object-model"></a>オブジェクトモデル内の機能拡張
 
-*IModelObject*分離オブジェクトではありません。 上記のオブジェクトの種類のいずれかを表す、だけでなくは、各オブジェクトは、データ モデルの親のチェーンの概念を持ちます。 このチェーンの動作と同様、 [JavaScript プロトタイプ チェーン](https://developer.mozilla.org/docs/Web/JavaScript/Inheritance_and_the_prototype_chain)します。
-プロトタイプのリニア チェーンではなく JavaScript ように、各データ モデル オブジェクトを定義のリニア チェーン**モデルの親**します。 これらの親モデルのそれぞれは、親の set のもう 1 つのリニア チェーンにあります。 基本的には、各オブジェクトは、自体とこのツリーのすべてのオブジェクトの両方の機能 (プロパティなど) の集計が。 特定のプロパティを照会すると、クエリが実行オブジェクトがそのプロパティをサポートしていない場合は、ときに、クエリに渡されます線形な順序で各親順番。 これには、集計のツリーの深さ優先検索でプロパティの検索を解決する、動作が作成されます。
+*Imodelobject*は、分離されたオブジェクトではありません。 上に示したオブジェクトのいずれかの型を表すことに加えて、各オブジェクトには親データモデルのチェーンの概念があります。 このチェーンは、 [JavaScript プロトタイプチェーン](https://developer.mozilla.org/docs/Web/JavaScript/Inheritance_and_the_prototype_chain)とほぼ同じように動作します。
+JavaScript などのプロトタイプの線形チェーンではなく、各データモデルオブジェクトは、**親モデル**の線形チェーンを定義します。 これらの各親モデルには、独自の親セットの別の線形チェーンがあります。 基本的に、各オブジェクトは、このツリー内のすべてのオブジェクトの機能 (プロパティなど) を集計したものです。 特定のプロパティに対してクエリを実行するときに、クエリを実行するオブジェクトがそのプロパティをサポートしていない場合、クエリは各親に順番に渡されます。 これにより、集計ツリーの深さ優先検索によってプロパティの検索が解決される動作が作成されます。
 
-このオブジェクト モデル内の機能拡張は、すべてのオブジェクトがそれ自体の集計と親モデルのツリーがある概念を与え非常に単純です。 拡張機能にでき、自体の別のオブジェクトの親モデルの一覧に追加することができます。 これを行う**拡張**オブジェクト。 何も上に機能を追加することは、この方法で: オブジェクトまたは値、ネイティブ型、どのようなプロセスまたはスレッドのデバッガーの概念の特定のインスタンス、または「すべての反復可能なオブジェクト」の概念です。
+このオブジェクトモデル内の機能拡張は、すべてのオブジェクトがそれ自体の集合であり、親モデルのツリーであるという概念により、非常に単純です。 拡張機能は、別のオブジェクトの親モデルの一覧に追加できます。 この操作を行うと、オブジェクトが**拡張**されます。 この方法では、オブジェクトまたは値の特定のインスタンス、ネイティブ型、デバッガーのプロセスやスレッドの概念、または "all 反復可能な objects" の概念に加えて、機能を追加することができます。
 
-### <a name="context-context-and-context-the-this-pointer-the-address-space-and-implementation-private-data"></a>コンテキスト、コンテキスト、およびコンテキスト:**この**ポインター、アドレス空間、および実装のプライベート データ
+### <a name="context-context-and-context-the-this-pointer-the-address-space-and-implementation-private-data"></a>コンテキスト、コンテキスト、およびコンテキスト:**This**ポインター、アドレス空間、および実装のプライベートデータ
 
-3 つの概念がある**コンテキスト**オブジェクト モデルのコンテキスト内で深く理解するために必要であります。
+**コンテキスト**には、オブジェクトモデルのコンテキスト内で理解する必要がある3つの概念があります。
 
-#### <a name="context-the-this-pointer"></a>コンテキスト:**この**ポインター
+#### <a name="context-the-this-pointer"></a>コンテキスト:**This**ポインター
 
-メソッドまたは元のオブジェクトにアクセスできるプロパティの実装に必要な特定のプロパティまたはメソッドは、データ モデルのツリーの任意のレベルで実装される場合があります、ため (と呼ばれるもの、**この**C++ でのポインターまたは**この**JavaScript のオブジェクト。 さまざまな方法を最初の引数としてにそのインスタンスのオブジェクトが渡されると呼ばれる**コンテキスト**で説明した方法でします。
+特定のプロパティまたはメソッドは任意のレベルのデータモデルツリーに実装される可能性があるため、メソッドまたはプロパティの実装で元のオブジェクトにアクセスできるようにする必要があります (**こ**のC++ポインターをで呼び出すか、次のようにします。 **JavaScript での c2 > オブジェクト。** このインスタンスオブジェクトは、説明されているメソッドの**コンテキスト**と呼ばれる最初の引数として、さまざまなメソッドに渡されます。
 
 #### <a name="context-the-address-space"></a>コンテキスト:アドレス空間
 
-ことが重要以前の拡張機能とは異なり where をモデル化、**コンテキスト**(ターゲット、プロセス、スレッドが表示されている) 現在の UI に相対状態では、データのモデル インターフェイスは、通常はこのコンテキストすべての Api を使用した UI の概念明示的または暗黙的として、 *IDebugHostContext*インターフェイス。 各*IModelObject*モデル、データ内でこの種のコンテキスト情報と共に実行し、オブジェクトを返しますには、そのコンテキストを伝達することができます。 つまり、ネイティブの値またはキーの値を読み取るときに、 *IModelObject*ターゲットとオブジェクトを最初から取得したプロセスから読み取られます。
+**コンテキスト**(対象となるターゲット、プロセス、スレッド) が現在の ui 状態を基準とするすべての api を含む UI 概念であるとは異なり、データモデルインターフェイスは、通常、このコンテキストを明示的にまたは*IDebugHostContext*インターフェイスとして暗黙的に。 データモデル内の各*Imodelobject*は、この種類のコンテキスト情報を格納し、返されたオブジェクトにそのコンテキストを反映させることができます。 つまり、ネイティブ値または*Imodelobject*からのキー値を読み取ると、ターゲットからオブジェクトが読み取られ、オブジェクトが最初に取得されたプロセスが読み取られます。
 
-明示的な定数値がある**使用\_現在\_ホスト\_コンテキスト**、かかるメソッドに渡すこと、 *IDebugHostContext*引数。 この値は、コンテキストは実際にする必要があります、デバッガーの現在の UI 状態にすることを示します。 この概念は、ただし、明示的に指定する必要があります。
+*IDebugHostContext*引数を受け取るメソッドに渡すことができる、**現在\_\_のホスト\_コンテキストを使用**する明示的な定数値があります。 この値は、コンテキストがデバッガーの現在の UI の状態であることを示します。 ただし、この概念は明示的である必要があります。
 
-#### <a name="context-implementation-private-data"></a>コンテキスト:実装のプライベート データ
+#### <a name="context-implementation-private-data"></a>コンテキスト:実装のプライベートデータ
 
-データ モデル内の各オブジェクトがオブジェクト インスタンスの集計では実際には、接続されている親モデルのツリーのことに注意してください。
-インスタンスの任意のオブジェクトとその親モデル (これらを多数の異なるオブジェクトのチェーンでリンクできます) の各プライベートな実装のデータを関連付けることができます。 各*IModelObject*特定の親モデルからで定義されたプライベート インスタンス データにマップするハッシュ テーブルを概念的には作成されますが、 *IUnknown*インターフェイス。 これによりすべてのインスタンスで情報をキャッシュするか、それ以外の場合、親モデルを任意に関連付けデータ。
+データモデル内の各オブジェクトは、実際にはオブジェクトインスタンスの集計であり、アタッチされている親モデルのツリーであることに注意してください。
+これらの各親モデル (多くの異なるオブジェクトのチェーンにリンクできます) は、プライベート実装データを任意のインスタンスオブジェクトに関連付けることができます。 作成される各*Imodelobject*は、概念的には、特定の親モデルから*IUnknown*インターフェイスによって定義されるプライベートインスタンスデータにマップされるハッシュテーブルを持ちます。 これにより、親モデルはすべてのインスタンスの情報をキャッシュしたり、それ以外の任意のデータを関連付けたりすることができます。
 
-この種類のコンテキストは、 *GetContextForDataModel*と*SetContextForDataModel*メソッド*IModelObject*します。
-
-
+この種類のコンテキストには、 *Imodelobject*の*GetContextForDataModel*メソッドと*SetContextForDataModel*メソッドを使用してアクセスします。
 
 
-## <a name="span-idimodelobjectspan-the-core-debugger-object-interface-imodelobject"></a><span id="imodelobject"></span> コア デバッガー オブジェクト インターフェイス:**IModelObject**
+
+
+## <a name="span-idimodelobjectspan-the-core-debugger-object-interface-imodelobject"></a><span id="imodelobject"></span>コアデバッガーオブジェクトインターフェイス:**IModelObject**
 
 -------------------------------------------
 
-*IModelObject*インターフェイスは次のように定義されます。
+*Imodelobject*インターフェイスは、次のように定義されています。
 
 ```cpp
 DECLARE_INTERFACE_(IModelObject, IUnknown)
@@ -137,9 +108,9 @@ DECLARE_INTERFACE_(IModelObject, IUnknown)
 }
 ```
 
-**基本的な方法**
+**基本メソッド**
 
-次に、IModelObject によって表されるオブジェクトの任意の種類に該当する一般的な方法を示します。 
+次に、IModelObject によって表されるあらゆる種類のオブジェクトに適用できる一般的な方法を示します。 
 
 ```cpp
 STDMETHOD(GetKind)(_Out_ ModelObjectKind *kind) PURE;
@@ -153,30 +124,30 @@ STDMETHOD(Dereference)(_COM_Errorptr_ IModelObject** object) PURE;
 
 [GetKind](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-imodelobject-getkind) 
 
-GetKind メソッドは、IModelObject 内でどのような種類のオブジェクトがボックス化を返します。 
+GetKind メソッドは、IModelObject 内にボックス化されているオブジェクトの種類を返します。 
 
 [GetContext](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-imodelobject-getcontext)
 
-GetContext メソッドは、オブジェクトに関連付けられているホスト コンテキストを返します。 
+GetContext メソッドは、オブジェクトに関連付けられているホストコンテキストを返します。 
 
 [GetIntrinsicValue](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-imodelobject-getintrinsicvalue)
 
-GetIntrinsicValue メソッドは、IModelObject 内をボックス化することを返します。 このメソッドは、IModelObject インターフェイスを表すボックス化された合法的にのみ呼び出すことが組み込みまたはボックス化されますが、特定のインターフェイス。 ネイティブ オブジェクト、値のないオブジェクトには、合成のオブジェクトで呼び出すことはできませんし、オブジェクトを参照します。 GetIntrinsicValueAs メソッドは、後、例外を GetIntrinsicValue メソッドが値に変換指定されたバリアント型と同様に動作します。 変換を実行できない場合、メソッドはエラーを返します。
+GetIntrinsicValue メソッドは、IModelObject 内にボックス化されたものを返します。 このメソッドは、ボックス化された組み込みのインターフェイスまたはボックス化された特定のインターフェイスを表す IModelObject インターフェイスでのみ、合法的に呼び出すことができます。 ネイティブオブジェクト、値オブジェクト、合成オブジェクト、および参照オブジェクトに対して呼び出すことはできません。 GetIntrinsicValueAs メソッドは、指定されたバリアント型に値を変換する GetIntrinsicValue メソッドと同様に動作します。 変換を実行できない場合、メソッドはエラーを返します。
 
 [IsEqualTo](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-imodelobject-isequalto)
 
-IsEqualTo メソッドでは、2 つのモデル オブジェクトを比較し、値が等しいかどうかを返します。 順序付けと、オブジェクト、true を返すこのメソッドは、0 を返す Compare メソッドと同じです。 順序付けありませんが、等値性をオブジェクトの場合、Compare メソッドは失敗するが動作しません。 値に基づく比較の意味は、オブジェクトの型によって定義されます。 現時点ではこれのみ、組み込み型とエラー オブジェクトに定義されます。 Equatability の現在のデータ モデルの概念はありません。 
+IsEqualTo メソッドは、2つのモデルオブジェクトを比較し、値が等しいかどうかを返します。 順序付けを持つオブジェクトの場合、このメソッドは true を返し、Compare メソッドと同じです。 順序付けされていないが equatable のオブジェクトの場合、Compare メソッドは失敗しますが、これは失敗します。 値に基づく比較の意味は、オブジェクトの型によって定義されます。 現時点では、これは組み込み型およびエラーオブジェクトに対してのみ定義されています。 Equatability の現在のデータモデルの概念はありません。 
 
-[逆参照します。](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-imodelobject-dereference)
+[間接](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-imodelobject-dereference)
 
-逆参照するメソッドには、オブジェクトが逆参照します。 このメソッドは、データ モデルの参照 (ObjectTargetObjectReference、ObjectKeyReference) またはネイティブ言語リファレンス (ポインターまたは言語リファレンス) を逆参照に使用できます。 このメソッドが、オブジェクトに対する参照セマンティクスの 1 つのレベルを削除することに注意してください。 重要です。 たとえば、言語リファレンスへのデータ モデル参照を含めることは可能になります。 このような場合は、初めて逆参照メソッドを呼び出すことはデータ モデル参照を削除し、言語リファレンスのままに。 その結果として得られるオブジェクトの逆参照を呼び出すことは、その後言語参照を削除し、下を参照するネイティブの値を返します。 
+逆参照メソッドは、オブジェクトを逆参照します。 このメソッドは、データモデルベースの参照 (ObjectTargetObjectReference、ObjectKeyReference) またはネイティブ言語参照 (ポインターまたは言語参照) を逆参照するために使用できます。 このメソッドは、オブジェクトの1つのレベルの参照セマンティクスを削除することに注意してください。 たとえば、言語参照へのデータモデル参照を持つことができます。 このような場合は、最初に逆参照メソッドを呼び出すと、データモデル参照が削除され、言語参照はそのままになります。 その結果のオブジェクトで逆参照を呼び出すと、その後、言語参照が削除され、その参照の下にネイティブ値が返されます。 
 
 
-**キー操作メソッド**
+**キーの操作方法**
 
-キー、値、およびメタデータの組のディクショナリである任意の合成オブジェクトが、一連のこれらのキー、値、およびそれらに関連付けられているメタデータを操作するメソッド。 
+キー、値、およびメタデータの組のディクショナリであるすべての合成オブジェクトには、それらのキー、値、およびそれらに関連付けられているメタデータを操作するための一連のメソッドがあります。 
 
-Api のベース値フォームは次のとおりです。 
+Api の値ベースの形式は次のとおりです。 
 
 ```cpp
 STDMETHOD(GetKeyValue)(_In_ PCWSTR key, _COM_Errorptr_opt_ IModelObject** object, _COM_Outptr_opt_result_maybenull_ IKeyStore** metadata) PURE;
@@ -189,7 +160,7 @@ STDMETHOD(EnumerateKeys)(_COM_Outptr_ IKeyEnumerator** enumerator) PURE;
 STDMETHOD(ClearKeys)() PURE;
 ```
 
-Api のベース参照の形式は次のとおりです。 
+Api の参照ベースの形式は次のとおりです。 
 
 ```cpp
 STDMETHOD(GetKeyReference)(_In_ PCWSTR key, _COM_Errorptr_opt_ IModelObject** objectReference, _COM_Outptr_opt_result_maybenull_ IKeyStore** metadata) PURE;
@@ -198,56 +169,56 @@ STDMETHOD(EnumerateKeyReferences)(_COM_Outptr_ IKeyEnumerator** enumerator) PURE
 
 [GetKeyValue](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-imodelobject-getkeyvalue)
 
-GetKeyValue メソッドの値 (とそれに関連付けられているメタデータ) を取得するために、クライアントを有効にする最初のメソッドは、名前によって指定されたキー。 キーは、その値をこれはボックス化された IModelPropertyAccessor IModelObject としては、プロパティのアクセサー--GetKeyValue メソッドは、実際の値を取得するためにプロパティ アクセサーの GetValue メソッドを呼び出す自動的にします。
+GetKeyValue メソッドは、指定されたキー (およびに関連付けられているメタデータ) の値を名前で取得するために、クライアントが最初に行うメソッドです。 キーがプロパティアクセサーの場合、これはボックス化された IModelPropertyAccessor である IModelObject としての値であるため、GetKeyValue メソッドは、実際の値を取得するために、プロパティアクセサーの GetValue メソッドを自動的に呼び出します。
 
 [SetKeyValue](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-imodelobject-setkeyvalue)
 
-SetKeyValue メソッドは、キーの値を設定するには、クライアントを有効にする最初の方法です。 このメソッドは、オブジェクトに新しいキーを作成するのには使用できません。 既存のキーの値のみ設定されます。 多くのキーには読み取り専用に注意してください (例:: E_NOT_IMPL を SetValue メソッドから返すプロパティのアクセサーによって実装されます)。 このメソッドが呼び出されたときに、読み取り時のみキーは失敗します。 
+SetKeyValue メソッドは、キーの値を設定するために、クライアントが最初に行うメソッドです。 このメソッドを使用してオブジェクトに新しいキーを作成することはできません。 既存のキーの値だけが設定されます。 多くのキーが読み取り専用であることに注意してください (例: プロパティアクセサーによって実装されていて、その SetValue メソッドから E_NOT_IMPL を返す)。 読み取り専用キーで呼び出された場合、このメソッドは失敗します。 
 
 [EnumerateKeyValues](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-imodelobject-enumeratekeyvalues)
 
-EnumerateKeyValues メソッドは、クライアントは (親モデルのツリーで任意の場所に実装されているすべてのキーを含む)、オブジェクトのキーのすべてを列挙するために有効にする最初の方法です。 EnumerateKeyValues がオブジェクト ツリーで重複する名前で定義されたすべてのキーを列挙ことに注意してください。ただし--深さ優先検査により検出された、GetKeyValue と SetKeyValue などのメソッドは指定した名前のキーの最初のインスタンスを操作のみです。 
+EnumerateKeyValues メソッドは、オブジェクトのすべてのキーを列挙するために、クライアントが最初に行うメソッドです (これには、親モデルのツリーの任意の場所に実装されているすべてのキーが含まれます)。 EnumerateKeyValues は、オブジェクトツリー内の重複する名前によって定義されているキーを列挙することに注意してください。ただし、GetKeyValue や SetKeyValue などのメソッドは、指定された名前を持つキーの最初のインスタンスを、深さ優先の検査で検出されたものとしてのみ操作します。 
 
 [GetKey](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-imodelobject-getkey)
 
-GetKey メソッドの値が取得されます (とメタデータに関連付けられている) 名で指定されたキー。 ほとんどのクライアントは、代わりに GetKeyValue メソッドを使用する必要があります。 キーは、プロパティ アクセサーは、このメソッドを呼び出すことは、IModelObject にボックス化されたプロパティのアクセサー (IModelPropertyAccessor インターフェイス) を返します。 異なり、GetKeyValue、GetValue メソッドを呼び出すことによって、キーの基になる値がこのメソッドに自動的に解決されることはできません。 その役割、呼び出し元のことです。 
+GetKey メソッドは、指定されたキー (およびに関連付けられているメタデータ) の値を名前で取得します。 ほとんどのクライアントでは、代わりに GetKeyValue メソッドを使用する必要があります。 キーがプロパティアクセサーの場合、このメソッドを呼び出すと、IModelObject にボックス化されたプロパティアクセサー (IModelPropertyAccessor インターフェイス) が返されます。 GetKeyValue とは異なり、このメソッドは GetValue メソッドを呼び出すことによって、キーの基になる値を自動的に解決しません。 その責任は、呼び出し元のです。 
 
 [SetKey](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-imodelobject-setkey)
 
-SetKey メソッドは、クライアント メソッドを (と可能性のあるメタデータを作成したキーに関連付ける) オブジェクトにキーを作成するためになります。 指定したオブジェクトが既に指定した名前のキーを使用して、2 つの動作のいずれかが発生します。 これによって指定されたインスタンスにキーがある場合、元のキーが存在しなかった場合、そのキーの値が置き換えられます。 その一方で、キーがこので指定されたインスタンスのデータ モデルの親のチェーンにある場合、指定した名前の新しいキーがこので指定されたインスタンスで作成されます。 これを実際が原因で、オブジェクトが、同じ名前 (基本クラスと同じ名前のメンバーをシャドウする派生クラスに似ています) の 2 つのキー。 
+SetKey メソッドは、オブジェクトに対してキーを作成するためにクライアントが変換するメソッドであり、メタデータを作成したキーに関連付けることもできます。 指定されたオブジェクトに指定された名前のキーが既に存在する場合は、次の2つの動作のいずれかが発生します。 キーがこのによって指定されたインスタンス上にある場合、そのキーの値は、元のキーが存在しないかのように置き換えられます。 一方、キーがこのによって指定されたインスタンスの親データモデルのチェーンにある場合は、このによって指定されたインスタンスに、指定された名前の新しいキーが作成されます。 これにより、オブジェクトは同じ名前の2つのキーを持つことになります (基底クラスと同じ名前のメンバーをシャドウする派生クラスに似ています)。 
 
 [EnumerateKeys](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-imodelobject-enumeratekeys)
 
-EnumerateKeys メソッドの動作オブジェクトのプロパティ アクセサーが自動的に解決できないドキュメントを除く EnumerateKeyValues メソッドに似ています。 つまり、キーの値がプロパティのアクセサーの場合は、EnumerateKeys メソッドによって、プロパティ アクセサー (IModelPropertyAccessorInterface、) GetValue メソッドを自動的に呼び出すのではなく、IModelObject にボックス化返すされます。 これは、GetKey と GetKeyValue の違いに似ています。 
+EnumerateKeys メソッドは、EnumerateKeyValues メソッドと同様に動作し、オブジェクトのプロパティアクセサーを自動的に解決しません。 つまり、キーの値がプロパティアクセサーの場合、EnumerateKeys メソッドは、GetValue メソッドを自動的に呼び出すのではなく、IModelObject にボックス化されたプロパティアクセサー (IModelPropertyAccessorInterface) を返します。 これは、GetKey と Getkey の違いに似ています。 
 
 [ClearKeys](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-imodelobject-clearkeys)
 
-ClearKeys メソッドは、こので指定されたオブジェクトのインスタンスからすべてのキーおよび関連付けられている値とメタデータを削除します。 このメソッドは、特定のオブジェクトのインスタンスに接続されている親モデルに影響を与えません。 
+ClearKeys メソッドは、このによって指定されたオブジェクトのインスタンスから、すべてのキーとそれに関連付けられている値とメタデータを削除します。 このメソッドは、特定のオブジェクトインスタンスにアタッチされている親モデルには影響しません。 
 
 [GetKeyReference](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-imodelobject-getkeyreference)
 
-GetKeyReference メソッドは、オブジェクト (またはその親モデルのチェーン) に指定した名前のキーを検索して、IModelObject にボックス化 IModelKeyReference インターフェイスで指定されたキーへの参照を返します。 その参照は、キーの値の設定を取得または後で使用できます。 
+GetKeyReference メソッドは、オブジェクト (またはその親モデルチェーン) で指定された名前のキーを検索し、IModelKeyReference にボックス化された IModelKeyReference インターフェイスによって指定されたそのキーへの参照を返します。 この参照は、後でキーの値を取得または設定するために使用できます。 
 
 [EnumerateKeyReferences](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-imodelobject-enumeratekeyreferences)
 
-EnumerateKeyReferences メソッドの動作、キーの値ではなく (、IModelObject にボックス化 IModelKeyReference インターフェイスで指定) が列挙キーへの参照が返されるドキュメントを除く EnumerateKeyValues メソッドに似ています。 このような参照を取得またはキーの基になる値を設定するができます。 
+EnumerateKeyReferences メソッドは、EnumerateKeyValues メソッドと同様に動作します。これは、キーの値ではなく、IModelKeyReference インターフェイスによって、Imodelkeyreference にボックス化されたキーへの参照を返すことを指します。 このような参照を使用して、キーの基になる値を取得または設定できます。 
 
 
-**操作方法の概念**
+**概念の操作方法**
 
-メタデータ/キー/値のタプルのディクショナリをされているモデル オブジェクト、に加えても概念のコンテナー。 概念は抽象オブジェクトでまたはを実行できます。 概念は基本的には、オブジェクトをサポートするインターフェイスの動的なストアです。 さまざまな概念は、現在のデータ モデルで定義されます。 
+モデルオブジェクトは、キー/値/メタデータタプルのディクショナリであるだけでなく、概念のコンテナーでもあります。 概念とは、またはオブジェクトによって実行できる抽象概念です。 概念とは、基本的には、オブジェクトがサポートするインターフェイスの動的なストアです。 現在、データモデルによっていくつかの概念が定義されています。 
 
-インターフェイスの概念 | 説明
+概念インターフェイス | 説明
 ------------------|-------------
-IDataModelConcept | 概念は、親モデルです。 このモデルは自動的に登録されているタイプの署名を使用してネイティブ型にアタッチされている、このような種類の新しいオブジェクトがインスタンス化されるたびに、InitializeObject メソッドが呼び出さ自動的にします。
-IStringDisplayableConcept  | オブジェクトは、表示目的での文字列に変換できます。
-IIterableConcept  | オブジェクトはコンテナーであり、反復処理されることができます。
-IIndexableConcept  | オブジェクトはコンテナーであり、インデックスを作成できます (ランダム アクセスを使用してアクセスされる) 1 つまたは複数のディメンションでします。
-IPreferredRuntimeTypeConcept  | オブジェクトでは、基になる型システムが提供することのできると、ランタイム型を静的から独自の変換を処理するよりも、それから派生した種類の詳細については理解します。
-IDynamicKeyProviderConcept | オブジェクトは、動的なキーのプロバイダーであり、コア データ モデルからのすべてのキー クエリを実行したいです。 このインターフェイスは通常、JavaScript などの動的言語へのブリッジとして使用します。
-IDynamicConceptProviderConcept  | オブジェクトは概念の動的なプロバイダーであり、コア データ モデルからすべての概念のクエリを実行したいです。 このインターフェイスは通常、JavaScript などの動的言語へのブリッジとして使用します。
+IDataModelConcept | 概念は親モデルです。 このモデルが登録された型のシグネチャを使用してネイティブ型に自動的にアタッチされる場合、そのような型の新しいオブジェクトがインスタンス化されるたびに、InitializeObject メソッドが自動的に呼び出されます。
+IStringDisplayableConcept  | オブジェクトを文字列に変換して、表示することができます。
+IIterableConcept  | オブジェクトはコンテナーであり、反復処理できます。
+IIndexableConcept  | オブジェクトはコンテナーであり、1つまたは複数のディメンションで (ランダムアクセスによってアクセスされる) インデックスを作成できます。
+IPreferredRuntimeTypeConcept  | オブジェクトは、基になる型システムから派生した型についてより多くの情報を認識し、静的な型からランタイム型への変換を処理することができます。
+IDynamicKeyProviderConcept | オブジェクトはキーの動的プロバイダーであり、コアデータモデルからのすべての主要なクエリを引き継ぎます。 このインターフェイスは、通常、JavaScript などの動的言語へのブリッジとして使用されます。
+IDynamicConceptProviderConcept  | オブジェクトは、概念の動的プロバイダーであり、コアデータモデルからのすべての概念クエリを引き継ぐことを望んでいます。 このインターフェイスは、通常、JavaScript などの動的言語へのブリッジとして使用されます。
 
-IModelObject で次のメソッドを使用して、オブジェクトをサポートする概念を操作します。 
+IModelObject の次のメソッドは、オブジェクトがサポートする概念を操作するために使用されます。 
 
 ```cpp
 STDMETHOD(GetConcept)(_In_ REFIID conceptId, _COM_Outptr_ IUnknown** conceptInterface, _COM_Outptr_opt_result_maybenull_ IKeyStore** conceptMetadata) PURE;
@@ -257,20 +228,20 @@ STDMETHOD(ClearConcepts)() PURE;
 
 [GetConcept](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-imodelobject-getconcept)
 
-GetConcept メソッドでは、オブジェクト (またはその親モデルのチェーン) 上の概念を検索し、概念インターフェイスにインターフェイス ポインターを返します。 動作と概念のインターフェイスのメソッドは、各概念に固有です。 ただし、必要なコンテキスト オブジェクトを明示的に渡す呼び出し元が概念インターフェイスの多くすることが重要 (どのような 1 つ呼び出すことができます従来、このまたはポインター)。 すべての概念のインターフェイスを適切なコンテキスト オブジェクトが渡されることを確認する重要です。
+GetConcept メソッドは、オブジェクト (またはその親モデルチェーン) の概念を検索し、概念インターフェイスへのインターフェイスポインターを返します。 概念インターフェイスの動作とメソッドは、各概念に固有です。 ただし、多くの概念インターフェイスでは、呼び出し元がコンテキストオブジェクトを明示的に渡す必要があることに注意してください (または、これまでこのポインターを呼び出している可能性があります)。 すべての概念インターフェイスに正しいコンテキストオブジェクトが渡されるようにすることが重要です。
 
 [SetConcept](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-imodelobject-setconcept)
 
-SetConcept メソッドでは、指定された概念は、これによって指定されたオブジェクトのインスタンスに配置のポインター。 これで指定されたオブジェクトのインスタンスに接続されている親モデルは、概念をサポートしても、インスタンス内の実装が上書きを親モデル。 
+SetConcept メソッドは、このポインターによって指定されたオブジェクトインスタンスに対して指定された概念を配置します。 こので指定されたオブジェクトインスタンスに関連付けられている親モデルが概念もサポートしている場合は、インスタンスの実装によって親モデル内のがオーバーライドされます。 
 
 [ClearConcepts](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-imodelobject-clearconcepts)
 
-ClearConcepts メソッドは、すべての概念をこので指定されたオブジェクトのインスタンスから削除されます。 
+ClearConcepts メソッドは、このによって指定されたオブジェクトのインスタンスからすべての概念を削除します。 
 
 
-**ネイティブ オブジェクトのメソッド**
+**ネイティブオブジェクトメソッド**
 
-中に、多くのモデル オブジェクトは、組み込み関数を参照してください (例:: 整数、文字列) または統合は、(キー/値/メタデータの組と概念の辞書) を構築、モデル オブジェクトのネイティブ コンストラクトに可能性がありますも参照してください (例:: デバッグのアドレス空間内のユーザー定義型ターゲットの場合)。 IModelObject インターフェイスには、一連のようなネイティブ オブジェクトに関する情報にアクセスすることでメソッドがあります。 これらのメソッドは次のとおりです。 
+多くのモデルオブジェクトは、組み込み (整数、文字列など) または合成コンストラクト (キー/値/メタデータの組と概念のディクショナリ) を参照しますが、モデルオブジェクトは、ネイティブコンストラクト (たとえば、デバッグのアドレス空間にあるユーザー定義型) を参照することもあります。ターゲット)。 IModelObject インターフェイスには、このようなネイティブオブジェクトに関する情報にアクセスするための一連のメソッドがあります。 これらのメソッドは次のとおりです。 
 
 ```cpp
 STDMETHOD(GetRawValue)(_In_ SymbolKind kind, _In_ PCWSTR name, _In_ ULONG searchFlags, _COM_Errorptr_ IModelObject** object) PURE;
@@ -285,43 +256,43 @@ STDMETHOD(EnumerateRawReferences)(_In_ SymbolKind kind, _In_ ULONG searchFlags, 
 
 [GetRawValue](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-imodelobject-getrawvalue)
 
-GetRawValue メソッドは、特定のオブジェクト内でネイティブの構造を検索します。 このようなコンス トラクターには、フィールド、基底クラス、基底クラス、メンバー関数などのフィールドがあります. 
+GetRawValue メソッドは、指定されたオブジェクト内のネイティブコンストラクトを検索します。 このようなコンストラクトには、フィールド、基本クラス、基底クラスのフィールド、メンバー関数などがあります。 
 
-[EnumerateRawValues](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-imodelobject-enumeraterawvalues)
+[列挙の値](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-imodelobject-enumeraterawvalues)
 
-EnumerateRawValues メソッドは、ネイティブのすべての子を列挙します (例:: フィールド、基底クラスなど) の指定したオブジェクト。 
+列挙 Aterawvalues メソッドは、指定されたオブジェクトのすべてのネイティブな子 (フィールド、基本クラスなど) を列挙します。 
 
 
 [TryCastToRuntimeType](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-imodelobject-trycasttoruntimetype)
 
-TryCastToRuntimeType メソッドは、分析を実行し、実際の実行時の種類を特定のデバッグ ホストを求められます (例:: 最も派生クラス) の指定したオブジェクト。 オブジェクト、またはその他の V Table(virtual function table) 構造を調べることで、ホスト使用率の正確な分析はデバッグ ホストに固有であり RTTI (C++ の実行時型情報) を含めることができます、使用して動的/ランタイムを確実に決定できます静的な型から入力します。 ランタイム型に変換する障害では、このメソッドの呼び出しが失敗するとは限りません。 このような場合、メソッドは、指定したオブジェクトを返します (、このポインター) の出力引数。 
+TryCastToRuntimeType メソッドは、デバッグホストに対して分析を実行し、特定のオブジェクトの実際のランタイム型 (たとえば、最派生クラス) を判断するように要求します。 使用される正確な分析は、デバッグホストに固有のものでC++あり、RTTI (実行時の型情報)、オブジェクトの V テーブル (仮想関数テーブル) 構造の検査、またはホストが動的な決定に動的/静的な型からのランタイム型。 ランタイム型に変換できないことは、このメソッドの呼び出しが失敗することを意味するわけではありません。 このような場合、メソッドは、指定されたオブジェクト (this ポインター) を出力引数に返します。 
 
 [GetLocation](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-imodelobject-getlocation) 
 
-GetLocation メソッドでは、ネイティブ オブジェクトの場所を返します。 このような場所は通常、デバッグ対象のアドレス空間内の仮想アドレスが、必ずしもそうです。 このメソッドによって返される場所は、抽象場所は、仮想のアドレスがあります、登録またはサブレジスタ、内の位置を示す場合がありますまたはデバッグ ホストで定義されているその他の任意のアドレス空間の一部を示す場合があります。 結果として得られる場所オブジェクトの HostDefined フィールドが 0 の場合は、場所が実際には仮想アドレスを示します。 このような仮想アドレスを結果の場所のオフセット フィールドを調べることで取得できます。 HostDefined フィールドの 0 以外の値では、オフセット フィールドがそのアドレス空間内のオフセットを別のアドレス空間を示します。 ここで HostDefined 値が 0 以外の厳密な意味は、デバッグ ホストにプライベートです。 
+GetLocation メソッドは、ネイティブオブジェクトの場所を返します。 このような場所は通常、デバッグターゲットのアドレス空間内の仮想アドレスですが、必ずしもそうであるとは限りません。 このメソッドによって返される場所は、仮想アドレス、レジスタまたはサブレジスタ内の配置を示す、またはデバッグホストで定義されている他の任意のアドレス空間を示す可能性がある抽象的な場所です。 結果として得られる場所オブジェクトの HostDefined フィールドが0の場合、その場所は実際には仮想アドレスであることを示します。 このような仮想アドレスは、結果として得られる場所のオフセットフィールドを調べることによって取得できます。 HostDefined フィールドの0以外の値は、オフセットフィールドがそのアドレス空間内のオフセットである代替アドレス空間を示します。 ここでは、0以外の HostDefined 値の正確な意味は、デバッグホストに対してプライベートです。 
 
 [GetTypeInfo](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-imodelobject-gettypeinfo)
 
-GetTypeInfo メソッドでは、指定したオブジェクトのネイティブな型を返します。 オブジェクトが関連付けられているネイティブの型情報を持たないかどうか (例:: は、組み込みなど...)、呼び出しがまだは成功しますが、null が返されます。 
+GetTypeInfo メソッドは、指定されたオブジェクトのネイティブ型を返します。 オブジェクトにネイティブ型情報が関連付けられていない場合 (たとえば、組み込みなど)、呼び出しは成功しますが、は null を返します。 
 
 [GetTargetInfo](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-imodelobject-gettargetinfo)
 
-GetTargetInfo メソッドは、実質的に、両方の抽象場所だけでなく、指定したオブジェクトのネイティブな型を返す GetLocation と GetTypeInfo メソッドの組み合わせです。 
+GetTargetInfo メソッドは、実質的には、指定されたオブジェクトの抽象位置とネイティブ型の両方を返す GetLocation メソッドと GetTypeInfo メソッドを組み合わせたものです。 
 
 [GetRawReference](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-imodelobject-getrawreference)
 
-GetRawReference メソッドは、特定のオブジェクト内でネイティブの構造を検索してへの参照を返します。 このようなコンス トラクターには、フィールド、基底クラス、基底クラス、メンバー関数などのフィールドがあります.言語リファレンスからここ (ObjectTargetObjectReference 型のオブジェクト) に返される参照を区別するために重要です (例:: C++ & または (& a) (& a) スタイルの参照)。 
+GetRawReference メソッドは、指定されたオブジェクト内でネイティブコンストラクトを検索し、そのオブジェクトへの参照を返します。 このようなコンストラクトには、フィールド、基本クラス、基底クラスのフィールド、メンバー関数などがあります。ここで返される参照 (ObjectTargetObjectReference 型のオブジェクト) を言語リファレンスから区別することが重要です (例: C++ & や & & スタイル参照)。 
 
-[EnumerateRawReferences](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-imodelobject-enumeraterawreferences)
+[列挙の参照](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-imodelobject-enumeraterawreferences)
 
-EnumerateRawReferences メソッドは、ネイティブのすべての子への参照を列挙します (例:: フィールド、基底クラスなど) の指定したオブジェクト。 
+列挙 Aterawreferences メソッドは、指定されたオブジェクトのすべてのネイティブな子 (例: フィールド、基本クラスなど) への参照を列挙します。 
 
 
 **拡張メソッド**
 
-前述のように、モデル オブジェクトは JavaScript オブジェクトとプロトタイプ チェーンによく似ていますは動作します。 指定された IModelObject インターフェイスによって表されるインスタンスに加えて、任意の数 (それぞれの必要があります、さらに、任意の数が割り当てられている親モデルの) オブジェクトにアタッチされている親モデルの可能性があります。 これは、データ モデル内の機能拡張の主要な手段です。 特定のプロパティ、または概念には、特定のインスタンス内に存在することはできません、インスタンスで root 化 (親モデルによって定義される)、オブジェクト ツリーの深さ優先の検索が実行されます。 
+前に説明したように、モデルオブジェクトは JavaScript オブジェクトおよびプロトタイプチェーンと非常によく似ています。 特定の IModelObject インターフェイスによって表されるインスタンスに加えて、任意の数の親モデルがオブジェクトにアタッチされている場合もあります (それぞれに、任意の数の親モデルがアタッチされている場合があります)。 これは、データモデル内の機能拡張の主な手段です。 特定のプロパティまたは概念が特定のインスタンス内に配置できない場合は、インスタンスをルートとするオブジェクトツリー (親モデルによって定義) の深さ優先検索が実行されます。 
 
-次のメソッドは操作 IModelObject インスタンスに関連付けられている親モデルのチェーンです。 
+次のメソッドは、特定の IModelObject インスタンスに関連付けられている親モデルのチェーンを操作します。 
 
 ```cpp
 STDMETHOD(GetNumberOfParentModels)(_Out_ ULONG64* numModels) PURE;
@@ -334,58 +305,58 @@ STDMETHOD(GetContextForDataModel)(_In_ IModelObject* dataModelObject, _Out_ IUnk
 
 [GetNumberOfParentModels](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-imodelobject-getnumberofparentmodels)
 
-GetNumberOfParentModels メソッドは、指定したオブジェクトのインスタンスに接続されている親モデルの数を返します。 親モデルでは、モデルの親チェインの順序付けの線形の深さ優先のプロパティが検索されます。 
+GetNumberOfParentModels メソッドは、指定されたオブジェクトインスタンスにアタッチされている親モデルの数を返します。 親モデルは、親モデルチェーンの線形の順序で、深さ優先のプロパティを検索します。 
 
 [GetParentModel](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-imodelobject-getparentmodel)
 
-GetParentModel メソッドは、指定したオブジェクトの親モデルのチェーンに、i 番目の親モデルを返します。 親モデルは、プロパティ、または概念が追加または列挙線形な順序で検索されます。 インデックス i+1 の親モデルする前に (階層) では、インデックス i が 0 の親モデルが検索されます。 
+GetParentModel メソッドは、指定されたオブジェクトの親モデルチェーン内の i 番目の親モデルを返します。 親モデルは、追加または列挙された線形の順序で、プロパティまたは概念を検索します。 Index i が0の親モデルは、index i + 1 の親モデルの前に (階層的に) 検索されます。 
 
 [AddParentModel](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-imodelobject-addparentmodel)
 
-AddParentModel メソッドでは、指定したオブジェクトを新しい親モデルを追加します。 (オーバーライド引数が false として指定された) 検索チェーンの最後に、または (オーバーライド引数が true として指定された) 検索チェーンの先頭にある、このようなモデルを追加することがあります。 さらに、各親モデルは、コンテキスト必要に応じて調整 (セマンティック this ポインター) の任意のプロパティまたは指定した親 (またはその親階層内のすべてのユーザー) の概念です。 コンテキストの調整では、めったに使用が可能オブジェクトを埋め込むなどのいくつかの強力な概念など、名前空間を作成する. 
+AddParentModel メソッドは、指定されたオブジェクトに新しい親モデルを追加します。 このようなモデルは、検索チェーンの末尾 (override 引数が false として指定されている場合) または検索チェーンの先頭に追加される場合があります (override 引数は true として指定されます)。 また、各親モデルでは、必要に応じて、指定された親 (または親階層内のすべてのユーザー) 上のプロパティまたは概念のコンテキスト (セマンティック this ポインター) を調整することもできます。 コンテキストの調整はほとんど使用されませんが、オブジェクトの埋め込みや名前空間の構築など、いくつかの強力な概念が可能です。 
 
 [RemoveParentModel](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-imodelobject-removeparentmodel)
 
-RemoveParentModel は、指定した親モデルを指定したオブジェクトの親の検索のチェーンから削除されます。 
+RemoveParentModel は、指定されたオブジェクトの親検索チェーンから、指定された親モデルを削除します。 
 
 [SetContextForDataModel](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-imodelobject-setcontextfordatamodel)
 
-SetContextForDataModel メソッドは、インスタンス オブジェクトの実装のデータを配置するデータ モデルの実装によって使用されます。 概念的には、各 IModelObject (主役インスタンスわかりやすくするため) の状態のハッシュ テーブルが含まれています。 ハッシュ テーブルはインスタンスの親モデル階層内にある別の IModelObject (わかりやすくするためにこのデータをモデルの呼び出し) でインデックスを作成します。 このハッシュに含まれている値は、IUnknown インスタンスによって表される状態情報をカウントされた参照のセットです。 データ モデルでは、プロパティ get アクセス操作子などの中に取得できる任意の実装のデータを格納するインスタンスをこの状態を設定します。 
+SetContextForDataModel メソッドは、インスタンスオブジェクトに実装データを配置するためにデータモデルを実装するために使用されます。 概念的には、各 IModelObject (このインスタンスをわかりやすくするために呼び出す) には、状態のハッシュテーブルが含まれています。 ハッシュテーブルには、別の IModelObject によってインデックスが作成されます (わかりやすくするために、このデータモデルを呼び出します)。これは、インスタンスの親モデル階層にあります。 このハッシュに含まれる値は、IUnknown インスタンスによって表される参照カウント状態情報のセットです。 データモデルによってインスタンスにこの状態が設定されると、プロパティの getter などで取得できる任意の実装データを格納できます。 
 
 [GetContextForDataModel](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-imodelobject-getcontextfordatamodel)
 
-GetContextForDataModel メソッドを使用して、SetContextForDataModel を呼び出す前に設定されたコンテキスト情報を取得します。 データ モデルによって、インスタンス オブジェクトに設定されている状態情報を取得するインスタンス オブジェクトの親モデル階層内でさらにします。 このコンテキストの/状態とその意味の詳細については、SetContextForDataModel のマニュアルを参照してください。 
+GetContextForDataModel メソッドは、SetContextForDataModel の前の呼び出しで設定されたコンテキスト情報を取得するために使用されます。 これにより、インスタンスオブジェクトの親モデル階層のさらに上にあるデータモデルによってインスタンスオブジェクトに設定された状態情報が取得されます。 このコンテキスト/状態とその意味の詳細については、SetContextForDataModel のドキュメントを参照してください。 
 
 
 
 
-## <a name="span-idobjecttypesspan-debugger-data-model-core-object-types"></a><span id="objecttypes"></span> デバッガーのデータ モデルの中核となるオブジェクトの種類
+## <a name="span-idobjecttypesspan-debugger-data-model-core-object-types"></a><span id="objecttypes"></span>デバッガーデータモデルのコアオブジェクトの種類
 
 
-データ モデル内のオブジェクトは、オブジェクトを .NET での概念に似ています。 これは、データ モデルを理解する構成要素のボックス化を汎用コンテナーです。 ネイティブ オブジェクトと代理 (動的) オブジェクトに加え、一連の配置 (またはボックス化)、IModelObject のコンテナーに中核となるオブジェクトの種類があります。 これらの値のほとんどの配置のコンテナーは、そのバリアントに含めることができますに対して COM/OLE VARIANT 追加の制限の数が適用される標準です。 これらの最も基本的な種類があります。
+データモデルのオブジェクトは、.NET のオブジェクトの概念に似ています。 これは、データモデルによって認識されるコンストラクトをボックス化できる汎用コンテナーです。 ネイティブオブジェクトと合成 (動的) オブジェクトに加えて、IModelObject のコンテナーに配置 (またはボックス化) できる一連の主要なオブジェクト型があります。 これらの値のほとんどが配置されているコンテナーは標準の COM/OLE バリアントであり、そのバリアントに含めることのできる制限がいくつかあります。 最も基本的な種類は次のとおりです。
 
-- 8 ビット符号なしと署名値 (VT_UI1、VT_I1)
-- 16 ビット符号なしと署名値 (VT_UI2、VT_UI2)
-- 32 ビット符号なしと署名値 (VT_UI4、VT_I4)
-- 64 ビット符号なしと署名値 (VT_UI8、VT_I8)
-- 一重引用符と二重の単精度浮動小数点値 (VT_R4、VT_R8)
+- 8ビットの符号なしの値と符号付きの値 (VT_UI1、VT_I1)
+- 16ビットの符号なしの値と符号付きの値 (VT_UI2、VT_UI2)
+- 32ビットの符号なしの値と符号付きの値 (VT_UI4、VT_I4)
+- 64ビットの符号なしの値と符号付きの値 (VT_UI8、VT_I8)
+- 単一および倍精度浮動小数点値 (VT_R4、VT_R8)
 - 文字列 (VT_BSTR)
 - ブール値 (VT_BOOL)
 
-だけでなく、これらの基本的な型は、複数のコア データ モデル オブジェクトは IModelObject ストアド IUnknown が特定のインターフェイスを実装するために保証されて VT_UNKNOWN によって定義されたに配置されます。 これらの型は次のとおりです。 
+これらの基本的な型に加えて、多数のコアデータモデルオブジェクトが VT_UNKNOWN によって定義されている IModelObject に配置されます。この場合、格納されている IUnknown は特定のインターフェイスを実装することが保証されます。 これらの型は次のとおりです。 
 
-- プロパティ アクセサー (IModelPropertyAccessor)
-- メソッドのオブジェクト (IModelMethod)
+- プロパティアクセサー (IModelPropertyAccessor)
+- Method オブジェクト (IModelMethod)
 - キー参照オブジェクト (IModelKeyReference または IModelKeyReference2)
-- コンテキスト オブジェクト (IDebugModelHostContext)
+- コンテキストオブジェクト (IDebugModelHostContext)
 
-**プロパティ アクセサー。*IModelPropertyAccessor***
+**プロパティアクセサー:*IModelPropertyAccessor***
 
-データ モデルのプロパティのアクセサーは、IModelObject にボックス化 IModelPropertyAccessor インターフェイスの実装です。 モデル オブジェクトは戻ります ObjectPropertyAccessor 照会されたときの一種で、組み込みの値は IModelPropertyAccessor のクエリを実行することが保証される VT_UNKNOWN です。 プロセスでは、IModelPropertyAccessor を静的にキャストできるに保証されます。 
+データモデルのプロパティアクセサーは、IModelObject にボックス化された IModelPropertyAccessor インターフェイスを実装したものです。 クエリを実行すると、モデルオブジェクトは ObjectPropertyAccessor の種類を返します。組み込み値は VT_UNKNOWN であり、IModelPropertyAccessor に対してクエリ可能であることが保証されています。 プロセスでは、IModelPropertyAccessor に対して静的に安定していることが保証されています。 
 
-プロパティ アクセサーは、取得、およびデータ モデルにキー値を設定するためのメソッドの呼び出しを取得する間接的な方法です。 指定されたキーの値がプロパティのアクセサーの場合は、GetKeyValue と SetKeyValue メソッドは自動的にこれを通知し、プロパティ アクセサーの基になるか、GetValue と SetValue は適切なメソッドを呼び出します。 
+プロパティアクセサーは、データモデルでキー値を取得および設定するためのメソッド呼び出しを取得するための間接的な方法です。 指定されたキーの値がプロパティアクセサーの場合、GetKeyValue および SetKeyValue メソッドはこれに自動的に通知し、必要に応じて、プロパティアクセサーの基になる GetValue または SetValue メソッドを呼び出します。 
 
-IModelPropertyAccessor インターフェイスの定義は次のとおりです。 
+IModelPropertyAccessor インターフェイスは、次のように定義されています。 
 
 ```cpp
 DECLARE_INTERFACE_(IModelPropertyAccessor, IUnknown)
@@ -397,18 +368,18 @@ DECLARE_INTERFACE_(IModelPropertyAccessor, IUnknown)
 
 [GetValue](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-imodelpropertyaccessor-getvalue)
 
-GetValue メソッドは、プロパティ アクセサーを取得します。 クライアントが基になるプロパティの値をフェッチする必要があるたびに呼び出されます。 プロパティ アクセサーを直接取得する呼び出し元が、キー名と正確なインスタンス オブジェクト (このポインター) をプロパティ アクセサーの GetValue メソッドに渡す責任を負うことに注意してください。 
+GetValue メソッドは、プロパティアクセサーの getter です。 これは、クライアントがプロパティの基になる値を取得しようとするたびに呼び出されます。 プロパティアクセサーを直接取得する呼び出し元は、キー名と正確なインスタンスオブジェクト (this ポインター) をプロパティアクセサーの GetValue メソッドに渡す必要があることに注意してください。 
 
 [SetValue](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-imodelpropertyaccessor-setvalue)
 
-SetValue メソッドは、プロパティ アクセサーの set アクセス操作子です。 クライアントが、基になるプロパティに値を代入するときに呼び出されます。 多くのプロパティとは、読み取り専用です。 SetValue メソッドを呼び出すことと、このような場合は E_NOTIMPL を返されます。 プロパティ アクセサーを直接取得する呼び出し元が、キー名と正確なインスタンス オブジェクト (このポインター) をプロパティ アクセサーの SetValue メソッドに渡す責任を負うことに注意してください。 
+SetValue メソッドは、プロパティアクセサーの setter です。 これは、クライアントが基になるプロパティに値を割り当てようとするたびに呼び出されます。 多くのプロパティは読み取り専用です。 このような場合、SetValue メソッドを呼び出すと、E_NOTIMPL が返されます。 プロパティアクセサーを直接取得する呼び出し元は、キー名と正確なインスタンスオブジェクト (this ポインター) をプロパティアクセサーの SetValue メソッドに渡す必要があることに注意してください。 
 
 
-**方法:*IModelMethod***
+**メソッド*IModelMethod***
 
-データ モデル内のメソッドは、IModelObject にボックス化 IModelMethod インターフェイスの実装です。 モデル オブジェクトは戻ります ObjectMethod 照会されたときの一種で、組み込みの値は IModelMethod のクエリを実行することが保証される VT_UNKNOWN です。 プロセスでは、IModelMethod を静的にキャストできるに保証されます。 データ モデルのすべてのメソッドは動的に変化します。 受け取るとして 0 または複数の引数のセットを入力し、1 つの出力値を返します。 オーバー ロード解決策はありません、パラメーター名、型、または期待に関するメタデータがありません。 
+データモデルのメソッドは IModelMethod インターフェイスを実装したもので、IModelObject にボックス化されています。 モデルオブジェクトは、クエリの実行時に ObjectMethod の種類を返します。組み込み値は VT_UNKNOWN であり、IModelMethod でクエリ可能であることが保証されています。 プロセスでは、IModelMethod に対して静的に安定していることが保証されます。 データモデルのすべてのメソッドは、本質的に動的です。 これらは、0個以上の引数のセットを入力として受け取り、1つの出力値を返します。 オーバーロードの解決はなく、パラメーター名、型、または予測に関するメタデータもありません。 
 
-IModelMethod インターフェイスの定義は次のとおりです。 
+IModelMethod インターフェイスは、次のように定義されています。 
 
 ```cpp
 DECLARE_INTERFACE_(IModelMethod, IUnknown)
@@ -417,16 +388,16 @@ DECLARE_INTERFACE_(IModelMethod, IUnknown)
 }
 ```
 
-[呼び出し](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-imodelmethod-call)
+[Call](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-imodelmethod-call)
 
-Call メソッドは、モデル データで定義されたどのメソッドが呼び出される方法です。 呼び出し元が、正確なインスタンス オブジェクト (このポインター) と任意の一連の引数を渡す責任を負います。 メソッドとその結果に関連付けられた任意の省略可能なメタデータの結果が返されます。 まだを論理的に値を返さないメソッドは、有効な IModelObject を返す必要があります。 このような場合も、IModelObject はボックス化された値はありません。 メソッドが失敗すると、イベント (返された HRESULT は、失敗した) 場合でも、入力引数の省略可能なエラーの詳細情報を返すこと可能性があります。 この呼び出し元を確認することが不可欠です。 
+呼び出しメソッドは、データモデルで定義されているメソッドを呼び出す方法です。 呼び出し元は、正確なインスタンスオブジェクト (this ポインター) と任意の引数セットを渡す役割を担います。 メソッドの結果と、その結果に関連付けられているオプションのメタデータが返されます。 論理的に値を返さないメソッドは、有効な IModelObject を返す必要があります。 このような場合、IModelObject はボックス化されていない値です。 メソッドが失敗した場合、(返された HRESULT がエラーの場合でも) 入力引数にオプションの拡張エラー情報が返されることがあります。 呼び出し元がこのことを確認する必要があります。 
 
 
-**キーの参照。*IModelKeyReference または IModelKeyReference2***
+**キー参照:*IModelKeyReference または IModelKeyReference2***
 
-キー参照は基本的には、特定のオブジェクトのキーを識別するハンドルです。 クライアントでは、GetKeyReference などのメソッドを使用してこのようなハンドルを取得でき、後で取得または必ずしも元のオブジェクトに保持することがなくキーの値を設定するハンドルを使用することができます。 この種類のオブジェクトは、IModelObject にボックス化 IModelKeyReference または IModelKeyReference2 インターフェイスの実装です。 モデル オブジェクトはある種の照会されたときに ObjectKeyReference を返し、IModelKeyReference のクエリを実行することが保証される VT_UNKNOWN 固有の値になります。 プロセスでは、IModelKeyReference を静的にキャストできるに保証されます。 
+キー参照は、基本的には特定のオブジェクトのキーへのハンドルです。 クライアントは、GetKeyReference などのメソッドを使用してこのようなハンドルを取得し、後でハンドルを使用して、元のオブジェクトを保持することなく、キーの値を取得または設定できます。 この型のオブジェクトは IModelKeyReference または IModelKeyReference2 インターフェイスを実装したもので、Imodelkeyreference にボックス化されています。 モデルオブジェクトは、クエリを実行すると、ObjectKeyReference の種類を返し、組み込み値は VT_UNKNOWN であり、IModelKeyReference でクエリ可能であることが保証されます。 プロセスでは、IModelKeyReference に対して静的に安定していることが保証されます。 
 
-キー参照インターフェイスの定義は次のとおりです。 
+キー参照インターフェイスは、次のように定義されています。 
 
 ```cpp
 DECLARE_INTERFACE_(IModelKeyReference2, IModelKeyReference)
@@ -444,49 +415,49 @@ DECLARE_INTERFACE_(IModelKeyReference2, IModelKeyReference)
 
 [GetKeyName](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-imodelkeyreference-getkeyname)
 
-られてメソッドは、このキーの参照がハンドルをキーの名前を返します。 返される文字列は、標準の BSTR で SysFreeString への呼び出しを使用して解放する必要があります。 
+GetKeyName メソッドは、このキー参照がハンドルであるキーの名前を返します。 返される文字列は標準の BSTR であり、SysFreeString の呼び出しを使用して解放する必要があります。 
 
 [GetOriginalObject](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-imodelkeyreference-getoriginalobject)
 
-GetOriginalObject メソッドは、キー参照の作成元となるインスタンス オブジェクトを返します。 可能性のある、キー自体では、インスタンス オブジェクトの親モデルに注意してください。 
+GetOriginalObject メソッドは、キー参照の作成元のインスタンスオブジェクトを返します。 キー自体がインスタンスオブジェクトの親モデルに存在する可能性があることに注意してください。 
 
 [GetContextObject](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-imodelkeyreference-getcontextobject)
 
-GetContextObject メソッドは、対象のキー プロパティのアクセサーを指す場合、プロパティ アクセサーの GetValue または SetValue メソッドに渡されるコンテキスト (このポインター) を返します。 ここで返されるコンテキスト オブジェクトは、可能性があります。 または GetOriginalObject からフェッチされた元のオブジェクトと同じである可能性がありますされません。 キーは、親モデルの場合に、コンテキスト清算人がその親モデルに関連付けられている場合は、元のオブジェクト、GetKeyReference または EnumerateKeyReferences が呼び出されたインスタンス オブジェクトです。 コンテキスト オブジェクトは、元のオブジェクトとキーをこのキーの参照を識別するハンドルを含む親モデルの最終的なコンテキスト清算人から来るでしょう。 コンテキストの査定がない場合は、元のオブジェクトとコンテキスト オブジェクトは同じです。 
+GetContextObject メソッドは、問題のキーがプロパティアクセサーを参照している場合に、プロパティアクセサーの GetValue または SetValue メソッドに渡されるコンテキスト (this ポインター) を返します。 ここで返されるコンテキストオブジェクトは、GetOriginalObject からフェッチされた元のオブジェクトと同じか、または異なる場合があります。 キーが親モデルにあり、その親モデルに関連付けられたコンテキスト adjustor が存在する場合、元のオブジェクトは、GetKeyReference または EnumerateKeyReferences が呼び出されたインスタンスオブジェクトです。 コンテキストオブジェクトは、元のオブジェクトと、このキー参照がハンドルであるキーを含む親モデルとの間の最終的なコンテキスト adjustor から取得されます。 コンテキスト adjustors が存在しない場合、元のオブジェクトとコンテキストオブジェクトは同じになります。 
 
 [GetKey](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-imodelkeyreference-getkey)
 
-GetKey メソッドは、キー参照は、IModelObject GetKey メソッドと同様に動作します。 基になるキーとキーに関連付けられたメタデータの値を返します。 キーの値は、プロパティ アクセサーを使用する場合に、これは、IModelObject にボックス化 (IModelPropertyAccessor) プロパティのアクセサーを返します。 このメソッドはプロパティのアクセサーに、基になる GetValue メソッドまたは SetValue メソッドを呼び出しません。 
+キー参照の GetKey メソッドは、IModelObject の GetKey メソッドとして動作します。 このメソッドは、基になるキーと、そのキーに関連付けられているメタデータの値を返します。 キーの値がプロパティアクセサーである場合、これは IModelObject にボックス化されたプロパティアクセサー (IModelPropertyAccessor) を返します。 このメソッドは、プロパティアクセサーで基になる GetValue メソッドまたは SetValue メソッドを呼び出しません。 
 
 [GetKeyValue](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-imodelkeyreference-getkeyvalue)
 
-IModelObject GetKeyValue メソッドと同様、キー参照で GetKeyValue メソッドの動作はします。 基になるキーとキーに関連付けられたメタデータの値を返します。 キーの値は、プロパティ アクセサーを使用する場合に、この基になる GetValue メソッド プロパティのアクセサーに自動的に呼び出します。 
+キー参照の GetKeyValue メソッドは、IModelObject の GetKeyValue メソッドとして動作します。 このメソッドは、基になるキーと、そのキーに関連付けられているメタデータの値を返します。 キーの値がプロパティアクセサーの場合は、プロパティアクセサーの基になる GetValue メソッドが自動的に呼び出されます。 
 
 
 [SetKey](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-imodelkeyreference-setkey)
 
-IModelObject SetKey メソッドと同様、キー参照で SetKey メソッドの動作はします。 これにより、キーの値が割り当てられます。 元のキーがプロパティのアクセサーの場合は、このプロパティのアクセサーは置き換えられます。 プロパティのアクセサーに SetValue メソッドを呼び出すことができません。 
+キー参照の SetKey メソッドは、IModelObject の SetKey メソッドとして動作します。 キーの値が割り当てられます。 元のキーがプロパティアクセサーの場合は、プロパティアクセサーが置き換えられます。 プロパティアクセサーで SetValue メソッドを呼び出すことはありません。 
 
 
 [SetKeyValue](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-imodelkeyreference-setkeyvalue)
 
-IModelObject SetKeyValue メソッドと同様、キー参照で SetKeyValue メソッドの動作はします。 これにより、キーの値が割り当てられます。 元のキーがプロパティのアクセサーの場合は、このプロパティのアクセサー自体を置き換えるのではなく、プロパティ アクセサーに基になる SetValue メソッドを呼び出します。 
+キー参照の SetKeyValue メソッドは、IModelObject の SetKeyValue メソッドとして動作します。 キーの値が割り当てられます。 元のキーがプロパティアクセサーの場合、プロパティアクセサー自体を置き換えるのではなく、プロパティアクセサーで基になる SetValue メソッドを呼び出します。 
 
 [OverrideContextObject](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-imodelkeyreference2-overridecontextobject)
 
-OverrideContextObject メソッド (IModelKeyReference2 にのみ存在する) は、永久的にこのキーの参照が、基になるプロパティ アクセサーの GetValue または SetValue メソッドに渡すコンテキスト オブジェクトを変更するために使用する高度な方法です。 このメソッドに渡されるオブジェクトが、GetContextObject への呼び出しからも返されます。 このメソッドは、特定の動的言語の動作をレプリケートするスクリプトのプロバイダーで使用できます。 ほとんどのクライアントは、このメソッドを呼び出さないでください。 
+OverrideContextObject メソッド (IModelKeyReference2 にのみ存在) は高度なメソッドです。このメソッドは、このキー参照が基になるプロパティアクセサーの GetValue または SetValue メソッドに渡すコンテキストオブジェクトを完全に変更するために使用されます。 このメソッドに渡されるオブジェクトは、GetContextObject の呼び出しからも返されます。 このメソッドは、特定の動的言語の動作をレプリケートするためにスクリプトプロバイダーによって使用されます。 ほとんどのクライアントでは、このメソッドを呼び出すことはできません。 
 
 
-**コンテキスト オブジェクト。*IDebugHostContext***
+**コンテキストオブジェクト:*IDebugHostContext***
 
-コンテキスト オブジェクトは、すべてのオブジェクトに関連付けます (データ モデルとの連携) でのデバッグ ホスト情報の非透過 blob です。 情報は、プロセスのコンテキストまたはアドレス空間などなどの可能性があります.コンテキスト オブジェクトは、IDebugHostContext、IModelObject 内にボックス化の実装です。 IDebugHostContext が定義されているホスト インターフェイスであることに注意してください。 クライアントは、このインターフェイスを実装しないされます。 
+コンテキストオブジェクトは、(データモデルと連携して) デバッグホストがすべてのオブジェクトに関連付けている情報の非透過的な blob です。 これには、情報の取得元のプロセスコンテキストやアドレス空間などが含まれます。コンテキストオブジェクトは、IModelObject 内にボックス化された IDebugHostContext の実装です。 IDebugHostContext はホストで定義されたインターフェイスであることに注意してください。 クライアントはこのインターフェイスを実装しません。 
 
-コンテキスト オブジェクトの詳細については、次を参照してください。[デバッガー データ モデルの C++ ホスト インターフェイス](data-model-cpp-interfaces.md#hostinterface)デバッガー データ モデルの C++ インターフェイスにします。 
+コンテキストオブジェクトの詳細については、「デバッガーデータモデルの[ C++ホストインターフェイス](data-model-cpp-interfaces.md#hostinterface)」 C++を参照してください。 
 
 
-## <a name="span-idmodelmanager-the-data-model-manager"></a><span id="modelmanager"> データ モデルのマネージャー  
+## <a name="span-idmodelmanager-the-data-model-manager"></a><span id="modelmanager">データモデルマネージャー  
 
-データ モデル マネージャー、IDataModelManager2 (またはそれ以前の IDataModelManager) に、主要なインターフェイスの定義は次のとおりです。 
+Data model manager、IDataModelManager2 (またはそれより前の IDataModelManager) へのコアインターフェイスは、次のように定義されています。 
 
 ```cpp
 DECLARE_INTERFACE_(IDataModelManager2, IDataModelManager)
@@ -524,7 +495,7 @@ DECLARE_INTERFACE_(IDataModelManager2, IDataModelManager)
 
 **管理方法**
 
-次の一連のメソッドが、アプリケーションで使用される (例:: デバッガー)、データ モデルをホストしています。 
+データモデルをホストしているアプリケーション (例: デバッガー) では、次の一連のメソッドが使用されます。 
 
 ```cpp
 STDMETHOD(Close)() PURE;
@@ -532,11 +503,11 @@ STDMETHOD(Close)() PURE;
 
 [閉じる](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelmanager-close)
 
-アプリケーションでデータ モデルのマネージャーの Close メソッドが呼び出されます (例:: デバッガー)、データ モデルのマネージャーのシャット ダウン プロセスを開始するには、データ モデルをホストします。 データ モデルのマネージャーの最終的な参照を解放する前に閉じるメソッドではなく、データ モデルのホストでは、未定義の動作を含む、発生する可能性がありますが、データ モデルの管理インフラストラクチャの重要なリークに限定されません。 
+Close メソッドは、データモデルマネージャーのシャットダウンプロセスを開始するために、データモデルをホストするアプリケーション (例: デバッガー) によって、データモデルマネージャーで呼び出されます。 データモデルマネージャーで最終的な参照をリリースする前に Close メソッドではないデータモデルのホストは、データモデルの管理インフラストラクチャの重大なリークを含むが未定義の動作を引き起こす可能性があります。 
 
-**オブジェクトの作成]、[メソッドのボックス化**
+**オブジェクトの作成/ボックス化メソッド**
 
-次の一連のメソッドを使用して新しいオブジェクトを作成または、IModelObject - データ モデルの中核となるインターフェイスにボックスの値にします。 
+次の一連のメソッドは、新しいオブジェクトまたはボックスの値を IModelObject に作成するために使用されます。これは、データモデルのコアインターフェイスです。 
 
 ```cpp
 STDMETHOD(CreateNoValue)(_Out_ IModelObject** object) PURE;
@@ -551,56 +522,56 @@ STDMETHOD(CreateMetadataStore)(_In_opt_ IKeyStore* parentStore, _COM_Outptr_ IKe
 STDMETHOD(CreateTypedIntrinsicObjectEx)(_In_opt_ IDebugHostContext* context, _In_ VARIANT* intrinsicData, _In_ IDebugHostType* type, _COM_Outptr_ IModelObject** object) PURE;
 ```
 
-[CreateNoValue](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelmanager-createnovalue)
+[Creatの値](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelmanager-createnovalue)
 
-CreateNoValue メソッドは、"no value"オブジェクトを作成し、IModelObject にボックスに、それを返します。 返されたモデル オブジェクトには、ある種の ObjectNoValue があります。 
+Creatの値のメソッドは、"no value" オブジェクトを作成し、それを IModelObject にボックス化して、それを返します。 返されるモデルオブジェクトの種類は ObjectNoValue です。 
 
-"No value"のオブジェクトには、いくつかのセマンティックな意味があります。 
+"値なし" オブジェクトには、いくつかの意味的な意味があります。 
 
-- (言語) に応じて、見なすことができます、void 型、null または未定義の意味と同じ
-- 特定のプロパティは、指定されたインスタンスの値がないと、特定のインスタンスのプロパティが存在しなかったかのように扱う必要がある成功し、結果として"no value"のオブジェクトを返すすべてプロパティ アクセサーの GetValue メソッドを示すです。
-- データ モデルのメソッド戻り値を意味がない場合がこれを使用して sentinel としてなどを示します (など、メソッドは、有効な IModelObject を返す必要があります)。
+- (言語によって異なります) は、void、null、または undefined と同等のセマンティックと見なすことができます。
+- 成功を返すプロパティアクセサーの GetValue メソッドと結果の "no value" オブジェクトは、特定のプロパティが特定のインスタンスに対して値を持たず、その特定のインスタンスに対してプロパティが存在しないかのように処理する必要があることを示します。
+- 戻り値が意味のないデータモデルメソッドでは、これを sentinel として使用して、そのようなを示します (メソッドが有効な IModelObject を返す必要があるため)。
 
 [CreateErrorObject](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelmanager-createerrorobject)
 
-CreateErrorObject メソッドは、"error"オブジェクトを作成します。 データ モデルには、例外と例外のフローの概念はありません。 2 つの方法でプロパティまたはメソッドは失敗します。
+CreateErrorObject メソッドは、"error オブジェクト" を作成します。 データモデルには、例外と例外フローの概念がありません。 エラーは、次の2つの方法でプロパティ/メソッドから取得されます。
 
-- 1 つの HRESULT を拡張エラー情報なしで失敗します。 以上のエラーのある情報があるか、またはエラー自体が返された HRESULT から見ればすぐにわかります。
-- HRESULT を組み合わせて 1 つの障害は拡張エラー情報です。 拡張エラー情報は、プロパティまたはメソッドの出力引数で返されるエラー オブジェクトです。
+- 1つの失敗した HRESULT で、拡張エラー情報がありません。 エラーに対して指定できる情報がないか、返された HRESULT からエラー自体の内容がわかります。
+- 1つの失敗した HRESULT と拡張エラー情報の組み合わせ。 拡張エラー情報は、プロパティ/メソッドの output 引数で返されるエラーオブジェクトです。
 
 [CreateTypedObject](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelmanager-createtypedobject)
 
-CreateTypedObject メソッドは、これにより、クライアントは、デバッグ対象のアドレス空間でネイティブ/言語のオブジェクトの表現を作成する方法です。 自動的にはデータ モデルに一致するもの (objectType 引数によって示されます) として新しく作成されたオブジェクトの種類は、正規のビジュアライザーまたは拡張機能のいずれかとして、データ モデルのマネージャーに登録されている 1 つまたは複数の型シグネチャに一致する場合に、呼び出し元に返される前に作成されたインスタンスのオブジェクトにアタッチされます。 
+CreateTypedObject メソッドは、クライアントがデバッグターゲットのアドレス空間にネイティブ/言語オブジェクトの表現を作成できるようにするメソッドです。 新しく作成されたオブジェクトの型 (objectType 引数によって示される) が、データモデルマネージャーに登録されている1つ以上の型シグネチャと一致する場合、それらのデータモデルは自動的に呼び出し元に返される前に、作成されたインスタンスオブジェクトにアタッチされます。 
 
 [CreateTypedObjectReference](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelmanager-createtypedobjectreference)
 
-CreateTypedObjectReference メソッドは、基になるネイティブ/言語構成要素への参照を作成後、例外、CreateTypedObject メソッドに意味的に似ています。 作成した参照は、ある種の ObjectTargetObjectReference のあるオブジェクトです。 ネイティブの参照を基になる言語をサポート可能性があります (例: C++ & または (& a) (& a))。 C++ 参照の ObjectTargetObjectReference が可能になります。 Kind ObjectTargetObjectReference のオブジェクトは、IModelObject の逆参照メソッドを使用して基になる値に変換できます。 バックを割り当てるには、参照が、基になるホストの式エバリュエーターに渡すこともできますように適切な言語の値にします。 
+CreateTypedObjectReference メソッドは、基になるネイティブ/言語構成要素への参照を作成する CreateTypedObject メソッド違うと意味的に似ています。 作成された参照は、ObjectTargetObjectReference の一種を持つオブジェクトです。 これは、基になる言語がサポートしているようなネイティブ参照でC++はありません (例: & や & &)。 C++参照への ObjectTargetObjectReference を完全に使用できます。 ObjectTargetObjectReference という種類のオブジェクトは、IModelObject での逆参照メソッドを使用して、基になる値に変換できます。 適切な言語で値に戻すために、基になるホストの式エバリュエーターに参照を渡すこともできます。 
 
-[CreateSyntheticObject](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelmanager-createsyntheticobject)
+[オブジェクトのエンコード](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelmanager-createsyntheticobject)
 
-CreateSyntheticObject メソッドは、空のデータ モデル オブジェクト - メタデータ/キー/値のタプルと概念のディクショナリを作成します。 作成時にがないキーも、オブジェクトの概念です。 利用する、呼び出し元のクリーンな状態になります。 
+このオブジェクトメソッドは、空のデータモデルオブジェクト (キー/値/メタデータの組と概念のディクショナリ) を作成します。 作成時には、オブジェクトにキーや概念はありません。 これは、呼び出し元が使用するためのクリーンなスレートです。 
 
 [CreateDataModelObject](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelmanager-createdatamodelobject)
 
-CreateDataModelObject メソッドは、その他のオブジェクトへの親モデルとして接続しようとしているオブジェクトであるデータ モデルであるオブジェクトを作成する簡単なヘルパー ラッパーです。 このようなすべてのオブジェクトには、IDataModelConcept 経由でデータ モデルの概念をサポートする必要があります。 このメソッドは、明示的なコンテキストなしで新しい空白の合成オブジェクトを作成し、データ モデルの概念を新しく作成されたオブジェクトの実装として inpassed IDataModelConcept を追加します。 これは、CreateSyntheticObject および SetConcept への呼び出しと同様に実現できます。 
+CreateDataModelObject メソッドは、データモデルであるオブジェクトを作成するための単純なヘルパーラッパーです。これは、他のオブジェクトに親モデルとしてアタッチされるオブジェクトです。 このようなオブジェクトはすべて、IDataModelConcept を介したデータモデルの概念をサポートする必要があります。 このメソッドは、明示的なコンテキストを指定せずに新しい空の合成オブジェクトを作成し、データモデルの概念の新しく作成されたオブジェクトの実装として inpassed れた IDataModelConcept を追加します。 これは、バイナリオブジェクトと SetConcept の呼び出しでも同様に実現できます。 
 
 [CreateIntrinsicObject](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelmanager-createintrinsicobject)
 
-CreateIntrinsicObject メソッドは、値が組み込み IModelObject にボックス化する方法です。 呼び出し元は COM バリアント型の値が配置され、このメソッドを呼び出します。 データ モデルのマネージャーは、オブジェクトを表す、IModelObject を返します。 このメソッドは、基本的な IUnknown ベース型のボックスを使用しても: プロパティ アクセサー、メソッド、コンテキストなどしています.このような場合は、objectKind メソッドは、IUnknown ベースの種類、オブジェクトの構築を表し、渡された variant punkVal フィールドは、IUnknown の派生型を示します。 モデルの適切なインターフェイスに静的にキャストできる型でなければなりません (例。IModelPropertyAccessor、IModelMethod、IDebugHostContext..)。で処理します。 このメソッドでサポートされている VARIANT 型、VT_UI1、VT_I1、VT_UI2、VT_I2、VT_UI4、VT_I4、VT_UI8、VT_I8、VT_R4、VT_R8、VT_BOOL、VT_BSTR、および VT_UNKNOWN (ModelObjectKind 列挙体によって示されるように IUnknown の派生型の特殊なセット。 
+CreateIntrinsicObject メソッドは、組み込み値を IModelObject にボックス化するメソッドです。 呼び出し元は、値を COM VARIANT に配置し、このメソッドを呼び出します。 データモデルマネージャーは、オブジェクトを表す IModelObject を返します。 このメソッドは、プロパティアクセサー、メソッド、コンテキストなどの基本的な IUnknown ベースの型をボックスにするためにも使用されることに注意してください。このような場合、objectKind メソッドは、オブジェクトが表す IUnknown ベースのコンストラクトの種類と、渡されたバリアントの punkVal フィールドが IUnknown 派生型であることを示します。 この型は、適切なモデルインターフェイスに対して静的に安定している必要があります (例:IModelPropertyAccessor、IModelMethod、IDebugHostContext など)処理中。 このメソッドでサポートされているバリアント型は、VT_UI1、VT_I1、VT_UI2、VT_I2、VT_UI4、VT_I4、VT_UI8、VT_I8、VT_R4、VT_R8、VT_BOOL、VT_BSTR、VT_UNKNOWN (列挙型 ModelObjectKind によって示される IUnknown 派生型の特殊なセットの場合) です。 
 
 [CreateTypedIntrinsicObject](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelmanager-createtypedintrinsicobject)
 
-CreateTypedintrinsicObject メソッドは、ネイティブ/言語の種類のデータに関連付けられているし、ボックス化された値に付随することができるドキュメントを除く、CreateIntrinsicObject メソッドに似ています。 これにより、(これは、単に VT_UI * または VT_I * 値) のネイティブ列挙型などの構造を表すデータ モデルです。 ポインター型は、このメソッドを使用しても作成されます。 データ モデルでのネイティブ ポインターをゼロ拡張 64 ビット数量がデバッグ対象の仮想アドレス空間にオフセットを表します。 VT_UI8 内をボックス化し、このメソッドと、ネイティブ/言語のポインターを示す型が作成されます。 
+CreateTypedintrinsicObject メソッドは、CreateIntrinsicObject メソッド違うに似ています。これにより、ネイティブ/言語の型をデータに関連付けて、ボックス化された値と共に渡すことができます。 これにより、データモデルはネイティブ列挙型 (単に VT_UI * または VT_I * 値) などの構造体を表すことができます。 ポインター型も、このメソッドを使用して作成されます。 データモデルのネイティブポインターは、デバッグターゲットの仮想アドレス空間へのオフセットを表す、ゼロの拡張64ビット数量です。 このメソッドは VT_UI8 内にボックス化され、このメソッドと、ネイティブ/言語ポインターを示す型で作成されます。 
 
 [CreateMetadataStore](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelmanager-createmetadatastore)
 
-CreateMetadataStore メソッドは、プロパティおよびその他の値のさまざまな使用に関連付けることができるメタデータを保持するために使用されるキー ストア - メタデータ/キー/値の組の簡略化されたコンテナー--を作成します。 メタデータ ストアが 1 つの親 (さらに、単一の親であることができます) 必要があります。 特定のメタデータのキーが指定されたストアにない場合は、その親がチェックされます。 ほとんどのメタデータ ストアには、親はありません。 共通のメタデータを簡単に共有する方法は、提供。 
+CreateMetadataStore メソッドは、キーストアを作成します。これは、キー/値/メタデータタプルの簡略化されたコンテナーです。これは、プロパティおよびその他のさまざまな値に関連付けることができるメタデータを保持するために使用されます。 メタデータストアには1つの親が存在する場合があります (この場合、1つの親を持つことができます)。 指定されたメタデータキーが特定のストアに存在しない場合は、その親がチェックされます。 ほとんどのメタデータストアには親がありません。 ただし、共通のメタデータを簡単に共有する方法を提供します。 
 
 [CreateTypedIntrinsicObjectEx](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelmanager2-createtypedintrinsicobjectex)
 
-CreateTypedIntrinsicObjectEx メソッドは、意味的 CreateTypedIntrinsicObject メソッドと似ています。 2 つの唯一の違いは、このメソッドにより、送信者の組み込みのデータの有効なコンテキストを指定することです。 コンテキストが渡されない場合は、データが (CreateTypedIntrinsicObject の動作方法) 型の引数から継承はどのようなコンテキストで有効と見なされます。 これにより、型から継承できるよりも詳細なコンテキストを必要とする、デバッグ対象の型指定されたポインター値を作成できます。 
+CreateTypedIntrinsicObjectEx メソッドは、意味的には CreateTypedIntrinsicObject メソッドに似ています。 2つの唯一の違いは、このメソッドでは、呼び出し元が組み込みデータが有効なコンテキストを指定できることです。 コンテキストが渡されない場合、データは、どのコンテキストが型引数から継承される場合でも有効と見なされます (CreateTypedIntrinsicObject の動作)。 これにより、型から継承できるよりも具体的なコンテキストを必要とする、型指定されたポインター値をデバッグターゲットで作成できます。 
 
-**拡張機能/登録メソッド**次の一連のメソッドは、クライアントで指定した親モデルを自動的にアタッチするデータ モデルを拡張または既存のモデルを登録するかをできるように、データ モデルの拡張メカニズムを管理指定された条件に一致するネイティブの型。
+**機能拡張/登録メソッド**次の一連のメソッドは、データモデルの機能拡張メカニズムを管理します。これにより、クライアントは既存のモデルを拡張または登録したり、特定の条件に一致するネイティブ型に特定の親モデルを自動的にアタッチするようにデータモデルに要求したりすることができます。
 
 ```cpp
     STDMETHOD(GetModelForTypeSignature)(_In_ IDebugHostTypeSignature* typeSignature, _Out_ IModelObject** dataModel) PURE;
@@ -617,49 +588,49 @@ CreateTypedIntrinsicObjectEx メソッドは、意味的 CreateTypedIntrinsicObj
 
 [GetModelForTypeSignature](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelmanager-getmodelfortypesignature)
 
-GetModelForTypeSignature メソッドは、RegisterModelForTypeSignature メソッドを呼び出す前を使用して特定の型シグネチャに対して登録されているデータ モデルを返します。 このメソッドから返されるデータ モデルには、渡された型シグネチャに一致する任意の型の標準的なビジュアライザーと見なされます。 標準ビジュアライザー、としてそのデータ モデル型の表示が引き継ぎます。 表示エンジンは、既定では、非表示にデータ モデルによって提示されるオブジェクトのビューを優先してオブジェクトのネイティブ/言語構成要素。 
+GetModelForTypeSignature メソッドは、以前の RegisterModelForTypeSignature メソッドの呼び出しによって特定の型シグネチャに対して登録されたデータモデルを返します。 このメソッドから返されるデータモデルは、渡された型シグネチャに一致する任意の型の正規ビジュアライザーと見なされます。 標準ビジュアライザーとして、そのデータモデルは、型の表示を引き継ぎます。 既定では、表示エンジンは、データモデルによって表示されるオブジェクトのビューを優先して、オブジェクトのネイティブ/言語構成要素を非表示にします。 
 
 
 [GetModelForType](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelmanager-getmodelfortype)
 
-GetModelForType メソッドは、データ モデルは、指定した型のインスタンスの標準的なビジュアライザーを返します。 実際には、このメソッドは、最も適した RegisterModelForTypeSignature メソッドを呼び出す前に登録されたされ、関連付けられているデータ モデルを返します型シグネチャを見つけます。 
+GetModelForType メソッドは、指定された型インスタンスの標準ビジュアライザーであるデータモデルを返します。 実際には、このメソッドは、RegisterModelForTypeSignature メソッドの前の呼び出しに登録された最も一致する型シグネチャを検索し、関連付けられたデータモデルを返します。 
 
 [RegisterModelForTypeSignature](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelmanager-registermodelfortypesignature)
 
-RegisterModelForTypeSignature メソッドは、特定の型 (または型のセット) の標準的なビジュアライザーを登録する呼び出し元を利用する主な方法です。 正規のビジュアライザーは、これは実際には、指定された型 (または型のセット) の表示データ モデルです。 デバッガー ユーザー インターフェイスに表示されている型のネイティブ/言語ビューではなく、(ことを希望するユーザーのネイティブ/言語ビューに戻るのでは意味) と共に登録されているデータ モデルによって表される型のビューが表示されます。 
+RegisterModelForTypeSignature メソッドは、呼び出し元が特定の型 (または型のセット) の正規ビジュアライザーを登録するために使用する主要なメソッドです。 標準ビジュアライザーは、指定された型 (または型のセット) の表示を実質的に引き継ぐデータモデルです。 デバッガーのユーザーインターフェイスに表示されている型のネイティブ/言語ビューの代わりに、登録されたデータモデルによって示される型のビューが表示されます (と共に、そのユーザーを必要とするユーザーのネイティブ/言語ビューに戻ることができます)。 
 
 [UnregisterModelForTypeSignature](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelmanager-unregistermodelfortypesignature)
 
-UnregisterModelForTypeSignature メソッド元 RegisterModelForTypeSignature メソッドを呼び出す前に戻します。 このメソッドが特定の型シグネチャに一致する型の標準的なビジュアライザーとして指定されたデータ モデルを削除するか、またはそのデータ モデルが登録されているすべての型シグネチャの標準的なビジュアライザーとして指定されたデータ モデルを削除できます。 
+UnregisterModelForTypeSignature メソッドは、RegisterModelForTypeSignature メソッドの前の呼び出しを元に戻します。 このメソッドは、特定の型シグネチャに一致する型の正規ビジュアライザーとして指定されたデータモデルを削除することも、特定のデータモデルを、そのデータモデルが登録されているすべての型シグネチャの正規ビジュアライザーとして削除することもできます。 
 
 [RegisterExtensionForTypeSignature](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelmanager-registerextensionfortypesignature)
 
-RegisterExtensionForTypeSignature メソッドは、1 つ大きな違いがあります RegisterModelForTypeSignature メソッドに似ています。 このメソッドに渡されるデータ モデルは任意の型の正規のビジュアライザーではなく、その型のネイティブ言語/ビューの表示にはなりません。 このメソッドに渡されるデータ モデルは、指定された型のシグネチャと一致する任意の具象型を親として自動的に追加されます。 RegisterModelForTypeSignature メソッドとは異なり制限はありませんで同一またはあいまいな型のシグネチャが指定された型 (または型のセット) に対する拡張として登録されています。 型シグネチャを持つには、特定の具象型のインスタンスが一致するすべての拡張機能には、親モデルとして新しく作成されたオブジェクトに自動的に接続するには、このメソッドを使用して登録されているデータ モデルが発生します。 これには、実際には、任意の数のクライアントが新しいフィールドまたは機能を使用して、型 (または型のセット) を拡張するを許可します。 
+RegisterExtensionForTypeSignature メソッドは、RegisterModelForTypeSignature メソッドに似ていますが、主な違いが1つあります。 このメソッドに渡されるデータモデルは、どの型に対しても正規のビジュアライザーではなく、その型のネイティブ/言語ビューの表示には適用されません。 このメソッドに渡されるデータモデルは、指定された型シグネチャに一致する任意の具象型の親として自動的に追加されます。 RegisterModelForTypeSignature メソッドとは異なり、指定された型 (または型のセット) に対する拡張として登録されている同一またはあいまいな型シグネチャには制限がありません。 型シグネチャが特定の具象型のインスタンスと一致するすべての拡張機能は、このメソッドを介して登録されたデータモデルを、親モデルとして新しく作成されたオブジェクトに自動的にアタッチします。 これにより、任意の数のクライアントが、新しいフィールドまたは機能で型 (または型のセット) を拡張できるようになります。 
 
 [UnregisterExtensionForTypeSignature](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelmanager-unregisterextensionfortypesignature)
 
-UnregisterExtensionForTypeSignature メソッドでは、RegisterExtensionForTypeSignature 前回の呼び出し元に戻します。 特定の型シグネチャの拡張機能として、または対象となるデータ モデルが登録されているすべての型シグネチャの拡張機能として、特定のデータ モデルが登録解除します。 
+UnregisterExtensionForTypeSignature メソッドは、RegisterExtensionForTypeSignature の前の呼び出しを元に戻します。 特定のデータモデルを、特定の型シグネチャの拡張機能として、またはデータモデルが登録されたすべての型シグネチャの拡張として登録解除します。 
 
 [GetRootNamespace](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelmanager-getrootnamespace)
 
-GetRootNamespace メソッドは、データ モデルのルート名前空間を返します。 これは、オブジェクトは、特定のオブジェクトがデバッグ ホストによって格納されるデータ モデルを管理します。 
+GetRootNamespace メソッドは、データモデルのルート名前空間を返します。 これは、データモデルが管理し、デバッグホストが特定のオブジェクトを配置するオブジェクトです。 
 
 [RegisterNamedModel](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelmanager-getrootnamespace)
 
-RegisterNamedModel メソッドは、それを拡張したいクライアントが検出できる既知の名前で指定されたデータ モデルを登録します。 この既知の名前で登録されているモデルを取得することによって拡張できるものとしてのデータ モデルを発行する - API の主な目的は、これを親モデルを追加します。 
+RegisterNamedModel メソッドは、指定されたデータモデルを既知の名前で登録することで、それを拡張するクライアントによって検出されるようにします。 これは、API の主要な目的であり、この既知の名前で登録されたモデルを取得し、それに親モデルを追加することによって、データモデルを拡張可能なものとして公開します。 
 
 [UnregisterNamedModel](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelmanager-unregisternamedmodel)
 
-UnregisterNamedModel メソッドでは、RegisterNamedModel 前回の呼び出し元に戻します。 データ モデルと名前を検索できるの間の関連付けを削除します。 
+UnregisterNamedModel メソッドは、RegisterNamedModel の前の呼び出しを元に戻します。 これにより、データモデルと、それを検索するための名前との間の関連付けが削除されます。 
 
 [AcquireNamedModel](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelmanager-acquirenamedmodel)
 
-呼び出し元が指定された名前で登録されているデータ モデルを拡張したいユーザーは、拡張したいデータ モデルのオブジェクトを取得するために AcquireNamedModel メソッドを呼び出します。 このメソッドでは、RegisterNamedModel メソッドを呼び出す前を使用して登録された任意のデータ モデルを返します。 AcquireNamedModel メソッドの主な目的は、モデルを拡張するのには、このメソッドはモデルが登録されていない指定した名前でまだ特別な動作を使用します。 モデルが登録されていない指定した名前でまだの場合、スタブ オブジェクトを作成、一時的に指定した名前の下に登録し、呼び出し元に返されます。 RegisterNamedModel メソッドの呼び出しを使用して、実際のデータ モデルが登録されると、スタブ オブジェクトに対して行われたすべての変更は、実際には、実際のモデルに加えられました。 これにより、ロード順序依存関係の多くの問題が互いを拡張するコンポーネントから削除します。 
+呼び出し元は、特定の名前で登録されているデータモデルを拡張する必要がある場合、拡張するデータモデルのオブジェクトを取得するために AcquireNamedModel メソッドを呼び出します。 このメソッドは、以前の RegisterNamedModel メソッドの呼び出しを介して登録されたすべてのデータモデルを返します。 AcquireNamedModel メソッドの主な目的はモデルを拡張することであるため、このメソッドは、指定された名前にまだモデルが登録されていない場合に特別な動作をします。 指定した名前でモデルが登録されていない場合は、スタブオブジェクトが作成され、指定された名前で一時的に登録され、呼び出し元に返されます。 RegisterNamedModel メソッドの呼び出しを使用して実際のデータモデルを登録すると、スタブオブジェクトに対して行われたすべての変更が実質的に実際のモデルに対して行われます。 これにより、互いに拡張されるコンポーネントから、多くの読み込み順序の依存関係の問題が除去されます。 
 
 
-**ヘルパー メソッド**
+**ヘルパーメソッド**
 
-次のメソッドは、データ モデルのオブジェクトに対する複雑な操作の実行を支援する一般的なヘルパー メソッドです。 データ モデルまたはそのオブジェクトで他のメソッドを使用してこれらのアクションを実行することはできますが、これらのメソッドが大幅に簡素化します。 
+次のメソッドは、データモデル内のオブジェクトに対して複雑な操作を実行する際に役立つ一般的なヘルパーメソッドです。 これらの操作は、データモデルまたはそのオブジェクトの他のメソッドを使用して実行できますが、これらの便利なメソッドを使用すると、はるかに簡単になります。 
 
 ```cpp
 STDMETHOD(AcquireSubNamespace)(_In_ PCWSTR modelName, _In_ PCWSTR subNamespaceModelName, _In_ PCWSTR accessName, _In_opt_ IKeyStore *metadata, _COM_Outptr_ IModelObject **namespaceModelObject) PURE;
@@ -667,24 +638,18 @@ STDMETHOD(AcquireSubNamespace)(_In_ PCWSTR modelName, _In_ PCWSTR subNamespaceMo
 
 [AcquireSubNamespace](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelmanager2-acquiresubnamespace)
 
-AcquireSubNamespace メソッドは、動的言語で新しいオブジェクトよりも言語の名前空間が例より従来だものの構築に役立ちます。 かどうかより整理されたプロセス オブジェクトを作成するプロセス オブジェクトのプロパティと簡単に検出すると、このプロセス オブジェクトの各カテゴリの下位のオブジェクトを作成する方法と配置の 1 つのメソッドのプロパティを分類するなど、呼び出し元がそのオブジェクト内でこれらのプロパティ。 
+AcquireSubNamespace メソッドを使用すると、動的言語では、新しいオブジェクトよりも言語の名前空間に似ているようなものを構築できます。 たとえば、呼び出し元が process オブジェクトのプロパティを分類して、プロセスオブジェクトをより整理しやすくし、プロパティを簡単に検出できるようにするには、次の1つの方法として、process オブジェクトの各カテゴリに対してサブオブジェクトを作成し、そのオブジェクト内のこれらのプロパティ。
 
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
+このトピックは、からC++アクセス可能なインターフェイス、それらを使用してC++ベースのデバッガー拡張機能を構築する方法、および他のデータモデル構造を使用する方法について説明したシリーズの一部です (例:JavaScript または NatVis) をC++データモデル拡張機能から。
 
+[デバッガーデータモデルC++の概要](data-model-cpp-overview.md)
 
----
+[デバッガーデータモデルC++のインターフェイス](data-model-cpp-interfaces.md)
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
+[デバッガーデータモデルC++の追加インターフェイス](data-model-cpp-additional-interfaces.md)
 
+[デバッガーデータモデルC++の概念](data-model-cpp-concepts.md)
 
-[デバッガー データ モデルの C++ の概要](data-model-cpp-overview.md)
-
-[デバッガーのデータ モデルの C++ インターフェイス](data-model-cpp-interfaces.md)
-
-[デバッガーのデータ モデルの C++ オブジェクト](data-model-cpp-objects.md)
-
-[デバッガーのデータ モデルの C++ の追加インターフェイス](data-model-cpp-additional-interfaces.md)
-
-[デバッガーのデータ モデルの C の概念](data-model-cpp-concepts.md)
-
-[デバッガー データ モデルの C++ のスクリプト](data-model-cpp-scripting.md)
+[デバッガーデータモデルC++のスクリプト](data-model-cpp-scripting.md)

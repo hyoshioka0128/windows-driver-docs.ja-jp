@@ -1,84 +1,64 @@
 ---
 title: JavaScript デバッガーのスクリプト
-description: このトピックでは、JavaScript を使用して、デバッガー オブジェクトについて理解し、拡張、およびデバッガーの機能をカスタマイズするスクリプトを作成する方法について説明します。
+description: このトピックでは、JavaScript を使用して、デバッガーオブジェクトを理解し、デバッガーの機能を拡張およびカスタマイズするスクリプトを作成する方法について説明します。
 ms.assetid: 3442E2C4-4054-4698-B7FB-8FE19D26C171
 ms.date: 04/09/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: aecec2cbf92677e31617a7b17a48178c91a848b0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b01aed239dabef52d3fcd3a37c1feb56b1f5920b
+ms.sourcegitcommit: 3b7c8b3cb59031e0f4e39dac106c1598ad108828
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67366819"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70930384"
 ---
 # <a name="javascript-debugger-scripting"></a>JavaScript デバッガーのスクリプト
 
 
-このトピックでは、JavaScript を使用して、デバッガー オブジェクトについて理解し、拡張、およびデバッガーの機能をカスタマイズするスクリプトを作成する方法について説明します。
+このトピックでは、JavaScript を使用して、デバッガーオブジェクトを理解し、デバッガーの機能を拡張およびカスタマイズするスクリプトを作成する方法について説明します。
 
-## <a name="span-idoverviewofjavascriptdebuggerscriptingspanspan-idoverviewofjavascriptdebuggerscriptingspanspan-idoverviewofjavascriptdebuggerscriptingspanoverview-of-javascript-debugger-scripting"></a><span id="Overview_of_JavaScript_Debugger_Scripting_"></span><span id="overview_of_javascript_debugger_scripting_"></span><span id="OVERVIEW_OF_JAVASCRIPT_DEBUGGER_SCRIPTING_"></span>JavaScript デバッガーがスクリプトの概要
-
-
-スクリプトのプロバイダーは、デバッガーの内部オブジェクト モデルへのスクリプト言語をブリッジします。 プロバイダー、スクリプト、JavaScript デバッガーを使うと、デバッガーでの JavaScript の使用。
-
-.Scriptload コマンドを使用して、JavaScript が読み込まれると、スクリプトのルート コードが実行される、デバッガー (dx デバッガー) のルート名前空間には、スクリプト内に存在する名前がブリッジおよびアンロードされるまで、スクリプトがメモリに常駐し、そのオブジェクトに対するすべての参照が解放されます。 スクリプトは、新しい機能を提供できる、デバッガーの式エバリュエーターでは、デバッガーでのオブジェクト モデルを変更または同様の NatVis ビジュアライザーはほぼビジュアライザーとして動作できます。
-
-このトピックでは、scripting JavaScript デバッガーで実行できる処理の一部について説明します。
-
-[デバッガーの JavaScript のプロバイダーを読み込む](#provider)
-
-[JavaScript のメタコマンドをスクリプトの使用します。](#commands)
-
-[JavaScript デバッガーがスクリプトの概要します。](#started)
-
-[デバッガー コマンドを自動化します。](#automate)
-
-[JavaScript で条件付きブレークポイントを設定します。](#breakpoints)
-
-[JavaScript でデバッガー ビジュアライザーを作成します。](#visualizer)
-
-[JavaScript の拡張機能内の 64 ビット値を使用します。](#bitvalues)
-
-[JavaScript のデバッグ](#debugging)
-
-[IntelliSense の追加 - VSCode での JavaScript](#vscode)
-
-[JavaScript リソース](#resources)
-
-これら 2 つのトピックでは、デバッガーでの JavaScript の使用に関する追加情報を提供します。
-
-[JavaScript デバッガーの スクリプトの例](javascript-debugger-example-scripts.md)
-
-[JavaScript の拡張機能のネイティブ オブジェクト](native-objects-in-javascript-extensions.md)
+## <a name="span-idoverview_of_javascript_debugger_scripting_spanspan-idoverview_of_javascript_debugger_scripting_spanspan-idoverview_of_javascript_debugger_scripting_spanoverview-of-javascript-debugger-scripting"></a><span id="Overview_of_JavaScript_Debugger_Scripting_"></span><span id="overview_of_javascript_debugger_scripting_"></span><span id="OVERVIEW_OF_JAVASCRIPT_DEBUGGER_SCRIPTING_"></span>JavaScript デバッガースクリプトの概要
 
 
-## <a name="javascript-scripting-video"></a>JavaScript スクリプト ビデオ
+スクリプトプロバイダーは、スクリプト言語をデバッガーの内部オブジェクトモデルにブリッジします。 JavaScript デバッガースクリプトプロバイダーは、デバッガーで JavaScript を使用できるようにします。
 
-[ツールと 170 をデフラグ](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-170-Debugger-JavaScript-Scripting)-Andy と請求書は、JavaScript の機能拡張と、デバッガーでの機能をスクリプトを示します。
+. Scriptload コマンドを使用して JavaScript が読み込まれると、スクリプトのルートコードが実行され、スクリプト内に存在する名前がデバッガーのルート名前空間 (dx デバッガー) に格納され、スクリプトはアンロードされるまでメモリに常駐します。オブジェクトへのすべての参照が解放されます。 このスクリプトでは、デバッガーの式エバリュエーターに新しい関数を提供したり、デバッガーのオブジェクトモデルを変更したりできます。また、NatVis ビジュアライザーとほとんど同じようにビジュアライザーとして機能させることもできます。
+
+このトピックでは、JavaScript デバッガースクリプトで実行できるいくつかの操作について説明します。
+
+これらの2つのトピックでは、デバッガーでの JavaScript の操作に関する追加情報を提供します。
+
+[JavaScript デバッガーのサンプルスクリプト](javascript-debugger-example-scripts.md)
+
+[JavaScript 拡張機能のネイティブオブジェクト](native-objects-in-javascript-extensions.md)
 
 
-## <a name="span-idproviderspanspan-idproviderspanspan-idproviderspanthe-debugger-javascript-provider"></a><span id="Provider"></span><span id="provider"></span><span id="PROVIDER"></span>デバッガーの JavaScript プロバイダー
+## <a name="javascript-scripting-video"></a>JavaScript スクリプトビデオ
 
-デバッガーに含まれる JavaScript プロバイダー活用 ECMAScript6 のオブジェクトとクラスに関する最新の機能を強化します。 詳細については、次を参照してください。 [ECMAScript 6-新機能。概要 & 比較](https://es6-features.org/)します。
+[デフラグツール #170](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-170-Debugger-JavaScript-Scripting) -Andy と Bill は、デバッガーでの JavaScript の拡張機能とスクリプト機能を示しています。
 
-**JsProvider.dll**
 
-JsProvider.dll は、JavaScript デバッガーのスクリプトをサポートするために読み込まれた JavaScript プロバイダーです。
+## <a name="span-idproviderspanspan-idproviderspanspan-idproviderspanthe-debugger-javascript-provider"></a><span id="Provider"></span><span id="provider"></span><span id="PROVIDER"></span>デバッガー JavaScript プロバイダー
+
+デバッガーに含まれる JavaScript プロバイダーは、最新の ECMAScript6 オブジェクトとクラスの機能強化を最大限に活用します。 詳細については[、「ECMAScript 6-新機能」を参照してください。概要 & 比較](https://es6-features.org/)。
+
+**JsProvider**
+
+JsProvider は、JavaScript デバッガーのスクリプト作成をサポートするために読み込まれる JavaScript プロバイダーです。
 
 **必要条件**
 
-Windows のサポートされているすべてのバージョンで動作する JavaScript デバッガーのスクリプトは設計されています。
+JavaScript デバッガーのスクリプト作成は、サポートされているすべてのバージョンの Windows で動作するように設計されています。
 
-## <a name="span-idloadingthejavascriptscriptingproviderspanspan-idloadingthejavascriptscriptingproviderspanspan-idloadingthejavascriptscriptingproviderspanloading-the-javascript-scripting-provider"></a><span id="Loading_the_JavaScript_Scripting_Provider"></span><span id="loading_the_javascript_scripting_provider"></span><span id="LOADING_THE_JAVASCRIPT_SCRIPTING_PROVIDER"></span>JavaScript のプロバイダーをスクリプトの読み込み
+## <a name="span-idloading_the_javascript_scripting_providerspanspan-idloading_the_javascript_scripting_providerspanspan-idloading_the_javascript_scripting_providerspanloading-the-javascript-scripting-provider"></a><span id="Loading_the_JavaScript_Scripting_Provider"></span><span id="loading_the_javascript_scripting_provider"></span><span id="LOADING_THE_JAVASCRIPT_SCRIPTING_PROVIDER"></span>JavaScript スクリプトプロバイダーを読み込んでいます
 
 
-スクリプトのプロバイダーを .script コマンドのいずれかを使用するのを使用して読み込む必要があります、 [ **.load (拡張 DLL の読み込み)** ](-load---loadby--load-extension-dll-.md)コマンド。 JavaScript のプロバイダーを読み込むには、次のコマンドを使用します。
+スクリプトコマンドを使用する前に、スクリプトプロバイダーを読み込むには、 [**load (拡張 DLL の読み込み)** ](-load---loadby--load-extension-dll-.md)コマンドを使用する必要があります。 JavaScript プロバイダーを読み込むには、次のコマンドを使用します。
 
 ```dbgcmd
 0:000> .load jsprovider.dll
 ```
 
-.Scriptproviders コマンドを使用して、JavaScript のプロバイダーが読み込まれていることを確認します。
+[Scriptproviders] コマンドを使用して、JavaScript プロバイダーが読み込まれていることを確認します。
 
 ```dbgcmd
 0:000> .scriptproviders
@@ -87,31 +67,31 @@ Available Script Providers:
     JavaScript (extension '.js')
 ```
 
-## <a name="span-idcommandsspanspan-idcommandsspanspan-idcommandsspanjavascript-scripting-meta-commands"></a><span id="Commands"></span><span id="commands"></span><span id="COMMANDS"></span>JavaScript スクリプト コマンド
+## <a name="span-idcommandsspanspan-idcommandsspanspan-idcommandsspanjavascript-scripting-meta-commands"></a><span id="Commands"></span><span id="commands"></span><span id="COMMANDS"></span>JavaScript スクリプト作成メタコマンド
 
 
-次のコマンドは、JavaScript デバッガーのスクリプトで使用できます。
+JavaScript デバッガースクリプトを操作するには、次のコマンドを使用できます。
 
--   [ **.scriptproviders (スクリプト プロバイダーの一覧)** ](-scriptproviders--list-script-providers-.md)
--   [ **.scriptload (スクリプトの読み込み)** ](-scriptload--load-script-.md)
--   [ **.scriptunload (アンロード スクリプト)** ](-scriptunload--unload-script-.md)
--   [ **.scriptrun (スクリプトの実行)** ](-scriptrun--run-script-.md)
--   [ **.scriptlist (読み込まれたスクリプトを一覧表示)** ](-scriptlist--list-loaded-scripts-.md)
+-   [**scriptproviders (List スクリプトプロバイダー)** ](-scriptproviders--list-script-providers-.md)
+-   [**scriptload (スクリプトの読み込み)** ](-scriptload--load-script-.md)
+-   [**scriptunload (アンロードスクリプト)** ](-scriptunload--unload-script-.md)
+-   [**scriptrun (スクリプトの実行)** ](-scriptrun--run-script-.md)
+-   [**scriptlist (読み込まれたスクリプトの一覧表示)** ](-scriptlist--list-loaded-scripts-.md)
 
 **必要条件**
 
-スクリプトのプロバイダーを .script コマンドのいずれかを使用するのを使用して読み込む必要があります、 [ **.load (拡張 DLL の読み込み)** ](-load---loadby--load-extension-dll-.md)コマンド。 JavaScript のプロバイダーを読み込むには、次のコマンドを使用します。
+スクリプトコマンドを使用する前に、スクリプトプロバイダーを読み込むには、 [**load (拡張 DLL の読み込み)** ](-load---loadby--load-extension-dll-.md)コマンドを使用する必要があります。 JavaScript プロバイダーを読み込むには、次のコマンドを使用します。
 
 ```dbgcmd
 0:000> .load jsprovider.dll
 ```
 
-## <a name="span-idscriptproviderslistscriptprovidersspanspan-idscriptproviderslistscriptprovidersspanscriptproviders-list-script-providers"></a><span id=".scriptproviders__list_script_providers_"></span><span id=".SCRIPTPROVIDERS__LIST_SCRIPT_PROVIDERS_"></span>.scriptproviders (スクリプト プロバイダーの一覧)
+## <a name="span-idscriptproviders__list_script_providers_spanspan-idscriptproviders__list_script_providers_spanscriptproviders-list-script-providers"></a><span id=".scriptproviders__list_script_providers_"></span><span id=".SCRIPTPROVIDERS__LIST_SCRIPT_PROVIDERS_"></span>scriptproviders (List スクリプトプロバイダー)
 
 
-.Scriptproviders コマンドには、デバッガーとする登録されている拡張機能によって現在認識されているすべてのスクリプト言語が一覧表示します。
+Scriptproviders コマンドは、現在デバッガーによって認識されているすべてのスクリプト言語と、それが登録されている拡張機能の一覧を表示します。
 
-次の例では、JavaScript と NatVis プロバイダーが読み込まれます。
+次の例では、JavaScript プロバイダーと NatVis プロバイダーが読み込まれています。
 
 ```dbgcmd
 0:000> .scriptproviders
@@ -120,28 +100,28 @@ Available Script Providers:
     JavaScript (extension '.js')
 ```
 
-終わるすべてのファイル"です。NatVis"は、NatVis スクリプトと考えるし、".js"で終わるすべてのファイルが JavaScript スクリプトとして認識します。 .Scriptload コマンドを使用してスクリプトのいずれかの型を読み込むことができます。
+"" で終わるすべてのファイル。NatVis "は NatVis スクリプトとして認識され、" .js "で終わるすべてのファイルは JavaScript スクリプトとして認識されます。 Scriptload コマンドを使用して、どちらの種類のスクリプトでも読み込むことができます。
 
-詳細については、次を参照してください[ **.scriptproviders (スクリプト プロバイダーの一覧)。** ](-scriptproviders--list-script-providers-.md)
+詳細については、「 [ **scriptproviders (List スクリプトプロバイダー)** 」を参照してください。](-scriptproviders--list-script-providers-.md)
 
-## <a name="span-idscriptloadloadscriptspanspan-idscriptloadloadscriptspanscriptload-load-script"></a><span id=".scriptload__load_script_"></span><span id=".SCRIPTLOAD__LOAD_SCRIPT_"></span>.scriptload (スクリプトの読み込み)
+## <a name="span-idscriptload__load_script_spanspan-idscriptload__load_script_spanscriptload-load-script"></a><span id=".scriptload__load_script_"></span><span id=".SCRIPTLOAD__LOAD_SCRIPT_"></span>scriptload (スクリプトの読み込み)
 
 
-.Scriptload コマンドはスクリプトを読み込むし、スクリプトのルート コードを実行し、 *initializeScript*関数。 初期読み込みと、スクリプトの実行でエラーがある場合、エラーが表示されますコンソールにします。 次のコマンドは、TestScript.js の読み込みが成功したを示しています。
+Scriptload コマンドは、スクリプトを読み込み、スクリプトと*initializeScript*関数のルートコードを実行します。 スクリプトの初回読み込み時および実行時にエラーが発生した場合、エラーはコンソールに表示されます。 次のコマンドは、TestScript の成功した読み込みを示しています。
 
 ```dbgcmd
 0:000> .scriptload C:\WinDbg\Scripts\TestScript.js
 JavaScript script successfully loaded from 'C:\WinDbg\Scripts\TestScript.js'
 ```
 
-スクリプトによって行われたすべてのオブジェクト モデル操作は、スクリプトが読み込まれた後または別のコンテンツを再度実行するまで、場所に維持されます。
+スクリプトによって行われたオブジェクトモデルの操作は、スクリプトがアンロードされるか、別のコンテンツで再び実行されるまで、そのまま維持されます。
 
-詳細については、次を参照してください[ **.scriptload (スクリプトの読み込み)。** ](-scriptload--load-script-.md)
+詳細については、「 [ **Scriptload (スクリプトの読み込み)** 」を参照してください。](-scriptload--load-script-.md)
 
-## <a name="span-idscriptrunspanscriptrun"></a><span id=".SCRIPTRUN"></span>.scriptrun
+## <a name="span-idscriptrunspanscriptrun"></a><span id=".SCRIPTRUN"></span>. scriptrun
 
 
-.Scriptrun コマンドはスクリプトを読み込むのスクリプトのルート コードを実行、 *initializeScript*と*invokeScript*関数。 初期読み込みと、スクリプトの実行でエラーがある場合、エラーが表示されますコンソールにします。
+Scriptrun コマンドは、スクリプトを読み込んで、スクリプトのルートコードを実行します。 *initializeScript*と*invokeScript*関数 スクリプトの初回読み込み時および実行時にエラーが発生した場合、エラーはコンソールに表示されます。
 
 ```dbgcmd
 0:000> .scriptrun C:\WinDbg\Scripts\helloWorld.js
@@ -149,26 +129,26 @@ JavaScript script successfully loaded from 'C:\WinDbg\Scripts\helloWorld.js'
 Hello World!  We are in JavaScript!
 ```
 
-スクリプトによって行われたすべてのデバッガー オブジェクト モデルの操作は、スクリプトが読み込まれた後または別のコンテンツを再度実行するまで、場所に維持されます。
+スクリプトによって行われたデバッガーオブジェクトモデルの操作は、スクリプトがアンロードされるか、別のコンテンツで再び実行されるまで、そのまま維持されます。
 
-詳細については、次を参照してください。 [ **.scriptrun (スクリプトの実行)** ](-scriptrun--run-script-.md)します。
+詳細については、「[**スクリプトを実行**](-scriptrun--run-script-.md)する」を参照してください。
 
-## <a name="span-idscriptunloadunloadscriptspanspan-idscriptunloadunloadscriptspanscriptunload-unload-script"></a><span id=".scriptunload__unload_script_"></span><span id=".SCRIPTUNLOAD__UNLOAD_SCRIPT_"></span>.scriptunload (アンロード スクリプト)
+## <a name="span-idscriptunload__unload_script_spanspan-idscriptunload__unload_script_spanscriptunload-unload-script"></a><span id=".scriptunload__unload_script_"></span><span id=".SCRIPTUNLOAD__UNLOAD_SCRIPT_"></span>scriptunload (アンロードスクリプト)
 
 
-.Scriptunload コマンドが読み込まれているスクリプトと呼び出しをアンロード、 *uninitializeScript*関数。 次のコマンド構文を使用して、スクリプトをアンロードするには
+Scriptunload コマンドは、読み込まれたスクリプトをアンロードし、 *uninitializeScript*関数を呼び出します。 スクリプトをアンロードするには、次のコマンド構文を使用します。
 
 ```dbgcmd
 0:000:x86> .scriptunload C:\WinDbg\Scripts\TestScript.js
 JavaScript script unloaded from 'C:\WinDbg\Scripts\TestScript.js'
 ```
 
-詳細については、次を参照してください。 [ **.scriptunload (アンロード スクリプト)** ](-scriptunload--unload-script-.md)します。
+詳細については、「 [**scriptunload (アンロードスクリプト)** ](-scriptunload--unload-script-.md)」を参照してください。
 
-## <a name="span-idscriptlistlistloadedscriptsspanspan-idscriptlistlistloadedscriptsspanscriptlist-list-loaded-scripts"></a><span id=".scriptlist__list_loaded_scripts_"></span><span id=".SCRIPTLIST__LIST_LOADED_SCRIPTS_"></span>.scriptlist (読み込まれたスクリプトを一覧表示)
+## <a name="span-idscriptlist__list_loaded_scripts_spanspan-idscriptlist__list_loaded_scripts_spanscriptlist-list-loaded-scripts"></a><span id=".scriptlist__list_loaded_scripts_"></span><span id=".SCRIPTLIST__LIST_LOADED_SCRIPTS_"></span>scriptlist (読み込まれたスクリプトの一覧表示)
 
 
-.Scriptlist コマンドには、.scriptload または .scriptrun コマンドを使用して読み込まれているすべてのスクリプトが表示されます。 .Scriptload を使用して、TestScript が読み込み成功した場合、.scriptlist コマンドは、読み込まれたスクリプトの名前を表示します。
+Scriptlist コマンドまたは scriptrun コマンドを使用して読み込まれたすべてのスクリプトが、scriptlist コマンドによって一覧表示されます。 Scriptload を使用して TestScript が正常に読み込まれた場合、scriptload コマンドは読み込まれたスクリプトの名前を表示します。
 
 ```dbgcmd
 0:000> .scriptlist
@@ -176,14 +156,14 @@ Command Loaded Scripts:
     JavaScript script from 'C:\WinDbg\Scripts\TestScript.js'
 ```
 
-詳細については、次を参照してください。 [ **.scriptlist (読み込まれたスクリプトの一覧)** ](-scriptlist--list-loaded-scripts-.md)します。
+詳細については、「 [**scriptlist」 (読み込んだスクリプトの一覧)** ](-scriptlist--list-loaded-scripts-.md)を参照してください。
 
-## <a name="span-idstartedspanspan-idstartedspanspan-idstartedspanget-started-with-javascript-debugger-scripting"></a><span id="Started"></span><span id="started"></span><span id="STARTED"></span>JavaScript デバッガーがスクリプトの概要します。
+## <a name="span-idstartedspanspan-idstartedspanspan-idstartedspanget-started-with-javascript-debugger-scripting"></a><span id="Started"></span><span id="started"></span><span id="STARTED"></span>JavaScript デバッガーのスクリプト作成の概要
 
 
-### <a name="span-idhelloworldexamplescriptspanspan-idhelloworldexamplescriptspanspan-idhelloworldexamplescriptspanhelloworld-example-script"></a><span id="HelloWorld_Example_Script"></span><span id="helloworld_example_script"></span><span id="HELLOWORLD_EXAMPLE_SCRIPT"></span>HelloWorld サンプル スクリプト
+### <a name="span-idhelloworld_example_scriptspanspan-idhelloworld_example_scriptspanspan-idhelloworld_example_scriptspanhelloworld-example-script"></a><span id="HelloWorld_Example_Script"></span><span id="helloworld_example_script"></span><span id="HELLOWORLD_EXAMPLE_SCRIPT"></span>HelloWorld スクリプトの例
 
-このセクションでは、作成し、Hello World を出力する単純な JavaScript デバッガー スクリプトを実行する方法について説明します。
+このセクションでは、Hello World 出力する単純な JavaScript デバッガースクリプトを作成して実行する方法について説明します。
 
 ```dbgcmd
 // WinDbg JavaScript sample
@@ -194,15 +174,15 @@ function initializeScript()
 }
 ```
 
-という名前のテキスト ファイルを作成するには、メモ帳などのテキスト エディターを使用して*HelloWorld.js*上記の JavaScript コードを格納しています。
+メモ帳などのテキストエディターを使用して、前に示した JavaScript コードを含む HelloWorld という名前のテキストファイルを作成し*ます*。
 
-使用して、 [ **.load (拡張 DLL の読み込み)** ](-load---loadby--load-extension-dll-.md) JavaScript プロバイダを読み込むコマンド。
+[**読み込み (拡張 DLL の読み込み)** ](-load---loadby--load-extension-dll-.md)コマンドを使用して、JavaScript プロバイダーを読み込みます。
 
 ```dbgcmd
 0:000> .load jsprovider.dll
 ```
 
-.Scriptload コマンドを使用して、読み込み、スクリプトを実行します。 関数名を使用しているため*initializeScript*スクリプトが読み込まれるときに、関数のコードを実行します。
+スクリプトを読み込んで実行するには、scriptload コマンドを使用します。 関数名*initializeScript*を使用したので、スクリプトが読み込まれるときに関数内のコードが実行されます。
 
 ```dbgcmd
 0:000> .scriptload c:\WinDbg\Scripts\HelloWorld.js
@@ -210,7 +190,7 @@ JavaScript script successfully loaded from 'c:\WinDbg\Scripts\HelloWorld.js'
 ***> Hello World! 
 ```
 
-スクリプトが読み込まれた後、追加の機能がデバッガーで使用します。 使用して、 [ **dx (NatVis 式の表示)** ](dx--display-visualizer-variables-.md)コマンドを表示する*Debugger.State.Scripts*スクリプトが常駐しているようになりましたことを確認します。
+スクリプトが読み込まれると、デバッガーで追加の機能を使用できるようになります。 [**Dx (Display NatVis Expression)** ](dx--display-visualizer-variables-.md)コマンドを使用して、スクリプトが現在常駐していることを確認するための*スクリプト*を表示します。
 
 ```dbgcmd
 0:000> dx Debugger.State.Scripts
@@ -218,13 +198,13 @@ Debugger.State.Scripts
     HelloWorld 
 ```
 
-次の例では追加し、名前付き関数を呼び出します。
+次の例では、名前付き関数を追加して呼び出します。
 
-### <a name="span-idaddingtwovaluesexamplescriptspanspan-idaddingtwovaluesexamplescriptspanspan-idaddingtwovaluesexamplescriptspanadding-two-values-example-script"></a><span id="Adding_Two_Values_Example_Script"></span><span id="adding_two_values_example_script"></span><span id="ADDING_TWO_VALUES_EXAMPLE_SCRIPT"></span>2 つの値の例のスクリプトを追加します。
+### <a name="span-idadding_two_values_example_scriptspanspan-idadding_two_values_example_scriptspanspan-idadding_two_values_example_scriptspanadding-two-values-example-script"></a><span id="Adding_Two_Values_Example_Script"></span><span id="adding_two_values_example_script"></span><span id="ADDING_TWO_VALUES_EXAMPLE_SCRIPT"></span>2つの値の追加スクリプトの例
 
-このセクションでは、作成し、単純な JavaScript を追加するデバッガー スクリプトの入力を受け取り、2 つの数値を加算を実行する方法について説明します。
+このセクションでは、を追加する単純な JavaScript デバッガースクリプトを作成して実行し、2つの数値を加算する方法について説明します。
 
-この単純なスクリプトでは、1 つの関数、addTwoValues を提供します。
+この単純なスクリプトは、1つの関数である値を追加します。
 
 ```dbgcmd
 // WinDbg JavaScript sample
@@ -235,22 +215,22 @@ function addTwoValues(a, b)
  }
 ```
 
-という名前のテキスト ファイルを作成するには、メモ帳などのテキスト エディターを使用して*FirstSampleFunction.js*
+メモ帳などのテキストエディターを使用して、 *Firstsamplefunction .js*という名前のテキストファイルを作成します。
 
-使用して、 [ **.load (拡張 DLL の読み込み)** ](-load---loadby--load-extension-dll-.md) JavaScript プロバイダを読み込むコマンド。
+[**読み込み (拡張 DLL の読み込み)** ](-load---loadby--load-extension-dll-.md)コマンドを使用して、JavaScript プロバイダーを読み込みます。
 
 ```dbgcmd
 0:000> .load jsprovider.dll
 ```
 
-.Scriptload コマンドを使用して、スクリプトを読み込みます。
+Scriptload コマンドを使用してスクリプトを読み込みます。
 
 ```dbgcmd
 0:000> .scriptload c:\WinDbg\Scripts\FirstSampleFunction.js
 JavaScript script successfully loaded from 'c:\WinDbg\Scripts\FirstSampleFunction.js'
 ```
 
-スクリプトが読み込まれた後、追加の機能がデバッガーで使用します。 使用して、 [ **dx (NatVis 式の表示)** ](dx--display-visualizer-variables-.md)コマンドを表示する*Debugger.State.Scripts*スクリプトが常駐しているようになりましたことを確認します。
+スクリプトが読み込まれると、デバッガーで追加の機能を使用できるようになります。 [**Dx (Display NatVis Expression)** ](dx--display-visualizer-variables-.md)コマンドを使用して、スクリプトが現在常駐していることを確認するための*スクリプト*を表示します。
 
 ```dbgcmd
 0:000> dx Debugger.State.Scripts
@@ -258,7 +238,7 @@ Debugger.State.Scripts
     FirstSampleFunction    
 ```
 
-ボタンをクリックする、 *FirstSampleFunction*、して、どのような機能を提供します。
+*Firstsamplefunction*をクリックすると、どのような機能が提供されるかを確認できます。
 
 ```dbgcmd
 0:000> dx -r1 -v Debugger.State.Scripts.FirstSampleFunction.Contents
@@ -268,38 +248,38 @@ Debugger.State.Scripts.FirstSampleFunction.Contents                 : [object Ob
  ... 
 ```
 
-スクリプトを少し簡単に操作できるようにするには、dx コマンドを使用してスクリプトの内容を保持するために、デバッガーの変数を割り当てます。
+スクリプトを操作しやすくするには、dx コマンドを使用してスクリプトの内容を保持する変数をデバッガーに割り当てます。
 
 ```dbgcmd
 0:000> dx @$myScript = Debugger.State.Scripts.FirstSampleFunction.Contents
 ```
 
-Dx 式エバリュエーターを使用して、addTwoValues 関数を呼び出します。
+Dx 式エバリュエーターを使用して、Addvalues 関数を呼び出します。
 
 ```dbgcmd
 0:000> dx @$myScript.addTwoValues(10, 41),d
 @$myScript.addTwoValues(10, 41),d : 51
 ```
 
-使用することも、 *@$ scriptContents*スクリプトを使用するエイリアスに組み込まれています。 *@$ ScriptContents*すべてのエイリアスにマージします。読み込まれたスクリプトのすべてのコンテンツ。
+*@ $ScriptContents*組み込みエイリアスを使用して、スクリプトを操作することもできます。 *@ $ScriptContents*エイリアスは、すべてのをマージします。読み込まれたすべてのスクリプトの内容。
 
 ```dbgcmd
 0:001> dx @$scriptContents.addTwoValues(10, 40),d
 @$scriptContents.addTwoValues(10, 40),d : 50
 ```
 
-完了したら、スクリプトの操作 .scriptunload コマンドを使用して、スクリプトをアンロードします。
+スクリプトの操作が完了したら、scriptunload コマンドを使用してスクリプトをアンロードします。
 
 ```dbgcmd
 0:000> .scriptunload c:\WinDbg\Scripts\FirstSampleFunction.js
 JavaScript script successfully unloaded from 'c:\WinDbg\Scripts\FirstSampleFunction.js'
 ```
 
-### <a name="span-idautomatespanspan-idautomatespanspan-idautomatespandebugger-command-automation"></a><span id="Automate"></span><span id="automate"></span><span id="AUTOMATE"></span>デバッガー コマンドの自動化
+### <a name="span-idautomatespanspan-idautomatespanspan-idautomatespandebugger-command-automation"></a><span id="Automate"></span><span id="automate"></span><span id="AUTOMATE"></span>デバッガーコマンドの自動化
 
-このセクションを作成しの送信を自動化する単純な JavaScript デバッガー スクリプトを実行する方法を説明します、 [ **u (Unassemble)** ](u--unassemble-.md)コマンド。 このサンプルでは、収集し、ループ内でコマンドの出力を表示する方法も示します。
+ここでは、 [**u (Unassemble)** ](u--unassemble-.md)コマンドの送信を自動化する単純な JavaScript デバッガースクリプトを作成して実行する方法について説明します。 このサンプルでは、ループ内でコマンドの出力を収集して表示する方法も示しています。
 
-このスクリプトでは、1 つの関数、RunCommands() を提供します。
+このスクリプトは、単一の関数 RunCommands () を提供します。
 
 ```javascript
 // WinDbg JavaScript sample
@@ -322,22 +302,22 @@ host.diagnostics.debugLog("***> Exiting RunCommands Function \n");
 }
 ```
 
-という名前のテキスト ファイルを作成するには、メモ帳などのテキスト エディターを使用して*RunCommands.js*
+メモ帳などのテキストエディターを使用して、Runcommands という名前のテキストファイルを作成し*ます。*
 
-使用して、 [ **.load (拡張 DLL の読み込み)** ](-load---loadby--load-extension-dll-.md) JavaScript プロバイダを読み込むコマンド。
+[**読み込み (拡張 DLL の読み込み)** ](-load---loadby--load-extension-dll-.md)コマンドを使用して、JavaScript プロバイダーを読み込みます。
 
 ```dbgcmd
 0:000> .load jsprovider.dll
 ```
 
-.Scriptload コマンドを使用して、RunCommands スクリプトを読み込みます。
+Scriptload コマンドを使用して、RunCommands スクリプトを読み込みます。
 
 ```dbgcmd
 0:000> .scriptload c:\WinDbg\Scripts\RunCommands.js 
 JavaScript script successfully loaded from 'c:\WinDbg\Scripts\RunCommands.js'
 ```
 
-スクリプトが読み込まれた後、追加の機能がデバッガーで使用します。 使用して、 [ **dx (NatVis 式の表示)** ](dx--display-visualizer-variables-.md)コマンドを表示する*Debugger.State.Scripts.RunCommands*スクリプトが常駐しているようになりましたことを確認します。
+スクリプトが読み込まれると、デバッガーで追加の機能を使用できるようになります。 [**Dx (Display NatVis Expression)** ](dx--display-visualizer-variables-.md)コマンドを使用して、スクリプトが現在常駐していることを確認するために*Debugger. runcommands*を表示します。
 
 ```dbgcmd
 0:000>dx -r3 Debugger.State.Scripts.RunCommands
@@ -352,7 +332,7 @@ Debugger.State.Scripts.RunCommands
             memory           : [object Object]
 ```
 
-Dx コマンドを使用して、RunCommands スクリプトで RunCommands 関数を呼び出します。
+RunCommands スクリプトで RunCommands 関数を呼び出すには、dx コマンドを使用します。
 
 ```dbgcmd
 0:000> dx Debugger.State.Scripts.RunCommands.Contents.RunCommands()
@@ -370,22 +350,22 @@ Dx コマンドを使用して、RunCommands スクリプトで RunCommands 関�
 ***> Exiting RunCommands Function
 ```
 
-## <a name="span-idspecialjavascriptdebuggerfunctionsspanspan-idspecialjavascriptdebuggerfunctionsspanspan-idspecialjavascriptdebuggerfunctionsspanspecial-javascript-debugger-functions"></a><span id="Special_JavaScript_Debugger_Functions"></span><span id="special_javascript_debugger_functions"></span><span id="SPECIAL_JAVASCRIPT_DEBUGGER_FUNCTIONS"></span>特別な JavaScript デバッガー関数
+## <a name="span-idspecial_javascript_debugger_functionsspanspan-idspecial_javascript_debugger_functionsspanspan-idspecial_javascript_debugger_functionsspanspecial-javascript-debugger-functions"></a><span id="Special_JavaScript_Debugger_Functions"></span><span id="special_javascript_debugger_functions"></span><span id="SPECIAL_JAVASCRIPT_DEBUGGER_FUNCTIONS"></span>特別な JavaScript デバッガー関数
 
 
-スクリプト プロバイダー自体によって呼び出される JavaScript スクリプトには、いくつかの特殊な関数があります。
+JavaScript スクリプトには、スクリプトプロバイダー自体によって呼び出されるいくつかの特殊な関数があります。
 
 ### <a name="span-idinitializescriptspanspan-idinitializescriptspanspan-idinitializescriptspaninitializescript"></a><span id="initializeScript"></span><span id="initializescript"></span><span id="INITIALIZESCRIPT"></span>initializeScript
 
-とき JavaScript スクリプトが読み込まれたとは、実行すると、一連の変数、関数前に、の手順をスクリプトで他のオブジェクトは、デバッガーのオブジェクト モデルに影響します。
+JavaScript スクリプトが読み込まれて実行されると、スクリプト内の変数、関数、およびその他のオブジェクトがデバッガーのオブジェクトモデルに影響を与える前に、一連の手順を実行します。
 
--   スクリプトがメモリに読み込まれ、解析します。
--   スクリプト内のルート コードが実行されます。
--   スクリプトに initializeScript という名前のメソッドがある場合は、このメソッドが呼び出されます。
--   InitializeScript からの戻り値はデバッガーのオブジェクト モデルを自動的に変更する方法を決定するために使用します。
--   デバッガーの名前空間には、スクリプト内の名前がブリッジされます。
+-   スクリプトはメモリに読み込まれ、解析されます。
+-   スクリプト内のルートコードが実行されます。
+-   スクリプトに initializeScript というメソッドが含まれている場合、そのメソッドが呼び出されます。
+-   InitializeScript からの戻り値は、デバッガーのオブジェクトモデルを自動的に変更する方法を決定するために使用されます。
+-   スクリプト内の名前は、デバッガーの名前空間に対してブリッジされます。
 
-前述のように、initializeScript はスクリプトのルート コードが実行された直後後に呼び出されます。 そのジョブでは、デバッガーのオブジェクト モデルを変更する方法を示す、プロバイダーに登録オブジェクトの JavaScript 配列を返します。
+前述のように、initializeScript は、スクリプトのルートコードが実行された直後に呼び出されます。 そのジョブは、デバッガーのオブジェクトモデルを変更する方法を示す登録オブジェクトの JavaScript 配列をプロバイダーに返すことです。
 
 ```javascript
 function initializeScript()
@@ -398,7 +378,7 @@ function initializeScript()
 
 ### <a name="span-idinvokescriptspanspan-idinvokescriptspanspan-idinvokescriptspaninvokescript"></a><span id="invokeScript"></span><span id="invokescript"></span><span id="INVOKESCRIPT"></span>invokeScript
 
-InvokeScript メソッドは、プライマリ スクリプト メソッドで .scriptload と .scriptrun が実行時に呼び出されます。
+InvokeScript メソッドは、プライマリスクリプトメソッドであり、scriptload と scriptrun が実行されるときに呼び出されます。
 
 ```javascript
 function invokeScript()
@@ -411,9 +391,9 @@ function invokeScript()
 
 ### <a name="span-iduninitializescriptspanspan-iduninitializescriptspanspan-iduninitializescriptspanuninitializescript"></a><span id="uninitializeScript"></span><span id="uninitializescript"></span><span id="UNINITIALIZESCRIPT"></span>uninitializeScript
 
-UninitializeScript メソッドは、initializeScript の行動の反対です。 スクリプトがリンクと、アンロードする準備が呼び出されます。 そのジョブは、スクリプトが実行中に強制的に使用した、オブジェクト モデルへの変更を元に戻す、またはスクリプトがキャッシュされている任意のオブジェクトを破棄するには。
+UninitializeScript メソッドは、initializeScript とは逆の動作です。 スクリプトのリンクが解除され、アンロードの準備が整ったときに呼び出されます。 そのジョブは、スクリプトが実行中に強制的に作成したオブジェクトモデルに対する変更を元に戻したり、スクリプトによってキャッシュされたオブジェクトを破棄したりすることです。
 
-スクリプト オブジェクト モデルへの命令型の操作も、結果をキャッシュする場合、は、uninitializeScript メソッドがあることが必要はありません。 実行 initializeScript の戻り値で示されているオブジェクト モデルへの変更は、プロバイダーによって自動的に元に戻します。 このような変更では、明示的な uninitializeScript メソッドは必要ありません。
+スクリプトによってオブジェクトモデルに対する命令型の操作が行われない場合、または結果がキャッシュされない場合は、uninitializeScript メソッドを使用する必要はありません。 InitializeScript の戻り値によって示されたとおりに実行されたオブジェクトモデルに対する変更は、プロバイダーによって自動的に元に戻されます。 このような変更には、明示的な uninitializeScript メソッドは必要ありません。
 
 ```javascript
 function uninitializeScript()
@@ -424,20 +404,20 @@ function uninitializeScript()
 }
 ```
 
-## <a name="span-idsummaryoffunctionscalledbyscriptcommandsspanspan-idsummaryoffunctionscalledbyscriptcommandsspanspan-idsummaryoffunctionscalledbyscriptcommandsspansummary-of-functions-called-by-script-commands"></a><span id="Summary_of_Functions_Called_by_Script_Commands"></span><span id="summary_of_functions_called_by_script_commands"></span><span id="SUMMARY_OF_FUNCTIONS_CALLED_BY_SCRIPT_COMMANDS"></span>スクリプト コマンドによって呼び出された関数の概要
+## <a name="span-idsummary_of_functions_called_by_script_commandsspanspan-idsummary_of_functions_called_by_script_commandsspanspan-idsummary_of_functions_called_by_script_commandsspansummary-of-functions-called-by-script-commands"></a><span id="Summary_of_Functions_Called_by_Script_Commands"></span><span id="summary_of_functions_called_by_script_commands"></span><span id="SUMMARY_OF_FUNCTIONS_CALLED_BY_SCRIPT_COMMANDS"></span>スクリプトコマンドによって呼び出される関数の概要
 
 
-この表では、スクリプト コマンドによってどの関数が呼び出される
+次の表は、スクリプトコマンドによって呼び出される関数をまとめたものです。
 
-||[.scriptload](-scriptload--load-script-.md)|[.scriptrun (スクリプトの実行)](-scriptrun--run-script-.md)|[.scriptunload (アンロード スクリプト)](-scriptunload--unload-script-.md)|
+||[.scriptload](-scriptload--load-script-.md)|[scriptrun (スクリプトの実行)](-scriptrun--run-script-.md)|[scriptunload (アンロードスクリプト)](-scriptunload--unload-script-.md)|
 |--- |--- |--- |--- |
-|ルート|○|○| | |
-|initializeScript|○|○| | |
-|invokeScript       | |○| |
+|ルート|はい|はい| | |
+|initializeScript|はい|はい| | |
+|invokeScript       | |はい| |
 |uninitializeScript | ||はい|
 
 
-このサンプル コードを使用して、各関数が呼び出されると、スクリプトは読み込まれ、実行、アンロードを参照してください。
+このサンプルコードを使用して、スクリプトの読み込み、実行、およびアンロードのたびに各関数が呼び出されるタイミングを確認します。
 
 ```javascript
 // Root of Script
@@ -475,14 +455,14 @@ function main()
 }
 ```
 
-## <a name="span-idvisualizerspanspan-idvisualizerspanspan-idvisualizerspancreating-a-debugger-visualizer-in-javascript"></a><span id="Visualizer"></span><span id="visualizer"></span><span id="VISUALIZER"></span>JavaScript でデバッガー ビジュアライザーを作成します。
+## <a name="span-idvisualizerspanspan-idvisualizerspanspan-idvisualizerspancreating-a-debugger-visualizer-in-javascript"></a><span id="Visualizer"></span><span id="visualizer"></span><span id="VISUALIZER"></span>JavaScript でのデバッガービジュアライザーの作成
 
 
-カスタム ビジュアル ファイルを使用すると、グループ化およびデータ間の関係とコンテンツを正確に反映させた視覚エフェクトの構造内のデータを整理できます。 JavaScript デバッガー拡張機能を使用して、非常に NatVis と同様の方法で操作を実行するデバッガー ビジュアライザーを記述することができます。 これは、特定のデータ ビジュアライザーとして機能する入力、JavaScript プロトタイプ オブジェクト (または、ES6 クラス) の作成を使用して実現されます。 NatVis とデバッガーの詳細については、次を参照してください。 [ **dx (表示 NatVis 式)** ](dx--display-visualizer-variables-.md)します。
+カスタムビジュアル化ファイルを使用すると、データの関係とコンテンツをより正確に反映した視覚化構造でデータをグループ化し、整理することができます。 JavaScript デバッガー拡張機能を使用して、NatVis と非常によく似た方法で動作するデバッガービジュアライザーを作成できます。 これは、特定のデータ型のビジュアライザーとして機能する JavaScript プロトタイプオブジェクト (または ES6 クラス) を作成することによって実現されます。 NatVis とデバッガーの詳細については、「 [**dx (Display NatVis Expression)** ](dx--display-visualizer-variables-.md)」を参照してください。
 
-**クラスの例 - Simple1DArray**
+**クラスの例-Simple1DArray**
 
-1 次元配列を表す C++ クラスの例を検討してください。 このクラスには 2 つのメンバーでは、m\_サイズは、配列、および m の全体的なサイズ\_pValues メモリ内の整数の数値へのポインターであると等しく、m\_サイズ フィールド。
+1次元配列を表すC++クラスの例を考えてみましょう。 このクラスには、2つ\_のメンバー (m サイズは配列の全体のサイズ)\_と m の pvalues があります。これは、m\_size フィールドと同じメモリ内の int の数へのポインターです。
 
 ```cpp
 class Simple1DArray
@@ -494,7 +474,7 @@ private:
 };
 ```
 
-Dx コマンドを使用して、既定のデータ構造の表示を確認することできます。
+Dx コマンドを使用して、既定のデータ構造の表示を確認できます。
 
 ```dbgcmd
 0:000> dx g_array1D
@@ -503,9 +483,9 @@ g_array1D                 [Type: Simple1DArray]
     [+0x008] m_pValues        : 0x8be32449e0 : 0 [Type: int *]
 ```
 
-**JavaScript のビジュアライザー**
+**JavaScript ビジュアライザー**
 
-この型を視覚化するために作成者のプロトタイプ (または ES6) クラスを持つすべてのフィールドに必要があります。 および、デバッガーを表示するプロパティ。 また、initializeScript メソッドを指定した型のビジュアライザーとして、プロトタイプをリンクする JavaScript プロバイダーに指示するオブジェクトを返す必要があります。
+この型を視覚化するには、デバッガーで表示するすべてのフィールドとプロパティを含むプロトタイプ (または ES6) クラスを作成する必要があります。 また、initializeScript メソッドから、指定された型のビジュアライザーとしてプロトタイプをリンクするように JavaScript プロバイダーに指示するオブジェクトを返す必要もあります。
 
 ```javascript
 function initializeScript()
@@ -539,22 +519,22 @@ function initializeScript()
 }
 ```
 
-ArrayVisualizer.js という名前のファイル、スクリプトを保存します。
+ArrayVisualizer という名前のファイルにスクリプトを保存します。
 
-使用して、 [ **.load (拡張 DLL の読み込み)** ](-load---loadby--load-extension-dll-.md) JavaScript プロバイダを読み込むコマンド。
+[**読み込み (拡張 DLL の読み込み)** ](-load---loadby--load-extension-dll-.md)コマンドを使用して、JavaScript プロバイダーを読み込みます。
 
 ```dbgcmd
 0:000> .load C:\ScriptProviders\jsprovider.dll
 ```
 
-.Scriptload を使用して、配列のビジュアライザーのスクリプトを読み込みます。
+Scriptload を使用して、配列ビジュアライザースクリプトを読み込みます。
 
 ```dbgcmd
 0:000> .scriptload c:\WinDbg\Scripts\arrayVisualizer.js
 JavaScript script successfully loaded from 'c:\WinDbg\Scripts\arrayVisualizer.js'
 ```
 
-ここで、dx コマンドを使用する場合は、配列の内容の行をスクリプト ビジュアライザーに表示されます。
+これで、dx コマンドを使用すると、スクリプトビジュアライザーに配列の内容の行が表示されます。
 
 ```dbgcmd
 0:000> dx g_array1D
@@ -567,7 +547,7 @@ g_array1D                 : [object Object] [Type: Simple1DArray]
     [0x4]            : 0x4
 ```
 
-さらに、この JavaScript の視覚エフェクトは、Select などの LINQ 機能を提供します。
+さらに、この JavaScript の視覚化では、Select などの LINQ 機能が提供されています。
 
 ```dbgcmd
 0:000> dx g_array1D.Select(n => n * 3),d
@@ -579,21 +559,21 @@ g_array1D.Select(n => n * 3),d
     [4]              : 12
 ```
 
-**視覚エフェクトへの影響について**
+**視覚エフェクトに影響を与えるもの**
 
-プロトタイプまたは initializeScript の host.typeSignatureRegistration オブジェクトの戻り値によって、ネイティブ型のビジュアライザーで構成されるクラスを持つすべてのプロパティと、JavaScript 内のメソッドは、ネイティブな型に追加します。 さらに、次のセマンティクスが適用されます。
+InitializeScript から typeSignatureRegistration オブジェクトを返すことによってネイティブ型のビジュアライザーとして作成されるプロトタイプまたはクラスには、JavaScript 内のすべてのプロパティとメソッドがネイティブ型に追加されます。 また、次のセマンティクスが適用されます。
 
--   2 つのアンダー スコアで始まっていないを任意の名前 (\_\_) は、視覚エフェクトで利用できます。
+-   2つのアンダースコア (\_\_) で始まらない名前は、視覚化で使用できるようになります。
 
--   標準の JavaScript オブジェクトの一部であるか、JavaScript のプロバイダーを作成するプロトコルの一部である名前も、視覚化に表示されません。
+-   標準 JavaScript オブジェクトの一部である名前、または JavaScript プロバイダーによって作成されるプロトコルの一部である名前は、視覚化に表示されません。
 
--   オブジェクトのサポートを利用して反復可能なできる\[Symbol.iterator\]します。
+-   オブジェクトは、反復可能なをサポート\[\]することによって、作成することができます。
 
--   オブジェクトをいくつかの関数で構成されるカスタム プロトコルのサポートを利用してインデックス付けできる: getDimensionality、getValueAt、および必要に応じて setValueAt します。
+-   オブジェクトは、getDimensionality、getValueAt、およびオプションで setValueAt の複数の関数で構成されるカスタムプロトコルをサポートすることで、インデックスを作成できます。
 
-**ネイティブおよび JavaScript オブジェクトのブリッジ**
+**ネイティブオブジェクトブリッジと JavaScript オブジェクトブリッジ**
 
-JavaScript とデバッガーのオブジェクト モデル間のブリッジでは、双方向です。 JavaScript にネイティブなオブジェクトを渡すことができ、デバッガーの式エバリュエーターに JavaScript オブジェクトを渡すことができます。 これの例は、としては、このスクリプトでは、次のメソッドの追加を検討してください。
+JavaScript とデバッガーのオブジェクトモデルの間の橋渡しは双方向です。 ネイティブオブジェクトを JavaScript に渡すことができ、JavaScript オブジェクトをデバッガーの式エバリュエーターに渡すことができます。 この例として、スクリプトに次のメソッドを追加することを検討してください。
 
 ```javascript
 function multiplyBySeven(val)
@@ -602,7 +582,7 @@ function multiplyBySeven(val)
 }
 ```
 
-このメソッドは、上記の例の LINQ クエリで今すぐ利用できます。 まず、JavaScript の視覚エフェクトを読み込みます。
+このメソッドは、上記の LINQ クエリ例で使用できるようになりました。 まず、JavaScript の視覚化を読み込みます。
 
 ```dbgcmd
 0:000> .scriptload c:\WinDbg\Scripts\arrayVisualizer2.js
@@ -611,7 +591,7 @@ JavaScript script successfully loaded from 'c:\WinDbg\Scripts\arrayVisualizer2.j
 0:000> dx @$myScript = Debugger.State.Scripts.arrayVisualizer2.Contents
 ```
 
-次の関数のインラインでは、次に示す multiplyBySeven を使用できます。
+次に示すように、乗数 Yby7 関数をインラインで使用できます。
 
 ```dbgcmd
 0:000> dx g_array1D.Select(@$myScript.multiplyBySeven),d
@@ -623,16 +603,16 @@ g_array1D.Select(@$myScript.multiplyBySeven),d
     [4]              : 28
 ```
 
-## <a name="span-idbreakpointsspanspan-idbreakpointsspanspan-idbreakpointsspanconditional-breakpoints-with-javascript"></a><span id="Breakpoints"></span><span id="breakpoints"></span><span id="BREAKPOINTS"></span>JavaScript での条件付きブレークポイント
+## <a name="span-idbreakpointsspanspan-idbreakpointsspanspan-idbreakpointsspanconditional-breakpoints-with-javascript"></a><span id="Breakpoints"></span><span id="breakpoints"></span><span id="BREAKPOINTS"></span>JavaScript を使用した条件付きブレークポイント
 
 
-ブレークポイントにヒットした後に、補足処理を行うには、JavaScript を使用できます。 たとえば、スクリプトは、その他の実行時の値を確認し、自動的にコードの実行を継続または停止して追加の手動デバッグを実行するかを使用できます。
+ブレークポイントにヒットした後で、JavaScript を使用して補足処理を行うことができます。 たとえば、スクリプトを使用すると、他の実行時の値を調べて、自動的にコードの実行を続行するか停止し、追加の手動デバッグを実行するかどうかを決定できます。
 
-ブレークポイントの操作方法の概要については、次を参照してください。[ブレークポイントの制御メソッド](methods-of-controlling-breakpoints.md)します。
+ブレークポイントの操作に関する一般的な情報については、「[ブレークポイントを制御する方法](methods-of-controlling-breakpoints.md)」を参照してください。
 
-**ブレークポイントの処理のスクリプトを DebugHandler.js 例**
+**DebugHandler js サンプルブレークポイント処理スクリプト**
 
-この例は、メモ帳のオープンを評価し、保存ダイアログ:*メモ帳!ShowOpenSaveDialog*します。 このスクリプトでは、現在のダイアログ ボックスが 開く ダイアログ ボックスの場合、または"名前を付けて保存 ダイアログ ボックスである場合を判断する pszCaption 変数を評価します。 かどうか、[開く] ダイアログは、コードの実行が継続されます。 付けて保存 ダイアログの場合、コードの実行は停止しデバッガーが中断します。
+この例では、メモ帳の [開く] ダイアログと [保存] ダイアログを評価し*ます。ShowOpenSaveDialog*。 このスクリプトは、pszCaption 変数を評価して、現在のダイアログが [開く] ダイアログであるか、[名前を付けて保存] ダイアログであるかを判断します。 開いているダイアログの場合は、コードの実行が続行されます。 [名前を付けて保存] ダイアログボックスが表示されている場合、コードの実行は停止し、デバッガーは中断します。
 
 ```javascript
  // Use JavaScript strict mode 
@@ -661,19 +641,19 @@ g_array1D.Select(@$myScript.multiplyBySeven),d
   }
 ```
 
-使用して、 [ **.load (拡張 DLL の読み込み)** ](-load---loadby--load-extension-dll-.md) JavaScript プロバイダを読み込むコマンド。
+[**読み込み (拡張 DLL の読み込み)** ](-load---loadby--load-extension-dll-.md)コマンドを使用して、JavaScript プロバイダーを読み込みます。
 
 ```dbgcmd
 0:000> .load jsprovider.dll
 ```
 
-このコマンドは、メモ帳にブレークポイントを設定します。ShowOpenSaveDialog、そのブレークポイントはヒットたびに、上記のスクリプトを実行するとします。
+このコマンドは、メモ帳にブレークポイントを設定します。ShowOpenSaveDialog は、ブレークポイントにヒットしたときに、上記のスクリプトを実行します。
 
 ```dbgcmd
 bp notepad!ShowOpenSaveDialog ".scriptrun C:\\WinDbg\\Scripts\\DebugHandler.js"
 ```
 
-その後、ファイル&gt;メモ帳で保存オプションが選択されている、スクリプトを実行、g コマンドは送信されず、およびコードの実行の中断が発生します。
+メモ帳で [ &gt;ファイルの保存] オプションを選択すると、スクリプトが実行され、g コマンドが送信されず、コードの実行が中断されます。
 
 ```dbgcmd
 JavaScript script successfully loaded from 'C:\WinDbg\Scripts\DebugHandler.js'
@@ -681,22 +661,22 @@ notepad!ShowOpenSaveDialog:
 00007ff6`f9761884 48895c2408      mov     qword ptr [rsp+8],rbx ss:000000db`d2a9f2f0=0000021985fe2060
 ```
 
-## <a name="span-idbitvaluesspanspan-idbitvaluesspanspan-idbitvaluesspanwork-with-64-bit-values-in-javascript-extensions"></a><span id="BitValues"></span><span id="bitvalues"></span><span id="BITVALUES"></span>JavaScript の拡張機能内の 64 ビット値を使用します。
+## <a name="span-idbitvaluesspanspan-idbitvaluesspanspan-idbitvaluesspanwork-with-64-bit-values-in-javascript-extensions"></a><span id="BitValues"></span><span id="bitvalues"></span><span id="BITVALUES"></span>JavaScript 拡張で64ビット値を使用する
 
 
-このセクションに渡された値を 64 ビットの方法を説明します JavaScript デバッガー拡張機能が動作します。 JavaScript は 53 ビットを使用して数値を格納する機能のみが、この問題が発生します。
+このセクションでは、JavaScript デバッガー拡張機能に渡される64ビット値の動作について説明します。 この問題が発生するのは、JavaScript が53ビットを使用して数値を格納する機能しかないためです。
 
-**64 ビットと 53 ビットのストレージの JavaScript**
+**64ビットおよび JavaScript 53-ビットストレージ**
 
-JavaScript に渡された序数値は、JavaScript の数値として通常マーシャ リングされます。 この問題は、JavaScript の数値が 64 ビットの倍精度浮動小数点値です。 53 ビット経由で任意の序数は JavaScript への入力に精度が失われます。 これは、64 ビット ポインターと最上位バイトにフラグがあります。 その他の 64 ビット序数値の問題を表示します。 これに対処するためには、64 ビット ネイティブ値 (ネイティブ コードまたはデータ モデルからかどうか) が JavaScript の入力は、JavaScript の数値としてではなく - ライブラリの種類として入力します。 このライブラリの種類は、数値有効桁数を失うことがなくネイティブ コードに戻るラウンド トリップをされます。
+JavaScript に渡される序数値は、通常、JavaScript の数値としてマーシャリングされます。 この問題は、JavaScript の数値が64ビットの倍精度浮動小数点値であることです。 53ビットを超える序数は、JavaScript への入力の有効桁数を失います。 これにより、64ビットポインターとその他の64ビット序数値の問題が発生します。これには、最大バイトのフラグが含まれる場合があります。 これに対処するために、JavaScript に入るすべての64ビットネイティブ値 (ネイティブコードまたはデータモデルから) は、JavaScript の数値ではなくライブラリ型として入力します。 このライブラリ型では、数値精度を失うことなく、ネイティブコードにラウンドトリップバックします。
 
 **自動変換**
 
-ライブラリは、64 ビットの序数値の種類には、標準の JavaScript valueOf 変換がサポートしています。 算術演算または値の変換を必要とする他の構造体で、オブジェクトを使用する場合は、JavaScript の数値に自動的に変換します。 有効桁数の損失が発生した場合 (値を利用 53 ビットの序数の有効桁数を超える)、JavaScript プロバイダー例外がスローされます。
+64ビットの序数値のライブラリ型では、標準の JavaScript 値変換がサポートされています。 オブジェクトが算術演算や、値の変換を必要とするその他のコンストラクトで使用されている場合は、JavaScript の数値に自動的に変換されます。 精度の低下が発生した場合 (値が53ビットを超える序数の精度を利用している場合)、JavaScript プロバイダーは例外をスローします。
 
-注意してください、JavaScript でビットごとの演算子を使用する場合さらに、序数に基づく精度の 32 ビットに制限されます。
+JavaScript でビットごとの演算子を使用する場合は、32ビットの序数の有効桁数にさらに制限されていることに注意してください。
 
-このサンプル コードでは、2 つの数値を合計して、64 ビット値の変換をテストするために使用されます。
+このサンプルコードでは、2つの数値を合計し、64ビット値の変換をテストするために使用します。
 
 ```javascript
 function playWith64BitValues(a64, b64)
@@ -726,55 +706,55 @@ function performOp64BitValues(a64, b64, op)
 }
 ```
 
-という名前のテキスト ファイルを作成するには、メモ帳などのテキスト エディターを使用して*PlayWith64BitValues.js*
+メモ帳などのテキストエディターを使用して、PlayWith64BitValues という名前のテキストファイルを作成し*ます。*
 
-使用して、 [ **.load (拡張 DLL の読み込み)** ](-load---loadby--load-extension-dll-.md) JavaScript プロバイダを読み込むコマンド。
+[**読み込み (拡張 DLL の読み込み)** ](-load---loadby--load-extension-dll-.md)コマンドを使用して、JavaScript プロバイダーを読み込みます。
 
 ```dbgcmd
 0:000> .load jsprovider.dll
 ```
 
-.Scriptload コマンドを使用して、スクリプトを読み込みます。
+Scriptload コマンドを使用してスクリプトを読み込みます。
 
 ```dbgcmd
 0:000> .scriptload c:\WinDbg\Scripts\PlayWith64BitValues.js
 JavaScript script successfully loaded from 'c:\WinDbg\Scripts\PlayWith64BitValues.js'
 ```
 
-スクリプトを少し簡単に操作できるようにするには、dx コマンドを使用してスクリプトの内容を保持するために、デバッガーの変数を割り当てます。
+スクリプトを操作しやすくするには、dx コマンドを使用してスクリプトの内容を保持する変数をデバッガーに割り当てます。
 
 ```dbgcmd
 0:000> dx @$myScript = Debugger.State.Scripts.PlayWith64BitValues.Contents
 ```
 
-Dx 式エバリュエーターを使用して、addTwoValues 関数を呼び出します。
+Dx 式エバリュエーターを使用して、Addvalues 関数を呼び出します。
 
-2 の値を計算します最初 ^53 = 9007199254740992 (16 進 0x20000000000000)。
+最初に、値 2 ^ 53 = 9007199254740992 (16 進 0x20000000000000) を計算します。
 
-最初にテストするには使用 (2 ^53) - 2 と合計の正しい値が返されるを参照してください。
+まず、(2 ^ 53)-2 を使用して、その合計の値が正しいことを確認します。
 
 ```dbgcmd
 0:000> dx @$myScript.playWith64BitValues(9007199254740990, 9007199254740990)
 Sum   >> 18014398509481980
 ```
 
-計算は、(2 ^53)-1 9007199254740991 を = です。 これは、JavaScript コードで sum メソッドを使用できる最大値に変換プロセスが有効桁数を失うことを示すエラーが返されます。
+次に、(2 ^ 53)-1 = 9007199254740991 を計算します。 これにより、変換処理で精度が失われることを示すエラーが返されます。これは、JavaScript コードの sum メソッドで使用できる最大値です。
 
 ```dbgcmd
 0:000> dx @$myScript.playWith64BitValues(9007199254740990, 9007199254740991)
 Error: 64 bit value loses precision on conversion to number
 ```
 
-64 ビット値を渡すデータ モデルのメソッドを呼び出します。 ここでの有効桁数の損失はありません。
+64ビット値を渡すデータモデルメソッドを呼び出します。 ここでは精度は失われません。
 
 ```dbgcmd
 0:001> dx @$myScript.performOp64BitValues( 0x7FFFFFFFFFFFFFFF,  0x7FFFFFFFFFFFFFFF, (x, y) => x + y)
 @$myScript.performOp64BitValues( 0x7FFFFFFFFFFFFFFF,  0x7FFFFFFFFFFFFFFF, (x, y) => x + y) : 0xfffffffffffffffe
 ```
 
-**比較**
+**演算子**
 
-64 ビット ライブラリ型は、JavaScript オブジェクトと、JavaScript の数値などの値型ではなくです。 これにより、比較操作の影響があります。 通常、オブジェクトの等価 (= =) では、オペランドが同じオブジェクトと同じ値ではなくを参照していることを示します。 JavaScript のプロバイダーは、64 ビット値へのライブ参照を追跡し、64 ビット値の収集以外の場合は、同じ「変更できない」オブジェクトを返すことでこれを軽減します。 つまり、比較については、次が発生します。
+64ビットライブラリの種類は JavaScript オブジェクトであり、JavaScript の数値などの値の型ではありません。 これは、比較操作に何らかの影響を与えます。 通常、オブジェクトの等値 (= =) は、オペランドが同じオブジェクトを参照し、同じ値ではないことを示します。 JavaScript プロバイダーは、64ビット値へのライブ参照を追跡し、収集されていない64ビット値に対して同じ "変更できない" オブジェクトを返すことで、これを軽減します。 これは、比較のために次のようになります。
 
 ```javascript
 // Comparison with 64 Bit Values
@@ -798,28 +778,28 @@ function comparisonWith64BitValues(a64, b64)
     host.diagnostics.debugLog("isLess   >> ", isLess, "\n");
 ```
 
-という名前のテキスト ファイルを作成するには、メモ帳などのテキスト エディターを使用して*ComparisonWith64BitValues.js*
+メモ帳などのテキストエディターを使用して、ComparisonWith64BitValues という名前のテキストファイルを作成し*ます。*
 
-使用して、 [ **.load (拡張 DLL の読み込み)** ](-load---loadby--load-extension-dll-.md) JavaScript プロバイダを読み込むコマンド。
+[**読み込み (拡張 DLL の読み込み)** ](-load---loadby--load-extension-dll-.md)コマンドを使用して、JavaScript プロバイダーを読み込みます。
 
 ```dbgcmd
 0:000> .load jsprovider.dll
 ```
 
-.Scriptload コマンドを使用して、スクリプトを読み込みます。
+Scriptload コマンドを使用してスクリプトを読み込みます。
 
 ```dbgcmd
 0:000> .scriptload c:\WinDbg\Scripts\ComparisonWith64BitValues.js
 JavaScript script successfully loaded from 'c:\WinDbg\Scripts\ComparisonWith64BitValues.js'
 ```
 
-スクリプトを少し簡単に操作できるようにするには、dx コマンドを使用してスクリプトの内容を保持するために、デバッガーの変数を割り当てます。
+スクリプトを操作しやすくするには、dx コマンドを使用してスクリプトの内容を保持する変数をデバッガーに割り当てます。
 
 ```dbgcmd
 0:000> dx @$myScript = Debugger.State.Scripts.comparisonWith64BitValues.Contents
 ```
 
-最初にテストするには使用 (2 ^53) - 2 と予期される値を返すことを参照してください。
+まず、(2 ^ 53)-2 を使用して、予期される値が返されることを確認します。
 
 ```dbgcmd
 0:001> dx @$myScript.comparisonWith64BitValues(9007199254740990, 9007199254740990)
@@ -829,7 +809,7 @@ isEqualTo42   >> false
 isLess   >> false
 ```
 
-数字「42 が比較演算子を検証する最初値を使用している必要があります私たちも試行されます。
+また、必要に応じて比較演算子が動作していることを検証するために、最初の値として数値42を試してみます。
 
 ```dbgcmd
 0:001> dx @$myScript.comparisonWith64BitValues(42, 9007199254740990)
@@ -839,7 +819,7 @@ isEqualTo42   >> true
 isLess   >> true
 ```
 
-計算は、(2 ^53)-1 9007199254740991 を = です。 この値は、これは、JavaScript コードで比較演算子と共に使用できる最大値に変換プロセスが有効桁数を失うことを示すエラーを返します。
+次に、(2 ^ 53)-1 = 9007199254740991 を計算します。 この値は、変換処理によって精度が失われることを示すエラーを返します。これは、JavaScript コードの比較演算子で使用できる最大値です。
 
 ```dbgcmd
 0:000> dx @$myScript.playWith64BitValues(9007199254740990, 9007199254740991)
@@ -848,38 +828,38 @@ Error: 64 bit value loses precision on conversion to number
 
 **操作の有効桁数の維持**
 
-精度を維持するためにデバッガー拡張機能を許可するためには、一連の数値演算関数は、64 ビット ライブラリの種類の上に射影されます。 拡張機能必要があります (または可能性がある可能性があります) 必要がある場合 53 ビット上の有効桁数の受信の 64 ビット値、標準の演算子ではなく、次のメソッドを利用する必要があります。
+デバッガー拡張機能で精度を維持するために、数値演算関数のセットが64ビットライブラリ型の上に射影されます。 拡張機能に必要な有効桁数 (または場合によっては) が64ビットの着信値に対して53ビットを超える必要がある場合は、標準の演算子を使用するのではなく、次のメソッドを使用する必要があります。
 
 |                   |                           |                                                                                                               |
 |-------------------|---------------------------|---------------------------------------------------------------------------------------------------------------|
-| **メソッド名**   | **署名**             | **[説明]**                                                                                               |
-| asNumber          | .asNumber()               | 64 ビット値を JavaScript の数値に変換します。 有効桁数の損失が発生した場合\*\*例外がスローされます\*\* |
-| convertToNumber   | .convertToNumber()        | 64 ビット値を JavaScript の数値に変換します。 有効桁数の損失が発生した場合\*\*いいえ例外がスローされます\*\* |
-| getLowPart        | .getLowPart()             | 64 ビット値の下位 32 ビットを JavaScript の数値に変換します。                                         |
-| getHighPart       | .getHighPart()            | 64 ビット値の上位 32 ビットを JavaScript の数値に変換します。                                          |
-| 追加               | .add(value)               | 64 ビット値に値を追加し、結果を返します                                                       |
-| 減算 (subtract)          | .subtract(value)          | 64 ビットの値から値を減算し、結果を返します                                                |
-| 乗算          | .multiply(value)          | 指定された値では、64 ビット値を乗算し、結果を返します                                      |
-| 除算            | .divide(value)            | 64 ビット値を指定された値で除算し、結果を返します                                         |
-| BitwiseAnd        | .bitwiseAnd(value)        | 64 ビット値が指定された値の積を計算し、結果を返します                   |
-| BitwiseOr         | .bitwiseOr(value)         | ビットまたは 64 ビット値が指定された値の計算し、結果を返します                    |
-| bitwiseXor        | .bitwiseXor(value)        | 指定された値と 64 ビット値のビットごとの xor を計算し、結果を返します                   |
-| bitwiseShiftLeft  | .bitwiseShiftLeft(value)  | 64 ビット値が指定された数だけ左にシフトし、結果を返します                                       |
-| bitwiseShiftRight | .bitwiseShiftRight(value) | 64 ビット値を指定した量だけ右にシフトし、結果を返します                                      |
-| ToString          | .toString(\[radix\])      | 64 ビット値を既定の基数 (またはオプションで指定した基数) での表示文字列に変換します。         |
+| **メソッド名**   | **折本**             | **[説明]**                                                                                               |
+| asNumber          | .asNumber()               | 64ビット値を JavaScript の数値に変換します。 精度の低下が発生する\*と、例外がスローされます\*。\*\* |
+| convertToNumber   | .convertToNumber()        | 64ビット値を JavaScript の数値に変換します。 精度の低下が発生し\*た場合、 \*例外はスローされません。\*\* |
+| getLowPart        | .getLowPart()             | 64ビット値の下位32ビットを JavaScript の数値に変換します                                         |
+| getHighPart       | .getHighPart()            | 64ビット値の上位32ビットを JavaScript の数値に変換します                                          |
+| 追加               | 。追加 (値)               | 64ビット値に値を加算し、その結果を返します。                                                       |
+| 減算 (subtract)          | . 減算 (値)          | 64ビット値から値を減算し、結果を返します。                                                |
+| 乗じる          | . 乗算 (値)          | 64ビット値を指定された値で乗算し、結果を返します。                                      |
+| 8060            | . 除算 (値)            | 64ビット値を指定された値で除算し、結果を返します。                                         |
+| bitwiseAnd        | . bitwiseAnd (値)        | 指定された値を使用して64ビット値のビットごとの and を計算し、結果を返します。                   |
+| bitwiseOr         | . bitwiseOr (値)         | 指定された値を使用して64ビット値のビットごとの or を計算し、結果を返します。                    |
+| bitwiseXor        | . bitwiseXor (値)        | 指定された値を使用して64ビット値のビットごとの xor を計算し、結果を返します。                   |
+| bitwiseShiftLeft  | . bitwiseShiftLeft (値)  | 64ビット値を指定された量だけ左にシフトし、結果を返します                                       |
+| bitwiseShiftRight | . bitwiseShiftRight (値) | 64ビット値を指定された量だけ右にシフトし、結果を返します                                      |
+| 必ず          | .toString(\[radix\])      | 64ビット値を既定の基数 (または必要に応じて指定された基数) の表示文字列に変換します。         |
 
 
 
 ## <a name="span-iddebuggingspanspan-iddebuggingspanspan-iddebuggingspanjavascript-debugging"></a><span id="Debugging"></span><span id="debugging"></span><span id="DEBUGGING"></span>JavaScript のデバッグ 
 
-このセクションでは、デバッグ、デバッガーの機能のスクリプトを使用する方法について説明します。 デバッガーを使用して JavaScript スクリプトをデバッグするためのサポートが統合された、 [.scriptdebug (JavaScript のデバッグ)](-scriptdebug--debug-javascript-.md)コマンド。
+このセクションでは、デバッガーのスクリプトデバッグ機能を使用する方法について説明します。 デバッガーは、 [scriptdebug (Debug javascript)](-scriptdebug--debug-javascript-.md)コマンドを使用した javascript スクリプトのデバッグを統合してサポートしています。
 
 >[!NOTE] 
-> WinDbg のプレビューでは、JavaScript のデバッグを使用するには、管理者として、デバッガーを実行します。
+> WinDbg Preview で JavaScript のデバッグを使用するには、管理者としてデバッガーを実行します。
 >
 
 
-このサンプル コードを使用して、JavaScript のデバッグを検証します。 このチュートリアルでは DebuggableSample.js という名前を付けますがお C:\MyScripts ディレクトリに保存します。
+このサンプルコードを使用して、JavaScript のデバッグについて確認します。 このチュートリアルでは、DebuggableSample という名前を付け、C:\MyScripts ディレクトリに保存します。
 
 ```javascript
 "use strict";
@@ -972,13 +952,13 @@ function initializeScript()
 }
 ```
 
-サンプル スクリプトを読み込みます。
+サンプルスクリプトを読み込みます。
 
 ```dbgcmd
 .scriptload C:\MyScripts\DebuggableSample.js
 ```
 
-スクリプトを使用して、積極的にデバッグを開始、 **.scriptdebug**コマンド。
+**Scriptdebug**コマンドを使用して、スクリプトのアクティブデバッグを開始します。
 
 ```dbgcmd
 0:000> .scriptdebug C:\MyScripts\DebuggableSample.js
@@ -988,9 +968,9 @@ function initializeScript()
 >>> Debug [DebuggableSample <No Position>] >
 ```
 
-プロンプトが表示されたら *>>> デバッグ [DebuggableSample <No Position>] >* スクリプト デバッガー内では入力を要求します。  
+プロンプトが表示されたら *> > > Debug [ <No Position>DebuggableSample] >* および入力の要求をスクリプトデバッガー内に配置します。  
 
-使用して、 **.help** JavaScript のデバッグ環境でコマンドの一覧を表示するコマンド。
+JavaScript デバッグ環境でコマンドの一覧を表示するには、 **. help**コマンドを使用します。
 
 ```dbgcmd
 >>> Debug [DebuggableSample <No Position>] >.help
@@ -1025,7 +1005,7 @@ Script Debugger Commands (*NOTE* IDs are **PER SCRIPT**):
     .help  ............................. Get help
 ```
 
-使用して、 **sx**こと、トラップできるイベントの一覧を表示するデバッガー コマンドのスクリプトを作成します。
+**Sx**スクリプトデバッガーコマンドを使用して、トラップできるイベントの一覧を確認します。
 
 ```dbgcmd
 >>> Debug [DebuggableSample <No Position>] >sx              
@@ -1036,7 +1016,7 @@ sx
     uh  [     active] .... Break on unhandled exception     
 ```
 
-使用して、 **sxe**内に任意のコードが実行されるとすぐにスクリプト デバッガーに、スクリプトをトラップするためのエントリをブレークをオンにするデバッガー コマンドのスクリプトを作成します。
+**Sxe**スクリプトデバッガーコマンドを使用すると、スクリプトが実行されるコードがすぐにスクリプトデバッガーにトラップされるように、エントリの中断をオンにすることができます。
 
 ```dbgcmd
 >>> Debug [DebuggableSample <No Position>] >sxe en          
@@ -1045,19 +1025,19 @@ Event filter 'en' is now active
 ```
 
 
-スクリプト デバッガーを終了して、関数をデバッガーにトラップがスクリプトに呼び出しを行います。
+スクリプトデバッガーを終了し、デバッガーにトラップされるスクリプトに関数呼び出しを行います。
 
 ```dbgcmd
 >>> Debug [DebuggableSample <No Position>] >q
 ```
 
-この時点では、通常のデバッガーにしています。  スクリプトを呼び出す次のコマンドを実行します。
+この時点で、通常のデバッガーに戻ります。  次のコマンドを実行して、スクリプトを呼び出します。
 
 ```dbgcmd
 dx @$scriptContents.outermost()
 ```
 
-これで、スクリプト デバッガーに戻ってが最も外側の JavaScript 関数の 1 行目で壊れているとします。  
+これで、スクリプトデバッガーに戻り、最も外側にある JavaScript 関数の最初の行で中断されます。  
 
 ```dbgcmd
 >>> ****** SCRIPT BREAK DebuggableSample [BreakIn] ******   
@@ -1067,9 +1047,9 @@ dx @$scriptContents.outermost()
 >>> Debug [DebuggableSample 73:5] >                         
 ```
 
-デバッガーにブレークを表示することに加えて、行 (73) で、中断が場所とソース コードの関連するスニペットを要した列 (5) の情報を取得する: *var x 99*します。
+デバッガーの中断を確認するだけでなく、行 (73) と、中断が発生した列 (5) に加えて、ソースコードの関連するスニペットである*var x = 99*に関する情報を取得します。
 
-数回の手順をスクリプトの別の場所を取得しましょう。
+いくつかの手順を実行して、スクリプト内の別の場所に移動してみましょう。
 
 ```dbgcmd
     p
@@ -1080,7 +1060,7 @@ dx @$scriptContents.outermost()
     p
 ```
 
-この時点では、34 行目で throwAndCatch メソッドに分割する必要があります。  
+この時点で、34行目の throwAndCatch メソッドに分割する必要があります。  
 
 ```dbgcmd
 ...
@@ -1089,7 +1069,7 @@ dx @$scriptContents.outermost()
            Text: var curProc = host.currentProcess                                    
 ```
 
-スタック トレースを実行することによって、これを確認することができます。
+これを確認するには、スタックトレースを実行します。
 
 ```dbgcmd
 >>> Debug [DebuggableSample 34:5] >k                                                  
@@ -1100,7 +1080,7 @@ k
    [02] outermost                        074:05 (var result = outer())                
 ```
 
-ここでは、変数の値を調査できます。
+ここでは、変数の値を調べることができます。
 
 ```dbgcmd
 >>> Debug [DebuggableSample 34:5] >??someObj                
@@ -1117,7 +1097,7 @@ someObj.b        : {...}
     d                : Hello World                          
 ```
 
-現在のコード行にブレークポイントを設定して、どのようなブレークポイントを設定して今すぐ参照してください。
+現在のコード行にブレークポイントを設定し、現在設定されているブレークポイントを確認してみましょう。
 
 ```dbgcmd
 >>> Debug [DebuggableSample 34:5] >bpc                      
@@ -1129,7 +1109,7 @@ bl
        1 enabled  34:5                                      
 ```
 
-ここを無効にします (en) のエントリのイベントを使用、 **sxd**デバッガー コマンドのスクリプトを作成します。 
+ここから、 **sxd**スクリプトデバッガーコマンドを使用して entry (en) イベントを無効にします。 
 
 ```dbgcmd                                                                                                                      
 >>> Debug [DebuggableSample 34:5] >sxd en                                                                              
@@ -1137,7 +1117,7 @@ sxd en
 Event filter 'en' is now inactive                                                                                      
 ```
 
-だけ移動し、スクリプトの最後まで続行します。
+次に、スクリプトを最後まで続行します。
 
 ```dbgcmd                                                                                                                      
 >>> Debug [DebuggableSample 34:5] >g                                                                                   
@@ -1150,7 +1130,7 @@ Test
 ...
 ```
 
-スクリプト メソッドをもう一度実行し、ヒットするブレークポイントを確認します。
+スクリプトメソッドをもう一度実行し、ブレークポイントにヒットしていることを確認します。
 
 ```dbgcmd
 0:000> dx @$scriptContents.outermost()                                                
@@ -1171,7 +1151,7 @@ k
    [02] outermost                        074:05 (var result = outer())                
 ```
 
-この時点では、そこからデタッチしますので、このスクリプトのデバッグを停止します。  
+この時点で、このスクリプトのデバッグを停止します。そのため、このスクリプトからデタッチします。  
 
 ```dbgcmd
 >>> Debug [DebuggableSample 34:5] >.detach                  
@@ -1179,7 +1159,7 @@ k
 Debugger has been detached from script!                     
 ```
 
-Q を押して終了を入力します。
+次に、「q」と入力して終了します。
 
 ```dbgcmd                             
 q                                                           
@@ -1190,7 +1170,7 @@ Caught and returned!
 Test                                                        
 ```
 
-関数をもう一度実行は、デバッガーに割り込むが不要になった。
+関数を再度実行しても、デバッガーは中断されなくなります。
 
 ```dbgcmd
 0:007> dx @$scriptContents.outermost()
@@ -1202,44 +1182,44 @@ Caught and returned!
 Test
 ```
 
-## <a name="span-idvscodespanspan-idvscodespanspan-idvscodespanjavascript-in-vscode---adding-intellisense"></a><span id="Vscode"></span><span id="vscode"></span><span id="VSCODE"></span>IntelliSense の追加 - VSCode での JavaScript
+## <a name="span-idvscodespanspan-idvscodespanspan-idvscodespanjavascript-in-vscode---adding-intellisense"></a><span id="Vscode"></span><span id="vscode"></span><span id="VSCODE"></span>VSCode での JavaScript-IntelliSense の追加
 
-VSCode でデバッガーのデータ モデル オブジェクトを操作したい場合は、Windows の開発キットで提供される定義ファイルを使用できます。 IntelliSense の定義ファイルでは、すべて host.* デバッガー オブジェクト Api のサポートを提供します。 64 ビット PC 上の既定のディレクトリに、キットをインストールした場合の場所は。
+VSCode でデバッガーデータモデルオブジェクトを操作する場合は、Windows 開発キットで使用できる定義ファイルを使用できます。 IntelliSense 定義ファイルでは、すべてのホスト. * デバッガーオブジェクト Api がサポートされています。 64ビット PC の既定のディレクトリにキットをインストールした場合は、次の場所にあります。
 
 `C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\winext\JsProvider.d.ts`
 
-VSCode での IntelliSense の定義ファイルを使用するには
+VSCode で IntelliSense 定義ファイルを使用するには、次のようにします。
 
-1. 定義ファイルの JSProvider.d.ts
+1. 定義ファイル-JSProvider を見つけます。
 
 2. 定義ファイルをスクリプトと同じフォルダーにコピーします。
 
-3. 追加`/// <reference path="JSProvider.d.ts" />`JavaScript スクリプト ファイルの先頭にします。
+3. を`/// <reference path="JSProvider.d.ts" />` JavaScript スクリプトファイルの先頭に追加します。
 
-JavaScript ファイル内の参照を VS Code 自動的に表示されます IntelliSense ホストだけでなく、スクリプト内の構造体 JSProvider で提供される Api で。 たとえば、「ホスト」を入力します。 すべての利用可能なデバッガー モデル Api の IntelliSense が表示されます。
+JavaScript ファイルでその参照を使用すると VS Code、スクリプト内の構造に加えて、JSProvider によって提供されるホスト Api に IntelliSense が自動的に与えられます。 たとえば、「host」と入力します。 また、使用可能なすべてのデバッガーモデル Api の IntelliSense が表示されます。
 
 
 ## <a name="span-idresourcesspanspan-idresourcesspanspan-idresourcesspanjavascript-resources"></a><span id="Resources"></span><span id="resources"></span><span id="RESOURCES"></span>JavaScript リソース
 
 
-JavaScript のデバッグ拡張機能を開発する際に役立つ可能性がある JavaScript リソースを次に示します。
+JavaScript のデバッグ拡張機能を開発する際に役立つ可能性のある JavaScript リソースを次に示します。
 
 -   [JavaScript コードの記述](https://docs.microsoft.com/scripting/javascript/writing-javascript-code)
 
--   [JScript 言語のツアー](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/t895bwkh(v=vs.100))
+-   [JScript 言語ツアー](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/t895bwkh(v=vs.100))
 
 -   [Mozilla JavaScript リファレンス](https://developer.mozilla.org/docs/Web/JavaScript)
 
--   [WinJS:JavaScript 用 Windows ライブラリ](https://github.com/winjs/winjs)
+-   [WinJSJavaScript 用 Windows ライブラリ](https://github.com/winjs/winjs)
 
--   [ECMAScript 6-新機能:比較 (&) の概要](https://es6-features.org/)
+-   [ECMAScript 6: 新機能:概要 & 比較](https://es6-features.org/)
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
-[JavaScript デバッガーの スクリプトの例](javascript-debugger-example-scripts.md)
+[JavaScript デバッガーのサンプルスクリプト](javascript-debugger-example-scripts.md)
 
-[JavaScript の拡張機能のネイティブ オブジェクト](native-objects-in-javascript-extensions.md)
+[JavaScript 拡張機能のネイティブオブジェクト](native-objects-in-javascript-extensions.md)
 
 
 

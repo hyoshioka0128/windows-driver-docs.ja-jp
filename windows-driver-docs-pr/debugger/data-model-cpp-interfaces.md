@@ -1,83 +1,55 @@
 ---
 title: Debugger Data Model C++ のインターフェイス
-description: このトピックでは、デバッガーのデータ モデルの C++ インターフェイスを使用して拡張およびデバッガーの機能をカスタマイズする方法について説明します。
+description: このトピックでは、デバッガーのデータモデルC++インターフェイスを使用して、デバッガーの機能を拡張およびカスタマイズする方法について説明します。
 ms.date: 10/08/2018
-ms.openlocfilehash: 831e11ba8d5bcb28bd7842a9653dfff4205aafe7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9f2e48a8aa6d1026fe775be8467b7803d6120e13
+ms.sourcegitcommit: 3b7c8b3cb59031e0f4e39dac106c1598ad108828
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374376"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70930372"
 ---
 # <a name="debugger-data-model-c-interfaces"></a>Debugger Data Model C++ のインターフェイス 
 
-このトピックでは、デバッガーのデータ モデルの C++ インターフェイスを使用して拡張およびデバッガーの機能をカスタマイズする方法の概要について説明します。
+このトピックでは、デバッガーデータモデルC++インターフェイスを使用してデバッガーの機能を拡張およびカスタマイズする方法の概要を説明します。
 
-このトピックでは、C、C++ ベースのデバッガーの拡張機能の構築に使用する方法および作成する方法からアクセスできるインターフェイスについて説明するシリーズのパートの他のデータ モデルの構成要素を使用して (例。JavaScript または NatVis) C データ モデルの拡張機能から。
+## <a name="span-idhostinterfacespan-debugger-data-model-c-host-interfaces"></a><span id="hostinterface"></span>デバッガーデータモデルC++のホストインターフェイス
 
-[デバッガー データ モデルの C++ の概要](data-model-cpp-overview.md)
+**デバッガーデータモデルホスト**
 
-[デバッガーのデータ モデルの C++ インターフェイス](data-model-cpp-interfaces.md)
+デバッガーデータモデルは、さまざまな異なるコンテキストでホストできる、コンポーネント化されたシステムとして設計されています。 通常、データモデルは、デバッガーアプリケーションのコンテキストでホストされます。 データモデルのホストにするには、デバッガーの主要な側面を公開するために、いくつかのインターフェイスを実装する必要があります。これには、ターゲット、メモリ空間、エバリュエーター、シンボルと型システムなどが含まれます。これらのインターフェイスは、データモデルをホストするアプリケーションによって実装されますが、コアデータモデルと、データモデルと相互運用する任意の拡張機能によって使用されます。 
 
-[デバッガーのデータ モデルの C++ オブジェクト](data-model-cpp-objects.md)
-
-[デバッガーのデータ モデルの C++ の追加インターフェイス](data-model-cpp-additional-interfaces.md)
-
-[デバッガーのデータ モデルの C の概念](data-model-cpp-concepts.md)
-
-[デバッガー データ モデルの C++ のスクリプト](data-model-cpp-scripting.md)
-
----
-
-## <a name="topic-sections"></a>トピックのセクション
-
-このトピックは次のセクションで構成されます。
-
-[デバッガーのデータ モデルの C++ ホスト インターフェイス](#hostinterface)
-
-[データ モデルにアクセスします。](#accessdatamodel)
-
-[デバッガーのデータ モデル システム インターフェイス](#systeminterfaces)
-
----
-
-## <a name="span-idhostinterfacespan-debugger-data-model-c-host-interfaces"></a><span id="hostinterface"></span> デバッガーのデータ モデルの C++ ホスト インターフェイス
-
-**デバッガー データ モデルのホスト**
-
-デバッガーのデータ モデルは、さまざまな異なるコンテキストでホスト可能なコンポーネント化されたシステム設計されています。 通常、データ モデルは、デバッガーのアプリケーションのコンテキストでホストされます。 データ モデルのホストをするためにはインターフェイスの数は、デバッガーの主な側面を公開する実装する必要があります: その対象とする、そのメモリ領域、そのエバリュエーター、そのシンボリック システムなどの入力としています.データ モデルをホストしたい任意のアプリケーションでは、これらのインターフェイスが実装される、コア データ モデルとデータ モデルと相互運用を任意の拡張機能の両方によって利用されます。 
-
-コア インターフェイスのセットは次のとおりです。 
+コアインターフェイスのセットは次のとおりです。 
 
 インターフェイス名 | 説明
 |--------------|---------------|
-IDebugHost | デバッグ ホストするコア インターフェイスです。
-IDebugHostStatus  | ホストの状態のクエリにクライアントを許可するインターフェイスです。
-IDebugHostContext  | ホストでのコンテキストの抽象化 (例: 特定のターゲット、特定のプロセスと特定のアドレス空間など.)。
-IDebugHostErrorSink  | ホストとデータ モデルの特定の部分からエラーを受信する呼び出し元によって実装されるインターフェイス
-IDebugHostEvaluator/IDebugHostEvaluator2  | デバッグ ホストの式エバリュエーター。
-IDebugHostExtensibility  | ホストの機能や、式エバリュエーター) などの部分を拡張するためのインターフェイスです。
+IDebugHost | デバッグホストへのコアインターフェイス。
+IDebugHostStatus  | クライアントがホストの状態を照会できるようにするインターフェイス。
+IDebugHostContext  | ホスト内でのコンテキストの抽象化 (例: 特定のターゲット、特定のプロセス、特定のアドレス空間など)。
+IDebugHostErrorSink  | ホストとデータモデルの特定の部分からのエラーを受信するために呼び出し元によって実装されるインターフェイス
+IDebugHostEvaluator / IDebugHostEvaluator2  | デバッグホストの式エバリュエーター。
+IDebugHostExtensibility  | ホストまたはその一部 (式エバリュエーターなど) の機能を拡張するためのインターフェイスです。
 
-型システムとシンボリック インターフェイスは。 
+型システムとシンボリックインターフェイスは次のとおりです。 
 
 InterfaceName | 説明
 |--------------|---------------|
-IDebugHostSymbols | アクセスおよびのシンボルの解決を提供するコア インターフェイス
-IDebugHostSymbol/IDebugHostSymbol2  | 任意の種類の 1 つのシンボルを表します。 特定のシンボルは、このインターフェイスの派生です。
-IDebugHostModule | プロセス内で読み込まれたモジュールを表します。 これは、シンボルの一種です。
-IDebugHostType/IDebugHostType2  | ネイティブ/言語の型を表します。
-IDebugHostConstant  | シンボリック情報内の定数を表します (例: C++ での非型テンプレート引数を)
+IDebugHostSymbols | シンボルへのアクセスと解決を提供するコアインターフェイス
+IDebugHostSymbol / IDebugHostSymbol2  | 任意の種類の1つの記号を表します。 特定のシンボルは、このインターフェイスの派生です。
+IDebugHostModule | プロセス内に読み込まれたモジュールを表します。 これは一種のシンボルです。
+IDebugHostType / IDebugHostType2  | ネイティブ/言語の型を表します。
+IDebugHostConstant  | シンボル情報内の定数を表します (例: のC++非型テンプレート引数)
 IDebugHostField  | 構造体またはクラス内のフィールドを表します。
-IDebugHostData | モジュール内でデータを表します (構造体またはクラス、IDebugHostField なります内でしたこの)
+IDebugHostData | モジュール内のデータを表します (これは、構造体またはクラス内では IDebugHostField になります)。
 IDebugHostBaseClass | 基本クラスを表します。
-IDebugHostPublic  | PDB の publics テーブル内のシンボルを表します。 関連付けの種類の情報はありません。 名前とアドレスをお勧めします。
-IDebugHostModuleSignature | モジュール署名 - これが一連のモジュール名やバージョンが一致する定義を表します
-IDebugHostTypeSignature | 型シグネチャ--これモジュールや名前によって、一連の型が一致する定義を表します
+IDebugHostPublic  | PDB の publics テーブル内のシンボルを表します。 これには、型情報が関連付けられていません。 これは名前とアドレスです。
+IDebugHostModuleSignature | モジュール署名を表します。これは、名前またはバージョン別にモジュールのセットと一致する定義です
+IDebugHostTypeSignature | 型シグネチャを表します。これは、モジュール名または名前によって型のセットに一致する定義です
 
 
-**Core のホスト インターフェイス:IDebugHost**
+**コアホストインターフェイス:IDebugHost**
 
-IDebugHost インターフェイスは、任意のデータ モデルのホストのコア インターフェイスです。 次のように定義されます。 
+IDebugHost インターフェイスは、任意のデータモデルホストのコアインターフェイスです。 次のように定義されています。 
 
 ```cpp
 DECLARE_INTERFACE_(IDebugHost, IUnknown)
@@ -90,21 +62,21 @@ DECLARE_INTERFACE_(IDebugHost, IUnknown)
 
 [GetHostDefinedInterface](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idebughost-gethostdefinedinterface)
 
-GetHostDefinedInterface メソッドは、このような特定のホストが存在する場合に、ホストの主要なプライベート インターフェイスを返します。 Windows のツールをデバッグ インターフェイスは、IDebugClient (IUnknown へのキャスト) は、ここで返されます。 
+GetHostDefinedInterface メソッドは、ホストのメインプライベートインターフェイスが、指定されたホストに存在する場合はそれを返します。 Windows 用のデバッグツールでは、ここで返されるインターフェイスは IDebugClient (IUnknown にキャスト) です。 
 
 [GetCurrentContext](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idebughost-getcurrentcontext)
 
-GetCurrentContext メソッドは、デバッガー ホストの現在の状態を表すインターフェイスを返します。 この厳密な意味は、ホストに委ねが、通常、セッション、プロセス、およびデバッグ ホストのユーザー インターフェイスでアクティブになっているアドレス空間などが含まれます。 返されるコンテキスト オブジェクトは、呼び出し元に大きく不透明が、重要なデバッグ ホストへの呼び出しの間で渡すオブジェクト。 呼び出し元は、メモリ、読み取り時に、メモリから読み取られているどのプロセスとアドレス空間を把握しておく。 その概念は、このメソッドから返されるコンテキスト オブジェクトの概念にカプセル化されます。 
+GetCurrentContext メソッドは、デバッガーホストの現在の状態を表すインターフェイスを返します。 これの正確な意味はホストに残されていますが、通常は、デバッグホストのユーザーインターフェイスでアクティブになっているセッション、プロセス、アドレス空間などが含まれます。 返されたコンテキストオブジェクトは、ほとんどの場合、呼び出し元には見えませんが、デバッグホストの呼び出しの間に渡す重要なオブジェクトです。 たとえば、呼び出し元がメモリを読み取る場合は、メモリの読み取り元のプロセスとアドレス空間を把握しておくことが重要です。 この概念は、このメソッドから返されるコンテキストオブジェクトの概念にカプセル化されています。 
 
 [GetDefaultMetadata](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idebughost-getdefaultmetadata)
 
-GetDefaultMetadata メソッドは、特定の操作に使用される可能性のある既定のメタデータ ストアを返します (例: 文字列変換) と明示的なメタデータが渡されていません。 これにより、デバッグ ホストをある程度の制御方法をいくつかのデータが表示されます。 たとえば、既定のメタデータは PreferredRadix キーを示すかどうか序数する必要がある 10 進数または 16 進数で表示されます。 それ以外の場合も指定しない場合、ホストがあるためを含めることができます。 
+GetDefaultMetadata メソッドは、明示的なメタデータが渡されていない場合に特定の操作 (例: 文字列の変換) に使用できる既定のメタデータストアを返します。 これにより、デバッグホストはデータの表示方法を制御できるようになります。 たとえば、既定のメタデータには PreferredRadix キーを含めることができます。これにより、ホストは、特に指定されていない場合に、序数を10進数または16進数で表示するかどうかを指定できます。 
 
-既定のメタデータ ストアのプロパティ値が手動で解決する必要があり、既定のメタデータのクエリ対象のオブジェクトを渡す必要がありますに注意してください。 GetKeyValue 代わり GetKey メソッドを使用する必要があります。 
+既定のメタデータストアのプロパティ値は、手動で解決する必要があり、既定のメタデータのクエリ対象となるオブジェクトを渡す必要があることに注意してください。 Getkey の代わりに GetKey メソッドを使用する必要があります。 
 
 **状態インターフェイス:IDebugHostStatus** 
 
-IDebugHostStatus インターフェイスでは、クライアントは、データ モデルのデバッグ ホストの状態の特定の側面について照会するデバッグ ホストできます。 インターフェイスの定義は次のとおりです。 
+IDebugHostStatus インターフェイスを使用すると、データモデルまたはデバッグホストのクライアントは、デバッグホストの状態の特定の側面を照会できます。 インターフェイスは次のように定義されます。 
 
 ```cpp
 DECLARE_INTERFACE_(IDebugHostStatus, IUnknown)
@@ -115,26 +87,26 @@ DECLARE_INTERFACE_(IDebugHostStatus, IUnknown)
 
 [PollUserInterrupt](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idebughoststatus-polluserinterrupt)
 
-デバッグ ホストのユーザーが現在の操作の中断を要求されたかどうかを照会する PollUserInterrupt メソッドが使用されます。 データ モデルのプロパティのアクセサーが任意のコードを呼び出すことがあります、たとえば、(例: JavaScript メソッド)。 そのコードは、任意の時間の長さをかかる場合があります。 デバッグ ホストの応答性を維持するためにこのメソッドの呼び出しを使用して、割り込み要求、任意の一定の時間がかかる場合がありますが、このようなコードを確認します。 InterruptRequested 値 true として戻す場合は、呼び出し元をすぐに中止し、E_ABORT の結果を返します。 
+PollUserInterrupt メソッドは、デバッグホストのユーザーが現在の操作の中断を要求したかどうかを照会するために使用されます。 たとえば、データモデル内のプロパティアクセサーでは、任意のコード (JavaScript メソッドなど) を呼び出すことができます。 そのコードは、任意の時間を要することがあります。 デバッグホストの応答性を維持するために、任意の時間を要する可能性のあるコードでは、このメソッドを呼び出すことによって、割り込み要求を確認する必要があります。 InterruptRequested 値が true として返された場合、呼び出し元はすぐに中止し、E_ABORT の結果を返す必要があります。 
 
 
-**コンテキスト インターフェイス:IDebugHostContext**
+**コンテキストインターフェイス:IDebugHostContext**
 
-コンテキストでは、データ モデルと基になるデバッグ ホストの最も重要な側面の 1 つです。 オブジェクトを保持することがある重要です--からのオブジェクトの入手先を認識できるどのようなプロセスでは、どのようなアドレス空間がそれに関連付けられています。 ポインター値などの正しい解釈は、この情報を把握できます。 型のオブジェクト IDebugHostContext 渡す必要があります多くのメソッドをデバッグ ホスト。 このインターフェイスは、さまざまな方法で取得できます。
+Context は、データモデルと基になるデバッグホストの最も重要な側面の1つです。 オブジェクトを保持する場合は、オブジェクトがどこから送信されたかを把握しておくことが重要です。これは、どのプロセスがどのようなものであるか、どのようなアドレス空間が関連付けられているかを把握できることです。 この情報を知っておくと、ポインター値などの正しい解釈を行うことができます。 IDebugHostContext 型のオブジェクトは、デバッグホストの多くのメソッドに渡す必要があります。 このインターフェイスは、さまざまな方法で取得できます。
 
-- デバッガーの現在のコンテキストを取得することによって: IDebugHost の GetCurrentContext メソッドを呼び出す
-- オブジェクトのコンテキストを取得することによって: IModelObject の GetContext メソッドを呼び出す
-- シンボルのコンテキストを取得することによって: IDebugHostSymbol の GetContext メソッドを呼び出す
+- デバッガーの現在のコンテキストを取得する方法: IDebugHost の GetCurrentContext メソッドの呼び出し
+- オブジェクトのコンテキストを取得する方法: IModelObject の GetContext メソッドの呼び出し
+- シンボルのコンテキストを取得する方法: IDebugHostSymbol の GetContext メソッドの呼び出し
 
-さらに、またはいずれかから返されたデータ モデルまたはデバッグ ホストのメソッドに渡される IDebugHostContext インターフェイスのコンテキストで特別な意味のある値は 2 つです。 
+さらに、2つの値があります。これは、IDebugHostContext インターフェイスのコンテキストでは、データモデルまたはデバッグホストメソッドによって返されるか、またはこのインターフェイスに渡されます。 
 
-*nullptr*: コンテキストがないことを示す値。 コンテキストがない一部のオブジェクトで完全に有効になります。 データ モデルのルート名前空間でデバッガー オブジェクトは、特定のプロセスまたはアドレス空間内のすべてには参照しません。 コンテキストがありません。
+*nullptr*: コンテキストが存在しないことを示します。 一部のオブジェクトがコンテキストを持たない場合は、完全に有効です。 データモデルのルート名前空間にあるデバッガーオブジェクトは、特定のプロセスまたはアドレス空間内のものを参照していません。 コンテキストがありません。
 
-*USE_CURRENT_HOST_CONTEXT*: いずれかを示す sentinel 値がデバッグ ホストの現在の UI コンテキストを使用する必要があります。 この値は、デバッグ ホストから返されません。 あるで可能性があります、ただし、IDebugHost の GetCurrentContext メソッドを明示的に呼び出す代わりの入力の IDebugHostContext はデバッグ ホストのメソッドに渡されます。 USE_CURRENT_HOST_CONTEXT を明示的に渡すこと、現在のコンテキストを明示的に取得するよりもパフォーマンスが向上は、多くの場合に注意してください。 
+*USE_CURRENT_HOST_CONTEXT*: 一方がデバッグホストの現在の UI コンテキストを使用する必要があることを示す sentinel 値。 この値は、デバッグホストからは返されません。 ただし、IDebugHost の GetCurrentContext メソッドを明示的に呼び出す代わりに入力 IDebugHostContext を受け取るデバッグホストメソッドに渡すこともできます。 USE_CURRENT_HOST_CONTEXT を明示的に渡すことは、多くの場合、現在のコンテキストを明示的に取得するよりもパフォーマンスに優れています。 
 
-ホスト コンテキストのコンテキストは呼び出し元に主に非透過的です。 コアのデバッグ ホストの外部の呼び出し元は、ホストのコンテキストで実行できる唯一の操作では、別のホスト コンテキストと比較します。 
+ホストコンテキストのコンテキストは、ほとんどの場合、呼び出し元に対して非透過的です。 コアデバッグホストの外部の呼び出し元がホストコンテキストで実行できる唯一の操作は、別のホストコンテキストと比較することです。 
 
-IDebugHostContext インターフェイスの定義は次のとおりです。 
+IDebugHostContext インターフェイスは、次のように定義されています。 
 
 ```cpp
 DECLARE_INTERFACE_(IDebugHostContext, IUnknown)
@@ -145,12 +117,12 @@ DECLARE_INTERFACE_(IDebugHostContext, IUnknown)
 
 [IsEqualTo](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idebughostcontext-isequalto)
 
-IsEqualTo メソッドは、ホストのコンテキストを別のホスト コンテキストを比較します。 2 つのコンテキストと同じ場合は、これを示す値が返されます。 この比較がインターフェイスの等価性ではないことに注意してください。 これは、コンテキスト自体の基になる非透過の内容を比較します。 
+IsEqualTo メソッドは、ホストコンテキストを別のホストコンテキストと比較します。 2つのコンテキストが等しい場合は、このを示す値が返されます。 この比較は、インターフェイスの等価性ではないことに注意してください。 これにより、コンテキスト自体の基になる非透過コンテンツが比較されます。 
 
 
-**エラー シンク。IDebugHostErrorSink**
+**エラーシンク:IDebugHostErrorSink**
 
-特定の操作中に発生して、これらのエラーのルーティング エラーの通知をクライアントから受信できる手段になります、IDebugHostErrorSink 必要な場所。 インターフェイスの定義は次のとおりです。 
+IDebugHostErrorSink は、特定の操作中に発生したエラーの通知をクライアントが受信し、必要に応じてそれらのエラーをルーティングする手段です。 インターフェイスは次のように定義されます。 
 
 ```cpp
 enum ErrorClass
@@ -169,14 +141,14 @@ DECLARE_INTERFACE_(IDebugHostErrorSink, IUnknown)
 
 [ReportError](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idebughosterrorsink-reporterror)
 
-ReportError メソッドは、エラーが発生したことを通知し、任意の UI またはメカニズムが適切なエラーにルーティングするシンク エラー シンク上でのコールバック。 
+ReportError メソッドは、エラーが発生したことを通知するエラーシンクのコールバックです。シンクは、適切な UI やメカニズムにエラーをルーティングできます。 
 
 
-**ホスト エバリュエータ:IDebugHostEvaluator/IDebugHostEvaluator2**
+**ホストエバリュエーター:IDebugHostEvaluator / IDebugHostEvaluator2**
 
-デバッグ ホストをクライアントに提供する機能の最も重要な情報の 1 つは、そのベース言語の式エバリュエーターにアクセスします。 IDebugHostEvaluator と IDebugHostEvaluator2 インターフェイスは、デバッグ ホストからその機能にアクセスする手段です。 
+デバッグホストがクライアントに提供する最も重要な機能の1つは、その言語ベースの式エバリュエーターにアクセスすることです。 IDebugHostEvaluator インターフェイスと IDebugHostEvaluator2 インターフェイスは、デバッグホストからその機能にアクセスするための手段です。 
 
-インターフェイスの定義は次のとおりです。 
+これらのインターフェイスは、次のように定義されています。 
 
 ```cpp
 DECLARE_INTERFACE_(IDebugHostEvaluator2, IDebugHostEvaluator)
@@ -193,25 +165,25 @@ DECLARE_INTERFACE_(IDebugHostEvaluator2, IDebugHostEvaluator)
 }
 ```
 
-[式の評価](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idebughostevaluator-evaluateexpression)
+[EvaluateExpression](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idebughostevaluator-evaluateexpression)
 
-式の評価方法は、言語を評価するデバッグ ホストの要求を許可 (例。C++) の式とその式の評価の結果として得られる値を返しますが、IModelObject としてボックス化されます。 メソッドのこの特定のバリアントは、言語構成要素を許可するだけです。 他の機能が言語に存在しないデバッグ ホストの式エバリュエーターで表示されます (例。LINQ クエリ メソッド) は、評価のため無効になります。 
+EvaluateExpression メソッドを使用すると、デバッグホストに言語を評価するように要求できます (例:C++) 式を指定し、その式の評価の結果の値を IModelObject としてボックス化して返します。 メソッドのこの特定のバリアントでは、言語コンストラクトのみを使用できます。 言語に存在しないデバッグホストの式エバリュエーターに表示される追加の機能 (例:LINQ クエリメソッド) は、評価のために無効になっています。 
 
 [EvaluateExtendedExpression](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idebughostevaluator-evaluateextendedexpression)
 
-EvaluateExtendedExpression メソッドはを有効に戻す、式エバリュエーターに追加する特定のデバッグ ホストを選択する以外の言語機能を追加する点を除いて、式の評価メソッドに似ています。 Windows のツールをデバッグなど、これを行うと匿名型、LINQ クエリ、モジュールの修飾子、書式指定子およびその他の C と C++ の機能です。 
+EvaluateExtendedExpression メソッドは EvaluateExpression メソッドに似ていますが、特定のデバッグホストが式エバリュエーターに追加することを選択する追加の言語以外の機能が再び有効になる点が異なります。 たとえば、Windows 用のデバッグツールでは、匿名型、LINQ クエリ、モジュール修飾子、書式指定子、および C 以外のその他C++の機能を使用できます。 
 
 
 **IDebugHostEvaluator2**
 
-[AssignTo](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idebughostevaluator2-assignto)
+[割り当て先](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idebughostevaluator2-assignto)
 
-AssignTo メソッドは、デバッグされている言語のセマンティクスに従って割り当てを実行します。 
+割り当て方法は、デバッグ対象の言語のセマンティクスに従って割り当てを実行します。 
 
 
-**ホストの機能拡張インターフェイス:IDebugHostExtensibility**
+**ホスト機能拡張インターフェイス:IDebugHostExtensibility**
 
-デバッグ ホストの特定の機能は拡張オプションです。 たとえば、式エバリュエーターを含めるこれ、可能性があります。 IDebugHostExtensibility インターフェイスは、これらの拡張ポイントをアクセスする手段です。 インターフェイスの定義は次のとおりです。 
+デバッグホストの特定の機能は、必要に応じて、機能拡張に従うことができます。 たとえば、式エバリュエーターを含めることができます。 IDebugHostExtensibility インターフェイスは、これらの拡張ポイントにアクセスするための手段です。 インターフェイスは次のように定義されます。 
 
 ```cpp
 DECLARE_INTERFACE_(IDebugHostExtensibility, IUnknown)
@@ -223,28 +195,28 @@ DECLARE_INTERFACE_(IDebugHostExtensibility, IUnknown)
 
 [CreateFunctionAlias](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idebughostextensibility-createfunctionalias)
 
-CreateFunctionAlias メソッドは、「関数のエイリアス」、いくつかの拡張機能で実装されるメソッドの「クイック エイリアス」を作成します。 このエイリアスの意味は、特定のホストです。 関数で、ホストの式エバリュエーターを拡張することがありますか、まったく異なるものに行うことができます。 
+CreateFunctionAlias メソッドは、一部の拡張機能で実装されているメソッドの "関数エイリアス"、つまり "クイックエイリアス" を作成します。 このエイリアスの意味はホスト固有です。 これは、関数を使用してホストの式エバリュエーターを拡張する場合もあれば、まったく異なる処理を実行する場合もあります。 
 
 [DestroyFunctionAlias](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idebughostextensibility-destroyfunctionalias)
 
-DestroyFunctionAlias メソッド元 CreateFunctionAlias メソッドを呼び出す前に戻します。 関数は、クイック別名で使用可能なされなくなります。 
+DestroyFunctionAlias メソッドは、CreateFunctionAlias メソッドの前の呼び出しを元に戻します。 関数は、クイックエイリアス名では使用できなくなります。 
 
 
 
-## <a name="span-idaccessdatamodel-accessing-the-data-model"></a><span id="accessdatamodel"> データ モデルにアクセスします。
+## <a name="span-idaccessdatamodel-accessing-the-data-model"></a><span id="accessdatamodel">データモデルへのアクセス
 
-第一に、データ モデルの機能拡張の Api がデータ モデルのホストとして機能するアプリケーション (通常はデバッガー) に依存しないにデザインされています。 理論上は、任意のアプリケーションは、一連のホストについて、どのようなターゲット、プロセス、スレッド、データ モデルの名前空間に、アプリケーションのデバッグ ターゲットの型システムと、射影されたオブジェクトのセットを公開する Api を提供することで、データ モデルをホストできるなどしています.は、ターゲットをデバッグします。 
+まず、データモデルの機能拡張 Api は、データモデルのホストとして機能するアプリケーション (通常はデバッガー) と中立的になるように設計されています。 理論的には、アプリケーションは、アプリケーションのデバッグターゲットの型システムと一連の射影されたオブジェクトを、ターゲット、プロセス、スレッドなどに関するデータモデルの名前空間に公開する一連のホスト Api を提供することで、データモデルをホストできます。これらのデバッグターゲットに含まれています。 
 
-データ モデルの Api - IDataModel を開始するときに<em>、IDebugHost</em>、定義しない、IModelObject--の集めてを移植できるように設計がどのような「デバッガー拡張機能」は。 今日では、Windows のツールのデバッグと、エンジンを拡張することを希望するコンポーネントは、データ モデルへのアクセスを取得するためにエンジンの拡張機能を記述する必要があります。 そのエンジンの拡張機能は、読み込みと拡張機能のメカニズムをブートス トラップにはエンジンの拡張機能にのみ必要があります。 そのため、最小限の実装は提供します。 
+データモデル Api (IDataModel<em>、IDebugHost</em>、IModelObject を開始するもの) は、移植性のあるものとして設計されていますが、"デバッガー拡張機能" を定義していません。 現在、Windows 用のデバッグツールとそれが提供するエンジンを拡張する必要があるコンポーネントは、データモデルにアクセスするためにエンジン拡張機能を記述する必要があります。 このエンジン拡張機能は、拡張機能の読み込みとブートストラップのメカニズムと同様に、エンジン拡張機能である必要があります。 そのため、最小限の実装は次のようになります。 
 
-- **DebugExtensionInitialize**:データ モデルにアクセスするために作成された IDebugClient を利用し、オブジェクト モデルの操作を設定するメソッド。
-- **DebugExtensionUninitialize**:DebugExtensionInitialize で実行されたオブジェクト モデルの操作を元に戻す方法。
-- **DebugExtensionCanUnload**:拡張機能をアンロードできるかどうかを返すメソッド。 拡張機能にまだ存在している COM オブジェクトがある場合、これを示す必要があります。 これは、COM の DllCanUnloadNow のデバッガーのと同じです。 アンロードできない S_FALSE を示す値を返すこの場合、デバッガーはアンロードが安全か DebugExtensionInitialize をもう一度呼び出すことによって、拡張機能を再初期化できますが後でこのクエリを実行できます。 拡張機能は、両方のパスを処理するために準備する必要があります。
-- **DebugExtensionUnload**:最終的なクリーンアップを行うメソッドには右が必要な DLL をアンロードする前に
+- **Debugextensioninitialize**:作成された IDebugClient を利用して、データモデルへのアクセスを取得し、オブジェクトモデルの操作を設定するメソッド。
+- **Debugextensionuninitialize**解除:DebugExtensionInitialize で実行されたオブジェクトモデルの操作を元に戻すメソッド。
+- **Debugextensioncanunload**:拡張機能をアンロードできるかどうかを返すメソッド。 拡張機能にライブ COM オブジェクトが残っている場合は、これを示す必要があります。 これは、デバッガーの COM の DllCanUnloadNow に相当します。 アンロードできないことを示す S_FALSE が返された場合、デバッガーは後でこのクエリを実行してアンロードが安全かどうかを確認したり、DebugExtensionInitialize を再度呼び出して拡張機能を再初期化したりすることができます。 この拡張機能は、両方のパスを処理できるように準備する必要があります。
+- **Debugextensionunload**:DLL のアンロードの直前に必要な最後のクリーンアップを実行するメソッド
 
-*ブリッジ インターフェイス:IHostDataModelAccess*
+*ブリッジインターフェイス:IHostDataModelAccess*
 
-説明したとおり、DebugExtensionInitialize が呼び出されると、デバッグのクライアントを作成し、データ モデルへのアクセスを取得します。 このようなアクセスは、Windows のツールのデバッグのレガシ IDebug * インターフェイスとデータ モデルの間のブリッジ インターフェイスによって提供されます。 このブリッジ インターフェイスは、' IHostDataModelAccess が次のように定義されているとします。 
+前述のように、DebugExtensionInitialize を呼び出すと、デバッグクライアントが作成され、データモデルにアクセスできるようになります。 このようなアクセスは、Windows 用のデバッグツールおよびデータモデルの従来の IDebug * インターフェイス間のブリッジインターフェイスによって提供されます。 このブリッジインターフェイスは "IHostDataModelAccess" で、次のように定義されています。 
 
 ```cpp
 DECLARE_INTERFACE_(IHostDataModelAccess, IUnknown)
@@ -255,48 +227,48 @@ DECLARE_INTERFACE_(IHostDataModelAccess, IUnknown)
 
 [GetDataModel](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-ihostdatamodelaccess-getdatamodel)
 
-GetDataModel メソッドは、データ モデルの両方の側へのアクセスを提供するブリッジ インターフェイスでメソッドを示します。デバッグ ホスト (デバッガーの下端) は、データ モデルの主要なコンポーネント - データ モデルのマネージャーは、返された IDataModelManager インターフェイスによって表されます。 返された IDebugHost インターフェイスによって表されます
+GetDataModel メソッドは、データモデルの両側へのアクセスを提供するブリッジインターフェイスのメソッドです。デバッグホスト (デバッガーの下端) は、返された IDebugHost インターフェイスのデータモデルのメインコンポーネントによって表されます。データモデルマネージャーは、返された IDataModelManager インターフェイスによって表されます。
 
 
 
-## <a name="span-idsysteminterfacesspan-debugger-data-model-system-interfaces"></a><span id="systeminterfaces"></span> デバッガーのデータ モデル システム インターフェイス
+## <a name="span-idsysteminterfacesspan-debugger-data-model-system-interfaces"></a><span id="systeminterfaces"></span>デバッガーデータモデルのシステムインターフェイス
 
-**データ モデルのホスト**
+**データモデルホスト**
 
-デバッガーのデータ モデルは、さまざまな異なるコンテキストでホスト可能なコンポーネント化されたシステム設計されています。 通常、データ モデルは、デバッガーのアプリケーションのコンテキストでホストされます。 データ モデルのホストをするためにはインターフェイスの数は、デバッガーの主な側面を公開する実装する必要があります: その対象とする、そのメモリ領域、そのエバリュエーター、そのシンボリック システムなどの入力としています.データ モデルをホストしたい任意のアプリケーションでは、これらのインターフェイスが実装される、コア データ モデルとデータ モデルと相互運用を任意の拡張機能の両方によって利用されます。 
+デバッガーデータモデルは、さまざまな異なるコンテキストでホストできる、コンポーネント化されたシステムとして設計されています。 通常、データモデルは、デバッガーアプリケーションのコンテキストでホストされます。 データモデルのホストにするには、デバッガーの主要な側面を公開するために、いくつかのインターフェイスを実装する必要があります。これには、ターゲット、メモリ空間、エバリュエーター、シンボルと型システムなどが含まれます。これらのインターフェイスは、データモデルをホストするアプリケーションによって実装されますが、コアデータモデルと、データモデルと相互運用する任意の拡張機能によって使用されます。 
 
-型システムとシンボリック インターフェイスは。 
+型システムとシンボリックインターフェイスは次のとおりです。 
 
 
 インターフェイス名 | 説明
 |--------------|------------------|
-IDebugHostSymbols  | アクセスおよびのシンボルの解決を提供するコア インターフェイス
-IDebugHostSymbol/IDebugHostSymbol2  | 任意の種類の 1 つのシンボルを表します。 特定のシンボルは、このインターフェイスの派生です。
-IDebugHostModule  | プロセス内で読み込まれたモジュールを表します。 これは、シンボルの一種です。
-IDebugHostType/IDebugHostType2  | ネイティブ/言語の型を表します。
-IDebugHostConstant  | シンボリック情報内の定数を表します (例: C++ での非型テンプレート引数を)
+IDebugHostSymbols  | シンボルへのアクセスと解決を提供するコアインターフェイス
+IDebugHostSymbol / IDebugHostSymbol2  | 任意の種類の1つの記号を表します。 特定のシンボルは、このインターフェイスの派生です。
+IDebugHostModule  | プロセス内に読み込まれたモジュールを表します。 これは一種のシンボルです。
+IDebugHostType / IDebugHostType2  | ネイティブ/言語の型を表します。
+IDebugHostConstant  | シンボル情報内の定数を表します (例: のC++非型テンプレート引数)
 IDebugHostField | 構造体またはクラス内のフィールドを表します。
-IDebugHostData | モジュール内でデータを表します (構造体またはクラス、IDebugHostField なります内でしたこの)
+IDebugHostData | モジュール内のデータを表します (これは、構造体またはクラス内では IDebugHostField になります)。
 IDebugHostBaseClass  | 基本クラスを表します。
-IDebugHostPublic | PDB の publics テーブル内のシンボルを表します。 関連付けの種類の情報はありません。 名前とアドレスをお勧めします。
-IDebugHostModuleSignature | モジュール署名 - これが一連のモジュール名やバージョンが一致する定義を表します
-IDebugHostTypeSignature | 型シグネチャ--これモジュールや名前によって、一連の型が一致する定義を表します
+IDebugHostPublic | PDB の publics テーブル内のシンボルを表します。 これには、型情報が関連付けられていません。 これは名前とアドレスです。
+IDebugHostModuleSignature | モジュール署名を表します。これは、名前またはバージョン別にモジュールのセットと一致する定義です
+IDebugHostTypeSignature | 型シグネチャを表します。これは、モジュール名または名前によって型のセットに一致する定義です
 
-その他の主要なインターフェイスは次のとおりです。 
+その他のコアインターフェイスは次のとおりです。 
 
 インターフェイス名 | 説明
 |--------------|------------------|
-IDebugHost | デバッグ ホストするコア インターフェイスです。
-IDebugHostStatus | ホストの状態のクエリにクライアントを許可するインターフェイスです。
-IDebugHostContext | ホストでのコンテキストの抽象化 (例: 特定のターゲット、特定のプロセスと特定のアドレス空間など.)。
-IDebugHostErrorSink | ホストとデータ モデルの特定の部分からエラーを受信する呼び出し元によって実装されるインターフェイス
-IDebugHostEvaluator/IDebugHostEvaluator2 | デバッグ ホストの式エバリュエーター。
-IDebugHostExtensibility | ホストの機能や、式エバリュエーター) などの部分を拡張するためのインターフェイスです。
+IDebugHost | デバッグホストへのコアインターフェイス。
+IDebugHostStatus | クライアントがホストの状態を照会できるようにするインターフェイス。
+IDebugHostContext | ホスト内でのコンテキストの抽象化 (例: 特定のターゲット、特定のプロセス、特定のアドレス空間など)。
+IDebugHostErrorSink | ホストとデータモデルの特定の部分からのエラーを受信するために呼び出し元によって実装されるインターフェイス
+IDebugHostEvaluator / IDebugHostEvaluator2 | デバッグホストの式エバリュエーター。
+IDebugHostExtensibility | ホストまたはその一部 (式エバリュエーターなど) の機能を拡張するためのインターフェイスです。
 
 
-**メインのシンボリック インターフェイス:IDebugHostSymbols**
+**メインのシンボリックインターフェイス:IDebugHostSymbols**
 
-IDebugHostSymbols インターフェイスとは、デバッグ対象のアクセスのシンボルにメインの開始点です。 このインターフェイスは IDebugHost のインスタンスからクエリを実行でき、次のように定義されています。 
+IDebugHostSymbols インターフェイスは、デバッグターゲットのシンボルにアクセスするための主要な開始点です。 このインターフェイスは、IDebugHost のインスタンスからクエリを実行でき、次のように定義されています。 
 
 ```cpp
 DECLARE_INTERFACE_(IDebugHostSymbols, IUnknown)
@@ -313,42 +285,42 @@ DECLARE_INTERFACE_(IDebugHostSymbols, IUnknown)
 
 [CreateModuleSignature](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idebughostsymbols-createmodulesignature)
 
-CreateModuleSignature メソッドは、名前とバージョンによって、必要に応じて、特定のモジュールのセットに一致するために使用する署名を作成します。 モジュール署名に 3 つのコンポーネントです。 
+CreateModuleSignature メソッドは、特定のモジュールのセットを名前で一致させるために使用できる署名を作成します。また、必要に応じてバージョンを指定します。 モジュール署名には、次の3つのコンポーネントがあります。 
 
-- 名前: 一致するモジュールには、署名内の名前に対する大文字と小文字を区別しない一致する名前が必要です。
-- 最小バージョン: これは、少なくともこのバージョンと同程度に高バージョンを指定した場合一致するモジュールである必要があります。 バージョンは、以前よりも重要度の低いされている各後続の部分に"A.B.C.D"の形式で指定されます。 最初のセグメントのみが必須です。
-- 最大バージョン: 場合は、指定された一致するモジュールがこのバージョン以上である最大バージョンをいる必要があります。 バージョンは、以前よりも重要度の低いされている各後続の部分に"A.B.C.D"の形式で指定されます。 最初のセグメントのみが必須です。
+- 名前: 一致するモジュールは、署名内の名前と一致する大文字と小文字が区別されない名前を持つ必要があります
+- 最小バージョン: 指定されている場合、一致するモジュールは、少なくともこのバージョンの最小バージョンを持つ必要があります。 バージョンは "A. b. d." 形式で指定され、後続の各部分は前よりも重要度が低くなります。 最初のセグメントのみが必須です。
+- 最大バージョン: 指定されている場合、一致するモジュールの最大バージョンは、このバージョン以下である必要があります。 バージョンは "A. b. d." 形式で指定され、後続の各部分は前よりも重要度が低くなります。 最初のセグメントのみが必須です。
 
 [CreateTypeSignature](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idebughostsymbols-createtypesignature)
 
-CreateTypeSignature メソッドは、モジュールと型名を格納している別の一連の具象型に一致するために使用する署名を作成します。 型名の署名文字列の形式はデバッグ中の言語に固有です (および、デバッグ ホスト)。 C と C++ の署名文字列は、NatVis 型の指定と同じです。 署名文字列は、型名をワイルドカード (として指定された *) のテンプレート引数が許可されます。 
+CreateTypeSignature メソッドは、モジュール名と型名を含む一連の具象型を照合するために使用できるシグネチャを作成します。 型名の署名文字列の形式は、デバッグされる言語 (およびデバッグホスト) に固有です。 C/C++の場合、署名文字列は NatVis 型の仕様に相当します。 つまり、署名文字列は、ワイルドカード (*) がテンプレート引数として許可されている型名です。 
 
 [CreateTypeSignatureForModuleRange](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idebughostsymbols-createtypesignatureformodulerange)
 
-CreateTypeSignatureForModuleRange メソッドは、具象型のセットに一致するモジュールの署名と型名で使用できる署名を作成します。 これは、シグネチャの一致するように特定のモジュールを渡す代わりに、呼び出し元引数を渡しますモジュールの署名を作成するために必要なドキュメントを除く CreateTypeSignature メソッドに似ています (モジュールの署名で作成された場合に、CreateModuleSignature メソッド)。 
+CreateTypeSignatureForModuleRange メソッドは、モジュールのシグネチャと型名によって具象型のセットを照合するために使用できるシグネチャを作成します。 これは、CreateTypeSignature メソッド違うに似ています。これは、シグネチャに一致する特定のモジュールを渡すのではなく、モジュール署名を作成するために必要な引数を呼び出し元が渡します。CreateModuleSignature メソッド)。 
 
 [EnumerateModules](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idebughostsymbols-enumeratemodules)
 
-EnumerateModules メソッドは、特定のホストのコンテキストで使用できるすべてのモジュールを列挙する列挙子を作成します。 そのホスト コンテキストがプロセスのコンテキストをカプセル化、または Windows カーネルのようなものがカプセル化があります。 
+列挙子のメソッドは、特定のホストコンテキストで使用可能なすべてのモジュールを列挙する列挙子を作成します。 そのホストコンテキストは、プロセスコンテキストをカプセル化する場合もあれば、Windows カーネルのようなものをカプセル化する場合もあります。 
 
 
 [FindModuleByName](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idebughostsymbols-findmodulebyname)
 
-FindModuleByName メソッドでは、特定のホスト コンテキストをよく見て、指定した名前を持つモジュールを特定およびそのにインターフェイスが返しますされます。 名前のファイル拡張子の有無で、モジュールを検索することはできます。 
+FindModuleByName メソッドは、指定されたホストコンテキストを検索し、指定された名前を持つモジュールを見つけて、それに対するインターフェイスを返します。 ファイル拡張子の有無に関係なく、名前でモジュールを検索することはできます。 
 
 [FindModuleByLocation](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idebughostsymbols-findmodulebylocation)
 
-FindModuleByLocation メソッドでは、特定のホスト コンテキスト全体を確認し、どのようなモジュールには、指定した場所によって指定されたアドレスが含まれるを決定します。 このようなモジュールに、インターフェイスを返します。 
+FindModuleByLocation メソッドは、指定されたホストコンテキストを検索し、指定した場所によって指定されたアドレスを含むモジュールを判別します。 その後、そのモジュールにインターフェイスが返されます。 
 
 [GetMostDerivedObject](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idebughostsymbols-getmostderivedobject)
 
-GetMostDerivedObject は、静的な型のオブジェクトのランタイム型を決定するのに、デバッガーの型システムを使用します。 このメソッドはのみを使用して、シンボリック情報とヒューリスティックを使用可能な型システム レイヤーでこの分析を実行するには。 このような情報は、C++ RTTI を (実行時型情報) またはオブジェクトの仮想関数テーブルの形状の分析に含めることができます。 推奨ランタイム型の概念上、IModelObject などは含まれません。 分析では、ランタイム型が見つからないか、メソッドに渡される静的な型と異なるランタイム型を見つけることができません場合、入力場所と種類渡す可能性があります。これらの理由から、メソッドは失敗しません。 
+GetMostDerivedObject は、デバッガーの型システムを使用して、静的な型からオブジェクトのランタイム型を判断します。 このメソッドは、この分析を実行するために、型システムレイヤーで使用できるシンボル情報とヒューリスティックのみを使用します。 このような情報C++には、RTTI (実行時の型情報)、またはオブジェクトの仮想関数テーブルの構造の分析が含まれる場合があります。 IModelObject での推奨されるランタイム型の概念などは含まれません。 分析がランタイム型を見つけられない場合、またはメソッドに渡された静的な型とは異なるランタイム型が見つからない場合は、入力の場所と型が渡される可能性があります。このような理由で、メソッドは失敗しません。 
 
 
 
-**コアの個別のシンボル インターフェイス:IDebugHostSymbol**
+**コアの個々のシンボルインターフェイスは次のとおりです。IDebugHostSymbol**
 
-データ モデルのホストから返されるすべてのシンボルは、なんらかの方法で IDebugHostSymbol から派生されます。 これは、すべてのシンボルをシンボルの種類に関係なく実装するコア インターフェイスです。 シンボルの種類、に応じて特定のシンボルは属性を返しますより一意な特定の種類のシンボル名のこのインターフェイスによって他のインターフェイスのセットを実装できます。 IDebugHostSymbol2 IDebugHostSymbol インターフェイスが次のように定義されている/。 
+データモデルホストから返される可能性があるすべてのシンボルは、IDebugHostSymbol から何らかの方法で派生します。 これは、シンボルの種類に関係なく、すべてのシンボルが実装するコアインターフェイスです。 シンボルの種類によっては、指定されたシンボルが、このインターフェイスによって表される特定の種類のシンボルに対してより一意な属性を返す他のインターフェイスのセットを実装する場合があります。 IDebugHostSymbol2/IDebugHostSymbol インターフェイスは、次のように定義されています。 
 
 ```cpp
 DECLARE_INTERFACE_(IDebugHostSymbol2, IDebugHostSymbol)
@@ -370,34 +342,34 @@ DECLARE_INTERFACE_(IDebugHostSymbol2, IDebugHostSymbol)
 }
 ```
 
-このインターフェイスが次のように値を持つ SymbolKind 列挙体によって区切られた--シンボルのさまざまな種類を表すことに注意してください。 非常に重要ですが。 
+このインターフェイスは、次のように値を持つシンボルの種類の列挙によって区切られた、さまざまな種類のシンボルを表すことに注意してください。 
 
 Enumarant | 説明
 |--------------|------------------|
-シンボル  | 指定されていないシンボルの種類 
-SymbolModule | シンボルのモジュールし、IDebugHostModule に対してクエリを実行できます。
-SymbolType | シンボルは型であり IDebugHostType を照会することができます。
-SymbolField | シンボルはフィールド (構造体またはクラス内でのデータ メンバー) であり IDebugHostField を照会することができます。
-SymbolConstant | シンボルは定数値と IDebugHostConstant に対してクエリを実行できます。
-SymbolData | シンボルは、これは構造体またはクラスのメンバーでありは IDebugHostData のクエリ可能なデータ
-SymbolBaseClass | シンボルの基本クラスし、IDebugHostBaseClass のクエリです。
-SymbolPublic | シンボル (型情報を持たない) モジュールの publics テーブル内のエントリし、IDebugHostPublic のクエリです。
-SymbolFunction | シンボルは関数であり IDebugHostData のクエリです。
+シンボル  | シンボルの種類が指定されていません 
+シンボルモジュール | シンボルはモジュールであり、IDebugHostModule に対してクエリを実行できます。
+シンボルの種類 | シンボルは型であり、IDebugHostType に対してクエリを実行できます。
+シンボルフィールド | シンボルはフィールド (構造体またはクラス内のデータメンバー) であり、IDebugHostField に対してクエリを実行できます。
+シンボル定数 | シンボルは定数値であり、IDebugHostConstant に対してクエリを実行できます。
+シンボルデータ | シンボルは、構造体またはクラスのメンバーではなく、IDebugHostData に対してクエリ可能なデータです。
+SymbolBaseClass | シンボルは基本クラスであり、IDebugHostBaseClass に対してクエリ可能です。
+シンボルパブリック | シンボルは、モジュールの publics テーブル内のエントリ (型情報を持たない) で、IDebugHostPublic に対してクエリ可能です。
+シンボル関数 | シンボルは関数であり、IDebugHostData に対してクエリ可能です。
 
 [GetContext](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idebughostsymbol-getcontext)
 
-GetContext メソッドは、シンボルが有効なコンテキストを返します。 など、シンボルが存在するデバッグ ターゲットおよびプロセス/アドレス領域を表すこれは、中にある可能性がありますいない具体的には、他の方法から取得したコンテキスト (例:: から、 *IModelObject*)。 
+GetContext メソッドは、シンボルが有効なコンテキストを返します。 これは、シンボルが存在するデバッグターゲットやプロセス/アドレス空間などを表しますが、他の手段から取得されたコンテキスト ( *Imodelobject*など) とは異なる場合があります。 
 
 [EnumerateChildren](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idebughostsymbol-enumeratechildren)
 
-EnumerateChildren メソッドは、特定のシンボルのすべての子を列挙する列挙子を返します。 基底クラス、フィールド、たとえば、C++ の型のメンバー関数、およびなどは、型のシンボルのすべてと見なされますの子です。 
+EnumerateChildren メソッドは、指定されたシンボルのすべての子を列挙する列挙子を返します。 たとえば、 C++型の場合、基本クラス、フィールド、メンバー関数、およびなどはすべて、型シンボルの子と見なされます。 
 
 
-**モジュール インターフェイス:IDebugHostModule**
+**モジュールインターフェイス:IDebugHostModule**
 
-デバッガーの概念のいくつかのアドレス空間内で読み込まれるモジュールは、データ モデル内の 2 つの点で表されます。IDebugHostModule インターフェイス経由で型システム レベル。 ここでは、モジュールは、シンボルとモジュールの core 属性はインターフェイス メソッドを呼び出す予測データ モデルで Debugger.Models.Module のデータ モデルを使用してレベル。 これは、型システム モジュールの IDebugHostModule 表現の拡張可能なカプセル化します。
+いくつかのアドレス空間内に読み込まれたモジュールのデバッガーの概念は、データモデルの2つの異なる方法で表されます。IDebugHostModule インターフェイスを使用して、型システムレベルで。 ここでは、モジュールはシンボルであり、モジュールのコア属性は、デバッガーを介してデータモデルレベルで投影されたインターフェイスメソッド呼び出しです。 これは、モジュールの型システム IDebugHostModule 表現の拡張可能なカプセル化です。
 
-IDebugHostModule インターフェイスは、次のとおりです (IDebugHostSymbol の一般的なメソッドを無視します) として定義されます。 
+IDebugHostModule インターフェイスは、次のように定義されています (IDebugHostSymbol に汎用のメソッドは無視されます)。 
 
 ```cpp
 DECLARE_INTERFACE_(IDebugHostModule, IDebugHostSymbol)
@@ -416,45 +388,45 @@ DECLARE_INTERFACE_(IDebugHostModule, IDebugHostSymbol)
 
 [GetImageName](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idebughostmodule-getimagename)
 
-GetImageName メソッドは、モジュールのイメージの名前を返します。 AllowPath 引数の値、によって返されるイメージの名前は可能性があります。 またはイメージへの完全パスを含めることはできません。
+GetImageName メソッドは、モジュールのイメージ名を返します。 AllowPath 引数の値によっては、返されるイメージ名にイメージの完全パスが含まれる場合と、含まれない場合があります。
 
 [GetBaseLocation](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idebughostmodule-getbaselocation)
 
-GetBaseLocation メソッドは、場所の構造体として、モジュールのベース読み込みアドレスを返します。 モジュール、構造体の返される場所は、通常仮想アドレスを参照してください。
+GetBaseLocation メソッドは、モジュールのベース読み込みアドレスを場所構造体として返します。 モジュールに対して返される場所の構造は、通常、仮想アドレスを参照します。
 
 [GetVersion](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idebughostmodule-getversion)
 
-GetVersion メソッドは、(このような情報はヘッダーから正常に読み取ることができますを想定) モジュールのバージョン情報を返します。 読み取ることができません (nullptr 以外の出力ポインター) を使用して、指定したバージョンが要求された場合、適切なエラー コードがメソッドの呼び出しから返されます。 
+GetVersion メソッドは、モジュールに関するバージョン情報を返します (この情報をヘッダーから正常に読み取ることができることを前提としています)。 (Nullptr 以外の出力ポインターによって) 特定のバージョンが要求され、それを読み取ることができない場合、メソッド呼び出しから適切なエラーコードが返されます。 
 
 [FindTypeByName](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idebughostmodule-findtypebyname)
 
-FindTypeByName メソッドは、型名で、モジュール内で定義された型を検索して、その型のシンボルを返します。 このメソッドは、モジュールの子の明示的な再帰を使用して返されることはありませんが有効な IDebugHostType を返す可能性があります。 デバッグ ホストは、派生型、モジュール自体内で使用されることはありませんが、ある型から派生した型の作成を許可することがあります。 たとえば、モジュールが、MyStruct 型のシンボルで MyStruct 構造が定義されている場合 * * を初めて使用 FindTypeByName メソッド返す可能性があります合法的型シンボル MyStruct の * * のシンボルに明示的に表示されるその型の名前に関係なくモジュール。 
+FindTypeByName メソッドは、型名によってモジュール内で定義されている型を検索し、その型のシンボルを返します。 このメソッドは、モジュールの子の明示的な再帰によって返されることのない有効な IDebugHostType を返す場合があります。 デバッグホストでは、モジュール自体では使用されていないが、型から派生した型から派生した派生型を作成できます。 例として、構造体の MyStruct がモジュールのシンボルで定義されていても、MyStruct * * 型が使用されていない場合、FindTypeByName メソッドは、型名が明示的にシンボルに含まれていなくても、MyStruct * * の型シンボルを返します。モジュール。 
 
-[FindSymbolByRVA](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idebughostmodule-findsymbolbyrva)
+[Findシンボル Byrva](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idebughostmodule-findsymbolbyrva)
 
-FindSymbolByRVA メソッドは、モジュール内の特定の相対仮想アドレスで単一の一致するシンボルを紹介します。 ないかどうか、1 つの記号で指定された RVA (例: 複数の一致がある)、このメソッドによって、エラーが返されます。 プライベート シンボル publics テーブル内のシンボルを返すことはこのメソッドで優先に注意してください。 
+Findsymbol Byrva メソッドは、モジュール内の指定された相対仮想アドレスで、一致する1つのシンボルを検索します。 指定された RVA に1つのシンボルがない場合 (例: 複数の一致がある場合)、このメソッドによってエラーが返されます。 このメソッドでは、publics テーブル内のシンボルに対してプライベートシンボルが返されることに注意してください。 
 
 [FindSymbolByName](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idebughostmodule-findsymbolbyname)
 
-FindSymbolByName メソッドは、モジュール内で指定した名前の単一のグローバル シンボルを検索します。 指定した名前に一致する単一のシンボルがない場合、このメソッドによってエラーが返されます。 プライベート シンボル publics テーブル内のシンボルを返すことはこのメソッドで優先に注意してください。 
+FindSymbolByName メソッドは、モジュール内の指定された名前の1つのグローバルシンボルを検索します。 指定された名前に一致するシンボルが1つもない場合は、このメソッドによってエラーが返されます。 このメソッドでは、publics テーブル内のシンボルに対してプライベートシンボルが返されることに注意してください。 
 
 
-**型システムへのアクセス:IDebugHostType2/IDebugHostType**
+**型システムへのアクセス:IDebugHostType2 / IDebugHostType**
 
-指定された言語/ネイティブ型は、IDebugHostType2 または IDebugHostType インターフェイスによって記述されます。 これらのインターフェイスのメソッドの一部のみ、特定の種類の型に適用されるに注意してください。 指定した型のシンボルは可能性があります TypeKind 列挙体の説明に従って、次の種類のいずれかに参照してください。 
+特定の言語/ネイティブ型は、IDebugHostType2 インターフェイスまたは IDebugHostType インターフェイスによって記述されます。 これらのインターフェイスのメソッドの一部は、特定の種類の型にのみ適用されることに注意してください。 指定された型シンボルは、TypeKind 列挙体で記述されているように、次のいずれかの型を参照できます。 
 
-型の種類 |  説明
+種類の種類 |  説明
 |--------------|------------------|
-TypeUDT | ユーザー定義型 (構造体、クラス、共用体など.)。種類が TypeUDT ネイティブ型がモデル オブジェクトには、対応する IModelObject 内で型が常に保存されている ObjectTargetObject の正規表現があります。
-TypePointer | ポインター。 種類が TypePointer ネイティブ型がモデル オブジェクトには、ポインターの値のゼロする VT_UI8 拡張され、この 64 ビット形式での組み込みのデータとして保持されるが ObjectIntrinsic の正規表現があります。 TypePointer の任意の種類のシンボルには、ポインターが指す型の (GetBaseType メソッドによって返される) として基本型があります。
-TypeMemberPointer | クラス メンバーへのポインター。 種類が TypeMemberPointer ネイティブ型がモデル オブジェクトが組み込みである正規表現 (ポインター値と同じ値)。 この値の厳密な意味は、特定のコンパイラ/デバッグ ホストです。
-TypeArray | 配列。 種類が TypeArray ネイティブ型がモデル オブジェクトには、ObjectTargetObject の正規表現があります。 配列のベース アドレスは (GetLocation メソッドを使用して取得) のオブジェクトの場所と、配列の型が常に保持されます。 TypeArray の任意の種類のシンボルには、(GetBaseType メソッドによって返される) として、配列は配列の型の基本型があります。
+TypeUDT | ユーザー定義型 (構造体、クラス、共用体など)。種類が TypeUDT であるネイティブ型を持つモデルオブジェクトは、ObjectTargetObject の正規表現を持ちます。この場合、型は常に対応する IModelObject 内に保持されます。
+TypePointer | ポインター。 種類が TypePointer であるネイティブな型を持つモデルオブジェクトは ObjectIntrinsic の正規表現を持ちます。この場合、ポインターの値は0に拡張され、VT_UI8 に設定され、この64ビット形式の組み込みデータとして保持されます。 TypePointer の型シンボルには、ポインターが指す型の基本型 (GetBaseType メソッドによって返される) があります。
+TypeMemberPointer | クラスメンバーへのポインター。 種類が TypeMemberPointer であるネイティブな型を持つモデルオブジェクトには、標準の表現があります (値はポインター値と同じです)。 この値の正確な意味は、コンパイラ/デバッグホスト固有です。
+TypeArray | 配列。 種類が TypeArray であるネイティブ型を持つモデルオブジェクトには、ObjectTargetObject の正規表現があります。 配列のベースアドレスはオブジェクトの場所 (GetLocation メソッドによって取得されます) で、配列の型は常に保持されます。 TypeArray のすべての型シンボルには、配列が配列である型の基本型 (GetBaseType メソッドによって返される) があります。
 TypeFunction | 関数。
-TypeTypedef | Typedef。 種類は TypeTypedef にそれ以外の場合はネイティブ型がモデル オブジェクトには、typedef の基になる最終的な型の正規表現と同じ正規表現があります。 これは、IDebugHostType2 の typedef の明示的なメソッドを使用して、クエリの typedef 情報または typedef に対して登録されている、明示的なデータ モデルがある場合を除き、オブジェクトと型情報のエンドユーザーに完全に透過的な表示されます。 GetTypeKind メソッド TypeTypedef を返さないことに注意してください。 すべてのメソッドは、typedef の基になる最終的な型で返すように戻ります。 IDebugHostType2 typedef に固有の情報を取得するために使用するのには、typedef の特定のメソッドがあります。
-TypeEnum | 列挙型。 種類が TypeEnum ネイティブ型がモデル オブジェクトには、値と、組み込みの型は列挙型の値と同じ ObjectIntrinsic の正規表現があります。 
-TypeIntrinsic | 組み込み (基本型)。 種類が TypeIntrinsic ネイティブ型がモデル オブジェクトには、ObjectIntrinsic の正規表現があります。 型情報の可能性がありますまたは保持されません--、IModelObject に格納されている組み込みのデータのバリアント データ型 (vt _ を付けます *) を基になる型が完全に説明されている場合に特に
+TypeTypedef | Typedef。 種類が TypeTypedef であるネイティブ型を持つモデルオブジェクトには、typedef の基になる最終的な型の正規表現と同一の正規表現があります。 これは、IDebugHostType2 の明示的な typedef メソッドが typedef 情報のクエリに使用されているか、typedef に明示的に登録されているデータモデルがある場合を除き、オブジェクトのエンドユーザーと型情報の両方に対して完全に透過的に表示されます。 GetTypeKind メソッドは TypeTypedef を返さないことに注意してください。 すべてのメソッドは、typedef の基になる最後の型が返す内容を返します。 IDebugHostType2 には typedef 固有のメソッドがあり、typedef 固有の情報を取得するために使用できます。
+TypeEnum | 列挙型。 種類が TypeEnum であるネイティブ型を持つモデルオブジェクトには、組み込みの値と型が列挙値と同じである ObjectIntrinsic の正規表現があります。 
+TypeIntrinsic | 組み込み (基本型)。 種類が TypeIntrinsic のネイティブ型を持つモデルオブジェクトには、ObjectIntrinsic の正規表現があります。 型情報は、特に、IModelObject に格納されている組み込みデータの variant データ型 (VT_ *) によって、基になる型が完全に記述されている場合、または保持されない場合があります。
 
-全体的な IDebugHostType2 (IDebugHostSymbol メソッド) を除く IDebugHostType インターフェイスは、次のように定義されている/。 
+IDebugHostType2/IDebugHostType インターフェイス全体は、次のように定義されています (IDebugHostSymbol メソッドは除く)。 
 
 ```cpp
 DECLARE_INTERFACE_(IDebugHostType2, IDebugHostType)
@@ -491,9 +463,9 @@ DECLARE_INTERFACE_(IDebugHostType2, IDebugHostType)
 }
 ```
 
-**IDebugHostType2/IDebugHostType 一般的な方法**
+**IDebugHostType2/IDebugHostType General メソッド**
 
-次の IDebugHostType メソッド GetTypeKind メソッドから返されるどのような種類に関係なく任意の型の汎用のとおりです。 
+次の IDebugHostType メソッドは、GetTypeKind メソッドから返される型に関係なく、すべての型に対して一般的です。 
 
 ```cpp
 STDMETHOD(GetTypeKind)(_Out_ TypeKind *kind) PURE;
@@ -504,24 +476,24 @@ STDMETHOD(GetHashCode)(_Out_ ULONG* hashCode) PURE;
 
 [GetTypeKind](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idebughosttype-gettypekind)
 
-GetTypeKind メソッドは、シンボルが参照する型 (ポインター、配列を組み込みなど) の種類を返します。 
+GetTypeKind メソッドは、シンボルが参照する型 (ポインター、配列、組み込みなど) の種類を返します。 
 
 [GetSize](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idebughosttype-getsize)
 
-GetSize メソッドは、(sizeof(type) C++ では 1 つ実行済みだった) 場合と、型のサイズを返します。 
+GetSize メソッドは、型のサイズを返します (での sizeof (型) が完了しC++たかのように)。 
 
 [GetBaseType](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idebughosttype-getbasetype)
 
-型が別の 1 つの型の派生クラスである場合 (例:: MyStruct として * MyStruct から派生 ')、GetBaseType メソッドは、派生の基本型を返します。 ポインターが指す型を返します。 配列、配列が配列の内容を返します。 このような派生型でない型、エラーが返されます。 
+型が別の単一の型の派生クラスである場合 (例: MyStruct * が MyStruct ' から派生している場合)、GetBaseType メソッドは派生の基本型を返します。 ポインターの場合は、が指す型を返します。 配列の場合、配列がの配列であることを返します。 型がそのような派生型でない場合は、エラーが返されます。 
 
 [GetHashCode](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idebughosttype-gethashcode)
 
-GetHashCode メソッドでは、型の 32 ビットのハッシュ コードを返します。 グローバルな一致を除く (例:: 型のシグネチャと等価 * ホストで許可されている場合は、すべてに一致する)、特定の型シグネチャに一致する型のインスタンスが同じハッシュ コードを返す必要があります。 このメソッドは、インスタンスの型に型のシグネチャを一致させるために、型のシグネチャと組み合わせて使用されます。 
+GetHashCode メソッドは、型の32ビットのハッシュコードを返します。 グローバル一致を除き (たとえば、ホストで許可されている場合はすべてに一致する型シグネチャ)、特定の型シグネチャに一致するすべての型インスタンスは、同じハッシュコードを返す必要があります。 型のシグネチャを型のインスタンスに一致させるために、このメソッドを型シグネチャと組み合わせて使用します。 
 
 
 **IDebugHostType2/IDebugHostType 組み込みメソッド**
 
-次の IDebugHostType メソッドは、組み込み型 (または列挙型などの組み込みのデータを保持する型) に固有です。 
+次の IDebugHostType メソッドは、組み込み型 (または列挙型などの組み込みデータを保持する型) に固有です。 
 
 ```cpp
 STDMETHOD(GetIntrinsicType)(_Out_opt_ IntrinsicKind *intrinsicKind, _Out_opt_ VARTYPE *carrierType) PURE;
@@ -529,17 +501,17 @@ STDMETHOD(GetIntrinsicType)(_Out_opt_ IntrinsicKind *intrinsicKind, _Out_opt_ VA
 
 [GetIntrinsicType](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idebughosttype-getintrinsictype)
 
-GetIntrinsicType メソッドは、どのような組み込み型は、に関する情報を返します。 このメソッドからは、2 つの値が返されます。 
+GetIntrinsicType メソッドは、型の組み込みの種類に関する情報を返します。 このメソッドから2つの値が返されます。 
 
-- 組み込みの種類は、全体的な型を示します (例:: 整数、符号なしの浮動小数点) が、型のサイズではなく (例。8 ビット、16 ビット、32 ビット、64 ビット)
-- 通信事業者の種類は、組み込みの種類を VARIANT 構造体にパックする方法を示します。 Vt _ を付けます * 定数です。
+- 組み込みの種類は、全体の型 (例: 整数、符号なし、浮動小数点) を示しますが、型のサイズ (例:8ビット、16ビット、32ビット、64ビット)
+- 通信事業者の種類は、組み込みの種類のパックをバリアント構造にする方法を示します。 これは VT_ * 定数です。
 
-2 つの値の組み合わせでは、組み込みのに関する情報の完全なセットを提供します。 
+2つの値の組み合わせによって、組み込みに関する情報の完全なセットが提供されます。 
 
 
-**ビット フィールドの IDebugHostType2/IDebugHostType メソッド**
+**IDebugHostType2/IDebugHostType ビットフィールドメソッド**
 
-次の IDebugHostType メソッドは、ビット フィールドにデータを格納する型に固有です。 組み込み関数内のビット フィールドの配置についての情報は、型のシンボルの場所の属性ではなく、データ モデルの一部として格納されます。 
+次の IDebugHostType メソッドは、ビットフィールドにデータを格納する型に固有のものです。 組み込みの内のビットフィールド配置に関する情報は、場所の属性ではなく、データモデルの型シンボルの一部として格納されます。 
 
 ```cpp
 STDMETHOD(GetBitField)(_Out_ ULONG* lsbOfField, _Out_ ULONG* lengthOfField) PURE;
@@ -547,47 +519,47 @@ STDMETHOD(GetBitField)(_Out_ ULONG* lsbOfField, _Out_ ULONG* lengthOfField) PURE
 
 [GetBitField](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idebughosttype-getbitfield)
 
-データ構造の指定されたメンバーがビット フィールド (例。フィールドの型情報が備える ULONG MyBits:8)、ビット フィールドの配置に関する情報。 GetBitField メソッドは、情報を取得するために使用します。 このメソッドは、ビット フィールドではない任意の型では失敗します。 これは、唯一の理由が、このメソッドは失敗します。 単にこのメソッドを呼び出すと、成功/失敗を調べるには、非ビット フィールドからのビット フィールドを区別するために十分です。 ハーフ オープン セットによって、フィールドの位置が定義されているビット フィールドを指定された型が発生する場合 *(lsbOfField + lengthOfField: lsbOfField]*
+データ構造体の特定のメンバーがビットフィールドの場合 (例:ULONG MyBits: 8)、フィールドの型情報は、ビットフィールド配置に関する情報と共に格納されます。 GetBitField メソッドを使用して、その情報を取得できます。 このメソッドは、ビットフィールドではない型では失敗します。 これは、メソッドが失敗する唯一の理由です。 このメソッドを呼び出して成功/失敗を確認するだけで、ビットフィールドと非ビットフィールドを区別できます。 特定の型がビットフィールドである場合、フィールドの位置はハーフオープンセット *(lsbOfField + lengthOfField: lsbOfField)* によって定義されます。
 
 
-**IDebugHostType2/IDebugHostType ポインター関連メソッド**
+**IDebugHostType2/IDebugHostType ポインターに関連するメソッド**
 
-次の IDebugHostType メソッドは、ポインター型に固有です。 GetTypeKind が TypePointer または TypeMemberPointer を返しますの種類など、'。 
+次の IDebugHostType メソッドは、ポインター型に固有です。 このような型は、GetTypeKind が TypePointer または TypeMemberPointer ' を返す型です。 
 
 ```cpp
 STDMETHOD(GetPointerKind)(_Out_ PointerKind* pointerKind) PURE;
 STDMETHOD(GetMemberType)(_Out_ IDebugHostType** memberType) PURE;
 ```
-[GetPointerKind](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idebughosttype-getpointerkind)
+[Getポインタの種類](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idebughosttype-getpointerkind)
 
-型のポインターである場合は、GetPointerKind メソッドは、ポインターの種類を返します。 これは、PointerKind 列挙体によって定義されます。
+ポインターである型の場合、Getpointer Kind メソッドはポインターの種類を返します。 これは、ポインターの種類の列挙体によって定義されます。
 
 [GetMemberType](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idebughosttype-getmembertype)
 
-メンバーへのポインターである型の (と示されます TypeMemberPointer の型の種類によって)、GetMemberType メソッドは、ポインターは、ポインター メンバーへのクラスを返します。 
+TypeMemberPointer の型によって示されるように、メンバーへのポインターである型の場合、GetMemberType メソッドは、ポインターがメンバーへのポインターであるクラスを返します。 
 
 
-**IDebugHostType2/IDebugHostType 配列関連メソッド**
+**IDebugHostType2/IDebugHostType 配列に関連するメソッド**
 
-配列は GetTypeKind が TypeArray を返す型です。 配列デバッグ ホストの型システムで定義されていないこと、0 個のインデックス ベース、パックされた線形 1 次元配列 C を使用する 1 つの次元の場合と同じに注意してください。 C スタイル配列に、定義に合わせてが配列の範囲全体が IDebugHostType で広くなります。 デバッグ ホストで、配列は多次元があり、配列内の各ディメンションが、ArrayDimensionThis 記述子は、次のフィールドと呼ばれる記述子で定義されています。 
+配列は、GetTypeKind が TypeArray を返す型です。 デバッグホストの型システムによって定義されている配列は、C で利用される、インデックスベースの1次元配列とは異なります。 C スタイル配列は定義に適していますが、配列全体のスコープは IDebugHostType にあります。 デバッグホスト内の配列は多次元にすることができ、配列内の各次元は ArrayDimensionThis 呼ばれる記述子によって定義されます。この記述子には次のフィールドがあります。 
 
 
 
 フィールド | 説明
 |--------------|------------------|
-LowerBound | 符号付き 64 ビット値として、配列のベース インデックス。 C スタイル配列にこの常に 0 になります。 必要はありません。 配列の個々 のディメンションは、負の値の 1 つであっても、任意の 64 ビットのインデックス位置にある開始を見なすことができます。
-長さ | 符号なし 64 ビットの値として、配列の次元の長さ。 配列のインデックスにまたがるハーフ オープン セット [LowerBound、LowerBound + 長さ)。
-stride | 配列の次元のストライドを定義します。 このディメンションのインデックス内に 1 つ (N N + 1) からの増加、メモリ内で前方に移動するバイト数を示します。 C スタイル配列の場合、配列の各要素のサイズになります。 する必要はありません。 要素間の余白は、各要素のサイズよりも大きい stride として表現できます。 多次元配列は、この値ディメンション全体を前方に移動する方法を示します。 M N 行列 x を検討してください。 これは、2 つのディメンションとして行優先の形式で記述可能性があります。 
+LowerBound | 符号付き64ビット値としての配列のベースインデックス。 C スタイルの配列の場合、これは常に0になります。 である必要はありません。 配列の個々の次元は、64ビットの任意のインデックスで開始することを検討できます。
+長さ | 配列次元の長さを、符号なし64ビット値として指定します。 配列の決まっは、ハーフオープンセット [下限、下限、長さ) にまたがります。
+Stride | 配列の次元のストライドを定義します。 このディメンションのインデックス内の 1 (N から N + 1) の増加については、メモリ内で前方に移動するバイト数を示します。 C スタイルの配列の場合、これは配列の各要素のサイズになります。 である必要はありません。 要素間の埋め込みは、個々の要素のサイズを超える stride として表すことができます。 多次元配列の場合、この値は、ディメンション全体を前方に移動する方法を示します。 M x N 行列を考えてみましょう。 これは、次の2つのディメンションとして行メジャー形式で記述されている可能性があります。 
 
 ```cpp   
 { [LowerBound: 0, Length: M, Stride: N \* sizeof(element)], [LowerBound: 0, Length: N, Stride: sizeof(element)]} 
 ```
-または、別の方法として列優先形式で説明されている 2 つのディメンションとしてにすることが考えられます。 
+または、次の2つのディメンションとして、列メジャー形式で記述することもできます。 
 
 ```cpp   
 { [LowerBound: 0, Length: M, Stride: sizeof(element)], [LowerBound: 0, Length: N, Stride: M \* sizeof(element)]} 
 ```
-ArrayDimension 概念は、このレベルの柔軟性を使用できます。 
+ArrayDimension の概念により、この程度の柔軟性が実現します。 
 
 次の IDebugHostType メソッドは、配列型に固有です。 
 
@@ -598,22 +570,22 @@ STDMETHOD(GetArrayDimensions)(\_In_ ULONG64 dimensions, \_Out_writes_(dimensions
 
 [GetArrayDimensionality](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idebughosttype-getarraydimensionality)
 
-GetArrayDimensionality メソッドは、配列のインデックスが設定されたディメンションの数を返します。 C スタイル配列では、値は、ここでは常に 1 を返します。 
+GetArrayDimensionality メソッドは、配列のインデックスが作成されている次元の数を返します。 C スタイルの配列の場合、ここで返される値は常に1になります。 
 
 [GetArrayDimensions](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idebughosttype-getarraydimensions)
 
-GetArrayDimensions メソッドは、記述子 GetArrayDimensionality メソッドで示されている配列の各次元のいずれかのセットを返します。 各記述子は、開始インデックス、長さ、および各配列の次元の前方のストライドを記述する ArrayDimension 構造です。 これにより、C の型システムで許可されてよりも大幅に強化の配列構造の説明です。 
+GetArrayDimensions メソッドは、Getarraydimensions メソッドによって示されるように、配列の各次元に対して1つずつ、一連の記述子を返します。 各記述子は ArrayDimension 構造体であり、各配列次元の開始インデックス、長さ、および前方ストライドを記述します。 これにより、C 型システムで許可されているよりもはるかに強力な配列コンストラクトを記述できます。 
 
-C スタイル配列で 1 つの配列のディメンションが返されますここでは常に値を持つ。 
+C スタイルの配列の場合は、次のような値を持つ1つの配列ディメンションがここに返されます。 
 
 - 下限 = 0
-- 長さ ARRAYSIZE(array) を =
-- Stride sizeof(elementType) を =
+- 長さ = ARRAYSIZE (配列)
+- ストライド = sizeof (elementType)
 
 
-**IDebugHostType2/IDebugHostType 関数関連メソッド**
+**IDebugHostType2/IDebugHostType 関数に関連するメソッド**
 
-関数型 TypeFunction の一種を使用していることを示す型は、IDebugHostType と IDebugHostType2 の両方で、次のメソッドをサポートします。 
+種類が TypeFunction によって関数型であることを示す型は、IDebugHostType と IDebugHostType2 の両方で次のメソッドをサポートします。 
 
 ```cpp
 //
@@ -631,7 +603,7 @@ STDMETHOD(GetFunctionVarArgsKind)(_Out_ VarArgsKind* varArgsKind) PURE;
 
 [GetFunctionCallingConvention](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idebughosttype-getfunctioncallingconvention)
 
-GetFunctionCallingConvention メソッドは、関数の呼び出し規約を返します。 このような CallingConventionKind 列挙体のメンバーとして返されます。 
+GetFunctionCallingConvention メソッドは、関数の呼び出し規約を返します。 このような値は、CallingConventionKind 列挙体のメンバーとして返されます。 
 
 [GetFunctionReturnType](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idebughosttype-getfunctionreturntype)
 
@@ -639,40 +611,40 @@ GetFunctionReturnType メソッドは、関数の戻り値の型を返します�
 
 [GetFunctionParameterTypeCount](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idebughosttype-getfunctionparametertypecount)
 
-GetFunctionParameterTypeCount メソッドは、関数が受け取る引数の数を返します。 この数に C と C++ の省略記号ベースの可変個引数のマーカーがないと見なされることに注意してください。 GetFunctionVarArgsKind メソッドを使用して、このような存在を検出する必要があります。 これはのみ、省略記号の前に引数が含まれます。 
+GetFunctionParameterTypeCount メソッドは、関数によって取得される引数の数を返します。 このカウントでは、C++ C/省略記号に基づく可変個の引数マーカーは考慮されません。 このようなの存在は、GetFunctionVarArgsKind メソッドを使用して検出される必要があります。 省略記号の前に引数のみが含まれます。 
 
 [GetFunctionParameterTypeAt](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idebughosttype-getfunctionparametertypeat)
 
-GetFunctionParameterTypeAt メソッドは、関数に、i 番目の引数の型を返します。 
+GetFunctionParameterTypeAt メソッドは、関数の i 番目の引数の型を返します。 
 
-GetFunctionVarArgsKind メソッドを返します、特定の関数は、可変個引数リストを利用し、そうである場合の可変個の引数には、どのようなスタイルで、日頃かどうか。 このようなは、次のように定義される VarArgsKind 列挙体のメンバーによって定義されます。 
+GetFunctionVarArgsKind メソッドは、指定された関数が可変個の引数リストを利用しているかどうかを返します。その場合、その関数が利用する可変引数のスタイルを返します。 このような定義は、次のように定義されている VarArgsKind 列挙体のメンバーによって定義されます。 
 
- な列挙 | 説明
+ 列挙 | 説明
 |---------|---------|
-VarArgsNone | 関数は、変数引数を受け取りません。
-VarArgsCStyle | C スタイルの varargs 関数 (returnType (arg1, arg2,...)) です。関数によって報告された引数の数では、省略記号の引数は含まれません。 変数引数を渡すには、GetFunctionParameterTypeCount メソッドによって返される引数の数の後に発生します。
+VarArgsNone | 関数は、可変個の引数を受け取りません。
+VarArgsCStyle | 関数は C スタイルの varargs 関数です (returnType (arg1, arg2,...))。関数によって報告される引数の数には、省略記号引数は含まれません。 変数引数の引き渡しは、GetFunctionParameterTypeCount メソッドによって返される引数の数の後に行われます。
 
 
 **IDebugHostType2 GetFunctionVarArgsKind**
 
-GetFunctionVarArgsKind メソッドを返します、特定の関数は、可変個引数リストを利用し、そうである場合の可変個の引数には、どのようなスタイルで、日頃かどうか。 このようなは、次のように定義される VarArgsKind 列挙体のメンバーによって定義されます。 
+GetFunctionVarArgsKind メソッドは、指定された関数が可変個の引数リストを利用しているかどうかを返します。その場合、その関数が利用する可変引数のスタイルを返します。 このような定義は、次のように定義されている VarArgsKind 列挙体のメンバーによって定義されます。 
 
 
-**IDebugHostType2/IDebugHostType Typedef 関連メソッド**
+**IDebugHostType2/IDebugHostType Typedef 関連のメソッド**
 
-Typedef である任意の型は、型は、最終的な型、typedef の基になるかのように動作します。 これは、ある GetTypeKind などのメソッドは示しません型が typedef であることを意味します。 同様に、GetBaseType では、定義が参照する型が返されません。 Typedef の基になる最後の定義で呼び出されたかのように動作を示しているは代わりにします。 例。 
+Typedef であるすべての型は、型が typedef の基になる最終的な型であるかのように動作します。 これは、GetTypeKind などのメソッドは、型が typedef であることを示していないことを意味します。 同様に、GetBaseType は、定義が参照する型を返しません。 代わりに、typedef の基になる最終的な定義で呼び出されたかのように動作を示します。 例を次に示します。 
 
 ```cpp
 typedef MYSTRUCT *PMYSTRUCT;
 typedef PMYSTRUCT PTRMYSTRUCT;
 ```
 
-IDebugHostType ' PMYSTRUCT または PTRMYSTRUCT のいずれかに、次の情報を報告します。 
+' PMYSTRUCT または PTRMYSTRUCT ' の IDebugHostType は、次の情報を報告します。 
 
-- GetTypeKind メソッドでは、TypePointer を返します。 MYSTRUCT を入力して、最終的な基になる * が実際のポインター。
-- ' GetBaseType メソッドは MYSTRUCT の型を返します。 MYSTRUCT の基になる型 * MYSTRUCT です。
+- GetTypeKind メソッドは TypePointer を返します。 基になる最後の型 MYSTRUCT * は、実際にはポインターです。
+- ' GetBaseType メソッドは MYSTRUCT の型を返します。 MYSTRUCT * の基になる型は MYSTRUCT です。
 
-ここで唯一の違いは、IDebugHostType2 の typedef の特定のメソッドの動作です。 これらのメソッドは次のとおりです。 
+ここでの違いは、IDebugHostType2 の typedef 固有のメソッドがどのように動作するかという点だけです。 これらのメソッドは次のとおりです。 
 
 ```cpp
 STDMETHOD(IsTypedef)(_Out_ bool* isTypedef) PURE;
@@ -682,35 +654,35 @@ STDMETHOD(GetTypedefFinalBaseType)(_Out_ IDebugHostType2** finalBaseType) PURE;
 
 この例では: 
 
-- PMYSTRUCT と PTRMYSTRUCT IsTypedef メソッドは true を返します
-- MYSTRUCT GetTypedefBaseType メソッドを返します * PMYSTRUCT と PTRMYSTRUCT の PMYSTRUCT
-- MYSTRUCT GetTypedefFinalBaseType メソッドを返します * の両方の種類
+- IsTypedef メソッドは、PMYSTRUCT と PTRMYSTRUCT の両方に対して true を返します。
+- GetTypedefBaseType メソッドは、PTRMYSTRUCT の PMYSTRUCT および PMYSTRUCT の MYSTRUCT * を返します。
+- GetTypedefFinalBaseType メソッドは、両方の型に対して MYSTRUCT * を返します。
 
 [IsTypedef](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idebughosttype2-istypedef)
 
-IsTypedef メソッドは、型が typedef であるかどうかを確認できる唯一の方法です。 GetTypeKind メソッドは、基になる型で呼び出された場合のように動作します。 
+IsTypedef メソッドは、型が typedef であるかどうかを確認できる唯一のメソッドです。 GetTypeKind メソッドは、基になる型で呼び出されているかのように動作します。 
 
 [GetTypedefBaseType](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idebughosttype2-gettypedefbasetype)
 
-GetTypedefBaseType メソッドでは、typedef の即時どのような定義を返します。 ドキュメントの説明の例。 
+GetTypedefBaseType メソッドは、typedef の直接の定義を返します。 ドキュメントで説明されている例では、次のようになります。 
 
 ```cpp
 typedef MYSTRUCT *PMYSTRUCT;
 typedef PMYSTRUCT PTRMYSTRUCT;
 ```
-このメソッドは MYSTRUCT を返します * PMYSTRUCT と PTRMYSTRUCT の PMYSTRUCT します。
+このメソッドは、PTRMYSTRUCT の PMYSTRUCT および PMYSTRUCT の MYSTRUCT * を返します。
 
 
 [GetTypedefFinalBaseType](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idebughosttype2-gettypedeffinalbasetype)
 
-GetTypedefFinalBaseType メソッドでは、typedef の定義は、最後の種類を返します。 Typedef がもう 1 つの typedef の定義の場合は、次の定義のチェーンの typedef ではないと、返される型の型に達するまでこれは引き続き。 ドキュメントの説明の例。 
+GetTypedefFinalBaseType メソッドは、typedef が定義している最終的な型を返します。 Typedef が別の typedef の定義である場合、typedef ではなく、その型が返されるまでは、定義チェーンに従います。 ドキュメントで説明されている例では、次のようになります。 
 
 ```cpp
 typedef MYSTRUCT *PMYSTRUCT;
 typedef PMYSTRUCT PTRMYSTRUCT;
 ```
 
-このメソッドは MYSTRUCT を返します * PMYSTRUCT または PTRMYSTRUCT のいずれかで呼び出されるとします。 
+このメソッドは、PMYSTRUCT または PTRMYSTRUCT のいずれかで呼び出された場合、MYSTRUCT * を返します。 
 
 **IDebugHostType2/IDebugHostType 型の作成方法**
 
@@ -719,11 +691,11 @@ STDMETHOD(CreatePointerTo)(_In_ PointerKind kind, _COM_Outptr_ IDebugHostType** 
 STDMETHOD(CreateArrayOf)(_In_ ULONG64 dimensions, _In_reads_(dimensions) ArrayDimension *pDimensions, _COM_Outptr_ IDebugHostType** newType) PURE;
 ```
 
-**定数のシンボル値:IDebugHostConstant**
+**定数シンボル値:IDebugHostConstant**
 
-定数の値が (特定の値は定数値である可能性がありますいないシンボル) シンボリック情報に存在する場所については、IDebugHostConstant インターフェイスは、そのような定数の概念を表現します。 これは、テンプレート引数が指定された引数が型では、通常、代わりに、非型テンプレート引数がありますなどの場所で通常使用される (例:: 定数)。 
+定数値がシンボル情報に含まれる場所 (特定の値が定数値であるか、または定数値でない場合があります) では、IDebugHostConstant インターフェイスはそのような定数の概念を表します。 通常、これはテンプレート引数のような場所で使用されます。指定された引数は通常、型ですが、代わりに非型テンプレート引数 (例: 定数) である場合があります。 
 
-IDebugHostConstant インターフェイスは、(IDebugHostSymbol によって実装される汎用のメソッドを無視します) を次のように定義されます。 
+IDebugHostConstant インターフェイスは、次のように定義されます (IDebugHostSymbol によって実装されたジェネリックメソッドは無視されます)。 
 
 ```cpp
 DECLARE_INTERFACE_(IDebugHostConstant, IDebugHostSymbol)
@@ -734,12 +706,12 @@ DECLARE_INTERFACE_(IDebugHostConstant, IDebugHostSymbol)
 
 [GetValue](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idebughostconstant-getvalue)
 
-GetValue メソッドは、バリアントにパックされている定数の値を返します。 IDebugHostSymbol 上、GetType メソッドが、定数のシンボルに特定の型を返す可能性がありますに重要です。 このような場合は、定数値の型のシンボルで定義されているが同じである、パッキングとしてここで、GetValue メソッドによって返される保証はありません。 
+GetValue メソッドは、バリアントにパックされた定数の値を返します。 IDebugHostSymbol の GetType メソッドは、定数に対して特定の型シンボルを返す場合があることに注意してください。 このような場合、型シンボルによって定義された定数値のパッキングは、ここでは、GetValue メソッドによって返されるパッキングと同じであるという保証はありません。 
 
 
-**データ メンバーのアクセス:IDebugHostField**
+**データメンバーアクセス:IDebugHostField**
 
-IDebugHostField クラスは、クラス、構造体、共用体、または他の種類の構造体のデータ メンバーであるシンボルを表します。 これは無料のデータを表しません (例:: グローバル データ)。 インターフェイスは、次のとおりです (IDebugHostSymbol にジェネリック メソッドを無視します) として定義されます。 
+IDebugHostField クラスは、クラス、構造体、共用体、またはその他の型コンストラクトのデータメンバーであるシンボルを表します。 これは、空きデータ (例: グローバルデータ) を表していません。 インターフェイスは次のように定義されています (IDebugHostSymbol からジェネリックメソッドを無視します)。 
 
 ```cpp
 DECLARE_INTERFACE_(IDebugHostField, IDebugHostSymbol)
@@ -753,31 +725,31 @@ DECLARE_INTERFACE_(IDebugHostField, IDebugHostSymbol)
 
 [GetLocationKind](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idebughostfield-getlocationkind)
 
-GetLocationKind メソッドで、シンボルの場所の種類を返しますに LocationKind 列挙します。 このような列挙には、次の値のいずれかを指定できます。 
+GetLocationKind メソッドは、LocationKind 列挙に従って、シンボルがある場所の種類を返します。 この列挙型には、次のいずれかの値を指定できます。 
 
-な列挙 | 説明
+列挙 | 説明
 |---------|--------|
-LocationMember | フィールドは、クラス、構造体、共用体、または他の種類の構造体の通常のデータ メンバーです。 親の型コンス トラクターのベース アドレスに対して相対的なオフセットがあります。 このようなベース アドレスが、これによって表される通常のポインター。 GetOffset メソッドを使用して、フィールドのオフセットを取得できます。 LocationMember、フィールド、GetLocation と GetValue メソッドは失敗します。
-LocationStatic | フィールドは静的であり、独自のアドレスします。 GetLocation メソッドは抽象場所を返します (例:: アドレス) の静的フィールド。 LocationStatic、フィールド、GetOffset と GetValue メソッドは失敗します。
-LocationConstant | フィールドは定数であり、値です。 GetValue メソッドでは、定数の値を返します。 GetOffset と GetLocation メソッドは、LocationConstant フィールドの失敗します。
-LocationNone | フィールドには、場所がありません。 可能性がありますに最適化されていますが、コンパイラによって、または宣言されているが定義されていることはありませんが、静的フィールドがある可能性があります。 方法に、そのフィールドが追加されたに関係なく、物理的な操作または値がありません。 シンボルのみになります。 すべての取得方法 (GetOffset、GetLocation、および GetValue) LocationNone であるフィールドは失敗します。
+LocationMember | フィールドは、クラス、構造体、共用体、またはその他の型コンストラクトの通常のデータメンバーです。 これには、包含する型のコンストラクトのベースアドレスを基準としたオフセットがあります。 このようなベースアドレスは、通常、このポインターによって表されます。 フィールドのオフセットは、GetOffset メソッドを使用して取得できます。 GetLocation および GetValue メソッドは、LocationMember であるフィールドに対して失敗します。
+LocationStatic | フィールドは静的で、独自のアドレスを持ちます。 GetLocation メソッドは、静的フィールドの抽象的な場所 (例: アドレス) を返します。 GetOffset メソッドと GetValue メソッドは、LocationStatic であるフィールドに対して失敗します。
+LocationConstant | フィールドは定数で、値を持ちます。 GetValue メソッドは、定数の値を返します。 GetOffset メソッドと GetLocation メソッドは、LocationConstant であるフィールドに対して失敗します。
+LocationNone | フィールドに場所がありません。 コンパイラによって最適化されているか、宣言されているが定義されていない静的フィールドである可能性があります。 このようなフィールドがどのようになったかにかかわらず、物理的な存在も値もありません。 シンボルのみに含まれています。 すべての取得方法 (GetOffset、GetLocation、および GetValue) は、LocationNone のフィールドに対して失敗します。
 
 [GetOffset](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idebughostfield-getoffset)
 
-オフセットを含むフィールド (例:: フィールドがある場所の種類が LocationMember を示します)、GetOffset メソッドは、含んでいる型のベース アドレスからオフセットを返します (、このポインター) フィールド自体のデータをします。 このようなオフセットは常に、64 ビットの符号なしの値として表されます。 指定されたフィールドは、含んでいる型のベース アドレスからのオフセットである場所を持たない GetOffset メソッドは失敗します。 
+オフセットを持つフィールド (場所の種類が LocationMember を示すフィールドなど) の場合、GetOffset メソッドは、含まれている型 (this ポインター) のベースアドレスからフィールド自体のデータへのオフセットを返します。 このようなオフセットは、常に符号なし64ビット値として表されます。 指定されたフィールドに格納されている型のベースアドレスからのオフセットである場所がない場合、GetOffset メソッドは失敗します。 
 
 [GetLocation](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idebughostfield-getlocation)
 
-特定の型のインスタンスに関係なく、アドレスを含むフィールド用 (例:: フィールドがある場所の種類が LocationStatic を示します)、GetLocation メソッドでは、フィールドの抽象場所 (アドレス) を返します。 指定されたフィールドが静的な場所を持たない場合、GetLocation メソッドは失敗します。 
+特定の型インスタンスに関係なくアドレスを持つフィールドの場合 (場所の種類が LocationStatic を示すフィールドなど)、GetLocation メソッドはフィールドの抽象的な場所 (アドレス) を返します。 指定されたフィールドに静的な場所がない場合、GetLocation メソッドは失敗します。 
 
 [GetValue](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idebughostfield-getvalue)
 
-シンボリック情報内で定義された定数値があるフィールド (例:: フィールドがある場所の種類が LocationConstant を示します)、GetValue メソッドは、フィールドの定数値を返します。 指定されたフィールドが定数の値を持たない場合は、GetValue メソッドは失敗します。 
+シンボル情報内に定数値が定義されているフィールド (場所の種類が LocationConstant を示すフィールドなど) の場合、GetValue メソッドはフィールドの定数値を返します。 指定されたフィールドに定数値がない場合、GetValue メソッドは失敗します。 
 
 
-**無料のデータ アクセス:IDebugHostData**
+**無料のデータアクセス:IDebugHostData**
 
-別の型のメンバーではないモジュール内のデータは、IDebugHostData インターフェイスによって表されます。 そのインターフェイスは、次のとおりです (IDebugHostSymbol にジェネリック メソッドを無視します) として定義されます。 
+別の型のメンバーではないモジュール内のデータは、IDebugHostData インターフェイスによって表されます。 このインターフェイスは、次のように定義されています (IDebugHostSymbol のジェネリックメソッドは無視されます)。 
 
 ```cpp
 DECLARE_INTERFACE_(IDebugHostData, IDebugHostSymbol)
@@ -788,24 +760,24 @@ DECLARE_INTERFACE_(IDebugHostData, IDebugHostSymbol)
 }
 ```
 
-これらのメソッドのすべては IDebugHostField 内の対応するのと同じ意味です。 唯一の違いは、GetLocationKind メソッドは無料のデータの LocationMember 事項を返すことことはありません。 
+これらのメソッドはすべて、IDebugHostField の対応するメソッドと意味的に等価です。 唯一の違いは、GetLocationKind メソッドがフリーデータの LocationMember を返さないことです。 
 
 [GetLocationKind](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idebughostdata-getlocationkind)
 
-GetLocationKind メソッドで、シンボルの場所の種類を返しますに LocationKind 列挙します。 この列挙体の説明は IDebugHostField のドキュメントに記載されています。 
+GetLocationKind メソッドは、LocationKind 列挙に従って、シンボルがある場所の種類を返します。 この列挙体の説明については、IDebugHostField のドキュメントを参照してください。 
 
 [GetLocation](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idebughostdata-getlocation)
 
-アドレスが与えられたデータでは、GetLocation メソッドは、フィールドの抽象場所 (アドレス) を返します。 指定されたデータが静的な場所を持たない場合、GetLocation メソッドは失敗します。 
+アドレスを持つデータの場合、GetLocation メソッドはフィールドの抽象的な場所 (アドレス) を返します。 指定されたデータに静的な場所がない場合、GetLocation メソッドは失敗します。 
 
 [GetValue](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idebughostdata-getvalue)
 
-あるいはがシンボリック情報内で定義された定数値 (例: データの場所の種類が LocationConstant を示します)、GetValue メソッドは、フィールドの定数値を返します。 指定されたデータが定数の値を持たない場合は、GetValue メソッドは失敗します。 
+シンボリック情報内に定数値 (場所の種類が LocationConstant を示すデータなど) が定義されている datawhich 場合、GetValue メソッドはフィールドの定数値を返します。 指定されたデータに定数値がない場合、GetValue メソッドは失敗します。 
 
 
-**基本クラス。IDebugHostBaseClass**
+**基本クラス:IDebugHostBaseClass**
 
-指定された型の継承階層は、型のシンボルの子を使って表されます。 場合は、指定された型は、(継承 wise) を 1 つまたは複数の型から派生、型の型のシンボルの 1 つまたは複数の SymbolBaseClass 子があります。 これら SymbolBaseClass シンボルは、特定の型から直接継承を表します。 基底クラスの名前は、両方 SymbolBaseClass シンボルの名前と基底クラスの型のシンボルです。 基底クラス自体の型のシンボルを取得する SymbolBaseClass シンボル、GetType メソッドを使用できます。 完全な継承階層は、SymbolBaseClass 子シンボルの調査を再帰的にスキャンできます。 これらのシンボルの基本クラスの各は次のとおりです (IDebugHostSymbol にジェネリック メソッドを無視します) として定義されている IDebugHostBaseClass インターフェイスによって表されます。 
+指定された型の継承階層は、型シンボルの子を通じて表現されます。 特定の型が1つ以上の型から派生 (継承) される場合、その型の型シンボルには1つ以上の SymbolBaseClass 子が存在します。 これらの各 SymbolBaseClass シンボルは、特定の型からの即時継承を表します。 基底クラスの名前は、SymbolBaseClass 記号の名前と基底クラスの型シンボルの名前の両方になります。 SymbolBaseClass シンボルの GetType メソッドを使用して、基底クラス自体の型シンボルを取得できます。 SymbolBaseClass の子シンボルを再帰的に探索することで、完全継承階層を走査できます。 これらの基底クラスシンボルはそれぞれ、次のように定義されている IDebugHostBaseClass インターフェイスによって表されます (IDebugHostSymbol のジェネリックメソッドは無視されます)。 
 
 ```cpp
 DECLARE_INTERFACE_(IDebugHostBaseClass, IDebugHostSymbol)
@@ -816,12 +788,12 @@ DECLARE_INTERFACE_(IDebugHostBaseClass, IDebugHostSymbol)
 
 [GetOffset](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idebughostbaseclass-getoffset)
 
-GetOffset メソッドは、派生クラスの基本アドレスからの基本クラスのオフセットを返します。 このようなオフセットでは、0 または正の符号なし 64 ビット値があります。 
+GetOffset メソッドは、派生クラスのベースアドレスから基底クラスのオフセットを返します。 このようなオフセットは0にすることも、符号なし64ビットの正の値にすることもできます。 
 
 
-**パブリック シンボル:IDebugHostPublic**
+**パブリックシンボル:IDebugHostPublic**
 
-パブリック シンボルは、パブリック シンボル ファイル内でテーブルには点を表します。 実際には、アドレスをエクスポートします。 パブリック シンボル--アドレスだけに関連付けられている種類の情報はありません。 呼び出し元によってパブリック シンボルを明示的に要求しない限り、プライベート シンボルのすべての照会を返すデバッグ ホストが優先されます。 パブリック シンボルは、次のとおりです (IDebugHostSymbol にジェネリック メソッドを無視します) として定義されている IDebugHostPublic インターフェイスによって表されます。 
+パブリックシンボルは、シンボルファイル内のパブリックテーブル内の項目を表します。 実際には、アドレスがエクスポートされます。 パブリックシンボルに関連付けられている型情報がありません--アドレスのみ。 パブリックシンボルが呼び出し元によって明示的に要求されない限り、デバッグホストは、すべての問い合わせに対してプライベートシンボルを返すことを推奨します。 パブリックシンボルは、次のように定義されている IDebugHostPublic インターフェイスによって表されます (IDebugHostSymbol に汎用のメソッドは無視されます)。 
 
 ```cpp
 DECLARE_INTERFACE_(IDebugHostPublic, IDebugHostSymbol)
@@ -831,20 +803,20 @@ DECLARE_INTERFACE_(IDebugHostPublic, IDebugHostSymbol)
 }
 ```
 
-これらのメソッドのすべては IDebugHostField 内の対応するのと同じ意味です。 唯一の違いは、こと GetLocationKind メソッドが返すことはありません LocationMember または LocationConstant このようなシンボルです。 
+これらのメソッドはすべて、IDebugHostField の対応するメソッドと意味的に等価です。 唯一の違いは、GetLocationKind メソッドは、このような記号の LocationMember または LocationConstant を返さないという点です。 
 
 [GetLocationKind](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idebughostpublic-getlocationkind)
 
-GetLocationKind メソッドで、シンボルの場所の種類を返しますに LocationKind 列挙します。 この列挙体の説明は IDebugHostField のドキュメントに記載されています。 
+GetLocationKind メソッドは、LocationKind 列挙に従って、シンボルがある場所の種類を返します。 この列挙体の説明については、IDebugHostField のドキュメントを参照してください。 
 
 [GetLocation](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idebughostpublic-getlocation)
 
-アドレスが与えられたデータでは、GetLocation メソッドは、フィールドの抽象場所 (アドレス) を返します。 指定されたパブリックでは、静的な場所はありません、GetLocation メソッドは失敗します。 
+アドレスを持つデータの場合、GetLocation メソッドはフィールドの抽象的な場所 (アドレス) を返します。 指定されたパブリックに静的な場所がない場合、GetLocation メソッドは失敗します。 
 
 
-**モジュールの署名とバージョンの一致:IDebugHostModuleSignature**
+**モジュールシグネチャとバージョンの一致:IDebugHostModuleSignature**
 
-モジュール署名は、指定したモジュールが一連の名前付けとバージョン管理に関する基準を満たしているかどうかを確認する手段を表します。 モジュール署名が IDebugHostSymbols で CreateModuleSignature メソッドを使用して作成されます。 モジュール名とモジュールのバージョン番号の省略可能な範囲に一致することができます。 このような署名が作成されると、クライアントは次のように定義されている IDebugHostModuleSignature インターフェイスを受け取ります。 
+モジュール署名は、特定のモジュールが名前付けとバージョン管理に関する一連の条件を満たすかどうかを確認する手段を表します。 モジュール署名は、IDebugHostSymbols の CreateModuleSignature メソッドを使用して作成されます。 モジュール名と、モジュールのバージョン番号のオプションの範囲を一致させることができます。 このような署名が作成されると、クライアントは次のように定義された IDebugHostModuleSignature インターフェイスを受け取ります。 
 
 ```cpp
 DECLARE_INTERFACE_(IDebugHostModuleSignature, IUnknown)
@@ -855,11 +827,11 @@ DECLARE_INTERFACE_(IDebugHostModuleSignature, IUnknown)
 
 [IsMatch](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idebughostmodulesignature-ismatch)
 
-IsMatch メソッドは、モジュール名とバージョン、シグネチャに示されている名前とバージョンの範囲を比較する、署名に対して (IDebugHostModule 記号で指定) として、特定のモジュールを比較します。 指定したモジュールのシンボルが、署名と一致するかどうかを示す値が返されます。 
+IsMatch メソッドは、特定のモジュール (IDebugHostModule シンボルによって指定されたもの) を署名に対して比較し、モジュール名とバージョンをシグネチャに示されている名前とバージョン範囲と比較します。 指定されたモジュールシンボルが署名と一致するかどうかを示す値が返されます。 
 
-**署名と型の照合を入力します。IDebugHostTypeSignature**
+**型のシグネチャと型の照合:IDebugHostTypeSignature**
 
-型のシグネチャは、特定の型のインスタンスが、一連の型の名前、型、および種類が内にあるモジュールを汎用引数に関する条件を満たすかどうかを確認する手段を表します。 型シグネチャが IDebugHostSymbols で CreateTypeSignature メソッドを使用して作成されます。 このような署名が作成されると、クライアントは次のように定義されている IDebugHostTypeSignature インターフェイスを受け取ります。 
+型シグネチャは、特定の型インスタンスが型の名前、型の汎用引数、およびその型が存在するモジュールに関する一連の条件を満たすかどうかを確認する手段を表します。 型シグネチャは、IDebugHostSymbols の CreateTypeSignature メソッドを使用して作成されます。 このような署名が作成されると、クライアントは次のように定義された IDebugHostTypeSignature インターフェイスを受け取ります。 
 
 ```cpp
 DECLARE_INTERFACE_(IDebugHostTypeSignature, IUnknown)
@@ -872,42 +844,38 @@ DECLARE_INTERFACE_(IDebugHostTypeSignature, IUnknown)
 
 [GetHashCode](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idebughosttypesignature-gethashcode)
 
-GetHashCode メソッドでは、型シグネチャの 32 ビットのハッシュ コードを返します。 デバッグ ホストは、実装型のインスタンスに対して返されるハッシュ コードと型のシグネチャに対して返されるハッシュ コードの間で同期があることを保証します。 グローバルな一致を除く、型のインスタンスは、型シグネチャを一致させることがある場合両方が同じ 32 ビットのハッシュ コード。 これにより、迅速な初期の比較と、型のインスタンス、多種多様なデータ モデルのマネージャーに登録されている型のシグネチャと一致します。 
+GetHashCode メソッドは、型シグネチャの32ビットハッシュコードを返します。 デバッグホストは、型のインスタンスに対して返されるハッシュコードと、型シグネチャに対して返されるハッシュコードの間で、実装に同期があることを保証します。 グローバル一致を除き、型インスタンスが型シグネチャに対応できる場合は、両方とも同じ32ビットハッシュコードが使用されます。 これにより、型インスタンスと、データモデルマネージャーに登録されている多数の型シグネチャとの間で、最初の迅速な比較と照合が可能になります。 
 
 [IsMatch](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idebughosttypesignature-ismatch)
 
-IsMatch メソッドは、特定の型のインスタンスが型シグネチャで指定された条件に一致するかどうかを示す値を返します。 場合は、すべての型シグネチャ内のワイルドカードに一致する (シンボル) として型のインスタンスの特定の部分を示す列挙子とこれを示す値が返されます。 
+IsMatch メソッドは、特定の型のインスタンスが、型シグネチャで指定された条件と一致するかどうかを示す値を返します。 そのような場合は、このことが示され、列挙子が返されます。これにより、型のシグネチャに含まれるワイルドカードと一致する型インスタンスのすべての特定部分 (シンボル) が示されます。 
 
 [CompareAgainst](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idebughosttypesignature-compareagainst)
 
-CompareAgainst メソッドは、型シグネチャに別の型シグネチャを比較し、2 つの署名の比較を返します。 返される比較結果は、次のように定義されている SignatureComparison 列挙体のメンバーです。 
+CompareAgainst メソッドは、型シグネチャを別の型シグネチャと比較し、2つのシグネチャの比較方法を返します。 返される比較結果は、次のように定義されている SignatureComparison 列挙のメンバーです。 
 
-な列挙 | 説明
+列挙 | 説明
 |---------|-----------|
-関連付けられていません。 | 2 つの署名または比較対象となる型の関係はありません。
-あいまいな |1 つの署名または型に対して、あいまいと比較します。 2 つの型シグネチャでしたか署名にも同じように一致する潜在的な型のインスタンスがあることを意味します。 たとえば、次に示す 2 つの型シグネチャがあいまいです。  1 の署名:`std::pair<*, int>`  署名 2:`std::pair<int,*>`ため、型のインスタンス`std::pair<int, int>`いずれも同じように (両方がある 1 つの具象型と 1 つのワイルドカード) 一致します。
-LessSpecific | 1 つの署名または型は、他方より小さい固有です。 多くの場合、つまりより一般的な署名がワイルドカードより特定の 1 つの具象型があります。 例として、以下の最初の署名は、2 番目よりも限定です。 1 の署名:`std::pair<*, int>` 署名 2:`std::pair<int, int>`ワイルドカードがあるため、(、 `*`)、2 つ目の具象型 (int) があります。
-MoreSpecific | 1 つの署名または型は、他よりも具体的です。 多くの場合、つまり、特定の署名が具象型低い特定の 1 つのワイルドカードがあります。 たとえば、以下の最初の署名は、2 番目よりも具体的です。 1 の署名:`std::pair<int, int>` 署名 2:`std::pair<*, int>`ワイルドカードの 2 つ目が、具体的な型 (int) があるため、(、 `*`)。
-同じです。 | 2 つのシグネチャや型は同じです。
-
-
-
-
-
-
+関連 | 比較対象の2つのシグネチャまたは型の間にリレーションシップがありません。
+一意 |1つの署名または型は、あいまいを他方と比較します。 2つの型シグネチャの場合は、シグネチャが同じである可能性のある型のインスタンスが存在する可能性があることを意味します。 例として、次に示す2つの型シグネチャはあいまいです。  署名 1:`std::pair<*, int>`シグネチャ 2: `std::pair<int,*>`型インスタンス`std::pair<int, int>`が同じように適切に一致している (両方とも1つの具象と1つのワイルドカードが一致している)。
+限定しない | 一方のシグネチャまたは型は、もう一方よりも限定的です。 多くの場合、これは、より限定的なシグネチャには、具体的な型が具象型であるワイルドカードがあることを意味します。 例として、以下の最初のシグネチャは、2番目のシグネチャよりも限定的です。 署名 1:`std::pair<*, int>`シグネチャ 2: `std::pair<int, int>` 2 番目のが具象型`*`(int) を持つワイルドカード () を含んでいます。
+MoreSpecific | 1つのシグネチャまたは型は、もう一方よりも固有です。 多くの場合、これは、より具体的なシグネチャには、ワイルドカードを持つ特定の型があることを意味します。 例として、以下の最初のシグネチャは、2番目よりも具体的なものです。 署名 1:`std::pair<int, int>`シグネチャ 2: `std::pair<*, int>`は具象型 (int) を持ち、2番目の型にはワイルド`*`カード () が含まれています。
+内容 | 2つのシグネチャまたは型は同じです。
 
 ---
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
-[デバッガー データ モデルの C++ の概要](data-model-cpp-overview.md)
+このトピックは、からC++アクセス可能なインターフェイス、それらを使用してC++ベースのデバッガー拡張機能を構築する方法、および他のデータモデル構造を使用する方法について説明したシリーズの一部です (例:JavaScript または NatVis) をC++データモデル拡張機能から。
 
-[デバッガーのデータ モデルの C++ インターフェイス](data-model-cpp-interfaces.md)
+[デバッガーデータモデルC++の概要](data-model-cpp-overview.md)
 
-[デバッガーのデータ モデルの C++ オブジェクト](data-model-cpp-objects.md)
+[デバッガーデータモデルC++のインターフェイス](data-model-cpp-interfaces.md)
 
-[デバッガーのデータ モデルの C++ の追加インターフェイス](data-model-cpp-additional-interfaces.md)
+[デバッガーデータモデルC++オブジェクト](data-model-cpp-objects.md)
 
-[デバッガーのデータ モデルの C の概念](data-model-cpp-concepts.md)
+[デバッガーデータモデルC++の追加インターフェイス](data-model-cpp-additional-interfaces.md)
 
-[デバッガー データ モデルの C++ のスクリプト](data-model-cpp-scripting.md)
+[デバッガーデータモデルC++の概念](data-model-cpp-concepts.md)
+
+[デバッガーデータモデルC++のスクリプト](data-model-cpp-scripting.md)

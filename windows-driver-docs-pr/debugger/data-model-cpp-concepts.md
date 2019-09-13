@@ -1,66 +1,40 @@
 ---
 title: Debugger Data Model C++ の概念
-description: このトピックでは、デバッガーの C++ のデータ モデルの概念について説明します。
-ms.date: 10/04/2018
-ms.openlocfilehash: f29334ea8b034f05000b97d2a232ec5c0a250503
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+description: このトピックでは、デバッガー C++データモデルの概念について説明します。
+ms.date: 09/12/2019
+ms.openlocfilehash: 74f48979e347634855bb851a4be0dada62589868
+ms.sourcegitcommit: 3b7c8b3cb59031e0f4e39dac106c1598ad108828
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376119"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70930378"
 ---
 # <a name="debugger-data-model-c-concepts"></a>Debugger Data Model C++ の概念
 
-このトピックでは、デバッガーの C++ のデータ モデルの概念について説明します。
+このトピックでは、デバッガー C++データモデルの概念について説明します。
 
-このトピックでは、C、C++ ベースのデバッガーの拡張機能の構築に使用する方法および作成する方法からアクセスできるインターフェイスについて説明するシリーズのパートの他のデータ モデルの構成要素を使用して (例。JavaScript または NatVis) C データ モデルの拡張機能から。
+## <a name="span-idconcepts-concepts-in-the-data-model"></a><span id="concepts">データモデルの概念 
 
+データモデルの合成オブジェクトは、実質的に次の2つの処理を行います。 
 
-[デバッガー データ モデルの C++ の概要](data-model-cpp-overview.md)
+- キー/値/メタデータの組のディクショナリ。
+- データモデルによってサポートされる一連の概念 (インターフェイス)。
+概念とは、指定されたセマンティック動作のセットを提供するために (データモデルではなく) クライアントが実装するインターフェイスです。 現在サポートされている概念のセットを次に示します。 
 
-[デバッガーのデータ モデルの C++ インターフェイス](data-model-cpp-interfaces.md)
-
-[デバッガーのデータ モデルの C++ オブジェクト](data-model-cpp-objects.md)
-
-[デバッガーのデータ モデルの C++ の追加インターフェイス](data-model-cpp-additional-interfaces.md)
-
-[デバッガーのデータ モデルの C の概念](data-model-cpp-concepts.md)
-
-[デバッガー データ モデルの C++ のスクリプト](data-model-cpp-scripting.md)
-
----
-
-## <a name="topic-sections"></a>トピックのセクション
-
-このトピックは次のセクションで構成されます。
-
-[データ モデルの概念](#concepts) 
-
----
-
-
-## <a name="span-idconcepts-concepts-in-the-data-model"></a><span id="concepts"> データ モデルの概念 
-
-データ モデルの合成オブジェクトとは、実質的に 2 つのことです。 
-
-- メタデータ/キー/値のタプルのディクショナリ。
-- データ モデルでサポートされている概念 (インターフェイス) のセット。
-概念は、指定されたセマンティックの動作のセットを提供する (データ モデル) ではなく、クライアントを実装するインターフェイスです。 現在サポートされている一連の概念を次に示します。 
-
-インターフェイスの概念 | 説明
+概念インターフェイス | 説明
 |-----------------|-------------|
-IDataModelConcept | 概念は、親モデルです。 このモデルは自動的に登録されているタイプの署名を使用してネイティブ型にアタッチされている、このような種類の新しいオブジェクトがインスタンス化されるたびに、InitializeObject メソッドが呼び出さ自動的にします。
-IStringDisplayableConcept | オブジェクトは、表示目的での文字列に変換できます。
-IIterableConcept | オブジェクトはコンテナーであり、反復処理されることができます。
-IIndexableConcept | オブジェクトはコンテナーであり、インデックスを作成できます (ランダム アクセスを使用してアクセスされる) 1 つまたは複数のディメンションでします。
-IPreferredRuntimeTypeConcept | オブジェクトでは、基になる型システムが提供することのできると、ランタイム型を静的から独自の変換を処理するよりも、それから派生した種類の詳細については理解します。
-IDynamicKeyProviderConcept | オブジェクトは、動的なキーのプロバイダーであり、コア データ モデルからのすべてのキー クエリを実行したいです。 このインターフェイスは通常、JavaScript などの動的言語へのブリッジとして使用します。
-IDynamicConceptProviderConcept | オブジェクトは概念の動的なプロバイダーであり、コア データ モデルからすべての概念のクエリを実行したいです。 このインターフェイスは通常、JavaScript などの動的言語へのブリッジとして使用します。
+IDataModelConcept | 概念は親モデルです。 このモデルが登録された型のシグネチャを使用してネイティブ型に自動的にアタッチされる場合、そのような型の新しいオブジェクトがインスタンス化されるたびに、InitializeObject メソッドが自動的に呼び出されます。
+IStringDisplayableConcept | オブジェクトを文字列に変換して、表示することができます。
+IIterableConcept | オブジェクトはコンテナーであり、反復処理できます。
+IIndexableConcept | オブジェクトはコンテナーであり、1つまたは複数のディメンションで (ランダムアクセスによってアクセスされる) インデックスを作成できます。
+IPreferredRuntimeTypeConcept | オブジェクトは、基になる型システムから派生した型についてより多くの情報を認識し、静的な型からランタイム型への変換を処理することができます。
+IDynamicKeyProviderConcept | オブジェクトはキーの動的プロバイダーであり、コアデータモデルからのすべての主要なクエリを引き継ぎます。 このインターフェイスは、通常、JavaScript などの動的言語へのブリッジとして使用されます。
+IDynamicConceptProviderConcept | オブジェクトは、概念の動的プロバイダーであり、コアデータモデルからのすべての概念クエリを引き継ぐことを望んでいます。 このインターフェイスは、通常、JavaScript などの動的言語へのブリッジとして使用されます。
 
 
-**データ モデルの概念:IDataModelConcept**
+**データモデルの概念は次のとおりです。IDataModelConcept**
 
-親モデルとして別のモデル オブジェクトに関連付けられている任意のモデル オブジェクトは、データ モデルの概念を直接サポートする必要があります。 IDataModelConcept が次のように定義されている、データ モデルの概念には、インターフェイスのサポートが必要です。 
+別のモデルオブジェクトに親モデルとしてアタッチされているモデルオブジェクトは、データモデルの概念を直接サポートする必要があります。 データモデルの概念では、次のように定義されているインターフェイス IDataModelConcept をサポートする必要があります。 
 
 ```cpp
 DECLARE_INTERFACE_(IDataModelConcept, IUnknown)
@@ -72,16 +46,16 @@ DECLARE_INTERFACE_(IDataModelConcept, IUnknown)
 
 [InitializeObject](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelconcept-initializeobject)
 
-データ モデルは、データ モデルのマネージャーの RegisterModelForTypeSignature または RegisterExtensionForTypeSignature メソッドによって正規ビジュアライザーとして、または特定のネイティブ型の拡張機能として登録できます。 これらのメソッドのいずれかを使用して、モデルが登録されると、自動的にデータ モデルが接続されている、親モデルとして型を持つ登録に渡されるシグネチャに一致する任意のネイティブ オブジェクトにします。 その添付ファイルが自動的に行われた時点で、データ モデルに InitializeObject メソッドが呼び出されます。 これには、インスタンス オブジェクト、添付ファイルの原因となった型シグネチャや型シグネチャに、ワイルドカードに一致する (線形な順序) で型のインスタンスを生成する列挙子が渡されます。 データ モデルの実装では、必要がありますすべてのキャッシュを初期化するために、このメソッドの呼び出しを使用できます。 
+データモデルは、標準ビジュアライザーとして登録することも、データモデルマネージャーの RegisterModelForTypeSignature メソッドまたは RegisterExtensionForTypeSignature メソッドを使用して特定のネイティブ型の拡張機能として登録することもできます。 これらの方法のいずれかを使用してモデルを登録すると、データモデルは、登録で渡されたシグネチャと一致する型を持つ任意のネイティブオブジェクトに、親モデルとして自動的にアタッチされます。 この添付ファイルが自動的に作成される時点で、データモデルに対して InitializeObject メソッドが呼び出されます。 これには、インスタンスオブジェクト、添付ファイルの原因となった型シグネチャ、および型のインスタンス (線形の順序) を生成する列挙子が渡されます。これにより、型のシグネチャ内のすべてのワイルドカードと一致します。 データモデルの実装では、このメソッド呼び出しを使用して、必要なキャッシュを初期化することができます。 
 
 [GetName](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelconcept-getname)
 
-RegisterNamedModel メソッドを使用して既定の名前で指定されたデータ モデルが登録されている、登録済みのデータ モデルの IDataModelConcept インターフェイスは、このメソッドからその名前を返す必要があります。 複数の名前 (既定または最高ここで 1 つ返される必要があります) に登録するモデルの申し分なく正当なことに注意してください。 (限り名前で登録されていない) にモデルを完全に名前付きできない可能性があります。 このような状況では、GetName メソッドが E_NOTIMPL を返す必要があります。 
+特定のデータモデルが RegisterNamedModel メソッドを使用して既定の名前で登録されている場合、登録されているデータモデルの IDataModelConcept インターフェイスは、このメソッドからその名前を返す必要があります。 モデルが複数の名前で登録されている場合は、完全に一致していることに注意してください (既定値または最適なものをここで返す必要があります)。 モデルは完全に名前が付けられていない場合があります (名前に登録されていない限り)。 このような場合、GetName メソッドは E_NOTIMPL を返す必要があります。 
 
 
-**文字列の表示可能な概念:IStringDisplayableConcept**
+**文字列の概要を示す概念:IStringDisplayableConcept**
 
-オブジェクトの表示のために、文字列変換を提供するには、IStringDisplayableConcept インターフェイスの実装で文字列の表示可能な概念を実装できます。 インターフェイスの定義は次のとおりです。 
+表示目的で文字列変換を提供するオブジェクトは、IStringDisplayableConcept インターフェイスの実装を通じて、文字列表示可能概念を実装できます。 インターフェイスは次のように定義されます。 
 
 ```cpp
 DECLARE_INTERFACE_(IStringDisplayableConcept, IUnknown)
@@ -92,14 +66,14 @@ DECLARE_INTERFACE_(IStringDisplayableConcept, IUnknown)
 
 [ToDisplayString](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-istringdisplayableconcept-todisplaystring)
 
-クライアントがオブジェクトを表示する文字列に変換する必要があるたびに、ToDisplayString メソッドが呼び出されます (などの UI では、コンソールに.)。このような文字列変換を追加のプログラムによる操作の基盤として使用されませんする必要があります。 文字列変換自体は、呼び出しに渡されるメタデータで深く影響を受ける可能性があります。 文字列変換では、PreferredRadix と PreferredFormat キーを優先するすべての試行をする必要があります。 
+ToDisplayString メソッドは、クライアントがオブジェクトを文字列に変換して (コンソールや UI などに) 表示するようにするたびに呼び出されます。このような文字列変換は、追加のプログラム操作の基礎として使用しないでください。 文字列変換自体は、呼び出しに渡されたメタデータの影響を受ける可能性があります。 文字列変換では、PreferredRadix および PreferredFormat キーを使用するすべての試行が行われます。 
 
 
-**反復可能な概念:IIterableConcept と IModelIterator**
+**反復可能なの概念は次のとおりです。IIterableConcept と IModelIterator**
 
-その他のオブジェクトのコンテナーであり、含まれているオブジェクトを反復処理する機能を表現することを希望するオブジェクトは、IIterableConcept および IModelIterator インターフェイスの実装で反復可能な概念をサポートできます。 反復可能な概念のサポートとインデックスの概念のサポートの非常に重要な関係があります。 含まれているオブジェクトへのランダム アクセスをサポートするオブジェクトには、反復可能な概念だけでなく、インデックス可能な概念をサポートできます。 この場合は、反復要素には、既定値が生成する必要がありますもインデックス、インデックスの概念に渡されるときに、同じオブジェクトを参照してください。 デバッグ ホストで未定義の動作をこの不変性を満たすためにエラーが発生します。 
+他のオブジェクトのコンテナーであり、それらのオブジェクトを反復処理する機能を表すオブジェクトは、IIterableConcept および IModelIterator インターフェイスの実装によって反復可能な概念をサポートできます。 反復可能な概念のサポートと、インデックス可能な概念のサポートの間には非常に重要な関係があります。 含まれているオブジェクトへのランダムアクセスをサポートするオブジェクトは、反復可能な概念に加えて、インデックス可能な概念をサポートできます。 この場合、反復される要素は既定のインデックスも生成する必要があります。これは、インデックス可能な概念に渡すときに、同じオブジェクトを参照します。 この不変性を満たしていないと、デバッグホストで未定義の動作が発生します。 
 
-IIterableConcept の定義は次のとおりです。 
+IIterableConcept は次のように定義されています。 
 
 ```cpp
 DECLARE_INTERFACE_(IIterableConcept, IUnknown)
@@ -109,7 +83,7 @@ DECLARE_INTERFACE_(IIterableConcept, IUnknown)
 }
 ```
 
-IModelIterator 概念の定義は次のとおりです。 
+IModelIterator の概念は次のように定義されています。 
 
 ```cpp
 DECLARE_INTERFACE_(IModelIterator, IUnknown)
@@ -121,30 +95,30 @@ DECLARE_INTERFACE_(IModelIterator, IUnknown)
 
 IIterableConcept の[GetDefaultIndexDimensionality](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-iiterableconcept-getdefaultindexdimensionality)
 
-GetDefaultIndexDimensionality メソッドは、既定のインデックスにディメンションの数を返します。 オブジェクトがインデックス可能でない場合、このメソッドは 0 が返され、(S_OK) が成功する必要があります。 このメソッドから 0 以外の値を返す任意のオブジェクトを示すプロトコル コントラクトのサポートを宣言しています。 
-- オブジェクトは、IIndexableConcept のサポートを使用してインデックスの概念をサポートしています
-- 反復可能な概念の GetIterator メソッドから返される IModelIterator の GetNext メソッドでは、生成された各要素の一意の既定のインデックスを返します。 このようなインデックスは、ここに示すように、ディメンションの数があります。
-- インデックスの概念には、GetAt メソッドに、IModelIterator の GetNext メソッドから返されるインデックスを渡す (IIndexableConcept) は GetNext を生成したのと同じオブジェクトを参照します。 同じ値が返されます。
+GetDefaultIndexDimensionality メソッドは、既定のインデックスの次元数を返します。 オブジェクトをインデックス可能にしない場合、このメソッドは0を返し、成功します (S_OK)。 このメソッドから0以外の値を返すオブジェクトは、次の状態を示すプロトコルコントラクトのサポートを宣言しています。 
+- オブジェクトは、IIndexableConcept をサポートすることで、インデックス可能な概念をサポートします。
+- 反復可能な概念の GetIterator メソッドから返された IModelIterator の GetNext メソッドは、生成された各要素に対して一意の既定のインデックスを返します。 このようなインデックスには、ここで示したディメンションの数が含まれます。
+- IModelIterator の GetNext メソッドから返された決まっを、インデックス可能な概念 (IIndexableConcept) の GetAt メソッドに渡すと、GetNext が生成したのと同じオブジェクトが参照されます。 同じ値が返されます。
 
-IIterableConcept の[GetIterator](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-iiterableconcept-getiterator)
+IIterableConcept の[Getiterator](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-iiterableconcept-getiterator)
 
-反復可能な概念に GetIterator メソッドは、オブジェクトを反復処理するために使用できる反復子インターフェイスを返します。 返された反復子は、GetIterator メソッドに渡されたコンテキスト オブジェクトを忘れないでください。 メソッド自体、反復子では渡されません。 
+反復可能な概念の GetIterator メソッドは、オブジェクトを反復処理するために使用できる反復子インターフェイスを返します。 返された反復子は、GetIterator メソッドに渡されたコンテキストオブジェクトを記憶する必要があります。 反復子自体のメソッドには渡されません。 
 
 
 IModelIterator の[リセット](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-imodeliterator-reset)
 
-反復可能な概念から返された反復子の Reset メソッドは、(最初の要素) の前に、反復子が最初に作成したときに、反復子の位置に復元されます。 反復子の強く勧め Reset メソッドをサポートして、必須ではありません。 反復子では、C++ の入力反復子に相当するでき、順方向の反復の 1 つのパスのみを許可することができます。 このような場合、E_NOTIMPL と Reset メソッドがあります。 
+反復可能な概念から返された反復子の Reset メソッドは、反復子が最初に作成された位置 (最初の要素の前) に反復子の位置を復元します。 反復子が Reset メソッドをサポートすることを強くお勧めしますが、必須ではありません。 反復子は、 C++入力反復子に相当するものであり、前方反復の単一のパスのみを許可します。 このような場合、Reset メソッドは E_NOTIMPL で失敗する可能性があります。 
 
 IModelIterator の[GetNext](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-imodeliterator-getnext)
 
-GetNext メソッドは、前方反復子に移動し、次の反復処理される要素をフェッチします。 オブジェクト indexable 反復可能なだけでなく、これは、0 以外の値を返す GetDefaultIndexDimensionality 引数によって示されます、このメソッドは必要に応じてインデクサーから生成された値に戻るには既定のインデックスを返す可能性があります。 0/nullptr を渡すし、インデックスを取得する呼び出し元ができますに注意してください。 部分のインデックスを要求する呼び出し元の無効と見なされます (例:: GetDefaultIndexDimensionality によって生成された数よりも小さい)。 
+GetNext メソッドは反復子を前方に移動し、次に反復される要素をフェッチします。 オブジェクトが反復可能なに加えてインデックス可能であり、それが0以外の値を返す GetDefaultIndexDimensionality 引数によって示されている場合、このメソッドは、インデクサーから生成された値に戻るために、必要に応じて既定の決まっを返すことができます。 呼び出し元は、0/nullptr を渡すことを選択し、決まっを取得しないことに注意してください。 このメソッドは、呼び出し元が部分的な決まっを要求する場合には無効と見なされます (例: GetDefaultIndexDimensionality によって生成される数値よりも小さい)。 
 
-メソッドがエラーを返す可能性があります、反復子が正常に移動進む場合は、繰り返し行う一連の要素の値を読み取り中にエラーが発生しました*AND*エラー オブジェクトには、「オブジェクト」を入力します。 含まれる要素の反復処理の最後に、反復子は、GetNext メソッドから、E_BOUNDS を返します。 すべての後続の呼び出し (ない場合のリセットの中間の呼び出しがあった) でも E_BOUNDS が返されます。 
+反復子が正常に移動したにもかかわらず、反復される要素の値の読み取り中にエラーが発生した場合、メソッドはエラーを返し、"object" にエラーオブジェクト*を格納する*ことがあります。 含まれている要素の反復処理の最後に、反復子は GetNext メソッドから E_BOUNDS を返します。 それ以降の呼び出しでは (介在している Reset 呼び出しがない限り)、E_BOUNDS も返されます。 
 
 
-**インデックスの概念:IIndexableConcept**
+**インデックス可能の概念は次のとおりです。IIndexableConcept**
 
-オブジェクトの内容のセットへのランダム アクセスを提供するには、IIndexableConcept インターフェイスのサポートを使用してインデックスの概念をサポートできます。 インデックス可能であるほとんどのオブジェクトは、反復可能な概念のサポートを通じても反復可能になります。 これは、ただし、必要ありません。 、サポートされている場合は、反復子とインデクサーの重要な関係があります。 反復子では、GetDefaultIndexDimensionality のサポートからこのメソッドは、0 以外の値を返す、および説明があるコントラクトをサポートする必要があります。 インデクサーの概念のインターフェイスの定義は次のとおりです。 
+一連のコンテンツへのランダムアクセスを提供するオブジェクトは、IIndexableConcept インターフェイスをサポートすることで、インデックス可能な概念をサポートできます。 インデックスを設定できるオブジェクトのほとんどは、反復可能なの概念をサポートすることによって反復可能なされます。 ただし、これは必須ではありません。 サポートされている場合は、反復子とインデクサーの間に重要な関係があります。 反復子は、GetDefaultIndexDimensionality をサポートし、そのメソッドから0以外の値を返し、そこに記載されているコントラクトをサポートする必要があります。 インデクサーの概念インターフェイスは、次のように定義されています。 
 
 ```cpp
 DECLARE_INTERFACE_(IIndexableConcept, IUnknown)
@@ -155,7 +129,7 @@ DECLARE_INTERFACE_(IIndexableConcept, IUnknown)
 }
 ```
 
-インデクサー (および反復子とその相互作用) を使用する例は、以下に示します。 この例では、インデックス可能なコンテナーの内容を反復処理し、だけ返された値に戻るには、インデクサーを使用します。 その操作は、書き込まれると機能的には役に立ちませんが、これらのインターフェイスの対話方法を示します。 次の例はメモリ割り当ての失敗を扱うしないことに注意してください。 スローを新しい (可能性のあるコードが存在するです--データ モデルの COM メソッドが C++ 例外のエスケープを持つことはできません、環境に応じて不適切な想定) を仮定します。 
+インデクサー (および反復子との内部再生) の使用例を次に示します。 この例では、インデックス可能なコンテナーの内容を反復処理し、そのインデクサーを使用して返された値に戻ります。 この操作は機能的には記述されていませんが、これらのインターフェイスがどのように対話するかを示しています。 次の例では、メモリ割り当てエラーについては扱いません。 これは、new をスローすることを前提としています (これは、コードが存在する環境によっては適切ではないC++可能性があります。データモデルの COM メソッドでは、例外をエスケープすることはできません)。 
 
 ```cpp
 ComPtr<IModelObject> spObject;
@@ -228,20 +202,20 @@ if (SUCCEEDED(spObject->GetConcept(__uuidof(IIterableConcept), &spIterable, null
 
 [GetDimensionality](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-iindexableconcept-getdimensionality)
 
-GetDimensionality メソッドは、オブジェクトのインデックスが設定されたディメンションの数を返します。 オブジェクトが反復可能なとインデックスの両方の場合は、GetDefaultIndexDimensionality の実装が、インデクサーの次元数に関して GetDimensionality の実装に同意する必要がありますに注意してくださいがあります。 
+GetDimensionality メソッドは、オブジェクトのインデックスが作成されるディメンションの数を返します。 オブジェクトが反復可能なとインデックス可能の両方である場合、GetDefaultIndexDimensionality の実装は、インデクサーが持つ次元の数に対する GetDimensionality の実装に同意する必要があります。 
 
 [GetAt](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-iindexableconcept-getat)
 
-GetAt メソッドでは、インデックス付きオブジェクト内から特定の N 次元インデックス値を取得します。 N は GetDimensionality から返される値を N 次元のインデクサーをサポートする必要があります。 オブジェクトをさまざまな種類が異なるドメインにあるインデックス可能する可能性がありますに注意してください (例:: 序数と文字列の両方を使用してインデックスを付ける)。 メソッドが; エラーを返す場合、インデックスが範囲外です (またはアクセスできませんでした)ただし、このような場合は、出力オブジェクトは、エラー オブジェクトには設定もすることがあります。 
+GetAt メソッドは、インデックス付きオブジェクト内から特定の N 次元インデックスにある値を取得します。 N 次元のインデクサー。 N は GetDimensionality から返された値で、サポートされている必要があります。 オブジェクトは、異なる型 (序数と文字列の両方でインデックス可能) で異なるドメインでインデックスを設定できることに注意してください。 インデックスが範囲外 (またはアクセスできない) の場合、メソッドはエラーを返します。ただし、このような場合は、出力オブジェクトがエラーオブジェクトに設定されている可能性があります。 
 
 [SetAt](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-iindexableconcept-setat)
 
-SetAt メソッドは、インデックス付きオブジェクト内から特定の N 次元インデックスに値を設定しようとします。 N は GetDimensionality から返される値を N 次元のインデクサーをサポートする必要があります。 オブジェクトをさまざまな種類が異なるドメインにあるインデックス可能する可能性がありますに注意してください (例:: 序数と文字列の両方を使用してインデックスを付ける)。 一部のインデクサーとは、読み取り専用です。 このような場合、SetAt メソッドへの呼び出しから E_NOTIMPL が返されます。 
+SetAt メソッドは、インデックス付きオブジェクト内の特定の N 次元インデックスに値を設定しようとします。 N 次元のインデクサー。 N は GetDimensionality から返された値で、サポートされている必要があります。 オブジェクトは、異なる型 (序数と文字列の両方でインデックス可能) で異なるドメインでインデックスを設定できることに注意してください。 一部のインデクサーは読み取り専用です。 このような場合、SetAt メソッドの呼び出しから E_NOTIMPL が返されます。 
 
 
-**優先のランタイム型の概念:IPreferredRuntimeTypeConcept**
+**優先されるランタイム型の概念は次のとおりです。IPreferredRuntimeTypeConcept**
 
-デバッグ ホスト シンボリック情報については、静的な型のオブジェクトの実際の実行時の型を判断するためにクエリを実行できます。 この変換は、完全に正確な情報に基づく可能性があります (例。C++ RTTI) またはオブジェクト内のすべての仮想関数テーブルの図形などの強力なヒューリスティックに基づく可能性があります。 一部のオブジェクトが、変換できませんから静的なランタイム型にデバッグ ホストのヒューリスティックに収まらないため、(例: あるありません RTTI または仮想関数テーブル)。 このような場合、オブジェクトのデータ モデルは、既定の動作をオーバーライドし、宣言を把握している複数のオブジェクトの「ランタイム型」についてデバッグ ホストが理解できるよりも選択できます。 これは、任意のランタイム型の概念と IPreferredRuntimeTypeConcept インターフェイスのサポートを通じて実行されます。 
+シンボル情報に含まれる静的な型から、オブジェクトの実際のランタイム型を特定するために、デバッグホストを照会できます。 この変換は、完全に正確な情報 (例:C++RTTI) またはは、オブジェクト内の仮想関数テーブルの形などの強力なヒューリスティックに基づいている場合があります。 ただし、一部のオブジェクトはデバッグホストのヒューリスティックに適合しないため、静的からランタイム型に変換することはできません (たとえば、RTTI や仮想関数テーブルがない)。 このような場合、オブジェクトのデータモデルは、既定の動作をオーバーライドし、デバッグホストが理解できるオブジェクトの "ランタイム型" についてより多く認識していることを宣言できます。 これを行うには、IPreferredRuntimeTypeConcept インターフェイスの推奨されるランタイム型の概念とサポートを使用します。 
 
 IPreferredRuntimeTypeConcept インターフェイスは、次のように宣言されます。 
 
@@ -254,18 +228,18 @@ DECLARE_INTERFACE_(IPreferredRuntimeTypeConcept, IUnknown)
 
 [CastToPreferredRuntimeType](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-ipreferredruntimetypeconcept-casttopreferredruntimetype)
 
-CastToPreferredRuntimeType メソッドは、クライアントが、静的な型のインスタンスからそのインスタンスのランタイム型に変換しようとする必要があるたびに呼び出されます。 対象のオブジェクトは、(その親が接続されているモデルのいずれか) で推奨ランタイム型の概念をサポートする場合、このメソッドは変換を実行するを呼び出せません。 このメソッドは、元のオブジェクトを返す可能性がありますか (変換がないか分析されません)、ランタイム型の新しいインスタンスを返すと、非セマンティック上の理由から失敗 (例:: メモリ不足)、または E_NOT_SET を取得します。 E_NOT_SET のエラー コードは、データ モデルの実装が既定の動作をオーバーライドしないこと、およびデータ モデルがどのような分析が実行するデバッグ ホスト (例: フォールバックにする必要がありますに示す非常に特殊なエラー コード:RTTI 分析、仮想関数テーブルなどの図形の調査.)。 
+CastToPreferredRuntimeType メソッドは、クライアントが静的な型のインスタンスからそのインスタンスのランタイム型に変換しようとするたびに呼び出されます。 対象のオブジェクトが、アタッチされている親モデルの1つを通じて、優先するランタイム型の概念をサポートしている場合、このメソッドは変換を実行するために呼び出されます。 このメソッドは、元のオブジェクトを返すことができます (変換がないか、または分析できません)。ランタイム型の新しいインスタンスを返すか、非セマンティックの理由で失敗します (例: メモリ不足)、または E_NOT_SET を返します。 E_NOT_SET エラーコードは、非常に特殊なエラーコードです。これは、実装で既定の動作をオーバーライドしないこと、およびデバッグホストによって実行される任意の分析にデータモデルがフォールバックする必要があることをデータモデルに示すことを意味します (例::RTTI の分析、仮想関数テーブルの構造の検査など) 
 
 
-**動的なプロバイダーの概念:IDynamicKeyProviderConcept と IDynamicConceptProviderConcept**
+**動的プロバイダーの概念は次のとおりです。IDynamicKeyProviderConcept と IDynamicConceptProviderConcept**
 
-データ モデル自体通常オブジェクトのハンドルのキーと概念の管理も回その概念が遅くなります。 クライアントがデータ モデルと別のものの間のブリッジを作成するには、これは完全に動的に希望と具体的には、(例。JavaScript の場合)、データ モデルの実装からキーと概念の管理を引き継ぐに役に立つできます。 コア データ モデルは、1 つと IModelObject の実装のみが、これは、代わりに 2 つの概念の組み合わせを使用して: 動的なキー プロバイダーの概念と動的な概念のプロバイダーの概念です。 実装の両方またはどちらも通常はできますが、このような要件はありません。 
+データモデル自体は、通常、オブジェクトのキーと概念の管理を処理しますが、その概念が理想的ではない場合もあります。 特に、クライアントがデータモデルと、真に動的なもの (たとえば、次のようなものとの間にブリッジを作成しようとするとします。JavaScript) では、データモデルの実装から、キーと概念の管理を引き継ぐことが重要な場合があります。 コアデータモデルは IModelObject の唯一の実装であり、動的キープロバイダーの概念と動的概念プロバイダーの概念という2つの概念の組み合わせによって行われます。 またはどちらも実装するのは一般的ではありませんが、このような要件はありません。 
 
-両方が実装されている場合は、動的な概念のプロバイダーの概念の前に動的なキー プロバイダーの概念を追加する必要があります。 これらの概念の両方は特別です。 効果的にオブジェクトを「静的にマネージ」から「動的に管理対象」に変更することで、スイッチを反転します。 これらの概念は、オブジェクトのデータ モデルによって管理されているキー/概念がない場合にのみ設定できます。 オブジェクトには、これらの概念が追加される、このアクションは取り消し可能なです。 
+両方が実装されている場合は、動的な概念プロバイダーの概念の前に動的キープロバイダーの概念を追加する必要があります。 これらの概念はどちらも特殊です。 "静的管理" から "動的管理" に変更するオブジェクトのスイッチを効果的に反転させます。 これらの概念は、オブジェクトのデータモデルによって管理されているキーや概念がない場合にのみ設定できます。 これらの概念がオブジェクトに追加されると、その操作は後になります。 
 
-これには、IModelObject 動的概念プロバイダーであるとは 1 つの機能拡張に関する追加セマンティック違いがあります。 これらの概念はクライアントがデータ モデルと JavaScript などの動的言語のシステムの間のブリッジを作成できるようにするためのものです。 データ モデルでは、JavaScript のプロトタイプ チェーンのようなリニア チェーンではなく、親モデルのツリーは、JavaScript などのシステムとやや根本的には異なる機能拡張の概念があります。 このようなシステムをより良い関係を許可するのには、動的概念プロバイダーである、IModelObject は、1 つのデータ モデルの親を持ちます。 その 1 つのデータ モデルの親では、親モデルのデータ モデルの一般的な同様の任意の数を持つことができる標準 IModelObject です。 動的な概念プロバイダーを追加または削除の親への要求は、1 つの親を自動的にリダイレクトされます。 部外者の観点から動的概念プロバイダーがあるモデルの親の通常のツリー スタイルのチェーンのように見えます。 動的な概念のプロバイダーの概念の実装者は、中間の 1 つの親に対応した (コア データ モデル) の外部でのみオブジェクトです。 その 1 つの親は、ブリッジを提供する動的言語のシステムにリンクすることができます (例: JavaScript のプロトタイプ チェーンに配置されます)。 
+IModelObject (動的概念プロバイダー) と、それ以外の機能の間には、機能拡張に関する追加のセマンティックの違いがあります。 これらの概念は、クライアントがデータモデルと、JavaScript などの動的言語システムの間にブリッジを作成できるようにすることを目的としています。 データモデルには、javascript のようなシステムとは基本的に異なる機能拡張の概念があります。これは、JavaScript プロトタイプチェーンなどの線形チェーンではなく、親モデルのツリーがあることを示しています。 このようなシステムとの関係を向上させるために、動的概念プロバイダーである IModelObject には、単一のデータモデルの親があります。 この1つのデータモデルの親は通常の IModelObject で、データモデルにとっては通常のように任意の数の親モデルを持つことができます。 動的概念プロバイダーに対する親の追加または削除の要求は、1つの親に自動的にリダイレクトされます。 部外者の観点から見ると、動的概念プロバイダーには、親モデルの通常のツリースタイルチェーンがあるように見えます。 動的概念プロバイダーの概念の実装者は、中間の単一の親を認識する唯一のオブジェクト (コアデータモデル以外) です。 この1つの親を動的言語システムにリンクして、ブリッジを提供できます (例: JavaScript プロトタイプチェーンに配置されます)。 
 
-動的なキー プロバイダーの概念の定義は次のとおりです。 
+動的キープロバイダーの概念は、次のように定義されています。 
 
 ```cpp
 DECLARE_INTERFACE_(IDynamicKeyProviderConcept, IUnknown)
@@ -276,7 +250,7 @@ DECLARE_INTERFACE_(IDynamicKeyProviderConcept, IUnknown)
 }
 ```
 
-動的な概念のプロバイダーの概念の定義は次のとおりです。 
+動的概念プロバイダーの概念は、次のように定義されています。 
 
 ```cpp
 DECLARE_INTERFACE_(IDynamicConceptProviderConcept, IUnknown)
@@ -289,57 +263,58 @@ DECLARE_INTERFACE_(IDynamicConceptProviderConcept, IUnknown)
 }
 ```
 
-IDynamicKeyProviderConcept の[GetKey](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idynamickeyproviderconcept-getkey)
+IDynamicKeyProviderConcept の[Getkey](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idynamickeyproviderconcept-getkey)
 
-動的なキー プロバイダーの GetKey メソッドは、大きく IModelObject GetKey メソッドのオーバーライドです。 動的なキー プロバイダーは、キーとそのキーに関連付けられたメタデータの値を返すと想定されます。 キーが存在しない (ただし、他のエラーが発生しない) ことプロバイダーは hasKey パラメーターに false を返すし、s_ok 成功する必要があります。 この呼び出しの失敗は、キーの取得に失敗したと見なされ、モデルの親チェーンを使用して、キーの検索は、明示的に停止します。 HasKey と成功状態の場合は false を返すと、キーの検索を継続します。 完全に正しく GetKey をキーとしてボックス化されたプロパティのアクセサーを返すことに注意してください。 これは、プロパティ アクセサーを返す IModelObject GetKey メソッドに意味的に同一になります。 
+動的キープロバイダーの GetKey メソッドは、主に IModelObject での GetKey メソッドのオーバーライドです。 動的キープロバイダーは、キーの値と、そのキーに関連付けられているメタデータを返すことが想定されています。 キーが存在しない (ただし、他のエラーが発生しない) 場合、プロバイダーは hasKey パラメーターで false を返し、S_OK で成功する必要があります。 この呼び出しに失敗すると、キーをフェッチできなくなり、親モデルチェーンを通じてキーの検索が明示的に停止されます。 HasKey で false を返し、success を返すと、キーの検索が続行されます。 GetKey では、ボックス化されたプロパティアクセサーをキーとして返すことができることに注意してください。 これは、プロパティアクセサーを返す IModelObject の GetKey メソッドと意味的に同じです。 
 
-IDynamicKeyProviderConcept の[SetKey](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idynamickeyproviderconcept-setkey)
+IDynamicKeyProviderConcept の[Setkey](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idynamickeyproviderconcept-setkey)
 
-動的なキー プロバイダーの SetKey メソッドは、効果的に IModelObject SetKey メソッドのオーバーライドです。 これには、動的なプロバイダーのキーを設定します。 プロバイダーの新しいプロパティの作成では効果的にします。 Expando プロパティの作成などの任意の概念をサポートしていないプロバイダーが E_NOTIMPL をここで返す必要があることに注意してください。 
+動的キープロバイダーの SetKey メソッドは事実上、IModelObject での SetKey メソッドのオーバーライドです。 これにより、動的プロバイダーにキーが設定されます。 実質的には、プロバイダーで新しいプロパティが作成されます。 Expando プロパティの作成などの概念をサポートしていないプロバイダーは、ここで E_NOTIMPL を返す必要があることに注意してください。 
 
 IDynamicKeyProviderConcept の[EnumerateKeys](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idynamickeyproviderconcept-enumeratekeys)
 
-動的なキー プロバイダーの EnumerateKeys メソッドは、効果的に IModelObject EnumerateKeys メソッドのオーバーライドです。 これには、動的なプロバイダーのすべてのキーを列挙します。 返された列挙子が実装によって受け入れられるいくつかの制限事項があります。 
+動的キープロバイダーの EnumerateKeys メソッドは、実質的に IModelObject の EnumerateKeys メソッドをオーバーライドします。 これにより、動的プロバイダー内のすべてのキーが列挙されます。 返される列挙子には、実装によって無視される必要があるいくつかの制限があります。 
 
-- EnumerateKeyValues や EnumerateKeyReferences はなく EnumerateKeys の呼び出しとその動作する必要があります。 キーの値 (このような概念は、プロバイダーに存在する) 場合は、基になるプロパティ アクセサーに解決されていません返す必要があります。
-- 1 つの動的なキー プロバイダーの観点から物理的に異なるキーである同じ名前の複数のキーを列挙することはできません。 これは、親モデル チェーンを介して接続されている別のプロバイダーで発生しますに 1 つのプロバイダーの観点から発生することはできません。
+- これは、EnumerateKeyValues または EnumerateKeyReferences ではなく、EnumerateKeys の呼び出しとして動作する必要があります。 基になるプロパティアクセサーを解決しないキー値を返す必要があります (そのような概念がプロバイダーに存在する場合)。
+- 単一の動的キープロバイダーの観点からは、物理的に異なるキーを持つ同じ名前の複数のキーを列挙することは無効です。 これは、親モデルチェーンを介してアタッチされたさまざまなプロバイダーで発生する可能性がありますが、1つのプロバイダーの観点からは発生しません。
 
-IDynamicConceptProviderConcept's [GetConcept](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idynamicconceptproviderconcept-getconcept)
+IDynamicConceptProviderConcept の[Getconcept](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idynamicconceptproviderconcept-getconcept)
 
-動的概念プロバイダー GetConcept メソッドは、効果的に IModelObject GetConcept メソッドのオーバーライドです。 動的概念プロバイダーとその概念に関連付けられたメタデータが存在する場合、クエリの概念のインターフェイスを返す必要があります。 プロバイダーの概念が存在しない場合、hasConcept 引数を正常終了したときに返される値は false を使用してを示す必要があります。 このメソッドのエラーは、概念のフェッチに失敗したし、概念については、検索は、明示的に停止します。 HasConcept とコードの正常な場合は false を返すと、親モデル ツリーを概念の検索を継続します。 
+動的概念プロバイダーでの GetConcept メソッドは、事実上、IModelObject での GetConcept メソッドのオーバーライドです。 動的概念プロバイダーは、クエリされた概念が存在する場合はその概念のインターフェイスと、その概念に関連付けられているメタデータを返す必要があります。 概念がプロバイダーに存在しない場合は、hasConcept 引数で返される false 値と正常な戻り値を使用して指定する必要があります。 この方法のエラーは、概念を取得できなかったため、概念の検索を明示的に停止します。 HasConcept の場合は false を返し、コードが成功した場合は、親モデルツリーを通じて概念の検索を続行します。 
 
-IDynamicConceptProviderConcept の[SetConcept](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idynamicconceptproviderconcept-setconcept)
+IDynamicConceptProviderConcept の[Setconcept](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idynamicconceptproviderconcept-setconcept)
 
-動的概念プロバイダー SetConcept メソッドは、効果的に IModelObject SetConcept メソッドのオーバーライドです。 動的なプロバイダーは、概念を割り当てられます。 オブジェクトの反復可能なインデックス可能な文字列変換などがあることがあります.ここで E_NOPTIMPL を返す必要がありますの概念の作成を許可されていないプロバイダーにことに注意してください。 
+動的概念プロバイダーの SetConcept メソッドは、実質的に IModelObject の SetConcept メソッドをオーバーライドします。 動的プロバイダーによって概念が割り当てられます。 これにより、オブジェクトを反復可能な、インデックス可能、文字列に変換できるようになります。ここでは、概念の作成が許可されていないプロバイダーが E_NOPTIMPL を返す必要があることに注意してください。 
 
 IDynamicConceptProviderConcept の[NotifyParent](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idynamicconceptproviderconcept-notifyparent)
 
-動的概念プロバイダー NotifyParent 呼び出しは、コア データ モデルで、動的に通知するために使用されてはプロバイダーの 1 つの親モデルとデータ モデルをより動的な言語の「複数の親モデル」パラダイムをブリッジするために作成されます。 その 1 つの親モデルの操作、さらに通知動的プロバイダーになります。 このコールバックが動的概念プロバイダーの概念の割り当て時にすぐに作成されたことに注意してください。 
+動的概念プロバイダーの NotifyParent 呼び出しは、コアデータモデルによって、データモデルの "複数の親モデル" パラダイムをより動的な言語にブリッジングできるように作成された単一の親モデルの動的プロバイダーを通知するために使用されます。 この1つの親モデルを操作すると、動的プロバイダーに対するさらなる通知が発生します。 このコールバックは、動的概念プロバイダーの概念の割り当て時に直ちに行われることに注意してください。 
 
 IDynamicConceptProviderConcept の[NotifyParentChange](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idynamicconceptproviderconcept-notifyparentchange)
 
-NotifyParent メソッドは、動的な概念のプロバイダーは、静的オブジェクトの 1 つの親モデルの操作が行われたときに、コア データ モデルによって行われたコールバック。 追加された任意の指定した親モデルこのメソッドが呼び出されるときにその親モデルが追加され、親モデルの削除をもう一度場合は、最初に。 
+動的概念プロバイダーの NotifyParent メソッドは、オブジェクトの単一の親モデルの静的操作が行われたときに、コアデータモデルによって作成されるコールバックです。 追加された特定の親モデルについては、親モデルが追加されたときに初めてこのメソッドが呼び出され、親モデルが削除された場合は2回目になります。 
 
-IDynamicConceptProviderConcept の[NotifyDestruct](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idynamicconceptproviderconcept-notifydestruct)
+IDynamicConceptProviderConcept の[Notifydestruct](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idynamicconceptproviderconcept-notifydestruct)
 
-NotifyDestruct メソッドは、動的な概念のプロバイダーは、動的概念プロバイダーであるオブジェクトの破棄の開始時のコア データ モデルによって行われたコールバック。 クライアントで必要とする機会をクリーンアップする追加提供します。 
+動的概念プロバイダーの NotifyDestruct メソッドは、動的概念プロバイダーであるオブジェクトの破棄の開始時に、コアデータモデルによって作成されるコールバックです。 これにより、クライアントに必要な追加のクリーンアップ機会が提供されます。 
 
+--
 
----
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
+このトピックは、からC++アクセス可能なインターフェイス、それらを使用してC++ベースのデバッガー拡張機能を構築する方法、および他のデータモデル構造を使用する方法について説明したシリーズの一部です (例:JavaScript または NatVis) をC++データモデル拡張機能から。
 
-[デバッガー データ モデルの C++ の概要](data-model-cpp-overview.md)
+[デバッガーデータモデルC++の概要](data-model-cpp-overview.md)
 
-[デバッガーのデータ モデルの C++ インターフェイス](data-model-cpp-interfaces.md)
+[デバッガーデータモデルC++のインターフェイス](data-model-cpp-interfaces.md)
 
-[デバッガーのデータ モデルの C++ オブジェクト](data-model-cpp-objects.md)
+[デバッガーデータモデルC++オブジェクト](data-model-cpp-objects.md)
 
-[デバッガーのデータ モデルの C++ の追加インターフェイス](data-model-cpp-additional-interfaces.md)
+[デバッガーデータモデルC++の追加インターフェイス](data-model-cpp-additional-interfaces.md)
 
-[デバッガーのデータ モデルの C の概念](data-model-cpp-concepts.md)
+[デバッガーデータモデルC++の概念](data-model-cpp-concepts.md)
 
-[デバッガー データ モデルの C++ のスクリプト](data-model-cpp-scripting.md)
+[デバッガーデータモデルC++のスクリプト](data-model-cpp-scripting.md)
 
 
  
