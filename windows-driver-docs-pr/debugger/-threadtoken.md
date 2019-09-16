@@ -3,7 +3,7 @@ title: threadtoken
 description: Threadtoken 拡張機能は、現在のスレッドの偽装状態を表示します。
 ms.assetid: df16bdb5-0834-4e07-ad5f-a712f9282bb0
 keywords:
-- Windows デバッグ threadtoken
+- threadtoken Windows のデバッグ
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 55d87c8396c45ba7537e288cdd6c845fd7c3e089
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6b43026e988abdcd6cb5f9d5b2358a2f42cb5baf
+ms.sourcegitcommit: 424c435700d8f8a85bdaa83e8ddaab9568c8d347
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63338730"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70025156"
 ---
 # <a name="threadtoken"></a>!threadtoken
 
@@ -41,7 +41,7 @@ ms.locfileid: "63338730"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>Windows 2000</strong></p></td>
-<td align="left"><p>Ntsdexts.dll</p></td>
+<td align="left"><p>Ntsdexts .dll</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>Windows XP 以降</strong></p></td>
@@ -52,20 +52,20 @@ ms.locfileid: "63338730"
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-スレッドと偽装については、Microsoft Windows SDK のマニュアルを参照し、 *Microsoft Windows internals 』* Mark Russinovich と David Solomon します。 (これらのリソースできない場合がありますのいくつかの言語および国。)
+スレッドと権限借用の詳細については、Microsoft Windows SDK のドキュメントと、Mark Russinovich と David ソロモンによる*Microsoft Windows の内部構造*を参照してください。
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>コメント
 -------
 
-**! Threadtoken**拡張機能は Windows XP および Windows の以降のバージョンで廃止されています。 使用[ **! トークン**](-token.md)代わりにします。
+**! Threadtoken**拡張機能は、windows XP 以降のバージョンの windows では廃止されています。 代わりに[ **! token**](-token.md)を使用してください。
 
-現在のスレッドが偽装中で、このスレッドを使用しているトークンが表示されます。
+現在のスレッドが偽装している場合は、このスレッドが使用しているトークンが表示されます。
 
-それ以外の場合、「スレッドが偽装中でない」を示すメッセージが表示されます。 プロセス トークンが表示されます。
+それ以外の場合は、"スレッドが偽装されていません" というメッセージが表示されます。 次に、プロセストークンが表示されます。
 
-トークンに表示される同じ形式で[ **! 処理**](-handle.md)トークンのハンドルを表示するときに使用します。
+トークンは、トークン[**ハンドル**](-handle.md)を表示するときにが使用するのと同じ形式で表示されます。
 
 以下に例を示します。
 
