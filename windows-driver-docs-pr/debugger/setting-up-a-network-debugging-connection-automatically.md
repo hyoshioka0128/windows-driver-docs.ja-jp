@@ -1,36 +1,34 @@
 ---
 title: KDNET ネットワーク カーネル デバッグの自動設定
-description: KDNET を使用すると、ネットワークのカーネル デバッグが自動的に、Windows 用デバッグ ツールを構成できます。
+description: KDNET を使用して、Windows デバッグツールのネットワークカーネルデバッグを自動的に構成します。
 ms.assetid: B4A79B2E-D4B1-42CA-9121-DEC923C76927
 keywords:
-- ネットワークのデバッグ
-- イーサネットのデバッグ
+- ネットワークデバッグ
+- イーサネットデバッグ
 - WinDbg
 - KDNET
-ms.date: 09/25/2018
+ms.date: 09/12/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: d33e84652f94172fa4df340ae488450cee94615f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 62e171a0382c3718f6b2ba1d3a60dc73409f0501
+ms.sourcegitcommit: f91a0fd22f46be44839d2a22a21f59fad900ce90
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381946"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71020997"
 ---
 # <a name="setting-up-kdnet-network-kernel-debugging-automatically"></a>KDNET ネットワーク カーネル デバッグの自動設定
 
-デバッグ ツールの Windows カーネルがネットワーク経由でデバッグをサポートします。 このトピックでは、デバッグ、kdnet.exe セットアップ ツールを使用して自動的にネットワークをセットアップする方法を説明します。
+Windows 用デバッグツールでは、ネットワーク経由のカーネルデバッグがサポートされています。 このトピックでは、kdnet セットアップツールを使用してネットワークデバッグを自動的に設定する方法について説明します。
 
-デバッガーを実行しているコンピューターが呼び出されます、*ホスト コンピューター*、デバッグ中のコンピューターを呼び出すと、*対象のコンピュータ*します。 7 以降、ホスト コンピューターで Windows が実行する必要があり、8 またはそれ以降、ターゲット コンピューターで Windows が実行する必要があります。
+デバッガーを実行するコンピューターは*ホストコンピューター*と呼ばれ、デバッグ中のコンピューターは*ターゲットコンピューター*と呼ばれます。 ホストコンピューターは、Windows 7 以降を実行している必要があります。また、対象のコンピューターで Windows 8 以降が実行されている必要があります。
 
+## <a name="span-iddetermining_the_ip_address_of_the_host_computerspanspan-iddetermining_the_ip_address_of_the_host_computerspanspan-iddetermining_the_ip_address_of_the_host_computerspandetermining-the-ip-address-of-the-host-computer"></a><span id="Determining_the_IP_Address_of_the_Host_Computer"></span><span id="determining_the_ip_address_of_the_host_computer"></span><span id="DETERMINING_THE_IP_ADDRESS_OF_THE_HOST_COMPUTER"></span>ホストコンピューターの IP アドレスを確認する
 
+1. ターゲットおよびホスト Pc がネットワークハブに接続されていること、または適切なネットワークケーブルを使用してスイッチが接続されていることを確認します。 
 
-## <a name="span-iddeterminingtheipaddressofthehostcomputerspanspan-iddeterminingtheipaddressofthehostcomputerspanspan-iddeterminingtheipaddressofthehostcomputerspandetermining-the-ip-address-of-the-host-computer"></a><span id="Determining_the_IP_Address_of_the_Host_Computer"></span><span id="determining_the_ip_address_of_the_host_computer"></span><span id="DETERMINING_THE_IP_ADDRESS_OF_THE_HOST_COMPUTER"></span>ホスト コンピューターの IP アドレスを決定します。
+2. ホストコンピューターで、コマンドプロンプトウィンドウを開き、「 *IPConfig* 」と入力して IP 構成を表示します。 
 
-1. ターゲットとホスト Pc がネットワーク ハブに接続しているまたは、適切なネットワーク ケーブルを使用して切り替えることを確認します。 
-
-2. ホスト コンピューターでは、コマンド プロンプト ウィンドウを開き、入力*IPConfig* IP 構成を表示します。 
-
-3. コマンドの出力では、イーサネット アダプターの IPv4 アドレスを見つけます。
+3. コマンドの出力で、イーサネットアダプターの IPv4 アドレスを見つけます。
 
     ```console
     ...
@@ -42,36 +40,36 @@ ms.locfileid: "63381946"
     ...
 
     ```
-4. デバッグに使用するネットワーク アダプターの IPv4 アドレスをメモしておきます。
+4. デバッグに使用するネットワークアダプターの IPv4 アドレスをメモしておきます。
 
  
 
-## <a name="span-idsettingupthetargetcomputerspanspan-idsettingupthetargetcomputerspanspan-idsettingupthetargetcomputerspansetting-up-the-host-and-target-computers"></a><span id="Setting_Up_the_Target_Computer"></span><span id="setting_up_the_target_computer"></span><span id="SETTING_UP_THE_TARGET_COMPUTER"></span>ホストとターゲット コンピューターを設定します。
+## <a name="span-idsetting_up_the_target_computerspanspan-idsetting_up_the_target_computerspanspan-idsetting_up_the_target_computerspansetting-up-the-host-and-target-computers"></a><span id="Setting_Up_the_Target_Computer"></span><span id="setting_up_the_target_computer"></span><span id="SETTING_UP_THE_TARGET_COMPUTER"></span>ホストとターゲットコンピューターの設定
 
-Kdnet.exe ユーティリティを使用すると、次の手順では対象のコンピューターのデバッガーの設定を自動的に構成します。
+次の手順に従って、kdnet ユーティリティを使用して、ターゲット PC でデバッガーの設定を自動的に構成します。
 
-1. Windows デバッグ ツールがホスト システム上にインストールされていることを確認します。 ダウンロードして、デバッガー ツールのインストールについては、次を参照してください。[デバッグ ツールの Windows にダウンロード](debugger-download-tools.md)します。 
+1. Windows デバッグツールがホストシステムにインストールされていることを確認します。 デバッガーツールのダウンロードとインストールの詳細については、「 [Windows 用デバッグツールのダウンロード](debugger-download-tools.md)」を参照してください。 
 
-2. 検索、 *kdnet.exe*と*VerifiedNICList.xml*ファイル。 既定では、これらはここにします。
+2. *Kdnet*ファイルと*VerifiedNICList*ファイルを見つけます。 既定では、これらはここにあります。
 
    ```console
    C:\Program Files (x86)\Windows Kits\10\Debuggers\x64
    ```
 
    > [!NOTE]
-   > 次の手順では、両方の Pc に、ターゲットとホストの両方で Windows の 64 ビット バージョンが実行されていることを前提としています。 場合はそうでない、最適な方法では、ターゲットを実行しているホストでツールの同じ「ビット数」を実行します。 たとえば、ターゲットは、32 ビット Windows を実行している、ホスト上の 32 のバージョンのデバッガーを実行します。 詳細については、次を参照してください。 [32 ビットまたは 64 ビット デバッグ ツールを選択する](choosing-a-32-bit-or-64-bit-debugger-package.md)します。
+   > これらの方法では、両方の Pc がターゲットとホストの両方で64ビットバージョンの Windows を実行していることを前提としています。 そうでない場合は、ターゲットが実行されているホストで同じ "ビット" のツールを実行するのが最善の方法です。 たとえば、ターゲットが32ビットの Windows を実行している場合は、ホストで32バージョンのデバッガーを実行します。 詳細については、「 [32 ビットまたは64ビットのデバッグツールの選択](choosing-a-32-bit-or-64-bit-debugger-package.md)」を参照してください。
    > 
 
-3. ホスト コンピューターでは、2 つのファイルをネットワーク共有にコピーまたはつまみのドライブでは、ターゲット コンピューター上で使用できるようにします。
+3. ホストコンピューターで、2つのファイルをネットワーク共有またはサムドライブにコピーして、対象のコンピューターで使用できるようにします。
 
-4. 対象のコンピューターに C:\KDNET ディレクトリおよびコピーを作成、 *kdnet.exe*と*VerifiedNICList.xml*ファイルをそのディレクトリにします。
+4. ターゲットコンピューターで、C:\KDNET ディレクトリを作成し、 *KDNET*ファイルと*VerifiedNICList*ファイルをそのディレクトリにコピーします。
 
    > [!IMPORTANT]
-   > ブート情報を変更する kdnet を使用する前に、テスト用のコンピューターの BitLocker とセキュア ブートなどの Windows セキュリティ機能を一時的に中断する必要があります。
-   > テストが完了すると、これらのセキュリティ機能を再度有効にし、適切なセキュリティ機能を無効にするテスト PC を管理します。
+   > Kdnet を使用してブート情報を変更する前に、テスト PC で BitLocker やセキュアブートなどの Windows のセキュリティ機能を一時的に停止することが必要になる場合があります。
+   > セキュリティ機能が無効になっている場合は、テストが完了し、テスト PC を適切に管理するときに、これらのセキュリティ機能を再び有効にします。
 
 
-5. ターゲット コンピューターで、管理者としてコマンド プロンプト ウィンドウを開きます。 ターゲット コンピューターに、サポートされているネットワーク アダプターがあることを確認するには、このコマンドを入力します。
+5. ターゲット コンピューターで、管理者としてコマンド プロンプト ウィンドウを開きます。 次のコマンドを入力して、ターゲットコンピューターにサポートされているネットワークアダプターがあることを確認します。
 
    ```console
    C:\KDNET>kdnet
@@ -80,9 +78,9 @@ Kdnet.exe ユーティリティを使用すると、次の手順では対象の�
    This Microsoft hypervisor supports using KDNET in guest VMs.
    ```
 
-6. Kdnet からの出力にそのネットワーク アダプターに示すよう、ターゲットがサポートされている、進むことができます。
+6. Kdnet からの出力はターゲット上のネットワークアダプターがサポートされていることを示しているため、続行できます。
 
-7. このコマンドをホスト システムの IP アドレスを設定して生成された一意の接続キー型です。 IP アドレスまたはホスト システムの名前を使用します。 各ターゲット/ホスト ペアリングの一意のポート アドレスを選択と連携 50000 50039 の推奨される範囲内です。
+7. 次のコマンドを入力して、ホストシステムの IP アドレスを設定し、一意の接続キーを生成します。 IP アドレスまたはホストシステムの名前を使用します。 推奨される50000-50039 の範囲で、使用するターゲット/ホストペアごとに一意のポートアドレスを選択します。
 
    ```console
    C:\>kdnet <HostComputerIPAddress> <YourDebugPort> 
@@ -91,87 +89,90 @@ Kdnet.exe ユーティリティを使用すると、次の手順では対象の�
    Key=2steg4fzbj2sz.23418vzkd4ko3.1g34ou07z4pev.1sp3yo9yz874p
    ```
 
-8. 返されたキーをメモ帳の .txt ファイルにコピーします。
+8. 返されたキーを notepad.exe ファイルにコピーします。
 
 
-## <a name="span-idusingwindbgspanspan-idusingwindbgspanspan-idusingwindbgspan-using-windbg"></a><span id="Using_WinDbg"></span><span id="using_windbg"></span><span id="USING_WINDBG"></span> Using WinDbg
+## <a name="span-idusing_windbgspanspan-idusing_windbgspanspan-idusing_windbgspan-using-windbg"></a><span id="Using_WinDbg"></span><span id="using_windbg"></span><span id="USING_WINDBG"></span>WinDbg の使用
 
-ホスト コンピューターでは、WinDbg を開きます。 **ファイル**] メニューの [選択**カーネル デバッグ**します。 カーネル デバッグ ダイアログ ボックスで、開く、 **Net**タブ。実際のポート番号と以前に保存したをメモ帳の .txt ファイルでキーを貼り付けます。 **[OK]** をクリックします。
+ホストコンピューターで、[WinDbg] を開きます。 **[ファイル]** メニューの **[カーネルデバッグ]** をクリックします。 カーネルデバッグ ダイアログボックスで、 **Net** タブを開きます。前の手順でメモ帳の .txt ファイルに保存したポート番号とキーを貼り付けます。 **[OK]** をクリックします。
 
-コマンド プロンプト ウィンドウを開き、次のコマンドを入力して、WinDbg セッションを開始することもできます、 <YourPort> 、上で選択したポートと<YourKey>kdnet 上記によって返されたキーします。 以前に保存したをメモ帳の .txt ファイルでそのキーを貼り付けます。
+また、コマンドプロンプトウィンドウを開き、次のコマンドを入力して、WinDbg セッションを開始<YourPort>することもできます。ここで<YourKey> 、は上で選択したポートで、は上記の kdnet によって返されたキーです。 前の手順でメモ帳の .txt ファイルに保存したのキーを貼り付けます。
 
    ```console
   windbg -k net:port=<YourDebugPort>,key=<YourKey> 
    ```
 
-WinDbg のポートにアクセスを許可するポートをファイアウォール経由でアクセスするための WinDbg に関する求められたら、 **3 つすべて**の異なるネットワークの種類。
+ファイアウォール経由でのポートへのアクセスを WinDbg に許可するように求めるメッセージが表示された場合は、他の**3 つ**の種類のネットワークすべてに対して、windbg がポートにアクセスできるようにします。
 
-![windows セキュリティの警告 - windows ファイアウォールがこのアプリの一部の機能をブロックします。 ](images/debuglab-image-firewall-dialog-box.png)
+![windows セキュリティの警告-windows ファイアウォールがこのアプリの一部の機能をブロックしました ](images/debuglab-image-firewall-dialog-box.png)
 
+この時点で、デバッガーはターゲットが再接続するのを待機し、次のようなテキストがデバッガーのコマンドウィンドウに表示されます。
 
-## <a name="span-idrestartingtargetspanspan-idrestartingtargetspanspan-idrestartingtargetspan-restarting-the-target-pc"></a><span id="Restarting_Target"></span><span id="restarting_target"></span><span id="RESTARTING_TARGET"></span> 対象の PC を再起動します。
+   ```console
+   Microsoft (R) Windows Debugger Version 1.0.1908.30002 AMD64
+   Copyright (c) Microsoft Corporation. All rights reserved.
 
-デバッガーを接続すると、対象のコンピュータを再起動します。 管理者のコマンド プロンプトから次のコマンドを使用することは、PC を再起動する方法の 1 つです。
+   Using NET for debugging
+   Opened WinSock 2.0
+   Waiting to reconnect...
+   ```
+
+## <a name="span-idrestarting_targetspanspan-idrestarting_targetspanspan-idrestarting_targetspan-restarting-the-target-pc"></a><span id="Restarting_Target"></span><span id="restarting_target"></span><span id="RESTARTING_TARGET"></span>ターゲット PC を再起動する
+
+デバッガーが接続されたら、ターゲットコンピューターを再起動します。 PC を再起動する1つの方法は、管理者のコマンドプロンプトからこのコマンドを使用することです。
 
    ```console
    shutdown -r -t 0 
    ```
 
-## <a name="span-idtroubleshootingtipsspanspan-idtroubleshootingtipsspantroubleshooting-tips"></a><span id="troubleshooting_tips"></span><span id="TROUBLESHOOTING_TIPS"></span>トラブルシューティングのヒント
+対象の PC が再起動すると、デバッガーは自動的に接続されます。
 
-**アプリケーションのデバッグを許可するファイアウォールを通過する必要があります。**
+## <a name="span-idtroubleshooting_tipsspanspan-idtroubleshooting_tipsspantroubleshooting-tips"></a><span id="troubleshooting_tips"></span><span id="TROUBLESHOOTING_TIPS"></span>トラブルシューティングのヒント
 
-デバッガー、ファイアウォール経由のアクセスが必要です。 コントロール パネルを使用すると、ファイアウォール経由のアクセスを許可します。 
+**デバッグアプリケーションはファイアウォール経由で許可されている必要があります**
 
-1. 開いている**コントロール パネルの [&gt;システムとセキュリティ**] をクリック**アプリを Windows ファイアウォールを通過できます**します。 
+デバッガーは、ファイアウォール経由のアクセス権を持っている必要があります。 コントロールパネルを使用して、ファイアウォール経由のアクセスを許可します。 
 
-2. アプリケーションの一覧で探します*Windows GUI のシンボリック デバッガー*と*Windows カーネル デバッガー*します。 
+1. **コントロール&gt;パネルの [システムとセキュリティ**] を開き、 **[Windows ファイアウォールを介したアプリの許可]** をクリックします。 
 
-3. これら 2 つのアプリケーションを許可するチェック ボックスを使用して**3 つすべて**の種類の異なるネットワーク ファイアウォールを経由します。 
+2. アプリケーションの一覧で、 *WINDOWS GUI のシンボリックデバッガー*と*windows カーネルデバッガー*を見つけます。 
 
-4. 下へスクロールし、をクリックして**OK**は、ファイアウォールの変更を保存します。 デバッガーを再起動します。
+3. チェックボックスを使用して、これら2つのアプリケーションがファイアウォールを介して、3種類のネットワークの種類を**すべて**許可するようにします。 
 
-    ![windows のコントロール パネルのファイアウォールの構成が Windows GUI のシンボリック デバッガーと Windows カーネル デバッガーを有効になっている次の 3 つネットワークの種類のすべての表示](images/firewall-control-pannel-windbg-gui-config.png)
+4. 下にスクロールし、 **[OK]** をクリックして、ファイアウォールの変更を保存します。 デバッガーを再起動します。
 
-**Ping を使用して、接続をテストするには**
+    ![3種類のネットワークをすべて有効にした windows GUI シンボリックデバッガーと Windows カーネルデバッガーを表示する windows コントロールパネルのファイアウォール構成](images/firewall-control-pannel-windbg-gui-config.png)
 
-場合は、デバッガーは、タイムアウトになると、接続していないのターゲット PC に、ping コマンドを使用して、接続を確認します。 
+**Ping を使用して接続をテストする**
+
+デバッガーがタイムアウトになり、接続できない場合は、ターゲット PC で ping コマンドを使用して接続を確認します。 
 
    ```console
    C:\>Ping <HostComputerIPAddress> 
    ```
 
-**ネットワーク デバッグ用にポートを選択します。**
+**ネットワークデバッグ用のポートの選択**
 
-デバッガーでは、タイムアウトになると、接続していないの場合は、50000 の既定のポート番号は既に使用またはブロックされているため、その可能性があります。 
+デバッガーがタイムアウトになり、接続できない場合は、既定のポート番号5万が既に使用されているか、ブロックされている可能性があります。 
 
-任意のポート番号は 49152 ~ 65535 から選択できます。 推奨される範囲では、50000 ~ 50039 です。 選択したポートを排他アクセスのホスト コンピューターで実行されているデバッガーでは開けません。 
+49152 ~ 65535 の任意のポート番号を選択できます。 推奨される範囲は 5万 ~ 50039 です。 選択したポートは、ホストコンピューターで実行されているデバッガーによる排他アクセスのために開かれます。 
 
-**注**  ネットワーク デバッグに使用できるポート番号の範囲は、会社のネットワーク ポリシーによって制限される可能性があります。 会社のポリシーがネットワークのデバッグに使用できるポートの範囲を制限するかどうかを判断するには、ネットワーク管理者に確認します。
+  ネットワークデバッグに使用できるポート番号の範囲は、会社のネットワークポリシーによって制限される場合があることに注意してください。 会社のポリシーによってネットワークデバッグに使用できるポートの範囲が制限されているかどうかを確認するには、ネットワーク管理者に確認してください。
 
-**サポートされているネットワーク アダプター**
+**サポートされているネットワークアダプター**
 
-Kdnet.exe を実行すると、そのネットワーク アダプターがサポートされていないことと、「このマシンの Nic のいずれかのネットワークのデバッグはサポートされていません」の場合は表示されます。 
+Kdnet の実行時に "ネットワークデバッグがこのコンピューターのどの Nic でもサポートされていません" と表示される場合は、ネットワークアダプターがサポートされていないことを意味します。 
 
-ホスト コンピューターは、任意のネットワーク アダプターを使用できますが、ターゲット コンピューターが Windows のツールをデバッグでサポートされているネットワーク アダプターを使用する必要があります。 サポートされているネットワーク アダプターの一覧は、次を参照してください。[イーサネット Nic を Windows 10 でのネットワーク カーネル デバッグのサポートされている](supported-ethernet-nics-for-network-kernel-debugging-in-windows-10.md)と[イーサネット Nic を Windows 8.1 でのネットワーク カーネル デバッグのサポートされている](supported-ethernet-nics-for-network-kernel-debugging-in-windows-8-1.md)します。
+ホストコンピューターは任意のネットワークアダプターを使用できますが、ターゲットコンピューターでは、Windows 用デバッグツールでサポートされているネットワークアダプターを使用する必要があります。 サポートされているネットワークアダプターの一覧については、「 [Windows 10 でサポートされるイーサネット nic](supported-ethernet-nics-for-network-kernel-debugging-in-windows-10.md) 」および「 [Windows 8.1 でネットワークカーネルデバッグ用にサポートされるイーサネット nic](supported-ethernet-nics-for-network-kernel-debugging-in-windows-8-1.md)」を参照してください。
 
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
+[Windows 10 でのネットワークカーネルデバッグ用にサポートされているイーサネット Nic](supported-ethernet-nics-for-network-kernel-debugging-in-windows-10.md)
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
+[Windows 8.1 でのネットワークカーネルデバッグ用にサポートされるイーサネット Nic](supported-ethernet-nics-for-network-kernel-debugging-in-windows-8-1.md)
 
-[Windows 10 でのデバッグ ネットワーク カーネルのイーサネット Nic をサポート](supported-ethernet-nics-for-network-kernel-debugging-in-windows-10.md)
- 
+[KDNET Network カーネルデバッグの手動設定](setting-up-a-network-debugging-connection.md)
 
-[Windows 8.1 でのデバッグ ネットワーク カーネルのイーサネット Nic をサポート](supported-ethernet-nics-for-network-kernel-debugging-in-windows-8-1.md)
+[WinDbg ドライバーの概要 (カーネル モード)](getting-started-with-windbg--kernel-mode-.md)
 
-
-[KDNET のネットワーク カーネル デバッグを手動での設定](setting-up-a-network-debugging-connection.md)
-
-
- 
-
-
-
-
-
-
+[ユニバーサル ドライバーのデバッグ - ステップ バイ ステップ ラボ (Echo カーネル モード)](debug-universal-drivers---step-by-step-lab--echo-kernel-mode-.md)

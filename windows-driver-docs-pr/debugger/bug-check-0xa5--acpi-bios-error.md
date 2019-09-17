@@ -1,11 +1,11 @@
 ---
-title: バグ チェック 0xA5 ACPI_BIOS_ERROR
-description: ACPI_BIOS_ERROR のバグ チェックでは、コンピューターの ACPI BIOS が ACPI 仕様に完全に準拠していないことを示す 0x000000A5 の値を持ちます。
+title: バグチェック 0xA5 ACPI_BIOS_ERROR
+description: ACPI_BIOS_ERROR のバグチェックには、コンピューターの ACPI BIOS が ACPI 仕様に完全に準拠していないことを示す値0x000000A5 があります。
 ms.assetid: f0366a3c-a2c4-4fc8-a722-52fdda59eb2b
 keywords:
-- バグ チェック 0xA5 ACPI_BIOS_ERROR
+- バグチェック 0xA5 ACPI_BIOS_ERROR
 - ACPI_BIOS_ERROR
-ms.date: 05/23/2017
+ms.date: 09/12/2019
 topic_type:
 - apiref
 api_name:
@@ -13,28 +13,26 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e77a40267f9cc37324f891eed057792aba4eece5
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 4975f922f3c347f58a596010a2b5fd91b3649401
+ms.sourcegitcommit: f91a0fd22f46be44839d2a22a21f59fad900ce90
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519051"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71020989"
 ---
-# <a name="bug-check-0xa5-acpibioserror"></a>バグ チェック 0xA5:ACPI\_BIOS\_エラー
+# <a name="bug-check-0xa5-acpi_bios_error"></a>バグ チェック 0xA5:ACPI\_BIOS\_エラー
 
-
-ACPI\_BIOS\_エラーのバグ チェックが 0x000000A5 の値を持ちます。 このバグ チェックでは、コンピューターの Advanced Configuration and Power Interface (ACPI) BIOS が ACPI の仕様に完全準拠ではないことを示します。
+ACPI\_BIOS\_エラーのバグチェックには、0x000000A5 の値が含まれています。 このバグチェックは、コンピューターの Advanced Configuration and Power Interface (ACPI) BIOS が ACPI 仕様に完全に準拠していないことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
+> このトピックはプログラマーを対象としています。 コンピューターの使用中にブルースクリーンのエラーコードが表示された顧客の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://www.windows.com/stopcode)」を参照してください。
 
 
-## <a name="acpibioserror-parameters"></a>ACPI\_BIOS\_エラー パラメーター
+## <a name="acpi_bios_error-parameters"></a>ACPI\_BIOS\_エラーパラメーター
 
+パラメーター1は非互換性の種類を示します。 他のパラメーターの意味は、パラメーター1の値によって異なります。
 
-パラメーター 1 では、非互換性の種類を示します。 その他のパラメーターの意味は、パラメーター 1 の値によって異なります。
-
-プラグ アンド プレイ (PnP) または電源の管理には、BIOS の非互換性が関連付けられている場合は、次のパラメーターが使用されます。
+BIOS の非互換性がプラグアンドプレイ (PnP) または電源管理に関連している場合は、次のパラメーターが使用されます。
 
 <table>
 <colgroup>
@@ -46,166 +44,166 @@ ACPI\_BIOS\_エラーのバグ チェックが 0x000000A5 の値を持ちます�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">パラメーター 1</th>
+<th align="left">パラメーター1</th>
 <th align="left">パラメータ 2</th>
-<th align="left">3 番目のパラメーター</th>
-<th align="left">パラメーター 4</th>
+<th align="left">パラメーター3</th>
+<th align="left">パラメーター4</th>
 <th align="left">原因</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>0x01</p></td>
-<td align="left"><p>ACPI の<strong>deviceExtension</strong></p></td>
-<td align="left"><p>ACPI の<strong>ResourceList</strong></p></td>
-<td align="left"><p><strong>0:</strong>リソースの一覧が見つかりません</p>
+<td align="left"><p>ACPI の<strong>Deviceextension</strong></p></td>
+<td align="left"><p>ACPI の<strong>Resourcelist</strong></p></td>
+<td align="left"><p><strong>0</strong>リソースリストが見つかりません</p>
 <p><strong>1:</strong>一覧に IRQ リソースが見つかりません</p></td>
-<td align="left"><p>ACPI は、ACPI の開始時に渡されるリソースのシステム コントロールの割り込み (SCI) のベクターを見つけることはできません。</p></td>
+<td align="left"><p>Acpi は、ACPI が開始されたときに、システム制御割り込み (SCI) によって渡されたリソースを見つけることができません。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x02</p></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"><p>(参照の表に、後でこのページ)</p></td>
+<td align="left"><p>(このページの後の表を参照)</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x03</p></td>
-<td align="left"><p>ACPI オブジェクトが実行されています。</p></td>
+<td align="left"><p>実行されていた ACPI オブジェクト</p></td>
 <td align="left"><p>インタープリターからの戻り値</p></td>
-<td align="left"><p>(ULONG 形式) でのコントロールのメソッドの名前</p></td>
-<td align="left"><p>ACPI を ACPI 名前空間を表すデバイスの拡張機能を作成するときにコントロールのメソッドを実行しようとしましたが、このコントロールのメソッドが失敗しました。</p></td>
+<td align="left"><p>コントロールメソッドの名前 (ULONG 形式)</p></td>
+<td align="left"><p>Acpi は、ACPI 名前空間を表すデバイス拡張を作成しているときに、制御メソッドを実行しようとしましたが、この制御方法は失敗しました。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x04</p></td>
-<td align="left"><p>その _PRW が属する ACPI 拡張機能</p></td>
+<td align="left"><p>_PRW が属している ACPI 拡張機能</p></td>
 <td align="left"><p>メソッドへのポインター</p></td>
-<td align="left"><p><strong>DataType</strong> (Amli.h を参照してください) が返されます</p></td>
-<td align="left"><p>ACPI は、_PRW を評価し、パッケージ要素として整数が必要です。</p></td>
+<td align="left"><p>返される<strong>データ型</strong>(「amli」を参照)</p></td>
+<td align="left"><p>ACPI は _PRW を評価し、パッケージ要素として整数を検索することを想定しています。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x05</p></td>
-<td align="left"><p>その _PRW が属する ACPI 拡張機能</p></td>
-<td align="left"><p>_PRW Aointer</p></td>
+<td align="left"><p>_PRW が属している ACPI 拡張機能</p></td>
+<td align="left"><p>_PRW</p></td>
 <td align="left"><p>_PRW 内の要素の数</p></td>
-<td align="left"><p>ACPI は、_PRW、およびパッケージを少なくとも 2 つの要素を含めることができませんでした届きました評価されます。 ACPI の仕様では、2 つの要素が存在する _PRW する常にある必要があります。</p></td>
+<td align="left"><p>ACPI は _PRW を評価し、返されたパッケージには少なくとも2つの要素を含めることができませんでした。 ACPI 仕様では、2つの要素が常に _PRW に存在している必要があります。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x06</p></td>
-<td align="left"><p>その _PRx が属する ACPI 拡張機能</p></td>
-<td align="left"><p>_PRx へのポインター</p></td>
+<td align="left"><p>に属している ACPI 拡張機能</p></td>
+<td align="left"><p>Prx へのポインター</p></td>
 <td align="left"><p>検索するオブジェクトの名前へのポインター</p></td>
-<td align="left"><p>ACPI は、名前付きオブジェクトを検索しようとしていますが、オブジェクトが見つかりませんでした。</p></td>
+<td align="left"><p>ACPI は名前付きオブジェクトを見つけようとしましたが、オブジェクトが見つかりませんでした。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x07</p></td>
 <td align="left"><p>メソッドが属する ACPI 拡張機能</p></td>
 <td align="left"><p>メソッドへのポインター</p></td>
-<td align="left"><p><strong>DataType</strong> (Amli.h を参照してください) が返されます</p></td>
-<td align="left"><p>ACPI は、メソッドを評価し、戻り値のバッファーを受信することにします。 ただし、メソッドには、他のデータ型が返されます。</p></td>
+<td align="left"><p>返される<strong>データ型</strong>(「amli」を参照)</p></td>
+<td align="left"><p>ACPI はメソッドを評価し、返されたバッファーを受け取ることを想定していました。 ただし、メソッドによって他のデータ型が返されました。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x08</p></td>
 <td align="left"><p>メソッドが属する ACPI 拡張機能</p></td>
 <td align="left"><p>メソッドへのポインター</p></td>
-<td align="left"><p><strong>DataType</strong> (Amli.h を参照してください) が返されます</p></td>
-<td align="left"><p>ACPI は、メソッドを評価し、戻り値の整数を受け取ることを想定します。 ただし、メソッドには、他のデータ型が返されます。</p></td>
+<td align="left"><p>返される<strong>データ型</strong>(「amli」を参照)</p></td>
+<td align="left"><p>ACPI はメソッドを評価し、返された整数を受け取ることを想定していました。 ただし、メソッドによって他のデータ型が返されました。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x09</p></td>
 <td align="left"><p>メソッドが属する ACPI 拡張機能</p></td>
 <td align="left"><p>メソッドへのポインター</p></td>
-<td align="left"><p><strong>DataType</strong> (Amli.h を参照してください) が返されます</p></td>
-<td align="left"><p>ACPI は、メソッドを評価し、代わりに、パッケージを受信することにします。 ただし、メソッドには、他のデータ型が返されます。</p></td>
+<td align="left"><p>返される<strong>データ型</strong>(「amli」を参照)</p></td>
+<td align="left"><p>ACPI がメソッドを評価し、返されたパッケージを受け取ることを想定しています。 ただし、メソッドによって他のデータ型が返されました。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x0A</p></td>
 <td align="left"><p>メソッドが属する ACPI 拡張機能</p></td>
 <td align="left"><p>メソッドへのポインター</p></td>
-<td align="left"><p><strong>DataType</strong> (Amli.h を参照してください) が返されます</p></td>
-<td align="left"><p>ACPI は、メソッドを評価し、文字列を取得するが必要です。 ただし、メソッドには、他のデータ型が返されます。</p></td>
+<td align="left"><p>返される<strong>データ型</strong>(「amli」を参照)</p></td>
+<td align="left"><p>ACPI はメソッドを評価し、返された文字列を受け取ることを想定していました。 ただし、メソッドによって他のデータ型が返されました。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x0B</p></td>
-<td align="left"><p>その _EJD が属する ACPI 拡張機能</p></td>
-<td align="left"><p>インタープリターが返すステータス</p></td>
-<td align="left"><p>ACPI は、検索を試行しているオブジェクトの名前</p></td>
-<td align="left"><p>ACPI は、_EJD 文字列が参照するオブジェクトを見つけることができません。</p></td>
+<td align="left"><p>_EJD が属している ACPI 拡張機能</p></td>
+<td align="left"><p>インタープリターが返す状態</p></td>
+<td align="left"><p>ACPI が検索しようとしているオブジェクトの名前</p></td>
+<td align="left"><p>ACPI は、_EJD 文字列で参照されているオブジェクトを見つけることができません。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x0C</p></td>
-<td align="left"><p>ACPI のドッキング ステーション デバイスの検出、ACPI 拡張機能</p></td>
+<td align="left"><p>ACPI がドッキングデバイスを検出した ACPI 拡張機能</p></td>
 <td align="left"><p>_EJD メソッドへのポインター</p></td>
-<td align="left"><p><strong>0:</strong>BIOS では、システムが dockage は主張しません</p>
-<p><strong>1:</strong>ドッキング ステーション デバイスのデバイスの拡張機能が重複しています</p></td>
-<td align="left"><p>ACPI は、ドック サポートの問題があるかが不足している情報を提供します。</p></td>
+<td align="left"><p><strong>0</strong>BIOS はシステムの dockage を要求しません</p>
+<p><strong>1:</strong>ドッキングデバイスのデバイス拡張機能が重複しています</p></td>
+<td align="left"><p>ACPI では、dock サポートに関する情報が不足しているか、不十分です。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x0D</p></td>
-<td align="left"><p>ACPI のオブジェクトを必要がある、ACPI 拡張機能</p></td>
-<td align="left"><p>ACPI 検索メソッドの名前 (ULONG)</p></td>
-<td align="left"><p><strong>0:</strong>基本的な事例</p>
+<td align="left"><p>ACPI がオブジェクトを必要とする ACPI 拡張機能</p></td>
+<td align="left"><p>ACPI によって検索されたメソッドの (ULONG) 名</p></td>
+<td align="left"><p><strong>0</strong>基本ケース</p>
 <p><strong>1:</strong>Conflict</p></td>
-<td align="left"><p>ACPI 見つかりませんでした。 必要なメソッドやオブジェクト _HID または _ADR の存在が存在しない場合、このバグ チェック コードが使用される名前空間。</p></td>
+<td align="left"><p>ACPI は名前空間に必要なメソッドまたはオブジェクトを見つけることができませんでした。このバグチェックコードは、HID または ADR が存在しない場合に使用されます。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x0E</p></td>
-<td align="left"><p>NS <strong>PowerResource</strong> ACPI のオブジェクトが必要とします。</p></td>
-<td align="left"><p>ACPI 検索メソッドの名前 (ULONG)</p></td>
-<td align="left"><p>0:基本的な事例</p></td>
-<td align="left"><p>ACPI が見つかりませんでした必要なメソッドやオブジェクト、名前空間での電源のリソース (または「デバイス」以外のエンティティ)。 このバグ チェック コードは、_ON、_OFF、または _STA power リソースの存在がない場合に使用されます。</p></td>
+<td align="left"><p>ACPI がオブジェクトを必要とする NS <strong>Powerresource</strong></p></td>
+<td align="left"><p>ACPI によって検索されたメソッドの (ULONG) 名</p></td>
+<td align="left"><p>0基本ケース</p></td>
+<td align="left"><p>ACPI は、電源リソース (または "デバイス" 以外のエンティティ) の名前空間に必要なメソッドまたはオブジェクトを見つけることができませんでした。 このバグチェックコードは、電源リソースに対して存在するものがない場合に使用されます。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x0F</p></td>
-<td align="left"><p>ACPI の解析が現在のバッファー</p></td>
+<td align="left"><p>ACPI が解析した現在のバッファー</p></td>
 <td align="left"><p>バッファーのタグ</p></td>
-<td align="left"><p>指定したバッファーの長さ</p></td>
-<td align="left"><p>ACPI は、リソースの記述子を解析できませんでした。</p></td>
+<td align="left"><p>バッファーの指定された長さ</p></td>
+<td align="left"><p>ACPI がリソース記述子を解析できませんでした。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x10</p></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"><p>(参照の表に、後でこのページ)</p></td>
+<td align="left"><p>(このページの後の表を参照)</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x11</p></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"><p>(参照の表に、後でこのページ)</p></td>
+<td align="left"><p>(このページの後の表を参照)</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x14</p></td>
-<td align="left"><p>ACPI の解析が現在のバッファー</p></td>
+<td align="left"><p>ACPI が解析した現在のバッファー</p></td>
 <td align="left"><p>バッファーのタグ</p></td>
-<td align="left"><p>バッファーの ULONGLONG 長さを格納する変数へのポインター</p></td>
-<td align="left"><p>ACPI は、リソースの記述子を解析できませんでした。 長さは、MAXULONG を超えています。</p></td>
+<td align="left"><p>バッファーの ULONGLONG の長さを格納する変数へのポインター</p></td>
+<td align="left"><p>ACPI がリソース記述子を解析できませんでした。 長さが MAXULONG を超えています。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x15</p></td>
-<td align="left"><p>ACPI 機械語 (AML) コンテキスト</p></td>
-<td align="left"><p><strong>1:</strong>テーブルの読み込みに失敗しました</p>
-<p><strong>2:</strong>パラメーターのパスの文字列オブジェクトが見つかりませんでした。</p>
-<p><strong>3:</strong>ParameterPath 文字列オブジェクトにパラメーターのデータを挿入できませんでした。</p>
-<p><strong>4:</strong>システム メモリが不足</p></td>
+<td align="left"><p>ACPI 機械言語 (AML) のコンテキスト</p></td>
+<td align="left"><p><strong>1:</strong>テーブルを読み込めませんでした</p>
+<p><strong>2:</strong>パラメーターパス文字列オブジェクトが見つかりませんでした</p>
+<p><strong>3時</strong>パラメーターデータを ParameterPath 文字列オブジェクトに挿入できませんでした</p>
+<p><strong>4時</strong>システムメモリが不足しています</p></td>
 <td align="left"><p>NT 状態コード</p></td>
-<td align="left"><p>ACPI は、テーブルの読み込みを試みるときに致命的なエラーがありました。</p></td>
+<td align="left"><p>ACPI で、テーブルを読み込もうとしたときに致命的なエラーが発生しました。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x16</p></td>
 <td align="left"><p>親 NSOBJ へのポインター</p></td>
-<td align="left"><p>無効な子 ACPI 名前空間のオブジェクトへのポインター</p></td>
+<td align="left"><p>無効な子 ACPI 名前空間オブジェクトへのポインター</p></td>
 <td align="left"><p>予約済み</p></td>
-<td align="left"><p>ACPI は、xSDT を処理するときに致命的なエラーがありました。 オブジェクトは、子を持つことができない parent の子として宣言されました。</p></td>
+<td align="left"><p>XSDT の処理中に、ACPI で致命的なエラーが発生しました。 オブジェクトが、子を持つことができない親の子として宣言されました。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-割り込みのルーティングの障害または互換性の問題が発生した場合は、次のパラメーターが使用されます。
+割り込みルーティングの失敗または非互換性が発生した場合は、次のパラメーターが使用されます。
 
 <table>
 <colgroup>
@@ -217,72 +215,72 @@ ACPI\_BIOS\_エラーのバグ チェックが 0x000000A5 の値を持ちます�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">パラメーター 1</th>
+<th align="left">パラメーター1</th>
 <th align="left">パラメータ 2</th>
-<th align="left">3 番目のパラメーター</th>
-<th align="left">パラメーター 4</th>
+<th align="left">パラメーター3</th>
+<th align="left">パラメーター4</th>
 <th align="left">原因</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>0x2001</p></td>
-<td align="left"><p><strong>InterruptModel</strong> (integer)</p></td>
+<td align="left"><p><strong>InterruptModel</strong>以外</p></td>
 <td align="left"><p>インタープリターからの戻り値</p></td>
-<td align="left"><p>PIC コントロールのメソッドへのポインター</p></td>
-<td align="left"><p>ACPI は PIC 制御方法を評価しようとしましたが失敗しました。</p></td>
+<td align="left"><p>PIC コントロールメソッドへのポインター</p></td>
+<td align="left"><p>ACPI は PIC 制御メソッドを評価しようとしましたが、失敗しました。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x10001</p></td>
-<td align="left"><p>デバイス オブジェクトへのポインター</p></td>
-<td align="left"><p>デバイス オブジェクトの親へのポインター</p></td>
-<td align="left"><p>_PRT オブジェクトへのポインター</p>
-<p>(次のコメント セクションを参照してください)</p></td>
-<td align="left"><p>ACPI は、ルーティング、割り込み実行しようとしましたが失敗しました。</p></td>
+<td align="left"><p>デバイスオブジェクトへのポインター</p></td>
+<td align="left"><p>デバイスオブジェクトの親へのポインター</p></td>
+<td align="left"><p>PRT オブジェクトへのポインター</p>
+<p>(次のコメントセクションを参照してください)。</p></td>
+<td align="left"><p>ACPI は割り込みルーティングを実行しようとしましたが、失敗しました。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x10002</p></td>
-<td align="left"><p>デバイス オブジェクトへのポインター</p></td>
-<td align="left"><p>ACPI が求めていたが見つかりませんでした。 文字列名へのポインター</p></td>
-<td align="left"><p>_PRT オブジェクトへのポインター</p>
-<p>(次のコメント セクションを参照してください)</p></td>
-<td align="left"><p>ACPI は、_PRT で参照されているリンクのノードを見つけられませんでした。</p></td>
+<td align="left"><p>デバイスオブジェクトへのポインター</p></td>
+<td align="left"><p>ACPI が検索する文字列名を指すポインターですが、見つかりませんでした。</p></td>
+<td align="left"><p>PRT オブジェクトへのポインター</p>
+<p>(次のコメントセクションを参照してください)。</p></td>
+<td align="left"><p>ACPI は、PRT で参照されているリンクノードを見つけることができませんでした。 (_s)</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x10003</p></td>
-<td align="left"><p>デバイス オブジェクトへのポインター</p></td>
-<td align="left"><p>デバイスの ID または関数番号。</p>
-<p>この dword 値は次のようにエンコードされますビット 5:0 は PCI デバイス番号、および bits 8:6 は PCI 関数の数。</p></td>
-<td align="left"><p>_PRT オブジェクトへのポインター</p>
-<p>(次のコメント セクションを参照してください)</p></td>
-<td align="left"><p>ACPI が見つかりませんでしたマッピング _PRT パッケージ内のデバイス。</p></td>
+<td align="left"><p>デバイスオブジェクトへのポインター</p></td>
+<td align="left"><p>デバイス ID または関数番号。</p>
+<p>この DWORD は、次のようにエンコードされます。ビット5:0 は PCI デバイス番号、bits 8:6 は PCI 関数の番号です。</p></td>
+<td align="left"><p>PRT オブジェクトへのポインター</p>
+<p>(次のコメントセクションを参照してください)。</p></td>
+<td align="left"><p>ACPI は、デバイスのパッケージでマッピングを見つけることができませんでした。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x10005</p></td>
-<td align="left"><p>_PRT オブジェクトへのポインター</p>
-<p>(次のコメント セクションを参照してください)</p></td>
-<td align="left"><p>現在の _PRT 要素へのポインター。</p>
-<p>(このポインターは、_PRT へのインデックスです)。</p></td>
-<td align="left"><p>デバイスの ID または関数番号。</p>
-<p>この dword 値は次のようにエンコードされますビット 15:0 は、PCI 関数番号であり、ビット 31:16 は PCI デバイス数。</p></td>
-<td align="left"><p>ACPI は、関数の ID がないためのすべての F _PRT でエントリを検出します。</p>
-<p>(_PRT エントリの一般的な形式はデバイス番号を指定すると、関数の数ではありませんが)。</p></td>
+<td align="left"><p>PRT オブジェクトへのポインター</p>
+<p>(次のコメントセクションを参照してください)。</p></td>
+<td align="left"><p>現在の要素へのポインター。</p>
+<p>(このポインターは、PRT へのインデックスです)。</p></td>
+<td align="left"><p>デバイス ID または関数番号。</p>
+<p>この DWORD は、次のようにエンコードされます。ビット15:0 は PCI 関数番号、bits 31:16 は PCI デバイス番号です。</p></td>
+<td align="left"><p>ACPI が、関数 ID が F のすべてではないというエントリを PRT に検出しました。</p>
+<p>(PRT エントリの汎用形式では、デバイス番号が指定されていますが、関数番号が指定されていません)。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x10006</p></td>
-<td align="left"><p>リンク ノードへのポインター。</p>
-<p>(このデバイスにメソッドがない _DIS。)</p></td>
+<td align="left"><p>リンクノードへのポインター。</p>
+<p>(このデバイスには、メソッドがありません)。</p></td>
 <td align="left"><p>0</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>ACPI 見つかったリンクのノードが、ノードが無効にすることはできません。</p>
-<p>(リンクのノードは再プログラミングのために無効する必要があります)。</p></td>
+<td align="left"><p>ACPI がリンクノードを検出しましたが、ノードを無効にすることはできません。</p>
+<p>(Reprogramming を許可するには、リンクノードを無効にする必要があります。)</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x10007</p></td>
-<td align="left"><p>ベクターが見つかりませんでした。</p></td>
+<td align="left"><p>見つからなかったベクター</p></td>
 <td align="left"><p>0</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>_PRT には、I/O APIC のエントリの MAPIC テーブルに記述されていないベクターへの参照が含まれています。</p></td>
+<td align="left"><p>I/O APIC エントリの MAPIC テーブルに記述されていないベクターへの参照が含まれています。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x10008</p></td>
@@ -297,36 +295,48 @@ ACPI\_BIOS\_エラーのバグ チェックが 0x000000A5 の値を持ちます�
 <td align="left"><p>0</p></td>
 <td align="left"><p>0</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>固定の ACPI 記述テーブル (FADT) が見つかりませんでした。</p></td>
+<td align="left"><p>修正された ACPI 説明テーブル (FADT) が見つかりませんでした。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x1000A</p></td>
 <td align="left"><p>0</p></td>
 <td align="left"><p>0</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>ルートのシステムの説明のポインター (RSDP) または拡張システムの説明テーブル (XSDT) を配置できませんでした。</p>
+<td align="left"><p>ルートシステム記述ポインター (RSDP) または拡張システム記述テーブル (XSDT) が見つかりませんでした</p>
 <p></p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x1000B</p></td>
-<td align="left"><p>ACPI テーブルの署名</p></td>
+<td align="left"><p>ACPI テーブル署名</p></td>
 <td align="left"><p>ACPI テーブルへのポインター</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>ACPI テーブルの長さは、テーブルのリビジョンに一貫性がありません。</p></td>
+<td align="left"><p>ACPI テーブルの長さとテーブルのリビジョンが一致していません。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>0x20000</p></td>
-<td align="left"><p>固定の表に、I/O ポート</p></td>
+<td align="left"><p>0x1000C</p></td>
+<td align="left"><p>リビジョン ID</p></td>
+<td align="left"><p>関数のインデックス</p></td>
 <td align="left"><p>0</p></td>
+<td align="left"><p>割り込みの DSM メソッドが間違った形式のデータを返しました。 (_c)</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p>0x1000D</p></td>
+<td align="left"><p>デバイスの ACPI 拡張機能</p></td>
+<td align="left"><p>値 0: wake 対応の割り込みがなく、少なくとも1つの GPIO 割り込み値1が指定されている _PRW。ウェイク対応の割り込みがあるため、_PRW は、0xffffffff の GpeInfo 値を指定する必要があります。</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>固定の ACPI 記述テーブルで PM_TMR_BLK エントリは、作業の ACPI タイマー ブロックを指していません。</p></td>
+<td align="left"><p>デバイスで、GPE と GPIO の両方の割り込みが使用されていますが、これはサポートされていません。</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>0x1000E</p></td>
+<td align="left"><p></p>検証関数によって返される状態。</td>
+<td align="left"><p> ACPI 名前空間パス UNICODE_STRING へのポインター。</p></td>
+<td align="left"><p>SDEV と比較した場合のリソースリストへのポインター。</p></td>
+<td align="left"><p>セキュリティで保護されたデバイスの SDEV リソースが、対応する CRS または _PRS entry と一致しません。</p></td>
 </tr>
 </tbody>
 </table>
 
- 
-
-その他の失敗または互換性の問題が発生した場合は、次のパラメーターが使用されます。
+その他の障害または非互換性が発生した場合は、次のパラメーターが使用されます。
 
 <table>
 <colgroup>
@@ -338,27 +348,56 @@ ACPI\_BIOS\_エラーのバグ チェックが 0x000000A5 の値を持ちます�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">パラメーター 1</th>
+<th align="left">パラメーター1</th>
 <th align="left">パラメータ 2</th>
-<th align="left">3 番目のパラメーター</th>
-<th align="left">パラメーター 4</th>
+<th align="left">パラメーター3</th>
+<th align="left">パラメーター4</th>
 <th align="left">原因</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>0x20000</p></td>
-<td align="left"><p>固定の表に、I/O ポート</p></td>
+<td align="left"><p>固定テーブルの i/o ポート</p></td>
 <td align="left"><p>0</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>固定の ACPI 記述テーブルで PM_TMR_BLK エントリは、作業 ACPI タイマー ブロックには指していません。</p></td>
+<td align="left"><p>Fixed ACPI Description テーブルの PM_TMR_BLK エントリは、動作する ACPI タイマーブロックを指していません。</p></td>
 </tr>
 </tbody>
 </table>
 
- 
+次の表では、次のパラメーターが使用される場合のメモリ使用量の問題について説明します。
 
-パラメーター 1 と等しい場合**0x02**、ACPI BIOS は、ルートの PCI バスのリソースの一覧を処理できませんでした。 ここでは、パラメーター 3 が、正確な問題を指定し、残りのパラメーターは、次の定義を指定します。
+<table>
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">パラメーター1</th>
+<th align="left">パラメータ 2</th>
+<th align="left">パラメーター3</th>
+<th align="left">パラメーター4</th>
+<th align="left">原因</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><p>0x1000</p></td>
+<td align="left"><p>メモリ領域の物理アドレスの上位部分。</p></td>
+<td align="left"><p>メモリ領域の物理アドレスの下位部分。</p></td>
+<td align="left"><p>割り当てられるメモリの長さ。</p></td>
+<td align="left"><p>ACPI でメモリ操作領域を処理中に致命的なエラーが発生しました。 メモリ操作領域は、OS の使用に割り当てられているメモリをマップしようとしました。</p></td>
+</tr>
+</tbody>
+</table>
+
+
+パラメーター1が**0x02**の場合、ACPI BIOS は PCI ルートバスのリソースリストを処理できませんでした。 この場合、パラメーター3は正確な問題を指定し、残りのパラメーターには次の定義が含まれます。
 
 <table>
 <colgroup>
@@ -369,49 +408,49 @@ ACPI\_BIOS\_エラーのバグ チェックが 0x000000A5 の値を持ちます�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">パラメータ 2</th>
-<th align="left">3 番目のパラメーター</th>
-<th align="left">パラメーター 4</th>
+<th align="left">パラメーター2</th>
+<th align="left">パラメーター3</th>
+<th align="left">パラメーター4</th>
 <th align="left">原因</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>PCI バスの ACPI 拡張機能</p></td>
+<td align="left"><p>PCI バス用の ACPI 拡張機能</p></td>
 <td align="left"><p>0x0</p></td>
 <td align="left"><p>QUERY_RESOURCES IRP へのポインター</p></td>
-<td align="left"><p>ACPI は、BIOS のリソースの一覧を適切な形式に変換することはできません。 おそらく、これは、BIOS の一覧のエンコーディングの手順でエラーを表します。</p></td>
+<td align="left"><p>ACPI は、BIOS のリソースの一覧を適切な形式に変換できません。 これは、BIOS の list encoding プロシージャのエラーを表している場合があります。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>PCI バスの ACPI 拡張機能</p></td>
+<td align="left"><p>PCI バス用の ACPI 拡張機能</p></td>
 <td align="left"><p>0x1</p></td>
 <td align="left"><p>QUERY_RESOURCE_REQUIREMENTS IRP へのポインター</p></td>
-<td align="left"><p>ACPI は、BIOS のリソースの一覧を適切な形式に変換することはできません。 おそらく、これは、BIOS の一覧のエンコーディングの手順でエラーを表します。</p></td>
+<td align="left"><p>ACPI は、BIOS のリソースの一覧を適切な形式に変換できません。 これは、BIOS の list encoding プロシージャのエラーを表している場合があります。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>PCI バスの ACPI 拡張機能</p></td>
+<td align="left"><p>PCI バス用の ACPI 拡張機能</p></td>
 <td align="left"><p>0x2</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>ACPI は、空のリソース一覧が見つかりました。</p></td>
+<td align="left"><p>ACPI が空のリソースリストを検出しました。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>PCI バスの ACPI 拡張機能</p></td>
+<td align="left"><p>PCI バス用の ACPI 拡張機能</p></td>
 <td align="left"><p>0x3</p></td>
 <td align="left"><p>PNP CRS 記述子へのポインター</p></td>
-<td align="left"><p>ACPI は、CRS の現在のバス番号を見つけられませんでした。</p></td>
+<td align="left"><p>ACPI は、CRS で現在のバス番号を見つけることができませんでした。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>PCI バスの ACPI 拡張機能</p></td>
-<td align="left"><p>PCI のリソースの一覧へのポインター</p></td>
-<td align="left"><p>E820 メモリ テーブルへのポインター</p></td>
-<td align="left"><p>PCI の要求をデコードするリソースの一覧は、メモリ領域の E820 BIOS がレポートをインターフェイスの一覧と重複します。 (この種の競合は許可されません)</p></td>
+<td align="left"><p>PCI バス用の ACPI 拡張機能</p></td>
+<td align="left"><p>PCI のリソースリストへのポインター</p></td>
+<td align="left"><p>E820 memory テーブルへのポインター</p></td>
+<td align="left"><p>PCI 要求がデコードされるリソースの一覧が、E820 BIOS インターフェイスによって報告されるメモリ領域の一覧と重複しています。 (この種類の競合は許可されません)。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-パラメーター 1 と等しい場合**0x10**、ACPI BIOS は、システムに、デバイスの状態マッピングが正しくを特定できませんでした。 このような状況では、パラメーター 3 が、正確な問題を指定し、残りのパラメーターは、次の定義を持ちます。
+パラメーター1が**0x10**の場合、ACPI BIOS は、システムとデバイスの間のマッピングを正しく判断できませんでした。 この場合、パラメーター3は正確な問題を指定し、残りのパラメーターには次の定義が含まれます。
 
 <table>
 <colgroup>
@@ -422,37 +461,37 @@ ACPI\_BIOS\_エラーのバグ チェックが 0x000000A5 の値を持ちます�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">パラメータ 2</th>
-<th align="left">3 番目のパラメーター</th>
-<th align="left">パラメーター 4</th>
+<th align="left">パラメーター2</th>
+<th align="left">パラメーター3</th>
+<th align="left">パラメーター4</th>
 <th align="left">原因</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>そのマッピングが必要な ACPI 拡張機能</p></td>
+<td align="left"><p>マッピングが必要な ACPI 拡張機能</p></td>
 <td align="left"><p>0x0</p></td>
-<td align="left"><p>DEVICE_POWER_STATE (これは、「x + 1」)</p></td>
-<td align="left"><p>サポートされていない S 状態に戻す _PRx がマップされていた。</p></td>
+<td align="left"><p>DEVICE_POWER_STATE ("x + 1")</p></td>
+<td align="left"><p>Prx はサポートされていない状態にマップされました。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>そのマッピングが必要な ACPI 拡張機能</p></td>
+<td align="left"><p>マッピングが必要な ACPI 拡張機能</p></td>
 <td align="left"><p>0x1</p></td>
 <td align="left"><p>マップできない SYSTEM_POWER_STATE</p></td>
 <td align="left"><p>ACPI は、S 状態に関連付ける D 状態を見つけることができません。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>そのマッピングが必要な ACPI 拡張機能</p></td>
+<td align="left"><p>マッピングが必要な ACPI 拡張機能</p></td>
 <td align="left"><p>0x2</p></td>
 <td align="left"><p>マップできない SYSTEM_POWER_STATE</p></td>
-<td align="left"><p>デバイスは、システムがこの S 状態が、システムは実際にこの S の状態をサポートしていません、システムをスリープ解除することを要求します。</p></td>
+<td align="left"><p>システムがこの状態である場合、デバイスはシステムのスリープ状態を解除できることを要求しますが、実際には、この状態がサポートされません。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-パラメーター 1 と等しい場合**パターン**システムでは、ACPI モードは移行できませんでした。 このような状況では、パラメーター 2 が、正確な問題を指定し、残りのパラメーターは、次の定義を持ちます。
+パラメーター1が**0x11**の場合、システムは ACPI モードに入ることができませんでした。 この場合、パラメーター2は正確な問題を指定し、残りのパラメーターには次の定義が含まれます。
 
 <table>
 <colgroup>
@@ -463,9 +502,9 @@ ACPI\_BIOS\_エラーのバグ チェックが 0x000000A5 の値を持ちます�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">パラメータ 2</th>
-<th align="left">3 番目のパラメーター</th>
-<th align="left">パラメーター 4</th>
+<th align="left">パラメーター2</th>
+<th align="left">パラメーター3</th>
+<th align="left">パラメーター4</th>
 <th align="left">原因</th>
 </tr>
 </thead>
@@ -474,73 +513,73 @@ ACPI\_BIOS\_エラーのバグ チェックが 0x000000A5 の値を持ちます�
 <td align="left"><p>0x0</p></td>
 <td align="left"><p>0</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>システムは、AML インタープリターを初期化できませんでした。</p></td>
+<td align="left"><p>システムで AML インタープリターを初期化できませんでした。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x1</p></td>
 <td align="left"><p>0</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>RSDT は見つかりませんでした。</p></td>
+<td align="left"><p>システムで RSDT が見つかりませんでした。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x2</p></td>
 <td align="left"><p>0</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>システムは、不可欠なドライバー構造体を割り当てられませんでした。</p></td>
+<td align="left"><p>システムは、重要なドライバー構造を割り当てることができませんでした。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x3</p></td>
 <td align="left"><p>0</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>システムでは、RSDT を読み込むことができません。</p></td>
+<td align="left"><p>システムで RSDT を読み込めませんでした。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x4</p></td>
 <td align="left"><p>0</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>システムでは、Ddb を読み込むことができません。</p></td>
+<td align="left"><p>システムで DDBs を読み込めませんでした。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x5</p></td>
 <td align="left"><p>0</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>システムは、割り込みのベクターに接続できません。</p></td>
+<td align="left"><p>システムは割り込みベクターに接続できません。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x6</p></td>
 <td align="left"><p>0</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>SCI_EN は、PM1 コントロールの登録の設定になります。</p></td>
+<td align="left"><p>SCI_EN は PM1 Control Register では設定されません。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x7</p></td>
-<td align="left"><p>不適切なチェックサムのあるテーブルへのポインター</p></td>
-<td align="left"><p>作成者改訂番号</p></td>
+<td align="left"><p>無効なチェックサムが含まれているテーブルへのポインター</p></td>
+<td align="left"><p>作成者のリビジョン</p></td>
 <td align="left"><p>テーブルのチェックサムが正しくありません。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x8</p></td>
-<td align="left"><p>ACPI は、読み込みに失敗したテーブルへのポインター</p></td>
-<td align="left"><p>作成者改訂番号</p></td>
-<td align="left"><p>ACPI は、DDB を読み込めませんでした。</p></td>
+<td align="left"><p>ACPI が読み込みに失敗したテーブルへのポインター</p></td>
+<td align="left"><p>作成者のリビジョン</p></td>
+<td align="left"><p>ACPI が DDB を読み込めませんでした。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x9</p></td>
-<td align="left"><p>FADT バージョン</p></td>
+<td align="left"><p>FADT のバージョン</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>サポートされていないファームウェアのバージョン。</p></td>
+<td align="left"><p>サポートされていないファームウェアバージョンです。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>0 xa</p></td>
+<td align="left"><p>0xA</p></td>
 <td align="left"><p>0</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>MADT は見つかりませんでした。</p></td>
+<td align="left"><p>システムは MADT を見つけることができませんでした。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>0 xb</p></td>
+<td align="left"><p>0xB</p></td>
 <td align="left"><p>0</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>システムで MADT の有効なローカル SAPIC 構造体が見つかりませんでした。</p></td>
+<td align="left"><p>システムで、有効なローカル SAPIC 構造体が MADT に見つかりませんでした。</p></td>
 </tr>
 </tbody>
 </table>
@@ -550,23 +589,23 @@ ACPI\_BIOS\_エラーのバグ チェックが 0x000000A5 の値を持ちます�
 <a name="cause"></a>原因
 -----
 
-パラメーター 1 の値は、エラーを示します。
+パラメーター1の値はエラーを示します。
 
 <a name="resolution"></a>解決方法
 ----------
 
-このエラーをデバッグしている場合は、使用、 [ **! 分析-v** ](-analyze.md)拡張機能。 この拡張機能では、すべての関連データ (デバイスの拡張機能、nsobjects、または特定のエラーに適した) が表示されます。
+このエラーをデバッグしている場合は、 [ **! analyze-v**](-analyze.md)拡張機能を使用します。 この拡張機能では、関連するすべてのデータ (デバイスの拡張子、nsobjects、または特定のエラーに適したもの) が表示されます。
 
-デバッグを実行していない場合、このエラーは、新しい BIOS を取得するがあることを示します。 ベンダに問い合わせて、または新しい BIOS を取得する、インターネットにアクセスしてください。
+デバッグを実行していない場合、このエラーは新しい BIOS を取得する必要があることを示します。 新しい BIOS を入手するには、ベンダーに問い合わせるか、インターネットにアクセスしてください。
 
-取得できない場合、BIOS の更新または最新の BIOS は引き続きいない ACPI に準拠して、テキスト モードのセットアップ中に、ACPI モードをオフにすることができます。 ACPI モードをオフにするには、ストレージ ドライバーのインストールを求められたら、F7 キーを押します。 システム通知は表示されません、F7 キーが押されましたが、ACPI を無効にし、インストールを続行することができますが、サイレント モードでします。
+BIOS を更新できない場合、または最新の BIOS が ACPI に準拠していない場合は、テキストモードのセットアップ中に ACPI モードをオフにすることができます。 ACPI モードをオフにするには、ストレージドライバーのインストールを確認するメッセージが表示されたら、F7 キーを押します。 システムからは、F7 キーが押されたことが通知されませんが、自動的に ACPI を無効にして、インストールを続行することができます。
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>コメント
 -------
 
-PCI のルーティング テーブル (\_PRT)、ACPI BIOS オブジェクトを指定するには、すべての PCI デバイスは割り込みコント ローラーに接続する方法。 複数の PCI バスを使用しているコンピューターが複数あります\_Prt します。
+Pci ルーティングテーブル (\_PRT) は、すべての pci デバイスを割り込みコントローラーに接続する方法を指定する ACPI BIOS オブジェクトです。 複数の PCI バスがあるコンピューターには\_、複数の prts が存在する場合があります。
 
-表示することができます、 \_PRT を使用してデバッガーで、 **! acpikd.nsobj**のアドレスと共に拡張機能、 \_PRT オブジェクトを引数として。
+デバッガーでは、 \_引数として\_prt オブジェクトのアドレスと共に、 **! acpikd**拡張機能を使用して、prt を表示できます。
 
  
 
