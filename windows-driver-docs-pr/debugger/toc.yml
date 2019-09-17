@@ -834,6 +834,10 @@
           href: javascript-debugger-example-scripts.md
         - name: JavaScript 拡張機能のネイティブ デバッガー オブジェクト
           href: native-objects-in-javascript-extensions.md
+        - name: JavaScript 拡張機能のネイティブ デバッガー オブジェクト - デバッガー オブジェクトの詳細
+          href: native-objects-in-javascript-extensions-debugger-objects.md
+        - name: JavaScript 拡張機能のネイティブ デバッガー オブジェクト - 設計に関する考慮事項
+          href: native-objects-in-javascript-extensions-design-considerations.md
     - name: NatVis のネイティブ デバッガー オブジェクト
       href: native-debugger-objects-in-natvis.md
     - name: デバッガー オブジェクトでの LINQ の使用
