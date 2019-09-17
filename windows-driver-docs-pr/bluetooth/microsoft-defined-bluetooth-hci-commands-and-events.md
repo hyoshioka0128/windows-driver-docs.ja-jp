@@ -1,61 +1,61 @@
 ---
 title: Microsoft 定義の Bluetooth HCI のコマンドとイベント
-description: Bluetooth ホスト コント ローラー インターフェイス (HCI) には、ホストと Bluetooth 無線コント ローラー間のすべての対話を指定します。
+description: Bluetooth ホストコントローラーインターフェイス (HCI) は、ホストと Bluetooth ラジオコントローラーの間のすべての通信を指定します。
 ms.assetid: 68E34B92-155B-401E-8D90-5BD1AF036B4D
 ms.date: 02/07/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 400fdb42155f468a03c2570cfa295f269334f44c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.sourcegitcommit: 2c3b8e0ea0e75b72067d2e22dc530390bc19b11e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 09/02/2019
 ms.locfileid: "63328224"
 ---
-# <a name="microsoft-defined-bluetooth-hci-extensions"></a>マイクロソフトによって定義された Bluetooth HCI の拡張機能
+# <a name="microsoft-defined-bluetooth-hci-extensions"></a>Microsoft が定義した Bluetooth HCI 拡張機能
 
-Bluetooth ホスト コント ローラー インターフェイス (HCI) には、ホストと Bluetooth 無線コント ローラー間のすべての対話を指定します。 Bluetooth の仕様では、コント ローラーとホスト間での非標準の相互作用を有効にするには、HCI のベンダー定義コマンドおよびイベントを許可します。 Microsoft では、ベンダー固有 HCI コマンドと Windows で使用されるイベントを定義します。 Bluetooth コント ローラーの実装者は、特殊な機能を実装するために、これらの拡張機能を使用できます。
+Bluetooth ホストコントローラーインターフェイス (HCI) は、ホストと Bluetooth ラジオコントローラーの間のすべての通信を指定します。 Bluetooth 仕様では、ベンダー定義の HCI コマンドとイベントを使用して、ホストとコントローラーの間で標準化されていない対話を有効にすることができます。 Microsoft では、Windows によって使用されるベンダー固有の HCI コマンドとイベントを定義しています。 Bluetooth コントローラーの実装者は、これらの拡張機能を使用して特別な機能を実装できます。
 
 ## <a name="requirements"></a>要件
 
-Windows 10 Mobile、およびそれ以降のバージョンのデスクトップ エディション (Home、Pro、Enterprise、および教育機関向け)、Windows 10 でサポート。
+Windows 10 のデスクトップエディション (Home、Pro、Enterprise、および教育)、Windows 10 Mobile、およびそれ以降のバージョンでサポートされています。
 
-## <a name="microsoft-defined-hci-commands"></a>Microsoft による HCI コマンド
+## <a name="microsoft-defined-hci-commands"></a>Microsoft 定義の HCI コマンド
 
-Bluetooth HCI のコマンドは、16 ビットのコマンドのコードによって識別されます。 Bluetooth の組織では、0x0000 0xFBFF 経由の範囲の値を定義します。 ベンダーは、1024 異なる可能なベンダーが割り当てたコマンド コードの許可 0xFC00、0 xffff までの範囲の値を定義します。
+Bluetooth HCI コマンドは、16ビットのコマンドコードによって識別されます。 Bluetooth 組織は、0x0000 から0xFBFF までの範囲の値を定義します。 ベンダーは、0xFC00 ~ 0xFFFF の範囲の値を定義します。これにより、1024のベンダーによって割り当てられたコマンドコードを使用できます。
 
-仕入先には、コマンドの Microsoft によるコードの値を選択する必要があります。 Microsoft は、コマンドのコードを選択し、その他のベンダーの競合する目的は、コード使用しないと仮定ことはできません。 ベンダー固有のコマンドを発行し、認識しない場合、コマンドを拒否するコント ローラーに依存する安全ではありません。 コント ローラーは、コント ローラーのファームウェアの更新など、破壊的な操作として、コマンドを解釈できます。
+ベンダーは、Microsoft 定義のコマンドコードの値を選択する必要があります。 Microsoft では、コマンドコードを選択することはできません。また、競合する目的でコードを他のベンダーが使用しないことを前提としています。 ベンダー固有のコマンドを発行することは安全ではありません。また、コマンドが認識されない場合は、コントローラーに依存してコマンドを拒否します。 コントローラーは、コントローラーのファームウェアの更新などの破壊的な操作として、コマンドを解釈することができます。
 
-仕入先は、コント ローラー以外の方法を選択した値を伝える必要があります。 Microsoft では、選択したコードを取得する方法を指定しません。
+ベンダーは、コントローラー以外のメソッドを使用して、選択された値を通信する必要があります。 Microsoft では、選択したコードを取得する方法を指定していません。
 
 |HCI コマンド|説明|
 |---|---|
-|[HCI_VS_MSFT_Read_Supported_Features](#hci_vs_msft_read_supported_features) | HCI_VS_MSFT_Read_Supported_Features を説明するビットマップを提供する Microsoft 定義、コント ローラーの機能をサポートしているし、コント ローラーによって返される Microsoft 定義のイベントのプレフィックスを指定します。|
-|[HCI_VS_MSFT_Monitor_Rssi](#hci_vs_msft_monitor_rssi) | HCI_VS_MSFT_Monitor_Rssi を要求コント ローラーが指定された接続に対して測定リンク RSSI の監視を開始し、接続の測定リンク RSSI が指定された範囲外になると、イベントが生成されます。|
-|[HCI_VS_MSFT_Cancel_Monitor_Rssi](#hci_vs_msft_cancel_monitor_rssi) |HCI_VS_MSFT_Cancel_Monitor_Rssi は、HCI_VS_MSFT_Monitor_Rssi 以前に発行されたコマンドをキャンセルします。|
-|[HCI_VS_MSFT_LE_Monitor_Advertisement](#hci_vs_msft_le_monitor_advertisement) | HCI_VS_MSFT_LE_Monitor_Advertisement を要求コント ローラーは、指定 RSSI 範囲内し、もその他の要件を満たしている提供情報の監視を開始します。|
-|[HCI_VS_MSFT_LE_Cancel_Monitor_Advertisement](#hci_vs_msft_le_cancel_monitor_advertisement) | HCI_VS_MSFT_LE_Cancel_Monitor_Advertisement は、HCI_VS_MSFT_LE_Monitor_Advertisement 以前に発行されたコマンドをキャンセルします。|
-[HCI_VS_MSFT_LE_Set_Advertisement_Filter_Enable](#hci_vs_msft_le_set_advertisement_filter_enable) | HCI_VS_MSFT_LE_Set_Advertisement_Filter_Enable では、提供情報のフィルターの状態を設定します。|
-|[HCI_VS_MSFT_Read_Absolute_RSSI](#hci_vs_msft_read_absolute_rssi) | HCI_VS_MSFT_Read_Absolute_RSSI は、コント ローラーから BR EDR/接続の絶対受信信号の強さを示す値 (RSSI) 値を読み取ります。|
+|[HCI_VS_MSFT_Read_Supported_Features](#hci_vs_msft_read_supported_features) | HCI_VS_MSFT_Read_Supported_Features は、コントローラーがサポートする Microsoft 定義の機能を説明するビットマップを提供し、コントローラーによって返される Microsoft 定義のイベントのプレフィックスを指定します。|
+|[HCI_VS_MSFT_Monitor_Rssi](#hci_vs_msft_monitor_rssi) | HCI_VS_MSFT_Monitor_Rssi は、指定された接続の測定されたリンク RSSI の監視をコントローラーが開始するように要求し、接続の測定されたリンク RSSI が指定された境界の外側に移動したときにイベントを生成します。|
+|[HCI_VS_MSFT_Cancel_Monitor_Rssi](#hci_vs_msft_cancel_monitor_rssi) |HCI_VS_MSFT_Cancel_Monitor_Rssi は、以前に発行された HCI_VS_MSFT_Monitor_Rssi コマンドをキャンセルします。|
+|[HCI_VS_MSFT_LE_Monitor_Advertisement](#hci_vs_msft_le_monitor_advertisement) | HCI_VS_MSFT_LE_Monitor_Advertisement は、指定された RSSI 範囲内にある提供情報の監視をコントローラーが開始し、他の要件を満たすことを要求します。|
+|[HCI_VS_MSFT_LE_Cancel_Monitor_Advertisement](#hci_vs_msft_le_cancel_monitor_advertisement) | HCI_VS_MSFT_LE_Cancel_Monitor_Advertisement は、以前に発行された HCI_VS_MSFT_LE_Monitor_Advertisement コマンドをキャンセルします。|
+[HCI_VS_MSFT_LE_Set_Advertisement_Filter_Enable](#hci_vs_msft_le_set_advertisement_filter_enable) | HCI_VS_MSFT_LE_Set_Advertisement_Filter_Enable は、提供情報フィルターの状態を設定します。|
+|[HCI_VS_MSFT_Read_Absolute_RSSI](#hci_vs_msft_read_absolute_rssi) | HCI_VS_MSFT_Read_Absolute_RSSI は、コントローラーからの BR/EDR 接続について、受信した信号強度 (RSSI) の絶対値を読み取ります。|
 
-### <a name="notifying-windows-bluetooth-stack-of-the-vendor-specific-command-code"></a>ベンダー固有のコマンドのコードの Windows Bluetooth スタックを通知します。
+### <a name="notifying-windows-bluetooth-stack-of-the-vendor-specific-command-code"></a>ベンダー固有のコマンドコードの Windows Bluetooth スタックへの通知
 
-Windows の Bluetooth スタックは、レジストリ キーからベンダー固有のコマンドのコードを読み取ります。
+Windows Bluetooth スタックは、ベンダー固有のコマンドコードをレジストリキーから読み取ります。
 
-VsMsftOpCode のレジストリ キーは REG_DWORD の一種を備え、キーのデータは、ベンダー固有のオペコードにします。
+VsMsftOpCode レジストリキーの種類は REG_DWORD で、キーデータはベンダー固有のオペコードです。
 
-VsMsftOpCode キーにレジストリ パスになります。
+VsMsftOpCode キーへのレジストリパスは次のとおりです。
 
-探します\<デバイス インスタンスのパス > \Device Parameters\VsMsftOpCode
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\<デバイスインスタンスパス > \Device Parameters\VsMsftOpCode
 
-このコマンドの例では、コマンドラインからレジストリ値を追加します。
+次のコマンド例では、コマンドラインからレジストリ値を追加します。
 
 ```cpp
 REG ADD "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\<Device instance path>\Device Parameters" /v VsMsftOpCode /t REG_DWORD /d <Vendor specific command code>
 ```
 
-### <a name="using-inf-to-set-the-vsmsftopcode-registry-key"></a>INF を使用して VsMsftOpCode レジストリ キーを設定するには
+### <a name="using-inf-to-set-the-vsmsftopcode-registry-key"></a>INF を使用した VsMsftOpCode レジストリキーの設定
 
-INF ファイルを使用して、ベンダー固有のコマンドのコードを追加することもできます。 このサンプルの表示方法と場所がレジストリに自動的に追加できるように、ベンダ固有のコマンドのコードを追加します。
+ベンダー固有のコマンドコードは、INF ファイルを使用して追加することもできます。 このサンプルでは、ベンダー固有のコマンドコードを追加してレジストリに自動的に追加されるようにする方法と場所を示します。
 
 ```cpp
 [radio.NTamd64.HW]
@@ -64,31 +64,31 @@ AddReg=radio.NTamd64.HW.AddReg
 HKR,,"VsMsftOpCode",0x00010001,<Vendor Specific Opcode>
 ```
 
-### <a name="microsoft-defined-hci-command-and-subcommands"></a>Microsoft による HCI コマンドとサブコマンド
+### <a name="microsoft-defined-hci-command-and-subcommands"></a>Microsoft 定義の HCI コマンドとサブコマンド
 
-コント ローラーは、1 つだけの Microsoft 固有 HCI コマンドが認識しています。 オペコードを使用して、Microsoft 固有のコマンド セットが拡張されます。 Microsoft による HCI コマンドの最初のコマンド パラメーターは、オペコード、サブコマンドを指定します。
+コントローラーは、Microsoft 固有の HCI コマンドが1つだけであることを認識します。 Microsoft 固有のコマンドセットは、オペコードを使用して拡張されます。 Microsoft 定義の HCI コマンドの最初のコマンドパラメーターは、サブコマンドを指定するオペコードです。
 
-コント ローラーをサポートする必要があります[HCI_VS_MSFT_Read_Supported_Features](#hci_vs_msft_read_supported_features)他の Microsoft HCI のサブコマンドをサポートするためにします。 その他のコマンドのサポートは省略可能で、HCI_VS_MSFT_Read_Supported_Features によって返される値によって異なります。 Windows では、コント ローラーが HCI_VS_MSFT_Read_Supported_Features への応答を通じて、サブコマンドのサポートを指定しない限り、任意の Microsoft によるサブコマンドは送信しません。
+他の Microsoft HCI サブコマンドをサポートするために、コントローラーは[HCI_VS_MSFT_Read_Supported_Features](#hci_vs_msft_read_supported_features)をサポートする必要があります。 その他のコマンドのサポートは省略可能であり、HCI_VS_MSFT_Read_Supported_Features によって返される値によって異なります。 Windows では、コントローラーが HCI_VS_MSFT_Read_Supported_Features への応答を通じてサブコマンドのサポートを示す場合を除き、Microsoft が定義したサブコマンドは送信されません。
 
-### <a name="hcivsmsftreadsupportedfeatures"></a>HCI_VS_MSFT_Read_Supported_Features
+### <a name="hci_vs_msft_read_supported_features"></a>HCI_VS_MSFT_Read_Supported_Features
 
-HCI_VS_MSFT_Read_Supported_Features を説明するビットマップを提供する Microsoft 定義、コント ローラーの機能をサポートしているし、コント ローラーによって返される Microsoft 定義のイベントのプレフィックスを指定します。
+HCI_VS_MSFT_Read_Supported_Features は、コントローラーがサポートする Microsoft 定義の機能を説明するビットマップを提供し、コントローラーによって返される Microsoft 定義のイベントのプレフィックスを指定します。
 
-コント ローラーでは、コマンドの完了イベントをすぐにこのコマンドが完了常にものとします。
+コントローラーは、コマンド完了イベントを使用して、常にこのコマンドを実行する必要があります。
 
 <table>
   <thead>
     <tr>
     <th>コマンド</th>
     <th>コード</th>
-    <th>コマンドのパラメーター</th>
-    <th>戻り値パラメーター</th>
+    <th>コマンドパラメーター</th>
+    <th>戻りパラメーター</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>HCI_VS_MSFT_Read_Supported_Features</td>
-      <td>選択した基本コード </td>
+      <td>選択された基本コード </td>
       <td>Subcommand_opcode</td>
       <td>
         <ul>
@@ -103,623 +103,623 @@ HCI_VS_MSFT_Read_Supported_Features を説明するビットマップを提供�
   </tbody>
 </table>
 
-#### <a name="commandparameters"></a>Command_parameters
+#### <a name="command_parameters"></a>Command_parameters
 
-**Subcommand_opcode** (1 オクテット)。
-
-| Value  |  パラメーターの説明 |
-|---|---|
-|0x00   |  HCI_VS_MSFT_Read_Supported_Features のサブコマンド オペコードです。|
-
-#### <a name="returnparameters"></a>Return_parameters
-
-**ステータス**(1 オクテット)。
+**Subcommand_opcode**(1 オクテット):
 
 | Value  |  パラメーターの説明 |
 |---|---|
-|  0x00 |  コマンドが成功しました。 |
-| 0x01&#160;-&#160;0xFF  |  コマンドが失敗しました。 参照してください_エラーコード_詳細については、Bluetooth のコア仕様でします。 |
+|0x00   |  HCI_VS_MSFT_Read_Supported_Features のサブコマンドオペコード。|
 
-**Subcommand_opcode** (1 オクテット)。
+#### <a name="return_parameters"></a>Return_parameters
 
-| Value  |  パラメーターの説明 |
-|---|---|
-|0x00   |  サブコマンドのオペコード[HCI_VS_MSFT_Read_Supported_Features](#hci_vs_msft_read_supported_features)します。|
-
-**Supported_features** (オクテットの 8)。
+**状態**(1 オクテット):
 
 | Value  |  パラメーターの説明 |
 |---|---|
-|0x00000000&#160;00000001  |コント ローラーは、BR EDR/接続の RSSI 監視機能をサポートします。 さらに、コント ローラーがサポートしている[HCI_VS_MSFT_Read_Absolute_RSSI](#hci_vs_msft_read_absolute_rssi) BR EDR/接続の絶対 RSSI メトリックを読み取る。 |
-|0x00000000&#160;00000002  |コント ローラーは、LE 接続 RSSI 監視機能をサポートします。 |
-|0x00000000&#160;00000004  |コント ローラーには、LE の RSSI 監視の提供情報がサポートしています。 |
-|0x00000000&#160;00000008|コント ローラーには、LE の広告の監視の提供情報がサポートしています。|
-|0x00000000&#160;00000010 |コント ローラーのサポート、公開の有効性を確認する X 座標と Y 座標曲線の中にセキュリティで保護されたシンプル P-192 および P-256 のペアリング プロセス。 <br/>詳細については、次を参照してください。 [Bluetooth のコア仕様 Erratum 10734](https://www.bluetooth.org/docman/handlers/downloaddoc.ashx?doc_id=447440)します。|
-|0x00000000 00000020|コント ローラーには、ラジオの他のアクティビティと同時実行の継続的な広告の監視の LE 提供情報がサポートしています。|
-|0 xffffffff&#160;FFFFFFF0|ビットを今後の定義に予約されています。 0 にする必要があります。|
+|  0x00 |  コマンドが正常に実行されました。 |
+| 0x01&#160;-&#160;0xFF  |  コマンドが失敗しました。 詳細については、「Bluetooth Core の仕様」の「_エラーコード_」を参照してください。 |
 
-**Microsoft_event_prefix_length** (1 オクテット)。
+**Subcommand_opcode**(1 オクテット):
 
 | Value  |  パラメーターの説明 |
 |---|---|
-|0x00&#160;-&#160;0x20|返されたで指定されているマイクロソフト イベント プレフィックス フィールド内のバイト数_Microsoft_event_prefix_します。 これは、Microsoft が指定した HCI のすべてのイベントの先頭にある定数情報のバイト数です。|
+|0x00   |  [HCI_VS_MSFT_Read_Supported_Features](#hci_vs_msft_read_supported_features)のサブコマンドオペコード。|
 
-**Microsoft_event_prefix** (可変長)。
+**Supported_features**(8 オクテット):
 
 | Value  |  パラメーターの説明 |
 |---|---|
-|イベント&#160;プレフィックス&#160;値| 各 Microsoft 定義のイベントの先頭に期待する定数の情報です。 この情報は、他のカスタム イベントから Microsoft 定義イベントを区別するために使用されます。|
+|0x00000000&#160;00000001  |コントローラーは、BR/EDR 接続の RSSI Monitoring 機能をサポートしています。 さらに、このコントローラーは、BR/EDR 接続の絶対 RSSI メトリックを読み取るために[HCI_VS_MSFT_Read_Absolute_RSSI](#hci_vs_msft_read_absolute_rssi)をサポートしています。 |
+|0x00000000&#160;00000002  |コントローラーは、LE 接続の RSSI Monitoring 機能をサポートしています。 |
+|0x00000000&#160;00000004  |コントローラーでは、LE 広告の RSSI 監視がサポートされています。 |
+|0x00000000&#160;00000008|コントローラーは、LE 広告の監視をサポートしています。|
+|0x00000000&#160;00000010 |コントローラーは、P-192 と P-256 のセキュリティで保護された単純なペアリングプロセス中に、曲線上のパブリック X 座標と Y 座標の有効性を検証することをサポートしています。 <br/>詳細については、「 [Bluetooth Core Specification Erratum 10734](https://www.bluetooth.org/docman/handlers/downloaddoc.ashx?doc_id=447440)」を参照してください。|
+|0x00000000 00000020|コントローラーは、他のラジオアクティビティと同時に実行される LE 広告の継続的な広告監視をサポートします。|
+|0xFFFFFFFF&#160;FFFFFFF0|将来の定義用に予約されているビット。 0にする必要があります。|
 
-### <a name="hcivsmsftmonitorrssi"></a>HCI_VS_MSFT_Monitor_Rssi
+**Microsoft_event_prefix_length**(1 オクテット):
 
-HCI_VS_MSFT_Monitor_Rssi を要求コント ローラーが指定された接続に対して測定リンク RSSI の監視を開始し、接続の測定リンク RSSI が指定された範囲外になると、イベントが生成されます。
+| Value  |  パラメーターの説明 |
+|---|---|
+|0x00&#160;-&#160;0x20|返された_Microsoft_event_prefix_で指定された Microsoft イベントプレフィックスフィールドのバイト数。 これは、Microsoft が指定したすべての HCI イベントの先頭にある、定数情報のバイト数です。|
 
-|コマンド|コード|コマンドのパラメーター|戻り値パラメーター|
+**Microsoft_event_prefix**(可変長):
+
+| Value  |  パラメーターの説明 |
+|---|---|
+|イベント&#160;プレフィックス&#160;値| 各 Microsoft 定義イベントの先頭で予想される定数情報。 この情報は、Microsoft が定義したイベントを他のカスタムイベントと区別するために使用されます。|
+
+### <a name="hci_vs_msft_monitor_rssi"></a>HCI_VS_MSFT_Monitor_Rssi
+
+HCI_VS_MSFT_Monitor_Rssi は、指定された接続の測定されたリンク RSSI の監視をコントローラーが開始するように要求し、接続の測定されたリンク RSSI が指定された境界の外側に移動したときにイベントを生成します。
+
+|コマンド|コード|コマンドパラメーター|戻りパラメーター|
 |---|---|---|---|
-|HCI_VS_MSFT_Read_Supported_Features|選択した基本コード |<ul><li>Subcommand_opcode</li><li>Connection_handle</li><li>RSSI_threshold_high</li><li>RSSI_threshold_low</li><li>RSSI_threshold_low_time_interval</li><li>RSSI_sampling_period</li></ul>|<ul><li>状況</li><li>Subcommand_opcode</ul>|
+|HCI_VS_MSFT_Read_Supported_Features|選択された基本コード |<ul><li>Subcommand_opcode</li><li>Connection_handle</li><li>RSSI_threshold_high</li><li>RSSI_threshold_low</li><li>RSSI_threshold_low_time_interval</li><li>RSSI_sampling_period</li></ul>|<ul><li>状況</li><li>Subcommand_opcode</ul>|
 
-コント ローラーが RSSI 値を定期的に生成されたイベントのホストに通知されます (に基づいて、 _RSSI_sampling_period_)。 RSSI は純益、測定されたリンク、**絶対**dbm BR EDR/接続の信号強度 受信側の値。
-HCI_VS_MSFT_Monitor_Rssi コマンドへの応答、コント ローラーはイベントが生成コマンドの完了ステータスが、コント ローラーは、監視を開始できる場合は、0 を相当または 0 以外の状態のそれ以外の場合。 状態値が 0 以外の場合は、コント ローラーは生成されません、 [HCI_VS_MSFT_Rssi_Event](#hci_vs_msft_rssi_event)このコマンドに応答します。
-HCI_VS_MSFT_Monitor_Rssi のもう 1 つのコマンドと同じ場合、コント ローラーが、コマンドを拒否するものと_Connection_handle_が未解決か、指定された接続を処理する場合は無効です。 コント ローラーは、その他の理由から、リソースの枯渇などのコマンドを拒否もあります。
+コントローラーは、 _RSSI_sampling_period_に基づいて、定期的に生成されたイベントを使用して RSSI 値のホストに通知する必要があります。 測定されたリンク RSSI は、その BR/EDR 接続について、dBm の**絶対**レシーバーシグナルの強さの値である必要があります。
+コントローラーは、HCI_VS_MSFT_Monitor_Rssi コマンドに応答して、ステータスが0のコマンド完了イベントを生成する必要があります。コントローラーが監視を開始できる場合は0、それ以外の場合は0以外の状態になります。 Status 値が0以外の場合、コントローラーは、このコマンドに応答して[HCI_VS_MSFT_Rssi_Event](#hci_vs_msft_rssi_event)を生成しません。
+同じ_Connection_handle_を持つ別の HCI_VS_MSFT_Monitor_Rssi コマンドが未解決の場合、または指定された接続ハンドルが無効である場合、コントローラーはコマンドを拒否します。 コントローラーは、リソース枯渇などの他の理由でコマンドを拒否することもできます。
 
-#### <a name="statediagram"></a>State_diagram
+#### <a name="state_diagram"></a>State_diagram
 
-この状態の図では、接続 RSSI を監視するときに、コント ローラーの遷移状態を示します。![HCI_VS_MSFT_Monitor_Rssi の状態ダイアグラム](images/HCI_VS_MSFT_Monitor_Rssi_State_Diagram.png)コント ローラーを生成する、 [HCI_VS_MSFT_Rssi_Event](#hci_vs_msft_rssi_event)受信 RSSI が、指定した以上の場合_RSSI_threshold_high_します。 このイベントが生成された後、コント ローラーはことを指定する新しい HCI_VS_MSFT_Rssi_Event を生成は、 _RSSI_threshold_high_ RSSI を指定する、HCI_VS_MSFT_Rssi_Event を生成するまでを超えています下回りました_RSSI_threshold_low_します。
+この状態の図は、接続の RSSI を監視する場合のコントローラーの遷移状態を示しています。HCI_VS_MSFT_Monitor_Rssi の状態ダイアグラムは、受信した Rssi が指定された_RSSI_threshold_high_以上の場合に、[HCI_VS_MSFT_Rssi_Event](#hci_vs_msft_rssi_event) を生成する必要があります。![](images/HCI_VS_MSFT_Monitor_Rssi_State_Diagram.png) このイベントが生成された後、コントローラーは、RSSI が下回っ _たことを指定する HCI_VS_MSFT_Rssi_Event を生成するまで RSSI_threshold_high が超過したことを指定する新しい HCI_VS_MSFT_Rssi_Event を生成しません。RSSI_threshold_low_。
 
-受信した RSSI と等しいか、指定したを下回ったときに、コント ローラーは、HCI_VS_MSFT_Rssi_Event を生成は_RSSI_threshold_low_を指定した_RSSI_threshold_low_time_interval_します。 このイベントが生成された後、コント ローラーは、RSSI を下回ったことを指定する新しい HCI_VS_MSFT_Rssi_Event を生成は、 _RSSI_threshold_low_ HCI_VS_MSFT_Rssi_Event イベントが生成されますを指定するまで_RSSI_threshold_high_に達したか超えましたされています。
+このコントローラーは、受信した RSSI が、指定された_RSSI_threshold_low_time_interval_で指定された_RSSI_threshold_low_に等しいか下回った場合に、HCI_VS_MSFT_Rssi_Event を生成する必要があります。 このイベントが生成された後、コントローラーは、HCI_VS_MSFT_Rssi_Event イベントが生成されるまで RSSI が_RSSI_threshold_low_を下回ったことを指定する新しい HCI_VS_MSFT_Rssi_Event を生成しないようにして、RSSI_ を指定します。 _threshold_high_に達したか、それを超えています。
 
-場合、 _RSSI_sampling_period_は 0x01 と 0 xfe、間、コント ローラーを生成する、HCI_VS_MSFT_Rssi_Event 定期的にすべて_RSSI_sampling_period_します。 このイベントを含むことにわたって計算された RSSI の平均値、 _RSSI_sampling_period_します。
-場合、 _RSSI_sampling_period_は、コント ローラーは 0x00 または 0 xff の場合、**いない**HCI_VS_MSFT_Rssi_Event で定期的にホストに通知します。
+_RSSI_sampling_period_が0X01 と0xfe の間にある場合、コントローラーは_RSSI_sampling_period_ごとに HCI_VS_MSFT_Rssi_Event を定期的に生成する必要があります。 このイベントには、 _RSSI_sampling_period_に対して計算された RSSI の平均が含まれます。
+_RSSI_sampling_period_が0x00 または0xff の場合、コントローラーはホストに定期的に HCI_VS_MSFT_Rssi_Event を通知し**ません**。
 
-#### <a name="commandparameters"></a>Command_parameters
+#### <a name="command_parameters"></a>Command_parameters
 
-Subcommand_opcode (1 オクテット)。
-
-| Value  |  パラメーターの説明 |
-|---|---|
-|0x01   |  HCI_VS_MSFT_Monitor_Rssi のサブコマンド オペコードです。|
-
-Connection_handle (2 つのオクテット)。
+Subcommand_opcode (1 オクテット):
 
 | Value  |  パラメーターの説明 |
 |---|---|
-|0x_XXXX   |  接続がある RSSI を監視する必要がありますのハンドル。|
+|0x01   |  HCI_VS_MSFT_Monitor_Rssi のサブコマンドオペコード。|
 
-RSSI_threshold_high (1 オクテット)。
-
-| Value  |  パラメーターの説明 |
-|---|---|
-|待機 = _High&#160;RSSI しきい値&#160;値 |  最大値には、RSSI 値が必要です。 観察された RSSI は、この値以上になると、コント ローラー イベントが生成されます。 BR/EDR: の <ul><li>範囲:-128 &lt; =  _N_ &lt;= 127 (符号付き整数)</li><li>単位: dBm</li></ul>LE: の<ul><li>20 (符号付き整数) の範囲:-127</li><li>単位: dBm</li></ul>|
-
-RSSI_threshold_low (1 オクテット)。
+Connection_handle (2 オクテット):
 
 | Value  |  パラメーターの説明 |
 |---|---|
-|待機 = _Low&#160;RSSI しきい値&#160;値|最小値には、RSSI 値が必要です。 コント ローラー観測 RSSI になった場合、イベントが生成されますこの値未満です。 BR/EDR: の<ul><li>範囲:-128 &lt; =  _N_ &lt;= 127 (符号付き整数)</li><li>単位: dBm</li></ul>LE: の<ul><li>20 (符号付き整数) の範囲:-127</li><li>単位: dBm</li></ul>|
+|0Xxxxx (_l)   |  RSSI を監視する必要がある接続のハンドル。|
 
-RSSI_threshold_low_time_interval (1 オクテット)。
+RSSI_threshold_high (1 オクテット):
 
 | Value  |  パラメーターの説明 |
 |---|---|
-|0x00|予約済みの値。|
-|N_&#160;=&#160;0x01&#160;-&#160;0x3C|期間 = _N_ * 未満でなければならない RSSI 値を秒単位で 1 回、secondThe _RSSI_threshold_low_する前に、 [HCI_VS_MSFT_Rssi_Event](#hci_vs_msft_rssi_event)が生成されます。
+|N_ = High&#160;RSSI threshold&#160;の値 |  予想される最大 RSSI 値。 監視対象の RSSI がこの値以上になると、コントローラーはイベントを生成します。 BR/EDR の場合: <ul><li>範囲:-128 &lt; =  N&lt;= 127 (符号付き整数)</li><li>Unit: dBm</li></ul>LE の場合:<ul><li>範囲:-127 ~ 20 (符号付き整数)</li><li>Unit: dBm</li></ul>|
 
-RSSI_sampling_period (1 オクテット)。
+RSSI_threshold_low (1 オクテット):
+
+| Value  |  パラメーターの説明 |
+|---|---|
+|N_ = 低&#160;RSSI しきい&#160;値|予想される最小 RSSI 値。 監視対象の RSSI がこの値以下になると、コントローラーはイベントを生成します。 BR/EDR の場合:<ul><li>範囲:-128 &lt; =  N&lt;= 127 (符号付き整数)</li><li>Unit: dBm</li></ul>LE の場合:<ul><li>範囲:-127 ~ 20 (符号付き整数)</li><li>Unit: dBm</li></ul>|
+
+RSSI_threshold_low_time_interval (1 オクテット):
 
 | Value  |  パラメーターの説明 |
 |---|---|
 |0x00|予約済みの値。|
-|_N_&#160;=&#160;0x01&#160;-&#160;0xFE|期間 = _N_ * 100 millisecondsThe サンプリング間隔 (ミリ秒)。|
-|0 xff の場合|予約済みの値。|
+|N_&#160;=&#160;0x01&#160;-&#160;0x3C|期間 = _N_ * 1 は、 [HCI_VS_MSFT_Rssi_Event](#hci_vs_msft_rssi_event)が生成される前に、RSSI 値が_RSSI_threshold_low_未満になるまでの時間を秒単位で示します。
 
-#### <a name="returnparameters"></a>Return_parameters
+RSSI_sampling_period (1 オクテット):
+
+| Value  |  パラメーターの説明 |
+|---|---|
+|0x00|予約済みの値。|
+|_N_&#160;=&#160;0x01&#160;-&#160;0xfe|期間 = _N_ * 100 millisecondsThe サンプリング間隔 (ミリ秒単位)。|
+|0xFF|予約済みの値。|
+
+#### <a name="return_parameters"></a>Return_parameters
 
 状態 (1 オクテット):
 
 | Value  |  パラメーターの説明 |
 |---|---|
-|  0x00 |  コマンドが成功しました。 |
-| 0x01&#160;-&#160;0xFF  |  コマンドが失敗しました。 参照してください_エラーコード_詳細については、Bluetooth のコア仕様でします。 |
-|0x07|コント ローラーを返す_メモリ容量を超えて_コマンドを処理するための十分なメモリがあるない場合。|
-|_エラー&#160;コード_| コマンドが失敗しました。 参照してください_エラーコード_詳細については、Bluetooth のコア仕様でします。|
+|  0x00 |  コマンドが正常に実行されました。 |
+| 0x01&#160;-&#160;0xFF  |  コマンドが失敗しました。 詳細については、「Bluetooth Core の仕様」の「_エラーコード_」を参照してください。 |
+|0x07|コマンドを処理するのに十分なメモリがない場合、コントローラーは_メモリ容量を超え_たことを返します。|
+|_エラー&#160;コード_| コマンドが失敗しました。 詳細については、「Bluetooth Core の仕様」の「_エラーコード_」を参照してください。|
 
-Subcommand_opcod (1 オクテット)。
+Subcommand_opcod (1 オクテット):
 
 | Value  |  パラメーターの説明 |
 |---|---|
-|0x01|HCI_VS_MSFT_Monitor_Rssi のサブコマンド オペコードです。|
+|0x01|HCI_VS_MSFT_Monitor_Rssi のサブコマンドオペコード。|
 
-#### <a name="eventsgeneratedunlessmaskedaway"></a>Events_generated__unless_masked_away
+#### <a name="events_generated__unless_masked_away"></a>Events_generated__unless_masked_away
 
-コント ローラーは、HCI_VS_MSFT_Monitor_Rssi コマンドを受信したときに、コマンドの完了イベントを生成速やかにものとします。 コント ローラーを生成するコマンドの完了イベントが 0 の状態を返す場合、 [HCI_VS_MSFT_Rssi_Event](#hci_vs_msft_rssi_event)次のいずれかに発生します。
+コントローラーは、HCI_VS_MSFT_Monitor_Rssi コマンドを受信したときに、直ちにコマンド完了イベントを生成する必要があります。 コマンド完了イベントによってステータス0が返された場合、次のいずれかが発生すると、コントローラーは[HCI_VS_MSFT_Rssi_Event](#hci_vs_msft_rssi_event)を生成します。
 
-- 経由でデバイスの監視対象の RSSI _RSSI_threshold_low_time_interval_が同じか、または指定したよりも小さい_RSSI_threshold_low_値。
+- デバイスの観測された RSSI が_RSSI_threshold_low_time_interval_を超えると、指定した_RSSI_threshold_low_値以下になります。
 
-- デバイスの監視対象の RSSI が以上の値を指定した_RSSI_threshold_high_値。
+- デバイスの観測された RSSI が、指定された_RSSI_threshold_high_値以上になっています。
 
-- _RSSI_sampling_period_が有効では、サンプリング期間が終了するとします。
+- _RSSI_sampling_period_は有効で、サンプリング期間は終了します。
 
-コント ローラーは、指定されたデバイスとの接続が失われた場合、すべての必要なクリーンアップを行う必要があります。 ここで、 [HCI_VS_MSFT_Cancel_Monitor_Rssi](#hci_vs_msft_cancel_monitor_rssi)コマンドは、コント ローラーに送信されません。
+コントローラーは、指定されたデバイスとの接続が失われた場合に必要なすべてのクリーンアップを実行します。 この場合、 [HCI_VS_MSFT_Cancel_Monitor_Rssi](#hci_vs_msft_cancel_monitor_rssi)コマンドはコントローラーに送信されません。
 
-### <a name="hcivsmsftcancelmonitorrssi"></a>HCI_VS_MSFT_Cancel_Monitor_Rssi
+### <a name="hci_vs_msft_cancel_monitor_rssi"></a>HCI_VS_MSFT_Cancel_Monitor_Rssi
 
-以前発行を取り消します HCI_VS_MSFT_Cancel_Monitor_Rssi [HCI_VS_MSFT_Monitor_Rssi](#hci_vs_msft_monitor_rssi)コマンド。
-コント ローラーは、このコマンドに応答コマンドが完了イベントを生成するものと速やかに。
+HCI_VS_MSFT_Cancel_Monitor_Rssi は、以前に発行された[HCI_VS_MSFT_Monitor_Rssi](#hci_vs_msft_monitor_rssi)コマンドをキャンセルします。
+コントローラーは、このコマンドに応答して、コマンドの完了イベントを即座に生成する必要があります。
 
-|コマンド|コード|コマンドのパラメーター|戻り値パラメーター|
+|コマンド|コード|コマンドパラメーター|戻りパラメーター|
 |---|---|---|---|
-|HCI_VS_MSFT_Cancel_Monitor_Rssi|選択した基本コード |<ul><li>Subcommand_opcode</li><li>Connection_handle</li>|<ul><li>状況</li><li>Subcommand_opcode</ul>|
+|HCI_VS_MSFT_Cancel_Monitor_Rssi|選択された基本コード |<ul><li>Subcommand_opcode</li><li>Connection_handle</li>|<ul><li>状況</li><li>Subcommand_opcode</ul>|
 
-#### <a name="commandparameters"></a>Command_parameters
+#### <a name="command_parameters"></a>Command_parameters
 
-Subcommand_opcode (1 オクテット)。
-
-| Value  |  パラメーターの説明 |
-|---|---|
-|0x02   |  HCI_VS_MSFT_Cancel_Monitor_Rssi のサブコマンド オペコードです。|
-
-Connection_handle (1 オクテット)。
+Subcommand_opcode (1 オクテット):
 
 | Value  |  パラメーターの説明 |
 |---|---|
-|0x_XXXX   |  キャンセルする必要がある RSSI 接続用のハンドル。|
+|0x02   |  HCI_VS_MSFT_Cancel_Monitor_Rssi のサブコマンドオペコード。|
 
-#### <a name="returnparameters"></a>Return_parameters
+Connection_handle (1 オクテット):
+
+| Value  |  パラメーターの説明 |
+|---|---|
+|0Xxxxx (_l)   |  RSSI をキャンセルする必要がある接続のハンドル。|
+
+#### <a name="return_parameters"></a>Return_parameters
 
 状態 (1 オクテット):
 
 | Value  |  パラメーターの説明 |
 |---|---|
-|  0x00 |  コマンドが成功しました。 |
-| 0x01&#160;-&#160;0xFF  |  コマンドが失敗しました。 参照してください_エラーコード_詳細については、Bluetooth のコア仕様でします。 |
+|  0x00 |  コマンドが正常に実行されました。 |
+| 0x01&#160;-&#160;0xFF  |  コマンドが失敗しました。 詳細については、「Bluetooth Core の仕様」の「_エラーコード_」を参照してください。 |
 
-Subcommand_opcod (1 オクテット)。
+Subcommand_opcod (1 オクテット):
 
 | Value  |  パラメーターの説明 |
 |---|---|
-|0x02|HCI_VS_MSFT_Cancel_Monitor_Rssi のサブコマンド オペコードです。|
+|0x02|HCI_VS_MSFT_Cancel_Monitor_Rssi のサブコマンドオペコード。|
 
-#### <a name="eventsgeneratedunlessmaskedaway"></a>Events_generated__unless_masked_away
+#### <a name="events_generated__unless_masked_away"></a>Events_generated__unless_masked_away
 
-コント ローラー HCI_VS_MSFT_Cancel_Monitor_RSSI コマンドを受信したコマンドの完了イベントが生成されます。
+HCI_VS_MSFT_Cancel_Monitor_RSSI コマンドを受信すると、コントローラーはコマンド完了イベントを生成する必要があります。
 
-### <a name="hcivsmsftlemonitoradvertisement"></a>HCI_VS_MSFT_LE_Monitor_Advertisement
+### <a name="hci_vs_msft_le_monitor_advertisement"></a>HCI_VS_MSFT_LE_Monitor_Advertisement
 
-コント ローラーがアドバタイズを指定した RSSI 範囲内し、も、次の条件のいずれかを満たす監視が開始される HCI_VS_MSFT_LE_Monitor_Advertisement が要求されます。
+HCI_VS_MSFT_LE_Monitor_Advertisement は、指定された RSSI 範囲内にある提供情報の監視をコントローラーが開始するように要求します。また、次のいずれかの条件を満たします。
 
-- 指定したパターンは、提供情報を受信したパケットを照合できます。
-- 受信した提供情報 packe に指定された UUID を一致させることができます。
-- 提供情報のパケットが元のデバイスのプライベート アドレスを解決するのには、指定の Id 解決キー (IRK) を使用できます。
-- Bluetooth の指定したアドレスは、提供情報を受信したパケットを照合できます。
+- 指定されたパターンは、受信した提供情報パケットと照合できます。
+- 指定された UUID は、受信した提供情報 packe と照合できます。
+- 指定された Id 解決キー (IRK) を使用して、提供情報パケットの送信元のデバイスのプライベートアドレスを解決できます。
+- 指定された Bluetooth アドレスは、受信した提供情報パケットと照合できます。
 
-|コマンド|コード|コマンドのパラメーター|戻り値パラメーター|
+|コマンド|コード|コマンドパラメーター|戻りパラメーター|
 |---|---|---|---|
-|HCI_VS_MSFT_LE_Monitor_Advertisement|選択した基本コード |<ul><li>Subcommand_opcode</li><li>Connection_handle</li>|<ul><li>状況</li><li>Subcommand_opcode<li>Monitor_handle</li></ul>|
+|HCI_VS_MSFT_LE_Monitor_Advertisement|選択された基本コード |<ul><li>Subcommand_opcode</li><li>Connection_handle</li>|<ul><li>状況</li><li>Subcommand_opcode<li>Monitor_handle</li></ul>|
 
-コント ローラーは、このコマンドに応答、コマンドの完了イベントを生成するものとします。 Status の値は、それ以外の場合、コント ローラーは、の監視を開始できる場合は 0 または 0 以外の状態に設定する必要があります。
-これを無視するものと、コント ローラーが RSSI が LE 提供情報の監視をサポートしていない場合、 _RSSI_threshold_high_、 _RSSI_threshold_low_、 _RSSI_threshold_low_time_interval_、および_RSSI_sampling_period_パラメーターの値。
+コントローラーは、このコマンドに応答してコマンド完了イベントを生成する必要があります。 コントローラーが監視を開始できる場合は status 値を0に設定し、それ以外の場合は0以外の状態を設定する必要があります。
+コントローラーが LE 広告の RSSI monitoring をサポートしていない場合、 _RSSI_threshold_high_、 _RSSI_threshold_low_、 _RSSI_threshold_low_time_interval_、および_RSSI_sampling_period_の各パラメーター値は無視されます.
 
-#### <a name="statediagram"></a>State_diagram
+#### <a name="state_diagram"></a>State_diagram
 
-この状態の図では、広告の RSSI を監視する場合に、コント ローラーの遷移状態を示します。 ![HCI_VS_MSFT_LE_Monitor_Advertisement の状態の図](images/HCI_VS_MSFT_LE_Monitor_Advertisement_State_Diagram.png)します。 受信した RSSI がより大きいまたは等しい場合にのみ、コント ローラーがホストに最初の提供情報のパケットを伝達は_RSSI_threshold_high_特定のデバイスにします。 コント ローラーを生成する、 [HCI_VS_MSFT_LE_Monitor_Device_Event](#hci_vs_msft_le_monitor_device_event)で_Monitor_state_を 1 に設定し、 _Monitor_handle_こののハンドルに設定_条件_、コント ローラーがのこの特定のデバイスを監視しているホストに通知する_条件_します。
-コント ローラーがの監視を停止するものと_条件_以上受信した提供情報の RSSI になると下回った_RSSI_threshold_low_経由で_RSSI_threshold_low_interval_特定のデバイス用です。 コント ローラーを生成する、 [HCI_VS_MSFT_LE_Monitor_Device_Event](#hci_vs_msft_le_monitor_device_event)で_Monitor_state_コント ローラーが、の特定のデバイスの監視を停止しているホストに通知を0に設定_条件_します。 コント ローラーと HCI_VS_MSFT_LE_Monitor_Device_Event の指定後_Monitor_state_を 0 に設定すると、コント ローラーはできませんさらに、コント ローラーになるまで、デバイスのホストに流れるパケットが送信ホストを特定のデバイスに対して RSSI が増えた以上に通知を受け取る_RSSI_threshold_high_の特定のデバイスに対して、_条件_します。
-さらに、コント ローラーを生成する必要、 [HCI_VS_MSFT_LE_Monitor_Device_Event](#hci_vs_msft_le_monitor_device_event)で_Monitor_state_コント ローラーのデバイスの監視を停止しているホストに通知を 0 に設定します_条件_場合、指定した_RSSI_threshold_low_time_interval_有効期限が切れたデバイスからの広告のパケットを受信します。 コント ローラーは、特定の条件のデバイスを監視している場合、次のステートメントは true です。
+この状態の図は、提供情報の RSSI を監視するときのコントローラーの遷移状態を示しています。 ![HCI_VS_MSFT_LE_Monitor_Advertisement](images/HCI_VS_MSFT_LE_Monitor_Advertisement_State_Diagram.png)の状態ダイアグラム。 このコントローラーは、受信した RSSI が特定のデバイスの_RSSI_threshold_high_以上である場合にのみ、最初のアドバタイズパケットをホストに伝達する必要があります。 コントローラーは、コントローラーが監視していることをホストに通知するために、 _Monitor_state_を1に設定し、 _Monitor_handle_をこの_条件_のハンドルに設定して、 [HCI_VS_MSFT_LE_Monitor_Device_Event](#hci_vs_msft_le_monitor_device_event)を生成する必要があります。_条件_の特定のデバイス。
+受信した提供情報の RSSI が特定のデバイスの_RSSI_threshold_low_interval_ _を超えて_いるか下回っている場合、コントローラーは_状態_の監視を停止します。 コントローラーは、 _Monitor_state_を0に設定して[HCI_VS_MSFT_LE_Monitor_Device_Event](#hci_vs_msft_le_monitor_device_event)を生成し、その_条件_の特定のデバイスの監視がコントローラーによって停止されたことをホストに通知します。 コントローラーは、 _Monitor_state_が0に設定されている HCI_VS_MSFT_LE_Monitor_Device_Event を指定した後、コントローラーによって、RSSI がホストに通知されるまで、デバイスのホストに対してより多くのアドバタイズパケットを送信することを許可しません。では、特定のデバイスの_条件_に対して、特定のデバイスの_RSSI_threshold_high_以上が発生しています。
+さらに、コントローラーは_Monitor_state_を0に設定して[HCI_VS_MSFT_LE_Monitor_Device_Event](#hci_vs_msft_le_monitor_device_event)を生成し、指定された RSSI_ が_条件_に対してデバイスの監視を停止したことをホストに通知します。 _threshold_low_time_interval_は、デバイスから広告パケットを受信しなくても有効期限が切れます。 コントローラーが特定の状態のデバイスを監視している場合は、次のステートメントが当てはまります。
 
-- RSSI_sampling_period_ は 0 xff に設定されている場合、コント ローラーものといないパケットを許可するさらに提供情報については、デバイスのホストにフローを_条件_コント ローラーは、ホストを通知が、特定のデバイスが RSSI のことまで下回りました_RSSI_threshold_low_の_RSSI_threshold_low_time_interval_この特定のデバイスに対して_条件_します。 この通知は生成することによって行われます、 [HCI_VS_MSFT_LE_Monitor_Device_Event](#hci_vs_msft_le_monitor_device_event)で_Monitor_state_を 0 に設定します。
-- 場合、 _RSSI_sampling_period_設定は 0x0、コント ローラーは、このデバイスのホストにすべての提供情報を受信したパケットを伝達は_条件_コント ローラーが以前に受信しない限り、[HCI_VS_MSFT_LE_Set_Advertisement_Filter_Enable](#hci_vs_msft_le_set_advertisement_filter_enable)コマンドと_を有効にする_0x00 に設定します。 受信した RSSI と等しいまたはそれよりも小さい場合でも、コント ローラーがアドバタイズ パケットをホストするを伝達は_RSSI_threshold_low_限り_RSSI_threshold_low_time_interval_が切れていません。この特定のデバイスに対して_条件_します。 この提供情報のパケットの RSSI 値は、受信した提供情報の RSSI 値である必要があります。
+- RSSI_sampling_period_ が0xFF に設定されている場合、コントローラーは、特定のデバイスの RSSI が _下回ったことをホストに通知するまで、そのデバイスのホストに対して、さらに情報提供パケットをフローすることを許可しません。_ この_条件_に対する特定のデバイスの_RSSI_threshold_low_time_interval_の RSSI_threshold_low。 この通知は、 _Monitor_state_を0に設定して[HCI_VS_MSFT_LE_Monitor_Device_Event](#hci_vs_msft_le_monitor_device_event)を生成することによって行われます。
+- _RSSI_sampling_period_が0x0 に設定されている場合、コントローラーは、以前に [HCI_VS_MSFT_LE_Set_Advertisement_Filter_Enable](#hci_vs_msft_le_set_advertisement_filter_enable) を受信し_ていない_限り、受信したすべての提供情報パケットをデバイスのホストに伝達します。_Enable_を0x00 に設定してコマンドを実行します。 この _ために特定のデバイスで RSSI_threshold_low_time_interval が期限切れになっていない限り、受信した RSSI が RSSI_threshold_low 以下の場合でも、コントローラーは提供情報パケットをホストに伝達する必要があります。条件_。 この提供情報パケットの RSSI 値は、受信した提供情報の RSSI 値である必要があります。
 
-場合_RSSI_sampling_period_は 0x01 と 0 xfe、間、コント ローラーがホストにパケットが送信を伝達はすべて_RSSI_sampling_period_しない限り、指定されたコント ローラーを以前受信した、 [HCI_VS_MSFT_LE_Set_Advertisement_Filter_Enable](#hci_vs_msft_le_set_advertisement_filter_enable)コマンドと_を有効にする_0x00 に設定します。 提供情報の指定された RSSI 値をこのサンプリング間隔中に受信した RSSI 値の平均値となります。 コント ローラーがサンプリング期間中に、提供情報のパケットを受信しなかった場合それをホストに提供情報は反映されないものとします。 できますを_RSSI_sampling_period_がより小さい_RSSI_threshold_low_time_interval_中に受信したすべての提供情報と、 _RSSI_sampling_period_以下の RSSI がある_RSSI_threshold_low_します。 コント ローラーは、このサンプリング間隔中に受信した RSSI 値の平均値の提供情報を伝達まだものとします。
+_RSSI_sampling_period_が0X01 と0xfe の間にある場合、コントローラーは、前に [HCI_VS_MSFT_LE_Set_Advertisement_Filter_Enable](#hci_vs_msft_le_set_advertisement_filter_enable) を受け取っていない限り、指定された_RSSI_sampling_period_ごとに提供情報パケットをホストに伝達します。_Enable_を0x00 に設定してコマンドを実行します。 提供情報に指定された RSSI 値は、このサンプリング間隔中に受信した RSSI 値の平均値である必要があります。 サンプリング期間中に、提供情報パケットを受信しなかった場合は、ホストに提供情報が伝達されません。 _RSSI_sampling_period_が_RSSI_threshold_low_time_interval_よりも小さく、 _RSSI_sampling_period_中に受信したすべての提供情報が_RSSI_threshold_low_の下に RSSI を持っている可能性があります。 コントローラーは、このサンプリング間隔中に受信した RSSI 値の平均値を使用して提供情報を伝達する必要があります。
 
-コント ローラーが以前に受信した場合、 [HCI_VS_MSFT_LE_Set_Advertisement_Filter_Enable](#hci_vs_msft_le_set_advertisement_filter_enable)コマンドと_を有効にする_0x00 に設定すると、サンプリング期間タイマーは停止できません。 例を参照してください。詳細については、サンプリング期間でフィルターに HCI_VS_MSFT_LE_Set_Advertisement_Filter_Enable します。
-コント ローラーは、同じデバイスから提供情報の重複していないパケットを受信する場合、コント ローラーに格納されている条件に対して各提供情報のパケットに一致する必要があります。
+コントローラーが、 _Enable_を0x00 に設定して[HCI_VS_MSFT_LE_Set_Advertisement_Filter_Enable](#hci_vs_msft_le_set_advertisement_filter_enable)コマンドを受信した場合、サンプリング期間タイマーは停止されません。 例を参照してください。詳細については、サンプリング期間付きフィルターに関する HCI_VS_MSFT_LE_Set_Advertisement_Filter_Enable を参照してください。
+同じデバイスから重複しない広告パケットを受信した場合、コントローラーに格納されている条件に対して、各公開通知パケットが一致している必要があります。
 
-コント ローラーが複数の条件に一致するデバイスから提供情報パケットを受信し、コント ローラーを生成するかどうか、 [HCI_VS_MSFT_LE_Monitor_Device_Event](#hci_vs_msft_le_monitor_device_event)各_条件_一致するに_Monitor_handle_に設定、_条件_に一致します。
+コントローラーが、複数の条件に一致するデバイスから提供情報パケットを受信した場合、コントローラーは、一致した各_条件_に対して_Monitor_handle_を使用して[HCI_VS_MSFT_LE_Monitor_Device_Event](#hci_vs_msft_le_monitor_device_event)を生成する必要があります。に一致した_条件_を設定します。
 
-コント ローラーは RSSI 値と一致する範囲内のすべてのデバイスを監視することがない場合、_条件_、可能な限り多くのデバイスが監視保持されます。 どのようなデバイスを監視するかについての判断は、受信した提供情報の RSSI 値によって異なります。 コント ローラーには、大きい受信信号強度を持つデバイスを監視ものとします。
+コントローラーが_条件_に一致する範囲内のすべてのデバイスの RSSI 値を監視できない場合、監視はできるだけ多くのデバイスで実行されます。 監視する必要があるデバイスの決定は、受信した提供情報の RSSI 値によって異なります。 コントローラーは、信号の強度が高いデバイスを監視する必要があります。
 
-コント ローラーが特定のデバイスについて、ホストの通知を受け取る場合 (_A_) デバイス ハードウェアの最大の容量では、監視と場合に別のデバイス (_B_) し、大きい RSSI 値を持つ範囲にはコント ローラーは、ホストを通知は、デバイスの監視が停止されている (_A_) 生成することによって、 [HCI_VS_MSFT_LE_Monitor_Device_Event](#hci_vs_msft_le_monitor_device_event)で_Monitor_state_を 0 に設定します。 コント ローラーを生成することも、HCI_VS_MSFT_LE_Monitor_Device_Event で_Monitor_state_ホストに通知を 1 に設定するデバイス (_B_) が監視されているようになりました。
+コントローラーが特定のデバイス (_a_) についてホストに通知し、ハードウェアの最大容量でデバイスを監視していて、別のデバイス (_B_) に RSSI 値が高い範囲内にある場合、コントローラーはホストに通知する必要があります。は、 _Monitor_state_を0に設定して[HCI_VS_MSFT_LE_Monitor_Device_Event](#hci_vs_msft_le_monitor_device_event)を生成することによって、デバイス (_A_) の監視を停止しました。 また、コントローラーは_Monitor_state_を1に設定して HCI_VS_MSFT_LE_Monitor_Device_Event を生成し、デバイス (_B_) が現在監視されていることをホストに通知します。
 
-#### <a name="conditiontypeandconditionparameters"></a>Condition_type_and_Condition_parameters
+#### <a name="condition_type_and_condition_parameters"></a>Condition_type_and_Condition_parameters
 
-_Condition_type_パラメーターを指定するかどうか、_条件_パラメーターは、パターン、UUID、IRK、または定義を指定します。
-場合、 _Condition_type_パターンを指定するパラメーター、_条件_パターン内の番号を含む 2 つのセクションが含まれています、_条件_、およびデータのパターン。![パターン条件のデータ レイアウト](images/HCI_VS_MSFT_LE_Monitor_Advertisement_Conditions.png)
-_番号のパターン_パターンと一致する必要がある数を指定します。
+_Condition_type_パラメーターでは、 _Condition_パラメーターで pattern、UUID、IRK、または BD_ADDR を指定するかどうかを指定します。
+_Condition_type_パラメーターでパターンが_指定され_ている場合、条件には、_条件_内に存在するパターンの数とパターンデータを含む2つのセクションが含まれます。パターン条件データレイアウト](images/HCI_VS_MSFT_LE_Monitor_Advertisement_Conditions.png)
+_パターンの数_は、照合する必要があるパターンの数を指定します。 ![
 
-_データのパターンを_形式は、次のとおりです。
+_パターンデータ_の形式は次のとおりです。
 
-- _長さ_このパターンの長さのデータ型を含めるし、パターンのバイトの開始を指定します。
-- _広告の種類_広告の種類フィールドを指定します。
-- _パターンの先頭_広告の種類の直後に続くパターンの開始バイト位置を指定します。
-- _パターン_のサイズ (_長さ_-0x2)、指定した開始バイトから提供情報のパケット内の指定した AD 型に関して照合されるパターンです。
+- _長さ_このパターンの長さには、パターンのデータ型と開始バイトを指定します。
+- _Ad の種類_ad 型フィールドを指定します。
+- _パターンの開始_は、AD 型の直後に続くパターンの開始バイト位置を指定します。
+- _パターン_のサイズは (_長さ_は 0x2) で、指定された開始バイトから提供情報パケット内の指定された広告の種類と照合されるパターンです。
 
-指定された複数のパターンがある場合は、コント ローラーはその 1 つ以上のパターンに一致する受信した提供情報を確認します。
+複数のパターンが指定されている場合、コントローラーは、少なくとも1つのパターンが受信した提供情報と一致することを保証する必要があります。
 
-場合、 _Condition_type_ 、UUID を指定するパラメーター、_条件_UUID 型と、UUID、パラメーターが含まれます。 UUID 型では、16 ビット、32 ビットまたは 128 ビット UUID は、かどうかを指定します。 コント ローラーには、指定された UUID を確認する提供情報のパケットのサービス UUID を解析ものとします。 UUID の種類が 0x01 として定義される場合、コント ローラーは 16 ビット サービス Uuid の不完全なリストとサービス UUID 広告の種類で指定した 16 ビット サービス Uuid の完全な一覧を解析ものとします。 UUID の種類が 0x02 として定義される場合、コント ローラーは 32 ビット サービス Uuid の不完全なリストとサービス UUID 広告の種類で指定した 32 ビット Uuid の完全な一覧を解析ものとします。 指定された UUID 型が 0x03 である場合は、コント ローラーは 128 ビット サービス Uuid の不完全なリストとサービス UUID 広告の種類で指定された 128 ビット サービス Uuid の完全な一覧を解析ものとします。
+_Condition_type_パラメーターで uuid が指定されている場合、 _Condition_パラメーターには uuid 型と uuid が含まれます。 Uuid 型は、UUID が16ビット、32ビット、または128ビットのどちらであるかを指定します。 コントローラーは、指定された UUID を確認するために、提供情報パケットのサービス UUID を解析する必要があります。 UUID 型が0x01 として定義されている場合、コントローラーは、サービス UUID AD 型で指定されている16ビットサービス uuid の完全なリストと、すべての16ビットサービス uuid を解析する必要があります。 UUID 型が0x02 として定義されている場合、コントローラーは、32ビットサービス Uuid の不完全なリストと、サービス UUID AD 型で指定されている32ビット Uuid の完全な一覧を解析する必要があります。 指定された UUID の種類が0x03 の場合、コントローラーは、128ビットサービス Uuid の不完全なリストと、サービス UUID AD 型で指定された128ビットサービス Uuid の完全な一覧を解析する必要があります。
 
-場合、 _Condition_type_ 、IRK を指定するパラメーター、_条件_パラメーターには、IRK が含まれています。
+_Condition_type_パラメーターで irk が指定されている場合、 _Condition_パラメーターには irk が含まれます。
 
-場合、 _Condition_type_ Bluetooth のアドレスを指定するパラメーター、_条件_パラメーターには、アドレスの種類と定義が含まれています。
+_Condition_type_パラメーターで Bluetooth アドレスを指定する場合、 _Condition_パラメーターにはアドレスの種類と BD_ADDR が含まれます。
 
-コント ローラーが保持されます (アクティブまたはパッシブ) のスキャンが有効になっている場合でも、条件に基づく監視します。
-アクティブなスキャンを有効にすると、スキャンの応答をフィルターに一致する提供情報がホストに伝達は。
+スキャン (アクティブまたはパッシブ) が有効になっている場合でも、コントローラーは条件に基づいて監視を維持する必要があります。
+アクティブスキャンが有効になっている場合、フィルターに一致する提供情報のスキャン応答をホストに反映する必要があります。
 
-フィルターを無効にする、コント ローラーが HCI_VS_MSFT_LE_Monitor_Advertisement コマンドを受け取るかどうか (以前に受信したため[HCI_VS_MSFT_LE_Set_Advertisement_Filter_Enable](#hci_vs_msft_le_set_advertisement_filter_enable)コマンドと_を有効にします。_ 0x00 に設定)、コント ローラーは、コマンドを受け入れるものとことができますが、無効な状態に設定します。
-コント ローラーは、リソースの枯渇など他の理由により、コマンドを拒否もあります。
+フィルターが無効になっているときにコントローラーが HCI_VS_MSFT_LE_Monitor_Advertisement コマンドを受信した場合 ( _Enable_が0x00 に設定された[HCI_VS_MSFT_LE_Set_Advertisement_Filter_Enable](#hci_vs_msft_le_set_advertisement_filter_enable)コマンドが既に受信されているため)、コントローラーはは、許可されている場合はコマンドを受け入れますが、無効の状態に設定します。
+コントローラーは、リソース枯渇などの他の理由でコマンドを拒否することもできます。
 
-#### <a name="commandparameters"></a>Command_parameters
+#### <a name="command_parameters"></a>Command_parameters
 
-Subcommand_opcode (1 オクテット)。
-
-| Value  |  パラメーターの説明 |
-|---|---|
-|0x03   |  HCI_VS_MSFT_LE_Monitor_Advertisement のサブコマンド オペコードです。|
-
-RSSI_threshold_high (1 オクテット)。
+Subcommand_opcode (1 オクテット):
 
 | Value  |  パラメーターの説明 |
 |---|---|
-|高 RSSI しきい値|  最大値には、RSSI 値が必要です。 観察された RSSI は、この値以上になると、コント ローラー イベントが生成されます。 LE: の<ul><li>20 (符号付き整数) の範囲:-127</li><li>単位: dBm</li></ul>|
+|0x03   |  HCI_VS_MSFT_LE_Monitor_Advertisement のサブコマンドオペコード。|
 
-RSSI_threshold_low (1 オクテット)。
-
-| Value  |  パラメーターの説明 |
-|---|---|
-|低 RSSI しきい値|最小値には、RSSI 値が必要です。 コント ローラー観測 RSSI になった場合、イベントが生成されますこの値未満です。 LE: の<ul><li>20 (符号付き整数) の範囲:-127</li><li>単位: dBm</li></ul>|
-
-RSSI_threshold_low_time_interval (1 オクテット)。
+RSSI_threshold_high (1 オクテット):
 
 | Value  |  パラメーターの説明 |
 |---|---|
-|0x00|予約済みの値。|
-|N_&#160;=&#160;0x01&#160;-&#160;0x3C|期間 = _N_ * 1 秒です。 未満でなければならない RSSI 値を秒単位の時間_RSSI_threshold_low_する前に、 [HCI_VS_MSFT_Rssi_Event](#hci_vs_msft_rssi_event)が生成されます。
+|High RSSI threshold 値|  予想される最大 RSSI 値。 監視対象の RSSI がこの値以上になると、コントローラーはイベントを生成します。 LE の場合:<ul><li>範囲:-127 ~ 20 (符号付き整数)</li><li>Unit: dBm</li></ul>|
 
-RSSI_sampling_period (1 オクテット)。
+RSSI_threshold_low (1 オクテット):
+
+| Value  |  パラメーターの説明 |
+|---|---|
+|低 RSSI しきい値|予想される最小 RSSI 値。 監視対象の RSSI がこの値以下になると、コントローラーはイベントを生成します。 LE の場合:<ul><li>範囲:-127 ~ 20 (符号付き整数)</li><li>Unit: dBm</li></ul>|
+
+RSSI_threshold_low_time_interval (1 オクテット):
 
 | Value  |  パラメーターの説明 |
 |---|---|
 |0x00|予約済みの値。|
-|_N_&#160;=&#160;0x01&#160;-&#160;0xFE|期間 = _N_ * 100 ミリ秒です。 サンプリング間隔 (ミリ秒単位)。|
-|0 xff の場合|コント ローラーを使用して、任意のホストに受信した提供情報の伝達する必要がありますされません。|
+|N_&#160;=&#160;0x01&#160;-&#160;0x3C|期間 = _N_ * 1 秒。 [HCI_VS_MSFT_Rssi_Event](#hci_vs_msft_rssi_event)が生成される前に、RSSI 値が_RSSI_threshold_low_未満になるまでの時間 (秒単位)。
 
-Condition_type (1 オクテット)。
+RSSI_sampling_period (1 オクテット):
 
 | Value  |  パラメーターの説明 |
 |---|---|
-|0x01|条件は、提供情報に一致する必要のあるパターンです。|
-|0x02|条件は、UUID 型 UUID です。|
-|0x03|条件とは、IRK の解像度です。|
+|0x00|予約済みの値。|
+|_N_&#160;=&#160;0x01&#160;-&#160;0xfe|期間 = _N_ * 100 ミリ秒。 サンプリング間隔 (ミリ秒単位)。|
+|0xFF|コントローラーは、受信した提供情報をホストに伝達することはできません。|
+
+Condition_type (1 オクテット):
+
+| Value  |  パラメーターの説明 |
+|---|---|
+|0x01|条件は、提供情報に対して照合する必要があるパターンです。|
+|0x02|条件は UUID 型と UUID です。|
+|0x03|この条件は IRK の解決策です。|
 |0x04|条件は、Bluetooth アドレスです。|
 
-条件:条件に該当するフィールドは、Condition_type の値に依存します。 詳細については、Condition_type と条件のパラメーター セクションを参照してください。
+フィルター条件に適用できるフィールドは、Condition_type の値によって異なります。 詳細については、「Condition_type and Condition parameters」セクションを参照してください。
 
-Number_of_patterns (1 オクテット)。
+Number_of_patterns (1 オクテット):
 
 |Value | パラメーターの説明|
 |---|---|
-|0 xxx| Pattern_data パラメーター内で指定されたパターンの数。|
+|0xXX| Pattern_data パラメーター内で指定されたパターンの数。|
 
-Pattern_data (> 3 オクテット)。
+Pattern_data (> 3 オクテット):
 
 |Value | パラメーターの説明|
 |---|---|
 |長さ|このパターンの長さ。|
-|データの種類| 提供情報 セクションのデータ型。 値は、Bluetooth Assigned Numbers ドキュメントに表示されます。|
-|バイトを開始します。| 指定したデータ型に関して照合されるパターンの開始位置。|
-|[パターン]| パターンが (長さ – 0x2 バイトのサイズ) を照合します。|
+|データの種類| 提供情報セクションのデータ型。 値は、Bluetooth の割り当て番号に関するドキュメントに記載されています。|
+|開始バイト| 指定されたデータ型と照合されるパターンの開始位置。|
+|[パターン]| 照合するパターン (長さのサイズ–0x2 バイト)。|
 
-UUID_type (1 オクテット)。
-
-|Value | パラメーターの説明|
-|---|---|
-|0x01| UUID は、16 ビット サービスです。|
-|0x02| UUID は、32 ビット サービスです。|
-|0x03| UUID は、128 ビット サービスです。|
-
-UUID (2、4、または 16 オクテット):
+UUID_type (1 オクテット):
 
 |Value | パラメーターの説明|
 |---|---|
-|0xXXXX| <p>2 バイト UUID_type が 0x01 の場合。<p><p>4 バイト UUID_type は 0x02 場合。</p><p>16 バイト UUID_type が 0x03 場合。</p>|
+|0x01| UUID は16ビットサービスです。|
+|0x02| UUID は32ビットサービスです。|
+|0x03| UUID は128ビットサービスです。|
 
-(16 オクテット) を IRK:
+UUID (2、4、または16オクテット):
+
+|Value | パラメーターの説明|
+|---|---|
+|0xXXXX| <p>UUID_type が0x01 の場合は2バイト。<p><p>UUID_type が0x02 の場合は4バイトです。</p><p>UUID_type が0x03 の場合は16バイトです。</p>|
+
+IRK (16 オクテット):
 
 | Value  |  パラメーターの説明 |
 |---|---|
-|<p>0xXXXXXXXX XXXXXXXX</p><p>XXXXXXXX XXXXXXXX</p>|プライベート アドレスの解決に使用する IRK します。|
+|<p>0xXXXXXXXX XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX</p><p>XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX</p>|プライベートアドレスを解決するために使用される IRK。|
 
-Address_type (1 オクテット)。
-
-| Value  |  パラメーターの説明 |
-|---|---|
-|0x00| デバイスのパブリック アドレスです。|
-|0x01| ランダムなデバイスのアドレス。|
-|0x02 - 0 xff の場合| 将来使用するための予約済みの値。|
-
-Address_type (1 オクテット)。
+Address_type (1 オクテット):
 
 | Value  |  パラメーターの説明 |
 |---|---|
-|0xXXXXXXXXXXXX|監視対象となるデバイスの Bluetooth のアドレス。|
+|0x00| パブリックデバイスアドレス。|
+|0x01| ランダムデバイスアドレス。|
+|0x02-0xFF| 将来使用するために予約された値。|
 
-#### <a name="returnparameters"></a>Return_parameters
+Address_type (1 オクテット):
+
+| Value  |  パラメーターの説明 |
+|---|---|
+|0xXXXXXXXXXXXX 場合|監視するデバイスの Bluetooth アドレス。|
+
+#### <a name="return_parameters"></a>Return_parameters
 
 状態 (1 オクテット):
 
 | Value  |  パラメーターの説明 |
 |---|---|
-|  0x00 |  コマンドが成功しました。 |
-|0x07|コント ローラーは、コマンドを処理するのに十分なメモリがあるない場合は、メモリ容量を超えて返します。|
-| エラー コード  |  コマンドが失敗しました。 参照してください_エラーコード_詳細については、Bluetooth のコア仕様でします。 |
+|  0x00 |  コマンドが正常に実行されました。 |
+|0x07|コマンドを処理するのに十分なメモリがない場合、コントローラーはメモリ容量を超えたことを返します。|
+| エラー コード  |  コマンドが失敗しました。 詳細については、「Bluetooth Core の仕様」の「_エラーコード_」を参照してください。 |
 
-Subcommand_opcode (1 オクテット)。
-
-| Value  |  パラメーターの説明 |
-|---|---|
-|0x03| HCI_VS_MSFT_LE_Monitor_Advertisement のサブコマンド オペコードです。 |
-
-Monitor_handle (1 オクテット)。
+Subcommand_opcode (1 オクテット):
 
 | Value  |  パラメーターの説明 |
 |---|---|
-|0x00 - 0 xff の場合|このルールに対するハンドル。 このハンドルは、提供情報の監視をキャンセルする HCI_VS_MSFT_LE_Cancel_Monitor_Advertisement のパラメーターとして使用されます。 このパラメーターでは、有効なは、ステータスが 0x00 である場合のみです。|
+|0x03| HCI_VS_MSFT_LE_Monitor_Advertisement のサブコマンドオペコード。 |
 
-#### <a name="eventsgeneratedunlessmaskedaway"></a>Events_generated__unless_masked_away
+Monitor_handle (1 オクテット):
 
-HCI_VS_MSFT_LE_Monitor_Advertisement コマンドが受信したときに、コント ローラーは、コマンドの完了イベントを生成します。
+| Value  |  パラメーターの説明 |
+|---|---|
+|0x00 ~ 0xFF|この規則へのハンドル。 このハンドルは、提供情報の監視をキャンセルする HCI_VS_MSFT_LE_Cancel_Monitor_Advertisement のパラメーターとして使用されます。 このパラメーターは、Status が0x00 の場合にのみ有効です。|
 
-### <a name="hcivsmsftlecancelmonitoradvertisement"></a>HCI_VS_MSFT_LE_Cancel_Monitor_Advertisement
+#### <a name="events_generated__unless_masked_away"></a>Events_generated__unless_masked_away
 
-以前発行を取り消します HCI_VS_MSFT_LE_Cancel_Monitor_Advertisement [HCI_VS_MSFT_LE_Monitor_Advertisement](#hci_vs_msft_le_monitor_advertisement)コマンド。
+HCI_VS_MSFT_LE_Monitor_Advertisement コマンドを受信すると、コントローラーはコマンド完了イベントを生成する必要があります。
 
-|コマンド|コード|コマンドのパラメーター|戻り値パラメーター|
+### <a name="hci_vs_msft_le_cancel_monitor_advertisement"></a>HCI_VS_MSFT_LE_Cancel_Monitor_Advertisement
+
+HCI_VS_MSFT_LE_Cancel_Monitor_Advertisement は、以前に発行された[HCI_VS_MSFT_LE_Monitor_Advertisement](#hci_vs_msft_le_monitor_advertisement)コマンドをキャンセルします。
+
+|コマンド|コード|コマンドパラメーター|戻りパラメーター|
 |---|---|---|---|
-|HCI_VS_MSFT_LE_Cancel_Monitor_Advertisement|選択した基本コード |<ul><li>Subcommand_opcode</li><li>Monitor_handle</li>|<ul><li>状況</li><li>Subcommand_opcode</ul>|
+|HCI_VS_MSFT_LE_Cancel_Monitor_Advertisement|選択された基本コード |<ul><li>Subcommand_opcode</li><li>Monitor_handle</li>|<ul><li>状況</li><li>Subcommand_opcode</ul>|
 
-コント ローラーは、このコマンドに応答コマンドが完了イベントを生成するものと速やかに。
+コントローラーは、このコマンドに応答して、コマンドの完了イベントを即座に生成する必要があります。
 
-#### <a name="commandparameters"></a>Command_parameters
+#### <a name="command_parameters"></a>Command_parameters
 
-Subcommand_opcode (1 オクテット)。
-
-| Value  |  パラメーターの説明 |
-|---|---|
-|0x04   |  HCI_VS_MSFT_LE_Cancel_Monitor_Advertisement のサブコマンド オペコードです。|
-
-Connection_handle (1 オクテット)。
+Subcommand_opcode (1 オクテット):
 
 | Value  |  パラメーターの説明 |
 |---|---|
-|0 xxx| 取り消すフィルターへのハンドル。|
+|0x04   |  HCI_VS_MSFT_LE_Cancel_Monitor_Advertisement のサブコマンドオペコード。|
 
-#### <a name="returnparameters"></a>Return_parameters
+Connection_handle (1 オクテット):
+
+| Value  |  パラメーターの説明 |
+|---|---|
+|0xXX| キャンセルされるフィルターへのハンドル。|
+
+#### <a name="return_parameters"></a>Return_parameters
 
 状態 (1 オクテット):
 
 | Value  |  パラメーターの説明 |
 |---|---|
-|  0x00 |  コマンドが成功しました。 |
-|0x07|コント ローラーは、コマンドを処理するのに十分なメモリがあるない場合は、メモリ容量を超えて返します。|
-| エラー コード  |  コマンドが失敗しました。 参照してください_エラーコード_詳細については、Bluetooth のコア仕様でします。 |
+|  0x00 |  コマンドが正常に実行されました。 |
+|0x07|コマンドを処理するのに十分なメモリがない場合、コントローラーはメモリ容量を超えたことを返します。|
+| エラー コード  |  コマンドが失敗しました。 詳細については、「Bluetooth Core の仕様」の「_エラーコード_」を参照してください。 |
 
-Subcommand_opcode (1 オクテット)。
+Subcommand_opcode (1 オクテット):
 
 | Value  |  パラメーターの説明 |
 |---|---|
-|0x04| HCI_VS_MSFT_LE_Cancel_Monitor_Adver のサブコマンド オペコードです。 |
+|0x04| HCI_VS_MSFT_LE_Cancel_Monitor_Adver のサブコマンドオペコード。 |
 
-#### <a name="eventsgeneratedunlessmaskedaway"></a>Events_generated__unless_masked_away
+#### <a name="events_generated__unless_masked_away"></a>Events_generated__unless_masked_away
 
-コント ローラー HCI_VS_MSFT_LE_Cancel_Monitor_Advertisement コマンドを受信したコマンドの完了イベントが生成されます。
+HCI_VS_MSFT_LE_Cancel_Monitor_Advertisement コマンドを受信すると、コントローラーはコマンド完了イベントを生成する必要があります。
 
-### <a name="hcivsmsftlesetadvertisementfilterenable"></a>HCI_VS_MSFT_LE_Set_Advertisement_Filter_Enable
+### <a name="hci_vs_msft_le_set_advertisement_filter_enable"></a>HCI_VS_MSFT_LE_Set_Advertisement_Filter_Enable
 
-HCI_VS_MSFT_LE_Set_Advertisement_Filter_Enable では、提供情報のフィルターの状態を設定します。
+HCI_VS_MSFT_LE_Set_Advertisement_Filter_Enable は、提供情報フィルターの状態を設定します。
 
-|コマンド|コード|コマンドのパラメーター|戻り値パラメーター|
+|コマンド|コード|コマンドパラメーター|戻りパラメーター|
 |---|---|---|---|
-|HCI_VS_MSFT_LE_Set_Advertisement_Filter_Enable|選択した基本コード |<ul><li>Subcommand_opcode</li><li>Enable</li>|<ul><li>状況</li><li>Subcommand_opcode</ul>|
+|HCI_VS_MSFT_LE_Set_Advertisement_Filter_Enable|選択された基本コード |<ul><li>Subcommand_opcode</li><li>Enable</li>|<ul><li>状況</li><li>Subcommand_opcode</ul>|
 
-場合_を有効にする_設定は、0x00、コント ローラーに既存のホワイト リスト設定に基づいて、ホストに受信した提供情報伝達されます。 コント ローラーが現在監視されていると、生成するデバイスの監視を継続するものと、 [HCI_VS_MSFT_LE_Monitor_Device_Event](#hci_vs_msft_le_monitor_device_event)で_Monitor_state_デバイスが不要になった場合は 0 に設定監視されています。 コント ローラーを生成すると、HCI_VS_MSFT_LE_Monitor_Device_Event _Monitor_state_新しいデバイスが監視されている場合は 1 に設定します。 ホスト発行と HCI_VS_MSFT_LE_Set_Advertisement_Filter_Enable_を有効にする_0x01 に設定すると、すべてのフィルター条件を再度有効にします。
+_Enable_が0x00 に設定されている場合、コントローラーは、既存のホワイトリストの設定に基づいて、受信した提供情報をホストに伝達します。 コントローラーは、現在監視されているデバイスの監視を続行し、デバイスが監視されなくなった場合は_Monitor_state_を0に設定して[HCI_VS_MSFT_LE_Monitor_Device_Event](#hci_vs_msft_le_monitor_device_event)を生成します。 新しいデバイスが監視されている場合、コントローラーは_Monitor_state_を1に設定して HCI_VS_MSFT_LE_Monitor_Device_Event を生成する必要があります。 ホストは、 _Enable_を0x01 に設定して HCI_VS_MSFT_LE_Set_Advertisement_Filter_Enable を発行し、すべてのフィルター条件を再度有効にすることができます。
 
-場合_を有効にする_設定されている 0x01 には、このコマンドは、以前に発行されたが設定されているすべてのフィルターを有効[HCI_VS_MSFT_LE_Monitor_Advertisement](#hci_vs_msft_le_monitor_advertisement)コマンド。 コント ローラーはフィルターの状態を切り替えることはない場合、HCI_VS_MSFT_LE_Set_Advertisement_Filter_Enable コマンドを拒否します。
+_Enable_を0x01 に設定した場合、このコマンドは、以前に発行された[HCI_VS_MSFT_LE_Monitor_Advertisement](#hci_vs_msft_le_monitor_advertisement)コマンドで設定されたすべてのフィルターを有効にします。 フィルターの状態を切り替えない場合、コントローラーは HCI_VS_MSFT_LE_Set_Advertisement_Filter_Enable コマンドを拒否します。
 
-- コント ローラーは HCI_VS_MSFT_LE_Set_Advertisement_Filter_Enable コマンドを拒否_を有効にする_0x01 HCI_VS_MSFT_LE_Set_Advertisement_Filter_Enable コマンド以前受信した場合は設定_有効にする_0x01 に設定します。
-- コント ローラーは HCI_VS_MSFT_LE_Set_Advertisement_Filter_Enable コマンドを元に戻す_を有効にする_HCI_VS_MSFT_LE_Set_Advertisement_Filter_Enable コマンド以前受信した場合は 0x00 に設定_有効にする_0x00 に設定します。
+- _Enable_が0x01 に設定された HCI_VS_MSFT_LE_Set_Advertisement_Filter_Enable コマンドを以前に受信した場合は、 _enable_が0x01 に設定されている HCI_VS_MSFT_LE_Set_Advertisement_Filter_Enable コマンドをコントローラーが拒否する必要があります。
+- _Enable が0x00 に設定さ_れた HCI_VS_MSFT_LE_Set_Advertisement_Filter_Enable コマンドを_以前に受信_した場合、コントローラーは HCI_VS_MSFT_LE_Set_Advertisement_Filter_Enable コマンドを拒否します。
 
-提供情報のフィルターの既定の状態がオフにされます。 この状態は、コント ローラーが以前に HCI_VS_MSFT_LE_Set_Advertisement_Filter_Enable コマンドの受信に相当_を有効にする_0x00 に設定します。
-コント ローラーは、このコマンドに応答コマンドが完了イベントを生成するものと速やかに。
+提供情報フィルターの既定の状態は off にする必要があります。 この状態は、 _Enable_が0x00 に設定された HCI_VS_MSFT_LE_Set_Advertisement_Filter_Enable コマンドを以前に受信したコントローラーに相当します。
+コントローラーは、このコマンドに応答して、コマンドの完了イベントを即座に生成する必要があります。
 
-#### <a name="commandparameters"></a>Command_parameters
+#### <a name="command_parameters"></a>Command_parameters
 
-Subcommand_opcode (1 オクテット)。
-
-| Value  |  パラメーターの説明 |
-|---|---|
-|0x05|  HCI_VS_MSFT_LE_Set_Advertisement_Filter_Enable のサブコマンド オペコードです。|
-
-(1 オクテット) 有効にするには:
+Subcommand_opcode (1 オクテット):
 
 | Value  |  パラメーターの説明 |
 |---|---|
-|0x00| 現在、ホワイト リストの動作に戻すから _Condition_s に基づいてデバイスの監視はまだ[HCI_VS_MSFT_LE_Monitor_Advertisement](#hci_vs_msft_le_monitor_advertisement)コマンド。|
-|0x01|コント ローラー上のすべての発行済みの HCI_VS_MSFT_LE_Monitor_Advertisement コマンドを有効にします。|
+|0x05|  HCI_VS_MSFT_LE_Set_Advertisement_Filter_Enable のサブコマンドオペコード。|
 
-#### <a name="returnparameter"></a>Return_parameter
+有効 (1 オクテット):
+
+| Value  |  パラメーターの説明 |
+|---|---|
+|0x00| 現在のホワイトリストの動作に戻しますが、 [HCI_VS_MSFT_LE_Monitor_Advertisement](#hci_vs_msft_le_monitor_advertisement)コマンドからのデバイスの監視を続行します。|
+|0x01|コントローラーで発行されたすべての HCI_VS_MSFT_LE_Monitor_Advertisement コマンドを有効にします。|
+
+#### <a name="return_parameter"></a>Return_parameter
 
 状態 (1 オクテット):
 
 |Value|パラメーターの説明|
 |---|---|
-|0x00|コマンドが成功しました。|
-|0x0C|コント ローラーを返す_コマンドが許可されていません_HCI_VS_MSFT_LE_Set_Advertisement_Filter_Enable コマンドを紹介したため、コント ローラーに、コマンドが拒否された場合_を有効にする_に設定しますこのコマンドと同じ値です。|
-|エラー&#160;コード|コマンドが失敗しました。 参照してください_エラーコード_詳細については、Bluetooth のコア仕様でします。|
+|0x00|コマンドが正常に実行されました。|
+|0x0C|コントローラーがコマンドを拒否した場合、コントローラーは許可されていない_コマンド_を返します。これは、 _Enable_がこのコマンドと同じ値に設定された HCI_VS_MSFT_LE_Set_Advertisement_Filter_Enable コマンドを以前に確認したためです。|
+|エラー&#160;コード|コマンドが失敗しました。 詳細については、「Bluetooth Core の仕様」の「_エラーコード_」を参照してください。|
 
-Subcommand_opcode (1 オクテット)。
+Subcommand_opcode (1 オクテット):
 
 |Value|パラメーターの説明|
 |---|---|
-|0x05|HCI_VS_MSFT_LE_Set_Advertisement_Filter_Enable のサブコマンド オペコードです。|
+|0x05|HCI_VS_MSFT_LE_Set_Advertisement_Filter_Enable のサブコマンドオペコード。|
 
-#### <a name="eventsgeneratedunlessmaskedaway"></a>Events_generated__unless_masked_away
+#### <a name="events_generated__unless_masked_away"></a>Events_generated__unless_masked_away
 
-コント ローラー HCI_VS_MSFT_LE_Set_Advertisement_Filter_Enable コマンドを受信したコマンドの完了イベントが生成されます。
+HCI_VS_MSFT_LE_Set_Advertisement_Filter_Enable コマンドを受信すると、コントローラーはコマンド完了イベントを生成する必要があります。
 
-#### <a name="hcivsmsftreadabsoluterssi"></a>HCI_VS_MSFT_Read_Absolute_RSSI
+#### <a name="hci_vs_msft_read_absolute_rssi"></a>HCI_VS_MSFT_Read_Absolute_RSSI
 
-HCI_VS_MSFT_Read_Absolute_RSSI を読み取り、**絶対**コント ローラーから BR EDR/接続の受信信号の強さを示す値 (RSSI) 値。
+HCI_VS_MSFT_Read_Absolute_RSSI は、コントローラーからの BR/EDR 接続について、受信した信号強度 (RSSI) の**絶対**値を読み取ります。
 
-|コマンド|コード|コマンドのパラメーター|戻り値パラメーター|
+|コマンド|コード|コマンドパラメーター|戻りパラメーター|
 |---|---|---|---|
-|HCI_VS_MSFT_Read_Absolute_RSSI|選択した基本コード |<ul><li>Subcommand_opcode</li><li>ハンドル</li>|<ul><li>状況</li><li>Subcommand_opcode</li><li>ハンドル</li><li>RSSI</li></ul>|
+|HCI_VS_MSFT_Read_Absolute_RSSI|選択された基本コード |<ul><li>Subcommand_opcode</li><li>ハンドル</li>|<ul><li>状況</li><li>Subcommand_opcode</li><li>ハンドル</li><li>RSSI</li></ul>|
 
-接続ハンドルは、コマンドと戻り値パラメーターの両方が RSSI が読み取られる ACL の接続を識別するために提供されます。 RSSI メトリックは、**絶対**± 6 dB 精度 dBm で信号強度を受信します。 RSSI が読み取れない場合は、127 に RSSI メトリックを設定する必要があります。
-コント ローラーでは、コマンドの完了イベントをすぐにこのコマンドが完了常にものとします。
+接続ハンドルは、RSSI が読み取られている ACL 接続を識別するために、コマンドと戻りパラメーターの両方として提供されます。 RSSI メトリックは、dBm と± 6 dB 精度の**絶対**レシーバー信号強度です。 RSSI を読み取ることができない場合は、RSSI メトリックを127に設定する必要があります。
+コントローラーは、コマンド完了イベントを使用して、常にこのコマンドを実行する必要があります。
 
-#### <a name="commandparameters"></a>Command_parameters
+#### <a name="command_parameters"></a>Command_parameters
 
-Subcommand_opcode (1 オクテット)。
-
-| Value  |  パラメーターの説明 |
-|---|---|
-|0x06|  HCI_VS_MSFT_Read_Absolute_RSSI のサブコマンド オペコードです。|
-
-ハンドル (2 つのオクテット):
+Subcommand_opcode (1 オクテット):
 
 | Value  |  パラメーターの説明 |
 |---|---|
-|0x_XXXX_|ある RSSI を読み取る必要があります BR EDR/接続のハンドル。|
+|0x06|  HCI_VS_MSFT_Read_Absolute_RSSI のサブコマンドオペコード。|
 
-#### <a name="returnparameters"></a>Return_parameters
+ハンドル (2 オクテット):
+
+| Value  |  パラメーターの説明 |
+|---|---|
+|0x_XXXX_|RSSI を読み取る必要がある BR/EDR 接続のハンドル。|
+
+#### <a name="return_parameters"></a>Return_parameters
 
 状態 (1 オクテット):
 
 |Value|パラメーターの説明|
 |---|---|
-|0x00|コマンドが成功しました。|
-|0x01 - 0 xff の場合|コマンドが失敗しました。 参照してください_エラーコード_詳細については、Bluetooth のコア仕様でします。|
+|0x00|コマンドが正常に実行されました。|
+|0x01-0xFF|コマンドが失敗しました。 詳細については、「Bluetooth Core の仕様」の「_エラーコード_」を参照してください。|
 
-Subcommand_opcode (1 オクテット)。
-
-|Value|パラメーターの説明|
-|---|---|
-|0x06|HCI_VS_MSFT_Read_Absolute_RSSI のサブコマンド オペコードです。|
-
-ハンドル (2 つのオクテット):
+Subcommand_opcode (1 オクテット):
 
 |Value|パラメーターの説明|
 |---|---|
-|0xXXXX| ある RSSI が読み取られた BR EDR/接続のハンドル。|
+|0x06|HCI_VS_MSFT_Read_Absolute_RSSI のサブコマンドオペコード。|
 
-RSSI (1 オクテット)。
+ハンドル (2 オクテット):
+
+|Value|パラメーターの説明|
+|---|---|
+|0xXXXX| RSSI が読み取られた BR/EDR 接続のハンドル。|
+
+RSSI (1 オクテット):
 
 |     Value      |                                                  パラメーターの説明                                                   |
 |----------------|--------------------------------------------------------------------------------------------------------------------------|
-| N = RSSI 値 | BR EDR/接続の RSSI 値。<ul><li>範囲:-128 &lt; =  *N* &lt;= 127 (符号付き整数)</li><li>単位: dBm</li> |
+| N = RSSI 値 | BR/EDR 接続の RSSI 値。<ul><li>範囲:-128 &lt; =  N&lt;= 127 (符号付き整数)</li><li>Unit: dBm</li> |
 
-#### <a name="eventsgeneratedunlessmaskedaway"></a>Events_generated__unless_masked_away
+#### <a name="events_generated__unless_masked_away"></a>Events_generated__unless_masked_away
 
-コント ローラー HCI_VS_MSFT_Read_Absolute_RSSI コマンドが完了したらコマンドの完了イベントが生成されます。
+HCI_VS_MSFT_Read_Absolute_RSSI コマンドが完了すると、コントローラーはコマンド完了イベントを生成する必要があります。
 
-## <a name="microsoft-defined-bluetooth-hci-events"></a>マイクロソフトによって定義された Bluetooth HCI イベント
+## <a name="microsoft-defined-bluetooth-hci-events"></a>Microsoft が定義した Bluetooth HCI イベント
 
-すべての Bluetooth HCI の Microsoft によるイベントは、ベンダー定義イベントし、0 xff までのイベント コードを使用します。 Microsoft イベントのイベント データは、常に、その他のベンダ定義イベントから、マイクロソフトによって定義されたイベントを区別するためにバイトの定数文字列で始まります。 長さと文字列定数の値はコント ローラーの実装者が定義されへの応答で返される[HCI_VS_MSFT_Read_Supported_Features](#hci_vs_msft_read_supported_features)します。
+Microsoft が定義したすべての Bluetooth HCI イベントは、ベンダー定義のイベントで、イベントコード0xFF を使用します。 Microsoft イベントのイベントデータは、他のベンダー定義イベントと Microsoft 定義のイベントを区別するために、常に一定のバイトの文字列で開始されます。 定数文字列の長さと値は、コントローラーの実装者によって定義され、 [HCI_VS_MSFT_Read_Supported_Features](#hci_vs_msft_read_supported_features)への応答として返されます。
 
 |HCI イベント|説明|
 |---|---|
-|[HCI_VS_MSFT_Rssi_Event](#hci_vs_msft_rssi_event)|HCI_VS_MSFT_RSSI_Event をことを示します、 [HCI_VS_MSFT_Monitor_Rssi](#hci_vs_msft_monitor_rssi)コマンドが完了しました。|
-|[HCI_VS_MSFT_LE_Monitor_Device_Event](#hci_vs_msft_le_monitor_device_event)|HCI_VS_MSFT_LE_Monitor_Device_Event では、こと、コント ローラーが起動または Bluetooth LE デバイスの監視を停止することを示します。|
+|[HCI_VS_MSFT_Rssi_Event](#hci_vs_msft_rssi_event)|HCI_VS_MSFT_RSSI_Event は、 [HCI_VS_MSFT_Monitor_Rssi](#hci_vs_msft_monitor_rssi)コマンドが完了したことを示します。|
+|[HCI_VS_MSFT_LE_Monitor_Device_Event](#hci_vs_msft_le_monitor_device_event)|HCI_VS_MSFT_LE_Monitor_Device_Event は、コントローラーが Bluetooth LE デバイスの監視を開始または停止したことを示します。|
 
-### <a name="hcivsmsftrssievent"></a>HCI_VS_MSFT_RSSI_Event
+### <a name="hci_vs_msft_rssi_event"></a>HCI_VS_MSFT_RSSI_Event
 
-HCI_VS_MSFT_RSSI_Event をことを示します、 [HCI_VS_MSFT_Monitor_Rssi](#hci_vs_msft_monitor_rssi)コマンドが完了しました。
-場合、_状態_パラメーターが 0 では、指定した範囲外の値をリモート デバイスの RSSI 値が変更されたために、完了コマンドです。 場合、_状態_パラメーターが 0 以外の場合、接続の RSSI の値を監視できなくできるため完了コマンド。
+HCI_VS_MSFT_RSSI_Event は、 [HCI_VS_MSFT_Monitor_Rssi](#hci_vs_msft_monitor_rssi)コマンドが完了したことを示します。
+_Status_パラメーターが0の場合、リモートデバイスの RSSI 値が指定された範囲外の値に変更されたため、コマンドが完了します。 _Status_パラメーターが0以外の場合、接続の RSSI 値を監視できなくなったため、コマンドは完了しました。
 
-|イベント|イベント コード|Microsoft イベント コード|イベント パラメーター|
+|イベント|イベントコード|Microsoft イベントコード|イベントパラメーター|
 |---|---|---|---|
-|HCI_VS_MSFT_RSSI_Event|0 xff の場合|0x01|<p>Event_prefix</p><p>Microsoft_event_code</p><p>状況</p><p>Connection_handle</p><p>RSSI</p>
+|HCI_VS_MSFT_RSSI_Event|0xFF|0x01|<p>Event_prefix</p><p>Microsoft_event_code</p><p>状況</p><p>Connection_handle</p><p>RSSI</p>
 
-#### <a name="eventparameters"></a>Event_parameters
+#### <a name="event_parameters"></a>Event_parameters
 
-Event_prefix (変数のサイズ):
-
-|Value|パラメーターの説明|
-|---|---|
-|イベントのプレフィックス|このイベントは、Microsoft 定義としてフラグを設定するイベントのプレフィックス。 サイズと値がによって返される、 [HCI_VS_MSFT_Read_Supported_Features](#hci_vs_msft_read_supported_features)コマンド。|
-
-Microsoft_event_code (1 オクテット)。
+Event_prefix (可変サイズ):
 
 |Value|パラメーターの説明|
 |---|---|
-|0x01|HCI_VS_MSFT_RSSI_Event のイベント コード。|
+|イベントプレフィックス|このイベントに Microsoft 定義としてフラグを設定するイベントプレフィックス。 サイズと値は、 [HCI_VS_MSFT_Read_Supported_Features](#hci_vs_msft_read_supported_features)コマンドによって返されます。|
+
+Microsoft_event_code (1 オクテット):
+
+|Value|パラメーターの説明|
+|---|---|
+|0x01|HCI_VS_MSFT_RSSI_Event のイベントコード。|
 
 状態 (1 オクテット):
 
 |Value|パラメーターの説明|
 |---|---|
-|0x00|成功しました。 接続の RSSI の値は、次の条件のいずれかを満たします。<ul><li>RSSI に達したか超えました_RSSI_threshold_high_します。</li><li>RSSI に達したか、下にドロップ_RSSI_threshold_low_経由で_RSSI_threshold_low_time_interval_秒。</li><li>_RSSI_sampling_period_有効期限が切れた RSSI 値のホストに通知するイベントが生成されたとします。</li></ul>|
-|0x01&#160;-&#160;0xFF|失敗しました。 接続の RSSI 値を監視することが不要になったことができます。 エラー コードは、通常は、基になる ACL の接続が失われた理由を説明するコードのいずれかです。|
+|0x00|成功。 接続の RSSI 値が次のいずれかの条件を満たしています。<ul><li>RSSI が_RSSI_threshold_high_に達したか、それを超えました。</li><li>RSSI が_RSSI_threshold_low_time_interval_秒を超えて_RSSI_threshold_low_より下に達したか、削除されました。</li><li>_RSSI_sampling_period_の有効期限が切れました。このイベントは、RSSI の値をホストに通知するために生成されました。</li></ul>|
+|0x01&#160;-&#160;0xFF|不具合. 接続の RSSI 値を監視できなくなりました。 エラーコードは、通常、基になる ACL 接続が失われた理由を示すコードの1つです。|
 
-Connection_handle (2 つのオクテット)。
-
-|Value|パラメーターの説明|
-|---|---|
-|0x_XXXX_|監視対象となるが RSSI が接続のハンドル。|
-
-RSSI (1 オクテット)。
+Connection_handle (2 オクテット):
 
 |Value|パラメーターの説明|
 |---|---|
-|_N_ = _RSSI&#160;値_|測定のリンク接続の RSSI 値。 BR/EDR: の<ul><li>範囲:-128 &lt; =  _N_ &lt;= 127 (符号付き整数)</li><li>単位: dBm</li></ul>LE: の<ul><li>20 (符号付き整数) の範囲:-127</li><li>単位: dBm</li></ul>|
+|0x_XXXX_|RSSI を監視する接続のハンドル。|
 
-### <a name="hcivsmsftlemonitordeviceevent"></a>HCI_VS_MSFT_LE_Monitor_Device_Event
+RSSI (1 オクテット):
 
-HCI_VS_MSFT_LE_Monitor_Device_Event では、こと、コント ローラーが起動または Bluetooth LE デバイスの監視を停止することを示します。
+|Value|パラメーターの説明|
+|---|---|
+|N = _RSSI&#160;値_|接続の測定されたリンク RSSI 値。 BR/EDR の場合:<ul><li>範囲:-128 &lt; =  N&lt;= 127 (符号付き整数)</li><li>Unit: dBm</li></ul>LE の場合:<ul><li>範囲:-127 ~ 20 (符号付き整数)</li><li>Unit: dBm</li></ul>|
 
-場合、 _Monitor_state_パラメーターの値が 1 の場合、コント ローラーは、指定した定義での Bluetooth デバイスの監視を開始します。 場合、 _Monitor_state_パラメーターの値が 0 の場合、コント ローラーは、指定した定義での Bluetooth デバイスの監視を停止します。
+### <a name="hci_vs_msft_le_monitor_device_event"></a>HCI_VS_MSFT_LE_Monitor_Device_Event
 
-|イベント|イベント コード|Microsoft イベント コード|イベント パラメーター|
+HCI_VS_MSFT_LE_Monitor_Device_Event は、コントローラーが Bluetooth LE デバイスの監視を開始または停止したことを示します。
+
+_Monitor_state_パラメーターの値が1の場合、コントローラーは、指定された BD_ADDR を使用して Bluetooth デバイスの監視を開始します。 _Monitor_state_パラメーターの値が0の場合、コントローラーは、指定された BD_ADDR で Bluetooth デバイスの監視を停止します。
+
+|イベント|イベントコード|Microsoft イベントコード|イベントパラメーター|
 |---|---|---|---|
-|HCI_VS_MSFT_LE_Monitor_Device_Event|0 xff の場合|0x02|<p>Event_prefix</p><p>Microsoft_event_code</p><p>Address_type</p><p>定義</p><p>Monitor_handle</p><p>Monitor_state</p>
+|HCI_VS_MSFT_LE_Monitor_Device_Event|0xFF|0x02|<p>Event_prefix</p><p>Microsoft_event_code</p><p>Address_type</p><p>BD_ADDR</p><p>Monitor_handle</p><p>Monitor_state</p>
 
-コント ローラーを生成する必要を HCI_VS_MSFT_LE_Monitor_Device_Event でない、 _Monitor_state_で、HCI_VS_MSFT_LE_Monitor_Device_Event が既に生成がない場合に、パラメーターが 0 に設定_Monitor_state_を 1 に設定します。
+_Monitor_state_が1に設定されている HCI_VS_MSFT_LE_Monitor_Device_Event がまだ生成されていない場合、コントローラーは_Monitor_state_パラメーターを0に設定して HCI_VS_MSFT_LE_Monitor_Device_Event を生成しません。
 
-#### <a name="eventparameters"></a>Event_parameters
+#### <a name="event_parameters"></a>Event_parameters
 
-Event_prefix (変数のサイズ):
-
-|Value|パラメーターの説明|
-|---|---|
-|イベントのプレフィックス|このイベントは、Microsoft 定義としてフラグを設定するイベントのプレフィックス。 サイズと値がによって返される、 [HCI_VS_MSFT_Read_Supported_Features](#hci_vs_msft_read_supported_features)コマンド。
-
-Microsoft_event_code (1 オクテット)。
+Event_prefix (可変サイズ):
 
 |Value|パラメーターの説明|
 |---|---|
-|0x02|HCI_VS_MSFT_LE_Monitor_Device_Event のイベント コード。|
+|イベントプレフィックス|このイベントに Microsoft 定義としてフラグを設定するイベントプレフィックス。 サイズと値は、 [HCI_VS_MSFT_Read_Supported_Features](#hci_vs_msft_read_supported_features)コマンドによって返されます。
 
-Address_type (1 オクテット)。
+Microsoft_event_code (1 オクテット):
 
 |Value|パラメーターの説明|
 |---|---|
-|0x00|デバイスのパブリック アドレスです。|
-|0x01|ランダムなデバイスのアドレス。|
-|0x02&#160;-&#160;0xFF|将来使用するための予約済みの値。|
+|0x02|HCI_VS_MSFT_LE_Monitor_Device_Event のイベントコード。|
 
-定義 (6、8 進数)。
+Address_type (1 オクテット):
+
+|Value|パラメーターの説明|
+|---|---|
+|0x00|パブリックデバイスアドレス。|
+|0x01|ランダムデバイスアドレス。|
+|0x02&#160;-&#160;0xFF|将来使用するために予約された値。|
+
+BD_ADDR (6 オクテット):
 
 |Value|パラメーターの説明|
 |---|---|
 |0x_XXXXXXXXXXXX_|デバイスの Bluetooth アドレス。|
 
-Monitor_handle (1 オクテット)。
+Monitor_handle (1 オクテット):
 
 |Value|パラメーターの説明|
 |---|---|
-|0x_XX_|指定されたフィルターを識別するハンドル、 [HCI_VS_MSFT_LE_Monitor_Advertisement](#hci_vs_msft_le_monitor_advertisement)コマンド。|
+|0Xxx_|[HCI_VS_MSFT_LE_Monitor_Advertisement](#hci_vs_msft_le_monitor_advertisement)コマンドに対して指定されたフィルターへのハンドル。|
 
-Monitor_state (1 オクテット)。
+Monitor_state (1 オクテット):
 
 |Value|パラメーターの説明|
 |---|---|
-|0x00|コント ローラーがで指定されたデバイスの監視を停止_定義_と_Monitor_handle_します。|
-|0x01|指定されたデバイスの監視を開始して、コント ローラー_定義_と_Monitor_handle_します。|
+|0x00|コントローラーは、 _BD_ADDR_および_Monitor_handle_によって指定されたデバイスの監視を停止しました。|
+|0x01|コントローラーは、 _BD_ADDR_および_Monitor_handle_によって指定されたデバイスの監視を開始しました。|

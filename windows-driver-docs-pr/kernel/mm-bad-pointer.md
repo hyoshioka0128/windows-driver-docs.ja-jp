@@ -5,58 +5,58 @@ ms.assetid: 91366400-3307-4F13-A839-50BA85B7F73E
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 46ab783d7acff09e72a76d4a6ca3a8bb726d0f78
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.sourcegitcommit: 2c3b8e0ea0e75b72067d2e22dc530390bc19b11e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
+ms.lasthandoff: 09/02/2019
 ms.locfileid: "67386006"
 ---
 # <a name="windows-kernel-macros"></a>Windows カーネルのマクロ
 
 
-次の一覧には、Windows カーネルのマクロが含まれています。
+次の一覧には、Windows カーネルマクロが含まれています。
 
 
-## <a name="addressandsizetospanpages"></a>**ADDRESS_AND_SIZE_TO_SPAN_PAGES**
+## <a name="address_and_size_to_span_pages"></a>**ADDRESS_AND_SIZE_TO_SPAN_PAGES**
 
-定義されています。Wdm.h
+定義されている:Wdm
 
-**ADDRESS_AND_SIZE_TO_SPAN_PAGES**マクロは、仮想アドレスと転送要求のバイト単位のサイズによって定義されている仮想アドレスの範囲のページの数を返します。
+**ADDRESS_AND_SIZE_TO_SPAN_PAGES**マクロは、仮想アドレスによって定義された仮想範囲にまたがるページ数と、転送要求のサイズ (バイト単位) を返します。
 
-_Va [in]_
+_Va [入力]_
 
 **PVOID**
 
 範囲のベースである仮想アドレスへのポインター。
 
-_[In] のサイズ_
+_サイズ [入力]_
 
 **ULONG**
 
-譲渡要求のバイト単位のサイズを指定します。
+転送要求のサイズ (バイト単位) を指定します。
 
 **戻り値**
 
 **ULONG**
 
-**ADDRESS_AND_SIZE_TO_SPAN_PAGES**で仮想アドレスの範囲の開始により展開されるページの数を返します_Va_します。
+**ADDRESS_AND_SIZE_TO_SPAN_PAGES**は、 _Va_で始まる仮想範囲によってスパンされたページ数を返します。
 
-呼び出す DMA の転送を行うドライバー **ADDRESS_AND_SIZE_TO_SPAN_PAGES**転送要求をデバイス DMA 操作のシーケンスに分割する必要があるかどうかを判断します。
+DMA 転送を行うドライバーは、転送要求を一連のデバイス DMA 操作に分割する必要があるかどうかを判断するために**ADDRESS_AND_SIZE_TO_SPAN_PAGES**を呼び出します。
 
-ドライバーは、システム定義の定数 PAGE_SIZE を使用して、転送されるバイト数が、現在のプラットフォームの仮想メモリのページ サイズより小さいかどうかを判断できます。
+ドライバーは、システム定義の定数 PAGE_SIZE を使用して、転送されるバイト数が現在のプラットフォームの仮想メモリページサイズよりも小さいかどうかを判断できます。
 
-呼び出し元**ADDRESS_AND_SIZE_TO_SPAN_PAGES** IRQL で実行されていることができます。 呼び出し元は、指定されたパラメーターには、メモリのオーバーフローが発生しないことを確認する必要があります。
+**ADDRESS_AND_SIZE_TO_SPAN_PAGES**の呼び出し元は、任意の IRQL で実行できます。 呼び出し元は、指定されたパラメーターがメモリオーバーフローを発生させないようにする必要があります。
 
-Windows 2000 以降を使用できます。
+Windows 2000 以降で使用できます。
 
 
-## <a name="byteoffset"></a>**BYTE_OFFSET**
+## <a name="byte_offset"></a>**BYTE_OFFSET**
 
-定義されています。Wdm.h
+定義されている:Wdm
 
-**BYTE_OFFSET**マクロ仮想アドレスを受け取り、ページ内でそのアドレスのバイト オフセットを返します。
+**BYTE_OFFSET**マクロは仮想アドレスを受け取り、ページ内のそのアドレスのバイトオフセットを返します。
 
-_Va [in]_
+_Va [入力]_
 
 **PVOID**
 
@@ -66,82 +66,82 @@ _Va [in]_
 
 **ULONG**
 
-**BYTE_OFFSET**仮想アドレスのオフセットの部分を返します。
+**BYTE_OFFSET**は、仮想アドレスのオフセット部分を返します。
 
-Windows 2000 以降を使用できます。
+Windows 2000 以降で使用できます。
 
-IRQL:任意のレベル
+IRQL任意のレベル
 
 
-## <a name="bytestopages"></a>**BYTES_TO_PAGES**
+## <a name="bytes_to_pages"></a>**BYTES_TO_PAGES**
 
-定義されています。Wdm.h
+定義されている:Wdm
 
-**BYTES_TO_PAGES**マクロ転送要求のバイト単位のサイズを受け取るし、バイトを格納するために必要なページ数を計算します。
+**BYTES_TO_PAGES**マクロは、転送要求のサイズ (バイト単位) を取得し、バイトを格納するために必要なページ数を計算します。
 
-_[In] のサイズ_
+_サイズ [入力]_
 
 **ULONG**
 
-譲渡要求のバイト単位のサイズを指定します。
+転送要求のサイズ (バイト単位) を指定します。
 
 **戻り値**
 
 **ULONG**
 
-**BYTES_TO_PAGES**に指定したバイト数を含めることが必要なページの数を返します。
+**BYTES_TO_PAGES**は、指定されたバイト数を格納するために必要なページ数を返します。
 
-転送バイト数で指定された長さが現在のプラットフォームの仮想メモリのページ サイズより小さいかどうかを確認するのには、システム定義の定数 PAGE_SIZE を使用できます。
+システム定義定数 PAGE_SIZE を使用すると、転送用に指定された長さのバイト数が、現在のプラットフォームの仮想メモリページサイズよりも小さいかどうかを判断できます。
 
-Windows 2000 以降を使用できます。
+Windows 2000 以降で使用できます。
 
-IRQL:任意のレベル
+IRQL任意のレベル
 
 
-## <a name="containingrecord"></a>**CONTAINING_RECORD**
+## <a name="containing_record"></a>**CONTAINING_RECORD**
 
-定義されています。Ntdef.h
+定義されている:Ntdef. h
 
-**CONTAINING_RECORD**マクロは、構造体の型とフィールド内に、包含構造体のアドレス指定構造のインスタンスのベース アドレスを返します。
+**CONTAINING_RECORD**マクロは、構造体の型と、それを含む構造体内のフィールドのアドレスを指定して、構造体のインスタンスのベースアドレスを返します。
 
-_[In] アドレスします。_
+_アドレス [入力]_
 
 **PCHAR**
 
-型の構造体のインスタンス内のフィールドへのポインター_型_します。
+Type 型の構造体のインスタンス内のフィールドへのポインター _。_
 
-_[In] 入力します。_
+_型 [in]_
 
 **TYPE**
 
-ベース アドレスが返される構造体の型の名前。
+返されるベースアドレスを持つ構造体の型の名前。
 
-_[In] フィールド_
+_フィールド [in]_
 
 **PCHAR**
 
-によって示されるフィールドの名前_アドレス_は型の構造体に含まれている_型_します。
+_アドレス_によって示され _、型の_構造体に含まれるフィールドの名前。
 
 **戻り値**
 
 **PCHAR**
 
-格納する構造体の基本のアドレスを返して_フィールド_します。
+_フィールド_を含む構造体のベースのアドレスを返します。
 
-型を持つが、呼び出し元が、このような構造内のフィールドのポインターと呼ばれる構造のベース アドレスを確認するには、呼び出されます。 このマクロは、シンボリック既知の型の構造体の他のフィールドにアクセスするために便利です。
+呼び出し元がこのような構造体内のフィールドへのポインターを持っている場合に、型がわかっている構造体のベースアドレスを決定するために呼び出されます。 このマクロは、既知の型の構造内の他のフィールドにシンボリックアクセスする場合に便利です。
 
-Windows 2000 以降を使用できます。
+Windows 2000 以降で使用できます。
 
-IRQL:任意のレベル
+IRQL任意のレベル
 
 
-## <a name="ioskipcurrentirpstacklocation"></a>**IoSkipCurrentIrpStackLocation**
+## <a name="ioskipcurrentirpstacklocation"></a>**Ioskipon Entiの場所**
 
-定義されています。Wdm.h
+定義されている:Wdm
 
-\nThe **IoSkipCurrentIrpStackLocation**マクロの変更、システムの[ **IO_STACK_LOCATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)できるように、現在のドライバーが次の下位のドライバーを呼び出すときに、ポインターの配列、そのドライバーが、同じ受信**IO_STACK_LOCATION**現在のドライバーを受信した構造体。
+IO_STACK_LOCATIONは、システムの[**IO_STACK_LOCATION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)配列ポインターを変更します。これにより、現在のドライバーが次に低いドライバーを呼び出すと、そのドライバーは、現在のドライバーを受信しました。
 
-_Irp [で, out]_
+_Irp [in, out]_
 
 **PIRP**
 
@@ -149,103 +149,103 @@ IRP へのポインター。
 
 **戻り値**
 
-**VOID**
+**無効化**
 
-ドライバーを呼び出すことができます、ドライバーは IRP を次の下位ドライバーに送信するときに**IoSkipCurrentIrpStackLocation**を提供する予定がない場合、 [ _IoCompletion_ ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)ルーチン(ドライバーの内のアドレスが格納されている[ **IO_STACK_LOCATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)構造)。 呼び出す場合**IoSkipCurrentIrpStackLocation**呼び出す前に[**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)、次の下位のドライバーを受け取る同じ**IO_STACK_LOCATION** 、ドライバーを受信します。
+ドライバーが次の下位のドライバーに IRP を送信すると、ドライバーは [_IoCompletion_](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine) ルーチンを提供しない場合 **IoSkipCurrentIrpStackLocation** を呼び出すことができます (これは、ドライバーの [**IO_STACK_LOCATION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location) 構造に格納されているアドレスです)。 [**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)を呼び出す前に**Ioskip entilocation**を呼び出すと、ドライバーが受信したものと同じ**IO_STACK_LOCATION**が次の下位のドライバーに渡されます。
 
-使用する場合、 _IoCompletion_ IRP の日常的なドライバー、呼び出す必要があります[ **IoCopyCurrentIrpStackLocationToNext** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocopycurrentirpstacklocationtonext)の代わりに**IoSkipCurrentIrpStackLocation**します。 不完全なドライバーが呼び出し元の間違いを行った場合**IoSkipCurrentIrpStackLocation**完了ルーチンを設定し、このドライバーは、下にあるドライバーによって設定完了ルーチンを上書き可能性があります。
+IRP に対して_Iocompletion_ルーチンを提供する場合、ドライバーは**Ioskipの場所**ではなく[**iocopy"enti"** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocopycurrentirpstacklocationtonext)を呼び出す必要があります。 正しく記述されていないドライバーによって**Ioskipに**よって処理が失敗し、完了ルーチンが設定された場合、このドライバーは、その下のドライバーによって設定された完了ルーチンを上書きする可能性があります。
 
-ドライバーを呼び出していない場合、ドライバーは IRP を保留には、 **IoSkipCurrentIrpStackLocation** IRP [次へ] の下のドライバーに渡す前にします。 ドライバーを呼び出す場合**IoSkipCurrentIrpStackLocation**で [次へ] の下のドライバーに渡す前に保留 IRP、SL_PENDING_RETURNED フラグが設定、**コントロール**I/O スタックの場所のメンバー[次へ] のドライバーです。 次のドライバーでは、場所スタックが作成され、変更を所有している、ため、可能性のある保留中フラグをクリアするでした。 オペレーティング システムのバグ チェックがまたはが完了しない IRP の処理を発行するような場合があります。
+ドライバーが IRP を保留にしている場合、ドライバーは、IRP を次の下位のドライバーに渡す前に、 **Ioskipfinalentifinallocation**を呼び出さないでください。 ドライバーが、次の下位のドライバーに渡す前に、保留中の IRP で**IoskipSL_PENDING_RETURNED**を呼び出すと、次のドライバーの i/o スタックの場所の**コントロール**メンバーに、このフラグが設定されたままになります。 次のドライバーがそのスタックの場所を所有しており、変更される可能性があるため、保留中のフラグがクリアされる可能性があります。 このような状況が発生すると、オペレーティングシステムがバグチェックを発行したり、IRP の処理が完了しないことがあります。
 
-代わりに、保留 IRP がドライバーを呼び出す必要があります**IoCopyCurrentIrpStackLocationToNext**呼び出し前に次の下位のドライバーの新しいスタックの場所を設定するのには**保留**します。
+代わりに、IRP を保留にしたドライバーは、 **IocopyIoCallDriver**を呼び出す前に、次に低いドライバー用に新しいスタックの場所を設定する必要があります。
 
-ドライバーを呼び出す場合**IoSkipCurrentIrpStackLocation**しないように注意を変更することで、 **IO_STACK_LOCATION**下位のドライバーまたはシステムの動作に影響を与える意図しない方法で構造体に関しては、そのドライバー。 例としては、変更、 **IO_STACK_LOCATION**構造体の**パラメーター**共用体、または呼び出し元[ **IoMarkIrpPending**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iomarkirppending)します。
+ドライバーが**IoskipIO_STACK_LOCATION Entilocation**を呼び出す場合は、そのドライバーに関して、下位のドライバーやシステムの動作に意図しない影響を与える可能性のある方法で、構造体を変更しないように注意してください。 例としては、 **IO_STACK_LOCATION**構造体の**パラメーター**共用体を変更したり、 [**iomarkirppending**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iomarkirppending)を呼び出したりすることができます。
 
-Windows 2000 以降を使用できます。
+Windows 2000 以降で使用できます。
 
-IRQL:任意のレベル
+IRQL任意のレベル
 
 
-## <a name="keinitializecallbackrecord"></a>**KeInitializeCallbackRecord**
+## <a name="keinitializecallbackrecord"></a>**Ke初期化 Ecallbackrecord**
 
-定義されています。Wdm.h
+定義されている:Wdm
 
-**KeInitializeCallbackRecord**マクロを初期化します、 [ **KBUGCHECK_CALLBACK_RECORD** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/eprocess)または[ **KBUGCHECK_REASON_CALLBACK_レコード**](https://docs.microsoft.com/windows-hardware/drivers/kernel/eprocess)構造体。
+**KeInitializeCallbackRecord** マクロは [**KBUGCHECK_CALLBACK_RECORD**](https://docs.microsoft.com/windows-hardware/drivers/kernel/eprocess) または [**KBUGCHECK_REASON_CALLBACK_RECORD**](https://docs.microsoft.com/windows-hardware/drivers/kernel/eprocess) 構造体を初期化します。
 
-_[In] CallbackRecord_
+_[入力]_
 
 **PKBUGCHECK_CALLBACK_RECORD**
 
-いずれかへのポインターを**KBUGCHECK_CALLBACK_RECORD**または**KBUGCHECK_REASON_CALLBACK_RECORD**構造体。 構造体は、非ページ プールなどのメモリでなければなりません。
+**KBUGCHECK_CALLBACK_RECORD**または**KBUGCHECK_REASON_CALLBACK_RECORD**構造体へのポインター。 構造体は、非ページプールなどの常駐メモリ内に存在する必要があります。
 
 **戻り値**
 
-**VOID**
+**無効化**
 
-Windows 2000 および以降のバージョンの Windows で使用できます。
+Windows 2000 以降のバージョンの Windows で使用できます。
 
-IRQL:任意のレベル
+IRQL任意のレベル
 
 
-## <a name="mmbadpointer"></a>**MM_BAD_POINTER**
+## <a name="mm_bad_pointer"></a>**MM_BAD_POINTER**
 
-定義されています。Wdm.h
+定義されている:Wdm
 
-ドライバーを使用できる、 **MM_BAD_POINTER**が初期化されていないか、無効になったポインター変数に代入するの無効なポインター値としてマクロ。 この無効なポインター変数が指すメモリ位置へのアクセスには、バグ チェックが発生します。
+ドライバーは、 **MM_BAD_POINTER**マクロを無効なポインター値として使用して、初期化されていない、または無効になっているポインター変数に割り当てることができます。 この無効なポインター変数が指すメモリ位置にアクセスしようとすると、バグチェックが発生します。
 
-多くのハードウェア プラットフォームでは、アドレス 0 (頻繁に名前付き定数として表される**NULL**)、無効なアドレスですが、ドライバー開発者向けでは、アドレス 0 がユニバーサル無効であるすべてのプラットフォームでは想定しないでください。 変数アドレス 0 が常とは限りません不適切なアクセスこれらのポインターからが検出される初期化されていないか、無効なポインターを設定します。
+多くのハードウェアプラットフォームでは、アドレス 0 (名前付き定数**NULL**としてよく表されます) は無効なアドレスですが、ドライバー開発者は、アドレス0がすべてのプラットフォームで汎用的に無効であると想定しないでください。 初期化されていない、または無効なポインター変数をアドレス0に設定すると、これらのポインターによる不適切なアクセスが検出されるとは限らない場合があります。
 
-これに対して、値**MM_BAD_POINTER**ドライバーが実行されているすべてのプラットフォームのアドレスが無効にすることが保証されます。
+これに対し、値**MM_BAD_POINTER**は、ドライバーを実行するすべてのプラットフォームで無効なアドレスであることが保証されます。
 
-アクセスするドライバーをどのアドレス 0 は、無効なアドレスのプラットフォームでは、アドレスの IRQL で 0 < DISPATCH_LEVEL によって誤ってキャッチできる例外 (アクセス違反) が発生した、`try/except`ステートメント。 したがって、ドライバーの例外処理コードは、無効なアクセスをマスクし、デバッグ中に検出されているを防ぐこと。 ただしのアクセス、 **MM_BAD_POINTER**アドレス例外ハンドラーによってマスクできませんバグ チェックが発生することが保証されます。
+アドレス0が無効なアドレスであるプラットフォームでは、IRQL < DISPATCH_LEVEL でアドレス0にアクセスするドライバーにより、 `try/except`ステートメントで誤ってキャッチされる例外 (アクセス違反) が発生します。 このため、ドライバーの例外処理コードによって無効なアクセスがマスクされ、デバッグ中に検出されない可能性があります。 ただし、 **MM_BAD_POINTER**アドレスへのアクセスによってバグチェックが確実に行われることは保証されていますが、これは例外ハンドラーによってマスクされることはありません。
 
-次のコード例は、値を割り当てる方法を示しています。 **MM_BAD_POINTER**というポインター変数に`ptr`します。 Ntdef.h ヘッダー ファイルへのポインターを PUCHAR 型を定義する、`unsigned char`します。
+次のコード例は、という名前`ptr`のポインター変数に値**MM_BAD_POINTER**を割り当てる方法を示しています。 Ntdef .h ヘッダーファイルは、へ`unsigned char`のポインターとなる puchar 型を定義します。
 
 `PUCHAR ptr = (PUCHAR)MM_BAD_POINTER; // Now _ptr is guaranteed to fault._`
 
-後`ptr`に設定されている**MM_BAD_POINTER**、によって示されるメモリ位置へのアクセスに`ptr`バグ チェックが発生します。
+が MM_BAD_POINTER に設定されると、が指す`ptr`メモリ位置にアクセスしようとすると、バグチェックが発生します。 `ptr`
 
-実際、 **MM_BAD_POINTER**は無効なアドレスのページ全体のベース アドレスです。 そのため、すべてのアクセス、アドレス範囲内の**MM_BAD_POINTER**に (**MM_BAD_POINTER** + **PAGE_SIZE** - 1) バグ チェックが発生します。
+実際、 **MM_BAD_POINTER**は、無効なアドレスのページ全体のベースアドレスです。 そのため、範囲**MM_BAD_POINTER** (**MM_BAD_POINTER** + **PAGE_SIZE** -1) のアドレスにアクセスすると、バグチェックが発生します。
 
-Windows 8.1 では、以降、 **MM_BAD_POINTER** Wdm.h のヘッダー ファイルでマクロが定義されています。 ただし、Windows Vista と共に登場した Windows の以前のバージョンでこのマクロの定義を使用するドライバー コードできます実行。
+Windows 8.1 以降では、 **MM_BAD_POINTER**マクロは、Wdm ヘッダーファイルで定義されています。 ただし、このマクロ定義を使用するドライバーコードは、Windows Vista 以降の以前のバージョンの Windows で実行できます。
 
-以降、Windows Vista では、 [ **MmBadPointer** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm64bitphysicaladdress)グローバル変数は、アドレスが無効にすることが保証されるポインター値へのポインターとして使用します。 ただし、Windows 8.1 での使用を開始**MmBadPointer**は非推奨とし、使用するドライバーを更新する必要があります、 **MM_BAD_POINTER**マクロ代わりにします。
+Windows Vista 以降では、 [**Mmbadpointer**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm64bitphysicaladdress)グローバル変数は、無効なアドレスであることが保証されるポインター値へのポインターとして使用できます。 ただし Windows 8.1 以降では、 **Mmbadpointer**の使用は非推奨とされます。代わりに、 **MM_BAD_POINTER**マクロを使用するようにドライバーを更新する必要があります。
 
-Windows 8.1\ 以降を利用できます。 Windows Vista と共に登場した Windows の以前のバージョンとの互換性 _。
+Windows 8.1 \ から使用できます。 Windows Vista 以降では、以前のバージョンの Windows と互換性があります。
 
 
 ## <a name="mmgetmdlbytecount"></a>**MmGetMdlByteCount**
 
-定義されています。Wdm.h
+定義されている:Wdm
 
-**MmGetMdlByteCount**マクロは、指定した MDL で説明されているバッファーのバイト単位で長さを返します。
+**MmGetMdlByteCount**マクロは、指定された MDL によって記述されるバッファーの長さをバイト単位で返します。
 
-_[In] Mdl_
+_Mdl [in]_
 
 **PMDL**
 
-ポインター、 [ **MDL** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_mdl)物理メモリ内の仮想メモリ バッファーのレイアウトを記述する構造体。 詳細については、次を参照してください。[を使用して MDLs](using-mdls.md)します。
+物理メモリ内の仮想メモリバッファーのレイアウトを記述する[**MDL**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_mdl)構造体へのポインター。 詳細については、「 [MDLs の使用](using-mdls.md)」を参照してください。
 
 **戻り値**
 
 **ULONG**
 
-## <a name="mmgetmdlbytecount-returns-the-length-in-bytes-of-the-buffer-described-by-mdl"></a>**MmGetMdlByteCount**で説明されているバッファーのバイト単位の長さを返します_Mdl_します。
+## <a name="mmgetmdlbytecount-returns-the-length-in-bytes-of-the-buffer-described-by-_mdl_"></a>**MmGetMdlByteCount**は、 _Mdl_によって記述されるバッファーの長さをバイト単位で返します。
 
-呼び出し元**MmGetMdlByteCount** IRQL で実行されていることができます。 通常、呼び出し元が IRQL で実行している < = DISPATCH_LEVEL します。
+**MmGetMdlByteCount**の呼び出し元は、任意の IRQL で実行できます。 通常、呼び出し元は IRQL < = DISPATCH_LEVEL で実行されます。
 
-Windows 2000 以降を使用できます。
+Windows 2000 以降で使用できます。
 
-IRQL:任意のレベル
+IRQL任意のレベル
 
 
 ## <a name="mmgetmdlbyteoffset"></a>**MmGetMdlByteOffset**
 
-定義されています。Wdm.h
+定義されている:Wdm
 
-**MmGetMdlByteOffset**マクロは、特定の MDL で説明されているバッファーの最初のページ内のバイト オフセットを返します。
+**Mmgetmdlbyteoffset**マクロは、指定された MDL によって記述されるバッファーの最初のページ内のバイトオフセットを返します。
 
-_[In] Mdl_
+_Mdl [in]_
 
 **PMDL**
 
@@ -255,22 +255,22 @@ MDL へのポインター。
 
 **ULONG**
 
-## <a name="mmgetmdlbyteoffset-returns-the-offset-in-bytes"></a>**MmGetMdlByteOffset**オフセットをバイト単位で返します。
+## <a name="mmgetmdlbyteoffset-returns-the-offset-in-bytes"></a>**Mmgetmdlbyteoffset**は、バイト単位のオフセットを返します。
 
-呼び出し元**MmGetMdlByteOffset** IRQL で実行されていることができます。 通常、呼び出し元が IRQL で実行している < = DISPATCH_LEVEL します。
+**Mmgetmdlbyteoffset**の呼び出し元は、任意の IRQL で実行できます。 通常、呼び出し元は IRQL < = DISPATCH_LEVEL で実行されます。
 
-Windows 2000 および以降のバージョンの Windows で使用できます。
+Windows 2000 以降のバージョンの Windows で使用できます。
 
-IRQL:任意のレベル
+IRQL任意のレベル
 
 
 ## <a name="mmgetmdlpfnarray"></a>**MmGetMdlPfnArray**
 
-定義されています。Wdm.h
+定義されている:Wdm
 
-**MmGetMdlPfnArray**マクロは、メモリの記述子のリスト (MDL) に関連付けられている物理ページ番号の配列の先頭にポインターを返します。
+**MmGetMdlPfnArray**マクロは、メモリ記述子リスト (MDL) に関連付けられている物理ページ番号の配列の先頭へのポインターを返します。
 
-_[In] Mdl_
+_Mdl [in]_
 
 **PMDL**
 
@@ -280,190 +280,190 @@ MDL へのポインター。
 
 **PPFN_NUMBER**
 
-MDL に関連付けられている物理ページ番号の配列の先頭へのポインター。 配列内のエントリの数が**ADDRESS_AND_SIZE_TO_SPAN_PAGES**(**MmGetMdlVirtualAddress**(_Mdl_)、 **MmGetMdlByteCount**(_Mdl_))。 配列の各要素は、型で定義されている、PFN_NUMBER の整数値を示します。次のように Wdm.h:
+MDL に関連付けられている物理ページ番号の配列の先頭へのポインター。 配列内のエントリの数は**ADDRESS_AND_SIZE_TO_SPAN_PAGES**(**mmgetmdlvirtualaddress**(_mdl_), **MmGetMdlByteCount**(_mdl_)) です。 各配列要素は、次のように定義されている PFN_NUMBER 型の整数値です。次のようにします。
 
 `cpp typedef ULONG PFN_NUMBER, *PPFN_NUMBER;`
 
-**注**配列の内容を変更すると、診断が困難な微妙なシステム問題が発生することができます。 読み取り使用したり、この配列の内容を変更するはしないをお勧めします。
+**メモ**配列の内容を変更すると、診断が困難なシステムの問題が発生する可能性があります。 この配列の内容を読み取ったり、変更したりしないことをお勧めします。
 
-ページング可能なメモリは、配列の内容はロックされているバッファーでのみ有効です[ **MmProbeAndLockPages**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmprobeandlockpages)します。 非ページ プールは、配列の内容は更新 MDL のみ有効です[ **MmBuildMdlForNonPagedPool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmbuildmdlfornonpagedpool)、 [ **MmAllocatePagesForMdlEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatepagesformdlex)、または[ **MmAllocatePagesForMdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatepagesformdl)します。
+ページング可能なメモリの場合、配列の内容は、 [**MmProbeAndLockPages**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmprobeandlockpages)でロックされているバッファーに対してのみ有効です。 非ページプールの場合、配列の内容は、 [**MmBuildMdlForNonPagedPool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmbuildmdlfornonpagedpool)、 [**MmAllocatePagesForMdlEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatepagesformdlex)、または[**MmAllocatePagesForMdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatepagesformdl)で更新された MDL に対してのみ有効です。
 
-MDLs の詳細については、次を参照してください。[を使用して MDLs](using-mdls.md)します。
+MDLs の詳細については、「 [MDLs の使用](using-mdls.md)」を参照してください。
 
-Windows 2000 以降を使用できます。
+Windows 2000 以降で使用できます。
 
-IRQL:任意のレベル
+IRQL任意のレベル
 
 
 ## <a name="mmgetmdlvirtualaddress"></a>**MmGetMdlVirtualAddress**
 
-定義されています。Wdm.h
+定義されている:Wdm
 
-**MmGetMdlVirtualAddress**マクロが、MDL で説明されているバッファーの基本の仮想アドレスを返します。
+**Mmgetmdlvirtualaddress**マクロは、MDL によって記述されるバッファーのベース仮想アドレスを返します。
 
-_[In] Mdl_
+_Mdl [in]_
 
 **PMDL**
 
-最初の仮想アドレスを返すバッファーを記述する MDL へのポインター。
+初期仮想アドレスを返すバッファーを記述する MDL へのポインター。
 
 **戻り値**
 
 **PVOID**
 
-## <a name="mmgetmdlvirtualaddress-returns-the-starting-virtual-address-of-the-mdl"></a>**MmGetMdlVirtualAddress** MDL の開始仮想アドレスを返します。
+## <a name="mmgetmdlvirtualaddress-returns-the-starting-virtual-address-of-the-mdl"></a>**Mmgetmdlvirtualaddress**は、MDL の開始仮想アドレスを返します。
 
-**MmGetMdlVirtualAddress**現在のスレッド コンテキストで有効である必要はない仮想アドレスを返します。 下位レベルのドライバーが、返された仮想アドレスを使用して、メモリ、特にメモリ領域をユーザーにアクセスしないようにします。
+**Mmgetmdlvirtualaddress**は、現在のスレッドコンテキストで必ずしも有効ではない仮想アドレスを返します。 下位レベルのドライバーでは、返された仮想アドレスを使用してメモリにアクセスしたり、特にユーザーメモリ領域にアクセスしたりしないでください。
 
-MDL 内の物理アドレス エントリのインデックスとして使用される、返されたアドレスを入力できる[ **MapTransfer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pmap_transfer)します。
+返されたアドレスは、MDL の物理アドレスエントリのインデックスとして使用され、 [**Maptransfer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pmap_transfer)に入力できます。
 
-呼び出し元**MmGetMdlVirtualAddress** IRQL で実行されていることができます。 IRQL で呼び出し元が実行されている通常は、このルーチンが取得するというよく = DISPATCH_LEVEL、 _CurrentVa_パラメーターを**MapTransfer**します。
+**Mmgetmdlvirtualaddress**の呼び出し元は、任意の IRQL で実行できます。 通常、呼び出し元は IRQL = DISPATCH_LEVEL で実行されています。このルーチンは通常、 **Maptransfer**の_currentva_パラメーターを取得するために呼び出されるためです。
 
-Windows 2000 および以降のバージョンの Windows で使用できます。
+Windows 2000 以降のバージョンの Windows で使用できます。
 
-IRQL:任意のレベル
+IRQL任意のレベル
 
 
 ## <a name="mmgetsystemaddressformdlsafe"></a>**MmGetSystemAddressForMdlSafe**
 
-定義されています。Wdm.h
+定義されている:Wdm
 
-**MmGetSystemAddressForMdlSafe**マクロは、指定した MDL 説明するバッファーの非ページ システム領域仮想アドレスを返します。
+**MmGetSystemAddressForMdlSafe**マクロは、指定された MDL が記述するバッファーの非ページシステム領域の仮想アドレスを返します。
 
-_[In] Mdl_
+_Mdl [in]_
 
 **PMDL**
 
-対応する基本仮想アドレスにマップするバッファーへのポインター。
+対応するベース仮想アドレスをマップするバッファーへのポインター。
 
-_[In] の優先順位_
+_優先順位 [入力]_
 
-## <a name="mmpagepriority"></a>**Mm_PAGE_PRIORITY**
+## <a name="mm_page_priority"></a>**Mm_PAGE_PRIORITY**
 
-指定します、 **MM_PAGE_PRIORITY**低使用可能な PTE 条件下で成功した場合の重要度を示す値。 優先度の値を指定**LowPagePriority**、 **NormalPagePriority**、または**HighPagePriority**します。 Windows 8 以降では、指定した優先順位値はビットごとの論理和。 で、 **MdlMappingNoWrite**または**MdlMappingNoExecute**フラグ。
+使用可能な PTE の状態が低い場合に成功の重要度を示す**MM_PAGE_PRIORITY**値を指定します。 優先度の値として**Lowpagepriority**、 **normalpagepriority**、または**highpagepriority**を指定します。 Windows 8 以降では、指定された優先順位値は**Mdlmappingnowrite**または**Mdlmappingnowrite**フラグとビットごとの論理積を持つことができます。
 
-*   **LowPagePriority**マッピング要求が、システムがリソースに対してかなり少ない場合にフェールオーバーできることを示します。 このような状況の例は、ドライバーがマッピング エラーを処理できる重要でないネットワーク接続です。
+*   **Lowpagepriority**は、システムのリソースが非常に少ない場合にマッピング要求が失敗する可能性があることを示します。 このような状況の例としては、ドライバーがマッピングエラーを処理できる、重要でないネットワーク接続が挙げられます。
 
-*   **NormalPagePriority**マッピング要求が、システムがリソースに非常に低い場合にフェールオーバーできることを示します。 このような状況の例は、重要でないローカル ファイル システム要求です。
+*   **Normalpagepriority**は、システムのリソースが不足している場合にマッピング要求が失敗する可能性があることを示します。 このような状況の例としては、重要でないローカルファイルシステムの要求が挙げられます。
 
-*   **HighPagePriority**マッピング要求する必要がありますしない限り、システムがリソース不足が完全に失敗しないことを示します。 このような状況の例では、ドライバーではページング ファイルのパスです。
+*   **Highpagepriority**は、システムで完全にリソースが不足していない限り、マッピング要求が失敗しないようにする必要があることを示します。 このような状況の例として、ドライバーのページングファイルパスが挙げられます。
 
-*   **MdlMappingNoWrite**マップされた物理ページがメモリの非書き込み (読み取り専用) として構成することを示します。 Windows 8 以降、このフラグのビットできるビットごとの論理和。 で、 **MM_PAGE_PRIORITY**書き込みが無効になってメモリを指定する値。
+*   **Mdlmappingnowrite**は、マップされた物理ページが書き込み不可 (読み取り専用) メモリとして構成されることを示します。 Windows 8 以降では、このフラグビットを**MM_PAGE_PRIORITY**値とビットごとの or 演算を実行して、書き込みが無効になるメモリを指定できます。
 
-*   **MdlMappingNoExecute**マップされた物理ページ メモリの非実行するように構成されていることを示します。 Windows 8 以降、このフラグのビットできるビットごとの論理和。 で、 **MM_PAGE_PRIORITY**する命令の実行が無効になっているメモリを指定する値。 ベスト プラクティス、Windows 8 および Windows の以降のバージョンのドライバーを指定する必要があります常に非実行メモリ実行可能なメモリが明示的に必要な場合を除き、します。
+*   **Mdlmappingnoexecute**は、マップされた物理ページを実行不可メモリとして構成することを示します。 Windows 8 以降では、このフラグビットを**MM_PAGE_PRIORITY**値とビットごとに or 処理して、命令の実行が無効になるメモリを指定することができます。 ベストプラクティスとして、Windows 8 以降のバージョンの Windows 用に記述されたドライバーでは、実行可能メモリが明示的に必要な場合を除き、常に実行なしのメモリを指定する必要があります。
 
 *   **戻り値**
 
     **PVOID**
 
-    **MmGetSystemAddressForMdlSafe**指定 MDL が表す物理的なページをマップするシステムの基本領域仮想アドレスを返します。 システム アドレス空間は、失敗した場合、それらをマップしようとすると、ページが既にマップされていない場合**NULL**が返されます。
+    **MmGetSystemAddressForMdlSafe**は、指定された MDL が記述する物理ページをマップする基本システム領域の仮想アドレスを返します。 ページがシステムアドレス空間にマップされていないためにマップしようとして失敗した場合は、 **NULL**が返されます。
 
-このルーチンでは、システム アドレス空間にマップされていない場合、システムのアドレス空間に指定された MDL によって記述される物理的なページがマップされます。
+このルーチンは、指定された MDL によって記述される物理ページがシステムアドレス空間にまだマップされていない場合、システムアドレス空間にマップします。
 
-プログラミング i/o (PIO) デバイスのドライバーで MDL によって定義された、ユーザー モードのバッファーをマップするには、このルーチンを呼び出す**Irp MdlAddress]-> [** システム アドレスの範囲に、ユーザー モード仮想アドレスの範囲に既にマップされて、領域。
+プログラムされた i/o (PIO) デバイスのドライバーは、このルーチンを呼び出してユーザーモードのバッファーをマップします。これは、の **>** MDL によって記述され、ユーザーモードの仮想アドレスの範囲に既にマップされている、システムアドレス空間の範囲に割り当てられています。
 
-このルーチンの入り口で指定された MDL ロック ダウンされている物理ページを記述します。 使用してロックダウン MDL をビルドすることができます、 [ **MmProbeAndLockPages**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmprobeandlockpages)、 [ **MmBuildMdlForNonPagedPool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmbuildmdlfornonpagedpool)、 [ **IoBuildPartialMdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iobuildpartialmdl)、または[ **MmAllocatePagesForMdlEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatepagesformdlex)ルーチン。
+このルーチンへの入力時に、指定された MDL はロックダウンされている物理ページを記述する必要があります。 ロックダウンされた MDL は、 [**MmProbeAndLockPages**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmprobeandlockpages)、 [**MmBuildMdlForNonPagedPool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmbuildmdlfornonpagedpool)、 [**iobuildpartialmdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iobuildpartialmdl)、または[**MmAllocatePagesForMdlEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatepagesformdlex)ルーチンを使用して作成できます。
 
-によって、システム-アドレス空間マッピングが返されるときに**MmGetSystemAddressForMdlSafe**が不要になった、解放する必要があります。 マッピングを解放するために必要な手順は、MDL がどのように構築されたかによって異なります。 これらは、次の 4 つの可能なケースです。
+**MmGetSystemAddressForMdlSafe**によって返されるシステムアドレス空間のマッピングが不要になった場合は、解放する必要があります。 マッピングを解放するために必要な手順は、MDL の構築方法によって異なります。 次の4つのケースが考えられます。
 
-*   MDL への呼び出しで作成した場合、 **MmProbeAndLockPages** 、日常的な必要はありません、システム アドレス空間のマッピングを明示的に解放します。 代わりへの呼び出し、 [ **MmUnlockPages** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmunlockpages)ルーチンは、割り当てられている場合に、マッピングを解放します。
+*   **MmProbeAndLockPages**ルーチンの呼び出しによって MDL を構築した場合、システムアドレス空間のマッピングを明示的に解放する必要はありません。 代わりに、 [**MmUnlockPages**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmunlockpages)ルーチンを呼び出すと、割り当てられている場合はマッピングが解放されます。
 
-*   MDL への呼び出しで作成した場合、 **MmBuildMdlForNonPagedPool**ルーチン、 **MmGetSystemAddressForMdlSafe**新規に作成する代わりに既存のシステム アドレス空間のマッピングを再利用されます。 この場合は、クリーンアップは必要ありません (つまり、ロックを解除して、割り当ての解除は必要ありません)。
+*   **MmBuildMdlForNonPagedPool**ルーチンの呼び出しによって MDL が構築された場合、 **MmGetSystemAddressForMdlSafe**は新しいシステムアドレス空間マッピングを作成するのではなく、既存のシステムアドレス空間マッピングを再利用します。 この場合、クリーンアップは必要ありません (つまり、ロックを解除したり、マップを解除したりする必要はありません)。
 
-*   MDL への呼び出しで作成した場合、 **IoBuildPartialMdl** 、日常的なドライバー呼び出す必要がありますか、 [ **MmPrepareMdlForReuse** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)ルーチンまたは[ **IoFreeMdl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iofreemdl)ルーチンをシステム アドレス空間のマッピングをリリースします。
+*   MDL が**Iobuildpartialmdl**ルーチンの呼び出しによって構築されている場合、ドライバーは[**Mmpreparemdlforreuse 利用**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)ルーチンを呼び出すか、または[**iofreemdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iofreemdl)ルーチンを呼び出して、システムアドレス空間のマッピングを解放する必要があります。
 
-*   MDL への呼び出しで作成した場合、 **MmAllocatePagesForMdlEx** 、日常的なドライバー呼び出す必要があります、 **MmUnmapLockedPages**ルーチンをシステム アドレス空間のマッピングをリリースします。 場合**MmGetSystemAddressForMdlSafe** MDL、後続の 1 つ以上の時間と呼びます**MmGetSystemAddressForMdlSafe**の呼び出しは単に最初の呼び出しによって作成されたマッピングを返します。 1 回の呼び出しに**MmUnmapLockedPages**このマッピングを解放するだけで十分です。
+*   **MmAllocatePagesForMdlEx**ルーチンの呼び出しによって MDL がビルドされた場合、ドライバーは**MmUnmapLockedPages**ルーチンを呼び出して、システムアドレス空間のマッピングを解放する必要があります。 **MmGetSystemAddressForMdlSafe**が1つの MDL に対して複数回呼び出された場合、後続の**MmGetSystemAddressForMdlSafe**呼び出しでは、最初の呼び出しで作成されたマッピングが返されます。 このマッピングを解放するには、 **MmUnmapLockedPages**を1回呼び出すだけで十分です。
 
-Windows 7 および Windows Server 2008 R2 以降、必要はありませんを明示的に呼び出す**MmUnmapLockedPages**によって作成された、MDL の**MmAllocatePagesForMdlEx**します。 代わりへの呼び出し、 [ **MmFreePagesFromMdl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmfreepagesfrommdl)ルーチンが割り当てられている場合、システム アドレス空間のマッピングを解放します。
+Windows 7 と Windows Server 2008 R2 以降では、 **MmAllocatePagesForMdlEx**によって作成された MDL の**MmUnmapLockedPages**を明示的に呼び出す必要はありません。 代わりに、 [**Mmfreepagesfrommdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmfreepagesfrommdl)ルーチンを呼び出すと、システムアドレス空間マッピングが割り当てられている場合は解放されます。
 
-新しいシステム アドレス空間マッピングを作成する**MmGetSystemAddressForMdlSafe**呼び出し**MmMapLockedPagesSpecifyCache**で、 _CacheType_パラメーターに設定**MmCached**します。 以外のキャッシュの種類を必要とするドライバー **MmCached**呼び出す必要があります**MmMapLockedPagesSpecifyCache**呼び出す代わりに直接**MmGetSystemAddressForMdlSafe**します。 詳細については、 _CacheType_パラメーターを参照してください[ **MmMapLockedPagesSpecifyCache**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmmaplockedpagesspecifycache)します。
+新しいシステムアドレス空間マッピングを作成するために、 **MmGetSystemAddressForMdlSafe**は_Cachetype_パラメーターを**Mmcached**に設定して**MmMapLockedPagesSpecifyCache**を呼び出します。 **Mmcached**以外のキャッシュの種類を必要とするドライバーは、 **MmGetSystemAddressForMdlSafe**を呼び出す代わりに、 **MmMapLockedPagesSpecifyCache**を直接呼び出す必要があります。 _Cachetype_パラメーターの詳細については、「 [**MmMapLockedPagesSpecifyCache**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmmaplockedpagesspecifycache)」を参照してください。
 
-呼び出しで**MmMapLockedPagesSpecifyCache**、MDL によって記述されるページがあるまだないキャッシュの種類が関連付けられている場合にのみ、指定されたキャッシュの種類が使用されます。 ただし、ほぼすべての場合、ページが、関連付けられているキャッシュの種類では、既にあるし、このキャッシュの種類は、新しいマッピングによって使用されます。 このルールの例外は、によって割り当てられているページに**MmAllocatePagesForMdl**、キャッシュの種類に設定**MmCached**ページの元のキャッシュの種類に関係なく。
+**MmMapLockedPagesSpecifyCache**の呼び出しでは、指定されたキャッシュの種類は、MDL によって記述されたページにキャッシュの種類がまだ関連付けられていない場合にのみ使用されます。 ただし、ほとんどの場合、ページには既に関連付けられたキャッシュの種類があり、このキャッシュの種類は新しいマッピングによって使用されます。 このルールの例外は、 **MmAllocatePagesForMdl**によって割り当てられたページです。これにより、ページの元のキャッシュの種類に関係なく、キャッシュの種類が**mmcached**に設定されます。
 
-一度に 1 つのスレッドを安全に呼び出す**MmGetSystemAddressForMdlSafe**特定 MDL のため、このルーチンは、呼び出し元のスレッドが MDL を所有していることを想定しています。 ただし、 **MmGetSystemAddressForMdlSafe**かによって、同じスレッドからのすべての呼び出しを行う同じ MDL の 1 つ以上の時間を呼び出すことができます、または明示的に呼び出しを同期することによって、複数のスレッドからの呼び出しでは場合。
+このルーチンは、呼び出し元のスレッドが MDL を所有していると想定しているため、一度に1つのスレッドだけが特定の MDL の**MmGetSystemAddressForMdlSafe**を安全に呼び出すことができます。 ただし、同じスレッドからすべての呼び出しを行うか、複数のスレッドからの呼び出しの場合は、呼び出しを明示的に同期することによって、同じ MDL に対して**MmGetSystemAddressForMdlSafe**を複数回呼び出すことができます。
 
-ドライバーを使用して、要求をより小さな要求に分割する必要があります、ドライバーは、追加の MDLs を割り当てることができます、または、ドライバーを使用して、 **IoBuildPartialMdl**ルーチン。
+ドライバーが要求を小さい要求に分割する必要がある場合、ドライバーは追加の MDLs を割り当てることができます。また、ドライバーは**Iobuildpartialmdl**ルーチンを使用できます。
 
-返されるベース アドレスが、MDL 仮想アドレスとして同じオフセット。
+返されるベースアドレスのオフセットは、MDL 内の仮想アドレスと同じです。
 
-Windows 98 はサポートしていません**MmGetSystemAddressForMdlSafe**します。 使用[ **MmGetSystemAddressForMdl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmgetsystemaddressformdl)代わりにします。
+Windows 98 では、 **MmGetSystemAddressForMdlSafe**はサポートされていません。 代わりに[**MmGetSystemAddressForMdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmgetsystemaddressformdl)を使用してください。
 
-このマクロを呼び出すため[ **MmMapLockedPagesSpecifyCache**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmmaplockedpagesspecifycache)、それを使用して NtosKrnl.lib へのリンクが必要があります。
+このマクロは[**MmMapLockedPagesSpecifyCache**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmmaplockedpagesspecifycache)を呼び出すため、これを使用するには、ntoskrnl.exe へのリンクが必要になることがあります。
 
-Windows 2000 以降を使用できます。
+Windows 2000 以降で使用できます。
 
-IRQL &LT; = DISPATCH_LEVEL
+IRQL < = DISPATCH_LEVEL
 
 
 ## <a name="mminitializemdl"></a>**MmInitializeMdl**
 
-定義されています。Wdm.h
+定義されている:Wdm
 
-**MmInitializeMdl**マクロが、MDL のヘッダーを初期化します。
+**MmInitializeMdl**マクロは、MDL のヘッダーを初期化します。
 
-_MemoryDescriptorList [in]_
+_Memory記述子の一覧 [in]_
 
 **PMDL**
 
-MDL として初期化するために、バッファーへのポインター。 詳細については、次のセクションを参照してください。
+MDL として初期化するバッファーへのポインター。 詳細については、次のセクションを参照してください。
 
 _BaseVa [in]_
 
 **PVOID**
 
-バッファーの基本の仮想アドレスへのポインター。
+バッファーのベース仮想アドレスへのポインター。
 
-_[In] 長_
+_長さ [入力]_
 
 **SIZE_T**
 
-MDL して説明を取得するバッファーのバイト単位の長さを指定します。 このルーチンには、MAXULONG バイトの最大のバッファー長がサポートしています。
+MDL によって記述されるバッファーの長さをバイト単位で指定します。 このルーチンは、MAXULONG バイトの最大バッファー長をサポートしています。
 
 **戻り値**
 
-**VOID**
+**無効化**
 
-バッファーを_MemoryDescriptorList_非ページ メモリ内へのポインターを割り当てる必要があります。 このバッファーのバイト単位のサイズは以上である必要があります**sizeof**(MDL) + **sizeof**(PFN_NUMBER)**ADDRESS_AND_SIZE_TO_SPAN_PAGES**(_BaseVa_、_長さ_)。
+_Memory記述子のリスト_が指すバッファーは、ページングされていないメモリに割り当てられている必要があります。 このバッファーのサイズ (バイト単位) は、少なくとも**sizeof**(MDL) + **sizeof**(PFN_NUMBER)**ADDRESS_AND_SIZE_TO_SPAN_PAGES**(_baseva_, _Length_) である必要があります。
 
-Windows 2000 および以降のバージョンの Windows で使用できます。
+Windows 2000 以降のバージョンの Windows で使用できます。
 
-IRQL &LT; = DISPATCH_LEVEL
+IRQL < = DISPATCH_LEVEL
 
 
-## <a name="mmpreparemdlforreuse"></a>**MmPrepareMdlForReuse**
+## <a name="mmpreparemdlforreuse"></a>**MmPrepareMdlForReuse 利用**
 
-定義されています。Wdm.h
+定義されている:Wdm
 
-**MmPrepareMdlForReuse**マクロが MDL を再利用できるように部分的な MDL に関連付けられているリソースを解放します。
+**Mmare Mdlfor再利用**マクロは、部分的な mdl に関連付けられているリソースを解放して、mdl を再利用できるようにします。
 
-_[In] Mdl_
+_Mdl [in]_
 
 **PMDL**
 
-再利用するための準備が部分的な MDL へのポインター。
+再利用のために準備される部分的な MDL へのポインター。
 
 **戻り値**
 
-**VOID**
+**無効化**
 
-このマクロは繰り返しの同じ割り当てられた MDL を使用するドライバーを使用、 _TargetMdl_への呼び出しのパラメーター、 [ **IoBuildPartialMdl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iobuildpartialmdl)ルーチン。 呼び出しの場合、 **MmPrepareMdlForReuse**、指定した部分的な MDL は、システム アドレス空間に関連付けられているマッピングを持つ**MmPrepareMdlForReuse** MDL を再利用できるように、マッピングを解放します。
+このマクロは、 [**Iobuildpartialmdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iobuildpartialmdl)ルーチンの呼び出しで、 _targetmdl_パラメーターに割り当てられた同じ MDL を繰り返し使用するドライバーによって使用されます。 **Mmpreparemdlforreuse 利用**の呼び出しで、指定された部分的な mdl がシステムアドレス空間に関連付けられているマッピングを持っている場合、 **Mmpreparemdlforreuse 利用**によってマッピングが解放され、MDL を再利用できるようになります。
 
-**MmPrepareMdlForReuse**してビルドされる部分的な MDLs のみを受け入れる**IoBuildPartialMdl**します。 場合**MmPrepareMdlForReuse**受信システム アドレス空間にマップされますがビルドされませんでしたが、MDL **IoBuildPartialMdl**、 **MmPrepareMdlForReuse**によって解放されません。マッピングと、チェックのビルドが原因で失敗するアサーション。
+**Mmare Mdlfor再利用**では、 **Iobuildpartialmdl**によって構築された一部の mdls のみが受け入れられます。 **Mmpreparemdlforreuse 利用**がシステムアドレス空間にマップされているが、 **Iobuildpartialmdl**によって構築されていない MDL を受信した場合、 **Mm/mdlfor再利用**によってマッピングが解放されず、チェックされたビルドでアサーションが失敗します。
 
-部分的な MDLs の詳細については、次を参照してください。[を使用して MDLs](using-mdls.md)します。
+部分 MDLs の詳細については、「 [MDLs の使用](using-mdls.md)」を参照してください。
 
-Windows 2000 および以降のバージョンの Windows で使用できます。
+Windows 2000 以降のバージョンの Windows で使用できます。
 
-IRQL &LT; = DISPATCH_LEVEL
+IRQL < = DISPATCH_LEVEL
 
 
-## <a name="pagealign"></a>**PAGE_ALIGN**
+## <a name="page_align"></a>**PAGE_ALIGN**
 
-定義されています。Wdm.h
+定義されている:Wdm
 
-**PAGE_ALIGN**マクロは、特定の仮想アドレスのページで固定された仮想アドレスを返します。
+**PAGE_ALIGN**マクロは、指定された仮想アドレスに対してページを固定した仮想アドレスを返します。
 
-_Va [in]_
+_Va [入力]_
 
 **PVOID**
 
@@ -473,396 +473,396 @@ _Va [in]_
 
 **PVOID**
 
-## <a name="pagealign-returns-a-pointer-to-the-page-aligned-virtual-address"></a>**PAGE_ALIGN**  ページで固定された仮想アドレスへのポインターを返します。
+## <a name="page_align-returns-a-pointer-to-the-page-aligned-virtual-address"></a>**PAGE_ALIGN**は、ページを固定した仮想アドレスへのポインターを返します。
 
-Windows 2000 以降を使用できます。
+Windows 2000 以降で使用できます。
 
-IRQL:任意のレベル
-
-
-## <a name="pagedcode"></a>**PAGED_CODE**
-
-定義されています。Wdm.h
-
-**PAGED_CODE**マクロによりページングを許可するようにできるほど十分に低い IRQL で呼び出し元のスレッドが実行されているようになります。
-
-**戻り値**
-
-**VOID**
-
-場合は、IRQL > APC_LEVEL、 **PAGED_CODE**マクロと、システムはアサートします。
-
-ページング可能なコードが含まれていますか、ページング可能なコードにアクセスするすべてのドライバー ルーチンの先頭には、このマクロに呼び出しを行う必要があります。
-
-**PAGED_CODE**マクロは、ドライバーのコードがマクロを実行するポイントでのみ IRQL を確認します。 その後、コードには、IRQL が発生した場合、マクロには、この変更は検出されません。 ドライバー開発者が使用する必要があります[Static Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier)と[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)ドライバー ルーチンの実行中に、IRQL が不適切に発生したときを検出します。
-
-**PAGED_CODE**マクロがチェック ビルドでのみ機能します。
-
-Windows 2000 以降を使用できます。
+IRQL任意のレベル
 
 
-## <a name="pagedcodelocked"></a>**PAGED_CODE_LOCKED**
+## <a name="paged_code"></a>**PAGED_CODE**
 
-定義されています。Wdm.h
+定義されている:Wdm
 
-**PAGED_CODE_LOCKED**マクロは、現在実行中のコード セクションをページングする必要がありますロックされているメモリにそれを実行する前に、をアサートします。
+**PAGED_CODE**マクロは、呼び出し元のスレッドが、ページングを許可するのに十分な数の IRQL で実行されていることを確認します。
 
 **戻り値**
 
-**VOID**
+**無効化**
 
-ページング可能なコードが特定の制限に従う必要があります (IRQL など < = APC_LEVEL) にロックされていることがない限り、します。 ページング可能なルーチンを正常にロックする必要がありますがへの呼び出しで開始する必要があります**PAGED_CODE_LOCKED**します。
+IRQL > APC_LEVEL の場合、 **PAGED_CODE**マクロによってシステムがアサートされます。
 
-所定の位置にコード セクションのロックの詳細については、次を参照してください。[ページング可能なコードをロックまたはデータ](locking-pageable-code-or-data.md)します。
+このマクロの呼び出しは、ページング可能なコードを含むか、ページング可能なコードにアクセスするすべてのドライバールーチンの先頭で行う必要があります。
+
+**PAGED_CODE**マクロは、ドライバーコードがマクロを実行するポイントでのみ、IRQL をチェックします。 その後、コードによって IRQL が発生した場合、マクロはこの変更を検出しません。 ドライバー開発者は、ドライバールーチンの実行中に IRQL が不適切に発生したことを検出するために、[静的ドライバー検証ツール](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier)と[ドライバー検証ツール](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)を使用する必要があります。
+
+**PAGED_CODE**マクロは、チェックされたビルドでのみ機能します。
+
+Windows 2000 以降で使用できます。
+
+
+## <a name="paged_code_locked"></a>**PAGED_CODE_LOCKED**
+
+定義されている:Wdm
+
+**PAGED_CODE_LOCKED**マクロは、現在実行中のコードセクションがページング可能であり、実行される前にメモリにロックされている必要があることをアサートします。
+
+**戻り値**
+
+**無効化**
+
+ページング可能なコードは、ロックされていない限り、特定の制限 (IRQL < = APC_LEVEL など) に従う必要があります。 正常に動作するために適切にロックする必要があるページング可能なルーチンは、 **PAGED_CODE_LOCKED**の呼び出しから開始する必要があります。
+
+コードセクションを適切にロックする方法の詳細については、「ページング可能な[コードまたはデータのロック](locking-pageable-code-or-data.md)」を参照してください。
 
 
 ## <a name="posetdevicebusy"></a>**PoSetDeviceBusy**
 
-定義されています。Wdm.h
+定義されている:Wdm
 
-**PoSetDeviceBusy**マクロの通知、[電源マネージャー](power-manager.md)デバイスが関連付けられている_IdlePointer_がビジー状態です。
+**Posetdevicebusy**マクロは、 _IdlePointer_に関連付けられているデバイスがビジー状態であることを[電源マネージャー](power-manager.md)に通知します。
 
-_IdlePointer [で, out]_
+_IdlePointer [in, out]_
 
-**PULONG**
+**このように**
 
-以外を指定**NULL**アイドル状態のポインターによって以前返された[ **PoRegisterDeviceForIdleDetection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-poregisterdeviceforidledetection)します。 なお**PoRegisterDeviceForIdleDetection**返す可能性があります、 **NULL**ポインター。 呼び出し元**PoSetDeviceBusy**以外、ポインターがあることを確認する必要があります**NULL**に渡す前に**PoSetDeviceBusy**します。
+以前に[**PoRegisterDeviceForIdleDetection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-poregisterdeviceforidledetection)によって返された**NULL**以外のアイドルポインターを指定します。 **PoRegisterDeviceForIdleDetection**は**NULL**ポインターを返す場合があることに注意してください。 **Posetdevicebusy**の呼び出し元は、ポインターが**NULL**でないことを確認してから**posetdevicebusy**に渡す必要があります。
 
 **戻り値**
 
-**VOID**
+**無効化**
 
-**注**、 [ **PoSetDeviceBusyEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-posetdevicebusyex)ルーチンの代わりとして、 **PoSetDeviceBusy**マクロ。 Windows Vista Service Pack 1 (SP1)、以降のバージョンの Windows の新しいドライバーのコードを記述する場合は、呼び出す**PoSetDeviceBusyEx**の代わりに**PoSetDeviceBusy**します。
+**メモ**[**PoSetDeviceBusyEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-posetdevicebusyex)ルーチンは、 **Posetdevicebusy**マクロを直接置換したものです。 Windows Vista Service Pack 1 (SP1) 以降のバージョンの Windows 用の新しいドライバーコードを作成する場合は、 **Posetdevicebusy**ではなく**PoSetDeviceBusyEx**を呼び出します。
 
-ドライバーを使用して**PoSetDeviceBusy**と共に**PoRegisterDeviceForIdleDetection**システム、デバイスのアイドル状態の検出を有効にします。 電源マネージャーが送信アイドル状態の検出のために登録されているデバイスがアイドル状態になった場合、 [ **IRP_MN_SET_POWER** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-set-power)デバイスを要求されたスリープ状態にする要求。
+ドライバーは、 **Posetdevicebusy**と**PoRegisterDeviceForIdleDetection**を使用して、デバイスのシステムアイドル検出を有効にします。 アイドル検出用に登録されているデバイスがアイドル状態になると、電源マネージャーは[**IRP_MN_SET_POWER**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-set-power)要求を送信して、要求されたスリープ状態にデバイスを配置します。
 
-**PoSetDeviceBusy**電源マネージャーがアイドル状態にカウント ダウンを再起動できるように、デバイスがビジー状態であるかを報告します。 場合は、デバイスは、電源が入っていない**PoSetDeviceBusy**その状態は変更されません。 つまり、電源オン要求を送信するシステムは発生しません。
+**Posetdevicebusy**は、デバイスがビジー状態であることを報告し、電源マネージャーがアイドル状態のカウントダウンを再開できるようにします。 デバイスの電源が入っていない場合、 **Posetdevicebusy**はその状態を変更しません。 つまり、システムが電源オン要求を送信することはありません。
 
-ドライバーを呼び出す必要があります**PoSetDeviceBusy** I/O 要求ごとにします。
+ドライバーは、すべての i/o 要求で**Posetdevicebusy**を呼び出す必要があります。
 
-Windows 2000 以降を使用できます。
+Windows 2000 以降で使用できます。
 
-IRQL:任意のレベル
+IRQL任意のレベル
 
 
 ## <a name="psgetcurrentprocess"></a>**PsGetCurrentProcess**
 
-定義されています。Ntddk.h
+定義されている:Ntddk
 
 現在のスレッドのプロセスへのポインターを返します。
 
 **戻り値**
 
-プロセスの不透明なオブジェクトへのポインター。
+不透明なプロセスオブジェクトへのポインター。
 
 
 
-Windows 2000 以降を使用できます。
+Windows 2000 以降で使用できます。
 
-IRQL:任意のレベル
+IRQL任意のレベル
 
 
-## <a name="readregisterbufferulong64"></a>**READ_REGISTER_BUFFER_ULONG64**
+## <a name="read_register_buffer_ulong64"></a>**READ_REGISTER_BUFFER_ULONG64**
 
-定義されています。Wdm.h
+定義されている:Wdm
 
-**READ_REGISTER_BUFFER_ULONG64**マクロは、バッファーに指定されたレジスタ アドレスから ULONG64 値の数を読み取ります。
+**READ_REGISTER_BUFFER_ULONG64**マクロは、指定されたレジスタアドレスから多数の ULONG64 値をバッファーに読み込みます。
 
-_[In] 登録します。_
-
-**PULONG64**
-
-メモリ領域でマップされた範囲である必要があります、レジスタへのポインター。
-
-_バッファー [out]_
+_レジスタ [in]_
 
 **PULONG64**
 
-ULONG64 値の配列に読み取られるバッファーへのポインター。
+レジスタへのポインター。これは、メモリ空間内のマップされた範囲である必要があります。
 
-_[In] カウントします。_
+_Buffer [out]_
+
+**PULONG64**
+
+ULONG64 値の配列が読み込まれるバッファーへのポインター。
+
+_カウント [入力]_
 
 **ULONG**
 
-バッファーに読み取る ULONG64 値の数を指定します。
+バッファーに読み込む ULONG64 値の数を指定します。
 
 **戻り値**
 
-**VOID**
+**無効化**
 
-サイズ、_バッファー_バッファーは、少なくとも ULONG64 値の指定した数を格納するのに十分な大きさである必要があります。
+_バッファー_バッファーのサイズは、少なくとも指定した数の ULONG64 値を格納するのに十分な大きさである必要があります。
 
-呼び出し元、 **READ_REGISTER_BUFFER_ULONG64**マクロ実行できる任意の IRQL であると仮定して、_バッファー_バッファーが常駐し、_登録_レジスタは、常駐デバイスのメモリをマップします。
+**READ_REGISTER_BUFFER_ULONG64**マクロの呼び出し元は、_バッファー_バッファーが常駐し、_レジスタ_レジスタが常駐し、マップされたデバイスメモリであることを前提として、任意の IRQL で実行できます。
 
-Windows の 64 ビット バージョンでのみ使用できます。
+64ビットバージョンの Windows でのみ使用できます。
 
-IRQL:任意のレベル
+IRQL任意のレベル
 
 
-## <a name="readregisterulong64"></a>**READ_REGISTER_ULONG64**
+## <a name="read_register_ulong64"></a>**READ_REGISTER_ULONG64**
 
-定義されています。Wdm.h
+定義されている:Wdm
 
-**READ_REGISTER_ULONG64**マクロは、指定されたレジスタ アドレスから ULONG64 値を読み取ります。
+**READ_REGISTER_ULONG64**マクロは、指定されたレジスタアドレスから ULONG64 値を読み取ります。
 
-_volatile * [in] 登録_
+_volatile * レジスタ [in]_
 
 **ULONG64**
 
-メモリ領域でマップされた範囲である必要がありますレジスタ アドレスへのポインター。
+レジスタアドレスへのポインター。これは、メモリ空間内のマップされた範囲である必要があります。
 
 **戻り値**
 
 **ULONG64**
 
-**READ_REGISTER_ULONG64**レジスタが指定したアドレスから読み取られる ULONG64 値を返します。
+**READ_REGISTER_ULONG64**は、指定されたレジスタアドレスから読み取られた ULONG64 値を返します。
 
-呼び出し元、 **READ_REGISTER_ULONG64**マクロは、任意の IRQL で実行できると仮定すると、_登録_アドレスが常駐する、マップされたデバイスのメモリ。
+**READ_REGISTER_ULONG64**マクロの呼び出し元は、_レジスタ_アドレスが常駐、マップされたデバイスメモリであることを前提として、任意の IRQL で実行できます。
 
-Windows の 64 ビット バージョンでのみ使用できます。
+64ビットバージョンの Windows でのみ使用できます。
 
-IRQL:任意のレベル
+IRQL任意のレベル
 
 
-## <a name="roundtopages"></a>**ROUND_TO_PAGES**
+## <a name="round_to_pages"></a>**ROUND_TO_PAGES**
 
-定義されています。Wdm.h
+定義されている:Wdm
 
-**ROUND_TO_PAGES**マクロ サイズ (バイト単位) を受け取り、次の完全なページまでに四捨五入します。
+**ROUND_TO_PAGES**マクロはバイト単位のサイズを取得し、次の完全なページに切り上げます。
 
-_[In] のサイズ_
+_サイズ [入力]_
 
 **ULONG_PTR**
 
-ページに切り上げられることをバイト単位でサイズを指定します。 複数。
+複数のページに切り上げたサイズをバイト単位で指定します。
 
 **戻り値**
 
 **ULONG_PTR**
 
-**ROUND_TO_PAGES**入力サイズが現在のプラットフォームの仮想メモリのページ サイズの倍数に切り上げを返します。
+**ROUND_TO_PAGES**は、現在のプラットフォームの仮想メモリページサイズの倍数に切り上げられた入力サイズを返します。
 
-呼び出し元**ROUND_TO_PAGES** IRQL で実行されていることができます。 呼び出し元は、指定したパラメーターは、メモリのオーバーフローで発生することはできませんを確認してください。
+**ROUND_TO_PAGES**の呼び出し元は、任意の IRQL で実行できます。 呼び出し元は、指定されたパラメーターがメモリオーバーフローを発生させることができないようにする必要があります。
 
-IRQL:任意のレベル
+IRQL任意のレベル
 
 
 ## <a name="rtlequalluid"></a>**RtlEqualLuid**
 
-定義されています。Wdm.h
+定義されている:Wdm
 
 **戻り値**
 
-Windows 2000 以降を使用できます。
+Windows 2000 以降で使用できます。
 
-IRQL:任意のレベル
+IRQL任意のレベル
 
 
 ## <a name="rtlinitemptyansistring"></a>**RtlInitEmptyAnsiString**
 
-定義されています。Wdm.h
+定義されている:Wdm
 
-**RtlInitEmptyAnsiString**マクロが空のカウントされた ANSI 文字列を初期化します。
+**RtlInitEmptyAnsiString**マクロは、空のカウントされた ANSI 文字列を初期化します。
 
-_[Out] DestinationString_
+_DestinationString [out]_
 
 **PANSI_STRING**
 
-ポインター、 [ **ANSI_STRING** ](https://docs.microsoft.com/windows/desktop/api/ntdef/ns-ntdef-_string)構造体を初期化します。
+初期化される[**ANSI_STRING**](https://docs.microsoft.com/windows/desktop/api/ntdef/ns-ntdef-_string)構造体へのポインター。
 
-_[In] バッファーします。_
+_バッファー [入力]_
 
 **PCHAR**
 
-WCHAR 文字列を含めるために使用する呼び出し元が割り当てたバッファーへのポインター。
+WCHAR 文字列を格納するために使用される、呼び出し元に割り当てられたバッファーへのポインター。
 
-_[In] BufferSize_
+_BufferSize [in]_
 
 **USHORT**
 
-バッファーのバイト単位の長さを_バッファー_を指します。
+_バッファー_が指すバッファーの長さ (バイト単位)。
 
 **戻り値**
 
-**VOID**
+**無効化**
 
-構造体のメンバーを_DestinationString_パラメーターが指すには次のように初期化されます。
+_Destinationstring_パラメーターが指す構造体のメンバーは、次のように初期化されます。
 
-*   **長さ**します。 0 を返します。
+*   **長さ**。 回.
 
-*   **MaximumLength**します。 _BufferSize_します。
+*   **Maximumlength**。 _BufferSize_。
 
-*   **バッファー**します。 _SourceString_します。
+*   **バッファー**。 _Sourcestring_。
 
-空でないカウント Unicode 文字列を初期化するために呼び出す[ **RtlInitAnsiString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-rtlinitansistring)します。
+空でないカウントされた Unicode 文字列を初期化するには、 [**RtlInitAnsiString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-rtlinitansistring)を呼び出します。
 
-Microsoft Windows XP および Windows の以降のバージョンで使用できます。
+Microsoft Windows XP 以降のバージョンの Windows で使用できます。
 
-IRQL:任意のレベル
+IRQL任意のレベル
 
 
 ## <a name="rtlinitemptyunicodestring"></a>**RtlInitEmptyUnicodeString**
 
-定義されています。Wdm.h
+定義されている:Wdm
 
-**RtlInitEmptyUnicodeString**マクロが、空の Unicode 文字列のカウントを初期化します。
+**RtlInitEmptyUnicodeString**マクロは、空のカウントされた Unicode 文字列を初期化します。
 
-_[Out] DestinationString_
+_DestinationString [out]_
 
 **PUNICODE_STRING**
 
-ポインター、 [ **UNICODE_STRING** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfwdm/ns-wudfwdm-_unicode_string)構造体を初期化します。
+初期化される[**UNICODE_STRING**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfwdm/ns-wudfwdm-_unicode_string)構造体へのポインター。
 
-_[In] バッファーします。_
+_バッファー [入力]_
 
 **PWCHAR**
 
-WCHAR 文字列を含めるために使用する呼び出し元が割り当てたバッファーへのポインター。
+WCHAR 文字列を格納するために使用される、呼び出し元に割り当てられたバッファーへのポインター。
 
-_[In] BufferSize_
+_BufferSize [in]_
 
 **USHORT**
 
-バッファーのバイト単位の長さを_バッファー_を指します。
+_バッファー_が指すバッファーの長さ (バイト単位)。
 
 **戻り値**
 
-**VOID**
+**無効化**
 
-構造体のメンバーを_DestinationString_パラメーターが指すは次のように初期化されます。
+_Destinationstring_パラメーターが指す構造体のメンバーは、次のように初期化されます。
 
-*   **長さ**します。 0 を返します。
+*   **長さ**。 回.
 
-*   **MaximumLength**します。 _BufferSize_します。
+*   **Maximumlength**。 _BufferSize_。
 
-*   **バッファー**します。 _SourceString_します。
+*   **バッファー**。 _Sourcestring_。
 
-空でないカウント Unicode 文字列を初期化するために呼び出す[ **RtlInitUnicodeString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-rtlinitunicodestring)します。
+空でないカウントされた Unicode 文字列を初期化するには、 [**RtlInitUnicodeString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-rtlinitunicodestring)を呼び出します。
 
-Windows xp 以降を使用できます。
+Windows XP 以降で使用できます。
 
-IRQL:任意のレベル
+IRQL任意のレベル
 
 
 ## <a name="rtliszeroluid"></a>**RtlIsZeroLuid**
 
-定義されています。Ntddk.h
+定義されている:Ntddk
 
-**RtlIsZeroLuid**マクロの場合、指定の LUID がゼロ LUID であるかどうか。
+**RtlIsZeroLuid**マクロは、指定された luid が 0 luid であるかどうかを判断します。
 
-_[In] L1_
+_L1 [in]_
 
 **PLUID**
 
-指定します、 [ **LUID** ](https://docs.microsoft.com/windows/desktop/api/ntdef/ns-ntdef-_luid)を確認します。
+確認する[**LUID**](https://docs.microsoft.com/windows/desktop/api/ntdef/ns-ntdef-_luid)を指定します。
 
 **戻り値**
 
-**ブール値**
+**演算**
 
-**RtlIsZeroLuid**返します**TRUE**場合_L1_は 0 を返します**FALSE**それ以外の場合。
+**RtlIsZeroLuid**は、 _L1_が0の場合は**TRUE**を返し、それ以外の場合は**FALSE**を返します。
 
-IRQL:任意のレベル
+IRQL任意のレベル
 
 
 ## <a name="rtlretrieveulong"></a>**RtlRetrieveUlong**
 
-定義されています。Wdm.h
+定義されている:Wdm
 
-**RtlRetrieveUlong**マクロは、配置エラーを回避するには、ソース アドレスから ULONG 値を取得します。 送信先アドレスは、配置すると見なされます。
+**RtlRetrieveUlong**マクロは、ソースアドレスから ULONG 値を取得し、アラインメントエラーを回避します。 宛先アドレスは、アラインされていると見なされます。
 
 _DestinationAddress [out]_
 
-**PULONG**
+**このように**
 
-ULONG 値を格納する ULONG で固定された場所へのポインター。
+ULONG 値を格納する、ULONG でアラインメントされた場所へのポインター。
 
 _SourceAddress [in]_
 
-**PULONG**
+**このように**
 
 ULONG 値の取得元の場所へのポインター。
 
 **戻り値**
 
-**VOID**
+**無効化**
 
-呼び出し元**RtlRetrieveUlong**特定のアドレスは、非ページ プールの場合は、IRQL で実行できます。 それ以外の場合、呼び出し元は IRQL で実行する必要があります < APC_LEVEL を = です。
+指定されたアドレスが非ページプールに存在する場合、 **RtlRetrieveUlong**の呼び出し元は任意の IRQL で実行できます。 それ以外の場合、呼び出し元は IRQL < = APC_LEVEL で実行されている必要があります。
 
-Windows 2000 および以降のバージョンの Windows で使用できます。
+Windows 2000 以降のバージョンの Windows で使用できます。
 
 
 ## <a name="rtlretrieveushort"></a>**RtlRetrieveUshort**
 
-定義されています。Wdm.h
+定義されている:Wdm
 
-**RtlRetrieveUshort**マクロは、配置エラーを回避するには、ソース アドレスから USHORT の値を取得します。
+**RtlRetrieveUshort**マクロは、ソースアドレスから USHORT 値を取得し、アラインメントエラーを回避します。
 
 _DestinationAddress [out]_
 
 **PUSHORT**
 
-USHORT で固定された値を格納する場所へのポインター。
+値を格納する USHORT 位置に配置された位置を指すポインター。
 
 _SourceAddress [in]_
 
 **PUSHORT**
 
-元の値を取得する場所へのポインター。
+値の取得元の場所へのポインター。
 
 **戻り値**
 
-**VOID**
+**無効化**
 
-呼び出し元**RtlRetrieveUshort**特定のアドレスは、非ページ プールの場合は、IRQL で実行できます。 それ以外の場合、呼び出し元は IRQL で実行する必要があります < APC_LEVEL を = です。
+指定されたアドレスが非ページプールに存在する場合、 **RtlRetrieveUshort**の呼び出し元は任意の IRQL で実行できます。 それ以外の場合、呼び出し元は IRQL < = APC_LEVEL で実行されている必要があります。
 
-Windows 2000 および以降のバージョンの Windows で使用できます。
+Windows 2000 以降のバージョンの Windows で使用できます。
 
-IRQL:任意のレベル
+IRQL任意のレベル
 
 
 ## <a name="rtlstoreulong"></a>**RtlStoreUlong**
 
-定義されています。Wdm.h
+定義されている:Wdm
 
-**RtlStoreUlong**マクロには、特定のアドレスで配置エラーを回避する ULONG 値が格納されます。
+**RtlStoreUlong**マクロは、特定のアドレスに ULONG 値を格納し、アラインメントエラーを回避します。
 
-_[Out] アドレス_
+_アドレス [out]_
 
-**PULONG**
+**このように**
 
-指定した ULONG 値を格納する場所へのポインター。
+指定された ULONG 値を格納する場所へのポインター。
 
-_[In] 値します。_
+_値 [入力]_
 
 **ULONG**
 
-格納される ULONG 値を指定します。
+格納する ULONG 値を指定します。
 
 **戻り値**
 
-**VOID**
+**無効化**
 
-場合、呼び出し元は、IRQL で実行できる_アドレス_非ページ プールにポイントします。 それ以外の場合、呼び出し元は IRQL で実行する必要があります < APC_LEVEL を = です。
+_アドレス_が非ページプールを指している場合、呼び出し元は任意の IRQL で実行できます。 それ以外の場合、呼び出し元は IRQL < = APC_LEVEL で実行されている必要があります。
 
-Windows 2000 および以降のバージョンの Windows で使用できます。
+Windows 2000 以降のバージョンの Windows で使用できます。
 
-IRQL:任意のレベル
+IRQL任意のレベル
 
 
 ## <a name="rtlstoreulonglong"></a>**RtlStoreUlonglong**
 
-定義されています。Wdm.h
+定義されている:Wdm
 
-**RtlStoreUlonglong**マクロは、メモリ配置エラーを回避するには、指定されたメモリ アドレスに指定の ULONGLONG 値を格納します。
+**RtlStoreUlonglong**マクロは、指定された ULONGLONG 値を指定されたメモリアドレスに格納し、メモリアラインメントエラーを回避します。
 
-_[Out] アドレス_
+_アドレス [out]_
 
 **PULONGLONG**
 
-指定した ULONGLONG 値を格納する場所へのポインター。
+指定された ULONGLONG 値を格納する場所へのポインター。
 
-_[In] 値します。_
+_値 [入力]_
 
 **ULONGLONG**
 
@@ -870,96 +870,96 @@ _[In] 値します。_
 
 **戻り値**
 
-**VOID**
+**無効化**
 
-**RtlStoreUlonglong**メモリ配置エラーを回避できます。 によってアドレスが指定されている場合_アドレス_を使いの記憶域の要件に固定されていない**RtlStoreUlonglong**のバイト数を格納_値_メモリから始まる場所 (PUCHAR)_アドレス_します。
+**RtlStoreUlonglong**は、メモリアラインメントエラーを回避します。 _アドレス_によって指定されたアドレスが ULONGLONG のストレージ要件に適合しない場合、 **RtlStoreUlonglong**はメモリ位置 (puchar)_アドレス_で始まる_値_のバイトを格納します。
 
-**RtlStoreUlonglong**場合は、任意の IRQL で実行_アドレス_非ページ プールは; を指す IRQL で実行する必要があります、それ以外の場合、< APC_LEVEL を = です。
+**RtlStoreUlonglong**は、_アドレス_が非ページプールを指している場合、任意の IRQL で実行されます。それ以外の場合は、IRQL < = APC_LEVEL で実行する必要があります。
 
-Windows 2000 以降を使用できます。
+Windows 2000 以降で使用できます。
 
-IRQL:任意のレベル
+IRQL任意のレベル
 
 
 ## <a name="rtlstoreulongptr"></a>**RtlStoreUlongPtr**
 
-定義されています。Wdm.h
+定義されている:Wdm
 
-**RtlStoreUlongPtr**マクロはメモリ配置エラーを回避するには、指定したメモリ位置に指定した ULONG_PTR 値を格納します。
+**RtlStoreUlongPtr**マクロは、指定された ULONG_PTR 値を指定されたメモリ位置に格納し、メモリアラインメントエラーを回避します。
 
-_[Out] アドレス_
+_アドレス [out]_
 
 **PULONG_PTR**
 
 ULONG_PTR 値を格納する場所へのポインター。
 
-_[In] 値します。_
+_値 [入力]_
 
 **ULONG_PTR**
 
-格納される ULONG_PTR 値を指定します。
+格納する ULONG_PTR 値を指定します。
 
 **戻り値**
 
-**VOID**
+**無効化**
 
-**RtlStoreUlongPtr**メモリ配置エラーを回避できます。 場合の値_アドレス_、ULONG_PTR の記憶域の要件に固定されていない**RtlStoreUlongPtr**のバイト数を格納_値_メモリの場所 (先頭PUCHAR)_アドレス_します。
+**RtlStoreUlongPtr**は、メモリアラインメントエラーを回避します。 _Address_の値が ULONG_PTR のストレージ要件に一致しない場合、 **RtlStoreUlongPtr**はメモリ位置 (puchar)_アドレス_で始まる_値_のバイトを格納します。
 
-**RtlStoreUlongPtr**場合は、任意の IRQL で実行_アドレス_非ページ プールは; を指す IRQL で実行する必要があります、それ以外の場合 < APC_LEVEL を = です。
+**RtlStoreUlongPtr**は、_アドレス_が非ページプールを指している場合、任意の IRQL で実行されます。それ以外の場合は、IRQL < = APC_LEVEL で実行する必要があります。
 
-Windows 2000 および以降のバージョンの Windows で使用できます。
+Windows 2000 以降のバージョンの Windows で使用できます。
 
-IRQL:任意のレベル
+IRQL任意のレベル
 
 
 ## <a name="rtlstoreushort"></a>**RtlStoreUshort**
 
-定義されています。Wdm.h
+定義されている:Wdm
 
-**RtlStoreUshort**マクロには、配置エラーを回避するには、特定のアドレスに USHORT の値が格納されます。
+**Rtlstoreushort**マクロは、特定のアドレスに USHORT 値を格納し、アラインメントエラーを回避します。
 
-_[Out] アドレス_
+_アドレス [out]_
 
 **PUSHORT**
 
 指定した USHORT 値を格納する場所へのポインター。
 
-_[In] 値します。_
+_値 [入力]_
 
 **USHORT**
 
-格納される USHORT 値を指定します。
+格納する USHORT 値を指定します。
 
 **戻り値**
 
-**VOID**
+**無効化**
 
-場合、呼び出し元は、IRQL で実行できる_アドレス_非ページ プールにポイントします。 それ以外の場合、呼び出し元は IRQL で実行する必要があります < APC_LEVEL を = です。
+_アドレス_が非ページプールを指している場合、呼び出し元は任意の IRQL で実行できます。 それ以外の場合、呼び出し元は IRQL < = APC_LEVEL で実行されている必要があります。
 
-Windows 2000 および以降のバージョンの Windows で使用できます。
+Windows 2000 以降のバージョンの Windows で使用できます。
 
-IRQL:任意のレベル
+IRQL任意のレベル
 
 
-## <a name="writeregisterbufferulong64"></a>**WRITE_REGISTER_BUFFER_ULONG64**
+## <a name="write_register_buffer_ulong64"></a>**WRITE_REGISTER_BUFFER_ULONG64**
 
-定義されています。Wdm.h
+定義されている:Wdm
 
-**WRITE_REGISTER_BUFFER_ULONG64**マクロは、指定した登録バッファーから ULONG64 値の点数を書き込みます。
+**WRITE_REGISTER_BUFFER_ULONG64**マクロは、バッファーから指定されたレジスタに多数の ULONG64 値を書き込みます。
 
-_[In] 登録します。_
-
-**PULONG64**
-
-メモリ領域でマップされた範囲である必要があります、レジスタへのポインター。
-
-_[In] バッファーします。_
+_レジスタ [in]_
 
 **PULONG64**
 
-ULONG64 値の配列に書き込まれるバッファーへのポインター。
+レジスタへのポインター。これは、メモリ空間内のマップされた範囲である必要があります。
 
-_[In] カウントします。_
+_バッファー [入力]_
+
+**PULONG64**
+
+ULONG64 値の配列が書き込まれるバッファーへのポインター。
+
+_カウント [入力]_
 
 **ULONG**
 
@@ -967,90 +967,90 @@ _[In] カウントします。_
 
 **戻り値**
 
-**VOID**
+**無効化**
 
-サイズ、_バッファー_バッファーは、少なくとも ULONG64 値の指定した数を格納するのに十分な大きさである必要があります。
+_バッファー_バッファーのサイズは、少なくとも指定した数の ULONG64 値を格納するのに十分な大きさである必要があります。
 
-呼び出し元、 **WRITE_REGISTER_BUFFER_ULONG64**マクロ実行できる任意の IRQL であると仮定して、_バッファー_バッファーが常駐し、_登録_レジスタは、常駐デバイスのメモリをマップします。
+**WRITE_REGISTER_BUFFER_ULONG64**マクロの呼び出し元は、_バッファー_バッファーが常駐し、_レジスタ_レジスタが常駐し、マップされたデバイスメモリであることを前提として、任意の IRQL で実行できます。
 
-Windows の 64 ビット バージョンでのみ使用できます。
+64ビットバージョンの Windows でのみ使用できます。
 
-IRQL:任意のレベル
+IRQL任意のレベル
 
 
-## <a name="writeregisterulong64"></a>**WRITE_REGISTER_ULONG64**
+## <a name="write_register_ulong64"></a>**WRITE_REGISTER_ULONG64**
 
-定義されています。Wdm.h
+定義されている:Wdm
 
-**WRITE_REGISTER_ULONG64**マクロは、指定したアドレスに ULONG64 値を書き込みます。
+**WRITE_REGISTER_ULONG64**マクロは、指定されたアドレスに ULONG64 値を書き込みます。
 
-_volatile * [in] 登録_
-
-**ULONG64**
-
-メモリ領域でマップされた範囲である必要があります、レジスタへのポインター。
-
-_[In] 値します。_
+_volatile * レジスタ [in]_
 
 **ULONG64**
 
-レジスタへの書き込みに ULONG64 値を指定します。
+レジスタへのポインター。これは、メモリ空間内のマップされた範囲である必要があります。
+
+_値 [入力]_
+
+**ULONG64**
+
+レジスタに書き込む ULONG64 値を指定します。
 
 **戻り値**
 
-**VOID**
+**無効化**
 
-呼び出し元、 **WRITE_REGISTER_ULONG64**マクロは、任意の IRQL で実行できると仮定すると、_登録_レジスタは、デバイスが常駐する、マップされたメモリ。
+**WRITE_REGISTER_ULONG64**マクロの呼び出し元は、_レジスタ_レジスタが常駐し、マップされたデバイスメモリであると仮定して、任意の IRQL で実行できます。
 
-Windows の 64 ビット バージョンでのみ使用できます。
+64ビットバージョンの Windows でのみ使用できます。
 
-IRQL:任意のレベル
+IRQL任意のレベル
 
 
 ## <a name="zwcurrentprocess"></a>**ZwCurrentProcess**
 
-定義されています。Wdm.h
+定義されている:Wdm
 
-**ZwCurrentProcess**マクロの現在のプロセスにハンドルを返します。
+**Zwcurrentprocess**マクロは、現在のプロセスのハンドルを返します。
 
 **戻り値**
 
-**ハンドル**
+**扱え**
 
-**ZwCurrentProcess**現在のプロセスを表す特殊なハンドル値を返します。
+**Zwcurrentprocess**は、現在のプロセスを表す特別なハンドル値を返します。
 
-返された値が true のハンドルではありませんが、常に現在のプロセスを表す特殊な値。
+戻り値は真のハンドルではありませんが、常に現在のプロセスを表す特別な値です。
 
-**NtCurrentProcess**と**ZwCurrentProcess**同じ Windows ネイティブ システム サービス ルーチンの 2 つのバージョンします。 **NtCurrentProcess** Windows カーネルのルーチンがカーネル モード ドライバーに直接アクセスします。 ただし、カーネル モード ドライバー間接的にアクセスできるこのルーチンを呼び出して**ZwCurrentProcess**します。
+**Ntcurrentprocess**と**zwcurrentprocess**は、同じ Windows ネイティブシステムサービスルーチンの2つのバージョンです。 Windows カーネルの**Ntcurrentprocess**ルーチンは、カーネルモードドライバーに直接アクセスすることはできません。 ただし、カーネルモードドライバーは、 **Zwcurrentprocess**を呼び出すことによって、このルーチンに間接的にアクセスできます。
 
-カーネル モード ドライバーからの呼び出し、 **Nt_Xxx_** と**Zw_Xxx_** のバージョンの Windows のネイティブ システム サービス ルーチンは、処理と、入力パラメーターの解釈で異なった動作できます。 間のリレーションシップの詳細については、 **Nt_Xxx_** と**Zw_Xxx_** 、ルーチンのバージョンを参照してください[を使用して Nt と Zw バージョンのネイティブ システム サービス ルーチン](using-nt-and-zw-versions-of-the-native-system-services-routines.md).
+カーネルモードドライバーからの呼び出しの場合、 **Nt_Xxx_** および**Zw_Xxx_** バージョンの Windows ネイティブシステムサービスルーチンは、入力パラメーターを処理して解釈する方法とは動作が異なります。 ルーチンの**Nt_Xxx_** バージョンと**Zw_Xxx_** バージョンの関係の詳細については、「 [Using Nt And Zw Versions Of the Native System Services ルーチン](using-nt-and-zw-versions-of-the-native-system-services-routines.md)」を参照してください。
 
-すべてのオペレーティング システムがサポートされています。
+サポートされているすべてのオペレーティングシステム。
 
-IRQL:任意のレベル
+IRQL任意のレベル
 
 
 ## <a name="zwcurrentthread"></a>**ZwCurrentThread**
 
-定義されています。Wdm.h
+定義されている:Wdm
 
-**ZwCurrentThread**マクロの現在のスレッドにハンドルを返します。
+**Zwcurrentthread**マクロは、現在のスレッドへのハンドルを返します。
 
 **戻り値**
 
-**ハンドル**
+**扱え**
 
-**ZwCurrentThread**現在のスレッドを表す特殊なハンドル値を返します。
+**Zwcurrentthread**は、現在のスレッドを表す特別なハンドル値を返します。
 
-返された値が true のハンドルではありませんが、常に、現在のスレッドを表す特殊な値。
+戻り値は真のハンドルではありませんが、常に現在のスレッドを表す特別な値です。
 
-**NtCurrentThread**と**ZwCurrentThread**同じ Windows ネイティブ システム サービス ルーチンの 2 つのバージョンします。 **NtCurrentThread** Windows カーネルのルーチンがカーネル モード ドライバーに直接アクセスします。 ただし、カーネル モード ドライバー間接的にアクセスできるこのルーチンを呼び出して、 **ZwCurrentThread**ルーチン。
+**Ntcurrentthread**と**zwcurrentthread**は、同じ Windows ネイティブシステムサービスルーチンの2つのバージョンです。 Windows カーネルの**Ntcurrentthread**ルーチンは、カーネルモードドライバーに直接アクセスすることはできません。 ただし、カーネルモードドライバーは、 **Zwcurrentthread**ルーチンを呼び出すことによって、このルーチンに間接的にアクセスできます。
 
-カーネル モード ドライバーからの呼び出し、 **Nt_Xxx_** と**Zw_Xxx_** のバージョンの Windows のネイティブ システム サービス ルーチンは、処理と、入力パラメーターの解釈で異なった動作できます。 間のリレーションシップの詳細については、 **Nt_Xxx_** と**Zw_Xxx_** 、ルーチンのバージョンを参照してください[を使用して Nt と Zw バージョンのネイティブ システム サービス ルーチン](using-nt-and-zw-versions-of-the-native-system-services-routines.md).
+カーネルモードドライバーからの呼び出しの場合、 **Nt_Xxx_** および**Zw_Xxx_** バージョンの Windows ネイティブシステムサービスルーチンは、入力パラメーターを処理して解釈する方法とは動作が異なります。 ルーチンの**Nt_Xxx_** バージョンと**Zw_Xxx_** バージョンの関係の詳細については、「 [Using Nt And Zw Versions Of the Native System Services ルーチン](using-nt-and-zw-versions-of-the-native-system-services-routines.md)」を参照してください。
 
-すべてのオペレーティング システムがサポートされています。
+サポートされているすべてのオペレーティングシステム。
 
-IRQL:任意のレベル
+IRQL任意のレベル
 
 
 
