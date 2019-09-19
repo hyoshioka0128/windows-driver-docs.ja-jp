@@ -1,47 +1,47 @@
 ---
-Description: このトピックでは、デバイス固有のレジストリ エントリを説明します。
+Description: このトピックでは、デバイス固有のレジストリエントリについて説明します。
 title: USB デバイス レジストリ エントリ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b8308e45f36a8261a2787ebbfed7160745f2e3a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 40c32d3c6b425b11ca9ffbc027611798cb51f071
+ms.sourcegitcommit: 4943143e8395db70beda5a98ad734fe1bb7068dd
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384526"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71080186"
 ---
 # <a name="usb-device-registry-entries"></a>USB デバイス レジストリ エントリ
 
 
-このトピックでは、デバイス固有のレジストリ エントリを説明します。
+このトピックでは、デバイス固有のレジストリエントリについて説明します。
 
-## <a name="find-device-information-after-it-enumerates-on-windows"></a>Windows 上に列挙した後、デバイス情報を検索します。
+## <a name="find-device-information-after-it-enumerates-on-windows"></a>Windows での列挙後にデバイス情報を検索する
 
 
-**デバイスのインターフェイス、デバイスの GUID、ハードウェア Id、およびデバイスのクラス情報を表示します。**
+**デバイスに関するデバイスインターフェイス GUID、ハードウェア Id、デバイスクラスの情報を表示します**
 
-1.  このレジストリ キーとメモを見つけ、 **DeviceInstance**値。
+1.  このレジストリキーを見つけて、 **Deviceinstance**の値をメモします。
 
-    **HKEY\_LOCAL\_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\DeviceClasses\\**
+    **HKEY\_LOCAL\_MACHINESYSTEM\\\\CurrentControlSet Control deviceclasses 制御\\\\\\**
 
     ![usb ハードウェア id](images/deviceinstance.png)
 
-2.  デバイス インスタンスのレジストリ キーを検索して、デバイス インターフェイスの GUID を取得します。
+2.  デバイスインスタンスのレジストリキーを検索し、デバイスインターフェイスの GUID を取得します。
 
-    **HKEY\_ローカル\_マシン\\システム\\CurrentControlSet\\Enum\\USB\\&lt;ハードウェア id&gt; \\ &lt;インスタンス id&gt;\\デバイス パラメーター**
+    **HKEY\_LOCAL\_MACHINESYSTEM\\CurrentControlSet\\EnumUSB\\ hardware id&gt; \\\\\\&lt;&lt;インスタンス id&gt;デバイスパラメーター\\**
 
-    ![usb デバイス インターフェイスの guid](images/device-interface-guid2.png)
+    ![usb デバイスインターフェイス guid](images/device-interface-guid2.png)
 
-3.  デバイス インスタンス キーの下のデバイス クラスやサブクラスでは、プロトコルのコードに注意してください。
+3.  デバイスインスタンスキーの下で、デバイスクラス、サブクラス、およびプロトコルコードに注意してください。
 
-    **HKEY\_LOCAL\_MACHINE\\SYSTEM\\CurrentControlSet\\Enum\\USB**
+    **HKEY\_LOCAL\_MACHINESYSTEM\\CurrentControlSet\\EnumUSB\\\\**
 
-    ![usb デバイス クラスのサブクラス プロトコル コード](images/deviceclass.png)
+    ![usb デバイスクラスサブクラスプロトコルコード](images/deviceclass.png)
 
-## <a name="registry-settings-for-configuring-usb-driver-stack-behavior"></a>USB ドライバー スタックの動作を構成するためのレジストリ設定
+## <a name="registry-settings-for-configuring-usb-driver-stack-behavior"></a>USB ドライバースタック動作を構成するためのレジストリ設定
 
 
-このトピックで説明されているレジストリ エントリはこのキーの下にあります。
+このトピックで説明するレジストリエントリは、次のキーの下にあります。
 
 ```cpp
 HKEY_LOCAL_MACHINE
@@ -53,14 +53,14 @@ HKEY_LOCAL_MACHINE
                   <Device-specific registry entry>
 ```
 
-***Vvvvpppprrrrr***キー
+***Vvvvpppprrrrr***キーで、
 
--   *vvvv*ベンダーを識別する 4 桁の 16 進数には
--   *pppp* 4 桁の 16 進数、製品を識別するには
--   *rrrr*はデバイスのリビジョン番号が含まれる 4 桁の 16 進数。
+-   *vvvv*は、ベンダーを識別する4桁の16進数です。
+-   *pppp*は、製品を識別する4桁の16進数です。
+-   *rrrr*は、デバイスのリビジョン番号を含む4桁の16進数です。
 
-ベンダー ID、製品 ID、およびリビジョン番号の値がから取得した、 [USB デバイス記述子](usb-device-descriptors.md)します。
-次の表のレジストリ エントリ、 ***vvvvpppprrrrr***キー。 USB ドライバー スタックは、読み取り専用の値としてこれらのエントリを考慮します。
+ベンダー ID、製品 ID、リビジョン番号の値は、 [USB デバイス記述子](usb-device-descriptors.md)から取得されます。
+次の表では、 ***vvvvpppprrrrr***キーに使用できるレジストリエントリについて説明します。 USB ドライバースタックは、これらのエントリを読み取り専用の値と見なします。
 
 <table>
 <colgroup>
@@ -79,31 +79,31 @@ HKEY_LOCAL_MACHINE
 <tr class="odd">
 <td><p><strong>osvc</strong></p>
 <p>REG_BINARY</p>
-<p>Windows XP 以降のバージョンでサポートされます。</p></td>
-<td><p>オペレーティング システムでのデバイスを照会するかどうかを示します<a href="microsoft-defined-usb-descriptors.md" data-raw-source="[Microsoft-Defined USB Descriptors](microsoft-defined-usb-descriptors.md)">Microsoft-Defined の USB ディスクリプター</a>します。 OS 記述子の前に試行したクエリが成功した場合、値には、OS の文字列記述子から仕入先のコードが含まれています。</p></td>
+<p>Windows XP 以降のバージョンでサポートされています。</p></td>
+<td><p>オペレーティングシステムが<a href="microsoft-defined-usb-descriptors.md" data-raw-source="[Microsoft-Defined USB Descriptors](microsoft-defined-usb-descriptors.md)">Microsoft 定義の USB 記述子</a>用にデバイスを照会したかどうかを示します。 以前に試行された OS 記述子クエリが成功した場合、値には、OS 文字列記述子のベンダーコードが含まれます。</p></td>
 <td><ul>
-<li><p>0x0000:デバイスは、Microsoft OS 文字列記述子の要求に有効な応答を提供しませんでした。</p></li>
-<li><p>0x01xx:デバイスには、xx は、Microsoft OS 文字列記述子の要求に有効な応答が提供されている、 <strong>bVendorCode</strong>応答に含まれています。</p></li>
+<li><p>0x0000デバイスは、Microsoft OS 文字列記述子要求に対して有効な応答を提供しませんでした。</p></li>
+<li><p>0x01xx:デバイスは、Microsoft OS 文字列記述子要求に対して有効な応答を提供しました。 xx は応答に含まれる<strong>bVendorCode</strong>です。</p></li>
 </ul></td>
 </tr>
 <tr class="even">
 <td><p><strong>IgnoreHWSerNum</strong></p>
 <p>REG_BINARY</p>
-<p>Windows Vista 以降のバージョンでサポートされます。</p></td>
-<td><p>USB ドライバー スタックが、デバイスのシリアル番号を無視する必要があるかどうかを示します。</p></td>
+<p>Windows Vista 以降のバージョンでサポートされています。</p></td>
+<td><p>USB ドライバースタックがデバイスのシリアル番号を無視する必要があるかどうかを示します。</p></td>
 <td><ul>
-<li><p>0x0000:設定を無効になります。</p></li>
-<li><p>0x0001:デバイスのシリアル番号を無視する USB ドライバー スタックを強制します。 デバイス インスタンスでは、デバイスが接続されているポートに関連付けられています。</p></li>
+<li><p>0x00この設定は無効になっています。</p></li>
+<li><p>0x01USB ドライバースタックがデバイスのシリアル番号を無視するように強制します。 そのため、デバイスインスタンスは、デバイスが接続されているポートに関連付けられています。</p></li>
 </ul></td>
 </tr>
 <tr class="odd">
 <td><p><strong>ResetOnResume</strong></p>
 <p>REG_BINARY</p>
-<p>Windows Vista 以降のバージョンでサポートされます。</p></td>
-<td><p>ポートが、サイクルをスリープから再開するときに、USB ドライバー スタックがデバイスをリセットする必要があるかどうかを示します。</p></td>
+<p>Windows Vista 以降のバージョンでサポートされています。</p></td>
+<td><p>ポートがスリープ状態から再開されたときに、USB ドライバースタックがデバイスをリセットする必要があるかどうかを示します。</p></td>
 <td><ul>
-<li><p>0x0000:設定を無効になります。</p></li>
-<li><p>0x0001:強制的にポート上のデバイスをリセットする USB ドライバー スタックを再開します。</p></li>
+<li><p>0x0000この設定は無効になっています。</p></li>
+<li><p>0x0001ポートの再開時にデバイスをリセットするように、USB ドライバースタックを強制します。</p></li>
 </ul></td>
 </tr>
 </tbody>

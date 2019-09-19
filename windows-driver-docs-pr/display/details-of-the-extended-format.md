@@ -5,14 +5,14 @@ ms.assetid: e9cd2bc7-99c1-4aca-91b0-9faefa4a856d
 keywords:
 - Direct3D バージョン 10.1 WDK Windows 7 display、extended format
 - 拡張形式 WDK Windows 7 ディスプレイ
-ms.date: 04/20/2017
+ms.date: 09/10/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 137f4763413bcd2c3ba555ca2c9da76b21d4460b
-ms.sourcegitcommit: 9b0ddcdba8c56987b45e538948b2ac8c60ef1287
+ms.openlocfilehash: 7d7f6160b022c95b03bac0d0cc5ce04ddd4dc7df
+ms.sourcegitcommit: c2ffefe997a6d028864704c41d3d8e001e9622fa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70876926"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71077225"
 ---
 # <a name="details-of-the-extended-format"></a>拡張形式の詳細
 
@@ -22,45 +22,19 @@ ms.locfileid: "70876926"
 
 ## <a name="table-of-extended-formats"></a>拡張形式の表
 
-次の表は、拡張形式を使用する特定の属性を持つリソースを示しています。これらの属性を持つリソースの拡張形式がハードウェアでサポートされている場合、または、これらのリソースの拡張形式がオプションである場合は、
+次の表は、拡張形式を使用する特定の属性を持つリソース (DXGI_FORMAT_ *) を示しています。これらの属性を持つリソースに対して、ハードウェアでこれらの拡張形式がサポートされている場合、またはこれらのリソースの拡張形式がオプションである場合に使用されます。 各形式の説明については、「 [DXGI_FORMAT](https://docs.microsoft.com/windows/win32/api/dxgiformat/ne-dxgiformat-dxgi_format) 」を参照してください。
 
 <table>
 <head>
     <tr>
-        <th colspan="9">形式 (DXGI_FORMAT_ *)</th>
-    </tr>
-    <tr>
-        <th></th>
-        <th></th>
-        <th>B8G8R8A8</th>
-        <th>B8G8R8A8</th>
-        <th></th>
-        <th>B8G8R8X8</th>
-        <th>B8G8R8X8</th>
-        <th></th>
-        <th>R10G10B10</th>
-    </tr>
-    <tr>
-        <th>リソース</th>
-        <th>B8G8R8A8</th>
-        <th>UNORM (_C)</th>
-        <th>UNORM (_C)</th>
-        <th>B8G8R8X8</th>
-        <th>UNORM (_C)</th>
-        <th>UNORM (_C)</th>
-        <th>R10G10B10A2</th>
-        <th>_XR_BIAS</th>
-    </tr>
-    <tr>
-        <th>attribute</th>
-        <th>タイプレス (_C)</th>
-        <th>既存</th>
-        <th>SRGB (_D)</th>
-        <th>タイプレス (_C)</th>
-        <th>既存</th>
-        <th>SRGB (_D)</th>
-        <th>タイプレス (_C)</th>
-        <th>_A2_UNORM</th>
+        <th>リソース属性</th>
+        <th>B8G8R8A8_TYPELESS</th>
+        <th>B8G8R8A8_UNORM (既存)</th>
+        <th>B8G8R8A8_UNORM_SRGB</th>
+        <th>B8G8R8X8_TYPELESS</th>
+        <th>B8G8R8X8_UNORM (既存)</th>
+        <th>B8G8R8X8_UNORM_SRGB</th>
+        <th>R10G10B10_XR_BIAS_A2_UNORM</th>
     </tr>
 </head>
 <body>
