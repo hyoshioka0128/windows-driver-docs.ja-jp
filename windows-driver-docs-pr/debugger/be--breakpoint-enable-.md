@@ -1,10 +1,10 @@
 ---
 title: be (ブレークポイントの有効化)
-description: コマンドの復元を以前に無効にする 1 つまたは複数のブレークポイントにあります。
+description: Be コマンドは、以前に無効になっていた1つ以上のブレークポイントを復元します。
 ms.assetid: 110fe8b0-0bc7-49ce-9c66-326d5897c0ca
 keywords:
-- (ブレークポイントを有効にする) Windows のデバッグをします。
-ms.date: 05/23/2017
+- be (ブレークポイントを有効にする) Windows デバッグ
+ms.date: 09/18/2019
 topic_type:
 - apiref
 api_name:
@@ -12,29 +12,27 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 17f0ab8fcf782655dfee280abbe77a688f00026b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8aeea0aecdd9a591ec5f48c26715ef9789823211
+ms.sourcegitcommit: 3246a166d5454c68f77c15267f3f0b347359f505
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347876"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71108101"
 ---
 # <a name="be-breakpoint-enable"></a>be (ブレークポイントの有効化)
 
-
-**する**コマンドは、以前に無効にする 1 つまたは複数のブレークポイントを復元します。
+**Be**コマンドは、以前に無効になっていた1つ以上のブレークポイントを復元します。
 
 ```dbgcmd
 be Breakpoints 
 ```
 
-## <a name="span-idddkcmdbreakpointenabledbgspanspan-idddkcmdbreakpointenabledbgspanparameters"></a><span id="ddk_cmd_breakpoint_enable_dbg"></span><span id="DDK_CMD_BREAKPOINT_ENABLE_DBG"></span>パラメーター
+## <a name="span-idddk_cmd_breakpoint_enable_dbgspanspan-idddk_cmd_breakpoint_enable_dbgspanparameters"></a><span id="ddk_cmd_breakpoint_enable_dbg"></span><span id="DDK_CMD_BREAKPOINT_ENABLE_DBG"></span>パラメータ
 
+<span id="_______Breakpoints______"></span><span id="_______breakpoints______"></span><span id="_______BREAKPOINTS______"></span>*ブレークポイント*   
+有効にするブレークポイントの ID 番号を指定します。 任意の数のブレークポイントを指定できます。 複数の Id は、スペースまたはコンマで区切る必要があります。 ブレークポイント Id の範囲を指定するには、ハイフン (-) を使用します。 アスタリスク (\*) を使用すると、すべてのブレークポイントを指定できます。 ID に[数値式](numerical-expression-syntax.md)を使用する場合は、角かっこ (\[ \]) で囲みます。 [ワイルドカード文字を含む文字列](string-wildcard-syntax.md)をブレークポイントのシンボル名と一致させるには、引用符 ("") で囲みます。
 
-<span id="_______Breakpoints______"></span><span id="_______breakpoints______"></span><span id="_______BREAKPOINTS______"></span> *ブレークポイント*   
-有効にするブレークポイントの ID 番号を指定します。 ブレークポイントの任意の数を指定することができます。 スペースまたはコンマで複数の Id を区切る必要があります。 ハイフンを使用してブレークポイント Id の範囲を指定することができます (-)。 アスタリスクを使用することができます (**\\* * *) をすべてのブレークポイントを示します。使用する場合、[数値式](numerical-expression-syntax.md)id、角かっこで囲む (*<em>\[\]</em><em>)。使用する場合、[ワイルドカード文字を含む文字列](string-wildcard-syntax.md)ブレークポイントのシンボリック名を一致するように引用符で囲みます (**""</em>*  )。
-
-### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>環境
+### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>Environment
 
 <table>
 <colgroup>
@@ -43,38 +41,27 @@ be Breakpoints
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>モード</strong></p></td>
-<td align="left"><p>ユーザー モードでは、カーネル モード</p></td>
+<td align="left"><p><strong>Modes</strong></p></td>
+<td align="left"><p>ユーザーモード、カーネルモード</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>ターゲット</strong></p></td>
-<td align="left"><p>ライブ デバッグのみ</p></td>
+<td align="left"><p>ライブデバッグのみ</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>プラットフォーム</strong></p></td>
+<td align="left"><p><strong>Platforms</strong></p></td>
 <td align="left"><p>すべての</p></td>
 </tr>
 </tbody>
 </table>
 
- 
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
-
-詳細とブレークポイント、他のブレークポイント コマンドや、ブレークポイントを制御する方法を使用する方法と、カーネル デバッガーからのユーザー領域でブレークポイントを設定する方法の例については、次を参照してください。[を使用してブレークポイント](using-breakpoints.md)します。 条件付きブレークポイントの詳細については、次を参照してください。 [、条件付きブレークポイント](setting-a-conditional-breakpoint.md)します。
+ブレークポイントの使用方法の詳細と例、ブレークポイントを制御するその他のブレークポイントコマンドと方法、カーネルデバッガーからユーザー空間にブレークポイントを設定する方法の詳細については、「[ブレークポイントの使用](using-breakpoints.md)」を参照してください。 条件付きブレークポイントの詳細については、「[条件付きブレークポイントの設定](setting-a-conditional-breakpoint.md)」を参照してください。
 
 <a name="remarks"></a>コメント
 -------
 
-使用して、 [ **bl (ブレークポイントの一覧)** ](bl--breakpoint-list-.md)既存のすべてのブレークポイント、ID 番号、およびそれらの状態を一覧表示するコマンド。
+[ [**Bl (ブレークポイントの一覧)** ](bl--breakpoint-list-.md) ] コマンドを使用すると、既存のすべてのブレークポイント、その ID 番号、およびそれらの状態を一覧表示できます。
 
-使用して、 [ **.bpcmds (ブレークポイント コマンドが表示)** ](-bpcmds--display-breakpoint-commands-.md)既存のすべてのブレークポイント、ID 番号、およびその作成に使用されたコマンドを一覧表示するコマンド。
-
- 
-
- 
-
-
-
-
-
+[**Bpcmds (ブレークポイントコマンドの表示)** ](-bpcmds--display-breakpoint-commands-.md)コマンドを使用して、既存のすべてのブレークポイント、その ID 番号、およびそれらの作成に使用されたコマンドを一覧表示します。

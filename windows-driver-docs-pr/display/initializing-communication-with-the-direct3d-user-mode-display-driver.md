@@ -1,52 +1,42 @@
 ---
-title: D3D ユーザー モードのディスプレイ ドライバーの通信を初期化しています
+title: D3D ユーザーモードの表示ドライバー通信の初期化
 description: Direct3D のユーザー モード ディスプレイ ドライバーの通信の初期化
 ms.assetid: 96e85df4-e340-4017-b348-7c24349ffe69
 keywords:
-- ユーザー モードのディスプレイ ドライバー WDK Windows Vista では、初期化しています
-- Direct3D の WDK の表示
-- ユーザー モード ドライバー WDK Windows Vista では、Direct3D の表示します。
-ms.date: 12/06/2018
+- ユーザーモード表示ドライバー WDK Windows Vista、初期化
+- Direct3D WDK ディスプレイ
+- ユーザーモードディスプレイドライバー WDK Windows Vista、Direct3D
+ms.date: 09/17/2019
 ms.localizationpriority: medium
 ms.custom: seodec18
-ms.openlocfilehash: 8ee840f853b13ee5788c337dd90bafef21637309
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: bf3e38c3bbdfe67c1aff2e57c0a57b0b069a5fb2
+ms.sourcegitcommit: 3246a166d5454c68f77c15267f3f0b347359f505
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385191"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71108098"
 ---
 # <a name="initializing-communication-with-the-direct3d-user-mode-display-driver"></a>Direct3D のユーザー モード ディスプレイ ドライバーの通信の初期化
 
-ダイナミック リンク ライブラリ (DLL) には、マイクロソフトの Direct3D ユーザー モード ディスプレイ ドライバーとの通信を初期化するために、Direct3D ランタイムは、まず、DLL を読み込みます。 Direct3D ランタイムが次に、ユーザー モードのディスプレイ ドライバーを呼び出す[ **OpenAdapter** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_openadapter)グラフィックス アダプターのインスタンスを開く、DLL のエクスポート テーブルを使用して関数。 *OpenAdapter*関数は DLL の関数をエクスポートします。
+Microsoft Direct3D ユーザーモード表示ドライバー DLL のバージョン 11 DDI との通信を初期化するには、まず、Direct3D ランタイムが DLL を読み込みます。 次に、Direct3D ランタイムは、DLL の export テーブルを介してユーザーモードの表示ドライバーの[**openadapter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_openadapter)関数を呼び出し、グラフィックスアダプターのインスタンスを開きます。 *Openadapter*関数は、DLL の唯一のエクスポート関数です。
 
-ドライバーの呼び出しで*OpenAdapter*関数の場合、ランタイムは、提供、 [ **pfnQueryAdapterInfoCb** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_queryadapterinfocb)アダプターのコールバック関数で、 **pAdapterCallbacks**のメンバー、 [ **D3DDDIARG\_OPENADAPTER** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ns-d3dumddi-_d3dddiarg_openadapter)構造体。 ランタイムでは、そのバージョンにも用意されて、**インターフェイス**と**バージョン**D3DDDIARG のメンバー\_OPENADAPTER します。 ユーザー モードのディスプレイ ドライバーは、このバージョンのランタイムを使用できることを確認する必要があります。 ユーザー モードのディスプレイ ドライバーがそのアダプターに固有の関数でのテーブルを返します、 **pAdapterFuncs** D3DDDIARG のメンバー\_OPENADAPTER します。
+ドライバーの*openadapter*関数の呼び出しでは、ランタイムは[**D3DDDIARG\_openadapter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ns-d3dumddi-_d3dddiarg_openadapter)構造体の**padaptercallbacks**メンバーに[**pfnQueryAdapterInfoCb**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_queryadapterinfocb) adapter コールバック関数を提供します。 ランタイムは、D3DDDIARG\_openadapter の**インターフェイス**および**バージョン**メンバーでもそのバージョンを提供します。 ユーザーモードの表示ドライバーでは、このバージョンのランタイムを使用できることを確認する必要があります。 ユーザーモードの表示ドライバーは、D3DDDIARG_OPENADAPTER の**Padapterfuncs**メンバーのアダプター固有の関数のテーブルを返します。
 
-ユーザー モードのディスプレイ ドライバーを呼び出す必要があります、 [ **pfnQueryAdapterInfoCb** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_queryadapterinfocb)ディスプレイのミニポート ドライバーからのグラフィックス ハードウェア機能のクエリをアダプター コールバック関数。
+ユーザーモードのディスプレイドライバーは、 [**pfnQueryAdapterInfoCb**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_queryadapterinfocb) adapter コールバック関数を呼び出して、ディスプレイミニポートドライバーからグラフィックスハードウェア機能を照会する必要があります。
 
-共通言語ランタイムは、ユーザー モードのディスプレイ ドライバーの[ **CreateDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_createdevice)とにレンダリング状態のコレクションを処理するためのディスプレイ デバイスを作成する機能 (ドライバーのアダプター固有の関数の 1 つ)初期化を完了します。 初期化が完了したら、Direct3D のランタイムが呼び出すことができます、[表示機能のドライバーによって提供される](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)、ユーザー モードのディスプレイ ドライバーが呼び出すことができます、[ランタイムが指定した関数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)します。
+ランタイムは、ユーザーモードの表示ドライバーの[**CreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_createdevice)関数 (ドライバーのアダプター固有の関数の1つ) を呼び出して、レンダリング状態のコレクションを処理し、初期化を完了するためのディスプレイデバイスを作成します。 初期化が完了すると、Direct3D ランタイムは[ディスプレイドライバー](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)によって提供される関数を呼び出すことができ、ユーザーモードの表示ドライバーは[ランタイムが提供する関数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)を呼び出すことができます。
 
-ユーザー モードのディスプレイ ドライバーの*CreateDevice*関数を呼び出すと、 [ **D3DDDIARG\_CREATEDEVICE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ns-d3dumddi-_d3dddiarg_createdevice)構造体のメンバーで設定しますユーザー モードのディスプレイ ドライバー インターフェイスを初期化するために次の方法:
+ユーザーモード表示ドライバーの*CreateDevice*関数は、ユーザーモードの display driver インターフェイスを初期化するために、次のようにメンバーが設定されている[**D3DDDIARG\_CreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ns-d3dumddi-_d3dddiarg_createdevice)構造体を使用して呼び出されます。
 
--   ランタイム セット**インターフェイス**ユーザー モードのディスプレイ ドライバーからランタイムを必要とするインターフェイスのバージョンにします。
+- ランタイムは、ユーザーモードの表示ドライバーからランタイムが必要とするインターフェイスのバージョンに**インターフェイス**を設定します。
 
--   ランタイム セット**バージョン**ドライバーは、ランタイムのビルド時に識別するために使用できる数にします。 たとえば、ドライバーは、Windows Vista でリリースされたランタイムと、ランタイムが後続のサービス パック、ドライバーが必要な修正プログラムが含まれているリリースを区別するために、バージョン番号を使用できます。
+- ランタイムは、ランタイムがビルドされた日時を識別するためにドライバーが使用できる数値に**バージョン**を設定します。 たとえば、ドライバーはバージョン番号を使用して、Windows Vista と共にリリースされたランタイムと、後続の Service Pack と共にリリースされたランタイムを区別できます。この場合、ドライバーに必要な修正が含まれている可能性があります。
 
--   ランタイム セット**hDevice**ランタイムを呼び出し、ドライバーとドライバーが使用するハンドルを指定します。 ドライバーは、一意のハンドルを生成し、内で実行時に戻して**hDevice**します。 ランタイムは、返されたを使用する必要があります**hDevice**ドライバーの後続の呼び出しで処理します。
+- ランタイムは、ドライバーがランタイムにコールバックするときにドライバーが使用するハンドルを指定するように**Hdevice**を設定します。 ドライバーは一意のハンドルを生成し、 **Hdevice**のランタイムに渡します。 ランタイムは、返された**Hdevice**ハンドルを後続のドライバー呼び出しで使用する必要があります。
 
--   ランタイムでは、そのデバイスに固有のコールバック関数のテーブルを提供する、 [ **D3DDDI\_DEVICECALLBACKS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ns-d3dumddi-_d3dddi_devicecallbacks)構造体**pCallbacks**ポイント。 ユーザー モードのディスプレイ ドライバーは、ディスプレイのミニポート ドライバーでのカーネル モードのサービスへのアクセスにランタイムが提供するコールバック関数を呼び出します。
+- ランタイムは、 **pcallbacks**が指す[**D3DDDI_DEVICECALLBACKS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ns-d3dumddi-_d3dddi_devicecallbacks)構造体に、デバイス固有のコールバック関数のテーブルを提供します。 ユーザーモード表示ドライバーは、ランタイム提供のコールバック関数を呼び出して、ディスプレイミニポートドライバーのカーネルモードサービスにアクセスします。
 
--   ユーザー モードのディスプレイ ドライバーがそのデバイスに固有の関数でのテーブルを返します、 [ **D3DDDI\_DEVICEFUNCS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ns-d3dumddi-_d3dddi_devicefuncs)構造体**pDeviceFuncs**ポイント。
+- ユーザーモード表示ドライバーは、 **pdevicefuncs**が指す[ **\_D3DDDI devicefuncs**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ns-d3dumddi-_d3dddi_devicefuncs)構造体に、デバイス固有の関数のテーブルを返します。
 
-**注**  同時に存在可能な表示デバイス (グラフィックス コンテキスト) の数が使用可能なシステム メモリによってのみ制限されます。
-
- 
-
- 
-
- 
-
-
-
-
-
+> [!NOTE]
+> 同時に存在できるディスプレイデバイス (グラフィックスコンテキスト) の数は、使用可能なシステムメモリによってのみ制限されます。
