@@ -3,15 +3,13 @@ title: 予期しない切断で終了した Wi-Fi セッションの割合
 description: この測定値は、予期せずデバイスが Wi-Fi から切断されたインスタンスの割合として、7 日間のスライディング ウィンドウからのテレメトリを集計したものです
 ms.topic: article
 ms.date: 05/20/2019
-ms.author: paslote
-author: parkeratmicrosoft
 ms.localizationpriority: medium
-ms.openlocfilehash: 7969e056e963c531e8d70a6a32c7ff1913b3957a
-ms.sourcegitcommit: 04da1962e34908adeca54fcf5bbfbaa456efca5f
+ms.openlocfilehash: 7034bdbaa669ba0d4e5de6386a7969f23769559e
+ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70223908"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71017012"
 ---
 # <a name="percent-of-wi-fi-sessions-ending-in-an-unexpected-disconnect"></a>予期しない切断で終了した Wi-Fi セッションの割合 
 
@@ -46,4 +44,4 @@ ms.locfileid: "70223908"
 
 ### <a name="final-calculation"></a>最終的な計算
 
-"*予期しない接続で終了した Wi-Fi セッションの割合 = すべてのインスタンスの平均*"
+"*予期しない切断で終了した Wi-Fi セッションの割合 = すべてのインスタンスの平均*"
