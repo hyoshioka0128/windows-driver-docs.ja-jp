@@ -3,15 +3,13 @@ title: Bluetooth 接続エラー率
 description: この測定値は、Bluetooth デバイスが別のデバイスとの接続に失敗したインスタンスの割合として、7 日間のスライディング ウィンドウからのテレメトリを集計したものです。
 ms.topic: article
 ms.date: 05/20/2019
-ms.author: paslote
-author: parkeratmicrosoft
 ms.localizationpriority: medium
-ms.openlocfilehash: fa7081172afa7c02351dce883e6fc4cb93d0e54e
-ms.sourcegitcommit: 04da1962e34908adeca54fcf5bbfbaa456efca5f
+ms.openlocfilehash: f7df03da49a8be8b7119aafe4ff6da97b1e90349
+ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70224060"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71017088"
 ---
 # <a name="percent-of-bluetooth-connection-failures"></a>Bluetooth 接続エラー率
 

@@ -3,15 +3,13 @@ title: Win32 ゲームでのクラッシュとハングの数
 description: この測定値は、Win32 ゲームの実行時間に対するクラッシュおよびハングの割合として、7 日間のスライディング ウィンドウからのテレメトリを集計したものです。
 ms.topic: article
 ms.date: 05/20/2019
-ms.author: paslote
-author: parkeratmicrosoft
 ms.localizationpriority: medium
-ms.openlocfilehash: c02dfc84bd908fc32950383cce2788b93cefc2c4
-ms.sourcegitcommit: 04da1962e34908adeca54fcf5bbfbaa456efca5f
+ms.openlocfilehash: 4abe4352bf55da2b31992bf3ba87563185185761
+ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70223980"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71016980"
 ---
 # <a name="number-of-crashes-and-hangs-in-win32-games-normalized-by-usage-is-less-than-or-equal-to-the-baseline-goal"></a>Win32 ゲームにおけるクラッシュとハングの数を使用量で正規化した値がベースライン目標と同じかそれより小さい
 

@@ -3,15 +3,13 @@ title: グラフィックス ドライバー バイナリのクラッシュに�
 description: この測定値は、グラフィックス ドライバーのバイナリにおけるクラッシュが原因で LKE が発生した個別のマシンのミリアドとして、7 日間のスライディング ウィンドウからのテレメトリを集計したものです。
 ms.topic: article
 ms.date: 05/20/2019
-ms.author: paslote
-author: parkeratmicrosoft
 ms.localizationpriority: medium
-ms.openlocfilehash: c3efaf22884fc51afa78e5886d07b0c25a972705
-ms.sourcegitcommit: 04da1962e34908adeca54fcf5bbfbaa456efca5f
+ms.openlocfilehash: af4249ffc2147050123850efca1c4417b80f6c30
+ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70223996"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71017048"
 ---
 # <a name="number-of-machines-that-had-an-lke-caused-by-a-crash-in-the-graphics-driver-binary"></a>グラフィックス ドライバー バイナリのクラッシュによって LKE が発生したマシンの数
 

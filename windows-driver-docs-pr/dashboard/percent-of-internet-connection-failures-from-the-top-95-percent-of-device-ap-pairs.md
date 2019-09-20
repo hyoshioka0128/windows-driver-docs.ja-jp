@@ -3,15 +3,13 @@ title: 信号品質が 50% を超えるデバイスとアクセスポイント�
 description: この測定値は、デバイスが Wi-Fi 経由でインターネットに接続できなかったインスタンスの割合として、7 日間のスライディング ウィンドウからのテレメトリを集計したものです。
 ms.topic: article
 ms.date: 05/20/2019
-ms.author: paslote
-author: parkeratmicrosoft
 ms.localizationpriority: medium
-ms.openlocfilehash: c564cef2d80c8a55f768471f7855f18e7603e483
-ms.sourcegitcommit: 04da1962e34908adeca54fcf5bbfbaa456efca5f
+ms.openlocfilehash: e9926776d8e700eadd0a1ab1fe0511e645a3e231
+ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70223912"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71016950"
 ---
 # <a name="percent-of-internet-connection-failures-from-the-top-95-percent-of-device-and-access-point-pairs-that-have-greater-than-50-percent-signal-quality"></a>インターネット接続エラーの割合 (信号品質が 50% を超えるデバイスとアクセスポイントのペアの上位 95% から)
 

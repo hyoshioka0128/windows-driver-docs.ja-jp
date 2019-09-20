@@ -3,15 +3,13 @@ title: グラフィックスの計測値
 description: グラフィックスの測定値では、グラフィックス ドライバーのフライティング時に、良性の初期化エラーがフィルターで除外されます。
 ms.topic: article
 ms.date: 05/20/2019
-ms.author: paslote
-author: parkeratmicrosoft
 ms.localizationpriority: medium
-ms.openlocfilehash: 2aca54633e6ebb4610f0e1d1a8a40cd8708b6f4b
-ms.sourcegitcommit: 04da1962e34908adeca54fcf5bbfbaa456efca5f
+ms.openlocfilehash: 6754d8f26d06aa29793bf6162ef57f3662917749
+ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70223992"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71017062"
 ---
 # <a name="graphics-measures"></a>グラフィックスの計測値
 

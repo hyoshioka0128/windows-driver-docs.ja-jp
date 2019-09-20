@@ -3,15 +3,13 @@ title: グラフィックス ドライバー バイナリのクラッシュに�
 description: この測定値は、グラフィックス ドライバーのバイナリにおけるクラッシュが原因でブルースクリーンが発生した個別のマシンのミリアドとして、7 日間のスライディング ウィンドウからのテレメトリを集計したものです。
 ms.topic: article
 ms.date: 05/20/2019
-ms.author: paslote
-author: parkeratmicrosoft
 ms.localizationpriority: medium
-ms.openlocfilehash: 79027d06daed7b61116184c42f0d2c3dc27d32fd
-ms.sourcegitcommit: 04da1962e34908adeca54fcf5bbfbaa456efca5f
+ms.openlocfilehash: 65af3502ff091cf8712f92822797ee5e33a7856a
+ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70223956"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71016965"
 ---
 # <a name="number-of-machines-with-a-blue-screen-caused-by-a-crash-in-graphics-driver-binary"></a>グラフィックス ドライバー バイナリのクラッシュによってブルー スクリーンが表示されたマシンの数
 

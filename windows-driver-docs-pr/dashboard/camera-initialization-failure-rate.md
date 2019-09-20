@@ -3,15 +3,13 @@ title: カメラの初期化エラー率
 description: この測定値は、カメラ デバイスで初期化が失敗したインスタンスの割合として、7 日間のスライディング ウィンドウからのテレメトリを集計したものです
 ms.topic: article
 ms.date: 05/20/2019
-ms.author: paslote
-author: parkeratmicrosoft
 ms.localizationpriority: medium
-ms.openlocfilehash: d35a4bcbbe35fa8b29863a336c3f18aff2c60381
-ms.sourcegitcommit: 04da1962e34908adeca54fcf5bbfbaa456efca5f
+ms.openlocfilehash: 4410cd826e6735d7b5ad57033f5d06e3a3d3d83c
+ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70224054"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71017082"
 ---
 # <a name="percent-of-camera-initialization-failures"></a>カメラの初期化エラー率
 

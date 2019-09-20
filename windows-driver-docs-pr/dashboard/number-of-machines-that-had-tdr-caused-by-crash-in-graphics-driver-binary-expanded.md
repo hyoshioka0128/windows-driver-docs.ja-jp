@@ -3,15 +3,13 @@ title: グラフィックス ドライバー バイナリのクラッシュに�
 description: この測定値は、グラフィックス ドライバーのバイナリにおけるクラッシュが原因で TDR が発生した個別のマシンのミリアドとして、7 日間のスライディング ウィンドウからのテレメトリを集計したものです。
 ms.topic: article
 ms.date: 05/20/2019
-ms.author: paslote
-author: parkeratmicrosoft
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a955bd25907960c7ed8e4d89c131db4bf840d45
-ms.sourcegitcommit: 04da1962e34908adeca54fcf5bbfbaa456efca5f
+ms.openlocfilehash: 7646f54ccfdc7b7eff6b085acac7b05c54c73456
+ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70223958"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71017036"
 ---
 # <a name="number-of-machines-that-had-a-tdr-caused-by-a-crash-in-the-graphics-driver-binary"></a>グラフィックス ドライバー バイナリのクラッシュによって TDR が発生したマシンの数
 

@@ -3,15 +3,13 @@ title: カーネル モード クラッシュなしのマシンの割合
 description: この測定値は、カーネル モード クラッシュが発生しなかったマシンの割合として、14 日間のスライディング ウィンドウからのテレメトリを集計したものです
 ms.topic: article
 ms.date: 05/20/2019
-ms.author: paslote
-author: parkeratmicrosoft
 ms.localizationpriority: medium
-ms.openlocfilehash: e2dd357e9ee419460480b99267e89ee32a4ebc65
-ms.sourcegitcommit: 04da1962e34908adeca54fcf5bbfbaa456efca5f
+ms.openlocfilehash: 49540d0393a8423721ce9255c636c0f6c0ce29fa
+ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70223918"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71016947"
 ---
 # <a name="percent-of-machines-without-a-kernel-mode-crash"></a>カーネル モード クラッシュなしのマシンの割合
 

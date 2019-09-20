@@ -3,15 +3,13 @@ title: カメラの写真キャプチャ エラー率
 description: この測定値は、カメラ デバイスで写真機能の使用が失敗したインスタンスの割合として、7 日間のスライディング ウィンドウからのテレメトリを集計したものです
 ms.topic: article
 ms.date: 05/20/2019
-ms.author: paslote
-author: parkeratmicrosoft
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d1af1a14248b6c3b96372cd8c0221ebe129791b
-ms.sourcegitcommit: 04da1962e34908adeca54fcf5bbfbaa456efca5f
+ms.openlocfilehash: 605ab114189e5a34e665dd3441ca4ad1ff10dcbf
+ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70224052"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71017078"
 ---
 # <a name="percent-of-camera-photo-capture-failures"></a>カメラの写真キャプチャ エラー率
 

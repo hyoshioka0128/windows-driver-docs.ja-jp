@@ -3,15 +3,13 @@ title: オーディオの測定値
 description: オーディオの測定値では、オーディオ ドライバーのフライティング時に、良性の初期化エラーがフィルターで除外されます
 ms.topic: article
 ms.date: 05/20/2019
-ms.author: paslote
-author: parkeratmicrosoft
 ms.localizationpriority: medium
-ms.openlocfilehash: 50de16eb2608b21c923671413f0e5ca335698a39
-ms.sourcegitcommit: 04da1962e34908adeca54fcf5bbfbaa456efca5f
+ms.openlocfilehash: 79e13ea531c50935902b0724d105bb3575506250
+ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70224058"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71017091"
 ---
 # <a name="audio-measures"></a>オーディオの測定値
 

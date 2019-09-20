@@ -3,15 +3,13 @@ title: Microsoft フォト アプリにおけるユーザー モードの信頼�
 description: この測定値は、年単位の総実行時間について、グラフィックス ドライバーに起因する Microsoft フォトのクラッシュの割合として、7 日間のスライディング ウィンドウからのテレメトリを集計したものです
 ms.topic: article
 ms.date: 05/20/2019
-ms.author: paslote
-author: parkeratmicrosoft
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a6316f36b33fbb2ed87b7524dd37a1afe7728f2
-ms.sourcegitcommit: 04da1962e34908adeca54fcf5bbfbaa456efca5f
+ms.openlocfilehash: a2507cc75813460944fc548b73421df6505ebc38
+ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70223884"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71016933"
 ---
 # <a name="number-of-user-mode-reliability-for-crashes-in-microsoft-photos-app-normalized-by-usage-is-less-than-or-equal-to-the-baseline-goal"></a>Microsoft フォト アプリにおけるユーザー モードの信頼性を示すクラッシュ数を使用量で正規化した値がベースライン目標と同じかそれより小さい
 

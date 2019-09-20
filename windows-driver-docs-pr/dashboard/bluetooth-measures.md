@@ -3,15 +3,13 @@ title: Bluetooth の測定値
 description: Bluetooth の測定値では、Bluetooth ドライバーのフライティング時に、良性の初期化エラーがフィルターで除外されます
 ms.topic: article
 ms.date: 05/20/2019
-ms.author: paslote
-author: parkeratmicrosoft
 ms.localizationpriority: medium
-ms.openlocfilehash: e9cfc7697cd45bf624f519136277545f0578462a
-ms.sourcegitcommit: 04da1962e34908adeca54fcf5bbfbaa456efca5f
+ms.openlocfilehash: 77288a6a95e0df582c011403ab0c148cc7b1576b
+ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70224056"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71017086"
 ---
 # <a name="bluetooth-measures"></a>Bluetooth の測定値
 

@@ -3,15 +3,13 @@ title: 少なくとも 1 つのオーディオ クラッシュが発生したマ
 description: この測定値は、AudioSrv.dll または AudioDG.exe でオーディオ クラッシュが少なくとも 1 回発生したマシンの割合として、7 日間のスライディング ウィンドウからのテレメトリを集計したものです
 ms.topic: article
 ms.date: 05/20/2019
-ms.author: paslote
-author: parkeratmicrosoft
 ms.localizationpriority: medium
-ms.openlocfilehash: 28e28f97afcb58fa73eeddd2237e90b20651bb3a
-ms.sourcegitcommit: 04da1962e34908adeca54fcf5bbfbaa456efca5f
+ms.openlocfilehash: 430e618fa9c75d9b5e56480b4cf4c2283d540513
+ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70223920"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71016941"
 ---
 # <a name="percent-of-machines-with-at-least-one-audio-crash"></a>少なくとも 1 つのオーディオ クラッシュが発生したマシンの割合
 

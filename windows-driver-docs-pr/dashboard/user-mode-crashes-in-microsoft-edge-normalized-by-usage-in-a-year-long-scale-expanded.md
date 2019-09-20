@@ -3,15 +3,13 @@ title: Microsoft Edge でのユーザー モード クラッシュの数
 description: この測定値は、年単位の総実行時間について、グラフィックス ドライバーに起因する Microsoft Edge のクラッシュの割合として、7 日間のスライディング ウィンドウからのテレメトリを集計したものです
 ms.topic: article
 ms.date: 05/20/2019
-ms.author: paslote
-author: parkeratmicrosoft
 ms.localizationpriority: medium
-ms.openlocfilehash: d09628f1e6231967c707fd523bfff0172b2bdada
-ms.sourcegitcommit: 04da1962e34908adeca54fcf5bbfbaa456efca5f
+ms.openlocfilehash: c6cf0803e98bc260dc3419170f7dcd4852ddbd8f
+ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70223880"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71017010"
 ---
 # <a name="number-of-user-mode-reliability-for-crashes-in-microsoft-edge-normalized-by-usage-is-less-than-or-equal-to-the-baseline-goal"></a>Microsoft Edge におけるユーザー モードの信頼性を示すクラッシュ数を使用量で正規化した値がベースライン目標と同じかそれより小さい
 

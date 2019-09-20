@@ -3,15 +3,13 @@ title: クリエイティブ アプリケーションにおけるユーザー �
 description: この測定値は、年単位の総実行時間について、グラフィックス ドライバーに起因するクリエイティブ アプリケーションのクラッシュの割合として、7 日間のスライディング ウィンドウからのテレメトリを集計したものです。
 ms.topic: article
 ms.date: 05/20/2019
-ms.author: paslote
-author: parkeratmicrosoft
 ms.localizationpriority: medium
-ms.openlocfilehash: 814b475f67778bcfd48f74a14d4dd0d3ae18b632
-ms.sourcegitcommit: 04da1962e34908adeca54fcf5bbfbaa456efca5f
+ms.openlocfilehash: 00c88187a857cfc107189f317249ba5dd5f23612
+ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70224020"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71017066"
 ---
 # <a name="number-of-user-mode-reliability-for-crashes-in-creative-applications-normalized-by-usage-is-less-than-or-equal-to-the-baseline-goal"></a>クリエイティブ アプリケーションにおけるユーザー モードの信頼性を示すクラッシュ数を使用量で正規化した値がベースライン目標と同じかそれより小さい
 

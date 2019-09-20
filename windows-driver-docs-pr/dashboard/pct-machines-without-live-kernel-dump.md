@@ -3,15 +3,13 @@ title: ライブ カーネル ダンプなしのマシンの割合
 description: この測定値は、ライブ カーネル ダンプが発生しなかったマシンの割合として、14 日間のスライディング ウィンドウからのテレメトリを集計したものです
 ms.topic: article
 ms.date: 05/20/2019
-ms.author: paslote
-author: parkeratmicrosoft
 ms.localizationpriority: medium
-ms.openlocfilehash: 81fe0c48ef97a00bc3419f8a9cbfcf301fee5eba
-ms.sourcegitcommit: 04da1962e34908adeca54fcf5bbfbaa456efca5f
+ms.openlocfilehash: 0d02ee5456656e9d39f5c49cb93301f3a9958e4c
+ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70223910"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71017017"
 ---
 # <a name="percent-of-machines-without-a-live-kernel-dump"></a>ライブ カーネル ダンプなしのマシンの割合
 

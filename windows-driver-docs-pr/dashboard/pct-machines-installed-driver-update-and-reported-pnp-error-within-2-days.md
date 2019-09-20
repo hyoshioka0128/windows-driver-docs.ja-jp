@@ -3,15 +3,13 @@ title: ドライバーの更新プログラムがインストールされ、イ�
 description: この測定値は、ドライバーが正常にインストールされ、インストールから 2 日以内に PnP エラーが発生したマシンの割合として、30 日間のスライディング ウィンドウからのテレメトリを集計したものです
 ms.topic: article
 ms.date: 05/20/2019
-ms.author: paslote
-author: parkeratmicrosoft
 ms.localizationpriority: medium
-ms.openlocfilehash: a6a50355f267fa223151b8ca8e357f170bcc9ab8
-ms.sourcegitcommit: 04da1962e34908adeca54fcf5bbfbaa456efca5f
+ms.openlocfilehash: d49a8e9dbb66ab74f98a945cd7b22fe7eaa91910
+ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70223944"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71016944"
 ---
 # <a name="percent-of-machines-that-installed-a-driver-update-and-reported-a-pnp-error-code-within-two-days-of-install"></a>ドライバーの更新プログラムがインストールされ、インストールから 2 日以内に PnP エラー コードが報告されたマシンの割合
 

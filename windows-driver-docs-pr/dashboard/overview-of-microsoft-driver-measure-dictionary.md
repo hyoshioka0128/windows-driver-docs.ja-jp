@@ -3,15 +3,13 @@ title: Microsoft ドライバーの測定値
 description: 発行元と作成者は、Microsoft ドライバーの測定値の説明を読むと、Microsoft がドライバーのフライティング中にドライバーの品質を評価する際に使用する基準をより深く理解できます
 ms.topic: article
 ms.date: 05/20/2019
-ms.author: paslote
-author: parkeratmicrosoft
 ms.localizationpriority: medium
-ms.openlocfilehash: 9d54b8d026533c5513901accc0c0800eecf89094
-ms.sourcegitcommit: 04da1962e34908adeca54fcf5bbfbaa456efca5f
+ms.openlocfilehash: 2963c128edce3c0df1b546aa057b5c3edc6e4bb1
+ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70223950"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71017028"
 ---
 # <a name="overview-of-the-microsoft-driver-measures"></a>Microsoft ドライバーの測定値の概要
 

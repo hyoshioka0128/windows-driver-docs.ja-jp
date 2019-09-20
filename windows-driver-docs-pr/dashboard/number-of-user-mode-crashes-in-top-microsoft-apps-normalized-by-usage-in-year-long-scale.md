@@ -3,15 +3,13 @@ title: Microsoft のトップ アプリでのユーザー モード クラッシ
 description: この測定値は、年単位の総実行時間について、グラフィックス ドライバーに起因する Microsoft のトップ アプリのクラッシュの割合として、7 日間のスライディング ウィンドウからのテレメトリを集計したものです。
 ms.topic: article
 ms.date: 05/20/2019
-ms.author: paslote
-author: parkeratmicrosoft
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e4980f26d585ea7294371b887a4b7a7e056a55a
-ms.sourcegitcommit: 04da1962e34908adeca54fcf5bbfbaa456efca5f
+ms.openlocfilehash: e105afa17077bdbacd9e5c95c14777a0987d50a9
+ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70223952"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71016966"
 ---
 # <a name="number-of-user-mode-crashes-in-top-microsoft-apps-normalized-by-usage-is-less-than-or-equal-to-the-baseline-goal"></a>Microsoft のトップ アプリにおけるユーザー モード クラッシュ数を使用量で正規化した値がベースライン目標と同じかそれより小さい
 

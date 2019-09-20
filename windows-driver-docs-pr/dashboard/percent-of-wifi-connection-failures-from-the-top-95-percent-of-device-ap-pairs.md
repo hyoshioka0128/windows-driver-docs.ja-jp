@@ -3,15 +3,13 @@ title: Wi-Fi 接続エラーの割合 (デバイスとアクセスポイント�
 description: この測定値は、デバイスがアクセス ポイントに接続できなかったインスタンスの割合として、7 日間のスライディング ウィンドウからのテレメトリを集計したものです
 ms.topic: article
 ms.date: 05/20/2019
-ms.author: paslote
-author: parkeratmicrosoft
 ms.localizationpriority: medium
-ms.openlocfilehash: 718ef5850f42c123a4161fc1182bb67803f9dae9
-ms.sourcegitcommit: 04da1962e34908adeca54fcf5bbfbaa456efca5f
+ms.openlocfilehash: e8ac44992816693a18b1e8ae3d265949d74b2d5f
+ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70223922"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71016948"
 ---
 # <a name="percent-of-wi-fi-connection-failures-from-the-top-95-percent-of-device-and-access-point-pairs"></a>Wi-Fi 接続エラーの割合 (デバイスとアクセスポイントのペアの上位 95% から) 
 

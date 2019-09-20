@@ -3,15 +3,13 @@ title: 少なくとも 1 つのオーディオ ハングが発生したマシン
 description: この測定値は、AudioSrv.dll または AudioDG.exe でオーディオ ハングが少なくとも 1 回発生したマシンの割合として、7 日間のスライディング ウィンドウからのテレメトリを集計したものです
 ms.topic: article
 ms.date: 05/20/2019
-ms.author: paslote
-author: parkeratmicrosoft
 ms.localizationpriority: medium
-ms.openlocfilehash: 219461e2d762f9d28661550d23ec88bd293d5375
-ms.sourcegitcommit: 04da1962e34908adeca54fcf5bbfbaa456efca5f
+ms.openlocfilehash: f8cd5ab85577f712b70c5e94bc56417e83e7d040
+ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70223946"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71017024"
 ---
 # <a name="percent-of-machines-with-at-least-one-audio-hang"></a>少なくとも 1 つのオーディオ ハングが発生したマシンの割合
 

@@ -3,15 +3,13 @@ title: Microsoft Edge と Internet Explorer での YouTube ビデオ再生エラ
 description: この測定値は、Microsoft Edge または Internet Explorer での YouTube 再生エラーの割合として、7 日間のスライディング ウィンドウからのテレメトリを集計したものです
 ms.topic: article
 ms.date: 05/20/2019
-ms.author: paslote
-author: parkeratmicrosoft
 ms.localizationpriority: medium
-ms.openlocfilehash: 128f9b6bca0bd35fd2e2666c3cba3209ee413617
-ms.sourcegitcommit: 04da1962e34908adeca54fcf5bbfbaa456efca5f
+ms.openlocfilehash: 74a0af946d837fe120dd6dc7fe34086b661cadab
+ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70223916"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71016942"
 ---
 # <a name="percent-of-youtube-video-playback-failures-in-microsoft-edge-and-internet-explorer"></a>Microsoft Edge と Internet Explorer での YouTube ビデオ再生エラーの割合
 

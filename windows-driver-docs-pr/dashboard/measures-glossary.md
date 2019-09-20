@@ -3,15 +3,13 @@ title: ドライバーのフライティングの測定値に関する用語集
 description: ドライバーのフライティングの測定値に関する重要な用語についての定義を記載しています。
 ms.topic: article
 ms.date: 05/20/2019
-ms.author: paslote
-author: parkeratmicrosoft
 ms.localizationpriority: medium
-ms.openlocfilehash: 96ebbef6aed580aced2cd10ac98ecb7797ca6f15
-ms.sourcegitcommit: 04da1962e34908adeca54fcf5bbfbaa456efca5f
+ms.openlocfilehash: 86951a0d950c1709df4136c33178b2e641f97d88
+ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70223986"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71016982"
 ---
 # <a name="glossary-for-driver-flighting-measures"></a>ドライバーのフライティングの測定値に関する用語集
 

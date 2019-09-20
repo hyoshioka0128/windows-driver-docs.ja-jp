@@ -3,15 +3,13 @@ title: カメラのプレビュー エラー率
 description: この測定値は、カメラ デバイスでプレビュー機能の使用が失敗したインスタンスの割合として、7 日間のスライディング ウィンドウからのテレメトリを集計したものです
 ms.topic: article
 ms.date: 05/20/2019
-ms.author: paslote
-author: parkeratmicrosoft
 ms.localizationpriority: medium
-ms.openlocfilehash: ad400c27e14b58e3b4d6cbb5a70a5aef5b0c8a87
-ms.sourcegitcommit: 04da1962e34908adeca54fcf5bbfbaa456efca5f
+ms.openlocfilehash: 32e6692b5b895ecb11224d62561e306a083d37a7
+ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70224032"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71017077"
 ---
 # <a name="percent-of-camera-preview-failures"></a>カメラのプレビュー エラー率
 

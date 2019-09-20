@@ -3,15 +3,13 @@ title: Bluetooth ペアリング エラー率
 description: ''
 ms.topic: article
 ms.date: 05/20/2019
-ms.author: paslote
-author: parkeratmicrosoft
 ms.localizationpriority: medium
-ms.openlocfilehash: b9d750be8c913847da949057558592d0a198818b
-ms.sourcegitcommit: 04da1962e34908adeca54fcf5bbfbaa456efca5f
+ms.openlocfilehash: 85ec8300e547130bdd9b665175e41a1a12022ac8
+ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70224044"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71017084"
 ---
 # <a name="percent-of-bluetooth-pairing-failures"></a>Bluetooth ペアリング エラー率
 

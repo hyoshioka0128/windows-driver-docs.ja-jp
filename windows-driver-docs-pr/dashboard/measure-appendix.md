@@ -3,15 +3,13 @@ title: Microsoft ドライバーの測定に関する辞書の付録
 description: Microsoft ドライバーの測定に関する辞書の補足資料集
 ms.topic: article
 ms.date: 05/20/2019
-ms.author: paslote
-author: parkeratmicrosoft
 ms.localizationpriority: medium
-ms.openlocfilehash: 86abfad9d8410ced3c589116b30f0763437345ea
-ms.sourcegitcommit: 04da1962e34908adeca54fcf5bbfbaa456efca5f
+ms.openlocfilehash: dbaff20d8857aaac03331fd3df5a403fc008e07b
+ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70223984"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71016984"
 ---
 # <a name="appendix-for-the-microsoft-driver-measure-dictionary"></a>Microsoft ドライバーの測定に関する辞書の付録
 

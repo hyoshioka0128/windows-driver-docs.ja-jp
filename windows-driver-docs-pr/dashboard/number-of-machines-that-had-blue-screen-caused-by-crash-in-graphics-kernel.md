@@ -3,15 +3,13 @@ title: グラフィックス カーネルのクラッシュによってブルー
 description: この測定値は、グラフィックス カーネルにおけるクラッシュが原因でブルースクリーンが発生した個別のマシンのミリアドとして、7 日間のスライディング ウィンドウからのテレメトリを集計したものです。
 ms.topic: article
 ms.date: 05/20/2019
-ms.author: paslote
-author: parkeratmicrosoft
 ms.localizationpriority: medium
-ms.openlocfilehash: f76021378d0123c3f000831ed761adaf8cfa9b58
-ms.sourcegitcommit: 04da1962e34908adeca54fcf5bbfbaa456efca5f
+ms.openlocfilehash: e421c489a67692d8afcde9b51dc4ccf6804a448c
+ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70223994"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71016978"
 ---
 # <a name="number-of-machines-that-had-a-blue-screen-caused-by-a-crash-in-the-graphics-kernel"></a>グラフィックス カーネルのクラッシュによってブルー スクリーンが表示されたマシンの数
 

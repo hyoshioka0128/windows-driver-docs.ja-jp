@@ -3,15 +3,13 @@ title: ドライバー測定の属性
 description: ドライバーのフライティングに使用される測定値と、Microsoft による測定値の評価に向けた集計プロセスとでは、多くの場合、テレメトリの測定属性が共有されます。
 ms.topic: article
 ms.date: 05/20/2019
-ms.author: paslote
-author: parkeratmicrosoft
 ms.localizationpriority: medium
-ms.openlocfilehash: 461f3d4960df662ae70cb612a2ef42c2a414986f
-ms.sourcegitcommit: 04da1962e34908adeca54fcf5bbfbaa456efca5f
+ms.openlocfilehash: 63d01e2caa11fb0729d7e2f35d7d54b9336f473f
+ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70223988"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71017060"
 ---
 # <a name="driver-measure-attributes"></a>ドライバー測定の属性
 

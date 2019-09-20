@@ -3,15 +3,13 @@ title: カメラのビデオおよびストリーム エラー率
 description: この測定値は、カメラ デバイスでビデオおよびストリーミング機能の使用が失敗したインスタンスの割合として、7 日間のスライディング ウィンドウからのテレメトリを集計したものです
 ms.topic: article
 ms.date: 05/20/2019
-ms.author: paslote
-author: parkeratmicrosoft
 ms.localizationpriority: medium
-ms.openlocfilehash: 996ab915b7ea098622275f1762dfaf353b14d945
-ms.sourcegitcommit: 04da1962e34908adeca54fcf5bbfbaa456efca5f
+ms.openlocfilehash: 1365dc8641cb6a5b4d7d0bd8f9856c281c368174
+ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70224030"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71017075"
 ---
 # <a name="percent-of-camera-video-and-stream-failures"></a>カメラのビデオおよびストリーム エラー率
 

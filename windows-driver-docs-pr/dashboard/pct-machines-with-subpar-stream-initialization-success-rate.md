@@ -3,15 +3,13 @@ title: subpar ストリーム初期化成功率のあるマシンの割合
 description: この測定値は、subpar 初期化率のあるマシンの割合として、7 日間のスライディング ウィンドウからのテレメトリを集計したものです
 ms.topic: article
 ms.date: 05/20/2019
-ms.author: paslote
-author: parkeratmicrosoft
 ms.localizationpriority: medium
-ms.openlocfilehash: 9dde8d724e9a34a772941f00fced39901688b1ca
-ms.sourcegitcommit: 04da1962e34908adeca54fcf5bbfbaa456efca5f
+ms.openlocfilehash: 5c2d0ea92efe7473bc0aee6686180158e624b387
+ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70223906"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71017020"
 ---
 # <a name="percent-of-machines-with-subpar-stream-initialization-success-rate"></a>subpar ストリーム初期化成功率のあるマシンの割合
 

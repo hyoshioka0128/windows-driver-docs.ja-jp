@@ -3,15 +3,13 @@ title: ドライバー インストール プロセスが正常に完了した�
 description: この測定値は、ドライバーが正常にインストールされたマシンの割合として、30 日間のスライディング ウィンドウからのテレメトリを集計したものです
 ms.topic: article
 ms.date: 05/20/2019
-ms.author: paslote
-author: parkeratmicrosoft
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c3b0563e922b5422fa6d3d6bcf2d0f19d7b785f
-ms.sourcegitcommit: 04da1962e34908adeca54fcf5bbfbaa456efca5f
+ms.openlocfilehash: e8ad66bde87ea9efd250eb622c9fc932fcc8f427
+ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70223948"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71017022"
 ---
 # <a name="percent-of-machines-where-the-driver-install-process-completes-successfully"></a>ドライバー インストール プロセスが正常に完了したマシンの割合
 

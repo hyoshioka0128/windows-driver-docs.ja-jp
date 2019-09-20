@@ -3,15 +3,13 @@ title: カメラの測定値
 description: カメラの測定値では、Bluetooth ドライバーのフライティング時に、良性の初期化エラーがフィルターで除外されます
 ms.topic: article
 ms.date: 05/20/2019
-ms.author: paslote
-author: parkeratmicrosoft
 ms.localizationpriority: medium
-ms.openlocfilehash: 2acb116ac751bf4bc132c327273b3fa37feb834a
-ms.sourcegitcommit: 04da1962e34908adeca54fcf5bbfbaa456efca5f
+ms.openlocfilehash: aaa0c85b6aa7e8531135eddf1c5499f2a2f79ac9
+ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70224034"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71017080"
 ---
 # <a name="camera-measures"></a>カメラの測定値
 

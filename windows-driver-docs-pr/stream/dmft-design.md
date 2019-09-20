@@ -1,236 +1,236 @@
 ---
 title: デバイス MFT 設計ガイド
-description: このトピックでは、すべてのストリームに共通の後処理を実行するために使用されるユーザー モードで実行されているデバイス全体にわたる拡張機能の設計について説明します。
+description: このトピックでは、すべてのストリームに共通する後処理を実行するために使用できる、ユーザーモードで実行されるデバイス全体の拡張機能の設計の概要について説明します。
 ms.date: 01/30/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f1ed6d0adf5043cd87c3be4902510c66ff0401a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 00931f0f4fdf9033e1d5d9c710d177fcb84fd18c
+ms.sourcegitcommit: c1d02055c131d99f5c26943b527ca84f067afbab
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67358455"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71135775"
 ---
 # <a name="device-mft-design-guide"></a>デバイス MFT 設計ガイド
 
-Windows でのビデオ キャプチャのスタックでは、MFT0 の形式でユーザー モードの拡張機能をサポートしています。 これは Ihv が指定し、キャプチャ パイプラインは、最初の変換では、取り込み後として挿入するストリームごとの拡張機能コンポーネントです。 MFT0 では、デバイスから、後処理のフレームを取り込まれます。 MFT0 内では、さらに後処理フレームに対する操作を実行できます。 
+Windows のビデオキャプチャスタックでは、DMFT の形式でユーザーモードの拡張機能をサポートしています。 これは、Ihv が提供するデバイスごとの拡張コンポーネントであり、キャプチャパイプラインは最初の変換であるキャプチャとして挿入されます。 DMFT は、デバイスから処理後のフレームを受信します。 さらに、フレームに対する後処理操作は、DMFT 内で行うことができます。 DMFT は、デバイスのすべてのストリームからフレームを受け取ることができ、要件に従って任意の数の出力ストリームを公開できます。
 
-このトピックでは、すべてのストリームに共通の後処理を実行するために使用されるユーザー モードで実行されているデバイス全体にわたる拡張機能の設計について説明します。
+このトピックでは、すべてのストリームに共通する後処理を実行するために使用できる、ユーザーモードで実行されるデバイス全体の拡張機能の設計の概要について説明します。
 
 ## <a name="terminology"></a>用語
 
 | 項目       | 説明                                                                                         |
 |------------|-----------------------------------------------------------------------------------------------------|
-| KS         | カーネル ストリーミング ドライバー                                                                             |
-| AvStream   | オーディオ ドライバー モデルのビデオのストリーミング                                                                  |
-| フィルター     | デバイス インスタンスを表すオブジェクト                                                            |
-| デバイス MFT | Ihv によって提供されるユーザー モード キャプチャ ドライバーの拡張機能                                                 |
-| Devproxy   | MF <> - AvStream マーシャラー                                                                           |
-| DTM        | デバイス Transform Manager devproxy と MFT のデバイスを管理します。 MF パイプラインでデバイスを表します。|
+| KS         | カーネルストリーミングドライバー                                                                             |
+| AvStream   | オーディオビデオストリーミングドライバーモデル                                                                  |
+| Assert     | デバイスインスタンスを表すオブジェクト                                                            |
+| デバイスの MFT | Ihv によって提供されるユーザーモードキャプチャドライバーの拡張機能                                                 |
+| Devproxy   | MF <-> AvStream マーシャラー                                                                           |
+| DTM        | Devproxy とデバイス MFT を管理するデバイス変換マネージャー。 MF パイプラインのデバイスを表します。|
 
 ## <a name="design-goals"></a>設計目標
 
-- デバイス フィルターと同じ有効期間を持つデバイス フィルター全体のユーザー モードの拡張機能
-- 任意の数のデバイスからの入力をサポートしています
-- 任意の数の出力をサポートしています (現在の要件は次の 3 つのストリーム: プレビュー、レコード、および写真)
-- デバイスのすべてのコントロールをデバイス MFT (を必要に応じて処理するか、デバイスに渡されます) にルーティングします。
-- キャプチャされたストリームの処理を並列に投稿します。
-- 3 a の処理を許可するフレーム レートに依存しません。
-- 他のストリーム間で共有される 1 つのストリームからのメタデータを許可します。
+- デバイスフィルターと同じ有効期間を持つデバイスフィルター全体のユーザーモード拡張機能
+- デバイスから受信する任意の数の入力をサポートします。
+- 任意の数の出力をサポートします (現在の要件は、プレビュー、レコード、写真の3つのストリームです)
+- すべてのデバイスコントロールをデバイス MFT にルーティングします (必要に応じてデバイスを処理またはデバイスに渡します)。
+- キャプチャされたストリームの並列ポスト処理
+- フレームレートに依存しない3A の処理を許可する
+- 1つのストリームのメタデータを他のストリーム間で共有できるようにする
 - GPU リソースへのアクセス
-- MF MMCSS 作業キューへのアクセス
+- MF MMCSS Work キューへのアクセス
 - MF アロケーターへのアクセス
-- シンプルなインターフェイス (MFT に似ています)
-- IHV と OEM の拡張機能の柔軟性の高い内部アーキテクチャ
+- 単純なインターフェイス (MFT に似ています)
+- IHV/OEM の拡張性のための柔軟な内部アーキテクチャ
 
 ## <a name="design-constraints"></a>設計上の制約
 
-- キャプチャの API サーフェスの変更はありません。
-- 旧バージョンとの互換性を完了します。 たとえば、ない回帰レガシ アプリケーションとシナリオの操作中にします。
+- Capture API サーフェイスに変更はありません
+- 旧バージョンとの互換性を確保します。 たとえば、レガシアプリとシナリオでの作業中に回帰が発生することはありません。
 
-## <a name="capture-stack-architecture"></a>スタックのアーキテクチャをキャプチャします。
+## <a name="capture-stack-architecture"></a>キャプチャスタックのアーキテクチャ
 
-このトピックでは、キャプチャのドライバーをフィルター全体のユーザー モード拡張機能のサポートについて説明します。 このコンポーネントには、MF Api、スレッド プール、GPU と ISP のリソースへのアクセスがあります。 フィルターのワイド拡張機能は、任意の数のストリームをそれ自体と Ks デバイス間で、柔軟性を提供します。 フィルター。 この柔軟性により、今のところ、ユーザー モードの拡張機能と専用のメタデータと 3A 処理ストリームのために使用できるドライバーの間での帯域外通信ができます。
+このトピックでは、キャプチャドライバーに対するフィルターレベルのユーザーモード拡張機能のサポートについて説明します。 このコンポーネントは、MF Api、スレッドプール、GPU、および ISP リソースにアクセスできます。 フィルターのワイド拡張では、それ自体とデバイス Ks フィルターの間に任意の数のストリームを柔軟に含めることができます。 この柔軟性により、ユーザーモード拡張機能とドライバーの間で帯域外通信をシームレスにことができるようになります。これは、専用のメタデータおよび3A 処理ストリームに使用できます。
 
-![スタックのアーキテクチャをキャプチャします。](images/capture-stack-architecture.png)
+![キャプチャスタックのアーキテクチャ](images/capture-stack-architecture.png)
 
 <br>
 <br>
 
-![デバイス mft アーキテクチャ](images/device-mft-architecture.png)
+![デバイスの mft アーキテクチャ](images/device-mft-architecture.png)
 
-### <a name="device-transform-manager-dtm"></a>デバイス変換 Manager (DTM)
+### <a name="device-transform-manager-dtm"></a>デバイス変換マネージャー (DTM)
 
-キャプチャのスタックには、新しいシステムで指定されたコンポーネントをデバイス変換 Manager (DTM) が導入されています。 これにより、DeviceSource の中に存在し、Devproxy MFT および MFT のデバイスを管理します。 DTM とは、メディアの種類のネゴシエーション、サンプルの反映、および MFT イベントのすべての処理です。 また、DeviceSource IMFTransform インターフェイスと DeviceSource がストリームのデバイスを管理する必要があるために必要なその他のプライベート インターフェイスも公開します。 このコンポーネントは、パイプラインから Devproxy とデバイス MFT を抽象化します。 パイプラインは、DTM をデバイスおよび DTM からストリームとして、デバイスにストリームとしてだけ表示されます。
+キャプチャスタックには、新しいシステム指定のコンポーネントである Device Transform Manager (DTM) が導入されています。 これは、デバイス Ource 内に存在し、Devproxy MFT とデバイス MFT を管理します。 DTM は、MediaType ネゴシエーション、サンプル伝達、およびすべての MFT イベント処理を行います。 また、デバイス ource の IMFTransform インターフェイスと、デバイスのストリームを管理するために必要なその他のプライベートインターフェイスも公開されています。 このコンポーネントは、パイプラインから Devproxy と Device MFT を抽象化します。 パイプラインは、デバイスとして DTM を、デバイスストリームとして DTM からストリームアウトします。
 
 ### <a name="devproxy"></a>Devproxy
 
-Devproxy では、非同期コマンドと AvStream カメラ ドライバーおよび Media Foundation 間のビデオのフレームをマーシャ リングする MFT です。 これをサポートしている Windows によって提供されます*n*カメラ ドライバーからの出力の数。 また、デバイスによって公開されているすべてのピンのアロケーターを所有しています。
+Devproxy は、AvStream カメラドライバーとメディアファンデーションの間でコマンドとビデオフレームをマーシャリングする非同期の MFT です。 これは Windows によって提供され、カメラドライバーからの*n 個*の出力をサポートしています。 また、これは、デバイスによって公開されているすべてのピンのアロケーターを所有しています。
 
-### <a name="device-mft"></a>デバイス MFT
+### <a name="device-mft"></a>デバイスの MFT
 
-デバイス MFT は、キャプチャ ドライバーへの拡張機能をユーザー モードです。 *M n x*非同期 MFT します。 キャプチャのドライバーを使用したシステムにインストールし、キャプチャのドライバーのベンダーによって提供されます。
+デバイス MFT は、キャプチャドライバーに対するユーザーモードの拡張機能です。 これは*m x n*非同期 MFT です。 キャプチャドライバーを使用してシステムにインストールされ、capture driver ベンダによって提供されます。
 
-デバイス MFT の入力ストリームの数は、デバイスによって公開される Ks ピンの数と同じである必要があります。 デバイス MFT の入力ストリームでサポートされている mediatypes は KS ピンによって公開される mediatypes と同じである必要があります。
+デバイス MFT の入力ストリームの数は、デバイスによって公開されている Ks pin の数と同じである必要があります。 デバイスの MFT の入力ストリームでサポートされる mediatypes は、KS ピンによって公開されている mediatypes と同じである必要があります。
 
-デバイス MFT によって公開されている出力ストリームの数は、DeviceSource とキャプチャのスタックに表示される、ストリームは、API とアプリケーションをキャプチャおよび 1 つ、2 つ、または 3 つのストリームにすることができます。 デバイス MFT の入力と出力ストリームの数は同じである必要はありません。 また、入力し、出力ストリームは、同じの mediatypes させる必要はありません異なる mediatypes、通常になります。 Mediatypes 数は、いずれかとも一致しない必要があります。
+デバイス MFT によって公開される出力ストリームの数は、デバイス Ource とキャプチャスタック、キャプチャ API、およびアプリケーションによって見られるストリームであり、1つ、2つ、または3つのストリームにすることができます。 デバイス MFT の入力ストリームと出力ストリームの数は、同じである必要はありません。 また、入力ストリームと出力ストリームは同じ mediatypes を持つ必要はなく、通常は異なる mediatypes を持ちます。 Mediatypes の数が一致していない必要があります。
 
-Devproxy でユーザー モードで表される最初の Ks Pin には、デバイス、MFT MFT、デバイスの 2 つ目の入力ストリームで Devproxy の出力ストリームによってユーザー モードで表される 2 つ目の Ks Pin の最初の入力ストリームに関連付けられたストリームを取得の出力です。
+Devproxy の出力ストリームによってユーザーモードで表される最初の Ks Pin は、デバイス MFT の最初の入力ストリームに関連付けられます。ユーザーモードで表される2番目の Ks ピンは、デバイス MFT の2番目の入力ストリームと共に、Devproxy の出力ストリームによって表されます。
 
-デバイス MFT が Devproxy、DX のデバイスへのポインターを指定し、MF ワーク キューの id。 デバイスから送信されたフレームは、MF サンプルとして、対応するデバイス MFT の入力に直接読み込まれます。 これらのデバイス MFT 投稿できるすべてキャプチャされたサンプルを処理し、プレビュー、レコード、および写真ピンにサンプルを提供します。
+デバイス MFT には、Devproxy、DX デバイス、および MF ワークキュー ID へのポインターが付与されます。 デバイスから送られるフレームは、対応するデバイスの MFT の入力に、MF サンプルとして直接取り込まれます。 これらすべてを使用して、デバイスの MFT は、キャプチャしたサンプルを処理し、プレビュー、レコード、およびフォトピンのサンプルを提供できます。
 
-すべてのコマンドとコントロールが、デバイスには、デバイス MFT に再ルーティングされます。 デバイス MFT は、コントロールを処理または Devproxy を使ってドライバーに渡します。 これには、キャプチャのドライバー スタックは、コマンド処理が効率化します。
+デバイスに送られるすべてのコマンドとコントロールがデバイス MFT に再ルーティングされます。 デバイス MFT は、コントロールを処理するか、Devproxy を使用してドライバーに渡します。 これにより、キャプチャドライバースタックによるコマンド処理が効率化されます。
 
 ## <a name="functional-overview"></a>機能の概要
 
-デバイスのデバイス MFT がある場合、キャプチャ パイプラインの初期設定で DeviceSource には、DTM がインスタンス化します。 DTM の初期化ルーチンへのデバイスを表す Devproxy のインスタンスを渡します。 DTM 併置デバイス MFT を作成し、基本的な検証、verifes Devproxy の出力ピンの数は同じデバイスの MFT の入力ピンの数が必須のインターフェイスのサポートし、など。
+キャプチャパイプラインの初期化時に、デバイスのデバイス MFT がある場合は、デバイス Ource によって DTM がインスタンス化されます。 このメソッドは、デバイスを表す Devproxy のインスタンスを DTM の初期化ルーチンに渡します。 DTM co はデバイス MFT を共同で作成し、基本的な検証を実行します。たとえば、Devproxy の出力ピンの数は、デバイスの MFT の入力ピンの数と同じであること、必須インターフェイスのサポートなどが verifes ます。
 
-DeviceSource クエリ DTM をサポートされている出力 mediatypes を取得します。 DTM を使用して、これらのデバイス MFT の出力ピンから取得します。 DeviceSource がプレゼンテーションの記述子を公開し、キャプチャ パイプラインには、この情報に基づいて Stream 記述子。
+サポートされている出力 mediatypes を取得するためのデバイスの Ource。 これらの値は、デバイスの MFT の出力ピンから取得されます。 デバイス Ource は、この情報に基づいてプレゼンテーション記述子とストリーム記述子をキャプチャパイプラインに公開します。
 
-SourceReader では、DeviceSource の公開されている mediatypes を使用し、各ストリームで既定 mediatypes を設定します。 さらに、DeviceSource 既定 mediatypes の DTM の出力ストリームを設定します。 DTM を使用して、デバイス MFT の出力ストリームに、メディアの種類の設定、 [SetOutputStreamState](https://docs.microsoft.com/windows/desktop/api/mftransform/nf-mftransform-imfdevicetransform-setoutputstreamstate)メソッド。
+SourceReader は、デバイス Ource の公開された mediatypes を使用し、各ストリームに既定の mediatypes を設定します。 さらに、デバイス Ource は DTM の出力ストリームに既定の mediatypes を設定します。 DTM は、 [Setoutputstreamstate](https://docs.microsoft.com/windows/desktop/api/mftransform/nf-mftransform-imfdevicetransform-setoutputstreamstate)メソッドを使用して、デバイスの MFT の出力ストリームに mediatype を設定します。
 
-ときに**SetOutputStreamState**を呼び出すと、その入力ストリームのメディアの種類を変更するには、DTM にメッセージが選択されている出力メディアの種類に基づくデバイス MFT 投稿し、待機します。 このメッセージでは、DTM クエリを使用して、デバイス MFT の入力ストリームの優先入力メディアの種類への応答で[GetPreferredInputStreamState](https://docs.microsoft.com/windows/desktop/api/mftransform/nf-mftransform-imfdevicetransform-getinputstreampreferredstate)します。 これにより、Devproxy の対応する出力ストリームに、メディアの種類が設定されます。 成功する場合、DTM は SetInputStreamState を使用して、デバイス MFT の入力ストリームにその同じメディアの種類を設定します。 デバイス MFT の完了後、この呼び出しを受信するには、 **SetOutputStreamState**します。
+**Setoutputstreamstate**が呼び出されると、デバイス MFT は、選択された出力の mediatype と待機に基づいて入力ストリームの mediatype を変更するために、dtm にメッセージを送信します。 このメッセージに対する応答として、DTM は[GetPreferredInputStreamState](https://docs.microsoft.com/windows/desktop/api/mftransform/nf-mftransform-imfdevicetransform-getinputstreampreferredstate)を使用してデバイス MFT の入力ストリームに対して優先入力メディアを指定します。 これにより、Devproxy の対応する出力ストリームに mediatype が設定されます。 これが成功した場合、DTM は SetInputStreamState を使用して、デバイスの MFT の入力ストリームに同じ mediatype を設定します。 この呼び出しを受け取った後、デバイスの MFT は**Setoutputstreamstate**を完了します。
 
-CaptureEngine は、DeviceSource で特定のストリームを有効にすると個別のストリームを選択します。 これを通じて DTM によってデバイス MFT に伝達は、 **SetOutputStreamState**呼び出します。 デバイス MFT は、要求された状態で、特定の出力ストリームを配置します。 前述のように、デバイス MFT はまた、DTM を有効にする必要があるために必要な入力ストリームの詳細通知します。 これは、結果、DTM Devproxy にストリーム選択を反映します。 このプロセスの最後に、Devproxy とデバイスの MFT 内のすべての必要なストリームは、ストリームができています。
+CaptureEngine は、デバイス Ource で特定のストリームを有効にすることで、個々のストリームを選択します。 これは、 **Setoutputstreamstate**呼び出しによって dtm によってデバイス MFT に反映されます。 デバイス MFT は、要求された状態で特定の出力ストリームを配置します。 前述のように、デバイス MFT は、有効にする必要がある必要な入力ストリームについても DTM に通知します。 結果として、ストリームの選択が Devproxy に反映されます。 このプロセスの最後に、Devproxy と Device MFT で必要なすべてのストリームをストリーム配信する準備ができました。
 
-SourceReader は CaptureEngine ReadSample を呼び出すときに、DeviceSource を開始します。 さらに、DeviceSource は、パイプラインの開始を示す MFT_MESSAGE_NOTIFY_BEGIN_STREAMING および MFT_MESSAGE_NOTIFY_START_OF_STREAM のメッセージを送信することによって、DTM を開始します。 DTM は MFT_MESSAGE_NOTIFY_BEGIN_STREAMING および MFT_MESSAAGE_NOTIFY_START_OF_STREAM メッセージ伝達することで Devproxy とデバイス MFT を開始します。 
+SourceReader は、CaptureEngine が ReadSample を呼び出すときに、デバイス Ource を開始します。 さらに、デバイス Ource は、パイプラインの開始を示す MFT_MESSAGE_NOTIFY_BEGIN_STREAMING メッセージと MFT_MESSAGE_NOTIFY_START_OF_STREAM メッセージを送信することによって DTM を開始します。 DTM は、MFT_MESSAGE_NOTIFY_BEGIN_STREAMING メッセージと MFT_MESSAAGE_NOTIFY_START_OF_STREAM メッセージを伝達することによって Devproxy とデバイス MFT を起動します。 
 
-**注**デバイス MFT 初期化ではなくストリーミングの開始時に必要なリソースを割り当てます。
+**メモ**Device MFT initialize ではなく、開始ストリーミングに必要なリソースを割り当てます。
 
-DTM 呼び出し**SetOutputStreamState**ストリーミング状態パラメーターを使用してデバイス MFT の出力にします。 デバイス MFT は、これらの出力ストリームでは、ストリーミングを開始します。 DTM が有効なメディアの種類を設定する Devproxy 出力ストリームにストリーミングを開始します。 Devproxy サンプルは、割り当て、デバイスからそれらをフェッチします。 これらのサンプルは、関連する入力ピンにデバイス MFT に渡します。 デバイス MFT は、これらのサンプルを処理し、DeviceSource への出力を提供します。 DeviceSource からサンプルを CaptureEngine SourceReader を通過します。
+DTM は、ストリーミング状態パラメーターを使用して、デバイスの MFT の出力で**Setoutputstreamstate**を呼び出します。 デバイス MFT は、これらの出力ストリームでストリーミングを開始します。 DTM は、有効な mediatype が設定されている Devproxy 出力ストリームでストリーミングを開始します。 Devproxy はサンプルを割り当て、デバイスからそれらをフェッチします。 これらのサンプルは、関連する入力ピンのデバイス MFT に取り込まれます。 デバイス MFT は、これらのサンプルを処理し、出力をデバイス Ource に渡します。 デバイス Ource から、サンプルは SourceReader から CaptureEngine に流れます。
 
-CaptureEngine は、DeviceSource 上の内部のインターフェイスを通じて個別のストリームを無効にして個別のストリームを停止します。 これは、特定の出力デバイス MFT 経由でストリームが無効にするのに変換**SetOutputStreamState**します。 さらに、デバイス MFT がを通じて特定の入力ストリームを無効化を要求する場合があります**METransformInputStreamStateChanged**イベント。 DTM には、対応する Devproxy ストリームにこれが反映されます。
+CaptureEngine は、デバイス Ource の内部インターフェイスを介して個々のストリームを無効にすることで、個々のストリームを停止します。 これは、 **Setoutputstreamstate**を通じてデバイス MFT で特定の出力ストリームを無効にするために変換されます。 デバイスの MFT は、 **METransformInputStreamStateChanged**イベントを使用して特定の入力ストリームの無効化を要求する場合があります。 DTM は、対応する Devproxy ストリームにこれを反映します。
 
-デバイス MFT ストリーミング状態で、要求できる限り、任意の入力ストリームが有効な DeviceStreamState のいずれかに移行します。 たとえば、他のストリームに影響を与えずに DeviceStreamState_Stop または DeviceStreamState_Run または DeviceStreamState_Pause を送信、でした。
+デバイスの MFT 自体がストリーミング状態である限り、任意の入力ストリームを任意の有効な DeviceStreamState に移行するように要求できます。 たとえば、他のストリームに影響を与えずに、DeviceStreamState_Stop、DeviceStreamState_Run、DeviceStreamState_Pause などに送信できます。
 
-ただし、出力ストリームの切り替えは、キャプチャ パイプラインによって制御されます。 たとえば、プレビュー、レコード、およびフォト ストリームを有効または無効にキャプチャ パイプラインによって。 出力は無効になっている場合でも、入力ストリームはでした自体デバイス MFT ストリーミングの状態にある限りはストリーミングもします。
+ただし、出力ストリームの遷移は、キャプチャパイプラインによって制御されます。 たとえば、プレビュー、レコード、およびフォトストリームは、キャプチャパイプラインによって有効または無効にされます。 出力が無効になっている場合でも、デバイスの MFT 自体がストリーミング状態である限り、入力ストリームがストリーミングされる可能性があります。
 
-![デバイス mft パイプライン プレビュー シーケンス](images/device-mft-pipeline-preview-sequence.png)
+![デバイス mft パイプラインのプレビューシーケンス](images/device-mft-pipeline-preview-sequence.png)
 
 <br>
 <br>
 
-![デバイス mft 写真のシーケンスを実行します。](images/device-mft-take-photo-sequence.png)
+![デバイスの mft による写真の撮影](images/device-mft-take-photo-sequence.png)
 
 
 ### <a name="lifetime-of-device-mft"></a>デバイス MFT の有効期間
 
-KS フィルターが作成されたら、デバイス MFT が読み込まれます。 これがアンロードされる KS フィルターが閉じられる前にします。
+KS フィルターを作成した後に、デバイスの MFT が読み込まれます。 これは、KS フィルターを閉じる前にアンロードされます。
 
-パイプラインの観点から、DeviceSource が作成されると、デバイス MFT が作成され、デバイス MFT がシャット ダウンを同期的には、DeviceSource がシャット ダウンのとき。
+パイプラインの観点からは、デバイス Ource が作成されるとデバイスの MFT が作成され、デバイスの Ource がシャットダウンされると、デバイスの MFT は同期的にシャットダウンされます。
 
-シャット ダウンをサポートするデバイス MFT をサポートする必要があります、 **IMFShutdown**インターフェイス。 後**デバイス MFT シャット ダウン]-> [** を呼び出すと、その他のインターフェイス、デバイス MFT への呼び出しは MF_E_SHUTDOWN エラーを返す必要があります。
+シャットダウンをサポートするには、デバイスの MFT が**Imfshutdown**インターフェイスをサポートしている必要があります。 **デバイス mft の > シャットダウン**が呼び出された後、デバイス mft へのその他のインターフェイス呼び出しでは、MF_E_SHUTDOWN エラーが返される必要があります。
 
 ### <a name="memory-type"></a>メモリの種類
 
-システム メモリのバッファー、またはカメラ ドライバーの基本設定ごとの DX メモリ バッファーには、フレームをキャプチャできます。 さらに処理するためのデバイス MFT にカメラのドライバーはどのようなバッファーが取り込まれる直接します。
+フレームは、カメラドライバーの設定に従って、システムメモリバッファーまたは DX メモリバッファーにキャプチャできます。 カメラドライバーから取得されたすべてのバッファーは、さらに処理するためにデバイス MFT に直接取り込まれます。
 
-Devproxy では、ドライバーの設定に基づいたバッファーを割り当てます。 メインフレームを使用するようデバイス MFT ですがアロケーター-force-inplace 以外の変換、出力ピンの必要なサンプルを割り当てることの Api。
+Devproxy は、ドライバーの設定に基づいてバッファーを割り当てます。 デバイス MFT では、MF アロケーター Api を使用して、非インプレース変換の出力ピンに必要なサンプルを割り当てる必要があります。
 
-### <a name="mediatype-change-while-streaming"></a>ストリーミング中のメディアの種類の変更
+### <a name="mediatype-change-while-streaming"></a>ストリーミング中の Mediatype の変更
 
-SourceReader のクライアントは、そのネイティブ デバイス MFT の出力ストリームによって公開される mediatypes mediatypes がサポートされていること。 ネイティブのメディアの種類が変更されたときに、SourceReader は DeviceSource を介してデバイス MFT にメディアの種類の通知呼び出しを送信します。 そのストリームのキューからの保留中のすべてのサンプルをフラッシュし、適切なタイミングで、そのストリームに対する新しいメディアの種類を切り替えるデバイス MFT の役目です。 入力メディアの種類を変更する必要がある場合は、1 つを現在の入力メディアの種類を変更があります。 DTM はデバイス MFT の入力ストリームから現在のメディアの種類を取得し、ネイティブ mediatype 変更のたびに Devproxy の出力ストリームや、デバイス MFT の入力を設定します。
+SourceReader のクライアントは、ネイティブでサポートされている mediatypes として、デバイスの MFT の出力ストリームによって公開されている mediatypes を表示できます。 ネイティブの mediatype が変更されると、SourceReader は、デバイスの Ource を介して、mediatype 通知呼び出しをデバイス MFT に送信します。 デバイス MFT は、そのストリームのキューから保留中のすべてのサンプルをフラッシュし、そのストリームの新しい mediatype に適切なタイミングで切り替える必要があります。 入力 mediatype を変更する必要がある場合は、現在の入力 mediatype をそのメディアに変更する必要があります。 DTM は、デバイスの MFT の入力ストリームから現在のメディアを取得し、Devproxy の出力ストリームに設定し、各ネイティブメディアが変更された後にデバイスの MFT の入力を設定します。
 
-### <a name="input-mediatype-change-in-device-mft"></a>デバイス MFT の入力メディアの種類の変更
+### <a name="input-mediatype-change-in-device-mft"></a>デバイス MFT での入力メディアの変更
 
-これはあるため、 *m n x* MFT、可能性がある影響入力ピンの mediatypes をストリーミングにストリーミングの pin の mediatypes の出力時に状態の変更や状態の変化と。 具体的には、次の変更が発生した場合。
+これは*m x n*の MFT であるため、出力ストリームピンの mediatypes または状態が変更された場合、入力ストリームピンの mediatypes と状態の変化に悪影響がある可能性があります。 具体的には、次の変更が発生します。
 
-- 出力メディアの種類の変更
+- 出力の Mediatype の変更
 
-    - アプリケーションでネイティブ メディアの種類が変更されたときに重ねて表示キャプチャ スタックを通じてデバイス MFT に出力ピン留めするメディアの種類の変更としてします。
+    - アプリケーションは、ネイティブメディアを変更すると、出力ピンの mediatype 変更として、キャプチャスタックを介してデバイス MFT にカスケードされます。
 
-    - ときに、メディアの種類の変更を出力、入力メディアの種類の変更をトリガーする可能性が。 たとえば、すべての出力ピンが 720 p でストリーミングされます。 これは、結果、720 p でカメラからストリーミングします。 次に、レコードのストリームの変更を 1080p にネイティブ、mediatype と仮定します。 その場合は、そのメディアの種類を変更するレコードのストリームにデータをフェッチしていますが、デバイス MFT 入力ストリームのいずれかになります。
+    - 出力 mediatype が変更されると、入力メディアの変更がトリガーされることがあります。 たとえば、すべての出力ピンが720p でストリーミングされているとします。 これにより、720p でカメラからストリーミングが行われます。 次に、レコードストリームのネイティブメディアが1080p に変更されるとします。 その場合、レコードストリームにデータをフェッチしていたデバイスの MFT 入力ストリームの1つで、メディアの mediatype を変更する必要があります。
 
-- 出力ピンが無効になっています
+- 出力ピンが無効です
 
-    - 最適化では、1 つ以上の出力で、同じ入力が共有すると、アプリケーション プログラムがデバイス MFT の出力のいずれか無効にされた場合、入力は、メディアの種類を変更する必要があります。 たとえば、1080 p の出力ストリームが停止し、その他のすべてのストリームが場合、は、720 p でストリーミングは、1 つの入力を共有し、入力ストリームは、720 p 電力の節約し、パフォーマンスを向上するにそのメディアの種類を変更する必要があります。
+    - 同じ入力が複数の出力によって共有されている場合に、アプリケーションがデバイスの MFT の出力の1つを無効にすると、その入力によって mediatype の変更が必要になることがあります。 たとえば、1080p 出力ストリームが停止し、1つの入力を共有している他のすべてのストリームが720p でストリーミングされている場合、入力ストリームによってメディアの mediatype が720p に変わり、電力が節約され、パフォーマンスが向上します。
 
-DTM ハンドル[METransformInputStreamStateChanged](https://docs.microsoft.com/windows-hardware/drivers/stream/metransforminputstreamstatechanged)メディアの種類とデバイス MFT 入力とこれらの条件下で Devproxy 出力の状態を変更するデバイス MFT からの通知。
+DTM は、デバイス MFT からの[METransformInputStreamStateChanged](https://docs.microsoft.com/windows-hardware/drivers/stream/metransforminputstreamstatechanged)通知を処理して、これらの条件下でデバイス mft 入力と devproxy 出力の mediatype と状態を変更します。
 
-### <a name="flush-device-mft"></a>フラッシュ デバイス MFT
+### <a name="flush-device-mft"></a>デバイス MFT をフラッシュする
 
-2 種類のフラッシュが必要なデバイス MFT を管理するときに。
+デバイス MFT を管理する際には、次の2種類のフラッシュが必要です。
 
-- グローバルのフラッシュ
+- グローバルフラッシュ
 
-    - デバイス全体にわたる MFT フラッシュします。 通常、これは、DTM がデバイス MFT にメッセージをストリーミングの停止を送信するときに発生します。
+    - デバイスの MFT 全体のフラッシュ。 これは通常、DTM が停止ストリーミングメッセージをデバイス MFT に送信しようとしているときに発生します。
 
-    - デバイス MFT は、その入力と出力キューからすべてのサンプルをドロップし、同期的に返すと想定されます。
+    - デバイス MFT は、入力キューと出力キューからすべてのサンプルを削除し、同期的に返すことが想定されています。
 
-    - デバイス MFT の新しい入力を要求または新しい使用可能な出力に関する通知を送信する必要がありますされません。
+    - デバイス MFT は、新しい入力を要求したり、新しい利用可能な出力に通知を送信したりすることはできません。
 
-- ローカル フラッシュ
+- ローカルフラッシュ
 
-    - 出力ピンに固有のフラッシュします。 これは通常、ストリームが停止したときに発生します。
+    - ピン固有のフラッシュを出力します。 これは通常、ストリームが停止したときに発生します。
 
-フラッシュする前にポストされたすべてのイベントは、デバイス MFT マネージャーによって削除されます。 その内部のフラッシュ後にデバイス MFT リセット[METransformHaveOutput](https://docs.microsoft.com/windows-hardware/drivers/stream/metransformhaveoutput)数を追跡します。
+フラッシュの前にポストされたすべてのイベントは、デバイスの MFT マネージャーによって削除されます。 フラッシュ後、デバイスの MFT は内部の[Metransformが出力](https://docs.microsoft.com/windows-hardware/drivers/stream/metransformhaveoutput)追跡カウントをリセットします。
 
 ### <a name="drain-of-device-mft"></a>デバイス MFT のドレイン
 
-ドレイン ライブ キャプチャ ソース内の必要性がないために、デバイス MFT は s ドレインが個別のメッセージを受信しません。
+ライブキャプチャソースにドレインを行う必要がないため、デバイス MFT は、個別のドレインメッセージを受信しません。
 
-### <a name="photo-trigger"></a>写真のトリガー
+### <a name="photo-trigger"></a>フォトトリガー
 
-このモデルで、写真のトリガー フォト シーケンス開始、停止トリガーに直接送信する代わりに、ドライバー、されるデバイス MFT に再ルーティングします。 デバイス MFT はトリガーを処理または、必要に応じて、カメラのドライバーに転送します。
+このモデルでは、フォトトリガーとフォトシーケンスの開始と停止を直接ドライバーに送信するのではなく、デバイスの MFT に再ルーティングされます。 デバイス MFT は、トリガーを処理するか、必要に応じてカメラドライバーに転送します。
 
-### <a name="warm-start"></a>ウォーム スタート
+### <a name="warm-start"></a>ウォームスタート
 
-DeviceSource ウォーム スタート遷移すると、ストリームの状態を一時停止する特定の出力ストリームしようとします。 さらに、DTM を呼び出す、 [IMFDeviceTransform::SetOutputStreamState](https://docs.microsoft.com/windows/desktop/api/mftransform/nf-mftransform-imfdevicetransform-setoutputstreamstate)デバイス MFT 状態を一時停止する特定の出力ストリームに移行するメソッド。 これは、結果を一時停止にする場合は、対応する入力ストリーム。 これは、要求することによってデバイス MFT で実現されます**METransformInputStreamStateChanged** DTM を処理、 [IMFDeviceTransform::SetInputStreamState](https://docs.microsoft.com/windows/desktop/api/mftransform/nf-mftransform-imfdevicetransform-setinputstreamstate)メソッド。
+デバイス Ource は、ストリームを一時停止状態に遷移させることによって、特定の出力ストリームをウォーム開始しようとします。 次に、DTM はデバイス MFT の[Imfdevicetransform:: SetOutputStreamState](https://docs.microsoft.com/windows/desktop/api/mftransform/nf-mftransform-imfdevicetransform-setoutputstreamstate)メソッドを呼び出して、特定の出力ストリームを一時停止状態に遷移させるようにします。 これにより、対応する入力ストリームが一時停止になります。 これは、デバイスの MFT によって実現されます。そのためには、 **METransformInputStreamStateChanged**を dtm に要求し、 [Imfdevicetransform:: SetInputStreamState](https://docs.microsoft.com/windows/desktop/api/mftransform/nf-mftransform-imfdevicetransform-setinputstreamstate)メソッドを処理します。
 
 ### <a name="variable-photo-sequence"></a>可変の写真シーケンス
 
-このアーキテクチャでは、写真のシーケンスはデバイス MFT、カメラのデバイス ドライバーの複雑さを大幅に減少とカメラのデバイス ドライバーで実装されます。 開始、停止の写真シーケンス トリガーでは、デバイス MFT に送信され、写真のシーケンスをより簡単に処理します。
+このアーキテクチャでは、カメラデバイスドライバーとデバイス MFT を使用してフォトシーケンスが実装されているため、カメラデバイスドライバーの複雑さが大幅に軽減されます。 開始および停止フォトシーケンストリガーはデバイス MFT に送信され、写真シーケンスをより簡単に処理できます。
 
 ### <a name="photo-confirmation"></a>写真の確認
 
-写真を使用して確認をサポートするデバイス MFT、 **IMFCapturePhotoConfirmation**インターフェイス。 パイプラインを使用して、このインターフェイスを取得します[IMFGetService::GetService](https://docs.microsoft.com/windows/desktop/api/mfidl/nf-mfidl-imfgetservice-getservice)メソッド。
+デバイス MFT では、 **IMFCapturePhotoConfirmation**インターフェイスを使用した写真の確認がサポートされています。 パイプラインは、 [IMFGetService:: GetService](https://docs.microsoft.com/windows/desktop/api/mfidl/nf-mfidl-imfgetservice-getservice)メソッドを使用してこのインターフェイスを取得します。
 
 ### <a name="metadata"></a>メタデータ
 
-Devproxy はメタデータのバッファー サイズのドライバーを照会し、メタデータのメモリを割り当てます。 ドライバーからのメタデータは、サンプルをまだ Devproxy によって設定されます。 デバイス MFT は、サンプルのメタデータを消費します。 メタデータする、出力ストリームにサンプル渡されるか、その投稿の処理に使用されるだけです。
+Devproxy は、ドライバーにメタデータバッファーサイズを照会し、メタデータ用のメモリを割り当てます。 ドライバーから取得されたメタデータは、サンプルの Devproxy によってまだ設定されています。 デバイス MFT は、サンプルのメタデータを使用します。 メタデータは、サンプルと共に出力ストリームから渡すか、またはポスト処理に使用することができます。
 
-任意の数の入力をサポートしているデバイス MFT、専用の入力ピンには、メタデータや帯域外のメタデータだけ使用できます。 このピンのメディアの種類がカスタムし、ドライバーがバッファーの数とサイズを決定します。
+デバイス MFT で任意の数の入力をサポートしている場合は、専用の入力ピンを使用して、メタデータや帯域外のメタデータのみを使用できます。 この pin の mediatype はカスタムであり、ドライバーはバッファーのサイズと数を決定します。
 
-このメタデータのストリームは、DTM を超える公開されます。 デバイス MFT ストリーミングの開始時に状態をストリーミングには、ストリームを配置することができます。 たとえば、出力ストリームは、ストリーミング用に選択したら、デバイス MFT を要求できます DTM を 1 つまたは複数のビデオ ストリームと同様に、メタデータ ストリームの開始を使用して、 **METransformInputStreamStateChanged**イベント。 
+このメタデータストリームは DTM 以外で公開されています。 ストリームは、デバイスの MFT がストリーミングを開始するときにストリーミング状態にすることができます。 たとえば、ストリーミング用の出力ストリームを選択すると、デバイスの MFT は、 **METransformInputStreamStateChanged**イベントを使用して、1つ以上のビデオストリームとメタデータストリームを開始するよう dtm に要求できます。 
 
-注:このモデルでは、出力ピンの数と一致する入力ピンの数の要件はありません。 別の pin をメタデータまたは 3A だけ専用できます。
+メモ:このモデルでは、入力ピンの数が出力ピンの数と一致する必要はありません。 メタデータまたは3A 専用の暗証番号 (pin) のみを使用できます。
 
-## <a name="device-transform-manager-dtm-event-handling"></a>デバイス マネージャーの変換 (DTM) イベントの処理
+## <a name="device-transform-manager-dtm-event-handling"></a>デバイス変換マネージャー (DTM) イベント処理
 
-[デバイス マネージャーの変換イベント](https://docs.microsoft.com/windows-hardware/drivers/stream/device-mft-events)以下の参照トピックで定義されます。
+[デバイス変換マネージャーのイベント](https://docs.microsoft.com/windows-hardware/drivers/stream/device-mft-events)は、次の参照トピックで定義されています。
 
 - [METransformFlushInputStream](https://docs.microsoft.com/windows-hardware/drivers/stream/metransformflushinputstream)
-- [METransformHaveOutput](https://docs.microsoft.com/windows-hardware/drivers/stream/metransformhaveoutput)
+- [Metransformの出力](https://docs.microsoft.com/windows-hardware/drivers/stream/metransformhaveoutput)
 - [METransformInputStreamStateChanged](https://docs.microsoft.com/windows-hardware/drivers/stream/metransforminputstreamstatechanged)
-- [METransformNeedInput](https://docs.microsoft.com/windows-hardware/drivers/stream/metransformneedinput)
+- [Metransformの場合の入力](https://docs.microsoft.com/windows-hardware/drivers/stream/metransformneedinput)
 
 
 ## <a name="imfdevicetransform-interface"></a>IMFDeviceTransform インターフェイス
 
-[IMFDeviceTransform](https://docs.microsoft.com/windows/desktop/api/mftransform/nn-mftransform-imfdevicetransform)デバイス MFT と対話するインターフェイスを定義します。 このインターフェイスの管理を容易に*m*入力と*n*デバイス MFT を出力します。 その他のインターフェイスとデバイス MFT は、このインターフェイスを実装する必要があります。
+[Imfdevicetransform](https://docs.microsoft.com/windows/desktop/api/mftransform/nn-mftransform-imfdevicetransform)インターフェイスは、デバイスの MFT と対話するように定義されています。 このインターフェイスにより、 *m*入力と*n*出力デバイス MFT の管理が容易になります。 デバイス MFT は、他のインターフェイスと共にこのインターフェイスを実装する必要があります。
 
 ### <a name="general-event-propagation"></a>一般的なイベントの伝達
 
-Devproxy (または、デバイス内で)、イベントが発生したときにデバイス MFT して、DeviceSource を伝達する必要があります。
+Devproxy (またはデバイス内) でイベントが発生した場合、それをデバイスの MFT およびデバイスの Ource に伝達する必要があります。
 
-## <a name="device-mft-requirements"></a>デバイス MFT 要件
+## <a name="device-mft-requirements"></a>デバイス MFT の要件
 
 ### <a name="interface-requirements"></a>インターフェイスの要件
 
-デバイスの仕様では、次のインターフェイスをサポートする必要があります。
+デバイスの MFTs は、次のインターフェイスをサポートしている必要があります。
 
 - [IMFDeviceTransform](https://docs.microsoft.com/windows/desktop/api/mftransform/nn-mftransform-imfdevicetransform)
 
-- [IKsControl](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nn-ks-ikscontrol)
+- [Iksk コントロール](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nn-ks-ikscontrol)
 
-    - これにより、すべての ksproperties、イベントおよびデバイス MFT を経由するメソッド。 これにより、デバイス MFT はデバイス MFT 内でこれらの関数呼び出しを処理またはだけドライバーに転送する機能。 場所、KsEvent メソッドを処理し、デバイス MFT は、次を実行する必要がありますの場合。
+    - これにより、すべての ksk プロパティ、イベント、およびメソッドがデバイスの MFT を通過できるようになります。 これにより、デバイス mft はデバイス MFT 内でこれらの関数呼び出しを処理したり、ドライバーに転送したりすることができます。 KsEvent メソッドを処理する場合、デバイスの MFT は次の操作を行う必要があります。
 
-        - デバイス MFT はいずれかが処理する場合**KSEVENT_TYPE_ONESHOT**イベント、その後の受信時に、ハンドルを複製**KSEVENT_TYPE_ENABLE**します。
+        - デバイス MFT が任意の**KSEVENT_TYPE_ONESHOT**イベントを処理する場合は、 **KSEVENT_TYPE_ENABLE**を受信したときにハンドルを複製します。
 
-        - 呼び出し元に戻す設定またはイベントを発生させる場合、 **CloseHandle**重複のハンドル。
+        - イベントの設定または発生が完了すると、重複するハンドルで**CloseHandle**が呼び出されます。
 
-        - デバイス MFT KSEVENT_TYPE_ONESHOT 非イベントを処理するかどうかは、受信時にハンドルを複製する必要があります、 **KSEVENT_TYPE_ENABLE**を呼び出すと**CloseHandle** ks イベントを処理で重複しています。最初のパラメーター (ks イベント id) と 2 番目のパラメーター (イベントの長さ) がゼロに設定を持つ KsEvent 関数を呼び出すことによって無効になります。 イベント データと長さが有効になります。 イベント データは、特定 ks イベントを一意に識別します。
+        - デバイス MFT が非 KSEVENT_TYPE_ONESHOT イベントを処理する場合は、 **KSEVENT_TYPE_ENABLE**を受信したときにハンドルを複製し、KSEVENT 関数を使用して関数を呼び出して ks イベントが無効になったときに、重複するハンドルで**CloseHandle**を呼び出します。最初のパラメーター (ks イベント id) と2番目のパラメーター (イベントの長さ) が0に設定されています。 イベントデータと長さが有効になります。 イベントデータは、特定の ks イベントを一意に識別します。
 
-        - デバイス MFT KSEVENT_TYPE_ONESHOT 非イベントを処理するかどうかは、受信時にハンドルを複製する必要があります、 **KSEVENT_TYPE_ENABLE**呼び出す必要がありますと**CloseHandle**処理で重複しているときに、ksイベントはすべてのパラメーターを 0 に設定を持つ KsEvent 関数を呼び出すことによって無効になります。
+        - デバイス MFT が非 KSEVENT_TYPE_ONESHOT イベントを処理する場合は、 **KSEVENT_TYPE_ENABLE**を受信したときにハンドルを複製する必要があります。 KSEVENT を呼び出すことで ks イベントが無効になっている場合は、重複するハンドルで**CloseHandle**を呼び出す必要があります。すべてのパラメーターが0に設定された関数。
 
 - [IMFRealtimeClientEx](https://docs.microsoft.com/windows/desktop/api/mfidl/nn-mfidl-imfrealtimeclientex)
 
@@ -240,9 +240,9 @@ Devproxy (または、デバイス内で)、イベントが発生したときに
 
 ### <a name="notification-requirements"></a>通知の要件
 
-デバイスの仕様では、サンプルや、任意の入力ストリームの状態の変更の有無について DTM を通知するために、次のメッセージを使用する必要があります。
+デバイスの MFTs は、次のメッセージを使用して、サンプルの可用性、入力ストリームの状態の変更などについての情報を DTM に通知する必要があります。
 
-- [METransformHaveOutput](https://docs.microsoft.com/windows-hardware/drivers/stream/metransformhaveoutput)
+- [Metransformの出力](https://docs.microsoft.com/windows-hardware/drivers/stream/metransformhaveoutput)
 
 - [METransformInputStreamStateChanged](https://docs.microsoft.com/windows-hardware/drivers/stream/metransforminputstreamstatechanged)
 
@@ -250,25 +250,25 @@ Devproxy (または、デバイス内で)、イベントが発生したときに
 
 ### <a name="thread-requirements"></a>スレッドの要件
 
-デバイス MFT は、独自のスレッドを作成しないでください。 を通じて渡される ID を持つ、MF 作業キューを使用する必要があります代わりに、 [IMFRealtimeClientEx](https://docs.microsoft.com/windows/desktop/api/mfidl/nn-mfidl-imfrealtimeclientex)インターフェイス。 これは、デバイス MFT で実行されているすべてのスレッドが位置キャプチャ パイプラインが実行されている適切な優先順位を取得するかどうかを確認します。 それ以外の場合の優先順位の逆転のスレッドを引き起こす可能性が。
+デバイスの MFT は、独自のスレッドを作成することはできません。 代わりに、 [IMFRealtimeClientEx](https://docs.microsoft.com/windows/desktop/api/mfidl/nn-mfidl-imfrealtimeclientex)インターフェイスを通じて ID が渡される MF ワークキューを使用する必要があります。 これは、デバイスの MFT で実行されているすべてのスレッドが、キャプチャパイプラインが実行されている正しい優先順位を持つようにするためです。 それ以外の場合は、スレッドの優先度逆転が発生する可能性があります。
 
-### <a name="inputstream-requirements"></a>InputStream 要件
+### <a name="inputstream-requirements"></a>InputStream の要件
 
-#### <a name="stream-count"></a>Stream の数
+#### <a name="stream-count"></a>ストリーム数
 
-- デバイス MFT で入力ストリームの数は、ドライバーでサポートされているストリームの数と同じである必要があります。
+- デバイス MFT の入力ストリームの数は、ドライバーでサポートされているストリームの数と同じである必要があります。
 
 #### <a name="mediatypes"></a>MediaTypes
 
-- Mediatypes とデバイス MFT の入力でサポートされている実際のメディアの種類の数は、ドライバーでサポートされている mediatypes の種類と数に一致する必要があります。
+- Mediatypes の数と、デバイスの MFT の入力でサポートされている実際のメディアの種類は、ドライバーでサポートされている mediatypes の数と種類と一致している必要があります。
 
-- デバイス MFT の入力でサポートされている mediatypes ドライバーでサポートされている mediatypes のサブセットである場合にのみ異なる、数は使用できます。
+- この数値は、デバイス MFT の入力でサポートされている mediatypes が、ドライバーでサポートされている mediatypes のサブセットである場合にのみ異なる可能性があります。
 
-- ドライバーとデバイス MFT の入力によってサポートされている mediatypes には、標準またはカスタム mediatypes 可能性があります。
+- ドライバーでサポートされている mediatypes とデバイス MFT の入力は、standard または custom mediatypes になります。
 
-### <a name="to-register-device-mft"></a>MFT のデバイスを登録するには
+### <a name="to-register-device-mft"></a>デバイス MFT を登録するには
 
-カメラ デバイス INF デバイス MFT のコクラスの CLSID を指定する次のデバイス インターフェイスのエントリが必要です。
+カメラデバイスの INF には、デバイスの MFT のコクラスの CLSID を指定する次のデバイスインターフェイスエントリが必要です。
 
 ```INF
 [CaptureAvstrm.Device.NTarm.Interfaces]
@@ -282,9 +282,9 @@ HKR,,FriendlyName,,%Capture.FilterDescBack%
 HKR,,CameraDeviceMftClsid,,%CameraDeviceMFT.Clsid%
 ```
 
-上記の INF エントリは、次のレジストリ キーが入力されている発生します。
+上記の INF エントリによって、次のレジストリキーが入力されます。
     
-**注**これは、例のみ (実際のレジストリではありません)
+**メモ**これは例です (実際のレジストリキーではありません)。
 
 ```console
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\DeviceClasses\{E5323777-F976-4f5b-9B55-B94699C46E44}\##?#USB#VID_045E&PID_075D&MI_00#8&23C3DB65&0&0000#{E5323777-F976-4f5b-9B55-B94699C46E44}\#GLOBAL\Device Parameters]

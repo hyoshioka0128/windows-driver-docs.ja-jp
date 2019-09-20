@@ -3,15 +3,13 @@ title: グラフィックス ドライバーのバイナリにおけるクラッ
 description: この測定値は、カーネル モード クラッシュが発生しなかったマシンの割合として、14 日間のスライディング ウィンドウからのテレメトリを集計したものです
 ms.topic: article
 ms.date: 05/20/2019
-ms.author: paslote
-author: parkeratmicrosoft
 ms.localizationpriority: medium
-ms.openlocfilehash: c4984b42b97928d8ae0c3038f34c63ad54d7b1be
-ms.sourcegitcommit: 04da1962e34908adeca54fcf5bbfbaa456efca5f
+ms.openlocfilehash: 489e65fbc31506ffa0f40b2392d9dde50b2ee737
+ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70223998"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71017051"
 ---
 # <a name="number-of-machines-experiencing-a-blue-screen-caused-by-a-crash-in-the-graphics-driver-binary"></a>グラフィックス ドライバーのバイナリにおけるクラッシュによってブルー スクリーンが発生したマシンの数
 
