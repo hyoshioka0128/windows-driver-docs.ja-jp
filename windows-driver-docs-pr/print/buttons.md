@@ -1,9 +1,9 @@
 ---
-title: Buttons 要素
-description: 必須ボタン要素では、クライアント コンピューターは 1 つまたは複数のボタンに通知のメッセージ ボックス表示イベントを指定します。
+title: buttons 要素
+description: 必須ボタン要素は、クライアントコンピューターのイベント通知メッセージボックスに表示される1つ以上のボタンを指定します。
 ms.assetid: bf3718c0-37d9-4b73-a015-8a5a95535381
 keywords:
-- buttons 要素印刷デバイス
+- ボタン要素の印刷デバイス
 topic_type:
 - apiref
 api_name:
@@ -12,19 +12,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a7e40fb775bd3f68c4de1e5d5821f1610981483d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 109dbaff5b4ed89287c4370378fa004ed3fb89fb
+ms.sourcegitcommit: ee1fc949d1ae5eb14df4530758f767702a886e36
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330453"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71164796"
 ---
-# <a name="buttons-element"></a>Buttons 要素
+# <a name="buttons-element"></a>buttons 要素
 
 
-必要な**ボタン**要素は、クライアント コンピューターは 1 つまたは複数のボタンに通知のメッセージ ボックス表示イベントを指定します。
+必須**ボタン**要素は、クライアントコンピューターのイベント通知メッセージボックスに表示される1つ以上のボタンを指定します。
 
-**ボタン**で要素が定義されている、 *asyncui*この URI に、名前空間: http://schemas.microsoft.com/2003/print/asyncui/v1/request します。 (このリソースできない場合がありますのいくつかの言語および国。)
+**ボタン**で要素が定義されている、 *asyncui*この URI に、名前空間: http://schemas.microsoft.com/2003/print/asyncui/v1/request します。 (このリソースは、一部の言語および国では使用できません。)
 
 <a name="usage"></a>使用方法
 -----
@@ -56,9 +56,9 @@ ms.locfileid: "63330453"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="button.md" data-raw-source="[&lt;strong&gt;button&lt;/strong&gt;](button.md)"><strong>ボタン</strong></a></p></td>
+<td><p><a href="button.md" data-raw-source="[&lt;strong&gt;button&lt;/strong&gt;](button.md)"><strong>;</strong></a></p></td>
 <td><p></p>
-<p>クライアント コンピューターに表示されるメッセージ ボックスのボタンの特性を指定する必須の要素。</p></td>
+<p>クライアントコンピューターに表示される、メッセージボックス内のボタンの特性を指定する必須の要素。</p></td>
 </tr>
 </tbody>
 </table>
@@ -81,18 +81,18 @@ ms.locfileid: "63330453"
 <tr class="odd">
 <td><p><a href="messageboxui.md" data-raw-source="[&lt;strong&gt;messageBoxUI&lt;/strong&gt;](messageboxui.md)"><strong>messageBoxUI</strong></a></p></td>
 <td><p></p>
-<p>クライアント コンピューターのメッセージ ボックスを表示するために使用する省略可能な要素です。</p></td>
+<p>クライアントコンピューターにメッセージボックスを表示するために使用される省略可能な要素。</p></td>
 </tr>
 </tbody>
 </table>
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>コメント
 -------
 
-参照してください[**ボタン**](button.md)を使用する方法を示すコード exapmle、**ボタン**要素に 2 つ**ボタン**を表示する要素 **[Ok]** と**キャンセル**ボタンをクリックします。
+**ボタン要素を**使用して、 **[OK]** と **[キャンセル**] ボタンを表示する2つの**ボタン**要素を囲む方法を示すコード例については、「[**ボタン**](button.md)」を参照してください。
 
 ## <a name="see-also"></a>関連項目
 
-[ボタン](button.md)
+[;](button.md)
 
 [messageBoxUI](messageboxui.md)

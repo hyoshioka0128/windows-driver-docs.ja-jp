@@ -1,6 +1,6 @@
 ---
 title: KDNET ネットワーク カーネル デバッグの自動設定
-description: KDNET を使用して、Windows デバッグツールのネットワークカーネルデバッグを自動的に構成します。
+description: KDNET を使用して、Windows デバッグツール用にネットワークカーネルデバッグを自動的に構成します。
 ms.assetid: B4A79B2E-D4B1-42CA-9121-DEC923C76927
 keywords:
 - ネットワークデバッグ
@@ -9,12 +9,12 @@ keywords:
 - KDNET
 ms.date: 09/12/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 62e171a0382c3718f6b2ba1d3a60dc73409f0501
-ms.sourcegitcommit: f91a0fd22f46be44839d2a22a21f59fad900ce90
+ms.openlocfilehash: 3f19ba1317c838ff41af99a391d44b85fff85f05
+ms.sourcegitcommit: ee1fc949d1ae5eb14df4530758f767702a886e36
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71020997"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71164786"
 ---
 # <a name="setting-up-kdnet-network-kernel-debugging-automatically"></a>KDNET ネットワーク カーネル デバッグの自動設定
 

@@ -1,35 +1,35 @@
 ---
-Description: USB タイプ C ポート コント ローラー インターフェイス クラス拡張機能の UcmTcpciCx およびクライアント ドライバーは、型-C# の USB ポート コント ローラーに対して実行する必要がありますタスクと呼ばれる動作について説明します。
+Description: "\"UcmTcpciCx\" と呼ばれる USB タイプ C ポートコントローラーインターフェイスクラス拡張の動作と、クライアントドライバーが USB タイプ C ポートコントローラーに対して実行する必要があるタスクについて説明します。"
 title: USB Type-C ポート コントローラー ドライバーを記述する
 ms.date: 01/07/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: f2fcf5bef8d68b00ed78fcebfe858372d7425821
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 54cb8e485e762f8a2d81e4cec5f43de800d64ba9
+ms.sourcegitcommit: ee1fc949d1ae5eb14df4530758f767702a886e36
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385348"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71164792"
 ---
 # <a name="write-a-usb-type-c-port-controller-driver"></a>USB Type-C ポート コントローラー ドライバーを記述する
 
-USB タイプ-c ハードウェア USB 型-c または電源配信 (PD) 物理レイヤーの実装が電源の配信に必要なステート マシンを実装していません型-C# の USB ポート コント ローラーのドライバーを記述する必要があります。 
+Usb タイプ c ハードウェアが usb タイプ c または電力配信 (PD) 物理レイヤーを実装していても、電力配信に必要なステートマシンが実装されていない場合は、USB タイプ c ポートコントローラードライバーを作成する必要があります。 
 
-Windows 10 バージョン 1703、USB 型-C# のアーキテクチャは USB 型-c または電源配信 (PD) 物理レイヤーの実装が、対応する PD ポリシー エンジンまたはプロトコル レイヤーの実装がないハードウェア設計をサポートするために強化されました。 これらの設計では、Windows 10 バージョン 1703 は、ソフトウェア ベース PD ポリシー エンジンとデバイス ポリシー マネージャーを拡張と呼ばれる"USB コネクタ マネージャー型 C ポート コント ローラー インターフェイス クラス"(UcmTcpciCx)、新しいクラス拡張機能を使用を提供します。 IHV または OEM または ODM によって記述されたクライアント ドライバーと通信 UcmTcpciCx PD ポリシー エンジンとデバイス ポリシー マネージャー UcmTcpciCx で関数に必要なハードウェア イベントに関する情報を提供します。 通信は、一連のプログラミングとリファレンス セクションのこのトピックで説明されているインターフェイスを有効になっています。
+Windows 10 バージョン1703では、usb タイプ c または電力配信 (PD) 物理レイヤーを実装しているが、対応する PD ポリシーエンジンやプロトコルレイヤーの実装がないハードウェア設計をサポートするように、USB タイプ C アーキテクチャが改善されました。 これらの設計では、Windows 10 バージョン1703では、ソフトウェアベースの PD ポリシーエンジンとデバイスポリシーマネージャーが "USB コネクタマネージャータイプ-C ポートコントローラーインターフェイスクラス拡張" (UcmTcpciCx) という名前の新しいクラス拡張を使用して提供されます。 IHV または OEM/ODM によって記述されたクライアントドライバーは、UcmTcpciCx と通信して、UcmTcpciCx で機能するために必要なハードウェアイベントに関する情報を提供します。 この通信は、このトピックとリファレンスセクションで説明する一連のプログラミングインターフェイスによって有効になります。
 
-![usb コネクタ マネージャー](images/tcpci-arch.png)
+![usb コネクタマネージャー](images/tcpci-arch.png)
 
-UcmTcpciCx クラスの拡張機能自体は、UcmCx のクライアント ドライバーです。 電源のコントラクト、データのロールに関するポリシーの決定は UcmCx で行われ、UcmTcpciCx に転送します。 UcmTcpciCx では、これらのポリシーを実装し、UcmTcpciCx クライアント ドライバーによって提供されるポート コント ローラーのインターフェイスを使用して、型 C と PD ステート マシンを管理します。 
+UcmTcpciCx クラス拡張は、それ自体が UcmCx のクライアントドライバーです。 Power contracts、データロールに関するポリシーの決定は UcmCx で行われ、UcmTcpciCx に転送されます。 UcmTcpciCx は、これらのポリシーを実装し、UcmTcpciCx クライアントドライバーによって提供されるポートコントローラーインターフェイスを使用して、タイプ C と PD のステートマシンを管理します。 
 
 
-**要約**
-- UcmTcpci クラスの拡張機能によって提供されるサービス
-- クライアント ドライバーの想定される動作
+**概要**
+- UcmTcpci クラス拡張機能によって提供されるサービス
+- クライアントドライバーの予期される動作
 
 **公式の仕様**
--   [種類 C の USB ポート コント ローラー インターフェイス仕様]
--   [USB 3.1 と USB 型-C# の仕様](https://go.microsoft.com/fwlink/p/?LinkId=699515)
--   [USB 電源配信](https://go.microsoft.com/fwlink/p/?LinkID=623310)
+-   [USB タイプ-C ポートコントローラーインターフェイス仕様]
+-   [USB 3.1 および USB タイプ-C 仕様](https://go.microsoft.com/fwlink/p/?LinkId=699515)
+-   [USB 電源配布](https://go.microsoft.com/fwlink/p/?LinkID=623310)
 
 適用対象:
 
@@ -37,178 +37,178 @@ UcmTcpciCx クラスの拡張機能自体は、UcmCx のクライアント ド�
 
 **WDF のバージョン**
 
--   KMDF バージョン 1.15
+-   KMDF バージョン1.15
 
-**最終更新日。**
+**最終更新日時:**
 
 -   2017 年 5 月
 
 **重要な API**
 
-[USB タイプ C ポート コント ローラー インターフェイス ドライバー クラスの拡張機能のリファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_usbref/#type-c-driver-reference)
+[USB タイプ-C ポートコントローラーインターフェイスドライバークラス拡張のリファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_usbref/#type-c-driver-reference)
 
-**UcmTcpciCx クライアント ドライバー テンプレート**
+**UcmTcpciCx クライアントドライバーテンプレート**
 
-[UcmTcpciCx クライアント ドライバー テンプレート](https://github.com/Microsoft/Windows-driver-samples/tree/master/usb/UcmTcpciCxClientSample)
+[UcmTcpciCx クライアントドライバーテンプレート](https://github.com/Microsoft/Windows-driver-samples/tree/master/usb/UcmTcpciCxClientSample)
 
-## <a name="before-you-begin"></a>開始する前にしています.
+## <a name="before-you-begin"></a>開始する前に...
 
--   によって、ハードウェアまたはファームウェアの PD ステート マシンを実装するかどうかを記述する必要があるドライバーの種類を決定します。 詳細については、次を参照してください。[種類 C の USB コネクタ用の Windows の開発ドライバー](developing-windows-drivers-for-usb-type-c-connectors.md)します。  
+-   ハードウェアまたはファームウェアが PD ステートマシンを実装しているかどうかに応じて、書き込む必要があるドライバーの種類を決定します。 詳細については、「 [USB タイプの Windows ドライバーの開発-C コネクタ](developing-windows-drivers-for-usb-type-c-connectors.md)」を参照してください。  
 
--   ターゲット コンピューターまたは Windows 10 Mobile にデスクトップのエディション (Home、Pro、Enterprise、および Education) が型-C# の USB コネクタの使用には、Windows 10 をインストールします。
--   [インストール](https://go.microsoft.com/fwlink/p/?LinkID=845980)開発用コンピューターに最新 Windows Driver Kit (WDK)。 このキットが必要なヘッダー ファイルとライブラリを具体的には、クライアント ドライバーを記述するため、必要があります。
+-   Windows 10 for desktop エディション (Home、Pro、Enterprise、および教育) を、USB C コネクタを使用して、対象のコンピューターまたは Windows 10 Mobile にインストールします。
+-   開発用コンピューターに最新の Windows Driver Kit (WDK) を[インストール](https://go.microsoft.com/fwlink/p/?LinkID=845980)します。 キットには、クライアントドライバーを記述するために必要なヘッダーファイルとライブラリが用意されています。具体的には、次のものが必要です。
 
-    -   スタブ ライブラリは、(UcmTcpciCxStub.lib)。 ライブラリでは、クライアント ドライバーによって行われた呼び出しを変換し、クラスの拡張機能に渡します。
-    -   ヘッダー ファイルでは、UcmTcpciCx.h します。
+    -   スタブライブラリ (UcmTcpciCxStub .lib)。 ライブラリは、クライアントドライバーによって行われた呼び出しを変換し、クラス拡張に渡します。
+    -   ヘッダーファイル UcmTcpciCx .h。
 
-    クライアント ドライバーでは、カーネル モードで実行され、KMDF 1.15 ライブラリにバインドします。 
+    クライアントドライバーはカーネルモードで実行され、KMDF 1.15 ライブラリにバインドされます。 
 
     ![ucm の visual studio の構成](images/ucmtcpci-vs.png)
 
--  クライアント ドライバーがアラートをサポートするかどうかを決定します。
+-  クライアントドライバーがアラートをサポートするかどうかを決定します。
 
-- ポートのコント ローラーを TCPCI に準拠する必要はありません。 インターフェイスは、型 C の任意のポート コント ローラーの機能をキャプチャします。 ハードウェアのレジスタと TCPCI 仕様内のコマンドの意味をマッピングでは単が TCPCI 準拠していないハードウェアの UcmTcpciCx クライアント ドライバーを記述します。 
+- ポートコントローラーは、TCPCI に準拠している必要はありません。 インターフェイスは、すべてのタイプ C ポートコントローラーの機能をキャプチャします。 TCPCI に準拠していないハードウェア用に UcmTcpciCx クライアントドライバーを作成することは、TCPCI 仕様のレジスタとコマンドの意味をハードウェアのものにマップするだけです。 
 
-- ほとんどの TCPCI コント ローラーは<sup>2</sup>C に接続されています。 クライアント ドライバーでは、シリアル ペリフェラル バス (SPB) 接続のリソースおよび、割り込みの行をハードウェアとの通信に使用されます。 ドライバーでは、インターフェイスをプログラミング SPB フレームワーク拡張機能 (SpbCx) を使用します。 について理解を深める SpbCx によってこれらのトピックを参照します。
-    - [ドライバーの設計ガイドのシンプルな周辺機器バス (SPB)]
-    - [SPB ドライバーのプログラミング リファレンス] 
+- ほとんどの TCPCI コントローラーは、I<sup>2</sup>C に接続されています。 クライアントドライバーは、シリアル周辺機器バス (SPB) 接続リソースと割り込み回線を使用して、ハードウェアと通信します。 ドライバーは、SPB フレームワーク拡張 (SpbCx) プログラミングの機能を使用します。 SpbCx について理解するには、次のトピックを参照してください。
+    - [シンプルな周辺機器バス (SPB) ドライバー設計ガイド]
+    - [SPB ドライバープログラミングリファレンス] 
 
--   Windows Driver Foundation (WDF) を理解します。 参考資料。[Windows Driver Foundation でのドライバーの開発]( https://go.microsoft.com/fwlink/p/?LinkId=691676)少額 Orwick と Guy Smith によって書き込まれた、します。
+-   Windows Driver Foundation (WDF) について理解を深めます。 推奨される読み取り:[Windows Driver Foundation でのドライバーの開発]( https://go.microsoft.com/fwlink/p/?LinkId=691676)。これは、少額 Orwick と Guy Smith によって記述されています。
 
-## <a name="behavior-of-the-ucmtcpci-class-extension"></a>UcmTcpci クラスの拡張機能の動作
+## <a name="behavior-of-the-ucmtcpci-class-extension"></a>UcmTcpci クラス拡張の動作
 
- -  状態のマシンの実行の一環として、UcmTcpciCx は IOCTL 要求をポート コント ローラーに送信します。 たとえば、PD がメッセージングの送信バッファーを設定する IOCTL_UCMTCPCI_PORT_CONTROLLER_SET_TRANSMIT_BUFFER 要求を送信します。 その要求 (TRANSMIT_BUFFER) クライアント ドライバーに渡されます。 ドライバーは、クラスの拡張機能によって提供される詳細情報を送信バッファーを設定します。 
+ -  ステートマシンの実行の一環として、UcmTcpciCx は IOCTL 要求をポートコントローラーに送信します。 たとえば、PD messaging では、送信バッファーを設定する IOCTL_UCMTCPCI_PORT_CONTROLLER_SET_TRANSMIT_BUFFER 要求を送信します。 この要求 (TRANSMIT_BUFFER) は、クライアントドライバーに渡されます。 次に、ドライバーは、クラス拡張によって提供される詳細を使用して、送信バッファーを設定します。 
 
--   UcmTcpciCx は、power コントラクトとデータ ロールに関するポリシーを実装します。  
+-   UcmTcpciCx は、電源コントラクト、データロールなどに関するポリシーを実装します。  
 
 
-## <a name="expected-behavior-of-the-client-driver"></a>クライアント ドライバーの想定される動作
+## <a name="expected-behavior-of-the-client-driver"></a>クライアントドライバーの予期される動作
 
-UcmTcpciCx クライアント ドライバーが必要です。
+UcmTcpciCx へのクライアントドライバーは、次のことを想定しています。
 
--   電源ポリシーの所有者であります。 UcmTcpciCx は、ポート コント ローラーの電源管理に関与しません。 
+-   電源ポリシーの所有者である。 UcmTcpciCx は、ポートコントローラーの電源管理に参加していません。 
 
--   UcmTcpciCx から受信した要求を変換、ハードウェアに読み取りまたは書き込みコマンド。 コマンドは、DPM は、ハードウェア転送が完了するを待つをブロックできないため、非同期である必要があります。  
+-   UcmTcpciCx から受信した要求を、ハードウェアの読み取りコマンドまたは書き込みコマンドに変換します。 DPM はハードウェア転送の完了を待つことができないため、コマンドを非同期にする必要があります。  
 
--   Framework 要求オブジェクトを含むフレームワークのキュー オブジェクトを提供します。 UcmTcpci クラスの拡張機能は、クライアント ドライバーに送信する必要がある各要求に対しては、拡張機能は、ドライバーのキュー オブジェクトの要求オブジェクトを追加します。 ドライバーが完了すると要求の処理、WdfRequestComplete を呼び出します。 適切なタイミングで要求を完了する、クライアント ドライバーの役目です。 
+-   フレームワークの要求オブジェクトを格納するフレームワークキューオブジェクトを指定します。 UcmTcpci クラス拡張がクライアントドライバーに送信する要求ごとに、拡張機能によって、要求オブジェクトがドライバーの queue オブジェクトに追加されます。 ドライバーが要求の処理を完了すると、WdfRequestComplete が呼び出されます。 要求を適切なタイミングで完了するのは、クライアントドライバーの役割です。 
 
--   検出し、ポート コント ローラーの機能を報告します。 これらの機能で、ポートのコント ローラーが運用する役割などの情報を含める (など、ソースのみ、シンク専用、DRP)。 ただし、コネクタの他の機能があります (機能ストアに関する注意事項を参照してください) と、システム全体を DPM は USB 型-c および PD ポリシーを正しく実装するために知っておく必要があるのです。 たとえば、DPM では、ポート パートナーにそれを提供するシステム/コネクタのソースの機能を把握する必要があります。 
+-   ポートコントローラーの機能を検出して報告します。 これらの機能には、ポートコントローラーが動作できるロール (ソースのみ、シンク専用、DRP など) などの情報が含まれます。 ただし、コネクタには、USB タイプ C および PD ポリシーを適切に実装するために必要な機能があります (機能ストアに関するメモを参照してください)。また、システム全体についても説明します。 たとえば、DPM は、ポートパートナーに提供するために、システム/コネクタのソース機能を認識している必要があります。 
 
-    **機能ストアの注** 
+    **メモ機能ストア** 
         
-    クライアント ドライバーに関連する機能に加え、追加情報と呼ばれるシステム グローバルの場所からは、_機能ストア_します。 このシステム グローバルの機能ストアは、ACPI に格納されます。 システムの機能と、DPM を使用して実装するためにポリシーを決定する、USB 型-c コネクタのそれぞれの静的な記述することをお勧めします。 
+    クライアントドライバーに関連する機能に加えて、追加情報は、_機能ストア_と呼ばれるシステムグローバルな場所から取得されます。 このシステムグローバル機能ストアは、ACPI に格納されています。 これは、システムの機能の静的な説明であり、DPM が実装するポリシーを決定するために使用するそれぞれの USB タイプ C コネクタです。 
       
-    ポートのコント ローラーのクライアント ドライバーからシステムの機能の説明を分離するでは、設計は、さまざまな機能のさまざまなシステムで使用するドライバーを許可します。 機能ストアと UcmCx、いないの UcmTcpciCx インターフェイス。 UcmTcpciCx (またはそのクライアント ドライバー) は、機能ストアと対話しません。 
+    システム機能の説明をポートコントローラーのクライアントドライバーから分離することにより、さまざまな機能を持つさまざまなシステムでドライバーを使用できるようになります。 UcmTcpciCx ではなく UcmCx は、機能ストアとのインターフェイスを備えています。 UcmTcpciCx (またはそのクライアントドライバー) は、機能ストアと対話しません。 
       
-    可能な機能ストアからの情報は、ポート コント ローラーのクライアント ドライバーから直接送信される情報をオーバーライドします。 たとえば、ポートのコント ローラーがシンク専用の操作に対応し、クライアント ドライバーは、その情報を報告します。 ただし、システムの残りの部分が正しく構成されていないシンク専用の操作。 その場合は、システムの製造元は、コネクタは機能ストア内のソース専用の操作の機能をレポートできます。 ドライバーには、機能ストアの優先設定は、情報を報告します。 
+    該当する場合、機能ストアの情報は、ポートコントローラークライアントドライバーから直接取得された情報を上書きします。 たとえば、ポートコントローラーはシンクのみの操作が可能であり、クライアントドライバーはその情報を報告します。 ただし、システムの残りの部分は、シンクのみの操作に対して正しく構成されていない可能性があります。 この場合、システムの製造元は、コネクタが機能ストアでソースのみの操作に対応していることを報告できます。 機能ストアの設定は、ドライバーによって報告された情報よりも優先されます。 
 
--   アラートに関連するすべての関連データで UcmTcpciCx を通知します。 
+-   アラートに関連するすべての関連データを使用して、UcmTcpciCx に通知します。 
  
--   (省略可能)。 別のモードが入力された終了後に余分な処理を実行します。 ドライバーは、IOCTL 要求を通じてクラスの拡張機能によって、それらの状態について通知されます。 
+-   任意。 別のモードを入力または終了した後で、追加の処理を実行します。 ドライバーは、IOCTL 要求によって、クラス拡張によってこれらの状態について通知されます。 
 
 
-## <a name="1-register-the-client-driver-with-ucmtcpcicx"></a>1. クライアント ドライバーに UcmTcpciCx 登録します。
+## <a name="1-register-the-client-driver-with-ucmtcpcicx"></a>1. クライアントドライバーを UcmTcpciCx に登録する
 
-サンプルの参照。参照してください`EvtPrepareHardware`で`Device.cpp`します。
+サンプルリファレンス:「 `EvtPrepareHardware` 」 `Device.cpp`の「」を参照してください。
 
-1.  EVT_WDF_DRIVER_DEVICE_ADD 実装 UcmTcpciDeviceInitInitialize WDFDEVICE_INIT 非透過構造体を初期化するために呼び出します。 呼び出しは、クライアント ドライバーをフレームワークに関連付けます。
+1.  EVT_WDF_DRIVER_DEVICE_ADD 実装で、UcmTcpciDeviceInitInitialize を呼び出して、WDFDEVICE_INIT 不透明構造体を初期化します。 この呼び出しにより、クライアントドライバーがフレームワークに関連付けられます。
 
-2.  Framework デバイス オブジェクト (WDFDEVICE) を作成したら、UcmTcpciCx クライアント ドライバーに登録する UcmTcpciDeviceInitialize を呼び出します。
+2.  フレームワークデバイスオブジェクト (WDFDEVICE) を作成した後、UcmTcpciDeviceInitialize を呼び出してクライアントのダイバーを Ucmtcpcideviceinitialize に登録します。
 
-## <a name="2-initialize-the-i2c-communications-channel-to-the-port-controller-hardware"></a>2. ポートのコント ローラーのハードウェア、I2C 通信チャネルを初期化します。
+## <a name="2-initialize-the-i2c-communications-channel-to-the-port-controller-hardware"></a>2. I2C 通信チャネルをポートコントローラーハードウェアに初期化します。
 
-サンプルの参照。参照してください`EvtCreateDevice`で`Device.cpp`します。
+サンプルリファレンス:「 `EvtCreateDevice` 」 `Device.cpp`の「」を参照してください。
 
-EVT_WDF_DEVICE_PREPARE_HARDWARE 実装、通信チャネルを開くためのハードウェア リソースを読み取ります。 これは、PD 機能を取得し、アラートに関する通知を受け取るに必要です。 
+EVT_WDF_DEVICE_PREPARE_HARDWARE 実装では、ハードウェアリソースを読み、通信チャネルを開きます。 これは、PD 機能を取得し、アラートに関する通知を受け取るために必要です。 
 
-ほとんどの TCPCI コント ローラーは<sup>2</sup>C に接続されています。 参照サンプルでは、クライアント ドライバーを開きは<sup>2</sup> SPB フレームワーク拡張 (SpbCx) のプログラミング インターフェイスを使用してチャネル。 
+ほとんどの TCPCI コントローラーは、I<sup>2</sup>C に接続されています。 参照サンプルでは、クライアントドライバーは、SPB フレームワーク拡張 (SpbCx) プログラミングの機能を使用して I<sup>2</sup>チャネルを開きます。 
 
-クライアント ドライバーでは、WdfCmResourceListGetDescriptor を呼び出すことによって、ハードウェア リソースを列挙します。 
+クライアントドライバーは、WdfCmResourceListGetDescriptor を呼び出すことによって、ハードウェアリソースを列挙します。 
 
-アラートは、割り込みとして受信されます。 そのため、ドライバーは framework 割り込みオブジェクトを作成し、アラートを処理する ISR を登録します。  ISR 読み取りハードウェアとハードウェアへのアクセスが完了するまでブロックする書き込み操作を実行します。 待機が DIRQL で受け入れられないため、ドライバーは PASSIVE_LEVEL の ISR を実行します。 
+アラートは割り込みとして受信されます。 このため、ドライバーはフレームワークの interrupt オブジェクトを作成し、アラートを処理する ISR を登録します。  ISR は、ハードウェアへのアクセスが完了するまでブロックするハードウェアの読み取りおよび書き込み操作を実行します。 待機は DIRQL では許容されないため、ドライバーは PASSIVE_LEVEL で ISR を実行します。 
 
 
-## <a name="3-initialize-the-port-controllers-type-c-and-pd-capabilities"></a>3.ポートのコント ローラーの種類 C および PD 機能を初期化します。
+## <a name="3-initialize-the-port-controllers-type-c-and-pd-capabilities"></a>3.ポートコントローラーのタイプ C と PD の機能を初期化します。
     
-サンプルの参照。参照してください`EvtDeviceD0Entry`で`Device.cpp`します。
+サンプルリファレンス:「 `EvtDeviceD0Entry` 」 `Device.cpp`の「」を参照してください。
 
 
- で、EVT_WDF_DEVICE_D0_EXIT の実装 
+ EVT_WDF_DEVICE_D0_EXIT 実装では、 
  
- 1. ポートのコント ローラー ハードウェアと通信し、さまざまなレジスタを読み取ることによって、デバイス identificaton と機能を取得します。 
+ 1. さまざまなレジスタを読み取って、ポートコントローラーハードウェアと通信し、デバイスの識別子と機能を取得します。 
  
- 2. 取得した情報を UCMTCPCI_PORT_CONTROLLER_IDENTIFICATION と UCMTCPCI_PORT_CONTROLLER_CAPABILITIES を初期化します。 
+ 2. 取得した情報を使用して、UCMTCPCI_PORT_CONTROLLER_IDENTIFICATION と UCMTCPCI_PORT_CONTROLLER_CAPABILITIES を初期化します。 
 
- 3. UCMTCPCI_PORT_CONTROLLER_CONFIG_INIT に初期化された構造体を渡すことによって、上記の情報を使用した UCMTCPCI_PORT_CONTROLLER_CONFIG 構造を初期化します。
+ 3. 初期化された構造体を UCMTCPCI_PORT_CONTROLLER_CONFIG_INIT に渡すことによって、前の情報で UCMTCPCI_PORT_CONTROLLER_CONFIG 構造体を初期化します。
 
- 4. ポートのコント ローラー オブジェクトを作成および UCMTCPCIPORTCONTROLLER ハンドルを取得する UcmTcpciPortControllerCreate を呼び出します。
+ 4. Ucmtcpciportcontroller Create を呼び出して、ポートコントローラーオブジェクトを作成し、UCMTCPCIPORTCONTROLLER ハンドルを取得します。
 
-## <a name="4-set-up-a-framework-queue-object-for-receiving-requests-from-ucmtcpcicx"></a>4。UcmTcpciCx から要求を受信するためのフレームワーク キュー オブジェクトを設定します。
+## <a name="4-set-up-a-framework-queue-object-for-receiving-requests-from-ucmtcpcicx"></a>4。UcmTcpciCx からの要求を受信するためのフレームワークキューオブジェクトを設定する
 
-サンプルの参照。参照してください`EvtDeviceD0Entry`で`Device.cpp`と`HardwareRequestQueueInitialize`で`Queue.cpp`します。
+サンプルリファレンス:「」 `EvtDeviceD0Entry` および`HardwareRequestQueueInitialize`「 」の`Queue.cpp`「」を参照してください。 `Device.cpp`
 
- 1. EVT_WDF_DEVICE_D0_EXIT 実装では、WdfIoQueueCreate を呼び出すことによって、framework のキュー オブジェクトを作成します。 その呼び出しでは、UcmTpciCx から送信された IOCTL 要求を処理するために、コールバックの実装を登録する必要があります。 クライアント ドライバーでは、電源管理対象のキューを使用できます。 
+ 1. EVT_WDF_DEVICE_D0_EXIT 実装で、WdfIoQueueCreate を呼び出してフレームワークキューオブジェクトを作成します。 この呼び出しでは、UcmTpciCx によって送信された IOCTL 要求を処理するために、コールバックの実装を登録する必要があります。 クライアントドライバーは、電源管理キューを使用する場合があります。 
 
-    、型 C と PD ステート マシンの実行中には、UcmTpciCx はコマンドを実行するクライアント ドライバーに送信されます。 UcmTcpciCx があることで最も未処理ポート コント ローラーの 1 つの要求で、特定の時点を保証します。  
+    タイプ C と PD のステートマシンの実行中に、UcmTpciCx はコマンドをクライアントドライバーに送信して実行します。 UcmTcpciCx では、特定の時点で未解決のポートコントローラー要求が1つしかないことが保証されます。  
  
- 2. UcmTpciCx を新しいフレームワークのキュー オブジェクトを登録する UcmTcpciPortControllerSetHardwareRequestQueue を呼び出します。 その呼び出しが成功すると、UcmTcpciCx は、ドライバーからアクションを必要とする場合、このキューに framework キュー オブジェクト (WDFREQUEST) を配置します。 
+ 2. UcmTcpciPortControllerSetHardwareRequestQueue を呼び出して、UcmTpciCx に新しいフレームワークキューオブジェクトを登録します。 この呼び出しが成功すると、UcmTcpciCx は、ドライバーからのアクションが必要なときに、このキューにフレームワークキューオブジェクト (WDFREQUEST) を配置します。 
 
- 3. これらの Ioctl を処理するために EvtIoDeviceControl コールバック関数を実装します。 
+ 3. これらの Ioctl を処理するには、EvtIoDeviceControl callback 関数を実装します。 
 
 |  制御コード |  説明 | 
 |---            |           ---|
-|IOCTL_UCMTCPCI_PORT_CONTROLLER_GET_STATUS|   ユニバーサル シリアル バスの種類 C ポート コント ローラー インターフェイス仕様に従ってすべてのステータス レジスタの値を取得します。 クライアント ドライバーでは、CC_STATUS、POWER_STATUS、および FAULT_STATUS レジスタの値を取得する必要があります。|
-|IOCTL_UCMTCPCI_PORT_CONTROLLER_GET_CONTROL|ユニバーサル シリアル バスの種類 C ポート コント ローラー インターフェイス仕様に従って定義されているすべてのコントロール レジスタの値を取得します。|
-|IOCTL_UCMTCPCI_PORT_CONTROLLER_SET_CONTROL|ユニバーサル シリアル バスの種類 C ポート コント ローラー インターフェイス仕様に従って定義されているコントロール レジスタの値を設定します。| 
-|IOCTL_UCMTCPCI_PORT_CONTROLLER_SET_TRANSMIT|セットの送信の登録、ユニバーサル シリアル バス型 C ポート コント ローラー インターフェイス仕様に従って定義されています。|
-|IOCTL_UCMTCPCI_PORT_CONTROLLER_SET_TRANSMIT_BUFFER|セット TRANSMIT_BUFER 登録、ユニバーサル シリアル バス型 C ポート コント ローラー インターフェイス仕様に従って定義されています。|
-|IOCTL_UCMTCPCI_PORT_CONTROLLER_SET_RECEIVE_DETECT|セット RECEIVE_DETECT 登録、ユニバーサル シリアル バス型 C ポート コント ローラー インターフェイス仕様に従って定義されています。|
-|IOCTL_UCMTCPCI_PORT_CONTROLLER_SET_CONFIG_STANDARD_OUTPUT|セット CONFIG_STANDARD_OUTPUT 登録、ユニバーサル シリアル バス型 C ポート コント ローラー インターフェイス仕様に従って定義されています。|
-|IOCTL_UCMTCPCI_PORT_CONTROLLER_SET_COMMAND|ユニバーサル シリアル バスの種類 C ポート コント ローラー インターフェイス仕様に従って定義されているコマンドのレジスタの値を設定します。|
-|IOCTL_UCMTCPCI_PORT_CONTROLLER_SET_MESSAGE_HEADER_INFO|セット、ユニバーサル シリアル バス型 C ポート コント ローラー インターフェイス仕様に従って MESSAGE_HEADER_INFO 登録の値が定義されています。|
-|IOCTL_UCMTCPCI_PORT_CONTROLLER_ALTERNATE_MODE_ENTERED|ドライバーは、その他のタスクを実行できるように、別のモードが入力されているクライアント ドライバーに通知します。|
-|IOCTL_UCMTCPCI_PORT_CONTROLLER_ALTERNATE_MODE_EXITED|ドライバーは、その他のタスクを実行できるように、別のモードが終了していることをクライアント ドライバーに通知します。|
-|IOCTL_UCMTCPCI_PORT_CONTROLLER_DISPLAYPORT_CONFIGURED|ドライバーは、その他のタスクを実行できるように、パートナー デバイスのディスプレイ ポート等代替モードが暗証番号 (pin) が割り当てられた構成されているクライアント ドライバーに通知します。|
-|IOCTL_UCMTCPCI_PORT_CONTROLLER_DISPLAYPORT_HPD_STATUS_CHANGED|ホット プラグは、ディスプレイ ドライバーは、その他のタスクを実行できるように、接続が変更されたポートの状態を検出するクライアント ドライバーに通知します。|
+|IOCTL_UCMTCPCI_PORT_CONTROLLER_GET_STATUS|   すべてのステータスレジスタの値を取得します。これは、ユニバーサルシリアルバスタイプ C ポートコントローラーインターフェイス仕様に従います。 クライアントドライバーは、CC_STATUS、POWER_STATUS、および FAULT_STATUS の各レジスタの値を取得する必要があります。|
+|IOCTL_UCMTCPCI_PORT_CONTROLLER_GET_CONTROL|ユニバーサルシリアルバスタイプ C ポートコントローラーインターフェイス仕様に従って定義されたすべてのコントロールレジスタの値を取得します。|
+|IOCTL_UCMTCPCI_PORT_CONTROLLER_SET_CONTROL|ユニバーサルシリアルバスタイプ C ポートコントローラーインターフェイスの仕様に従って定義されたコントロールレジスタの値を設定します。| 
+|IOCTL_UCMTCPCI_PORT_CONTROLLER_SET_TRANSMIT|ユニバーサルシリアルバスタイプ C ポートコントローラーの仕様に従って定義された送信レジスタを設定します。|
+|IOCTL_UCMTCPCI_PORT_CONTROLLER_SET_TRANSMIT_BUFFER|ユニバーサルシリアルバスタイプ C ポートコントローラーの仕様に従って定義された TRANSMIT_BUFER レジスタを設定します。|
+|IOCTL_UCMTCPCI_PORT_CONTROLLER_SET_RECEIVE_DETECT|ユニバーサルシリアルバスタイプ C ポートコントローラーの仕様に従って定義された RECEIVE_DETECT レジスタを設定します。|
+|IOCTL_UCMTCPCI_PORT_CONTROLLER_SET_CONFIG_STANDARD_OUTPUT|ユニバーサルシリアルバスタイプ C ポートコントローラーの仕様に従って定義された CONFIG_STANDARD_OUTPUT レジスタを設定します。|
+|IOCTL_UCMTCPCI_PORT_CONTROLLER_SET_COMMAND|ユニバーサルシリアルバスタイプ-C ポートコントローラーのインターフェイス仕様に従って定義されたコマンドレジスタの値を設定します。|
+|IOCTL_UCMTCPCI_PORT_CONTROLLER_SET_MESSAGE_HEADER_INFO|ユニバーサルシリアルバスタイプ C ポートコントローラーの仕様に従って定義された MESSAGE_HEADER_INFO Register の値を設定します。|
+|IOCTL_UCMTCPCI_PORT_CONTROLLER_ALTERNATE_MODE_ENTERED|ドライバーが追加のタスクを実行できるように、代替モードが入力されたことをクライアントドライバーに通知します。|
+|IOCTL_UCMTCPCI_PORT_CONTROLLER_ALTERNATE_MODE_EXITED|ドライバーが追加のタスクを実行できるように、代替モードが終了したことをクライアントドライバーに通知します。|
+|IOCTL_UCMTCPCI_PORT_CONTROLLER_DISPLAYPORT_CONFIGURED|パートナーデバイスの DisplayPort 代替モードが pin 割り当てで構成されていることをクライアントドライバーに通知します。これにより、ドライバーは追加のタスクを実行できます。|
+|IOCTL_UCMTCPCI_PORT_CONTROLLER_DISPLAYPORT_HPD_STATUS_CHANGED|ドライバーが追加のタスクを実行できるように、DisplayPort 接続のホットプラグ検出状態が変更されたことをクライアントドライバーに通知します。|
 
-4. UcmTcpciCx ポート コント ローラーを起動するように指示する UcmTcpciPortControllerStart を呼び出します。 UcmTcpciCx には、USB 型-C# と電源の配信の制御が想定しています。 ポートのコント ローラーを開始すると、UcmTcpciCx がハードウェアの要求キューに要求を配置することを開始することがあります。 
+4. Ucmtcpciportcontroller Start を呼び出して、UcmTcpciCx にポートコントローラーを開始するように指示します。 UcmTcpciCx は、USB タイプ C と電力配信の制御を想定しています。 ポートコントローラーが開始されると、UcmTcpciCx が要求をハードウェア要求キューに挿入し始めます。 
 
  
-## <a name="5-handlle-alerts-from-the-port-controller-hardware"></a>5。ポートのコント ローラー ハードウェアから Handlle アラート
+## <a name="5-handlle-alerts-from-the-port-controller-hardware"></a>5。ポートコントローラーのハードウェアによるアラートのアラート
 
-サンプルの参照。参照してください`ProcessAndSendAlerts`で`Alert.cpp`します。
+サンプルリファレンス:「 `ProcessAndSendAlerts` 」 `Alert.cpp`の「」を参照してください。
 
-クライアント ドライバーは、ポートのコント ローラー ハードウェアから受信したアラート (またはイベント) を処理し、イベントに関連するデータを UcmTcpciCx に送信する必要があります。 
+クライアントドライバーは、ポートコントローラーハードウェアから受信したアラート (またはイベント) を処理し、イベントに関連するデータを UcmTcpciCx に送信する必要があります。 
 
-ハードウェアのアラートが発生したときに、ポートのコント ローラー ハードウェア ドライブ アラートが高にピン留めします。 これは、場合、クライアント (手順 2. で登録) ドライバーの ISR 呼び出されます。 ルーチンは PASSIVE_LEVEL のハードウェア割り込みをサービスします。 ルーチンの場合、割り込みがポートのコント ローラー ハードウェア; からのアラートであるかどうかそうである場合、アラートの処理が完了し、UcmTcpciPortControllerAlert を呼び出すことによって UcmTcpciCx を通知します。 
+ハードウェアのアラートが発生すると、ポートコントローラーのハードウェアは、アラートの pin を高くします。 これにより、クライアントドライバーの ISR (手順2で登録) が呼び出されます。 このルーチンは、PASSIVE_LEVEL でのハードウェアの割り込みを行います。 このルーチンは、割り込みがポートコントローラーハードウェアからのアラートであるかどうかを判断します。その場合は、アラートの処理を完了し、Ucmtcpcicx のアラートを呼び出して UcmTcpciCx に通知します。 
 
-UcmTcpciPortControllerAlert を呼び出す前に、クライアントは UCMTCPCI_PORT_CONTROLLER_ALERT_DATA 構造内のアラートに関連するすべての関連するデータを含む責任を負います。 クライアントは、ハードウェアのアサートで複数のアラートが同時に処理でした可能性があるため、アクティブになっているすべてのアラートの配列を提供します。 
+Ucmtcpciportコントローラーのアラートを呼び出す前に、クライアントは、アラートに関連するすべての関連データを UCMTCPCI_PORT_CONTROLLER_ALERT_DATA 構造体に含める必要があります。 クライアントは、ハードウェアが複数のアラートを同時にアサートする可能性があるため、アクティブなすべてのアラートの配列を提供します。 
 
-[Cc] 状態の変化にレポート タスクのフローの例を次に示します。 
+CC ステータスの変更を報告するタスクのフローの例を次に示します。 
 
-1. クライアントは、ハードウェアのアラートを受信します。 
+1. クライアントはハードウェアアラートを受け取ります。 
 
-2. クライアントは、アラートの登録を読み取るし、アクティブになっている種類のアラートを決定します。 
+2. クライアントは、アラートの登録を読み取り、アクティブなアラートの種類を特定します。 
 
-3. クライアントは、[cc] ステータス レジスタを読み取って、UCMTCPCI_PORT_CONTROLLER_ALERT_DATA で CC ステータス レジスタの内容について説明します。 ドライバーは、UcmTcpciPortControllerAlertCCStatus AlertType メンバーとレジスタの CCStatus メンバーを設定します。
+3. クライアントは CC ステータスレジスタを読み取り、UCMTCPCI_PORT_CONTROLLER_ALERT_DATA の CC 状態レジスタの内容を説明します。 ドライバーは、AlertType メンバーを register の UcmTcpciPortControllerAlertCCStatus および CCStatus メンバーに設定します。
 
-4. クライアントが呼び出す UcmPortControllerAlert UcmTcpciCx にアレイ ハードウェアのアラートを送信します。 
+4. クライアントは Ucmportコントローラーアラートを呼び出して、配列ハードウェアのアラートを UcmTcpciCx に送信します。 
 
-5. クライアントは、(クライアントは、アラートの情報を取得した後、いつでも発生する可能性があります)、アラートをクリアします。 
+5. クライアントはアラートをクリアします (これは、クライアントがアラート情報を取得した後、いつでも発生する可能性があります)。 
 
-## <a name="6-process-requests-received-from-ucmtcpcicx"></a>6。UcmTcpciCx から受信した要求の処理
+## <a name="6-process-requests-received-from-ucmtcpcicx"></a>6。UcmTcpciCx から受信したプロセス要求
 
-サンプルの参照。「`PortControllerInterface.cpp`」を参照してください。
+サンプルリファレンス:「`PortControllerInterface.cpp`」を参照してください。
 
-状態のマシンの実行の一環として、UcmTcpciCx はポート コント ローラーに要求を送信する必要があります。 たとえば、TRANSMIT_BUFFER を設定する必要があります。 この要求のクライアント ドライバーに渡されます。 ドライバーは、UcmTcpciCx によって提供される詳細情報の送信バッファーを設定します。 それらの要求のほとんどは、ハードウェアの読み取りに変換またはクライアント ドライバーによって記述します。 コマンドは、DPM は、ハードウェアの転送が完了するを待つをブロックできませんので、非同期である必要があります。
+状態マシンの実行の一環として、UcmTcpciCx はポートコントローラーに要求を送信する必要があります。 たとえば、TRANSMIT_BUFFER を設定する必要があります。 この要求は、クライアントドライバーに渡されます。 このドライバーは、UcmTcpciCx によって提供される詳細を使用して、送信バッファーを設定します。 ほとんどの要求は、クライアントドライバーによって読み取りまたは書き込みがハードウェアに変換されます。 DPM はハードウェア転送の完了の待機をブロックできないため、コマンドは非同期である必要があります。
 
-UcmTcpciCx は、クライアント ドライバーから必要な取得/設定操作を記述する場合の I/O 制御コードとしてのコマンドを送信します。 クライアント ドライバーのキューのセットアップは、ドライバーは、そのキューを UcmTcpciCx に登録します。  Framework 要求オブジェクトをキューに配置する UcmTcpciCx 開始ドライバーからの操作が必要です。 I/O 制御コードは、手順 4. でテーブルに表示されます。
+UcmTcpciCx は、クライアントドライバーで必要な取得/設定操作を記述する i/o 制御コードとしてコマンドを送信します。 クライアントドライバーのキューセットアップで、ドライバーは UcmTcpciCx を使用してキューを登録しました。  UcmTcpciCx は、ドライバーからの操作が必要なフレームワーク要求オブジェクトをキューに配置し始めます。 I/o 制御コードは、手順 4. の表に一覧表示されています。
 
-適切なタイミングで要求を完了する、クライアント ドライバーの役目です。
+要求を適切なタイミングで完了するのは、クライアントドライバーの役割です。
 
-クライアント ドライバーは、要求された操作が完了したら、framework 要求オブジェクトを表す完了状態で WdfRequestComplete を呼び出します。 
+クライアントドライバーは、要求された操作を完了したときに完了ステータスを使用して、フレームワーク要求オブジェクトで WdfRequestComplete を呼び出します。 
 
-クライアント ドライバーは、ハードウェアの操作を実行する別のドライバーに、I/O 要求を送信する必要があります。 たとえば、サンプルでは、ドライバー、要求を送信します SPB に<sup>2</sup>C に接続されているポートのコント ローラー。 その場合は、ドライバーは、要求オブジェクト WDM IRP スタックの場所の正しい番号があるないため、UcmTcpciCx から受け取った framework 要求オブジェクトを転送できません。 クライアント ドライバーは、別のフレームワーク要求オブジェクトを作成し、別のドライバーに転送する必要があります。 クライアント ドライバー UcmTcpciCx から要求を取得するたびに作成する代わりに、初期化中に必要な要求オブジェクトを事前に割り当てることができます。 UcmTcpciCx 保証がある 1 つだけ要求未処理任意の時点であるために、可能です。 
+クライアントドライバーは、ハードウェア操作を実行するために、別のドライバーに i/o 要求を送信することが必要になる場合があります。 たとえば、サンプルでは、ドライバーは SPB 要求を I<sup>2</sup>C 接続ポートコントローラーに送信します。 この場合、要求オブジェクトには、WDM IRP 内の正しいスタック位置の数が含まれていない可能性があるため、このドライバーは UcmTcpciCx から受け取ったフレームワーク要求オブジェクトを転送できません。 クライアントドライバーは、別のフレームワーク要求オブジェクトを作成し、別のドライバーに転送する必要があります。 クライアントドライバーは、UcmTcpciCx から要求を取得するたびに作成するのではなく、初期化中に必要な要求オブジェクトを事前に割り当てることができます。 UcmTcpciCx では、特定の時点で未解決の要求が1つだけであることが保証されるため、これが可能です。 
 
-## <a name="see-also"></a>参照
-[USB タイプ C ポート コント ローラー インターフェイス ドライバー クラスの拡張機能のリファレンス](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt805826(v=vs.85))
+## <a name="see-also"></a>関連項目
+[USB タイプ-C ポートコントローラーインターフェイスドライバークラス拡張のリファレンス](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt805826(v=vs.85))

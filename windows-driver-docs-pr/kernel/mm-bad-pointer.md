@@ -4,12 +4,12 @@ description: Windows カーネルのマクロ
 ms.assetid: 91366400-3307-4F13-A839-50BA85B7F73E
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 46ab783d7acff09e72a76d4a6ca3a8bb726d0f78
-ms.sourcegitcommit: 2c3b8e0ea0e75b72067d2e22dc530390bc19b11e
+ms.openlocfilehash: 7acea88bbee2cd0b39680f536fc207d14faec3fe
+ms.sourcegitcommit: ee1fc949d1ae5eb14df4530758f767702a886e36
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/02/2019
-ms.locfileid: "67386006"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71164789"
 ---
 # <a name="windows-kernel-macros"></a>Windows カーネルのマクロ
 
@@ -423,7 +423,7 @@ MDL によって記述されるバッファーの長さをバイト単位で指�
 
 **無効化**
 
-_Memory記述子のリスト_が指すバッファーは、ページングされていないメモリに割り当てられている必要があります。 このバッファーのサイズ (バイト単位) は、少なくとも**sizeof**(MDL) + **sizeof**(PFN_NUMBER)**ADDRESS_AND_SIZE_TO_SPAN_PAGES**(_baseva_, _Length_) である必要があります。
+_Memory記述子のリスト_が指すバッファーは、ページングされていないメモリに割り当てられている必要があります。 このバッファーのサイズ (バイト単位) は、少なくとも**sizeof**(MDL) + **sizeof**(PFN_NUMBER) * **ADDRESS_AND_SIZE_TO_SPAN_PAGES**(_baseva_, _Length_) である必要があります。
 
 Windows 2000 以降のバージョンの Windows で使用できます。
 
