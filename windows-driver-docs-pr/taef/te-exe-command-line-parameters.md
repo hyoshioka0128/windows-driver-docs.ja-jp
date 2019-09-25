@@ -5,10 +5,10 @@ ms.assetid: E9A9292D-FA30-410d-9322-BD0F321314F9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0d71cb48a3e99edfaba7a03abc0704f544d3d5ff
-ms.sourcegitcommit: f89a978ee23b9d2f925b13ea56b2c6cd48b4603a
+ms.sourcegitcommit: 2aa583e3da4ae9338a0d11678bf77f1460286f2d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/12/2019
+ms.lasthandoff: 09/24/2019
 ms.locfileid: "68415096"
 ---
 # <a name="teexe-command-options"></a>Te.exe のコマンド オプション
@@ -55,7 +55,7 @@ TE でのコンソールの使用を構成するためのオプションを提�
 
 #### <a name="consolesize-ltxygt--current-"></a>/console: size =\[ &lt;x、y&gt; | current\]
 
-コンソールウィンドウのサイズを文字単位で設定します。 必要に応じて、ウィンドウのサイズに合わせて画面バッファーサイズが増加します。 Current の値を使用して、再起動から再開するときに現在のコンソールサイズを格納して使用することを指定します。
+コンソールウィンドウのサイズを文字単位で設定します。 必要に応じて、ウィンドウのサイズに合わせて画面バッファーサイズが増加します。 Current**の値**を使用して、再起動から再開するときに現在のコンソールサイズを格納して使用することを指定します。
 
 #### <a name="consoletopmost"></a>/console: 最上位
 

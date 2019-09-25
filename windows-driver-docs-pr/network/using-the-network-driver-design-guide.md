@@ -7,10 +7,10 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4832be8f00942e6d0682de8febaf6368fc963d2c
-ms.sourcegitcommit: 238308264c1ee2c74ec0c8c303258dc00c79b902
+ms.sourcegitcommit: 2aa583e3da4ae9338a0d11678bf77f1460286f2d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2019
+ms.lasthandoff: 09/24/2019
 ms.locfileid: "70063875"
 ---
 # <a name="navigating-the-network-driver-design-guide"></a>ネットワーク ドライバー設計ガイドのナビゲーション
@@ -70,7 +70,7 @@ Windows ネットワークアーキテクチャとプログラミングに関す
 次の追加ドライバーモデルを使用して、特定のハードウェアテクノロジとアーキテクチャを使用することができます。
 
 <table>  
-<colgroup> <col width="50%" /> <col width="50%" /> </colgroup>  
+<colgroup><col width="50%" /> <col width="50%" /></colgroup>  
 <thead>  
 <tr class="header">  
 <th align="left">テクノロジ</th>

@@ -1,71 +1,71 @@
 ---
-title: TTD ヒープ オブジェクト
-description: このセクションでは、タイム トラベルのデバッグに関連付けられているヒープ モデル オブジェクトについて説明します。
+title: TTD Heap オブジェクト
+description: このセクションでは、タイムトラベルデバッグに関連付けられているヒープモデルオブジェクトについて説明します。
 ms.date: 09/24/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 29bbd1e05ed966095eebff5655db0e72c885592f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 21d1e2be8456ba705f68337196bc41b442a6692e
+ms.sourcegitcommit: e94e072ef90fc1c4f343055098920463fbf5c630
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389098"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71227725"
 ---
-# <a name="ttd-heap-objects"></a>TTD ヒープ オブジェクト
+# <a name="ttd-heap-objects"></a>TTD Heap オブジェクト
 ## <a name="description"></a>説明
-*TTD ヒープ*オブジェクトを使用して、トレースの過程で発生するヒープ呼び出しに関する情報を提供します。
+*TTD heap*オブジェクトは、トレースの過程で発生するヒープ呼び出しに関する情報を提供するために使用されます。
 
 
-## <a name="properties"></a>プロパティ
-ヒープのすべてのオブジェクトには、これらのプロパティがあります。
+## <a name="properties"></a>Properties
+各ヒープオブジェクトには、これらのプロパティがあります。
 
 | プロパティ | 説明 |
 | --- | --- |
-| アクション | 発生したアクションをについて説明します。 設定可能な値は、次のとおりです。アロケーション、ReAlloc、Free、作成、保護、ロック、ロックを解除、破棄します。 |
+| 操作 | 発生したアクションについて説明します。 指定できる値は次のとおりです。Alloc、ReAlloc、Free、Create、Protect、Lock、Unlock、Destroy。 |
 | ヒープ | Win32 ヒープのハンドル。 |
 
-### <a name="conditional-properties"></a>条件付きのプロパティ
-ヒープ オブジェクトに応じて次のプロパティの一部があります。
+### <a name="conditional-properties"></a>条件付きプロパティ
+ヒープオブジェクトによっては、以下のいくつかのプロパティが含まれている場合があります。
 
 | プロパティ | 説明 |
 | --- | --- |
 | Address | 割り当てられたオブジェクトのアドレス。 |
-| PreviousAddress | そのが再割り当てされる前に、割り当てられたオブジェクトのアドレス。 アドレスがない PreviousAddress と同じ場合は、再割り当てに移動するメモリが原因。 |
-| サイズ | サイズやオブジェクトの割り当て済みの要求されたサイズ。 |
-| BaseAddress | ヒープで割り当てられたオブジェクトのアドレス。  アドレスを表すことができます (無料) を解放は、前にオブジェクトのアドレスが再割り当て (再割り当てします)。 |
-| フラグ | 意味は、API によって異なります。 |
-| 結果 | ヒープの API の結果を呼び出します。 成功を 0 以外の値の意味と 0 個の障害を意味します。 |
+| 前のアドレス | 再割り当てされる前に割り当てられたオブジェクトのアドレス。 アドレスが前のアドレスと同じでない場合、再割り当てによってメモリの移動が発生します。 |
+| サイズ | 割り当てられたオブジェクトのサイズまたは要求されたサイズ。 |
+| BaseAddress | ヒープ内の割り当てられたオブジェクトのアドレス。  解放 (解放) されるアドレス、または再割り当てされる前にオブジェクトのアドレスを表すことができます (ReAlloc)。 |
+| フラグ | 意味は API によって異なります。 |
+| 結果 | ヒープ API 呼び出しの結果。 0以外の場合は成功を意味し、ゼロは失敗を意味します。 |
 | ReserveSize | ヒープ用に予約するメモリの量。 |
-| CommitSize | ヒープの初期コミット サイズです。 |
-| MakeReadOnly | 0 以外の値を読み取り専用ヒープに要求を示します値が 0 では、ヒープが読み取り/書き込みをする必要がありますを示します。 |
+| CommitSize | ヒープの初期コミットサイズ。 |
+| MakeReadOnly | 0以外の値は、ヒープを読み取り専用にする要求を示します。ゼロの値は、ヒープが読み取り/書き込み可能であることを示します。 |
 
 ## <a name="children"></a>Children
 
 | オブジェクト | 説明 |
 | --- | --- |
-| TimeStart | A[位置オブジェクト](time-travel-debugging-position-objects.md)割り当ての開始位置をについて説明します。 |
-| 時刻終了 | A[位置オブジェクト](time-travel-debugging-position-objects.md)割り当ての末尾に位置するについて説明します。 |
+| TimeStart | 割り当ての開始位置を示す[位置オブジェクト](time-travel-debugging-position-objects.md)。 |
+| TimeEnd | 割り当ての終了位置を示す[位置オブジェクト](time-travel-debugging-position-objects.md)。 |
 
 
 ## <a name="example-usage"></a>使用例
 
--G オプションを使用して、グリッドにヒープのメモリを表示するのにには、この dx コマンドを使用します。
+この dx コマンドを使用して、-g オプションを使用してグリッドにヒープメモリを表示します。
 
 ```dbgcmd
 0:0:000> dx -g @$cursession.TTD.Data.Heap()
-==================================================================================================================================
-=           = (+) Function               = (+) FunctionAddress = (+) ReturnValue  = (+) Parameters = (+) TimeStart = (+) TimeEnd =
-==================================================================================================================================
-= [0x0]     - UnknownOrMissingSymbols    - 0x7ffbe3daae00      - 0x16c7d7b4050    - {...}          - 50C74:8E      - 50C76:3B    =
-= [0x1]     - UnknownOrMissingSymbols    - 0x7ffbe3db0dd0      - 0x1              - {...}          - 50C76:1E9     - 50C78:1D    =
-= [0x2]     - UnknownOrMissingSymbols    - 0x7ffbe3daae00      - 0x16c7d7be400    - {...}          - 51C95:21F3    - 51CA6:81    =
+=======================================================================================================================================================
+=                          = Action     = Heap          = Address       = Size      = Flags  = (+) TimeStart = (+) TimeEnd = Result = PreviousAddress =
+=======================================================================================================================================================
+= [0x0] : [object Object]  - Alloc      - 0xaf0000      - 0xb0cfd0      - 0x4c      - 0x0    - FAB:17B1      - FAD:40      -        -                 =
+= [0x1] : [object Object]  - Alloc      - 0xaf0000      - 0xb07210      - 0x34      - 0x8    - FB1:9         - FB3:74      -        -                 =
+= [0x2] : [object Object]  - Alloc      - 0xaf0000      - 0xb256d8      - 0x3c      - 0x8    - E525:174      - E526:E1     -        -                 =
 ```
 
 
-出力は、選択したヒープ操作を表す Api のセットがあるため、「正規化されたデータ」として記述できます。 適切なパラメーターから抽出されたデータは、一貫した方法で表示されます。
+ヒープ操作を表す Api のセットが選択されているため、出力を "正規化されたデータ" として記述できます。 適切なパラメーターから抽出されたデータは、一貫した方法で提示されます。
 
-TimeStart または時刻終了 をクリックと、トレースには、そのポイントにする移動はします。  
+TimeStart または Timestart をクリックすると、トレースのその時点に移動します。  
 
-使用可能なパラメーター情報を表示する特定のエントリの横にあるパラメーターのフィールドをクリックします。
+特定のエントリの横にある [パラメーター] フィールドをクリックすると、使用可能なパラメーター情報が表示されます。
 
 ```dbgcmd
 dx -r1 @$cursession.TTD.Data.Heap()[2].@"Parameters"
@@ -82,9 +82,9 @@ dx -r1 @$cursession.TTD.Data.Heap()[2].@"Parameters"
 
 ## <a name="see-also"></a>関連項目
 
-[タイム トラベル デバッグ - オブジェクトのタイム トラベルのデバッグの概要](time-travel-debugging-object-model.md)
+[タイムトラベルデバッグ-タイムトラベルデバッグオブジェクトの概要](time-travel-debugging-object-model.md)
 
-[旅行時間 - デバッグの概要](time-travel-debugging-overview.md)
+[タイムトラベルのデバッグ-概要](time-travel-debugging-overview.md)
 
 ---
 

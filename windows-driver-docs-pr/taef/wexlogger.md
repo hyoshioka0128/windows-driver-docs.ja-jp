@@ -4,29 +4,29 @@ description: WexLogger
 ms.assetid: D9F4AD08-19EA-4a6c-AD25-886FBEA334B8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7dfce409c3ee6e3de49ac8ddf1ea8c308caa8c3d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: cfdf1d667701305d323c401cbb6c900e36b2f6c2
+ms.sourcegitcommit: 96592088b276de87fc88dea3bb037654c9b31b11
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384487"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71248411"
 ---
 # <a name="wexlogger"></a>WexLogger
 
 
-WexLogger では、ネイティブ コード、マネージ コードおよびスクリプトにわたるログ記録を一貫性のある API を提供します。 また、長距離のストレス テストまで、コマンド プロンプトで単体テストの実行からも拡張できます。
+WexLogger は、ネイティブコード、マネージコード、およびスクリプトにまたがるログ記録用の一貫した API を提供します。 また、コマンドプロンプトで実行されている単体テストを、長時間のストレステストまで拡大することもできます。
 
-## <a name="logging-through-the-verify-framework"></a>経由のログオン、フレームワークを確認します。
-
-
-テスト ケース内のほとんどのログ記録を使用して実行する必要があります、[確認](verify.md)フレームワーク。 これにより、テストが、わかりやすくより順次、人間が判読できる方法で作成されたことが保証されます。 ただし、場合によっては、テストの作成者を見つけるために必要なログに書き込まれた内容の周囲をより細かく制御します。 そのため WexLogger API の必要性。
-
-## <a name="logging-within-taef"></a>TAEF 内でログ記録
+## <a name="logging-through-the-verify-framework"></a>検証フレームワークを使用したログ記録
 
 
-TAEF 内で実行されているテスト_ケースはありませんロガーの初期化に必要なテストの作成者です。 テストを作成している言語に公開されているログ API を使用してすぐに開始することができます。
+テストケース内のほとんどのログ記録は、検証フレームワークを使用し[て](verify.md)実行する必要があります。 これにより、テストがより明確でわかりやすい方法で作成されます。 ただし、場合によっては、テストの作成者がログに書き込まれる内容をより細かく制御する必要があることが検出されることがあります。したがって、WexLogger API が必要になります。
 
-ネイティブの C++ コードには、次のように表示されます。
+## <a name="logging-within-taef"></a>TAEF でのログ記録
+
+
+TAEF 内で実行されているテストケースの場合、テストの作成者はロガーの初期化を必要としません。 テストを作成している言語に公開されている Log API の使用をすぐに開始できます。
+
+ネイティブC++コードでは、次のようになります。
 
 ```cpp
 using namespace WEX::Logging;
@@ -40,14 +40,14 @@ Log::Comment(String().Format(L"Look, a number! %d", aNumber));
 LOG_OUTPUT(L"Look, a number! %d", aNumber);
 ```
 
-マネージ コードには、次のように表示されます。
+マネージコードでは、次のようになります。
 
 ```cpp
 Log.Comment("Rendering to the BufferView");
 Log.Comment("Render succeeded");
 ```
 
-JScript では、このようなに表示されます。
+JScript では、次のようになります。
 
 ```cpp
 var log = new ActiveXObject("WEX.Logger.Log");
@@ -55,197 +55,197 @@ log.Comment("Rendering to the BufferView");
 log.Comment("Render succeeded");
 ```
 
-## <a name="logging-outside-taef"></a>外部 TAEF をログ記録
+## <a name="logging-outside-taef"></a>TAEF 以外のログ記録
 
 
-初期化と完了のログ記録、時間の大部分は、WexLogger、前述のように、テスト_ケースの間使用できるようになり、適切に終了が TAEF で実行されます。 ただし場合は、クライアントは、外部 TAEF WexLogger を使用するには、それらを担当する手動で呼び出す**LogController::InitializeLogging()** と**LogController::FinalizeLogging()** します。 この要件が存在するネイティブおよびマネージ コードだけです。スクリプトでは、この追加要件はありません。 LogController API の詳細については、次の表 LogController の静的メソッドを参照してください。
+ほとんどの場合、ログの初期化と完了は TAEF によって実行されるため、前述のように、WexLogger はテストケースの継続時間に使用できるようになり、正常に終了します。 ただし、クライアントが TAEF 以外で WexLogger を使用する場合は、 **Logcontroller:: InitializeLogging ()** および**Logcontroller:: finalizelogging ()** を手動で呼び出す必要があります。 この要件は、ネイティブコードとマネージコードのみに存在します。スクリプトには、この追加の要件はありません。 LogController API の詳細については、次の「静的 LogController メソッド」の表を参照してください。
 
-参照してください、 [WTT ログを生成する](#generating-wtt-logs)TAEF 外 WTT ログを生成する方法についてのセクション。
+TAEF の外部で WTT ログを生成する方法については、「 [WTT ログの生成](#generating-wtt-logs)」セクションを参照してください。
 
 ## <a name="wexlogger-api"></a>WexLogger API
 
 
-**使用可能な C++ のログは、ネイティブ メソッドの一覧を次に示します。**
+**使用可能なネイティブC++ログメソッドの一覧を次に示します。**
 
-同等のバージョンはマネージ コードとスクリプトを使用できます。
+マネージコードとスクリプトには、同等のバージョンが用意されています。
 
-| ネイティブ C++ のログ メソッド                                                                                                              | 機能                                                                                                                                                                                |
+| ネイティブC++ログのメソッド                                                                                                              | 機能                                                                                                                                                                                |
 |-------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| アサート (const wchar\_t\* pszAssert)                                                                                                  | テストのアサートをログインします。                                                                                                                                                                           |
-| Assert(const wchar\_t\* pszAssert, const wchar\_t\* pszContext)                                                                     | テスト アサートをコンテキストにログインします。                                                                                                                                                             |
-| Assert(const wchar\_t\* pszAssert, const wchar\_t\* pszFile, const wchar\_t\* pszFunction, int line)                                | テストのログは、ファイル、関数、および行情報をアサートします。                                                                                                                                  |
-| Assert(const wchar\_t\* pszAssert, const wchar\_t\* pszContext, const wchar\_t\* pszFile, const wchar\_t\* pszFunction, int line)   | テスト assert、コンテキスト、およびも、ファイルの関数と行情報をログに記録します。                                                                                                               |
-| Bug(const wchar\_t\* pszBugDatabase, int bugId)                                                                                     | 既知のバグの数を記録します。                                                                                                                                                                      |
-| Bug(const wchar\_t\* pszBugDatabase, int bugId, const wchar\_t\* pszContext)                                                        | 既知のバグ数をコンテキストにログインします。                                                                                                                                                        |
-| コメント (const wchar\_t\* pszComment)                                                                                                | コメントのテストを記録します。                                                                                                                                                                          |
-| Comment(const wchar\_t\* pszComment, const wchar\_t\* pszContext)                                                                   | ログのコンテキストでのテスト コメント                                                                                                                                                             |
-| EndGroup (const wchar\_t\* pszGroupName)                                                                                             | テスト、または特定のテストのグループの最後にログインします。                                                                                                                                      |
-| EndGroup(const wchar\_t\* pszGroupName, const wchar\_t\* pszContext)                                                                | テスト、または特定のテストのグループの末尾をコンテキストにログインします。                                                                                                                        |
-| Error(const wchar\_t\* pszError)                                                                                                    | テストのエラー ログに記録します。                                                                                                                                                                            |
-| Error(const wchar\_t\* pszError, const wchar\_t\* pszContext)                                                                       | テスト エラーをコンテキストにログインします。                                                                                                                                                              |
-| Error(const wchar\_t\* pszError, const wchar\_t\* pszFile, const wchar\_t\* pszFunction, int line)                                  | テスト エラーをログ ファイル、関数、および行情報を使用します。                                                                                                                                   |
-| Error(const wchar\_t\* pszError, const wchar\_t\* pszContext, const wchar\_t\* pszFile, const wchar\_t\* pszFunction, int line)     | テスト エラーをコンテキスト、およびも、ファイルの関数と行情報でログインします。                                                                                                                |
-| File(const wchar\_t\* pszFileName)                                                                                                  | テスト ファイルを保存するログに記録します。 ファイルがいずれかに保存&lt;WTTRunWorkingDir&gt;\\WexLogFileOutput (WTTRunWorkingDir が設定されている) 場合、または&lt;CurrentDirectory\\&gt;WexLogFileOutput します。               |
-| File(const wchar\_t\* pszFileName, const wchar\_t\* pszContext)                                                                     | ログのコンテキストに保存するテスト ファイルです。 ファイルがいずれかに保存&lt;WTTRunWorkingDir&gt;\\WexLogFileOutput (WTTRunWorkingDir が設定されている) 場合、または&lt;CurrentDirectory\\&gt;WexLogFileOutput します。 |
-| Property(const wchar\_t\* pszName, const wchar\_t\* pszValue)                                                                       | プロパティの名前と値のペアにログインします。 値は、xml 形式であることができます。                                                                                                                              |
-| Property(const wchar\_t\* pszName, const wchar\_t\* pszValue, const wchar\_t\* pszContext)                                          | 名前/値のプロパティのペアをコンテキストにログインします。 値は、xml 形式であることができます。                                                                                                                |
-| 結果 (TestResults::Result testResult)                                                                                              | テストの結果をログに記録します。                                                                                                                                                                           |
-| Result(TestResults::Result testResult, const wchar\_t\* pszComment)                                                                 | テスト結果を関連付けられているコメントにログインします。                                                                                                                                                |
-| Result(TestResults::Result testResult, const wchar\_t\* pszComment, const wchar\_t\* pszContext)                                    | テスト結果をログイン コンテキストに関連付けられているコメントを使用します。                                                                                                                                  |
-| StartGroup (const wchar\_t\* pszGroupName)                                                                                           | テスト、または特定のテストのグループの先頭にログインします。                                                                                                                                    |
-| StartGroup(const wchar\_t\* pszGroupName, TestResults::Result defaultTestResult)                                                    | ログのテスト、または特定のテストのグループの開始また、既定のテスト結果を設定します。                                                                                                 |
-| StartGroup(const wchar\_t\* pszGroupName, const wchar\_t\* pszContext)                                                              | テスト、または特定のテストのグループの開始をコンテキストにログインします。                                                                                                                      |
-| StartGroup(const wchar\_t\* pszGroupName, const wchar\_t\* pszContext, TestResults::Result defaultTestResult)                       | ログのテスト、または特定のテストのグループの開始また、既定のテスト結果を設定します。                                                                                                 |
-| 警告 (const wchar\_t\* pszWarning)                                                                                                | テストの警告を記録します。                                                                                                                                                                          |
-| Warning(const wchar\_t\* pszWarning, const wchar\_t\* pszContext)                                                                   | テストの警告をコンテキストにログインします。                                                                                                                                                            |
-| Warning(const wchar\_t\* pszWarning, const wchar\_t\* pszFile, const wchar\_t\* pszFunction, int line)                              | テストの警告をファイル、関数と行情報でログインします。                                                                                                                                 |
-| Warning(const wchar\_t\* pszWarning, const wchar\_t\* pszContext, const wchar\_t\* pszFile, const wchar\_t\* pszFunction, int line) | コンテキスト、およびも、ファイルの関数と行情報をテストの警告では、ログに記録します。                                                                                                              |
-| Xml (const wchar\_t\* pszXml)                                                                                                        | Xml データを記録します。 適切な形式であることを確認するチェックは行われません。                                                                                                                             |
-| Xml(const wchar\_t\* pszXml, const wchar\_t\* pszContext)                                                                           | Xml データをコンテキストにログインします。 適切な形式であることを確認するチェックは行われません。                                                                                                               |
-| MiniDump()                                                                                                                          | 現在のプロセスのミニ ダンプをログインします。                                                                                                                                                           |
+| Assert (const wchar\_t\* pszassert)                                                                                                  | テストアサートをログに記録します。                                                                                                                                                                           |
+| Assert (const wchar\_t\* pszassert、const wchar\_t\* pszassert)                                                                     | コンテキストを使用してテストアサートをログに記録します。                                                                                                                                                             |
+| Assert (const wchar\_t\* pszassert、const wchar\_t\* pszassert、const wchar\_t\* pszassert、int line)                                | ファイル、関数、および行の情報を使用して、テストアサートをログに記録します。                                                                                                                                  |
+| Assert (const wchar\_t\* pszassert、const wchar\_t\* pszassert、const wchar\_\* t pszassert、const wchar\_t\* pszassert、int line)   | コンテキストを使用してテストアサートをログに記録し、ファイル、関数、および行の情報も記録します。                                                                                                               |
+| バグ (const wchar\_t\* pszbug database、int のバグ id)                                                                                     | 既知のバグ番号をログに記録します。                                                                                                                                                                      |
+| バグ (const wchar\_t\* pszbug database、int のバグ id、const\_wchar\* t pszcontext)                                                        | コンテキストを使用して既知のバグ番号をログに記録します。                                                                                                                                                        |
+| Comment (const wchar\_t\* pszcomment)                                                                                                | テストコメントをログに記録します。                                                                                                                                                                          |
+| Comment (const wchar\_t\* pszcomment、const wchar\_t\* pszcomment)                                                                   | コンテキストを使用してテストコメントを記録する                                                                                                                                                             |
+| Endgroup (const wchar\_t\* pszgroupname)                                                                                             | テストのグループまたは特定のテストのグループの終了をログに記録します。                                                                                                                                      |
+| Endgroup (const wchar\_t\* pszgroupname、const wchar\_t\* pszgroupname)                                                                | コンテキストを使用して、テストのグループまたは特定のテストのグループの終了をログに記録します。                                                                                                                        |
+| エラー (const wchar\_t\* pszerror)                                                                                                    | テストエラーをログに記録します。                                                                                                                                                                            |
+| エラー (const wchar\_t\* pszerror、const wchar\_t\* pszerror)                                                                       | コンテキストを使用してテストエラーをログに記録します。                                                                                                                                                              |
+| エラー (const wchar\_t\* pszerror、const wchar\_t\* pszerror、const wchar\_t\* pszerror、int line)                                  | ファイル、関数、および行の情報を含むテストエラーをログに記録します。                                                                                                                                   |
+| エラー (const wchar\_t\* pszerror、const wchar\_t\* pszerror、const wchar\_t\* pszerror、const wchar\_t\* pszerror、int line)     | コンテキストを使用してテストエラーをログに記録し、ファイル、関数、および行の情報も記録します。                                                                                                                |
+| File (const wchar\_t\* pszfilename)                                                                                                  | 保存するテストファイルをログに記録します。 ファイルは&lt;、WTTRunWorkingDir&gt; &lt;&gt;wexlogfileoutput (WTTRunWorkingDir が設定されている場合) または\\currentdirectory wexlogfileoutput のいずれかに保存されます。\\               |
+| File (const wchar\_t\* pszfilename、const wchar\_t\* pszfilename)                                                                     | コンテキストを使用して、保存するテストファイルをログに記録します。 ファイルは&lt;、WTTRunWorkingDir&gt; &lt;&gt;wexlogfileoutput (WTTRunWorkingDir が設定されている場合) または\\currentdirectory wexlogfileoutput のいずれかに保存されます。\\ |
+| Property (const wchar\_t\* pszname、const wchar\_t\* pszname)                                                                       | 名前/値プロパティのペアをログに記録します。 値は xml 形式で指定できます。                                                                                                                              |
+| Property (const wchar\_t\* pszname、const wchar\_t\* pszname、const wchar\_t\* pszname)                                          | コンテキストを使用して、名前と値のプロパティのペアをログに記録します。 値は xml 形式で指定できます。                                                                                                                |
+| Result (TestResults:: Result testResult)                                                                                              | テスト結果をログに記録します。                                                                                                                                                                           |
+| Result (TestResults:: Result testresult、const wchar\_t\* pszcomment)                                                                 | 関連するコメントを使用してテスト結果をログに記録します。                                                                                                                                                |
+| Result (TestResults:: Result testresult、const wchar\_t\* pszcomment、const wchar\_t\* pszcomment)                                    | コンテキストで、関連付けられているコメントを使用してテスト結果をログに記録します。                                                                                                                                  |
+| Startgroup (const wchar\_t\* pszgroupname)                                                                                           | テストのグループまたは特定のテストのグループの開始をログに記録します。                                                                                                                                    |
+| Startgroup (const wchar\_t\* pszgroupname, TestResults:: Result defaulttestresult)                                                    | テストのグループまたは特定のテストのグループの開始をログに記録します。既定のテスト結果も設定します。                                                                                                 |
+| Startgroup (const wchar\_t\* pszgroupname, const wchar\_t\* pszgroupname)                                                              | コンテキストを使用して、テストのグループまたは特定のテストのグループの開始をログに記録します。                                                                                                                      |
+| Startgroup (const wchar\_t\* pszgroupname、const wchar\_t\* pszgroupname、TestResults:: result defaulttestresult)                       | テストのグループまたは特定のテストのグループの開始をログに記録します。既定のテスト結果も設定します。                                                                                                 |
+| 警告 (const wchar\_t\* pszwarning)                                                                                                | テスト警告をログに記録します。                                                                                                                                                                          |
+| 警告 (const wchar\_t\* pszwarning、const wchar\_t\* pszwarning)                                                                   | コンテキストを使用してテスト警告をログに記録します。                                                                                                                                                            |
+| 警告 (const wchar\_t\* pszwarning、const wchar\_t\* pszwarning、const wchar\_t\* pszwarning、int line)                              | ファイル、関数、および行の情報を含むテスト警告をログに記録します。                                                                                                                                 |
+| 警告 (const wchar\_t\* pszwarning、const wchar\_t\* pszwarning、const wchar\_\* t pszwarning、const wchar\_t\* pszwarning、int line) | コンテキストを使用してテスト警告をログに記録し、ファイル、関数、および行の情報も記録します。                                                                                                              |
+| Xml (const wchar\_t\* pszxml)                                                                                                        | Xml データをログに記録します。 適切な形式であるかどうかの確認は行われません。                                                                                                                             |
+| Xml (const wchar\_t\* pszxml、const wchar\_t\* pszxml)                                                                           | コンテキストを使用して xml データをログに記録します。 適切な形式であるかどうかの確認は行われません。                                                                                                               |
+| ミニダンプ ()                                                                                                                          | 現在のプロセスミニダンプをログに記録します。                                                                                                                                                           |
 
 
 
-**注:** 「コンテキスト」を行うことができます必要に応じて追加の文字列とは、 **WexLogger**コンテキストまたは詳細の詳細を提供する API 呼び出し。 たとえば、することができます"ImageComparator"で、常に渡すのコンテキストとしていずれかを行うときに**WexLogger** ImageComparator クラスのメソッドからの API 呼び出し。
+**注:** "Context" は余分な文字列であり、必要に応じて、より多くのコンテキストや詳細を提供するために**Wexlogger** API 呼び出しを指定できます。 たとえば、ImageComparator クラスのメソッドから**Wexlogger** API 呼び出しを行う場合、コンテキストとして常に "ImageComparator" を渡すことを選択できます。
 
-ネイティブ C++ の有効な値をここでは**TestResults::Result**列挙体。 同等のバージョンはマネージ コードとスクリプトを使用できます。
+Native C++ **TestResults:: Result**列挙型に使用できる有効な値を次に示します。 マネージコードとスクリプトには、同等のバージョンが用意されています。
 
-| ネイティブの C++ TestResults::Result 列挙型 | 機能        |
+| Native C++ TestResults:: Result 列挙型 | 機能        |
 |--------------------------------------------|----------------------|
-| 渡されました。                                     | テストに合格しました      |
-| NotRun                                     | テストが実行されていません |
-| スキップされました                                    | テストがスキップされました |
-| ブロック                                    | テストがブロックされました |
-| Failed                                     | テストが失敗しました      |
+| 渡し                                     | テストが成功しました      |
+| NotRun                                     | テストは実行されませんでした |
+| 読み                                    | テストがスキップされました |
+| ブロック                                    | テストはブロックされました |
+| Failed                                     | テストに失敗しました      |
 
 
 
-**使用可能なネイティブの C++ LogContoller メソッドの一覧を次に示します。**
+**使用可能なネイティブC++ logcontroller メソッドの一覧を次に示します。**
 
-| ネイティブの C++ LogController メソッド                                                                       | 機能                                                                                                                                                                                                                                                                                                   |
+| ネイティブC++ Logcontroller メソッド                                                                       | 機能                                                                                                                                                                                                                                                                                                   |
 |--------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 静的な HRESULT InitializeLogging()                                                                     | ログ記録機能を初期化します。                                                                                                                                                                                                                                                                               |
-| 静的な HRESULT InitializeLogging(WexLoggerErrorCallback pfnErrorCallback)                              | ログ記録の機能を初期化し、ロガーの内部エラーの通知を使用する WexLoggerErrorCallback 関数を指定します。                                                                                                                                                               |
-| 静的な HRESULT InitializeLogging(const wchar\_t\* pszLogName)                                          | ログ記録の機能を初期化し、使用するには、ログ ファイルの名前を指定します。 **注:** 場合、アカウントにログの名前が考慮のみ[WttLogging が有効になっている](#generating-wtt-logs)します。                                                                                                             |
-| 静的な HRESULT InitializeLogging(const wchar\_t\* pszLogName, WexLoggerErrorCallback pfnErrorCallback) | ログ記録機能を初期化、ロガーの内部エラーの通知を使用する WexLoggerErrorCallback 関数を指定し、使用するログ ファイルの名前を指定します。 **注:** 場合、アカウントにログの名前が考慮のみ[WttLogging が有効になっている](#generating-wtt-logs)します。 |
-| static bool IsInitialized()                                                                            | このプロセスの LogController が初期化されているかどうかを返します。                                                                                                                                                                                                                                 |
-| static const unsigned short\* GetLogName()                                                             | (ある場合)、InitializeLogging 呼び出しのログで指定された名前を返します。                                                                                                                                                                                                                         |
-| 静的な HRESULT FinalizeLogging()                                                                       | ログ記録機能を完了します。                                                                                                                                                                                                                                                                                   |
+| static HRESULT InitializeLogging ()                                                                     | ログ記録機能を初期化します。                                                                                                                                                                                                                                                                               |
+| static HRESULT InitializeLogging (WexLoggerErrorCallback pfnErrorCallback)                              | ログ記録機能を初期化し、内部ロガーエラーを通知するために使用する WexLoggerErrorCallback 関数を指定します。                                                                                                                                                               |
+| static HRESULT initializelogging (const wchar\_t\* pszlogname)                                          | ログ記録機能を初期化し、使用するログファイルの名前を指定します。 **注:** ログ名は、 [WttLogging が有効になって](#generating-wtt-logs)いる場合にのみ考慮されます。                                                                                                             |
+| static HRESULT initializelogging (const wchar\_t\* pszlogname, WexLoggerErrorCallback pfnerrorcallback) | ログ記録機能を初期化し、使用するログファイルの名前を指定します。また、内部ロガーエラーを通知するために使用する WexLoggerErrorCallback 関数を指定します。 **注:** ログ名は、 [WttLogging が有効になって](#generating-wtt-logs)いる場合にのみ考慮されます。 |
+| static bool IsInitialized ()                                                                            | このプロセスに対して LogController が初期化されているかどうかを返します。                                                                                                                                                                                                                                 |
+| static const unsigned short\* getlogname ()                                                             | InitializeLogging 呼び出しでログに指定された名前を返します (存在する場合)。                                                                                                                                                                                                                         |
+| static HRESULT FinalizeLogging ()                                                                       | ログ記録機能を終了します。                                                                                                                                                                                                                                                                                   |
 
 
 
-**注:** 詳細については以下の C++ エラー処理セクションを参照してください、 **WexLoggerErrorCallback**メカニズムと TAEF framework 外の使用方法。
+**注:** WexLoggerErrorCallback メカニズムC++の詳細および taef フレームワーク外での使用方法については、以下の「エラー処理」セクションを参照してください。
 
-**注:** 使用する場合は、InitializeLogging/FinalizeLogging を呼び出す必要は、 **WexLogger** TAEF framework の外部 TAEF として既に処理初期化/補完がログ記録します。
+**注:** TAEF フレームワークの外部で**Wexlogger**を使用する場合は、既にログの初期化/完了を処理するので、Initializelogging/finalizelogging を呼び出す必要があるだけです。
 
-**注:** 完了に必要な初期化/ログ記録機能を使用する場合は、 **WexLogger**スクリプトから。
+**注:** スクリプトから**Wexlogger**を使用する場合は、ログ機能を初期化/完了する必要はありません。
 
-**使用可能なネイティブの C++ RemoteLogContoller メソッドの一覧を次に示します。**
+**使用可能なネイティブC++ remotelogcontrol メソッドの一覧を次に示します。**
 
-| ネイティブの C++ RemoteLogController メソッド                                                                             | 機能                                                                                                                                                                                                |
+| ネイティブC++ remotelogcontroller メソッド                                                                             | 機能                                                                                                                                                                                                |
 |--------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 静的な HRESULT GenerateConnectionData(WEX::Common::NoThrowString& connectionData)                                  | 子プロセスは、親プロセスにログインできるようにする、親と子のプロセス内で使用する必要があります接続データを生成します。                                                          |
-| 静的な HRESULT GenerateConnectionData(const wchar\_t\* pszMachineName, WEX::Common::NoThrowString& connectionData) | リモート コンピューター上の子プロセスを起動するときに使用されます。 子プロセスは、親プロセスにログインできるようにする、親と子のプロセス内で使用する必要があります接続データを生成します。 |
-| 静的な HRESULT InitializeLogging(WEX::Common::NoThrowString connectionData)                                        | 子プロセスは、返送にログインできるように、親プロセス内の機能をログ記録を初期化します。                                                                                                         |
+| static HRESULT GenerateConnectionData (WEX:: Common:: NoThrowString & connectionData)                                  | 子プロセスが親プロセスに再びログインできるようにするために、親プロセスと子プロセス内で使用する必要がある接続データを生成します。                                                          |
+| static HRESULT GenerateConnectionData (const wchar\_t\* pszmachinename, wex:: Common:: NoThrowString & connectiondata) | リモートコンピューターで子プロセスを起動するときに使用されます。 子プロセスが親プロセスに再びログインできるようにするために、親プロセスと子プロセス内で使用する必要がある接続データを生成します。 |
+| static HRESULT InitializeLogging (WEX:: Common:: NoThrowString connectionData)                                        | 親プロセス内のログ記録機能を初期化して、子プロセスがそれに再びログインできるようにします。                                                                                                         |
 
 
 
-**注:** 参照してください、[リモート ログ記録から子プロセス](#remote-logging-from-child-processes)リモート ログ記録の詳細については後述します。
+**注:** リモートログの詳細については、以下の「[子プロセスからのリモートログ](#remote-logging-from-child-processes)」セクションを参照してください。
 
-使用可能なログの管理対象のメソッドの一覧を次に示します。
+使用可能なマネージログのメソッドの一覧を次に示します。
 
-| 管理対象のログ メソッド                                                             | 機能                                                                                                                                                                |
+| マネージログのメソッド                                                             | 機能                                                                                                                                                                |
 |---------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| アサート (IFormatProvider プロバイダー、文字列の形式、params オブジェクト\[\] args)         | カルチャに固有の書式設定情報プロバイダー、書式指定文字列、および書式指定する 0 個以上のオブジェクトを格納しているオブジェクト配列を使用して、テストのアサートのログです。               |
-| アサート (IFormatProvider プロバイダー、文字列の形式、params オブジェクト\[\] args)         | カルチャに固有の書式設定情報プロバイダー、書式指定文字列、および書式指定する 0 個以上のオブジェクトを格納しているオブジェクト配列を使用して、テストのアサートのログです。               |
-| (文字列メッセージ) のアサートします。                                                          | テストのアサートをログインします。                                                                                                                                                           |
-| (文字列の形式、オブジェクトの arg0) をアサートします。                                              | テストのログをアサートする書式指定文字列とオブジェクトを使用してフォーマットします。                                                                                                             |
-| アサート (文字列の形式、params オブジェクト\[\] args)                                   | ログ形式の文字列を使用して、テストのアサートと書式指定する 0 個以上のオブジェクトを格納しているオブジェクト配列。                                                                   |
-| (文字列コンテキストで、文字列メッセージ) のアサートします。                                          | テスト アサートをコンテキストにログインします。                                                                                                                                             |
-| Assert (メッセージ文字列、文字列のファイル、文字列関数、int 行)                  | テスト、assert ともファイル、関数と行情報をログに記録します。                                                                                                             |
-| Assert (メッセージ文字列、文字列のコンテキスト、文字列のファイル、文字列関数、int 行)  | テスト assert、コンテキスト、およびも、ファイルの関数と行情報をログに記録します。                                                                                               |
-| バグ (文字列 bugDatabase、int 型には)                                              | 既知のバグの数を記録します。                                                                                                                                                      |
-| Bug(string bugDatabase, int bugId, string context)                              | 既知のバグ数をコンテキストにログインします。                                                                                                                                        |
-| コメント (IFormatProvider プロバイダー、文字列の形式、params オブジェクト\[\] args)        | コメントをカルチャに固有の書式設定情報プロバイダー、書式指定文字列、および書式指定する 0 個以上のオブジェクトを格納しているオブジェクト配列を使用してテスト ログに記録します。              |
-| コメント (文字列メッセージ)                                                         | コメントは、テストのログ                                                                                                                                                           |
-| コメント (文字列の形式、オブジェクトの arg0)                                             | 書式指定文字列とオブジェクトを使用してフォーマットするコメントのテストを記録します。                                                                                                            |
-| コメント (文字列の形式、params オブジェクト\[\] args)                                  | コメントを書式指定文字列と書式指定する 0 個以上のオブジェクトを格納しているオブジェクト配列を使用してテスト ログに記録します。                                                                   |
-| コメント (メッセージ文字列, 文字列コンテキストで)                                         | ログのコンテキストでのテスト コメント                                                                                                                                             |
-| EndGroup (文字列 groupName)                                                      | テスト、または特定のテストのグループの最後にログインします。                                                                                                                      |
-| EndGroup (文字列のグループ名、文字列のコンテキスト)                                      | テスト、または特定のテストのグループの末尾をコンテキストにログインします。                                                                                                        |
-| エラー (IFormatProvider プロバイダー、文字列の形式、params オブジェクト\[\] args)          | カルチャに固有の書式設定情報プロバイダー、書式指定文字列、および書式指定する 0 個以上のオブジェクトを格納しているオブジェクト配列を使用して、テストのエラー ログに記録します。                |
-| エラー (文字列メッセージ)                                                           | テストのエラー ログに記録します。                                                                                                                                                            |
-| エラー (文字列の形式、オブジェクトの arg0)                                               | 書式指定文字列とオブジェクトを使用してフォーマットするテストのエラー ログに記録します。                                                                                                              |
-| エラー (メッセージ文字列, 文字列コンテキストで)                                           | テスト エラーをコンテキストにログインします。                                                                                                                                              |
-| エラー (IFormatProvider プロバイダー、文字列の形式、params オブジェクト\[\] args)          | 書式指定文字列と書式指定する 0 個以上のオブジェクトを格納しているオブジェクト配列を使用して、テストのエラー ログに記録します。                                                                     |
-| エラー (メッセージ文字列, 文字列ファイル、文字列関数, int 行)                   | テスト エラーをログ ファイル、関数、および行情報を使用します。                                                                                                                   |
-| エラー (メッセージ文字列、文字列のコンテキスト、文字列のファイル、文字列関数、int 行)   | テスト エラーをコンテキスト、およびも、ファイルの関数と行情報でログインします。                                                                                                |
-| File(string fileName)                                                           | テスト ファイルを保存するログに記録します。 ファイルか WTTRunWorkingDir に保存されます\\WexLogFileOutput (WTTRunWorkingDir が設定されている) 場合、または CurrentDirectory\\WexLogFileOutput します。               |
-| File(string fileName, string context)                                           | ログのコンテキストに保存するテスト ファイルです。 ファイルか WTTRunWorkingDir に保存されます\\WexLogFileOutput (WTTRunWorkingDir が設定されている) 場合、または CurrentDirectory\\WexLogFileOutput します。 |
-| MiniDump()                                                                      | 現在のプロセスのミニ ダンプをログインします。                                                                                                                                           |
-| プロパティ (文字列名、文字列値)                                             | プロパティの名前と値のペアにログインします。 値は、xml 形式であることができます。                                                                                                              |
-| プロパティ (文字列名、文字列値、文字列のコンテキスト)                             | 名前/値のプロパティのペアをコンテキストにログインします。 値は、xml 形式であることができます。                                                                                                |
-| 結果 (TestResult testResult)                                                   | テストの結果をログに記録します。                                                                                                                                                           |
-| 結果 (TestResult testResult、文字列のコメント)                                   | テスト結果を関連付けられているコメントにログインします。                                                                                                                                |
-| 結果 (TestResult testResult、文字列のコメント、文字列のコンテキスト)                   | テスト結果をログイン コンテキストに関連付けられているコメントを使用します。                                                                                                                  |
-| StartGroup (文字列 groupName)                                                    | テスト、または特定のテストのグループの先頭にログインします。                                                                                                                    |
-| StartGroup (文字列のグループ名、文字列のコンテキスト)                                    | テスト、または特定のテストのグループの開始をコンテキストにログインします。                                                                                                      |
-| 警告 (IFormatProvider プロバイダー、文字列の形式、params オブジェクト\[\] args)        | カルチャに固有の書式設定情報プロバイダー、書式指定文字列、および書式指定する 0 個以上のオブジェクトを格納しているオブジェクト配列を使用して、テスト警告を記録します。              |
-| 警告 (メッセージの文字列)                                                         | テストの警告を記録します。                                                                                                                                                          |
-| 警告 (文字列の形式、オブジェクトの arg0)                                             | 書式指定文字列とオブジェクトを使用してフォーマットするテストの警告をログします。                                                                                                            |
-| 警告 (文字列の形式、params オブジェクト\[\] args)                                  | 書式指定文字列と書式指定する 0 個以上のオブジェクトを格納しているオブジェクト配列を使用してテストの警告を記録します。                                                                   |
-| 警告 (メッセージ文字列, 文字列コンテキストで)                                         | テストの警告をコンテキストにログインします。                                                                                                                                            |
-| 警告 (メッセージ文字列, 文字列ファイル、文字列関数, int 行)                 | テストの警告をファイル、関数と行情報でログインします。                                                                                                                 |
-| 警告 (メッセージ文字列、文字列のコンテキスト、文字列のファイル、文字列関数、int 行) | コンテキスト、およびも、ファイルの関数と行情報をテストの警告では、ログに記録します。                                                                                              |
-| Xml(string xmlData)                                                             | Xml データを記録します。 適切な形式であることを確認するチェックは行われません。                                                                                                             |
-| Xml (文字列 xmlData、文字列のコンテキスト)                                             | Xml データをコンテキストにログインします。 適切な形式であることを確認するチェックは行われません。                                                                                               |
+| Assert (IFormatProvider provider、string format、params オブジェクト\[ \]引数)         | カルチャ固有の書式情報プロバイダー、書式指定文字列、および0個以上の書式設定対象オブジェクトを含むオブジェクト配列を使用して、テストアサートをログに記録します。               |
+| Assert (IFormatProvider provider、string format、params オブジェクト\[ \]引数)         | カルチャ固有の書式情報プロバイダー、書式指定文字列、および0個以上の書式設定対象オブジェクトを含むオブジェクト配列を使用して、テストアサートをログに記録します。               |
+| Assert (文字列メッセージ)                                                          | テストアサートをログに記録します。                                                                                                                                                           |
+| Assert (文字列形式、オブジェクト arg0)                                              | 書式指定文字列と書式設定するオブジェクトを使用して、テストアサートをログに記録します。                                                                                                             |
+| Assert (文字列形式、params オブジェクト\[ \]引数)                                   | 書式指定文字列と、0個以上の書式設定対象オブジェクトを含むオブジェクト配列を使用して、テストアサートをログに記録します。                                                                   |
+| Assert (文字列メッセージ、文字列コンテキスト)                                          | コンテキストを使用してテストアサートをログに記録します。                                                                                                                                             |
+| Assert (文字列メッセージ、文字列ファイル、文字列関数、int 行)                  | テストアサートをログに記録し、ファイル、関数、行の情報も記録します。                                                                                                             |
+| Assert (文字列メッセージ、文字列コンテキスト、文字列ファイル、文字列関数、int 行)  | コンテキストを使用してテストアサートをログに記録し、ファイル、関数、および行の情報も記録します。                                                                                               |
+| バグ (文字列バグデータベース、int バグ Id)                                              | 既知のバグ番号をログに記録します。                                                                                                                                                      |
+| バグ (文字列バグデータベース、int バグ Id、文字列コンテキスト)                              | コンテキストを使用して既知のバグ番号をログに記録します。                                                                                                                                        |
+| Comment (IFormatProvider provider, string format, params object\[ \] args)        | カルチャ固有の書式情報プロバイダー、書式指定文字列、および0個以上の書式設定対象オブジェクトを含むオブジェクト配列を使用して、テストコメントを記録します。              |
+| Comment (文字列メッセージ)                                                         | テストコメントをログに記録する                                                                                                                                                           |
+| Comment (文字列形式、オブジェクト arg0)                                             | 書式指定文字列と書式設定するオブジェクトを使用して、テストコメントをログに記録します。                                                                                                            |
+| Comment (文字列形式、params オブジェクト\[ \]引数)                                  | 書式指定文字列と、0個以上の書式設定対象オブジェクトを含むオブジェクト配列を使用して、テストコメントを記録します。                                                                   |
+| Comment (文字列メッセージ、文字列コンテキスト)                                         | コンテキストを使用してテストコメントを記録する                                                                                                                                             |
+| EndGroup (文字列 groupName)                                                      | テストのグループまたは特定のテストのグループの終了をログに記録します。                                                                                                                      |
+| EndGroup (文字列 groupName、文字列コンテキスト)                                      | コンテキストを使用して、テストのグループまたは特定のテストのグループの終了をログに記録します。                                                                                                        |
+| エラー (IFormatProvider provider、string format、params オブジェクト\[ \]引数)          | カルチャ固有の書式情報プロバイダー、書式指定文字列、および0個以上の書式設定対象オブジェクトを含むオブジェクト配列を使用して、テストエラーをログに記録します。                |
+| エラー (文字列メッセージ)                                                           | テストエラーをログに記録します。                                                                                                                                                            |
+| エラー (文字列形式、オブジェクト arg0)                                               | 書式指定文字列と書式設定するオブジェクトを使用して、テストエラーをログに記録します。                                                                                                              |
+| エラー (文字列メッセージ、文字列コンテキスト)                                           | コンテキストを使用してテストエラーをログに記録します。                                                                                                                                              |
+| エラー (IFormatProvider provider、string format、params オブジェクト\[ \]引数)          | 書式指定文字列と、0個以上の書式設定対象オブジェクトを含むオブジェクト配列を使用して、テストエラーをログに記録します。                                                                     |
+| エラー (文字列メッセージ、文字列ファイル、文字列関数、int 行)                   | ファイル、関数、および行の情報を含むテストエラーをログに記録します。                                                                                                                   |
+| エラー (文字列メッセージ、文字列コンテキスト、文字列ファイル、文字列関数、int 行)   | コンテキストを使用してテストエラーをログに記録し、ファイル、関数、および行の情報も記録します。                                                                                                |
+| ファイル (文字列ファイル名)                                                           | 保存するテストファイルをログに記録します。 ファイルは、WTTRunWorkingDir\\wexlogfileoutput (WTTRunWorkingDir が設定されている場合) または currentdirectory\\wexlogfileoutput のいずれかに保存されます。               |
+| File (文字列ファイル名、文字列コンテキスト)                                           | コンテキストを使用して、保存するテストファイルをログに記録します。 ファイルは、WTTRunWorkingDir\\wexlogfileoutput (WTTRunWorkingDir が設定されている場合) または currentdirectory\\wexlogfileoutput のいずれかに保存されます。 |
+| ミニダンプ ()                                                                      | 現在のプロセスミニダンプをログに記録します。                                                                                                                                           |
+| Property (文字列名、文字列値)                                             | 名前/値プロパティのペアをログに記録します。 値は xml 形式で指定できます。                                                                                                              |
+| Property (文字列名、文字列値、文字列コンテキスト)                             | コンテキストを使用して、名前と値のプロパティのペアをログに記録します。 値は xml 形式で指定できます。                                                                                                |
+| Result (TestResult testResult)                                                   | テスト結果をログに記録します。                                                                                                                                                           |
+| Result (TestResult testResult、文字列コメント)                                   | 関連するコメントを使用してテスト結果をログに記録します。                                                                                                                                |
+| Result (TestResult testResult、string comment、string context)                   | コンテキストで、関連付けられているコメントを使用してテスト結果をログに記録します。                                                                                                                  |
+| StartGroup (文字列 groupName)                                                    | テストのグループまたは特定のテストのグループの開始をログに記録します。                                                                                                                    |
+| StartGroup (文字列 groupName、文字列コンテキスト)                                    | コンテキストを使用して、テストのグループまたは特定のテストのグループの開始をログに記録します。                                                                                                      |
+| Warning (IFormatProvider provider、string format、params object\[ \] args)        | カルチャ固有の書式情報プロバイダー、書式指定文字列、および0個以上の書式設定対象オブジェクトを含むオブジェクト配列を使用して、テスト警告をログに記録します。              |
+| 警告 (文字列メッセージ)                                                         | テスト警告をログに記録します。                                                                                                                                                          |
+| 警告 (文字列形式、オブジェクト arg0)                                             | 書式指定文字列と書式設定するオブジェクトを使用して、テスト警告をログに記録します。                                                                                                            |
+| Warning (文字列形式、params オブジェクト\[ \]引数)                                  | 書式指定文字列と、0個以上の書式設定対象オブジェクトを含むオブジェクト配列を使用して、テスト警告をログに記録します。                                                                   |
+| 警告 (文字列メッセージ、文字列コンテキスト)                                         | コンテキストを使用してテスト警告をログに記録します。                                                                                                                                            |
+| 警告 (文字列メッセージ、文字列ファイル、文字列関数、int 行)                 | ファイル、関数、および行の情報を含むテスト警告をログに記録します。                                                                                                                 |
+| 警告 (文字列メッセージ、文字列コンテキスト、文字列ファイル、文字列関数、int 行) | コンテキストを使用してテスト警告をログに記録し、ファイル、関数、および行の情報も記録します。                                                                                              |
+| Xml (文字列 xmlData)                                                             | Xml データをログに記録します。 適切な形式であるかどうかの確認は行われません。                                                                                                             |
+| Xml (文字列 xmlData、文字列コンテキスト)                                             | コンテキストを使用して xml データをログに記録します。 適切な形式であるかどうかの確認は行われません。                                                                                               |
 
 
 
-**使用可能なマネージ LogContoller メソッドの一覧を次に示します。**
+**使用できる管理された Logcontrol メソッドの一覧を次に示します。**
 
-| マネージ LogController メソッド                 | 機能                                                                                                                                                                                       |
+| 管理された LogController メソッド                 | 機能                                                                                                                                                                                       |
 |-----------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| static void InitializeLogging()               | ログ記録機能を初期化します。                                                                                                                                                                   |
-| static void InitializeLogging (文字列 logName) | ログ記録の機能を初期化し、使用するには、ログ ファイルの名前を指定します。 **注:** 場合、アカウントにログの名前が考慮のみ[WttLogging が有効になっている](#generating-wtt-logs)します。 |
-| static bool IsInitialized()                   | このプロセスの LogController が初期化されているかどうかを返します。                                                                                                                     |
-| static String GetLogName()                    | (ある場合)、InitializeLogging 呼び出しのログで指定された名前を返します。                                                                                                             |
-| static void FinalizeLogging()                 | ログ記録機能を完了します。                                                                                                                                                                       |
+| static void InitializeLogging ()               | ログ記録機能を初期化します。                                                                                                                                                                   |
+| static void InitializeLogging (文字列 logName) | ログ記録機能を初期化し、使用するログファイルの名前を指定します。 **注:** ログ名は、 [WttLogging が有効になって](#generating-wtt-logs)いる場合にのみ考慮されます。 |
+| static bool IsInitialized ()                   | このプロセスに対して LogController が初期化されているかどうかを返します。                                                                                                                     |
+| 静的文字列 GetLogName ()                    | InitializeLogging 呼び出しでログに指定された名前を返します (存在する場合)。                                                                                                             |
+| 静的 void FinalizeLogging ()                 | ログ記録機能を終了します。                                                                                                                                                                       |
 
 
 
-**注:** 管理対象レイヤーを使用する場合、エラーと例外を処理する方法の詳細については、以下の「マネージ コードのエラーと例外を参照してください、 **WexLogger** TAEF framework 外です。
+**注:** TAEF フレームワーク外で**Wexlogger**のマネージレイヤーを使用する場合のエラーと例外の処理方法の詳細については、後述の「マネージコードエラーと例外」セクションを参照してください。
 
-**注:** 使用する場合は、InitializeLogging/FinalizeLogging を呼び出す必要は、 **WexLogger** TAEF framework の外部 TAEF として既に処理初期化/補完がログ記録します。
+**注:** TAEF フレームワークの外部で**Wexlogger**を使用する場合は、既にログの初期化/完了を処理するので、Initializelogging/finalizelogging を呼び出す必要があるだけです。
 
-**注:** 完了に必要な初期化/ログ記録機能を使用する場合は、 **WexLogger**スクリプトから。
+**注:** スクリプトから**Wexlogger**を使用する場合は、ログ機能を初期化/完了する必要はありません。
 
-**使用可能なマネージ RemoteLogContoller メソッドの一覧を次に示します。**
+**使用可能なマネージ Remotelogcontrol メソッドの一覧を次に示します。**
 
 | マネージ RemoteLogController メソッド                      | 機能                                                                                                                                                                                                |
 |----------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 静的文字列 GenerateConnectionData()                   | 子プロセスは、親プロセスにログインできるようにする、親と子のプロセス内で使用する必要があります接続データを生成します。                                                          |
-| 静的文字列 GenerateConnectionData(string machineName) | リモート コンピューター上の子プロセスを起動するときに使用されます。 子プロセスは、親プロセスにログインできるようにする、親と子のプロセス内で使用する必要があります接続データを生成します。 |
-| static void InitializeLogging (文字列 connectionData)     | 子プロセスは、返送にログインできるように、親プロセス内の機能をログ記録を初期化します。                                                                                                         |
+| static String GenerateConnectionData ()                   | 子プロセスが親プロセスに再びログインできるようにするために、親プロセスと子プロセス内で使用する必要がある接続データを生成します。                                                          |
+| static String GenerateConnectionData (文字列 machineName) | リモートコンピューターで子プロセスを起動するときに使用されます。 子プロセスが親プロセスに再びログインできるようにするために、親プロセスと子プロセス内で使用する必要がある接続データを生成します。 |
+| static void InitializeLogging (文字列 connectionData)     | 親プロセス内のログ記録機能を初期化して、子プロセスがそれに再びログインできるようにします。                                                                                                         |
 
 
 
-**注:** 参照してください、[リモート ログ記録から子プロセス](#remote-logging-from-child-processes)リモート ログ記録の詳細については後述します。
+**注:** リモートログの詳細については、以下の「[子プロセスからのリモートログ](#remote-logging-from-child-processes)」セクションを参照してください。
 
-## <a name="remote-logging-from-child-processes"></a>子プロセスからリモート ログ記録
+## <a name="remote-logging-from-child-processes"></a>子プロセスからのリモートログ
 
 
-ログに複数の子プロセスが 1 つのログ ファイル内で統合されたテスト結果の生成の結果として、1 つの親プロセスをまたは WexLogger が 1 つの機能を提供します。
+WexLogger を使用すると、1つ以上の子プロセスが1つの親プロセスに再度ログインできるようになり、結果として1つのログファイル内に統合されたテスト結果が生成されます。
 
-子プロセスを親プロセスと同じコンピューター上または別のコンピューターにリモートで実行できることができます。 リモート コンピューターを操作するログに記録、リモート コンピューターのすべての子プロセスの TCP ファイアウォールの除外を追加する WexLogger クライアントの責任です。 ただし、子プロセスを親と同じコンピューターで実行している場合は、ファイアウォールの変更は必要ありません。
+子プロセスは、親プロセスと同じコンピューター上で実行するか、別のコンピューターでリモートで実行できます。 リモートコンピューターのログ記録を機能させるには、WexLogger クライアントを使用して、リモートコンピューター上のすべての子プロセスに対して TCP ファイアウォールの除外を追加します。 ただし、子プロセスが親と同じコンピューター上で実行されている場合は、ファイアウォールの変更は必要ありません。
 
-次の手順では、各リモート ログ記録の接続を設定する必要があります。
+各リモートログ接続を設定するには、次の手順を実行する必要があります。
 
 **親プロセス**
 
-1.  呼び出す**RemoteLogController::GenerateConnectionData()** ログ接続を開始するプロセスの両方で使用する必要があります接続データを生成します。
+1.  両方のプロセスでログ接続を開始するために使用する必要がある接続データを生成するには、 **Remotelogcontroller:: GenerateConnectionData ()** を呼び出します。
 
-    **注:** この呼び出しの戻り値を確認してください。
+    **注:** この呼び出しの戻り値を必ず確認してください。
 
     ```cpp
         NoThrowString connectionData;
@@ -253,44 +253,44 @@ log.Comment("Render succeeded");
 
     ```
 
-2.  その環境ブロックに設定することで、またはコマンド プロンプトの引数として渡すことによって、子プロセスと接続データを通信します。 例:
+2.  接続データを環境ブロックで設定するか、コマンドプロンプトで引数として渡すことによって、接続データを子プロセスと通信します。 以下に例を示します。
 
-    **WexLogger で認識されるコマンド プロンプトで名前付き引数として渡します。**  
+    **WexLogger が理解するコマンドプロンプトで、名前付き引数としてを渡します。**  
     /wexlogger\_connectiondata = *\[接続データ\]*
 
-    **注:** 場合、このオプションを使用し、手順 1、**子プロセス**以下のセクション**ない**必要です。
+    **注:** このオプションを使用する場合は、下の「**子プロセス**」セクションの手順1を実行する必要**はありません**。
 
-    **WexLogger を認識する名前付きの環境変数として渡します。**  
-    \[YourAppName\_cmd\]=/wexlogger\_connectiondata = *\[接続データ\]*
+    **WexLogger によって認識される名前付き環境変数としてを渡します。**  
+    \[自分の\_appname\]cmd =\_/wexlogger connectiondata = *\[接続\]データ*
 
-    **注:** 場合、このオプションを使用し、手順 1、**子プロセス**以下のセクション**ない**必要です。
+    **注:** このオプションを使用する場合は、下の「**子プロセス**」セクションの手順1を実行する必要**はありません**。
 
-    **(いくつかその他のコマンドのパラメーター、環境変数など) は任意の形式でのプロセスに渡す**  
-    **注:** 場合、このオプションを使用し、手順 1、**子プロセス**以下のセクション**は**必要です。
+    **任意の形式 (他のコマンドパラメーター、環境変数など) でプロセスに渡す**  
+    **注:** このオプションを使用する場合は、下の「**子プロセス**」セクションの手順 1. を実行する必要**が**あります。
 
-    **注:** 便宜上、値"/wexlogger\_connectiondata ="はネイティブおよびマネージの両方の RemoteLogControllers 内で定数として定義されます。
+    **注:** 便宜上、値 "/wexlogger\_connectiondata =" は、ネイティブとマネージ remotelogcontrollers の両方で定数として定義されています。
 
-    -   **WEX::Logging::c\_szWexLoggerRemoteConnectionData**LogController.h で
+    -   Logcontroller. h の**wex:\_: Logging:: c szWexLoggerRemoteConnectionData**
 
-    -   **RemoteLogController.WexLoggerRemoteConnectionData**Wex.Logger.Interop.dll で
+    -   **WexLoggerRemoteConnectionData**の (Wex. Interop. .dll)
 
-3.  接続データを持つ子プロセスを起動します。
-4.  呼び出す**RemoteLogController::InitalizeLogging ( *\[手順 1. で作成された接続データ\]* )** します。 タイムアウト値は、子が要求されていない場合があるため、子プロセスの起動後に、この呼び出しを行う必要があります**LogController::InitializeLogging()** 適切なタイミングでします。
+3.  接続データを使用して子プロセスを起動する
+4.  **Remotelogcontroller:: InitalizeLogging ( *\[手順 1\]で作成した接続データ*)** を呼び出します。 子プロセスの起動後にこの呼び出しを行う必要があります。これは、子が**Logcontroller:: InitializeLogging ()** を適切なタイミングで呼び出さない場合にタイムアウトになるためです。
 
-    **注:** この呼び出しの戻り値を確認してください。
+    **注:** この呼び出しの戻り値を必ず確認してください。
 
     ```cpp
     // ...launch child process with connection data...
     Throw::IfFailed(RemoteLogController::InitializeLogging(connectionData));
     ```
 
-5.  子プロセスなどで待機します。
+5.  子プロセスなどを待機します。
 
 **子プロセス**
 
-1.  接続データが場合は**いない**コマンド プロンプトで名前付き引数と子プロセスには、その WexLogger は (上記の手順 2 を参照してください) を理解、渡されたし、そのため、環境変数を設定する必要があります。
+1.  接続データが、WexLogger で認識されるコマンドプロンプトで名前付き引数として子プロセス**に渡され**なかった場合 (上記の手順2を参照)、環境変数を次のように設定する必要があります。
 
-    \[YourAppName\_cmd\]=/wexlogger\_connectiondata = *\[接続データ\]*
+    \[自分の\_appname\]cmd =\_/wexlogger connectiondata = *\[接続\]データ*
 
     **例えば：**
 
@@ -299,36 +299,36 @@ log.Comment("Render succeeded");
     ::SetEnvironmentVariable(L"mytestapp_cmd", String(c_szWexLoggerRemoteConnectionData).Append(connectionData));
     ```
 
-2.  呼び出す**LogController::InitializeLogging()** このプロセスのログを初期化します。 内部的には、上記の手順 1 に設定する環境変数を利用してこれが (またはの手順 2 で、**親プロセス**セクション) 親プロセスにログ記録の接続を開始します。
-3.  ログなどです。すべてのトレースは、親プロセスに送信されます。
-4.  呼び出す**LogController::FinalizeLogging()** このプロセスのログ記録を完了します。
+2.  **Logcontroller:: initializelogging ()** を呼び出して、このプロセスのログを初期化します。 内部的には、これにより、上記の手順 1 (または**親プロセス**セクションの手順 2) で設定された環境変数を利用し、親プロセスへのログ接続を開始します。
+3.  ログなどすべてのトレースが親プロセスに送り返されます。
+4.  **Logcontroller:: FinalizeLogging ()** を呼び出して、このプロセスのログ記録を終了します。
 
-## <a name="determining-test-outcome"></a>テスト結果を決定します。
-
-
-テスト_ケースの目的の結果を明示的に提供されるメソッドがありますが (**ログ:: Result()** ) がない**必要があります**ほとんどの場合、このメソッドを使用するテスト_ケースの。
-
-テスト_ケースが明示的に呼び出していない場合など、**ログ:: Result()** 、および**しない**エラー ログに記録 (を使用して**ログ:: Error()** )、既定と見なされます成功テスト_ケース;その**は**エラー ログに記録、失敗したテストの場合は。
-
-ただし場合、テスト ケース**は**を明示的に呼び出す**Log::Result(TestResults::TestPassed)** も**は**テスト ケース内でエラーのログ、テストもカウントされますとしてテスト内でエラーが発生したため失敗します。
-
-TAEF フレームワーク内でタグ付けする別の既定のテスト結果と共に、テストでこの動作をオーバーライドできます。 これの詳細については、「TAEF テストの作成」のドキュメントで参照できます。
-
-明示的に呼び出すことでこの動作を上書きすることができますも**ログ:: StartGroup()** 独自テスト グループ/テストの場合、既定値のテスト、任意の結果。
-
-## <a name="generating-wtt-logs"></a>WTT ログを生成します。
+## <a name="determining-test-outcome"></a>テスト結果の特定
 
 
-WTT を使用してログを生成する 3 つのメソッドの存在、 **WexLogger**します。 それらのすべてを必要とする**WttLog.dll**実行のディレクトリまたはパスに存在します。
+テストケースの意図した結果 (**Log:: Result ()** ) を明示的に指定するためのメソッドが用意されていますが、ほとんどの場合、このメソッドを使用するテストケースは**必要**ありません。
 
--   Wtt クライアントをインストールするには、ラボでは、実行している場合が wtt ログが自動的に生成されます。 これは、ラボ環境でしか存在しない 2 つの環境変数の存在を探し、WexLogger という事実が原因です。'WttTaskGuid' と 'WTTRunWorkingDir'。 これらの両方が存在しない場合は、wtt ログ自動的に有効にします。
--   ラボ環境の外部 TAEF 内で実行中の場合、/enablewttlogging をコマンド プロンプトで、テスト_ケースに渡します。 以下に例を示します。
+たとえば、テストケースで**log:: Result ()** が明示的に呼び出されず、エラー ( **Log:: error ()** によって) がログに記録**され**ない場合、既定では合格テストケースと見なされます。エラーが**ログに**記録される場合は、失敗しているテストケースです。
+
+ただし、テストケース**が明示的**に**Log:: Result (TestResults:: testpassed)** を呼び出すが、テストケース内でエラーがログに記録される場合**でも、** テスト内でエラーが発生したため、テストはエラーとしてカウントされます。
+
+TAEF フレームワーク内では、別の既定のテスト結果でテストにタグを付けて、この動作をオーバーライドできます。 詳細については、「TAEF テストの作成」ドキュメントを参照してください。
+
+この動作は、独自のテストグループ/テストケースに対して**Log:: startgroup ()** を明示的に呼び出すことによってオーバーライドすることもできます。また、選択した既定のテスト結果を使用します。
+
+## <a name="generating-wtt-logs"></a>WTT ログの生成
+
+
+**Wexlogger**を使用して wtt ログを生成するには、次の3つの方法があります。 すべてのユーザーが、実行ディレクトリまたはパスに**WttLog**が存在している必要があります。
+
+-   ラボでを実行していて、wtt クライアントがインストールされている場合は、wtt ログが自動的に生成されます。 これは、WexLogger がラボ環境に存在する必要がある2つの環境変数の存在を検索するためです。' WttTaskGuid ' と ' WTTRunWorkingDir '。 これらの両方が存在する場合は、wtt ログ記録が自動的に有効になります。
+-   ラボ環境外で TAEF 内で実行されている場合は、コマンドプロンプトで/enablewttlogging をテストケースに渡します。 例:
 
     ``` syntax
     te my.test.dll /enablewttlogging
     ```
 
--   設定する必要があります、TAEF framework の外部 WexLogger を消費しているラボ環境で実行していない場合は、  **&lt;、\_プロセス\_名前&gt;\_CMD**環境変数を呼び出す前に、このオプションを含める**LogController::InitializeLogging()** します。 以下に例を示します。
+-   Taef フレームワーク以外で wexlogger を使用していて、ラボ環境で実行されていない場合は、  **&lt;\_\_プロセス名&gt;\_CMD**環境変数をに設定する必要があります。**Logcontroller:: InitializeLogging ()** を呼び出す前に、このオプションを含めます。 例:
     ```cpp
     Environment.SetEnvironmentVariable("<YOUR_PROCESS_NAME>_CMD", "/enablewttlogging");
     LogController.InitializeLogging();
@@ -339,7 +339,7 @@ WTT を使用してログを生成する 3 つのメソッドの存在、 **WexL
     LogController.InitializeLogging();
     ```
 
--   上書きするのではなく、既存の wtt ログ ファイルに追加する場合は、また/enablewttlogging に加えて/appendwttlogging オプションを指定します。
+-   既存の wtt ログファイルを上書きせずに追加する場合は、/enablewttlogging. に加えて/appendwttlogging オプションも指定します。
 
     ``` syntax
     te my.test.dll /enablewttlogging /appendwttlogging
@@ -355,43 +355,43 @@ WTT を使用してログを生成する 3 つのメソッドの存在、 **WexL
     LogController.InitializeLogging();
     ```
 
-完全に上書きまたは次のコマンド オプションのいずれかを指定することによって WttLogger デバイスの既定の文字列に追加することです。
+また、次のいずれかのコマンドオプションを指定して、既定の WttLogger デバイス文字列を完全にオーバーライドしたり、追加したりすることもできます。
 
-/WttDeviceString:&lt;新しいデバイスの文字列&gt;   
-WexLogger WttLogger を初期化するときに使用する WttDeviceString を完全に上書きします。
+/WttDeviceString:&lt;新しいデバイス文字列&gt;   
+WttLogger を初期化するときに、WexLogger によって使用される WttDeviceString を完全にオーバーライドします。
 
-/WttDeviceStringSuffix:&lt;デバイスの文字列に追加する値&gt;   
-既定 WttDeviceString WexLogger WttLogger を初期化するときに使用するには、指定した値を追加します。 場合は無視されます '/WttDeviceString' も指定します。
+/WttDeviceStringSuffix:&lt;デバイス文字列に追加する値&gt;   
+指定された値を、WexLogger が WttLogger を初期化するときに使用する既定の WttDeviceString に追加します。 '/WttDeviceString ' も指定されている場合は無視されます。
 
-次の表では、WexLogger TestResults が WttLogger 結果にどのようにマップする方法を示します。
+次の表は、WexLogger TestResults が WttLogger の結果にマップする方法を示しています。
 
 | WexLogger | WttLogger                      |
 |-----------|--------------------------------|
-| 渡されました。    | WTT\_TESTCASE\_結果\_を渡す    |
-| NotRun    | WTT\_TESTCASE\_結果\_ブロック |
-| スキップされました   | WTT\_TESTCASE\_結果\_スキップ |
-| ブロック   | WTT\_TESTCASE\_結果\_ブロック |
-| Failed    | WTT\_TESTCASE\_結果\_失敗    |
+| 渡し    | WTT\_TESTCASE\_の\_結果パス    |
+| NotRun    | WTT\_TESTCASE\_の\_結果がブロックされました |
+| 読み   | WTT\_TESTCASE\_の\_結果がスキップされました |
+| ブロック   | WTT\_TESTCASE\_の\_結果がブロックされました |
+| Failed    | WTT\_TESTCASE\_の\_結果失敗    |
 
 
 
-## <a name="logger-dependencies"></a>ロガーの依存関係
+## <a name="logger-dependencies"></a>Logger の依存関係
 
 
-ネイティブの C++ ロガー (**Wex.Logger.dll**) が依存**Wex.Common.dll**と**Wex.Communication.dll**します。
+ネイティブC++ Logger (**wex .dll**) は、 **Wex. .Dll**および**wex. com .dll**に依存しています。
 
-管理対象のロガー (**Wex.Logger.Interop.dll**) が依存**Wex.Logger.dll**、 **Wex.Common.dll**と**Wex.Communication.dll**.
+マネージ logger (**wex**) は、 **wex (logger**)、Wex、および**wex**(.dll)**に依存**しています。また、
 
-さらに、 **WttLog.dll** Wtt によってログ記録が有効になっている場合に必要です。
+また、Wtt ログが有効になっている場合は、 **WttLog**が必要です。
 
-## <a name="additional-error-data"></a>追加のエラー データ
+## <a name="additional-error-data"></a>追加のエラーデータ
 
 
-エラーがログに記録するエラー自体だけでなく、次のものの 1 つ以上を含める WexLogger が有効にできます。
+エラーがログに記録された場合は、エラー自体に加えて、WexLogger で次の項目を1つ以上含めることができます。
 
 -   ミニダンプ
--   スクリーン キャプチャ
--   スタック トレース
+-   ScreenCapture
+-   StackTrace
 
 ``` syntax
 te my.test.dll /minidumponerror
@@ -401,9 +401,9 @@ te my.test.dll /minidumponerror
 te my.test.dll /screencaptureonerror /stacktraceonerror
 ```
 
-1 つまたは複数のこれらのオプションを有効になっているが表示されます余分なログ:: Error() が呼び出されるたびを出力します。
+これらのオプションのうち1つ以上を有効にすると、Log:: Error () が呼び出されるたびに、追加の出力が得られます。
 
-注:設定する必要があります、TAEF framework の外部 WexLogger を利用する場合、  **&lt;、\_プロセス\_名前&gt;\_CMD**これらのオプションを格納する環境変数呼び出しの前に**LogController::InitializeLogging()** します。 以下に例を示します。
+メモ:Taef フレームワークの外部で wexlogger を使用し **&lt;て\_\_&gt;\_** いる場合は、を呼び出す**前に、プロセス名 CMD 環境変数にこれらのオプションが含まれるように設定する必要があります。LogController:: InitializeLogging ()** 。 例:
 
 ```cpp
 Environment.SetEnvironmentVariable("<YOUR_PROCESS_NAME>_CMD", "/screencaptureonerror /minidumponerror /stacktraceonerror");
@@ -415,21 +415,21 @@ Environment.SetEnvironmentVariable("consoleapplication4_cmd", "/screencaptureone
 LogController.InitializeLogging();
 ```
 
-## <a name="c-error-handling"></a>C++ のエラー処理
+## <a name="c-error-handling"></a>C++エラー処理
 
 
-各ログ API 呼び出しの戻り値をチェックする負担からテスト_ケースの作成者を保護するために、WexLogger は、省略可能なコールバック機構を使用して、予期しないエラー状態を報告します。**WexLoggerErrorCallback**関数。 Initializaiton 時に、 **WexLogger** (を使用して**LogController::InitializeLogging()** )、クライアントを指定することもできます、 **WexLoggerErrorCallback**に呼び出す関数内で予期しないエラー状態が発生する、 **WexLogger**します。 **WexLoggerErrorCallback**関数は、次のシグネチャを使用する必要があります。
+テストケースの作成者を、各 Log API 呼び出しの戻り値をチェックする負担からシールドするために、WexLogger は、オプションのコールバック機構を使用して予期しないエラー状態を報告します。**WexLoggerErrorCallback**関数。 **Wexlogger** ( **Logcontroller:: initializelogging ()** を介して) を初期化すると、クライアントは、 **wexlogger**内で予期しないエラー状態が発生した場合に呼び出す**WexLoggerErrorCallback**関数を指定することができます。 **WexLoggerErrorCallback**関数は、次のシグネチャを使用する必要があります。
 
 ```cpp
 void __stdcall MyLoggerErrorCallback(const unsigned short* pszMessage, HRESULT hr);
 ```
 
-WexLoggerErrorCallback 関数の一般的な用途は、(テスト ハーネスがコンソール アプリケーションの場合)、コンソールにエラー メッセージを記述することです。 TAEF フレームワークのクライアントは、たとえば、 **WexLogger**、実装して、 **WexLoggerErrorCallback** WexLogger エラーが発生したときに、コンソールに赤いテキストを書き込みますが。
+WexLoggerErrorCallback 関数の一般的な使用方法は、エラーメッセージをコンソールに書き込むことです (テストハーネスがコンソールアプリケーションの場合)。 たとえば、TAEF フレームワークは**wexlogger**のクライアントであり、wexlogger エラーが発生したときに赤いテキストをコンソールに書き込む**WexLoggerErrorCallback**を実装します。
 
 ## <a name="net-40-compatibility"></a>.NET 4.0 の互換性
 
 
-読み込むことができます NetFx 3.5 2/3/と NetFx 4 の両方を処理できるように、Wex.Logger.Interop として NetFx 2/3/3.5、バイナリにコンパイルされます。 これにより、TAEF NetFx 2 上のすべてのマネージ アセンブリを実行できます。 Wex.Logger TAEF、以外を使用しているかどうかは、追加する必要がある、[構成ファイル](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/ms229689(v=vs.90))は exe に NetFx 3.5 2/3/バイナリを読み込む NetFx 4 ランタイムを構成するプロセスです。 構成ファイルには、次が含まれます。
+Wex. Logger は NetFx 2/3/3.5 バイナリとしてコンパイルされるため、NetFx 2/3/3.5 と NetFx 4 の両方のプロセスに読み込むことができます。 これにより、NetFx 2 の上にあるすべてのマネージアセンブリを TAEF で実行できるようになります。 TAEF の外部で Wex ロガーを使用している場合は、NetFx 4 ランタイムが NetFx 2/3/3.5 バイナリをプロセスに読み込むように構成するために、exe の[構成ファイル](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/ms229689(v=vs.90))を追加する必要があります。 構成ファイルには、次のものが含まれている必要があります。
 
 ```cpp
 <configuration> 
@@ -439,16 +439,16 @@ WexLoggerErrorCallback 関数の一般的な用途は、(テスト ハーネス�
 </configuration>
 ```
 
-## <a name="managed-code-error-and-exception-handling"></a>マネージ コードのエラーと例外処理
+## <a name="managed-code-error-and-exception-handling"></a>マネージコードエラーと例外処理
 
 
-それぞれの戻り値をチェックする負担からテスト_ケースの作成者をシールドするには**ログ**の API 呼び出しを使用して、予期しないエラー状態を報告する、WexLogger の管理対象レイヤー、 **LoggerController.WexLoggerError**イベント。 独自の実装によって、いつでもこのイベントにサブスクライブすることがあります**WexLoggerErrorEventHandler**に対して次の使い慣れた構文を使用して、C#イベント サブスクリプション。
+テストケースの作成者を、各**Log** API 呼び出しの戻り値をチェックする負担からシールドするために、WexLogger のマネージ層は、 **LoggerController. WexLoggerError**イベントを使用して予期しないエラー状態を報告します。 独自の**WexLoggerErrorEventHandler**を実装し、イベントサブスクリプションに対しC#て次の使い慣れた構文を使用することによって、いつでもこのイベントにサブスクライブできます。
 
 ```cpp
 LogController.WexLoggerError += new WexLoggerEventHandler(My_WexLoggerErrorHandler);
 ```
 
-イベント ハンドラーの例を次に示します。
+イベントハンドラーの例を次に示します。
 
 ```cpp
 static void LogController_WexLoggerError(object sender, WexLoggerErrorEventArgs e)
@@ -460,7 +460,7 @@ static void LogController_WexLoggerError(object sender, WexLoggerErrorEventArgs 
 }
 ```
 
-さらに、 **LogController::InitializeLogging()** と**LogController::FinalizeLogging()** メソッド自体は、障害発生時 WexLoggerException をスローします。 これは、エラーの詳細な情報を提供し、テストの実行を開始する前に中止することもできます。 テスト_ケースの作成者がこれらの例外をキャッチについて心配する必要はありません - 必要がある想定処理 WexLogger initializaiton/終了時のみです。
+さらに、 **Logcontroller:: InitializeLogging (** ) および**Logcontroller:: finalizelogging ()** メソッド自体は、障害が発生した場合に WexLoggerException をスローします。 これにより、エラーに関する詳細情報が提供されます。また、テストの実行を開始する前に中止することもできます。 テストケースの作成者は、これらの例外をキャッチすることを心配する必要はありません。 WexLogger の初期化時または完了時にのみ、予期または処理される必要があります。
 
 
 

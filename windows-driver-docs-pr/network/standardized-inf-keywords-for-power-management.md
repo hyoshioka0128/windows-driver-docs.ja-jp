@@ -5,10 +5,10 @@ ms.assetid: bec8dd96-f64a-40eb-ade9-73c9a66a756e
 ms.date: 08/01/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 204e218590a8a6706f9dba7a2d004d8b0fcf62c2
-ms.sourcegitcommit: 238308264c1ee2c74ec0c8c303258dc00c79b902
+ms.sourcegitcommit: 2aa583e3da4ae9338a0d11678bf77f1460286f2d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2019
+ms.lasthandoff: 09/24/2019
 ms.locfileid: "70063904"
 ---
 # <a name="standardized-inf-keywords-for-power-management"></a>電源管理用の標準化された INF キーワード
@@ -61,7 +61,7 @@ SubkeyName に関連付けられている表示テキスト。
 次の表は、電源管理のキーワードに使用できる INF エントリを示しています。
 
 <table>  
-<colgroup> <col width="25%" /> <col width="25%" /> <col width="25%" /> <col width="25%" /> </colgroup>  
+<colgroup><col width="25%" /> <col width="25%" /> <col width="25%" /> <col width="25%" /></colgroup>  
 <thead>  
 <tr class="header">  
 <th align="left">SubkeyName</th>
@@ -99,7 +99,7 @@ SubkeyName に関連付けられている表示テキスト。
 <td align="left"><p><strong></em>ModernStandyWoLMagicPacket</strong></p></td>
 <td align="left"><p>システムが<i>S0ix</i>の電源状態にあるときのマジックパケットの Wake on</p></td>
 <td align="left"><p>0 (既定値)</p></td>
-<td align="left"><p>無効</p></td>
+<td align="left"><p>Disabled</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>

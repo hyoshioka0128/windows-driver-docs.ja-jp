@@ -13,10 +13,10 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 17e14f3be992eec2cd92cbc21856900600331dec
-ms.sourcegitcommit: 1ca0637648ea03c0dc0b3daf0c5c4025d1406c70
+ms.sourcegitcommit: 2aa583e3da4ae9338a0d11678bf77f1460286f2d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
+ms.lasthandoff: 09/24/2019
 ms.locfileid: "69976075"
 ---
 # <a name="devcon-restart"></a>DevCon Restart
@@ -43,10 +43,10 @@ ms.locfileid: "69976075"
 次の特殊文字は、ID パラメーターを変更します。
 
 <table>  
-<colgroup> <col width="50%" /> <col width="50%" /> </colgroup>  
+<colgroup><col width="50%" /> <col width="50%" /></colgroup>  
 <thead>  
 <tr class="header">  
-<th align="left">記号</th>
+<th align="left">文字</th>
 <th align="left">説明</th>
 </tr>
 </thead>

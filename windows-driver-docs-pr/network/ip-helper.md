@@ -9,10 +9,10 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f9818a47e89a1c42a362b6c4466a33a5fd04fbe
-ms.sourcegitcommit: 238308264c1ee2c74ec0c8c303258dc00c79b902
+ms.sourcegitcommit: 2aa583e3da4ae9338a0d11678bf77f1460286f2d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2019
+ms.lasthandoff: 09/24/2019
 ms.locfileid: "70063918"
 ---
 # <a name="ip-helper-overview"></a>IP ヘルパーの概要
@@ -34,10 +34,10 @@ IETF RFC ドキュメントでは、*インターフェイス*は、リンクへ
 ### <a name="interface-conversion-functions"></a>インターフェイス変換関数
 
 <table>  
-<colgroup> <col width="50%" /> <col width="50%" /> </colgroup>  
+<colgroup><col width="50%" /> <col width="50%" /></colgroup>  
 <thead>  
 <tr class="header">  
-<th align="left">プロシージャ</th>
+<th align="left">関数</th>
 <th align="left">説明</th>
 </tr>
 </thead>
@@ -104,7 +104,7 @@ IETF RFC ドキュメントでは、*インターフェイス*は、リンクへ
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">プロシージャ</th>
+<th align="left">関数</th>
 <th align="left">説明</th>
 </tr>
 </thead>
@@ -159,7 +159,7 @@ IETF RFC ドキュメントでは、*インターフェイス*は、リンクへ
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">プロシージャ</th>
+<th align="left">関数</th>
 <th align="left">説明</th>
 </tr>
 </thead>
@@ -234,7 +234,7 @@ IETF RFC ドキュメントでは、*インターフェイス*は、リンクへ
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">プロシージャ</th>
+<th align="left">関数</th>
 <th align="left">説明</th>
 </tr>
 </thead>
@@ -281,7 +281,7 @@ IETF RFC ドキュメントでは、*インターフェイス*は、リンクへ
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">プロシージャ</th>
+<th align="left">関数</th>
 <th align="left">説明</th>
 </tr>
 </thead>
@@ -312,7 +312,7 @@ IETF RFC ドキュメントでは、*インターフェイス*は、リンクへ
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">プロシージャ</th>
+<th align="left">関数</th>
 <th align="left">説明</th>
 </tr>
 </thead>
@@ -359,7 +359,7 @@ IETF RFC ドキュメントでは、*インターフェイス*は、リンクへ
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">プロシージャ</th>
+<th align="left">関数</th>
 <th align="left">説明</th>
 </tr>
 </thead>
@@ -382,7 +382,7 @@ IETF RFC ドキュメントでは、*インターフェイス*は、リンクへ
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">プロシージャ</th>
+<th align="left">関数</th>
 <th align="left">説明</th>
 </tr>
 </thead>
@@ -417,7 +417,7 @@ IETF RFC ドキュメントでは、*インターフェイス*は、リンクへ
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">プロシージャ</th>
+<th align="left">関数</th>
 <th align="left">説明</th>
 </tr>
 </thead>
@@ -448,7 +448,7 @@ IETF RFC ドキュメントでは、*インターフェイス*は、リンクへ
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">データ</th>
+<th align="left">構造体</th>
 <th align="left">説明</th>
 </tr>
 </thead>
@@ -551,7 +551,7 @@ IETF RFC ドキュメントでは、*インターフェイス*は、リンクへ
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">列挙</th>
+<th align="left">列挙値</th>
 <th align="left">説明</th>
 </tr>
 </thead>
@@ -578,7 +578,7 @@ IETF RFC ドキュメントでは、*インターフェイス*は、リンクへ
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">列挙</th>
+<th align="left">列挙値</th>
 <th align="left">説明</th>
 </tr>
 </thead>

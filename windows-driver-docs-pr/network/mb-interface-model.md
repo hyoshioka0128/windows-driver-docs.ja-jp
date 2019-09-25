@@ -5,10 +5,10 @@ ms.assetid: B1C6D5F4-63E2-4C46-8038-71B8144AB474
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: abfa4ee22a47361168ff3822cef2ee662838b6bf
-ms.sourcegitcommit: 238308264c1ee2c74ec0c8c303258dc00c79b902
+ms.sourcegitcommit: 2aa583e3da4ae9338a0d11678bf77f1460286f2d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2019
+ms.lasthandoff: 09/24/2019
 ms.locfileid: "70063912"
 ---
 # <a name="mb-interface-model-overview"></a>MB インターフェイス モデルの概要
@@ -29,7 +29,7 @@ Id のモーフィングを示すモバイルブロードバンドデバイス�
 *Microsoft OS 互換 Id*
 
 <table>  
-<colgroup> <col width="33%" /> <col width="33%" /> <col width="33%" /> </colgroup>  
+<colgroup><col width="33%" /> <col width="33%" /> <col width="33%" /></colgroup>  
 <thead>  
 <tr class="header">  
 <th align="left">Microsoft OS 互換 ID</th>

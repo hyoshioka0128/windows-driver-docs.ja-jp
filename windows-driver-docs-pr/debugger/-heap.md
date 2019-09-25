@@ -15,10 +15,10 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 8ffc629793b5dba6561f6b6dfda7af6b68558141
-ms.sourcegitcommit: 424c435700d8f8a85bdaa83e8ddaab9568c8d347
+ms.sourcegitcommit: 2aa583e3da4ae9338a0d11678bf77f1460286f2d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/26/2019
+ms.lasthandoff: 09/24/2019
 ms.locfileid: "70025238"
 ---
 # <a name="heap"></a>!heap
@@ -50,7 +50,7 @@ ms.locfileid: "70025238"
 これらのパラメーターは、セグメントおよび NT ヒープで動作します。
 
 <span id="_______-s______"></span><span id="_______-S______"></span> **-s**   
-概要情報を要求することを指定します。 場合、summary*オプション*と指定した場合は、現在のプロセスに関連付けられているすべてのヒープの概要情報が表示されます。
+概要情報を要求することを指定します。 場合 、summary オプション*と指定*した場合は、現在のプロセスに関連付けられているすべてのヒープの概要情報が表示されます。
 
 <span id="_______SummaryOptions______"></span><span id="_______summaryoptions______"></span><span id="_______SUMMARYOPTIONS______"></span>概要*オプション*   
 には、次のオプションの任意の組み合わせを指定できます。 [概要 *] オプション*では、大文字と小文字は区別されません。 「! Heap-s-?」と入力します。 を参照してください。
@@ -62,7 +62,7 @@ ms.locfileid: "70025238"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">オプション</th>
+<th align="left">OPTION</th>
 <th align="left">効果</th>
 </tr>
 </thead>
@@ -125,7 +125,7 @@ ms.locfileid: "70025238"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">オプション</th>
+<th align="left">OPTION</th>
 <th align="left">効果</th>
 </tr>
 </thead>
@@ -142,7 +142,7 @@ ms.locfileid: "70025238"
 </tr>
 <tr class="even">
 <td align="left"><p><strong>-a</strong></p></td>
-<td align="left"><p>指定したヒープのすべての情報が表示されます。 この場合のサイズは、ヒープの粒度に切り上げられます。 (を実行すると、 <strong>-a</strong>オプションを指定して実行することは、3つのオプションを使用して実行することと同じです。 <strong>-h-f-m</strong>には時間がかかることがあります)。</p></td>
+<td align="left"><p>指定したヒープのすべての情報が表示されます。 この場合のサイズは、ヒープの粒度に切り上げられます。 (を<strong>実行すると</strong>、 <strong>-a</strong>オプションを指定して実行することは、3つのオプションを使用して実行することと同じです。 <strong>-h-f-m</strong>には時間がかかることがあります)。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>-h</strong></p></td>
@@ -195,7 +195,7 @@ ms.locfileid: "70025238"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">オプション</th>
+<th align="left">OPTION</th>
 <th align="left">効果</th>
 </tr>
 </thead>
@@ -252,7 +252,7 @@ ms.locfileid: "70025238"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">オプション</th>
+<th align="left">OPTION</th>
 <th align="left">効果</th>
 </tr>
 </thead>
@@ -304,7 +304,7 @@ ms.locfileid: "70025238"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">オプション</th>
+<th align="left">OPTION</th>
 <th align="left">効果</th>
 </tr>
 </thead>
@@ -345,7 +345,7 @@ ms.locfileid: "70025238"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">オプション</th>
+<th align="left">OPTION</th>
 <th align="left">効果</th>
 </tr>
 </thead>
@@ -379,7 +379,7 @@ ms.locfileid: "70025238"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">オプション</th>
+<th align="left">OPTION</th>
 <th align="left">効果</th>
 </tr>
 </thead>

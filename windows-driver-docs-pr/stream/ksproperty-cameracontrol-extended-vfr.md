@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_CAMERACONTROL\_拡張\_VFR
-description: KSPROPERTY\_CAMERACONTROL\_拡張\_VFR は可変フレーム レートが、ドライバーで必要なかどうかを指定するために使用するプロパティ ID。
+title: KSK プロパティ\_CAMERACONTROL\_拡張\_VFR
+description: Ksk プロパティ\_CAMERACONTROL\_EXTENDED\_VFR は、ドライバーで可変フレームレートが必要かどうかを指定するために使用されるプロパティ ID です。
 ms.assetid: 9B528421-B5AA-4092-9F7B-71A18732ABA8
 keywords:
-- KSPROPERTY_CAMERACONTROL_EXTENDED_VFR ストリーミング メディア デバイス
+- KSPROPERTY_CAMERACONTROL_EXTENDED_VFR ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,16 +14,16 @@ api_type:
 - HeaderDef
 ms.date: 09/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b4ea75cb9f6f30a1202724ca249790bea0594d8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 726865d7e1ffb492026bf1f55172ca39b038d49d
+ms.sourcegitcommit: 96592088b276de87fc88dea3bb037654c9b31b11
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341880"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71248409"
 ---
-# <a name="kspropertycameracontrolextendedvfr"></a>KSPROPERTY\_CAMERACONTROL\_拡張\_VFR
+# <a name="ksproperty_cameracontrol_extended_vfr"></a>KSK プロパティ\_CAMERACONTROL\_拡張\_VFR
 
-KSPROPERTY\_CAMERACONTROL\_拡張\_VFR は可変フレーム レートが、ドライバーで必要なかどうかを指定するために使用するプロパティ ID。 これは、暗証番号 (pin) レベルの制御のビデオ ピン留めするだけです。 プレビューと写真は、フレーム レートの可変性は、ドライバーの自由ですし、クライアントによって制御することはありません。
+Ksk プロパティ\_CAMERACONTROL\_EXTENDED\_VFR は、ドライバーで可変フレームレートが必要かどうかを指定するために使用されるプロパティ ID です。 これは、ビデオ pin の pin レベルコントロールです。 プレビューと写真の場合、フレームレートの変動は完全にドライバーによって異なり、クライアントが制御することはできません。
 
 ## <a name="usage-summary-table"></a>使用状況の概要テーブル
 
@@ -35,7 +35,7 @@ KSPROPERTY\_CAMERACONTROL\_拡張\_VFR は可変フレーム レートが、ド�
 </colgroup>
 <thead>
 <tr class="header">
-<th>Scope</th>
+<th>スコープ</th>
 <th>コントロール</th>
 <th>種類</th>
 </tr>
@@ -49,23 +49,23 @@ KSPROPERTY\_CAMERACONTROL\_拡張\_VFR は可変フレーム レートが、ド�
 </tbody>
 </table>
 
-次のフラグを配置することができます、 **KSCAMERA\_EXTENDEDPROP\_ヘッダー。フラグ**フィールドで、上、または変数のフレーム レートのビデオをオフにするために使用します。 既定では、ドライバーです。
+次のフラグは、 **KSCAMERA\_extendedprop\_ヘッダーに配置できます。Flags**フィールド。ビデオの可変フレームレートをオンまたはオフにするために使用されます。 既定では、ドライバーによって設定されます。
 
 ```cpp
 #define KSCAMERA_EXTENDEDPROP_VFR_OFF   0x0000000000000000  
 #define KSCAMERA_EXTENDEDPROP_VFR_ON    0x0000000000000001
 ```
-場合に VFR 設定\_ドライバー、ビデオの暗証番号 (pin) の固定フレーム レートを配信ものとします。
+VFR\_オフに設定した場合、ドライバーはビデオ pin の固定フレームレートを提供します。
 
-場合設定 VFR\_フレーム レートがドライバーによって自動的に決定し、キャプチャ条件とビデオの暗証番号 (pin) のシナリオによって異なることができます。 ときに VFR\_ON に設定されている、許可される最大フレーム レートは、固定のフレーム レートのビデオ記録用に選択されたメディアの種類に埋め込まれたによって決定します。
+[VFR\_] を [オン] に設定した場合、フレームレートはドライバーによって自動的に決定され、ビデオ pin のキャプチャ条件とシナリオによって異なります。 VFR\_オンが設定されている場合、許可される最大フレームレートは、ビデオ記録用に選択したメディアの種類に埋め込まれている固定フレームレートによってさらに決まります。
 
-場合は、ドライバーは、ビデオの変数のフレーム レートをサポートしていない、ドライバーは、このコントロールを実装しないでくださいし、固定フレーム レートを暗黙的に指定されます。
+ドライバーがビデオの可変フレームレートをサポートしていない場合、ドライバーはこのコントロールを実装しないようにし、可変フレームレートを暗黙的に指定します。
 
-このコントロールは、ビデオ記録 VFR 設定の即時の切り替えをサポートしていないドライバーの中には影響を与えません。 ドライバーは、アクティブなビデオの場合に記録中に受信したコントロールを無視ものとします。
+このコントロールは、VFR の設定を実行しているときにサポートされていないドライバーのビデオ記録中には効果がありません。 この場合、アクティブなビデオ記録中に受信したコントロールはドライバーによって無視されます。
 
-これは、同期のコントロールとキャンセルできません。 このコントロールに対して定義されている機能はありません。
+これは同期コントロールであり、キャンセルできません。 このコントロールに定義されている機能はありません。
 
-次の表には、説明と要件が含まれています、 [ **KSCAMERA\_EXTENDEDPROP\_ヘッダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)コントロールを使用する場合は、フィールドを構造体します。
+次の表に、コントロールを使用する場合[**の\_KSCAMERA extendedprop\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)構造のフィールドの説明と要件を示します。
 
 <table>
 <colgroup>
@@ -74,34 +74,34 @@ KSPROPERTY\_CAMERACONTROL\_拡張\_VFR は可変フレーム レートが、ド�
 </colgroup>
 <thead>
 <tr class="header">
-<th>Member</th>
+<th>メンバー</th>
 <th>説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>これは、1 でなければなりません。</p></td>
+<td><p>これは1である必要があります。</p></td>
 </tr>
 <tr class="even">
 <td><p>PinId</p></td>
-<td><p>ビデオの暗証番号 (pin) に関連付けられた暗証番号 (pin) の ID があります。</p></td>
+<td><p>これは、ビデオ pin に関連付けられている Pin ID である必要があります。</p></td>
 </tr>
 <tr class="odd">
 <td><p>サイズ</p></td>
-<td><p>Sizeof(KSCAMERA_EXTENDEDPROP_HEADER) + sizeof(KSCAMERA_EXTENDEDPROP_VALUE) 必要があります。</p></td>
+<td><p>これは sizeof (KSCAMERA_EXTENDEDPROP_HEADER) + sizeof (KSCAMERA_EXTENDEDPROP_VALUE) である必要があります。</p></td>
 </tr>
 <tr class="even">
 <td><p>結果</p></td>
-<td><p>最後の設定操作のエラーの結果を示します。 設定操作が行われていない場合は必ず 0。</p></td>
+<td><p>最後の設定操作のエラー結果を示します。 設定操作が行われていない場合は、0にする必要があります。</p></td>
 </tr>
 <tr class="odd">
 <td><p>機能</p></td>
-<td><p>これは、0 でなければなりません。</p></td>
+<td><p>0にする必要があります。</p></td>
 </tr>
 <tr class="even">
 <td><p>フラグ</p></td>
-<td><p>これは、読み取り/書き込みフィールドです。 上記で定義されたフラグのいずれかにできます。</p></td>
+<td><p>これは、読み取り/書き込みフィールドです。 これには、上で定義したフラグのいずれかを指定できます。</p></td>
 </tr>
 </tbody>
 </table>
