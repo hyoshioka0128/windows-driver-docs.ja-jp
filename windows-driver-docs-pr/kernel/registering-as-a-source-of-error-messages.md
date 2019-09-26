@@ -22,7 +22,7 @@ ms.locfileid: "67373478"
 
 
 
-ドライバーは、レジストリにエラー メッセージのソースを登録します。 ドライバーは、下の 2 つのキーを設定する必要があります**HKEY\_ローカル\_マシン\\システム\\CurrentControlSet\\サービス\\EventLog\\システム\\** <em>DriverName</em>:
+ドライバーは、レジストリにエラー メッセージのソースを登録します。 ドライバーは、下の 2 つのキーを設定する必要があります**HKEY\_LOCAL\_MACHINE\\System\\CurrentControlSet\\Services\\EventLog\\System\\** <em>DriverName</em>:
 
 <a href="" id="eventmessagefile--reg-expand-sz-"></a>**EventMessageFile** (REG\_展開\_SZ)  
 セミコロンで区切られたエラー メッセージのソースの一覧。 ドライバーは、標準エラーの種類を使用している場合、この一覧は iologmsg.dll を含める必要があります。 ドライバーがドライバーのイメージに接続されているエラー メッセージを使用する場合、ドライバーのイメージの名前をこの必要があります。
