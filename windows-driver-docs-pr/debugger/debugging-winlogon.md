@@ -31,7 +31,7 @@ Winlogon プロセスをデバッグする最も簡単な方法は NTSD を使�
 
 カーネル デバッガーに、ユーザー モード デバッガーの出力をリダイレクトするためには、カーネル デバッグ接続を設定する必要があります。 参照してください[デバッグ設定](getting-set-up-for-debugging.md)します。
 
-Winlogon プロセスにデバッガーをアタッチするには、レジストリを通じてに移動する必要がありますので、プロセスの開始時刻からデバッグします。 WinLogon のデバッグを設定するには、設定**HKEY\_ローカル\_マシン\\ソフトウェア\\Microsoft\\Windows NT\\CurrentVersion\\イメージ ファイルの実行オプション\\WinLogon.EXE\\デバッガー**に。
+Winlogon プロセスにデバッガーをアタッチするには、レジストリを通じてに移動する必要がありますので、プロセスの開始時刻からデバッグします。 WinLogon のデバッグを設定するには、設定**HKEY\_LOCAL\_MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\WinLogon.EXE\\Debugger**に。
 
 ```console
 ntsd -d -x -g 
