@@ -1,9 +1,9 @@
 ---
 title: dt (型の表示)
-description: Dt コマンドには、ローカル変数、グローバル変数またはデータ型に関する情報が表示されます。 これにより、単純なデータの型だけでなく構造体と共用体についての情報が表示できます。
+description: Dt コマンドでは、ローカル変数、グローバル変数、またはデータ型に関する情報が表示されます。 これにより、単純なデータ型に加え、構造と共用体に関する情報を表示できます。
 ms.assetid: 82aba13e-6604-46ca-b3e5-bb865ecf3f1f
 keywords:
-- dt (表示の種類) の Windows デバッグ
+- dt (表示の種類) Windows デバッグ
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,19 +12,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: a5ee88b52ddfe5a3d843d7c82d89cf69afc795bf
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fa4ac5a62cd92c108b1c33725dbdc35b0c883f75
+ms.sourcegitcommit: 9dbb1ef59c3e797bfc3cc418dd2b9bdc44940d14
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370872"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71284968"
 ---
 # <a name="dt-display-type"></a>dt (型の表示)
 
 
-**Dt**コマンドは、ローカル変数、グローバル変数またはデータ型に関する情報を表示します。 これにより、単純なデータの型だけでなく構造体と共用体についての情報が表示できます。
+**Dt**コマンドでは、ローカル変数、グローバル変数、またはデータ型に関する情報が表示されます。 これにより、単純なデータ型に加え、構造と共用体に関する情報を表示できます。
 
-ユーザー モードの構文
+ユーザーモードの構文
 
 ```dbgcmd
 dt [-DisplayOpts] [-SearchOpts] [module!]Name [[-SearchOpts] Field] [Address] [-l List] 
@@ -32,7 +32,7 @@ dt [-DisplayOpts] Address [-l List]
 dt -h 
 ```
 
-カーネル モードの構文
+カーネルモード構文
 
 ```dbgcmd
 [Processor] dt [-DisplayOpts] [-SearchOpts] [module!]Name [[-SearchOpts] Field] [Address] [-l List] 
@@ -40,14 +40,14 @@ dt [-DisplayOpts] Address [-l List]
 dt -h 
 ```
 
-## <a name="span-idddk_cmd_display_type_dbgspanspan-idddk_cmd_display_type_dbgspanparameters"></a><span id="ddk_cmd_display_type_dbg"></span><span id="DDK_CMD_DISPLAY_TYPE_DBG"></span>パラメーター
+## <a name="span-idddk_cmd_display_type_dbgspanspan-idddk_cmd_display_type_dbgspanparameters"></a><span id="ddk_cmd_display_type_dbg"></span><span id="DDK_CMD_DISPLAY_TYPE_DBG"></span>パラメータ
 
 
-<span id="_______Processor______"></span><span id="_______processor______"></span><span id="_______PROCESSOR______"></span> *プロセッサ*   
-必要な情報を格納しているプロセスを実行しているプロセッサを指定します。 詳細については、次を参照してください。[マルチプロセッサ構文](multiprocessor-syntax.md)します。 プロセッサは、カーネル モードでのみ指定できます。
+<span id="_______Processor______"></span><span id="_______processor______"></span><span id="_______PROCESSOR______"></span>*プロセッサ*   
+必要な情報が含まれているプロセスを実行しているプロセッサを指定します。 詳細については、「[マルチプロセッサ構文](multiprocessor-syntax.md)」を参照してください。 プロセッサはカーネルモードでのみ指定できます。
 
-<span id="_______DisplayOpts______"></span><span id="_______displayopts______"></span><span id="_______DISPLAYOPTS______"></span> *DisplayOpts*   
-次の表で指定したオプションの 1 つ以上を指定します。 これらのオプションには、ハイフンが付きます。
+<span id="_______DisplayOpts______"></span><span id="_______displayopts______"></span><span id="_______DISPLAYOPTS______"></span>*Displaydisplay*   
+次の表に示す1つ以上のオプションを指定します。 これらのオプションの前にはハイフンが付きます。
 
 <table>
 <colgroup>
@@ -56,30 +56,30 @@ dt -h
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">構成方法</th>
+<th align="left">OPTION</th>
 <th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>-a</strong>[<em>quantity</em>]</p></td>
-<td align="left"><p>インデックスで、新しい行で配列の各要素を表示します。 合計<em>数量</em>要素が表示されます。 間にスペースが必要ない、 <strong>、</strong>と<em>数量</em>します。 場合<strong>-a</strong>に従わない、数字が配列内のすべての項目が表示されます。 <strong>-A</strong>[<em>数量</em>] スイッチがこの方法で表示する前に、それぞれの型名またはフィールド名をすぐに表示する必要があります。</p></td>
+<td align="left"><p>各配列要素をインデックスと共に新しい行に表示します。 <em>数量</em>要素の合計が表示されます。 <strong>A</strong>と<em>quantity</em>の間にスペースを配置することはできません。 <strong>-A</strong>の後に数字が付いていない場合は、配列内のすべての項目が表示されます。 <strong>-A</strong>[<em>quantity</em>] スイッチは、この方法で表示する各型名またはフィールド名の直前に表示されます。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>-b</strong></p></td>
-<td align="left"><p>ブロックを再帰的に表示します。 表示されている構造体にサブ構造体が含まれている場合は任意の深さを再帰的に展開し、完全に表示されます。 サブ構造体ではなく、元の構造内にある場合にのみ、ポインターが展開されます。</p></td>
+<td align="left"><p>ブロックを再帰的に表示します。 表示されている構造体にサブ構造体が含まれている場合は、任意の深度に再帰的に展開され、完全に表示されます。 ポインターは、サブ構造体ではなく元の構造にある場合にのみ拡張されます。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>-c</strong></p></td>
-<td align="left"><p>出力を最適化します。 すべてのフィールドは、可能であれば、1 行に表示されます。 (を使用すると、 <strong>-a</strong>スイッチ、配列の各要素は、複数行ブロックとして書式設定されるのではなく、1 つの行)。</p></td>
+<td align="left"><p>圧縮出力。 可能であれば、すべてのフィールドが1行に表示されます。 ( <strong>-A</strong>スイッチと共に使用する場合、各配列要素は、複数行のブロックとして書式設定されるのではなく、1つの行を受け取ります)。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>-d</strong></p></td>
-<td align="left"><p>使用すると、<em>名前</em>にアスタリスクが付いているが終了したで始まるすべての種類の詳細な出力を表示、<em>名前</em>。 場合<em>名前</em>しないアスタリスクで終わる、詳細な出力を表示します。</p></td>
+<td align="left"><p>アスタリスクで終わっている<em>名前</em>で使用する場合は、 <em>name</em>で始まるすべての型の詳細出力を表示します。 <em>名前</em>の末尾にアスタリスクが付いていない場合は、詳細出力を表示します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>-e</strong></p></td>
-<td align="left"><p>強制<strong>dt</strong>型を列挙します。 場合にのみ、このオプションが必要<strong>dt</strong>が誤って解釈している、<em>名前</em>型ではなくインスタンスとして値。</p></td>
+<td align="left"><p><strong>Dt</strong>が型を列挙するように強制します。 このオプションは、 <strong>dt</strong>によって<em>名前</em>の値が型ではなくインスタンスとして誤って解釈される場合にのみ必要です。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>-i</strong></p></td>
@@ -91,15 +91,15 @@ dt -h
 </tr>
 <tr class="even">
 <td align="left"><p><strong>-p</strong></p></td>
-<td align="left"><p><em>アドレス</em>仮想アドレスではなく、物理アドレス。</p></td>
+<td align="left"><p><em>アドレス</em>は、仮想アドレスではなく、物理アドレスです。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>-r</strong>[<em>depth</em>]</p></td>
-<td align="left"><p>再帰的には、サブタイプのフィールドをダンプします。 場合<em>深さ</em>は、この再帰が停止後<em>深さ</em>レベル。 <em>深さ</em>1 から 9 までの数字にする必要がありの間には空白が存在する必要があります、 <strong>r</strong>と<em>深さ</em>します。 <strong>-R</strong>[<em>深さ</em>] スイッチは、アドレスの前にすぐに表示する必要があります。</p></td>
+<td align="left"><p><strong>-r</strong>[<em>詳細</em>]</p></td>
+<td align="left"><p>サブタイプフィールドを再帰的にダンプします。 <em>Depth</em>が指定されている場合、この再帰は<em>深さ</em>レベルの後に停止します。 <em>深さ</em>は1から9までの数字にする必要があります。また、 <strong>r</strong>と<em>depth</em>の間にスペースを配置することはできません。 <strong>-R</strong>[<em>depth</em>] スイッチは、アドレスの直前に表示されます。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>-s</strong> <em>サイズ</em></p></td>
-<td align="left"><p>Equals のバイトの値でそのサイズにタイプもののみを列挙<em>サイズ</em>します。 <strong>-S</strong>オプションは、型が列挙されている場合にのみ便利です。 ときに<strong>-s</strong>が指定されている<strong>-e</strong>は常に暗黙にもします。</p></td>
+<td align="left"><p><strong>-s</strong><em>サイズ</em></p></td>
+<td align="left"><p>バイト単位のサイズが<em>size</em>の値と等しい型のみを列挙します。 <strong>-S</strong>オプションは、型が列挙されている場合にのみ有効です。 <strong>-S</strong>が指定されている場合、 <strong>-e</strong>も常に暗黙的に指定されます。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>-t</strong></p></td>
@@ -107,15 +107,15 @@ dt -h
 </tr>
 <tr class="even">
 <td align="left"><p><strong>-v</strong></p></td>
-<td align="left"><p>詳細な出力。 これにより、構造体と、その要素の数の合計サイズなどの追加情報です。 と共に使用されるこの、 <strong>-y</strong>検索オプションをすべてのシンボルが表示されますも関連付けられている型の情報がありません。</p></td>
+<td align="left"><p>詳細出力。 これにより、構造体の合計サイズや要素の数などの追加情報が提供されます。 これを<strong>-y</strong>検索オプションと共に使用すると、型情報が関連付けられていないものも含め、すべての記号が表示されます。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-<span id="_______SearchOpts______"></span><span id="_______searchopts______"></span><span id="_______SEARCHOPTS______"></span> *SearchOpts*   
-次の表で指定したオプションの 1 つ以上を指定します。 これらのオプションには、ハイフンが付きます。
+<span id="_______SearchOpts______"></span><span id="_______searchopts______"></span><span id="_______SEARCHOPTS______"></span>*Searchopts*   
+次の表に示す1つ以上のオプションを指定します。 これらのオプションの前にはハイフンが付きます。
 
 <table>
 <colgroup>
@@ -124,42 +124,42 @@ dt -h
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">構成方法</th>
+<th align="left">OPTION</th>
 <th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>-n</strong></p></td>
-<td align="left"><p>これは、次のパラメーターが名であることを示します。 これは、使用してくださいの 16 進数の文字だけの次の項目が構成されている場合がそれ以外の場合、アドレスとして実行するためです。</p></td>
+<td align="left"><p>これは、次のパラメーターが名前であることを示します。 これは、次の項目がすべて16進文字で構成されている場合に使用します。それ以外の場合は、アドレスとして取得されるためです。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>-y</strong></p></td>
-<td align="left"><p>これは、次のパラメーターが名、名前は必ずしも全体の先頭であることを示します。 ときに<strong>-y</strong>に含まれているすべての一致項目が一覧表示されます、リスト内の最初の一致で詳細情報の後にします。 場合<strong>-y</strong>が含まれていない場合、完全一致のみが表示されます。</p></td>
+<td align="left"><p>これは、次のパラメーターが名前の先頭であり、必ずしも名前全体ではないことを示しています。 <strong>-Y</strong>が含まれている場合は、すべての一致が一覧表示され、その後、リスト内の最初の一致に関する詳細情報が示されます。 <strong>-Y</strong>が含まれていない場合は、完全一致のみが表示されます。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-<span id="_______module______"></span><span id="_______MODULE______"></span> *モジュール*   
-この構造体を定義するモジュールを指定する、省略可能なパラメーター。 含める必要がある場合は、ローカル変数またはグローバル変数または型と同じ名前の型がある、*モジュール*グローバル変数を意味することを指定します。 それ以外の場合、 **dt**コマンド場合でも、ローカル変数が、大文字と小文字およびグローバル変数は大文字小文字を区別、ローカル変数が表示されます。
+<span id="_______module______"></span><span id="_______MODULE______"></span>*モジュール*   
+この構造体を定義するモジュールを指定する省略可能なパラメーター。 グローバル変数または型と同じ名前のローカル変数または型がある場合は、グローバル変数を指定する*モジュール*を含める必要があります。 そうしないと、ローカル変数が大文字と小文字を区別せず、グローバル変数が大文字と小文字を区別する場合でも、 **dt**コマンドによってローカル変数が表示されます。
 
-<span id="_______Name______"></span><span id="_______name______"></span><span id="_______NAME______"></span> *名*   
-種類またはグローバル変数の名前を指定します。 場合*名前*末尾がアスタリスク (* *\\* * *)、すべての一致項目の一覧が表示されます。したがって、 **dt A\\***  すべてのデータ型、グローバル変数、および"A"で静的変数の先頭に一覧表示されますが、これらの型の実際のインスタンスは表示されません。 (場合、 **-v**表示オプションが同時に使用される、すべてのシンボルが表示されます - 型情報が関連付けられている人だけでなく)。置換することもできます*名前*にピリオド ( **.** ) 最近繰り返すことを示すための値を使用*名前*。
+<span id="_______Name______"></span><span id="_______name______"></span><span id="_______NAME______"></span>*名前*   
+型またはグローバル変数の名前を指定します。 *名前*の末尾にアスタリスク (\*) が付いている場合は、すべての一致の一覧が表示されます。 したがって、 **dt\\A*** は、"A" で始まるすべてのデータ型、グローバル、およびスタティックを一覧表示しますが、これらの型の実際のインスタンスは表示されません。 ( **-V** display オプションを同時に使用すると、関連付けられている型情報を持つシンボルだけでなく、すべての記号が表示されます)。また、 *name*をピリオド ( **.** ) に置き換えて、最近使用した*名前*の値を繰り返すように指定することもできます。
 
-場合*名前*、空白文字を含めることは、かっこで囲む必要があります。
+*名前*にスペースが含まれている場合は、かっこで囲む必要があります。
 
-<span id="_______Field______"></span><span id="_______field______"></span><span id="_______FIELD______"></span> *フィールド*   
-表示するフィールドを指定します。 場合*フィールド*は省略すると、すべてのフィールドが表示されます。 場合*フィールド*ピリオドが続く ( **.** )、このフィールドの最初のレベルのサブフィールドにも表示されます。 場合*フィールド*の後に深さまでの期間の数に等しい一連の期間のサブフィールドが表示されます。 ピリオドが続くすべてのフィールド名は、プレフィックス一致として扱われます場合と、 **-y**検索オプションを使用しました。 場合*フィールド*アスタリスクが続きます (\*)、フィールド、必ずしも全体のフィールドの先頭のみとして扱われ、一致するすべてのフィールドが表示されます。
+<span id="_______Field______"></span><span id="_______field______"></span><span id="_______FIELD______"></span>*フィールド*   
+表示するフィールドを指定します。 *フィールド*を省略した場合は、すべてのフィールドが表示されます。 *フィールド*の後にピリオド ( **.** ) がある場合は、このフィールドの第1レベルサブフィールドも表示されます。 *フィールド*の後に一連のピリオドが続く場合、サブフィールドは期間の数と同じ深さに表示されます。 **-Y**検索オプションを使用した場合と同じように、フィールド名の後にピリオドが続くと、プレフィックスの一致として扱われます。 *フィールド*の後にアスタリスク (\*) がある場合は、フィールド全体ではなくフィールドの先頭のみとして扱われ、すべての一致するフィールドが表示されます。
 
-<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span> *アドレス*   
-表示される構造体のアドレスを指定します。 場合*名前*を省略すると、*アドレス*含める必要があるし、グローバル変数のアドレスを指定する必要があります。 *アドレス*は指定しない限り仮想アドレスを取得します。 使用して、 **-p**物理アドレスを指定するオプション。 "At"記号を使用して ( **@** ) レジスタを指定する (たとえば、 <strong>@eax</strong>)。
+<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span>*アドレス*   
+表示する構造体のアドレスを指定します。 *Name*を省略する場合は、 *address*を含め、グローバル変数のアドレスを指定する必要があります。 特に指定がない限り、*アドレス*は仮想アドレスとして使用されます。 物理アドレスを指定するには、 **-p**オプションを使用します。 レジスタを指定するには、 **@** アットマーク () を使用します ( <strong>@eax</strong>たとえば、)。
 
-<span id="_______List______"></span><span id="_______list______"></span><span id="_______LIST______"></span> *一覧*   
-リンクされたリストをリンクしているフィールド名を指定します。 *アドレス*パラメーターを含める必要があります。
+<span id="_______List______"></span><span id="_______list______"></span><span id="_______LIST______"></span>*リスト*   
+リンクリストをリンクするフィールド名を指定します。 *Address*パラメーターを含める必要があります。
 
-### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>環境
+### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>Environment
 
 <table>
 <colgroup>
@@ -168,15 +168,15 @@ dt -h
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>モード</strong></p></td>
-<td align="left"><p>ユーザー モードでは、カーネル モード</p></td>
+<td align="left"><p><strong>Modes</strong></p></td>
+<td align="left"><p>ユーザーモード、カーネルモード</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>ターゲット</strong></p></td>
-<td align="left"><p>ライブ、クラッシュ ダンプ</p></td>
+<td align="left"><p>ライブ、クラッシュダンプ</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>プラットフォーム</strong></p></td>
+<td align="left"><p><strong>Platforms</strong></p></td>
 <td align="left"><p>all</p></td>
 </tr>
 </tbody>
@@ -186,26 +186,26 @@ dt -h
 
 ### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-その他のメモリに関連するコマンドの説明とメモリの操作の概要については、次を参照してください。[読み取りと書き込みメモリ](reading-and-writing-memory.md)します。
+メモリ操作の概要とその他のメモリ関連コマンドの説明については、「[メモリの読み取りと書き込み](reading-and-writing-memory.md)」を参照してください。
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>コメント
 -------
 
-**Dt**コマンドの出力が基本 10、および 16 進数の符号なし数値の符号付き数値を常に表示されます。
+**Dt**コマンドの出力には、常に10進数の符号付き数値と16進数の符号なしの数値が表示されます。
 
-すべてのパラメーター **dt**シンボル値には文字列のワイルドカードが許可することもできます。 参照してください[文字列のワイルドカード構文](string-wildcard-syntax.md)詳細についてはします。
+シンボル値を許可する**dt**のすべてのパラメーターは、文字列のワイルドカードも許可します。 詳細については、「[文字列ワイルドカード構文](string-wildcard-syntax.md)」を参照してください。
 
-**-Y**と **-n**オプションはいずれかを前に指定できる*名前*または*フィールド*します。 **-Y**オプションでは、型または構造体の名前の先頭を指定できます。 たとえば、 **dt y ALLEN**の種類に関するデータが表示されます**アレンタウン**します。 、、型がない表示する可能性があります**アレンタウン**で**dt y A**します。使用する必要が代わりに、 **dt -ny A**ため、 **A**有効な 16 進数の値は、なし、アドレスとして解釈される、 **-n**オプション。
+**-Y**オプションと **-n**オプションは、任意の*名前*または*フィールド*の前に指定できます。 **-Y**オプションを使用すると、型または構造体の名前の先頭を指定できます。 たとえば、 **dt-y ALLEN**は、 **allentown**型に関するデータを表示します。 ただし、型**Allentown**を**Dt-y A**と共に表示することはできません。代わりに、 **dt-Ny a**を使用する必要があります。これは **、** が有効な16進数の値であり、 **-n**オプションを指定せずにアドレスとして解釈されるためです。
 
-場合*名前*構造体を示しますのすべてのフィールドが表示されます (たとえば、 **dt myStruct**)。 特定の 1 つのフィールドが欲しい場合**dt myStruct myField**します。 C を呼び出すメンバーが表示されます**myStruct.myField**します。 ただし、コマンドは、 **dt myStruct myField1 myField2**表示**myStruct.myField1**と**myStruct.myField2**。 表示されない**myStruct.myField1.myField2**します。
+*名前*が構造体を示す場合は、すべてのフィールドが表示されます (たとえば、 **dt mystruct**)。 特定のフィールドが1つだけ必要な場合は、 **Dt myStruct myField**を実行できます。 これにより、C が**myField**を呼び出すメンバーが表示されます。 ただし、コマンド**Dt Mystruct MyField1 myField2**には**Mystruct. MyField1**と**mystruct. myField2**が表示されることに注意してください。 MyField1 は表示されません。 **myField2**。
 
-構造体名またはフィールドは、添字に続けて、これと配列の 1 つのインスタンスを指定します。 たとえば、 **dt myStruct myFieldArray\[3\]** 問題の配列の 4 番目の要素が表示されます。 型名には、添字が続く、これと配列全体を指定します。 たとえば、 **dt CHAR\[8\] myPtr** 8 文字の文字列が表示されます。 常に、添字が取得されます現在の基数に関係なく 10 進数として。**0 x**プレフィックスには、エラーが発生します。
+構造体の名前またはフィールドの後に添字が続く場合は、配列の1つのインスタンスを指定します。 たとえば、 **dt mystruct\[myfieldarray 3\]** では、該当する配列の4番目の要素が表示されます。 しかし、型名の後に添字が続く場合は、配列全体を指定します。 たとえば、 **dt CHAR\[\] 8 myptr**は、8文字の文字列を表示します。 添字は、現在の基数に関係なく、常に小数点として取得されます。**0x**プレフィックスを付けると、エラーが発生します。
 
-コマンドからの型情報を使用しているため、します。*pdb*ファイル、任意の CPU プラットフォームのデバッグを自由に使用できます。
+このコマンドは、からの型情報を使用するためです。*pdb*ファイルは、任意の CPU プラットフォームのデバッグに自由に使用できます。
 
-使用される型情報**dt**で作成されたすべての型名に含まれる**typedef**、すべての Windows 定義型を含むです。 たとえば、 **unsigned long**と**char** 、有効な型名ではありませんが**ULONG**と**CHAR**は。 名前を入力するすべての Windows の完全な一覧については Microsoft Windows SDK を参照してください。
+**Dt**によって使用される型情報には、すべての Windows 定義型を含め、 **typedef**で作成されたすべての型名が含まれます。 たとえば、 **unsigned long**および**char**は有効な型名ではありませんが、 **ULONG**および**char**はです。 すべての Windows 型名の完全な一覧については、Microsoft Windows SDK を参照してください。
 
-によって作成されたすべての種類**typedef**独自コード内に表示されます、プログラムで実際に使用されている限り、します。 ただし、ヘッダーで定義されているが、実際に使用される型は、.pdb シンボル ファイルでは保存されません、デバッガーにアクセスできなくなります。 このような型をデバッガーに使用できるようにするとしてを使用して、*入力*の**typedef**ステートメント。 たとえば、次のコード、MY 構造体で、次が表示されます\_データ .pdb シンボル ファイルに格納され、表示されることができます、 **dt**コマンド。
+独自のコード内の**typedef**によって作成されたすべての型は、プログラムで実際に使用されている限り、存在します。 ただし、ヘッダーに定義されているものの、実際には使用されていない型は .pdb シンボルファイルに格納されず、デバッガーはアクセスできません。 このような型をデバッガーで使用できるようにするには、 **typedef**ステートメントの*入力*として使用します。 たとえば、コードに次のコードが含まれている場合、\_データの構造は .pdb シンボルファイルに格納され、 **dt**コマンドで表示できます。
 
 ```dbgcmd
 typedef struct _MY_DATA {
@@ -214,7 +214,7 @@ typedef struct _MY_DATA {
 typedef  MY_DATA *PMY_DATA; 
 ```
 
-その一方で、次のコードは不十分なため、両方の MY\_データと PMY\_によって初期データが定義されている**typedef**と、そのため、MY\_データ自体使用されていないの入力としてすべて**typedef**ステートメント。
+一方、次のコードで\_は、my data と pmy\_データの両方が初期の\_ **typedef**によって定義されているため、データ自体は**typedef**の入力として使用されていないため、十分ではありません。諸表
 
 ```dbgcmd
 typedef struct _MY_DATA {
@@ -222,11 +222,11 @@ typedef struct _MY_DATA {
     } MY_DATA, *PMY_DATA; 
 ```
 
-いずれの場合も、型情報は、すべてのプライベート シンボル情報が削除されているシンボル ファイルではなく、完全なシンボル ファイルにのみ含まれます。 詳細については、次を参照してください。[パブリックおよびプライベート シンボルの](public-and-private-symbols.md)します。
+どのような場合でも、型情報は、すべてのプライベートシンボル情報が削除されたシンボルファイルではなく、完全なシンボルファイルにのみ含まれます。 詳細については、「[パブリックシンボルとプライベートシンボル](public-and-private-symbols.md)」を参照してください。
 
-Unicode 文字列を表示する場合は、使用する必要があります、 [**リストア\_(Unicode 表示を有効にする) unicode** ](-enable-unicode--enable-unicode-display-.md)最初コマンドします。 長整数の表示を制御することができます、 [**リストア\_長い\_ステータス (有効にする Long 整数を表示する)** ](-enable-long-status--enable-long-integer-display-.md)コマンド。
+Unicode 文字列を表示する場合は、まず、 [ **. enable\_unicode (unicode 表示を有効**](-enable-unicode--enable-unicode-display-.md)にする) コマンドを使用する必要があります。 長い整数の表示を制御するには、を使用[**し\_ます。 long の状態\_を有効にする (長い整数の表示を有効にする)** ](-enable-long-status--enable-long-integer-display-.md)コマンドを有効にします。
 
-次の例では、 **dt**グローバル変数が表示されます。
+次の例では、 **dt**はグローバル変数を表示します。
 
 ```dbgcmd
 0:000> dt mt1 
@@ -238,7 +238,7 @@ Unicode 文字列を表示する場合は、使用する必要があります、
    +0x024 ex               : 0x0 
 ```
 
-次の例では、 **dt**配列フィールドが表示されます**gn**:
+次の例では、 **dt**は配列フィールド**gn**を表示します。
 
 ```dbgcmd
 0:000> dt mt1 -a gn 
@@ -251,7 +251,7 @@ Unicode 文字列を表示する場合は、使用する必要があります、
     [05] 0x6 
 ```
 
-次のコマンドは、変数のいくつかのサブフィールドを表示します。
+次のコマンドは、変数のサブフィールドを表示します。
 
 ```dbgcmd
 0:000> dt mcl1 m_t1 dpo 
@@ -259,7 +259,7 @@ Unicode 文字列を表示する場合は、使用する必要があります、
    +0x070 m_t1 : MYTYPE1 
 ```
 
-次のコマンド表示フィールドのサブフィールド**m\_t1**します。 始まる任意のフィールドのサブフィールドも表示されます、期間は、プレフィックス一致により自動的に発生するため"m\_t1"。
+フィールド**m\_t1**のサブフィールドを表示するコマンドを次に示します。 ピリオドによってプレフィックスの一致が自動的に行われるため、"m\_t1" で始まる任意のフィールドのサブフィールドも表示されます。
 
 ```dbgcmd
 0:000> dt mcl1 m_t1. 
@@ -272,16 +272,16 @@ Unicode 文字列を表示する場合は、使用する必要があります、
       +0x024 ex    : 0x0 
 ```
 
-これは、任意の深さまで繰り返しますでした。 たとえば、次のコマンド**dt mcl1、..c。** 最初のフィールド名が開始されるように 4 つの深さまですべてのフィールドを表示は **、** で開始しますが、3 番目のフィールド名と**c**します。
+これは、任意の深さに繰り返すことができます。 たとえば、コマンド**dt mcl1 a..c。** **では**、最初のフィールド名がで始まり、3番目のフィールド名が**c**で始まるように、すべてのフィールドが深さ4に表示されます。
 
-サブフィールドの表示方法の詳細な例を次に示します。 最初に、表示、 **Ldr**フィールド。
+ここでは、サブフィールドを表示する方法の詳細な例を示します。 最初に、 **Ldr**フィールドを表示します。
 
 ```dbgcmd
 0:000> dt nt!_PEB Ldr 7ffdf000 
    +0x00c Ldr : 0x00191ea0 
 ```
 
-これで、ポインター型のフィールドを展開します。
+次に、[ポインターの種類] フィールドを展開します。
 
 ```dbgcmd
 0:000> dt nt!_PEB Ldr Ldr. 7ffdf000 
@@ -295,14 +295,14 @@ Unicode 文字列を表示する場合は、使用する必要があります、
       +0x024 EntryInProgress : (null) 
 ```
 
-表示されるように、 **CriticalSectionTimeout**フィールド。
+次に、 **CriticalSectionTimeout**フィールドを表示します。
 
 ```dbgcmd
 0:000> dt nt!_PEB CriticalSectionTimeout 7ffdf000 
    +0x070 CriticalSectionTimeout : _LARGE_INTEGER 0xffffe86d`079b8000 
 ```
 
-今すぐ展開、 **CriticalSectionTimeout**サブフィールド 1 レベル深い構造体します。
+次に、 **CriticalSectionTimeout**構造体のサブフィールドを1レベル詳細に展開します。
 
 ```dbgcmd
 0:000> dt nt!_PEB CriticalSectionTimeout. 7ffdf000 
@@ -313,7 +313,7 @@ Unicode 文字列を表示する場合は、使用する必要があります、
       +0x000 QuadPart                : -25920000000000 
 ```
 
-今すぐ展開、 **CriticalSectionTimeout**サブフィールド 2 つのレベルが深い構造体します。
+ここで、 **CriticalSectionTimeout**構造体のサブフィールドを展開します。
 
 ```dbgcmd
 0:000> dt nt!_PEB CriticalSectionTimeout.. 7ffdf000 
@@ -326,7 +326,7 @@ Unicode 文字列を表示する場合は、使用する必要があります、
       +0x000 QuadPart                 : -25920000000000 
 ```
 
-次のコマンドでは、MYTYPE1 0x0100297C アドレスにあるデータ型のインスタンスが表示されます。
+次のコマンドを実行すると、アドレス0x0100297C にあるデータ型 MYTYPE1 のインスタンスが表示されます。
 
 ```dbgcmd
 0:000> dt 0x0100297c MYTYPE1 
@@ -338,7 +338,7 @@ Unicode 文字列を表示する場合は、使用する必要があります、
    +0x024 ex               : 0x0 
 ```
 
-次のコマンドでは、アドレス 0x01002BE0 で 10 ULONGs の配列を表示します。
+次のコマンドでは、アドレス0x01002BE0 の 10 ULONGs の配列が表示されます。
 
 ```dbgcmd
 0:000> dt -ca10 ULONG 01002be0 
@@ -354,7 +354,7 @@ Unicode 文字列を表示する場合は、使用する必要があります、
 [9] 0x0 
 ```
 
-次のコマンドでは、別のアドレスで以前の表示が続行されます。 "ULONG"が再入力する必要がないことに注意してください。
+次のコマンドは、前の表示を別のアドレスで続行します。 "ULONG" を再入力する必要はないことに注意してください。
 
 ```dbgcmd
 0:000> dt -ca4 . 01002d00 
@@ -365,7 +365,7 @@ Using sym ULONG
 [3] 0x2 
 ```
 
-型の表示の例をいくつかを示します。 次のコマンド モジュールのすべての型と文字列"MY"以降のグローバル変数を表示する*モジュール*します。 実際のインスタンスをアドレス プレフィックスアドレスがないものは、型定義を示します。
+次に、型 display の例をいくつか示します。 次のコマンドは、モジュール*thismodule*内の文字列 "MY" で始まるすべての型とグローバルを表示します。 アドレスがプレフィックスとして使用されるのは実際のインスタンスです。アドレスのないものは型定義です。
 
 ```dbgcmd
 0:000> dt thismodule!MY* 
@@ -381,7 +381,7 @@ Using sym ULONG
           thismodule!MYFLAGS 
 ```
 
-型の表示を実行するときに、 **-v**各項目のサイズを表示するオプションを使用できます。 **-S** *サイズ*のみ、特定のサイズの項目を列挙するオプションを使用できます。 ここでも、アドレス プレフィックスは実際のインスタンスアドレスがないものは、型定義を示します。
+Type display を実行する場合は、 **-v**オプションを使用して各項目のサイズを表示できます。 **-S** *size*オプションは、特定のサイズの項目だけを列挙するために使用できます。 ここでも、アドレスがプレフィックスとして使用されるのは実際のインスタンスです。アドレスのないものは型定義です。
 
 ```dbgcmd
 0:001> dt -s 2 -v thismodule!* 
@@ -398,7 +398,7 @@ Address   Size Symbol
 00427a30   002 thismodule!totalNumberOfItems 
 ```
 
-次の例に示します、 **-b**オプション。 構造が展開、 **OwnerThreads**構造内の配列を展開するが、 **Flink**と**点滅**リスト ポインターが後にありません。
+**-B**オプションの例を次に示します。 構造体が展開され、構造体内の**Ownerthreads**配列が拡張されていますが、 **Flink**と**点滅**の一覧のポインターは次のようになります。
 
 ```dbgcmd
 kd> dt nt!_ERESOURCE -b 0x8154f040 
@@ -427,7 +427,7 @@ kd> dt nt!_ERESOURCE -b 0x8154f040
    +0x034 SpinLock         : 0
 ```
 
-次の例に示します**dt**カーネル モードでします。 次のコマンドと同様の結果を生成する[ **! process 0 0**](-process.md):
+カーネルモードの**dt**の例を次に示します。 次のコマンドを実行すると、 [ **! process 0 0**](-process.md)のような結果が生成されます。
 
 ```dbgcmd
 kd> dt nt!_EPROCESS -l ActiveProcessLinks.Flink -y Ima -yoi Uni 814856f0 
@@ -454,9 +454,9 @@ ImageFileName : [16] "winlogon.exe"
 .... 
 ```
 
-一覧の各要素に対してコマンドを実行する場合を使用して、 [ **! 一覧**](-list.md)拡張機能。
+リストの各要素に対してコマンドを実行する場合は、 [ **! list**](-list.md)拡張機能を使用します。
 
-最後に、 **dt-h**コマンドの短いヘルプ テキストの要約が表示されます、 **dt**構文。
+最後に、 **dt-h**コマンドを実行すると、 **dt**構文の概要を説明する短いヘルプテキストが表示されます。
 
  
 

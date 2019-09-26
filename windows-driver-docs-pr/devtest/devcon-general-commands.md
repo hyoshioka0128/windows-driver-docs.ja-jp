@@ -1,9 +1,9 @@
 ---
 title: デバイス コンソール (DevCon.exe) のコマンド
-description: DevCon (DevCon.exe) は、Windows を実行しているコンピューターにデバイスの詳細情報を表示できるコマンド ライン ツールです。 有効にする、無効にする、インストール、構成、およびデバイスを削除する DevCon を使用することもできます。 DevCon では、次の構文を使用します。
+description: DevCon (DevCon) は、Windows を実行しているコンピューター上のデバイスに関する詳細情報を表示できるコマンドラインツールです。 また、DevCon を使用して、デバイスの有効化、無効化、インストール、構成、および削除を行うこともできます。 DevCon は、次の構文を使用します。
 ms.assetid: b397c407-db1f-4e2a-8beb-4fe989bd06e0
 keywords:
-- デバイスのコンソール (DevCon.exe) ドライバーの開発ツールをコマンドします。
+- デバイスコンソール (DevCon) コマンドドライバーの開発ツール
 topic_type:
 - apiref
 api_name:
@@ -12,47 +12,47 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 092d6fd7be797f6529902525626d0f63f1c1ebd3
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: dc8a59d9e112b67109cf761e72b890e43405285c
+ms.sourcegitcommit: 9dbb1ef59c3e797bfc3cc418dd2b9bdc44940d14
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371533"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71284911"
 ---
 # <a name="device-console-devconexe-commands"></a>デバイス コンソール (DevCon.exe) のコマンド
 
 
-DevCon (DevCon.exe) は、Windows を実行しているコンピューターにデバイスの詳細情報を表示できるコマンド ライン ツールです。 有効にする、無効にする、インストール、構成、およびデバイスを削除する DevCon を使用することもできます。 DevCon では、次の構文を使用します。
+DevCon (DevCon) は、Windows を実行しているコンピューター上のデバイスに関する詳細情報を表示できるコマンドラインツールです。 また、DevCon を使用して、デバイスの有効化、無効化、インストール、構成、および削除を行うこともできます。 DevCon は、次の構文を使用します。
 
 ```
 devcon [/m:\\computer] [/r] command [arguments] 
 ```
 
-## <a name="span-idddk_devcon_general_commands_toolsspanspan-idddk_devcon_general_commands_toolsspanparameters"></a><span id="ddk_devcon_general_commands_tools"></span><span id="DDK_DEVCON_GENERAL_COMMANDS_TOOLS"></span>パラメーター
+## <a name="span-idddk_devcon_general_commands_toolsspanspan-idddk_devcon_general_commands_toolsspanparameters"></a><span id="ddk_devcon_general_commands_tools"></span><span id="DDK_DEVCON_GENERAL_COMMANDS_TOOLS"></span>パラメータ
 
 
-**注**  状態またはデバイスの構成を変更するには、コンピューターの Administrators グループのメンバーであります。
-
- 
-
-DevCon コマンドのパラメーターは、構文に示されている順序で表示する必要があります。 パラメーターの順序が正しくありません DevCon は、それを無視しますが、構文エラーは表示されません。 代わりに、残りのパラメーターを使用してコマンドを処理します。
-
-コマンドの構文については、コマンド プロンプト ウィンドウで、次のコマンドを使用できます。**DevCon ヘルプ**または**DevCon ヘルプ***コマンド*します。
-
-<span id="________m___computer______"></span><span id="________M___COMPUTER______"></span> **m:\\\\** <em>コンピューター</em>指定したリモート コンピューターでコマンドを実行します。 円記号が必要です。
-**注**   DevCon コマンドをリモート コンピューターで実行する、グループ ポリシー設定がリモート コンピューターで実行するプラグ アンド プレイ サービスを許可する必要があります。 Windows Vista と Windows の以降のバージョンを実行しているコンピューターで、グループ ポリシーには、既定では、サービスへのリモート アクセスが無効にします。 WDK 8 WDK 8.1 を実行するコンピューターでのリモート アクセス機能は使用できません。
+**注デバイスの**状態または構成を変更するには、コンピューターの Administrators グループのメンバーである必要があります。  
 
  
 
-<span id="________r______"></span><span id="________R______"></span> **/r**条件付き再起動します。 再起動が必要な変更を有効にする場合にのみ操作を完了した後、システムを再起動します。
+DevCon コマンドのパラメーターは、構文に示されている順序で表示される必要があります。 パラメーターの順序が正しくない場合、DevCon はそれらを無視しますが、構文エラーは表示されません。 代わりに、残りのパラメーターを使用してコマンドを処理します。
 
-このパラメーターとは異なります、 [ **DevCon 再起動**](devcon-reboot.md)操作で、強制的にシステムを再起動します。 代わりに、 **/r**かどうか、再起動が必要、付随する操作からのリターン コードに基づくパラメーターを決定します。詳細については、次を参照してください。[再起動と再起動](#ddk-rebooting-and-restarting-tools)します。
+コマンド構文のヘルプを表示するには、コマンドプロンプトウィンドウで次のコマンドを使用します。**Devcon ヘルプ**または**devcon ヘルプ***コマンド*。
 
-<span id="_______command______"></span><span id="_______COMMAND______"></span> *コマンド*DevCon コマンドを指定します。 使用可能な DevCon コマンドとコマンド引数の詳細については、次の一覧を使用します。
+<span id="________m___computer______"></span><span id="________M___COMPUTER______"></span> **/m:\\コンピューターは、指定されたリモートコンピューターでコマンドを実行します。\\** 円記号が必要です。
+**注:**   リモートコンピューターで DevCon コマンドを実行するには、グループポリシー設定で、プラグアンドプレイサービスをリモートコンピューターで実行できるようにする必要があります。 Windows Vista 以降のバージョンの Windows を実行しているコンピューターでは、グループポリシーによって、サービスへのリモートアクセスが既定で無効になります。 WDK 8.1 および WDK 8 を実行するコンピューターでは、リモートアクセス機能を使用できません。
 
-使用してコマンド プロンプト ウィンドウで構文のヘルプを取得することも**DevCon ヘルプ***コマンド*します。
+ 
 
-*一覧し、表示*コンピューターで、デバイスに関する情報は、次のコマンドを使用します。
+<span id="________r______"></span><span id="________R______"></span> **/r**条件付き再起動。 変更を有効にするために再起動が必要な場合にのみ、操作の完了後にシステムを再起動します。
+
+このパラメーターは、システムを強制的に再起動する、 [**DevCon reboot**](devcon-reboot.md)操作とは異なります。 代わりに、 **/r**パラメーターによって、付随する操作からのリターンコードに基づいて再起動が必要かどうかが決定されます。詳細については、「[再起動と再起動](#ddk-rebooting-and-restarting-tools)」を参照してください。
+
+<span id="_______command______"></span><span id="_______COMMAND______"></span>*コマンド*DevCon コマンドを指定します。 使用可能な DevCon コマンドとコマンド引数の詳細については、次の一覧を参照してください。
+
+また、コマンドプロンプトウィンドウで、 **DevCon help** *コマンド*を使用して構文のヘルプを表示することもできます。
+
+コンピューター上のデバイスに関する情報を*一覧表*示して表示するには、次のコマンドを使用します。
 
 [**DevCon HwIDs**](devcon-hwids.md)
 
@@ -68,23 +68,23 @@ DevCon コマンドのパラメーターは、構文に示されている順序�
 
 [**DevCon スタック**](devcon-stack.md)
 
-[**DevCon 状態**](devcon-status.md)
+[**DevCon ステータス**](devcon-status.md)
 
 [**DevCon Dp\_列挙型**](devcon-dp-enum.md)
 
-*検索*コンピューター上のデバイスについては、次のコマンドを使用します。
+コンピューター上のデバイスに関する情報を*検索*するには、次のコマンドを使用します。
 
 [**DevCon 検索**](devcon-find.md)
 
 [**DevCon FindAll**](devcon-findall.md)
 
-デバイスを操作するまたは*変更*の構成では、次のコマンドを使用します。
+デバイスを操作するか、その構成を*変更*するには、次のコマンドを使用します。
 
-[**DevCon 有効にします。** ](devcon-enable.md)
+[**DevCon 有効化**](devcon-enable.md)
 
-[**DevCon 無効にします。** ](devcon-disable.md)
+[**DevCon の無効化**](devcon-disable.md)
 
-[**DevCon Update**](devcon-update.md)
+[**DevCon 更新プログラム**](devcon-update.md)
 
 [**DevCon UpdateNI**](devcon-updateni.md)
 
@@ -94,7 +94,7 @@ DevCon コマンドのパラメーターは、構文に示されている順序�
 
 [**DevCon 再スキャン**](devcon-rescan.md)
 
-[**DevCon 再起動**](devcon-restart.md)
+[**DevCon の再起動**](devcon-restart.md)
 
 [**DevCon 再起動**](devcon-reboot.md)
 
@@ -102,51 +102,51 @@ DevCon コマンドのパラメーターは、構文に示されている順序�
 
 [**DevCon ClassFilter**](devcon-classfilter.md)
 
-[**DevCon Dp\_追加**](devcon-dp-add.md)
+[**DevCon Dp\_の追加**](devcon-dp-add.md)
 
-[**DevCon Dp\_削除**](devcon-dp-delete.md)
+[**DevCon Dp\_の削除**](devcon-dp-delete.md)
 
-<span id="_______arguments______"></span><span id="_______ARGUMENTS______"></span> *引数*DevCon コマンドの引数を指定します。
+<span id="_______arguments______"></span><span id="_______ARGUMENTS______"></span>*引数*DevCon コマンドの引数を指定します。
 
-<span id="__________or_help"></span><span id="__________OR_HELP"></span> **/?** または**ヘルプ**ヘルプを表示します。 操作を指定すると、DevCon は、操作の詳細なヘルプを表示します。
+<span id="__________or_help"></span><span id="__________OR_HELP"></span> **/?** また**はヘルプが**表示されます。 操作を指定すると、[DevCon] 操作の詳細なヘルプが表示されます。
 
-パラメーターは、指定した順序で表示する必要があります。 たとえばのヘルプを表示するため、 [ **DevCon 状態**](devcon-status.md)型、操作**devcon/でしょうかステータス**(または**devcon ヘルプ状態**) ではなく、 。**devcon 状態/でしょうか。** .
+パラメーターは指定された順序で表示される必要があります。 たとえば、 [**Devcon status**](devcon-status.md)操作のヘルプを表示するには、「devcon **/? status** 」 (または「devcon **help status**」) と入力します。これは devcon **status/?** ではありません。
 
-### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>コメント
+### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>Comments
 
-多くの DevCon 操作には、デバイスのハードウェア ID が必要です。 DevCon の後続の操作で使用するためのコンピューター上のすべてのデバイスのハードウェア Id の一覧を作成するで始まる、 [ **DevCon HwIDs** ](devcon-hwids.md)コマンド。 詳細については、次を参照してください。[ハードウェア Id](https://docs.microsoft.com/windows-hardware/drivers/install/hardware-ids)と[識別文字列](https://docs.microsoft.com/windows-hardware/drivers/install/device-identification-strings)します。
+多くの DevCon 操作には、デバイスのハードウェア ID が必要です。 その後の DevCon 操作で使用する、コンピューター上のすべてのデバイスのハードウェア Id の一覧を作成するには、まず、 [**Devcon HwIDs**](devcon-hwids.md)コマンドを使用します。 詳細については、「[ハードウェア id](https://docs.microsoft.com/windows-hardware/drivers/install/hardware-ids)と[デバイス id 文字列](https://docs.microsoft.com/windows-hardware/drivers/install/device-identification-strings)」を参照してください。
 
-### <a name="span-idddk_devcon_search_logic_toolsspanspan-idddk_devcon_search_logic_toolsspanhow-devcon-searches-for-devices"></a><span id="ddk_devcon_search_logic_tools"></span><span id="DDK_DEVCON_SEARCH_LOGIC_TOOLS"></span>DevCon でデバイスを検索する方法
+### <a name="span-idddk_devcon_search_logic_toolsspanspan-idddk_devcon_search_logic_toolsspanhow-devcon-searches-for-devices"></a><span id="ddk_devcon_search_logic_tools"></span><span id="DDK_DEVCON_SEARCH_LOGIC_TOOLS"></span>デバイスを DevCon で検索する方法
 
-DevCon では、そのコンピューター名、ハードウェア ID、互換性 ID、デバイス インスタンス ID、およびデバイス セットアップ クラス別にデバイスを識別します。
+DevCon は、コンピューター名、ハードウェア ID、互換性のある ID、デバイスインスタンス ID、デバイスセットアップクラスなどによってデバイスを識別します。
 
-コマンドが含まれている場合は複数の ID または ID パターン (ワイルドカード文字が含まれる ID (\*))、DevCon 返しますデバイス Id の Id または ID と一致パターン。 これは、「または」ID の引数間と仮定します。
+コマンドに複数の id または id パターン (ワイルドカード文字 (\*) を含む id) が含まれている場合、DevCon は、id または id パターンのいずれかに一致する id を持つデバイスを返します。 つまり、ID 引数の間に "or" があることを前提としています。
 
-たとえば、 **devcon hwids \*pnp\* \*マウス\\** * がハードウェア ID または互換性 ID の"pnp"または「マウス」のいずれかを含む、デバイスを返します
+たとえば、 **devcon hwids \*pnp\* \*mou\*** は、ハードウェア id または互換性のある id に "pnp" または "mou" のいずれかを含むデバイスを返します。
 
-コマンドには、デバイス セットアップ クラスが含まれている場合、DevCon が最初にセットアップ クラスが、検索を制限し、ID パターンのいずれかに一致するクラスのデバイスを返します、「と」クラスと、Id と、「または」の各 ID の引数間のものは、します。
+コマンドにデバイスセットアップクラスが含まれている場合、DevCon は最初に検索をセットアップクラスに限定してから、クラス内の任意の ID パターンに一致するデバイスを返します。つまり、クラスと Id の間に "and" を、それぞれの ID 引数の間に "or" を指定します。
 
-たとえば、 **devcon hwids = メディア\*pnp\* \*microsoft\\** *、ハードウェア ID のデバイスのいずれかを含むメディアのデバイス セットアップ クラスの"pnp"または"microsoft"を返しますまたは互換性のある id。
+たとえば、 **devcon hwids \*= media pnp\* \*microsoft\*** は、ハードウェア id または互換性 id に "pnp" または "microsoft" を含むメディアデバイスセットアップクラスのデバイスを返します。
 
-**注**   DevCon コマンドをリモート コンピューターで実行する、グループ ポリシー設定がリモート コンピューターで実行するプラグ アンド プレイ サービスを許可する必要があります。 Windows Vista と Windows の以降のバージョンを実行しているコンピューターで、グループ ポリシーには、既定では、サービスへのリモート アクセスが無効にします。 WDK 8 WDK 8.1 を実行するコンピューターでのリモート アクセス機能は使用できません。
+**注:**   リモートコンピューターで DevCon コマンドを実行するには、グループポリシー設定で、プラグアンドプレイサービスをリモートコンピューターで実行できるようにする必要があります。 Windows Vista 以降のバージョンの Windows を実行しているコンピューターでは、グループポリシーによって、サービスへのリモートアクセスが既定で無効になります。 WDK 8.1 および WDK 8 を実行するコンピューターでは、リモートアクセス機能を使用できません。
 
  
 
 ### <span id="ddk_rebooting_and_restarting_tools"></span><span id="DDK_REBOOTING_AND_RESTARTING_TOOLS"></span><a name="ddk-rebooting-and-restarting-tools"></a>再起動と再起動
 
-DevCon では、オペレーティング システムを再起動する 2 つのメソッドとデバイスを再起動する 1 つのメソッドを提供します。
+DevCon には、オペレーティングシステムを再起動する方法と、デバイスを再起動する方法の2つが用意されています。
 
--   **/R**パラメーターは、再起動が必要です、付随する操作を有効にする場合にのみ、オペレーティング システムが再起動される条件付き再起動します。 このパラメーターは、DevCon 操作を含むコマンドでのみ有効です。 ローカル コンピューターまたはリモート コンピューター上のシステムを再起動できます (Windows XP 以前のバージョン)。
+-   **/R**パラメーターは、付随する操作を有効にするために再起動が必要な場合にのみ、オペレーティングシステムを再起動する条件付き再起動です。 このパラメーターは、DevCon 操作を含むコマンドでのみ有効です。 ローカルコンピューターまたはリモートコンピューター (Windows XP およびそれ以前) でシステムを再起動することができます。
 
--   **DevCon 再起動**操作は、オペレーティング システムの再起動を強制します。 ローカル コンピューターでのみ有効ですし、他の操作と組み合わせて使用できません。 ユーザーの通常の追加、再起動操作を使用する代わりに、 **/r**コマンドのパラメーター。
+-   **DevCon の再起動**操作によって、オペレーティングシステムが強制的に再起動されます。 ローカルコンピューター上でのみ有効で、他の操作と組み合わせることはできません。 ユーザーは、通常、再起動操作を使用する代わりに、コマンドに **/r**パラメーターを追加します。
 
--   **DevCon 再起動**操作は、指定したデバイスを再起動します。 ローカル コンピューターでのみ有効ですし、他の操作と組み合わせて使用できません。
+-   **DevCon Restart**操作は、指定されたデバイスを再起動します。 ローカルコンピューター上でのみ有効で、他の操作と組み合わせることはできません。
 
-### <a name="span-idddk_devcon_return_codes_toolsspanspan-idddk_devcon_return_codes_toolsspandevcon-return-codes"></a><span id="ddk_devcon_return_codes_tools"></span><span id="DDK_DEVCON_RETURN_CODES_TOOLS"></span>DevCon リターン コード
+### <a name="span-idddk_devcon_return_codes_toolsspanspan-idddk_devcon_return_codes_toolsspandevcon-return-codes"></a><span id="ddk_devcon_return_codes_tools"></span><span id="DDK_DEVCON_RETURN_CODES_TOOLS"></span>DevCon リターンコード
 
-DevCon がプログラムと DevCon コマンドの成功を判断するためのスクリプトで使用できる整数を返します (たとえば、* * を返す devcon hwids = \\* * *)。
+DevCon は、DevCon コマンドが成功したかどうかを判断するためにプログラムおよびスクリプトで使用できる整数を返します (たとえば、 **return = DevCon hwids \*** )。
 
-次の表は、リターン コードの一覧です。
+次の表に、リターンコードとその説明を示します。
 
 <table>
 <colgroup>
@@ -156,7 +156,7 @@ DevCon がプログラムと DevCon コマンドの成功を判断するため�
 <thead>
 <tr class="header">
 <th align="left">リターン コード</th>
-<th align="left">意味</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
@@ -166,7 +166,7 @@ DevCon がプログラムと DevCon コマンドの成功を判断するため�
 </tr>
 <tr class="even">
 <td align="left"><p>1</p></td>
-<td align="left"><p>再起動が必要です。</p></td>
+<td align="left"><p>再起動が必要</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>2</p></td>

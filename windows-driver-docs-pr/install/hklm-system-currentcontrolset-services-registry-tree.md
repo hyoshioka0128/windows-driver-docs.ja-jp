@@ -1,34 +1,34 @@
 ---
 title: HKLM\SYSTEM\CurrentControlSet\Services レジストリ ツリー
-description: Hklm \system\currentcontrolset\services レジストリ ツリーでは、システム上のサービスに関する情報を格納します。
+description: HKLM\SYSTEM\CurrentControlSet\Services レジストリツリーには、システム上の各サービスに関する情報が格納されます。
 ms.assetid: c966b029-8171-4db7-9fbb-3a4222ff184b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4993798367012b8ba3a7a1e1ad2d7a69426ac9eb
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 499163f56221235165958943c27549eecd9548d6
+ms.sourcegitcommit: e480dcfea893ef6c85b2dfb5827f51b740466262
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386410"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71278369"
 ---
-# <a name="hklmsystemcurrentcontrolsetservices-registry-tree"></a>HKLM\\システム\\CurrentControlSet\\サービスのレジストリ ツリー
+# <a name="hklmsystemcurrentcontrolsetservices-registry-tree"></a>HKLM\\SYSTEM\\CurrentControlSet\\Services レジストリツリー
 
 
 
 
 
-**HKLM\\システム\\CurrentControlSet\\サービス**レジストリ ツリーは、システムの各サービスに関する情報を保存します。 各ドライバーは、フォームのキーを持つ**HKLM\\システム\\CurrentControlSet\\サービス\\** <em>DriverName</em>します。 PnP マネージャー内のドライバーのこのパスを渡す、 *RegistryPath*ドライバーの呼び出し時にパラメーター [ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)ルーチン。 ドライバーがドライバーの定義済みのグローバルなデータでそのキーの下を格納できる、**サービス**ツリー。 このキーの下に格納されている情報は初期化中にドライバーを使用できます。
+**HKLM\\system\\CurrentControlSetServicesレジストリツリーには、システム上の各サービスに関する情報が格納されます。\\** 各ドライバーには、 **HKLM\\SYSTEM\\\\CurrentControlSet\\Services**の<em>ドライバー</em>の形式のキーがあります。 PnP マネージャーは、ドライバーの[**Driverentry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)ルーチンを呼び出すときに、ドライバーのこのパスを*RegistryPath*パラメーターに渡します。 ドライバーは、グローバルなドライバー定義データを、**サービス**ツリーのキーの**Parameters**サブキーの下に格納できます。 このキーの下に格納されている情報は、初期化中にドライバーで使用できます。
 
-次のキーと値のエントリは、特に興味深いは。
+次のキーと値のエントリが特に重要です。
 
 <a href="" id="imagepath"></a>**ImagePath**  
-ドライバーのイメージ ファイルの完全修飾パスを指定する値のエントリ。 Windows では、必要なを使用してこの値を作成します。 **ServiceBinary**ドライバーの INF ファイルのエントリ。 このエントリは存在、*サービス-インストール セクション*ドライバーのによって参照される[ **INF AddService ディレクティブ**](inf-addservice-directive.md)します。 このパスの一般的な値は *%systemroot%* \\*system32\\ドライバー\\DriverName*、.sys、 *DriverName*はドライバーの名前**サービス**キー。
+ドライバーのイメージファイルの完全修飾パスを指定する値のエントリ。 Windows は、ドライバーの INF ファイルの必須の**Servicebinary**エントリを使用して、この値を作成します。 このエントリは、ドライバーの[**INF AddService ディレクティブ**](inf-addservice-directive.md)によって参照される、 *service install セクション*にあります。 このパスの一般的な値は、 *% SystemRoot%* \\ *\\system32\\Drivers*のドライバー名です。この*名前は、* ドライバーの**サービス**キーの名前です。
 
-<a href="" id="parameters"></a>**パラメーター**  
-ドライバー固有のデータを格納するために使用するキー。 ドライバーの一部の種類では、システムで特定の値のエントリを検索する必要があります。 このサブキーを使用する値のエントリを追加する**AddReg**ドライバーの INF ファイル内のエントリ。
+<a href="" id="parameters"></a>**パラメータ**  
+ドライバー固有のデータを格納するために使用されるキー。 ドライバーの種類によっては、特定の値のエントリを検索する必要がある場合があります。 このサブキーに値エントリを追加するには、ドライバーの INF ファイルの**AddReg**エントリを使用します。
 
-<a href="" id="performance"></a>**パフォーマンス**  
-省略可能なパフォーマンスを監視するための情報を指定するキー。 このキーの値は、その DLL 内のドライバーのパフォーマンス DLL の名前と特定のエクスポートされた関数の名前を指定します。 このサブキーを使用する値のエントリを追加する**AddReg**ドライバーの INF ファイル内のエントリ。
+<a href="" id="performance"></a>**速度**  
+オプションのパフォーマンス監視に関する情報を指定するキー。 このキーの下の値は、ドライバーのパフォーマンス DLL の名前と、その DLL 内のエクスポートされた特定の関数の名前を指定します。 このサブキーに値エントリを追加するには、ドライバーの INF ファイルの**AddReg**エントリを使用します。
 
  
 

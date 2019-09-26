@@ -3,16 +3,16 @@ title: x86 の手順
 description: x86 の手順
 ms.assetid: 237796d5-ef82-4eab-8d56-3191b3e63597
 keywords:
-- x86 プロセッサで命令
-- x86 プロセッサでは、算術演算
+- x86 プロセッサ、手順
+- x86 プロセッサ、算術
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2310fd4e39c0c1072df7099c58c35bdc808cf2be
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e5f900c371825dcf7996b6e72bd15c1ad42f7a59
+ms.sourcegitcommit: 9dbb1ef59c3e797bfc3cc418dd2b9bdc44940d14
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381895"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71284924"
 ---
 # <a name="x86-instructions"></a>x86 の手順
 
@@ -20,21 +20,21 @@ ms.locfileid: "63381895"
 ## <span id="ddk_x86_instructions_dbg"></span><span id="DDK_X86_INSTRUCTIONS_DBG"></span>
 
 
-このセクションの一覧を手順はアスタリスクが付いた (* *\\* * *) は特に重要です。 そうでもないマークされている手順は重要ではないです。
+このセクションの一覧では、アスタリスク ( **\*** ) でマークされた手順が特に重要です。 マークされていない手順は、重要ではありません。
 
-X86 プロセッサでは、手順については、可変サイズ、パターン マッチングの課題は、逆方向を逆アセンブルためです。 アドレスから逆方向を逆アセンブルするには、戻す、移動し、手順については、合理的に開始されるまで、楽しみたいよりもさらで逆アセンブルを開始する必要があります。 最初の手順については、いくつかが起動する命令の途中で逆アセンブルした可能性がありますので意味が、ありません。 可能性がある、残念ながら、逆アセンブルが命令ストリームを同期させることはありませんし、動作する開始点が見つかるまで、さまざまな開始位置に逆アセンブルする必要があります。
+X86 プロセッサでは、命令は可変サイズになっているため、逆アセンブルはパターンマッチングの演習です。 アドレスから逆アセンブルするには、先に進んだ時点で逆アセンブルを開始してから、指示がわかり始めるまで進みます。 命令の途中で逆アセンブルを開始した可能性があるため、最初のいくつかの手順では意味がない場合があります。 残念ながら、逆アセンブリが命令ストリームと同期されることはないため、動作する開始点が見つかるまでは、別の開始点で逆アセンブルを試みる必要があります。
 
-適切なパックされた**スイッチ**ステートメント、コンパイラは、生成データ、コード ストリームに直接これを逆アセンブル、**切り替える**ステートメントは通常 1 つ 1 つ、意味 (手順いるため、実際にデータ)。 データの末尾を見つけて、逆アセンブルを続行します。
+適切にパックされた**switch**ステートメントの場合、コンパイラはデータを直接コードストリームに出力するため、 **switch**ステートメントを使用して逆アセンブルすると、通常は、(実際にはデータであるため) 意味のない命令を遭遇ます。 データの末尾を検索し、そこでの逆アセンブルを続行します。
 
 ### <a name="span-idinstruction_notationspanspan-idinstruction_notationspanspan-idinstruction_notationspaninstruction-notation"></a><span id="Instruction_Notation"></span><span id="instruction_notation"></span><span id="INSTRUCTION_NOTATION"></span>命令の表記
 
-手順については、一般的な表記は、左側と右側のソース、宛先レジスタを置くことです。 ただし、このルールをいくつかの例外があります。
+手順の一般的な表記法としては、コピー先のレジスタを左に配置し、ソースを右側に配置します。 ただし、このルールにはいくつかの例外があります。
 
-算術命令は通常 2 つの登録をソースとし、変換先は、結合を登録します。 結果は、変換先に格納されます。
+通常、算術命令は、コピー元とコピー先のレジスタを組み合わせる2レジスタです。 結果は、変換先に格納されます。
 
-16 ビットと 32 ビットの両方のバージョンがある一部の手順が、32 ビット バージョンのみを紹介します。 一覧にないは、浮動小数点命令、特権のある手順については、および手順については、(これは、Microsoft Win32 を使用しません)、セグメント化されたモデルでのみ使用されます。
+一部の手順には、16ビットバージョンと32ビットバージョンがありますが、ここには32ビットバージョンのみが記載されています。 ここに記載されていないのは、浮動小数点命令、特権命令、およびセグメント化されたモデル (Microsoft Win32 では使用しない) でのみ使用される命令です。
 
-容量を節約するには、手順の多くで表現されます結合されたフォームは、次の例に示すようにします。
+領域を節約するために、次の例に示すように、多くの命令が結合された形式で表されます。
 
 <table>
 <colgroup>
@@ -48,16 +48,16 @@ X86 プロセッサでは、手順については、可変サイズ、パター�
 <td align="left"><p><strong>*</strong></p></td>
 <td align="left"><p>MOV</p></td>
 <td align="left"><p><strong>r1</strong>、 <strong>r</strong>/m/#n</p></td>
-<td align="left"><p><strong>r1</strong> = <strong>r</strong>/m/#n</p></td>
+<td align="left"><p>r1 = <strong>r</strong>/m/#n</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-最初のパラメーターはレジスタである必要がありますが、2 つ目は、レジスタ、メモリの参照、またはイミディ エイト値をことを意味します。
+は、最初のパラメーターがレジスタである必要がありますが、2番目のパラメーターにはレジスタ、メモリ参照、またはイミディエイト値を指定できます。
 
-さらに多くの容量を節約するには、手順についても表現できますでは、次に示すようにします。
+さらに多くの領域を節約するために、次のように命令を表現することもできます。
 
 <table>
 <colgroup>
@@ -78,15 +78,15 @@ X86 プロセッサでは、手順については、可変サイズ、パター�
 
  
 
-つまり最初のパラメーターはレジスタまたはメモリの参照と、2 つ目は、レジスタ、メモリ参照が、またはイミディ エイト値を指定できます。
+つまり、最初のパラメーターをレジスタまたはメモリ参照にすることができ、2番目のパラメーターにはレジスタ、メモリ参照、またはイミディエイト値を指定できます。
 
-明記されない限り、この省略形を使用する場合、ソースと宛先の両方のメモリを選択することはできません。
+特に明記されていない限り、この省略形を使用する場合は、変換元と変換先の両方に対してメモリを選択することはできません。
 
-さらに、ソースまたは変換先を示すパラメーターは、そのサイズのある必要があります (8、16、32) のビット サイズ サフィックスを追加できます。 たとえば、r8、8 ビット レジスタを意味します。
+さらに、パラメーターがそのサイズである必要があることを示すために、転送元または転送先にビットサイズのサフィックス (8、16、32) を追加できます。 たとえば、r8 は8ビットレジスタを意味します。
 
-### <a name="span-idmemory__data_transfer__and_data_conversionspanspan-idmemory__data_transfer__and_data_conversionspanspan-idmemory__data_transfer__and_data_conversionspanmemory-data-transfer-and-data-conversion"></a><span id="Memory__Data_Transfer__and_Data_Conversion"></span><span id="memory__data_transfer__and_data_conversion"></span><span id="MEMORY__DATA_TRANSFER__AND_DATA_CONVERSION"></span>メモリ、データ転送、およびデータ変換
+### <a name="span-idmemory__data_transfer__and_data_conversionspanspan-idmemory__data_transfer__and_data_conversionspanspan-idmemory__data_transfer__and_data_conversionspanmemory-data-transfer-and-data-conversion"></a><span id="Memory__Data_Transfer__and_Data_Conversion"></span><span id="memory__data_transfer__and_data_conversion"></span><span id="MEMORY__DATA_TRANSFER__AND_DATA_CONVERSION"></span>メモリ、データ転送、データ変換
 
-メモリとデータ転送命令では、フラグは影響しません。
+メモリおよびデータ転送命令は、フラグには影響しません。
 
 ### <a name="span-ideffective_addressspanspan-ideffective_addressspanspan-ideffective_addressspaneffective-address"></a><span id="Effective_Address"></span><span id="effective_address"></span><span id="EFFECTIVE_ADDRESS"></span>有効なアドレス
 
@@ -100,9 +100,9 @@ X86 プロセッサでは、手順については、可変サイズ、パター�
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>*</strong></p></td>
-<td align="left"><p>元に戻せる</p></td>
+<td align="left"><p>戻せるよう</p></td>
 <td align="left"><p><strong>r</strong>、m</p></td>
-<td align="left"><p>有効なアドレスをロードします。</p>
+<td align="left"><p>有効なアドレスを読み込みます。</p>
 <p>(r = m のアドレス)</p></td>
 </tr>
 </tbody>
@@ -110,7 +110,7 @@ X86 プロセッサでは、手順については、可変サイズ、パター�
 
  
 
-たとえば、**元に戻せる eax、 \[esi + 4\]** 意味**eax** = **esi** + 4。 この命令は、算術演算を実行するよく使用されます。
+たとえば、 **lea eax \[、esi +\] 4**は**eax** = **esi** + 4 を意味します。 この命令は、多くの場合、算術演算を実行するために使用されます。
 
 ### <a name="span-iddata_transferspanspan-iddata_transferspanspan-iddata_transferspandata-transfer"></a><span id="Data_Transfer"></span><span id="data_transfer"></span><span id="DATA_TRANSFER"></span>データ転送
 
@@ -132,24 +132,24 @@ X86 プロセッサでは、手順については、可変サイズ、パター�
 <td align="left"><p><strong></em></strong></p></td>
 <td align="left"><p>MOVSX</p></td>
 <td align="left"><p><strong>r1</strong>、 <strong>r</strong>/m</p></td>
-<td align="left"><p>符号拡張と共に移動します。</p></td>
+<td align="left"><p>符号拡張を使用して移動します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>*</strong></p></td>
 <td align="left"><p>MOVZX</p></td>
 <td align="left"><p><strong>r1</strong>、 <strong>r</strong>/m</p></td>
-<td align="left"><p>0 個の拡張機能と共に移動します。</p></td>
+<td align="left"><p>拡張子をゼロにして移動します。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-**MOVSX**と**MOVZX**の特別なバージョンは、 **mov**先に元の符号拡張、または 0 個の拡張機能を実行する命令です。 これは、移行元と変換先を異なるサイズを設定できる唯一の命令です。 (また、実際には、さまざまなサイズがあります。
+**Movsx**と**movsx**は、ソースから宛先に符号拡張またはゼロ拡張子を実行する、 **mov**命令の特別なバージョンです。 これは、変換元と変換先が異なるサイズになるようにする唯一の命令です。 (実際には、サイズが異なる必要があります。
 
 ### <a name="span-idstack_manipulationspanspan-idstack_manipulationspanspan-idstack_manipulationspanstack-manipulation"></a><span id="Stack_Manipulation"></span><span id="stack_manipulation"></span><span id="STACK_MANIPULATION"></span>スタック操作
 
-指すは、スタック、 **esp**を登録します。 ある値**esp** (最近、最初にプッシュ ポップされます)。 スタックの一番上には古いスタック要素は、上位アドレスに存在します。
+スタックは**esp**レジスタによってポイントされます。 **Esp**の値はスタックの一番上にあり (最後にプッシュされ、最初にポップされます)。古いスタック要素は、より上位のアドレスに配置します。
 
 <table>
 <colgroup>
@@ -161,15 +161,15 @@ X86 プロセッサでは、手順については、可変サイズ、パター�
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong><em></strong></p></td>
-<td align="left"><p>プッシュ</p></td>
+<td align="left"><p>押し付け</p></td>
 <td align="left"><p><strong>r</strong>/m/#n</p></td>
 <td align="left"><p>値をスタックにプッシュします。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong></em></strong></p></td>
-<td align="left"><p>POP</p></td>
+<td align="left"><p>ショート</p></td>
 <td align="left"><p><strong>r</strong>/m</p></td>
-<td align="left"><p>値をスタックからポップします。</p></td>
+<td align="left"><p>スタックからポップ値を指定します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
@@ -181,7 +181,7 @@ X86 プロセッサでは、手順については、可変サイズ、パター�
 <td align="left"></td>
 <td align="left"><p>POPFD</p></td>
 <td align="left"></td>
-<td align="left"><p>スタックからポップ フラグ。</p></td>
+<td align="left"><p>スタックからポップフラグを表示します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
@@ -198,23 +198,23 @@ X86 プロセッサでは、手順については、可変サイズ、パター�
 <tr class="odd">
 <td align="left"></td>
 <td align="left"><p>Enter</p></td>
-<td align="left"><p>#n, #n</p></td>
-<td align="left"><p>スタック フレームを作成します。</p></td>
+<td align="left"><p>#n、#n</p></td>
+<td align="left"><p>ビルドスタックフレーム。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>*</strong></p></td>
-<td align="left"><p>ままにしてください。</p></td>
+<td align="left"><p>出る</p></td>
 <td align="left"></td>
-<td align="left"><p>スタック フレームを破棄します。</p></td>
+<td align="left"><p>スタックフレームの破棄</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-C と C++ コンパイラが使用しない、**入力**命令。 (、**入力**Algol や Pascal などの言語で入れ子になったプロシージャを実装する命令を使用します)。
+C/C++コンパイラでは、 **enter**命令は使用されません。 ( **Enter**命令は、入れ子になったプロシージャを Algol や Pascal などの言語で実装するために使用されます)。
 
-**まま**命令は等価です。
+**Leave**命令は、次の場合と同じです。
 
 ```asm
 mov esp, ebp
@@ -231,32 +231,32 @@ pop ebp
 <tbody>
 <tr class="odd">
 <td align="left"><p>CBW</p></td>
-<td align="left"><p>バイトに変換 (<strong>al</strong>) word (<strong>ax</strong>)。</p></td>
+<td align="left"><p>Byte (<strong>al</strong>) を word (<strong>ax</strong>) に変換します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>CWD</p></td>
-<td align="left"><p>Word の変換 (<strong>ax</strong>) を dword (<strong>dx</strong>:<strong>ax</strong>)。</p></td>
+<td align="left"><p>Word (<strong>ax</strong>) を dword (<strong>dx</strong>:<strong>ax</strong>) に変換します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>CWDE</p></td>
-<td align="left"><p>Word の変換 (<strong>ax</strong>) を dword (<strong>eax</strong>)。</p></td>
+<td align="left"><p>Word (<strong>ax</strong>) を dword (<strong>eax</strong>) に変換します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>CDQ</p></td>
-<td align="left"><p>dword を変換 (<strong>eax</strong>) には、qword (<strong>edx</strong>:<strong>eax</strong>)。</p></td>
+<td align="left"><p>dword (<strong>eax</strong>) を qword (<strong>edx</strong>:<strong>eax</strong>) に変換します。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-すべての変換では、符号拡張を実行します。
+すべての変換は、符号拡張を実行します。
 
-### <a name="span-idarithmetic_and_bit_manipulationspanspan-idarithmetic_and_bit_manipulationspanspan-idarithmetic_and_bit_manipulationspanarithmetic-and-bit-manipulation"></a><span id="Arithmetic_and_Bit_Manipulation"></span><span id="arithmetic_and_bit_manipulation"></span><span id="ARITHMETIC_AND_BIT_MANIPULATION"></span>算術演算子およびビット操作
+### <a name="span-idarithmetic_and_bit_manipulationspanspan-idarithmetic_and_bit_manipulationspanspan-idarithmetic_and_bit_manipulationspanarithmetic-and-bit-manipulation"></a><span id="Arithmetic_and_Bit_Manipulation"></span><span id="arithmetic_and_bit_manipulation"></span><span id="ARITHMETIC_AND_BIT_MANIPULATION"></span>算術演算とビット操作
 
-すべての算術演算子とビット操作命令では、フラグを変更します。
+すべての算術およびビット操作命令は、フラグを変更します。
 
-### <a name="span-idarithmeticspanspan-idarithmeticspanspan-idarithmeticspanarithmetic"></a><span id="Arithmetic"></span><span id="arithmetic"></span><span id="ARITHMETIC"></span>算術演算子
+### <a name="span-idarithmeticspanspan-idarithmeticspanspan-idarithmeticspanarithmetic"></a><span id="Arithmetic"></span><span id="arithmetic"></span><span id="ARITHMETIC"></span>数値
 
 <table>
 <colgroup>
@@ -270,17 +270,17 @@ pop ebp
 <td align="left"><p><strong><em></strong></p></td>
 <td align="left"><p>ADD</p></td>
 <td align="left"><p><strong>r1</strong>/m、 <strong>r2</strong>/m/#n</p></td>
-<td align="left"><p><strong>r1</strong>/m += <strong>r2</strong>/m/#n</p></td>
+<td align="left"><p><strong>r1</strong>/m + = <strong>r2</strong>/m/#n</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"><p>ADC</p></td>
 <td align="left"><p><strong>r1</strong>/m、 <strong>r2</strong>/m/#n</p></td>
-<td align="left"><p><strong>r1</strong>/m = <strong>r2</strong>/m/#n + 実行</p></td>
+<td align="left"><p><strong>r1</strong>/m + = <strong>r2</strong>/m/#n + キャリー</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong></em></strong></p></td>
-<td align="left"><p>SUB</p></td>
+<td align="left"><p>サブ</p></td>
 <td align="left"><p><strong>r1</strong>/m、 <strong>r2</strong>/m/#n</p></td>
 <td align="left"><p><strong>r1</strong>/m-= <strong>r2</strong>/m/#n</p></td>
 </tr>
@@ -288,38 +288,38 @@ pop ebp
 <td align="left"></td>
 <td align="left"><p>SBB</p></td>
 <td align="left"><p><strong>r1</strong>/m、 <strong>r2</strong>/m/#n</p></td>
-<td align="left"><p><strong>r1</strong>/m-= <strong>r2</strong>/m/#n + 実行</p></td>
+<td align="left"><p><strong>r1</strong>/m-= <strong>r2</strong>/m/#n + キャリー</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong><em></strong></p></td>
 <td align="left"><p>NEG</p></td>
 <td align="left"><p><strong>r1</strong>/m</p></td>
-<td align="left"><p><strong>r1</strong>/m = -<strong>r1</strong>/m</p></td>
+<td align="left"><p><strong>r1</strong>/m =-<strong>r1</strong>/m</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong></em></strong></p></td>
-<td align="left"><p>INC</p></td>
+<td align="left"><p>◇</p></td>
 <td align="left"><p><strong>r</strong>/m</p></td>
-<td align="left"><p><strong>r</strong>/m += 1</p></td>
+<td align="left"><p><strong>r</strong>/m + = 1</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong><em></strong></p></td>
-<td align="left"><p>12 月</p></td>
+<td align="left"><p>ALPHA</p></td>
 <td align="left"><p><strong>r</strong>/m</p></td>
-<td align="left"><p><strong>r</strong>/m -= 1</p></td>
+<td align="left"><p><strong>r</strong>/m-= 1</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong></em></strong></p></td>
 <td align="left"><p>CMP</p></td>
 <td align="left"><p><strong>r1</strong>/m、 <strong>r2</strong>/m/#n</p></td>
-<td align="left"><p>コンピューティング<strong>r1</strong>/m - <strong>r2</strong>/m/#n</p></td>
+<td align="left"><p>Compute <strong>r1</strong>/m- <strong>r2</strong>/m/#n</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-**Cmp**命令を減算し、結果では、フラグを設定しますが、すぐに結果をスローします。 条件文に続く通常**ジャンプ**減算の結果をテストする命令です。
+**Cmp**命令は減算を計算し、結果に従ってフラグを設定しますが、結果をスローします。 通常は、減算の結果をテストする条件付き**ジャンプ**命令が続きます。
 
 <table>
 <colgroup>
@@ -369,20 +369,20 @@ pop ebp
 <td align="left"><p><strong><em></strong></p></td>
 <td align="left"><p>IMUL</p></td>
 <td align="left"><p><strong>r1</strong>、 <strong>r2</strong>/m</p></td>
-<td align="left"><p><strong>r1</strong> *= <strong>r2</strong>/m</p></td>
+<td align="left"><p>r1 *= <strong>r2</strong>/m</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong></em></strong></p></td>
 <td align="left"><p>IMUL</p></td>
 <td align="left"><p><strong>r1</strong>、 <strong>r2</strong>/m、#n</p></td>
-<td align="left"><p><strong>r1</strong> = <strong>r2</strong>/m * #n</p></td>
+<td align="left"><p>r1 = <strong>r2</strong>/m * #n</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-符号なしと署名済みの乗算します。 乗算の後のフラグの状態は定義されません。
+符号なし乗算と符号付き乗算。 乗算後のフラグの状態は未定義です。
 
 <table>
 <colgroup>
@@ -408,7 +408,7 @@ pop ebp
 <td align="left"><p><strong><em></strong></p></td>
 <td align="left"><p>DIV</p></td>
 <td align="left"><p><strong>r</strong>/m32</p></td>
-<td align="left"><p>(<strong>edx</strong>、 <strong>eax</strong>) = <strong>edx</strong>:<strong>eax</strong> / <strong>r</strong>/m32</p></td>
+<td align="left"><p>(<strong>edx</strong>, <strong>eax</strong>) = <strong>edx</strong>:<strong>eax</strong> / <strong>r</strong>/m32</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -426,16 +426,16 @@ pop ebp
 <td align="left"><p><strong></em></strong></p></td>
 <td align="left"><p>IDIV</p></td>
 <td align="left"><p><strong>r</strong>/m32</p></td>
-<td align="left"><p>(<strong>edx</strong>、 <strong>eax</strong>) = <strong>edx</strong>:<strong>eax</strong> / <strong>r</strong>/m32</p></td>
+<td align="left"><p>(<strong>edx</strong>, <strong>eax</strong>) = <strong>edx</strong>:<strong>eax</strong> / <strong>r</strong>/m32</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-符号なしと署名済みの除算します。 擬似コードについては、最初の登録は、残りの部分を受け取り、2 つ目の商を受信します。 結果はオーバーフロー、変換先、除算のオーバーフロー例外が生成されます。
+符号なしおよび符号付き除算。 擬似コードの説明の最初のレジスタは余りを受け取り、2番目のレジスタは商を受け取ります。 結果が変換先をオーバーフローした場合、除算オーバーフロー例外が生成されます。
 
-除算の後のフラグの状態は定義されません。
+除算後のフラグの状態は未定義です。
 
 <table>
 <colgroup>
@@ -447,20 +447,20 @@ pop ebp
 <tbody>
 <tr class="odd">
 <td align="left"><p>*</p></td>
-<td align="left"><p>設定<em>cc</em></p></td>
+<td align="left"><p>[<em>Cc</em>の設定]</p></td>
 <td align="left"><p><strong>r</strong>/m8</p></td>
-<td align="left"><p>設定<strong>r</strong>/m8 を 0 または 1</p></td>
+<td align="left"><p><strong>R</strong>/m8 を0または1に設定します</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-場合、条件*cc*が true の場合、8 ビット値が 1 に設定します。 それ以外の場合、8 ビット値は 0 に設定されます。
+条件*cc*が true の場合は、8ビット値が1に設定されます。 それ以外の場合は、8ビットの値が0に設定されます。
 
-### <a name="span-idbinary-coded_decimalspanspan-idbinary-coded_decimalspanspan-idbinary-coded_decimalspanbinary-coded-decimal"></a><span id="Binary-coded_Decimal"></span><span id="binary-coded_decimal"></span><span id="BINARY-CODED_DECIMAL"></span>バイナリ コード化された 10 進数
+### <a name="span-idbinary-coded_decimalspanspan-idbinary-coded_decimalspanspan-idbinary-coded_decimalspanbinary-coded-decimal"></a><span id="Binary-coded_Decimal"></span><span id="binary-coded_decimal"></span><span id="BINARY-CODED_DECIMAL"></span>バイナリでコード化された10進数
 
-COBOL で記述されたコードをデバッグしていない場合に、次の手順を表示はされません。
+COBOL で記述されたコードをデバッグする場合を除き、これらの手順は表示されません。
 
 <table>
 <colgroup>
@@ -472,19 +472,19 @@ COBOL で記述されたコードをデバッグしていない場合に、次�
 <tr class="odd">
 <td align="left"></td>
 <td align="left"><p>DAA</p></td>
-<td align="left"><p>追加後に 10 進数を調整します。</p></td>
+<td align="left"><p>加算後の小数点の調整。</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
-<td align="left"><p>DAS</p></td>
-<td align="left"><p>減算後 10 進数を調整します。</p></td>
+<td align="left"><p>型</p></td>
+<td align="left"><p>減算後の小数点調整。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-これらの手順の調整、 **al**パックされたバイナリ コード化された 10 進操作の実行後に登録します。
+次の手順では、パックされたバイナリでエンコードされた10進数演算を実行した後に、 **al**レジスタを調整します。
 
 <table>
 <colgroup>
@@ -494,18 +494,18 @@ COBOL で記述されたコードをデバッグしていない場合に、次�
 <tbody>
 <tr class="odd">
 <td align="left"><p>AAA</p></td>
-<td align="left"><p>ASCII は、追加した後に調整します。</p></td>
+<td align="left"><p>加算後に ASCII で調整します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>AAS</p></td>
-<td align="left"><p>ASCII は、減算した後に調整します。</p></td>
+<td align="left"><p>減算後の ASCII を調整します。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-これらの手順の調整、 **al**アンパックされたバイナリ コード化された 10 進操作の実行後に登録します。
+これらの手順では、展開されたバイナリコード化された10進数演算を実行した後に**al**レジスタを調整します。
 
 <table>
 <colgroup>
@@ -515,20 +515,20 @@ COBOL で記述されたコードをデバッグしていない場合に、次�
 <tbody>
 <tr class="odd">
 <td align="left"><p>AAM</p></td>
-<td align="left"><p>ASCII は、乗算の後に調整します。</p></td>
+<td align="left"><p>乗算後に ASCII で調整します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>AAD</p></td>
-<td align="left"><p>ASCII は、除算した後に調整します。</p></td>
+<td align="left"><p>除算後に ASCII で調整します。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-これらの手順の調整、 **al**と**ah**アンパック バイナリ-コード化された 10 進数の操作を実行した後に登録します。
+これらの手順では、展開されたバイナリコード化された10進数演算を実行した後に**al**レジスタと**ah**レジスタを調整します。
 
-### <a name="span-idbitsspanspan-idbitsspanspan-idbitsspanbits"></a><span id="Bits"></span><span id="bits"></span><span id="BITS"></span>Bits
+### <a name="span-idbitsspanspan-idbitsspanspan-idbitsspanbits"></a><span id="Bits"></span><span id="bits"></span><span id="BITS"></span>列
 
 <table>
 <colgroup>
@@ -540,13 +540,13 @@ COBOL で記述されたコードをデバッグしていない場合に、次�
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong><em></strong></p></td>
-<td align="left"><p>および</p></td>
+<td align="left"><p>AND</p></td>
 <td align="left"><p><strong>r1</strong>/m、 <strong>r2</strong>/m/#n</p></td>
-<td align="left"><p><strong>r1</strong>/m = <strong>r1</strong>/m と<strong>r2</strong>/m/#n</p></td>
+<td align="left"><p><strong>r1</strong>/m = <strong>r1</strong>/m および<strong>r2</strong>/m/#n</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong></em></strong></p></td>
-<td align="left"><p>または</p></td>
+<td align="left"><p>スイッチまたは</p></td>
 <td align="left"><p><strong>r1</strong>/m、 <strong>r2</strong>/m/#n</p></td>
 <td align="left"><p><strong>r1</strong>/m = <strong>r1</strong>/m または<strong>r2</strong>/m/#n</p></td>
 </tr>
@@ -560,20 +560,20 @@ COBOL で記述されたコードをデバッグしていない場合に、次�
 <td align="left"><p><strong></em></strong></p></td>
 <td align="left"><p>NOT</p></td>
 <td align="left"><p><strong>r1</strong>/m</p></td>
-<td align="left"><p><strong>r1</strong>/m = ビットごと<strong>r1</strong>/m</p></td>
+<td align="left"><p><strong>r1</strong>/m = ビットごとの not <strong>r1</strong>/m</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>*</strong></p></td>
-<td align="left"><p>テスト</p></td>
+<td align="left"><p>TEST</p></td>
 <td align="left"><p><strong>r1</strong>/m、 <strong>r2</strong>/m/#n</p></td>
-<td align="left"><p>コンピューティング<strong>r1</strong>/m と<strong>r2</strong>/m/#n</p></td>
+<td align="left"><p>Compute <strong>r1</strong>/m および<strong>r2</strong>/m/#n</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-**テスト**命令論理 AND 演算子を計算し、結果では、フラグを設定しますが、すぐに結果をスローします。 論理 AND の結果をテストする条件付きのジャンプ命令に続く通常
+**テスト**命令は論理 AND 演算子を計算し、結果に従ってフラグを設定しますが、結果をスローします。 通常は、論理 AND の結果をテストする条件付きジャンプ命令が続きます。
 
 <table>
 <colgroup>
@@ -587,26 +587,26 @@ COBOL で記述されたコードをデバッグしていない場合に、次�
 <td align="left"><p><strong><em></strong></p></td>
 <td align="left"><p>SHL</p></td>
 <td align="left"><p><strong>r1</strong>/m、 <strong>cl</strong>/#n</p></td>
-<td align="left"><p><strong>r1</strong>/m &lt;&lt;= <strong>cl</strong>/#n</p></td>
+<td align="left"><p><strong>r1</strong>/m &lt; cl&lt;/#n = </p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong></em></strong></p></td>
 <td align="left"><p>SHR</p></td>
 <td align="left"><p><strong>r1</strong>/m、 <strong>cl</strong>/#n</p></td>
-<td align="left"><p><strong>r1</strong>/m &gt; &gt; =  <strong>cl</strong>/#n 0 埋め</p></td>
+<td align="left"><p><strong>r1</strong>/m &gt; cl&gt;/#n ゼロ-塗りつぶし = </p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>*</strong></p></td>
 <td align="left"><p>SAR</p></td>
 <td align="left"><p><strong>r1</strong>/m、 <strong>cl</strong>/#n</p></td>
-<td align="left"><p><strong>r1</strong>/m &gt; &gt; =  <strong>cl</strong>/#n 記号の塗りつぶし</p></td>
+<td align="left"><p><strong>r1</strong>/m &gt; cl&gt;/#n sign-fill = </p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-最後のビットをシフトは、キャリーに配置されます。
+最後にシフトしたビットは、キャリーに配置されます。
 
 <table>
 <colgroup>
@@ -620,14 +620,14 @@ COBOL で記述されたコードをデバッグしていない場合に、次�
 <td align="left"></td>
 <td align="left"><p>SHLD</p></td>
 <td align="left"><p><strong>r1</strong>、 <strong>r2</strong>/m、 <strong>cl</strong>/#n</p></td>
-<td align="left"><p>左ダブルをシフトします。</p></td>
+<td align="left"><p>左の double をシフトします。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-Shift キーを押し**r1**で左**cl**/\#の最上位ビットに n **r2**/m します。 最後のビットをシフトは、キャリーに配置されます。
+**R2**の最上位ビットを入力して、 **r1**を**cl**/\#n 別にシフトします。/m 最後にシフトしたビットは、キャリーに配置されます。
 
 <table>
 <colgroup>
@@ -639,14 +639,14 @@ Shift キーを押し**r1**で左**cl**/\#の最上位ビットに n **r2**/m �
 <tr class="odd">
 <td align="left"><p>SHRD</p></td>
 <td align="left"><p><strong>r1</strong>、 <strong>r2</strong>/m、 <strong>cl</strong>/#n</p></td>
-<td align="left"><p>倍精度浮動小数点右側にシフトします。</p></td>
+<td align="left"><p>Shift right double。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-Shift キーを押し**r1**右**cl**/\#の下位ビットに n **r2**/m。 最後のビットをシフトは、キャリーに配置されます。
+**R2**の最下位ビットを入力して、 **r1**を**cl**/\#n で右にシフトします。/m 最後にシフトしたビットは、キャリーに配置されます。
 
 <table>
 <colgroup>
@@ -658,29 +658,29 @@ Shift キーを押し**r1**右**cl**/\#の下位ビットに n **r2**/m。 最�
 <tr class="odd">
 <td align="left"><p>ROL</p></td>
 <td align="left"><p><strong>r1</strong>、 <strong>cl</strong>/#n</p></td>
-<td align="left"><p>回転<strong>r1</strong>で左<strong>cl</strong>/#n します。</p></td>
+<td align="left"><p><strong>R1</strong>を<strong>cl</strong>/#n で左に回転します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>権限が必要です。</p></td>
+<td align="left"><p>ROR</p></td>
 <td align="left"><p><strong>r1</strong>、 <strong>cl</strong>/#n</p></td>
-<td align="left"><p>回転<strong>r1</strong>右<strong>cl</strong>/#n します。</p></td>
+<td align="left"><p><strong>R1</strong>を<strong>cl</strong>/#n で右に回転します。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>RCL</p></td>
+<td align="left"><p>CRL</p></td>
 <td align="left"><p><strong>r1</strong>、 <strong>cl</strong>/#n</p></td>
-<td align="left"><p>回転<strong>r1</strong>/C 左<strong>cl</strong>/#n します。</p></td>
+<td align="left"><p><strong>R1</strong>/c を<strong>cl</strong>/#n で左に回転します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>RCR</p></td>
 <td align="left"><p><strong>r1</strong>、 <strong>cl</strong>/#n</p></td>
-<td align="left"><p>回転<strong>r1</strong>/C 右<strong>cl</strong>/#n します。</p></td>
+<td align="left"><p><strong>R1</strong>/c を<strong>cl</strong>/#n で右に回転します。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-回転は、受信の塗りつぶしのビットをシフトするビットが再び表示する点を除いて、シフトなどです。 回転の命令の C 言語のバージョンでは、回転に実行ビットを組み込みます。
+回転は、シフトされたビットが受信フィルビットとして再表示される点を除いて、シフトに似ています。 C 言語バージョンのローテーション命令では、回転にキャリービットが組み込まれています。
 
 <table>
 <colgroup>
@@ -692,17 +692,17 @@ Shift キーを押し**r1**右**cl**/\#の下位ビットに n **r2**/m。 最�
 <tr class="odd">
 <td align="left"><p>BT</p></td>
 <td align="left"><p><strong>r1</strong>、 <strong>r2</strong>/#n</p></td>
-<td align="left"><p>コピー ビット<strong>r2</strong>の/#n <strong>r1</strong>キャリーにします。</p></td>
+<td align="left"><p><strong>R1</strong>のビット<strong>r2</strong>/#n をキャリーにコピーします。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>BTS</p></td>
 <td align="left"><p><strong>r1</strong>、 <strong>r2</strong>/#n</p></td>
-<td align="left"><p>設定されたビット<strong>r2</strong>の/#n <strong>r1</strong>キャリーに前の値をコピーします。</p></td>
+<td align="left"><p><strong>R1</strong>のビット<strong>r2</strong>/#n を設定し、前の値をキャリーにコピーします。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>BTC</p></td>
 <td align="left"><p><strong>r1</strong>、 <strong>r2</strong>/#n</p></td>
-<td align="left"><p>クリア ビット<strong>r2</strong>の/#n <strong>r1</strong>キャリーに前の値をコピーします。</p></td>
+<td align="left"><p><strong>R1</strong>のビット<strong>r2</strong>/#n をクリアし、前の値をキャリーにコピーします。</p></td>
 </tr>
 </tbody>
 </table>
@@ -722,39 +722,39 @@ Shift キーを押し**r1**右**cl**/\#の下位ビットに n **r2**/m。 最�
 <tr class="odd">
 <td align="left"><p><strong><em></strong></p></td>
 <td align="left"><p>J<em>cc</em></p></td>
-<td align="left"><p>追加先</p></td>
-<td align="left"><p>条件付き分岐します。</p></td>
+<td align="left"><p>先</p></td>
+<td align="left"><p>分岐条件。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong></em></strong></p></td>
 <td align="left"><p>JMP</p></td>
-<td align="left"><p>追加先</p></td>
-<td align="left"><p>直接ジャンプします。</p></td>
+<td align="left"><p>先</p></td>
+<td align="left"><p>ジャンプダイレクト。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong><em></strong></p></td>
 <td align="left"><p>JMP</p></td>
 <td align="left"><p><strong>r</strong>/m</p></td>
-<td align="left"><p>間接的なジャンプします。</p></td>
+<td align="left"><p>間接的にジャンプします。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong></em></strong></p></td>
 <td align="left"><p>CALL</p></td>
-<td align="left"><p>追加先</p></td>
-<td align="left"><p>直接呼び出します。</p></td>
+<td align="left"><p>先</p></td>
+<td align="left"><p>Direct を呼び出します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>*</strong></p></td>
 <td align="left"><p>CALL</p></td>
 <td align="left"><p><strong>r</strong>/m</p></td>
-<td align="left"><p>間接的な呼び出しです。</p></td>
+<td align="left"><p>間接的に呼び出します。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-**呼び出す**命令は、戻り値のアドレスがスタックにプッシュし、先にジャンプします。
+**呼び出し**命令は、戻りアドレスをスタックにプッシュし、変換先にジャンプします。
 
 <table>
 <colgroup>
@@ -767,7 +767,7 @@ Shift キーを押し**r1**右**cl**/\#の下位ビットに n **r2**/m。 最�
 <tr class="odd">
 <td align="left"><p><strong>*</strong></p></td>
 <td align="left"><p>RET</p></td>
-<td align="left"><p><em>#n</em></p></td>
+<td align="left"><p><em>#非該当</em></p></td>
 <td align="left"><p>戻り値</p></td>
 </tr>
 </tbody>
@@ -775,7 +775,7 @@ Shift キーを押し**r1**右**cl**/\#の下位ビットに n **r2**/m。 最�
 
  
 
-**Ret**命令をポップし、スタックの戻り値のアドレスにジャンプします。 0 以外の場合、  *\#n*で、 **RET**命令が戻り値のアドレス値をポップアップ表示後に示す *\#n*スタックに追加する必要がありますポインター。
+**Ret**命令は、スタック上の戻りアドレスにポップし、ジャンプします。 **RET**命令内の0以外 *\#の n*は、戻りアドレスをポップした後、値 *\#n*をスタックポインターに追加する必要があることを示します。
 
 <table>
 <colgroup>
@@ -785,26 +785,26 @@ Shift キーを押し**r1**右**cl**/\#の下位ビットに n **r2**/m。 最�
 <tbody>
 <tr class="odd">
 <td align="left"><p>ループ</p></td>
-<td align="left"><p>デクリメント<strong>ecx</strong>と結果が 0 以外の場合にジャンプします。</p></td>
+<td align="left"><p><strong>Ecx</strong>をデクリメントし、result が0以外の場合はジャンプします。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>LOOPZ</p></td>
-<td align="left"><p>デクリメント<strong>ecx</strong>ジャンプする結果が 0 以外の場合と<strong>zr</strong>設定されました。</p></td>
+<td align="left"><p>結果が0以外で<strong>zr</strong>が設定されている場合、 <strong>ecx</strong>をデクリメントし、ジャンプします。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>LOOPNZ</p></td>
-<td align="left"><p>デクリメント<strong>ecx</strong>ジャンプする結果が 0 以外の場合と<strong>zr</strong>は明らかでした。</p></td>
+<td align="left"><p><strong>Ecx</strong>をデクリメントし、結果が0以外で<strong>zr</strong>が明確であった場合にジャンプします。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>JECXZ</p></td>
-<td align="left"><p>場合のジャンプ<strong>ecx</strong>は 0 です。</p></td>
+<td align="left"><p><strong>Ecx</strong>が0の場合は、ジャンプします。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-これらの手順は、最新のプロセッサで、x86 の CISC 遺産のゴミが長い方法を記述された同等の命令よりも実質的に遅くなります。
+これらの手順は x86's CISC の内容の残りの部分であり、最近のプロセッサでは、長い方法で記述された同等の命令よりも実際には遅くなります。
 
 ### <a name="span-idstring_manipulationspanspan-idstring_manipulationspanspan-idstring_manipulationspanstring-manipulation"></a><span id="String_Manipulation"></span><span id="string_manipulation"></span><span id="STRING_MANIPULATION"></span>文字列操作
 
@@ -818,42 +818,42 @@ Shift キーを押し**r1**右**cl**/\#の下位ビットに n **r2**/m。 最�
 <tr class="odd">
 <td align="left"><p><strong><em></strong></p></td>
 <td align="left"><p>MOVS<em>T</em></p></td>
-<td align="left"><p>移動<em>T</em>から<strong>esi</strong>に<strong>edi です。</strong></p></td>
+<td align="left"><p><em>T</em>を<strong>esi</strong>から edi に移動<strong>します。</strong></p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"><p>CMPS<em>T</em></p></td>
-<td align="left"><p>比較<em>T</em>から<strong>esi</strong>で<strong>edi です。</strong></p></td>
+<td align="left"><p><strong>Esi</strong>と edi<em>を</em>比較<strong>します。</strong></p></td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
-<td align="left"><p>SCA<em>T</em></p></td>
-<td align="left"><p>スキャン<em>T</em>から<strong>edi</strong> acc の<em>t です。</em></p></td>
+<td align="left"><p>SCAS<em>T</em></p></td>
+<td align="left"><p><strong>Edi</strong> for acc<em>をスキャン</em><em>します。</em></p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
-<td align="left"><p>LOD<em>T</em></p></td>
-<td align="left"><p>ロード<em>T</em>から<strong>esi</strong> acc に<em>t です。</em></p></td>
+<td align="left"><p>LODS<em>T</em></p></td>
+<td align="left"><p><strong>Esi</strong>から Acc に<em>t</em>を読み込み<em>ます。</em></p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong></em></strong></p></td>
 <td align="left"><p>STOS<em>T</em></p></td>
-<td align="left"><p>ストア<em>T</em>に<strong>edi</strong> acc から<em>t です。</em></p></td>
+<td align="left"><p>Acc から<strong>edi</strong>に<em>t</em>を格納<em>します。</em></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-操作を実行した後、ソースと宛先レジスタはインクリメントまたはデクリメント sizeof によって (*T*)、方向フラグ (上下) の設定に従ってします。
+操作を実行すると、方向フラグ (上または下) の設定に従って、ソースとターゲットのレジスタが sizeof (*T*) によってインクリメントまたはデクリメントされます。
 
-命令の先頭**REP**によって指定された時間数の操作を繰り返します、 **ecx**を登録します。
+この命令の前に、 **REP** **レジスタに**よって指定された回数だけ操作を繰り返すことができます。
 
-**Rep mov**命令を使用してメモリのブロックをコピーします。
+**Rep mov**命令は、メモリのブロックをコピーするために使用されます。
 
-**Rep stos**命令を使用してメモリ ブロックをアクセスで塗りつぶす*T*します。
+**Rep stos**命令は、メモリのブロックに acc を設定するために使用*されます*。
 
-### <a name="span-idflagsspanspan-idflagsspanspan-idflagsspanflags"></a><span id="Flags"></span><span id="flags"></span><span id="FLAGS"></span>フラグ
+### <a name="span-idflagsspanspan-idflagsspanspan-idflagsspanflags"></a><span id="Flags"></span><span id="flags"></span><span id="FLAGS"></span>示す
 
 <table>
 <colgroup>
@@ -863,34 +863,34 @@ Shift キーを押し**r1**右**cl**/\#の下位ビットに n **r2**/m。 最�
 <tbody>
 <tr class="odd">
 <td align="left"><p>LAHF</p></td>
-<td align="left"><p>ロード<strong>ah</strong>フラグから。</p></td>
+<td align="left"><p>フラグから<strong>ah</strong>を読み込みます。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>SAHF</p></td>
-<td align="left"><p>ストア<strong>ah</strong>フラグ。</p></td>
+<td align="left"><p><strong>Ah</strong>をフラグに格納します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>STC</p></td>
-<td align="left"><p>実行を設定します。</p></td>
+<td align="left"><p>キャリーを設定します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>CLC</p></td>
-<td align="left"><p>チェック ボックスをオフに設定します。</p></td>
+<td align="left"><p>キャリーをクリアします。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>CMC</p></td>
-<td align="left"><p>キャリーを補完します。</p></td>
+<td align="left"><p>補数のキャリー。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>STD</p></td>
-<td align="left"><p>方向を設定<em>ダウンします。</em></p></td>
+<td align="left"><p>商品</p></td>
+<td align="left"><p>方向を down に設定<em>します。</em></p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>CLD</p></td>
-<td align="left"><p>方向を設定<em>をします。</em></p></td>
+<td align="left"><p>方向を上に設定<em>します。</em></p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>STI</p></td>
+<td align="left"><p>飛行</p></td>
 <td align="left"><p>割り込みを有効にします。</p></td>
 </tr>
 <tr class="odd">
@@ -902,7 +902,7 @@ Shift キーを押し**r1**右**cl**/\#の下位ビットに n **r2**/m。 最�
 
  
 
-### <a name="span-idinterlocked_instructionsspanspan-idinterlocked_instructionsspanspan-idinterlocked_instructionsspaninterlocked-instructions"></a><span id="Interlocked_Instructions"></span><span id="interlocked_instructions"></span><span id="INTERLOCKED_INSTRUCTIONS"></span>インタロックされた手順
+### <a name="span-idinterlocked_instructionsspanspan-idinterlocked_instructionsspanspan-idinterlocked_instructionsspaninterlocked-instructions"></a><span id="Interlocked_Instructions"></span><span id="interlocked_instructions"></span><span id="INTERLOCKED_INSTRUCTIONS"></span>インタロック命令
 
 <table>
 <colgroup>
@@ -914,24 +914,24 @@ Shift キーを押し**r1**右**cl**/\#の下位ビットに n **r2**/m。 最�
 <tr class="odd">
 <td align="left"><p>XCHG</p></td>
 <td align="left"><p><strong>r1</strong>、 <strong>r</strong>/m</p></td>
-<td align="left"><p>スワップ<strong>r1</strong>と<strong>r</strong>/m します。</p></td>
+<td align="left"><p><strong>R1</strong>と<strong>r</strong>/m のスワップ</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>XADD</p></td>
 <td align="left"><p><strong>r1</strong>、 <strong>r</strong>/m</p></td>
-<td align="left"><p>追加<strong>r1</strong>に<strong>r</strong>、m に元の値を格納/<strong>r1。</strong></p></td>
+<td align="left"><p><strong>R1</strong>を<strong>r</strong>/m に追加し、元の値を r1 に配置し<strong>ます。</strong></p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>CMPXCHG</p></td>
 <td align="left"><p><strong>r1</strong>、 <strong>r</strong>/m</p></td>
-<td align="left"><p>比較および交換条件。</p></td>
+<td align="left"><p>条件を比較して交換します。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-**Cmpxchg**命令は、次のアトミック バージョン。
+**Cmpxchg**命令は、次のアトミックバージョンです。
 
 ```asm
    cmp     accT, r/m
@@ -943,7 +943,7 @@ match:
 done:
 ```
 
-### <a name="span-idmiscellaneousspanspan-idmiscellaneousspanspan-idmiscellaneousspanmiscellaneous"></a><span id="Miscellaneous"></span><span id="miscellaneous"></span><span id="MISCELLANEOUS"></span>その他
+### <a name="span-idmiscellaneousspanspan-idmiscellaneousspanspan-idmiscellaneousspanmiscellaneous"></a><span id="Miscellaneous"></span><span id="miscellaneous"></span><span id="MISCELLANEOUS"></span>な
 
 <table>
 <colgroup>
@@ -956,14 +956,14 @@ done:
 <tr class="odd">
 <td align="left"></td>
 <td align="left"><p>INT</p></td>
-<td align="left"><p>#n</p></td>
-<td align="left"><p>カーネルをトラップします。</p></td>
+<td align="left"><p>#非該当</p></td>
+<td align="left"><p>カーネルにトラップします。</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
-<td align="left"><p>バインドされています。</p></td>
+<td align="left"><p>バインディング</p></td>
 <td align="left"><p><strong>r</strong>、m</p></td>
-<td align="left"><p>場合のトラップ<strong>r</strong>範囲内にありません。</p></td>
+<td align="left"><p><strong>R</strong>が範囲内にない場合にトラップします。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>*</strong></p></td>
@@ -981,14 +981,14 @@ done:
 <td align="left"></td>
 <td align="left"><p>BSWAP</p></td>
 <td align="left"><p><strong>r</strong></p></td>
-<td align="left"><p>レジスタにバイト順をスワップします。</p></td>
+<td align="left"><p>レジスタにバイト順序をスワップします。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-ここでは、特殊なケース、 **int**命令。
+**Int**命令の特殊なケースを次に示します。
 
 <table>
 <colgroup>
@@ -1000,18 +1000,18 @@ done:
 <tr class="odd">
 <td align="left"><p>INT</p></td>
 <td align="left"><p>3</p></td>
-<td align="left"><p>デバッガーのブレークポイントのトラップ。</p></td>
+<td align="left"><p>デバッガーのブレークポイントトラップ。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-オペコード**INT 3** 0 xcc です。 オペコード**NOP** 0x90 します。
+**INT 3**のオペコードは0xcc です。 **NOP**のオペコードは0x90 です。
 
-コードをデバッグするときは、いくつかのコードを修正プログラムを適用する必要があります。 0x90 に問題が発生したバイトを置き換えることにより、これを行うことができます。
+コードをデバッグするときに、コードを修正することが必要になる場合があります。 これを行うには、問題のあるバイトを0x90 に置き換えます。
 
-### <a name="span-ididiomsspanspan-ididiomsspanspan-ididiomsspanidioms"></a><span id="Idioms"></span><span id="idioms"></span><span id="IDIOMS"></span>表現方法
+### <a name="span-ididiomsspanspan-ididiomsspanspan-ididiomsspanidioms"></a><span id="Idioms"></span><span id="idioms"></span><span id="IDIOMS"></span>表現
 
 <table>
 <colgroup>
@@ -1029,15 +1029,15 @@ done:
 </tr>
 <tr class="even">
 <td align="left"><p><strong></em></strong></p></td>
-<td align="left"><p>テスト</p></td>
+<td align="left"><p>TEST</p></td>
 <td align="left"><p><strong>r</strong>、 <strong>r</strong></p></td>
-<td align="left"><p>場合確認<strong>r</strong> = 0。</p></td>
+<td align="left"><p><strong>R</strong>が0かどうかを確認します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>*</strong></p></td>
 <td align="left"><p>ADD</p></td>
 <td align="left"><p><strong>r</strong>、 <strong>r</strong></p></td>
-<td align="left"><p>Shift キーを押し<strong>r</strong>を 1 つのままです。</p></td>
+<td align="left"><p><strong>R</strong>を1ずつ左にシフトします。</p></td>
 </tr>
 </tbody>
 </table>

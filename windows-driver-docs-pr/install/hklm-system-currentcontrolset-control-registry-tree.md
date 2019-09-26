@@ -1,34 +1,32 @@
 ---
 title: HKLM\SYSTEM\CurrentControlSet\Control レジストリ ツリー
-description: Hklm \system\currentcontrolset\control レジストリ ツリーには、システムの起動を制御する情報とデバイスの構成の一部の側面が含まれています。
+description: HKLM\SYSTEM\CurrentControlSet\Control レジストリツリーには、システムの起動およびデバイス構成のいくつかの側面を制御するための情報が含まれています。
 ms.assetid: 58eacd32-425d-4224-8d37-21e2caf124cf
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 28e40e0717c39243aec0df5c6e4b1ae7bc0efd97
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ff80b48420cf93804e9d7d1d3c345c4badbb2eb5
+ms.sourcegitcommit: e480dcfea893ef6c85b2dfb5827f51b740466262
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360596"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71278374"
 ---
-# <a name="hklmsystemcurrentcontrolsetcontrol-registry-tree"></a>HKLM\\システム\\CurrentControlSet\\レジストリ ツリーのコントロール
+# <a name="hklmsystemcurrentcontrolsetcontrol-registry-tree"></a>HKLM\\システム\\CurrentControlSet\\Control レジストリツリー
 
 
 
 
 
-**HKLM\\システム\\CurrentControlSet\\コントロール**レジストリ ツリーには、システムの起動とデバイスの構成の一部の側面を制御するための情報が含まれています。 次のサブキーは、特に重要なのです。
+**HKLM\\system\\CurrentControlSetControlレジストリツリーには、システムの起動およびデバイス構成のいくつかの側面を制御するための情報が含まれています。\\** 特に重要なサブキーは次のとおりです。
 
-<a href="" id="class"></a>**クラス**  
-に関する情報を含む、[デバイス セットアップ クラス](device-setup-classes.md)システムにします。 各クラスのセットアップ クラス GUID を使用してという名前のサブキーがあります。 各サブキーには、情報が含まれています。 セットアップ クラスの場合は、クラスなどインストーラー (存在する場合)、クラス上フィルター ドライバーでは、登録されていると低いフィルター ドライバーのクラスを登録します。
-
-クラスの各サブキーと呼ばれるその他のサブキーが含まれています。*ソフトウェア キー* (または、*ドライバー キー*) システムにインストールされているそのクラスの各デバイス インスタンス。 デバイス インスタンス ID、底が 10、4 桁の序数値を使用して、各ソフトウェア キーと呼びます。
+<a href="" id="class"></a>**講義**  
+システム上の[デバイスセットアップクラス](device-setup-classes.md)に関する情報が含まれています。 セットアップクラスの GUID を使用して名前が付けられた各クラスのサブキーがあります。 各サブキーには、クラスインストーラー (存在する場合)、登録されたクラスの上位フィルタードライバー、登録済みクラスの下位フィルタードライバーなどのセットアップクラスに関する情報が含まれています。
 
 <a href="" id="codeviceinstallers"></a>**CoDeviceInstallers**  
-システムに登録されているクラスに固有の共同インストーラーについて説明します。
+システムに登録されているクラス固有の共同インストーラーに関する情報を格納します。
 
-<a href="" id="deviceclasses"></a>**DeviceClasses**  
-システム上のデバイス インターフェイスに関する情報が含まれています。 各サブキーがある[デバイス インターフェイス クラス](device-interface-classes.md)とデバイスのインターフェイス クラスに登録されているインターフェイスのインスタンスごとにこれらのサブキーの下のエントリ。
+<a href="" id="deviceclasses"></a>**DeviceClasses 場合**  
+システム上のデバイスインターフェイスに関する情報を格納します。 各[デバイスインターフェイスクラス](device-interface-classes.md)にサブキーがあります。
 
  
 

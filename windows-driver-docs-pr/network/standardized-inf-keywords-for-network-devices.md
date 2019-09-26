@@ -4,12 +4,12 @@ description: ネットワーク デバイス用の標準化された INF キー�
 ms.assetid: F79AFB63-D404-4A5C-9515-82FFEB667048
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0955d1fcbfd631459e30e43380cc9dccccbc53fa
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6cf83131e0ab1b8b65a5268b27a71de74335c544
+ms.sourcegitcommit: 9dbb1ef59c3e797bfc3cc418dd2b9bdc44940d14
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378632"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71285090"
 ---
 # <a name="standardized-inf-keywords-for-network-devices"></a>ネットワーク デバイス用の標準化された INF キーワード
 
@@ -17,88 +17,88 @@ ms.locfileid: "67378632"
 
 
 
-このセクションでは、レジストリにある、INF ファイルで指定されている標準のキーワードに関する情報を提供します。 NDIS 6.0 および以降のバージョンの NDIS ミニポートのドライバーをネットワーク デバイスの標準化されたキーワードをサポートします。
+ここでは、レジストリに表示される標準化されたキーワードと、INF ファイルで指定されている情報について説明します。 Ndis 6.0 以降のバージョンの NDIS では、ネットワークデバイスのミニポートドライバーの標準化されたキーワードがサポートされています。
 
-標準化されたキーワードを提供します。
+標準化されたキーワードは次のとおりです。
 
--   エンドユーザーの標準化されたユーザー インターフェイスのプロパティです。
+-   エンドユーザー向けの標準化されたユーザーインターフェイスプロパティ。
 
--   複数のハードウェア製造元からデバイスを含むネットワークを簡単に構成するホーム ネットワーク ユーザーと大規模な企業の両方の権限です。
+-   ホームネットワークユーザーと大規模企業の両方が、複数のハードウェア製造元のデバイスを含むネットワークを簡単に構成できます。
 
--   プログラムですべて高度なネットワーク デバイスの機能をテストする機能。
+-   すべての高度なネットワークデバイス機能をプログラムによってテストする機能。
 
-次の標準の INF キーワード コネクションレスの NDIS 6.0 とそれ以降のミニポート ドライバーの必須のとおりです。
+次の標準 INF キーワードは、コネクションレス NDIS 6.0 およびそれ以降のミニポートドライバーに必須です。
 
 -   **\*IfType**
 
--   **\*メディアの種類**
+-   **\*MediaType**
 
 -   **\*PhysicalMediaType**
 
-NDIS ミニポート ドライバーの呼び出しません必須キーワードが、ドライバーの INF ファイルから不足している場合に、 [ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)関数。
+必須キーワードがドライバーの INF ファイルにない場合、NDIS はミニポートドライバーの[*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)関数を呼び出しません。
 
-次の両方に該当する場合は、標準化されたキーワードを NDIS 6.0 とそれ以降のミニポート ドライバーの必要があります。
+次の両方に該当する場合、NDIS 6.0 以降のミニポートドライバーには標準化されたキーワードが必要です。
 
--   INF 設定を公開する必要があります、**詳細**ユーザー インターフェイスのプロパティ ページ。
+-   INF 設定は、ユーザーインターフェイスの **[詳細**プロパティ] ページで公開する必要があります。
 
--   デバイスは、指定したプロパティを完全にサポートします。
+-   デバイスは、指定されたプロパティを完全にサポートしています。
 
-**注**  標準化されたキーワードは、省略可能ですが、NDIS 5.1 および以前の NDIS ミニポート ドライバーのことをお勧めします。
+**注標準化さ**れたキーワードは省略可能ですが、ndis 5.1 およびそれ以前の ndis ミニポートドライバーに推奨されます。  
 
  
 
-このセクションでは、ユーザー インターフェイスで公開されている INF キーワードを指定します。 ただし、ミニポート ドライバーでは、現在の構成設定を判断するために初期化中にレジストリ設定を読み取る必要があります。
+このセクションでは、ユーザーインターフェイスで公開されている INF キーワードを指定します。 ただし、ミニポートドライバーは、初期化中にレジストリ設定を読み取って、現在の構成設定を確認する必要があります。
 
-INF ファイル内では、これらのキーワードの定義は、高度なプロパティ ページの他の定義に配置されます。 高度なプロパティの詳細については、次を参照してください。[プロパティの詳細 ページの構成パラメーターを指定する](specifying-configuration-parameters-for-the-advanced-properties-page.md)します。
+INF ファイル内では、これらのキーワードの定義は、[詳細プロパティ] ページの他の定義と共に配置されます。 詳細プロパティの詳細については、「 [[詳細プロパティ] ページの構成パラメーターの指定](specifying-configuration-parameters-for-the-advanced-properties-page.md)」を参照してください。
 
-キーワードは、アスタリスクで始まるを標準化すべて (* *\\* * *)。 この名前付け規則では、標準名の名前を標準化を簡単に区別することができます。
+すべての標準化されたキーワード名は **\*** 、アスタリスク () で始まります。 この名前付け規則を使用すると、標準以外の名前から標準化された名前を簡単に区別できます。
 
-ユーザー インターフェイスで公開されているキーワードの標準化されたデータの 3 つの種類があります。
+ユーザーインターフェイスで公開される標準化されたキーワードデータには、次の3種類があります。
 
-<a href="" id="enum"></a>列挙型  
-ドロップダウン メニューに表示される一覧から選択できる値、**詳細**プロパティ ページ。
+<a href="" id="enum"></a>Enum  
+**[詳細**プロパティ] ページのドロップダウンメニューに表示される一覧から選択できる値。
 
-<a href="" id="int"></a>Int  
-数値を編集することができます。
+<a href="" id="int"></a>通り  
+編集できる数値。
 
-<a href="" id="edit"></a>編集します。  
-編集可能なテキスト値。
+<a href="" id="edit"></a>編集  
+編集できるテキスト値。
 
-次のトピックでは、すべてのネットワーク テクノロジに共通する標準化されたキーワードの説明のとおりです。
+次のトピックには、すべてのネットワークテクノロジに共通する標準化されたキーワードの説明が含まれています。
 
-[列挙型のキーワード](enumeration-keywords.md)
+[列挙型キーワード](enumeration-keywords.md)
 
-[編集可能なキーワード](keywords-that-can-be-edited.md)
+[編集できるキーワード](keywords-that-can-be-edited.md)
 
-[ユーザー インターフェイスに表示されないキーワード](keywords-not-displayed-in-the-user-interface.md)
+[ユーザーインターフェイスに表示されないキーワード](keywords-not-displayed-in-the-user-interface.md)
 
-さらに、ネットワーク テクノロジに固有の標準的なキーワードは、次のトピックについて説明します。
+また、次のトピックでは、ネットワークテクノロジに固有の標準化されたキーワードについて説明します。
 
-[フィルター ドライバーの INF ファイルの設定](inf-file-settings-for-filter-drivers.md)
+[フィルタードライバーの INF ファイル設定](inf-file-settings-for-filter-drivers.md)
 
-[NDKPI INF の要件](inf-requirements-for-ndkpi.md)
+[NDKPI の INF 要件](inf-requirements-for-ndkpi.md)
 
-[MB ミニポート ドライバーの INF の要件](mb-miniport-driver-inf-requirements.md)
+[MB ミニポートドライバー INF 要件](mb-miniport-driver-inf-requirements.md)
 
-[ヘッダー データの分割の標準化された INF キーワード](standardized-inf-keywords-for-header-data-split.md)
+[ヘッダーデータを分割するための標準化された INF キーワード](standardized-inf-keywords-for-header-data-split.md)
 
-[NDIS サービスの品質 (QoS) の標準化された INF キーワード](standardized-inf-keywords-for-ndis-qos.md)
+[NDIS Quality Service (QoS) の標準化された INF キーワード](standardized-inf-keywords-for-ndis-qos.md)
 
-[NDIS オプションを選択するための標準化された INF キーワードを中断します。](standardized-inf-keywords-for-ndis-selective-suspend.md)
+[NDIS 選択的中断の標準化された INF キーワード](standardized-inf-keywords-for-ndis-selective-suspend.md)
 
-[NVGRE タスク オフロード用の標準化された INF キーワード](standardized-inf-keywords-for-nvgre-task-offload.md)
+[NVGRE タスクオフロード用の標準化された INF キーワード](standardized-inf-keywords-for-nvgre-task-offload.md)
 
-[パケットの結合の標準化された INF キーワード](standardized-inf-keywords-for-packet-coalescing.md)
+[パケット合体用の標準化された INF キーワード](standardized-inf-keywords-for-packet-coalescing.md)
 
-[電源管理のための標準化された INF キーワード](standardized-inf-keywords-for-power-management.md)
+[電源管理用の標準化された INF キーワード](standardized-inf-keywords-for-power-management.md)
 
-[RSC の標準化された INF キーワード](standardized-inf-keywords-for-rsc.md)
+[RSC 用の標準化された INF キーワード](standardized-inf-keywords-for-rsc.md)
 
-[RSS の標準化された INF キーワード](standardized-inf-keywords-for-rss.md)
+[RSS 用の標準化された INF キーワード](standardized-inf-keywords-for-rss.md)
 
-[シングル ルート I/O 仮想化 (SR-IOV) の標準化された INF キーワード](standardized-inf-keywords-for-sr-iov.md)
+[シングルルート i/o 仮想化 (SR-IOV) 用の標準化された INF キーワード](standardized-inf-keywords-for-sr-iov.md)
 
-[仮想マシン キュー (VMQ) の標準化された INF キーワード](standardized-inf-keywords-for-vmq.md)
+[仮想マシンキュー用の標準化された INF キーワード (VMQ)](standardized-inf-keywords-for-vmq.md)
 
  
 

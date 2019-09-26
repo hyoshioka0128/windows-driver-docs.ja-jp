@@ -4,29 +4,29 @@ description: リムーバブル デバイス機能の概要
 ms.assetid: c6dfb2ac-89a5-40fd-ae9a-1f2800af9ef8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c65e92ad0b95132a95afeb3bb60f158cb4042c73
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 08f474224ee7849f3bde6bb24c3f2ee2460d8717
+ms.sourcegitcommit: 8d45beff38c5d3b695eadbf624b6726c797d9b97
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348746"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71271979"
 ---
 # <a name="overview-of-the-removable-device-capability"></a>リムーバブル デバイス機能の概要
 
 
-リムーバブル デバイスの機能が少し (**リムーバブル**) バス ドライバー設定されて、 **DEVICE_CAPABILITIES**)。
+リムーバブルデバイスの機能は、バスドライバーが**DEVICE_CAPABILITIES**に設定するビット (**リムーバブル**) です。
 
-Devnode とその子 devnode デバイス、物理的に削除できることをすべて切断、またはコンピューターの実行中に、その親 devnode から電源が入っていないときに、バス ドライバーは devnode のリムーバブル デバイスの機能を設定します。 通常、devnode は、最上位の devnode devnode トポロジ内である場合は、リムーバブルとしてマークする必要があります。
+バスドライバーは、コンピューターの実行中に、devnode とそのすべての子 devnodes が親 devnode から物理的に削除、切断、または切断できるデバイスを構成するときに、devnode のリムーバブルデバイス機能を設定します。 通常、devnode は、devnode トポロジで最上位の devnode である場合は、リムーバブルとしてマークする必要があります。
 
-Devnode をリムーバブル デバイスの機能を正しく設定することが重要です。 バス ドライバーでの列挙を devnode のコンテナーの ID を提供できない場合、プラグ アンド プレイ (PnP) マネージャーは、デバイスの列挙されたすべての devnode のコンテナー ID を生成するリムーバブル デバイスの機能を使用します。
+Devnode でリムーバブルデバイス機能を正しく設定することが重要です。 Devnode (PnP) マネージャープラグアンドプレイは、列挙しているのコンテナー ID を提供できない場合、リムーバブルデバイス機能を使用して、デバイス用に列挙されたすべての devnodes のコンテナー ID を生成します。
 
-たとえば、マウスなどの単一関数デバイスが USB 経由でコンピューターに接続されているとします。 ここでは、USB バス ドライバーは新しいデバイスが検出され、検出は USB ヒューマン インターフェイス デバイス (HID) とデバイスの USB HID devnode を作成します。 HID devnode もが検出された HID デバイス マウス HID 準拠のマウスの子 devnode を作成します。 この時点では、マウスがインストールされ、コンピューターの機能します。 新しい devnode の両方を使用して独立した*ドライバー スタック*します。
+たとえば、マウスなどの単一関数デバイスが USB 経由でコンピューターに接続されているとします。 この場合、USB バスドライバーは新しいデバイスを検出し、それが USB ヒューマンインターフェイスデバイス (HID) であることを検出して、デバイス用の USB HID devnode を作成します。 また、hid devnode は、hid デバイスがマウスであることを検出し、HID に準拠したマウスの子 devnode を作成します。 この時点で、マウスがインストールされ、コンピューター上で機能しています。 どちらの新しい devnodes も、独立した*ドライバースタック*を使用します。
 
-一般的な規則としては設定リムーバブルとその子 devnode の各である必要がありますにデバイスの最上位の (親) devnode リムーバブル、として設定する必要があります。 前の例では、USB バス ドライバーを設定、**リムーバブル**ビットを**TRUE** USB HID devnode、およびセットの**リムーバブル**ビットを**FALSE**子 HID 準拠のマウス devnode の。
+一般的な規則として、デバイスの最上位 (親) devnode はリムーバブルとして設定する必要がありますが、各子 devnodes をリムーバブルとして設定することはできません。 前の例では、usb バスドライバーによって USB HID devnode の**リムーバブル**ビットが**TRUE**に設定され、hid に準拠している子マウス devnode の**リムーバブル**ビットが**FALSE**に設定されています。
 
-次のデバイス マネージャーのスクリーン ショットでは、ジェネリックの USB マウス devnode トポロジを示していて、マウスのどの devnode がリムーバブルとマークされているを示します。
+次のデバイスマネージャースクリーンショットは、一般的な USB マウスの devnode トポロジを示しています。また、マウスの devnodes がリムーバブルとしてマークされていることを示しています。
 
-![usb マウス devnode トポロジを示すデバイス マネージャー ウィンドウのスクリーン ショット](images/containerid-2.png)
+![usb マウスの devnode トポロジを示すデバイスマネージャーウィンドウのスクリーンショット](images/containerid-2.png)
 
  
 
