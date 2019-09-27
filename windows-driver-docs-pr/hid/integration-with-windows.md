@@ -33,7 +33,7 @@ ms.locfileid: "63364638"
 
 1.  プロパティ シートの CLSID を作成する (これは、Microsoft Windows SDK に含まれています) GuidGen ツールを使用して (これに入力したものと同じ、 **ConfigCLSID**エントリが前に説明した)。 ただし、これは、デバイス固有のプロパティ シート GUID と、コード内と同じである必要があります。
 
-2.  下のレジストリに新しいキーを作成**マイ コンピューター\\HKEY\_クラス\_ルート\\CLSID** (そのようになります {この新しい GUID を使用してB9EA2BE1-E8E9-11D0-9880-00AA0044480F})。
+2.  下のレジストリに新しいキーを作成**コンピューター\\HKEY\_CLASSES\_ROOT\\CLSID** (そのようになります {この新しい GUID を使用してB9EA2BE1-E8E9-11D0-9880-00AA0044480F})。
 
 3.  という名前のサブキーを作成、そのキー内で**InProcHandler32**と**InProcServer32**します。
 
@@ -43,7 +43,7 @@ ms.locfileid: "63364638"
 
 **デバイスを登録します。**
 
-1.  レジストリ キーに**マイ コンピューター\\HKEY\_ローカル\_マシン\\システム\\CurrentControlSet\\コントロール\\MediaProperties\\PrivateProperties\\ジョイスティック\\OEM**デバイスのキーを入力します。 このキーを作成することをお勧めデバイス OEM の名前と同じ名前を付けます。
+1.  レジストリ キーに**コンピューター\\HKEY\_LOCAL\_MACHINE\\System\\CurrentControlSet\\control\\MediaProperties\\PrivateProperties\\Joystick\\OEM**デバイスのキーを入力します。 このキーを作成することをお勧めデバイス OEM の名前と同じ名前を付けます。
 
 2.  次のエントリを作成します。
 
