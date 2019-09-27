@@ -19,7 +19,7 @@ ms.locfileid: "63347767"
 
 GFlags、特定のイメージ ファイルに設定されているフラグが表示されますが、設定フラグが設定されているすべてのイメージ ファイルは表示されません。
 
-イメージのファイルを Windows はフラグを格納、 **GlobalFlag**次のレジストリ パスにイメージ ファイルの名前が付いたレジストリ サブキーのレジストリ エントリ**HKEY\_ローカル\_マシン\\ソフトウェア\\Microsoft\\ Windows NT\\ CurrentVersion\\ File Execution Options をイメージ\\*ImageFileName* \\GlobalFlag**します。
+イメージのファイルを Windows はフラグを格納、 **GlobalFlag**次のレジストリ パスにイメージ ファイルの名前が付いたレジストリ サブキーのレジストリ エントリ**HKEY\_LOCAL\_MACHINE\\ SOFTWARE\\ Microsoft\\ Windows NT\\ CurrentVersion\\ Image File Execution Options\\*ImageFileName*\\GlobalFlag** します。
 
 どのイメージを決定するには、は、ファイルには、Reg (reg.exe)、Windows Server 2003 に含まれるツールを使用して、フラグが設定されています。
 
