@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_SOUNDDETECTOR\_故障
-description: KSPROPERTY\_SOUNDDETECTOR\_腕プロパティは、検出機能の現在の arming 状態。
+title: KSPROPERTY\_のサウンド\_検出機能
+description: Ksproperty\_sounddetector\_の武装プロパティは、検出機能の現在の取り組ま状態です。
 ms.assetid: 3B9B43C0-31EE-4490-AD29-98DA81D1664F
 keywords:
-- KSPROPERTY_SOUNDDETECTOR_ARMED オーディオ デバイス
+- KSPROPERTY_SOUNDDETECTOR_ARMED オーディオデバイス
 topic_type:
 - apiref
 api_name:
@@ -12,21 +12,23 @@ api_location:
 - ksmedia.h
 api_type:
 - HeaderDef
-ms.date: 11/28/2017
+ms.date: 09/26/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: a1f813ee7335bf2b365ff7563d782c80067503b6
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: f886fb03fcc0ee56dd7b545932764023aa192d36
+ms.sourcegitcommit: 8295a2b59212972b0f7457a748cc904b5417ad67
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67391638"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71319926"
 ---
-# <a name="kspropertysounddetectorarmed"></a>KSPROPERTY\_SOUNDDETECTOR\_故障
+# <a name="ksproperty_sounddetector_armed"></a>KSPROPERTY\_のサウンド\_検出機能
 
 
-**KSPROPERTY\_SOUNDDETECTOR\_故障**プロパティは、検出機能の現在の arming 状態。
+**Ksproperty\_\_sounddetector の武装**プロパティは、検出機能の現在の取り組ま状態です。
 
-### <a name="span-idusagesummarytablespanspan-idusagesummarytablespanspan-idusagesummarytablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル
+### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table---kspropsetid_sounddetector"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル-KSPROPSETID_SoundDetector
+
+この使用状況テーブルは、 [KSPROPSETID_SoundDetector](kspropsetid-sounddetector.md)を使用\_して、ksproperty\_の sounddetector 機が呼び出されるタイミングをまとめたものです。
 
 <table>
 <colgroup>
@@ -39,16 +41,16 @@ ms.locfileid: "67391638"
 <thead>
 <tr class="header">
 <th align="left">取得</th>
-<th align="left">設定</th>
-<th align="left">対象</th>
+<th align="left">Set</th>
+<th align="left">移行先</th>
 <th align="left">プロパティ記述子の型</th>
 <th align="left">プロパティ値の型</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>〇</p></td>
-<td align="left"><p>〇</p></td>
+<td align="left"><p>はい</p></td>
+<td align="left"><p>はい</p></td>
 <td align="left"><p>フィルター</p></td>
 <td align="left"><p><a href="https://docs.microsoft.com/previous-versions/ff564262(v=vs.85)" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))"><strong>KSPROPERTY</strong></a></p></td>
 <td align="left"><p>BOOL</p></td>
@@ -56,29 +58,67 @@ ms.locfileid: "67391638"
 </tbody>
 </table>
 
- 
+[KSPROPSETID_SoundDetector](kspropsetid-sounddetector.md)によって呼び出された場合、ドライバーは次の場合にこの値を false にリセットします。
 
-### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
-
-プロパティの値は、arming、検出機能の状態を示すブール値です。
-
-<a name="remarks"></a>注釈
--------
-
-OS 設定との連携する場合は true、検出機能。
-
-ドライバーはこの場合に false にリセットします。
-
--   フィルター インターフェイスは無効です。
--   [ **KSPROPERTY\_SOUNDDETECTOR\_パターン**](ksproperty-sounddetector-patterns.md)プロパティを設定します。
+-   フィルターインターフェイスが無効になっています。
+-   [**Ksk プロパティ\_の sounddetector\_パターン**](ksproperty-sounddetector-patterns.md)プロパティが設定されています。
 -   キーワードが検出されました。
 
-キーワードのパターンが設定されていないときに、この true を設定 ([**KSPROPERTY\_SOUNDDETECTOR\_パターン**](ksproperty-sounddetector-patterns.md)が空) 影響を与えません。
-&gt; \[!注\]&gt;このプロパティが true の場合、その後設定[ **KSPROPERTY\_SOUNDDETECTOR\_パターン**](ksproperty-sounddetector-patterns.md)にこれが自動的にリセットfalse、上記のとおりです。
 
- 
+### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table---kspropsetid_sounddetector2"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル-KSPROPSETID_SoundDetector2
 
-<a name="requirements"></a>必要条件
+
+この使用状況テーブルは、 [KSPROPSETID_SoundDetector2](kspropsetid-sounddetector2.md)を使用\_して、ksproperty\_の sounddetector 機が呼び出されるタイミングをまとめたものです。
+
+<table>
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">取得</th>
+<th align="left">Set</th>
+<th align="left">移行先</th>
+<th align="left">プロパティ記述子の型</th>
+<th align="left">プロパティ値の型</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><p>はい</p></td>
+<td align="left"><p>はい</p></td>
+<td align="left"><p>Assert</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-kssounddetectorproperty" data-raw-source="[&lt;strong&gt;KSSOUNDDETECTORPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-kssounddetectorproperty"><strong>KSSOUNDDETECTORPROPERTY</strong></a></p></td>
+<td align="left"><p>BOOL</p></td>
+</tr>
+</tbody>
+</table>
+
+[KSPROPSETID_SoundDetector2](kspropsetid-sounddetector2.md)で呼び出された場合、キーワードが検出されても arm 状態はリセットされません。
+
+次の場合は false にリセットされます。
+- フィルターインターフェイスが無効になっています。
+- [**Ksk プロパティ\_の sounddetector\_パターン**](ksproperty-sounddetector-patterns.md)プロパティが設定されています
+
+
+### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
+
+プロパティ値は、検出機能の取り組ま状態を示すブール値です。
+
+<a name="remarks"></a>コメント
+-------
+
+OS は、検出機能を利用するためにこの true を設定します。
+
+キーワードパターンが設定されていないときにこの true を設定した場合 ([**ksk プロパティ\_\_sounddetector パターン**](ksproperty-sounddetector-patterns.md)が空の場合)、効果はありません。
+
+メモ:このプロパティが true の場合、前に説明したように、 [**ksk プロパティ\_の\_sounddetector パターン**](ksproperty-sounddetector-patterns.md)を設定すると、これが自動的に false にリセットされます。
+
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -102,19 +142,10 @@ OS 設定との連携する場合は true、検出機能。
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
-
-[**KSPROPERTY\_SOUNDDETECTOR\_パターン**](ksproperty-sounddetector-patterns.md)
+[**KSK プロパティ\_の SOUNDDETECTOR\_パターン**](ksproperty-sounddetector-patterns.md)
 
 [**KSPROPERTY**](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))
 
- 
-
- 
-
-
-
-
-
-
+[**KSSOUNDDETECTORPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-kssounddetectorproperty)

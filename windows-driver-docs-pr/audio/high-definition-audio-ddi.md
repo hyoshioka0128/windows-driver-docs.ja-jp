@@ -4,59 +4,59 @@ description: High Definition Audio DDI
 ms.assetid: d471777c-0002-4caa-a06e-c58e449b7678
 keywords:
 - HD オーディオ
-- 高精細 (HD) オーディオ
-- WDM オーディオ ドライバー WDK、HD オーディオ
-- オーディオ ドライバー WDK、HD オーディオ
-- Intel の高解像度オーディオ仕様
+- High Definition Audio (HD audio)
+- WDM オーディオドライバー WDK、HD オーディオ
+- オーディオドライバー WDK、HD オーディオ
+- Intel High Definition Audio 仕様
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3af5fb529b92c124066bf34bb246c64ce639a697
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 578a3b3c419359223b7be49dfec6a20a349c8716
+ms.sourcegitcommit: 8295a2b59212972b0f7457a748cc904b5417ad67
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67359963"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71319920"
 ---
 # <a name="high-definition-audio-ddi"></a>High Definition Audio DDI
 
 
-Windows Vista では、Microsoft はオペレーティング システムの一部として次の 2 つのドライバーを提供します。
+Windows Vista では、オペレーティングシステムの一部として次の2つのドライバーが提供されます。
 
--   Intel の高解像度オーディオ (HD オーディオ) バス インターフェイス コント ローラーを管理するためのバス ドライバー。
+-   Intel High Definition Audio (HD audio) バスインターフェイスコントローラーを管理するためのバスドライバー。
 
--   A[ユニバーサル オーディオ アーキテクチャ](universal-audio-architecture.md)UAA 準拠のオーディオ コーデック (または複数の可能性がある 1 つのコーデック) を管理するため (UAA) クラス ドライバー HD オーディオ コント ローラーに接続されています。
+-   HD オーディオコントローラーに接続されている UAA 準拠のオーディオコーデック (または、場合によっては複数のコーデック) を管理するための[ユニバーサルオーディオアーキテクチャ](universal-audio-architecture.md)(uaa) クラスドライバー。
 
-Microsoft も、開発と同様の HD オーディオ バス ドライバーと Windows Server 2003、および Windows XP を実行するシステムの UAA HD オーディオ クラス ドライバーをします。 HD オーディオ コント ローラーのアーキテクチャについてで Intel 高定義オーディオ仕様を参照して、 [Intel HD オーディオ](https://go.microsoft.com/fwlink/p/?linkid=42508)web サイト。 概要については microsoft の UAA、ホワイト ペーパー「ユニバーサル オーディオ アーキテクチャを参照してください、[オーディオ テクノロジ](https://go.microsoft.com/fwlink/p/?linkid=8751)web サイト。
+また、Windows Server 2003 および Windows XP を実行しているシステムについても、同様の HD オーディオバスドライバーと UAA HD オーディオクラスドライバーを開発します。 HD オーディオコントローラーアーキテクチャの詳細については、intel [HD audio](https://go.microsoft.com/fwlink/p/?linkid=42508) web サイトの「Intel High Definition audio Specification」を参照してください。 Microsoft の UAA の概要については、 [audio テクノロジ](https://go.microsoft.com/fwlink/p/?linkid=8751)web サイトの「ユニバーサルオーディオアーキテクチャ」というホワイトペーパーを参照してください。
 
-HD オーディオ バス ドライバーでは、オーディオとモデムのカーネル モード ドライバーが HD オーディオ コント ローラーに接続されているハードウェアのコーデックとの通信に使用する HD オーディオ デバイス ドライバー インターフェイス (DDI) を実装します。 HD オーディオ バス ドライバーでは、その子では、オーディオとモデムのドライバー、コーデックを管理するのインスタンスに HD オーディオ DDI を公開します。
+Hd オーディオバスドライバーは、hd audio device driver interface (DDI) を実装しています。これは、HD オーディオコントローラーに接続されているハードウェアコーデックとの通信に、カーネルモードのオーディオおよびモデムドライバーが使用します。 HD audio bus ドライバーは、その子に HD Audio DDI を公開します。これは、コーデックを管理するオーディオおよびモデムドライバーのインスタンスです。
 
-Windows Server 2003 および Windows XP で実行されている HD オーディオ バス ドライバーのバージョンには、HD オーディオ DDI の 3 つのバリエーションがサポートされています。
+Windows Server 2003 および Windows XP で実行されている HD オーディオバスドライバーのバージョンでは、3種類の HD audio DDI がサポートされています。
 
--   定義されている DDI、 [ **HDAUDIO\_BUS\_インターフェイス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/ns-hdaudio-_hdaudio_bus_interface)構造体。 この DDI は、Windows Vista では、HD オーディオ DDI と同じです。
+-   [**Hdaudio\_BUS\_インターフェイス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/ns-hdaudio-_hdaudio_bus_interface)構造によって定義される DDI。 この DDI は、Windows Vista の HD Audio DDI と同じです。
 
--   定義されている DDI、 [ **HDAUDIO\_BUS\_インターフェイス\_V2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/ns-hdaudio-_hdaudio_bus_interface_v2)構造体。 この DDI では、Windows Vista 以降のバージョンの Windows で使用できます。
+-   [**Hdaudio\_BUS\_INTERFACEV2構造体で定義されているDDI。\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/ns-hdaudio-_hdaudio_bus_interface_v2) この DDI は、Windows Vista 以降のバージョンの Windows で使用できます。
 
--   定義されている DDI、 [ **HDAUDIO\_BUS\_インターフェイス\_BDL** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/ns-hdaudio-_hdaudio_bus_interface_bdl)構造体。 この DDI では、Windows XP 以降のバージョンの Windows で使用できます。
+-   [**Hdaudio\_BUS\_インターフェイスのbdl構造によって定義されるDDI。\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/ns-hdaudio-_hdaudio_bus_interface_bdl) この DDI は、windows XP 以降のバージョンの Windows で使用できます。
 
-3 つの Ddi 間の相違点はマイナーとは、後ほど[の相違点の間、HD オーディオ DDI バージョン](differences-between-the-hd-audio-ddi-versions.md)します。
+3つの DDIs の違いは軽微であり、 [HD AUDIO DDI のバージョンの違い](differences-between-the-hd-audio-ddi-versions.md)について説明しています。
 
-Windows Vista では、HD オーディオ バス ドライバーは、HDAUDIO で定義されている DDI をサポートしています。\_BUS\_インターフェイスと、HDAUDIO\_BUS\_インターフェイス\_V2 構造体。
+Windows Vista では、HD オーディオバスドライバーは、hdaudio\_bus\_インターフェイスと hdaudio\_bus\_interface\_V2 構造体で定義されている DDI をサポートしています。
 
-UAA クラス ドライバーでは、Windows Vista、Windows Server 2003 および Windows XP、HDAUDIO によって定義された DDI を使用して\_BUS\_UAA 準拠のオーディオ コーデックを管理するインターフェイス構造体。 さらに、ハードウェア ベンダーは、これら Ddi の一方または両方を使用して、オーディオとモデムのコーデックを管理するカスタムのデバイス ドライバーを作成できます。
+Windows Vista、windows Server 2003、および windows XP では、uaa クラスドライバーは、hdaudio\_BUS\_インターフェイス構造によって定義された DDI を使用して、uaa 準拠のオーディオコーデックを管理します。 また、ハードウェアベンダーは、これらの DDIs のいずれかまたは両方を使用するカスタムデバイスドライバーを作成して、オーディオとモデムのコーデックを管理することもできます。
 
-ハードウェア ベンダーには、(パブリッシュ) する UAA ハードウェア要件のドキュメントに準拠するように、オーディオ コーデックを設計する必要があります。 仕入先からカスタム オーディオ ドライバーがない場合、ユーザーが、UAA 準拠のオーディオ コーデックを管理するシステム提供の UAA HD オーディオ クラス ドライバーで利用できます。 ただし、オーディオ コーデックには、仕入先のカスタム ドライバーを介してのみアクセス可能である専用の機能が含まれます。
+ハードウェアベンダーは、UAA ハードウェア要件ドキュメント (公開対象) に準拠するようにオーディオコーデックを設計する必要があります。 ベンダーのカスタムオーディオドライバーが存在しない場合、ユーザーは、システムによって提供される UAA HD オーディオクラスドライバーを利用して、UAA 準拠のオーディオコーデックを管理できます。 ただし、オーディオコーデックには、ベンダーのカスタムドライバーを通じてのみアクセスできる独自の機能が含まれている場合があります。
 
-このセクションでは、HD オーディオ DDI の両方のバージョンは、次の情報について説明します。
+このセクションでは、HD audio DDI の両方のバージョンに関する次の情報について説明します。
 
--   Intel の HD オーディオ アーキテクチャと Microsoft の UAA HD オーディオ クラス ドライバーの背景について説明します。
+-   Intel の HD オーディオアーキテクチャと Microsoft の UAA HD オーディオクラスドライバーの背景について説明します。
 
--   HD オーディオ DDI の両方のバージョンを使用して、オーディオとモデムのコーデックを制御するためのプログラミング ガイドライン。
+-   HD audio DDI の両方のバージョンを使用してオーディオとモデムのコーデックを制御するためのプログラミングガイドライン。
 
 このセクションの内容:
 
-[HD オーディオおよび UAA](hd-audio-and-uaa.md)
+[HD audio および UAA](hd-audio-and-uaa.md)
 
-[プログラミング ガイドライン](programming-guidelines.md)
+[HD audio DDI プログラミングガイドライン](programming-guidelines.md)
 
  
 

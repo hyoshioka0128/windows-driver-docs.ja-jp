@@ -2,14 +2,14 @@
 title: 複数の音声アシスタント
 description: 複数の音声アシスタントプラットフォームでは、Cortana 以外の追加の音声アシスタントがサポートされています。
 ms.assetid: 48a7e96b-58e8-4a49-b673-14036d4108d5
-ms.date: 09/23/2019
+ms.date: 09/26/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: a7ac8ab7ddea8c8b271bf3673d5d373d01981ab3
-ms.sourcegitcommit: 2aa583e3da4ae9338a0d11678bf77f1460286f2d
+ms.openlocfilehash: 264fc00e3c7ccde536037cf06f69c57b9cc31d1e
+ms.sourcegitcommit: 8295a2b59212972b0f7457a748cc904b5417ad67
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71215778"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71319918"
 ---
 # <a name="multiple-voice-assistant"></a>複数の音声アシスタント
 
@@ -93,7 +93,7 @@ AEC は、バーストオーディオがキャプチャされたときに DSP �
 
 **検査**
 
-[Voice Activation Manager 2 テスト](https://docs.microsoft.com/en-us/windows-hardware/test/hlk/testref/5119a80f-8aae-49bb-aa59-8eaa7e7b1fad)を使用して、KSPROPSETID_SoundDetector2 プロパティの HW サポートを検証します。
+[Voice Activation Manager 2 テスト](https://docs.microsoft.com/en-us/windows-hardware/test/hlk/testref/5119a80f-8aae-49bb-aa59-8eaa7e7b1fad)を使用して、 [KSPROPSETID_SOUNDDETECTOR2](kspropsetid-sounddetector2.md)プロパティの HW サポートを検証します。
 
 ## <a name="span-idsample_code_overviewspansample-code-overview"></a><span id="sample_code_overview"></span>サンプルコードの概要
 
@@ -119,23 +119,33 @@ SYSVAD サンプルオーディオドライバーの詳細については、「[
 
 ドライバーは、キャプチャデバイスの KS フィルターを通常どおりに公開します。 このフィルターでは、いくつかの KS プロパティと、検出イベントを構成、有効化、および通知するための KS イベントがサポートされています。 また、フィルターには、キーワードのスポット留め (KWS) pin として識別される追加の pin ファクトリも含まれています。 この pin は、キーワードのスポット留めからオーディオをストリーミングするために使用されます。
 
-プロパティは次のとおりです。**KSPROPSETID_SoundDetector2**
+プロパティは次のとおりです。[**KSPROPSETID_SoundDetector2**](kspropsetid-sounddetector2.md)
 
-すべての KSPROPSETID_SoundDetector2 プロパティは、KSSOUNDDETECTORPROPERTY データ構造体を使用して呼び出されます。 このデータ構造には、KSK プロパティと、設定、リセット、検出などを行うキーワードのイベント id が含まれています。
+すべての[**KSPROPSETID_SoundDetector2**](kspropsetid-sounddetector2.md)プロパティは、 [KSSOUNDDETECTORPROPERTY](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-kssounddetectorproperty)データ構造体を使用して呼び出されます。 このデータ構造には、KSK プロパティと、設定、リセット、検出などを行うキーワードのイベント id が含まれています。
 
 - サポートされているキーワードの種類- [**ksk プロパティ\_\_sounddetector パターン**](https://docs.microsoft.com/en-us/windows-hardware/drivers/audio/ksproperty-sounddetector)。 このプロパティは、検出されるキーワードを構成するためにオペレーティングシステムによって設定されます。
 -   キーワードパターン guid- [**ksk プロパティ\_\_sounddetector supportedpatterns**](https://docs.microsoft.com/en-us/windows-hardware/drivers/audio/ksproperty-sounddetector)の一覧。 このプロパティは、サポートされているパターンの種類を識別する Guid の一覧を取得するために使用されます。
 - 、 [**Ksproperty\_の sounddetector\_機**](https://docs.microsoft.com/en-us/windows-hardware/drivers/audio/ksproperty-sounddetector)がありません。 この読み取り/書き込みプロパティは、検出されたかどうかを示す単純なブール値です。 OS は、キーワード検出機能を利用するようにこれを設定します。 OS はこれをオフにしてオフにできます。 キーワードパターンが設定され、キーワードが検出された後に、ドライバーによって自動的にクリアされます。 (OS は rearm する必要があります)。
-- 一致結果- **ksk プロパティ\_sounddetector\_のリセット**は、起動時にサウンド検出機能をリセットするために使用されます。
+- 一致結果- [**ksk プロパティ\_sounddetector\_のリセット**](ksproperty-sounddetector-reset.md)は、起動時にサウンド検出機能をリセットするために使用されます。
 
 キーワード検出時には、KSNOTIFICATIONID_SoundDetector を含む PNP 通知が送信されます。 注: これは KSEvent ではなく、IoReportTargetDeviceChangeAsynchronous を介してペイロードと共に送信される PNP イベントです。
+
+KSNOTIFICATIONID_SoundDetector は、次に示すように、ksmedia. h で定義されています。
+
+```
+// The payload of this notification is a SOUNDDETECTOR_DETECTIONHEADER
+#define STATIC_KSNOTIFICATIONID_SoundDetector\
+    0x6389d844, 0xbb32, 0x4c4c, 0xa8, 0x2, 0xf4, 0xb4, 0xb7, 0x7a, 0xfe, 0xad
+DEFINE_GUIDSTRUCT("6389D844-BB32-4C4C-A802-F4B4B77AFEAD", KSNOTIFICATIONID_SoundDetector);
+#define KSNOTIFICATIONID_SoundDetector DEFINE_GUIDNAMED(KSNOTIFICATIONID_SoundDetector)
+```
 
 **操作のシーケンス**
 
 *システムの起動*
 
-1. OS は KSPROPERTY_SOUNDDETECTOR_RESET を送信して以前の検出状態をクリアし、すべての検出機能をリセットして以前のパターンセットをクリアします。
-2. OS は、イベント検出 OEM アダプターの clsid を取得するために KSPROPERTY_SOUNDDETECTOR_PATTERNS にクエリを行います。
+1. OS は、前の検出状態をクリアするために[**ksk プロパティ\_\_sounddetector リセット**](ksproperty-sounddetector-reset.md)を送信し、すべての検出機能をリセットして以前のパターンセットをクリアします。
+2. OS は、 [**ksproperty\_の\_sounddetector パターン**](https://docs.microsoft.com/en-us/windows-hardware/drivers/audio/ksproperty-sounddetector)を照会して、イベント検出機能の OEM アダプターの clsid を取得します。
 3. OS は、イベント検出機能の oem アダプターを使用して、サポートされているキーワードと言語の一覧を取得します。
 4. ドライバーによって送信されたカスタム PNP 通知を OS が登録する
 5. OS は、必要なキーワードパターンを設定します。

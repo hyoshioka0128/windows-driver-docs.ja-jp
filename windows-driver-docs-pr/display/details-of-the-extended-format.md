@@ -5,14 +5,14 @@ ms.assetid: e9cd2bc7-99c1-4aca-91b0-9faefa4a856d
 keywords:
 - Direct3D バージョン 10.1 WDK Windows 7 display、extended format
 - 拡張形式 WDK Windows 7 ディスプレイ
-ms.date: 09/10/2017
+ms.date: 09/10/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d7f6160b022c95b03bac0d0cc5ce04ddd4dc7df
-ms.sourcegitcommit: c2ffefe997a6d028864704c41d3d8e001e9622fa
+ms.openlocfilehash: 8d541aed1f35894a3cd71779babb17cf038a02fa
+ms.sourcegitcommit: 14a1868c1009fcbac5cf6dfeb844f4c712212f23
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71077225"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71317531"
 ---
 # <a name="details-of-the-extended-format"></a>拡張形式の詳細
 
@@ -24,17 +24,29 @@ ms.locfileid: "71077225"
 
 次の表は、拡張形式を使用する特定の属性を持つリソース (DXGI_FORMAT_ *) を示しています。これらの属性を持つリソースに対して、ハードウェアでこれらの拡張形式がサポートされている場合、またはこれらのリソースの拡張形式がオプションである場合に使用されます。 各形式の説明については、「 [DXGI_FORMAT](https://docs.microsoft.com/windows/win32/api/dxgiformat/ne-dxgiformat-dxgi_format) 」を参照してください。
 
+次の表の列キー:
+
+- **A**:DXGI_FORMAT_B8G8R8A8_TYPELESS
+- **B**:DXGI_FORMAT_B8G8R8A8_UNORM (既存)
+- **C**:DXGI_FORMAT_B8G8R8A8_UNORM_SRGB
+- **D**:DXGI_FORMAT_B8G8R8X8_TYPELESS
+- **E**:DXGI_FORMAT_B8G8R8X8_UNORM (既存)
+- **F**:DXGI_FORMAT_B8G8R8X8_UNORM_SRGB
+- **G**:DXGI_FORMAT_R10G10B10A2_TYPELESS
+- **H**:DXGI_FORMAT_R10G10B10_XR_BIAS_A2_UNORM
+
 <table>
 <head>
     <tr>
         <th>リソース属性</th>
-        <th>B8G8R8A8_TYPELESS</th>
-        <th>B8G8R8A8_UNORM (既存)</th>
-        <th>B8G8R8A8_UNORM_SRGB</th>
-        <th>B8G8R8X8_TYPELESS</th>
-        <th>B8G8R8X8_UNORM (既存)</th>
-        <th>B8G8R8X8_UNORM_SRGB</th>
-        <th>R10G10B10_XR_BIAS_A2_UNORM</th>
+        <th>A</th>
+        <th>B</th>
+        <th>c</th>
+        <th>D</th>
+        <th>E</th>
+        <th>F</th>
+        <th>G</th>
+        <th>H</th>
     </tr>
 </head>
 <body>

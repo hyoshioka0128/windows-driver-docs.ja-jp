@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_SOUNDDETECTOR\_SUPPORTEDPATTERNS
-description: KSPROPERTY\_SOUNDDETECTOR\_SUPPORTEDPATTERNS プロパティがサポートされているパターンの種類を識別する Guid の一覧を取得するために使用します。
+title: KSK プロパティ\_SOUNDDETECTOR\_SUPPORTEDPATTERNS
+description: サポートされ\_ている\_パターンの種類を識別する guid の一覧を取得するには、ksk プロパティの sounddetector supportedpatterns プロパティを使用します。
 ms.assetid: 8D840204-ADE8-4146-B88C-C0750B8FC33A
 keywords:
-- KSPROPERTY_SOUNDDETECTOR_SUPPORTEDPATTERNS オーディオ デバイス
+- KSPROPERTY_SOUNDDETECTOR_SUPPORTEDPATTERNS オーディオデバイス
 topic_type:
 - apiref
 api_name:
@@ -12,21 +12,22 @@ api_location:
 - ksmedia.h
 api_type:
 - HeaderDef
-ms.date: 11/28/2017
+ms.date: 09/25/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: e8fc2de9003a48f774512657b08d6de94efbef26
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: a66699736e788844a1becfa2b6e5d5a938ad0360
+ms.sourcegitcommit: 8295a2b59212972b0f7457a748cc904b5417ad67
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67391620"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71319917"
 ---
-# <a name="kspropertysounddetectorsupportedpatterns"></a>KSPROPERTY\_SOUNDDETECTOR\_SUPPORTEDPATTERNS
+# <a name="ksproperty_sounddetector_supportedpatterns"></a>KSK プロパティ\_SOUNDDETECTOR\_SUPPORTEDPATTERNS
 
+サポートされているパターンの種類を識別する guid の一覧を取得するには、 **ksk プロパティ\_の\_sounddetector supportedpatterns**プロパティを使用します。
 
-**KSPROPERTY\_SOUNDDETECTOR\_SUPPORTEDPATTERNS**プロパティがサポートされているパターンの種類を識別する Guid の一覧を取得するために使用します。
+### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table---kspropsetid_sounddetector"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル-KSPROPSETID_SoundDetector
 
-### <a name="span-idusagesummarytablespanspan-idusagesummarytablespanspan-idusagesummarytablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル
+この使用状況テーブルは、 [KSPROPSETID_SoundDetector](kspropsetid-sounddetector.md)を使用\_して、ksproperty\_の sounddetector 機が呼び出されるタイミングをまとめたものです。
 
 <table>
 <colgroup>
@@ -39,43 +40,73 @@ ms.locfileid: "67391620"
 <thead>
 <tr class="header">
 <th align="left">取得</th>
-<th align="left">設定</th>
-<th align="left">対象</th>
+<th align="left">Set</th>
+<th align="left">移行先</th>
 <th align="left">プロパティ記述子の型</th>
 <th align="left">プロパティ値の型</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>〇</p></td>
-<td align="left"><p>X</p></td>
-<td align="left"><p>フィルター</p></td>
+<td align="left"><p>はい</p></td>
+<td align="left"><p>いいえ</p></td>
+<td align="left"><p>Assert</p></td>
 <td align="left"><p><a href="https://docs.microsoft.com/previous-versions/ff564262(v=vs.85)" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))"><strong>KSPROPERTY</strong></a></p></td>
 <td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksmultiple_item" data-raw-source="[&lt;strong&gt;KSMULTIPLE_ITEM&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksmultiple_item)"><strong>KSMULTIPLE_ITEM</strong></a></p></td>
 </tr>
 </tbody>
 </table>
 
- 
+### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table---kspropsetid_sounddetector2"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル-KSPROPSETID_SoundDetector2
 
-### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
+この使用状況テーブルは、 [KSPROPSETID_SoundDetector2](kspropsetid-sounddetector2.md)を使用\_して、ksproperty\_の sounddetector 機が呼び出されるタイミングをまとめたものです。
 
-プロパティの値は、 [ **KSMULTIPLE\_項目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksmultiple_item)構造が続く一連の Guid。
+<table>
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">取得</th>
+<th align="left">Set</th>
+<th align="left">移行先</th>
+<th align="left">プロパティ記述子の型</th>
+<th align="left">プロパティ値の型</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><p>はい</p></td>
+<td align="left"><p>いいえ</p></td>
+<td align="left"><p>Assert</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-kssounddetectorproperty" data-raw-source="[&lt;strong&gt;KSSOUNDDETECTORPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-kssounddetectorproperty"><strong>KSSOUNDDETECTORPROPERTY</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksmultiple_item" data-raw-source="[&lt;strong&gt;KSMULTIPLE_ITEM&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksmultiple_item)"><strong>KSMULTIPLE_ITEM</strong></a></p></td>
+</tr>
+</tbody>
+</table>
 
-<a name="remarks"></a>注釈
+### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
+
+プロパティ値は、 [ **\_ksmultiple ITEM**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksmultiple_item)構造体の後に一連の guid が続きます。
+
+<a name="remarks"></a>コメント
 -------
 
-GUID のパターンでは、これらの特性があります。
+パターン GUID には、次の特性があります。
 
--   OEM が生成されます。
+- これは OEM によって生成されます。
 
--   オペレーティング システム クラス id (CLSID) として対応ドライバーと対話するのにために使用する OEM DLL COM クラスをインスタンス化に使用します。
+- オペレーティングシステムは、これをクラス識別子 (CLSID) として使用し、ドライバーとの対話に使用される、対応する OEM DLL COM クラスをインスタンス化します。
 
--   OEM で定義されたパターンのデータの形式を意味します。
+- これは、OEM によって定義されるパターンデータの形式を意味します。
 
--   OEM が定義されている結果のデータの形式を意味します。
+- これは、OEM によって定義された結果データの形式を意味します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -99,19 +130,9 @@ GUID のパターンでは、これらの特性があります。
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
 [**KSPROPERTY**](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))
 
 [**KSMULTIPLE\_項目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksmultiple_item)
-
- 
-
- 
-
-
-
-
-
-
