@@ -14,21 +14,21 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: a503ecbbc796f182b1915283f41368d9d7ef755e
-ms.sourcegitcommit: 424c435700d8f8a85bdaa83e8ddaab9568c8d347
+ms.sourcegitcommit: e7e5d959f4f6a23b3be46b6f7bdfc9da9bb08746
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/26/2019
+ms.lasthandoff: 09/30/2019
 ms.locfileid: "70025316"
 ---
-# <a name="bug-check-0x7e-system_thread_exception_not_handled"></a>バグ チェック 0x7E:システム\_スレッド\_の例外\_は処理されません\_
+# <a name="bug-check-0x7e-system_thread_exception_not_handled"></a>バグ チェック 0x7E:システム @ NO__T-0THREAD @ NO__T 例外 @ NO__T-2NOT @ NO__T-3HANDLED
 
 
-システム\_スレッド\_例外\_がハンドルされていませんバグチェックの値は0x0000007e です。\_ このバグチェックは、エラーハンドラーでキャッチされなかった例外がシステムスレッドによって生成されたことを示します。
+システムの @ no__t-0THREAD @ no__t-1EXCEPTION @ no__t-2NOT @ no__t-3HANDLED @ のバグチェックの値は0x0000007E です。 このバグチェックは、エラーハンドラーでキャッチされなかった例外がシステムスレッドによって生成されたことを示します。
 
 > [!IMPORTANT]
 > このトピックはプログラマーを対象としています。 コンピューターの使用中にブルースクリーンのエラーコードが表示された顧客の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://www.windows.com/stopcode)」を参照してください。
 
-## <a name="system_thread_exception_not_handled-parameters"></a>システム\_スレッド\_の例外\_が処理されていない\_パラメーター
+## <a name="system_thread_exception_not_handled-parameters"></a>システム @ no__t-0THREAD @ no__t 例外 @ no__t-2NOT @ no__t-3HANDLED されたパラメーター
 
 <table>
 <colgroup>
@@ -37,7 +37,7 @@ ms.locfileid: "70025316"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">引き</th>
+<th align="left">パラメーター</th>
 <th align="left">説明</th>
 </tr>
 </thead>
@@ -64,15 +64,15 @@ ms.locfileid: "70025316"
 <a name="cause"></a>原因
 -----
 
-システム\_スレッド\_例外\_"ハンドルされていません" バグチェックは、システムスレッドがエラーハンドラーでキャッチされなかった例外を生成したことを示します。\_ これを解釈するには、生成された例外を特定する必要があります。
+システムの @ no__t-0THREAD @ no__t-1EXCEPTION @ no__t-2NOT @ no__t-3HANDLED bug check は、システムスレッドがエラーハンドラーでキャッチされなかった例外を生成したことを示します。 これを解釈するには、生成された例外を特定する必要があります。
 
 一般的な例外コードは次のとおりです。
 
-- 0x80000002ステータス\_データ\_型の不整合は、整列されていないデータ参照が検出されたことを示します。
+- 0x80000002状態 @ no__t-0DATATYPE @ no__t-1MISALIGNMENT は、整列されていないデータ参照が検出されたことを示します。
 
-- 0x80000003:状態\_ブレークポイントは、システムにカーネルデバッガーがアタッチされていないときに、ブレークポイントまたはアサートが発生したことを示します。
+- 0x80000003:STATUS @ no__t-0BREAKPOINT ポイントは、カーネルデバッガーがシステムにアタッチされていないときに、ブレークポイントが検出されたことを示します。
 
-- 0XC0000005ステータス\_アクセス\_違反は、メモリアクセス違反が発生したことを示します。
+- 0XC0000005STATUS @ no__t-0ACCESS @ no__t-1VIOLATION は、メモリアクセス違反が発生したことを示します。
 
 例外コードの完全な一覧については、Microsoft Windows Driver Kit (WDK) の inc. のディレクトリにある Ntstatus ファイルを参照してください。
 
