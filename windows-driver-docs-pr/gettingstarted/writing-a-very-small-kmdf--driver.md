@@ -296,7 +296,7 @@ ms.locfileid: "67359288"
 
         **devcon install kmdfhelloworld.inf root\\kmdfhelloworld**
 
-        *devcon* が認識されないというエラー メッセージが表示された場合は、*devcon* ツールへのパスを追加してみてください。 たとえば、対象のコンピューター上の *C:\\Tools* という名前のフォルダーにコピーする場合は、次のコマンドを使ってみてください。
+        *devcon* が認識されないというエラー メッセージが表示された場合は、*devcon* ツールへのパスを追加してみてください。 たとえば、ターゲットコンピューター上の *C:\\Tools* という名前のフォルダーにコピーする場合は、次のコマンドを使ってみてください。
 
         **c:\\tools\\devcon install kmdfhelloworld.inf root\kmdfhelloworld**
 

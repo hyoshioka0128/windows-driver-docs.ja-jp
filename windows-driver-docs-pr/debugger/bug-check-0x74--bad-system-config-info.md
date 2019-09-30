@@ -14,21 +14,21 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: ea373249c79876070cc58c569e9a66295707e01d
-ms.sourcegitcommit: 424c435700d8f8a85bdaa83e8ddaab9568c8d347
+ms.sourcegitcommit: 667b4be765b2eac6bc586d39abef3393a718b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/26/2019
+ms.lasthandoff: 09/30/2019
 ms.locfileid: "70025324"
 ---
-# <a name="bug-check-0x74-bad_system_config_info"></a>バグ チェック 0x74:システム\_構成情報\_が正しくありません\_
+# <a name="bug-check-0x74-bad_system_config_info"></a>バグ チェック 0x74:不適切な @ NO__T-0SYSTEM @ NO__T-1CONFIG @ NO__T-2INFO
 
-不適切\_なシステム\_構成\_情報のバグチェックには、0x00000074 の値が設定されています。 このバグチェックは、レジストリにエラーがあることを示します。
+BAD @ no__t-0SYSTEM @ no__t-1CONFIG @ no__t-2INFO バグチェックには、0x00000074 という値が設定されています。 このバグチェックは、レジストリにエラーがあることを示します。
 
 > [!IMPORTANT]
 > このトピックはプログラマーを対象としています。 コンピューターの使用中にブルースクリーンのエラーコードが表示された顧客の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://www.windows.com/stopcode)」を参照してください。
 
 
-## <a name="bad_system_config_info-parameters"></a>システム\_構成情報\_の無効なパラメーター\_
+## <a name="bad_system_config_info-parameters"></a>不適切な @ no__t-0SYSTEM @ no__t-1CONFIG @ no__t-2INFO パラメーター
 
 
 <table>
@@ -38,7 +38,7 @@ ms.locfileid: "70025324"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">引き</th>
+<th align="left">パラメーター</th>
 <th align="left">説明</th>
 </tr>
 </thead>
@@ -67,7 +67,7 @@ ms.locfileid: "70025324"
 <a name="cause"></a>原因
 -----
 
-システムハイブ\_が\_破損\_している場合は、不適切なシステム構成情報のバグチェックが発生します。 ただし、この破損が発生する可能性はほとんどありません。これは、ブートローダーが hive の読み込み時にハイブが破損していることを確認するためです。
+不適切な @ no__t-0SYSTEM @ no__t-1CONFIG @ no__t-2INFO バグチェックは、システムハイブが破損している場合に発生します。 ただし、この破損が発生する可能性はほとんどありません。これは、ブートローダーが hive の読み込み時にハイブが破損していることを確認するためです。
 
 このバグチェックは、いくつかの重要なレジストリキーと値が不足している場合にも発生する可能性があります。 ユーザーが手動でレジストリを編集した場合、またはアプリケーションまたはサービスがレジストリを破損した場合、キーと値が欠落している可能性があります。
 
@@ -153,4 +153,4 @@ Index 5:     e9dd6ce5 kcb=ffffd805e4180e48 cell=00812970 f=00200000 \REGISTRY\MA
 
 詳細については、「 [Windows 10 の回復オプション](https://support.microsoft.com/help/12415/windows-10-recovery-options#)」を参照してください。
 
-このサポート記事では、次のバグチェックコードについて説明します。[エラー 0x74:Bad_system_config_info](https://support.microsoft.com/help/4028653/windows-error-0x74-badsystemconfiginfo)
+このサポート記事では、次のバグチェックコードについて説明します。[Error 0x74:Bad_system_config_info @ no__t-0

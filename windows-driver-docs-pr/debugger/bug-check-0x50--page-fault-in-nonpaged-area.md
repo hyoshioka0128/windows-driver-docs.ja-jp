@@ -14,22 +14,22 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: b046ff169db86578684c12ae37f4c8b106e18dba
-ms.sourcegitcommit: 424c435700d8f8a85bdaa83e8ddaab9568c8d347
+ms.sourcegitcommit: 667b4be765b2eac6bc586d39abef3393a718b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/26/2019
+ms.lasthandoff: 09/30/2019
 ms.locfileid: "70025327"
 ---
-# <a name="bug-check-0x50-page_fault_in_nonpaged_area"></a>バグ チェック 0x50:ページング\_\_\_される領域内のページフォールト\_
+# <a name="bug-check-0x50-page_fault_in_nonpaged_area"></a>バグ チェック 0x50:PAGE @ NO__T-0FAULT @ NO__T-2NONPAGED @ NO__T-3AREA
 
 
-\_ページング\_\_されていない領域のバグチェックのページフォールトの値は0x00000050です。\_ これは、無効なシステムメモリが参照されていることを示します。 通常、メモリアドレスが間違っているか、メモリアドレスが解放されたメモリを指しています。
+ページ @ no__t-0FAULT @ no__t-1-2NONPAGED @ no__t-3AREA bug check の値は0x00000050 です。 これは、無効なシステムメモリが参照されていることを示します。 通常、メモリアドレスが間違っているか、メモリアドレスが解放されたメモリを指しています。
 
 > [!IMPORTANT]
 > このトピックはプログラマーを対象としています。 コンピューターの使用中にブルースクリーンのエラーコードが表示された顧客の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://www.windows.com/stopcode)」を参照してください。
 
 
-## <a name="page_fault_in_nonpaged_area-parameters"></a>非\_\_\_ページ領域パラメーターのページフォールト\_
+## <a name="page_fault_in_nonpaged_area-parameters"></a>PAGE @ no__t-0FAULT @ no__t-2NONPAGED @ no__t-3AREA パラメーター
 
 
 <table>
@@ -39,7 +39,7 @@ ms.locfileid: "70025327"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">引き</th>
+<th align="left">パラメーター</th>
 <th align="left">説明</th>
 </tr>
 </thead>
@@ -51,7 +51,7 @@ ms.locfileid: "70025327"
 <tr class="even">
 <td align="left"><p>2</p></td>
 <td align="left">
-<p><i>Windows 1507 (TH1) バージョンの後-x64</i> </p>
+<p><i>Windows 1507 (TH1) バージョン-x64 </i> </p>
 <p><strong>0</strong>読み取り操作</p>
 <p><strong>2:</strong>書き込み操作</p>
 <p><strong>種類</strong>操作の実行</p>
@@ -86,7 +86,7 @@ ms.locfileid: "70025327"
 </table>
 
  
-エラーの原因となっているドライバーを識別できる場合は、その名前が青色の画面に出力され、メモリ内の場所\_(punicode 文字列) **KiBugCheckDriver**に格納されます。 デバッガーの dx コマンドを使用して、この- `dx KiBugCheckDriver`を表示できます。
+エラーの原因となっているドライバーを識別できる場合は、その名前が青色の画面に出力され、メモリ内の場所 (PUNICODE @ no__t-0STRING) **KiBugCheckDriver**に格納されます。 デバッガーの dx コマンドを使用して、この-`dx KiBugCheckDriver` を表示できます。
 
 <a name="cause"></a>原因
 -----
@@ -155,7 +155,7 @@ TRAP_FRAME:  fffff98112e8b3d0 -- (.trap 0xfffff98112e8b3d0)
 
  [**Kb (スタックバックトレースの表示)** ](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)などのデバッガーコマンドを使用して、エラーが発生しているコードを調査します。
 
-`lm t n`を使用して、メモリに読み込まれているモジュールの一覧を表示します。
+メモリに読み込まれているモジュールの一覧を表示するには、`lm t n` を使用します。
 
 パラメーター1とパラメーター3によって参照されるメモリ領域を調べるには、 [d、da、db、dc、dd、dd、df、dp、dq、du、dw (Display Memory)](d--da--db--dc--dd--dd--df--dp--dq--du--dw--dw--dyb--dyd--display-memor.md)コマンドを使用します。
 
@@ -200,7 +200,7 @@ fffff802`40d3230b c3              ret
 fffff802`40d3230c c3              ret
 ```
 
-指定`ub`されたアドレスから後方への逆アセンブルに使用します。
+指定されたアドレスから後方に `ub` を使用します。
 
 [ [R (レジスタ)](r--registers-.md) ] コマンドを使用して、システムバグがチェックされたときに実行された内容を確認します。 
 
@@ -219,11 +219,11 @@ nt!RtlSubtreePredecessor+0x9:
 fffff802`40d322f9 488b4810        mov     rcx,qword ptr [rax+10h] ds:ffffffff`00000090=????????????????
 ```
 
-この場合`fffff80240d322f9` 、は命令ポインターレジスタである rip です。
+この場合 `fffff80240d322f9` は、命令ポインターレジスタである rip です。
 
-`!pte` と`!pool`コマンドを使用して、メモリを調べることもできます。
+@No__t-0 および `!pool` コマンドを使用してメモリを調べることもできます。
 
-および`!memusage`を使用して、システムメモリの一般的な状態を確認します。 
+@No__t-0 およびを使用して、システムメモリの全般的な状態を確認します。 
 
 **ドライバーの検証ツール**
 

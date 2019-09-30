@@ -14,16 +14,16 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 12de66c44cafd8e06ceb3277510b447f94052a6a
-ms.sourcegitcommit: dff3834724bd5204c4a47204540fe8125dd37b20
+ms.sourcegitcommit: 667b4be765b2eac6bc586d39abef3393a718b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/09/2019
+ms.lasthandoff: 09/30/2019
 ms.locfileid: "70025332"
 ---
 # <a name="bug-check-0x1e-kmode_exception_not_handled"></a>バグ チェック 0x1E:KMODE\_EXCEPTION\_NOT\_HANDLED
 
 
-Kmode\_例外\_がハンドル\_されていませんバグチェックの値は0x0000001e です。 これは、カーネルモードプログラムが、エラーハンドラーがキャッチしなかった例外を生成したことを示します。
+KMODE @ no__t-0EXCEPTION @ no__t-1NOT @ no__t-2HANDLED バグチェックの値は0x0000001E です。 これは、カーネルモードプログラムが、エラーハンドラーがキャッチしなかった例外を生成したことを示します。
 
 > [!IMPORTANT]
 > このトピックはプログラマーを対象としています。 コンピューターの使用中にブルースクリーンのエラーコードが表示された顧客の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://www.windows.com/stopcode)」を参照してください。
@@ -141,7 +141,7 @@ Kmode\_例外\_がハンドル\_されていませんバグチェックの値は
 
 4.  **Cxr**コマンドを実行した後、 **kb**コマンドを使用して、コンテキストレコード情報に基づくスタックトレースを表示します。 このスタックトレースは、未処理の例外が発生した呼び出し履歴を示します。
 
-**注:**   この手順では、 **NT!PspUnhandledExceptionInSystemThread**。 ただし、場合によっては (アクセス違反のクラッシュなど)、これを行うことはできません。 その場合は、次のようにし**ます。KiDispatchException**。 この関数に渡される3番目のパラメーターは、トラップフレームアドレスです。 このアドレスと共に、[**トラップ (トラップフレームの表示)** ](-trap--display-trap-frame-.md)コマンドを使用して、レジスタコンテキストを適切な値に設定します。 その後、スタックトレースを実行し、他のコマンドを発行できます。
+**注**  this 手順では、 **NT!PspUnhandledExceptionInSystemThread**。 ただし、場合によっては (アクセス違反のクラッシュなど)、これを行うことはできません。 その場合は、次のようにし**ます。KiDispatchException**。 この関数に渡される3番目のパラメーターは、トラップフレームアドレスです。 このアドレスと共に、[**トラップ (トラップフレームの表示)** ](-trap--display-trap-frame-.md)コマンドを使用して、レジスタコンテキストを適切な値に設定します。 その後、スタックトレースを実行し、他のコマンドを発行できます。
 
  
 
