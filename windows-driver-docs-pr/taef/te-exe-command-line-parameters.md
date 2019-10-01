@@ -4,12 +4,12 @@ description: Te.exe のコマンド オプション
 ms.assetid: E9A9292D-FA30-410d-9322-BD0F321314F9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d71cb48a3e99edfaba7a03abc0704f544d3d5ff
-ms.sourcegitcommit: 2aa583e3da4ae9338a0d11678bf77f1460286f2d
+ms.openlocfilehash: ffa356f4be919e6615888f064b727de299c74a36
+ms.sourcegitcommit: 645e42f3d8c59e249247d101d63681093f6522ee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "68415096"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71705403"
 ---
 # <a name="teexe-command-options"></a>Te.exe のコマンド オプション
 
@@ -53,7 +53,7 @@ TE でのコンソールの使用を構成するためのオプションを提�
 
 プライマリモニターの隅を基準とした、コンソールウィンドウの位置 (ピクセル単位) を設定します。 **[現在]** の値を使用して、再起動から再開するときに現在のコンソールの位置を保存して使用するように指定します。
 
-#### <a name="consolesize-ltxygt--current-"></a>/console: size =\[ &lt;x、y&gt; | current\]
+#### <a name="consolesize-xy--current-"></a>/console: size =\[ \<x、y\> | current\]
 
 コンソールウィンドウのサイズを文字単位で設定します。 必要に応じて、ウィンドウのサイズに合わせて画面バッファーサイズが増加します。 Current**の値**を使用して、再起動から再開するときに現在のコンソールサイズを格納して使用することを指定します。
 
@@ -270,11 +270,7 @@ te .dll/runas: 昇格された\*
 
 各テストバイナリからテストを選択するときに使用する選択条件。 選択条件は、次の1つ以上で構成されます。
 
-@\[プロパティ名\]\]の値\[を文字列プロパティ名
-@の値&gt;として float または integer として指定\]  = \[\[ = \]\[\] floatまた&lt;は整数&gt; のプロパティ\]名としてのプロパティ名の値\]
-@ 
-@ \[\[ = 
-@ floatまた&lt;は integer 型\]の\[プロパティ名\]値と\[しての値\[\]
+@ @ no__t-1property name @ no__t-2 @ no__t @ no__t-4value as string @ no__t-5 @ no__t-6 @ no__t-7property name @ no__t-8 &gt; @ no__t-10 @ no__t-11 値を float または整数として @ no__t @ @ no__t-14property name @ no__t-15 \[6 7value as float または整数 @ no__t @ no__t @ no__t-20property name @ no__t-21 \]2 @ no__t-23 @ no__t-24 値を float または整数として-23 @ no__t-25 @ no__t-26 @ no__t-27property name @ no__t-28 9  = 0value を float または整数 @ no__t-31
 
 * *文字列としてのプロパティ値は、単一引用符で囲む必要があります。*
 * *複合選択条件は、"and"、"or"、および "not" を使用して指定できます (大文字と小文字は区別されません)。*
