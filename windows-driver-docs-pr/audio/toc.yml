@@ -254,12 +254,15 @@
               href: uaa-class-drivers.md
             - name: 動詞を HD オーディオ コーデックとやり取りする
               href: communicating-verbs-with-the-hd-audio-codec.md
-        - name: プログラミング ガイド
+        - name: HD オーディオ DDI のプログラミング ガイドライン
+          href: programming-guidelines.md
           items:
             - name: プログラミング ガイド
               href: programming-guidelines.md
             - name: HD オーディオ DDI バージョン間の相違点
               href: differences-between-the-hd-audio-ddi-versions.md
+            - name: オーディオ リソースの再調整と予期しない削除操作中におけるメモリ バッファーの管理
+              href: managing-memory-buffers-rebalance.md
             - name: 同期および非同期のコーデック コマンド
               href: synchronous-and-asynchronous-codec-commands.md
             - name: ウォール クロックとリンク位置のレジスタ
@@ -862,6 +865,8 @@
           href: kspropsetid-rtaudio.md
         - name: KSPROPSETID_SoundDetector
           href: kspropsetid-sounddetector.md
+        - name: KSPROPSETID_SoundDetector2
+          href: kspropsetid-sounddetector2.md
         - name: KSPROPSETID_Synth
           href: kspropsetid-synth.md
         - name: KSPROPSETID_SynthClock
@@ -1386,6 +1391,10 @@
           href: ksproperty-sounddetector-matchresult.md
         - name: KSPROPERTY_SOUNDDETECTOR_PATTERNS
           href: ksproperty-sounddetector-patterns.md
+        - name: KSPROPERTY_SOUNDDETECTOR_RESET
+          href: ksproperty-sounddetector-reset.md
+        - name: KSPROPERTY_SOUNDDETECTOR_STREAMINGSUPPORT
+          href: ksproperty-sounddetector-streamingsupport.md
         - name: KSPROPERTY_SOUNDDETECTOR_SUPPORTEDPATTERNS
           href: ksproperty-sounddetector-supportedpatterns.md
         - name: KSPROPERTY_SYSAUDIO_ATTACH_VIRTUAL_SOURCE

@@ -4,18 +4,18 @@ description: この測定値は、AudioSrv.dll または AudioDG.exe でオー�
 ms.topic: article
 ms.date: 05/20/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: f8cd5ab85577f712b70c5e94bc56417e83e7d040
-ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
+ms.openlocfilehash: a9d5f541d94cef56203f0080513258cbe9aba7e0
+ms.sourcegitcommit: 9f6f7d9e327ac3bd34643d8b062e11958a0fe05f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71017024"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71195757"
 ---
 # <a name="percent-of-machines-with-at-least-one-audio-hang"></a>少なくとも 1 つのオーディオ ハングが発生したマシンの割合
 
 ## <a name="description"></a>説明
 
-この測定値は、"*Windows オーディオ サービス (AudioSrv.dll)* " と "*オーディオ デバイス グラフ (AudioDG.exe)* " という 2 つのサービスを監視して、どちらかのサービスでハングが発生したかどうかを確認するものです。 オーディオがハングすると、オーディオ プラットフォームがユーザー アプリケーションに応答しなくなります。
+[オーディオの測定値](audio-measures.md)については「オーディオ ユーザーモードの信頼性」を参照してください
 
 ## <a name="measure-attributes"></a>測定値の属性
 

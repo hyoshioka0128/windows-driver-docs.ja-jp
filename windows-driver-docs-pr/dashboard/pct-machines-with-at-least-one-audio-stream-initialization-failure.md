@@ -4,18 +4,18 @@ description: この測定値は、予期しない初期化エラーが少なく�
 ms.topic: article
 ms.date: 05/20/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: db9677894f98ff32778f79ff78307f61940dfaf3
-ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
+ms.openlocfilehash: 1c67e56efcc044c7aebe7840a450581a233daa7f
+ms.sourcegitcommit: 9f6f7d9e327ac3bd34643d8b062e11958a0fe05f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71017019"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71195763"
 ---
 # <a name="percent-of-machines-with-at-least-one-audio-stream-initialization-failure"></a>少なくとも 1 つのオーディオ ストリーム初期化エラーが発生したマシンの割合
 
 ## <a name="description"></a>説明
 
-デバイスがオーディオ ストリームを初期化できない場合、ユーザーはアプリケーションのオーディオ エクスペリエンスにアクセスできません。 この測定値は、オーディオ デバイスがストリームを初期化できなかったマシンの割合を計算したものです。
+[オーディオの測定値](audio-measures.md)の「オーディオ ストリームの初期化」セクションを参照してください
 
 ## <a name="measure-attributes"></a>測定値の属性
 
