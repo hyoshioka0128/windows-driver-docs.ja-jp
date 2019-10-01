@@ -14,22 +14,22 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 5a3f803e82c3a2320c8ca2dd6829f863d260f29e
-ms.sourcegitcommit: 424c435700d8f8a85bdaa83e8ddaab9568c8d347
+ms.sourcegitcommit: 645e42f3d8c59e249247d101d63681093f6522ee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70025331"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71705405"
 ---
-# <a name="bug-check-0x3b-system_service_exception"></a>バグ チェック 0x3B:システム\_サービス\_の例外
+# <a name="bug-check-0x3b-system_service_exception"></a>バグ チェック 0x3B:SYSTEM @ NO__T-0SERVICE @ NO__T-1 例外
 
 
-システム\_サービス\_の例外のバグチェックの値は0x0000003b です。 これは、特権のないコードから特権コードに遷移するルーチンの実行中に例外が発生したことを示します。
+システムの @ no__t-0SERVICE @ no__t 例外チェックの値は0x0000003B です。 これは、特権のないコードから特権コードに遷移するルーチンの実行中に例外が発生したことを示します。
 
 > [!IMPORTANT]
 > このトピックはプログラマーを対象としています。 コンピューターの使用中にブルースクリーンのエラーコードが表示された顧客の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://www.windows.com/stopcode)」を参照してください。
 
 
-## <a name="system_service_exception-parameters"></a>システム\_サービス\_の例外パラメーター
+## <a name="system_service_exception-parameters"></a>SYSTEM @ no__t-0SERVICE @ no__t-1 例外パラメーター
 
 
 <table>
@@ -39,7 +39,7 @@ ms.locfileid: "70025331"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">引き</th>
+<th align="left">パラメーター</th>
 <th align="left">説明</th>
 </tr>
 </thead>
@@ -74,11 +74,11 @@ Stop コードは、実行中のコードに例外があり、その下にある
 
 一般的な例外コードは次のとおりです。
 
-- 0x80000003:ステータス\_ブレークポイント
+- 0x80000003:STATUS\_BREAKPOINT
 
 カーネルデバッガーがシステムにアタッチされていないときに、ブレークポイントまたはアサートが発生しました。
 
-- 0XC0000005ステータス\_アクセス\_違反
+- 0XC0000005STATUS\_ACCESS\_VIOLATION
 
 メモリアクセス違反が発生しました。 (バグチェックのパラメーター4は、ドライバーがアクセスしようとしたアドレスです)。
 
@@ -109,7 +109,7 @@ Arg4: 0000000000000000, zero.
 
 [WinDbg を使用したカーネルモードのダンプファイルの分析](analyzing-a-kernel-mode-dump-file-with-windbg.md)
 
-エラーの原因となっているドライバーを識別できる場合、その名前は青い画面に出力され、メモリ内の場所 (punicode\_文字列) **KiBugCheckDriver**に格納されます。 デバッガーの[**dx (Display Debugger Object Model Expression)** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/dx--display-visualizer-variables-)コマンドを使用して、この- `dx KiBugCheckDriver`を表示できます。
+エラーを処理しているドライバーを識別できる場合は、その名前が青色の画面に出力され、メモリ内の場所 (PUNICODE @ no__t-0STRING) **KiBugCheckDriver**に格納されます。 デバッガーの[**dx (Display Debugger Object Model Expression)** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/dx--display-visualizer-variables-)コマンドを使用して、この-`dx KiBugCheckDriver` を表示できます。
 
 パラメーター1の例外コードに関する情報を表示するには、 [! error](-error.md)拡張機能を使用します。
 
@@ -120,9 +120,9 @@ Error code: (NTSTATUS) 0xc0000005 (3221225477) - The instruction at 0x%p referen
 
 エラーが発生したときに実行されていたことに関する手掛かりについては、スタックテキストを参照してください。 複数のダンプファイルが使用可能な場合は、情報を比較して、スタック内の共通コードを探します。 [**Kb (スタックバックトレースの表示)** ](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)などのデバッガーコマンドを使用して、エラーが発生しているコードを調査します。
 
-`lm t n`を使用して、メモリに読み込まれているモジュールの一覧を表示します。 
+メモリに読み込まれているモジュールの一覧を表示するには、`lm t n` を使用します。 
 
-および`!memusage`を使用して、システムメモリの一般的な状態を確認します。 `!pte` および`!pool`コマンドを使用して、メモリの特定の領域を調べることもできます。 
+@No__t-0 およびを使用して、システムメモリの全般的な状態を確認します。 @No__t-0 および `!pool` コマンドを使用して、メモリの特定の領域を調べることもできます。 
 
 以前は、このエラーは過剰なページングプールの使用に関連付けられており、ユーザーモードのグラフィックドライバーが過剰なデータをカーネルコードに渡すことによって発生する可能性があります。 この問題が発生していると思われる場合は、ドライバーの検証ツールのプールオプションを使用して、追加情報を収集します。
 
