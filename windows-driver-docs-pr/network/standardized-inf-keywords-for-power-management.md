@@ -4,12 +4,12 @@ description: 電源管理用の標準化された INF キーワード
 ms.assetid: bec8dd96-f64a-40eb-ade9-73c9a66a756e
 ms.date: 08/01/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 204e218590a8a6706f9dba7a2d004d8b0fcf62c2
-ms.sourcegitcommit: 2aa583e3da4ae9338a0d11678bf77f1460286f2d
+ms.openlocfilehash: ec32cac72955b92fecc9db9cd96c5306a4826e4c
+ms.sourcegitcommit: e2e4746c0efe082296c18de7ab14a1901e2eda9d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "70063904"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71716938"
 ---
 # <a name="standardized-inf-keywords-for-power-management"></a>電源管理用の標準化された INF キーワード
 
@@ -23,11 +23,11 @@ ms.locfileid: "70063904"
 <a href="" id="-wakeonmagicpacket"></a> **\*WakeOnMagicPacket**  
 デバイスが*マジックパケット*を受信したときにコンピューターをスリープ解除するようにデバイスを有効にするかどうかを示す値。 (*マジックパケット*とは、受信側のネットワークアダプターのイーサネットアドレスの連続した16個のコピーを含むパケットです)。
 
-<a href="" id="-modernstandbywolmagicpacket"></a> **\*ModernStandyWoLMagicPacket**  
+<a href="" id="-modernstandbywolmagicpacket"></a> **\*ModernStandbyWoLMagicPacket**  
 デバイスが*マジックパケット*を受信し、システムが*S0ix*の電源状態であるときに、コンピューターのスリープを解除するためにデバイスを有効にする必要があるかどうかを示す値。 システムが*S4*の電源状態にある場合は、この設定は適用されません。
 
 > [!NOTE]
-> ModernStandyWoLMagicPacket は、NDIS 6.60 以降、または Windows 10 バージョン1607以降でサポートされています。  **\***
+> **\*ModernStandbyWoLMagicPacket**は、NDIS 6.60 以降、または Windows 10 バージョン1607以降でサポートされています。
 
 <a href="" id="-devicesleepondisconnect"></a> **\*DeviceSleepOnDisconnect**  
 メディアが切断されたときにデバイスを低電力状態 (スリープ状態) にするようにデバイスを有効にするかどうかを示す値。メディアが再び接続されている場合は、デバイスを電力の状態 (ウェイク状態) に戻す必要があります。
@@ -96,7 +96,7 @@ SubkeyName に関連付けられている表示テキスト。
 <td align="left"><p>有効</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong></em>ModernStandyWoLMagicPacket</strong></p></td>
+<td align="left"><p><strong></em>ModernStandbyWoLMagicPacket</strong></p></td>
 <td align="left"><p>システムが<i>S0ix</i>の電源状態にあるときのマジックパケットの Wake on</p></td>
 <td align="left"><p>0 (既定値)</p></td>
 <td align="left"><p>Disabled</p></td>
