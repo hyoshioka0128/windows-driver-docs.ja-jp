@@ -2,104 +2,88 @@
 title: 仮想プロビジョニング
 description: 仮想プロビジョニング
 ms.assetid: 0D65DDCC-D207-4EA8-B5D6-56DF57221EE3
-ms.date: 04/20/2017
+ms.date: 10/04/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 51beda233bada2573181343ee359a17f8c4f3c53
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6ec9e06dee020367291cb7207452f1b640a6e561
+ms.sourcegitcommit: c23a403b3ebea05bde96067b678a318ca9b0cabe
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340910"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71939091"
 ---
 # <a name="thin-provisioning"></a>仮想プロビジョニング
 
+## <a name="overview"></a>概要
 
-## <a name="span-idoverviewspanspan-idoverviewspanspan-idoverviewspanoverview"></a><span id="Overview"></span><span id="overview"></span><span id="OVERVIEW"></span>概要
+仮想プロビジョニングは、ジャストインタイムの割り当てを提供するエンドツーエンドのストレージプロビジョニングソリューションです。 ホストとクライアントアプリケーションで記憶域の展開と実行を計画する必要があります。 Windows Server の仮想プロビジョニング機能は、シンプロビジョニング対応の記憶域とホストサーバー間のインターフェイスとして機能します。 仮想プロビジョニングの特徴としては、仮想プロビジョニング論理ユニット (LUN) の識別、しきい値の通知、リソース枯渇のハンドル、可用性が高くスケーラブルな記憶域プロビジョニングサービスをエンドユーザーに提供するための領域の解放などがあります。
 
+## <a name="thin-provisioning-lun-identification"></a>仮想プロビジョニング LUN Id
 
-仮想プロビジョニングとは、エンド ツー エンドのストレージ ソリューションをプロビジョニングします。 これは、ホストとクライアント アプリケーションでストレージのデプロイと実行の計画が必要です。 Windows Server のシン プロビジョニング機能は、シン プロビジョニング対応記憶域と、ホスト サーバー間のインターフェイスとして機能します。 シン プロビジョニング機能には、シン プロビジョニング論理ユニット (LUN) の識別、しきい値通知、リソースの枯渇のハンドルとエンドユーザーにサービスをプロビジョニングするスケーラブルな高可用性の記憶域を提供するための領域の解放が含まれます。
+Windows server では、Windows Server 2012 以降の仮想プロビジョニング Lun を識別するために、T10 SCSI Block Command 3 (SBC3) の標準仕様を採用しています。 Windows Server では、最初のターゲットデバイスの列挙中に、すべてのプロパティパラメーターがターゲットデバイスから収集されます。 Windows Server によって、プロビジョニングの種類と、マップ解除とトリムの機能が識別されます。 ストレージデバイスは、SBC3 仕様に従って、プロビジョニングの種類とマッピング解除およびトリミング機能を報告します。
 
-## <a name="span-idthinprovisioninglunidentificationspanspan-idthinprovisioninglunidentificationspanspan-idthinprovisioninglunidentificationspanthin-provisioning-lun-identification"></a><span id="Thin_Provisioning_LUN_Identification"></span><span id="thin_provisioning_lun_identification"></span><span id="THIN_PROVISIONING_LUN_IDENTIFICATION"></span>シン プロビジョニング LUN の識別
+記憶装置が現在の機能を正確に報告していない場合は、デバイスの互換性の問題が発生する可能性があります。 たとえば、ストレージデバイスが、マップ解除コマンドをサポートしているが、マップ解除コマンドをサポートしていないことを報告した場合、ディスクフォーマットのハングの問題が発生する可能性があります。 プロビジョニングの種類の情報が正確である場合、記憶域スタックは、記憶域のプロビジョニングの種類に応じて、より適切な i/o 処理を提供できます。
 
+## <a name="run-time-provisioning-type-or-lun-capacity-changes"></a>実行時のプロビジョニングの種類または LUN の容量の変更
 
-Windows Server では、Windows Server 2012 以降でシン プロビジョニングの Lun を識別するための T10 SCSI ブロック コマンド 3 (SBC3) 標準仕様を採用しています。 初期ターゲット デバイスの列挙中には、Windows Server は、ターゲット デバイスからすべてのプロパティのパラメーターを収集します。 Windows Server では、プロビジョニングの種類および UNMAP とトリミング機能を識別します。 記憶域デバイスでは、そのプロビジョニングの種類とマッピング解除と SBC3 仕様によるトリミング機能を報告します。
+記憶域管理者は、プロビジョニングの種類または LUN の容量を変更する場合があります。 プロビジョニングの種類または LUN の容量が変更された場合、ストレージアレイは、sense データが要求されたときに正しい情報を返す、ユニットのアテンションを意味する条件を生成します。 Windows Server によってシステムイベントがログに記録され、プロビジョニングの種類または LUN の容量の変化がシステム管理者に通知されます。
 
-ストレージ デバイスがその現在の機能を正確に報告しない場合、デバイスの互換性の問題は発生します。 たとえば、ストレージ デバイスを報告しますマッピング解除コマンドをサポートして UNMAP のコマンドは、サポートしていませんが、ディスク形式のハング問題が発生します。 プロビジョニングの種類の情報が正確で、記憶域スタックが優れた I/O が記憶域のプロビジョニングの種類に従って処理を提供できます。
+## <a name="threshold-and-resource-exhaustion-handles"></a>しきい値とリソース枯渇ハンドル
 
-## <a name="span-idrun-timeprovisioningtypeorluncapacitychangesspanspan-idrun-timeprovisioningtypeorluncapacitychangesspanspan-idrun-timeprovisioningtypeorluncapacitychangesspanrun-time-provisioning-type-or-lun-capacity-changes"></a><span id="Run-time_Provisioning_Type_or_LUN_Capacity_Changes"></span><span id="run-time_provisioning_type_or_lun_capacity_changes"></span><span id="RUN-TIME_PROVISIONING_TYPE_OR_LUN_CAPACITY_CHANGES"></span>実行時プロビジョニングの種類または LUN の容量の変更
+通常、シンプロビジョニング LUN は、LUN のサイズよりも物理ディスク領域が少なくなるように作成されます。 しきい値の通知は、ホストおよびクライアントアプリケーションに記憶域スペースの消費状態を通知するために必要な機能です。 ほとんどの仮想プロビジョニングストレージアレイは、しきい値に達したときにイベントを報告しません。 これらのシンプロビジョニング記憶域ソリューションは、独自の記憶域管理ユーティリティを使用して、しきい値の通知を解決します。 そのため、ホストとクライアントアプリケーションの場合、これらの記憶域配列が報告する唯一のイベントは永続的なリソース枯渇です。 シンプロビジョニングのストレージデバイスでは、しきい値通知ハンドル、一時的なリソース枯渇ハンドル、または永続的なリソース枯渇ハンドルを使用して、記憶域スペースの使用量が近づいている場合にシステム管理者またはクライアントアプリケーションに警告を出します。capacity.
 
+### <a name="thin-provisioning-threshold-notification"></a>仮想プロビジョニングのしきい値の通知
 
-記憶域管理者には、プロビジョニングの種類または LUN の容量を変更できます。 プロビジョニングの種類または LUN の容量を変更すると、記憶域配列をセンス データが要求されたときに、正しい情報を返すユニットの注意の意味条件が発生します。 Windows Server では、プロビジョニングの種類または LUN の容量の変更のシステム管理者に警告をシステム イベントを記録します。
+記憶域管理ユーティリティは、仮想プロビジョニングのしきい値を設定します。 Windows Server は、記憶域管理ユーティリティによって設定されたしきい値を上書きしません。 仮想プロビジョニング LUN の場合、記憶域管理者は、記憶域の平均使用率に応じてしきい値を指定する必要があります。 書き込みコマンドが記憶域ターゲットデバイスによって設定されたしきい値を超えた場合、ターゲットデバイスは、sense data を使用してコマンドを終了し、"シンプロビジョニングソフトしきい値に達しました" というメッセージを送信します。 Windows Server が一致する sense データを受信すると、次のようになります。
 
-## <a name="span-idthresholdandresourceexhaustionhandlesspanspan-idthresholdandresourceexhaustionhandlesspanspan-idthresholdandresourceexhaustionhandlesspanthreshold-and-resource-exhaustion-handles"></a><span id="Threshold_and_Resource_Exhaustion_Handles_"></span><span id="threshold_and_resource_exhaustion_handles_"></span><span id="THRESHOLD_AND_RESOURCE_EXHAUSTION_HANDLES_"></span>しきい値とリソース枯渇のハンドル
+- システムイベントは、ホスト管理者に、LUN デバイスのリソース使用率または可用性のしきい値に達したことを警告するために記録されます。
+- システムイベントログには、ターゲットデバイスのログページから、使用済みおよび使用可能なマップ済みリソースに関する情報が報告されます。 これを行うには、Windows Server でシステムイベントを生成するために、論理ブロックのプロビジョニングのログページの仕様が記憶域配列でサポートされている必要があります。
+- 終了したコマンドは再試行されます。
 
+> [!NOTE]
+> FILE_FLAG_WRITE_THROUGH が設定されていない場合、永続的なリソース枯渇状態がトリガーされる可能性があるため、このエラーが記録された後に送信される書き込みコマンドは失われる可能性があります。
 
-シン プロビジョニング LUN は、通常、LUN のサイズよりも少ない物理ディスク領域が作成されます。 しきい値通知は、必要なストレージ領域の消費状態のホストとクライアント アプリケーションのアラートを生成する関数です。 シン プロビジョニング ストレージ アレイの多くは、しきい値に達したときにイベントを報告しません。 これらのシン プロビジョニング記憶域ソリューションでは、その独自のストレージ管理ユーティリティを使ってしきい値通知を解決します。 そのため、ホストとクライアント アプリケーションで、これらの記憶域配列のレポートに永続的なリソース枯渇がある唯一のイベントです。 シン プロビジョニング ストレージ デバイスが一時的リソース枯渇のハンドル、しきい値通知ハンドルを使用したり、アラート システム管理者または記憶域スペースの消費量と、クライアント アプリケーションに永続的なリソース枯渇のハンドルに近づいています容量。
+### <a name="temporary-resource-exhaustion"></a>一時的なリソース枯渇
 
-### <a name="span-idthinprovisioningthresholdnotificationspanspan-idthinprovisioningthresholdnotificationspanspan-idthinprovisioningthresholdnotificationspanthin-provisioning-threshold-notification"></a><span id="Thin_Provisioning_Threshold_Notification"></span><span id="thin_provisioning_threshold_notification"></span><span id="THIN_PROVISIONING_THRESHOLD_NOTIFICATION"></span>シン プロビジョニングしきい値通知
+記憶域配列によって LUN で自動拡張機能が有効になっている場合、管理者は一時的なリソース枯渇通知を使用して、ストレージデバイスが4秒以内に LUN に追加の領域を割り当てることができるようにすることができます。 書き込みコマンドによって一時的なリソース枯渇状態が発生すると、ストレージデバイスは、sense data を使用して操作を要求するコマンドを終了し、"領域の割り当てを処理中です" というメッセージを返します。 一時的なリソース枯渇は、次のように処理されます。
 
-記憶域の管理ユーティリティは、シン プロビジョニングのしきい値を設定します。 Windows Server では、記憶域の管理ユーティリティによって設定されたしきい値を上書きしません。 シン プロビジョニングの LUN、記憶域管理者が、平均ストレージ使用量レートに基づいてしきい値を指定してください。 書き込みコマンドが記憶域のターゲット デバイスが設定したしきい値を超える場合にターゲット デバイスは検出データを使用してコマンドを終了し、"シン プロビジョニング ソフトしきい値に達しました"というメッセージを送信します。 Windows サーバーでは、一致したセンス データを受信すると、以下の処理が行われます。
+- 再試行間隔を1秒に設定して、元の要求を4回再試行します。
+- すべての再試行が失敗した場合、要求はアプリケーションにフェールバックされます。
+- ストレージデバイスが一時的なリソース枯渇を処理しない場合、Windows Server は、永続的なリソース枯渇状態を返すことによって、ストレージデバイスが次の書き込み要求を失敗させることを想定しています。
 
--   システム イベントは、LUN のデバイスでリソースの使用状況または可用性のしきい値に達したホストの管理者に警告に記録されます。
--   システム イベント ログにターゲット デバイスのログ ページからおよび使用可能な割り当てられたリソースに関する情報が報告します。 これを行うには、記憶域配列はの論理ブロックは、Windows Server システムのイベントを生成するためにプロビジョニングのログ ページ仕様をサポートする必要があります。
--   終了コマンドが再試行されます。
+### <a name="permanent-resource-exhaustion"></a>永続的なリソース枯渇
 
-**注**  場合このエラーが記録された後に送信されたコマンドが失われる可能性のある記述ファイル\_フラグ\_書き込み\_を通じて永続的なリソース枯渇の条件をトリガーする可能性があるために設定されていません。
+永続的なリソース枯渇状態は、シンプロビジョニング LUN が記憶域の最大容量制限に達したことを示します。 書き込みコマンドの実行中に永続的なリソース枯渇が発生した場合、ストレージデバイスは、sense データを使用して操作を終了し、"領域割り当てに失敗しました" というメッセージを送信します。 永続的な枯渇は次のように処理されます。
 
- 
+- 元の要求に FILE_FLAG_WRITE_THROUGH が設定されている場合は、アプリケーションにフェールバックされます。
+- 元の要求に FILE_FLAG_WRITE_THROUGH が設定されていない場合、要求が完了していないか、物理メディアにフラッシュされていない場合、アプリケーションは成功応答を受信する可能性があります。
+- "永続的なリソース枯渇" エラーメッセージを含むシステムイベントがログに記録されます。
+- エラーコードが partition manager に戻され、LUN がオフラインになります。
 
-### <a name="span-idtemporaryresourceexhaustionspanspan-idtemporaryresourceexhaustionspanspan-idtemporaryresourceexhaustionspantemporary-resource-exhaustion"></a><span id="Temporary_Resource_Exhaustion"></span><span id="temporary_resource_exhaustion"></span><span id="TEMPORARY_RESOURCE_EXHAUSTION"></span>一時的リソース枯渇
+## <a name="storage-space-reclamation-using-the-unmap-command"></a>[マップ解除] コマンドを使用した記憶域スペースの回復
 
-記憶域配列により、自動拡張、LUN 上の関数、管理者は、一時的リソース枯渇の通知を使用して、ストレージ デバイスが 4 秒以内、LUN に追加の領域を割り当てられることを確認します。 書き込みコマンドでは、一時的リソース枯渇の条件が発生するときに、記憶域デバイスにコマンドを検出データを使用して、操作を要求し、"領域割り当て IN PROGRESS"メッセージが返されますが終了します。 一時的リソース枯渇は、次のように処理されます。
+領域の解放は、ファイルの削除、ファイルシステムレベルのトリミング、または記憶域の最適化操作によってトリガーできます。 ファイルシステムレベルのトリミングは、トリムまたはマップ解除操作の後に "読み取り戻りゼロ" を実行するように設計されたストレージデバイスに対して有効です。
 
--   1 秒に設定する再試行の間隔で 4 回、元の要求を再試行してください。
--   すべての再試行が失敗した場合は、アプリケーションに、要求が失敗しました。
--   ストレージ デバイスが一時的リソース枯渇を処理しない場合、Windows Server には、永続的なリソース枯渇の状態を返すことによって、次の書き込み要求が失敗する記憶装置が期待しています。
+### <a name="space-reclamation-operation-in-the-storage-stack"></a>記憶域スタックでの領域の解放操作
 
-### <a name="span-idpermanentresourceexhaustionspanspan-idpermanentresourceexhaustionspanspan-idpermanentresourceexhaustionspanpermanent-resource-exhaustion"></a><span id="Permanent__Resource_Exhaustion"></span><span id="permanent__resource_exhaustion"></span><span id="PERMANENT__RESOURCE_EXHAUSTION"></span>永続的なリソース枯渇
+ファイルシステムから大きなファイルが削除されるか、ファイルシステムレベルのトリムがトリガーされると、Windows Server は、ファイルの削除またはトリム通知を対応するマップ解除要求に変換します。 ストレージポートドライバースタックは、ストレージデバイスのプロトコルの種類に応じて、マップ解除要求を SCSI マップ解除コマンドまたは ATA トリムコマンドに変換します。 ストレージデバイスの列挙中、Windows ストレージスタックは、ストレージデバイスがマップ解除コマンドまたはトリムコマンドをサポートしているかどうかに関する情報を収集します。 デバイスに SCSI マップ解除機能または ATA トリム機能がある場合は、マップ解除要求のみがストレージデバイスに送信されます。 また、Windows Server では、ストレージターゲットデバイスで LBAs のマッピングを解除するための API 実装も提供されています。 Windows Server では、T10 SCSI WRITE 同じコマンドセットが採用されていません。
 
-永続的なリソース枯渇の条件では、シン プロビジョニングの LUN、記憶域の最大領域の上限に達したことを示します。 書き込みコマンドで永続的なリソース枯渇が発生したときに記憶装置はセンス データを使用して、操作を終了し、「領域の割り当てに失敗しました書き込み保護する」のメッセージを送信します。 永続的な消費は次のように処理されます。
+### <a name="unmap-requests-from-the-hyper-v-guest-operating-system"></a>Hyper-v ゲストオペレーティングシステムからの要求をマップ解除する
 
--   元の要求ファイルが含まれる場合\_フラグ\_書き込み\_を通じて、セットし、失敗したアプリケーションにします。
--   元の要求がファイルを持たない場合\_フラグ\_書き込み\_を通じて、セットし、アプリケーションに表示成功応答せず、要求が完了しておらず、物理メディアにフラッシュします。
--   「永続的なリソース枯渇」のエラー メッセージを含むシステム イベントが記録されます。
--   エラー コードでは、パーティション マネージャーに戻され、LUN をオフラインにします。
+仮想マシン (VM) の作成時に、Hyper-v ホストは、仮想ハードディスク (VHD) が存在する記憶装置が、マップ解除コマンドまたはトリムコマンドをサポートしているかどうかを照会します。 VM ゲストオペレーティングシステムのファイルシステムから大きなファイルが削除されると、ゲストオペレーティングシステムは、仮想マシンの仮想ハードディスク (VHD) または VHD ファイル (または VHDX ファイル) にファイル削除要求を送信します。 VM の VHD または VHDX ファイルは、次のように SCSI マップ解除要求を Windows Hyper-v ホストのクラスドライバースタックにトンネリングします。
 
-## <a name="span-idstoragespacereclamationusingtheunmapcommandspanspan-idstoragespacereclamationusingtheunmapcommandspanspan-idstoragespacereclamationusingtheunmapcommandspanstorage-space-reclamation-using-the-unmap-command"></a><span id="Storage_Space_Reclamation_Using_the_UNMAP_Command"></span><span id="storage_space_reclamation_using_the_unmap_command"></span><span id="STORAGE_SPACE_RECLAMATION_USING_THE_UNMAP_COMMAND"></span>マッピング解除コマンドを使用してストレージ領域の解放
+- VM に VHD ファイルがある場合、VHD は SCSI マップ解除コマンドまたは ATA トリムコマンドを[データセット管理 i/o 制御のコード](https://docs.microsoft.com/windows-hardware/drivers/storage/data-set-management-overview)トリミング要求に変換してから、ホスト記憶装置に要求を送信します。
+- VM に VHDX ファイルがある場合、VHD ファイルシステムは SCSI マップ解除コマンドまたは ATA TRIM コマンドをファイルシステムレベルのトリム要求に変換してから、ホストオペレーティングシステムに要求を送信します。
 
+Windows Hyper-v では、ゲストオペレーティングシステムからの IOCTL DSM トリム呼び出しもサポートされています。
 
-領域の解放は、ファイルの削除、ファイル システム レベル trim または記憶域の最適化の操作によってトリガーできます。 ファイル システム レベルのトリムは、trim をまたはマッピング解除操作の後に「戻り値 0 の読み取り」を実行するように、記憶域デバイスに対して有効です。
+### <a name="windows-optimize-drives-utility"></a>Windows 最適化ドライブユーティリティ
 
-### <a name="span-idspacereclamationoperationinthestoragestackspanspan-idspacereclamationoperationinthestoragestackspanspan-idspacereclamationoperationinthestoragestackspanspace-reclamation-operation-in-the-storage-stack"></a><span id="Space_Reclamation_Operation_in_the_Storage_Stack"></span><span id="space_reclamation_operation_in_the_storage_stack"></span><span id="SPACE_RECLAMATION_OPERATION_IN_THE_STORAGE_STACK"></span>記憶域スタックに領域の解放操作
+エンドユーザーまたはシステム管理者は、ドライブの最適化ユーティリティを使用して、手動の要求を作成するか、スケジュールの構成を最適化することによって、領域を再利用できます。 ディスクドライブが仮想プロビジョニング LUN の場合は、ディスクドライブのメディアの種類が "シンプロビジョニングドライブ" として表示されます。
 
-大きなファイルがファイル システムから削除またはファイル システム レベルのトリムがトリガーされる、Windows Server はファイルの削除またはトリム通知に対応するマッピング解除要求に変換します。 ポートの記憶域ドライバー スタック、SCSI をマップ解除コマンドまたはストレージ デバイスのプロトコルの種類に従って ATA トリム コマンド マッピング解除要求に変換します。 記憶域デバイスの列挙中には、Windows 記憶域スタックは、記憶装置がマッピング解除または TRIM コマンドをサポートするかどうかに関する情報を収集します。 デバイスは、SCSI をマップ解除または ATA のトリミング機能を持つ場合、記憶装置にマッピング解除要求のみが送信されます。 Windows Server には、マップ解除しています Lba、記憶域ターゲット デバイスでの API の実装も提供します。 Windows Server は T10 SCSI WRITE SAME コマンド セットを採用していません。
+システム管理者は、ドライブの最適化ユーティリティを使用して、記憶域スペースの統合をスケジュールすることができます。 また、このユーティリティでは、システム管理者に対して、スケジュールされた実行が3回連続で失敗したかどうかを通知できます。
 
-### <a name="span-idunmaprequestsfromthehyper-vguestoperatingsystemspanspan-idunmaprequestsfromthehyper-vguestoperatingsystemspanspan-idunmaprequestsfromthehyper-vguestoperatingsystemspanunmap-requests-from-the-hyper-v-guest-operating-system"></a><span id="UNMAP_Requests_from_the_Hyper-V_Guest_Operating_System"></span><span id="unmap_requests_from_the_hyper-v_guest_operating_system"></span><span id="UNMAP_REQUESTS_FROM_THE_HYPER-V_GUEST_OPERATING_SYSTEM"></span>HYPER-V ゲスト オペレーティング システムからの要求をマップ解除します。
+## <a name="retrieving-the-slab-mapping-state"></a>スラブマッピングの状態を取得しています
 
-HYPER-V ホストがかどうかについて照会を送信する仮想マシン (VM) の作成時に仮想ハード_ディスク (VHD) が存在する場所、ストレージ デバイス マッピング解除または TRIM コマンドをサポートしています。 大きなファイルが VM のゲスト オペレーティング システムのファイル システムから削除されると、ゲスト オペレーティング システムは、仮想マシンの仮想ハード_ディスク (VHD) または VHD ファイルにファイルの削除要求を送信します。 VM の VHD または VHD ファイルの次のように、Windows、HYPER-V ホストのクラス ドライバー スタックへの要求、SCSI をマップ解除トンネル。
+仮想プロビジョニング LUN では、すべての論理ブロックがスラブ (クラスター) にグループ化されます。 スラブのサイズは、ストレージデバイスによって報告される最適なマップ解除の粒度パラメーターによって設定されます。 すべてのスラブは、マップ済み、割り当て解除、固定状態に分類されます。 Windows Server は、割り当て解除された状態と固定された状態の両方を未マップの状態として扱います。 Windows Server では、ストレージ管理操作のために仮想プロビジョニング Lun から LBA プロビジョニングの状態を取得するための API 実装 (IOCTL DSM 割り当て) が提供されます。 アプリケーションは IOCTL DSM 割り当てルーチンを呼び出して、SCSI コマンドを送信し、特定の範囲内の各スラブのマップされた状態またはマップされていない状態を取得できます。 返される LBA プロビジョニングステータスが割り当て範囲全体を表していない場合、アプリケーションは別の SCSI コマンドを送信して、残りの LBA 範囲のプロビジョニングステータスを取得します。
 
--   VM に VHD がある場合は、VHD はデータ セットの管理の I/O 制御コード (IOCTL DSM) TRIM 要求に SCSI をマップ解除または ATA のトリミングのコマンドを変換し、ホストの記憶装置に要求を送信します。
--   VM に VHD ファイルがある場合は、VHD のファイル システム SCSI をマップ解除または ATA のトリミングのコマンドをファイル システム レベルのトリムの要求に変換し、ホスト オペレーティング システムに要求を送信します。
-
-Windows HYPER-V には、ゲスト オペレーティング システムからの呼び出しの IOCTL DSM トリムもサポートしています。
-
-### <a name="span-idwindowsoptimizedrivesutilityspanspan-idwindowsoptimizedrivesutilityspanspan-idwindowsoptimizedrivesutilityspanwindows-optimize-drives-utility"></a><span id="Windows_Optimize_Drives_Utility"></span><span id="windows_optimize_drives_utility"></span><span id="WINDOWS_OPTIMIZE_DRIVES_UTILITY"></span>Windows ユーティリティのドライブを最適化します。
-
-エンドユーザーまたはシステム管理者は、手動の要求を作成するか、スケジュールの構成を最適化することによって、領域を再利用するのにドライブの最適化ユーティリティを使用できます。 シン プロビジョニングの LUN をディスク ドライブには、"シン プロビジョニング ドライブ として、ディスク ドライブのメディアの種類が表示されます。
-
-システム管理者は、ドライブの最適化ユーティリティを使用してストレージ領域の統合をスケジュールできます。 ユーティリティは、システム管理者システムに 3 つの連続する失敗した場合は実行をスケジュール設定を通知することもできます。
-
-## <a name="span-idretrievingtheslabmappingstatespanspan-idretrievingtheslabmappingstatespanspan-idretrievingtheslabmappingstatespanretrieving-the-slab-mapping-state"></a><span id="Retrieving_the_Slab_Mapping_State"></span><span id="retrieving_the_slab_mapping_state"></span><span id="RETRIEVING_THE_SLAB_MAPPING_STATE"></span>スラブのマッピングの状態を取得します。
-
-
-シン プロビジョニング LUN には、すべての論理ブロックはされているスラブ (クラスター) でグループ化されます。 スラブのサイズは、ストレージ デバイスを報告する最適なマップ解除の粒度パラメーターによって設定されます。 すべてスラブは、マップ、割り当て解除または固定の状態に分類されます。 Windows Server では、割り当て解除済みと固定の両方の状態がマップされていない状態として扱われます。 Windows Server では、API の実装、または記憶域の管理操作のシン プロビジョニング Lun から LBA プロビジョニングの状態を取得する、IOCTL DSM 割り当てを提供します。 アプリケーションでは、SCSI コマンドを送信し、特定の範囲内の各スラブのマップまたはマップされていない状態を取得する IOCTL DSM 割り当てルーチンを呼び出すことができます。 プロビジョニングの状態が返される LBA が全体の割り当ての範囲を説明されていない場合、アプリケーションは、残りの LBA 範囲のプロビジョニングの状態を取得するもう 1 つの SCSI コマンドを送信します。
-
-記憶域デバイスは、1 つの戻り LBA 範囲全体を処理する必要はありません。 元の要求部分 LBA 範囲が返された場合、別のコマンドを送信して、残りの LBA 範囲のマッピングの状態を取得します。
-
- 
-
- 
-
-
-
-
+ストレージデバイスは、1回の戻りで LBA 範囲全体を処理する必要はありません。 元の要求の部分 LBA 範囲が返された場合は、残りの LBA 範囲のマッピング状態を取得するために別のコマンドが送信されます。
