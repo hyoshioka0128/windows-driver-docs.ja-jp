@@ -1,9 +1,9 @@
 ---
-title: rcdrkd.rcdrlogdump
-description: Rcdrkd.rcdrlogdump 拡張機能では、ドライバーのすべてのレコーダー バッファーまたはドライバーのセットからのトレース メッセージが表示されます。
+title: rcdrkd. rcdrlogdump
+description: Rcdrlogdump 拡張機能は、ドライバーまたはドライバーのセットのすべてのレコーダーバッファーからのトレースメッセージを表示します。
 ms.assetid: 18A25B5A-F22E-4A01-A130-885D5CA34D4D
 keywords:
-- デバッグ rcdrkd.rcdrlogdump Windows
+- rcdrkd. rcdrlogdump Windows のデバッグ
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,41 +12,41 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: cf3e8d284b8aea6e36f0dfb1c3b8cc1ad9c7c242
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e3fd12e2bb49b503f5c9cc3f5d5502b18bad2448
+ms.sourcegitcommit: f6055bcce208f341ec424fa51c6fcb2d9ba06525
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330857"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71959203"
 ---
 # <a name="rcdrkdrcdrlogdump"></a>!rcdrkd.rcdrlogdump
 
 
-**! Rcdrkd.rcdrlogdump**拡張機能には、ドライバーのすべてのレコーダー バッファーまたはドライバーのセットからのトレース メッセージが表示されます。
+**! Rcdrkd. rcdrlogdump**拡張機能は、ドライバーまたはドライバーのセットのすべてのレコーダーバッファーからのトレースメッセージを表示します。
 
 ```dbgcmd
 !rcdrkd.rcdrlogdump DriverName [DriverName ...]
 !rcdrkd.rcdrlogdump DriverName -a Address
 ```
 
-## <a name="span-idddkdevobjdbgspanspan-idddkdevobjdbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>パラメーター
+## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>パラメータ
 
 
-<span id="_______DriverName______"></span><span id="_______drivername______"></span><span id="_______DRIVERNAME______"></span> *ドライバー名*   
-.Sys 拡張子を含まない、ドライバーの名前。
+<span id="_______DriverName______"></span><span id="_______drivername______"></span><span id="_______DRIVERNAME______"></span>*ドライバー*の    
+ドライバーの名前。 .sys 拡張子は含まれません。
 
-<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span> *アドレス*   
-アドレスが指定されている場合、このコマンドは、指定したアドレスにログ バッファーからのトレース メッセージを表示します。
+<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span>*アドレス*   
+Address が指定されている場合、このコマンドは、指定されたアドレスのログバッファーからのトレースメッセージを表示します。
 
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
 
-Rcdrkd.dll
+Rcdrkd .dll
 
-<a name="examples"></a>例
+<a name="examples"></a>使用例
 --------
 
-次の例の出力の一部を示しています、 **! rcdrlogdump**コマンド。
+次の例は、 **! rcdrlogdump**コマンドの出力の一部を示しています。
 
 ```dbgcmd
 3: kd> !rcdrlogdump usbxhci.sys
@@ -78,7 +78,7 @@ Trying to extract TMF information from - C:\ProgramData\dbg\sym\usbxhci.pdb\D4C8
 ---- end of log ----
 ```
 
-上記の出力には、いくつかのログ バッファーからのメッセージが含まれています。 1 つのログ バッファーからメッセージを表示する、 **-** パラメーター、ログ バッファーのアドレスを指定します。 次の例では、アドレス fffffa8005ff2b60 でログのバッファーからメッセージを表示する方法を示します。
+上記の出力には、複数のログバッファーからのメッセージが含まれています。 1つのログバッファーからのメッセージを表示するには、 **-a**パラメーターを使用して、ログバッファーのアドレスを指定します。 次の例では、アドレス fffffa8005ff2b60 にログバッファーからのメッセージを表示する方法を示します。
 
 ```dbgcmd
 3: kd> !rcdrlogdump  usbxhci -a fffffa8005ff2b60
@@ -104,7 +104,7 @@ Trying to extract TMF information from - C:\ProgramData\dbg\sym\usbxhci.pdb\D4C8
 ---- end of log ----
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
 [RCDRKD 拡張機能](rcdrkd-extensions.md)

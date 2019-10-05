@@ -3,17 +3,17 @@ title: 大きな TCP パケットのセグメント化のオフロード
 description: 大きな TCP パケットのセグメント化のオフロード
 ms.assetid: 6ae162fb-a8fc-47b8-80ae-ff39f3059d53
 keywords:
-- タスクのオフロード WDK TCP/IP トランスポート、大きなパケットのセグメント化
-- 大きな TCP パケットのセグメント化 WDK ネットワーク
-- 大きな TCP パケットの WDK ネットワー キングのセグメント化
+- タスクオフロード WDK TCP/IP トランスポート、大きなパケットセグメント化
+- 大きな TCP パケットセグメント化 WDK ネットワーク
+- 大きな TCP パケットのセグメンテーション (WDK ネットワーク)
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e01721495cdd37273417d42fe2a0d51df11dc09
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 59534e248be58ec5fb612d91fb1f9c4da964ccfa
+ms.sourcegitcommit: d1fb8dfd78e0f4993e428a47c231bcbebb9e223c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360829"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71967032"
 ---
 # <a name="offloading-the-segmentation-of-large-tcp-packets"></a>大きな TCP パケットのセグメント化のオフロード
 
@@ -21,106 +21,108 @@ ms.locfileid: "67360829"
 
 
 
-NDIS ミニポート ドライバーでは、ネットワークの中の最大転送単位 (MTU) よりも大きい大きな TCP パケットのセグメント化をオフロードできます。 大きな TCP パケットのセグメント化をサポートする NIC もできない場合があります。
+NDIS ミニポートドライバーを使用すると、ネットワークメディアの最大転送単位 (MTU) を超える大きな TCP パケットのセグメント化をオフロードできます。 大きな TCP パケットのセグメント化をサポートする NIC も、次のことを可能にする必要があります。
 
--   IP チェックサム IP オプションを含むパケットの送信を計算します。
+-   IP オプションを含む送信パケットの IP チェックサムを計算します。
 
--   TCP オプションを含むパケットを送信する TCP チェックサムを計算します。
+-   TCP オプションを含む送信パケットの TCP チェックサムを計算します。
 
-バージョンの NDIS 6.0 とそれ以降のサポートの大量送信オフロードを多数の送信のような 1 (LSOV1) オフロード、NDIS 5 (LSO) バージョンです。*x*します。 NDIS 6.0 以降のバージョンも多数の送信をサポートしてオフロード バージョン 2 (LSOV2) を提供するには、IPv6 のサポートなど、大きなパケットのセグメント化サービスが強化されています。
+NDIS バージョン6.0 以降では、NDIS 5 の large send offload (LSO) に似た large send offload version 1 (LSOV1) がサポートされています。*x*。 また、NDIS バージョン6.0 以降では、大規模な送信オフロードバージョン 2 (LSOV2) もサポートされています。これは、IPv6 のサポートなど、拡張された大きなパケットセグメンテーションサービスを提供します。
 
-LSOV2 と LSOV1 をサポートしているミニポート ドライバーからオフロード型を決定する必要があります、 [ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list) OOB 情報構造体します。 ドライバーを使用して、**型**のメンバー、 [ **NDIS\_TCP\_LARGE\_送信\_オフロード\_NET\_バッファー\_リスト\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_tcp_large_send_offload_net_buffer_list_info) LSOV2 または LSOV1 ドライバー スタックを使用するかどうかを確認して、適切なを実行する構造体サービスの負荷を軽減します。 任意の NET\_バッファー\_LSOv1 または LSOv2 OOB データを含むリスト構造は、1 つも含まれています。 [ **NET\_バッファー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)構造体。 NDIS の詳細については\_TCP\_LARGE\_送信\_オフロード\_NET\_バッファー\_一覧\_についてを参照してください[TCP/IP へのアクセスNET のオフロード\_バッファー\_情報を一覧表示](accessing-tcp-ip-offload-net-buffer-list-information.md)します。
+LSOV2 と LSOV1 をサポートするミニポートドライバーでは、 [**NET @ no__t-2BUFFER @ no__t-3LIST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list) structure OOB 情報からオフロードの種類を決定する必要があります。 ドライバーで**は、** [**NDIS @ NO__T-3tcp @ NO__T-4large @ NO__T-5send @ NO__T-6offload @ NO__T-7net @ NO__T-8buffer @ no__t-7net @ NO__T-10info**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_tcp_large_send_offload_net_buffer_list_info)構造体を使用して、ドライバースタックが LSOV2 または LSOV1 を使用しているかどうかを確認できます。適切なオフロードサービスを実行します。 LSOv1 または LSOv2 OOB データを含むすべての NET @ no__t-0BUFFER @ no__t-1LIST 構造には、1つの[**net @ no__t-4BUFFER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)構造体も含まれています。 NDIS @ no__t-0TCP @ no__t-1LARGE @ no__t-2SEND @ no__t-3OFFLOAD @ no__t-4NET @ no__t-5BUFFER @ no__t-6LIST @ no__t-7INFO の詳細については、「 [Tcp/ip オフロード NET @ no__t にアクセス](accessing-tcp-ip-offload-net-buffer-list-information.md)する」を参照してください。
 
-ただし、ミニポートを受け取った場合に[ **OID\_TCP\_オフロード\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-offload-parameters)ミニポート上およびミニポートが LSO 機能を無効にするにはOID が正常に完了、ミニポートはすべて削除されます[ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list) 0 ではない LSOv1 または LSOv2 OOB データが含まれている ([ **NDIS\_TCP\_LARGE\_送信\_オフロード\_NET\_バッファー\_一覧\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_tcp_large_send_offload_net_buffer_list_info)). 
+ただし、ミニポートが[**oid @ no__t-2TCP @ no__t-3OFFLOAD @ NO__T パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-offload-parameters)を受け取ってミニポートで LSO 機能を無効にし、ミニポートで oid が正常に完了した後に、ミニポートですべての[**NET @ no__ を削除するとします。** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)0 以外の LSOv1 または LSOV2 OOB データ ([**NDIS @ NO__T-11tcp @ NO__T-12large @ NO__T-13send @ NO__T-14offload @ NO__T-15net @ NO__T-16buffer @ NO__T-17list @ NO__T-18info**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_tcp_large_send_offload_net_buffer_list_info)) が含まれている t-7buffer @-8list。 
 
-TCP/IP トランスポートは、次の条件を満たす大きな TCP パケットのみをオフロードします。
+TCP/IP トランスポートは、次の条件を満たすサイズの大きい TCP パケットのみをオフロードします。
 
--   パケットは、TCP パケットです。 TCP/IP トランスポートは、セグメント化の大きな UDP パケットをオフロードできません。
+-   パケットは TCP パケットです。 TCP/IP トランスポートでは、セグメント化のために大きな UDP パケットの負荷が軽減されません。
 
--   パケットで割り切れる以上でなければなりません、ミニポート ドライバーで指定されたセグメントの最小数。 詳細については、次を参照してください。[レポート NIC の LSOV1 TCP パケットのセグメンテーション機能](reporting-a-nic-s-lsov1-tcp-packet-segmentation-capabilities.md)と[レポート NIC の LSOV2 TCP パケットのセグメンテーション機能](reporting-a-nic-s-lsov2-tcp-packet-segmentation-capabilities.md)します。
+-   パケットは、少なくともミニポートドライバーによって指定されたセグメントの最小数で割り切れなければなりません。 詳細については、「 [nic の LSOV1 機能の報告](reporting-a-nic-s-lsov1-tcp-packet-segmentation-capabilities.md)」および「 [nic の LSOV2 の tcp パケットセグメント化機能の報告](reporting-a-nic-s-lsov2-tcp-packet-segmentation-capabilities.md)」を参照してください。
 
--   パケットはループバック パケットではありません。
+-   パケットがループバックパケットではありません。
 
--   パケットは、トンネル経由送信されません。
+-   パケットはトンネル経由で送信されません。
 
-前のセグメント化、TCP/IP トランスポート大きな TCP パケットをオフロードします。
+大きな TCP パケットのセグメント化をオフロードする前に、TCP/IP トランスポートは次のようになります。
 
--   関連付けられている大きなパケットのセグメント化情報を更新、 [ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)構造体。 この情報は、 [ **NDIS\_TCP\_LARGE\_送信\_オフロード\_NET\_バッファー\_一覧\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_tcp_large_send_offload_net_buffer_list_info)構造の一部である、 **NET\_バッファー\_一覧**に関連付けられている情報、 **NET\_バッファー\_リスト**構造体。 詳細については**NET\_バッファー\_一覧**についてを参照してください[TCP/IP Offload NET へのアクセス\_バッファー\_情報を一覧表示](accessing-tcp-ip-offload-net-buffer-list-information.md)します。 TCP/IP トランスポートの設定、 **MSS**最大セグメント サイズ (MSS) する値。
+-   [**NET @ no__t-2BUFFER @ no__t-3LIST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)構造体に関連付けられている大量のパケットセグメンテーション情報を更新します。 この情報は、 [**NDIS @ no__t-2TCP @ no__t-3LARGE @ no__t-4SEND @ no__t-5OFFLOAD @ no__t-6NET @ no__t-7BUFFER @ no__t-7buffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_tcp_large_send_offload_net_buffer_list_info) @ NO__T-9info 構造体に関連付けられている**NET @ NO__T-11buffer @ NO__T-12list**情報に含まれています。**NET @ no__t-14BUFFER @ no__t-15LIST**構造体を使用します。 **Net @ no__t-1BUFFER @ no__t の**詳細については、「 [TCP/IP オフロード NET @ NO__T-4buffer @ no__t](accessing-tcp-ip-offload-net-buffer-list-information.md)」を参照してください。 TCP/IP トランスポートは、 **mss**値を最大セグメントサイズ (mss) に設定します。
 
-- LSOv1、大きな TCP パケットの合計の長さをパケットの IP ヘッダーの長さの合計フィールドに書き込みます。 長さ合計にはには、IP ヘッダーの長さ、IP のオプションが存在する場合の長さ、TCP ヘッダーの長さ、TCP オプションが、存在する場合の長さ、および TCP ペイロードの長さが含まれています。 LSOv2、パケットの IP ヘッダーの長さの合計フィールドを 0 に設定します。 ミニポート ドライバーでは、NET_BUFFER_LIST 構造内の最初の NET_BUFFER 構造体の長さからのパケットの長さを判断する必要があります。
+- LSOv1 の場合は、サイズの大きい TCP パケットの合計長をパケットの IP ヘッダーの合計長フィールドに書き込みます。 合計の長さには、IP ヘッダーの長さ、IP オプションが存在する場合はその長さ、TCP ヘッダーの長さ、tcp オプションが存在する場合はその長さ、tcp ペイロードの長さが含まれます。 LSOv2 の場合、パケットの IP ヘッダーの [合計長] フィールドを0に設定します。 ミニポートドライバーは、NET_BUFFER_LIST 構造体の最初の NET_BUFFER 構造体の長さからパケットの長さを判断する必要があります。
 
--   1 の補数の合計 TCP pseudoheader を計算し、TCP ヘッダーのチェックサム フィールドに、この合計を書き込みます。 TCP/IP トランスポートは、次のフィールド、pseudoheader に対して 1 の補数の合計を計算します。発信元 IP アドレス、宛先 IP アドレス、およびプロトコル。 1 の補数の合計 TCP/IP トランスポートによって提供される pseudoheader は、NIC IP ヘッダーを検査することがなく、NIC が大きな TCP パケットから派生した各パケットの実際の TCP チェックサムの計算に早期の開始を示します。 RFC 793 されて送信元 IP アドレス、宛先 IP アドレス、プロトコル、および長さの TCP 経由で擬似ヘッダーのチェックサムが計算されることに注意してください。 (TCP の長さは、TCP ヘッダーの長さと TCP ペイロードの長さです。 TCP の長さは含まれません擬似ヘッダーの長さ。)ただし、基になるミニポート ドライバーと NIC は、TCP/IP トランスポートによって渡された大規模なパケットから TCP セグメントを生成するため、トランスポート TCP セグメントごとに TCP ペイロードのサイズがわからないし、そのため、TCP の長さ (単位) を含めることはできません。擬似ヘッダー。 代わりに、以下のように、NIC は、生成された各 TCP セグメントの TCP の長さをカバーする TCP/IP トランスポートによって提供された擬似ヘッダーのチェックサムを拡張します。
+-   TCP 擬似ヘッダーの1の補数の合計を計算し、この合計を TCP ヘッダーのチェックサムフィールドに書き込みます。 TCP/IP トランスポートは、擬似ヘッダー内の次のフィールドに対する1の補数の合計を計算します。送信元 IP アドレス、宛先 IP アドレス、およびプロトコル。 TCP/IP トランスポートによって提供される疑似ヘッダーの1の補数和により、NIC は、IP ヘッダーを調べることなく、大きな TCP パケットから取得した各パケットの実際の TCP チェックサムの計算を初期段階で開始します。 RFC 793 では、ソース IP アドレス、宛先 IP アドレス、プロトコル、および TCP の長さに対して擬似ヘッダーチェックサムが計算されることを明記されしています。 (TCP の長さは tcp ヘッダーの長さに、TCP ペイロードの長さを加えたものです。 TCP の長さには、擬似ヘッダーの長さは含まれません)。ただし、基になるミニポートドライバーと NIC は、tcp/ip トランスポートによって渡される大きなパケットから TCP セグメントを生成するため、トランスポートは各 TCP セグメントの TCP ペイロードのサイズを認識しないため、TCP の長さを含めることはできません。擬似ヘッダー。 代わりに、次に示すように、NIC は、生成された各 TCP セグメントの TCP の長さに対応するために TCP/IP トランスポートによって提供された擬似ヘッダーチェックサムを拡張します。
 
--   TCP ヘッダーのシーケンス番号のフィールドに適切なシーケンス番号を書き込みます。 シーケンス番号は、TCP ペイロードの最初のバイトを識別します。
+-   TCP ヘッダーのシーケンス番号フィールドに正しいシーケンス番号を書き込みます。 シーケンス番号は、TCP ペイロードの最初のバイトを識別します。
 
-後、ミニポート ドライバーを取得、 [ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)構造体の[ *MiniportSendNetBufferLists*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_send_net_buffer_lists)または[ **MiniportCoSendNetBufferLists** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_co_send_net_buffer_lists)関数を呼び出すことが、 [ **NET\_バッファー\_ボックスの一覧\_情報**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-info)マクロが、  *\_Id*の**TcpLargeSendNetBufferListInfo** TCP/IP トランスポートによって書き込まれた MSS 値を取得します。
+ミニポートドライバーは、 [*Miniportsendnetbufferlists*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_send_net_buffer_lists)関数または[**miniportcosendnetbufferlists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_co_send_net_buffer_lists)関数で[**NET @ no__t-2BUFFER @ no__t-3list**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)構造体を取得した後、 [**net @ NO__T-10buffer @ no__t-11list @ no__ を呼び出すことができます。** ](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-info)tcp/ip トランスポートによって書き込まれた MSS 値を取得するために、 *4Id*が**TcpLargeSendNetBufferListInfo**の t-12info マクロ。
 
-ミニポート ドライバーでは、パケットの IP ヘッダーから大きなパケットの合計の長さを取得し、MSS 値を使用して、小さなパケットに大きな TCP パケットを分割します。 各小さいパケットには、MSS または少ないユーザー データのバイトが含まれます。 MSS ユーザー データのバイト数より小さいセグメント化された大きなパケットから作成された最後のパケットのみを含める必要がありますに注意してください。 セグメント化されたパケットから作成されたその他のすべてのパケットは、MSS ユーザー データのバイト数を含める必要があります。 このルールを実行しない場合は、作成し、不要な余分なパケットの送信とパフォーマンスが低下でしたします。
+ミニポートドライバーは、パケットの IP ヘッダーから大きなパケットの合計長を取得し、MSS 値を使用して大きな TCP パケットを小さいパケットに分割します。 小さいパケットには、MSS 以下のユーザーデータバイトが含まれます。 セグメント化された大きいパケットから作成された最後のパケットのみが、MSS ユーザーデータバイト未満であることに注意してください。 セグメント化されたパケットから作成された他のすべてのパケットには、MSS ユーザーデータバイトが含まれている必要があります。 この規則に従わないと、不要な余分なパケットの作成と送信によってパフォーマンスが低下する可能性があります。
 
-ミニポート ドライバーは affixes 大きなパケットから派生した各セグメントに、MAC、IP、および TCP ヘッダーです。 ミニポート ドライバーでは、これらの派生パケットの ip アドレスと TCP チェックサムを計算する必要があります。 (TCP ヘッダーと TCP ペイロード) の TCP チェックサムの可変部分が 1 の補数の合計を計算 pseudoheader にこのチェックサムを追加しますが、NIC を大きな TCP パケットから派生した各パケットに対する TCP チェックサムを計算する計算、TCP/IP トランスポートでは、16 ビットを計算し、チェックサムの 1 の補数。 このようなチェックサムを計算の詳細については、RFC 793 および RFC 1122 を参照してください。
+ミニポートドライバーは、大きなパケットから派生した各セグメントに対して、MAC、IP、および TCP ヘッダーを接辞します。 ミニポートドライバーは、これらの派生パケットの IP および TCP チェックサムを計算する必要があります。 大きな TCP パケットから派生した各パケットの TCP チェックサムを計算するために、NIC は tcp チェックサムの可変部分 (TCP ヘッダーおよび TCP ペイロード用) を計算し、このチェックサムを、によって計算された擬似ヘッダーの1の補数合計に追加します。次に、TCP/IP トランスポートを使用して、チェックサムの16ビットの1の補数を計算します。 このようなチェックサムの計算の詳細については、RFC 793 および RFC 1122 を参照してください。
 
-次の図は、大きなパケットのセグメント化を示します。
+次の図は、大きなパケットのセグメント化を示しています。
 
-![大きなパケットのセグメント化を示す図](images/segmentation.png)
+![大きいパケットのセグメント化を示す図](images/segmentation.png)
 
-大きな TCP パケットで TCP ユーザー データの長さが、ミニポート ドライバーに割り当てられている値以下でする必要があります、 **MaxOffLoadSize**値。 詳細については、 **MaxOffLoadSize**値を参照してください[レポート NIC の LSOV1 TCP パケットのセグメンテーション機能](reporting-a-nic-s-lsov1-tcp-packet-segmentation-capabilities.md)と[NIC の LSOV2 TCP のパケットのセグメンテーションを報告機能](reporting-a-nic-s-lsov2-tcp-packet-segmentation-capabilities.md)します。
+大きな TCP パケット内の TCP ユーザーデータの長さは、ミニポートドライバーが**Maxoffloadsize**値に割り当てる値以下である必要があります。 **Maxoffloadsize**値の詳細については、「 [Nic の LSOV1 機能の報告](reporting-a-nic-s-lsov1-tcp-packet-segmentation-capabilities.md)」と「 [Nic の LSOV2 機能の報告](reporting-a-nic-s-lsov2-tcp-packet-segmentation-capabilities.md)」を参照してください。
 
-ドライバーの問題への変更を示す状態表示した後、 **MaxOffLoadSize**値、ドライバーする必要がありますをクラッシュさせない場合は、以前を使用する LSO 送信要求の受信**MaxOffLoadSize**値。 代わりに、ドライバーには、送信要求が失敗することができます。
+ドライバーは、 **Maxoffloadsize**値が変更されたことを示すステータス情報を発行した後、前の**maxoffloadsize**値を使用する LSO 送信要求を受信した場合、ドライバーをクラッシュさせないようにする必要があります。 代わりに、ドライバーは送信要求を失敗させることができます。
 
-変更を報告する状態インジケーターを個別に発行する中間のドライバー、 **MaxOffLoadSize**は状態を示す値を発行していませんが、基になるミニポート アダプターには、すべてのパケットは取得しません値を確認する必要がありますサイズの大きい、 **MaxOffLoadSize**ミニポート アダプターが報告される値。
+**Maxoffloadsize**値が変更されたことを報告するステータス表示を個別に発行する中間ドライバーは、状態を表示していない、基になるミニポートアダプターがサイズの大きいパケットを取得していないことを確認する必要があります。ミニポートアダプターによって報告された**Maxoffloadsize**値を超えています。
 
-応答するミニポート中間ドライバー [OID\_TCP\_オフロード\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-offload-parameters) LSO が要求を送信時間の小さいウィンドウにまだ到達の LSO をオフにするサービスを準備する必要がありますミニポート ドライバー。
+[OID @ no__t-1TCP @ no__t-2OFFLOAD @ no__t](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-offload-parameters)に応答するミニポート中間ドライバーでは、lso サービスを無効にするために、lso の送信要求がミニポートドライバーに到着する可能性がある小さな時間枠で準備する必要があります。
 
-セグメントのパケットで TCP ユーザー データの長さは、MSS 以下である必要があります。 MSS は TCP トランスポート LSO NET を使用して渡します ULONG 値\_バッファー\_リストの情報に関連付けられている、 [ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)構造体。 MSS ユーザー データのバイト数より小さいセグメント化された大きなパケットから作成された最後のパケットのみを含める必要がありますに注意してください。 セグメント化されたパケットから作成されたその他のすべてのパケットは、MSS ユーザー データのバイト数を含める必要があります。 このルールを実行しない場合は、作成し、不要な余分なパケットの送信とパフォーマンスが低下でしたします。
+セグメントパケット内の TCP ユーザーデータの長さは、MSS 以下である必要があります。 MSS は、 [**net @ no__t-4BUFFER @ no__t-5list**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)構造体に関連付けられている LSO NET @ NO__T-0buffer @ no__t リストの情報を使用して、TCP トランスポートが通過する ULONG 値です。 セグメント化された大きいパケットから作成された最後のパケットのみが、MSS ユーザーデータバイト未満であることに注意してください。 セグメント化されたパケットから作成された他のすべてのパケットには、MSS ユーザーデータバイトが含まれている必要があります。 この規則に従わないと、不要な余分なパケットの作成と送信によってパフォーマンスが低下する可能性があります。
 
-以上になる大きな TCP パケットから派生されたセグメントのパケットの数がある必要があります、 **MinSegmentCount**ミニポート ドライバーで指定されている値。 詳細については、 **MinSegmentCount**値を参照してください[レポート NIC の LSOV1 TCP パケットのセグメンテーション機能](reporting-a-nic-s-lsov1-tcp-packet-segmentation-capabilities.md)と[NIC の LSOV2 TCP のパケットのセグメンテーションを報告機能](reporting-a-nic-s-lsov2-tcp-packet-segmentation-capabilities.md)します。
+大きな TCP パケットから派生したセグメントパケットの数は、ミニポートドライバーによって指定された**MinSegmentCount**値以上である必要があります。 **MinSegmentCount**値の詳細については、「 [Nic の LSOV1 機能を報告する](reporting-a-nic-s-lsov1-tcp-packet-segmentation-capabilities.md)」および「 [Nic の LSOV2 TCP パケットセグメント化機能の報告](reporting-a-nic-s-lsov2-tcp-packet-segmentation-capabilities.md)」を参照してください。
 
-Ip アドレスと TCP ヘッダーの処理には、次の前提条件と制限が適用されます。
+IP ヘッダーと TCP ヘッダーの処理には、次の前提条件と制限が適用されます。
 
--   TCP/IP トランスポート オフロード大きな TCP パケットの IP ヘッダーで MF ビットは設定されませんし、IP ヘッダーには、フラグメントのオフセットはゼロになります。
+-   TCP/IP トランスポートオフロードが設定されていない、サイズの大きい TCP パケットの IP ヘッダーの MF ビット。 IP ヘッダー内のフラグメントオフセットはゼロになります。
 
--   大きな TCP パケットの TCP ヘッダーで URG、RST、および SYN フラグを設定できませんと TCP ヘッダーの緊急のオフセット (ポインター)。 0 になります。
+-   Large TCP パケットの TCP ヘッダーに含まれる URG、RST、および SYN フラグは設定されず、TCP ヘッダーの緊急オフセット (ポインター) は0になります。
 
--   大きなパケットの TCP ヘッダーで FIN ビットが設定されている場合、ミニポート ドライバーは、大きな TCP パケットから作成した最後のパケットの TCP ヘッダーでこのビットを設定する必要があります。
+-   大きいパケットの TCP ヘッダー内の FIN ビットが設定されている場合、ミニポートドライバーは、大きな TCP パケットから作成された最後のパケットの TCP ヘッダーにこのビットを設定する必要があります。
 
--   大きな TCP パケットの TCP ヘッダー内の PSH ビットが設定されている場合、ミニポート ドライバーは、大きな TCP パケットから作成した最後のパケットの TCP ヘッダーでこのビットを設定する必要があります。
+-   Large TCP パケットの TCP ヘッダー内の PSH ビットが設定されている場合、ミニポートドライバーは、サイズの大きい TCP パケットから作成された最後のパケットの TCP ヘッダーにこのビットを設定する必要があります。
 
--   大きな TCP パケットには、IP オプションまたは TCP オプション (または両方) が含まれています、ミニポート ドライバーは大きな TCP パケットから派生したその各パケットに変更を加えず、これらのオプションをコピーします。 具体的には、NIC にタイムスタンプ オプションは加算されません。
+-   Large TCP パケットの TCP ヘッダーの CWR ビットが設定されている場合、ミニポートドライバーは、大きな TCP パケットから作成される最初のパケットの TCP ヘッダーにこのビットを設定する必要があります。 ミニポートドライバーは、大きな TCP パケットから作成した最後のパケットの TCP ヘッダーにこのビットを設定することができますが、これは望ましくありません。
 
--   すべてのパケット ヘッダー (イーサネット、IP、TCP) は、パケットの最初の MDL になります。 ヘッダーは、複数の MDLs 間で分割されません。 
+-   大きい TCP パケットに IP オプションまたは TCP オプション (またはその両方) が含まれている場合、ミニポートドライバーは、これらのオプションを変更せずに、大きな TCP パケットから派生した各パケットにコピーします。 具体的には、NIC によってタイムスタンプオプションが増分されることはありません。
+
+-   すべてのパケットヘッダー (イーサネット、IP、TCP) は、パケットの最初の MDL に配置されます。 ヘッダーは、複数の MDLs に分割されません。 
     > [!TIP]
-    > この想定は、LSO を有効にすると有効です。 それ以外の場合、LSO が有効でない場合のミニポート ドライバーとは限りませんイーサネット ヘッダーとして同じ MDL に IP ヘッダーのあります。
+    > この想定は、LSO が有効になっている場合に有効です。 それ以外の場合、LSO が有効になっていないと、ミニポートドライバーは、IP ヘッダーがイーサネットヘッダーと同じ MDL にあると想定できません。
 
 
-ミニポート ドライバーでパケットを送信する必要があります[ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)ネットを受信した順序で構造\_バッファー\_一覧TCP/IP トランスポートからの構造体。
+ミニポートドライバーは、TCP/IP トランスポートから NET @ no__t-4BUFFER @ no__t-5LIST 構造体を受け取る順序で、ネット上のパケットを[**net @ no__t-2BUFFER @ no__t**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)に送信する必要があります。
 
-大きな TCP パケットを処理するときに、パケットをセグメント化して大きな TCP パケットから派生したパケットの MAC、IP、および TCP ヘッダーを付加することのみをミニポート アダプターが担当します。 TCP/IP トランスポートは、その他のすべてのタスクを実行します (送信を調整するなど、リモート ホストのに基づいてウィンドウ サイズ受信ウィンドウ サイズ)。
+大きな TCP パケットを処理する場合、ミニポートアダプターはパケットをセグメント化し、付加の MAC、IP、および TCP ヘッダーを大きな TCP パケットから派生したパケットに分割します。 TCP/IP トランスポートは、他のすべてのタスク (リモートホストの受信ウィンドウサイズに基づいた送信ウィンドウサイズの調整など) を実行します。
 
-大きなパケットの送信操作を完了する前に (などで[ **NdisMSendNetBufferListsComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsendnetbufferlistscomplete)または[ **NdisMCoSendNetBufferListsComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcosendnetbufferlistscomplete))、ミニポート ドライバーの書き込み、 [ **NDIS\_TCP\_LARGE\_送信\_オフロード\_NET\_バッファー\_リスト\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_tcp_large_send_offload_net_buffer_list_info)値 (NET\_バッファー\_大量送信の一覧情報の負荷を軽減) されたすべてのパケットで正常に送信される TCP ユーザー データのバイト数の合計大きな TCP パケットから作成されます。
+サイズの大きいパケット ( [**NdisMSendNetBufferListsComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsendnetbufferlistscomplete)や[**NdisMCoSendNetBufferListsComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcosendnetbufferlistscomplete)など) の送信操作を完了する前に、ミニポートドライバーは[**NDIS @ no__t-6TCP @ no__t-7LARGE @ no__t-8send @ no__ を書き込みます。t-9OFFLOAD @ no__t-10NET @ no__t-11BUFFER @ no__t-12LIST @ no__t-13INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_tcp_large_send_offload_net_buffer_list_info)値 (大きな送信のオフロードのための NET @ no__t-14BUFFER @ no__t-15list 情報)、作成されたすべてのパケットで正常に送信された TCP ユーザーデータのバイト数の合計大きい TCP パケットから。
 
-前の LSO 要件だけでなく LSOV2 対応のミニポート ドライバー必要があります。
+以前の LSO の要件に加えて、LSOV2 対応ミニポートドライバーも次の条件を満たす必要があります。
 
 -   IPv4 または IPv6 または IPv4 と IPv6 の両方をサポートします。
 
--   各セグメント パケット、ネットワーク インターフェイス カード (NIC) を生成する、IPv4 のオプションを大規模なパケットからのレプリケーションをサポートします。
+-   ネットワークインターフェイスカード (NIC) によって生成される各セグメントパケットで、大きなパケットからの IPv4 オプションのレプリケーションをサポートします。
 
--   各 TCP セグメントのパケットの IPv6 拡張ヘッダーの大きな TCP パケットからのレプリケーションをサポートします。
+-   各 TCP セグメントパケットで、大きな TCP パケットからの IPv6 拡張ヘッダーのレプリケーションをサポートします。
 
--   各 TCP セグメント パケット ミニポート ドライバーを生成するには、TCP オプションのレプリケーションをサポートします。
+-   ミニポートドライバーによって生成される各 TCP セグメントパケットにおける TCP オプションのレプリケーションをサポートします。
 
--   Ip アドレスと TCP ヘッダーを使用して、 [ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list) TCP/IP ヘッダー各パケットのセグメントを生成するテンプレートとして構造体。
+-   [**NET @ no__t-2BUFFER @ no__t-3LIST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)構造体の IP および TCP ヘッダーをテンプレートとして使用して、各セグメントパケットの tcp/ip ヘッダーを生成します。
 
--   0x0000 ~ 0x7FFF の範囲で IP (IP ID) の id 値を使用します。 (0x8000 ~ 0 xffff の範囲は、TCP chimney オフロード対応デバイス用に予約されて) います。たとえば、テンプレートの IP ヘッダーが、識別フィールドの値の数が 0x7FFE で始まる場合最初 TCP セグメントのパケットは IP ID 値の数が 0x7FFE、0x7FFF、0x0000、0x0001 の後にが必要です。
+-   [IP id (IP ID)] の値は、[0x0000] ~ [の範囲] で使用します。 (0x8000 から0xFFFF までの範囲は TCP chimney オフロード対応デバイス用に予約されています)。たとえば、テンプレートの IP ヘッダーの先頭が Id フィールドの値0x7FFE である場合、最初の TCP セグメントパケットの IP ID 値は0x7FFE で、その後に、0x0001、0x0000、などが続きます。
 
--   内のバイト オフセットを使用して、 **TcpHeaderOffset**のメンバー [ **NDIS\_TCP\_LARGE\_送信\_オフロード\_NET\_バッファー\_一覧\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_tcp_large_send_offload_net_buffer_list_info)パケットの最初のバイトから、TCP ヘッダーの場所を特定します。
+-   No__t の**Tcpheaderoffset**メンバーのバイトオフセットを使用して、 [**no__t-3tcp @ NO__T-4large @-5send @ NO__T-6offload @ NO__T-7net @ NO__T-8buffer @ NO__T-9list @ NO__T-10info**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_tcp_large_send_offload_net_buffer_list_info)を最初のヘッダーから開始し、TCP ヘッダーの場所を決定します。パケットのバイト。
 
--   数を制限[ **NET\_バッファー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)構造に関連付けられた各 LSOV2 [ **NET\_バッファー\_ボックスの一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)構造体。
+-   各 LSOV2 [**net @ no__t-5BUFFER @ no__t のリスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)構造に関連付けられている[**net @ NO__T-2buffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)構造体の数を1に制限します。
 
--   最初の NET の長さからのパケットの合計の長さを決定\_ネット バッファー構造\_バッファー\_リスト構造体。
+-   NET @ no__t-1BUFFER @ no__t-2LIST 構造体の最初の NET @ no__t-0BUFFER 構造体の長さから、パケットの合計長を確認します。
 
--   TCP、IP、および拡張機能の IP ヘッダーをサポートします。
+-   TCP オプション、IP オプション、および IP 拡張ヘッダーをサポートします。
 
--   送信操作が完了したら、ミニポート ドライバーを設定する必要があります、 **LsoV2TransmitComplete.Reserved**のメンバー、 [ **NDIS_TCP_LARGE_SEND_OFFLOAD_NET_BUFFER_LIST_INFO** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_tcp_large_send_offload_net_buffer_list_info)をゼロに構造体と**LsoV2TransmitComplete.Type** NDIS_TCP_LARGE_SEND_OFFLOAD_V2_TYPE するメンバー。 
+-   送信操作が完了すると、ミニポートドライバーは、 [**NDIS_TCP_LARGE_SEND_OFFLOAD_NET_BUFFER_LIST_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_tcp_large_send_offload_net_buffer_list_info)構造体の LsoV2TransmitComplete メンバーを0に設定し、 **LsoV2TransmitComplete**メンバーに設定する必要があり**ます。** を NDIS_TCP_LARGE_SEND_OFFLOAD_V2_TYPE にします。 
  
 
  
