@@ -23,11 +23,11 @@ ms.locfileid: "63346337"
 
 WinLogon は、ログオンとログオフ、対話型のユーザーのタスクを処理し、CTRL + ALT + DEL キーのすべてのインスタンスを処理するユーザー モード プロセスです。
 
-### <a name="span-idcontrollingntsdfromthekerneldebuggerspanspan-idcontrollingntsdfromthekerneldebuggerspancontrolling-ntsd-from-the-kernel-debugger"></a><span id="controlling_ntsd_from_the_kernel_debugger"></span><span id="CONTROLLING_NTSD_FROM_THE_KERNEL_DEBUGGER"></span>カーネル デバッガーから NTSD を制御します。
+### <a name="span-idcontrolling_ntsd_from_the_kernel_debuggerspanspan-idcontrolling_ntsd_from_the_kernel_debuggerspancontrolling-ntsd-from-the-kernel-debugger"></a><span id="controlling_ntsd_from_the_kernel_debugger"></span><span id="CONTROLLING_NTSD_FROM_THE_KERNEL_DEBUGGER"></span>カーネル デバッガーから NTSD を制御します。
 
 Winlogon プロセスをデバッグする最も簡単な方法は NTSD を使用して[カーネル デバッガーによる制御](controlling-the-user-mode-debugger-from-the-kernel-debugger.md)します。
 
-### <a name="span-idenablingwinlogondebuggingspanspan-idenablingwinlogondebuggingspanenabling-winlogon-debugging"></a><span id="enabling_winlogon_debugging"></span><span id="ENABLING_WINLOGON_DEBUGGING"></span>WinLogon のデバッグの有効化
+### <a name="span-idenabling_winlogon_debuggingspanspan-idenabling_winlogon_debuggingspanenabling-winlogon-debugging"></a><span id="enabling_winlogon_debugging"></span><span id="ENABLING_WINLOGON_DEBUGGING"></span>WinLogon のデバッグの有効化
 
 カーネル デバッガーに、ユーザー モード デバッガーの出力をリダイレクトするためには、カーネル デバッグ接続を設定する必要があります。 参照してください[デバッグ設定](getting-set-up-for-debugging.md)します。
 
@@ -43,7 +43,7 @@ ntsd -d -x -g
 
 レジストリの変更には、再起動を有効にする必要があります。
 
-### <a name="span-idperformingthedebuggingspanspan-idperformingthedebuggingspanperforming-the-debugging"></a><span id="performing_the_debugging"></span><span id="PERFORMING_THE_DEBUGGING"></span>デバッグを実行します。
+### <a name="span-idperforming_the_debuggingspanspan-idperforming_the_debuggingspanperforming-the-debugging"></a><span id="performing_the_debugging"></span><span id="PERFORMING_THE_DEBUGGING"></span>デバッグを実行します。
 
 次の再起動後に、デバッガーは winlogon プロセスに自動的に中断されます。
 
