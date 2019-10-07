@@ -1,16 +1,14 @@
 ---
 title: 配送先住所ラベルのデータを取得する
 description: Microsoft Hardware API のこれらのメソッドでは、デベロッパー センター アカウントに登録されているハードウェア製品の配送先住所ラベルに関するデータが取得されます。
-author: balapv
-ms.author: balapv
 ms.topic: article
-ms.date: 08/21/2018
-ms.openlocfilehash: eb126c73e1943540af6551a842ea34cf15a615ff
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.date: 10/03/2019
+ms.openlocfilehash: 07c0205b5bcfb6718979ce7597e0bb53c3471090
+ms.sourcegitcommit: 566219e815a670e4345ff259a030445af1e5fb20
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63337194"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71923783"
 ---
 # <a name="get-shipping-label-data"></a>配送先住所ラベルのデータを取得する
 
@@ -297,16 +295,17 @@ Microsoft Hardware API に関するすべての[前提条件](https://docs.micro
 
 新しい配送先住所ラベルを作成するとき、ハードウェア ID オブジェクトには、バンドル ID、PNP ID、OS コード、INF 名の有効な組み合わせが含まれる必要があります。 申請 (パッケージ) に対するこれらの属性の許可された/有効な組み合わせは、申請の詳細を取得するときにリンクとして提供されるドライバーのメタデータ ファイルをダウンロードすることで取得できます。 詳しくは、「[ドライバー パッケージ メタデータ](driver-package-metadata.md)」をご覧ください。
 
-
 ### <a name="chids-object"></a>CHID オブジェクト
 
 このオブジェクトは、配送先住所ラベルの対象とする必要がある CHID (コンピューター ハードウェア ID) を表します。 詳しくは、[using CHIDs (CHID の使用)](https://docs.microsoft.com/windows-hardware/drivers/dashboard/using-chids) に関する記事をご覧ください。
+
 ```json
 {
     "chid": "346511cf-ccee-5c6d-8ee9-3c70fc7aae83",
     "distributionState": "pendingAdd"
 }
 ```
+
 このオブジェクトには、次の値があります
 
 | Value | 種類 | 説明 |
@@ -329,8 +328,8 @@ Microsoft Hardware API に関するすべての[前提条件](https://docs.micro
 
 | Value | 種類 | 説明 |
 |:--|:--|:--|
-|下限|string|このオプションは、示されているもの以降の Windows 10 オペレーティング システムに対してのみ、ドライバーを提供する場合に使用します。 たとえば、RS4 を下限として選択すると、Windows 10 1803 (RS4) 以降を実行しているシステムに対してのみ、このドライバーが提供されることを意味します。 設定可能な値は、次のとおりです。 <ul><li>TH</li><li>RS1</li><li>RS2</li><li>RS3</li><li>RS4</li><li>RS5</li></ul> 使用可能な値は、OS の最新バージョン (このドキュメントの時点では RS5) を含むように拡張されことに注意してください|
-|ceiling|string|"*この機能へのアクセスは制限されています*"。 このオプションは、示されているもの以前のオペレーティング システムに対してのみドライバーを提供する場合に使用します。 たとえば、Windows 10 1607 RS1 認定ドライバーについて、RS3 を上限として選択すると、Windows 10 1803 (RS4) 以降を実行しているシステムにドライバーは提供されません。設定可能な値は、次のとおりです。 <ul><li>TH</li><li>RS1</li><li>RS2</li><li>RS3</li><li>RS4</li><li>RS5</li></ul> 使用可能な値は、OS の最新バージョン (このドキュメントの時点では RS5) を含むように拡張されことに注意してください|
+|下限|string|このオプションは、示されているもの以降の Windows 10 オペレーティング システムに対してのみ、ドライバーを提供する場合に使用します。 たとえば、RS4 を下限として選択すると、Windows 10 1803 (RS4) 以降を実行しているシステムに対してのみ、このドライバーが提供されることを意味します。 設定可能な値は、次のとおりです。 <ul><li>TH</li><li>RS1</li><li>RS2</li><li>RS3</li><li>RS4</li><li>RS5</li><li>19H1</li></ul> 設定可能な値は、OS の最新バージョンを含むように拡張されることにご注意ください。 |
+|ceiling|string|"*この機能へのアクセスは制限されています*"。 このオプションは、示されているもの以前のオペレーティング システムに対してのみドライバーを提供する場合に使用します。 たとえば、Windows 10 1607 RS1 認定ドライバーについて、RS3 を上限として選択すると、Windows 10 1803 (RS4) 以降を実行しているシステムにドライバーは提供されません。設定可能な値は、次のとおりです。 <ul><li>TH</li><li>RS1</li><li>RS2</li><li>RS3</li><li>RS4</li><li>RS5</li><li>19H1</li></ul> 設定可能な値は、OS の最新バージョンを含むように拡張されることにご注意ください。 |
 
 これらの値について詳しくは、「[Limiting driver distribution by Windows versions (Windows のバージョンによるドライバーの配布の制限)](https://docs.microsoft.com/windows-hardware/drivers/dashboard/limit-driver-distribution)」をご覧ください。
 
