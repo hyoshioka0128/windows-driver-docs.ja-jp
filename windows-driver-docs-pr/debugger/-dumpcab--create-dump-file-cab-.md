@@ -28,11 +28,11 @@ ms.locfileid: "63336793"
 .dumpcab [-a] CabName 
 ```
 
-## <a name="span-idddkmetacreatedumpfilecabdbgspanspan-idddkmetacreatedumpfilecabdbgspanparameters"></a><span id="ddk_meta_create_dump_file_cab_dbg"></span><span id="DDK_META_CREATE_DUMP_FILE_CAB_DBG"></span>パラメーター
+## <a name="span-idddk_meta_create_dump_file_cab_dbgspanspan-idddk_meta_create_dump_file_cab_dbgspanparameters"></a><span id="ddk_meta_create_dump_file_cab_dbg"></span><span id="DDK_META_CREATE_DUMP_FILE_CAB_DBG"></span>パラメーター
 
 
-<span id="_______-a______"></span><span id="_______-A______"></span> **-**   
-CAB ファイルに含まれるすべての現在読み込まれているシンボル。 ミニダンプのすべての読み込まれたイメージが含まれますも。 使用[**人生が大好き**](lm--list-loaded-modules-.md)どのシンボルとイメージを読み込むかを決定します。
+<span id="_______-a______"></span><span id="_______-A______"></span> **-**    
+現在ロードされているすべてのシンボルを CAB ファイルに含めます。 ミニダンプの場合、ロードされたすべてのイメージも含まれます。 [**lml**](lm--list-loaded-modules-.md)を使用して、どのシンボルとイメージをロードするかを決定します。
 
 <span id="_______CabName______"></span><span id="_______cabname______"></span><span id="_______CABNAME______"></span> *CabName*   
 拡張子を含む CAB ファイル名。 *CabName*絶対または相対パスを含めることができます。 相対パスは、デバッガーが起動されたディレクトリに対して相対的な。 拡張子 .cab を選択することをお勧めします。
@@ -62,18 +62,18 @@ CAB ファイルに含まれるすべての現在読み込まれているシン�
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
 クラッシュ ダンプについて詳しくは、次を参照してください。[クラッシュ ダンプ ファイル](crash-dump-files.md)します。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>備考
 -------
 
-このコマンドは、既にダンプ ファイルをデバッグしている場合にのみ使用できます。
+このコマンドは、ダンプ ファイルをデバッグしている場合にのみ使用できます。
 
-使用する必要がありますをデバッグする場合、ライブのターゲットとダンプを作成するファイルし cab ファイルに配置、 [ **.dump (ダンプ ファイルの作成)** ](-dump--create-dump-file-.md)コマンド。 次に、そのターゲットとしてダンプ ファイルを使用して新しいデバッグ セッションを開始しを使用して、 **.dumpcab**します。
+ライブ環境をデバッグ中にダンプファイルを作成し cab ファイルとして保存する必要がある場合は、[ **.dump (ダンプ ファイルの作成)** ](-dump--create-dump-file-.md) コマンドを使用してください。 次に、ダンプ ファイルをターゲットとした新しいデバッグ セッションを開始し、 **.dumpcab** を使用してください。
 
-**.Dumpcab**を 1 つの CAB ファイルに複数のダンプ ファイルを格納するコマンドは使用できません。
+**.dumpcab** コマンドを使用して、1 つの CAB ファイルに複数のダンプ ファイルを格納することはできません。
 
  
 
