@@ -6,13 +6,13 @@ keywords:
 - Windows コンポーネント WDK
 - Windows NT コンポーネント WDK カーネル
 ms.date: 06/16/2017
-ms.localizationpriority: medium
-ms.openlocfilehash: 44537db010e89498573f4ec73b061fe0e40a4efb
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
-ms.translationtype: MT
+ms.localizationpriority: High
+ms.openlocfilehash: 0c295794930137c214ade9871d61781c197fedfa
+ms.sourcegitcommit: c73954a5909ec8c7e189f77fd5813f2eb749687c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383815"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72007628"
 ---
 # <a name="overview-of-windows-components"></a>Windows コンポーネントの概要
 
@@ -20,17 +20,17 @@ ms.locfileid: "67383815"
 
 
 
-次の図は、Windows オペレーティング システムの主要な内部コンポーネントを示しています。
+次の図は、Windows オペレーティングシステムの主要な内部コンポーネントを示しています。
 
 ![windows コンポーネントの概要を示す図](images/ntarch.png)
 
-図に示すように、Windows オペレーティング システムには、ユーザー モードとカーネル モードの両方のコンポーネントが含まれています。 Windows ユーザーおよびカーネル モードの詳細については、次を参照してください。[ユーザー モードとカーネル モード](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/user-mode-and-kernel-mode)します。
+図に示すように、Windows オペレーティングシステムには、ユーザーモードとカーネルモードの両方のコンポーネントが含まれています。 Windows ユーザーモードとカーネルモードの詳細については、「[ユーザーモードとカーネルモード](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/user-mode-and-kernel-mode)」を参照してください。
 
-ドライバーは、さまざまなカーネル コンポーネントによってエクスポートされるルーチンを呼び出します。 たとえば、デバイス オブジェクトを作成するにを呼び出す、 [ **IoCreateDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatedevice) I/O マネージャーがエクスポートしたルーチン。 ドライバーを呼び出すことができるルーチンをカーネル モードの一覧は、次を参照してください。[ドライバー サポート ルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)します。
+ドライバーは、さまざまなカーネルコンポーネントによってエクスポートされるルーチンを呼び出します。 たとえば、デバイスオブジェクトを作成するには、i/o マネージャーによってエクスポートされる[**IoCreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatedevice)ルーチンを呼び出します。 ドライバーが呼び出すことができるカーネルモードルーチンの一覧については、「[ドライバーサポートルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)」を参照してください。
 
-さらに、ドライバーはオペレーティング システムからの特定の呼び出しに応答する必要があります、その他のシステム呼び出しに応答できます。 ドライバーがサポートする必要があるカーネル モードのルーチンの一覧は、次を参照してください。[標準ドライバー ルーチン](https://docs.microsoft.com/windows-hardware/drivers/kernel/introduction-to-standard-driver-routines)します。
+また、ドライバーはオペレーティングシステムからの特定の呼び出しに応答し、他のシステムコールに応答できる必要があります。 ドライバーがサポートする必要があるカーネルモードルーチンの一覧については、「[標準ドライバールーチン](https://docs.microsoft.com/windows-hardware/drivers/kernel/introduction-to-standard-driver-routines)」を参照してください。
 
-上の図では、すべてのカーネル モード コンポーネントが含まれています。 カーネル モード コンポーネントの一覧は、次を参照してください。[カーネル モードの管理者とライブラリ](kernel-mode-managers-and-libraries.md)します。
+すべてのカーネルモードコンポーネントが上の図に示されているわけではありません。 カーネルモードコンポーネントの一覧については、「[カーネルモードマネージャーとライブラリ](kernel-mode-managers-and-libraries.md)」を参照してください。
 
  
 

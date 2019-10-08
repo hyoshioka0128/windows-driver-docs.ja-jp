@@ -4,35 +4,35 @@ description: INF ファイルの概要
 ms.assetid: 94682cba-1f68-416f-af74-99ede81eadc7
 keywords:
 - INF ファイル WDK デバイスのインストール
-- INF ファイル WDK デバイスのインストールを作成します。
-- デバイス セットアップ WDK デバイスのインストール、INF ファイル
+- INF ファイル WDK デバイスのインストール、作成
+- デバイスセットアップ WDK デバイスのインストール、INF ファイル
 - デバイスのインストール WDK、INF ファイル
-- インストールを実行するデバイス WDK、INF ファイル
-- INF ファイルを使用してドライバーをインストールします。
+- デバイスのインストール WDK, INF ファイル
+- INF ファイルを使用してドライバーをインストールする
 ms.date: 04/20/2017
-ms.localizationpriority: medium
-ms.openlocfilehash: d7baa663e05c87ee19208eef04bf788944be02cb
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
-ms.translationtype: MT
+ms.localizationpriority: High
+ms.openlocfilehash: 78dfa6c2a5df5e01417f0bf53275fbe3a1c4a98d
+ms.sourcegitcommit: c73954a5909ec8c7e189f77fd5813f2eb749687c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67374981"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72007586"
 ---
 # <a name="overview-of-inf-files"></a>INF ファイルの概要
 
 Windows では、セットアップ情報 (INF) ファイルを使用して、デバイスの次のコンポーネントをインストールします。
 
--   デバイスをサポートする 1 つまたは複数のドライバーです。
+-   デバイスをサポートする1つまたは複数のドライバー。
 
--   デバイス固有の構成またはデバイスをオンラインに設定します。
+-   デバイスをオンラインにするためのデバイス固有の構成または設定。
 
-INF ファイルは、すべての情報を含むテキスト ファイルを[デバイス インストール コンポーネント](https://docs.microsoft.com/previous-versions/ff541277(v=vs.85))ドライバーをインストールするために使用します。 Windows では、INF ファイルを使用してドライバーをインストールします。 この情報は次のとおりです。
+INF ファイルは、ドライバーのインストールに使用される[デバイスインストールコンポーネント](https://docs.microsoft.com/previous-versions/ff541277(v=vs.85))に関するすべての情報を含むテキストファイルです。 Windows は INF ファイルを使用してドライバーをインストールします。 この情報には、次のものが含まれます。
 
 -   ドライバーの名前と場所
 -   ドライバーのバージョン情報
 -   レジストリ情報
 
-使用することができます、 *INX* INF ファイルを自動的に作成するファイル。 INX ファイルでは、バージョン情報を表す文字列変数を含む INF ファイルです。 ビルド ユーティリティと[Stampinf](https://docs.microsoft.com/windows-hardware/drivers/devtest/stampinf)ツールは、特定のハードウェア アーキテクチャやフレームワークのバージョンを表すテキスト文字列で INX ファイル内の文字列変数を置き換えます。 INX ファイルの詳細については、次を参照してください。 [INX INF ファイルを作成するファイルを使用する](https://docs.microsoft.com/windows-hardware/drivers/wdf/using-inx-files-to-create-inf-files)します。
+*INX*ファイルを使用して、INF ファイルを自動的に作成することができます。 INX ファイルは、バージョン情報を表す文字列変数を含む INF ファイルです。 ビルドユーティリティと[Stampinf](https://docs.microsoft.com/windows-hardware/drivers/devtest/stampinf)ツールは、INX ファイル内の文字列変数を、特定のハードウェアアーキテクチャまたはフレームワークのバージョンを表すテキスト文字列に置き換えます。 INX ファイルの詳細については、「 [USING INX files To CREATE INF files](https://docs.microsoft.com/windows-hardware/drivers/wdf/using-inx-files-to-create-inf-files)」を参照してください。
 
 
-参照してください[INF ファイルのセクションとディレクティブ](inf-file-sections-and-directives.md)INF ファイル形式の詳細についてはします。
+INF ファイル形式の詳細については、「 [Inf ファイルのセクションとディレクティブ](inf-file-sections-and-directives.md)」を参照してください。

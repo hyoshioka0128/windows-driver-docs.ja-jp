@@ -3,17 +3,17 @@ title: デバイスとドライバーのインストールの概要
 description: デバイスとドライバーのインストールの概要
 ms.assetid: 5f29635b-c41b-40d1-8b83-b7f5bc71413b
 keywords:
-- デバイス セットアップ WDK デバイスのインストール、デバイスのインストールについて
-- デバイスのインストールに関するデバイス インストール WDK、
-- デバイスのインストールに関するデバイス、WDK をインストールします。
+- デバイスのセットアップ WDK デバイスのインストール、デバイスのインストールについて
+- デバイスのインストール WDK、デバイスのインストールについて
+- デバイスのインストールに関する WDK、デバイスのインストールについて
 ms.date: 04/20/2017
-ms.localizationpriority: medium
-ms.openlocfilehash: e26f6c7dff3d9577cc15c13f2c35c65cec549ba1
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
-ms.translationtype: MT
+ms.localizationpriority: High
+ms.openlocfilehash: cd853d1644253043b01273b5533523785bec5d72
+ms.sourcegitcommit: c73954a5909ec8c7e189f77fd5813f2eb749687c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67379449"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72007591"
 ---
 # <a name="overview-of-device-and-driver-installation"></a>デバイスとドライバーのインストールの概要
 
@@ -21,21 +21,21 @@ ms.locfileid: "67379449"
 
 
 
-Windows では、デバイスとドライバーをインストールするコンポーネントを提供します。 [システム指定のデバイスのインストール コンポーネント](system-provided-device-installation-components.md)と連携して[コンポーネントのベンダーから提供された](vendor-provided-device-installation-components.md)デバイスをインストールします。
+Windows には、デバイスとドライバーをインストールするためのコンポーネントが用意されています。 [システム提供のデバイスインストールコンポーネント](system-provided-device-installation-components.md)は、[ベンダーが提供するコンポーネント](vendor-provided-device-installation-components.md)と連携して、デバイスをインストールします。
 
-Windows デバイスをインストール、システムを再起動すると、システムの再起動後にいつでもユーザーはプラグ アンド プレイ (PnP) デバイスをプラグイン (または非 PnP デバイスを手動でインストールされます)。 サポートに PnP、Windows を実行、ドライバーのインストールを構築するのではなく、システムで、デバイスに基づいているデバイスのインストールします。 一連のドライバーの読み込みではなく、たとえば、あるものとドライバーがサポートされるデバイスを検出、Windows がシステムと負荷に存在するデバイスを決定し、各デバイスのドライバーを呼び出します。 など、ACPI ドライバーおよびその他の PnP ドライバー[バス ドライバー](https://docs.microsoft.com/windows-hardware/drivers/kernel/bus-drivers) Windows ヘルプは、デバイスが存在するを決定します。
+Windows は、システムが再起動したとき、およびユーザーがプラグアンドプレイ (PnP) デバイスに接続したとき (または手動で非 PnP デバイスをインストールしたとき) に、デバイスをインストールします。 PnP のサポートでは、ドライバーのインストールを構成するのではなく、システム内のデバイスに基づくデバイスのインストールが続行されます。 たとえば、ドライバーのセットを読み込み、それらのドライバーがサポートしているデバイスを検出するのではなく、Windows はシステム内に存在するデバイスを特定し、各デバイスのドライバーを読み込んで呼び出します。 ACPI ドライバーやその他の PnP[バスドライバー](https://docs.microsoft.com/windows-hardware/drivers/kernel/bus-drivers)などのドライバーは、Windows がどのデバイスを使用しているかを判断するのに役立ちます。
 
 ## <a name="in-this-section"></a>このセクションの内容
 
 
 -   [Windows がデバイスをインストールする方法](how-windows-installs-devices.md)
--   [システム指定のデバイスのインストール コンポーネント](system-provided-device-installation-components.md)
--   [ベンダー提供のデバイスのインストール コンポーネント](vendor-provided-device-installation-components.md)
--   [デバイスのインストール ファイル](device-installation-files.md)
+-   [システムによって提供されるデバイスのインストールコンポーネント](system-provided-device-installation-components.md)
+-   [ベンダーが提供するデバイスインストールコンポーネント](vendor-provided-device-installation-components.md)
+-   [デバイスのインストールファイル](device-installation-files.md)
 -   [デバイスのインストールの種類](device-installation-types.md)
--   [Windows ドライバーを選択する方法](how-setup-selects-drivers.md)
+-   [Windows がドライバーを選択する方法](how-setup-selects-drivers.md)
 
-デバイスの管理とインストールの詳細については、次を参照してください。、[ドライバーのインストール](https://go.microsoft.com/fwlink/p/?linkid=70230)web サイト。
+デバイスの管理とインストールの詳細については、[ドライバーのインストール](https://go.microsoft.com/fwlink/p/?linkid=70230)に関する web サイトを参照してください。
 
  
 

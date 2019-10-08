@@ -3,28 +3,28 @@ title: Windows のデバイスのインストール方法
 description: Windows のデバイスのインストール方法
 ms.assetid: 8d8af8bc-1368-4532-913f-11d3d65e1b20
 ms.date: 04/20/2017
-ms.localizationpriority: medium
-ms.openlocfilehash: 8a9753e55f4fa2e8f82c00a68fb88d4d6970cbce
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
-ms.translationtype: MT
+ms.localizationpriority: High
+ms.openlocfilehash: 0ef916508a4356a9accf5ecf13147f2529d0e757
+ms.sourcegitcommit: c73954a5909ec8c7e189f77fd5813f2eb749687c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67387033"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72007621"
 ---
 # <a name="how-windows-installs-devices"></a>Windows のデバイスのインストール方法
 
 
-**注**  デバイスとドライバーのインストールの概念に慣れていない場合はお読みくださいこのセクションのトピックでその他のデバイスとドライバーのインストールに関するトピックを読む前にします。
+**注**   デバイスとドライバーのインストールの概念を理解していない場合は、このセクションのトピックを読んでから、その他のデバイスとドライバーのインストールに関するトピックを参照してください。
 
  
 
-このセクションでは、デバイスのインストール プロセスの概要を提供します。 このプロセスは Windows で実行し、その[デバイス インストールのコンポーネント](https://docs.microsoft.com/previous-versions/ff541277(v=vs.85))新しいデバイスがコンピューターに接続されているし、次の手順で構成されています。
+このセクションでは、デバイスのインストールプロセスの概要について説明します。 このプロセスは、新しいデバイスがコンピューターに接続されているときに Windows とその[デバイスのインストールコンポーネント](https://docs.microsoft.com/previous-versions/ff541277(v=vs.85))によって実行され、次の手順で構成されます。
 
-[ステップ 1: 新しいデバイスを識別します。](step-1--the-new-device-is-identified.md)
+[ステップ 1: 新しいデバイスが @ no__t-0 と識別されます。
 
-[手順 2:デバイスのドライバーが選択されています。](step-2--a-driver-for-the-device-is-selected.md)
+[手順 2:デバイスのドライバーが選択されています @ no__t-0
 
-[手順 3:デバイスのドライバーがインストールされています。](step-3--the-driver-for-the-device-is-installed.md)
+[手順 3:デバイスのドライバーがインストールされています @ no__t-0
 
  
 

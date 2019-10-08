@@ -6,20 +6,18 @@ ms.date: 01/24/2018
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: 103ede5b9929de69855e4c530240dcc5ef13f48b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4c155a273d7a602bb164d7b5ba44de39efbc7074
+ms.sourcegitcommit: 76147255532f5fedacf591679e2604216e89365d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328819"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72021053"
 ---
 # <a name="acpi-design-guide"></a>ACPI 設計ガイド
-
 
 このセクションでは、デバイス ドライバーと Advanced Configuration and Power Interface (ACPI) デバイスのインターフェイス方法について説明します。 ACPI デバイスは、[Advanced Configuration and Power Interface (ACPI) 仕様](https://go.microsoft.com/fwlink/p/?linkid=866846)で定義されています。
 
 ## <a name="in-this-section"></a>このセクションの内容
-
 
 | セクション | 説明 |
 | --- | --- |
@@ -27,12 +25,6 @@ ms.locfileid: "63328819"
 | [ACPI 制御メソッドの評価](evaluating-acpi-control-methods.md) | [Kernel-Mode Driver Framework (KMDF)](https://docs.microsoft.com/windows-hardware/drivers/kernel)、[User-Mode Driver Framework (UMDF)](https://docs.microsoft.com/windows-hardware/drivers/wdf/getting-started-with-umdf-version-2)、または [Windows Driver Model (WDM)](https://docs.microsoft.com/windows-hardware/drivers/kernel/windows-driver-model) の要件に準拠するデバイス ドライバーで、ACPI 制御メソッドを評価する方法について説明します。 |
 | [_OSI を使用して ACPI で Windows バージョンを識別する方法](winacpi-osi.md) | ホスト オペレーティング システムの識別に使用される ACPI ソース言語 (ASL) のオペレーティング システム インターフェイス レベル (\_OSI) メソッドについて説明します。 |
 
+## <a name="related-sections"></a>関連セクション
 
-## <a name="related-sctions"></a>関連するセクション
-
--   [ACPI DDI リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_acpi)
-
- 
-
-
-
+- [ACPI DDI リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_acpi)

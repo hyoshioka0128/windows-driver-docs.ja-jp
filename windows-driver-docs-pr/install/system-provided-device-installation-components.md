@@ -1,46 +1,46 @@
 ---
-title: システム指定のデバイスのインストール コンポーネント
-description: システム指定のデバイスのインストール コンポーネント
+title: システムによって提供されるデバイスのインストールコンポーネント
+description: システムによって提供されるデバイスのインストールコンポーネント
 ms.assetid: faf586b9-ab99-4fee-a0d1-923000000189
 ms.date: 04/20/2017
-ms.localizationpriority: medium
-ms.openlocfilehash: ab257f2c828a30e599c7b951148b986c1e05fe75
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
-ms.translationtype: MT
+ms.localizationpriority: High
+ms.openlocfilehash: a736de631067e947e9c47ef6cf9b3400a2a125c8
+ms.sourcegitcommit: c73954a5909ec8c7e189f77fd5813f2eb749687c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339650"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72007595"
 ---
-# <a name="system-provided-device-installation-components"></a>システム指定のデバイスのインストール コンポーネント
+# <a name="system-provided-device-installation-components"></a>システムによって提供されるデバイスのインストールコンポーネント
 
 
-次の一覧には、Windows オペレーティング システムによって提供されるデバイスのインストール コンポーネントについて説明します。
+次の一覧では、Windows オペレーティングシステムによって提供されるデバイスインストールコンポーネントについて説明します。
 
-<a href="" id="plug-and-play--pnp--manager"></a>プラグ アンド プレイ (PnP) マネージャー  
-プラグ アンド プレイ (PnP) マネージャーでは、Windows 内での PnP の機能を次のサポートを示します。
+<a href="" id="plug-and-play--pnp--manager"></a>プラグアンドプレイ (PnP) マネージャー  
+プラグアンドプレイ (PnP) マネージャーは、Windows 内の PnP 機能に対して次のサポートを提供します。
 
--   デバイスの検出と、システムの起動中に列挙型
--   追加またはシステムの実行中にデバイスを削除します。
+-   システムの起動中のデバイスの検出と列挙
+-   システムの実行中にデバイスを追加または削除する
 
-詳細については、次を参照してください。 [PnP マネージャー](pnp-manager.md)します。
+詳細については、「 [PnP マネージャー](pnp-manager.md)」を参照してください。
 
-<a href="" id="setupapi"></a>SetupAPI  
-セットアップ アプリケーション プログラミング インターフェイス (*SetupAPI*) 一般的なセットアップ関数が含まれています (**セットアップ * **Xxx*) とデバイスのインストール機能 (** SetupDi * **Xxx*と **Di * * * Xxx*)。 これらの関数は、INF ファイルの検索、潜在的なデバイスのドライバーの一覧を作成、ドライバー ファイルをコピー、レジストリに情報を書き込むおよび co-installer をデバイスの登録などの多くのデバイスのインストール タスクを実行します。 ほとんどの他のデバイスのインストール コンポーネントは、これらの関数を呼び出します。
+<a href="" id="setupapi"></a>Setupapi.log  
+セットアップアプリケーションプログラミングインターフェイス (*setupapi.log*) には、一般的なセットアップ機能 (**セットアップ * **xxx*) とデバイスインストール機能 (** Setupdi * **Xxx*および **Di * * * xxx*) が含まれています。 これらの関数は、INF ファイルの検索、デバイスのドライバーの候補リストの作成、ドライバーファイルのコピー、レジストリへの情報の書き込み、デバイスの共同インストーラーの登録など、多くのデバイスインストールタスクを実行します。 その他のデバイスインストールコンポーネントの多くは、これらの機能を呼び出します。
 
-詳細については、次を参照してください。 [SetupAPI](setupapi.md)します。
+詳細については、「 [setupapi.log](setupapi.md)」を参照してください。
 
-<a href="" id="configuration-manager-api"></a>Configuration Manager の API  
-基本的なインストールと構成の操作には、SetupAPI によって提供されない PnP configuration manager の API を提供します。 PnP 構成マネージャーの機能は、デバイス ノードの状態の取得などの低レベルのタスクを実行 (*devnode*) とリソースの記述子を管理します。 これらの関数は、SetupAPI によって主に呼び出されますが、その他のデバイス インストールのコンポーネントによって呼び出すこともできます。
+<a href="" id="configuration-manager-api"></a>Configuration Manager API  
+PnP 構成マネージャー API は、Setupapi.log によって提供されない基本的なインストールと構成の操作を提供します。 PnP 構成マネージャーの関数は、デバイスノードの状態 (*devnode*) の取得やリソース記述子の管理などの低レベルのタスクを実行します。 これらの関数は、主に Setupapi.log によって呼び出されますが、他のデバイスインストールコンポーネントから呼び出すこともできます。
 
-<a href="" id="driver-store"></a>ドライバー ストア  
-Windows Vista 以降、ドライバー ストアは、インボックスとサード パーティの信頼できるコレクション[ドライバー パッケージ](driver-packages.md)します。 オペレーティング システムでは、ローカルのハード ディスク上のセキュリティで保護された場所で、このコレクションを保持します。 デバイスのドライバー ストアにドライバー パッケージのみをインストールできます。
+<a href="" id="driver-store"></a>ドライバーストア  
+Windows Vista 以降では、ドライバーストアは、インボックスおよびサードパーティの[ドライバーパッケージ](driver-packages.md)の信頼されたコレクションです。 オペレーティングシステムは、このコレクションをローカルハードディスク上の安全な場所に保持します。 デバイスにインストールできるのは、ドライバーストア内のドライバーパッケージだけです。
 
-詳細については、次を参照してください。[ドライバー ストア](driver-store.md)します。
+詳細については、「[ドライバーストア](driver-store.md)」を参照してください。
 
 <a href="" id="device-manager"></a>デバイス マネージャー  
-デバイス マネージャーでは、表示し、システム上のデバイスを管理します。 たとえば、デバイスの状態を表示でき、デバイスのプロパティを設定できます。
+デバイスマネージャーを使用すると、システム上のデバイスを表示および管理できます。 たとえば、デバイスの状態を表示したり、デバイスのプロパティを設定したりできます。
 
-詳細については、次を参照してください。[デバイス マネージャーを使用して](using-device-manager.md)します。 また、デバイス マネージャーのヘルプ ドキュメントを参照してください。
+詳細については、「 [Using デバイスマネージャー](using-device-manager.md)」を参照してください。 また、デバイスマネージャーのヘルプドキュメントを参照してください。
 
  
 

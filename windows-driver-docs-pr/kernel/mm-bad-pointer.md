@@ -2,14 +2,14 @@
 title: Windows カーネルのマクロ
 description: Windows カーネルのマクロ
 ms.assetid: 91366400-3307-4F13-A839-50BA85B7F73E
-ms.localizationpriority: medium
+ms.localizationpriority: High
 ms.date: 10/17/2018
-ms.openlocfilehash: 7acea88bbee2cd0b39680f536fc207d14faec3fe
-ms.sourcegitcommit: ee1fc949d1ae5eb14df4530758f767702a886e36
-ms.translationtype: MT
+ms.openlocfilehash: f6a7a5cd82a9c832e5edf30726ceae4958fbe146
+ms.sourcegitcommit: c73954a5909ec8c7e189f77fd5813f2eb749687c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71164789"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72007627"
 ---
 # <a name="windows-kernel-macros"></a>Windows カーネルのマクロ
 
@@ -197,15 +197,15 @@ IRQL任意のレベル
 
 これに対し、値**MM_BAD_POINTER**は、ドライバーを実行するすべてのプラットフォームで無効なアドレスであることが保証されます。
 
-アドレス0が無効なアドレスであるプラットフォームでは、IRQL < DISPATCH_LEVEL でアドレス0にアクセスするドライバーにより、 `try/except`ステートメントで誤ってキャッチされる例外 (アクセス違反) が発生します。 このため、ドライバーの例外処理コードによって無効なアクセスがマスクされ、デバッグ中に検出されない可能性があります。 ただし、 **MM_BAD_POINTER**アドレスへのアクセスによってバグチェックが確実に行われることは保証されていますが、これは例外ハンドラーによってマスクされることはありません。
+アドレス0が無効なアドレスであるプラットフォームでは、IRQL < DISPATCH_LEVEL でアドレス0にアクセスするドライバーによって、@no__t 0 ステートメントで誤ってキャッチされる例外 (アクセス違反) が発生します。 このため、ドライバーの例外処理コードによって無効なアクセスがマスクされ、デバッグ中に検出されない可能性があります。 ただし、 **MM_BAD_POINTER**アドレスへのアクセスによってバグチェックが確実に行われることは保証されていますが、これは例外ハンドラーによってマスクされることはありません。
 
-次のコード例は、という名前`ptr`のポインター変数に値**MM_BAD_POINTER**を割り当てる方法を示しています。 Ntdef .h ヘッダーファイルは、へ`unsigned char`のポインターとなる puchar 型を定義します。
+次のコード例は、`ptr` という名前のポインター変数に値**MM_BAD_POINTER**を割り当てる方法を示しています。 Ntdef .h ヘッダーファイルは、@no__t へのポインターとなる PUCHAR 型を定義します。
 
 `PUCHAR ptr = (PUCHAR)MM_BAD_POINTER; // Now _ptr is guaranteed to fault._`
 
-が MM_BAD_POINTER に設定されると、が指す`ptr`メモリ位置にアクセスしようとすると、バグチェックが発生します。 `ptr`
+@No__t-0 が**MM_BAD_POINTER**に設定されると、@no__t が指すメモリ位置にアクセスしようとすると、バグチェックが行われます。
 
-実際、 **MM_BAD_POINTER**は、無効なアドレスのページ全体のベースアドレスです。 そのため、範囲**MM_BAD_POINTER** (**MM_BAD_POINTER** + **PAGE_SIZE** -1) のアドレスにアクセスすると、バグチェックが発生します。
+実際、 **MM_BAD_POINTER**は、無効なアドレスのページ全体のベースアドレスです。 したがって、範囲**MM_BAD_POINTER** (**MM_BAD_POINTER** + **PAGE_SIZE** ) 内のアドレスにアクセスすると、バグチェックが発生します。
 
 Windows 8.1 以降では、 **MM_BAD_POINTER**マクロは、Wdm ヘッダーファイルで定義されています。 ただし、このマクロ定義を使用するドライバーコードは、Windows Vista 以降の以前のバージョンの Windows で実行できます。
 
