@@ -14,12 +14,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ffc629793b5dba6561f6b6dfda7af6b68558141
-ms.sourcegitcommit: 2aa583e3da4ae9338a0d11678bf77f1460286f2d
+ms.openlocfilehash: 8b10538ea1a4de33199b59796deb8d1e9265a452
+ms.sourcegitcommit: 76147255532f5fedacf591679e2604216e89365d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "70025238"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72021055"
 ---
 # <a name="heap"></a>!heap
 
@@ -76,7 +76,7 @@ ms.locfileid: "70025238"
 <td align="left"><p>バケットのサイズを指定します。 既定値は1024ビットです。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>-d</strong> <em>Dumpblocksize</em></p></td>
+<td align="left"><p><strong>-d</strong> <em>dumpblocksize</em></p></td>
 <td align="left"><p>バケットのサイズを指定します。</p></td>
 </tr>
 <tr class="even">
@@ -92,16 +92,16 @@ ms.locfileid: "70025238"
 
  
 
-<span id="_______-triage__Handle___Address___"></span><span id="_______-triage__handle___address___"></span><span id="_______-TRIAGE__HANDLE___ADDRESS___"></span> **-トリアージ\[** <em>ハンドル</em>アドレス **|** **\]**    
+<span id="_______-triage__Handle___Address___"></span><span id="_______-triage__handle___address___"></span><span id="_______-TRIAGE__HANDLE___ADDRESS___"></span> **-トリアージ \[** <em>ハンドル</em> **|** <em>アドレス</em>**0**1  
 デバッガーがプロセスのヒープ内のエラーを自動的に検索します。 ヒープハンドルが引数として指定されている場合、そのヒープが検査されます。それ以外の場合は、指定されたアドレスを含むすべてのヒープが検索され、見つかった場合は検査されます。 **-トリアージ**を使用するのは、低断片化ヒープ (lfh) の破損を検証する唯一の方法です。
 
-<span id="_______-x_-v_"></span><span id="_______-X_-V_"></span> **-x** **** -v \[\]   
+<span id="_______-x_-v_"></span><span id="_______-X_-V_"></span> **-x** \[ **-v**\]   
 指定されたアドレスを含むヒープブロックをデバッガーが検索します。 -V を追加すると、コマンドは、現在のプロセスの仮想メモリ領域全体で、このヒープブロックへのポインターを検索します。
 
 <span id="_______-l______"></span><span id="_______-L______"></span> **-l**   
 デバッガーがリークしたヒープブロックを検出するようにします。
 
-<span id="_______-i________Address______-h_HeapAddress______"></span><span id="_______-i________address______-h_heapaddress______"></span><span id="_______-I________ADDRESS______-H_HEAPADDRESS______"></span> **-i**  ****  *アドレス* **-h** *HeapAddress*    
+<span id="_______-i________Address______-h_HeapAddress______"></span><span id="_______-i________address______-h_heapaddress______"></span><span id="_______-I________ADDRESS______-H_HEAPADDRESS______"></span> **-i** *アドレス* **-h** *heapaddress*   
 指定した*ヒープ*に関する情報を表示します。
 
 <span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span>*アドレス*   
@@ -134,7 +134,7 @@ ms.locfileid: "70025238"
 <td align="left"><p><strong>-v</strong></p></td>
 <td align="left"><p>指定されたヒープをデバッガーが検証します。</p>
 <div class="alert">
-<strong></strong>注  このオプションでは、低い断片化ヒープ (lfh) の破損は検出されません。 代わりに<strong>-トリアージ</strong>を使用してください。
+<strong>Note @ no__t-1 @ no__t-2This オプションでは、低い断片化ヒープ (LFH) の破損は検出されません。 代わりに<strong>-トリアージ</strong>を使用してください。
 </div>
 <div>
  
@@ -221,7 +221,7 @@ ms.locfileid: "70025238"
 
  
 
-<span id="_______-i________Heap_Address______or_HeapAddress______"></span><span id="_______-i________heap_address______or_heapaddress______"></span><span id="_______-I________HEAP_ADDRESS______OR_HEAPADDRESS______"></span> **-i**  ****  *ヒープ*  ****  *アドレス* **または** *HeapAddress*   
+<span id="_______-i________Heap_Address______or_HeapAddress______"></span><span id="_______-i________heap_address______or_heapaddress______"></span><span id="_______-I________HEAP_ADDRESS______OR_HEAPADDRESS______"></span> **-i** *Heap* *アドレス***または** *heapaddress*   
 指定した*ヒープ*に関する情報を表示します。
 
 <span id="_______BreakAddress______"></span><span id="_______breakaddress______"></span><span id="_______BREAKADDRESS______"></span>*Breakaddress*   
@@ -236,7 +236,7 @@ ms.locfileid: "70025238"
 <span id="_______-B______"></span><span id="_______-b______"></span> **-B**   
 デバッガーによって、ヒープマネージャーから条件付きブレークポイントが削除されます。 ブレークポイントの種類 (**alloc**、 **realloc**、または**free**) を指定する必要があり、 **-b**オプションで使用されているものと同じである必要があります。
 
-<span id="_______StatHeapAddress______"></span><span id="_______statheapaddress______"></span><span id="_______STATHEAPADDRESS______"></span>すべての*ip アドレス*   
+<span id="_______StatHeapAddress______"></span><span id="_______statheapaddress______"></span><span id="_______STATHEAPADDRESS______"></span> *@No__t-* 4  
 ヒープのアドレスを指定します。 0または省略した場合は、現在のプロセスに関連付けられているすべてのヒープが表示されます。
 
 <span id="_______-p______"></span><span id="_______-P______"></span> **-p**   
@@ -262,7 +262,7 @@ ms.locfileid: "70025238"
 <td align="left"><p>デバッガーで、ハンドル<em>ハンドル</em>を持つページヒープに関する詳細情報を表示します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>-a</strong> <em>アドレス</em></p></td>
+<td align="left"><p><strong>-</strong> <em>アドレス</em></p></td>
 <td align="left"><p>デバッガーが、ブロックに<em>アドレス</em>を含むページヒープを検索します。 このアドレスがページヒープの一部であるかどうか、ブロック内のオフセット、ブロックが割り当てられているか解放されたかなど、このアドレスがフルページヒープブロックにどのように関連しているかの詳細が含まれます。 スタックトレースは、使用可能な場合は常に含まれます。 このオプションを使用する場合、サイズは、ヒープ割り当ての粒度の倍数で表示されます。</p></td>
 </tr>
 <tr class="odd">
@@ -366,10 +366,10 @@ ms.locfileid: "70025238"
 <span id="_______-stat______"></span><span id="_______-STAT______"></span> **-stat**   
 指定したヒープの使用状況の統計情報を表示します。
 
-<span id="_______-h________Handle______"></span><span id="_______-h________handle______"></span><span id="_______-H________HANDLE______"></span> **-h***ハンドル*   
+<span id="_______-h________Handle______"></span><span id="_______-h________handle______"></span><span id="_______-H________HANDLE______"></span> **-h** *ハンドル*   
 *ハンドル*のヒープのみの使用状況の統計を表示します。 *Handle*が0であるか省略されている場合は、すべてのヒープの使用状況の統計が表示されます。
 
-<span id="_______-grp________GroupBy______"></span><span id="_______-grp________groupby______"></span><span id="_______-GRP________GROUPBY______"></span> **-grp** ****  *GroupBy*   
+<span id="_______-grp________GroupBy______"></span><span id="_______-grp________groupby______"></span><span id="_______-GRP________GROUPBY______"></span> **-grp** *GroupBy*   
 *GroupBy*によって指定されたとおりに表示を並べ替えます。 *GroupBy*のオプションについては、次の表を参照してください。
 
 <table>
@@ -426,11 +426,11 @@ Ext .dll の .dll</td>
 
 手順Mark Russinovich と David ソロモンによる*Microsoft Windows の内部構造*。
 
-[例 11:ページヒープ検証の有効化](example-11---enabling-page-heap-verification.md)
+[Example 11:ページヒープ検証を有効にする @ no__t-0
 
-[例 12:ページヒープ検証を使用したバグの検出](example-12---using-page-heap-verification-to-find-a-bug.md)
+[Example 12:ページヒープ検証を使用したバグの検出 @ no__t-0
 
-ヒープメモリプロセスロガーの使用方法の詳細につい[ては、次を参照してください。例 11:プライベートトレースセッションを開始しています](https://docs.microsoft.com/windows-hardware/drivers/devtest/example-11--starting-a-private-trace-session)
+ヒープメモリプロセスロガーの使用方法の詳細については、次を参照してください [Example 11:プライベートトレースセッションを開始する @ no__t-0
 
 <a name="remarks"></a>コメント
 -------
@@ -447,7 +447,7 @@ Standard **! heap**コマンドは、現在のプロセスのヒープ情報を�
 
 **! Heap-p**コマンドは、さまざまな形式のページヒープ情報を表示します。 **! Heap-p**を使用する前に、ターゲットプロセスのページヒープを有効にする必要があります。 これは、グローバルフラグ (msbuild.exe) ユーティリティを使用して行います。 これを行うには、ユーティリティを起動して、対象アプリケーションの名前を **[イメージファイル名]** ボックスに入力し、 **[イメージファイルのオプション]** を選択して**ページヒープを有効に**し、 **[適用]** をクリックします。 または、コマンドプロンプトウィンドウで「 **gflags/i** *xxx. .exe* **+ hpa**」と入力してグローバルフラグユーティリティを起動することもできます。ここで、 *xxx*はターゲットアプリケーションの名前です。
 
-**! Heap-p-t\[c | s\]** コマンドは、Windows XP 以降ではサポートされていません。 デバッガーパッケージに用意されている[UMDH](umdh.md)ツールを使用して、同様の結果を取得します。
+**! Heap-p-t @ no__t | s @ no__t**コマンドは、Windows XP 以降ではサポートされていません。 デバッガーパッケージに用意されている[UMDH](umdh.md)ツールを使用して、同様の結果を取得します。
 
 **! Heap-srch**コマンドは、指定された特定のパターンを含むヒープエントリを表示します。
 
@@ -720,4 +720,4 @@ Search VM for address range 002057a8 - 002057ff : 00205990 (002057d0),
     Block header (starts with 0xABCDBBA and ends with 0xDCBABBBA) 
 ```
 
-ヒープブロックまたは完全ページヒープブロックの割り当てまたは解放のスタックトレースを表示するには、ヘッダーアドレスを含む[**dt dph\_\_ブロック情報**](dt--display-type-.md)を使用し、その後、ブロックの**StackTrace**フィールドで[**dds**](dds--dps--dqs--display-words-and-symbols-.md)を使用します。
+ヒープブロックまたはページヒープブロックの割り当てまたは解放のスタックトレースを表示するには、ヘッダーアドレスを含む[**DT DPH @ no__t-2BLOCK @ no__t**](dt--display-type-.md)を使用し、その後にブロックの**StackTrace**フィールドを持つ[**dds**](dds--dps--dqs--display-words-and-symbols-.md)を使用します。
