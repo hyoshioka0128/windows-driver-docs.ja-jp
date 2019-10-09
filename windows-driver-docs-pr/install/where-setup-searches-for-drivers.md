@@ -3,22 +3,22 @@ title: Windows のドライバーの検索場所
 description: Windows のドライバーの検索場所
 ms.assetid: 4c193b97-7b70-425f-99f2-ba976a4cc40a
 keywords:
-- ドライバーの選択、WDK のデバイスのインストール、デバイス setupsearches
-- デバイス インストール WDK デバイスのインストール用のドライバーを検索する場所デバイス setupsearches
-- デバイス インストール WDK デバイスのインストール中にドライバーを探しているデバイス setupsearches
+- ドライバー選択の WDK デバイスのインストール、デバイスの setupsearches
+- デバイスのインストールに使用する WDK デバイスのドライバーの特定デバイスの setupsearches
+- デバイスのインストール中にドライバーを検索する WDK デバイスのインストール (デバイスの setupsearches)
 ms.date: 04/20/2017
-ms.localizationpriority: medium
-ms.openlocfilehash: 08daf6511d424e5d892c4c1afd13ff3f0db73b01
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
-ms.translationtype: MT
+ms.localizationpriority: High
+ms.openlocfilehash: 861a2fea00fcc7f7cb5ecf1cc17805f86d86ff7b
+ms.sourcegitcommit: c73954a5909ec8c7e189f77fd5813f2eb749687c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339303"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72007647"
 ---
 # <a name="where-windows-searches-for-drivers"></a>Windows のドライバーの検索場所
 
 
-Windows が一致を検索しようとした、デバイスが接続されると、[ドライバー パッケージ](driver-packages.md)そこから、デバイスのドライバーをインストールできます。 Windows では、さまざまな場所からドライバー パッケージを検索し、次の表に示すように、2 段階でこの検索を実行します。
+デバイスが接続されると、Windows は、デバイスのドライバーをインストールできる、一致する[ドライバーパッケージ](driver-packages.md)の検索を試みます。 Windows は、次の表に示すように、さまざまな場所からドライバーパッケージを検索し、2つのフェーズでこの検索を実行します。
 
 <table>
 <colgroup>
@@ -30,19 +30,19 @@ Windows が一致を検索しようとした、デバイスが接続されると
 <tr class="header">
 <th align="left">検索フェーズ</th>
 <th align="left">Windows 7</th>
-<th align="left">Windows 8 および Windows の以降のバージョン</th>
+<th align="left">Windows 8 以降のバージョンの Windows</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">ドライバーをインストールする前に</td>
+<td align="left">ドライバーがインストールされる前</td>
 <td align="left"><p>DevicePath</p>
 <p>Windows Update</p>
-<p><a href="driver-store.md" data-raw-source="[Driver store](driver-store.md)">ドライバー ストア</a></p></td>
-<td align="left"><a href="driver-store.md" data-raw-source="[Driver store](driver-store.md)">ドライバー ストア</a></td>
+<p><a href="driver-store.md" data-raw-source="[Driver store](driver-store.md)">ドライバーストア</a></p></td>
+<td align="left"><a href="driver-store.md" data-raw-source="[Driver store](driver-store.md)">ドライバーストア</a></td>
 </tr>
 <tr class="even">
-<td align="left">初期のドライバーを選択します。</td>
+<td align="left">最初のドライバーが選択された後</td>
 <td align="left"><p>適用なし</p></td>
 <td align="left"><p>DevicePath</p>
 <p>Windows Update</p></td>
@@ -52,15 +52,15 @@ Windows が一致を検索しようとした、デバイスが接続されると
 
  
 
-### <a name="searching-for-driver-packages"></a>ドライバー パッケージを検索
+### <a name="searching-for-driver-packages"></a>ドライバーパッケージを検索しています
 
-デバイスが接続されると、Windows は、最初に見つけて次のように、ユーザーの介入なしの信頼済みのシステム コンテキストでドライバーをインストールする回数します。
+デバイスが接続されると、Windows はまず、次のように、ユーザーの介入なしに、信頼されたシステムコンテキストでドライバーの検索とインストールを試みます。
 
--   ドライバー ストアに既に存在する、最も一致するドライバーは最初に、操作をすばやく開始するデバイスを許可するデバイス上にインストールします。 並列および別のプロセスでは、次のように行われます。
+-   ドライバーストアに既に存在する最適なドライバーは、デバイスに最初にインストールされます。これにより、デバイスはすぐに操作を開始できます。 並列で、および別のプロセスでは、次の処理が行われます。
 
--   Windows が自動的に一致するダウンロード[ドライバー パッケージ](driver-packages.md)Windows Update から。 Windows がパッケージをダウンロードし、段階的に一致するドライバー パッケージが見つかった場合、[ドライバー ストア](driver-store.md)します。 Windows 10 バージョン 1709 以降では、Windows で利用できる、最適なランク付けされたドライバーは必ずしも最新です。 ドライバーのランク付け考慮 HWID、日付/バージョン、および重要な/自動/省略可能なカテゴリ。 Windows には、最も高い重大または自動のドライバーが順位付けされます。 一致するドライバーが見つからない場合 WU は省略可能なドライバーの [次へ] を検索します。 その結果、それ以外の場合と同じランクの以前の不可欠なドライバーは、新しいオプションのドライバーに優先します。 Windows バージョン 1709 より前 Windows で利用できる重要で省略可能な更新プログラムと同じ優先順位。
+-   Windows は、一致する[ドライバーパッケージ](driver-packages.md)を Windows Update から自動的にダウンロードします。 一致するドライバーパッケージが見つかった場合は、Windows によってパッケージがダウンロードされ、[ドライバーストア](driver-store.md)にステージングされます。 Windows 10 バージョン1709以降では、Windows で最も優先順位の高いドライバーが提供されていますが、これは必ずしも最新ではありません。 ドライバーのランク付けでは、HWID、日付/バージョン、および重大/自動/オプションのカテゴリが考慮されます。 Windows では、重要なドライバーまたは自動ドライバーの優先順位が高くなります。 一致するドライバーが見つからない場合、WU は次にオプションのドライバーを検索します。 その結果、より優先順位の低い古い重要なドライバーが、新しいオプションのドライバーよりも優先されます。 1709より前の Windows バージョンでは、Windows では重要な更新プログラムとオプションの更新プログラムが提供され、優先順位は等しくなります。
 
-    Windows で指定されている場所に事前に読み込まれていたするドライバー パッケージも検索、 **DevicePath**レジストリ値。 この値は、次のレジストリのサブキーの下でです。
+    また、 **DevicePath**レジストリ値によって指定された場所にプリロードされたドライバーパッケージを検索します。 この値は、レジストリの次のサブキーの下にあります。
 
     ```cpp
     HKEY_LOCAL_MACHINE
@@ -70,9 +70,9 @@ Windows が一致を検索しようとした、デバイスが接続されると
                 CurrentVersion
     ```
 
-    既定で、 **DevicePath**値の指定、%systemroot%\\INF ディレクトリ。
+    既定では、 **DevicePath**値は% SystemRoot% \\inf ディレクトリを指定します。
 
-    Windows Update でまたはが指定されている場所のいずれかが最初にインストールされているドライバー パッケージが見つからないより一致する場合は、 **DevicePath**値では、Windows を最初にステージングするドライバー パッケージ、[ドライバー ストア](driver-store.md)ドライバーをインストールする前にします。 これにより、Windows は常に、ドライバー ストアからドライバーをインストールします。
+    Windows Update または**DevicePath**値で指定された場所に、最初にインストールされたよりも適切なドライバーパッケージが見つかった場合、Windows は、ドライバーパッケージをドライバー[ストア](driver-store.md)にステージングしてから、ドライバーがら. このようにして、Windows は常にドライバーストアからドライバーをインストールします。
 
  
 

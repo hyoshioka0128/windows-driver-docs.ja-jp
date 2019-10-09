@@ -1,56 +1,56 @@
 ---
 title: Debugging Tools for Windows のダウンロード - WinDbg
-description: このページは、WinDbg などの Windows デバッグ ツールのダウンロードを提供します。
+description: このページには、WinDbg などの Windows デバッグツールのダウンロードが用意されています。
 keywords:
-- Windows デバッグのダウンロードします。
+- Windows デバッグのダウンロード
 - WinDbg
 - ダウンロード
 ms.date: 07/02/2019
-ms.localizationpriority: medium
-ms.openlocfilehash: 68a45e06ae3c1179cada8d73246f90a7c7bbde3f
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
-ms.translationtype: MT
+ms.localizationpriority: High
+ms.openlocfilehash: 9f60a3cedcae29bb2366833e77bef50d5761ca92
+ms.sourcegitcommit: c73954a5909ec8c7e189f77fd5813f2eb749687c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67518729"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72007550"
 ---
-# <a name="download-debugging-tools-for-windows"></a>Windows 用デバッグ ツールをダウンロードします。
+# <a name="download-debugging-tools-for-windows"></a>Windows 用デバッグツールのダウンロード
 
-Windows デバッガー (WinDbg) を使用すると、クラッシュ ダンプを分析する、カーネル モードとユーザー モードのコードをデバッグして、コードの中に CPU レジスタの確認を実行します。
+Windows デバッガー (WinDbg) を使用して、カーネルモードとユーザーモードのコードをデバッグし、クラッシュダンプを分析して、コードの実行中に CPU レジスタを調べることができます。
 
-## <a name="small-windbg-preview-logoimageswindbgx-preview-logopng-download-windbg-preview"></a>![小規模な windbg プレビュー ロゴ](images/windbgx-preview-logo.png) WinDbg Preview をダウンロードします。
+## <a name="small-windbg-preview-logoimageswindbgx-preview-logopng-download-windbg-preview"></a>![小規模の windbg プレビューロゴ](images/windbgx-preview-logo.png) WinDbg Preview のダウンロード
 
 WinDbg Preview は、最新の外観、高速なウィンドウ、本格的なスクリプトの操作性を備え、拡張可能なデバッガー データモデルを中心に構築された WinDbg の新しいバージョンです。 WinDbg プレビューは、現行の WinDbg と同じ基本エンジンを使用しているため、すべてのコマンド、拡張機能、ワークフローがこれまでどおり動作します。
 
- - Microsoft Store から WinDbg のプレビューをダウンロードします。[WinDbg プレビュー](https://www.microsoft.com/store/p/windbg/9pgjgd53tn86)します。
+ - Microsoft Store から WinDbg Preview をダウンロードします。[WinDbg プレビュー](https://www.microsoft.com/store/p/windbg/9pgjgd53tn86)。
 
- - インストールと構成について[WinDbg Preview - インストール](https://docs.microsoft.com/windows-hardware/drivers/debugger/windbg-install-preview)します。
+ - インストールと構成の詳細については[、「WinDbg Preview-インストール](https://docs.microsoft.com/windows-hardware/drivers/debugger/windbg-install-preview)」を参照してください。
 
-## <a name="small-classic-windbg-preview-logoimageswindbg-classic-logopng-debugging-tools-for-windows-10-windbg"></a>![小規模のクラシック windbg プレビュー ロゴ](images/windbg-classic-logo.png) Windows 10 向けデバッグ ツール (WinDbg)
+## <a name="small-classic-windbg-preview-logoimageswindbg-classic-logopng-debugging-tools-for-windows-10-windbg"></a>![小規模な従来の windbg プレビューロゴ](images/windbg-classic-logo.png) Windows 10 向けデバッグ ツール (WinDbg)
 
-Windows 10 または Visual Studio 2017 のデバッグ ツールの Windows 10、およびしない Windows Driver Kit (WDK) をだけ場合は、Windows SDK からスタンドアロン コンポーネントとして、デバッグ ツールをインストールできます。 SDK のインストール ウィザードで選択**ツールを Windows のデバッグ**、およびその他のすべてのコンポーネントの選択を解除します。
+Windows 10 用のデバッグツールだけでなく、windows 10 または Visual Studio 2017 用の Windows Driver Kit (WDK) でも必要な場合は、Windows SDK からスタンドアロンコンポーネントとしてデバッグツールをインストールできます。 SDK インストールウィザードで、 **[Windows 用デバッグツール]** を選択し、他のすべてのコンポーネントの選択を解除します。
 
- - Windows (WinDbg)、SDK から用デバッグ ツールを取得します。[Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk)します。
+ - SDK から Windows 用デバッグツール (WinDbg) を取得します。[Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk)。
 
- - WinDbg およびその他のデバッガーの詳細については[デバッグ ツールの Windows (WinDbg、KD、CDB、NTSD)](https://docs.microsoft.com/windows-hardware/drivers/debugger/)します。
+ - [Windows 用デバッグツール (windbg、KD、CDB、NTSD)](https://docs.microsoft.com/windows-hardware/drivers/debugger/)での WinDbg とその他のデバッガーの詳細について説明します。
 
 > [!TIP]
-> Windows SDK が既にインストールされている場合は開きます**設定**に移動します**アプリと機能**を選択します**Windows ソフトウェア開発キット**をクリックして**変更**を追加するインストールを変更する**ツールを Windows のデバッグ**します。
+> Windows SDK が既にインストールされている場合は、 **[設定]** を開き、アプリ の **[& 機能]** に移動して、 **[windows ソフトウェア開発キット]** を選択し、 **[変更]** をクリックして、 **windows 用デバッグツールを追加するようにインストールを変更します。** .
 
 -------------------
 
-## <a name="looking-for-the-debugging-tools-for-earlier-version-of-windows"></a>以前のバージョンの Windows 用デバッグ ツールを探しですか。
+## <a name="looking-for-the-debugging-tools-for-earlier-version-of-windows"></a>以前のバージョンの Windows 用のデバッグツールをお探しですか?
 
-以前のバージョンの Windows デバッガー ツールをダウンロードするには、デバッグ バージョンの Windows SDK をダウンロードする必要があります、 [Windows SDK とエミュレーターのアーカイブ](https://developer.microsoft.com/windows/downloads/sdk-archive)します。 SDK のインストール ウィザードで選択**ツールを Windows のデバッグ**、およびその他のすべてのコンポーネントの選択を解除します。
+以前のバージョンの Windows 用のデバッガーツールをダウンロードするには、デバッグ対象のバージョンの Windows SDK を[Windows SDK とエミュレーターのアーカイブ](https://developer.microsoft.com/windows/downloads/sdk-archive)からダウンロードする必要があります。 SDK のインストールウィザードで、 **[Windows 用デバッグツール]** を選択し、他のすべてのコンポーネントの選択を解除します。
 
 ## <a name="looking-for-related-downloads"></a>関連するダウンロードも探しますか?
 
  - [Windows Driver Kit (WDK)](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk)
 
- - [Windows デバッガーのシンボル](debugger-download-symbols.md)  
+ - [Windows デバッガーシンボル](debugger-download-symbols.md)  
 
  - [Windows HLK、HCK、または Logo Kit](https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit)
 
- - [Windows アセスメント & デプロイメント キット (Windows ADK)](https://docs.microsoft.com/windows-hardware/get-started/adk-install)
+ - [Windows アセスメント & amp; デプロイメントキット (Windows ADK)](https://docs.microsoft.com/windows-hardware/get-started/adk-install)
 
  - [Windows Insider Preview ビルド](https://insider.windows.com/)

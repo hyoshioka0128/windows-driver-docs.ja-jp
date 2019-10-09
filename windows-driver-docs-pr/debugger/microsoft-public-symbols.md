@@ -8,20 +8,19 @@ keywords:
 - パブリックシンボルストア
 - Microsoft シンボルストア
 ms.date: 04/26/2018
-ms.localizationpriority: medium
-ms.openlocfilehash: 621cfe78438051ad08856e70dca1ec1f9e2a3cb1
-ms.sourcegitcommit: d5adc4f20ecdf94d3940eb09427b29774e9c1e78
-ms.translationtype: MT
+ms.localizationpriority: High
+ms.openlocfilehash: 01d18916e96b2d96aab3b839e85b0fdfb7a7dcaf
+ms.sourcegitcommit: c73954a5909ec8c7e189f77fd5813f2eb749687c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71344628"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72007557"
 ---
 # <a name="microsoft-public-symbol-server"></a>Microsoft パブリック シンボル サーバー
 
 
-**サーバーの状態:** MSDL サービスの中断 <br> 
- 一部のリージョンでは、ストレージの問題のレポートを受信しました。 パブリックシンボルを解決できない可能性があります。 チームは、解決策を積極的に調査し、作業しています。 <br>
-に関する既知の問題を[windbgfb@microsoft.com](mailto:windbgfb@microsoft.com)報告してください。 
+**サーバーの状態:** 既知の問題はありません: white_check_mark: <br> Microsoft パブリックシンボルサーバーは完全に動作しています。 <br>
+既知の問題を[windbgfb@microsoft.com](mailto:windbgfb@microsoft.com)に報告してください。 
 
 ---
 
@@ -56,7 +55,7 @@ Expanded Symbol search path is: cache*c:\MyCache;SRV*https://msdl.microsoft.com/
 
 **シンボルファイルの圧縮**
 
-Microsoft シンボルサーバーは、シンボルファイルの圧縮バージョンを提供します。 ファイルの拡張子の末尾には、圧縮されていることを示すアンダースコアが付きます。 たとえば、ntdll の PDB は、ntdll\_として使用できます。 SymProxy は、圧縮されたファイルをダウンロードするときに、圧縮解除されたファイルをローカルファイルシステムに保存します。 DontUncompress レジストリキーを設定して、SymProxy でこの動作を無効にすることができます。
+Microsoft シンボルサーバーは、シンボルファイルの圧縮バージョンを提供します。 ファイルの拡張子の末尾には、圧縮されていることを示すアンダースコアが付きます。 たとえば、ntdll の PDB は、ntdll @ no__t-0 として使用できます。 SymProxy は、圧縮されたファイルをダウンロードするときに、圧縮解除されたファイルをローカルファイルシステムに保存します。 DontUncompress レジストリキーを設定して、SymProxy でこの動作を無効にすることができます。
 
 SymStore/compress を使用してシンボルサーバーに圧縮された独自のシンボルを格納する方法の詳細については、デバッガーのトピック[SymStore](symstore.md)を参照してください。
 

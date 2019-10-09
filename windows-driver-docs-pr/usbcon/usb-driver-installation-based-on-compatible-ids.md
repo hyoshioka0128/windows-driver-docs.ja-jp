@@ -1,21 +1,21 @@
 ---
-Description: Microsoft から提供されたインボックス ドライバー (Usbser.sys) 通信および CDC 制御デバイスの。
+Description: Microsoft が提供する、お客様のコミュニケーションおよび CDC 制御デバイス用のインボックスドライバー (Usbser)。
 title: USB シリアル ドライバー (Usbser.sys)
 ms.date: 04/20/2017
-ms.localizationpriority: medium
-ms.openlocfilehash: 5393ca448809c0623fb8ec1e3d5800705188b90c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
-ms.translationtype: MT
+ms.localizationpriority: High
+ms.openlocfilehash: a30e82bfce968f1e3168ed57444b7a79da6ac392
+ms.sourcegitcommit: c73954a5909ec8c7e189f77fd5813f2eb749687c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385681"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72007575"
 ---
 # <a name="usb-serial-driver-usbsersys"></a>USB シリアル ドライバー (Usbser.sys)
 
 
 **最終更新日**
 
--   2015 年 4 月
+-   2015年4月
 
 \* * OS バージョン * *
 
@@ -24,47 +24,47 @@ ms.locfileid: "67385681"
 
 **適用対象**
 
--   CDC 制御デバイスのデバイスの製造元
+-   CDC コントロールデバイスのデバイス製造元
 
-Microsoft から提供されたインボックス ドライバー (Usbser.sys) 通信および CDC 制御デバイスの。
+Microsoft が提供する、お客様のコミュニケーションおよび CDC 制御デバイス用のインボックスドライバー (Usbser)。
 
-Windows 10 を使用して、ドライバーが書き換えられましたが、[カーネル モード ドライバー フレームワーク](https://docs.microsoft.com/windows-hardware/drivers/wdf/)ドライバーの全体的な安定性を向上します。
+Windows 10 では、ドライバーは[カーネルモードドライバーフレームワーク](https://docs.microsoft.com/windows-hardware/drivers/wdf/)を使用して書き換えられ、ドライバーの全体的な安定性が向上しています。
 
--   (など、処理の突然の取り外し) ドライバーでの PnP や電源管理を向上します。
--   電源管理機能の追加をなど[USB セレクティブ サスペンド](usb-selective-suspend.md)します。
+-   ドライバーによる PnP および電源管理の向上 (突然の削除の処理など)。
+-   [USB セレクティブサスペンド](usb-selective-suspend.md)などの電源管理機能が追加されました。
 
-さらに、UWP アプリケーションには、新しいで提供される Api が使用できますようになりました[ **Windows.Devices.SerialCommunication** ](https://docs.microsoft.com/uwp/api/Windows.Devices.SerialCommunication)これらのデバイスとの対話にアプリを許可する名前空間。
+また、UWP アプリケーションでは、新しい[**SerialCommunication**](https://docs.microsoft.com/uwp/api/Windows.Devices.SerialCommunication)名前空間によって提供される api を使用して、アプリがこれらのデバイスと通信できるようになりました。
 
-## <a name="usbsersys-installation"></a>Usbser.sys インストール
+## <a name="usbsersys-installation"></a>Usbser のインストール
 
 
-Microsoft から提供されたボックスでのドライバーを読み込む (Usbser.sys) 通信および CDC 制御デバイスです。
+通信および CDC 制御デバイス用に、Microsoft が提供するインボックスドライバー (Usbser) を読み込みます。
 
-**注**  を Windows に含まれる USB デバイス クラス ドライバーをインストールしようとする必要はありません、ドライバーをダウンロードする場合。 自動的にインストールされます。 これらは自動的にインストールされていない場合、は、デバイスの製造元に問い合わせてください。 Windows に含まれる USB デバイス クラス ドライバーの一覧で、次を参照してください。 [USB デバイス クラス ドライバーが Windows に含まれる](supported-usb-classes.md)します。
+**注**   Windows に含まれている USB デバイスクラスドライバーをインストールしようとすると、ドライバーをダウンロードする必要がありません。 これらは自動的にインストールされます。 自動的にインストールされない場合は、デバイスの製造元に問い合わせてください。 Windows に含まれる USB デバイスクラスドライバーの一覧については、「 [windows に含まれる usb デバイスクラスドライバー](supported-usb-classes.md)」を参照してください。
 
  
 
-**Windows 10**
+**Windows 10**
 
-%Systemroot% に追加された新しい INF、Usbser.inf、Windows 10 で\\Inf Usbser.sys をデバイス スタックの関数デバイス オブジェクト (FDO) として読み込まれる。 デバイスは、通信と、CDC 制御デバイス クラスに属する、Usbser.sys が自動的に読み込まれます。ドライバーを参照する、独自の INF を記述する必要はありません。 ドライバーはのような互換性のある ID 一致に基づいて読み込まれて[Windows に含まれるその他の USB デバイス クラス ドライバー](supported-usb-classes.md)します。
+Windows 10 では、新しい INF (Usbser) が% Systemroot% \\Inf に追加されました。この inf は、デバイススタック内の関数デバイスオブジェクト (FDO) として Usbser を読み込みます。 デバイスが通信および CDC 制御デバイスクラスに属している場合、Usbser は自動的に読み込まれます。ドライバーを参照するために独自の INF を記述する必要はありません。 ドライバーは、 [Windows に含まれている他の USB デバイスクラスドライバー](supported-usb-classes.md)と同様に、互換性のある ID の一致に基づいて読み込まれます。
 
 `USB\Class_02`
 
 `USB\Class_02&SubClass_02`
 
--   Usbser.sys を自動的に読み込む場合は、02 に、クラスのコードに 02 とサブクラス コードを設定、[デバイス記述子](usb-device-descriptors.md)します。 詳細については、USB 通信デバイス クラス (または USB CDC) を参照してくださいで仕様が検出された、 [USB DWG web サイト](https://go.microsoft.com/fwlink/p/?linkid=617741)します。 このアプローチでは、システムは Usbser.inf を使用するために、デバイスの INF ファイルを配布する必要はありません。
--   デバイス クラスのコード 02 02 以外のサブクラス コード値が指定されている場合、Usbser.sys が自動的に読み込まれません。 Pnp マネージャーは、ドライバーを検索しようとします。 適切なドライバーが見つからない場合、デバイスは読み込まれるドライバーがあります。 ここでは、独自のドライバーの読み込みまたは別のインボックス ドライバーを参照する、INF を記述する必要があります。
--   デバイスに 02、クラスとサブクラスのコードを指定します Usbser.sys ではなく別のドライバーをロードする場合は、デバイスとドライバーをインストールするハードウェア ID を指定する、INF を記述する必要があります。 含まれている INF ファイルを検索する例については、[サンプル ドライバー](https://go.microsoft.com/fwlink/p/?LinkId=534087)とデバイスのようなデバイスを探します。 INF セクションについては、次を参照してください。 [INF ファイルの概要](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-inf-files)します。
+-   Usbser を自動的に読み込む場合は、[デバイス記述子](usb-device-descriptors.md)でクラスコードを02、サブクラスコードを02に設定します。 詳細については、usb [DWG web サイト](https://go.microsoft.com/fwlink/p/?linkid=617741)の「usb 通信デバイスクラス (または usb CDC) の仕様」を参照してください。 この方法では、システムで Usbser .inf が使用されるため、デバイスの INF ファイルを配布する必要はありません。
+-   デバイスでクラスコード02が指定されていても、サブクラスコード値が02以外の場合、Usbser は自動的に読み込まれません。 Pnp マネージャーがドライバーの検索を試みます。 適切なドライバーが見つからない場合、デバイスにドライバーが読み込まれていない可能性があります。 この場合は、独自のドライバーを読み込むか、または別のインボックスドライバーを参照する INF を作成する必要があります。
+-   デバイスでクラスとサブクラスのコードが02に指定されていて、Usbser ではなく別のドライバーを読み込む必要がある場合は、デバイスのハードウェア ID とインストールするドライバーを指定する INF を作成する必要があります。 例として、[サンプルドライバー](https://go.microsoft.com/fwlink/p/?LinkId=534087)に含まれている INF ファイルを調べ、デバイスと同様のデバイスを見つけます。 INF セクションの詳細については、「 [Inf ファイルの概要](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-inf-files)」を参照してください。
 
-**注**  Microsoft が可能であれば、インボックス ドライバーを使用することをお勧めします。 Windows、Windows 10 Mobile などのモバイルのエディションでは、オペレーティング システムの一部であるドライバーのみが読み込まれます。 デスクトップのエディションとは異なり、外部のドライバー パッケージからドライバーを読み込むことはできません。 新しいインボックス INF で Usbser.sys はモバイル デバイスの USB-シリアル デバイスが検出された場合は自動的に読み込まれます。
+**@No__t-** 1 microsoft では、可能な限りインボックスドライバーを使用することをお勧めします。 Windows 10 Mobile などの Windows のモバイルエディションでは、オペレーティングシステムの一部であるドライバーのみが読み込まれます。 デスクトップエディションとは異なり、外部ドライバーパッケージを使用してドライバーを読み込むことはできません。 新しいインボックス INF を使用すると、モバイルデバイスで USB-シリアルデバイスが検出された場合に、Usbser が自動的に読み込まれます。
 
  
 
-**Windows 8.1 と以前のバージョン**
+**Windows 8.1 以前のバージョン**
 
-Windows 8.1 およびそれ以前のバージョンのオペレーティング システムで Usbser.sys が自動的に読み込まれていない USB-シリアル デバイスがコンピューターに関連付けられている場合。 ドライバーを読み込むを使用して、モデムの INF (mdmcpq.inf) を参照する、INF を書き込む必要があります、 **Include**ディレクティブ。 ディレクティブは、サービスをインスタンス化し、受信トレイのバイナリをコピーして、デバイス インターフェイス、デバイスを見つけてと対話するアプリケーションを必要とする GUID を登録する必要があります。 その INF では、デバイス スタックの下位のフィルター ドライバーとして"Usbser"を指定します。
+Windows 8.1 以前のバージョンのオペレーティングシステムでは、USB-シリアルデバイスがコンピューターに接続されている場合、Usbser は自動的には読み込まれません。 ドライバーを読み込むには、 **Include**ディレクティブを使用して、モデムの inf (mdmcpq) を参照する inf を作成する必要があります。 ディレクティブは、サービスをインスタンス化し、受信トレイバイナリをコピーし、アプリケーションがデバイスを検索して通信するために必要なデバイスインターフェイス GUID を登録するために必要です。 この INF は、デバイススタック内の下位フィルタードライバーとして "Usbser" を指定します。
 
-としてデバイス セットアップ クラスを指定することも必要があります、INF**モデム**mdmcpq.inf を使用します。 [バージョン] セクションで、INF の指定、**モデム**とデバイス クラス GUID です。 詳細については、次を参照してください。 [System-Supplied デバイス セットアップ クラス](https://docs.microsoft.com/previous-versions/ff553419(v=vs.85))します。
+また、mdmcpq を使用するには、デバイスのセットアップクラスを**Modem**として指定する必要があります。 INF の [Version] セクションで、**モデム**とデバイスクラス GUID を指定します。 詳細については、「[システムによって提供されるデバイスセットアップクラス](https://docs.microsoft.com/previous-versions/ff553419(v=vs.85))」を参照してください。
 
 ``` syntax
 [DDInstall.NT]
@@ -80,52 +80,52 @@ include=mdmcpq.inf
 AddReg=LowerFilterAddReg
 ```
 
-詳細については、次を参照してください。[このサポート技術情報記事](https://support.microsoft.com/help/837637/how-to-use-or-to-reference-the-usbser-sys-driver-from-universal-serial/)します。
+詳細については、[このサポート技術](https://support.microsoft.com/help/837637/how-to-use-or-to-reference-the-usbser-sys-driver-from-universal-serial/)情報の記事を参照してください。
 
-## <a name="configure-selective-suspend-for-usbsersys"></a>選択的構成 Usbser.sys を中断
-
-
-Windows 10 以降、Usbser.sys サポート[USB セレクティブ サスペンド](usb-selective-suspend.md)します。 これにより、接続している USB-シリアル デバイス、システムの S0 状態のまま使用しない場合は低電力状態にできます。 デバイスとの通信が再開したとき、デバイスは中断状態のままにし、状態の作業を再開できます。 機能は既定で無効および有効になっているおよび構成できるようを設定して、 **IdleUsbSelectiveSuspendPolicy**このレジストリ キーの下のエントリ。
-
-**HKEY\_ローカル\_マシン\\システム\\CurrentControlSet\\Enum\\USB\\&lt;ハードウェア id&gt; \\ &lt;インスタンス id&gt;\\デバイス パラメーター**
-
-設定することができます Usbser.sys の電源管理機能を構成する**IdleUsbSelectiveSuspendPolicy**に。
-
--   "0x00000001"
-
-    選択的に入力したときに中断する、またはデバイスからのアクティブなデータ転送がない場合に、アイドルです。
-
--   "0x00000000"
-
-    選択的入力デバイスを開いているハンドルがない場合にのみを中断します。
-
-2 つの方法のいずれかでは、そのエントリを追加できます。
-
--   インストール INF を参照する、INF を記述し、レジストリ エントリを追加、 **HW。AddReg**セクション。
--   OS の拡張プロパティの機能記述子でレジストリ エントリをについて説明します。 設定するカスタム プロパティ セクションを追加、 **bPropertyName**に Unicode 文字列では、"IdleUsbSelectiveSuspendPolicy"フィールドと**wPropertyNameLength** 62 バイトにします。 設定、 **bPropertyData**フィールドを"0x00000001"または"0x00000000"。 プロパティの値は、リトル エンディアンの 32 ビット整数として格納されます。
-
-    詳細については、次を参照してください。 [Microsoft OS ディスクリプター](https://go.microsoft.com/fwlink/p/?linkid=224878)します。
-
-## <a name="develop-windows-applications-for-a-usb-cdc-device"></a>CDC の USB デバイス用の Windows アプリケーションを開発します。
+## <a name="configure-selective-suspend-for-usbsersys"></a>Usbser のセレクティブサスペンドの構成
 
 
-CDC の USB デバイスの Usbser.sys をインストールする場合、アプリケーションのプログラミング モデルのオプションを示します。
+Windows 10 以降では、Usbser は[USB セレクティブサスペンド](usb-selective-suspend.md)をサポートしています。 この機能を使用すると、接続されている USB-シリアルデバイスは、使用されていないときに低電力状態になることができ、システムは S0 状態のままになります。 デバイスとの通信が再開されると、デバイスは中断状態のままになり、動作状態を再開できます。 この機能は既定で無効になっており、このレジストリキーの下に**IdleUsbSelectiveSuspendPolicy**エントリを設定することによって有効にし、構成することができます。
 
--   Windows 10 以降、Windows アプリに要求を送信 Usbser.sys を使用して、 [ **Windows.Devices.SerialCommunication** ](https://docs.microsoft.com/uwp/api/Windows.Devices.SerialCommunication)名前空間。 シリアル ポートまたはシリアル ポートのいくつかの抽象化を使用して CDC の USB デバイスとの通信に使用できる Windows ランタイム クラスを定義します。 クラスは、このようなシリアル デバイスを検出、読み取り、データを書き込むよう機能を提供し、ボー レートの設定など、フロー制御シリアル固有のプロパティをコントロールの状態を通知します。
+**HKEY @ no__t-1LOCAL @ no__t-2MACHINE @ no__t-3SYSTEM @ no__t-4CurrentControlSet @ no__t-5Enum @ no__t-6USB @ no__t-7 @ no__t-8hardware id @ no__t-9 @ no__t @ no__t-11instance id @ no__t-12 @ no__t-13Device Parameters**
 
--   Windows 8.1 以前のバージョンでは、仮想 COM ポートを開き、デバイスと通信する Windows デスクトップ アプリケーションを記述できます。 詳しくは、次のトピックをご覧ください。
+Usbser の電源管理機能を構成するには、 **IdleUsbSelectiveSuspendPolicy**を次のように設定します。
 
-    Win32 のプログラミング モデル:
+-   0x00000001
 
-    -   [通信のリソースを構成します。](https://docs.microsoft.com/windows/desktop/DevIO/configuring-a-communications-resource)
-    -   [通信の参照](https://docs.microsoft.com/windows/desktop/DevIO/communications-reference)
+    アイドル時のセレクティブサスペンド、つまり、デバイスとの間でアクティブなデータ転送がない場合に選択します。
 
-    .NET framework のプログラミング モデル:
+-   ―
 
-    -   [System.IO.Ports Namespace](https://docs.microsoft.com/dotnet/api/system.io.ports?redirectedfrom=MSDN)
+    デバイスに開いているハンドルがない場合にのみ、選択的中断に入ります。
+
+このエントリは、次の2つの方法のいずれかで追加できます。
+
+-   インストール INF を参照する INF を作成し、そのレジストリエントリを HW に追加し**ます。AddReg**セクション。
+-   拡張プロパティの OS 機能記述子にレジストリエントリを記述します。 **Bpropertyname**フィールドを Unicode 文字列 "IdleUsbSelectiveSuspendPolicy" に設定し、 **wPropertyNameLength**を62バイトに設定するカスタムプロパティセクションを追加します。 **Bpropertydata**フィールドを "0x00000001" または "0x00000000" に設定します。 プロパティ値は、リトルエンディアン32ビット整数として格納されます。
+
+    詳細については、「 [MICROSOFT OS 記述子](https://go.microsoft.com/fwlink/p/?linkid=224878)」を参照してください。
+
+## <a name="develop-windows-applications-for-a-usb-cdc-device"></a>USB CDC デバイス用の Windows アプリケーションの開発
+
+
+USB CDC デバイスに対して Usbser をインストールする場合、アプリケーションプログラミングモデルのオプションは次のとおりです。
+
+-   Windows 10 以降では、windows アプリは[**SerialCommunication**](https://docs.microsoft.com/uwp/api/Windows.Devices.SerialCommunication)名前空間を使用して、usbser に要求を送信できます。 シリアルポートまたはシリアルポートの抽象化を介して USB CDC デバイスと通信するために使用できる Windows ランタイムクラスを定義します。 クラスは、このようなシリアルデバイスを検出し、データの読み取りと書き込みを行う機能を提供し、フロー制御のシリアル固有のプロパティ (ボーレートの設定、シグナルの状態など) を制御します。
+
+-   Windows 8.1 以前のバージョンでは、仮想 COM ポートを開き、デバイスと通信する Windows デスクトップアプリケーションを作成できます。 詳細については、以下をご覧ください。
+
+    Win32 プログラミングモデル:
+
+    -   [通信リソースの構成](https://docs.microsoft.com/windows/desktop/DevIO/configuring-a-communications-resource)
+    -   [通信のリファレンス](https://docs.microsoft.com/windows/desktop/DevIO/communications-reference)
+
+    .NET framework プログラミングモデル:
+
+    -   [System.object 名前空間](https://docs.microsoft.com/dotnet/api/system.io.ports?redirectedfrom=MSDN)
 
 ## <a name="related-topics"></a>関連トピック
-[Windows に含まれる USB デバイス クラス ドライバー](supported-usb-classes.md)  
+[Windows に含まれる USB デバイスクラスドライバー](supported-usb-classes.md)  
 <!-- [How to use or to reference the Usbser.sys driver from universal serial bus (USB) modem .inf files](https://support.microsoft.com/help/837637/how-to-use-or-to-reference-the-usbser-sys-driver-from-universal-serial) -->
 
 

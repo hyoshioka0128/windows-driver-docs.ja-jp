@@ -1,22 +1,22 @@
 ---
 title: Windows Driver Model (WDM)
-description: このセクションでは、Windows Driver Model (WDM) について説明し、WDM ドライバー、デバイスの構成、ドライバーの階層化、および WDM バージョン管理の種類について説明します。
+description: ここでは、Windows Driver Model (WDM) について説明し、WDM ドライバー、デバイス構成、ドライバーレイヤー、および WDM のバージョン管理について説明します。
 ms.assetid: 9e76c5a8-a19a-44cf-867a-b2246ea8eaf1
 keywords:
-- カーネル モード ドライバー WDK、WDM ドライバー
+- カーネルモードドライバー WDK、WDM ドライバー
 ms.date: 06/16/2017
-ms.localizationpriority: medium
-ms.openlocfilehash: 8374c462e319a70ca92430cec01a41b310020238
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
-ms.translationtype: MT
+ms.localizationpriority: High
+ms.openlocfilehash: 5d61d773b7e15b1728631a3fabcaaf51ec80d407
+ms.sourcegitcommit: c73954a5909ec8c7e189f77fd5813f2eb749687c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383196"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72007583"
 ---
 # <a name="windows-driver-model-wdm"></a>Windows Driver Model (WDM)
 
 
-このセクションについて説明します、 *Windows Driver Model* (WDM)、および WDM ドライバー、デバイスの構成、ドライバーの階層化、および WDM バージョン管理の種類について説明します。 WDM は、複数のバージョンの Windows オペレーティング システムで実行に書き込まれるカーネル モード ドライバーの設計を簡略化します。
+ここでは、 *Windows Driver Model* (wdm) について説明し、wdm ドライバー、デバイス構成、ドライバーレイヤー、および wdm のバージョン管理について説明します。 WDM は、複数のバージョンの Windows オペレーティングシステムで実行するように記述されたカーネルモードドライバーの設計を簡略化します。
 
 
 
@@ -38,19 +38,19 @@ ms.locfileid: "63383196"
 <tbody>
 <tr class="odd">
 <td><p><a href="introduction-to-wdm.md" data-raw-source="[Introduction to WDM](introduction-to-wdm.md)">WDM の概要</a></p></td>
-<td><p>開発者がソース コードと互換性のあるすべての Microsoft Windows で動作しているシステムでは、デバイス ドライバーを記述する、 <em>Windows Driver Model</em> (WDM) が導入されました。 WDM 規則に従うカーネル モード ドライバーが呼び出されて<em>WDM ドライバー</em>します。</p></td>
+<td><p>ドライバー開発者が、すべての Microsoft Windows オペレーティングシステムでソースコードと互換性のあるデバイスドライバーを作成できるようにするために、 <em>Windows Driver Model</em> (WDM) が導入されました。 WDM ルールに従うカーネルモードドライバーは、 <em>wdm ドライバー</em>と呼ばれます。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="types-of-wdm-drivers.md" data-raw-source="[Types of WDM Drivers](types-of-wdm-drivers.md)">WDM ドライバーの種類</a></p></td>
-<td><p>WDM ドライバーの 3 つの種類があります。 バス ドライバー、ドライバーの関数、およびフィルター ドライバー。</p></td>
+<td><p>WDM ドライバーには、バスドライバー、関数ドライバー、およびフィルタードライバーの3種類があります。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="device-configurations-and-layered-drivers.md" data-raw-source="[Device Configurations and Layered Drivers](device-configurations-and-layered-drivers.md)">デバイスの構成と複数層のドライバー</a></p></td>
-<td><p>最も一般的な種類のデバイスでは、Windows Driver Kit (WDK) は完全に機能するシステムのドライバーのサンプル セットを提供します。 ような種類のデバイス用の新しいドライバーを開発するときに、個々 のサンプルのドライバーをモデルとして使用できます。 ただし、システムのドライバーが、追加のデザイン要件必要がある。 新しいデバイス ドライバーを開発しやすくします。 その結果、多くのシステムのドライバーがある階層型アーキテクチャ類似するデバイスの新しいドライバーをサポートするために特定のドライバーを再利用できるようにします。</p></td>
+<td><p><a href="device-configurations-and-layered-drivers.md" data-raw-source="[Device Configurations and Layered Drivers](device-configurations-and-layered-drivers.md)">デバイス構成とレイヤードドライバー</a></p></td>
+<td><p>最も一般的な種類のデバイスでは、Windows ドライバーキット (WDK) は、完全に機能するシステムドライバーのサンプルセットを提供します。 個々のサンプルドライバーは、類似した種類のデバイス用に新しいドライバーを開発するときにモデルとして使用できます。 ただし、システムのドライバーには、新しいデバイスドライバーを簡単に開発できるようにするための追加の設計要件がありました。 そのため、システムのドライバーの多くには、類似したデバイスの新しいドライバーをサポートするために、特定のドライバーを再利用できるように、階層化されたアーキテクチャがあります。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="wdm-versions.md" data-raw-source="[WDM Versions](wdm-versions.md)">WDM バージョン</a></p></td>
-<td><p>WDM の以降のバージョンは一般に WDM; の以前のバージョンで使用可能なすべての機能をサポートします。これは WDM の新しい各バージョンでは、WDM の以前のバージョンのスーパー セットがあります。 可能であれば、システム間 driver が任意のオペレーティング システムで最も低い WDM バージョンに従う必要があります。</p></td>
+<td><p><a href="wdm-versions.md" data-raw-source="[WDM Versions](wdm-versions.md)">WDM のバージョン</a></p></td>
+<td><p>新しいバージョンの WDM では、従来のバージョンの WDM で使用できるすべての機能がサポートされています。つまり、新しいバージョンの WDM は、前の WDM バージョンのスーパーセットになります。 可能であれば、クロスシステムドライバーは、どのオペレーティングシステムでも最も低い WDM バージョンに準拠している必要があります。</p></td>
 </tr>
 </tbody>
 </table>

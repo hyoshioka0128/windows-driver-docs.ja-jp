@@ -1,30 +1,30 @@
 ---
-Description: このセクションでは、このトピックでは、クラス ドライバーや汎用的なクライアント ドライバーでは、Microsoft によって提供される、親複合ドライバーについて説明します。
-title: Microsoft 提供の USB ドライバーの概要
+Description: このセクションのトピックでは、Microsoft によって提供されるクラスドライバー、汎用クライアントドライバー、および親複合ドライバーについて説明します。
+title: Microsoft が提供する USB ドライバーの概要
 ms.date: 04/20/2017
-ms.localizationpriority: medium
-ms.openlocfilehash: 2968cc1679b7768723d73366307a97e0d53e1377
-ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
-ms.translationtype: MT
+ms.localizationpriority: High
+ms.openlocfilehash: 689df8bf0f99b3f38a27bb1943a8bae61de86cfc
+ms.sourcegitcommit: c73954a5909ec8c7e189f77fd5813f2eb749687c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67716900"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72007642"
 ---
-# <a name="overview-of-microsoft-provided-usb-drivers"></a>Microsoft 提供の USB ドライバーの概要
+# <a name="overview-of-microsoft-provided-usb-drivers"></a>Microsoft が提供する USB ドライバーの概要
 
 
-このセクションでは、このトピックでは、クラス ドライバーや汎用的なクライアント ドライバーでは、Microsoft によって提供される、親複合ドライバーについて説明します。
+このセクションのトピックでは、Microsoft によって提供されるクラスドライバー、汎用クライアントドライバー、および親複合ドライバーについて説明します。
 
-## <a name="microsoft-provided-usb-drivers-for-controllers-and-hubs"></a>コント ローラーとハブの Microsoft 提供の USB ドライバー
+## <a name="microsoft-provided-usb-drivers-for-controllers-and-hubs"></a>コントローラーとハブ用の Microsoft 提供の USB ドライバー
 
 
-マイクロソフトでは、これらのドライバーのセットを提供します。
+Microsoft では、次の一連のドライバーを提供しています。
 
--   USB ホスト コント ローラーとハブ。 詳細については、次を参照してください。 [Windows での USB ホスト側ドライバー](usb-3-0-driver-stack-architecture.md)します。 USB ホスト コント ローラーの拡張機能 (UCX) ドライバーを使用した通信を行うカスタム ホスト コント ローラー ドライバーを開発することができます。 詳細については、次を参照してください。[開発 Windows ドライバーの USB ホスト コント ローラー](developing-windows-drivers-for-usb-host-controllers.md)します。
--   USB デバイスの共通の関数ロジックを処理します。 詳細については、次を参照してください。 [Windows での USB デバイス側ドライバー](usb-device-side-drivers-in-windows.md)します。
--   型 C コネクタをサポートします。 詳細については、次を参照してください。 [USB コネクタ マネージャー クラスの拡張機能 (UcmCx)](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt188011(v=vs.85))します。
+-   USB ホストコントローラーとハブの場合。 詳細については、「 [Windows の USB ホスト側ドライバー](usb-3-0-driver-stack-architecture.md)」を参照してください。 USB host controller extension (UCX) ドライバーと通信するカスタムホストコントローラードライバーを開発することができます。 詳細については、「 [USB ホストコントローラー用の Windows ドライバーの開発](developing-windows-drivers-for-usb-host-controllers.md)」を参照してください。
+-   USB デバイスの共通の関数ロジックを処理します。 詳細については、「 [Windows の USB デバイス側ドライバー](usb-device-side-drivers-in-windows.md)」を参照してください。
+-   サポートするタイプ C コネクタの場合。 詳細については、「 [USB コネクタマネージャークラス拡張 (UcmCx)](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt188011(v=vs.85))」を参照してください。
 
-## <a name="other-microsoft-provided-usb-drivers"></a>その他の Microsoft 提供の USB ドライバー
+## <a name="other-microsoft-provided-usb-drivers"></a>Microsoft が提供するその他の USB ドライバー
 
 
 <table>
@@ -36,8 +36,8 @@ ms.locfileid: "67716900"
 </colgroup>
 <thead>
 <tr class="header">
-<th>デバイス セットアップ クラス</th>
-<th>Microsoft 提供のドライバーと INF</th>
+<th>デバイスセットアップクラス</th>
+<th>Microsoft 提供のドライバーおよび INF</th>
 <th>Windows のサポート</th>
 <th>説明</th>
 </tr>
@@ -46,59 +46,59 @@ ms.locfileid: "67716900"
 <tr class="odd">
 <td>USB</td>
 <td><p>Usbccgp.sys</p>
-<p>Usb.inf</p></td>
+<p>Usb .inf</p></td>
 <td><p>Windows 8.1</p>
 <p>Windows 8</p>
 <p>Windows 7</p>
 <p>Windows Vista</p>
 <p>Windows XP</p></td>
-<td>Usbccgp.sys は、複数の関数をサポートする複合デバイス用の親のドライバーです。 詳細については、次を参照してください。 <a href="usb-common-class-generic-parent-driver.md" data-raw-source="[USB Generic Parent Driver (Usbccgp.sys)](usb-common-class-generic-parent-driver.md)">USB 汎用親ドライバー (Usbccgp.sys)</a>します。</td>
+<td>Usbccgp は、複数の機能をサポートする複合デバイスの親ドライバーです。 詳細については、「 <a href="usb-common-class-generic-parent-driver.md" data-raw-source="[USB Generic Parent Driver (Usbccgp.sys)](usb-common-class-generic-parent-driver.md)">USB 汎用親ドライバー (Usbccgp)</a>」を参照してください。</td>
 </tr>
 <tr class="even">
 <td>生体認証</td>
-<td><p>WudfUsbBID.dll</p>
-<p>WudfUsbBIDAdvanced.inf</p></td>
+<td><p>WudfUsbBID</p>
+<p>WudfUsbBIDAdvanced</p></td>
 <td><p>Windows 8.1</p>
 <p>Windows 8</p></td>
-<td><p>マイクロソフトは、Windows 生体認証フレームワークを提供することで、USB 生体認証デバイス (指紋リーダー) をサポートします。 参照してください、 <a href="https://docs.microsoft.com/previous-versions/ff536448(v=vs.85)" data-raw-source="[Windows Biometric Framework](https://docs.microsoft.com/previous-versions/ff536448(v=vs.85))">Windows 生体認証フレームワーク</a>します。</p></td>
+<td><p>Microsoft では、Windows 生体認証フレームワークを提供することによって、USB 生体認証デバイス (指紋リーダー) をサポートしています。 <a href="https://docs.microsoft.com/previous-versions/ff536448(v=vs.85)" data-raw-source="[Windows Biometric Framework](https://docs.microsoft.com/previous-versions/ff536448(v=vs.85))">Windows 生体認証フレームワーク</a>を参照してください。</p></td>
 </tr>
 <tr class="odd">
-<td>メディア転送プロトコル デバイス</td>
-<td>Wpdusb.sys (廃止)</td>
+<td>メディア転送プロトコルデバイス</td>
+<td>Wpdusb .sys (Obsolete)</td>
 <td><p>Windows Server 2008</p>
 <p>Windows Vista</p>
 <p>Windows Server 2003</p>
 <p>Windows XP</p></td>
 <td><div class="alert">
-<strong>注:</strong><br/><p>Windows 7 以降、Microsoft は、置き換え、Windows Vista の USB ドライバー スタック (Wpdusb.sys) のカーネル モード コンポーネントの Windows ポータブル デバイス (WPD) ジェネリック Winusb.sys で。</p>
+<strong>注:</strong><br/><p>Windows 7 以降では、windows ポータブルデバイス (WPD) の Windows Vista USB ドライバースタック (Wpdusb) のカーネルモードコンポーネントが汎用 Winusb .sys に置き換えられました。</p>
 </div>
 <div>
 
 </div>
-<p>Microsoft では、メディア転送プロトコルをサポートするポータブル デバイスを管理する Wpdusb.sys ドライバーを提供します。 参照してください<a href="https://docs.microsoft.com/previous-versions/ff597864(v=vs.85)" data-raw-source="[WPD Design Guide](https://docs.microsoft.com/previous-versions/ff597864(v=vs.85))">WPD 設計ガイド</a>します。</p></td>
+<p>Microsoft は、メディア転送プロトコルをサポートするポータブルデバイスを管理するための Wpdusb .sys ドライバーを提供しています。 「 <a href="https://docs.microsoft.com/previous-versions/ff597864(v=vs.85)" data-raw-source="[WPD Design Guide](https://docs.microsoft.com/previous-versions/ff597864(v=vs.85))">WPD 設計ガイド</a>」を参照してください。</p></td>
 </tr>
 <tr class="even">
 <td>USBDevice</td>
 <td><p>Winusb.sys</p>
-<p>Winusb.inf</p></td>
+<p>Winusb .inf</p></td>
 <td><p>Windows 8.1</p>
 <p>Windows 8</p>
 <p>Windows 7</p>
 <p>Windows Vista</p>
 <p>Windows XP Service Pack 2 (SP2)</p></td>
-<td>Winusb.sys は、ドライバーを実装する代わりに、USB デバイスの機能のドライバーとして使用できます。 参照してください<a href="how-to-write-a-windows-desktop-app-that-communicates-with-a-usb-device.md" data-raw-source="[WinUSB](how-to-write-a-windows-desktop-app-that-communicates-with-a-usb-device.md)">WinUSB</a>します。</td>
+<td>Winusb .sys は、ドライバーを実装する代わりに、USB デバイスの関数ドライバーとして使用できます。 「 <a href="how-to-write-a-windows-desktop-app-that-communicates-with-a-usb-device.md" data-raw-source="[WinUSB](how-to-write-a-windows-desktop-app-that-communicates-with-a-usb-device.md)">Winusb</a>」を参照してください。</td>
 </tr>
 </tbody>
 </table>
 
 
 
-## <a name="microsoft-provided-usb-device-class-drivers"></a>Microsoft 提供の USB デバイス クラス ドライバー
+## <a name="microsoft-provided-usb-device-class-drivers"></a>Microsoft 提供の USB デバイスクラスドライバー
 
 
-マイクロソフトは、USB によって承認されたいくつかの USB デバイス クラスに対するドライバーを提供しています-場合。 Windows では、これらのドライバーと、インストール ファイルが含まれます。 利用できる、 \\Windows\\System32\\DriverStore\\FileRepository フォルダー。
+Microsoft では、USB によって承認された複数の USB デバイスクラス用のドライバーを提供しています-IF。 これらのドライバーとそのインストールファイルは、Windows に含まれています。 これらのファイルは、@no__t 0Windows @ no__t-1System32 @ no__t-2DriverStore @ no__t-3FileRepository フォルダーにあります。
 
-参照してください、 [USB デバイス クラス ドライバーが Windows に含まれる](supported-usb-classes.md)します。
+「 [Windows に含まれる USB デバイスクラスドライバー](supported-usb-classes.md)」を参照してください。
 
 ## <a name="related-topics"></a>関連トピック
 [ユニバーサル シリアル バス (USB)](https://docs.microsoft.com/windows-hardware/drivers/)  

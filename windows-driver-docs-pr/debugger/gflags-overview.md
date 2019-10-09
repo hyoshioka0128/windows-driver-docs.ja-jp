@@ -33,7 +33,7 @@ Gflags.exe を探してインストールする方法については、次を参
 このセッションのデバッグ機能を設定します。 これらの設定が、すぐに有効が、Windows のシャット ダウン時に失われます。 設定では、このコマンドが完了した後に開始されたすべてのプロセスに影響します。
 
 <span id="Image_file_settings"></span><span id="image_file_settings"></span><span id="IMAGE_FILE_SETTINGS"></span>イメージ ファイルの設定  
-デバッグ、特定のプログラムの機能を設定します。 これらの設定は、各プログラムの GlobalFlag レジストリ エントリに格納されます (**HKEY\_LOCAL\_MACHINE\\ SOFTWARE\\ Microsoft\\ Windows NT\\ CurrentVersion\\ Image File Execution Options\\ *ImageFileName*\\ GlobalFlag**)。 有効になりますが、プログラムを再起動して変更するまで有効な場合。
+デバッグ、特定のプログラムの機能を設定します。 これらの設定は、各プログラムの GlobalFlag レジストリ エントリに格納されます (**HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\ Windows NT\\ CurrentVersion\\  Image File Execution Options\\ *ImageFileName* \\ GlobalFlag**)。 有効になりますが、プログラムを再起動して変更するまで有効な場合。
 
 <span id="Debugger"></span><span id="debugger"></span><span id="DEBUGGER"></span>デバッガー  
 特定のプログラムがデバッガーで常に実行を指定します。 この設定は、レジストリに格納されます。 すぐに有効と、変更するまで有効なままになります。 (この機能でのみ使用できます、**グローバル フラグ** ダイアログ ボックス)。

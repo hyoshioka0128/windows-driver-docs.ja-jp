@@ -1,78 +1,78 @@
 ---
-Description: このセクションでは、汎用 WinUSB ドライバー (Winusb.sys) とすべての USB デバイスに Microsoft によって提供される、ユーザー モード コンポーネント (Winusb.dll) について説明します。
+Description: ここでは、すべての USB デバイス用に Microsoft が提供する汎用 WinUSB ドライバー (Winusb .sys) とそのユーザーモードコンポーネント (Winusb .dll) について説明します。
 title: WinUSB (Winusb.sys)
 ms.date: 04/20/2017
-ms.localizationpriority: medium
-ms.openlocfilehash: 432ffe606066b576fcdb730b847b55a578b9959b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
-ms.translationtype: MT
+ms.localizationpriority: High
+ms.openlocfilehash: 420c7656d81c1849bb51237cab2d700f65950a8c
+ms.sourcegitcommit: c73954a5909ec8c7e189f77fd5813f2eb749687c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385346"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72007619"
 ---
 # <a name="winusb-winusbsys"></a>WinUSB (Winusb.sys)
 
 
-このセクションでは、汎用 WinUSB ドライバー (Winusb.sys) とすべての USB デバイスに Microsoft によって提供される、ユーザー モード コンポーネント (Winusb.dll) について説明します。
+ここでは、すべての USB デバイス用に Microsoft が提供する汎用 WinUSB ドライバー (Winusb .sys) とそのユーザーモードコンポーネント (Winusb .dll) について説明します。
 
-Windows XP Service Pack 2 (SP2) より前のバージョンの Windows ですべての USB デバイス ドライバーはカーネル モードで動作する必要があります。 オペレーティング システムがネイティブ クラス ドライバーをいない USB デバイスを作成する場合は、デバイスのカーネル モード デバイス ドライバーを作成する必要があります。
+Windows XP Service Pack 2 (SP2) より前のバージョンの Windows では、すべての USB デバイスドライバーがカーネルモードで動作する必要がありました。 オペレーティングシステムにネイティブクラスドライバーがない USB デバイスを作成した場合は、デバイス用のカーネルモードデバイスドライバーを作成する必要がありました。
 
-Windows USB (WinUSB) は、Windows XP SP2 の Windows Driver Frameworks (WDF) と同時に開発された USB デバイスの一般的なドライバーです。 WinUSB アーキテクチャは、カーネル モード ドライバー (Winusb.sys) および公開するユーザー モード ダイナミック リンク ライブラリ (Winusb.dll) [WinUSB functions](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb)します。 これらの関数を使用すると、ユーザー モード ソフトウェアでの USB デバイスを管理できます。
+Windows USB (WinUSB) は、windows XP SP2 用の Windows ドライバーフレームワーク (WDF) と同時に開発された USB デバイス用の汎用ドライバーです。 WinUSB アーキテクチャは、 [winusb 機能](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb)を公開するカーネルモードドライバー (winusb .sys) とユーザーモードダイナミックリンクライブラリ (winusb .dll) で構成されています。 これらの機能を使用して、ユーザーモードソフトウェアで USB デバイスを管理できます。
 
-Winusb.sys が UMDF 関数のドライバーと関連付けられているデバイスの間のリンクの重要な部分もあります。 Winusb.sys は、デバイスのカーネル モード スタックの上位のフィルター ドライバーとしてインストールされます。 アプリケーションは、読み取り、書き込み、またはデバイスの I/O 制御要求を発行するため、デバイスの UMDF 関数ドライバーと通信します。 ドライバー、フレームワークは、Winusb.sys に要求を渡しますとやり取りします。 Winusb.sys は、要求を処理し、プロトコル ドライバーに渡され、最終的には、デバイスにします。 逆方向のパス、すべての応答を返します。 Winusb.sys は、デバイス スタックのプラグ アンド プレイと電源の所有者としても機能します。
+また、このコンポーネントは、UMDF 関数ドライバーと関連付けられているデバイスとの間のリンクの重要な部分です。 Winusb .sys は、上位フィルタードライバーとしてデバイスのカーネルモードスタックにインストールされます。 アプリケーションは、デバイスの UMDF 関数ドライバーと通信して、読み取り、書き込み、またはデバイスの i/o 制御要求を発行します。 ドライバーは、要求を Winusb .sys に渡すフレームワークと対話します。 次に、要求を処理し、プロトコルドライバーと最終的にデバイスに渡します。 すべての応答は、逆パスによって返されます。 Winusb .sys は、デバイススタックのプラグアンドプレイと電源所有者としても機能します。
 
-**注**  WinUSB 関数に必要な Windows XP またはそれ以降。 USB デバイスとの通信に、C/C++ アプリケーションでこれらの関数を使用できます。 Microsoft では、WinUSB のマネージ API は提供されません。
+**注**  WinUSB functions には Windows XP 以降が必要です。 C/C++アプリケーションでこれらの関数を使用して、USB デバイスと通信することができます。 Microsoft は WinUSB 用のマネージ API を提供していません。
 
-このセクションでは、WinUSB を使用して、USB デバイスと通信する方法について説明します。 このセクションのトピックでは、USB デバイスの機能のドライバーとを示すコード例の詳細なチュートリアルとして Winusb.sys のインストールについては、デバイスの適切なドライバーの選択に関するガイドラインを提供する方法のアプリケーションと USB デバイス互いと通信します。
+このセクションでは、WinUSB を使用して USB デバイスと通信する方法について説明します。 このセクションのトピックでは、デバイスに適切なドライバーを選択するためのガイドライン、USB デバイスの機能ドライバーとしての Winusb のインストールに関する情報、およびアプリケーションと USB デバイスのしくみを示すコード例を使用した詳細なチュートリアルについて説明します。相互に通信します。
 
 ここでは、次のトピックについて説明します。
 
 -   [WinUSB アーキテクチャとモジュール](winusb-architecture.md)
--   [WinUSB (Winusb.sys) のインストール](winusb-installation.md)
+-   [WinUSB (Winusb .sys) のインストール](winusb-installation.md)
 -   [WinUSB デバイス](automatic-installation-of-winusb.md)
--   [WinUSB 関数を使用して、USB デバイスにアクセスする方法](using-winusb-api-to-communicate-with-a-usb-device.md)
--   [ポリシーの変更をパイプ WinUSB 関数](winusb-functions-for-pipe-policy-modification.md)
+-   [WinUSB 機能を使用して USB デバイスにアクセスする方法](using-winusb-api-to-communicate-with-a-usb-device.md)
+-   [パイプポリシーを変更するための WinUSB 関数](winusb-functions-for-pipe-policy-modification.md)
 -   [WinUSB 電源管理](winusb-power-management.md)
 
-## <a name="windows-support-for-winusb"></a>WinUSB の Windows のサポート
+## <a name="windows-support-for-winusb"></a>WinUSB の Windows サポート
 
 
-次の表は、異なるバージョンの Windows で WinUSB サポートをまとめたものです。
+次の表は、さまざまなバージョンの Windows での WinUSB のサポートをまとめたものです。
 
 | Windows のバージョン      | WinUSB サポート |
 |----------------------|----------------|
-| Windows 10 以降 | Yes²           |
-| Windows 7            | Yes¹           |
-| Windows Server 2008  | Yes²           |
-| Windows Vista        | Yes²           |
-| Windows Server 2003  | X             |
-| Windows XP           | Yes³           |
-| Windows 2000         | X             |
+| Windows 10 以降 | ○²           |
+| Windows 7            | はい¹           |
+| Windows Server 2008  | ○²           |
+| Windows Vista        | ○²           |
+| Windows Server 2003  | いいえ             |
+| Windows XP           | はい³           |
+| Windows 2000         | いいえ             |
 
  
 
-**注**   Yes¹:このバージョンの Windows サポート WinUSB x86 ベース、x64 ベースおよび Itanium ベース システム上のすべての Sku。
+**注**   はい¹:このバージョンの Windows のすべての Sku では、x86 ベース、x64 ベース、および Itanium ベースのシステムで WinUSB がサポートされています。
 
-Yes²:このバージョンの Windows サポート WinUSB x86 ベースおよび x64 ベースのシステム上のすべての Sku。
+○²:このバージョンの Windows のすべての Sku では、x86 ベースおよび x64 ベースのシステムで WinUSB がサポートされています。
 
-Yes³:すべてのクライアント Sku の Windows XP SP2 サービス パックではサポート WinUSB です。 WinUSB は Windows XP; にネイティブではありません。WinUSB 共同インストーラーによるインストールがあります。
+はい³:Windows XP SP2 service pack のすべてのクライアント Sku で WinUSB がサポートされています。 WinUSB は Windows XP にネイティブではありません。WinUSB 共同インストーラーと共にインストールする必要があります。
 
-違います：WinUSB はこのバージョンの Windows でサポートされていません。
+違います：WinUSB は、このバージョンの Windows ではサポートされていません。
 
  
 
-## <a name="usb-features-supported-by-winusb"></a>WinUSB でサポートされている USB 機能
+## <a name="usb-features-supported-by-winusb"></a>WinUSB でサポートされる USB 機能
 
 
-WinUSB で異なるバージョンの Windows でサポートされている高度な USB 機能を次の表に示します。
+次の表は、さまざまなバージョンの Windows で WinUSB でサポートされている高レベルの USB 機能を示しています。
 
 | 機能                                | Windows 8.1 以降 | Windows 7/Vista/XP |
 |----------------------------------------|-----------------------|--------------------|
-| デバイス I/O 制御要求            | サポート対象             | サポート対象          |
-| アイソクロナス転送                  | サポート対象             | サポートされない      |
-| 一括、制御、および割り込みの転送 | サポート対象             | サポート対象          |
-| セレクティブ サスペンドします。                      | サポート対象             | サポート対象          |
-| リモート ウェイク                            | サポート対象             | サポート対象          |
+| デバイス i/o 制御要求            | Supported             | Supported          |
+| アイソクロナス転送                  | Supported             | サポート非対象      |
+| 一括転送、制御転送、割り込み転送 | Supported             | Supported          |
+| 選択的中断                      | Supported             | Supported          |
+| リモートウェイク                            | Supported             | Supported          |
 
  
 

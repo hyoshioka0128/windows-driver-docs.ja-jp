@@ -1,11 +1,11 @@
 ---
 title: pcr
-description: Pcr 拡張機能は、特定のプロセッサ上のプロセッサ コントロール リージョン (PCR) の現在の状態を表示します。
+description: Pcr 拡張機能には、特定のプロセッサのプロセッサ制御領域 (PCR) の現在の状態が表示されます。
 ms.assetid: a9d82aa4-57de-4170-80fd-b7cd5b82f1e5
 keywords:
-- プロセッサのコントロールの領域 (PCR)
+- プロセッサ制御領域 (PCR)
 - pcr Windows デバッグ
-ms.date: 05/23/2017
+ms.date: 10/07/2019
 topic_type:
 - apiref
 api_name:
@@ -13,27 +13,31 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 018741ae2a8f28b7b29c55ca10b00f6564a5c5f5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fefa5fa4d1d96ead2184c517e89d564535bc2388
+ms.sourcegitcommit: bff7fdcac628f8b62bd9df2658ca56301d1f8b07
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334409"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72030801"
 ---
 # <a name="pcr"></a>!pcr
 
 
-**! Pcr**拡張機能は、特定のプロセッサのプロセッサ コントロール リージョン (PCR) の現在の状態を表示します。
+**! Pcr**拡張機能は、特定のプロセッサのプロセッサ制御領域 (pcr) の現在の状態を表示します。
 
 ```dbgcmd
 !pcr [Processor]
 ```
 
-## <a name="span-idddkpcrdbgspanspan-idddkpcrdbgspanparameters"></a><span id="ddk__pcr_dbg"></span><span id="DDK__PCR_DBG"></span>パラメーター
+## <a name="span-idddk__pcr_dbgspanspan-idddk__pcr_dbgspanparameters"></a><span id="ddk__pcr_dbg"></span><span id="DDK__PCR_DBG"></span>パラメータ
 
 
-<span id="_______Processor______"></span><span id="_______processor______"></span><span id="_______PROCESSOR______"></span> *プロセッサ*   
-PCR 情報を取得するプロセッサを指定します。 場合*プロセッサ*は省略すると、現在のプロセッサが使用されます。
+<span id="_______Processor______"></span><span id="_______processor______"></span><span id="_______PROCESSOR______"></span>*プロセッサ*   
+PCR 情報を取得するプロセッサを指定します。 *プロセッサ*を省略した場合は、現在のプロセッサが使用されます。
+
+> [!NOTE]
+> このコマンドは現在サポートされていないため、正しくない出力が表示される場合があります。
+>
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
@@ -45,27 +49,27 @@ PCR 情報を取得するプロセッサを指定します。 場合*プロセ�
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>Windows 2000</strong></p></td>
-<td align="left"><p>Kdextx86.dll</p></td>
+<td align="left"><p>Kdextx86</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>Windows XP 以降</strong></p></td>
-<td align="left"><p>Kdexts.dll</p></td>
+<td align="left"><p>Kdexts .dll</p></td>
 </tr>
 </tbody>
 </table>
 
 
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-PCR、および、PRCB については、次を参照してください。 *Microsoft Windows internals 』*、Mark Russinovich と David Solomon します。
+PCR と PRCB の詳細については、「 *Microsoft Windows の内部*」 (Mark Russinovich と David ソロモン) を参照してください。
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>コメント
 -------
 
-プロセッサの制御ブロック (PRCB) は、PCR の拡張機能です。 表示できますが、 [ **! prcb** ](-prcb.md)拡張機能。
+プロセッサ制御ブロック (PRCB) は、PCR の拡張機能です。 これは、 [ **! prcb**](-prcb.md)拡張機能と共に表示できます。
 
-次の例に示します、 **! pcr** x86 拡張対象のコンピューター。
+X86 ターゲットコンピューターの **! pcr**拡張機能の例を次に示します。
 
 ```dbgcmd
 kd> !pcr 0
@@ -96,7 +100,7 @@ KPCR for Processor 0 at ffdff000:
                 DpcQueue:  0x80168ee0 0x80100d04 ntoskrnl!KiTimerExpiration
 ```
 
-この表示でエントリの 1 つは、割り込み要求レベル (IRQL) を示しています。 **! Pcr**拡張機能は、IRQL が現在の IRQL は通常、関係のないくらい現在を示します。 直前に、バグを確認またはデバッガーの接続が存在していた IRQL はより興味深いものです。 によって表示されるこの[ **! irql**](-irql.md)、Windows Server 2003 または以降のバージョンの Windows を実行しているコンピューターに収録されてのみです。
+この表示のエントリの1つは、割り込み要求レベル (IRQL) を示しています。 **! Pcr**拡張機能には現在の irql が表示されますが、現在の irql は通常はあまり重要ではありません。 バグチェックまたはデバッガー接続の直前に存在していた IRQL は、さらに興味深いものになります。 これは[ **! irql**](-irql.md)によって表示されます。これは、windows Server 2003 以降のバージョンの windows を実行しているコンピューターでのみ使用できます。
 
 
 

@@ -1,78 +1,78 @@
 ---
-Description: デバイスのカーネル モード スタックでドライバーを実装する代わりに、USB デバイスの機能のドライバーとして WinUSB (Winusb.sys) をインストールします。
+Description: ドライバーを実装する代わりに、デバイスのカーネルモードスタックに WinUSB (Winusb .sys) を USB デバイスの関数ドライバーとしてインストールします。
 title: WinUSB (Winusb.sys) のインストール
 ms.date: 05/09/2018
-ms.localizationpriority: medium
-ms.openlocfilehash: 6c443aba3a413f3c1a1b941bd188b3130b98b101
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
-ms.translationtype: MT
+ms.localizationpriority: High
+ms.openlocfilehash: d2157430a1e220e693d9ae88c3a3a36ce3fd3d2e
+ms.sourcegitcommit: c73954a5909ec8c7e189f77fd5813f2eb749687c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383480"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72007588"
 ---
 # <a name="winusb-winusbsys-installation"></a>WinUSB (Winusb.sys) のインストール
 
 
-インストールする単一のアプリケーションによってアクセスされるデバイスなど、ユニバーサル シリアル バス (USB) デバイスの特定[WinUSB](winusb.md) (Winusb.sys) の代わりに、USB デバイスの機能のドライバーとして、デバイスのカーネル モード スタックでドライバーを実装します。
+1つのアプリケーションのみによってアクセスされるデバイスなど、特定のユニバーサルシリアルバス (USB) デバイスについては、ドライバーを実装する代わりに、デバイスのカーネルモードスタックに[winusb](winusb.md) (winusb .sys) を USB デバイスの関数ドライバーとしてインストールできます。
 
 このトピックは次のセクションで構成されます。
 
--   [WinUSB INF ファイルを使用せずに自動的にインストール](#automatic-installation-of--winusb-without-an-inf-file)
--   [システム指定のデバイス クラスを指定することによって WinUSB をインストールします。](#installing-winusb-by-specifying--the-system-provided-device-class)
--   [WinUSB インストール用のカスタム INF の書き込み](#inf)
--   [Winusb.sys をインストールするドライバー パッケージを作成する方法](#howto)
+-   [INF ファイルを使用せずに WinUSB を自動インストールする](#automatic-installation-of--winusb-without-an-inf-file)
+-   [システム指定のデバイスクラスを指定して WinUSB をインストールする](#installing-winusb-by-specifying--the-system-provided-device-class)
+-   [WinUSB インストール用のカスタム INF の作成](#inf)
+-   [Winusb .sys をインストールするドライバーパッケージを作成する方法](#howto)
 
-## <a href="" id="automatic-installation-of--winusb-without-an-inf-file"></a>WinUSB INF ファイルを使用せずに自動的にインストール
-
-
-OEM または独立系ハードウェア ベンダー (IHV) は、Windows 8 およびそれ以降のバージョンのオペレーティング システムに、Winusb.sys を自動的にインストールできるように、デバイスを構築できます。 このようなデバイスでは、WinUSB デバイスは呼び出され、インボックス Winusb.inf を参照するカスタム INF ファイルを記述する必要はありません。
-
-WinUSB デバイスを接続するときに、システムはデバイスの情報を読み取り、Winusb.sys を自動的に読み込みます。
-
-詳細については、次を参照してください。 [WinUSB デバイス](automatic-installation-of-winusb.md)します。
-
-## <a href="" id="installing-winusb-by-specifying--the-system-provided-device-class"></a>システム指定のデバイス クラスを指定することによって WinUSB をインストールします。
+## <a href="" id="automatic-installation-of--winusb-without-an-inf-file"></a>INF ファイルを使用せずに WinUSB を自動インストールする
 
 
-デバイスを接続するときに自動的に (IHV が定義されている場合、デバイス WinUSB デバイスとして)、Windows が Winusb.sys を読み込むことが分かります。 それ以外の場合、ドライバーの読み込み、次の手順に従ってください。
+OEM または独立系ハードウェアベンダー (IHV) は、Winusb を Windows 8 以降のバージョンのオペレーティングシステムに自動的にインストールするようにデバイスを構築できます。 このようなデバイスは、WinUSB デバイスと呼ばれており、組み込みの Winusb .inf を参照するカスタム INF ファイルを作成する必要はありません。
 
-1.  ホスト システムにデバイスを接続します。
-2.  デバイス マネージャーを開き、デバイスを探します。
-3.  デバイスを右クリックして**ドライバー ソフトウェアを更新しています.** コンテキスト メニュー。
-4.  ウィザードで、次のように選択します。**参照コンピューターでドライバー ソフトウェア**します。
-5.  選択**コンピューター上のデバイス ドライバーの一覧から選択できるように**します。
-6.  デバイス クラスのリストから選択**ユニバーサル シリアル バス デバイス**します。
-7.  ウィザードが表示されます**WinUsb デバイス**します。 ドライバーをロードすることを選択します。
+WinUSB デバイスを接続すると、システムによってデバイス情報が読み取られ、Winusb .sys が自動的に読み込まれます。
 
-場合**ユニバーサル シリアル バス デバイス**がカスタム INF を使用して、ドライバーをインストールする必要がありますにデバイスのクラスの一覧に表示されません。
-前の手順では、アプリ (UWP アプリまたは Windows デスクトップ アプリ)、デバイスにアクセスするデバイス インターフェイスの GUID は追加されません。 GUID は、次の手順で手動で追加する必要があります。
+詳細については、「 [Winusb デバイス](automatic-installation-of-winusb.md)」を参照してください。
 
-1.  前の手順に従って、ドライバーを読み込み。
-2.  Guidgen.exe などのツールを使用して、デバイスには、デバイス インターフェイスの GUID を生成します。
-3.  このキーの下のデバイスのレジストリ キーを探します。
+## <a href="" id="installing-winusb-by-specifying--the-system-provided-device-class"></a>システム指定のデバイスクラスを指定して WinUSB をインストールする
 
-    **HKEY\_LOCAL\_MACHINE\\SYSTEM\\CurrentControlSet\\Enum\\USB\\&lt;VID\_vvvv&PID\_pppp&gt;**
 
-4.  下、**デバイス パラメーター**キー、という名前の文字列のレジストリ エントリを追加**DeviceInterfaceGUID**またはという名前の複数行文字列エントリ**DeviceInterfaceGUIDs**します。 手順 2. で生成された GUID 値を設定します。
-5.  システムからデバイスを切断し、同じ物理ポートに再接続します。
-    **注**  物理ポートを変更するかどうかは、手順 1. ~ 4. を繰り返す必要があります。
+デバイスに接続すると、Windows によって Winusb が自動的に読み込まれることがわかります (IHV がデバイスを WinUSB デバイスとして定義している場合)。 それ以外の場合は、次の手順に従ってドライバーを読み込みます。
+
+1.  デバイスをホストシステムに接続します。
+2.  デバイスマネージャーを開き、デバイスを見つけます。
+3.  デバイスを右クリックし、コンテキストメニューの **[ドライバーソフトウェアの更新...]** を選択します。
+4.  ウィザードで、 **[コンピューターを参照してドライバーソフトウェアを参照する]** を選択します。
+5.  **[コンピューターのデバイスドライバーの一覧から選択できるようにする]** を選択します。
+6.  デバイスクラスの一覧から、 **[ユニバーサルシリアルバスデバイス]** を選択します。
+7.  **Winusb デバイス**が表示されます。 ドライバーを読み込むには、このチェックボックスをオンにします。
+
+**ユニバーサルシリアルバスデバイス**がデバイスクラスの一覧に表示されない場合は、カスタム INF を使用してドライバーをインストールする必要があります。
+前の手順では、デバイスにアクセスするためのアプリ (UWP アプリまたは Windows デスクトップアプリ) のデバイスインターフェイス GUID は追加されません。 この手順に従って、手動で GUID を追加する必要があります。
+
+1.  前の手順で説明したように、ドライバーを読み込みます。
+2.  Guidgen.exe などのツールを使用して、デバイスのデバイスインターフェイス GUID を生成します。
+3.  次のキーで、デバイスのレジストリキーを探します。
+
+    **HKEY @ no__t-1LOCAL @ no__t-2MACHINE @ no__t-3SYSTEM @ no__t-4CurrentControlSet @ no__t-5Enum @ no__t-6USB @ no__t-7 @ no__t-8VID @ no__t-9vvvv & PID @ no__t-10pppp @ no__t-11**
+
+4.  **Device Parameters**キーの下に、 **deviceinterfaceguid**という名前の文字列レジストリエントリ、または**Deviceinterfaceguid**という名前の複数文字列エントリを追加します。 値を、手順 2. で生成した GUID に設定します。
+5.  デバイスをシステムから切断し、同じ物理ポートに再接続します。
+    **@No__t-** 1 物理ポートを変更した場合は、手順 1. ~ 4. を繰り返す必要があります。
 
      
 
-## <a href="" id="inf"></a>WinUSB インストール用のカスタム INF の書き込み
+## <a href="" id="inf"></a>WinUSB インストール用のカスタム INF の作成
 
 
-ドライバー パッケージの一部として、USB デバイスの機能のドライバーとして Winusb.sys をインストールする .inf ファイルを提供します。
+ドライバーパッケージの一部として、Winusb を USB デバイスの関数ドライバーとしてインストールする .inf ファイルを指定します。
 
-.Inf ファイルの例を次に示します WinUSB インストールの変更など、いくつかの変更のほとんどの USB デバイスの**USB\_インストール**、該当するセクション名で*DDInstall*値。 バージョン、製造元、および必要に応じて、各モデルの説明を変更することも必要があります。 たとえば、デバイスの適切な製造元の名前、署名済みカタログ ファイルは、正しいデバイス クラスと仕入先 id (VID) および製品 id (PID) の名前を提供します。
+次の例の .inf ファイルは、ほとんどの USB デバイスの WinUSB インストールを示しています。たとえば、セクション名での**usb @ no__t のインストール**は、適切な*ddinstall*値に変更します。 必要に応じて、バージョン、製造元、およびモデルのセクションも変更する必要があります。 たとえば、適切な製造元の名前、署名されたカタログファイルの名前、正しいデバイスクラス、およびデバイスのベンダー id (VID) と製品識別子 (PID) を入力します。
 
-セットアップ クラスが"USBDevice"に設定されていることにも注目してください。 ベンダーは、別のクラスに属していない、USB ホスト コント ローラーまたはハブではないデバイスの"USBDevice"セットアップ クラスを使用できます。
+また、セットアップクラスが "USBDevice" に設定されていることにも注意してください。 ベンダーは、USB ホストコントローラーまたはハブではなく、別のクラスに属していないデバイスに対して "USBDevice" セットアップクラスを使用できます。
 
-関数のドライバーを USB 複合デバイス内の関数のいずれかとして WinUSB をインストールする場合は、関数、INF に関連付けられているハードウェア ID を指定する必要があります。 関数のハードウェア ID を取得するで devnode のプロパティから**デバイス マネージャー**します。 ハードウェア ID の文字列形式が"USB\\VID\_vvvv & PID\_pppp"。
+USB 複合デバイス内のいずれかの関数の関数ドライバーとして WinUSB をインストールする場合は、その関数に関連付けられているハードウェア ID を INF で指定する必要があります。 **デバイスマネージャー**の devnode のプロパティから、関数のハードウェア ID を取得できます。 ハードウェア ID 文字列の形式は、"USB @ no__t-0VID @ no__t-1vvvv & PID @ no__t-2pppp" です。
 
-次の INF には、x64 ベース システムで OSR USB FX2 ボードの機能のドライバーとして WinUSB がインストールされます。
+次の INF は、x64 ベースのシステム上に、OSR USB FX2 ボードの関数ドライバーとして WinUSB をインストールします。
 
-> Windows 10 バージョン 1709 以降、Windows Driver Kit は、 [InfVerif.exe](https://docs.microsoft.com/windows-hardware/drivers/devtest/infverif)構文の問題がないと、INF ファイルはユニバーサルかどうかを確認するドライバーの INF ファイルをテストに使用することできます。 私たちユニバーサル INF を提供することです。 詳細については、次を参照してください。[ユニバーサル INF ファイルを使用して](https://docs.microsoft.com/windows-hardware/drivers/install/using-a-universal-inf-file)します。
+> Windows 10 バージョン1709以降、Windows Driver Kit には InfVerif が用意されてい[ます。](https://docs.microsoft.com/windows-hardware/drivers/devtest/infverif)このキットを使用すると、ドライバーの inf ファイルをテストして、構文の問題がないこと、および INF ファイルがユニバーサルであることを確認できます。 ユニバーサル INF を提供することをお勧めしています。 詳細については、「 [UNIVERSAL INF ファイルの使用](https://docs.microsoft.com/windows-hardware/drivers/install/using-a-universal-inf-file)」を参照してください。
 
 ``` syntax
 ;
@@ -141,24 +141,24 @@ ClassName="Universal Serial Bus devices"
 DeviceName="Fx2 Learning Kit Device"
 REG_MULTI_SZ = 0x00010000
 ```
-> 新しいカスタム デバイス セットアップ クラスをインストールするデバイスの INF ファイルで ClassInstall32 セクションにはのみが含まれます。 インストールされているクラスで、デバイスの INF ファイル システム提供のデバイス セットアップ クラスまたはカスタム クラスであるかどうかを含めない ClassInstall32 セクション。 
+> 新しいカスタムデバイスセットアップクラスをインストールするには、デバイスの INF ファイルに ClassInstall32 セクションのみを含めます。 インストールされているクラスのデバイスの INF ファイル。システムが提供するデバイスセットアップクラスまたはカスタムクラスに ClassInstall32 セクションを含めることはできません。 
 
 
 
 
-デバイス固有の値とは、次の一覧に記載されているいくつかの問題、を除き WinUSB を任意の USB デバイスをインストールするのにには、これらのセクションでは、ディレクティブを使用できます。 これらのリスト アイテムについて説明します、**が含まれます**と**ディレクティブ**で上記の .inf ファイル。
+デバイス固有の値と、次の一覧に記載されているいくつかの問題を除き、これらのセクションとディレクティブを使用して、任意の USB デバイスに WinUSB をインストールすることができます。 これらのリスト項目は、前の .inf ファイルの**インクルード** **ディレクティブとディレクティブ**を記述します。
 
--   **USB\_インストール**:**Include**と**必要がある**ディレクティブ、 **USB\_インストール**セクション WinUSB をインストールする必要があります。 これらのディレクティブを変更する必要があります。
--   **USB\_Install.Services**:**Include**ディレクティブで、 **USB\_Install.Services**セクションには、システム提供の .inf には WinUSB (WinUSB.inf) が含まれています。 この .inf ファイルは、ターゲット システムにいない場合は、WinUSB 共同インストーラーによってインストールされます。 **必要がある**ディレクティブは、デバイスの機能のドライバーとして Winusb.sys をインストールするために必要な情報を含む WinUSB.inf 内のセクションを指定します。 これらのディレクティブを変更する必要があります。
-    **注**  WinUSB.inf を提供しないため、Windows XP、共同インストーラーによって、ファイルが Windows XP システムにコピーするかする必要があります、または Windows XP の装飾を別のセクションを提供する必要があります。
+-   **USB @ no__t のインストール**:WinUSB をインストールするには、 **Include**および required ディレクティブが**usb @ No__t-3install**セクション**に必要です**。 これらのディレクティブは変更しないでください。
+-   **USB @ no__t-1 install. Services**:**USB @ no__t-2Install. Services**セクションの**Include**ディレクティブには、winusb 用のシステム提供の .inf (winusb .inf) が含まれています。 この .inf ファイルは、WinUSB 共同インストーラー (ターゲットシステムにまだインストールされていない場合) によってインストールされます。 **必要**に応じて、winusb .inf 内のセクションを指定します。これには、デバイスの関数ドライバーとして winusb をインストールするために必要な情報が含まれています。 これらのディレクティブは変更しないでください。
+    **@No__t-** 1BECAUSE xp では winusb .inf が提供されないため、ファイルを共同インストーラーによって windows xp システムにコピーするか、windows xp 用に別の修飾されたセクションを指定する必要があります。
 
      
 
--   **USB\_Install.HW**:このセクションでは、.inf ファイルのキーです。 これには、デバイスのデバイス インターフェイス グローバル一意識別子 (GUID) を指定します。 **AddReg**ディレクティブは、標準のレジストリ値で指定されたインターフェイスの GUID を設定します。 デバイスの機能のドライバーとして Winusb.sys が読み込まれると、レジストリ キーを読み取って値 DeviceInterfaceGUIDs と、指定された GUID を使用して、デバイス インターフェイスを表します。 この例では GUID は、具体的にはお使いのデバイスを作成するものに置き換える必要があります。 デバイスのプロトコルを変更する場合は、新しいデバイス インターフェイスの GUID を作成します。
+-   **USB\_Install.HW**:このセクションは、.inf ファイルのキーです。 デバイスのデバイスインターフェイスグローバル一意識別子 (GUID) を指定します。 **AddReg**ディレクティブは、標準レジストリ値に指定されたインターフェイス GUID を設定します。 Winusb .sys がデバイスの関数ドライバーとして読み込まれると、レジストリ値 DeviceInterfaceGUIDs キーを読み取り、指定された GUID を使用してデバイスインターフェイスを表します。 この例の GUID は、デバイス専用に作成したものに置き換える必要があります。 デバイスのプロトコルが変更された場合は、新しいデバイスインターフェイス GUID を作成します。
 
-    **注**  ユーザー モードのソフトウェアを呼び出す必要があります[ **SetupDiGetClassDevs** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclassdevsw)デバイス インターフェイスのいずれかに関連付けられている登録済みデバイスのインターフェイスを列挙するにはDeviceInterfaceGUIDs キーで指定されているクラス。 **SetupDiGetClassDevs**ユーザー モード ソフトウェアに渡す必要がありますし、デバイスのデバイス ハンドルを返します、 [ **WinUsb\_初期化**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_initialize) WinUSB ハンドルを取得するルーチンデバイスのインターフェイス。 これらのルーチンの詳細については、次を参照してください。 [WinUSB 関数を使用して、USB デバイスへのアクセス方法](using-winusb-api-to-communicate-with-a-usb-device.md)します。
+    @No__t-1User モードのソフトウェアでは、DeviceInterfaceGUIDs キーの下で指定されたデバイスインターフェイスクラスの1つに関連付けられている登録済みのデバイスインターフェイスを列挙するために、 [**SetupDiGetClassDevs**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclassdevsw)を呼び出す必要がある**ことに注意**してください。 **SetupDiGetClassDevs**は、デバイスのデバイスハンドルを返します。ユーザーモードのソフトウェアは、デバイスインターフェイスの winusb ハンドルを取得するために[**winusb @ No__t-3initialize**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_initialize)ルーチンに渡す必要があります。 これらのルーチンの詳細については、「 [Winusb 機能を使用して Usb デバイスにアクセスする方法](using-winusb-api-to-communicate-with-a-usb-device.md)」を参照してください。
 
-次の INF には、x64 ベース システムで OSR USB FX2 ボードの機能のドライバーとして WinUSB がインストールされます。 この例では、WDF 共同インストーラーを INF を示します。
+次の INF は、x64 ベースのシステム上に、OSR USB FX2 ボードの関数ドライバーとして WinUSB をインストールします。 この例は、WDF coinstallers を使用した INF を示しています。
 
 ``` syntax
 ;
@@ -243,51 +243,51 @@ DiskName="MyDisk"
 REG_MULTI_SZ = 0x00010000
 ```
 
--   **USB\_Install.CoInstallers**:このセクションでは、参照先が含まれています**AddReg**と**CopyFiles**セクションで、データとを WinUSB および KMDF 共同インストーラーをインストールして、デバイスに関連付ける手順が含まれています。 ほとんどの USB デバイスには、これらのセクションと変更を加えなければディレクティブを使用できます。
--   Windows の x86 ベースおよび x64 ベースのバージョンでは、個別の共同インストーラーがあります。
+-   **USB @ no__t-1Install. CoInstallers**:このセクションには、参照先の**AddReg**および**CopyFiles**セクションが含まれており、WINUSB と kmdf の共同インストーラーをインストールしてデバイスに関連付けるためのデータと手順が含まれています。 ほとんどの USB デバイスでは、これらのセクションとディレクティブを変更せずに使用できます。
+-   X86 ベースおよび x64 ベースのバージョンの Windows では、個別の共同インストーラーが用意されています。
 
-    **注**  各共同インストーラーがチェックされている無料版です。 すべての製品版を含む、Windows の無料のビルドに WinUSB をインストールするのにには、無料版を使用します。 チェック済みバージョンを使用して (で、"\_chk"サフィックス) に Windows のチェック ビルド WinUSB をインストールします。
+    **注**   各共同インストーラーには、無料バージョンとチェック済みバージョンがあります。 無料バージョンを使用して、すべての製品版を含む Windows の無償のビルドに WinUSB をインストールします。 チェックされたバージョン ("\_chk" サフィックス) を使用して、Windows のチェックされたビルドに WinUSB をインストールします。
 
-Winusb.sys 読み込みされるたびに、下のレジストリで指定されているデバイスのインターフェイス クラスを持つデバイス インターフェイスを登録、 **DeviceInterfaceGUIDs**キー。
+Winusb .sys が読み込まれるたびに、 **Deviceinterfaceguids**キーの下にあるレジストリに指定されているデバイスインターフェイスクラスを持つデバイスインターフェイスが登録されます。
 
 ``` syntax
 HKR,,DeviceInterfaceGUIDs, 0x10000,"{D696BFEB-1734-417d-8A04-86D01071C512}"
 ```
 
-**注**  WinUSB の再頒布可能パッケージのパッケージを使用して Windows XP または Windows Server 2003 の場合、アンインストール パッケージで WinUSB をアンインストールすることはありません確認します。 バイナリは、共有フォルダーに残す必要があるために、他の USB デバイスが WinUSB を使用する場合があります。
+**注**   windows XP または windows Server 2003 の再頒布可能な winusb パッケージを使用する場合は、アンインストールパッケージで winusb をアンインストールしないようにしてください。 他の USB デバイスは WinUSB を使用している可能性があるため、バイナリを共有フォルダーに残しておく必要があります。
 
  
 
-## <a href="" id="howto"></a>Winusb.sys をインストールするドライバー パッケージを作成する方法
+## <a href="" id="howto"></a>Winusb .sys をインストールするドライバーパッケージを作成する方法
 
 
-WinUSB 関数ドライバーとしてを使用するには、ドライバー パッケージを作成します。 ドライバー パッケージには、これらのファイルを含める必要があります。
+デバイスの関数ドライバーとして WinUSB を使用するには、ドライバーパッケージを作成します。 ドライバーパッケージには、次のファイルが含まれている必要があります。
 
--   WinUSB 共同インストーラー (Winusbcoinstaller.dll)
--   KMDF 共同インストーラー (WdfcoinstallerXXX.dll)
--   デバイスの機能のドライバーとして Winusb.sys をインストールする .inf ファイル。 詳細については、次を参照してください。[書き込み、します。WinUSB インストール用の Inf ファイル](#inf)します。
--   パッケージの署名済みカタログ ファイル。 このファイルは、x64 WinUSB をインストールする必要は Windows Vista 以降のバージョン。
+-   WinUSB 共同インストーラー (winusbinstaller .dll)
+-   KMDF 共同インストーラー (Wdfcoinstaller Xxx .dll)
+-   デバイスの関数ドライバーとして Winusb .sys をインストールする .inf ファイル。 詳細については、「の書き込み」を参照してください[。WinUSB インストール用の Inf ファイル](#inf)。
+-   パッケージ用に署名されたカタログファイル。 このファイルは、Vista 以降の x64 バージョンの Windows に WinUSB をインストールするために必要です。
 
-![winusb インストール パッケージ](images/winusb-package.jpg)
+![winusb インストールパッケージ](images/winusb-package.jpg)
 
-**注**  ドライバー パッケージの内容が、これらの要件を満たしていることを確認します。
--   KMDF と WinUSB 共同インストーラー ファイルは、同じバージョンの Windows Driver Kit (WDK) から取得する必要があります。
--   共同インストーラー ファイルは、ドライバーが最新の Windows のすべてのリリースをサポートするよう、WDK の最新バージョンから取得する必要があります。
--   ドライバー パッケージの内容は Winqual のリリースのシグネチャを持つデジタル署名する必要があります。 作成し、署名済みカタログ ファイルをテストする方法の詳細については、次を参照してください。[カーネル モード コード署名のチュートリアル](https://go.microsoft.com/fwlink/p/?linkid=129409)Windows デベロッパー センター - ハードウェア サイト。
+**注**   ドライバーパッケージの内容が次の要件を満たしていることを確認してください。
+-   KMDF および WinUSB 共同インストーラーファイルは、同じバージョンの Windows Driver Kit (WDK) から取得する必要があります。
+-   共同インストーラーファイルは最新バージョンの WDK から取得する必要があります。これにより、ドライバーは最新のすべての Windows リリースをサポートできるようになります。
+-   ドライバーパッケージの内容は、Winqual リリースシグネチャを使用してデジタル署名されている必要があります。 署名されたカタログファイルを作成してテストする方法の詳細については、Windows デベロッパーセンターのハードウェアサイトの「[カーネルモードコード署名のチュートリアル](https://go.microsoft.com/fwlink/p/?linkid=129409)」を参照してください。
 
  
 
-1. [Windows Driver Kit (WDK) のダウンロード](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk)し、インストールします。
-2. コンピューターに USB デバイスが接続されているドライバー パッケージのフォルダーを作成します。 たとえば、c:\\UsbDevice します。
-3. (WinusbcoinstallerX.dll) WinUSB 共同インストーラーをコピー、 **WinDDK\\** <em>BuildNumber</em> **\\redist\\winusb**ドライバー パッケージ フォルダーのフォルダー。
+1. [Windows Driver Kit (WDK) をダウンロード](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk)し、インストールします。
+2. USB デバイスが接続されているコンピューターにドライバーパッケージフォルダーを作成します。 たとえば、c: @no__t 0UsbDevice のようになります。
+3. WinUSB 共同インストーラー (WinusbcoinstallerX) を、 **WinDDK @ no__t-@no__t 1 の**から、ドライバーパッケージフォルダーにコピーします。このファイルは、**no__t から 4redist @-5winusb**フォルダーにあります。
 
-   WinUSB 共同インストーラー (Winusbcoinstaller.dll) は、必要に応じて、ターゲット システムに WinUSB をインストールします。 次の 3 つのバージョン システム アーキテクチャに応じて共同インストーラーにはが WDK に含まれています。 x86 ベース、x64 ベースおよび Itanium ベース システム。 WinusbcoinstallerX.dll すべてという名前は、適切なサブディレクトリにある、 **WinDDK\\** <em>BuildNumber</em> **\\redist\\winusb**フォルダー。
+   WinUSB 共同インストーラー (Winusbinstaller .dll) は、必要に応じて、ターゲットシステムに WinUSB をインストールします。 WDK には、x86 ベース、x64 ベース、および Itanium ベースのシステムアーキテクチャに応じて、3つのバージョンの共同インストーラーが含まれています。 これらはすべて WinusbcoinstallerX という名前であり、適切なサブディレクトリの中にあります。このファイルは、 **@ no__t-** **@no__t** 1 のにあります。
 
-4. (WdfcoinstallerXXX.dll) KMDF 共同インストーラーをコピー、 **WinDDK\\** <em>BuildNumber</em> **\\redist\\wdf**フォルダードライバー パッケージのフォルダー。
+4. KMDF 共同インストーラー (Wdfcoインストーラ) を、 **WinDDK @ no__t-@no__t 1 の**から、ドライバーパッケージフォルダーにコピーします。このファイルは、**no__t**フォルダーにあります。
 
-   KMDF 共同インストーラー (WdfcoinstallerXXX.dll) は、必要に応じて、ターゲット システムでは、KMDF の正しいバージョンをインストールします。 WinUSB 共同インストーラーのバージョンは、Winusb.sys などの KMDF ベースのクライアント ドライバーは、システムに正しくインストールするために、KMDF フレームワークの対応するバージョンを必要とするため、KMDF 共同インストーラーと一致する必要があります。 たとえば、Winusbcoinstaller2.dll KMDF Wdfcoinstaller01009.dll によってインストールされるバージョン 1.9 が必要です。 WdfcoinstallerXXX.dll の x86 および x64 バージョンでは、下の WDK に含まれています、 **WinDDK\\** <em>BuildNumber</em> **\\redist\\wdf**フォルダー。 次の表は、ターゲット システムで使用するには、WinUSB 共同インストーラーと関連付けられている KMDF 共同インストーラーを示します。
+   必要に応じて、KMDF 共同インストーラー (Wdfcoinstaller Xxx .dll) によってターゲットシステムに適切なバージョンの KMDF がインストールされます。 Winusb (Winusb) などの KMDF ベースのクライアントドライバーでは、対応するバージョンの KMDF フレームワークがシステムに適切にインストールされている必要があるため、WinUSB 共同インストーラーのバージョンは KMDF 共同インストーラーと一致している必要があります。 たとえば、Winusbcoinstaller2 では、Wdfcoinstaller01009 によってインストールされる KMDF バージョン1.9 が必要です。 **WinDDK @ no__t-1**の **\\redist @ no__t**フォルダーにある WDK には、X86 および X64 バージョンの wdfcoインストーラ xxx が含まれています。 次の表は、WinUSB 共同インストーラーと、ターゲットシステムで使用する関連する KMDF 共同インストーラーを示しています。
 
-   WinUSB 共同インストーラーと関連付けられている KMDF 共同インストーラーを確認するのにには、このテーブルを使用します。
+   この表を使用して、WinUSB 共同インストーラーと関連付けられている KMDF 共同インストーラーを確認します。
 
    <table>
    <colgroup>
@@ -304,38 +304,38 @@ WinUSB 関数ドライバーとしてを使用するには、ドライバー パ
    </thead>
    <tbody>
    <tr class="odd">
-   <td>Winusbcoinstaller.dll</td>
-   <td>KMDF バージョン 1.5 以降が必要です。</td>
-   <td><p>Wdfcoinstaller01005.dll</p>
-   <p>Wdfcoinstaller01007.dll</p>
-   <p>Wdfcoinstaller01009.dll</p></td>
+   <td>Winusbcoinstaller インストーラー .dll</td>
+   <td>KMDF バージョン1.5 以降が必要です</td>
+   <td><p>Wdfcoinstaller01005</p>
+   <p>Wdfcoinstaller01007</p>
+   <p>Wdfcoinstaller01009</p></td>
    </tr>
    <tr class="even">
-   <td>Winusbcoinstaller2.dll</td>
-   <td>KMDF バージョン 1.9 以降が必要です。</td>
-   <td>Wdfcoinstaller01009.dll</td>
+   <td>Winusbcoinstaller2</td>
+   <td>KMDF バージョン1.9 以降が必要です</td>
+   <td>Wdfcoinstaller01009</td>
    </tr>
    <tr class="odd">
-   <td>Winusbcoinstaller2.dll</td>
-   <td>KMDF バージョン 1.11 以降が必要です。</td>
-   <td>WdfCoInstaller01011.dll</td>
+   <td>Winusbcoinstaller2</td>
+   <td>KMDF バージョン1.11 以降が必要です</td>
+   <td>WdfCoInstaller01011</td>
    </tr>
    </tbody>
    </table>
 
      
 
-5. USB デバイスの機能のドライバーとして Winusb.sys をインストールする .inf ファイルを作成します。
-6. パッケージの署名済みカタログ ファイルを作成します。 このファイルは、x64 WinUSB をインストールする必要は Windows のバージョン。
-7. コンピューターに USB デバイスを接続します。
-8. 開いている**デバイス マネージャー**ドライバーをインストールします。 指示に従って、**ドライバー ソフトウェアの更新**ウィザード手動インストールを選択します。 ドライバーの場所にインストールを完了するパッケージ フォルダーを指定する必要があります。
+5. USB デバイスの関数ドライバーとして Winusb .sys をインストールする .inf ファイルを作成します。
+6. パッケージ用に署名されたカタログファイルを作成します。 このファイルは、x64 バージョンの Windows に WinUSB をインストールするために必要です。
+7. USB デバイスをコンピューターに接続します。
+8. **デバイスマネージャー**を開いてドライバーをインストールします。 **ドライバーソフトウェアの更新**ウィザードの指示に従って、[手動インストール] を選択します。 インストールを完了するには、ドライバーパッケージフォルダーの場所を指定する必要があります。
 
 ## <a name="related-topics"></a>関連トピック
 [WinUSB アーキテクチャとモジュール](winusb-architecture.md)  
-[USB クライアント ドライバーを開発するためのドライバー モデルの選択](winusb-considerations.md)  
-[WinUSB 関数を使用して、USB デバイスにアクセスする方法](using-winusb-api-to-communicate-with-a-usb-device.md)  
+[USB クライアントドライバーを開発するためのドライバーモデルの選択](winusb-considerations.md)  
+[WinUSB 機能を使用して USB デバイスにアクセスする方法](using-winusb-api-to-communicate-with-a-usb-device.md)  
 [WinUSB 電源管理](winusb-power-management.md)  
-[ポリシーの変更をパイプ WinUSB 関数](winusb-functions-for-pipe-policy-modification.md)  
+[パイプポリシーを変更するための WinUSB 関数](winusb-functions-for-pipe-policy-modification.md)  
 [WinUSB 関数](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb)  
 [WinUSB](winusb.md)  
 
