@@ -64,14 +64,14 @@ ms.locfileid: "63336793"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-クラッシュ ダンプについての詳細は、[クラッシュ ダンプ ファイル](crash-dump-files.md)を参照してください。
+クラッシュ ダンプについての詳細は、[クラッシュ ダンプ ファイル](crash-dump-files.md) を参照してください。
 
 <a name="remarks"></a>備考
 -------
 
 このコマンドは、ダンプ ファイルをデバッグしている場合にのみ使用できます。
 
-ライブ環境をデバッグ中にダンプファイルを作成し cab ファイルとして保存する必要がある場合は、[ **.dump (ダンプ ファイルの作成)** ](-dump--create-dump-file-.md)コマンドを使用してください。 次に、ダンプ ファイルをターゲットとした新しいデバッグ セッションを開始し、**.dumpcab** を使用してください。
+ライブ環境をデバッグ中にダンプファイルを作成し cab ファイルとして保存する必要がある場合は、[ **.dump (ダンプ ファイルの作成)** ](-dump--create-dump-file-.md) コマンドを使用してください。 次に、ダンプ ファイルをターゲットとした新しいデバッグ セッションを開始し、**.dumpcab** を使用してください。
 
 **.dumpcab** コマンドを使用して、1 つの CAB ファイルに複数のダンプ ファイルを格納することはできません。
 
