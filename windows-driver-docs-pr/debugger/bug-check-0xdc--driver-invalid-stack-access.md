@@ -1,9 +1,9 @@
 ---
-title: バグ チェック 0xDC DRIVER_INVALID_STACK_ACCESS
-description: DRIVER_INVALID_STACK_ACCESS のバグ チェックでは、0x000000DC の値を持ちます。 これは、ドライバーが、スタックのスレッドのスタック ポインターの下にあるスタック アドレスをアクセスすることを示します。
+title: バグチェック 0xDC DRIVER_INVALID_STACK_ACCESS
+description: DRIVER_INVALID_STACK_ACCESS のバグチェックの値は、0x000000DC です。 これは、ドライバーがスタックのスレッドのスタックポインターの下にあるスタックアドレスにアクセスしたことを示します。
 ms.assetid: efc2201f-b2e5-458b-a2b0-26abaa46f1a4
 keywords:
-- バグ チェック 0xDC DRIVER_INVALID_STACK_ACCESS
+- バグチェック 0xDC DRIVER_INVALID_STACK_ACCESS
 - DRIVER_INVALID_STACK_ACCESS
 ms.date: 05/23/2017
 topic_type:
@@ -13,29 +13,30 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: a4eda0f5e5ecab02f0f120fa7b7681c3620650f1
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: d402f6c24d4374b9d6ac934e4ad7401ae7732fab
+ms.sourcegitcommit: 4bc550183bc403aee37e7aef2c38fecda1815bff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67518843"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72038003"
 ---
-# <a name="bug-check-0xdc-driverinvalidstackaccess"></a>バグ チェック 0xDC:ドライバー\_無効な\_スタック\_アクセス
+# <a name="bug-check-0xdc-driver_invalid_stack_access"></a>バグ チェック 0xDC:DRIVER @ NO__T-0INVALID @ NO__T-1STACK @ NO__T-2ACCESS
 
 
-ドライバー\_無効な\_スタック\_アクセスのバグ チェックが 0x000000DC の値を持ちます。 これは、ドライバーが、スタックのスレッドのスタック ポインターの下にあるスタック アドレスをアクセスすることを示します。
+ドライバー @ no__t-0INVALID @ no__t-1STACK @ no__t-2ACCESS のバグチェックには、値として0x000000DC が指定されています。 これは、ドライバーがスタックのスレッドのスタックポインターの下にあるスタックアドレスにアクセスしたことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
+> このトピックはプログラマーを対象としています。 コンピューターの使用中にブルースクリーンのエラーコードが表示された顧客の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://www.windows.com/stopcode)」を参照してください。
 
 
-## <a name="driverinvalidstackaccess-parameters"></a>ドライバー\_無効な\_スタック\_アクセス パラメーター
+## <a name="driver_invalid_stack_access-parameters"></a>DRIVER @ no__t-0INVALID @ no__t-1STACK @ no__t-2ACCESS Parameters
 
 
 なし
 
  
-
+## <a name="remarks"></a>コメント
+! [デバッグ拡張機能の[**分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)] には、バグチェックに関する情報が表示され、根本原因を特定するのに役立ちます。
  
 
 

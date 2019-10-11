@@ -3,34 +3,45 @@ title: ATA ミニポート ドライバー
 description: ATA ミニポート ドライバー
 ms.assetid: 4e5cf0e3-72c5-43df-b61e-0039c3666de4
 keywords:
-- ATA のミニポート ドライバー WDK
-- 記憶域 ATA ミニポート ドライバー WDK
-- ストレージ ミニポート ドライバー WDK、ATA のミニポート ドライバー
-- ミニポート ドライバー WDK ストレージ、ATA のミニポート ドライバー
-ms.date: 04/20/2017
+- ATA ミニポートドライバー WDK
+- 記憶域 ATA ミニポートドライバー WDK
+- 記憶域ミニポートドライバー WDK、ATA ミニポートドライバー
+- ミニポートドライバー WDK 記憶域、ATA ミニポートドライバー
+ms.date: 10/08/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: cb52a544a9a3b540f671acf599d44c7e69d4b6c5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 01d2d82deca974ee69985a054537414b8670589c
+ms.sourcegitcommit: 5f4252ee4d5a72fa15cf8c68a51982c2bc6c8193
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368413"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72252439"
 ---
 # <a name="ata-miniport-drivers"></a>ATA ミニポート ドライバー
 
+> [!NOTE]
+> ATA ポートドライバーと ATA ミニポートドライバーのモデルは、将来変更されるか、使用できなくなる可能性があります。 代わりに、 [storport ドライバー](https://docs.microsoft.com/windows-hardware/drivers/storage/storport-driver)および[storport ミニポート](https://docs.microsoft.com/windows-hardware/drivers/storage/storport-miniport-drivers)ドライバーモデルを使用することをお勧めします。
 
-## <span id="ddk_ata_miniport_drivers_kg"></span><span id="DDK_ATA_MINIPORT_DRIVERS_KG"></span>
+Ata ミニポートドライバーは、ATA ポートドライバーで動作します。 このページには、ata ポートドライバーが呼び出す ATA ミニポートドライバー内に実装されるルーチンが一覧表示されます。 Ata ミニポートドライバーが呼び出すことができるシステム指定の ATA ポートドライバールーチンの一覧については、「 [Ata ポートドライバーサポートルーチン](ata-port-driver-support-routines.md)」を参照してください。
 
-**注**ATA ポートはドライバーと ATA ミニポート ドライバー モデルが変更されるか利用今後します。 代わりに、使用をお勧め、 [Storport ドライバー](https://docs.microsoft.com/windows-hardware/drivers/storage/storport-driver)と[Storport ミニポート](https://docs.microsoft.com/windows-hardware/drivers/storage/storport-miniport-drivers)ドライバー モデル。
+## <a name="ata-controller-interface-routines"></a>ATA コントローラーのインターフェイスルーチン
 
-ATA のミニポート ドライバー ATA ポート ドライバーを使用します。 次のセクションでは、ATA ポート ドライバーによって呼び出される ATA ミニポート ドライバー内でのルーチンで、ATA のミニポート ドライバーが ATA ポート ドライバー内で呼び出すルーチンについて説明します。
+すべてのベンダーが提供するミニポートドライバーは、コントローラーインターフェイスを定義する一連のルーチンを実装するために必要です。 これらのルーチンを使用することによって、ミニポートドライバーは、システムによって提供されるコントローラードライバー *pciidex*と通信します。
 
-[ATA のミニポート ドライバー ルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
+ベンダーが提供するミニポートドライバーは、コントローラードライバーと通信して、ポートとミニポートドライバーの両方を初期化し、ホストバスアダプター (HBA) を構成するために必要なパラメーターを交換します。 ルーチンがこのセクションで省略可能として明示的に識別されていない場合は、必須です。 省略可能なルーチンを実装しない場合は、 [IDE_CONTROLLER_INTERFACE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/irb/ns-irb-_ide_controller_interface)構造体の対応する関数ポインターがミニポートドライバーによって NULL に設定されていることを確認する必要があります。
 
-[ATA ポート ライブラリ ルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
+- DriverEntry
+- AtaAdapterControl
+- AtaControllerChannelEnabled
+- AtaControllerTransferModeSelect
 
- 
+## <a name="ata-channel-interface-routines"></a>ATA チャネルインターフェイスルーチン
 
- 
+ベンダーが提供するミニポートドライバーでは、必要に応じて、チャネルインターフェイスを定義する一連のルーチンを実装できます。 これらのルーチンを使用すると、ミニポートドライバーは、ハードウェアに送信されるすべての要求を処理できます。 ミニポートドライバーは、チャネルインターフェイスを部分的に実装することはできません。 ミニポートドライバーが[**Atachannelinitroutine**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/irb/nf-irb-ataportinitializeex)ルーチンをサポートしている場合は、次のルーチンも実装する必要があります。
 
-
+- AtaChannelInitRoutine
+- IdeHwInitialize
+- IdeHwBuildIo
+- IdeHwStartIo
+- IdeHwInterrupt
+- IdeHwReset
+- IdeHwControl

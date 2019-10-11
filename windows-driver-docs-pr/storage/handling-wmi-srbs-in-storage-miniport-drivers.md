@@ -3,58 +3,46 @@ title: 記憶域ミニポート ドライバーでの WMI SRB の処理
 description: 記憶域ミニポート ドライバーでの WMI SRB の処理
 ms.assetid: 92b78611-7e6f-4d77-9133-635df96584f0
 keywords:
-- ストレージ ミニポート ドライバー WDK、WMI される Srb
-- WMI される Srb のミニポート ドライバー WDK ストレージ
-- WMI される Srb についての WMI される Srb WDK ストレージ
-- WMI される Srb WDK ストレージ
-- SRB の WMI のサポートを WDK ストレージ
-ms.date: 04/20/2017
+- 記憶域ミニポートドライバー WDK、WMI SRBs
+- ミニポートドライバー WDK 記憶域、WMI SRBs
+- Wmi SRBs WDK storage、WMI SRBs について
+- WMI SRBs WDK storage
+- SRB WMI での WDK ストレージのサポート
+ms.date: 10/08/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a9688bacbd63525814c0fe60a68289f45467f26
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6bf7f23c1a2c824962418eb0b28bbd74a9dbd197
+ms.sourcegitcommit: 5f4252ee4d5a72fa15cf8c68a51982c2bc6c8193
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67372336"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72252408"
 ---
 # <a name="handling-wmi-srbs-in-storage-miniport-drivers"></a>記憶域ミニポート ドライバーでの WMI SRB の処理
 
+ホストバスアダプター (HBA) に関する情報を報告したり、WMI クライアントが HBA の記憶域ミニポートドライバーと対話できるようにする WMI インターフェイスは、通常、ミニポートドライバーを WMI プロバイダーとして機能させる必要があります。 記憶域ミニポートドライバーが WMI プロバイダーとして登録された後、Windows Management Instrumentation (WMI) SCSI 要求ブロック ([SCSI_WMI_REQUEST_BLOCK](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/ns-srb-_scsi_wmi_request_block)) と呼ばれる特殊な種類の scsi 要求ブロック (SRB) を処理できるように準備する必要があります。
 
-## <span id="ddk_handling_wmi_srbs_in_storage_miniport_drivers_kg"></span><span id="DDK_HANDLING_WMI_SRBS_IN_STORAGE_MINIPORT_DRIVERS_KG"></span>
+WMI SRBs を処理するように記憶域ミニポートドライバーを準備するには、次の手順を実行します。
 
+1. システム提供の MOF ファイルで定義されていない WMI スキーマの部分を記述する管理オブジェクトフォーマット (MOF) ファイルを設計およびコンパイルします。
 
-WMI は、ホスト バス アダプター (HBA) に関する情報を報告するをインターフェイスまたは HBA の記憶域ミニポート ドライバーとの対話、通常は WMI プロバイダとして機能するミニポート ドライバーを必要とする WMI クライアントを使用できます。 ストレージ ミニポート ドライバーは、WMI プロバイダーとして登録して後の SCSI 要求ブロック (SRB) の Windows Management Instrumentation (WMI) の SCSI 要求のブロックと呼ばれる特殊なを処理する準備する必要があります ([**SCSI\_WMI\_要求\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/ns-srb-_scsi_wmi_request_block))。
+    MOF 構文の詳細については、「 [WMI データおよびイベントブロックの Mof 構文](https://docs.microsoft.com/windows-hardware/drivers/kernel/mof-syntax-for-wmi-data-and-event-blocks)」を参照してください。
 
-WMI される Srb を処理するために、記憶域ミニポート ドライバーを準備するには、次の手順を完了します。
+2. ミニポートドライバーコールバックルーチンを実装します。
 
-1.  デザインし、システム提供の MOF ファイルで定義されていない WMI スキーマの部分を説明する管理オブジェクト フォーマット (MOF) ファイルをコンパイルします。
+    SCSI ポート WMI ライブラリを使用すると、ミニポートドライバーの WMI SRBs の処理が簡単になります。 SCSI ポート WMI ライブラリを使用するには、「 [Scsi ミニポートドライバールーチン](scsi-miniport-driver-routines.md)」に記載されている*HwScsiWmiXxx*コールバックルーチンを実装します。
 
-    MOF 構文については、次を参照してください。 [WMI データとイベント ブロックの MOF 構文](https://docs.microsoft.com/windows-hardware/drivers/kernel/mof-syntax-for-wmi-data-and-event-blocks)します。
+3. [**SCSI ミニポートドライバールーチンの**](driverentry-of-scsi-miniport-driver.md)ミニポートドライバーの driverentry に必要なコードを追加します。
 
-2.  ミニポート ドライバー コールバック ルーチンを実装します。
+4. ミニポートドライバーの[*HwScsiFindAdapter*](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557300(v=vs.85))ルーチンに必要なコードを追加します。
 
-    SCSI ポート WMI ライブラリには、WMI される Srb のミニポート ドライバーの処理が簡略化します。 SCSI ポート WMI ライブラリを使用して、実装、 *HwScsiWmiXxx*で説明されているコールバック ルーチン[SCSI ミニポート ドライバー ルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)します。
+5. ミニポートドライバーの[*HwScsiStartIo*](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557323(v=vs.85))ルーチンに必要なコードを追加します。
 
-3.  ミニポート ドライバーに必要なコードを追加[ **SCSI ミニポート ドライバーの DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)ルーチン。
+前の手順の実装の詳細については、次のトピックを参照してください。
 
-4.  ミニポート ドライバーに必要なコードを追加[ *HwScsiFindAdapter* ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557300(v=vs.85))ルーチン。
+- [ポートドライバーが WMI 要求を処理する方法](how-the-port-driver-processes-wmi-requests.md)
 
-5.  ミニポート ドライバーに必要なコードを追加[ **HwScsiStartIo** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557323(v=vs.85))ルーチン。
+- [SCSI ポート WMI ライブラリの使用](using-the-scsi-port-wmi-library.md)
 
-前の手順を実装する方法の詳細については、このセクションで、次のトピックを参照してください。
+- [WMI ミニポートドライバーコールバックルーチンの設計](designing-wmi-miniport-driver-callback-routines.md)
 
-[ポートのドライバーが WMI 要求を処理する方法](how-the-port-driver-processes-wmi-requests.md)
-
-[SCSI ポート WMI ライブラリの使用](using-the-scsi-port-wmi-library.md)
-
-[設計の WMI のミニポート ドライバー コールバック ルーチン](designing-wmi-miniport-driver-callback-routines.md)
-
-[WMI される Srb をサポートする記憶域ミニポート ドライバー、ルーチンの変更](modifying-storage-miniport-driver-routines-to-support-wmi-srbs.md)
-
- 
-
- 
-
-
-
-
+- [WMI SRBs をサポートするためのストレージミニポートドライバールーチンの変更](modifying-storage-miniport-driver-routines-to-support-wmi-srbs.md)

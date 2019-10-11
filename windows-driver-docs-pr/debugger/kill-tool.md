@@ -1,81 +1,64 @@
 ---
 title: Kill ツール
-description: Kill ツール、kill.exe、1 つまたは複数のプロセスとそのすべてのスレッドを終了します。 このツールは、ローカル コンピューターで実行されているプロセスでのみ機能します。
+description: Kill tool (eseutil.exe) は、1つ以上のプロセスとそのすべてのスレッドを終了します。 このツールは、ローカルコンピューター上で実行されているプロセスでのみ機能します。
 ms.assetid: e1733a74-2a31-436f-87b8-e704b27b6f04
-keywords: ツール、Kill.exe、kill.exe を強制終了します。
+keywords: kill Tool、Kill .exe、kill
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 48c7683249757252908f23d8e58b5ca7cafad884
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cc5c790095a05b9491d863c41954aed3c3f0dd13
+ms.sourcegitcommit: 4bc550183bc403aee37e7aef2c38fecda1815bff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376785"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72038087"
 ---
 # <a name="kill-tool"></a>Kill ツール
 
+Kill tool (eseutil.exe) は、1つ以上のプロセスとそのすべてのスレッドを終了します。 このツールは、ローカルコンピューター上で実行されているプロセスでのみ機能します。
 
-Kill ツール、kill.exe、1 つまたは複数のプロセスとそのすべてのスレッドを終了します。 このツールは、ローカル コンピューターで実行されているプロセスでのみ機能します。
+## <a name="span-idwhere_to_get_kill_toolspanspan-idwhere_to_get_kill_toolspanspan-idwhere_to_get_kill_toolspanwhere-to-get-kill-tool"></a><span id="Where_to_get_Kill_Tool"></span><span id="where_to_get_kill_tool"></span><span id="WHERE_TO_GET_KILL_TOOL"></span>Kill ツールの入手場所
 
-## <a name="span-idwheretogetkilltoolspanspan-idwheretogetkilltoolspanspan-idwheretogetkilltoolspanwhere-to-get-kill-tool"></a><span id="Where_to_get_Kill_Tool"></span><span id="where_to_get_kill_tool"></span><span id="WHERE_TO_GET_KILL_TOOL"></span>強制終了のツールの入手先
+[Windows 用デバッグツール](index.md)には、Kill が含まれています。
 
-
-含まれている Kill.exe[ツールを Windows のデバッグ](index.md)します。
-
-## <a name="span-idkilltoolcommand-lineoptionsspanspan-idkilltoolcommand-lineoptionsspanspan-idkilltoolcommand-lineoptionsspankill-tool-command-line-options"></a><span id="Kill_Tool_command-line_options"></span><span id="kill_tool_command-line_options"></span><span id="KILL_TOOL_COMMAND-LINE_OPTIONS"></span>ツールのコマンド ライン オプションを強制終了します。
-
+## <a name="span-idkill_tool_command-line_optionsspanspan-idkill_tool_command-line_optionsspanspan-idkill_tool_command-line_optionsspankill-tool-command-line-options"></a><span id="Kill_Tool_command-line_options"></span><span id="kill_tool_command-line_options"></span><span id="KILL_TOOL_COMMAND-LINE_OPTIONS"></span>Kill Tool のコマンドラインオプション
 
 ```console
 kill [/f] { PID | Pattern* }
 ```
 
-### <a name="span-idddkkilltoolcommandsdtoolsspanspan-idddkkilltoolcommandsdtoolsspanparameters"></a><span id="ddk_kill_tool_commands_dtools"></span><span id="DDK_KILL_TOOL_COMMANDS_DTOOLS"></span>パラメーター
+### <a name="span-idddk_kill_tool_commands_dtoolsspanspan-idddk_kill_tool_commands_dtoolsspanparameters"></a><span id="ddk_kill_tool_commands_dtools"></span><span id="DDK_KILL_TOOL_COMMANDS_DTOOLS"></span>パラメータ
 
-<span id="________f______"></span><span id="________F______"></span> **/f**   
-確認を求めることがなく、プロセスの終了を強制します。 このオプションは、システム サービスなど、保護されたプロセスを終了する必要があります。
+<span id="________f______"></span><span id="________F______"></span> **/f**ユーザーに確認のメッセージを表示せずに、プロセスを強制的に終了します。 このオプションは、システムサービスなどの保護されたプロセスを終了するために必要です。
 
-<span id="_______PID______"></span><span id="_______pid______"></span> *PID*   
-終了するタスクのプロセス id (PID) を指定します。
+<span id="_______PID______"></span><span id="_______pid______"></span>*PID*終了するタスクのプロセス識別子 (PID) を指定します。
 
-タスクの PID を検索するには、TaskList Microsoft Windows XP 以降を使用または[TList](tlist.md) Windows 2000 でします。
+タスクの PID を検索するには、Microsoft Windows XP 以降または Windows 2000 の[tlist.exe](tlist.md)で TaskList を使用します。
 
-<span id="_______Pattern_"></span><span id="_______pattern_"></span><span id="_______PATTERN_"></span> <em>パターン</em>**\\***  
-タスクまたはウィンドウの名前の全部または一部を指定します。 Kill ツールには、プロセス名またはウィンドウ名を持つパターンに一致するすべてのプロセスが終了します。 アスタリスクが必要です。
+<span id="_______Pattern_"></span><span id="_______pattern_"></span><span id="_______PATTERN_"></span><em>パターン</em> **\***  
+タスクまたはウィンドウの名前のすべてまたは一部を指定します。 Kill tool は、プロセス名またはウィンドウ名がパターンに一致するすべてのプロセスを終了します。 アスタリスクは必須です。
 
-意図せず多数のプロセスまたはウィンドウの名前に一致パターンを使用する前に、 **tlist** *パターン*パターンをテストするコマンド。 参照してください[TList](tlist.md)詳細についてはします。
+多くのプロセス名またはウィンドウ名が誤って一致する可能性があるパターンを使用する前に、 **tlist.exe** *pattern*コマンドを使用してパターンをテストします。 詳細については、 [tlist.exe](tlist.md)を参照してください。
 
 ## <a name="span-idexamplesspanspan-idexamplesspanspan-idexamplesspanexamples"></a><span id="Examples"></span><span id="examples"></span><span id="EXAMPLES"></span>例
 
-
-次のコマンドは、名前が"myapp。"で始まるプロセスを終了します。
+名前が "myapp" で始まるプロセスを終了するコマンドを次に示します。
 
 ```console
 kill myapp*
 ```
 
-次のコマンドでは、プロセス ID (PID) が 2520 プロセスは終了します。
+プロセス ID (PID) が2520であるプロセスを終了するコマンドを次に示します。
 
 ```console
 kill 2520
 ```
 
-次のコマンドで名前が始まるプロセスを終了します"マイ\*"。 確認のプロンプトは表示されません。 このコマンドは、このプロセスがシステム サービスの場合でも成功します。
+次のコマンドは、名前が "my @ no__t-0" で始まるプロセスを終了します。 確認のプロンプトは表示されません。 このプロセスがシステムサービスの場合でも、このコマンドは成功します。
 
 ```console
 kill /f my*
 ```
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
-
-[Windows 用デバッグ ツールに含まれるツール](extra-tools.md)
-
- 
-
- 
-
-
-
-
-
-
+[Windows 用デバッグツールに含まれるツール](extra-tools.md)

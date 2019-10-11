@@ -3,26 +3,26 @@ title: デバイス データへのアクセスの同期
 description: デバイス データへのアクセスの同期
 ms.assetid: aaed8006-6773-4d20-b3a0-b48131f728c6
 keywords:
-- 割り込みサービス ルーチン WDK カーネルの同期
-- Isr WDK カーネルでは、同期
-- オブジェクトの WDK カーネル、同期を中断します。
-- 同期の WDK カーネル、割り込み
-- 1 つの割り込みのベクトルの WDK カーネル
-- クリティカル セクション ルーチン WDK カーネル
-- 割り込みスピン ロック WDK カーネル
-- スピン ロック WDK カーネル
-- 同期の WDK カーネル、デバイスのデータへのアクセスします。
+- 割り込みサービスルーチン WDK カーネル、同期
+- Isr WDK カーネル、同期
+- 割り込みオブジェクト WDK カーネル、同期
+- 同期 WDK カーネル、割り込み
+- シングル割り込みベクター WDK カーネル
+- クリティカルセクションルーチン WDK カーネル
+- 割り込みスピンロックの WDK カーネル
+- スピンロック WDK カーネル
+- 同期 WDK カーネル、デバイスデータアクセス
 - SynchCritSection
 - SynchronizeIrql
-- SpinLock パラメーター
+- スピンロックパラメーター
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 50bc4866e79f5b08720ceb7d664cd51580b0fd91
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 500a77927113793733bdef46f947ffb5bb3f1d6a
+ms.sourcegitcommit: 8fdbd7d16dd2393e5df0a87388aed91d2898cd71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355491"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72165027"
 ---
 # <a name="synchronizing-access-to-device-data"></a>デバイス データへのアクセスの同期
 
@@ -30,23 +30,24 @@ ms.locfileid: "67355491"
 
 
 
-通常、ドライバーの[ *InterruptService* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kservice_routine)または[ *InterruptMessageService* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kmessage_service_routine)ルーチン (Isr) は、ドライバーのデータへのアクセスを共有する必要があり、その他のドライバーのルーチンのハードウェア リソース。 各ルーチンは、これへの排他アクセスで一時的に保証されるので、共有データとリソースにアクセスを同期する重要なは Isr は、管理者特権での IRQL で割り込みコンテキストで実行されるため、システムは、複数のプロセッサを必要がありますので、中断することがなく共有情報。
+通常、ドライバーの[*InterruptService*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kservice_routine)ルーチンまたは[*InterruptMessageService*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kmessage_service_routine)ルーチン (isr) は、ドライバーデータとハードウェアリソースへのアクセスを他のドライバールーチンと共有する必要があります。 Isr は、昇格された IRQL で割り込みコンテキストで実行されるため、システムには複数のプロセッサが存在する可能性があるため、共有データとリソースへのアクセスを同期することが重要です。これにより、各ルーチンが一時的にこの共有情報 (中断なし)。
 
-システム内で ISR を実行することによってこの同期をサポートする、*クリティカル セクションの割り込み*します。 割り込みが割り当てられたスピンロック、*スピン ロックを中断*、IRQL、および、 *IRQL の同期を中断*します。 システムでは、IRQL の割り込みの同期に、プロセッサの IRQL を発生させるコードを実行する前に、割り込みスピン ロックを取得して共有の情報へのクリティカル セクションの排他アクセスで実行されるこのコードを保証します。 システムは常にその ISR. を実行する前に、割り込みのクリティカル セクションに移行します。 異なる割り込みは、割り込みスピン ロックおよび同期 IRQL を共有して、同じクリティカル セクションを共有できます。
+システムは、*割り込みクリティカルセクション*内で ISR を実行することで、この同期をサポートします。 割り込みには、スピンロック、*割り込みスピンロック*、および irql (*割り込み同期 irql*) が割り当てられています。 システムは、プロセッサの IRQL を割り込み同期 IRQL にし、コードを実行する前に割り込みスピンロックを取得することで、クリティカルセクション内でこのコードが実行されることを保証します。 システムは、ISR を実行する前に、常に割り込みのクリティカルセクションを入力します。 割り込みスピンロックと同期 IRQL を共有することで、異なる割り込みで同じクリティカルセクションを共有できます。
 
-ドライバーが指定することによって、割り込みのクリティカル セクションで実行されるコードを実装する[ *SynchCritSection* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-ksynchronize_routine)ルーチン。 ドライバーを使用する場合[ **KeSynchronizeExecution** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesynchronizeexecution)を呼び出す、 *SynchCritSection* 、日常的なシステムが自動的に入力、クリティカル セクションの割り込み指定された、 *Interrupt*パラメーター。
+ドライバーは、 [*SynchCritSection*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-ksynchronize_routine)ルーチンを指定することによって、割り込みの重要なセクションで実行されるコードを実装できます。 ドライバーが[**KeSynchronizeExecution**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesynchronizeexecution)を使用して*SynchCritSection*ルーチンを呼び出すと、*割り込み*パラメーターによって指定された割り込みのクリティカルセクションが自動的に入力されます。
 
-割り込みの同期の IRQL が中断されてから、現在のプロセッサを防止するプロセッサの IRQL を発生させるより高い同期 IRQL で割り込みによってを除きます。 スピン ロックを取得すると、他のプロセッサはそのスピン ロックに関連付けられている、クリティカル セクションのコードを実行できなくなります。
+プロセッサの IRQL を割り込みの同期 IRQL に上げると、現在のプロセッサが中断されるのを防ぐことができます。ただし、同期 IRQL が高い割り込みは除きます。 スピンロックを取得すると、そのスピンロックに関連付けられた重要なセクションコードが他のプロセッサによって実行されるのを防ぐことができます。
 
-ドライバーを呼び出すと、システム割り当てます割り込みスピン ロックおよび同期 IRQL 割り込みの[ **IoConnectInterruptEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioconnectinterruptex)します。 ほとんどの場合、ドライバーが両方の値を決定するシステムを許可することができます。
+ドライバーが[**IoConnectInterruptEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioconnectinterruptex)を呼び出すと、割り込みに対する割り込みスピンロックと同期 IRQL が割り当てられます。 ほとんどの場合、ドライバーは、システムが両方の値を決定できるようにします。
 
--   ドライバーの接続を使用している場合\_行\_ベースまたは CONNECT\_メッセージ\_ベースのバージョンの**IoConnectInterruptEx**を指定し、 **NULL**スピン ロックでは、すべてのデバイスの割り込みの間で共有する、スピン ロックに割り当てられます。 システムでは、同期 IRQL の値も決定します (ドライバーは高い値を指定必要に応じて)。 すべてのドライバーの割り込みにより、同じクリティカル セクションが共有されます。
+-   ドライバーが CONNECT @ no__t-0LINE @ no__t-1BASED バージョンの**IoConnectInterruptEx**を使用し、 **NULL**のスピンロックを指定している場合は、割り込み線にスピンロックが割り当てられます。 また、同期 IRQL の値も決定されます (ドライバーでは、必要に応じてより高い値を指定できます)。
 
--   ドライバーの接続を使用している場合\_完全\_の指定されたバージョン**IoConnectInterruptEx**であり、1 つの割り込みベクトルのみ、ドライバーを指定できます、 **NULL**スピン ロックします。 のみその特定の割り込み、独自の重要なセクションが表示されます、スピン ロックに割り当てられます。
+-   ドライバーで CONNECT @ no__t-0MESSAGE @ no__t-1BASED バージョンの**IoConnectInterruptEx**を使用し、 **NULL**のスピンロックを指定すると、割り込みメッセージごとにスピンロックが割り当てられます。 また、各メッセージの同期 IRQL の値も決定されます (ドライバーでは、すべてのメッセージに共通する、より高い値を指定できます)。
 
-接続を使用する場合にのみ、ドライバーはスピン ロックを割り当てる必要があります\_完全\_の指定されたバージョン**IoConnectInterruptEx**と同じ重大を共有する複数の割り込みベクターがある場合セクション。 ドライバーを使用して、独自のスピン ロックおよび同期 IRQL を指定できます、**スピンロック**と**SynchronizeIrql**のメンバー **IO\_CONNECT\_割り込み\_パラメーター**します。 詳細については、次を参照してください。 [ **IO\_CONNECT\_INTERRUPT\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_connect_interrupt_parameters)します。
 
-書き込みとクリティカル セクションの入力については、次を参照してください。[クリティカル セクションを使用して](using-critical-sections.md)します。
+ドライバーが独自のスピンロックを割り当てる必要があるのは、CONNECT @ no__t-0FULLY @ no__t-1SPECIFIED バージョンの**IoConnectInterruptEx**を使用している場合と、同じクリティカルセクションを共有する必要がある複数の割り込みベクターがある場合のみです。 ドライバーは、 **i/o @ no__t-3CONNECT @ no__t-4INTERRUPT @ NO__T パラメーター**の**スピン**ロックおよび**SynchronizeIrql**メンバーを使用して、独自のスピンロックおよび同期 IRQL を指定できます。 詳細については、「 [**IO @ no__t-2CONNECT @ no__t-3INTERRUPT @ no__t-4PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_connect_interrupt_parameters)」を参照してください。
+
+クリティカルセクションの記述と入力の詳細については、「[クリティカルセクションの使用](using-critical-sections.md)」を参照してください。
 
  
 

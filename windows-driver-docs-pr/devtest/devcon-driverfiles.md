@@ -1,9 +1,9 @@
 ---
 title: DevCon DriverFiles
-description: INF ファイルがインストールされていると、指定したデバイスのデバイス ドライバーのファイルの完全なパスとファイル名が表示されます。 ローカル コンピューターでのみ有効です。
+description: インストールされている INF ファイルの完全なパスとファイル名と、指定したデバイスのデバイスドライバーファイルが表示されます。 ローカルコンピューター上でのみ有効です。
 ms.assetid: 8f8394e4-1ee4-4356-9f4d-ecc70deeaab1
 keywords:
-- DevCon DriverFiles ドライバーの開発ツール
+- DevCon DriverFiles ドライバー開発ツール
 topic_type:
 - apiref
 api_name:
@@ -12,30 +12,26 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c76cac853ab620a9dfc10db8e3235c3ef79ca667
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 97f5e23f828e1e0b38dc37b4bc6b4a26ffa2c79f
+ms.sourcegitcommit: 4bc550183bc403aee37e7aef2c38fecda1815bff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347742"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72038092"
 ---
 # <a name="devcon-driverfiles"></a>DevCon DriverFiles
 
-
-INF ファイルがインストールされていると、指定したデバイスのデバイス ドライバーのファイルの完全なパスとファイル名が表示されます。 ローカル コンピューターでのみ有効です。
+インストールされている INF ファイルの完全なパスとファイル名と、指定したデバイスのデバイスドライバーファイルが表示されます。 ローカルコンピューター上でのみ有効です。
 
 ```
-    devcon driverfiles {* | ID [ID ...] | =class [ID [ID ...]]} 
+    devcon driverfiles {* | ID [ID ...] | =class [ID [ID ...]]}
 ```
 
-## <a name="span-idddkdevcondriverfilestoolsspanspan-idddkdevcondriverfilestoolsspanparameters"></a><span id="ddk_devcon_driverfiles_tools"></span><span id="DDK_DEVCON_DRIVERFILES_TOOLS"></span>パラメーター
+## <a name="span-idddk_devcon_driverfiles_toolsspanspan-idddk_devcon_driverfiles_toolsspanparameters"></a><span id="ddk_devcon_driverfiles_tools"></span><span id="DDK_DEVCON_DRIVERFILES_TOOLS"></span>パラメータ
 
+<span id="______________"></span> **\*** コンピューター上のすべてのデバイスを表します。
 
-<span id="______________"></span> **\\***   
-コンピューター上のすべてのデバイスを表します。
-
-<span id="_______ID______"></span><span id="_______id______"></span> *ID*   
-ハードウェア ID、互換性 ID、またはデバイスのデバイス インスタンス ID のすべてまたは一部を指定します。 複数の Id を指定する場合は、各 ID の間にスペースを入力します。 アンパサンド文字を含む Id (**&**) 引用符で囲む必要があります。
+<span id="_______ID______"></span><span id="_______id______"></span>*Id*は、デバイスのハードウェア id、互換性 ID、またはデバイスインスタンス ID のすべてまたは一部を指定します。 複数の Id を指定する場合は、各 ID の間にスペースを入力します。 アンパサンド文字 ( **&** ) を含む id は引用符で囲む必要があります。
 
 次の特殊文字は、ID パラメーターを変更します。
 
@@ -53,31 +49,29 @@ INF ファイルがインストールされていると、指定したデバイ�
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong><em></strong></p></td>
-<td align="left"><p>任意の文字または文字と一致します。 ワイルドカード文字を使用して (<strong></em></strong>) パターンを作成する、ID、たとえば、 <strong><em>ディスク</em></strong>します。</p></td>
+<td align="left"><p>任意の文字または文字を検索しません。 ワイルドカード文字 (<strong> @ no__t) を使用して、<strong><em>ディスク</em></strong>などの ID パターンを作成します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>@</strong></p></td>
-<td align="left"><p>たとえば、デバイス インスタンス ID を示します <strong><xref href="ROOT\FTDISK\0000" data-throw-if-not-resolved="False" data-raw-source="@ROOT\FTDISK\0000"></xref></strong>します。</p></td>
+<td align="left"><p>デバイスインスタンス ID ( <strong><xref href="ROOT\FTDISK\0000" data-throw-if-not-resolved="False" data-raw-source="@ROOT\FTDISK\0000"></xref></strong>など) を示します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>'</strong></p>
-<p>(一重引用符)</p></td>
-<td align="left"><p>リテラル文字列と一致する (正確に表示される)。 示すアスタリスクは、ID 名の一部であるし、たとえば、ワイルドカード文字ではないは、単一引用符を含む文字列の前に<strong>' * PNP0600</strong>ここで、* PNP0600 ハードウェア ID (アスタリスクを含む) です。</p></td>
+<p>(単一引用符)</p></td>
+<td align="left"><p>文字列を文字どおり (表示されているとおりに) 照合します。 アスタリスクが ID 名の一部で、ワイルドカード文字ではないことを示すには、文字列の前に単一引用符を付けます。たとえば、 <strong>' * PNP0600</strong>,、* PNP0600 (アスタリスクを含む) はハードウェア ID です。</p></td>
 </tr>
 </tbody>
 </table>
 
+<span id="________class______"> @ no__t-1<span id="________CLASS______"> </span> **=** <em>クラス</em>は、デバイスのセットアップクラスを指定します。 等号 ( **=** ) は、文字列をクラス名として識別します。
 
+また、クラス名の後に、ハードウェア Id、互換性のある Id、デバイスインスタンス Id、または ID パターンを指定することもできます。 各 ID またはパターンの間にスペースを入力します。 DevCon は、指定された Id に一致するデバイスをクラスで検索します。
 
-<span id="________class______"></span><span id="________CLASS______"></span> **=**<em>クラス</em>デバイスのデバイス セットアップ クラスを指定します。 等号 (=) (**=**) クラスの名前として文字列を識別します。
+### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>Comments
 
-ハードウェア Id、互換性 Id、デバイス インスタンス Id、または ID パターンを次のクラス名を指定することもできます。 各 ID またはパターンの間にスペースを入力します。 DevCon は、指定した Id に一致するクラス内のデバイスを検索します。
+**DevCon DriverFiles**操作は、ローカルコンピューター上でのみ実行されます。
 
-### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>コメント
-
-**DevCon DriverFiles**操作はローカル コンピューター上でのみ実行されます。
-
-### <a name="span-idsampleusagespanspan-idsampleusagespansample-usage"></a><span id="sample_usage"></span><span id="SAMPLE_USAGE"></span>サンプルの使用法
+### <a name="span-idsample_usagespanspan-idsample_usagespansample-usage"></a><span id="sample_usage"></span><span id="SAMPLE_USAGE"></span>使用例
 
 ```
 devcon driverfiles *
@@ -88,15 +82,6 @@ devcon driverfiles =media isapnp*
 
 ### <a name="span-idexamplesspanspan-idexamplesspanexamples"></a><span id="examples"></span><span id="EXAMPLES"></span>例
 
-[例 8:すべてのドライバー ファイルを一覧表示します。](devcon-examples.md#ddk_example_8_list_all_driver_files_tools)
+[Example 8:すべてのドライバーファイルを一覧表示する @ no__t-0
 
-[例 9:特定のデバイスのドライバー ファイルを一覧表示します。](devcon-examples.md#ddk_example_9_list_the_driver_files_of_a_particular_device_tools)
-
-
-
-
-
-
-
-
-
+[Example 9:特定のデバイスのドライバーファイルを一覧表示する @ no__t-0

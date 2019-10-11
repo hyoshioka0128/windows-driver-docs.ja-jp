@@ -1,59 +1,55 @@
 ---
 title: ドライバーまたはライブラリが静的ドライバー検証ツールでサポートされているかどうかの判定
-description: Static Driver Verifier (SDV) は、WDM、KMDF、NDIS、および Storport のドライバーとライブラリをサポートできます。 調べるには、ドライバーまたはライブラリがサポートされていて正しく構成されているかどうか、このセクションで説明されている要件を参照してください。
+description: 静的ドライバー検証ツール (SDV) は、WDM、KMDF、NDIS、および Storport のドライバーとライブラリをサポートできます。 ドライバーまたはライブラリがサポートされ、正しく構成されているかどうかを判断するには、このセクションで説明する要件を参照してください。
 ms.assetid: 29E93E9E-7F87-4706-97AD-DB9A32EDD388
-ms.date: 04/20/2017
+ms.date: 10/08/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 4fe67c93afa12172b53cca50763f77eb2f3d6f87
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f57ab972746eff63b2fa4cf04425696855960c25
+ms.sourcegitcommit: 8fdbd7d16dd2393e5df0a87388aed91d2898cd71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382980"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72165028"
 ---
 # <a name="determining-if-static-driver-verifier-supports-your-driver-or-library"></a>ドライバーまたはライブラリが静的ドライバー検証ツールでサポートされているかどうかの判定
 
-
-Static Driver Verifier (SDV) は完全に WDM、KMDF、NDIS、および Storport のドライバーとライブラリをサポートし、その他のドライバーのサポートが限られています。 調べるには、ドライバーまたはライブラリがサポートされていて正しく構成されているかどうか、このセクションで説明されている要件を参照してください。
+静的ドライバー検証ツール (SDV) は、WDM、KMDF、NDIS、および Storport のドライバーとライブラリを完全にサポートしており、他のドライバーは制限付きでサポートされています。 ドライバーまたはライブラリがサポートされ、正しく構成されているかどうかを判断するには、このセクションで説明する要件を参照してください。
 
 ## <a name="driver-or-library-requirements"></a>ドライバーまたはライブラリの要件
 
+ドライバーまたはライブラリが次のいずれかの条件を満たしている場合は、SDV 分析ツールですべてのルールセットを実行できます。
 
-ドライバーまたはライブラリは次の条件のいずれかを満たす場合は、SDV の分析ツールでルールの完全なセットを実行できます。
+- WDM ドライバーまたはライブラリがあり、ドライバーまたはライブラリがクラスフレームワーク (つまり、Microsoft が提供するライブラリ) にリンクしていない。 詳細については、「[クラスフレームワークライブラリ](#class-framework-libraries)」を参照してください。
+- WdfLdr または WdfDriverEntry にリンクするドライバーまたはライブラリがあります。
+- このドライバーまたはライブラリを使用して、NDIS .lib にリンクしています。
+- Storport にリンクするドライバーまたはライブラリがある。
 
--   WDM ドライバーやライブラリがあるし、ドライバーまたはライブラリがクラスのフレームワーク (Microsoft 提供のライブラリ) にリンクされません。 詳細については、次を参照してください。[クラス フレームワーク ライブラリ](#class-framework-libraries)します。
--   ある、ドライバーやライブラリ WdfLdr.lib または WdfDriverEntry.lib にリンクします。
--   ある、ドライバーやライブラリ NDIS.lib にリンクします。
--   ある、ドライバーやライブラリ Storport.lib にリンクします。
+静的ドライバーの検証ツールは、ドライバーまたはライブラリが複数の[ユーティリティライブラリ](#utility-libraries)にリンクされている場合でも、これらの条件を渡すドライバーまたはライブラリをサポートします。
 
-Static Driver Verifier は、ドライバーまたはドライバーまたはライブラリが複数にリンクする場合でも、これらの条件を通過するライブラリをサポートしています。[ユーティリティ ライブラリ](#utility-libraries)します。
+さらに、この分析を実行するには、SDV に次のものが必要です。
 
-さらに、分析を実行するには、SDV いる必要があります。
+- ドライバーは、[関数ロールの種類の宣言を使用して](using-function-role-type-declarations.md)、少なくとも1つのエントリポイントを宣言しました。
+- ドライバーは、(MSBuild を使用した Visual Studio で) 正しくビルドおよびリンクされます。
+- ドライバーまたはライブラリで KMDF が使用されている場合、ドライバーまたはライブラリは KMDF バージョン1.7 以降を使用します。
+- ドライバーまたはライブラリが NDIS を使用する場合は、NDIS バージョン6.0、6.1、6.20、6.30、または6.40 が使用されます。 この一覧は変更される可能性があることに注意してください。
+- ドライバーモデル (KMDF と WDM、KMDF、NDIS など) は組み合わせられません。
 
--   ドライバーには、少なくとも 1 つのエントリ ポイントが宣言されている[を使用して関数の役割の型の宣言](using-function-role-type-declarations.md)します。
--   ドライバーは、ビルドし、正しく (Visual Studio は MSBuild を使用して) にリンクします。
--   ドライバーまたはライブラリは、KMDF を使用している場合、ドライバーまたはライブラリ KDMF バージョン 1.7 以降を使用します。
--   ドライバーまたはライブラリは、NDIS を使用している場合は、NDIS version 6.0、6.1、6.20、6.30、または 6.40 が使用されます。 この一覧は変更されることに注意してください。
--   ドライバーはドライバー モデル (と WDM、KMDF または KMDF、NDIS) を結合していません。
+静的な分析結果の品質と精度に影響を与える要因が他にもあります。 次のような要因があります。
 
-品質と静的分析結果の精度に影響するその他の要素があります。 これらの要因は次のとおりです。
-
--   SDV で処理されていないユーティリティ ライブラリを使用します。
--   100 を超える K 行のコードがある場合は特に、ドライバーのサイズ。
--   仮想関数ポインターの算術演算などの言語固有の機能を使用します。
+- SDV によって処理されていないユーティリティライブラリの使用。
+- ドライバーのサイズ (特に10万行を超えるコードがある場合)。
+- 仮想関数やポインター演算など、言語固有の機能を使用します。
 
 ## <a name="visual-studio-project-requirements"></a>Visual Studio プロジェクトの要件
 
+静的ドライバーの検証ツールを使用するには、Visual Studio プロジェクトに次の設定が必要です。
 
-Static Driver Verifier を使用するには、Visual Studio プロジェクトは、次の設定が必要です。
+- UseDebugLibraries = false
+- Platform = Win32 (x86) または x64
 
--   UseDebugLibraries = false
--   プラットフォーム (x86) Win32 または x64 を =
+## <a name="class-framework-libraries"></a>クラスフレームワークライブラリ
 
-## <a name="class-framework-libraries"></a>Framework のクラス ライブラリ
-
-
-WDM ドライバーまたはライブラリがある、SDV を実行する場合は、ドライバーまたはライブラリする必要があります、次のクラスのフレームワーク ライブラリのいずれかにリンクしません。
+WDM ドライバーまたはライブラリがあり、SDV を実行する場合は、ドライバーまたはライブラリが、次のいずれかのクラスフレームワークライブラリにリンクしていない必要があります。
 
 <table>
 <colgroup>
@@ -64,184 +60,174 @@ WDM ドライバーまたはライブラリがある、SDV を実行する場合
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left">1394bus.lib</td>
-<td align="left">FltMgr.lib</td>
-<td align="left">rdbss.lib</td>
-<td align="left">usbrpm.lib</td>
+<td align="left">1394</td>
+<td align="left">fltMgr .lib</td>
+<td align="left">rdbss</td>
+<td align="left">usbrpm .lib</td>
 </tr>
 <tr class="even">
-<td align="left">acpi.lib</td>
-<td align="left">FsDepends.lib</td>
-<td align="left">RNDISMP.lib</td>
-<td align="left">videoprt.lib</td>
+<td align="left">acpi .lib</td>
+<td align="left">FsDepends .lib に依存します。</td>
+<td align="left">RNDISMP</td>
+<td align="left">videoprt</td>
 </tr>
 <tr class="odd">
-<td align="left">armppm.lib</td>
-<td align="left">fwpkclnt.lib</td>
-<td align="left">RNDISMP6.lib</td>
-<td align="left">vwififlt.lib</td>
+<td align="left">armppm .lib</td>
+<td align="left">fwpkclnt</td>
+<td align="left">RNDISMP6</td>
+<td align="left">vwififlt</td>
 </tr>
 <tr class="even">
-<td align="left">ataport.lib</td>
-<td align="left">hidclass.lib</td>
-<td align="left">RNDISMPX.lib</td>
-<td align="left">watchdog.lib</td>
+<td align="left">ataport</td>
+<td align="left">hidclass</td>
+<td align="left">RNDISMPX</td>
+<td align="left">ウォッチドッグ</td>
 </tr>
 <tr class="odd">
-<td align="left">ath_hwpci.lib</td>
-<td align="left">hidparse.lib</td>
-<td align="left">rpcxdr.lib</td>
-<td align="left">win32k.lib</td>
+<td align="left">ath_hwpci</td>
+<td align="left">hidparse .lib</td>
+<td align="left">rpcxdr .lib</td>
+<td align="left">win32k. .lib</td>
 </tr>
 <tr class="even">
-<td align="left">athhal.lib</td>
-<td align="left">hwpolicy.lib</td>
-<td align="left">Saha.lib</td>
-<td align="left">winhv.lib</td>
+<td align="left">この .lib</td>
+<td align="left">hwpolicy</td>
+<td align="left">Saha .lib</td>
+<td align="left">winhv</td>
 </tr>
 <tr class="odd">
-<td align="left">battc.lib</td>
-<td align="left">ipmidrv_hrmcust.lib</td>
-<td align="left">scsiport.lib</td>
-<td align="left">WMBBCLASS.lib</td>
+<td align="left">battc</td>
+<td align="left">ipmidrv_hrmcust</td>
+<td align="left">scsiport</td>
+<td align="left">WMBBCLASS .lib</td>
 </tr>
 <tr class="even">
-<td align="left">BdaSup.lib</td>
-<td align="left">irt30.lib</td>
-<td align="left">smclib.lib</td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">bdl.lib</td>
-<td align="left">irt30.lib</td>
-<td align="left">Soft1667FaultInjectionLimpetPool.lib</td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">btampm.lib</td>
-<td align="left">ks.lib</td>
-<td align="left">SoftFCKernel.lib</td>
+<td align="left">BdaSup</td>
+<td align="left">irt30.sys 開け</td>
+<td align="left">smclib</td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left">bthport.lib</td>
-<td align="left">ksecdd.lib</td>
-<td align="left">SoftFCLimpetPool.lib</td>
+<td align="left">bdl .lib</td>
+<td align="left">irt30.sys 開け</td>
+<td align="left">Soft1667FaultInjectionLimpetPool</td>
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left">BTHPRINT.lib</td>
-<td align="left">ksmartcpu.lib</td>
-<td align="left">SoftSATAKernel.lib</td>
+<td align="left">btampm</td>
+<td align="left">ks .lib</td>
+<td align="left">ソフト Fckernel .lib</td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left">classpnp.lib</td>
-<td align="left">mcd.lib</td>
-<td align="left">SoftStorageLimpetPool.lib</td>
+<td align="left">bthport .lib</td>
+<td align="left">ksecdd .lib</td>
+<td align="left">SoftFCLimpetPool</td>
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left">clfs.lib</td>
-<td align="left">mpio.lib</td>
-<td align="left">srvnet.lib</td>
+<td align="left">BTHPRINT .lib</td>
+<td align="left">ksmartcpu .lib</td>
+<td align="left">SoftSATAKernel .lib</td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left">cng.lib</td>
-<td align="left">mrxsmb.lib</td>
-<td align="left">storvsp.lib</td>
+<td align="left">classpnp</td>
+<td align="left">mcd</td>
+<td align="left">SoftStorageLimpetPool</td>
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left">crashdmp.lib</td>
-<td align="left">msnfsflt.lib</td>
-<td align="left">stream.lib</td>
+<td align="left">clfs</td>
+<td align="left">mpio .lib</td>
+<td align="left">srvnet</td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left">csr_vfp_avdtp.lib</td>
-<td align="left">msrpc.lib</td>
-<td align="left">tape.lib</td>
+<td align="left">cng</td>
+<td align="left">mrxsmb</td>
+<td align="left">storvsp .lib</td>
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left">diskdump.lib</td>
-<td align="left">mup.lib</td>
-<td align="left">tbs.lib</td>
+<td align="left">crashdmp</td>
+<td align="left">msnfsflt</td>
+<td align="left">stream .lib</td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left">drmk.lib</td>
-<td align="left">ndistapi.lib</td>
-<td align="left">tcpip.lib</td>
+<td align="left">csr_vfp_avdtp</td>
+<td align="left">msrpc .lib</td>
+<td align="left">tape .lib</td>
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left">dumpata.lib</td>
-<td align="left">netio.lib</td>
-<td align="left">tdi.lib</td>
+<td align="left">diskdump .lib</td>
+<td align="left">mup.sys</td>
+<td align="left">tb .lib</td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left">dumpfve.lib</td>
-<td align="left">ntasn1k.lib</td>
-<td align="left">termdd.lib</td>
+<td align="left">drmk .lib</td>
+<td align="left">ndistapi .lib</td>
+<td align="left">tcpip.sys</td>
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left">dxapi.lib</td>
-<td align="left">parallel.lib</td>
-<td align="left">USBCAMD.lib</td>
+<td align="left">dumpata</td>
+<td align="left">netio</td>
+<td align="left">tdi. .lib</td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left">dxg.lib</td>
-<td align="left">pciidex.lib</td>
-<td align="left">USBCAMD2.lib</td>
+<td align="left">dumpfve</td>
+<td align="left">ntasn1k</td>
+<td align="left">termdd.sys</td>
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left">dxgkrnl.lib</td>
-<td align="left">portcls.lib</td>
-<td align="left">usbd.lib</td>
+<td align="left">dxapi .lib</td>
+<td align="left">parallel .lib</td>
+<td align="left">USBCAMD</td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left">dxgmms1.lib</td>
-<td align="left">protogon.lib</td>
-<td align="left">usbport.lib</td>
+<td align="left">dxg .lib</td>
+<td align="left">pciidex</td>
+<td align="left">USBCAMD2</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">dxgkrnl</td>
+<td align="left">portcls</td>
+<td align="left">usbd</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">dxgmms1</td>
+<td align="left">protogon</td>
+<td align="left">usbport</td>
 <td align="left"></td>
 </tr>
 </tbody>
 </table>
 
- 
+## <a name="utility-libraries"></a>ユーティリティライブラリ
 
-## <a name="utility-libraries"></a>ユーティリティ ライブラリ
-
-
-Static Driver Verifier は、ドライバーまたはドライバーまたはライブラリに準拠している場合は、複数のユーティリティ ライブラリにリンクをされているライブラリをサポートしています、[ドライバーまたはライブラリの要件](#driver-or-library-requirements)します。
+静的ドライバーの検証ツールは、ドライバーまたはライブラリがドライバーまたはライブラリの[要件](#driver-or-library-requirements)に準拠している場合に、複数のユーティリティライブラリへのリンクを持つドライバーまたはライブラリをサポートします。
 
 |                     |
 |---------------------|
-| BufferOverflowK.lib |
-| hal.lib             |
-| ntoskrnl.lib        |
-| ntstrsafe.lib       |
-| rtlver.lib          |
-| sehupd.lib          |
-| wdm.lib             |
-| wmilib.lib          |
-| wdmsec.lib          |
+| BufferOverflowK |
+| hal.dll             |
+| ntoskrnl.exe        |
+| 、ntstrsafe.h       |
+| rtlver .lib          |
+| sehupd          |
+| wdm. .lib             |
+| wmb .lib          |
+| wdmsec .lib          |
 
- 
+## <a name="static-driver-verifier-and-microsoft-class-framework-libraries"></a>静的ドライバー検証ツールと Microsoft クラスフレームワークライブラリ
 
- 
-
- 
-
-
-
-
-
+[クラスフレームワークライブラリ](#class-framework-libraries)の一覧でクラスフレームワークライブラリにリンクする必要がある WDM ドライバーを使用している場合は、ドライバーが静的ドライバーの検証ツールの状態に失敗します。 ただし、ある程度の静的検証を実行する[Nullcheck 規則](https://docs.microsoft.com/windows-hardware/drivers/devtest/nullcheck)など、いくつかの汎用的な規則があります。

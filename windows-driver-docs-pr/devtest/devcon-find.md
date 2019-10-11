@@ -1,9 +1,9 @@
 ---
 title: DevCon Find
-description: 現在のコンピューターに接続されているすべてのデバイスを検索します。 デバイス インスタンス ID とデバイスの説明が表示されます。 ローカルおよびリモート コンピューターで有効です。
+description: コンピューターに現在接続されているすべてのデバイスを検索します。 デバイスインスタンス ID とデバイスの説明が表示されます。 ローカルコンピューターとリモートコンピューターで有効です。
 ms.assetid: ecd72b34-4117-4360-95d2-e87702f025a1
 keywords:
-- DevCon 検索ドライバーの開発ツール
+- DevCon Find ドライバー開発ツール
 topic_type:
 - apiref
 api_name:
@@ -12,37 +12,30 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 57439bce9647b5d4a26f256c80e2ab994f7ee54e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 09e57ccfd171567ba78e37baa69225c97fbb3e65
+ms.sourcegitcommit: 4bc550183bc403aee37e7aef2c38fecda1815bff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347668"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72038085"
 ---
 # <a name="devcon-find"></a>DevCon Find
 
-
-現在のコンピューターに接続されているすべてのデバイスを検索します。 デバイス インスタンス ID とデバイスの説明が表示されます。 ローカルおよびリモート コンピューターで有効です。
+コンピューターに現在接続されているすべてのデバイスを検索します。 デバイスインスタンス ID とデバイスの説明が表示されます。 ローカルコンピューターとリモートコンピューターで有効です。
 
 ```
-    devcon [/m:\\computer] find {* | ID [ID ...] | =class [ID [ID ...]]} 
+    devcon [/m:\\computer] find {* | ID [ID ...] | =class [ID [ID ...]]}
 ```
 
-## <a name="span-idddkdevconfindtoolsspanspan-idddkdevconfindtoolsspanparameters"></a><span id="ddk_devcon_find_tools"></span><span id="DDK_DEVCON_FIND_TOOLS"></span>パラメーター
+## <a name="span-idddk_devcon_find_toolsspanspan-idddk_devcon_find_toolsspanparameters"></a><span id="ddk_devcon_find_tools"></span><span id="DDK_DEVCON_FIND_TOOLS"></span>パラメータ
 
+<span id="________m___computer______"></span><span id="________M___COMPUTER______"></span> **/m: \\ @ no__t**<em>コンピューター</em>は、指定されたリモートコンピューターでコマンドを実行します。 円記号が必要です。
 
-<span id="________m___computer______"></span><span id="________M___COMPUTER______"></span> **m:\\\\**<em>コンピューター</em>   
-指定したリモート コンピューター上のコマンドを実行します。 円記号が必要です。
+**メモ**  リモートコンピューターで DevCon コマンドを実行するには、グループポリシー設定で、プラグアンドプレイサービスをリモートコンピューターで実行できるようにする必要があります。 Windows Vista および Windows 7 を実行しているコンピューターでは、グループポリシーによって、サービスへのリモートアクセスが既定で無効になります。 WDK 8.1 および WDK 8 を実行するコンピューターでは、リモートアクセスは使用できません。
 
-**注**DevCon コマンドをリモート コンピューターで実行する、グループ ポリシー設定がリモート コンピューターで実行するプラグ アンド プレイ サービスを許可する必要があります。 Windows Vista および Windows 7 を実行するコンピューター、グループ ポリシーには、既定では、サービスへのリモート アクセスが無効にします。 WDK 8 WDK 8.1 を実行するコンピューターでリモート アクセスでは使用できません。
+<span id="______________"></span> **\*** コンピューター上のすべてのデバイスを表します。
 
-
-
-<span id="______________"></span> **\\***   
-コンピューター上のすべてのデバイスを表します。
-
-<span id="_______ID______"></span><span id="_______id______"></span> *ID*   
-ハードウェア ID、互換性 ID、またはデバイスのデバイス インスタンス ID のすべてまたは一部を指定します。 複数の Id を指定する場合は、各 ID の間にスペースを入力します。 アンパサンド文字を含む Id (**&**) 引用符で囲む必要があります。
+<span id="_______ID______"></span><span id="_______id______"></span>*Id*は、デバイスのハードウェア id、互換性 ID、またはデバイスインスタンス ID のすべてまたは一部を指定します。 複数の Id を指定する場合は、各 ID の間にスペースを入力します。 アンパサンド文字 ( **&** ) を含む id は引用符で囲む必要があります。
 
 次の特殊文字は、ID パラメーターを変更します。
 
@@ -60,56 +53,45 @@ ms.locfileid: "63347668"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong><em></strong></p></td>
-<td align="left"><p>任意の文字または文字と一致します。 ワイルドカード文字を使用して (</em>) パターンを作成する、ID、たとえば、<em>ディスク</em>します。</p></td>
+<td align="left"><p>任意の文字または文字を検索しません。 ワイルドカード文字 (</em>) を使用して、<em>ディスク</em>などの ID パターンを作成します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>@</strong></p></td>
-<td align="left"><p>たとえば、デバイス インスタンス ID を示します <strong><xref href="ROOT\FTDISK\0000" data-throw-if-not-resolved="False" data-raw-source="@ROOT\FTDISK\0000"></xref></strong>します。</p></td>
+<td align="left"><p>デバイスインスタンス ID ( <strong><xref href="ROOT\FTDISK\0000" data-throw-if-not-resolved="False" data-raw-source="@ROOT\FTDISK\0000"></xref></strong>など) を示します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>'</strong></p>
-<p>(一重引用符)</p></td>
-<td align="left"><p>リテラル文字列と一致する (正確に表示される)。 示すアスタリスクは、ID 名の一部であるし、たとえば、ワイルドカード文字ではないは、単一引用符を含む文字列の前に<strong>' * PNP0600</strong>ここで、* PNP0600 ハードウェア ID (アスタリスクを含む) です。</p></td>
+<p>(単一引用符)</p></td>
+<td align="left"><p>文字列を文字どおり (表示されているとおりに) 照合します。 アスタリスクが ID 名の一部で、ワイルドカード文字ではないことを示すには、文字列の前に単一引用符を付けます。たとえば、 <strong>' * PNP0600</strong>,、* PNP0600 (アスタリスクを含む) はハードウェア ID です。</p></td>
 </tr>
 </tbody>
 </table>
 
+<span id="________class______"> @ no__t-1<span id="________CLASS______"> </span> **=** <em>クラス</em>は、デバイスのセットアップクラスを指定します。 等号 ( **=** ) は、文字列をクラス名として識別します。
 
+また、クラス名の後に、ハードウェア Id、互換性のある Id、デバイスインスタンス Id、または ID パターンを指定することもできます。 各 ID またはパターンの間にスペースを入力します。 DevCon は、指定された Id に一致するデバイスをクラスで検索します。
 
-<span id="________class______"></span><span id="________CLASS______"></span> **=**<em>クラス</em>デバイスのデバイス セットアップ クラスを指定します。 等号 (=) (**=**) クラスの名前として文字列を識別します。
+### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>Comments
 
-ハードウェア Id、互換性 Id、デバイス インスタンス Id、または ID パターンを次のクラス名を指定することもできます。 各 ID またはパターンの間にスペースを入力します。 DevCon は、指定した Id に一致するクラス内のデバイスを検索します。
+**/M**パラメーターは、操作名 (**find**) の前に記述する必要があります。 それ以外の場合、DevCon は、 **/m**パラメーターを無視し、構文エラーを返さずにローカルコンピューターを検索します。
 
-### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>コメント
+**DevCon find**操作を使用すると、ハードウェア ID や id パターンではなく、デバイスの完全なデバイスインスタンス ID を指定することにより、現在コンピューターに接続されていないデバイスを見つけることができます。 完全なデバイスインスタンス ID を指定すると、それを添付デバイスに制限する、 **DevCon Find**操作の制限が上書きされます。
 
-**/M**パラメーターは、操作名を付ける必要があります (**検索**)。 それ以外の場合、DevCon は無視されます、 **/m**パラメーター構文エラーを返さずに、ローカル コンピューターを検索します。
+1つのクラス引数を持つ**Devcon Find**操作は、 [**devcon listclass**](devcon-listclass.md)操作と同じです。
 
-使用することができます、 **DevCon 検索**ハードウェア ID または ID のパターンを代わりに接続していないコンピューターにデバイスの完全なデバイス インスタンス ID を指定することでデバイスを検索する操作。 制限をオーバーライドする完全なデバイス インスタンス ID を指定する、 **DevCon 検索**に制限される操作には、デバイスが接続されています。
+現在コンピューターに接続されていないデバイスを含め、すべてのデバイスを検索するには、 [**DevCon FindAll**](devcon-findall.md)操作を使用します。
 
-**DevCon 検索**と同じ操作を 1 つのクラスの引数です、 [ **DevCon ListClass** ](devcon-listclass.md)操作。
-
-現在、コンピューターに接続されていないものも含め、すべてのデバイスを検索するには使用、 [ **DevCon FindAll** ](devcon-findall.md)操作。
-
-### <a name="span-idsampleusagespanspan-idsampleusagespansample-usage"></a><span id="sample_usage"></span><span id="SAMPLE_USAGE"></span>サンプルの使用法
+### <a name="span-idsample_usagespanspan-idsample_usagespansample-usage"></a><span id="sample_usage"></span><span id="SAMPLE_USAGE"></span>使用例
 
 ```
 devcon find *
 devcon find =media *pnp*
-devcon /m:\\Server01 find *mou* 
+devcon /m:\\Server01 find *mou*
 devcon find @*hub*
 ```
 
 ### <a name="span-idexamplesspanspan-idexamplesspanexamples"></a><span id="examples"></span><span id="EXAMPLES"></span>例
 
-[20 の使用例:ハードウェア ID のパターンでデバイスを検索します。](devcon-examples.md#ddk_example_20_find_devices_by_hardware_id_pattern_tools)
+[Example 20:デバイスをハードウェア ID パターンで検索する @ no__t-0
 
-[21 の使用例:デバイス インスタンス ID またはクラスによってデバイスを検索します。](devcon-examples.md#ddk_example_21_find_devices_by_device_instance_id_or_class_tools)
-
-
-
-
-
-
-
-
-
+[Example 21:デバイスインスタンス ID またはクラス @ no__t でデバイスを検索する-0

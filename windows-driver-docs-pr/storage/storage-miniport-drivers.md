@@ -3,52 +3,39 @@ title: 記憶域ミニポート ドライバー
 description: 記憶域ミニポート ドライバー
 ms.assetid: 374d8370-02a9-43ab-ab47-27fa9f4051ea
 keywords:
-- ストレージ ミニポート ドライバー WDK
-- ミニポート ドライバー WDK ストレージ
-- ストレージ ドライバー WDK、ミニポート ドライバー
-ms.date: 04/20/2017
+- 記憶域ミニポートドライバー WDK
+- ミニポートドライバー WDK ストレージ
+- 記憶域ドライバー WDK、ミニポートドライバー
+ms.date: 10/08/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 990d1ca49e6082613eb196b9db64d986bda92072
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 47a77387795a678125f594f3bf5eaca60ff67466
+ms.sourcegitcommit: 0610366df5de756bf8aa6bfc631eba5e3cd84578
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368200"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72262381"
 ---
 # <a name="storage-miniport-drivers"></a>記憶域ミニポート ドライバー
 
-
-## <span id="ddk_storage_miniport_drivers_kg"></span><span id="DDK_STORAGE_MINIPORT_DRIVERS_KG"></span>
-
-
 このセクションでは、次のトピックについて説明します。
 
-[SCSI ミニポート ドライバー](scsi-miniport-drivers.md)
+[SCSI ミニポートドライバー](scsi-miniport-drivers.md)
 
-[Storport ミニポート ドライバー](storport-miniport-drivers.md)
+[Storport ミニポートドライバー](storport-miniport-drivers.md)
 
-[IDE コント ローラーのミニドライバー](ide-controller-minidrivers.md)
+[IDE コントローラーミニドライバー](ide-controller-minidrivers.md)
 
-[ATA のミニポート ドライバー](ata-miniport-drivers.md)
+[ATA ミニポートドライバー](ata-miniport-drivers.md)
 
-ストレージ ミニポート ドライバーのベスト プラクティスは、ポートのドライバー サポート ライブラリを提供するルーチン以外のオペレーティング システムのルーチンを呼び出すことを回避するためにです。 たとえば、記憶域ミニポート ドライバー呼び出さないでください[ **KeQuerySystemTime**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kequerysystemtime)します。 代わりに、ミニポート ドライバーはのようなルーチンを呼び出す必要があります[ **ScsiPortQuerySystemTime** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportquerysystemtime)または[ **StorPortQuerySystemTime**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportquerysystemtime)します。 ストレージ ミニポート ドライバーは呼び出さないでください[ **MmGetPhysicalAddress**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-mmgetphysicaladdress)します。 代わりに、ミニポート ドライバーはのようなルーチンを呼び出す必要があります[ **ScsiPortGetPhysicalAddress** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportgetphysicaladdress)と[ **StorPortGetPhysicalAddress**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportgetphysicaladdress)します。
+記憶域ミニポートドライバーのベストプラクティスは、適切なポートドライバーサポートによって提供されるサポートルーチン以外のオペレーティングシステムルーチンを呼び出さないようにすることです。 たとえば、ストレージミニポートドライバーは[**Kequerysystemtime**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kequerysystemtime)を呼び出すことはできません。 代わりに、ミニポートドライバーは、 [**ScsiPortQuerySystemTime**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportquerysystemtime)や[**Storportquerysystemtime**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportquerysystemtime)などのルーチンを呼び出す必要があります。 記憶域ミニポートドライバーは、 [**MmGetPhysicalAddress**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-mmgetphysicaladdress)を呼び出すことはできません。 代わりに、ミニポートドライバーは、 [**ScsiPortGetPhysicalAddress**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportgetphysicaladdress)や[**StorPortGetPhysicalAddress**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportgetphysicaladdress)などのルーチンを呼び出す必要があります。
 
-使用しない[ハードウェア アブストラクション レイヤー ルーチン](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff546644(v=vs.85))ミニポート ドライバーでします。
+ミニポートドライバーでは、[ハードウェアアブストラクションレイヤールーチン](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff546644(v=vs.85))を使用しないでください。
 
-次の一覧では、記憶域ミニポート ドライバーの種類ごとに使用するポートのドライバー サポート ライブラリを示します。
+次の一覧は、各種類の記憶域ミニポートドライバーで使用する必要がある、システムで指定されたポートドライバーのサポートライブラリを示しています。
 
--   SCSI ポート ミニポート ドライバー:[ライブラリ ルーチンの SCSI ポート](required-and-optional-scsi-miniport-driver-routines.md)
-
--   Storport ミニポート ドライバー:[Storport ドライバー サポート ルーチン](storport-driver-support-routines.md)
-
--   IDE のミニポート ドライバー:[PciIdeX ライブラリ ルーチン](ide-controller-minidrivers.md)
-
--   ATA のポートのミニポート ドライバー:[ATA ポート ライブラリ ルーチン](ata-miniport-drivers.md)
-
- 
-
- 
-
-
-
-
+| ミニポートドライバー | ポートドライバー |
+| --------------- | ----------- |
+| Storport ミニポートドライバー  | Windows Server 2003 およびそれ以降のバージョンのオペレーティングシステムで使用可能な[Storport ドライバー](storport-driver-overview.md) (*storport*) (推奨) |
+| SCSI ポートミニポートドライバー | [SCSI ポートドライバー](scsi-port-driver-overview.md) (*Scsiport*) |
+| ATA ポートミニポートドライバー  | Windows Vista 以降のバージョンのオペレーティングシステムで使用可能な[ATA ポートドライバー](ata-port-driver-overview.md) (*Ataport*) |
+| IDE ミニポートドライバー       | 「 [IDE ポートドライバー](ide-port-driver.md) 」を参照してください。 |

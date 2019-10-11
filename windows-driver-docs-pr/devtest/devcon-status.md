@@ -1,9 +1,9 @@
 ---
 title: DevCon Status
-description: コンピューター上のデバイス ドライバーの状態 (実行中、停止、または無効になっている) を表示します。 ローカルおよびリモート コンピューターで有効です。
+description: コンピューター上のデバイスのドライバーの状態 (実行中、停止、または無効) が表示されます。 ローカルコンピューターとリモートコンピューターで有効です。
 ms.assetid: 97da6df4-ad93-440a-9136-13f2b79cbe9c
 keywords:
-- DevCon 状態ドライバーの開発ツール
+- DevCon ステータスドライバー開発ツール
 topic_type:
 - apiref
 api_name:
@@ -12,37 +12,30 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c2a852f740770cdee6239907455a16aef54e54a
-ms.sourcegitcommit: 289b5f97aff1b9ea1fefc9a8731e0fc16533073b
+ms.openlocfilehash: 17b8eebf064e9c63c60823701a026b97ca59534c
+ms.sourcegitcommit: 4bc550183bc403aee37e7aef2c38fecda1815bff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67492509"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72038031"
 ---
 # <a name="devcon-status"></a>DevCon Status
 
-
-コンピューター上のデバイス ドライバーの状態 (実行中、停止、または無効になっている) を表示します。 ローカルおよびリモート コンピューターで有効です。
+コンピューター上のデバイスのドライバーの状態 (実行中、停止、または無効) が表示されます。 ローカルコンピューターとリモートコンピューターで有効です。
 
 ```
-    devcon [/m:\\computer] status {* | ID [ID ...] | =class [ID [ID ...]]} 
+    devcon [/m:\\computer] status {* | ID [ID ...] | =class [ID [ID ...]]}
 ```
 
-## <a name="span-idddkdevconstatustoolsspanspan-idddkdevconstatustoolsspanparameters"></a><span id="ddk_devcon_status_tools"></span><span id="DDK_DEVCON_STATUS_TOOLS"></span>パラメーター
+## <a name="span-idddk_devcon_status_toolsspanspan-idddk_devcon_status_toolsspanparameters"></a><span id="ddk_devcon_status_tools"></span><span id="DDK_DEVCON_STATUS_TOOLS"></span>パラメータ
 
+<span id="________m___computer______"></span><span id="________M___COMPUTER______"></span> **/m: \\ @ no__t**<em>コンピューター</em>は、指定されたリモートコンピューターでコマンドを実行します。 円記号が必要です。
 
-<span id="________m___computer______"></span><span id="________M___COMPUTER______"></span> **m:\\\\** <em>コンピューター</em>   
-指定したリモート コンピューター上のコマンドを実行します。 円記号が必要です。
+**メモ**  リモートコンピューターで DevCon コマンドを実行するには、グループポリシー設定で、プラグアンドプレイサービスをリモートコンピューターで実行できるようにする必要があります。 Windows Vista および Windows 7 を実行しているコンピューターでは、グループポリシーによって、サービスへのリモートアクセスが既定で無効になります。 WDK 8.1 および WDK 8 を実行するコンピューターでは、リモートアクセスは使用できません。
 
-**注**DevCon コマンドをリモート コンピューターで実行する、グループ ポリシー設定がリモート コンピューターで実行するプラグ アンド プレイ サービスを許可する必要があります。 Windows Vista および Windows 7 を実行するコンピューター、グループ ポリシーには、既定では、サービスへのリモート アクセスが無効にします。 WDK 8 WDK 8.1 を実行するコンピューターでリモート アクセスでは使用できません。
+<span id="______________"></span> **\*** コンピューター上のすべてのデバイスを表します。
 
-
-
-<span id="______________"></span> **\\** *   
-コンピューター上のすべてのデバイスを表します。
-
-<span id="_______ID______"></span><span id="_______id______"></span> *ID*   
-ハードウェア ID、互換性 ID、またはデバイスのデバイス インスタンス ID のすべてまたは一部を指定します。 複数の Id を指定する場合は、各 ID の間にスペースを入力します。 アンパサンド文字を含む Id ( **&** ) 引用符で囲む必要があります。
+<span id="_______ID______"></span><span id="_______id______"></span>*Id*は、デバイスのハードウェア id、互換性 ID、またはデバイスインスタンス ID のすべてまたは一部を指定します。 複数の Id を指定する場合は、各 ID の間にスペースを入力します。 アンパサンド文字 ( **&** ) を含む id は引用符で囲む必要があります。
 
 次の特殊文字は、ID パラメーターを変更します。
 
@@ -60,34 +53,31 @@ ms.locfileid: "67492509"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong><em></strong></p></td>
-<td align="left"><p>任意の文字または文字と一致します。 ワイルドカード文字を使用して (</em>) パターンを作成する、ID、たとえば、<em>ディスク</em>します。</p></td>
+<td align="left"><p>任意の文字または文字を検索しません。 ワイルドカード文字 (</em>) を使用して、<em>ディスク</em>などの ID パターンを作成します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>@</strong></p></td>
-<td align="left"><p>たとえば、デバイス インスタンス ID を示します <strong><xref href="ROOT\FTDISK\0000" data-throw-if-not-resolved="False" data-raw-source="@ROOT\FTDISK\0000"></xref></strong>します。</p></td>
+<td align="left"><p>デバイスインスタンス ID ( <strong><xref href="ROOT\FTDISK\0000" data-throw-if-not-resolved="False" data-raw-source="@ROOT\FTDISK\0000"></xref></strong>など) を示します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>'</strong></p>
-<p>(一重引用符)</p></td>
-<td align="left"><p>リテラル文字列と一致する (正確に表示される)。 示すアスタリスクは、ID 名の一部であるし、たとえば、ワイルドカード文字ではないは、単一引用符を含む文字列の前に<strong>' * PNP0600</strong>ここで、* PNP0600 ハードウェア ID (アスタリスクを含む) です。</p></td>
+<p>(単一引用符)</p></td>
+<td align="left"><p>文字列を文字どおり (表示されているとおりに) 照合します。 アスタリスクが ID 名の一部で、ワイルドカード文字ではないことを示すには、文字列の前に単一引用符を付けます。たとえば、 <strong>' * PNP0600</strong>,、* PNP0600 (アスタリスクを含む) はハードウェア ID です。</p></td>
 </tr>
 </tbody>
 </table>  
 
+<span id="________class______"></span><span id="________CLASS______"></span> **=** _クラス_は、デバイスのデバイスセットアップクラスを指定します。 等号 ( **=** ) は、文字列をクラス名として識別します。
 
+また、クラス名の後に、ハードウェア Id、互換性のある Id、デバイスインスタンス Id、または ID パターンを指定することもできます。 各 ID またはパターンの間にスペースを入力します。 DevCon は、指定された Id に一致するデバイスをクラスで検索します。
 
-<span id="________class______"></span><span id="________CLASS______"></span> **=** _クラス_   
-デバイスのデバイス セットアップ クラスを指定します。 等号 (=) ( **=** ) クラスの名前として文字列を識別します。
+### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>Comments
 
-ハードウェア Id、互換性 Id、デバイス インスタンス Id、または ID パターンを次のクラス名を指定することもできます。 各 ID またはパターンの間にスペースを入力します。 DevCon は、指定した Id に一致するクラス内のデバイスを検索します。
+**/M**パラメーターは、操作名 (**状態**) の前に記述する必要があります。 それ以外の場合、DevCon は **/m**パラメーターを無視し、構文エラーを返さずに、ローカルコンピューター上のデバイスドライバーの状態を表示します。
 
-### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>コメント
+デバイスがコンピューターに接続されていないときなど、DevCon がデバイスの状態を判断できない場合は、ステータス表示の状態を説明する行を省略します。
 
-**/M**パラメーターは、操作名を付ける必要があります (**状態**)。 それ以外の場合、DevCon は無視されます、 **/m**パラメーターと、構文エラーを返さずに、ローカル コンピューター上のデバイス ドライバーの状態を表示します。
-
-DevCon、ときに、デバイスは、コンピューターにアタッチされなくなど、デバイスの状態を判断できない場合、DevCon は状態の表示からステータスを記述する行を省略します。
-
-次の例では、正常な状態のコマンドを示します。 デバイスの状態を説明するテキストが太字で表示されます。
+次の例は、status コマンドが成功したことを示しています。 デバイスの状態を説明するテキストは、太字で表示されます。
 
 ```
 STORAGE\VOLUME\1&30A96598&0&SIGNATURE80OFFSET7E0000LENGTH270987600
@@ -96,7 +86,7 @@ STORAGE\VOLUME\1&30A96598&0&SIGNATURE80OFFSET7E0000LENGTH270987600
 1 matching device(s) found.
 ```
 
-これに対し、次の例では、DevCon が含まれていないデバイスの状態を表示する方法を示しています。 状態の説明が表示されません。
+これに対して、次の例では、DevCon が検出できないデバイスの状態を表示する方法を示しています。 表示に状態の説明がありません。
 
 ```
 STORAGE\VOLUME\1&30A96598&0&SIGNATURE80OFFSET7E0000LENGTH270987600
@@ -104,7 +94,7 @@ STORAGE\VOLUME\1&30A96598&0&SIGNATURE80OFFSET7E0000LENGTH270987600
 1 matching device(s) found.
 ```
 
-### <a name="span-idsampleusagespanspan-idsampleusagespansample-usage"></a><span id="sample_usage"></span><span id="SAMPLE_USAGE"></span>サンプルの使用法
+### <a name="span-idsample_usagespanspan-idsample_usagespansample-usage"></a><span id="sample_usage"></span><span id="SAMPLE_USAGE"></span>使用例
 
 ```
 devcon /m:\\Server01 status *
@@ -115,17 +105,8 @@ devcon status =printer
 
 ### <a name="span-idexamplesspanspan-idexamplesspanexamples"></a><span id="examples"></span><span id="EXAMPLES"></span>例
 
-[17 の使用例:ローカル コンピューターのすべてのデバイスの状態を表示します。](devcon-examples.md#ddk_example_17_display_the_status_of_all_devices_on_the_local_computer)
+[Example 17:ローカルコンピューター上のすべてのデバイスの状態を表示する @ no__t-0
 
-[18 の使用例:デバイス インスタンス ID の状態を表示します。](devcon-examples.md#ddk_example_18_display_the_status_of_a_device_by_device_instance_id_to)
+[Example 18:デバイスインスタンス ID @ no__t でデバイスの状態を表示します。
 
-[19 の使用例:リモート コンピューターに関連するデバイスの状態を表示します。](devcon-examples.md#ddk_example_19_display_the_status_of_related_devices_on_a_remote_compu)
-
-
-
-
-
-
-
-
-
+[Example 19:リモートコンピューターの関連デバイスの状態を表示する @ no__t-0

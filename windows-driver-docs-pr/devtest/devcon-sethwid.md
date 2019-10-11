@@ -1,9 +1,9 @@
 ---
 title: DevCon SetHwID
-description: 追加、削除、および、ローカルまたはリモート コンピューター上のルートで列挙されるデバイスのハードウェア Id の順序を変更します。
+description: ローカルコンピューターまたはリモートコンピューター上のルートで列挙されたデバイスのハードウェア Id の追加、削除、および順序の変更を行います。
 ms.assetid: 79948ff0-8b30-4a64-beea-e3f08aef7170
 keywords:
-- DevCon SetHwID ドライバーの開発ツール
+- DevCon SetHwID ドライバー開発ツール
 topic_type:
 - apiref
 api_name:
@@ -12,37 +12,30 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 25fb7501bde304f36b5fcf3868455ee8f2c022cd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: afd80c6b8557f80d474ba0bfa4048b384864aee4
+ms.sourcegitcommit: 4bc550183bc403aee37e7aef2c38fecda1815bff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347028"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72038047"
 ---
 # <a name="devcon-sethwid"></a>DevCon SetHwID
 
-
-追加、削除、および、ローカルまたはリモート コンピューター上のルートで列挙されるデバイスのハードウェア Id の順序を変更します。
+ローカルコンピューターまたはリモートコンピューター上のルートで列挙されたデバイスのハードウェア Id の追加、削除、および順序の変更を行います。
 
 ```
     devcon [/m:\\computer] sethwid {* | ID [ID ...] | =class [ID [ID ...]]} := [ = | + | - | ! ]HardwareIDs ...
 ```
 
-## <a name="span-idddkdevconsethwidtoolsspanspan-idddkdevconsethwidtoolsspanparameters"></a><span id="ddk_devcon_sethwid_tools"></span><span id="DDK_DEVCON_SETHWID_TOOLS"></span>パラメーター
+## <a name="span-idddk_devcon_sethwid_toolsspanspan-idddk_devcon_sethwid_toolsspanparameters"></a><span id="ddk_devcon_sethwid_tools"></span><span id="DDK_DEVCON_SETHWID_TOOLS"></span>パラメータ
 
+<span id="________m___computer______"></span><span id="________M___COMPUTER______"></span> **/m: \\ @ no__t**<em>コンピューター</em>は、指定されたリモートコンピューターでコマンドを実行します。 円記号が必要です。
 
-<span id="________m___computer______"></span><span id="________M___COMPUTER______"></span> **m:\\\\**<em>コンピューター</em>   
-指定したリモート コンピューター上のコマンドを実行します。 円記号が必要です。
+**メモ**  リモートコンピューターで DevCon コマンドを実行するには、グループポリシー設定で、プラグアンドプレイサービスをリモートコンピューターで実行できるようにする必要があります。 Windows Vista および Windows 7 を実行しているコンピューターでは、グループポリシーによって、サービスへのリモートアクセスが既定で無効になります。 WDK 8.1 および WDK 8 を実行するコンピューターでは、リモートアクセスは使用できません。
 
-**注**DevCon コマンドをリモート コンピューターで実行する、グループ ポリシー設定がリモート コンピューターで実行するプラグ アンド プレイ サービスを許可する必要があります。 Windows Vista および Windows 7 を実行するコンピューター、グループ ポリシーには、既定では、サービスへのリモート アクセスが無効にします。 WDK 8 WDK 8.1 を実行するコンピューターでリモート アクセスでは使用できません。
+<span id="______________"></span> **\*** コンピューター上のすべてのデバイスを表します。
 
-
-
-<span id="______________"></span> **\\***   
-コンピューター上のすべてのデバイスを表します。
-
-<span id="_______ID______"></span><span id="_______id______"></span> *ID*   
-ハードウェア ID、互換性 ID、またはデバイスのデバイス インスタンス ID のすべてまたは一部を指定します。 複数の Id を指定する場合は、各 ID の間にスペースを入力します。 アンパサンド文字を含む Id (**&**) 引用符で囲む必要があります。
+<span id="_______ID______"></span><span id="_______id______"></span>*Id*は、デバイスのハードウェア id、互換性 ID、またはデバイスインスタンス ID のすべてまたは一部を指定します。 複数の Id を指定する場合は、各 ID の間にスペースを入力します。 アンパサンド文字 ( **&** ) を含む id は引用符で囲む必要があります。
 
 次の特殊文字は、ID パラメーターを変更します。
 
@@ -60,54 +53,49 @@ ms.locfileid: "63347028"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong><em></strong></p></td>
-<td align="left"><p>任意の文字または文字と一致します。 ワイルドカード文字を使用して (</em>) パターンを作成する、ID、たとえば、<em>ディスク</em>します。</p></td>
+<td align="left"><p>任意の文字または文字を検索しません。 ワイルドカード文字 (</em>) を使用して、<em>ディスク</em>などの ID パターンを作成します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>@</strong></p></td>
-<td align="left"><p>たとえば、デバイス インスタンス ID を示します <strong><xref href="ROOT\FTDISK\0000" data-throw-if-not-resolved="False" data-raw-source="@ROOT\FTDISK\0000"></xref></strong>します。</p></td>
+<td align="left"><p>デバイスインスタンス ID ( <strong><xref href="ROOT\FTDISK\0000" data-throw-if-not-resolved="False" data-raw-source="@ROOT\FTDISK\0000"></xref></strong>など) を示します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>'</strong></p>
-<p>(一重引用符)</p></td>
-<td align="left"><p>リテラル文字列と一致する (正確に表示される)。 示すアスタリスクは、ID 名の一部であるし、たとえば、ワイルドカード文字ではないは、単一引用符を含む文字列の前に<strong>' * PNP0600</strong>ここで、* PNP0600 ハードウェア ID (アスタリスクを含む) です。</p></td>
+<p>(単一引用符)</p></td>
+<td align="left"><p>文字列を文字どおり (表示されているとおりに) 照合します。 アスタリスクが ID 名の一部で、ワイルドカード文字ではないことを示すには、文字列の前に単一引用符を付けます。たとえば、 <strong>' * PNP0600</strong>,、* PNP0600 (アスタリスクを含む) はハードウェア ID です。</p></td>
 </tr>
 </tbody>
 </table>
 
+<span id="________class______"> @ no__t-1<span id="________CLASS______"> </span> **=** <em>クラス</em>は、ルートで列挙されたデバイスのデバイスセットアップクラスを指定します。 等号 ( **=** ) は、文字列をクラス名として識別します。
 
+また、クラス名の後に、ハードウェア Id、互換性のある Id、デバイスインスタンス Id、または ID パターンを指定することもできます。 各 ID またはパターンの間にスペースを入力します。 DevCon は、指定された Id に一致するデバイスをクラスで検索します。
 
-<span id="________class______"></span><span id="________CLASS______"></span> **=**<em>クラス</em>ルートで列挙されるデバイスのデバイス セットアップ クラスを指定します。 等号 (=) (**=**) クラスの名前として文字列を識別します。
+<span id="_______HardwareIDs______"></span><span id="_______hardwareids______"></span><span id="_______HARDWAREIDS______"></span>*ハードウェア id*1つ以上のハードウェア Id を指定します。
 
-ハードウェア Id、互換性 Id、デバイス インスタンス Id、または ID パターンを次のクラス名を指定することもできます。 各 ID またはパターンの間にスペースを入力します。 DevCon は、指定した Id に一致するクラス内のデバイスを検索します。
-
-<span id="_______HardwareIDs______"></span><span id="_______hardwareids______"></span><span id="_______HARDWAREIDS______"></span> *HardwareIDs*   
-1 つまたは複数のハードウェア Id を指定します。
-
-シンボル パラメーター ハードウェア Id が付いていないかどうか (**+**、 **-**、 **=**、 **!**)、DevCon を追加または指定したハードウェア Id を指定した順序でデバイスのハードウェア Id のリストの末尾に移動します。 これは、パラメーターと同じです。
+ハードウェア id の前にシンボルパラメーター ( **+** 、 **-** 、 **=** 、 **!** ) が指定されていない場合、[DevCon] は指定されたハードウェア id の一覧の末尾に指定された順序で追加または移動します。 これは、-パラメーターと同じです。
 
 <span id="_"></span>=  
-デバイスのハードウェア Id の一覧を指定した順序で指定されたハードウェア Id に置き換えます。
+指定された順序で、指定したハードウェア Id を持つデバイスのハードウェア Id の一覧を置き換えます。
 
-<span id="______________"></span> **+**   
-追加するか、指定されたハードウェア Id をデバイスのハードウェア Id のリストの先頭に移動します。
+<span id="______________"></span> **+** 指定されたハードウェア Id をデバイスのハードウェア Id の一覧の先頭に追加または移動します。
 
-<span id="_______-______"></span> **-**   
-追加するか、指定されたハードウェア Id をデバイスのハードウェア Id のリストの末尾に移動します。
+<span id="_______-______"></span> **-** 指定されたハードウェア Id をデバイスのハードウェア Id の一覧の末尾に追加または移動します。
 
-<span id="______________"></span> **!**   
-デバイスのハードウェア Id の一覧から、指定したハードウェア Id を削除します。
+<span id="______________"></span> **!**
+デバイスのハードウェア Id の一覧から、指定されたハードウェア Id を削除します。
 
-### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>コメント
+### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>Comments
 
-A*ルート列挙*デバイスは、ルートのレジストリ サブキーに表示されるデバイス (HKEY\_ローカル\_マシン\\システム\\*ControlSet* \\列挙型\\ルート)。
+*ルート列挙*デバイスは、ルートレジストリサブキーに表示されるデバイスです (HKEY @ NO__T-1local @ NO__T-2machine @ No__t-3system @ no__t-4*ControlSet*\\ENUM @ no__t-7root)。
 
-各コマンドでは、複数のハードウェア Id を指定できます。 **!** (削除) パラメーター プレフィックス、ハードウェア ID にのみ適用されます。 他のシンボルのパラメーターは、次のコマンドでは、次のシンボル パラメーターまで Id のすべてのハードウェアに適用されます。
+各コマンドに複数のハードウェア Id を指定できます。 **!** (delete) パラメーターは、プレフィックスとして指定されているハードウェア ID にのみ適用されます。 その他のシンボルパラメーターは、コマンドの次のシンボルパラメーターまで続くすべてのハードウェア Id に適用されます。
 
-DevCon 移動するではなくよりも、追加すると、指定されたハードウェア ID を既に場合は、ハードウェア ID が存在するデバイスのハードウェア Id の一覧で。
+指定したハードウェア ID がデバイスのハードウェア id の一覧に既に存在する場合、DevCon は追加ではなく、ハードウェア ID を移動します。
 
-成功メッセージ、 **DevCon SetHwIDs**コマンドは、ハードウェア Id、変更されたハードウェア Id の数ではなく、変更がデバイス (またはデバイスのリスト) の数を報告します。
+**DevCon SetHwIDs**コマンドの成功メッセージは、変更されたハードウェア id の数ではなく、ハードウェア id が変更されたデバイス (またはデバイスの一覧) の数を報告します。
 
-### <a name="span-idsampleusagespanspan-idsampleusagespansample-usage"></a><span id="sample_usage"></span><span id="SAMPLE_USAGE"></span>サンプルの使用法
+### <a name="span-idsample_usagespanspan-idsample_usagespansample-usage"></a><span id="sample_usage"></span><span id="SAMPLE_USAGE"></span>使用例
 
 ```
 devcon sethwid @ROOT\LEGACY* := legacy
@@ -119,21 +107,12 @@ devcon sethwid @ROOT\LEGACY_BEEP\0000 := !beep legacy
 
 ### <a name="span-idexamplesspanspan-idexamplesspanexamples"></a><span id="examples"></span><span id="EXAMPLES"></span>例
 
-[40 の使用例:レガシ デバイスのハードウェア ID を割り当てる](devcon-examples.md#ddk_example_40_assign_a_hardware_id_to_a_legacy_device_tools)
+[Example 40:レガシデバイスにハードウェア ID を割り当てる @ no__t-0
 
-[41 の使用例:リモート コンピューター上のすべてのレガシ デバイスにハードウェア ID を追加します。](devcon-examples.md#ddk_example_41_add_a_hardware_id_to_all_legacy_devices_on_a_remote_com)
+[Example 41:リモートコンピューター上のすべてのレガシデバイスにハードウェア ID を追加する @ no__t-0
 
-[42 の使用例:リモート コンピューター上のすべてのレガシ デバイスからのハードウェア ID を削除します。](devcon-examples.md#ddk_example_42_delete_a_hardware_id_from_all_legacy_devices_on_a_remot)
+[Example 42:リモートコンピューター上のすべてのレガシデバイスからハードウェア ID を削除する @ no__t-0
 
-[43 の使用例:追加、削除、およびハードウェア Id を置き換えます](devcon-examples.md#ddk_example_43_add_delete_and_replace_hardwareids_tools)
+[Example 43:ハードウェア Id の追加、削除、および置換 @ no__t-0
 
-[例 44:HAL を強制的に更新します。](devcon-examples.md#ddk_example_44_forcibly_update_the_hal_tools)
-
-
-
-
-
-
-
-
-
+[Example 44:HAL @ no__t を強制的に更新します。

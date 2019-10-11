@@ -1,9 +1,9 @@
 ---
 title: sx、sxd、sxe、sxi、sxn、sxr、sx- (例外の設定)
-description: Sx のコマンドは、デバッグ対象のアプリケーションで例外が発生した場合、または特定のイベントが発生したときに、デバッガーが実行されるアクションを制御します。
+description: Sx * コマンドは、デバッグ中のアプリケーションで例外が発生した場合、または特定のイベントが発生した場合に、デバッガーが実行するアクションを制御します。
 ms.assetid: fdb5059f-e7d9-4e14-aa3d-030e72c30732
 keywords:
-- sx, sxd、sxe、sxi、sxn、sxr、sx - (例外の設定) の Windows デバッグ
+- sx、sxd、sxd、sxd、sxn、sxr、sx-(例外の設定) Windows デバッグ
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,50 +12,44 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: a7c29f87f569a5f921aa3fbea6955823bfc3c515
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 844e14723f50a08759297f62d40ab5d283458634
+ms.sourcegitcommit: 4bc550183bc403aee37e7aef2c38fecda1815bff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67366356"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72038064"
 ---
 # <a name="sx-sxd-sxe-sxi-sxn-sxr-sx--set-exceptions"></a>sx、sxd、sxe、sxi、sxn、sxr、sx- (例外の設定)
 
-
-**Sx * * *\** コマンドは、アプリケーションをデバッグ中、または特定のイベントが発生したときに例外が発生したときに、デバッガーが実行されるアクションを制御します。
+**Sx**コマンドは、デバッグ中のアプリケーションで例外が発生したとき、または特定のイベントが発生したときに、デバッガーが実行するアクションを制御します。
 
 ```dbgcmd
-sx 
+sx
 
-sx{e|d|i|n} [-c "Cmd1"] [-c2 "Cmd2"] [-h] {Exception|Event|*} 
+sx{e|d|i|n} [-c "Cmd1"] [-c2 "Cmd2"] [-h] {Exception|Event|*}
 
-sx- [-c "Cmd1"] [-c2 "Cmd2"] {Exception|Event|*} 
+sx- [-c "Cmd1"] [-c2 "Cmd2"] {Exception|Event|*}
 
 sxr
 ```
 
-## <a name="span-idddk_cmd_set_exceptions_dbgspanspan-idddk_cmd_set_exceptions_dbgspanparameters"></a><span id="ddk_cmd_set_exceptions_dbg"></span><span id="DDK_CMD_SET_EXCEPTIONS_DBG"></span>パラメーター
+## <a name="span-idddk_cmd_set_exceptions_dbgspanspan-idddk_cmd_set_exceptions_dbgspanparameters"></a><span id="ddk_cmd_set_exceptions_dbg"></span><span id="DDK_CMD_SET_EXCEPTIONS_DBG"></span>パラメータ
 
+<span id="-c__Cmd1_"></span><span id="-c__cmd1_"></span><span id="-C__CMD1_"></span> **-c "** <em>Cmd1</em> **"**  
+例外またはイベントが発生した場合に実行されるコマンドを指定します。 この例外が発生するのは、この例外がデバッガーに中断されたかどうかに関係なく、この例外を最初に処理する機会があるときです。 *Cmd1*文字列は引用符で囲む必要があります。 この文字列には、セミコロンで区切られた複数のコマンドを含めることができます。 -C と引用符で囲まれたコマンド文字列の間のスペースは省略可能です。
 
-<span id="-c__Cmd1_"></span><span id="-c__cmd1_"></span><span id="-C__CMD1_"></span> **-c"** <em>Cmd1</em> **"**  
-イベント、例外が発生した場合に実行されるコマンドを指定します。 このコマンドは、この例外がデバッガーを中断するかどうかに関係なく、この例外を処理する最初の機会が発生したときに実行されます。 囲む必要があります、 *Cmd1*引用符で囲まれた文字列。 この文字列は、セミコロンで区切られた複数のコマンドを含めることができます。 -C と引用符で囲まれたコマンド文字列間のスペースは省略可能です。
+<span id="-c2_Cmd2_"></span><span id="-c2_cmd2_"></span><span id="-C2_CMD2_"></span> **-c2 "** <em>Cmd2</em> **"**  
+例外またはイベントが発生し、初回では処理されない場合に実行されるコマンドを指定します。 この例外を処理する2番目の機会が発生したときに、この例外がデバッガーに中断したかどうかに関係なく、このコマンドが実行されます。 *Cmd2*文字列は引用符で囲む必要があります。 この文字列には、セミコロンで区切られた複数のコマンドを含めることができます。 -C2 と引用符で囲まれたコマンド文字列の間のスペースは省略可能です。
 
-<span id="-c2_Cmd2_"></span><span id="-c2_cmd2_"></span><span id="-C2_CMD2_"></span> **-c2"** <em>Cmd2</em> **"**  
-イベント、例外が発生し、ファースト チャンスで処理されない場合に実行されるコマンドを指定します。 このコマンドは、この例外がデバッガーを中断するかどうかに関係なく、この例外を処理する 2 番目のチャンスが発生したときに実行されます。 囲む必要があります、 *Cmd2*引用符で囲まれた文字列。 この文字列は、セミコロンで区切られた複数のコマンドを含めることができます。 領域間は、c2、引用符で囲まれたコマンド文字列は省略可能です。
+<span id="_______-h______"></span><span id="_______-H______"></span> **-h**ブレークステータスではなく、指定されたイベントの処理状態を変更します。 *イベント*が**cc**、 **hc**、 **bpec**、または**ssec**の場合は、 **-h**オプションを使用する必要はありません。
 
-<span id="_______-h______"></span><span id="_______-H______"></span> **-h**   
-その中断状態ではなく、指定したイベントの処理状態を変更します。 場合*イベント*は**cc**、 **hc**、 **bpec**、または**ssec**を使用する必要はありません、 **-h**オプション。
+<span id="_______Exception______"></span><span id="_______exception______"></span><span id="_______EXCEPTION______"></span>*例外*現在の基数で、コマンドが処理する例外番号を指定します。
 
-<span id="_______Exception______"></span><span id="_______exception______"></span><span id="_______EXCEPTION______"></span> *例外*   
-現在の基数でのコマンドの処理、例外番号を指定します。
+<span id="_______Event______"></span><span id="_______event______"></span><span id="_______EVENT______"></span>*イベント*コマンドが動作するイベントを指定します。 これらのイベントは、短い省略形によって識別されます。 イベントの一覧については、「[例外とイベントの制御](controlling-exceptions-and-events.md)」を参照してください。
 
-<span id="_______Event______"></span><span id="_______event______"></span><span id="_______EVENT______"></span> *イベント*   
-コマンドが機能するイベントを指定します。 これらのイベントは、短い省略名によって識別されます。 イベントの一覧は、次を参照してください。[を制御する例外とイベント](controlling-exceptions-and-events.md)します。
+<span id="______________"></span> **\*** それ以外の場合、 **sx**に明示的に指定されていないすべての例外に影響します。 明示的に名前が付けられた例外の一覧については、「[例外とイベントの制御](controlling-exceptions-and-events.md)」を参照してください。
 
-<span id="______________"></span> **\\** *   
-それ以外の場合に明示的に名前のないのすべての例外の影響を与える**sx**します。 明示的に名前付きの例外の一覧は、次を参照してください。[を制御する例外とイベント](controlling-exceptions-and-events.md)します。
-
-### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>環境
+### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>Environment
 
 <table>
 <colgroup>
@@ -64,40 +58,38 @@ sxr
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>モード</strong></p></td>
-<td align="left"><p>ユーザー モードでは、カーネル モード</p></td>
+<td align="left"><p><strong>Modes</strong></p></td>
+<td align="left"><p>ユーザーモード、カーネルモード</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>ターゲット</strong></p></td>
-<td align="left"><p>ライブ デバッグのみ</p></td>
+<td align="left"><p>ライブデバッグのみ</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>プラットフォーム</strong></p></td>
+<td align="left"><p><strong>Platforms</strong></p></td>
 <td align="left"><p>すべての</p></td>
 </tr>
 </tbody>
 </table>
 
- 
-
 ### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-中断状態と処理の状態、すべてのイベント コードの説明については、すべてのイベントの既定の状態の一覧と、この状態を制御するその他の方法の詳細については、次を参照してください。[を制御する例外とイベント](controlling-exceptions-and-events.md)します。
+中断状態と処理状態、すべてのイベントコードの説明、すべてのイベントの既定の状態の一覧、およびこの状態を制御するその他の方法の詳細については、「[例外とイベントの制御](controlling-exceptions-and-events.md)」を参照してください。
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>コメント
 -------
 
-**Sx**コマンドが nonexception のすべてのイベントの一覧と、現在のプロセスの例外の一覧を表示し、デバッガーの例外やイベントの既定の動作を表示します。
+**Sx**コマンドは、現在のプロセスの例外の一覧と、すべての例外以外のイベントの一覧を表示し、各例外とイベントに対するデバッガーの既定の動作を表示します。
 
-**Sxe**、 **sxd**、 **sxn**、および**sxi**コマンドは、各例外とイベントのデバッガーの設定を制御します。
+**Sxe**、 **sxe**、 **sxn**、および**sxe**コマンドは、各例外とイベントのデバッガー設定を制御します。
 
-**Sxr**コマンドがすべての例外とイベントのフィルター状態を既定の設定にリセットします。 コマンドがクリアされますが、中断/続行のオプションが既定の設定にリセットされます具合です。
+**Sxr**コマンドは、すべての例外とイベントフィルターの状態を既定の設定にリセットします。 コマンドはクリアされ、break および continue オプションは既定の設定にリセットされます。
 
-**Sx-** コマンドでは、処理の状態や、指定した例外イベントの中断状態は変更されません。 このコマンドは、初回コマンドまたは特定のイベントに関連付けられている次の例外コマンドを変更する場合はその他の変更を希望しない場合に使用できます。
+**Sx**コマンドは、指定された例外またはイベントの処理状態またはブレークステータスを変更しません。 このコマンドは、特定のイベントに関連付けられている初回のコマンドまたは2回目のコマンドを変更するが、他のイベントを変更したくない場合に使用できます。
 
-含める場合は、 **-h**オプション (または、 **cc**、 **hc**、 **bpec**、または**ssec**イベントを指定)、**sxe**、 **sxd**、 **sxn**、および**sxi**コマンド コントロール、[処理ステータス](https://docs.microsoft.com/windows-hardware/drivers/debugger/debug-filter-xxx#handling-status)のイベントまたは例外。 その他のすべてのケースではこれらのコマンドを制御、[状態](https://docs.microsoft.com/windows-hardware/drivers/debugger/debug-filter-xxx#break-status)例外、またはイベントの。
+**-H**オプションを含めた場合 (または**cc**、 **hc**、 **bpec**、または**ssec**イベントが指定されている場合)、 **ssec**、 **ssec**、 **sxn**、および**ssec**コマンドは例外の[処理状態](https://docs.microsoft.com/windows-hardware/drivers/debugger/debug-filter-xxx#handling-status)を制御します。またはイベント。 それ以外の場合、これらのコマンドは例外またはイベントの[ブレーク状態](https://docs.microsoft.com/windows-hardware/drivers/debugger/debug-filter-xxx#break-status)を制御します。
 
-中断状態を設定するとき、これらのコマンドは、次の影響を与えます。
+中断状態を設定すると、これらのコマンドの効果は次のようになります。
 
 <table>
 <colgroup>
@@ -115,33 +107,31 @@ sxr
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>sxe</strong></p></td>
-<td align="left"><p><strong>break</strong></p>
-<p><strong>(有効)</strong></p></td>
-<td align="left"><p>この例外が発生したときに、ターゲットすぐにデバッガーを中断前に、その他のエラー ハンドラーがアクティブ化されます。 この種の処理と呼びます<em>初回</em>を処理します。</p></td>
+<td align="left"><p><strong>改</strong></p>
+<p><strong>Enabled</strong></p></td>
+<td align="left"><p>この例外が発生すると、他のエラーハンドラーがアクティブ化される前に、ターゲットは直ちにデバッガーに中断します。 この種の処理は、<em>初回</em>処理と呼ばれます。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>sxd</strong></p></td>
-<td align="left"><p><strong>2 番目のチャンスの中断</strong></p>
-<p><strong>(無効)</strong></p></td>
-<td align="left"><p>(ただし、メッセージが表示されます)、デバッガーはこの型の初回の例外は中断されません。 その他のエラー ハンドラーは、この例外を記載していません、実行が停止され、ターゲットがデバッガーを中断します。 この種の処理と呼びます<em>2 番目のチャンス</em>を処理します。</p></td>
+<td align="left"><p><strong>2回目の中断</strong></p>
+<p><strong>無効に</strong></p></td>
+<td align="left"><p>デバッガーは、この型の初回例外では中断しません (メッセージが表示されます)。 他のエラーハンドラーがこの例外に対処しない場合、実行が停止し、ターゲットがデバッガーに分割されます。 この種の処理は、 <em>2 回目</em>の処理と呼ばれます。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>sxn</strong></p></td>
-<td align="left"><p><strong>出力</strong></p>
-<p><strong>(通知)</strong></p></td>
-<td align="left"><p>この例外が発生したときに、対象アプリケーションは中断されませんデバッガーにまったくです。 ただし、この例外のユーザーに通知するメッセージが表示されます。</p></td>
+<td align="left"><p><strong>Output</strong></p>
+<p><strong>報告</strong></p></td>
+<td align="left"><p>この例外が発生した場合、ターゲットアプリケーションはデバッガーに中断されません。 ただし、この例外をユーザーに通知するメッセージが表示されます。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>sxi</strong></p></td>
-<td align="left"><p><strong>無視します。</strong></p></td>
-<td align="left"><p>この例外が発生して、対象アプリケーションは、デバッガーに中断されませんメッセージは表示されません。</p></td>
+<td align="left"><p><strong>かまい</strong></p></td>
+<td align="left"><p>この例外が発生した場合、ターゲットアプリケーションはデバッガーを中断せず、メッセージも表示されません。</p></td>
 </tr>
 </tbody>
 </table>
 
- 
-
-処理状態を設定するとき、これらのコマンドは、次の影響を与えます。
+処理状態を設定すると、これらのコマンドには次のような影響があります。
 
 <table>
 <colgroup>
@@ -159,41 +149,30 @@ sxr
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>sxe</strong></p></td>
-<td align="left"><p><strong>処理</strong></p></td>
-<td align="left"><p>イベントは、実行が再開されるときの処理と見なされます。</p></td>
+<td align="left"><p><strong>対応</strong></p></td>
+<td align="left"><p>イベントは、実行が再開されるときに処理されたと見なされます。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>sxd,sxn,sxi</strong></p></td>
-<td align="left"><p><strong>処理されていません。</strong></p></td>
+<td align="left"><p><strong>sxd、sxn、sxd</strong></p></td>
+<td align="left"><p><strong>未処理</strong></p></td>
 <td align="left"><p>イベントは、実行が再開されるときに処理されないと見なされます。</p></td>
 </tr>
 </tbody>
 </table>
 
- 
+**-H**オプションは、イベントではなく例外と共に使用できます。 このオプションを**ch**、 **bpe**、または**sse**と共に使用すると、 **hc**、 **bpec**、または**ssec**の処理状態がそれぞれ設定されます。 他のイベントと共に-h オプションを使用しても、何の影響もありません。
 
-使用することができます、 **-h**オプションを組み合わせて、例外、イベントではありません。 このオプションを使用して**ch**、 **bpe**、または**sse**の処理状態を設定**hc**、 **bpec**、または**ssec**、それぞれします。 その他のすべてのイベントは、-h オプションを使用する場合、影響を与えません。
+**-C**または **-c2**オプションを**hc**、 **bpec**、または**ssec**と共に使用すると、指定したコマンドがそれぞれ**ch**、 **bpe**、または**sse**に関連付けられます。
 
-使用して、 **-c**または **-c2**でオプションを**hc**、 **bpec**、または**ssec**指定されたコマンドに関連付けます**ch**、 **bpe**、または**sse**、それぞれします。
-
-次の例では、 **sxe**違反イベントの最初のチャンスを中断して、設定をその時点で実行される初回コマンドへのアクセスの中断状態を設定するコマンドを使用**r eax**. 次に、 **sx -** 、初回のコマンドを変更するコマンドを使用**r ebx**、処理状態を変更することがなく。 部分では、最後に、 **sx**アクセス違反イベントの現在の設定を示す、出力が表示されます。
+次の例では、 **sxe**コマンドを使用して、最初の機会に中断するアクセス違反イベントのブレークステータスを設定し、その時点で実行されるファーストチャンスコマンドを**r eax**に設定します。 次に、 **sx**コマンドを使用して、ファーストチャンスのコマンドを**r ebx**に変更します。処理の状態は変更しません。 最後に、 **sx**出力の一部が表示されます。これは、アクセス違反イベントの現在の設定を示しています。
 
 ```dbgcmd
-0:000> sxe -c "r eax" av 
+0:000> sxe -c "r eax" av
 
-0:000> sx- -c "r ebx" av 
+0:000> sx- -c "r ebx" av
 
-0:000> sx 
+0:000> sx
  av - Access violation - break - not handled
        Command: "r ebx"
   . . .  
 ```
-
- 
-
- 
-
-
-
-
-

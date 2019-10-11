@@ -3,54 +3,42 @@ title: WMI SRB をサポートするための記憶域ミニポート ドライ�
 description: WMI SRB をサポートするための記憶域ミニポート ドライバー ルーチンの変更
 ms.assetid: c3a222e8-dd02-4e45-b3e2-cec35d3abfdc
 keywords:
-- WMI される Srb WDK の記憶域をサポートするルーチンの変更
-ms.date: 04/20/2017
+- WMI SRBs WDK storage、サポートするルーチンの変更
+ms.date: 10/08/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: d13ab66ddaed2a2e7c0fba641bb0aff3f534963d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 44b1175fbfee5a6e2f3065e579346a3b562d874f
+ms.sourcegitcommit: 5f4252ee4d5a72fa15cf8c68a51982c2bc6c8193
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386179"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72252464"
 ---
 # <a name="modifying-storage-miniport-driver-routines-to-support-wmi-srbs"></a>WMI SRB をサポートするための記憶域ミニポート ドライバー ルーチンの変更
 
+ミニポートドライバーが WMI SRBs をサポートできるようにするには、ミニポートドライバーに必要な[*HwScsiWmiQueryReginfo*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/scsiwmi/nc-scsiwmi-pscsiwmi_query_reginfo)ルーチンが含まれていること、および次のルーチンに対して指定されたアクションを実行していることを確認する必要があります。
 
-## <span id="ddk_modifying_storage_miniport_driver_routines_to_support_wmi_srbs_kg"></span><span id="DDK_MODIFYING_STORAGE_MINIPORT_DRIVER_ROUTINES_TO_SUPPORT_WMI_SRBS_KG"></span>
+[**SCSI ミニポートドライバールーチンの Driverentry**](driverentry-of-scsi-miniport-driver.md) :
 
+- ミニポートドライバーが SCSI ポート WMI ライブラリを使用している場合は、「 [Scsi ポート Wmi ライブラリの使用](using-the-scsi-port-wmi-library.md)」に示されているように、 [SCSI_WMILIB_CONTEXT](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/scsiwmi/ns-scsiwmi-_scsiwmilib_context)構造体を初期化します。
 
-ミニポート ドライバーでは、WMI される Srb をサポートできますが、前に、ミニポート ドライバーが必要なに含まれていることを確認する必要があります[ **HwScsiWmiQueryReginfo** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/scsiwmi/nc-scsiwmi-pscsiwmi_query_reginfo)ルーチンとに指定されたアクションが実行される、次のルーチン:
+- SRB 拡張にメモリを割り当てる必要があるかどうかをポートドライバーに指示します。 ミニポートドライバーは、 [**HW_INITIALIZATION_DATA (SCSI)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/ns-srb-_hw_initialization_data)構造体の**Srbextensionsize**メンバーを0以外の値に設定することによって、SRB 拡張機能を割り当てる必要があることを示しています。
 
-[ **SCSI ミニポート ドライバーの DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)ルーチン。
+[*HwScsiFindAdapter*](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557300(v=vs.85))ルーチン:
 
--   ミニポート ドライバーでは、SCSI ポート WMI ライブラリを使用する場合は、初期化、 [ **SCSI\_WMILIB\_コンテキスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/scsiwmi/ns-scsiwmi-_scsiwmilib_context)に記載されている構造体[SCSI ポート WMI を使用ライブラリ](using-the-scsi-port-wmi-library.md)します。
+- [PORT_CONFIGURATION_INFORMATION (SCSI)](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/ns-srb-_port_configuration_information)構造体の [設定] の [構成 **] メンバーを** **TRUE**に設定します。
 
--   ポート ドライバーに SRB の拡張機能のメモリを割り当てる必要があるかどうかを示します。 ミニポート ドライバーでは、SRB の拡張機能を設定して割り当てる必要があることを示します、 **SrbExtensionSize**のメンバー、 [ **HW\_初期化\_データ (SCSI)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/ns-srb-_hw_initialization_data) 0 以外の値構造体。
+[*HwScsiStartIo*](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557323(v=vs.85))ルーチン:
 
-[ *HwScsiFindAdapter* ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557300(v=vs.85))ルーチン。
+- SRB の**関数**メンバーをテストして、SRB_FUNCTION_WMI と等しいかどうかを確認します。 この条件が**TRUE**の場合、ミニポートドライバーは、種類が[**SCSI_REQUEST_BLOCK**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/ns-srb-_scsi_request_block)の SRB ではなく[**SCSI_WMI_REQUEST_BLOCK**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/ns-srb-_scsi_wmi_request_block)型の SRB を処理する必要があります。
 
--   設定、 **WmiDataProvider**のメンバー、 [**ポート\_構成\_情報 (SCSI)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/ns-srb-_port_configuration_information)構造体と等しい**は TRUE。** .
+- SRB CONTEXT を保持する[SCSIWMI_REQUEST_CONTEXT](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/scsiwmi/ns-scsiwmi-scsiwmi_request_context)構造体にメモリを割り当てます。 ミニポートドライバーが WMI 要求を保留する場合は、SRB 拡張機能からメモリを割り当てて、ミニポートドライバーが SRB の処理中に要求コンテキストを維持できるようにします。 それ以外の場合、要求が保留される可能性がない場合は、スタックからコンテキストのメモリを割り当てます。
 
-[ **HwScsiStartIo** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557323(v=vs.85))ルーチン。
+- **> Srb**を確認して、要求がアダプターまたは論理ユニットのどちらであるかを判断します。
 
--   テスト**関数**SRB と等しいかどうかを SRB のメンバー\_関数\_WMI します。 この条件は、場合**TRUE**、ミニポート ドライバーは、SRB の型を処理する必要があります[ **SCSI\_WMI\_要求\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/ns-srb-_scsi_wmi_request_block)ではなく型の SRB より[ **SCSI\_要求\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/ns-srb-_scsi_request_block)します。
+- SCSI ポート WMI ライブラリディスパッチルーチン、 [**ScsiPortWmiDispatchFunction**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/scsiwmi/nf-scsiwmi-scsiportwmidispatchfunction)を呼び出します。 このディスパッチルーチンを呼び出す方法の詳細については、「 [SCSI ポート WMI ライブラリの使用](using-the-scsi-port-wmi-library.md)」を参照してください。
 
--   メモリを割り当てる、 [ **SCSIWMI\_要求\_コンテキスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/scsiwmi/ns-scsiwmi-scsiwmi_request_context) SRB のコンテキストを保持する構造体。 場合は、ミニポート ドライバーには、WMI 要求の保留が可能性があります、ミニポート ドライバーが、SRB の処理全体での要求コンテキストを維持できるように、SRB の拡張機能からメモリを割り当てます。 それ以外の場合、要求は、これまで保留にする可能性がない場合、スタックからコンテキストのメモリを割り当てます。
+- 要求がドライバーによって保留されている場合は、要求の処理後に[**ScsiPortWmiPostProcess**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/scsiwmi/nf-scsiwmi-scsiportwmipostprocess)を呼び出します。 ドライバーが要求を保留していない場合は、ミニポートドライバーの開始 i/o ルーチンではなく、ミニポートドライバーのコールバックルーチンで**ScsiPortWmiPostProcess**を呼び出す必要があります。
 
--   確認**Srb**-&gt;**WMIFlags**要求が、アダプターまたは論理ユニットのかどうかを判断します。
+- **Srb-> DatatransSrb length**と **> srbstatus**をそれぞれ[**ScsiPortWmiGetReturnSize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/scsiwmi/nf-scsiwmi-scsiportwmigetreturnsize)と[**ScsiPortWmiGetReturnStatus**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/scsiwmi/nf-scsiwmi-scsiportwmigetreturnstatus)によって返される値に設定します。
 
--   SCSI ポート WMI ライブラリのディスパッチ ルーチンを呼び出す[ **ScsiPortWmiDispatchFunction**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/scsiwmi/nf-scsiwmi-scsiportwmidispatchfunction)します。 このディスパッチ ルーチンを呼び出す方法の詳細については、次を参照してください。 [SCSI ポート WMI ライブラリを使用して](using-the-scsi-port-wmi-library.md)します。
-
--   呼び出す[ **ScsiPortWmiPostProcess** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/scsiwmi/nf-scsiwmi-scsiportwmipostprocess)ドライバーによって保留された場合、要求を処理した後。 かどうか、ドライバーが保留されません、要求し**ScsiPortWmiPostProcess**ミニポート ドライバーの I/O ルーチンを開始するのではなく、ミニポート ドライバー コールバック ルーチンを呼び出す必要があります。
-
--   設定**Srb**-&gt;**DataTransferLength**と**Srb**-&gt;**SrbStatus**によって返される値に[ **ScsiPortWmiGetReturnSize** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/scsiwmi/nf-scsiwmi-scsiportwmigetreturnsize)と[ **ScsiPortWmiGetReturnStatus** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/scsiwmi/nf-scsiwmi-scsiportwmigetreturnstatus)それぞれします。
-
--   呼び出す[ **ScsiPortNotification** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportnotification)で**RequestComplete**ときのこ**NextRequest**または (**NextLuRequest**).
-
- 
-
- 
-
-
-
-
+- **Requestcomplete**と**nextrequest**または (**nextlurequest**) を使用して、 [**ScsiPortNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportnotification)を呼び出します。

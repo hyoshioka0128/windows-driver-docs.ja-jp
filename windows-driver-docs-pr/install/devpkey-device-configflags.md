@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 09474b3c39115c2098619039658e32d15a95c3f4
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7f36716c221755204745b626ce7cc203f1f455d9
+ms.sourcegitcommit: 0610366df5de756bf8aa6bfc631eba5e3cd84578
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67387088"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72262181"
 ---
-# <a name="devpkeydeviceconfigflags"></a>DEVPKEY_Device_ConfigFlags
+# <a name="devpkey_device_configflags"></a>DEVPKEY_Device_ConfigFlags
 
 
-DEVPKEY_Device_ConfigFlags デバイス プロパティは、デバイスのインスタンスに設定されている構成フラグを表します。
+DEVPKEY_Device_ConfigFlags device プロパティは、デバイスインスタンスに設定されている構成フラグを表します。
 
 <table>
 <colgroup>
@@ -33,40 +33,39 @@ DEVPKEY_Device_ConfigFlags デバイス プロパティは、デバイスのイ�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>プロパティのキー</strong></p></td>
+<td align="left"><p><strong>プロパティキー</strong></p></td>
 <td align="left"><p>DEVPKEY_Device_ConfigFlags</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>データ型のプロパティの識別子</strong></p></td>
+<td align="left"><p><strong>プロパティ-データ型識別子</strong></p></td>
 <td align="left"><p><a href="devprop-type-int32.md" data-raw-source="[&lt;strong&gt;DEVPROP_TYPE_INT32&lt;/strong&gt;](devprop-type-int32.md)"><strong>DEVPROP_TYPE_INT32</strong></a></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>プロパティへのアクセス</strong></p></td>
-<td align="left"><p>読み取りおよび書き込みアクセス アプリケーションをインストールしてインストーラー</p></td>
+<td align="left"><p><strong>プロパティアクセス</strong></p></td>
+<td align="left"><p>インストールアプリケーションとインストーラーによる読み取りおよび書き込みアクセス</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>対応する SPDRP_</strong><em>Xxx</em> <strong>識別子</strong></p></td>
 <td align="left"><p>SPDRP_CONFIGFLAGS</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>ローカライズか。</strong></p></td>
-<td align="left"><p>X</p></td>
+<td align="left"><p><strong>た?</strong></p></td>
+<td align="left"><p>いいえ</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>コメント
 -------
 
-DEVPKEY_Device_ConfigFlags の値は、デバイスの現在の構成を示すために、デバイスのインストール中に設定されます。
+DEVPKEY_Device_ConfigFlags の値は、デバイスのインストール中に、デバイスの現在の構成を示すために設定されます。
 
-構成フラグは、CONFIGFLAG_ によって表される*Xxx* Regstr.h で定義されたビットマスク。
+構成フラグは、内部でのみ使用されます。
 
-呼び出すことができます[ **SetupDiGetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) DEVPKEY_Device_ConfigFlags と呼び出しの値を取得する[ **SetupDiSetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetdevicepropertyw) DEVPKEY_Device_ConfigFlags を設定します。
+[**Setupdigetdeviceproperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)を呼び出して DEVPKEY_Device_ConfigFlags の値を取得し、 [**setupdigetdeviceproperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetdevicepropertyw)を呼び出して DEVPKEY_Device_ConfigFlags を設定できます。
 
-Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_Device_ConfigFlags プロパティのキーをサポートしていません。 代わりに、Windows の以前のバージョンのプロパティの値へのアクセスに対応する SPDRP_CONFIGFLAGS 識別子を使用することができます。 Windows の以前のバージョンでこのプロパティの値にアクセスする方法については、次を参照してください。[デバイス インスタンス SPDRP_Xxx プロパティへのアクセス](https://docs.microsoft.com/windows-hardware/drivers/install/accessing-device-instance-spdrp-xxx-properties)します。
 
 <a name="requirements"></a>要件
 ------------
@@ -79,11 +78,11 @@ Windows Server 2003、Windows XP、および Windows 2000 は、このプロパ�
 <tbody>
 <tr class="odd">
 <td align="left"><p>バージョン</p></td>
-<td align="left"><p>Windows Vista および Windows の以降のバージョンで使用できます。</p></td>
+<td align="left"><p>Windows Vista 以降のバージョンの Windows で使用できます。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>Header</p></td>
-<td align="left">Devpkey.h (Devpkey.h を含む)</td>
+<td align="left">Devpkey (Devpkey を含む)</td>
 </tr>
 </tbody>
 </table>

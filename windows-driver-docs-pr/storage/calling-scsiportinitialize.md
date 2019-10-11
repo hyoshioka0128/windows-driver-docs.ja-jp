@@ -4,16 +4,16 @@ description: ScsiPortInitialize の呼び出し
 ms.assetid: a736f279-9ade-4043-90f7-209fca260a39
 keywords:
 - ScsiPortInitialize
-- SCSI ミニポート ドライバーの初期化
-- SCSI ミニポート ドライバー WDK のストレージの初期化
+- SCSI ミニポートドライバーの初期化
+- SCSI ミニポートドライバー WDK ストレージ、初期化
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aa8f7c1009ad963789f8d421e07544e6f331ab33
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d958565008c9f088d17100a49dc8b3cd3da7242b
+ms.sourcegitcommit: 5f4252ee4d5a72fa15cf8c68a51982c2bc6c8193
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368365"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72252447"
 ---
 # <a name="calling-scsiportinitialize"></a>ScsiPortInitialize の呼び出し
 
@@ -21,53 +21,53 @@ ms.locfileid: "67368365"
 ## <span id="ddk_calling_scsiportinitialize_kg"></span><span id="DDK_CALLING_SCSIPORTINITIALIZE_KG"></span>
 
 
-ミニポート ドライバーを呼び出す必要があります、ミニポート ドライバーの HBA は、I/O バスの 2 つ以上の型に接続されていることができる場合、 [ **ScsiPortInitialize** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportinitialize)ごとに、バスの種類と、別に持つことができます*HwScsiFindAdapter*バスの種類ごとに日常的な。
+ミニポートドライバーの HBA を複数の種類の i/o バスに接続できる場合、ミニポートドライバーは、各バスの種類に対して[**ScsiPortInitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportinitialize)を呼び出す必要があり、各バスの種類に対して異なる*HwScsiFindAdapter*ルーチンを持つことができます。
 
-各呼び出しの後**ScsiPortInitialize**、このようなミニポート ドライバーにする必要があります。
+**ScsiPortInitialize**を呼び出すたびに、このようなミニポートドライバーは次のことを行う必要があります。
 
 -   AdapterInterfaceType メンバーを変更します。
 
--   HwScsiFindAdapter メンバー変更[ **HW\_初期化\_データ (SCSI)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/ns-srb-_hw_initialization_data)ミニポート ドライバーには、そのバスの種類の異なる HwScsiFindAdapter ルーチンが含まれている場合。
+-   [**Sas @ no__t-2INITIALIZATION @ no__t-3DATA (SCSI)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/ns-srb-_hw_initialization_data)の HwScsiFindAdapter メンバーを変更します。これは、ミニポートドライバーがそのバスの種類に対して異なる HwScsiFindAdapter ルーチンを使用している場合に使用します。
 
--   バスの新しい種類のミニポート ドライバーによって提供されるコンテキスト データを変更します。
+-   新しいバスの種類に対して、ミニポートドライバーによって提供されるコンテキストデータを変更します。
 
--   サポートされている HBA が接続されているバスの種類ごとに ScsiPortInitialize を呼び出します。
+-   サポートされている HBA が接続されている可能性のあるバスの種類ごとに ScsiPortInitialize を呼び出します。
 
-ミニポート ドライバーは、プラグ アンド プレイをサポートしていないレガシ ドライバー場合**ScsiPortInitialize**呼び出し、ミニポート ドライバーの*HwScsiFindAdapter*日常的な 1 つまたは複数回に制御を返す前にミニポート ドライバーの[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)ルーチン。 すべての[ *HwScsiFindAdapter* ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557300(v=vs.85))のミニポート ドライバーのコンテキストで呼び出しが行われる**DriverEntry**順序で、日常的な**DriverEntry**と呼ばれる**ScsiPortInitialize**します。
+ミニポートドライバーがプラグアンドプレイをサポートしていないレガシドライバーである場合、 **ScsiPortInitialize**はミニポートドライバーの*HwScsiFindAdapter*ルーチンを1回以上呼び出し、ミニポートドライバーの[**driverentry**](scsi-miniport-driver-s-driverentry-routine.md)に制御を戻します。ルーチン. すべての[*HwScsiFindAdapter*](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557300(v=vs.85))呼び出しは、 **ScsiPortInitialize**という順序**driverentry**のミニポートドライバーの**driverentry**ルーチンのコンテキストで行われます。
 
-ミニポート ドライバーがプラグ アンド プレイをサポートしている場合**ScsiPortInitialize**将来使用するための初期化データを格納し、ステータスを返します\_ミニポート ドライバーの成功**DriverEntry**ルーチンです。 ポート ドライバーには、ミニポート ドライバーは呼び出しません*HwScsiFindAdapter*プラグ アンド プレイ manager がサービスとして、ミニポート ドライバーで登録された HBA を検出するまでのルーチンです。
+ミニポートドライバーでプラグアンドプレイがサポートされている場合、 **ScsiPortInitialize**は、今後使用するために初期化データを格納し、ステータス @ NO__T-1success をミニポートドライバーの**driverentry**ルーチンに返します。 ポートドライバーは、ミニポートドライバーがサービスとして登録されている HBA をプラグアンドプレイマネージャーが検出するまで、ミニポートドライバーの*HwScsiFindAdapter*ルーチンを呼び出しません。
 
-プラグ アンド プレイと従来のミニポート ドライバーの両方でポート ドライバーは、次のすべてのミニポート ドライバーを呼び出す前に*HwScsiFindAdapter*ルーチン。
+プラグアンドプレイとレガシミニポートドライバーの両方について、ポートドライバーは、ミニポートドライバーの*HwScsiFindAdapter*ルーチンを呼び出す前に、次のすべてを実行します。
 
--   ハードウェア ベースの有効性をチェック\_初期化\_データ。
+-   HW @ no__t-0INITIALIZATION @ no__t-1DATA の有効性を確認します。
 
--   収集し、HBA を表すために作成したデバイス オブジェクトの拡張機能でデバイスの関連情報を格納します。
+-   は、関連する情報を収集し、デバイスオブジェクトのデバイス拡張機能に格納して、HBA を表すために作成します。
 
--   用のメモリを割り当て、デバイスに 0 で初期化します、ミニポート ドライバーがドライバーが決定については、HBA を格納できる要求されたサイズの拡張機能。
+-   にメモリを割り当て、は、要求されたサイズのデバイス拡張を0で初期化します。これにより、ミニポートドライバーは、ドライバーによって決定された HBA に関する情報を格納できます。
 
--   構成情報バッファーにメモリを割り当てます**sizeof**([**ポート\_構成\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/ns-srb-_port_configuration_information))。
+-   **Sizeof**([**ポート @ NO__T-3configuration @ NO__T-4information**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/ns-srb-_port_configuration_information)) の構成情報バッファーにメモリを割り当てます。
 
--   構成情報バッファーでは、ポートで塗りつぶします\_構成\_ミニポート ドライバーによって提供される HWをできる限り、特定のI/OでHBAに関する多くの構成情報、情報構造体のバス\_初期化\_データとレガシ ミニポート ドライバーのレジストリなどの他のソースからまたはプラグ アンド プレイのミニポート ドライバーのプラグ アンド プレイ manager。
+-   構成情報バッファーでは、ポート @ no__t-0CONFIGURATION @ no__t-1INFORMATION 構造体に、可能な限り特定の i/o バス上の HBA に関する構成情報を入力します。これには、ミニポートドライバーで指定された HW @ no__ を使用します。t-sql の初期化 @ no__t-3DATA とその他のソース (レガシミニポートドライバーの場合はレジストリ、プラグアンドプレイミニポートドライバーの場合はプラグアンドプレイマネージャー)。
 
-詳細については、ミニポート ドライバーの*HwScsiFindAdapter*ルーチンを参照してください[SCSI ミニポート ドライバー HwScsiFindAdapter ルーチン](scsi-miniport-driver-s-hwscsifindadapter-routine.md)します。
+ミニポートドライバーの*HwScsiFindAdapter*ルーチンの詳細については、「 [SCSI ミニポートドライバーの HwScsiFindAdapter ルーチン](scsi-miniport-driver-s-hwscsifindadapter-routine.md)」を参照してください。
 
-場合、ミニポート ドライバーの**DriverEntry**ルーチンは、特定の設定**AdapterInterfaceType**ハードウェア ベース値\_初期化\_残念ですが、データでその型のバスはありません、コンピューター、ポート ドライバーは、このような HBA は、現在のコンピューターに存在しないことを示すオペレーティング システム固有の状態値を返します。 ドライバーによって提供される呼び出しません*HwScsiFindAdapter*そのバスの種類のルーチンです。
+ミニポートドライバーの**Driverentry**ルーチンによって、HW @ NO__T-2initialization @ NO__T-3data に特定の**AdapterInterfaceType**値が設定されていても、コンピューターにその種類のバスがない場合、ポートドライバーはオペレーティングシステム固有のものを返します。このような HBA が現在のコンピューターに存在しないことを示す状態値。 このバスの種類に対して、ドライバーによって提供される*HwScsiFindAdapter*ルーチンは呼び出されません。
 
-ミニポート ドライバーは、コンピューターのミニポート ドライバーのによって指定された種類の I/O バスがあるない場合は、読み込むが維持されない**DriverEntry**ルーチン。
+ミニポートドライバーの**Driverentry**ルーチンによって指定された種類の i/o バスがコンピューターにない場合、ミニポートドライバーは読み込まれたままになりません。
 
-従来のミニポート ドライバーでは、ことに注意して**ScsiPortInitialize**レガシ ミニポート ドライバーの制御を返す前に、次の責任も**DriverEntry**ルーチン。
+レガシミニポートドライバーの場合、 **ScsiPortInitialize**は、レガシミニポートドライバーの**driverentry**ルーチンに制御を返す前に、次の処理を行うことにも注意してください。
 
--   すべての必要なシステム オブジェクトを設定します。
+-   すべての必要なシステムオブジェクトを設定します。
 
--   レジストリから構成情報と設定の構成情報を取得します。
+-   レジストリで構成情報の取得と設定を行います。
 
--   ミニポート ドライバーが指定したによって示されるデータ量のメモリを含む、ミニポート ドライバーの代わりには、システム リソースを割り当て、 **DeviceExtensionSize**、 **SpecificLuExtensionSize**、または**SrbExtensionSize**をミニポート ドライバーを維持できます HBA に固有の状態、lun ごとの状態、または要求ごとの状態、それぞれします。
+-   ミニポートドライバーに代わってシステムリソースを割り当てます。これには、ミニポートドライバーが指定した**Deviceextensionsize**、特定の**luextensionsize**、または**srbextensionsize**によって示される量のメモリが含まれます。ミニポートドライバーは、HBA 固有の状態、論理ユニットごとの状態、または要求ごとの状態をそれぞれ管理できます。
 
-プラグ アンド プレイのミニポート ドライバーの場合、ポート ドライバーは、ミニポート ドライバーの後にこれらの操作を実行します*HwScsiFindAdapter*ルーチンを返しますポート ドライバー呼び出し、ミニポート ドライバーの前に、 [  *。HwScsiInitialize* ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557302(v=vs.85))ルーチン。
+プラグアンドプレイミニポートドライバーの場合、ポートドライバーは、ミニポートドライバーの*HwScsiFindAdapter*ルーチンがを返した後、ポートドライバーがミニポートドライバーの[*HwScsiInitialize*](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557302(v=vs.85))ルーチンを呼び出す前に、これらの操作を実行します。
 
-各 SCSI ミニポート ドライバーでは、内部構造とそのデバイスの拡張機能、論理ユニットの拡張機能 (ある場合)、および SRB の拡張機能 (ある場合) の内容を定義します。 HBA に固有のデバイスの拡張機能へのポインターを除くすべてのシステム定義のミニポート ドライバー ルーチンへの入力引数は、 **DriverEntry**します。 多く **ScsiPort * * * Xxx*ルーチンは、引数としてこのポインターを必要とします。
+各 SCSI ミニポートドライバーは、デバイス拡張機能の内部構造とコンテンツ、論理ユニット拡張機能 (存在する場合)、および SRB 拡張機能 (存在する場合) を定義します。 HBA 固有のデバイス拡張機能へのポインターは、 **Driverentry**以外のすべてのシステム定義のミニポートドライバールーチンへの入力引数です。 多くの **ScsiPort * * * Xxx*ルーチンでは、このポインターを引数として指定する必要があります。
 
-**ScsiPortInitialize**ミニポート ドライバーからのみ呼び出すことができます**DriverEntry**ルーチン。 詳細については、次を参照してください。 [ **HW\_初期化\_データ (SCSI)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/ns-srb-_hw_initialization_data)と[ **ScsiPortInitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportinitialize)します。
+**ScsiPortInitialize**は、ミニポートドライバーの**driverentry**ルーチンからのみ呼び出すことができます。 詳細については、「 [**HW @ no__t-2INITIALIZATION @ no__t-3DATA (SCSI)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/ns-srb-_hw_initialization_data)と[**ScsiPortInitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportinitialize)」を参照してください。
 
  
 

@@ -3,48 +3,36 @@ title: SCSI ミニポート ドライバー
 description: SCSI ミニポート ドライバー
 ms.assetid: d9268be8-a68d-4617-b323-349ce7c62f3f
 keywords:
-- SCSI ミニポート ドライバー WDK ストレージ
-- ストレージ ミニポート ドライバー WDK、SCSI ミニポート ドライバー
-- ミニポート ドライバー WDK ストレージ、SCSI ミニポート ドライバー
-- SCSI ミニポート ドライバー WDK ストレージ、SCSI ミニポート ドライバーについて
+- SCSI ミニポートドライバー WDK 記憶域
+- 記憶域ミニポートドライバー WDK、SCSI ミニポートドライバー
+- ミニポートドライバー WDK 記憶域、SCSI ミニポートドライバー
+- SCSI ミニポートドライバー WDK 記憶域、SCSI ミニポートドライバーについて
 - HBA WDK SCSI
-ms.date: 04/20/2017
+ms.date: 10/08/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 213dcbeda8bb27f283cea1c46d84ae54ea7f30a6
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0961a052c3b8273459992e95214f85e955c923b0
+ms.sourcegitcommit: 5f4252ee4d5a72fa15cf8c68a51982c2bc6c8193
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386489"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72252454"
 ---
 # <a name="scsi-miniport-drivers"></a>SCSI ミニポート ドライバー
 
+ここでは、次の情報について説明します。
 
-## <span id="ddk_scsi_miniport_drivers_kg"></span><span id="DDK_SCSI_MINIPORT_DRIVERS_KG"></span>
+[SCSI ミニポートドライバーでのプラグアンドプレイのサポート](supporting-plug-and-play-in-a-scsi-miniport-driver.md)
 
+[プラグアンドプレイ SCSI ミニポートドライバーのレジストリエントリ](registry-entries-for-plug-and-play-scsi-miniport-drivers.md)
 
-このセクションには、次の情報が含まれています。
+[ブートドライブを管理する SCSI ミニポートドライバーに関する制限](restrictions-on-scsi-miniport-drivers-that-manage-the-boot-drive.md)
 
-[SCSI ミニポート ドライバーのプラグ アンド プレイのサポート](supporting-plug-and-play-in-a-scsi-miniport-driver.md)
+[SCSI ミニポートドライバーでのエラー処理](error-handling-in-scsi-miniport-drivers.md)
 
-[プラグ アンド プレイ SCSI ミニポート ドライバーのレジストリ エントリ](registry-entries-for-plug-and-play-scsi-miniport-drivers.md)
+[SCSI ミニポートドライバールーチン](scsi-miniport-driver-routines.md)
 
-[SCSI のミニポート ドライバーをブート ドライブの管理に関する制限事項](restrictions-on-scsi-miniport-drivers-that-manage-the-boot-drive.md)
+NT ベースのオペレーティングシステム用の SCSI ミニポートドライバーは、HBA 固有ですが、オペレーティングシステムに依存しません。 つまり、各ミニポートドライバーは、システムによって提供される SCSI ポートドライバー (ダイナミックリンクライブラリ (DLL)) とリンクし、ポートドライバーの **ScsiPort * * * Xxx*ルーチンだけを呼び出して、システムとその HBA と通信します。 このような SCSI ミニポートドライバーは、Microsoft Win32 アプリケーションをサポートする他の Microsoft オペレーティングシステム上で実行され、**ScsiPort * * * Xxx*ルーチンもエクスポートされます。 **ScsiPort * * * Xxx*ルーチンの詳細については、「 [SCSI ポートドライバーのサポートルーチン](scsi-port-driver-support-routines.md)」を参照してください。
 
-[SCSI ミニポート ドライバーでのエラー処理](error-handling-in-scsi-miniport-drivers.md)
+**ScsiPort * * * Xxx*以外のルーチンを呼び出す SCSI ミニポートドライバーは、両方の Microsoft オペレーティングシステム環境で実行できないことに注意してください。 NT ベースのオペレーティングシステムを含む、Microsoft Windows システム間で移植性を維持するために、SCSI ミニポートドライバーはシステムが提供した **ScsiPort * * * Xxx*のみを呼び出す必要があります。
 
-[必須およびオプションの SCSI ミニポート ドライバー ルーチン](required-and-optional-scsi-miniport-driver-routines.md)
-
-NT ベースのオペレーティング システムのミニポート ドライバーを SCSI HBA 固有はオペレーティング システムに依存しません。 これは、システムが指定した SCSI ポート ドライバー ダイナミック リンク ライブラリ (DLL) は、ポートのドライバーだけの呼び出しでの各ミニポート ドライバー リンク自体 **ScsiPort * * * Xxx*システムとその HBA と通信するルーチン。 このような SCSI ミニポート ドライバーが Microsoft Win32 アプリケーションをサポートし、エクスポートも他の Microsoft オペレーティング システムで実行、**ScsiPort * * * Xxx*ルーチン。 詳細については、**ScsiPort * * * Xxx*ルーチンを参照してください[SCSI ポート ライブラリ ルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)します。
-
-ある SCSI ミニポート ドライバーを呼び出すルーチン以外に注意してください。、**ScsiPort * * * Xxx* Microsoft オペレーティング システムの両方の環境で実行することはできません。 のみ、システム提供の NT ベースのオペレーティング システムを含む、Microsoft Windows のシステム間で移植可能なままに SCSI ミニポート ドライバーが呼び出す必要があります **ScsiPort * * * Xxx*します。
-
-SCSI ミニポート ドライバーは、プラグ アンド プレイ ドライバーまたはリソースの再配布や電源管理などのプラグ アンド プレイ操作に参加していないレガシ ドライバーとして実行できます。 プラグ アンド プレイと従来のミニポート ドライバーの主な違いは、初期化ルーチンを呼び出すと Microsoft Windows NT 4.0、ミニポート ドライバーに適用されたは使用されませんが特定の制限の適用順序です。
-
- 
-
- 
-
-
-
-
+SCSI ミニポートドライバーはプラグアンドプレイドライバーの場合もあれば、リソース再配布や電源管理などのプラグアンドプレイ操作に参加していないレガシドライバーとして実行することもできます。 プラグアンドプレイとレガシミニポートドライバーの主な違いは、初期化ルーチンが呼び出され、Microsoft Windows NT 4.0 のミニポートドライバーに適用された特定の制限が適用される順序です。

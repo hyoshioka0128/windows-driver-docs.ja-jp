@@ -3,29 +3,29 @@ title: Storport ミニポート ドライバー
 description: Storport ミニポート ドライバー
 ms.assetid: 17ab5a07-b7c3-4fed-acf7-3e2491b7bd56
 keywords:
-- Storport ミニポート ドライバー WDK
-- Storport ミニポート ドライバー WDK、表示されているルーチン
-- ストレージ ミニポート ドライバー WDK、Storport ミニポート ドライバー
-- ミニポート ドライバー WDK ストレージ、Storport ミニポート ドライバー
-ms.date: 04/20/2017
+- Storport ミニポートドライバー WDK
+- Storport ミニポートドライバー WDK、ルーチン一覧
+- 記憶域ミニポートドライバー WDK、Storport ミニポートドライバー
+- ミニポートドライバー WDK 記憶域、Storport ミニポートドライバー
+ms.date: 10/08/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 7fb0f51940d4222564674a00ed3723407e73337c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 01bd482a121a101f7c67dee917bcf518d07ec635
+ms.sourcegitcommit: 0610366df5de756bf8aa6bfc631eba5e3cd84578
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344965"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72262379"
 ---
 # <a name="storport-miniport-drivers"></a>Storport ミニポート ドライバー
 
-Storport ミニポート ドライバーで使用する、 [Storport ドライバー](storport-driver.md)します。 次のセクションでは、Storport ミニポート ドライバーおよびそれらを呼び出すルーチンについて説明します。
+Storport ミニポートドライバーは、 [Storport ドライバー](storport-driver-overview.md)で動作します。 以下のセクションでは、Storport ミニポートドライバーとそれらが呼び出すルーチンについて説明します。
 
-[Storport ドライバー ミニポート ルーチン](storport-driver-miniport-routines.md)
+[Storport ミニポートドライバールーチン](storport-miniport-driver-routines.md)
 
-[Storport ドライバー サポート ルーチン](storport-driver-support-routines.md)
+[Storport ドライバーのサポートルーチン](storport-driver-support-routines.md)
 
 ここでは、次のトピックについて説明します。
 
-[Storport ミニポート ドライバーでのエラー処理](error-handling-in-storport-miniport-drivers.md)
+[Storport ミニポートドライバーでのエラー処理](error-handling-in-storport-miniport-drivers.md)
 
-[Storport ミニポート ドライバーにインタロックされた操作](interlocked-operations-in-storport-miniport-drivers.md)
+[Storport ミニポートドライバーでのインタロックされる操作](interlocked-operations-in-storport-miniport-drivers.md)

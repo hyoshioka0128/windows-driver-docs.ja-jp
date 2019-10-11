@@ -3,43 +3,41 @@ title: 低リソースのシミュレーション
 description: 低リソースのシミュレーション
 ms.assetid: 2710fa23-26cd-493b-abb4-3a0969a98eb1
 keywords:
-- 低リソース シミュレーション オプション WDK Driver Verifier
-- メモリ不足は、WDK の Driver Verifier を確認します。
-- メモリ不足は、WDK の Driver Verifier を確認します。
+- 低リソースシミュレーションオプション WDK ドライバー検証ツール
+- '低メモリチェック: WDK ドライバー検証ツール'
+- 不十分なメモリチェック (WDK ドライバー検証ツール)
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f5391d090d5cfa1a1a665e1df34fb914623b0f7
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a58e55fc521cdcf75f91794c56e9e2fdf7292230
+ms.sourcegitcommit: 4bc550183bc403aee37e7aef2c38fecda1815bff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67354780"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72038075"
 ---
 # <a name="low-resources-simulation"></a>低リソースのシミュレーション
 
-
 ## <span id="ddk_low_resources_simulation_tools"></span><span id="DDK_LOW_RESOURCES_SIMULATION_TOOLS"></span>
 
+低リソースシミュレーションオプション (Windows 8.1 でランダム化された*低リソースシミュレーション*と呼ばれる) がアクティブになっている場合、ドライバーの検証ツールは、ドライバーのメモリ割り当てのランダムなインスタンスを、メモリが不足しています。 これにより、ドライバーが低メモリおよびその他の低リソース状態に適切に応答するかどうかがテストされます。
 
-場合低リソース シミュレーション オプション (と呼ばれる*低リソース シミュレーションをランダム化*Windows 8.1 で) がアクティブな場合は、Driver Verifier にエラーが発生、ドライバーのメモリの割り当てのランダムなインスタンスで、ドライバーが実行されている場合に発生する可能性があります、十分なメモリを備えたコンピューター。 これは、メモリ不足とその他のリソース不足状態に適切に対応するドライバーの機能をテストします。
+低リソースシミュレーションテストは、 [**Exallocatepoolwithxxx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtag)、 [**MmGetSystemAddressForMdlSafe**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)、 [**MmProbeAndLockPages**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmprobeandlockpages)[**など、いくつかの異なる関数の呼び出しによって要求された割り当てに失敗します。MmMapLockedPagesSpecifyCache**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmmaplockedpagesspecifycache)および[**Mmmapiospace**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmmapiospace)。
 
-低リソース シミュレーション テストの失敗など、いくつかの異なる機能への呼び出しによって要求された割り当て[ **ExAllocatePoolWithXXX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtag)、 [ **MmGetSystemAddressForMdlSafe**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)、 [ **MmProbeAndLockPages**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmprobeandlockpages)、 [ **MmMapLockedPagesSpecifyCache** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmmaplockedpagesspecifycache)、および[ **MmMapIoSpace**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmmapiospace)します。
+Windows Vista 以降、低リソースのシミュレーションテストでは、 [**Ioallocateirp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocateirp)、 [**IoAllocateMdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocatemdl)、 [**ioallocateworkitem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocateworkitem)、 [**ioallocateerrorlogentry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocateerrorlogentry)、 [**MmAllocateContiguousMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatecontiguousmemory)[**にもエラーが挿入されます。MmAllocateContiguousMemorySpecifyCache**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatecontiguousmemoryspecifycache)、 [**MmAllocatePagesForMdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatepagesformdl)、および[**MmAllocatePagesForMdlEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatepagesformdlex)。 さらに、Windows Vista 以降では、リソース不足のシミュレーションが有効になっている場合、 [**KeWaitForMultipleObjects**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kewaitformultipleobjects)または KeWaitForSingleObject を呼び出すと *、警告可能なパラメーターを* **TRUE**に設定すると、状態が @ no__t- [**6alerted**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kewaitforsingleobject)になります。特権のないプロセスのコンテキストで実行されている場合。 これにより、特権のない同じアプリケーション内の別のスレッドから発生する可能性のあるスレッドアラートがシミュレートされます。
 
-Windows Vista 以降、低リソース シミュレーション テストも挿入エラーに[ **IoAllocateIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocateirp)、 [ **IoAllocateMdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocatemdl)、[ **IoAllocateWorkItem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocateworkitem)、 [ **IoAllocateErrorLogEntry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocateerrorlogentry)、 [ **MmAllocateContiguousMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatecontiguousmemory)、 [ **MmAllocateContiguousMemorySpecifyCache**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatecontiguousmemoryspecifycache)、 [ **MmAllocatePagesForMdl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatepagesformdl)、および[ **MmAllocatePagesForMdlEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatepagesformdlex)します。 さらへの呼び出し以降、Windows Vista では低リソース シミュレーションが有効にすると、 [ **KeWaitForMultipleObjects** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kewaitformultipleobjects)または[ **kewaitforsingleobject の 1**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kewaitforsingleobject)で、 *Alertable*パラメーターに設定**TRUE**状態を返すことができます\_特権のないプロセスのコンテキストで実行するときに通知します。 これは、同じ特権のないアプリケーションで別のスレッドから可能なスレッドのアラートをシミュレートします。
+低リソースシミュレーションテストでは、次の GDI 関数にもエラーが挿入されます。[**EngAllocMem**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engallocmem)、 [**EngAllocUserMem**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engallocusermem)、 [**EngCreateBitmap**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engcreatebitmap)、 [**EngCreateDeviceSurface**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engcreatedevicesurface)、 [**EngCreateDeviceBitmap**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engcreatedevicebitmap)、 [**EngCreatePalette**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engcreatepalette)、 [**EngCreateClip**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engcreateclip)、 [**EngCreatePath**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engcreatepath)、 [**EngCreateWnd**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engcreatewnd)、 [**EngCreateDriverObj**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engcreatedriverobj)、 [**brushobj @ No__t-22pvAllocRbrush**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-brushobj_pvallocrbrush)、 [**CLIPOBJ @ No__t-25ppogetpath**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-clipobj_ppogetpath)。
 
-低リソース シミュレーション テストでは、次の GDI 関数にエラーも挿入します。[**EngAllocMem**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engallocmem)、 [ **EngAllocUserMem**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engallocusermem)、 [ **EngCreateBitmap**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engcreatebitmap)、 [ **EngCreateDeviceSurface**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engcreatedevicesurface)、 [ **EngCreateDeviceBitmap**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engcreatedevicebitmap)、 [ **EngCreatePalette** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engcreatepalette)、 [ **EngCreateClip**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engcreateclip)、 [ **EngCreatePath**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engcreatepath)、 [ **EngCreateWnd**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engcreatewnd)、 [ **EngCreateDriverObj**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engcreatedriverobj)、 [ **BRUSHOBJ\_pvAllocRbrush**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-brushobj_pvallocrbrush)、および[**CLIPOBJ\_ppoGetPath**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-clipobj_ppogetpath)します。
-
-Windows 7 および Windows オペレーティング システムの以降のバージョンでは、低リソース シミュレーション オプションは、次のカーネル Api を使用して割り当てられたメモリをサポートしています。
+Windows 7 以降のバージョンの Windows オペレーティングシステムでは、低リソースシミュレーションオプションは、次のカーネル Api を使用して割り当てられたメモリをサポートしています。
 
 -   [**IoAllocateMdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocatemdl)
 
--   [**IoAllocateIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocateirp)と I/O を割り当てることができるその他のルーチン要求パケット (IRP) データ構造体
+-   [**Ioallocateirp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocateirp)および i/o 要求パケット (IRP) データ構造を割り当てることができる他のルーチン
 
--   [**RtlAnsiStringToUnicodeString** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-rtlansistringtounicodestring)およびその他のランタイム ライブラリ (RTL) の文字列ルーチン
+-   [**RtlAnsiStringToUnicodeString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-rtlansistringtounicodestring)およびその他のランタイムライブラリ (RTL) 文字列ルーチン
 
 -   [**IoSetCompletionRoutineEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iosetcompletionroutineex)
 
-Windows 8.1 以降、低リソース シミュレーション オプションはまた、MmAllocateNodePagesForMdlEx への呼び出しによって要求された割り当てを失敗します。 さらに、一部の関数では、Driver Verifier 収まっていることをパターンがランダムに割り当てられたメモリ。 ただし、関数が返す状況のみが初期化されていないメモリ。 これらの関数は次のとおりです。
+Windows 8.1 以降、低リソースシミュレーションオプションは、MmAllocateNodePagesForMdlEx の呼び出しによって要求された割り当てにも失敗します。 また、一部の関数では、ドライバーの検証ツールによって、割り当てられたメモリにランダムなパターンが挿入されるようになりました。 ただし、関数が初期化されていないメモリを返す場合のみです。 次のような関数があります。
 
 -   [**MmAllocatePagesForMdlEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatepagesformdlex)
 -   MmAllocateNodePagesForMdlEx
@@ -49,55 +47,55 @@ Windows 8.1 以降、低リソース シミュレーション オプションは
 -   [**MmAllocateContiguousNodeMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatecontiguousnodememory)
 -   [**MmAllocateNonCachedMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-mmallocatenoncachedmemory)
 
-### <a name="span-idcustom_settings_for_low_resources_simulationspanspan-idcustom_settings_for_low_resources_simulationspancustom-settings-for-low-resources-simulation"></a><span id="custom_settings_for_low_resources_simulation"></span><span id="CUSTOM_SETTINGS_FOR_LOW_RESOURCES_SIMULATION"></span>低リソース シミュレーション用のカスタム設定
+### <a name="span-idcustom_settings_for_low_resources_simulationspanspan-idcustom_settings_for_low_resources_simulationspancustom-settings-for-low-resources-simulation"></a><span id="custom_settings_for_low_resources_simulation"></span><span id="CUSTOM_SETTINGS_FOR_LOW_RESOURCES_SIMULATION"></span>低リソースシミュレーションのカスタム設定
 
-Windows Vista と Windows の以降のバージョンでは、次のカスタム設定を指定できます。
+Windows Vista 以降のバージョンの Windows では、次のカスタム設定を指定できます。
 
--   **確率**を特定の割り当ては失敗します。 既定では 6% です。
+-   特定の割り当てが失敗する**確率**。 既定値は 6% です。
 
--   **アプリケーション**影響を受けます。 挿入された、この設定の制限では、指定したアプリケーションへの割り当てが失敗しました。 既定では、すべての割り当てを受けます。
+-   影響を受ける**アプリケーション**。 この設定は、指定されたアプリケーションに対して、挿入に失敗した割り当てを制限します。 既定では、すべての割り当てが影響を受けます。
 
--   **プール タグ**影響を受けます。 この設定は、指定されたプール タグの割り当てに挿入されたエラーを制限します。 既定では、すべての割り当てを受けます。
+-   影響を受けた**プールタグ**。 この設定は、挿入されたエラーを、指定したプールタグを持つ割り当てに限定します。 既定では、すべての割り当てが影響を受けます。
 
--   **遅延**(分単位) を前に、割り当てが失敗しました。 この遅延により、システムを起動し、エラーを挿入する前に安定した状態にします。 既定では 8 分です。
+-   割り当てが失敗するまでの**遅延**(分)。 この遅延により、障害が挿入される前にシステムを起動して安定させることができます。 既定値は8分です。
 
-Windows Vista より前のオペレーティング システムでは、これらの設定をカスタマイズすることはできません。 オペレーティング システムには、既定値が使用されます。
+Windows Vista より前のオペレーティングシステムでは、これらの設定をカスタマイズすることはできません。 オペレーティングシステムでは、既定値が使用されます。
 
-### <a name="span-idlow_resources_simulation_without_rebootingspanspan-idlow_resources_simulation_without_rebootingspanlow-resources-simulation-without-rebooting"></a><span id="low_resources_simulation_without_rebooting"></span><span id="LOW_RESOURCES_SIMULATION_WITHOUT_REBOOTING"></span>再起動しなくても、低リソース シミュレーション
+### <a name="span-idlow_resources_simulation_without_rebootingspanspan-idlow_resources_simulation_without_rebootingspanlow-resources-simulation-without-rebooting"></a><span id="low_resources_simulation_without_rebooting"></span><span id="LOW_RESOURCES_SIMULATION_WITHOUT_REBOOTING"></span>再起動せずに低リソースのシミュレーションを行う
 
-使用して、コンピューターを再起動しなくても Windows 2000 以降のバージョンの Windows での低リソース シミュレーションをアクティブ化することができます、 **/volatile**パラメーター。 設定が、すぐに有効が、シャット ダウンまたは再起動すると失われます。
+Windows 2000 以降のバージョンの Windows では、 **/volatile**パラメーターを使用してコンピューターを再起動しなくても、リソース不足のシミュレーションを有効にすることができます。 設定は直ちに有効になりますが、コンピューターをシャットダウンまたは再起動した場合は失われます。
 
-省略することで、レジストリの低リソース シミュレーションの設定を格納することも、 **/volatile**パラメーター。 これらの設定は、それらを変更するまで、有効なまま、コンピューターを再起動する場合のみ有効です。
+また、 **/volatile**パラメーターを省略して、リソース不足のシミュレーション設定をレジストリに格納することもできます。 これらの設定は、コンピューターを再起動した場合にのみ有効になりますが、変更するまで有効なままです。
 
-### <a name="span-idactivating_this_optionspanspan-idactivating_this_optionspanactivating-this-option"></a><span id="activating_this_option"></span><span id="ACTIVATING_THIS_OPTION"></span>このオプションをアクティブ化します。
+### <a name="span-idactivating_this_optionspanspan-idactivating_this_optionspanactivating-this-option"></a><span id="activating_this_option"></span><span id="ACTIVATING_THIS_OPTION"></span>このオプションをアクティブにする
 
-ドライバー検証マネージャーまたは Verifier.exe コマンドラインを使用して、1 つまたは複数のドライバーの低リソース シミュレーション オプションをアクティブ化することができます。 詳細については、次を参照してください。[ドライバー検証ツールのオプションの選択](selecting-driver-verifier-options.md)します。
+ドライバー検証ツールマネージャーまたは Verifier コマンドラインを使用して、1つまたは複数のドライバーの低リソースシミュレーションオプションをアクティブにすることができます。 詳細については、「[ドライバーの検証オプションの選択](selecting-driver-verifier-options.md)」を参照してください。
 
 -   **コマンドラインで**
 
-    によって表される低リソース シミュレーション オプション、コマンド行で**ビット 2 (0x4)** します。 低リソース シミュレーションをアクティブ化するには、0x4 のフラグ値を使用または 0x4 をフラグ値に追加します。 次に、例を示します。
+    コマンドラインでは、低リソースシミュレーションオプションは**ビット 2 (0x4)** で表されます。 低リソースシミュレーションをアクティブにするには、フラグ値0x4 を使用するか、フラグ値に0x4 を追加します。 以下に例を示します。
 
     ```
     verifier /flags 0x4 /driver MyDriver.sys
     ```
 
-    オプションは、[次へ] の起動後にアクティブになります。
+    オプションは、次回の起動時にアクティブになります。
 
-    Windows Vista と Windows の以降のバージョンで使用することができます、*フォールト/* パラメーターまたはのフラグ値**0x4**低リソース シミュレーションをアクティブ化します。 低リソース シミュレーションの設定を変更するを使用する必要があります**フォールト/** します。 次に、例を示します。
+    Windows Vista 以降のバージョンの Windows では、 */fault*パラメーターまたは**0x4**のフラグ値を使用して、低リソースシミュレーションをアクティブにすることができます。 リソース不足のシミュレーションの設定を変更するには、 **/障害**を使用する必要があります。 以下に例を示します。
 
     ```
     verifier /faults /driver MyDriver.sys
     ```
 
-    Windows 2000 と Windows の以降のバージョンでもアクティブ化し、低リソース シミュレーションを追加することで、コンピューターを再起動しなくても非アクティブ化することができます、 **/volatile**パラメーターをコマンド。 次に、例を示します。
+    Windows 2000 以降のバージョンの Windows では、 **/volatile**パラメーターをコマンドに追加することで、コンピューターを再起動せずに、低リソースシミュレーションのアクティブ化と非アクティブ化を行うこともできます。 以下に例を示します。
 
     ```
     verifier /volatile /flags 0x4 /adddriver MyDriver.sys
     ```
 
-    この設定は、すぐに有効は、シャット ダウンするか、コンピューターを再起動すると失われます。 詳細については、次を参照してください。[揮発性の設定を使用する](using-volatile-settings.md)します。
+    この設定は直ちに有効になりますが、コンピューターをシャットダウンまたは再起動すると失われます。 詳細については、「 [Volatile 設定の使用](using-volatile-settings.md)」を参照してください。
 
-    Windows vista では、使用することができます、**フォールト/** パラメーターを表すと低リソース シミュレーション、 **/volatile**を再起動しなくても有効な制限が設定を表すパラメーター。 設定の変更が表示されます。 次に、例を示します。
+    Windows Vista では、 **/fault**パラメーターを使用して、 **/volatile**パラメーターを使用して低リソースシミュレーションを表すことで、再起動しなくても有効な設定を表すことができます。 設定の変更が表示されます。 以下に例を示します。
 
     ```
     0>  verifier /volatile /faults /adddriver MyDriver.sys
@@ -111,78 +109,78 @@ Windows Vista より前のオペレーティング システムでは、これ�
     or change them again.
     ```
 
--   **ドライバー検証マネージャーを使用します。**
-    1.  ドライバー検証マネージャーを起動します。 型**Verifier**コマンド プロンプト ウィンドウでします。
-    2.  選択 **(コード開発者) 用のカスタム設定を作成する**、順にクリックします**次**します。
-    3.  選択**完全な一覧から個々 の設定を選択します。** します。
-    4.  選択**低リソース シミュレーション**します。
+-   **ドライバー検証マネージャーの使用**
+    1.  ドライバー検証マネージャーを起動します。 コマンドプロンプトウィンドウで「 **Verifier** 」と入力します。
+    2.  [**カスタム設定の作成] (コード開発者向け)** を選択し、 **[次へ]** をクリックします。
+    3.  [**完全な一覧から個々の設定を選択]** を選択します。
+    4.  **[低リソースシミュレーション]** を選択します。
 
 ### <a name="span-idcustomizing_the_settings__windows_vista_and_later_spanspan-idcustomizing_the_settings__windows_vista_and_later_spancustomizing-the-settings-windows-vista-and-later"></a><span id="customizing_the_settings__windows_vista_and_later_"></span><span id="CUSTOMIZING_THE_SETTINGS__WINDOWS_VISTA_AND_LATER_"></span>設定のカスタマイズ (Windows Vista 以降)
 
-以降 Windows Vista では、遅延、確率、アプリケーションなどの既定の設定を変更して、プール タグ低リソース シミュレーション オプションのプロパティ。 ドライバー検証マネージャーまたは Verifier.exe コマンドラインを使用して、これらの設定を変更することができます。 詳細については、次を参照してください。[ドライバー検証ツールのオプションの選択](selecting-driver-verifier-options.md)します。
+Windows Vista 以降では、低リソースシミュレーションオプションの遅延、確率、アプリケーション、およびプールタグのプロパティの既定の設定を変更できます。 これらの設定を変更するには、ドライバー検証マネージャーまたは Verifier コマンドラインを使用します。 詳細については、「[ドライバーの検証オプションの選択](selecting-driver-verifier-options.md)」を参照してください。
 
-コマンドラインで、これらの設定の構文はとおりです。
+コマンドラインでは、これらの設定の構文は次のようになります。
 
-**verifier** \[ **/volatile**\] **/faults**\[*Probability*|*PoolTags*|*Applications*|*DelayMins*\]\[ **/driver**|*DriverList*\]
+**検証**\[ **/volatile**\] **/障害**\[*確率*|*Pooltags*|*アプリケーション*1*delaymins*3 @ no__t-14 **/driver**6*Driverlist*8
 
-**注**カスタム設定パラメーターが表示される順序で表示する必要があります。 値を省略した場合は、その場所を保持するために引用符を入力します。
+**メモ** カスタム設定のパラメーターは、表示されている順序で表示される必要があります。 値を省略する場合は、その位置を保持する引用符を入力します。
 
 
 
-**サブパラ メーター**
+**サブパラメーター**
 
-- **/faults**
+- **/障害**
 
-  Driver Verifier の低リソース シミュレーション オプションを有効にします。 (/Flags 0x4 はカスタム設定のサブパラ メーターを使用できません)。
+  ドライバー検証ツールの低リソースシミュレーションオプションを有効にします。 (/Flags 0x4 をカスタム設定のサブパラメーターと共に使用することはできません)。
 
 - *確率*
 
-  Driver Verifier の特定の割り当てが失敗する確率を指定します。 10,000 件の Driver Verifier の割り当てが失敗する可能性の数を表現するには、(10 進数または 16 進数形式)、数値を入力します。 既定値は 600 では、600/10000、または 6% を意味します。
+  ドライバーの検証ツールが特定の割り当てに失敗する確率を指定します。 1万での確率を表す数値 (10 進数または16進数形式) を入力します。この値を指定すると、ドライバー検証ツールが割り当てに失敗します。 既定値600は、600/10000 または 6% を意味します。
 
 - *PoolTags*
 
-  Driver Verifier を指定したプール タグの割り当てに失敗できる割り当てを制限します。 ワイルドカード文字を使用することができます (* *\\* * *) を複数のプール タグを表します。 複数のプール タグを一覧表示するには、空白で、タグを区切ります。 既定では、すべての割り当てが失敗することができます。
+  指定されたプールタグを使用して、ドライバーの検証で失敗する可能性がある割り当てを制限します。 ワイルドカード文字 ( **\*** ) を使用して、複数のプールタグを表すことができます。 複数のプールタグを一覧表示するには、タグをスペースで区切ります。 既定では、すべての割り当てが失敗する可能性があります。
 
-- *アプリケーション*
+- *プログラム*
 
-  Driver Verifier は、指定したプログラムの割り当てに失敗できる割り当てを制限します。 実行可能ファイルの名前を入力します。 プログラムの一覧を表示するには、プログラムを区切るスペースを含む名前を付けます。 既定では、すべての割り当てが失敗することができます。
+  指定したプログラムのドライバーの割り当てに失敗する可能性がある割り当てを制限します。 実行可能ファイルの名前を入力します。 プログラムを一覧表示するには、プログラム名をスペースで区切ります。 既定では、すべての割り当てが失敗する可能性があります。
 
 - *DelayMins*
 
-  起動後の分の間 Driver Verifier が意図的に失敗しない割り当て数を指定します。 この遅延により、ドライバーがロードされ、システム テストの前に安定化が開始されます。 (10 進数または 16 進数形式) で数値を入力します。 既定値は、8 (分です)。
+  ドライバー検証ツールが意図的に割り当てを失敗させない、起動後の時間 (分単位) を指定します。 この遅延により、ドライバーが読み込まれ、テストが開始される前にシステムが安定化されます。 数値 (10 進数または16進数形式) を入力します。 既定値は 8 (分) です。
 
-たとえば、次のコマンドは 10% の確率で低リソース シミュレーションを有効 (1000/10000) と、プール タグ、Tag1 と Fred、および、アプリケーションでは、Notepad.exe 5 分の遅延が発生します。
+たとえば、次のコマンドは、確率が 10% の低リソースシミュレーションを有効にします (1000/10000)。プールタグ、Tag1 と Fred、およびアプリケーション Notepad.exe に5分の遅延があります。
 
 ```
 verifier /faults 1000 "Tag1 Fred" Notepad.exe 5
 ```
 
-次のコマンドは、10 分間に遅延を拡張する点を除いては既定値で低リソース シミュレーションを有効します。
+次のコマンドを実行すると、既定値を使用して低リソースシミュレーションが有効になります。ただし、遅延が10分に延長される点が異なります。
 
 ```
 verifier /faults "" "" "" 0xa
 ```
 
-**ドライバー検証マネージャーを使用します。**
+**ドライバー検証マネージャーの使用**
 
-1.  ドライバー検証マネージャーを起動します。 型**Verifier**コマンド プロンプト ウィンドウでします。
-2.  選択 **(コード開発者) 用のカスタム設定を作成する**、順にクリックします**次**します。
+1.  ドライバー検証マネージャーを起動します。 コマンドプロンプトウィンドウで「 **Verifier** 」と入力します。
+2.  [**カスタム設定の作成] (コード開発者向け)** を選択し、 **[次へ]** をクリックします。
 
-3.  選択**完全な一覧から個々 の設定を選択します。** します。
+3.  [**完全な一覧から個々の設定を選択]** を選択します。
 
-4.  選択**低リソース シミュレーション**、 をクリックし、 **次へ。**
+4.  **低リソースシミュレーション** を選択し、次へ をクリックし**ます。**
 
-5.  遅延、確率、アプリケーション、設定を変更して、プール タグとして必要なプロパティ。
+5.  遅延、確率、アプリケーション、およびプールタグのプロパティの設定を必要に応じて変更します。
 
-### <a name="span-idviewing_the_resultsspanspan-idviewing_the_resultsspanviewing-the-results"></a><span id="viewing_the_results"></span><span id="VIEWING_THE_RESULTS"></span>結果を表示します。
+### <a name="span-idviewing_the_resultsspanspan-idviewing_the_resultsspanviewing-the-results"></a><span id="viewing_the_results"></span><span id="VIEWING_THE_RESULTS"></span>結果の表示
 
-Driver Verifier リソース割り当てがドライバーの検証ツールを表示することによって意図的に失敗した回数を監視する*フォールト挿入*グローバル カウンター。 このカウンターは、Driver Verifier は、最後の起動後意図的に失敗したリソース割り当ての合計数を表示します。
+ドライバー検証ツールによって意図的にリソース割り当てに失敗した回数を監視するには、ドライバー検証*エラーの挿入*されたグローバルカウンターを表示します。 このカウンターは、ドライバーの検証ツールが前回の起動から故意に失敗したリソース割り当ての合計数を表示します。
 
-このカウンターを表示するには、Driver Verifier のログ ファイルに ( **/ログ**)、コマンドラインで (**クエリ/** ) またはドライバー検証マネージャー。 Windows 2000 でグローバル カウンターを表示するには、選択、**グローバル カウンター**タブ。以降のバージョンの Windows では、次のように選択します。**現在検証済みのドライバーに関する情報を表示**タスク、およびキーを押します**次**2 回です。 詳細については、次を参照してください。[グローバル カウンターの監視](monitoring-global-counters.md)します。
+このカウンターは、ドライバー検証ログファイル ( **/log**)、コマンドライン ( **/query**)、またはドライバー検証マネージャーで表示できます。 Windows 2000 でグローバルカウンターを表示するには、 **[グローバルカウンター]** タブを選択します。新しいバージョンの Windows では、 **[現在検証されているドライバータスクに関する情報を表示する]** を選択し、 **[次へ]** を2回押します。 詳細については、「[グローバルカウンターの監視](monitoring-global-counters.md)」を参照してください。
 
-使用して、意図的に失敗した割り当ての数と (確率を計算) する割り当ての合計数を表示することも、 **! verifier**デバッガー拡張機能。 次の例のサンプルを示しています、 **! verifier**出力します。
+また、 **! verifier**デバッガー拡張機能を使用して、意図的に失敗した割り当ての数と割り当ての合計数 (確率を計算する場合) を表示することもできます。 次の例は、 **! verifier**出力のサンプルを示しています。
 
-この例で**ランダム低リソース API エラーを挿入**低リソース シミュレーションが有効になっていることを示します。 **リソース割り当て故意に失敗しました**意図的に失敗した割り当ての数を表すと**プールの割り当ての試行**割り当ての合計数を表します。
+この例では、**ランダムな低リソースの API エラーを挿入**すると、リソース不足のシミュレーションが有効になっていることが示されます。 **リソース割り当て**が意図的に失敗した割り当ての数と、試行された**プールの割り当て**が割り当ての合計数を表しています。
 
 ```
 !verifier
@@ -206,11 +204,11 @@ Pool Allocations Failed                0x34f
 Resource Allocations Failed Deliberately   0x3f5
 ```
 
-Driver Verifier で最も最近失敗した割り当てのスタック トレースを表示する使用 **! verifier 4**カーネル デバッガーにします。
+ドライバーの検証ツールによって最近失敗した割り当てのスタックトレースを表示するには、カーネルデバッガーで **! verifier 4**を使用します。
 
-次の例からの出力のサンプルを示しています。 **! verifier 4**します。 既定では、 **! verifier 4**最近失敗した割り当ての 4 つのほとんどからスタック トレースを表示し、使用することがその*数量*パラメーターを表示するスタック トレースの数を増やします。 たとえば、! verifier 0x80 128 最近失敗した割り当てを表示します。
+次の例は、 **! verifier 4**からの出力のサンプルを示しています。 既定では、 **! verifier 4**は最近失敗した4つの割り当てのスタックトレースを表示しますが、 *Quantity*パラメーターを使用すると、表示されるスタックトレースの数を増やすことができます。 たとえば、! verifier 0x80 は、最後に失敗した割り当ての128を表示します。
 
-この例では、Verifier がインターセプトし、ドライバーの呼び出しに置き換えられますことに注意してください**exallocatepoolwithtag に**します。 ドライバーは、メモリを割り当てようとするときに発生し、割り当て関数が返すはないことを検証する前にポインターを使用してのドライバー クラッシュの最も一般的な原因の 1 つ**NULL**します。
+この例では、検証ツールによって、ドライバーの**Exallocatepoolwithtag**への呼び出しが傍受され、置き換えられていることに注意してください。 ドライバーのクラッシュの最も一般的な原因の1つは、ドライバーがメモリを割り当てようとしたときに、割り当て関数が返すポインターを使用して**NULL**でないことを確認したときです。
 
 ```
 kd> !verifier 4
@@ -239,11 +237,11 @@ Entry @ 8354B230 (index 74)
     A4725F94 win32k!StubGdiAlloc+0x10
 ```
 
-低リソース シミュレーション テストの経験では、ほとんどのドライバー クラッシュが最近失敗した割り当てを原因となったことが表示されます。 上記の例では、クラッシュがパスの**win32k!GreEnableEUDC**します。 クラッシュの原因を特定する割り当てのパスでコードを調べます。
+低リソースのシミュレーションテストでは、最近失敗した割り当てが原因で、ほとんどのドライバーのクラッシュが発生していることがわかりました。 上記の例では、クラッシュは win32k のパスにありました **。GreEnableEUDC**。 割り当てのパスのコードを調べて、クラッシュの原因を見つけます。
 
-について **! verifier**を参照してください、*ツールを Windows のデバッグ*ドキュメント。
+**! Verifier**の詳細については、 *Windows 用デバッグツール*のドキュメントを参照してください。
 
-コマンドラインでレジストリの設定を表示する、 **/querysettings**オプション。 次に、例を示します。
+コマンドラインでレジストリの設定を表示するには、 **/querysettings**オプションを使用します。 以下に例を示します。
 
 ```
 C:\>verifier /querysettings
@@ -272,12 +270,3 @@ Verified drivers:
 
 blah.sys
 ```
-
-
-
-
-
-
-
-
-

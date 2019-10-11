@@ -1,9 +1,9 @@
 ---
-title: バグ チェック 0xD7 DRIVER_UNMAPPING_INVALID_VIEW
-description: DRIVER_UNMAPPING_INVALID_VIEW のバグ チェックでは、0x000000D7 の値を持ちます。 これは、マップされていないアドレスをマップ解除しようとしてドライバーを示します。
+title: バグチェック 0xD7 DRIVER_UNMAPPING_INVALID_VIEW
+description: DRIVER_UNMAPPING_INVALID_VIEW のバグチェックの値は0x000000D7 です。 これは、ドライバーが、マップされていないアドレスのマッピングを解除しようとしていることを示します。
 ms.assetid: 68075aa7-f579-49c7-a30a-a21312625ff9
 keywords:
-- バグ チェック 0xD7 DRIVER_UNMAPPING_INVALID_VIEW
+- バグチェック 0xD7 DRIVER_UNMAPPING_INVALID_VIEW
 - DRIVER_UNMAPPING_INVALID_VIEW
 ms.date: 05/23/2017
 topic_type:
@@ -13,23 +13,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d5f5b960fdb540bc0c75de51d2fc2dfd45d168eb
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 882a6175296b27d3f182065af8bb5db550876445
+ms.sourcegitcommit: 0ba337ab671763e374c79b67f6730f1451c8615e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67518862"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72041336"
 ---
-# <a name="bug-check-0xd7-driverunmappinginvalidview"></a>バグ チェック 0xD7:ドライバー\_UNMAPPING\_無効な\_ビュー
+# <a name="bug-check-0xd7-driver_unmapping_invalid_view"></a>バグ チェック 0xD7:DRIVER @ NO__T-0UNMAPPING 解除 @ NO__T-1INVALID @ NO__T-2VIEW
 
 
-ドライバー\_UNMAPPING\_無効な\_ビューのバグ チェックが 0x000000D7 の値を持ちます。 これは、マップされていないアドレスをマップ解除しようとしてドライバーを示します。
+ドライバー @ no__t-0UNMAPPING 解除 @ no__t-1INVALID @ no__t-2VIEW bug check の値は0x000000D7 です。 これは、ドライバーが、マップされていないアドレスのマッピングを解除しようとしていることを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
+> このトピックはプログラマーを対象としています。 コンピューターの使用中にブルースクリーンのエラーコードが表示された顧客の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://www.windows.com/stopcode)」を参照してください。
 
 
-## <a name="driverunmappinginvalidview-parameters"></a>ドライバー\_UNMAPPING\_無効な\_パラメーターの表示
+## <a name="driver_unmapping_invalid_view-parameters"></a>DRIVER @ no__t-0UNMAPPING 解除 @ no__t-1INVALID @ no__t-2VIEW Parameters
 
 
 <table>
@@ -46,12 +46,12 @@ ms.locfileid: "67518862"
 <tbody>
 <tr class="odd">
 <td align="left"><p>1</p></td>
-<td align="left"><p>仮想アドレスの割り当てを解除</p></td>
+<td align="left"><p>マップ解除する仮想アドレス</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>2</p></td>
-<td align="left"><p><strong>1:</strong>ビューがマップされています。</p>
-<p><strong>2:</strong>ビューがコミットされています。</p></td>
+<td align="left"><p><strong>1:</strong>ビューがマップ解除されています</p>
+<p><strong>2:</strong>ビューがコミットされています</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>3</p></td>
@@ -66,10 +66,10 @@ ms.locfileid: "67518862"
 
  
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>コメント
 -------
 
-エラーの原因となったドライバーは、スタック トレースから決定できます。
+! [デバッグ拡張機能の[**分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)] には、バグチェックに関する情報が表示され、根本原因を特定するのに役立ちます。 [ [**Kb (スタックバックトレースの表示)** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-) ] コマンドを使用してスタックトレースを取得します。エラーの原因となったドライバーは、スタックトレースから特定できます。
 
  
 

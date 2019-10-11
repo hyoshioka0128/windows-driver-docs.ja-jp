@@ -3,52 +3,50 @@ title: SCSI ミニポート ドライバーの HwScsiAdapterControl ルーチン
 description: SCSI ミニポート ドライバーの HwScsiAdapterControl ルーチン
 ms.assetid: ccc5aa02-415d-40d1-a1ed-c7d4d881f4ca
 keywords:
-- SCSI ミニポート ドライバー WDK ストレージ、HwScsiAdapterControl
+- SCSI ミニポートドライバー WDK 記憶域、HwScsiAdapterControl
 - HwScsiAdapterControl
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 58bc3c42b2ef854b7b466f4dad207398dbdba861
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1b16bc3dd0a92c41a20bd0f60e578f50b0c2cbae
+ms.sourcegitcommit: 5f4252ee4d5a72fa15cf8c68a51982c2bc6c8193
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384327"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72252460"
 ---
 # <a name="scsi-miniport-drivers-hwscsiadaptercontrol-routine"></a>SCSI ミニポート ドライバーの HwScsiAdapterControl ルーチン
 
-
 ## <span id="ddk_scsi_miniport_drivers_hwscsiadaptercontrol_routine_kg"></span><span id="DDK_SCSI_MINIPORT_DRIVERS_HWSCSIADAPTERCONTROL_ROUTINE_KG"></span>
 
+NT ベースのオペレーティングシステムでは、ミニポートドライバーでは、このエントリポイントを[**HW @ no__t-3INITIALIZATION @ no__t-4DATA (scsi)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/ns-srb-_hw_initialization_data)で**NULL**に設定する必要があります (「 [scsi ミニポートドライバールーチン](scsi-miniport-driver-routines.md)」を参照)。これは、ミニポートドライバーがプラグアンドプレイをサポートしていない場合です。 それ以外の場合、ミニポートドライバーには、その HBA の PnP および電源管理操作をサポートするための[**HwScsiAdapterControl**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557274(v=vs.85))ルーチンが必要です。
 
-NT ベースのオペレーティング システムのミニポート ドライバーにこのエントリ ポイントを設定する必要があります**NULL**で、 [ **HW\_初期化\_データ (SCSI)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/ns-srb-_hw_initialization_data) (参照してください[必須およびオプションの SCSI ミニポート ドライバー ルーチン](required-and-optional-scsi-miniport-driver-routines.md)) ミニポート ドライバーがプラグ アンド プレイをサポートしていない場合。 それ以外の場合、ミニポート ドライバーが必要、 [ **HwScsiAdapterControl**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557274(v=vs.85))ルーチンの HBA の PnP や電源管理操作をサポートします。
+ミニポートドライバーの*HwScsiAdapterControl*ルーチンは、HBA が初期化された**後、** 最初の i/o の前に、ポートドライバーによって最初に呼び出され、ミニポートでサポートされている他の操作を決定します。driver. ミニポートドライバーは、ポートドライバーによって割り当てられた、サポートされている @ no__t-0CONTROL @ no__t-1TYPE @ no__t-2LIST でサポートされる操作を設定します。 この最初の呼び出しから*HwScsiAdapterControl*が戻った後、ポートドライバーはミニポートドライバーによって示された操作に対してのみルーチンを再度呼び出します。
 
-ミニポート ドライバーの*HwScsiAdapterControl*ルーチンは、まずポート ドライバーによって呼び出されます**ScsiQuerySupportedControlTypes** HBA が初期化された後、最初の I/O、決定する前に。その他の操作、ミニポート ドライバーでサポートされています。 ミニポート ドライバーではサポートされているがサポートする操作を設定する\_コントロール\_型\_ポート ドライバーによって割り当てられているリスト。 後*HwScsiAdapterControl*ポート ドライバーのみ、ミニポート ドライバーによって示された操作をもう一度ルーチンを呼び出すと、この最初の呼び出しから返します。
+ミニポートドライバーの*HwScsiAdapterControl*ルーチンでは、次の操作のいずれかまたはすべてをサポートできます。
 
-ミニポート ドライバーの*HwScsiAdapterControl*ルーチンは、次の操作の一部またはすべてをサポートできます。
+-   **ScsiStopAdapter**は、電源がオフになっている、システムから削除された、または再構成または無効になったときに、HBA をシャットダウンします。
 
--   **ScsiStopAdapter**電源オフ、システムから削除またはそれ以外の場合を再構成またはした無効になっているときに、HBA をシャット ダウンします。
+    SCSI ポートドライバーが*HwScsiAdapterControl*を呼び出して HBA を停止した時点で、完了していない要求がないことを確認します。 ミニポートドライバーは、HBA の割り込みを無効にし、割り込みの対象にならないバックグラウンド処理を含むすべての処理を停止し、その HBA を初期化されていない状態にします。 ミニポートドライバーは、そのリソースを解放しないでください。必要に応じて、ポートドライバーはミニポートドライバーに代わってリソースを解放します。 この*HwScsiAdapterControl*の呼び出しの前に SRB @ no__t 関数 @ NO__T-2flush 要求があるため、フラッシュ要求の完了後にデータが変更されていない限り、キャッシュをフラッシュする必要はありません。
 
-    SCSI ポート ドライバーの呼び出し時に*HwScsiAdapterControl* HBA を停止するは完了していない要求が存在しないことをようにします。 ミニポート ドライバーでは、HBA の割り込みを無効にする、バック グラウンド、割り込みの対象とならない処理を含むすべての処理を停止、および初期化されていない状態に HBA を配置する必要があります。 ミニポート ドライバーがそのリソースを解放する必要があります。必要に応じて、ポート、ドライバーは、ミニポート ドライバーに代わってリソースを解放します。 この呼び出しを*HwScsiAdapterControl*前に、SRB が\_関数\_フラッシュの要求、ので、フラッシュの要求が完了したので、そのデータが変更された場合を除き、キャッシュをフラッシュする必要はありません。
+    PnP マネージャーによって HBA の再起動が要求されるか、電源管理用にシャットダウンされた HBA の電源が入ってくるまで、この HBA に対してミニポートドライバーが再度呼び出されることはありません。
 
-    ミニポート ドライバーは呼び出されませんもう一度この HBA の PnP マネージャーは、HBA を再起動することを要求するか、電源管理のシャット ダウンされた HBA の電源が入ってまで。
+    HBA がシステムから既に削除された後、HBA を停止するために、ミニポートドライバールーチンと同様に*HwScsiAdapterControl*が呼び出される場合があることに注意してください。
 
-    なお*HwScsiAdapterControl*、ミニポート ドライバー任意のルーチンのように、HBA は既にシステムから削除された後に、HBA を停止するという可能性があります。
+-   **ScsiSetBootConfig**は、bios がシステムを起動するために必要とする可能性のある HBA の設定を復元します。
 
--   **ScsiSetBootConfig** BIOS は、システムを起動する必要がある HBA の設定を復元します。
+    このような設定を復元するために[**ScsiPortGetBusData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportgetbusdata)または[**ScsiPortSetBusDataByOffset**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportsetbusdatabyoffset)を呼び出す必要がある場合は、ミニポートドライバーで**ScsiSetBootConfig**をサポートする必要があります。 ポートドライバーは、ルーチンを呼び出して HBA を停止した後、 **ScsiSetBootConfig**でミニポートドライバーの*HwScsiAdapterControl*を呼び出します。
 
-    ミニポート ドライバーをサポートする必要があります**ScsiSetBootConfig**を呼び出す必要がある場合[ **ScsiPortGetBusData** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportgetbusdata)または[ **ScsiPortSetBusDataByOffset** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportsetbusdatabyoffset)このような設定を復元します。 ポート ドライバー呼び出しミニポート ドライバーの*HwScsiAdapterControl*で**ScsiSetBootConfig** HBA を停止するルーチンを呼び出した後。
+-   **ScsiSetRunningConfig**は、システムの実行中にミニポートドライバーが hba の制御を必要とする可能性がある、hba の設定を復元します。
 
--   **ScsiSetRunningConfig**ミニポート ドライバーは、システムの実行中に、HBA を制御する必要がある HBA の設定を復元します。
+    このような設定を復元するために**ScsiPortGetBusData**または[**ScsiPortSetBusDataByOffset**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportsetbusdatabyoffset)を呼び出す必要がある場合は、ミニポートドライバーで**ScsiSetRunningConfig**をサポートする必要があります。 ポートドライバーは、ルーチンを呼び出して HBA を再起動する前に、 **ScsiSetRunningConfig**でミニポートドライバーの*HwScsiAdapterControl*を呼び出します。
 
-    ミニポート ドライバーをサポートする必要があります**ScsiSetRunningConfig**を呼び出す必要がある場合**ScsiPortGetBusData**または[ **ScsiPortSetBusDataByOffset** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportsetbusdatabyoffset)このような設定を復元します。 ポート ドライバー呼び出しミニポート ドライバーの*HwScsiAdapterControl*で**ScsiSetRunningConfig** HBA を再起動するルーチンを呼び出す前にします。
+-   **ScsiRestartAdapter**は、電源管理用にシャットダウンされた HBA を再起動します。
 
--   **ScsiRestartAdapter**を電源管理のシャット ダウンされた HBA を再起動します。
+    ポートドライバーが*HwScsiAdapterControl*を呼び出して HBA を再起動すると、そのミニポートドライバーに以前割り当てられていたすべてのリソースが引き続き使用可能で、そのデバイス拡張機能と論理ユニット拡張がすべてそのまま残ります。 HBA を再起動する場合、ミニポートドライバーは*HwScsiFindAdapter*からのみ呼び出すことができるルーチンを呼び出すことはできません。
 
-    ポートのドライバーの呼び出し時に*HwScsiAdapterControl* HBA を再起動して、ミニポート ドライバーに割り当てられていたすべてのリソースを引き続き使用し、そのデバイスの拡張機能と、論理ユニットの拡張機能はそのまま残ります。 ミニポート ドライバーがからのみ呼び出すことのルーチンを呼び出す必要がありますいないその HBA を再起動すると*HwScsiFindAdapter*します。
+    ミニポートドライバーが**ScsiRestartAdapter**をサポートしていない場合、ポートドライバーはミニポートドライバーの*HwScsiFindAdapter*と*HwScsiInitialize*ルーチンを呼び出して、HBA を再起動します。 ただし、このようなルーチンは、再起動時に不要な検出作業を行う場合があります。そのため、このようなミニポートドライバーは、 **ScsiRestartAdapter**をサポートするミニポートドライバーほど迅速に HBA の電源を投入しません。
 
-    ミニポート ドライバーがサポートされていない場合**ScsiRestartAdapter**、ポート ドライバー呼び出し、ミニポート ドライバーの*HwScsiFindAdapter*と*HwScsiInitialize*ルーチンHBA を再起動します。 ただし、このようなルーチンが必要な領域を再起動するとため、このようなミニポート ドライバーに電源が入らないの HBA をサポートするミニポート ドライバーだけ早く検出作業を行うことがあります**ScsiRestartAdapter**します。
-
-参照してください[ **HwScsiAdapterControl** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557274(v=vs.85))詳細についてはします。
+詳細については、「 [**HwScsiAdapterControl**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557274(v=vs.85)) 」を参照してください。
 
  
 

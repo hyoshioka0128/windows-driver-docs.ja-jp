@@ -2,85 +2,61 @@
 title: Storport によって提供される機能
 description: Storport によって提供される機能
 ms.assetid: 30b4d2e4-2004-4d71-8c91-f066e52dd256
-ms.date: 04/20/2017
+ms.date: 10/08/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 2eeeb27ec4ae887cec0463370f1f5a57ea7f49c6
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 93e56204734e1acf66a0ab196741dd1d3e85b632
+ms.sourcegitcommit: 5f4252ee4d5a72fa15cf8c68a51982c2bc6c8193
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368364"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72252442"
 ---
 # <a name="capabilities-provided-by-storport"></a>Storport によって提供される機能
 
+Storport ドライバーは、次の機能を備えています。
 
-Storport ドライバーは、次の機能を提供します。
+- **取り組む**
 
-アドレス指定
+  Microsoft Windows では、さまざまな種類の i/o バスや、同じ種類の複数の i/o バスを含むシステムがサポートされています。 このようなさまざまな処理を行うには、一般的なアドレス指定スキームが必要です。
 
--   Microsoft Windows には、さまざまな種類 I/O バスや、同じ種類の複数の I/O バスにはが含まれているシステムがサポートしています。 一般的なアドレス指定スキームがさまざまな種類を処理するために必要です。
+  PCI デバイスは、i/o ポートとメモリレジスタリソースの両方を持つことができます。 論理アドレスは、この区別をポートドライバーに対して透過的にするのに役立ちます。
 
--   PCI デバイスには、I/O ポートとメモリ リソースの登録の両方を持つことができます。 論理アドレスは、ポート ドライバーにこの区別を透明に役立ちます。
+  複数のバスに接続されている Hba を含むシステムもあります。このような HBA では、複数のアドレス変換が必要になる場合があります。
 
--   いくつかのシステムには、Hba が 1 つ以上のバスに接続しています。このような HBA には、アドレス変換のいくつかのセットが必要です。
+  論理アドレスは、CISC ベースおよび RISC ベースのマシン間での移植性を確保するために必要です。
 
--   CISC および RISC ベースのコンピューター間で移植性のための論理アドレスが必要です。
+- **エラー処理**
 
-再試行とエラー処理
+  - ストレージクラスドライバーは、デバイスがビジー状態のために処理できない場合に、Irp を再試行するためのアルゴリズムを実装する必要はありません。 この機能は、Storport ドライバーによって実装されます。
 
--   デバイスがビジー状態のため、それを処理するときに、Irp を再試行しています。
+  - クラスドライバーは、要求のタイムアウト値を設定し、Storport がそれを適用する役割を担います。 ただし、Storport ドライバーは、クラスドライバーのタイムアウト値を柔軟に適用し、バスの状態を考慮に入れることができます。 たとえば、Storport によって管理されているファイバーチャネルリンクが20秒間ドロップした場合、Storport はダウンタイム中にタイムアウトカウンターを中断する可能性があります。たとえば、タイムアウトが10秒の要求は、リンクが戻ってから10秒後に失敗することはありません。 また、i/o トラフィックの増加に応じて要求に割り当てられるタイムアウト値が増加します。これは、大量の i/o トラフィックが発生した場合、デバイスが要求を完了するためにより多くの時間が必要になるためです。
 
-    記憶域クラス ドライバーは、デバイスがビジー状態のため、それを処理するときに Irp の再試行のためのアルゴリズムを実装するためにはありません。 Storport ドライバーでは、この機能を実装します。
+  - Storport では、ターゲットとコントローラーのビジーエラーに加え、トランスポートエラー状態 (バス上のデータの実際の転送に関連するエラー) も処理されます。 以下に例を示します。
+    - バスパリティエラー
+    - 選択のタイムアウト
 
--   要求のタイムアウト値を適用します。
+- **構成、キュー、電源状態の管理**
 
-    クラス ドライバーは、要求のタイムアウト値を設定して、Storport、実施する責任を負います。 ただし、Storport ドライバーを適用できますクラス ドライバーのタイムアウト値、柔軟に考慮バスの状態を取得します。 たとえば、Storport によって管理されるファイバー チャネルのリンクは、20 秒の削除する場合のリンクが再び起動した後、10 秒まで 10 秒のタイムアウト設定された要求は失敗しません、ように、ダウンタイム中にタイムアウト カウンターが Storport に中断可能性があります。 Storport では、負荷の I/O トラフィックと、デバイスの要求を完了する時間がかかるため、I/O トラフィックが増加する応答内の要求に割り当てられたタイムアウト値が増加します。
+  - ホストアダプターの制限に関する情報をクラスドライバーに提供する:ホストバスアダプター (Hba) の制限に合わせてデータ転送のサイズを制御するのは、クラスドライバーの役割です。 ただし、Storport は、このタスクを実行するために必要な情報をクラスドライバーに提供します。 Storport は、IOCTL 要求 ([**IOCTL_STORAGE_QUERY_PROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddstor/ni-ntddstor-ioctl_storage_query_property)) に応答して、この情報をアダプター記述子 ([STORAGE_ADAPTER_DESCRIPTOR](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddstor/ns-ntddstor-_storage_adapter_descriptor)) に提供します。 クラスドライバーは、この記述子で報告された情報に基づいて、適切なサイズのチャンクに要求を分割する役割を担います。
 
--   ターゲットとコント ローラー、負荷の高いエラー、さらにトランスポート エラー条件 (つまり、実際に、バス上のデータの転送に関連するエラー) を処理します。 以下に例を示します。
+  - バスの相対アドレスを論理アドレスに変換します。クエリを実行すると、アダプターは i/o ポート、コマンドレジスタ、およびコントロールステータスレジスタのバス相対アドレスを指定します。 ただし、ミニポートドライバーは、バス相対アドレスを使用してホストバスアダプター (HBA) と通信することはできません。 Storport はバスの相対アドレスを論理アドレスに変換し、ミニポートドライバーがバスアドレスに透過的にアクセスできるようにします。 これにはいくつかの理由があります。
 
-    1.  バス パリティ エラー
-    2.  選択範囲のタイムアウト
+  - デバイスとその基になるすべてのデバイスの電源が入っていることを確認する (デバイスの電源状態が D0 の場合)。デバイスの電源を入れる準備ができていない場合、Storport はデバイスの準備が整うまでそのデバイスに対して D0 要求をキューに入れます。
 
-構成、キュー、および電源状態の管理
+  - クラスドライバーからの非同期要求をキューに置いて、それらを非同期的にターゲットデバイスに転送します。クラスドライバーは、要求が完了するまで待機してから、次の要求を送信する必要はありません。 Storport は、基になるハードウェアの処理能力が過剰にならないように、これらの要求をキューに入れていることを前提としています。
 
--   ホスト アダプターの制限に関する情報を含むクラス ドライバーを提供します。
+  - 内部 i/o 要求キューの内部管理と外部管理の両方をサポートします。ほとんどのキュー管理操作は、Storport によって開始されます。 たとえば、Storport は、エラーが発生したときにキューをフリーズし、クラスドライバーにエラー状態を報告します。これにより、要求が処理される前にクラスドライバーが応答できるようになります。 ただし、Storport は、クラスドライバーまたはその他の上位レベルのドライバーからの要求にも応答して、内部要求キューをロック、ロック解除、固定、または凍結解除します。 上位レベルのドライバーは、SRB_FUNCTION_RELEASE_QUEUE 要求を使用して、Storport が内部キューの凍結を解除することを強制できます。 キューを "凍結"、"ロック" または "ロック解除する" という意味については、「 [Storport キュー管理](storport-queue-management.md)」を参照してください。
 
-    ホスト バス アダプター (Hba) の制限に合わせてデータ転送のサイズを制御するクラス ドライバーの役目です。 ただし、Storport は、このタスクを実行する必要がある情報を使用してクラス ドライバーを提供します。 Storport、アダプターの記述子では、この情報を提供する ([**ストレージ\_アダプター\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddstor/ns-ntddstor-_storage_adapter_descriptor)) IOCTL 要求に応答 ([ **IOCTL\_ストレージ\_クエリ\_プロパティ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddstor/ni-ntddstor-ioctl_storage_query_property))。 クラス ドライバーは、要求をこの記述子で報告される情報に基づいて適切なサイズのチャンクに分割します。
+  - クラスドライバーによって処理するために、デバイスによって報告されたエラーを SCSI 3 sense データ形式に変換します。
 
--   バスの相対アドレスを論理アドレスを変換しています。
+Storport は、Storport ライブラリルーチンを使用して、ミニポートドライバーにサービスを提供します。 ミニポートドライバーの作成者は、指定された機能を1つのモノリシックポートドライバーにコーディングするのではなく、これらのルーチンを呼び出すことができます。 これらのルーチンを使用して実行できる最も重要なサービスの一部を次に示します。
 
-    このクエリを実行すると、アダプターは I/O ポート、コマンドのレジスタ、およびコントロールの状態のレジスタのバスの相対アドレスを提供します。 ただし、ミニポート ドライバーでは、そのホスト バス アダプター (HBA) との通信にバスの相対アドレスを使用できません。 ミニポート ドライバーは、透過的な方法で bus アドレスにアクセスできるように、Storport は論理アドレスは、バスの相対アドレスを変換します。 これにはいくつかの理由があります。
+- Storport ミニポートドライバーでは、多くの OS 依存の初期化操作を Storport の[**Storportinitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportinitialize)ライブラリルーチンに委任できます。 たとえば、Storport ドライバーは、PnP と DMA のマッピングに関連する詳細を処理します。 これにより、異なるバージョンのオペレーティングシステム間で、Storport ミニポートドライバーの移植性が向上します。 Storport ミニポートドライバーの初期化作業の詳細については、「 [storport を使用したハードウェアの初期化](hardware-initialization-with-storport.md)」を参照してください。
 
--   あるデバイスとその基になるすべてのデバイス電源が入っている (D0 デバイスの電源の状態) で、デバイスを開始する前にすることです。
+- PnP 以外のデバイス用の Storport ミニポートドライバーは、アダプターを検索し、そのリソースを PnP マネージャーに報告するタスクに対応していません。 これは[**Storportinitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportinitialize)で行われます。
 
-    デバイスの電源が供給される準備ができていないとき、Storport、デバイスが準備できるまで、デバイスの D0 要求がキューします。
+- Storport ミニポートドライバーは、ドライバーオブジェクト内のディスパッチエントリポイントを初期化しません。 このドライバーは、ミニポートドライバーが[**Storportinitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportinitialize)を呼び出したときに、ミニポートドライバーに代わってこれを行います。
 
--   クラスのドライバーからの非同期要求をキューとターゲット デバイスに非同期的に転送します。
+- Storport ミニポートドライバーは、 **HalTranslateBusAddress**を使用してバス相対アドレスを論理アドレスに変換しません。 Storport ミニポートドライバーは、 [**Storportgetdevicebase**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportgetdevicebase)を呼び出してこれを行います。
 
-    クラスのドライバーを次の要求を送信する前に完了する要求を待機する必要はありません。 Storport では、基になるハードウェアの処理能力が過負荷を回避するためにこれらの要求をキューの責任を負います。
-
--   内部の I/O 要求キューの内部と外部の両方の管理をサポートします。
-
-    ほとんどのキューの管理操作は、Storport 自体によって開始されます。 たとえば、Storport フリーズ キュー エラーが発生し、クラスのドライバーにエラー状態をレポート クラス ドライバーがさらに要求が処理される前に応答できるようにします。 ただし、Storport も要求から応答クラス ドライバーまたはその他のより高度なドライバーをロック、ロックを解除、凍結または内部要求キューの保持を解除します。 高度なドライバーが Storport を SRB を使用して、内部キューの解除を強制できます\_関数\_リリース\_キュー要求。 「固定」の意味の詳細については、「ロック」または「ロックを解除」キューを参照してください[Storport キュー管理](storport-queue-management.md)します。
-
--   処理のための scsi-3 センス データ形式にクラス ドライバーによって、デバイスによって報告されるエラーを変換しています。
-
-Storport では、Storport のライブラリ ルーチンを使用して、ミニポート ドライバーにサービスを提供します。 ミニポート ドライバーの作成者には、1 つのモノリシック ポート ドライバーに提供する機能をコーディングするのではなく、これらのルーチンを呼び出すことができます。 によって、これらのルーチンを使用して最も重要なサービスの一部としては、
-
--   Storport ミニポート ドライバーが Storport に多くの OS に依存する初期化操作を委任できます[ **StorPortInitialize** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportinitialize)ライブラリ ルーチン。 たとえば、PnP に関連する詳細の処理、Storport ドライバーと DMA のマッピング。 これにより、オペレーティング システムのバージョンが異なって Storport ミニポート ドライバーが移植性にします。 Storport ミニポート ドライバーの初期化作業の詳細については、次を参照してください。 [Storport 使用した初期化をハードウェア](hardware-initialization-with-storport.md)します。
-
--   非 PnP デバイスの Storport ミニポート ドライバーには、アダプターを検索して、レポート、リソース、PnP マネージャーをタスクが消費されません。 これを行う[ **StorPortInitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportinitialize)します。
-
--   Storport ミニポート ドライバーはドライバー オブジェクト内のエントリ ポイントのディスパッチを初期化できません。 Storport ドライバーは、ミニポート ドライバーに代わって、ミニポート ドライバーを呼び出すと[ **StorPortInitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportinitialize)します。
-
--   Storport ミニポート ドライバーを使用して、論理アドレスにバスの相対アドレスは変換されない[ **HalTranslateBusAddress**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff546644(v=vs.85))します。 Storport ミニポート ドライバーでは、これを行うへの呼び出しによって[ **StorPortGetDeviceBase**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportgetdevicebase)します。
-
-Storport が Storport ミニポート ドライバーを使用できるようにするライブラリ ルーチンの完全な一覧を参照してください。 [Storport ドライバー サポート ルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)します。
-
- 
-
- 
-
-
-
-
+Storport が Storport ミニポートドライバーで使用できるライブラリルーチンの完全な一覧については、「 [Storport ドライバーサポートルーチン](storport-driver-support-routines.md)」を参照してください。

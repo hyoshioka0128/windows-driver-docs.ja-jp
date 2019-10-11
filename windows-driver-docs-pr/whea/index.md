@@ -15,12 +15,12 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 author: EliotSeattle
-ms.openlocfilehash: 9614a4c05281277c7e3611338c320935f7b55f8b
-ms.sourcegitcommit: 85d02ecf7cbcfd802f41f68cea4cd4434284bdaa
+ms.openlocfilehash: af2d98f959ee24bb734a898cf52075b898b7cf5b
+ms.sourcegitcommit: 76147255532f5fedacf591679e2604216e89365d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68473543"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72021050"
 ---
 # <a name="windows-hardware-error-architecture-whea-design-guide"></a>Windows Hardware Error Architecture (WHEA) 設計ガイド
 
@@ -32,10 +32,7 @@ ms.locfileid: "68473543"
 
 - ユーザーモード アプリケーションが WHEA プラットフォームと通信する方法。 詳細については、「[Windows Hardware Error Architecture-Aware User-Mode Applications (Windows Hardware Error Architecture 対応のユーザーモード アプリケーション)](windows-hardware-error-architecture-aware-user-mode-applications.md)」を参照してください。
 
-WHEA の詳細とハードウェア プラットフォームでの WHEA の実装方法については、「WHEA Platform Design Guide (WHEA プラットフォーム設計ガイド)」を参照してください。 プラットフォーム ベンダーは、<wheafb@microsoft.com> に電子メールを送信してこの設計ガイドを入手できます。
-
-> [!NOTE]
-> WHEA は、Windows Vista、Windows Server 2008、およびそれ以降のバージョンの Windows オペレーティング システムでサポートされています。 Windows Vista より前のバージョンの Microsoft Windows でサポートされているハードウェア エラー レポートについては、「[Machine Check Architecture (MCA)](https://docs.microsoft.com/previous-versions/windows/hardware/mca/ff540685(v=vs.85))」を参照してください。
+WHEA に関する詳細と、WHEA のハードウェア プラットフォームへの実装方法については、**WHEA プラットフォーム 設計ガイド**をご覧ください。 プラットフォーム ベンダーは、<wheafb@microsoft.com> に電子メールを送信してこの設計ガイドを入手できます。
 
 ## <a name="in-this-section"></a>このセクションの内容
 
