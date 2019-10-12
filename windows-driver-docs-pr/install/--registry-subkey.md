@@ -4,44 +4,33 @@ description: '* レジストリ サブキー'
 ms.assetid: 19b72c64-5a64-4655-b922-4a4bca162b32
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f34b955081f2fd62faa72727f98bc5c74ca84755
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 992657e051c8896d383dc906b01f52d9d733f4f2
+ms.sourcegitcommit: 4bc550183bc403aee37e7aef2c38fecda1815bff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375768"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72038099"
 ---
-# <a name="-registry-subkey"></a>\* レジストリのサブキー
+# <a name="-registry-subkey"></a>\* レジストリサブキー
 
 
-Windows 7 以降、 **\\** * (アスタリスク) レジストリ サブキーでは、リムーバブル デバイス機能のオーバーライドがデバイスのすべてのノードに適用されることを指定します (*devnode*) デバイスの列挙いずれかで識別される、 [HardwareID](hardwareid-registry-subkey.md)または[CompatibleID](compatibleid-registry-subkey.md)レジストリ サブキー。 リムーバブル デバイスの機能の詳細を上書きするを参照してください。 [DeviceOverrides レジストリ キー](deviceoverrides-registry-key.md)します。
+Windows 7 以降では、 **\*** (アスタリスク) のレジストリサブキーによって、 [HardwareID](hardwareid-registry-subkey.md)またはのいずれかで識別されるデバイス用に列挙されたすべてのデバイスノード (*devnodes*) に、リムーバブルデバイスの機能の上書きが適用されることが指定されています。[互換 id](compatibleid-registry-subkey.md)レジストリサブキー。 リムーバブルデバイスの機能の上書きの詳細については、「 [Deviceoverrides レジストリキー](deviceoverrides-registry-key.md)」を参照してください。
 
-**\\** * レジストリ サブキーで指定されたすべての devnode をリムーバブル デバイスの機能の上書きを適用する、 **HardwareID**または**CompatibleID**レジストリ サブキーがの規則に基づいた、 [LocationPaths](locationpaths-registry-subkey.md)または[ChildLocationPaths](childlocationpaths-registry-subkey.md)レジストリのサブキーのオーバーライドを指定します。 たとえば場合、 **\\** * 内のレジストリ サブキーが指定されて、 **LocationPaths**サブキー、識別されたデバイスのすべての親 devnode にリムーバブル デバイスの機能の上書きが適用されます親を**HardwareID**または**CompatibleID**レジストリ サブキー。
+**\*** レジストリサブキーは、 **HardwareID**または**CompatibleID** [LocationPaths](locationpaths-registry-subkey.md) レジストリサブキーによって指定されたすべての devnodes に、locationpaths の規則に基づいてリムーバブルデバイスの機能オーバーライドを適用します。Override に指定された [ChildLocationPaths](childlocationpaths-registry-subkey.md) レジストリサブキー。 たとえば、 **\*** レジストリサブキーが**locationpaths**サブキー内に指定されている場合、親**HardwareID**または**によって識別されるデバイスのすべての親 devnodes に、リムーバブルデバイスの機能の上書きが適用されます。互換 Id**レジストリサブキー。
 
-次の表形式およびの要件の定義、 **\\** * レジストリ サブキー。
+次の表は、 **\*** レジストリサブキーの形式と要件を定義しています。
 
-| レジストリ サブキーの名前 | 必須/省略可能 | 形式の要件 | 親のサブキー                                                                                                      | 子のサブキー |
+| レジストリサブキー名 | 必須/省略可能 | 形式の要件 | 親サブキー                                                                                                      | 子サブキー |
 |----------------------|-------------------|---------------------|--------------------------------------------------------------------------------------------------------------------|---------------|
-| \*                   | 省略可能          | なし                | [LocationPaths](locationpaths-registry-subkey.md)または[ChildLocationPaths](childlocationpaths-registry-subkey.md) | なし          |
+| \*                   | 省略可能          | なし                | [Locationpaths](locationpaths-registry-subkey.md)または[childlocationpaths](childlocationpaths-registry-subkey.md) | なし          |
 
  
 
-いずれか、 [LocationPath](locationpath-registry-subkey.md)または **\\** * レジストリ サブキーをリムーバブル デバイスの機能のスコープのオーバーライドを示すために存在する必要があります。
+リムーバブルデバイスの機能の上書きのスコープを示すには、 [Locationpath](locationpath-registry-subkey.md)または **\*** レジストリサブキーが存在している必要があります。
 
-\*レジストリ サブキーを含める必要があります、**リムーバブル**かどうか、デバイスがリムーバブルであるかどうかを指定する DWORD の値。 次の表は、有効な定義**リムーバブル**値。
+@No__t 0 レジストリサブキーには、デバイスがリムーバブルかどうかを指定する**リムーバブル**DWORD 値を含める必要があります。 次の表では、有効な**リムーバブル**値を定義します。
 
 | リムーバブル値 | 説明                                                 |
 |-----------------|-------------------------------------------------------------|
-| 0               | 該当する devnode 削除不可と見なされます |
-| 1               | 該当する devnode をリムーバブルと見なす     |
-
- 
-
- 
-
- 
-
-
-
-
-
+| 0               | 適用可能な devnodes は、リムーバブルでないと見なされます。 |
+| 1               | 適用可能な devnodes は、リムーバブルと見なす必要があります。     |

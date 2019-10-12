@@ -1,52 +1,39 @@
 ---
-title: デバッガーのデータ モデルの C++ インターフェイスの概要
-description: このトピックでは、デバッガー データ モデルの C++ インターフェイスを拡張し、デバッガーの機能をカスタマイズの概要を示します。
-ms.date: 04/09/2019
-ms.openlocfilehash: de9859083d6ede03b0f9cd6a82e0beeca961eda4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+title: デバッガーデータモデルC++のインターフェイスの概要
+description: このトピックでは、デバッガーの機能を拡張C++およびカスタマイズするためのデバッガーデータモデルインターフェイスの概要について説明します。
+ms.date: 09/12/2019
+ms.openlocfilehash: 1f92d9eb8b8095ccbe3d486b027e2c6259da810a
+ms.sourcegitcommit: 3b7c8b3cb59031e0f4e39dac106c1598ad108828
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375030"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70930381"
 ---
 # <a name="debugger-data-model-c-overview"></a>Debugger Data Model C++ の概要
 
-このトピックでは、デバッガーのデータ モデルの C++ インターフェイスを使用して拡張およびデバッガーの機能をカスタマイズする方法の概要を示します。
+このトピックでは、デバッガーのデータモデルC++インターフェイスを使用して、デバッガーの機能を拡張およびカスタマイズする方法の概要について説明します。
 
-このトピックでは、C、C++ ベースのデバッガーの拡張機能の構築に使用する方法および作成する方法からアクセスできるインターフェイスについて説明するシリーズのパートの他のデータ モデルの構成要素を使用して (例。JavaScript または NatVis) C データ モデルの拡張機能から。
+このトピックは、からC++アクセス可能なインターフェイス、それらを使用してC++ベースのデバッガー拡張機能を構築する方法、および他のデータモデル構造を使用する方法について説明したシリーズの一部です (例:JavaScript または NatVis) をC++データモデル拡張機能から。
 
-[デバッガー データ モデルの C++ の概要](data-model-cpp-overview.md)
+[デバッガーデータモデルC++の概要](data-model-cpp-overview.md)
 
-[デバッガーのデータ モデルの C++ インターフェイス](data-model-cpp-interfaces.md)
+[デバッガーデータモデルC++のインターフェイス](data-model-cpp-interfaces.md)
 
-[デバッガーのデータ モデルの C++ オブジェクト](data-model-cpp-objects.md)
+[デバッガーデータモデルC++オブジェクト](data-model-cpp-objects.md)
 
-[デバッガーのデータ モデルの C++ の追加インターフェイス](data-model-cpp-additional-interfaces.md)
+[デバッガーデータモデルC++の追加インターフェイス](data-model-cpp-additional-interfaces.md)
 
-[デバッガーのデータ モデルの C の概念](data-model-cpp-concepts.md)
+[デバッガーデータモデルC++の概念](data-model-cpp-concepts.md)
 
-[デバッガー データ モデルの C++ のスクリプト](data-model-cpp-scripting.md)
-
----
-
-## <a name="topic-sections"></a>トピックのセクション
-
-このトピックは次のセクションで構成されます。
-
-[デバッガー データ モデルの C++ インターフェイスの概要](#overview)
-
-[デバッガー データのモデル インターフェイスの概要](#summary)
-
-[DbgModelClientEx ライブラリを使用します。](#dbgmodelclientex)
-
+[デバッガーデータモデルC++のスクリプト](data-model-cpp-scripting.md)
 
 ---
 
-## <a name="span-idoverview-overview-of-the-debugger-data-model-c-interface"></a><span id="overview"> デバッガー データ モデルの C++ インターフェイスの概要
+## <a name="span-idoverview-overview-of-the-debugger-data-model-c-interface"></a><span id="overview">デバッガーデータモデルC++インターフェイスの概要
 
-このデバッガー データ モデルは、新しいデバッガー拡張機能 (JavaScript、NatVis、C++ で記述されたものを含む) でデバッガーからの情報を利用したり、デバッガーや他の拡張機能からアクセスできる情報を生成したりするしくみの中心となる、拡張可能なオブジェクト モデルです。 データ モデルの Api に書き込まれるコンストラクトでは、拡張機能の JavaScript または C++ の拡張機能から、デバッガーの新しい (dx) 式エバリュエーターでも使用できます。 
+このデバッガー データ モデルは、新しいデバッガー拡張機能 (JavaScript、NatVis、C++ で記述されたものを含む) でデバッガーからの情報を利用したり、デバッガーや他の拡張機能からアクセスできる情報を生成したりするしくみの中心となる、拡張可能なオブジェクト モデルです。 データモデル Api に書き込まれるコンストラクトは、デバッガーの新しい (dx) 式エバリュエーターだけでなく、JavaScript の拡張機能やC++拡張機能からも使用できます。 
 
-デバッガーのデータ モデルの目的を示すためには、この従来のデバッガー コマンドを検討してください。
+デバッガーデータモデルの目標を示すために、この従来のデバッガーコマンドを考えてみましょう。
 
 ```console
 0: kd> !process 0 0 
@@ -56,102 +43,102 @@ PROCESS ffffe0007e6a7780
     Image: echoapp.exe
 ...
 ```
-デバッガー コマンドがバイナリ マスクを使用して、非標準の方法でのみ出力テキストを提供します。 テキスト出力が消費する、書式設定、または拡張が困難とレイアウトはこのコマンドを特定します。
+デバッガーコマンドはバイナリマスクを使用しており、標準以外の方法でテキストのみの出力を提供します。 テキスト出力は、使用、書式設定、または拡張が困難であり、レイアウトはこのコマンドに固有です。
 
-これをデバッガーのデータ モデルに対し[dx (表示デバッガー オブジェクト モデルの式)](https://docs.microsoft.com/windows-hardware/drivers/debugger/dx--display-visualizer-variables-)コマンド。
+デバッガーデータモデル[dx (Display Debugger Object Model Expression)](https://docs.microsoft.com/windows-hardware/drivers/debugger/dx--display-visualizer-variables-)コマンドと比較します。
 
 ```console
 dx @$cursession.Processes.Where(p => p.Threads.Count() > 5)
 ```
-このコマンドは、探索可能な拡張性および統一された方法でコンポーザブルである標準的なデータ モデルを使用します。
+このコマンドは、単一の方法で、検出可能で拡張可能で、コンポーザブルな標準データモデルを使用します。
 
-論理的にモ ノの間隔と、特定のオブジェクトに対する拡張名は、デバッガーの拡張機能の検出できます。  
+特定のオブジェクトに対して論理的な名前のスペーシングと拡張を行うと、デバッガー拡張機能の検出が可能になります。  
 
 > [!TIP]
-> ため、データ モデルC++オブジェクト インターフェイスを完全に実装するために非常に冗長になることができますC++データ モデルを完全に使用するためのヘルパー ライブラリC++例外とプログラミング パラダイムでテンプレートをお勧めします。 詳細については、次を参照してください。 [DbgModelClientEx ライブラリを使用して](#dbgmodelclientex)このトピックで後述します。
+> データモデルC++オブジェクトインターフェイスは、完全C++ C++な例外とテンプレートのプログラミングパラダイムを使用するデータモデルの完全なヘルパーライブラリを実装するために、非常に冗長になる可能性があるため、お勧めします。 詳細については、このトピックで後述する「 [DbgModelClientEx ライブラリの使用](#dbgmodelclientex)」を参照してください。
 >
 
-データ モデルは、方法を新しい[WinDbg プレビュー](debugging-using-windbg-preview.md)デバッガー、ほとんどの機能が表示されます。 新しい UI の多くの要素のクエリを実行、拡張、またはデータ モデルで電源が入っているため、スクリプト化します。 詳細については、次を参照してください。 [WinDbg Preview - データ モデル](windbg-data-model-preview.md)します。
+データモデルは、新しい[WinDbg Preview](debugging-using-windbg-preview.md)デバッガーが最も多くのことを表示する方法です。 新しい UI の多くの要素は、データモデルが使用されているため、クエリ、拡張、またはスクリプト化が可能です。 詳細については、「 [WinDbg Preview-Data Model](windbg-data-model-preview.md)」を参照してください。
 
-![データ モデルの詳細 ウィンドウが表示されたプロセスとスレッド](images/windbgx-data-model-process-threads.png)
+![プロセスとスレッドを示すデータモデルの探索ウィンドウ](images/windbgx-data-model-process-threads.png)
 
 
-### <a name="data-model-architectural-view"></a>データ モデルのアーキテクチャの表示
+### <a name="data-model-architectural-view"></a>データモデルのアーキテクチャビュー
 
-次の図は、デバッガーのデータ モデルのアーキテクチャの主要な要素をまとめたものです。
+次の図は、デバッガーデータモデルアーキテクチャの主要な要素をまとめたものです。
 
-- 左側にあるには、オブジェクトへのアクセスを提供して、LINQ クエリとは、このような機能をサポート、UI 要素が表示されます。  
-- 図の右側にある、デバッガーのデータ モデルにデータを提供するコンポーネントです。 これには、カスタム NatVis、JavaScript および C++ デバッガー データ モデルの拡張機能が含まれます。 
+- 左側には、オブジェクトへのアクセスを提供し、LINQ クエリなどの機能をサポートする UI 要素が表示されます。  
+- 図の右側には、デバッガーデータモデルにデータを提供するコンポーネントがあります。 これには、カスタムの NatVis C++ 、JavaScript、およびデバッガーデータモデルの拡張機能が含まれます。 
 
-![データ モデルのアーキテクチャの表示](images/data-model-simple-architectural-view.png)
+![データモデルのアーキテクチャビュー](images/data-model-simple-architectural-view.png)
 
 
 ### <a name="object-model"></a>オブジェクト モデル
 
-デバッガーのデータ モデルの中心は IModelObject インターフェイスのインスタンスのすべての uniform オブジェクト表現です。  このようなオブジェクトを表すことがあります組み込み中 (例:: 整数値) と、別のデータ モデル インターフェイスでは、多くの場合を表すメタデータ/キー/値のタプルのディクショナリと一連の抽象の動作を説明する概念 – 動的オブジェクトです。   
+デバッガーデータモデルの中心にあるのは、すべてが IModelObject インターフェイスのインスタンスである、統一されたオブジェクト表現です。  このようなオブジェクトは、組み込み (たとえば、整数値) または別のデータモデルインターフェイスを表す場合がありますが、多くの場合、動的オブジェクト (キー/値/メタデータタプルのディクショナリ) と、抽象動作を記述する一連の概念を表します。   
 
-この図は、IModelObject で、プロバイダーは、作成、登録、および操作する値を含むキー ストアを使用する方法を示します。
+この図は、IModelObject がキーストアを使用して、プロバイダーが作成、登録、および操作できる値を格納する方法を示しています。
 
-- 表示、*プロバイダー*、オブジェクト モデルへの情報を提供します。
-- 左側の表示、 *IModelObject*オブジェクトを操作するために使用される共通のオブジェクト モデルは。
-- 中央には、*キー ストア*保存し、値のアクセスに使用されます。
-- 下部に表示*概念*表示可能な文字列に変換したり、インデックスを作成する機能などの機能を持つオブジェクトをサポートします。
+- オブジェクトモデルに情報を提供する*プロバイダー*を示します。
+- 左側には、オブジェクトの操作に使用される共通のオブジェクトモデルである*Imodelobject*が表示されます。
+- センターは、値の格納とアクセスに使用される*キーストア*です。
+- 下部には、表示可能な文字列への変換やインデックス作成などの機能を備えたオブジェクトをサポートする*概念*が示されています。
 
-![データ モデルのアーキテクチャの表示](images/data-model-object-model.png)
-
-
-### <a name="the-data-model-a-consumer-view"></a>データ モデル:コンシューマー ビュー
-
-次の図は、データ モデルのコンシューマー全体を表示します。 例では、 [dx (表示デバッガー オブジェクト モデルの式)](https://docs.microsoft.com/windows-hardware/drivers/debugger/dx--display-visualizer-variables-)コマンドは、情報の照会に使用されています。 
-
-- Dx コマンドは、シリアライザーにオブジェクトの列挙体インターフェイスを介して通信します。 
-- IDebugHost * オブジェクトは、デバッガー エンジンから情報を収集するために使用されます。 
-- 式は、セマンティックの評価者は、デバッガー エンジンに要求を送信に使用されます。
-
-![データ モデルのアーキテクチャの表示](images/data-model-consumer-view.png)
+![データモデルのアーキテクチャビュー](images/data-model-object-model.png)
 
 
-### <a name="the-data-model-a-producer-view"></a>データ モデル:プロデューサー ビュー
+### <a name="the-data-model-a-consumer-view"></a>データモデル:コンシューマービュー
 
-この図は、データ モデルのプロデューサー ビューを示しています。
+次の図は、データモデルのコンシューマービューを示しています。 この例では、 [dx (Display Debugger Object Model Expression)](https://docs.microsoft.com/windows-hardware/drivers/debugger/dx--display-visualizer-variables-)コマンドを使用して情報を照会しています。 
 
-- NatVis プロバイダーは、追加の機能を定義する XML を使用する左側に表示されます。
-- JavaScript のプロバイダーが利用できます*動的プロバイダーの概念*リアルタイムで情報を操作します。
-- 下部には、追加の機能を定義することもをネイティブ コード プロバイダーが表示されます。
+- Dx コマンドは、シリアライザーを介してオブジェクト列挙インターフェイスに通信します。 
+- IDebugHost * オブジェクトは、デバッガーエンジンから情報を収集するために使用されます。 
+- 式とセマンティックエバリュエーターは、要求をデバッガーエンジンに送信するために使用されます。
 
-![データ モデルのアーキテクチャの表示](images/data-model-producer-view.png)
-
-
-### <a name="data-model-manager"></a>データ モデルのマネージャー 
-
-この図では、データ モデルのマネージャーは、オブジェクトの管理が再生される中心的役割を示します。
-
-- データ モデルのマネージャーは、すべてのオブジェクトのサーバーの全体のレジストラーとして機能します。 
-- 左側の要素を示しています標準デバッガー セッションとプロセスが登録されているようです。
-- 名前空間ブロックには、集中登録一覧が表示されます。
-- 図の右側にあるは、下部にある 2 つのプロバイダーが一番上に、NatVis および C と C++ の拡張機能のいずれかを示します。
-
-![データ モデルのアーキテクチャの表示](images/data-model-manager.png)
+![データモデルのアーキテクチャビュー](images/data-model-consumer-view.png)
 
 
-## <a name="span-idsummary-summary-of-debugger-data-model-interfaces"></a><span id="summary"> デバッガー データのモデル インターフェイスの概要
+### <a name="the-data-model-a-producer-view"></a>データモデル:プロデューサービュー
 
-多数のさまざまなデータ モデルの配置を構成するための C++ インターフェイスがあります。 これらのインターフェイスを実現するには、一貫性のある簡単な方法で、するには [全般] カテゴリで分類がされます。 ここで、メインの領域は、: 
+この図は、データモデルのプロデューサービューを示しています。
 
-**一般的なオブジェクト モデル**
+- 追加機能を定義する XML を使用する NatVis プロバイダーが左側に表示されます。
+- JavaScript プロバイダーは*動的プロバイダーの概念*を利用して、リアルタイムで情報を操作できます。
+- 下部には、追加の機能を定義できるネイティブコードプロバイダーが示されています。
 
-最初、最も重要な一連のインターフェイスは、コア データ モデルへのアクセスを取得する方法とアクセスし、オブジェクトを操作する方法を定義します。 IModelObject はデータ モデルのすべてのオブジェクトを表すインターフェイス (よく似たC#'s オブジェクト)。 これは、メインのコンシューマーとプロデューサーがデータ モデルへの関心のあるインターフェイスです。 その他のインターフェイスは、オブジェクトのさまざまな側面にアクセスするための機構です。 このカテゴリには、次のインターフェイスが定義されています。 
+![データモデルのアーキテクチャビュー](images/data-model-producer-view.png)
 
 
-*DbgEng とデータ モデルの間のブリッジ*
+### <a name="data-model-manager"></a>データモデルマネージャー 
+
+この図は、データモデルマネージャーがオブジェクトの管理において果たす中心的な役割を示しています。
+
+- データモデルマネージャーは、すべてのオブジェクトの中央レジストラーとして機能します。 
+- 左側には、セッションやプロセスなどの標準的なデバッガー要素がどのように登録されているかが示されます。
+- 名前空間ブロックには、中央登録リストが表示されます。
+- ダイアグラムの右側には、2つのプロバイダーが表示されます。1つは一番上C++に NatVis、もう1つは C/拡張です。
+
+![データモデルのアーキテクチャビュー](images/data-model-manager.png)
+
+
+## <a name="span-idsummary-summary-of-debugger-data-model-interfaces"></a><span id="summary">デバッガーデータモデルインターフェイスの概要
+
+データモデルのさまざまなC++部分を構成するインターフェイスが多数あります。 これらのインターフェイスを一貫した簡単な方法で解決するために、一般的なカテゴリ別に分類されています。 主な領域は次のとおりです。 
+
+**一般的なオブジェクトモデル**
+
+最初の最も重要なインターフェイスセットは、コアデータモデルにアクセスする方法と、オブジェクトにアクセスして操作する方法を定義します。 IModelObject は、データモデル内のすべてのオブジェクト (のオブジェクトなどC#) を表すインターフェイスです。 これは、のコンシューマーとデータモデルに対するプロデューサーの両方にとって重要なインターフェイスです。 その他のインターフェイスは、オブジェクトのさまざまな側面にアクセスするための機構です。 このカテゴリには、次のインターフェイスが定義されています。 
+
+
+*DbgEng とデータモデル間のブリッジ*
 
 [IHostDataModelAccess](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nn-dbgmodel-ihostdatamodelaccess) 
 
-*メイン インターフェイス* 
+*メインインターフェイス* 
 
 [IModelObject](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nn-dbgmodel-imodelobject) 
 
-[IKeyStore](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nn-dbgmodel-ikeystore) 
+[IKeyStore ストア](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nn-dbgmodel-ikeystore) 
 
 [IModelIterator](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nn-dbgmodel-imodeliterator) 
 
@@ -165,7 +152,7 @@ dx @$cursession.Processes.Where(p => p.Threads.Count() > 5)
 
 [IModelKeyReference](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nn-dbgmodel-imodelkeyreference)  / [IModelKeyReference2](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nn-dbgmodel-imodelkeyreference2) 
 
-*インターフェイスの概念*
+*概念インターフェイス*
 
 [IStringDisplayableConcept](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nn-dbgmodel-istringdisplayableconcept) 
 
@@ -182,28 +169,28 @@ dx @$cursession.Processes.Where(p => p.Threads.Count() > 5)
 [IDynamicConceptProviderConcept](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nn-dbgmodel-idynamicconceptproviderconcept) 
 
 
-**データの管理モデルと機能拡張**
+**データモデルと拡張性の管理**
 
-データ モデルのマネージャーを管理するコア コンポーネントは、すべての機能拡張が実行されます。 これは、一連の拡張ポイントと拡張機能ポイントに代理の構成要素に両方のネイティブ型をマップするテーブルの中央のリポジトリ。 さらに、オブジェクト (IModelObject への序数値または文字列の変換) のボックス化の原因となっているエンティティになります。 
+データモデルマネージャーは、すべての機能拡張がどのように行われるかを管理する主要なコンポーネントです。 これは、ネイティブ型の両方を拡張ポイントにマップする一連のテーブルの中央リポジトリです。また、拡張ポイントへの合成コンストラクトでもあります。 また、オブジェクトのボックス化 (序数値または文字列の IModelObject への変換) を担当するエンティティです。 
 
 このカテゴリには、次のインターフェイスが定義されています。 
 
-*一般的なデータ モデルのマネージャーへのアクセス* 
+*一般データモデルマネージャーへのアクセス* 
 
 [IDataModelManager](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nn-dbgmodel-idatamodelmanager)  / [IDataModelManager2](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nn-dbgmodel-idatamodelmanager2) 
 
-*スクリプトの管理* 
+*スクリプト管理* 
 
 [IDataModelScriptManager](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nn-dbgmodel-idatamodelscriptmanager) 
 
 [IDataModelScriptProviderEnumerator](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nn-dbgmodel-idatamodelscriptproviderenumerator) 
 
 
-**デバッガーの型システムとのメモリ領域へのアクセス**
+**デバッガーの型システムとメモリスペースへのアクセス**
 
-デバッガーの基になる型システム、メモリ スペースがさせる拡張機能の詳細で公開されるを使用します。 このカテゴリには、次のインターフェイスが定義されています。 
+基になる型システムとデバッガーのメモリ領域は、を使用するための拡張機能について詳細に公開されています。 このカテゴリには、次のインターフェイスが定義されています。 
 
-*全般的なホスト (デバッガー) インターフェイス*
+*汎用ホスト (デバッガー) インターフェイス*
 
 [IDebugHost](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nn-dbgmodel-idebughost) 
 
@@ -219,7 +206,7 @@ dx @$cursession.Processes.Where(p => p.Threads.Count() > 5)
 
 [IDebugHostExtensibility](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nn-dbgmodel-idebughostextensibility) 
 
-*ホスト (デバッガー) の型システムのインターフェイス* 
+*ホスト (デバッガー) 型システムインターフェイス* 
 
 [IDebugHostSymbols](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nn-dbgmodel-idebughostsymbols) 
 
@@ -242,18 +229,18 @@ dx @$cursession.Processes.Where(p => p.Threads.Count() > 5)
 
 [IDebugHostTypeSignature](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nn-dbgmodel-idebughosttypesignature) 
 
-*スクリプトのホスト (デバッガー) のサポート* 
+*ホスト (デバッガー) でのスクリプトのサポート* 
 
 [IDebugHostScriptHost](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nn-dbgmodel-idebughostscripthost) 
 
 
-**作成とスクリプトを利用**
+**スクリプトの作成と使用**
 
-データ モデルでは、どのようなスクリプトは、いずれかをデバッグする方法の一般的な概念もあります。 デバッガー拡張が登場し、データ モデルと別の動的言語 (通常はスクリプト環境) 間の一般的なブリッジを定義することが可能になります。 この一連のインターフェイスを実現する方法も UI と、デバッガーがこのようなスクリプトの使用方法です。 
+データモデルには、スクリプトの概要とデバッグ方法に関する一般的な概念もあります。 デバッガー拡張機能を使用して、データモデルと別の動的言語 (通常はスクリプト環境) の間に一般的なブリッジを定義することは、まったく可能です。 この一連のインターフェイスは、デバッガーの UI がこのようなスクリプトをどのように活用できるかということです。 
 
 このカテゴリには、次のインターフェイスが定義されています。 
 
-*全般スクリプト インターフェイス* 
+*一般的なスクリプトインターフェイス* 
 
 [IDataModelScriptProvider](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nn-dbgmodel-idatamodelscript) 
 
@@ -270,7 +257,7 @@ dx @$cursession.Processes.Where(p => p.Threads.Count() > 5)
 [IDataModelNameBinder](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nn-dbgmodel-idatamodelnamebinder) 
 
 
-*スクリプト デバッガー インターフェイス* 
+*スクリプトデバッガーのインターフェイス* 
 
 [IDataModelScriptDebug](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nn-dbgmodel-idatamodelscriptdebug) 
 
@@ -287,62 +274,60 @@ dx @$cursession.Processes.Where(p => p.Threads.Count() > 5)
 [IDataModelScriptDebugBreakpointEnumerator](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nn-dbgmodel-idatamodelscriptdebugbreakpointenumerator) 
 
 
-## <a name="span-iddbgmodelclientex-using-the-dbgmodelclientex-library"></a><span id="dbgmodelclientex"> DbgModelClientEx ライブラリを使用します。
+## <a name="span-iddbgmodelclientex-using-the-dbgmodelclientex-library"></a><span id="dbgmodelclientex">DbgModelClientEx ライブラリの使用
 
 **概要**
 
-データ モデルC++データ モデルにオブジェクトのインターフェイスを実装するために非常に冗長になることができます。 さまざまなデータ モデルを拡張する小規模なインターフェイスの実装に必要なデータ モデルの完全な操作は、許可、(例:: IModelPropertyAccessor 追加される各動的 fetchable プロパティの実装)。 さらに、HRESULT ベースのプログラミング モデルは、大量のエラー チェックに使用されるボイラー プレート コードを追加します。
+データモデルへC++のデータモデルオブジェクトインターフェイスは、実装するには非常に詳細にすることができます。 データモデルの完全な操作は可能ですが、データモデルを拡張するには、いくつかの小さなインターフェイスを実装する必要があります (たとえば、追加される動的フェッチ可能なプロパティごとに IModelPropertyAccessor の実装を実装する必要があります)。 これに加えて、HRESULT ベースのプログラミングモデルでは、エラーチェックに使用される大量のボイラープレートコードが追加されています。
 
-この作業の一部を最小限に抑えるためには、完全なC++データ モデルを完全に使用するためのヘルパー ライブラリC++例外とテンプレートのプログラミング パラダイムです。 このライブラリの使用を消費したり、データ モデルを拡張するときより簡潔なコードをできるようにお勧めします。
+この作業の一部を最小限に抑えるために、完全C++ C++な例外とテンプレートのプログラミングパラダイムを使用するデータモデルの完全なヘルパーライブラリが用意されています。 このライブラリを使用すると、データモデルを使用したり拡張したりするときに、より簡潔なコードを使用することをお勧めします。
 
-ヘルパー ライブラリには、2 つの重要な名前空間があります。
+ヘルパーライブラリには、次の2つの重要な名前空間があります。
 
-Debugger::DataModel::ClientEx - データ モデルの使用量のヘルパー
+デバッガー::D ataModel:: ClientEx-データモデルの使用に関するヘルパー
 
-Debugger::DataModel::ProviderEx - データ モデルを拡張するためのヘルパー
+デバッガー::D ataModel::P roviderEx-データモデルの拡張のヘルパー
 
-DbgModelClientEx ライブラリを使用する方法については、この github サイトで readme ファイルを参照してください。
+DbgModelClientEx ライブラリの使用方法の詳細については、この github サイトの readme ファイルを参照してください。
 
 https://github.com/Microsoft/WinDbg-Libraries/tree/master/DbgModelCppLib
 
 
-**HelloWorldC++サンプル**
+**HelloWorld C++サンプル**
 
-DbgModelClientEx ライブラリの使用方法を表示するには、データ モデルの HelloWorld を参照してください。C++こちらのサンプルです。
+DbgModelClientEx ライブラリを使用する方法については、こちらのデータモデルC++の HelloWorld サンプルを参照してください。
 
 https://github.com/Microsoft/WinDbg-Samples/tree/master/DataModelHelloWorld
 
-このサンプルは次のとおりです。
+このサンプルには次のものが含まれます。
 
-- HelloProvider.cpp - これは、追加する新しいプロパティの例「こんにちは」に、デバッガーの概念、プロセスのプロバイダー クラスの実装です。
+- HelloProvider-これは、デバッガーのプロセスの概念に "Hello" という新しい例を追加するプロバイダークラスの実装です。
 
-- SimpleIntroExtension.cpp - これは、新しいプロパティを追加の例「こんにちは」に、デバッガーの概念、プロセスの簡単なデバッガー拡張機能です。 この拡張機能は、データ モデル c++ 17 ヘルパー ライブラリに対して書き込まれます。  生の COM ABI に必要なグルー コードの量 (および複雑さ) ではなく、このライブラリに対して拡張機能を記述することをお勧めまでになります。
+- SimpleIntroExtension-これは、デバッガーのプロセスの概念に "Hello" という新しい例を追加する単純なデバッガー拡張機能です。 この拡張機能は、データモデル C++ 17 ヘルパーライブラリに対して記述されています。  必要なグルーコードのボリューム (および複雑さ) のため、未加工の COM ABI ではなく、このライブラリに対して拡張機能を作成することをお勧めします。
 
 
 **JavaScript と COM のサンプル**
 
-データ モデルとデバッガー拡張機能を記述するさまざまな方法を理解するためにあるはデータ モデルの HelloWorld 拡張機能の 3 つのバージョン。
+データモデルを使用してデバッガー拡張機能を記述するさまざまな方法について理解を深めるために、次の3つのバージョンのデータモデル HelloWorld 拡張機能を使用できます。
 
 https://github.com/Microsoft/WinDbg-Samples/tree/master/DataModelHelloWorld
 
-- JavaScript の JavaScript で記述されたバージョン
+- JavaScript-JavaScript で記述されたバージョン
 
-- C++ 17 - 17 のクライアント ライブラリ、データ モデルでは c++ に対して記述されたバージョン
+- C++ 17-データモデル C++ 17 クライアントライブラリに対して作成されたバージョン
 
-- COM の (WRL を使用して、COM ヘルパー) のみ、生の COM ABI に対して記述されたバージョン
+- COM-未加工の COM ABI に対して記述されたバージョン (COM ヘルパーに WRL を使用する場合のみ)
 
 ---
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
-[デバッガー データ モデルの C++ の概要](data-model-cpp-overview.md)
+[デバッガーデータモデルC++のインターフェイス](data-model-cpp-interfaces.md)
 
-[デバッガーのデータ モデルの C++ インターフェイス](data-model-cpp-interfaces.md)
+[デバッガーデータモデルC++オブジェクト](data-model-cpp-objects.md)
 
-[デバッガーのデータ モデルの C++ オブジェクト](data-model-cpp-objects.md)
+[デバッガーデータモデルC++の追加インターフェイス](data-model-cpp-additional-interfaces.md)
 
-[デバッガーのデータ モデルの C++ の追加インターフェイス](data-model-cpp-additional-interfaces.md)
+[デバッガーデータモデルC++の概念](data-model-cpp-concepts.md)
 
-[デバッガーのデータ モデルの C の概念](data-model-cpp-concepts.md)
-
-[デバッガー データ モデルの C++ のスクリプト](data-model-cpp-scripting.md)
+[デバッガーデータモデルC++のスクリプト](data-model-cpp-scripting.md)
