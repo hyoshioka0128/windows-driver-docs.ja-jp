@@ -122,10 +122,12 @@
           href: storage-port-drivers.md
         - name: SCSI ポート ドライバー
           items:
-            - name: SCSI ポート ドライバー
-              href: scsi-port-driver.md
+            - name: SCSI ポート ドライバーの概要
+              href: scsi-port-driver-overview.md
             - name: SCSI ポートによって提供される機能
               href: capabilities-provided-by-scsi-port.md
+            - name: SCSI ポート ドライバーのサポート ルーチン
+              href: scsi-port-driver-support-routines.md
             - name: SCSI ポートの記憶域クラス ドライバーとのインターフェイス
               items:
                 - name: SCSI ポートの記憶域クラス ドライバーとのインターフェイス
@@ -168,8 +170,8 @@
                   href: capabilities-provided-by-storport.md
                 - name: Storport ドライバーのサポート ルーチン
                   href: storport-driver-support-routines.md
-                - name: Storport ドライバーのミニポート ルーチン
-                  href: storport-driver-miniport-routines.md
+                - name: Storport ミニポート ドライバー ルーチン
+                  href: storport-miniport-driver-routines.md
             - name: Storport と記憶域クラス ドライバーとのインターフェイス
               items:
                 - name: Storport と記憶域クラス ドライバーとのインターフェイス
@@ -248,12 +250,14 @@
                   href: setting-port-configuration-information-with-storport.md
         - name: ATA ポート ドライバー
           items:
-            - name: ATA ポート ドライバー
-              href: ata-port-driver.md
+            - name: ATA ポート ドライバーの概要
+              href: ata-port-driver-overview.md
             - name: ATA ポートと記憶域クラス ドライバーとのインターフェイス
               href: ata-port-s-interface-with-the-storage-class-driver.md
             - name: ATA ポートと ATA ミニポート ドライバーとのインターフェイス
               href: ata-port-s-interface-with-ata-miniport-drivers.md
+            - name: ATA ポート ドライバーのサポート ルーチン
+              href: ata-port-driver-support-routines.md
             - name: ATA ポート I/O モデル
               items:
                 - name: ATA ポート I/O モデル
@@ -308,10 +312,10 @@
               href: restrictions-on-scsi-miniport-drivers-that-manage-the-boot-drive.md
             - name: SCSI ミニポート ドライバーでのエラー処理
               href: error-handling-in-scsi-miniport-drivers.md
-            - name: 必須およびオプションの SCSI ミニポート ドライバー ルーチン
+            - name: SCSI ミニポート ドライバー ルーチン
               items:
-                - name: 必須およびオプションの SCSI ミニポート ドライバー ルーチン
-                  href: required-and-optional-scsi-miniport-driver-routines.md
+                - name: SCSI ミニポート ドライバー ルーチン
+                  href: scsi-miniport-driver-routines.md
                 - name: SCSI ミニポート ドライバーの DriverEntry ルーチン
                   href: scsi-miniport-driver-s-driverentry-routine.md
                 - name: SCSI ミニポート ドライバーの DriverEntry
@@ -510,12 +514,14 @@
           href: cd-rom-io-control-codes.md
     - name: テープ ドライバー
       items:
-        - name: テープ ドライバー
-          href: tape-drivers.md
+        - name: テープ ドライバーの概要
+          href: tape-drivers-overview.md
         - name: テープ クラス ドライバーの使用
           href: using-the-tape-class-driver.md
-        - name: 必須およびオプションのテープ ミニクラス ルーチン
-          href: required-and-optional-tape-miniclass-routines.md
+        - name: テープ クラス ドライバー ルーチン
+          href: tape-class-driver-routines.md
+        - name: テープ ミニクラス ドライバー ルーチン
+          href: tape-miniclass-driver-routines.md
         - name: テープ ミニクラス ドライバーの DriverEntry
           href: driverentry-of-tape-miniclass-driver.md
         - name: オプションの拡張でのテープ ミニクラス コンテキストの格納
