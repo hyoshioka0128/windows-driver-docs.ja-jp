@@ -6,12 +6,12 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e6ede0f610177f62668402460f7d2dbf65a0f03
-ms.sourcegitcommit: 670763c23cd6940c97834418deade3e7db378f35
+ms.openlocfilehash: 236029136134c27eaa6e00b6d764db09dc99ea19
+ms.sourcegitcommit: f017184b00f59b088df87a5bd85fec51b7aed8b2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "71998533"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72313789"
 ---
 # <a name="windbg-preview---command-line-startup-options"></a>WinDbg プレビュー - コマンド ライン スタートアップ オプション
 
@@ -79,7 +79,7 @@ WinDbgX [options]
 |          -z*ダンプファイル*           |                                                                    デバッグするクラッシュダンプファイルの名前を指定します。 パスとファイル名にスペースが含まれている場合、引用符で囲む必要があります。                                                                    |
 | -openPrivateDumpByHandle*ハンドル* |                                                                                             *Microsoft 内部でのみ使用*します。 デバッグするクラッシュダンプファイルのハンドルを指定します。                                                                                               |
 |    -debugArch x86-または-amd64     |                                                                                                 自動検出動作をオーバーライドし、デバッガーのターゲットビットを設定します。                                                                                                 |
-|            ァイル            | 実行可能プロセスのコマンドラインを指定します。 これは、新しいプロセスを起動してデバッグするために使用されます。 これは、コマンドラインの最後の項目である必要があります。 実行可能ファイル名の後にあるすべてのテキストが、実行可能ファイルに引数文字列として渡されます。
+|            ァイル            | 実行可能プロセスのコマンドラインを指定します。 これは、新しいプロセスを起動してデバッグするために使用されます。 これは、コマンドラインの最後の項目である必要があります。 実行可能ファイル名の後にあるすべてのテキストが、実行可能ファイルに引数文字列として渡されます。                             |
 
 **シンボルのオプション**
 
