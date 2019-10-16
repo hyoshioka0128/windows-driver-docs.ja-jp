@@ -1,23 +1,23 @@
 ---
-title: ロケール
-description: ロケール
+title: Locale
+description: Locale
 ms.assetid: 1cf8d075-a1b3-4554-83d5-71fd5059c1c4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b42334d8726a9139214122d3b5d5fbed867171e2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
-ms.translationtype: HT
+ms.sourcegitcommit: f017184b00f59b088df87a5bd85fec51b7aed8b2
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558563"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72323629"
 ---
-# <a name="locale"></a>ロケール
+# <a name="locale"></a>Locale
 
 [!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
 
-ロケールの要素には、サービス メタデータ パッケージのロケールを指定します。 サービス メタデータ パッケージは、1 つまたは複数のロケールを指定できます。 複数のロケールを使用するに設定する必要があります、 [MultipleLocale](multiplelocale.md)要素**true**します。
+Locale 要素は、サービスメタデータパッケージのロケールを指定します。 サービスメタデータパッケージは、1つまたは複数のロケールを指定できます。 複数のロケールを使用するには、複数の[ロケール](multiplelocale.md)要素を**true**に設定する必要があります。
 
-## <a name="span-idusagespanspan-idusagespanspan-idusagespanusage"></a><span id="Usage"></span><span id="usage"></span><span id="USAGE"></span>使用状況
+## <a name="span-idusagespanspan-idusagespanspan-idusagespanusage"></a><span id="Usage"></span><span id="usage"></span><span id="USAGE"></span>ユーセジリンク
 
 
 ``` syntax
@@ -27,7 +27,7 @@ ms.locfileid: "56558563"
 </Locale>
 ```
 
-## <a name="span-idattributesspanspan-idattributesspanspan-idattributesspanattributes"></a><span id="Attributes"></span><span id="attributes"></span><span id="ATTRIBUTES"></span>属性
+## <a name="span-idattributesspanspan-idattributesspanspan-idattributesspanattributes"></a><span id="Attributes"></span><span id="attributes"></span><span id="ATTRIBUTES"></span>アトリビュート
 
 
 <table>
@@ -39,9 +39,9 @@ ms.locfileid: "56558563"
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
-<th>種類</th>
-<th>必須</th>
+<th>備わっている</th>
+<th>タスクバーの検索ボックスに</th>
+<th>必須かどうか</th>
 <th>説明</th>
 </tr>
 </thead>
@@ -49,20 +49,20 @@ ms.locfileid: "56558563"
 <tr class="odd">
 <td><p><strong>既定</strong></p></td>
 <td><p>xs:boolean</p></td>
-<td><p>〇</p></td>
-<td><p>True (1) または false (0) である必要があります。 かどうかの既定の属性は、このデバイス メタデータ パッケージのコンピューターの現在のロケールの既定値として、オペレーティング システムとは、true に設定します。</p></td>
+<td><p>[はい]</p></td>
+<td><p>True (1) または false (0) にする必要があります。 Default 属性が true に設定されている場合、オペレーティングシステムは、このデバイスメタデータパッケージをコンピューターの現在のロケールの既定値として使用します。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <a name="span-idchildelementsspanspan-idchildelementsspanspan-idchildelementsspanchild-elements"></a><span id="Child_elements"></span><span id="child_elements"></span><span id="CHILD_ELEMENTS"></span>子要素
+## <a name="span-idchild_elementsspanspan-idchild_elementsspanspan-idchild_elementsspanchild-elements"></a><span id="Child_elements"></span><span id="child_elements"></span><span id="CHILD_ELEMENTS"></span>子要素
 
 
 子要素はありません。
 
-## <a name="span-idparentelementsspanspan-idparentelementsspanspan-idparentelementsspanparent-elements"></a><span id="Parent_elements"></span><span id="parent_elements"></span><span id="PARENT_ELEMENTS"></span>親要素
+## <a name="span-idparent_elementsspanspan-idparent_elementsspanspan-idparent_elementsspanparent-elements"></a><span id="Parent_elements"></span><span id="parent_elements"></span><span id="PARENT_ELEMENTS"></span>親要素
 
 
 <table>
@@ -79,10 +79,10 @@ ms.locfileid: "56558563"
 <tbody>
 <tr class="odd">
 <td><p><a href="metadatakey.md" data-raw-source="[MetadataKey](metadatakey.md)">MetadataKey</a></p></td>
-<td><p><a href="metadatakey.md" data-raw-source="[MetadataKey](metadatakey.md)">MetadataKey</a>要素は、デバイス メタデータ パッケージの属性を指定します。 これには次のものがあります。</p>
+<td><p><a href="metadatakey.md" data-raw-source="[MetadataKey](metadatakey.md)">Metadatakey</a>要素は、デバイスメタデータパッケージの属性を指定します。 これには次のものがあります。</p>
 <ul>
-<li><p>デバイスでサポートされている各ハードウェア関数の識別子。</p></li>
-<li><p>言語固有のロケールをパッケージ内のテキスト文字列。</p></li>
+<li><p>デバイスでサポートされている各ハードウェア機能の識別子。</p></li>
+<li><p>パッケージ内のテキスト文字列の言語固有のロケール。</p></li>
 </ul></td>
 </tr>
 </tbody>
@@ -90,7 +90,7 @@ ms.locfileid: "56558563"
 
  
 
-## <a name="span-idxsdspanspan-idxsdspanxsd"></a><span id="XSD"></span><span id="xsd"></span>XSD
+## <a name="span-idxsdspanspan-idxsdspanxsd"></a><span id="XSD"></span><span id="xsd"></span>XSD.EXE
 
 
 ``` syntax
@@ -105,26 +105,26 @@ ms.locfileid: "56558563"
 </xs:complexType>
 ```
 
-## <a name="span-idremarksspanspan-idremarksspanspan-idremarksspanremarks"></a><span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>「解説」
+## <a name="span-idremarksspanspan-idremarksspanspan-idremarksspanremarks"></a><span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>注釈
 
 
--   ロケールの要素にできる *&lt;言語&gt;* - *&lt;リージョン&gt;* (EN-US) など、または *&lt;言語&gt;* (EN) など。 場合、 *&lt;言語&gt;* が設定された場合、パッケージがすべてに適用されます *&lt;言語&gt;* ロケール。 たとえば、英語は EN-US と EN BR. に適用されます。
+-   Locale 要素には *&lt;Language @ no__t-2*- *&lt;region @ no__t-6* (en-us など) または *&lt;LANGUAGE @ no__t* (en など) を指定できます。 *@No__t-1Language @ no__t*が設定されている場合、パッケージはすべて *&lt;language @ no__t-5*ロケールに適用されます。 たとえば、en は EN-US と EN に適用されます。
 
--   コンピューターの現在のロケールの既定値としてメタデータ パッケージを指定するには、設定、**既定**属性を**true** (1)。
+-   コンピューターの現在のロケールの既定値としてメタデータパッケージを指定するには、 **default**属性を**true** (1) に設定します。
 
-    **注**  サービス パッケージを 1 つだけのメタデータを設定する必要があります、**既定**属性を**true** (1)。 それ以外の場合、オペレーティング システムでは、ランダムにサービス メタデータ パッケージを選択します。
+    **注**   サービスに対して1つのメタデータパッケージのみが**既定**の属性を**true** (1) に設定する必要があります。 それ以外の場合、オペレーティングシステムはサービスのメタデータパッケージをランダムに選択します。
 
      
 
--   オペレーティング システムでは、表示するサービス メタデータ パッケージを選択するときは、次のように、ロケールの要素を使用します。
+-   オペレーティングシステムは、表示するサービスメタデータパッケージを選択すると、次のように Locale 要素を使用します。
 
-    1.  オペレーティング システムでは、システムが優先する言語と地域を取得します。 これは通常、Windows セットアップ中に構成します。
+    1.  オペレーティングシステムは、システムの優先言語と地域を取得します。 通常、これは Windows セットアップ中に構成されます。
 
-    2.  オペレーティング システムがサービスのパッケージを選択し、アイコンが使用されますサービス メタデータ パッケージのロケールの要素には、システムが優先する言語と地域が一致すると、および**ServiceProvider** (ServiceInfo.xml) から値をその言語と地域と一致します。
+    2.  サービスメタデータパッケージの Locale 要素がシステムの優先言語と地域に一致する場合、オペレーティングシステムはサービスのパッケージを選択し、その言語に対応する icon と**ServiceProvider**の値 (serviceinfo .xml) を使用します。およびリージョン。
 
-    3.  オペレーティング システムが言語中立的なアイコンに適用されます、サービス メタデータ パッケージが、推奨システムの言語に一致するロケールの要素を持たない場合、 **ServiceProvider**格納されている (ServiceInfo.xml) からの値サービス メタデータ パッケージのルート。
+    3.  サービスメタデータパッケージに、システムの優先言語と一致する Locale 要素がない場合、オペレーティングシステムは、のルートに格納されている言語に依存しないアイコンと**ServiceProvider**の値 (serviceinfo .xml) を適用します。サービスメタデータパッケージ。
 
-ロケールの要素が必要です。
+Locale 要素が必要です。
 
  
 

@@ -1,31 +1,31 @@
 ---
-title: PackageInfo の XML の例
-description: PackageInfo の XML の例
+title: PackageInfo XML の例
+description: PackageInfo XML の例
 ms.assetid: 4e514e79-d450-4cae-a40d-16ce86f95e43
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a3eb1ab27d978d8eaa79d9fdcfe7ad1b24637d2b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: f017184b00f59b088df87a5bd85fec51b7aed8b2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549267"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72323729"
 ---
-# <a name="packageinfo-xml-example"></a>PackageInfo の XML の例
+# <a name="packageinfo-xml-example"></a>PackageInfo XML の例
 
 [!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
 
-次の XML ドキュメントを使用して、 [PackageInfo XML スキーマ](packageinfo-xml-schema.md)仕入先のメタデータ パッケージのコンポーネントを指定します。
+次の XML ドキュメントでは、 [Packageinfo xml スキーマ](packageinfo-xml-schema.md)を使用して、ベンダーのメタデータパッケージのコンポーネントを指定しています。
 
-パッケージは、次のハードウェア ID を持つサービスには。
+パッケージは、次のハードウェア ID を持つサービス用です。
 
-MBAE:0:L9@E}} DT2 します。\*F65MQA57Y + L
+MBAE:0:L9@E}} DT2。 \*F65MQA57Y + L
 
-**注**  ハードウェア Id PackageInfo.xml に含まれている必要がありますが、"DOID:"プレフィックスを追加すること。
+**注**: packageinfo .xml に含まれる1つのハードウェア id には、"doid:" プレフィックスが追加されている必要があります。 @no__t
 
  
 
-パッケージは、EN-US ロケールの場合、ドキュメントがメタデータ パッケージのコンポーネントの既定のロケールとして設定することもです。
+パッケージは EN-US ロケール用でもあります。このロケールでは、ドキュメントはメタデータパッケージのコンポーネントの既定のロケールとして設定されます。
 
 ``` syntax
 <?xml version="1.0" encoding ="UTF-8" ?>

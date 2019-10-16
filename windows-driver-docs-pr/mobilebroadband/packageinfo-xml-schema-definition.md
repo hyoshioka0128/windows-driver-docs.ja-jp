@@ -5,17 +5,17 @@ ms.assetid: b0e4f800-816a-4d8b-a68b-56dc468caf52
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 36abf2dce152e816551fc8ea9c6d95ca9a41c0be
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: f017184b00f59b088df87a5bd85fec51b7aed8b2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570858"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72323605"
 ---
 # <a name="packageinfo-xml-schema-definition"></a>PackageInfo XML スキーマの定義
 
 [!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
 
-PackageInfo の XML スキーマの名前空間を次に示します。
+PackageInfo XML スキーマの名前空間を次に示します。
 
 ``` syntax
 http://schemas.microsoft.com/windows/DeviceMetadata/PackageInfo/2007/11/
@@ -144,7 +144,7 @@ PackageInfo スキーマの定義を次に示します。
 </xs:schema>
 ```
 
-PackageInfo v2 XML スキーマ メタデータ (packageinfov2.xsd) を次に示します。
+PackageInfo v2 XML スキーマメタデータ (packageinfov2) を次に示します。
 
 ``` syntax
 <?xml version="1.0" encoding="UTF-8"?>

@@ -5,19 +5,19 @@ ms.assetid: 736040e9-76cd-4f59-b16a-1e8fc3b687fa
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ae6df337514213881f0e73f4b7e109fadb9bb9db
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: f017184b00f59b088df87a5bd85fec51b7aed8b2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581857"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72323681"
 ---
 # <a name="softwareinfo"></a>SoftwareInfo
 
 [!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
 
-SoftwareInfo 要素は、の親要素、 [SoftwareInfo XML スキーマ](softwareinfo-xml-schema.md)します。
+ソフトウェア情報要素は、[ソフトウェア情報 XML スキーマ](softwareinfo-xml-schema.md)の親要素です。
 
-## <a name="span-idusagespanspan-idusagespanspan-idusagespanusage"></a><span id="Usage"></span><span id="usage"></span><span id="USAGE"></span>使用状況
+## <a name="span-idusagespanspan-idusagespanspan-idusagespanusage"></a><span id="Usage"></span><span id="usage"></span><span id="USAGE"></span>ユーセジリンク
 
 
 ``` syntax
@@ -26,12 +26,12 @@ SoftwareInfo 要素は、の親要素、 [SoftwareInfo XML スキーマ](softwar
 </SoftwareInfo>
 ```
 
-## <a name="span-idattributesspanspan-idattributesspanspan-idattributesspanattributes"></a><span id="Attributes"></span><span id="attributes"></span><span id="ATTRIBUTES"></span>属性
+## <a name="span-idattributesspanspan-idattributesspanspan-idattributesspanattributes"></a><span id="Attributes"></span><span id="attributes"></span><span id="ATTRIBUTES"></span>アトリビュート
 
 
 属性はありません。
 
-## <a name="span-idchildelementsspanspan-idchildelementsspanspan-idchildelementsspanchild-elements"></a><span id="Child_elements"></span><span id="child_elements"></span><span id="CHILD_ELEMENTS"></span>子要素
+## <a name="span-idchild_elementsspanspan-idchild_elementsspanspan-idchild_elementsspanchild-elements"></a><span id="Child_elements"></span><span id="child_elements"></span><span id="CHILD_ELEMENTS"></span>子要素
 
 
 <table>
@@ -48,23 +48,23 @@ SoftwareInfo 要素は、の親要素、 [SoftwareInfo XML スキーマ](softwar
 <tbody>
 <tr class="odd">
 <td><p><a href="devicecompanionapplications.md" data-raw-source="[DeviceCompanionApplications](devicecompanionapplications.md)">DeviceCompanionApplications</a></p></td>
-<td><p>PC のオペレーターのモバイル ブロード バンド ハードウェアが検出されたときにダウンロードされるアプリを指定します。</p></td>
+<td><p>PC でオペレーターのモバイルブロードバンドハードウェアが検出されたときにダウンロードされるアプリを指定します。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="privilegedapplications.md" data-raw-source="[PrivilegedApplications](privilegedapplications.md)">PrivilegedApplications</a></p></td>
-<td><p>特権を持つモバイル ブロード バンド インターフェイスへのアクセスを許可するアプリを指定します。</p></td>
+<td><p>特権のあるモバイルブロードバンドインターフェイスへのアクセスが許可されるアプリを指定します。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <a name="span-idparentelementsspanspan-idparentelementsspanspan-idparentelementsspanparent-elements"></a><span id="Parent_elements"></span><span id="parent_elements"></span><span id="PARENT_ELEMENTS"></span>親要素
+## <a name="span-idparent_elementsspanspan-idparent_elementsspanspan-idparent_elementsspanparent-elements"></a><span id="Parent_elements"></span><span id="parent_elements"></span><span id="PARENT_ELEMENTS"></span>親要素
 
 
 親要素はありません。
 
-## <a name="span-idxsdspanspan-idxsdspanxsd"></a><span id="XSD"></span><span id="xsd"></span>XSD
+## <a name="span-idxsdspanspan-idxsdspanxsd"></a><span id="XSD"></span><span id="xsd"></span>XSD.EXE
 
 
 ``` syntax
@@ -85,7 +85,7 @@ SoftwareInfo 要素は、の親要素、 [SoftwareInfo XML スキーマ](softwar
 ## <a name="span-idremarksspanspan-idremarksspanspan-idremarksspanremarks"></a><span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>注釈
 
 
-SoftwareInfo 要素が必要です。
+ソフトウェア情報要素が必要です。
 
  
 

@@ -1,9 +1,9 @@
 ---
 title: INF SignatureAttributes セクション
-description: このセクションでは、特定の証明書のシナリオで必要な追加の署名を要求することができます。
+description: このセクションでは、ユーザーが特定の認定シナリオに応じて追加の署名を要求できるようにします。
 ms.assetid: 8169686B-C45B-4D67-8B09-CD5F9977898D
 keywords:
-- INF SignatureAttributes セクションのデバイスとドライバーのインストール
+- INF SignatureAttributes セクションデバイスとドライバーのインストール
 topic_type:
 - apiref
 api_name:
@@ -12,17 +12,17 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 02883650cb3b47982d07f5f76b52b90432a621da
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9fb6ae4da095e1a830f4e0318d9d738de9bd026d
+ms.sourcegitcommit: 5b0d2b7a3a4efa3bc4f94a769bf41d58d3321d50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67370036"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72390719"
 ---
 # <a name="inf-signatureattributes-section"></a>INF SignatureAttributes セクション
 
 
-このセクションでは、特定の証明書のシナリオで必要な追加の署名を要求することができます。 たとえば、次のシナリオでは、このセクションが必要です。保護された環境メディアの再生、[起動時マルウェア対策](https://docs.microsoft.com/windows-hardware/drivers/install/elam-driver-submission)、およびサード パーティ製の HAL 拡張機能。 これらの追加の署名は、適切な機能とテストに合格、ハードウェア認定キットのパッケージが含まれている場合にのみ適用されます。
+このセクションでは、ユーザーが特定の認定シナリオに応じて追加の署名を要求できるようにします。 たとえば、次のシナリオでは、保護された環境のメディア再生、[起動時マルウェア対策](https://docs.microsoft.com/windows-hardware/drivers/install/elam-driver-submission)、およびサードパーティの HAL 拡張が必要です。 これらの追加の署名は、ハードウェア認定キットパッケージに適切な機能が含まれ、テストに合格している場合にのみ適用されます。
 
 ```inf
 [SignatureAttributes]
@@ -35,35 +35,35 @@ Attribute = Value
 ## <a name="entries"></a>エントリ
 
 
-<a href="" id="sigtype-signature-type"></a>**SigType =** <em>シグネチャの種類</em>  
-ファイルに適用する署名またはカタログ属性ニーズがどのを定義します。 次のいずれかを指定する必要があります。
+<a href="" id="sigtype-signature-type"></a>**Sigtype =** <em>signature-type</em>  
+ファイルに適用する必要がある署名またはカタログ属性を定義します。 次のいずれかを指定する必要があります。
 
--   elam
+-   Elam
 -   HalExt
 -   PETrust
--   DRM
+-   IRM
 -   WindowsHello
 
 <a href="" id="attribute-attribute-name"></a>**属性 =** <em>属性名</em>  
-各署名の種類は、次に示すように対応する属性と値。 SignatureAttributes のサブセクションでは、これらの定義を使用します。
+各シグネチャ型には、次に示すように、対応する属性と値があります。 SignatureAttributes サブセクションには、次の定義を使用します。
 
--   **SignatureAttributes.Elam**:Elam = true
--   **SignatureAttributes.HalExt**:HalExt = true
--   **SignatureAttributes.DRM**:DRMLevel = {1300 | 1200}
--   **SignatureAttributes.PETrust**:PETrust = true
--   **SignatureAttributes.WindowsHello**:WindowsHello = true
+-   **Signatureattributes。 elam**: elam = true
+-   **Signatureattributes. HalExt**: HalExt = true
+-   **Signatureattributes。 DRM**: drmlevel = {1300 | 1200}
+-   **Signatureattributes。 petrust**: petrust = true
+-   **Signatureattributes. WindowsHello**: WindowsHello = true
 
 <a name="remarks"></a>注釈
 -------
 
-これらの追加の署名は、適切な機能とテストに合格、ハードウェア認定キットのパッケージが含まれている場合にのみ適用されます。 これらは、ハードウェアの認定資格、および Elam、HalExt、PETrust、対応する証明書要件の通常の動作を追加し、DRM が見つかります[ここ](https://go.microsoft.com/fwlink/p/?linkid=239763)します。
+これらの追加の署名は、ハードウェア認定キットパッケージに適切な機能が含まれ、テストに合格している場合にのみ適用されます。 これらは、ハードウェア認定の通常の動作に加え、Elam、HalExt、PETrust、および DRM に対応する認定要件にも追加されています。 詳しくは、「 [Windows ハードウェア ラボ キット](https://docs.microsoft.com/windows-hardware/test/hlk/)」をご覧ください。
 
-ターゲット OS に関係なく、追加の署名を要求するときに、INF セクションではこれらを使用する必要があります。
+これらの INF セクションは、ターゲット OS に関係なく追加の署名を要求するときに使用する必要があります。
 
 <a name="examples"></a>例
 --------
 
-次の例では、列挙、およびオーディオの追加の署名を要求する方法を示します。
+次の例では、オーディオの追加の署名を列挙して要求する方法を示しています。
 
 ```inf
 [SignatureAttributes]
@@ -77,7 +77,7 @@ DRMLevel=1300
 PETrust=true
 ```
 
-次の例では、列挙、およびビデオに追加署名を要求する方法を示します。
+次の例は、ビデオの追加の署名を列挙して要求する方法を示しています。
 
 ```inf
 [SignatureAttributes]
@@ -87,7 +87,7 @@ ExampleFile1.dll=SignatureAttributes.PETrust
 PETrust=true
 ```
 
-次の例では、列挙および HAL に追加署名を要求する方法を示します。
+次の例は、HAL の追加の署名を列挙して要求する方法を示しています。
 
 ```inf
 [SignatureAttributes]
@@ -97,7 +97,7 @@ HALFILE.dll=SignatureAttributes.HalExt
 HalExt=true
 ```
 
-次の例では、列挙し、ELAM に追加署名を要求する方法を示します。
+次の例では、ELAM の追加の署名を列挙して要求する方法を示しています。
 
 ```inf
 [SignatureAttributes]
@@ -107,7 +107,7 @@ ELAMFILE.dll=SignatureAttributes.Elam
 Elam=true
 ```
 
-次の例では、列挙、および Windows こんにちはの追加署名を要求する方法を示します。
+次の例は、Windows Hello の追加の署名を列挙して要求する方法を示しています。
 
 ```inf
 [SignatureAttributes]
@@ -121,7 +121,7 @@ WindowsHello=true
 ## <a name="see-also"></a>関連項目
 
 
-[ダッシュ ボード ヘルプ](https://docs.microsoft.com/windows-hardware/drivers/dashboard/)
+[ダッシュボードのヘルプ](https://docs.microsoft.com/windows-hardware/drivers/dashboard/)
 
  
 

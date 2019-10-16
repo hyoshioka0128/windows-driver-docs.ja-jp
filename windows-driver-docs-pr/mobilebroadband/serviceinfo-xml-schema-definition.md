@@ -1,17 +1,17 @@
 ---
-title: ServiceInfo XML スキーマ定義
-description: ServiceInfo XML スキーマ定義
+title: ServiceInfo XML スキーマの定義
+description: ServiceInfo XML スキーマの定義
 ms.assetid: c5d6aa78-b494-4931-bdfc-6acaab5c570f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5fd9077bbf1185fdab6e27b51e9a66908e4a5c52
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: f017184b00f59b088df87a5bd85fec51b7aed8b2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557723"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72323722"
 ---
-# <a name="serviceinfo-xml-schema-definition"></a>ServiceInfo XML スキーマ定義
+# <a name="serviceinfo-xml-schema-definition"></a>ServiceInfo XML スキーマの定義
 
 [!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
 

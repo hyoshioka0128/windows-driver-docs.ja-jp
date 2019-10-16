@@ -3,121 +3,121 @@ title: WinDbg でのソース コードのデバッグ
 description: WinDbg でのソース コードのデバッグ
 ms.assetid: 0f939d29-0d90-442e-96d7-fe756b92a7da
 keywords:
-- デバッグ情報のウィンドウ、ソース ウィンドウ
-- ソース ウィンドウ
-- ソースのソース ウィンドウをデバッグします。
+- デバッグ情報ウィンドウ、ソースウィンドウ
+- ソースウィンドウ
+- ソースデバッグ、ソースウィンドウ
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 75289348fa8a46cde10ba8faf67d8ee0d962f8df
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: f017184b00f59b088df87a5bd85fec51b7aed8b2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572885"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72323589"
 ---
 # <a name="source-code-debugging-in-windbg"></a>WinDbg でのソース コードのデバッグ
 
 
-## <a name="span-idddksourcepathdbgspanspan-idddksourcepathdbgspansource-path"></a><span id="ddk_source_path_dbg"></span><span id="DDK_SOURCE_PATH_DBG"></span>ソース パス
+## <a name="span-idddk_source_path_dbgspanspan-idddk_source_path_dbgspansource-path"></a><span id="ddk_source_path_dbg"></span><span id="DDK_SOURCE_PATH_DBG"></span>ソースパス
 
 
-ソース パスは、C および C++ ソース ファイルが配置されるディレクトリを指定します。 デバッガーでソース コードを表示する方法の詳細については、[ソース コード](source-code.md)を参照してください。
+ソースパスでは、C ファイルとC++ソースファイルが配置されているディレクトリを指定します。 デバッガーでのソースコードの表示の詳細については、「[ソースコード](source-code.md)」を参照してください。
 
-**注**  ソース サーバーを使用するソース ファイルにアクセスする最も効率的な方法は、企業ネットワークに接続している場合。 移行元サーバーを使用するには、srv を使用して\*ソース パス内の文字列。 移行元サーバーの詳細については、[移行元サーバーを使用して](using-a-source-server.md)を参照してください。
+**注**   企業ネットワークに接続している場合は、移行元サーバーを使用するのが最も効率的な方法です。 ソースパス内で srv @ no__t 文字列を使用して、移行元サーバーを使用できます。 ソースサーバーの詳細については、「[ソースサーバーの使用](using-a-source-server.md)」を参照してください。
 
  
 
-WinDbg でソース パスを制御するには、次のいずれかの操作を行います。
+WinDbg でソースパスを制御するには、次のいずれかの操作を行います。
 
--   選択**ソース ファイルのパス**から、**ファイル**メニューまたは ctrl キーを押しながら P キーを押します。
+-   **[ファイル]** メニューの **[ソースファイルパス]** を選択するか、ctrl キーを押しながら P キーを押します。
 
--   使用して、 [ **.srcpath (ソース パスの設定)** ](-srcpath---lsrcpath--set-source-path-.md)コマンド。 移行元サーバーを使用している場合[ **.srcfix (ソース サーバーを使用)** ](-srcfix---lsrcfix--use-source-server-.md)多少簡単になります。
+-   [**Srcpath (ソースパスの設定)** ](-srcpath---lsrcpath--set-source-path-.md)コマンドを使用します。 移行元サーバーを使用している場合、 [ **(ソースサーバーを使用して) srcfix**](-srcfix---lsrcfix--use-source-server-.md)は少し簡単になります。
 
--   使用して、 [ **.lsrcpath (ローカル ソース パスを設定する)** ](-srcpath---lsrcpath--set-source-path-.md)コマンド。 移行元サーバーを使用している場合[ **.lsrcfix (ローカル ソース サーバーを使用する)** ](-srcfix---lsrcfix--use-source-server-.md)多少簡単になります。
+-   [**Lsrcpath (ローカルソースパスの設定)** ](-srcpath---lsrcpath--set-source-path-.md)コマンドを使用します。 移行元サーバーを使用している場合は、 [**lsrcfix (ローカルソースサーバーを使用)** ](-srcfix---lsrcfix--use-source-server-.md)が少し簡単になります。
 
--   デバッガーを起動するときに使用して、 **- srcpath**または **- lsrcpath**コマンド ライン オプション。 参照してください[ **WinDbg コマンド ライン オプション**](windbg-command-line-options.md)します。
+-   デバッガーを起動するときに、 **-srcpath**または **-lsrcpath**コマンドラインオプションを使用します。 「 [**WinDbg のコマンドラインオプション**](windbg-command-line-options.md)」を参照してください。
 
--   デバッガーを開始する前に、設定、 \_NT\_ソース\_パス[環境変数](environment-variables.md)します。
+-   デバッガーを開始する前に、\_NT @ no__t-1SOURCE @ no__t-2PATH[環境変数](environment-variables.md)を設定します。
 
-## <a name="span-idopeningandclosingsourcefilesspanspan-idopeningandclosingsourcefilesspanspan-idopeningandclosingsourcefilesspanopening-and-closing-source-files"></a><span id="Opening_and_Closing_Source_Files"></span><span id="opening_and_closing_source_files"></span><span id="OPENING_AND_CLOSING_SOURCE_FILES"></span>ソース ファイルの開閉
+## <a name="span-idopening_and_closing_source_filesspanspan-idopening_and_closing_source_filesspanspan-idopening_and_closing_source_filesspanopening-and-closing-source-files"></a><span id="Opening_and_Closing_Source_Files"></span><span id="opening_and_closing_source_files"></span><span id="OPENING_AND_CLOSING_SOURCE_FILES"></span>ソースファイルのオープンと終了
 
 
-ソース ファイルを直接開いたり閉じたりには、次のいずれかの操作を行います。
+ソースファイルを直接開いたり閉じたりするには、次のいずれかの操作を行います。
 
--   選択**ソース ファイルを開く**から、**ファイル**メニューのまたは CTRL + O キーを押します。 使用することも、**ソース ファイルを開く**ボタン (![オープン ソース ファイル ボタンのスクリーン ショット](images/tbopen.png)) ツールバー。
+-   **[ファイル]** メニューの **[ソースファイルを開く]** をクリックするか、CTRL キーを押しながら O キーを押します。 また、ツールバーの [ソースファイルを開く] ボタンをクリックすると、[オープンソースファイル] ボタン @ no__t のスクリーンショットを @no__t**開く**こともできます。
 
-    **注**  ソース パスに、そのファイルのパスを自動的に追加ソース ファイルを開く、メニューまたはツールバーのボタンを使用するとします。
+    **注**  when またはツールバーボタンを使用してソースファイルを開くと、そのファイルのパスが自動的にソースパスに追加されます。
 
      
 
--   選択**現在ウィンドウを閉じる**から、**ファイル**メニュー。
--   をクリックして、**閉じる**ソース ウィンドウの隅にあるボタンをクリックします。
--   選択**最近使ったファイル**から、**ファイル**] メニューの [最近開いた WinDbg で次の 4 つのソース ファイルの 1 つを開きます。
--   入力、 [ **.open (ソース ファイルを開きます)** ](-open--open-source-file-.md)コマンド。
--   入力、 [ **(ロードまたはアンロード ソース ファイル) の lsf** ](lsf--lsf---load-or-unload-source-file-.md)コマンド。
+-   **[ファイル]** メニューの **[現在のウィンドウを閉じる]** をクリックします。
+-   ソースウィンドウの隅にある **[閉じる]** ボタンをクリックします。
+-   **[ファイル]** メニューの **[最近使ったファイル]** をクリックして、WinDbg で最近開いた4つのソースファイルのいずれかを開きます。
+-   [ **. Open (オープンソースファイル)** ](-open--open-source-file-.md)コマンドを入力します。
+-   [**Lsf (ソースファイルの読み込みまたはアンロード)** ](lsf--lsf---load-or-unload-source-file-.md)コマンドを入力します。
 
 ## <span id="ddk_source_windows_dbg"></span><span id="DDK_SOURCE_WINDOWS_DBG"></span>
 
 
-、WinDbg では、ソース ウィンドウには、デバッガーに読み込まれているソース ファイルが表示されます。
+WinDbg では、ソースウィンドウには、デバッガーに読み込まれているソースファイルが表示されます。
 
-### <a name="span-idopeningthesourcewindowspanspan-idopeningthesourcewindowspanopening-the-source-window"></a><span id="opening_the_source_window"></span><span id="OPENING_THE_SOURCE_WINDOW"></span>ソース ウィンドウを開く
+### <a name="span-idopening_the_source_windowspanspan-idopening_the_source_windowspanopening-the-source-window"></a><span id="opening_the_source_window"></span><span id="OPENING_THE_SOURCE_WINDOW"></span>ソースウィンドウを開く
 
-デバッガーは、新しいソース ファイルの読み込み時に、ソース ウィンドウを開きます。 復元するか、ソース ウィンドウを開くに切り替えてするには、**ウィンドウ**メニュー、メニューの下部にある windows の一覧から選択します。
+新しいソースファイルを読み込むと、デバッガーによってソースウィンドウが開きます。 開いているソースウィンドウを復元または切り替えるには、 **[ウィンドウ]** メニューに移動し、メニューの下部にあるウィンドウの一覧から選択します。
 
-次のスクリーン ショットでは、ソース ウィンドウの例を示します。
+次のスクリーンショットは、ソースウィンドウの例を示しています。
 
-![デバッガーに読み込まれたソース ファイルを表示する、ソース ウィンドウのスクリーン ショット](images/window-source.png)
+![デバッガーに読み込まれているソースファイルを表示するソースウィンドウのスクリーンショット](images/window-source.png)
 
-各ソース ファイルは、独自のソース ウィンドウに存在します。 各ソース ウィンドウのタイトルは、ソース ファイルの完全なパスです。
+各ソースファイルは、独自のソースウィンドウに存在します。 各ソースウィンドウのタイトルは、ソースファイルの完全なパスです。
 
-### <a name="span-idusingthesourcewindowspanspan-idusingthesourcewindowspanusing-the-source-window"></a><span id="using_the_source_window"></span><span id="USING_THE_SOURCE_WINDOW"></span>ソース ウィンドウを使用します。
+### <a name="span-idusing_the_source_windowspanspan-idusing_the_source_windowspanusing-the-source-window"></a><span id="using_the_source_window"></span><span id="USING_THE_SOURCE_WINDOW"></span>ソースウィンドウの使用
 
-各ソース ウィンドウには、1 つのソース ファイルのテキストが表示されます。 デバッガーでのソース ファイルを編集することはできません。 フォントとタブの設定を変更する方法についての詳細については、[テキストのプロパティを変更する](changing-text-properties.md)を参照してください。
+各ソースウィンドウには、1つのソースファイルのテキストが表示されます。 デバッガーでソースファイルを編集することはできません。 フォントおよびタブ設定の変更の詳細については、「[テキストプロパティの変更](changing-text-properties.md)」を参照してください。
 
-各ソース ウィンドウには、その他のコマンドをショートカット メニューがあります。 メニューにアクセスするタイトル バーを右クリックするか、ウィンドウ (右上隅近くに表示されるアイコンをクリックします。![ソース ウィンドウのツールバーのショートカット メニューを表示するボタンのスクリーン ショット](images/window-source-icon.png)). 次の一覧では、メニュー コマンドの一部について説明します。
+各ソースウィンドウには、コマンドが追加されたショートカットメニューがあります。 メニューにアクセスするには、タイトルバーを右クリックするか、ウィンドウの右上隅の近くに表示されるアイコンをクリックします (![ソースウィンドウのツールバーのショートカットメニューを表示するボタンのスクリーンショット](images/window-source-icon.png)) を選びます。 次の一覧では、メニューコマンドの一部について説明します。
 
--   **現在の行を一連の命令ポインター**現在の行に対応する命令を命令ポインターの値を変更します。 このコマンドを使用すると、[編集 |現在の命令セット](edit---set-current-instruction.md)コマンドまたは CTRL + SHIFT + I キーを押します。
+-   **命令ポインターを現在の行に設定**する命令ポインターの値を現在の行に対応する命令に変更します。 このコマンドは、Edit | を使用することと同じです。 [現在の命令](edit---set-current-instruction.md)コマンドを設定するか、CTRL + SHIFT + I キーを押します。
 
--   **このファイルを編集**テキスト エディターでソース ファイルを開きます。 エディターは、WinDiff エディターのレジストリ情報、または、WINDBG の値にによって決まりますが\_INVOKE\_エディター環境変数。 たとえば、大文字と小文字と WINDBG の値\_INVOKE\_エディターは、次です。
+-   **このファイルを編集**すると、ソースファイルがテキストエディターで開きます。 エディターは、WinDiff エディターのレジストリ情報、または WINDBG @ no__t-0INVOKE @ no__t 環境変数の値によって決定されます。 たとえば、WINDBG @ no__t-0INVOKE @ no__t-1EDITOR の値が次のようになっている場合を考えてみます。
 
     ```console
     c:\my\path\myeditor.exe -file %f -line %l
     ```
 
-    この場合は、現在のソース ファイルの 1 から始まる行番号を Myeditor.exe が開きます。 %L オプションでは、その行番号も参照してください、1 から始まる %f では、現在のソース ファイルを使用することを示しますを示します。 その他の置換可能性含める %l は、その行を示す番号は 0 から始まると %p は、現在のソース ファイルを使用することも指定できます。
+    この場合、Myeditor は、現在のソースファイルの1から始まる行番号を開きます。 % L オプションは、行番号が1から始まる必要があることを示します。% f は、現在のソースファイルを使用する必要があることを示します。 その他の代替手段としては、行番号が0から始まることを示す% L と、現在のソースファイルを使用する必要があることを示す% p があります。
 
--   **選択範囲を評価**C++ の式エバリュエーターを使用して、現在選択されているテキストを評価します。 結果が表示されます、[デバッガー コマンド ウィンドウ](debugger-command-window.md)します。 選択したテキストには、1 つ以上の行が含まれている場合は、構文エラーが発生します。 このコマンドを使用すると、[編集 |選択範囲を評価](edit---evaluate-selection.md)コマンド、CTRL + SHIFT + V を押すかを使用して、 [**いますか。(C++ の式の評価)** ](----evaluate-c---expression-.md)コマンド、引数として選択したテキストを実行します。
+-   **[選択範囲の評価]** は、 C++現在選択されているテキストを式エバリュエーターで評価します。 結果は[コマンドウィンドウデバッガー](debugger-command-window.md)に表示されます。 選択したテキストに複数の行が含まれている場合は、構文エラーが発生します。 このコマンドは、Edit | を使用することと同じです。 [[選択範囲の評価](edit---evaluate-selection.md)] コマンド、CTRL + SHIFT + V キー、または[ **??(式C++の評価)** ](----evaluate-c---expression-.md)コマンドを引数として選択します。
 
--   **選択した種類の表示**選択したオブジェクトのデータ型が表示されます。 この表示は、デバッガー コマンド ウィンドウに表示されます。 選択したテキストが 1 つのオブジェクトよりも多く含まれている、構文エラーやその他の不規則な結果が表示可能性があります。 このコマンドを使用すると、[編集 |選択した型の表示](edit---display-selected-type.md)コマンドまたは CTRL + SHIFT + Y キーを押します。
+-   **選択さ**れた種類を表示する選択されたオブジェクトのデータ型を表示します。 この表示は、デバッガーコマンドウィンドウに表示されます。 選択したテキストに複数のオブジェクトが含まれている場合は、構文エラーまたはその他の不規則な結果が表示されることがあります。 このコマンドは、Edit | を使用することと同じです。 [選択した種類](edit---display-selected-type.md)のコマンドを表示するか、CTRL + SHIFT + Y キーを押します。
 
--   **開いているメモリ ウィンドウの選択**新しいドッキング メモリ ウィンドウが開き、選択した式のアドレスで始まるメモリを表示します。
+-   **[選択したメモリウィンドウを開く]** 選択した式のアドレスから始まるメモリを表示する、新しい [ドッキングされたメモリ] ウィンドウを開きます。
 
--   **[ウォッチ] ウィンドウに選択を追加**ウォッチ ウィンドウに、選択したソース トークンを追加します。
+-   選択したソーストークンを**ウォッチウィンドウに追加**してウォッチウィンドウに追加します。
 
--   **現在の行に逆アセンブル**に表示される現在の行に対応する命令により、[逆アセンブル ウィンドウ](disassembly-window.md)します。 ソース ウィンドウで、[逆アセンブル] ウィンドウで、選択した行が強調表示されますが、このコマンドは、表示のみを影響、命令ポインターは変更されません。 このコマンドがクリックされたときに逆アセンブル ウィンドウが閉じている場合は、開かれます。
+-   **現在の行で逆アセンブル**を行うと、現在の行に対応する命令が [[逆アセンブル] ウィンドウ](disassembly-window.md)に表示されます。 選択した行がソースウィンドウと [逆アセンブル] ウィンドウで強調表示されますが、このコマンドは表示のみに影響します。命令ポインターは変更されません。 このコマンドがクリックされたときに逆アセンブリウィンドウが閉じている場合は、そのウィンドウが開きます。
 
--   **ソース言語を選択します。** プログラミング言語の一覧を表示します。 クリックして、ソース ファイルを生成するために使用するプログラミング言語を選択**OK**現在のソース ウィンドウの基本的な構文の強調表示を有効にします。 選択**&lt;None&gt;** 現在のソース ウィンドウの構文の強調表示を無効にします。
+-   **[ソース言語の選択]** プログラミング言語の一覧を表示します。 ソースファイルの生成に使用したプログラミング言語を選択し、 **[OK]** をクリックして、現在のソースウィンドウに対して基本的な構文の強調表示を有効にします。 現在のソースウィンドウで構文の強調表示を無効にするには **&lt;None @ no__t-2**を選択します。
 
-### <a name="span-idsourcewindowcolorsandhoverevaluationspanspan-idsourcewindowcolorsandhoverevaluationspansource-window-colors-and-hover-evaluation"></a><span id="source_window_colors_and_hover_evaluation"></span><span id="SOURCE_WINDOW_COLORS_AND_HOVER_EVALUATION"></span>ソース ウィンドウの色とホバーの評価
+### <a name="span-idsource_window_colors_and_hover_evaluationspanspan-idsource_window_colors_and_hover_evaluationspansource-window-colors-and-hover-evaluation"></a><span id="source_window_colors_and_hover_evaluation"></span><span id="SOURCE_WINDOW_COLORS_AND_HOVER_EVALUATION"></span>ソースウィンドウの色とホバー評価
 
-デバッガーがソース ファイル名拡張子を認識しない場合、ソース ウィンドウの色で特定の構文要素が表示されます。 オフにするか、色を変更する、次の操作を行います。
+デバッガーがソースファイル名の拡張子を認識している場合、ソースウィンドウには特定の構文要素が色で表示されます。 色をオフにするか変更するには、次の手順を実行します。
 
--   1 つのウィンドウで、構文の色をオフに、ソース ウィンドウのショートカット メニューを開く をクリックして**ソース言語を選択します。**、順にクリックします **&lt;None&gt;** します。
+-   1つのウィンドウで構文の色をオフにするには、ソースウィンドウのショートカットメニューを開き、 **[ソース言語の選択]** をクリックし、[ **&lt;none @ no__t**] をクリックします。
 
--   すべてのソース ウィンドウの構文の色をオフに次のように選択します。**オプション**から、**ビュー**メニュー。 オフにし、**ソース言語の解析**チェック ボックスをオンします。
+-   すべてのソースウィンドウで構文の色をオフにするには、 **[表示]** メニューの **[オプション]** をクリックします。 次に、 **[ソース言語の解析]** チェックボックスをオフにします。
 
--   構文の色を変更するには、次のように選択します。**オプション**から、**ビュー**メニュー。 次に、**色**領域で、構文要素を選択し、をクリックして、**変更**色を変更するボタンをクリックします。
+-   構文の色を変更するには、 **[表示]** メニューの **[オプション]** をクリックします。 次に、 **[色]** 領域で、構文要素を選択し、 **[変更]** ボタンをクリックして色を変更します。
 
--   強調表示に使用する解析メソッドは、ソース ファイルのファイル拡張子に関連付けられているプログラミング言語によって決まります。 特定のファイル拡張子に関連付けられているプログラミング言語を変更するには、使用、[ソースの言語 ダイアログ ボックスのファイル拡張子](view---source-language-file-extensions.md)します。 このダイアログ ボックスを開くには、次のように選択します。**ソース言語のファイル拡張子**から、**ビュー**メニュー。
+-   強調表示に使用される解析方法は、ソースファイルのファイル拡張子に関連付けられているプログラミング言語によって決まります。 特定のファイル拡張子に関連付けられているプログラミング言語を変更するには、[[ソース言語用のファイル拡張子] ダイアログボックス](view---source-language-file-extensions.md)を使用します。 このダイアログボックスを開くには、 **[表示]** メニューの **[ソース言語ファイル拡張子]** をクリックします。
 
-現在のプログラム カウンターを表す線が強調表示されます。 ブレークポイントが設定される行はも強調表示されます。
+現在のプログラムカウンターを表す行が強調表示されます。 ブレークポイントが設定されている行も強調表示されます。
 
-ソース ウィンドウを選択し、そのウィンドウ内のシンボルの上にマウスを使用すると、シンボルが評価されます。 評価がによって生成されるのと同じ、 [ **dt (表示の種類)** ](dt--display-type-.md)コマンド。 この評価を非アクティブ化するには、**オプション**から、**ビュー**メニュー。 オフにし、**ホバー Evaluate**チェック ボックスをオンします。
+ソースウィンドウを選択し、マウスを使用してそのウィンドウ内のシンボルをポイントすると、シンボルが評価されます。 評価は、 [**dt (Display Type)** ](dt--display-type-.md)コマンドによって生成されるものと同じです。 この評価を非アクティブ化するには、 **[表示]** メニューの **[オプション]** をクリックします。 次に、[**ホバー時に評価**する] チェックボックスをオフにします。
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-ソースのデバッグと関連するコマンドの詳細については、[元のモードでデバッグ](debugging-in-source-mode.md)を参照してください。
+ソースデバッグと関連コマンドの詳細については、「[ソースモードでのデバッグ](debugging-in-source-mode.md)」を参照してください。
 
  
 

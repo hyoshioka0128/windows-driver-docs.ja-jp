@@ -5,19 +5,19 @@ ms.assetid: 44be9d7d-79b0-49b6-b427-e729efadb88c
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 83ecc7da5a6be2dbb76eecebf1371c4a7b94777d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: f017184b00f59b088df87a5bd85fec51b7aed8b2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570870"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72323607"
 ---
 # <a name="packagestructure"></a>PackageStructure
 
 [!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
 
-PackageStructure 要素には、サービス メタデータ パッケージによって参照される XML スキーマを指定します。 使用して各 XML スキーマを指定、[メタデータ](metadata-service-schema.md)要素。
+PackageStructure 要素は、サービスメタデータパッケージによって参照される XML スキーマを指定します。 各 XML スキーマは、 [Metadata](metadata-service-schema.md)要素によって指定されます。
 
-## <a name="span-idusagespanspan-idusagespanspan-idusagespanusage"></a><span id="Usage"></span><span id="usage"></span><span id="USAGE"></span>使用状況
+## <a name="span-idusagespanspan-idusagespanspan-idusagespanusage"></a><span id="Usage"></span><span id="usage"></span><span id="USAGE"></span>ユーセジリンク
 
 
 ``` syntax
@@ -27,17 +27,17 @@ PackageStructure 要素には、サービス メタデータ パッケージに�
 </PackageStructure>
 ```
 
-## <a name="span-idattributesspanspan-idattributesspanspan-idattributesspanattributes"></a><span id="Attributes"></span><span id="attributes"></span><span id="ATTRIBUTES"></span>属性
+## <a name="span-idattributesspanspan-idattributesspanspan-idattributesspanattributes"></a><span id="Attributes"></span><span id="attributes"></span><span id="ATTRIBUTES"></span>アトリビュート
 
 
 属性はありません。
 
-## <a name="span-idtextvaluespanspan-idtextvaluespanspan-idtextvaluespantext-value"></a><span id="Text_value"></span><span id="text_value"></span><span id="TEXT_VALUE"></span>テキスト値
+## <a name="span-idtext_valuespanspan-idtext_valuespanspan-idtext_valuespantext-value"></a><span id="Text_value"></span><span id="text_value"></span><span id="TEXT_VALUE"></span>テキスト値
 
 
-次の 4 つまたは複数[メタデータ](metadata-service-schema.md)要素が必要です。
+4つ以上の[メタデータ](metadata-service-schema.md)要素が必要です。
 
-## <a name="span-idchildelementsspanspan-idchildelementsspanspan-idchildelementsspanchild-elements"></a><span id="Child_elements"></span><span id="child_elements"></span><span id="CHILD_ELEMENTS"></span>子要素
+## <a name="span-idchild_elementsspanspan-idchild_elementsspanspan-idchild_elementsspanchild-elements"></a><span id="Child_elements"></span><span id="child_elements"></span><span id="CHILD_ELEMENTS"></span>子要素
 
 
 <table>
@@ -53,15 +53,15 @@ PackageStructure 要素には、サービス メタデータ パッケージに�
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="metadata-service-schema.md" data-raw-source="[Metadata](metadata-service-schema.md)">メタデータ</a></p></td>
-<td><p><a href="metadata-service-schema.md" data-raw-source="[Metadata](metadata-service-schema.md)">メタデータ</a>要素は、デバイス メタデータ パッケージを通じて参照されている XML スキーマを指定します。</p></td>
+<td><p><a href="metadata-service-schema.md" data-raw-source="[Metadata](metadata-service-schema.md)">Metadata</a></p></td>
+<td><p><a href="metadata-service-schema.md" data-raw-source="[Metadata](metadata-service-schema.md)">Metadata</a>要素は、デバイスメタデータパッケージを通じて参照される XML スキーマを指定します。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <a name="span-idparentelementsspanspan-idparentelementsspanspan-idparentelementsspanparent-elements"></a><span id="Parent_elements"></span><span id="parent_elements"></span><span id="PARENT_ELEMENTS"></span>親要素
+## <a name="span-idparent_elementsspanspan-idparent_elementsspanspan-idparent_elementsspanparent-elements"></a><span id="Parent_elements"></span><span id="parent_elements"></span><span id="PARENT_ELEMENTS"></span>親要素
 
 
 <table>
@@ -78,14 +78,14 @@ PackageStructure 要素には、サービス メタデータ パッケージに�
 <tbody>
 <tr class="odd">
 <td><p><a href="packageinfo.md" data-raw-source="[PackageInfo](packageinfo.md)">PackageInfo</a></p></td>
-<td><p><a href="packageinfo.md" data-raw-source="[PackageInfo](packageinfo.md)">PackageInfo</a>要素は、親要素の<a href="packageinfo-xml-schema.md" data-raw-source="[PackageInfo XML schema](packageinfo-xml-schema.md)">PackageInfo XML スキーマ</a>します。 PackageInfo の要素の子要素は、デバイス メタデータ パッケージの属性を指定します。</p></td>
+<td><p><a href="packageinfo.md" data-raw-source="[PackageInfo](packageinfo.md)">Packageinfo</a>要素は、 <a href="packageinfo-xml-schema.md" data-raw-source="[PackageInfo XML schema](packageinfo-xml-schema.md)">packageinfo XML スキーマ</a>の親要素です。 PackageInfo 要素の子要素は、デバイスメタデータパッケージの属性を指定します。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <a name="span-idxsdspanspan-idxsdspanxsd"></a><span id="XSD"></span><span id="xsd"></span>XSD
+## <a name="span-idxsdspanspan-idxsdspanxsd"></a><span id="XSD"></span><span id="xsd"></span>XSD.EXE
 
 
 ``` syntax
@@ -102,13 +102,13 @@ PackageStructure 要素には、サービス メタデータ パッケージに�
 ## <a name="span-idremarksspanspan-idremarksspanspan-idremarksspanremarks"></a><span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>注釈
 
 
-4 つのインスタンスの最小値、[メタデータ](metadata-service-schema.md)PackageStructure 要素内に要素を指定する必要があります。 各インスタンスは、サービス メタデータ パッケージの作成に使用される必須の XML スキーマのいずれかを指定する必要があります。
+PackageStructure 要素内では、少なくとも4つの[メタデータ](metadata-service-schema.md)要素を指定する必要があります。 各インスタンスでは、サービスメタデータパッケージの作成に使用される必要な XML スキーマのいずれかを指定する必要があります。
 
--   [PackageInfo の XML スキーマ](packageinfo-xml-schema.md)
+-   [PackageInfo XML スキーマ](packageinfo-xml-schema.md)
 
 -   [ServiceInfo XML スキーマ](serviceinfo-xml-schema.md)
 
--   [SoftwareInfo XML スキーマ](softwareinfo-xml-schema.md)
+-   [ソフトウェア情報 XML スキーマ](softwareinfo-xml-schema.md)
 
 -   [MobileBroadbandInfo XML スキーマ](mobilebroadbandinfo-xml-schema.md)
 

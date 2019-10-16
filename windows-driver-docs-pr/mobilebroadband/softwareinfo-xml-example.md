@@ -5,17 +5,17 @@ ms.assetid: 3ee92b21-ed4e-4ed9-9199-3f43f2f8ec00
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dd0d12ed67003e4ea8db9b1ecef1a300942ec890
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: f017184b00f59b088df87a5bd85fec51b7aed8b2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551401"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72323683"
 ---
 # <a name="softwareinfo-xml-example"></a>SoftwareInfo XML の例
 
 [!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
 
-次の XML ドキュメントを使用して、 [ServiceInfo XML スキーマ](serviceinfo-xml-schema.md)Contoso ワイヤレス サービスの属性を指定します。
+次の XML ドキュメントでは、 [Serviceinfo xml スキーマ](serviceinfo-xml-schema.md)を使用して、Contoso ワイヤレスサービスの属性を指定しています。
 
 ``` syntax
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>

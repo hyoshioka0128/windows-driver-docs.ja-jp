@@ -1,45 +1,45 @@
 ---
-title: Mbidgenerator.exe を使用して、ハードウェア Id を生成するには
-description: Mbidgenerator.exe を使用して、ハードウェア Id を生成するには
+title: mbidgenerator.exe を使用したハードウェア ID の生成
+description: mbidgenerator.exe を使用したハードウェア ID の生成
 ms.assetid: 2f2286e2-9300-4ef8-8e13-0851b60cd8eb
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 96749ccbfa249efa6013812b67f95c9744c26747
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: f017184b00f59b088df87a5bd85fec51b7aed8b2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558526"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72323654"
 ---
-# <a name="using-mbidgeneratorexe-to-generate-hardware-ids"></a>Mbidgenerator.exe を使用して、ハードウェア Id を生成するには
+# <a name="using-mbidgeneratorexe-to-generate-hardware-ids"></a>mbidgenerator.exe を使用したハードウェア ID の生成
 
 [!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
 
-サービス メタデータ パッケージのハードウェア ID の値を生成するには、Windows 8.1 および Windows 10 SDK の一部である MBIDGenerator.exe コマンド ライン ツールを使用できます。
+サービスメタデータパッケージのハードウェア ID 値を生成するには、Windows 8.1 と Windows 10 の SDK の一部である MBIDGenerator コマンドラインツールを使用できます。
 
-**注**   Windows 8 MBIDGenerator.exe では、WDK に含まれていました。
+**注**: Windows 8 MBIDGenerator .exe の    は、WDK に含まれていました。
 
  
 
-## <a name="span-idinputspanspan-idinputspanspan-idinputspaninput"></a><span id="Input"></span><span id="input"></span><span id="INPUT"></span>入力
+## <a name="span-idinputspanspan-idinputspanspan-idinputspaninput"></a><span id="Input"></span><span id="input"></span><span id="INPUT"></span>代入
 
 
-MBIDGenerator.exe は、次のパラメーターを受け取ります。
+MBIDGenerator は、次のパラメーターを受け入れます。
 
 ``` syntax
 MBIDGenerator.exe [/Test] <input file> [<output file>]
 ```
 
-**注**   、*テスト*パラメーターはハッシュされていない出力を提供し、Windows デベロッパー センター ダッシュ ボードに送信するハードウェア Id を生成するのには使えません。
+**注**  *テスト*パラメーターはハッシュされていない出力を提供するため、Windows デベロッパーセンターのダッシュボードに送信するためのハードウェア id の生成には使用しないでください。
 
  
 
-## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>出力
+## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>Output
 
 
-MBIDGenerator.exe からの出力は、標準のコマンドライン出力の表示では。 必要に応じて、出力ファイルのパスとファイル名を指定することができます。 常に、コマンド プロンプトに戻るエラーが報告されます。
+MBIDGenerator からの出力は、標準のコマンドライン出力の表示によって行われます。 必要に応じて、出力ファイルのパスとファイル名を指定できます。 エラーは常にコマンドプロンプトに返されます。
 
-出力値は、次のように表示されます。
+出力値は次のように表示されます。
 
 ``` syntax
 <HardwareIDList>
@@ -49,7 +49,7 @@ MBIDGenerator.exe からの出力は、標準のコマンドライン出力の�
 </HardwareIDList>
 ```
 
-MBIDGenerator.exe から出力を取得し、それを挿入できます、 [PackageInfo XML スキーマ](packageinfo-xml-schema.md)サービス メタデータ パッケージの。
+MBIDGenerator の出力を取得し、サービスメタデータパッケージの[Packageinfo XML スキーマ](packageinfo-xml-schema.md)に挿入することができます。
 
  
 

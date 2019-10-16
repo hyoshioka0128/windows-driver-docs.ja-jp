@@ -1,29 +1,31 @@
 ---
 title: IRP_MJ_SHUTDOWN
-description: データの内部キャッシュがある大容量記憶装置のドライバーでは、DispatchShutdown ルーチンでは、この要求を処理する必要があります。
+description: データの内部キャッシュがある大容量記憶装置のドライバーは、DispatchShutdown ルーチンでこの要求を処理する必要があります。
 ms.date: 08/12/2017
 ms.assetid: af0b01b5-5f81-42da-aa4b-433bd422a51f
 keywords:
-- IRP_MJ_SHUTDOWN カーネル モード ドライバーのアーキテクチャ
+- IRP_MJ_SHUTDOWN カーネルモードドライバーのアーキテクチャ
 ms.localizationpriority: medium
-ms.openlocfilehash: 20459241f40f4000dc16933a0d3e562424847af8
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d5f6036e30fc3dbef2423e2a4e1b254a25e4ddbb
+ms.sourcegitcommit: 5b0d2b7a3a4efa3bc4f94a769bf41d58d3321d50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382253"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72390724"
 ---
-# <a name="irpmjshutdown"></a>IRP\_MJ\_シャット ダウン
+# <a name="irp_mj_shutdown"></a>IRP @ no__t-0MJ @ no__t-1SHUTDOWN
 
 
-データでこの要求を処理する必要がありますの内部キャッシュがある大容量記憶装置のドライバーを[ *DispatchShutdown* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)ルーチン。 大容量記憶装置のドライバーと上層にあるそれらの中間ドライバーを基になるドライバーには、データの内部バッファーが保持している場合この要求処理する必要がありますもします。
+データの内部キャッシュがある大容量記憶装置のドライバーは、 [*DispatchShutdown*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)ルーチンでこの要求を処理する必要があります。 基になるドライバーがデータの内部バッファーを保持している場合は、大容量記憶装置と中間ドライバーのドライバーもこの要求を処理する必要があります。
 
 <a name="when-sent"></a>送信時
 ---------
 
-シャット ダウン要求を受信するには、ファイル システム ドライバーが、システムがシャット ダウンされている通知を送信していることを示します。
+シャットダウン要求を受信すると、システムがシャットダウンされていることを示すメッセージがファイルシステムドライバーによって送信されていることを示します。
 
-1 つまたは複数のファイル システム ドライバーまたは送信できます下位レベルのドライバーは、複数のシャット ダウン要求ユーザーがログオフしたときに、システムが何らかの理由でシャット ダウンされています。
+1つまたは複数のファイルシステムドライバーは、ユーザーがログオフしたとき、または他の何らかの理由でシステムがシャットダウンされたときに、このような低レベルのドライバーを1つ以上のシャットダウン要求を送信できます。
+
+PnP マネージャーは、任意のスレッドコンテキストで、IRQL < = APC_LEVEL にこの IRP を送信します。
 
 ## <a name="input-parameters"></a>入力パラメーター
 
@@ -38,11 +40,11 @@ ms.locfileid: "67382253"
 <a name="operation"></a>操作
 ---------
 
-ドライバーは、現在、デバイスにキャッシュされているか、シャット ダウン要求を完了する前に、ドライバーの内部バッファーに保持されているすべてのデータの転送を完了する必要があります。
+ドライバーは、シャットダウン要求を完了する前に、デバイスに現在キャッシュされているデータ、またはドライバーの内部バッファーに保持されているデータの転送を完了する必要があります。
 
-ドライバーは受信しません、 **IRP\_MJ\_シャット ダウン**いずれかに関係するために登録しない限り、デバイス オブジェクトの要求[ **IoRegisterShutdownNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregistershutdownnotification)または[ **IoRegisterLastChanceShutdownNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterlastchanceshutdownnotification)します。
+ドライバーは、 [**IoRegisterShutdownNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregistershutdownnotification)または[**IoRegisterLastChanceShutdownNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterlastchanceshutdownnotification)のいずれかを使用して登録する場合を除き、デバイスオブジェクトの**IRP @ no__t-1MJ @ no__t-2shutdown**要求を受け取りません。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -53,7 +55,7 @@ ms.locfileid: "67382253"
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Wdm.h (Wdm.h、Ntddk.h、Ntifs.h など)</td>
+<td>Wdm (Wdm .h、Ntddk、または Ntifs を含む)</td>
 </tr>
 </tbody>
 </table>

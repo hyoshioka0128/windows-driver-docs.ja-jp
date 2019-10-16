@@ -1,601 +1,601 @@
 ---
 title: プロセッサ電源管理 (PPM) の通知
-description: 各プロセッサの電源管理 (PPM) 通知、PEP の AcceptProcessorNotification コールバック ルーチンを受信する通知の種類を示す通知パラメーターとデータ構造体を指すデータ パラメーターが付属します。指定した通知の種類の情報を格納します。
+description: PEP の AcceptProcessorNotification コールバックルーチンが受信する各プロセッサ電源管理 (PPM) 通知には、通知の種類を示す通知パラメーターと、データ構造を指すデータパラメーターが付属しています。指定された通知の種類に関する情報が格納されている。
 ms.assetid: 4BA89D0F-78F0-44DF-BC9B-0F9F3256CD59
 keywords:
 - AcceptProcessorNotification コールバック
 ms.date: 01/17/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a7e925c079a0b727c558c9020ce6a88e3fffaaf
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b250856ff2a351929b179bdae5a7bcf4de7b4da4
+ms.sourcegitcommit: 5b0d2b7a3a4efa3bc4f94a769bf41d58d3321d50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369138"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72390721"
 ---
 # <a name="processor-power-management-ppm-notifications"></a>プロセッサ電源管理 (PPM) の通知
-各プロセッサの電源管理 (PPM) 通知、PEP の AcceptProcessorNotification コールバック ルーチンを受信する通知の種類を示す通知パラメーターとデータ構造体を指すデータ パラメーターが付属します。指定した通知の種類の情報を格納します。
+PEP の[*Acceptprocessornotification*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/pepfx/nc-pepfx-pepcallbacknotifyppm)コールバックルーチンが受信する各プロセッサ電源管理 (PPM) 通知には、通知の種類を示す通知パラメーターと、データを指すデータパラメーターが付属しています。指定された通知の種類の情報を格納する構造体。
 
-この呼び出しでは、通知のパラメーターは、通知の種類を示す PEP_NOTIFY_PPM_XXX 定数値に設定されます。 データのパラメーターは、この通知の種類に関連付けられている PEP_PPM_XXX 構造体型を指します。
+この呼び出しでは、通知パラメーターは、通知の種類を示す PEP_NOTIFY_PPM_XXX 定数値に設定されます。 データパラメーターが、この通知の種類に関連付けられている PEP_PPM_XXX 構造体の型を指しています。
 
-次のプロセッサの電源管理 (PPM) 通知 Id は、AcceptProcessorNotification コールバック ルーチンで使用されます。
+次のプロセッサ電源管理 (PPM) 通知 Id は、AcceptProcessorNotification コールバックルーチンによって使用されます。
 
-## <a name="pepnotifyppmquerycapabilities"></a>PEP_NOTIFY_PPM_QUERY_CAPABILITIES 
-ターゲットのプロセッサに、PEP のデバイス ハンドルを含む処理 A PEPHANDLE 構造体。 通知では、特定のプロセッサを使用しない場合に、NULL がこれになります。
+## <a name="pep_notify_ppm_query_capabilities"></a>PEP_NOTIFY_PPM_QUERY_CAPABILITIES 
+ターゲットプロセッサの PEP のデバイスハンドルを含む PEPHANDLE 構造体を処理します。 通知が特定のプロセッサを対象としていない場合、これは NULL になります。
 
-通知 PEP_NOTIFY_PPM_QUERY_CAPABILITIES 値。
+通知値 PEP_NOTIFY_PPM_QUERY_CAPABILITIES。
 
-データ。 PEP_PPM_QUERY_CAPABILITIES 構造へのポインター。
-PEP、PEP の電源管理機能の照会されることを通知します。
+データ PEP_PPM_QUERY_CAPABILITIES 構造体へのポインター。
+pep の電源管理機能に対してクエリが行われていることを PEP に通知します。
 
-Windows の電源管理フレームワーク (PoFx) は、PEP は、電源管理機能の照会されたときに、この通知を送信します。 これにより、プロセッサの初期化時に行われ、システムでプロセッサごとに送信されます。
+Windows の電源管理フレームワーク (PoFx) は、その電源管理機能に対して PEP が照会されたときに、この通知を送信します。 これは、プロセッサの初期化時に発生し、システム内の各プロセッサに対して送信されます。
 
-X86 または AMD64 プロセッサを搭載したプラットフォームでは、プロセッサのパフォーマンス コントロールの ACPI インターフェイスを使用する必要があります。
+X86/AMD64 プロセッサを搭載したプラットフォームでは、プロセッサパフォーマンス制御のために ACPI インターフェイスを使用する必要があります。
 
-PEP_NOTIFY_PPM_QUERY_CAPABILITIES 通知を送信するには、PoFx は、PEP の AcceptProcessorNotification コールバック ルーチンを呼び出します。 この呼び出しでは、通知のパラメーター値は、PEP_NOTIFY_PPM_QUERY_CAPABILITIES と PEP_PPM_QUERY_CAPABILITIES 構造体へのデータ パラメーターのポイントが。
+PEP_NOTIFY_PPM_QUERY_CAPABILITIES 通知を送信するために、PoFx は PEP の AcceptProcessorNotification コールバックルーチンを呼び出します。 この呼び出しでは、通知パラメーターの値は PEP_NOTIFY_PPM_QUERY_CAPABILITIES、データパラメーターは PEP_PPM_QUERY_CAPABILITIES 構造体を指します。
 
-AcceptProcessorNotification ルーチンに常に IRQL でと呼ばれる PEP_NOTIFY_PPM_QUERY_CAPABILITIES 通知、PASSIVE_LEVEL を = です。
-
-PASSIVE_LEVEL
- 
-## <a name="pepnotifyppmqueryidlestates"></a>PEP_NOTIFY_PPM_QUERY_IDLE_STATES 
-通知 PEP_NOTIFY_PPM_QUERY_IDLE_STATES 値。
-
-データ。 PEP_PPM_QUERY_IDLE_STATES 構造へのポインター。
-アイドル状態の詳細については、PEP を通知します。
-
-PEP_NOTIFY_PPM_QUERY_IDLE_STATES 通知を送信するには、PoFx は、PEP の AcceptProcessorNotification コールバック ルーチンを呼び出します。 この呼び出しでは、通知のパラメーター値は、PEP_NOTIFY_PPM_QUERY_IDLE_STATES と PEP_PPM_QUERY_IDLE_STATES 構造体へのデータ パラメーターのポイントが。
-
-AcceptProcessorNotification ルーチンに常に IRQL でと呼ばれる PEP_NOTIFY_PPM_QUERY_IDLE_STATES 通知、PASSIVE_LEVEL を = です。
+PEP_NOTIFY_PPM_QUERY_CAPABILITIES 通知の場合、AcceptProcessorNotification ルーチンは常に IRQL = PASSIVE_LEVEL で呼び出されます。
 
 PASSIVE_LEVEL
  
-## <a name="pepnotifyppmidleselect"></a>PEP_NOTIFY_PPM_IDLE_SELECT 
-通知 PEP_NOTIFY_PPM_IDLE_SELECT 値。
+## <a name="pep_notify_ppm_query_idle_states"></a>PEP_NOTIFY_PPM_QUERY_IDLE_STATES 
+通知値 PEP_NOTIFY_PPM_QUERY_IDLE_STATES。
 
-データ。 PEP_PPM_IDLE_SELECT 構造へのポインター。
-アイドル状態の選択の PEP に通知します。
+データ PEP_PPM_QUERY_IDLE_STATES 構造体へのポインター。
+アイドル状態を PEP に通知します。
 
-PEP_NOTIFY_PPM_IDLE_SELECT 通知を送信するには、PoFx は、PEP の AcceptProcessorNotification コールバック ルーチンを呼び出します。 この呼び出しでは、通知のパラメーター値は、PEP_NOTIFY_PPM_IDLE_SELECT と PEP_PPM_IDLE_SELECT 構造体へのデータ パラメーターのポイントが。
+PEP_NOTIFY_PPM_QUERY_IDLE_STATES 通知を送信するために、PoFx は PEP の AcceptProcessorNotification コールバックルーチンを呼び出します。 この呼び出しでは、通知パラメーターの値は PEP_NOTIFY_PPM_QUERY_IDLE_STATES、データパラメーターは PEP_PPM_QUERY_IDLE_STATES 構造体を指します。
 
-AcceptProcessorNotification ルーチンに常に IRQL でと呼ばれる PEP_NOTIFY_PPM_IDLE_SELECT 通知、PASSIVE_LEVEL を = です。
-
-PASSIVE_LEVEL
- 
-## <a name="pepnotifyppmidlecancel"></a>PEP_NOTIFY_PPM_IDLE_CANCEL 
-通知 PEP_NOTIFY_PPM_IDLE_CANCEL 値。
-
-データ。 PEP_PPM_IDLE_CANCEL 構造へのポインター。
-キャンセル操作の PEP に通知します。
-
-PEP_NOTIFY_PPM_IDLE_CANCEL 通知を送信するには、PoFx は、PEP の AcceptProcessorNotification コールバック ルーチンを呼び出します。 この呼び出しでは、通知のパラメーター値は、PEP_NOTIFY_PPM_IDLE_CANCEL と PEP_PPM_IDLE_CANCEL 構造体へのデータ パラメーターのポイントが。
-
-AcceptProcessorNotification ルーチンに常に IRQL でと呼ばれる PEP_NOTIFY_PPM_IDLE_CANCEL 通知、PASSIVE_LEVEL を = です。
+PEP_NOTIFY_PPM_QUERY_IDLE_STATES 通知の場合、AcceptProcessorNotification ルーチンは常に IRQL = PASSIVE_LEVEL で呼び出されます。
 
 PASSIVE_LEVEL
  
-## <a name="pepnotifyppmidleexecute"></a>PEP_NOTIFY_PPM_IDLE_EXECUTE 
-ターゲットのプロセッサに、PEP のデバイス ハンドルを含む処理 A PEPHANDLE 構造体。 通知では、特定のプロセッサを使用しない場合に、NULL がこれになります。
+## <a name="pep_notify_ppm_idle_select"></a>PEP_NOTIFY_PPM_IDLE_SELECT 
+通知値 PEP_NOTIFY_PPM_IDLE_SELECT。
 
-通知 PEP_NOTIFY_PPM_IDLE_EXECUTE 値。
+データ PEP_PPM_IDLE_SELECT 構造体へのポインター。
+アイドル状態の select を PEP に通知します。
 
-PEP_PPM_IDLE_EXECUTE または PEP_PPM_IDLE_EXECUTE_V2 構造体へのデータ。 ポインター。
-現在のプロセッサを指定のアイドル状態に遷移する PEP に送信されます。
+PEP_NOTIFY_PPM_IDLE_SELECT 通知を送信するために、PoFx は PEP の AcceptProcessorNotification コールバックルーチンを呼び出します。 この呼び出しでは、通知パラメーターの値は PEP_NOTIFY_PPM_IDLE_SELECT、データパラメーターは PEP_PPM_IDLE_SELECT 構造体を指します。
 
-Windows の電源管理フレームワーク (PoFx) では、現在のプロセッサを指定のアイドル状態に遷移する PEP にこの通知を送信します。 
-
-PEP では、スリープ状態の移行で影響を受ける可能性がありますコア システム リソースの OS を通知するなど、以前に選択したアイドル状態にハードウェアを準備することができます。 プロセッサ アイドル状態に遷移する停止命令を実行にする必要があります。 関数がアイドル状態から戻るとき、PEP は、OS のスリープ解除時にアクティブになる可能性があります、コア システムのリソースへの通知など、ハードウェアのセットアップを取り消す必要があります。 場合は、PEP はエラー状態に返す必要があり、プロセッサ (およびプラットフォーム) のアイドル状態を実行できません。
-
-アイドル状態の連携のとれたインターフェイスを使用する場合、OS は、アイドル状態の遷移によって入力される調整のアイドル状態の一覧でフィールドの CoordinatedStateCount と CoordinatedState フィールドを含む PEP_PPM_IDLE_EXECUTE_V2 構造体を使用します。 存在する場合、PlatformState フィールドは入力されている最下位のプラットフォームの調整のアイドル状態を指定します。 
-
-アイドル状態の連携のとれたインターフェイスを使用していないときに、OS は PEP_PPM_IDLE_EXECUTE 構造体を使用します。 
-
-PEP_NOTIFY_PPM_IDLE_EXECUTE 通知に割り込みを無効になっている AcceptProcessorNotification ルーチンが呼び出されます。
- 
-## <a name="pepnotifyppmidlecomplete"></a>PEP_NOTIFY_PPM_IDLE_COMPLETE 
-ターゲットのプロセッサに、PEP のデバイス ハンドルを含む処理 A PEPHANDLE 構造体。 
-
-通知 PEP_NOTIFY_PPM_IDLE_COMPLETE 値。
-
-PEP_PPM_IDLE_COMPLETE または PEP_PPM_IDLE_COMPLETE_V2 構造体へのポインターをデータ A.
-PEP に、現在のプロセッサがアイドル状態の遷移を完了したからウェイク アップすることを通知します。
-
-Windows の電源管理フレームワーク (PoFx) は、現在のプロセッサがアイドル状態の遷移を完了したからウェイク アップするときに、この通知を送信します。 プラットフォームには、プラットフォームのアイドル状態の移行が実行されていた場合、ウェイクするための最初のプロセッサは終了されているプラットフォームのアイドル状態を示します。 、プラットフォームのアイドル状態の移行で使用される同期の種類に応じて、最初のプロセッサ プラットフォームのアイドル状態からの復帰をしても、プラットフォームのアイドル状態にするプロセッサ可能性がありますできません。 
-
-プロセッサには、詳細なアイドル状態が実行されていた場合、PEP がコアのコンテキストを復元するか、またはコア リソースが復元されたことを OS に通知する完了通知を受信するまで待機する必要があります。 OS には、execute 通知が完了すると、復元されているこれらのリソースが必要です。 ハイパーバイザーが有効にすると、PEP のみ通知を受け取る終了時に PEP_PROCESSOR_IDLE_STATE_UNKNOWN に設定された ProcessorState フィールドとプラットフォームのアイドル状態から。 
-
-アイドル状態の連携のとれたインターフェイスを使用する場合、OS はアイドル状態の遷移によって終了する調整のアイドル状態の一覧で、CoordinatedStateCount と CoordinatedState のフィールドを含む PEP_PPM_IDLE_COMPLETE_V2 構造を使用します。 存在する場合、PlatformState フィールドはから、抜けている最下位のプラットフォームの調整のアイドル状態を指定します。 緩やかな同期が使用されている場合このプロセッサで終了する調整のアイドル状態のセットが入力した、連携のとれたのアイドル状態のセットから異なる場合がありますに注意してください。 
-
-アイドル状態の連携のとれたインターフェイスを使用していないときに、OS は PEP_PPM_IDLE_COMPLETE 構造体を使用します。 
-
-PEP_NOTIFY_PPM_IDLE_COMPLETE 通知の場合は、AcceptProcessorNotification ルーチンは、割り込みを無効にして、呼び出すし、ターゲット プロセッサでは常に実行します。
- 
-## <a name="pepnotifyppmisprocessorhalted"></a>PEP_NOTIFY_PPM_IS_PROCESSOR_HALTED 
-ターゲットのプロセッサに、PEP のデバイス ハンドルを含む処理 A PEPHANDLE 構造体。 通知では、特定のプロセッサを使用しない場合に、NULL がこれになります。
-
-通知 PEP_NOTIFY_PPM_IS_PROCESSOR_HALTED 値。
-
-データ。 PEP_PPM_IS_PROCESSOR_HALTED 構造へのポインター。
-指定したプロセッサが選択されているアイドル状態で中断されているかどうかを決定する、PEP に送信されます。
-
-Windows の電源管理フレームワーク (PoFx) では、指定したプロセッサが選択されているアイドル状態で中断されているかどうかを判断する PEP にこの通知を送信します。 OS では、この通知を使用して、セカンダリのプロセッサがアイドル状態のプラットフォームを調整するときにアイドル状態に遷移を完全に完了かどうか確認してください。 PEP は、ターゲットのプロセッサ (など、コアは停止してハードウェア レジスタをチェック) によって発生安全にプラットフォームのアイドル状態の遷移を状態に達したことを保証する必要があります。 この通知は、プロセッサがアイドル状態になったことを示します、いったんそのプロセッサする必要がありますウェイク アップしないようには、OS が明示的に要求しない限り。 
-
-PEP は、IDLE_SELECT と IDLE_COMPLETE 通知の間でいつでもこの通知が表示されます。 アイドル状態の遷移中に最大で 1 回この通知を受け取ることが保証されます。 
-
-PEP_NOTIFY_PPM_IS_PROCESSOR_HALTED 通知の場合は、AcceptProcessorNotification ルーチンは、IRQL で、割り込みを無効になっている、任意の IRQL では呼び出され、ターゲット プロセッサでは実行されません。
-
-&LT; HIGH_LEVEL を =
- 
-## <a name="pepnotifyppminitiatewake"></a>PEP_NOTIFY_PPM_INITIATE_WAKE 
-ターゲットのプロセッサに、PEP のデバイス ハンドルを含む処理 A PEPHANDLE 構造体。
-
-通知 PEP_NOTIFY_PPM_INITIATE_WAKE 値。
-
-構造体へのデータ。 ポインター。
-中断不可能なアイドル状態からのスリープ解除を開始する指定されたプロセッサの PEP に送信されます。
-
-Windows の電源管理フレームワーク (PoFx) を中断不可能なアイドル状態からのスリープ解除を開始する指定されたプロセッサの PEP にこの通知を送信します。 PEP は、NeedInterruptForCompletion を使用してターゲットのプロセッサにウェイク アップの状態を返す必要があります。 プロセッサがアイドル状態からのウェイク アップを終了する割り込みが必要な場合は TRUE を返します。 ここで、PEP は、ターゲット プロセッサは、この通知を処理からの戻り時に中断が可能なことを確認する必要があります。 ターゲット プロセッサが既に実行中や、最終的には、アイドル状態の終了 (またはが行う処理中) の生成ソフトウェア割り込みを必要とせず NeedInterruptForCompletion を FALSE に設定する必要があります。
-
-
-注、PEP は、同じプロセッサをこの通知を同時に受信しません。
- 
-
-PEP_NOTIFY_PPM_INITIATE_WAKE 通知の場合は、AcceptProcessorNotification ルーチンに割り込みを無効になっている、任意の IRQL で呼び出され、ターゲット プロセッサでは実行されません。
-
-&LT; HIGH_LEVEL を =
- 
-## <a name="pepnotifyppmqueryfeedbackcounters"></a>PEP_NOTIFY_PPM_QUERY_FEEDBACK_COUNTERS 
-ターゲットのプロセッサに、PEP のデバイス ハンドルを含む処理 A PEPHANDLE 構造体。 通知では、特定のプロセッサを使用しない場合に、NULL がこれになります。
-
-通知 PEP_NOTIFY_PPM_QUERY_FEEDBACK_COUNTERS 値。
-
-データ。 PEP_PPM_QUERY_FEEDBACK_COUNTERS 構造へのポインター。
-サポートされているフィードバック カウンターの一覧については、PEP が照会されることを PEP に通知します。
-
-Windows 電源管理フレームワーク (PoFx) は、プロセッサの初期化をサポートしているフィードバック カウンターの一覧については、PEP の照会でこの通知を送信します。
-
-AcceptProcessorNotification ルーチンに常に IRQL でと呼ばれる PEP_NOTIFY_PPM_QUERY_FEEDBACK_COUNTERS 通知、PASSIVE_LEVEL を = です。
+PEP_NOTIFY_PPM_IDLE_SELECT 通知の場合、AcceptProcessorNotification ルーチンは常に IRQL = PASSIVE_LEVEL で呼び出されます。
 
 PASSIVE_LEVEL
  
-## <a name="pepnotifyppmfeedbackread"></a>PEP_NOTIFY_PPM_FEEDBACK_READ 
-ターゲットのプロセッサに、PEP のデバイス ハンドルを含む処理 A PEPHANDLE 構造体。 通知では、特定のプロセッサを使用しない場合に、NULL がこれになります。
+## <a name="pep_notify_ppm_idle_cancel"></a>PEP_NOTIFY_PPM_IDLE_CANCEL 
+通知値 PEP_NOTIFY_PPM_IDLE_CANCEL。
 
-通知 PEP_NOTIFY_PPM_FEEDBACK_READ 値。
+データ PEP_PPM_IDLE_CANCEL 構造体へのポインター。
+キャンセル操作を PEP に通知します。
 
-データ。 PEP_PPM_FEEDBACK_READ 構造へのポインター。
-フィードバック カウンターの現在の値のクエリが対象に、PEP を通知します。
+PEP_NOTIFY_PPM_IDLE_CANCEL 通知を送信するために、PoFx は PEP の AcceptProcessorNotification コールバックルーチンを呼び出します。 この呼び出しでは、通知パラメーターの値は PEP_NOTIFY_PPM_IDLE_CANCEL、データパラメーターは PEP_PPM_IDLE_CANCEL 構造体を指します。
 
-Windows の電源管理フレームワーク (PoFx) は、フィードバック カウンターの現在の値を照会する必要がある場合、この通知を送信します。 
+PEP_NOTIFY_PPM_IDLE_CANCEL 通知の場合、AcceptProcessorNotification ルーチンは常に IRQL = PASSIVE_LEVEL で呼び出されます。
 
-割り込みを無効になっているこの通知を送信できます。 カウンターの Affinitized フィールドが設定されている場合、この通知は、ターゲット プロセッサで実行されます。 それ以外の場合、この通知は、すべてのプロセッサから実行することがあります。
+PASSIVE_LEVEL
+ 
+## <a name="pep_notify_ppm_idle_execute"></a>PEP_NOTIFY_PPM_IDLE_EXECUTE 
+ターゲットプロセッサの PEP のデバイスハンドルを含む PEPHANDLE 構造体を処理します。 通知が特定のプロセッサを対象としていない場合、これは NULL になります。
 
-PEP_NOTIFY_PPM_FEEDBACK_READ 通知の場合、IRQL で AcceptProcessorNotification ルーチンを呼び出すことができます = DISPATCH_LEVEL します。
+通知値 PEP_NOTIFY_PPM_IDLE_EXECUTE。
+
+データ PEP_PPM_IDLE_EXECUTE または PEP_PPM_IDLE_EXECUTE_V2 構造体へのポインター。
+PEP に送信され、現在のプロセッサを指定されたアイドル状態に移行します。
+
+Windows 電源管理フレームワーク (PoFx) は、この通知を PEP に送信して、現在のプロセッサを指定されたアイドル状態に移行します。 
+
+PEP は、以前に選択されていたアイドル状態になるようにハードウェアを準備します。これには、スリープ状態の移行によって影響を受ける可能性があるコアシステムリソースの OS の通知も含まれます。 次に、halt 命令を実行してプロセッサをアイドル状態に遷移させる必要があります。 アイドル状態から戻ると、PEP はハードウェアのセットアップを元に戻す必要があります。これには、ウェイクアップ時にアクティブになったコアシステムリソースの OS の通知も含まれます。 PEP がプロセッサ (およびプラットフォーム) のアイドル状態を実行できない場合は、エラー状態を返す必要があります。
+
+調整されたアイドル状態のインターフェイスを使用する場合、OS は PEP_PPM_IDLE_EXECUTE_V2 構造体を使用します。これには、アイドル状態の遷移によって入力される、CoordinatedStateCount と CoordinatedState の各フィールドと、調整されたアイドル状態の一覧が含まれます。 [PlatformState] フィールドには、入力されている最も深いプラットフォームの標準の状態 () が指定されます (存在する場合)。 
+
+調整されたアイドル状態のインターフェイスを使用しない場合、OS は PEP_PPM_IDLE_EXECUTE 構造体を使用します。 
+
+PEP_NOTIFY_PPM_IDLE_EXECUTE 通知の場合、無効な割り込みを使用して AcceptProcessorNotification ルーチンが呼び出されます。
+ 
+## <a name="pep_notify_ppm_idle_complete"></a>PEP_NOTIFY_PPM_IDLE_COMPLETE 
+ターゲットプロセッサの PEP のデバイスハンドルを含む PEPHANDLE 構造体を処理します。 
+
+通知値 PEP_NOTIFY_PPM_IDLE_COMPLETE。
+
+データ PEP_PPM_IDLE_COMPLETE または PEP_PPM_IDLE_COMPLETE_V2 構造体へのポインター。
+現在のプロセッサが、完了したアイドル状態の遷移からウェイクアップしていることを PEP に通知します。
+
+Windows の電源管理フレームワーク (PoFx) は、現在のプロセッサが、完了したアイドル状態の遷移からウェイクアップするときに、この通知を送信します。 プラットフォームがプラットフォームのアイドル状態の移行を実行していた場合は、最初のプロセッサをスリープ解除するときに、終了するプラットフォームのアイドル状態が示されます。 プラットフォームのアイドル状態への移行で使用される同期の種類によっては、プラットフォームのアイドル状態から復帰する最初のプロセッサが、プラットフォームのアイドル状態になったプロセッサでない場合があります。 
+
+プロセッサがディープアイドル状態を実行していた場合、PEP はコアコンテキストを復元するための完全な通知を受信するか、コアリソースが復元されたことを OS に通知するまで待機することはできません。 OS では、実行通知が完了すると、これらのリソースが復元されることを想定しています。 ハイパーバイザーが有効になっている場合、PEP は、プラットフォームのアイドル状態から終了し、ProcessorState フィールドが PEP_PROCESSOR_IDLE_STATE_UNKNOWN に設定されている場合にのみ、この通知を受信します。 
+
+調整されたアイドル状態のインターフェイスを使用する場合、OS は PEP_PPM_IDLE_COMPLETE_V2 構造体を使用します。これには、アイドル状態の遷移によって終了される、CoordinatedStateCount と CoordinatedState の各フィールドと、連携しているアイドル状態の一覧が含まれています。 [PlatformState] フィールドには、終了している最も深いプラットフォームの協調的なアイドル状態 (存在する場合) が指定されます。 このプロセッサによって終了された一連の遷移アイドル状態は、緩やかな同期が使用されている場合に、それによって入力された一連のアイドル状態と異なる場合があることに注意してください。 
+
+調整されたアイドル状態のインターフェイスを使用しない場合、OS は PEP_PPM_IDLE_COMPLETE 構造体を使用します。 
+
+PEP_NOTIFY_PPM_IDLE_COMPLETE 通知の場合、AcceptProcessorNotification ルーチンは割り込みが無効になって呼び出され、常にターゲットプロセッサで実行されます。
+ 
+## <a name="pep_notify_ppm_is_processor_halted"></a>PEP_NOTIFY_PPM_IS_PROCESSOR_HALTED 
+ターゲットプロセッサの PEP のデバイスハンドルを含む PEPHANDLE 構造体を処理します。 通知が特定のプロセッサを対象としていない場合、これは NULL になります。
+
+通知値 PEP_NOTIFY_PPM_IS_PROCESSOR_HALTED。
+
+データ PEP_PPM_IS_PROCESSOR_HALTED 構造体へのポインター。
+指定されたプロセッサが選択されたアイドル状態で現在停止しているかどうかを判断するために PEP に送信されます。
+
+Windows 電源管理フレームワーク (PoFx) は、この通知を PEP に送信して、指定されたプロセッサが現在選択されているアイドル状態で停止しているかどうかを確認します。 OS は、この通知を使用して、プラットフォームのアイドル状態を調整するときに、セカンダリプロセッサがアイドル状態への移行を完全に完了したかどうかを確認します。 PEP は、ターゲットプロセッサが、プラットフォームのアイドル遷移を安全に実行できる状態になっていることを保証する必要があります (たとえば、ハードウェアレジスタを調べてコアが停止しているかどうかを確認します)。 この通知は、プロセッサがアイドル状態であることを示した後、OS が明示的に要求しない限り、そのプロセッサをウェイクアップさせることはできません。 
+
+PEP は、IDLE_SELECT 通知と IDLE_COMPLETE 通知の間でいつでもこの通知を受け取る場合があります。 この通知は、アイドル状態の移行中に最大で1回受信することが保証されています。 
+
+PEP_NOTIFY_PPM_IS_PROCESSOR_HALTED 通知の場合、AcceptProcessorNotification ルーチンは任意の IRQL で呼び出され、割り込みは無効になり、任意の IRQL で呼び出され、ターゲットプロセッサでは実行されません。
+
+< = HIGH_LEVEL
+ 
+## <a name="pep_notify_ppm_initiate_wake"></a>PEP_NOTIFY_PPM_INITIATE_WAKE 
+ターゲットプロセッサの PEP のデバイスハンドルを含む PEPHANDLE 構造体を処理します。
+
+通知値 PEP_NOTIFY_PPM_INITIATE_WAKE。
+
+データ構造体へのポインター。
+割り込み不可能なアイドル状態からのウェイクアップを開始するために、指定されたプロセッサの PEP に送信されます。
+
+Windows 電源管理フレームワーク (PoFx) は、指定されたプロセッサの PEP にこの通知を送信して、割り込み不可能なアイドル状態からのウェイクアップを開始します。 PEP は、NeedInterruptForCompletion を使用してターゲットプロセッサの wake の状態を返す必要があります。 プロセッサがアイドル状態からのウェイクアップを終了する必要がある場合は、TRUE を返します。 この場合、PEP は、この通知の処理から戻った時点でターゲットプロセッサが中断可能であることを確認する必要があります。 ターゲットプロセッサが既に実行されている場合、またはでは、ソフトウェアによって生成された割り込みを必要とせずに (その処理中に) アイドル状態を終了する場合は、NeedInterruptForCompletion を FALSE に設定する必要があります。
+
+
+PEP は同じプロセッサに対してこの通知を同時に受け取ることはありません。
+ 
+
+PEP_NOTIFY_PPM_INITIATE_WAKE 通知の場合、AcceptProcessorNotification ルーチンは、割り込みが無効になっている任意の IRQL で呼び出され、ターゲットプロセッサでは実行されません。
+
+< = HIGH_LEVEL
+ 
+## <a name="pep_notify_ppm_query_feedback_counters"></a>PEP_NOTIFY_PPM_QUERY_FEEDBACK_COUNTERS 
+ターゲットプロセッサの PEP のデバイスハンドルを含む PEPHANDLE 構造体を処理します。 通知が特定のプロセッサを対象としていない場合、これは NULL になります。
+
+通知値 PEP_NOTIFY_PPM_QUERY_FEEDBACK_COUNTERS。
+
+データ PEP_PPM_QUERY_FEEDBACK_COUNTERS 構造体へのポインター。
+Pep に、サポートされているフィードバックカウンターの一覧を照会していることを PEP に通知します。
+
+Windows 電源管理フレームワーク (PoFx) は、プロセッサの初期化時にこの通知を送信して、サポートされているフィードバックカウンターの一覧を PEP に照会します。
+
+PEP_NOTIFY_PPM_QUERY_FEEDBACK_COUNTERS 通知の場合、AcceptProcessorNotification ルーチンは常に IRQL = PASSIVE_LEVEL で呼び出されます。
+
+PASSIVE_LEVEL
+ 
+## <a name="pep_notify_ppm_feedback_read"></a>PEP_NOTIFY_PPM_FEEDBACK_READ 
+ターゲットプロセッサの PEP のデバイスハンドルを含む PEPHANDLE 構造体を処理します。 通知が特定のプロセッサを対象としていない場合、これは NULL になります。
+
+通知値 PEP_NOTIFY_PPM_FEEDBACK_READ。
+
+データ PEP_PPM_FEEDBACK_READ 構造体へのポインター。
+は、フィードバックカウンターの現在の値を照会していることを PEP に通知します。
+
+Windows 電源管理フレームワーク (PoFx) は、フィードバックカウンターの現在の値を照会するときに、この通知を送信します。 
+
+この通知は、割り込みが無効になっている場合に送信されます。 カウンターの関連付けられたフィールドが設定されている場合、この通知はターゲットプロセッサで実行されます。 それ以外の場合、この通知はどのプロセッサからでも実行できます。
+
+PEP_NOTIFY_PPM_FEEDBACK_READ 通知の場合、AcceptProcessorNotification ルーチンは IRQL = DISPATCH_LEVEL で呼び出されることがあります。
 
 DISPATCH_LEVEL
  
-## <a name="pepnotifyppmqueryperfcapabilities"></a>PEP_NOTIFY_PPM_QUERY_PERF_CAPABILITIES 
-ターゲットのプロセッサに、PEP のデバイス ハンドルを含む処理 A PEPHANDLE 構造体。 通知では、特定のプロセッサを使用しない場合に、NULL がこれになります。
+## <a name="pep_notify_ppm_query_perf_capabilities"></a>PEP_NOTIFY_PPM_QUERY_PERF_CAPABILITIES 
+ターゲットプロセッサの PEP のデバイスハンドルを含む PEPHANDLE 構造体を処理します。 通知が特定のプロセッサを対象としていない場合、これは NULL になります。
 
-通知 PEP_NOTIFY_PPM_QUERY_PERF_CAPABILITIES 値。
+通知値 PEP_NOTIFY_PPM_QUERY_PERF_CAPABILITIES。
 
-データ。 PEP_PPM_QUERY_PERF_CAPABILITIES 構造へのポインター。
-プラットフォームでサポートされているパフォーマンスの範囲内のクエリが対象に、PEP を通知します。
+データ PEP_PPM_QUERY_PERF_CAPABILITIES 構造体へのポインター。
+は、プラットフォームでサポートされているパフォーマンス範囲に対してクエリが行われていることを PEP に通知します。
 
-Windows 電源管理フレームワーク (PoFx) は、クエリ パフォーマンスの範囲をプラットフォームでサポートされているプロセッサの初期化でこの通知を送信します。 PEP_PPM_QUERY_PERF_CAPABILITIES 構造体の DomainId と DomainMembers のフィールドは、プラットフォームにパフォーマンスの状態のドメインを表すために使用されます。 各プロセッサは、1 つだけのパフォーマンス状態のドメインのメンバーです。 オペレーティング システムは、パフォーマンスのドメインのすべてのプロセッサがまとめてパフォーマンスを変更することを確認します。 
+Windows 電源管理フレームワーク (PoFx) は、この通知をプロセッサの初期化時に送信して、プラットフォームでサポートされているパフォーマンスの範囲を照会します。 PEP_PPM_QUERY_PERF_CAPABILITIES 構造体の DomainId および Domainid フィールドは、パフォーマンス状態ドメインをプラットフォームに表すために使用されます。 各プロセッサは、まったく1つのパフォーマンス状態ドメインのメンバーです。 オペレーティングシステムによって、パフォーマンスドメイン内のすべてのプロセッサのパフォーマンスが変化します。 
 
-AcceptProcessorNotification ルーチンに常に IRQL でと呼ばれる PEP_NOTIFY_PPM_QUERY_PERF_CAPABILITIES 通知、PASSIVE_LEVEL を = です。
-
-PASSIVE_LEVEL
- 
-## <a name="pepnotifyppmperfconstraints"></a>PEP_NOTIFY_PPM_PERF_CONSTRAINTS 
-ターゲットのプロセッサに、PEP のデバイス ハンドルを含む処理 A PEPHANDLE 構造体。 
-
-通知 PEP_NOTIFY_PPM_PERF_CONSTRAINTS 値。
-
-データ。 PEP_PPM_PERF_CONSTRAINTS 構造へのポインター。
-プロセッサの現在操作上の制約のクエリが対象に、PEP を通知します。
-
-Windows の電源管理フレームワーク (PoFx) は、プロセッサの現在操作上の制約を検査する必要がある場合、この通知を送信します。 PEP では、コントロール コード GUID_PPM_PERF_CONSTRAINT_CHANGE で電源管理を実行することによって、プロセッサのパフォーマンスの制約を再評価する OS の要求を開始します。 InBuffer および OutBuffer NULL にする必要があります。 
-
-PEP は、プロセッサの電源制御トランザクションを発行する前に、プロセッサの PEP_DPM_DEVICE_STARTED 通知を受信するまで待つ必要があります。 
-
-AcceptProcessorNotification ルーチンに常に IRQL でと呼ばれる PEP_NOTIFY_PPM_PERF_CONSTRAINTS 通知、PASSIVE_LEVEL を = です。
+PEP_NOTIFY_PPM_QUERY_PERF_CAPABILITIES 通知の場合、AcceptProcessorNotification ルーチンは常に IRQL = PASSIVE_LEVEL で呼び出されます。
 
 PASSIVE_LEVEL
  
-## <a name="pepnotifyppmperfset"></a>PEP_NOTIFY_PPM_PERF_SET 
-ターゲットのプロセッサに、PEP のデバイス ハンドルを含む処理 A PEPHANDLE 構造体。 通知では、特定のプロセッサを使用しない場合に、NULL がこれになります。
+## <a name="pep_notify_ppm_perf_constraints"></a>PEP_NOTIFY_PPM_PERF_CONSTRAINTS 
+ターゲットプロセッサの PEP のデバイスハンドルを含む PEPHANDLE 構造体を処理します。 
 
-通知 PEP_NOTIFY_PPM_PERF_SET 値。
+通知値 PEP_NOTIFY_PPM_PERF_CONSTRAINTS。
 
-データ。 PEP_PPM_PERF_SET 構造へのポインター。
-PEP に、プロセッサの現在の操作のパフォーマンスを変更する必要があることを通知します。
+データ PEP_PPM_PERF_CONSTRAINTS 構造体へのポインター。
+は、プロセッサの現在の操作制約に対してクエリを行っていることを PEP に通知します。
 
-Windows の電源管理フレームワーク (PoFx) は、プロセッサの現在の業績を変更する必要がある場合、この通知を送信します。 すべてのプロセッサ上の実行中には、この通知を送信できます。
+Windows 電源管理フレームワーク (PoFx) は、プロセッサの現在の動作制約を検査するときに、この通知を送信します。 PEP は、制御コード GUID_PPM_PERF_CONSTRAINT_CHANGE を使用して電源管理を実行することで、プロセッサのパフォーマンス制約を再評価するための OS の要求を開始します。 InBuffer と OutBuffer は NULL である必要があります。 
 
-AcceptProcessorNotification ルーチンに常に IRQL でと呼ばれる、PEP_NOTIFY_PPM_PERF_SET 通知 DISPATCH_LEVEL を = です。
+PEP は、プロセッサの電源管理トランザクションを発行する前に、プロセッサの PEP_DPM_DEVICE_STARTED 通知を受信するまで待機する必要があります。 
+
+PEP_NOTIFY_PPM_PERF_CONSTRAINTS 通知の場合、AcceptProcessorNotification ルーチンは常に IRQL = PASSIVE_LEVEL で呼び出されます。
+
+PASSIVE_LEVEL
+ 
+## <a name="pep_notify_ppm_perf_set"></a>PEP_NOTIFY_PPM_PERF_SET 
+ターゲットプロセッサの PEP のデバイスハンドルを含む PEPHANDLE 構造体を処理します。 通知が特定のプロセッサを対象としていない場合、これは NULL になります。
+
+通知値 PEP_NOTIFY_PPM_PERF_SET。
+
+データ[**PEP_PPM_PERF_SET**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/pep_x/ns-pep_x-_pep_ppm_perf_set)構造体へのポインター。
+プロセッサの現在の動作パフォーマンスを変更する必要があることを PEP に通知します。
+
+Windows の電源管理フレームワーク (PoFx) は、プロセッサの現在の動作パフォーマンスを変更する場合に、この通知を送信します。 この通知は、任意のプロセッサでの実行中に送信される場合があります。
+
+PEP_NOTIFY_PPM_PERF_SET 通知の場合、AcceptProcessorNotification ルーチンは常に IRQL = DISPATCH_LEVEL で呼び出されます。
 
 DISPATCH_LEVEL
  
-## <a name="pepnotifyppmparkselection"></a>PEP_NOTIFY_PPM_PARK_SELECTION 
-ターゲットのプロセッサに、PEP のデバイス ハンドルを含む処理 A PEPHANDLE 構造体。 通知では、特定のプロセッサを使用しない場合に、NULL がこれになります。
+## <a name="pep_notify_ppm_park_selection"></a>PEP_NOTIFY_PPM_PARK_SELECTION 
+ターゲットプロセッサの PEP のデバイスハンドルを含む PEPHANDLE 構造体を処理します。 通知が特定のプロセッサを対象としていない場合、これは NULL になります。
 
-通知 PEP_NOTIFY_PPM_PARK_SELECTION 値。
+通知値 PEP_NOTIFY_PPM_PARK_SELECTION。
 
-データ。 PEP_PPM_PARK_SELECTION 構造へのポインター。
-PEP に OS を指定ようで保管するにプロセッサ コアの推奨セットを選択することを通知します。
+データ PEP_PPM_PARK_SELECTION 構造体へのポインター。
+オペレーティングシステムが、使用するプロセッサコアの優先セットを選択したいと考えていることを PEP に通知します。
 
-Windows の電源管理フレームワーク (PoFx) は、PEP のコア パーキングする推奨セットを選択するように指示するには、この通知を送信します。
+Windows 電源管理フレームワーク (PoFx) は、この通知を送信して、PEP に対して、パークするコアの優先セットを選択するように指示します。
 
-2 つの関数を実行する、PEP_NOTIFY_PPM_PARK_SELECTION がオーバー ロードされています。 
+PEP_NOTIFY_PPM_PARK_SELECTION は、次の2つの関数を実行するためにオーバーロードされています。 
 
-(システムのすべてのプロセッサのセット) からプロセッサを保持する必要があります、PEP の選択を使用して、保留中ルーティングするがあります。 PEP の選択 (保留中ルーティングではないすべてのプロセッサのセット) からプロセッサに割り込みを受信する必要があり、割り込みを受け取ってはならないことができます。 Windows では、OS を実行する 2 つの識別するために、PEP の手段が提供されません。 結果として、PEP では、特定の一連の入力 (AdditionalUnparkedProcessors 数と PoPreference) では、この通知を受信すると、何らかの外部イベントの PEP の基本設定が変更しない限り、一貫性のある出力 (PepPreference) を提供する必要があります。 
+PEP を使用して、(システム内のすべてのプロセッサのセットから) どのプロセッサを保留するかを選択します。また、保留を解除する必要があります。 PEP が、保留されているすべてのプロセッサのセットから割り込みを受け取る必要があり、割り込みを受信しないプロセッサを選択します。 Windows には、1つの OS で実行されている2つのを区別するための手段が用意されていません。 その結果、PEP は、特定の入力セット (AdditionalunparPepPreference Processor count と PoPreference) を使用してこの通知を受信するときに、一部の外部イベントによって PEP 優先順位が変更されない限り、一貫性のある出力 () を提供する必要があります。 
 
-AcceptProcessorNotification ルーチンに常に IRQL でと呼ばれる、PEP_NOTIFY_PPM_PARK_SELECTION 通知 DISPATCH_LEVEL を = です。
+PEP_NOTIFY_PPM_PARK_SELECTION 通知の場合、AcceptProcessorNotification ルーチンは常に IRQL = DISPATCH_LEVEL で呼び出されます。
 
 DISPATCH_LEVEL
  
-## <a name="pepnotifyppmcststates"></a>PEP_NOTIFY_PPM_CST_STATES 
-ターゲットのプロセッサに、PEP のデバイス ハンドルを含む処理 A PEPHANDLE 構造体。 通知では、特定のプロセッサを使用しない場合に、NULL がこれになります。
+## <a name="pep_notify_ppm_cst_states"></a>PEP_NOTIFY_PPM_CST_STATES 
+ターゲットプロセッサの PEP のデバイスハンドルを含む PEPHANDLE 構造体を処理します。 通知が特定のプロセッサを対象としていない場合、これは NULL になります。
 
-通知 PEP_NOTIFY_PPM_CST_STATES 値。
+通知値 PEP_NOTIFY_PPM_CST_STATES。
 
-データ。 PEP_PPM_CST_STATES 構造へのポインター。
-ACPI 定義 C-状態のプロセッサでサポートされているセットを示すために、PEP に送信します。 
+データ PEP_PPM_CST_STATES 構造体へのポインター。
+プロセッサでサポートされている ACPI 定義の C 状態のセットを示すために PEP に送信されます。 
 
-Windows 電源管理フレームワーク (PoFx) は、ACPI 定義 C-状態のプロセッサでサポートされているセットを示すために PEP にこの通知を送信します。 この通知が最初に、PEP は、プロセッサの PEP_NOTIFY_PPM_QUERY_IDLE_STATES_V2 通知を受信する前に 1 回送信される送受信もう一度いつでもそのプロセッサ _CST オブジェクトが変更されたことを示す Notify(0x81) します。
+Windows 電源管理フレームワーク (PoFx) は、この通知を PEP に送信して、プロセッサでサポートされている ACPI 定義の C 状態のセットを示します。 この通知は、最初に PEP がプロセッサに対して PEP_NOTIFY_PPM_QUERY_IDLE_STATES_V2 通知を受信する前に1回送信されます。また、_CST オブジェクトが変更されたことを示す Notify (0x81) をプロセッサが受け取るたびにも送信されます。
 
-AcceptProcessorNotification ルーチンに常に IRQL でと呼ばれる PEP_NOTIFY_PPM_CST_STATES 通知、PASSIVE_LEVEL を = です。
-
-PASSIVE_LEVEL
- 
-## <a name="pepnotifyppmqueryplatformstates"></a>PEP_NOTIFY_PPM_QUERY_PLATFORM_STATES 
-ターゲットのプロセッサに、PEP のデバイス ハンドルを含む処理 A PEPHANDLE 構造体。 通知では、特定のプロセッサを使用しない場合に、NULL がこれになります。
-
-通知 PEP_NOTIFY_PPM_QUERY_PLATFORM_STATES 値。
-
-データ。 PEP_PPM_QUERY_PLATFORM_STATES 構造へのポインター。
-PEP をサポートするプラットフォームのアイドル状態の数を照会するプロセッサの初期化に送信されます。
-
-Windows 電源管理フレームワーク (PoFx) は、サポートされるプラットフォームのアイドル状態の数を照会するプロセッサの初期化時、PEP にこの通知を送信します。 この通知は、ブート時に 1 回送信されます。 0 以外のプラットフォームの状態数が返された後、PEP を開始するプロセッサのアイドル状態の遷移中にアイドル状態のプラットフォームを選択します。
-
-AcceptProcessorNotification ルーチンに常に IRQL でと呼ばれる PEP_NOTIFY_PPM_QUERY_PLATFORM_STATES 通知、PASSIVE_LEVEL を = です。
+PEP_NOTIFY_PPM_CST_STATES 通知の場合、AcceptProcessorNotification ルーチンは常に IRQL = PASSIVE_LEVEL で呼び出されます。
 
 PASSIVE_LEVEL
  
-## <a name="pepnotifyppmquerylpsettings"></a>PEP_NOTIFY_PPM_QUERY_LP_SETTINGS 
-通知 PEP_NOTIFY_PPM_QUERY_LP_SETTINGS 値。
+## <a name="pep_notify_ppm_query_platform_states"></a>PEP_NOTIFY_PPM_QUERY_PLATFORM_STATES 
+ターゲットプロセッサの PEP のデバイスハンドルを含む PEPHANDLE 構造体を処理します。 通知が特定のプロセッサを対象としていない場合、これは NULL になります。
 
-データ。 PEP_PPM_QUERY_LP_SETTINGS 構造へのポインター。
-PEP_NOTIFY_PPM_QUERY_LP_SETTINGS 通知を送信するには、PoFx は、PEP の AcceptProcessorNotification コールバック ルーチンを呼び出します。 この呼び出しでは、通知のパラメーター値は、PEP_NOTIFY_PPM_QUERY_LP_SETTINGS と PEP_PPM_QUERY_LP_SETTINGS 構造体へのデータ パラメーターのポイントが。
+通知値 PEP_NOTIFY_PPM_QUERY_PLATFORM_STATES。
 
-AcceptProcessorNotification ルーチンに常に IRQL でと呼ばれる PEP_NOTIFY_PPM_QUERY_LP_SETTINGS 通知、PASSIVE_LEVEL を = です。
+データ PEP_PPM_QUERY_PLATFORM_STATES 構造体へのポインター。
+PEP がサポートするプラットフォームのアイドル状態の数を照会するために、プロセッサの初期化時に送信されます。
 
-PASSIVE_LEVEL
- 
-## <a name="pepnotifyppmqueryidlestatesv2"></a>PEP_NOTIFY_PPM_QUERY_IDLE_STATES_V2 
-ターゲットのプロセッサに、PEP のデバイス ハンドルを含む処理 A PEPHANDLE 構造体。 通知では、特定のプロセッサを使用しない場合に、NULL がこれになります。
+Windows 電源管理フレームワーク (PoFx) は、プロセッサの初期化時にこの通知を PEP に送信して、サポートされているプラットフォームのアイドル状態の数を照会します。 この通知は、起動時に1回送信されます。 0以外の数のプラットフォーム状態を返した後、PEP はプロセッサのアイドル状態の遷移中に、プラットフォームのアイドル状態の選択を開始できます。
 
-通知 PEP_NOTIFY_PPM_QUERY_IDLE_STATES_V2 値。
-
-データ。 PEP_PPM_QUERY_IDLE_STATES_V2 構造へのポインター。
-プロセッサの初期化時、PEP をサポートするアイドル状態の一覧を照会するために使用します。
-
-Windows 電源管理フレームワーク (PoFx) は、この通知をサポートしているアイドル状態の一覧のクエリ プロセッサの初期化時、PEP に送信します。 
-
-Count メンバーには、アイドル状態の配列のサイズを指定します。 プロセッサのドライバーは、この通知を送信する前に、PEP_NOTIFY_PPM_QUERY_CAPABILITIES でアイドル状態の数を照会します。 
-
-PEP は、サポートされる各アイドル状態に関する情報を IdleStates 配列に格納します。 アイドル状態の状態は、電源/消費量を増やすの移行コストが高い順に一覧に表示する必要があります。 PEP は、各プロセッサのアイドル状態の同じ一覧を報告する必要はありません。 
-
-AcceptProcessorNotification ルーチンに常に IRQL でと呼ばれる PEP_NOTIFY_PPM_QUERY_IDLE_STATES_V2 通知、PASSIVE_LEVEL を = です。
+PEP_NOTIFY_PPM_QUERY_PLATFORM_STATES 通知の場合、AcceptProcessorNotification ルーチンは常に IRQL = PASSIVE_LEVEL で呼び出されます。
 
 PASSIVE_LEVEL
  
-## <a name="pepnotifyppmqueryplatformstate"></a>PEP_NOTIFY_PPM_QUERY_PLATFORM_STATE 
-ターゲットのプロセッサに、PEP のデバイス ハンドルを含む処理 A PEPHANDLE 構造体。 通知では、特定のプロセッサを使用しない場合に、NULL がこれになります。
+## <a name="pep_notify_ppm_query_lp_settings"></a>PEP_NOTIFY_PPM_QUERY_LP_SETTINGS 
+通知値 PEP_NOTIFY_PPM_QUERY_LP_SETTINGS。
 
-通知 PEP_NOTIFY_PPM_QUERY_PLATFORM_STATE 値。
+データ PEP_PPM_QUERY_LP_SETTINGS 構造体へのポインター。
+PEP_NOTIFY_PPM_QUERY_LP_SETTINGS 通知を送信するために、PoFx は PEP の AcceptProcessorNotification コールバックルーチンを呼び出します。 この呼び出しでは、通知パラメーターの値は PEP_NOTIFY_PPM_QUERY_LP_SETTINGS、データパラメーターは PEP_PPM_QUERY_LP_SETTINGS 構造体を指します。
 
-データ。 PEP_PPM_QUERY_PLATFORM_STATE 構造へのポインター。
-1 つのプラットフォームのアイドル状態のプロパティを照会する PEP に送信されます。
-
-Windows 電源管理フレームワーク (PoFx) は、1 つのプラットフォームのアイドル状態のプロパティを照会するプロセッサの初期化でこの通知を送信します。 
-
-PEP_PPM_QUERY_PLATFORM_STATE 構造体の StateIndex パラメーターは、クエリ対象のプラットフォームのアイドル状態のインデックスを指定します。 プロセッサのドライバーは、この通知を送信する前に、PEP_NOTIFY_PPM_QUERY_PLATFORM_STATES でサポートされているプラットフォームのアイドル状態の数を照会します。 そうすると、プロセッサのドライバーでは、各プラットフォームのアイドル状態の 1 つの PEP_NOTIFY_PPM_QUERY_PLATFORM_STATE 通知が送付されます。 プロセッサのドライバーは、PEP のすべてのプロセッサが登録された後までには、この通知の送信を待機します。 
-
-PEP は、プラットフォームのアイドル状態に関する情報を状態構造体に格納します。 プラットフォームのアイドル状態は、電源/消費量を増やすの移行コストが高い順に表示する必要があります。 
-
-AcceptProcessorNotification ルーチンに常に IRQL でと呼ばれる PEP_NOTIFY_PPM_QUERY_PLATFORM_STATE 通知、PASSIVE_LEVEL を = です。
+PEP_NOTIFY_PPM_QUERY_LP_SETTINGS 通知の場合、AcceptProcessorNotification ルーチンは常に IRQL = PASSIVE_LEVEL で呼び出されます。
 
 PASSIVE_LEVEL
  
-## <a name="pepnotifyppmtestidlestate"></a>PEP_NOTIFY_PPM_TEST_IDLE_STATE 
-ターゲットのプロセッサに、PEP のデバイス ハンドルを含む処理 A PEPHANDLE 構造体。 通知では、特定のプロセッサを使用しない場合に、NULL がこれになります。
+## <a name="pep_notify_ppm_query_idle_states_v2"></a>PEP_NOTIFY_PPM_QUERY_IDLE_STATES_V2 
+ターゲットプロセッサの PEP のデバイスハンドルを含む PEPHANDLE 構造体を処理します。 通知が特定のプロセッサを対象としていない場合、これは NULL になります。
 
-通知 PEP_NOTIFY_PPM_TEST_IDLE_STATE 値。
+通知値 PEP_NOTIFY_PPM_QUERY_IDLE_STATES_V2。
 
-データ。 PEP_PPM_TEST_IDLE_STATE 構造へのポインター。
-指定されたプロセッサのプロセッサやプラットフォームの指定されたアイドル状態が入力するかどうかをテストするために使用します。
+データ PEP_PPM_QUERY_IDLE_STATES_V2 構造体へのポインター。
+プロセッサの初期化時に、PEP がサポートするアイドル状態の一覧を照会するために使用されます。
 
-Windows の電源管理フレームワーク (PoFx) は、指定されたプロセッサのプロセッサやプラットフォームの指定されたアイドル状態が入力するかどうかをテストするには、この通知を送信します。 アイドル状態を入力できる場合、PEP は拒否コード PEP_IDLE_VETO_NONE を入力し、アイドル状態の移行を完了します。 何らかの理由によりアイドル状態の移行を完了できない場合、PEP は、0 以外の拒否コードに格納します。 
+Windows 電源管理フレームワーク (PoFx) は、プロセッサの初期化時にこの通知を PEP に送信して、サポートされているアイドル状態の一覧を照会します。 
 
-0x80000000 を 0 xffffffff の範囲の重要なの拒否コードは、OS の使用状況のために予約されており、使用することはできません。
- 
+Count メンバーは、アイドル状態の配列のサイズを指定します。 プロセッサドライバーは、この通知を送信する前に、PEP_NOTIFY_PPM_QUERY_CAPABILITIES でアイドル状態の数を照会します。 
 
-この通知が送信されるときに、OS は既に検証プラットフォーム アイドル状態に移行するためのデバイスとプロセッサの制約を含む、プロセッサやプラットフォームの選択されているアイドル状態に関連付けられているすべての制約を満たしていること。 
+PEP は、IdleStates 配列に、サポートされている各アイドル状態に関する情報を格納します。 アイドル状態は、電力消費量の減少と移行コストの増加の順に一覧表示されます。 PEP は、プロセッサごとに同じアイドル状態の一覧を報告する必要はありません。 
 
-OS は enterable が常にあります。 プロセッサまたはプロセッサのアイドル状態をインデックス 0 の場合を除き、プラットフォームのアイドル状態を入力する前に、この通知が送信されます。 PEP_IDLE_VETO_NONE でこの通知を完了しても、OS が指定されたアイドル状態を入力するとは限りません。 この通知に割り込みを無効になっています。 この通知は常に、ターゲット プロセッサで実行されます。 
-
-PEP_NOTIFY_PPM_TEST_IDLE_STATE 通知に割り込みを無効になっている AcceptProcessorNotification ルーチンが呼び出されます。
- 
-## <a name="pepnotifyppmidlepreexecute"></a>PEP_NOTIFY_PPM_IDLE_PRE_EXECUTE 
-ターゲットのプロセッサに、PEP のデバイス ハンドルを含む処理 A PEPHANDLE 構造体。 通知では、特定のプロセッサを使用しない場合に、NULL がこれになります。
-
-通知 PEP_NOTIFY_PPM_IDLE_PRE_EXECUTE 値。
-
-PEP_PPM_IDLE_EXECUTE または PEP_PPM_IDLE_EXECUTE_V2 構造体へのデータ。 ポインター。
-指定されたアイドル状態に遷移するシステムを準備する、PEP に送信されます。
-
-Windows の電源管理フレームワーク (PoFx) では、指定されたアイドル状態に遷移するシステムを準備する PEP にこの通知を送信します。 OS がプロセッサを移行のこの通知が正常に完了すると、関連付けられた C 状態を入力してアイドル状態にします。 PEP がない場合はエラー状態に返す必要がありますし、プロセッサ (およびプラットフォーム) のアイドル状態にシステムを準備できません。 
-
-ハイパーバイザーが有効にすると、PEP はのみに PEP_PROCESSOR_IDLE_STATE_UNKNOWN 設定 ProcessorState フィールドとプラットフォームのアイドル状態に入ったときにこの通知を受信します。 
-
-アイドル状態の連携のとれたインターフェイスを使用する場合、OS は、アイドル状態の遷移によって入力される調整のアイドル状態の一覧でフィールドの CoordinatedStateCount と CoordinatedState フィールドを含む PEP_PPM_IDLE_EXECUTE_V2 構造体を使用します。 存在する場合、PlatformState フィールドは入力されている最下位のプラットフォームの調整のアイドル状態を指定します。 
-
-アイドル状態の連携のとれたインターフェイスを使用していないときに、OS は PEP_PPM_IDLE_EXECUTE 構造体を使用します。 
-
-PEP_NOTIFY_PPM_IDLE_PRE_EXECUTE 通知の場合は、AcceptProcessorNotification ルーチンは、割り込みを無効にして、呼び出すし、ターゲット プロセッサでは常に実行します。
- 
-## <a name="pepnotifyppmupdateplatformstate"></a>PEP_NOTIFY_PPM_UPDATE_PLATFORM_STATE 
-ターゲットのプロセッサに、PEP のデバイス ハンドルを含む処理 A PEPHANDLE 構造体。 通知では、特定のプロセッサを使用しない場合に、NULL がこれになります。
-
-通知 PEP_NOTIFY_PPM_UPDATE_PLATFORM_STATE 値。
-
-データ。 PEP_PPM_QUERY_PLATFORM_STATE 構造へのポインター。
-PEP にプロセッサがプラットフォームのアイドル状態の特性を更新する Notify(0x81) を受け取ったことを通知します。
-
-Windows の電源管理フレームワーク (PoFx) は、プロセッサがプラットフォームのアイドル状態の特性を更新する Notify(0x81) を受信したときに、この通知を送信します。 この通知は、各プラットフォームのアイドル状態の 1 回送信されます。 PEP が通知 (つまり、AcceptProcessorNotification コールバックから返します FALSE) を受け付けない場合、プラットフォームのアイドル状態最近からの以前の定義が受け入れられます PEP_NOTIFY_PPM_QUERY_PLATFORM_STATE または PEP_NOTIFY_PPM_UPDATE_PLATFORM_STATE の通知が保持されます。 
-
-この通知は、PEP_NOTIFY_PPM_QUERY_PLATFORM_STATE 通知として同じデータ バッファーを使用します。 
-
-AcceptProcessorNotification ルーチンに常に IRQL でと呼ばれる PEP_NOTIFY_PPM_UPDATE_PLATFORM_STATE 通知、PASSIVE_LEVEL を = です。
+PEP_NOTIFY_PPM_QUERY_IDLE_STATES_V2 通知の場合、AcceptProcessorNotification ルーチンは常に IRQL = PASSIVE_LEVEL で呼び出されます。
 
 PASSIVE_LEVEL
  
-## <a name="pepnotifyppmqueryplatformstateresidencies"></a>PEP_NOTIFY_PPM_QUERY_PLATFORM_STATE_RESIDENCIES 
-ターゲットのプロセッサに、PEP のデバイス ハンドルを含む処理 A PEPHANDLE 構造体。 通知では、特定のプロセッサを使用しない場合に、NULL がこれになります。
+## <a name="pep_notify_ppm_query_platform_state"></a>PEP_NOTIFY_PPM_QUERY_PLATFORM_STATE 
+ターゲットプロセッサの PEP のデバイスハンドルを含む PEPHANDLE 構造体を処理します。 通知が特定のプロセッサを対象としていない場合、これは NULL になります。
 
-通知 PEP_NOTIFY_PPM_QUERY_PLATFORM_STATE_RESIDENCIES 値。
+通知値 PEP_NOTIFY_PPM_QUERY_PLATFORM_STATE。
 
-データ。 PEP_PPM_PLATFORM_STATE_RESIDENCIES 構造へのポインター。
-起動後に、各プラットフォームのアイドル状態に費やされた実際の累積時間をキャプチャする必要がありますが、PEP を通知します。
+データ PEP_PPM_QUERY_PLATFORM_STATE 構造体へのポインター。
+単一のプラットフォームアイドル状態のプロパティを照会するために PEP に送信されます。
 
-Windows 電源管理フレームワーク (PoFx) は、起動後に、各プラットフォームのアイドル状態に費やされた実際の累積時間をキャプチャする PEP にこの通知を送信します。 そのため、このクエリはのみプラットフォームに適用される、基になるハードウェアは、アイドル状態、OS によって要求から別のプラットフォームを入力する必要があります自律的に。 返される値は、診断のために使用し、プラットフォームのアイドル状態の保存場所の OS のビュー大きく異なる場合、プラットフォームが実際に実現を特定します。 
+Windows 電源管理フレームワーク (PoFx) は、プロセッサの初期化時にこの通知を送信して、単一のプラットフォームアイドル状態のプロパティを照会します。 
 
-カウントは、要素のインデックスがプラットフォームのアイドル状態のインデックスに対応する場所、状態配列内の要素の数を指定します。 PEP は各要素と一致する状態の実際の保存場所と遷移の数を入力します。 
+PEP_PPM_QUERY_PLATFORM_STATE 構造体の StateIndex パラメーターは、クエリ対象のプラットフォームのアイドル状態のインデックスを指定します。 プロセッサドライバーは、この通知を送信する前に、PEP_NOTIFY_PPM_QUERY_PLATFORM_STATES でサポートされているプラットフォームのアイドル状態の数を照会します。 その後、プロセッサドライバーは、プラットフォームのアイドル状態ごとに1つの PEP_NOTIFY_PPM_QUERY_PLATFORM_STATE 通知を送信します。 プロセッサドライバーは、すべてのプロセッサが PEP に登録されるまで、この通知の送信を待機します。 
 
+PEP は、プラットフォームのアイドル状態に関する情報を状態構造に格納します。 [プラットフォームのアイドル状態] には、電力消費量の減少と移行コストの増加の順に表示されます。 
 
-このクエリによってキャプチャされた値を累計は、その期間、PEP (またはプロセッサ ドライバー) 実際に実行プラットフォーム アイドル状態の遷移のみに対応する必要がありますに注意してください。 これにより、OS の計算される保存場所と実際の保存場所間の比較が意味のあることが保証されます。
- 
-
-PEP_NOTIFY_PPM_QUERY_PLATFORM_STATE_RESIDENCIES 通知の場合、IRQL で AcceptProcessorNotification ルーチンを呼び出すことができます。
- 
-## <a name="pepnotifyppmqueryvetoreasons"></a>PEP_NOTIFY_PPM_QUERY_VETO_REASONS 
-ターゲットのプロセッサに、PEP のデバイス ハンドルを含む処理 A PEPHANDLE 構造体。 通知では、特定のプロセッサを使用しない場合に、NULL がこれになります。
-
-通知 PEP_NOTIFY_PPM_QUERY_VETO_REASONS 値。
-
-データ。 PEP_PPM_QUERY_VETO_REASONS 構造へのポインター。
-ProcessorIdleVeto と PlatformIdleVeto コールバックで、PEP を使用する一意の拒否理由の数を照会するために使用します。 
-
-Windows 電源管理フレームワーク (PoFx) は、ProcessorIdleVeto と PlatformIdleVeto コールバックで、PEP を使用する一意の拒否理由の数を照会するプロセッサの初期化でこの通知を送信します。 この通知はオプションであり、PEP を無視できます。 
-
-受け入れられると、PEP は、プロセッサ、プラットフォーム、またはアイドル状態の調整を拒否するには、1 ~ VetoReasonCount、包括的で拒否の理由を使用して許可されます。 PEP は拒否理由 VetoReasonCount よりも大きい値を使用できません。 OS は、構造体を追跡拒否を事前に割り当てて、PEP_NOTIFY_PPM_ENUMERATE_BOOT_VETOES を併用すると、すべてのプロセッサ、プラットフォーム、および調整の状態がコールバックを拒否することの保証は成功します。
-
-この通知は、PEP では許容されません、PEP は、法的な拒否の理由で ProcessorIdleVeto と PlatformIdleVeto コールバックを使用できます。 OS では、割り当てエラーまたはその他の問題のためのコールバックが失敗しないようにすることは限りません。
-
-AcceptProcessorNotification ルーチンに常に IRQL でと呼ばれる PEP_NOTIFY_PPM_QUERY_VETO_REASONS 通知、PASSIVE_LEVEL を = です。
+PEP_NOTIFY_PPM_QUERY_PLATFORM_STATE 通知の場合、AcceptProcessorNotification ルーチンは常に IRQL = PASSIVE_LEVEL で呼び出されます。
 
 PASSIVE_LEVEL
  
-## <a name="pepnotifyppmqueryvetoreason"></a>PEP_NOTIFY_PPM_QUERY_VETO_REASON 
-ターゲットのプロセッサに、PEP のデバイス ハンドルを含む処理 A PEPHANDLE 構造体。 通知では、特定のプロセッサを使用しない場合に、NULL がこれになります。
+## <a name="pep_notify_ppm_test_idle_state"></a>PEP_NOTIFY_PPM_TEST_IDLE_STATE 
+ターゲットプロセッサの PEP のデバイスハンドルを含む PEPHANDLE 構造体を処理します。 通知が特定のプロセッサを対象としていない場合、これは NULL になります。
 
-通知 PEP_NOTIFY_PPM_QUERY_VETO_REASON 値。
+通知値 PEP_NOTIFY_PPM_TEST_IDLE_STATE。
 
-データ。 PEP_PPM_QUERY_VETO_REASON 構造へのポインター。
-特定の拒否の理由については、クエリに PEP に送信されます。
+データ PEP_PPM_TEST_IDLE_STATE 構造体へのポインター。
+指定されたプロセッサとプラットフォームのアイドル状態を指定されたプロセッサに入力できるかどうかをテストするために使用します。
 
-Windows の電源管理フレームワーク (PoFx) では、特定の拒否理由に関する情報を照会するプロセッサの初期化の時点でこの通知を送信します。 この通知は、名前の内容を埋めるために拒否の理由、名前に必要な割り当てサイズを取得する NULLName バッファーが 1 回および非 NULLName バッファーが 1 回の 2 回送信されます。 名前は、この拒否の理由を表す条件を示す、人間が判読できる文字列にする必要があります。 WPA およびカーネル デバッガーなどのデバッグ ツールがアイドル状態が入力されなかった理由を診断するときに名前が表示されます。 
+Windows 電源管理フレームワーク (PoFx) は、指定されたプロセッサとプラットフォームのアイドル状態を指定されたプロセッサに入力できるかどうかをテストするために、この通知を送信します。 アイドル状態を入力できる場合、PEP は拒否コード PEP_IDLE_VETO_NONE を入力し、アイドル状態の遷移を完了します。 何らかの理由でアイドル状態の遷移を完了できない場合、PEP はゼロでない拒否コードを入力します。 
 
-AcceptProcessorNotification ルーチンに常に IRQL でと呼ばれる PEP_NOTIFY_PPM_QUERY_VETO_REASON 通知、PASSIVE_LEVEL を = です。
+0x80000000 から0xffffffff までの範囲の重要な拒否コードは OS 使用のために予約されているため、使用できません。
+ 
+
+この通知が送信されると、OS は、選択したプロセッサまたはプラットフォームのアイドル状態に関連付けられているすべての制約が満たされていることを既に検証しています。これには、プラットフォームのアイドル遷移に関するデバイスとプロセッサの制約が含まれます。 
+
+この通知は、OS がプロセッサまたはプラットフォームのアイドル状態を入力しようとする前に送信されます。ただし、インデックス0のプロセッサアイドル状態は常に入力可能である必要があります。 PEP_IDLE_VETO_NONE を使用してこの通知を完了しても、OS が指定されたアイドル状態になるとは限りません。 この通知は、割り込みが無効になっている状態で送信されます。 この通知は、常にターゲットプロセッサで実行されます。 
+
+PEP_NOTIFY_PPM_TEST_IDLE_STATE 通知の場合、無効な割り込みを使用して AcceptProcessorNotification ルーチンが呼び出されます。
+ 
+## <a name="pep_notify_ppm_idle_pre_execute"></a>PEP_NOTIFY_PPM_IDLE_PRE_EXECUTE 
+ターゲットプロセッサの PEP のデバイスハンドルを含む PEPHANDLE 構造体を処理します。 通知が特定のプロセッサを対象としていない場合、これは NULL になります。
+
+通知値 PEP_NOTIFY_PPM_IDLE_PRE_EXECUTE。
+
+データ PEP_PPM_IDLE_EXECUTE または PEP_PPM_IDLE_EXECUTE_V2 構造体へのポインター。
+指定されたアイドル状態に移行するシステムを準備するために、PEP に送信されます。
+
+Windows 電源管理フレームワーク (PoFx) は、この通知を PEP に送信して、指定されたアイドル状態に移行するためのシステムを準備します。 この通知が正常に完了すると、OS は関連付けられた C 状態を入力してプロセッサをアイドル状態に移行します。 PEP がプロセッサ (およびプラットフォーム) のアイドル状態に入るためにシステムを準備できない場合は、エラー状態を返す必要があります。 
+
+ハイパーバイザーが有効になっている場合、PEP は、プラットフォームのアイドル状態に入ったときと、ProcessorState フィールドが PEP_PROCESSOR_IDLE_STATE_UNKNOWN に設定されている場合にのみ、この通知を受信します。 
+
+調整されたアイドル状態のインターフェイスを使用する場合、OS は PEP_PPM_IDLE_EXECUTE_V2 構造体を使用します。これには、アイドル状態の遷移によって入力される、CoordinatedStateCount と CoordinatedState の各フィールドと、調整されたアイドル状態の一覧が含まれます。 [PlatformState] フィールドには、入力されている最も深いプラットフォームの標準の状態 () が指定されます (存在する場合)。 
+
+調整されたアイドル状態のインターフェイスを使用しない場合、OS は PEP_PPM_IDLE_EXECUTE 構造体を使用します。 
+
+PEP_NOTIFY_PPM_IDLE_PRE_EXECUTE 通知の場合、AcceptProcessorNotification ルーチンは割り込みが無効になって呼び出され、常にターゲットプロセッサで実行されます。
+ 
+## <a name="pep_notify_ppm_update_platform_state"></a>PEP_NOTIFY_PPM_UPDATE_PLATFORM_STATE 
+ターゲットプロセッサの PEP のデバイスハンドルを含む PEPHANDLE 構造体を処理します。 通知が特定のプロセッサを対象としていない場合、これは NULL になります。
+
+通知値 PEP_NOTIFY_PPM_UPDATE_PLATFORM_STATE。
+
+データ PEP_PPM_QUERY_PLATFORM_STATE 構造体へのポインター。
+プラットフォームのアイドル状態の特性を更新するためにプロセッサが通知を受信したこと (0x81) を PEP に通知します。
+
+Windows の電源管理フレームワーク (PoFx) は、プロセッサがプラットフォームのアイドル状態の特性を更新する通知 (0x81) を受信したときに、この通知を送信します。 この通知は、プラットフォームのアイドル状態ごとに1回送信されます。 PEP が通知を受け入れない場合 (つまり、AcceptProcessorNotification コールバックから FALSE を返す場合)、最後に受け入れられた PEP_NOTIFY_PPM_QUERY_PLATFORM_STATE または PEP_NOTIFY_PPM_ から、プラットフォームのアイドル状態の前の定義が返されます。UPDATE_PLATFORM_STATE 通知は保存されます。 
+
+この通知では、PEP_NOTIFY_PPM_QUERY_PLATFORM_STATE 通知と同じデータバッファーが使用されます。 
+
+PEP_NOTIFY_PPM_UPDATE_PLATFORM_STATE 通知の場合、AcceptProcessorNotification ルーチンは常に IRQL = PASSIVE_LEVEL で呼び出されます。
 
 PASSIVE_LEVEL
  
-## <a name="pepnotifyppmenumeratebootvetoes"></a>PEP_NOTIFY_PPM_ENUMERATE_BOOT_VETOES 
-ターゲットのプロセッサに、PEP のデバイス ハンドルを含む処理 A PEPHANDLE 構造体。 通知では、特定のプロセッサを使用しない場合に、NULL がこれになります。
+## <a name="pep_notify_ppm_query_platform_state_residencies"></a>PEP_NOTIFY_PPM_QUERY_PLATFORM_STATE_RESIDENCIES 
+ターゲットプロセッサの PEP のデバイスハンドルを含む PEPHANDLE 構造体を処理します。 通知が特定のプロセッサを対象としていない場合、これは NULL になります。
 
-通知 PEP_NOTIFY_PPM_ENUMERATE_BOOT_VETOES 値。
+通知値 PEP_NOTIFY_PPM_QUERY_PLATFORM_STATE_RESIDENCIES。
 
-データが NULL ポインターの値。
-PEP に OS が ProcessorIdleVeto または PlatformIdleVeto への呼び出しを受け入れる準備ができていることを通知します。 
+データ PEP_PPM_PLATFORM_STATE_RESIDENCIES 構造体へのポインター。
+は、起動後に各プラットフォームのアイドル状態に費やされた実際の累積時間をキャプチャする必要があることを PEP に通知します。
 
-Windows の電源管理フレームワーク (PoFx) では、OS が ProcessorIdleVeto または PlatformIdleVeto への呼び出しを受け入れる準備ができていることを示すこの通知がプロセッサの初期化後アイドル状態の最初のエントリの前に送信します。 この通知のコンテキストで任意の起動時に vetoes を列挙できるは、PEP と OS では、プロセッサ、プラットフォーム、またはアイドル状態の調整を選択する最初の試行する前に有効にならないことが保証されます。 この通知に関連付けられているデータのパラメーターがありません。 
+Windows 電源管理フレームワーク (PoFx) は、この通知を PEP に送信して、起動後に各プラットフォームのアイドル状態に費やされた実際の累積時間をキャプチャします。 そのため、このクエリは、基になるハードウェアが、OS によって要求されたものとは異なるプラットフォームのアイドル状態を自律的に入力するプラットフォームにのみ適用されます。 返される値は、診断の目的で使用され、OS のプラットフォームのアイドル状態の状態の表示がプラットフォームの実際の達成と大幅に異なっているかどうかを特定します。 
 
-AcceptProcessorNotification ルーチンに常に IRQL でと呼ばれる PEP_NOTIFY_PPM_ENUMERATE_BOOT_VETOES 通知、PASSIVE_LEVEL を = です。
+Count は、States 配列内の要素の数を指定します。この要素のインデックスは、プラットフォームのアイドル状態のインデックスに対応します。 PEP は、各要素に、対応する状態の実際の常駐と遷移の数を入力します。 
+
+
+このクエリによってキャプチャされた累計値は、PEP (またはプロセッサドライバー) が実際にプラットフォームのアイドル状態の移行を実行した期間にのみ対応する必要があることに注意してください。 これにより、OS の計算された常駐と実際の保存場所の比較が意味を持つようになります。
+ 
+
+PEP_NOTIFY_PPM_QUERY_PLATFORM_STATE_RESIDENCIES 通知の場合、AcceptProcessorNotification ルーチンは任意の IRQL で呼び出すことができます。
+ 
+## <a name="pep_notify_ppm_query_veto_reasons"></a>PEP_NOTIFY_PPM_QUERY_VETO_REASONS 
+ターゲットプロセッサの PEP のデバイスハンドルを含む PEPHANDLE 構造体を処理します。 通知が特定のプロセッサを対象としていない場合、これは NULL になります。
+
+通知値 PEP_NOTIFY_PPM_QUERY_VETO_REASONS。
+
+データ PEP_PPM_QUERY_VETO_REASONS 構造体へのポインター。
+ProcessorIdleVeto および PlatformIdleVeto コールバックで PEP が使用する一意の拒否理由の数を照会するために使用されます。 
+
+Windows 電源管理フレームワーク (PoFx) は、プロセッサの初期化時にこの通知を送信して、ProcessorIdleVeto および PlatformIdleVeto コールバックで PEP が使用する一意の拒否理由の数を照会します。 この通知は省略可能であり、PEP によって無視される場合があります。 
+
+許容される場合、PEP は、1から VetoReasonCount までの拒否理由を使用して、プロセッサ、プラットフォーム、または調整されたアイドル状態を拒否することができます。 PEP では、VetoReasonCount より大きい拒否の理由を使用することはできません。 OS は拒否追跡構造を事前に割り当て、PEP_NOTIFY_PPM_ENUMERATE_BOOT_VETOES で使用すると、すべてのプロセッサ、プラットフォーム、および調整された状態拒否コールバックが成功することを保証します。
+
+この通知が PEP によって受け付けられない場合、PEP は ProcessorIdleVeto と PlatformIdleVeto のコールバックを有効な拒否の理由と共に使用する可能性があります。 OS は、割り当てエラーやその他の問題が原因でコールバックが失敗しないことを保証しません。
+
+PEP_NOTIFY_PPM_QUERY_VETO_REASONS 通知の場合、AcceptProcessorNotification ルーチンは常に IRQL = PASSIVE_LEVEL で呼び出されます。
 
 PASSIVE_LEVEL
  
-## <a name="pepnotifyppmparkmask"></a>PEP_NOTIFY_PPM_PARK_MASK 
-ターゲットのプロセッサに、PEP のデバイス ハンドルを含む処理 A PEPHANDLE 構造体。 通知では、特定のプロセッサを使用しない場合に、NULL がこれになります。
+## <a name="pep_notify_ppm_query_veto_reason"></a>PEP_NOTIFY_PPM_QUERY_VETO_REASON 
+ターゲットプロセッサの PEP のデバイスハンドルを含む PEPHANDLE 構造体を処理します。 通知が特定のプロセッサを対象としていない場合、これは NULL になります。
 
-通知 PEP_NOTIFY_PPM_PARK_MASK 値。
+通知値 PEP_NOTIFY_PPM_QUERY_VETO_REASON。
 
-データ。 PEP_PPM_PARK_MASK 構造へのポインター。
-現在のコア パーキング マスクの PEP に通知します。
+データ PEP_PPM_QUERY_VETO_REASON 構造体へのポインター。
+特定の拒否理由に関する情報を照会するために PEP に送信されます。
 
-Windows 電源管理フレームワーク (PoFx) は、現在のコア パーキング マスクの PEP を通知するために、実行時にこの通知を送信します。
+Windows 電源管理フレームワーク (PoFx) は、プロセッサの初期化時にこの通知を送信して、特定の拒否理由に関する情報を照会します。 この通知は、拒否の理由ごとに2回送信されます。1回は名前に必要な割り当てサイズを取得するための NULLName バッファーを使用し、もう1回は名前の内容を入力するための Null 以外の名前バッファーを使用します。 名前は、この拒否理由が表す条件を示す、人間が判読できる文字列である必要があります。 WPA やカーネルデバッガーなどのデバッグツールでは、アイドル状態が入力されなかった原因を診断するときに名前が表示されます。 
 
-IRQL で PEP_NOTIFY_PPM_PARK_MASK 通知の場合、AcceptProcessorNotification ルーチンと呼ばれる = DISPATCH_LEVEL とすべてのプロセッサ上の実行中に送信することがあります。
+PEP_NOTIFY_PPM_QUERY_VETO_REASON 通知の場合、AcceptProcessorNotification ルーチンは常に IRQL = PASSIVE_LEVEL で呼び出されます。
+
+PASSIVE_LEVEL
+ 
+## <a name="pep_notify_ppm_enumerate_boot_vetoes"></a>PEP_NOTIFY_PPM_ENUMERATE_BOOT_VETOES 
+ターゲットプロセッサの PEP のデバイスハンドルを含む PEPHANDLE 構造体を処理します。 通知が特定のプロセッサを対象としていない場合、これは NULL になります。
+
+通知値 PEP_NOTIFY_PPM_ENUMERATE_BOOT_VETOES。
+
+データ NULL ポインター値。
+OS が ProcessorIdleVeto または PlatformIdleVeto の呼び出しを受け入れる準備ができていることを PEP に通知します。 
+
+Windows 電源管理フレームワーク (PoFx) は、プロセッサの初期化後に、OS が ProcessorIdleVeto または PlatformIdleVeto の呼び出しを受け入れる準備ができていることを示すために、最初のアイドルエントリの前にこの通知を送信します。 PEP は、この通知のコンテキストでブート時の vetoes を列挙する場合があります。また、OS は、プロセッサ、プラットフォーム、または動作しているアイドル状態を最初に選択する前に有効になることを保証します。 この通知には、関連付けられたデータパラメーターがありません。 
+
+PEP_NOTIFY_PPM_ENUMERATE_BOOT_VETOES 通知の場合、AcceptProcessorNotification ルーチンは常に IRQL = PASSIVE_LEVEL で呼び出されます。
+
+PASSIVE_LEVEL
+ 
+## <a name="pep_notify_ppm_park_mask"></a>PEP_NOTIFY_PPM_PARK_MASK 
+ターゲットプロセッサの PEP のデバイスハンドルを含む PEPHANDLE 構造体を処理します。 通知が特定のプロセッサを対象としていない場合、これは NULL になります。
+
+通知値 PEP_NOTIFY_PPM_PARK_MASK。
+
+データ PEP_PPM_PARK_MASK 構造体へのポインター。
+現在のコアパーキングマスクを PEP に通知します。
+
+Windows 電源管理フレームワーク (PoFx) は、実行時にこの通知を送信して、現在のコア駐車マスクを PEP に通知します。
+
+PEP_NOTIFY_PPM_PARK_MASK 通知の場合、AcceptProcessorNotification ルーチンは IRQL = DISPATCH_LEVEL で呼び出され、任意のプロセッサで実行中に送信される可能性があります。
 
 DISPATCH_LEVEL
  
-## <a name="pepnotifyppmparkselectionv2"></a>PEP_NOTIFY_PPM_PARK_SELECTION_V2 
-ターゲットのプロセッサに、PEP のデバイス ハンドルを含む処理 A PEPHANDLE 構造体。 通知では、特定のプロセッサを使用しない場合に、NULL がこれになります。
+## <a name="pep_notify_ppm_park_selection_v2"></a>PEP_NOTIFY_PPM_PARK_SELECTION_V2 
+ターゲットプロセッサの PEP のデバイスハンドルを含む PEPHANDLE 構造体を処理します。 通知が特定のプロセッサを対象としていない場合、これは NULL になります。
 
-通知 PEP_NOTIFY_PPM_PARK_SELECTION_V2 値。
+通知値 PEP_NOTIFY_PPM_PARK_SELECTION_V2。
 
-データ。 PEP_PPM_PARK_SELECTION_V2 構造へのポインター。
-コアが駐車またはからの割り込みを進めるための推奨セットを選択することを OS でなどは、PEP を通知します。 この通知を承認されない場合、OS がフォールバック PEP_NOTIFY_PPM_PARK_SELECTION 通知を送信します。
+データ PEP_PPM_PARK_SELECTION_V2 構造体へのポインター。
+は、割り込みを行うために必要なコアのセットを OS が選択したいと考えていることを PEP に通知します。 この通知が受け付けられない場合、OS はフォールバックして PEP_NOTIFY_PPM_PARK_SELECTION 通知を送信します。
 
-パフォーマンス チェックのアルゴリズムを実行するときに、OS が通知を送信 PEP_NOTIFY_PPM_PARK_SELECTION_V2 複数回: 各パーク ドメイン環境および 0 の core 効率クラスごとに何度か割り込みステアリングの 0 個以上回です。 パフォーマンス チェックの OS に一貫性のある応答を提供するために、PEP を支援するために、OS は、通知を求めるメッセージが表示されるパフォーマンス チェックの評価の割り込み時間ベースのタイムスタンプを指定します。 すべてパーク選択通知が 1 つのパフォーマンスの結果は、同じタイムスタンプ評価を確認します。 残りのフィールド (Count、AdditionalUnparkedProcessors、EvaluationType、およびプロセッサ) では、同じパフォーマンス チェックの評価中に送信される通知が異なる可能性があります、PEP はことはできませんがあることと同じ前提としています。 ことに注意してください。 
+パフォーマンスチェックアルゴリズムを実行すると、OS は PEP_NOTIFY_PPM_PARK_SELECTION_V2 通知を複数回送信する場合があります。各パークドメイン内のコア効率クラスごとに0回以上、割り込みステアリングの場合は0回以上です。 パフォーマンスチェックのために、オペレーティングシステムへの一貫性のある応答を提供するために、OS は、通知を求めたパフォーマンスチェックの評価の割り込み時間ベースのタイムスタンプを提供します。 1つのパフォーマンスチェック評価の結果として得られるすべてのパーク選択通知には、同じタイムスタンプが設定されます。 残りのフィールド (Count、AdditionalUnparkedProcessors、EvaluationType、および Processor) は、同じパフォーマンスチェックの評価中に送信される通知によって異なる場合があることに注意してください。 PEP は、それらが同じままであると見なすことはできません。 
 
-AcceptProcessorNotification ルーチンに常に IRQL でと呼ばれる、PEP_NOTIFY_PPM_PARK_SELECTION 通知 DISPATCH_LEVEL を = です。
-
-DISPATCH_LEVEL
- 
-## <a name="pepnotifyppmperfcheckcomplete"></a>PEP_NOTIFY_PPM_PERF_CHECK_COMPLETE 
-ターゲットのプロセッサに、PEP のデバイス ハンドルを含む処理 A PEPHANDLE 構造体。 通知では、特定のプロセッサを使用しない場合に、NULL がこれになります。
-
-通知 PEP_NOTIFY_PPM_PERF_CHECK_COMPLETE 値。
-
-データ。 PEP_PPM_PERF_CHECK_COMPLETE 構造へのポインター。
-定期的なパフォーマンス チェックの評価が完了したことを PEP に通知します。
-
-Windows の電源管理フレームワーク (PoFx) では、評価が完了したあたり定期的な確認 PEP に通知する実行時にこの通知を送信します。
-
-IRQL で PEP_NOTIFY_PPM_PERF_CHECK_COMPLETE 通知の場合、AcceptProcessorNotification ルーチンと呼ばれる = DISPATCH_LEVEL とすべてのプロセッサ上の実行中に送信することがあります。
+PEP_NOTIFY_PPM_PARK_SELECTION 通知の場合、AcceptProcessorNotification ルーチンは常に IRQL = DISPATCH_LEVEL で呼び出されます。
 
 DISPATCH_LEVEL
  
-## <a name="pepnotifyppmquerycoordinateddependency"></a>PEP_NOTIFY_PPM_QUERY_COORDINATED_DEPENDENCY 
-ターゲットのプロセッサに、PEP のデバイス ハンドルを含む処理 A PEPHANDLE 構造体。 通知では、特定のプロセッサを使用しない場合に、NULL がこれになります。
+## <a name="pep_notify_ppm_perf_check_complete"></a>PEP_NOTIFY_PPM_PERF_CHECK_COMPLETE 
+ターゲットプロセッサの PEP のデバイスハンドルを含む PEPHANDLE 構造体を処理します。 通知が特定のプロセッサを対象としていない場合、これは NULL になります。
 
-通知 PEP_NOTIFY_PPM_QUERY_COORDINATED_DEPENDENCY 値。
+通知値 PEP_NOTIFY_PPM_PERF_CHECK_COMPLETE。
 
-データ。 PEP_PPM_QUERY_COORDINATED_DEPENDENCY 構造へのポインター。
-各調整のアイドル状態の依存関係のクエリに PEP に送信されます。
+データ PEP_PPM_PERF_CHECK_COMPLETE 構造体へのポインター。
+定期的なパフォーマンスチェックの評価が完了したことを PEP に通知します。
 
-Windows の電源管理フレームワーク (PoFx) では、各連携のとれたアイドル状態の依存関係の PEP を照会するプロセッサの初期化の時点でこの通知を送信します。 OS には、依存関係の配列の MaximumDependencySize 要素が割り当てられます。 DependencySizeUsed で使用されていた、配列の要素の数は、PEP を入力する必要があります。
+Windows 電源管理フレームワーク (PoFx) は、実行時にこの通知を送信して、定期的なチェックの評価が完了したことを PEP に通知します。
 
-依存関係が表現されていることをプロセッサの場合は、PEP を対象となるプロセッサ POHANDLE TargetProcessor フィールドで塗りつぶします。 ExpectedState フィールドは、ターゲットのプロセッサのプロセッサのアイドル状態のインデックスを参照します。 
+PEP_NOTIFY_PPM_PERF_CHECK_COMPLETE 通知の場合、AcceptProcessorNotification ルーチンは IRQL = DISPATCH_LEVEL で呼び出され、任意のプロセッサで実行中に送信される可能性があります。
 
-依存関係が表現されていることが他の調整のアイドル状態にある場合は、PEP は、TargetProcessor の場合は NULL に設定します。 ExpectedState フィールドは、連携のとれたアイドル状態のインデックスを参照します。 
+DISPATCH_LEVEL
+ 
+## <a name="pep_notify_ppm_query_coordinated_dependency"></a>PEP_NOTIFY_PPM_QUERY_COORDINATED_DEPENDENCY 
+ターゲットプロセッサの PEP のデバイスハンドルを含む PEPHANDLE 構造体を処理します。 通知が特定のプロセッサを対象としていない場合、これは NULL になります。
 
-各依存関係では、OS が、依存関係を満たすために使用できるオプションのメニューが一覧表示します。 アイドル状態になる OS は最小のインデックスに最も大きいインデックスから各条件をチェックして、依存関係を満たすしようとします。 依存関係の条件が満たされた場合、OS は満たされる依存関係を考慮します。 どの条件が満たされる場合、依存関係が満たされていないと、調整のアイドル状態を入力しない可能性があります。
+通知値 PEP_NOTIFY_PPM_QUERY_COORDINATED_DEPENDENCY。
 
-AcceptProcessorNotification ルーチンに常に IRQL でと呼ばれる PEP_NOTIFY_PPM_QUERY_COORDINATED_DEPENDENCY 通知、PASSIVE_LEVEL を = です。
+データ PEP_PPM_QUERY_COORDINATED_DEPENDENCY 構造体へのポインター。
+各調整されたアイドル状態の依存関係を照会するために PEP に送信されます。
+
+Windows 電源管理フレームワーク (PoFx) は、プロセッサの初期化時にこの通知を送信して、各調整されたアイドル状態の依存関係を PEP に照会します。 OS は、Dependencies 配列に MaximumDependencySize 要素を割り当てます。 PEP は、DependencySizeUsed で使用された配列の要素の数を入力する必要があります。
+
+表現されている依存関係がプロセッサ上にある場合、PEP はターゲットプロセッサの POHANDLE を使用して TargetProcessor フィールドに入力します。 ExpectedState フィールドは、ターゲットプロセッサのプロセッサアイドル状態のインデックスを参照します。 
+
+表現されている依存関係が他の調整されたアイドル状態である場合、PEP は TargetProcessor に NULL を入力します。 次に、ExpectedState フィールドは、調整されたアイドル状態のインデックスを参照します。 
+
+各依存関係には、OS が依存関係を満たすために使用できるオプションのメニューが表示されます。 アイドル状態になると、OS は、上位のインデックスから最小のインデックスまでの条件をチェックすることによって、依存関係を満たすことを試みます。 依存関係の条件が満たされている場合、OS は依存関係が満たされていると見なします。 条件が満たされない場合、依存関係は満たされず、調整されたアイドル状態になる可能性があります。
+
+PEP_NOTIFY_PPM_QUERY_COORDINATED_DEPENDENCY 通知の場合、AcceptProcessorNotification ルーチンは常に IRQL = PASSIVE_LEVEL で呼び出されます。
 
 PASSIVE_LEVEL
  
-## <a name="pepnotifyppmquerycoordinatedstatename"></a>PEP_NOTIFY_PPM_QUERY_COORDINATED_STATE_NAME 
-ターゲットのプロセッサに、PEP のデバイス ハンドルを含む処理 A PEPHANDLE 構造体。 通知では、特定のプロセッサを使用しない場合に、NULL がこれになります。
+## <a name="pep_notify_ppm_query_coordinated_state_name"></a>PEP_NOTIFY_PPM_QUERY_COORDINATED_STATE_NAME 
+ターゲットプロセッサの PEP のデバイスハンドルを含む PEPHANDLE 構造体を処理します。 通知が特定のプロセッサを対象としていない場合、これは NULL になります。
 
-通知 PEP_NOTIFY_PPM_QUERY_COORDINATED_STATE_NAME 値。
+通知値 PEP_NOTIFY_PPM_QUERY_COORDINATED_STATE_NAME。
 
-データ。 PEP_PPM_QUERY_STATE_NAME 構造へのポインター。
-アイドル状態の特定またはプラットフォームの調整については、クエリに PEP に送信されます。
+データ PEP_PPM_QUERY_STATE_NAME 構造体へのポインター。
+特定の調整またはプラットフォームのアイドル状態に関する情報を照会するために PEP に送信されます。
 
-Windows 電源管理フレームワーク (PoFx) は、アイドル状態の特定またはプラットフォームの調整については、PEP を照会するプロセッサの初期化でこの通知を送信します。 この通知は、名前の内容を埋めるために、状態、名前に必要な割り当てサイズを取得する NULL 名バッファーが 1 回および NULL 以外の名前のバッファーが 1 回ごとに 2 回送信されます。 名前は、連携のとれたアイドル状態の名前を示す、人間が判読できる文字列である必要があります。 アイドル状態の調整は、複数クラスター システムでは、異なるクラスター上の同等の状態の名前可能性がある同じを除く、一意の名前が必要です。 WPA およびカーネル デバッガーなどのツールをデバッグすると、この調整/プラットフォームのアイドル状態を参照する診断名が表示されます。
+Windows 電源管理フレームワーク (PoFx) は、プロセッサの初期化時にこの通知を送信して、特定の調整またはプラットフォームのアイドル状態に関する情報を PEP に照会します。 この通知は、状態ごとに2回送信されます。1回は名前に必要な割り当てサイズを取得するための NULL 名バッファーで、もう1回は名前の内容を入力するための NULL 以外の名前バッファーを使用します。 名前は、ユーザーが判読できるように、調整されたアイドル状態の名前を示す文字列にする必要があります。 連携するアイドル状態には一意の名前が必要です。ただし、マルチクラスターシステムでは、異なるクラスター上の同じ状態の名前が同じになる場合があります。 WPA やカーネルデバッガーなどのデバッグツールでは、この調整/プラットフォームアイドル状態を参照する診断に名前が表示されます。
 
-AcceptProcessorNotification ルーチンに常に IRQL でと呼ばれる PEP_NOTIFY_PPM_QUERY_COORDINATED_STATE_NAME 通知、PASSIVE_LEVEL を = です。
-
-PASSIVE_LEVEL
- 
-## <a name="pepnotifyppmquerycoordinatedstates"></a>PEP_NOTIFY_PPM_QUERY_COORDINATED_STATES 
-ターゲットのプロセッサに、PEP のデバイス ハンドルを含む処理 A PEPHANDLE 構造体。 通知では、特定のプロセッサを使用しない場合に、NULL がこれになります。
-
-通知 PEP_NOTIFY_PPM_QUERY_COORDINATED_STATES 値。
-
-データ。 PEP_PPM_QUERY_COORDINATED_STATES 構造へのポインター。
-すべて連携のとれたアイドル状態のプロパティにクエリ プロセッサの初期化に使用します。
-
-Windows の電源管理フレームワーク (PoFx) では、アイドル状態の調整されたすべてのプロパティを照会するプロセッサの初期化に PEP にこの通知を送信します。 PEP に PEP_NOTIFY_PPM_QUERY_PLATFORM_STATE 通知が送信されるが、直前に、この通知が送信されます。 受け入れられない場合、PEP は、アイドル状態の連携のとれたインターフェイスを使用して、PEP_NOTIFY_PPM_QUERY_PLATFORM_STATE 通知を受信しませんが。 できない場合は、プラットフォームのアイドル状態のインターフェイスを使用して、PEP を受け入れられると、し、OS がフォールバックして連携のとれたアイドル状態のクエリに PEP_NOTIFY_PPM_QUERY_PLATFORM_STATE 通知を使用しています。 
-
-OS は、PEP のすべてのプロセッサが登録された後までには、この通知の送信を待機します。 
-
-PEP は、連携のとれたアイドル状態に関する情報の状態を構造体に格納します。
-
-調整のアイドル状態の順序は、次の規則に従う必要があります。 
-
-2 つの調整と同じ機能単位は、最も明るいものから順に表示されるはずの別の電源状態を表す状態 (ほとんどの電力消費/最低切り替えコスト) 最下位に (少なくとも電源消費/ほとんど切り替えコスト)。 調整のアイドル状態のみ下限のインデックスを持つその他の連携のとれたアイドル状態に依存する可能性があります。 2 つ不整合のある連携したアイドル状態の状態 (つまり、2 つ連携のとれたアイドル状態のプロセッサの分離されたセットに依存する) 必要な順序がありません。
-
-AcceptProcessorNotification ルーチンに常に IRQL でと呼ばれる PEP_NOTIFY_PPM_QUERY_COORDINATED_STATES 通知、PASSIVE_LEVEL を = です。
+PEP_NOTIFY_PPM_QUERY_COORDINATED_STATE_NAME 通知の場合、AcceptProcessorNotification ルーチンは常に IRQL = PASSIVE_LEVEL で呼び出されます。
 
 PASSIVE_LEVEL
  
-## <a name="pepnotifyppmqueryprocessorstatename"></a>PEP_NOTIFY_PPM_QUERY_PROCESSOR_STATE_NAME 
-ターゲットのプロセッサに、PEP のデバイス ハンドルを含む処理 A PEPHANDLE 構造体。 通知では、特定のプロセッサを使用しない場合に、NULL がこれになります。
+## <a name="pep_notify_ppm_query_coordinated_states"></a>PEP_NOTIFY_PPM_QUERY_COORDINATED_STATES 
+ターゲットプロセッサの PEP のデバイスハンドルを含む PEPHANDLE 構造体を処理します。 通知が特定のプロセッサを対象としていない場合、これは NULL になります。
 
-通知 PEP_NOTIFY_PPM_QUERY_PROCESSOR_STATE_NAME 値。
+通知値 PEP_NOTIFY_PPM_QUERY_COORDINATED_STATES。
 
-データ。 PEP_PPM_QUERY_STATE_NAME 構造へのポインター。
-特定のプロセッサのアイドル状態については、クエリに PEP に送信されます。
+データ PEP_PPM_QUERY_COORDINATED_STATES 構造体へのポインター。
+プロセッサの初期化時に使用して、すべての連携アイドル状態のプロパティを照会します。
 
-Windows 電源管理フレームワーク (PoFx) は、特定のプロセッサのアイドル状態については、PEP を照会するプロセッサの初期化でこの通知を送信します。 この通知は、名前の内容を埋めるために、状態、名前に必要な割り当てサイズを取得する NULL 名バッファーが 1 回および NULL 以外の名前のバッファーが 1 回ごとに 2 回送信されます。 名前は、連携のとれたアイドル状態の名前を示す、人間が判読できる文字列である必要があります。 アイドル状態の調整は、複数クラスター システムでは、異なるクラスター上の同等の状態の名前可能性がある同じを除く、一意の名前が必要です。 WPA およびカーネル デバッガーなどのツールをデバッグすると、この調整/プラットフォームのアイドル状態を参照する診断名が表示されます。
+Windows 電源管理フレームワーク (PoFx) は、プロセッサの初期化時にこの通知を PEP に送信して、すべての連携アイドル状態のプロパティを照会します。 この通知は、PEP が PEP_NOTIFY_PPM_QUERY_PLATFORM_STATE 通知を送信する直前に送信されます。 許容される場合、PEP は、調整されたアイドル状態のインターフェイスを使用しており、PEP_NOTIFY_PPM_QUERY_PLATFORM_STATE 通知を受信しません。 受け入れられない場合、PEP はプラットフォームのアイドル状態のインターフェイスを使用し、OS は PEP_NOTIFY_PPM_QUERY_PLATFORM_STATE 通知を使用して、調整されたアイドル状態のクエリを実行します。 
 
-AcceptProcessorNotification ルーチンに常に IRQL でと呼ばれる PEP_NOTIFY_PPM_QUERY_PROCESSOR_STATE_NAME 通知、PASSIVE_LEVEL を = です。
+OS は、すべてのプロセッサが PEP に登録されるまで、この通知の送信を待機します。 
+
+PEP は、状態構造体に、時間の経過に伴うアイドル状態に関する情報を格納します。
+
+調整されたアイドル状態の順序は、次の規則に従う必要があります。 
+
+同じ機能単位の異なる電源状態を表す2つの調整された状態は、最低 (電力消費量/最小移行コスト) から最も深い (最小電力消費量/最も多くの移行コスト) までの順序で示される必要があります。 調整されたアイドル状態は、インデックスが小さい他の調整されたアイドル状態にのみ依存します。 2つの結合されていない連携したアイドル状態 (つまり、異なるプロセッサのセットに依存する2つの連携するアイドル状態) の間には、必須の順序はありません。
+
+PEP_NOTIFY_PPM_QUERY_COORDINATED_STATES 通知の場合、AcceptProcessorNotification ルーチンは常に IRQL = PASSIVE_LEVEL で呼び出されます。
 
 PASSIVE_LEVEL
  
-## <a name="pepnotifyppmentersystemstate"></a>PEP_NOTIFY_PPM_ENTER_SYSTEM_STATE 
-ターゲットのプロセッサに、PEP のデバイス ハンドルを含む処理 A PEPHANDLE 構造体。 通知では、特定のプロセッサを使用しない場合に、NULL がこれになります。
+## <a name="pep_notify_ppm_query_processor_state_name"></a>PEP_NOTIFY_PPM_QUERY_PROCESSOR_STATE_NAME 
+ターゲットプロセッサの PEP のデバイスハンドルを含む PEPHANDLE 構造体を処理します。 通知が特定のプロセッサを対象としていない場合、これは NULL になります。
 
-通知 PEP_NOTIFY_PPM_ENTER_SYSTEM_STATE 値。
+通知値 PEP_NOTIFY_PPM_QUERY_PROCESSOR_STATE_NAME。
 
-データ。 PEP_PPM_ENTER_SYSTEM_STATE 構造へのポインター。
-PEP_NOTIFY_PPM_ENTER_SYSTEM_STATE は、システムは、システム電源の状態に、PEP に通知する、省略可能な通知です。 システムのすべてのパッシブ レベル作業をプロセッサをシステムの電源状態の移行が完了した後、この通知はすべてのプロセッサに同時に送信します。  
+データ PEP_PPM_QUERY_STATE_NAME 構造体へのポインター。
+特定のプロセッサアイドル状態に関する情報を照会するために PEP に送信されます。
 
-この通知は、ディスパッチにあるすべてのプロセッサを搭載した、DISPATCH_LEVEL で送信されます。 この通知は常に、ターゲット プロセッサで実行されます。 
+Windows 電源管理フレームワーク (PoFx) は、プロセッサの初期化時にこの通知を送信して、PEP に特定のプロセッサアイドル状態に関する情報を照会します。 この通知は、状態ごとに2回送信されます。1回は名前に必要な割り当てサイズを取得するための NULL 名バッファーで、もう1回は名前の内容を入力するための NULL 以外の名前バッファーを使用します。 名前は、ユーザーが判読できるように、調整されたアイドル状態の名前を示す文字列にする必要があります。 連携するアイドル状態には一意の名前が必要です。ただし、マルチクラスターシステムでは、異なるクラスター上の同じ状態の名前が同じになる場合があります。 WPA やカーネルデバッガーなどのデバッグツールでは、この調整/プラットフォームアイドル状態を参照する診断に名前が表示されます。
 
-注、PEP をこの通知からのすべての作業キューに登録する必要があります。 プロセッサは処理しません作業項目、Dpc などがこの通知の送信後。 
+PEP_NOTIFY_PPM_QUERY_PROCESSOR_STATE_NAME 通知の場合、AcceptProcessorNotification ルーチンは常に IRQL = PASSIVE_LEVEL で呼び出されます。
+
+PASSIVE_LEVEL
+ 
+## <a name="pep_notify_ppm_enter_system_state"></a>PEP_NOTIFY_PPM_ENTER_SYSTEM_STATE 
+ターゲットプロセッサの PEP のデバイスハンドルを含む PEPHANDLE 構造体を処理します。 通知が特定のプロセッサを対象としていない場合、これは NULL になります。
+
+通知値 PEP_NOTIFY_PPM_ENTER_SYSTEM_STATE。
+
+データ PEP_PPM_ENTER_SYSTEM_STATE 構造体へのポインター。
+PEP_NOTIFY_PPM_ENTER_SYSTEM_STATE は、システムがシステムの電源状態を入力しようとしていることを PEP に通知するオプションの通知です。 この通知は、システムがすべてのパッシブレベルの作業を完了した後、すべてのプロセッサに同時に送信され、システムの電源状態に移行します。  
+
+この通知は DISPATCH_LEVEL で送信され、すべてのプロセッサがディスパッチされます。 この通知は、常にターゲットプロセッサで実行されます。 
+
+PEP は、この通知からのすべての作業をキューに置いてはいけないことに注意してください。 この通知が送信された後、プロセッサは作業項目、Dpc などを処理しません。 
  
 
 DISPATCH_LEVEL
  
-## <a name="pepnotifyppmperfsetstate"></a>PEP_NOTIFY_PPM_PERF_SET_STATE 
-ターゲットのプロセッサに、PEP のデバイス ハンドルを含む処理 A PEPHANDLE 構造体。 通知では、特定のプロセッサを使用しない場合に、NULL がこれになります。
+## <a name="pep_notify_ppm_perf_set_state"></a>PEP_NOTIFY_PPM_PERF_SET_STATE 
+ターゲットプロセッサの PEP のデバイスハンドルを含む PEPHANDLE 構造体を処理します。 通知が特定のプロセッサを対象としていない場合、これは NULL になります。
 
-通知 PEP_NOTIFY_PPM_PERF_SET_STATE 値。
+通知値 PEP_NOTIFY_PPM_PERF_SET_STATE。
 
-データ。 PEP_PPM_PERF_SET_STATE 構造へのポインター。
-実行時に、プロセッサの現在の操作のパフォーマンス状態を設定するために使用します。 PEP に自律的なハードウェア ブースティング減らすことなくパフォーマンスのセットの要求のパフォーマンスがの対応がある場合はの自律的なハードウェアの最小パフォーマンスの状態や最大のパフォーマンスの状態に基づいて要求を制限して、目的のターゲットパフォーマンスの状態。 それ以外の場合、必要なパフォーマンスの状態を正確に実行します。  
+データ PEP_PPM_PERF_SET_STATE 構造体へのポインター。
+実行時にプロセッサの現在の動作パフォーマンス状態を設定するために使用されます。 PEP がパフォーマンスセット要求なしにパフォーマンスをブースト/下げることができる自律ハードウェアを使用している場合は、最小パフォーマンス状態と最大パフォーマンス状態に基づいて自律ハードウェアからの要求を制限し、必要なものをターゲットにする必要があります。パフォーマンスの状態。 それ以外の場合は、目的のパフォーマンス状態で実行する必要があります。  
 
-この通知は、DISPATCH_LEVEL で送信されます。 スケジューラは、使用中のパフォーマンス状態が出力された場合、PEP は、この通知を処理するときにセクション 3.3.6 での制限に従う必要があります。 すべてのプロセッサ上の実行中に送信されます。 
+この通知は、DISPATCH_LEVEL で送信されます。 Scheduler の有向パフォーマンス状態が使用されている場合、PEP は、この通知を処理するときに、セクション3.3.6 の制限に従う必要があります。 任意のプロセッサで実行中に送信される場合があります。 
 
 DISPATCH_LEVEL
  
-## <a name="pepnotifyppmquerydiscreteperfstates"></a>PEP_NOTIFY_PPM_QUERY_DISCRETE_PERF_STATES 
-ターゲットのプロセッサに、PEP のデバイス ハンドルを含む処理 A PEPHANDLE 構造体。 通知では、特定のプロセッサを使用しない場合に、NULL がこれになります。
+## <a name="pep_notify_ppm_query_discrete_perf_states"></a>PEP_NOTIFY_PPM_QUERY_DISCRETE_PERF_STATES 
+ターゲットプロセッサの PEP のデバイスハンドルを含む PEPHANDLE 構造体を処理します。 通知が特定のプロセッサを対象としていない場合、これは NULL になります。
 
-通知 PEP_NOTIFY_PPM_QUERY_DISCRETE_PERF_STATES 値。
+通知値 PEP_NOTIFY_PPM_QUERY_DISCRETE_PERF_STATES。
 
-データ。 PEP_PPM_QUERY_DISCRETE_PERF_STATES 構造へのポインター。
-PEP_NOTIFY_PPM_QUERY_CAPABILITIES 通知には、個別のパフォーマンス状態のサポートが示されている場合、PEP をサポートする個別のパフォーマンス状態の一覧についてはクエリ プロセッサの初期化に使用します。  
+データ PEP_PPM_QUERY_DISCRETE_PERF_STATES 構造体へのポインター。
+PEP_NOTIFY_PPM_QUERY_CAPABILITIES 通知が個別のパフォーマンス状態のサポートを示す場合、プロセッサの初期化時に使用され、PEP がサポートする個別のパフォーマンス状態の一覧を照会します。  
 
-各パフォーマンス状態のマッピングを個別のパフォーマンス値で最も低速なから最も高速なパフォーマンス状態の一覧を注文する必要があります。 パフォーマンス状態の一覧にする必要がありますも PEP_NOTIFY_PPM_QUERY_PERF_CAPABILITIES 通知で示されている各パフォーマンス値と一致するエントリが含まれます。  この通知は PASSIVE_LEVEL で送信されます。 すべてのプロセッサ上の実行中に送信されます。 
+パフォーマンスの状態の一覧は、パフォーマンスの状態がそれぞれ異なるパフォーマンス値にマッピングされている場合、最速から低速に設定する必要があります。 また、[パフォーマンスの状態] 一覧には、PEP_NOTIFY_PPM_QUERY_PERF_CAPABILITIES 通知に示されている各パフォーマンス値に一致するエントリが含まれている必要があります。  この通知は、PASSIVE_LEVEL で送信されます。 任意のプロセッサで実行中に送信される場合があります。 
 
 PASSIVE_LEVEL
  
-## <a name="pepnotifyppmquerydomaininfo"></a>PEP_NOTIFY_PPM_QUERY_DOMAIN_INFO 
-ターゲットのプロセッサに、PEP のデバイス ハンドルを含む処理 A PEPHANDLE 構造体。 通知では、特定のプロセッサを使用しない場合に、NULL がこれになります。
+## <a name="pep_notify_ppm_query_domain_info"></a>PEP_NOTIFY_PPM_QUERY_DOMAIN_INFO 
+ターゲットプロセッサの PEP のデバイスハンドルを含む PEPHANDLE 構造体を処理します。 通知が特定のプロセッサを対象としていない場合、これは NULL になります。
 
-通知 PEP_NOTIFY_PPM_QUERY_DOMAIN_INFO 値。
+通知値 PEP_NOTIFY_PPM_QUERY_DOMAIN_INFO。
 
-データ。 PEP_PPM_QUERY_DOMAIN_INFO 構造へのポインター。
-パフォーマンスのドメインに関する情報をクエリする省略可能な通知します。  この通知は PASSIVE_LEVEL で送信されます。 すべてのプロセッサ上の実行中に送信されます。
+データ PEP_PPM_QUERY_DOMAIN_INFO 構造体へのポインター。
+パフォーマンスドメインに関する情報を照会するオプションの通知。  この通知は、PASSIVE_LEVEL で送信されます。 任意のプロセッサで実行中に送信される場合があります。
 
 PASSIVE_LEVEL
 
   
-## <a name="pepnotifyppmresumefromsystemstate"></a>PEP_NOTIFY_PPM_RESUME_FROM_SYSTEM_STATE 
-ターゲットのプロセッサに、PEP のデバイス ハンドルを含む処理 A PEPHANDLE 構造体。 通知では、特定のプロセッサを使用しない場合に、NULL がこれになります。
+## <a name="pep_notify_ppm_resume_from_system_state"></a>PEP_NOTIFY_PPM_RESUME_FROM_SYSTEM_STATE 
+ターゲットプロセッサの PEP のデバイスハンドルを含む PEPHANDLE 構造体を処理します。 通知が特定のプロセッサを対象としていない場合、これは NULL になります。
 
-通知 PEP_NOTIFY_PPM_RESUME_FROM_SYSTEM_STATE 値。
+通知値 PEP_NOTIFY_PPM_RESUME_FROM_SYSTEM_STATE。
 
-データ。 PEP_PPM_RESUME_FROM_SYSTEM_STATE 構造へのポインター。
-システムが電源の状態から再開だけ PEP に通知する省略可能な通知します。 パッシブの作業を再開するプロセッサを解放する前に、この通知はすべてのプロセッサに同時に送信します。  この通知は、ディスパッチにあるすべてのプロセッサを搭載した、DISPATCH_LEVEL で送信されます。 この通知は常に、ターゲット プロセッサで実行されます。 
+データ PEP_PPM_RESUME_FROM_SYSTEM_STATE 構造体へのポインター。
+システムがシステムの電源状態から再開したばかりであることを PEP に通知するオプションの通知。 この通知は、パッシブレベルの作業を再開するためにプロセッサが解放される直前に、すべてのプロセッサに同時に送信されます。  この通知は DISPATCH_LEVEL で送信され、すべてのプロセッサがディスパッチされます。 この通知は、常にターゲットプロセッサで実行されます。 
 
 DISPATCH_LEVEL
  

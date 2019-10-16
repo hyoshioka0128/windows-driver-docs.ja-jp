@@ -5,19 +5,19 @@ ms.assetid: 4451c429-3b89-47d6-ba21-ab30919e5ff8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 73a182280237080e11e124ab6ce6397a92e3ff79
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: f017184b00f59b088df87a5bd85fec51b7aed8b2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556904"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72323698"
 ---
 # <a name="servicedescription1"></a>ServiceDescription1
 
 [!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
 
-ServiceDescription1 要素には、サービスに関する説明情報を指定します。 これは、ワイヤレス ワイド エリア ネットワーク (WWAN) 接続プロファイルの説明フィールドに適用されます。 エンドユーザーにユーザー インターフェイスには表示されませんし、空白のままにする必要があります。
+ServiceDescription1 要素は、サービスに関する説明情報を指定します。 これは、ワイヤレスワイドエリアネットワーク (WWAN) 接続プロファイルの [説明] フィールドに適用されます。 エンドユーザーのユーザーインターフェイスには表示されず、空白のままにする必要があります。
 
-## <a name="span-idusagespanspan-idusagespanspan-idusagespanusage"></a><span id="Usage"></span><span id="usage"></span><span id="USAGE"></span>使用状況
+## <a name="span-idusagespanspan-idusagespanspan-idusagespanusage"></a><span id="Usage"></span><span id="usage"></span><span id="USAGE"></span>ユーセジリンク
 
 
 ``` syntax
@@ -26,22 +26,22 @@ ServiceDescription1 要素には、サービスに関する説明情報を指定
 </ServiceDescription1>
 ```
 
-## <a name="span-idattributesspanspan-idattributesspanspan-idattributesspanattributes"></a><span id="Attributes"></span><span id="attributes"></span><span id="ATTRIBUTES"></span>属性
+## <a name="span-idattributesspanspan-idattributesspanspan-idattributesspanattributes"></a><span id="Attributes"></span><span id="attributes"></span><span id="ATTRIBUTES"></span>アトリビュート
 
 
 属性はありません。
 
-## <a name="span-idtextvaluespanspan-idtextvaluespanspan-idtextvaluespantext-value"></a><span id="Text_value"></span><span id="text_value"></span><span id="TEXT_VALUE"></span>テキスト値
+## <a name="span-idtext_valuespanspan-idtext_valuespanspan-idtext_valuespantext-value"></a><span id="Text_value"></span><span id="text_value"></span><span id="TEXT_VALUE"></span>テキスト値
 
 
-長さは 1024 より小さい文字である文字列。
+長さが1024文字未満の文字列。
 
-## <a name="span-idchildelementsspanspan-idchildelementsspanspan-idchildelementsspanchild-elements"></a><span id="Child_elements"></span><span id="child_elements"></span><span id="CHILD_ELEMENTS"></span>子要素
+## <a name="span-idchild_elementsspanspan-idchild_elementsspanspan-idchild_elementsspanchild-elements"></a><span id="Child_elements"></span><span id="child_elements"></span><span id="CHILD_ELEMENTS"></span>子要素
 
 
 子要素はありません。
 
-## <a name="span-idparentelementsspanspan-idparentelementsspanspan-idparentelementsspanparent-elements"></a><span id="Parent_elements"></span><span id="parent_elements"></span><span id="PARENT_ELEMENTS"></span>親要素
+## <a name="span-idparent_elementsspanspan-idparent_elementsspanspan-idparent_elementsspanparent-elements"></a><span id="Parent_elements"></span><span id="parent_elements"></span><span id="PARENT_ELEMENTS"></span>親要素
 
 
 <table>
@@ -58,14 +58,14 @@ ServiceDescription1 要素には、サービスに関する説明情報を指定
 <tbody>
 <tr class="odd">
 <td><p><a href="serviceinfo.md" data-raw-source="[ServiceInfo](serviceinfo.md)">ServiceInfo</a></p></td>
-<td><p><a href="serviceinfo.md" data-raw-source="[ServiceInfo](serviceinfo.md)">ServiceInfo</a>要素は、親要素の<a href="serviceinfo-xml-schema.md" data-raw-source="[ServiceInfo XML schema](serviceinfo-xml-schema.md)">ServiceInfo XML スキーマ</a>します。</p></td>
+<td><p><a href="serviceinfo.md" data-raw-source="[ServiceInfo](serviceinfo.md)">Serviceinfo</a>要素は、 <a href="serviceinfo-xml-schema.md" data-raw-source="[ServiceInfo XML schema](serviceinfo-xml-schema.md)">serviceinfo XML スキーマ</a>の親要素です。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <a name="span-idxsdspanspan-idxsdspanxsd"></a><span id="XSD"></span><span id="xsd"></span>XSD
+## <a name="span-idxsdspanspan-idxsdspanxsd"></a><span id="XSD"></span><span id="xsd"></span>XSD.EXE
 
 
 ``` syntax
@@ -79,12 +79,12 @@ ServiceDescription1 要素には、サービスに関する説明情報を指定
 </xs:simpleType>
 ```
 
-## <a name="span-idremarksspanspan-idremarksspanspan-idremarksspanremarks"></a><span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>「解説」
+## <a name="span-idremarksspanspan-idremarksspanspan-idremarksspanremarks"></a><span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>注釈
 
 
-ServiceDescription1 要素は、すべてのユーザー インターフェイスでエンドユーザーには表示されません。
+ServiceDescription1 要素は、エンドユーザーにはどのユーザーインターフェイスにも表示されません。
 
-ServiceDescription1 要素は省略可能で、空白のままにする必要があります。
+ServiceDescription1 要素は省略可能であり、空白のままにする必要があります。
 
  
 

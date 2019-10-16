@@ -13,14 +13,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 12de66c44cafd8e06ceb3277510b447f94052a6a
-ms.sourcegitcommit: 667b4be765b2eac6bc586d39abef3393a718b23f
+ms.openlocfilehash: e203914c5659ad40f3379130173457c57834e355
+ms.sourcegitcommit: 6d7f25f280af5fd4f4d9337d131c2a22288847fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "70025332"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72359587"
 ---
-# <a name="bug-check-0x1e-kmode_exception_not_handled"></a>バグ チェック 0x1E:KMODE\_EXCEPTION\_NOT\_HANDLED
+# <a name="bug-check-0x1e-kmode_exception_not_handled"></a>バグチェック 0x1E: KMODE @ no__t-0EXCEPTION @ no__t-1NOT @ no__t-2HANDLED
 
 
 KMODE @ no__t-0EXCEPTION @ no__t-1NOT @ no__t-2HANDLED バグチェックの値は0x0000001E です。 これは、カーネルモードプログラムが、エラーハンドラーがキャッチしなかった例外を生成したことを示します。
@@ -29,13 +29,13 @@ KMODE @ no__t-0EXCEPTION @ no__t-1NOT @ no__t-2HANDLED バグチェックの値�
 > このトピックはプログラマーを対象としています。 コンピューターの使用中にブルースクリーンのエラーコードが表示された顧客の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://www.windows.com/stopcode)」を参照してください。
 
 
-## <a name="kmode_exception_not_handled-parameters"></a>Kmode\_EXCEPTION\_NOT\_HANDLEDのパラメーター
+## <a name="kmode_exception_not_handled-parameters"></a>KMODE @ no__t-0EXCEPTION @ no__t-1NOT @ no__t-2HANDLED パラメーター
 
 
 <table>
 <colgroup>
-<col width="50%" />
-<col width="50%" />
+<col width="20%" />
+<col width="80%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -46,24 +46,23 @@ KMODE @ no__t-0EXCEPTION @ no__t-1NOT @ no__t-2HANDLED バグチェックの値�
 <tbody>
 <tr class="odd">
 <td align="left"><p>1</p></td>
-<td align="left"><p>処理されなかった例外コード</p></td>
+<td align="left"><p>処理されなかった例外コード。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>2</p></td>
-<td align="left"><p>例外が発生したアドレス</p></td>
+<td align="left"><p>例外が発生したアドレス。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>3</p></td>
-<td align="left"><p>例外のパラメーター0</p></td>
+<td align="left"><p>例外のパラメーター0。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>4</p></td>
-<td align="left"><p>例外のパラメーター1</p></td>
+<td align="left"><p>ホーム フォルダーが置かれているコンピューターにアクセスできない</p></td>
+<td align="left"><p>例外のパラメーター1。</p></td>
 </tr>
 </tbody>
 </table>
 
- 
 
 <a name="cause"></a>原因
 -----
@@ -72,55 +71,59 @@ KMODE @ no__t-0EXCEPTION @ no__t-1NOT @ no__t-2HANDLED バグチェックの値�
 
 一般的な例外コードは次のとおりです。
 
--   0x80000002STATUS\_DATATYPE\_MISALIGNMENT
+-   0x80000002: STATUS @ no__t-0DATATYPE @ no__t-1MISALIGNMENT
 
     整列されていないデータ参照が見つかりました。
 
--   0x80000003:STATUS\_BREAKPOINT
+-   0x80000003: STATUS @ no__t-0BREAKPOINT ポイント
 
     カーネルデバッガーがシステムにアタッチされていないときに、ブレークポイントまたはアサートが発生しました。
 
--   0XC0000005STATUS\_ACCESS\_VIOLATION
+-   0xC0000005: STATUS @ no__t-0ACCESS @ no__t-1VIOLATION
 
     メモリアクセス違反が発生しました。 (バグチェックのパラメーター4は、ドライバーがアクセスしようとしたアドレスです)。
 
-例外コードの完全な一覧については、「 [NTSTATUS 値](https://docs.microsoft.com/openspecs/windows_protocols/ms-erref/596a1078-e883-4972-9bbc-49e60bebca55)」を参照してください。 例外コードは、 [Windows Driver Kit](https://docs.microsoft.com/windows-hardware/drivers/)の inc. ディレクトリにある ntstatus ファイルにも記載されています。
+例外コードの完全な一覧については、「 [NTSTATUS 値](https://docs.microsoft.com/openspecs/windows_protocols/ms-erref/596a1078-e883-4972-9bbc-49e60bebca55)」を参照してください。 例外コードは、 [Windows Driver Kit](https://docs.microsoft.com/windows-hardware/drivers/)によって提供されるヘッダーファイルである、 *ntstatus*で定義されています。 (詳細については、「 [Windows Driver Kit のヘッダーファイル](../gettingstarted/header-files-in-the-windows-driver-kit.md)」を参照してください)。 
 
 
-<a name="remarks"></a>コメント
-----------
+<a name="remarks"></a>注釈
+-------
 
-**この問題をデバッグする必要がない場合**は、「 [**Blue Screen Data**](blue-screen-data.md)」で説明されている基本的なトラブルシューティング手法を使用できます。 バグ チェックのメッセージでドライバーが特定された場合は、そのドライバーを無効にするか、ドライバーの更新状況を製造元に確認します。
+この問題をデバッグする必要がない場合は、「 [Blue screen data](blue-screen-data.md)」で説明されている基本的なトラブルシューティング手法を使用できます。 バグ チェックのメッセージでドライバーが特定された場合は、そのドライバーを無効にするか、ドライバーの更新状況を製造元に確認します。
 
-**ハードウェアに互換性がありません**
+### <a name="hardware-incompatibility"></a>ハードウェアに互換性がありません
 
 インストールされている新しいハードウェアに、インストールされている Windows のバージョンとの互換性があることを確認します。 たとえば、 [Windows 10 の仕様](https://www.microsoft.com/windows/windows-10-specifications)では、必要なハードウェアに関する情報を取得できます。
 
-**デバイスドライバーまたはシステムサービスに問題があります**
+### <a name="faulty-device-driver-or-system-service"></a>デバイスドライバーまたはシステムサービスに問題があります
 
 また、障害が発生しているデバイスドライバーまたはシステムサービスがこのエラーの原因となる場合があります。 BIOS の非互換性、メモリの競合、および IRQ の競合などのハードウェアの問題によって、このエラーが発生することもあります。
 
-バグチェックメッセージ内にドライバーが名前で表示されている場合は、そのドライバーを無効にするか削除します。 最近追加されたドライバーまたはサービスをすべて無効にするか削除します。 起動シーケンス中にエラーが発生し、システムパーティションが NTFS ファイルシステムでフォーマットされている場合は、セーフモードを使用してデバイスマネージャーでドライバーを無効にすることができます。
+バグチェックメッセージ内にドライバーが名前で表示されている場合は、そのドライバーを無効にするか削除します。 最近追加されたドライバーまたはサービスをすべて無効にするか削除します。 起動シーケンス中にエラーが発生し、システムパーティションが NTFS ファイルシステムでフォーマットされている場合は、セーフモードを使用してデバイスマネージャーのドライバーを無効にすることができます。
 
-バグチェック0x1E の原因となっているデバイスまたはドライバーの特定に役立つ可能性のある追加のエラーメッセージについては、イベントビューアーのシステムログを確認してください。 また、システムの製造元から提供されているハードウェア診断 (特にメモリスキャナー) を実行する必要もあります。 これらの手順の詳細については、コンピューターの所有者のマニュアルを参照してください。
+バグチェック0x1E の原因となっているデバイスまたはドライバーの特定に役立つ可能性のある追加のエラーメッセージについては、イベントビューアーのシステムログを確認してください。 また、システムの製造元から提供されているハードウェア診断 (特にメモリスキャナー) を実行します。 これらの手順の詳細については、コンピューターの所有者のマニュアルを参照してください。
 
 このメッセージを生成するエラーは、Windows セットアップ中に最初に再起動した後、またはセットアップが完了した後に発生する可能性があります。 このエラーの原因として、システム BIOS との互換性がないことが考えられます。 BIOS の問題は、システムの BIOS のバージョンをアップグレードすることで解決できます。
 
-<a name="resolution"></a>解決方法
+<a name="resolution"></a>解像度
 ----------
 
-**この問題のデバッグを計画している場合**は、スタックトレースを取得するのが困難な場合があります。 パラメーター 2 (例外アドレス) は、この問題の原因となったドライバーまたは機能を特定する必要があります。
+この問題のデバッグを計画している場合は、スタックトレースを取得するのが困難な場合があります。 例外アドレス (パラメーター 2) は、この問題の原因となったドライバーまたは機能を特定する必要があります。
 
-例外コード0x80000003 が発生した場合は、ハードコーディングされたブレークポイントまたはアサーションがヒットしたが、システムは **/NODEBUG**スイッチを使用して起動されたことを示します。 この問題はめったに発生しません。 繰り返し発生する場合は、カーネルデバッガーが接続されていて、システムが **/debug**スイッチで起動されていることを確認します。
+例外コード0x80000003 は、ハードコーディングされたブレークポイントまたはアサーションがヒットしたが、システムが **/NODEBUG**スイッチを使用して起動されたことを示します。 この問題はめったに発生しません。 繰り返し発生する場合は、カーネルデバッガーが接続されていること、およびシステムが **/debug**スイッチで起動されていることを確認します。
 
 例外コード0x80000002 が発生した場合、トラップフレームは追加情報を提供します。
 
-例外の特定の原因が不明な場合は、次のことを考慮する必要があります。
+### <a name="unknown-cause"></a>原因不明
 
+例外の特定の原因が不明な場合は、次の手順を使用してスタックトレースを取得することを検討してください。
+
+> [!NOTE]
+> この手順では、 **NT!PspUnhandledExceptionInSystemThread**。 ただし、場合によっては (アクセス違反のクラッシュなど)、これを行うことはできません。 その場合は、次のようにし**ます。KiDispatchException**。 この関数に渡される3番目のパラメーターは、トラップフレームアドレスです。 このアドレスと共に、 [**トラップ**(トラップフレームの表示)](-trap--display-trap-frame-.md)コマンドを使用して、レジスタコンテキストを適切な値に設定します。 その後、スタックトレースを実行し、他のコマンドを発行できます。
 
 **通常のスタックトレースプロシージャが失敗した場合にスタックトレースを取得するには**
 
-1.  [ [**Kb (スタックバックトレースの表示)** ](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md) ] コマンドを使用して、スタックトレースにパラメーターを表示します。 NT! の呼び出しを探します **。PspUnhandledExceptionInSystemThread**。 (この関数が表示されない場合は、以下のメモを参照してください)。
+1.  [ [ **Kb** (スタックバックトレースの表示)](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md) ] コマンドを使用して、スタックトレースにパラメーターを表示します。 NT! の呼び出しを探します **。PspUnhandledExceptionInSystemThread**。 (この関数が表示されない場合は、以下のメモを参照してください)。
 
 2.  NT! の最初のパラメーター **PspUnhandledExceptionInSystemThread**は、 **except**ステートメントへのポインターを含む構造体へのポインターです。
 
@@ -135,15 +138,13 @@ KMODE @ no__t-0EXCEPTION @ no__t-1NOT @ no__t-2HANDLED バグチェックの値�
         )
     ```
 
-    必要なデータを表示するには、そのアドレスに対して[**dd (Display Memory)** ](d--da--db--dc--dd--dd--df--dp--dq--du--dw--dw--dyb--dyd--display-memor.md)コマンドを使用します。
+    必要なデータを表示するには、そのアドレスに対して[ **dd** (display memory)](d--da--db--dc--dd--dd--df--dp--dq--du--dw--dw--dyb--dyd--display-memor.md)コマンドを使用します。
 
-3.  最初に取得された値は例外レコードで、2番目の値はコンテキストレコードです。 これらの2つの値をそれぞれ引数として使用して、 [ **. exr (表示例外レコード)** ](-exr--display-exception-record-.md)コマンドと、 [**Cxr (表示コンテキストレコード)** ](-cxr--display-context-record-.md)コマンドを使用します。
+3.  最初に取得された値は例外レコードで、2番目の値はコンテキストレコードです。 これらの2つの値をそれぞれ引数として使用して、 [ **. exr** (表示例外レコード)](-exr--display-exception-record-.md)コマンドと、 [ **cxr** (表示コンテキストレコード)](-cxr--display-context-record-.md)コマンドを使用します。
 
 4.  **Cxr**コマンドを実行した後、 **kb**コマンドを使用して、コンテキストレコード情報に基づくスタックトレースを表示します。 このスタックトレースは、未処理の例外が発生した呼び出し履歴を示します。
 
-**注**  this 手順では、 **NT!PspUnhandledExceptionInSystemThread**。 ただし、場合によっては (アクセス違反のクラッシュなど)、これを行うことはできません。 その場合は、次のようにし**ます。KiDispatchException**。 この関数に渡される3番目のパラメーターは、トラップフレームアドレスです。 このアドレスと共に、[**トラップ (トラップフレームの表示)** ](-trap--display-trap-frame-.md)コマンドを使用して、レジスタコンテキストを適切な値に設定します。 その後、スタックトレースを実行し、他のコマンドを発行できます。
-
- 
+### <a name="example-bug-check"></a>バグチェックの例
 
 X86 プロセッサでのバグチェック0x1E の例を次に示します。
 
