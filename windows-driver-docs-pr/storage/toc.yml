@@ -158,8 +158,8 @@
                   href: flushing-port-driver-s-internal-queue.md
         - name: Storport ドライバー
           items:
-            - name: Storport ドライバー
-              href: storport-driver.md
+            - name: Storport ドライバーの概要
+              href: storport-driver-overview.md
             - name: Storport ドライバーのライフ サイクル
               href: life-cycle-of-a-storport-driver.md
             - name: Storport の履歴
