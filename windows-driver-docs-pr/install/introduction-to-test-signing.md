@@ -3,54 +3,54 @@ title: テスト署名の概要
 description: テスト署名の概要
 ms.assetid: 63d4627d-b92c-489d-accf-16cfb5ac1410
 keywords:
-- テスト署名ドライバー パッケージ、WDK テスト署名ドライバー パッケージについて
+- テスト署名ドライバーパッケージ WDK、テスト署名ドライバーパッケージについて
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2cbba0bc04f9056203b0775060f3bb6bd5c30582
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 724b495dc8a96537cdc22b025d8f8e11678bf403
+ms.sourcegitcommit: c557a56ff865b5766c871e18268637dec455aa89
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67374989"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72512077"
 ---
 # <a name="introduction-to-test-signing"></a>テスト署名の概要
 
 
-ドライバーは、使用してテスト署名する必要があります、[デジタル署名](digital-signatures.md)開発やテストは、次の理由。
+ドライバーは、次の理由により、開発およびテスト中に[デジタル署名](digital-signatures.md)を使用してテスト署名される必要があります。
 
--   容易にし、インストールを自動化します。
+-   インストールを容易にし、自動化します。
 
-    ドライバーが署名されていない場合、[プラグ アンド プレイ (PnP) ドライバーのインストール ポリシー](digital-signatures-and-pnp-device-installation--windows-vista-and-late.md) Windows Vista 以降のバージョンの Windows がシステム管理者は、未署名のドライバのインストールを手動で承認を必要と追加します。インストール プロセスに余分な手順です。 この余分な手順は、開発者およびテスト担当者の生産性を低下します。 この要件をオーバーライドすることはできません。
+    ドライバーが署名されていない場合、Windows Vista 以降のバージョンの Windows の[プラグアンドプレイ (PnP) ドライバーのインストールポリシー](digital-signatures-and-pnp-device-installation--windows-vista-and-late.md)では、署名されていないドライバーのインストールをシステム管理者が手動で承認し、追加の手順を追加する必要があります。インストールプロセス。 この追加の手順は、開発者やテスト担当者の生産性に悪影響を及ぼす可能性があります。 この要件をオーバーライドすることはできません。
 
--   64 ビット バージョンの Windows Vista と以降のバージョンの Windows カーネル モード ドライバーをロードできます。
+-   Windows Vista 以降のバージョンの windows 64 でカーネルモードドライバーを読み込むことができるようにするため。
 
-    既定で、[カーネル モード コードの署名ポリシー](kernel-mode-code-signing-policy--windows-vista-and-later-.md)の 64 ビット バージョンの Windows Vista と Windows の以降のバージョンは、カーネル モード ドライバーが読み込まれるドライバーの順序で署名する必要があります。 この要件は、開発やドライバーのデバッグを容易に一時的にオーバーライドできます。
+    既定では、Windows Vista 以降のバージョンの windows の[カーネルモードコード署名64ポリシー](kernel-mode-code-signing-policy--windows-vista-and-later-.md)では、ドライバーを読み込むためにカーネルモードドライバーが署名されている必要があります。 この要件は、ドライバーの開発やデバッグを容易にするために、一時的にオーバーライドすることができます。
 
--   特定の種類の次世代のプレミアム コンテンツを再生するには、Windows Vista および Windows の以降のバージョンですべてのカーネル モード コンポーネントに署名する必要があります。 さらに、すべてのユーザー モードとカーネル モード コンポーネント Protected Media Path (PMP) では、PMP の署名ポリシーに準拠する必要があります。 PMP については、ポリシーの署名のホワイト ペーパーを参照[Windows Vista のメディアの保護されているコンポーネントのコード署名](https://go.microsoft.com/fwlink/p/?linkid=69258)します。
+-   特定の種類の次世代プレミアムコンテンツを再生するには、Windows Vista 以降のバージョンの Windows のすべてのカーネルモードコンポーネントに署名する必要があります。 さらに、保護されたメディアパス (PMP) のすべてのユーザーモードおよびカーネルモードコンポーネントは、PMP 署名ポリシーに準拠している必要があります。 PMP 署名ポリシーの詳細については、 [Windows Vista での保護されたメディアコンポーネントの](http://download.microsoft.com/download/a/f/7/af7777e5-7dcd-4800-8a0a-b18336565f5b/pmp-sign.doc)ホワイトペーパー「コード署名」を参照してください。
 
-これらの理由から、Windows Vista および Windows の以降のバージョン用のドライバーは、Microsoft Authenticode を使用して作成されるデジタル証明書でテスト署名する必要があります。 このようなデジタル証明書と呼びます、*テスト証明書*テスト証明書を使用して生成された署名と呼ばれますと、*テスト署名*します。
+このような理由から、Windows Vista 以降のバージョンの Windows のドライバーは、Microsoft Authenticode を使用して作成されたデジタル証明書を使用してテスト署名する必要があります。 このようなデジタル証明書は*テスト証明書*と呼ばれ、テスト証明書を使用して生成された署名は*テスト署名*と呼ばれます。
 
-**注**  Windows Vista および Windows の以降のバージョンは、開発およびテスト目的に対してのみテスト署名されたドライバーをサポートします。 テスト署名を運用環境では使用せず、顧客にリリースする必要があります。
+**注**  Windows Vista 以降のバージョンの windows では、開発およびテストの目的でのみ、テスト署名されたドライバーがサポートされます。 テスト署名は、運用目的や顧客にリリースするためには使用しないでください。
 
  
 
-開発/テスト チームが参加できる、 [WHQL テスト署名プログラム](whql-test-signature-program.md)、Windows Hardware Quality Labs (WHQL) を PnP サインイン[ドライバー パッケージ](driver-packages.md)テスト目的で。 開発/テスト チームがまたは、独自の社内署名プロセスを管理しの次の種類を使用して、[テスト証明書](test-certificates.md)テスト署名ドライバーに。
+開発チームとテストチームは、Windows Hardware Quality Labs (WHQL) がテスト目的で PnP[ドライバーパッケージ](driver-packages.md)に署名する、 [whql test Signature プログラム](whql-test-signature-program.md)に参加できます。 また、開発チームとテストチームは、独自の社内署名プロセスを管理し、次の種類の[テスト証明書](test-certificates.md)を使用してドライバーをテストすることもできます。
 
--   [テスト証明書の MakeCert](makecert-test-certificate.md)、デジタル証明書がによってこれを作成、 [ **MakeCert** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/makecert)ツール。
+-   [MakeCert テスト証明書](makecert-test-certificate.md)。 [**MakeCert**](https://docs.microsoft.com/windows-hardware/drivers/devtest/makecert)ツールによって作成されたデジタル証明書です。
 
--   [市販のテスト証明書](commercial-test-certificate.md)、これは、Microsoft ルート証明書プログラムのメンバーである CA によって発行されるデジタル証明書。
+-   [商用テスト証明書](commercial-test-certificate.md)。 Microsoft ルート証明書プログラムのメンバーである CA によって発行されたデジタル証明書です。
 
--   [テスト証明書をエンタープライズ CA](enterprise-ca-test-certificate.md)、これは、エンタープライズ CA によって展開されているデジタル証明書。
+-   エンタープライズ[ca テスト証明書](enterprise-ca-test-certificate.md)。エンタープライズ ca によって展開されるデジタル証明書です。
 
-チームの作成、取得、またはテスト証明書を提供した後にテスト チームが、ドライバー パッケージに署名する方法については、次を参照してください。[ドライバー パッケージのテスト署名](test-signing-driver-packages.md)します。
+チームがテスト証明書を作成、取得、または提供した後に、テストチームがドライバーパッケージに署名する方法については、「[テスト署名ドライバーパッケージ](test-signing-driver-packages.md)」を参照してください。
 
-テスト署名されたドライバー パッケージをインストールする方法については、次を参照してください。 [Installing Test-Signed ドライバー パッケージ](installing-test-signed-driver-packages.md)します。
+テスト署名されたドライバーパッケージをインストールする方法については、「[テスト署名済みドライバーパッケージのインストール](installing-test-signed-driver-packages.md)」を参照してください。
 
-初期のドライバーの開発とデバッグを容易に、カーネル モード コードを読み込むしを未署名のカーネル モード ドライバーをテストするための要件を署名を一時的に無効にできます。 ただし、未署名のドライバのインストールを承認するためにシステム管理者を必要とする PnP ドライバーのインストール ポリシーを無効にすることはできません。 未署名のドライバをインストールする方法の詳細については、次を参照してください。[開発およびテスト中に、署名されていないドライバーをインストールする](installing-an-unsigned-driver-during-development-and-test.md)します。
+ドライバーの初期開発とデバッグを容易にするために、カーネルモードのコード署名要件を一時的に無効にして、署名されていないカーネルモードドライバーを読み込んでテストすることができます。 ただし、システム管理者が署名されていないドライバーのインストールを承認する必要がある PnP ドライバーのインストールポリシーを無効にすることはできません。 署名されていないドライバーをインストールする方法の詳細については、「[開発およびテスト中の署名](installing-an-unsigned-driver-during-development-and-test.md)されていないドライバーのインストール」を参照してください。
 
-テスト署名ドライバー パッケージに使用する最適なツールについては、次を参照してください。[ドライバーの署名ツール](https://docs.microsoft.com/windows-hardware/drivers/devtest/tools-for-signing-drivers)します。
+ドライバーパッケージのテストに使用する最適なツールの詳細については、「[ドライバーに署名するためのツール](https://docs.microsoft.com/windows-hardware/drivers/devtest/tools-for-signing-drivers)」を参照してください。
 
-**注**  テスト署名ドライバー パッケージに関連する手順の理解を深めるためには、次を参照してください。[テスト署名ドライバー パッケージ方法](how-to-test-sign-a-driver-package.md)します。 このトピックでは、テスト署名プロセスの概要を提供し、テスト署名の例の多くを使用してステップ実行、 *ToastPkg*サンプル[ドライバー パッケージ](driver-packages.md)Windows Driver Kit (WDK) 内で。
+**注**@no__t 1To ドライバーパッケージに関連する手順について理解を深めるには、「[ドライバーパッケージのテスト署名方法](how-to-test-sign-a-driver-package.md)」を参照してください。 このトピックでは、テスト署名プロセスの概要について説明します。また、Windows Driver Kit (WDK) 内の*Toastpkg*サンプル[ドライバーパッケージ](driver-packages.md)を使用して、テスト署名の例をいくつか紹介します。
 
  
 
