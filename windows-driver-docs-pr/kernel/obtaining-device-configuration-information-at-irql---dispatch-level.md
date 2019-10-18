@@ -19,13 +19,13 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/16/2019
 ms.locfileid: "72427588"
 ---
-# <a name="obtaining-device-configuration-information-at-irql--dispatch_level"></a>IRQL = DISPATCH @ no__t-0LEVEL でのデバイス構成情報の取得
+# <a name="obtaining-device-configuration-information-at-irql--dispatch_level"></a>IRQL = DISPATCH \_LEVEL でのデバイス構成情報の取得
 
 
 
 
 
-「 [Irql = パッシブ @ NO__T レベルでのデバイス構成情報の取得](obtaining-device-configuration-information-at-irql---passive-level.md)」で説明されているメソッドは、i/o 要求パケット (irp) を使用します。そのため、IRQL = パッシブ @ no__t レベルで実行されているドライバーに対してのみ有効です。 IRQL = DISPATCH @ no__t-0LEVEL で実行されているドライバーは、バスインターフェイスを使用してデバイス構成領域データを取得する必要があります。 このデータを取得するには、バス固有のインターフェイス、またはシステムによって提供されるバスに依存しないバスインターフェイス ( **bus @ no__t-1INTERFACE @ no__t-2STANDARD**) を使用できます。
+「 [Irql = パッシブ \_LEVEL でのデバイス構成情報の取得](obtaining-device-configuration-information-at-irql---passive-level.md)」で説明されている方法では、i/o 要求パケット (irp) を使用します。そのため、IRQL = パッシブ \_LEVEL で実行されているドライバーにのみ有効です。 IRQL = ディスパッチ \_LEVEL で実行されているドライバーは、バスインターフェイスを使用してデバイス構成領域データを取得する必要があります。 このデータを取得するには、バス固有のインターフェイス、またはシステムによって提供されるバスに依存しないバスインターフェイス、**バス \_INTERFACE \_STANDARD**を使用できます。
 
 GUID_BUS_INTERFACE_STANDARD インターフェイス (`wdmguid.h` で定義) を使用すると、デバイスドライバーは、バスドライバーとの通信に i/o 要求パケット (IRP) を使用するのではなく、親バスドライバールーチンを直接呼び出すことができます。 特に、このインターフェイスを使用すると、ドライバーは次の機能に対してバスドライバーが提供するルーチンにアクセスできます。
 
@@ -36,13 +36,13 @@ GUID_BUS_INTERFACE_STANDARD インターフェイス (`wdmguid.h` で定義) を
 このインターフェイスを使用するには、InterfaceType = GUID_BUS_INTERFACE_STANDARD を使用して、バスドライバーに IRP_MN_QUERY_INTERFACE IRP を送信します。 バスドライバーは、インターフェイスの個々のルーチンへのポインターを含む BUS_INTERFACE_STANDARD 構造体へのポインターを提供します。
 
 
-可能であれば、bus **@ no__t-1INTERFACE @ no__t-2STANDARD**を使用することをお勧めします。これは、bus **@ NO__T-4interface @ NO__T-5standard**を使用している場合、バス番号は構成情報を取得する必要がないため、ドライバーは頻繁に使用する必要があるためです。バス固有のインターフェイスを取得するときに、バス番号を特定します。 PCI など、一部のバスのバス番号は動的に変更されます。 そのため、ドライバーは PCI ポートに直接アクセスするためにバス番号に依存しないようにする必要があります。 これにより、システム障害が発生する可能性があります。
+バス **\_INTERFACE \_STANDARD**を使用しているときはバス番号を使用して構成情報を取得する必要がなく、ドライバーは頻繁に使用する必要があるため、可能な場合は**バス \_INTERFACE \_STANDARD**を使用することをお勧めします。バス固有のインターフェイスを取得するときに、バス番号を特定します。 PCI など、一部のバスのバス番号は動的に変更されます。 そのため、ドライバーは PCI ポートに直接アクセスするためにバス番号に依存しないようにする必要があります。 これにより、システム障害が発生する可能性があります。
 
-IRQL = DISPATCH @ no__t-0LEVEL で PCI デバイスの構成領域にアクセスするには、次の3つの手順を実行する必要があります。
+IRQL = DISPATCH \_LEVEL で PCI デバイスの構成領域にアクセスするには、次の3つの手順を実行する必要があります。
 
-1.  PCI バスドライバーから直接呼び出しインターフェイス構造 (**BUS @ no__t-7interface @ no__t-8STANDARD**) を取得するには、 [**IRP @ no__t-2mn @ NO__T-3query @ NO__T-4INTERFACE**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-interface)要求を IRQL = PASSIVE @ no__t-5level で送信します。 これを非ページプールメモリ (通常はデバイス拡張機能) に格納します。
+1.  IRQL = パッシブ \_LEVEL で[**IRP \_MN \_QUERY \_INTERFACE**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-interface)要求を送信して、PCI バスドライバーから直接呼び出しインターフェイス構造 (**バス \_INTERFACE \_STANDARD**) を取得します。 これを非ページプールメモリ (通常はデバイス拡張機能) に格納します。
 
-2.  **バス @ no__t-1INTERFACE @ no__t-2STANDARD**インターフェイスルーチン、 [*setbusdata*](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/gg604856(v=vs.85)) 、および[*GETBUSDATA*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-get_set_device_data)を呼び出して、IRQL = DISPATCH @ no__t-7level で PCI 構成領域にアクセスします。
+2.  **バス \_INTERFACE \_STANDARD**インターフェイスルーチン、 [*Setbusdata*](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/gg604856(v=vs.85)) 、および[*GETBUSDATA*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-get_set_device_data)を呼び出して、IRQL = DISPATCH \_LEVEL で PCI 構成領域にアクセスします。
 
 3.  インターフェイスを逆参照します。 PCI バスドライバーは、を返す前にインターフェイスの参照カウントを取得するため、インターフェイスにアクセスするドライバーは、不要になった時点で逆参照する必要があります。
 
