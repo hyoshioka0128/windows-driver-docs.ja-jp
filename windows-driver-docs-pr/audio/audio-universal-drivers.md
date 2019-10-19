@@ -2,14 +2,14 @@
 title: オーディオ用のユニバーサル Windows ドライバー
 description: Windows 10 では、さまざまな種類のハードウェアで動作するユニバーサルオーディオドライバーを作成できます。
 ms.assetid: F4B56B3F-792F-4887-AF0F-FFC1F000CB8F
-ms.date: 10/27/2017
+ms.date: 10/18/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 751503a90de0b3372f77d4bb9c2064106c187803
-ms.sourcegitcommit: 1d3c82d2e549827fd9f3b8ddb91ea92147e37170
+ms.openlocfilehash: f067360b3938102f5bbd7e2f59256a8315277221
+ms.sourcegitcommit: 36b7db40d5a91d8726feb2e2d9d4ece1fb484051
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68349228"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72591010"
 ---
 # <a name="universal-windows-drivers-for-audio"></a>オーディオ用のユニバーサル Windows ドライバー
 
@@ -21,11 +21,11 @@ Ihv は、すべてのデバイス (デスクトップ、ノート pc、タブ�
 
 ユニバーサル Windows ドライバーのサポートを開発するために、次のツールを使用できます。
 
-- Visual Studio 2015 のサポート:"Target Platform" を "Universal" に設定するドライバー設定があります。 ドライバー開発環境の設定の詳細については、「[ユニバーサル Windows ドライバーでのはじめに](https://docs.microsoft.com/windows-hardware/drivers)」を参照してください。
+- Visual Studio 2015 のサポート: "Target Platform" を "Universal" に設定するドライバー設定があります。 ドライバー開発環境の設定の詳細については、「[ユニバーサル Windows ドライバーでのはじめに](https://docs.microsoft.com/windows-hardware/drivers)」を参照してください。
 
-- APIValidator ツール:ApiValidator.exe ツールを使うと、ドライバーから呼び出される API が、ユニバーサル Windows ドライバーにとって有効であるかどうかを確認できます。 このツールは windows 10 用の Windows Driver Kit (WDK) の一部であり、Visual Studio 2015 を使用している場合は自動的に実行されます。 詳細については、「[ユニバーサル Windows ドライバーの検証](https://docs.microsoft.com/windows-hardware/drivers)」を参照してください。
+- APIValidator ツール: ApiValidator ツールを使用して、ドライバーが呼び出す Api がユニバーサル Windows ドライバーに対して有効であることを確認できます。 このツールは windows 10 用の Windows Driver Kit (WDK) の一部であり、Visual Studio 2015 を使用している場合は自動的に実行されます。 詳細については、「[ユニバーサル Windows ドライバーの検証](https://docs.microsoft.com/windows-hardware/drivers)」を参照してください。
 
-- 更新された DDI リファレンスドキュメント:この DDI リファレンスドキュメントは、ユニバーサル Windows ドライバーでサポートされている DDIs を示すために更新されています。 詳細については、「[オーディオデバイスリファレンス](https://docs.microsoft.com/previous-versions/ff536192(v=vs.85))」を参照してください。
+- 更新された DDI リファレンスドキュメント: DDI リファレンスドキュメントは、ユニバーサル Windows ドライバーでサポートされている DDIs を示すために更新されています。 詳細については、「[オーディオデバイスリファレンス](https://docs.microsoft.com/previous-versions/ff536192(v=vs.85))」を参照してください。
 
 ## <a name="create-a-universal-audio-driver"></a>ユニバーサルオーディオドライバーを作成する
 
@@ -35,11 +35,11 @@ Ihv は、すべてのデバイス (デスクトップ、ノート pc、タブ�
 
 2. プロジェクトのプロパティで、[ターゲットプラットフォーム] を "Universal" に設定します。
 
-3. インストールパッケージを作成します。ターゲットがデスクトップエディション (Home、Pro、Enterprise、および教育) 用に Windows 10 を実行するデバイスの場合は、構成可能な INF ファイルを使用します。 ターゲットが Windows 10 Mobile を実行しているデバイスの場合は、PkgGen を使用して、spkg ファイルを生成します。
+3. インストールパッケージを作成する: ターゲットがデスクトップエディション (Home、Pro、Enterprise、および教育) の Windows 10 を実行しているデバイスである場合は、構成可能な INF ファイルを使用します。 ターゲットが Windows 10 Mobile を実行しているデバイスの場合は、PkgGen を使用して、spkg ファイルを生成します。
 
 4. Windows 10 for desktop edition または Windows 10 Mobile 用のドライバーをビルド、インストール、展開、およびデバッグします。
 
-## <a name="sample-code"></a>サンプル コード
+## <a name="sample-code"></a>サンプルコード
 
 Sysvad と SwapAPO は、ユニバーサル Windows ドライバーのサンプルに変換されました。 詳細については、「[サンプルオーディオドライバー](sample-audio-drivers.md)」を参照してください。
 
@@ -126,6 +126,10 @@ APO INF パッケージは、基本ドライバーパッケージとは別にパ
 
 基本ドライバーパッケージは、機能するためにこれらのカスタマイズに依存しないようにする必要があります (もちろん、機能が低下する可能性があります)。  
 
+### <a name="uwp-audio-settings-apps"></a>UWP オーディオ設定アプリ
+
+エンドユーザーの UI を実装するには、Windows ユニバーサルオーディオドライバーにハードウェアサポートアプリ (HSA) を使用します。  詳細については、「[ハードウェアサポートアプリ (HSA): ドライバー開発者向けの手順](https://docs.microsoft.com/windows-hardware/drivers/devapps/hardware-support-app--hsa--steps-for-driver-developers)」を参照してください。
+
 ### <a name="programmatically-launching-uwp-hardware-support-apps"></a>UWP ハードウェアサポートアプリのプログラムによる起動
 
 ドライバーイベント (たとえば、新しいオーディオデバイスが接続されている場合) に基づいて UWP ハードウェアサポートアプリをプログラムで起動するには、Windows シェル Api を使用します。 Windows 10 Shell Api は、リソースのアクティブ化に基づいて UWP UI を起動する方法、または[IApplicationActivationManager](https://docs.microsoft.com/windows/desktop/api/shobjidl_core/nf-shobjidl_core-iapplicationactivationmanager-activateapplication)を介して直接起動する方法をサポートしています。 UWP アプリケーションの自動起動の詳細については、「 [Windows 10 uwp アプリの起動の自動化](https://docs.microsoft.com/windows/uwp/xbox-apps/automate-launching-uwp-apps#launch-activation)」を参照してください。  
@@ -150,7 +154,7 @@ SWC\VEN_v(4)&AID_a(4)&SUBSYS_ n(4)s(4)
 SWC\VEN_v(4)&AID_a(4)
 ```
 
-各項目の意味は次のとおりです。
+各値の意味は次のとおりです。
 
 - v (4) は、APO デバイスベンダーの4文字の識別子です。 これは、Microsoft によって管理されます。  
 - (4) は、APO ベンダーによって定義された、APO の4文字の識別子です。  
@@ -187,7 +191,7 @@ Windows 10 desktop 用の sysvad サンプルをビルドするには、次の�
    C:\Program Files (x86)\Windows Kits\10\src\audio\sysvad\x64\Debug\package
    ```
 
-5. WDK インストールの Tools フォルダーに移動し、PnpUtil ツールを見つけます。 たとえば、次のフォルダーを探します。C:\\Program Files (x86)\\Windows kit\\10\\Tools\\x64\\PnpUtil .exe。
+5. WDK インストールの Tools フォルダーに移動し、PnpUtil ツールを見つけます。 たとえば、C: \\Program Files (x86) \\Windows Kit \\10 \\Tools \\x64 \\PnpUtil .exe フォルダーを探します。
 
 6. Sysvad ドライバーをインストールするシステムに、次のファイルをコピーします。
 
@@ -208,11 +212,11 @@ Windows 10 desktop 用の sysvad サンプルをビルドするには、次の�
 
     **pnputil-i-tabletaudiosample**
 
-2. Sysvad ドライバーのインストールが完了します。 エラーが発生した場合は、このファイルで追加情報を確認できます。`%windir%\inf\setupapi.dev.log`
+2. Sysvad ドライバーのインストールが完了します。 エラーが発生した場合は、このファイルを調査して追加情報を確認できます。 `%windir%\inf\setupapi.dev.log`
 
 3. デバイスマネージャーの [表示] メニューで、[種類別のデバイス] を選択します。 デバイスツリーで、[Microsoft 仮想オーディオデバイス (WDM)-Sysvad Sample] を見つけます。 通常は、[サウンド、ビデオ、およびゲームコントローラー] ノードの下にあります。
 
-4. ターゲットコンピューターで、コントロールパネルを開き、[**ハードウェアとサウンド** &gt; ] **[オーディオデバイスの管理]** に移動します。 [サウンド] ダイアログボックスで、[Microsoft 仮想オーディオデバイス (WDM)-Sysvad Sample] というラベルのスピーカーアイコンを選択し、[既定値の設定] をクリックします。ただし、[OK] はクリックしないでください。 これにより、[サウンド] ダイアログボックスが開いたままになります。
+4. 対象のコンピューターで、コントロールパネル を開き、**ハードウェアとサウンド** に移動して、**オーディオデバイスの管理** を &gt; ます。 [サウンド] ダイアログボックスで、[Microsoft 仮想オーディオデバイス (WDM)-Sysvad Sample] というラベルのスピーカーアイコンを選択し、[既定値の設定] をクリックします。ただし、[OK] はクリックしないでください。 これにより、[サウンド] ダイアログボックスが開いたままになります。
 
 5. 対象のコンピューターで MP3 またはその他のオーディオファイルを見つけ、ダブルクリックして再生します。 次に、[サウンド] ダイアログボックスで、Microsoft Virtual Audio Device (WDM)-Sysvad サンプルドライバーに関連付けられているボリュームレベルインジケーターにアクティビティがあることを確認します。
 

@@ -1,152 +1,135 @@
 ---
 title: オーディオ処理オブジェクトのアーキテクチャ
-description: オーディオ処理オブジェクト (APOs) は、Windows オーディオ ストリームのカスタマイズ可能なソフトウェア ベースのデジタル信号処理を提供します。
+description: オーディオ処理オブジェクト (APOs) は、Windows オーディオストリーム用のカスタマイズ可能なソフトウェアベースのデジタル信号処理を提供します。
 ms.assetid: 2F57B4C7-8C83-4DDF-BFAF-B9308752E91D
-ms.date: 04/20/2017
+ms.date: 10/18/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: e2c66e12c6f59e59a06bf486a26bf97a3fe98697
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f4b69cb56c80ec3f9be2c66bc4e880d01b17848f
+ms.sourcegitcommit: 36b7db40d5a91d8726feb2e2d9d4ece1fb484051
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355678"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72591012"
 ---
 # <a name="audio-processing-object-architecture"></a>オーディオ処理オブジェクトのアーキテクチャ
 
+オーディオ処理オブジェクト (APOs) は、Windows オーディオストリーム用のカスタマイズ可能なソフトウェアベースのデジタル信号処理を提供します。
 
-オーディオ処理オブジェクト (APOs) は、Windows オーディオ ストリームのカスタマイズ可能なソフトウェア ベースのデジタル信号処理を提供します。
+## <a name="span-idaudio_processing_objects_overviewspanspan-idaudio_processing_objects_overviewspanspan-idaudio_processing_objects_overviewspanaudio-processing-objects-overview"></a><span id="Audio_Processing_Objects_Overview"></span><span id="audio_processing_objects_overview"></span><span id="AUDIO_PROCESSING_OBJECTS_OVERVIEW"></span>オーディオ処理オブジェクトの概要
 
-## <a name="span-idaudioprocessingobjectsoverviewspanspan-idaudioprocessingobjectsoverviewspanspan-idaudioprocessingobjectsoverviewspanaudio-processing-objects-overview"></a><span id="Audio_Processing_Objects_Overview"></span><span id="audio_processing_objects_overview"></span><span id="AUDIO_PROCESSING_OBJECTS_OVERVIEW"></span>オーディオ処理オブジェクトの概要
+Windows では、Oem およびサードパーティのオーディオハードウェア製造元が、オーディオドライバーの付加価値機能の一部としてカスタムデジタル信号処理効果を組み込むことができます。 これらの効果は、ユーザーモードのシステム効果のオーディオ処理オブジェクト (APOs) としてパッケージ化されます。
 
+オーディオ処理オブジェクト (APOs) は、Windows オーディオストリームに対してソフトウェアベースのデジタル信号処理を提供します。 APO は、特定のデジタル信号処理 (DSP) 効果を提供するために記述されたアルゴリズムを含む COM ホストオブジェクトです。 この機能は、"オーディオ効果" として非公式に知られています。 APOs には、グラフィック equalizers、リバーブ、tremolo、音響エコーキャンセル (AEC)、自動ゲイン制御 (AGC) などがあります。 APOs は、COM ベースのリアルタイムのインプロセスオブジェクトです。
 
-Windows には、オーディオ ドライバーの付加価値機能の一部としてカスタムのデジタル信号処理の効果を含めるには、Oem およびサード パーティ製のオーディオ ハードウェアの製造元が使用できます。 これらの効果は、ユーザー モード システム エフェクト オーディオ処理オブジェクト (APOs) としてパッケージ化されます。
+このドキュメントに記載されている説明と用語は、ほとんどの場合、出力デバイスを指し**て    ます**。 ただし、テクノロジは対称であり、基本的には入力デバイスに対して逆に機能します。
 
-オーディオ処理オブジェクト (APOs) は、Windows オーディオ ストリームのソフトウェア ベースのデジタル信号処理を提供します。 APO は、特定のデジタル信号処理 (DSP) 効果を提供に書き込まれるアルゴリズムを含む COM ホスト オブジェクトです。 この機能は、「オーディオ効果」として非公式呼ばれます。 以下の例には、グラフィックの調整、リバーブ、トレモロ、アコースティック エコー キャンセル (AEC)、および自動ゲイン制御 (AGC) が含まれます。 APOs は、COM ベース、リアルタイム、プロセス内のオブジェクトです。
+**ソフトウェア APOs とハードウェア DSP**
 
-**注**  説明およびこのドキュメントでの用語は出力デバイスのほとんどを指します。 ただし、テクノロジは対称であり、入力デバイスの逆の順序で本質的に動作します。
+ハードウェアデジタル信号プロセッサ (DSP) は、特殊なマイクロプロセッサ (または SIP ブロック) で、デジタル信号処理の運用上のニーズに合わせて最適化されたアーキテクチャを備えています。 専用のハードウェアにオーディオ処理を実装することと、ソフトウェア APO を使用するという大きな利点があります。 1つの利点は、ハードウェアによって実装された DSP で CPU 使用量と関連する電力消費が少なくなる可能性があることです。
 
- 
+他にも考慮すべき長所と欠点があります。これは、ソフトウェアベースの APO を実装する前に検討する必要があるプロジェクトの目標と制約に固有です。
 
-**ソフトウェア APOs vs します。ハードウェア DSP**
+ソフトウェアベースの効果は、ストリームの初期化時にソフトウェアデバイスパイプに挿入されます。 これらのソリューションは、メイン CPU 上でのすべての影響処理を行い、外部ハードウェアに依存することはありません。 この種のソリューションは、ドライバーとハードウェアが生の処理のみをサポートしている場合に、HDAudio、USB、Bluetooth デバイスなどの従来の Windows オーディオソリューションに最適です。 未処理処理の詳細については、「[オーディオシグナル処理モード](audio-signal-processing-modes.md)」を参照してください。
 
-ハードウェア デジタル シグナル プロセッサ (DSP) は特殊なマイクロプロセッサ (SIP ブロック)、デジタル信号処理の運用ニーズに合わせて最適のアーキテクチャです。 ソフトウェア APO を使用すると、専用ハードウェアでオーディオの処理を実装するために重要な利点があります。 利点の 1 つは DSP を実装する、CPU 使用率と関連付けられている電力消費する可能性があります、ハードウェアを使用します。
+**ハードウェア DSP のプロキシ APO**
 
-あるその他の長所と短所、考慮すべきプロジェクトの目標に特定し、APO ベースのソフトウェアを実装する前に考慮する制約します。
+ハードウェア DSP に適用されたすべての効果は、プロキシ APO 経由でアドバタイズされる必要があります。 Microsoft では、既定のプロキシ APO (MsApoFxProxy) を提供しています。 Microsoft が提供する APO を使用するには、このプロパティセットとプロパティがサポートされている必要があります。
 
-ソフトウェア ベースの効果は、ソフトウェア デバイス パイプ ストリームの初期化時に挿入されます。 これらのソリューションは、メインの CPU の処理のすべての効果を行い、外部のハードウェアに依存しません。 この種のソリューションは、生の処理のみをサポート、ドライバーとハードウェアと HDAudio、USB、Bluetooth デバイスなどの従来の Windows オーディオ ソリューションに最適。 生の処理の詳細については、次を参照してください。[オーディオ信号の処理モード](audio-signal-processing-modes.md)します。
+-   [KSPROPSETID \_AudioEffectsDiscovery](https://docs.microsoft.com/windows-hardware/drivers/audio/kspropsetid-audioeffectsdiscovery)
+-   [KSK プロパティ \_AUDIOEFFECTSDISCOVERY \_EFFECTSLIST](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/dn457706(v=vs.85))
 
-**プロキシ APO ハードウェア DSP**
+必要に応じて、独自のプロキシ APO を実装することもできます。
 
-DSP 必要 APO プロキシ経由で提供されるように、ハードウェアで、効果が適用されます。 Microsoft では、既定のプロキシ APO (MsApoFxProxy.dll) を提供します。 APO、Microsoft を使用するには、このプロパティのセットとプロパティをサポートする必要があります。
+**Windows 提供 (システム) APOs**
 
--   [KSPROPSETID\_AudioEffectsDiscovery](https://docs.microsoft.com/windows-hardware/drivers/audio/kspropsetid-audioeffectsdiscovery)
--   [KSPROPERTY\_AUDIOEFFECTSDISCOVERY\_EFFECTSLIST](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/dn457706(v=vs.85))
+Windows では、さまざまなオーディオ効果を提供する APOs の既定のセットがインストールされます。 システムが提供する APO 効果の一覧については、「[オーディオ信号処理モード](audio-signal-processing-modes.md)」を参照してください。
 
-必要に応じて、APO 独自のプロキシを実装することができます。
-
-**Windows (システム) のパスワードを指定します。**
-
-Windows では、別のオーディオ エフェクトの番号を提供する、APOs の既定のセットをインストールします。 システムの一覧には、APO 効果が提供されている、参照してください[オーディオ信号の処理モード](audio-signal-processing-modes.md)します。
-
-Oem は、すべてのシステム指定のパスワードを含めるか、それらの一部またはすべてをカスタム APOs に置き換えます。
+Oem は、指定されたすべてのシステムを含めることも、一部またはすべてをカスタム APOs に置き換えることもできます。
 
 **カスタム APOs**
 
-その他のオーディオ エフェクトを追加することで、Windows オーディオ エクスペリエンスを強化するためにカスタム パスワードを作成することになります。
+カスタム APOs を作成して、オーディオ効果を追加することによって Windows オーディオエクスペリエンスを向上させることができます。
 
-OEM は、Windows が出荷されるときに、指定された Windows APOs とカスタム APOs の任意の組み合わせを含めることができます。
+OEM には、Windows の出荷時に提供される Windows APOs と custom APOs の任意の組み合わせを含めることができます。
 
-カスタム APO は、デバイスを購入した後に、オーディオのエクスペリエンスを向上させるには、OEM またはサード パーティによってインストールできます。 ユーザーは、標準の INF ファイルを使用して、オーディオ デバイス ドライバーをインストールするときに、自動的にシステムの APOs へのアクセスがあります。 独立系ハードウェア ベンダー (Ihv) および相手先ブランド供給 (Oem) は、Microsoft のクラス ドライバーを使用中にその他のカスタム システムの効果を提供できます。 それによって、APOs として DSP アルゴリズムをパッケージ化してオーディオ エンジンの信号処理のグラフにその画像を挿入する、標準の INF ファイルを変更します。
+カスタム APO は、デバイスを購入した後にオーディオエクスペリエンスを向上させるために、OEM またはサードパーティによってインストールすることができます。 ユーザーが標準の INF ファイルを使用してオーディオデバイスドライバーをインストールすると、システムの APOs に自動的にアクセスできるようになります。 独立系ハードウェアベンダー (Ihv) と相手先ブランド供給業者 (Oem) は、Microsoft クラスドライバーを引き続き使用しながら、追加のカスタムシステム効果を提供できます。 そのためには、DSP アルゴリズムを APOs としてパッケージ化し、標準の INF ファイルを変更して、オーディオエンジンのシグナル処理グラフに APOs を挿入します。
 
-カスタム APOs」を参照して作成の詳細については[オーディオ処理オブジェクトを実装する](implementing-audio-processing-objects.md)します。
+カスタム APOs を作成する方法の詳細については、「[オーディオ処理オブジェクトの実装](implementing-audio-processing-objects.md)」を参照してください。
 
-**カスタム APO プロパティ UI**
+**カスタム APO サポートアプリ**
 
-デスクトップ Pc では、カスタム APO に関連付けられている設定を構成するユーザーを許可するには、カスタム APO プロパティ ページを作成できます。 このカスタム APO ページ使用できるユーザーに Windows の標準のオーディオ設定の拡張機能として。
+ユーザーがカスタム APO に関連付けられている設定を構成できるようにするには、ハードウェアサポートアプリを作成することをお勧めします。 詳細については、「[ハードウェアサポートアプリ (HSA): ドライバー開発者向けの手順](https://docs.microsoft.com/windows-hardware/drivers/devapps/hardware-support-app--hsa--steps-for-driver-developers)」を参照してください。
 
-SYSVAD オーディオ サンプルには、例カスタム APO コントロール サンプルが含まれています。 このスクリーン ショットでは、SYSVAD オーディオ スワップ APO サンプルのプロパティ ページを示します。
+**カスタム APO テストと要件**
 
-![sysvad オーディオ スワップ apo コントロールのサンプルのスピーカーのプロパティ ページのスクリーン ショット](images/audio-apo-speaker-properties.png)
+Microsoft HLK は、APOs で使用できるテストを提供します。 オーディオテストの詳細については、「[デバイス. オーディオ](https://docs.microsoft.com/previous-versions/windows/hardware/hck/jj123955(v=vs.85))テスト」および「[デバイスのオーディオテスト](https://docs.microsoft.com/previous-versions/windows/hardware/hck/jj124726(v=vs.85))」を参照してください。
 
-APO を追加する方法の詳細については、ダイアログ パネルが参照、 [APO 効果の構成 UI を実装する](implementing-a-ui-for-configuring-apo-effects.md)します。
+この2つのテストは、APOs を使用する場合に特に便利です。
 
-**カスタム APO テストと要求**
+[オーディオの効果検出の確認 (手動)-認定](https://docs.microsoft.com/previous-versions/windows/hardware/hck/dn456312(v=vs.85))
 
-Microsoft HLK APOs で使用できるテストを提供します。 オーディオのテストでは、「の詳細については[Device.Audio テスト](https://docs.microsoft.com/previous-versions/windows/hardware/hck/jj123955(v=vs.85))と[Device.Audio テスト](https://docs.microsoft.com/previous-versions/windows/hardware/hck/jj124726(v=vs.85))します。
+[SysFX テスト](https://docs.microsoft.com/previous-versions/windows/hardware/hck/jj124017(v=vs.85))
 
-これら 2 つのテストは APOs を使用する場合に、特に役立ちます。
-
-[オーディオ EffectsDiscovery (手動) - 証明書を確認します。](https://docs.microsoft.com/previous-versions/windows/hardware/hck/dn456312(v=vs.85))
-
-[SysFX Test](https://docs.microsoft.com/previous-versions/windows/hardware/hck/jj124017(v=vs.85))
-
-APOs をサポートするためのオーディオ要件については、次を参照してください。 [Device.Audio 要件](https://docs.microsoft.com/previous-versions/windows/hardware/cert-program/deviceaudio-requirements)します。
+APOs のサポートに関するオーディオの要件については、「[デバイスのオーディオ要件](https://docs.microsoft.com/previous-versions/windows/hardware/cert-program/deviceaudio-requirements)」を参照してください。
 
 **カスタム APO ツールとユーティリティ**
 
-使用可能なオーディオ効果を探索するのに、"オーディオ エフェクト検出 Sample"を使用できます。 このサンプルでは、オーディオ効果のレンダーをクエリして、オーディオ デバイスをキャプチャする方法とオーディオ エフェクトを使用した変更を監視する方法を示します。 SDK サンプルの一部として含めると、このリンクを使用してダウンロードできます。
+"オーディオ効果検出サンプル" を使用して、利用可能なオーディオ効果を調べることができます。 このサンプルでは、オーディオデバイスのレンダリングとキャプチャに関するオーディオ効果を照会する方法と、オーディオ効果を使用して変更を監視する方法を示します。 SDK サンプルの一部として含まれており、次のリンクを使用してダウンロードできます。
 
-[オーディオ エフェクトの探索のサンプル](https://code.msdn.microsoft.com/windowsapps/Audio-effects-discovery-5fd65c15)
+[オーディオエフェクト検出のサンプル](https://code.msdn.microsoft.com/windowsapps/Audio-effects-discovery-5fd65c15)
 
-**アプリケーションは、オーディオ効果の認識**
+**アプリケーションオーディオ効果の認識**
 
-アプリケーションでは、どのオーディオ効果は、システム上で現在アクティブかを判断する Api を呼び出す機能があります。 オーディオ エフェクト認識 Api の詳細については、次を参照してください。 [AudioRenderEffectsManager クラス](https://docs.microsoft.com/uwp/api/Windows.Media.Effects.AudioRenderEffectsManager)します。
+アプリケーションでは、Api を呼び出して、どのオーディオ効果がシステムで現在アクティブであるかを判断することができます。 オーディオ効果認識 Api の詳細については、「 [Audiorendereffects manager クラス](https://docs.microsoft.com/uwp/api/Windows.Media.Effects.AudioRenderEffectsManager)」を参照してください。
 
-## <a name="span-idaudioprocessingobjectsarchitecturespanspan-idaudioprocessingobjectsarchitecturespanspan-idaudioprocessingobjectsarchitecturespanaudio-processing-objects-architecture"></a><span id="Audio_Processing_Objects_Architecture"></span><span id="audio_processing_objects_architecture"></span><span id="AUDIO_PROCESSING_OBJECTS_ARCHITECTURE"></span>オーディオ処理オブジェクト アーキテクチャ
-
+## <a name="span-idaudio_processing_objects_architecturespanspan-idaudio_processing_objects_architecturespanspan-idaudio_processing_objects_architecturespanaudio-processing-objects-architecture"></a><span id="Audio_Processing_Objects_Architecture"></span><span id="audio_processing_objects_architecture"></span><span id="AUDIO_PROCESSING_OBJECTS_ARCHITECTURE"></span>オーディオ処理オブジェクトのアーキテクチャ
 
 **オーディオ効果の配置**
 
-APOs として実装されているオーディオ効果の 3 つの場所があります。 これらは、Stream の効果 (SFX)、モードの効果 (MFX) とエンドポイントの効果 (EFX) です。
+オーディオエフェクトには、APOs として実装されている3つの異なる場所があります。 これらは、ストリーム効果 (SFX)、モード効果 (MFX)、およびエンドポイント効果 (EFX) に含まれています。
 
-**Stream の効果 (SFX)**
+**ストリーム効果 (SFX)**
 
-ストリーム エフェクト APO には、すべてのストリームの効果のインスタンスがあります。 Stream の効果は、特定のモードの tee (キャプチャ) の前後にミックス (レンダー) と、ミキサーの前に、チャネルの数を変更するために使用できます。 Stream の効果は、生のストリームに対しては使用されません。
+ストリーム効果 APO には、すべてのストリームに対する効果のインスタンスがあります。 ストリーム効果は、特定のモードではミックス (render) の前または t (capture) の後にあり、ミキサーの前にチャネル数を変更するために使用できます。 ストリームの効果は、生のストリームには使用されません。
 
-一部のバージョンの Windows、最適化として、RAW モードで SFX または MFX APOs をロードしません。
+一部のバージョンの Windows は、最適化として、RAW モードでは SFX または MFX APOs を読み込みません。
 
--   Windows 8.1 では、生の SFX または生 MFX は読み込まれません
--   Windows 10 は、生 MFX ですがない生 SFX を読み込みます
+-   Windows 8.1 は RAW SFX または RAW MFX を読み込みません
+-   Windows 10 は未加工の MFX を読み込みますが、RAW SFX は読み込みません
 
-**モードの効果 (MFX)**
+**Mode 効果 (MFX)**
 
-モードの効果 (MFX) は、同じモードにマップされているすべてのストリームに適用されます。 モードの効果は、tee (キャプチャ) が混在 (レンダー) する前に特定のモードの前に、または後 (レンダー) ミックスに、またはすべてのモードの tee (キャプチャ) 後に適用されます。 すべてのシナリオの特定の効果またはストリーム効果の詳細が必要ない効果をここに配置してください。 周期性と形式のような同じ特性を共有する複数のストリームを 1 つのインスタンスであるために、モードの効果を使用する power 効率的になります。
+モードの効果 (MFX) は、同じモードにマップされているすべてのストリームに適用されます。 モードの効果は、指定されたモードでは、ミックス (レンダリング) の後、またはすべてのモードの t (キャプチャ) の後に適用されます。 ストリーム効果の詳細を必要としないシナリオ固有の効果や効果は、ここに配置する必要があります。 周期性や形式などの同じ特性を共有する複数のストリームに対して1つのインスタンスが存在するため、モード効果を使用する方が効率的です。
 
-**エンドポイントの効果 (EFX)**
+**エンドポイント効果 (EFX)**
 
-エンドポイントの効果 (EFX) は、同じエンドポイントを使用するすべてのストリームに適用されます。 生のストリームにも、エンドポイント効果が常に適用されています。 これは、すべてのモードの tee (キャプチャ) 前に、または後 (レンダー) の組み合わせがあります。 不明な効果がモードの領域内の場所をなるべきときに、慎重には、エンドポイントの効果を使用してください。 エンドポイント領域に配置する必要がありますをいくつかの効果には、スピーカーの保護とスピーカーの補正です。
+エンドポイント効果 (EFX) は、同じエンドポイントを使用するすべてのストリームに適用されます。 エンドポイント効果は、未加工のストリームに対しても常に適用されます。 つまり、混合 (レンダリング) の後、またはすべてのモードの t (キャプチャ) の前にあります。 エンドポイントの効果は、注意して使用する必要があります。また、不明な場合は、効果をモード領域に配置する必要があります。 エンドポイント領域に配置する必要がある効果には、スピーカーの保護とスピーカーの補正があります。
 
-この図では、Windows 10 用のストリーム (SFX)、モード (MFX) およびエンドポイント (EFX) の効果の可能な場所を示します。
+この図は、Windows 10 のストリーム (SFX)、モード (MFX)、およびエンドポイント (EFX) の影響の可能性のある場所を示しています。
 
-![windows 10 で、ストリーム、モード、およびエンドポイントの効果の配置を示す図します。](images/audio-apo-software-effects-summary.png)
+![windows 10 のストリーム、モード、およびエンドポイント効果の配置を示す図](images/audio-apo-software-effects-summary.png)
 
 **複数のカスタム APO 効果**
 
-さまざまなアプリケーションを使用する複数のベース APO 効果を構成することになります。
+さまざまなアプリケーションで動作するように、複数の APO ベースの効果を構成することができます。
 
-この図は、ストリーム、モード、およびエンドポイントの APO 効果の複数の組み合わせをアクセスできる複数のアプリケーションを示しています。 すべて、APOs は、COM ベースし、ユーザー モードで実行します。 このシナリオでハードウェアまたはカーネル モードでを実行している効果なし。
+この図は、複数のアプリケーションが、ストリーム、モード、およびエンドポイントの APO 効果の複数の組み合わせにアクセスする方法を示しています。 すべての APOs は COM ベースであり、ユーザーモードで実行されます。 このシナリオでは、どのような効果もハードウェアまたはカーネルモードで実行されていません。
 
-![複数のアプリケーションがストリーム、モード、およびエンドポイントの apo 効果の複数の組み合わせにアクセスできるかを示す図](images/audio-apo-software-effects-1.png)
+![複数のアプリケーションが、ストリーム、モード、およびエンドポイントの apo 効果の複数の組み合わせにアクセスする方法を示す図](images/audio-apo-software-effects-1.png)
 
-**注**  この図のすべてを表示するこのページの一番下にスクロール バーを使用することができます。
+このページの一番下にあるスクロールバーを使用して、この図のすべてを**表示   You こと**ができます。
 
- 
+**レンダリングとキャプチャのためのソフトウェアモード効果とハードウェアエンドポイント効果**
 
-**ソフトウェアのモードの効果とレンダリングとキャプチャのハードウェアのエンドポイントの効果**
+この図は、ソフトウェアモードの効果と、レンダリングとキャプチャに対するハードウェアエンドポイントの効果を示しています。
 
-この図は、ソフトウェア モードの効果とレンダリングとキャプチャのハードウェアのエンドポイントの効果を示しています。
+![レンダリングとキャプチャに関するソフトウェアモードの効果とハードウェアエンドポイントの効果を示す図](images/audio-apo-software-mode-effects-and-hardware-endpoint-effects-2.png)
 
-![ソフトウェアのモードの効果とレンダリングとキャプチャのハードウェアのエンドポイントの効果を示す図](images/audio-apo-software-mode-effects-and-hardware-endpoint-effects-2.png)
+**ハードウェアに影響する DSP 装備システム**
 
-**DSP には、ハードウェアの効果を持つシステムが搭載されています。**
+この図は、ハードウェアへの影響を実装する DSP 搭載システムを示しています。 このシナリオでは、ハードウェアに実装されている効果をアプリに通知するためにプロキシ APO を作成する必要があります。
 
-この図は、ハードウェアの効果を実装する DSP が搭載されているシステムを示しています。 このシナリオでは、プロキシ APO はハードウェアに実装されている効果のアプリを通知するために作成されます。
+![ハードウェアへの影響を実装する dsp 搭載システムを示す図。](images/audio-apo-dsp-equipped-system-with-hardware-effects-3.png)
 
-![dsp を示す図では、ハードウェアの効果を実装するシステムが搭載されています。](images/audio-apo-dsp-equipped-system-with-hardware-effects-3.png)
-
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 [Windows オーディオ処理オブジェクト](windows-audio-processing-objects.md)  
-[APO 効果を構成するための UI を実装します。](implementing-a-ui-for-configuring-apo-effects.md)  
-
-
-
