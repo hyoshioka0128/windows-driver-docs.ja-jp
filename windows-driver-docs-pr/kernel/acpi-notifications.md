@@ -1,27 +1,27 @@
 ---
 title: ACPI 通知
-description: PEP の AcceptAcpiNotification コールバック ルーチンを受信する各 ACPI 通知は、通知の種類を示す通知パラメーターとデータのパラメーターを伴います。
+description: PEP の AcceptAcpiNotification コールバックルーチンが受信する各 ACPI 通知には、通知の種類とデータパラメーターを示す通知パラメーターが付属しています。
 ms.assetid: E4DD4386-8008-463B-B048-DE8E559A7456
 keywords:
 - AcceptAcpiNotification
 ms.date: 01/17/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 654f80a38ba4ff0a2b4edc60521e3be188185c8f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e81a13f8e055292cbbcb1ad98df1b7dacf6116d8
+ms.sourcegitcommit: 87975bf11f43410ae113b57a34131778fb9677a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339106"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72549761"
 ---
 # <a name="acpi-notifications"></a>ACPI 通知
 
-各 ACPI 通知コールバック ルーチンを受け取る、PEP の AcceptAcpiNotification、通知の種類を示す通知パラメーターと共に、データのパラメーターをデータを指す構造体の情報が含まれています、通知の種類を指定します。
+PEP の[*AcceptAcpiNotification*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/pepfx/nc-pepfx-pepcallbacknotifyacpi)コールバックルーチンによって受信される各 ACPI 通知には、通知の種類を示す通知パラメーターと、そのデータ構造を指すデータパラメーター (指定された通知の種類に関する情報です。
 
-この呼び出しでは、通知のパラメーターは、通知の種類を示す PEP_NOTIFY_ACPI_XXX 定数値に設定されます。 データのパラメーターは、この通知の種類に関連付けられている PEP_ACPI_XXX 構造体型を指します。
+この呼び出しでは、通知パラメーターは、通知の種類を示す PEP_NOTIFY_ACPI_XXX 定数値に設定されます。 データパラメーターが、この通知の種類に関連付けられている PEP_ACPI_XXX 構造体の型を指しています。
 
-次の ACPI 通知 Id は、AcceptAcpiNotification コールバック ルーチンで使用されます。
+AcceptAcpiNotification コールバックルーチンでは、次の ACPI 通知 Id が使用されます。
 
-|通知 ID |値 |関連付けられている構造|
+|通知 ID |Value |関連付けられた構造体|
 |---|---|---| 
 |PEP_NOTIFY_ACPI_PREPARE_DEVICE| 0x01 |PEP_ACPI_PREPARE_DEVICE| 
 |PEP_NOTIFY_ACPI_ABANDON_DEVICE |0x02 |PEP_ACPI_ABANDON_DEVICE |
@@ -34,159 +34,159 @@ ms.locfileid: "63339106"
 |PEP_NOTIFY_ACPI_TRANSLATED_DEVICE_CONTROL_RESOURCES |0x09 |PEP_ACPI_TRANSLATED_DEVICE_CONTROL_RESOURCES |
 
 
-## <a name="pepnotifyacpipreparedevice"></a>PEP_NOTIFY_ACPI_PREPARE_DEVICE 
+## <a name="pep_notify_acpi_prepare_device"></a>PEP_NOTIFY_ACPI_PREPARE_DEVICE 
 
-通知:PEP_NOTIFY_ACPI_PREPARE_DEVICE 値。
-データ:名前で、デバイスを識別する PEP_ACPI_PREPARE_DEVICE 構造体へのポインター。
+通知: 値 PEP_NOTIFY_ACPI_PREPARE_DEVICE。
+Data: 名前によってデバイスを識別する PEP_ACPI_PREPARE_DEVICE 構造体へのポインター。
  
-デバイスを ACPI サービスを提供するかどうかを選択する、PEP を使用できます。
+PEP がデバイスに ACPI サービスを提供するかどうかを選択できるようにします。
 
-Windows の電源管理フレームワーク (PoFx) は、ACPI の Windows ドライバーは、デバイスの列挙中に、ACPI 名前空間に新しいデバイスを検出した場合、この通知を送信します。 Pep AcceptAcpiNotification コールバック ルーチンを実装するには、この通知が送信されます。
+Windows ACPI ドライバーがデバイスの列挙中に ACPI 名前空間で新しいデバイスを検出すると、Windows の電源管理フレームワーク (PoFx) はこの通知を送信します。 この通知は、AcceptAcpiNotification コールバックルーチンを実装する PEPs に送信されます。
 
-PEP_NOTIFY_ACPI_PREPARE_DEVICE 通知を送信するには、PoFx PEP の AcceptAcpiNotification ルーチンを呼び出すとします。 この呼び出しでは、通知のパラメーター値は、PEP_NOTIFY_ACPI_PREPARE_DEVICE、およびデバイスの名前を含む PEP_ACPI_PREPARE_DEVICE 構造をデータ パラメーターのポイントが。 PEP がこのデバイスを ACPI サービスを提供する準備が完了している場合、PEP この構造体の DeviceAccepted メンバーを TRUE に設定します。 拒否すると、このようなサービスを提供する、するには、PEP は、このメンバーを FALSE に設定します。
+PEP_NOTIFY_ACPI_PREPARE_DEVICE 通知を送信するために、PoFx は PEP の AcceptAcpiNotification ルーチンを呼び出します。 この呼び出しでは、通知パラメーターの値は PEP_NOTIFY_ACPI_PREPARE_DEVICE であり、データパラメーターはデバイスの名前を含む PEP_ACPI_PREPARE_DEVICE 構造体を指します。 PEP がこのデバイスの ACPI サービスを提供する準備ができている場合、PEP はこの構造体の DeviceAccepted メンバーを TRUE に設定します。 このようなサービスの提供を拒否するために、PEP はこのメンバーを FALSE に設定します。
 
-PEP を示している場合 (DeviceAccepted を設定して = TRUE) ことは、デバイスを ACPI サービスを提供する準備ができて、PoFx は、PEP の ACPI サービスの唯一のプロバイダーである、PEP を登録する PEP_NOTIFY_ACPI_REGISTER_DEVICE 通知を送信して応答がデバイスです。 PoFx には、デバイスを ACPI サービス プロバイダーの役割を要求する 1 つだけの PEP が期待しています。
+PEP が、デバイスの ACPI サービスを提供する準備ができていることを (DeviceAccepted = TRUE に設定することにより) 指定した場合、PoFx は、の ACPI サービスの唯一のプロバイダーとして pep を登録するために PEP a PEP_NOTIFY_ACPI_REGISTER_DEVICE 通知を送信することで応答します。デバイス。 PoFx では、デバイスの ACPI サービスプロバイダーの役割を要求する PEP は1つだけです。
 
-ベスト プラクティスとしては行いません任意のデバイスの初期化 PEP_NOTIFY_ACPI_PREPARE_DEVICE 通知に応答します。 代わりに、デバイスの PEP_NOTIFY_ACPI_REGISTER_DEVICE 通知を受信すると、か、またはデバイスを ACPI コントロール メソッド (たとえば、_INI) が呼び出されるまでは、この初期化を延期します。
+ベストプラクティスとして、PEP_NOTIFY_ACPI_PREPARE_DEVICE 通知に対する応答としてデバイスの初期化を実行しないでください。 代わりに、デバイスの PEP_NOTIFY_ACPI_REGISTER_DEVICE 通知が受信されるか、デバイスに対して ACPI 制御メソッド (たとえば、INI) が呼び出されるまで、この初期化を遅延させます。
 
-AcceptAcpiNotification ルーチンに常に IRQL でと呼ばれる PEP_NOTIFY_ACPI_PREPARE_DEVICE 通知、PASSIVE_LEVEL を = です。
+PEP_NOTIFY_ACPI_PREPARE_DEVICE 通知の場合、AcceptAcpiNotification ルーチンは常に IRQL = PASSIVE_LEVEL で呼び出されます。
  
-## <a name="pepnotifyacpiabandondevice"></a>PEP_NOTIFY_ACPI_ABANDON_DEVICE 
+## <a name="pep_notify_acpi_abandon_device"></a>PEP_NOTIFY_ACPI_ABANDON_DEVICE 
 
-通知:PEP_NOTIFY_ACPI_ABANDON_DEVICE 値。
+通知: 値 PEP_NOTIFY_ACPI_ABANDON_DEVICE。
 
-データ:破棄済みのデバイスを識別する PEP_ACPI_ABANDON_DEVICE 構造体へのポインター。
+Data: 破棄されたデバイスを識別する PEP_ACPI_ABANDON_DEVICE 構造体へのポインター。
  
-PEP を通知するは、指定したデバイスは破棄されましたし、PEP から ACPI サービスは不要します。
+指定されたデバイスが破棄され、PEP からの ACPI サービスが不要になったことを PEP に通知します。
 
-Windows の電源管理フレームワーク (PoFx) は、デバイスのオペレーティング システムで使用が不要になった PEP に通知するには、この通知を送信します。 PEP は、この通知を使用して、デバイスの状態を追跡するために、割り当てられている任意の内部ストレージをクリーンアップすることができます。
+Windows 電源管理フレームワーク (PoFx) は、デバイスがオペレーティングシステムによって使用されていないことを PEP に通知するために、この通知を送信します。 PEP は、この通知を使用して、デバイスの状態を追跡するために割り当てられた内部ストレージをクリーンアップします。
 
-PEP_NOTIFY_ACPI_ABANDON_DEVICE 通知を送信するには、PoFx は、PEP の AcceptAcpiNotification コールバック ルーチンを呼び出します。 この呼び出しでは、通知のパラメーター値は、PEP_NOTIFY_ACPI_ABANDON_DEVICE と PEP_ACPI_ABANDON_DEVICE 構造体へのデータ パラメーターのポイントが。
+PEP_NOTIFY_ACPI_ABANDON_DEVICE 通知を送信するために、PoFx は PEP の AcceptAcpiNotification コールバックルーチンを呼び出します。 この呼び出しでは、通知パラメーターの値は PEP_NOTIFY_ACPI_ABANDON_DEVICE、データパラメーターは PEP_ACPI_ABANDON_DEVICE 構造体を指します。
 
-PoFx は、ACPI サービスで、前の PEP_NOTIFY_ACPI_PREPARE_DEVICE 通知デバイスを提供するが選択している PEP にのみ、この通知を送信します。 PoFx が、PEP_NOTIFY_ACPI_ABANDON_DEVICE を送信する前に、デバイスの PEP_NOTIFY_ACPI_UNREGISTER_DEVICE 通知を送信 PEP が前回の PEP_NOTIFY_ACPI_REGISTER_DEVICE 通知は、これらのサービスを提供する登録されている場合通知します。
+PoFx は、前の PEP_NOTIFY_ACPI_PREPARE_DEVICE 通知でデバイスの ACPI サービスを提供することを選択した PEP にのみ、この通知を送信します。 PEP が前の PEP_NOTIFY_ACPI_REGISTER_DEVICE 通知でこれらのサービスを提供するように登録されている場合、PoFx は PEP_NOTIFY_ACPI_ABANDON_DEVICE を送信する前にデバイスの PEP_NOTIFY_ACPI_UNREGISTER_DEVICE 通知を送信します。警告.
 
-AcceptAcpiNotification ルーチンに常に IRQL でと呼ばれる PEP_NOTIFY_ACPI_ABANDON_DEVICE 通知、PASSIVE_LEVEL を = です。
+PEP_NOTIFY_ACPI_ABANDON_DEVICE 通知の場合、AcceptAcpiNotification ルーチンは常に IRQL = PASSIVE_LEVEL で呼び出されます。
  
-## <a name="pepnotifyacpiregisterdevice"></a>PEP_NOTIFY_ACPI_REGISTER_DEVICE
-通知:PEP_NOTIFY_ACPI_REGISTER_DEVICE 値。
+## <a name="pep_notify_acpi_register_device"></a>PEP_NOTIFY_ACPI_REGISTER_DEVICE
+通知: 値 PEP_NOTIFY_ACPI_REGISTER_DEVICE。
 
-データ:デバイスを識別する PEP_ACPI_REGISTER_DEVICE 構造体へのポインター。 この通知に応答して、PEP は、このハンドルの値を構造体に記述して、デバイスを識別する有効な PEPHANDLE 値を作成する予測されます。
+Data: デバイスを識別する PEP_ACPI_REGISTER_DEVICE 構造体へのポインター。 この通知に対する応答として、PEP は、デバイスを識別するための有効な PEPHANDLE 値を作成し、このハンドル値を構造体に書き込むことを想定しています。
  
-指定されたデバイスを ACPI サービスの唯一のプロバイダーである、PEP を登録します。
+指定されたデバイスの ACPI サービスの唯一のプロバイダーとして PEP を登録します。
 
-Windows 電源管理フレームワーク (PoFx) が示されている PEP にこの通知を送信する — 以前 PEP_NOTIFY_ACPI_PREPARE_DEVICE 通知で — ACPI サービスは、指定されたデバイスを提供する準備が整っています。
+Windows 電源管理フレームワーク (PoFx) は、指定されたデバイスに対して ACPI サービスを提供する準備ができていることを示す PEP にこの通知を送信します。これは、以前の PEP_NOTIFY_ACPI_PREPARE_DEVICE 通知で示されています。
 
-PEP_NOTIFY_ACPI_REGISTER_DEVICE 通知を送信するには、PoFx PEP の AcceptAcpiNotification ルーチンを呼び出すとします。 この呼び出しでは、通知のパラメーター値は、PEP_NOTIFY_ACPI_REGISTER_DEVICE、PEP の ACPI サービスの提供対象のデバイスを識別する PEP_ACPI_REGISTER_DEVICE 構造体へのデータのパラメーター項目が。
+PEP_NOTIFY_ACPI_REGISTER_DEVICE 通知を送信するために、PoFx は PEP の AcceptAcpiNotification ルーチンを呼び出します。 この呼び出しでは、通知パラメーターの値は PEP_NOTIFY_ACPI_REGISTER_DEVICE であり、データパラメーターは、PEP が ACPI サービスを提供するデバイスを識別する PEP_ACPI_REGISTER_DEVICE 構造体を指します。
 
-AcceptAcpiNotification ルーチンに常に IRQL でと呼ばれる PEP_NOTIFY_ACPI_REGISTER_DEVICE 通知、PASSIVE_LEVEL を = です。
+PEP_NOTIFY_ACPI_REGISTER_DEVICE 通知の場合、AcceptAcpiNotification ルーチンは常に IRQL = PASSIVE_LEVEL で呼び出されます。
  
-## <a name="pepnotifyacpiunregisterdevice"></a>PEP_NOTIFY_ACPI_UNREGISTER_DEVICE 
+## <a name="pep_notify_acpi_unregister_device"></a>PEP_NOTIFY_ACPI_UNREGISTER_DEVICE 
 
-通知:PEP_NOTIFY_ACPI_UNREGISTER_DEVICE 値。
+通知: 値 PEP_NOTIFY_ACPI_UNREGISTER_DEVICE。
 
-データ:デバイスの PEPHANDLE を格納する PEP_ACPI_UNREGISTER_DEVICE 構造体へのポインター。
+Data: デバイスの PEPHANDLE が格納されている PEP_ACPI_UNREGISTER_DEVICE 構造体へのポインター。
  
-PEP から ACPI サービスの指定したデバイスの登録をキャンセルします。
+PEP からの ACPI サービス用に指定されたデバイスの登録をキャンセルします。
 
-この通知に応答して、PEP は、PEP は、前の PEP_NOTIFY_ACPI_REGISTER_DEVICE 通知では、このデバイスの作成 PEPHANDLE を破棄できます。
+この通知に対する応答として、PEP は、前の PEP_NOTIFY_ACPI_REGISTER_DEVICE 通知で、このデバイス用に PEP が作成した PEPHANDLE を破棄できます。
 
-PEP_NOTIFY_ACPI_UNREGISTER_DEVICE 通知を送信するには、PoFx は、PEP の AcceptAcpiNotification コールバック ルーチンを呼び出します。 この呼び出しでは、通知のパラメーター値は、PEP_NOTIFY_ACPI_UNREGISTER_DEVICE と PEP_ACPI_UNREGISTER_DEVICE 構造体へのデータ パラメーターのポイントが。
+PEP_NOTIFY_ACPI_UNREGISTER_DEVICE 通知を送信するために、PoFx は PEP の AcceptAcpiNotification コールバックルーチンを呼び出します。 この呼び出しでは、通知パラメーターの値は PEP_NOTIFY_ACPI_UNREGISTER_DEVICE、データパラメーターは PEP_ACPI_UNREGISTER_DEVICE 構造体を指します。
 
-AcceptAcpiNotification ルーチンに常に IRQL でと呼ばれる PEP_NOTIFY_ACPI_UNREGISTER_DEVICE 通知、PASSIVE_LEVEL を = です。
+PEP_NOTIFY_ACPI_UNREGISTER_DEVICE 通知の場合、AcceptAcpiNotification ルーチンは常に IRQL = PASSIVE_LEVEL で呼び出されます。
  
-## <a name="pepnotifyacpienumeratedevicenamespace"></a>PEP_NOTIFY_ACPI_ENUMERATE_DEVICE_NAMESPACE 
+## <a name="pep_notify_acpi_enumerate_device_namespace"></a>PEP_NOTIFY_ACPI_ENUMERATE_DEVICE_NAMESPACE 
 
-通知:PEP_NOTIFY_ACPI_ENUMERATE_DEVICE_NAMESPACE 値。
+通知: 値 PEP_NOTIFY_ACPI_ENUMERATE_DEVICE_NAMESPACE。
 
-データ:デバイスの ACPI 名前空間内のオブジェクトの列挙体を格納する PEP_ACPI_ENUMERATE_DEVICE_NAMESPACE 構造体へのポインター。
+Data: デバイスの ACPI 名前空間内のオブジェクトの列挙体を含む PEP_ACPI_ENUMERATE_DEVICE_NAMESPACE 構造体へのポインター。
  
-ACPI オブジェクト (ネイティブ メソッド) が、指定されたデバイスを ACPI 名前空間の下で、PEP でサポートされているの一覧については、PEP を照会します。
+PEP に対して、指定されたデバイスで、ACPI 名前空間でサポートされる ACPI オブジェクト (ネイティブメソッド) の一覧を照会します。
 
-ACPI の Windows ドライバーでは、この通知によって列挙オブジェクトを使用して、指定したデバイスの名前空間を作成します。 その後、このデバイスの場合は、ACPI ドライバーはこれらのオブジェクトに対してのみ、PEP をクエリします。
+Windows ACPI ドライバーは、この通知で列挙されたオブジェクトを使用して、指定したデバイスの名前空間を作成します。 その後、このデバイスを参照するときに、ACPI ドライバーは、これらのオブジェクトについてのみ PEP に対してクエリを実行します。
 
-Windows の電源管理フレームワーク (PoFx) は、デバイスが探索し、デバイスを ACPI サービスを提供する、PEP を登録後すぐに、PEP_NOTIFY_ACPI_ENUMERATE_DEVICE_NAMESPACE 通知を送信します。 この登録の詳細については、PEP_NOTIFY_ACPI_REGISTER_DEVICE を参照してください。
+Windows 電源管理フレームワーク (PoFx) は、デバイスが検出された直後に PEP_NOTIFY_ACPI_ENUMERATE_DEVICE_NAMESPACE 通知を送信し、PEP がデバイスの ACPI サービスを提供するように登録します。 この登録の詳細については、「PEP_NOTIFY_ACPI_REGISTER_DEVICE」を参照してください。
 
-PEP_NOTIFY_ACPI_ENUMERATE_DEVICE_NAMESPACE 通知を送信するには、PoFx は、PEP の AcceptAcpiNotification コールバック ルーチンを呼び出します。 この呼び出しでは、通知のパラメーター値は、PEP_NOTIFY_ACPI_ENUMERATE_DEVICE_NAMESPACE と PEP_ACPI_ENUMERATE_DEVICE_NAMESPACE 構造体へのデータ パラメーターのポイントが。
+PEP_NOTIFY_ACPI_ENUMERATE_DEVICE_NAMESPACE 通知を送信するために、PoFx は PEP の AcceptAcpiNotification コールバックルーチンを呼び出します。 この呼び出しでは、通知パラメーターの値は PEP_NOTIFY_ACPI_ENUMERATE_DEVICE_NAMESPACE、データパラメーターは PEP_ACPI_ENUMERATE_DEVICE_NAMESPACE 構造体を指します。
 
-PEP_NOTIFY_ACPI_ENUMERATE_DEVICE_NAMESPACE 通知を処理して TRUE を返すには、AcceptAcpiNotification ルーチンが必要です。 これに失敗には、バグ チェックが実行します。
+AcceptAcpiNotification ルーチンは、PEP_NOTIFY_ACPI_ENUMERATE_DEVICE_NAMESPACE 通知を処理し、TRUE を返すことが想定されています。 そうしないと、バグチェックが発生します。
 
-AcceptAcpiNotification ルーチンに常に IRQL でと呼ばれる PEP_NOTIFY_ACPI_ENUMERATE_DEVICE_NAMESPACE 通知、PASSIVE_LEVEL を = です。
+PEP_NOTIFY_ACPI_ENUMERATE_DEVICE_NAMESPACE 通知の場合、AcceptAcpiNotification ルーチンは常に IRQL = PASSIVE_LEVEL で呼び出されます。
  
-## <a name="pepnotifyacpiqueryobjectinformation"></a>PEP_NOTIFY_ACPI_QUERY_OBJECT_INFORMATION 
+## <a name="pep_notify_acpi_query_object_information"></a>PEP_NOTIFY_ACPI_QUERY_OBJECT_INFORMATION 
 
-通知:PEP_NOTIFY_ACPI_QUERY_OBJECT_INFORMATION 値。
+通知: 値 PEP_NOTIFY_ACPI_QUERY_OBJECT_INFORMATION。
 
-データ:ACPI オブジェクトの属性を指定する PEP_ACPI_QUERY_OBJECT_INFORMATION 構造体へのポインター。
+Data: ACPI オブジェクトの属性を指定する PEP_ACPI_QUERY_OBJECT_INFORMATION 構造体へのポインター。
 
-以前に列挙された ACPI オブジェクトについては、PEP を照会します。
+以前に列挙された ACPI オブジェクトに関する情報を PEP に照会します。
 
-Windows 電源管理フレームワーク (PoFx) は、前の PEP_NOTIFY_ACPI_ENUMERATE_DEVICE_NAMESPACE 通知の処理中に列挙されたオブジェクトの属性の PEP を照会するには、この通知を送信します。 現時点では、列挙されるオブジェクトはのみ制御メソッドです。
+Windows 電源管理フレームワーク (PoFx) は、この通知を送信して、以前の PEP_NOTIFY_ACPI_ENUMERATE_DEVICE_NAMESPACE 通知の処理中に列挙されたオブジェクトの属性を PEP に照会します。 現時点で列挙されるオブジェクトは、コントロールメソッドだけです。
 
-PEP_NOTIFY_ACPI_QUERY_OBJECT_INFORMATION 通知を送信するには、PoFx は、PEP の AcceptAcpiNotification コールバック ルーチンを呼び出します。 この呼び出しでは、通知のパラメーター値は、PEP_NOTIFY_ACPI_QUERY_OBJECT_INFORMATION と PEP_ACPI_QUERY_OBJECT_INFORMATION 構造体へのデータ パラメーターのポイントが。
+PEP_NOTIFY_ACPI_QUERY_OBJECT_INFORMATION 通知を送信するために、PoFx は PEP の AcceptAcpiNotification コールバックルーチンを呼び出します。 この呼び出しでは、通知パラメーターの値は PEP_NOTIFY_ACPI_QUERY_OBJECT_INFORMATION、データパラメーターは PEP_ACPI_QUERY_OBJECT_INFORMATION 構造体を指します。
 
-AcceptAcpiNotification ルーチンに常に IRQL でと呼ばれる PEP_NOTIFY_ACPI_QUERY_OBJECT_INFORMATION 通知、PASSIVE_LEVEL を = です。
+PEP_NOTIFY_ACPI_QUERY_OBJECT_INFORMATION 通知の場合、AcceptAcpiNotification ルーチンは常に IRQL = PASSIVE_LEVEL で呼び出されます。
  
-## <a name="pepnotifyacpievaluatecontrolmethod"></a>PEP_NOTIFY_ACPI_EVALUATE_CONTROL_METHOD 
+## <a name="pep_notify_acpi_evaluate_control_method"></a>PEP_NOTIFY_ACPI_EVALUATE_CONTROL_METHOD 
 
-通知:PEP_NOTIFY_ACPI_EVALUATE_CONTROL_METHOD 値。
+通知: 値 PEP_NOTIFY_ACPI_EVALUATE_CONTROL_METHOD。
 
-データ:このメソッドをおよび結果の出力バッファーに提供する入力引数を評価する ACPI コントロール メソッドを指定した PEP_ACPI_EVALUATE_CONTROL_METHOD 構造体へのポインター。
+Data: 評価する ACPI コントロールメソッド、このメソッドに渡す入力引数、および結果の出力バッファーを指定する PEP_ACPI_EVALUATE_CONTROL_METHOD 構造体へのポインター。
 
-PEP は、登録済みハンドラー ACPI コントロール メソッドの評価に使用されます。
+は、PEP が登録済みハンドラーである ACPI 制御メソッドを評価するために使用されます。
 
-Windows 電源管理フレームワーク (PoFx) では、ACPI の Windows ドライバーは、PEP によって実装される ACPI コントロール メソッドを評価する必要がある場合に、PEP にこの通知を送信します。
+Windows ACPI ドライバーが PEP によって実装されている ACPI 制御方式を評価する必要がある場合、Windows 電源管理フレームワーク (PoFx) はこの通知を PEP に送信します。
 
-PEP_NOTIFY_ACPI_EVALUATE_CONTROL_METHOD 通知を送信するには、PoFx は、PEP の AcceptAcpiNotification コールバック ルーチンを呼び出します。 この呼び出しでは、通知のパラメーター値は、PEP_NOTIFY_ACPI_EVALUATE_CONTROL_METHOD と PEP_ACPI_EVALUATE_CONTROL_METHOD 構造体へのデータ パラメーターのポイントが。
+PEP_NOTIFY_ACPI_EVALUATE_CONTROL_METHOD 通知を送信するために、PoFx は PEP の AcceptAcpiNotification コールバックルーチンを呼び出します。 この呼び出しでは、通知パラメーターの値は PEP_NOTIFY_ACPI_EVALUATE_CONTROL_METHOD、データパラメーターは PEP_ACPI_EVALUATE_CONTROL_METHOD 構造体を指します。
 
-プラットフォーム デザイナーでことができます、特定の ACPI コントロール メソッドに、PEP または ACPI ファームウェアのハンドルを持つかどうか選択します。 PEP が ACPI コントロール メソッドに対する登録済みハンドラーの場合は、PoFx PEP へ PEP_NOTIFY_ACPI_EVALUATE_CONTROL_METHOD 通知を送信することによって、このメソッドを評価する Windows ACPI ドライバーからの要求に応答します。
+プラットフォームデザイナーでは、PEP と ACPI ファームウェアのどちらを使用して特定の ACPI 制御方法を処理するかを選択できます。 PEP が ACPI 制御メソッド用に登録されたハンドラーである場合、PoFx は、PEP_NOTIFY_ACPI_EVALUATE_CONTROL_METHOD 通知を PEP に送信することによって、このメソッドを評価するために Windows ACPI ドライバーからの要求に応答します。
 
-デバイスの PEP を処理できる ACPI コントロール メソッドの例の一覧を次には。
+PEP がデバイスに対して処理できる ACPI コントロールメソッドの例を次に示します。
 
-デバイスの識別と構成: _HID、_CID、_UID、_ADR、_CLS、_SUB、_CRS、_PRS、これにします。 デバイスの電源管理とウェイク アップ: _PS0 _PS3、_PR0 _PR3 や _DSW を経由します。 デバイス固有のメソッド: _DSM とデバイスのスタックの特定方法を制御します。 ACPI 時間とアラームのデバイスなどの特殊なデバイスには、この通知を使用して、時間とアラームのメソッド (_GCP、_GRT、_SRT、およびなど) を評価します。 
+デバイスの識別と構成: HID、_C、UID、ADR、CLS、_ SUB、CRS、_PRS、その他です。 デバイスの電源管理とウェイクアップ: PS0 から PS3、_DSW、およびその他の手順を実行します。 デバイス固有のメソッド: DSM と任意のデバイススタック固有の制御メソッド。 ACPI 時間やアラームデバイスなどの特殊なデバイスでは、この通知を使用して時間とアラームの方法 ((GCP、_SRT など) を評価します。 
 
-AcceptAcpiNotification ルーチンに常に IRQL でと呼ばれる PEP_NOTIFY_ACPI_EVALUATE_CONTROL_METHOD 通知、PASSIVE_LEVEL を = です。
+PEP_NOTIFY_ACPI_EVALUATE_CONTROL_METHOD 通知の場合、AcceptAcpiNotification ルーチンは常に IRQL = PASSIVE_LEVEL で呼び出されます。
  
-## <a name="pepnotifyacpiquerydevicecontrolresources"></a>PEP_NOTIFY_ACPI_QUERY_DEVICE_CONTROL_RESOURCES 
+## <a name="pep_notify_acpi_query_device_control_resources"></a>PEP_NOTIFY_ACPI_QUERY_DEVICE_CONTROL_RESOURCES 
 
-通知:PEP_NOTIFY_ACPI_QUERY_DEVICE_CONTROL_RESOURCES 値。
+通知: 値 PEP_NOTIFY_ACPI_QUERY_DEVICE_CONTROL_RESOURCES。
 
-データ:電源のリソースの一覧を含む PEP_ACPI_QUERY_DEVICE_CONTROL_RESOURCES 構造体へのポインター。
+Data: 電源リソースのリストを含む PEP_ACPI_QUERY_DEVICE_CONTROL_RESOURCES 構造体へのポインター。
  
-デバイスの電源を制御するために必要な生のリソースの一覧については、PEP を照会します。
+デバイスの電力制御に必要な生のリソースの一覧を PEP に照会します。
 
-この通知に応答してでは、PEP は、デバイスの電源を制御するために必要な生のリソースの一覧を提供します。 ように、デバイスに必要な電源リソースを予約し、PEP を (PEP_NOTIFY_ACPI_TRANSLATED_DEVICE_CONTROL_RESOURCES 通知を送信する) で、対応する翻訳済みのリソースの一覧を指定することができます、ACPI の Windows ドライバーはこの一覧が必要です. 詳細については、Raw と変換のリソースを参照してください。
+この通知に対する応答として、PEP はデバイスの電力制御に必要な未加工のリソースの一覧を提供します。 Windows ACPI ドライバーでは、デバイスが必要とする電力リソースを予約し、対応する翻訳されたリソースの一覧を PEP に提供できるように、この一覧が必要になります (PEP_NOTIFY_ACPI_TRANSLATED_DEVICE_CONTROL_RESOURCES 通知を送信します). 詳細については、「未加工のリソースと変換されたリソース」を参照してください。
 
-PEP_NOTIFY_ACPI_QUERY_DEVICE_CONTROL_RESOURCES 通知を送信するには、Windows 電源管理フレームワーク (PoFx) は、PEP の AcceptAcpiNotification コールバック ルーチンを呼び出します。 この呼び出しでは、通知のパラメーター値は、PEP_NOTIFY_ACPI_QUERY_DEVICE_CONTROL_RESOURCES と PEP_ACPI_QUERY_DEVICE_CONTROL_RESOURCES 構造体へのデータ パラメーターのポイントが。
+PEP_NOTIFY_ACPI_QUERY_DEVICE_CONTROL_RESOURCES 通知を送信するために、Windows 電源管理フレームワーク (PoFx) は PEP の AcceptAcpiNotification コールバックルーチンを呼び出します。 この呼び出しでは、通知パラメーターの値は PEP_NOTIFY_ACPI_QUERY_DEVICE_CONTROL_RESOURCES、データパラメーターは PEP_ACPI_QUERY_DEVICE_CONTROL_RESOURCES 構造体を指します。
 
-AcceptAcpiNotification ルーチンに常に IRQL でと呼ばれる PEP_NOTIFY_ACPI_QUERY_DEVICE_CONTROL_RESOURCES 通知、PASSIVE_LEVEL を = です。
+PEP_NOTIFY_ACPI_QUERY_DEVICE_CONTROL_RESOURCES 通知の場合、AcceptAcpiNotification ルーチンは常に IRQL = PASSIVE_LEVEL で呼び出されます。
  
-## <a name="pepnotifyacpitranslateddevicecontrolresources"></a>PEP_NOTIFY_ACPI_TRANSLATED_DEVICE_CONTROL_RESOURCES 
+## <a name="pep_notify_acpi_translated_device_control_resources"></a>PEP_NOTIFY_ACPI_TRANSLATED_DEVICE_CONTROL_RESOURCES 
 
-通知:PEP_NOTIFY_ACPI_TRANSLATED_DEVICE_CONTROL_RESOURCES 値。
+通知: 値 PEP_NOTIFY_ACPI_TRANSLATED_DEVICE_CONTROL_RESOURCES。
 
-データ:変換されたリソースの一覧を含む PEP_ACPI_TRANSLATED_DEVICE_CONTROL_RESOURCES 構造体へのポインター。
+Data: 翻訳されたリソースの一覧を含む PEP_ACPI_TRANSLATED_DEVICE_CONTROL_RESOURCES 構造体へのポインター。
  
-変換されたリソースの一覧ではデバイスに必要なすべての電源制御リソース、PEP を提供します。
+PEP に、デバイスに必要なすべての電源管理リソースの変換されたリソースの一覧を提供します。
 
-Windows の電源管理フレームワーク (PoFx) は、PEP には、前の PEP_NOTIFY_ACPI_QUERY_DEVICE_CONTROL_RESOURCES 通知に対する応答の生リソースが表示されている場合、この通知を送信します。 PEP_NOTIFY_ACPI_TRANSLATED_DEVICE_CONTROL_RESOURCES 通知は、対応する翻訳済みのリソースの一覧で、PEP を提供します。 詳細については、Raw と変換のリソースを参照してください。
+Windows の電源管理フレームワーク (PoFx) は、前の PEP_NOTIFY_ACPI_QUERY_DEVICE_CONTROL_RESOURCES 通知に応答して、PEP に生のリソースが一覧表示された場合にこの通知を送信します。 PEP_NOTIFY_ACPI_TRANSLATED_DEVICE_CONTROL_RESOURCES 通知は、PEP に、翻訳されたリソースの対応するリストを提供します。 詳細については、「未加工のリソースと変換されたリソース」を参照してください。
 
-PEP_NOTIFY_ACPI_TRANSLATED_DEVICE_CONTROL_RESOURCES 通知を送信するには、PoFx は、PEP の AcceptAcpiNotification コールバック ルーチンを呼び出します。 この呼び出しでは、通知のパラメーター値は、PEP_NOTIFY_ACPI_TRANSLATED_DEVICE_CONTROL_RESOURCES と PEP_ACPI_TRANSLATED_DEVICE_CONTROL_RESOURCES 構造体へのデータ パラメーターのポイントが。
+PEP_NOTIFY_ACPI_TRANSLATED_DEVICE_CONTROL_RESOURCES 通知を送信するために、PoFx は PEP の AcceptAcpiNotification コールバックルーチンを呼び出します。 この呼び出しでは、通知パラメーターの値は PEP_NOTIFY_ACPI_TRANSLATED_DEVICE_CONTROL_RESOURCES、データパラメーターは PEP_ACPI_TRANSLATED_DEVICE_CONTROL_RESOURCES 構造体を指します。
 
-AcceptAcpiNotification ルーチンに常に IRQL でと呼ばれる PEP_NOTIFY_ACPI_TRANSLATED_DEVICE_CONTROL_RESOURCES 通知、PASSIVE_LEVEL を = です。
+PEP_NOTIFY_ACPI_TRANSLATED_DEVICE_CONTROL_RESOURCES 通知の場合、AcceptAcpiNotification ルーチンは常に IRQL = PASSIVE_LEVEL で呼び出されます。
  
-## <a name="pepnotifyacpiwork"></a>PEP_NOTIFY_ACPI_WORK 
+## <a name="pep_notify_acpi_work"></a>PEP_NOTIFY_ACPI_WORK 
 
-通知:PEP_NOTIFY_ACPI_WORK 値。
+通知: 値 PEP_NOTIFY_ACPI_WORK。
 
-データ:PEP_WORK 構造体へのポインター。
+Data: PEP_WORK 構造体へのポインター。
  
-毎回、PEP は、Windows 電源管理フレームワーク (PoFx) から作業項目を要求する RequestWorker ルーチンを呼び出すと、PEP に送信されます。 この通知は、ACPI のみの作業に使用されます。
+PEP が RequestWorker ルーチンを呼び出して Windows 電源管理フレームワーク (PoFx) から作業項目を要求するたびに、PEP に1回送信されます。 この通知は、ACPI 専用の作業に使用されます。
 
-PEP では、作業項目を要求する RequestWorker ルーチンを呼び出してから PoFx は PEP PEP_NOTIFY_ACPI_WORK の通知を送信して応答します。 ただし、作業項目の処理に必要なリソース (つまり、ワーカー スレッド) が使用可能になるまで、この通知は送信されません。 この方法で PoFx PEP に PoFx 通知中に渡す作業要求がリソースが不足していることはありませんによって失敗することができることが保証されます。
+PEP は、RequestWorker ルーチンを呼び出して作業項目を要求した後、PEP a PEP_NOTIFY_ACPI_WORK 通知を送信して応答します。 ただし、この通知は、作業項目を処理するために必要なリソース (ワーカースレッド) が使用可能になるまで送信されません。 このようにして、PoFx は、通知中に PEP が PoFx に渡す作業要求がリソース不足のために失敗することを保証します。
 
-項目で、PEP は PEP_WORK 構造体は初期化されていないと想定されます。 この通知を処理するために、PEP は、要求されている作業を記述する PEP に割り当てられた PEP_WORK_INFORMATION 構造体を指す WorkInformation メンバーを設定する必要があります。 さらに、PEP では、PEP が PEP_NOTIFY_ACPI_WORK 通知を処理して、WorkInformation メンバーが有効な PEP_WORK_INFORMATION 構造体を指すことを確認する場合は TRUE を NeedWork、PEP_WORK 構造体のメンバーを設定する必要があります。 PEP では、通知を処理するために障害が発生したり、PEP_WORK_INFORMATION 構造を割り当てることがない、PEP は WorkInformation メンバーを NULL に設定し、NeedWork メンバーを FALSE に設定する必要があります。
+入力時、PEP は PEP_WORK 構造体が初期化されていないと想定する必要があります。 この通知を処理するには、PEP は、要求されている作業を記述する PEP に割り当てられた PEP_WORK_INFORMATION 構造体を指すように、ワーク情報メンバーを設定する必要があります。 さらに、pep は、PEP_WORK 構造体の必要な作業メンバーを TRUE に設定して、PEP が PEP_NOTIFY_ACPI_WORK 通知を処理したこと、および work INFORMATION メンバーが有効な PEP_WORK_INFORMATION 構造を指していることを確認する必要があります。 PEP が通知を処理できなかった場合、または PEP_WORK_INFORMATION 構造体を割り当てることができない場合は、PEP で WORK INFORMATION メンバーを NULL に設定し、必要な作業メンバーを FALSE に設定する必要があります。
 
-AcceptAcpiNotification ルーチンに常に IRQL でと呼ばれる PEP_NOTIFY_ACPI_WORK 通知、PASSIVE_LEVEL を = です。
+PEP_NOTIFY_ACPI_WORK 通知の場合、AcceptAcpiNotification ルーチンは常に IRQL = PASSIVE_LEVEL で呼び出されます。
  
 
 

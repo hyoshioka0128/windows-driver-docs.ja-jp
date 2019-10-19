@@ -3,58 +3,58 @@ title: MDL の使用
 description: MDL の使用
 ms.assetid: 60652eb8-cfdb-4591-88ff-cf9dc4b9743d
 keywords:
-- メモリ管理の WDK カーネル
+- メモリ管理 (WDK) カーネル、
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 22e711691c8993c2ddbc3ee064865580331fc17f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d948aad219df86fde7f8720c6d4f2ea3a7fa196f
+ms.sourcegitcommit: 87975bf11f43410ae113b57a34131778fb9677a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67381614"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72549719"
 ---
 # <a name="using-mdls"></a>MDL の使用
 
 
-連続した仮想メモリ アドレスの範囲にわたる I/O バッファーをいくつかの物理ページに分散させることができ、これらのページを連続していないことができます。 オペレーティング システムの使用、*メモリ記述子のリスト*仮想メモリ バッファーの物理的なページ レイアウトを記述するには、(MDL)。
+連続した仮想メモリアドレスの範囲にまたがる i/o バッファーは、複数の物理ページに分散できます。また、これらのページは連続していてもかまいません。 オペレーティングシステムでは、*メモリ記述子リスト*(MDL) を使用して、仮想メモリバッファーの物理的なページレイアウトを記述します。
 
-MDL から成る、 [ **MDL** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_mdl) I/O バッファーが存在する物理メモリを説明するデータの配列が続く構造体。 MDL のサイズは、MDL 説明する I/O バッファーの特性によって異なります。 システムのルーチン、MDL の必要なサイズの計算と割り当てし、解放 MDL を利用できます。
+MDL は、その後に i/o バッファーが存在する物理メモリを示すデータの配列を続けた[**mdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_mdl)構造体で構成されます。 MDL のサイズは、MDL が記述する i/o バッファーの特性によって異なります。 システムルーチンを使用して、必要な MDL のサイズを計算し、MDL を割り当てたり解放したりすることができます。
 
-MDL 構造体は、不透明度の低いです。 ドライバーにのみ直接アクセスする必要があります、**次**と**MdlFlags**この構造体のメンバー。 これら 2 つのメンバーを使用するコード例では、次の例のセクションを参照してください。
+MDL 構造体は、半不透明です。 ドライバーは、この構造体の**Next**および**mdlflags**メンバーにのみ直接アクセスする必要があります。 これらの2つのメンバーを使用するコード例については、次の「例」のセクションを参照してください。
 
-MDL の残りのメンバーは、不透明です。 不透明な MDL のメンバーに直接アクセスしない操作を行います。 代わりに、構造体に基本的な操作を実行するオペレーティング システムを提供する次のマクロを使用します。
+MDL の残りのメンバーは不透明です。 MDL の非透過的メンバーに直接アクセスしないでください。 代わりに、次のマクロを使用します。これは、オペレーティングシステムによって構造に対する基本的な操作を実行するために用意されています。
 
-[**MmGetMdlVirtualAddress** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer) MDL によって記述される I/O バッファーの仮想メモリ アドレスを返します。
+[**Mmgetmdlvirtualaddress**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)は、MDL によって記述される i/o バッファーの仮想メモリアドレスを返します。
 
-[**MmGetMdlByteCount** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmgetmdlbytecount)サイズ、I/O バッファーのバイト単位で返します。
+[**MmGetMdlByteCount**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmgetmdlbytecount)は、i/o バッファーのサイズ (バイト単位) を返します。
 
-[**MmGetMdlByteOffset** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer) I/O バッファーの先頭の物理的なページ内のオフセットを返します。
+[**Mmgetmdlbyteoffset**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)は、i/o バッファーの先頭にある物理ページ内のオフセットを返します。
 
-MDL を割り当てることができます、 [ **IoAllocateMdl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocatemdl)ルーチン。 MDL を解放するには、使用、 [ **IoFreeMdl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iofreemdl)ルーチン。 または、非ページ メモリのブロックを割り当てます、MDL としてメモリのブロックを書式設定し、呼び出すことによって、 [ **MmInitializeMdl** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)ルーチン。
+[**IoAllocateMdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocatemdl)ルーチンを使用して、MDL を割り当てることができます。 MDL を解放するには、 [**Iofreemdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iofreemdl)ルーチンを使用します。 または、非ページメモリのブロックを割り当て、 [**MmInitializeMdl**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)ルーチンを呼び出して、このメモリブロックを MDL としてフォーマットすることもできます。
 
-どちらも**IoAllocateMdl**も**MmInitializeMdl** MDL 構造体の直後にデータの配列を初期化します。 非ページ メモリのドライバーに割り当てられたブロック内にある MDL、使用[ **MmBuildMdlForNonPagedPool** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmbuildmdlfornonpagedpool) I/O バッファーが存在する物理メモリを記述するには、この配列を初期化します。
+**IoAllocateMdl**も**MmInitializeMdl**でも、MDL 構造体の直後にあるデータ配列は初期化されません。 ドライバーで割り当てられた非ページメモリのブロックにある MDL の場合は、 [**MmBuildMdlForNonPagedPool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmbuildmdlfornonpagedpool)を使用してこの配列を初期化し、i/o バッファーが存在する物理メモリを記述します。
 
-ページング可能なメモリは、仮想および物理メモリ間の通信は一時的なもので MDL 構造体に続くデータ配列は特定の状況下でのみ有効です。 呼び出す[ **MmProbeAndLockPages** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmprobeandlockpages)をページング可能なメモリを固定して、現在のレイアウトの場合は、このデータ配列を初期化します。 呼び出し元が使用されるまで、メモリをページングされないが、 [ **MmUnlockPages** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmunlockpages)ルーチンは、この時点でデータの配列の内容は無効になります。
+ページング可能なメモリの場合、仮想メモリと物理メモリの対応は一時的なものであるため、MDL 構造に従うデータ配列は、特定の状況でのみ有効です。 [**MmProbeAndLockPages**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmprobeandlockpages)を呼び出して、ページング可能なメモリを所定の場所にロックし、このデータ配列を現在のレイアウト用に初期化します。 呼び出し元が[**MmUnlockPages**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmunlockpages)ルーチンを使用するまで、メモリはページアウトされません。その時点で、データ配列の内容は無効になります。
 
-[ **MmGetSystemAddressForMdlSafe** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)ルーチン システム アドレスにマップされていない場合、システム アドレス空間内の仮想アドレスに指定された MDL によって記述される物理的なページがマップされます領域。 この仮想のアドレスは、ドライバー、元の仮想アドレスには、元のコンテキストでのみ使用できますし、いつでも削除できるユーザーのアドレスが可能性があるため、I/O を実行するページを確認する必要がある場合に便利です。
+[**MmGetSystemAddressForMdlSafe**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)ルーチンは、指定された MDL によって記述される物理ページがシステムアドレス空間にまだマップされていない場合、システムアドレス空間内の仮想アドレスにマップします。 この仮想アドレスは、i/o を実行するためにページを確認する必要があるドライバーに役立ちます。元の仮想アドレスは、元のコンテキストでのみ使用でき、いつでも削除できるユーザーアドレスである可能性があるためです。
 
-部分的な MDL を使用してビルドすると、 [ **IoBuildPartialMdl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iobuildpartialmdl) 、呼び出し元を使用する必要があります、日常的な**MmGetMdlVirtualAddress**の代わりに、 **MmGetSystemAddressForMdlSafe**ルーチンに渡す仮想アドレスを決定するときにします。 **IoBuildPartialMdl**アドレスを使用している**MmGetMdlVirtualAddress**ターゲット MDL のオフセットを決定する MDL ソースから取得します。 アドレスが (たとえば、最初のアドレスがユーザーのアドレスである場合)、異なる場合は、アドレスを渡す**MmGetSystemAddressForMdlSafe**を返します。 データの破損またはバグ チェックが発生することができます。
+[**Iobuildpartialmdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iobuildpartialmdl)ルーチンを使用して部分的な mdl を構築する場合、渡す仮想アドレスを決定するときに、呼び出し元は**MmGetSystemAddressForMdlSafe**ルーチンの代わりに**Mmgetmdlvirtualaddress**を使用する必要があることに注意してください。 **Iobuildpartialmdl**は、ソースの Mdl から**Mmgetmdlvirtualaddress**が返すアドレスを使用して、ターゲットの mdl のオフセットを決定します。 アドレスが異なる場合 (たとえば、最初のアドレスがユーザーアドレスの場合)、 **MmGetSystemAddressForMdlSafe**から返されるアドレスを渡すと、データの破損またはバグチェックが発生する可能性があります。
 
-ドライバーを呼び出すと**IoAllocateMdl**に関連付けることができます、IRP 新しく割り当てられた MDL IRP をへのポインターを指定することで、 *Irp*パラメーターの**IoAllocateMdl**します。 IRP が 1 つまたは複数 MDLs 関連付けられています。 IRP が関連付けられている、IRP の 1 つ MDL **MdlAddress**その MDL へのポインターします。 IRP がそれに関連付けられている複数の MDLs **MdlAddress**と呼ばれる、IRP に関連付けられている MDLs のリンク リストの最初の MDL を指す、 *MDL チェーン*します。 によって、MDLs がリンクされている、**次**メンバー。 **次**チェーン内の最後の MDL のメンバーに設定されている**NULL**します。
+ドライバーが**IoAllocateMdl**を呼び出すと、 **IoAllocateMdl**の*IRP*パラメーターとして irp へのポインターを指定することで、irp を新しく割り当てられた MDL に関連付けることができます。 IRP には、1つ以上の MDLs を関連付けることができます。 IRP に1つの MDL が関連付けられている場合、IRP の**Mdladdress**メンバーはその mdl を指します。 IRP に複数の MDLs が関連付けられている場合、 **Mdladdress**は、( *mdl チェーン*と呼ばれる) irp に関連付けられている mdls のリンクリスト内の最初の MDL を指します。 MDLs は、**次**のメンバーによってリンクされています。 チェーン内の最後の MDL の**次**のメンバーが**NULL**に設定されています。
 
-ドライバーを呼び出すと場合、 **IoAllocateMdl**を指定します**FALSE**の*SecondaryBuffer*パラメーター、IRP の**MdlAddress**新しい MDL を指すメンバーが設定されます。 場合*SecondaryBuffer*は**TRUE**ルーチンが MDL チェーンの末尾に新しい MDL を挿入します。
+ドライバーが**IoAllocateMdl**を呼び出したときに、 *Secondarybuffer*パラメーターに**FALSE**を指定した場合、IRP の**mdladdress**メンバーは新しい MDL を指すように設定されます。 *Secondarybuffer*が**TRUE**の場合、このルーチンは新しい mdl を mdl チェーンの最後に挿入します。
 
-IRP が完了したら、システムがロックを解除し、IRP に関連付けられているすべての MDLs を解放します。 システムは、I/O 完了ルーチンから I/O 完了ルーチンの実行後に、解放する前に、MDLs をロック解除します。
+IRP が完了すると、システムは、IRP に関連付けられているすべての MDLs をロック解除し、解放します。 I/o 完了ルーチンをキューに置いて、i/o 完了ルーチンの実行後に解放する前に、MDLs のロックが解除されます。
 
-ドライバーを使用して MDL チェーンをスキャンすることができます、**次**チェーンで次の MDL にアクセスするには、各 MDL のメンバー。 ドライバーは更新することによって、チェーンに MDLs を手動で挿入できます、**次**メンバー。
+ドライバーは、各 MDL の**次**のメンバーを使用して、チェーン内の次の mdl にアクセスすることによって、mdl チェーンを走査できます。 ドライバーは、**次**のメンバーを更新することで、手動で mdls をチェーンに挿入できます。
 
-MDL チェーンは、1 つの I/O 要求に関連付けられているバッファーの配列を管理する通常使用されます。 (たとえば、ネットワーク ドライバーでしたを使用して、1 つのバッファー ネットワーク操作では、各 IP パケットの。)配列内の各バッファーは、チェーンに、独自の MDL を持っています。 ドライバーには、要求が完了するは、1 つの大きなバッファーにバッファーを結合します。 システムから自動的にクリーンアップ要求に割り当てられているすべての MDLs。
+通常、MDL チェーンは、単一の i/o 要求に関連付けられたバッファーの配列を管理するために使用されます。 (たとえば、ネットワークドライバーでは、ネットワーク操作で IP パケットごとに1つのバッファーを使用できます)。配列内の各バッファーには、チェーン内に独自の MDL があります。 ドライバーは、要求を完了すると、バッファーを1つの大きなバッファーに結合します。 システムは、要求に割り当てられたすべての MDLs を自動的にクリーンアップします。
 
-[I/O マネージャー](windows-kernel-mode-i-o-manager.md)は I/O 要求の頻繁なソースです。 I/O マネージャーには、I/O 要求が完了すると、I/O マネージャーは IRP を解放し、IRP にアタッチされている任意の MDLs を解放します。 これら MDLs のいくつかの可能性がありますがアタッチされている IRP デバイス スタックの I/O マネージャー下に配置されたドライバー。 同様に、ドライバーが、I/O 要求のソースの場合は、ドライバーする必要があります IRP とクリーンアップ I/O 要求が完了したときに、IRP にアタッチされている任意の MDLs します。
+I/o[マネージャー](windows-kernel-mode-i-o-manager.md)は、頻繁に i/o 要求を送信します。 I/o マネージャーが i/o 要求を完了すると、i/o マネージャーによって IRP が解放され、IRP にアタッチされている MDLs が解放されます。 これらの MDLs の一部は、デバイススタックの i/o マネージャーの下にあるドライバーによって IRP にアタッチされている可能性があります。 同様に、ドライバーが i/o 要求のソースである場合は、i/o 要求の完了時に irp にアタッチされている IRP と MDLs をドライバーがクリーンアップする必要があります。
 
 ### <a name="example"></a>例
 
-次のコード例では、IRP から、MDL チェーンを解放するドライバー実装関数を示します。
+次のコード例は、IRP から MDL チェーンを解放するドライバーによって実装される関数です。
 
 ```cpp
 VOID MyFreeMdl(PMDL Mdl)
@@ -73,14 +73,6 @@ VOID MyFreeMdl(PMDL Mdl)
 } 
 ```
 
-チェーンの MDL によって記述される物理的なページがロックされている場合、例関数は、 [ **MmUnlockPages** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmunlockpages)ルーチンを呼び出す前に、ページのロックを解除する[ **IoFreeMdl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iofreemdl) MDL を解放します。 ただし、例の関数は、ページを呼び出す前に明示的にマップ解除する必要はありません**IoFreeMdl**します。 代わりに、 **IoFreeMdl**自動的に MDL を解放する場合、ページの割り当てを解除します。
-
-割り当て、解放、および MDLs を管理するシステム ルーチンの概要については、次を参照してください。[アドレス マッピングと MDLs](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)します。
-
- 
-
- 
-
-
+チェーン内の MDL によって記述された物理ページがロックされている場合、この例の関数は、 [**Iofreemdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iofreemdl)を呼び出して mdl を解放する前に、 [**MmUnlockPages**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmunlockpages)ルーチンを呼び出してページのロックを解除します。 ただし、この例の関数では、 **Iofreemdl**を呼び出す前にページを明示的にマップ解除する必要はありません。 代わりに、 **Iofreemdl**は、MDL を解放するときにページを自動的に解除します。
 
 

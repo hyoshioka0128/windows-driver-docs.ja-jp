@@ -4,41 +4,41 @@ description: 静的ドライバー検証ツールの診断
 ms.assetid: dff22144-43a0-427f-8075-9c9152670933
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ffe5655e2916d59eca26b695e569aeeadc22a85f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6f5ddebd0f0141e18d32c574cae767b2fa3e890d
+ms.sourcegitcommit: 87975bf11f43410ae113b57a34131778fb9677a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382969"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72549716"
 ---
 # <a name="static-driver-verifier-diagnostics"></a>静的ドライバー検証ツールの診断
 
 
-SDV は、お客様とマイクロソフトの SDV が発生する可能性のある問題のトラブルシューティングに役立つ診断モードです。 診断モードを有効にすると、SDV は、一連のドライバー プロジェクト、およびルールの検証の段階ごとに 1 つのファイルにメッセージを記録します。
+SDV には、SDV によって発生する可能性のある問題のトラブルシューティングに役立つ診断モードがあります。 診断モードが有効になっている場合、SDV は、検証とルールごとに1つずつ、ドライバープロジェクトの一連のファイルにメッセージを記録します。
 
-### <a name="span-idenablingdiagnosticsspanspan-idenablingdiagnosticsspanenabling-diagnostics"></a><span id="enabling_diagnostics"></span><span id="ENABLING_DIAGNOSTICS"></span>診断を有効にします。
+### <a name="span-idenabling_diagnosticsspanspan-idenabling_diagnosticsspanenabling-diagnostics"></a><span id="enabling_diagnostics"></span><span id="ENABLING_DIAGNOSTICS"></span>診断の有効化
 
-SDV (デバッグ モードとも呼ばれます) は現在の診断モードのみ有効にする、コマンドラインから実行する場合。  コマンドラインからの実行に関する詳細については、次を参照してください。 [Static Driver Verifier のコマンド (MSBuild)](-static-driver-verifier-commands--msbuild-.md)します。
+現在、SDV (デバッグモードとも呼ばれます) の診断モードは、コマンドラインから実行している場合にのみ有効にすることができます。  コマンドラインからの実行の詳細については、「 [Static Driver Verifier commands (MSBuild)](-static-driver-verifier-commands--msbuild-.md)」を参照してください。
 
-診断を有効にするには、追加、 **/debug**フラグを設定した後、 **/check**コマンド。  以下に例を示します。
+診断をアクティブ化するには、 **/チェック**コマンドの後に **/debug**フラグを追加します。  次に、例を示します。
 
 ```
 msbuild /t:sdv /p:Inputs="/check:* /debug" mydriver.VcxProj /p:Configuration="Release" /p:Platform=x64
 ```
 
-診断を有効にすると、詳細出力が大幅にコマンド ウィンドウに特定のログ ファイルの作成とされます。
+診断を有効にすると、特定のログファイルの作成だけでなく、コマンドウィンドウへの出力も大幅になります。
 
-### <a name="span-idenablingdiagnosticsspanspan-idenablingdiagnosticsspanunderstanding-diagonistics"></a><span id="enabling_diagnostics"></span><span id="ENABLING_DIAGNOSTICS"></span>Understanding Diagonistics
+### <a name="span-idenabling_diagnosticsspanspan-idenabling_diagnosticsspanunderstanding-diagonistics"></a><span id="enabling_diagnostics"></span><span id="ENABLING_DIAGNOSTICS"></span>Diagonistics について
 
-SDV はそのステップの詳細を提供する実行の各段階で複数のファイルを作成します。  SDV は、実行を途中で失敗した場合、後のステージのない diagonistic ファイルが作成されます。
+SDV は、実行の各ステージに複数のファイルを作成し、その手順について詳しく説明します。  SDV が実行の途中で失敗した場合、後でステージするために diagonistic ファイルは作成されません。
 
-作成されたファイルは、順番は。
-* **smvexecute-NormalBuild.log**:これは、ドライバーのソース ディレクトリにあるし、追加のインストルメンテーションや分析を行わず、ドライバーのビルドの SDV の初回試行の出力を示しています。
-* **smvexecute-InterceptedBuild.log**:これにより、ドライバーのソース ディレクトリにあるし、SDV analysis フックを追加して、ドライバーをビルドの出力を示しています。  
-* **smvcl.log**:これは、SDV で、ドライバーのプロジェクトで作成した"sdv"ディレクトリにあります。  InterceptedBuild ステップのコンパイラの出力が表示されます。  エラーが表示する場合**smvexecute InterceptedBuild.log**で追加の詳細を検索することができます**smvcl.log します。**
+作成されるファイルの順序は次のとおりです。
+* **smvexecute-NormalBuild**: ドライバーのソースディレクトリにあり、追加のインストルメンテーションと分析を行わずに、ドライバーをビルドするための sdv の初期試行の出力が表示されます。
+* **smvexecute-InterceptedBuild**: これは、ドライバーのソースディレクトリにあり、分析フックが追加された sdv の出力を示しています。  
+* **smvcl .log**: これは、ドライバープロジェクトで sdv によって作成された "sdv" ディレクトリにあります。  InterceptedBuild ステップのコンパイラ出力が表示されます。  **Smvexecute-InterceptedBuild**でエラーが発生した場合は、 **smvcl .log**で詳細を確認できる場合があります。
 
-* **smvexecute-Scan.log**:これは、SDV で、ドライバーのプロジェクトで作成した"sdv"ディレクトリにあります。  SDV のエントリ ポイントを検索するドライバーをスキャンしようの出力が表示されます。  ここでエラーことを示すエントリ ポイントが見つかりません関数 roletypes または sdv map.h を更新する必要があります。  参照してください[を使用して関数の役割の型の宣言](using-function-role-type-declarations.md)と[Sdv map.h ファイルを承認する](approving-the-sdv-map-h-file.md)詳細についてはします。
-* **smvexecute-FinalCompile.log**:これらのファイルの 1 つは、各ルールは、sdv、によって検証しで見つかる用に作成されたが、"sdv\check\[規則名]"サブフォルダー SDV は、ドライバーのプロジェクトで作成します。  このファイルは、SDV の構築しようとする特定のルールと OS のモデルでのドライバーの出力を示します。  
-* **smvexecute-CheckRule.log**:これらのファイルの 1 つは、各ルールは、sdv、によって検証しで見つかる用に作成されたが、"sdv\check\[規則名]"サブフォルダー SDV は、ドライバーのプロジェクトで作成します。  このファイルは、ドライバーに対して指定されたルールを検証しようと SDV の出力を示します。
+* **smvexecute-Scan**: これは、ドライバープロジェクトで sdv によって作成された "sdv" ディレクトリにあります。  エントリポイントを見つけるために、ドライバーをスキャンする SDV の出力を示します。  ここでのエラーは、エントリポイントが見つからなかったことを示している可能性があります。関数 roletypes または sdv-map. h を更新する必要があります。  詳細については、「[関数ロール型宣言の使用](using-function-role-type-declarations.md)」および「 [Sdv .H ファイルの承認](approving-the-sdv-map-h-file.md)」を参照してください。
+* **smvexecute-FinalCompile**: sdv によって検証されたルールごとに、これらのファイルの1つが作成されます。これは、ドライバープロジェクトで "sdv\ check \[rule name]" サブフォルダー sdv によって作成されます。  このファイルには、OS モデルと特定のルールを使用してドライバーをビルドする SDV の出力が表示されます。  
+* **smvexecute-CheckRule**: sdv によって検証されたルールごとに、これらのファイルの1つが作成されます。これは、ドライバープロジェクトで "sdv\ check \[rule name]" サブフォルダー sdv によって作成されます。  このファイルは、ドライバーに対して指定された規則を確認する SDV の試行の出力を示します。
 
-コマンドの出力に失敗のマークを一覧表示する段階に対応するファイルを検索する必要があります。  障害が発生した場合、 **FinalCompile**または**CheckRule**手順、障害が発生したとして、特定のルールのフォルダーをチェックすることを確認して表示をします。
+コマンドの出力で、ステージングリストに対応するファイルを [失敗] として検索する必要があります。  **Finalcompile**または**checkrule**の手順でエラーが発生した場合は、[失敗] と表示されている特定のルールのフォルダーを確認してください。

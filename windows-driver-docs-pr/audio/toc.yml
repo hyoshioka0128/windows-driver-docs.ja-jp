@@ -441,8 +441,6 @@
       href: audio-processing-object-architecture.md
     - name: オーディオ処理オブジェクトの実装
       href: implementing-audio-processing-objects.md
-    - name: APO 効果を構成するための UI の実装
-      href: implementing-a-ui-for-configuring-apo-effects.md
     - name: APO 効果をオフロードするハードウェアの実装
       href: implementing-hardware-offloaded-apo-effects.md
     - name: Windows の既定の APO
