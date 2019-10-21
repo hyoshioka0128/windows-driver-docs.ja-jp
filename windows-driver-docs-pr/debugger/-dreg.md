@@ -22,7 +22,7 @@ ms.locfileid: "70025266"
 # <a name="dreg"></a>!dreg
 
 
-**! Dreg**拡張機能では、レジストリ情報が表示されます。
+**! dreg**拡張機能では、レジストリ情報が表示されます。
 
 ```dbgcmd
 !dreg [-d|-w] KeyPath[!Value] 
@@ -42,16 +42,16 @@ ms.locfileid: "70025266"
 レジストリキーのパスを指定します。 次のいずれかの省略形で開始できます。
 
 <span id="hklm"></span><span id="HKLM"></span>**hklm**  
-HKEY\_ローカル\_マシン
+HKEY\_LOCAL\_MACHINE
 
 <span id="hkcu"></span><span id="HKCU"></span>**hkcu**  
-HKEY\_現在\_ユーザー
+HKEY\_CURRENT\_USER
 
 <span id="hkcr"></span><span id="HKCR"></span>**hkcr**  
-HKEY\_クラス\_ルート
+HKEY\_CLASSES\_ROOT
 
 <span id="hku"></span><span id="HKU"></span>**hku**  
-HKEY\_ユーザー
+HKEY\_USERS
 
 省略形が使用されて\_い\_ない場合は、HKEY LOCAL MACHINE と見なされます。
 
