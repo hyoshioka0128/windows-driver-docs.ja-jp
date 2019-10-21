@@ -42,16 +42,16 @@ ms.locfileid: "70025266"
 レジストリキーのパスを指定します。 次のいずれかの省略形で開始できます。
 
 <span id="hklm"></span><span id="HKLM"></span>**hklm**  
-HKEY\_LOCAL\_MACHINE
+HKEY\_ローカル\_マシン
 
 <span id="hkcu"></span><span id="HKCU"></span>**hkcu**  
-HKEY\_CURRENT\_USER
+HKEY\_現在\_ユーザー
 
 <span id="hkcr"></span><span id="HKCR"></span>**hkcr**  
-HKEY\_CLASSES\_ROOT
+HKEY\_クラス\_ルート
 
 <span id="hku"></span><span id="HKU"></span>**hku**  
-HKEY\_USERS
+HKEY\_ユーザー
 
 省略形が使用されて\_い\_ない場合は、HKEY LOCAL MACHINE と見なされます。
 
