@@ -1,157 +1,123 @@
-- name: センサー デバイス ドライバー設計ガイド
-  href: index.md
-- name: センサーの新機能
-  href: what-s-new-in-sensors.md
-- name: ユニバーサル センサー ドライバー モデルの概要
+- name: ユニバーサル センサー ドライバー モデル
   href: overview-of-converged-sensor-driver-model.md
-- name: Windows センサー ドライバーの機能
+- name: Windows センサー プログラミング ガイド
   items:
-    - name: Windows センサー ドライバーの機能
-      href: windows-sensor-driver-features.md
-    - name: センサーの ACPI エントリ
-      href: sensors-acpi-entries.md
-    - name: ユニバーサル センサー ドライバー リファレンス
+    - name: センサーの種類
+      href: sensor-types.md
+    - name: センサーのカテゴリ
+      href: sensor-categories.md
+    - name: センサーのしきい値の構成
       items:
-        - name: ユニバーサル センサー ドライバー リファレンス
-          href: sensor-universal-driver-reference.md
-        - name: センサーのしきい値
-          items:
-            - name: センサーのしきい値
-              href: sensor-thresholds-v2.md
-            - name: 加速度計のしきい値
-              href: accelerometer-thresholds.md
-            - name: 磁力計のしきい値
-              href: magnetometer-thresholds.md
-            - name: ジャイロスコープのしきい値
-              href: gyroscope-thresholds.md
-            - name: 方向センサーのしきい値
-              href: orientation-sensor-thresholds.md
-            - name: 光センサーのしきい値
-              href: light-sensor-thresholds.md
-            - name: 近接センサーのしきい値
-              href: proximity-sensor-thresholds.md
+        - name: センサーのしきい値の概要
+          href: sensor-thresholds-v2.md
+        - name: 加速度計のしきい値
+          href: accelerometer-thresholds.md
+        - name: 磁力計のしきい値
+          href: magnetometer-thresholds.md
+        - name: ジャイロスコープのしきい値
+          href: gyroscope-thresholds.md
+        - name: 方向センサーのしきい値
+          href: orientation-sensor-thresholds.md
+        - name: 光センサーのしきい値
+          href: light-sensor-thresholds.md
+        - name: 近接センサーのしきい値
+          href: proximity-sensor-thresholds.md
+    - name: センサー ヘルパーの関数
+      items:
         - name: マーシャリング ヘルパーの関数
-          items:
-            - name: マーシャリング ヘルパーの関数
-              href: marshalling-helper-functions.md
-            - name: タイム スタンプ ヘルパー
-              href: timestamp-helper.md
-            - name: PropVariant ヘルパー
-              href: propvariant-helpers.md
-            - name: コレクション リスト ヘルパー
-              href: collection-list-helpers.md
-            - name: コレクション リスト シリアル化ヘルパー
-              href: collection-list-serialization-helpers.md
-            - name: コレクション リスト レガシ ヘルパー
-              href: collection-list-legacy-helpers.md
-        - name: センサーの種類
-          href: sensor-types.md
-        - name: センサーのカテゴリ
-          href: sensor-categories.md
-        - name: センサー データ フィールド
-          items:
-            - name: センサー データ フィールド
-              href: sensor-data-fields.md
-            - name: 共通データ フィールド
-              href: common-data-fields.md
-            - name: 加速度計データ フィールド
-              href: accelerometer-data-fields.md
-            - name: 直線加速度計データ フィールド
-              href: linear-accelerometer-data-fields.md
-            - name: 磁力計データ フィールド
-              href: magnetometer-data-fields.md
-            - name: 地磁気の方向
-              href: geomagnetic-orientation.md
-            - name: 重力ベクトル データ フィールド
-              href: gravity-vector-data-fields.md
-            - name: ジャイロスコープ データ フィールド
-              href: gyroscope-data-fields.md
-            - name: 光センサー データ フィールド
-              href: light-sensor-data-fields.md
-            - name: 方向センサー データ フィールド
-              href: device-orientation-sensor-data-fields.md
-            - name: 近接センサー データ フィールド
-              href: proximity-sensor-data-fields.md
-            - name: 気圧計データ フィールド
-              href: barometer-sensor-data-fields.md
-            - name: 簡易デバイス方向センサー データ フィールド
-              href: simple-device-orientation-sensor-data-fields.md
-            - name: アクティビティ検出センサー データのフィールド
-              href: activity-detection-sensor-data-fields.md
-            - name: 万歩計データ フィールド
-              href: pedometer-data-fields.md
-            - name: 相対方向センサー データ フィールド
-              href: relative-orientation-data-fields.md
-            - name: カスタム センサー データ フィールド
-              href: custom-sensor-data-fields.md
-        - name: センサーのプロパティ
-          items:
-            - name: センサーのプロパティ
-              href: sensor-properties2.md
-            - name: センサーの共通プロパティ
-              href: common-sensor-properties.md
-            - name: 列挙プロパティ
-              href: enumeration-properties.md
-            - name: センサーのその他のプロパティ
-              items:
-                - name: センサーのその他のプロパティ
-                  href: other-sensor-properties.md
-                - name: 近接センサーのプロパティ
-                  href: proximity-sensor-property.md
-                - name: 光センサーのプロパティ
-                  href: light-sensor-property.md
-                - name: 方向センサーのプロパティ
-                  href: orientation-sensor-property.md
-                - name: アクティビティ センサーのプロパティ
-                  href: activity-sensor-properties.md
-                - name: 歩数計センサーのプロパティ
-                  href: pedometer-sensor-property.md
-            - name: データ フィールドのプロパティ
-              items:
-                - name: データ フィールドのプロパティ
-                  href: data-field-properties.md
-                - name: データ フィールドの必須プロパティ
-                  href: required-data-field-properties.md
-- name: プログラミング ガイド
-  items:
-    - name: プログラミング ガイド
-      href: programming-guide-v2.md
-    - name: ユニバーサル センサー ドライバーを作成する方法
+          href: marshalling-helper-functions.md
+        - name: タイム スタンプ ヘルパー
+          href: timestamp-helper.md
+        - name: PropVariant ヘルパー
+          href: propvariant-helpers.md
+        - name: コレクション リスト ヘルパー
+          href: collection-list-helpers.md
+        - name: コレクション リスト シリアル化ヘルパー
+          href: collection-list-serialization-helpers.md
+        - name: コレクション リスト レガシ ヘルパー
+          href: collection-list-legacy-helpers.md
+    - name: センサー データ フィールド
       items:
-        - name: ユニバーサル センサー ドライバーを作成する方法
-          href: how-to-build-a-universal-sensor-driver.md
-        - name: 開発環境を設定する
-          href: set-up-your-development-environment.md
-        - name: センサーのテスト ボードを準備する
-          href: prepare-your-sensor-test-board.md
-        - name: センサーを Sharks Cove ボードに接続する
-          href: connect-your-sensor-to-the-sharks-cove-board.md
-        - name: ユニバーサル センサー ドライバーを作成して展開する
-          items:
-            - name: ユニバーサル センサー ドライバーを作成して展開する
-              href: write-and-deploy-your-universal-sensor-driver.md
-            - name: ドライバーを読み込み可能にする
-              href: make-the-driver-loadable.md
-            - name: ハードウェアに接続する
-              href: connect-to-hardware.md
-            - name: ハードウェアからデータを読み取る
-              href: read-data-from-hardware.md
-            - name: INX ファイルを確認する
-              items:
-                - name: INX ファイルを確認する
-                  href: review-and-revise-the-inf-file.md
-                - name: モバイル パッケージの作成
-                  href: creating-a-mobile-package.md
-            - name: センサー ドライバーをビルドする
-              href: build-the-sensor-driver.md
-            - name: センサー ドライバーをインストールする
-              href: install-the-sensor-driver.md
-            - name: センサーの永続一意識別子の作成
-              href: creating-a-persistent-unique-identifier-v2.md
-        - name: ユニバーサル センサー ドライバーをテストする
-          href: test-your-universal-sensor-driver.md
-        - name: WPP ログの収集とデコード
-          href: collecting-and-decoding-wpp-logs.md
+        - name: データ フィールドの概要
+          href: common-data-fields.md
+        - name: 加速度計データ フィールド
+          href: accelerometer-data-fields.md
+        - name: 直線加速度計データ フィールド
+          href: linear-accelerometer-data-fields.md
+        - name: 磁力計データ フィールド
+          href: magnetometer-data-fields.md
+        - name: 地磁気の方向
+          href: geomagnetic-orientation.md
+        - name: 重力ベクトル データ フィールド
+          href: gravity-vector-data-fields.md
+        - name: ジャイロスコープ データ フィールド
+          href: gyroscope-data-fields.md
+        - name: 光センサー データ フィールド
+          href: light-sensor-data-fields.md
+        - name: 方向センサー データ フィールド
+          href: device-orientation-sensor-data-fields.md
+        - name: 近接センサー データ フィールド
+          href: proximity-sensor-data-fields.md
+        - name: 気圧計データ フィールド
+          href: barometer-sensor-data-fields.md
+        - name: 簡易デバイス方向センサー データ フィールド
+          href: simple-device-orientation-sensor-data-fields.md
+        - name: アクティビティ検出センサー データのフィールド
+          href: activity-detection-sensor-data-fields.md
+        - name: 万歩計データ フィールド
+          href: pedometer-data-fields.md
+        - name: 相対方向センサー データ フィールド
+          href: relative-orientation-data-fields.md
+        - name: カスタム センサー データ フィールド
+          href: custom-sensor-data-fields.md
+    - name: センサーのプロパティ
+      items:
+        - name: センサーの共通プロパティ
+          href: common-sensor-properties.md
+        - name: 列挙プロパティ
+          href: enumeration-properties.md
+        - name: 近接センサーのプロパティ
+          href: proximity-sensor-property.md
+        - name: 光センサーのプロパティ
+          href: light-sensor-property.md
+        - name: 方向センサーのプロパティ
+          href: orientation-sensor-property.md
+        - name: アクティビティ センサーのプロパティ
+          href: activity-sensor-properties.md
+        - name: 歩数計センサーのプロパティ
+          href: pedometer-sensor-property.md
+    - name: センサー Windows 10 Mobile ACPI エントリ
+      href: sensors-acpi-entries.md
+- name: ユニバーサル センサー ドライバーを作成してテストする
+  items:
+    - name: 開発環境を設定する
+      href: set-up-your-development-environment.md
+    - name: センサーのテスト ボードを準備する
+      href: prepare-your-sensor-test-board.md
+    - name: センサーを Sharks Cove ボードに接続する
+      href: connect-your-sensor-to-the-sharks-cove-board.md
+    - name: ユニバーサル センサー ドライバーを作成して展開する
+      href: write-and-deploy-your-universal-sensor-driver.md
+    - name: ドライバーを読み込み可能にする
+      href: make-the-driver-loadable.md
+    - name: ハードウェアに接続する
+      href: connect-to-hardware.md
+    - name: ハードウェアからデータを読み取る
+      href: read-data-from-hardware.md
+    - name: INX ファイルを確認する
+      href: review-and-revise-the-inf-file.md
+    - name: モバイル パッケージの作成
+      href: creating-a-mobile-package.md
+    - name: センサー ドライバーをビルドする
+      href: build-the-sensor-driver.md
+    - name: センサー ドライバーをインストールする
+      href: install-the-sensor-driver.md
+    - name: センサーの永続一意識別子の作成
+      href: creating-a-persistent-unique-identifier-v2.md
+    - name: ユニバーサル センサー ドライバーをテストする
+      href: test-your-universal-sensor-driver.md
+    - name: WPP ログの収集とデコード
+      href: collecting-and-decoding-wpp-logs.md
     - name: 節電のためのセンサー データの一括処理
       href: sensor-batching-for-power-saving-.md
     - name: データのフィルター処理
@@ -160,11 +126,11 @@
       href: defining-custom-values-for-constants-v2.md
     - name: フュージョン センサーの実装の詳細
       href: fusion-sensor-implementation-details.md
-- name: Windows でのセンサーのハードウェア、ドライバー、アプリのテスト
+- name: Windows センサーのハードウェア、ドライバー、アプリのテスト
   items:
-    - name: Windows でのセンサーのハードウェア、ドライバー、アプリのテスト
+    - name: センサー テストのソース
       href: testing-sensor-landing.md
-    - name: 光テスト ツールの作成
+    - name: Microsoft 環境光ツール (MALT) の作成と使用
       items:
         - name: 光テスト ツールの作成
           href: testing-MALT-building-a-light-testing-tool.md
@@ -178,34 +144,22 @@
           href: testing-MALT-system-scenarios.md
         - name: マイクロコントローラーのコマンド
           href: testing-MALT-microcontroller-commands.md
-- name: Windows 8.1 用センサー ドライバー モデル
+- name: 以前のバージョン
   items:
-    - name: Windows 8.1 用センサー ドライバー モデル
-      href: sensor-driver-model-for-windows-8-1.md
     - name: Windows 8.1 でのセンサーの新機能と機能強化
       href: new-sensor-features-and-improvements-for-windows-8-1.md
-    - name: 設計ガイド
+    - name: Windows 8.1 のセンサー ドライバー設計ガイド
       items:
-        - name: 設計ガイド
-          href: sensor-driver-design-guide.md
-        - name: 作業の開始
-          items:
-            - name: 作業の開始
-              href: getting-started.md
-            - name: Windows でのセンサーおよび位置情報プラットフォームの概要
-              href: introduction-to-the-sensor-and-location-platform-in-windows.md
+        - name: Windows でのセンサーおよび位置情報プラットフォームの概要
+          href: introduction-to-the-sensor-and-location-platform-in-windows.md
         - name: センサー ドライバーの概要
           items:
-            - name: センサー ドライバーの概要
-              href: sensor-driver-overview.md
             - name: アーキテクチャの概要
               href: architecture-overview-for-sensor-drivers.md
             - name: センサー クラスの拡張機能について
               href: about-the-sensor-class-extension.md
             - name: インターフェイスについて
               items:
-                - name: インターフェイスについて
-                  href: about-the-interfaces.md
                 - name: ISensorClassExtension について
                   href: about-isensorclassextension.md
                 - name: ISensorDriver について
@@ -214,9 +168,9 @@
                   href: about-the-parameter-types.md
             - name: センサー ドライバーのイベントについて
               href: about-sensor-driver-events.md
-            - name: センサーの定数について
+            - name: センサーの定数
               items:
-                - name: センサーの定数について
+                - name: センサーの定数の概要
                   href: about-sensor-constants.md
                 - name: イベント定数
                   href: event-constants.md
@@ -226,8 +180,6 @@
                   href: sensor-icon-constants.md
                 - name: センサーのカテゴリ、種類、およびデータ フィールド
                   items:
-                    - name: センサーのカテゴリ、種類、およびデータ フィールド
-                      href: sensor-categories--types--and-data-fields.md
                     - name: SENSOR_CATEGORY_ALL
                       href: sensor-category-all.md
                     - name: SENSOR_CATEGORY_BIOMETRIC
@@ -248,91 +200,61 @@
                       href: sensor-category-orientation.md
                     - name: SENSOR_CATEGORY_SCANNER
                       href: sensor-category-scanner.md
-    - name: プログラミング ガイド
+    - name: Windows 8.1 センサー ドライバー プログラミング ガイド
       items:
-        - name: プログラミング ガイド
-          href: programming-guide.md
-        - name: センサー ドライバーの開発の基本
-          items:
-            - name: センサー ドライバーの開発の基本
-              href: sensor-driver-development-basics.md
-            - name: センサー デバイス ドライバーの記述
-              items:
-                - name: センサー デバイス ドライバーの記述
-                  href: writing-a-sensor-device-driver.md
-                - name: センサー ドライバーの作成に関する考慮事項
-                  href: considerations-for-writing-a-sensor-driver.md
-                - name: センサー ドライバーの作成
-                  href: creating-the-driver.md
-                - name: センサーの永続一意識別子の作成
-                  href: creating-a-persistent-unique-identifier.md
-                - name: センサー イベントの生成
-                  href: raising-events.md
-                - name: データのフィルター処理
-                  href: filtering-data.md
-                - name: センサーでのベクター型の使用
-                  href: using-vector-types.md
-                - name: センサー定数のカスタム値の定義
-                  href: defining-custom-values-for-constants.md
-                - name: センサー アイコンの指定
-                  href: specifying-an-icon.md
-                - name: センサー ドライバーのベスト プラクティス
-                  href: sensor-driver-best-practices.md
-            - name: 環境光センサーのサポート
-              href: supporting-ambient-light-sensors.md
+        - name: センサー ドライバーの作成に関する考慮事項
+          href: considerations-for-writing-a-sensor-driver.md
+        - name: センサー ドライバーの作成
+          href: creating-the-driver.md
+        - name: センサーの永続一意識別子の作成
+          href: creating-a-persistent-unique-identifier.md
+        - name: センサー イベントの生成
+          href: raising-events.md
+        - name: データのフィルター処理
+          href: filtering-data.md
+        - name: センサーでのベクター型の使用
+          href: using-vector-types.md
+        - name: センサー定数のカスタム値の定義
+          href: defining-custom-values-for-constants.md
+        - name: センサー アイコンの指定
+          href: specifying-an-icon.md
+        - name: センサー ドライバーのベスト プラクティス
+          href: sensor-driver-best-practices.md
+        - name: 環境光センサーのサポート
+          href: supporting-ambient-light-sensors.md
+    - name: Windows 8.1 センサー ドライバーのロジックのチュートリアル
+      items:
         - name: センサー ドライバーのロジック
-          items:
-            - name: センサー ドライバーのロジック
-              href: driver-logic--pseudo-code-.md
-            - name: ドライバーの初期化メソッド
-              href: driver-initialization-methods.md
-            - name: ドライバーのインターフェイス メソッド
-              href: driver-interface-methods.md
-            - name: ドライバーの更新メソッド
-              href: internal-helper-methods.md
-            - name: デバイスの更新メソッド
-              href: device-update-methods.md
-            - name: ドライバーの内部メソッド
-              href: internal-driver-methods.md
-            - name: デバイスのメソッド
-              href: device-methods.md
+          href: driver-logic--pseudo-code-.md
+        - name: ドライバーの初期化メソッド
+          href: driver-initialization-methods.md
+        - name: ドライバーのインターフェイス メソッド
+          href: driver-interface-methods.md
+        - name: ドライバーの更新メソッド
+          href: internal-helper-methods.md
+        - name: デバイスの更新メソッド
+          href: device-update-methods.md
+        - name: ドライバーの内部メソッド
+          href: internal-driver-methods.md
+        - name: デバイスのメソッド
+          href: device-methods.md
         - name: センサー診断ツールによるセンサーの機能のテスト
-          items:
-            - name: センサー診断ツールによるセンサーの機能のテスト
-              href: the-sensor-diagnostic-tool.md
-            - name: センサーの機能のテスト
-              items:
-                - name: センサーの機能のテスト
-                  href: testing-sensor-functionality.md
-                - name: センサーのイベントのテスト
-                  href: testing-sensor-events.md
-                - name: センサーのデータ取得のテスト
-                  href: testing-sensor-properties.md
-                - name: センサーのプロパティ サポートのテスト
-                  href: testing-and-logging-sensor-data.md
-            - name: 位置情報機能のテスト
-              href: testing-location-functionality.md
-            - name: の既知の問題
-              href: known-issues.md
-        - name: SpbAccelerometer ドライバー サンプル
-          items:
-            - name: SpbAccelerometer ドライバー サンプル
-              href: spbaccelerometer-driver-sample.md
-            - name: 複数のセンサーのサポート
-              href: supporting-multiple-sensors.md
-            - name: ドライバーの I/O モデル
-              href: the-driver-i-o-model.md
-            - name: 加速度計オブジェクトの定義
-              href: defining-the-accelerometer-object.md
-            - name: センサー クラスの拡張機能の使用
-              href: using-the-sensor-class-extension.md
-            - name: 加速度計プロパティのサポート
-              href: supporting-the-accelerometer-properties.md
-            - name: ドライバーのサンプル ファイル一覧
-              href: the-driver-sample-file-list.md
-    - name: SpbAccelerometer ドライバー クックブック
+          href: the-sensor-diagnostic-tool.md
+        - name: センサーの機能のテスト
+          href: testing-sensor-functionality.md
+        - name: センサーのイベントのテスト
+          href: testing-sensor-events.md
+        - name: センサーのデータ取得のテスト
+          href: testing-sensor-properties.md
+        - name: センサーのプロパティ サポートのテスト
+          href: testing-and-logging-sensor-data.md
+        - name: 位置情報機能のテスト
+          href: testing-location-functionality.md
+        - name: の既知の問題
+          href: known-issues.md
+    - name: Windows 8.1 サンプル ドライバーの概要
       items:
-        - name: SpbAccelerometer ドライバー クックブック
+        - name: SpbAccelerometer センサー サンプル ドライバー
           href: spbaccelerometer-driver-cookbook.md
         - name: Sharks Cove ボードにサンプルのデバイスとドライバーをインストールする
           href: installing-the-sample-device-and-driver-on-your-sharks-cove-board.md
