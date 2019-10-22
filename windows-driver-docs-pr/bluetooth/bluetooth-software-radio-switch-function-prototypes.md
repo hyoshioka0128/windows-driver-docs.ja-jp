@@ -4,53 +4,54 @@ description: 以前の Windows バージョンでの Bluetooth バージョン�
 ms.assetid: A5A81EAA-0DC7-4725-AA0D-5C4867DDE47C
 ms.date: 02/12/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ce02d9d590e14f1cbff085c8f403e6f83aca5306
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ca411bbe2ec5ca2b522230c1ed7e201e9105ea9c
+ms.sourcegitcommit: 19ba939a139e8ad62b0086c30b2fe772a2320663
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328246"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72681931"
 ---
 # <a name="bluetooth-software-radio-switch-function-prototypes"></a>Bluetooth ソフトウェアの無線スイッチ関数のプロトタイプ
 
-> 注:以降では、Windows 8.1 オペレーティング システムがこの機能を今すぐ処理するため、ソフトウェアのように、このトピックで説明されている DLL で無線 (Bluetooth 4.0 ラジオ) の機能のオン/オフを実装するためにベンダーは必要なくなりました。 Windows 8.1 では、このような DLL を無視します。 存在する場合でもです。
+> 注: このトピックで説明されているように、このトピックで説明するように、Windows 8.1 ベンダーは、このトピックで説明するように、ソフトウェア DLL で無線オン/オフ機能 (Bluetooth 4.0 ラジオの場合) を実装する必要がなくなりました。これは、オペレーティングシステムがこの機能を処理するためです。 Windows 8.1 は、存在する場合でも、このような DLL を無視します。
 
-Windows 8 では、Bluetooth 無線がソフトウェア機能のオン/オフをサポートする必要があります。 ベンダー最大限の柔軟性を許可するのにメディアの Bluetooth 無線マネージャーには、ユーザーに公開するには、この機能を許可するプラグインがサポートしています。
+Windows 8 では、Bluetooth ラジオはソフトウェアのオン/オフ機能をサポートする必要があります。 ベンダーが最大限の柔軟性を実現するために、Bluetooth Media Radio Manager は、この機能をユーザーに公開するためのプラグインをサポートしています。
 
-この DLL のプラグインを提供するには、2 つの処理を行う必要があります。
+この DLL プラグインを提供するには、2つの処理を行う必要があります。
 
-コンピューターに DLL を登録する必要があります、適切な関数をエクスポートする DLL を作成する必要があります。 DLL にオプションの状態を保持する役割が、システムの再起動後を含む DLL は 2 つの関数をエクスポートする必要があります。
+Dll を作成して、正しい関数をエクスポートする必要があります DLL をコンピューターに登録する必要があります。 DLL は、システムの再起動を含め、次の2つの関数をエクスポートする必要があります。
 
--    BluetoothEnableRadio:ラジオ サポート DLL は、BluetoothEnableRadio 無線の電源をオンまたはオフにする Windows を有効にするを実装します。
+- BluetoothEnableRadio: ラジオサポート DLL は、Windows が電源をオンまたはオフにできるように BluetoothEnableRadio を実装します。
 
 ```cpp
-C++ 
+C++
 DWORD WINAPI BluetoothEnableRadio(
    BOOL fEnable
 );
-``` 
+```
 
-fEnable:ラジオの電源をオンにするの TRUE に設定します。 ラジオの電源をオフに FALSE に設定します。
+fEnable: TRUE に設定すると、無線電源オンになります。 ラジオの電源をオフにするには、FALSE に設定します。
 
-値が返されます。FEnable の状態を現在の状態が変更された場合は、ERROR_SUCCESS を返します。 それ以外の場合、現在の状態が変更されていない場合は、WIN32 エラー コードを返します。
+戻り値: 現在の状態が fEnable の状態に変更された場合は、ERROR_SUCCESS を返します。 それ以外の場合、現在の状態が変更されていない場合は、WIN32 エラーコードを返します。
 
--    IsBluetoothRadioEnabled:無線のサポート DLL は、無線の電源がオンかオフのかどうかを決定する Windows を有効にする IsBluetoothRadioEnabled を実装します。
+- IsBluetoothRadioEnabled: ラジオサポート DLL は IsBluetoothRadioEnabled を実装して、Windows がラジオの電源がオンかオフかを判別できるようにします。
 
 ```cpp
-C++ 
+C++
 DWORD WINAPI IsBluetoothRadioEnabled(
    BOOL* pfEnabled
 );
 ```
-pfEnabled:電源オプションにバッファーを記述するへのポインターが有効か無効です。
 
-値が返されます。現在の状態を取得した場合は、ERROR_SUCCESS を返します。 今すぐ pfEnabled が指す値には、状態が含まれています。 (true または false)。 それ以外の場合、現在の状態が取得されていない場合は、WIN32 エラー コードを返します。 PfEnabled によって示される値は未定義とは使用できません。
+pfEnabled: ラジオの電源がオンかオフかを説明するバッファーへのポインター。
+
+戻り値: 現在の状態が取得された場合は、ERROR_SUCCESS を返します。 PfEnabled によってポイントされた値に状態が含まれるようになりました。 (true または false)。 それ以外の場合、現在の状態が取得されなかった場合は、WIN32 エラーコードを返します。 PfEnabled によってポイントされる値は定義されていないため、使用しないでください
 
 DLL の登録
 
-メニューと、コントロール パネル アプレットでソフトウェアのオプションのスイッチ コントロールを有効にするには、このサポートの DLL を登録する必要があります。 対象の DLL への完全パス (環境変数を含めることがあります) に次のレジストリ値を設定します。
+メニューおよびコントロールパネルアプレットでソフトウェアオプションのスイッチコントロールを有効にするには、このサポート DLL を登録する必要があります。 次のレジストリ値を、問題の DLL への完全なパス (環境変数を含めることができます) に設定します。
 
-記号の意味:HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\BTHPORT\Parameters\Radio サポート
+キー: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\BTHPORT\Parameters\Radio のサポート
 
 値の名前: "SupportDLL"
 
@@ -60,24 +61,25 @@ DLL の登録
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\BTHPORT\Parameters\Radio サポート]
 
-"SupportDLL「=」c:\\プログラム ファイル\\Fabrikam\\BthSupport.dll"
+"SupportDLL" = "C: \\Program ファイル \\Fabrikam \\BthSupport"
 
-C:\Program Files\Fabrikam など、セキュリティで保護された場所に DLL をインストールすることが必要です。
+DLL は、C:\Program Files\Fabrikam. などの安全な場所にインストールする必要があります。
 
-要件と推奨事項
+## <a name="requirements-and-recommendations"></a>要件と推奨事項
 
-この設計では、ハードウェアの制御方法の柔軟性、中には、必要なオプションから送信/受信ありませんオフの状態が得られる。 さらに、お勧め Bluetooth スタックを許可するエネルギーを節約バスから削除するために最低の電源状態にラジオの電源をアンロードします。
+この設計では、ハードウェアの制御方法を柔軟に行うことができますが、オフの状態では無線からの送信/受信が行われないようにする必要があります。 また、電力を節約し、それをバスから削除して Bluetooth スタックをアンロードできるようにするには、ラジオの電源を最も低い状態にすることをお勧めします。
 
-オプションの状態の変更が行われた後のみ BluetoothEnableRadio は結果を返します。 さらに、この DLL の拡張機能は、Windows 内のインフラストラクチャのオン/オフの統合オプションを提供するものでは、ため、DLL の使用状況は Windows コンポーネントの予約する必要があります。 コンテキストの Bluetooth メディア ラジオ マネージャー (例: スイッチの外部の無線をオフにするにする場合は、DLL は、Windows 以外のコンポーネントでも使用、またはハードウェア スイッチが実装されている場合、正しい結果が返されるようにする DLL の役目です。有線、無線の電源を切ります)。
+BluetoothEnableRadio は、ラジオ状態の変更が発生した後にのみ結果を返します。 また、この DLL 拡張機能は、Windows 内で統合されたオプションのオン/オフのインフラストラクチャを提供することを目的としているため、DLL の使用は Windows コンポーネント用に予約する必要があります。 Dll が Windows 以外のコンポーネントによっても使用されている場合、または、Bluetooth メディアラジオマネージャー (スイッチなど) のコンテキスト外でオプションをオフにするハードウェアスイッチが実装されている場合、DLL の役割は、正しい結果が返されるようにすることです。電源を入れてラジオの電源をオフにします)。
 
-Windows 8 のラジオの管理には、ローカル サービス アカウントのコンテキストで、特定の命令を実行する DLL が必要です。 このコンテキストで、DLL が通常のユーザー コンテキストの場合よりも小さいか通常、ローカル コンピューターで最低限の特権があります。
+Windows 8 のラジオ管理を行うには、DLL の指示をローカルサービスアカウントコンテキストで実行する必要があります。 このコンテキストでは、DLL にはローカルコンピューターに対する最小限の特権が与えられます。これは通常、通常のユーザーコンテキストよりも小さくなります。
 
-ラジオ サポート DLL には、すべてのアクションを実行する前に、対応するハードウェアの有無を確認する適切なチェックを実行する必要があります。 システムに対応するハードウェアが見つからない場合、無線のサポートを DLL は、適切なエラー コードを返す必要があります。
+ラジオサポート DLL は、適切なチェックを実行して、対応するハードウェアの存在を確認してから、アクションを実行します。 対応するハードウェアがシステムに見つからない場合は、ラジオサポート DLL から適切なエラーコードが返されます。
 
-## <a name="bluetooth-software-radio-sample-sources"></a>Bluetooth ソフトウェア無線サンプル ソース
-レジストリ ファイル
+## <a name="bluetooth-software-radio-sample-sources"></a>Bluetooth ソフトウェアラジオのサンプルソース
 
-Windows レジストリ エディタ Version 5.00
+レジストリファイル
+
+Windows レジストリエディターバージョン5.00
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\BthServ]
 
@@ -85,16 +87,16 @@ Windows レジストリ エディタ Version 5.00
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\BthServ\Parameters\Radio サポート]
 
-"SupportDLL"= 16 進数 (2): 25, 00、73、00、79、00、73、00、74、00、65、00, 6 d、00, 72, 00、6f、00、6f、\
+"SupportDLL" = hex (2):25、00、73、00、79、00、73、00、74、00、65、00、6d、00、72、00、6f、00、6f、\
 
-00,74,00,25,00、5c、00、73、00、79、00、73、00、74、00、65、00、6 d、00、33、00、32、00, 5 c, 00 \
+00、74、00、25、00、5c、00、73、00、79、00、73、00、74、00、65、00、6d、00、33、00、32、00、5c、00、\
 
-72,00,73,00,75,00,70,00,70,00、6f、00、72、00、74、00、2e、00、64、00、6 c、00、6 c、00 時 00 分、\
+72、00、73、00、75、00、70、00、70、00、6f、00、72、00、74、00、2e、00、64、00、6c、00、6c、00、00、\
 
-00
+モスクワ
 
+」
 
-メイクファイル
 ```cpp
 ###### --------------------------------------------------------------------
 
@@ -105,36 +107,34 @@ Windows レジストリ エディタ Version 5.00
 ######
 
 ###### --------------------------------------------------------------------
-```
 
-! ifdef NTMAKEENV
+!ifdef NTMAKEENV
 
 !INCLUDE $(NTMAKEENV)\makefile.def
 
-! else # NTMAKEENV
+!else # NTMAKEENV
 
-! ビルド環境を設定していません - エラー
+!error - You forgot to set your build environment
 
-! endif 
-
+!endif
 
 RSupport.cpp
 
-/* + Copyright (c) Microsoft Corporation です。 All rights reserved.
+/*++ Copyright (c) Microsoft Corporation. All rights reserved.
 
-このコードと情報姿提供される「現状有姿のいずれか
+THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY
 
-種類、またはいずれかが含まれるなどに限られず、
+KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
 
-商品性や特定の適合性の黙示の保証
+IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A PARTICULAR
 
-目的。
+PURPOSE.
 
-モジュール名:
+Module Name:
 
 Rsupport.cpp
 
-概要:
+Abstract:
 
 --*/
 
@@ -142,9 +142,9 @@ DWORD WINAPI IsBluetoothRadioEnabled(BOOL* pfEnabled)
 
 {
 
-オプションが有効になっている場合は、設定 * pfEnabled = TRUE 他セット * pfEnabled = FALSE
+// If the radio is enabled, set *pfEnabled = TRUE else set *pfEnabled = FALSE
 
-ERROR_SUCCESS; を返す
+return ERROR_SUCCESS;
 
 }
 
@@ -152,26 +152,25 @@ DWORD WINAPI BluetoothEnableRadio(BOOL fEnable)
 
 {
 
-場合 (fEnabled)
+if (fEnabled)
 
 {
 
-ここでオプションを有効にします。
+// Enable the radio here
 
 }
 
-その他
+else
 
 {
 
-ここでオプションを無効にします。
+// Disable the radio here
 
 }
 
-ERROR_SUCCESS; を返す
+return ERROR_SUCCESS;
 
 }
-
 
 RSupport.def
 
@@ -179,36 +178,35 @@ RSupport.def
 
 Copyright (c) Microsoft Corporation. All rights reserved.
 
-このコードと情報姿提供される「現状有姿のいずれか
+THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY
 
-種類、またはいずれかが含まれるなどに限られず、
+KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
 
-商品性や特定の適合性の黙示の保証
+IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A PARTICULAR
 
-目的。
+PURPOSE.
 
-モジュール名:
+Module Name:
 
 Rsupport.def
 
-概要:
+Abstract:
 
 --*/
 
-ライブラリ rsupport.dll
+LIBRARY rsupport.dll
 
 EXPORTS
 
 BluetoothEnableRadio
 
-IsBluetoothRadioEnabled 
+IsBluetoothRadioEnabled
 
-
-サンプル ソース
+Sample SOURCES
 
 #
 
-# <a name="copyright-2012---microsoft-corporation"></a>Copyright 2012 - Microsoft Corporation
+# Copyright 2012 - Microsoft Corporation
 
 #
 
@@ -216,11 +214,11 @@ TARGETNAME=rsupport
 
 TARGETPATH=obj
 
-TARGETTYPE DYNLINK を =
+TARGETTYPE=DYNLINK
 
-UMTYPE windows を =
+UMTYPE=windows
 
-USE_MSVCRT = 1
+USE_MSVCRT=1
 
 TARGETLIBS= \
 
@@ -230,8 +228,5 @@ $(SDK_LIB_PATH)\user32.lib \
 
 C_DEFINES=-DWIN32 -DUNICODE -D_UNICODE
 
-SOURCES = RSupport.cpp 
-
-
-
-
+SOURCES = RSupport.cpp
+```
