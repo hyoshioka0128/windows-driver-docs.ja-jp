@@ -1,95 +1,96 @@
 ---
-title: サメ Cove ボード上のサンプル デバイスとドライバーをインストールします。
-description: サンプル ドライバーをインストールして ADXL345 加速度計をサメ Cove ボードに J1C1 ヘッダーにアタッチします。 これらの手順に従います。
+title: サメ Cove board にサンプルデバイスとドライバーをインストールする
+description: 次の手順に従って、サンプルドライバーをインストールし、サメ Cove board の J1C1 ヘッダーに ADXL345 加速度計をアタッチします。
 ms.assetid: A67EBD9C-9C5A-49D3-9205-37FC4396DF56
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: be6def79b02e6ae72d48ef8908dbfdfb537d25b5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3a9012ca8c4543a94397e89da9a2eaec48205974
+ms.sourcegitcommit: 19ba939a139e8ad62b0086c30b2fe772a2320663
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377939"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72681936"
 ---
-# <a name="install-the-sample-device-and-driver-on-your-sharks-cove-board"></a>サメ Cove ボード上のサンプル デバイスとドライバーをインストールします。
+# <a name="install-the-sample-device-and-driver-on-your-sharks-cove-board"></a>サメ Cove board にサンプルデバイスとドライバーをインストールする
 
 
-サンプル ドライバーをインストールして ADXL345 加速度計をサメ Cove ボードに J1C1 ヘッダーにアタッチします。 これらの手順に従います。
+次の手順に従って、サンプルドライバーをインストールし、サメ Cove board の J1C1 ヘッダーに ADXL345 加速度計をアタッチします。
+
+> [!WARNING]
+> サメ Cove hardware development board はサポートされなくなりました。 現在サポートされているボードの一覧については、「[SoCs and custom boards (SoC とカスタム ボード)](https://docs.microsoft.com/windows/iot-core/learn-about-hardware/socsandcustomboards)」をご覧ください。
 
 ## <a name="install-windows-on-the-sharks-cove-board"></a>Sharks Cove ボードに Windows をインストールする
 
-
-サメ Cove ボードを取得する方法と、ボード上で Windows をインストールする方法については、次を参照してください。[サメ Cove ハードウェア開発ボード](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/sharks-cove-hardware-development-board)と[SharksCove.org](https://go.microsoft.com/fwlink/p/?linkid=403167)します。
-
-## <a name="modify-the-adxl345-to-work-with-the-sharks-cove"></a>サメ Cove を使用する ADXL345 を変更します。
+サメ Cove board を入手する方法と、ボードに Windows をインストールする方法の詳細については、「[サメ Cove hardware development board](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/sharks-cove-hardware-development-board) and SharksCove.org」を参照してください。
+## <a name="modify-the-adxl345-to-work-with-the-sharks-cove"></a>サメ Cove を使用するように ADXL345 を変更する
 
 
-ADXL345 I2C モードを設定するには、次のように、CS 信号を出力 VDD を接続します。
+ADXL345 を I2C モードで設定するには、次に示すように、VDD 出力を CS シグナルに接続します。
 
-![adxl345 ブレイク アウト ボード](images/adxl-breakout-board.png)
+![adxl345 ブレイクボードボード](images/adxl-breakout-board.png)
 
-## <a name="attach-the-modified-adxl345-to-the-sharks-cove"></a>サメ Cove に変更された ADXL345 をアタッチします。
+## <a name="attach-the-modified-adxl345-to-the-sharks-cove"></a>変更した ADXL345 をサメ Cove にアタッチします。
 
 
-ADXL345 I2C モードで動作しているが、ときに、サメ Cove ボード J1C1 ヘッダーにアタッチします。 電源コネクタは、左上隅に表示されたら、右上隅にあるこのヘッダーが表示されます。
+ADXL345 が I2C モードで動作している場合は、サメ Cove ボードの J1C1 ヘッダーにアタッチします。 電源コネクタが左上隅に表示されている場合は、右下隅に次のヘッダーが表示されます。
 
 ![j1c1 ヘッダー](images/j1c1-header.png)
 
-J1C1 ヘッダー ピン次に示すように ADXL345 ピンを接続します。
+次に示すように、ADXL345 ピンを J1C1 ヘッダーピンに接続します。
 
 ![j1c1 ピン](images/pin-outs.png)
 
-## <a name="install-kits-and-tools"></a>キットとツールをインストールします。
+## <a name="install-kits-and-tools"></a>キットとツールをインストールする
 
 
 ドライバー開発環境には、*ホスト コンピューター*と*ターゲット コンピューター*という、2 台のコンピューターがあります。 ターゲット コンピューターは*テスト コンピューター*とも呼ばれます。 ドライバーの開発とビルドは、ホスト コンピューター上の Microsoft Visual Studio で行います。 デバッガーはホスト コンピューター上で実行され、Visual Studio のユーザー インターフェイスで利用できます。 ドライバーのテストとデバッグを行うときは、ドライバーをターゲット コンピューター上で実行します。 この場合、Sharks Cove ボードがターゲット コンピューターになります。
 
-ホスト コンピューターにインストール キットとツール」の説明に従って[サメ Cove ハードウェア開発ボード](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/sharks-cove-hardware-development-board)します。
+ホストコンピューターで、「[サメ Cove hardware development board](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/sharks-cove-hardware-development-board)」に記載されているキットとツールをインストールします。
 
-## <a name="download-and-extract-the-spbaccelerometer-sample"></a>ダウンロードし、抽出 SpbAccelerometer サンプル
-
-
-ホスト コンピューター上に移動[このページ](https://go.microsoft.com/fwlink/p?linkid=506965)[ダウンロード] ボタンをクリックします。 をクリックして**保存**、 をクリックし、**フォルダーを開く**します。 SpbAccelerometer サンプル ドライバー (UMDF バージョン 1) .zip を右クリックし、選択**すべて展開**します。 指定するか、抽出したファイルのフォルダーを参照します。 たとえば、c: 情報を抽出することが\\SpbAccelerometer します。
-
-## <a name="open-the-driver-solution-in-visual-studio"></a>Visual Studio でのドライバー ソリューションを開く
+## <a name="download-and-extract-the-spbaccelerometer-sample"></a>SpbAccelerometer サンプルをダウンロードして抽出する
 
 
-ホスト コンピューターには、解凍したサンプルのあるフォルダーに移動します。 SpbAccelerometer.sln、ソリューション ファイルをダブルクリックします。 Visual Studio で、ソリューション エクスプ ローラーを見つけます。 (これがまだ開いていない場合は、選択**ソリューション エクスプ ローラー**から、**ビュー**メニュー)。ソリューション エクスプ ローラーでは、2 つのプロジェクトを含む 1 つのソリューションを確認できます。 という名前のドライバーのプロジェクトがある**SpbAccelerometer**とという名前のパッケージ プロジェクト**パッケージ**(小文字)。
+ホストコンピューターで[このページ](https://go.microsoft.com/fwlink/p?linkid=506965)にアクセスし、[ダウンロード] ボタンをクリックします。 **[保存]** をクリックし、 **[フォルダーを開く]** をクリックします。 SpbAccelerometer Sample Driver (UMDF Version 1) .zip を右クリックし、 **[すべて展開]** を選択します。 抽出されたファイルのフォルダーを指定または参照します。 たとえば、c: \\SpbAccelerometer に抽出できます。
 
-## <a name="set-the-configuration-and-platform-in-visual-studio"></a>Visual Studio での構成とプラットフォームを設定します。
-
-
-ソリューション エクスプ ローラーで、Visual Studio で右クリックして**ソリューション 'SpbAccelerometer' (2 プロジェクト)** 、選択**Configuration Manager**します。 構成とプラットフォームを設定します。 確認します構成**Win8.1 デバッグ**、プラットフォームを設定して**Win32**します。 このドライバーのプロジェクトとパッケージのプロジェクトの両方に対して行います。 オンにしないでください、**デプロイ**ボックス。
-
-## <a name="build-the-sample-using-visual-studio"></a>Visual Studio を使用してサンプルをビルドします。
+## <a name="open-the-driver-solution-in-visual-studio"></a>Visual Studio でドライバーソリューションを開く
 
 
-Visual Studio での**ビルド**] メニューの [選択**ソリューションのビルド**します。
+ホストコンピューターで、抽出されたサンプルが含まれているフォルダーにアクセスします。 ソリューションファイル SpbAccelerometer をダブルクリックします。 Visual Studio で、ソリューションエクスプローラーを見つけます。 (まだ開いていない場合は、 **[表示]** メニューの **[ソリューションエクスプローラー]** をクリックします)。ソリューションエクスプローラーには、2つのプロジェクトを持つソリューションが1つ表示されます。 **SpbAccelerometer**という名前のドライバープロジェクトと、package という名前のパッケージ**プロジェクト (小**文字) があります。
 
-## <a name="locate-the-built-driver-package"></a>組み込みのドライバー パッケージを見つける
+## <a name="set-the-configuration-and-platform-in-visual-studio"></a>Visual Studio での構成とプラットフォームの設定
 
 
-ファイル エクスプ ローラーで、組み込みのドライバー パッケージが含まれているフォルダーに移動します。 たとえば、c:\\SpbAccelerometer\\Win8.1Debug\\パッケージ。
+Visual Studio のソリューションエクスプローラーで、 **[ソリューション ' SpbAccelerometer ' (プロジェクト2プロジェクト)]** を右クリックし、 **[Configuration Manager]** を選択します。 構成とプラットフォームを設定します。 構成に**win 8.1 のデバッグ**が実行されていることを確認し、プラットフォームを**Win32**に設定します。 これは、ドライバープロジェクトとパッケージプロジェクトの両方に対して実行します。 **[配置]** ボックスをオンにしないでください。
 
-パッケージには、これらのファイルが含まれています。
+## <a name="build-the-sample-using-visual-studio"></a>Visual Studio を使用してサンプルをビルドする
+
+
+Visual Studio の **[ビルド]** メニューで、 **[ソリューションのビルド]** を選択します。
+
+## <a name="locate-the-built-driver-package"></a>ビルドされたドライバーパッケージを検索する
+
+
+エクスプローラーで、ビルドしたドライバーパッケージが格納されているフォルダーに移動します。 たとえば、C: \\SpbAccelerometer \\Win8 デバッグ \\Packge ます。
+
+パッケージには次のファイルが含まれています。
 
 | ファイル                  | 説明                                                                       |
 |-----------------------|-----------------------------------------------------------------------------------|
-| SpbSamples.cat        | 署名済みカタログ ファイル全体のパッケージの署名として機能します。      |
-| SpbAccelerometer.inf  | ドライバーをインストールするために必要な情報が含まれる情報 (INF) ファイル。 |
-| WudfUpdate\_01011.dll | WDF の共同インストーラー。                                                          |
-| SpbAccelerometer.dll  | ドライバー ファイルです。                                                                  |
+| SpbSamples.cat        | パッケージ全体の署名として機能する、署名されたカタログファイル。      |
+| SpbAccelerometer  | ドライバーのインストールに必要な情報が含まれている情報 (INF) ファイル。 |
+| WudfUpdate \_01011 .dll | WDF の共同インストーラー。                                                          |
+| SpbAccelerometer  | ドライバーファイル。                                                                  |
 
 
 
 ## <a name="alter-the-secondary-system-description-table-ssdt"></a>Secondary System Description Table (SSDT) を変更する
 
 
-1.  x86 バージョンの ASL.exe を Sharks Cove ボードにコピーします。 ASL.exe は、Windows Driver Kit (WDK) で含まれています。
+1.  x86 バージョンの ASL.exe を Sharks Cove ボードにコピーします。 ASL は、Windows Driver Kit (WDK) に含まれています。
 
-    以下に例を示します。C:\\Program Files (x86)\\Windows Kits\\8.1\\Tools\\x86\\ACPIVerify\\ASL.exe
+    例: C: \\Program Files (x86) \\Windows Kit \\8 .1 \\Tools \\x86 \\ACPIVerify \\ASL .exe
 
-2.  サメ Cove ボードには、管理者としてコマンド プロンプト ウィンドウを開きます。 次のコマンドを入力して、SSDT を逆コンパイルします。
+2.  サメ Cove ボードで、管理者としてコマンドプロンプトウィンドウを開きます。 次のコマンドを入力して、SSDT を逆コンパイルします。
 
     **asl /tab=ssdt**
 
@@ -133,7 +134,7 @@ Visual Studio での**ビルド**] メニューの [選択**ソリューショ�
     }
     ```
 
-4.  Scope(\_SB\_) エントリを挿入します。 スコープ エントリ内に、ユーザー独自の Device エントリを挿入します。 スコープを次に示します (\_SB\_) エントリおよび ADXL345 加速度計のデバイス エントリ。
+4.  Scope(\_SB\_) エントリを挿入します。 スコープ エントリ内に、ユーザー独自の Device エントリを挿入します。 ADXL345 加速度計のスコープ (\_SB \_) エントリとデバイスエントリを次に示します。
 
     ``` syntax
     Scope(_SB_)
@@ -241,12 +242,12 @@ testsigning             Yes
 
     Sharks Cove ボードを再起動します。
 
-## <a name="install-and-run-the-sample-driver"></a>インストールして、ドライバーのサンプルの実行
+## <a name="install-and-run-the-sample-driver"></a>サンプルドライバーをインストールして実行する
 
 
-1.  ホスト コンピューターには、Visual Studio で SpbAccelerometer ソリューションを開きます。
-2.  ソリューション エクスプ ローラーでダブルクリック**パッケージ**(小文字) を選択し、**プロパティ**します。 **[Driver Install (ドライバーのインストール)] &gt; [配置]** の順に移動します。 確認**展開を有効にする**します。 **[展開前にドライバーの以前のバージョンを削除する]** チェック ボックスをオンにします。 **ターゲット コンピューター名**、以前にプロビジョニングしたサメ Cove ボードの名前を入力します。 **[Install and Verify (インストールと確認)]** を選びます。 **[OK]** をクリックします。
-3.  **デバッグ** メニューの 選択**デバッグの開始**します。 ドライバー パッケージはサメ Cove ボードに自動的にコピーされます。 ドライバーは自動的にインストールされ、読み込まれます。 Windows ユーザー モード デバッガー (Visual Studio でのホスト コンピューターで実行されている) に自動的には、ドライバーをホストしている (サメ Cove ボード上で実行されている) Wudfhost.exe のインスタンスにアタッチします。
+1.  ホストコンピューターで、Visual Studio で SpbAccelerometer ソリューションを開きます。
+2.  ソリューションエクスプローラーで、 **[パッケージ]** (小文字) をダブルクリックし、 **[プロパティ]** を選択します。 **[Driver Install (ドライバーのインストール)] &gt; [配置]** の順に移動します。 [**デプロイの有効化] をオンに**します。 **[展開前にドライバーの以前のバージョンを削除する]** チェック ボックスをオンにします。 **[ターゲットコンピューター名]** に、前にプロビジョニングしたサメ Cove board の名前を入力します。 **[Install and Verify (インストールと確認)]** を選びます。 **[OK]** をクリックします。
+3.  **[デバッグ]** メニューの **[デバッグ開始]** をクリックします。 ドライバーパッケージは、サメ Cove board に自動的にコピーされます。 ドライバーが自動的にインストールされ、読み込まれます。 (Visual Studio のホストコンピューターで実行されている) Windows ユーザーモードデバッガーは、ドライバーをホストしている Wudfhost .exe のインスタンス (サメ Cove board で実行されている) に自動的にアタッチされます。
 
 
 
