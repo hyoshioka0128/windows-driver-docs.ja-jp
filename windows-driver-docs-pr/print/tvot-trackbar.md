@@ -1,6 +1,6 @@
 ---
-title: TVOT\_トラック バー
-description: TVOT\_トラック バー
+title: TVOT\_TRACKBAR
+description: TVOT\_TRACKBAR
 ms.assetid: 00140dca-c192-42dc-853d-ae84c602b206
 keywords:
 - TVOT_TRACKBAR 印刷デバイス
@@ -14,64 +14,64 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a03d1724d729181f46d128fa3d944f38211b494
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c0aba932e002c27353b4ad1e47a908ccaed43650
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378602"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845243"
 ---
-# <a name="tvottrackbar"></a>TVOT\_トラック バー
+# <a name="tvot_trackbar"></a>TVOT\_TRACKBAR
 
 
 ## <span id="ddk_tvot_trackbar_gg"></span><span id="DDK_TVOT_TRACKBAR_GG"></span>
 
 
-TVOT\_グループ ボックス内のトラック バーのトラック バー オプションの種類で構成されます。
+TVOT\_TRACKBAR オプションの種類は、グループボックス内のトラックバーで構成されます。
 
-<span id="OPTITEM_Structure"></span><span id="optitem_structure"></span><span id="OPTITEM_STRUCTURE"></span>[**OPTITEM** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_optitem)構造体  
+<span id="OPTITEM_Structure"></span><span id="optitem_structure"></span><span id="OPTITEM_STRUCTURE"></span>[**Optitem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/compstui/ns-compstui-_optitem)データ  
 
 <span id="Sel_pSel"></span><span id="sel_psel"></span><span id="SEL_PSEL"></span>**Sel/pSel**  
-現在のトラック バーの位置を表す値。
+現在のトラックバーの位置を表す値。
 
-<span id="OPTPARAM_Structure_Array__pOptParam_member_of_OPTTYPE_"></span><span id="optparam_structure_array__poptparam_member_of_opttype_"></span><span id="OPTPARAM_STRUCTURE_ARRAY__POPTPARAM_MEMBER_OF_OPTTYPE_"></span>[**OPTPARAM$** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_optparam)構造体の配列 (**pOptParam**のメンバー [ **OPTTYPE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_opttype))  
+<span id="OPTPARAM_Structure_Array__pOptParam_member_of_OPTTYPE_"></span><span id="optparam_structure_array__poptparam_member_of_opttype_"></span><span id="OPTPARAM_STRUCTURE_ARRAY__POPTPARAM_MEMBER_OF_OPTTYPE_"></span>[**Optparam**](https://docs.microsoft.com/windows-hardware/drivers/ddi/compstui/ns-compstui-_optparam)構造体配列 ( [**Opttype**](https://docs.microsoft.com/windows-hardware/drivers/ddi/compstui/ns-compstui-_opttype)の**poptparam**メンバー)  
 
 <span id="pData"></span><span id="pdata"></span><span id="PDATA"></span>**pData**  
-**pOptParam**\[0\]-&gt;**pData**トラック バーの単位を識別するテキストの NULL で終わる文字列を指します。
+**Poptparam**\[0\]-&gt;**pData**は、トラックバーの単位を示す NULL で終わる文字列をポイントします。
 
-**pOptParam**\[1\]-&gt;**pData**トラック バーの範囲の下限を説明するテキストの NULL で終わる文字列を指します。
+**Poptparam**\[1\]-&gt;**pData**は、トラックバーの範囲の下限を記述する NULL で終わるテキスト文字列をポイントします。
 
-**pOptParam**\[2\]-&gt;**pData**トラック バーの範囲の上限を説明するテキストの NULL で終わる文字列を指します。
+**Poptparam**\[2\]-&gt;**pData**は、トラックバーの範囲の上限を示す NULL で終わるテキスト文字列をポイントします。
 
 <span id="IconID"></span><span id="iconid"></span><span id="ICONID"></span>**IconID**  
-**pOptParam**\[0\]-&gt;**IconID**トラック バーに関連付けるアイコンを識別します。
+**Poptparam**\[0\]-&gt;**IconID**は、トラックバーに関連付けられるアイコンを識別します。
 
-**pOptParam**\[1\]-&gt;**IconID**トラック バーの範囲の下限を表す 16 ビット符号付きの値を指定します。
+**Poptparam**\[1\]-&gt;**IconID**は、トラックバーの範囲の下限を表す16ビット符号付きの値を指定します。
 
-**pOptParam**\[2\]-&gt;**IconID**その値が表示される選択された追跡位置 gefore に適用される乗算の係数を指定します。 (通常は、この値は 1 です。)
+**Poptparam**\[2\]-&gt;**IconID**は、選択したトラック位置に適用される乗算係数を指定します。値が表示されます。 (通常、この値は1です)。
 
 <span id="lParam"></span><span id="lparam"></span><span id="LPARAM"></span>**lParam**  
-**pOptParam**\[0\]-&gt;**lParam**は使用されません。
+**Poptparam**\[0\]-&gt;**lParam**は使用されません。
 
-**pOptParam**\[1\]-&gt;**lParam**トラック バーの範囲の上限を表す 16 ビット符号付きの値を指定します。
+**Poptparam**\[1\]-&gt;**lParam**は、トラックバーの範囲の上限を表す16ビット符号付きの値を指定します。
 
-**pOptParam**\[2\]-&gt;**lParam**追跡を指定する値をインクリメントします。
+**Poptparam**\[2\]-&gt;**lParam**は追跡インクリメント値を指定します。
 
-<span id="OPTTYPE_Structure"></span><span id="opttype_structure"></span><span id="OPTTYPE_STRUCTURE"></span>[**OPTTYPE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_opttype)構造体  
+<span id="OPTTYPE_Structure"></span><span id="opttype_structure"></span><span id="OPTTYPE_STRUCTURE"></span>[**Opttype**](https://docs.microsoft.com/windows-hardware/drivers/ddi/compstui/ns-compstui-_opttype)データ  
 
-<span id="Type"></span><span id="type"></span><span id="TYPE"></span>**型**  
-TVOT\_トラック バー
+<span id="Type"></span><span id="type"></span><span id="TYPE"></span>**各種**  
+TVOT\_TRACKBAR
 
-<span id="Count"></span><span id="count"></span><span id="COUNT"></span>**カウント**  
+<span id="Count"></span><span id="count"></span><span id="COUNT"></span>**数**  
 3
 
 <span id="Style"></span><span id="style"></span><span id="STYLE"></span>**スタイル**  
-使用されていません。
+使用しません。
 
 <span id="BegCtrlID"></span><span id="begctrlid"></span><span id="BEGCTRLID"></span>**BegCtrlID**  
-場合**pDlgPage**で[ **COMPROPSHEETUI** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_compropsheetui) CPSUI が指定したページを識別する場合、または**DlgTemplateID**で[ **DLGPAGE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_dlgpage) CPSUI が指定したテンプレートでは、識別**BegCtrlID**は使用されません。
+[**COMPROPSHEETUI**](https://docs.microsoft.com/windows-hardware/drivers/ddi/compstui/ns-compstui-_compropsheetui)の**pDlgPage**が CPSUI 提供のページを識別する場合、または[**DLGPAGE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/compstui/ns-compstui-_dlgpage)の**DlgTemplateID**が CPSUI で提供されるテンプレートを識別する場合、 **begctrlid**は使用されません。
 
-それ以外の場合、 **BegCtrlID**順番に番号付きの一連のコントロール id の最初のコントロールの識別子を含める必要があります。 コントロールの id は、次の Windows コントロールを識別する必要があります。
+それ以外の場合、 **Begctrlid**には、順番に番号が付けられた一連のコントロール id の最初のコントロール識別子が含まれている必要があります。 コントロール識別子は、次の Windows コントロールを識別する必要があります。
 
 <table>
 <colgroup>
@@ -80,53 +80,53 @@ TVOT\_トラック バー
 </colgroup>
 <thead>
 <tr class="header">
-<th>コントロールの識別子</th>
+<th>コントロール識別子</th>
 <th>Windows コントロール</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><strong>BegCtrlID</strong>内容</p></td>
-<td><p>グループ ボックス</p></td>
+<td><p><strong>Begctrlid</strong>の内容</p></td>
+<td><p>グループボックス</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>BegCtrlID</strong>内容は + 1</p></td>
+<td><p><strong>Begctrlid</strong>コンテンツ + 1</p></td>
 <td><p>タイトルのテキスト</p></td>
 </tr>
 <tr class="odd">
-<td><p><strong>BegCtrlID</strong>内容 + 2</p></td>
-<td><p>トラック バー</p></td>
+<td><p><strong>Begctrlid</strong>コンテンツ + 2</p></td>
+<td><p>トラックバー</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>BegCtrlID</strong>内容 + 3</p></td>
-<td><p>トラック バーのアイコン</p></td>
+<td><p><strong>Begctrlid</strong>コンテンツ + 3</p></td>
+<td><p>トラックバーアイコン</p></td>
 </tr>
 <tr class="odd">
-<td><p><strong>BegCtrlID</strong>内容は + 4</p></td>
-<td><p>トラック バーの範囲の下限を説明するテキスト</p></td>
+<td><p><strong>Begctrlid</strong>コンテンツ + 4</p></td>
+<td><p>トラックバーの範囲の下限を説明するテキスト</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>BegCtrlID</strong>内容 + 5</p></td>
-<td><p>トラック バーの範囲の上限を説明するテキスト</p></td>
+<td><p><strong>Begctrlid</strong>コンテンツ + 5</p></td>
+<td><p>トラックバーの範囲の上限を説明するテキスト</p></td>
 </tr>
 <tr class="odd">
-<td><p><strong>BegCtrlID</strong>内容 + 6</p></td>
-<td><p>トラック バーの単位を説明するテキスト</p></td>
+<td><p><strong>Begctrlid</strong>のコンテンツ + 6</p></td>
+<td><p>トラックバーの単位を説明するテキスト</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>BegCtrlID</strong>内容 + 7</p></td>
-<td><p>チェック ボックスを拡張または拡張のプッシュ ボタン (省略可能)</p></td>
+<td><p><strong>Begctrlid</strong>コンテンツ + 7</p></td>
+<td><p>拡張チェックボックスまたは拡張プッシュボタン (オプション)</p></td>
 </tr>
 <tr class="odd">
-<td><p><strong>BegCtrlID</strong>内容 + 8</p></td>
-<td><p>チェック ボックスを拡張または拡張ボタンのアイコン (省略可能)</p></td>
+<td><p><strong>Begctrlid</strong>コンテンツ + 8</p></td>
+<td><p>拡張チェックボックスまたは拡張プッシュボタンアイコン (省略可能)</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-詳細については、次を参照してください。 [Customizing CPSUI-Supported ウィンドウ コントロール](https://docs.microsoft.com/windows-hardware/drivers/print/customizing-cpsui-supported-window-controls)します。
+詳細については、「 [CPSUI でサポートされているウィンドウコントロールのカスタマイズ](https://docs.microsoft.com/windows-hardware/drivers/print/customizing-cpsui-supported-window-controls)」を参照してください。
 
 <a name="requirements"></a>要件
 ------------
@@ -139,7 +139,7 @@ TVOT\_トラック バー
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Compstui.h (include Compstui.h)</td>
+<td>Compstui (Compstui を含む)</td>
 </tr>
 </tbody>
 </table>

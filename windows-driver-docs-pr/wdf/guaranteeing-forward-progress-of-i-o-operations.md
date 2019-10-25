@@ -3,122 +3,122 @@ title: I/O 操作の前方進行の保証
 description: I/O 操作の前方進行の保証
 ms.assetid: e230eb3b-54ac-43b1-ac2b-8fa137cee43e
 keywords:
-- 保証された進行 WDK KMDF
-- WDK KMDF の保証の進行状況を転送します。
-- メモリ不足状況 WDK KMDF
-- I/O キュー WDK KMDF、進行の保証
+- 保証された前進の進行状況 WDK KMDF
+- 前進の進行、保証された WDK KMDF
+- 低メモリの状況 (WDK KMDF)
+- I/o キュー WDK KMDF、事前進行の保証
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a14ea003fbd2bc4235983bd7d9a445667204eb4e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 55986d5528de4cfcbb385e8c0c98aba0e35d3fa1
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382853"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844434"
 ---
 # <a name="guaranteeing-forward-progress-of-io-operations"></a>I/O 操作の前方進行の保証
 
 
-システムのページングのデバイスの記憶装置ドライバーなど、一部のドライバーを実行する必要があります、少なくとも一部の重要なシステムのデータの損失を回避するために、問題なくサポートされている I/O 操作。 ドライバーの障害の潜在的な原因の 1 つは、メモリ不足状況です。 フレームワークまたはドライバーには、I/O 要求を処理するために十分なメモリを割り当てることができません場合、いずれか 1 つは、によって I/O 要求が失敗する必要があります[完了](completing-i-o-requests.md)エラー状態の値を使用します。
+システムのページングデバイス用の記憶域ドライバーなど、一部のドライバーでは、重要なシステムデータが失われないように、サポートされている i/o 操作の一部を障害なしで実行する必要があります。 ドライバーエラーの考えられる原因の1つは、メモリ不足の状況です。 フレームワークまたはドライバーが i/o 要求を処理するのに十分なメモリを割り当てることができない場合は、エラー状態の値を入力すること[で i/o](completing-i-o-requests.md)要求が失敗することがあります。
 
-バージョン 1.9 より前のバージョン KMDF のフレームワークでは、I/O マネージャーがドライバーに送信 I/O 要求パケット (IRP) のフレームワークの要求オブジェクトを割り当てることができない場合、I/O 要求が常に失敗します。 バージョン 1.9 以降のフレームワークを提供するドライバーのメモリ不足の状況での I/O 要求を処理する機能を提供するには*進行を保証*の I/O キューの機能です。
+バージョン1.9 より前の KMDF バージョンでは、i/o マネージャーがドライバーに送信した i/o 要求パケット (IRP) のフレームワーク要求オブジェクトを割り当てることができない場合、フレームワークは常に i/o 要求に失敗します。 メモリ不足が発生したときにドライバーに i/o 要求を処理する機能を提供するために、バージョン1.9 以降のフレームワークでは、i/o キューに対して保証された*前進処理*機能が提供されます。
 
-この機能により、フレームワークはし、事前のメモリを割り当て、ドライバーがそれぞれの要求オブジェクトと、ドライバーの要求に関連するコンテキスト バッファーを設定します。 フレームワークとドライバーは、システム メモリの量が少ないときにのみ、メモリを事前に割り当てられたこれを使用します。
+この機能により、フレームワークとドライバーは、要求オブジェクトと要求関連のドライバーコンテキストバッファーのセットにそれぞれメモリを事前に割り当てることができます。 フレームワークとドライバーは、システムメモリの量が少ない場合にのみ、事前に割り当てられたメモリを使用します。
 
-### <a name="features-of-guaranteed-forward-progress"></a>保証された処理を進行の機能
+### <a name="features-of-guaranteed-forward-progress"></a>事前進行の保証の機能
 
-フレームワークの進行の保証の I/O キューを使用して、ドライバーでは次のことができます。
+I/o キューに対するフレームワークの保証された進行状況を使用することにより、ドライバーは次のことができます。
 
--   メモリ不足の状況の中に特定の I/O キューを使用する要求オブジェクトのセットを事前に割り当てるために、フレームワークに問い合わせてください。
+-   メモリ不足の状況で特定の i/o キューで使用する一連の要求オブジェクトを事前に割り当てるように、フレームワークに依頼します。
 
--   メモリ不足の状況の中に、framework から事前に割り当てられた要求オブジェクトを受信すると、ドライバーが使用できる要求に固有のリソースを事前に コールバック関数を提供します。
+-   メモリ不足が発生した場合に、ドライバーが事前に割り当てられた要求オブジェクトをフレームワークから受信するときに使用できる、要求固有のリソースを事前に割り当てるコールバック関数を提供します。
 
--   ドライバー固有のリソースを割り当てる、I/O 要求のメモリ不足の状況がもう 1 つのコールバック関数を用意*いない*されてが検出されました。 このコールバック関数の割り当ては、メモリ不足状態のため失敗した場合、フレームワークがその要求を事前に割り当てられたオブジェクトのいずれかを使用する必要があるかどうかを示している可能性があります。
+-   メモリ不足の状況が検出され*ない*場合に、i/o 要求に対してドライバー固有のリソースを割り当てる別のコールバック関数を指定します。 メモリ不足の状況によってこのコールバック関数の割り当てが失敗した場合は、フレームワークが事前に割り当てられた要求オブジェクトのいずれかを使用する必要があるかどうかを示すことができます。
 
--   事前に割り当てられた要求オブジェクトを使用する必要する I/O 要求を指定します。 事前に割り当てられたオブジェクトを使用して、ページング I/O 操作が進行中、または事前に割り当てられたオブジェクトを使用するかどうかを判断するには、各 IRP を調べて、コールバック関数が追加のドライバーを持つ場合にのみ、それらを使用して、すべての Irp のオプションが含まれます。
+-   事前に割り当てられた要求オブジェクトを使用する必要がある i/o 要求を指定します。 オプションには、すべての Irp に事前に割り当てられたオブジェクトの使用、ページング i/o 操作が進行中の場合にのみ使用されます。または、追加のドライバーコールバック関数によって各 IRP を調べ、事前に割り当てられたオブジェクトを使用するかどうかを判断します。
 
-ドライバーの実装が保証される場合進行の I/O キューの 1 つ以上のドライバーは改善されますことができない正常[I/O 要求を処理](processing-i-o-requests.md)メモリ不足の状況の中にします。 デバイスの既定の I/O キューの保証された処理を進行を実装して、ドライバーを呼び出すことによって構成のすべての I/O キューを[ **WdfDeviceConfigureRequestDispatching**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceconfigurerequestdispatching)します。
+ドライバーが1つ以上の i/o キューに対して保証された進行状況を実装している場合、ドライバーはメモリ不足の状態で i/o 要求を適切に[処理](processing-i-o-requests.md)できるようになります。 デバイスの既定の i/o キューと、 [**WdfDeviceConfigureRequestDispatching**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceconfigurerequestdispatching)を呼び出すことによってドライバーによって構成されるすべての i/o キューについて、事前に保証された進行状況を実装できます。
 
-フレームワークは、ドライバーとドライバーの両方に、進行の機能が、ドライバーの機能を保証の[I/O ターゲット](using-i-o-targets.md)実装は、進行を保証します。 つまり、ドライバーは、デバイスの保証された処理を進行を実装する場合でも、デバイスのドライバー スタックのすべての下位レベルのドライバー保証された処理を進行する必要がありますも実装します。
+使用しているドライバーとドライバーの[i/o ターゲット](using-i-o-targets.md)の両方が事前に保証された進行状況を実装している場合にのみ、このフレームワークの保証された前進処理機能はドライバーに対して機能します。 つまり、ドライバーがデバイスの事前の進行を実装している場合、デバイスのドライバースタック内の下位レベルのドライバーはすべて、事前に保証された進行状況を実装する必要があります。
 
-### <a name="enabling-guaranteed-forward-progress-for-an-io-queue"></a>転送の進行状況を I/O キューの保証を有効にします。
+### <a name="enabling-guaranteed-forward-progress-for-an-io-queue"></a>I/o キューの転送の保証を有効にする
 
-I/O キューの保証された処理を進行を有効にするには、ドライバーを初期化します、 [ **WDF\_IO\_キュー\_フォワード\_進行状況\_ポリシー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/ns-wdfio-_wdf_io_queue_forward_progress_policy)構造体に呼び出し、 [ **WdfIoQueueAssignForwardProgressPolicy** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nf-wdfio-wdfioqueueassignforwardprogresspolicy)メソッド。 ドライバーを呼び出す場合[ **WdfDeviceConfigureRequestDispatching** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceconfigurerequestdispatching)で、I/O キューを構成するが行う必要がありますを呼び出す前に**WdfIoQueueAssignForwardProgressPolicy**します。
+I/o キューの転送の保証を有効にするために、ドライバーは、 [**WDF\_IO\_キューを初期化し\_\_進行状況\_ポリシー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/ns-wdfio-_wdf_io_queue_forward_progress_policy)構造を転送してから、 [**WdfIoQueueAssignForwardProgressPolicy**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueueassignforwardprogresspolicy)を呼び出します。b. ドライバーが[**WdfDeviceConfigureRequestDispatching**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceconfigurerequestdispatching)を呼び出して i/o キューを構成する場合は、 **WdfIoQueueAssignForwardProgressPolicy**を呼び出す前にドライバーを呼び出す必要があります。
 
-ドライバーを呼び出すと[ **WdfIoQueueAssignForwardProgressPolicy**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nf-wdfio-wdfioqueueassignforwardprogresspolicy)、省略可能なすべての次の 3 つのイベント コールバック関数を指定できます。
+ドライバーが[**WdfIoQueueAssignForwardProgressPolicy**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueueassignforwardprogresspolicy)を呼び出すと、次の3つのイベントコールバック関数を指定できます。これらはいずれも省略可能です。
 
-<a href="" id="evtioallocateresourcesforreservedrequest"></a>[*EvtIoAllocateResourcesForReservedRequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_allocate_resources_for_reserved_request)  
-ドライバーの[ *EvtIoAllocateResourcesForReservedRequest* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_allocate_resources_for_reserved_request)コールバック関数の割り当てし、メモリ不足のために、フレームワークを予約する要求オブジェクトの要求に固有のリソースを格納場合。
+<a href="" id="evtioallocateresourcesforreservedrequest"></a>[*EvtIoAllocateResourcesForReservedRequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_allocate_resources_for_reserved_request)  
+ドライバーの[*EvtIoAllocateResourcesForReservedRequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_allocate_resources_for_reserved_request)コールバック関数は、メモリ不足の状況に対してフレームワークが予約している要求オブジェクトに対して、要求固有のリソースを割り当て、格納します。
 
-フレームワークでは、予約済みの要求オブジェクトを作成するたびにこのコールバック関数を呼び出します。 ドライバー割り当てる必要があります要求に固有のリソース、1 つの I/O 要求の通常の予約済みの要求オブジェクトを使用して[コンテキスト領域](framework-object-context-space.md)します。
+フレームワークは、予約された要求オブジェクトを作成するたびに、このコールバック関数を呼び出します。 ドライバーは、通常、予約済みの要求オブジェクトの[コンテキスト空間](framework-object-context-space.md)を使用して、1つの i/o 要求に対して要求固有のリソースを割り当てます。
 
-<a href="" id="evtioallocaterequestresources"></a>[*EvtIoAllocateRequestResources*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_allocate_request_resources)  
-ドライバーの[ *EvtIoAllocateRequestResources* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_allocate_request_resources)コールバック関数はすぐに使用を要求に固有のリソースを割り当てます。 フレームワークが IRP を受信し、IRP の要求オブジェクトを作成した直後に呼び出されます。
+<a href="" id="evtioallocaterequestresources"></a>[*EvtIoAllocateRequestResources*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_allocate_request_resources)  
+ドライバーの[*EvtIoAllocateRequestResources*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_allocate_request_resources)コールバック関数は、直ちに使用するために要求固有のリソースを割り当てます。 これは、フレームワークが IRP を受信し、IRP の要求オブジェクトを作成した直後に呼び出されます。
 
-コールバック関数のリソースを割り当てようとして失敗した場合、コールバック関数は、エラー状態の値を返します。 フレームワークは、新しく作成された要求オブジェクトを削除し、その予約済みの要求オブジェクトの 1 つを使用します。 さらに、ドライバーの[要求ハンドラー](request-handlers.md)要求に固有のリソースを使用するその[ *EvtIoAllocateRequestResources* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_allocate_request_resources)以前割り当てられ、コールバック関数。
+コールバック関数がリソースを割り当てようとして失敗した場合、コールバック関数はエラー状態の値を返します。 フレームワークは、新しく作成された要求オブジェクトを削除し、その予約済みの要求オブジェクトの1つを使用します。 さらに、ドライバーの[要求ハンドラー](request-handlers.md)は、 [*EvtIoAllocateRequestResources*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_allocate_request_resources)コールバック関数によって以前に割り当てられた要求固有のリソースを使用します。
 
-<a href="" id="evtiowdmirpforforwardprogress"></a>[*EvtIoWdmIrpForForwardProgress*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_wdm_irp_for_forward_progress)  
-ドライバーの[ *EvtIoWdmIrpForForwardProgress* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_wdm_irp_for_forward_progress)コールバック関数が IRP を検査し、フレームワークでを実行して、I/O 要求は失敗するか IRP の予約済みの要求オブジェクトを使用するかどうかを指示します。エラー状態の値。
+<a href="" id="evtiowdmirpforforwardprogress"></a>[*Evtiowdmirpq Forforwardprogress*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_wdm_irp_for_forward_progress)  
+ドライバーの[*Evtiowdmiシャードの進行状況*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_wdm_irp_for_forward_progress)のコールバック関数は、irp を調べ、予約済みの要求オブジェクトを irp に使用するか、エラー状態の値を入力して i/o 要求を失敗させるかをフレームワークに通知します。
 
-フレームワークは、新しい要求オブジェクトを作成することがあり、指定した場合にのみ、フレームワークはこのコールバック関数を呼び出します (ドライバーのフラグを設定して[ **WDF\_IO\_キュー\_フォワード\_進行状況\_ポリシー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/ns-wdfio-_wdf_io_queue_forward_progress_policy)構造)、メモリ不足の状況の中に Irp を調査するドライバーをします。 つまり、ドライバーは各 IRP を評価し、いずれかのメモリ不足の状況が発生しても処理する必要があるかを決定できます。
+フレームワークは、フレームワークが新しい要求オブジェクトを作成できない場合にのみ、このコールバック関数を呼び出します。これは、(ドライバーの WDF\_IO\_キューのフラグを設定することによって[ **\_進行状況\_ポリシー\_転送**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/ns-wdfio-_wdf_io_queue_forward_progress_policy)する場合にのみ呼び出されます。[構造]) を使用すると、ドライバーがメモリ不足の状態で Irp を調べることができます。 つまり、ドライバーは各 IRP を評価し、メモリ不足が発生した場合でも処理する必要があるかどうかを判断できます。
 
-ドライバーを呼び出すと[ **WdfIoQueueAssignForwardProgressPolicy**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nf-wdfio-wdfioqueueassignforwardprogresspolicy)、メモリ不足の状況を事前割り当てするためにフレームワークをするオブジェクトの予約済みの要求の数も指定します。 デバイスとドライバーの適切な要求オブジェクトの数を選択することができます。 パフォーマンスの低下を防ぐためには、ドライバーは通常、ドライバーとデバイスが並列で処理できる I/O 要求の数を概算する番号を指定する必要があります。
+ドライバーが[**WdfIoQueueAssignForwardProgressPolicy**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueueassignforwardprogresspolicy)を呼び出すと、メモリ不足の状況に対してフレームワークが事前に割り当てる必要がある予約済みの要求オブジェクトの数も指定します。 デバイスとドライバーに適した要求オブジェクトの数を選択できます。 パフォーマンスを低下させないようにするには、通常、ドライバーとデバイスが並列で処理できる i/o 要求の数を概算する数値を指定する必要があります。
 
-ただし場合、に、ドライバーの呼び出し[ **WdfIoQueueAssignForwardProgressPolicy** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nf-wdfio-wdfioqueueassignforwardprogresspolicy)とその[ *EvtIoAllocateResourcesForReservedRequest* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_allocate_resources_for_reserved_request)コールバック関数は、事前要求の予約済みのオブジェクトが多すぎるまたは要求固有のリソースのメモリが多すぎるに割り当ててには、ドライバーは処理しようとしているメモリ不足の状況に実際に投稿できます。 ドライバーとデバイスのパフォーマンスをテストしを選択する最適な数を決定する、メモリ不足のシミュレーションを含める必要があります。
+ただし、ドライバーの[**WdfIoQueueAssignForwardProgressPolicy**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueueassignforwardprogresspolicy)とその[*EvtIoAllocateResourcesForReservedRequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_allocate_resources_for_reserved_request) callback 関数の呼び出しによって、予約済みの要求オブジェクトが過剰に割り当てられたり、要求固有のリソースメモリが多すぎたりする場合は、ドライバーは、処理しようとしているメモリ不足の状況に実際に寄与する可能性があります。 最適な数を判断するには、ドライバーとデバイスのパフォーマンスをテストし、メモリ不足のシミュレーションを含める必要があります。
 
-前に[ **WdfIoQueueAssignForwardProgressPolicy** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nf-wdfio-wdfioqueueassignforwardprogresspolicy)フレームワークを作成し、予約、ドライバーが指定された要求オブジェクトの数を返します。 その it 要求オブジェクトを予約するたびに、ドライバーのすぐにフレームワーク[ *EvtIoAllocateResourcesForReservedRequest* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_allocate_resources_for_reserved_request)コールバック関数のドライバーを割り当てるして保存できるように要求に固有のリソース、フレームワークの場合も実際にオブジェクトを使用して、予約済みの要求。
+[**WdfIoQueueAssignForwardProgressPolicy**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueueassignforwardprogresspolicy)が戻る前に、フレームワークによって、ドライバーが指定した要求オブジェクトの数が作成され、予約されます。 フレームワークは、要求オブジェクトを予約するたびに、ドライバーの[*EvtIoAllocateResourcesForReservedRequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_allocate_resources_for_reserved_request) callback 関数を呼び出します。これにより、フレームワークによっては、ドライバーが要求固有のリソースを割り当てて保存できるようになります。予約済みの要求オブジェクトを実際に使用します。
 
-ときに、ドライバーのいずれかの[要求ハンドラー](request-handlers.md) I/O 要求の受信 I/O キューから呼び出すことができます、 [ **WdfRequestIsReserved** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestisreserved)判断するメソッドかどうか、要求オブジェクトは、いずれかのフレームワークに割り当て済みメモリ不足の状況です。 このメソッドが戻る場合**TRUE**、ドライバーは、リソースを使用する必要がありますをその[ *EvtIoAllocateResourcesForReservedRequest* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_allocate_resources_for_reserved_request)コールバック関数が予約されています。
+ドライバーの[要求ハンドラー](request-handlers.md)の1つが i/o キューから i/o 要求を受信すると、 [**Wdfrequestisreserved**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestisreserved)メソッドを呼び出して、要求オブジェクトが、メモリ不足の状況に対してフレームワークに事前に割り当てられているものかどうかを判断できます。 このメソッドが**TRUE**を返す場合、ドライバーは、 [*EvtIoAllocateResourcesForReservedRequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_allocate_resources_for_reserved_request) callback 関数が予約されているリソースを使用する必要があります。
 
-フレームワークは、その予約済みの要求オブジェクトのいずれかを使用している場合オブジェクトを返します、予約済みのオブジェクトのセットをドライバーが要求を完了後します。 フレームワークは、要求オブジェクトと、ドライバーを呼び出すことによって作成されるコンテキストの領域を保存します[ **WdfDeviceInitSetRequestAttributes** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceinitsetrequestattributes)または[  **。WdfObjectAllocateContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nf-wdfobject-wdfobjectallocatecontext)、別のメモリ不足の状況が発生した場合に再利用できるようにします。
+フレームワークが予約されている要求オブジェクトの1つを使用している場合は、ドライバーが要求を完了した後、オブジェクトがその予約済みオブジェクトのセットに返されます。 フレームワークは、別のメモリ不足が発生した場合に再利用するために、要求オブジェクトと、 [**Wdfdeviceinitsetrequestattributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetrequestattributes)または[**WdfObjectAllocateContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/nf-wdfobject-wdfobjectallocatecontext)を呼び出すことによってドライバーが作成したすべてのコンテキスト領域を保存します。
 
-### <a name="how-the-framework-and-driver-support-guaranteed-forward-progress"></a>フレームワークとドライバーが保証された処理を進行をサポートする方法
+### <a name="how-the-framework-and-driver-support-guaranteed-forward-progress"></a>フレームワークとドライバーのサポートが事前進行を保証する方法
 
-I/O キューの保証された処理を進行をサポートするために、ドライバーとフレームワークを実行する手順を次に示します。
+次に、i/o キューの保証された進行状況をサポートするためにドライバーとフレームワークが実行する手順を示します。
 
-1.  ドライバー呼び出し[ **WdfIoQueueAssignForwardProgressPolicy**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nf-wdfio-wdfioqueueassignforwardprogresspolicy)します。
+1.  ドライバーは[**WdfIoQueueAssignForwardProgressPolicy**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueueassignforwardprogresspolicy)を呼び出します。
 
-    応答では、フレームワークは割り当てし、ドライバーを指定する要求オブジェクトの数を格納します。 ドライバーと呼ばれていた場合[ **WdfDeviceInitSetRequestAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceinitsetrequestattributes)、各割り当てには、コンテキストの領域が含まれますが**WdfDeviceInitSetRequestAttributes**指定します。
+    応答として、フレームワークは、ドライバーが指定する要求オブジェクトの数を割り当てて格納します。 ドライバーが[**Wdfdeviceinitsetrequestattributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetrequestattributes)を以前に呼び出した場合、各割り当てには、 **wdfdeviceinitsetrequestattributes**が指定されたコンテキスト空間が含まれます。
 
-    さらに、ドライバーが指定されている場合、 [ *EvtIoAllocateResourcesForReservedRequest* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_allocate_resources_for_reserved_request)コールバック関数では、フレームワークは、毎回その it を割り当てます、および要求を格納は、コールバック関数を呼び出しますオブジェクト。
+    また、ドライバーが[*EvtIoAllocateResourcesForReservedRequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_allocate_resources_for_reserved_request)コールバック関数を提供した場合、フレームワークは、要求オブジェクトを割り当てて格納するたびにコールバック関数を呼び出します。
 
-2.  フレームワークは、I/O マネージャーがドライバーに送信する I/O 要求パケット (IRP) を受け取ります。
+2.  このフレームワークは、i/o マネージャーがドライバーに送信している i/o 要求パケット (IRP) を受信します。
 
-    フレームワークは、IRP の要求オブジェクトを割り当てようとします。 要求の種類用に作成されたドライバーがサポートする I/O キューに転送の進行状況が保証される場合、次の手順は、割り当てが成功または失敗したかどうかによって異なります。
+    フレームワークは、IRP の要求オブジェクトを割り当てようとします。 要求の種類に対して作成されたドライバーが送信の保証をサポートしている i/o キューがある場合、次の手順は、割り当てが成功したか失敗したかによって異なります。
 
-    -   要求オブジェクトの割り当てが成功します。
+    -   要求オブジェクトの割り当ては成功します。
 
-        ドライバーが指定されている場合、 [ *EvtIoAllocateRequestResources* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_allocate_request_resources)コールバック関数では、フレームワークが呼び出します。 コールバック関数は、状態を返す場合\_I/O キューに成功すると、フレームワークの追加要求。 コールバック関数が、エラー状態の値を返す場合、フレームワークはことだけ作成され、その要求を事前に割り当てられたオブジェクトのいずれかを使用して、要求オブジェクトを削除します。 ドライバーの要求ハンドラーは、要求オブジェクトを受信すると、要求オブジェクトが事前に割り当てられたと、そのため、ドライバーのどちらかどうかを使用する事前に割り当てられるリソースかどうかを決定します。
+        ドライバーが[*EvtIoAllocateRequestResources*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_allocate_request_resources)コールバック関数を提供した場合、フレームワークはそれを呼び出します。 コールバック関数が STATUS\_SUCCESS を返した場合、フレームワークは i/o キューに要求を追加します。 コールバック関数がエラー状態の値を返す場合、フレームワークは、作成した要求オブジェクトを削除し、事前に割り当てられた要求オブジェクトの1つを使用します。 ドライバーの要求ハンドラーは、要求オブジェクトを受け取ると、要求オブジェクトが事前に割り当てられているかどうかを判断します。したがって、ドライバーの事前割り当て済みリソースを使用する必要があるかどうかを判断します。
 
-        場合は、ドライバー*いない*提供、 [ *EvtIoAllocateRequestResources* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_allocate_request_resources)コールバック関数では、フレームワークで、I/O キュー、ドライバーがあるない場合と同様に、要求が追加されます保証された処理を進行を有効になります。
+        ドライバーが[*EvtIoAllocateRequestResources*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_allocate_request_resources)コールバック関数*を提供しなかった*場合は、ドライバーが有効になっていないとしても、要求が i/o キューに追加されます。
 
-    -   要求オブジェクトの割り当ては失敗します。
+    -   要求オブジェクトの割り当てに失敗します。
 
-        どのようなフレームワークは次のドライバーが提供される値によって異なります、 **ForwardProgressReservedPolicy**のメンバー、 [ **WDF\_IO\_キュー\_フォワード\_進行状況\_ポリシー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/ns-wdfio-_wdf_io_queue_forward_progress_policy)構造体。 このメンバーにより、フレームワークは予約済みの要求を使用する場合: 常に、I/O 要求が、ページング I/O 操作である場合にのみ、または場合にのみ、 [ *EvtIoWdmIrpForForwardProgress* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_wdm_irp_for_forward_progress)コールバック関数を示します予約済みの要求を使用する必要があります。
+        フレームワークの動作は次のようになります。これは、WDF\_IO\_キューの**ForwardProgressReservedPolicy**メンバーに対して指定されたドライバーが[ **\_進行状況\_ポリシー構造\_転送**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/ns-wdfio-_wdf_io_queue_forward_progress_policy)する値によって決まります。 このメンバーは、予約された要求を使用するタイミングをフレームワークに通知します。常に、i/o 要求がページング i/o 操作である場合にのみ、または[*Evtiowdmirpq Forforwardprogress*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_wdm_irp_for_forward_progress)コールバック関数が予約された要求を使用することを示している場合にのみ使用します。
 
-    すべてのケースで、ドライバーの要求ハンドラーを呼び出すことができます[ **WdfRequestIsReserved** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestisreserved)をフレームワークが予約済みの要求オブジェクトを使用するかどうかを判断します。 そのため、ドライバーが要求のリソースを使用する場合をその[ *EvtIoAllocateResourcesForReservedRequest* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_allocate_resources_for_reserved_request)割り当てられているコールバック関数。
+    どのような場合でも、ドライバーの要求ハンドラーは、 [**Wdfrequestisreserved**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestisreserved)を呼び出して、フレームワークが予約済みの要求オブジェクトを使用しているかどうかを判断できます。 その場合、ドライバーは、 [*EvtIoAllocateResourcesForReservedRequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_allocate_resources_for_reserved_request) callback 関数が割り当てた要求リソースを使用する必要があります。
 
-### <a name="guaranteed-forward-progress-scenario"></a>進行状況を保証
+### <a name="guaranteed-forward-progress-scenario"></a>保証された進行状況のシナリオ
 
-システムのページング ファイルを含む可能性がある記憶装置のドライバーを作成しています。 操作を読み取ることが重要し、ページング ファイルに操作が成功を記述します。
+システムのページングファイルが含まれている可能性のある記憶装置用のドライバーを作成しています。 ページングファイルに対する読み取り操作と書き込み操作が成功することが重要です。
 
-読み取りに対して別の I/O キューを作成および書き込み操作を対象として、有効にするには、これらの I/O キューの両方の進行を保証します。 保証された処理を進行を有効にしなくても他のすべての要求の種類の 3 つ目の I/O キューを作成すること。
+読み取り操作と書き込み操作用に個別の i/o キューを作成し、これらの i/o キューの両方に対して事前処理を有効にすることを決定しました。 その他のすべての要求の種類に対して、前処理が保証されないように、3つ目の i/o キューを作成することにしました。
 
-ドライバー スタックとデバイスを設定するために、並列で 4 つの書き込み操作を処理できる、 **TotalForwardProgressRequests**のメンバー、 [ **WDF\_IO\_キュー\_フォワード\_進行状況\_ポリシー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/ns-wdfio-_wdf_io_queue_forward_progress_policy)構造体を呼び出す前に 4 [ **WdfIoQueueAssignForwardProgressPolicy** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nf-wdfio-wdfioqueueassignforwardprogresspolicy).
+ドライバースタックとデバイスは、4つの書き込み操作を並行して処理できるため、WDF\_IO\_キューの**Totalforwardprogress 要求**メンバーを[ **\_転送\_進行状況\_ポリシー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/ns-wdfio-_wdf_io_queue_forward_progress_policy)に設定します。[**WdfIoQueueAssignForwardProgressPolicy**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueueassignforwardprogresspolicy)を呼び出す前の構造体が4になります。
 
-進行を保証する重要であることのみ設定、ドライバーのデバイスがページング デバイスの場合は、そのため、ドライバーを決定する、 **ForwardProgressReservedPolicy** 、WDF のメンバー\_IO\_キュー\_フォワード\_進行状況\_ポリシー構造体[ **WdfIoForwardProgressReservedPolicyPagingIO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/ne-wdfio-_wdf_io_forward_progress_reserved_policy)します。
+ドライバーのデバイスがページングデバイスである場合にのみ、進行状況を保証することが重要であると判断した場合は、ドライバーが WDF\_IO\_キューの**ForwardProgressReservedPolicy**メンバーを設定して\_進行状況を転送\_@no[**WdfIoForwardProgressReservedPolicyPagingIO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/ne-wdfio-_wdf_io_forward_progress_reserved_policy)にポリシー構造を適用します。
 
-ドライバーへの呼び出しに使用するには、いくつかメモリ オブジェクトを割り当てる必要があります事前を決定するには、ドライバーでは、それぞれの読み取り要求および書き込み要求ごとに、framework メモリ オブジェクトが必要であるため[ **WdfIoTargetFormatRequestForRead**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdfiotargetformatrequestforread)と[ **WdfIoTargetFormatRequestForWrite** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdfiotargetformatrequestforwrite)メモリ不足の状況でします。
+ドライバーでは、各読み取り要求と書き込み要求に対してフレームワークメモリオブジェクトが必要であるため、 [**Wdfiotargetformatrequestforread**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetformatrequestforread) [**の呼び出しに使用するメモリオブジェクトをドライバーが事前に割り当てておく必要があります。メモリ不足の状況での WdfIoTargetFormatRequestForWrite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetformatrequestforwrite) 。
 
-そのため、ドライバーを提供します、 [ *EvtIoAllocateResourcesForReservedRequest* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_allocate_resources_for_reserved_request)キューを読み取り、書き込みキューのもう 1 つのコールバック関数。 これらのコールバック関数のいずれかのフレームワークから呼び出されるたびに、コールバック関数を呼び出す[ **WdfMemoryCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfmemory/nf-wdfmemory-wdfmemorycreate)メモリ不足の状況の返されたオブジェクトのハンドルを保存します。 コールバック関数が事前に割り当てられた要求オブジェクトへのハンドルを受け取るため、要求オブジェクトへのメモリ オブジェクトの親ことができます。 (DMA デバイス用のドライバーが事前に割り当てても[framework DMA オブジェクト](framework-dma-objects.md))。
+このため、ドライバーは、読み取りキュー用の[*EvtIoAllocateResourcesForReservedRequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_allocate_resources_for_reserved_request)コールバック関数と、書き込みキュー用の別のコールバック関数を提供します。 フレームワークがこれらのコールバック関数のいずれかを呼び出すたびに、コールバック関数は[**Wdfmemorycreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfmemory/nf-wdfmemory-wdfmemorycreate)を呼び出し、メモリ不足の状況に対して返されたオブジェクトハンドルを保存します。 コールバック関数は、事前に割り当てられた要求オブジェクトへのハンドルを受け取るため、メモリオブジェクトを要求オブジェクトに親できます。 (DMA デバイスのドライバーでは、[フレームワークの dma オブジェクト](framework-dma-objects.md)も事前に割り当てられる場合があります)。
 
-[要求ハンドラー](request-handlers.md)の読み取りと書き込みのキューが受信した要求の各オブジェクトは 1 つのメモリ不足の状況、framework が予約されているかどうかを決定する必要があります。 要求ハンドラーを呼び出すことができます[ **WdfRequestIsReserved**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestisreserved)、または、使用して、要求オブジェクト ハンドルを比較できますが、 [ *EvtIoAllocateResourcesForReservedRequest* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_allocate_resources_for_reserved_request)以前に受信するコールバック関数。
+読み取りキューと書き込みキューの[要求ハンドラー](request-handlers.md)は、受信した各要求オブジェクトが、メモリ不足状態のためにフレームワークによって予約されているものであるかどうかを判断する必要があります。 要求ハンドラーは、 [**Wdfrequestisreserved**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestisreserved)を呼び出すことができます。また、要求オブジェクトハンドルと[*EvtIoAllocateResourcesForReservedRequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_allocate_resources_for_reserved_request) callback 関数が以前に受信したものとを比較することもできます。
 
-用意されており、 [ *EvtIoAllocateRequestResources* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_allocate_request_resources)キューを読み取り、書き込みキューのもう 1 つのコールバック関数。 I/O マネージャーから読み取りまたは書き込み要求を受信し、要求オブジェクトを正常に作成するときにこれらのコールバック関数のいずれかのフレームワークを呼び出します。 これらの各コールバック関数を呼び出す[ **WdfMemoryCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfmemory/nf-wdfmemory-wdfmemorycreate)メモリ オブジェクトを要求を割り当てられません。 割り当てに失敗した場合、コールバック関数はメモリ不足の状況が発生したフレームワークに通知するエラー状態値を返します。 エラーの戻り値の検出、フレームワークでは、要求オブジェクトを先ほど作成し、事前に割り当てられたオブジェクトのいずれかを使用して削除します。
+また、このドライバーは、読み取りキュー用の[*EvtIoAllocateRequestResources*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_allocate_request_resources)コールバック関数と、書き込みキュー用の別のコールバック関数も提供します。 フレームワークは、i/o マネージャーから読み取り要求または書き込み要求を受信し、要求オブジェクトを正常に作成するときに、これらのコールバック関数のいずれかを呼び出します。 これらの各コールバック関数は、 [**Wdfmemorycreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfmemory/nf-wdfmemory-wdfmemorycreate)を呼び出して、要求にメモリオブジェクトを割り当てます。 割り当てが失敗した場合、コールバック関数は、メモリ不足の状況が発生したことをフレームワークに通知するために、エラー状態の値を返します。 エラーの戻り値を検出するフレームワークは、作成した要求オブジェクトを削除し、事前に割り当てられたオブジェクトのいずれかを使用します。
 
-このドライバーが提供されない、 [ *EvtIoWdmIrpForForwardProgress* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_wdm_irp_for_forward_progress)コールバック関数は、個々 の読み取りを確認またはフレームワークを I/O キューに追加する前に、Irp を記述する必要はないためです。
+このドライバーは、フレームワークによって i/o キューに追加される前に個々の読み取りまたは書き込みの Irp を調べる必要がないため、 [*Evtiowdmiシャードの進行状況*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_wdm_irp_for_forward_progress)のコールバック関数を提供しません。
 
-ドライバーは、デバイスの保証された処理を進行を実装すると、デバイスのドライバー スタックのすべての下位レベルのドライバーする必要がありますで実装することが保証された処理を進行を覚えておいてください。
+ドライバーがデバイスの転送前の進行状況を実装する場合、デバイスのドライバースタック内のすべての下位レベルのドライバーも、事前に保証された進行状況を実装する必要があることに注意してください。
 
  
 

@@ -4,33 +4,33 @@ description: MB パケット コンテキスト管理
 ms.assetid: 52d72def-8aee-4e04-ad42-1a4537cda899
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1daf9fe67923c3f607af4bde1839ec84d97ff75a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 824442ce9afe74e4b97a4b928518f38cb4f68cdf
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67374065"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844275"
 ---
 # <a name="mb-packet-context-management"></a>MB パケット コンテキスト管理
 
 
-このトピックでは、ネットワークの特定のセットを設定するための構成パラメーターは、パケットのコンテキストの管理を説明します、*仮想回線*または*フロー*で MB の物理接続上にレイヤー 2。 GSM ベースのデバイスでは、パケット データ プロトコル (PDP) の概念が該当します。 CDMA ベースのデバイスでは、ネットワーク プロファイルが該当します。
+このトピックでは、レイヤー2で物理 MB 接続の上に*仮想回線*または*フロー*を設定するための特定のネットワーク構成パラメーターセットであるパケットコンテキストの管理について説明します。 GSM ベースのデバイスでは、これはパケットデータプロトコル (PDP) の概念に対応します。 CDMA ベースのデバイスでは、これはネットワークプロファイルに対応します。
 
-ほとんどの場合、パケットのコンテキストの詳細な設定は Ihv や MB デバイスのネットワーク プロバイダーによって事前にプロビジョニングされるまたは無線通信経由のネットワーク (OTA) を使用してプロビジョニングまたは SMS を使用します。 どちらの場合、エンドユーザー通常必要はありません (たとえば、サービス (QoS)、セキュリティ コードをモバイルの IP、およびなどの品質) の設定のほとんどを提供します。 ただし、エンドユーザーは、ネットワーク アクセスの文字列、username、およびパスワードを提供する必要があります。 これらのユーザー構成可能な設定 MB サービスの観点からのパケットのコンテキストのコンテンツを構成することをお勧めします。
+ほとんどの場合、パケットコンテキストの詳細設定は、Ihv および/または MB デバイスのネットワークプロバイダーによって事前プロビジョニングされているか、ネットワーク経由で無線 (OTA) または SMS を使用してプロビジョニングされています。 どちらの場合も、エンドユーザーは通常、ほとんどの設定 (サービス品質 (QoS)、セキュリティコード、モバイル IP など) を提供する必要はありません。 ただし、エンドユーザーは、ネットワークアクセス文字列、ユーザー名、およびパスワードの入力が必要になる場合があります。 これは、MB サービスの観点からパケットコンテキストの内容を構成する、ユーザーが構成できる設定です。
 
-MB ドライバー モデルでは、セットアップまたは WWAN のレイヤー 2 接続を破棄する明示的な OID は提供されません。 代わりに、基になるレイヤー 2 接続を設定して、最後のパケットのコンテキストを非アクティブ化で最初のパケットのコンテキストの結果をアクティブ化が効果的に破棄の基になるレイヤー 2 接続。
+MB ドライバーモデルでは、WWAN のレイヤー2接続を設定または破棄するための明示的な OID は提供されません。 代わりに、最初のパケットコンテキストをアクティブ化すると、基になるレイヤー2接続が設定され、最後のパケットコンテキストを非アクティブ化すると、実質的には、基になるレイヤー2接続が破棄されます。
 
-MB のドライバー モデルでは、次のように、特定の時点でコンテキストのアクティブなパケットの数に関するこれら 2 つの制約の作成します。
+MB ドライバーモデルは、次のように、特定の時点のアクティブなパケットコンテキストの数に関して、これら2つの制約に基づいています。
 
-1.  各パケットのコンテキストには、1 回だけがアクティブ化することができます。
+1.  各パケットコンテキストは、1回だけアクティブにすることができます。
 
-2.  特定の時点には、コンテキストを 1 つのパケットのみをアクティブにできます。
+2.  任意の時点で、1つのパケットコンテキストのみをアクティブにできます。
 
-MB ドライバー モデルに準拠している任意のミニポート ドライバーを設定する必要があります、 **MaxActivatedContexts**のメンバー、 [ **WWAN\_デバイス\_CAP** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wwan/ns-wwan-_wwan_device_caps)構造体を 1 つへの応答時[OID\_WWAN\_デバイス\_CAP](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-device-caps)要求のクエリを実行します。 ミニポート ドライバーでは、1 より大きい値を指定するには、この値を設定、場合でも、MB サービスは、最大で 1 つだけのパケットのコンテキストを有効にする特定の時点を確認します。
+MB ドライバーモデルに準拠しているすべてのミニポートドライバーは、OID\_WWAN\_デバイスに応答するときに、 [**wwan\_デバイス\_cap**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wwan/ns-wwan-_wwan_device_caps)構造体の**Maxactivatedcontexts**メンバーを1に設定することが必須です[\_CAP](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-device-caps)クエリ要求。 ミニポートドライバーによってこの値が1より大きい値に設定されている場合でも、MB サービスにより、特定の時点で最大1つのパケットコンテキストのみがアクティブになります。
 
-パケット コンテキストごとに 1 つだけの時間がアクティブにできるため、アクティブ化した後、仮想回線を識別するために静的パケットのコンテキスト識別子を使用できます。 最初の制約をまだ保持している限り、この静的識別子の使用がまだ有効です。
+各パケットコンテキストはアクティブにすることができるため、アクティブ化された後に、静的パケットコンテキスト識別子を使用して仮想回線を識別できます。 この静的識別子の使用は、最初の制約が引き続き保持されている限り有効です。
 
-パケットのコンテキストの管理の詳細については、次を参照してください[OID\_WWAN\_プロビジョニング済み\_コンテキスト](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-provisioned-contexts)と[OID\_WWAN\_CONNECT](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-connect).
+パケットコンテキスト管理の詳細については、「 [oid\_wwan\_プロビジョニング](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-provisioned-contexts)された\_コンテキストと[oid\_WWAN\_CONNECT](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-connect)」を参照してください。
 
  
 

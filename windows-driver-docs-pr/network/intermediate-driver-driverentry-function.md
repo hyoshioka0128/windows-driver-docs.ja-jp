@@ -3,18 +3,18 @@ title: 中間ドライバー DriverEntry 関数
 description: 中間ドライバー DriverEntry 関数
 ms.assetid: 85b4d5c0-8ec9-41a9-a34e-578a85d411e3
 keywords:
-- 中間ドライバー WDK ネットワー キング、エントリ ポイント
-- NDIS 中間ドライバー WDK、エントリ ポイント
-- WDK のネットワー キングのエントリ ポイントします。
-- ネットワーク DriverEntry WDK
+- 中間ドライバー WDK ネットワーク、エントリポイント
+- NDIS 中間ドライバー WDK、エントリポイント
+- エントリポイント WDK ネットワーク
+- DriverEntry WDK ネットワーク
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c3a12d890cc5047628c698c30d2f2701def0c62
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: adaf4daed294e73215691d9b37ef0c5a7b1eef57
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385085"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844185"
 ---
 # <a name="intermediate-driver-driverentry-function"></a>中間ドライバー DriverEntry 関数
 
@@ -22,35 +22,35 @@ ms.locfileid: "67385085"
 
 
 
-中間のドライバーの必要な初期のエントリ ポイントを明示的に指定する必要があります[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)ローダーが識別して正しくできるようにします。 他のすべてのドライバーがエクスポートされた関数は、ため、このセクションで説明されている*MiniportXxx*と*ProtocolXxx*、NDIS アドレスとして渡されるために、任意のベンダーが指定した名前を持つことができます。
+中間ドライバーの最初の必須エントリポイントは、ローダーが適切に識別できるように、明示的に[**driverentry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)という名前にする必要があります。 このセクションで説明さ*れている*他のすべてのエクスポートされたドライバー関数は、NDIS にアドレスとして渡されるため、ベンダーが指定した*名前を持つ*ことができます。
 
-中間のドライバーでは、 **DriverEntry**には、少なくとも必要があります。
+中間ドライバーでは、 **Driverentry**に少なくとも次の値を指定する必要があります。
 
-1.  呼び出す[ **NdisMRegisterMiniportDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismregisterminiportdriver)で返されるハンドルを保存し、 *NdisMiniportDriverHandle*パラメーター。
+1.  [**NdisMRegisterMiniportDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismregisterminiportdriver)を呼び出し、 *NdisMiniportDriverHandle*パラメーターに返されたハンドルを保存します。
 
-2.  呼び出す[ **NdisRegisterProtocolDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisregisterprotocoldriver)ドライバーの登録を*ProtocolXxx*場合と、ドライバー、その後バインド自体、基になる NDIS ドライバーに機能します。
+2.  ドライバーがその後、基になる NDIS ドライバーにバインドする場合は、 [**NdisRegisterProtocolDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisregisterprotocoldriver)を呼び出してドライバーの*protocolxxx*関数を登録します。
 
-3.  呼び出す[ **NdisIMAssociateMiniport** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisimassociateminiport) NDIS ドライバーのミニポートの上端と下端のプロトコル間の関連付けに通知します。
+3.  [**NdisIMAssociateMiniport**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisimassociateminiport)を呼び出して、ドライバーのミニポートの上端とプロトコルの下端との関連付けについて NDIS に通知します。
 
-中間のドライバーを登録する必要があります、 [ *MiniportDriverUnload* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_unload)ハンドラーをアンロードします。 システムが中間のドライバーをアンロードこのアンロード ハンドラーが呼び出されます。 場合[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)失敗した場合、このアンロード ハンドラーは呼び出されません。 代わりに、ドライバーが読み込まれます。 アンロード ハンドラーの詳細については、次を参照してください。[中間のドライバーをアンロード](unloading-an-intermediate-driver.md)します。
+中間ドライバーは、 [*Miniportdriverunload*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_unload)アンロードハンドラーを登録する必要があります。 このアンロードハンドラーは、システムによって中間ドライバーがアンロードされるときに呼び出されます。 [**Driverentry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)が失敗した場合、このアンロードハンドラーは呼び出されません。代わりに、ドライバーは単にアンロードされます。 Unload ハンドラーの詳細については、「[中間ドライバーのアンロード](unloading-an-intermediate-driver.md)」を参照してください。
 
-アンロード ハンドラーを呼び出す必要があります[ **NdisDeregisterProtocolDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisderegisterprotocoldriver)中間ドライバーのプロトコルの一部の登録を解除します。 アンロード ハンドラーでは、ドライバーのプロトコルの部分で使用されるリソースを再割り当てなど、必要なクリーンアップ操作も実行する必要があります。
+Unload ハンドラーは、中間ドライバーのプロトコル部分を登録解除するために[**NdisDeregisterProtocolDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisderegisterprotocoldriver)を呼び出す必要があります。 また、アンロードハンドラーは、ドライバーのプロトコル部分で使用されるリソースの再割り当てなど、必要なクリーンアップ操作も実行する必要があります。
 
-アンロード、ハンドラーが異なることに注意してください、 [ *MiniportHaltEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_halt)関数: アンロード ハンドラーが、多くのグローバル スコープとのスコープ、 *MiniportHaltEx*関数特定のミニポート アダプターに制限されています。 中間ドライバーは、状態情報をクリーンアップし、それにバインドされている基になる各ミニポート ドライバーが停止したときにリソースを再割り当てする必要があります。 仮想ミニポートの停止操作を処理する方法の詳細については、次を参照してください。[仮想ミニポートを停止する](halting-a-virtual-miniport.md)します。
+Unload ハンドラーは、 [*Miniporthaltex*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_halt)関数とは異なることに注意してください。 unload ハンドラーはよりグローバルなスコープを持ち、 *Miniporthaltex*関数のスコープは特定のミニポートアダプターに制限されています。 中間ドライバーは、バインドされている基になるミニポートドライバーが停止されると、状態情報をクリーンアップし、リソースを再割り当てする必要があります。 仮想ミニポートの停止操作の処理の詳細については、「[仮想ミニポートの停止](halting-a-virtual-miniport.md)」を参照してください。
 
-[*ProtocolUninstall* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_uninstall)省略可能なアンロード ハンドラーします。 この関数のエントリ ポイントを登録、 *ProtocolCharacteristics*構造に渡す[ **NdisRegisterProtocolDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisregisterprotocoldriver)します。 NDIS 呼び出し*ProtocolUninstall*中間のドライバーをアンインストールするユーザーの要求に応答します。 NDIS 呼び出し[ *ProtocolUnbindAdapterEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_unbind_adapter_ex) 、バインドされたアダプターごとに 1 回呼び出して NDIS および*ProtocolUninstall*します。 システムが実際にドライバーをアンロードする前に、このハンドラーが呼び出されます。 このタイミングは、すべてのデバイス オブジェクト、またはアンロード ハンドラーに登録されている呼び出し元からそれ以外の場合、システムを妨げる可能性のあるその他のリソースを解放する機会を提供します。 **NdisMRegisterMiniportDriver**とドライバーをアンロードします。
+[*Protocoluninstall*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_uninstall)は省略可能なアンロードハンドラーです。 [**NdisRegisterProtocolDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisregisterprotocoldriver)に渡す*protocolcharacteristics*構造体に、この関数のエントリポイントを登録します。 NDIS は、中間ドライバーをアンインストールするユーザーの要求に応じて*Protocoluninstall*を呼び出します。 NDIS は、バインドされたアダプターごとに[*Protocolunbindadapterex*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_unbind_adapter_ex)を呼び出し、Ndis は*protocoluninstall*を呼び出します。 このハンドラーは、システムによって実際にドライバーがアンロードされる前に呼び出されます。 このタイミングで、 **NdisMRegisterMiniportDriver**に登録されているアンロードハンドラーがシステムによって呼び出され、ドライバーがアンロードされるのを防ぐ、デバイスオブジェクトやその他のリソースが解放される可能性があります。
 
-**DriverEntry**状態変数、構造、およびメモリ領域などの中間ドライバーによって割り当てられるグローバルに共有のリソースを保護するスピン ロックを初期化することができます。 ドライバーの使用で進行状況やキューのドライバーに割り当てられた接続を追跡し、追跡するために、これらのリソースを送信します。
+**Driverentry**では、スピンロックを初期化して、中間ドライバーが割り当てたグローバル共有リソース (状態変数、構造体、メモリ領域など) を保護することができます。 ドライバーは、これらのリソースを使用して接続を追跡し、進行中の送信またはドライバーによって割り当てられたキューを追跡します。
 
-場合**DriverEntry**が失敗すると、ドライバーを実行する必要があるすべてのリソースを割り当てるネットワーク I/O 操作は、これは、以前に割り当てられたリソースを解放し、該当するエラー状態を返すか。
+**Driverentry**が、ネットワーク i/o 操作を実行するために必要なリソースの割り当てに失敗した場合、以前に割り当てられたリソースを解放し、適切なエラー状態を返します。
 
-さらに、次のトピックでは、中間ドライバーを登録する方法について説明します。
+次のトピックでは、中間ドライバーを登録する方法について詳しく説明します。
 
-[NDIS 中間ドライバーとして登録します。](registering-as-an-ndis-intermediate-driver.md)
+[NDIS 中間ドライバーとして登録する](registering-as-an-ndis-intermediate-driver.md)
 
-[ミニポート ドライバーとして中間のドライバーを登録します。](registering-an-intermediate-driver-as-a-miniport-driver.md)
+[ミニポートドライバーとしての中間ドライバーの登録](registering-an-intermediate-driver-as-a-miniport-driver.md)
 
-[プロトコル ドライバーとして中間のドライバーを登録します。](registering-an-intermediate-driver-as-a-protocol.md)
+[プロトコルドライバーとしての中間ドライバーの登録](registering-an-intermediate-driver-as-a-protocol.md)
 
  
 

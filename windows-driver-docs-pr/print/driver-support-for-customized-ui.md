@@ -1,50 +1,50 @@
 ---
 title: カスタマイズされた UI のドライバー サポート
-description: V4 印刷ドライバー モデルは、印刷用のプリンター拡張または UWP デバイス アプリを使用して UI カスタマイズの組み込みサポートを備えた開発されました。
+description: V4 印刷ドライバーモデルは、印刷用のプリンター拡張機能または UWP デバイスアプリを使用した UI カスタマイズの組み込みサポートを使用して開発されました。
 ms.assetid: 91B0E824-1EE3-40B0-A24E-5A66C158972E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fbd073c0eb01bbe5141d4452521795eec169525b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f84396268e051b0fcadd7748df95070f965b8ac7
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67356079"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845053"
 ---
 # <a name="driver-support-for-customized-ui"></a>カスタマイズされた UI のドライバー サポート
 
 
-V4 印刷ドライバー モデルは、印刷用のプリンター拡張または UWP デバイス アプリを使用して UI カスタマイズの組み込みサポートを備えた開発されました。
+V4 印刷ドライバーモデルは、印刷用のプリンター拡張機能または UWP デバイスアプリを使用した UI カスタマイズの組み込みサポートを使用して開発されました。
 
-次のセクションでは、追加の UI カスタマイズの設計考慮事項を説明します。
+次のセクションでは、追加の UI カスタマイズの設計に関する考慮事項について説明します。
 
 **印刷設定**
 
-印刷設定がすべて v4 印刷ドライバーが、すべてのシナリオにおいて最大の一貫性を確保するために、構成と UI 層間の境界を維持するために重要です。 できませんのプリンター拡張または UWP デバイス アプリがインストールされている (または、それらが自動的にインストールされます)、ために、v4 印刷ドライバーは印刷ドライバーが、エクスペリエンスをカスタマイズしたプリンター設定なしで機能であることを確認する必要があります。 具体的には、完全かつ GPD/PPD + ドライバーでの JavaScript の制約の実装で包括的な PrintTicket と PrintCapabilities サポートがあることこれを意味します。
+すべての v4 印刷ドライバーは印刷設定で動作しますが、すべてのシナリオで最大の一貫性を確保するために、構成層と UI 層の境界を維持することが重要です。 プリンターの拡張機能や UWP デバイスアプリがインストールされていない可能性があるため (または自動的にインストールされている場合もあります)、v4 印刷ドライバーは、プリンターの設定をカスタマイズしなくても印刷ドライバーが機能していることを確認する必要があります。 特に、これは、ドライバーの GPD/PPD + JavaScript 制約の実装で、PrintTicket と PrintCapabilities のサポートが完全で包括的である必要があることを意味します。
 
-プリンターの拡張機能または UWP デバイス アプリでいくつかの制約検証に関して最も効果的な対話型エクスペリエンスを提供する役に立ちますが、権限を持つと見なされます、ドライバーの検証を置き換える必要がありますされません。
+プリンター拡張機能や UWP デバイスアプリにおける制約の検証には、非常に有益で対話的なエクスペリエンスを提供するという観点で役立つ場合がありますが、信頼できると見なされるドライバーの検証を置き換えることはできません。
 
-プリンターの拡張機能と UWP デバイス アプリを使用する必要があります、 [ **IPrinterQueue::SendBidiQuery** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nf-printerextension-iprinterqueue-sendbidiquery)ネットワーク リソースへの直接のネットワークではなく、メソッドを呼び出します。 ネットワーク リソースに接続する必要がある場合は、別のスレッドで、または分岐から UI を防ぐために非同期的に実行する必要があります。 今後の呼び出しを速く取得した後、データをキャッシュする必要があります。
+プリンター拡張機能と UWP デバイスアプリでは、ネットワークリソースに対して直接ネットワーク呼び出しを行うのではなく、 [**Iprinter queue:: SendBidiQuery**](https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nf-printerextension-iprinterqueue-sendbidiquery)メソッドを使用する必要があります。 ネットワークリソースに接続する必要がある場合は、別のスレッドで実行するか、UI がハングするのを防ぐために非同期に実行する必要があります。 将来の呼び出しを高速化するためにデータを取得した後は、データをキャッシュする必要があります。
 
-**プリンターの通知**
+**プリンター通知**
 
-プリンターの通知は DriverEvent XML ファイルと Bidi によって駆動されます。 バッテリの寿命を管理しやすくするためと中断を最小限に抑えるには、ただし、通知のみを表示するユーザーが印刷されます。
+プリンター通知は、Bidi および DriverEvent XML ファイルによって駆動されます。 ただし、バッテリの寿命を適切に管理し、中断を最小限に抑えるために、ユーザーが印刷しているときにのみ通知が表示されます。
 
-印刷設定は、印刷しているアプリのコンテキストは、プリンターの通知はありません。 次のフロー チャートでは、Windows を使用してプリンターの通知の動作を決定するデシジョン ツリーについて説明します。 場合、使用可能な UWP デバイス アプリはプリンターの拡張機能より優先されます。
+印刷設定は、印刷するアプリにコンテキストがありますが、プリンター通知は実行されません。 次のフローチャートでは、Windows がプリンター通知の動作を決定するために使用するデシジョンツリーについて説明します。 使用可能な場合は、UWP デバイスアプリがプリンター拡張より優先されます。
 
-![プリンターの通知動作のフローチャート](images/notificationbhvr.png)
+![プリンター通知動作のフローチャート](images/notificationbhvr.png)
 
-**注**  という事実を意識することが重要するには、Windows 8 環境で呼び出すことによって、通知を表示するカスタム UI を使用しようとする場合[GetForegroundWindow](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-getforegroundwindow)、通知ウィンドウにすることはできません表示されます。 これは、オペレーティング システムが GetForegroundWindow を使用して、フォア グラウンド ウィンドウを作成するスレッドに優先順位の高いを割り当てようとしているため、これは許可されていませんダイアログで、Windows 8 環境。 Windows 8 環境で通知を表示するカスタム UI を使用する場合を行う必要がありますを呼び出して[GetDesktopWindow します。](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-getdesktopwindow)
+[GetForegroundWindow](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-getforegroundwindow)を呼び出すことによって Windows 8 環境でカスタム UI を使用して通知を表示しようとすると、通知ウィンドウが表示されないことに  **注意**してください。 これは、オペレーティングシステムが、GetForegroundWindow を使用してフォアグラウンドウィンドウを作成するスレッドに高い優先順位を割り当てようとするためです。これは、Windows 8 環境のダイアログでは許可されません。 カスタム UI を使用して Windows 8 環境に通知を表示する場合は、 [Getdesktopwindow](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-getdesktopwindow)を呼び出して、通知を表示する必要があります。
 
  
 
-**ドライバーのイベントを作成する**します。 V4 印刷ドライバーでは、DriverEvent XML ファイルを使用して、双方向のクエリとトリガーが発生します。 ドライバーのイベントが発生することを説明します。 ドライバーのイベントでは標準の文字列のみをサポートすることが重要です。 標準の文字列の詳細については、次を参照してください。 [AsyncUI 既定のリソース ファイルの文字列リソース](https://docs.microsoft.com/openspecs/windows_protocols/ms-pan/cbd34ab3-5a2a-4292-b7ce-e584020d14d7)します。 これにより、現在の実装では、 [AsyncUIBalloon](https://docs.microsoft.com/openspecs/windows_protocols/ms-pan/9ec494fd-eea8-4545-8e38-5992fa7f6a4a)メッセージを作成および発行を使用して、 [MS パン プロトコル](https://docs.microsoft.com/openspecs/windows_protocols/ms-pan/e44d984c-07d3-414c-8ffc-f8c8ad8512a8)します。 この実装は、パフォーマンスを向上させるために、後で変わる可能性があります、基になるプロトコルに依存関係を受け取らないように、v4 プリンター ドライバーを開発することが重要であるためです。
+**ドライバーイベントを作成**しています。 V4 印刷ドライバーは、DriverEvent XML ファイルを使用して、Bidi クエリと、ドライバーイベントを発生させるトリガーを記述します。 また、ドライバーイベントは標準の文字列のみをサポートすることに注意してください。 標準文字列の詳細については、「 [AsyncUI Default Resource File String Resources](https://docs.microsoft.com/openspecs/windows_protocols/ms-pan/cbd34ab3-5a2a-4292-b7ce-e584020d14d7)」を参照してください。 現在の実装では、これにより、 [AsyncUIBalloon](https://docs.microsoft.com/openspecs/windows_protocols/ms-pan/9ec494fd-eea8-4545-8e38-5992fa7f6a4a)メッセージが作成され、 [MS PAN プロトコル](https://docs.microsoft.com/openspecs/windows_protocols/ms-pan/e44d984c-07d3-414c-8ffc-f8c8ad8512a8)を使用して公開されます。 この実装は、将来、パフォーマンスを向上させるために変更される可能性があるため、基になるプロトコルに依存しないように v4 印刷ドライバーを開発することが重要です。
 
-次の図は、プロトコルの使用率を示します。
+次の図は、プロトコル使用率を示しています。
 
-![ドライバーのイベントとプロトコルの使用率](images/drivereventprotutil.png)
+![ドライバーイベントを使用したプロトコル使用率](images/drivereventprotutil.png)
 
-**ドライバーのイベントの XML サンプル**します。 次の XML コード スニペットでは、1 つのドライバーのイベントを指定します。 黄色のインクを Bidi によって報告された合計容量の 21% 未満のイベントを確認します。 このような場合は、resourceID 132 によって参照される文字列で、AsyncUIBalloon メッセージが作成されます。 つまり、メッセージが言い"'%1' があるトナー/インクが不足します" %1 の場所リソース 2002 ("Yellow") が置き換えられます。
+**ドライバーイベントの XML サンプル**。 次の XML コードスニペットでは、1つのドライバーイベントを指定しています。 イベントは、Bidi によって報告された合計容量の21% 未満の黄色いインクを確認します。 このような場合は、resourceID 132 によって参照される文字列を使用して AsyncUIBalloon メッセージが作成されます。 つまり、"' %1 ' はトナー/インクが不足しています" というメッセージが表示されます。 リソース 2002 ("黄") は %1 に置き換えられます。
 
 ```xml
 <de:DriverEvents xmlns:de="http://schemas.microsoft.com/windows/2011/08/printing/driverevents" schemaVersion="4.0">
@@ -61,15 +61,15 @@ V4 印刷ドライバー モデルは、印刷用のプリンター拡張また�
 </de:DriverEvents>
 ```
 
-**ドライバーのイベント スキーマ**します。 DriverEvent スキーマとして Windows Driver Kit \\Include\\um\\PrinterDriverEvents.xsd します。
+**ドライバーイベントスキーマ**。 DriverEvent スキーマは、Windows Driver Kit で、\\um\\プリンター Driverevent. xsd \\インクルードされています。
 
-**ドライバーのイベントの XML 検証**です。 ドライバー マニフェストで適切に DriverEvent XML を記述する場合に限り、XML ファイルは INFGate ツールによって自動的に検証します。
+**ドライバーイベントの XML 検証**。 ドライバーマニフェストで DriverEvent XML を正しく記述している限り、XML ファイルは INFGate ツールによって自動的に検証されます。
 
 ## <a name="related-topics"></a>関連トピック
 [AsyncUIBalloon](https://docs.microsoft.com/openspecs/windows_protocols/ms-pan/9ec494fd-eea8-4545-8e38-5992fa7f6a4a)  
-[AsyncUI 既定リソース ファイルの文字列リソース](https://docs.microsoft.com/openspecs/windows_protocols/ms-pan/cbd34ab3-5a2a-4292-b7ce-e584020d14d7)  
-[**IPrinterQueue::SendBidiQuery**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nf-printerextension-iprinterqueue-sendbidiquery)  
-[MS パン プロトコル](https://docs.microsoft.com/openspecs/windows_protocols/ms-pan/e44d984c-07d3-414c-8ffc-f8c8ad8512a8)  
+[AsyncUI 既定のリソースファイル文字列リソース](https://docs.microsoft.com/openspecs/windows_protocols/ms-pan/cbd34ab3-5a2a-4292-b7ce-e584020d14d7)  
+[**Iプリンターキュー:: SendBidiQuery**](https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nf-printerextension-iprinterqueue-sendbidiquery)  
+[MS PAN プロトコル](https://docs.microsoft.com/openspecs/windows_protocols/ms-pan/e44d984c-07d3-414c-8ffc-f8c8ad8512a8)  
 
 
 

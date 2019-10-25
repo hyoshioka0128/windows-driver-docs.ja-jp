@@ -1,20 +1,20 @@
 ---
-title: MPIO\_DEVINSTANCE\_ヘルス\_クラスの WMI クラス
-description: MPIO\_DEVINSTANCE\_ヘルス\_クラスの WMI クラス
+title: MPIO\_DEVINSTANCE\_HEALTH\_クラス WMI クラス
+description: MPIO\_DEVINSTANCE\_HEALTH\_クラス WMI クラス
 ms.assetid: d2c77461-d89c-4c1b-86dc-3373de0f11e4
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 30863ec93e521bb8eb91adf33e3a864fb1c27530
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2716c40abf0f9c2e5ed7f3839b997135734549cb
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386171"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844541"
 ---
-# <a name="mpiodevinstancehealthclass-wmi-class"></a>MPIO\_DEVINSTANCE\_ヘルス\_クラスの WMI クラス
+# <a name="mpio_devinstance_health_class-wmi-class"></a>MPIO\_DEVINSTANCE\_HEALTH\_クラス WMI クラス
 
 
-MPIO ドライバーは、MPIO を使用して\_DEVINSTANCE\_ヘルス\_クラスの WMI クラスを特定のパスを使用してデバイスの正常性の統計情報を報告します。
+Mpio ドライバーは、MPIO\_DEVINSTANCE\_HEALTH\_クラス WMI クラスを使用して、特定のパスを介してデバイスの正常性の統計を報告します。
 
 ```cpp
 class MPIO_DEVINSTANCE_HEALTH_CLASS
@@ -140,7 +140,7 @@ class MPIO_DEVINSTANCE_HEALTH_CLASS
 };
 ```
 
-このクラスの定義が WMI ツール スイートによってコンパイルされると、生成、 [ **MPIO\_DEVINSTANCE\_正常性\_クラス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mpiodisk/ns-mpiodisk-_mpio_devinstance_health_class)データ構造体。 この WMI クラスに関連付けられているメソッドはありません。
+このクラス定義が WMI ツールスイートによってコンパイルされると、 [**MPIO\_DEVINSTANCE\_HEALTH\_クラス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mpiodisk/ns-mpiodisk-_mpio_devinstance_health_class)のデータ構造が生成されます。 この WMI クラスに関連付けられているメソッドはありません。
 
  
 

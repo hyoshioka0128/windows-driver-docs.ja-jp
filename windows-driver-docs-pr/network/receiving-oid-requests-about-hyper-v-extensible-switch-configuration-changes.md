@@ -1,112 +1,112 @@
 ---
-title: HYPER-V 拡張可能スイッチの構成変更の OID 要求の受信
+title: Hyper-v 拡張可能スイッチ構成の受信 OID 要求の変更
 description: Hyper-V 拡張可能スイッチ構成変更に関する OID 要求の受信
 ms.assetid: 9149BFF3-59B3-4563-A1A1-34FDD115964E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c9e7b9ef5dbb5c9d2fd59a8e153bd2b01be51470
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6ee0675e0e58118dbcd3d77941533d705e37ca5e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385427"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842106"
 ---
 # <a name="receiving-oid-requests-about-hyper-v-extensible-switch-configuration-changes"></a>Hyper-V 拡張可能スイッチ構成変更に関する OID 要求の受信
 
-拡張可能スイッチのインターフェイスは拡張可能スイッチのコンポーネントの構成の変更点について、基になる拡張機能を通知し、拡張可能な発行することによってポリシーのパラメーターは、オブジェクト識別子 (OID) のセット要求を切り替えます。 これらの要求は、拡張可能スイッチ コンポーネントの構成とポリシー パラメーターの変更について、基になる拡張機能を通知する拡張可能スイッチのプロトコルの端で発行されます。 これらの OID 要求は、拡張可能スイッチの基になるミニポート エッジに拡張可能スイッチのドライバー スタックを移動します。
+拡張可能スイッチインターフェイスは、拡張可能なスイッチオブジェクト識別子 (OID) セット要求を発行することによって、拡張可能なスイッチコンポーネントの構成とポリシーパラメーターの変更について、基になる拡張機能に通知します。 これらの要求は、拡張可能なスイッチのプロトコルエッジによって発行され、拡張可能なスイッチコンポーネントの構成とポリシーパラメーターの変更について、基になる拡張機能に通知します。 これらの OID 要求は拡張可能なスイッチドライバースタックを介して、拡張可能スイッチの基になるミニポートエッジに移動します。
 
-次の図には、OID 要求 NDIS 6.40 (Windows Server 2012 R2) と後で拡張可能スイッチ コントロール パスが表示されます。
+次の図は、NDIS 6.40 (Windows Server 2012 R2) 以降の OID 要求の拡張可能なスイッチ制御パスを示しています。
 
-![ndis 6.40 の vswitch oid コントロール パスの図](images/vswitch-oid-controlpath-ndis640.png)
+![ndis 6.40 の vswitch oid 制御パスの図](images/vswitch-oid-controlpath-ndis640.png)
 
-次の図では、NDIS 6.30 (Windows Server 2012) の OID 要求の拡張可能スイッチ コントロール パスが表示されます。
+次の図は、NDIS 6.30 (Windows Server 2012) の OID 要求の拡張可能なスイッチ制御パスを示しています。
 
-![ndis 6.30 の vswitch oid コントロール パスの図](images/vswitch-oid-controlpath.png)
+![ndis 6.30 の vswitch oid 制御パスの図](images/vswitch-oid-controlpath.png)
 
-**注**、拡張可能スイッチのインターフェイスで NDIS フィルター ドライバーと呼ばれる*拡張可能スイッチの拡張機能*と呼ばれるドライバー スタック、*ドライバー スタックの拡張可能スイッチ*します。 
+**メモ** 拡張可能なスイッチインターフェイスでは、NDIS フィルタードライバーは*拡張可能なスイッチ拡張機能*と呼ばれ、ドライバースタックは*拡張可能なスイッチドライバースタック*と呼ばれます。 
 
-拡張可能スイッチのプロトコルの edge では、次の種類の通知の OID のセット要求を発行します。
+拡張可能スイッチのプロトコルエッジは、次の種類の通知に対して OID セット要求を発行します。
 
--   拡張可能スイッチのポートの構成を変更します。
+-   拡張可能スイッチでのポート構成の変更。
 
-    プロトコル ドライバーの問題など、 [OID\_切り替える\_ポート\_作成](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-create)に拡張可能スイッチのポートの作成の基になる拡張機能を通知します。 プロトコル ドライバーの問題では同様に、 [OID\_スイッチ\_ポート\_削除](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-delete)ポートの削除に関する拡張機能を通知します。
+    たとえば、プロトコルドライバーは、 [OID\_スイッチ\_\_ポート](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-create)を使用して、拡張可能スイッチのポートの作成について、基になる拡張機能に通知します。 同様に、プロトコルドライバーは、ポートの削除について拡張機能に通知するために、 [OID\_スイッチ\_ポートを削除\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-delete)ます。
 
-    この OID 通知の種類の詳細については、次を参照してください。 [Hyper-v 拡張可能スイッチ ポート](hyper-v-extensible-switch-ports.md)します。
+    この種類の OID 通知の詳細については、「 [Hyper-v 拡張可能スイッチポート](hyper-v-extensible-switch-ports.md)」を参照してください。
 
--   拡張可能スイッチのポートへのネットワーク アダプターの接続に変更します。
+-   拡張可能スイッチのポートへのネットワークアダプター接続の変更。
 
-    プロトコル ドライバーの問題など、 [OID\_切り替える\_NIC\_CONNECT](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-connect)に拡張可能スイッチのポートにネットワーク アダプターの接続について、基になる拡張機能を通知します。 プロトコル ドライバーの問題では同様に、 [OID\_スイッチ\_NIC\_切断](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-disconnect)に拡張機能、ネットワーク アダプターがポートから切断されていることを通知します。
+    たとえば、プロトコルドライバーが OID を発行して[\_\_NIC\_接続](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-connect)して、ネットワークアダプターの接続について、基になる拡張機能を拡張可能なスイッチのポートに通知します。 同様に、プロトコルドライバーは、ネットワークアダプターがポートから切断されたことを通知するために、 [\_NIC\_切断を\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-disconnect)して、OID を発行します。
 
-    この OID 通知の種類の詳細については、次を参照してください。 [Hyper-v 拡張可能スイッチのネットワーク アダプター](hyper-v-extensible-switch-network-adapters.md)します。
+    この種類の OID 通知の詳細については、「 [Hyper-v 拡張可能スイッチネットワークアダプター](hyper-v-extensible-switch-network-adapters.md)」を参照してください。
 
--   拡張可能スイッチ ポートやスイッチ ポリシーに変更します。
+-   拡張可能なスイッチポートまたはスイッチポリシーの変更。
 
-    プロトコル ドライバーの問題など、 [OID\_切り替える\_プロパティ\_追加](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-property-add)に拡張可能スイッチのプロパティの追加についての基になる拡張機能を通知します。 プロトコル ドライバーの問題では同様に、 [OID\_スイッチ\_ポート\_プロパティ\_削除](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-property-delete)ポートのプロパティの削除に関する拡張機能を通知します。
+    たとえば、プロトコルドライバーは[OID\_スイッチ\_プロパティ\_追加](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-property-add)して、拡張可能なスイッチプロパティの追加について、基になる拡張機能に通知します。 同様に、プロトコルドライバーは、ポートのプロパティの削除について拡張機能に通知するために、 [\_ポート\_\_プロパティの\_スイッチの OID](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-property-delete)を発行します。
 
-    この OID 通知の種類の詳細については、次を参照してください。[管理の Hyper-v 拡張可能なスイッチのポリシー](managing-hyper-v-extensible-switch-extensibility-policies.md)します。
+    この種類の OID 通知の詳細については、「 [Hyper-v 拡張可能スイッチポリシーの管理](managing-hyper-v-extensible-switch-extensibility-policies.md)」を参照してください。
 
-    **注**拡張機能が拡張可能スイッチの基になるミニポート edge によって管理されている既定のポートやスイッチ ポリシーへの変更の通知されません。
+    **メモ** 拡張可能スイッチの基になるミニポートエッジによって管理されている既定のポートまたはスイッチポリシーに対する変更は、この拡張機能には通知されません。
 
--   保存または実行時のポートのデータを復元します。
+-   実行時ポートデータを保存または復元します。
 
-    プロトコル ドライバーの問題など、 [OID\_切り替える\_NIC\_保存](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-property-add)に拡張可能スイッチに指定したポートの実行時データを保存する基になる拡張機能を通知します。 これらの Oid は、HYPER-V の状態がされているときに発行される保存したり、別のホストに移行します。 プロトコル ドライバーの問題では同様に、 [OID\_切り替える\_NIC\_復元](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-restore)に拡張機能で拡張可能スイッチ ポートの実行時データが復元されることを通知します。
+    たとえば、プロトコルドライバーが OID を発行して、 [\_\_NIC を\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-property-add)します。これにより、基になる拡張機能に通知し、拡張可能スイッチの指定したポートの実行時データを保存するようにします。 これらの Oid は、Hyper-v の状態が保存されるか、別のホストに移行されるときに発行されます。 同様に、プロトコルドライバーは、 [\_NIC\_復元を\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-restore)して、拡張スイッチで実行時のポートデータが復元されていることを通知するために、OID を発行します。
 
-    この OID 通知の種類の詳細については、次を参照してください。 [Hyper-v 拡張可能スイッチ実行時データの管理](managing-hyper-v-extensible-switch-run-time-data.md)します。
+    この種類の OID 通知の詳細については、「 [Hyper-v 拡張可能スイッチの実行時データの管理](managing-hyper-v-extensible-switch-run-time-data.md)」を参照してください。
 
-拡張可能スイッチ拡張機能のミニポート ドライバーは、これらの OID 要求を完了します。 ただしがいくつかの拡張可能スイッチ OID 要求基になる拡張機能では、通知を拒否する OID 要求を失敗ことができます。 たとえば、拡張可能スイッチ プロトコル ドライバーに通知する拡張可能スイッチで作成される新しいポートに関する、フィルター ドライバー、要求を発行、OID セットの[OID\_切り替える\_ポート\_を作成します](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-create)。 基になるフィルター処理または転送拡張機能は、状態が、OID 要求を実行してポートの作成を拒否できます\_データ\_いない\_受理します。
+拡張可能なスイッチ拡張機能ミニポートドライバーは、これらの OID 要求を完了する役割を担います。 ただし、一部の拡張スイッチ OID 要求では、基になる拡張機能が OID 要求を失敗させて通知を拒否することができます。 たとえば、拡張可能なスイッチプロトコルドライバーが拡張スイッチで作成される新しいポートについてフィルタードライバーに通知すると、oid [\_スイッチ\_ポート\_作成](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-create)する oid セット要求が発行されます。 基になるフィルター処理または転送拡張機能は、状態が "OID 要求" を完了することによってポートの作成を拒否することがあります。\_データ\_\_受け入れられません。
 
-拡張可能スイッチ拡張機能が次のガイドラインに従う必要がありますとその[ *FilterOidRequest* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_oid_request)関数は拡張可能スイッチの OID 要求に対して呼び出されます。
+拡張可能スイッチの拡張機能は、拡張可能なスイッチ OID 要求に対して[*FilterOidRequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_oid_request)関数が呼び出されたときに、次のガイドラインに従う必要があります。
 
--   データを指していますが、拡張機能は変更しないで、 *OidRequest*パラメーター。
+-   拡張機能では、 *OidRequest*パラメーターによって示されるデータを変更することはできません。
 
--   拡張機能、いくつかの拡張可能スイッチの OID の要求の状態が、OID 要求を完了できる\_データ\_いない\_ACCEPTED です。 これは vetoes OID 要求が発行された、拡張可能スイッチ コンポーネントに対する操作です。
+-   拡張可能なスイッチ OID 要求によっては、拡張機能によって、状態が\_の OID 要求を完了することができます。データ\_\_は受け入れられません。 これにより、OID 要求が発行された拡張可能なスイッチコンポーネントに対して操作が vetoes されます。
 
-    拡張機能をたとえば、完了することができます、 [OID\_スイッチ\_NIC\_作成](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-create)状態要求\_データ\_いない\_ACCEPTED です。 ドライバーは、ネットワーク接続が作成されている指定したポートで構成されているそのポリシーを満たすことができない場合に実行する必要があります。
+    たとえば、拡張機能によって、 [OID\_スイッチ\_NIC\_作成](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-create)要求の状態\_データ\_受け入れ\_ないことがあります。 ネットワーク接続の作成先として指定されたポートで構成されたポリシーを満たすことができない場合、ドライバーはこれを行う必要があります。
 
-    拡張機能は、oid には次のこの方法で要求を完了できます。
+    拡張機能は、次の Oid に対してこの方法で要求を完了できます。
 
-    -   [OID\_スイッチ\_NIC\_を作成します。](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-create)
+    -   [OID\_スイッチ\_NIC の作成\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-create)
 
-    -   [OID\_スイッチ\_ポート\_を作成します。](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-create)
+    -   [OID\_スイッチ\_ポート\_作成](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-create)
 
     -   [OID\_スイッチ\_ポート\_プロパティ\_追加](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-property-add)
 
     -   [OID\_スイッチ\_ポート\_プロパティ\_削除](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-property-delete)
 
-    -   [OID\_スイッチ\_ポート\_プロパティ\_UPDATE](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-property-update)
+    -   [OID\_スイッチ\_ポート\_プロパティ\_更新](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-property-update)
 
     -   [OID\_スイッチ\_プロパティ\_追加](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-property-add)
 
     -   [OID\_スイッチ\_プロパティ\_削除](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-property-delete)
 
-    -   [OID\_スイッチ\_プロパティ\_UPDATE](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-property-update)
+    -   [OID\_スイッチ\_プロパティ\_更新](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-property-update)
 
--   呼び出す必要がありますが、拡張機能が、OID 要求が完了しない場合[ **NdisFOidRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfoidrequest)拡張可能スイッチのドライバー スタック ダウン要求を転送します。
+-   拡張機能が OID 要求を完了しない場合は、 [**NdisFOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfoidrequest)を呼び出して、拡張可能なスイッチドライバースタックに要求を転送する必要があります。
 
-    **注**ドライバー呼び出しの前に[ **NdisFOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfoidrequest)、ドライバーを呼び出す必要があります[ **NdisAllocateCloneOidRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisallocatecloneoidrequest)に割り当て、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体し、新しい構造に、要求の情報を転送します。
+    **メモ** ドライバーが[**NdisFOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfoidrequest)を呼び出す前に、ドライバーは[**NdisAllocateCloneOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocatecloneoidrequest)を呼び出して、 [**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造を割り当て、要求情報を新しい構造体に転送する必要があります。
 
-    拡張機能は、OID の完了結果を監視する必要があります要求するときにその[ *FilterOidRequestComplete* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_oid_request_complete)関数が呼び出されます。 これにより、拡張可能スイッチのコンポーネントでの操作が正常に完了したか、基になる拡張機能によって拒否されたかどうかを判断する拡張機能です。
+    拡張機能は、 [*FilterOidRequestComplete*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_oid_request_complete)関数が呼び出されたときに、OID 要求の完了結果を監視する必要があります。 これにより、拡張可能なスイッチコンポーネントでの操作が正常に完了したか、基になる拡張機能によって拒否されたかを、拡張機能が判断できるようになります。
 
-    フィルター処理し、OID 要求を転送する方法の詳細については、次を参照してください。 [NDIS フィルター ドライバーでの OID 要求のフィルタ リング](filtering-oid-requests-in-an-ndis-filter-driver.md)します。
+    OID 要求をフィルター処理して転送する方法の詳細については、「 [NDIS フィルタードライバーでの Oid 要求のフィルター処理](filtering-oid-requests-in-an-ndis-filter-driver.md)」を参照してください。
 
 
--   NDIS と上位のプロトコルとフィルター ドライバーは、基になる物理ネットワーク アダプターに、ハードウェア オフロード テクノロジの OID 要求を発行することができます。 これには、仮想マシン キュー (VMQ)、インターネット プロトコル セキュリティ (IPsec)、シングル ルート I/O 仮想化 (SR-IOV) などのオフロード テクノロジの OID 要求が含まれます。
+-   NDIS プロトコルとフィルタードライバーは、ハードウェアオフロードテクノロジに対する OID 要求を基になる物理ネットワークアダプターに発行できます。 これには、仮想マシンキュー (VMQ)、インターネットプロトコルセキュリティ (IPsec)、シングルルート i/o 仮想化 (SR-IOV) などのオフロードテクノロジに対する OID 要求が含まれます。
 
-    拡張可能スイッチのインターフェイスでこれらの OID 要求が届いたら、OID 要求内でカプセル化、 [ **NDIS\_切り替える\_NIC\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_switch_nic_oid_request). 拡張可能スイッチのプロトコルのエッジがの OID 要求を発行し、 [OID\_切り替える\_NIC\_要求](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-request)この構造体を格納しています。
+    これらの OID 要求が拡張可能スイッチインターフェイスに到着すると、 [**NDIS\_スイッチ\_NIC\_oid\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_oid_request)の内部で oid 要求がカプセル化されます。 次に、拡張可能スイッチのプロトコルエッジが、この構造体を含む[NIC\_要求\_\_スイッチ](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-request)の oid 要求を発行します。
 
--   転送拡張機能を拡張可能スイッチは、外部ネットワーク アダプターにバインドされている 1 つまたは複数の物理アダプターには、NDIS ハードウェア オフロード テクノロジのサポートを提供できます。 この構成で拡張可能スイッチの外部ネットワーク アダプターは、NDIS マルチプレクサー (マルチプレクサー) の中間ドライバーの仮想ミニポート端にバインドされます。 MUX 中間ドライバーは、ホスト上の 1 つまたは複数の物理ネットワーク チームにバインドされます。 この構成と呼ばれる、*拡張可能スイッチ チーム*します。 拡張可能スイッチ チームの詳細については、次を参照してください。[型の物理ネットワーク アダプターの構成](types-of-physical-network-adapter-configurations.md)します。
+-   拡張可能なスイッチ転送拡張機能を使用すると、外部ネットワークアダプターにバインドされている1つ以上の物理アダプターで、NDIS ハードウェアオフロードテクノロジをサポートできます。 この構成では、拡張可能スイッチの外部ネットワークアダプターが NDIS マルチプレクサー (MUX) 中間ドライバーの仮想ミニポートエッジにバインドされます。 MUX 中間ドライバーは、ホスト上の1つまたは複数の物理ネットワークのチームにバインドされています。 この構成は、*拡張可能なスイッチチーム*と呼ばれています。 拡張可能なスイッチチームの詳細については、「[物理ネットワークアダプターの構成の種類](types-of-physical-network-adapter-configurations.md)」を参照してください。
 
-    この構成で拡張可能スイッチ拡張機能は、チーム内のすべてのネットワーク アダプターに公開されます。 これにより、転送拡張機能が拡張可能スイッチのドライバー スタックを構成し、チーム内の個々 のネットワーク アダプターの使用を管理するの。 たとえば、拡張機能では、個々 のアダプターに送信されるパケットを転送することによって、over、チーム分散フェールオーバー (LBFO) のソリューション ロードのサポートを提供できます。 このような拡張機能と呼ばれる、*チーミング プロバイダー*します。 プロバイダーのチーミングの詳細については、次を参照してください。[プロバイダーの拡張機能のチーミング](teaming-provider-extensions.md)します。
+    この構成では、拡張可能なスイッチ拡張機能がチーム内のすべてのネットワークアダプターに公開されます。 これにより、拡張可能なスイッチドライバースタックの転送拡張機能が、チーム内の個々のネットワークアダプターの構成と使用を管理できるようになります。 たとえば、拡張機能は、送信パケットを個々のアダプターに転送することによって、チームで負荷分散フェールオーバー (LBFO) ソリューションのサポートを提供できます。 このような拡張機能は、*チーミングプロバイダー*と呼ばれます。 チーミングプロバイダーの詳細については、「[チーミングプロバイダーの拡張機能](teaming-provider-extensions.md)」を参照してください。
 
-    OID を処理することによって要求[OID\_スイッチ\_NIC\_要求](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-request)、ハードウェア オフロードのアダプターのチームの構成に参加プロバイダーをチーミングすることができます。 たとえば、拡張機能は OID の独自の OID 要求を生成できます\_スイッチ\_NIC\_ハードウェアのパラメーターを持つ物理アダプターを構成する要求の負荷を軽減します。
+    Oid の OID 要求を処理することによって[\_NIC\_要求を\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-request)することにより、チーミングプロバイダーはハードウェアのオフロードのためにアダプターチームの構成に参加できます。 たとえば、拡張機能では、独自の oid 要求 OID\_を生成して、ハードウェアオフロード用のパラメーターを使用して物理アダプターを構成するように\_NIC\_要求できます。
 
-    詳細を処理する方法について、 [OID\_スイッチ\_NIC\_要求](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-request)OID の要求を参照してください[物理ネットワーク アダプターへの OID 要求の転送](forwarding-oid-requests-to-physical-network-adapters.md)します。
+    Oid [\_スイッチ\_\_NIC を要求](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-request)する方法の詳細については、「 [Oid 要求を物理ネットワークアダプターに転送](forwarding-oid-requests-to-physical-network-adapters.md)する」を参照してください。
 
-    **注**フィルター ドライバーの拡張機能の OID 要求を生成できます[OID\_スイッチ\_NIC\_要求](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-request)拡張可能なにバインドされている任意の物理アダプターにプライベートの Oid を発行するには外部ネットワーク アダプターを切り替えます。
+    **メモ** 拡張機能フィルタードライバーは、拡張可能スイッチの外部ネットワークアダプターにバインドされている任意の物理アダプターに対してプライベート Oid の発行を要求する oid [\_スイッチ\_\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-request)の oid 要求を生成できます。
 
-**注**スタックを使用して要求を再開する[ **NdisFRestartFilter** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfrestartfilter)拡張可能スイッチの OID 要求が保留中は完了しません。 このため、スタックの再起動を待機している拡張機能は、実行中の OID 要求を完了する必要があります。
+**メモ** 拡張可能なスイッチ OID 要求が保留中の間は、 [**NdisFRestartFilter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfrestartfilter)を使用したスタックの再起動要求は完了しません。 このため、スタックの再開を待機している拡張機能は、実行中の OID 要求を完了する必要があります。
 
-拡張可能スイッチ OID 要求の管理パスの詳細については、次を参照してください。 [Hyper-v 拡張可能スイッチ コントロール パスの OID 要求](hyper-v-extensible-switch-control-path-for-oid-requests.md)します。
+拡張可能なスイッチ OID 要求の制御パスの詳細については、「 [OID 要求の Hyper-v 拡張可能スイッチ制御パス](hyper-v-extensible-switch-control-path-for-oid-requests.md)」を参照してください。
 
 
 

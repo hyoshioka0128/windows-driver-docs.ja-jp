@@ -6,12 +6,12 @@ keywords:
 - MB PCO オプション、モバイルブロードバンド PCO オプション、MB プロトコル構成オプション、モバイルブロードバンドプロトコル構成オプション、WDK ネットワークドライバー、MBB ミニポートドライバー
 ms.date: 09/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 943330f5c9db1e0ea7f6261c188364a1077f5029
-ms.sourcegitcommit: 2c3b8e0ea0e75b72067d2e22dc530390bc19b11e
+ms.openlocfilehash: ad0a20327c2762fd660e52ebf7c56d48e9f0f134
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/02/2019
-ms.locfileid: "67374072"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844279"
 ---
 # <a name="mb-protocol-configuration-options-pco-operations"></a>MB プロトコル構成オプション (PCO) 操作
 
@@ -55,7 +55,7 @@ PCO 値がホストに渡されるシナリオには、次の3つがあります
 
 ## <a name="ndis-interface-to-the-modem"></a>モデムへの NDIS インターフェイス
 
-オペレータネットワークからモデムが受信した PCO 値の状態とペイロードを照会する方法については、「 [OID_WWAN_PCO](oid-wwan-pco.md)」を参照してください。 **OID_WWAN_PCO**は[**NDIS_WWAN_PCO_STATUS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_pco_status)構造体を使用します。これには、ネットワークから pco 情報ペイロードを表す[**WWAN_PCO_VALUE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wwan/ns-wwan-_wwan_pco_value)構造体が含まれています。
+オペレータネットワークからモデムが受信した PCO 値の状態とペイロードを照会する方法については、「 [OID_WWAN_PCO](oid-wwan-pco.md)」を参照してください。 **OID_WWAN_PCO**は[**NDIS_WWAN_PCO_STATUS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_pco_status)構造体を使用します。これには、ネットワークから pco 情報ペイロードを表す[**WWAN_PCO_VALUE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wwan/ns-wwan-_wwan_pco_value)構造体が含まれています。
 
 モデムのミニポートドライバーによって送信された状態通知については、モデムの現在の PCO 状態を OS に通知する方法については、「 [NDIS_STATUS_WWAN_PCO_STATUS](ndis-status-wwan-pco-status.md)」を参照してください。
 
@@ -91,25 +91,25 @@ InformationBuffer には、唯一の関連フィールドが*SessionId*である
 
 |  | 設定 | クエリ | 通知 |
 | --- | --- | --- | --- |
-| コマンド | 該当なし | MBIM_PCO_VALUE | 該当なし |
-| 応答 | 該当なし | MBIM_PCO_VALUE | MBIM_PCO_VALUE |
+| コマンド | 適用なし | MBIM_PCO_VALUE | 適用なし |
+| 応答 | 適用なし | MBIM_PCO_VALUE | MBIM_PCO_VALUE |
 
 #### <a name="data-structures"></a>データ構造
 
 ##### <a name="mbim_pco_type"></a>MBIM_PCO_TYPE
 
-| 種類 | Value | 説明 |
+| タスクバーの検索ボックスに | Value | 説明 |
 | --- | --- | --- |
 | MBIMPcoTypeComplete | 0 | 完全な PCO 構造体がネットワークから受信したとおりに渡されることを指定します。ヘッダーは、3GPP TS 24.008 仕様で定義されている PCO 構造体のオクテット3のプロトコルを現実に反映します。 |
 | MBIMPcoTypePartial | 1 | モデムがネットワークから受信した PCO 構造のサブセットを渡すだけであることを指定します。 ヘッダーは 3GPP TS 24.008 仕様で定義されている PCO 構造に一致しますが、オクテット3の "構成プロトコル" が有効ではない可能性があります。 |
 
 ##### <a name="MBIM_PCO_TYPE"></a>MBIM-PCO-種類
 
-| Offset | サイズ | フィールド | 型 | 説明 |
+| Offset | Size | フィールド | タスクバーの検索ボックスに | 説明 |
 | --- | --- | --- | --- | --- |
-| 0 | 4 | セッション Id | UINT32 | クエリ内の SessionId は、どの IP データストリームの PCO 値が関数によって返されるかを示します。 |
-| 4 | 4 | PcoDataSize | UINT32 | PcoData の長さ (0 ~ 256)。 クエリでは、この値は0になります。 |
-| 8 | 4 | PcoDataType | UINT32 | PCO データ型。 詳細については、「 [MBIM_PCO_TYPE](#mbim_pco_type)」を参照してください。 |
+| 0 | ホーム フォルダーが置かれているコンピューターにアクセスできない | セッション Id | UINT32 | クエリ内の SessionId は、どの IP データストリームの PCO 値が関数によって返されるかを示します。 |
+| ホーム フォルダーが置かれているコンピューターにアクセスできない | ホーム フォルダーが置かれているコンピューターにアクセスできない | PcoDataSize | UINT32 | PcoData の長さ (0 ~ 256)。 クエリでは、この値は0になります。 |
+| 8 | ホーム フォルダーが置かれているコンピューターにアクセスできない | PcoDataType | UINT32 | PCO データ型。 詳細については、「 [MBIM_PCO_TYPE](#mbim_pco_type)」を参照してください。 |
 | 12 | | PcoDataBuffer | DATABUFFER | 3GPP TS 24.008 spec の PCO 構造体。 |
 
 #### <a name="status-codes"></a>状態コード

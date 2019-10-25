@@ -4,60 +4,60 @@ description: NDIS QoS パラメーターの概要
 ms.assetid: E9321805-2930-410A-81BC-F7978517E89E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 70335c6f3e8dbbb465baafab667412ea2a8676a1
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5dd9a4e97ad50a50b689b79a2c93ebb86c354f5e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384381"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843739"
 ---
 # <a name="overview-of-ndis-qos-parameters"></a>NDIS QoS パラメーターの概要
 
 
-NDIS のサービス品質 (QoS) パラメーターは、ポリシーとのネットワーク アダプターを使用してトラフィック クラスの設定を指定または*エグレス*、パケット配信します。 NDIS QoS パラメーターには、次の設定が含まれます。
+NDIS Quality of Service (QoS) パラメーターは、ネットワークアダプターが送信または送信パケット*配信に使用*するトラフィッククラスのポリシーと設定を指定します。 NDIS QoS パラメーターには、次の設定が含まれます。
 
--   優先度レベルとフローの設定を制御します。 これらの設定は、送信の IEEE 802.1p の優先度レベルと省略可能なフロー コントロール アルゴリズムを定義または*エグレス*トラフィック。
+-   優先度レベルとフロー制御の設定。 これらの設定は、送信*トラフィックまたは*送信トラフィックの IEEE 802.1 p 優先度レベルとオプションのフロー制御アルゴリズムを定義します。
 
-    詳細については、次を参照してください。[優先度レベルとフロー制御](priority-levels-and-flow-control.md)します。
+    詳細については、「[優先度レベルとフロー制御](priority-levels-and-flow-control.md)」を参照してください。
 
--   トラフィックの選択アルゴリズム (TSA) 設定します。 これらの設定は、ネットワーク アダプターがその送信キューからのエグレス トラフィックを選択する方法を定義します。 たとえば、アダプターは、TSA の厳密な優先度を使用し、IEEE 802.1p の優先度のみに基づいて送信パケットを選択します。 アダプターは、Enhanced Transmission Selection (ETS)、帯域幅の割り当てに基づくトラフィック クラス間でのエグレス トラフィックに保ちます TSA も使用できます。
+-   Traffic selection algorithm (TSA) の設定。 これらの設定は、ネットワークアダプターが送信キューから送信トラフィックを選択する方法を定義します。 たとえば、アダプターは、厳密な優先順位の TSA を使用して、IEEE 802.1 p の優先順位のみに基づいて送信パケットを選択できます。 また、アダプターは、帯域幅の割り当てに基づいてトラフィッククラス間でトラフィックを軽減する、Enhanced 伝送選択 (TSA) を使用することもできます。
 
-    詳細については、次を参照してください。[伝送選択アルゴリズム (TSAs)](transmission-selection-algorithms--tsas-.md)します。
+    詳細については、「[伝送選択アルゴリズム (TSAs)](transmission-selection-algorithms--tsas-.md)」を参照してください。
 
--   トラフィックの分類を EtherType または宛先の TCP ポートなどの分類の条件に一致するデータを含むパケットに IEEE 802.1p の優先度レベルの割り当てを指定します。 詳細については、次を参照してください。 [NDIS QoS トラフィックの分類](ndis-qos-traffic-classifications.md)します。
+-   EtherType や宛先の TCP ポートなど、分類条件に一致するデータを含むパケットに対する IEEE 802.1 p の優先度レベルの割り当てを指定するトラフィック分類。 詳細については、「 [NDIS QoS Traffic 分類](ndis-qos-traffic-classifications.md)」を参照してください。
 
-    **注**  トラフィックの分類は、IEEE 802.1 仕様で「アプリケーションの優先順位」でとも呼ばれます。
+    **注**  トラフィックの分類は、IEEE 802.1 仕様では "アプリケーションの優先度" とも呼ばれます。
 
      
 
 NDIS QoS では、次の種類のパラメーターを定義します。
 
-<a href="" id="local-ndis-qos-parameters"></a>ローカルの NDIS QoS パラメーター  
-ローカルの NDIS QoS パラメーターは、ミニポート ドライバーとそのネットワーク アダプターの主要な QoS 設定を指定します。 これらのパラメーターは、システム レジストリに保存され、次のように、ミニポート ドライバーをローカルに管理します。
+<a href="" id="local-ndis-qos-parameters"></a>ローカル NDIS QoS パラメーター  
+ローカル NDIS QoS パラメーターは、ミニポートドライバーとそのネットワークアダプターのコア QoS 設定を指定します。 これらのパラメーターはシステムレジストリに保持され、次の方法でミニポートドライバーにローカルに管理されます。
 
--   NDIS オブジェクト識別子 (OID) メソッドの要求を通じて[OID\_QOS\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-qos-parameters) DCB コンポーネントによって発行されました。 この OID 要求に含まれる、 [ **NDIS\_QOS\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_qos_parameters)をローカルの NDIS QoS パラメーターを指定します。
+-   DCB コンポーネントによって発行された[\_QOS\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-qos-parameters)を使用して、NDIS オブジェクト識別子 (oid) メソッドの要求を処理します。 この OID 要求には、ローカル NDIS QoS パラメーターを指定する[**ndis\_QOS\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters)構造体が含まれています。
 
-    DCB のコンポーネントの詳細については、次を参照してください。[データ センター ブリッジングの NDIS QoS アーキテクチャ](ndis-qos-architecture-for-data-center-bridging.md)します。
+    DCB コンポーネントの詳細については、「[データセンターブリッジングの NDIS QoS アーキテクチャ](ndis-qos-architecture-for-data-center-bridging.md)」を参照してください。
 
--   ネットワーク アダプターの独自のレジストリ設定。 ミニポート ドライバーがこれらの設定を読み取るときにその[ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize) NDIS によって呼び出されます。
+-   ネットワークアダプターの独自のレジストリ設定を使用します。 ミニポートドライバーは、 [*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)関数が NDIS によって呼び出されたときに、これらの設定を読み取ります。
 
--   独立系ハードウェア ベンダー (IHV) によって開発された管理アプリケーションを通じてミニポート ドライバーに発行された設定。
+-   独立系ハードウェアベンダー (IHV) によって開発された管理アプリケーションを使用してミニポートドライバーに発行された設定を使用します。
 
-ミニポート ドライバーが、ローカルの NDIS QoS パラメーターを取得する方法の詳細については、次を参照してください。 [NDIS QoS パラメーターをローカル設定](setting-local-ndis-qos-parameters.md)します。
+ミニポートドライバーがローカル NDIS QoS パラメーターを取得する方法の詳細については、「[ローカル Ndis Qos パラメーターの設定](setting-local-ndis-qos-parameters.md)」を参照してください。
 
-<a href="" id="remote-ndis-qos-parameters"></a>リモートの NDIS QoS パラメーター  
-リモートの NDIS QoS パラメーターでは、データ リンクの上にネットワーク アダプターが接続されているリモート ピアに構成されているものです。 ミニポート ドライバーは、IEEE 802.1 qaz で指定されている Data Center Bridging Exchange (DCBX) プロトコルを使ってこれらのパラメーターを検出します。 ドラフト標準。
+<a href="" id="remote-ndis-qos-parameters"></a>リモート NDIS QoS パラメーター  
+リモート NDIS QoS パラメーターは、ネットワークアダプターがデータリンク経由で接続されているリモートピアで構成されているものです。 ミニポートドライバーは、IEEE 802.1 Qaz draft standard によって指定されたデータセンターブリッジング (DCBX) プロトコルを使用してこれらのパラメーターを検出します。
 
-DCBX では、ミニポート ドライバーが 1 つのデータ リンクのピアから受信したリモートの QoS パラメーターの 1 つだけのセットを維持する必要があります。 ミニポート ドライバーは、そのリモートの QoS パラメーターは、最初に、ピアから受信したか、または後で変更時に、NDIS 状態を示す値を発行する必要があります。 たとえば、ドライバーは、そのリモート ピアからさまざまな一連の QoS パラメーターを受け取ったため、そのリモートの NDIS QoS パラメーターを変更可能性があります。 このプロセスの詳細については、次を参照してください。[リモートの NDIS QoS パラメーターを示す変更](indicating-changes-to-the-remote-ndis-qos-parameters.md)します。
+DCBX を行うには、ミニポートドライバーが1つのデータリンクピアから受信したリモート QoS パラメーターのセットを1つだけ保持する必要があります。 ミニポートドライバーは、そのリモート QoS パラメーターがピアから受信された場合、または後で変更された場合に、NDIS ステータスを示す値を発行する必要があります。 たとえば、リモートピアから異なる QoS パラメーターのセットを受信したため、ドライバーによってリモート NDIS QoS パラメーターが変更される可能性があります。 このプロセスの詳細については、「[リモート NDIS QoS パラメーターの変更を示す](indicating-changes-to-the-remote-ndis-qos-parameters.md)」を参照してください。
 
-ミニポート ドライバーが、リモートの NDIS QoS パラメーターを取得する方法の詳細については、次を参照してください。[リモートの NDIS QoS パラメーターを受け取る](receiving-remote-ndis-qos-parameters.md)します。
+ミニポートドライバーがリモート NDIS QoS パラメーターを取得する方法の詳細については、「[リモート Ndis Qos パラメーターの受信](receiving-remote-ndis-qos-parameters.md)」を参照してください。
 
-<a href="" id="operational-ndis-qos-parameters"></a>運用上の NDIS QoS パラメーター  
-運用上の NDIS QoS パラメーターはリモート ピアのリンクのデータ接続経由でトラフィックの優先順位付けのミニポート ドライバーが解決することです。 ミニポート ドライバーは、ローカルまたはリモートの NDIS QoS パラメーターから、運用上の NDIS QoS パラメーターを解決します。
+<a href="" id="operational-ndis-qos-parameters"></a>運用 NDIS QoS パラメーター  
+Operational NDIS QoS パラメーターは、リモートピアへのデータリンク接続を介して、ミニポートドライバーがトラフィックの優先順位付けを解決するものです。 ミニポートドライバーは、ローカルまたはリモートの NDIS QoS パラメーターから、動作している NDIS QoS パラメーターを解決します。
 
-ミニポート ドライバーは、運用上の QoS パラメーターが最初に解決されますか、または後で変更時に NDIS 状態を示す値を発行する必要があります。 たとえば、ドライバーはそのリモート ピアからさまざまな一連の QoS パラメーターを受け取ったため、その運用上の NDIS QoS パラメーターを変更可能性があります。 この状態を示す値を生成する方法の詳細については、次を参照してください。[運用上の NDIS QoS パラメーターを示す変更](indicating-changes-to-the-operational-ndis-qos-parameters.md)します。
+ミニポートドライバーは、動作中の QoS パラメーターが最初に解決されたとき、または後で変更されたときに、NDIS ステータスを示す値を発行する必要があります。 たとえば、ドライバーは、リモートピアから異なる QoS パラメーターのセットを受信したため、動作している NDIS QoS パラメーターを変更する場合があります。 このステータス表示を生成する方法の詳細については、「 [OPERATIONAL NDIS QoS パラメーターの変更を示す](indicating-changes-to-the-operational-ndis-qos-parameters.md)」を参照してください。
 
-ミニポート ドライバーがその運用上の NDIS QoS パラメーターを解決する方法の詳細については、次を参照してください。[運用上の NDIS QoS パラメーターを解決する](resolving-operational-ndis-qos-parameters.md)します。
+ミニポートドライバーが運用 NDIS QoS パラメーターを解決する方法の詳細については、「[運用 Ndis Qos パラメーターの解決](resolving-operational-ndis-qos-parameters.md)」を参照してください。
 
  
 

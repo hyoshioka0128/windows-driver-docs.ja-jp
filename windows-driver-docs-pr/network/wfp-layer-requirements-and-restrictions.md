@@ -3,59 +3,59 @@ title: WFP レイヤーの要件と制限
 description: WFP レイヤーの要件と制限
 ms.assetid: 3677cc12-3242-4fbd-809d-303b9d324139
 keywords:
-- WDK Windows フィルタ リング プラットフォーム パケットの処理
-- パケット WDK Windows フィルタ リング プラットフォームの処理
-- 処理の WDK Windows フィルタ リング プラットフォーム パケットのレイヤー
+- パケットの処理 WDK Windows フィルタリングプラットフォーム
+- パケット処理 WDK Windows フィルタリングプラットフォーム
+- パケット処理用のレイヤー (WDK Windows フィルタリングプラットフォーム)
 ms.date: 01/22/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 65af57fd54cedef4acb03ea27c2a6fbbd563d503
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: dc91eb6c100226882bc4e6230e85281997947c2c
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67356986"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841699"
 ---
 # <a name="wfp-layer-requirements-and-restrictions"></a>WFP レイヤーの要件と制限
 
 
-WFP レイヤーには、次の要件と制限が適用されます。
+次の要件と制限は、WFP レイヤーに適用されます。
 
-<a href="" id="forwarding-layer-------"></a>**転送層**   
-IP パケットは、発生元であるコンピューターに割り当てられているアドレスの送信先となるパケットの IP 転送が有効になっていると、パケットが送信またはインターフェイスよりもさまざまなインターフェイスで受信した場合、転送層に配信されます、lローカル アドレスが割り当てられます。 既定では、IP 転送は無効になりを使用して有効にすることができます、 **netsh interface ipv4 インターフェイスを設定する**IPv4 転送のコマンドまたは**netsh interface ipv6 インターフェイスを設定する**IPv6 用コマンド転送します。
+<a href="" id="forwarding-layer-------"></a>**転送レイヤー**   
+Ip 転送が、コンピューターに割り当てられているアドレスの送信元または送信先のパケットに対して IP 転送が有効になっていて、そのパケットが l のインターフェイスとは異なるインターフェイスで送受信される場合、IP パケットは転送層に配信されます。o) アドレスが割り当てられています。 既定では、IP 転送は無効になっており、IPv4 転送には**netsh interface ipv4 set interface**コマンドを、ipv6 転送には**netsh interface ipv6 set interface**コマンドを使用して有効にすることができます。
 
-転送層が到着すると、受信した各フラグメントを転送したり、すべてのフラグメントが到着し、それらを転送するまでは、IP ペイロードのフラグメントを保持することができます。 これと呼ばれます*フラグメント化*します。 フラグメントのグループ化が無効な場合 (これは既定で無効)、によってフラグメントが示された IP パケットが 1 回 WFP に転送されます。 フラグメントのグループ化を有効にすると、フラグメントと示されます WFP を 2 回--自体には、フラグメントとして最初にもう一度によって定義されたフラグメント グループ内で、 [ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)チェーン。 WFP セット、 **FWP\_条件\_フラグ\_IS\_フラグメント\_グループ**フラグメント レイヤー コールアウトを転送するグループのフラグが示されている場合。 使用してフラグメントのグループ化を有効にすることができます、 **netsh インターフェイス {ipv4 | ipv6} 設定グローバル groupforwardedfragments = 有効になっている**コマンド。 フラグメントのグループ化は、再構築、移動先ホストにある元の IP パケットの再構築したものであると異なります。
+転送層は、受信した各フラグメントを受信したとき、または IP ペイロードのフラグメントを保持するときに、すべてのフラグメントが到着してから転送されるまで転送できます。 これは、*フラグメントグループ*と呼ばれます。 フラグメントのグループ化が無効になっている場合 (既定では無効になっています)、転送された IP パケットフラグメントは1回だけ WFP に示されます。 フラグメントのグループ化が有効になっている場合、フラグメントは2回 (最初はフラグメント自体、もう1つは、 [**NET\_\_BUFFER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)によって記述されているフラグメントグループ内で) 2 回 (1 回目) に示されます。 WFP は、レイヤーのコールアウトを転送するフラグメントグループを示す場合に **\_\_フラグを\_フラグメント\_グループフラグの\_条件**を設定します。 フラグメントグループ化は、 **netsh interface {ipv4 | ipv6} set global groupforwardedfragments = enabled**コマンドを使用して有効にすることができます。 フラグメントのグループ化は、転送先のホストで元の IP パケットを再構築する再構築とは異なります。
 
-[ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)転送層で示される構造体は、完全な IP パケットや IP パケットのフラグメントを IP パケットのフラグメント グループを記述できます。 2 回に示す吹き出しにする、IP パケットのフラグメントでは、転送レイヤーは走査、中に: フラグメントとして最初、もう一度、フラグメント グループ内のフラグメントとして。
+転送層で示される[**NET\_BUFFER\_LIST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)構造体は、完全な ip パケット、ip パケットフラグメント、または ip パケットフラグメントグループを記述できます。 IP パケットフラグメントは、転送レイヤーを通過しますが、コールアウトに2回 (最初はフラグメントとして、もう1つはフラグメントグループ内のフラグメントとして) 示されます。
 
-フラグメントのグループは、指定したときに、 **FWP\_条件\_フラグ\_IS\_フラグメント\_グループ**コールアウト ドライバーの入力方向の値としてフラグが渡されます[*classifyFn* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nc-fwpsk-fwps_callout_classify_fn0)コールアウト関数。 ここで、 [ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)によって示される構造体、 *NetBufferList*パラメーターは、の最初のノード**NET\_バッファー\_一覧**チェーンでそれぞれ**NET\_バッファー\_一覧**パケットのフラグメントを記述します。
+フラグメントグループが指定されている場合、 **\_フラグ\_の .fwp\_条件は\_フラグメント\_グループ**フラグは、受信した値としてコールアウトドライバーの[*classid*](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nc-fwpsk-fwps_callout_classify_fn0)関数に渡されます。 この場合、 *NetBufferList*パラメーターによって示される[**net\_buffer\_list**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)構造体は、各**net\_Buffer\_LIST**を含む**net\_buffer\_リスト**チェーンの最初のノードになります。パケットフラグメントを記述します。
 
-前方挿入されたパケットは、WFP レイヤーには表示されません。 挿入されたパケットは、もう一度コールアウト ドライバーに指示できます。 無限ループを防ぐためには、まず、ドライバーを呼び出して、 [ **FwpsQueryPacketInjectionState0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsquerypacketinjectionstate0)関数への呼び出しを続行する前に、 *classifyFn*コールアウト関数、およびドライバーの挿入の状態を持つパケットを許可するように[ **FWPS\_パケット\_インジェクション\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/ne-fwpsk-fwps_packet_injection_state_) に設定**FWPS\_パケット\_INJECTED\_BY\_セルフ**または**FWPS\_パケット\_以前\_INJECTED\_BY\_セルフ**変更されていないを通過します。
+事前に挿入されたパケットは、どの WFP レイヤーにも表示されません。 挿入されたパケットは、コールアウトドライバーに再度示すことができます。 無限ループを防ぐために、ドライバーはまず、 [**FwpsQueryPacketInjectionState0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsquerypacketinjectionstate0)関数を呼び出してから、 *classid*の関数の呼び出しを続行する必要があります。また、ドライバーは挿入状態[**のパケットを許可する必要があります。FWPS\_パケット\_挿入\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/ne-fwpsk-fwps_packet_injection_state_) **fwps\_パケット\_\_self**または FWPS\_パケット\_によって挿入される\_自己または**fwps\_パケット\_\_SELF によって挿入される**変更せずに渡す場合は。
 
-次のコマンドを使用するには、システムの現在の「グループ転送されたフラグメント」設定を表示する: **netsh インターフェイス {ipv4 | ipv6} グローバル**します。
+次のコマンドを使用して、システムの現在の "グループの転送されたフラグメント" 設定を表示できます: **netsh interface {ipv4 | ipv6} show global**.
 
-<a href="" id="network-layer-------"></a>**ネットワーク層**   
-受信パスに対してのみ指示は、IP パケットのフラグメントは、このレイヤーで 3 つの点で示されています。 最初に、IP パケットとして IP としてもう一度フラグメント、および 3 回目の再構築された IP パケットの一部として。 WFP セット、 **FWP\_条件\_フラグ\_IS\_フラグメント**ネットワーク レイヤーの吹き出しにフラグメントが示されている場合にフラグを設定します。 
+<a href="" id="network-layer-------"></a>**ネットワーク層**の   
+受信パスに対してのみ指定されている IP パケットフラグメントは、この層の3つのポイント (最初は ip パケット、もう1つは ip フラグメント)、再構築された IP パケットの一部として、3回目に示されます。 ネットワークレイヤーのコールアウトにフラグメントが示されている場合は、WFP によって **\_条件\_フラグ\_\_フラグメントフラグが設定さ**れます。 
 
-たとえば、1 つの IP パケットが 4 つのフラグメントに分割されている場合このパケットがないように行われます。
+たとえば、1つの IP パケットが4つのフラグメントに分割されている場合、このパケットの兆候は次のようになります。
 
-1. 各「元」IP パケットを (4 つの分類、または引き出し線の分類関数の呼び出し) の 1 つを示す値
-2. 各「元フラグメント」の 1 つを示す値 (4 つの分類)
-3. 最後の再構築された IP パケット (1 分類) の 1 つを示す値
+1. "元の" IP パケット (4 つの分類、またはコールアウトの分類関数の呼び出し) ごとに1つの表示
+2. "元のフラグメント" ごとに1つの表示 (4 つの分類)
+3. 最終再構築 IP パケットの1つの表示 (1 分類)
 
-条件のフィルター処理を追加するときに**FWP\_一致\_フラグ\_NONE\_設定**と組み合わせて使用することができます、 **FWP\_条件\_フラグ\_IS\_フラグメント**を 2 つ目の indication(s) を回避するフラグ。 これらの条件のフラグは、分類コールアウト ドライバーは気にしないようにするものです。 引き出し線 (を断片化し、再構築されていないもの) だけ完全なパケットを検査する場合は、IP パケットとして示されている処理のフラグメントを回避するために IP ヘッダーを解析する必要があります。 コールアウトは、これを実現するために、次の手順を実行します。
+フィルター条件を追加するときに、 **\_フラグ\_NONE\_SET**は、[\_] を選択して、2番目の表示を回避するために\_**フラグメント**フラグと共に使用できます。 これらの条件フラグは、コールアウトドライバーが考慮しない分類を防ぐことを目的としています。 コールアウトが完全なパケットだけを検査する必要がある場合 (フラグメント化および再構築されていない場合)、ip パケットとして示されているフラグメントの処理を回避するために、IP ヘッダーを解析する必要があります。 コールアウトは、次の手順を実行してこれを実現できます。
 
-1. チェックよりフラグメント (MF) フラグが設定やフラグメントのオフセット フィールドがない場合は、最初の indication(s) をスキップ 0。
-2. すべての分類を許可するフィルターを記述、 **FWP_CONDITION_FLAG_IS_FRAGMENT**設定されます。
-3. 再構築されたパケットに必要な処理を実行します。
+1. More Fragment (MF) フラグが設定されているかどうか、またはフラグメントオフセットフィールドが0でないことを確認して、最初の表示をスキップします。
+2. **FWP_CONDITION_FLAG_IS_FRAGMENT**が設定されているすべての分類を許可するフィルターを作成します。
+3. 再構築されたパケットで必要な処理をすべて実行します。
 
- または、引き出し線は、トランスポート層でパケットを検査できます。
+ また、コールアウトは、トランスポート層でパケットを検査することもできます。
 
 <a href="" id="transport-layer-and-ale-------"></a>**トランスポート層と ALE**   
-IPsec の処理と共存できるようにするには、コールアウト受信トランスポート層でパケットを検査する必要がありますも ALE で登録が表示され、レイヤーをそのまま使用します。 このような吹き出し検査/は変更できますがトランスポート層でトラフィックのほとんどが ALE 受信受け入れるレイヤーに割り当てられているパケットも許可する必要があります。 このような吹き出しを検査または ALE レイヤーからのパケットを変更もする必要があります。 WFP セット、 **FWPS\_メタデータ\_フィールド\_ALE\_分類\_REQUIRED**トランスポートことを示すことと、メタデータ フラグを ALE を必要とするこれらのパケットのレイヤー検査します。 IPsec の処理は、ALE レイヤーに最初の「接続」との接続を再度承認する必要があるものを作成するこれらのパケットが到達するまで遅延されます。
+IPsec 処理と共存できるようにするには、受信トランスポート層でパケットを検査するコールアウトも、ALE 受信および受け入れレイヤーに登録する必要があります。 このようなコールアウトは、トランスポート層でのほとんどのトラフィックを検査または変更できますが、ALE 受信/受け入れレイヤーに割り当てられているパケットも許可する必要があります。 このようなコールアウトは、ALE レイヤーのパケットを検査または変更する必要もあります。 WFP は、ale 検査を必要とするパケットをトランスポート層に示すときに、 **\_フィールド\_ale\_分類\_必要な**メタデータフラグを設定します。\_します。 IPsec 処理は、初期の "接続" を作成し、接続を再承認するために必要なパケットが ALE レイヤーに達するまで、遅延されます。
 
-トランスポート層と ALE レイヤー コールアウトする必要がありますに登録ユニバーサル副層よりも負荷の低いは副層にします。 組み込みの IPsec/ALE 強制コールアウトは、ユニバーサル副層に存在します。
+トランスポート層と ALE レイヤーのコールアウトは、ユニバーサルサブレイヤーよりも重みが低いサブレイヤーに自身を登録する必要があります。 組み込みの IPsec/ALE 強制コールアウトは、ユニバーサルサブレイヤーに存在します。
 
-次の表では、ALE レイヤーで示すことができますが、パケットの種類を示します。 一部の ALE レイヤーがないこと常に自分を示す値に関連付けられているパケットに注意します。
+次の表は、ALE 層で示されるパケットの種類を示しています。 一部の ALE レイヤーには、常に示されたパケットが関連付けられていないことに注意してください。
 
 <table>
 <colgroup>
@@ -66,30 +66,30 @@ IPsec の処理と共存できるようにするには、コールアウト受�
 <thead>
 <tr class="header">
 <th align="left">ALE レイヤー</th>
-<th align="left">TCP パケット</th>
+<th align="left">TCP パケット数</th>
 <th align="left">UDP パケット</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>バインド (リソースの割り当て)</p></td>
+<td align="left"><p>Bind (リソース割り当て)</p></td>
 <td align="left"><p>該当なし</p></td>
 <td align="left"><p>該当なし</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>接続</p></td>
-<td align="left"><p>パケットがありません。</p></td>
-<td align="left"><p>最初の UDP パケット (発信)</p></td>
+<td align="left"><p>[接続]</p></td>
+<td align="left"><p>パケットがありません</p></td>
+<td align="left"><p>最初の UDP パケット (送信)</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>表示される同意</p></td>
-<td align="left"><p>SYN (受信)</p></td>
-<td align="left"><p>最初の UDP パケット (受信)</p></td>
+<td align="left"><p>Receive/Accept</p></td>
+<td align="left"><p>SYN (着信)</p></td>
+<td align="left"><p>最初の UDP パケット (着信)</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>フローが確立されています。</p></td>
-<td align="left"><p>最後の確認 (受信および送信)</p></td>
-<td align="left"><p>最初の UDP パケット (受信および送信)</p></td>
+<td align="left"><p>確立されたフロー</p></td>
+<td align="left"><p>最終確認 (着信 & 送信)</p></td>
+<td align="left"><p>最初の UDP パケット (着信 & 送信)</p></td>
 </tr>
 </tbody>
 </table>

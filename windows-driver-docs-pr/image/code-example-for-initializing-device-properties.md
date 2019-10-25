@@ -4,27 +4,27 @@ description: デバイス プロパティを初期化するためのコード例
 ms.assetid: ec25fa77-13d8-4cb0-913c-b24010355702
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9bf747c7dab47316ba440be32f3b26c1ee232e73
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b0b69445392be4fcd71f456ab155373dd720460a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67358639"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840872"
 ---
 # <a name="code-example-for-initializing-device-properties"></a>デバイス プロパティを初期化するためのコード例
 
 
-中に、 [ **IWiaMiniDrv::drvInitItemProperties** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvinititemproperties)ルート アイテム、ミニドライバーの呼び出しは、デバイスを記述する次の WIA プロパティを初期化する必要があります。
+ルート項目の[**IWiaMiniDrv::D rvinititemproperties**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvinititemproperties)呼び出し中に、ミニドライバーは、デバイスを記述する次の WIA プロパティを初期化する必要があります。
 
 [**WIA\_DPS\_サービス\_ID**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-service-id)
 
 [**WIA\_DPS\_デバイス\_ID**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-device-id)
 
-[**WIA\_DPS\_GLOBAL\_の ID**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-global-identity)
+[**WIA\_DPS\_グローバル\_ID**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-global-identity)
 
 [**WIA\_DPA\_ファームウェア\_バージョン**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dpa-firmware-version)
 
-次のコード例は、WIA を初期化する方法を示します\_DPS\_サービス\_ID を使用して、 **OpenProperyStore**と**ReadDeviceProperty**を読み取るメソッド鍵\_PNPX\_ServiceId します。 同じ一般的な方法は、各デバイスのプロパティを初期化するために使用できます。
+次のコード例では、OpenPKEY\_PNPX\_ServiceId を読み取るために**open**および**readdeviceproperty**メソッドを使用して、WIA\_DPS\_サービス\_ID を初期化する方法を示します。 同じ一般的な方法を使用して、各デバイスプロパティを初期化できます。
 
 ```cpp
 HRESULT hr = S_OK;

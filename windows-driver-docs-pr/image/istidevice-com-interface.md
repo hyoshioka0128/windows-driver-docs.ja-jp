@@ -4,12 +4,12 @@ description: IStiDevice COM インターフェイス
 ms.assetid: b026fb74-9ce6-4d4e-8a5b-402731904064
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7eca2a64e4a28dd377c95de15d5ecab2a9f5a707
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 774fd0a82e1b51c076dbcf60fb3f8f1037ca80c1
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378915"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840810"
 ---
 # <a name="istidevice-com-interface"></a>IStiDevice COM インターフェイス
 
@@ -17,11 +17,11 @@ ms.locfileid: "67378915"
 
 
 
-**IStiDevice** COM インターフェイスと通信する機能をアプリケーションがデバイスを静止画像を提供します。 インターフェイス メソッドを使用すると、アプリケーション データとの通知を受け取る診断テストを実行するコマンド、送受信[イメージ デバイス イベントではまだ](still-image-device-events.md)とデバイスの機能と状態情報を取得します。
+**Iのデバイス**COM インターフェイスを使用すると、アプリケーションは静止イメージデバイスと通信できます。 インターフェイスメソッドを使用すると、アプリケーションは、データとコマンドを送受信したり、診断テストを実行したり、[静止イメージデバイスイベント](still-image-device-events.md)の通知を受信したり、デバイスの機能と状態情報を取得したりできます。
 
-アクセス、 **IStiDevice**インターフェイスを呼び出すことによって取得、 **CreateDevice**のメソッド、 [IStillImage COM インターフェイス](istillimage-com-interface.md)します。 多くは、 **IStiDevice**によって定義された同じ名前のメソッドを呼び出すことによってインターフェイスのメソッドが実装されている、 [IStiUSD COM インターフェイス](istiusd-com-interface.md)します。
+**Istidevice**インターフェイスへのアクセスは、 [IStillImage COM インターフェイス](istillimage-com-interface.md)の**CreateDevice**メソッドを呼び出すことによって取得されます。 [Istidevice COM インターフェイス](istiusd-com-interface.md)によって定義されているような名前付きメソッドを呼び出すことによって、 **istidevice**インターフェイスのメソッドの多くが実装されます。
 
-次の表とすべてのによって提供されるメソッドについて説明します、 **IStiDevice**インターフェイス。 テーブルでは、通常、各メソッドを呼び出す必要のあるクライアントの種類を示します。
+次の表は、 **Iのデバイス**インターフェイスによって提供されるすべてのメソッドの一覧とその説明を示しています。 この表は、通常、各メソッドを呼び出す必要があるクライアントの種類を示しています。
 
 <table>
 <colgroup>
@@ -38,94 +38,94 @@ ms.locfileid: "67378915"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sti/nf-sti-istidevice-devicereset" data-raw-source="[&lt;strong&gt;IStiDevice::DeviceReset&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sti/nf-sti-istidevice-devicereset)"><strong>IStiDevice::DeviceReset</strong></a></p></td>
-<td><p>静止画像デバイスを既知の状態にリセットします。</p></td>
-<td><p>イメージの取得 Api</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/sti/nf-sti-istidevice-devicereset" data-raw-source="[&lt;strong&gt;IStiDevice::DeviceReset&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/sti/nf-sti-istidevice-devicereset)"><strong>Ii デバイス::D eviceReset</strong></a></p></td>
+<td><p>静止イメージデバイスを既知の状態にリセットします。</p></td>
+<td><p>イメージ取得 Api</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sti/nf-sti-istidevice-diagnostic" data-raw-source="[&lt;strong&gt;IStiDevice::Diagnostic&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sti/nf-sti-istidevice-diagnostic)"><strong>IStiDevice::Diagnostic</strong></a></p></td>
-<td><p>静止画像デバイスで診断テストを実行します。</p></td>
-<td><p>スキャナーとカメラのコントロール パネル</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/sti/nf-sti-istidevice-diagnostic" data-raw-source="[&lt;strong&gt;IStiDevice::Diagnostic&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/sti/nf-sti-istidevice-diagnostic)"><strong>Ii デバイス::D iに依存しない</strong></a></p></td>
+<td><p>静止イメージデバイスで診断テストを実行します。</p></td>
+<td><p>スキャナーとカメラのコントロールパネル</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sti/nf-sti-istidevice-escape" data-raw-source="[&lt;strong&gt;IStiDevice::Escape&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sti/nf-sti-istidevice-escape)"><strong>IStiDevice::Escape</strong></a></p></td>
-<td><p>静止画像デバイスには、ベンダー固有の I/O 操作の要求を送信します。</p></td>
-<td><p>イメージの取得 Api</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/sti/nf-sti-istidevice-escape" data-raw-source="[&lt;strong&gt;IStiDevice::Escape&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/sti/nf-sti-istidevice-escape)"><strong>Ii デバイス:: Escape</strong></a></p></td>
+<td><p>ベンダー固有の i/o 操作の要求を静止イメージデバイスに送信します。</p></td>
+<td><p>イメージ取得 Api</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sti/nf-sti-istidevice-getcapabilities" data-raw-source="[&lt;strong&gt;IStiDevice::GetCapabilities&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sti/nf-sti-istidevice-getcapabilities)"><strong>IStiDevice::GetCapabilities</strong></a></p></td>
-<td><p>デバイスの機能に静止画像を返します。</p></td>
-<td><p>イベント モニターを静止画像します。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/sti/nf-sti-istidevice-getcapabilities" data-raw-source="[&lt;strong&gt;IStiDevice::GetCapabilities&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/sti/nf-sti-istidevice-getcapabilities)"><strong>Ia デバイス:: GetCapabilities</strong></a></p></td>
+<td><p>静止イメージデバイスの機能を返します。</p></td>
+<td><p>静止画像イベントモニタ</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sti/nf-sti-istidevice-getlasterror" data-raw-source="[&lt;strong&gt;IStiDevice::GetLastError&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sti/nf-sti-istidevice-getlasterror)"><strong>IStiDevice::GetLastError</strong></a></p></td>
-<td><p>静止画像デバイスに関連付けられている最後の既知のエラーを返します。</p></td>
-<td><p>イメージの取得 Api</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/sti/nf-sti-istidevice-getlasterror" data-raw-source="[&lt;strong&gt;IStiDevice::GetLastError&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/sti/nf-sti-istidevice-getlasterror)"><strong>Ii デバイス:: GetLastError</strong></a></p></td>
+<td><p>静止イメージデバイスに関連付けられている最後の既知のエラーを返します。</p></td>
+<td><p>イメージ取得 Api</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sti/nf-sti-istidevice-getlasterrorinfo" data-raw-source="[&lt;strong&gt;IStiDevice::GetLastErrorInfo&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sti/nf-sti-istidevice-getlasterrorinfo)"><strong>IStiDevice::GetLastErrorInfo</strong></a></p></td>
-<td><p>静止画像デバイスに関連付けられている最後の既知のエラーに関する情報を返します。</p></td>
-<td><p>イメージの取得 Api</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/sti/nf-sti-istidevice-getlasterrorinfo" data-raw-source="[&lt;strong&gt;IStiDevice::GetLastErrorInfo&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/sti/nf-sti-istidevice-getlasterrorinfo)"><strong>Ia デバイス:: GetLastErrorInfo</strong></a></p></td>
+<td><p>静止イメージデバイスに関連付けられている最後の既知のエラーに関する情報を返します。</p></td>
+<td><p>イメージ取得 Api</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sti/nf-sti-istidevice-getlastnotificationdata" data-raw-source="[&lt;strong&gt;IStiDevice::GetLastNotificationData&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sti/nf-sti-istidevice-getlastnotificationdata)"><strong>IStiDevice::GetLastNotificationData</strong></a></p></td>
-<td><p>静止画像デバイスで発生した最新のイベントの説明を返します。</p></td>
-<td><p>イメージの取得 Api</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/sti/nf-sti-istidevice-getlastnotificationdata" data-raw-source="[&lt;strong&gt;IStiDevice::GetLastNotificationData&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/sti/nf-sti-istidevice-getlastnotificationdata)"><strong>Iのデバイス:: GetLastNotificationData</strong></a></p></td>
+<td><p>静止イメージデバイスで発生した最新のイベントの説明を返します。</p></td>
+<td><p>イメージ取得 Api</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sti/nf-sti-istidevice-getstatus" data-raw-source="[&lt;strong&gt;IStiDevice::GetStatus&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sti/nf-sti-istidevice-getstatus)"><strong>IStiDevice::GetStatus</strong></a></p></td>
-<td><p>静止画像デバイスの状態情報を返します。</p></td>
-<td><p>イメージの取得 Api と、まだイベント モニターの画像</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/sti/nf-sti-istidevice-getstatus" data-raw-source="[&lt;strong&gt;IStiDevice::GetStatus&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/sti/nf-sti-istidevice-getstatus)"><strong>Ii デバイス:: GetStatus</strong></a></p></td>
+<td><p>静止イメージデバイスの状態情報を返します。</p></td>
+<td><p>イメージ取得 Api と静止画像イベントモニター</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sti/nf-sti-istidevice-initialize" data-raw-source="[&lt;strong&gt;IStiDevice::Initialize&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sti/nf-sti-istidevice-initialize)"><strong>IStiDevice::Initialize</strong></a></p></td>
-<td><p>オブジェクトのインスタンスを初期化します。</p></td>
-<td><p>直接呼び出されません</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/sti/nf-sti-istidevice-initialize" data-raw-source="[&lt;strong&gt;IStiDevice::Initialize&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/sti/nf-sti-istidevice-initialize)"><strong>Ii デバイス:: Initialize</strong></a></p></td>
+<td><p>オブジェクトインスタンスを初期化します。</p></td>
+<td><p>直接呼び出されない</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sti/nf-sti-istidevice-lockdevice" data-raw-source="[&lt;strong&gt;IStiDevice::LockDevice&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sti/nf-sti-istidevice-lockdevice)"><strong>IStiDevice::LockDevice</strong></a></p></td>
-<td><p>呼び出し元によって排他的に使用のデバイスをロックします。</p></td>
-<td><p>すべて<strong>IStiDevice</strong>クライアント インターフェイス</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/sti/nf-sti-istidevice-lockdevice" data-raw-source="[&lt;strong&gt;IStiDevice::LockDevice&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/sti/nf-sti-istidevice-lockdevice)"><strong>Ii デバイス:: LockDevice</strong></a></p></td>
+<td><p>呼び出し元によって排他的に使用されるようにデバイスをロックします。</p></td>
+<td><p>すべての<strong>Ii デバイス</strong>インターフェイスクライアント</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sti/nf-sti-istidevice-rawreadcommand" data-raw-source="[&lt;strong&gt;IStiDevice::RawReadCommand&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sti/nf-sti-istidevice-rawreadcommand)"><strong>IStiDevice::RawReadCommand</strong></a></p></td>
-<td><p>読み取りは、静止画像デバイスからの情報をコマンドします。</p></td>
-<td><p>イメージの取得 Api</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/sti/nf-sti-istidevice-rawreadcommand" data-raw-source="[&lt;strong&gt;IStiDevice::RawReadCommand&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/sti/nf-sti-istidevice-rawreadcommand)"><strong>IStiDevice:: RawReadCommand</strong></a></p></td>
+<td><p>静止イメージデバイスからコマンド情報を読み取ります。</p></td>
+<td><p>イメージ取得 Api</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sti/nf-sti-istidevice-rawreaddata" data-raw-source="[&lt;strong&gt;IStiDevice::RawReadData&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sti/nf-sti-istidevice-rawreaddata)"><strong>IStiDevice::RawReadData</strong></a></p></td>
-<td><p>静止画像デバイスからデータを読み取ります。</p></td>
-<td><p>イメージの取得 Api</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/sti/nf-sti-istidevice-rawreaddata" data-raw-source="[&lt;strong&gt;IStiDevice::RawReadData&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/sti/nf-sti-istidevice-rawreaddata)"><strong>Ii デバイス:: RawReadData</strong></a></p></td>
+<td><p>静止イメージデバイスからデータを読み取ります。</p></td>
+<td><p>イメージ取得 Api</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sti/nf-sti-istidevice-rawwritecommand" data-raw-source="[&lt;strong&gt;IStiDevice::RawWriteCommand&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sti/nf-sti-istidevice-rawwritecommand)"><strong>IStiDevice::RawWriteCommand</strong></a></p></td>
-<td><p>送信は、静止画像デバイス情報をコマンドします。</p></td>
-<td><p>イメージの取得 Api</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/sti/nf-sti-istidevice-rawwritecommand" data-raw-source="[&lt;strong&gt;IStiDevice::RawWriteCommand&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/sti/nf-sti-istidevice-rawwritecommand)"><strong>IStiDevice:: RawWriteCommand</strong></a></p></td>
+<td><p>コマンド情報を静止イメージデバイスに送信します。</p></td>
+<td><p>イメージ取得 Api</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sti/nf-sti-istidevice-rawwritedata" data-raw-source="[&lt;strong&gt;IStiDevice::RawWriteData&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sti/nf-sti-istidevice-rawwritedata)"><strong>IStiDevice::RawWriteData</strong></a></p></td>
-<td><p>静止画像デバイスにデータを書き込みます。</p></td>
-<td><p>イメージの取得 Api</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/sti/nf-sti-istidevice-rawwritedata" data-raw-source="[&lt;strong&gt;IStiDevice::RawWriteData&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/sti/nf-sti-istidevice-rawwritedata)"><strong>IStiDevice:: RawWriteData</strong></a></p></td>
+<td><p>静止イメージデバイスにデータを書き込みます。</p></td>
+<td><p>イメージ取得 Api</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sti/nf-sti-istidevice-release" data-raw-source="[&lt;strong&gt;IStiDevice::Release&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sti/nf-sti-istidevice-release)"><strong>IStiDevice::Release</strong></a></p></td>
-<td><p>オブジェクトのインスタンスを閉じて、アクセス権を削除、 <strong>IStiDevice</strong>インターフェイス。</p></td>
-<td><p>すべて<strong>IStiDevice</strong>クライアント インターフェイス</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/sti/nf-sti-istidevice-release" data-raw-source="[&lt;strong&gt;IStiDevice::Release&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/sti/nf-sti-istidevice-release)"><strong>Ii デバイス:: リリース</strong></a></p></td>
+<td><p>オブジェクトインスタンスを閉じ、 <strong>Iのデバイス</strong>インターフェイスへのアクセスを削除します。</p></td>
+<td><p>すべての<strong>Ii デバイス</strong>インターフェイスクライアント</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sti/nf-sti-istidevice-subscribe" data-raw-source="[&lt;strong&gt;IStiDevice::Subscribe&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sti/nf-sti-istidevice-subscribe)"><strong>IStiDevice::Subscribe</strong></a></p></td>
-<td><p>デバイス イベントの通知を受け取る、呼び出し元を登録します。</p></td>
-<td><p>イメージの取得 Api</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/sti/nf-sti-istidevice-subscribe" data-raw-source="[&lt;strong&gt;IStiDevice::Subscribe&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/sti/nf-sti-istidevice-subscribe)"><strong>Ia デバイス:: Subscribe</strong></a></p></td>
+<td><p>デバイスイベントの通知を受信するように呼び出し元を登録します。</p></td>
+<td><p>イメージ取得 Api</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sti/nf-sti-istidevice-unlockdevice" data-raw-source="[&lt;strong&gt;IStiDevice::UnLockDevice&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sti/nf-sti-istidevice-unlockdevice)"><strong>IStiDevice::UnLockDevice</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/sti/nf-sti-istidevice-unlockdevice" data-raw-source="[&lt;strong&gt;IStiDevice::UnLockDevice&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/sti/nf-sti-istidevice-unlockdevice)"><strong>Ii デバイス:: UnLockDevice</strong></a></p></td>
 <td><p>デバイスのロックを解除します。</p></td>
-<td><p>すべて<strong>IStiDevice</strong>クライアント インターフェイス</p></td>
+<td><p>すべての<strong>Ii デバイス</strong>インターフェイスクライアント</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sti/nf-sti-istidevice-unsubscribe" data-raw-source="[&lt;strong&gt;IStiDevice::UnSubscribe&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sti/nf-sti-istidevice-unsubscribe)"><strong>IStiDevice::UnSubscribe</strong></a></p></td>
-<td><p>デバイス イベントの通知に登録されているアプリケーションの一覧から、呼び出し元を削除します。</p></td>
-<td><p>イメージの取得 Api</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/sti/nf-sti-istidevice-unsubscribe" data-raw-source="[&lt;strong&gt;IStiDevice::UnSubscribe&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/sti/nf-sti-istidevice-unsubscribe)"><strong>Ii デバイス:: 登録解除</strong></a></p></td>
+<td><p>デバイスイベントの通知を受信するために登録されているアプリケーションの一覧から呼び出し元を削除します。</p></td>
+<td><p>イメージ取得 Api</p></td>
 </tr>
 </tbody>
 </table>

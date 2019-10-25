@@ -3,19 +3,19 @@ title: グループ親
 description: グループ親
 ms.assetid: b4c40c15-df16-4af0-81c8-9e70d26ba598
 keywords:
-- グループの親の WDK の印刷
-- 共通のプロパティ シートのユーザー インターフェイスを WDK の印刷、グループの親
-- CPSUI WDK の印刷、グループの親
-- WDK プロパティ シートのページを印刷するグループの親
-- プロパティ シートのページをグループ化
+- グループ親 WDK 印刷
+- 共通プロパティシートのユーザーインターフェイス WDK print、グループの親
+- CPSUI WDK print、グループの親
+- プロパティシートページの WDK 印刷、グループの親
+- プロパティシートのページをグループ化する
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b76cd1adf5357c4cc24179c21a20e21330ae2756
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 000014b2ca770182027eb6398f0b60087062d8a4
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368988"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844577"
 ---
 # <a name="group-parent"></a>グループ親
 
@@ -23,13 +23,13 @@ ms.locfileid: "67368988"
 
 
 
-プロパティ シートのページは、1 つに割り当てて、化できます*グループの親*します。 親のグループを作成するには CPSUI を呼び出すことによって[ **ComPropSheet** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/nc-compstui-pfncompropsheet)関数と、 [ **CPSFUNC\_挿入\_PSUIPAGE**](https://docs.microsoft.com/previous-versions/ff546414(v=vs.85))関数のコードと PSUIPAGEINSERT を指定する\_グループ\_として親、**型**のメンバー、 [ **INSERTPSUIPAGE\_情報** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_insertpsuipage_info)構造体。
+プロパティシートのページは、1つの*グループの親*に割り当ててグループ化することができます。 [**Cpsfunc\_INSERT\_PSUIPAGE**](https://docs.microsoft.com/previous-versions/ff546414(v=vs.85))関数コードを指定して CPSUI の[**ComPropSheet**](https://docs.microsoft.com/windows-hardware/drivers/ddi/compstui/nc-compstui-pfncompropsheet)関数を呼び出し、PSUIPAGEINSERT\_Group\_parent を**型**のメンバーとして指定することによって、[**グループの親を作成できます。INSERTPSUIPAGE\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/compstui/ns-compstui-_insertpsuipage_info)構造体。
 
-新しい親のグループが作成されたときにハンドルが返されます。 ハンドルとして使用できる、 *hComPropSheet*パラメーターを[ **ComPropSheet**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/nc-compstui-pfncompropsheet)を追加またはプロパティ シートのページを削除する場合、します。
+新しいグループの親が作成されると、ハンドルが返されます。 このハンドルは、プロパティシートページを追加または削除するときに、 [**ComPropSheet**](https://docs.microsoft.com/windows-hardware/drivers/ddi/compstui/nc-compstui-pfncompropsheet)の*hComPropSheet*パラメーターとして使用できます。
 
-さらに、グループの親ハンドルとして受信される、 **hComPropSheet**のメンバー、 [ **PROPSHEETUI\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_propsheetui_info)によって受信される構造体、アプリケーションの[ **PFNPROPSHEETUI**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/nc-compstui-pfnpropsheetui)-コールバック関数を入力します。 新しいグループの親を作成しない場合、このプロパティ シートのすべてのページを割り当てる必要があります。
+さらに、グループの親ハンドルは、アプリケーションの[**PFNPROPSHEETUI**](https://docs.microsoft.com/windows-hardware/drivers/ddi/compstui/nc-compstui-pfnpropsheetui)型のコールバック関数によって受信される[**PROPSHEETUI\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/compstui/ns-compstui-_propsheetui_info)構造体の**hComPropSheet**メンバーとして受信されます。 新しいグループの親を作成しない場合は、すべてのプロパティシートページをこのページに割り当てる必要があります。
 
-作成される各グループの親の下の追加のグループの親を作成することができます。 プロパティ シート自体は、最上位レベルのグループの親であると見なされます。 追加のグループの親を明示的に作成しない場合は、最上位の親に追加されたプロパティ シートのすべてのページが割り当てられます。
+作成される各グループの親の下に、追加のグループの親を作成できます。 プロパティシート自体は、最上位レベルのグループの親と見なされます。 追加のグループの親を明示的に作成しない場合は、追加されたすべてのプロパティシートページが最上位の親に割り当てられます。
 
  
 

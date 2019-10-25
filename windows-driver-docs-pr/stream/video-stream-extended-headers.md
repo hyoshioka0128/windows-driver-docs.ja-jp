@@ -3,25 +3,25 @@ title: ビデオ ストリームの拡張ヘッダー
 description: ビデオ ストリームの拡張ヘッダー
 ms.assetid: 6540026c-a41a-49e2-a41f-fe64106408f5
 keywords:
-- ビデオ キャプチャ WDK AVStream、拡張ヘッダー
-- ヘッダーの拡張、ビデオの WDK AVStream のキャプチャ
-- 拡張ヘッダー WDK ビデオのキャプチャします。
-- ヘッダーの WDK ビデオのキャプチャ
+- ビデオキャプチャ WDK AVStream、拡張ヘッダー
+- ビデオのキャプチャ WDK AVStream、拡張ヘッダー
+- 拡張ヘッダー WDK ビデオキャプチャ
+- ヘッダー WDK ビデオキャプチャ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: caef9db00227c56620ad61dce4cc991fb11afa01
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 80ccc8d328ee007d901a5ec3bd155b42e3fc9f02
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385367"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843663"
 ---
 # <a name="video-stream-extended-headers"></a>ビデオ ストリームの拡張ヘッダー
 
 
-ビデオ キャプチャ ミニドライバーでは、その出力ストリームに含まれる拡張のヘッダーを使用して、ストリームと現在のフレームの内容に関する補足情報を提供します。 たとえば、イメージ ストリーム ヘッダーは、現在のフレーム数、フレームのドロップ、およびフィールドの極性フラグの数に関する情報を提供します。 各フレームが完了したため、ミニドライバーは、キャプチャされたフレームに関する補足情報と拡張のヘッダーに格納します。
+ビデオキャプチャミニドライバーでは、出力ストリームの拡張ヘッダーを使用して、ストリームと現在のフレームコンテンツに関する補助的な情報を提供します。 たとえば、イメージストリームヘッダーは、現在のフレーム番号、ドロップされたフレーム数、およびフィールド極性フラグに関する情報を提供します。 各フレームが完了すると、ミニドライバーは、キャプチャされたフレームに関する補足情報を拡張ヘッダーに格納します。
 
-Stream クラス ビデオ キャプチャ ミニドライバーを設定して、pin の追加情報を提供する機能を示すため、 **StreamHeaderMediaSpecific**のメンバー、 [ **HW\_ストリーム\_オブジェクト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/ns-strmini-_hw_stream_object)構造体を**sizeof**以下の 2 つの構造体のいずれか。
+Stream クラス video capture ミニドライバーは、 [**HW\_\_ストリーム**](https://docs.microsoft.com/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_stream_object)の**StreamHeaderMediaSpecific**メンバーを**sizeof** one に設定することによって、この追加情報を pin に提供する機能を示します。次の2つの構造体の。
 
 <table>
 <colgroup>
@@ -30,27 +30,27 @@ Stream クラス ビデオ キャプチャ ミニドライバーを設定して�
 </colgroup>
 <thead>
 <tr class="header">
-<th>構造体名</th>
+<th>構造名</th>
 <th>目的</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_frame_info" data-raw-source="[&lt;strong&gt;KS_FRAME_INFO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_frame_info)"><strong>KS_FRAME_INFO</strong></a></p></td>
-<td><p>フレームの数、フレーム数、フィールドの極性フラグおよび DirectDraw surface ハンドルを削除します。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_frame_info" data-raw-source="[&lt;strong&gt;KS_FRAME_INFO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_frame_info)"><strong>KS_FRAME_INFO</strong></a></p></td>
+<td><p>フレーム数、ドロップフレーム数、フィールド極性フラグ、および DirectDraw サーフェイスハンドル。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_vbi_frame_info" data-raw-source="[&lt;strong&gt;KS_VBI_FRAME_INFO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_vbi_frame_info)"><strong>KS_VBI_FRAME_INFO</strong></a></p></td>
-<td><p>VBI 形式では、チャネルは、標準のビデオについてを変更します。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_vbi_frame_info" data-raw-source="[&lt;strong&gt;KS_VBI_FRAME_INFO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_vbi_frame_info)"><strong>KS_VBI_FRAME_INFO</strong></a></p></td>
+<td><p>VBI 形式、channel change 情報、video standard。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-Stream クラスのミニドライバーがこの追加情報を提供していない場合に設定する必要があります**StreamHeaderMediaSpecific**をゼロにします。
+ストリームクラスミニドライバーがこの追加情報を提供しない場合は、 **StreamHeaderMediaSpecific**を0に設定する必要があります。
 
-値を指定する場合の詳細については**StreamHeaderMediaSpecific**を参照してください[Stream カテゴリ](stream-categories.md)します。
+**StreamHeaderMediaSpecific**で値を指定する場合の詳細については、「[ストリームのカテゴリ](stream-categories.md)」を参照してください。
 
  
 

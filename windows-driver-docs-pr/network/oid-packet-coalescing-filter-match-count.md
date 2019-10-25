@@ -1,57 +1,57 @@
 ---
 title: OID_PACKET_COALESCING_FILTER_MATCH_COUNT
-description: NDIS は、キャッシュ、または 1 つにまとめ、ネットワーク アダプターのされたパケットの数を取得する OID_PACKET_COALESCING_FILTER_MATCH_COUNT の OID クエリ要求を発行します。
+description: NDIS は、OID_PACKET_COALESCING_FILTER_MATCH_COUNT の OID クエリ要求を発行して、ネットワークアダプターでキャッシュまたは結合されたパケットの数を取得します。
 ms.assetid: 3325865D-A329-4562-8270-CC2F42043D48
 ms.date: 08/08/2017
-keywords: -OID_PACKET_COALESCING_FILTER_MATCH_COUNT ネットワーク ドライバーが Windows Vista 以降
+keywords: -Windows Vista 以降の OID_PACKET_COALESCING_FILTER_MATCH_COUNT ネットワークドライバー
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d36c0cd0b56e6697748a9bd47dabc257b72406d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8e3cee607f632cebe14ac4b508106e2de71cc88d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383247"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844071"
 ---
-# <a name="oidpacketcoalescingfiltermatchcount"></a>OID\_パケット\_COALESCING\_フィルター\_一致\_数
+# <a name="oid_packet_coalescing_filter_match_count"></a>OID\_パケット\_結合\_フィルター\_一致する\_カウント
 
 
-OID の OID クエリ要求を発行する NDIS\_パケット\_COALESCING\_フィルター\_一致\_キャッシュされたパケットの数を取得する数または*まとめられた*のネットワーク アダプター。 アダプターが有効な場合、ネットワーク アダプターが受信したパケットを連結[NDIS パケット結合](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-packet-coalescing)パケットが受信フィルターに一致するとします。
+NDIS は oid\_パケット\_結合\_\_\_フィルターの OID クエリ要求を発行して、ネットワークアダプター上でキャッシュされた (または*結合*された) パケットの数を取得します。 アダプターで[NDIS パケット合体](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-packet-coalescing)が有効になっていて、パケットが受信フィルターと一致する場合、ネットワークアダプターは受信パケットを結合します。
 
-**InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体には、呼び出し元が割り当てた ULONG64 変数へのポインターが含まれています. クエリ要求から正常に返された前に、ドライバー更新プログラム、ULONG64 変数に一致したパケットの数とは、ネットワーク アダプターのフィルターを受信します。
+[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造体の**informationbuffer**メンバーには、呼び出し元が割り当てた ULONG64 変数へのポインターが含まれています。 クエリ要求から正常に復帰する前に、ドライバーは ULONG64 変数を、ネットワークアダプター上で受信フィルターに一致したパケット数で更新します。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
-NDIS 6.30、以降をサポートするドライバー [NDIS パケット結合](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-packet-coalescing)OID の OID クエリ要求をサポートする必要があります\_パケット\_COALESCING\_フィルター\_一致\_カウントします。
+Ndis 6.30 以降では、 [ndis パケット合体](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-packet-coalescing)をサポートするドライバーは、OID\_パケット\_結合\_フィルター\_一致する oid クエリ要求をサポートする必要があり\_カウントします。
 
-**注**  をサポートするドライバー、[シングル ルート I/O 仮想化 (SR-IOV)](https://docs.microsoft.com/windows-hardware/drivers/network/single-root-i-o-virtualization--sr-iov-)または[仮想マシン キュー (VMQ)](https://docs.microsoft.com/windows-hardware/drivers/network/virtual-machine-queue--vmq--in-ndis-6-20)インターフェイスは、OID クエリ要求をサポートする必要はありませんこの OID。
+**注  :** [シングルルート i/o 仮想化 (sr-iov)](https://docs.microsoft.com/windows-hardware/drivers/network/single-root-i-o-virtualization--sr-iov-)または[仮想マシンキュー (VMQ](https://docs.microsoft.com/windows-hardware/drivers/network/virtual-machine-queue--vmq--in-ndis-6-20) ) インターフェイスをサポートするドライバーは、この oid の oid クエリ要求をサポートするために必要ありません。
 
  
 
-パケットの結合をサポートしているミニポート ドライバーでは、各ネットワーク アダプターで結合された受信パケットの ULONG64 カウンターをインクリメントする必要があります。 上にあるどのドライバーのダウンロードの OID メソッド要求を通じたミニポート ドライバーに、受信フィルターに一致した場合、パケットが結合された[OID\_受信\_フィルター\_設定\_フィルター](oid-receive-filter-set-filter.md).
+パケット合体をサポートするミニポートドライバーは、ネットワークアダプターで結合された受信パケットごとに ULONG64 カウンターを増やす必要があります。 パケットは受信フィルターに一致した場合に結合されます。このフィルター [\_設定された\_フィルターを受け取る\_フィルター設定さ](oid-receive-filter-set-filter.md)れている\_oid の oid メソッド要求を使用して、そのドライバーがミニポートドライバーにダウンロードされます。
 
-ドライバーが、OID の OID のクエリ要求を処理する場合、このカウンターの値を返します\_パケット\_COALESCING\_フィルター\_一致\_数。
+このドライバーが oid クエリ要求を処理するときに、このカウンターの値が返されます。これは、OID\_パケット\_結合\_フィルター\_\_カウントに一致します。
 
-OID の OID のクエリ要求を処理した後、ミニポート ドライバー、カウンターをクリアする必要があります\_パケット\_COALESCING\_フィルター\_一致\_数。 次の条件に該当する場合、ミニポート ドライバーは、カウンターをオフだけする必要があります。
+\_パケット\_の oid クエリ要求を処理した後に、ミニポートドライバーがこのカウンターをクリアしないようにする必要があります。\_フィルター\_、\_カウントに一致します。 ミニポートドライバーは、次の条件に該当する場合にのみカウンターをクリアする必要があります。
 
--   ミニポート ドライバーの OID セット要求を処理する[OID\_PNP\_設定\_POWER](oid-pnp-set-power.md) NdisDeviceStateD0 の電力状態に再開します。
+-   ミニポートドライバーは oid\_PNP の OID セット要求を処理します。これにより、NdisDeviceStateD0 のフルパワー状態に復帰[\_電力が\_設定](oid-pnp-set-power.md)されます。
 
--   NDIS ミニポート ドライバーの呼び出す[ *MiniportResetEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_reset)関数を基になるネットワーク アダプターをリセットします。
+-   NDIS は、ミニポートドライバーの[*Miniportresetex*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_reset)関数を呼び出して、基になるネットワークアダプターをリセットします。
 
-パケットの結合の詳細については、次を参照してください。 [NDIS パケット結合](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)します。
+パケット合体の詳細については、「 [NDIS パケット合体](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)」を参照してください。
 
-### <a name="return-status-codes"></a>リターン状態コード
+### <a name="return-status-codes"></a>ステータスコードを返す
 
-ミニポート ドライバーでは、OID の OID メソッド要求の次のステータス コードのいずれかを返します\_パケット\_COALESCING\_フィルター\_一致\_数。
+ミニポートドライバーは、oid\_パケット\_結合\_フィルターの OID メソッド要求について、次のいずれかの状態コードを返し\_カウント\_します。
 
 <a href="" id="ndis-status-success"></a>NDIS\_状態\_成功  
-OID 要求は正常に完了しました。
+OID 要求が正常に完了しました。
 
-<a href="" id="ndis-status-invalid-length"></a>NDIS\_状態\_無効な\_長さ  
-情報バッファーが小さすぎます。 ドライバーのセット、**データ。設定\_情報。BytesNeeded**内のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体に必要な最小バッファー サイズ。
+<a href="" id="ndis-status-invalid-length"></a>NDIS\_の状態\_無効な\_の長さです  
+情報バッファーが短すぎます。 ドライバーはデータを設定し**ます。\_情報を設定します。** 必要な最小バッファーサイズに対して、 [**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造体のメンバーが必要です。
 
 <a href="" id="ndis-status-failure"></a>NDIS\_状態\_エラー  
-他の理由から、要求が失敗しました。
+他の理由で要求が失敗しました。
 
 <a name="requirements"></a>要件
 ------------
@@ -64,11 +64,11 @@ OID 要求は正常に完了しました。
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>NDIS 6.30 以降をサポートします。</p></td>
+<td><p>NDIS 6.30 以降でサポートされています。</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Ntddndis.h (include Ndis.h)</td>
+<td>Ntddndis (Ndis .h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -76,9 +76,9 @@ OID 要求は正常に完了しました。
 ## <a name="see-also"></a>関連項目
 
 
-[*MiniportResetEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_reset)
+[*MiniportResetEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_reset)
 
-[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
+[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)
 
 [OID\_PNP\_設定\_電源](oid-pnp-set-power.md)
 

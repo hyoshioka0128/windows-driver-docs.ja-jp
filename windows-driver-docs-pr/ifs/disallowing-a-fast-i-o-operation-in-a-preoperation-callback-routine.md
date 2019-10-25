@@ -1,45 +1,45 @@
 ---
-title: Preoperation コールバック ルーチンで高速な I/O 操作を許可しません。
-description: Preoperation コールバック ルーチンで高速な I/O 操作を許可しません。
+title: Preoperation コールバックルーチンで高速 i/o 操作を許可しない
+description: Preoperation コールバックルーチンで高速 i/o 操作を許可しない
 ms.assetid: 20797d8c-ffcf-46df-b870-839d5c02d2d4
 keywords:
-- preoperation コールバック ルーチン WDK ファイル システム ミニフィルター、高速な I/O を禁止しています
-- 高速な I/O 操作の WDK ファイル システム ミニフィルターを禁止します。
-- 高速の I/O には、WDK のファイル システムが許可されていません
+- preoperation コールバックルーチン WDK ファイルシステムミニフィルター (高速 i/o を禁止)
+- 高速 i/o 操作を許可しない WDK ファイルシステムミニフィルター
+- 高速 i/o が禁止されている WDK ファイルシステム
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: afc61f1f77cee583691f97684d1dce45da0859d0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 038301b102db1a7b6111f25340169a8800e152a9
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385557"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841434"
 ---
-# <a name="disallow-a-fast-io-operation-in-a-preoperation-callback-routine"></a>Preoperation コールバック ルーチンで高速な I/O 操作を許可しません。
+# <a name="disallow-a-fast-io-operation-in-a-preoperation-callback-routine"></a>Preoperation コールバックルーチンで高速 i/o 操作を許可しない
 
 
 ## <span id="ddk_disallowing_a_fast_io_operation_in_a_preoperation_callback_routine"></span><span id="DDK_DISALLOWING_A_FAST_IO_OPERATION_IN_A_PREOPERATION_CALLBACK_ROUTINE"></span>
 
 
-特定の状況でミニフィルター ドライバーを完了するのではなく高速な I/O 操作を許可しないようにできます。 高速な I/O 操作を禁止することにより、高速の I/O パス操作に使用されていることを防ぎます。
+場合によっては、ミニフィルタードライバーでは、実行するのではなく、高速の i/o 操作を許可しないことがあります。 高速 i/o 操作を禁止すると、高速な i/o パスを操作に使用できなくなります。
 
-など、I/O 操作を完了すると、高速な I/O 操作を禁止することで処理を停止し、フィルター マネージャーに返すことを意味します。 ただし、高速な I/O 操作を禁止することは完了と異なるです。 ミニフィルター ドライバーには、I/O マネージャーによって発行された高速な I/O 操作が許可されていません、I/O マネージャーは同等の IRP ベースの操作と同じ操作を再発行することがあります。
+I/o 操作の完了と同様に、高速な i/o 操作を禁止するということは、処理を停止し、フィルターマネージャーに返すことを意味します。 ただし、高速の i/o 操作を許可しないことは、その処理を完了することとは異なります。 ミニフィルタードライバーで i/o マネージャーによって発行された高速 i/o 操作が禁止されている場合、i/o マネージャーは、同等の IRP ベースの操作と同じ操作を再実行することがあります。
 
-ミニフィルター ドライバーのときに[ **preoperation コールバック ルーチン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nc-fltkernel-pflt_pre_operation_callback)高速の I/O 操作を許可されていません。 フィルター マネージャーは次の。
+ミニフィルタードライバーの[**preoperation コールバックルーチン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nc-fltkernel-pflt_pre_operation_callback)で高速 i/o 操作が禁止されている場合、フィルターマネージャーは次の処理を実行します。
 
--   以下の現在のミニフィルター ドライバー ミニフィルター ドライバー、レガシ フィルター、またはファイル システム操作を送信しません。
+-   は、現在のミニフィルタードライバー、レガシフィルター、またはファイルシステムの下にあるミニフィルタードライバーに操作を送信しません。
 
--   呼び出し、 [ **postoperation コールバック ルーチン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nc-fltkernel-pflt_post_operation_callback)ミニフィルター ドライバーのインスタンスのスタックでは、現在のミニフィルター ドライバー上ミニフィルター ドライバー。
+-   ミニフィルタードライバーインスタンススタック内の現在のミニフィルタードライバーの前にあるミニ[**操作コールバックルーチン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nc-fltkernel-pflt_post_operation_callback)を呼び出します。
 
--   存在する場合の操作で、現在のミニフィルター ドライバーの postoperation コールバック ルーチンを呼び出しません。
+-   は、現在のミニフィルタードライバーの postoperation コールバックルーチンが存在する場合、その操作を呼び出しません。
 
-ミニフィルター ドライバー FLT を返すことによって、高速の I/O 操作を許可しません\_PREOP\_DISALLOW\_FASTIO、操作の preoperation コールバック ルーチンから。
+ミニフィルタードライバーでは、FLT\_PREOP\_を返すことによって、操作の preop コールバックルーチンからの\_FAO を許可しないようにすることで、高速な i/o 操作を行うことができません。
 
-Preoperation コールバック ルーチンは、コールバックのデータ構造体を設定しないでください**IoStatus.Status**フィールド、フィルター マネージャーがステータスを自動的にこのフィールドを設定するため\_FLT\_DISALLOW\_高速\_IO。
+Preoperation コールバックルーチンは、コールバックデータ構造の FLT フィールドを設定しないでください **。** フィルターマネージャーによって、このフィールドが自動的に status\_\_設定され、高速\_IO\_は許可されません。
 
-FLT\_PREOP\_DISALLOW\_FASTIO は高速な I/O 操作に対してのみ返されます。 操作が高速な I/O 操作であるかどうかを確認するのを参照してください。 [ **FLT\_IS\_FASTIO\_操作**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)します。
+FLT\_PREOP\_\_許可されていない高速 i/o 操作の場合にのみ返すことができます。 操作が高速 i/o 操作であるかどうかを確認するには、「 [**FLT\_is\_faan o\_操作**](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)」を参照してください。
 
-ミニフィルター ドライバー FLT を返すことができません\_PREOP\_DISALLOW\_IRP の FASTIO\_MJ\_シャット ダウン、IRP\_MJ\_ボリューム\_マウント、または IRP\_MJ\_ボリューム\_マウント解除の動作。
+ミニフィルタードライバーは、FLT\_PREOP\_を返すことができません。 IRP\_MJ\_SHUTDOWN、IRP\_MJ\_VOLUME\_MOUNT、または IRP\_MJ\_VOLUME\_のマウント解除操作で、\_FAを許可しません。
 
  
 

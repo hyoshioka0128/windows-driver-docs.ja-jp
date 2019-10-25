@@ -1,41 +1,41 @@
 ---
-Description: 関数のコント ローラーの USB 充電器をサポートしています。
+Description: 機能コントローラーの USB 充電器のサポート
 title: USB 充電器をサポートする USB フィルター ドライバー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0fea9c84554a959cfd0734a9fcf5d66916521cfd
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: eed716f97792d65577345ceeae9e705dcdd1e677
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67356591"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844819"
 ---
 # <a name="usb-filter-driver-for-supporting-usb-chargers"></a>USB 充電器をサポートする USB フィルター ドライバー
 
-関数のコント ローラーは、インボックス Synopsys を使用している場合は、充電器の検出をサポートしているフィルター ドライバーと ChipIdea ドライバーを記述します。 クライアント ドライバーで実装することによって充電器とアタッチの検出が統合された独自の関数のコント ローラーのクライアント ドライバーを作成する場合[EVT_UFX_DEVICE_PROPRIETARY_CHARGER_SET_PROPERTY](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ufxclient/nc-ufxclient-evt_ufx_device_proprietary_charger_set_property)、 [EVT_UFX_DEVICE_PROPRIETARY_CHARGER_RESET](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ufxclient/nc-ufxclient-evt_ufx_device_proprietary_charger_reset)、および[EVT_UFX_DEVICE_DETECT_PROPRIETARY_CHARGER](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ufxclient/nc-ufxclient-evt_ufx_device_proprietary_charger_detect)します。
+充電器の検出をサポートするフィルタードライバーを作成します (関数コントローラーで、インボックス Synopsys ドライバーと ChipIdea ドライバーが使用されている場合)。 独自の機能コントローラー用のクライアントドライバーを作成する場合、 [EVT_UFX_DEVICE_PROPRIETARY_CHARGER_SET_PROPERTY](https://docs.microsoft.com/windows-hardware/drivers/ddi/ufxclient/nc-ufxclient-evt_ufx_device_proprietary_charger_set_property)、EVT_UFX_DEVICE_PROPRIETARY_CHARGER_ を実装することによって、充電/アタッチ検出がクライアントドライバーに統合されます。 [RESET](https://docs.microsoft.com/windows-hardware/drivers/ddi/ufxclient/nc-ufxclient-evt_ufx_device_proprietary_charger_reset)と[EVT_UFX_DEVICE_DETECT_PROPRIETARY_CHARGER](https://docs.microsoft.com/windows-hardware/drivers/ddi/ufxclient/nc-ufxclient-evt_ufx_device_proprietary_charger_detect)。
 
-USB 関数呼び出し履歴は、スマート フォンまたはタブレットでは、ホストと USB バッテリの充電 (BC) 1.2 仕様で定義された、USB 充電器に接続すると請求をなど、デバイスを使用します。 
+USB 機能スタックを使用すると、携帯電話やタブレットなどのデバイスは、USB バッテリ充電 (BC) 1.2 仕様で定義されているように、ホストと USB チャージャーに接続したときに課金されるようになります。 
 
-- 2 つの種類のデバイスが充電中に使用できるポートがあります。 デバイスは、使用、デバイスに付属する充電器で専用充電ポート (DCP) から請求できます。 または、デバイスは、ダウン ストリームの標準のポートまたは PC にデバイスが接続されている場合は、下流のポートを充電からことができます。 そのような場合の両方が準拠して、 [USB BC 1.2 仕様](https://www.usb.org/developers/docs/devclass_docs/USB_Battery_Charging_1.2.pdf)します。 
-- 特定の充電器は、仕様に従っていません。 その独自の USB 充電器から請求するデバイスを USB 関数スタックにできます。 
+- デバイスが課金に使用できるポートには、次の2種類があります。 デバイスは、デバイスに付属しているチャージャーで専用の充電ポート (DCP) を使用して課金されます。 また、デバイスが PC に接続されている場合、デバイスは標準のダウンストリームポートから、またはダウンストリームポートを充電できます。 どちらの場合も、 [USB BC 1.2 仕様](https://www.usb.org/developers/docs/devclass_docs/USB_Battery_Charging_1.2.pdf)に準拠しています。 
+- 特定の充電器が仕様に従っていません。 USB 関数スタックを使用すると、デバイスは専用の USB 充電器から課金されるようになります。 
 
-仕様に準拠していませんし、独自の充電器をサポートするには、これらの操作が必要です。 
+仕様に準拠した独自の充電器をサポートするには、これらの操作が必要です。 
 
-- デバイスが USB ホストを検出できるまたは充電器をアタッチまたはデタッチします。 
-- デバイスが充電 BC で 1.2 仕様に定義されたポート別 USB を検出できません。 
-- Usb 仕様の充電器 BC 1.2 で定義されている、現在 1.2 の仕様、ビジネス継続性で許可されている量の最大のデバイスの料金です。 
-- デバイスは、専用の USB 充電器を検出できません。 
-- 専用の USB 充電器については、デバイスを描画できる現在の最大量を決定します。 
-- 接続されている USB ポートの種類について、オペレーティング システムに通知します。 
-- 現在、OS での USB 経由でのプルからデバイスを防ぐため、場合でも、USB ホストが接続されているし、デバイスが、ホストの構成自体。 
+- デバイスは、USB ホストまたはチャージャーが接続または切断されたことを検出できます。 
+- デバイスは、BC 1.2 仕様で定義されているように、さまざまな USB 充電ポートを検出できます。 
+- BC 1.2 仕様で定義されている USB 充電器の場合、デバイスは BC 1.2 仕様で許可されている現在の最大量で課金されます。 
+- デバイスは、独自の USB 充電器を検出できます。 
+- 専用 USB 充電器の場合は、デバイスが描画できる最大容量を決定します。 
+- 接続されている USB ポートの種類について、オペレーティングシステムに通知します。 
+- USB ホストが接続されていて、デバイスがそれ自体をホストとして構成している場合でも、デバイスが OS で USB 経由で最新の状態にならないようにします。 
 
-これらの操作によって処理されます[USB 関数クラスの拡張機能 (UFX)/クライアント ドライバー](developing-windows-drivers-for-usb-function-controllers.md)ペアと関数の USB デバイス スタックの下位のフィルターとして読み込まれているフィルター ドライバー。 ドライバー管理、USB 充電 USB ポートの検出から課金開始し、デバイスに描画できる現在の最大量バッテリ スタックへの通知を開始しています。 
+これらの操作は、 [usb function class extension (UFX)/client ドライバー](developing-windows-drivers-for-usb-function-controllers.md)のペアと、usb 機能のデバイススタックに低いフィルターとして読み込まれるフィルタードライバーによって処理されます。 ドライバーは、USB ポートの検出から開始される USB 充電を管理して、充電を開始できるときにバッテリスタックに通知し、デバイスが描画できる最大量を通知します。 
 
-デバイス スタックのアーキテクチャの表現を次に示します。
+ここでは、デバイススタックのアーキテクチャについて説明します。
 
-![USB 充電中](images/charger.png)
+![USB 充電](images/charger.png)
 
-クライアント ドライバーでは、USB ポートがデバイスに関連付けられている場合、低いフィルター ドライバーまたは割り込みによっては「通知を取得します。 この時点では、クライアント ドライバーは、USB ハードウェアとの通信でポートの検出を実行し、ポートの種類を UFX に報告します。 または、フィルター ドライバーを要求することができます。 その場合は、フィルター ドライバーは、USB ポートの検出を実行する USB ハードウェアと連携し、検出されたポートの種類をクライアント ドライバーと、クライアント ドライバーが UFX に渡しますを返します。 
+USB ポートがデバイスに接続されている場合、クライアントドライバーは、下位フィルタードライバーまたは割り込みによって通知を受け取ります。 この時点で、クライアントドライバーは USB ハードウェアと通信することによってポート検出を実行し、ポートの種類を UFX に報告します。 または、フィルタードライバーを要求することもできます。 この場合、フィルタードライバーは usb ハードウェアとの調整を行い、USB ポートの検出を実行し、検出されたポートの種類をクライアントドライバーに返し、クライアントドライバーが UFX に渡します。 
 
-ポートの種類に基づき、UFX は現在、デバイスが描画できるし、充電集計ドライバー (CAD) にその情報を送信の最大量を決定します。 CAD は、情報を検証します。 現在が有効な場合は、CAD はバッテリ クラス ドライバーを指定した最大現在まで課金が開始する要求を送信します。 バッテリ クラス ドライバーは、処理のバッテリ miniclass ドライバーに充電中の要求を転送します。 充電中の要求は、独自の充電器がアタッチされたことと、バッテリ miniclass 充電器を独自の処理を指定した場合は、miniclass ドライバーが適切に決定する最大の現在の課金を試行できます。 それ以外の場合、バッテリ miniclass は CAD で指定されている現在の最大まで充電のみことができます。
+ポートの種類に基づいて、デバイスが描画できる最新の最大量が決定され、その情報が課金集計ドライバー (CAD) に送信されます。 情報は、CAD によって検証されます。 現在のが有効な場合、CAD は、指定された最大電流に対する課金を開始するために、バッテリクラスドライバーに要求を送信します。 バッテリクラスドライバーは、処理のために充電要求をバッテリ miniclass ドライバーに転送します。 充電要求で、専用のチャージャーが接続されていて、バッテリ miniclass が専有の充電器を処理することを指定した場合、miniclass ドライバーは、適切な最大電流を使用して課金することができます。 それ以外の場合、バッテリ miniclass は、CAD によって指定された最大電流にのみ課金されます。
 

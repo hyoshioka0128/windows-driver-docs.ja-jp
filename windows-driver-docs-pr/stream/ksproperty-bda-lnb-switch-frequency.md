@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_BDA\_LNB\_スイッチ\_頻度
-description: クライアントを使用して、KSPROPERTY\_BDA\_LNB\_切り替える\_チューナー位置から切り替えるには、低ノイズ ブロック (LNB) デバイスに通知する必要があります RF 信号の受信の頻度、RF チューナー ノードに通知する頻度高帯域 LOF を使用するまたはその逆の場合、LNB RF 信号の頻度にシフトすると、低帯域ローカル オシレーター頻度 (LOF) を使用します。
+title: KSK プロパティ\_BDA\_LNB\_スイッチ\_頻度
+description: クライアントは、KSK プロパティ\_BDA\_LNB\_スイッチ\_頻度を使用して、チューナーが低騒音ブロック (LNB) デバイスに対して低帯域ローカルの使用から切り替えるように通知する着信 RF 信号の周波数について、RF チューナーノードに通知します。オシレーターが RF 信号の周波数をシフトするときに高帯域の LOF またはその逆を使用するためのオシレーター周波数 (LOF)。
 ms.assetid: a448bad1-40dc-4596-bc18-9522144e33a7
 keywords:
-- KSPROPERTY_BDA_LNB_SWITCH_FREQUENCY ストリーミング メディア デバイス
+- KSPROPERTY_BDA_LNB_SWITCH_FREQUENCY ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d93fbc8e83491bae5d94a14d1d4ef61adb0150ad
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b4b409e9248bf0bb63b62bf3adceeb2d34d5eadf
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67376666"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845145"
 ---
-# <a name="kspropertybdalnbswitchfrequency"></a>KSPROPERTY\_BDA\_LNB\_スイッチ\_頻度
+# <a name="ksproperty_bda_lnb_switch_frequency"></a>KSK プロパティ\_BDA\_LNB\_スイッチ\_頻度
 
 
-クライアントを使用して、KSPROPERTY\_BDA\_LNB\_切り替える\_チューナー位置から切り替えるには、低ノイズ ブロック (LNB) デバイスに通知する必要があります RF 信号の受信の頻度、RF チューナー ノードに通知する頻度高帯域 LOF を使用するまたはその逆の場合、LNB RF 信号の頻度にシフトすると、低帯域ローカル オシレーター頻度 (LOF) を使用します。
+クライアントは、KSK プロパティ\_BDA\_LNB\_スイッチ\_頻度を使用して、チューナーが低騒音ブロック (LNB) デバイスに対して低帯域ローカルの使用から切り替えるように通知する着信 RF 信号の周波数について、RF チューナーノードに通知します。オシレーターが RF 信号の周波数をシフトするときに高帯域の LOF またはその逆を使用するためのオシレーター周波数 (LOF)。
 
 ## <span id="ddk_ksproperty_bda_lnb_switch_frequency_ks"></span><span id="DDK_KSPROPERTY_BDA_LNB_SWITCH_FREQUENCY_KS"></span>
 
@@ -41,7 +41,7 @@ ms.locfileid: "67376666"
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,8 +50,8 @@ ms.locfileid: "67376666"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>〇</p></td>
+<td><p>[はい]</p></td>
+<td><p>[はい]</p></td>
 <td><p>フィルター</p></td>
 <td><p>KSP_NODE</p></td>
 <td><p>ULONG</p></td>
@@ -64,13 +64,13 @@ ms.locfileid: "67376666"
 <a name="remarks"></a>注釈
 -------
 
-**NodeId** KSP のメンバー\_ノードは、RF チューナーのノードの識別子を指定します。
+KSP の**NodeId**メンバー\_node は、RF チューナーノードの識別子を指定します。
 
-プロパティの値には、高帯域 LOF を使用する低帯域 LOF を使用して切り替える必要があります、LNB を RF 信号の受信の頻度を指定します。
+プロパティ値は、着信 RF シグナルの頻度を指定します。これは、LNB がローバンドの lof を使用して、高帯域の LOF を使用するように切り替える必要があります。
 
-クライアントが送信、KSPROPERTY 場合\_BDA\_RF\_チューナー\_RF チューナーは、特定の頻度と、この頻度を調整する頻度の要求が KSPROPERTY を使用して指定されたスイッチ頻度以上\_BDA\_LNB\_切り替える\_し、頻度、RF チューナーは、高帯域 LOF に切り替える LNB にコマンドを送信する必要があります。 RF チューナーが LNB デバイスが KSPROPERTY を使用して指定されている高帯域 LOF 量によって RF 信号を受信の頻度を移動することを期待する必要がありますし、\_BDA\_LNB\_LOF\_高\_バンド。
+クライアントが KSK プロパティ\_BDA\_送信した場合、rf チューナーを特定の周波数にチューニングするための周波数\_チューナー\_頻度の要求が発生します。この頻度は、KSK プロパティ\_BDA を使用して指定されたスイッチの頻度以上になり\_LNB\_スイッチ\_周波数に切り替えると、RF チューナーは、高帯域の LOF に切り替えるコマンドを LNB に送信する必要があります。 次に、RF チューナーは、LNB デバイスが受信 RF 信号の周波数を高さが大きくなることを期待する必要があります。これは、KSK プロパティ\_BDA\_LNB\_LOF\_高\_を使用して指定されています。
 
-同様に、クライアントが送信、KSPROPERTY 場合\_BDA\_RF\_チューナー\_RF チューナーは、特定の頻度と、この頻度を調整する頻度の要求は、切り替えの頻度よりも小さい、RF チューナーを送信する必要があります、低帯域 LOF に切り替える、LNB するコマンドです。 RF チューナーが LNB デバイスが KSPROPERTY を使用して指定された、低帯域 LOF 金額によって RF 信号を受信の頻度を移動することを期待する必要がありますし、\_BDA\_LNB\_LOF\_低\_バンド。
+同様に、クライアントが KSK プロパティ\_BDA\_RF\_チューナー\_頻度を指定して RF チューナーを特定の周波数に調整するように要求していて、この頻度がスイッチの頻度より小さい場合、RF チューナーは LNB にコマンドを送信してスイッチを切り替えます。低帯域の LOF に。 次に、RF チューナーは、LNB デバイスが帯域幅の増加によって受信 RF 信号の周波数をシフトすることを想定します。この量は、KSPROPERTY\_BDA\_LNB\_LOF\_低\_帯域を使用して指定されています。
 
 <a name="requirements"></a>要件
 ------------
@@ -83,7 +83,7 @@ ms.locfileid: "67376666"
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Bdamedia.h (Bdamedia.h を含む)</td>
+<td>Bdamedia (Bdamedia を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -91,13 +91,13 @@ ms.locfileid: "67376666"
 ## <a name="see-also"></a>関連項目
 
 
-[**KSP\_ノード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_node)
+[**KSP\_ノード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksp_node)
 
-[**KSPROPERTY\_BDA\_LNB\_LOF\_高\_バンド**](ksproperty-bda-lnb-lof-high-band.md)
+[**KSK プロパティ\_BDA\_LNB\_LOF\_高\_帯域**](ksproperty-bda-lnb-lof-high-band.md)
 
-[**KSPROPERTY\_BDA\_LNB\_LOF\_低\_バンド**](ksproperty-bda-lnb-lof-low-band.md)
+[**KSK プロパティ\_BDA\_LNB\_LOF\_低\_帯域**](ksproperty-bda-lnb-lof-low-band.md)
 
-[**KSPROPERTY\_BDA\_RF\_チューナー\_頻度**](ksproperty-bda-rf-tuner-frequency.md)
+[**KSK プロパティ\_BDA\_RF\_チューナー\_頻度**](ksproperty-bda-rf-tuner-frequency.md)
 
  
 

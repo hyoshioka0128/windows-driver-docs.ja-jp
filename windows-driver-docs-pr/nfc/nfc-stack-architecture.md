@@ -7,26 +7,26 @@ keywords:
 - proximity
 - 近距離近接通信
 - NFP
-description: ほぼフィールド通信 (NFC) スタックのアーキテクチャと設計の図。
+description: 近距離無線通信 (NFC) スタックのアーキテクチャと設計の図。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 65750b112f21fc63e3a337310e5ed7055c541618
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ae08f55bb826ba45a1f182b5f48d139bda3ddd9d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383553"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842739"
 ---
 # <a name="nfc-stack-architecture"></a>NFC スタックのアーキテクチャ
 
 
-次の図は、NFC スタック アーキテクチャを示しています。
+次の図は、NFC スタックアーキテクチャを示しています。
 
-![nfc スタック アーキテクチャ](images/nfcstackarchitecture.png)
+![nfc スタックのアーキテクチャ](images/nfcstackarchitecture.png)
 
  
 
  
 ## <a name="related-topics"></a>関連トピック
-[NFC のデバイス ドライバー インターフェイス (DDI) の概要](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
-[NFC クラスの拡張機能 (CX) リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
+[NFC デバイスドライバーインターフェイス (DDI) の概要](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)  
+[NFC クラス拡張 (CX) リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)  

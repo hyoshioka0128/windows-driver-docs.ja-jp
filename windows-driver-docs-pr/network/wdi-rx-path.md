@@ -1,68 +1,68 @@
 ---
 title: WDI RX パス
-description: このセクションには、WDI RX パスがについて説明します
+description: このセクションでは、WDI RX パスについて説明します。
 ms.assetid: EEEA7181-4A24-4F40-8A44-65EC38D1A867
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aa477567ccf32c0c83f394b20ce5c4a1d7a10b7c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 23dd4df927de8e5e2d4007f107c53749830bde53
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384338"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842894"
 ---
 # <a name="wdi-rx-path"></a>WDI RX パス
 
 
-## <a name="rx-path-components"></a>RX のパス コンポーネント
+## <a name="rx-path-components"></a>RX パスのコンポーネント
 
 
-次の図は、RX のパス コンポーネントを示しています。
+次の図は、RX パスコンポーネントを示しています。
 
 ![wdi 受信パス](images/wdi-receive-path-block-diagram.png)
 
 ## <a name="rx-manager-rxmgr"></a>RX マネージャー (RxMgr)
 
 
-RX マネージャーは、実行、ターゲットにオフロードまたは、RxEngine によって実行されていない処理手順が表示されます。
+RX マネージャーは、ターゲットにオフロードされない、または RxEngine によって実行される、受信処理のステップを実行します。
 
 | RX 関数            | 説明                                                                                                                                                                                     |
 |------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | MSDU 破棄           | エラーのある MSDUs を破棄します。                                                                                                                                                                      |
-| キューと調整 | ディスパッチ レベルが多すぎますがない、DPC ごと、および長すぎるからでバグチェックを防ぐために、DPC ウォッチドッグを管理します。 調整を支援する適切な場合に RxEngine に背圧を提供します。 |
+| キューと調整 | Dpc ウォッチドッグを管理して、DPC ごとの数が多すぎることや、ディスパッチレベルでは長すぎることからバグチェックが行われないようにします。 調整に役立つように、必要に応じて RxEngine にバック圧力を提供します。 |
 
  
 
 ## <a name="rxengine"></a>RxEngine
 
 
-RxEngine で、送信とターゲットの間のデータ同期メッセージを受信および RX 記述子の形式を解釈、およびソフトウェア RX Dma を直接ハードウェアのバッファーを管理します。
+RxEngine は、ターゲットとの間でデータ同期メッセージを送受信し、RX 記述子の形式を解釈し、直接のハードウェアのバッファーをソフトウェア RX DMAs に管理します。
 
 | RX 関数                             | 説明                                                                                                                                                                                                                                              |
 |-----------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| ターゲットへのホストのメッセージの構築     | ホストとターゲットのデータ パスに関連するメッセージを構築します。                                                                                                                                                                                                     |
-| ターゲットからホストへのメッセージの解析          | 解析し、ターゲットのホストへのデータ同期メッセージの処理をなど[ *NdisWdiRxInorderDataIndication*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/nc-dot11wdi-ndis_wdi_rx_inorder_data_ind)します。                                                                                                          |
+| ホストからターゲットへのメッセージの構築     | ホストからターゲットへのデータパスに関連するメッセージを構築します。                                                                                                                                                                                                     |
+| ターゲットからホストへのメッセージ解析          | [*NdisWdiRxInorderDataIndication*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-ndis_wdi_rx_inorder_data_ind)などのターゲットからホストへのデータ同期メッセージを解析し、処理します。                                                                                                          |
 | ターゲット RX 記述子の解釈 | ターゲット固有の記述子から RX フレームの属性を照会するためのインターフェイス (関数) を提供します。                                                                                                                                                   |
-| RX の FIFO の管理                      | ターゲット入力を空の RX バッファーをポストするためには、ターゲットにアクセス可能な FIFO を提供します。 バッファーを削除中に、FIFO から[ *NdisWdiRxInorderDataIndication* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/nc-dot11wdi-ndis_wdi_rx_inorder_data_ind)処理、および置換の空のバッファーを提供します。 |
-| RX のバッファー プールの管理               | 受信のフレームの DMA 転送用のバッファーのプールを維持します。                                                                                                                                                                                           |
-| MPDU 破棄                            | エラーのある MPDUs を破棄します。 ターゲットでは、受信フレームが破棄 for - たとえば、FCS エラーまたは ARQ 重複エラーのためにマークされていることを示します。 これは、しないターゲットによって実装されている場合のみ行います。                                              |
-| MPDU 並べ替え                            | 不足している前 MPDUs が到着するまでは、RX 並べ替え配列内の順序で MPDUs を格納します。 これは、しないターゲットによって実装されている場合のみ行います。                                                                                                   |
-| MPDU PN から chk                             | ターゲットに、オフロードしない場合は、これはのみです。                                                                                                                                                                                                  |
-| MSDU フラグメントの再構築                | ターゲットに、オフロードしない場合は、これはのみです。                                                                                                                                                                                                  |
+| RX FIFO 管理                      | ターゲットがいっぱいになるように空の RX バッファーをポストするために、ターゲットとしてアクセスできる FIFO を指定します。 [*NdisWdiRxInorderDataIndication*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-ndis_wdi_rx_inorder_data_ind)処理中に FIFO からバッファーを削除し、置換された空のバッファーを提供します。 |
+| RX バッファープールの管理               | 受信フレームの DMA 転送用のバッファープールを保持します。                                                                                                                                                                                           |
+| MPDU 破棄                            | MPDUs をエラーと共に破棄します。 ターゲットは、"破棄" とマークされた受信フレームを示します。たとえば、FCS エラーや ARQ 重複エラーが原因です。 これは、ターゲットによって実装されていない場合にのみ実行されます。                                              |
+| MPDU の順序変更                            | MPDUs が到着する前に、その前に存在しない MPDUs が到着するまで、配列の順序を並べ替えることができます。 これは、ターゲットによって実装されていない場合にのみ実行されます。                                                                                                   |
+| MPDU PN chk                             | これは、ターゲットにオフロードされていない場合にのみ実行されます。                                                                                                                                                                                                  |
+| MSDU フラグメントの再構築                | これは、ターゲットにオフロードされていない場合にのみ実行されます。                                                                                                                                                                                                  |
 
  
 
-## <a name="rx-path-requests-and-indications"></a>RX のパスの要求と表示
+## <a name="rx-path-requests-and-indications"></a>RX パスの要求とインジケーター
 
 
-RX のパスの要求とを示す値関数のリファレンスを参照してください。 [WDI RX パス関数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)します。
+RX パスの要求と参照関数のリファレンスについては、「 [WDI RX Path Functions](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)」を参照してください。
 
 ## <a name="related-topics"></a>関連トピック
 
 
-[*NdisWdiRxInorderDataIndication*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/nc-dot11wdi-ndis_wdi_rx_inorder_data_ind)
+[*NdisWdiRxInorderDataIndication*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-ndis_wdi_rx_inorder_data_ind)
 
-[WDI RX パス関数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
+[WDI RX パス関数](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
 
  
 

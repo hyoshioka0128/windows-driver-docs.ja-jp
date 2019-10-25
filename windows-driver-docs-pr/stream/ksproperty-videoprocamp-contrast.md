@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_ビデオ プロシージャ アンプ\_コントラスト
-description: KSPROPERTY\_ビデオ プロシージャ アンプ\_コントラスト プロパティは、カメラのコントラスト (ルミナンス利益) の設定を制御します。 このプロパティは省略可能です。
+title: KSPROPERTY\_VIDEOPROCAMP\_CONTRAST
+description: KSK プロパティ\_VIDEOPROCAMP\_CONTRAST プロパティは、カメラのコントラスト (ルミナンスゲイン) 設定を制御します。 このプロパティは省略可能です。
 ms.assetid: 0e94aec4-b258-44be-aa6e-f0a40b803564
 keywords:
-- KSPROPERTY_VIDEOPROCAMP_CONTRAST ストリーミング メディア デバイス
+- KSPROPERTY_VIDEOPROCAMP_CONTRAST ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 20cff4112d147d423a1a9f2bc71892edb33c2529
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 632bfd9f33e820c4dd7d434e23a4a04d3f23b3d6
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67381959"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844765"
 ---
-# <a name="kspropertyvideoprocampcontrast"></a>KSPROPERTY\_ビデオ プロシージャ アンプ\_コントラスト
+# <a name="ksproperty_videoprocamp_contrast"></a>KSPROPERTY\_VIDEOPROCAMP\_CONTRAST
 
 
-KSPROPERTY\_ビデオ プロシージャ アンプ\_コントラスト プロパティは、カメラのコントラスト (ルミナンス利益) の設定を制御します。 このプロパティは省略可能です。
+KSK プロパティ\_VIDEOPROCAMP\_CONTRAST プロパティは、カメラのコントラスト (ルミナンスゲイン) 設定を制御します。 このプロパティは省略可能です。
 
 ## <span id="ddk_ksproperty_videoprocamp_contrast_ks"></span><span id="DDK_KSPROPERTY_VIDEOPROCAMP_CONTRAST_KS"></span>
 
@@ -41,7 +41,7 @@ KSPROPERTY\_ビデオ プロシージャ アンプ\_コントラスト プロパ
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,25 +50,25 @@ KSPROPERTY\_ビデオ プロシージャ アンプ\_コントラスト プロパ
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>〇</p></td>
+<td><p>[はい]</p></td>
+<td><p>[はい]</p></td>
 <td><p>フィルターまたはノード</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videoprocamp_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOPROCAMP_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videoprocamp_s)"><strong>KSPROPERTY_VIDEOPROCAMP_S</strong> </a>または<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videoprocamp_node_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOPROCAMP_NODE_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videoprocamp_node_s)"> <strong>KSPROPERTY_VIDEOPROCAMP_NODE_S</strong></a></p></td>
-<td><p>LONG</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videoprocamp_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOPROCAMP_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videoprocamp_s)"><strong>KSPROPERTY_VIDEOPROCAMP_S</strong></a>または<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videoprocamp_node_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOPROCAMP_NODE_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videoprocamp_node_s)"> <strong>KSPROPERTY_VIDEOPROCAMP_NODE_S</strong></a></p></td>
+<td><p>長い</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-プロパティの値 (データの操作) は、カメラのコントラスト設定を指定する LONG が。 コントラスト値は 100 倍向上要素として表されます。
+プロパティ値 (操作データ) は、カメラのコントラスト設定を指定する LONG です。 コントラスト値は、100を乗算した利益率として表されます。
 
 <a name="remarks"></a>注釈
 -------
 
-**値**、KSPROPERTY のメンバー\_ビデオ プロシージャ アンプ\_の構造は、コントラスト値を指定します。
+VIDEOPROCAMP\_S 構造体\_KSK プロパティの**値**メンバーは、コントラスト値を指定します。
 
-すべてのビデオ キャプチャ ミニドライバーの範囲と既定値を定義する必要があります、**値**このプロパティのメンバー。 必要な範囲は 0 ~ 10000 である必要があります。 既定値は 100 (1 x) である必要があります。
+すべてのビデオキャプチャミニドライバーで、このプロパティの**value**メンバーの範囲と既定値を定義する必要があります。 必要な範囲は 0 ~ 1万でなければなりません。 既定値は 100 (1x) である必要があります。
 
 <a name="requirements"></a>要件
 ------------
@@ -81,7 +81,7 @@ KSPROPERTY\_ビデオ プロシージャ アンプ\_コントラスト プロパ
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Ksmedia.h (Ksmedia.h を含む)</td>
+<td>Ksmedia .h (Ksk を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -89,9 +89,9 @@ KSPROPERTY\_ビデオ プロシージャ アンプ\_コントラスト プロパ
 ## <a name="see-also"></a>関連項目
 
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
-[**KSPROPERTY\_ビデオ プロシージャ アンプ\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videoprocamp_s)
+[**KSK プロパティ\_VIDEOPROCAMP\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videoprocamp_s)
 
  
 

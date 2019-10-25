@@ -4,14 +4,14 @@ description: MSiSCSI\_SessionStatistics WMI クラス
 ms.assetid: fc9afa1b-dad3-4f3d-9fe2-e37d402f7bef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 0d5dc1d7c7d0c67bf4d8898f8bb620fd960dfbbd
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4a9085a0e929b513d7d845b2f1d934b66f443b69
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384669"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845325"
 ---
-# <a name="msiscsisessionstatistics-wmi-class"></a>MSiSCSI\_SessionStatistics WMI クラス
+# <a name="msiscsi_sessionstatistics-wmi-class"></a>MSiSCSI\_SessionStatistics WMI クラス
 
 
 ## <span id="ddk_msiscsi_sessionstatistics_wmi_class_kr"></span><span id="DDK_MSISCSI_SESSIONSTATISTICS_WMI_CLASS_KR"></span>
@@ -19,7 +19,7 @@ ms.locfileid: "67384669"
 
 MSiSCSI\_SessionStatistics WMI クラスは、セッションの統計情報を公開します。
 
-MSiSCSI\_SessionStatistics クラス Iscsiprf.mof で定義されます。
+MSiSCSI\_SessionStatistics クラスは、Iscsiprf で定義されています。
 
 ```cpp
 class MSiSCSI_SessionStatistics : Win32_PerfRawData {
@@ -98,15 +98,15 @@ class MSiSCSI_SessionStatistics : Win32_PerfRawData {
 };
 ```
 
-WMI ツールのスイートでは、上記のクラス定義をコンパイルするときに生成、 [ **MSiSCSI\_SessionStatistics** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsiprf/ns-iscsiprf-_msiscsi_sessionstatistics)データ構造体。
+WMI ツールスイートは、前のクラス定義をコンパイルするときに、 [**Msiscsi\_SessionStatistics**](https://docs.microsoft.com/windows-hardware/drivers/ddi/iscsiprf/ns-iscsiprf-_msiscsi_sessionstatistics)データ構造を生成します。
 
-イニシエーターは、MSiSCSI を登録する必要があります\_SessionStatistics クラス、セッションの次の動的インスタンス名。
+イニシエーターは、MSiSCSI\_SessionStatistics クラスを、セッションの次の動的なインスタンス名に登録する必要があります。
 
 ```cpp
 targetname_#
 ```
 
-シャープ記号 (\#) の値は、 **USID**このクラスのメンバー。
+シャープ記号 (\#) は、このクラスの**Usid**メンバーの値です。
 
  
 

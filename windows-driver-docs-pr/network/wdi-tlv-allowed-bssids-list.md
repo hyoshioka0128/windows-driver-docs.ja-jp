@@ -1,22 +1,22 @@
 ---
 title: WDI_TLV_ALLOWED_BSSIDS_LIST
-description: WDI_TLV_ALLOWED_BSSIDS_LIST では、関連付けに使用することができる Bssid のリストを含む TLV です。
+description: WDI_TLV_ALLOWED_BSSIDS_LIST は、関連付けに使用することが許可されている BSSIDs の一覧を含む TLV です。
 ms.assetid: A53C5EB2-1D77-4380-86C7-291D2BF4FCFC
 ms.date: 07/18/2017
 keywords:
-- WDI_TLV_ALLOWED_BSSIDS_LIST ネットワーク ドライバーが Windows Vista 以降
+- WDI_TLV_ALLOWED_BSSIDS_LIST ネットワークドライバー (Windows Vista 以降)
 ms.localizationpriority: medium
-ms.openlocfilehash: 5781064e68631a50f8a762abc26a2b4236861c37
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6a794fec50f9ef59e3da4678de1d6a1a5d8de4b9
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67353619"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842886"
 ---
-# <a name="wditlvallowedbssidslist"></a>WDI\_TLV\_許可\_BSSID\_一覧
+# <a name="wdi_tlv_allowed_bssids_list"></a>WDI\_TLV\_許可\_BSSIDS\_リスト
 
 
-WDI\_TLV\_許可\_BSSID\_リストは、関連付けに使用することができる Bssid のリストを含む TLV します。
+WDI\_TLV\_ALLOWED\_BSSIDS\_LIST は、アソシエーションに使用することが許可されている BSSIDs の一覧を含む TLV です。
 
 ## <a name="tlv-type"></a>TLV 型
 
@@ -26,18 +26,18 @@ WDI\_TLV\_許可\_BSSID\_リストは、関連付けに使用することがで�
 ## <a name="length"></a>長さ
 
 
-配列のサイズをバイト単位で[ **WDI\_MAC\_アドレス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ns-dot11wdi-_wdi_mac_address)構造体。 配列には、1 つ以上の構造を格納する必要があります。
+[**WDI\_MAC\_アドレス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_wdi_mac_address)構造体の配列のサイズ (バイト単位)。 配列には1つ以上の構造体が含まれている必要があります。
 
 ## <a name="values"></a>値
 
 
-| 型                                                  | 説明                                                   |
+| タスクバーの検索ボックスに                                                  | 説明                                                   |
 |-------------------------------------------------------|---------------------------------------------------------------|
-| [**WDI\_MAC\_アドレス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ns-dot11wdi-_wdi_mac_address)\[\] | 関連付けに使用することができる Bssid の一覧。 |
+| [**WDI\_MAC\_アドレス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_wdi_mac_address)\[\] | アソシエーションに使用できる BSSIDs の一覧。 |
 
  
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -56,7 +56,7 @@ WDI\_TLV\_許可\_BSSID\_リストは、関連付けに使用することがで�
 </tr>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Wditypes.hpp</td>
+<td>Wditypes</td>
 </tr>
 </tbody>
 </table>

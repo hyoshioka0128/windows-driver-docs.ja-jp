@@ -1,20 +1,20 @@
 ---
-title: MPIO\_パス\_ヘルス\_クラスの WMI クラス
-description: MPIO\_パス\_ヘルス\_クラスの WMI クラス
+title: MPIO\_パス\_正常性\_クラス WMI クラス
+description: MPIO\_パス\_正常性\_クラス WMI クラス
 ms.assetid: fcbc86a4-9035-489e-a406-9901c5af0a32
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 8431d9504afe106aeba8475180ab422e41159626
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c4f7d8fdbbc1bef52ddfa570d36ee6034e12f981
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386154"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844963"
 ---
-# <a name="mpiopathhealthclass-wmi-class"></a>MPIO\_パス\_ヘルス\_クラスの WMI クラス
+# <a name="mpio_path_health_class-wmi-class"></a>MPIO\_パス\_正常性\_クラス WMI クラス
 
 
-WMI クライアントが、MPIO を使用して\_パス\_ヘルス\_MPIO ディスクに関連付けられている特定のパスの正常性の統計情報を収集するために、MPIO サブシステムを照会するクラスの WMI クラスです。
+WMI クライアントは、mpio\_PATH\_HEALTH\_クラス WMI クラスを使用して、mpio サブシステムに対してクエリを実行し、mpio ディスクに関連付けられている特定のパスの正常性の統計情報を収集します。
 
 ```cpp
 class MPIO_PATH_HEALTH_CLASS
@@ -143,7 +143,7 @@ class MPIO_PATH_HEALTH_CLASS
 };
 ```
 
-WMI ツール スイートによってコンパイルされると、このクラスの定義を生成、 [ **MPIO\_パス\_ヘルス\_クラス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mpiowmi/ns-mpiowmi-_mpio_path_health_class)データ構造体。 この WMI クラスに関連付けられているメソッドはありません。
+このクラス定義は、WMI ツールスイートによってコンパイルされると、 [**MPIO\_PATH\_HEALTH\_クラス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mpiowmi/ns-mpiowmi-_mpio_path_health_class)のデータ構造を生成します。 この WMI クラスに関連付けられているメソッドはありません。
 
  
 

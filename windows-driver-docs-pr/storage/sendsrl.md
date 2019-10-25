@@ -1,9 +1,9 @@
 ---
 title: SendSRL 関数
-description: SendSRL WMI メソッドでは、スキャンのリモート ループ (SRL) コマンドを指定されたポートを通じて示されたドメイン コント ローラーに送信します。
+description: SendSRL WMI メソッドは、指定されたポートを使用して、指定されたドメインコントローラーに scan remote loop (SRL) コマンドを送信します。
 ms.assetid: b191fc8c-2765-4e39-aab7-e950ae1d46b0
 keywords:
-- 記憶装置の SendSRL 関数
+- SendSRL 関数のストレージデバイス
 topic_type:
 - apiref
 api_name:
@@ -15,17 +15,17 @@ api_type:
 - LibDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 99979f70e58d3b5531f95d3cb65aa88070b9b02d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 377f9278c06c7b09a71b680b7571c3b10fd9b97c
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362648"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842436"
 ---
 # <a name="sendsrl-function"></a>SendSRL 関数
 
 
-**SendSRL** WMI メソッドは、指定されたドメイン コント ローラーに指定されたポートを通じてスキャン リモート ループ (SRL) コマンドを送信します。
+**Sendsrl** WMI メソッドは、指定されたポートを使用して、指定されたドメインコントローラーに scan remote LOOP (SRL) コマンドを送信します。
 
 <a name="syntax"></a>構文
 ------
@@ -45,26 +45,26 @@ void SendSRL(
 <a name="parameters"></a>パラメーター
 ----------
 
-*HBAStatus*   
-に返された場合、操作の状態を格納します。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **SendSRL\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendsrl_out)構造体。
+*Hbastatus*   
+戻ると、操作の状態が格納されます。 許可される値とその説明の一覧については、「 [HBA\_STATUS](hba-status.md)」を参照してください。 ミニポートドライバーは、 [**Sendsrl\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sendsrl_out)構造体の**hbastatus**メンバーにこの情報を返します。
 
 *PortWWN*   
-SRL コマンドを送信するローカル ポートに世界中の名前。 この情報は、ミニポート ドライバーに配信される、 **PortWWN** 、SendSRL のメンバー\_構造体。
+SRL コマンドの送信に使用するローカルポートの世界規模の名前。 この情報は、構造内の SendSRL\_の**PortWWN**メンバーのミニポートドライバーに配信されます。
 
 *WWN*   
-FL の種類のポートの世界中の名前\_ループは、スキャンするポート。 この情報は、ミニポート ドライバーに配信される、 **WWN** 、SendSRL のメンバー\_構造体。
+スキャンされるループの種類が FL\_ポートの世界規模の名前。 この情報は、構造内の SendSRL\_の**WWN**メンバーのミニポートドライバーに配信されます。
 
 *ドメイン*   
-ループがスキャンするには、ドメインのドメインの数。 この情報は、ミニポート ドライバーに配信される、**ドメイン**、SendSRL のメンバー\_構造体。
+ループがスキャンされるドメインのドメイン番号。 この情報は、構造内の SendSRL\_の**ドメイン**メンバーのミニポートドライバーに配信されます。
 
-*TotalRspBufferSize*   
-SRL コマンドの結果のバイト単位のサイズ。 ミニポート ドライバーには、この情報が返されます、 **TotalRspBufferSize**のメンバー、 [ **SendSRL\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendsrl_out)構造体。
+*Totalrspbuffersize*   
+SRL コマンドの結果のサイズ (バイト単位)。 ミニポートドライバーは、 [**Sendsrl\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sendsrl_out)構造体の**Totalrspbuffersize**メンバーにこの情報を返します。
 
-*ActualRspBufferSize*   
-実際に取得されたデータのバイト単位のサイズ。 ミニポート ドライバーには、この情報が返されます、 **ActualRspBufferSize**のメンバー、 [ **SendSRL\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendsrl_out)構造体。
+*Actualrspbuffersize*   
+実際に取得されたデータのサイズ (バイト単位)。 ミニポートドライバーは、 [**Sendsrl\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sendsrl_out)構造体の**Actualrspbuffersize**メンバーにこの情報を返します。
 
-*RspBuffer*   
-SRL コマンドの結果。 ミニポート ドライバーには、この情報が返されます、 **RspBuffer**のメンバー、 [ **SendSRL\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendsrl_out)構造体。
+*Rspbuffer*   
+SRL コマンドの結果。 ミニポートドライバーは、 [**Sendsrl\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sendsrl_out)構造体の**rspbuffer**メンバーにこの情報を返します。
 
 <a name="return-value"></a>戻り値
 ------------
@@ -74,7 +74,7 @@ WMI メソッドには適用されません。
 <a name="remarks"></a>注釈
 -------
 
-この WMI メソッドが属する、 [MSFC\_HBAAdapterMethods WMI クラス](msfc-hbaadaptermethods-wmi-class.md)します。
+この WMI メソッドは、 [Msfc\_HBAAdapterMethods WMI クラス](msfc-hbaadaptermethods-wmi-class.md)に属しています。
 
 <a name="requirements"></a>要件
 ------------
@@ -91,21 +91,21 @@ WMI メソッドには適用されません。
 </tr>
 <tr class="even">
 <td align="left"><p>Header</p></td>
-<td align="left">Hbapiwmi.h (Hbapiwmi.h、Hbaapi.h、Hbaapi.h など)</td>
+<td align="left">Hbapiwmi (Hbapiwmi、Hbaapi. h、または Hbaapi .h を含む)</td>
 </tr>
 <tr class="odd">
 <td align="left"><p>Library</p></td>
-<td align="left">Hbaapi.lib</td>
+<td align="left">Hbaapi .lib</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[HBA\_状態](hba-status.md)
+[HBA\_の状態](hba-status.md)
 
-SendSRL\_IN [ **SendSRL\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendsrl_out)
+[ **Sendsrl\_OUT**の sendsrl\_](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sendsrl_out)
 
  
 

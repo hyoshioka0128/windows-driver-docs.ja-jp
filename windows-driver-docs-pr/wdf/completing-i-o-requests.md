@@ -3,18 +3,18 @@ title: I/O 要求の完了
 description: I/O 要求の完了
 ms.assetid: ec5aef7a-110e-430c-902d-669ccc7095ac
 keywords:
-- I/O 要求の完了の WDK KMDF
-- WDK KMDF を要求する I/O の完了
-- 要求の WDK KMDF、要求の完了を処理します。
-- WDK KMDF、I/O 要求の完了の状態情報
+- I/o 要求 WDK KMDF、完了
+- i/o 要求の完了 (WDK KMDF)
+- 要求の処理 WDK KMDF、要求の完了
+- 状態情報 WDK KMDF、i/o 要求の完了
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 61160b7a8e251f0fa8f7fad6ed2c091cfb6edd67
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 778a52af7323c6968a93da2fc3ab6c6f5c17a74a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382879"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843647"
 ---
 # <a name="completing-io-requests"></a>I/O 要求の完了
 
@@ -22,71 +22,71 @@ ms.locfileid: "67382879"
 
 
 
-フレームワーク ベースのすべてのドライバーでは、フレームワークから受信したすべての I/O 要求が完了最終的にする必要があります。 ドライバーを呼び出して、要求オブジェクトの要求を完了する[ **WdfRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestcomplete)、 [ **WdfRequestCompleteWithInformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestcompletewithinformation)、または[ **WdfRequestCompleteWithPriorityBoost** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestcompletewithpriorityboost)メソッド。
+すべてのフレームワークベースのドライバーは、最終的に、フレームワークから受信したすべての i/o 要求を完了する必要があります。 要求を完了するには、要求オブジェクトの[**Wdfrequestcomplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcomplete)、 [**wdfrequestcompletewithinformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcompletewithinformation)、または[**wdfrequestcompletewithの各ブースト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcompletewithpriorityboost)を呼び出します。
 
 ### <a name="when-to-complete-a-request"></a>要求を完了するタイミング
 
-ドライバーは、次のいずれかが true であると判断した場合、要求を完了する必要があります。
+次のいずれかのケースに該当する場合、ドライバーは要求を完了する必要があります。
 
--   要求された I/O 操作は正常に完了しました。
+-   要求された i/o 操作が正常に完了しました。
 
--   要求された I/O 操作が開始したが、完了する前に失敗しました。
+-   要求された i/o 操作は開始されましたが、完了する前に失敗しました。
 
--   要求された I/O 操作では、サポートされていないか、開始できませんでしたし、受信した時点で有効でなかった。
+-   要求された i/o 操作はサポートされていないか、受信時に無効であったか、開始できませんでした。
 
--   要求された I/O 操作が取り消されました。
+-   要求された i/o 操作が取り消されました。
 
-ドライバーが通常呼び出す場合は、ドライバーは、デバイスの I/O アクティビティを作成して、I/O 要求をサービス、 [ **WdfRequestComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestcomplete)からその[ *EvtInterruptDpc*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)または[ *EvtDpcFunc* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdpc/nc-wdfdpc-evt_wdf_dpc)コールバック関数。
+デバイスで i/o アクティビティを作成することによってドライバーが i/o 要求を処理する場合、ドライバーは通常、 [*EvtInterruptDpc*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)または[*EvtDpcFunc*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdpc/nc-wdfdpc-evt_wdf_dpc) Callback 関数から[**wdfrequestcomplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcomplete)を呼び出します。
 
-通常呼び出す場合は、ドライバーは、サポートされていないか、それ以外の場合に無効な要求を受け取る、 [ **WdfRequestComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestcomplete)から、[要求ハンドラー](request-handlers.md)が要求を受信します。
+ドライバーがサポートされていない、または無効な要求を受け取った場合、通常は、要求を受け取った[要求ハンドラー](request-handlers.md)から[**Wdfrequestcomplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcomplete)を呼び出します。
 
-I/O 操作があった場合[キャンセル](canceling-i-o-requests.md)、ドライバーは[ **WdfRequestComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestcomplete)からその[ *EvtRequestCancel*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nc-wdfrequest-evt_wdf_request_cancel)コールバック関数。
+I/o 操作が[取り消さ](canceling-i-o-requests.md)れた場合、ドライバーは通常、 [*Evtrequestcancel*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nc-wdfrequest-evt_wdf_request_cancel)コールバック関数から[**wdfrequestcomplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcomplete)を呼び出します。
 
-場合、ドライバー[転送](forwarding-i-o-requests.md)I/O 要求を[I/O ターゲット](using-i-o-targets.md)ドライバーは、I/O ターゲットは次のように、要求を完了後に、要求を完了します。
+ドライバーが i/o 要求を i/o[ターゲット](using-i-o-targets.md)に[転送](forwarding-i-o-requests.md)する場合、ドライバーは、i/o ターゲットが要求を完了した後、次のように要求を完了します。
 
--   ドライバーは、I/O 要求を転送する場合[同期的に](sending-i-o-requests-synchronously.md)下位レベルのドライバーは、(ない場合、エラーが発生します)、要求が完了した後にのみ、I/O ターゲットに I/O ターゲットへのドライバーの呼び出しを返します。 I/O ターゲットを返した後、ドライバーを呼び出す必要があります[ **WdfRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestcomplete)します。
+-   ドライバーで i/o 要求が i/o ターゲットに[同期的](sending-i-o-requests-synchronously.md)に転送される場合、ドライバーの i/o ターゲットへの呼び出しは、下位レベルのドライバーが要求を完了した後にのみ返されます (エラーが発生しない場合)。 I/o ターゲットからが返された後、ドライバーは[**Wdfrequestcomplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcomplete)を呼び出す必要があります。
 
--   ドライバーは、I/O 要求を転送する場合[非同期的に](sending-i-o-requests-asynchronously.md)、ドライバーを下位レベルのドライバー、要求を完了するときに通知します。 場合は、ドライバーは、登録、 [ *CompletionRoutine* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nc-wdfrequest-evt_wdf_request_completion_routine)コールバック関数では、フレームワークからこのコールバック関数 I/O ターゲットが、要求を完了後します。 *CompletionRoutine*コールバック関数を呼び出す通常[ **WdfRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestcomplete)します。
+-   ドライバーが i/o 要求を[非同期](sending-i-o-requests-asynchronously.md)に転送する場合は、下位レベルのドライバーが要求を完了したときに、ドライバーに通知されるようにします。 ドライバーが、完了[*ルーチン*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nc-wdfrequest-evt_wdf_request_completion_routine)のコールバック関数を登録した場合、このコールバック関数は、i/o ターゲットが要求を完了した後に呼び出されます。 通常、入力*ルーチン*のコールバック関数は、 [**wdfrequestcomplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcomplete)を呼び出します。
 
-登録する、 [ *CompletionRoutine* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nc-wdfrequest-evt_wdf_request_completion_routine)コールバック関数では、ドライバーを呼び出す必要があります[ **WdfRequestSetCompletionRoutine** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestsetcompletionroutine)前にI/O のターゲットに I/O 要求を転送します。
+[*補完ルーチン*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nc-wdfrequest-evt_wdf_request_completion_routine)のコールバック関数を登録するには、ドライバーは、i/o 要求を i/o ターゲットに転送する前に、 [**Wdfrequestset補完ルーチン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsetcompletionroutine)を呼び出す必要があります。
 
-登録するドライバーがない場合は、ドライバーは、I/O ターゲットを非同期的に転送された I/O 要求を完了するときに通知する必要はありません、 [ *CompletionRoutine* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nc-wdfrequest-evt_wdf_request_completion_routine)コールバック関数。 ドライバーを代わりに、設定することができます、 [ **WDF\_要求\_送信\_オプション\_送信\_AND\_破棄**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/ne-wdfrequest-_wdf_request_send_options_flags)場合にフラグを設定呼び出す[ **WdfRequestSend**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestsend)します。 この場合、ドライバーは呼び出しません[ **WdfRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestcomplete)します。
+I/o ターゲットが非同期的に転送された i/o 要求を完了したときにドライバーに通知する必要がない場合、ドライバーは、完了[*ルーチン*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nc-wdfrequest-evt_wdf_request_completion_routine)のコールバック関数を登録する必要がありません。 代わりに、ドライバーは、 [**Wdfrequestsend**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsend)を呼び出すときに、送信[ **\_と\_忘れるフラグを\_送信\_オプションを\_送信**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/ne-wdfrequest-_wdf_request_send_options_flags)するように、WDF\_要求を設定できます。 この場合、ドライバーは[**Wdfrequestcomplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcomplete)を呼び出しません。
 
-ドライバーが呼び出すことで作成した I/O 要求が完了しない[ **WdfRequestCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestcreate)または[ **WdfRequestCreateFromIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestcreatefromirp)します。 代わりに、ドライバーを呼び出す必要があります[ **WdfObjectDelete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nf-wdfobject-wdfobjectdelete) I/O をターゲットには、要求が完了した後、通常、要求オブジェクトを削除します。
+ドライバーは、 [**Wdfrequestcreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcreate)または[**Wdfrequestcreatefromirp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcreatefromirp)を呼び出すことによって作成された i/o 要求を完了しません。 代わりに、ドライバーは[**Wdfobjectdelete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/nf-wdfobject-wdfobjectdelete)を呼び出して要求オブジェクトを削除する必要があります。通常は、i/o ターゲットが要求を完了した後に、このオブジェクトを削除します。
 
-たとえば、ドライバーは、読み取りを受け取ることがあります。 またはをドライバーの I/O ターゲットを超えるデータ量の書き込み要求を同時に処理できます。 ドライバーは、いくつかの小さな要求にデータを分割し、1 つまたは複数の I/O ターゲットにこれらの小さい要求を送信する必要があります。 このような状況を処理するための手法は次のとおりです。
+たとえば、ドライバーは、ドライバーの i/o ターゲットよりも大きいサイズのデータの読み取りまたは書き込み要求を一度に処理できる場合があります。 ドライバーは、データをいくつかの小さな要求に分割し、これらの小さな要求を1つ以上の i/o ターゲットに送信する必要があります。 この状況に対処するための手法は次のとおりです。
 
--   呼び出す[ **WdfRequestCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestcreate)小さな要求を表す 1 つの追加要求オブジェクトを作成します。
+-   [**Wdfrequestcreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcreate)を呼び出して、小さい要求を表す1つの追加の要求オブジェクトを作成します。
 
-    ドライバーでは、I/O のターゲットに、この要求を同期的に送信できます。 小さな要求の[ *CompletionRoutine* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nc-wdfrequest-evt_wdf_request_completion_routine)コールバック関数を呼び出すことができます[ **WdfRequestReuse** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestreuse)ドライバーを再利用できるように、要求し、もう一度 I/O ターゲットに送信します。 I/O ターゲットが小規模の要求の最後のタスクが完了したら、 *CompletionRoutine*コールバック関数を呼び出すことができます[ **WdfObjectDelete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nf-wdfobject-wdfobjectdelete)ドライバー作成を削除するには要求オブジェクトと、ドライバーが呼び出せる[ **WdfRequestComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestcomplete)元の要求を完了します。
+    ドライバーは、i/o ターゲットにこの要求を同期的に送信できます。 小さい要求の実行可能[*ルーチン*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nc-wdfrequest-evt_wdf_request_completion_routine)のコールバック関数は、 [**WdfRequestReuse**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestreuse)を呼び出して、ドライバーが要求を再利用し、再度 i/o ターゲットに送信できるようにします。 I/o ターゲットが小さい要求の最後に完了した後、入力候補*のコールバック*関数は、 [**Wdfobjectdelete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/nf-wdfobject-wdfobjectdelete)を呼び出してドライバーで作成された要求オブジェクトを削除し、ドライバーは[**wdfobjectdelete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcomplete)を呼び出して完了することができます。元の要求。
 
--   呼び出す[ **WdfRequestCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestcreate)小さな要求を表すいくつかの追加の要求オブジェクトを作成します。
+-   [**Wdfrequestcreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcreate)を呼び出して、より小さな要求を表すいくつかの追加の要求オブジェクトを作成します。
 
-    ドライバーの I/O のターゲットは、これら複数の小さい要求を非同期的に処理できます。 ドライバーが登録できる、 [ *CompletionRoutine* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nc-wdfrequest-evt_wdf_request_completion_routine)小さな要求ごとのコールバック関数。 ごとに、 *CompletionRoutine*コールバック関数が呼び出されると、呼び出すことができます[ **WdfObjectDelete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nf-wdfobject-wdfobjectdelete)ドライバーが作成した要求オブジェクトを削除します。 I/O のターゲットには、すべての小さい要求が完了すると、ドライバーを呼び出すことが[ **WdfRequestComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestcomplete)元の要求を完了します。
+    ドライバーの i/o ターゲットは、これらの複数の小さな要求を非同期的に処理できます。 ドライバーは、小さい要求のそれぞれに対して、実行可能な[*ルーチン*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nc-wdfrequest-evt_wdf_request_completion_routine)コールバック関数を登録できます。 実行可能*ルーチン*のコールバック関数が呼び出されるたびに、 [**wdfobjectdelete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/nf-wdfobject-wdfobjectdelete)を呼び出して、ドライバーによって作成された要求オブジェクトを削除することができます。 I/o ターゲットがすべての小さな要求を完了すると、ドライバーは[**Wdfrequestcomplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcomplete)を呼び出して元の要求を完了することができます。
 
-### <a href="" id="providing-completion-information"></a> 完了の情報を提供します。
+### <a href="" id="providing-completion-information"></a>完了情報の提供
 
-ドライバーには、要求が完了すると、その他のドライバーにアクセスできる追加情報も提供できます。 たとえば、ドライバーは、読み取りまたは書き込み要求の転送されたバイト数を提供する可能性があります。 この情報を提供するには、ドライバーは、次のいずれかで実行できます。
+ドライバーは、要求を完了すると、他のドライバーがアクセスできる追加情報を必要に応じて提供できます。 たとえば、ドライバーは、読み取り要求または書き込み要求に対して転送されたバイト数を提供する場合があります。 この情報を提供するために、ドライバーは次のいずれかを実行できます。
 
--   呼び出す[ **WdfRequestSetInformation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestsetinformation)呼び出す前に[ **WdfRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestcomplete)します。
+-   [**Wdfrequestcomplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcomplete)を呼び出す前に、 [**Wdfrequestsetinformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsetinformation)を呼び出してください。
 
--   呼び出す[ **WdfRequestCompleteWithInformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestcompletewithinformation)します。
+-   [**Wdfrequestcompletewithinformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcompletewithinformation)を呼び出します。
 
-### <a href="" id="obtaining-completion-information"></a> 完了の情報を取得します。
+### <a href="" id="obtaining-completion-information"></a>完了情報の取得
 
-別のドライバーが完了する I/O 要求に関する情報を取得するには、ドライバーでは次のことができます。
+別のドライバーが完了した i/o 要求に関する情報を取得するために、ドライバーは次のことができます。
 
--   呼び出す[ **WdfRequestGetStatus** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestgetstatus)下位レベルのドライバーでは、呼び出されたときに指定されている完了状態の値を取得する[ **WdfRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestcomplete).
+-   [**WdfRequestGetStatus**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestgetstatus)を呼び出して、 [**Wdfrequestcomplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcomplete)を呼び出したときに指定された下位レベルのドライバーの完了状態の値を取得します。
 
--   呼び出す[ **WdfRequestGetCompletionParams** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestgetcompletionparams)を取得する、 [ **WDF\_要求\_完了\_PARAMS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/ns-wdfrequest-_wdf_request_completion_params)要求のバッファー、またはバスに固有の情報を表すオブジェクトをメモリへのハンドルなど、完了した要求に関する追加情報を含む構造体。
+-   [**Wdfrequestgetcompletion params**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestgetcompletionparams)を呼び出して、完了した要求に関する追加情報を含む[**WDF\_要求\_完了\_PARAMS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/ns-wdfrequest-_wdf_request_completion_params)構造体を取得します。これには、要求のバッファー、またはバス固有の情報。
 
-    ドライバーが呼び出せる[ **WdfRequestGetCompletionParams** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestgetcompletionparams)呼び出した後にのみ[ **WdfRequestSend** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestsend) I/O 要求を送信するには同期または非同期 I/O のターゲットにします。 ドライバーを呼び出してはならない**WdfRequestGetCompletionParams** I/O ターゲットにのみ同期的に I/O 要求を送信する方法のいずれかを呼び出した後 (など[ **WdfIoTargetSendReadSynchronously**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdfiotargetsendreadsynchronously)).
+    ドライバーは[**Wdfrequestget補完 params**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestgetcompletionparams)を呼び出すことができるのは、 [**wdfrequestsend**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsend)を呼び出して i/o 要求を同期的または非同期的に i/o ターゲットに送信した後のみです。 I/o ターゲットに i/o 要求を同期的に送信するメソッドの1つ ( [**Wdfiotargetsendreadsend**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetsendreadsynchronously)など) を呼び出すと、ドライバーは**Wdfrequestget補完 params**を呼び出すことができません。
 
--   呼び出す[ **WdfRequestGetInformation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestgetinformation)下位レベルのドライバーが呼び出されたときに指定されている追加の I/O 完了の情報を取得する[ **WdfRequestSetInformation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestsetinformation)または[ **WdfRequestCompleteWithInformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestcompletewithinformation)ドライバー スタックのドライバーは、このような情報を提供する場合は、します。
+-   [**Wdfrequestgetinformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestgetinformation)を呼び出して、ドライバー内のドライバーが[**Wdfrequestsetinformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsetinformation)または[**wdfrequestcompletewithinformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcompletewithinformation)を呼び出したときに指定された下位レベルのドライバーによって追加の i/o 完了情報を取得します。stack は、このような情報を提供します。
 
-ドライバーは、同期的に、I/O 要求を送信する場合、通常呼び出し[ **WdfRequestGetStatus**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestgetstatus)、 [ **WdfRequestGetCompletionParams** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestgetcompletionparams)、および[ **WdfRequestGetInformation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestgetinformation)同期呼び出しが返された後にします。 通常内からこれらのメソッドを呼び出し、ドライバーは、非同期的に、I/O 要求を送信する場合、 [ *CompletionRoutine* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nc-wdfrequest-evt_wdf_request_completion_routine)コールバック関数。
+ドライバーが i/o 要求を同期的に送信する場合、通常は、同期呼び出しから制御が戻った後、 [**WdfRequestGetStatus**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestgetstatus)、 [**wdfrequestget補完 Params**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestgetcompletionparams)、および[**wdfrequestgetinformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestgetinformation)を呼び出します。 ドライバーは、非同期的に i/o 要求を送信する場合、通常、これらのメソッドを、[*補完ルーチン*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nc-wdfrequest-evt_wdf_request_completion_routine)のコールバック関数内から呼び出します。
 
-I/O 要求を完了する詳細については、次を参照してください。[の同期をキャンセルし完了コード](synchronizing-cancel-and-completion-code.md)します。
+I/o 要求の完了の詳細については、「[キャンセルと完了コードの同期](synchronizing-cancel-and-completion-code.md)」を参照してください。
 
  
 

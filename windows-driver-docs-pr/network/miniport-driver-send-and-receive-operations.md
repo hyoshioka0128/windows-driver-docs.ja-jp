@@ -3,20 +3,20 @@ title: ミニポート ドライバーの送信および受信操作
 description: ミニポート ドライバーの送信および受信操作
 ms.assetid: f495cf1f-9896-4259-b885-cff4a0112d17
 keywords:
-- ミニポート ドライバー WDK ネットワークは、データを送信します。
-- NDIS ミニポート ドライバー WDK、データを送信します。
-- ミニポート ドライバー WDK ネットワークは、データの受信
-- NDIS ミニポート ドライバー WDK、データの受信
-- WDK ネットワークのデータを送信します。
-- 受信側のデータの WDK ネットワーク
+- ミニポートドライバー WDK ネットワーク、送信 (データを)
+- NDIS ミニポートドライバー WDK、データの送信
+- ミニポートドライバー WDK ネットワーク、受信データ
+- NDIS ミニポートドライバー WDK、データの受信
+- データの送信 (WDK ネットワーク)
+- データを受信する WDK ネットワーク
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: abbc1ae089524f5aad0b25872bbcff60e1667a31
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: db3e70c1201ab6e293b1b473b6e15caa91ec9313
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67373934"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844238"
 ---
 # <a name="miniport-driver-send-and-receive-operations"></a>ミニポート ドライバーの送信および受信操作
 
@@ -24,19 +24,19 @@ ms.locfileid: "67373934"
 
 
 
-ハンドルが重なってドライバーから要求を送信および発信のミニポート ドライバーでは、インジケーターが表示されます。 1 つの関数の呼び出しで NDIS ミニポート ドライバーは、受信した複数のリンクされたリストを指定できます[ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)構造体。 ミニポート ドライバーが複数のネットワークの一覧については、送信要求を処理できる\_バッファー\_複数のリストの構造体[ **NET\_バッファー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)各ネットワーク上の構造\_バッファー\_リスト構造体。
+ミニポートドライバーは、それ以降のドライバーからの送信要求を処理し、受信通知を発信します。 1回の関数呼び出しで、NDIS ミニポートドライバーは、複数の受信した[**NET\_BUFFER\_リスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)構造を持つリンクリストを示すことができます。 ミニポートドライバーは、各 NET\_BUFFER\_LIST 構造体に複数の[**net\_バッファー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer)構造を持つ複数の NET\_BUFFER\_リスト構造のリストに対する送信要求を処理できます。
 
-ミニポート ドライバーを管理する必要があるバッファー プールを受信します。 ほとんどのミニポート ドライバーが事前に割り当てる 1 つの NET するプールを作成\_各 NET でバッファー構造\_バッファー\_リスト構造体。
+ミニポートドライバーは、受信バッファープールを管理する必要があります。 ほとんどのミニポートドライバーは、各 NET\_BUFFER\_LIST 構造体を使用して、1つの NET\_バッファー構造を事前に割り当てるプールを作成します。
 
-次のトピックは、ミニポート ドライバー バッファー管理の詳細について説明し、操作を送信、受信操作。
+次のトピックでは、ミニポートドライバーのバッファー管理、送信操作、および受信操作の詳細について説明します。
 
-[ミニポート ドライバー バッファー管理](miniport-driver-buffer-management.md)
+[ミニポートドライバーのバッファー管理](miniport-driver-buffer-management.md)
 
-[ミニポート ドライバーからデータを送信します。](sending-data-from-a-miniport-driver.md)
+[ミニポートドライバーからのデータの送信](sending-data-from-a-miniport-driver.md)
 
-[ミニポート ドライバーでは、送信要求を取り消す](canceling-a-send-request-in-a-miniport-driver.md)
+[ミニポートドライバーで送信要求をキャンセルする](canceling-a-send-request-in-a-miniport-driver.md)
 
-[ミニポート ドライバーからデータを受信したことを示します](indicating-received-data-from-a-miniport-driver.md)
+[ミニポートドライバーからの受信データを示す](indicating-received-data-from-a-miniport-driver.md)
 
  
 

@@ -4,22 +4,22 @@ description: I/o マネージャーのサポートルーチン
 ms.assetid: f0b0099e-f920-4287-9e5d-e0fd4241f100
 ms.date: 09/30/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ae25a05b7f0cd0bc537fbd248ba2a34d564612c
-ms.sourcegitcommit: c23a403b3ebea05bde96067b678a318ca9b0cabe
+ms.openlocfilehash: decd2ec8992bc8432e18d729c0ae1a8d3c1b4902
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71955798"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841214"
 ---
 # <a name="io-manager-support-routines"></a>I/o マネージャーのサポートルーチン
 
 次のシステム指定の i/o マネージャー関数とマクロは、カーネルモードのファイルシステムとファイルシステムフィルター (ミニフィルターまたはレガシフィルター) ドライバーによって呼び出すことができます。 デバイスドライバーでは使用できません。 これらはアルファベット順に表示されます。
 
-ここに記載されているルーチンに加えて、ファイルシステムとフィルタードライバーは、 *ntifs*で宣言されている[Windows カーネルリファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_kernel/)セクションで説明されている Io*Xxx** * ルーチンを呼び出すこともできます。
+ここに記載されているルーチンに加えて、ファイルシステムとフィルタードライバーは、 *ntifs*で宣言されている[Windows カーネルリファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/_kernel/)セクションで説明されている Io*Xxx** * ルーチンを呼び出すこともできます。
 
 **ヘッダーファイル:** *ntifs*
 
-** プレフィックス:Io @ no__t-0_Xxx_、 **IsReparseTag**_xxx_
+**プレフィックス: Io**_xxx_、 **IsReparseTag**_xxx_
 
 | 関数またはマクロ | 説明 |
 | ----------------- | ----------- |

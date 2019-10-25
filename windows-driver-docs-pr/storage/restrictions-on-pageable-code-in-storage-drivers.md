@@ -3,18 +3,18 @@ title: ストレージ ドライバーでのページング可能コードの制
 description: ストレージ ドライバーでのページング可能コードの制約
 ms.assetid: 1958f22f-5563-41e9-9c3f-dec8a4ac80c0
 keywords:
-- ストレージ ドライバー WDK、ページング可能なコードの制限
-- ページング可能なコードの制限の WDK ストレージ
-- デッドロック WDK ストレージ
-- ページング パス WDK ストレージ
+- ストレージドライバー WDK、ページング可能コードの制限
+- ページング可能コード制限 WDK ストレージ
+- デッドロックの WDK ストレージ
+- ページングパス WDK ストレージ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3515a0b9e1a9f87df9679fd1dd1ad0430018aac4
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4c7709745645db21eedc8853e7e6068e10145478
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67373196"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842691"
 ---
 # <a name="restrictions-on-pageable-code-in-storage-drivers"></a>ストレージ ドライバーでのページング可能コードの制約
 
@@ -22,17 +22,17 @@ ms.locfileid: "67373196"
 ## <span id="ddk_restrictions_on_pageable_code_in_storage_drivers_kg"></span><span id="DDK_RESTRICTIONS_ON_PAGEABLE_CODE_IN_STORAGE_DRIVERS_KG"></span>
 
 
-デッドロックを防ぐためには、サービスに使用する記憶装置ドライバーの一部の読み取りまたは書き込み要求は、ページング可能なコードが必要でもページング可能なメモリにアクセスするまで試行する必要があります。 これは、ドライバーの[ **DispatchRead** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)と[ **DispatchWrite** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch) IRQL でルーチンを呼び出すことができます&gt;パッシブ\_レベル、および IRQL でページ フォールトの受け取り場所サービスを提供するページングで I/O APC を =\_レベル。
+デッドロックを防ぐために、読み取り要求または書き込み要求を処理するために使用されるストレージドライバーには、ページング可能なコードが含まれている必要はありません。また、ページング可能なメモリにアクセスしようとする必要もありません。 これは、ドライバーの[**DispatchRead**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)ルーチンと[**DispatchWrite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)ルーチンを &gt; パッシブ\_レベルの irql で呼び出すことができ、ページフォールトを処理するページングを行う i/o は、IRQL = APC\_レベルで行われるためです。
 
-ストレージ ドライバーのデバイス管理のディスパッチ ルーチンに同様のルールを適用[ **DispatchDeviceControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)、特定の制限があります。 記憶装置ドライバーのデバイス制御ディスパッチ ルーチンには、ページング可能なコードまたはアクセス ページング可能なメモリが含まれていない必要があります。 ディスパッチ ルーチンは、任意の Irql で他のドライバーのためのものでは、ドライバー スタックを渡したり IOCTL 要求を受信できる必要があります。 ドライバー*する必要があります*IRQL または要求のコンテキストを変更することがなく、下位のスタックのすべての未処理の IOCTL 要求を渡します。
+同様の規則は、特定の条件を満たした記憶域ドライバーのデバイス制御ディスパッチルーチン[**DispatchDeviceControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)に適用されます。 ストレージドライバーのデバイス制御ディスパッチルーチンには、ページング可能なコードを含めたり、ページング可能なメモリにアクセスしたりすることはできません。 ディスパッチルーチンは、任意の IRQLs で他のドライバーを対象とする IOCTL 要求を受信し、ドライバースタックに渡すことができる必要があります。 ドライバーは、要求の IRQL またはコンテキストを変更せずに、スタック内のすべての未処理の IOCTL 要求を渡す*必要があり*ます。
 
-Microsoft では、する必要がすべて*ストレージ*IOCTL 要求はパッシブで提出する\_レベルで、ディスパッチ ルーチンは、それ自体ではありませんが、ページングを呼び出すことがストレージ IOCTL 要求を処理するサブルーチンをページング可能な。 これらのサブルーチンでは、ページング可能なメモリもアクセスできます。
+ただし、Microsoft では、すべての*ストレージ*ioctl 要求をパッシブ\_レベルで送信する必要があります。そのため、ディスパッチルーチン自体はページング可能ではありませんが、ページング可能なサブルーチンを呼び出してストレージ ioctl 要求を処理することができます。 これらのサブルーチンは、ページング可能なメモリにアクセスすることもできます。
 
-などのルーチン[ **DriverEntry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)、 [**を再初期化**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nc-ntddk-driver_reinitialize)、および[**アンロード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_unload)、I/O をしないし、IRQL で実行を = パッシブ\_レベルでは、ページング可能なコードはこともできます。
+[**Driverentry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)、[**再初期化**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nc-ntddk-driver_reinitialize)、[**アンロード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_unload)など、i/o を行わず、IRQL = パッシブ\_レベルで実行されるルーチンも、ページング可能なコードを持つことができます。
 
-ページングのパスでの記憶域デバイスを管理するドライバーに特別な考慮事項が適用されます。 ドライバーが、「ページング パス」ページング ファイルの I/O 操作に含まれているかどうか。 ページングのパスが記憶装置ドライバーの場合、 [ **DispatchPower** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch) IRP の日常的な\_MJ\_POWER 要求をページングすることはできません。
+ページングパスで記憶デバイスを管理するドライバーには、特別な考慮事項が適用されます。 ページングファイルに i/o 操作が含まれている場合、ドライバーは "ページングパス" にあります。 ストレージドライバーがページングパスにある場合、IRP\_MJ\_の[**DispatchPower**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)ルーチンは、ページングを行うことができません。
 
-既定では、カーネル モード ドライバー用のコードはページング可能なもがグローバル メモリをページング可能なカーネル モード ドライバーで使用します。 ページング可能なコードを作成する方法については、次を参照してください。[ドライバー コードの作成やページング可能なデータ](https://docs.microsoft.com/windows-hardware/drivers/kernel/making-driver-code-or-data-pageable)します。
+既定では、カーネルモードドライバーのコードはページングできません。また、カーネルモードドライバーによって使用されるグローバルメモリもページングされません。 コードをページング可能にする方法の詳細については、「[ドライバーコードまたはデータをページング](https://docs.microsoft.com/windows-hardware/drivers/kernel/making-driver-code-or-data-pageable)できるようにする」を参照してください。
 
  
 

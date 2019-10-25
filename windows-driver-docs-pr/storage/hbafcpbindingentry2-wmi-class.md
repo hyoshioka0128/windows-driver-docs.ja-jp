@@ -4,12 +4,12 @@ description: HBAFCPBindingEntry2 WMI クラス
 ms.assetid: b9423b59-1d55-4487-bebb-e3eb786fc1be
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: f1b53177172ba9e3ecdc3acdc9a5c05c78dfe001
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b222dd737c0213c96320535bb8dc19681b208d30
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67353499"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842745"
 ---
 # <a name="hbafcpbindingentry2-wmi-class"></a>HBAFCPBindingEntry2 WMI クラス
 
@@ -17,9 +17,9 @@ ms.locfileid: "67353499"
 ## <span id="ddk_hbafcpbindingentry2_wmi_class_kr"></span><span id="DDK_HBAFCPBINDINGENTRY2_WMI_CLASS_KR"></span>
 
 
-T11 委員会をサポートする HBA ミニポート ドライバー*ファイバー チャネル HBA API*仕様では、HBAFCPBindingEntry2 クラスを使用して、論理ユニットを識別するために、オペレーティング システムを使用する情報との間のバインディングを定義します。SCSI デバイスおよび論理ユニットのファイバー チャネル プロトコル (FCP) 識別子。 T11 委員会を参照してください、FCP の詳細については、 *dpANS scsi、ファイバー チャネル プロトコル*仕様。 SCSI と FCP 識別子の間のバインドの詳細については、T11 委員会を参照してください。*ファイバー チャネル HBA API*仕様。
+T11 委員会の*ファイバーチャネル HBA API*仕様をサポートする hba ミニポートドライバーは、HBAFCPBindingEntry2 クラスを使用して、オペレーティングシステムが SCSI デバイスの論理ユニットを識別するために使用する情報と、論理ユニットのファイバーチャネルプロトコル (FCP) 識別子。 FCP の詳細については、「T11 委員会の*Dpans ファイバーチャネル Protocol FOR SCSI* specification」を参照してください。 SCSI および FCP 識別子間のこのバインディングの詳細については、T11 委員会の*ファイバーチャネル HBA API*仕様を参照してください。
 
-HBAFCPBindingEntry2 クラスは次のように定義されている*Hbaapi.mof*:
+HBAFCPBindingEntry2 クラスは、 *Hbaapi .mof*で次のように定義されています。
 
 ```cpp
 class HBAFCPBindingEntry2 {
@@ -30,9 +30,9 @@ class HBAFCPBindingEntry2 {
 };
 ```
 
-WMI ツール スイートによってコンパイルされるときに、このクラスの定義には、次のデータ構造が生成されます。
+WMI ツールスイートによってコンパイルされた場合、このクラス定義では次のデータ構造が生成されます。
 
-[**HBAFCPBindingEntry2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_hbafcpbindingentry2)
+[**HBAFCPBindingEntry2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_hbafcpbindingentry2)
 
 この WMI クラスに関連付けられているメソッドはありません。
 

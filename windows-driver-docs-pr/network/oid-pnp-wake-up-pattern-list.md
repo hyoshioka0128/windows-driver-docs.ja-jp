@@ -3,38 +3,38 @@ title: OID_PNP_WAKE_UP_PATTERN_LIST
 description: OID_PNP_WAKE_UP_PATTERN_LIST
 ms.assetid: 36e4243f-5df6-4231-b1e3-63fcb2e2ec04
 ms.date: 08/08/2017
-keywords: -OID_PNP_WAKE_UP_PATTERN_LIST ネットワーク ドライバーが Windows Vista 以降
+keywords: -Windows Vista 以降の OID_PNP_WAKE_UP_PATTERN_LIST ネットワークドライバー
 ms.localizationpriority: medium
-ms.openlocfilehash: 423600aae56ab222fba6139c3eadb0c59d80e1ec
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5fc6dbcef75e41c260d9b08e355e747b2211e793
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385239"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844033"
 ---
-# <a name="oidpnpwakeuppatternlist"></a>OID\_PNP\_WAKE\_を\_パターン\_一覧
+# <a name="oid_pnp_wake_up_pattern_list"></a>OID\_PNP\_ウェイクアップ\_\_パターン\_一覧
 
 
 
 
 
-OID\_PNP\_WAKE\_を\_パターン\_一覧 OID が現在設定されて、ミニポート ドライバーのネットワーク アダプターにウェイク アップ パターンの一覧を照会する、プロトコルで使用します。 プロトコルでウェイク アップ パターンを指定する[OID\_PNP\_追加\_WAKE\_を\_パターン](oid-pnp-add-wake-up-pattern.md)します。
+OID\_PNP\_WAKE\_UP\_パターン\_LIST OID は、現在ミニポートドライバーのネットワークアダプターに設定されているウェイクアップパターンの一覧を照会するためにプロトコルによって使用されます。 プロトコルでは、 [\_ウェイクアップ\_up\_パターンを追加](oid-pnp-add-wake-up-pattern.md)することにより、OID\_\_PNP でウェイクアップパターンを指定します。
 
-OID\_PNP\_WAKE\_を\_パターン\_一覧は、NDIS ミニポート ドライバーではなくによって処理されます。
+OID\_PNP\_WAKE\_UP\_パターン\_一覧は、ミニポートドライバーではなく NDIS によって処理されます。
 
-NDIS は、プロトコルにウェイク アップのパターンがミニポート ドライバーの設定ごとの説明を返します。 によって、マスク、と共に各ウェイク アップ パターンが記載されている、 [ **NDIS\_PM\_パケット\_パターン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_packet_pattern)構造体。
+NDIS は、ミニポートドライバーで設定されている各ウェイクアップパターンの説明をプロトコルに返します。 各ウェイクアップパターンは、そのマスクと共に、 [**NDIS\_PM\_パケット\_パターン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_packet_pattern)構造によって記述されます。
 
-ウェイク アップ パターンごとに、 **InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体には、次が含まれています。
+各ウェイクアップパターンについて、 [**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造の**informationbuffer**メンバーには、次のものが含まれます。
 
--   [ **NDIS\_PM\_パケット\_パターン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_packet_pattern)パターンとそのマスクについての情報を提供する構造体。
+-   \_パターンとそのマスクに関する情報を提供する、 [**NDIS\_PM\_パケットパターン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_packet_pattern)構造体。
 
--   着信パケットのデータの量を示すマスク パターンに対応するバイト数と比較する必要があります。 マスクは、パケットの最初のバイトを開始します。 マスクの直後に、 [ **NDIS\_PM\_パケット\_パターン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_packet_pattern)構造体、 **InformationBuffer**します。
+-   受信パケットのうち、パターン内の対応するバイトと比較する必要があるバイトを示すマスク。 マスクは、パケットの最初のバイトで開始されます。 このマスクは、 **Informationbuffer**内の[**NDIS\_PM\_パケット\_パターン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_packet_pattern)構造の直後にあります。
 
--   ウェイク アップ パターンでは、開始**PatternOffset**の先頭からのバイト、 **InformationBuffer**します。
+-   ウェイクアップパターン。これは、 **Informationbuffer**の先頭からの**PatternOffset**バイトを開始します。
 
-上端がこの OID 要求を受信する中間のドライバーは、Ndis (Co) 要求を呼び出すことによって、基になるミニポート ドライバーに要求を伝達する必要があります常にします。
+上端がこの OID 要求を受信する中間ドライバーは、Ndis (Co) 要求を呼び出すことによって、常に要求を基になるミニポートドライバーに伝達する必要があります。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -45,11 +45,11 @@ NDIS は、プロトコルにウェイク アップのパターンがミニポ�
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>NDIS 6.0 および 6.1 ではサポートされています。 NDIS 6.20 以降を使用して<a href="oid-pm-wol-pattern-list.md" data-raw-source="[OID_PM_WOL_PATTERN_LIST](oid-pm-wol-pattern-list.md)">OID_PM_WOL_PATTERN_LIST</a>代わりにします。</p></td>
+<td><p>NDIS 6.0 および6.1 でサポートされています。 NDIS 6.20 以降では、代わりに<a href="oid-pm-wol-pattern-list.md" data-raw-source="[OID_PM_WOL_PATTERN_LIST](oid-pm-wol-pattern-list.md)">OID_PM_WOL_PATTERN_LIST</a>を使用してください。</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Ntddndis.h (include Ndis.h)</td>
+<td>Ntddndis (Ndis .h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -57,15 +57,15 @@ NDIS は、プロトコルにウェイク アップのパターンがミニポ�
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_PM\_パケット\_パターン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_packet_pattern)
+[**NDIS\_PM\_パケット\_パターン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_packet_pattern)
 
-[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
+[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)
 
-[OID\_PM\_WOL\_パターン\_一覧](oid-pm-wol-pattern-list.md)
+[OID\_PM\_WOL\_パターン\_リスト](oid-pm-wol-pattern-list.md)
 
-[OID\_PNP\_追加\_WAKE\_を\_パターン](oid-pnp-add-wake-up-pattern.md)
+[OID\_PNP\_追加\_ウェイクアップ\_上\_パターン](oid-pnp-add-wake-up-pattern.md)
 
-[OID\_PNP\_削除\_WAKE\_を\_パターン](oid-pnp-remove-wake-up-pattern.md)
+[OID\_PNP\_削除\_ウェイクアップ\_上\_パターン](oid-pnp-remove-wake-up-pattern.md)
 
  
 

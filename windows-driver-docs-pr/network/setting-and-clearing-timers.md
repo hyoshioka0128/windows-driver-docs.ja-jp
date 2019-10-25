@@ -3,18 +3,18 @@ title: タイマーの設定とクリア
 description: タイマーの設定とクリア
 ms.assetid: 75f348f7-173f-4799-88aa-1ca50a6df023
 keywords:
-- タイマー サービスの WDK NDIS
-- NDIS タイマー サービス WDK
-- NDIS タイマーをクリアします。
-- NDIS タイマーの割り当てください。
+- タイマーサービス WDK NDIS
+- NDIS タイマーサービス WDK
+- NDIS タイマーのクリア
+- NDIS タイマーの割り当て
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 314383af86e25d56000ebf75e3bd06ee53c75255
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d3e04575a38a808e08babfb7230e9bb445d8708e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67373868"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841948"
 ---
 # <a name="setting-and-clearing-timers"></a>タイマーの設定とクリア
 
@@ -22,13 +22,13 @@ ms.locfileid: "67373868"
 
 
 
-割り当てのタイマーを初期化した後、 [ **NdisAllocateTimerObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisallocatetimerobject)関数、NDIS 6.0、ドライバーは、 [ **NdisSetTimerObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndissettimerobject)一定の間隔後、または定期的に起動するタイマー オブジェクトを設定します。
+[**NdisAllocateTimerObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocatetimerobject)関数を使用してタイマーを割り当てて初期化した後、NDIS 6.0 ドライバーは[**NdisSetTimerObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndissettimerobject)関数を呼び出して、指定された間隔または定期的にタイマーオブジェクトが起動するように設定します。
 
-*DueTime*パラメーターの**NdisSetTimerObject** 、タイマーが起動されると、NDIS に関連付けられている呼び出しまでの経過するまでの間隔を指定します[ **NetTimerCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_timer_function)関数。 有効期限は、システムの時間単位 (100 ナノ秒間隔) で表されます。
+**NdisSetTimerObject**の*DueTime*パラメーターは、タイマーが起動するまでの期間を指定します。 NDIS は、関連付けられている[**nettimercallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_timer_function)関数を呼び出します。 有効期限は、システム時間単位 (100 ナノ秒間隔) で表されます。
 
-場合、 *MillisecondsPeriod*パラメーターの**NdisSetTimerObject** 0、タイマーが起動を定期的にではないと*MillisecondsPeriod*定期的な時刻を指定します定期的なタイマーの作動時に各と次回の呼び出しの間 (ミリ秒単位) の間隔が経過する、 *NetTimerCallback*関数。
+**NdisSetTimerObject**の*MillisecondsPeriod*パラメーターが0でない場合は、タイマーが定期的に起動され、周期的なタイマーが実行されるまでの間隔をミリ秒単位*で指定します。* を起動し、次に*Nettimercallback*関数を呼び出します。
 
-ドライバーを呼び出すことができます、 [ **NdisCancelTimerObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscanceltimerobject)以前の呼び出しに関連付けられているタイマーをキャンセルする関数、 **NdisSetTimerObject**関数。 NDIS は呼び出すことができますも*NetTimerCallback* 、タイムアウトが既に呼び出しの前に期限切れ**NdisCancelTimerObject**します。
+ドライバーは、 [**NdisCancelTimerObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscanceltimerobject)関数を呼び出して、 **NdisSetTimerObject**関数の前回の呼び出しに関連付けられているタイマーを取り消すことができます。 **NdisCancelTimerObject**の呼び出しの前にタイムアウトが既に期限切れになっている場合、NDIS は*nettimercallback*を呼び出す可能性があります。
 
  
 

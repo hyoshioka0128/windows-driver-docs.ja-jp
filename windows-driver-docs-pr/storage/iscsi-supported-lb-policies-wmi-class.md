@@ -1,20 +1,20 @@
 ---
-title: ISCSI\_サポート\_LB\_ポリシー WMI クラス
-description: ISCSI\_サポート\_LB\_ポリシー WMI クラス
+title: '\_LB\_Policies WMI クラスでサポートされる ISCSI\_'
+description: '\_LB\_Policies WMI クラスでサポートされる ISCSI\_'
 ms.assetid: c11eebe8-519a-473d-9e9c-8a787333223e
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 0872ecc38dd0a4e73f4e9279e825dff93b64990d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 31c7798fa92fb10ad5145a3e49b75aaf38b6598a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378393"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841624"
 ---
-# <a name="iscsisupportedlbpolicies-wmi-class"></a>ISCSI\_サポート\_LB\_ポリシー WMI クラス
+# <a name="iscsi_supported_lb_policies-wmi-class"></a>\_LB\_Policies WMI クラスでサポートされる ISCSI\_
 
 
-ISCSI\_サポートされている\_LB\_ポリシー WMI クラスには、複数の接続の iSCSI セッションのサポートされている負荷分散ポリシーに関する情報が含まれています。 このクラスが次のように定義されている*Mgmt.mof します。*
+\_LB\_Policies WMI クラスでサポートされる ISCSI\_には、マルチ接続 iSCSI セッションでサポートされる負荷分散ポリシーに関する情報が含まれています。 このクラスは、管理 .mof で次のように定義されてい*ます。*
 
 ```cpp
 class ISCSI_Supported_LB_Policies {
@@ -62,7 +62,7 @@ class ISCSI_Supported_LB_Policies {
 };
 ```
 
-WMI ツールのスイートでは、上記のクラス定義をコンパイルするときに生成、 [ **ISCSI\_サポートされている\_LB\_ポリシー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsimgt/ns-iscsimgt-_iscsi_supported_lb_policies)データ構造体。
+WMI ツールスイートは、前のクラス定義をコンパイルするときに、 [ **\_LB\_Policies データ構造でサポートされる ISCSI\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/iscsimgt/ns-iscsimgt-_iscsi_supported_lb_policies)を生成します。
 
  
 

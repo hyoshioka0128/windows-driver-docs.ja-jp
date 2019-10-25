@@ -3,25 +3,25 @@ title: Winsock カーネルの概要
 description: Winsock カーネルの概要
 ms.assetid: 52c65b9f-e3b3-4b0d-8334-7db1abb2c971
 keywords:
-- ネットワークには、Winsock カーネルに関する Winsock カーネル WDK
-- ネットワークには、Winsock カーネルに関する WSK WDK
+- Winsock カーネル WDK ネットワーク, Winsock カーネルについて
+- WSK WDK ネットワーク、Winsock カーネルについて
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d516cde9492582778576a1ce51dee676ee814e31
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 66885083bb4b17f954984f8f87870ba6221400af
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386337"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844160"
 ---
 # <a name="introduction-to-winsock-kernel"></a>Winsock カーネルの概要
 
 
-Winsock カーネル (WSK) は、カーネル モード[ネットワーク プログラミング インターフェイス (NPI)](network-programming-interface.md)します。 WSK、カーネル モード ソフトウェア モジュールはプログラミングの概念 Winsock2 のユーザー モードでサポートされている同じソケットを使用して、ネットワーク I/O 操作を実行できます。 WSK NPI ソケットの作成、バインド、接続の確立、およびデータ転送などの使い慣れたソケット操作をサポートしています (送信し、受信)。 ただし、WSK NPI には、ほとんどのプログラミングの概念をユーザー モード Winsock2 として同じソケットがサポートされますは、非同期の I/O パフォーマンスを強化するために Irp とイベントのコールバックを使用するなどの一意の特性を持つ、まったく新しいさまざまなインターフェイスです。
+Winsock カーネル (WSK) は、カーネルモードの[ネットワークプログラミングインターフェイス (NPI)](network-programming-interface.md)です。 WSK では、カーネルモードのソフトウェアモジュールは、ユーザーモード Winsock2 でサポートされているのと同じソケットプログラミング概念を使用して、ネットワーク i/o 操作を実行できます。 WSK NPI は、ソケットの作成、バインド、接続の確立、データ転送 (送受信) などの使い慣れたソケット操作をサポートしています。 ただし、WSK NPI は、ユーザーモード Winsock2 と同じソケットプログラミング概念のほとんどをサポートしていますが、Irp やイベントコールバックを使用してパフォーマンスを向上させる非同期 i/o などの一意の特性を備えた、まったく新しい、異なるインターフェイスです。
 
-カーネル モードのネットワーク モジュールの代わりに WSK を使用する必要があり、Windows Vista 以降のバージョンの Microsoft Windows の対象となる[TDI](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff565094(v=vs.85)) WSK、パフォーマンスの向上とプログラミングを簡単にするためです。 フィルター ドライバーを実装する必要があります、 [Windows フィルタ リング プラットフォーム](introduction-to-windows-filtering-platform-callout-drivers.md)クライアントで Windows Vista、および TDI WSK を実装する必要があります。
+Windows Vista 以降のバージョンの Microsoft Windows を対象とするカーネルモードのネットワークモジュールでは、 [TDI](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff565094(v=vs.85))ではなく wsk を使用する必要があります。 wsk では、パフォーマンスが向上し、プログラミングが簡単になるためです。 フィルタードライバーは Windows Vista で[Windows フィルタリングプラットフォーム](introduction-to-windows-filtering-platform-callout-drivers.md)を実装する必要があり、TDI クライアントは wsk を実装する必要があります。
 
-**注**  Windows Vista の後に、TDI が Microsoft Windows のバージョンでサポートされません。 使用[Windows フィルタ リング プラットフォーム](windows-filtering-platform-callout-drivers2.md)または[Winsock Kernel](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)代わりにします。
+Windows Vista 以降では、Microsoft Windows のバージョンでは TDI はサポートされませ**ん  。** 代わりに、 [Windows フィルタリングプラットフォーム](windows-filtering-platform-callout-drivers2.md)または[Winsock カーネル](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)を使用してください。
 
  
 

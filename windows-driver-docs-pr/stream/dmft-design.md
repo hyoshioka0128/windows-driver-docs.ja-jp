@@ -3,12 +3,12 @@ title: デバイス MFT 設計ガイド
 description: このトピックでは、すべてのストリームに共通する後処理を実行するために使用できる、ユーザーモードで実行されるデバイス全体の拡張機能の設計の概要について説明します。
 ms.date: 01/30/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 00931f0f4fdf9033e1d5d9c710d177fcb84fd18c
-ms.sourcegitcommit: c1d02055c131d99f5c26943b527ca84f067afbab
+ms.openlocfilehash: 66d1b9bd208f31be1b7bcb17e5f0b4dcadef9f77
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71135775"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842642"
 ---
 # <a name="device-mft-design-guide"></a>デバイス MFT 設計ガイド
 
@@ -18,11 +18,11 @@ Windows のビデオキャプチャスタックでは、DMFT の形式でユー�
 
 ## <a name="terminology"></a>用語
 
-| 項目       | 説明                                                                                         |
+| 用語       | 説明                                                                                         |
 |------------|-----------------------------------------------------------------------------------------------------|
 | KS         | カーネルストリーミングドライバー                                                                             |
 | AvStream   | オーディオビデオストリーミングドライバーモデル                                                                  |
-| Assert     | デバイスインスタンスを表すオブジェクト                                                            |
+| フィルター     | デバイスインスタンスを表すオブジェクト                                                            |
 | デバイスの MFT | Ihv によって提供されるユーザーモードキャプチャドライバーの拡張機能                                                 |
 | Devproxy   | MF <-> AvStream マーシャラー                                                                           |
 | DTM        | Devproxy とデバイス MFT を管理するデバイス変換マネージャー。 MF パイプラインのデバイスを表します。|
@@ -192,7 +192,7 @@ Devproxy は、ドライバーにメタデータバッファーサイズを照�
 
 このメタデータストリームは DTM 以外で公開されています。 ストリームは、デバイスの MFT がストリーミングを開始するときにストリーミング状態にすることができます。 たとえば、ストリーミング用の出力ストリームを選択すると、デバイスの MFT は、 **METransformInputStreamStateChanged**イベントを使用して、1つ以上のビデオストリームとメタデータストリームを開始するよう dtm に要求できます。 
 
-メモ:このモデルでは、入力ピンの数が出力ピンの数と一致する必要はありません。 メタデータまたは3A 専用の暗証番号 (pin) のみを使用できます。
+注: このモデルでは、入力ピンの数が出力ピンの数と一致する必要はありません。 メタデータまたは3A 専用の暗証番号 (pin) のみを使用できます。
 
 ## <a name="device-transform-manager-dtm-event-handling"></a>デバイス変換マネージャー (DTM) イベント処理
 
@@ -220,7 +220,7 @@ Devproxy (またはデバイス内) でイベントが発生した場合、そ�
 
 - [IMFDeviceTransform](https://docs.microsoft.com/windows/desktop/api/mftransform/nn-mftransform-imfdevicetransform)
 
-- [Iksk コントロール](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nn-ks-ikscontrol)
+- [Iksk コントロール](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nn-ks-ikscontrol)
 
     - これにより、すべての ksk プロパティ、イベント、およびメソッドがデバイスの MFT を通過できるようになります。 これにより、デバイス mft はデバイス MFT 内でこれらの関数呼び出しを処理したり、ドライバーに転送したりすることができます。 KsEvent メソッドを処理する場合、デバイスの MFT は次の操作を行う必要があります。
 

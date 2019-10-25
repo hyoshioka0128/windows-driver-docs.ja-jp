@@ -1,43 +1,43 @@
 ---
 title: チェックサム オフロードでの NVGRE のサポート
-description: このセクションでは、チェックサム オフロードで NVGRE のサポートについて説明します
+description: このセクションでは、チェックサムオフロードでの NVGRE のサポートについて説明します。
 ms.assetid: 933EE18B-917A-40BC-87AA-0F463615A082
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a0e023142dcb03c9bd9f0e9968c29634680bc3a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d9b698da69fcc65bf31aea0c91bb79f9b330d869
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67381182"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841796"
 ---
 # <a name="supporting-nvgre-in-checksum-offload"></a>チェックサム オフロードでの NVGRE のサポート
 
 
-NDIS 6.30 (Windows Server 2012) が導入されています[Network Virtualization using Generic Routing Encapsulation (NVGRE)](network-virtualization-using-generic-routing-encapsulation--nvgre--task-offload.md)します。 NDIS ミニポート、プロトコル、およびフィルター ドライバーおよび Nic チェックサム タスクの負荷を軽減する必要がありますで行う NVGRE をサポートする方法。
+NDIS 6.30 (Windows Server 2012) では、[汎用ルーティングカプセル化 (NVGRE) を使用したネットワーク仮想化](network-virtualization-using-generic-routing-encapsulation--nvgre--task-offload.md)が導入されています。 チェックサムタスクをオフロードする NDIS ミニポート、プロトコル、フィルタードライバーと Nic は、NVGRE をサポートするようにする必要があります。
 
-**注**  このページは、内の情報に精通していることを前提としています。[チェックサム タスクのオフロード](offloading-checksum-tasks.md)します。
+この**ページ  、** [チェックサムタスクのオフロード](offloading-checksum-tasks.md)に関する情報を把握していることを前提としています。
 
  
 
-場合[ **NDIS\_TCP\_送信\_オフロード\_補助的な\_NET\_バッファー\_一覧\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_tcp_send_offloads_supplemental_net_buffer_list_info).**IsEncapsulatedPacket**は**TRUE**と**TcpIpChecksumNetBufferListInfo**アウト オブ バンド (OOB) の情報が有効でこれを示すその NVGREサポートが必要ですし、NIC がトンネル (外部) の IP ヘッダー、トランスポート (内部) の IP ヘッダーと TCP または UDP ヘッダーのチェックサムを計算する必要があります。
+[**NDIS\_TCP\_送信\_\_補足\_NET\_BUFFER\_LIST\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_tcp_send_offloads_supplemental_net_buffer_list_info)のオフロード。**IsEncapsulatedPacket**が**TRUE**で、 **TCPIPCHECKSUMNETBUFFERLISTINFO**の帯域外 (OOB) 情報が有効であることを示します。これは、nvgre のサポートが必要であり、NIC がトンネル (外部) IP のチェックサムを計算する必要があることを示します。ヘッダー、トランスポート (内部) IP ヘッダー、TCP または UDP ヘッダー。
 
-**IsIPv4**と**IsIPv6**のフラグ、 [ **NDIS\_TCP\_IP\_チェックサム\_NET\_バッファー\_一覧\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_tcp_ip_checksum_net_buffer_list_info)構造体は、トンネル (外部) の IP ヘッダーの IP ヘッダーのバージョンを指定します。 NIC には、そのヘッダーの IP バージョンを確認するトランスポート (内部) IP ヘッダーを解析する必要があります。 混合モードのパケットが許可されます (を参照してください[ **NDIS\_カプセル化\_パケット\_タスク\_オフロード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_encapsulated_packet_task_offload))、NIC を想定する必要がありますいない内部外部の IP ヘッダーで、同じ IP ヘッダー バージョンが必要があります。
+[**NDIS\_TCP\_IP\_チェックサム\_NET\_BUFFER\_LIST\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_tcp_ip_checksum_net_buffer_list_info)構造体の**IsIPv4**および**IsIPv6**フラグは、トンネル (外部) ip ヘッダーの ip ヘッダーバージョンを示します。 NIC は、トランスポート (内部) IP ヘッダーを解析して、そのヘッダーの IP バージョンを判断する必要があります。 混合モードパケットは許可されているため (「 [**NDIS\_カプセル化\_パケット\_タスク\_オフロード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_encapsulated_packet_task_offload))」を参照してください。そのため、NIC では、内部と外部の ip ヘッダーが同じ ip ヘッダーバージョンであると想定することはできません。
 
-Nic とミニポート ドライバーを使用して、可能性があります、 **InnerFrameOffset**、 **TransportIpHeaderRelativeOffset**、および**TcpHeaderRelativeOffset** で提供される値[ **NDIS\_TCP\_送信\_オフロード\_補助的な\_NET\_バッファー\_一覧\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_tcp_send_offloads_supplemental_net_buffer_list_info)構造体。 NIC またはミニポート ドライバーでは、トンネル (外部) の IP ヘッダーまたはこれらのオフセットを検証する後続のヘッダーで、必要なヘッダーのチェックを実行できます。
+Nic およびミニポートドライバーでは、NDIS\_TCP\_送信\_オフロード\_補足の**innerフレームオフセット**、 **TransportIpHeaderRelativeOffset**、および TcpHeaderRelativeOffset の値を使用できます。 [ **\_NET\_BUFFER\_LIST\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_tcp_send_offloads_supplemental_net_buffer_list_info)構造体です。 NIC またはミニポートドライバーは、これらのオフセットを検証するために、トンネル (外部) IP ヘッダーまたはそれ以降のヘッダーに対して必要なヘッダーチェックを実行する場合があります。
 
-場合[ **NDIS\_TCP\_送信\_オフロード\_補助的な\_NET\_バッファー\_一覧\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_tcp_send_offloads_supplemental_net_buffer_list_info).**IsEncapsulatedPacket**が true の場合、既存のヘッダー フィールドのオフセット[ **NDIS\_TCP\_LARGE\_送信\_オフロード\_NET\_バッファー\_一覧\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_tcp_large_send_offload_net_buffer_list_info).**LsoV2Transmit**.**TcpHeaderOffset**と[ **NDIS\_TCP\_IP\_チェックサム\_NET\_バッファー\_一覧\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_tcp_ip_checksum_net_buffer_list_info).**送信**.**TcpHeaderOffset**、適切な値はありませんし、NIC またはドライバーでは使用しないでください。
+[**NDIS\_TCP\_送信\_、\_補足\_NET\_BUFFER\_LIST\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_tcp_send_offloads_supplemental_net_buffer_list_info)にオフロードすることに注意してください。**IsEncapsulatedPacket**が TRUE の場合、既存のヘッダーオフセットフィールドである[**NDIS\_TCP\_LARGE\_送信\_オフロード\_NET\_BUFFER\_LIST\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_tcp_large_send_offload_net_buffer_list_info)ます。**LsoV2Transmit**。**Tcpheaderoffset**および[**NDIS\_TCP\_IP\_チェックサム\_NET\_BUFFER\_LIST\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_tcp_ip_checksum_net_buffer_list_info)。**送信**。**Tcpheaderoffset**は正しい値を持たず、NIC またはドライバーでは使用できません。
 
-ミニポート ドライバーは、ケースを処理する必要があります、 [ **NDIS\_TCP\_送信\_オフロード\_補助的な\_NET\_バッファー\_ボックスの一覧\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_tcp_send_offloads_supplemental_net_buffer_list_info).**InnerFrameOffset**パケットの先頭よりも、別のスキャッター/ギャザー リストがあります。 すべてのカプセル化の先頭に追加されたヘッダー (ETH、IP、GRE) が物理的に連続できるようになり、パケットの最初の MDL になります、プロトコルのドライバーが保証されます。
+ミニポートドライバーは、 [**NDIS\_TCP\_送信\_オフロード\_補足\_NET\_BUFFER\_LIST\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_tcp_send_offloads_supplemental_net_buffer_list_info)の場合に対処する必要があります。**Innerフレームオフセット**は、パケットの先頭とは異なるスキャッター/ギャザーリストに存在する可能性があります。 プロトコルドライバーは、先頭にあるすべてのカプセル化ヘッダー (ETH、IP、GRE) が物理的に連続しており、パケットの最初の MDL に含まれることを保証します。
 
 ## <a name="checksum-validation"></a>チェックサムの検証
 
 
-NVGRE のチェックサムの検証は、それ以外の場合にほぼ同じです。
+NVGRE のチェックサムの検証は、それ以外の場合とほぼ同じです。
 
-ミニポートを受信した場合、 [OID\_TCP\_オフロード\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-offload-parameters) OID 要求が成功したのと**NDIS\_カプセル化\_型\_GRE\_MAC** (を参照してください[ **NDIS\_オフロード\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_offload_parameters))、NIC は、トンネル (でチェックサムの検証を実行する必要がありますIP ヘッダーの外側)、トランスポート (内部) の IP ヘッダーと TCP または UDP ヘッダー。
+ミニポートが Oid を受信すると[\_TCP\_オフロード\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-offload-parameters)の oid 要求を送信し、NDIS\_カプセル化のために、\_**GRE\_MAC の型\_** ます (「 [**ndis\_オフロード」を参照してください\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_offload_parameters)) では、NIC はトンネル (外部) ip ヘッダー、トランスポート (内部) ip ヘッダー、TCP または UDP ヘッダーに対してチェックサム検証を実行する必要があります。
 
-IPv4 トンネル (外側) ヘッダーと IPv4 トランスポート (内部) ヘッダーを持つパケットをカプセル化された、ミニポート ドライバーが設定する必要があります、 **IpChecksumSucceeded**フラグ、 [ **NDIS\_TCP\_IP\_チェックサム\_NET\_バッファー\_一覧\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_tcp_ip_checksum_net_buffer_list_info)両方 IP ヘッダーのチェックサム検証が成功した場合にのみを構造体します。 トンネル (外側) IPv4 ヘッダーとトランスポート (内部) IPv4 ヘッダーの両方を持つパケットをカプセル化された、ミニポート ドライバーが設定する必要があります、 **IpChecksumFailed** IP ヘッダーのチェックサムの検証のいずれかが失敗した場合にフラグを設定します。
+IPv4 トンネル (外側) ヘッダーと IPv4 トランスポート (内部) ヘッダーを持つカプセル化されたパケットの場合、ミニポートドライバーは、 [**NDIS\_TCP\_IP\_CHECKSUM\_NET に IpChecksumSucceeded フラグを設定する必要があり\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_tcp_ip_checksum_net_buffer_list_info)IP ヘッダーのチェックサム検証が正常に完了した場合にのみ、バッファー\_\_情報の構造を一覧表示します。 トンネル (外部) IPv4 ヘッダーとトランスポート (内部) IPv4 ヘッダーの両方を持つカプセル化されたパケットの場合、いずれかの IP ヘッダーチェックサム検証が失敗した場合、ミニポートドライバーは**IpChecksumFailed**フラグを設定する必要があります。
 
  
 

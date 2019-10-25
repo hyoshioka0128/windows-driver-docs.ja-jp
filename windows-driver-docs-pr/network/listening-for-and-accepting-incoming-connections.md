@@ -3,30 +3,30 @@ title: 着信接続のリッスンと受け入れ
 description: 着信接続のリッスンと受け入れ
 ms.assetid: 3ec7d6d0-8b8c-4d98-9e2a-e42b52dcd544
 keywords:
-- Winsock カーネル WDK、着信ネットワーク接続
-- WSK WDK、着信ネットワーク接続
-- WDK Winsock Kernel の着信接続
-- リッスンしているソケット WDK Winsock カーネル
+- Winsock カーネル WDK ネットワーク、着信接続
+- WSK WDK ネットワーク、着信接続
+- 着信接続 WDK Winsock カーネル
+- リスニングソケット WDK Winsock カーネル
 - 条件付き受け入れ WDK Winsock カーネル
 - リッスン操作 WDK Winsock カーネル
 - SO_CONDITIONAL_ACCEPT
-- WDK Winsock Kernel の接続の受け入れ
+- 接続の受け入れ WDK Winsock カーネル
 - WskAccept
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4bc9ef786c5e7c16a0fd8a4c764059686e5b22bc
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: fd1b3d6d19f45459402e35b24cf507a6fc4d5665
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67356219"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844145"
 ---
 # <a name="listening-for-and-accepting-incoming-connections"></a>着信接続のリッスンと受け入れ
 
 
-Winsock カーネル (WSK) アプリケーションでは、ローカル トランスポート アドレスをリッスン ソケットがバインド、ソケットがリモートのトランスポート アドレスからの着信接続のリッスン開始されます。 呼び出して WSK アプリケーションがリッスン ソケットの受信接続を受け入れることができます、 [ **WskAccept** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_accept)関数。 アプリケーションに渡す IRP、 **WskAccept**関数には、着信接続が到着するまではキューに配置します。
+Winsock カーネル (WSK) アプリケーションがリッスンソケットをローカルトランスポートアドレスにバインドした後、ソケットはリモートトランスポートアドレスからの着信接続のリッスンを開始します。 WSK アプリケーションは、 [**Wskaccept**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_accept)関数を呼び出すことによって、リスニングソケット上の着信接続を受け入れることができます。 アプリケーションが**Wskaccept**関数に渡す IRP は、受信接続が到着するまでキューに入れられます。
 
-次のコード例は呼び出すことによって、WSK アプリケーションが着信接続を受け付ける方法を示しています、 **WskAccept**関数。
+次のコード例は、WSK アプリケーションが**Wskaccept**関数を呼び出すことによって受信接続を受け入れる方法を示しています。
 
 ```C++
 // Prototype for the accept IoCompletion routine
@@ -135,9 +135,9 @@ NTSTATUS
 }
 ```
 
-呼び出す代わりとして、 [ **WskAccept** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_accept)リスナ ソケットでの着信接続を受け入れる関数、WSK アプリケーションを有効にすることができます、 [ *WskAcceptEvent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_accept_event)ソケットでのイベントのコールバック関数。 WSK アプリケーションを使用する場合、 *WskAcceptEvent*リスナ ソケットでのイベントのコールバック関数、WSK サブシステムを呼び出す、ソケットの*WskAcceptEvent*たびに新しい受信のイベントのコールバック関数接続は、ソケットで許可されます。 リッスン ソケットの有効化の詳細については*WskAcceptEvent*イベントのコールバック関数を参照してください[の有効化と無効にするとイベントのコールバック関数](enabling-and-disabling-event-callback-functions.md)します。
+リッスンソケットでの受信接続を受け入れるために[**Wskaccept**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_accept)関数を呼び出す代わりに、wsk アプリケーションでは、そのソケットで[*wskacceptevent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_accept_event)イベントコールバック関数を有効にすることができます。 WSK アプリケーションで、リッスンしているソケットで*Wskacceptevent*のイベントコールバック関数が有効になっている場合、wsk サブシステムは、新しい着信接続がソケットで受け入れられるたびに、*そのイベントコール*バック関数を呼び出します。 リスニングソケットの*Wskacceptevent*イベントコールバック関数を有効にする方法の詳細については、「[イベントコールバック関数の有効化と無効化](enabling-and-disabling-event-callback-functions.md)」を参照してください。
 
-次のコード例は、WSK サブシステムを待機中のソケットを呼び出すことによって、WSK アプリケーションが着信接続を承諾する方法を示しています。 *WskAcceptEvent*イベント コールバック関数。
+次のコード例では、WSK アプリケーションがリッスンソケットの*Wskacceptevent*イベントコールバック関数を呼び出す wsk サブシステムによる受信接続を受け入れる方法を示します。
 
 ```cpp
 // Dispatch table of event callback functions for accepted sockets
@@ -213,11 +213,11 @@ NTSTATUS WSKAPI
 }
 ```
 
-WSK アプリケーションでは、条件付きでソケットに受信した着信接続を受け入れるように待機中のソケットを構成できます。 WSK アプリケーションにより条件付きでは、リスナ ソケットでモードを受け入れるを設定して、 [**ように\_条件付き\_ACCEPT** ](https://docs.microsoft.com/windows-hardware/drivers/network/so-conditional-accept)ソケットをバインドする前に、ソケット オプション、ローカル トランスポート アドレスするソケット。 ソケット オプションを設定する方法の詳細については、次を参照してください。[ソケットで管理操作を実行する](performing-control-operations-on-a-socket.md)します。
+WSK アプリケーションでは、ソケットで受信した着信接続を条件付きで受け入れられるようにリッスンソケットを構成できます。 WSK アプリケーションでは、ソケットをローカルトランスポートアドレスにバインドする前に、ソケットの[ **\_条件付き\_accept**](https://docs.microsoft.com/windows-hardware/drivers/network/so-conditional-accept)ソケットオプションを設定することにより、リッスンソケットで条件付き受け入れモードを有効にします。 ソケットオプションの設定方法の詳細については、「[ソケットでの制御操作の実行](performing-control-operations-on-a-socket.md)」を参照してください。
 
-WSK サブシステムが、ソケットの最初を呼び出す条件に同意リッスン ソケットのモードが有効になっている場合、 [ *WskInspectEvent* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_inspect_event)新しい着信接続要求されるたびに、イベント コールバック関数ソケットの受信します。 ソケットの*WskInspectEvent*イベント コールバック関数は、要求を受け入れるか拒否されたかどうかを決定する受信接続要求を検査できます。 要求を受け入れる、ソケットの*WskInspectEvent*イベント コールバック関数が返す**InspectAccept**します。 要求を拒否する、ソケットの*WskInspectEvent*イベント コールバック関数が返す**InspectReject**します。 ソケットの場合、 *WskInspectEvent*返しますイベント コールバック関数は、要求を受け入れるか拒否された場合にすぐに判定することはできません、 **InspectPend**します。 このような状況で WSK アプリケーションを呼び出す必要があります、 [ **WskInspectComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_inspect_complete)関数の着信接続要求の検査プロセスの完了後します。 WSK サブシステムが WSK アプリケーションを呼び出す場合は、受信接続要求が削除されるは、ソケット接続が完全に確立される前に、 [ *WskAbortEvent* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_abort_event)イベント コールバック関数。
+待機中のソケットで条件付き受け入れモードが有効になっている場合、WSK サブシステムは、新しい受信接続要求がソケットで受信されるたびに、最初にソケットの[*WskInspectEvent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_inspect_event)イベントコールバック関数を呼び出します。 ソケットの*WskInspectEvent*イベントコールバック関数は、受信接続要求を検査して、要求を受け入れるか拒否するかを決定できます。 要求を受け入れるために、ソケットの*WskInspectEvent*イベントコールバック関数は**InspectAccept**を返します。 要求を拒否するために、ソケットの*WskInspectEvent*イベントコールバック関数は**InspectReject**を返します。 ソケットの*WskInspectEvent*イベントコールバック関数が要求を受け入れるか拒否するかをすぐに判断できない場合は、 **InspectPend**を返します。 このような状況では、WSK アプリケーションは、受信接続要求の検査プロセスの完了後に[**WskInspectComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_inspect_complete)関数を呼び出す必要があります。 ソケット接続が完全に確立される前に受信接続要求が削除された場合、WSK サブシステムは WSK アプリケーションの[*Wskabortevent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_abort_event)イベントコールバック関数を呼び出します。
 
-次のコード例は、呼び出しのリッスン ソケットの WSK サブシステムによって、WSK アプリケーションが、受信接続要求を検査する方法を示しています。 *WskInspectEvent*イベント コールバック関数。
+次のコード例は、WSK アプリケーションがリッスンソケットの*WskInspectEvent*イベントコールバック関数を呼び出して wsk サブシステムによって受信接続要求を検査する方法を示しています。
 
 ```C++
 // Inspect ID for a pending inspection
@@ -297,7 +297,7 @@ NTSTATUS WSKAPI
 }
 ```
 
-着信接続が確立され、アプリケーションを呼び出すことによって通常受け入れられることができます WSK アプリケーションを有効になっているモードをそのまま使用条件を持つリッスン ソケットの受信接続要求を受け付けることを判断した場合、[ **WskAccept** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_accept)関数または呼び出しのソケットの WSK サブシステム[ *WskAcceptEvent* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_accept_event)イベント コールバック関数の説明に従って先に。
+WSK アプリケーションが、条件付き受け入れモードが有効になっているリスニングソケットで受信接続要求を受け入れることを判断した場合、受信接続が確立されます。これは、アプリケーションが前に説明したように、 [**Wskaccept**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_accept)関数またはソケットの[*wskacceptevent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_accept_event)イベントコールバック関数を呼び出す wsk サブシステム。
 
  
 

@@ -1,11 +1,11 @@
 ---
-title: FLT_PARAMETERS IRP_MJ_QUERY_OPEN 共用体
-description: 次の共用体のコンポーネントは、操作の FLT_IO_PARAMETER_BLOCK 構造の MajorFunction フィールドは IRP_MJ_QUERY_OPEN ときに使用されます。
+title: IRP_MJ_QUERY_OPEN 共用体の FLT_PARAMETERS
+description: 操作の FLT_IO_PARAMETER_BLOCK 構造体の MajorFunction フィールドが IRP_MJ_QUERY_OPEN の場合、次の共用体コンポーネントが使用されます。
 ms.assetid: 5B78E1D8-F724-404D-8750-3D52BB9B4910
 keywords:
-- FLT_PARAMETERS IRP_MJ_QUERY_OPEN 共用体インストール可能なファイル システム ドライバー
-- FLT_PARAMETERS union インストール可能なファイル システム ドライバー
-- PFLT_PARAMETERS 共用体ポインター インストール可能なファイル システム ドライバー
+- IRP_MJ_QUERY_OPEN union インストール可能ファイルシステムドライバーの FLT_PARAMETERS
+- FLT_PARAMETERS union にインストール可能なファイルシステムドライバー
+- PFLT_PARAMETERS union ポインターのインストール可能なファイルシステムドライバー
 topic_type:
 - apiref
 api_name:
@@ -16,17 +16,17 @@ api_type:
 - HeaderDef
 ms.date: 10/12/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 0338b7e5191076f178f827c801f68d589e3d171d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d05c3efd152226ba6158ffa4318dc5a336e41e0e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67365485"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841363"
 ---
-# <a name="fltparameters-for-irpmjqueryopen-union"></a>FLT\_IRP_MJ_QUERY_OPEN 共用体のパラメーター
+# <a name="flt_parameters-for-irp_mj_query_open-union"></a>IRP_MJ_QUERY_OPEN union の FLT\_パラメーター
 
 
-次の共用体のコンポーネントが使用されるときに、 **MajorFunction**のフィールド、 [ **FLT\_IO\_パラメーター\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_io_parameter_block)操作の構造は、IRP_MJ_QUERY_OPEN です。
+操作の[**FLT\_IO\_パラメーター\_BLOCK**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)構造体の**MAJORFUNCTION**フィールドが IRP_MJ_QUERY_OPEN の場合には、次の共用体コンポーネントが使用されます。
 
 <a name="syntax"></a>構文
 ------
@@ -44,37 +44,37 @@ typedef union _FLT_PARAMETERS {
 } FLT_PARAMETERS, *PFLT_PARAMETERS;
 ```
 
-<a name="members"></a>メンバー
+<a name="members"></a>Members
 -------
 
 **Irp**  
-* この操作に関連付けられた IRP へのポインター。 
+* この操作に関連付けられている IRP へのポインター。 
 
 **FileInformation**  
-* ルーチンは、ファイル オブジェクトに関する要求された情報を書き込みます。 呼び出し元が割り当てたバッファーへのポインター。 *FileInformationClass*メンバーは、呼び出し元が要求する情報の種類を指定します。 
+* ルーチンがファイルオブジェクトに関する要求された情報を書き込む、呼び出し元が割り当てたバッファーへのポインター。 *Fileinformationclass*メンバーは、呼び出し元が要求する情報の種類を指定します。 
 
-**Length**
-*  指し示されるバッファーのバイト単位のサイズを**FileInformation**します。
+**長さ**
+*  **Fileinformation**が指すバッファーのサイズ (バイト単位)。
 
 **FileInformationClass**
-* FileInformation が指すバッファーにあるファイルについて返される情報の種類を指定します。 デバイスと中間ドライバーは、次のいずれかで指定できます[ **FILE_INFORMATION_CLASS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ne-wdm-_file_information_class)値。 その他の値は、呼び出しを失敗が発生して、PreQueryOpen/PostQueryOpen 呼び出しに渡すことはできません。 
+* FileInformation が指すバッファー内のファイルについて返される情報の種類を指定します。 デバイスと中間ドライバーでは、次のいずれかの[**FILE_INFORMATION_CLASS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ne-wdm-_file_information_class)値を指定できます。 その他の値を指定すると、呼び出しは失敗し、PreQueryOpen/PostQueryOpen 呼び出しに渡すことはできません。 
 
 | FILE_INFORMATION_CLASS 値 | 返される情報の種類 |
 | --- | --- |
-| FileStatInformation | A [ **FILE_STAT_INFORMATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_stat_information)構造体。 この構造体には、アクセス マスクが含まれています。 アクセス マスクの詳細については、次を参照してください。 [ACCESS_MASK](https://docs.microsoft.com/windows-hardware/drivers/kernel/access-mask)します。 
-| FileStatLxInformation | A [ **FILE_STAT_LX_INFORMATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_stat_lx_information)構造体。 この構造体には、アクセス マスクが含まれています。 アクセス マスクの詳細については、次を参照してください。 [ACCESS_MASK](https://docs.microsoft.com/windows-hardware/drivers/kernel/access-mask)します。 
-| FileCaseSensitiveInformation | A [FILE_CASE_SENSITIVE_INFORMATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_stat_information)構造体。 |
+| FileStatInformation | [**FILE_STAT_INFORMATION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_stat_information)構造体。 この構造体には、アクセスマスクが含まれています。 アクセスマスクの詳細については、「 [ACCESS_MASK](https://docs.microsoft.com/windows-hardware/drivers/kernel/access-mask)」を参照してください。 
+| FileStatLxInformation | [**FILE_STAT_LX_INFORMATION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_stat_lx_information)構造体。 この構造体には、アクセスマスクが含まれています。 アクセスマスクの詳細については、「 [ACCESS_MASK](https://docs.microsoft.com/windows-hardware/drivers/kernel/access-mask)」を参照してください。 
+| FileCaseSensitiveInformation | [FILE_CASE_SENSITIVE_INFORMATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_stat_information)構造体。 |
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>注釈
 
 
-[ **FLT\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_parameters) IRP_MJ_QUERY_OPEN 操作のための構造体のパラメーターを格納する、 **QueryOpen**コールバックによって表される操作データ ([**FLT\_コールバック\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_callback_data)) 構造体。 FLT に含まれている\_IO\_パラメーター\_ブロック構造体。
+IRP_MJ_QUERY_OPEN 操作の[**FLT\_parameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_parameters)構造体には、コールバックデータ ([**FLT\_callback\_data**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data)) 構造体によって表される**queryopen**操作のパラメーターが含まれています。 これは、FLT\_IO\_パラメーター\_ブロック構造体に含まれています。
 
-IRP_MJ_QUERY_OPEN は、ファイル システム (FSFilter) コールバック操作です。
+IRP_MJ_QUERY_OPEN は、ファイルシステム (FSFilter) コールバック操作です。
 
-FSFilter コールバック操作の詳細については、参照のエントリを参照してください。 [ **FsRtlRegisterFileSystemFilterCallbacks**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-fsrtlregisterfilesystemfiltercallbacks)します。
+FSFilter のコールバック操作の詳細については、 [**Fsrtlregisterfilesystemfiltercallbacks**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-fsrtlregisterfilesystemfiltercallbacks)のリファレンスエントリを参照してください。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 
 <table>
@@ -85,11 +85,11 @@ FSFilter コールバック操作の詳細については、参照のエント�
 <tbody>
 <tr class="odd">
 <td align="left"><p>バージョン</p></td>
-<td align="left"><p>Windows 10、バージョン 1703 以降のバージョンの Windows オペレーティング システムで使用できます。</p></td>
+<td align="left"><p>Windows 10 バージョン1703以降のバージョンの Windows オペレーティングシステムで使用できます。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>Header</p></td>
-<td align="left">Fltkernel.h (Fltkernel.h を含む)</td>
+<td align="left">Fltkernel .h (Fltkernel. h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -97,16 +97,16 @@ FSFilter コールバック操作の詳細については、参照のエント�
 ## <a name="see-also"></a>関連項目
 
 
-[**FLT\_コールバック\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_callback_data)
+[**FLT\_コールバック\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data)
 
-[**FLT\_IO\_PARAMETER\_BLOCK**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_io_parameter_block)
+[**FLT\_IO\_パラメーター\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)
 
-[**FLT\_IS\_FASTIO\_OPERATION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
+[**FLT\_は\_高速な操作\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)
 
-[**FLT\_IS\_FS\_FILTER\_OPERATION**](https://docs.microsoft.com/previous-versions/ff544648(v=vs.85))
+[**FLT\_は\_FS\_フィルターの\_操作です。** ](https://docs.microsoft.com/previous-versions/ff544648(v=vs.85))
 
-[**FLT\_IS\_IRP\_OPERATION**](https://docs.microsoft.com/previous-versions/ff544654(v=vs.85))
+[**FLT\_は\_IRP\_操作です**](https://docs.microsoft.com/previous-versions/ff544654(v=vs.85))
 
-[**FLT\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_parameters)
+[**FLT\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_parameters)
 
-[**FsRtlRegisterFileSystemFilterCallbacks**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-fsrtlregisterfilesystemfiltercallbacks)
+[**FsRtlRegisterFileSystemFilterCallbacks バック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-fsrtlregisterfilesystemfiltercallbacks)

@@ -1,50 +1,50 @@
 ---
-title: UMDF で I/O 要求の完了
-description: UMDF で I/O 要求の完了
+title: UMDF で i/o 要求を完了しています
+description: UMDF で i/o 要求を完了しています
 ms.assetid: 3f8c7030-7c5d-4f65-8001-592af0b1d2de
 keywords:
-- I/O 要求の完了の WDK UMDF
-- 要求の処理要求の完了の WDK UMDF
-- WDK UMDF を要求する I/O の完了
+- I/o 要求 WDK UMDF、完了
+- WDK UMDF の要求処理、要求の完了
+- i/o 要求の完了 (WDK UMDF)
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bedb21d0719d964b0e381cc72f791e610e299f9c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7c60331a9d7ca87f9865357cd53237b16c53e0ab
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382887"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842261"
 ---
-# <a name="completing-io-requests-in-umdf"></a>UMDF で I/O 要求の完了
+# <a name="completing-io-requests-in-umdf"></a>UMDF で i/o 要求を完了しています
 
 
 [!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
 
-すべての I/O 要求は、UMDF ドライバーによって最終的に完了する必要があります。 要求を完了するには、ドライバー、呼び出す必要がありますか、 [ **IWDFIoRequest::Complete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest-complete)または[ **IWDFIoRequest::CompleteWithInformation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest-completewithinformation)メソッド。 ドライバーでは、要求が完了したら、次のシナリオのいずれかを示します。
+すべての i/o 要求は、最終的には、UMDF ドライバーによって完了される必要があります。 要求を完了するには、ドライバーは[**IWDFIoRequest:: complete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-complete)または[**IWDFIoRequest:: completewithinformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-completewithinformation)メソッドのいずれかを呼び出す必要があります。 ドライバーが要求を完了すると、次のいずれかのシナリオが示されます。
 
--   要求された I/O 操作が正常に完了しました。
+-   要求された i/o 操作が正常に完了しました。
 
--   要求された I/O 操作では、開始が完了する前に失敗しました。
+-   要求された i/o 操作は開始されましたが、完了する前に失敗しました。
 
--   要求された I/O 操作はサポートされていないか、デバイスと通信できないため、受信した時点では無効です。
+-   要求された i/o 操作はサポートされていないか、受信時に無効であるため、デバイスと通信できません。
 
--   I/O 操作が要求されました[キャンセル](canceling-i-o-requests.md)します。
+-   要求された i/o 操作が[取り消さ](canceling-i-o-requests.md)れました。
 
-ドライバーの呼び出し、 [ **IWDFIoRequest::CompleteWithInformation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest-completewithinformation)要求操作に関する追加情報を渡す方法です。 たとえば、読み取り操作では、ドライバーは、読み取られたバイト数を提供する必要があります。
+ドライバーは、 [**IWDFIoRequest:: CompleteWithInformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-completewithinformation)メソッドを呼び出して、要求操作に関する追加情報を渡します。 たとえば、読み取り操作の場合、ドライバーは読み取ったバイト数を提供する必要があります。
 
-ドライバー、I/O 要求を完了するに適切な完了状態を渡す必要があります、 *CompletionStatus*への呼び出しでパラメーター [ **IWDFIoRequest::Complete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest-complete)または[ **IWDFIoRequest::CompleteWithInformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest-completewithinformation)します。 ドライバーは、完了した要求のステータスを通知するのに HRESULT コードを使用します。
+I/o 要求を完了するには、ドライバーは、 [**IWDFIoRequest:: complete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-complete)または[**IWDFIoRequest:: completewithinformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-completewithinformation)の呼び出しで、適切な完了ステータスを completion *status*パラメーターに渡す必要があります。 ドライバーは、HRESULT コードを使用して、完了した要求の状態を通知します。
 
-[UMDF ドライバーのホスト プロセス](umdf-driver-host-process.md)reflector (Wudfrd.sys) に完了した要求を渡す前に、NTSTATUS コードを HRESULT コードに変換します。 Reflector は、オペレーティング システムに NTSTATUS コードを渡します。 オペレーティング システムは、呼び出し元アプリケーションに結果を表示する前に、Microsoft Win32 エラー コードに NTSTATUS コードを変換します。
+[UMDF driver ホストプロセス](umdf-driver-host-process.md)は、完了した要求をリフレクタ (Wudfrd .sys) に渡す前に、HRESULT コードを NTSTATUS コードに変換します。 リフレクターは、NTSTATUS コードをオペレーティングシステムに渡します。 オペレーティングシステムは、呼び出し元のアプリケーションに結果を表示する前に、NTSTATUS コードを Microsoft Win32 エラーコードに変換します。
 
-ドライバーのエラー コードを正しく変換できることを確認するには、次の手法のいずれかでエラー コードを作成する必要があります。
+ドライバーのエラーコードを正しく変換できるようにするには、次のいずれかの方法でエラーコードを作成する必要があります。
 
--   Winerror.h からエラー コードを使用し、HRESULT を適用\_FROM\_WIN32 マクロ。
+-   Winerror.h からのエラーコードを使用し、\_WIN32 マクロから HRESULT\_を適用します。
 
--   Ntstatus.h からエラー コードを使用し、HRESULT を適用\_FROM\_NT マクロ。
+-   Ntstatus からのエラーコードを使用し、\_NT マクロから HRESULT\_を適用します。
 
 これらのマクロの詳細については、Microsoft Windows SDK のドキュメントを参照してください。
 
-次のコード例では、適切なエラー コードを使用して要求を完了する方法を示します。
+次のコード例は、適切なエラーコードを使用して要求を完了する方法を示しています。
 
 ```cpp
 VOID
@@ -64,39 +64,39 @@ CMyQueue::OnWrite(
 }
 ```
 
-ドライバーでは、要求は正常に完了すると、それを返します S\_HRESULT 値は、[ok] です。 S\_ok を いいえは\_Winerror.h および状態のエラー\_Ntstatus.h、マクロが不要な変換に成功します。
+ドライバーが要求を正常に完了すると、S\_OK が返されます。これは HRESULT 値です。 \_OK は、Winerror.h では\_エラーと同じであり、Ntstatus で成功\_場合は、変換マクロは必要ありません。
 
-場合[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)が有効になって、reflector 無効なステータス コードを識別し、システムでバグチェックが発生します。
+[ドライバー検証ツール](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)がリフレクターに対して有効になっている場合は、無効なステータスコードが識別され、システムのバグチェックが発生します。
 
-**注**   Windows XP の Driver Verifier を誤る 1024 (1024 L) の 10 進数を超える値を持つ Win32 エラー コードのシステムでバグチェックが発生します。 ドライバーは、Windows XP で実行する場合の注意してくださいこの問題、reflector の Driver Verifier を有効にした場合。
+**注**   Windows XP のドライバーの検証ツールでは、10進 1024 (1024l) を超える値を持つ Win32 エラーコードに対してシステムのバグチェックが正しく行われないことに注意してください。 ドライバーが Windows XP で実行されている場合、この問題については、リフレクタのドライバーの検証機能を有効にする必要があります。
 
  
 
-場合は、ドライバーは、以前より低いレベルのドライバーに要求を送信、下位レベルのドライバーが要求を完了すると通知が ドライバーに必要です。 ドライバーの呼び出し通知に登録するのには、 [ **IWDFIoRequest::SetCompletionCallback** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest-setcompletioncallback)ときにフレームワークから呼び出されるメソッドのインターフェイスを登録する方法、下位レベルのドライバー要求を完了します。 ドライバーの実装、 [ **IRequestCallbackRequestCompletion::OnCompletion** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-irequestcallbackrequestcompletion-oncompletion)要求を完了に必要な操作を実行するコールバック関数。
+ドライバーが以前に下位レベルのドライバーに要求を送信した場合、ドライバーは下位レベルのドライバーが要求を完了したときに通知を必要とします。 通知を登録するために、ドライバーは[**IWDFIoRequest:: Set callback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-setcompletioncallback)メソッドを呼び出して、下位レベルのドライバーが要求を完了したときにフレームワークが呼び出すメソッドのインターフェイスを登録します。 ドライバーは、要求を完了するために必要な操作を実行するために、 [**Irequestcallback Requestcompletion:: OnCompletion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-irequestcallbackrequestcompletion-oncompletion)コールバック関数を実装します。
 
-ドライバーが呼び出すことで作成した I/O 要求が完了しない[ **IWDFDevice::CreateRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdevice-createrequest)します。 代わりに、ドライバーを呼び出す必要があります[ **IWDFObject::DeleteWdfObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfobject-deletewdfobject) I/O をターゲットには、要求が完了した後、通常、要求オブジェクトを削除します。
+ドライバーは、 [**Iwdfdevice:: CreateRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice-createrequest)を呼び出すことによって作成された i/o 要求を完了しません。 代わりに、ドライバーは[**Iwdfobject::D eletewdfobject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfobject-deletewdfobject)を呼び出す必要があります。これは通常、i/o ターゲットが要求を完了した後に要求オブジェクトを削除するために行います。
 
-たとえば、ドライバーは、読み取りを受け取ることがあります。 またはをドライバーの I/O ターゲットを超えるデータ量の書き込み要求を同時に処理できます。 ドライバーは、いくつかの小さな要求にデータを分割し、1 つまたは複数の I/O ターゲットにこれらの小さい要求を送信する必要があります。 このような状況を処理するための手法は次のとおりです。
+たとえば、ドライバーは、ドライバーの i/o ターゲットよりも大きいサイズのデータの読み取りまたは書き込み要求を一度に処理できる場合があります。 ドライバーは、データをいくつかの小さな要求に分割し、これらの小さな要求を1つ以上の i/o ターゲットに送信する必要があります。 この状況に対処するための手法は次のとおりです。
 
--   呼び出す[ **IWDFDevice::CreateRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdevice-createrequest)小さな要求を表す 1 つの追加要求オブジェクトを作成します。
+-   [**Iwdfdevice:: CreateRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice-createrequest)を呼び出して、より小さな要求を表す1つの追加の要求オブジェクトを作成します。
 
-    ドライバーでは、I/O のターゲットに、この要求を同期的に送信できます。 小さな要求の[ **IRequestCallbackRequestCompletion::OnCompletion** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-irequestcallbackrequestcompletion-oncompletion)コールバック関数を呼び出すことができます[ **IWDFIoRequest2::Reuse** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest2-reuse)ドライバーが要求を再利用してもう一度 I/O ターゲットに送信できるようにします。 I/O ターゲットが小規模の要求の最後のタスクが完了したら、 **OnCompletion**コールバック関数を呼び出すことができます[ **IWDFObject::DeleteWdfObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfobject-deletewdfobject)を削除します要求のドライバーが作成したオブジェクトと、ドライバーが呼び出すことができます[ **IWDFIoRequest::Complete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest-complete)元の要求を完了します。
+    ドライバーは、i/o ターゲットにこの要求を同期的に送信できます。 小さい要求の[**IrequestIWDFIoRequest2 Requestcompletion:: OnCompletion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-irequestcallbackrequestcompletion-oncompletion)コールバック関数は、ドライバーが要求を再利用して、再度 i/o ターゲットに送信できるように、 [ **:: 再利用**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest2-reuse)を呼び出すことができます。 I/o ターゲットがより小さな要求の最後に完了した後、 **Oncompletion**コールバック関数は[**iwdfobject::D eletewdfobject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfobject-deletewdfobject)を呼び出して、ドライバーによって作成された要求オブジェクトを削除し、ドライバーは[**IWDFIoRequest:: Complete を呼び出すことができます。** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-complete)元の要求を完了します。
 
--   呼び出す[ **IWDFDevice::CreateRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdevice-createrequest)小さな要求を表すいくつかの追加の要求オブジェクトを作成します。
+-   [**Iwdfdevice:: CreateRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice-createrequest)を呼び出して、より小さな要求を表すいくつかの追加の要求オブジェクトを作成します。
 
-    ドライバーの I/O のターゲットは、これら複数の小さい要求を非同期的に処理できます。 ドライバーが登録できる、 [ **OnCompletion** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-irequestcallbackrequestcompletion-oncompletion)小さな要求ごとのコールバック関数。 ごとに、 **OnCompletion**コールバック関数が呼び出されると、呼び出すことができます[ **IWDFObject::DeleteWdfObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfobject-deletewdfobject)ドライバーが作成した要求オブジェクトを削除します。 I/O のターゲットには、すべての小さい要求が完了すると、ドライバーを呼び出すことが[ **IWDFIoRequest::Complete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest-complete)元の要求を完了します。
+    ドライバーの i/o ターゲットは、これらの複数の小さな要求を非同期的に処理できます。 ドライバーは、小さい要求ごとに[**Oncompletion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-irequestcallbackrequestcompletion-oncompletion)コールバック関数を登録できます。 **Oncompletion**コールバック関数が呼び出されるたびに、 [**iwdfobject::D eletewdfobject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfobject-deletewdfobject)を呼び出して、ドライバーによって作成された要求オブジェクトを削除できます。 I/o ターゲットがすべての小さな要求を完了すると、ドライバーは[**IWDFIoRequest:: Complete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-complete)を呼び出して元の要求を完了することができます。
 
-### <a name="obtaining-completion-information"></a>完了の情報を取得します。
+### <a name="obtaining-completion-information"></a>完了情報の取得
 
-別のドライバーが完了する I/O 要求に関する情報を取得するには、UMDF ドライバーでは次のことができます。
+他のドライバーが完了した i/o 要求に関する情報を取得するために、UMDF ベースのドライバーは次のことが可能です。
 
--   使用して、 [ **IWDFRequestCompletionParams** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfrequestcompletionparams)インターフェイスには、I/O 要求の完了ステータスおよびその他の情報を取得します。
+-   [**Iwdfrequestcompletion params**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfrequestcompletionparams)インターフェイスを使用して、i/o 要求の完了ステータスとその他の情報を取得します。
 
--   使用して、 [ **IWDFIoRequestCompletionParams** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfiorequestcompletionparams)インターフェイスは、I/O 要求のメモリ バッファーを取得します。
+-   [**IWDFIoRequestCompletionParams**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfiorequestcompletionparams)インターフェイスを使用して、i/o 要求のメモリバッファーを取得します。
 
--   使用して、 [ **IWDFUsbRequestCompletionParams** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nn-wudfusb-iwdfusbrequestcompletionparams) USB ターゲット パイプ オブジェクトに送信された要求に関連するメモリ バッファーとその他の情報を取得するインターフェイス。
+-   [**IWDFUsbRequestCompletionParams**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nn-wudfusb-iwdfusbrequestcompletionparams)インターフェイスを使用して、USB ターゲットパイプオブジェクトに送信された要求に関連するメモリバッファーおよびその他の情報を取得します。
 
-UMDF ドライバーをさらに、使用することができます、 [ **IWDFIoRequest2::GetStatus** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest2-getstatus)前に、か、要求が完了した後は、I/O 要求の現在の状態を取得します。
+さらに、UMDF ベースのドライバーでは、 [**IWDFIoRequest2:: GetStatus**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest2-getstatus)メソッドを使用して、要求の完了前または完了後に i/o 要求の現在の状態を取得できます。
 
  
 

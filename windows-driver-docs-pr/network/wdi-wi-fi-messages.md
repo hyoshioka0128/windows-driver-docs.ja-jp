@@ -1,74 +1,74 @@
 ---
 title: WDI メッセージ構造
-description: このセクションは、WDI コマンド メッセージの構造を説明します。
+description: ここでは、WDI コマンドメッセージの構造について説明します。
 ms.assetid: 09663C5F-A458-479F-B450-A994486A6C18
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b4a1bf9f59ef512859326f6cea0419b4fe44c06a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4ca9f38b751258d438daf81d66f9c979e0dce47c
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67357047"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841706"
 ---
 # <a name="wdi-message-structure"></a>WDI メッセージ構造
 
 
-WDI コマンドのすべてのメッセージが始まり、 [ **WDI\_メッセージ\_ヘッダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ns-dot11wdi-_wdi_message_header)構造体。 コマンドのヘッダーには、0 個以上の型 (TLV) を値構造体が続きます。
+すべての WDI コマンドメッセージは、 [**WDI\_MESSAGE\_HEADER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_wdi_message_header)構造体で始まる必要があります。 Command ヘッダーの後には、0個以上の型指定値 (TLV) 構造体が続きます。
 
-コマンド メッセージ Id には、Wi-fi デバイスに、ホストから送信されたメッセージに記載されているが定義されている[WDI タスク Oid](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-miniport-driver-task-oids)、 [WDI プロパティ Oid](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-miniport-driver-property-oids)、および[WDI 状態インジケーター](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-miniport-driver-status-indications)します。
+ホストから Wi-fi デバイスに送信されるメッセージに対して定義されているコマンドメッセージ Id は、「 [WDI Task oid](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-miniport-driver-task-oids)」、「 [WDI Property oid](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-miniport-driver-property-oids)」、および「 [WDI Status 兆候](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-miniport-driver-status-indications)」に記載されています。
 
 ## <a name="tlvs"></a>TLVs
 
 
-TLVs の構造は、次の表で定義されます。 TLVs 内のデータでは、リトル エンディアン バイト順でします。
+TLVs の構造は、次の表で定義されています。 TLVs のデータは、リトルエンディアンのバイト順です。
 
-| フィールド                      | 種類     | 説明                                                                                                                                   |
+| フィールド                      | タスクバーの検索ボックスに     | 説明                                                                                                                                   |
 |----------------------------|----------|-----------------------------------------------------------------------------------------------------------------------------------------------|
-| 種類                       | UINT16   | TLV 構造体の型。 エラーをトリガーすることがなく TLV 型が認識されないをスキップする必要があります。                                              |
-| 値のバッファーの長さ | UINT16   | (バイト単位) の値のバッファーのサイズ。                                                                                                        |
-| Value                      | バイト\[\] | ペイロード バッファー、構造体、構造体のリストまたはその他の TLVs に含めることができます。 データのサイズは、必要な長さを正確に一致する必要があります。 |
+| タスクバーの検索ボックスに                       | UINT16   | TLV 構造体の型。 認識されない TLV 型は、エラーをトリガーせずにスキップする必要があります。                                              |
+| 値バッファーの長さ | UINT16   | 値バッファーのサイズ (バイト単位)。                                                                                                        |
+| Value                      | バイト\[\] | 構造体、構造体のリスト、またはその他の TLVs を含むペイロードバッファー。 データサイズは、予期された長さと正確に一致する必要があります。 |
 
  
 
-TLV グループの 2 種類があります。 静的にサイズの TLV リスト、およびマルチ TLV グループ。
+TLV のグループ化には、静的にサイズ設定された TLV リストとマルチ TLV グループの2種類があります。
 
-## <a name="statically-sized-tlv-lists"></a>静的に TLV リストのサイズ
+## <a name="statically-sized-tlv-lists"></a>静的にサイズ設定された TLV リスト
 
 
-TLV リスト サイズが静的ににはは、いくつかのサイズを静的にメンバーが含まれます。 標準の C スタイル配列に似ています。
+静的にサイズ設定された TLV リストには、静的なサイズのメンバーがいくつか含まれます これらは、標準 C スタイル配列に似ています。
 
-この例で[ **WDI\_TLV\_ユニキャスト\_アルゴリズム\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-unicast-algorithm-list) WDI のリストとして定義されて\_ALGO\_ペア.
+この例では、 [**WDI\_TLV\_ユニキャスト\_アルゴリズム\_リスト**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-unicast-algorithm-list)は、WDI\_algo\_のペアの一覧として定義されています。
 
 |        |                                    |
 |--------|------------------------------------|
-| 種類   | WDI\_TLV\_ユニキャスト\_アルゴリズム\_一覧 |
-| 長さ | N \* sizeof (WDI\_ALGO\_ペア)      |
+| タスクバーの検索ボックスに   | WDI\_TLV\_ユニキャスト\_アルゴリズム\_一覧 |
+| 長さ | N \* sizeof (WDI\_ALGO\_のペア)      |
 | Value  | WDI\_ALGO\_ペア\[N\]              |
 
  
 
-この使用法は、配列表記と TLV リファレンス トピックで指定されます。
+この使用法は、配列表記の TLV 参照トピックで指定されています。
 
-## <a name="multi-tlv-groups"></a>マルチ TLV グループ
+## <a name="multi-tlv-groups"></a>複数の TLV グループ
 
 
-指定したオブジェクトのサイズが事前に認識されていない場合は、マルチ TLV グループが使用されます。 この使用パターンでは、N 別の可変サイズ TLVs は、指定したバッファー内で予想されるを指定します。 (N) のエントリの数は、前もってが不明し、一致する TLVs で指定されたバッファーの数によって推論されます。
+特定のオブジェクトのサイズが事前にわかっていない場合は、マルチ TLV グループが使用されます。 この使用パターンでは、指定されたバッファー内で、N 異なる可変サイズ TLVs が想定されていることを指定します。 エントリの数 (N) はあらかじめわかっていません。また、指定されたバッファーの一致する TLVs の数によって推論されます。
 
-この例では、親のバッファーは、 [ **WDI\_メッセージ\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ns-dot11wdi-_wdi_message_header)、TLV バッファーの末尾を定義します。 なお[ **WDI\_TLV\_BSS\_エントリ**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-bss-entry)親バッファー内の他のさまざまな TLV 型の間で混在させることがあります。
+この例では、親バッファーは、TLV バッファーの末尾を定義する[**WDI\_メッセージ\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_wdi_message_header)です。 [**WDI\_TLV\_BSS\_エントリ**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-bss-entry)は、親バッファー内の他の異なる TLV 型の間に散在している可能性があることに注意してください。
 
-| Offset                         | フィールド                       | 種類                |
+| Offset                         | フィールド                       | タスクバーの検索ボックスに                |
 |--------------------------------|-----------------------------|---------------------|
-| 0                              | WDI\_メッセージ\_ヘッダー        | メッセージ ヘッダー      |
-| sizeof (WDI\_メッセージ\_ヘッダー)   | TLV₀ (WDI\_TLV\_BSS\_エントリ) | WDI\_BSS\_エントリ     |
-| TLV₀ + L₀ sizeof (TLV ヘッダー) | TLV₁ (WDI\_TLV\_BSS\_エントリ) | WDI\_BSS\_エントリ     |
-| TLV₁ + L₁ sizeof (TLV ヘッダー) | TLV₂ (WDI\_TLV\_BSS\_エントリ) | WDI\_BSS\_エントリ     |
-| TLV₂ + L₂ sizeof (TLV ヘッダー) | TLV₃ (OTHER\_TLV\_型)     | その他の種類の TLV |
-| TLV₃ + L₃ sizeof (TLV ヘッダー) | TLV₄ (WDI\_TLV\_BSS\_エントリ) | WDI\_BSS\_エントリ     |
+| 0                              | WDI\_メッセージ\_ヘッダー        | メッセージヘッダー      |
+| sizeof (WDI\_MESSAGE\_HEADER)   | TLV ₀ (WDI\_TLV\_BSS\_ENTRY) | WDI\_BSS\_エントリ     |
+| TLV ₀ + L ₀ + sizeof (TLV Header) | TLV ₁ (WDI\_TLV\_BSS\_ENTRY) | WDI\_BSS\_エントリ     |
+| TLV ₁ + L ₁ + sizeof (TLV Header) | TLV ₂ (WDI\_TLV\_BSS\_ENTRY) | WDI\_BSS\_エントリ     |
+| TLV ₂ + L ₂ + sizeof (TLV Header) | TLV ₃ (その他の\_TLV\_型)     | その他の TLV 型 |
+| TLV ₃ + L ₃ + sizeof (TLV Header) | TLV ₄ (WDI\_TLV\_BSS\_ENTRY) | WDI\_BSS\_エントリ     |
 
  
 
-その他の TLVs が含まれている TLVs、TLV 参照トピックは、ある、*許可されている複数の TLV インスタンス*列。 この列がチェックされ、複数回出現する指定の TLV が許可されます。 これの例は、次を参照してください。 [ **WDI\_TLV\_CONNECT\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-connect-parameters)します。
+TLVs に他の TLVs が含まれている場合、TLV の参照トピックでは、*複数の TLV instances が許可さ*れた列があります。 この列をオンにすると、指定した TLV が複数回出現することが許可されます。 この例については、「 [**WDI\_TLV\_CONNECT\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-connect-parameters)」を参照してください。
 
  
 

@@ -3,22 +3,22 @@ title: コマンド属性
 description: コマンド属性
 ms.assetid: 8ce2c668-a130-428e-bf5f-0eab2dcd3fdb
 keywords:
-- プリンターは、WDK Unidrv、コマンドを属性します。
-- WDK Unidrv コマンド
-- プリンターが WDK Unidrv、属性をコマンドします。
-- CallbackID
+- プリンター属性 WDK Unidrv、コマンド
+- コマンド WDK Unidrv
+- プリンターコマンド WDK Unidrv、属性
+- 発信者 id
 - Cmd
 - NoPageEject
 - '[オーダー]'
-- params
+- Params
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cbb7ece877d22ba38be66c5a5763dab7ff02114c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 75e435cb80ca84e31c31866c9ffa308a09ea095f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382057"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842872"
 ---
 # <a name="command-attributes"></a>コマンド属性
 
@@ -26,15 +26,15 @@ ms.locfileid: "67382057"
 
 
 
-プリンター コマンドを指定するときに属性を使用して Unidrv を次の情報を提供します。
+プリンターコマンドを指定するときは、属性を使用して、次の情報で Unidrv を提供します。
 
--   プリンターのハードウェアで、操作が実装されている場合、操作を実行するためのハードウェアを原因となるエスケープ シーケンスです。
+-   操作がプリンターハードウェアに実装されている場合に、ハードウェアが操作を実行するエスケープシーケンス。
 
--   コールバック識別子として必要なパラメーター、 [ **IPrintOemUni::CommandCallback** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni-commandcallback)メソッドで、操作が実装されている場合、[プラグインでレンダリング](rendering-plug-ins.md)します。
+-   操作が[レンダリングプラグイン](rendering-plug-ins.md)で実装されている場合に、 [**Iprintoemuni:: commandcallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuni-commandcallback)メソッドに必要なコールバック識別子とパラメーター。
 
--   コマンドを送信する、他のコマンドに対して相対的順序。
+-   コマンドの送信順序。他のコマンドと比較して相対的に使用します。
 
-次の表では、アルファベット順にコマンドの属性の一覧し、そのパラメーターについて説明します。
+次の表に、コマンドの属性をアルファベット順に示し、それらのパラメーターについて説明します。
 
 <table>
 <colgroup>
@@ -51,38 +51,38 @@ ms.locfileid: "67382057"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><strong><em>CallbackID</strong></p></td>
-<td><p>正の数値があり、レンダリング プラグインでは、に渡される<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni-commandcallback" data-raw-source="[&lt;strong&gt;IPrintOemUni::CommandCallback&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni-commandcallback)"> <strong>IPrintOemUni::CommandCallback</strong> </a>メソッドとしてその<em>dCmdCbID</em>引数。</p></td>
-<td><p>必要な<a href="dynamically-generated-printer-commands.md" data-raw-source="[dynamically generated printer commands](dynamically-generated-printer-commands.md)">プリンター コマンドを動的に生成される</a>します。 有効でない場合 <strong></em>Cmd</strong>を指定します。</p></td>
+<td><p><strong><em>の</strong></p></td>
+<td><p>正の数値。レンダリングプラグインの<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuni-commandcallback" data-raw-source="[&lt;strong&gt;IPrintOemUni::CommandCallback&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuni-commandcallback)"><strong>Iprintoemuni:: CommandCallback</strong></a>メソッドに<em>Dcmdcbid</em>引数として渡されます。</p></td>
+<td><p>動的に<a href="dynamically-generated-printer-commands.md" data-raw-source="[dynamically generated printer commands](dynamically-generated-printer-commands.md)">生成されたプリンターコマンド</a>に必要です。 <strong></em>Cmd</strong>が指定されている場合は無効です。</p></td>
 </tr>
 <tr class="even">
-<td><p><strong><em>cmd</strong></p></td>
-<td><p>使用して指定された、プリンター コマンドのエスケープ シーケンスを含むテキスト文字列、<a href="command-string-format.md" data-raw-source="[command string format](command-string-format.md)">コマンド文字列の形式</a>します。</p></td>
-<td><p>しない限り、必要な <strong></em>CallbackID</strong>を指定します。</p></td>
+<td><p><strong><em>Cmd</strong></p></td>
+<td><p><a href="command-string-format.md" data-raw-source="[command string format](command-string-format.md)">コマンド文字列形式</a>を使用して指定されたプリンターコマンドエスケープシーケンスを含むテキスト文字列。</p></td>
+<td><p></em>の要求<strong>id</strong>が指定されていない場合は必須です。</p></td>
 </tr>
 <tr class="odd">
-<td><p><strong><em>NoPageEject?</strong></p></td>
-<td><p><strong>TRUE</strong>または<strong>FALSE</strong>ことを示す、プリンターを現在の物理ページを取り出すと、コマンドを実行するかどうか。</p>
-<p>使用されている場合にのみ<strong></em>順序</strong>DOC_SETUP セクションを指定します、両面印刷が有効になっている場合。 二重のドキュメントのページ間での早期ページ取り出しを避けるためには、Unidrv のみを発行コマンドでは、この属性を設定する<strong>TRUE</strong>、可能な場合。</p></td>
-<td><p>任意。 指定されていない場合、既定値は<strong>FALSE</strong>、意味のコマンドは、ページの取り出しが発生する可能性があります。</p>
-<p>必要があります<strong>TRUE</strong>コマンドは、副作用を引き起こす場合 (外でのコマンドによって制御されているプリンターの設定を変更する場合に、 <strong> <em>NoPageEject?</strong>に設定<strong>TRUE</strong>)。</p></td>
+<td><p><em>NoPageEject を <strong>しますか?</strong></p></td>
+<td><p><strong>TRUE</strong>または<strong>FALSE</strong>。コマンドを実行すると、プリンターによって現在の物理ページが取り出されるかどうかを示します。</p>
+<p><strong></em>の順序</strong>で DOC_SETUP セクションが指定されていて、二重印刷が有効になっている場合にのみ使用されます。 ドキュメントページのページが途中で排出されないようにするために、Unidrv は、可能であれば、この属性が<strong>TRUE</strong>に設定されたコマンドのみを発行します。</p></td>
+<td><p>(省略可能)。 指定しない場合、既定値は<strong>FALSE</strong>であり、コマンドによってページの取り出しが発生する可能性があります。</p>
+<p>コマンドで副作用が発生する場合は、 <strong>true</strong>にはできません。これは、コマンドが<em>NoPageEject?</strong> <strong>TRUE</strong>に設定されている <strong>コマンドによって制御されるプリンター設定を変更する場合です。</p></td>
 </tr>
 <tr class="even">
-<td><p><strong></em>順序</strong></p></td>
-<td><p>」の説明に従って、名前と注文番号をセクション<a href="command-execution-order.md" data-raw-source="[Command Execution Order](command-execution-order.md)">コマンドの実行順序</a>します。</p></td>
-<td><p>構成コマンドとカスタマイズされたオプションのコマンドでのみ有効ですコマンドの説明に記載されている場合を除き、します。</p></td>
+<td><p><strong></em>の順序</strong></p></td>
+<td><p>「<a href="command-execution-order.md" data-raw-source="[Command Execution Order](command-execution-order.md)">コマンドの実行順序</a>」で説明されているように、セクション名と順序番号。</p></td>
+<td><p>コマンドの説明に記載されていない限り、構成コマンドおよびカスタマイズされたオプションコマンドでのみ有効です。</p></td>
 </tr>
 <tr class="odd">
-<td><p><strong><em>params</strong></p></td>
-<td><p><a href="lists.md" data-raw-source="[List](lists.md)">リスト</a>の<a href="standard-variables.md" data-raw-source="[standard variables](standard-variables.md)">標準変数</a>として渡される EXTRAPARAM 構造で、レンダリング プラグインの IPrintOemUni::CommandCallback メソッドに渡されるその<em>pdwParams</em>引数。</p></td>
-<td><p>有効な場合にのみ <strong></em>CallbackID</strong>も指定します。</p></td>
+<td><p><strong><em>Params</strong></p></td>
+<td><p><em>PdwParams</em>引数として渡される EXTRAPARAM 構造体のレンダリングプラグインの IPrintOemUni:: commandcallback メソッドに渡される<a href="standard-variables.md" data-raw-source="[standard variables](standard-variables.md)">標準変数</a>の<a href="lists.md" data-raw-source="[List](lists.md)">リスト</a>。</p></td>
+<td><p><strong></em></strong>の場合にのみ有効です。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-例については、次を参照してください。、[サンプル GPD ファイル](sample-gpd-files.md)します。
+例については、[サンプルの GPD ファイル](sample-gpd-files.md)を参照してください。
 
  
 

@@ -1,33 +1,33 @@
 ---
 title: NDIS ネットワーク インターフェイス OID
-description: このセクションには、すべての NDIS ドライバー用のネットワーク インターフェイスの Oid がについて説明します
+description: このセクションでは、すべての NDIS ドライバーのネットワークインターフェイス Oid について説明します。
 keywords:
 - NDIS ネットワーク インターフェイス OID
-- ネットワーク インターフェイスの WDK NDIS Oid
-- WDK のネットワーク インターフェイスの Oid
+- WDK NDIS ネットワークインターフェイス Oid
+- WDK ネットワークインターフェイス Oid
 ms.assetid: A66B5AC6-9EAF-4234-8614-0EBF179B3DDE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d43d086e381f0eb4ecbaae1d4825a33ad316b1b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c64435cb711e73954592ae619b74cdb588b81439
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67354981"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844361"
 ---
 # <a name="ndis-network-interface-oids"></a>NDIS ネットワーク インターフェイス OID
 
-NDIS ネットワーク インターフェイスのオブジェクト識別子 (Oid) は、MIB をサポートするネットワーク インターフェイスに関する情報を提供 ([RFC 2863](overview-of-ndis-network-interfaces.md))。
+NDIS ネットワークインターフェイスオブジェクト識別子 (Oid) は、MIB ([RFC 2863](overview-of-ndis-network-interfaces.md)) をサポートするネットワークインターフェイスに関する情報を提供します。
 
-NDIS インターフェイス プロバイダーでは、これらの Oid をサポートする必要があります。 プロバイダーの登録済みのインターフェイスのないドライバーをする必要があります、このセクションでは、Oid をサポートしていません。
+NDIS インターフェイスプロバイダーは、これらの Oid をサポートする必要があります。 登録されていないインターフェイスプロバイダーではないドライバーは、このセクションの Oid をサポートしていません。
 
-NDIS 呼び出し、 [ProviderQueryObject](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-if_query_object)インターフェイス プロバイダーからの情報のクエリ要求を作成する関数。 *ObjectId*この関数のパラメーターには、オブジェクト識別子が含まれています。 インターフェイスのプロバイダーが登録されている*ProviderQueryObject*呼び出されたときに、 [NdisIfRegisterProvider](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisifregisterprovider)インターフェイス プロバイダーとして登録します。
+NDIS は、 [Providerqueryobject](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-if_query_object)関数を呼び出して、インターフェイスプロバイダーからの情報のクエリ要求を行います。 この関数の*ObjectId*パラメーターには、オブジェクト識別子が含まれています。 インターフェイスプロバイダーは、インターフェイスプロバイダーとして登録するために[NdisIfRegisterProvider](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisifregisterprovider)関数を呼び出したときに*providerqueryobject*を登録しました。
 
-ハンドル、 *ProviderIfContext*のパラメーター、 *ProviderQueryObject*関数は、ネットワーク インターフェイスを識別します。 このハンドルが NDIS インターフェイス プロバイダーに呼び出されたときに提供された、 [NdisIfRegisterInterface](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisifregisterinterface)インターフェイスを登録する関数。 *POutputBuffer*のパラメーター、 *ProviderQueryObject*関数には OID 要求の結果が含まれています。
+*Providerqueryobject*関数の*ProviderIfContext*パラメーターにあるハンドルは、ネットワークインターフェイスを識別します。 このハンドルは、インターフェイスプロバイダーがインターフェイスを登録するために[NdisIfRegisterInterface](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisifregisterinterface)関数を呼び出したときに NDIS に提供されました。 *Providerqueryobject*関数の*poutputbuffer*パラメーターには、OID 要求の結果が含まれています。
 
-ネットワーク インターフェイスの Oid の NDIS の詳細についてを参照してください[NDIS 6.0 のネットワーク インターフェイス](ndis-network-interfaces2.md)します。
+NDIS ネットワークインターフェイス Oid の詳細については、「 [ndis 6.0 ネットワークインターフェイス](ndis-network-interfaces2.md)」を参照してください。
 
-このセクションには、次の NDIS ネットワーク インターフェイスの Oid がについて説明します。
+このセクションでは、次の NDIS ネットワークインターフェイス Oid について説明します。
 
 - [OID_GEN_ALIAS](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-alias) 
 - [OID_GEN_ADMIN_STATUS](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-admin-status) 

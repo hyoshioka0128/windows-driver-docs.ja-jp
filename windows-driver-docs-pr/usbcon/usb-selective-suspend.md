@@ -1,76 +1,72 @@
 ---
-Description: このセクションでは、セレクティブ サスペンド機能の適切なメカニズムの選択についての情報を提供します。
+Description: ここでは、セレクティブサスペンド機能に適したメカニズムを選択する方法について説明します。
 title: USB セレクティブ サスペンド
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 33f661b9d2b4d406103a330c4dadf85478b7ce59
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e28084d10d9f201a5be66fac8da746d16c7f2db2
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67356585"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841686"
 ---
 # <a name="usb-selective-suspend"></a>USB セレクティブ サスペンド
 
+ここでは、セレクティブサスペンド機能に適したメカニズムを選択する方法について説明します。
 
-このセクションでは、セレクティブ サスペンド機能の適切なメカニズムの選択についての情報を提供します。
+Microsoft Windows XP 以降のオペレーティングシステムでは、USB コアスタックは、ユニバーサルシリアルバス仕様のリビジョン2.0 で説明されている "セレクティブサスペンド" 機能の変更されたバージョンをサポートしています。
 
-Microsoft Windows XP およびそれ以降のオペレーティング システムでは、USB core スタックは、の修正バージョンをサポートしています、"選択的な中断"機能。 ユニバーサル シリアル バス仕様のバージョン 2.0 で説明します。
+USB のセレクティブサスペンド機能を使用すると、ハブドライバーはハブ上の他のポートの操作に影響を与えずに個々のポートを中断できます。 USB デバイスの選択的な中断は、バッテリ電源を節約するためにポータブルコンピューターで特に役立ちます。 指紋リーダーやその他の種類の生体認証スキャナーなど、多くのデバイスでは、断続的に電力を消費する必要があります。 このようなデバイスを中断すると、デバイスが使用されていないときに、全体的な電力消費量が削減されます。 さらに重要なこととして、選択的に中断されていないデバイスは、USB ホストコントローラーがシステムメモリ内に存在する転送スケジュールを無効にできない場合があります。 ホストコントローラーによるスケジューラへの DMA 転送によって、システムのプロセッサが C3 などのより詳細なスリープ状態を入力できなくなることがあります。 Windows のセレクティブサスペンドの動作は、windows XP および Windows Vista 以降のバージョンの Windows で動作するデバイスでは異なります。
 
-USB のセレクティブ サスペンド機能は、ハブ上の他のポートの操作の影響を与えずに、個々 のポートを中断するハブのドライバーを使用できます。 USB デバイスの選択的に中断は、により、バッテリ電源を節約するためにポータブル コンピューターで特に便利です。 指紋リーダー、生体認証スキャナーの他の種類など、多数のデバイスのみ、電源を断続的に必要です。 全体的な電力を削減する、デバイスが、使用されていないときに、このようなデバイスを中断する消費します。 さらに、選択的に中断されていない任意のデバイスでは、システム メモリ内で上に存在する、転送スケジュールを無効にする USB ホスト コント ローラーをできない可能性があります。 ホスト コント ローラーで、スケジューラへの DMA 転送すると、システムのプロセッサが C3 などのより深いスリープ状態を入力するようにできます。 Windows 選択的な中断動作は Windows XP および Windows Vista 以降のバージョンの Windows で動作しているデバイスに異なります。
+USB デバイスを選択的に一時停止するには、アイドル要求の Irp ([**内部\_usb\_送信\_アイドル\_通知**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbioctl/ni-usbioctl-ioctl_internal_usb_submit_idle_notification)) の2つの異なるメカニズムを使用して、電源 irp を設定します ([**irp\_\_\_設定\_** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-set-power))。 使用するメカニズムは、オペレーティングシステムとデバイスの種類 (複合または非複合) によって異なります。
 
-2 つの異なるメカニズムの USB デバイスを選択的に中断がある: アイドル状態の要求の Irp ([**IOCTL\_内部\_USB\_送信\_IDLE\_通知** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_internal_usb_submit_idle_notification)) power Irp を設定し、([**IRP\_MN\_設定\_POWER**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-set-power))。 使用するためのメカニズムは、オペレーティング システムとデバイスの種類によって異なります。 複合または複合ではないです。
+## <a name="selecting-a-selective-suspend-mechanism"></a>選択的中断メカニズムの選択
 
-##  <a name="selecting-a-selective-suspend-mechanism"></a>選択的な選択メカニズムを中断
+クライアントドライバーは、複合デバイス上のインターフェイスに対して、待機ウェイク IRP (IRP\_\_WAIT\_WAKE) を使用したリモートウェイクアップのインターフェイスを有効にするために、アイドル状態の要求 IRP ([**IOCTL\_内部\_USB\_SUBMIT) を使用する必要があり\_IDLE\_NOTIFICATION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbioctl/ni-usbioctl-ioctl_internal_usb_submit_idle_notification)) メカニズム。デバイスを選択的に中断します。
 
+リモートウェイクアップの詳細については、以下を参照してください。
 
-待機とリモート ウェイク アップするためのインターフェイスを有効にする複合デバイスでは、上のインターフェイス用のクライアント ドライバーは IRP をスリープ解除 (IRP\_MN\_待機\_WAKE)、IRP のアイドル状態の要求を使用する必要があります ([**IOCTL\_内部\_USB\_送信\_IDLE\_通知**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_internal_usb_submit_idle_notification))、デバイスをセレクティブ サスペンドするためのメカニズムです。
+[USB デバイスのリモートウェイクアップ](https://docs.microsoft.com/windows-hardware/drivers/usbcon/remote-wakeup-of-usb-devices)
 
-リモート ウェイク アップの詳細についてを参照してください。
+[待機/ウェイク操作の概要](https://docs.microsoft.com/windows-hardware/drivers/kernel/overview-of-wait-wake-operation)
 
-[USB デバイスのリモート ウェイク アップ](https://docs.microsoft.com/windows-hardware/drivers/usbcon/remote-wakeup-of-usb-devices)
+Windows オペレーティングシステムのバージョンによって、非複合デバイスのドライバーで選択的中断が有効になる方法が決まります。
 
-[待機またはスリープ解除操作の概要](https://docs.microsoft.com/windows-hardware/drivers/kernel/overview-of-wait-wake-operation)
+- Windows XP: Windows XP では、すべてのクライアントドライバーはアイドル状態の要求 Irp ([**IOCTL\_内部\_USB\_送信\_アイドル\_通知**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbioctl/ni-usbioctl-ioctl_internal_usb_submit_idle_notification)) を使用してデバイスの電源を切る必要があります。 クライアントドライバーは、WDM 電源 Irp を使用してデバイスを選択的に中断することはできません。 そうすることで、他のデバイスが選択的に中断されるのを防ぐことができます。 詳細については、「USB グローバル中断」を参照してください。
+- Windows Vista 以降のバージョンの Windows: ドライバーライターには、Windows Vista およびそれ以降のバージョンの Windows でのデバイスの電源をオンにするための選択肢があります。 Windows Vista では Windows idle request IRP メカニズムがサポートされていますが、ドライバーで使用する必要はありません。
 
-オペレーティング システムでは、非複合デバイス方法ドライバーにより、選択的かを判断します。 Windows のバージョンを中断します。
+次の表は、アイドル要求の IRP を使用する必要があるシナリオと、WDM 電源 IRP を使用して USB デバイスを中断するシナリオを示しています。
 
--   Windows XP:Windows XP ですべてのクライアント ドライバーは Irp のアイドル状態の要求を使用する必要があります ([**IOCTL\_内部\_USB\_送信\_IDLE\_通知**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_internal_usb_submit_idle_notification)) 自分のデバイスの電源をします。 クライアント ドライバーでは、自分のデバイスをセレクティブ サスペンドを WDM power Irp を使用する必要があります。 これにより、その他のデバイスは、選択的に中断できなくなります。 詳細については、「USB グローバル中断」を参照してください。
--   Windows Vista と Windows の以降のバージョン:ドライバー作成者には、Windows Vista 以降のバージョンの Windows でのデバイスの電源の複数の選択肢があります。 Windows Vista には、Windows のアイドル状態要求 IRP のメカニズムがサポートされていますが、ドライバーを使用する必要はありません。
-
-次の表に、IRP のアイドル状態の要求の使用を必要とするシナリオと、USB デバイスを中断する WDM power IRP が使用できるものを示します。
-
-| Windows のバージョン     | 複合デバイスでウェイク アップの武装関数 | 複合デバイスでのウェイク アップしない武装関数 | 1 つのインターフェイスの USB デバイス |
+| Windows のバージョン     | 複合デバイスで機能し、ウェイクに使用する | 複合デバイスで機能します。 Wake では使用できません | シングルインターフェイス USB デバイス |
 |---------------------|----------------------------------------------|--------------------------------------------------|-----------------------------|
-| Windows 7           | IRP アイドル状態の要求を使用する必要があります。                    | WDM Power IRP を使用できます。                            | WDM Power IRP を使用できます。       |
-| Windows Server 2008 | IRP アイドル状態の要求を使用する必要があります。                    | WDM Power IRP を使用できます。                            | WDM Power IRP を使用できます。       |
-| Windows Vista       | IRP アイドル状態の要求を使用する必要があります。                    | WDM Power IRP を使用できます。                            | WDM Power IRP を使用できます。       |
-| Windows Server 2003 | IRP アイドル状態の要求を使用する必要があります。                    | IRP アイドル状態の要求を使用する必要があります。                        | IRP アイドル状態の要求を使用する必要があります。   |
-| Windows XP          | IRP アイドル状態の要求を使用する必要があります。                    | IRP アイドル状態の要求を使用する必要があります。                        | IRP アイドル状態の要求を使用する必要があります。   |
+| Windows 7           | アイドル要求の IRP を使用する必要があります                    | WDM 電源 IRP を使用できる                            | WDM 電源 IRP を使用できる       |
+| Windows Server 2008 | アイドル要求の IRP を使用する必要があります                    | WDM 電源 IRP を使用できる                            | WDM 電源 IRP を使用できる       |
+| Windows Vista       | アイドル要求の IRP を使用する必要があります                    | WDM 電源 IRP を使用できる                            | WDM 電源 IRP を使用できる       |
+| Windows Server 2003 | アイドル要求の IRP を使用する必要があります                    | アイドル要求の IRP を使用する必要があります                        | アイドル要求の IRP を使用する必要があります   |
+| Windows XP          | アイドル要求の IRP を使用する必要があります                    | アイドル要求の IRP を使用する必要があります                        | アイドル要求の IRP を使用する必要があります   |
 
+ここでは、Windows の選択的中断メカニズムについて説明し、次のトピックについて説明します。
 
+## <a name="sending-a-usb-idle-request-irp"></a>USB アイドル要求 IRP を送信しています
 
-このセクションには、Windows 選択的な機構を中断して、次のトピックが含まれていますがについて説明します。
+デバイスがアイドル状態になると、クライアントドライバーはアイドル状態の要求を送信することによってバスドライバーに通知します。これは、アイドル状態の要求 IRP ([**IOCTL\_内部\_USB\_送信\_アイドル\_通知**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbioctl/ni-usbioctl-ioctl_internal_usb_submit_idle_notification)) です。 バスドライバーは、デバイスを低電力状態にするのが安全であると判断した後、クライアントデバイスドライバーがアイドル要求の IRP でスタックに渡したコールバックルーチンを呼び出します。
 
-# <a name="sending-a-usb-idle-request-irp"></a>IRP USB アイドル状態要求を送信します。
+コールバックルーチンでは、クライアントドライバーはすべての保留中の i/o 操作をキャンセルし、すべての USB i/o Irp が完了するまで待機する必要があります。 次に、IRP デバイスの電源状態を**D2**に変更するために、 [ **\_電源要求\_設定**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-set-power)された IRP\_を発行できます。 コールバックルーチンは、 **D2**要求が完了するのを待ってから制御を戻す必要があります。 アイドル状態の通知コールバックルーチンの詳細については、「USB アイドル通知コールバックルーチン」を参照してください。
 
+バスドライバーは、アイドル状態の通知コールバックルーチンを呼び出した後、アイドル状態の要求 IRP を完了しません。 代わりに、バスドライバーは、次のいずれかの条件が満たされるまで保留中のアイドル要求 IRP を保持します。
 
-クライアント ドライバーが IRP アイドル状態要求を送信して、バス ドライバーを通知するとき、デバイスがアイドル ([**IOCTL\_内部\_USB\_送信\_IDLE\_通知**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_internal_usb_submit_idle_notification)). 低電力状態にし、デバイスも安全であると判断した場合、バス ドライバーは、クライアントのデバイス ドライバーが IRP のアイドル状態の要求でスタックに渡されたコールバック ルーチンを呼び出します。
+- **Irp\_\_suprise**削除または**IRP\_\_削除\_デバイスの irp**を受信しました。 これらの Irp のいずれかを受信すると、アイドル状態の要求 IRP が完了し、状態\_取り消されます。
+- バスドライバーは、デバイスを動作中の電源状態 (**D0**) にする要求を受信します。 この要求を受信すると、バスドライバーは状態\_SUCCESS で保留中のアイドル要求の IRP を完了します。
 
-コールバック ルーチンでクライアント ドライバーは保留中のすべての I/O 操作をキャンセルし、すべての USB I/O Irp を完了するまで待機する必要があります。 発行できます、 [ **IRP\_MN\_設定\_POWER** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-set-power)に WDM デバイスの電源状態を変更する要求**D2**します。 コールバック ルーチンを待つ必要があります、 **D2**を返す前に完了する要求。 アイドル状態の通知のコールバック ルーチンの詳細については、「USB アイドル状態の通知コールバック ルーチン」を参照してください。
+アイドル状態の要求 Irp の使用には、次の制限が適用されます。
 
-バス ドライバーでは、アイドル状態の通知のコールバック ルーチンを呼び出した後 IRP のアイドル状態の要求は完了しません。 代わりに、バス ドライバーを保持、アイドル状態、次の条件のいずれかが true になるまで、保留中の IRP を要求します。
+- アイドル状態の要求の IRP を送信するときに、ドライバーはデバイスの電源状態の**D0**にある必要があります。
+- ドライバーは、デバイススタックごとにアイドル状態の要求 IRP を1つだけ送信する必要があります。
 
--   **IRP\_MN\_SUPRISE\_削除**または**IRP\_MN\_削除\_デバイス IRP**を受信します。 これらの Irp のいずれかが受信されたとき IRP の完了状態でアイドル状態の要求\_キャンセルします。
--   バス ドライバーがデバイスを動作の電源状態にする要求を受信 (**D0**)。 この要求を受け取ったバス ドライバーは保留中のアイドル状態の要求状態 IRP が完了した\_成功します。
+次の WDM コード例は、デバイスドライバーが USB アイドル要求の IRP を送信するために実行する手順を示しています。 次のコード例では、エラーチェックは省略されています。
 
-アイドル状態の要求の Irp の使用には次の制限が適用されます。
+1. [**IOCTL\_内部\_USB\_送信\_アイドル\_通知**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbioctl/ni-usbioctl-ioctl_internal_usb_submit_idle_notification)IRP の割り当てと初期化を行います。
 
--   ドライバーは、デバイスの電源状態である必要があります**D0** IRP アイドル状態要求を送信するときにします。
--   ドライバーは、デバイス スタックごとに 1 つだけアイドル状態要求 IRP を送信する必要があります。
-
-次のコードの WDM 例では、デバイス ドライバーが IRP USB アイドル状態要求の送信を取る手順を示します。 エラー チェックは、次のコード例で省略されています。
-
-1.  割り当てし、初期化、 [ **IOCTL\_内部\_USB\_送信\_IDLE\_通知**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_internal_usb_submit_idle_notification) IRP
     ```cpp
     irp = IoAllocateIrp (DeviceContext->TopOfStackDeviceObject->StackSize, FALSE);
     nextStack = IoGetNextIrpStackLocation (irp);
@@ -80,7 +76,8 @@ USB のセレクティブ サスペンド機能は、ハブ上の他のポート
     sizeof(struct _USB_IDLE_CALLBACK_INFO);
     ```
 
-2.  割り当てるし、アイドル状態の要求情報構造体の初期化 (USB\_IDLE\_コールバック\_情報)。
+2. アイドル状態の要求情報の構造 (USB\_IDLE\_CALLBACK\_INFO) を割り当て、初期化します。
+
     ```cpp
     idleCallbackInfo = ExAllocatePool (NonPagedPool,
     sizeof(struct _USB_IDLE_CALLBACK_INFO));
@@ -91,37 +88,37 @@ USB のセレクティブ サスペンド機能は、ハブ上の他のポート
     idleCallbackInfo;
     ```
 
-3.  完了ルーチンを設定します。
+3. 完了ルーチンを設定します。
 
-    クライアント ドライバーは IRP のアイドル状態の要求完了ルーチンを関連付ける必要があります。 アイドル状態の通知の完了ルーチンと例のコードの詳細については、「USB アイドル要求 IRP 完了ルーチン」を参照してください。
+    クライアントドライバーは、完了ルーチンとアイドル要求の IRP を関連付ける必要があります。 アイドル状態の通知完了ルーチンとコード例の詳細については、「USB アイドル要求の IRP 完了ルーチン」を参照してください。
 
     ```cpp
     IoSetCompletionRoutine (irp,
-     IdleNotificationRequestComplete,
-       DeviceContext,
-       TRUE,
-       TRUE,
-       TRUE);
-
+        IdleNotificationRequestComplete,
+        DeviceContext,
+        TRUE,
+        TRUE,
+        TRUE);
     ```
 
-4.  デバイスの拡張機能には、アイドル状態の要求を格納します。
+4. デバイス拡張機能にアイドル状態の要求を格納します。
+
     ```cpp
     deviceExtension->PendingIdleIrp = irp;
 
     ```
 
-5.  親のドライバーにアイドル状態の要求を送信します。
+5. アイドル状態の要求を親ドライバーに送信します。
+
     ```cpp
     ntStatus = IoCallDriver (DeviceContext->TopOfStackDeviceObject, irp);
     ```
 
-## <a name="canceling-a-usb-idle-request"></a>USB のアイドル状態の要求を取り消しています
+## <a name="canceling-a-usb-idle-request"></a>USB アイドル要求をキャンセルしています
 
+特定の状況下では、デバイスドライバーがバスドライバーに送信されたアイドル状態の要求 IRP をキャンセルする必要がある場合があります。 これは、デバイスが削除された場合、アイドル状態になった後にアクティブになり、アイドル状態の要求を送信した場合、またはシステム全体がより低いシステム電源状態に移行している場合に発生する可能性があります。
 
-特定の状況では、デバイス ドライバーがアイドル状態の要求が、バス ドライバーに送信されました IRP をキャンセルする必要があります。 これが発生する場合、デバイスを削除すると、アクティブになりますアイドル状態になると、アイドル状態の要求を送信した後、またはシステム全体が低いシステム電源の状態に遷移する場合。
-
-クライアント ドライバーでは、アイドル状態の IRP をキャンセルを呼び出して[ **IoCancelIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocancelirp)します。 次の表では、アイドル状態の IRP をキャンセルする 3 つのシナリオについて説明し、ドライバーのアクションが実行する必要がありますを指定します。
+クライアントドライバーは、 [**Iocancelirp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocancelirp)を呼び出して、アイドル状態の IRP をキャンセルします。 次の表では、アイドル状態の IRP をキャンセルし、ドライバーが実行する必要のあるアクションを指定する3つのシナリオについて説明します。
 
 <table>
 <colgroup>
@@ -131,37 +128,36 @@ USB のセレクティブ サスペンド機能は、ハブ上の他のポート
 <thead>
 <tr class="header">
 <th>シナリオ</th>
-<th>アイドル状態の要求の取り消し機構</th>
+<th>アイドル要求のキャンセルメカニズム</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>クライアント ドライバーが IRP がアイドル状態をキャンセルし、USB ドライバー スタックは、「USB アイドル状態の通知コールバック ルーチン」呼び出されていません。</td>
-<td><p>USB ドライバー スタックは、アイドル状態の IRP を完了します。 デバイスは決してため、 <strong>D0</strong>ドライバーでは、デバイスの状態は変更されません。</p></td>
+<td>クライアントドライバーがアイドル状態の IRP をキャンセルし、USB ドライバースタックが "USB アイドル通知のコールバックルーチン" を呼び出していません。</td>
+<td><p>USB ドライバースタックは、アイドル状態の IRP を完了します。 デバイスは<strong>D0</strong>のままではないため、ドライバーはデバイスの状態を変更しません。</p></td>
 </tr>
 <tr class="even">
-<td>クライアント ドライバーは IRP がアイドル状態に取り消さ、USB ドライバー スタックが USB アイドル状態の通知のコールバック ルーチンを呼び出しましたが、まだ返ってが。</td>
-<td><p>クライアント ドライバーが IRP のキャンセルを呼び出された場合でも、USB のアイドル状態の通知コールバック ルーチンが呼び出されることができます。 この場合、クライアント ドライバーのコールバック ルーチンは、低電力状態にデバイスを同期的に送信してデバイスを電源もする必要があります。</p>
-<p>クライアント ドライバーに送信できますし、デバイスが低電力状態にある場合、 <strong>D0</strong>要求。</p>
-<p>または、ドライバーは IRP がアイドル状態を完了し、送信する USB ドライバー スタックの待機できる、 <strong>D0</strong> IRP します。</p>
-<p>コールバック ルーチンは、デバイスを電源 IRP を割り当てるメモリの不足が原因の低電力状態にできない場合はアイドル状態の IRP をキャンセルする必要があり、即座に終了します。 コールバック ルーチンが返されます。 までアイドル状態の IRP は完了しませんそのため、コールバック ルーチンを完了するキャンセルされたアイドル IRP の待機をブロックしないでください。</p></td>
+<td>クライアントドライバーがアイドル状態の IRP をキャンセルしました。 USB ドライバースタックは、USB アイドル通知コールバックルーチンを呼び出しましたが、まだ返されていません。</td>
+<td><p>クライアントドライバーが IRP で取り消しを呼び出した場合でも、USB アイドル通知コールバックルーチンが呼び出される可能性があります。 この場合、クライアントドライバーのコールバックルーチンは、デバイスを低電力状態に同期的に送信することによってデバイスの電源を切断する必要があります。</p>
+<p>デバイスの電源がより低い状態になると、クライアントドライバーは<strong>D0</strong>要求を送信できるようになります。</p>
+<p>また、ドライバーは、USB ドライバースタックがアイドル状態の IRP を完了するのを待ってから、 <strong>D0</strong> irp を送信することもできます。</p>
+<p>パワー IRP を割り当てるためのメモリが不足しているため、コールバックルーチンがデバイスを低電力状態にすることができない場合は、アイドル状態の IRP をキャンセルしてすぐに終了する必要があります。 アイドル状態の IRP は、コールバックルーチンが返されるまで完了しません。したがって、コールバックルーチンは、取り消されたアイドル状態の IRP が完了するのを待機するのをブロックすることはできません。</p></td>
 </tr>
 <tr class="odd">
-<td>デバイスは、既に低電力状態にされています。</td>
-<td><p>クライアント ドライバーが送信するデバイスが省電力状態で既に場合、 <strong>D0</strong> IRP します。 USB ドライバー スタックは、アイドル状態の要求に STATUS_SUCCESS IRP を完了します。</p>
-<p>または、ドライバーをアイドル状態の IRP をキャンセル、USB ドライバー スタックがアイドル状態の IRP の完了するを待機し、送信、 <strong>D0</strong> IRP します。</p></td>
+<td>デバイスは既に低電力状態になっています。</td>
+<td><p>デバイスが既に低電力状態になっている場合、クライアントドライバーは<strong>D0</strong> IRP を送信できます。 USB ドライバースタックは、STATUS_SUCCESS を使用したアイドル状態の要求 IRP を完了します。</p>
+<p>また、ドライバーはアイドル状態の IRP をキャンセルし、USB ドライバースタックがアイドル状態の IRP を完了するのを待ってから、 <strong>D0</strong> irp を送信することもできます。</p></td>
 </tr>
 </tbody>
 </table>
 
-## <a name="usb-idle-request-irp-completion-routine"></a>USB アイドル状態の要求の IRP の完了ルーチン
+## <a name="usb-idle-request-irp-completion-routine"></a>USB アイドル要求の IRP 完了ルーチン
 
+多くの場合、バスドライバーはドライバーのアイドル要求の IRP 完了ルーチンを呼び出す可能性があります。 これが発生した場合、クライアントドライバーは、バスドライバーが IRP を完了した理由を検出する必要があります。 返されたステータスコードは、この情報を提供できます。 状態コードが状態でない場合\_電源\_状態\_無効である場合、デバイスがまだ**d0**にない場合は、ドライバーによってデバイスが**d0**に挿入されます。 デバイスがアイドル状態のままである場合、ドライバーは別のアイドル要求の IRP を送信できます。
 
-多くの場合、バス ドライバーはドライバーのアイドル状態要求 IRP の完了ルーチンを呼び出すことができます。 この場合、クライアント ドライバー、バス ドライバーは IRP を完了した理由を検出する必要があります。 返されるステータス コードは、この情報を提供できます。 状態コードの状態でない場合\_POWER\_状態\_無効な場合、ドライバーそのデバイスを配置する必要があります**D0** 、デバイスがでない場合**D0**します。 デバイスがアイドル状態のままの場合、ドライバーは IRP に別のアイドル状態の要求を送信できます。
+**メモ** アイドル要求の IRP 完了ルーチンは、 **D0**の電源要求の完了の待機をブロックすることはできません。 完了ルーチンは、ハブドライバーによって電源 IRP のコンテキストで呼び出すことができます。また、完了ルーチンの別の電源 IRP でブロックすると、デッドロックが発生する可能性があります。
 
-**注**IRP の完了ルーチンのアイドル状態の要求を待機しているブロックされないようにする必要があります、 **D0** power 要求が完了します。 完了ルーチンは、ハブのドライバーで電源 IRP のコンテキストで呼び出されることができ、デッドロックが発生する別能力 IRP の完了ルーチンでブロックされている可能性があります。
-
-次の一覧は、アイドル状態の要求の完了ルーチンがいくつかの一般的なステータス コードを解釈する方法を示します。
+次の一覧は、アイドル状態の要求の完了ルーチンが、一般的なステータスコードを解釈する方法を示しています。
 
 <table>
 <colgroup>
@@ -177,31 +173,29 @@ USB のセレクティブ サスペンド機能は、ハブ上の他のポート
 <tbody>
 <tr class="odd">
 <td><p>STATUS_SUCCESS</p></td>
-<td><p>デバイスを中断不要になったことを示します。 ただし、ドライバーことを確認自分のデバイス電源に<strong>D0</strong>にされていない場合<strong>D0</strong>します。</p></td>
+<td><p>デバイスが中断されないことを示します。 ただし、ドライバーは、デバイスの電源が入っていることを確認し<strong>、d0 に</strong>登録されていない場合はそれらを<strong>d0</strong>に配置する必要があります。</p></td>
 </tr>
 <tr class="even">
 <td><p>STATUS_CANCELLED</p></td>
-<td><p>バス ドライバーでは、アイドル状態の要求で、次の状況のいずれかで STATUS_CANCELLED IRP を実行します。</p>
+<td><p>バスドライバーは、次のいずれかの状況で、STATUS_CANCELLED を使用してアイドル状態の要求 IRP を完了します。</p>
 <ul>
-<li>デバイス ドライバーは IRP が取り消されました。</li>
-<li>システム電源の状態の変更が必要です。</li>
-<li>Windows xp で接続された USB デバイスのいずれかのデバイス ドライバーはそのデバイスにできませんでした。 <strong>D2</strong> 、アイドル状態の要求のコールバック ルーチンの実行中にします。 その結果、バス ドライバーには、すべての保留中のアイドル状態要求 Irp が完了しました。</li>
+<li>デバイスドライバーが IRP を取り消しました。</li>
+<li>システムの電源状態の変更が必要です。</li>
+<li>Windows XP では、接続されているいずれかの USB デバイスのデバイスドライバーが、アイドル状態の要求コールバックルーチンの実行中に、そのデバイスを<strong>D2</strong>に配置できませんでした。 その結果、バスドライバーは保留中のアイドル状態の要求 Irp をすべて完了しました。</li>
 </ul></td>
 </tr>
 <tr class="odd">
 <td><p>STATUS_POWER_STATE_INVALID</p></td>
-<td><p>デバイス ドライバーが要求したことを示します、 <strong>D3</strong>電源のデバイスの状態。 このような場合は、バス ドライバーは STATUS_POWER_STATE_INVALID ですべての保留中のアイドル状態 Irp を完了します。</p></td>
+<td><p>デバイスドライバがデバイスの<strong>D3</strong>電源状態を要求したことを示します。 このエラーが発生すると、バスドライバーは、STATUS_POWER_STATE_INVALID を使用して保留中のすべてのアイドル状態の Irp を完了します。</p></td>
 </tr>
 <tr class="even">
 <td><p>STATUS_DEVICE_BUSY</p></td>
-<td><p>バス ドライバーがデバイスのアイドル状態要求の保留中の IRP を既に保持していることを示します。 1 つだけアイドル状態の IRP が保留されている特定のデバイスの時刻にします。 複数のアイドル状態の要求の Irp を送信して、電源ポリシーの所有者の側でエラーが発生、ドライバーのライターでアドレス指定する必要があります。</p></td>
+<td><p>バスドライバーが、デバイスに対して保留中のアイドル要求 IRP を既に保持していることを示します。 特定のデバイスに対して一度に保留できるアイドル状態の IRP は1つだけです。 複数のアイドル状態の要求 Irp を送信することは、電源ポリシーの所有者の一部でエラーとなり、ドライバーの作成者が対処する必要があります。</p></td>
 </tr>
 </tbody>
 </table>
 
-
-
-次のコード例では、アイドル状態の要求の完了ルーチンの実装例を示します。
+次のコード例は、アイドル状態の要求完了ルーチンの実装例を示しています。
 
 ```ManagedCPlusPlus
 /*Routine Description:
@@ -233,12 +227,12 @@ IdleNotificationRequestComplete(
 
     ntStatus = Irp->IoStatus.Status;
 
-    if(!NT_SUCCESS(ntStatus) && ntStatus != STATUS_NOT_SUPPORTED) 
+    if(!NT_SUCCESS(ntStatus) && ntStatus != STATUS_NOT_SUPPORTED)
     {
 
         //Idle IRP completes with error.
 
-        switch(ntStatus) 
+        switch(ntStatus)
         {
 
         case STATUS_INVALID_DEVICE_REQUEST:
@@ -249,8 +243,8 @@ IdleNotificationRequestComplete(
 
         case STATUS_CANCELLED:
 
-            //1. The device driver canceled the IRP. 
-            //2. A system power state change is required. 
+            //1. The device driver canceled the IRP.
+            //2. A system power state change is required.
 
             break;
 
@@ -283,11 +277,11 @@ IdleNotificationRequestComplete(
 
         // Issue a new IRP
         PoRequestPowerIrp (
-            DeviceExtension->PhysicalDeviceObject, 
-            IRP_MN_SET_POWER, 
-            powerState, 
-            (PREQUEST_POWER_COMPLETE) PoIrpCompletionFunc, 
-            DeviceExtension, 
+            DeviceExtension->PhysicalDeviceObject,
+            IRP_MN_SET_POWER,
+            powerState,
+            (PREQUEST_POWER_COMPLETE) PoIrpCompletionFunc,
+            DeviceExtension,
             NULL);
     }
 
@@ -321,101 +315,91 @@ IdleNotificationRequestComplete_Exit:
 }
 ```
 
-## <a name="usb-idle-notification-callback-routine"></a>USB のアイドル状態の通知コールバック ルーチン
+## <a name="usb-idle-notification-callback-routine"></a>USB アイドル通知コールバックルーチン
 
+バスドライバー (ハブドライバーのインスタンスまたは汎用の親ドライバー) によって、デバイスの子をいつ安全に中断できるかが決まります。 存在する場合は、各子のクライアントドライバーによって提供されるアイドル状態の通知コールバックルーチンを呼び出します。
 
-デバイスの子を中断しても安全な場合、バス ドライバー (ハブ ドライバーのインスタンス) または一般的な親ドライバーのいずれかを決定します。 場合は、それぞれの子のクライアント ドライバーによって提供されるアイドル通知コールバック ルーチンを呼び出します。
-
-USB の関数のプロトタイプ\_IDLE\_コールバックを次に示します。
+USB\_アイドル\_コールバックの関数プロトタイプは次のとおりです。
 
 ``` syntax
 typedef VOID (*USB_IDLE_CALLBACK)(__in PVOID Context);
 ```
 
-デバイス ドライバーは、アイドル状態の通知コールバック ルーチンで次の操作を実行する必要があります。
+デバイスドライバーは、アイドル通知コールバックルーチンで次の操作を行う必要があります。
 
--   要求、 [ **IRP\_MN\_待機\_WAKE** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-wait-wake)デバイスは、リモート ウェイク アップ装備する必要がある場合、デバイスの IRP します。
--   すべての I/O をキャンセルし、低電力状態に移動するデバイスを準備します。
--   WDM スリープ状態に呼び出すことによって、デバイスを配置[ **PoRequestPowerIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-porequestpowerirp)で、 *PowerState* PowerDeviceD2 (wdm.h; で定義されている列挙子の値に設定するパラメーターntddk.h)。 Windows xp の場合、ドライバーする必要がありますいないにそのデバイス PowerDeviceD3、場合でも、デバイスがリモート ウェイクの有効活用されません。
+- デバイスでリモートウェイクアップを行う必要がある場合は、デバイスに対して[**irp\_完了\_\_待機**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-wait-wake)するように要求します。
+- すべての i/o をキャンセルし、デバイスをより低電力状態にする準備をします。
+- *PowerState*パラメーターを Enumerator 値 PowerDeviceD2 (WDM; ntddk で定義) に設定して、 [**PoRequestPowerIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-porequestpowerirp)を呼び出して、デバイスを WDM スリープ状態にします。 Windows XP では、デバイスにリモートスリープが設定されていない場合でも、ドライバーはデバイスを PowerDeviceD3 に配置しないでください。
 
-Windows xp の場合、ドライバーは、アイドル状態の通知のコールバック ルーチンが、デバイスをセレクティブ サスペンドを依存する必要があります。 Windows XP で実行されているドライバーは、低電力状態で、デバイスをアイドル状態の通知のコールバック ルーチンを使用せずに直接 puts、中断してから、USB デバイス ツリー内の他のデバイスこのできない場合があります。 詳細については、「USB グローバル中断」を参照してください。
+Windows XP では、ドライバーは、デバイスを選択的に中断するために、アイドル通知コールバックルーチンに依存している必要があります。 Windows XP で実行されているドライバーが、アイドル状態の通知コールバックルーチンを使用せずにデバイスをより低電力状態にする場合、これにより、USB デバイスツリー内の他のデバイスが中断されるのを防ぐことができます。 詳細については、「USB グローバル中断」を参照してください。
 
-ハブ ドライバーと[USB 汎用親ドライバー (Usbccgp.sys)](usb-common-class-generic-parent-driver.md) IRQL でアイドル状態の通知のコールバック ルーチンを呼び出す = パッシブ\_レベル。 これにより、電源状態の変更要求が完了するまで待機する間にブロックするコールバック ルーチン。
+ハブドライバーと[USB 汎用親ドライバー (Usbccgp)](usb-common-class-generic-parent-driver.md)はどちらも、IRQL = パッシブ\_レベルでアイドル通知コールバックルーチンを呼び出します。 これにより、コールバックルーチンは、電源状態変更要求の完了を待機している間、ブロックすることができます。
 
-システムが中にのみ、コールバック ルーチンが呼び出される**S0**であり、デバイス**D0**します。
+コールバックルーチンは、システムが**S0**で、デバイスが**D0**にある間だけ呼び出されます。
 
-アイドル状態の要求の通知コールバック ルーチンに次の制限が適用されます。
+アイドル状態の要求通知コールバックルーチンには、次の制限が適用されます。
 
--   デバイス ドライバーがからデバイスの電源状態遷移を開始できる**D0**に**D2**アイドル状態の通知コールバック ルーチンが他の電源の状態遷移が許可されています。 具体的には、ドライバーを読み取ろうとしないでにそのデバイスを変更する**D0**コールバック ルーチンの実行中にします。
--   デバイス ドライバーは、アイドル状態の通知のコールバック ルーチン内では、複数の電源から IRP を要求する必要があります。
+- デバイスドライバーは、アイドル状態の通知コールバックルーチンで、デバイスの電源状態の通知を**D0**から**D2**に開始できますが、その他の電源状態の移行は許可されません。 特に、ドライバーは、コールバックルーチンの実行中に、デバイスを**D0**に変更することはできません。
+- デバイスドライバーは、アイドル通知コールバックルーチン内から複数の電源 IRP を要求することはできません。
 
-### <a name="arming-devices-for-wakeup-in-the-idle-notification-callback-routine"></a>デバイスをアイドル状態の通知コールバック ルーチンでウェイク アップ取り組ま
+### <a name="arming-devices-for-wakeup-in-the-idle-notification-callback-routine"></a>アイドル状態の通知コールバックルーチンでウェイクアップ用にデバイスを取り組まする
 
+アイドル状態の通知のコールバックルーチンは、デバイスが IRP を\_しているかどうかを判断し[ **\_待機\_ウェイク**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-wait-wake)要求が保留中であるかどうかを確認します。 \_待機\_ウェイク要求が保留中であることを待機している IRP\_がない場合、コールバックルーチンは、デバイスを中断する前に待機\_待機\_待機を\_送信する必要があります。 待機ウェイクメカニズムの詳細については、「[ウェイクアップ機能を持つデバイスのサポート](https://docs.microsoft.com/windows-hardware/drivers/kernel/supporting-devices-that-have-wake-up-capabilities)」を参照してください。
 
-アイドル状態の通知のコールバック ルーチンがそのデバイスがあるかどうかを決定する必要があります、 [ **IRP\_MN\_待機\_WAKE** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-wait-wake)保留中の要求。 場合ありません IRP\_MN\_待機\_スリープ解除要求が保留中、コールバック ルーチンは IRP を送信する必要があります\_MN\_待機\_デバイスを中断する前にスリープ解除要求。 待機のスリープ解除メカニズムの詳細については、次を参照してください。[をサポートしているデバイスをあるウェイク アップ機能](https://docs.microsoft.com/windows-hardware/drivers/kernel/supporting-devices-that-have-wake-up-capabilities)します。
+## <a name="usb-global-suspend"></a>USB グローバル中断
 
+USB 2.0 仕様では、バス上のすべての USB トラフィック (フレームの開始パケットを含む) を停止することによって、USB ホストコントローラーの背後にあるバス全体の中断としてグローバル中断が定義されています。 まだ中断されていないダウンストリームデバイスは、アップストリームポートでアイドル状態を検出し、それ自体に中断状態を入力します。 Windows は、この方法ではグローバル中断を実装しません。 Windows は、バス上のすべての USB トラフィックを停止する前に、USB ホストコントローラーの背後にある各 USB デバイスを選択的に中断します。
 
-## <a name="usb-global-suspend"></a>USB のグローバルの一時停止します。
+- [Windows 7 でのグローバル中断の条件](#conditions-for-global-suspend-in-windows-7)
+- [Windows Vista でのグローバル中断の条件](#conditions-for-global-suspend-in-windows-vista)
+- [Windows XP でのグローバル中断の条件](#conditions-for-global-suspend-in-windows-xp)
+- [関連トピック](#related-topics)
 
+### <a name="conditions-for-global-suspend-in-windows-7"></a>Windows 7 でのグローバル中断の条件
 
-USB 2.0 仕様グローバルの一時停止として定義バス USB ホスト コント ローラーの背後にある全体の中断開始-フレームのパケットをなど、バス上のすべての USB トラフィックを停止しています。 既に中断されていないダウン ストリーム デバイスは、アップ ストリームのポートでアイドル状態を検出し、自身で中断状態を入力します。 Windows を実装しませんグローバル中断この方法で。 Windows では、バス上のすべての USB トラフィックが停止します。 前に、USB ホスト コント ローラーの背後にある各 USB デバイスが常に選択的に中断します。
+Windows 7 では、Windows Vista よりも USB ハブを選択的に一時停止することがより積極的になります。 Windows 7 の USB ハブドライバーは、接続されているすべてのデバイスが**D1**、 **D2**、または**D3**デバイスの電源状態にあるすべてのハブを選択的に中断します。 すべての USB ハブが選択的に中断されると、バス全体がグローバル中断に入ります。 Windows 7 の USB ドライバースタックは、デバイスが**D1**、 **D2**、または**D3**の WDM デバイス状態にあるときに、デバイスをアイドル状態として扱います。
 
--   [条件のグローバルな Windows 7 での中断](#conditions-for-global-suspend-in-windows-7)
--   [条件のグローバルな Windows Vista での中断](#conditions-for-global-suspend-in-windows-vista)
--   [条件のグローバルな Windows XP での中断](#conditions-for-global-suspend-in-windows-xp)
--   [関連トピック](#related-topics)
+### <a name="conditions-for-global-suspend-in-windows-vista"></a>Windows Vista でのグローバル中断の条件
 
-### <a name="conditions-for-global-suspend-in-windows-7"></a>条件のグローバルな Windows 7 での中断
+Windows Vista では、Windows XP よりもグローバルな中断を行うための要件はより柔軟です。
 
+特に、デバイスが**D1**、 **D2**、または**D3**の WDM デバイス状態にある場合、USB スタックはデバイスを Windows Vista ではアイドル状態として扱います。
 
-Windows 7 より積極的に Windows Vista よりも USB ハブを選択的に中断します。 Windows 7 の USB ハブのドライバーは、すべての接続されているデバイスのいずれかのハブをセレクティブ サスペンド**D1**、 **D2**、または**D3**デバイスの電源状態。 すべての USB ハブは、オプションを選択すると、バス全体をグローバル中断入ります中断します。 デバイスが WDM デバイス状態のときにアイドル状態として扱われます、デバイスを Windows 7 の USB ドライバー スタック**D1**、 **D2**、または**D3**します。
+次の図は、Windows Vista で発生する可能性のあるシナリオを示しています。
 
-### <a name="conditions-for-global-suspend-in-windows-vista"></a>条件のグローバルな Windows Vista での中断
+![windows vista でのグローバル中断を示す図](images/global-suspendlh.png)
 
+この図は、「Windows XP でのグローバル中断の条件」に示されているような状況を示しています。 ただし、この場合、デバイス3はアイドル状態のデバイスとして修飾されます。 すべてのデバイスがアイドル状態であるため、バスドライバーは、保留中のアイドル状態の要求の Irp に関連付けられているアイドル通知コールバックルーチンを呼び出すことができます。 各ドライバーがデバイスを中断すると、バスドライバーは、その処理を安全にすると同時に、USB ホストコントローラーを中断します。
 
-グローバルの一時停止を行うための要件は、Windows xp よりも Windows Vista をより柔軟です。
+Windows Vista では、グローバル中断が開始される前に、すべての非ハブ USB デバイスが**D1**、 **D2**、または**D3**に存在する必要があります。その時点で、ルートハブを含むすべての usb ハブが中断されます。 これは、セレクティブサスペンドをサポートしていないすべての USB クライアントドライバーが、バスがグローバル中断を開始できないことを意味します。
 
-デバイスが WDM デバイス状態のときに、USB スタックでデバイスを Windows Vista でのアイドル状態として処理する具体的には、 **D1**、 **D2**、または**D3**します。
+### <a name="conditions-for-global-suspend-in-windows-xp"></a>Windows XP でのグローバル中断の条件
 
-次の図は、Windows Vista で行われるシナリオを示しています。
+Windows XP で電力を節約するためには、すべてのデバイスドライバーがアイドル状態の要求 Irp を使用してデバイスを中断することが重要です。 1つのドライバーが Irp\_によってデバイスを中断した場合\_アイドル状態の要求 IRP ではなく、[**電源要求\_設定**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-set-power)すると、他のデバイスが中断されるのを防ぐことができます。
 
-![windows vista では、グローバルなを示すダイアグラムを中断します。](images/global-suspendlh.png)
+次の図は、Windows XP で発生する可能性のあるシナリオを示しています。
 
-この図は、"条件のグローバルな中断で Windows XP"セクションに示すように 1 つに似た状況を示しています。 ただし、ここでデバイスの 3 と見なされるアイドル状態のデバイス。 すべてのデバイスはアイドル状態であるため、バス ドライバーは Irp の保留中のアイドル状態要求に関連付けられているコールバック ルーチンのアイドル状態の通知を呼び出すことができません。 各ドライバーは、そのデバイスを中断し、バス ドライバーは、これを行うには安全ではすぐに、USB ホスト コント ローラーを中断します。
+![windows xp でのグローバル中断を示す図](images/global-suspendxp.png)
 
-Windows Vista ではハブ以外のすべての USB デバイスである必要があります**D1**、 **D2**、または**D3**グローバル中断を開始する、前にどの時点で、ルート ハブを含む、すべての USB ハブになります中断されています。 選択的にサポートしない任意の USB クライアント ドライバーを中断することを意味すると、バスがグローバルの一時停止を入力できなくなります。
+この図では、デバイス3は電力状態 D3 であり、アイドル状態の要求 IRP が保留になっていません。 デバイス3は、Windows XP でのグローバル中断を目的として、アイドル状態のデバイスとしては使用できません。これは、その親で保留されているアイドル要求の IRP が存在しないためです。 これにより、バスドライバーは、ツリー内の他のデバイスのドライバーに関連付けられているアイドル要求コールバックルーチンを呼び出すことができなくなります。
 
-### <a name="conditions-for-global-suspend-in-windows-xp"></a>条件のグローバルな Windows XP での中断
+## <a name="enabling-selective-suspend"></a>セレクティブサスペンドを有効にする
 
+Microsoft Windows XP のアップグレードバージョンでは、選択的中断は無効になっています。 Windows XP、Windows Vista、およびそれ以降のバージョンの Windows のクリーンインストールに対応しています。
 
-Windows XP で電力の削減を最大化するためには、すべてのデバイス ドライバーが Irp のアイドル状態の要求を使用して、そのデバイスを中断することが重要です。 1 つのドライバーでは、そのデバイスを中断する場合は、 [ **IRP\_MN\_設定\_POWER** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-set-power)要求代わりに、アイドル状態の IRP には、その他のデバイスが中断するように可能性があります。
+特定のルートハブとその子デバイスに対してセレクティブサスペンドのサポートを有効にするには、**デバイスマネージャー**で、USB ルートハブの **[電源管理]** タブのチェックボックスをオンにします。
 
-次の図は、Windows XP で行われるシナリオを示しています。
+また、USB ポートドライバーのソフトウェアキーの下にある**HcDisableSelectiveSuspend**の値を設定して、セレクティブサスペンドを有効または無効にすることもできます。 値1は、選択的中断を無効にします。 値を0にすると、選択的中断が有効になります。
 
-![windows xp では、グローバルなを示すダイアグラムを中断します。](images/global-suspendxp.png)
-
-この図では、デバイス 3 D3 の電源状態し、アイドル状態が保留中の IRP を要求します。 デバイス 3 を満たさず、グローバルの目的でアイドル状態のデバイスが Windows xp の場合、suspend、親のアイドル状態の要求の保留中の IRP があるないためです。 これは、ため、バス ドライバーがアイドル状態の要求ツリーで、その他のデバイスのドライバーに関連付けられているコールバック ルーチンを呼び出すことはできません。
-
-## <a name="enabling-selective-suspend"></a>選択的に有効化を中断
-
-
-セレクティブ サスペンドのアップグレードのバージョンの Microsoft Windows XP は無効です。 Windows XP、Windows Vista、および以降のバージョンの Windows のクリーン インストールする場合は有効です。
-
-選択的に有効にする特定のルート ハブとその子デバイスのサポートを中断、チェック ボックスをオンにする、**電源管理** タブで、USB ルート ハブの**デバイス マネージャー**します。
-
-または、有効にできますかの値を設定して無効にする選択的なが中断**HcDisableSelectiveSuspend**の USB ポート ドライバー ソフトウェア キーの下。 選択的に 1 つの無効化の値を中断します。 選択的な 0 の有効値を中断します。
-
-たとえば、Hydra OHCI コント ローラーの Usbport.inf 無効にする選択的には、次の行が中断します。
+たとえば、Usbport の次の行では、Hydra OHCI コントローラーのセレクティブサスペンドを無効にしています。
 
 ```cpp
 [OHCI_NOSS.AddReg.NT]
 HKR,,"HcDisableSelectiveSuspend",0x00010001,1
 ```
 
-クライアント ドライバーは選択的かどうかを判断しようとはしないでください中断がアイドル状態の要求を送信する前に有効になっています。 デバイスのアイドル時間がアイドル状態の要求を送信する必要があります。 アイドル状態の要求が失敗すると、クライアント ドライバーがアイドル タイマーをリセットする必要があります、再試行しています。
+クライアントドライバーは、アイドル状態の要求を送信する前に、セレクティブサスペンドが有効になっているかどうかを判断することはできません。 デバイスがアイドル状態のときは常にアイドル要求を送信する必要があります。 アイドル状態の要求が失敗した場合、クライアントドライバーはアイドルタイマーをリセットして再試行します。
 
 ## <a name="related-topics"></a>関連トピック
+
 [USB 電源管理](usb-power-management.md)  
-
-
-

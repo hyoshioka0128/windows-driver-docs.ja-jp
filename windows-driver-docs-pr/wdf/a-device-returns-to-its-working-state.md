@@ -3,50 +3,50 @@ title: デバイスが動作状態に戻る
 description: デバイスが動作状態に戻る
 ms.assetid: 0a5bdaf5-ed9e-44d0-bc8a-876ceb342520
 keywords:
-- デバイスの電源状態が WDK KMDF
+- デバイスの電源状態 WDK KMDF
 - 作業状態 WDK KMDF
-- 電源状態が WDK KMDF
-- システム ウェイク アップ WDK KMDF
-- 電源管理 WDK KMDF、ウェイク アップ機能
-- ウェイク アップ機能 WDK KMDF
-- 電源管理 WDK KMDF をスリープ状態します。
+- 電源状態 WDK KMDF
+- システムウェイクアップ WDK KMDF
+- 電源管理 WDK KMDF、ウェイクアップ機能
+- ウェイクアップ機能 WDK KMDF
+- スリープ電源管理 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 54ecf5c3a87225e313f33e13d2bea1128cd9e765
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: cf921a1fb8c8d2c1857563979496467788497e4d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385331"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843653"
 ---
 # <a name="a-device-returns-to-its-working-state"></a>デバイスが動作状態に戻る
 
 
-低電力状態にあるデバイスは、次のいずれかが発生した場合の稼働状態に返されます。
+次のいずれかが発生した場合、低電力状態のデバイスは稼動状態に戻ります。
 
--   デバイスは、外部イベントを検出し、そのバス上ウェイク信号をトリガーします。 ウェイク信号の呼び出しを検出するバス ドライバー [ **WdfDeviceIndicateWakeStatus**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceindicatewakestatus)します。 結果として、フレームワークが、バス ドライバーの[ *EvtDeviceDisableWakeAtBus* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfpdo/nc-wdfpdo-evt_wdf_device_disable_wake_at_bus)コールバック関数。
+-   デバイスは外部イベントを検出し、そのバスで wake シグナルをトリガーします。 ウェイクアップ信号を検出するバスドライバー [**WdfDeviceIndicateWakeStatus**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceindicatewakestatus)を呼び出します。 その結果、フレームワークはバスドライバーの[*EvtDeviceDisableWakeAtBus*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfpdo/nc-wdfpdo-evt_wdf_device_disable_wake_at_bus)コールバック関数を呼び出します。
 
--   デバイスがアイドル状態だったし、ドライバーは呼び出し[ **WdfDeviceStopIdle**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicestopidle)します。
+-   デバイスがアイドル状態で、ドライバーが[**Wdfdevicestopidle**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicestopidle)を呼び出しました。
 
--   システムの電源の状態は、低電力状態からの作業 (S0) 状態に変更されました。
+-   システムの電源状態が低電力状態から動作中 (S0) 状態に変わりました。
 
-フレームワークが、バス ドライバーをこのような状況の各に[ *EvtDeviceD0Entry* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_entry)コールバック関数は、作業 (D0) の状態 (バスの子デバイス) のデバイスを復元します。
+このような状況では、フレームワークはバスドライバーの[*EvtDeviceD0Entry*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_entry) callback 関数を呼び出します。これにより、デバイス (バスの子デバイス) が動作 (D0) 状態に復元されます。
 
-各関数とフィルター ドライバーのデバイスをサポートする、フレームワークは、一度に 1 つのドライバーをドライバー スタックの最下位レベルである driver 以降では、シーケンスで、次を行います。
+デバイスをサポートする関数とフィルタードライバーごとに、次の処理が実行されます。これは、ドライバースタックの一番下にあるドライバーから、一度に1つずつ実行されます。
 
-1.  フレームワークは、ドライバーの[ *EvtDeviceD0Entry* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_entry) (存在する) 場合、コールバック関数。
+1.  フレームワークは、ドライバーの[*EvtDeviceD0Entry*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_entry)コールバック関数 (存在する場合) を呼び出します。
 
-2.  フレームワークは、ドライバーの[ *EvtInterruptEnable* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_enable)コールバック関数 (存在する) 場合の各中断し、呼び出し、ドライバーの[ *EvtDeviceD0EntryPostInterruptsEnabled* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_entry_post_interrupts_enabled)コールバック関数 (存在する) 場合、ドライバーには、デバイスの割り込みが有効にすることができます。
+2.  フレームワークは、各割り込みのドライバーの[*EvtInterruptEnable*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_enable) callback 関数 (存在する場合) を呼び出し、ドライバーの[*EvtDeviceD0EntryPostInterruptsEnabled*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_entry_post_interrupts_enabled) callback 関数 (存在する場合) を呼び出して、ドライバーが有効にできるようにします。デバイスの割り込み。
 
-3.  場合は、ハードウェアとドライバーは、DMA をサポート、フレームワークのドライバーの[ *EvtDmaEnablerFill*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdmaenabler/nc-wdfdmaenabler-evt_wdf_dma_enabler_fill)、 [ *EvtDmaEnablerEnable*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdmaenabler/nc-wdfdmaenabler-evt_wdf_dma_enabler_enable)と[ *EvtDmaEnablerSelfManagedIoStart* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdmaenabler/nc-wdfdmaenabler-evt_wdf_dma_enabler_selfmanaged_io_start)コールバックが作成された DMA チャネルごと (存在する) 場合に機能します。
+3.  ハードウェアとドライバーが DMA をサポートしている場合、フレームワークは、作成された各 DMA チャネルに対して、ドライバーの[*EvtDmaEnablerFill*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdmaenabler/nc-wdfdmaenabler-evt_wdf_dma_enabler_fill)、 [*EvtDmaEnablerEnable*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdmaenabler/nc-wdfdmaenabler-evt_wdf_dma_enabler_enable)、および[*EvtDmaEnablerSelfManagedIoStart*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdmaenabler/nc-wdfdmaenabler-evt_wdf_dma_enabler_selfmanaged_io_start)のコールバック関数 (存在する場合) を呼び出します。
 
-4.  ドライバーがデバイスの電源ポリシーの所有者である場合は、フレームワーク、 [ *EvtDeviceDisarmWakeFromS0* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_disarm_wake_from_s0)または[ *EvtDeviceDisarmWakeFromSx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_disarm_wake_from_sx)コールバック関数。
+4.  ドライバーがデバイスの電源ポリシーの所有者である場合、フレームワークはその[*EvtDeviceDisarmWakeFromS0*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_disarm_wake_from_s0)または[*EvtDeviceDisarmWakeFromSx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_disarm_wake_from_sx) callback 関数を呼び出します。
 
-5.  フレームワークは、ドライバーの[ *EvtChildListScanForChildren* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfchildlist/nc-wdfchildlist-evt_wdf_child_list_scan_for_children) (存在する) 場合、コールバック関数。
+5.  フレームワークは、ドライバーの[*Evtchildlistscanforchildren*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfchildlist/nc-wdfchildlist-evt_wdf_child_list_scan_for_children)コールバック関数 (存在する場合) を呼び出します。
 
-6.  フレームワークの再起動のすべてのドライバーの電源管理対象の I/O キューと呼び出しの[ *EvtIoResume* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_queue_io_resume)コールバック関数 (必要な場合)。
+6.  フレームワークは、すべてのドライバーの電源管理 i/o キューを再起動し、必要に応じて、 [*EvtIoResume*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_resume)コールバック関数を呼び出します。
 
-7.  場合は、ドライバーは、自己管理型の I/O を使用して、フレームワークのドライバーの[ *EvtDeviceSelfManagedIoRestart* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_restart)コールバック関数。
+7.  ドライバーが自己管理型 i/o を使用している場合、フレームワークはドライバーの[*EvtDeviceSelfManagedIoRestart*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_restart)コールバック関数を呼び出します。
 
  
 

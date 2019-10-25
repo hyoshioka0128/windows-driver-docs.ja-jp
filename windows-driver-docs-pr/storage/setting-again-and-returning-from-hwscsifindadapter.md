@@ -4,17 +4,17 @@ description: Again の設定と HwScsiFindAdapter からの戻り値
 ms.assetid: 8a9cde40-06fa-4b56-818d-63a9c71da208
 keywords:
 - HwScsiFindAdapter
-- SCSI ミニポート ドライバー WDK ストレージ、HwScsiFindAdapter
-- もう一度 WDK SCSI
-- WDK SCSI の値を返す
+- SCSI ミニポートドライバー WDK 記憶域、HwScsiFindAdapter
+- 再び WDK SCSI
+- 戻り値 WDK SCSI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a9d080829fe3bce587c1983882063fdbdd641de1
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 824f3ec22fb4f79e3ae0bee3019c61d356334e68
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363950"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845232"
 ---
 # <a name="setting-again-and-returning-from-hwscsifindadapter"></a>Again の設定と HwScsiFindAdapter からの戻り値
 
@@ -22,15 +22,15 @@ ms.locfileid: "67363950"
 ## <span id="ddk_setting_again_and_returning_from_hwscsifindadapter_kg"></span><span id="DDK_SETTING_AGAIN_AND_RETURNING_FROM_HWSCSIFINDADAPTER_KG"></span>
 
 
-サポートされており、正常に構成された HBA の[ *HwScsiFindAdapter* ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557300(v=vs.85)) SP が返す\_返す\_が見つかりました。
+サポートされていて正常に構成された HBA の場合、 [*HwScsiFindAdapter*](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557300(v=vs.85))は、返された\_を返す\_SP を返します。
 
-返されると、前に、 *HwScsiFindAdapter*レガシとプラグ アンド プレイの両方のミニポート ドライバーを設定する必要があります*再度*このセクションで説明します。 *再度*、プラグ アンド プレイ ドライバーとしてミニポート ドライバーが読み込まれるときに関係ありません*再度*システムは、必要な場合に、従来のドライバーのプラグ アンド プレイのミニポート ドライバーを実行できるように適切に設定する必要があります.
+このセクションで説明するように、を返す前に、レガシとプラグアンドプレイの両方のミニポートドライバーの*HwScsiFindAdapter*を*再度*設定する必要があります。 ただし、ミニポートドライバーがプラグアンドプレイドライバーとして読み込まれる場合は *、もう一度*行う必要はありませんが、必要に応じて、システムがプラグアンドプレイミニポートドライバーをレガシドライバーとして実行できるように、適切に設定*する必要が*あります。
 
-*HwScsiFindAdapter*設定する必要があります*再度*に**TRUE**をもう一度呼び出す必要があるかを示す*正確に同じポートを持つ\_構成\_情報がデバイスの新しい拡張機能、* 場合同じ I/O バス上の Hba のもう 1 つに接続する場合があります。
+*HwScsiFindAdapter*は、*同じポート\_構成\_情報で*再度呼び出す必要があることを示すために**TRUE** *に設定する*必要があります。ただし、その他の hba が接続されている場合は、新しいデバイス拡張機能を使用します。同じ i/o バス上。
 
-場合*HwScsiFindAdapter* HBA を見つけることができませんをサポートし、設定があります*再度*に**FALSE**戻って SP\_返す\_いない\_が見つかりました。 場合*HwScsiFindAdapter* HBA をサポートされているが、入力[**ポート\_構成\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/ns-srb-_port_configuration_information)が一貫性のない構成データ (無効ななど**もできます**または**BusInterruptLevel** EISA バス上)、設定があります*再度*に**FALSE**とSP が返す\_返す\_不良\_構成します。 PCI バス上の HBA の*HwScsiFindAdapter*システムによって提供される割り込み構成情報をそのまま使用する必要があります。
+*HwScsiFindAdapter*でサポートされている HBA が見つからない場合は、*再度* **FALSE**に設定し、SP\_返さ\_\_見つからないことを確認してください。 *HwScsiFindAdapter*がサポートされている HBA を検出したにもかかわらず、入力[**ポート\_構成\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/srb/ns-srb-_port_configuration_information)に一貫性のない構成データ (EISA バスの無効な**DmaChannel**や**BusInterruptLevel**など) がある場合、を FALSE*に*設定し、SP を返す\_無効な\_構成\_返す必要があります。 PCI バス上の HBA の場合、 *HwScsiFindAdapter*は、システムによって提供される割り込み構成情報を受け入れる必要があります。
 
-その設定に注意してください*再度*に**FALSE** sp の制御を返すと\_返す\_いない\_FOUND または SP\_返す\_悪い\_構成は、特定の I/O バスがで識別されることを示します、 **SystemIoBusNumber**入力ポートに\_構成\_についてには、ミニポート ドライバーをサポートする HBA がありません。 呼び出し元からシステム ポート ドライバーれない*HwScsiFindAdapter*もう一度更新ポート\_構成\_については、マシンに追加の I/O バスがある場合、HBA(s) を別の I/O バスをスキャンするには同じ**AdapterInterfaceType**します。
+を**FALSE**に設定してから制御を返すことに注意して*ください*\_を返します\_が見つかり\_ませんでした。または、sp\_を返します。正しくない\_の場合は、 **SystemIoBusNumber**によって識別される特定の i/o バスを示します。入力ポート\_構成\_情報には、ミニポートドライバーがサポートできる HBA がありません。 更新されたポート\_構成\_情報を使用して再度*HwScsiFindAdapter*を呼び出して、マシンの i/o バスが同じ**である場合に別の i/o バスをスキャンするようにすることはできません。AdapterInterfaceType**。
 
  
 

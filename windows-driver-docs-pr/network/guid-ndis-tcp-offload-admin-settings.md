@@ -1,25 +1,25 @@
 ---
 title: GUID_NDIS_TCP_OFFLOAD_ADMIN_SETTINGS
-description: このトピックでは、NDIS WMI インターフェイスの GUID を GUID_NDIS_TCP_OFFLOAD_ADMIN_SETTINGS について説明します。
+description: このトピックでは、NDIS WMI インターフェイスの GUID_NDIS_TCP_OFFLOAD_ADMIN_SETTINGS GUID について説明します。
 ms.assetid: 8648c75a-dcb3-4723-a2d0-d406d3a073d6
 keywords:
-- GUID_NDIS_TCP_OFFLOAD_ADMIN_SETTINGS、WDK GUID_NDIS_TCP_OFFLOAD_ADMIN_SETTINGS ネットワーク ドライバー
+- GUID_NDIS_TCP_OFFLOAD_ADMIN_SETTINGS、WDK GUID_NDIS_TCP_OFFLOAD_ADMIN_SETTINGS ネットワークドライバー
 ms.date: 11/22/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 702cc30eb8ba56c7b82406205f262e758839e59b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a88c41b345605a04d8713ba2a58ad0142eae29e5
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369653"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842369"
 ---
-# <a name="guidndistcpoffloadadminsettings"></a>GUID_NDIS_TCP_OFFLOAD_ADMIN_SETTINGS
+# <a name="guid_ndis_tcp_offload_admin_settings"></a>GUID_NDIS_TCP_OFFLOAD_ADMIN_SETTINGS
 
-WMI クライアントでは、オフロードは、NDIS ポートの構成パラメーターを設定するのに GUID_NDIS_TCP_OFFLOAD_ADMIN_SETTINGS セットの GUID を使用できます。 この WMI GUID は、NDIS 6.0 および以降のバージョンでサポートされます。
+WMI クライアントは、GUID_NDIS_TCP_OFFLOAD_ADMIN_SETTINGS set GUID を使用して、NDIS ポートのオフロード構成パラメーターを設定できます。 この WMI GUID は、NDIS 6.0 以降のバージョンでサポートされています。
 
-NDIS に変換するには、この GUID、 [OID_TCP_OFFLOAD_PARAMETERS](oid-tcp-offload-parameters.md) NDIS ポートの現在の構成を設定する OID。 タスク オフロードの任意の種類のサポートを提供する NDIS ミニポート ドライバーでは、この OID をサポートする必要があります。
+NDIS は、この GUID を[OID_TCP_OFFLOAD_PARAMETERS](oid-tcp-offload-parameters.md) OID に変換して、ndis ポートの現在の構成を設定します。 タスクオフロードのあらゆる種類のサポートを提供する NDIS ミニポートドライバーは、この OID をサポートする必要があります。
 
-WMI の入力バッファーが含まれています、 [NDIS_WMI_SET_HEADER](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_wmi_set_header)が続く構造体、 [NDIS_OFFLOAD_PARAMETERS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_offload_parameters)構造体。
+WMI 入力バッファーには、 [NDIS_WMI_SET_HEADER](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_wmi_set_header)構造体の後に[NDIS_OFFLOAD_PARAMETERS](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_offload_parameters)構造体が含まれています。
 
-ポート パラメーターの詳細については、次を参照してください。 [OID_TCP_OFFLOAD_PARAMETERS](oid-tcp-offload-parameters.md)します。
+ポートパラメーターの詳細については、「 [OID_TCP_OFFLOAD_PARAMETERS](oid-tcp-offload-parameters.md)」を参照してください。
 

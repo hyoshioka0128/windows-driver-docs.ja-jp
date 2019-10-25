@@ -3,26 +3,26 @@ title: AVStream コーデックの拡張サンプル情報の記述
 description: AVStream コーデックの拡張サンプル情報の記述
 ms.assetid: 04447525-78f5-4c77-9a41-4e6e4729f729
 keywords:
-- AVStream ハードウェア コーデックをサポートして WDK、サンプルの詳細情報
+- AVStream ハードウェアコーデックサポート WDK、拡張サンプル情報
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 87353cffc6772acf60dab9932edc0495d47c0d3e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 17df3e29dead68150a4ae31539355eae380a1b7e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67353253"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844191"
 ---
 # <a name="describing-extended-sample-information-in-avstream-codecs"></a>AVStream コーデックの拡張サンプル情報の記述
 
 
-デコーダーのフィルターでは、拡張で拡張のサンプル情報が見つかります[ **KSSTREAM\_ヘッダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksstream_header)構造[ **KS\_フレーム\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_frame_info)、KSSTREAM に従う\_メモリ内のヘッダー。
+デコーダーフィルターでは、extended サンプル情報が拡張された[**Ksk ストリーム\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksstream_header)構造[**KS\_フレーム\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_frame_info)に表示されます。これは、メモリ内の ksk ストリーム\_ヘッダーに従います。
 
-ドライバーは KSSTREAM で指定された情報を伝達する必要があります\_ヘッダー。出力 (宛先) KS ピンへの入力 (ソース) から OptionsFlags します。
+このドライバーは、KSK ストリーム\_ヘッダーで指定された情報を伝達する必要があります。入力 (ソース) から出力 (destination) KS ピンまでのオプションフラグ。
 
-エンコーダーは、拡張 KSSTREAM で拡張のサンプル情報を含める必要があります\_ヘッダー構造、KS\_フレーム\_情報。 具体的には、エンコーダーは、メンバーを更新する必要があります**dwFrameFlags** KS を示す\_ビデオ\_フラグ\_は\_フレームと KS\_ビデオ\_フラグ\_P\_フレーム、該当するものです。
+エンコーダーには拡張されたサンプル情報が含まれている必要があります拡張された KSK ストリーム\_ヘッダー構造、KS\_フレーム\_情報です。 具体的には、エンコーダーは、\_I\_FRAME および KS\_VIDEO\_フラグを示すために、メンバー **Dwframe フラグ**を更新する必要があります (該当する場合)\_P\_フレームを\_\_します。
 
-Stride のサーフェスが KS で指定された\_フレーム\_情報の lSurfacePitch メンバー (を含む共用体**Reserved1**メンバー)。 Stride のサーフェスの詳細については、次を参照してください。 [AVStream コーデックで Stride 処理](handling-stride-in-avstream-codecs.md)します。
+Surface stride は、KS\_FRAME\_INFO の lSurfacePitch member (union と**Reserved1** member) で指定されています。 Surface stride の詳細については、「 [AVStream コーデックでの stride の処理](handling-stride-in-avstream-codecs.md)」を参照してください。
 
  
 

@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_AUDDECOUT\_CUR\_モード
-description: KSPROPERTY\_AUDDECOUT\_CUR\_モード プロパティは、現在のオーディオ出力モードを示します。
+title: KSK プロパティ\_\_\_モードになっています
+description: KSK プロパティ\_"\_"\_MODE プロパティは、現在のオーディオ出力モードを示します。
 ms.assetid: 4ac6d181-f532-4ac6-b8fd-2975214a3618
 keywords:
-- KSPROPERTY_AUDDECOUT_CUR_MODE ストリーミング メディア デバイス
+- KSPROPERTY_AUDDECOUT_CUR_MODE ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c9a53e89cdd5e1322f785be97ac644a6ee8db72a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 78c3c44a23cc9cc3b452470bbc9fe922953e47e7
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386923"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845379"
 ---
-# <a name="kspropertyauddecoutcurmode"></a>KSPROPERTY\_AUDDECOUT\_CUR\_モード
+# <a name="ksproperty_auddecout_cur_mode"></a>KSK プロパティ\_\_\_モードになっています
 
 
-KSPROPERTY\_AUDDECOUT\_CUR\_モード プロパティは、現在のオーディオ出力モードを示します。
+KSK プロパティ\_"\_"\_MODE プロパティは、現在のオーディオ出力モードを示します。
 
 ## <span id="ddk_ksproperty_auddecout_cur_mode_ks"></span><span id="DDK_KSPROPERTY_AUDDECOUT_CUR_MODE_KS"></span>
 
@@ -41,7 +41,7 @@ KSPROPERTY\_AUDDECOUT\_CUR\_モード プロパティは、現在のオーディ
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,10 +50,10 @@ KSPROPERTY\_AUDDECOUT\_CUR\_モード プロパティは、現在のオーディ
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>〇</p></td>
+<td><p>[はい]</p></td>
+<td><p>[はい]</p></td>
 <td><p>Pin</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
 <td><p>DWORD</p></td>
 </tr>
 </tbody>
@@ -61,27 +61,27 @@ KSPROPERTY\_AUDDECOUT\_CUR\_モード プロパティは、現在のオーディ
 
  
 
-プロパティの値 (データの操作) は、オーディオ、デコーダーの現在の出力モードを表す DWORD です。
+プロパティ値 (操作データ) は、オーディオデコーダーの現在の出力モードを表す DWORD です。
 
 <a name="remarks"></a>注釈
 -------
 
-プロパティの値は、ヘッダー ファイルで定義されている次のモードの定数のいずれかを指定できます*ksmedia.h*:
+プロパティ値には、次のいずれかのモード定数を指定することができ*ます。*
 
-<span id="KSAUDDECOUTMODE_STEREO_ANALOG"></span><span id="ksauddecoutmode_stereo_analog"></span>**KSAUDDECOUTMODE\_ステレオ\_アナログ**  
-出力がアナログ ステレオであることを示します。
+<span id="KSAUDDECOUTMODE_STEREO_ANALOG"></span><span id="ksauddecoutmode_stereo_analog"></span>**KSK の\_ステレオ\_アナログ**  
+は、出力がアナログステレオであることを示します。
 
-<span id="KSAUDDECOUTMODE_PCM_51"></span><span id="ksauddecoutmode_pcm_51"></span>**KSAUDDECOUTMODE\_PCM\_51**  
-デジタル PCM 5.1 チャネルで出力があることを示します。
+<span id="KSAUDDECOUTMODE_PCM_51"></span><span id="ksauddecoutmode_pcm_51"></span>**KSK の\_PCM\_51**  
+出力が PCM 5.1 チャネルデジタル内にあることを示します。
 
-<span id="KSAUDDECOUTMODE_SPDIFF"></span><span id="ksauddecoutmode_spdiff"></span>**KSAUDDECOUTMODE\_SPDIFF**  
-出力が SPDIFF 形式 AC3 デジタルであることを示します。
+<span id="KSAUDDECOUTMODE_SPDIFF"></span><span id="ksauddecoutmode_spdiff"></span>**KSK\_の SPDIFF**  
+出力が SPDIFF 形式の AC3 デジタルであることを示します。
 
-オーディオのミニポート ドライバーのプロパティの get ハンドラーは、デコーダーの現在のモードを返し、オーディオのミニポート ドライバー セット プロパティのハンドラーがデコーダーが出力オーディオ形式を要求されたモードに切り替えることを要求します。
+オーディオミニポートドライバーの get プロパティハンドラーはデコーダーの現在のモードを返しますが、オーディオミニポートドライバーのセットプロパティハンドラーはデコーダーが出力オーディオ形式を要求されたモードに切り替えるように要求します。
 
-KSPROPERTY の既定値を指定することをお勧めします。\_AUDDECOUT\_CUR\_、ミニドライバーの MODE プロパティ プロパティ、レジストリの設定をシリアル化します。
+レジストリに設定されているミニドライバーのシリアル化されたプロパティで、KSK プロパティ\_"\_"\_MODE プロパティに既定値を指定することをお勧めします。
 
-詳細については、次を参照してください。[オーディオ ミニポート ドライバー](https://docs.microsoft.com/windows-hardware/drivers/audio/audio-miniport-drivers)します。
+詳細については、「[オーディオミニポートドライバー](https://docs.microsoft.com/windows-hardware/drivers/audio/audio-miniport-drivers)」を参照してください。
 
 <a name="requirements"></a>要件
 ------------
@@ -94,7 +94,7 @@ KSPROPERTY の既定値を指定することをお勧めします。\_AUDDECOUT\
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Ksmedia.h (Ksmedia.h を含む)</td>
+<td>Ksmedia .h (Ksk を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -102,7 +102,7 @@ KSPROPERTY の既定値を指定することをお勧めします。\_AUDDECOUT\
 ## <a name="see-also"></a>関連項目
 
 
-[**KSPROPERTY\_AUDDECOUT\_モード**](ksproperty-auddecout-modes.md)
+[**KSPROPERTY\_\_モード**](ksproperty-auddecout-modes.md)
 
  
 

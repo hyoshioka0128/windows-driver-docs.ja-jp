@@ -1,9 +1,9 @@
 ---
 title: RemoveLink 関数
-description: RemoveLink WMI メソッドは、fabric リンク イベント情報を WMI クライアントに渡すを停止するように、WMI プロバイダーを構成します。
+description: RemoveLink WMI メソッドは、wmi プロバイダーを構成して、ファブリックリンクイベント情報が WMI クライアントに渡されないようにします。
 ms.assetid: 8c9f78ba-fdb8-4d6c-ab99-3492e0887572
 keywords:
-- 記憶装置の RemoveLink 関数
+- RemoveLink 関数のストレージデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 89ad63af61996c2aa22e462ce33d48f1eb5e2abe
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e9eaf74cbb13368bd7935cefaa4fc705b1b44532
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368926"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842711"
 ---
 # <a name="removelink-function"></a>RemoveLink 関数
 
 
-**RemoveLink** WMI メソッドを WMI クライアント fabric リンク イベント情報を渡すことを停止するように、WMI プロバイダーを構成します。
+**Removelink** wmi メソッドは、wmi プロバイダーを構成して、ファブリックリンクイベント情報が wmi クライアントに渡されないようにします。
 
 <a name="syntax"></a>構文
 ------
@@ -38,8 +38,8 @@ void RemoveLink(
 <a name="parameters"></a>パラメーター
 ----------
 
-*HBAStatus*   
-に返された場合、操作の状態を格納します。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **RemoveLink\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_removelink_out)構造体。
+*Hbastatus*   
+戻ると、操作の状態が格納されます。 許可される値とその説明の一覧については、「 [HBA\_STATUS](hba-status.md)」を参照してください。 ミニポートドライバーは、 [**Removelink\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_removelink_out)構造体の**hbastatus**メンバーでこの情報を返します。
 
 <a name="return-value"></a>戻り値
 ------------
@@ -49,7 +49,7 @@ WMI メソッドには適用されません。
 <a name="remarks"></a>注釈
 -------
 
-この WMI メソッドが属する、 [MSFC\_EventControl WMI クラス](msfc-eventcontrol-wmi-class.md)します。
+この WMI メソッドは、 [Msfc\_EventControl WMI クラス](msfc-eventcontrol-wmi-class.md)に属しています。
 
 <a name="requirements"></a>要件
 ------------
@@ -66,15 +66,15 @@ WMI メソッドには適用されません。
 </tr>
 <tr class="even">
 <td align="left"><p>Header</p></td>
-<td align="left">Hbapiwmi.h (Hbapiwmi.h、Hbaapi.h、Hbaapi.h など)</td>
+<td align="left">Hbapiwmi (Hbapiwmi、Hbaapi. h、または Hbaapi .h を含む)</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[**RemoveLink\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_removelink_out)
+[**RemoveLink\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_removelink_out)
 
  
 

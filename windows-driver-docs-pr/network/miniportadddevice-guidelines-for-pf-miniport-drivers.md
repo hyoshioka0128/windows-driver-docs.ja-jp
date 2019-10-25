@@ -4,33 +4,33 @@ description: PF ミニポート ドライバーの MiniportAddDevice ガイド�
 ms.assetid: D67FDBA0-C020-4557-9199-B9FF6F91DE6B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 21619f7deaa5c5bad25a523ce92fe49779292428
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 566ce25f785feced3acf7cd11e3c4d8a19c05b01
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67380882"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844234"
 ---
 # <a name="miniportadddevice-guidelines-for-pf-miniport-drivers"></a>PF ミニポート ドライバーの MiniportAddDevice ガイドライン
 
 
-このトピックでは、書き込みのためのガイドラインを説明します、 [ *MiniportAddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_add_device)ミニポート ドライバーの PCI Express (PCIe) 物理機能 (PF) の関数。 PF は、シングル ルート I/O 仮想化 (SR-IOV) をサポートするネットワーク アダプターのコンポーネントです。
+このトピックでは、PCI Express (PCIe) 物理機能 (PF) のミニポートドライバー用の[*MiniportAddDevice*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_add_device)関数を記述するためのガイドラインについて説明します。 PF は、シングルルート i/o 仮想化 (SR-IOV) をサポートするネットワークアダプターのコンポーネントです。
 
-**注**  次のガイドラインは、PF ミニポート ドライバーにのみ適用されます。 PCIe 仮想機能 (VF) アダプターのミニポート ドライバーの初期化ガイドラインについては、次を参照してください。 [VF のミニポート ドライバーの初期化](initializing-a-vf-miniport-driver.md)します。
+**注**  これらのガイドラインは、PF ミニポートドライバーにのみ適用されます。 アダプターの PCIe 仮想機能 (VF) のミニポートドライバーの初期化ガイドラインについては、「 [Vf ミニポートドライバーの初期化](initializing-a-vf-miniport-driver.md)」を参照してください。
 
  
 
-プラグ アンド プレイ (PnP) マネージャーには、NDIS [ *AddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)ネットワーク アダプターの機能のデバイス オブジェクト (FDO) を作成する関数。 PF のミニポート ドライバーに登録されている場合、 [ *MiniportAddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_add_device)エントリ ポイントが呼び出されたときに[ **NdisMRegisterMiniportDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismregisterminiportdriver)、NDISドライバーの呼び出す*MiniportAddDevice*関数。
+プラグアンドプレイ (PnP) マネージャーは、NDIS [*AddDevice*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)関数を呼び出して、ネットワークアダプターの機能デバイスオブジェクト (FDO) を作成します。 PF ミニポートドライバーが[**NdisMRegisterMiniportDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismregisterminiportdriver)という名前の[*MiniportAddDevice*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_add_device)エントリポイントを登録した場合、NDIS はドライバーの*MiniportAddDevice*関数を呼び出します。
 
-ときに[ *MiniportAddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_add_device)が呼び出され、PF ミニポート ドライバーは、SR-IOV とネットワーク インターフェイス カード (NIC) スイッチの追加のソフトウェアのリソースを割り当てることができます。 通常、これらは、NDIS ドライバーを呼び出す前に割り当てる必要があるリソース[ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)関数。
+[*MiniportAddDevice*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_add_device)が呼び出されると、PF ミニポートドライバーは、sr-iov およびネットワークインターフェイスカード (NIC) スイッチ用に追加のソフトウェアリソースを割り当てることができます。 通常、これらは、NDIS がドライバーの[*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)関数を呼び出す前に割り当てる必要があるリソースです。
 
-ドライバーがへの呼び出しのコンテキスト内で、次の操作を行います[ *MiniportAddDevice*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_add_device):
+ドライバーは、 [*MiniportAddDevice*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_add_device)の呼び出しのコンテキスト内で次の操作を実行できます。
 
--   PF のミニポート ドライバーを呼び出すことができます[**エミュレーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisreadconfiguration)を読み取る、SR-IOV と NIC は、レジストリから構成設定を切り替えます。 これらの構成設定は、標準化された SR-IOV キーワードによって定義されます。 これらのキーワードの詳細については、次を参照してください。 [SR-IOV の標準化された INF キーワード](standardized-inf-keywords-for-sr-iov.md)します。
+-   PF ミニポートドライバーは、 [**NdisReadConfiguration**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisreadconfiguration)を呼び出して、SR-IOV と NIC スイッチの構成設定をレジストリから読み取ることができます。 これらの構成設定は、標準化された SR-IOV キーワードを使用して定義されます。 これらのキーワードの詳細については、「sr-iov の標準化された[INF キーワード](standardized-inf-keywords-for-sr-iov.md)」を参照してください。
 
--   これらの構成設定に基づき、PF ミニポート ドライバーは、SR-IOV ネットワーク アダプターの追加のソフトウェアのリソースを割り当てます。
+-   これらの構成設定に基づいて、PF ミニポートドライバーによって、sr-iov ネットワークアダプター用の追加のソフトウェアリソースが割り当てられます。
 
-**注**  への呼び出しのコンテキスト内でハードウェア リソースの実際の割り当てと PCI 構成領域で sr-iov を有効化を実行する必要がありますのみ[ *MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize). ネットワーク アダプターのメモリ マップ I/O (MMIO) の領域が初期化されていない場合に[ *MiniportAddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_add_device)と呼ばれる場合は、ミニポート ドライバーの読み取りまたは書き込みまでアダプターをする必要がありますいない*MiniportInitializeEx*が呼び出されます。
+ハードウェアリソースの実際の割り当てと PCI 構成領域での sr-iov の有効化は、 [*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)の呼び出しのコンテキスト内でのみ実行する必要がある**ことに注意**してください  。 [*MiniportAddDevice*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_add_device)が呼び出されると、ネットワークアダプターのメモリマップト I/O (MMIO) 空間は初期化されないため、 *MiniportInitializeEx*が呼び出されるまで、ミニポートドライバーはアダプターに対して読み取りまたは書き込みを行うことができません。
 
  
 

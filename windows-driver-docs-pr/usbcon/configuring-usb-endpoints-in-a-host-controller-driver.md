@@ -1,49 +1,49 @@
 ---
-Description: UCX では、エンドポイントのオブジェクトの作成を管理し、ホスト コント ローラーでの USB ホスト コント ローラーにエンドポイントを deprogram プログラムを通知します。
+Description: UCX はエンドポイントオブジェクトの作成を管理し、ホストコントローラーに対して、プログラムのエンドポイントを USB ホストコントローラーにプログラムまたは破棄するように通知します。
 title: USB ホスト コントローラー ドライバーでの USB エンドポイントの構成
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d001089c579a388c210380c1036cad4a018cf2d8
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c4fda14fc82d162337d8f87f0e007fbb0ec91e35
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384478"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842400"
 ---
 # <a name="configure-usb-endpoints-in-a-usb-host-controller-driver"></a>USB ホスト コントローラー ドライバーでの USB エンドポイントの構成
 
 
-UCX では、エンドポイントのオブジェクトの作成を管理し、ホスト コント ローラーでの USB ホスト コント ローラーにエンドポイントを deprogram プログラムを通知します。
+UCX はエンドポイントオブジェクトの作成を管理し、ホストコントローラーに対して、プログラムのエンドポイントを USB ホストコントローラーにプログラムまたは破棄するように通知します。
 
-これによっては、エンドポイントのプログラムを作成中に、UCX によって管理されます。 エンドポイントの変更の状態のデバイスに接続するいるし、バスから切断電源イベントなど、中断をリセットして新しいエンドポイントの作成などの代替設定の変更が行われますが発生します。
+エンドポイントがプログラミングされている間は、UCX によっても管理されます。 デバイスがバスに接続されて切断されると、エンドポイントの状態が変化し、中断やリセットなどの電源イベントが発生し、別の設定の変更など、新しいエンドポイントの作成が行われます。
 
 ## <a name="endpoint-configuration"></a>エンドポイントの構成
 
 
-UCX では、ドライバーのエンドポイントにする必要がありますが、USB ホスト コント ローラーにプログラムまたはリリースに通知するホスト コント ローラー ドライバーによって実装されるコールバック関数を呼び出します。 ときに[ *EVT\_UCX\_USBDEVICE\_を有効にする*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucxusbdevice/nc-ucxusbdevice-evt_ucx_usbdevice_enable)が呼び出されると、ドライバー、コント ローラーの準備、デバイスの既定のエンドポイントへの転送を実行します。 コント ローラーを準備するには、既定のエンドポイントのプログラミングが含まれます。 ときに[ *EVT\_UCX\_USBDEVICE\_を無効にする*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucxusbdevice/nc-ucxusbdevice-evt_ucx_usbdevice_disable)が呼び出されると、ドライバーは、既定のエンドポイントを deprograms しに関連付けられているその他のコント ローラーのリソースを解放しますデバイスです。 ときに[ *EVT\_UCX\_USBDEVICE\_エンドポイント\_構成*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucxusbdevice/nc-ucxusbdevice-evt_ucx_usbdevice_endpoints_configure)が呼び出されると、ドライバーにプログラムを既定以外のエンドポイントの一覧を指定は、コント ローラー、コント ローラーから削除する既定以外のエンドポイントの別のリストを指定します。 ホスト コント ローラーのドライバーは、コント ローラーに、指定した既定以外のエンドポイントをプログラムし、(その他のリストで指定された) 既定以外のエンドポイントをコント ローラーからも削除されます。
+UCX は、ホストコントローラードライバーによって実装されたコールバック関数を呼び出し、エンドポイントが USB ホストコントローラーにプログラムする必要があるか、または解放されたことをドライバーに通知します。 [ *.Evt\_UCX\_USBDEVICE\_ENABLE*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucxusbdevice/nc-ucxusbdevice-evt_ucx_usbdevice_enable)が呼び出されると、ドライバーはデバイスの既定のエンドポイントへの転送を実行するためのコントローラーを準備します。 コントローラーの準備には、既定のエンドポイントのプログラミングが含まれます。 [ *.Evt\_UCX\_USBDEVICE\_DISABLE*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucxusbdevice/nc-ucxusbdevice-evt_ucx_usbdevice_disable)が呼び出されると、ドライバーは既定のエンドポイントを破棄し、デバイスに関連付けられているその他のコントローラーリソースを解放します。 [ *.Evt\_UCX\_USBDEVICE\_エンドポイント\_構成*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucxusbdevice/nc-ucxusbdevice-evt_ucx_usbdevice_endpoints_configure)が呼び出された場合、ドライバーには、コントローラーにプログラムを提供する既定以外のエンドポイントのリストが与えられ、既定以外のエンドポイントの一覧が表示されます。コントロール. ホストコントローラードライバーは、指定された既定以外のエンドポイントをコントローラーにプログラムし、既定以外のエンドポイント (他の一覧で指定) をコントローラーから削除します。
 
-## <a name="queue-state-management"></a>キューの状態の管理
-
-
-UCX では、エンドポイントのキューの状態への変更を実行するホスト コント ローラー ドライバーによって実装されるコールバック関数を呼び出します。 ドライバーでは、ドライバー内で保持第 2 レベルのキューと UCX に指定されたエンドポイントのキューに対応する操作を行います。 エンドポイントのキューは中止または、これらのシナリオで消去します。
-
--   USB デバイスのクライアント ドライバーの送信、URB\_関数\_中止\_パイプ要求。
--   で中断します。
--   デバイスを接続するのには、ハブがデバイスの切断を検出した場合。
--   選択インターフェイス設定の要求中にです。
-
-UCX を呼び出して、キューの中止または消去について、ホスト コント ローラーのドライバーを通知する[ *EVT\_UCX\_エンドポイント\_中止*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucxendpoint/nc-ucxendpoint-evt_ucx_endpoint_abort)または[ *EVT\_UCX\_エンドポイント\_パージ*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucxendpoint/nc-ucxendpoint-evt_ucx_endpoint_purge)します。 ある UCX でエンドポイント キューが必要な時点で後で、UCX が呼び出される場合、 [ *EVT\_UCX\_エンドポイント\_開始*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucxendpoint/nc-ucxendpoint-evt_ucx_endpoint_start)ドライバーに通知するコールバック、キューです。
-
-## <a name="transfer-cancellation"></a>転送のキャンセル
+## <a name="queue-state-management"></a>キュー状態管理
 
 
-ホスト コント ローラーのドライバーが GUID を宣言する任意のコント ローラーの\_USB\_機能\_クリア\_TT\_バッファー\_ON\_ASYNC\_転送\_CANCEL、ドライバーが呼び出す必要があります[ **UcxEndpointNeedToCancelTransfers** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucxendpoint/nf-ucxendpoint-ucxendpointneedtocanceltransfers)実装と[ *EVT\_UCX\_エンドポイント\_OK\_TO\_キャンセル\_転送*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucxendpoint/nc-ucxendpoint-evt_ucx_endpoint_ok_to_cancel_transfers) usb の完全な非同期 (一括またはコントロール) USB 転送または低速デバイスの背後にあるをキャンセルする、トランザクションのトランスレーター (TT) ハブです。 その他のすべてのケースで、ドライバーは呼び出すことが必要に応じて**UcxEndpointNeedToCancelTransfers**を取得する、 *EVT\_UCX\_エンドポイント\_OK\_TO\_キャンセル\_転送*通知を転送をキャンセルはこのエンドポイントで許可されて、ドライバーは、転送がキャンセルに進むことがあることを示します。 または、ドライバーは呼び出さずに直接転送をキャンセルできます**UcxEndpointNeedToCancelTransfers**します。
+UCX は、エンドポイントキューの状態の変更を実行するために、ホストコントローラードライバーによって実装されたコールバック関数を呼び出します。 次に、このドライバーは、UCX に与えられたエンドポイントキューと、ドライバー内で保持されている第2レベルのキューに対応するアクションを実行します。 エンドポイントキューは、次のシナリオで中止または削除されます。
 
-ホスト コント ローラーのドライバーには、常にこの GUID の要求が失敗した場合、これらの 2 つの関数呼び出しを完全に無視できます。
+-   USB デバイスクライアントドライバーは、\_\_パイプ要求を中止して、URB\_機能を送信します。
+-   中断中。
+-   デバイスが接続されているハブは、デバイスの切断を検出します。
+-   選択インターフェイスの設定要求中。
 
-場合は、ドライバーが呼び出すことはありません[ **UcxEndpointNeedToCancelTransfers**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucxendpoint/nf-ucxendpoint-ucxendpointneedtocanceltransfers)、ドライバーの[ *EVT\_UCX\_エンドポイント\_[ok]\_\_キャンセル\_転送*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucxendpoint/nc-ucxendpoint-evt_ucx_endpoint_ok_to_cancel_transfers)コールバックが呼び出されないと、コールバックの登録中に NULL を指定できます。
+キューの中止または消去についてホストコントローラードライバーに通知するには、UCX が[ *.evt\_ucx\_エンドポイント\_abort*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucxendpoint/nc-ucxendpoint-evt_ucx_endpoint_abort)または[ *.evt\_UCX\_エンドポイント\_消去*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucxendpoint/nc-ucxendpoint-evt_ucx_endpoint_purge)します。 後で、UCX によってエンドポイントキューが必要になった場合、UCX は[ *.evt\_ucx\_エンドポイント\_開始*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucxendpoint/nc-ucxendpoint-evt_ucx_endpoint_start)コールバックを呼び出して、キューを開始するようにドライバーに通知します。
 
-ドライバーが使用する場合[ **UcxEndpointNeedToCancelTransfers**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucxendpoint/nf-ucxendpoint-ucxendpointneedtocanceltransfers)ドライバーは、転送をコント ローラーにプログラムを作成し、キャンセルし、メソッドを待機を呼び出す必要があります[ *EVT\_UCX\_エンドポイント\_OK\_TO\_キャンセル\_転送*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucxendpoint/nc-ucxendpoint-evt_ucx_endpoint_ok_to_cancel_transfers)が完了する前にします。
+## <a name="transfer-cancellation"></a>転送の取り消し
+
+
+ホストコントローラードライバーによって GUID\_USB\_機能が宣言されているコントローラーの場合は\_\_TT\_\_非同期\_転送\_キャンセルでは、ドライバーは[**Ucxendpointの**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucxendpoint/nf-ucxendpoint-ucxendpointneedtocanceltransfers)必要な転送を呼び出し、 [ *.evt\_UCX\_エンドポイント\_OK\_を*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucxendpoint/nc-ucxendpoint-evt_ucx_endpoint_ok_to_cancel_transfers)実装して、非同期 (一括またはコントロール) USB をキャンセルするための\_転送をキャンセルする必要があります。トランザクショントランスレーター (TT) ハブの背後にある USB 完全または低速度のデバイスに転送します。 それ以外の場合、ドライバーは必要に応じて Ucxendpoint\_エンドポイントを取得するために**Ucxendpoint\_** を呼び出すことができます *\_OK\_をキャンセル\_取り消し*を示す通知\_転送します。このエンドポイントで転送が許可され、ドライバーは転送の取り消しを続行できます。 または、 **Ucxendpointの**必要になる転送を呼び出さずに、ドライバーが直接転送をキャンセルすることもできます。
+
+ホストコントローラードライバーは、常にこの GUID の要求に失敗した場合、これらの2つの関数呼び出しを完全に無視できます。
+
+ドライバーが[**Ucxendpointの必要な転送転送**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucxendpoint/nf-ucxendpoint-ucxendpointneedtocanceltransfers)を呼び出さない場合、ドライバーの[ *.evt\_UCX\_エンドポイント\_OK\_\_キャンセル\_転送*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucxendpoint/nc-ucxendpoint-evt_ucx_endpoint_ok_to_cancel_transfers)コールバックは呼び出されず、コールバック時に NULL にすることができます。製品.
+
+ドライバーが[**Ucxendpointの必要な転送転送**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucxendpoint/nf-ucxendpoint-ucxendpointneedtocanceltransfers)を使用する場合、ドライバーは、転送がコントローラーにプログラムされた後、キャンセルされたときに、 [ *.evt\_UCX\_エンドポイント\_OK を待機するときに、メソッドを呼び出す必要があり\_\_するには*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucxendpoint/nc-ucxendpoint-evt_ucx_endpoint_ok_to_cancel_transfers)、完了する前に\_転送をキャンセルします。
 
 ## <a name="related-topics"></a>関連トピック
 [USB ホスト コントローラー用 Windows ドライバーの開発](developing-windows-drivers-for-usb-host-controllers.md)  

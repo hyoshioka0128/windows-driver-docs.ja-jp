@@ -3,23 +3,23 @@ title: NIC アドレスの受信と変換
 description: NIC アドレスの受信と変換
 ms.assetid: c7171a4d-cc77-427e-8d23-8811f650e543
 keywords:
-- SAN 使用率を初期化しています。 Windows Sockets 直接 WDK
-- SAN 使用率の初期化
-- NIC アドレス翻訳 WDK San
-- NIC アドレス WDK San の変換
-- NIC の受信に対処の San
-- WDK の San のアドレス
-- アドレスの削除通知 WDK San
-- アドレスの追加通知 WDK San
-- WDK の San の通知
+- Windows Sockets Direct WDK、SAN 使用率の初期化
+- SAN 使用率を初期化しています
+- NIC アドレス変換 WDK San
+- NIC アドレスの WDK San の変換
+- San 用の NIC アドレスの受信
+- WDK San に対処する
+- 削除-アドレス通知 WDK San
+- アドレス通知の追加の WDK San
+- 通知 WDK San
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eecfd5a8d7decc35e3d75ba08ea521708c9c7d6a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7fa50a5651316083068a4ceee6668c187e4c534b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368472"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844853"
 ---
 # <a name="receiving-and-translating-nic-addresses"></a>NIC アドレスの受信と変換
 
@@ -27,41 +27,41 @@ ms.locfileid: "67368472"
 
 
 
-Windows Sockets 切り替える使用では常に、 [WSK アドレス ファミリ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt808757(v=vs.85))、SAN サービス プロバイダーと SAN Nic とやり取りするとき、IP アドレスを格納します。 スイッチは、SAN のネイティブのアドレス ファミリを使用しません。 そのため、SAN サービス プロバイダーは、その Nic に割り当てられた IP アドレスの一覧を取得するのに、関連付けられているプロキシ ドライバーを使用する必要があります。 SAN サービス プロバイダーは、そのプロキシ ドライバーと対話するときに、これらの IP アドレスを使用します。 プロキシ ドライバーは、IP アドレスとネイティブのアドレスの間で変換する必要があります。
+Windows ソケットスイッチは、SAN サービスプロバイダーおよび SAN Nic とやり取りするときに、IP アドレスを含む[Wsk アドレスファミリ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt808757(v=vs.85))を常に使用します。 スイッチで、SAN のネイティブアドレスファミリが使用されていません。 そのため、SAN サービスプロバイダーは、関連付けられているプロキシドライバーを使用して、Nic に割り当てられている IP アドレスの一覧を取得する必要があります。 SAN サービスプロバイダーは、プロキシドライバーと対話するときに、これらの IP アドレスを使用します。 プロキシドライバーは、IP アドレスとネイティブアドレスの間で変換される必要があります。
 
-初期化中に、プロキシ ドライバーは通常のアドレス変更通知トランスポート ドライバー Interface (TDI) を登録します。 すべてプラグ アンド プレイ (PnP) に注意してくださいを含めた、トランスポート TCP/IP は、このような通知に登録しているクライアントに TDI を通じてアドレス変更通知を指定します。
+初期化中に、プロキシドライバーは通常、アドレス変更通知のために Transport Driver Interface (TDI) に登録されます。 TCP/IP を含むすべてのプラグアンドプレイ (PnP) 対応トランスポートは、このような通知に登録されているクライアントに対して、TDI 経由でアドレス変更通知を提供します。
 
-**注**  Windows Vista の後に、TDI が Microsoft Windows のバージョンでサポートされません。 使用[Windows フィルタ リング プラットフォーム](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)または[Winsock Kernel](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)代わりにします。
-
- 
-
-### <a name="registering-for-address-change-notification"></a>アドレス変更通知を登録します。
-
-初期化中に、プロキシ ドライバーを呼び出し、 [ **TdiRegisterPnPHandlers** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff565062(v=vs.85))変更通知を関数のアドレスを登録します。 この呼び出しでプロキシ ドライバーはアドレスの追加や削除でコールバック関数へのポインターを渡します、 **AddAddressHandlerV2**と**DelAddressHandlerV2** 、TDI のメンバー\_クライアント\_インターフェイス\_情報構造体。 プロキシ ドライバーは、これらの通知を受信するレジスタ後、TDI はすぐに追加アドレス コールバックを使用してすべての現在アクティブなネットワーク アドレスを示します。
-
-TDI はプロキシ ドライバーの追加アドレスまたはアドレスの削除のコールバック関数に次のパラメーターに渡します。
-
-<a href="" id="address"></a>*アドレス*  
-TA へのポインター\_ネットワーク アドレスを示すアドレス構造に割り当てられているか、NIC から削除 TCP/IP の場合、このポインターは実際には、TA を指すポインターは\_アドレス\_IP 構造体。
-
-<a href="" id="devicename"></a>*デバイス名*  
-アドレスが関連付けられている NIC-トランスポートのバインドを識別する Unicode 文字列へのポインター。 TCP/IP が発生した場合、Unicode 文字列は、次の形式があります。
-
-\\デバイス\\Tcpip\_{NIC GUID}
-
-NIC-GUID は、ネットワーク構成のサブシステムによって NIC に割り当てられたグローバル一意識別子です。
-
-上記の構造体の定義は、tdi.h ヘッダー ファイルで定義されます。 上記の登録とコールバック関数は、tdikrnl.h ヘッダー ファイルで定義されます。 これらのヘッダー ファイルは、Microsoft Windows ドライバー開発キット (DDK) と Windows Driver Kit (WDK) で使用できます。 TDI PnP 通知に関する詳細情報が記載されて[TDI クライアント コールバック](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff565081(v=vs.85))と[TDI クライアント イベントと PnP 通知ハンドラー](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff565082(v=vs.85))します。
-
-**注**  Windows Vista の後に、TDI が Microsoft Windows のバージョンでサポートされません。 使用[Windows フィルタ リング プラットフォーム](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)または[Winsock Kernel](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)代わりにします。
+Windows Vista 以降では、Microsoft Windows のバージョンでは TDI はサポートされませ**ん  。** 代わりに、 [Windows フィルタリングプラットフォーム](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)または[Winsock カーネル](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)を使用してください。
 
  
 
-### <a name="maintaining-a-list-of-ip-addresses"></a>IP アドレスの一覧を管理します。
+### <a name="registering-for-address-change-notification"></a>アドレス変更通知の登録
 
-SAN サービス プロバイダーのプロキシ ドライバーでは、追加アドレスとアドレスの削除の通知を使用して、その管理下にある各 NIC に割り当てられた IP アドレスの一覧を管理します。 プロキシ ドライバーでは、このリストを使用して、TCP/IP トランスポートによって SAN NIC に割り当てられた IP アドレスとネイティブの SAN アドレスの 1 つまたは複数の間で変換します。 プロキシ ドライバーは、スイッチ、スイッチにより、SIO たびに、Windows ソケットを使用可能な NIC に割り当てられた IP アドレスの一覧は、デバイス制御ルーチンも指定する必要があります\_アドレス\_一覧\_クエリの制御コードクエリ。 プロキシ ドライバーの**DriverEntry**ルーチンは、このデバイス制御ルーチンのエントリ ポイントを指定する必要があります。
+初期化中に、プロキシドライバーは[**TdiRegisterPnPHandlers**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff565062(v=vs.85))関数を呼び出して、アドレス変更通知を登録します。 この呼び出しでは、プロキシドライバーは、TDI\_クライアント\_インターフェイス\_INFO 構造体の**AddAddressHandlerV2**メンバーと**DelAddressHandlerV2**メンバーでアドレスの追加と削除を行うためのコールバック関数へのポインターを渡します。 これらの通知を受信するためにプロキシドライバーが登録した後、TDI は、アドレス指定コールバックを使用して現在アクティブなすべてのネットワークアドレスを即座に示します。
 
-Windows Sockets スイッチは、各 SAN NIC に割り当てられているすべての IP アドレスのリストを保持します。 この包括的な一覧については、IP アドレスを取得するスイッチが SAN サービス プロバイダーの各を呼び出す[ **WSPIoctl** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff566296(v=vs.85))関数を SIO\_アドレス\_一覧\_制御コードをクエリします。 各 SAN サービス プロバイダーは、さらに、その SAN Nic に割り当てられた IP アドレスの個々 の一覧については、関連付けられているプロキシ ドライバーを照会します。 スイッチは、アドレスの変更の通知は、後にもう一度、各個々 のリストの更新プログラムの各 SAN サービス プロバイダーを照会します。
+TDI は、次のパラメーターをプロキシドライバーの追加または削除のコールバック関数に渡します。
+
+<a href="" id="address"></a>*先*  
+NIC に割り当てられているか、NIC から削除されたネットワークアドレスを記述する TA\_アドレス構造体へのポインター。 TCP/IP の場合、このポインターは実際には TA\_アドレス\_IP 構造へのポインターです。
+
+<a href="" id="devicename"></a>*DeviceName*  
+アドレスが関連付けられているトランスポートから NIC へのバインドを識別する Unicode 文字列へのポインター。 TCP/IP の場合、Unicode 文字列の形式は次のようになります。
+
+\\デバイス\\Tcpip\_{NIC-GUID}
+
+ここで、NIC はネットワーク構成サブシステムによって NIC に割り当てられたグローバル一意識別子です。
+
+前の構造体の定義は、tdi ヘッダーファイルで定義されています。 前述の登録およびコールバック関数は、tdikrnl ヘッダーファイルで定義されています。 これらのヘッダーファイルは、Microsoft Windows Driver Development Kit (DDK) および Windows Driver Kit (WDK) で使用できます。 Tdi の PnP 通知の詳細については、tdi[クライアントコールバック](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff565081(v=vs.85))と[tdi クライアントイベントおよび PnP 通知ハンドラー](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff565082(v=vs.85))に含まれています。
+
+Windows Vista 以降では、Microsoft Windows のバージョンでは TDI はサポートされませ**ん  。** 代わりに、 [Windows フィルタリングプラットフォーム](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)または[Winsock カーネル](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)を使用してください。
+
+ 
+
+### <a name="maintaining-a-list-of-ip-addresses"></a>IP アドレスの一覧の管理
+
+SAN サービスプロバイダーのプロキシドライバーは、アドレスの追加と削除の通知を使用して、各 NIC に割り当てられた IP アドレスの一覧を管理下に保持します。 プロキシドライバーは、この一覧を使用して、SAN NIC に割り当てられた1つ以上の IP アドレスを TCP/IP トランスポートとネイティブ SAN アドレスに変換します。 また、プロキシドライバーはデバイス制御ルーチンを提供する必要があります。これにより、スイッチがクエリ制御コードクエリ\_SIO\_アドレス\_リストを作成するたびに、NIC に割り当てられた IP アドレスの一覧が Windows ソケットスイッチで使用可能になります。 プロキシドライバーの**Driverentry**ルーチンは、このデバイス制御ルーチンのエントリポイントを指定する必要があります。
+
+Windows ソケットスイッチでは、各 SAN NIC に割り当てられているすべての IP アドレスの一覧が保持されます。 この包括リストの IP アドレスを取得するには、スイッチは各 SAN サービスプロバイダーの[**WSPIoctl**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff566296(v=vs.85))関数を呼び出し、SIO\_ADDRESS\_LIST\_クエリ制御コードを渡します。 各 SAN サービスプロバイダーは、関連付けられているプロキシドライバーに対して、その SAN Nic に割り当てられている IP アドレスの個々のリストを照会します。 スイッチにアドレスの変更が通知された後、各 SAN サービスプロバイダーに対して、個々のリストの更新を照会します。
 
  
 

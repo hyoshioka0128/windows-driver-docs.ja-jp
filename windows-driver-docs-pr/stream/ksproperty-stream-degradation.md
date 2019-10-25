@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_ストリーム\_低下
-description: KSPROPERTY\_ストリーム\_低下プロパティが省略可能なプロパティ、暗証番号 (pin) がパフォーマンス低下の戦略を許可する場合に実装する必要があります。
+title: KSK プロパティ\_ストリーム\_の劣化
+description: KSK プロパティ\_STREAM\_劣化プロパティはオプションのプロパティであり、pin によって劣化戦略が可能な場合に実装する必要があります。
 ms.assetid: b8f9db81-a9ed-4a13-8d64-14854193c91b
 keywords:
-- KSPROPERTY_STREAM_DEGRADATION ストリーミング メディア デバイス
+- KSPROPERTY_STREAM_DEGRADATION ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fc7e381acd431fdd53de0c2b9f2724676db514ee
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: cfc104f7b61d032819b75fd434b2128684414b09
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67391539"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844957"
 ---
-# <a name="kspropertystreamdegradation"></a>KSPROPERTY\_ストリーム\_低下
+# <a name="ksproperty_stream_degradation"></a>KSK プロパティ\_ストリーム\_の劣化
 
 
-KSPROPERTY\_ストリーム\_低下プロパティが省略可能なプロパティ、暗証番号 (pin) がパフォーマンス低下の戦略を許可する場合に実装する必要があります。
+KSK プロパティ\_STREAM\_劣化プロパティはオプションのプロパティであり、pin によって劣化戦略が可能な場合に実装する必要があります。
 
 ## <span id="ddk_ksproperty_stream_degradation_ks"></span><span id="DDK_KSPROPERTY_STREAM_DEGRADATION_KS"></span>
 
@@ -41,7 +41,7 @@ KSPROPERTY\_ストリーム\_低下プロパティが省略可能なプロパテ
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,11 +50,11 @@ KSPROPERTY\_ストリーム\_低下プロパティが省略可能なプロパテ
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>〇</p></td>
+<td><p>[はい]</p></td>
+<td><p>[はい]</p></td>
 <td><p>Pin</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksmultiple_item" data-raw-source="[&lt;strong&gt;KSMULTIPLE_ITEM&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksmultiple_item)"><strong>KSMULTIPLE_ITEM</strong></a>、 <a href="https://docs.microsoft.com/previous-versions/ff561671(v=vs.85)" data-raw-source="[&lt;strong&gt;KSDEGRADE&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff561671(v=vs.85))"> <strong>KSDEGRADE</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksmultiple_item" data-raw-source="[&lt;strong&gt;KSMULTIPLE_ITEM&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksmultiple_item)"><strong>KSMULTIPLE_ITEM</strong></a>、 <a href="https://docs.microsoft.com/previous-versions/ff561671(v=vs.85)" data-raw-source="[&lt;strong&gt;KSDEGRADE&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff561671(v=vs.85))"> <strong>KSDEGRADE</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -64,11 +64,11 @@ KSPROPERTY\_ストリーム\_低下プロパティが省略可能なプロパテ
 <a name="remarks"></a>注釈
 -------
 
-返される構造体の数とサイズ プロパティを返すクエリを実行時に[ **KSMULTIPLE\_項目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksmultiple_item)形式、続けて[ **KSDEGRADE**](https://docs.microsoft.com/previous-versions/ff561671(v=vs.85))構造体。
+クエリを行うと、プロパティは、 [**Ksmultiple\_ITEM**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksmultiple_item)形式で返される構造体のサイズと数を返し、その後に[**ksmultiple**](https://docs.microsoft.com/previous-versions/ff561671(v=vs.85))構造体を低下させます。
 
-クエリでこのプロパティを返します KSMULTIPLE で返される構造体の数とサイズ\_KSDEGRADE 構造体の後に、項目の形式。 複数の項目の形式は、クエリを実行して低下戦略の設定の両方で使用する必要があります。
+クエリでは、このプロパティは、KSMULTIPLE\_ITEM 形式で返される構造体のサイズと数を返し、その後に KSK を使用する構造体を返します。 複数の項目の形式は、クエリと設定の低下戦略の両方で使用する必要があります。
 
-クライアントは、現在のパフォーマンス低下の設定を取得するには、このプロパティにクエリを実行または現在のパフォーマンス低下の設定を変更するには、このプロパティを設定できます。 品質管理 (QM) 準拠への応答フィルターのピン留めしてリソースの使用量を変更する、またはいくつかのより高いレベルに戻すの品質を調整する、パフォーマンス低下の設定が使用されます。 これは通常使用品質マネージャーによって低下の設定を調整し、調整できる設定とその現在の値の型のクエリを実行します。 値を設定するときに、複数の KSDEGRADE 構造体を渡すこと可能性があります。 品質のマネージャーの詳細については、次を参照してください。[品質管理](https://docs.microsoft.com/windows-hardware/drivers/stream/quality-management)します。
+クライアントはこのプロパティを照会して現在の低下設定を取得できます。また、このプロパティを設定して、現在の低下設定を変更することもできます。 パフォーマンス低下の設定は、品質管理 (QM) への応答としてフィルターの pin によってリソースの使用量を変更する場合、または品質をさらに高いレベルに調整する場合に使用します。 これは通常、品質管理者が低下設定を調整し、調整可能な設定の種類とその現在の値を照会するために使用されます。 値を設定するときに、複数の KSDEGRADE する構造体を渡すことができます。 品質マネージャーの詳細については、「 [Quality Management](https://docs.microsoft.com/windows-hardware/drivers/stream/quality-management)」を参照してください。
 
 <a name="requirements"></a>要件
 ------------
@@ -81,7 +81,7 @@ KSPROPERTY\_ストリーム\_低下プロパティが省略可能なプロパテ
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Ks.h (Ks.h を含む)</td>
+<td>Ks (Ks を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -89,9 +89,9 @@ KSPROPERTY\_ストリーム\_低下プロパティが省略可能なプロパテ
 ## <a name="see-also"></a>関連項目
 
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
-[**KSMULTIPLE\_項目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksmultiple_item)
+[**KSMULTIPLE\_項目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksmultiple_item)
 
 [**KSDEGRADE**](https://docs.microsoft.com/previous-versions/ff561671(v=vs.85))
 

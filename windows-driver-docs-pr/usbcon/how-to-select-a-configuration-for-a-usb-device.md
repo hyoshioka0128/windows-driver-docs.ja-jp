@@ -1,88 +1,88 @@
 ---
-Description: このトピックでは、ユニバーサル シリアル バス (USB) デバイスで、構成を選択する方法について説明します。
+Description: このトピックでは、ユニバーサルシリアルバス (USB) デバイスで構成を選択する方法について説明します。
 title: USB デバイス用の構成の選択方法
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 786df71b3cca8920ff39f3c0609209ee5ae41491
-ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
+ms.openlocfilehash: d2a911048cf4083e3e2287ab67e787308d35cf68
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67716963"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844367"
 ---
 # <a name="how-to-select-a-configuration-for-a-usb-device"></a>USB デバイス用の構成の選択方法
 
 
-このトピックでは、ユニバーサル シリアル バス (USB) デバイスで、構成を選択する方法について説明します。
+このトピックでは、ユニバーサルシリアルバス (USB) デバイスで構成を選択する方法について説明します。
 
-USB デバイスの構成を選択するには、デバイスのクライアント ドライバーはでサポートされる構成の少なくとも 1 つを選択し、使用する各インターフェイスの設定を指定する必要があります。、 クライアント ドライバー パッケージには、*選択構成要求*具体的には、USB バス ドライバー (USB ハブ PDO)、Microsoft 提供の USB ドライバー スタックに要求を送信します。 USB バス ドライバーが、指定した構成との通信チャネルを設定の各インターフェイスを選択または*パイプ*インターフェイス内で各エンドポイントにします。 要求が完了すると、クライアント ドライバーが選択された構成のハンドルを受け取るし、インターフェイスごとに別のアクティブな設定で定義されているエンドポイントをパイプ処理します。 クライアント ドライバーは、構成設定を変更して、送信 I/O の読み取り/書き込み要求、特定のエンドポイントを受信したハンドルを使用できます。
+USB デバイスの構成を選択するには、デバイスのクライアントドライバーで、サポートされている構成のうち少なくとも1つを選択し、使用する各インターフェイスの代替設定を指定する必要があります。 クライアントドライバーは、*選択構成要求*でこれらの選択をパッケージ化し、Microsoft 提供の usb ドライバースタック (特に USB ハブ PDO) に要求を送信します。 USB バスドライバーは、指定された構成内の各インターフェイスを選択し、インターフェイス内の各エンドポイントへの通信チャネル (*パイプ*) を設定します。 要求が完了すると、クライアントドライバーは、選択された構成のハンドルと、各インターフェイスのアクティブな代替設定で定義されているエンドポイントのパイプハンドルを受け取ります。 クライアントドライバーは、受信したハンドルを使用して、構成設定を変更し、特定のエンドポイントに対して i/o 読み取り要求と書き込み要求を送信します。
 
-クライアント ドライバー選択構成要求を送信する、 [USB 要求ブロック (URB)](communicating-with-a-usb-device.md) URB 型の\_関数\_選択\_構成します。 このトピックの手順を使用する方法を説明する、 [ **USBD\_SelectConfigUrbAllocateAndBuild** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_selectconfigurballocateandbuild)ルーチンをその URB をビルドします。 ルーチンは、メモリを割り当て、URB、選択構成要求が、URB を書式設定し、クライアント ドライバーに URB のアドレスを返します。
+クライアントドライバーは、種類が URB\_関数の[USB 要求ブロック (urb)](communicating-with-a-usb-device.md)で選択構成要求を送信し\_\_構成を選択します。 このトピックの手順では、 [**USBD\_SelectConfigUrbAllocateAndBuild**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_selectconfigurballocateandbuild)ルーチンを使用してその URB を作成する方法について説明します。 このルーチンは、URB にメモリを割り当て、選択構成要求の URB をフォーマットし、クライアントドライバーに URB のアドレスを返します。
 
-代わりに、割り当てることができます、 [ **URB** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb)構造体であり、URB を手動でまたは呼び出すことによって、その書式を設定、 [ **UsbBuildSelectConfigurationRequest** ](https://docs.microsoft.com/previous-versions/ff538968(v=vs.85))マクロ。
+または、 [**urb**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb)構造を割り当てて、手動で、または[**Usbbuildselectconfigurationrequest**](https://docs.microsoft.com/previous-versions/ff538968(v=vs.85))マクロを呼び出して、urb をフォーマットすることもできます。
 
 ### <a name="prerequisites"></a>前提条件
 
--   Windows 8 で[ **USBD\_SelectConfigUrbAllocateAndBuild** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_selectconfigurballocateandbuild)置き換えます[ **USBD\_CreateConfigurationRequestEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_createconfigurationrequestex).
--   選択構成要求を送信する前に、クライアント ドライバーの登録は USB ドライバー スタックと USBD ハンドルが必要です。 USBD ハンドルの呼び出しを作成する[ **USBD\_CreateHandle**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_createhandle)します。
--   構成記述子を取得したかどうかを確認 ([**USB\_構成\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbspec/ns-usbspec-_usb_configuration_descriptor)構造) の構成を選択します。 通常、URB 型の URB を送信する\_関数\_取得\_記述子\_FROM\_デバイス (を参照してください[  **\_URB\_コントロール\_記述子\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb_control_descriptor_request)) デバイスの構成に関する情報を取得します。 詳細については、次を参照してください。 [USB 構成記述子](usb-configuration-descriptors.md)します。
+-   Windows 8 では、 [**USBD\_SelectConfigUrbAllocateAndBuild**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_selectconfigurballocateandbuild)は[**USBD\_CreateConfigurationRequestEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_createconfigurationrequestex)に置き換わるものです。
+-   選択構成要求を送信する前に、クライアントドライバーの USB ドライバースタックへの登録を USBD ハンドルする必要があります。 USBD ハンドル呼び出しを作成するには、 [**CreateHandle を\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_createhandle)します。
+-   選択する構成の構成記述子 ([**USB\_構成\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbspec/ns-usbspec-_usb_configuration_descriptor)構造) を取得していることを確認します。 通常、デバイスに関する情報を取得するには、型の urb\_関数の URB を送信し\_\_デバイスから\_記述子\_を取得します (「 [ **\_URB\_CONTROL\_DESCRIPTOR\_REQUEST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb_control_descriptor_request))」を参照してください。configuration. 詳細については、「 [USB 構成記述子](usb-configuration-descriptors.md)」を参照してください。
 
 <a name="instructions"></a>手順
 ------------
 
-### <a href="" id="create-an-array-of-usbd-interface-list-entry-structures-"></a>手順 1:USBD の配列を作成する\_インターフェイス\_一覧\_エントリの構造体。
+### <a href="" id="create-an-array-of-usbd-interface-list-entry-structures-"></a>手順 1: USBD\_INTERFACE\_LIST\_エントリ構造体の配列を作成します。
 
-1.  構成でインターフェイスの数を取得します。 この情報は、 **bNumInterfaces**のメンバー、 [ **USB\_構成\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbspec/ns-usbspec-_usb_configuration_descriptor)構造体。
-2.  配列を作成する[ **USBD\_インターフェイス\_一覧\_エントリ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/ns-usbdlib-_usbd_interface_list_entry)構造体。 配列内の要素の数は、いずれかを指定する必要がありますよりもインターフェイスの数。 呼び出すことによって、配列の初期化[ **RtlZeroMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-rtlzeromemory)します。
+1.  構成内のインターフェイスの数を取得します。 この情報は、 [**USB\_構成\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbspec/ns-usbspec-_usb_configuration_descriptor)構造体の**bnuminterfaces**メンバーに含まれています。
+2.  [**USBD\_INTERFACE\_LIST\_エントリ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/ns-usbdlib-_usbd_interface_list_entry)構造体の配列を作成します。 配列内の要素の数は、インターフェイスの数より1つ多くする必要があります。 [**Rtlゼロメモリ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-rtlzeromemory)を呼び出して配列を初期化します。
 
-    クライアント ドライバーでは、代替の設定を指定の配列で、有効にするには、各インターフェイスで[ **USBD\_インターフェイス\_一覧\_エントリ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/ns-usbdlib-_usbd_interface_list_entry)構造体。
+    クライアントドライバーは、有効にする各インターフェイスの代替設定を指定します。これは、 [**USBD\_interface\_LIST\_ENTRY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/ns-usbdlib-_usbd_interface_list_entry)構造体の配列に含まれています。
 
-    -   **InterfaceDescriptor**各構造体のメンバーが別の設定を含むインターフェイス記述子をポイントします。
-    -   **インターフェイス**各構造体のメンバーを指す、 [ **USBD\_インターフェイス\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_usbd_interface_information)パイプ情報を含む構造体その**パイプ**メンバー。 **パイプ**別の設定で定義されている各エンドポイントに関する情報を格納します。
+    -   各構造体の**interfacedescriptor**メンバーは、代替設定を含むインターフェイス記述子を指します。
+    -   各構造体の**インターフェイス**メンバーは **、パイプのメンバーに**パイプ情報を格納する[**USBD\_インターフェイス\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_usbd_interface_information)構造体を指します。 **パイプ**は、別の設定で定義されている各エンドポイントに関する情報を格納します。
 
-3.  構成内の各インターフェイス (または、代替の設定) のインターフェイス記述子を取得します。 これらのインターフェイスの記述子を取得するには呼び出すことによって[ **USBD\_ParseConfigurationDescriptorEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_parseconfigurationdescriptorex)します。
+3.  構成内の各インターフェイス (またはその代替設定) のインターフェイス記述子を取得します。 これらのインターフェイス記述子は、 [**USBD\_ParseConfigurationDescriptorEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_parseconfigurationdescriptorex)を呼び出すことによって取得できます。
 
-    **複合 USB デバイスのドライバーを関数: について  **
+    **USB 複合デバイスの関数ドライバーについて:  **
 
-    Microsoft 製で、構成が選択されている USB デバイスが複合デバイスの場合は、[汎用的な親の USB ドライバー](usb-common-class-generic-parent-driver.md) (Usbccgp.sys)。 複合デバイスの機能のドライバーのいずれかには、クライアント ドライバーは、構成を変更できませんが、ドライバーはで、Usbccgp.sys を介して選択構成要求を送信できます。
+    USB デバイスが複合デバイスの場合、構成は、Microsoft 提供の[Usb 汎用親ドライバー](usb-common-class-generic-parent-driver.md) (Usbccgp) によって選択されます。 複合デバイスの機能ドライバーの1つであるクライアントドライバーは、構成を変更することはできませんが、ドライバーは Usbccgp を使用して、選択的な構成要求を送信することができます。
 
-    その要求を送信する前に、クライアント ドライバーが、URB を送信する必要があります\_関数\_取得\_記述子\_FROM\_デバイス要求。 応答で、Usbccgp.sys 取得、*部分構成記述子*インターフェイス記述子と対象のクライアント ドライバーが読み込まれる特定の機能に関連するその他の記述子のみを格納します。 報告されたインターフェイスの数、 **bNumInterfaces**部分構成記述子のフィールドが USB 複合デバイス全体に対して定義されているインターフェイスの合計数より小さい。 さらに、部分構成記述子に、インターフェイス、記述子の**bInterfaceNumber**デバイス全体の基準とした実際のインターフェイスの数を示します。 Usbccgp.sys 可能性がありますの部分構成記述子を報告するなど、 **bNumInterfaces** 2 の値と**bInterfaceNumber**値を 4 に、最初のインターフェイス。 インターフェイスの数が報告されたインターフェイスの数より大きいことに注意してください。
+    クライアントドライバーは、要求を送信する前に、\_デバイス要求から\_記述子\_を取得\_ために、URB\_関数を送信する必要があります。 応答として、Usbccgp は、クライアントドライバーが読み込まれる特定の関数に関連するインターフェイス記述子とその他の記述子だけを含む*部分構成記述子*を取得します。 部分構成記述子の**Bnuminterfaces**フィールドで報告されるインターフェイスの数が、USB 複合デバイス全体に対して定義されているインターフェイスの合計数よりも少なくなっています。 さらに、部分構成記述子では、インターフェイス記述子の**bInterfaceNumber**は、デバイス全体に対する実際のインターフェイス番号を示します。 たとえば、Usbccgp は、最初のインターフェイスに対して**Bnuminterfaces**値が2、 **bInterfaceNumber**値が4の部分構成記述子を報告する場合があります。 インターフェイス番号が、報告されたインターフェイスの数よりも大きいことに注意してください。
 
-    部分的な構成でインターフェイスを列挙中に、インターフェイスの数に基づくインターフェイスの数を計算することでインターフェイスを検索しないようにします。 前の例では場合、 [ **USBD\_ParseConfigurationDescriptorEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_parseconfigurationdescriptorex) 0 から始まり、終わりをループで呼び出される`(bNumInterfaces - 1)`、(指定したインターフェイス インデックスをインクリメントして*InterfaceNumber*パラメーター) ルーチンを各反復処理では、適切なインターフェイスを取得するが失敗しました。 代わりに-1 を渡すことによって構成記述子ですべてのインターフェイスを検索することを必ず*InterfaceNumber*します。 実装の詳細については、このセクションのコード例を参照してください。
+    部分構成でインターフェイスを列挙するときに、インターフェイスの数に基づいてインターフェイス番号を計算することで、インターフェイスを検索しないようにします。 前の例では、 [**USBD\_ParseConfigurationDescriptorEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_parseconfigurationdescriptorex)が0から始まるループで呼び出され、`(bNumInterfaces - 1)`で終了し、各反復で ( *InterfaceNumber*パラメーターで指定された) インターフェイスインデックスをインクリメントします。ルーチンは、正しいインターフェイスを取得できませんでした。 代わりに、 *InterfaceNumber*で-1 を渡して、構成記述子内のすべてのインターフェイスを検索するようにしてください。 実装の詳細については、このセクションのコード例を参照してください。
 
-    Usbccgp.sys クライアント ドライバーによって送信される選択構成要求を処理する方法については、次を参照してください。[既定以外の USB の構成を選択する構成で、Usbccgp.sys](selecting-the-configuration-for-a-multiple-interface--composite--usb-d.md)します。
+    クライアントドライバーによって送信される選択構成要求を Usbccgp が処理する方法の詳細については、「 [Usbccgp を構成して既定以外の USB 構成を選択する」を](selecting-the-configuration-for-a-multiple-interface--composite--usb-d.md)参照してください。
 
-4.  各配列の要素 (最後の要素) を除く、設定、 **InterfaceDescriptor**インターフェイス、記述子のアドレスへのメンバー。 配列の最初の要素、設定、 **InterfaceDescriptor**構成では、最初のインターフェイスを表すインターフェイス記述子のアドレスへのメンバー。 同様に、 *n*番目の要素の配列内の設定、 **InterfaceDescriptor**メンバーを表すインターフェイス記述子のアドレスを*n*番目のインターフェイスで、構成します。
-5.  **InterfaceDescriptor**の最後の要素のメンバーを NULL に設定する必要があります。
+4.  配列内の各要素 (最後の要素を除く) に対して、 **interfacedescriptor**メンバーをインターフェイス記述子のアドレスに設定します。 配列内の最初の要素に対して、 **interfacedescriptor**メンバーを、構成内の最初のインターフェイスを表すインターフェイス記述子のアドレスに設定します。 同様に、配列内の*n*番目の要素については、 **interfacedescriptor**メンバーを、構成内の*n*番目のインターフェイスを表すインターフェイス記述子のアドレスに設定します。
+5.  最後の要素の**Interfacedescriptor**メンバーは、NULL に設定する必要があります。
 
-### <a href="" id="get-a-pointer-to-an-urb-allocated-by-the-usb-driver-stack-"></a>手順 2:USB ドライバー スタックによって割り当てられた、URB へのポインターを取得します。
+### <a href="" id="get-a-pointer-to-an-urb-allocated-by-the-usb-driver-stack-"></a>手順 2: USB ドライバースタックによって割り当てられた URB へのポインターを取得します。
 
-次に、呼び出す[ **USBD\_SelectConfigUrbAllocateAndBuild** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_selectconfigurballocateandbuild)を選択する構成とのデータが設定された配列を指定することによって[ **USBD\_インターフェイス\_一覧\_エントリ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/ns-usbdlib-_usbd_interface_list_entry)構造体。 ルーチンは、次のタスクを実行します。
+次に、 [**USBD\_SelectConfigUrbAllocateAndBuild**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_selectconfigurballocateandbuild)を呼び出します。これには、選択する構成と、 [**USBD\_インターフェイス\_リスト\_エントリ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/ns-usbdlib-_usbd_interface_list_entry)構造の設定された配列を指定します。 ルーチンは、次のタスクを実行します。
 
--   URB を作成および指定した構成、そのインターフェイスおよびエンドポイントに関する情報が格納され、URB に要求の種類を設定\_関数\_選択\_構成します。
--   その URB、内で割り当て、 [ **USBD\_インターフェイス\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_usbd_interface_information)クライアント ドライバーを指定する各インターフェイスの記述子の構造体。
--   セット、**インターフェイス**のメンバー、 *n*番目の要素の呼び出し元の[ **USBD\_インターフェイス\_一覧\_エントリ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/ns-usbdlib-_usbd_interface_list_entry)配列の対応するアドレスに[ **USBD\_インターフェイス\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_usbd_interface_information) URB で構造体。
--   初期化します、 **InterfaceNumber**、 **AlternateSetting**、 **NumberOfPipes**、**パイプ\[は\]します。MaximumTransferSize**、および**パイプ\[は\]します。PipeFlags**メンバー。
+-   URB を作成し、指定された構成、そのインターフェイス、およびエンドポイントに関する情報を入力して、要求の種類を URB\_機能に設定し\_\_構成を選択します。
+-   この URB 内で、クライアントドライバーが指定する各インターフェイス記述子に対して、 [**USBD\_インターフェイス\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_usbd_interface_information)構造体を割り当てます。
+-   呼び出し元が指定した[**USBD\_インターフェイス\_リスト\_エントリ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/ns-usbdlib-_usbd_interface_list_entry)配列の*n*番目の要素の**インターフェイス**メンバーを、対応する[**USBD\_インターフェイスの\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_usbd_interface_information)のアドレスに設定します。URB 内の構造体。
+-   **InterfaceNumber**、 **alternatesetting**、 **numberofpipes**、パイプ\[\]を初期化し**ます。MaximumTransferSize**と**パイプ\[\]。PipeFlags**のメンバー。
 
-    **注**  Windows 7 および前のでは、クライアント ドライバーは呼び出すことによって、URB 選択構成要求を作成[ **USBD\_CreateConfigurationRequestEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_createconfigurationrequestex). Windows 2000 で**USBD\_CreateConfigurationRequestEx**初期化**パイプ\[は\]します。MaximumTransferSize** URB の読み取り/書き込み要求を 1 つの既定の最大転送サイズ。 クライアント ドライバーで別の最大転送サイズを指定できます、**パイプ\[は\]します。MaximumTransferSize**します。 USB スタックでは、Windows XP、Windows Server 2003、およびそれ以降のバージョンのオペレーティング システムでは、この値は無視されます。 詳細については**MaximumTransferSize**、「設定 USB 転送し、パケット サイズ」を参照してください[USB の帯域幅割り当て](usb-bandwidth-allocation.md)します。
+    Windows 7 と USBD では、クライアントドライバーは[ **\_CreateConfigurationRequestEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_createconfigurationrequestex)を呼び**出すことに**よって、選択構成要求の URB を作成しました。   Windows 2000 **USBD\_CreateConfigurationRequestEx**は、 **\]\[パイプを初期化します。MaximumTransferSize**は、単一の URB 読み取り/書き込み要求の既定の最大転送サイズに設定します。 クライアントドライバーは、\]\[パイプで異なる最大転送サイズを指定でき**ます。MaximumTransferSize**。 USB スタックは、Windows XP、Windows Server 2003、およびそれ以降のバージョンのオペレーティングシステムでは、この値を無視します。 **MaximumTransferSize**の詳細については、「 [usb 帯域幅の割り当て](usb-bandwidth-allocation.md)」の「Usb 転送とパケットサイズの設定」を参照してください。
 
-### <a href="" id="submit-the-urb-to-the-usb-driver-stack-"></a>手順 3:USB ドライバー スタックに URB を送信します。
+### <a href="" id="submit-the-urb-to-the-usb-driver-stack-"></a>手順 3: URB を USB ドライバースタックに送信します。
 
-USB ドライバー スタックに URB を送信するクライアント ドライバーを送信する必要があります、 [ **IOCTL\_内部\_USB\_送信\_URB** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_internal_usb_submit_urb) I/O 制御要求。 URB を送信する方法の詳細については、次を参照してください。 [、URB を送信する方法](send-requests-to-the-usb-driver-stack.md)します。
+USB ドライバースタックに URB を送信するには、クライアントドライバーが\_URB I/o 制御要求を[**送信\_の内部\_usb\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbioctl/ni-usbioctl-ioctl_internal_usb_submit_urb)送信する必要があります。 URB の送信の詳細については、「 [urb を送信する方法](send-requests-to-the-usb-driver-stack.md)」を参照してください。
 
-USB ドライバー スタックを URB を受信した後に、残りの部分の各メンバーの[ **USBD\_インターフェイス\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_usbd_interface_information)構造体。 具体的には、**パイプ**配列メンバーは、インターフェイスのエンドポイントに関連付けられているパイプに関する情報を入力します。
+URB を受信すると、USB ドライバースタックによって、各[**USBD\_インターフェイス\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_usbd_interface_information)構造体の残りのメンバーがいっぱいになります。 特に、**パイプ**の配列メンバーには、インターフェイスのエンドポイントに関連付けられているパイプに関する情報が格納されます。
 
-### <a href="" id="on-request-completion--inspect-the-usbd-interface-information-structures-and-the-urb-"></a>手順 4:要求完了時に検査、USBD\_インターフェイス\_情報構造体と URB します。
+### <a href="" id="on-request-completion--inspect-the-usbd-interface-information-structures-and-the-urb-"></a>手順 4: 要求の完了時に、USBD\_インターフェイス\_情報構造と URB を調べます。
 
-スタックが代替の設定との関連するインターフェイスの一覧を返します、USB ドライバー スタックには、要求の IRP が完了すると、 [ **USBD\_インターフェイス\_一覧\_エントリ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/ns-usbdlib-_usbd_interface_list_entry)配列。
+USB ドライバースタックが要求の IRP を完了すると、スタックは、代替設定の一覧と、 [**USBD\_インターフェイス\_リスト\_エントリ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/ns-usbdlib-_usbd_interface_list_entry)配列内の関連インターフェイスを返します。
 
-1.  **パイプ**のそれぞれに所属[ **USBD\_インターフェイス\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_usbd_interface_information)の配列へのポインターを構造体[ **USBD\_パイプ\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_usbd_pipe_information)その特定のインターフェイスの各エンドポイントに関連付けられているパイプに関する情報を含む構造体。 クライアント ドライバーからパイプ ハンドルを取得できます**パイプ\[は\]します。PipeHandle**使用と、特定のパイプに I/O 要求を送信します。 **パイプ\[は\]します。PipeType**メンバーは、エンドポイントとそのパイプでサポートされている転送の種類を指定します。
+1.  各[**USBD\_インターフェイス\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_usbd_interface_information)構造体の**パイプ**メンバーは、各エンドポイントに関連付けられているパイプに関する情報を含む[**USBD\_パイプ\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_usbd_pipe_information)構造体の配列を指します。特定のインターフェイスの。 クライアントドライバーは、\]\[パイプからパイプハンドルを取得でき**ます。PipeHandle**を使用して、特定のパイプに i/o 要求を送信します。 **パイプ\[\]。PipeType**メンバーは、そのパイプでサポートされているエンドポイントと転送の種類を指定します。
 
-2.  内で、 **UrbSelectConfiguration** URB のメンバーは、USB ドライバー スタックは、型 URB の URB を送信して別のインターフェイスの設定を選択するために使用できるハンドルを返します\_関数\_選択\_インターフェイス (*選択インターフェイス要求*)。 割り当てをその要求について、URB 構造の作成は、呼び出す[ **USBD\_SelectInterfaceUrbAllocateAndBuild**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_selectinterfaceurballocateandbuild)します。
+2.  USB ドライバースタックは、URB の**Urbselectconfiguration**メンバー内で、種類の URB\_関数の別の urb を送信することによって代替インターフェイス設定を選択するために使用できるハンドルを返し\_\_インターフェイスを選択します ( *[インターフェイス要求] を選択*します。 その要求の URB 構造を割り当ててビルドするには、 [**USBD\_SelectInterfaceUrbAllocateAndBuild**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_selectinterfaceurballocateandbuild)を呼び出します。
 
-    アイソクロナスのコントロールをサポートし、有効になっているインターフェイス内でエンドポイントを中断する十分な帯域幅がある場合、選択構成要求と インターフェイスの要求が失敗します。 その場合は、USB バス ドライバーの設定、**状態**USBD URB ヘッダーのメンバー\_状態\_いいえ\_帯域幅。
+    有効なインターフェイス内のアイソクロナス、制御、および割り込みエンドポイントをサポートするための帯域幅が不足している場合は、構成要求と選択インターフェイスの要求が失敗する可能性があります。 この場合、USB バスドライバーは、URB ヘッダーの**status**メンバーを USBD\_status\_\_帯域幅なしに設定します。
 
-次のコード例は、の配列を作成する方法を示しています[ **USBD\_インターフェイス\_一覧\_エントリ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/ns-usbdlib-_usbd_interface_list_entry)構造と呼び出し[  **。USBD\_SelectConfigUrbAllocateAndBuild**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_selectconfigurballocateandbuild)します。 この例は、SubmitUrbSync を呼び出すことによって同期的に、要求を送信します。 SubmitUrbSync のコード例を参照してくださいを参照してください。 [、URB を送信する方法](send-requests-to-the-usb-driver-stack.md)します。
+次のコード例では、 [**USBD\_インターフェイス\_LIST\_エントリ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/ns-usbdlib-_usbd_interface_list_entry)構造体の配列を作成し、 [**SelectConfigUrbAllocateAndBuild\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_selectconfigurballocateandbuild)を呼び出す方法を示します。 この例では、SubmitUrbSync を呼び出して要求を同期的に送信します。 SubmitUrbSync のコード例については、「 [URB を送信する方法](send-requests-to-the-usb-driver-stack.md)」を参照してください。
 
 ```C++
 /*++
@@ -274,9 +274,9 @@ NTSTATUS CompletionRoutine ( PDEVICE_OBJECT DeviceObject,
 <a name="remarks"></a>注釈
 -------
 
-**USB デバイスの構成を無効になります。**
+**USB デバイスの構成を無効にする:**
 
-USB デバイスを無効にするには、作成し、NULL 構成記述子を使用して、選択構成要求を送信します。 要求の種類、デバイスの構成が選択されている要求用に作成した URB を再利用できます。 代わりに、呼び出すことによって新しい URB を割り当てることができます[ **USBD\_UrbAllocate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_urballocate)します。 使用して、URB の書式を設定する必要があります、要求を送信する前に、 [ **UsbBuildSelectConfigurationRequest** ](https://docs.microsoft.com/previous-versions/ff538968(v=vs.85))マクロでは、次のコード例に示すようにします。
+USB デバイスを無効にするには、構成記述子が NULL の選択構成要求を作成して送信します。 この種類の要求については、デバイスで構成を選択した要求に対して作成した URB を再利用できます。 または、USBD を呼び出すことによって新しい URB を割り当てることもできます。 [ **\_を指定**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_urballocate)します。 要求を送信する前に、次のコード例に示すように、 [**Usbbuildselectconfigurationrequest**](https://docs.microsoft.com/previous-versions/ff538968(v=vs.85))マクロを使用して URB をフォーマットする必要があります。
 
 ```C++
 URB Urb;
@@ -288,9 +288,9 @@ UsbBuildSelectConfigurationRequest(
 ```
 
 ## <a name="related-topics"></a>関連トピック
-[既定ではない USB 構成を選択する構成で、Usbccgp.sys](selecting-the-configuration-for-a-multiple-interface--composite--usb-d.md)  
+[既定以外の USB 構成を選択するように Usbccgp を構成する](selecting-the-configuration-for-a-multiple-interface--composite--usb-d.md)  
 [USB デバイスの構成](configuring-usb-devices.md)  
-[割り当てと翻訳の構築](how-to-add-xrb-support-for-client-drivers.md)  
+[URBs の割り当てとビルド](how-to-add-xrb-support-for-client-drivers.md)  
 
 
 

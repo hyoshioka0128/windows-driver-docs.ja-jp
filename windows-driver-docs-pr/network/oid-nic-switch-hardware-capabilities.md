@@ -1,42 +1,42 @@
 ---
 title: OID_NIC_SWITCH_HARDWARE_CAPABILITIES
-description: 上にある、ドライバーは、ネットワーク アダプターで NIC スイッチのハードウェア機能を取得する OID_NIC_SWITCH_HARDWARE_CAPABILITIES のオブジェクト識別子 (OID) クエリ要求を発行します。
+description: ネットワークアダプターの NIC スイッチのハードウェア機能を取得するために、OID_NIC_SWITCH_HARDWARE_CAPABILITIES のオブジェクト識別子 (OID) クエリ要求が実行されています。
 ms.assetid: 2c417a16-68e1-4754-88a5-8bac4653e05d
 ms.date: 08/08/2017
-keywords: -OID_NIC_SWITCH_HARDWARE_CAPABILITIES ネットワーク ドライバーが Windows Vista 以降
+keywords: -Windows Vista 以降の OID_NIC_SWITCH_HARDWARE_CAPABILITIES ネットワークドライバー
 ms.localizationpriority: medium
-ms.openlocfilehash: 17cb6c96d63fbc46fd75ce6c989db5f4b452b41d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: abdf922c087b0861ed206d7616ef7ed8dd0ac12e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383665"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844081"
 ---
-# <a name="oidnicswitchhardwarecapabilities"></a>OID\_NIC\_スイッチ\_ハードウェア\_機能
+# <a name="oid_nic_switch_hardware_capabilities"></a>OID\_NIC\_スイッチ\_ハードウェア\_機能
 
 
-上にある、ドライバーの OID オブジェクト識別子 (OID) のクエリ要求を発行する\_NIC\_切り替える\_ハードウェア\_NIC のハードウェア機能を取得する機能は、ネットワーク アダプターで切り替えます。
+このドライバーは、OID\_\_NIC のオブジェクト識別子 (OID) クエリ要求を発行し、ハードウェア\_機能\_、ネットワークアダプターの NIC スイッチのハードウェア機能を取得します。
 
-OID のクエリ要求から正常に戻った後、 **InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体ポインターが含まれています、 [ **NDIS\_NIC\_スイッチ\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)構造体。
+OID クエリ要求から正常に戻った後、 [**ndis\_oid\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造の**informationbuffer**メンバーには、 [**ndis\_NIC\_スイッチ\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)構造へのポインターが含まれています.
 
 <a name="remarks"></a>注釈
 -------
 
-[ **NDIS\_NIC\_切り替える\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)構造体には、NIC のスイッチのネットワーク アダプターのハードウェア性能に関する情報が含まれています。 これらの機能は、INF ファイルの設定、または、現在無効になっているハードウェア機能を含めることができます、**詳細**プロパティ ページ。
+[**NDIS\_nic\_スイッチ\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)の構造には、ネットワークアダプターの nic スイッチのハードウェア機能に関する情報が含まれています。 これらの機能には、INF ファイルの設定によって現在無効になっているハードウェア機能や、 **[詳細設定**] プロパティページを含めることができます。
 
-**注**  の OID の OID クエリ要求によって指定された NIC スイッチのすべての機能が返されます\_NIC\_切り替える\_ハードウェア\_かどうかに関係なく、機能、機能を有効または無効になっています。
-
- 
-
-ミニポート ドライバー以降 NDIS 6.20 が動作では、NIC スイッチ ハードウェアの機能を提供時にその[ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)関数が呼び出されます。 ドライバーの初期化、 [ **NDIS\_NIC\_スイッチ\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)構造体の NIC にハードウェアの機能およびセットのスイッチ、 **HardwareNicSwitchCapabilities**のメンバー、 [ **NDIS\_ミニポート\_アダプター\_ハードウェア\_支援\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_hardware_assist_attributes)構造体へのポインターを**NDIS\_NIC\_スイッチ\_機能**構造体。 ミニポート ドライバーを呼び出して、 [ **NdisMSetMiniportAttributes** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsetminiportattributes)関数とセット、 *MiniportAttributes*パラメーターへのポインターを**NDIS\_ミニポート\_アダプター\_ハードウェア\_支援\_属性**構造体。
-
-**注**  NDIS 6.30 以降、シングル ルート I/O 仮想化 (SR-IOV) インターフェイスをサポートするミニポート ドライバーは、NIC のスイッチのハードウェア機能を登録する必要があります。 ドライバーは、呼び出すことによってこれらの機能を登録[ **NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsetminiportattributes)します。
+指定された NIC スイッチのすべての機能は、機能が有効になっているか無効になっているかに関係なく、oid\_NIC\_スイッチ\_ハードウェア\_機能の OID クエリ要求によって返さ**れ  ます**。
 
  
 
-### <a name="return-status-codes"></a>リターン状態コード
+NDIS 6.20 以降では、 [*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)関数が呼び出されたときに、ミニポートドライバーが NIC スイッチのハードウェア機能を提供します。 このドライバーは、NIC スイッチのハードウェア機能を使用して、 [**ndis\_nic\_スイッチ\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)構造を初期化し、NDIS\_ミニポートの**ハード**ドライブメンバーを設定し[ **\_アダプター\_ハードウェア\_は、\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_hardware_assist_attributes)構造を**NDIS\_NIC\_スイッチ\_機能**構造へのポインターに対してサポートします。 次に、ミニポートドライバーは[**NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)関数を呼び出し、 *miniportattributes*パラメーターを NDIS\_ミニポート\_アダプターへのポインターに設定します **\_ハードウェア\_サポート\_属性**構造体。
 
-OID の OID のクエリ要求を処理する NDIS\_NIC\_スイッチ\_ハードウェア\_ミニポート ドライバー、および次のステータス コードを返します。 1 つの機能要求。
+**注**  NDIS 6.30 以降では、シングルルート i/o 仮想化 (sr-iov) インターフェイスをサポートするミニポートドライバーは、NIC スイッチのハードウェア機能を登録する必要があります。 ドライバーは、 [**NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)を呼び出すことによってこれらの機能を登録します。
+
+ 
+
+### <a name="return-status-codes"></a>ステータスコードを返す
+
+NDIS は、OID\_NIC の OID クエリ要求を処理し、ミニポートドライバーに対するハードウェア\_機能要求\_\_し、次のステータスコードのいずれかを返します。
 
 <table>
 <colgroup>
@@ -52,19 +52,19 @@ OID の OID のクエリ要求を処理する NDIS\_NIC\_スイッチ\_ハード
 <tbody>
 <tr class="odd">
 <td><p>NDIS_STATUS_SUCCESS</p></td>
-<td><p>要求は正常に完了しました。 <strong>InformationBuffer</strong>を指す、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities" data-raw-source="[&lt;strong&gt;NDIS_NIC_SWITCH_CAPABILITIES&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)"> <strong>NDIS_NIC_SWITCH_CAPABILITIES</strong> </a>構造体。</p></td>
+<td><p>要求は正常に完了しました。 <strong>Informationbuffer</strong>は<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities" data-raw-source="[&lt;strong&gt;NDIS_NIC_SWITCH_CAPABILITIES&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)"><strong>NDIS_NIC_SWITCH_CAPABILITIES</strong></a>構造体を指します。</p></td>
 </tr>
 <tr class="even">
 <td><p>NDIS_STATUS_NOT_SUPPORTED</p></td>
-<td><p>ミニポート ドライバーでは、シングル ルート I/O 仮想化 (SR-IOV) インターフェイスをサポートしていませんか、またはインターフェイスを使用して有効になっていません。</p></td>
+<td><p>ミニポートドライバーがシングルルート i/o 仮想化 (SR-IOV) インターフェイスをサポートしていないか、インターフェイスの使用が有効になっていません。</p></td>
 </tr>
 <tr class="odd">
 <td><p>NDIS_STATUS_INVALID_LENGTH</p></td>
-<td><p>情報バッファーの長さが sizeof より小さい (<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities" data-raw-source="[&lt;strong&gt;NDIS_NIC_SWITCH_CAPABILITIES&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)"><strong>NDIS_NIC_SWITCH_CAPABILITIES</strong></a>)。 NDIS セット、<strong>データ。QUERY_INFORMATION します。BytesNeeded</strong>内のメンバー、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)"> <strong>NDIS_OID_REQUEST</strong> </a>構造体に必要な最小バッファー サイズ。</p></td>
+<td><p>情報バッファーの長さが sizeof (<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities" data-raw-source="[&lt;strong&gt;NDIS_NIC_SWITCH_CAPABILITIES&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)"><strong>NDIS_NIC_SWITCH_CAPABILITIES</strong></a>) 未満です。 NDIS はデータを設定<strong>します。QUERY_INFORMATION.</strong> <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a>構造体の中で必要とされる最小バッファーサイズに対して、bytesneeded 必要です。</p></td>
 </tr>
 <tr class="even">
 <td><p>NDIS_STATUS_FAILURE</p></td>
-<td><p>他の理由から、要求が失敗しました。</p></td>
+<td><p>他の理由で要求が失敗しました。</p></td>
 </tr>
 </tbody>
 </table>
@@ -82,11 +82,11 @@ OID の OID のクエリ要求を処理する NDIS\_NIC\_スイッチ\_ハード
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>以降では、NDIS 6.20 が動作をサポートします。</p></td>
+<td><p>NDIS 6.20 以降でサポートされています。</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Ntddndis.h (include Ndis.h)</td>
+<td>Ntddndis (Ndis .h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -94,13 +94,13 @@ OID の OID のクエリ要求を処理する NDIS\_NIC\_スイッチ\_ハード
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_バインド\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_bind_parameters)
+[**NDIS\_バインド\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_bind_parameters)
 
-[**NDIS\_ミニポート\_アダプター\_ハードウェア\_支援\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_hardware_assist_attributes)
+[**NDIS\_ミニポート\_アダプター\_ハードウェア\_サポート\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_hardware_assist_attributes)
 
-[**NDIS\_NIC\_スイッチ\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)
+[**NDIS\_NIC\_スイッチ\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)
 
-[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
+[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)
 
  
 

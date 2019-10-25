@@ -1,22 +1,22 @@
 ---
 title: WDI_TLV_P2P_SEND_ACTION_FRAME_RESULT_PARAMETERS
-description: WDI_TLV_P2P_SEND_ACTION_FRAME_RESULT_PARAMETERS は、Wi-Fi Direct を含む TLV がフレームのアクション結果のパラメーターを送信します。
+description: WDI_TLV_P2P_SEND_ACTION_FRAME_RESULT_PARAMETERS は、Wi-fi ダイレクト送信アクションフレームの結果パラメーターを含む TLV です。
 ms.assetid: A0B234F2-081B-4027-9B42-76401F600707
 ms.date: 07/18/2017
 keywords:
-- WDI_TLV_P2P_SEND_ACTION_FRAME_RESULT_PARAMETERS ネットワーク ドライバーが Windows Vista 以降
+- WDI_TLV_P2P_SEND_ACTION_FRAME_RESULT_PARAMETERS ネットワークドライバー (Windows Vista 以降)
 ms.localizationpriority: medium
-ms.openlocfilehash: 214aed1e2bf69476a68d96911eb38fac840fb97d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 76290f15188154225c5704cc6a2dacf6f81ee785
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67353291"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845123"
 ---
-# <a name="wditlvp2psendactionframeresultparameters"></a>WDI\_TLV\_P2P\_送信\_アクション\_フレーム\_結果\_パラメーター
+# <a name="wdi_tlv_p2p_send_action_frame_result_parameters"></a>WDI\_TLV\_P2P\_\_アクションの送信\_フレーム\_結果\_パラメーター
 
 
-WDI\_TLV\_P2P\_送信\_アクション\_フレーム\_結果\_パラメーターは、Wi-Fi Direct を含む TLV がフレームのアクション結果のパラメーターを送信します。
+WDI\_TLV\_P2P\_SEND\_ACTION\_FRAME\_RESULT\_PARAMETERS は、Wi-fi Direct SEND Action Frame result パラメーターを含む TLV です。
 
 ## <a name="tlv-type"></a>TLV 型
 
@@ -26,19 +26,19 @@ WDI\_TLV\_P2P\_送信\_アクション\_フレーム\_結果\_パラメーター
 ## <a name="length"></a>長さ
 
 
-含まれるすべての要素のサイズの合計をバイト単位で。
+含まれているすべての要素のサイズの合計 (バイト単位)。
 
 ## <a name="values"></a>値
 
 
-| 型                                              | 説明                                           |
+| タスクバーの検索ボックスに                                              | 説明                                           |
 |---------------------------------------------------|-------------------------------------------------------|
-| [**WDI\_MAC\_アドレス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ns-dot11wdi-_wdi_mac_address) | ターゲット Wi-Fi Direct デバイスのデバイスのアドレス。 |
-| UINT8                                             | Wi-Fi Direct ダイアログ トークンこのトランザクションにします。   |
+| [**WDI\_MAC\_アドレス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_wdi_mac_address) | ターゲット Wi-fi ダイレクトデバイスのデバイスアドレス。 |
+| UINT8                                             | このトランザクションの Wi-fi ダイレクトダイアログトークン。   |
 
  
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -57,7 +57,7 @@ WDI\_TLV\_P2P\_送信\_アクション\_フレーム\_結果\_パラメーター
 </tr>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Wditypes.hpp</td>
+<td>Wditypes</td>
 </tr>
 </tbody>
 </table>

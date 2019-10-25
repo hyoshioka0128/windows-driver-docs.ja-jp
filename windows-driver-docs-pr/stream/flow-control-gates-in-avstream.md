@@ -3,21 +3,21 @@ title: AVStream のフロー制御ゲート
 description: AVStream のフロー制御ゲート
 ms.assetid: c5592f92-a432-44e3-afe0-60fcf917a443
 keywords:
-- AVStream 論理ゲート WDK
-- gates WDK AVStream のロジック
+- AVStream ロジックゲート WDK
+- ロジックゲート WDK AVStream
 - ゲート WDK AVStream
-- ゲート WDK AVStream
+- およびゲート WDK AVStream
 - KSGATE
 - フロー制御ゲート WDK AVStream
-- gates WDK AVStream のコントロールの処理
+- コントロールゲートの処理 WDK AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e664ef2e323ba63a10a50015b44df812792dc2a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 55b860bf26eb7c88b31cd6302f4fcabcc849379c
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384047"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842598"
 ---
 # <a name="flow-control-gates-in-avstream"></a>AVStream のフロー制御ゲート
 
@@ -25,41 +25,41 @@ ms.locfileid: "67384047"
 
 
 
-AVStream は、制御フローのメカニズムとして論理ゲートを使用します。 によって表される各ロジック ゲート、 [ **KSGATE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_ksgate)構造体。
+AVStream では、制御フロー機構としてロジックゲートが使用されます。 各ロジックゲートは、 [**Ksk ゲート**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_ksgate)構造体によって表されます。
 
-AVStream では、各フィルターまたは 1 つとゲートを使用した pin を初期化します。 ミニドライバーは、その特定のオブジェクトがデータを処理する場合を判断するのにこのメカニズムを使用できます。 Pin の処理の制御ゲートを取得するようにミニドライバーを呼び出す[ **KsPinGetAndGate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-kspingetandgate)します。 フィルター処理コントロール ゲートを取得する[ **KsFilterGetAndGate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksfiltergetandgate)します。
+AVStream は、1つのおよびゲートで各フィルターまたはピンを初期化します。 ミニドライバーは、このメカニズムを使用して、特定のオブジェクトがいつデータを処理できるかを判断できます。 ピンの処理制御ゲートを取得するために、ミニドライバーは[**Kspingetandgate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-kspingetandgate)を呼び出します。 フィルターの処理制御ゲートを取得するには、 [**Ksk Filtergetandgate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksfiltergetandgate)を呼び出します。
 
-新しいロジックを作成するゲート、ミニドライバー呼び出し[ **KsGateInitializeAnd** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksgateinitializeand)または[ **KsGateInitializeOr**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksgateinitializeor)します。 状態遷移を転送し、もう 1 つのゲートの入力として、1 つのゲートの出力を使用することができます。 これを行うには、指定、 *NextOrGate*または*NextAndGate*これらの呼び出しのパラメーター。
+新しいロジックゲートを作成するために、ミニドライバーは[**KsGateInitializeAnd**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksgateinitializeand)または[**KsGateInitializeOr**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksgateinitializeor)を呼び出します。 1つのゲートの出力を別のゲートへの入力として使用し、その結果、状態遷移を転送できます。 これを行うには、これらの呼び出しに*Nextorgate*パラメーターまたは*nextorgate*パラメーターを指定します。
 
-論理ゲートを既存の入力を閉じるには、呼び出すことができます[ **KsGateTurnInputOff**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksgateturninputoff)します。 ミニドライバーは、この呼び出しを中止し、アクティブな pin を閉じるか、無期限の処理を中断すること。
+ロジックゲートへの既存の入力を閉じるには、 [**KsGateTurnInputOff**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksgateturninputoff)を呼び出すことができます。 ミニドライバーは、アクティブな pin を停止および終了したり、無期限に処理を中断したりするために、この呼び出しを行う場合があります。
 
-同様に、呼び出す[ **KsGateTurnInputOn** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksgateturninputon)を特定のゲートに既存の入力を開きます。
+同様に、 [**KsGateTurnInputOn**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksgateturninputon)を呼び出して、特定のゲートへの既存の入力を開きます。
 
-キャプチャしようとスレッドを処理する準備ができたら、*で*処理するオブジェクトの処理を制御する AND ゲートの入力。 これは、ミニドライバーの呼び出しを行う[ **KsGateCaptureThreshold**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksgatecapturethreshold)します。
+スレッドは、処理の準備が整うと、処理オブジェクトの処理を制御するおよびゲートの入力*時に*をキャプチャしようとします。 これを行うために、ミニドライバーは[**KsGateCaptureThreshold**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksgatecapturethreshold)を呼び出します。
 
-AND ゲートが開いている場合は、AVStream がゲートへの入力をオフにし、処理が開始します。 その他のスレッドをキャプチャできましていない処理中に、ゲートが閉じているようになりましたので、*で*ゲートの入力。 1 つのスレッドは、一度にデータを処理できます。
+およびゲートが開いている場合、AVStream はゲートへの入力をオフにし、処理を開始します。 処理中にゲートが閉じられるようになったため、他のスレッドがゲートの入力*時に*をキャプチャすることはできません。 一度に1つのスレッドのみがデータを処理できます。
 
-を変更せず、ゲートの状態を確認するようにミニドライバーを呼び出すことができます[ **KsGateGetStateUnsafe**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksgategetstateunsafe)します。 ただし、この関数が同期を処理しないことに注意してください。
+変更せずにゲートの状態を確認するために、ミニドライバーは[**KsGateGetStateUnsafe**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksgategetstateunsafe)を呼び出すことができます。 ただし、この関数は同期を処理しないことに注意してください。
 
-論理ゲートを削除する[ **KsGateTerminateAnd** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksgateterminateand)または[ **KsGateTerminateOr**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksgateterminateor)します。 削除するゲートがゲート チェーンの先頭にあります。
+ロジックゲートを削除するには、 [**KsGateTerminateAnd**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksgateterminateand)または[**KsGateTerminateOr**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksgateterminateor)を呼び出します。 削除するゲートは、ゲートチェーンの先頭にある必要があります。
 
-論理ゲートへの入力として、暗証番号 (pin) をアタッチし、フィルターへの入力として同じ論理ゲートを接続し、ゲート、呼び出し[ **KsPinAttachAndGate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-kspinattachandgate)または[ **KsPinAttachOrGate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-kspinattachorgate).
+Pin をロジックゲートに入力としてアタッチした後、同じロジックゲートをフィルターの AND ゲートへの入力として接続するには、 [**KsPinAttachAndGate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-kspinattachandgate)または[**KsPinAttachOrGate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-kspinattachorgate)を呼び出します。
 
-### <a name="determining-gate-status"></a>ゲートの状態を判断します。
+### <a name="determining-gate-status"></a>ゲートの状態の確認
 
-And ゲートの値を**カウント**KSGATE 構造体のメンバーである数を引いた数*オフ*入力。
+およびゲートの場合、KSGATE 構造体の**Count**メンバーの値は、 *off*入力の数から1を引いた値になります。
 
-Count = 1 - (数*オフ*入力)
+Count = 1- *(入力数*が不足しています)
 
-この値が 0 に等しいまたはそれよりも小さい場合は、ゲートは閉じられます。 この値が 0 より大きい場合は、ゲートが開きます。
+この値が0以下の場合、ゲートは閉じられます。 この値が0より大きい場合は、ゲートが開かれています。
 
-値、またはゲートの**カウント**KSGATE のメンバーの数は、*で*ゲートへの入力。
+またはゲートの場合、KSGATE の**Count**メンバーの値はゲートへ*の入力の数になり*ます。
 
-Count = (数*で*入力)
+Count = (入力*時*の数)
 
-この値が 0 に等しい場合は、ゲートは閉じられます。 場合**カウント**はゼロより大きく、ゲートが開きます。
+この値が0に等しい場合、ゲートは閉じられます。 **Count**が0より大きい場合は、ゲートが開かれています。
 
-ゲートが有効な**カウント**の範囲のいずれかまたは。ゲートが有効な**カウント**0 以上の範囲。 設定しない**カウント**に無効な値です。*AVStream では、ミニドライバーが有効な状態にゲートを設定している検証されません。*
+およびゲートの有効な**数**の範囲は1以下です。またはゲートの有効な**数**の範囲が0以上です。 **Count**を無効な値に設定しないでください。*Avstream では、ミニドライバーによってゲートが有効な状態に設定されているかどうかは検証されません。*
 
  
 

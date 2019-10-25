@@ -3,48 +3,48 @@ title: キャプチャ、プレビュー、静止画カテゴリ
 description: キャプチャ、プレビュー、静止画カテゴリ
 ms.assetid: b82cc3b6-1cea-4864-9501-95919f05455f
 keywords:
-- ストリーム カテゴリ WDK ビデオのキャプチャ、ビデオ ストリームをキャプチャします。
-- ストリーム カテゴリ WDK ビデオのキャプチャ、ビデオ ストリームをプレビュー
-- ストリーム カテゴリ WDK ビデオのキャプチャ、静止画像のキャプチャ
-- ビデオ ストリーム カテゴリの WDK ビデオのキャプチャのキャプチャします。
-- ビデオ ストリーム カテゴリ WDK ビデオ キャプチャをプレビューします。
-- 静止画像カテゴリ WDK ビデオ キャプチャをキャプチャします。
+- ストリームカテゴリ WDK ビデオキャプチャ、ビデオストリームのキャプチャ
+- ストリームカテゴリ WDK ビデオキャプチャ、ビデオストリームのプレビュー
+- ストリームカテゴリ WDK ビデオキャプチャ、キャプチャ静止イメージ
+- ビデオストリームのキャプチャのカテゴリ WDK ビデオキャプチャ
+- ビデオストリームのプレビューカテゴリ WDK ビデオキャプチャ
+- キャプチャ静止イメージカテゴリ WDK ビデオキャプチャ
 - PINNAME_VIDEO_CAPTURE
 - NAME_VIDEO_PREVIEW
 - PINNAME_VIDEO_STILL
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 145c0d2baf0638130bc11efc3b616f69415bffc7
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 442932b257ed01e8a8677684afe511bab505881b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386665"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844741"
 ---
 # <a name="capture-preview-and-still-category"></a>キャプチャ、プレビュー、静止画カテゴリ
 
 
-次の Guid は、ビデオ ストリームをキャプチャし、ビデオのストリームをプレビューし、(ハードウェアでサポートされている) 場合、イメージ キャプチャもカテゴリに対応しています。
+次の Guid は、ビデオストリームをキャプチャし、ビデオストリームをプレビューし、静止イメージをキャプチャするカテゴリに対応しています (ハードウェアでサポートされている場合)。
 
--   **PINNAME\_ビデオ\_キャプチャ**
+-   **ビデオ\_キャプチャ\_PINNAME**
 
-    カテゴリ出力ピンがキャプチャまたは非圧縮のデジタル ビデオのストリームを提供します。 このストリームのカテゴリは、ビデオの会議へと画像分析、ディスクにムービーを書き込みに使用されます。
+    キャプチャカテゴリの出力ピンは、圧縮または圧縮されていないデジタルビデオのストリームを提供します。 このストリームカテゴリは、ムービーをディスク、ビデオ会議、および画像分析に書き込むために使用されます。
 
--   **PINNAME\_ビデオ\_プレビュー**
+-   **PINNAME\_VIDEO\_PREVIEW**
 
-    カテゴリ出力ピンがプレビューでは、圧縮されていないデジタル ビデオのストリームを提供します。 このストリームのカテゴリは、DirectDraw を直接表示できる RGB または YUV のいずれかの形式で、ローカルのモニター、ビデオ ストリームの表示に使用されます。 リソースに限定された状況にはキャプチャ ミニドライバーにプレビュー ストリーム ピン ピンがストリームをキャプチャするよりも低い優先順位を設定する必要があります。
+    プレビューカテゴリの出力ピンは、非圧縮デジタルビデオのストリームを提供します。 このストリームカテゴリは、ローカルモニターのビデオストリームを表示するために使用されます。 RGB 形式または YUV 形式で、DirectDraw によって直接表示できます。 リソースが限られている状況では、capture ミニドライバーは、キャプチャストリームの pin より小さいプレビューストリームのピンの優先順位を設定する必要があります。
 
--   **PINNAME\_ビデオ\_まだ**
+-   **ビデオ\_\_PINNAME**
 
-    まだカテゴリの出力ピンは、キャプチャ ストリームと (つまり、キャプチャ ストリームよりも高い品質の多くの場合、) 静止画像ストリームの両方を生成できるはデュアル モードのカメラで使用されます。 静止画像ストリームには、外部またはプログラムでは、画像の取得をトリガする機能が含まれています。
+    引き続きカテゴリの出力ピンは、キャプチャストリームと静止イメージストリームの両方を生成できるデュアルモードカメラで使用されます (多くの場合、キャプチャストリームよりも品質が高くなります)。 静止イメージストリームには、イメージの取得を外部またはプログラムによってトリガーする機能が含まれています。
 
-キャプチャ、プレビュー、およびまだストリーム暗証番号 (pin) カテゴリは、データ形式とストリーム特性の観点からはほぼ同じです。
+キャプチャ、プレビュー、およびストリームピンの各カテゴリは、データ形式やストリーム特性という点でほぼ同じです。
 
-**注**  :多くのカメラでは、1 つの出力ストリームのみを生成するため、Microsoft DirectShow にキャプチャし、プレビュー ストリームに 1 つのストリームを分割するスマート Tee フィルターが含まれます。 そのため、1 つのストリームのみを生成するカメラのミニドライバーすると、プレビュー ストリームを生成するために、データ ストリームが内部的には重複しない必要があります。
+**注**  : 多くのカメラでは1つの出力ストリームしか生成されないため、Microsoft DirectShow には、1つのストリームをキャプチャとプレビューストリームに分割するスマート t フィルターが含まれています。 そのため、1つのストリームのみを生成するカメラのミニドライバーでは、データストリームを内部で複製してプレビューストリームを生成することはできません。
 
  
 
-指定するときに**PINNAME\_ビデオ\_キャプチャ**、または**PINNAME\_ビデオ\_プレビュー**、または**PINNAME\_ビデオ\_まだ**ピンを使用して、次の表の情報。
+**Pinname\_video\_CAPTURE**、または**pinname\_video\_PREVIEW**、または**PINNAME\_video\_まだ**pin を指定する場合は、次の表に示す情報を使用します。
 
 <table>
 <colgroup>
@@ -53,49 +53,49 @@ ms.locfileid: "67386665"
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
+<th>備わっている</th>
 <th>Value</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p><strong>DataRange 構造体</strong></p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_datarange_video" data-raw-source="[&lt;strong&gt;KS_DATARANGE_VIDEO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_datarange_video)"><strong>KS_DATARANGE_VIDEO</strong> </a> (フレームのみ)</p>
-<p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_datarange_video2" data-raw-source="[&lt;strong&gt;KS_DATARANGE_VIDEO2&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_datarange_video2)"><strong>KS_DATARANGE_VIDEO2</strong> </a> (bob またはの設定を一元管理のフィールドまたはフレームを)</p>
-<p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_datarange_mpeg1_video" data-raw-source="[&lt;strong&gt;KS_DATARANGE_MPEG1_VIDEO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_datarange_mpeg1_video)"><strong>KS_DATARANGE_MPEG1_VIDEO</strong></a></p>
-<p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_datarange_mpeg2_video" data-raw-source="[&lt;strong&gt;KS_DATARANGE_MPEG2_VIDEO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_datarange_mpeg2_video)"><strong>KS_DATARANGE_MPEG2_VIDEO</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_datarange_video" data-raw-source="[&lt;strong&gt;KS_DATARANGE_VIDEO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_datarange_video)"><strong>KS_DATARANGE_VIDEO</strong></a> (フレームのみ)</p>
+<p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_datarange_video2" data-raw-source="[&lt;strong&gt;KS_DATARANGE_VIDEO2&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_datarange_video2)"><strong>KS_DATARANGE_VIDEO2</strong></a> (フィールドまたはフレーム、bob、またはの設定)</p>
+<p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_datarange_mpeg1_video" data-raw-source="[&lt;strong&gt;KS_DATARANGE_MPEG1_VIDEO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_datarange_mpeg1_video)"><strong>KS_DATARANGE_MPEG1_VIDEO</strong></a></p>
+<p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_datarange_mpeg2_video" data-raw-source="[&lt;strong&gt;KS_DATARANGE_MPEG2_VIDEO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_datarange_mpeg2_video)"><strong>KS_DATARANGE_MPEG2_VIDEO</strong></a></p></td>
 </tr>
 <tr class="even">
 <td><p><strong>DataFormat 構造体</strong></p></td>
 <td><p>KS_DATAFORMAT_VIDEO (フレームのみ)</p>
-<p>KS_DATAFORMAT_VIDEO2 (bob またはの設定を一元管理のフィールドまたはフレームを)</p>
-<p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_mpeg1videoinfo" data-raw-source="[&lt;strong&gt;KS_MPEG1VIDEOINFO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_mpeg1videoinfo)"><strong>KS_MPEG1VIDEOINFO</strong> </a> (用 MPEG1)</p>
-<p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_mpegvideoinfo2" data-raw-source="[&lt;strong&gt;KS_MPEGVIDEOINFO2&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_mpegvideoinfo2)"><strong>KS_MPEGVIDEOINFO2</strong> </a> (用 MPEG2)</p></td>
+<p>KS_DATAFORMAT_VIDEO2 (フィールドまたはフレーム、bob、またはの設定)</p>
+<p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_mpeg1videoinfo" data-raw-source="[&lt;strong&gt;KS_MPEG1VIDEOINFO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_mpeg1videoinfo)"><strong>KS_MPEG1VIDEOINFO</strong></a> (MPEG1 の場合)</p>
+<p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_mpegvideoinfo2" data-raw-source="[&lt;strong&gt;KS_MPEGVIDEOINFO2&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_mpegvideoinfo2)"><strong>KS_MPEGVIDEOINFO2</strong></a> (MPEG2 用)</p></td>
 </tr>
 <tr class="odd">
-<td><p><strong>主な形式の GUID</strong></p></td>
+<td><p><strong>メジャー形式 GUID</strong></p></td>
 <td><p>KSDATAFORMAT_TYPE_VIDEO</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>サブ GUID を書式設定します。</strong></p></td>
+<td><p><strong>サブフォーマット GUID</strong></p></td>
 <td><p>RGB16、RGB24、UYVY、JPEG</p></td>
 </tr>
 <tr class="odd">
-<td><p><strong>GUID を指定子</strong></p></td>
+<td><p><strong>指定子 GUID</strong></p></td>
 <td><p>KSDATAFORMAT_SPECIFIER_VIDEOINFO (フレームのみ)</p>
 <p>KSDATAFORMAT_SPECIFIER_VIDEOINFO2 (フィールドまたはフレーム)</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>拡張のヘッダーのサイズ</strong></p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_frame_info" data-raw-source="[&lt;strong&gt;KS_FRAME_INFO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_frame_info)"><strong>KS_FRAME_INFO</strong> </a>場合 MPEG フォーマットではありません。 MPEG、形式の場合は 0 します。</p></td>
+<td><p><strong>拡張ヘッダーサイズ</strong></p></td>
+<td><p>MPEG 形式でない場合は<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_frame_info" data-raw-source="[&lt;strong&gt;KS_FRAME_INFO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_frame_info)"><strong>KS_FRAME_INFO</strong></a> 。 MPEG 形式の場合は0。</p></td>
 </tr>
 <tr class="odd">
-<td><p><strong>必要なプロパティ セット</strong></p></td>
+<td><p><strong>必須のプロパティセット</strong></p></td>
 <td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/kspropsetid-connection" data-raw-source="[KSPROPSETID_Connection](https://docs.microsoft.com/windows-hardware/drivers/stream/kspropsetid-connection)">KSPROPSETID_Connection</a></p>
 <p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/propsetid-vidcap-droppedframes" data-raw-source="[PROPSETID_VIDCAP_DROPPEDFRAMES](https://docs.microsoft.com/windows-hardware/drivers/stream/propsetid-vidcap-droppedframes)">PROPSETID_VIDCAP_DROPPEDFRAMES</a></p></td>
 </tr>
 <tr class="even">
-<td><p><strong>必要なイベントのセット</strong></p></td>
+<td><p><strong>必須イベントセット</strong></p></td>
 <td><p>なし</p></td>
 </tr>
 <tr class="odd">

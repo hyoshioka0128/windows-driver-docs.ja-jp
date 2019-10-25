@@ -4,19 +4,19 @@ description: MS\_SMHBA\_SCSIENTRY WMI クラス
 ms.assetid: 8ac7a979-b3fe-4da6-a8e7-301c64b27e46
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: e1e2d9bb44b382e421905625b8450c09282f4ba6
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 156cb6df94d09edf9e531b759e3e7bad996e6365
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386121"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844521"
 ---
-# <a name="mssmhbascsientry-wmi-class"></a>MS\_SMHBA\_SCSIENTRY WMI クラス
+# <a name="ms_smhba_scsientry-wmi-class"></a>MS\_SMHBA\_SCSIENTRY WMI クラス
 
 
-記憶域管理 API をサポートする HBA ミニポート ドライバーは、MS を使用して\_SMHBA\_SCSIENTRY クラス SCSI 論理ユニットとそのアダプターを一意に識別するオペレーティング システムによって生成される情報を格納します。 このクラスは、論理ユニットのオペレーティング システムの情報と、SSP 識別子の間のバインドを構築に使用されます。
+記憶域管理 API をサポートする HBA ミニポートドライバーは、MS\_SMHBA\_SCSIENTRY クラスを使用して、SCSI 論理ユニットとそのアダプターを一意に識別するオペレーティングシステムによって生成される情報を格納します。 このクラスは、オペレーティングシステム情報と、論理ユニットの SSP 識別子との間のバインドを構築するために使用されます。
 
-MS\_SMHBA\_SCSIENTRY クラスが次のように定義されている*Hbaapi.mof*:
+MS\_SMHBA\_SCSIENTRY クラスは、 *Hbaapi .mof*で次のように定義されています。
 
 ```cpp
 class MS_SMHBA_SCSIENTRY
@@ -32,9 +32,9 @@ class MS_SMHBA_SCSIENTRY
 };
 ```
 
-このクラスの定義が WMI ツール スイートによってコンパイルされると、次のデータ構造が生成されます。
+このクラス定義が WMI ツールスイートによってコンパイルされると、次のデータ構造が生成されます。
 
-[**MS\_SMHBA\_SCSIENTRY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_ms_smhba_scsientry)
+[**MS\_SMHBA\_SCSIENTRY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_ms_smhba_scsientry)
 
 この WMI クラスに関連付けられているメソッドはありません。
 

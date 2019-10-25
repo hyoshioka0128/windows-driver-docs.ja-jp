@@ -4,12 +4,12 @@ description: メディア切断時の省電力
 ms.assetid: 592f3835-47ec-443a-9ab5-e700fed2f7f4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 45d5da9822ef33c61dbde1f52b6eb7303be767d3
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: afabbff8ec4d34f2e5218c659c0fb2223e52532b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67356204"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844135"
 ---
 # <a name="low-power-on-media-disconnect"></a>メディア切断時の省電力
 
@@ -17,71 +17,71 @@ ms.locfileid: "67356204"
 
 
 
-メディア切断の省電力 (D3 の切断) 機能は、メディアが切断されたときに、低電力状態 (D3) にネットワーク アダプターを配置することで電力を節約します。 メディアが再接続されたときにネットワーク アダプターが再びバックアップ (D0) の電力状態にします。
+メディアの切断 (切断時に D3) 機能は、メディアが切断されたときにネットワークアダプターを低電力状態 (D3) に配置することで電力を節約します。 メディアが再接続されると、ネットワークアダプターがフルパワー状態 (D0) に戻されます。
 
-NDIS は、D3 には、これらの条件下で機能を切断します。
+NDIS は、次の条件下で D3 on disconnect 機能を使用します。
 
--   ネットワーク アダプターのハードウェアは、メディア ウェイク イベントを生成できる必要がありますに接続します。
+-   ネットワークアダプターのハードウェアは、メディア接続でウェイクイベントを生成できる必要があります。
 
--   ミニポート ドライバーのネットワーク アダプターのウェイク イベント機能を報告する必要があります、 **MinLinkChangeWakeUp**のメンバー、 [ **NDIS\_PM\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_capabilities)構造体。
+-   ミニポートドライバーは、 [**NDIS\_PM\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_capabilities)の構造の**Minlinkchangewakeup**メンバーのネットワークアダプターの wake イベント機能を報告する必要があります。
 
--   値**MinLinkChangeWakeUp**の値に対応する必要があります、 **DeviceWake**のメンバー、 [**デバイス\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_capabilities)によって報告される構造体、 [ **IRP\_MN\_クエリ\_機能**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-capabilities) IRP します。
+-   **Minlinkchangewakeup**の値は、[**デバイス\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_capabilities)の構造の**devicewake**メンバーの値に対応している必要があります。この値は、 [**irp\_、\_クエリ\_機能**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-capabilities)の irp によって報告されます。
 
--   ミニポート ドライバーは、NDIS 6.20 ドライバーまたは以降のバージョンとして登録する必要があります。
+-   ミニポートドライバーは、NDIS 6.20 ドライバーまたはそれ以降のバージョンとして登録する必要があります。
 
--   ネットワーク アダプターはイーサネット PCI アダプターである必要があります。
+-   ネットワークアダプターは、イーサネット PCI アダプターである必要があります。
 
--   ウェイク イベント機能を有効にする必要があります、  **\*DeviceSleepOnDisconnect** INF ファイルの標準のキーワード。
+-   Wake イベント機能は、 **\*DeviceSleepOnDisconnect** standard INF file キーワードで有効にする必要があります。
 
--   コンピューター チップセットでは、ウェイク イベントを正しく反映されるまで、コンピューターの電源が完全にできる必要があります。 NDIS、DEVPKEY をクエリすることによって検証\_PciDevice\_S0WakeupSupported PCI プロパティ。
+-   コンピューターの電源が入っている間は、コンピューターのチップセットで wake イベントを正しく伝達できる必要があります。 NDIS は、DEVPKEY\_PciDevice\_S0WakeupSupported PCI プロパティを照会することによってこれを検証します。
 
-D3 に切断注記を使用できるは、動作状態 (S0) でコンピューターの電源が完全にだけです。 コンピューターが、リンクの状態が循環した外部; ときにコンピューターのスリープ解除を防ぐためにスリープ状態に入ったときに、この機能は取り消されますつまり、ときに、スイッチが有効または無効にします。 コンピューターがスリープ状態に入ったときに、低電力状態を参照してください、設定の詳細については[Wake on LAN の低電力](low-power-for-wake-on-lan.md)します。
+切断時の D3 は、コンピューターの動作状態 (S0) が完全に機能している場合にのみ使用できます。 この機能は、コンピューターがスリープ状態になったときにキャンセルされ、リンクの状態が外部で切り替えられたときにコンピューターがスリープ解除されるのを防ぎます。つまり、スイッチがオフになっていて、オンになっている場合です。 コンピューターがスリープ状態に入るときの低電力状態の設定の詳細については、「 [Wake ON LAN の低電力](low-power-for-wake-on-lan.md)」を参照してください。
 
-ミニポート ドライバー レポート D3 には、初期化中に機能を切断します。 詳細については D3 のレポートの機能を切断時を参照してください[電源管理機能の報告](reporting-power-management-capabilities.md)します。
+ミニポートドライバーは、初期化中に切断機能について D3 を報告します。 切断機能のレポート D3 の詳細については、「[電源管理機能のレポート](reporting-power-management-capabilities.md)」を参照してください。
 
-**\*DeviceSleepOnDisconnect** INF ファイルの標準のキーワードは、切断のデバイスが有効になっているまたはで D3 のサポートを無効になっているかどうかを指定します。 この INF キーワードの詳細については、次を参照してください。[電源管理のための標準化された INF キーワード](standardized-inf-keywords-for-power-management.md)します。
+**\*DeviceSleepOnDisconnect** standard INF file キーワードは、デバイスが切断時に D3 のサポートを有効または無効にしたかどうかを指定します。 この INF キーワードの詳細については、「 [Power Management の標準化](standardized-inf-keywords-for-power-management.md)された inf キーワード」を参照してください。
 
-初期化中には、D3 の切断をサポートしていますがメディアのオペレーティング システムに通知する機能をサポートできる最下位の電源レベルを報告する必要がありますミニポート ドライバーは、イベントを接続します。 ミニポート ドライバーでの電源のレベルを報告する、 **MinLinkChangeWakeUp**のメンバー、 [ **NDIS\_PM\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_capabilities)構造体。 たとえば、ミニポート ドライバーをレポートできます**NdisDeviceStateD3**します。
+初期化中に、切断時に D3 をサポートするミニポートドライバーは、メディア接続イベントのオペレーティングシステムに通知する機能をサポートできる最も低い電源レベルを報告する必要があります。 ミニポートドライバーは、 [**NDIS\_PM\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_capabilities)構造の**Minlinkchangewakeup**メンバーの電源レベルを報告します。 たとえば、ミニポートドライバーは**NdisDeviceStateD3**を報告できます。
 
-次の図は、メディア切断イベント後に、ネットワーク アダプターを低電力状態に設定するイベントのシーケンスを示しています。
+次の図は、メディアの切断イベント後にネットワークアダプターを低電力状態に設定するイベントのシーケンスを示しています。
 
-![メディア切断イベント後に、省電力状態に nic を設定するイベントの順序を示す図](images/d3ondisconnect.png)
+![メディアの切断イベント後に nic を低電力状態に設定するイベントのシーケンスを示す図](images/d3ondisconnect.png)
 
-アダプターは、メディアの切断を検出すると、次のシーケンスが発生します。
+アダプターがメディアの切断を検出すると、次の順序が発生します。
 
-1.  ネットワーク アダプターのハードウェアでは、メディアが切断イベントと、ミニポート ドライバーに情報を渡すを検出します。
+1.  ネットワークアダプターのハードウェアは、メディアの切断イベントを検出し、その情報をミニポートドライバーに渡します。
 
-2.  ミニポート ドライバーに通知するメディアの NDIS 切断イベントを使用して、 [ **NDIS\_状態\_リンク\_状態**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-link-state)状態を示す値。 **StatusBuffer**のメンバー、 [ **NDIS\_状態\_INDICATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)構造に含まれる、 [ **NDIS\_リンク\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_link_state)構造体。 MediaConnectStateDisconnected 値で設定されます、 **MediaConnectState**のメンバー、 **NDIS\_リンク\_状態**構造体。
+2.  ミニポートドライバーは、 [**ndis\_の状態\_リンク\_状態**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-link-state)の状態の表示を使用して、メディアの切断イベントを ndis に通知します。 [**Ndis\_ステータス\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)表示構造体の**statusbuffer**メンバーには、 [**ndis\_LINK\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_link_state)構造体が含まれています。 MediaConnectStateDisconnected 値は、 **NDIS\_LINK\_STATE**構造体の**MediaConnectState**メンバーで設定されます。
 
-3.  NDIS 使用[OID\_PM\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pm-parameters)ウェイク メディアが接続を Wake on LAN を無効にして有効にする (NDIS\_PM\_WAKE\_ON\_リンク\_変更\_ENABLED 設定されている、 **WakeUpFlags**メンバー)。
+3.  NDIS は、 [\_PM\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pm-parameters)を使用して WAKE on LAN を無効にし、wake on media connect を有効にします (NDIS\_PM\_WAKE\_ON\_LINK\_CHANGE\_ENABLED は**WakeUpFlags**メンバーに設定されています)。
 
-4.  NDIS を使用して、 [OID\_PNP\_設定\_POWER](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power) OID 新しい電源の状態 (D3) のミニポート ドライバーに通知します。
+4.  NDIS は、 [oid\_PNP\_設定\_power](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power) oid を使用して、新しい電源状態 (D3) をミニポートドライバーに通知します。
 
-5.  NDIS PCIe バスに送信、 [ **IRP\_MN\_待機\_WAKE** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-wait-wake) IRP を再接続イベントを待機します。
+5.  NDIS は、再接続イベントを待機するために、[**ウェイクアップ\_ウェイク irp を\_待機**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-wait-wake)するように、PCIe バスを送信し\_します。
 
-6.  NDIS PCIe バスを D3 の状態に設定する、 [ **IRP\_MN\_設定\_POWER** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-set-power) IRP します。
+6.  NDIS は、 [**irp\_\_設定**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-set-power)された\_電源 irp を使用して、PCIe バスを D3 状態に設定します。
 
-次の図は、メディア接続イベント後に、ネットワーク アダプターに全機能を復元するイベントのシーケンスを示しています。
+次の図は、メディア接続イベント後にネットワークアダプターに電力を完全に復元するイベントのシーケンスを示しています。
 
-![メディア接続イベント後に、nic に全機能を復元するイベントの順序を示す図](images/d0onconnect.png)
+![メディア接続イベント後に nic にフルパワーを復元するイベントのシーケンスを示す図](images/d0onconnect.png)
 
-メディアが再接続されたときに、次のシーケンスが発生します。
+メディアが再接続されると、次のシーケンスが発生します。
 
-1.  ネットワーク アダプターでは、システムをスリープ ウェイク アサートすることで\#PCIe バスまたは PME\# PCI バスにします。
+1.  ネットワークアダプターは、PCI バス上の PCIe バスまたは PME\# で WAKE\# をアサートすることによって、システムをスリープ解除します。
 
-2.  バスが完了すると、保留中[ **IRP\_MN\_待機\_WAKE** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-wait-wake) IRP します。 IRP では、保留中の切断のシーケンスの最後の手順を完了します。
+2.  バスは、保留中の[**irp\_完了\_待機\_ウェイク**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-wait-wake)irp を完了します。 IRP は、切断シーケンスの最後のステップからの完了を保留しています。
 
-3.  NDIS で完全な電源 (D0) バスを設定する、 [ **IRP\_MN\_設定\_POWER** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-set-power) IRP します。
+3.  NDIS は、バスをフルパワー (D0) に設定します。 [**irp\_\_設定され\_電源**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-set-power)irp を使用します。
 
-4.  NDIS は、ネットワーク アダプター、OID と完全な電力 (D0) 状態に設定されての要求をミニポート ドライバーに通知[OID\_PNP\_設定\_POWER](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power)します。
+4.  NDIS は、ネットワークアダプターが完全な電力 (D0) 状態であることを通知します。これは、 [\_PNP\_設定](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power)された oid の oid セット要求と\_電源が設定されていることを示します。
 
-5.  ネットワーク アダプターに通知するメディアの NDIS 接続イベントを[ **NDIS\_状態\_リンク\_状態**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-link-state)状態を示す値。 **MediaConnectStateConnected**値を設定、 **MediaConnectState**のメンバー、 [ **NDIS\_リンク\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_link_state)構造体。
+5.  ネットワークアダプターは、 [**ndis\_状態\_リンク\_状態**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-link-state)の状態の表示を使用して、メディア接続イベントを ndis に通知します。 **MediaConnectStateConnected**値は、 [**NDIS\_LINK\_STATE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_link_state)構造体の**MediaConnectState**メンバーで設定されます。
 
-ミニポート ドライバーがサポートしている場合は、NDIS 6.30、以降[ **NDIS\_状態\_PM\_WAKE\_理由**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-pm-wake-reason)状態のインジケーターにする必要があります発行これ場合は、ネットワーク アダプターがシステムをスリープ状態の通知。 OID は、それが処理中にこの状態の通知を設定するドライバーの問題の要求の[OID\_PNP\_設定\_POWER](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power) (D0) の電力状態に遷移します。
+NDIS 6.30 以降では、ミニポートドライバーが[**ndis\_status\_PM\_WAKE\_REASON**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-pm-wake-reason)状態を示している場合、ネットワークアダプターがシステムをスリープ解除すると、この状態通知を発行する必要があります。 このドライバーは、フルパワー (D0) 状態への移行のために[電源\_設定](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power)された oid\_\_の oid セット要求を処理しているときに、この状態通知を発行します。
 
-詳細については、次を参照してください。 [NDIS Wake 理由状態インジケーター](ndis-wake-reason-status-indications.md)します。
+詳細については、「 [NDIS Wake Reason Status 兆候](ndis-wake-reason-status-indications.md)」を参照してください。
 
-**注**  ミニポート ドライバーが発行された場合、 [ **NDIS\_状態\_PM\_WAKE\_理由**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-pm-wake-reason)状態の表示発行前に行うする必要があります、 [ **NDIS\_状態\_リンク\_状態**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-link-state)状態を示す値。
+**注:** ミニポートドライバーが[ **\_ステータス\_PM\_WAKE\_REASON**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-pm-wake-reason)  を発行する場合は、 [**ndis\_状態\_リンク\_状態**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-link-state)を発行する前に、この操作を行う必要があります。状態を示します。
 
  
 

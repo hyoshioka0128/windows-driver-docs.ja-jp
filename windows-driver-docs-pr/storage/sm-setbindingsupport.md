@@ -3,7 +3,7 @@ title: SM\_SetBindingSupport 関数
 description: SM\_SetBindingSupport メソッドは、指定されたポートのバインド機能を設定します。
 ms.assetid: 31a37fa5-db3c-4944-bf93-e221fb42dc6d
 keywords:
-- 記憶装置の SM_SetBindingSupport 関数
+- SM_SetBindingSupport function Storage デバイス
 topic_type:
 - apiref
 api_name:
@@ -14,14 +14,14 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 3e291d3ce44e377fa1b3204ffb4c3f0698532932
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2ed744d8ccee6307cfdb1403f5cb3a0894ea600b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67353495"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845449"
 ---
-# <a name="smsetbindingsupport-function"></a>SM\_SetBindingSupport 関数
+# <a name="sm_setbindingsupport-function"></a>SM\_SetBindingSupport 関数
 
 
 SM\_SetBindingSupport メソッドは、指定されたポートのバインド機能を設定します。
@@ -42,16 +42,16 @@ void SM_SetBindingSupport(
 ----------
 
 *HbaPortWWN*   
-永続的なバインドを取得するポートの世界中の名 (WWN)。
+永続的なバインドを取得するポートのワールド名 (WWN)。
 
 *DomainPortWWN*   
-世界中のコールバック名 (WWN) ポートは\_を任意のポートの最小値を持つ識別子\_物理ファイバー チャネル ポートを使用して検出 SMP ポートの識別子。 値が 0 の物理ファイバー チャネル ポートを使用して SMP ポートが検出されない場合があります。
+コールバックのワールド名 (WWN)。 これは、物理ファイバーチャネルポートを使用して検出された SMP ポートの任意のポート\_識別子の最小値を持つポート\_識別子です。 物理ファイバーチャネルポートを使用して SMP ポートが検出されていない場合、この値は0になります。
 
 *フラグ*   
-永続的なバインディングに関連する機能の特定のセットを提供するには、HBA の機能とそのミニポート ドライバーを示すビットマップ。 このパラメーターには値の一覧は、HBA の説明を参照してください。\_バインド\_型 WMI クラスの修飾子。
+永続的なバインディングに関連する特定の機能セットを提供する、HBA とそのミニポートドライバーの機能を示すビットマップ。 このパラメーターに指定できる値の一覧については、「WMI クラス修飾子の\_バインド\_HBA の説明を参照してください。
 
-*HBAStatus*   
-操作の状態。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーでは、この情報を返します、SetBindingSupport の HBAStatus メンバー\_構造体。
+*Hbastatus*   
+操作の状態。 許可される値とその説明の一覧については、「 [HBA\_STATUS](hba-status.md)」を参照してください。 ミニポートドライバーは、SetBindingSupport\_OUT 構造体の HBAStatus メンバーにこの情報を返します。
 
 <a name="return-value"></a>戻り値
 ------------
@@ -61,7 +61,7 @@ WMI メソッドには適用されません。
 <a name="remarks"></a>注釈
 -------
 
-この WMI メソッドは、ミリ秒に属する\_SM\_TargetInformationMethods WMI クラスです。
+この WMI メソッドは、MS\_SM\_TargetInformationMethods WMI クラスに属しています。
 
 <a name="requirements"></a>要件
 ------------
@@ -78,19 +78,19 @@ WMI メソッドには適用されません。
 </tr>
 <tr class="even">
 <td align="left"><p>Header</p></td>
-<td align="left">Hbapiwmi.h</td>
+<td align="left">Hbapiwmi</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[HBA\_状態](hba-status.md)
+[HBA\_の状態](hba-status.md)
 
-[**SM\_SetBindingSupport\_IN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sm_setbindingsupport_in)
+[**SM\_SetBindingSupport\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sm_setbindingsupport_in)
 
-[**SM\_SetBindingSupport\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sm_setbindingsupport_out)
+[**SM\_SetBindingSupport\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sm_setbindingsupport_out)
 
  
 

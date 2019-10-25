@@ -4,17 +4,17 @@ description: PDO\_情報 WMI クラス
 ms.assetid: 1a972905-42ea-4cb2-b937-5ed0f287d80a
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 8d8e541da88b8f77b9f1240ce7f7cda9c642abd7
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 13c7b63e15eae973caa4d9424cf1957e6bba5172
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382063"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842732"
 ---
-# <a name="pdoinformation-wmi-class"></a>PDO\_情報 WMI クラス
+# <a name="pdo_information-wmi-class"></a>PDO\_情報 WMI クラス
 
 
-MPIO ドライバーの PDO を使用して\_物理デバイスのデバイスのパスにマッピングを識別する情報の WMI クラスです。
+MPIO ドライバーは、PDO\_INFORMATION WMI クラスを使用して、物理デバイスのデバイスからパスへのマッピングを識別します。
 
 ```cpp
 class PDO_INFORMATION
@@ -44,7 +44,7 @@ class PDO_INFORMATION
 };
 ```
 
-このクラスの定義が WMI ツール スイートによってコンパイルされると、生成、 [ **PDO\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mpiodisk/ns-mpiodisk-_pdo_information)データ構造体。 この WMI クラスに関連付けられているメソッドはありません。
+このクラス定義が WMI ツールスイートによってコンパイルされると、 [**PDO\_INFORMATION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mpiodisk/ns-mpiodisk-_pdo_information)データ構造が生成されます。 この WMI クラスに関連付けられているメソッドはありません。
 
  
 

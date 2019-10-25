@@ -1,9 +1,9 @@
 ---
-title: AVC\_関数\_送信\_応答
-description: AVC\_関数\_送信\_応答
+title: '\_応答を送信\_AVC\_関数'
+description: '\_応答を送信\_AVC\_関数'
 ms.assetid: f04caed8-8521-4dfa-9bfa-cf71ec7a658e
 keywords:
-- AVC_FUNCTION_SEND_RESPONSE ストリーミング メディア デバイス
+- AVC_FUNCTION_SEND_RESPONSE ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,30 +14,30 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0014d252950e23fdd5b740edd60f5f7983e7b0a0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7a0dbd6069705f0e05b9d1a465f635f634150a35
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386731"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845071"
 ---
-# <a name="avcfunctionsendresponse"></a>AVC\_関数\_送信\_応答
+# <a name="avc_function_send_response"></a>\_応答を送信\_AVC\_関数
 
 
 ## <span id="ddk_avc_function_send_response_ks"></span><span id="DDK_AVC_FUNCTION_SEND_RESPONSE_KS"></span>
 
 
-**AVC\_関数\_送信\_応答**AV/C 単体テストとサブユニット要求に応答する関数のコードを使用します。
+**\_応答関数コード\_送信する AVC\_関数**は、AV/C ユニットおよびサブユニットの要求に応答するために使用されます。
 
 ### <a name="io-status-block"></a>I/O ステータス ブロック
 
-成功すると、AV/C プロトコル ドライバー設定可能性があります**Irp -&gt;IoStatus.Status**いずれかに。
+正常に実行された場合は、AV/C プロトコルドライバーによって、 **Irp&gt;iostatus. status**が次のいずれかに設定されている可能性があります。
 
-ステータス\_成功の場合は、応答が 1 つまたは複数のバスのため破棄を元の要求以降リセットまたは
+元の要求以降に1つ以上のバスのリセットが原因で応答が破棄された場合の状態\_成功
 
-ステータス\_PENDING 場合に、応答が正常に配信*61883.sys* (要求の発信側に正常に配信を意味します)。
+応答が*61883*に正常に配信された場合 (要求イニシエーターへの配信が成功したことを意味します)、状態\_保留中です。
 
-その他の戻り値には、考えられる。
+その他の戻り値には次のようなものがあります。
 
 <table>
 <colgroup>
@@ -53,7 +53,7 @@ ms.locfileid: "67386731"
 <tbody>
 <tr class="odd">
 <td><p>STATUS_INSUFFICIENT_RESOURCES</p></td>
-<td><p>内部バッファーを割り当てられませんでした。</p></td>
+<td><p>内部バッファーの割り当てに失敗しました。</p></td>
 </tr>
 </tbody>
 </table>
@@ -64,7 +64,7 @@ ms.locfileid: "67386731"
 
 ### <a name="comments"></a>コメント
 
-この関数は、AVC\_コマンド\_IRB 構造の下に示すようにします。
+この関数では、次に示すように、AVC\_コマンド\_IRB 構造体を使用します。
 
 ```cpp
 typedef struct _AVC_COMMAND_IRB {
@@ -89,71 +89,71 @@ typedef struct _AVC_COMMAND_IRB {
 } AVC_COMMAND_IRB, *PAVC_COMMAND_IRB;
 ```
 
-### <a name="span-idavccommandirbinputspanspan-idavccommandirbinputspanavccommandirb-input"></a><span id="avc_command_irb_input"></span><span id="AVC_COMMAND_IRB_INPUT"></span>AVC\_コマンド\_IRB 入力
+### <a name="span-idavc_command_irb_inputspanspan-idavc_command_irb_inputspanavc_command_irb-input"></a><span id="avc_command_irb_input"></span><span id="AVC_COMMAND_IRB_INPUT"></span>AVC\_コマンド\_IRB 入力
 
-**一般的です**  
-**関数**にこのメンバーのサブメンバーを設定する必要があります**AVC\_関数\_送信\_応答**、AVC から\_関数の列挙体。
+**的**  
+このメンバーの**関数**submember は、AVC\_関数列挙から **\_応答を送信\_には、avc\_関数**に設定されている必要があります。
 
 <span id="SubunitAddrFlag"></span><span id="subunitaddrflag"></span><span id="SUBUNITADDRFLAG"></span>**SubunitAddrFlag**  
-取得した値に設定、 **AVC\_関数\_取得\_要求**完了します。
+は、 **AVC\_関数**から取得した値に設定し、\_要求の完了\_取得します。
 
-<span id="AlternateOpcodesFlag"></span><span id="alternateopcodesflag"></span><span id="ALTERNATEOPCODESFLAG"></span>**AlternateOpcodesFlag**  
-無視されます。
+<span id="AlternateOpcodesFlag"></span><span id="alternateopcodesflag"></span><span id="ALTERNATEOPCODESFLAG"></span>**Alternateopのフラグ**  
+無効.
 
 <span id="TimeoutFlag"></span><span id="timeoutflag"></span><span id="TIMEOUTFLAG"></span>**TimeoutFlag**  
-無視されます。
+無効.
 
 <span id="RetryFlag"></span><span id="retryflag"></span><span id="RETRYFLAG"></span>**RetryFlag**  
-無視されます。
+無効.
 
 <span id="CommandType"></span><span id="commandtype"></span><span id="COMMANDTYPE"></span>**CommandType**  
-応答は無視されます。
+応答では無視されます。
 
 <span id="ResponseCode"></span><span id="responsecode"></span><span id="RESPONSECODE"></span>**ResponseCode**  
-このメンバーから値のいずれかに設定する必要があります、 **AvcResponseCode**列挙体。
+このメンバーは、 **AvcResponseCode**列挙体のいずれかの値に設定する必要があります。
 
 <span id="SubunitAddr"></span><span id="subunitaddr"></span><span id="SUBUNITADDR"></span>**SubunitAddr**  
-取得した値に設定、 **AVC\_関数\_取得\_要求**完了します。
+は、 **AVC\_関数**から取得した値に設定し、\_要求の完了\_取得します。
 
 <span id="AlternateOpcodes"></span><span id="alternateopcodes"></span><span id="ALTERNATEOPCODES"></span>**AlternateOpcodes**  
-無視されます。
+無効.
 
 <span id="Timeout"></span><span id="timeout"></span><span id="TIMEOUT"></span>**タイムアウト**  
-無視されます。
+無効.
 
-<span id="Retries"></span><span id="retries"></span><span id="RETRIES"></span>**再試行**  
-無視されます。
+<span id="Retries"></span><span id="retries"></span><span id="RETRIES"></span>**試行**  
+無効.
 
 <span id="Opcode"></span><span id="opcode"></span><span id="OPCODE"></span>**オペコード**  
-これは、(元の要求で指定されたオペコードとは異なる場合があります) の応答を適切な AV/C 単位のオペコードを含める必要があります。
+これには、応答に適した AV/C ユニットオペコードが含まれている必要があります (元の要求で提供されたオペコードとは異なる場合があります)。
 
-<span id="OperandLength"></span><span id="operandlength"></span><span id="OPERANDLENGTH"></span>**OperandLength**  
-応答のオペランドのリスト内のバイト数を設定します。
+<span id="OperandLength"></span><span id="operandlength"></span><span id="OPERANDLENGTH"></span>**オペレーティング Andlength**  
+応答のオペランドリストのバイト数に設定します。
 
 <span id="Operands"></span><span id="operands"></span><span id="OPERANDS"></span>**オペランド**  
-応答のオペランドの一覧。
+応答のオペランドリスト。
 
 <span id="NodeAddress"></span><span id="nodeaddress"></span><span id="NODEADDRESS"></span>**NodeAddress**  
-元の要求のソースのノードのアドレス。
+元の要求のソースのノードアドレス。
 
-<span id="Generation"></span><span id="generation"></span><span id="GENERATION"></span>**生成**  
-生成 ID は、元の要求から取得します。
+<span id="Generation"></span><span id="generation"></span><span id="GENERATION"></span>**Generation**  
+元の要求から取得された生成 ID。
 
-GUID のコンテキストで\_AVC\_クラス デバイスのインターフェイス、 **AVC\_関数\_送信\_応答**AV/C 単位の要求のみに対応する関数のコードを使用します。
+\_AVC\_クラスデバイスインターフェイスの GUID のコンテキストでは、 **avc\_関数\_送信\_応答**関数コードを使用して、AV/C ユニット要求にのみ応答します。
 
-仮想インスタンスの場合*avc.sys* (つまり、GUID 登録インスタンス\_仮想\_AVC\_クラス デバイス インターフェイス)、 **AVC\_関数\_送信\_応答**AV/C 単位に応答する関数コードが使用される*と*サブユニット要求。
+Avc の仮想インスタンス (つまり、GUID\_VIRTUAL\_AVC\_クラスのデバイスインターフェイスを登録するインスタンス) の場合、 **avc\_関数\_送信\_応答**関数コードが使用され*ます。* AV/C ユニット*および*サブユニット要求に応答します。
 
-最初の応答で使用する場合、 **AVC\_応答\_中間**応答コード (から、 **AvcResponseType**列挙型)、フォロー アップ処理が必要です。 **NodeAddress**と**生成**メンバー、取得、完了した、 **AVC\_関数\_取得\_要求**その後の応答では、元の関数を使用する必要があります。 次の場合も、 **AVC\_関数\_取得\_要求**関数は、最初から戻る前に送信する必要があります**AVC\_関数\_送信\_応答**完了ルーチンの場合は、次の単位の要求を受信する可能性がありますようにします。
+最初の応答で、( **AvcResponseType**列挙からの) 中間応答コード **\_の AVC\_応答**を使用する場合は、フォローアップ処理が必要です。 **AVC\_関数**の完了によって取得された**Nodeaddress**および**Generation**メンバーは\_要求元の関数\_取得するために、後続の応答で使用する必要があります。 どのような場合でも、次の**avc\_関数\_GET\_REQUEST**関数\_から返される前に、 **\_応答**の完了ルーチンを送信する前に送信する必要があります。要求を受信できます。
 
-この構造体の推奨される使用は、元の要求の内容を使用して、更新、**オペコード**、 **OperandLength**、および**オペランド**に応じて適切なメンバー応答です。
+この構造体の使用を推奨するには、元の要求の内容を使用し、応答に応じて**オペコード**、**演算子**、およびオペランドのメンバーを更新します。
 
-この関数のコードは、IRQL で呼び出すことができます&lt;= ディスパッチ\_レベル。
+この関数コードは、IRQL &lt;= ディスパッチ\_レベルで呼び出すことができます。
 
-### <a name="see-also"></a>関連項目
+### <a name="see-also"></a>参照
 
-[**AVC\_FUNCTION\_GET\_REQUEST**](avc-function-get-request.md), [**AvcResponseCode**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ne-avc-_tagavcresponsecode), [**AVC\_FUNCTION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ne-avc-_tagavc_function)
+[**Avc\_関数\_\_REQUEST**](avc-function-get-request.md)、 [**AvcResponseCode**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ne-avc-_tagavcresponsecode)、 [**AVC\_関数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ne-avc-_tagavc_function)を取得します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -164,7 +164,7 @@ GUID のコンテキストで\_AVC\_クラス デバイスのインターフェ�
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Avc.h (include Avc.h)</td>
+<td>Avc. h (Avc を含む)</td>
 </tr>
 </tbody>
 </table>

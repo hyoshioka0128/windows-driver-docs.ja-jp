@@ -4,21 +4,21 @@ description: WSK_CACHE_SD
 ms.assetid: 60a4c7f9-d7e3-4378-b22b-93c69a9b8a37
 ms.date: 07/18/2017
 keywords:
-- WSK_CACHE_SD ネットワーク ドライバーが Windows Vista 以降
+- WSK_CACHE_SD ネットワークドライバー (Windows Vista 以降)
 ms.localizationpriority: medium
-ms.openlocfilehash: d60a21a8e85b32aecd935af1d5c573246acc8d32
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 123e78289023c81b962d188c385237d68f736aee
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377944"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842326"
 ---
-# <a name="wskcachesd"></a>WSK\_キャッシュ\_SD
+# <a name="wsk_cache_sd"></a>WSK\_キャッシュ\_SD
 
 
-WSK アプリケーションの使用、WSK\_キャッシュ\_SD のクライアント管理操作に渡すことができるセキュリティ記述子のキャッシュされたコピーを取得する、 [ **WskSocket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_socket)、 [ **WskSocketConnect**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_socket_connect)、および[ **WskControlSocket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_control_socket)関数。
+WSK アプリケーションは WSK\_CACHE\_SD クライアントコントロール操作を使用して、 [**Wsksocket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_socket)、 [**wsksocketconnect**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_socket_connect)、および[**wskcontrolsocket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_control_socket)関数に渡すことができるセキュリティ記述子のキャッシュされたコピーを取得します。
 
-セキュリティ記述子のキャッシュされたコピーを取得する WSK アプリケーションが呼び出す、 [ **WskControlClient** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_control_client)関数は次のパラメーター。
+セキュリティ記述子のキャッシュされたコピーを取得するために、WSK アプリケーションは、次のパラメーターを使用して[**Wskcontrolclient**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_control_client)関数を呼び出します。
 
 <table>
 <colgroup>
@@ -38,36 +38,36 @@ WSK アプリケーションの使用、WSK\_キャッシュ\_SD のクライア
 </tr>
 <tr class="even">
 <td><p><em>InputSize</em></p></td>
-<td><p>sizeof(PSECURITY_DESCRIPTOR)</p></td>
+<td><p>sizeof (PSECURITY_DESCRIPTOR)</p></td>
 </tr>
 <tr class="odd">
 <td><p><em>InputBuffer</em></p></td>
-<td><p>PSECURITY_DESCRIPTOR に型指定された変数へのポインター。 この変数には、キャッシュされているキャッシュされていないセキュリティ記述子を定義する SECURITY_DESCRIPTOR 構造へのポインターが含まれています。</p></td>
+<td><p>PSECURITY_DESCRIPTOR で型指定された変数へのポインター。 この変数には、キャッシュされるキャッシュされていないセキュリティ記述子を定義する SECURITY_DESCRIPTOR 構造体へのポインターが含まれています。</p></td>
 </tr>
 <tr class="even">
 <td><p><em>OutputSize</em></p></td>
-<td><p>sizeof(PSECURITY_DESCRIPTOR)</p></td>
+<td><p>sizeof (PSECURITY_DESCRIPTOR)</p></td>
 </tr>
 <tr class="odd">
 <td><p><em>OutputBuffer</em></p></td>
-<td><p>PSECURITY_DESCRIPTOR に型指定された変数へのポインター。 この変数は、キャッシュされたセキュリティ記述子を表す SECURITY_DESCRIPTOR 構造体へのポインターを受け取ります。</p></td>
+<td><p>PSECURITY_DESCRIPTOR で型指定された変数へのポインター。 この変数は、キャッシュされたセキュリティ記述子を記述する SECURITY_DESCRIPTOR 構造体へのポインターを受け取ります。</p></td>
 </tr>
 <tr class="even">
 <td><p><em>OutputSizeReturned</em></p></td>
-<td><p><strong>NULL</strong></p></td>
+<td><p><strong>空白</strong></p></td>
 </tr>
 <tr class="odd">
 <td><p><em>Irp</em></p></td>
-<td><p><strong>NULL</strong></p></td>
+<td><p><strong>空白</strong></p></td>
 </tr>
 </tbody>
 </table>
 
-WSK アプリケーションを使用してセキュリティ記述子のキャッシュされたコピーを解放する必要があります、 [ **WSK\_リリース\_SD** ](wsk-release-sd.md)クライアント管理の操作、セキュリティ記述子がありません不要にします。
+WSK アプリケーションは、セキュリティ記述子が不要になったときに[**wsk\_release\_SD**](wsk-release-sd.md)クライアントコントロール操作を使用して、セキュリティ記述子のキャッシュされたコピーを解放する必要があります。
 
-セキュリティの詳細については\_記述子構造体をセキュリティのリファレンス ページを参照してください\_Microsoft Windows SDK ドキュメントの記述子。
+セキュリティ\_記述子の構造の詳細については、Microsoft Windows SDK のドキュメントのセキュリティ\_記述子のリファレンスページを参照してください。
 
-*Irp*パラメーターである必要があります**NULL**このクライアントのコントロールの操作。
+このクライアントコントロール操作では、 *Irp*パラメーターは**NULL**である必要があります。
 
 <a name="requirements"></a>要件
 ------------
@@ -80,11 +80,11 @@ WSK アプリケーションを使用してセキュリティ記述子のキャ�
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>Windows Vista および Windows オペレーティング システムの以降のバージョンで使用できます。</p></td>
+<td><p>Windows Vista 以降のバージョンの Windows オペレーティングシステムで使用できます。</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Wsk.h (Wsk.h を含む)</td>
+<td>Wsk .h (Wsk .h を含む)</td>
 </tr>
 </tbody>
 </table>

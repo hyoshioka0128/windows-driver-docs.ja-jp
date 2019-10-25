@@ -3,16 +3,16 @@ title: IEC-61883 プロトコル ドライバー
 description: IEC-61883 プロトコル ドライバー
 ms.assetid: d1e639f0-a22f-4005-86a7-fdbfe509265b
 keywords:
-- IEC 61883 クライアント ドライバー WDK IEEE 1394 バス
-- 61883 WDK IEEE 1394 バス
+- IEC-61883 クライアントドライバー WDK IEEE 1394 bus
+- 61883 WDK IEEE 1394 bus
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b367d0090ae956e0ae3f20bdeb5cd9afae8a3cd8
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d18dcea1667af8def5ae437e283d7ec6f9048077
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385778"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841538"
 ---
 # <a name="iec-61883-protocol-driver"></a>IEC-61883 プロトコル ドライバー
 
@@ -20,9 +20,9 @@ ms.locfileid: "67385778"
 
 
 
-IEC 61883 プロトコル ドライバー、 *61883.sys*、IEC 61883 1 の仕様で定義されている関数制御プロトコル (FCP)、共通 isochronous パケット (CIP) の形式、および接続管理の手順 (CMP) をサポートしています。 プロトコル ドライバーは、要求からのパケット ヘッダーのストリームを削除し、スキャッター/ギャザーをサポートし、大量のデータを効率的に移動するバッファーのコピーを制限します。
+IEC 61883 プロトコルドライバー ( *61883*) は、iec 61883-1 仕様で定義されているように、関数制御プロトコル (FCP)、common アイソクロナスパケット (CIP) 形式、および接続管理プロシージャ (CMP) をサポートしています。 プロトコルドライバーは、要求からストリームパケットヘッダーを取り除き、スキャッター/ギャザーをサポートし、大量のデータを効率的に移動するようにバッファーコピーを制限します。
 
-IEC 61883 クライアント ドライバーは、IEEE 1394 バスに接続されるデバイスに IEC 61883 コマンドを発行する*61883.h*を発行し、 [ **IRP\_MJ\_内部\_デバイス\_コントロール**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-internal-device-control) I/O 制御コードに IRP [ **IOCTL\_61883\_クラス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/61883/ni-61883-ioctl_61883_class)します。 クライアント ドライバーでは、パラメーターをパッケージ化、 [ **AV\_61883\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/61883/ns-61883-_av_61883_request)内でポインターを渡します構造体であり、 **Parameters.Others.Argument1** IRP のメンバー。 **関数**AV のメンバー\_61883\_要求の構造は、操作の種類を決定します。 AV\_61883\_構造体には、データの共用体の要求固有のパラメーターが含まれています。 要求が構造要求の種類ごとに 1 つ。
+IEEE 1394 バスに接続されているデバイスに対して IEC-61883 コマンドを発行するに*は 61883* 、MJ をインクルードし、 [**irp\_\_内部\_デバイス\_制御**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-internal-device-control)irp と I/o 制御コードの[**IOCTL を発行 @no__t\_クラス (9_ _ 61883)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/61883/ni-61883-ioctl_61883_class)。 クライアントドライバーは、 [**AV\_61883\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/61883/ns-61883-_av_61883_request)構造のパラメーターをパッケージ化し、そのパラメーターへのポインターを IRP の**引数 1**メンバーに渡します。 AV\_61883\_要求構造の**関数**メンバーによって、操作の種類が決まります。 AV\_61883\_要求構造には、要求の種類ごとに1つのデータ構造体の和集合での要求固有のパラメーターが含まれています。
 
  
 

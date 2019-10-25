@@ -1,30 +1,30 @@
 ---
 title: ユーザーモード SPB 周辺機器ドライバーのハードウェア リソース
-description: SPB の周辺機器のデバイスの UMDF ドライバーのコード例と、ハードウェア リソースを取得します。
+description: SPB の周辺機器用の UMDF ドライバーのコード例を示し、ハードウェアリソースを取得します。
 ms.assetid: 4D240011-1F4E-4C1E-8258-A2CF44BD3F06
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 30790a81a977f80bffc52f468912d3268a661d4f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 48c0e0dbbe16b774cad1beb96885bbe29cde3136
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67373760"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844783"
 ---
 # <a name="hardware-resources-for-user-mode-spb-peripheral-drivers"></a>ユーザーモード SPB 周辺機器ドライバーのハードウェア リソース
 
 
-コード例では、このトピックの「表示方法、[ユーザー モード ドライバー フレームワーク](https://docs.microsoft.com/windows-hardware/drivers/wdf/overview-of-the-umdf)上周辺機器のデバイス用の (UMDF) ドライバー、[シンプルな周辺機器のバス](https://docs.microsoft.com/previous-versions/hh450903(v=vs.85))(SPB) が動作するために必要なハードウェア リソースを取得しますデバイスです。 これらのリソースに含まれるは、ドライバーがデバイスへの論理接続を確立するために使用する情報です。 その他のリソースは、割り込みを含めることができ、1 つまたは複数の GPIO 入力または出力ピンです。 (GPIO ピンは、詳細については、入力または出力として構成されている汎用的な I/O コント ローラー デバイスの暗証番号 (pin) を参照してください[GPIO コント ローラー ドライバー](https://docs.microsoft.com/windows-hardware/drivers/gpio/gpio-driver-support-overview))。メモリが割り当てられているデバイスとは異なり、SPB に接続されている周辺機器は、レジスタにマップするシステムのメモリ アドレスのブロックを必要としません。
+このトピックのコード例では、[シンプルな周辺機器バス](https://docs.microsoft.com/previous-versions/hh450903(v=vs.85))(SPB) 上の周辺機器の[ユーザーモードドライバーフレームワーク](https://docs.microsoft.com/windows-hardware/drivers/wdf/overview-of-the-umdf)(UMDF) ドライバーが、デバイスを操作するために必要なハードウェアリソースを取得する方法を示します。 これらのリソースには、デバイスへの論理接続を確立するためにドライバーが使用する情報が含まれています。 その他のリソースには、割り込み、1つ以上の GPIO 入力ピンまたは出力ピンが含まれる場合があります。 (GPIO pin は、入力または出力として構成されている汎用 i/o コントローラーデバイスの pin です。詳細については、「 [Gpio Controller ドライバー](https://docs.microsoft.com/windows-hardware/drivers/gpio/gpio-driver-support-overview)」を参照してください)。メモリマップトデバイスの場合とは異なり、SPB に接続されている周辺機器は、レジスタをにマップするためにシステムメモリアドレスのブロックを必要としません。
 
-このドライバーは、実装、 [ **IPnpCallbackHardware2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-ipnpcallbackhardware2)インターフェイス、および、UMDF ドライバーの呼び出し中にこのインターフェイスに登録[ **IDriverEntry::OnDeviceAdd** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-idriverentry-ondeviceadd)メソッド。 フレームワークでメソッドを呼び出します、 **IPnpCallbackHardware2**インターフェイス、デバイスの電源状態の変化のドライバーに通知します。
+このドライバーは、 [**IPnpCallbackHardware2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-ipnpcallbackhardware2)インターフェイスを実装し、ドライバーの[**Idriverentry:: ondeviceadd**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-idriverentry-ondeviceadd)メソッドの呼び出し中にこのインターフェイスを UMDF に登録します。 フレームワークは、 **IPnpCallbackHardware2**インターフェイスのメソッドを呼び出して、デバイスの電源状態の変更をドライバーに通知します。
 
-SPB に接続されている周辺機器に電力が復元されると、ドライバー、フレームワークが呼び出す、 [ **IPnpCallbackHardware2::OnPrepareHardware** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-ipnpcallbackhardware2-onpreparehardware)このデバイスにする必要があるドライバーに通知するメソッド使用できるように準備します。 この呼び出し中には、ドライバーは、入力パラメーターとして 2 つのハードウェア リソースのリストを受け取ります。 *PWdfResourcesRaw*パラメーターが指す生のリソースの一覧と*pWdfResourcesTranslated*パラメーターは変換されたリソースの一覧を指します。 両方のパラメーターがへのポインター [ **IWDFCmResourceList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfcmresourcelist)オブジェクト。 翻訳済みのリソースが含まれて、*接続 ID* SPB 周辺ドライバーは、SPB に接続されている周辺機器への論理接続を確立する必要があります。 詳細については、次を参照してください。 [SPB の周辺機器の接続 Id](https://docs.microsoft.com/windows-hardware/drivers/spb/connection-ids-for-spb-connected-peripheral-devices)します。
+電源が SPB に接続されている周辺機器に復元されると、ドライバーフレームワークは[**IPnpCallbackHardware2:: On hardware**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallbackhardware2-onpreparehardware)メソッドを呼び出して、このデバイスが使用できるように準備する必要があることをドライバーに通知します。 この呼び出し中に、ドライバーは入力パラメーターとして2つのハードウェアリソースリストを受け取ります。 *Pwdfresourcesraw*パラメーターは生のリソースの一覧を指し、 *pWdfResourcesTranslated*パラメーターは翻訳されたリソースの一覧を指します。 どちらのパラメーターも、 [**Iwdfcmresourcelist**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfcmresourcelist)オブジェクトへのポインターです。 変換されたリソースには、spb 周辺機器への論理接続を確立するのに必要な*接続 ID*が含まれています。 詳細については、「 [SPB 周辺機器の接続 id](https://docs.microsoft.com/windows-hardware/drivers/spb/connection-ids-for-spb-connected-peripheral-devices)」を参照してください。
 
-そのリソースの一覧で接続 Id を受信する周辺 UMDF ドライバーを有効にするドライバーをインストールする INF ファイルは、WDF 固有で、次のディレクティブを含める必要があります**DDInstall**セクション。
+UMDF 周辺機器ドライバーがリソースリスト内の接続 Id を受信できるようにするには、ドライバーをインストールする INF ファイルで、WDF 固有の**Ddinstall**セクションに次のディレクティブを含める必要があります。
 
-**UmdfDirectHardwareAccess = AllowDirectHardwareAccess**このディレクティブの詳細については、次を参照してください。 [INF ファイルで WDF ディレクティブを指定する](https://docs.microsoft.com/windows-hardware/drivers/wdf/specifying-wdf-directives-in-inf-files)します。
+**UmdfDirectHardwareAccess = AllowDirectHardwareAccess**このディレクティブの詳細については、「 [INF ファイルでの WDF ディレクティブの指定](https://docs.microsoft.com/windows-hardware/drivers/wdf/specifying-wdf-directives-in-inf-files)」を参照してください。
 
-次のコード例は、ドライバーの**OnPrepareHardware**メソッドからの接続 ID の取得、 *pWdfResourcesTranslated*パラメーター。
+次のコード例では、ドライバーの**OnpWdfResourcesTranslated hardware**メソッドが、パラメーターから接続 ID を取得する方法を示します。
 
 ```cpp
 BOOLEAN fConnectIdFound = FALSE;
@@ -96,7 +96,7 @@ for (ULONG ix = 0; ix < resourceCount; ix++)
 }
 ```
 
-上記のコード例では、sp B に接続されている周辺機器の接続 ID をコピーという名前の変数に`connectionId`します。 次のコード例では、周辺機器のデバイスを識別するために使用できるデバイスのパス名に、接続 ID を組み込む方法を示します。
+上記のコード例では、SPB に接続されている周辺機器の接続 ID を `connectionId`という名前の変数にコピーします。 次のコード例では、周辺機器を識別するために使用できるデバイスパス名に接続 ID を組み込む方法を示します。
 
 ```cpp
 WCHAR szTargetPath[100];
@@ -119,7 +119,7 @@ if (FAILED(hres))
 }
 ```
 
-上記のコード例に SPB に接続されている周辺機器のパス名を書き込みます、`szTargetPath`配列。 次のコード例では、このデバイスのパス名を使用して、sp B に接続されている周辺機器へのファイル ハンドルを開きます。
+前のコード例では、SPB に接続されている周辺機器のパス名を `szTargetPath` 配列に書き込みます。 次のコード例では、このデバイスパス名を使用して、SPB に接続されている周辺機器へのファイルハンドルを開きます。
 
 ```cpp
 UMDF_IO_TARGET_OPEN_PARAMS openParams;
@@ -137,9 +137,9 @@ if (FAILED(hres))
 }
 ```
 
-上記のコード例で、`pRemoteTarget`変数がへのポインター、 [ **IWDFRemoteTarget** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfremotetarget)オブジェクト。 場合に呼び出し、 [ **IWDFRemoteTarget::OpenFileByName** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfremotetarget-openfilebyname) SPB に接続されている周辺機器を使用できますのメソッドが成功、ドライバー、 **IWDFRemoteTarget**オブジェクトを周辺機器への I/O 要求を送信します。 ドライバーは、周辺機器を読み取り、書き込み、または IOCTL 要求を送信する前に、ドライバーを呼び出す、 [ **IWDFRemoteTarget::FormatRequestForRead**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiotarget-formatrequestforread)、 [ **IWDFRemoteTarget::FormatRequestForWrite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiotarget-formatrequestforwrite)、または[ **IWDFRemoteTarget::FormatRequestForIoctl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiotarget-formatrequestforioctl) I/O 要求の書式を指定するメソッド。 **IWDFRemoteTarget**インターフェイスからこれらの 3 つのメソッドを継承する、 [ **IWDFIoTarget** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfiotarget)インターフェイス。 次に、ドライバーを呼び出し、 [ **IWDFIoRequest::Send** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest-send) SPB に接続されている周辺機器に I/O 要求を送信する方法。
+前のコード例では、`pRemoteTarget` 変数は[**Iwdfremotetarget**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfremotetarget)オブジェクトへのポインターです。 [**Iwdfremotetarget:: OpenFileByName**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfremotetarget-openfilebyname)メソッドへの呼び出しが成功した場合、SPB に接続されている周辺機器のドライバーは、 **iwdfremotetarget**オブジェクトを使用して、周辺機器に i/o 要求を送信できます。 ドライバーは、読み取り、書き込み、または IOCTL 要求を周辺機器に送信する前に、 [**Iwdfremotetarget:: FormatRequestForRead**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiotarget-formatrequestforread)、 [**Iwdfremotetarget:: Formatrequestforread**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiotarget-formatrequestforwrite)、または[**iwdfremotetarget:: を呼び出します。FormatRequestForIoctl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiotarget-formatrequestforioctl)メソッドを指定して、i/o 要求をフォーマットします。 **Iwdfremotetarget**インターフェイスは、 [**Iwdfremotetarget**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfiotarget)インターフェイスからこれら3つのメソッドを継承します。 次に、ドライバーは[**IWDFIoRequest:: Send**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-send)メソッドを呼び出して、SPB に接続されている周辺機器に i/o 要求を送信します。
 
-SPB の周辺機器のドライバーを呼び出す次のコード例で、**送信**を送信する方法、 [ **IRP\_MJ\_書き込み**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-write)への要求、周辺機器の SPB 接続します。
+次のコード例では、SPB 周辺機器ドライバーが**send**メソッドを呼び出して、 [**IRP\_MJ\_書き込み**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-write)要求を spb に接続されている周辺機器に送信します。
 
 ```cpp
 HRESULT hres;
@@ -218,18 +218,18 @@ if (fSynchronous || FAILED(hres))
 }
 ```
 
-上記のコード例は、次のこと。
+上記のコード例では、次のことを行います。
 
-1.  `pWdfDevice`変数がへのポインター、 [ **IWDFDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfdevice) SPB に接続されている周辺機器を表す framework デバイス オブジェクトのインターフェイス。 [ **IWDFDevice::CreateRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdevice-createrequest)メソッドは、I/O 要求を作成しでこの要求をカプセル化、 [ **IWDFIoRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfiorequest)インターフェイスのインスタンスを指している`pWdfIoRequest`変数。
-2.  `pWdfDriver`変数がへのポインター、 [ **IWDFDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfdriver) SPB の周辺機器のドライバーを表すフレームワーク ドライバー オブジェクトのインターフェイス。 `pInBuffer`と`inBufferSize`変数は、アドレスと、書き込み要求のデータを格納している入力バッファーのサイズを指定します。 [ **IWDFDriver::CreatePreallocatedWdfMemory** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdriver-createpreallocatedwdfmemory)メソッドは、入力バッファーの framework メモリ オブジェクトを作成し、指定、 **IWDFIoRequest**ポイントされるオブジェクト`pWdfIoRequest`メモリ オブジェクトの親オブジェクトを (その親がリリースされたときにメモリ オブジェクトが自動的に解放されます)。 ドライバーの呼び出し後、**リリース**をメモリにローカル参照を解放するメソッドのオブジェクトを親はこのオブジェクトへの唯一の参照を保持します。
-3.  `pWdfRemoteTarget`変数は、リモート ターゲット ポインターから取得された、 **OpenFileByName**前のコード例で呼び出します。 [ **IWDFRemoteTarget::FormatRequestForWrite** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiotarget-formatrequestforwrite)メソッドは、書き込み操作の I/O 要求を書式設定します。
-4.  `fSynchronous`変数**TRUE**書き込み要求が同期的に送信して、かどうか**FALSE**非同期的に送信する場合。 `pCallback`変数が以前に作成したへのポインター [ **IRequestCallbackRequestCompletion** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-irequestcallbackrequestcompletion)インターフェイス。 かどうか、要求は、非同期的に呼び出しを送信する、 [ **IWDFIoRequest::SetCompletionCallback** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest-setcompletioncallback)メソッドは、このインターフェイスを登録します。 後で、 [ **IRequestCallbackRequestCompletion::OnCompletion** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-irequestcallbackrequestcompletion-oncompletion)メソッドが呼び出され、要求が非同期的に完了したときに、ドライバーに通知します。
-5.  **送信**メソッドは、sp B に接続されている周辺機器に書式設定された書き込み要求を送信します。 `Flags`変数は、書き込み要求が同期的または非同期的に送信するかどうかを示します。
-6.  要求が同期的に送信される場合、 [ **IWDFIoRequest::DeleteWdfObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfobject-deletewdfobject)メソッドによって示される、両方の I/O 要求オブジェクトを削除`pWdfIoRequest`によって示される子オブジェクトと`pInputMemory`. **IWDFIoRequest**インターフェイスからこのメソッドを継承する、 [ **IWDFObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfobject)インターフェイス。 呼び出し、要求は、非同期的に送信されてかどうか、 **DeleteWdfObject**メソッドは、ドライバーので、後で発生する必要があります**OnCompletion**メソッド。
+1.  `pWdfDevice` 変数は、SPB に接続されている周辺機器を表すフレームワークデバイスオブジェクトの[**Iwdfdevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfdevice)インターフェイスへのポインターです。 [**Iwdfdevice:: CreateRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice-createrequest)メソッドは、i/o 要求を作成し、この要求を、`pWdfIoRequest` 変数が指す[**IWDFIoRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfiorequest)インターフェイスインスタンスにカプセル化します。
+2.  `pWdfDriver` 変数は、SPB 周辺ドライバーを表す framework driver オブジェクトの[**Iwdfdriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfdriver)インターフェイスへのポインターです。 `pInBuffer` 変数と `inBufferSize` 変数は、書き込み要求のデータを格納する入力バッファーのアドレスとサイズを指定します。 [**Iwdfdriver:: CreatePreallocatedWdfMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdriver-createpreallocatedwdfmemory)メソッドは、入力バッファー用のフレームワークメモリオブジェクトを作成し、メモリオブジェクトの親オブジェクトとして `pWdfIoRequest` が指す**IWDFIoRequest**オブジェクトを指定します。これにより、memory オブジェクトは次のようになります。親がリリースされるときに自動的に解放されます)。 ドライバーが**release**メソッドを呼び出してメモリオブジェクトへのローカル参照を解放した後、親はこのオブジェクトへの唯一の参照を保持します。
+3.  `pWdfRemoteTarget` 変数は、前のコード例で**OpenFileByName**呼び出しから取得したリモートターゲットポインターです。 [**Iwdfremotetarget:: FormatRequestForWrite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiotarget-formatrequestforwrite)メソッドは、書き込み操作の i/o 要求を書式設定します。
+4.  `fSynchronous` 変数は、書き込み要求が同期的に送信される場合は**TRUE** 、非同期的に送信される場合は**FALSE**です。 `pCallback` 変数は、以前に作成された[**Irequestによる要求完了**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-irequestcallbackrequestcompletion)インターフェイスへのポインターです。 要求が非同期に送信される場合、 [**IWDFIoRequest:: Set callback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-setcompletioncallback)メソッドを呼び出すと、このインターフェイスが登録されます。 後で、要求が非同期に完了したことをドライバーに通知するために、 [**Irequestて Requestcompletion:: OnCompletion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-irequestcallbackrequestcompletion-oncompletion)メソッドが呼び出されます。
+5.  **Send**メソッドは、フォーマットされた書き込み要求を SPB 接続周辺機器に送信します。 `Flags` 変数は、書き込み要求が同期または非同期のどちらで送信されるかを示します。
+6.  要求が同期的に送信された場合、 [**IWDFIoRequest::D eletewdfobject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfobject-deletewdfobject)メソッドは、`pWdfIoRequest` が指す i/o 要求オブジェクトと `pInputMemory`が指す子オブジェクトの両方を削除します。 **IWDFIoRequest**インターフェイスは、このメソッドを[**Iwdfobject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfobject)インターフェイスから継承します。 要求が非同期に送信される場合は、ドライバーの**Oncompletion**メソッドで**Deletewdfobject**メソッドの呼び出しを後で実行する必要があります。
 
-上記のコード例の代替実装を作成**IWDFIoRequest**と**IWDFMemory**ドライバーの初期化中に、および繰り返しオブジェクトの代わりにこれらの同じオブジェクトを使用作成して、毎回新しいオブジェクトを削除するには、I/O 要求が送信されます。 詳細については、次を参照してください。 [ **IWDFIoRequest2::Reuse** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest2-reuse)と[ **IWDFMemory::SetBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfmemory-setbuffer)します。
+前のコード例の別の実装では、ドライバーの初期化中に**IWDFIoRequest**オブジェクトと**Iwdfmemory**オブジェクトを作成し、i/o が発生するたびに新しいオブジェクトを作成および削除するのではなく、同じオブジェクトを繰り返し使用します。要求が送信されました。 詳細については、「 [**IWDFIoRequest2:: 再利用**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest2-reuse)と[**Iwdfmemory:: setbuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfmemory-setbuffer)」を参照してください。
 
-さらに、代替実装が I/O 要求からの I/O のステータス コード存在検査、**送信**呼び出しが成功します。 詳細については、次を参照してください。 [ **IWDFIoRequest::GetCompletionParams**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest-getcompletionparams)します。
+また、別の実装では、**送信**呼び出しが成功した場合に i/o 要求から i/o 状態コードを検査できます。 詳細については、「 [**IWDFIoRequest:: Get params**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-getcompletionparams)」を参照してください。
 
  
 

@@ -1,9 +1,9 @@
 ---
-title: AVC\_関数\_取得\_EXT\_プラグ\_カウント
-description: AVC\_関数\_取得\_EXT\_プラグ\_カウント
+title: AVC\_関数\_\_EXT\_プラグ\_数を取得します
+description: AVC\_関数\_\_EXT\_プラグ\_数を取得します
 ms.assetid: dced18ac-dc26-4c47-bc92-a3f3daec505b
 keywords:
-- AVC_FUNCTION_GET_EXT_PLUG_COUNTS ストリーミング メディア デバイス
+- AVC_FUNCTION_GET_EXT_PLUG_COUNTS ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -12,26 +12,26 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 65fe4cde47b5526f4326e1fd4b82e10d74546398
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e633c45f67e6ea7af0dfbef327a94e15e63f3bff
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386744"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844657"
 ---
-# <a name="avcfunctiongetextplugcounts"></a>AVC\_関数\_取得\_EXT\_プラグ\_カウント
+# <a name="avc_function_get_ext_plug_counts"></a>AVC\_関数\_\_EXT\_プラグ\_数を取得します
 
 
 ## <span id="ddk_avc_function_get_ext_plug_counts_ks"></span><span id="DDK_AVC_FUNCTION_GET_EXT_PLUG_COUNTS_KS"></span>
 
 
-**AVC\_関数\_取得\_EXT\_プラグイン\_カウント**関数コードが外部入力を取得し、出力プラグインの数。
+**AVC\_関数は\_EXT\_の\_のプラグ\_カウント**関数のコードを取得して、外部入力と出力プラグの数を取得します。
 
 ### <a name="io-status-block"></a>I/O ステータス ブロック
 
-成功すると、AV/C をプロトコル ドライバーに設定**Irp -&gt;IoStatus.Status**ステータス\_成功します。
+成功した場合、AV/C プロトコルドライバーは、 **Irp&gt;iostatus. status**を STATUS\_SUCCESS に設定します。
 
-その他の戻り値には、考えられる。
+その他の戻り値には次のようなものがあります。
 
 <table>
 <colgroup>
@@ -47,15 +47,15 @@ ms.locfileid: "67386744"
 <tbody>
 <tr class="odd">
 <td><p>STATUS_TIMEOUT</p></td>
-<td><p>要求が行われたが、すべてタイムアウトするまでの応答が受信されず、再試行の処理が完了します。</p></td>
+<td><p>要求が行われましたが、すべてのタイムアウトと再試行処理が完了する前に応答が受信されませんでした。</p></td>
 </tr>
 <tr class="even">
 <td><p>STATUS_REQUEST_ABORTED</p></td>
-<td><p>IRP の完了ステータスが STATUS_REQUEST_ABORTED がすぐに中止します。 これは、デバイスが削除されたかは、1394 バスで使用できなくすることを示します。</p></td>
+<td><p>IRP の完了状態が STATUS_REQUEST_ABORTED になるとすぐに中止します。 これは、デバイスが削除されたか、1394バスで使用できなくなったことを示します。</p></td>
 </tr>
 <tr class="odd">
 <td><p>STATUS_*</p></td>
-<td><p>他のリターン コードでは、エラーまたは警告が発生したこと、AV/C プロトコルの範囲を超えていたことを示します。</p></td>
+<td><p>その他のリターンコードは、AV/C プロトコルの範囲を超えてエラーまたは警告が発生したことを示します。</p></td>
 </tr>
 </tbody>
 </table>
@@ -64,7 +64,7 @@ ms.locfileid: "67386744"
 
 ### <a name="comments"></a>コメント
 
-この関数を使用して、 **ExtPlugCounts** 、AVC のメンバー\_MULTIFUNC\_IRB 構造の下に示すようにします。
+この関数は、次に示すように、AVC\_MULTIFUNC\_IRB 構造体の**ExtPlugCounts**メンバーを使用します。
 
 ```cpp
 typedef struct _AVC_MULTIFUNC_IRB {
@@ -81,27 +81,27 @@ typedef struct _AVC_MULTIFUNC_IRB {
 } AVC_MULTIFUNC_IRB, *PAVC_MULTIFUNC_IRB;
 ```
 
-### <a name="requirements"></a>必要条件
+### <a name="requirements"></a>要件
 
-**ヘッダー:** 宣言されている*avc.h*します。 含める*avc.h*します。
+**ヘッダー:** *Avc*で宣言されています。 *Avc. h*を含めます。
 
-### <a name="avcmultifuncirb-input"></a>AVC\_MULTIFUNC\_IRB 入力
+### <a name="avc_multifunc_irb-input"></a>AVC\_MULTIFUNC\_IRB 入力
 
-**一般的です**  
-**関数**にこのメンバーのサブメンバーを設定する必要があります**AVC\_関数\_取得\_EXT\_プラグ\_カウント**AVCから\_関数の列挙体です。
+**的**  
+このメンバーの**関数**submember は、AVC\_関数の列挙から **\_EXT\_の\_を取得**するために、avc\_関数に設定されている必要があります。
 
 <span id="ExtPlugCounts"></span><span id="extplugcounts"></span><span id="EXTPLUGCOUNTS"></span>**ExtPlugCounts**  
-外部入力と出力プラグの数を指定します。
+外部入力プラグと出力プラグの数を指定します。
 
-仮想インスタンスでは、この関数のコードはサポートされていない*avc.sys*します。
+この関数コードは、 *avc*の仮想インスタンスではサポートされていません。
 
-サブユニット ドライバーは、関数、形式、および外部プラグインするときの使用を決定する責任を負います。 *Avc.sys*専用ピンとサブユニットにプラグインするときに外部とのサブユニット プラグの間で永続的な接続を報告は、ただし、(詳細については、次を参照してください[ **AVC\_関数\_GET。\_接続情報**](avc-function-get-connectinfo.md))。
+サブユニットドライバーは、外部プラグの機能、形式、および使用方法を決定する役割を担います。 ただし、 *avc*では、外部プラグとサブユニットの間の永続的な接続が、サブユニットの専用のピンとして報告されます (詳細については、「 [**Avc\_関数\_\_CONNECTINFO を取得**](avc-function-get-connectinfo.md)する」を参照してください)。
 
-これは、IRQL で呼び出す必要がある = パッシブ\_レベル。
+これは、IRQL = パッシブ\_レベルで呼び出す必要があります。
 
-### <a name="see-also"></a>関連項目
+### <a name="see-also"></a>参照
 
-[**AVC\_MULTIFUNC\_IRB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ns-avc-_avc_multifunc_irb), [**AVC\_EXT\_PLUG\_COUNTS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ns-avc-_avc_ext_plug_counts), [**AVC\_FUNCTION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ne-avc-_tagavc_function)
+[**Avc\_MULTIFUNC\_IRB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ns-avc-_avc_multifunc_irb)、 [**avc\_EXT\_プラグ\_数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ns-avc-_avc_ext_plug_counts)、 [**avc\_関数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ne-avc-_tagavc_function)
 
  
 

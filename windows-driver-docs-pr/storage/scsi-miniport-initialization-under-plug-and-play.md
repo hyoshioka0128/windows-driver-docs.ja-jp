@@ -10,16 +10,16 @@ keywords:
 - SCSI ミニポートドライバー WDK ストレージ、初期化
 ms.date: 10/08/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 675994d06427a396439c3cbc4eff403ec711b00d
-ms.sourcegitcommit: 5f4252ee4d5a72fa15cf8c68a51982c2bc6c8193
+ms.openlocfilehash: c8fe09b5869b4d70e7c80c4c65b60d96f30dfeec
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72252452"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842663"
 ---
 # <a name="scsi-miniport-initialization-under-plug-and-play"></a>プラグ アンド プレイでの SCSI ミニポートの初期化
 
-Windows 2000 以降では、レガシミニポートドライバーは、Microsoft Windows NT 4.0 の場合とまったく同じ方法で初期化されます。 レガシミニポートドライバーが[**ScsiPortInitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportinitialize)を呼び出すと、ポートドライバーはミニポートドライバーを呼び出して、その HBA を特定し、初期化します。 これは、検出された HBA ごとに1回 (HBA が列挙可能なバス上にある場合)、またはミニポートドライバーによって他のデバイスが検出できないことが報告されるまで繰り返します。 次に、コントロールはミニポートドライバーの[**Driverentry**](driverentry-of-scsi-miniport-driver.md)ルーチンに戻ります。このルーチンでは、別の種類の HBA (たとえば、別のインターフェイスまたは別のベンダーと製品 ID) に対して、ミニポートドライバーが**ScsiPortInitialize**を再度呼び出すことができます。 すべての初期化呼び出しはミニポートドライバーの**Driverentry**ルーチンのコンテキスト内で行われ、 **ScsiPortInitialize**が呼び出された順序で作成されます。 レガシドライバーの初期化は、システムの起動時と、それ以外の時間に発生します。
+Windows 2000 以降では、レガシミニポートドライバーは、Microsoft Windows NT 4.0 の場合とまったく同じ方法で初期化されます。 レガシミニポートドライバーが[**ScsiPortInitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/srb/nf-srb-scsiportinitialize)を呼び出すと、ポートドライバーはミニポートドライバーを呼び出して、その HBA を特定し、初期化します。 これは、検出された HBA ごとに1回 (HBA が列挙可能なバス上にある場合)、またはミニポートドライバーによって他のデバイスが検出できないことが報告されるまで繰り返します。 次に、コントロールはミニポートドライバーの[**Driverentry**](driverentry-of-scsi-miniport-driver.md)ルーチンに戻ります。このルーチンでは、別の種類の HBA (たとえば、別のインターフェイスまたは別のベンダーと製品 ID) に対して、ミニポートドライバーが**ScsiPortInitialize**を再度呼び出すことができます。 すべての初期化呼び出しはミニポートドライバーの**Driverentry**ルーチンのコンテキスト内で行われ、 **ScsiPortInitialize**が呼び出された順序で作成されます。 レガシドライバーの初期化は、システムの起動時と、それ以外の時間に発生します。
 
 プラグアンドプレイでは、初期化の順序を維持することはできません。 プラグアンドプレイに対して有効になっているミニポートドライバーが**ScsiPortInitialize**を呼び出すと、ポートドライバーは、後で参照できるように初期化データを格納し、STATUS_SUCCESS を返します。 これは、ミニポートドライバーの**PnPInterface**レジストリキーに記載されているインターフェイスの種類ごとに実行されます。このキーに記載されて*いない*インターフェイスは、すぐに初期化されます。
 

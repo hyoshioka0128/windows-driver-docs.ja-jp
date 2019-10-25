@@ -1,11 +1,11 @@
 ---
-title: FLT_PARAMETERS IRP_MJ_QUERY_EA 共用体
-description: 共用体のコンポーネントで使用されるときに、FLT の MajorFunction フィールド\_IO\_パラメーター\_操作のブロック構造は IRP\_MJ\_クエリ\_EA です。
+title: IRP_MJ_QUERY_EA 共用体の FLT_PARAMETERS
+description: FLT\_IO\_パラメーターの MajorFunction フィールドが操作の\_ブロック構造体である場合に使用される共用体コンポーネントは、IRP\_MJ\_QUERY\_EA です。
 ms.assetid: 858e8c72-33ae-441c-ada9-86c5df0e4f59
 keywords:
-- FLT_PARAMETERS IRP_MJ_QUERY_EA 共用体インストール可能なファイル システム ドライバー
-- FLT_PARAMETERS union インストール可能なファイル システム ドライバー
-- PFLT_PARAMETERS 共用体ポインター インストール可能なファイル システム ドライバー
+- IRP_MJ_QUERY_EA union インストール可能ファイルシステムドライバーの FLT_PARAMETERS
+- FLT_PARAMETERS union にインストール可能なファイルシステムドライバー
+- PFLT_PARAMETERS union ポインターのインストール可能なファイルシステムドライバー
 topic_type:
 - apiref
 api_name:
@@ -16,17 +16,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f70621021dea7f8bfc26f408ece6841f3acf9299
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e5e658237b121537b4b3590d3b0316e0f7a385cc
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364347"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841380"
 ---
-# <a name="fltparameters-for-irpmjqueryea-union"></a>FLT\_IRP のパラメーター\_MJ\_クエリ\_EA 共用体
+# <a name="flt_parameters-for-irp_mj_query_ea-union"></a>IRP\_MJ の FLT\_パラメーター\_クエリ\_EA 共用体
 
 
-共用体のコンポーネントで使用されるときに、 **MajorFunction**のフィールド、 [ **FLT\_IO\_パラメーター\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_io_parameter_block)用の構造、操作が[ **IRP\_MJ\_クエリ\_EA**](irp-mj-query-ea.md)します。
+[**FLT\_IO\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)の**MajorFunction**フィールドが操作の\_ブロック構造体である場合に使用される共用体コンポーネントは、 [**IRP\_MJ\_QUERY\_EA**](irp-mj-query-ea.md)です。
 
 <a name="syntax"></a>構文
 ------
@@ -49,33 +49,33 @@ typedef union _FLT_PARAMETERS {
 <a name="members"></a>Members
 -------
 
-**QueryEa**  
+**Quer**  
 次のメンバーを含む構造体。
 
 **長さ**  
-バッファーのバイト単位の長さを**EaBuffer**を指します。
+**EaBuffer**が指すバッファーの長さ (バイト単位)。
 
 **EaList**  
-呼び出し元が指定へのポインター、ファイル\_取得\_EA\_情報構造化クエリを実行する拡張属性を指定する入力バッファー。
+呼び出し元によって提供されたファイルへのポインター。\_EA\_情報構造化入力バッファーを取得し、クエリ対象の拡張属性を指定します。\_ます。
 
 **EaListLength**  
-バッファーのバイト単位の長さを**EaList**を指します。
+**Ealist**が指すバッファーの長さ (バイト単位)。
 
-**EaIndex**  
-拡張属性の一覧をスキャンを開始する位置のエントリのインデックス。 場合、このパラメーターは無視されます、SL\_インデックス\_、FLT で指定したフラグが設定されていない\_IO\_パラメーター\_操作のブロック構造または**EaList**指す空でない一覧です。
+**Eライド Dex**  
+拡張属性リストのスキャンを開始する位置のエントリのインデックス。 このパラメーターは、SL\_インデックス\_指定されたフラグが、操作の FLT\_IO\_パラメーター\_ブロック構造で設定されていない場合、または**Ealist**が空でないリストを指している場合には無視されます。
 
 **EaBuffer**  
-呼び出し元が指定へのポインター [**ファイル\_完全\_EA\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_file_full_ea_information)-拡張属性の値は返される構造化した出力バッファー。
+呼び出し元から提供された[**ファイル\_完全\_EA\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_file_full_ea_information)拡張属性値が返される場所を指すポインター。
 
 **MdlAddress**  
-バッファーを記述するメモリ記述子一覧 (MDL) のアドレスを**EaBuffer**を指します。 このメンバーは省略可能とは、 **NULL**します。
+**EaBuffer**が指すバッファーを記述するメモリ記述子リスト (MDL) のアドレス。 このメンバーは省略可能であり、 **NULL**にすることができます。
 
 <a name="remarks"></a>注釈
 -------
 
-[ **FLT\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_parameters)の構造体[ **IRP\_MJ\_クエリ\_EA** ](irp-mj-query-ea.md)操作にコールバック データによって表される IRP に基づくクエリの拡張-属性の情報操作のパラメーターが含まれています ([**FLT\_コールバック\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_callback_data)) 構造体。 FLT に含まれている\_IO\_パラメーター\_ブロック構造体。
+[**Irp\_MJ\_クエリ\_EA**](irp-mj-query-ea.md)操作の[**FLT\_parameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_parameters)構造体には、コールバックデータによって表される、irp ベースのクエリの拡張属性情報操作 (FLT) のパラメーターが含まれてい[ **@no__t10_ CALLBACK\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data)) 構造体。 これは、FLT\_IO\_パラメーター\_ブロック構造体に含まれています。
 
-IRP\_MJ\_クエリ\_EA は IRP ベースの操作。
+IRP\_MJ\_クエリ\_EA は、IRP ベースの操作です。
 
 <a name="requirements"></a>要件
 ------------
@@ -88,7 +88,7 @@ IRP\_MJ\_クエリ\_EA は IRP ベースの操作。
 <tbody>
 <tr class="odd">
 <td align="left"><p>Header</p></td>
-<td align="left">Fltkernel.h (Fltkernel.h を含む)</td>
+<td align="left">Fltkernel .h (Fltkernel. h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -96,21 +96,21 @@ IRP\_MJ\_クエリ\_EA は IRP ベースの操作。
 ## <a name="see-also"></a>関連項目
 
 
-[**ファイル\_完全\_EA\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_file_full_ea_information)
+[**ファイル\_EA\_の完全\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_file_full_ea_information)
 
-[**FLT\_コールバック\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_callback_data)
+[**FLT\_コールバック\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data)
 
-[**FLT\_IO\_PARAMETER\_BLOCK**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_io_parameter_block)
+[**FLT\_IO\_パラメーター\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)
 
-[**FLT\_IS\_FASTIO\_OPERATION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
+[**FLT\_は\_高速な操作\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)
 
-[**FLT\_IS\_FS\_FILTER\_OPERATION**](https://docs.microsoft.com/previous-versions/ff544648(v=vs.85))
+[**FLT\_は\_FS\_フィルターの\_操作です。** ](https://docs.microsoft.com/previous-versions/ff544648(v=vs.85))
 
-[**FLT\_IS\_IRP\_OPERATION**](https://docs.microsoft.com/previous-versions/ff544654(v=vs.85))
+[**FLT\_は\_IRP\_操作です**](https://docs.microsoft.com/previous-versions/ff544654(v=vs.85))
 
-[**FLT\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_parameters)
+[**FLT\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_parameters)
 
-[**IoCheckEaBufferValidity**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-iocheckeabuffervalidity)
+[**IoCheckEaBufferValidity**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iocheckeabuffervalidity)
 
 [**IRP\_MJ\_クエリ\_EA**](irp-mj-query-ea.md)
 

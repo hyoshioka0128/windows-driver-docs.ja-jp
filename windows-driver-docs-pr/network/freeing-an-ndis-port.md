@@ -3,17 +3,17 @@ title: NDIS ポートの解放
 description: NDIS ポートの解放
 ms.assetid: ae7b608d-6105-4fdc-b805-0f0101d7c218
 keywords:
-- ポートの解放の WDK NDIS
-- NDIS、WDK のポートの解放
+- ポート WDK NDIS、解放
+- NDIS ポート WDK、解放
 - NDIS ポートの解放
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d24b13066dc5617ddb86fa1ef2240f613f4dad4f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 593c737f5512216416ee25f8e61209a7fb1c59d3
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382763"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842124"
 ---
 # <a name="freeing-an-ndis-port"></a>NDIS ポートの解放
 
@@ -21,26 +21,26 @@ ms.locfileid: "67382763"
 
 
 
-ミニポート ドライバーをすべて解放する必要があります NDIS ポートを[割り当てます](allocating-an-ndis-port.md)ミニポート アダプターでその[ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)関数。 できる無料ポートをいつでも呼び出すことによって[ **NdisMFreePort**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismfreeport)、次に示す 2 つの場合を除いて。
+ミニポートドライバーは、 [*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)関数のミニポートアダプターに[割り当て](allocating-an-ndis-port.md)られているすべての NDIS ポートを解放する必要があります。 次に示す2つのケースを除き、 [**NdisMFreePort**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismfreeport)を呼び出すことで、いつでもポートを解放できます。
 
-ミニポート ドライバーでは、このような場合に割り当てられているすべてのポートを解放する必要があります。
+これらの場合、ミニポートドライバーは、割り当てられているすべてのポートを解放する必要があります。
 
--   場合、ドライバーの[ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)関数が失敗にする必要があります無料すべて割り当てられたポート。
--   ミニポート アダプターを停止にしたかどうか、ドライバーの[ *MiniportHaltEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_halt)関数が割り当てられているすべてのポートを解放する必要があります。
+-   ドライバーの[*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)関数が失敗した場合は、割り当てられているすべてのポートを解放する必要があります。
+-   ミニポートアダプターが停止している場合は、ドライバーの[*Miniporthaltex*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_halt)関数で、割り当てられているすべてのポートを解放する必要があります。
 
-ミニポート ドライバーは単に呼び出すことはできません[ **NdisMFreePort** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismfreeport)このような場合。
+このような場合、ミニポートドライバーは単に[**NdisMFreePort**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismfreeport)を呼び出すことはできません。
 
--   ポートが既定のポートの場合は、NDIS 解放され、自動的に、ように、ミニポート ドライバーは解放する必要があります。 解放しようとすると、[既定のポート](default-ndis-port.md)、 [ **NdisMFreePort** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismfreeport) 、NDIS を返します\_状態\_無効な\_ポート エラー。
--   ポートがアクティブな場合、ミニポート ドライバーが呼び出す前にアクティブ化する必要があります[ **NdisMFreePort**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismfreeport)します。
+-   ポートが既定のポートの場合は、NDIS によって自動的に解放されるので、ミニポートドライバーはそれを解放できません。 [既定のポート](default-ndis-port.md)を解放しようとすると、 [**NdisMFreePort**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismfreeport)は NDIS\_の状態\_無効な\_ポートエラーを返します。
+-   ポートがアクティブである場合、ミニポートドライバーは、 [**NdisMFreePort**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismfreeport)を呼び出す前に非アクティブ化する必要があります。
 
 ## <a name="related-topics"></a>関連トピック
 
 
-[NDIS ポートの割り当てください。](allocating-an-ndis-port.md)
+[NDIS ポートを割り当てています](allocating-an-ndis-port.md)
 
-[NDIS ポートを非アクティブ化](deactivating-an-ndis-port.md)
+[NDIS ポートの非アクティブ化](deactivating-an-ndis-port.md)
 
-[NDIS の既定のポート](default-ndis-port.md)
+[既定の NDIS ポート](default-ndis-port.md)
 
  
 

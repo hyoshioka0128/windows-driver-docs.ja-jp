@@ -1,34 +1,34 @@
 ---
 title: NDIS_STATUS_WWAN_READY_INFO
-description: ミニポート ドライバーでは、NDIS_STATUS_WWAN_READY_INFO 通知を使用して、OID_WWAN_READY_INFO に対応のデバイスの準備完了状態の変更点の MB サービスに通知 \ 160; クエリ要求。
+description: ミニポートドライバーは、NDIS_STATUS_WWAN_READY_INFO 通知を使用して、OID_WWAN_READY_INFO \ 160; クエリ要求に応じて、デバイスの準備完了状態の変更を MB サービスに通知します。
 ms.assetid: 92ddf95f-8829-4259-b53a-c7ce56ee53f0
 ms.date: 08/08/2017
-keywords: -NDIS_STATUS_WWAN_READY_INFO ネットワーク ドライバーが Windows Vista 以降
+keywords: -Windows Vista 以降の NDIS_STATUS_WWAN_READY_INFO ネットワークドライバー
 ms.localizationpriority: medium
-ms.openlocfilehash: d13ede5e4ae0b866cfafc057a1d389d3cce728a0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a8ac58f7e0c8680c9ec0a9fe6c34b30a15c503b8
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377584"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844651"
 ---
-# <a name="ndisstatuswwanreadyinfo"></a>NDIS\_状態\_WWAN\_準備\_情報
+# <a name="ndis_status_wwan_ready_info"></a>NDIS\_ステータス\_WWAN\_準備完了\_情報
 
 
-ミニポート ドライバーを使用して、NDIS\_状態\_WWAN\_準備\_MB のサービスへの応答でのデバイスの準備完了状態の変更の通知に情報通知[OID\_WWAN\_準備ができて\_情報](oid-wwan-ready-info.md) 要求のクエリを実行します。
+ミニポートドライバーは、NDIS\_ステータス\_WWAN\_READY\_情報通知を使用して、 [OID\_WWAN\_準備完了\_情報](oid-wwan-ready-info.md) クエリ要求に応答して、デバイスの準備完了状態の変更を MB サービスに通知します。
 
-ミニポート ドライバーには、この通知が不要なイベントを送信できます。
+ミニポートドライバーは、この通知を使用して、要請されていないイベントも送信できます。
 
-この通知を使用して、 [ **NDIS\_WWAN\_準備\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_ready_info)構造体。
+この通知では、 [**NDIS\_WWAN\_READY\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_ready_info)構造体を使用します。
 
 <a name="remarks"></a>注釈
 -------
 
-ミニポート ドライバーでは、要請していないイベントとしてすべてのデバイスの準備完了状態の変更を報告する必要があります。 ミニポート ドライバーで、WWAN を設定する必要があります、ミニポート ドライバー MB デバイスの初期化時\_準備\_情報**ReadyState**メンバー **WwanReadyStateOff**します。 その後、ミニポート ドライバーでは、この通知による MB サービスに、デバイスの準備完了状態の変更を報告する必要があります。 たとえば、ミニポート ドライバーがデバイスの準備完了状態を報告する必要がありますを変更するときに、 **ReadyState**メンバーから変更**WwanReadyStateOff**に**WwanReadyStateDeviceLocked**、または**WwanReadyStateBadSim**、または**WwanReadyStateSimNotInserted**、またはその他のさまざまなデバイスの準備完了の状態。
+ミニポートドライバーは、デバイスの準備が完了しているすべての変更を一方的なイベントとして報告する必要があります。 ミニポートドライバーが MB デバイスを初期化すると、ミニポートドライバーは、WWAN\_READY\_INFO **ReadyState**メンバーを**WwanReadyStateOff**に設定する必要があります。 その後、ミニポートドライバーは、この通知を使用して、デバイスの準備完了状態の変更を MB サービスに報告する必要があります。 たとえば、ミニポートドライバーは、 **ReadyState**メンバーが**WwanReadyStateOff**から**WwanReadyStateDeviceLocked**または**WwanReadyStateBadSim** **に変更された場合に、デバイスの準備完了状態の変更を報告する必要があります。WwanReadyStateSimNotInserted**、またはその他のさまざまなデバイスの準備完了状態。
 
-ほとんどのデバイスの準備完了状態の変更は、デバイスの初期化、ラジオ スタックおよび SIM カード (必要な場合) ときに発生します。 変更も MB サービスとユーザーが、SIM カードの変更など、ミニポート ドライバーとのセッションの実行中に発生します。 新しいデバイスの準備完了の状態に基づいて適切 MB サービスの動作を変更するものとします。
+デバイスの準備が完了しているほとんどの変更は、デバイスがラジオスタックと SIM カードを初期化したときに発生します (必要な場合)。 また、MB サービスとミニポートドライバー (ユーザーが SIM カードを変更するなど) の間のセッション中にも、変更が発生する可能性があります。 MB サービスの動作は、新しいデバイスの準備完了状態に応じて変更されます。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -39,11 +39,11 @@ ms.locfileid: "67377584"
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>Windows 7 および Windows の以降のバージョンで使用できます。</p></td>
+<td><p>Windows 7 以降のバージョンの Windows で使用できます。</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Ndis.h</td>
+<td>Ndis. h</td>
 </tr>
 </tbody>
 </table>
@@ -51,9 +51,9 @@ ms.locfileid: "67377584"
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_WWAN\_準備\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_ready_info)
+[**NDIS\_WWAN\_準備完了\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_ready_info)
 
-[OID\_WWAN\_準備\_情報](oid-wwan-ready-info.md)
+[OID\_WWAN\_準備完了\_情報](oid-wwan-ready-info.md)
 
  
 

@@ -4,19 +4,19 @@ description: WDI_TLV_DATAPATH_CAPABILITIES は、データパス機能を含む 
 ms.assetid: 7B545858-56A2-4655-91D5-37CA4EB61E1E
 ms.date: 07/18/2017
 keywords:
-- WDI_TLV_DATAPATH_CAPABILITIES ネットワーク ドライバーが Windows Vista 以降
+- WDI_TLV_DATAPATH_CAPABILITIES ネットワークドライバー (Windows Vista 以降)
 ms.localizationpriority: medium
-ms.openlocfilehash: 45a1e0ae5a3c9a01dd02a312d0ccfec38f8a4f27
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2120ebfc5bf9fc9d93ae75f0e4a97eae3ca40598
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67353617"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844501"
 ---
-# <a name="wditlvdatapathcapabilities"></a>WDI\_TLV\_データパス\_機能
+# <a name="wdi_tlv_datapath_capabilities"></a>WDI\_TLV\_データパス\_の機能
 
 
-WDI\_TLV\_データパス\_機能はデータパス機能を含む TLV します。
+WDI\_TLV\_データパス\_機能は、データパス機能を含む TLV です。
 
 ## <a name="tlv-type"></a>TLV 型
 
@@ -26,7 +26,7 @@ WDI\_TLV\_データパス\_機能はデータパス機能を含む TLV します
 ## <a name="length"></a>長さ
 
 
-含まれるすべての要素のサイズの合計をバイト単位で。
+含まれているすべての要素のサイズの合計 (バイト単位)。
 
 ## <a name="values"></a>値
 
@@ -38,14 +38,14 @@ WDI\_TLV\_データパス\_機能はデータパス機能を含む TLV します
 </colgroup>
 <thead>
 <tr class="header">
-<th>型</th>
+<th>タスクバーの検索ボックスに</th>
 <th>説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ne-dot11wdi-_wdi_interconnect_type" data-raw-source="[&lt;strong&gt;WDI_INTERCONNECT_TYPE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ne-dot11wdi-_wdi_interconnect_type)"><strong>WDI_INTERCONNECT_TYPE</strong> </a> (UINT32)</td>
-<td>型を相互接続です。</td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/ne-dot11wdi-_wdi_interconnect_type" data-raw-source="[&lt;strong&gt;WDI_INTERCONNECT_TYPE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/ne-dot11wdi-_wdi_interconnect_type)"><strong>WDI_INTERCONNECT_TYPE</strong></a> (UINT32)</td>
+<td>相互接続の種類。</td>
 </tr>
 <tr class="even">
 <td>UINT8</td>
@@ -53,37 +53,37 @@ WDI\_TLV\_データパス\_機能はデータパス機能を含む TLV します
 </tr>
 <tr class="odd">
 <td>UINT8</td>
-<td>指定の機能を送信します。優先順位キューのターゲット。
-<p>有効な値とは、0 および 1 です。 場合は 0、WDI に設定では、ピアして TID Tx フレームは、分類を転送する送信キューを選択します。 完全なスケジューラを使用します。 これが、ターゲットがの分類およびピア TID キューをサポートしない限り、false に設定されていることをお勧めします。 1、WDI に設定するは、ピアして TID Tx フレームをによって分類され、ポート レベルでキューを提供するだけ場合です。 WDI は、グローバル DRR を使用して、ポートのバックログ キューをスケジュールします。</p></td>
+<td>送信機能を指定します: 対象優先順位キュー。
+<p>有効な値は0と1です。 0に設定すると、WDI はピアと TID によって Tx フレームを分類し、完全なスケジューラを利用して転送する TX キューを選択します。 ターゲットが分類およびピア TID キューに対応している場合を除き、この値を false に設定することをお勧めします。 1に設定すると、WDI はピアと TID によって Tx フレームを分類し、ポートレベルでのみキューを提供します。 WDI は、グローバル DRR を使用してバックログのポートキューをスケジュールします。</p></td>
 </tr>
 <tr class="even">
 <td>UINT16</td>
-<td>指定の機能を送信します。フレームで収集散布図の要素の最大数。
-<p>WDI は、IHV ミニポートは散布図の詳細については、この機能によって指定された数よりに要素を収集を必要とするフレームを受け取らないように、必要に応じて、フレームを連結します。 最適なパフォーマンスは、この機能に必要なメモリのコピーを結合一般的なフレームよりも高く設定することをお勧めします。 この機能が最大フレーム サイズがページ サイズで割った値より大きい、WDI が正常にフレームを結合することがない可能性がありますと破棄される可能性があります。</p></td>
+<td>送信機能を指定します。フレーム内のスキャッター Gather 要素の最大数です。
+<p>WDI は、必要に応じてフレームを結合します。これにより、IHV ミニポートは、この機能で指定されているよりも多くのスキャッター収集要素を必要とするフレームを受信しません。 最適なパフォーマンスを得るには、合体にメモリコピーが必要になるため、この機能が一般的なフレームよりも高い値に設定されていることをお勧めします。 この機能が、ページサイズで割った最大フレームサイズを超えていない場合、WDI はフレームを結合できず、削除される可能性があります。</p></td>
 </tr>
 <tr class="odd">
 <td>UINT8</td>
-<td>指定の機能を送信します。明示的な送信完了フラグが必要です。
-<p>有効な値とは、0 および 1 です。 ターゲット/話して 0 に設定するには、すべてのフレームの完全な TX 送信が生成されます。 場合、 場合 1、ターゲット/話してに設定するには、このフラグがフレームのメタデータで設定されたフレームに対してのみ TX 送信完了を示す値が生成されます。</p></td>
+<td>送信機能を指定します: Explicit Send Complete フラグが必要です。
+<p>有効な値は0と1です。 0に設定すると、ターゲット/TAL はすべてのフレームに対して TX 送信の完了を生成します。 1に設定すると、ターゲット/TAL は、フレームのメタデータにこのフラグが設定されているフレームに対してのみ TX 送信の完了を示す値を生成します。</p></td>
 </tr>
 <tr class="even">
 <td>UINT16</td>
-<td>指定の機能を送信します。有効な最小のフレームのサイズ。
-<p>フレームをデキューするにはときに、TxMgr として扱われますフレームこの値よりも小さい値のサイズが有効です。</p></td>
+<td>送信機能を指定します: 最小有効フレームサイズ。
+<p>フレームをデキューするときに、TxMgr はこの値より小さいフレームをこの値の有効なサイズとして扱います。</p></td>
 </tr>
 <tr class="odd">
 <td>UINT16</td>
-<td>指定の機能を送信します。フレームのサイズの粒度。
-<p>この値はフレームごとのメモリ割り当ての粒度です。 TxMgr が有効なサイズが整数に、フレームのサイズと余白の最小量と等しくする有効なサイズを持つものとしてフレームを扱うデキューのために、この値の倍数です。 この値は、2 の累乗に設定する必要があります。</p></td>
+<td>送信機能を指定します。フレームサイズの粒度です。
+<p>この値は、フレームごとのメモリ割り当ての粒度と同じです。 デキューの目的では、TxMgr はフレームをフレームサイズと同じ大きさにして、有効なサイズがこの値の整数倍数であるように最小の余白を加えたものとして扱います。 この値は2の累乗に設定する必要があります。</p></td>
 </tr>
 <tr class="even">
 <td>UINT8</td>
-<td>指定の機能を送信します。Rx Tx 転送します。
-<p>有効な値とは、0 および 1 です。 転送を受信したフレームのできる 1 をターゲットに設定する場合に。</p></td>
+<td>送信機能を指定します: Rx Tx 転送。
+<p>有効な値は0と1です。 1に設定すると、ターゲットは受信したフレームを転送できるようになります。</p></td>
 </tr>
 <tr class="odd">
 <td>UINT32</td>
-<td>指定の機能を送信します。0.5 Mbps 単位での最大スループットです。
+<td>送信機能: 最大スループットを 0.5 Mbps 単位で指定します。
 <p>この値は、記述子とバッファーの割り当てに使用されます。</p></td>
 </tr>
 </tbody>
@@ -91,7 +91,7 @@ WDI\_TLV\_データパス\_機能はデータパス機能を含む TLV します
 
  
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -110,7 +110,7 @@ WDI\_TLV\_データパス\_機能はデータパス機能を含む TLV します
 </tr>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Wditypes.hpp</td>
+<td>Wditypes</td>
 </tr>
 </tbody>
 </table>

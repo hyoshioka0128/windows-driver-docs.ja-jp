@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_CAMERACONTROL\_拡張\_ISO\_[詳細設定]
-description: KSPROPERTY\_CAMERACONTROL\_拡張\_ISO\_[詳細設定] は、拡張プロパティのコントロールにより、多くのグローバルの ISO コントロールをより細かくをします。
+title: KSK プロパティ\_CAMERACONTROL\_拡張\_ISO\_詳細設定
+description: KSK プロパティ\_CAMERACONTROL\_EXTENDED\_ISO\_ADVANCED は拡張プロパティコントロールであり、より詳細なグローバル ISO 制御を可能にします。
 ms.assetid: A9327DB8-422B-410C-8766-D70811BA5C73
 keywords:
-- KSPROPERTY_CAMERACONTROL_EXTENDED_ISO_ADVANCED ストリーミング メディア デバイス
+- KSPROPERTY_CAMERACONTROL_EXTENDED_ISO_ADVANCED ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,16 +14,16 @@ api_type:
 - HeaderDef
 ms.date: 09/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: f0e610c54c38102ed21ee52e4a8284c2c75dc5d9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6a9a564ba778461221d1af59b4b98d5c80595bb7
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325936"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841600"
 ---
-# <a name="kspropertycameracontrolextendedisoadvanced"></a>KSPROPERTY\_CAMERACONTROL\_拡張\_ISO\_[詳細設定]
+# <a name="ksproperty_cameracontrol_extended_iso_advanced"></a>KSK プロパティ\_CAMERACONTROL\_拡張\_ISO\_詳細設定
 
-KSPROPERTY\_CAMERACONTROL\_拡張\_ISO\_[詳細設定] は、拡張プロパティのコントロールにより、多くのグローバルの ISO コントロールをより細かくをします。
+KSK プロパティ\_CAMERACONTROL\_EXTENDED\_ISO\_ADVANCED は拡張プロパティコントロールであり、より詳細なグローバル ISO 制御を可能にします。
 
 ## <a name="usage-summary-table"></a>使用状況の概要テーブル
 
@@ -35,9 +35,9 @@ KSPROPERTY\_CAMERACONTROL\_拡張\_ISO\_[詳細設定] は、拡張プロパテ�
 </colgroup>
 <thead>
 <tr class="header">
-<th>Scope</th>
+<th>適用範囲</th>
 <th>コントロール</th>
-<th>種類</th>
+<th>タスクバーの検索ボックスに</th>
 </tr>
 </thead>
 <tbody>
@@ -49,43 +49,43 @@ KSPROPERTY\_CAMERACONTROL\_拡張\_ISO\_[詳細設定] は、拡張プロパテ�
 </tbody>
 </table>
 
-新しい KSCAMERA\_EXTENDEDPROP\_ISO\_ksmedia で手動のフラグが定義されている\_phone.h として次のとおりです。
+新しい KSCAMERA\_EXTENDEDPROP\_ISO\_MANUAL フラグは、次のように、ksmedia\_phone. h で定義されています。
 
 ```cpp
 #define KSCAMERA_EXTENDEDPROP_ISO_MANUAL          0x0080000000000000
 ```
 
-次の表には、説明と要件が含まれています、 [ **KSCAMERA\_EXTENDEDPROP\_ヘッダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)フィールドを構造体、KSPROPERTY\_CAMERACONTROL\_拡張\_ISO\_高度な制御。
+次の表に、CAMERACONTROL\_拡張\_ISO\_高度なコントロールの KSK プロパティ\_の[**KSCAMERA\_EXTENDEDPROP\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)構造フィールドの説明と要件を示します。
 
-Windows 8.1 の KS\_CAMERACONTROL\_拡張\_整数手動 ISO のサポートがない場合は ISO 変更されません。 ドライバーは新しい KSPROPERTY のみをサポートする必要があります\_CAMERACONTROL\_拡張\_ISO\_高度な制御。 これらのコントロールの両方がサポートされている場合、パイプラインは、KSPROPERTY 既定\_CAMERACONTROL\_拡張\_ISO\_高度な制御。
+Windows 8.1 KS\_CAMERACONTROL\_拡張\_ISO は、整数の手動 ISO をサポートせずに変更されていません。 このドライバーでサポートされているのは、新しい KSK プロパティ\_CAMERACONTROL\_拡張\_ISO\_高度なコントロールのみです。 これらのコントロールの両方がサポートされている場合、パイプラインは既定で KSK プロパティ\_CAMERACONTROL\_拡張\_ISO\_高度なコントロールになります。
 
-場合、KSPROPERTY\_CAMERACONTROL\_拡張\_ISO\_高度な制御がサポートされている、ドライバーが提供できるようにするだけの機能が次に示します。
+拡張\_ISO\_拡張コントロール\_\_KSK プロパティがサポートされている場合、ドライバーが提供できる機能は次のとおりです。
 
--   KSCAMERA\_EXTENDEDPROP\_ISO\_自動
+-   KSCAMERA\_EXTENDEDPROP\_ISO\_AUTO
 
--   KSCAMERA\_EXTENDEDPROP\_ISO\_手動
+-   KSCAMERA\_EXTENDEDPROP\_ISO\_MANUAL
 
--   KSCAMERA\_EXTENDEDPROP\_CAP\_ASYNCCONTROL
+-   KSCAMERA\_EXTENDEDPROP\_CAPS\_ASYNCCONTROL
 
-ドライバーは、KSCAMERA を通知する場合\_EXTENDEDPROP\_ISO\_手動機能フラグを KSCAMERA の最小/最大/ステップ値でサポートされている ISO 範囲をアドバタイズする必要がありますも\_拡張\_PROP\_VIDEOPROCSETTING プロパティ。 ドライバーは、0 の最小値と最大値は 0、またはステップ値が 1 未満のアドバタイズ、コントロールは使用不可としてフラグが設定され、パイプラインによって拒否されます。
+ドライバーが KSCAMERA\_EXTENDEDPROP\_ISO\_手動機能フラグをアドバタイズしている場合、サポートされている ISO の範囲を、KSCAMERA\_EXTENDED\_PROP\_VIDEO 設定の最小/最大/ステップ値でアドバタイズする必要があります。". ドライバーが最小値0および最大値0をアドバタイズした場合、またはステップ値が1未満の場合、コントロールは使用不可としてフラグが設定され、パイプラインによって拒否されます。
 
-ドライバーが両方 KSPROPERTY をサポートしている場合\_CAMERACONTROL\_拡張\_ISO\_ADVANCED および KSPROPERTY\_CAMERACONTROL\_拡張\_ISO、ドライバーの必要がありますアドバタイズ KSCAMERA\_EXTENDEDPROP\_ISO\_両方 KSPROPERTY の自動\_CAMERACONTROL\_拡張\_ISO\_KSPROPERTYし、[詳細設定]\_CAMERACONTROL\_拡張\_ISO です。 それ以外の場合、両方の ISO コントロールは、使用できなくなると、MF パイプラインによって拒否されたフラグされます。
+ドライバーが KSK プロパティ\_CAMERACONTROL\_拡張\_ISO\_ADVANCED および KSPROPERTY\_CAMERACONTROL\_拡張\_ISO の両方をサポートしている場合、ドライバーは KSCAMERA\_EXTENDEDPROP をアドバタイズする必要があり\_ISO\_CAMERACONTROL の両方に対して AUTO プロパティ\_CAMERACONTROL\_拡張\_ISO\_ADVANCED および KSK プロパティ\_\_拡張\_ISO。 それ以外の場合、両方の ISO コントロールは使用不可としてフラグが設定され、MF パイプラインによって拒否されます。
 
-場合は、ドライバーのアドバタイズ KSCAMERA\_EXTENDEDPROP\_ISO\_KSPROPERTY で手動\_CAMERACONTROL\_拡張\_ISO\_ADVANCED および数値 KSCAMERA\_EXTENDEDPROP\_ISO\_KSPROPERTY XXX 値\_CAMERACONTROL\_拡張\_ISO、数値の KSCAMERA\_EXTENDEDPROP\_ISO\_XXX の値でアドバタイズされた KSPROPERTY\_CAMERACONTROL\_拡張\_ISO が KSCAMERA によってサポートされている手動 ISO 範囲でなければなりません\_EXTENDEDPROP\_ISO\_手動。 さらに、すべての数値 KSCAMERA\_EXTENDEDPROP\_ISO\_KSPROPERTY によってサポートされている手動の範囲で XXX の値を提供する\_CAMERACONTROL\_拡張\_ISO です。 それ以外の場合、両方の ISO コントロールは、使用できなくなると、MF パイプラインによって拒否されたフラグ可能性があります。
+ドライバーが KSCAMERA\_EXTENDEDPROP\_ISO\_MANUAL の\_を KSK プロパティにアドバタイズした場合\_拡張\_ISO\_詳細および数値 KSCAMERA\_EXTENDEDPROP\_ISO\_XXXKSK プロパティの値\_CAMERACONTROL\_EXTENDED\_ISO、数値の KSCAMERA\_EXTENDEDPROP\_CAMERACONTROL でアドバタイズされた\_ISO\_XXX 値\_拡張\_ISOは、KSCAMERA\_EXTENDEDPROP\_ISO\_MANUAL が提供する、サポートされている手動 ISO 範囲に含まれている必要があります。 また、サポートされている手動の範囲のすべての数値 KSCAMERA\_EXTENDEDPROP\_ISO\_XXX 値は、KSK プロパティ\_CAMERACONTROL\_拡張\_ISO によってアドバタイズされる必要があります。 それ以外の場合、両方の ISO コントロールは使用不可としてフラグが設定され、MF パイプラインによって拒否されることがあります。
 
-たとえば、次のいずれかの機能は、重大なエラーとして扱うことができ、MF パイプラインによってコントロールが拒否されます。
+たとえば、次のいずれかの機能が致命的なエラーとして扱われ、そのコントロールが MF パイプラインによって拒否される場合があります。
 
--   KSCAMERA\_EXTENDEDPROP\_ISO\_手動 (最小値 = 40、240 の最大値 = ステップ = 20)、KSCAMERA\_EXTENDEDPROP\_ISO\_50
+-   KSCAMERA\_EXTENDEDPROP\_ISO\_MANUAL (最小 = 40、最大 = 240、ステップ = 20)、KSCAMERA\_EXTENDEDPROP\_ISO\_50
 
--   KSCAMERA\_EXTENDEDPROP\_ISO\_手動 (最小値 = 40、240 の最大値 = ステップ = 20)、KSCAMERA\_EXTENDEDPROP\_ISO\_80
+-   KSCAMERA\_EXTENDEDPROP\_ISO\_MANUAL (最小 = 40、最大 = 240、ステップ = 20)、KSCAMERA\_EXTENDEDPROP\_ISO\_80
 
--   KSCAMERA\_EXTENDEDPROP\_ISO\_手動 (最小値 = 40、240 の最大値 = ステップ = 20)、KSCAMERA\_EXTENDEDPROP\_ISO\_400
+-   KSCAMERA\_EXTENDEDPROP\_ISO\_MANUAL (最小 = 40、最大 = 240、ステップ = 20)、KSCAMERA\_EXTENDEDPROP\_ISO\_400
 
-次のいずれかの機能は、MF パイプラインによって受け入れられます。
+次のいずれかの機能は、MF パイプラインで受け入れられます。
 
--   KSCAMERA\_EXTENDEDPROP\_ISO\_手動 (最小値 = 40、240 の最大値 = ステップ = 20)、KSCAMERA\_EXTENDEDPROP\_ISO\_80、KSCAMERA\_EXTENDEDPROP\_ISO\_100、KSCAMERA\_EXTENDEDPROP\_ISO\_200
+-   KSCAMERA\_EXTENDEDPROP\_ISO\_MANUAL (最小 = 40、最大 = 240、ステップ = 20)、KSCAMERA\_EXTENDEDPROP\_ISO\_80、KSCAMERA\_EXTENDEDPROP\_ISO\_100、KSCAMERA\_EXTENDEDPROP\_ISO\_200
 
--   KSCAMERA\_EXTENDEDPROP\_ISO\_手動 (最小値 = 40、240 の最大値 = ステップ = 20)
+-   KSCAMERA\_EXTENDEDPROP\_ISO\_MANUAL (最小 = 40、最大値 = 240、ステップ = 20)
 
 -   KSCAMERA\_EXTENDEDPROP\_ISO\_80、KSCAMERA\_EXTENDEDPROP\_ISO\_200
 
@@ -96,41 +96,41 @@ Windows 8.1 の KS\_CAMERACONTROL\_拡張\_整数手動 ISO のサポートが�
 </colgroup>
 <thead>
 <tr class="header">
-<th>Member</th>
+<th>メンバー</th>
 <th>説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>これは、1、</p></td>
+<td><p>これは1である必要があります。</p></td>
 </tr>
 <tr class="even">
 <td><p>PinId</p></td>
-<td><p>これには、写真の暗証番号 (pin) に関連付けられた暗証番号 (pin) の ID があります。</p></td>
+<td><p>これは、フォト pin に関連付けられている Pin ID である必要があります。</p></td>
 </tr>
 <tr class="odd">
-<td><p>サイズ</p></td>
-<td><p>Sizeof(KSCAMERA_EXTENDEDPROP_HEADER)+sizeof(KSCAMERA_EXTENDEDPROP_VIDEOPROCSETTING)、必要があります。</p></td>
+<td><p>Size</p></td>
+<td><p>これは sizeof (KSCAMERA_EXTENDEDPROP_HEADER) + sizeof (KSCAMERA_EXTENDEDPROP_VIDEOPROCSETTING) である必要があります。</p></td>
 </tr>
 <tr class="even">
 <td><p>結果</p></td>
-<td><p>これには、最後の設定操作のエラーの結果が含まれています。 設定操作が行われていない場合は必ず 0。</p></td>
+<td><p>これには、最後の設定操作のエラー結果が含まれます。 設定操作が行われていない場合は、0にする必要があります。</p></td>
 </tr>
 <tr class="odd">
 <td><p>機能</p></td>
-<td><p>これは、ビット単位の KSCAMERA_EXTENDEDPROP_ISO_AUTO または施した KSCAMERA_EXTENDEDPROP_ISO_MANUAL、および KSCAMERA_EXTENDEDPROP_CAPS_ASYNCCONTROL フラグである必要があります。 このコントロールは非同期である必要があります。</p></td>
+<td><p>これは、KSCAMERA_EXTENDEDPROP_ISO_AUTO 施し KSCAMERA_EXTENDEDPROP_ISO_MANUAL と KSCAMERA_EXTENDEDPROP_CAPS_ASYNCCONTROL フラグのビット単位で指定する必要があります。 このコントロールは非同期である必要があります。</p></td>
 </tr>
 <tr class="even">
 <td><p>フラグ</p></td>
-<td><p>これは、読み取り/書き込みフィールドです。 上記で定義された KSCAMERA_EXTENDEDPROP_ISO_XXX フラグのいずれかを指定できます。</p></td>
+<td><p>これは、読み取り/書き込みフィールドです。 これは、上記で定義されている KSCAMERA_EXTENDEDPROP_ISO_XXX フラグのいずれかになります。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-次の表は、説明と要件、KSCAMERA\_EXTENDEDPROP\_ISO DDI VIDEOPROCSETTING 構造のフィールド。 この構造体は、ksmedia.h で定義されます。
+次の表に、ISO DDI の KSCAMERA\_EXTENDEDPROP\_VIDEOの設定の構造フィールドの説明と要件を示します。 この構造体は、ksmedia. h で定義されています。
 
 <table>
 <colgroup>
@@ -139,48 +139,48 @@ Windows 8.1 の KS\_CAMERACONTROL\_拡張\_整数手動 ISO のサポートが�
 </colgroup>
 <thead>
 <tr class="header">
-<th>Member</th>
+<th>メンバー</th>
 <th>説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>Mode</p></td>
-<td><p>これにより、使用されておらず、0 にする必要があります。</p></td>
+<td><p>[モード]</p></td>
+<td><p>これは使用されておらず、0である必要があります。</p></td>
 </tr>
 <tr class="even">
 <td><p>最小/最大/ステップ</p></td>
-<td><p>最小/最大/ステップには、最小/最大/の増分カメラ ドライバーでサポートされる手動の ISO 速度が含まれています。 手動 ISO がサポートされている場合は、ドライバーはこれらの GET 操作で返す必要があります。</p></td>
+<td><p>Min/Max/Step には、カメラドライバーでサポートされている ISO の手動速度の最小/最大/増分が含まれます。 手動 ISO がサポートされている場合、ドライバーは GET 操作のためにこれらを返す必要があります。</p></td>
 </tr>
 <tr class="odd">
 <td><p>VideoProc</p></td>
-<td><p>KSCAMERA_EXTENDEDPROP_HEADER の Flags フィールドに指定すると、手動、VideoProc.Value.ul は最小/最大/ステップ パラメーターによって示された範囲内の現在の ISO 速度値を指定する必要があります。</p>
-<p>設定操作で、手動以外のフラグが指定されている場合、VideoProc フィールドは無視されます。 GET 操作の場合、ドライバー返す必要があります常に ISO の現在の速度に関係なく。</p></td>
+<td><p>KSCAMERA_EXTENDEDPROP_HEADER の Flags フィールドで MANUAL を指定する場合は、Min/Max/Step パラメーターによって示される範囲内で、現在の ISO 速度の値を指定する必要があります。</p>
+<p>Manual 以外のフラグが指定されている場合、設定操作では、VideoProc フィールドは無視されます。 GET 操作の場合、ドライバーはに関係なく、常に現在の ISO 速度を返す必要があります。</p></td>
 </tr>
 <tr class="even">
 <td><p>予約済み</p></td>
-<td><p>これは使用されません。 これは、ドライバーによって無視する必要があります。</p></td>
+<td><p>これは使用されません。 これは、ドライバーによって無視される必要があります。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-**呼び出しを取得します。**
+**通話の取得**
 
-ドライバーは KSCAMERA でその機能を提供する必要があります\_EXTENDEDPROP\_ヘッダー。KSCAMERA でドライバーのフラグの機能と現在の ISO\_EXTENDEDPROP\_ヘッダー。設定の呼び出しはこれまで発行されていない Flags.Â 場合、Get 呼び出しの前にドライバーは、KSCAMERA でその既定値を返す必要があります\_EXTENDEDPROP\_ヘッダー。フラグを設定します。
+ドライバーは、KSCAMERA\_EXTENDEDPROP\_ヘッダーで機能を提供する必要があります。機能と、KSCAMERA\_EXTENDEDPROP\_ヘッダーのドライバーでの現在の ISO フラグ。フラグ。 Get 呼び出しの前に設定呼び出しが実行されていない場合、ドライバーは、KSCAMERA\_EXTENDEDPROP\_ヘッダーで既定値を返します。示す.
 
-場合、KSCAMERA\_EXTENDEDPROP\_ISO\_手動フラグはさらに、ドライバーは KSCAMERA でサポートされている範囲を提供する可能性があります機能フィールドに、アドバタイズ\_EXTENDEDPROP\_VIDEOPROCSETTING します。最小/最大/ステップ。
+機能 フィールドに KSCAMERA\_EXTENDEDPROP\_ISO\_手動フラグが提供されている場合、ドライバーは、サポートされている範囲を KSCAMERA\_EXTENDEDPROP\_VIDEOの設定でさらにアドバタイズする必要があります。Min/Max/Step。
 
-ドライバーは KSCAMERA で使用されている現在の ISO 速度を報告する必要がありますも\_EXTENDEDPROP\_VIDEOPROCSETTING します。VideoProc.Value.ul します。 設定の呼び出しはこれまで発行されていない場合、GET 呼び出しの前に、ドライバーは、KSCAMERA で、現在の ISO 速度を返す必要があります\_EXTENDEDPROP\_VIDEOPROCSETTING します。VideoProc.Value.ul します。
+また、ドライバーは、KSCAMERA\_EXTENDEDPROP\_VIDEOの設定で使用されている現在の ISO 速度を報告する必要があります。値を指定します。 GET 呼び出しの前に SET 呼び出しが実行されていない場合、ドライバーは、KSCAMERA\_EXTENDEDPROP\_VIDEOの設定で現在の ISO 速度を返します。値を指定します。
 
-**設定の呼び出し**
+**呼び出しの設定**
 
-KSCAMERA\_EXTENDEDPROP\_VIDEOPROCSETTING します。VideoProc.Value.ul には、目的の整数手動 ISO 速度が含まれる場合 KSCAMERA\_EXTENDEDPROP\_ISO\_KSCAMERA で手動が指定された\_EXTENDEDPROP\_ヘッダー。フラグを設定します。
+KSCAMERA\_EXTENDEDPROP\_VIDEOを設定します。KSCAMERA\_EXTENDEDPROP\_ISO\_MANUAL が KSCAMERA\_EXTENDEDPROP\_ヘッダーで指定されている場合は、必要な整数の手動 ISO 速度を含む値を指定します。示す.
 
-場合、KSCAMERA\_EXTENDEDPROP\_ISO\_KSCAMERA で自動フラグが指定された\_EXTENDEDPROP\_ヘッダー。フラグ、KSCAMERA\_EXTENDEDPROP\_VIDEOPROCSETTING します。VideoProc.Value.ul は無視されます。
+KSCAMERA\_EXTENDEDPROP\_ISO\_AUTO フラグが KSCAMERA\_EXTENDEDPROP\_ヘッダーで指定されている場合。フラグ、KSCAMERA\_EXTENDEDPROP\_VIDEOを設定します。VideoProc. 値. ul は無視されます。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 <table>
 <colgroup>

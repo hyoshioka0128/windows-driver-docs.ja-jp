@@ -4,20 +4,20 @@ description: MSiSCSI\_ConnectionStatistics WMI クラス
 ms.assetid: f12dfa6a-0999-40a3-9e15-bb65dc086911
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 1ad30054f27435335edb05117d6bf06b8d903d81
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 94a14f9a2b8831f65fa433257733f6842b82426d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67376696"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845035"
 ---
-# <a name="msiscsiconnectionstatistics-wmi-class"></a>MSiSCSI\_ConnectionStatistics WMI クラス
+# <a name="msiscsi_connectionstatistics-wmi-class"></a>MSiSCSI\_ConnectionStatistics WMI クラス
 
 
 ## <span id="ddk_msiscsi_connectionstatistics_wmi_class_kr"></span><span id="DDK_MSISCSI_CONNECTIONSTATISTICS_WMI_CLASS_KR"></span>
 
 
-MSiSCSI\_ConnectionStatistics WMI クラスは、接続の統計情報を公開します。 このクラスは、Iscsiprf.mof で次のように定義されます。
+MSiSCSI\_ConnectionStatistics WMI クラスは、接続の統計情報を公開します。 このクラスは、Iscsiprf で次のように定義されています。
 
 ```cpp
 class MSiSCSI_ConnectionStatistics : Win32_PerfRawData {
@@ -78,15 +78,15 @@ class MSiSCSI_ConnectionStatistics : Win32_PerfRawData {
 };
 ```
 
-WMI ツールのスイートでは、上記のクラス定義をコンパイルするときに生成、 [ **MSiSCSI\_ConnectionStatistics** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsiprf/ns-iscsiprf-_msiscsi_connectionstatistics)データ構造体。
+WMI ツールスイートは、前のクラス定義をコンパイルするときに、 [**Msiscsi\_ConnectionStatistics**](https://docs.microsoft.com/windows-hardware/drivers/ddi/iscsiprf/ns-iscsiprf-_msiscsi_connectionstatistics)データ構造を生成します。
 
-イニシエーターは、MSiSCSI を登録する必要があります\_ConnectionStatistics WMI クラスに次のターゲット インスタンス名。
+イニシエーターは、次のターゲットインスタンス名を持つ MSiSCSI\_ConnectionStatistics WMI クラスを登録する必要があります。
 
 ```cpp
 targetname_#:#
 ```
 
-最初の番号記号 (\#) の値は、 **USID**のメンバー、 [ **MSiSCSI\_ConnectionStatistics** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsiprf/ns-iscsiprf-_msiscsi_connectionstatistics)構造、および 2 番目シャープ記号 (\#) の値は、 **CID**このクラスのメンバー。
+最初のシャープ記号 (\#) は、 [**Msiscsi\_ConnectionStatistics**](https://docs.microsoft.com/windows-hardware/drivers/ddi/iscsiprf/ns-iscsiprf-_msiscsi_connectionstatistics)構造体の**usid**メンバーの値です。2番目の番号記号 (\#) は、このクラスの**CID**メンバーの値です。
 
  
 

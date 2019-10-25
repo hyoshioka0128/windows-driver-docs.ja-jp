@@ -1,9 +1,9 @@
 ---
 title: FltAcquireResourceExclusive ルーチン
-description: FltAcquireResourceExclusive ルーチンでは、呼び出し元のスレッドによって、指定されたリソースへの排他アクセスを取得します。
+description: FltAcquireResourceExclusive ルーチンは、呼び出し元のスレッドによって排他的にアクセスするために、指定されたリソースを取得します。
 ms.assetid: 3736582e-33eb-4967-acfa-4b9d2b8cd87f
 keywords:
-- FltAcquireResourceExclusive ルーチン インストール可能なファイル システム ドライバー
+- FltAcquireResourceExclusive ルーチンのインストール可能なファイルシステムドライバー
 topic_type:
 - apiref
 api_name:
@@ -15,17 +15,17 @@ api_type:
 - LibDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a5ad45adb6e24db8643026cc3402dc809c545c4
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 268101c49007d70f2255335f6aa73c7b1ecb62c5
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384577"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841334"
 ---
 # <a name="fltacquireresourceexclusive-routine"></a>FltAcquireResourceExclusive ルーチン
 
 
-**FltAcquireResourceExclusive**ルーチンは、呼び出し元のスレッドによって、指定されたリソースへの排他アクセスを取得します。
+**FltAcquireResourceExclusive**ルーチンは、呼び出し元のスレッドによって排他的にアクセスするために、指定されたリソースを取得します。
 
 <a name="syntax"></a>構文
 ------
@@ -39,8 +39,8 @@ VOID FltAcquireResourceExclusive(
 <a name="parameters"></a>パラメーター
 ----------
 
-*リソース*\[入力、出力\]  
-非透過のスケジュール作成構造体へのポインター。 この構造体の非ページ プールから呼び出し元が割り当てたを呼び出すことによって初期化する必要があります[ **ExInitializeResourceLite** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exinitializeresourcelite)または[ **ExReinitializeResourceLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exreinitializeresourcelite).
+*リソース*\[in、out\]  
+不透明な÷構造体を指すポインターです。 この構造体は、呼び出し元によって非ページプールから割り当てられ、 [**Exinitializer eresourcelite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exinitializeresourcelite)または[**Exreinitializer eresourcelite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exreinitializeresourcelite)を呼び出すことによって初期化される必要があります。
 
 <a name="return-value"></a>戻り値
 ------------
@@ -50,39 +50,39 @@ VOID FltAcquireResourceExclusive(
 <a name="remarks"></a>注釈
 -------
 
-このルーチンは、Windows XP Service Pack 2 (SP2)、Windows Server 2003 Service Pack 1 (SP1)、および以降のバージョンの Windows で使用できます。
+このルーチンは、Windows XP Service Pack 2 (SP2)、Windows Server 2003 Service Pack 1 (SP1)、およびそれ以降のバージョンの Windows で使用できます。
 
-**FltAcquireResourceExclusive**呼び出し元のスレッドによって、指定されたリソースへの排他アクセスを取得します。
+**FltAcquireResourceExclusive**は、呼び出し元のスレッドによって排他的にアクセスするために、指定されたリソースを取得します。
 
-次の状況は、呼び出し元には、指定されたリソースに排他アクセスが与えられるかを決定します。
+次の状況では、指定されたリソースへの排他アクセスが呼び出し元に付与されているかどうかを判断します。
 
--   リソースが現在所有されていない場合、現在のスレッドに排他アクセスがすぐに付与します。
+-   リソースが現在所有されていない場合は、現在のスレッドに対して排他アクセスが直ちに許可されます。
 
--   呼び出し元がリソースを取得して排他アクセスのため、同じ種類のアクセスを再帰的に、現在のスレッドが許可されます。
+-   呼び出し元が既に排他アクセス用にリソースを取得している場合、現在のスレッドは同じ種類のアクセスを再帰的に許可されます。
 
--   共有リソースにアクセスしている呼び出し元は、ロックを解除し、しのみ再取得する必要があります。
+-   リソースへの共有アクセス権を持つ呼び出し元は、ロックを解放してから排他的に再取得する必要があります。
 
--   別のスレッドによって、排他として、リソースが現在所有している場合、または呼び出し元のみが共有されている場合、リソースへのアクセスは、リソースを取得するまでに、現在のスレッドが待機状態に配置されます。
+-   リソースが別のスレッドによって排他的に所有されている場合、または呼び出し元がリソースへの共有アクセスだけを持っている場合は、リソースを取得できるようになるまで、現在のスレッドは待機状態になります。
 
-&gt; \[!注\] &gt; 2 つのスレッドが同じリソースに対して共有ロックを保持し、その共有ロックを解放しないまま排他的ロックを取得しようと両方、デッドロックが発生します。 つまり、共有ロックを保持する他の各スレッドが待機および、までは、その他の共有保持は解放もします。
+&gt; \[!2つのスレッドが同じリソースに対して共有ロックを保持していて、共有ロックを解放せずにロックを排他的に取得しようとすると、デッドロックが発生することに注意して\] &gt; ます。 つまり、各スレッドは、他のスレッドがロックに対して共有ホールドを解放するまで待機し、それ以外の場合は共有ホールドを解放しません。
 
  
 
-**FltAcquireResourceExclusive**用のラッパーです[ **ExAcquireResourceExclusiveLite** ](https://msdn.microsoft.com/library/windows/hardware/ff544351)通常カーネル APC 配信を無効にします。
+**FltAcquireResourceExclusive**は、通常のカーネル APC 配信を無効にする[**ExAcquireResourceExclusiveLite**](https://msdn.microsoft.com/library/windows/hardware/ff544351)のラッパーです。
 
-**FltAcquireResourceExclusive**通常カーネル APC の配信を無効にしますを呼び出す必要はありません[ **KeEnterCriticalRegion** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-keentercriticalregion)または[ 。**FsRtlEnterFileSystem** ](fsrtlenterfilesystem.md)呼び出す前に**FltAcquireResourceExclusive**します。
+**FltAcquireResourceExclusive**は通常のカーネル APC 配信を無効にするため、 **FltAcquireResourceExclusive**を呼び出す前に[**KeEnterCriticalRegion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-keentercriticalregion)または[**fsrtlenterfilesystem**](fsrtlenterfilesystem.md)を呼び出す必要はありません。
 
-呼び出すには、取得した後は、リソースを解放、 [ **FltReleaseResource**](fltreleaseresource.md)します。 すべての成功した呼び出し**FltAcquireResourceExclusive**後続の呼び出しによって照合される必要があります**FltReleaseResource**します。
+リソースを取得した後に解放するには、 [**FltReleaseResource**](fltreleaseresource.md)を呼び出します。 **FltAcquireResourceExclusive**の呼び出しが成功するたびに、 **FltReleaseResource**への後続の呼び出しで一致する必要があります。
 
-共有アクセス用のリソースを取得するために呼び出す[ **FltAcquireResourceShared**](fltacquireresourceshared.md)します。
+共有アクセス用のリソースを取得するには、 [**FltAcquireResourceShared**](fltacquireresourceshared.md)を呼び出します。
 
-システムのリソースの一覧からリソースを削除する[ **ExDeleteResourceLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exdeleteresourcelite)します。
+システムのリソースリストからリソースを削除するには、 [**ExDeleteResourceLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exdeleteresourcelite)を呼び出します。
 
-再利用するためのリソースを初期化するために呼び出す[ **ExReinitializeResourceLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exreinitializeresourcelite)します。
+再利用するためにリソースを初期化するには、 [**Exreinitializer Eresourcelite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exreinitializeresourcelite)を呼び出します。
 
-次の構造体の詳細については、次を参照してください。 [÷ リソース ルーチンの概要](https://docs.microsoft.com/windows-hardware/drivers/kernel/introduction-to-eresource-routines)でカーネルのアーキテクチャの設計ガイド。
+÷の構造体の詳細については、「カーネルアーキテクチャの設計ガイド」の「のについて」[を](https://docs.microsoft.com/windows-hardware/drivers/kernel/introduction-to-eresource-routines)参照してください。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -97,15 +97,15 @@ VOID FltAcquireResourceExclusive(
 </tr>
 <tr class="even">
 <td align="left"><p>バージョン</p></td>
-<td align="left"><p>Windows XP SP2、Windows Server 2003 SP1、および以降のバージョンのすべての Windows オペレーティング システムで使用できます。</p></td>
+<td align="left"><p>Windows XP SP2、Windows Server 2003 SP1、およびそれ以降のバージョンのすべての Windows オペレーティングシステムで使用できます。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>Header</p></td>
-<td align="left">Fltkernel.h (Fltkernel.h を含む)</td>
+<td align="left">Fltkernel .h (Fltkernel. h を含む)</td>
 </tr>
 <tr class="even">
 <td align="left"><p>Library</p></td>
-<td align="left">FltMgr.lib</td>
+<td align="left">fltMgr .lib</td>
 </tr>
 <tr class="odd">
 <td align="left"><p>IRQL</p></td>
@@ -119,11 +119,11 @@ VOID FltAcquireResourceExclusive(
 
 [**ExAcquireResourceExclusiveLite**](https://msdn.microsoft.com/library/windows/hardware/ff544351)
 
-[**ExDeleteResourceLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exdeleteresourcelite)
+[**ExDeleteResourceLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exdeleteresourcelite)
 
-[**ExInitializeResourceLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exinitializeresourcelite)
+[**Ex/Eresourcelite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exinitializeresourcelite)
 
-[**ExReinitializeResourceLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exreinitializeresourcelite)
+[**Exreinitializer Eresourcelite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exreinitializeresourcelite)
 
 [**FltAcquireResourceShared**](fltacquireresourceshared.md)
 
@@ -131,7 +131,7 @@ VOID FltAcquireResourceExclusive(
 
 [**FsRtlEnterFileSystem**](fsrtlenterfilesystem.md)
 
-[**KeEnterCriticalRegion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-keentercriticalregion)
+[**KeEnterCriticalRegion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-keentercriticalregion)
 
  
 

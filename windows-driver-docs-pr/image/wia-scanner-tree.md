@@ -4,12 +4,12 @@ description: WIA スキャナー ツリー
 ms.assetid: bd1452b9-1926-4dd6-b94c-e44f07573266
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e5afaabe43e254352bd8690c34377a77e23f126
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: dcaa5c3e781f9306a4939f7c5e32c272c972ba98
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355168"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840668"
 ---
 # <a name="wia-scanner-tree"></a>WIA スキャナー ツリー
 
@@ -17,35 +17,35 @@ ms.locfileid: "67355168"
 
 
 
-次の図は、スキャナーとそれによって生成されるイメージを示します。
+次の図は、スキャナーとそれが生成したイメージを示しています。
 
-![スキャナーとそれによって生成されるイメージを示す図](images/art-scanner.png)
+![スキャナーとそれが生成したイメージを示す図](images/art-scanner.png)
 
-次の図は、Windows Vista での Windows XP または Microsoft Windows Me スキャナー、またはスキャナーを示していますドキュメント フィーダー、両面印刷ユニットまたはフィルム スキャナーが、そのスキャナーによってがないかどうかを提供します。
+次の図は、Microsoft Windows Me または Windows XP スキャナー、またはスキャナーにドキュメントフィーダー、両面印刷用スキャナーがない場合の windows Vista のスキャナーを示しています。
 
-WIA では、スキャナー、および次の図のように、項目のツリーとして前の図に示すようにイメージを表します。
+次の図に示すように、WIA は、前の図で示されているスキャナーとそのイメージを項目ツリーとして表します。
 
-![wia が、スキャナー、および項目のツリーとしてイメージを表す方法を示す図](images/art-4.png)
+![wia がスキャナーとそのイメージを項目ツリーとして表す方法を示す図](images/art-4.png)
 
-スキャナーで、ルート項目は、一般的なデバイス プロパティ (カメラおよびスキャナーの両方に共通するプロパティ) とスキャナーに固有のデバイス プロパティで構成されます。 同様に、各子項目は、カメラおよびスキャナー項目の両方に共通するプロパティとスキャナーの項目に固有のプロパティで構成されます。
+スキャナー自体であるルート項目は、一般的なデバイスプロパティ (カメラとスキャナーの両方に共通のプロパティ) とスキャナー固有のデバイスプロパティで構成されています。 同様に、各子項目は、カメラとスキャナーの両方の項目に共通するプロパティだけでなく、スキャナー項目に固有のプロパティで構成されます。
 
-WIA サービスを介して、アプリケーションは、スキャナー項目から、次を要求できます。
+アプリケーションでは、WIA サービスを使用して、次の項目をスキャナー項目から要求できます。
 
--   スキャナーの機能のクエリを実行します。
+-   クエリスキャナー機能。
 
--   スキャナーのデバイス プロパティを設定します。
+-   スキャナーデバイスのプロパティを設定します。
 
 -   データ転送を要求します。
 
-ルート アイテムのすぐ下の Windows XP と Windows Me では、典型的なスキャナー オブジェクトは、デバイスのデータ収集機能を表すスキャナー項目、1 つの項目が。 アプリケーションは、スキャナーの項目のプロパティを設定して、スキャンを設定します。 アプリケーションは、項目から、WIA サービスによって、データを要求したときに、スキャンが実行されます。
+Windows Me と Windows XP では、ルート項目のすぐ下に、一般的なスキャナーオブジェクトには、デバイスのデータ収集機能を表すスキャナー項目という1つの項目があります。 アプリケーションは、スキャナー項目のプロパティを設定することによって、スキャンを設定します。 スキャンは、アプリケーションが、WIA サービスを介して項目からデータを要求したときに実行されます。
 
-Windows Me、Windows XP でアプリケーションは通常は自動ドキュメント フィーダー (ADFs) を持つ 2 つの項目 - ルート項目と 1 つの子で表されるなどのフラット ベッド スキャナーを想定します。 すべてのデータ転送は、子項目から実行されます。 ドライバー、プライベートの使用のためには、他の項目を作成することもでき、これらの項目を転送に対応できます。 (これを行うへの呼び出しで項目の型のフラグの WiaItemTypeTransfer ビットを設定[ **wiasCreateChildAppItem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamdef/nf-wiamdef-wiascreatechildappitem)します。 この定数は、「Microsoft Windows SDK のドキュメントです。)ただし、アプリケーションは一般に、これらのプライベート項目について知るにはないと、それらを操作する方法がわからない。 ADF 機能の公開されているし、WIA を追加することにより、Windows XP、または Windows Me で ADF にスキャナーの\_DPS\_ドキュメント\_処理\_*XXX*プロパティをスキャナーのルートにスキャナーの子ではなく、項目を項目します。 これらのプロパティの詳細については、次を参照してください。 [WIA プロパティ](https://docs.microsoft.com/windows-hardware/drivers/image/wia-properties)します。 Windows Vista では、ADF を使用した、スキャナーの詳細については、次を参照してください。 [WIA フィーダー スキャナー](wia-feeder-scanners.md)します。
+Windows Me と Windows XP では、通常、アプリケーションは、2つの項目 (ルート項目と1つの子) で表されるように、自動ドキュメントフィーダー (ADFs) を備えたスキャナーなどのフラットベッドスキャナーを必要とします。 すべてのデータ転送は、子項目から実行されます。 ドライバーは、プライベートに使用するために他の項目を作成することができます。これらの項目は、転送可能にすることができます。 (これを行うには、 [**wiasCreateChildAppItem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamdef/nf-wiamdef-wiascreatechildappitem)への呼び出しで item type フラグの WiaItemTypeTransfer ビットを設定します。 この定数については、Microsoft Windows SDK のドキュメントを参照してください)。ただし、通常、アプリケーションはこれらのプライベート項目を認識しないため、それらを操作する方法がわかりません。 ADF を使用したスキャナーの場合、Windows Me または Windows XP では、スキャナーのルート項目に\_\_*XXX*プロパティを処理する WIA\_DPS\_ドキュメントを追加することにより、adf 機能が公開および制御されます。子項目。 これらのプロパティの詳細については、「 [WIA のプロパティ](https://docs.microsoft.com/windows-hardware/drivers/image/wia-properties)」を参照してください。 Windows Vista の ADF を使用したスキャナーの詳細については、「 [WIA フィーダースキャナー](wia-feeder-scanners.md)」を参照してください。
 
-ドライバーは報告されているデバイスが、フラット ベッドと ADF、および Windows XP、または Windows Me で双方向のスキャンを行うことができるかどうか、 [ **WIA\_DPS\_ドキュメント\_処理\_機能**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-document-handling-capabilities)プロパティとして (フィード |フラット |DUP)。 確認しますの有効な値[ **WIA\_DPS\_ドキュメント\_処理\_選択**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-document-handling-select)が正しく設定されています。 すべてのドキュメントを単一のスキャン ジョブでスキャンされる項目のツリー内の 1 つの子項目で存在することに注意してください。 Windows Vista で、スキャナー、ADF を使用し、両面印刷ユニットについては、次を参照してください。 [WIA フィーダー スキャナー](wia-feeder-scanners.md)します。
+デバイスにフラットベッドおよび ADF が搭載されていて、Windows Me または Windows XP で双方向スキャンを実行できる場合、ドライバーは、\_機能のプロパティを[**処理する\_\_ドキュメントの WIA\_DPS**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-document-handling-capabilities)を報告します (フィード |FLAT |DUP)。 [**WIA\_DPS\_ドキュメント\_処理\_選択**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-document-handling-select)の有効な値が正しく設定されていることを確認します。 1つのスキャンジョブでスキャンされたすべてのドキュメントが、項目ツリーの単一の子項目に存在することに注意してください。 ADF を備えたスキャナーと Windows Vista の両面印刷装置の詳細については、「 [WIA フィーダースキャナー](wia-feeder-scanners.md)」を参照してください。
 
-たとえば、アプリケーションは、ADF から 3 つのページの双方向のスキャンを実行しようとします。 これを実現するアプリケーションは、WIA を設定\_DPS\_ドキュメント\_処理\_にプロパティを選択します (フィーダー |双方向)、および設定は、 [ **WIA\_DPS\_ページ**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-pages)プロパティを 3。 WIA を設定する必要がありますが、アプリケーションは、最初のページの先頭をスキャンする場合、\_DPS\_ドキュメント\_処理\_にプロパティを選択します (フィーダー |双方向 |前部\_最初)。 これは、アプリケーションがデータ転送元の要求が子項目に移動します。 ミニドライバーは、ADF ページ 1、2 ページとしてそのページのページ 3 として ADF では、2 番目のページの先頭と最初のページの先頭をレポートします。
+たとえば、アプリケーションが ADF から3ページの両面スキャンを実行するとします。 これを実現するために、アプリケーションでは、WIA\_DPS\_ドキュメント\_処理\_SELECT プロパティを (フィーダー |) に設定します。また、[ [**WIA\_DPS\_PAGES**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-pages) ] プロパティを3に設定します。 アプリケーションで最初にページの先頭をスキャンする場合は、WIA\_DPS\_ドキュメント\_処理\_SELECT プロパティを設定する必要があります (フィーダー |両面 |FRONT\_最初)。 この処理が完了すると、アプリケーションは、データ転送を要求する子項目に移動する必要があります。 ミニドライバーは、ADF の最初のページの前をページ1、ページ2として、ADF の2番目のページの前をページ3として報告します。
 
-デバイスは、ADF にある場合、ADF プロパティをサポートする必要があることに注意してください。
+デバイスに ADF がある場合は、ADF のプロパティをサポートする必要があることに注意してください。
 
  
 

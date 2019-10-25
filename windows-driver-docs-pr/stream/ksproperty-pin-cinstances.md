@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_PIN\_CINSTANCES
-description: この pin ファクトリがインスタンス化、ピンの現在の数だけでなくピン フィルターごとこの pin ファクトリがインスタンスの最大数。
+title: KSK プロパティ\_ピン\_CINSTANCES
+description: このピンファクトリがインスタンス化したピンの現在の数、およびこのピンファクトリがインスタンス化できるピンの最大数 (フィルターあたり)。
 ms.assetid: 0a6c0afa-1bdf-4b80-a8d7-55f13d9da74b
 keywords:
-- KSPROPERTY_PIN_CINSTANCES ストリーミング メディア デバイス
+- KSPROPERTY_PIN_CINSTANCES ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eda6574e46083ef8b08cc5636baffb08f3412d06
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c94923f1b641b5cf9d038c05a580e20622bf6b85
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67353213"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842748"
 ---
-# <a name="kspropertypincinstances"></a>KSPROPERTY\_PIN\_CINSTANCES
+# <a name="ksproperty_pin_cinstances"></a>KSK プロパティ\_ピン\_CINSTANCES
 
 
-この pin ファクトリがインスタンス化、ピンの現在の数だけでなくピン フィルターごとこの pin ファクトリがインスタンスの最大数。
+このピンファクトリがインスタンス化したピンの現在の数、およびこのピンファクトリがインスタンス化できるピンの最大数 (フィルターあたり)。
 
 ## <span id="ddk_ksproperty_pin_cinstances_ks"></span><span id="DDK_KSPROPERTY_PIN_CINSTANCES_KS"></span>
 
@@ -41,7 +41,7 @@ ms.locfileid: "67353213"
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,10 +50,10 @@ ms.locfileid: "67353213"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>いいえ</p></td>
+<td><p>[はい]</p></td>
+<td><p>必須ではない</p></td>
 <td><p>Pin</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_pin" data-raw-source="[&lt;strong&gt;KSP_PIN&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_pin)"><strong>KSP_PIN</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksp_pin" data-raw-source="[&lt;strong&gt;KSP_PIN&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksp_pin)"><strong>KSP_PIN</strong></a></p></td>
 <td><p>KSPIN_CINSTANCES</p></td>
 </tr>
 </tbody>
@@ -64,7 +64,7 @@ ms.locfileid: "67353213"
 <a name="remarks"></a>注釈
 -------
 
-このプロパティは、型 KSPIN の構造体を返す\_CINSTANCES:
+このプロパティは、KSPIN\_CINSTANCES 型の構造体を返します。
 
 ```cpp
 typedef struct {
@@ -73,19 +73,19 @@ typedef struct {
 } KSPIN_CINSTANCES;
 ```
 
-次に、KSPIN の各メンバーの説明\_CINSTANCES 構造体。
+KSPIN\_CINSTANCES 構造体の各メンバーの説明を次に示します。
 
 <span id="PossibleCount"></span><span id="possiblecount"></span><span id="POSSIBLECOUNT"></span>**PossibleCount**  
-フィルター処理、または KSINTANCE でピン留めするファクトリをインスタンス化できる pin の最大数を指定します\_中間状態の最大値がない場合。
+ピンファクトリがフィルターでインスタンス化できるピンの最大数を指定します。最大数を指定しない場合は、KSK が\_不確定であることを示します。
 
 <span id="CurrentCount"></span><span id="currentcount"></span><span id="CURRENTCOUNT"></span>**CurrentCount**  
-フィルターを pin の pin のファクトリがインスタンス化の現在の数を指定します。
+ピンファクトリがフィルターでインスタンス化した現在の pin の数を指定します。
 
-このプロパティは、pin の指定した工場出荷時のフィルターごとの最大値を指定します。 使用して、 [ **KSPROPERTY\_PIN\_GLOBALCINSTANCES** ](ksproperty-pin-globalcinstances.md) pin の指定した工場出荷時の全体的な最大値を指定するプロパティ。
+このプロパティは、特定のピンファクトリのフィルターごとの最大値を指定します。 指定した pin ファクトリの全体の最大値を指定するには、 [**Ksk プロパティ\_\_GLOBALCINSTANCES**](ksproperty-pin-globalcinstances.md)プロパティを使用します。
 
-Stream ミニドライバーは、このプロパティを直接処理する必要はありません。ストリーム クラス ドライバーは、ストリーム要求のブロックを使用して詳細情報を照会するこのプロパティを処理します。
+Stream ミニドライバーは、このプロパティを直接処理する必要はありません。ストリームクラスドライバーは、ストリーム要求ブロックを使用してこのプロパティを処理し、詳細情報を照会します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -96,7 +96,7 @@ Stream ミニドライバーは、このプロパティを直接処理する必�
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Ks.h (Ks.h を含む)</td>
+<td>Ks (Ks を含む)</td>
 </tr>
 </tbody>
 </table>

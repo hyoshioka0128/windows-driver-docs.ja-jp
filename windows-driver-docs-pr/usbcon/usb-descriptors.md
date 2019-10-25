@@ -1,28 +1,28 @@
 ---
-Description: USB デバイスは、USB 記述子と呼ばれるデータ構造自体に関する情報を提供します。 このセクションでは、クライアント ドライバーは、USB デバイスから入手できるさまざまな記述子について情報を提供します。
+Description: USB デバイスは、それ自体に関する情報を USB 記述子と呼ばれるデータ構造に提供します。 このセクションでは、クライアントドライバーが USB デバイスから取得できるさまざまな記述子について説明します。
 title: USB 記述子
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aa76f5ebd1a17daea749c8fe0eb781df4b9f2407
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1caf2a5da4aacf9ed5f067fd0a8b1aa4cbc6a2e1
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360157"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844830"
 ---
 # <a name="usb-descriptors"></a>USB 記述子
 
 
-USB デバイスと呼ばれるデータ構造自体に関する情報を提供する*の USB ディスクリプター*します。 このセクションでは、クライアント ドライバーは、USB デバイスから入手できるさまざまな記述子について情報を提供します。
+USB デバイスは、それ自体に関する情報を*usb 記述子*と呼ばれるデータ構造に提供します。 このセクションでは、クライアントドライバーが USB デバイスから取得できるさまざまな記述子について説明します。
 
 
 
 
-ホストは、さまざまな標準のコントロール要求を送信することによって接続されたデバイスから記述子を取得 (GET\_記述子要求) 既定のエンドポイントにします。 これらの要求を取得する記述子の種類を指定します。 このような要求に応答して、デバイスは、デバイス、その構成、インターフェイスと、関連するエンドポイントについての情報を含む記述子を送信します。 *デバイス記述子*全体のデバイスに関する情報が含まれます。 *構成記述子*各デバイスの構成に関する情報が含まれます。 *記述子文字列*Unicode テキスト文字列が含まれます。
+ホストは、さまざまな標準コントロール要求 (GET\_DESCRIPTOR 要求) を既定のエンドポイントに送信することによって、接続されているデバイスから記述子を取得します。 これらの要求は、取得する記述子の種類を指定します。 デバイスは、このような要求に応答して、デバイス、その構成、インターフェイス、および関連するエンドポイントに関する情報を含む記述子を送信します。 デバイス*記述子*には、デバイス全体に関する情報が含まれています。 *構成記述子*には、各デバイスの構成に関する情報が含まれています。 *文字列記述子*には Unicode テキスト文字列が含まれます。
 
-すべての USB デバイスは、クラスについては、デバイスのベンダーと製品の id、および構成の数を示すデバイス記述子を公開します。 各構成は、そのインターフェイスと電源の特徴の数を示す構成記述子を公開します。 各インターフェイスでは、各クラスとエンドポイントの数に関する情報を含む別の設定、インターフェイスの記述子を公開します。 各インターフェイス内の各エンドポイントは、エンドポイントの種類とパケットの最大サイズを示すエンドポイント記述子を公開します。
+すべての USB デバイスは、デバイスのクラス情報、ベンダーと製品の識別子、および構成の数を示すデバイス記述子を公開します。 各構成は、インターフェイスの数と電源特性を示す構成記述子を公開します。 各インターフェイスは、クラスとエンドポイントの数に関する情報を含むそれぞれの代替設定のインターフェイス記述子を公開します。 各インターフェイス内の各エンドポイントは、エンドポイントの種類と最大パケットサイズを示すエンドポイント記述子を公開します。
 
-たとえばで説明した OSR FX2 ボード デバイス レイアウト[USB デバイス レイアウト](usb-device-layout.md)します。 デバイス レベルでは、デバイスはデバイス記述子と既定のエンドポイントのエンドポイント記述子を公開します。 構成レベルでは、デバイスは、0 の構成の構成記述子を公開します。 インターフェイス レベルでの代替設定 0 インターフェイスの 1 つの記述子を公開します。 エンドポイント レベルでは、次の 3 つのエンドポイント記述子が公開されます。
+たとえば、「 [USB デバイスレイアウト](usb-device-layout.md)」で説明されている OSR FX2 board デバイスレイアウトについて考えてみます。 デバイスレベルでは、デバイスは既定のエンドポイントのデバイス記述子とエンドポイント記述子を公開します。 構成レベルでは、デバイスは構成0の構成記述子を公開します。 インターフェイスレベルでは、別の設定0に対して1つのインターフェイス記述子を公開します。 エンドポイントレベルでは、3つのエンドポイント記述子が公開されます。
 
 ## <a name="in-this-section"></a>このセクションの内容
 
@@ -41,19 +41,19 @@ USB デバイスと呼ばれるデータ構造自体に関する情報を提供�
 <tbody>
 <tr class="odd">
 <td><p><a href="usb-device-descriptors.md" data-raw-source="[USB device descriptors](usb-device-descriptors.md)">USB デバイス記述子</a></p></td>
-<td><p>デバイス記述子には、全体として、USB デバイスに関する情報が含まれています。 このトピックで説明します、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbspec/ns-usbspec-_usb_device_descriptor" data-raw-source="[&lt;strong&gt;USB_DEVICE_DESCRIPTOR&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbspec/ns-usbspec-_usb_device_descriptor)"> <strong>USB_DEVICE_DESCRIPTOR</strong> </a>構造体であり、クライアント ドライバーがデバイス記述子を取得する get 記述子の要求を送信する方法に関する情報が含まれています。</p></td>
+<td><p>デバイス記述子には、USB デバイス全体に関する情報が含まれています。 このトピックでは、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/usbspec/ns-usbspec-_usb_device_descriptor" data-raw-source="[&lt;strong&gt;USB_DEVICE_DESCRIPTOR&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbspec/ns-usbspec-_usb_device_descriptor)"><strong>USB_DEVICE_DESCRIPTOR</strong></a>構造体について説明します。また、クライアントドライバーが get 記述子要求を送信してデバイス記述子を取得する方法についても説明します。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="usb-configuration-descriptors.md" data-raw-source="[USB configuration descriptors](usb-configuration-descriptors.md)">USB 構成記述子</a></p></td>
-<td><p>USB デバイスは、一連の USB 構成と呼ばれるインターフェイスの形式でその機能を公開します。 各インターフェイスは 1 つまたは複数の代替設定と各代替の設定は、一連のエンドポイントの構成されます。 このトピックでは、USB 構成に関連付けられたさまざまな記述子について説明します。</p></td>
+<td><p>USB デバイスは、USB 構成と呼ばれる一連のインターフェイスの形式で機能を公開します。 各インターフェイスは、1つまたは複数の代替設定で構成され、各代替設定は一連のエンドポイントで構成されます。 このトピックでは、USB 構成に関連付けられているさまざまな記述子について説明します。</p></td>
 </tr>
 <tr class="odd">
 <td><p><a href="usb-string-descriptors.md" data-raw-source="[USB String Descriptors](usb-string-descriptors.md)">USB 文字列記述子</a></p></td>
-<td><p>デバイス、構成、およびインターフェイスの記述子には、文字列記述子への参照を含めることができます。 このトピックでは、デバイスから特定の文字列記述子を取得する方法について説明します。</p></td>
+<td><p>デバイス、構成、およびインターフェイス記述子には、文字列記述子への参照を含めることができます。 このトピックでは、デバイスから特定の文字列記述子を取得する方法について説明します。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="usb-interface-association-descriptor.md" data-raw-source="[USB Interface Association Descriptor](usb-interface-association-descriptor.md)">USB インターフェイスの関連付けの記述子</a></p></td>
-<td><p>USB インターフェイスの関連付け記述子 (IAD) では、関数に属しているグループのインターフェイスにデバイスを許可します。 このトピックでは、クライアント ドライバーを調べる方法、デバイスに、IAD 関数が含まれているかどうかについて説明します。</p></td>
+<td><p><a href="usb-interface-association-descriptor.md" data-raw-source="[USB Interface Association Descriptor](usb-interface-association-descriptor.md)">USB インターフェイスの関連付け記述子</a></p></td>
+<td><p>USB インターフェイスの関連付け記述子 (IAD) を使用すると、デバイスは、関数に属しているインターフェイスをグループ化できます。 このトピックでは、クライアントドライバーが関数の IAD を含むかどうかを判断する方法について説明します。</p></td>
 </tr>
 </tbody>
 </table>
@@ -61,7 +61,7 @@ USB デバイスと呼ばれるデータ構造自体に関する情報を提供�
  
 
 ## <a name="related-topics"></a>関連トピック
-[USB デバイスのレイアウト](usb-device-layout.md)  
+[USB デバイスレイアウト](usb-device-layout.md)  
 [USB ドライバー開発ガイド](usb-driver-development-guide.md)  
 
 

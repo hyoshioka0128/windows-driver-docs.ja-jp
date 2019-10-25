@@ -1,9 +1,9 @@
 ---
 title: MRxSetQuotaInfo ルーチン
-description: TheMRxSetQuotaInfo ルーチンは、ネットワークのミニ リダイレクターがファイル システム オブジェクトのクォータ情報を設定することを要求する RDBSS によって呼び出されます。
+description: TheMRxSetQuotaInfo ルーチンは、ネットワークミニリダイレクターがファイルシステムオブジェクトのクォータ情報を設定するように要求するために、RDBSS によって呼び出されます。
 ms.assetid: 43d8669f-d122-4385-87a3-bf31bac9dfd2
 keywords:
-- MRxSetQuotaInfo ルーチン インストール可能なファイル システム ドライバー
+- MRxSetQuotaInfo ルーチンのインストール可能なファイルシステムドライバー
 - PMRX_CALLDOWN
 topic_type:
 - apiref
@@ -15,17 +15,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e8f932115a7717163934b84f70dfc8e70889f206
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 783685464251a6d6f0ad95a142b53b2f399665b8
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385312"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841075"
 ---
 # <a name="mrxsetquotainfo-routine"></a>MRxSetQuotaInfo ルーチン
 
 
-*MRxSetQuotaInfo*ルーチンを呼び出して[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)ネットワーク ミニ リダイレクターがファイル システム オブジェクトのクォータ情報を設定することを要求します。
+*MRxSetQuotaInfo*ルーチンは、ネットワークミニリダイレクターがファイルシステムオブジェクトのクォータ情報を設定するように要求するために、 [RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)によって呼び出されます。
 
 <a name="syntax"></a>構文
 ------
@@ -42,13 +42,13 @@ NTSTATUS MRxSetQuotaInfo(
 <a name="parameters"></a>パラメーター
 ----------
 
-*RxContext* \[入力、出力\]  
-RX へのポインター\_CONTEXT 構造体。 このパラメーターには、操作を要求している IRP が含まれています。
+*RxContext* \[in、out\]  
+RX\_コンテキスト構造体へのポインター。 このパラメーターには、操作を要求している IRP が含まれています。
 
 <a name="return-value"></a>戻り値
 ------------
 
-*MRxSetQuotaInfo*ステータスを返します\_次のいずれかなど、成功した場合に成功した場合、または、適切な NTSTATUS の値します。
+*MRxSetQuotaInfo*は正常に完了した状態\_成功したか、または次のいずれかのような NTSTATUS 値を返します。
 
 <table>
 <colgroup>
@@ -64,7 +64,7 @@ RX へのポインター\_CONTEXT 構造体。 このパラメーターには、
 <tbody>
 <tr class="odd">
 <td align="left"><strong>STATUS_ACCESS_DENIED</strong></td>
-<td align="left"><p>呼び出し元には、この操作に適切なセキュリティが不足していました。</p></td>
+<td align="left"><p>呼び出し元には、この操作に対する適切なセキュリティが不足しています。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>STATUS_CONNECTION_DISCONNECTED</strong></td>
@@ -72,7 +72,7 @@ RX へのポインター\_CONTEXT 構造体。 このパラメーターには、
 </tr>
 <tr class="odd">
 <td align="left"><strong>STATUS_INSUFFICIENT_RESOURCES</strong></td>
-<td align="left"><p>クエリ完了までのリソースの不足が発生しました。</p></td>
+<td align="left"><p>クエリを完了するためのリソースが不足しています。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>STATUS_INVALID_PARAMETER</strong></td>
@@ -90,13 +90,13 @@ RX へのポインター\_CONTEXT 構造体。 このパラメーターには、
 <a name="remarks"></a>注釈
 -------
 
-RDBSS への呼び出しを発行する*MRxSetQuotaInfo*受信に応答する[ **IRP\_MJ\_設定\_クォータ**](irp-mj-set-quota.md)要求。
+RDBSS は、 [**IRP\_MJ\_SET\_クォータ**](irp-mj-set-quota.md)要求の受信に応答して、 *MRxSetQuotaInfo*への呼び出しを発行します。
 
-呼び出しの前に*MRxSetQuotaInfo*、RDBSS、RX では、次のメンバーを変更します\_によって示される CONTEXT 構造体、 *RxContext*パラメーター。
+*MRxSetQuotaInfo*を呼び出す前に、RDBSS は、 *RxContext*パラメーターによって示される RX\_コンテキスト構造内の次のメンバーを変更します。
 
-*Info.Buffer*メンバーは、I/O 要求パケットからユーザー バッファーに設定されます。 このバッファーが RDBSS によってロックされて既に必要な場合。
+*情報バッファー*のメンバーは、i/o 要求パケットからのユーザーバッファーに設定されます。 このバッファーは、必要に応じて、RDBSS によって既にロックされています。
 
-**Info.LengthRemaining**に設定されているメンバー **IrpSp -&gt;Parameters.SetQuota.Length**します。
+**LengthRemaining**メンバーは**irpsp-&gt;Parameters. Setquota. Length**に設定されています。
 
 <a name="requirements"></a>要件
 ------------
@@ -113,7 +113,7 @@ RDBSS への呼び出しを発行する*MRxSetQuotaInfo*受信に応答する[ *
 </tr>
 <tr class="even">
 <td align="left"><p>Header</p></td>
-<td align="left">Mrx.h (Mrx.h を含む)</td>
+<td align="left">Mrx .h (Mrx を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -121,7 +121,7 @@ RDBSS への呼び出しを発行する*MRxSetQuotaInfo*受信に応答する[ *
 ## <a name="see-also"></a>関連項目
 
 
-[**MRxIsValidDirectory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_chkdir_calldown)
+[**MRxIsValidDirectory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_chkdir_calldown)
 
 [**MRxQueryDirectory**](mrxquerydirectory.md)
 

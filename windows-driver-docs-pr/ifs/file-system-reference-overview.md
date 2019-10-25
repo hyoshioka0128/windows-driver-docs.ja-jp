@@ -4,16 +4,16 @@ description: ファイルシステムのリファレンス資料の概要
 ms.assetid: 9dc4a3fa-3ce1-4710-aab2-0658225733a4
 ms.date: 09/30/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: f85ba83583478ae65d1bfc84f30ce1c91e8a44b1
-ms.sourcegitcommit: c23a403b3ebea05bde96067b678a318ca9b0cabe
+ms.openlocfilehash: 099939a97ad5b980f99ae930e2145140d52e443c
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71955794"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841402"
 ---
 # <a name="file-system-reference-material-overview"></a>ファイルシステムのリファレンス資料の概要
 
-このセクションでは、ファイルシステム関連のドライバー開発に使用できるさまざまなプログラミング関数、構造体、Ioctl、および列挙型について説明します。 WDK に付属するヘッダーファイルで構成されている実際の参照ページについては、「 [Windows Driver Kit のプログラミングリファレンス-> インストール可能なファイルシステム](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/_ifsk/)」を参照してください。
+このセクションでは、ファイルシステム関連のドライバー開発に使用できるさまざまなプログラミング関数、構造体、Ioctl、および列挙型について説明します。 WDK に付属するヘッダーファイルで構成されている実際の参照ページについては、「 [Windows Driver Kit のプログラミングリファレンス-> インストール可能なファイルシステム](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/_ifsk/)」を参照してください。
 
 ## <a name="functions"></a>関数
 

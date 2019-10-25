@@ -1,9 +1,9 @@
 ---
 title: KSPROPERTY\_CAMERACONTROL\_SCANMODE
-description: KSPROPERTY\_CAMERACONTROL\_SCANMODE プロパティは、カメラ、センサーのスキャン モードを指定します。
+description: KSK プロパティ\_CAMERACONTROL\_SCANMODE プロパティは、カメラセンサーのスキャンモードを指定します。
 ms.assetid: ab5659b9-a94b-4127-a26e-49aac8de6fa8
 keywords:
-- KSPROPERTY_CAMERACONTROL_SCANMODE ストリーミング メディア デバイス
+- KSPROPERTY_CAMERACONTROL_SCANMODE ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d0e09d21ac41326bcf78baee6cdc42e219517a0b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 309dc36e2f2be14f820b700d9b9ae1d9b80be6e2
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67373187"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842483"
 ---
-# <a name="kspropertycameracontrolscanmode"></a>KSPROPERTY\_CAMERACONTROL\_SCANMODE
+# <a name="ksproperty_cameracontrol_scanmode"></a>KSPROPERTY\_CAMERACONTROL\_SCANMODE
 
 
-KSPROPERTY\_CAMERACONTROL\_SCANMODE プロパティは、カメラ、センサーのスキャン モードを指定します。
+KSK プロパティ\_CAMERACONTROL\_SCANMODE プロパティは、カメラセンサーのスキャンモードを指定します。
 
 ## <span id="ddk_ksproperty_cameracontrol_scanmode_ks"></span><span id="DDK_KSPROPERTY_CAMERACONTROL_SCANMODE_KS"></span>
 
@@ -41,7 +41,7 @@ KSPROPERTY\_CAMERACONTROL\_SCANMODE プロパティは、カメラ、センサ�
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,25 +50,25 @@ KSPROPERTY\_CAMERACONTROL\_SCANMODE プロパティは、カメラ、センサ�
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>〇</p></td>
+<td><p>[はい]</p></td>
+<td><p>[はい]</p></td>
 <td><p>フィルターまたはノード</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_cameracontrol_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_cameracontrol_s)"><strong>KSPROPERTY_CAMERACONTROL_S</strong> </a>または<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_NODE_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s)"> <strong>KSPROPERTY_CAMERACONTROL_NODE_S</strong></a></p></td>
-<td><p>LONG</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_s)"><strong>KSPROPERTY_CAMERACONTROL_S</strong></a>または<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_NODE_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s)"> <strong>KSPROPERTY_CAMERACONTROL_NODE_S</strong></a></p></td>
+<td><p>長い</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-プロパティの値 (データの操作) は長整数型を指定するかどうかインター レース モードを有効にする必要があります。 値 0 は、インター レース モードが有効になっていることと、値 1 は、プログレッシブ (または非インター レース) モードが有効になっていることを示しますを示します。
+プロパティ値 (操作データ) は、インターレースモードを有効にする必要があるかどうかを指定する LONG です。 値0はインターレースモードが有効であることを示し、値1はプログレッシブ (非インターレース) モードが有効になっていることを示します。
 
 <a name="remarks"></a>注釈
 -------
 
-**値**、KSPROPERTY のメンバー\_CAMERACONTROL\_ノード\_の構造を指定するかどうかインター レース モードを有効にする必要があります。
+KSK プロパティ\_CAMERACONTROL\_NODE\_S 構造体の**値**メンバーは、インターレースモードを有効にする必要があるかどうかを指定します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -79,11 +79,11 @@ KSPROPERTY\_CAMERACONTROL\_SCANMODE プロパティは、カメラ、センサ�
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>Windows Vista および Windows オペレーティング システムの以降のバージョンで使用できます。</p></td>
+<td><p>Windows Vista 以降のバージョンの Windows オペレーティングシステムで使用できます。</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Ksmedia.h (Ksmedia.h を含む)</td>
+<td>Ksmedia .h (Ksk を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -91,7 +91,7 @@ KSPROPERTY\_CAMERACONTROL\_SCANMODE プロパティは、カメラ、センサ�
 ## <a name="see-also"></a>関連項目
 
 
-[**KSPROPERTY\_CAMERACONTROL\_ノード\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s)
+[**KSPROPERTY\_CAMERACONTROL\_NODE\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s)
 
  
 

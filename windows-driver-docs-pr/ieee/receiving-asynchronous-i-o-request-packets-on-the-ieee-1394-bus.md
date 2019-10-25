@@ -1,70 +1,70 @@
 ---
 title: IEEE 1394 バスでの非同期 I/O 要求パケットの受信
-description: コンピューター自体は、IEEE 1394 バス上のノードし、非同期 I/O 要求を受信できます。
+description: コンピューター自体は IEEE 1394 バス上のノードであるため、非同期 i/o 要求を受信できます。
 ms.assetid: 7b8eaf40-7fdc-4c25-86a7-8377d2d51877
 keywords:
-- 非同期 I/O 要求の受信
-- アドレス範囲の割り当てください。
-- WDK の IEEE 1394 をアドレスします。
-- WDK の IEEE 1394 のバッキング ストア
+- 非同期 i/o 要求の受信
+- アドレス範囲の割り当て
+- WDK IEEE 1394 バスに対応
+- バッキングストア WDK IEEE 1394 バス
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 56dd931da8d85aa2079269d49d87970bb863e9d6
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: 020784e1aa5f377a41dd2774aa8d610fb7a52afd
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67394130"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841530"
 ---
 # <a name="receiving-asynchronous-io-request-packets-on-the-ieee-1394-bus"></a>IEEE 1394 バスでの非同期 I/O 要求パケットの受信
 
-コンピューター自体は、IEEE 1394 バス上のノードし、非同期 I/O 要求を受信できます。 ドライバーがコンピューターの IEEE 1394 のアドレス空間のアドレスの範囲を割り当てるし、要求を送信することで、外部のノードから要求を受信\_ALLOCATE\_アドレス\_バス ドライバーに範囲の要求。
+コンピューター自体は IEEE 1394 バス上のノードであるため、非同期 i/o 要求を受信できます。 ドライバーは、コンピューターの IEEE 1394 アドレス空間にアドレスの範囲を割り当て、\_アドレス\_範囲の要求をバスドライバーに割り当てる\_要求を送信することによって、外部ノードから要求を受信します。
 
-ドライバーが、アドレスの範囲を割り当てるとき、ことができますトランザクションの種類、デバイス可能性があります送信指定割り当て済みのアドレスを 1 つ以上のアクセスを指定することで\_フラグ\_型\_読み取り、アクセス\_フラグ\_型\_書き込み、またはアクセス\_フラグ\_型\_内のロック、 **u.AllocateAddressRange.fulAccessType**要求の IRB のメンバー。 要求が自動的に、指定した型のいずれかが失敗します。
+ドライバーは、アドレス範囲を割り当てるときに、デバイスが割り当てられたアドレスに送信できるトランザクションの種類を指定できます。そのためには、1つ以上のアクセス\_フラグ\_型\_読み取り、アクセス\_フラグ\_型\_要求の IRB の fulAccessType メンバーに\_ロック\_種類を書き込むか、アクセス\_フラグを**指定**します。 指定された種類のいずれでもない要求は自動的に失敗します。
 
-2 つの異なるドライバーでは、同じアドレス範囲を割り当てることもできます。 既定では、バス ドライバーは、要求を自動的に demultiplexes し、ドライバー、ドライバーのデバイスに由来する割り当て済みアドレスで要求のみが表示されます。 ドライバーは、アクセスを指定することで、バス上のすべてのノードで、アドレスに送信するすべてのパケットを受信したことを要求できます\_フラグ\_型\_でフラグをブロードキャスト**u.AllocateAddressRange.fulAccessType**.
+2つの異なるドライバーが同じアドレス範囲を割り当てる場合があります。 既定では、バスドライバーは自動的に要求の多重化を解除し、ドライバーはドライバーのデバイスから割り当てられたアドレスの要求のみを認識します。 ドライバーは、バス上のすべてのノードによってアドレスに送信されたすべてのパケットを受信するように要求することができます。そのためには、 **fulAccessType**にアクセス\_フラグ\_種類\_ブロードキャストフラグを指定します。
 
-* [割り当て済みアドレス](#allocated-addresses)
-* [割り当てとバッキング ストア](#allocation-and-backing-store)
-* [クライアント ドライバーの通知ルーチンが非同期 I/O 要求を受信します。](#client-drivers-notification-routine-for-receive-asynchronous-io-requests)
-* [非同期の受信の場合は事前の通知](#asynchronous-receive-in-the-pre-notification-case)
+* [割り当てられたアドレス](#allocated-addresses)
+* [割り当てとバッキングストア](#allocation-and-backing-store)
+* [非同期 i/o 要求を受信するためのクライアントドライバーの通知ルーチン](#client-drivers-notification-routine-for-receive-asynchronous-io-requests)
+* [事前通知ケースでの非同期受信](#asynchronous-receive-in-the-pre-notification-case)
 
-## <a name="allocated-addresses"></a>割り当て済みアドレス
+## <a name="allocated-addresses"></a>割り当てられたアドレス
 
-バス ドライバーでは、アドレス範囲を割り当てることの 2 つの異なる戦略をサポートします。 ハード コーディングされたアドレスを指定できます、ドライバーは、ハード コーディングされたアドレスで始まるアドレスの特定の範囲を必要とする場合、 **u.AllocateAddressRange.Required1394Offset**要求の IRB との長さのメンバー、アドレス範囲で**u.AllocateAddressRange.nLength**します。 バス ドライバーにより、2 回、同じアドレスを割り当てることの 2 つの異なるドライバー。 同じドライバーが、アドレスで始まる範囲と同じアドレス 2 回の割り当てを試みると、バス ドライバーは、要求の状態の状態コードを返します\_が成功した場合、要求自体は無視されます。
+バスドライバーでは、アドレス範囲を割り当てるための2つの異なる方法がサポートされています。 ドライバーが、ハードコーディングされたアドレスから始まる特定の範囲のアドレスを必要とする場合、要求の IRB の**Required1394Offset**メンバーのハードコーディングされたアドレスと、u のアドレス範囲の長さを指定できます。 **AllocateAddressRange. n 長さ**。 バスドライバーでは、2つの異なるドライバーが同じアドレスを2回割り当てることができます。 同じドライバーが同じアドレスで始まるアドレス範囲を2回割り当てようとした場合、バスドライバーはステータス\_コードが "成功" になっている要求を返しますが、要求自体は無視されます。
 
-それ以外の場合、ドライバーは、割り当て済みのアドレスを選択するバス ドライバーを許可できます。 バス ドライバーはドライバーによって割り当てられたすべてのアドレス範囲の追跡し、は以前に割り当てられていないアドレスのみを返します。
+それ以外の場合、ドライバーは、バスドライバーが割り当てられたアドレスを選択できるようにします。 バスドライバーは、ドライバーによって割り当てられたすべてのアドレス範囲を追跡し、以前に未割り当てのアドレスのみを返します。
 
-バス ドライバーが、アドレスを連続して割り当てられません。 アドレスは、バッキング ストアとして提供される MDL に従って分割されます。 MDL 内の各セグメントは、アドレス範囲内の 1 つのセグメントに対応します。 連続して割り当て済みアドレスが必要なドライバーは、非ページ プールからの連続したメモリを割り当てることができます。
+バスドライバーでは、アドレスが連続して割り当てられません。 アドレスは、バッキングストアとして提供される MDL に従ってセグメント化されます。 MDL 内の各セグメントは、アドレス範囲内の1つのセグメントに対応します。 割り当てられたアドレスが連続している必要があるドライバーは、非ページプールから連続するメモリを割り当てることができます。
 
-そのサイズを指定できますが、すべてのセグメントが、特定のサイズよりも小さいことを保証するために、ドライバーが必要な場合**u.AllocateAddressRange.MaxSegmentSize**します。 セットのサイズを最大セグメントを指定する必要のないドライバー **u.AllocateAddressRange.MaxSegmentSize**をゼロにします。
+ドライバーが、すべてのセグメントが特定のサイズよりも小さいことを保証する必要がある場合は、 **MaxSegmentSize**でそのサイズを指定できます。 セグメントの最大サイズを指定する必要がないドライバーは、 **MaxSegmentSize**を0に設定します。
 
-バス ドライバーによって示されるメモリ位置のアドレス範囲を返します、 **u.AllocateAddressRange.p1394AddressRange** IRB のメンバー。 デバイス ドライバーは、各アドレスを保持するために十分な大きさである配列を割り当てる必要があります\_最悪のケースのセグメント化のシナリオであっても、範囲の構造体。 ドライバーはセグメントのサイズを指定していないか、そのセグメントの最大サイズがページよりも大きい場合\_サイズ、ドライバーは、アドレスを使用して、最悪の場合を決定することができますし、\_AND\_サイズ\_TO\_スパン\_バッキング ストアに使用されるバッファーにページ マクロです。 セグメントの最大サイズがページよりも小さい場合\_サイズ、ドライバーはサイズの配列を割り当てる必要があります**u.AllocateAddressRange.nLength**/**u.AllocateAddressRange.MaxSegmentSize** + 2。
+バスドライバーは、IRB の**p1394AddressRange**メンバーによって指されているメモリ位置のアドレス範囲を返します。 デバイスドライバーは、最悪の場合のセグメント化シナリオでも、各アドレス\_範囲構造を保持するのに十分な大きさの配列を割り当てる必要があります。 ドライバーでセグメントサイズが指定されていない場合、またはセグメントの最大サイズがページ\_サイズよりも大きい場合、ドライバーは、アドレス\_と\_サイズ\_を使用して\_\_PAGES マクロをすることにより、最悪のケースを特定できます。バッキングストアに使用されるバッファー。 最大セグメントサイズがページ\_サイズよりも小さい場合、ドライバーはサイズが**u. AllocateAddressRange. nLength**/**u. Allocateaddressrange** + 2 の配列を割り当てる必要があります。
 
-実際に割り当てられたアドレスの範囲の数を記録、バス ドライバーには、割り当て済みのアドレスが返される、ときに**u.AllocateAddressRange.hAddressRange**します。
+バスドライバーは、割り当てられたアドレスを返すと、 **u. AllocateAddressRange. haddressrange**に割り当てられた実際のアドレス範囲の数を記録します。
 
-## <a name="allocation-and-backing-store"></a>割り当てとバッキング ストア
+## <a name="allocation-and-backing-store"></a>割り当てとバッキングストア
 
-バス ドライバーでは、ドライバーの代わりにすべてのパケットの非同期要求を受信します。 ドライバーの要請、要求を透過的に処理することができます。 またはドライバーに要求をディスパッチできます。 アドレスを割り当てるときのオプションを設定して、ドライバーは、バス ドライバーが各要求を処理する方法を選択できます。
+バスドライバーは、ドライバーに代わって、すべての非同期パケット要求を受信します。 ドライバーの behest では、要求を透過的に処理したり、ドライバーに要求をディスパッチしたりできます。 アドレスの割り当て時にオプションを設定することにより、ドライバーはバスドライバーが各要求を処理する方法を選択できます。
 
-1. ドライバーは、アドレスの範囲のバッキング ストアを提供し、バス ドライバーはすべての読み取り、書き込み、およびロックの要求を透過的に処理すると、バッキング ストアを使用しています。
+1. ドライバーはアドレス範囲のバッキングストアを提供し、バスドライバーはバッキングストアを使用して、すべての読み取り、書き込み、ロック要求を透過的に処理します。
 
-    MDL を指定できます、ドライバーがアドレスを割り当てるときに**u.AllocateAddressRange.Mdl**バッキング ストアとして機能します。 バス ドライバーでは、ドライバーを割り当てるによって読み取りまたは書き込み MDL からすべての要求を処理するアドレスの範囲に MDL がマップされます。 ホスト コント ローラーがサポートする場合、トランザクションは、ホスト コント ローラーの DMA のハードウェアによって完全処理されます。 可能であれば、デバイス ドライバーが割り当てられたアドレスの範囲を選択するバス ドライバーを許可する必要があります。 バス ドライバーがトランザクションごとに自動 DMA をサポートする 1394 アドレスを選択します。
+    ドライバーは、アドレスを割り当てるときに、バッキングストアとして機能するために、 **u. AllocateAddressRange**に mdl を提供できます。 バスドライバーは、ドライバーに対して割り当てられたアドレスの範囲に MDL をマップし、MDL から読み取りまたは書き込みを行うことによってすべての要求を処理します。 ホストコントローラーがサポートしている場合、トランザクションはホストコントローラーの DMA ハードウェアによって完全に処理されます。 可能な場合は、デバイスドライバーが、割り当てられたアドレスの範囲を選択できるようにする必要があります。バスドライバーは、各トランザクションの自動 DMA をサポートする1394のアドレスを選択します。
 
-    ドライバーは、通知を指定する必要があります\_フラグ\_の NEVER **u.AllocateAddressRange.fulNotificationOptions**します。
+    ドライバーでは、[通知\_\_フラグを指定する必要があります。] には [**いいえ]** を指定します。
 
-    次に例を示します。
+    以下に例を示します。
 
     ```cpp
     pIRB->u.AllocateAddressRange.Mdl = an MDL previously allocated by the driver.
     pIRB->u.AllocateAddressRange.fulNotificationOptions = NOTIFY_FLAGS_NEVER
     ```
 
-    だけでこのオプションのドライバーも同時に、発生した IRQL のアドレス範囲を割り当てることができます。 ドライバーは、直接ポート ドライバー、ポート ドライバーの物理へのマッピングのルーチンを呼び出すことによって、通信の通常の IRP メソッドをバイパスする要求を送信できます。 デバイス ドライバーは、ポート ドライバーの物理へのマッピングのルーチンを IRB を渡します。 ポート ドライバーは、アドレスの範囲を非同期的に割り当てます、デバイス ドライバーの通知呼び出しポート ドライバーが完了したら、日常的な渡された**u.AllocateAddressRange.Callback**、し、渡します**u.AllocateAddressRange.Context**パラメーターとして。 通知のルーチンはディスパッチ時に呼び出されます\_レベル。
+    このオプションだけでは、ドライバーは、発生した IRQL でアドレス範囲を割り当てることもできます。 ドライバーは、ポートドライバーの物理的なマッピングルーチンを呼び出すことによって、通常の IRP 方式の通信をバイパスして、要求を直接ポートドライバーに送信できます。 デバイスドライバーは、ポートドライバーの物理的なマッピングルーチンに IRB を渡します。 その後、ポートドライバーはアドレス範囲を非同期的に割り当てます。ポートドライバーが完了すると、デバイスドライバーの通知ルーチンが呼び出され、 **u. allocateaddressrange. Callback**に渡され、パラメーターとして**u. Allocateaddressrange. Context**が渡されます。 通知ルーチンは、ディスパッチ\_レベルで呼び出されます。
 
-    デバイス ドライバーは GET を送信してポート ドライバーの物理へのマッピングのルーチンへのポインターを取得することができます\_ローカル\_ホスト\_で情報を要求、バス ドライバーに**nLevel** = GET\_物理サイズ\_ADDR\_ルーチン。 バス ドライバー返します GET\_ローカル\_ホスト\_情報 4 構造は、物理へのマッピングのルーチン、およびデバイス ドライバーが、IRB と共に物理マッピング ルーチンに渡されるコンテキスト パラメーターが含まれています。
+    デバイスドライバーは、GET\_LOCAL\_HOST\_INFO 要求をバスドライバーに送信することによって、ポートドライバーの物理マッピングルーチンへのポインターを取得できます。これには、 **Nlevel** = GET\_PHYS\_ADDR\_ルーチンを使用します。 バスドライバーは GET\_ローカル\_ホスト\_INFO4 構造体を返します。これには、物理マッピングルーチンが含まれています。また、デバイスドライバーが IRB と共に物理マッピングルーチンに渡すコンテキストパラメーターも返されます。
 
-    物理へのマッピングのルーチンの要求をドライバーをセットアップする方法の例を次に示します。 物理マッピング ルーチンが変更されない、ので、ドライバーは通常はこの要求を 1 回のみ送信します。
+    ドライバーが物理マッピングルーチンの要求を設定する方法の例を次に示します。 物理マッピングルーチンは変更されないため、ドライバーは通常、この要求を1回だけ送信します。
 
     ```cpp
     GET_LOCAL_HOST_INFO5 PhysMapInfo;
@@ -74,7 +74,7 @@ ms.locfileid: "67394130"
     /* Driver submits the request. */
     ```
 
-    ドライバーが物理へのマッピングのルーチンを使用して、管理者特権での IRQL で要求を送信する方法の例に続けて、示します。
+    この例を続行すると、ドライバーが物理マッピングルーチンを使用して昇格された IRQL で要求を送信する方法がわかります。
 
     ```cpp
     VOID AllocationCompletionRoutine(PVOID Context);
@@ -92,17 +92,17 @@ ms.locfileid: "67394130"
     */
     ```
 
-2. ドライバーは、アドレス範囲のバッキング ストアを提供します。 I/O の各トランザクションが完了した後、バス ドライバーはドライバーを通知します。
+2. ドライバーは、アドレス範囲のバッキングストアを提供します。 バスドライバーは、各 i/o トランザクションの完了後にドライバーに通知します。
 
-    ドライバーでは、バッキング ストアとして、1 つの MDL または MDLs のリンク リストのいずれかを指定できます。 ドライバーは、1 つの MDL を提供する場合、バス ドライバーは、非同期の要求に応答 MDL の内外にデータをポンプです。 トランザクションが完了すると、ドライバーによって提供される通知コールバックを呼び出すことによって、デバイス ドライバーを通知します。
+    ドライバーは、1つの MDL または MDLs のリンクされたリストをバッキングストアとして提供できます。 ドライバーが1つの MDL を提供する場合、バスドライバーは非同期要求に応答して、MDL にデータをポンプします。 トランザクションが完了すると、ドライバーによって提供される通知コールバックを呼び出して、デバイスドライバーに通知します。
 
-    デバイス ドライバーの通知ルーチンを提供する、 **u.AllocateAddressRange.Callback** IRB のメンバー。 ドライバーを設定する必要があります、通知の少なくとも 1 つ\_フラグ\_AFTER\_XXX フラグ。 ルーチンを呼び出す、バス ドライバーとときに、通知を渡します\_情報構造体 MDL のバッキング ストアを指定します (で**Mdl**)、トランザクションの開始位置 MDL 内のバイト オフセット (で**ulOffset**)、および影響を受けるアドレスの範囲の長さ (バイト単位) (で**されて**)。 通知のルーチンはディスパッチ時に呼び出されます\_レベル。 この要求で、ドライバーに合格するためのコンテキスト情報**u.AllocateAddressRange.Context**バス ドライバーに渡し、**コンテキスト**通知のメンバー\_情報。
+    デバイスドライバーは、IRB の**u. AllocateAddressRange. Callback**メンバーに通知ルーチンを提供します。 ドライバーは、\_XXX フラグの後\_通知\_フラグの少なくとも1つを設定する必要があります。 バスドライバーは、ルーチンを呼び出すと、通知\_情報構造を渡します。これは、mdl バッキングストア ( **mdl**内)、トランザクションが開始された mdl 内のバイトオフセット ( **uloffset**内)、および範囲の長さ (バイト単位) を指定します。影響を受けたアドレスの ( **Nlength**)。 通知ルーチンは、ディスパッチ\_レベルで呼び出されます。 ドライバーが**u. AllocateAddressRange**に渡すこの要求のコンテキスト情報。コンテキストは、通知\_情報の**コンテキスト**メンバーのバスドライバーによって渡されます。
 
-    同期の問題のある程度のリスクがある 1 つだけ MDL を使用して、: デバイスがそこから読み取ることができます、ドライバーよりも高速のアドレス範囲に書き込むことがあります。 アドレスのデバイスのみにある、ドライバーの書き込みアクセスで MDLs のリンク リストを提供できます、このような競合を回避するために**u.AllocateAddressRange.FifoSListHead**、スピン ロックと**u です。AllocateAddressRange.FifoSpinLock**します。 バス ドライバーでは、各非同期要求パケットを受信するときに、スピン ロックを保持を要求を処理するリストの最初の要素をポップします。 これは、後、ドライバーの通知ルーチンを呼び出します。
+    1つの MDL のみを使用すると、同期の問題が発生する可能性があります。デバイスは、ドライバーが読み取ることができるよりも速くアドレス範囲に書き込むことができます。 このような競合を回避するために、デバイスに書き込みアクセスのみがあるアドレスの場合、ドライバーは MDLs のリンクリストを指定できます。 **FifoSListHead**には、u **. Allocateaddressrange. fi%** スピンロックが含まれます。 バスドライバーは、各非同期要求パケットを受信すると、スピンロックを保持し、要求を満たすためにリストの最初の要素をポップします。 次に、ドライバーの通知ルーチンを呼び出します。
 
-    通知では、\_情報構造、バス ドライバーを提供します、トランザクションを処理するために使用する MDL (で**Mdl**)、影響を受けた最初のアドレスのバイト オフセット (で**ulOffset**)、および影響を受けるアドレスの範囲の長さ (で**されて**)。 アドレスも用意されています。\_MDL の FIFO (で**Fifo**)。 ドライバーがその通知ルーチンから戻る前に、使用するかを行ってください**Fifo** 、一覧に戻り、要素をプッシュまたは同じの別の MDL を提供するサイズである場合は、バス ドライバーが不足 MDLs 書き込みの処理に使用するには。デバイスからの要求。
+    NOTIFICATION\_INFO 構造体では、バスドライバーは、トランザクション ( **mdl**) を処理するために使用する mdl、影響を受ける最初のアドレスのバイトオフセット ( **uloffset**内)、影響を受けるアドレス範囲の長さ ( **nLength**)。 また、MDL ( **fifo**) の\_FIFO のアドレスも提供します。 ドライバーが通知ルーチンから戻る前に、 **Fifo**を使用してリストに要素を戻すか、同じサイズの別の MDL を提供する必要があります。それ以外の場合、バスドライバーは、デバイスからの書き込み要求を処理するために使用する MDLs から実行されます。
 
-    この通知の種類を使用する拡張例を次に示します。 グローバルに、ドライバーは、インタロックされた、シングル リンク リストと、スピン ロックを作成します。 ドライバーは、非ページ メモリにする必要があるため、リンク リストと、発生の Irql でスピン ロックにアクセスする必要があります。 通常、ドライバーに保管して、デバイスの拡張機能。
+    この種類の通知を使用する拡張された例を次に示します。 グローバルに、ドライバーは、インタロック、シングルリンクリスト、およびスピンロックを作成します。 ドライバーは、リンクされたリストにアクセスする必要があり、IRQLs のスピンロックが発生したため、ページングされていないメモリ内にある必要があります。 通常、ドライバーはデバイスの拡張機能を保持します。
 
     ```cpp
     PSLIST_HEADER FifoSListHead;
@@ -126,19 +126,19 @@ ms.locfileid: "67394130"
     pIRB->u.AllocateAddressRange.Context = context information specific to this request -- the bus driver will pass this as the Context member of the NOTIFICATION_INFO it passes to NotificationRoutine.
     ```
 
-    コールバックでは、ドライバーを新しい MDL を割り当てると、一覧の上にそれをプッシュまたはプッシュ元 MDL のいずれかのニーズのバックアップ リスト。 後者の場合、バス ドライバーは、元のアドレスを渡す\_現在 MDL の FIFO です。 ドライバーの一覧に戻り、現在 MDL のプッシュの例を次に示します。
+    コールバックでは、ドライバーは新しい MDL を割り当ててリストにプッシュするか、元の MDL をリストにプッシュする必要があります。 後者の場合、バスドライバーは、現在の MDL の元のアドレス\_FIFO に渡します。 現在の MDL を一覧にプッシュするドライバーの例を次に示します。
 
     ```cpp
     ExInterlockedPushEntrySList(FifoSListHead, NotificationInfo->Fifo->FifoList, FifoSpinLock);
     ```
 
-    ドライバーは、元の割り当て要求にストアをバックアップとして 1 つの MDL を指定する場合、ドライバーは、1 つまたは複数のアドレス範囲を返す可能性があります。
+    ドライバーで1つの MDL が元の割り当て要求のバッキングストアとして指定されている場合、ドライバーは1つ以上のアドレス範囲を返すことがあります。
 
-3. バス ドライバーでは、毎回の要求が到着すると、およびドライバーにパケットを渡します、ドライバーを通知します。
+3. バスドライバーは、要求が到着するたびにドライバーに信号を送り、パケットをドライバーに渡します。
 
-    ドライバーでのコールバックを提供する、 **u.AllocateAddressRange.Callback** IRB のメンバー。 NOTIFY\_フラグ\_AFTER\_XXX フラグは無視され、すべてのパケットが処理するためにドライバーに渡されます。
+    ドライバーは、IRB の**u. AllocateAddressRange. callback**メンバーにコールバックを提供します。 \_XXX フラグが無視された後\_通知\_フラグが無視され、すべてのパケットがドライバーに渡されて処理されます。
 
-    ドライバーを設定する必要があります、 **Mdl**、 **FifoSListHead**、および**FifoSpinLock**のメンバー **u.AllocateAddressRange**に**NULL**します。 次の 3 種類すべての非同期要求パケットを受信したときに通知されるドライバーの設定の例に示します。
+    ドライバーは、 **u. AllocateAddressRange**の**Mdl**、 **FifoSListHead**、および**fiの**メンバーを**NULL**に設定する必要があります。 次に、3種類すべての非同期要求パケットを受信したときに通知を受け取るドライバーの設定例を示します。
 
     ```cpp
     VOID DriverNotificationRoutine( IN PNOTIFICATION_INFO NotificationInfo );
@@ -150,13 +150,13 @@ ms.locfileid: "67394130"
     pIRB->u.AllocateAddressRange.FifoSpinLock = NULL;
     ```
 
-    バス ドライバーでは、単一の連続したアドレスの範囲を割り当てます。
+    バスドライバーは、1つの連続した範囲のアドレスを割り当てます。
 
-    バス ドライバーに渡します通知\_ドライバーのコールバック ルーチンへの情報の構造体。 デバイス ドライバーは、独自の応答パケットを作成する必要があります (詳細については、IEEE 1394 の仕様を参照)、および作成応答パケットを格納するバッファーを割り当てる必要があります。 非ページ プールとプローブおよびロックされたバッファーから、応答パケットがある必要があります。
+    バスドライバーは、ドライバーのコールバックルーチンに通知\_情報構造体を渡します。 デバイスドライバーは独自の応答パケットを作成する必要があります (詳細については、「IEEE 1394 の仕様」を参照してください)。独自のバッファーを割り当てて、作成した応答パケットを格納する必要があります。 応答パケットは、非ページプールまたはプローブおよびロックされているバッファーからのものである必要があります。
 
-    通知内で\_については、バス ドライバーで初期化されていない MDL、 **ResponseMdl**メンバー。 想定される応答パケットへのポインターを入力するデバイス ドライバーのメモリ ロケーションへのポインターも用意されています (で**ResponsePacket**)、および応答パケットの長さ (で**ResponseLength**)。 ドライバーでは、カーネル イベント オブジェクトも提供できます。 トランザクションが完了すると、バス ドライバーは、カーネル イベント オブジェクトを通知します。
+    通知\_情報内では、バスドライバーは、初期化されていない MDL を、**このメンバーに**提供します。 また、デバイスドライバーが応答パケットへのポインター ( **responsepacket**) と応答パケットの長さ ( **ResponseLength**) を入力することを想定しているメモリの場所へのポインターも提供します。 ドライバーは、カーネルイベントオブジェクトを提供することもできます。 バスドライバーは、トランザクションが完了すると、カーネルイベントオブジェクトに通知します。
 
-    その通知ルーチンで必要な情報でデバイス ドライバーの塗りつぶしできる方法の例を次に示します。
+    デバイスドライバーが通知ルーチンで必要な情報を入力する方法の例を次に示します。
 
     ```cpp
     /* Suppose the driver creates its response packet in PVOID ResponsePacket, of length ResponseLength. It has created a kernel event ResponseEvent. */
@@ -167,39 +167,39 @@ ms.locfileid: "67394130"
     *(NotificationInfo)->ResponseEvent = Event;
     ```
 
-## <a name="client-drivers-notification-routine-for-receive-asynchronous-io-requests"></a>クライアント ドライバーの通知ルーチンが非同期 I/O 要求を受信します。
+## <a name="client-drivers-notification-routine-for-receive-asynchronous-io-requests"></a>非同期 i/o 要求を受信するためのクライアントドライバーの通知ルーチン
 
-クライアント ドライバーは、次を実行する必要があります、ドライバーの内の非同期タスクの受信通知ルーチン。
+クライアントドライバーは、ドライバーの非同期受信通知ルーチンで次のタスクを実行する必要があります。
 
-* メンバーを確認する、 [**通知\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/1394/ns-1394-_notification_info_w2k)クライアント ドライバーに渡される構造体。
-* (応答パケットからのデータを返す場所)、読み取り/ロックの成功した要求のクライアント ドライバーである必要があります。
-  * 呼び出すことによってメモリを割り当てる[ **WdfMemoryCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfmemory/nf-wdfmemory-wdfmemorycreate) ([**exallocatepoolwithtag に**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtag) WDM ベースのクライアント ドライバー用) の応答パケット データ。
-  * 返されるデータには、そのバッファーを入力します。
-  * 初期化、 **ResponseMdl**メンバーと、バッファーの参照。 呼び出すことができます[ **MmInitializeMdl** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)と[ **MmBuildMdlForNonPagedPool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmbuildmdlfornonpagedpool)します。
-  * 設定 **\*NotificationInfo -&gt;ResponsePacket**バッファーを指すようにします。
-  * 設定 **\*NotificationInfo -&gt;ResponseLength** 、返される応答データのサイズには 4 の要求を読み取り、作成されます)。
-  * 呼び出すことによってメモリを割り当てる[ **WdfMemoryCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfmemory/nf-wdfmemory-wdfmemorycreate) ([**exallocatepoolwithtag に**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtag) WDM ベースのクライアント ドライバー用) の応答イベントです。
-  * 設定 **\*NotificationInfo -&gt;ResponseEvent**イベント バッファーを指すようにします。
-  * イベントで待機する作業項目をスケジュールし、応答イベントが通知された後に、応答パケットとイベントのデータ バッファーを解放します。
-  * 設定**NotificationInfo -&gt;ResponseCode** RCODE に\_応答\_完了します。
+* クライアントドライバーに渡される[**NOTIFICATION\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/1394/ns-1394-_notification_info_w2k)構造体のメンバーを確認します。
+* 読み取り/ロック要求が成功した場合 (応答パケットを介してデータを返す場合)、クライアントドライバーは次のことを行う必要があります。
+  * 応答パケットデータに対して[**Wdfmemorycreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfmemory/nf-wdfmemory-wdfmemorycreate) (WDM ベースのクライアントドライバー用の[**exallocatepoolwithtag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag) ) を呼び出してメモリを割り当てます。
+  * バッファーに、返されるデータを入力します。
+  * の場合**は、このメンバーを**初期化し、バッファーを参照します。 [**MmInitializeMdl**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)と[**MmBuildMdlForNonPagedPool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmbuildmdlfornonpagedpool)を呼び出すことができます。
+  * **\*NotificationInfo-&gt;ResponsePacket**を設定してバッファーをポイントします。
+  * **\*NotificationInfo-&gt;ResponseLength**を、返される応答データのサイズ (quadlet 読み取り要求の場合は 4) に設定します。
+  * 応答イベントに対して[**Wdfmemorycreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfmemory/nf-wdfmemory-wdfmemorycreate) (WDM ベースのクライアントドライバー用の[**exallocatepoolwithtag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag) ) を呼び出してメモリを割り当てます。
+  * イベントバッファーを指すように **\*NotificationInfo-&gt;ResponseEvent**を設定します。
+  * イベントを待機するように作業項目をスケジュールし、応答イベントがシグナル状態になった後に応答パケットとイベントデータバッファーを解放します。
+  * **Notificationinfo-&gt;** \_応答\_完了に設定します。
 
-## <a name="asynchronous-receive-in-the-pre-notification-case"></a>非同期の受信の場合は事前の通知
+## <a name="asynchronous-receive-in-the-pre-notification-case"></a>事前通知ケースでの非同期受信
 
-非同期を完了する、従来の 1394 バス ドライバーは失敗では、事前通知メカニズムを使用してトランザクションを受信します。 詳細については、次を参照してください。[ナレッジ ベース。未送信の事前通知 (2635883) を使用して、IEEE 1394 非同期受信応答](https://support.microsoft.com/help/2635883/ieee-1394-async-receive-response-not-sent-using-pre-notification)します。
+レガシ1394バスドライバーは、事前通知メカニズムを使用して非同期の受信トランザクションを完了できません。 詳細については、「[サポート技術情報: IEEE 1394 非同期受信応答が事前通知を使用して送信されない (2635883)](https://support.microsoft.com/help/2635883/ieee-1394-async-receive-response-not-sent-using-pre-notification)」を参照してください。
 
-新しい 1394 バス ドライバーの場合は、事前の通知の場合は、クライアント ドライバーの通知コールバック ルーチンの想定される動作がとおりです。
+新しい1394バスドライバーでは、通知前のケースでのクライアントドライバーの通知コールバックルーチンの予期される動作は次のとおりです。
 
-* 場合**Mdl**と**Fifo**のメンバー、 [**通知\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/1394/ns-1394-_notification_info_w2k)構造体が null の場合、次の事前通知しています実行されます。
-* **ResponseMdl**、 **ResponsePacket**、 **ResponseLength**、および**ResponseEvent**のメンバー、 [ **通知\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/1394/ns-1394-_notification_info_w2k)構造では、NULL は指定できません。
-* **FulNotificationOptions**のメンバー、 [**通知\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/1394/ns-1394-_notification_info_w2k)構造がトリガーされたアクション (読み取り、書き込み、ロック) を示す必要があります、通知します。 1 つのみのフラグ (通知\_フラグ\_AFTER\_読み取り]、[通知\_フラグ\_AFTER\_書き込み、または通知\_フラグ\_AFTER\_ロック) を設定できます毎回、通知ルーチンが呼び出されます。
-* 検査することによって、要求の種類を識別できます、 **RequestPacket -&gt;AP\_は**、非同期のメンバー\_パケットの構造体。 メンバーはブロックまたは作成されます読み取り/書き込み、ロック要求の種類など、要求の種類を指定することを示します。 ASYNC\_1394.h でパケットの構造体が宣言されています。
-* **ResponsePacket**と**ResponseEvent**のメンバー [**通知\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/1394/ns-1394-_notification_info_w2k)ポインターへのポインターが含まれています。 したがって、応答パケットと応答イベントへのポインターを適切に参照する必要があります。
-* **ResponseLength**のメンバー [**通知\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/1394/ns-1394-_notification_info_w2k) ULONG 変数へのポインターです。 そのため、する必要があります設定するときに要求の応答データの長さなどの読み取りのために、メンバーを適切に逆参照 & ロック要求)。
-* 1394 クライアント ドライバーは、(非ページ プールの場合) から、応答パケットと応答イベントのメモリの割り当てと、応答が配信された後、そのメモリを解放します。 作業項目がキューに登録され、作業項目は、応答イベントで待機する必要がありますのことをお勧めします。 応答が配信された後、1394 バス ドライバーによって、そのイベントがシグナル状態します。 クライアント ドライバーは、作業項目内のメモリを解放し、できます。
-* **ResponseCode**内のメンバー、 [**通知\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/1394/ns-1394-_notification_info_w2k) 1394.h で定義されている \FLAGS 値の 1 つの構造を設定する必要があります。 場合**ResponseCode** RCODE 以外の値に設定されている\_応答\_完了、1394 バス ドライバーは、エラー応答パケットを送信します。 読み取りまたはロックの要求の場合、要求では、すべてのデータは返されません。 Windows 7 では、メモリ リークが発生、詳細については「[ナレッジ ベース。IEEE 1394 のバス ドライバー (2023232) の非同期の通知コールバックの実行中のメモリ リーク](https://support.microsoft.com/help/2023232)します。
-* 読み取りとロックの要求に対して、 **ResponsePacket**のメンバー、 [**通知\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/1394/ns-1394-_notification_info_w2k)構造体で返されるデータを指す必要があります、非同期応答パケットです。
+* [**Notification\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/1394/ns-1394-_notification_info_w2k)構造体の**Mdl**および**Fifo**メンバーが NULL の場合、事前通知が実行されます。
+* [**NOTIFICATION\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/1394/ns-1394-_notification_info_w2k)構造体の**responsesemdl**、 **responsepacket**、 **RESPONSELENGTH**、および**responsepacket**メンバーを NULL にすることはできません。
+* [**Notification\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/1394/ns-1394-_notification_info_w2k)構造体のテーブル間**notificationoptions**メンバーは、通知をトリガーしたアクション (読み取り、書き込み、ロック) を示す必要があります。 通知ルーチンが呼び出されるたびに、1つのフラグ (\_の読み取り後に\_通知\_フラグ、\_の書き込み後に\_フラグ\_に通知する、または\_ロックの後に\_フラグを通知する) のみを設定できます。
+* 要求の種類を特定するには、ASYNC\_パケット構造の**Requestpacket-&gt;AP\_tCode**メンバーを調べます。 メンバーは、ブロックまたは quadlet の読み取り/書き込み、ロック要求の種類などの要求の種類を指定する TCODE を示します。 ASYNC\_パケット構造は、1394で宣言されています。
+* [**NOTIFICATION\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/1394/ns-1394-_notification_info_w2k)の**Responsepacket**メンバーと**responsepacket**メンバーには、ポインターへのポインターが含まれています。 そのため、応答パケットと応答イベントへのポインターを適切に参照する必要があります。
+* [**NOTIFICATION\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/1394/ns-1394-_notification_info_w2k)の**ResponseLength**メンバーは、ULONG 変数へのポインターです。 そのため、読み取り & ロック要求などの要求の応答データの長さを設定するときは、メンバーを適切に逆参照する必要があります。
+* 1394クライアントドライバーは、応答パケットおよび応答イベント (非ページプールからの) にメモリを割り当て、応答が配信された後にそのメモリを解放する役割を担います。 作業項目をキューに配置し、作業項目が応答イベントを待機するようにすることをお勧めします。 このイベントは、応答が配信された後に1394バスドライバーによって通知されます。 その後、クライアントドライバーは、作業項目内のメモリを解放できます。
+* [**NOTIFICATION\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/1394/ns-1394-_notification_info_w2k)構造体の値**には、** RCODE で定義されているいずれかの値を設定する必要があります。 応答\_が\_RCODE 以外の値に**設定されている場合は**、1394バスドライバーによってエラー応答パケットが送信されます。 読み取り要求またはロック要求の場合、要求はデータを返しません。 Windows 7 では、はメモリをリークする可能性があります。詳細については、「[サポート技術情報: IEEE 1394 バス2023232ドライバーのメモリリーク](https://support.microsoft.com/help/2023232)」を参照してください。
+* 読み取り要求とロック要求の場合、[**通知\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/1394/ns-1394-_notification_info_w2k)構造の**responsepacket**メンバーは、非同期応答パケットで返されるデータをポイントする必要があります。
 
-次のコード例では、作業項目の実装と、クライアント ドライバーの通知ルーチンを示します。
+次のコード例は、作業項目の実装とクライアントドライバーの通知ルーチンを示しています。
 
 ```cpp
 VOID

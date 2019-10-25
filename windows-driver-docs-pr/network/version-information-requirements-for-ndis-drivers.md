@@ -3,15 +3,15 @@ title: NDIS ドライバーのバージョン情報要件
 description: NDIS ドライバーのバージョン情報要件
 ms.assetid: a05e7dde-d1f9-458d-8d7b-ead9bb9af7af
 keywords:
-- NDIS バージョン情報 WDK、NDIS 責任
+- NDIS バージョン情報 WDK、NDIS の役割
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f25bcdf8db765cfb8ae3b64a9ff7e9c016d0e7ed
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f10408f8a868f56457826573d5c26b52cec4f385
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384360"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842960"
 ---
 # <a name="version-information-requirements-for-ndis-drivers"></a>NDIS ドライバーのバージョン情報要件
 
@@ -19,35 +19,35 @@ ms.locfileid: "67384360"
 
 
 
-バージョン情報を提供する NDIS 構造体が、**ヘッダー**メンバーとして定義されている、 [ **NDIS\_オブジェクト\_ヘッダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_object_header)構造体および NDIS ドライバーは、このようなバージョン情報のサポートを提供する必要があります。
+バージョン情報を提供する NDIS 構造体には、**ヘッダーメンバーが**含まれています。これは、ヘッダーの構造体と\_して、ヘッダーの構造体として定義されています[ **\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_object_header)構造および ndis ドライバーでは、このようなバージョン情報
 
-NDIS はより高いまたは低い NDIS バージョンをサポートするドライバーをサポートできる、*現在のバージョンの NDIS* (つまり、NDIS、コンピューターが実行されているオペレーティング システムのバージョンでサポートされているのバージョン)。 また、*登録済みのバージョンの NDIS* (ドライバーが初期化中に報告されたバージョン) のドライバーはドライバーがサポートする最上位バージョンより低くすることができます。 たとえば、NDIS 6.1、NDIS 5.1 ドライバーは、NDIS 6.0 を実行しているオペレーティング システムのバージョンで実行できます。 5\.1 の NDIS ドライバーは、単に、初期化中に、5.1 の NDIS ドライバーとして登録します。 ただし、NDIS 6.1 ドライバーは、NDIS の現在のバージョンを確認する必要があります、(この例では、NDIS 6.0) で提供される NDIS の最高レベルをサポートしているドライバーとして登録する必要があります。 現在の NDIS バージョンを取得する方法の詳細については、次を参照してください。 [NDIS バージョンを入手](obtaining-the-ndis-version.md)します。
+Ndis は、*現在のバージョン*の ndis (つまり、コンピューターが実行されているオペレーティングシステムのバージョンでサポートされているバージョンの ndis) よりも前のバージョンをサポートするドライバーをサポートできます。 また、ドライバーの登録されている*NDIS バージョン*(ドライバーが初期化中に報告したバージョン) は、ドライバーがサポートする最大バージョンよりも古い場合があります。 たとえば、ndis 5.1 ドライバーまたは NDIS 6.1 ドライバーは、NDIS 6.0 を実行しているオペレーティングシステムのバージョンで実行できます。 NDIS 5.1 ドライバーは、初期化中に NDIS 5.1 ドライバーとして登録するだけです。 ただし、NDIS 6.1 ドライバーでは、現在のバージョンの NDIS を確認する必要があり、使用可能な最高レベルの NDIS (この例では NDIS 6.0) をサポートするドライバーとして登録する必要があります。 現在の NDIS バージョンを取得する方法の詳細については、「 [Ndis バージョンの](obtaining-the-ndis-version.md)取得」を参照してください。
 
-**注**  ドライバーは、構造体の新しいバージョンのすべての機能をサポートする必要はありません。 たとえば、ミニポート ドライバーは、バージョン 2 の構造を作成し、バージョン 1 の構造体の適切な値を指定します。
+**ただし**、将来の構造のリビジョンでは、ドライバーがすべての機能をサポートする必要が  ことに注意してください。 たとえば、ミニポートドライバーでは、バージョン2の構造を作成し、バージョン1の構造に適した値を指定できます。
 
  
 
-バージョン情報を保持する構造内のメンバーにアクセスするには、NDIS ドライバーは、次のプロセスを完了する必要があります。
+バージョン情報が含まれる構造体のメンバーにアクセスするには、NDIS ドライバーが次のプロセスを完了する必要があります。
 
--   チェック、 **Header.Revision**と**Header.Size**構造体のメンバーにアクセスする前にメンバー。
+-   構造体のメンバーにアクセスする前に、 **header**および**header.** のメンバーのサイズを確認してください。
 
--   以前のバージョンの構造 (つまり、ドライバーをサポートする NDIS バージョンに関連付けられている数よりも低いリビジョン番号を持つ構造)。
-    -   ドライバーは、ことを確認する必要があります、 **Header.Size**で値が正しく、 **Header.Revision**値。 たとえば、NDIS の値\_SIZEOF\_Xxx\_リビジョン\_1 は Xxx の正しい\_リビジョン\_1 が小さすぎるため Xxx\_リビジョン\_2。
-    -   **Header.Size** NDIS 以上の値がある必要があります\_SIZEOF\_Xxx\_リビジョン\_Nn (場所*Nn*のリビジョン番号が、ドライバーを使用している構造) と、ドライバーがそのリビジョンに適切な構造体の情報を正しく処理する必要があります。
--   以降のバージョン構造 (つまり、ドライバーをサポートする NDIS バージョンに関連付けられている数よりも上位のバージョン番号を保持する構造) の場合、ドライバーは、構造体の以前のバージョンの場合と同様、構造体を使用できます。 高いバージョンの構造は、以前のバージョンと互換性が常に。
+-   以前のバージョンの構造体 (つまり、ドライバーがサポートする NDIS バージョンに関連付けられている数よりも低いリビジョン番号を持つ構造体) の場合は、次のようになります。
+    -   ドライバーは、ヘッダーの**サイズ**の値が正しいことを確認する必要があります。 **Revision**値です。 たとえば、NDIS\_SIZEOF\_Xxx\_REVISION\_1 の値は、Xxx\_REVISION\_1 に対しては適切ですが、Xxx\_REVISION\_2 には小さすぎます。
+    -   ヘッダーのサイズ値は、NDIS\_SIZEOF\_Xxx\_REVISION\_Nn ( *nn*はドライバーが使用している構造体のリビジョン番号) 以上である必要があり**ます。** また、ドライバーは、構造内の情報は、そのリビジョンに適しています。
+-   より新しいバージョン構造 (つまり、ドライバーがサポートする NDIS バージョンに関連付けられている数よりもリビジョン番号が高い構造体) の場合、ドライバーは構造体の古いリビジョンと同様に構造体を使用できます。 より新しいバージョンの構造は、常に古いバージョンと互換性があります。
 
--   ドライバーは、ドライバーの登録済みの NDIS バージョンの構造体の正しいバージョンを使用する必要があります。 たとえば、NDIS 6.1 ドライバーが内でのオフロード機能をレポートする必要があります[ **NDIS\_オフロード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_offload)構造体メンバーを設定して、 [ **NDIS\_オブジェクト\_ヘッダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_object_header)構造を示す NDIS\_オフロード\_リビジョン\_2。 ただし、ドライバーが NDIS に含まれているすべての機能をサポートする必要ありません\_オフロード\_リビジョン\_2。
+-   ドライバーは、登録されている NDIS バージョンのドライバーについて、構造の正しいリビジョンを使用する必要があります。 たとえば、ndis 6.1 ドライバーは、ndis [ **\_オブジェクト\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_object_header)構造のメンバーを設定して、NDIS\_オフロード\_リビジョンを示すことによって、NDIS [ **\_オフロード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_offload)構造のオフロード機能を報告する必要があり @no__ _ _ 2. ただし、ドライバーは、NDIS\_オフロード\_リビジョン\_2 に含まれるすべての機能をサポートする必要はありません。
 
--   OID のセット要求を正常に処理するドライバーを設定する必要があります、 **SupportedRevision**内のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)OID のセットの要求からの戻り時に構造体。 **SupportedRevision**メンバーのリビジョン、ドライバーがサポートされている要求の発信側に通知します。 たとえば、ミニポート ドライバーが、Xxx を作成できます\_リビジョン\_2 構造、および、Xxx の適切な値を指定\_リビジョン\_1 の構造、およびゼロの構造体の残りの部分の塗りつぶし。 ミニポート ドライバーの Xxx は報告\_リビジョン\_で 1、 **SupportedRevision**メンバー。 ここで、Xxx をサポートできるプロトコル ドライバー\_リビジョン\_2 が Xxx を使用して\_リビジョン\_ミニポート ドライバーがサポートされている 1 つの情報。
+-   OID セット要求を正常に処理するドライバーは、OID セット要求から戻ったときに、 [**NDIS\_oid\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造体で**supportedrevision**メンバーを設定する必要があります。 **Supportedrevision**メンバーは、ドライバーがサポートしているリビジョンの要求をイニシエーターに通知します。 たとえば、ミニポートドライバーでは、Xxx\_REVISION\_2 の構造を作成し、Xxx\_REVISION\_1 構造に適切な値を指定して、構造体の残りの部分に0を設定できます。 ミニポートドライバーは、 **supportedrevision**メンバーで XXX\_REVISION\_1 を報告します。 この場合、Xxx\_リビジョン\_2 をサポートするプロトコルドライバーでは、ミニポートドライバーがサポートする Xxx\_リビジョン\_1 の情報が使用されます。
 
--   どのような情報が、基になるドライバーが正常に処理を確認するのに OID 要求を発行するドライバーに関連する必要があります値をチェック、 **SupportedRevision** NDIS でメンバー\_OID\_要求OID 要求が返された後に構造体。
+-   基になるドライバーによって正常に処理された情報を調べるには、oid 要求を発行するドライバーが、oid 要求の後に、NDIS\_OID\_要求構造の**Supportedrevision**メンバーの値を確認する必要があります。型.
 
 ## <a name="related-topics"></a>関連トピック
 
 
-[NDIS のバージョンの概要](overview-of-ndis-versions.md)
+[NDIS バージョンの概要](overview-of-ndis-versions.md)
 
-[NDIS バージョン情報を指定します。](specifying-ndis-version-information.md)
+[NDIS バージョン情報の指定](specifying-ndis-version-information.md)
 
  
 

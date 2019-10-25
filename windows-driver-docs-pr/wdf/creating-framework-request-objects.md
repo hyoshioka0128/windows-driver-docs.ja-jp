@@ -3,16 +3,16 @@ title: フレームワーク要求オブジェクトの作成
 description: フレームワーク要求オブジェクトの作成
 ms.assetid: 4bd668ec-14fb-4999-9535-a49712a26ba6
 keywords:
-- 要求オブジェクトを作成する、WDK KMDF
-- 要求オブジェクトを WDK KMDF、読み取り操作
+- 要求オブジェクト WDK KMDF、作成
+- 要求オブジェクト WDK KMDF、読み取り操作
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3be2838e848994b8d4c5e9c949458c3913bf34bd
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1049ce9eaa8c4f2027395440167ae8ee8e5684d1
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377501"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844684"
 ---
 # <a name="creating-framework-request-objects"></a>フレームワーク要求オブジェクトの作成
 
@@ -20,37 +20,37 @@ ms.locfileid: "67377501"
 
 
 
-ほとんどのフレームワークの要求オブジェクト、フレームワークによって作成されますが、ドライバーは、要求オブジェクトを作成もできます。
+ほとんどのフレームワーク要求オブジェクトはフレームワークによって作成されますが、ドライバーは要求オブジェクトを作成することもできます。
 
 ### <a name="request-objects-created-by-the-framework"></a>フレームワークによって作成された要求オブジェクト
 
-I/O マネージャーから framework ベースのドライバーが I/O 要求パケット (IRP) を受け取ると、フレームワークは IRP をインターセプトし、framework 要求オブジェクトを作成します。 フレームワークは、I/O のキューに要求オブジェクトを配置し、ドライバーが登録されている場合[要求ハンドラー](request-handlers.md)キューの適切なハンドラーを呼び出します。
+フレームワークベースのドライバーが i/o マネージャーから i/o 要求パケット (IRP) を受信すると、フレームワークは IRP をインターセプトし、フレームワークの要求オブジェクトを作成します。 フレームワークは、要求オブジェクトを i/o キューに配置し、ドライバーにキューの[要求ハンドラー](request-handlers.md)が登録されている場合は、適切なハンドラーを呼び出します。
 
-次の図は、フレームワーク、読み取り操作の要求オブジェクトを作成するときに発生する手順を示しています。
+次の図は、フレームワークが読み取り操作の要求オブジェクトを作成するときに発生する手順を示しています。
 
 ![読み取り操作の要求オブジェクトを作成する手順](images/kmdf-creating-request-objects.png)
 
 次の手順は、前の図の番号に対応しています。
 
-1.  ユーザー モード アプリケーションでは、ファイルを読み取り、Microsoft win32 **ReadFile**関数。
+1.  ユーザーモードアプリケーションは、Microsoft Win32 の**ReadFile**関数を呼び出してファイルを読み取ります。
 
-2.  **ReadFile**関数呼び出し、I/O マネージャーで、カーネル モードで実行されます。
+2.  **ReadFile**関数は、カーネルモードで実行される i/o マネージャーを呼び出します。
 
-3.  I/O マネージャー割り当てます IRP の構造体を格納し、 [ **IRP\_MJ\_読み取り**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-read)関数、構造内のコード。
+3.  I/o マネージャーは、IRP 構造体を割り当て、 [**irp\_MJ\_** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-read)格納して、構造体に関数コードを読み取ります。
 
-4.  I/O マネージャーの呼び出し、 [ **DispatchRead** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)ドライバーの標準のドライバー ルーチン*x*、IRP 構造体へのポインターを渡すことです。 ドライバー *x* framework ベースのドライバー、フレームワークが、ドライバーの*DispatchRead*ルーチン。
+4.  I/o マネージャーは、ドライバー *x*の[**DispatchRead**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)標準ドライバールーチンを呼び出し、IRP 構造体へのポインターを渡します。 Driver *x*はフレームワークベースのドライバーであるため、このフレームワークにはドライバーの*DispatchRead*ルーチンが用意されています。
 
-5.  フレームワークでは、IRP 構造体を表す要求オブジェクトを作成します。 フレームワークでは、ドライバーのキュー オブジェクトの 1 つに、要求オブジェクトを追加します。
+5.  フレームワークは、IRP 構造体を表す要求オブジェクトを作成します。 フレームワークは、要求オブジェクトをドライバーのいずれかのキューオブジェクトに追加します。
 
-6.  フレームワークは、ドライバーの[ *EvtIoRead* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_queue_io_read)要求ハンドラー、キュー オブジェクトのハンドルと要求オブジェクトのハンドルを渡します。
+6.  フレームワークは、ドライバーの[*EvtIoRead*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_read)要求ハンドラーを呼び出し、キューオブジェクトハンドルと要求オブジェクトハンドルを渡します。
 
 ### <a name="request-objects-created-by-a-driver"></a>ドライバーによって作成された要求オブジェクト
 
-Framework ベースのドライバーは、要求オブジェクトを作成することもできます。 ドライバーの読み取りでは、受信した場合は、要求オブジェクトを作成または書き込み要求が、ドライバーのより大きいデータの量の可能性がありますなど[I/O ターゲット](using-i-o-targets.md)で同時に処理できます。 このような場合は、ドライバーは、いくつかの小さな要求にデータを分割し、追加の要求オブジェクトを使用して、1 つまたは複数の I/O ターゲットにこれらの小さい要求を送信します。
+フレームワークベースのドライバーは、要求オブジェクトを作成することもできます。 たとえば、ドライバーは、ドライバーの[i/o ターゲット](using-i-o-targets.md)よりも大きいサイズのデータに対して読み取りまたは書き込みの要求を受け取った場合に、要求オブジェクトを作成することがあります。 このような状況では、ドライバーはデータをいくつかの小さな要求に分割し、追加の要求オブジェクトを使用して、これらの小さな要求を1つ以上の i/o ターゲットに送信することができます。
 
-要求オブジェクトを作成するには、ドライバーを呼び出す必要があります[ **WdfRequestCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestcreate)など、要求を初期化するフレームワーク オブジェクト メソッドを続けて[ **WdfUsbTargetPipeFormatRequestForRead**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetpipeformatrequestforread)します。
+要求オブジェクトを作成するには、ドライバーが[**Wdfrequestcreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcreate)に続けて、 [**WdfUsbTargetPipeFormatRequestForRead**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetpipeformatrequestforread)などの要求を初期化するフレームワークオブジェクトメソッドを呼び出す必要があります。
 
-ドライバーを呼び出すことができる場合、ドライバーが WDM ディスパッチ ルーチンで WDM Irp を受信し、し、サービスまたはフレームワークを使用して、転送、 [ **WdfRequestCreateFromIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestcreatefromirp)します。
+ドライバーが wdm ディスパッチルーチンで WDM Irp を受信し、フレームワークを使用してサービスを実行または転送する場合、ドライバーは[**Wdfrequestcreatefromirp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcreatefromirp)を呼び出すことができます。
 
  
 

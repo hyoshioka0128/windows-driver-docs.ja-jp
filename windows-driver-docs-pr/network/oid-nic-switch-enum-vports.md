@@ -1,62 +1,62 @@
 ---
 title: OID_NIC_SWITCH_ENUM_VPORTS
-description: 上にあるドライバーまたはユーザー モード アプリケーションでは、配列を取得する OID_NIC_SWITCH_ENUM_VPORTS のオブジェクト識別子 (OID) メソッド要求を発行します。
+description: 前のドライバーまたはユーザーモードアプリケーションが、配列を取得するために OID_NIC_SWITCH_ENUM_VPORTS のオブジェクト識別子 (OID) メソッド要求を発行します。
 ms.assetid: 4B9587E0-3CA9-46AF-A80E-969E6D563922
 ms.date: 08/08/2017
-keywords: -OID_NIC_SWITCH_ENUM_VPORTS ネットワーク ドライバーが Windows Vista 以降
+keywords: -Windows Vista 以降の OID_NIC_SWITCH_ENUM_VPORTS ネットワークドライバー
 ms.localizationpriority: medium
-ms.openlocfilehash: 9735448720d47f43b70b6072dd7c949bdd82699d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 612f5be262fbd7960ec2da9cd43970d7843b48fe
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383662"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844085"
 ---
-# <a name="oidnicswitchenumvports"></a>OID\_NIC\_スイッチ\_ENUM\_拡張
+# <a name="oid_nic_switch_enum_vports"></a>OID\_NIC\_スイッチ\_列挙型\_VPORTS
 
 
-上にあるドライバーまたはユーザー モード アプリケーションの OID オブジェクト識別子 (OID) メソッド要求の発行\_NIC\_スイッチ\_列挙\_拡張配列を取得します。 配列内の各要素には、ネットワーク アダプターの NIC のスイッチが作成されている仮想ポート (VPort) の属性を指定します。
+前のドライバーまたはユーザーモードのアプリケーションは、OID\_NIC\_スイッチのオブジェクト識別子 (OID) メソッド要求を発行して、配列を取得するために、列挙型\_VPORTS を\_します。 配列の各要素は、ネットワークアダプターの NIC スイッチで作成された仮想ポート (VPort) の属性を指定します。
 
-この OID クエリ要求から正常に戻った後、 **InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体以下を含むバッファーへのポインターが含まれます。
+この OID クエリ要求から正常に戻った後、 [**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造の**informationbuffer**メンバーには、次を含むバッファーへのポインターが含まれています。
 
--   [ **NDIS\_NIC\_スイッチ\_VPORT\_情報\_配列**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_info_array)配列内の要素の数を定義する構造体。
+-   [**NDIS\_NIC\_スイッチ\_VPORT\_INFO\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_info_array)配列内の要素の数を定義する配列構造体です。
 
--   配列の[ **NDIS\_NIC\_スイッチ\_VPORT\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_info)構造体。 各構造体には、ネットワーク アダプターの NIC のスイッチ上の VPort に関する情報が含まれています。
+-   [**NDIS\_NIC\_スイッチ\_VPORT\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_info)構造体の配列。 これらの各構造体には、ネットワークアダプターの NIC スイッチの VPort に関する情報が含まれています。
 
-    **注**  ネットワーク アダプターの拡張が作成されていない場合、ドライバーの設定、 **NumElements**のメンバー、 [ **NDIS\_NIC\_スイッチ\_VPORT\_情報\_配列**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_info_array)構造体を 0、no [ **NDIS\_NIC\_スイッチ\_VPORT\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_info)構造体が返されます。
+    **注**  ネットワークアダプターに vports が作成されていない場合、ドライバーは NDIS\_NIC\_スイッチの**numelements**メンバーを設定[ **\_VPORTS\_INFO\_配列**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_info_array)構造を0に設定し、NDIS を設定しません。 [ **\_NIC\_スイッチ\_VPORT\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_info)構造が返されます。
 
      
 
 <a name="remarks"></a>注釈
 -------
 
-上にあるドライバーとユーザー モード アプリケーションは、OID の OID クエリ要求を発行\_NIC\_スイッチ\_ENUM\_のネットワーク アダプターの NIC のスイッチに割り当てられている拡張を列挙するために拡張します。
+それ以降のドライバーやユーザーモードアプリケーションは OID\_\_NIC の OID クエリ要求を発行し、列挙型\_VPORTS によってネットワークアダプターの NIC スイッチに割り当てられている VPorts を列挙\_ます。
 
-ドライバーまたはアプリケーションは、OID 要求を発行して、前に初期化する必要があります、 [ **NDIS\_NIC\_スイッチ\_VPORT\_情報\_配列**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_info_array)要求と共に渡される構造体。 ドライバーまたはアプリケーションは、初期化するときに、次のガイドラインに従う必要があります、 **NDIS\_NIC\_スイッチ\_VPORT\_情報\_配列**構造体。
+ドライバーまたはアプリケーションが OID 要求を発行する前に、要求と共に渡される、 [**VPORT\_INFO\_配列の構造\_、NDIS\_NIC\_スイッチ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_info_array)を初期化する必要があります。 **NDIS\_NIC\_スイッチ\_VPORT\_情報\_配列**構造体を初期化するときは、ドライバーまたはアプリケーションが次のガイドラインに従う必要があります。
 
--   場合は、NDIS\_NIC\_スイッチ\_VPORT\_情報\_配列\_ENUM\_ON\_特定\_スイッチ フラグに設定されて、 **フラグ**メンバー、指定した NIC のスイッチで作成されたすべての拡張の情報が返されます。 NIC のスイッチがで指定された、 **SwitchId**その構造体のメンバー。
+-   NDIS\_NIC\_スイッチ\_VPORT\_INFO\_ARRAY\_\_特定の\_スイッチフラグが**Flags**メンバーに設定されている場合は、指定された NIC スイッチで作成されたすべての VPorts に関する情報を返します。 NIC スイッチは、その構造体の**Switchid**メンバーによって指定されます。
 
-    **注**  以降 Windows Server 2012 では、SR-IOV インターフェイスをサポートしています NIC スイッチの既定値のみ、ネットワーク アダプター。 設定されているフラグに関係なく、**フラグ**、メンバー、 **SwitchId** NDIS にメンバーを設定する必要があります\_既定\_スイッチ\_id。
-
-     
-
--   場合は、NDIS\_NIC\_スイッチ\_VPORT\_情報\_配列\_ENUM\_ON\_特定\_関数フラグに設定されて、 **フラグ**メンバー、ネットワーク アダプターで指定された PCI Express (PCIe) 物理機能 (PF) または仮想機能 (VF) に接続してすべての拡張の情報が返されます。 PF または VF がで指定された、 **AttachedFunctionId**その構造体のメンバー。
-
-    場合、 **AttachedFunctionId** NDIS にメンバーが設定されている\_PF\_関数\_ID、ネットワーク アダプターの PF. に関連付けられているすべての拡張、VPort、既定値などの情報が返されます 場合、 **AttachedFunctionId** VF の有効な識別子にメンバーが設定されている、指定した VF にすべての拡張の情報が返されます。
-
-    **注**  VPort、VF に接続できる 1 つだけの既定以外の Windows Server 2012 以降します。 ただし、(VPort の既定値を含む) 複数の拡張は、PF. に接続できます。
+    **注**  Windows Server 2012 以降では、sr-iov インターフェイスはネットワークアダプターの既定の NIC スイッチのみをサポートしています。 **Flags**メンバーで設定されているフラグに関係なく、 **SWITCHID**メンバーを NDIS\_既定\_スイッチ\_ID に設定する必要があります。
 
      
 
--   場合、**フラグ**メンバーが 0 に設定されている、すべての拡張が VF、PF にネットワーク アダプターの接続情報が返されます。 ここでの値、 **SwitchId**と**AttachedFunctionId**は無視されます。
+-   NDIS\_NIC\_スイッチ\_VPORT\_情報\_配列\_特定の\_関数フラグが**Flags**メンバーで設定されている場合は、指定された PCI Express (PCIe) 物理機能 (PF) またはネットワークアダプター上の仮想機能 (VF) に接続されているすべての VPorts に関する情報を返します。 PF または VF は、その構造体の**AttachedFunctionId**メンバーによって指定されます。
 
-詳細については、次を参照してください。[ネットワーク アダプターの仮想ポートを列挙](https://docs.microsoft.com/windows-hardware/drivers/network/enumerating-virtual-ports-on-a-network-adapter)します。
+    **AttachedFunctionId**メンバーが NDIS\_PF\_関数\_ID に設定されている場合、ネットワークアダプターの pf に接続されているすべての vports (既定の vports を含む) に関する情報が返されます。 **AttachedFunctionId**メンバーが有効な vf 識別子に設定されている場合は、指定された vf のすべての vports に関する情報が返されます。
 
-### <a name="return-status-codes"></a>リターン状態コード
+    **注**  Windows Server 2012 以降では、VF にアタッチできる既定以外の vport は1つだけです。 ただし、複数の VPorts (既定の Vports を含む) を PF に接続することはできます。
 
-OID の OID メソッド要求を処理する NDIS\_NIC\_スイッチ\_列挙\_ミニポート ドライバーの拡張要求。 ドライバーにはこの OID 要求が発行するされません。
+     
 
-NDIS が、OID を処理するときに\_NIC\_スイッチ\_ENUM\_拡張要求と、次のステータス コードの 1 つを返します。
+-   **Flags**メンバーが0に設定されている場合、ネットワークアダプターの PF または VF に接続されているすべての vports に関する情報が返されます。 この場合、 **Switchid**と**AttachedFunctionId**の値は無視されます。
+
+詳細については、「[ネットワークアダプターの仮想ポートを列挙する](https://docs.microsoft.com/windows-hardware/drivers/network/enumerating-virtual-ports-on-a-network-adapter)」を参照してください。
+
+### <a name="return-status-codes"></a>ステータスコードを返す
+
+NDIS は、OID\_NIC\_スイッチの OID メソッド要求を処理し\_列挙型\_VPORTS がミニポートドライバーに要求します。 ドライバーは、この OID 要求を発行しません。
+
+NDIS が OID\_\_NIC を処理するときに、列挙型\_VPORTS の要求\_、次のステータスコードのいずれかが返されます。
 
 <table>
 <colgroup>
@@ -72,23 +72,23 @@ NDIS が、OID を処理するときに\_NIC\_スイッチ\_ENUM\_拡張要求�
 <tbody>
 <tr class="odd">
 <td><p>NDIS_STATUS_SUCCESS</p></td>
-<td><p>OID 要求は正常に完了しました。</p></td>
+<td><p>OID 要求が正常に完了しました。</p></td>
 </tr>
 <tr class="even">
 <td><p>NDIS_STATUS_NOT_SUPPORTED</p></td>
-<td><p>ミニポート ドライバーでは、シングル ルート I/O 仮想化 (SR-IOV) インターフェイスをサポートしていませんか、またはインターフェイスを使用して有効になっていません。</p></td>
+<td><p>ミニポートドライバーがシングルルート i/o 仮想化 (SR-IOV) インターフェイスをサポートしていないか、インターフェイスの使用が有効になっていません。</p></td>
 </tr>
 <tr class="odd">
 <td><p>NDIS_STATUS_INVALID_PARAMETER</p></td>
-<td><p>1 つ以上のメンバーの<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_info_array" data-raw-source="[&lt;strong&gt;NDIS_NIC_SWITCH_VF_INFO_ARRAY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_info_array)"> <strong>NDIS_NIC_SWITCH_VF_INFO_ARRAY</strong> </a>構造が無効な値を指定します。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_info_array" data-raw-source="[&lt;strong&gt;NDIS_NIC_SWITCH_VF_INFO_ARRAY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_info_array)"><strong>NDIS_NIC_SWITCH_VF_INFO_ARRAY</strong></a>構造体の1つ以上のメンバーに無効な値が含まれています。</p></td>
 </tr>
 <tr class="even">
 <td><p>NDIS_STATUS_INVALID_LENGTH</p></td>
-<td><p>情報バッファーが小さすぎます。 NDIS セット、<strong>データ。METHOD_INFORMATION します。BytesNeeded</strong>内のメンバー、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)"> <strong>NDIS_OID_REQUEST</strong> </a>構造体に必要な最小バッファー サイズ。</p></td>
+<td><p>情報バッファーが短すぎます。 NDIS はデータを設定<strong>します。METHOD_INFORMATION.</strong> <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a>構造体の中で必要とされる最小バッファーサイズに対して、bytesneeded 必要です。</p></td>
 </tr>
 <tr class="odd">
 <td><p>NDIS_STATUS_FAILURE</p></td>
-<td><p>他の理由から、要求が失敗しました。</p></td>
+<td><p>他の理由で要求が失敗しました。</p></td>
 </tr>
 </tbody>
 </table>
@@ -106,11 +106,11 @@ NDIS が、OID を処理するときに\_NIC\_スイッチ\_ENUM\_拡張要求�
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>NDIS 6.30 以降をサポートします。</p></td>
+<td><p>NDIS 6.30 以降でサポートされています。</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Ntddndis.h (include Ndis.h)</td>
+<td>Ntddndis (Ndis .h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -119,15 +119,15 @@ NDIS が、OID を処理するときに\_NIC\_スイッチ\_ENUM\_拡張要求�
 
 
 ****
-[**NDIS\_NIC\_スイッチ\_VPORT\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_info)
+[**NDIS\_NIC\_スイッチ\_VPORT\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_info)
 
-[**NDIS\_NIC\_スイッチ\_VPORT\_情報\_配列**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_info_array)
+[**NDIS\_NIC\_スイッチ\_VPORT\_情報\_配列**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_info_array)
 
-[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
+[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)
 
 [OID\_NIC\_スイッチ\_作成\_スイッチ](oid-nic-switch-create-switch.md)
 
-[OID\_NIC\_SWITCH\_PARAMETERS](oid-nic-switch-parameters.md)
+[OID\_NIC\_スイッチ\_パラメーター](oid-nic-switch-parameters.md)
 
  
 

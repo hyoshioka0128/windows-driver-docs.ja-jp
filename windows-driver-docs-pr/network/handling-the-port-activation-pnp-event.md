@@ -3,18 +3,18 @@ title: ポート アクティブ化 PnP イベントの処理
 description: ポート アクティブ化 PnP イベントの処理
 ms.assetid: 433018bf-daf5-4ea1-be3f-63349558f6b7
 keywords:
-- WDK NDIS、PnP イベント通知をポートします。
+- ポート WDK NDIS、PnP イベント通知
 - NDIS ポート WDK、PnP イベント通知
-- PnP イベント通知 WDK NDIS ポート
-- PnP イベント WDK NDIS ポートのアクティブ化
+- PnP イベント通知の WDK NDIS ポート
+- アクティブ化 PnP イベント WDK NDIS ポート
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 780918f40f98fb5a6523fbf2764848f7cb35de3b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5bf5bf8c05e2f519091da5b9582f2706348c79d5
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67381332"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842552"
 ---
 # <a name="handling-the-port-activation-pnp-event"></a>ポート アクティブ化 PnP イベントの処理
 
@@ -22,15 +22,15 @@ ms.locfileid: "67381332"
 
 
 
-ドライバーの関連を処理する必要があります、 **NetEventPortActivation** PnP イベント ミニポート ドライバーには、NDIS ポートがアクティブにするとします。 NDIS では、既定のポートがアクティブ化されてまでプロトコル ドライバーとミニポート アダプター間のバインドは開始しません。 そのため、プロトコルのドライバーがへの呼び出しを扱う必要があります、 [ *ProtocolBindAdapterEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_bind_adapter_ex)既定のポートがアクティブである通知として機能します。
+ミニポートドライバーが NDIS ポートをアクティブにすると、後続のドライバーは**NetEventPortActivation** PnP イベントを処理する必要があります。 既定のポートがアクティブ化されるまで、NDIS はプロトコルドライバーとミニポートアダプター間のバインドを開始しません。 したがって、プロトコルドライバーは、既定のポートがアクティブであることを示す通知として、 [*Protocolbindadapterex*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_bind_adapter_ex)関数の呼び出しを処理する必要があります。
 
-プロトコル ドライバーは、いない、ドライバーは、そのポートがアクティブで、バインド パラメーター、またはを通じて通知を受信した場合を除き、NDIS 要求のポート番号を使用する必要があります、 **NetEventPortActivation** PnP イベント。
+プロトコルドライバーは、バインドパラメーターまたは**NetEventPortActivation** PnP イベントを使用して、ポートがアクティブであることを示す通知をドライバーが受け取った場合を除き、NDIS 要求でポート番号を使用することはできません。
 
-NDIS イベントが生成されますポート アクティベーション PnP、ミニポート ドライバーにはいくつかのポートがアクティブにした後。 (ミニポート ドライバーを指定、 **NetEventPortActivation**イベントのコードでの PnP、 [ **NET\_PNP\_イベント\_通知**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_pnp_event_notification)構造体、 *NetPnPEvent*への呼び出しでパラメーターが指す[ **NdisMNetPnPEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismnetpnpevent) NDIS ポートをアクティブにします)。
+ミニポートドライバーによってポートがアクティブ化されると、NDIS によってポートライセンス認証の PnP イベントが生成されます。 (ミニポートドライバーは、 *NetPnPEvent*パラメーターが[**NdisMNetPnPEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismnetpnpevent)への呼び出しで参照する、 [**NET\_pnp\_イベント\_通知**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_pnp_event_notification)構造の**NetEventPortActivation** pnp イベントコードを指定します。NDIS ポートをアクティブにします。)
 
-ミニポート ドライバーを使用して 1 つの PnP 通知で複数のポートのアクティブ化を示すことができます、**次**内のメンバー、 [ **NDIS\_ポート**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_port)をリンクする構造体複数の NDIS\_ポート構造体。 NDIS の詳細リンクのリストについて\_ポートの構造を参照してください[ライセンス NDIS ポート](activating-an-ndis-port.md)します。
+ミニポートドライバーは、1つの PnP 通知で複数のポートをアクティブ化することを示すことができます。そのためには、 [**ndis\_ポート**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_port)構造の**次**のメンバーを使用して、複数の ndis\_ポート構造をリンクします。 NDIS\_ポート構造のリンクリストの詳細については、「 [Ndis ポートのアクティブ化](activating-an-ndis-port.md)」を参照してください。
 
-NDIS 生成、 **NetEventPortDeactivation**ミニポートにいくつかのポートが非アクティブ化時にバインドされているプロトコル ドライバーに PnP イベント。 詳細については、 **NetEventPortDeactivation** PnP イベントは、「[ポート非アクティブ化の PnP イベントを処理する](handling-the-port-deactivation-pnp-event.md)します。
+ミニポートが一部のポートを非アクティブ化すると、NDIS は、バインドされたプロトコルドライバーに**NetEventPortDeactivation** PnP イベントを生成します。 **NetEventPortDeactivation** pnp イベントの詳細については、「[ポートの非アクティブ化の Pnp イベントの処理](handling-the-port-deactivation-pnp-event.md)」を参照してください。
 
  
 

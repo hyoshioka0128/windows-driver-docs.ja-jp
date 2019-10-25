@@ -3,8 +3,8 @@ title: テープ デバイス制御要求の処理
 description: テープ デバイス制御要求の処理
 ms.assetid: de6edfc6-9b4b-4866-8fdb-1047b43163de
 keywords:
-- テープ ドライバー WDK ストレージは、状態の値のマッピング
-- テープ記憶装置ドライバー WDK、状態の値のマッピング
+- テープドライバー WDK storage、マッピング状態値
+- 記憶域テープドライバー WDK、マッピング状態値
 - TAPE_STATUS_SEND_SRB_AND_CALLBACK
 - TAPE_STATUS_CHECK_TEST_UNIT_READY
 - TAPE_STATUS_CALLBACK
@@ -14,12 +14,12 @@ keywords:
 - 状態値 WDK テープ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a24ef7f36076e3816e4d1826fb6232f8cfff6af5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d03df0ec42bb4bfe408db899b83dbb262d0da5b3
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369580"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842725"
 ---
 # <a name="processing-tape-device-control-requests"></a>テープ デバイス制御要求の処理
 
@@ -27,7 +27,7 @@ ms.locfileid: "67369580"
 ## <span id="ddk_processing_tape_device_control_requests_kg"></span><span id="DDK_PROCESSING_TAPE_DEVICE_CONTROL_REQUESTS_KG"></span>
 
 
-すべてのテープ miniclass ドライバーに記載した値を使用して状態を報告する必要があります、 [**テープ\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/minitape/ne-minitape-_tape_status)列挙子。 ただし、テープのクラス ドライバーには、I/O のコントロール要求が完了するは、対応する NT ステータス値を使用して状態を報告します。 次の表に、テープの間のマッピング\_状態の値とその同等 NT 状態の値。
+すべての tape miniclass ドライバーは、 [**tape\_status**](https://docs.microsoft.com/windows-hardware/drivers/ddi/minitape/ne-minitape-_tape_status)列挙子に示されている値を使用して状態を報告する必要があります。 ただし、テープクラスドライバーが i/o 制御要求を完了すると、同等の NT 状態値を使用して状態がレポートされます。 次の表は、テープ\_の状態値と、それに対応する NT 状態値とのマッピングを示しています。
 
 <table>
 <colgroup>
@@ -36,8 +36,8 @@ ms.locfileid: "67369580"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">NT ステータス値</th>
-<th align="left">テープの状態値</th>
+<th align="left">NT 状態の値</th>
+<th align="left">テープの状態の値</th>
 </tr>
 </thead>
 <tbody>
@@ -118,7 +118,7 @@ ms.locfileid: "67369580"
 <td align="left"><p>TAPE_STATUS_DEVICE_DATA_ERROR</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>0XC000000ESTATUS_NO_SUCH_DEVICE</p></td>
+<td align="left"><p>STATUS_NO_SUCH_DEVICE</p></td>
 <td align="left"><p>TAPE_STATUS_NO_SUCH_DEVICE</p></td>
 </tr>
 <tr class="odd">
@@ -154,27 +154,27 @@ ms.locfileid: "67369580"
 
  
 
-クラス ドライバーは、要求を完了するのに miniclass ルーチンを複数回呼び出す必要があります、たびに、miniclass ドライバーは、要求が完了するかどうか、または、ルーチンが再度呼び出されるかどうかを示す戻り値の状態を使用します。 テープのクラス ドライバーは、特定の要求ととしてルーチンに渡すカウント miniclass ルーチンが呼び出される回数の 0 から始まるカウントを保持、 *CallNumber*パラメーター。
+クラスドライバーが要求を完了するために miniclass ルーチンを2回以上呼び出す必要がある場合、miniclass ドライバーは、要求が完了したかどうか、またはルーチンを再度呼び出す必要があるかどうかを示すために、リターンステータスを使用します。 Tape クラスドライバーは、指定された要求に対して miniclass ルーチンを呼び出した回数の0から始まるカウントを保持し、そのカウントを*Callnumber*パラメーターとしてルーチンに渡します。
 
-Miniclass ルーチンでは、クラス ドライバーが、ルーチンをもう一度呼び出す必要があることを示す状態値は次のいずれかを返します。
+Miniclass ルーチンは、次のいずれかの状態値を返して、クラスドライバーがルーチンを再度呼び出す必要があることを示します。
 
--   テープ\_状態\_送信\_SRB\_AND\_コールバック
+-   テープ\_の状態\_送信\_SRB\_と\_コールバック
 
-    この戻り値では、テープのクラス ドライバー、SRB をデバイスに送信するよう指示します。 通常、テープ miniclass ルーチンでは、テープ クラス ドライバーを渡し、SRB で入力した後にこの状態を返します。 操作が成功した場合のクラス ドライバー単位*CallNumber* miniclass ルーチンをもう一度呼び出すとします。 クラスのドライバーの値に応じてもう一度 miniclass ルーチンを呼び出すと、SRB が失敗した場合、 *RetryFlags*します。
+    この戻り値は、SRB をデバイスに送信するようにテープクラスドライバーに指示します。 通常、tape miniclass ルーチンは、テープクラスドライバーによって渡された SRB を入力した後に、この状態を返します。 操作が成功した場合、クラスドライバーは*Callnumber*をインクリメントし、miniclass ルーチンを再度呼び出します。 SRB が失敗した場合は、 *Retryflags*の値に応じて、クラスドライバーは miniclass ルーチンを再度呼び出します。
 
--   テープ\_状態\_確認\_テスト\_単位\_準備完了
+-   テープ\_の状態\_テスト\_ユニット\_準備完了\_を確認する
 
-    この戻り値では、テープ クラス ドライバーを SRB のテスト単位の準備がコマンドを作成し、SRB をデバイスに送信するよう指示します。
+    この戻り値は、テープクラスドライバーに対して、テスト単位の準備ができたコマンドの SRB を作成し、SRB をデバイスに送信するように指示します。
 
--   テープ\_状態\_コールバック
+-   テープ\_の状態\_コールバック
 
-    これは、値をインクリメントするテープ クラス ドライバーに指示が返される*CallNumber* SRB をデバイスに送信せずにします。 これには、複数のデバイスをサポートするケースのステートメントが効率化します。 たとえば、ほとんどの特定の miniclass ドライバーでサポートされるテープ デバイスが特定の要求を処理する 3 つのされる Srb を必要とします。 1 つのデバイスには、のみ、最初と 3 番目される Srb ただし、必要があります。 一意のデバイスのテープ miniclass ドライバーがテープを返すことができます\_状態\_同じコードを使用して、サポートされるすべてのデバイスの要求を処理するドライバーを許可する、2 つ目の SRB をスキップするコールバック。
+    この戻り値は、SRB をデバイスに送信せずに、テープクラスドライバーに、 *Callnumber*をインクリメントするように指示します。 これにより、複数のデバイスをサポートするケースステートメントが合理化されます。 たとえば、特定の miniclass ドライバーでサポートされているほとんどのテープデバイスで、特定の要求を処理するために3つの SRBs が必要であるとします。 ただし、1つのデバイスには最初と3番目の SRBs のみが必要です。 一意のデバイスの場合、tape miniclass ドライバーは、テープ\_の状態\_コールバックを返して2番目の SRB をスキップします。これにより、ドライバーは同じコードを使用して、サポートされているすべてのデバイスの要求を処理することができます。
 
--   テープ\_状態\_REQUIRES\_クリーニング
+-   テープ\_の状態\_には\_クリーニングが必要です
 
-    テープ デバイスは、エラーとしてではなく、センス データのクリーニングの通知をサポートする場合、テープ miniclass ドライバーの TapeMiniGetStatus ルーチンは、ドライブのクリーニングが必要するテープ クラス ドライバーに示すためにこの状態を返します。
+    テープデバイスが、エラーではなく、sense data でのクリーニング通知をサポートしている場合、tape miniclass ドライバーの TapeMiniGetStatus ルーチンは、ドライブのクリーニングが必要であることをテープクラスドライバーに示すためにこの状態を返します。
 
-Miniclass ルーチンの要求の処理が終了したとき-テープをテープ クラス ドライバーに返すに成功するか、エラーの再試行--後で\_状態\_*XXX*を示す成功した場合または要求の失敗。
+Miniclass ルーチンが要求の処理を終了したとき (正常に完了した場合、または再試行が終了した後にエラーが発生した場合)、テープクラスドライバーに返されます。この場合、\_テープの状態\_*XXX*に戻り、申請.
 
  
 

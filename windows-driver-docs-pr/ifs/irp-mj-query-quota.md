@@ -3,7 +3,7 @@ title: IRP_MJ_QUERY_QUOTA
 description: IRP\_MJ\_クエリ\_クォータ
 ms.assetid: eb48b5ef-7eac-49d4-ab23-2d3efe783fa3
 keywords:
-- IRP_MJ_QUERY_QUOTA インストール可能なファイル システム ドライバー
+- IRP_MJ_QUERY_QUOTA インストール可能なファイルシステムドライバー
 topic_type:
 - apiref
 api_name:
@@ -12,87 +12,87 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a4fa61c85c1598c3102bab064dbe7b5bb3e47b43
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 59a72d3cc14faa756523c5872ba00bb89460bf08
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384815"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841164"
 ---
-# <a name="irpmjqueryquota"></a>IRP\_MJ\_クエリ\_クォータ
+# <a name="irp_mj_query_quota"></a>IRP\_MJ\_クエリ\_クォータ
 
 ## <a name="when-sent"></a>送信時
 
-IRP\_MJ\_クエリ\_クォータ要求が I/O マネージャーによって送信されます。 この要求を送信できますなど、ユーザー モード アプリケーションには Microsoft Win32 メソッドが呼び出されるとなど**IDiskQuotaControl::GetQuotaState**します。
+IRP\_MJ\_クエリ\_クォータ要求は、i/o マネージャーによって送信されます。 この要求は、たとえば、ユーザーモードアプリケーションが**Idiskquotacontrol::** などの Microsoft Win32 メソッドを呼び出したときに送信できます。
 
-## <a name="operation-file-system-drivers"></a>操作:ファイル システム ドライバー
+## <a name="operation-file-system-drivers"></a>操作: ファイルシステムドライバー
 
-ファイル システムでは、ディスク クォータをサポートする場合、ファイル システム ドライバーを抽出し、ファイルまたはディレクトリのユーザーのオープンを表すかどうかを確認するファイル オブジェクトをデコードします。 場合は、ドライバーは、クエリの処理し、IRP を完了する必要があります。 それ以外の場合、ドライバーでは、クエリを処理することがなく適切な IRP を完了する必要があります。
+ファイルシステムがディスククォータをサポートしている場合、ファイルシステムドライバーはファイルオブジェクトを抽出してデコードし、ファイルまたはディレクトリが開いているユーザーを表すかどうかを判断します。 その場合、ドライバーはクエリを処理し、IRP を完了する必要があります。 それ以外の場合、ドライバーはクエリを処理せずに、必要に応じて IRP を完了する必要があります。
 
-## <a name="operation-file-system-filter-drivers"></a>操作:ファイル システム フィルター ドライバー
+## <a name="operation-file-system-filter-drivers"></a>操作: ファイルシステムフィルタードライバー
 
-クォータの動作を明示的にオーバーライドする必要がある場合を除き、フィルター ドライバー スタックで、次の下位ドライバーには、この IRP を渡す必要があります。
+フィルタードライバーは、クォータの動作を明示的にオーバーライドする必要がない限り、この IRP をスタック上の次の下位のドライバーに渡す必要があります。
 
 ## <a name="parameters"></a>パラメーター
 
-ファイル システムまたはフィルター ドライバーは呼び出し[ **IoGetCurrentIrpStackLocation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetcurrentirpstacklocation)ポインターを取得する、独自の特定の IRP で[**場所スタック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)、IRP として次の一覧に示すように*IrpSp*します。 (IRP が示した*Irp*)。ドライバーは IRP の IRP スタックの場所はクエリのクォータ情報の要求の処理には、次のメンバーで設定されている情報を使用できます。
+ファイルシステムまたはフィルタードライバーは、指定された IRP で[**Iogetlocation entiを**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation)呼び出して、irp 内の独自の[**スタックの場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)へのポインターを取得します。次の一覧には、 *irpsp*として示されています。 (IRP は、 *irp*として表示されます)。ドライバーは、次の IRP のメンバーと、クエリクォータ情報要求の処理での IRP スタックの場所に設定されている情報を使用できます。
 
-### <a name="deviceobject"></a>*デバイス オブジェクト*  
+### <a name="deviceobject"></a>*DeviceObject*  
 
-ターゲット デバイスのオブジェクトへのポインター。
+ターゲットデバイスオブジェクトへのポインター。
 
-### <a name="deviceobject-flags"></a>*デバイス オブジェクトのフラグを -> します。*  
+### <a name="deviceobject-flags"></a>*DeviceObject-> フラグ*  
 
-DO\_バッファーに格納された\_IO、および DO\_直接\_IO フラグを使用するデータは、ドライバーに渡される方法を指定する次のように。
+次のようにして、データをドライバーに渡す方法を指定するために、IO\_IO フラグと\_DIRECT\_IO フラグを使用して\_します。
 
-|フラグの設定|I/O メソッド|
+|フラグの設定|I/o メソッド|
 |----|----|
-|~DO_BUFFERED_IO|~ DO_DIRECT_IO|
-|METHOD_NEITHER|~DO_BUFFERED_IO|
+|~ DO_BUFFERED_IO|~ DO_DIRECT_IO|
+|METHOD_NEITHER|~ DO_BUFFERED_IO|
 |DO_DIRECT_IO|METHOD_DIRECT|
 |DO_BUFFERED_IO|~ DO_DIRECT_IO|
 |METHOD_BUFFERED|DO_BUFFERED_IO|
 |DO_DIRECT_IO|METHOD_BUFFERED|
 
-### <a name="irp-associatedirpsystembuffer"></a>*Irp AssociatedIrp.SystemBuffer を -> します。*
+### <a name="irp-associatedirpsystembuffer"></a>*Irp-> AssociatedIrp*
 
-システムが指定した場合に、中間システム バッファーとして使用するバッファーへのポインター、DO\_バッファーに格納された\_IO フラグに設定されて*デバイス オブジェクトには、フラグが]-> [* します。 このメンバーに設定している場合は、 **NULL**します。
+\_バッファー\_IO フラグが*DeviceObject-> フラグ*で設定されている場合に、中間システムバッファーとして使用されるシステム指定のバッファーへのポインター。 それ以外の場合、このメンバーは**NULL**に設定されます。
 
-### <a name="irp-iostatus"></a>*Irp IoStatus を -> します。*
+### <a name="irp-iostatus"></a>*Irp > IoStatus*
 
-ポインター、 [ **IO\_状態\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_status_block)最終的な完了の状態と、要求された操作に関する情報を受け取る。
+最終的な完了状態と要求された操作に関する情報を受け取る、 [**IO\_ステータス\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_status_block)構造へのポインター。
 
-### <a name="irp-userbuffer"></a>*Irp UserBuffer を -> します。*  
+### <a name="irp-userbuffer"></a>*Irp-> UserBuffer*  
 
-呼び出し元が指定したファイルへのポインター\_クォータ\_をボリュームのクォータ情報を受け取る情報構造の出力バッファー。
+呼び出し元から提供されたファイル\_クォータ\_情報を指すポインター。ボリュームのクォータ情報を受け取ります。
 
-### <a name="irpsp-fileobject"></a>*IrpSp FileObject を -> します。*
+### <a name="irpsp-fileobject"></a>*IrpSp-> FileObject*
 
-関連付けられているファイル オブジェクトへのポインター*デバイス オブジェクト*します。
+*DeviceObject*に関連付けられているファイルオブジェクトへのポインター。
 
-*IrpSp FileObject]-> [* パラメーターにはへのポインターが含まれています、 **RelatedFileObject**フィールドに、これは、ファイルも\_オブジェクトの構造体。 **RelatedFileObject**ファイルのフィールド\_IRP の処理中にオブジェクトの構造が有効なない\_MJ\_クエリ\_クォータ使用しないでください。
+*Irpsp-> FileObject*パラメーターには、関連する**fileobject**フィールドへのポインターが含まれています。これは、ファイル\_obect 構造体でもあります。 IRP\_MJ\_QUERY\_のクォータの処理中に、ファイル\_オブジェクト構造の関連性の**あるフィールドは**無効です。使用しないでください。
 
-### <a name="irpsp-flags"></a>*IrpSp フラグを -> します。*
+### <a name="irpsp-flags"></a>*IrpSp-> フラグ*
 
-このメンバーには、次の 1 つ以上を指定できます。
+このメンバーは、次の1つまたは複数にすることができます。
 
-|Flag|説明|
+|Flag|意味|
 |----|----|
-|SL_INDEX_SPECIFIED|クォータの一覧で指定するインデックスを持つエントリでスキャンを開始*IrpSp Parameters.QueryQuota.StartSid を ->*|
-|SL_RESTART_SCAN|一覧の最初のエントリでスキャンを開始します。 このフラグが設定されていない場合は、前の IRP_MJ_QUERY_QUOTA 要求からのスキャンを再開します。|
-|SL_RETURN_SINGLE_ENTRY|見つかった最初のエントリのみを返します。|
+|SL_INDEX_SPECIFIED|Irpsp-> パラメーターでインデックスが指定されているクォータリストのエントリで、スキャンを開始*します。 QueryQuota. StartSid*|
+|SL_RESTART_SCAN|一覧の最初のエントリからスキャンを開始します。 このフラグが設定されていない場合は、以前の IRP_MJ_QUERY_QUOTA 要求からスキャンを再開します。|
+|SL_RETURN_SINGLE_ENTRY|最初に見つかったエントリだけを返します。|
 
-### <a name="irpsp-majorfunction"></a>*IrpSp MajorFunction を -> します。*
+### <a name="irpsp-majorfunction"></a>*IrpSp-> MajorFunction*
 
-IRP を指定します\_MJ\_クエリ\_クォータ。
+IRP\_MJ\_クエリ\_クォータを指定します。
 
-### <a name="irpsp-parametersqueryquotalength"></a>*IrpSp Parameters.QueryQuota.Length を -> します。*
+### <a name="irpsp-parametersqueryquotalength"></a>*IrpSp-> Parameters. QueryQuota. Length*
 
-指すバッファーの長さをバイト単位で*Irp UserBuffer]-> [* します。
+*Irp > UserBuffer*が指すバッファーの長さ (バイト単位)。
 
-### <a name="irpsp-parametersqueryquotasidlist"></a>*IrpSp Parameters.QueryQuota.SidList を -> します。*
+### <a name="irpsp-parametersqueryquotasidlist"></a>*IrpSp-> Parameters. QueryQuota. SidList*
 
-クォータ情報が返される Sid の一覧への省略可能なポインター。 リスト内の各エントリは、 [**ファイル\_取得\_クォータ\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_get_quota_information)構造体。 この構造体の定義は次のとおりです。
+クォータ情報が返される Sid のリストへのポインター (省略可能)。 リスト内の各エントリは、 [ **\_クォータ\_情報の構造を取得\_ファイル**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_get_quota_information)です。 この構造体は次のように定義されています。
 
 ```cpp
 typedef struct _FILE_GET_QUOTA_INFORMATION {
@@ -102,34 +102,34 @@ typedef struct _FILE_GET_QUOTA_INFORMATION {
 } FILE_GET_QUOTA_INFORMATION, *PFILE_GET_QUOTA_INFORMATION;
 ```
 
-|Member|説明|
+|メンバー|意味|
 |-----|----|
-|NextEntryOffset|複数のエントリが、バッファーに存在する場合は [次へ] の FILE_GET_QUOTA_INFORMATION エントリのバイト オフセット。 この 1 つに後に他のエントリがない場合、このメンバーは 0 を使用します。|
-|SidLength|(バイト単位) の長さの**Sid**メンバー。|
-|sid|セキュリティ識別子 (SID)|
+|NextEntryOffset|バッファー内に複数のエントリが存在する場合は、次の FILE_GET_QUOTA_INFORMATION エントリのバイトオフセット。 このメンバーは、このメンバーの後に他のエントリがない場合は0になります。|
+|SidLength|**Sid**メンバーの長さ (バイト単位)。|
+|Sid|セキュリティ識別子 (SID)|
 
-### <a name="irpsp-parametersqueryquotasidlistlength"></a>*IrpSp Parameters.QueryQuota.SidListLength を -> します。*
+### <a name="irpsp-parametersqueryquotasidlistlength"></a>*IrpSp-> パラメーター。 QueryQuota. SidListLength*
 
-長さをバイト単位で指定されている場合、Sid の一覧。
+Sid のリスト (指定されている場合) の長さ (バイト単位)。
 
-#### <a name="irpsp-parametersqueryquotastartsid"></a>*IrpSp Parameters.QueryQuota.StartSid を -> します。*
+#### <a name="irpsp-parametersqueryquotastartsid"></a>*IrpSp-> Parameters. QueryQuota. StartSid*
 
-返される情報は、先頭以外のエントリを開始することを示す SID への省略可能なポインター。 SID の一覧が指定されている場合、このパラメーターは無視されます。
+返された情報が最初のエントリ以外のエントリで開始されることを示す SID へのポインター (省略可能)。 SID リストが指定されている場合、このパラメーターは無視されます。
 
 ## <a name="see-also"></a>関連項目
 
-[**ファイル\_取得\_クォータ\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_get_quota_information)
+[**ファイル\_\_クォータ\_情報の取得**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_get_quota_information)
 
-[**ファイル\_クォータ\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_quota_information)
+[**ファイル\_クォータの\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_quota_information)
 
-[**IO\_スタック\_場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)
+[**IO\_スタック\_の場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)
 
-[**IO\_状態\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_status_block)
+[**IO\_状態\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_status_block)
 
-[**IoCheckQuotaBufferValidity**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-iocheckquotabuffervalidity)
+[**IoCheckQuotaBufferValidity**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iocheckquotabuffervalidity)
 
-[**IoGetCurrentIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetcurrentirpstacklocation)
+[**Iogetlocation Entiの場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation)
 
-[**IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_irp)
+[**IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_irp)
 
-[**IRP\_MJ\_SET\_QUOTA**](irp-mj-set-quota.md)
+[**IRP\_MJ\_設定\_クォータ**](irp-mj-set-quota.md)

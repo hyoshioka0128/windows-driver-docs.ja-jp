@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_BDA\_CA\_モジュール\_UI
-description: クライアントを使用して、KSPROPERTY\_BDA\_CA\_モジュール\_CA プラグインは、ユーザーに表示できるインターフェイスのデータを取得するための UI。
+title: KSK プロパティ\_BDA\_CA\_モジュール\_UI
+description: クライアントは、KSK プロパティ\_BDA\_CA\_モジュール\_UI を使用して、CA プラグインがユーザーに表示できるインターフェイスデータを取得します。
 ms.assetid: 192161fe-8059-454b-8085-5565c940fbbb
 keywords:
-- KSPROPERTY_BDA_CA_MODULE_UI ストリーミング メディア デバイス
+- KSPROPERTY_BDA_CA_MODULE_UI ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ebfc9214beb2d7cda21f93fee89e0dba317ce488
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8960d161ffe21d0fccb8e3866ecae6be9ee12ec7
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364902"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842153"
 ---
-# <a name="kspropertybdacamoduleui"></a>KSPROPERTY\_BDA\_CA\_モジュール\_UI
+# <a name="ksproperty_bda_ca_module_ui"></a>KSK プロパティ\_BDA\_CA\_モジュール\_UI
 
 
-クライアントを使用して、KSPROPERTY\_BDA\_CA\_モジュール\_CA プラグインは、ユーザーに表示できるインターフェイスのデータを取得するための UI。
+クライアントは、KSK プロパティ\_BDA\_CA\_モジュール\_UI を使用して、CA プラグインがユーザーに表示できるインターフェイスデータを取得します。
 
 ## <span id="ddk_ksproperty_bda_ca_module_ui_ks"></span><span id="DDK_KSPROPERTY_BDA_CA_MODULE_UI_KS"></span>
 
@@ -41,7 +41,7 @@ ms.locfileid: "67364902"
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,8 +50,8 @@ ms.locfileid: "67364902"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>〇</p></td>
+<td><p>[はい]</p></td>
+<td><p>[はい]</p></td>
 <td><p>フィルター</p></td>
 <td><p>KSP_NODE</p></td>
 <td><p>BDA_CA_MODULE_UI</p></td>
@@ -64,9 +64,9 @@ ms.locfileid: "67364902"
 <a name="remarks"></a>注釈
 -------
 
-BDA\_CA\_モジュール\_UI 構造には、ユーザー インターフェイス (UI) のデータが含まれています。
+BDA\_CA\_モジュール\_UI 構造には、ユーザーインターフェイス (UI) データが含まれています。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -77,7 +77,7 @@ BDA\_CA\_モジュール\_UI 構造には、ユーザー インターフェイ�
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Bdamedia.h (Bdamedia.h を含む)</td>
+<td>Bdamedia (Bdamedia を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -85,11 +85,11 @@ BDA\_CA\_モジュール\_UI 構造には、ユーザー インターフェイ�
 ## <a name="see-also"></a>関連項目
 
 
-[**BDA\_CA\_モジュール\_UI**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdatypes/ns-bdatypes-_bda_ca_module_ui)
+[**BDA\_CA\_モジュール\_UI**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bdatypes/ns-bdatypes-_bda_ca_module_ui)
 
-[**KSEVENT\_BDA\_CA\_モジュール\_UI\_要求**](ksevent-bda-ca-module-ui-requested.md)
+[**KSEVENT\_BDA\_CA\_モジュール\_要求された UI\_** ](ksevent-bda-ca-module-ui-requested.md)
 
-[**KSP\_ノード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_node)
+[**KSP\_ノード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksp_node)
 
  
 

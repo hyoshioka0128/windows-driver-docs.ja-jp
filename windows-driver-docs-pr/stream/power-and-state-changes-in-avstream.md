@@ -3,50 +3,50 @@ title: AVStream の電源と状態の変更
 description: AVStream の電源と状態の変更
 ms.assetid: f62f4306-97c0-40fe-89ec-d08eb18988c9
 keywords:
-- AVStream WDK、電源と状態の変化
-- 電源の変更、WDK AVStream
-- 状態の変更、WDK AVStream
+- AVStream WDK、パワーおよび状態の変更
+- パワー変更 WDK、AVStream
+- 状態変更 WDK、AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e253c29111f582a92db828895e048c881b6dfbd7
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 18dcf6a7fdc63dd4bf308137c8da7bd17f77ebb8
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369556"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842622"
 ---
 # <a name="power-and-state-changes-in-avstream"></a>AVStream の電源と状態の変更
 
 
-AVStream を受信すると、 [ **IRP\_MN\_設定\_POWER** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-set-power)要求、ミニドライバーの呼び出す[ *AVStrMiniDeviceSetPower* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nc-ks-pfnksdevicesetpower)コールバック ルーチンを 1 つ、ミニドライバーが指定されている場合。
+AVStream は[ **\_電源要求\_設定**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-set-power)された IRP\_を受け取ると、ミニドライバーの[*Avstrminidevicesetpower*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nc-ks-pfnksdevicesetpower) callback ルーチンを呼び出します (ミニドライバーが指定されている場合)。
 
-AVStream がのセット要求を受信すると、 [ **KSPROPERTY\_接続\_状態**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-connection-state)プロパティ、ミニドライバーの呼び出す[ *AVStrMiniPinSetDeviceState* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nc-ks-pfnkspinsetdevicestate)コールバック ルーチンを 1 つ、ミニドライバーが指定されている場合。
+AVStream は、 [**Ksk プロパティ\_CONNECTION\_STATE**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-connection-state)プロパティの set 要求を受け取ると、ミニドライバーの[*Avstrminipinsetdevicestate*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nc-ks-pfnkspinsetdevicestate)コールバックルーチンを呼び出します (ミニドライバーが指定されている場合)。
 
-AVStream ミニドライバーを呼び出すことができます、システムは、スリープ状態から再開、 *AVStrMiniPinSetDeviceState*と*AVStrMiniDeviceSetPower*想定されている順序の逆の順序でコールバック ルーチン。 たとえば、 *AVStrMiniPinSetDeviceState*を呼び出すことは*beforeAVStrMiniDeviceSetPower*します。
+システムがスリープ状態から復帰すると、AVStream は、予期された順序とは逆にミニドライバーの*Avstrminipinsetdevicestate*および*avstrminidevicesetdevicecallback*ルーチンを呼び出すことができます。 たとえば、 *Avstrminipinsetdevicestate*を*Beforeavstrminidevicesetpower*と呼び出すことができます。
 
-その結果、ドライバー*コールバックが予想される注文のような逆操作を処理する準備をする必要があります*します。
+そのため、*予想されるコールバック順序の逆の処理を行うに*は、ドライバーを準備する必要があります。
 
-この逆の操作は、システムがスリープ状態に電源オフ時に行われません。 下の電源でこれら 2 つのコールバック ルーチンは、常に想定されている順序で発生します。 たとえば、 *AVStrMiniPinSetDeviceState*する前に必ず呼び出される*AVStrMiniDeviceSetPower*します。
+この反転は、システムがスリープ状態になっている場合には発生しません。 電源が切断されると、これら2つのコールバックルーチンは常に予想される順序で発生します。 たとえば、 *Avstrminipinsetdevicestate*は*Avstrminidevicesetpower*の前に常に呼び出されます。
 
-この逆転が発生した場合、シーケンス全体がようになります。
+この反転が発生した場合、シーケンス全体は次のようになります。
 
-最初に、シーケンスの電源が発生します。
+まず、電源のダウンシーケンスが発生します。
 
-1.  *AVStrMiniPinSetDeviceState*からデバイスの状態を変更する要求を使用して呼び出した**KSSTATE\_実行**KSSTATE に\_一時停止します。
+1.  *Avstrminipinsetdevicestate*は、デバイスの状態を**KSK 状態**から ksk に変更するための要求を使用して呼び出され、\_一時停止\_ます。
 
-2.  *AVStrMiniDeviceSetPower* D0 から/D3 D2 に電源状態を変更する要求では呼び出されます。
+2.  *Avstrminidevicesetpower*は、電源状態を D0 から D2/D3 に変更する要求で呼び出されます。
 
-3.  この時点で、システムがスリープ状態です。
+3.  この時点で、システムはスリープ状態です。
 
-4.  次に、電源投入シーケンスが発生します。
+4.  次に、電源シーケンスが発生します。
 
-5.  *AVStrMiniDeviceSetPower*  /D3 D2 から D0 に電源状態を変更する要求では呼び出されます。
+5.  *Avstrminidevicesetpower*は、D2/D3 から D0 に電源状態を変更する要求で呼び出されます。
 
-6.  *AVStrMiniPinSetDeviceState*からデバイスの状態を変更する要求を使用して呼び出した**KSSTATE\_一時停止**KSSTATE に\_を実行します。
+6.  *Avstrminipinsetdevicestate*は、デバイスの状態を ksk から変更するための要求を使用して呼び出され、\_実行されるように **\_** ます。
 
-このシナリオでは、手順 5. と 6. は、想定されている順序とは反対で手順を示します。
+このシナリオでは、手順 5. と 6. は、予想される順序とは逆の手順です。
 
-さらに、アプリケーションをストリーミングし、システムが電源オフ シーケンスを開始、実行しているキャプチャ グラフは一時停止状態で配置常に。 グラフが既に停止されている場合は、停止したままです。
+また、アプリケーションがストリーミングされ、システムが電源ダウンシーケンスを開始すると、実行中のキャプチャグラフは常に一時停止状態になります。 グラフが既に停止している場合は、停止したままになります。
 
  
 

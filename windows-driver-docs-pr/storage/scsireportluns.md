@@ -1,9 +1,9 @@
 ---
 title: ScsiReportLuns 関数
-description: ScsiReportLuns WMI メソッドは、指定されたデバイスに SCSI レポート Lun のコマンドを送信します。
+description: ScsiReportLuns WMI メソッドは、指定されたデバイスに SCSI レポート Lun コマンドを送信します。
 ms.assetid: 12c9138d-41b7-404f-8431-08d7cf9cc330
 keywords:
-- 記憶装置の ScsiReportLuns 関数
+- ScsiReportLuns function Storage デバイス
 topic_type:
 - apiref
 api_name:
@@ -15,17 +15,17 @@ api_type:
 - LibDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: bd191593d16a888648e4fc6ce5f496c4ee3d8f52
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d4a9454d7c0257649a2c1289bd904901f6119587
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363345"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844316"
 ---
 # <a name="scsireportluns-function"></a>ScsiReportLuns 関数
 
 
-**ScsiReportLuns** WMI メソッドでは、SCSI レポート Lun コマンドが、指定されたデバイスを送信します。
+**ScsiReportLuns** WMI メソッドは、指定されたデバイスに SCSI レポート lun コマンドを送信します。
 
 <a name="syntax"></a>構文
 ------
@@ -47,32 +47,32 @@ void ScsiReportLuns(
 <a name="parameters"></a>パラメーター
 ----------
 
-*HBAStatus*   
-に返された場合、操作の状態を格納します。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **ScsiReportLuns\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_scsireportluns_out)構造体。
+*Hbastatus*   
+戻ると、操作の状態が格納されます。 許可される値とその説明の一覧については、「 [HBA\_STATUS](hba-status.md)」を参照してください。 ミニポートドライバーは、 [**ScsiReportLuns\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_scsireportluns_out)構造体の**hbastatus**メンバーにこの情報を返します。
 
 *Cdb*   
-SCSI レポート対象のデバイスに送信される Lun のコマンドを保持するコマンドの記述子ブロックします。 この情報は、ミニポート ドライバーに配信される、 **Cdb**のメンバー、 [ **ScsiReportLuns\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_scsireportluns_in)構造体。
+ターゲットデバイスに送信される SCSI レポート Lun コマンドを保持するコマンド記述子ブロック。 この情報は、構造[**内の ScsiReportLuns\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_scsireportluns_in)の**Cdb**メンバーのミニポートドライバーに配信されます。
 
 *HbaPortWWN*   
-ターゲットにアクセスする HBA の世界中の名前。 この情報は、ミニポート ドライバーに配信される、 **HbaPortWWN**のメンバー、 [ **ScsiReportLuns\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_scsireportluns_in)構造体。
+ターゲットへのアクセスに使用される HBA のワールド名。 この情報は、構造体の[**ScsiReportLuns\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_scsireportluns_in)の**HbaPortWWN**メンバーのミニポートドライバーに配信されます。
 
 *DiscoveredPortWWN*   
-ターゲット デバイスにアクセスするポートの世界中の名前。 この情報は、ミニポート ドライバーに配信される、 **DiscoveredPortWWN**のメンバー、 [ **ScsiReportLuns\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_scsireportluns_in)構造体。
+ターゲットデバイスへのアクセスに使用するポートの世界規模の名前。 この情報は、構造体の[**ScsiReportLuns\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_scsireportluns_in)の**DiscoveredPortWWN**メンバーのミニポートドライバーに配信されます。
 
-*ResponseBufferSize*   
-SCSI レポート Lun コマンドの結果を保持するバッファーのバイト サイズ。 ミニポート ドライバーには、この情報が返されます、 **ResponseBufferSize**のメンバー、 [ **ScsiReportLuns\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_scsireportluns_out)構造体。
+*Responsebuffersize*   
+SCSI レポート Lun コマンドの結果を保持するバッファーのサイズ (バイト単位)。 ミニポートドライバーは、 [**ScsiReportLuns\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_scsireportluns_out)構造体の**responsebuffersize**メンバーにこの情報を返します。
 
-*SenseBufferSize*   
-SCSI のセンス データが格納されるバッファーのバイト単位のサイズは、SCSI レポート Lun コマンドの結果です。 ミニポート ドライバーには、この情報が返されます、 **SenseBufferSize**のメンバー、 [ **ScsiReportLuns\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_scsireportluns_out)構造体。
+*Sensebuffersize*   
+SCSI レポート Lun コマンドの結果として生成される SCSI センスデータを保持するバッファーのサイズ (バイト単位)。 ミニポートドライバーは、 [**ScsiReportLuns\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_scsireportluns_out)構造体の**sensebuffersize**メンバーでこの情報を返します。
 
 *ScsiStatus*   
-SCSI レポート Lun コマンドの状態です。 ミニポート ドライバーには、この情報が返されます、 **ScsiStatus**のメンバー、 [ **ScsiReportLuns\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_scsireportluns_out)構造体。
+SCSI レポート Lun コマンドの状態。 ミニポートドライバーは、 [**ScsiReportLuns\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_scsireportluns_out)構造体の**ScsiStatus**メンバーにこの情報を返します。
 
-*ResponseBuffer*   
-SCSI の結果は、Lun のコマンドを報告します。 ミニポート ドライバーには、この情報が返されます、 **ResponseBuffer**のメンバー、 [ **ScsiReportLuns\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_scsireportluns_out)構造体。
+*Responsebuffer*   
+SCSI レポート Lun コマンドの結果。 ミニポートドライバーは、 [**ScsiReportLuns\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_scsireportluns_out)構造体の**responsebuffer**メンバーでこの情報を返します。
 
-*SenseBuffer*   
-SCSI に起因する SCSI センス データは、Lun のコマンドを報告します。 ミニポート ドライバーには、この情報が返されます、 **SenseBuffer**のメンバー、 [ **ScsiReportLuns\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_scsireportluns_out)構造体。
+*Sensebuffer*   
+SCSI レポート Lun コマンドの結果として生成される SCSI sense データ。 ミニポートドライバーは、 [**ScsiReportLuns\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_scsireportluns_out)構造体の**sensebuffer**メンバーでこの情報を返します。
 
 <a name="return-value"></a>戻り値
 ------------
@@ -82,7 +82,7 @@ WMI メソッドには適用されません。
 <a name="remarks"></a>注釈
 -------
 
-この WMI メソッドが属する、 [MSFC\_HBAAdapterMethods WMI クラス](msfc-hbaadaptermethods-wmi-class.md)します。
+この WMI メソッドは、 [Msfc\_HBAAdapterMethods WMI クラス](msfc-hbaadaptermethods-wmi-class.md)に属しています。
 
 <a name="requirements"></a>要件
 ------------
@@ -99,23 +99,23 @@ WMI メソッドには適用されません。
 </tr>
 <tr class="even">
 <td align="left"><p>Header</p></td>
-<td align="left">Hbapiwmi.h (Hbapiwmi.h、Hbaapi.h、Hbaapi.h など)</td>
+<td align="left">Hbapiwmi (Hbapiwmi、Hbaapi. h、または Hbaapi .h を含む)</td>
 </tr>
 <tr class="odd">
 <td align="left"><p>Library</p></td>
-<td align="left">Hbaapi.lib</td>
+<td align="left">Hbaapi .lib</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[HBA\_状態](hba-status.md)
+[HBA\_の状態](hba-status.md)
 
-[**ScsiReportLuns\_IN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_scsireportluns_in)
+[**ScsiReportLuns\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_scsireportluns_in)
 
-[**ScsiReportLuns\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_scsireportluns_out)
+[**ScsiReportLuns\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_scsireportluns_out)
 
  
 

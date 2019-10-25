@@ -1,25 +1,25 @@
 ---
 title: Get 要求と応答のスキーマ
-description: Get 要求のスキーマと対応する応答のスキーマ定義と、それぞれの例が下回っています。
+description: Get 要求スキーマと対応する応答スキーマ定義、およびそれぞれの例を以下に示します。
 ms.assetid: 48980220-4DD6-4785-AAC1-850F8FBE49EC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ff1d2e9ab650b9ea94eff9ec5c17f7fbe459e0e3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 93965c0096d702bbfb6fefe53034265420db9453
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358748"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844514"
 ---
 # <a name="get-request-and-response-schemas"></a>Get 要求と応答のスキーマ
 
-Get 要求のスキーマと対応する応答のスキーマ定義と、それぞれの例が下回っています。
+Get 要求スキーマと対応する応答スキーマ定義、およびそれぞれの例を以下に示します。
 
-## <a name="the-get-request-schema"></a>Get 要求のスキーマ
+## <a name="the-get-request-schema"></a>Get 要求スキーマ
 
-Get 要求と応答は、現在の値の 1 つ以上のプリンターをクエリに使用されます。
+Get 要求と応答は、プリンターの現在の値の1つまたは複数に対してクエリを実行するために使用されます。
 
-この例では、3 つのクエリです。 最初のクエリは、双方向通信のスキーマの特定の値と 2 番目のサブツリーを定義する双方向通信のスキーマのプロパティを指します。 3 番目は意図的なエラー: がない&lt;Foo&gt;双方向通信のスキーマ内のプロパティ。 (この要求に応答が、次のセクションでは[取得応答スキーマ](#the-get-response-schema))。
+この例では、3つのクエリがあります。 最初のクエリは、特定の双方向通信スキーマ値を指し、2番目のクエリはサブツリーを定義する双方向通信スキーマプロパティを指します。 3番目のエラーは意図的なエラーです。双方向通信スキーマに &lt;Foo&gt; プロパティがありません。 (この要求に対する応答は、 [Get Response スキーマの](#the-get-response-schema)次のセクションにあります)。
 
 ```xml
 <bidi:Get xmlns:bidi="http://schemas.microsoft.com/windows/2005/03/printing/bidi">
@@ -29,7 +29,7 @@ Get 要求と応答は、現在の値の 1 つ以上のプリンターをクエ�
 </bidi:Get>
 ```
 
-Get 要求のスキーマの正式な定義
+Get 要求スキーマの正式な定義
 
 ```xml
 <?xml version='1.0'?>
@@ -57,9 +57,9 @@ Get 要求のスキーマの正式な定義
 </schema>
 ```
 
-## <a name="the-get-response-schema"></a>Get 応答スキーマ
+## <a name="the-get-response-schema"></a>Get Response スキーマ
 
-この例では、上記の Get 要求に応答を示します。 クエリの成功は、結果は、値の特定のスキーマ。 結果がエラー コード、3 番目のクエリが失敗しました。 2 番目のクエリに子を持つプロパティが要求されたため、応答が提供するすべての子の値と名前に注意してください。
+この例は、上記の Get 要求に対する応答です。 成功のクエリの場合、結果は特定のスキーマの値になります。 3番目のクエリが失敗したため、結果はエラーコードになります。 2番目のクエリでは、子を持つプロパティが要求されたため、応答では、すべての子の名前と値が提供されることに注意してください。
 
 ```xml
 <bidi:Get xmlns:bidi="http://schemas.microsoft.com/windows/2005/03/printing/bidi">
@@ -85,7 +85,7 @@ Get 要求のスキーマの正式な定義
 </bidi:Get>
 ```
 
-Get 応答スキーマの正式な定義
+Get Response スキーマの正式な定義
 
 ```xml
 <?xml version='1.0'?>
@@ -137,8 +137,8 @@ Get 応答スキーマの正式な定義
 
 ## <a name="related-topics"></a>関連トピック
 
-[双方向通信のスキーマ](bidirectional-communication-schema.md)  
+[双方向通信スキーマ](bidirectional-communication-schema.md)  
 
-[SendRecvXMLStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bidispl/nf-bidispl-ibidispl2-sendrecvxmlstream)  
+[SendRecvXMLStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/bidispl/nf-bidispl-ibidispl2-sendrecvxmlstream)  
 
-[SendRecvXMLString](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bidispl/nf-bidispl-ibidispl2-sendrecvxmlstring)  
+[SendRecvXMLString](https://docs.microsoft.com/windows-hardware/drivers/ddi/bidispl/nf-bidispl-ibidispl2-sendrecvxmlstring)  

@@ -1,36 +1,36 @@
 ---
 title: OID_RECEIVE_FILTER_QUEUE_ALLOCATION_COMPLETE
-description: NDIS プロトコル ドライバーは、オブジェクト識別子 OID_RECEIVE_FILTER_QUEUE_ALLOCATION_COMPLETE のミニポート ドライバーの受信キューの現在のバッチの割り当てが完了したことを通知する (OID) のメソッドを要求を発行します。
+description: NDIS プロトコルドライバーは、OID_RECEIVE_FILTER_QUEUE_ALLOCATION_COMPLETE のオブジェクト識別子 (OID) メソッドの要求を発行して、受信キューの現在のバッチに割り当てが完了したことをミニポートドライバーに通知します。
 ms.assetid: d09fcab5-4c3b-432a-ba9e-fd4269537de6
 ms.date: 08/08/2017
-keywords: -OID_RECEIVE_FILTER_QUEUE_ALLOCATION_COMPLETE ネットワーク ドライバーが Windows Vista 以降
+keywords: -Windows Vista 以降の OID_RECEIVE_FILTER_QUEUE_ALLOCATION_COMPLETE ネットワークドライバー
 ms.localizationpriority: medium
-ms.openlocfilehash: 56e85dd697cae5aac2d529408289cc958341cfc8
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 397f802e24f844bc2a45049acb91deed9fc3d3e6
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67356127"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843999"
 ---
-# <a name="oidreceivefilterqueueallocationcomplete"></a>OID\_受信\_フィルター\_キュー\_割り当て\_完了
+# <a name="oid_receive_filter_queue_allocation_complete"></a>OID\_受信\_フィルター\_キュー\_割り当て\_完了
 
 
-NDIS プロトコル ドライバー発行オブジェクト識別子 (OID) メソッドの要求の OID\_受信\_フィルター\_キュー\_割り当て\_割り当てが完了したこと、ミニポート ドライバーに通知する完了受信キューの現在のバッチ。
+NDIS プロトコルドライバーは、オブジェクト識別子 (OID) メソッドの OID 要求を受信\_フィルター\_キュー\_割り当て\_完了し、現在の受信バッチの割り当てが完了したことをミニポートドライバーに通知\_ます。行列.
 
-**InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体にはへのポインターが含まれています、 [ **NDIS\_受信\_キュー\_割り当て\_完了\_配列**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_queue_allocation_complete_array)が続く構造体、 [ **NDIS\_受信\_キュー\_割り当て\_完了\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_queue_allocation_complete_parameters)キューごとに構造体。 OID メソッドの要求から正常に戻った後、 **InformationBuffer**のメンバー、 **NDIS\_OID\_要求**構造には同じ配列へのポインターが含まれています構造体、および**CompletionStatus**のそれぞれに所属**NDIS\_受信\_キュー\_割り当て\_完了\_パラメーター**構造体には、各キューの完了ステータスが含まれています。
+[**Ndis\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造体の**informationbuffer**メンバーには、 [**ndis\_受信\_キュー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_allocation_complete_array)へのポインターが含まれています\_割り当て\_完全な\_配列構造を格納します。次に、 [**NDIS\_受信\_キュー\_割り当て\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_allocation_complete_parameters) 、各キューの\_パラメーター構造を完了します。 OID メソッド要求から正常に返された後、 **NDIS\_oid\_要求**構造の**informationbuffer**メンバーには、構造体の同じ配列へのポインター**と、各** **NDIS\_受信\_キュー\_割り当て\_完了\_パラメーター**構造には、各キューの完了状態が含まれます。
 
 <a name="remarks"></a>注釈
 -------
 
-OID の OID メソッド要求\_受信\_フィルター\_キュー\_割り当て\_完了は、NDIS 6.20 が動作し、それ以降のミニポート ドライバーでは省略可能。 仮想マシン キュー (VMQ) インターフェイスをサポートするミニポート ドライバーに対して必要があります。
+Oid\_\_フィルター\_キュー\_割り当て\_完了を受信する oid メソッド要求は、NDIS 6.20 以降のミニポートドライバーでは省略可能です。 バーチャルマシンキュー (VMQ) インターフェイスをサポートするミニポートドライバーでは必須です。
 
-割り当て後に 1 つ以上受信キューと最初のフィルターを必要に応じて設定するには、プロトコル ドライバーは OID の OID メソッド要求を発行する必要があります\_受信\_フィルター\_キュー\_割り当て\_ミニポート ドライバーの受信キューの現在のバッチの割り当てが完了したことを通知するために完了します。 これにより、ミニポート ドライバー、ハードウェアのバランスを取る複数の間でリソースの受信キューです。必要に応じて、受信キューの共有メモリなどのリソースを割り当てる、ことができます。
+1つ以上の受信キューを割り当て、必要に応じて初期フィルターを設定した後、プロトコルドライバーは oid\_\_の OID メソッド要求を発行する必要があります。これにより、\_キュー\_割り当て\_完了して、受信キューの現在のバッチに対して割り当てが完了したミニポートドライバー。 これにより、ミニポートドライバーは複数の受信キュー間でハードウェアリソースのバランスを取ることができます。必要に応じて、受信キューの共有メモリなどのリソースを割り当てることができます。
 
-ミニポート後は、ドライバーは OID を受け取ります。\_受信\_フィルター\_キュー\_割り当て\_がキューに設定されているフィルターの要求を完了し、キューが実行状態。 この状態で、ミニポート ドライバーは、呼び出すことによって、キューにあるパケットの兆候を開始できます[ **NdisMIndicateReceiveNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismindicatereceivenetbufferlists)します。
+ミニポートドライバーが\_OID を受信した後\_フィルター\_キュー\_割り当て\_要求を完了し、キューに設定されたフィルターがある場合、キューは実行中の状態になります。 この状態では、 [**NdisMIndicateReceiveNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismindicatereceivenetbufferlists)を呼び出すことによって、ミニポートドライバーがキュー内のパケットの兆候を開始できます。
 
-### <a name="return-status-codes"></a>リターン状態コード
+### <a name="return-status-codes"></a>ステータスコードを返す
 
-ミニポート ドライバーでは、OID の OID メソッド要求の次のステータス コードのいずれかを返します\_受信\_フィルター\_キュー\_割り当て\_完了します。
+ミニポートドライバーは、oid の OID メソッド要求について、次のいずれかの状態コードを返します。\_受信\_フィルター\_キュー\_割り当て\_完了します。
 
 <table>
 <colgroup>
@@ -46,27 +46,27 @@ OID の OID メソッド要求\_受信\_フィルター\_キュー\_割り当て
 <tbody>
 <tr class="odd">
 <td><p><strong>NDIS_STATUS_SUCCESS</strong></p></td>
-<td><p>キューの割り当てが完了しました。 情報バッファーが含まれていますが、更新された<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_queue_allocation_complete_array" data-raw-source="[&lt;strong&gt;NDIS_RECEIVE_QUEUE_ALLOCATION_COMPLETE_ARRAY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_queue_allocation_complete_array)"> <strong>NDIS_RECEIVE_QUEUE_ALLOCATION_COMPLETE_ARRAY</strong> </a>構造と、キューの割り当てを表す完了状態で、パラメーター構造体。</p></td>
+<td><p>キューの割り当てが完了しました。 情報バッファーには、更新された<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_allocation_complete_array" data-raw-source="[&lt;strong&gt;NDIS_RECEIVE_QUEUE_ALLOCATION_COMPLETE_ARRAY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_allocation_complete_array)"><strong>NDIS_RECEIVE_QUEUE_ALLOCATION_COMPLETE_ARRAY</strong></a>構造体と、キュー割り当ての完了ステータスを含むパラメーター構造が含まれています。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>NDIS_STATUS_PENDING</strong></p></td>
-<td><p>完了待ちになっています。 最終的な状態コードと結果は、呼び出し元の OID 要求完了ハンドラーに渡されるされます。</p></td>
+<td><p>要求は完了待ちです。 最終的な状態コードと結果は、呼び出し元の OID 要求完了ハンドラーに渡されます。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>NDIS_STATUS_INVALID_PARAMETER</strong></p></td>
-<td><p>1 つ以上の上にあるドライバーが提供されているパラメーターが無効でした。</p></td>
+<td><p>指定された1つ以上のパラメーターが有効ではありませんでした。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>NDIS_STATUS_INVALID_LENGTH</strong></p></td>
-<td><p>情報バッファーが小さすぎます。 NDIS セット、<strong>データ</strong>.<strong>METHOD_INFORMATION</strong>.<strong>BytesNeeded</strong>内のメンバー、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)"> <strong>NDIS_OID_REQUEST</strong> </a>構造体に必要な最小バッファー サイズ。</p></td>
+<td><p>情報バッファーが短すぎます。 NDIS は<strong>データ</strong>を設定します。<strong>METHOD_INFORMATION</strong>。<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a>構造体の中で必要とされる最小バッファーサイズに対して、 <strong>bytesneeded 必要</strong>です。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>NDIS_STATUS_NOT_SUPPORTED</strong></p></td>
-<td><p>ミニポート ドライバーの NDIS バージョン 6.20 が動作のバージョンよりも前です。</p></td>
+<td><p>ミニポートドライバーの NDIS バージョンは、バージョン6.20 より前です。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>NDIS_STATUS_FAILURE</strong></p></td>
-<td><p>他の理由から、要求が失敗しました。</p></td>
+<td><p>他の理由で要求が失敗しました。</p></td>
 </tr>
 </tbody>
 </table>
@@ -84,11 +84,11 @@ OID の OID メソッド要求\_受信\_フィルター\_キュー\_割り当て
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>以降では、NDIS 6.20 が動作をサポートします。</p></td>
+<td><p>NDIS 6.20 以降でサポートされています。</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Ntddndis.h (include Ndis.h)</td>
+<td>Ntddndis (Ndis .h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -96,13 +96,13 @@ OID の OID メソッド要求\_受信\_フィルター\_キュー\_割り当て
 ## <a name="see-also"></a>関連項目
 
 
-[**NdisMIndicateReceiveNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismindicatereceivenetbufferlists)
+[**NdisMIndicateReceiveNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismindicatereceivenetbufferlists)
 
-[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
+[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)
 
-[**NDIS\_受信\_キュー\_割り当て\_完了\_配列**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_queue_allocation_complete_array)
+[**NDIS\_受信\_キュー\_割り当て\_完了\_配列**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_allocation_complete_array)
 
-[**NDIS\_受信\_キュー\_割り当て\_完了\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_queue_allocation_complete_parameters)
+[**NDIS\_受信\_キュー\_割り当て\_完了\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_allocation_complete_parameters)
 
  
 

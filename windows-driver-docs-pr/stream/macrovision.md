@@ -3,18 +3,18 @@ title: Macrovision
 description: Macrovision
 ms.assetid: 62bd8d8a-3e58-4bca-a32d-ff792180afbe
 keywords:
-- DVD デコーダー ミニドライバー WDK、著作権保護
-- デコーダー ミニドライバー WDK DVD、著作権保護
+- DVD デコーダーミニドライバー WDK、著作権保護
+- デコーダーミニドライバー WDK DVD、著作権保護
 - 著作権保護 WDK DVD デコーダー
 - Macrovision WDK DVD デコーダー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 043de60d0227beac22a4280c33bfa2718dcc523d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7d997179f2af42c7896037d775cbf73cc3dc3461
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386635"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842138"
 ---
 # <a name="macrovision"></a>Macrovision
 
@@ -22,9 +22,9 @@ ms.locfileid: "67386635"
 
 
 
-Macrovision は、コンピューターを終了する前に、ビデオ データを処理する最後のデバイスでサポートされます。 ビデオ カードのビデオ ポート接続の場合、ビデオ カードおよび DVD のナビゲーター/スプリッター Macrovision のすべての処理を処理します。 デコーダーは関与しません。
+Macrovision は、コンピューターから離れる前にビデオデータを処理する最後のデバイスでサポートされています。 ビデオカードへのビデオポート接続の場合、ビデオカードと DVD ナビゲーター/スプリッターは、すべての Macrovision 処理を処理します。 デコーダーは関係していません。
 
-デコーダーは、NTSC 出力、Macrovision エンコードおよび Macrovision 場合、コンプライアンスは、デコーダーのカードの役割です。 [ **KS\_コピー\_MACROVISION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ks_copy_macrovision)プロパティが Macrovision は、メディア (レベル 0 ~ 3) エンコードのレベルを示します。 デコーダーは、有効または無効 Macrovision NTSC 出力のエンコードにこの情報を使用することがあります。
+デコーダーに NTSC 出力がある場合、Macrovision encoding と Macrovision 準拠はデコーダーカードの役割です。 [**KS\_COPY\_MACROVISION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ks_copy_macrovision)プロパティは、メディアの MACROVISION encoding のレベル (レベル 0 ~ 3) を示します。 デコーダーは、この情報を使用して、NTSC 出力の Macrovision エンコードを有効または無効にすることができます。
 
  
 

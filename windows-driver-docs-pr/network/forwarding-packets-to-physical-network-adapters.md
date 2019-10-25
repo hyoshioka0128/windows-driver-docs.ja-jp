@@ -4,70 +4,70 @@ description: 物理ネットワーク アダプターへのパケットの転送
 ms.assetid: 14A78DB2-6643-471D-97B9-4D8524EC3E73
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a08b51133c84670f954e7c91914fc3c0284e587
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e67a355a442b82e39cb915aeca50a4ac55eb5d8d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67387299"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842123"
 ---
 # <a name="forwarding-packets-to-physical-network-adapters"></a>物理ネットワーク アダプターへのパケットの転送
 
 
-**注**  このページでは、情報と、次のページの図に精通していることを前提としています。
--   [転送拡張機能](forwarding-extensions.md)
+**注**  このページでは、次のページの情報と図について理解していることを前提としています。
+-   [拡張機能の転送](forwarding-extensions.md)
 -   [ハイブリッド転送](hybrid-forwarding.md)
--   [HYPER-V 拡張可能スイッチの拡張機能](hyper-v-extensible-switch-extensions.md)
--   [HYPER-V 拡張可能スイッチの概要](overview-of-the-hyper-v-extensible-switch.md)
--   [プロバイダーの拡張機能のチーミング](teaming-provider-extensions.md)
+-   [Hyper-v 拡張可能スイッチ拡張機能](hyper-v-extensible-switch-extensions.md)
+-   [Hyper-v 拡張可能スイッチの概要](overview-of-the-hyper-v-extensible-switch.md)
+-   [チーミングプロバイダーの拡張機能](teaming-provider-extensions.md)
 
  
 
-このページでは、どの HYPER-V 拡張可能スイッチ転送拡張機能転送要求を送信できるパケットの基になる物理アダプターをについて説明します。 1 つまたは複数の物理ネットワーク アダプターは、拡張可能スイッチの外部ネットワーク アダプターにバインドできます。
+このページでは、Hyper-v 拡張スイッチ転送拡張機能がパケットの送信要求を基になる物理アダプターに転送する方法について説明します。 1つまたは複数の物理ネットワークアダプターを拡張スイッチの外部ネットワークアダプターにバインドできます。
 
-たとえば、拡張可能スイッチの外部ネットワーク アダプターは、NDIS マルチプレクサー (マルチプレクサー) の中間ドライバーの仮想ミニポート端にバインドできます。 MUX 中間ドライバー自体は、ホスト上の 1 つまたは複数の物理ネットワーク チームにバインドできます。 この構成と呼ばれる、*拡張可能スイッチ チーム*します。 拡張可能スイッチ チームの詳細については、次を参照してください。[型の物理ネットワーク アダプターの構成](types-of-physical-network-adapter-configurations.md)します。
+たとえば、拡張可能スイッチの外部ネットワークアダプターは、NDIS マルチプレクサー (MUX) 中間ドライバーの仮想ミニポートエッジにバインドできます。 MUX 中間ドライバー自体は、ホスト上の1つまたは複数の物理ネットワークのチームにバインドできます。 この構成は、*拡張可能なスイッチチーム*と呼ばれています。 拡張可能なスイッチチームの詳細については、「[物理ネットワークアダプターの構成の種類](types-of-physical-network-adapter-configurations.md)」を参照してください。
 
-この構成では、拡張可能スイッチ拡張機能は拡張可能スイッチ チームのすべてのネットワーク アダプターに公開されます。 これにより、転送拡張機能が拡張可能スイッチのドライバー スタックを構成し、チーム内の個々 のネットワーク アダプターの使用を管理するの。 たとえば、拡張機能では、個々 のアダプターに送信されるパケットを転送することによって、over、チーム分散フェールオーバー (LBFO) のソリューション ロードのサポートを提供できます。 拡張機能と呼ばれるなど、*チーミング プロバイダー*します。 プロバイダーのチーミングの詳細については、次を参照してください。[プロバイダーの拡張機能のチーミング](teaming-provider-extensions.md)します。
+この構成では、拡張可能なスイッチ拡張機能は、拡張可能なスイッチチームのすべてのネットワークアダプターに公開されます。 これにより、拡張可能なスイッチドライバースタックで転送拡張機能を使用して、チーム内の個々のネットワークアダプターの構成と使用を管理できます。 たとえば、拡張機能は、送信パケットを個々のアダプターに転送することによって、チームで負荷分散フェールオーバー (LBFO) ソリューションのサポートを提供できます。 たとえば、拡張機能は*チーミングプロバイダー*と呼ばれます。 チーミングプロバイダーの詳細については、「[チーミングプロバイダーの拡張機能](teaming-provider-extensions.md)」を参照してください。
 
-転送拡張機能をインストールして、拡張可能スイッチ ドライバー スタックで有効にすると場合、は、パケットが、NVGRE パケットでない限り、拡張可能スイッチのイングレス データ パスを取得する各パケットの転送に関する決定を行う責任を負います。 (詳細については、NVGRE パケットは、次を参照してください[ハイブリッド転送](hybrid-forwarding.md)。)。この情報に基づいて意思決定を転送、拡張機能を追加できます宛先ポートのパケットのアウト オブ バンド (OOB) データに[ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)構造体。 パケットが完了したらそのトラバーサル拡張可能スイッチのインターフェイスは、拡張可能スイッチ データ パスの指定の宛先ポートへのパケットします。
+拡張可能なスイッチドライバースタックに転送拡張機能がインストールされ、有効になっている場合は、パケットが NVGRE パケットでない限り、拡張スイッチの受信データパスで取得する各パケットについて、転送の決定を行う必要があります。 (NVGRE パケットの詳細については、「[ハイブリッド転送](hybrid-forwarding.md)」を参照してください)。これらの転送の決定に基づいて、拡張機能はパケットの[**NET\_BUFFER\_LIST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)構造の帯域外 (OOB) データに宛先ポートを追加できます。 パケットが拡張可能なスイッチのデータパスのトラバーサルを完了すると、拡張可能なスイッチインターフェイスは、指定された宛先ポートにパケットを配信します。
 
-**注**  転送拡張機能がインストールされていないか、有効になっている場合、拡張可能なスイッチ自体は、転送パケットの受信データのパスから取得を決定します。 スイッチのパケットの OOB データに宛先ポートを追加する[ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)拡張可能スイッチのエグレス データ パケットを転送する前に構造体パス。
-
- 
-
-ときに、転送拡張機能の[ *FilterSendNetBufferLists* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_send_net_buffer_lists)関数が呼び出されると、 *NetBufferList*パラメーターのリンクリストへのポインターを格納する[ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)構造体。 各構造体には、受信データのパスから取得したパケットを指定します。 内の各パケットの OOB データ**NET\_バッファー\_一覧**構造の場合は、宛先ポートに含まれるため、データ、 [ **NDIS\_スイッチ\_転送\_先\_配列**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_switch_forwarding_destination_array)構造体。 拡張機能を取得、 **NDIS\_スイッチ\_転送\_先\_配列**構造とその要素を呼び出して[ *GetNetBufferListDestinations*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_get_net_buffer_list_destinations)します。
-
-**注**  パフォーマンスを向上させるには、転送拡張機能を呼び出すことができます、 [ *GrowNetBufferListDestinations* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_grow_net_buffer_list_destinations)関数の代わりに[ *GetNetBufferListDestinations* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_get_net_buffer_list_destinations)へのポインターを取得する、 [ **NDIS\_スイッチ\_転送\_先\_配列** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_switch_forwarding_destination_array)構造体。 拡張機能は宛先ポートのパケットの OOB データに追加の配列の要素が必要であると判断した場合、します。 詳細については、次を参照してください。[を追加する拡張可能なスイッチ宛先ポート データ パケットに](adding-extensible-switch-destination-port-data-to-a-packet.md)します。
+**注**  転送拡張機能がインストールされていない場合、または有効になっていない場合は、拡張可能なスイッチ自体によって、受信データパスから取得したパケットの転送の決定が行われます。 スイッチは、拡張可能なスイッチの送信データパスにパケットを転送する前に、パケットの[**NET\_BUFFER\_リスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)構造の OOB データに宛先ポートを追加します。
 
  
 
-内の各要素、 [ **NDIS\_スイッチ\_転送\_先\_配列**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_switch_forwarding_destination_array)配列が宛先ポートを定義し、として書式設定[**NDIS\_スイッチ\_ポート\_先**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_switch_port_destination)構造体。 この構造体には、次のメンバーが含まれています。
+転送拡張機能の[*Filtersendnetbufferlists*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_send_net_buffer_lists)関数が呼び出されると、 *NetBufferList*パラメーターには、 [**NET\_BUFFER\_list**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)構造体のリンクリストへのポインターが含まれます。 これらの各構造体は、受信データパスから取得したパケットを指定します。 各パケットの**NET\_BUFFER\_LIST**構造体の OOB データ内では、宛先ポートのデータが NDIS\_\_スイッチに格納され、[**転送先\_配列**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_forwarding_destination_array)構造\_転送されます。 拡張機能は、 [*GetNetBufferListDestinations*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_get_net_buffer_list_destinations)を呼び出すことによって\_宛先\_配列構造とその要素を**転送\_、NDIS\_スイッチ**を取得します。
 
--   **PortId**メンバーには、拡張可能スイッチに接続先ポートを指定する値が含まれています。
+**注**  パフォーマンスを向上させるために、転送拡張機能は[*GetNetBufferListDestinations*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_get_net_buffer_list_destinations)の代わりに[*GrowNetBufferListDestinations*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_grow_net_buffer_list_destinations)関数を呼び出して、 [**NDIS\_スイッチへのポインターを取得\_転送先\_配列構造体\_転送**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_forwarding_destination_array)しています。 この拡張機能は、パケットの OOB データに追加の配列要素が必要であると判断した場合に、これを行います。 詳細については、「[拡張可能スイッチの宛先ポートデータをパケットに追加](adding-extensible-switch-destination-port-data-to-a-packet.md)する」を参照してください。
 
--   **NicIndex**メンバーで指定された拡張可能スイッチ ポートに接続されているネットワーク アダプターのインデックスを指定する、 **PortId**メンバー。
+ 
 
-    これらのインデックス値の詳細については、次を参照してください。[ネットワーク アダプターのインデックス値](network-adapter-index-values.md)します。
+[**Ndis\_スイッチ\_転送\_宛先\_配列**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_forwarding_destination_array)配列の各要素は、宛先ポートを定義し、 [**ndis\_スイッチ\_ポート\_宛先**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_port_destination)構造としてフォーマットされます。 この構造体には、次のメンバーが含まれます。
 
-転送拡張機能は、外部ネットワーク アダプターに接続されている接続先ポートを追加する場合、拡張機能は、基になる物理ネットワーク アダプターのインデックスを指定できます。 など、拡張機能は、over、拡張可能スイッチ チームのサポートの LBFO チーミング プロバイダーとして動作する可能性があります。 これにより、チームの別のアダプターに送信要求を転送することによって、トラフィックのオーバーヘッドのバランスを取る拡張機能です。
+-   **ポート id**メンバーには、拡張可能スイッチの宛先ポートを指定する値が含まれています。
 
-転送拡張機能は、それを追加または変更時にこれらのガイドラインに従う必要があります、 [ **NDIS\_スイッチ\_ポート\_先**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_switch_port_destination)転送を送信する構造体基になる物理ネットワーク アダプターへの要求:
+-   **NicIndex**メンバーは、**ポート id**メンバーによって指定された拡張可能なスイッチポートに接続されているネットワークアダプターのインデックスを指定します。
 
--   場合、 **PortId**メンバーは、外部のネットワーク アダプターに拡張可能スイッチ ポートが接続されている、拡張機能を設定する必要がありますを指定します、 **NicIndex**インデックス値は次のいずれかにメンバー。
+    これらのインデックス値の詳細については、「[ネットワークアダプターのインデックス値](network-adapter-index-values.md)」を参照してください。
 
-    -   拡張機能を設定する必要があります 1 つの物理ネットワーク アダプターは外部ネットワーク アダプターにバインドする場合のみ、 **NicIndex**メンバー **NDIS\_スイッチ\_既定\_NIC\_インデックス**またはいずれか。
+転送拡張機能によって、外部ネットワークアダプターに接続されている宛先ポートが追加された場合、拡張機能は、基になる物理ネットワークアダプターのインデックスを指定できます。 たとえば、拡張機能は、拡張可能なスイッチチームで LBFO をサポートするためのチーミングプロバイダーとして動作する可能性があります。 これにより、この拡張機能は、送信要求をチームのさまざまなアダプターに転送することによって、トラフィックのオーバーヘッドを分散させることができます。
 
-    -   複数の物理ネットワーク アダプターは、外部ネットワーク アダプターにバインドする場合、拡張機能を設定する必要があります、 **NicIndex**メンバーを拡張可能スイッチ チームの移行先ネットワーク アダプターの 0 以外のインデックス値。
+転送拡張機能は、基になる物理ネットワークアダプターに送信要求を転送するために、 [**NDIS\_スイッチ\_ポート\_宛先**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_port_destination)構造を追加または変更するときに、次のガイドラインに従う必要があります。
 
-    **注**  場合、 **PortId**を外部ネットワーク アダプターの拡張可能スイッチ ポートが接続されている、拡張機能を設定する必要があります、メンバーが指定されていない、 **NicIndex**メンバー**NDIS\_スイッチ\_既定\_NIC\_インデックス**します。
+-   **ポート id**メンバーが、外部ネットワークアダプターが接続されている拡張可能なスイッチポートを指定する場合、拡張機能は**NicIndex**メンバーを次のいずれかのインデックス値に設定する必要があります。
+
+    -   外部ネットワークアダプターにバインドされている物理ネットワークアダプターが1つのみの場合、拡張機能では**NicIndex**メンバーを**NDIS\_スイッチ\_既定の\_NIC\_インデックス**または1に設定する必要があります。
+
+    -   複数の物理ネットワークアダプターが外部ネットワークアダプターにバインドされている場合、拡張機能は**NicIndex**メンバーを拡張可能なスイッチチームの宛先ネットワークアダプターの0以外のインデックス値に設定する必要があります。
+
+    **注**  外部ネットワークアダプターが接続されている拡張可能なスイッチポートを**ポート id**メンバーが指定していない場合、拡張機能では**NICINDEX**メンバーを**NDIS\_switch\_DEFAULT に設定する必要があり\_NIC\_インデックス**。
 
      
 
--   呼び出す必要がありますが、拡張機能がすべて、パケットの宛先ポートの追加後[ **NdisFSendNetBufferLists** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfsendnetbufferlists)イングレス データ パス上のパケットを転送するようにします。
+-   拡張機能によってパケットの宛先ポートがすべて追加されたら、 [**NdisFSendNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfsendnetbufferlists)を呼び出してパケットを受信データパスに転送する必要があります。
 
-パケットを宛先ポートを追加する方法の詳細については、次を参照してください。 [Hyper-v 拡張可能スイッチ ポートのパケットの転送](forwarding-packets-to-hyper-v-extensible-switch-ports.md)します。
+宛先ポートをパケットに追加する方法の詳細については、「 [Hyper-v 拡張可能スイッチポートへのパケットの転送](forwarding-packets-to-hyper-v-extensible-switch-ports.md)」を参照してください。
 
-出口データ パスの詳細については、次を参照してください。 [Hyper-v 拡張可能スイッチのデータ パス](hyper-v-extensible-switch-data-path.md)します。
+送信データパスの詳細については、「 [Hyper-v 拡張可能スイッチのデータパス](hyper-v-extensible-switch-data-path.md)」を参照してください。
 
  
 

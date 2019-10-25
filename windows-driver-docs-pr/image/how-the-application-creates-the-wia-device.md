@@ -4,12 +4,12 @@ description: アプリケーションで WIA デバイスを作成する方法
 ms.assetid: f4268c61-11e5-4796-b7cb-80c8112be4d8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 425bb21b5c0f44ea18eb9897373c36ad7a1d5a10
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 64bd865a52fe598e44ee7802e21bdd502b38e412
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363062"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840834"
 ---
 # <a name="how-the-application-creates-the-wia-device"></a>アプリケーションで WIA デバイスを作成する方法
 
@@ -17,34 +17,34 @@ ms.locfileid: "67363062"
 
 
 
-WIA のデバイス ドライバーを使用する場合、アプリケーションが呼び出す、 **IWiaDevMgr::CreateDevice**メソッド (Microsoft Windows SDK のドキュメントで説明)。 サービスの最初の呼び出しを WIA [ **IStiUSD::LockDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-lockdevice) WIA のドライバーを相互に排他的アクセスをロックします。 次に、WIA サービスを呼び出す[ **IWiaMiniDrv::drvInitializeWia** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvinitializewia)初期 WIA 項目のツリー構造を作成します。 WIA サービスが呼び出すことによって、デバイス ドライバーを解除する最後に、 [ **IStiUSD::UnLockDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-unlockdevice)します。
+アプリケーションで WIA デバイスドライバーを使用する場合は、 **Iwiadevmgr:: CreateDevice**メソッドを呼び出します (Microsoft Windows SDK のドキュメントを参照してください)。 WIA サービスは、最初に[**iexclusive usd:: LockDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/stiusd/nf-stiusd-istiusd-lockdevice)を呼び出して、同時に排他的にアクセスできるように wia ドライバーをロックします。 次に、WIA サービスは[**IWiaMiniDrv::D rvinitializewia**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvinitializewia)を呼び出して、最初の wia 項目ツリー構造を作成します。 最後に、WIA サービスは[**Istiusd:: UnLockDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/stiusd/nf-stiusd-istiusd-unlockdevice)を呼び出すことによって、デバイスドライバーのロックを解除します。
 
-**IWiaMiniDrv::drvInitializeWia**メソッドは、次のタスクを実行する必要があります。
+**IWiaMiniDrv::D rvinitializewia**メソッドでは、次のタスクを実行する必要があります。
 
-1.  インターフェイスのキャッシュを*pStiDevice*パラメーターが適切なデバイスのロックを指します。 (詳細については、次を参照してください[ **IWiaMiniDrv::drvLockWiaDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvlockwiadevice)。)。
+1.  *Parp デバイス*パラメーターが指すインターフェイスをキャッシュして、適切なデバイスロックを行います。 (詳細については、「 [**IWiaMiniDrv::D rvlockwiadevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvlockwiadevice)」を参照してください)。
 
-2.  初期 WIA 項目のツリー構造を作成します。
+2.  最初の WIA 項目ツリー構造を作成します。
 
-3.  現在のアプリケーション接続の数をインクリメントします。 この数は、アプリケーションがまだ接続されているかどうかをドライバーに通知するために使用します。 実行する適切なアクションを決定することもできます[ **IWiaMiniDrv::drvUnInitializeWia**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvuninitializewia)します。
+3.  現在のアプリケーション接続数をインクリメントします。 この数は、アプリケーションがまだ接続されているかどうかをドライバーに通知するために使用されます。 また、 [**IWiaMiniDrv::D rvuninitializewia**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvuninitializewia)で実行する適切なアクションを決定するのにも役立ちます。
 
-WIA アイテムの論理的な意味で名前が付けする必要があります。 Microsoft では、次の項目名、Windows XP 以降が必要です。
+WIA 項目は、論理的な意味を持つ名前にする必要があります。 Microsoft では、Windows XP 以降では次の項目名を必要とします。
 
 <a href="" id="root"></a>**ルート**  
-これは、WIA 項目のツリーのルート項目を表す用語です。
+これは、WIA 項目ツリーのルート項目の用語です。
 
-<a href="" id="flatbed"></a>**フラット ベッド**  
-これは、フラット ベッド スキャナーでのみをサポートするスキャナーまたはドキュメント フィーダーの付いたフラット ベッド スキャナーをサポートするスキャナーの用語です。
+<a href="" id="flatbed"></a>**ベッド**  
+これは、フラットベッドスキャナーのみをサポートするスキャナー、またはドキュメントフィーダーを備えたフラットベッドスキャナーをサポートするスキャナーの用語です。
 
 <a href="" id="feeder"></a>**フィーダー**  
-これは、フィーダーのみをサポートするスキャナーの用語です。
+これは、フィーダーだけをサポートするスキャナーの用語です。
 
-WIA サービスの呼び出し、 **IWiaMiniDrv::drvInitializeWia**メソッドへの WIA アプリケーションの呼び出しに応答**IWiaDevMgr::CreateDevice** (Windows SDK のドキュメントで説明)。 この結果は、WIA サービスを呼び出す、 **IWiaMiniDrv::drvInitializeWia**新しい各クライアント接続のためのメソッド。
+WIA サービスは、 **IWiaMiniDrv::D rvinitializewia**メソッドを呼び出します。このメソッドは、wia アプリケーションの**Iwiadevmgr:: CreateDevice**への呼び出しに応答しています (Windows SDK のドキュメントを参照)。 この結果、新しいクライアント接続ごとに、WIA サービスが**IWiaMiniDrv::D rvinitializewia**メソッドを呼び出すことになります。
 
-**IWiaMiniDrv::drvInitializeWia**メソッドがプライベート構造体を初期化し、ドライバーの項目のツリーを作成する必要があります。 ドライバーの項目のツリーは、この WIA デバイスでサポートされているすべての WIA 項目のレイアウトを示します。 このメソッドを使用してのみ、最初のツリー構造の作成を*いない*内容 (WIA プロパティ)。 WIA サービスを複数回呼び出すことで、WIA、WIA ドライバーのアイテムのプロパティを設定は個別に、 [ **IWiaMiniDrv::drvInitItemProperties** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvinititemproperties)メソッド。
+**IWiaMiniDrv::D rvinitializewia**メソッドは、プライベート構造体を初期化し、ドライバー項目ツリーを作成する必要があります。 [ドライバー] 項目ツリーには、この WIA デバイスでサポートされているすべての WIA 項目のレイアウトが表示されます。 このメソッドは、コンテンツ (WIA プロパティ) では*なく*、初期ツリー構造のみを作成するために使用されます。 Wia サービスは、 [**IWiaMiniDrv::D rvinititemproperties**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvinititemproperties)メソッドを複数回呼び出すことによって、wia ドライバー項目の wia プロパティを個別に設定します。
 
-WIA のすべてのデバイスでは、WIA デバイスのすべての項目の親である、ルートの項目があります。 ドライバー、WIA WIA デバイス項目を作成する、WIA サービス ヘルパー関数を呼び出す必要があります[ **wiasCreateDrvItem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamdef/nf-wiamdef-wiascreatedrvitem)します。
+すべての WIA デバイスには、すべての WIA デバイス項目の親であるルート項目があります。 Wia デバイス項目を作成するには、wia ドライバーが WIA サービスヘルパー関数[**wiasCreateDrvItem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamdef/nf-wiamdef-wiascreatedrvitem)を呼び出す必要があります。
 
-次の例では、WIA デバイス ルート項目を作成する方法を示します。
+次の例は、WIA デバイスのルート項目を作成する方法を示しています。
 
 ```cpp
 LONG lItemFlags = WiaItemTypeFolder|WiaItemTypeDevice|WiaItemTypeRoot;
@@ -69,9 +69,9 @@ if(S_OK == hr){
  }
 ```
 
-前の例で作成したルート項目のすぐ下に、WIA 子項目を作成するには、次のようなコードを使用します。
+前の例で作成したルート項目の直下にある WIA 子項目を作成するには、次のようなコードを使用します。
 
-**注**  * * * 注意、 [ **IWiaDrvItem::AddItemToFolder** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiadrvitem-additemtofolder)ルート項目に新しく作成された子項目を追加するメソッドが呼び出されます。
+**注**  * * * * [**IWiaDrvItem:: AddItemToFolder**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiadrvitem-additemtofolder)メソッドが呼び出され、新しく作成された子項目がルート項目に追加されていることに注意してください。
 
  
 
@@ -110,7 +110,7 @@ if(S_OK == hr){
  }
 ```
 
-次の例の実装を示しています、 **IWiaMiniDrv::drvInitializeWia**メソッド。
+**IWiaMiniDrv::D rvinitializewia**メソッドの実装例を次に示します。
 
 ```cpp
 HRESULT _stdcall CWIADevice::drvInitializeWia(

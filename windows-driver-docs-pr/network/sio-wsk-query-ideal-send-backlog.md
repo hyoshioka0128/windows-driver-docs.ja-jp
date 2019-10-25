@@ -4,25 +4,25 @@ description: SIO_WSK_QUERY_IDEAL_SEND_BACKLOG
 ms.assetid: 8d05b1dc-9dbf-4726-9eaf-721d1fb8282e
 ms.date: 07/18/2017
 keywords:
-- SIO_WSK_QUERY_IDEAL_SEND_BACKLOG ネットワーク ドライバーが Windows Vista 以降
+- SIO_WSK_QUERY_IDEAL_SEND_BACKLOG ネットワークドライバー (Windows Vista 以降)
 ms.localizationpriority: medium
-ms.openlocfilehash: c10aabe83f0f2abf9ec71847d72a1b222fd62d0c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e2a50bdcacf4a5f44bd54c97e8f4e9f4703a7606
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67379166"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841910"
 ---
-# <a name="siowskqueryidealsendbacklog"></a>SIO\_WSK\_クエリ\_理想的な\_送信\_バックログ
+# <a name="sio_wsk_query_ideal_send_backlog"></a>SIO\_WSK\_クエリ\_最適\_\_バックログを送信する
 
 
-SIO\_WSK\_クエリ\_理想的な\_送信\_バックログ ソケット I/O 制御操作により、接続指向のソケットの理想的な送信バックログのサイズを照会する WSK アプリケーション。 このソケット I/O 制御操作は、接続指向のソケットだけに適用されます。
+SIO\_WSK\_クエリ\_理想的\_送信\_バックログソケット i/o 制御操作により、WSK アプリケーションは、接続指向のソケットの理想的な送信バックログサイズを照会できます。 このソケット i/o 制御操作は、接続指向のソケットにのみ適用されます。
 
-接続指向のソケットの理想的な送信バックログのサイズは (つまり、WSK サブシステムに渡されるがまだ完了していない)、保留状態を維持する必要がある送信データの最適な量を常にすべての完全なソケットのデータのストリームを保持します。 WSK アプリケーションでは、プローブし、基になる接続のフロー制御の状態に基づいて送信されるデータのバッファーをロックを段階的に、このサイズを使用できます。
+接続指向ソケットの理想的な送信バックログサイズは、未処理のままにしておく必要がある (つまり、WSK サブシステムに渡され、まだ完了していない) 送信データの最適な量で、ソケットのデータストリームが常にいっぱいになるようにします。 WSK アプリケーションでは、このサイズを使用して、基になる接続のフロー制御の状態に基づいて、送信されるデータのバッファーを段階的にプローブおよびロックできます。
 
-WSK アプリケーションでは、このソケット I/O 制御操作を使用して、最適な送信バックログのサイズを照会する場合、接続指向のソケットがリモートのトランスポート アドレスに接続された後に実行する必要があります。
+WSK アプリケーションがこのソケット i/o 制御操作を使用して理想的な送信バックログサイズを照会する場合は、接続指向のソケットがリモートトランスポートアドレスに接続された後で、この処理を行う必要があります。
 
-WSK アプリケーションを呼び出す接続指向のソケットの理想的な送信バックログのサイズを照会、 [ **WskControlSocket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_control_socket)関数は次のパラメーター。
+接続指向ソケットの理想的な送信バックログサイズを照会するために、WSK アプリケーションは次のパラメーターを使用して[**Wskcontrolsocket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_control_socket)関数を呼び出します。
 
 <table>
 <colgroup>
@@ -45,7 +45,7 @@ WSK アプリケーションを呼び出す接続指向のソケットの理想�
 <td><p>SIO_WSK_QUERY_IDEAL_SEND_BACKLOG</p></td>
 </tr>
 <tr class="odd">
-<td><p><em>Level</em></p></td>
+<td><p><em>平準</em></p></td>
 <td><p>0</p></td>
 </tr>
 <tr class="even">
@@ -58,11 +58,11 @@ WSK アプリケーションを呼び出す接続指向のソケットの理想�
 </tr>
 <tr class="even">
 <td><p><em>OutputSize</em></p></td>
-<td><p>sizeof(SIZE_T)</p></td>
+<td><p>sizeof (SIZE_T)</p></td>
 </tr>
 <tr class="odd">
 <td><p><em>OutputBuffer</em></p></td>
-<td><p>現在の最適な送信バックログのサイズを受け取る SIZE_T に型指定された変数へのポインター</p></td>
+<td><p>現在の理想的な送信バックログサイズを受け取る SIZE_T 型の変数へのポインター</p></td>
 </tr>
 <tr class="even">
 <td><p><em>OutputSizeReturned</em></p></td>
@@ -71,11 +71,11 @@ WSK アプリケーションを呼び出す接続指向のソケットの理想�
 </tbody>
 </table>
 
-呼び出すときに、WSK アプリケーションは IRP へのポインターを指定する必要があります、 **WskControlSocket**接続指向のソケットの理想的な送信バックログのサイズを照会する関数。
+WSK アプリケーションは、 **Wskcontrolsocket**関数を呼び出して接続指向のソケットの理想的な送信バックログサイズを照会するときに、IRP へのポインターを指定する必要があります。
 
-接続指向のソケットは、有効にすると、最適な送信バックログのサイズに対する変更の通知ことができます、 [ *WskSendBacklogEvent* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_send_backlog_event)イベント コールバック関数。
+接続指向のソケットは、 [*WskSendBacklogEvent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_send_backlog_event)イベントコールバック関数を有効にすることで、最適な送信バックログサイズに対する変更を通知できます。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -86,11 +86,11 @@ WSK アプリケーションを呼び出す接続指向のソケットの理想�
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>Windows Vista および Windows オペレーティング システムの以降のバージョンで使用できます。</p></td>
+<td><p>Windows Vista 以降のバージョンの Windows オペレーティングシステムで使用できます。</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Wsk.h (Wsk.h を含む)</td>
+<td>Wsk .h (Wsk .h を含む)</td>
 </tr>
 </tbody>
 </table>

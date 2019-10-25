@@ -1,27 +1,27 @@
 ---
 title: SIO_LOOPBACK_FAST_PATH 制御コード
-description: SIO_LOOPBACK_FAST_PATH ソケット I/O 制御コードにより、TCP ソケットのループバック インターフェイスで高速の操作を構成する WSK アプリケーション。
+description: SIO_LOOPBACK_FAST_PATH socket i/o 制御コードを使用すると、WSK アプリケーションは、ループバックインターフェイスの操作を高速化するために TCP ソケットを構成できます。
 ms.assetid: 5A5AD945-9EFD-4157-AFA4-F9C3995B7C43
 ms.date: 08/08/2017
-keywords: -Windows Vista 以降のドライバーをネットワーク SIO_LOOPBACK_FAST_PATH 制御コード
+keywords: -SIO_LOOPBACK_FAST_PATH Windows Vista 以降のコードネットワークドライバーの制御
 ms.localizationpriority: medium
-ms.openlocfilehash: 172c07a24ceaa78e3d45fe9013a6bf0f8bc76e96
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4362a8a503cb4b8cd314c936e46421ee36fb51d6
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67379162"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841912"
 ---
-# <a name="sioloopbackfastpath-control-code"></a>SIO\_ループバック\_高速\_パス制御コード
+# <a name="sio_loopback_fast_path-control-code"></a>SIO\_ループバック\_高速\_パス制御コード
 
 
-**重要な**  、 **SIO\_ループバック\_高速\_パス**は非推奨し、コードで使用することは推奨されません。
+**重要**  **SIO\_ループバック\_高速\_パス**は非推奨とされており、コードで使用することは推奨されていません。
 
  
 
-**SIO\_ループバック\_高速\_パス**ソケット I/O 制御コードにより、TCP ソケットのループバック インターフェイスで高速の操作を構成する WSK アプリケーション。
+**SIO\_ループバック\_高速\_パス**ソケット i/o 制御コードを使用すると、wsk アプリケーションは、ループバックインターフェイスでの高速な操作のために TCP ソケットを構成できます。
 
-WSK アプリケーションを呼び出すこの IOCTL を使用する、 [ **WskControlSocket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_control_socket)関数は次のパラメーター。
+この IOCTL を使用するために、WSK アプリケーションは次のパラメーターを使用して[**Wskcontrolsocket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_control_socket)関数を呼び出します。
 
 <table>
 <colgroup>
@@ -44,16 +44,16 @@ WSK アプリケーションを呼び出すこの IOCTL を使用する、 [ **W
 <td><p><strong>SIO_LOOPBACK_FAST_PATH</strong></p></td>
 </tr>
 <tr class="odd">
-<td><p><em>Level</em></p></td>
+<td><p><em>平準</em></p></td>
 <td><p>0</p></td>
 </tr>
 <tr class="even">
 <td><p><em>InputSize</em></p></td>
-<td><p>入力バッファーのバイト単位のサイズ。</p></td>
+<td><p>入力バッファーのサイズ (バイト単位)。</p></td>
 </tr>
 <tr class="odd">
 <td><p><em>InputBuffer</em></p></td>
-<td><p>入力バッファーへのポインター。 このパラメーターにはへのポインターが含まれています、<strong>ブール</strong>高速なループバック操作のかどうか、ソケットを構成する必要がありますを示す値です。</p></td>
+<td><p>入力バッファーへのポインター。 このパラメーターには、高速ループバック操作用にソケットを構成する必要があるかどうかを示す<strong>ブール</strong>値へのポインターが含まれています。</p></td>
 </tr>
 <tr class="even">
 <td><p><em>OutputSize</em></p></td>
@@ -61,11 +61,11 @@ WSK アプリケーションを呼び出すこの IOCTL を使用する、 [ **W
 </tr>
 <tr class="odd">
 <td><p><em>OutputBuffer</em></p></td>
-<td><p><strong>NULL</strong></p></td>
+<td><p><strong>空白</strong></p></td>
 </tr>
 <tr class="even">
 <td><p><em>OutputSizeReturned</em></p></td>
-<td><p><strong>NULL</strong></p></td>
+<td><p><strong>空白</strong></p></td>
 </tr>
 <tr class="odd">
 <td><p>Irp</p></td>
@@ -76,39 +76,39 @@ WSK アプリケーションを呼び出すこの IOCTL を使用する、 [ **W
 
  
 
-アプリケーションで使用できます、 **SIO\_ループバック\_高速\_パス**IOCTL TCP ソケットでループバック操作のパフォーマンスを向上させるためにします。 この IOCTL では、TCP/IP スタックがこのソケットに対するループバック操作の特殊な高速なパスを使用することを要求します。 **SIO\_ループバック\_高速\_パス**IOCTL は TCP ソケットでのみ使用できます。 ループバック セッションの両方の側では、この IOCTL を使用する必要があります。 TCP ループバックの高速パスは、IPv4 または IPv6 のいずれかのループバック インターフェイスを使用してサポートされています。
+アプリケーションでは、TCP ソケットのループバック操作のパフォーマンスを向上させるために、 **SIO\_ループバック\_高速\_パス**IOCTL を使用できます。 この IOCTL は、TCP/IP スタックがこのソケットのループバック操作に特別な高速パスを使用することを要求します。 **SIO\_ループバック\_高速\_パス**IOCTL は、TCP ソケットでのみ使用できます。 この IOCTL は、ループバックセッションの両側で使用する必要があります。 TCP ループバックの高速パスは、IPv4 または IPv6 ループバックインターフェイスを使用してサポートされています。
 
-接続要求を開始することを計画しているソケットは、接続要求を行う前にこの IOCTL を適用する必要があります。 接続要求をリッスンするソケットでは、接続を受け入れる前にこの IOCTL を適用する必要があります。
+接続要求を開始する予定のソケットは、接続要求を行う前にこの IOCTL を適用する必要があります。 接続要求をリッスンしているソケットは、接続を受け入れる前にこの IOCTL を適用する必要があります。
 
-アプリケーションでは、高速なパスを使用するループバック インターフェイスで接続を確立すると、接続の有効期間のすべてのパケットは、高速パスを使用する必要があります。
+アプリケーションが高速パスを使用してループバックインターフェイスで接続を確立すると、接続の有効期間中のすべてのパケットが高速パスを使用する必要があります。
 
-適用する**SIO\_ループバック\_高速\_パス**は、ループバック以外に接続するソケットへのパスは影響しません。
+ループバックパス以外のパスに接続されるソケットに対して、 **SIO\_ループバック\_高速\_パス**を適用しても効果はありません。
 
-この TCP ループバックの最適化は、従来のループバック ネットワーク レイヤーを通じてではなくトランスポート層 (TL) を通じてのフローのパケットで発生します。 この最適化では、ループバック パケットの待機時間が向上します。 アプリケーションがループバックの高速なパスを使用する設定、接続レベルのオプトインとすべてのパケットはループバック パスに従います。 ループバック通信での輻輳とパケットのドロップは必要ありません。 輻輳制御と TCP の信頼性の高い配信の概念が必要があります。 ただしこれはいないフロー制御の場合は true です。 フロー制御、なし、送信者が重荷となって受信バッファーに格納エラー TCP ループバックの動作につながります。 送信要求をキューに配置することで、TCP の最適化されたループバック パスでフロー制御が維持されます。 受信バッファーがいっぱいになった場合、TCP/IP スタックは、キューを処理すると、フロー制御を維持するまで、送信が完了しないことを保証します。
+この TCP ループバックの最適化では、ネットワーク層を介して従来のループバックではなくトランスポート層 (TL) を通過するパケットが生成されます。 この最適化により、ループバックパケットの待機時間が短縮されます。 アプリケーションがループバックの高速パスを使用するように接続レベルの設定を設定すると、すべてのパケットがループバックパスに従います。 ループバック通信の場合、輻輳とパケットの破棄は想定されていません。 TCP における輻輳制御と信頼性の高い配信の概念は不要になります。 ただし、これはフロー制御には当てはまりません。 フロー制御がない場合、送信側は受信バッファーを過負荷にすることがあり、TCP ループバック動作が異常になります。 TCP 最適化ループバックパスのフロー制御は、送信要求をキューに配置することによって維持されます。 受信バッファーがいっぱいになると、TCP/IP スタックは、キューが処理されるまで送信が完了しないことを保証し、フロー制御を維持します。
 
-接続データの Windows フィルタ リング プラットフォーム (WFP) コールアウトが存在する場合、TCP 高速パス ループバック接続には、ループバックの最適化されていない低速パスを実行する必要があります。 したがって WFP フィルターはこの新しいループバックの高速パスを使用されないようにします。 システムであっても、低速パスを使用して WFP フィルターが有効にすると、 **SIO\_ループバック\_高速\_パス**IOCTL が設定されました。 これは、WFP の完全なセキュリティ機能をユーザー モード アプリケーションがあることに陥ります。
+接続データに対して Windows Filtering Platform (WFP) コールアウトが存在する場合の TCP 高速パスループバック接続では、ループバックに対して最適化されていない低速パスを使用する必要があります。 そのため、この新しいループバックの高速パスは使用できません。 WFP フィルターが有効になっている場合、 **SIO\_ループバック\_高速\_パス**IOCTL が設定されていても、システムは低速パスを使用します。 これにより、ユーザーモードアプリケーションには、完全な WFP セキュリティ機能が ensues ます。
 
-既定では、 **SIO\_ループバック\_高速\_パス**は無効です。
+既定では、 **SIO\_ループバック\_高速\_パス**は無効になっています。
 
-TCP/IP ソケット オプションのサブセットのみがサポートされているときに、 **SIO\_ループバック\_高速\_パス**IOCTL がソケットでループバックの高速パスを有効にするために使用します。 サポートされているオプションの一覧、次のとおりです。
+**SIO\_ループバック\_高速\_パス**IOCTL を使用してソケットのループバック高速パスを有効にすると、tcp/ip ソケットオプションのサブセットのみがサポートされます。 サポートされているオプションの一覧を次に示します。
 
 -   IP\_TTL
--   IP\_ユニキャスト\_場合
--   IPV6\_ユニキャスト\_ホップ数
--   IPV6\_ユニキャスト\_場合
+-   IP\_ユニキャスト\_
+-   IPV6\_ユニキャスト\_ホップ
+-   IPV6\_ユニキャスト\_
 -   IPV6\_V6ONLY
--   [**したがって\_条件付き\_ACCEPT**](https://docs.microsoft.com/windows/desktop/WinSock/so-conditional-accept)
--   [したがって\_EXCLUSIVEADDRUSE](https://docs.microsoft.com/windows/desktop/WinSock/so-exclusiveaddruse)
--   [**したがって\_ポート\_スケーラビリティ**](https://docs.microsoft.com/windows/desktop/WinSock/so-port-scalability)
--   したがって\_RCVBUF
--   したがって\_REUSEADDR
+-   [ **\_条件付き\_受け入れ**](https://docs.microsoft.com/windows/desktop/WinSock/so-conditional-accept)
+-   [EXCLUSIVEADDRUSE\_](https://docs.microsoft.com/windows/desktop/WinSock/so-exclusiveaddruse)
+-   [ **\_ポート\_のスケーラビリティ**](https://docs.microsoft.com/windows/desktop/WinSock/so-port-scalability)
+-   RCVBUF\_
+-   REUSEADDR\_
 -   TCP\_BSDURGENT
 
-呼び出すときに、WSK アプリケーションは IRP の完了のルーチンへのポインターを指定する必要があります、 [ **WskControlSocket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_control_socket)の要求のこの型の関数。 WSK サブシステムが IRP を完了するまで、アプリケーションはバッファーを解放する必要があります。 IRP が完了すると、サブシステムは、完了ルーチンを呼び出します。 完了ルーチンで、アプリケーションが IRP の状態を確認し、いた以前の要求の割り当てられているすべてのリソースを解放する必要があります。
+WSK アプリケーションは、この種類の要求に対して[**Wskcontrolsocket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_control_socket)関数を呼び出すときに、IRP と完了ルーチンへのポインターを指定する必要があります。 アプリケーションは、WSK サブシステムが IRP を完了するまでバッファーを解放しないようにする必要があります。 IRP が完了すると、サブシステムは完了ルーチンを呼び出します。 完了ルーチンでは、アプリケーションは IRP の状態を確認し、要求に対して以前に割り当てられたすべてのリソースを解放する必要があります。
 
-WSK IRP の処理の詳細については、次を参照してください。 [Winsock カーネル関数を使用して Irp](https://docs.microsoft.com/windows-hardware/drivers/network/using-irps-with-winsock-kernel-functions)します。
+WSK の IRP 処理の詳細については、「 [Winsock カーネル関数での irp の使用](https://docs.microsoft.com/windows-hardware/drivers/network/using-irps-with-winsock-kernel-functions)」を参照してください。
 
-IRP を完了すると、サブシステムは設定*Irp -&gt;IoStatus.Status*に**状態\_成功**要求が成功した場合。 それ以外の場合、 *Irp -&gt;IoStatus.Status*に設定されます**状態\_無効な\_バッファー\_サイズ**または**状態\_いない\_サポートされている**呼び出しが成功しなかった場合。
+IRP を完了すると、サブシステムは、要求が成功した場合に、 *irp&gt;iostatus. status*を**status\_SUCCESS**に設定します。 それ以外の場合、 *Irp&gt;IoStatus*は status に設定され **\_無効な\_バッファー\_サイズ**または状態\_、呼び出しが成功しなかった場合は **\_サポートされません**。
 
 ## <a name="return-value"></a>戻り値
 
@@ -144,7 +144,7 @@ IRP を完了すると、サブシステムは設定*Irp -&gt;IoStatus.Status*�
 ## <a name="see-also"></a>関連項目
 
 
-[**SIO\_ループバック\_高速\_パス (SDK)** ](https://docs.microsoft.com/previous-versions/windows/desktop/legacy/jj841212(v=vs.85))
+[**SIO\_ループバック\_FAST\_PATH (SDK)** ](https://docs.microsoft.com/previous-versions/windows/desktop/legacy/jj841212(v=vs.85))
 
 [Winsock カーネル関数での Irp の使用](https://docs.microsoft.com/windows-hardware/drivers/network/using-irps-with-winsock-kernel-functions)
 

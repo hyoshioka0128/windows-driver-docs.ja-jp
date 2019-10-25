@@ -3,18 +3,18 @@ title: KS のフィルター
 description: KS のフィルター
 ms.assetid: caf46279-17f3-4bb4-8b8a-a1673f9fa28f
 keywords:
-- WDK のカーネルがストリームをフィルター処理します。
-- ストリーミング KS フィルター WDK カーネル
-- ミキサー WDK カーネルのストリーミング
-- カーネル、WDK のストリームをフィルター処理します。
+- WDK カーネルストリーミングをフィルター処理します
+- KS は WDK カーネルストリーミングをフィルター処理します
+- ミキサー WDK カーネルストリーミング
+- カーネルストリーミング WDK、フィルター
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 186b51cdbc0574b3fb4aefcac05b59d2eebe4507
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 677ce74374cc7a0e91b84ade977d8b9fadd78533
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382521"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842516"
 ---
 # <a name="ks-filters"></a>KS のフィルター
 
@@ -22,21 +22,21 @@ ms.locfileid: "67382521"
 
 
 
-フィルターは、データ ストリームに対して実行する処理タスクをカプセル化するノードのグループです。 [ピン](ks-pins.md)フィルターの入力と出力のコンジットとして機能します。
+フィルターは、データストリームに対して実行される処理タスクをカプセル化するノードのグループです。 [ピン](ks-pins.md)は、フィルターの入力および出力のパイプとして機能します。
 
-単純なフィルターには、1 つのデータ シンクの暗証番号 (pin) および 1 つのデータ ソースの暗証番号 (pin) が含まれます。 フィルターは、データ シンクの pin での着信データを受信するには、内部的には、処理してデータ ソースの暗証番号 (pin) を書き込みます。 次の図では、ピンが太い線セグメントとして表示されます。 フィルターが内部的には、データ シンクの暗証番号 (pin) を内部処理単位に接続する*ノード*、さらに、データ ソースのピンに接続されます。
+単純なフィルターには、1つのデータシンクピンと1つのデータソースピンを含めることができます。 フィルターは、受信したデータをデータシンクの pin で受信し、内部で処理して、データソースの pin に書き込みます。 次の図では、ピンが太い線のセグメントとして表示されています。 内部的には、フィルターはデータシンクの pin を内部処理ユニット (*ノード*) に接続します。このノードは、データソースの pin に接続されています。
 
 ![単純な ks フィルターを示す図](images/ks01.png)
 
-別のデバイスは、結合またはピンの間のデータ フローを分割する場合があります。 たとえば、オーディオ ミキサーには、いくつかのデータ シンク ピンがサポートされています。 ミキサーは、1 つのストリームに結合し、そのストリームをデータ ソースの pin に書き込みます。 次の図は、データ フローを示しています。
+別のデバイスがピン間でデータフローを結合または分割する場合があります。 たとえば、オーディオミキサーでは、複数のデータシンクピンがサポートされています。 ミキサーは、これらを1つのストリームに結合し、そのストリームをデータソースの pin に書き込みます。 次の図は、データフローを示しています。
 
 ![ミキサーを示す図](images/ks02.png)
 
-グラフには、フィルターのピンの間の内部の関係について説明します。 複雑なフィルターには、フィルターを流れるデータを変換するいくつかのノードがカプセル化する可能性があります。
+グラフには、フィルターのピン間の内部関係が記述されています。 より複雑なフィルターでは、フィルターを通過するデータを変換する複数のノードをカプセル化できます。
 
-フィルターを使用してピンと内部のノード間の内部接続を指定する、 [KSPROPSETID\_トポロジ](https://docs.microsoft.com/windows-hardware/drivers/stream/kspropsetid-topology)プロパティ セット。
+フィルターは、 [Ksk Propsetid\_トポロジ](https://docs.microsoft.com/windows-hardware/drivers/stream/kspropsetid-topology)プロパティセットを使用して、ピンと内部ノード間の内部接続を指定します。
 
-[ **KSPROPERTY\_トポロジ\_接続**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-topology-connections)プロパティは、KS フィルターのノード間のすべての接続を照会します。 このプロパティの配列を返します[ **KSTOPOLOGY\_接続**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kstopology_connection)します。 各 KSTOPOLOGY\_接続構造は、フィルター内の接続を 1 つのデータ パスを表します。 上、一連の KSTOPOLOGY ミキサーの図で\_接続構造に次のようになります。
+[**Ksk プロパティ\_TOPOLOGY\_connections**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-topology-connections)プロパティは、KS フィルターのノード間のすべての接続を照会します。 このプロパティは、 [**Kstopology\_接続**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-kstopology_connection)の配列を返します。 各 KSTOPOLOGY\_接続構造は、フィルター内の1つのデータパス接続を表します。 上のミキサー図では、一連の KSTOPOLOGY\_接続構造は次のようになります。
 
 ```cpp
 //    FromNode,       FromNodePin,     ToNode,        ToNodePin,

@@ -1,23 +1,23 @@
 ---
-Description: Windows 8.1 以降、WinUSB 関数のセットは、Api を使用して、USB デバイスのアイソクロナス エンドポイントからデータを転送するデスクトップ アプリケーションがあります。 このようなアプリケーションには、Microsoft から提供された Winusb.sys はデバイス ドライバーである必要があります。
+Description: Windows 8.1 以降、WinUSB 関数のセットには、デスクトップアプリケーションが USB デバイスのアイソクロナスエンドポイントとの間でデータを転送できるようにする Api が用意されています。 このようなアプリケーションの場合、Microsoft 提供の Winusb .sys はデバイスドライバーである必要があります。
 title: WinUSB デスクトップ アプリから USB 等時性転送を送信する
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ee3bdbfda312481de0cd532a37a5ec23f7ed155
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ab9a9edc25f53d571db05280476e3888ab56f026
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386275"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845008"
 ---
 # <a name="send-usb-isochronous-transfers-from-a-winusb-desktop-app"></a>WinUSB デスクトップ アプリから USB 等時性転送を送信する
 
 
-**概要**
+**要約**
 
--   アイソクロナス転送の概要。
--   エンドポイントの間隔の値に基づく計算をバッファーに転送します。
--   送信転送を使用してアイソクロナス データを読み書きする[WinUSB Functions](using-winusb-api-to-communicate-with-a-usb-device.md)します。
+-   アイソクロナス転送の概要を簡単に説明します。
+-   エンドポイントの間隔の値に基づいてバッファーの計算を転送します。
+-   [Winusb 関数](using-winusb-api-to-communicate-with-a-usb-device.md)を使用して、アイソクロナスデータの読み取りと書き込みを行う転送を送信します。
 
 **重要な API**
 
@@ -25,32 +25,32 @@ ms.locfileid: "67386275"
 -   [**WinUsb\_WriteIsochPipeAsap**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_writeisochpipeasap)
 -   [**WinUsb\_ReadIsochPipeAsap**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_readisochpipeasap)
 
-以降では、Windows 8.1、一連の[WinUSB Functions](using-winusb-api-to-communicate-with-a-usb-device.md)と USB デバイスのアイソクロナス エンドポイントからデータを転送するデスクトップ アプリケーションを許可する Api があります。 このようなアプリケーションには、Microsoft から提供された Winusb.sys はデバイス ドライバーである必要があります。
+Windows 8.1 以降、 [Winusb 関数](using-winusb-api-to-communicate-with-a-usb-device.md)のセットには、デスクトップアプリケーションが USB デバイスのアイソクロナスエンドポイントとの間でデータを転送できるようにする api が用意されています。 このようなアプリケーションの場合、Microsoft 提供の Winusb .sys はデバイスドライバーである必要があります。
 
-USB デバイスは、オーディオ/ビデオ ストリーミングなど、一定の速度で時間に依存するデータを転送するアイソクロナス エンドポイントをサポートできます。 配信の保証はありません。 正常な接続がすべてのパケットを削除しないでください、通常のいずれかにすると、パケットが失われる予測ではありませんが、アイソクロナス プロトコルは、このような損失を許容します。
+USB デバイスでは、オーディオ/ビデオストリーミングなど、時間に依存するデータを安定した速度で転送するために、アイソクロナスエンドポイントをサポートできます。 保証された配信はありません。 適切な接続では、パケットを削除しないでください。また、パケットが失われる可能性はありませんが、アイソクロナスプロトコルではこのような損失が許容されます。
 
-ホスト コント ローラーを送信または受信データ バス上の時間帯の予約と呼ばれる*間隔のバス*。 バスの間隔の単位は、バス速度に依存します。 フル_スピード、高速および SuperSpeed、1 ミリ秒のフレームは、250 マイクロ秒 microframes は。
+ホストコントローラーは、バス上の予約期間中にデータを送受信します。*バス間隔*と呼ばれます。 バス間隔の単位はバス速度によって異なります。 全速度の場合は1ミリ秒のフレームで、高速で SuperSpeed の場合は250マイクロ秒のマイクロフレームです。
 
-ホスト コント ローラーは、一定の間隔でデバイスをポーリングします。 読み取り操作は、エンドポイントが、データを送信する準備ができたときにデバイスを bus 間隔でデータを送信して応答します。 デバイスへの書き込みには、ホスト コント ローラーは、データを送信します。
+ホストコントローラーは定期的にデバイスをポーリングします。 読み取り操作の場合、エンドポイントがデータを送信する準備が整うと、デバイスはバス間隔でデータを送信することによって応答します。 デバイスに書き込むには、ホストコントローラーがデータを送信します。
 
-**アプリは 1 つのサービスの間隔で送信データの量**
+**アプリが1つのサービス間隔で送信できるデータの量**
 
-用語*アイソクロナス パケット*このトピックでは 1 つのサービスの間隔で転送されるデータの量を示します。 USB ドライバー スタックでその値が計算され、アプリは、パイプの属性を照会中に値を取得できます。
+このトピックの「*アイソクロナスパケット*とは」という用語は、1つのサービス間隔で転送されるデータの量を指します。 この値は USB ドライバースタックによって計算され、アプリはパイプ属性のクエリ中に値を取得できます。
 
-アイソクロナスのパケットのサイズは、アプリによって割り当てられる転送バッファーのサイズを決定します。 バッファーは、フレームの境界線に終了する必要があります。 転送の合計サイズは、データ、アプリが送信または受信する必要がある量に依存します。 アプリによって、転送が開始されると後、は、各間隔で、ホストは送信または、間隔ごとに許可される最大バイト数を受信するため、転送バッファーが packetizes ホスト。
+アイソクロナスパケットのサイズによって、アプリが割り当てる転送バッファーのサイズが決まります。 バッファーはフレームの境界で終了する必要があります。 転送の合計サイズは、アプリが送信または受信するデータの量によって異なります。 転送がアプリによって開始されると、ホストは、各間隔で、ホストが1間隔で許可される最大バイト数を送受信できるように転送バッファーを packetizes します。
 
-データ転送では、すべてのバスの間隔が使用されます。 このトピックで使用するバスの間隔と呼ばれる*サービス間隔*します。
+データ転送の場合、すべてのバス間隔が使用されるわけではありません。 このトピックでは、使用されるバス間隔を*サービス間隔*と呼びます。
 
-**データが転送されるフレームを計算する方法**
+**データが送信されるフレームを計算する方法**
 
-アプリは、2 つの方法のいずれかでフレームを指定できます。
+アプリでは、次の2つの方法のいずれかでフレームを指定できます。
 
--   自動的に。 このモードでは、アプリは、次の適切なフレームで、転送を送信する USB ドライバー スタックを指示します。 アプリは、バッファーがドライバー スタックが開始フレームを計算するために、継続的なストリームがかどうかを指定する必要がありますもできます。
--   現在のフレームよりも後の開始フレームを指定します。 アプリでは、転送し、USB ドライバー スタックがそれを処理するときに、アプリを起動するまでの待ち時間を考慮します。
+-   自動的に。 このモードでは、アプリは、次の適切なフレームで転送を送信するように USB ドライバースタックに指示します。 アプリでは、ドライバースタックが開始フレームを計算できるように、バッファーが連続ストリームであるかどうかも指定する必要があります。
+-   現在のフレームよりも後の開始フレームを指定します。 アプリは、アプリが転送を開始してから、USB ドライバースタックで処理されるまでの待機時間を考慮する必要があります。
 
 **コード例の説明**
 
-このトピックの例では、これらの使用法を示します[WinUSB Functions](using-winusb-api-to-communicate-with-a-usb-device.md):
+このトピックの例では、これらの[Winusb 関数](using-winusb-api-to-communicate-with-a-usb-device.md)の使用方法を示します。
 
 -   [**WinUsb\_QueryPipeEx**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_querypipeex)
 -   [**WinUsb\_RegisterIsochBuffer**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_registerisochbuffer)
@@ -62,44 +62,44 @@ USB デバイスは、オーディオ/ビデオ ストリーミングなど、�
 -   [**WinUsb\_GetCurrentFrameNumber**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_getcurrentframenumber)
 -   [**WinUsb\_GetAdjustedFrameNumber**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_getadjustedframenumber)
 
-このトピックでは読み取りがお高速デバイスに 3 つの転送に 30 ミリ秒のデータを書き込みます。 パイプは、各サービスの間隔で 1024 バイトを転送することができます。 ポーリング間隔が 1 であるために、フレームのすべての microframe でデータが転送されます。 30 フレームの合計は 30 に実行\*8\*1024 バイト。
+このトピックでは、高速デバイスへの3つの転送で30ミリ秒のデータの読み取りと書き込みを行います。 パイプは、各サービス間隔で1024バイトを転送できます。 ポーリング間隔は1であるため、データはフレームのすべてのマイクロフレームで転送されます。 合計30フレームの\*8\*1024 バイトになります。
 
-読み取りを送信するため、関数を呼び出すし、書き込みの転送は似ています。 アプリでは、次の 3 つのすべての転送を保持するために十分な大きさ転送バッファーを割り当てます。 アプリが呼び出すことによって特定パイプのバッファーを登録します[ **WinUsb\_RegisterIsochBuffer**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_registerisochbuffer)します。 呼び出しは、送信、転送に使用される登録ハンドルを返します。 転送のバッファーを再利用し、バッファーのオフセットは次の一連のデータの送受信を調整します。
+読み取りと書き込みの転送を送信するための関数呼び出しは似ています。 このアプリは、3つの転送すべてを保持するのに十分な大きさの転送バッファーを割り当てます。 アプリは、 [**Winusb\_RegisterIsochBuffer**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_registerisochbuffer)を呼び出すことによって、特定のパイプのバッファーを登録します。 この呼び出しは、転送の送信に使用される登録ハンドルを返します。 バッファーは、後続の転送に再利用されます。バッファー内のオフセットは、次のデータセットを送受信するように調整されます。
 
-すべての転送の例では、非同期的に送信されます。 これは、アプリがの配列を割り当てます[ **OVERLAPPED** ](https://docs.microsoft.com/windows/desktop/api/shobjidl/ns-shobjidl-_overlapped)の各転送には、1 つずつ、3 つの要素を含む構造体。 アプリは、転送が完了し、操作の結果を取得するときに通知を取得できるように、イベントを提供します。 これは、各**OVERLAPPED** 、配列は、アプリ内の構造がイベントの割り当てし、ハンドルを設定、 **hEvent**メンバー。
+この例の転送はすべて非同期に送信されます。 この場合、アプリは、転送ごとに1つずつ、3つの要素を持つ[**オーバーラップ**](https://docs.microsoft.com/windows/desktop/api/shobjidl/ns-shobjidl-_overlapped)構造の配列を割り当てます。 アプリは、転送が完了したときに通知を受け取り、操作の結果を取得できるように、イベントを提供します。 この場合、配列内の各**オーバーラップ**構造では、アプリがイベントを割り当て、 **hevent**メンバーのハンドルを設定します。
 
-この図を使用して読み取り転送の 3 つ、 [ **WinUsb\_ReadIsochPipeAsap** ](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_readisochpipeasap)関数。 呼び出しでは、各転送のオフセットと長さを指定します。 *ContinueStream*パラメーター値が false に設定すると、新しいストリームを示します。 その後、アプリは、データのストリーミングを継続的なために、前回の要求の最後のフレームの直後に続く後続の転送をスケジュールすることを要求します。 アイソクロナス パケットの数はフレームあたりのパケット数として計算されます\*フレームの数は 8\*10。 この呼び出しで、アプリは開始フレームの数を計算するについて心配しない必要があります。
+このイメージは、 [**Winusb\_ReadIsochPipeAsap**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_readisochpipeasap)関数を使用した3つの読み取り転送を示しています。 この呼び出しは、各転送のオフセットと長さを指定します。 新しいストリームを示すには、*続行*するためのパラメーター値が FALSE です。 その後、アプリは、データの継続的ストリーミングを可能にするために、前の要求の最後のフレームの直後に後続の転送をスケジュールするように要求します。 アイソクロナスパケットの数はフレームごとにパケットとして計算されます \* フレーム数。8\*10。 この呼び出しでは、アプリは開始フレーム番号の計算を気にする必要がありません。
 
-![アイソクロナス読み取り転送 winusb 関数](images/isoch-app-read.png)
+![アイソクロナス読み取り転送用 winusb 関数](images/isoch-app-read.png)
 
-この図は、転送を使用して書き込む 3 つ、 [ **WinUsb\_WriteIsochPipe** ](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_writeisochpipe)関数。 呼び出しでは、各転送のオフセットと長さを指定します。 この場合、アプリでは、ホスト コント ローラーでデータの送信を開始できますフレーム数を計算する必要があります。 出力では、関数は、前の転送に使用される最後のフレームを次のフレームのフレーム数を受け取ります。 現在のフレームでは、アプリの呼び出しを取得する[ **WinUsb\_GetCurrentFrameNumber**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_getcurrentframenumber)します。 この時点で、アプリは、USB ドライバー スタックは遅延のパケットを削除しないように、[次へ] の転送の開始フレームが現在のフレームよりも後であることを確認して行う必要があります。 そのためをアプリの呼び出しを[ **WinUsb\_GetAdjustedFrameNumber** ](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_getadjustedframenumber)現実的な現在のフレーム数を取得する (これは、受信した現在のフレーム数よりも後です)。 安全策としては、アプリは、5 つ以上のフレームを追加し、転送を送信します。
+このイメージは、 [**Winusb\_WriteIsochPipe**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_writeisochpipe)関数を使用した3つの書き込み転送を示しています。 この呼び出しは、各転送のオフセットと長さを指定します。 この場合、アプリは、ホストコントローラーがデータの送信を開始できるフレーム番号を計算する必要があります。 出力時に、関数は、前の転送で使用された最後のフレームの次のフレーム番号を受け取ります。 現在のフレームを取得するために、アプリは[**Winusb\_GetCurrentFrameNumber**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_getcurrentframenumber)を呼び出します。 この時点で、アプリは、次の転送の開始フレームが現在のフレームよりも後であることを確認する必要があります。これにより、USB ドライバースタックは遅延パケットを破棄しません。 これを行うには、アプリは[**Winusb\_GetAdjustedFrameNumber**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_getadjustedframenumber)を呼び出して、実際の現在のフレーム番号を取得します (これは受信した現在のフレーム番号よりも後になります)。 安全性を高めるために、アプリはさらに5つのフレームを追加し、転送を送信します。
 
-![アイソクロナス書き込み転送 winusb 関数](images/isoch-app-write.png)
+![アイソクロナス書き込み転送用 winusb 関数](images/isoch-app-write.png)
 
-アプリが呼び出すことによって、転送の結果を取得する各転送が完了すると、 [ **WinUsb\_GetOverlappedResult**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_getoverlappedresult)します。 *して*できるように、操作が完了するまで、呼び出しが返されませんが、パラメーターを TRUE に設定します。 読み取りし、書き込みの転送の場合、 *lpNumberOfBytesTransferred*パラメーターは常に 0 です。 書き込み転送では、アプリでは、操作を正常に完了する場合すべてのバイトに転送された想定しています。 読み取りの転送、**長さ**アイソクロナス各パケットのメンバー ([**USBD\_ISO\_パケット\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_usbd_iso_packet_descriptor))、間隔ごと、そのパケットの転送バイト数が含まれています。 合計の長さを取得するには、アプリを追加すべて**長さ**値。
+各転送が完了すると、 [**Winusb\_GetOverlappedResult**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_getoverlappedresult)を呼び出すことによって、転送の結果が得られます。 *Bwait*パラメーターは TRUE に設定されているため、操作が完了するまで呼び出しは返されません。 読み取りおよび書き込み転送の場合、 *lpNumberOfBytesTransferred*パラメーターは常に0です。 書き込み転送の場合、アプリは、操作が正常に完了した場合、すべてのバイトが転送されたと想定しています。 読み取り転送の場合、各アイソクロナスパケットの**長さ**のメンバー ([**USBD\_ISO\_パケット\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_usbd_iso_packet_descriptor)) には、そのパケットで転送されたバイト数が間隔ごとに含まれます。 合計の長さを取得するために、アプリはすべての**長さ**の値を追加します。
 
-呼び出すことによって、アプリのアイソクロナス バッファー ハンドルがリリースし終わったら、 [ **WinUsb\_UnregisterIsochBuffer**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_unregisterisochbuffer)します。
+完了すると、アプリは[**Winusb\_UnregisterIsochBuffer**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_unregisterisochbuffer)を呼び出すことによって、アイソクロナスバッファーハンドルを解放します。
 
 ## <a name="before-you-start"></a>はじめに...
 
 
-いることを確認してください、
+このことを確認してください。
 
--   デバイス ドライバーは、Microsoft 提供のドライバーを示します。WinUSB (Winusb.sys)。 そのドライバーが含まれて、 \\Windows\\System32\\フォルダー。 詳細については、次を参照してください。 [WinUSB (Winusb.sys) インストール](winusb-installation.md)します。
+-   デバイスドライバーは、Microsoft 提供のドライバーである WinUSB (Winusb .sys) です。 このドライバは \\Windows\\System32\\ フォルダに含まれています。 詳細については、 [winusb (winusb .sys) のインストール](winusb-installation.md)に関する説明を参照してください。
 
--   呼び出すことによってデバイスに WinUSB インターフェイスのハンドルを取得する以前[ **WinUsb\_初期化**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_initialize)します。 すべての操作は、そのハンドルを使用して実行されます。 読み取り[WinUSB 関数を使用して、USB デバイスへのアクセス方法](using-winusb-api-to-communicate-with-a-usb-device.md)します。
+-   [**Winusb\_Initialize**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_initialize)を呼び出して、デバイスへの winusb インターフェイスハンドルを取得しました。 すべての操作は、そのハンドルを使用して実行されます。 「 [Winusb 機能を使用して Usb デバイスにアクセスする方法](using-winusb-api-to-communicate-with-a-usb-device.md)」を参照してください。
 
--   アクティブなインターフェイスの設定が、アイソクロナス エンドポイント。 それ以外の場合、ターゲット エンドポイントのパイプにアクセスすることはできません。
+-   アクティブインターフェイスの設定には、アイソクロナスエンドポイントがあります。 それ以外の場合、ターゲットエンドポイントのパイプにアクセスすることはできません。
 
-## <a name="step-1-find-the-isochronous-pipe-in-the-active-setting"></a>手順 1:アクティブな設定でアイソクロナス パイプを検索します。
+## <a name="step-1-find-the-isochronous-pipe-in-the-active-setting"></a>手順 1: アクティブな設定でアイソクロナスパイプを検索する
 
 
-1.  呼び出すことによって、アイソクロナス エンドポイントを持つ USB インターフェイスを取得[ **WinUsb\_QueryInterfaceSettings**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_queryinterfacesettings)します。
-2.  エンドポイントを定義するインターフェイスの設定のパイプを列挙します。
-3.  エンドポイントごと関連するパイプのプロパティを取得、 [ **WINUSB\_パイプ\_情報\_EX** ](https://docs.microsoft.com/windows/desktop/api/winusbio/ns-winusbio-_winusb_pipe_information_ex)呼び出して構造[ **WinUsb\_QueryPipeEx**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_querypipeex)します。 取得して、 **WINUSB\_パイプ\_情報\_EX**アイソクロナス パイプに関する情報を含む構造体。 構造体には、パイプ、その種類、id、およびなどに関する情報が含まれています。
-4.  パイプの転送に使用する必要がありますがあるかどうかを判断する構造体のメンバーを確認します。 場合は、格納、 **PipeId**値。 テンプレート コードでは、デバイスにメンバーを追加\_Device.h で定義されているデータ構造体。
+1.  [**Winusb\_QueryInterfaceSettings**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_queryinterfacesettings)を呼び出して、アイソクロナスエンドポイントを持つ USB インターフェイスを取得します。
+2.  エンドポイントを定義するインターフェイス設定のパイプを列挙します。
+3.  各エンドポイントについて、winusb [ **\_QueryPipeEx**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_querypipeex)を呼び出すことによって、 [**winusb\_パイプ\_情報\_EX**](https://docs.microsoft.com/windows/desktop/api/winusbio/ns-winusbio-_winusb_pipe_information_ex)構造体に関連付けられているパイプのプロパティを取得します。 取得した**Winusb\_パイプの\_情報\_EX**構造体には、アイソクロナスパイプに関する情報が含まれています。 構造体には、パイプ、その型、id などに関する情報が含まれています。
+4.  構造体のメンバーを調べて、転送に使用する必要があるパイプであるかどうかを判断します。 存在する場合は、 **PipeId**値を格納します。 テンプレートコードで、デバイスにメンバーを追加します。この\_データ構造は、デバイス .h に定義されています。
 
-この例では、アクティブな設定がアイソクロナス エンドポイントを持つかどうかを決定し、それらについての情報を取得する方法を示します。 この例では、デバイスは SuperMUTT デバイスです。 デバイスでは、1 を設定する代替既定インターフェイスで 2 つのアイソクロナス エンドポイントがあります。
+この例では、アクティブな設定にアイソクロナスエンドポイントがあるかどうかを確認し、それに関する情報を取得する方法を示します。 この例では、デバイスはスーパー Mutt デバイスです。 デバイスには、既定のインターフェイスに2つのアイソクロナスエンドポイント (代替設定 1) があります。
 
 ```ManagedCPlusPlus
 
@@ -167,27 +167,27 @@ HRESULT
 }
 ```
 
-SuperMUTT デバイスで、既定のインターフェイスでそのアイソクロナス エンドポイントが定義されて 1 を設定します。 上記のコードを取得、 **PipeId**値し、デバイスに格納\_データ構造体。
+SuperMUTT デバイスは、設定1で、既定のインターフェイス内のアイソクロナスエンドポイントを定義します。 上記のコードでは、 **PipeId**値を取得し、デバイス\_データ構造体に格納します。
 
-## <a name="step-2-get-interval-information-about-the-isochronous-pipe"></a>手順 2:アイソクロナス パイプに関する間隔情報を取得します。
+## <a name="step-2-get-interval-information-about-the-isochronous-pipe"></a>手順 2: アイソクロナスパイプに関する間隔情報を取得する
 
 
-次に、パイプへの呼び出しで取得したに関する情報を入手[ **WinUsb\_QueryPipeEx**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_querypipeex)します。
+次に、 [**Winusb\_QueryPipeEx**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_querypipeex)の呼び出しで取得したパイプに関する詳細情報を取得します。
 
 -   **転送サイズ**
 
-    1.  取得して、 [ **WINUSB\_パイプ\_情報\_EX** ](https://docs.microsoft.com/windows/desktop/api/winusbio/ns-winusbio-_winusb_pipe_information_ex)構造体を取得、 **MaximumBytesPerInterval**と**間隔**値。
-    2.  アイソクロナス データの量によってを送信または受信は、転送のサイズを計算します。 たとえば、この計算を考慮してください。
+    1.  取得した[**Winusb\_パイプ\_情報\_EX**](https://docs.microsoft.com/windows/desktop/api/winusbio/ns-winusbio-_winusb_pipe_information_ex)構造体から、 **maximumbytesperinterval**と**interval**の値を取得します。
+    2.  送信または受信するアイソクロナスデータの量に応じて、転送サイズを計算します。 たとえば、次の計算を考えてみます。
 
         ` TransferSize = ISOCH_DATA_SIZE_MS * pipeInfoEx.MaximumBytesPerInterval * (8 / pipeInfoEx.Interval);             `
 
-        例では、10 ミリ秒アイソクロナス データの転送サイズを計算します。
+        この例では、転送サイズは10ミリ秒のアイソクロナスデータに対して計算されます。
 
--   **Isochronous パケット数**たとえば、この計算。
+-   **アイソクロナスパケットの数**たとえば、次の計算を考えてみます。
 
-    全体の転送を保持するために必要な isochronous パケットの合計数を計算します。 この情報は、読み取り転送と、計算に必要な`>IsochInTransferSize / pipe.MaximumBytesPerInterval;             `します。
+    転送全体を保持するために必要なアイソクロナスパケットの合計数を計算します。 この情報は、読み取り転送に必要であり、`>IsochInTransferSize / pipe.MaximumBytesPerInterval;             `として計算されます。
 
-この例示しますは手順 1 の例にコードを追加し、アイソクロナス パイプの間隔の値を取得します。
+この例では、手順1の例にコードを追加し、アイソクロナスパイプの間隔の値を取得します。
 
 ```ManagedCPlusPlus
 
@@ -255,19 +255,19 @@ else if (pipe.PipeType == UsbdPipeTypeIsochronous)
 ...
 ```
 
-上記のコードでは、アプリを取得**間隔**と**MaximumBytesPerInterval**から[ **WINUSB\_パイプ\_情報\_EX** ](https://docs.microsoft.com/windows/desktop/api/winusbio/ns-winusbio-_winusb_pipe_information_ex)転送サイズと読み取りの転送に必要な isochronous パケットの数を計算します。 両方のアイソクロナス エンドポイント、**間隔**は 1 です。 その値は、フレームのすべての microframes がデータを伝達することを示します。 10 フレームを作成する必要があります、転送の合計サイズは 10 に基づいて、データの 10 ミリ秒を送信する\*1024\*8 バイトと 80 アイソクロナス パケット、各 1024 バイト長。
+前のコードでは、アプリは、 [**Winusb\_パイプ\_情報\_EX**](https://docs.microsoft.com/windows/desktop/api/winusbio/ns-winusbio-_winusb_pipe_information_ex)から**Interval**と**maximumbytesperinterval**を取得して、読み取り転送に必要な転送サイズとアイソクロナスパケットの数を計算します. 両方のアイソクロナスエンドポイントでは、 **Interval**は1です。 この値は、フレームのすべてのマイクロフレームがデータを保持することを示します。 これに基づき、10ミリ秒のデータを送信するには、10個のフレームが必要です。合計転送サイズは 10\*1024\*8 バイトと80アイソクロナスパケットで、各1024バイトになります。
 
-## <a name="step-3-send-a-write-transfer-to-send-data-to-an-isochronous-out-endpoint"></a>手順 3:データをアイソクロナス エンドポイントに送信する書き込み転送を送信します。
+## <a name="step-3-send-a-write-transfer-to-send-data-to-an-isochronous-out-endpoint"></a>手順 3: データをアイソクロナス出力エンドポイントに送信するための書き込み転送を送信する
 
 
-この手順では、アイソクロナス エンドポイントにデータを書き込むための手順をまとめたものです。
+この手順では、アイソクロナスエンドポイントにデータを書き込む手順の概要を示します。
 
-1.  送信するデータを格納しているバッファーを割り当てます。
-2.  データを非同期的に送信する場合は、割り当てし、初期化、 [ **OVERLAPPED** ](https://docs.microsoft.com/windows/desktop/api/shobjidl/ns-shobjidl-_overlapped)イベントの呼び出し元が割り当てたオブジェクトへのハンドルを含む構造体。 構造体をゼロに初期化する必要があります、それ以外の場合、呼び出しは失敗します。
-3.  バッファーを呼び出すことによって登録[ **WinUsb\_RegisterIsochBuffer**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_registerisochbuffer)します。
-4.  転送を呼び出すことによって開始[ **WinUsb\_WriteIsochPipeAsap**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_writeisochpipeasap)します。 データが転送は、呼び出しフレームを手動で指定する場合[ **WinUsb\_WriteIsochPipe** ](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_writeisochpipe)代わりにします。
-5.  呼び出すことによって、転送の結果を得る[ **WinUsb\_GetOverlappedResult**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_getoverlappedresult)します。
-6.  完了したら、呼び出すことによってバッファー ハンドルを解放[ **WinUsb\_UnregisterIsochBuffer**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_unregisterisochbuffer)、重複イベント ハンドル、および転送バッファー。
+1.  送信するデータを格納するバッファーを割り当てます。
+2.  データを非同期に送信する場合は、呼び出し元が割り当てたイベントオブジェクトへのハンドルを含む[**オーバーラップ**](https://docs.microsoft.com/windows/desktop/api/shobjidl/ns-shobjidl-_overlapped)構造体を割り当て、初期化します。 構造体はゼロに初期化する必要があります。それ以外の場合、呼び出しは失敗します。
+3.  [**Winusb\_RegisterIsochBuffer**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_registerisochbuffer)を呼び出してバッファーを登録します。
+4.  [**Winusb\_WriteIsochPipeAsap**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_writeisochpipeasap)を呼び出して転送を開始します。 データを転送するフレームを手動で指定する場合は、代わりに[**Winusb\_WriteIsochPipe**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_writeisochpipe)を呼び出します。
+5.  [**Winusb\_GetOverlappedResult**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_getoverlappedresult)を呼び出して、転送の結果を取得します。
+6.  完了したら、 [**Winusb\_UnregisterIsochBuffer**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_unregisterisochbuffer)、重複イベントハンドル、および転送バッファーを呼び出して、バッファーハンドルを解放します。
 
 書き込み転送を送信する方法を示す例を次に示します。
 
@@ -463,20 +463,20 @@ Error:
 }
 ```
 
-## <a name="step-4-send-a-read-transfer-to-receive-data-from-an-isochronous-in-endpoint"></a>手順 4:アイソクロナス エンドポイントからデータを受け取る読み取り転送を送信します。
+## <a name="step-4-send-a-read-transfer-to-receive-data-from-an-isochronous-in-endpoint"></a>手順 4: エンドポイントのアイソクロナスからデータを受信するために読み取り転送を送信する
 
 
-この手順では、アイソクロナス エンドポイントからデータを読み取るための手順をまとめたものです。
+この手順は、アイソクロナスエンドポイントからデータを読み取る手順をまとめたものです。
 
-1.  転送の最後にデータを受け取る転送バッファーを割り当てます。 バッファーのサイズに基づく必要がある手順 2. で、転送のサイズを計算します。 転送バッファーは、フレームの境界線に終了する必要があります。
-2.  データを非同期的に送信する場合は、割り当て、 [ **OVERLAPPED** ](https://docs.microsoft.com/windows/desktop/api/shobjidl/ns-shobjidl-_overlapped)イベントの呼び出し元が割り当てたオブジェクトへのハンドルを含む構造体。 構造体をゼロに初期化する必要があります、それ以外の場合、呼び出しは失敗します。
-3.  バッファーを呼び出すことによって登録[ **WinUsb\_RegisterIsochBuffer**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_registerisochbuffer)します。
-4.  アイソクロナス数に基づいて、手順 2. で計算されたパケットがアイソクロナス パケットの配列を割り当てます ([**USBD\_ISO\_パケット\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_usbd_iso_packet_descriptor))。
-5.  転送を呼び出すことによって開始[ **WinUsb\_ReadIsochPipeAsap**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_readisochpipeasap)します。 データが転送は、呼び出しの開始フレームを手動で指定する場合[ **WinUsb\_ReadIsochPipe** ](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_readisochpipe)代わりにします。
-6.  呼び出すことによって、転送の結果を得る[ **WinUsb\_GetOverlappedResult**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_getoverlappedresult)します。
-7.  完了したら、呼び出すことによってバッファー ハンドルを解放[ **WinUsb\_UnregisterIsochBuffer**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_unregisterisochbuffer)、重複イベント ハンドル、アイソクロナスのパケットの配列、および転送バッファー。
+1.  転送の最後にデータを受信する転送バッファーを割り当てます。 バッファーのサイズは、手順2での転送サイズの計算に基づいている必要があります。 転送バッファーはフレーム境界で終了する必要があります。
+2.  データを非同期で送信する場合は、呼び出し元が割り当てたイベントオブジェクトへのハンドルを含む[**オーバーラップ**](https://docs.microsoft.com/windows/desktop/api/shobjidl/ns-shobjidl-_overlapped)構造体を割り当てます。 構造体はゼロに初期化する必要があります。それ以外の場合、呼び出しは失敗します。
+3.  [**Winusb\_RegisterIsochBuffer**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_registerisochbuffer)を呼び出してバッファーを登録します。
+4.  手順 2. で計算したアイソクロナスパケットの数に基づいて、アイソクロナスパケットの配列 ([**USBD\_ISO\_パケット\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_usbd_iso_packet_descriptor)) を割り当てます。
+5.  [**Winusb\_ReadIsochPipeAsap**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_readisochpipeasap)を呼び出して転送を開始します。 データを転送する開始フレームを手動で指定する場合は、代わりに[**Winusb\_ReadIsochPipe**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_readisochpipe)を呼び出します。
+6.  [**Winusb\_GetOverlappedResult**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_getoverlappedresult)を呼び出して、転送の結果を取得します。
+7.  完了したら、 [**Winusb\_UnregisterIsochBuffer**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_unregisterisochbuffer)、重複イベントハンドル、アイソクロナスパケットの配列、および転送バッファーを呼び出すことによって、バッファーハンドルを解放します。
 
-WinUsb を呼び出すことによって、読み取りの転送を送信する方法を示す例を次に示します\_ReadIsochPipeAsap と WinUsb\_ReadIsochPipe します。
+WinUsb\_ReadIsochPipeAsap と WinUsb\_ReadIsochPipe を呼び出して、読み取り転送を送信する方法の例を次に示します。
 
 ```ManagedCPlusPlus
 #define ISOCH_TRANSFER_COUNT   3
@@ -685,7 +685,7 @@ Error:
 ```
 
 ## <a name="related-topics"></a>関連トピック
-[WinUSB 関数を使用して、USB デバイスにアクセスする方法](using-winusb-api-to-communicate-with-a-usb-device.md)  
+[WinUSB 機能を使用して USB デバイスにアクセスする方法](using-winusb-api-to-communicate-with-a-usb-device.md)  
 [WinUSB 関数](using-winusb-api-to-communicate-with-a-usb-device.md)  
 
 

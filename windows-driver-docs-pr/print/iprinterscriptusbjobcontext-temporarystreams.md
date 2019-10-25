@@ -1,14 +1,14 @@
 ---
-title: IPrinterScriptUsbJobContext TemporaryStreams メソッド
-description: 現在のジョブの IHV JavaScript 関数で使用できる永続的なデータ ストリームの IPrinterScriptableSequentialStream インターフェイスの配列を返します。
+title: Iプリンター Scriptusbjobcontext の一時ストリームメソッド
+description: 現在のジョブの IHV JavaScript 関数で使用できる永続データストリームの IPrinterScriptableSequentialStream インターフェイスの配列を返します。
 MSHAttr:
 - PreferredSiteName:MSDN
 - PreferredLib:/library/windows/hardware
 ms.assetid: ED9AFB90-287B-4030-AC20-ECCA9841D27E
 keywords:
-- 印刷デバイスの TemporaryStreams メソッド
-- TemporaryStreams メソッド、印刷デバイス IPrinterScriptUsbJobContext インターフェイス
-- IPrinterScriptUsbJobContext インターフェイス、印刷デバイス TemporaryStreams メソッド
+- 一時ストリーム方式の印刷デバイス
+- 一時ストリームメソッドの印刷デバイス、Iプリンター Scriptusbjobcontext インターフェイス
+- Iプリンター Scriptusbjobcontext インターフェイスの印刷デバイス、一時ストリームメソッド
 topic_type:
 - apiref
 api_name:
@@ -17,16 +17,16 @@ api_type:
 - COM
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b1f44c1332415f4cd5ac98d450b87dcec3cdea37
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c596e7c379d77b866b69c234b32da8a442999654
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63349225"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844327"
 ---
-# <a name="iprinterscriptusbjobcontexttemporarystreams-method"></a>IPrinterScriptUsbJobContext::TemporaryStreams メソッド
+# <a name="iprinterscriptusbjobcontexttemporarystreams-method"></a>Iプリンター Scriptusbjobcontext:: 一時ストリームメソッド
 
-配列を返します[IPrinterScriptableSequentialStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterscriptablesequentialstream)は現在のジョブ、IHV JavaScript 関数で使用できる永続的なデータ ストリームのインターフェイス。
+現在のジョブの IHV JavaScript 関数で使用できる永続データストリームの[IPrinterScriptableSequentialStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprinterscriptablesequentialstream)インターフェイスの配列を返します。
 
 <a name="syntax"></a>構文
 ------
@@ -40,18 +40,18 @@ HRESULT TemporaryStreams(
 <a name="parameters"></a>パラメーター
 ----------
 
-*ppArray* \[out, retval\]  
-配列を指すポインター [IPrinterScriptableSequentialStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterscriptablesequentialstream)インターフェイス。
+*Pparray* \[out、retval\]  
+[IPrinterScriptableSequentialStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprinterscriptablesequentialstream)インターフェイスの配列へのポインター。
 
 <a name="return-value"></a>戻り値
 ------------
 
-このメソッドが戻る、 **HRESULT**値。
+このメソッドは、 **HRESULT**値を返します。
 
 <a name="remarks"></a>注釈
 -------
 
-**TemporaryStreams**は読み取り専用のメソッドです。 一時ストリームを 2 つの最大値は IHV JavaScript 関数を使用できます。 これらのストリームは現在の印刷ジョブの実行中のみ使用できます。 IHV は、印刷デバイスに送信できる状態にはまだデータを格納するのにこれを使用できます。 それ以降の**writePrintData** JavaScript 関数の呼び出し、これらのストリームは、印刷デバイスに格納されているデータを送信するために使用できます。
+**一時ストリーム**は読み取り専用のメソッドです。 IHV JavaScript 関数は、最大2つの一時ストリームを使用できます。 これらのストリームは、現在の印刷ジョブの期間中のみ使用できます。 IHV はこれを使用して、まだ印刷デバイスに送信する準備ができていないデータを格納できます。 後の**Writeprintdata** JavaScript 関数呼び出しでは、これらのストリームを使用して、保存されたデータを印刷デバイスに送信できます。
 
 <a name="requirements"></a>要件
 ------------
@@ -79,6 +79,6 @@ HRESULT TemporaryStreams(
 
 ## <a name="see-also"></a>関連項目
 
-[**IPrinterScriptUsbJobContext**](iprinterscriptusbjobcontext.md)
+[**Iプリンター Scriptusbjobcontext**](iprinterscriptusbjobcontext.md)
 
-[IPrinterScriptableSequentialStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterscriptablesequentialstream)
+[IPrinterScriptableSequentialStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprinterscriptablesequentialstream)

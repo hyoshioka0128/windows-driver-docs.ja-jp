@@ -3,27 +3,27 @@ title: エラー ソースを有効にする
 description: エラー ソースを有効にする
 ms.assetid: a65357fa-e600-47fe-8719-b67c36542711
 keywords:
-- エラー ソース WDK WHEA、有効にします。
-- エラーのソースを有効にすると、Windows ハードウェア エラー アーキテクチャ WDK
-- WHEA WDK、エラーのソースを有効にします。
-- エラーのソースを有効にすると、WDK WHEA エラー
-- ハードウェア エラーのソースを有効にする、WDK WHEA
-- エラー ソース WDK を有効にします。
+- WDK WHEA のエラーソースが有効になります。
+- Windows ハードウェアエラーアーキテクチャ WDK、エラーソースの有効化
+- WHEA WDK、エラーソースの有効化
+- エラー WDK WHEA、エラーソースの有効化
+- ハードウェアエラーソース WDK WHEA、有効化
+- エラーソース WDK の有効化
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c791344a61b3854be1a31937249ef8d65db6ae9d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c02e2d3ceafde4ca0a08548fb9b286467edc50d5
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362593"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844379"
 ---
 # <a name="enabling-an-error-source"></a>エラー ソースを有効にする
 
 
-ユーザー モード アプリケーションを有効にすることができます、[エラー ソース](hardware-errors-and-error-sources.md)呼び出すことによって、 [ **WHEAErrorSourceMethods::EnableErrorSourceRtn** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_whea/)メソッド。
+ユーザーモードアプリケーションでは、 [**WHEAErrorSourceMethods:: EnableErrorSourceRtn**](https://docs.microsoft.com/windows-hardware/drivers/ddi/_whea/)メソッドを呼び出すことによって、[エラーソース](hardware-errors-and-error-sources.md)を有効にすることができます。
 
-次のコード例では、エラーのソースを有効にする方法を示します。
+次のコード例は、エラーソースを有効にする方法を示しています。
 
 ```cpp
 IWbemServices *pIWbemServices;
@@ -124,7 +124,7 @@ pClass->Release();
 pOutParameters->Release();
 ```
 
-ユーザー モード アプリケーションを無効にすることができます、[エラー ソース](hardware-errors-and-error-sources.md)呼び出すことによって、 [ **WHEAErrorSourceMethods::DisableErrorSourceRtn** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_whea/)メソッド。 エラーのソースを無効にする方法の詳細については、次を参照してください。 [、エラーのソースを無効にする](disabling-an-error-source.md)します。
+ユーザーモードアプリケーションでは、 [**WHEAErrorSourceMethods::D isableErrorSourceRtn**](https://docs.microsoft.com/windows-hardware/drivers/ddi/_whea/)メソッドを呼び出すことによって、[エラーソース](hardware-errors-and-error-sources.md)を無効にすることができます。 エラーソースを無効にする方法の詳細については、「[エラーソースの無効化](disabling-an-error-source.md)」を参照してください。
 
  
 

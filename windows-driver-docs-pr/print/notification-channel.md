@@ -3,21 +3,21 @@ title: 通知チャンネル
 description: 通知チャンネル
 ms.assetid: 3161342a-0737-4f3b-bb16-32d6949bceea
 keywords:
-- スプーラ通知 WDK の印刷、チャネル
-- 印刷スプーラ通知 WDK とチャネル
-- 通知チャネルの WDK 印刷スプーラー
+- スプーラ通知 WDK print、channel
+- 印刷スプーラ通知 WDK、チャネル
+- 通知チャネル WDK 印刷スプーラ
 - CreatePrintAsyncNotifyChannel
-- チャネル通知 WDK の印刷スプーラー
-- データ チャネルの WDK スプーラーの通知
+- チャネル通知 WDK 印刷スプーラ
+- データチャネル WDK スプーラ通知
 - IPrintAsyncNotifyChannel
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d6094c2414aa5648d8dd585274e057a5abcfcce
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 98f8159727f3ff78b84eaebcd2c1b6ae325f2f58
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385970"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845149"
 ---
 # <a name="notification-channel"></a>通知チャンネル
 
@@ -25,7 +25,7 @@ ms.locfileid: "67385970"
 
 
 
-このセクションでは、に関する情報を格納、 [CreatePrintAsyncNotifyChannel](https://go.microsoft.com/fwlink/p/?linkid=124750)関数と[IPrintAsyncNotifyChannel](https://go.microsoft.com/fwlink/p/?linkid=124758)インターフェイス。
+このセクションには、 [CreatePrintAsyncNotifyChannel](https://go.microsoft.com/fwlink/p/?linkid=124750)関数と[IPrintAsyncNotifyChannel](https://go.microsoft.com/fwlink/p/?linkid=124758)インターフェイスに関する情報が含まれています。
 
 ```cpp
 HRESULT
@@ -39,31 +39,31 @@ HRESULT
     );
 ```
 
-コンポーネントの呼び出しの印刷、 **CreatePrintAsyncNotifyChannel**通知チャネルを作成する関数。 チャネルは、プリンターごとまたはサーバーごとに指定できます。
+印刷コンポーネントは、通知チャネルを作成するために**CreatePrintAsyncNotifyChannel**関数を呼び出します。 チャネルは、プリンターごとまたはサーバーごとに指定できます。
 
-印刷のコンポーネントは、コンポーネントが、スプーラーによって読み込まれる場合にのみ、通知チャネルを開くことができます。 Winspool.drv は、アプリケーション内で、スプーラー サービスではなく、呼び出し元が実行されている場合、この機能を無効にします。 呼び出しのレンダリングを実行するドライバーが読み込まれたら、アプリケーション**CreatePrintAsyncNotifyChannel**は失敗します。 ただし、スプーラー サービスによって、ドライバーが読み込まれている場合、同じ呼び出しは成功します。
+印刷コンポーネントは、コンポーネントがスプーラによって読み込まれた場合にのみ、通知チャネルを開くことができます。 呼び出し元がスプーラサービスではなく、アプリケーション内で実行されている場合、winspool. drv はこの機能を無効にします。 たとえば、アプリケーションがレンダリングを実行するためにドライバーを読み込む場合、 **CreatePrintAsyncNotifyChannel**の呼び出しは失敗します。 ただし、ドライバーがスプーラサービスによって読み込まれた場合、同じ呼び出しは成功します。
 
-Spoolss.lib では、この機能を提供するため、ポート モニターは、チャネルを開くことができます。 スプーラー内で実行して、Spoolss.lib にリンクされているコンポーネントを呼び出すことができます、 **CreatePrintAsyncNotifyChannel**関数。 次の手順では、この関数の呼び出しで各入力パラメーターの目的について説明します。 最初の手順の手順では、この関数の最初のパラメーターに適用されます、2 番目のパラメーター、およびなどに 2 番目の手順が適用されます。
+Spoolss は、ポートモニターがチャネルを開けるように、この機能を提供します。 スプーラ内で実行され、Spoolss にリンクされているコンポーネントは、 **CreatePrintAsyncNotifyChannel**関数を呼び出すことができます。 次の手順では、この関数の呼び出しにおける各入力パラメーターの目的について説明します。 このプロシージャの最初のステップは、この関数の最初のパラメーターに適用され、2番目のステップは2番目のパラメーターに適用されます。
 
 通知チャネルを作成するには、次の項目を指定します。
 
 1.  プリンターまたはサーバーの名前。
 
-2.  通知チャネルの種類。 呼び出し元がこのチャネルで送信される通知の種類を指定できます。
+2.  通知チャネルの種類。 呼び出し元は、このチャネルで送信される通知の種類を指定できます。
 
-3.  ユーザー フィルター。 呼び出し元は、通知送信側と同じユーザーまたはすべてのユーザーか、通知を受信しているユーザーを指定できます。
+3.  ユーザーフィルター。 呼び出し元は、通知を受信するユーザー (通知の送信者と同じユーザーまたはすべてのユーザー) を指定できます。
 
-4.  メッセージ交換を返すフィルター。 呼び出し元は、これは、一方向または双方向チャネルかどうかを指定する必要があります。 一方向として、チャネルをマークするには、最後のパラメーターを設定します (型の**IPrintAsyncNotifyChannel**\*\*) の**CreatePrintAsyncNotifyChannel**に**NULL**.
+4.  メッセージ交換フィルター。 呼び出し元は、これが一方向チャネルと双方向チャネルのどちらであるかを指定する必要があります。 チャネルを一方向としてマークするには、 **CreatePrintAsyncNotifyChannel**の最後のパラメーター (型**IPrintAsyncNotifyChannel**\*\*) を**NULL**に設定します。
 
-5.  **IPrintAsyncNotifyCallback**インターフェイス通知は、チャネルのもう一方の端から戻ったときに呼び出されます。 これは、 **NULL**呼び出し元が応答を受信する必要はないです場合。
+5.  チャネルのもう一方の端から通知が返されたときに呼び出される**IPrintAsyncNotifyCallback**インターフェイス。 呼び出し元が応答を受信したくない場合は、 **NULL**になることがあります。
 
-ときに**CreatePrintAsyncNotifyChannel** 6 番目のパラメーターを返します (型の**IPrintAsyncNotifyChannel**\*\*) のアドレスを格納するメモリ位置を指す**IPrintAsyncNotifyChannel**オブジェクト。 このオブジェクトは、チャネルを識別し、通知を送信して、チャネルを閉じるために使用します。
+**CreatePrintAsyncNotifyChannel**がを返す場合、6番目のパラメーター ( **IPrintAsyncNotifyChannel**\*\*) は、 **IPrintAsyncNotifyChannel**オブジェクトのアドレスを格納しているメモリ位置を指します。 このオブジェクトは、チャネルを識別し、通知を送信したり、チャネルを閉じたりするために使用されます。
 
 ### <a name="iprintasyncnotifychannel-interface"></a>IPrintAsyncNotifyChannel インターフェイス
 
-**IPrintAsyncNotifyChannel**インターフェイスは、チャネルを識別し、通知を送信して、チャネルを閉じるために使用します。 印刷コンポーネントを呼び出すと、 **CreatePrintAsyncNotifyChannel**を公開するオブジェクトを提供することで通知チャネル、スプーラー サービスが応答を作成する関数、 **IPrintAsyncNotifyChannel**インターフェイス。
+**IPrintAsyncNotifyChannel**インターフェイスはチャネルを識別し、通知を送信したり、チャネルを閉じたりするために使用されます。 印刷コンポーネントが通知チャネルを作成するために**CreatePrintAsyncNotifyChannel**関数を呼び出すと、スプーラサービスは**IPrintAsyncNotifyChannel**インターフェイスを公開するオブジェクトを提供することによって応答します。
 
-このインターフェイスから継承、 **IUnknown**インターフェイスの COM または C++ オブジェクトのいずれか、スプーラーの通知メカニズムのクライアントを実装できるようにします。 次のコード例では、インターフェイス宣言では、この継承を示します。
+このインターフェイスは、スプーラ通知機構のクライアントが COM またはC++オブジェクトを実装できるように、IUnknown インターフェイスから継承します。 次のコード例のインターフェイス宣言は、この継承を示しています。
 
 ```cpp
 #define INTERFACE IPrintAsyncNotifyChannel
@@ -95,26 +95,26 @@ DECLARE_INTERFACE_(IPrintAsyncNotifyChannel, IUnknown)
 };
 ```
 
-送信者の呼び出し、通知を送信する、 [IPrintAsyncNotifyChannel::SendNotification](https://go.microsoft.com/fwlink/p/?linkid=124760)メソッド。 送信者は、チャネルを開き、通知に応答する必要があるときに、通知またはリッスンしているクライアントを送信するか、印刷コンポーネントを指定できます。 このメソッドは非同期的に動作します。 メソッドは、成功コードを返します、スプーラーはリスナーに通知を送信しようとします。 すべてのリスナーに通知を受け取ることの保証はありません。
+通知を送信するために、送信側は[IPrintAsyncNotifyChannel:: SendNotification](https://go.microsoft.com/fwlink/p/?linkid=124760)メソッドを呼び出します。 送信側は、チャネルを開く印刷コンポーネントのいずれかにすることができます。通知に応答する必要がある場合は、通知またはリッスンしているクライアントを送信します。 このメソッドは、非同期的に動作します。 メソッドが成功コードを返すと、スプーラはリスナーに通知を送信しようとします。 ただし、リスナーが通知を受信する保証はありません。
 
-チャネルを閉じるには、送信者またはリスナーを呼び出すことができます、 [IPrintAsyncNotifyChannel::CloseChannel](https://go.microsoft.com/fwlink/p/?linkid=124759)メソッド。 呼び出し元のチャネルを終了する理由を示す、通知に渡すことができますまたは渡すことができます、 **NULL**ポインター。 チャネルが閉じられたときにキューに置かれたすべての通知は破棄されます。
+チャネルを閉じるには、送信側またはリスナーが[IPrintAsyncNotifyChannel:: CloseChannel](https://go.microsoft.com/fwlink/p/?linkid=124759)メソッドを呼び出すことができます。 呼び出し元は、チャネルを閉じる理由を示す通知を渡すことができます。または、 **NULL**ポインターを渡すこともできます。 チャネルを閉じると、キューに置かれたすべての通知が破棄されます。
 
-呼び出すで注意する必要があります[リリース](https://go.microsoft.com/fwlink/p/?linkid=98433)、チャネル オブジェクトの不変性をプログラミングするすべての一般的な COM に従っていないためです。 呼び出す必要があります**リリース**で**IPrintAsyncNotifyChannel**次の条件が発生した場合にのみ。
+チャネルオブジェクトに対して[Release](https://go.microsoft.com/fwlink/p/?linkid=98433)を呼び出すことは、すべての一般的な COM プログラミングの不変条件に従うわけではないため、注意する必要があります。 次の条件が発生した場合にのみ、 **IPrintAsyncNotifyChannel**で**Release**を呼び出す必要があります。
 
--   呼び出した場合[AddRef](https://go.microsoft.com/fwlink/p/?linkid=98432)明示的にへの呼び出しと一致する必要がありますと**リリース**します。
+-   [AddRef](https://go.microsoft.com/fwlink/p/?linkid=98432)を明示的に呼び出した場合、 **Release**の呼び出しと照合する必要があります。
 
--   かどうか、一方向として、チャネルを作成し、呼び出す必要があります**リリース**出力パラメーターとして受信するポインターを 1 回です。 呼び出す必要があります**リリース**目的の通知を送信し、チャネルを終了した後。
+-   チャネルを一方向として作成した場合は、出力パラメーターとして受け取ったポインターに対して**Release**を1回呼び出す必要があります。 目的の通知を送信し、チャネルを終了したら、 **Release**を呼び出す必要があります。
 
--   双方向チャネルを作成した場合は、呼び出しする必要があります**リリース**出力パラメーターとして受信するポインターを 1 回です。 呼び出す必要があります**リリース**次の 1 つ以上を実行する場合にのみ。
-    -   呼び出す前に**リリース**双方向チャネルでは、常に呼び出す必要があります**CloseChannel**と成功の結果を受信します。 呼び出す必要はありません**リリース**場合への呼び出し**CloseChannel**チャネルが既にリリースされているあなたの代わりにあるため、失敗します。
-    -   呼び出す必要はありません**リリース**入力するときに、 **ChannelClosed**イベント。 このような状況を避けるためには、確認の呼び出しを**CloseChannel**チャネルのエラーで失敗したが\_ALREADY\_終了します。 呼び出す必要はありません**リリース**ここでは、あなたの代わりに、チャネルは既に解放されているためです。
-    -   呼び出す必要はありません**CloseChannel**、**リリース**、または場合に、チャネルで、他のメンバー関数、 **ChannelClosed**コールバック関数の実行が終了します。 ここでは、チャネルが既にリリースされているため、呼び出しが未定義の動作を引き起こすこと可能性があります。 この制限は、フォア グラウンド スレッドとコールバック オブジェクト間の調整を必要があります。
-    -   フォア グラウンド スレッドとコールバック オブジェクトがへの呼び出しを調整することを確認する必要があります**CloseChannel**と**リリース**します。 呼び出しを始めることはできません、フォア グラウンド スレッドと、コールバック オブジェクト**CloseChannel**を呼び出すには、呼び出し元が完了した他のか**リリース**します。 使用して、この制限を実装することができます、 [ **InterlockedCompareExchange** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-interlockedcompareexchange)ルーチン。 使用しない場合**InterlockedCompareExchange**、未定義の動作が発生する可能性があります。
--   チャネルのリスナーとして登録した場合は、呼び出す**CloseChannel**を呼び出して**リリース**で、 [IPrintAsyncNotifyCallback::OnEventNotify](https://go.microsoft.com/fwlink/p/?linkid=124757)コールバック双方向通信を終了する関数。 ただし、呼び出す必要はありません**CloseChannel**または**リリース**で、 **ChannelClosed**コールバック。
+-   チャネルを双方向として作成した場合は、出力パラメーターとして受け取ったポインターに対して**Release**を1回呼び出す必要があります。 次の1つまたは複数の操作を実行する場合にのみ、 **Release**を呼び出す必要があります。
+    -   双方向チャネルの**Release**を呼び出す前に、常に**CloseChannel**を呼び出して、成功の結果を受け取る必要があります。 **CloseChannel**の呼び出しが失敗した場合は、チャネルが既に解放されている可能性があるため、 **Release**を呼び出すことはできません。
+    -   **Channelclosed**イベントの入力中に**Release**を呼び出すことはできません。 このような状況を回避するには、エラーチャネル\_が既に閉じ\_て失敗した**CloseChannel**への呼び出しを確認します。 この場合は、チャネルが既にリリースされているため、 **Release**を呼び出す必要はありません。
+    -   **Channelclosed**コールバック関数の実行が完了している場合は、チャネルで**CloseChannel**、 **Release**、またはその他のメンバー関数を呼び出すことはできません。 この場合、チャネルは既に解放されているため、それ以降の呼び出しでは未定義の動作が発生する可能性があります。 この制限には、フォアグラウンドスレッドとコールバックオブジェクト間の調整が必要になる場合があります。
+    -   フォアグラウンドスレッドおよびコールバックオブジェクトが**CloseChannel**と**Release**の呼び出しを調整していることを確認する必要があります。 他のがを呼び出そうとしているか、 **Release**の呼び出しが完了している場合、フォアグラウンドスレッドとコールバックオブジェクトは**CloseChannel**への呼び出しを開始できません。 この制限は、 [**InterlockedCompareExchange**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-interlockedcompareexchange)ルーチンを使用して実装できます。 **InterlockedCompareExchange**を使用しない場合は、未定義の動作が発生する可能性があります。
+-   チャネルにリスナーとして登録した場合は、 **CloseChannel**を呼び出し、 [IPrintAsyncNotifyCallback:: oneventnotify](https://go.microsoft.com/fwlink/p/?linkid=124757)コールバック関数で**Release**を呼び出して双方向通信を終了できます。 ただし、 **Channelclosed**コールバックでは**CloseChannel**または**Release**を呼び出さないでください。
 
-これらの条件のいずれかを満たしている場合を呼び出す必要があります**リリース**します。 これらの条件のいずれかを満たしていない場合は、呼び出す必要はありません**リリース**します。
+これらのいずれかの条件を満たしている場合は、 **Release**を呼び出す必要があります。 これらの条件のいずれかを満たしていない場合は、 **Release**を呼び出すことはできません。
 
-**注**  呼び出す**リリース**、上記の条件が、最初は、呼び出すことのいずれか**AddRef** 、明示的には、一般的な COM 例外プログラミング パターン。 **IPrintAsyncNotifyChannel**このような状況で標準的な COM の手法とは異なります。
+上のいずれかの条件下で**Release**を呼び出す   ますが、最初に**AddRef**を明示的に**呼び出すことは**、一般的な COM プログラミングパターンの例外です。 **IPrintAsyncNotifyChannel**は、このような状況では標準的な COM プラクティスとは異なります。
 
  
 

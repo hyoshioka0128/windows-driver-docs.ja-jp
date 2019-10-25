@@ -3,53 +3,53 @@ title: OID_TCP_OFFLOAD_CURRENT_CONFIG
 description: このトピックでは、OID_TCP_OFFLOAD_CURRENT_CONFIG オブジェクト識別子 (OID) について説明します。
 ms.assetid: 8DC81A41-1E4D-4F78-80D1-54C79F974CE3
 keywords:
-- OID_TCP_OFFLOAD_CURRENT_CONFIG、WDK の Oid、WDK のオブジェクト識別子では、WDK の Oid をネットワークのネットワーク
+- OID_TCP_OFFLOAD_CURRENT_CONFIG、WDK Oid、WDK ネットワークオブジェクト識別子、WDK ネットワーク Oid
 ms.date: 11/01/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6527ec3cb09252eac16e1741f078af6fa768abdd
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c5db248e281e0c51b0760e60169d6344df4dfb14
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386965"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843905"
 ---
-# <a name="oidtcpoffloadcurrentconfig"></a>OID_TCP_OFFLOAD_CURRENT_CONFIG
+# <a name="oid_tcp_offload_current_config"></a>OID_TCP_OFFLOAD_CURRENT_CONFIG
 
-クエリの要求としての管理アプリケーション (またはドライバーの上にある可能性があります) は、基になるミニポート アダプターの現在タスク オフロードの構成設定を確認するのに OID_TCP_OFFLOAD_CURRENT_CONFIG OID を使用します。 システム管理者は、この OID を使用して、Microsoft Windows Management Instrumentation (WMI) インターフェイスを使用できます。
+クエリ要求として、管理アプリケーション (またはそれ以降のドライバー) は OID_TCP_OFFLOAD_CURRENT_CONFIG OID を使用して、基になるミニポートアダプターの現在のタスクオフロード構成設定を決定します。 システム管理者は、この OID を Microsoft Windows Management Instrumentation (WMI) インターフェイスで使用できます。
 
-要求のセットがサポートされていません。
+Set 要求はサポートされていません。
 
 ## <a name="remarks"></a>注釈
 
-NDIS は、ミニポート ドライバーには、この OID を処理します。 ミニポート ドライバーでは、NDIS ミニポート アダプター オフロード機能を報告します。 渡すタスクに関する情報の構成設定にオフロード NDIS ミニポート ドライバーおよび NDIS からドライバーに関連する NDIS_OFFLOAD を参照してください。
+NDIS は、この OID をミニポートドライバー用に処理します。 ミニポートドライバーは、ミニポートアダプターのオフロード機能を NDIS に報告します。 ミニポートドライバーから NDIS にタスクオフロード構成設定を渡す方法と、NDIS からそれ以降のドライバーに渡す方法については、NDIS_OFFLOAD を参照してください。
 
-**InformationBuffer**のメンバー、 [NDIS_OID_REQUEST](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造に含まれる、 [NDIS_OFFLOAD](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_offload)構造体。 **NDIS_OFFLOAD**構造には、次のミニポート アダプターの機能が含まれます。
+[NDIS_OID_REQUEST](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造体の**informationbuffer**メンバーには、 [NDIS_OFFLOAD](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_offload)構造体が含まれています。 **NDIS_OFFLOAD**構造体には、次のミニポートアダプターの機能が含まれています。
 
-- ヘッダーは、タスクのオフロード バージョンが含まれています。
-- チェックサムでは、負荷を軽減する[NDIS_TCP_IP_CHECKSUM_OFFLOAD](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_tcp_ip_checksum_offload)構造体。
-- 大規模なオフロード バージョン 1 (LSOV1) を送信する情報で、 [NDIS_TCP_LARGE_SEND_OFFLOAD_V1](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_tcp_large_send_offload_v1)構造体。
-- インターネット プロトコル セキュリティ (IPsec) については、ので、 [NDIS_IPSEC_OFFLOAD_V1](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_ipsec_offload_v1)構造体。
-- 大規模なオフロード バージョン 2 (LSOV2) を送信する情報で、 [NDIS_TCP_LARGE_SEND_OFFLOAD_V2](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_tcp_large_send_offload_v2)構造体。
+- タスクオフロードバージョンを含むヘッダー情報。
+- [NDIS_TCP_IP_CHECKSUM_OFFLOAD](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_tcp_ip_checksum_offload)構造体のチェックサムオフロード情報。
+- [NDIS_TCP_LARGE_SEND_OFFLOAD_V1](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_tcp_large_send_offload_v1)構造体の large send offload version 1 (LSOV1) 情報。
+- [NDIS_IPSEC_OFFLOAD_V1](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_ipsec_offload_v1)構造体のインターネットプロトコルセキュリティ (IPsec) 情報。
+- [NDIS_TCP_LARGE_SEND_OFFLOAD_V2](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_tcp_large_send_offload_v2)構造体の large send offload version 2 (LSOV2) 情報。
 
-OID_TCP_OFFLOAD_CURRENT_CONFIG への応答、**カプセル化**上記の構造体のメンバーがミニポート アダプタのパケット カプセル化機能を定義します。 NDIS に用意されているフラグのビットごとの OR の提供、**カプセル化**これらの構造体のメンバー。 その他の構造体のメンバーには、さまざまなオフロード サービスの設定が含まれます。 カプセル化およびその他の機能の詳細については、次を参照してください[NDIS_TCP_IP_CHECKSUM_OFFLOAD](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_tcp_ip_checksum_offload)、 [NDIS_TCP_LARGE_SEND_OFFLOAD_V1](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_tcp_large_send_offload_v1)、 [NDIS_IPSEC_OFFLOAD_V1](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_ipsec_offload_v1)。、および[NDIS_TCP_LARGE_SEND_OFFLOAD_V2](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_tcp_large_send_offload_v2)します。
+OID_TCP_OFFLOAD_CURRENT_CONFIG への応答として、前の一覧の構造体の**カプセル化**メンバーは、ミニポートアダプターのパケットカプセル化機能を定義します。 NDIS は、これらの構造体の**カプセル化**メンバーに用意されているフラグのビットごとの or を提供します。 他の構造体のメンバーには、さまざまなオフロードサービスの設定が含まれています。 カプセル化とその他の機能の詳細については、「 [NDIS_TCP_IP_CHECKSUM_OFFLOAD](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_tcp_ip_checksum_offload)、 [NDIS_TCP_LARGE_SEND_OFFLOAD_V1](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_tcp_large_send_offload_v1)、 [NDIS_IPSEC_OFFLOAD_V1](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_ipsec_offload_v1)、および[NDIS_TCP_LARGE_SEND_OFFLOAD_V2](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_tcp_large_send_offload_v2)」を参照してください。
 
-ミニポート アダプターでは、カプセル化タスクの種類のすべてのオフロードをサポートしているイーサネットをサポートする必要があります。 他の種類のカプセル化は省略可能です。
+ミニポートアダプターは、サポートするすべての種類のタスクオフロードに対してイーサネットカプセル化をサポートする必要があります。 その他の種類のカプセル化はオプションです。
 
-初期化中にすべてのタスクのオフロード機能ミニポート ドライバーに有効自動的にする必要があります。
+ミニポートドライバーは、初期化中にすべてのタスクオフロード機能を自動的に有効にする必要があります。
 
 ### <a name="see-also"></a>関連項目
 
-[NDIS_IPSEC_OFFLOAD_V1](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_ipsec_offload_v1)  
-[NDIS_OFFLOAD](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_offload)  
-[NDIS_OID_REQUEST](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)  
-[NDIS_TCP_IP_CHECKSUM_OFFLOAD](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_tcp_ip_checksum_offload)  
-[NDIS_TCP_LARGE_SEND_OFFLOAD_V2](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_tcp_large_send_offload_v2)    
-[NDIS_IPSEC_OFFLOAD_V1](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_ipsec_offload_v1)  
+[NDIS_IPSEC_OFFLOAD_V1](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_ipsec_offload_v1)  
+[NDIS_OFFLOAD](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_offload)  
+[NDIS_OID_REQUEST](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)  
+[NDIS_TCP_IP_CHECKSUM_OFFLOAD](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_tcp_ip_checksum_offload)  
+[NDIS_TCP_LARGE_SEND_OFFLOAD_V2](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_tcp_large_send_offload_v2)    
+[NDIS_IPSEC_OFFLOAD_V1](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_ipsec_offload_v1)  
 
 ## <a name="requirements"></a>要件
 
 | | |
 | --- | --- |
 | バージョン | Windows Vista 以降 |
-| Header | Ntddndis.h (include Ndis.h) |
+| Header | Ntddndis (Ndis .h を含む) |
 

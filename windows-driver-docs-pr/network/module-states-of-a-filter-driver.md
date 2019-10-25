@@ -3,20 +3,20 @@ title: フィルター ドライバーのモジュールの状態
 description: フィルター ドライバーのモジュールの状態
 ms.assetid: 139679d6-d3dc-433b-a35a-eb1e5ed3cb33
 keywords:
-- フィルター ドライバー WDK ネットワーク、モジュール状態
-- NDIS フィルター ドライバー WDK、モジュールの状態
-- WDK のネットワークの状態モジュール
-- フィルター モジュールの WDK ネットワー キング、フィルター ドライバーの状態
-- フィルター ドライバー WDK ネットワー キング、フィルター モジュール
-- NDIS フィルター ドライバー WDK、
+- フィルタードライバーの WDK ネットワーク、モジュールの状態
+- NDIS フィルタードライバー WDK、モジュールの状態
+- 'モジュールの状態: WDK ネットワーク'
+- フィルターモジュール WDK ネットワーク、フィルタードライバーの状態
+- フィルタードライバーの WDK ネットワーク、フィルターモジュール
+- NDIS フィルタードライバー WDK、
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ce1914b299f2d833d60efa318fa7e1c9ef620b3a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1e2db7d1bf09d1b75b1a1a2cbd884228354124d8
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378679"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844219"
 ---
 # <a name="module-states-of-a-filter-driver"></a>フィルター ドライバーのモジュールの状態
 
@@ -24,7 +24,7 @@ ms.locfileid: "67378679"
 
 
 
-[NDIS フィルター ドライバー](ndis-filter-drivers.md)ドライバーを管理する各フィルター モジュール (フィルター ドライバーのインスタンス) の次の操作の状態をサポートする必要があります。
+[NDIS フィルタードライバー](ndis-filter-drivers.md)は、ドライバーが管理するフィルターモジュール (フィルタードライバーのインスタンス) ごとに次の動作状態をサポートする必要があります。
 
 -   Detached
 
@@ -32,42 +32,42 @@ ms.locfileid: "67378679"
 
 -   一時停止
 
--   再起動します。
+-   再起動
 
--   実行中
+-   Running
 
 -   一時停止
 
-次の図は、これらの状態間の関係を示します。
+次の図は、これらの状態間の関係を示しています。
 
-![フィルター モジュールの状態を示す図](images/filterstate.png)
+![フィルターモジュールの状態を示す図](images/filterstate.png)
 
-次に、フィルター モジュールの状態を定義します。
+次の例では、フィルターモジュールの状態を定義します。
 
 <a href="" id="detached"></a>デタッチ  
-*Detached*状態は、フィルター モジュールの初期状態です。 NDIS フィルター ドライバーを呼び出すことができますフィルター モジュールがこの状態のときは、 [ *FilterAttach* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_attach)ドライバー スタックに、フィルター モジュールにアタッチします。 NDIS がフィルター ドライバーを呼び出すときに*FilterAttach*関数、フィルター モジュールは、アタッチ状態になります。 アタッチ操作が失敗した場合、フィルター モジュールをデタッチ ステートを返します。 呼び出し、モジュールの場合は、一時停止状態と NDIS、 [ *FilterDetach* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_detach)関数は、モジュールは、デタッチされた状態に戻ります。
+*デタッチ*された状態は、フィルターモジュールの初期状態です。 フィルターモジュールがこの状態になると、NDIS はフィルタードライバーの[*Filterattach*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_attach)関数を呼び出して、フィルターモジュールをドライバースタックにアタッチできます。 NDIS がフィルタードライバーの*Filterattach*関数を呼び出すと、フィルターモジュールはアタッチ状態に入ります。 アタッチ操作が失敗した場合、フィルターモジュールはデタッチされた状態に戻ります。 モジュールが一時停止状態であり、NDIS が[*Filterdetach*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_detach)関数を呼び出すと、モジュールはデタッチされた状態に戻ります。
 
-<a href="" id="attaching"></a>アタッチ  
-フィルター モジュールの場合、*アタッチ*状態では、フィルター ドライバーはドライバー スタックにモジュールをアタッチする準備を行います。 フィルター モジュールの準備が完了した後、フィルター モジュールが一時停止状態になります。 (たとえば、必要なリソースを利用できません) ため、障害が発生した場合、フィルター モジュールは、デタッチの状態に戻ります。
+<a href="" id="attaching"></a>付ける  
+フィルターモジュールが*アタッチ*状態の場合、フィルタードライバーはモジュールをドライバースタックにアタッチする準備をします。 フィルターモジュールの準備が完了すると、フィルターモジュールが一時停止状態になります。 (必要なリソースが使用できないなどの理由で) エラーが発生した場合、フィルターモジュールはデタッチされた状態に戻ります。
 
-<a href="" id="paused"></a>一時停止  
-フィルター モジュールの場合、 *Paused*状態では、フィルター モジュールの送信を実行または受信操作はありません。 フィルター モジュールの場合、*アタッチ*状態と[ *FilterAttach* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_attach)が成功すると、フィルター モジュールが入力、 *Paused*状態。 フィルター モジュールの場合、*一時停止中*状態と、一時停止操作が完了する、フィルター モジュールが入力、 *Paused*状態。 フィルター モジュールの場合、 *Paused*状態および NDIS フィルター ドライバーを呼び出す[ **FilterRestart** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_restart)関数の場合、フィルター モジュールが入力、*再開しています*状態。 フィルター モジュールの場合、 *Paused*状態 NDIS 呼び出しは、ドライバーの*FilterDetach*ハンドラー、フィルター モジュールが入力、 *Detached*状態。
+<a href="" id="paused"></a>中  
+フィルターモジュールが*一時停止*状態の場合、フィルターモジュールは送信操作または受信操作を実行しません。 フィルターモジュールが*アタッチ*状態であり、 [*filterattach*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_attach)が正常に実行されると、フィルターモジュールは*一時停止*状態になります。 フィルターモジュール*が一時停止中の状態で*、一時停止操作が完了すると、フィルターモジュールは*一時停止*状態になります。 フィルターモジュールが*一時停止*状態にあり、NDIS がフィルタードライバーの[**filterrestart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_restart)関数を呼び出すと、フィルターモジュールは*再起動*状態になります。 フィルターモジュールが*一時停止*状態にあり、NDIS がドライバーの*filterdetach*ハンドラーを呼び出すと、フィルターモジュールは*デタッチ*された状態に入ります。
 
-<a href="" id="restarting"></a>再起動します。  
-*再起動*状態では、フィルター ドライバーに送信を再起動し、受信フィルター モジュールの操作に必要なすべての操作が完了するとします。 フィルター モジュールが一時停止状態では、NDIS 呼び出してドライバーの*FilterRestart*関数、フィルター モジュールは、再開中状態になります。 再起動が失敗した場合、フィルター モジュールが一時停止状態に戻ります。 再起動が成功した場合は、フィルター モジュールが実行状態になります。
+<a href="" id="restarting"></a>再起動  
+*再起動*状態では、フィルタードライバーは、フィルターモジュールの送信操作および受信操作を再開するために必要なすべての操作を完了します。 フィルターモジュールが一時停止状態にあり、NDIS がドライバーの*Filterrestart*関数を呼び出すと、フィルターモジュールは再起動状態になります。 再起動に失敗した場合、フィルターモジュールは一時停止状態に戻ります。 再起動が成功した場合、フィルターモジュールは実行中の状態になります。
 
-<a href="" id="running"></a>実行しています。  
-*を実行している*状態では、フィルター ドライバーは、通常の送信を実行し、モジュールのフィルター処理を受信します。 フィルター モジュールが再起動状態と、ドライバーが送信を実行し、操作を受信する準備ができて、フィルター モジュールが実行状態になります。
+<a href="" id="running"></a>起動  
+*実行*状態では、フィルタードライバーはフィルターモジュールに対して通常の送受信処理を実行します。 フィルターモジュールが再起動中の状態で、ドライバーが送信および受信操作を実行する準備ができたら、フィルターモジュールは実行中の状態になります。
 
 <a href="" id="pausing"></a>一時停止  
-*一時停止中*状態では、フィルター ドライバーに送信を停止し、受信フィルター モジュールの操作に必要なすべての操作が完了するとします。 すべて返す NDIS、その未処理を完了する要求を送信するすべてのフィルター ドライバーが待つ必要があります、未処理の受信表示します。 フィルター モジュールが実行中の状態では、NDIS 呼び出してドライバーの[ *FilterPause* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_pause)関数、フィルター モジュールは、一時停止状態になります。 フィルター ドライバーには、一時停止操作が失敗することはできません。 一時停止操作が完了したら、フィルター モジュールが一時停止状態になります。
+*一時停止*状態では、フィルタードライバーは、フィルターモジュールの送信操作および受信操作を停止するために必要なすべての操作を完了します。 フィルタードライバーは、未処理のすべての送信要求が完了するまで待機し、NDIS がすべての未処理の受信通知を返すまで待機する必要があります。 フィルターモジュールが Running 状態で、NDIS がドライバーの[*Filterpause*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_pause)関数を呼び出すと、フィルターモジュールは一時停止中の状態になります。 フィルタードライバーは、一時停止操作を失敗することはできません。 一時停止操作が完了すると、フィルターモジュールは一時停止状態になります。
 
 ## <a name="related-topics"></a>関連トピック
 
 
-[ドライバー スタックの管理](driver-stack-management.md)
+[ドライバースタックの管理](driver-stack-management.md)
 
-[NDIS フィルター ドライバー](ndis-filter-drivers.md)
+[NDIS フィルタードライバー](ndis-filter-drivers.md)
 
  
 

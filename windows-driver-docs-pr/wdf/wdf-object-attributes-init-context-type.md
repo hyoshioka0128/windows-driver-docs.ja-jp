@@ -1,24 +1,24 @@
 ---
-title: WDF_OBJECT_ATTRIBUTES_INIT_CONTEXT_TYPE macro
-description: WDF_OBJECT_ATTRIBUTES_INIT_CONTEXT_TYPE マクロは、ドライバーの WDF_OBJECT_ATTRIBUTES 構造体を初期化し、構造にオブジェクトのドライバー定義のコンテキスト情報を挿入します。
+title: WDF_OBJECT_ATTRIBUTES_INIT_CONTEXT_TYPE マクロ
+description: WDF_OBJECT_ATTRIBUTES_INIT_CONTEXT_TYPE マクロは、ドライバーの WDF_OBJECT_ATTRIBUTES 構造体を初期化し、オブジェクトのドライバー定義コンテキスト情報を構造体に挿入します。
 ms.assetid: 83e397b1-e37d-451d-9007-3b34993187c3
 keywords:
-- WDF_OBJECT_ATTRIBUTES_INIT_CONTEXT_TYPE macro
+- WDF_OBJECT_ATTRIBUTES_INIT_CONTEXT_TYPE マクロ
 ms.date: 08/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c9df33b879048f74488cf33754471e49f5adb8d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d6ac65c103f9e5fe49d365ae450b6627c94b2c56
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67372114"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845419"
 ---
-# <a name="wdfobjectattributesinitcontexttype-macro"></a>WDF_OBJECT_ATTRIBUTES_INIT_CONTEXT_TYPE macro
+# <a name="wdf_object_attributes_init_context_type-macro"></a>WDF_OBJECT_ATTRIBUTES_INIT_CONTEXT_TYPE マクロ
 
 
-\[KMDF および UMDF に適用されます。\]
+\[KMDF と UMDF\] に適用されます
 
-**WDF_OBJECT_ATTRIBUTES_INIT_CONTEXT_TYPE**マクロ初期化ドライバーの[ **WDF_OBJECT_ATTRIBUTES** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/ns-wdfobject-_wdf_object_attributes)構造体し、オブジェクトのドライバーが定義したコンテキストを挿入します。構造体に情報。
+**WDF_OBJECT_ATTRIBUTES_INIT_CONTEXT_TYPE**マクロは、ドライバーの[**WDF_OBJECT_ATTRIBUTES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/ns-wdfobject-_wdf_object_attributes)構造体を初期化し、オブジェクトのドライバー定義コンテキスト情報を構造体に挿入します。
 
 <a name="syntax"></a>構文
 ------
@@ -33,28 +33,28 @@ void WDF_OBJECT_ATTRIBUTES_INIT_CONTEXT_TYPE(
 <a name="parameters"></a>パラメーター
 ----------
 
-*方法を示します*   
-ポインターを[ **WDF_OBJECT_ATTRIBUTES** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/ns-wdfobject-_wdf_object_attributes)構造体。
+*属性  (_c)*  
+[**WDF_OBJECT_ATTRIBUTES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/ns-wdfobject-_wdf_object_attributes)構造体へのポインター。
 
-*_contexttype*   
-オブジェクトのコンテキストの領域の内容を記述したドライバー定義構造体の構造体の型名。
+  の*種類 (_c)*  
+オブジェクトのコンテキスト空間の内容を記述するドライバー定義の構造体の構造体型の名前。
 
 <a name="return-value"></a>戻り値
 ------------
 
-このマクロでは、値は返されません。
+このマクロは値を返しません。
 
 <a name="remarks"></a>注釈
 -------
 
-呼び出しの前に**WDF_OBJECT_ATTRIBUTES_INIT_CONTEXT_TYPE**、呼び出す必要があります[ **WDF_DECLARE_CONTEXT_TYPE** ](wdf-declare-context-type.md)または[ **WDF_DECLARE_CONTEXT_TYPE_WITH_NAME** ](wdf-declare-context-type-with-name.md)グローバルに (関数) 内ではありません。
+**WDF_OBJECT_ATTRIBUTES_INIT_CONTEXT_TYPE**を呼び出す前に、 [**WDF_DECLARE_CONTEXT_TYPE**](wdf-declare-context-type.md)または[**WDF_DECLARE_CONTEXT_TYPE_WITH_NAME**](wdf-declare-context-type-with-name.md)を (関数内ではなく) グローバルに呼び出す必要があります。
 
-**WDF_OBJECT_ATTRIBUTES_INIT_CONTEXT_TYPE**マクロを組み合わせて、 [ **WDF_OBJECT_ATTRIBUTES_INIT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nf-wdfobject-wdf_object_attributes_init)関数と[ **WDF_OBJECT_ATTRIBUTES_SET_CONTEXT_TYPE** ](wdf-object-attributes-set-context-type.md)マクロ。
+**WDF_OBJECT_ATTRIBUTES_INIT_CONTEXT_TYPE**マクロは、 [**WDF_OBJECT_ATTRIBUTES_INIT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/nf-wdfobject-wdf_object_attributes_init)関数と[**WDF_OBJECT_ATTRIBUTES_SET_CONTEXT_TYPE**](wdf-object-attributes-set-context-type.md)マクロを結合します。
 
 <a name="examples"></a>例
 --------
 
-次のコード例では、WDM_NDIS_REQUEST context 構造体を定義します。 例を起動し、 [ **WDF_DECLARE_CONTEXT_TYPE_WITH_NAME** ](wdf-declare-context-type-with-name.md)構造を登録し、コンテキストのアクセサー メソッドの名前を指定するマクロ**RequestGetMyContext**. 次に、関数の例では、割り当て、 [ **WDF_OBJECT_ATTRIBUTES** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/ns-wdfobject-_wdf_object_attributes)構造、および、初期化、 **WDF_OBJECT_ATTRIBUTES**構造体。
+次のコード例では、WDM_NDIS_REQUEST context 構造体を定義します。 次に、この例では、 [**WDF_DECLARE_CONTEXT_TYPE_WITH_NAME**](wdf-declare-context-type-with-name.md)マクロを呼び出して構造体を登録し、コンテキストアクセサーメソッドに**requestgetmycontext**という名前を指定します。 次に、関数で、この例では[**WDF_OBJECT_ATTRIBUTES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/ns-wdfobject-_wdf_object_attributes)構造体を割り当て、 **WDF_OBJECT_ATTRIBUTES**構造体を初期化します。
 
 ```cpp
 typedef struct _WDM_NDIS_REQUEST
@@ -79,7 +79,7 @@ WDF_OBJECT_ATTRIBUTES  attributes;
 WDF_OBJECT_ATTRIBUTES_INIT_CONTEXT_TYPE( &attributes, WDM_NDIS_REQUEST );
 ```
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -102,7 +102,7 @@ WDF_OBJECT_ATTRIBUTES_INIT_CONTEXT_TYPE( &attributes, WDM_NDIS_REQUEST );
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Wdfobject.h (Wdf.h を含む)</td>
+<td>Wdfobject .h (Wdf を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -110,9 +110,9 @@ WDF_OBJECT_ATTRIBUTES_INIT_CONTEXT_TYPE( &attributes, WDM_NDIS_REQUEST );
 ## <a name="see-also"></a>関連項目
 
 
-[**WDF_OBJECT_ATTRIBUTES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/ns-wdfobject-_wdf_object_attributes)
+[**WDF_OBJECT_ATTRIBUTES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/ns-wdfobject-_wdf_object_attributes)
 
-[**WDF_OBJECT_ATTRIBUTES_INIT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nf-wdfobject-wdf_object_attributes_init)
+[**WDF_OBJECT_ATTRIBUTES_INIT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/nf-wdfobject-wdf_object_attributes_init)
 
 [**WDF_OBJECT_ATTRIBUTES_SET_CONTEXT_TYPE**](wdf-object-attributes-set-context-type.md)
 

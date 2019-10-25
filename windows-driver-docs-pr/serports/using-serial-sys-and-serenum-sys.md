@@ -3,72 +3,72 @@ title: Serial.sys および Serenum.sys の使用
 description: Serial.sys および Serenum.sys の使用
 ms.assetid: 2dcf22c8-0666-4b58-8fd3-97a4d17eaa2a
 keywords:
-- WDK のシリアル ポート
-- WDK のシリアル デバイス
-- WDK のシリアル ポート
-- ユニバーサル非同期の受信側の送信機 WDK シリアル デバイス
-- UART WDK シリアル デバイス
-- 機能ドライバー WDK シリアル ポート
-- シリアル ドライバー WDK
-- 16550 UART と互換性のあるインターフェイス WDK シリアル デバイス
-- 低レベル デバイス フィルター ドライバー WDK シリアル デバイス
-- 高度なデバイス フィルター ドライバー WDK シリアル デバイス
-- フィルター ドライバー WDK シリアル デバイス
+- シリアルポート WDK
+- シリアルデバイス WDK
+- ポート WDK、シリアル
+- ユニバーサル非同期受信側-送信機 WDK シリアルデバイス
+- UART WDK シリアルデバイス
+- 関数ドライバー WDK シリアルポート
+- シリアルドライバー WDK
+- 16550 UART 互換インターフェイス WDK シリアルデバイス
+- 低レベルのデバイスフィルタードライバー WDK シリアルデバイス
+- 高レベルのデバイスフィルタードライバー WDK シリアルデバイス
+- フィルタードライバー WDK シリアルデバイス
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 52da4849e530cf99f3d463ebfcae6cc739f0900d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c3d0f5889c868b8a0221e268204008a08b49f14c
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378573"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845385"
 ---
 # <a name="using-serialsys-and-serenumsys"></a>Serial.sys および Serenum.sys の使用
 
-次のシステム コンポーネント、16550 ユニバーサル非同期受信側の送信元 (UART) と互換性のあるハードウェア インターフェイスをコント ローラーのシリアル デバイスで使用可能なのとおりです。
+次のシステムコンポーネントは、16550 universal 非同期受信機 (UART) と互換性のあるハードウェアインターフェイスを持つシリアルコントローラーデバイスで使用できます。
 
--   シリアルおよび Serenum ドライバー
+-   シリアルおよび Serenum.sys ドライバー
 
-    スタック (シリアル) は、シリアル デバイスのシステムによって提供される関数のドライバーです。 16550 UART と互換性のあるインターフェイスを必要とするプラグ アンド プレイ デバイスの種類にかかわらずシリアル低レベル デバイス フィルター ドライバーとして使用することもできます。
+    Serial .sys (シリアル) は、システムによって提供されるシリアルデバイス用の関数ドライバーです。 また、16550 UART 互換インターフェイスを必要とする任意の種類のプラグアンドプレイデバイスに対して、シリアルを下位レベルのデバイスフィルタードライバーとして使用することもできます。
 
-    Serenum.sys (Serenum) は、rs-232 ポートのプラグ アンド プレイのバス ドライバーの機能を提供するシリアル (または関数のベンダーから提供されたドライバー) と組み合わせて使用できる上位レベルのシステム提供されているデバイス フィルター ドライバーです。
+    Serenum.sys (Serenum.sys) は、システムによって提供される上位レベルのデバイスフィルタードライバーであり、Serial (またはベンダーが提供する関数ドライバー) と組み合わせて使用して、RS-232 ポート用のプラグアンドプレイバスドライバーの機能を提供できます。
 
-    シリアルおよび Serenum の操作に関する詳細については、次のトピックを参照してください。
+    シリアルおよび Serenum.sys の操作の詳細については、次のトピックを参照してください。
 
     - [シリアル コントローラー ドライバーの概要](serial-drivers-overview.md)
-    - [シリアルおよび Serenum の機能](features-of-serial-and-serenum.md)
-    - [シリアル デバイスとドライバーの構成](configuration-of-serial-devices-and-drivers.md)
-    - [Serenum およびシリアルの操作](operation-of-serenum-and-serial.md)
+    - [Serial および Serenum.sys の機能](features-of-serial-and-serenum.md)
+    - [シリアルデバイスとドライバーの構成](configuration-of-serial-devices-and-drivers.md)
+    - [Serenum.sys とシリアルの操作](operation-of-serenum-and-serial.md)
     - [シリアルのレジストリ設定](registry-settings-for-serial.md)
-    - [Serenum のレジストリ設定](registry-settings-for-serenum.md)
-    - [シリアル ドライバー リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
-    - [Serenum ドライバー リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
-    - WDK で Ntddser.h ヘッダー ファイル内のデータ定義します。
+    - [Serenum.sys のレジストリ設定](registry-settings-for-serenum.md)
+    - [シリアルドライバーリファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)
+    - [Serenum.sys ドライバーリファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)
+    - WDK の Ntddser ヘッダーファイル内のデータ定義。
 
 <!-- -->
 
-- ポート[デバイス セットアップ クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-setup-classes)
+- ポート[デバイスセットアップクラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-setup-classes)
 
-    ポート クラスが含まれています*シリアル ポート*と*COM ポート*します。 シリアル ポートは、16550 UART または互換性のあるデバイスのシリアル通信ハードウェア インターフェイスです。 コンピューターで、rs-232 ポートは、DB ~ 9 または電気 UART のシリアル ポートに接続されている DB 25 コネクタでは通常。 COM ポートは、追加の Windows に固有の要件に準拠するシリアル ポートです。 詳細については、次を参照してください。 [COM ポートの構成](configuration-of-com-ports.md)します。
+    Ports クラスには、*シリアルポート*と*COM ポート*が含まれています。 シリアルポートは、16550 UART または互換性のあるデバイスのシリアル通信ハードウェアインターフェイスです。 コンピューターの RS-232 ポートは、通常、UART のシリアルポートに電気的に接続されている DB-9 または DB-25 コネクタです。 COM ポートは、追加の Windows 固有の要件に準拠するシリアルポートです。 詳細については、「 [COM ポートの構成](configuration-of-com-ports.md)」を参照してください。
 
-- COM ポート[デバイス インターフェイス クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)
+- COM ポート[デバイスインターフェイスクラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)
 
-    COM ポートのデバイスのインターフェイスを使用して、COM ポートにアクセスする必要があります。 (COM ポートのデバイスのインターフェイス クラスの GUID は[ **GUID\_DEVINTERFACE\_com ポート**](https://docs.microsoft.com/windows-hardware/drivers/install/guid-devinterface-comport))。
+    Com ポートにアクセスするには、COM ポートのデバイスインターフェイスを使用する必要があります。 (COM ポートデバイスインターフェイスクラスの GUID は、 [**guid\_DEVINTERFACE\_COMPORT**](https://docs.microsoft.com/windows-hardware/drivers/install/guid-devinterface-comport)です)。
 
-- [COM ポート データベース](com-port-database.md)と[COM ポート データベース サポート ルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
+- [Com ポートデータベース](com-port-database.md)と[com ポートデータベースのサポートルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)
 
-    COM ポートのデータベースを介し COM ポートでの COM ポート番号を使用します。
+    Com ポートデータベースは、com ポートによる COM ポート番号の使用を判別します。
 
-シリアル デバイスをインストールする方法の詳細については、次を参照してください。[シリアル デバイスのインストール](installing-serial-devices.md)します。
+シリアルデバイスのインストールの詳細については、「[シリアルデバイスのインストール](installing-serial-devices.md)」を参照してください。
 
-シリアル デバイスの高度な操作については、Microsoft Windows SDK の Windows ベースのサービスでサポートされている通信リソースに関する情報を参照してください。
+シリアルデバイスの高レベル操作に関する一般的な情報については、Microsoft Windows SDK で Windows ベースサービスによってサポートされている通信リソースに関する情報を参照してください。
 
 ## <a name="serial-driver-samples"></a>シリアル ドライバーのサンプル
 
-これらのサンプルでは、シリアル ドライバーについて説明します。
+これらのサンプルはシリアルドライバーを示しています。
 
-- [シリアル](https://go.microsoft.com/fwlink/p/?LinkId=617962)サンプルは、シリアル デバイスの機能のドライバーをビルドします。
-- [Serenum](https://go.microsoft.com/fwlink/p/?LinkId=617961)サンプルは、ポートの rs-232 バス ドライバーのプラグ アンド プレイの機能を提供します。
-- 単純な仮想シリアル ドライバー (人) とコント ローラーのないモデム ドライバー (FakeModem)。
-    -   [仮想シリアル ドライバーのサンプル (UMDF 1.0)](https://go.microsoft.com/fwlink/p/?LinkId=617963)
-    -   [仮想 serial2 ドライバー サンプル (KMDF)](https://go.microsoft.com/fwlink/p/?LinkId=722209)
+- [シリアル](https://go.microsoft.com/fwlink/p/?LinkId=617962)サンプルでは、シリアルデバイス用の関数ドライバーをビルドします。
+- この[serenum.sys](https://go.microsoft.com/fwlink/p/?LinkId=617961)サンプルには、RS-232 ポート用のバスドライバーのプラグアンドプレイ機能が用意されています。
+- 単純な仮想シリアルドライバー (ComPort) とコントローラーレスモデムドライバー (FakeModem)。
+    -   [仮想シリアルドライバーのサンプル (UMDF 1.0)](https://go.microsoft.com/fwlink/p/?LinkId=617963)
+    -   [Virtual serial2 driver サンプル (KMDF)](https://go.microsoft.com/fwlink/p/?LinkId=722209)

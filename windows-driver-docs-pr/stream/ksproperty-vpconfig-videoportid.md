@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_VPCONFIG\_VIDEOPORTID
-description: KSPROPERTY\_VPCONFIG\_VIDEOPORTID プロパティは、Microsoft DirectDraw ビデオ ポートの ID プロパティの情報を返します。
+title: KSK プロパティ\_VPCONFIG\_VIDEOPORTID
+description: KSK プロパティ\_VPCONFIG\_VIDEOPORTID プロパティは、Microsoft DirectDraw ビデオポート ID プロパティの情報を返します。
 ms.assetid: 59323fbc-fdce-4615-914b-da65debde621
 keywords:
-- KSPROPERTY_VPCONFIG_VIDEOPORTID ストリーミング メディア デバイス
+- KSPROPERTY_VPCONFIG_VIDEOPORTID ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: db8051f60ea0dbd4a43df8a7882a25db1b160ec4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 77b535be4b7b4fa88428c7fa29977c3e10c3abd8
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355823"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844517"
 ---
-# <a name="kspropertyvpconfigvideoportid"></a>KSPROPERTY\_VPCONFIG\_VIDEOPORTID
+# <a name="ksproperty_vpconfig_videoportid"></a>KSK プロパティ\_VPCONFIG\_VIDEOPORTID
 
 
-KSPROPERTY\_VPCONFIG\_VIDEOPORTID プロパティは、Microsoft DirectDraw ビデオ ポートの ID プロパティの情報を返します。
+KSK プロパティ\_VPCONFIG\_VIDEOPORTID プロパティは、Microsoft DirectDraw ビデオポート ID プロパティの情報を返します。
 
 ## <span id="ddk_ksproperty_vpconfig_videoportid_ks"></span><span id="DDK_KSPROPERTY_VPCONFIG_VIDEOPORTID_KS"></span>
 
@@ -41,7 +41,7 @@ KSPROPERTY\_VPCONFIG\_VIDEOPORTID プロパティは、Microsoft DirectDraw ビ�
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,10 +50,10 @@ KSPROPERTY\_VPCONFIG\_VIDEOPORTID プロパティは、Microsoft DirectDraw ビ�
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>X</p></td>
-<td><p>〇</p></td>
+<td><p>必須ではない</p></td>
+<td><p>[はい]</p></td>
 <td><p>Pin</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
 <td><p>ULONG</p></td>
 </tr>
 </tbody>
@@ -61,7 +61,7 @@ KSPROPERTY\_VPCONFIG\_VIDEOPORTID プロパティは、Microsoft DirectDraw ビ�
 
  
 
-プロパティの値 (データの操作) は、ULONG です。
+プロパティ値 (操作データ) は ULONG です。
 
 <a name="requirements"></a>要件
 ------------
@@ -74,7 +74,7 @@ KSPROPERTY\_VPCONFIG\_VIDEOPORTID プロパティは、Microsoft DirectDraw ビ�
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Ksmedia.h (Ksmedia.h を含む)</td>
+<td>Ksmedia .h (Ksk を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -82,7 +82,7 @@ KSPROPERTY\_VPCONFIG\_VIDEOPORTID プロパティは、Microsoft DirectDraw ビ�
 ## <a name="see-also"></a>関連項目
 
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
  
 

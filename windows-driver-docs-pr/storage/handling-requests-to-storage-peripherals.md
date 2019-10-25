@@ -3,20 +3,20 @@ title: 記憶域周辺機器への要求の処理
 description: 記憶域周辺機器への要求の処理
 ms.assetid: 3859588e-fc39-4323-a901-8771874e64d2
 keywords:
-- 記憶域クラス ドライバー WDK、周辺機器
-- クラスのドライバー WDK の記憶域、周辺機器
-- 周辺機器の WDK ストレージ
-- 記憶域周辺機器 WDK
-- 記憶域周辺機器について、周辺機器の WDK ストレージ
-- 記憶域周辺機器 WDK、記憶域周辺機器について
+- ストレージクラスドライバー WDK、周辺機器
+- クラスドライバー WDK storage、周辺機器
+- 周辺機器 WDK ストレージ
+- ストレージ周辺機器 WDK
+- 周辺機器 WDK ストレージ, ストレージ周辺機器について
+- ストレージ周辺機器 WDK, ストレージ周辺機器について
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: deb243e6885b877bd7f77a2b3f217c16760e78a9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3c87098ee1648551dc5dcdc792eb0fa5e18e68ba
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378469"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845039"
 ---
 # <a name="handling-requests-to-storage-peripherals"></a>記憶域周辺機器への要求の処理
 
@@ -24,23 +24,23 @@ ms.locfileid: "67378469"
 ## <span id="ddk_handling_requests_to_storage_peripherals_kg"></span><span id="DDK_HANDLING_REQUESTS_TO_STORAGE_PERIPHERALS_KG"></span>
 
 
-基になるバス経由で要求を実行する記憶域ポート ドライバーを必要とするすべての要求、クラス ドライバーは IRP を SCSI 要求 SCSI コマンド記述子ブロック (CDB) を格納しているブロック (SRB) でする必要があります設定します。 その結果、ほとんどのストレージ クラス ドライバーがある 1 つまたは複数の内部*BuildRequest*される Srb を構築するためのルーチンです。 このようなルーチンの詳細については、次を参照してください。[記憶域クラス ドライバー BuildRequest ルーチン](storage-class-driver-s-buildrequest-routine.md)します。
+ストレージポートドライバーが基になるバスで要求を実行する必要があるすべての要求について、クラスドライバーは、SCSI コマンド記述子ブロック (CDB) を含む SCSI 要求ブロック (SRB) を持つ IRP を設定する必要があります。 そのため、ほとんどのストレージクラスドライバーには、SRBs を構築するための内部*Buildrequest*ルーチンが1つ以上あります。 このようなルーチンの詳細については、「[ストレージクラスドライバーの BuildRequest ルーチン](storage-class-driver-s-buildrequest-routine.md)」を参照してください。
 
-記憶域クラス ドライバーは IRP でも渡す\_MJ\_基になるストレージ ポート ドライバーに SCSI 要求。 このような要求から発生すること、[ストレージ フィルター ドライバー](storage-filter-drivers.md)。
+また、ストレージクラスドライバーは、基になるストレージポートドライバーに IRP\_MJ\_SCSI 要求を渡します。 このような要求は、[ストレージフィルタードライバー](storage-filter-drivers.md)から発生することがあります。
 
-[ **IOCTL\_SCSI\_渡す\_を通じて**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddscsi/ni-ntddscsi-ioctl_scsi_pass_through)で説明されている要求[SCSI パススルー要求の処理](handling-scsi-pass-through-requests.md)、クラスドライバーは、設定、 **MinorFunction**コード IRP を\_MJ\_デバイス\_IRPを渡す前にIRPのポートドライバーのI/Oスタックの場所でコントロール\_MJ\_デバイス\_コントロール要求を使用してドライバーをポート[**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)します。
+IOCTL\_SCSI\_は、 [Scsi パススルー要求の処理](handling-scsi-pass-through-requests.md)に関するページで説明されているように、要求に[**よって\_渡す**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddscsi/ni-ntddscsi-ioctl_scsi_pass_through)ことがあります。クラスドライバーは、 **MINORFUNCTION**コードを IRP\_MJ\_デバイスに設定する必要があり @no__t_[**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)を使用してポートドライバー\_制御要求を送信する前に、ポートドライバーの i/o スタック位置を制御します。これにより、\_MJ が\_irp に渡されます。
 
-すべての記憶域クラス ドライバーは、転送要求を分割することを担当 (IRP\_MJ\_読み取りや IRP\_MJ\_書き込み) を基になる HBA の機能を超えます。 その結果、ほとんどのクラス ドライバーを呼び出すことも内部*SplitTransferRequest*ルーチンを記載[記憶域クラス ドライバー SplitTransferRequest ルーチン](storage-class-driver-s-splittransferrequest-routine.md)、または同じ機能を実装用のディスパッチ ルーチンは、読み取りおよび書き込み要求。
+各ストレージクラスドライバーは、基になる HBA の機能を超える転送要求 (IRP\_MJ\_読み取りおよび IRP\_MJ\_書き込み) を分割する役割を担います。 そのため、ほとんどのクラスドライバーは、 [Storage Class Driver の SplitTransferRequest ルーチン](storage-class-driver-s-splittransferrequest-routine.md)で説明されている内部の*splittransferrequest*ルーチンを呼び出すか、または読み取りと書き込みのためにディスパッチルーチンで同じ機能を実装します。要求.
 
-記憶域周辺機器への要求の処理についての詳細については、次のトピックを参照してください。
+ストレージ周辺機器に対する要求の処理の詳細については、次のトピックを参照してください。
 
-[SCSI パススルーの要求の処理](handling-scsi-pass-through-requests.md)
+[SCSI パススルー要求の処理](handling-scsi-pass-through-requests.md)
 
-[記憶域周辺機器に PnP 要求の処理](handling-pnp-requests-to-storage-peripherals.md)
+[ストレージ周辺機器に対する PnP 要求の処理](handling-pnp-requests-to-storage-peripherals.md)
 
-[記憶域周辺機器に電力要求を処理](handling-power-requests-to-storage-peripherals.md)
+[ストレージ周辺機器への電力要求の処理](handling-power-requests-to-storage-peripherals.md)
 
-[ストレージ要求のキュー](queuing-storage-requests.md)
+[ストレージ要求をキューに格納する](queuing-storage-requests.md)
 
  
 

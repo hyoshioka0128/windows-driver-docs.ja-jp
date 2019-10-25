@@ -3,32 +3,32 @@ title: USB ビデオ クラスの実装
 description: USB ビデオ クラスの実装
 ms.assetid: b390d741-9ddc-4bac-bca2-73e32461c5ed
 keywords:
-- USB ビデオ クラス ドライバー WDK AVStream、実装します。
-- ビデオのクラス ドライバー WDK USB、実装します。
-- UVC ドライバー WDK AVStream、実装します。
+- USB ビデオクラスドライバー WDK AVStream、実装
+- ビデオクラスドライバー WDK USB、実装
+- UVC ドライバー WDK AVStream、実装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ff01a736deeb7459cec5a2527539e06835b7a17
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ad0b41a3e1121083086a4abb8e6d2cce100b0b06
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383139"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842623"
 ---
 # <a name="usb-video-class-implementation"></a>USB ビデオ クラスの実装
 
 
-Microsoft 提供の USB ビデオ クラス ドライバー (usbvideo.sys) では、暗証番号 (pin) を中心とした AVStream ミニドライバーです。 各 USB ビデオ クラス フィルター ファクトリを作成しますか? オペレーティング システムによって列挙された準拠しているデバイス インスタンス。 ドライバーでデバイスで、各入力または出力ターミナルの暗証番号 (pin) ファクトリを作成することも、**データフロー**のメンバー、 [ **KSPIN\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kspin_descriptor)構造体関連する値に設定します。
+Microsoft 提供の USB ビデオクラスドライバー (usbvideo .sys) は、ピン中心の AVStream ミニドライバーです。 これは、オペレーティングシステムによって列挙された、USB ビデオクラスに準拠しているデバイスインスタンスごとにフィルターファクトリを作成します。 また、ドライバーは、デバイス上の入力または出力ターミナルごとにピンファクトリを作成します。これにより、 [**Kspin\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-kspin_descriptor)構造体のデータ**フロー**メンバーが関連する値に設定されます。
 
-USB ビデオ クラス ドライバーでは、デバイス記述子によって報告されたデバイスの内部のトポロジを使用して、フィルター、ノード、および接続の構成 (KS) トポロジ グラフをストリーミングするカーネルを構築します。
+USB ビデオクラスドライバーは、デバイス記述子によって報告された内部デバイストポロジを使用して、フィルター、ノード、および接続で構成されるカーネルストリーミング (KS) トポロジグラフを作成します。
 
-デバイスでサポートされているコントロールの種類と数に基づいて、USB ビデオ クラスに動的にフィルター、暗証番号 (pin)、およびレポート AVStream のフィルターと暗証番号 (pin) の記述子で KS automation テーブル ノードのプロパティ セット。
+USB Video クラスは、デバイスでサポートされているコントロールの数と種類に基づいて、AVStream フィルターと pin 記述子の KS オートメーションテーブルを通じて、フィルター、ピン、およびノードプロパティセットを動的に報告します。
 
-各ビデオや静止イメージ データ、デバイス エンドポイントでサポートされるデータ形式に基づいて、USB ビデオ クラスは、KS データ範囲がサポートされているとデータの積集合ハンドラーそれぞれ AVStream 暗証番号 (pin) の記述子での対応する一覧を報告します。 USB ビデオ クラス ドライバーを通じて情報をエクスポートする、[カーネル ストリーミング プロキシ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_stream/index)モジュール。
+USB ビデオクラスでは、デバイス上の各ビデオまたは静止画像データエンドポイントでサポートされているデータ形式に基づいて、対応する KS データ範囲のリストと、各 AVStream pin 記述子のデータの共通部分を報告します。 USB ビデオクラスドライバーは、[カーネルストリーミングプロキシ](https://docs.microsoft.com/windows-hardware/drivers/ddi/_stream/index)モジュールを介して情報をエクスポートします。
 
-USB ビデオ クラス ドライバーは、オーディオ/ビデオ ストリームの同期化もサポートしています。usbvideo.sys は、KS マスター クロックとして機能し、ビデオのサンプルにタイムスタンプを追加できます。 USB ビデオ クラス仕様には、ハードウェアが、クラス ドライバーをタイミング情報を提供する方法の詳細が含まれています。
+USB ビデオクラスドライバーは、オーディオ/ビデオストリームの同期もサポートしています。usbvideo は KS マスタークロックとして機能し、ビデオサンプルにタイムスタンプを追加します。 USB ビデオクラス仕様には、ハードウェアがクラスドライバーにタイミング情報を提供する方法の詳細が含まれています。
 
-USB ビデオ クラスを通信するには、ユーザー モードのクライアントは、DirectShow またはメディア ファンデーションのインターフェイスを呼び出します。 これらのインターフェイスは、プラグインとしてカーネル ストリーミング プロキシによって定義されている COM インターフェイスのラッパーです。に関する詳細については、Microsoft Windows SDK ドキュメントを参照してください[メディア ファンデーション](https://go.microsoft.com/fwlink/p/?linkid=144771)します。
+USB ビデオクラスと通信するには、ユーザーモードクライアントが DirectShow またはメディアファンデーションインターフェイスを呼び出します。 これらのインターフェイスは、プラグインとしてカーネルストリーミングプロキシによって定義される COM インターフェイスラッパーです。[メディアファンデーション](https://go.microsoft.com/fwlink/p/?linkid=144771)の詳細については、Microsoft Windows SDK のドキュメントを参照してください。
 
  
 

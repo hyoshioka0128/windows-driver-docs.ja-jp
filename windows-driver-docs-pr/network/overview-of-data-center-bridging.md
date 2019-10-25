@@ -4,50 +4,50 @@ description: データ センター ブリッジングの概要
 ms.assetid: FEB3FDBB-8A3C-4907-A6D0-CB5E94BCFEFF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 27359c78c088412397a212e696d2e2af73406530
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7b5b7d6562551d0b4f3267d57a60f2a4aacfb4ba
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385723"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843747"
 ---
 # <a name="overview-of-data-center-bridging"></a>データ センター ブリッジングの概要
 
 
-IEEE 802.1 データ センター ブリッジング (DCB) は、統合型を定義する標準のコレクションを 802.3 イーサネット メディア インターフェイス、または*fabric*、ローカル エリア ネットワーク (LAN) および記憶域エリア ネットワーク (SAN) のテクノロジ。 DCB は、データ センター内で同じネットワーク ファブリック経由での LAN および SAN ベースのアプリケーションの共存をサポートする仕様をブリッジ現在 802.1 を拡張します。 DCB には、パケット損失を防ぐためリンク レベルのポリシーを定義することで Fibre Channel over Ethernet (FCoE)、iSCSI などのテクノロジもサポートしています。
+IEEE 802.1 データセンターブリッジング (DCB) は、ローカルエリアネットワーク (LAN) および記憶域ネットワーク (SAN) テクノロジ用の統合802.3 イーサネットメディアインターフェイス (*ファブリック*) を定義する標準のコレクションです。 DCB は、現在の802.1 ブリッジング仕様を拡張して、データセンター内の同じネットワークファブリックにおける LAN ベースおよび SAN ベースのアプリケーションの共存をサポートします。 DCB は、パケットの損失を防ぐリンクレベルのポリシーを定義することで、ファイバーチャネル over Ethernet (FCoE) や iSCSI などのテクノロジもサポートしています。
 
-DCB は、どのネットワーク デバイスを相互運用、統合されたデータ センター ファブリック内で指定する次の 802.1 ドラフト標準で構成されます。
+DCB は、統合されたデータセンターファブリック内でネットワークデバイスを相互運用する方法を指定する、次の802.1 ドラフト標準で構成されています。
 
-<a href="" id="priority-based-flow-control--pfc-"></a>優先順位に基づくフロー制御 (PFC)  
-PFC は IEEE 802.1 qbb で指定されたドラフト標準。 この標準は、DCB インターフェイス用のフレームワークの一部です。
+<a href="" id="priority-based-flow-control--pfc-"></a>優先順位ベースのフロー制御 (PFC)  
+PFC は、IEEE 802.1 Qbb draft 標準で指定されています。 この標準は、DCB インターフェイスのフレームワークの一部です。
 
-PFC は、混雑により、パケット損失を大幅に減らすことで、データの信頼性の高い配信をサポートします。 これにより、FCoE、同じ統合ファブリック経由で損失を区別しない従来のプロトコルと共存させるなど、損失するプロトコルです。
+PFC では、輻輳に起因するパケット損失を大幅に削減することで、データの信頼性の高い配信がサポートされます。 これにより、FCoE などの損失の影響を受けるプロトコルは、同一の統合されたファブリックを介して、従来の損失を区別しないプロトコルと共存させることができます。
 
-PFC は、直接接続されているピア間のリンク レベルのフロー制御メカニズムを指定します。 PFC は、IEEE 802.3 PAUSE フレームに似ていますが、代わりに個々 の 802.1p の優先度レベルで動作します。 これにより、受信側が任意の優先度レベルでの送信を一時停止できます。
+PFC は、直接接続されているピア間のリンクレベルのフロー制御メカニズムを指定します。 PFC は IEEE 802.3 の一時停止フレームに似ていますが、代わりに個別の 802.1 p 優先度レベルで動作します。 これにより、受信者は任意の優先度レベルでトランスミッタを一時停止できます。
 
-PFC の詳細については、次を参照してください。[優先度に基づくフロー制御 (PFC)](priority-based-flow-control--pfc.md)します。
+PFC の詳細については、「[優先順位ベースのフロー制御 (pfc)](priority-based-flow-control--pfc.md)」を参照してください。
 
-<a href="" id="enhanced-transmission-selection--ets-"></a>強化された転送の選択 (ETS)  
-ETS は IEEE 802.1 qaz で指定されている伝送選択アルゴリズム (TSA) ドラフト標準。 この標準は、DCB インターフェイス用のフレームワークの一部です。
+<a href="" id="enhanced-transmission-selection--ets-"></a>拡張転送の選択 (送信)  
+TSA は、IEEE 802.1 Qaz draft 標準で指定されている伝送選択アルゴリズム () です。 この標準は、DCB インターフェイスのフレームワークの一部です。
 
-ETS では、さまざまな IEEE 802.1p の優先度レベルに割り当てられているトラフィック クラス間の帯域幅を割り当てます。 トラフィック クラスごとには、directlyconnected ピア間のデータ リンクで使用できる帯域幅の割合が割り当てられます。 トラフィック クラスでは、その割り当てられた帯域幅を使用しない場合、ETS、トラフィック クラスを使用していない利用可能な帯域幅を使用するには、その他のトラフィック クラスを使用します。
+変更すると、異なる IEEE 802.1 p 優先度レベルに割り当てられているトラフィッククラス間に帯域幅が割り当てられます。 各 traffic クラスには、直接接続されているピア間のデータリンクで使用可能な帯域幅の割合が割り当てられます。 トラフィッククラスで割り当てられた帯域幅が使用されていない場合は、トラフィッククラスが使用していない帯域幅を他のトラフィッククラスが使用できるようにします。
 
-ETS の詳細については、次を参照してください。 [Enhanced Transmission Selection (ETS) アルゴリズム](enhanced-transmission-selection--ets--algorithm.md)します。
+設定の詳細については、「 [Enhanced 伝送選択 (送信) アルゴリズム](enhanced-transmission-selection--ets--algorithm.md)」を参照してください。
 
-<a href="" id="data-center-bridging-exchange--dcbx--protocol"></a>データ センター ブリッジング Exchange (DCBX) プロトコル  
-IEEE 802.1 qaz で、Data Center Bridging Exchange (DCBX) プロトコルが指定されてもドラフト標準。 DCBX は、2 つの directlyconnected ピア間で交換される DCB 構成パラメーターを使用できます。 これにより、これらのピアに適応し、接続経由でデータ転送を最適化するためにサービスの品質 (QoS) パラメーターを調整できます。
+<a href="" id="data-center-bridging-exchange--dcbx--protocol"></a>Data Center ブリッジング Exchange (DCBX) プロトコル  
+Data Center ブリッジング Exchange (DCBX) プロトコルは、IEEE 802.1 Qaz draft standard でも指定されています。 DCBX では、2つの directconnected ピア間で DCB 構成パラメーターを交換できます。 これにより、これらのピアは、サービスの品質 (QoS) パラメーターを調整および調整して、接続を介したデータ転送を最適化することができます。
 
-DCBX はネットワーク アダプター間の競合している QoS パラメーター設定を検出するためにも使用されます (*ローカル ピア*) とリモート ピア。 ローカルおよびリモートの QoS パラメーターの設定に基づき、ミニポート ドライバーは、競合を解決し、一連の運用上の QoS パラメーターを派生します。 ネットワーク アダプターでは、リモート ピアにパケットの優先順位の送信のこれらのオペレーションのパラメーターを使用します。 ドライバーがその運用上の NDIS QoS パラメーター設定を解決する方法の詳細については、次を参照してください。[運用上の NDIS QoS パラメーターを解決する](resolving-operational-ndis-qos-parameters.md)します。
+DCBX は、ネットワークアダプター (*ローカルピア*) とリモートピア間の競合する QoS パラメーター設定を検出するためにも使用されます。 ローカルおよびリモートの QoS パラメーター設定に基づき、ミニポートドライバーは競合を解決し、一連の動作 QoS パラメーターを派生します。 ネットワークアダプターは、これらの操作パラメーターを使用して、リモートピアにパケットを優先的に送信します。 ドライバーが動作している NDIS QoS パラメーター設定を解決する方法の詳細については、「[運用 Ndis Qos パラメーターの解決](resolving-operational-ndis-qos-parameters.md)」を参照してください。
 
-リンク層探索プロトコル (LLDP) パケットで実行される DCB 型の値の長さ (TLV) 設定 DCBX で構成されます。 LLDP が IEEE 802.1AB で指定された-2005 standard。
+DCBX は、DCB (TLV) の設定で構成されます。この設定は、リンク層検出プロトコル (LLDP) パケットを介して実行されます。 LLDP は、IEEE 802.1 AB-2005 標準で指定されています。
 
-**注**  DCBX では、ローカル ピアが、特定の時点で 1 つだけのリモート ピアからの構成パラメーターを保持することを指定します。 その結果、ネットワーク アダプターは、ローカル、リモート、および運用上の NDIS QoS パラメーターの 1 つだけのセットを保持します。
+  DCBX は、ローカルピアが特定の時点で1つのリモートピアからの構成パラメーターのみを保持**することを**指定します。 その結果、ネットワークアダプターで保持されるのは、ローカル、リモート、および運用 NDIS の1つの QoS パラメーターのセットだけです。
 
  
 
-各トラフィック クラスの ETS と PFC 構成設定は、IEEE 802.1p の優先度レベルに関連付けられます。 優先度レベルは、パケットの内の 3 ビット値として指定 802.1 q タグ。 NDIS パケットの場合、802.1 p の優先度レベルがで指定された、 **UserPriority**のメンバー、 [ **NDIS\_NET\_バッファー\_一覧\_8021Q\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_net_buffer_list_8021q_info)構造に関連付けられたパケットの[ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)構造体。
+各トラフィッククラスと PFC 構成設定は、IEEE 802.1 p 優先度レベルに関連付けられています。 優先度レベルは、パケットの 802.1 Q タグ内の3ビット値として指定されます。 NDIS パケットの場合、802.1 p 優先度レベルは、パケットの Net\_に関連付けられている[**ndis\_NET\_BUFFER\_LIST\_8021Q\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_net_buffer_list_8021q_info)構造体の**userpriority**メンバーによって指定され[**バッファー\_リスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)構造体。
 
-優先度レベルの詳細については、次を参照してください。 [IEEE 802.1p の優先度レベル](ieee-802-1p-priority-levels.md)します。
+優先度レベルの詳細については、「 [IEEE 802.1 p Priority levels](ieee-802-1p-priority-levels.md)」を参照してください。
 
  
 

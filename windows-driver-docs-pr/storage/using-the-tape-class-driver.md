@@ -3,16 +3,16 @@ title: テープ クラス ドライバーの使用
 description: テープ クラス ドライバーの使用
 ms.assetid: 72ed3fd9-d46f-400e-9816-f9f48b5a85c0
 keywords:
-- テープ ドライバー WDK ストレージ、テープ ドライバーについて
-- テープ ドライバーに関するテープ ドライバー WDK、ストレージ
+- テープドライバー WDK 記憶域、テープドライバーについて
+- 記憶域テープドライバー WDK、テープドライバーについて
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a531ffbba711534f11f039672d696cc23e558424
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f4f26a5b0a0141be66737fb97ef759fcec38340b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386791"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845371"
 ---
 # <a name="using-the-tape-class-driver"></a>テープ クラス ドライバーの使用
 
@@ -20,27 +20,27 @@ ms.locfileid: "67386791"
 ## <span id="ddk_using_the_tape_class_driver_kg"></span><span id="DDK_USING_THE_TAPE_CLASS_DRIVER_KG"></span>
 
 
-システム提供のテープのクラス ドライバーがデバイスに依存しないを実装して、オペレーティング システムに固有のテープのサポートしデバイスに固有のテープ miniclass ドライバーのサポート ルーチンをエクスポートします。
+システム提供のテープクラスドライバーは、デバイスに依存しないオペレーティングシステム固有のテープサポートを実装し、デバイス固有の tape miniclass ドライバーのサポートルーチンをエクスポートします。
 
-テープのクラス ドライバー:
+テープクラスドライバー:
 
--   Miniclass ドライバーのによって提供されるデバイス固有の情報を使用してテープ miniclass ドライバーを初期化します**DriverEntry**の割り当てと初期化 miniclass ドライバーをオペレーティング システムのリソースを含むルーチンとPnP マネージャーからの開始要求の受信時にデバイス オブジェクトを表すデバイスと、デバイス スタックに関連付けるとデバイスを起動 (FDO) を作成する、サポートするデバイス。
+-   Miniclass ドライバーの**Driverentry**ルーチンによって提供されるデバイス固有の情報を使用して、tape miniclass driver を初期化します。これには、miniclass ドライバーとそれがサポートするデバイスのオペレーティングシステムリソースの割り当てと初期化が含まれます。デバイスを表すデバイスオブジェクト (FDO) を作成し、デバイススタックにアタッチし、PnP マネージャーから開始要求の受信時にデバイスを起動します。
 
--   メモリの割り当てと初期化ルーチンをエクスポートします。
+-   メモリの割り当ておよび初期化ルーチンをエクスポートします。
 
--   分割は、HBA の最大転送サイズに収まるように必要な場合に要求を転送します。
+-   必要に応じて転送要求を分割し、HBA の最大転送サイズ内に収まるようにします。
 
--   IRP の処理\_MJ\_作成、IRP\_MJ\_読み取り、IRP\_MJ\_書き込み、IRP\_MJ\_PNP、および IRP\_MJ\_POWER 要求.
+-   IRP\_MJ\_CREATE、IRP\_MJ\_READ、IRP\_MJ\_WRITE、IRP\_MJ\_PNP、および IRP\_MJ\_の電源要求を処理します。
 
--   デバイス非依存は IRP の前処理を実行します。\_MJ\_デバイス\_コントロール要求、テープ miniclass ドライバーに対応するデバイス固有のルーチンにディスパッチします。
+-   IRP\_MJ\_\_デバイスのデバイスに依存しないプリプロセスを実行して、要求を制御し、tape miniclass ドライバー内の対応するデバイス固有のルーチンにディスパッチします。
 
--   される Srb を割り当て、テープ miniclass ドライバー、CDB と要求に適切な SRB メンバーが入力した後は、基になる記憶域ポート ドライバーに送信します。
+-   SRBs を割り当て、テープ miniclass ドライバーが要求に適した CDB およびその他の SRB メンバーを入力した後に、基になるストレージポートドライバーに送信します。
 
--   Windows NT ステータス コードとテープの状態コード間の変換をデバイスに依存しないテープ固有のエラー処理、示しテープ miniclass ドライバーのデバイスに固有のエラー処理ルーチンを呼び出します。
+-   Windows NT 状態コードとテープの状態コードを変換し、デバイスに依存しないテープ固有のエラー処理を提供し、tape miniclass ドライバーのデバイス固有のエラー処理ルーチンを呼び出します。
 
--   テープ miniclass ドライバー (minitape 拡張機能とコマンド拡張機能) のドライバーのコンテキストの領域を割り当てます。
+-   Tape miniclass ドライバー (minitape 拡張機能とコマンド拡張機能) のドライバーコンテキスト領域を割り当てます。
 
-参照してください[テープ クラス ドライバー ルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)の説明については、**TapeClass * * * Xxx*テープ miniclass ドライバーによって呼び出すことができるルーチン。
+Tape miniclass ドライバーから呼び出すことができる **TapeClass * * * Xxx*ルーチンの説明については、「 [Tape Class Driver ルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)」を参照してください。
 
  
 

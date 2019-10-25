@@ -3,56 +3,56 @@ title: I/O キューの状態
 description: I/O キューの状態
 ms.assetid: 99519d1c-20e5-4a32-8462-19ec9f907506
 keywords:
-- I/O は、WDK KMDF、状態をキューします。
-- WDK の I/O キューを状態します。
-- 現在の I/O キュー状態 WDK KMDF
-- アイドル状態の I/O キューの状態 WDK KMDF
-- WDK KMDF I/O キューの状態を準備します。
-- 停止している I/O キューの状態 WDK KMDF
-- WDK KMDF I/O キューの状態のドレイン
-- WDK KMDF I/O キューの状態を消去
+- I/o キュー WDK KMDF、状態
+- 状態 WDK i/o キュー
+- 現在の i/o キューの状態 WDK KMDF
+- アイドル状態の i/o キューの状態 WDK KMDF
+- ready i/o queue state WDK KMDF
+- 停止した i/o キュー状態 WDK KMDF
+- ドレインを行う i/o キューの状態 WDK KMDF
+- 削除された i/o キュー状態 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ec6ae9821b679d72821af5d10228bda4c8c530f9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0408d8aeaca95d4ad65b4ab7e1f8024a45e2c5db
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382827"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845211"
 ---
 # <a name="io-queue-states"></a>I/O キューの状態
 
 
-フレームワークには、次の状態の I/O キューを定義します。
+このフレームワークは、i/o キューの次の状態を定義します。
 
-<a href="" id="idle"></a>*アイドル状態します。*  
-I/O キューに、I/O 要求が含まれていないと、ドライバーが I/O キューから受信したすべての要求を処理していません。
+<a href="" id="idle"></a>*退席*  
+I/o キューに i/o 要求が含まれておらず、i/o キューから受信した要求がドライバーによって処理されていません。
 
-<a href="" id="ready"></a>*準備完了*  
-I/O キューが、framework から I/O 要求を受信できるし、I/O 要求のドライバーに提供できます。
+<a href="" id="ready"></a> *」*  
+I/o キューは、フレームワークから i/o 要求を受け取ることができ、ドライバーに i/o 要求を配信できます。
 
-<a href="" id="stopped"></a>*停止*  
-I/O キューは、framework からの I/O 要求を受信することができますが、ドライバーに I/O 要求を配信、ことはできませんし、ドライバーが I/O キューから受信したすべての要求を処理していません。
+<a href="" id="stopped"></a>*なく*  
+I/o キューは、フレームワークから i/o 要求を受信できますが、ドライバーに i/o 要求を配信できません。また、i/o キューから受信した要求はドライバーによって処理されません。
 
-<a href="" id="drained"></a>*ドレインされます。*  
-I/O キューが空で、フレームワークから新しい I/O 要求を受信することはできないことおよびドライバーに配信された I/O キューに含まれていたすべての I/O 要求。
+<a href="" id="drained"></a>*ドレインされ*  
+I/o キューは空で、フレームワークからの新しい i/o 要求を受信できません。また、i/o キューにあったすべての i/o 要求がドライバーに配信されています。
 
-<a href="" id="purged"></a>*消去*  
-I/O キューが空、フレームワークから新しい I/O 要求を受信することはできないこと、および I/O キューに含まれていたすべての I/O 要求が取り消されました。
+<a href="" id="purged"></a>*さ*  
+I/o キューが空で、フレームワークからの新しい i/o 要求を受信できず、i/o キューにあったすべての i/o 要求が取り消されています。
 
-フレームワークは、ドライバーの呼び出し後準備完了状態に新しい I/O キューを設定することができます[ **WdfIoQueueCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nf-wdfio-wdfioqueuecreate)します。 ただし、[電源管理対象の I/O キュー](using-power-managed-i-o-queues.md)準備完了状態、デバイスの作業 (D0) 状態にある場合にのみを入力してください。
+このフレームワークでは、ドライバーが[**WdfIoQueueCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuecreate)を呼び出した後に、新しい i/o キューを準備完了状態に設定できます。 ただし、[電源管理の i/o キュー](using-power-managed-i-o-queues.md)は、デバイスが動作中 (D0) 状態の場合にのみ、準備完了状態になります。
 
-ドライバーでの I/O キューの状態を変更できます。
+ドライバーは、次の方法で i/o キューの状態を変更できます。
 
--   呼び出す[ **WdfIoQueueStop** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nf-wdfio-wdfioqueuestop)または[ **WdfIoQueueStopSynchronously** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nf-wdfio-wdfioqueuestopsynchronously)その停止状態でキューを配置します。
+-   キューを停止状態にするには、 [**Wdfioqueuestop**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuestop)または[**Wdfioqueuestopを同期的**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuestopsynchronously)に呼び出します。
 
--   呼び出す[ **WdfIoQueueDrain** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nf-wdfio-wdfioqueuedrain)または[ **WdfIoQueueDrainSynchronously** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nf-wdfio-wdfioqueuedrainsynchronously)のドレインされた状態でキューを配置します。
+-   キューをドレインされた状態にするには、 [**Wdfioqueuedrain**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuedrain)または[**WdfIoQueueDrainSynchronously**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuedrainsynchronously)を呼び出します。
 
--   呼び出す[ **WdfIoQueuePurge** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nf-wdfio-wdfioqueuepurge)または[ **WdfIoQueuePurgeSynchronously** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nf-wdfio-wdfioqueuepurgesynchronously)のパージされた状態でキューを配置します。
+-   削除された状態にキューを配置するには、 [**Wdfioqueuepurge**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuepurge)または[**WdfIoQueuePurgeSynchronously**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuepurgesynchronously)を呼び出します。
 
--   呼び出す[ **WdfIoQueueStart** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nf-wdfio-wdfioqueuestart)にキューをその準備完了状態に戻ります。
+-   [**Wdfioqueuestart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuestart)を呼び出して、キューを準備完了状態に戻します。
 
-I/O キューの現在の状態を取得するには、ドライバーを呼び出すことができます[ **WdfIoQueueGetState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nf-wdfio-wdfioqueuegetstate)します。
+I/o キューの現在の状態を取得するために、ドライバーは[**WdfIoQueueGetState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuegetstate)を呼び出すことができます。
 
  
 

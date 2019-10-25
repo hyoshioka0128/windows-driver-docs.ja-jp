@@ -4,42 +4,42 @@ description: NET_BUFFER_LIST 世代間の関係
 ms.assetid: 37b3b08d-4656-47bc-b656-a03f208e4311
 keywords:
 - NET_BUFFER_LIST
-- 親/子 NET_BUFFER_LIST リレーションシップ WDK ネットワーク
-- 子/親 NET_BUFFER_LIST リレーションシップ WDK ネットワーク
-- WDK NET_BUFFER_LIST のリレーションシップ
+- 親/子 NET_BUFFER_LIST リレーションシップの WDK ネットワーク
+- 子/親 NET_BUFFER_LIST リレーションシップの WDK ネットワーク
+- リレーションシップ (WDK NET_BUFFER_LIST)
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b869a9b07250f99d5cfff8d83c41527e85222876
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 466b01723c7007bfc85f504c7eed65fa9f8bcd02
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67359135"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842062"
 ---
-# <a name="relationships-between-netbufferlist-generations"></a>NET 間のリレーションシップ\_バッファー\_一覧の世代
+# <a name="relationships-between-net_buffer_list-generations"></a>NET\_BUFFER\_LIST Generation のリレーションシップ
 
 
 
 
 
-ドライバー作成者が理解し、親 (オリジナル) 間の関係を維持する必要があります[ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)構造と (派生)、子構造を複製、フラグメント、および再アセンブリの操作に起因します。
+ドライバーの作成者は、親 (元) の[**NET\_バッファー\_リスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)構造と、複製、フラグメント、および再アセンブル操作の結果として得られる子 (派生) 構造との間の関係を理解し、維持する必要があります。
 
-複製/フラグメント/再アセンブリの関数の呼び出し元が子 NET で親ポインターを含む、親/子の関係を維持\_バッファー\_リスト構造と子の数。 子の数により、すべての子が解放された後、呼び出し元が、親を解放します。 次の規則が適用されます。
+複製/フラグメント/再構築関数の呼び出し元は、親子関係を維持します。これには、子ネット\_バッファー\_リスト構造の親ポインターと子の数が含まれます。 子の数は、すべての子が解放された後に、呼び出し元が親を解放することを保証します。 次の規則が適用されます。
 
--   ドライバーは、子から構造を作成した後、 [ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)構造体には、親の構造体の所有権を保持する必要があり、子を渡す必要がありますその他のドライバーを構造体。 ドライバーは、NET の親を渡す必要がありますしない\_バッファー\_を別のドライバーの一覧の構造体。
+-   ドライバーは、 [**NET\_BUFFER\_LIST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)構造体から子構造を作成した後、親構造の所有権を保持し、子構造体を他のドライバーに渡す必要があります。 ドライバーは、親の NET\_BUFFER\_LIST 構造体を別のドライバーに渡すことはできません。
 
--   ドライバーは NET の親の子の数を更新する必要がありますのみ\_バッファー\_リスト構造体。 親の構造体は、別のドライバーに渡されることはありません、ために、子の数の値が上書きされることがあるリスクはありません。 ドライバーは、親の構造体を指す子構造体で親ポインターを設定する必要があります。
+-   ドライバーは、親の NET\_BUFFER\_LIST 構造内の子の数のみを更新する必要があります。 親の構造は別のドライバーに渡されないため、子の数の値が上書きされる危険性はありません。 ドライバーは、親構造体を指すように子構造体の親ポインターを設定する必要があります。
 
--   ドライバーが、NET を受信すると\_バッファー\_から別のドライバー、ドライバーの一覧は親ポインターを上書きする必要があります。 場合、受信した NET\_バッファー\_リスト構造は、子、既にその親ポインターを設定する必要があります。 ドライバーは、NET を使用できます\_バッファー\_リストが親構造体として別のドライバーから受け取りました。
+-   ドライバーが別のドライバーから NET\_BUFFER\_LIST を受け取ると、ドライバーは親ポインターを上書きしないようにする必要があります。 受信した NET\_BUFFER\_LIST 構造体が子である場合は、その親ポインターが既に設定されている必要があります。 ドライバーは、別のドライバーから受信した NET\_BUFFER\_リストを親構造として使用できます。
 
--   NDIS では、上記の規則は適用されません。 NET の現在の所有者\_バッファー\_リスト構造は、子の数と親ポインターを管理する必要があります。 たとえば、現在の所有者は複製し、両方、NET のフラグメント\_バッファー\_リスト構造では、親ポインターと子のカウンターが管理する必要があります。
+-   NDIS では、上記の規則は適用されません。 NET\_BUFFER\_LIST 構造体の現在の所有者は、子の数と親のポインターを管理する必要があります。 たとえば、現在の所有者が NET\_BUFFER\_LIST 構造体の複製とフラグメント化を行う場合、親ポインターと子カウンターを管理する必要があります。
 
--   カウントを 0 にし、親へのポインター、NDIS 設定、子**NULL** 、NET を割り当てるときに\_バッファー\_リスト構造体。 NDIS は、これらのフィールドのドライバーは、NET を通過するたびを変更しないは\_バッファー\_を別のドライバーの一覧の構造体。
+-   NDIS は、子の数をゼロに設定し、親ポインターが NET\_BUFFER\_LIST 構造体を割り当てるときに**NULL を返し**ます。 NDIS では、ドライバーが NET\_BUFFER\_LIST 構造体を別のドライバーに渡すたびに、これらのフィールドが変更されることはありません。
 
 ## <a name="related-topics"></a>関連トピック
 
 
-[NET の派生\_バッファー\_リストの構造体](derived-net-buffer-list-structures.md)
+[派生 NET\_BUFFER\_LIST 構造体](derived-net-buffer-list-structures.md)
 
  
 

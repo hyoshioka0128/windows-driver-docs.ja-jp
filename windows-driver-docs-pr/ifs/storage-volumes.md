@@ -3,29 +3,29 @@ title: ストレージ ボリューム
 description: ストレージ ボリューム
 ms.assetid: 37b65bb6-7c62-47be-a16d-3813dc4c1259
 keywords:
-- フィルター ドライバー WDK ファイル システム、記憶域ボリューム
-- ファイル システム フィルター ドライバー WDK、記憶域ボリューム
-- WDK の記憶域ボリューム ファイル システム
-- マウント マネージャ WDK ファイル システム
-- 記憶域デバイス オブジェクトの WDK ファイル システム
-- WDK のボリュームのファイル システム、パラメーター ブロック
-- Vpb WDK ファイル システム
-- WDK のボリュームはファイル システム、記憶域ボリュームについて
-- WDK の論理ボリューム ファイル システム
-- WDK のパーティション ファイル システム
-- 一意のボリューム名 WDK ファイル システム
-- WDK の Guid はファイル システム
-- WDK の名前のファイル システム
+- フィルタードライバー WDK ファイルシステム、記憶域ボリューム
+- ファイルシステムフィルタードライバー WDK、ストレージボリューム
+- 記憶域ボリューム WDK ファイルシステム
+- マウントマネージャーの WDK ファイルシステム
+- ストレージデバイスオブジェクト WDK ファイルシステム
+- ボリューム WDK ファイルシステム、パラメーターブロック
+- VPBs WDK ファイルシステム
+- ボリューム WDK ファイルシステム、記憶域ボリュームについて
+- 論理ボリューム WDK ファイルシステム
+- WDK ファイルシステムのパーティション分割
+- 一意のボリューム名 WDK ファイルシステム
+- Guid WDK ファイルシステム
+- WDK ファイルシステムの名前
 - 一意のボリューム名
-- 使用中のステージング領域
+- ボリューム GUID
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e14bbffc9fae6cd8cf2e6b2c3a5468f585e5dbcb
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 61831f5ac31a28c0eb85c64c5fe607511621a5a9
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371307"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840963"
 ---
 # <a name="storage-volumes"></a>ストレージ ボリューム
 
@@ -33,31 +33,31 @@ ms.locfileid: "67371307"
 ## <span id="ddk_storage_volumes_if"></span><span id="DDK_STORAGE_VOLUMES_IF"></span>
 
 
-A*ボリューム*容量固定ディスク、フロッピー ディスク、CD-ROM、ディレクトリとファイルを格納する書式指定などのストレージ デバイスします。 大容量のボリュームを 1 つ以上に分割できます*論理ボリューム*も呼ばれ、*パーティション*します。 各論理ボリュームは NTFS、FAT、または CDFS など、特定のメディア ベースのファイル システムで使用する書式設定します。
+*ボリューム*は、記憶装置 (固定ディスク、フロッピーディスク、cd-rom など) で、ディレクトリとファイルを格納するようにフォーマットされています。 大きなボリュームは、*パーティション*とも呼ばれる複数の*論理ボリューム*に分けることができます。 各論理ボリュームは、NTFS、FAT、CDFS など、特定のメディアベースのファイルシステムで使用するようにフォーマットされています。
 
-A*記憶域ボリューム*、または*ストレージ デバイス オブジェクト*、通常、システムの論理ボリュームを表す物理デバイス オブジェクト (PDO) − − デバイス オブジェクトは、します。 記憶域デバイス オブジェクトは、記憶域デバイス スタックに存在するが、必ずしもがスタックの最上位のデバイス オブジェクトになることはありません。
+*記憶域ボリューム*(*記憶装置オブジェクト*) は、システムの論理ボリュームを表す、デバイスオブジェクト (通常は物理デバイスオブジェクト (PDO)) です。 ストレージデバイスオブジェクトは記憶装置スタックに存在しますが、必ずしもスタック内の最上位のデバイスオブジェクトであるとは限りません。
 
-記憶域ボリュームにファイル システムをマウントすると、ファイル システム ボリューム デバイス オブジェクトをファイル システム ボリュームを表すためには、(提供) が作成されます。 という名前の共有オブジェクトを使用して、記憶域デバイス オブジェクトに提供がマウントされているファイル システム、*ボリューム パラメーター ブロック*(VPB)。
+ファイルシステムが記憶域ボリュームにマウントされると、ファイルシステムのボリュームを表すファイルシステムボリュームデバイスオブジェクト (VDO) が作成されます。 ファイルシステム VDO は、*ボリュームパラメーターブロック*(vpb) と呼ばれる共有オブジェクトを使って、ストレージデバイスオブジェクトにマウントされます。
 
-### <a name="span-idddkmountmanagerifspanspan-idddkmountmanagerifspanmount-manager"></a><span id="ddk_mount_manager_if"></span><span id="DDK_MOUNT_MANAGER_IF"></span>マウント マネージャ
+### <a name="span-idddk_mount_manager_ifspanspan-idddk_mount_manager_ifspanmount-manager"></a><span id="ddk_mount_manager_if"></span><span id="DDK_MOUNT_MANAGER_IF"></span>マウントマネージャー
 
-*マウント マネージャ*ボリューム名、ドライブ文字、およびボリュームのマウント ポイントの記憶域ボリュームの情報を管理を担当する I/O システムの一部です。 新しい記憶域ボリュームがシステムに追加されると、マウント マネージャは、次の方法のいずれかで到着の通知します。
+*マウントマネージャー*は、ボリューム名、ドライブ文字、ボリュームマウントポイントなどの記憶域ボリューム情報の管理を行う i/o システムの一部です。 新しいストレージボリュームがシステムに追加されると、次のいずれかの方法でマウントマネージャーに到着が通知されます。
 
--   記憶域ボリュームの呼び出しを作成するクラス ドライバー [ **IoRegisterDeviceInterface** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterdeviceinterface) 、MOUNTDEV で新しいインターフェイスを登録する\_マウント済み\_デバイス\_インターフェイス クラスの GUID です。 この場合、プラグ アンド プレイ デバイスのインターフェイスの通知メカニズムは、システムのボリュームの到着のマウント マネージャを警告します。
+-   ストレージボリュームを作成したクラスドライバーは、 [**IoRegisterDeviceInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregisterdeviceinterface)を呼び出して、MOUNTDEV\_マウントされた\_デバイス\_GUID インターフェイスクラスに新しいインターフェイスを登録します。 これが発生すると、プラグアンドプレイデバイスインターフェイスの通知メカニズムによって、マウントマネージャーに対してシステムでのボリュームの到着が通知されます。
 
--   記憶域ボリューム用のドライバーが IRP マウント Manager に送信\_MJ\_デバイス\_制御の要求を指定する[ **IOCTL\_MOUNTMGR\_ボリューム\_到着\_通知**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mountmgr/ni-mountmgr-ioctl_mountmgr_volume_arrival_notification) I/O に対してコードを制御します。 この要求を呼び出すことによって作成できます[ **IoBuildDeviceIoControlRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iobuilddeviceiocontrolrequest)します。
+-   記憶域ボリュームのドライバーは、マウントマネージャーに対して、IRP\_MJ\_デバイス\_制御要求を送信します。これにより、i/o [ **\_MOUNTMGR\_ボリューム\_到着\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/mountmgr/ni-mountmgr-ioctl_mountmgr_volume_arrival_notification) i/o 制御コードの通知が指定されます。 この要求は、 [**IoBuildDeviceIoControlRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuilddeviceiocontrolrequest)を呼び出すことによって作成できます。
 
-### <a name="span-idddkuniquevolumenameifspanspan-idddkuniquevolumenameifspanunique-volume-name"></a><span id="ddk_unique_volume_name_if"></span><span id="DDK_UNIQUE_VOLUME_NAME_IF"></span>一意のボリューム名
+### <a name="span-idddk_unique_volume_name_ifspanspan-idddk_unique_volume_name_ifspanunique-volume-name"></a><span id="ddk_unique_volume_name_if"></span><span id="DDK_UNIQUE_VOLUME_NAME_IF"></span>一意のボリューム名
 
-マウント マネージャは、ボリューム ドライバーについては、次のクエリを実行して、新しい記憶域ボリュームの着信に応答します。
+マウントマネージャーは、ボリュームドライバーに次の情報を照会することによって、新しい記憶域ボリュームの到着に応答します。
 
--   ボリュームの非永続的デバイス オブジェクト名 (またはターゲット名) にある、**デバイス**システム オブジェクトのツリーのディレクトリ (例。"\\デバイス\\HarddiskVolume1")
+-   システムオブジェクトツリーの**デバイス**ディレクトリにある、ボリュームの非永続的なデバイスオブジェクト名 (またはターゲット名) (例: "\\Device\\HarddiskVolume1")
 
--   ボリュームのグローバル一意識別子 (GUID) とも呼ばれる、*固有のボリューム名*
+-   ボリュームのグローバル一意識別子 (GUID)。*一意のボリューム名*とも呼ばれます。
 
--   ドライブ文字など、ボリュームの推奨される永続的なシンボリック リンクの名前 (たとえば、"\\\dosdevices\z\\d:")
+-   ドライブ文字など、ボリュームに対して推奨される永続的なシンボリックリンク名 (たとえば、"\\DosDevices\\D:")
 
-記憶装置ドライバーとマウント マネージャ間の相互作用の詳細については、次を参照してください。[マウント マネージャーの要求、記憶域クラス ドライバーをサポートしている](https://docs.microsoft.com/windows-hardware/drivers/storage/supporting-mount-manager-requests-in-a-storage-class-driver)します。
+ストレージドライバーとマウントマネージャーの相互作用の詳細については、「[記憶域クラスドライバーでのマウントマネージャー要求のサポート](https://docs.microsoft.com/windows-hardware/drivers/storage/supporting-mount-manager-requests-in-a-storage-class-driver)」を参照してください。
 
  
 

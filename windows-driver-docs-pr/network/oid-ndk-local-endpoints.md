@@ -1,30 +1,30 @@
 ---
 title: OID_NDK_LOCAL_ENDPOINTS
-description: クエリとして NDIS と関連付けたドライバーまたはユーザー モード アプリケーションはミニポート アダプターで Network Direct のアクティブなリスナーと共有のエンドポイントの一覧に OID_NDK_LOCAL_ENDPOINTS OID を使用します。
+description: クエリとして、NDIS およびそれ以降のドライバーまたはユーザーモードアプリケーションは、OID_NDK_LOCAL_ENDPOINTS OID を使用して、アクティブなネットワークダイレクトリスナーとミニポートアダプターの共有エンドポイントの一覧を表示します。
 ms.assetid: 93F077AF-7FEA-4F92-9784-B65ADCC16564
 ms.date: 08/08/2017
-keywords: -OID_NDK_LOCAL_ENDPOINTS ネットワークのドライバーが Windows Vista 以降
+keywords: -Windows Vista 以降の OID_NDK_LOCAL_ENDPOINTS ネットワークドライバー
 ms.localizationpriority: medium
-ms.openlocfilehash: 443d46ee9f2e4a9e7d676513320d77f55d300bf1
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ea564c3887461fa8b61ba4b2ec72c8e0c5b181e3
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67356137"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844107"
 ---
-# <a name="oidndklocalendpoints"></a>OID\_NDK\_ローカル\_エンドポイント
+# <a name="oid_ndk_local_endpoints"></a>OID\_NDK\_ローカル\_エンドポイント
 
 
-クエリとして NDIS と関連付けたドライバーまたはユーザー モード アプリケーション使用 OID\_NDK\_ローカル\_Network Direct のアクティブなリスナーとミニポート アダプター上の共有のエンドポイントの一覧にエンドポイントの OID。
+クエリとして、NDIS およびそれ以降のドライバーまたはユーザーモードアプリケーションでは、OID\_NDK\_ローカル\_エンドポイント OID が、ミニポートアダプターのアクティブなネットワークダイレクトリスナーと共有エンドポイントの一覧に OID を使用します。
 
-NDIS 6.30 と以降のミニポート ドライバー NDK サービスを提供するには、この OID をサポートする必要があります。 それ以外の場合、この OID は省略可能です。
+NDK サービスを提供する NDIS 6.30 以降のミニポートドライバーでは、この OID がサポートされている必要があります。 それ以外の場合、この OID は省略可能です。
 
 <a name="remarks"></a>注釈
 -------
 
-NDIS は、アダプターから Network Direct のアクティブなリスナーと共有のエンドポイントの一覧を取得するには、この OID を発行します。 リスナーと共有のエンドポイントのリストを返すため、アダプターが必要な[ **NDIS\_NDK\_ローカル\_エンドポイント**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_ndk_local_endpoints)で構造体**InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体。
+NDIS は、この OID を発行して、アクティブなネットワークダイレクトリスナーと、アダプターからの共有エンドポイントの一覧を取得します。 Ndis [ **\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造の**informationbuffer**メンバーで、 [**ndis\_NDK\_ローカル\_エンドポイント**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_ndk_local_endpoints)構造のリスナーと共有エンドポイントの一覧を返すには、アダプターが必要です。
 
-この構造体には返されるローカル エンドポイントの数に基づく可変サイズです。 要素の数として、ローカル エンドポイントの配列のサイズがで指定された、**カウント**メンバー。
+この構造体は、返されるローカルエンドポイントの数に基づいて可変サイズになっています。 ローカルエンドポイント配列のサイズは、要素数として**カウント**メンバーに指定されます。
 
 <a name="requirements"></a>要件
 ------------
@@ -45,11 +45,11 @@ NDIS は、アダプターから Network Direct のアクティブなリスナ�
 </tr>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>NDIS 6.30 以降をサポートします。</p></td>
+<td><p>NDIS 6.30 以降でサポートされています。</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Ntddndis.h (include Ndis.h)</td>
+<td>Ntddndis (Ndis .h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -57,9 +57,9 @@ NDIS は、アダプターから Network Direct のアクティブなリスナ�
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_NDK\_ローカル\_エンドポイント**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_ndk_local_endpoints)
+[**NDIS\_NDK\_ローカル\_エンドポイント**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_ndk_local_endpoints)
 
-[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
+[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)
 
  
 

@@ -4,19 +4,19 @@ description: MS\_SMHBA\_PORTATTRIBUTES WMI クラス
 ms.assetid: 26f17443-cb89-4c93-9b67-35acb75b6d03
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 6a43e54d1c942ad23b96cd1283a01c0f59c6aeb0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: cd06c0dc605a2adc429b4bae37494a2627597b55
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386139"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844533"
 ---
-# <a name="mssmhbaportattributes-wmi-class"></a>MS\_SMHBA\_PORTATTRIBUTES WMI クラス
+# <a name="ms_smhba_portattributes-wmi-class"></a>MS\_SMHBA\_PORTATTRIBUTES WMI クラス
 
 
-記憶域管理 API をサポートする HBA ミニポート ドライバーは、MS を使用して\_SMHBA\_PORTATTRIBUTES クラスは、ポート属性を公開します。 このクラスの各ポートの 1 つのインスタンスが必要です。
+Storage Management API をサポートする HBA ミニポートドライバーは、MS\_SMHBA\_PORTATTRIBUTES クラスを使用してポート属性を公開します。 各ポートには、このクラスのインスタンスが1つ存在する必要があります。
 
-MS\_SMHBA\_PORTATTRIBUTES クラスが次のように定義されている*Hbaapi.mof*:
+MS\_SMHBA\_PORTATTRIBUTES クラスは、 *Hbaapi .mof*で次のように定義されています。
 
 ```cpp
 class MS_SMHBA_PORTATTRIBUTES 
@@ -46,9 +46,9 @@ class MS_SMHBA_PORTATTRIBUTES
 };
 ```
 
-このクラスの定義が WMI ツール スイートによってコンパイルされると、次のデータ構造が生成されます。
+このクラス定義が WMI ツールスイートによってコンパイルされると、次のデータ構造が生成されます。
 
-[**MS\_SMHBA\_PORTATTRIBUTES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_ms_smhba_portattributes)
+[**MS\_SMHBA\_PORTATTRIBUTES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_ms_smhba_portattributes)
 
 この WMI クラスに関連付けられているメソッドはありません。
 

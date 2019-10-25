@@ -1,5 +1,5 @@
 ---
-title: テープクラスドライバールーチン
+title: テープ クラス ドライバー ルーチン
 description: テープクラスドライバールーチン。
 ms.assetid: 7e3cecc9-4fd5-4806-9b0e-5897635f4930
 keywords:
@@ -8,17 +8,17 @@ keywords:
 - ストレージサポートルーチン
 ms.date: 10/08/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e63ce6296ea1a3e8b72c567ca3801391022e42e
-ms.sourcegitcommit: 0610366df5de756bf8aa6bfc631eba5e3cd84578
+ms.openlocfilehash: 4a5080c72ee90fb4c274992ff3b2d555d9a7f44f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72262383"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844450"
 ---
-# <a name="tape-class-driver-routines"></a>テープクラスドライバールーチン
+# <a name="tape-class-driver-routines"></a>テープ クラス ドライバー ルーチン
 
 システム提供のテープクラスドライバーは、一般的なテープ操作を処理し、個々の tape miniclass ドライバーにオペレーティングシステム固有のサポートを提供します。
 
-これらのルーチンは、 *minitape*で定義されています。 テープクラスのドライバールーチンの一覧については、 [minitape ヘッダー](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/minitape/)を参照してください。
+これらのルーチンは、 *minitape*で定義されています。 テープクラスのドライバールーチンの一覧については、 [minitape ヘッダー](https://docs.microsoft.com/windows-hardware/drivers/ddi/minitape/)を参照してください。
 
 テープミニポートドライバールーチンの一覧については、「 [Tape Miniclass Driver ルーチン](tape-miniclass-driver-routines.md)」を参照してください。

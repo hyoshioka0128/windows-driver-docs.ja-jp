@@ -1,18 +1,18 @@
 ---
-title: 下のエッジ中間ドライバーのデータ受信を接続指向
+title: 接続指向のエッジ中間ドライバーデータの受信
 description: 接続指向の下端を含む中間ドライバーでのデータの受信
 ms.assetid: c14b4e8a-cfa2-4771-83b2-aa20fda79d39
 keywords:
-- 中間ドライバー WDK ネットワー キング、受信操作
-- NDIS は、ドライバー WDK を中間、受信操作
+- 中間ドライバー WDK ネットワーク、受信操作
+- NDIS 中間ドライバー WDK、受信操作
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 09bae2f773b1c4ce256f477531cb33e364822fc0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: cb707412114ecb42922c65bbb504288726df213a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67373320"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844851"
 ---
 # <a name="receiving-data-in-an-intermediate-driver-with-a-connection-oriented-lower-edge"></a>接続指向の下端を含む中間ドライバーでのデータの受信
 
@@ -20,11 +20,11 @@ ms.locfileid: "67373320"
 
 
 
-NDIS を呼び出して、中間のドライバーの場合は、中間ドライバーは、接続指向のミニポート ドライバー上に重ねられる、 [ **ProtocolCoReceiveNetBufferLists** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_co_receive_net_buffer_lists)を受信したデータを示す関数。
+中間ドライバーが接続指向ミニポートドライバーの上にある場合、NDIS は、中間ドライバーの[**ProtocolCoReceiveNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_co_receive_net_buffer_lists)関数を呼び出して、受信したデータを示します。
 
-基になる接続指向のミニポート ドライバーを呼び出すことでネットワーク データを示します[ **NdisMCoIndicateReceiveNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcoindicatereceivenetbufferlists)、1 つまたは複数のリンク リストを渡して[ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)構造体。
+基になる接続指向ミニポートドライバーは、 [**NdisMCoIndicateReceiveNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcoindicatereceivenetbufferlists)を呼び出してネットワークデータを示し、1つまたは複数の[**NET\_BUFFER\_リスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)構造のリンクリストを渡します。
 
-接続指向の下端と中間のドライバーのデータの受信についての詳細については、次を参照してください。 [Connection-Oriented 操作](connection-oriented-operations.md)します。
+接続指向の下端を持つ中間ドライバーでのデータの受信の詳細については、「[接続指向の操作](connection-oriented-operations.md)」を参照してください。
 
  
 

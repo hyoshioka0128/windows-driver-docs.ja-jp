@@ -1,33 +1,33 @@
 ---
 title: ジャイロスコープのしきい値
-description: このトピックでは、ジャイロスコープしきい値に関する情報を提供します。
+description: このトピックでは、ジャイロスコープしきい値について説明します。
 ms.assetid: 68B11108-CA1A-4A49-BC44-4E9FE09955A9
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: dadbee3a04b7d89e7d2f33e1cb7e7ce26ca86b59
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 09def43c8fa88f6b8ae882df5091aebce5889d77
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366511"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841684"
 ---
 # <a name="gyroscope-thresholds"></a>ジャイロスコープのしきい値
 
 
-このトピックでは、ジャイロスコープしきい値に関する情報を提供します。
+このトピックでは、ジャイロスコープしきい値について説明します。
 
-次の表は、既定のしきい値をジャイロスコープなどがあります。 型の列に示すように種類の詳細については、次を参照してください。、 [PROPVARIANT 構造](https://go.microsoft.com/fwlink/p/?linkid=313395)します。
+次の表は、ジャイロスコープの既定のしきい値を示しています。 [型] 列に表示される型の詳細については、「 [Propvariant 構造体](https://go.microsoft.com/fwlink/p/?linkid=313395)」を参照してください。
 
-|プロパティのキー|種類|必須/オプション|既定値|説明|
+|プロパティキー|タスクバーの検索ボックスに|必須/オプション|既定値|説明|
 |---|---|---|---|---|
-|PKEY_SensorData_AngularVelocityX_DegreesPerSecond|VT_R4|必須|0.1f|1 秒あたりの度数法で、しきい値に到達するために必要な軸角度の速度の変更の最小量。|
-|PKEY_SensorData_AngularVelocityY_DegreesPerSecond|VT_R4|必須|0.1f|1 秒あたりの度数法で、しきい値に到達するために必要な y 軸の周りの角度の速度の変更の最小量。|
-|PKEY_SensorData_AngularVelocityZ_DegreesPerSecond|VT_R4|必須|0.1f|1 秒あたりの度数法で、しきい値に到達するために必要な z 軸角度の速度の変更の最小量。|
+|PKEY_SensorData_AngularVelocityX_DegreesPerSecond|VT_R4|必須かどうか|0.1 f|しきい値に達するために必要な x 軸周りの角速度の最小値 (1 秒あたりの度数単位)。|
+|PKEY_SensorData_AngularVelocityY_DegreesPerSecond|VT_R4|必須かどうか|0.1 f|しきい値に達するために必要な y 軸周辺の角速度の最小値 (1 秒あたりの度数単位)。|
+|PKEY_SensorData_AngularVelocityZ_DegreesPerSecond|VT_R4|必須かどうか|0.1 f|しきい値に達するために z 軸を中心とする角速度の最小値 (1 秒あたりの度数単位)。|
 
-ジャイロスコープ ドライバーは、呼び出すことでセンサー クラスの拡張機能に、サンプルの読み取りを報告する必要があります[SensorsCxSensorDataReady](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorscx/nf-sensorscx-sensorscxsensordataready)とき PKEY_SensorData_AngularVelocityY_ のいずれかの PKEY_SensorData_AngularVelocityX_DegreesPerSecondDegreesPerSecond、または PKEY_SensorData_AngularVelocityZ_DegreesPerSecond しきい値が満たされています。 各閾値は軸ごとの測定である必要があります。 軸のいずれかでしきい値の条件が満たされるたびに、ドライバーは SensorsCxSensorDataReady を呼び出すため必要があります。
-PKEY_SensorData_AngularVelocityX_DegreesPerSecond、または PKEY_SensorData_AngularVelocityY_DegreesPerSecond、PKEY_SensorData_AngularVelocityZ_DegreesPerSecond を 0.0f に設定すると、ドライバーは、センサー クラスのサンプルの測定値を報告する必要があります。すべての間隔で拡張機能。 このモードと呼ばれます*センサー サンプル ストリーミング*します。
+ジャイロスコープドライバーは、PKEY_SensorData_AngularVelocityX_DegreesPerSecond、PKEY_SensorData_AngularVelocityY_DegreesPerSecond、または PKEY_ のいずれかで[SensorsCxSensorDataReady](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorscx/nf-sensorscx-sensorscxsensordataready)を呼び出すことによって、センサークラス拡張に対するサンプルの読み取りを報告する必要があります。SensorData_AngularVelocityZ_DegreesPerSecond のしきい値を満たしています。 各しきい値は、軸ごとに測定する必要があります。 そのため、いずれかの軸でしきい値条件が満たされるたびに、ドライバーは SensorsCxSensorDataReady を呼び出す必要があります。
+PKEY_SensorData_AngularVelocityX_DegreesPerSecond、PKEY_SensorData_AngularVelocityY_DegreesPerSecond、または PKEY_SensorData_AngularVelocityZ_DegreesPerSecond が 0.0 f に設定されている場合、ドライバーはサンプルの読み取りをセンサークラスに報告する必要があります。各間隔の拡張機能。 このモードは*センサーサンプルストリーミング*と呼ばれています。
 
-ジャイロスコープ ドライバーは、センサー クラスの拡張機能の呼び出し直後に、1 つの例に読み取り常に報告する必要があります、 [EvtSensorStart](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorscx/ns-sensorscx-_sensor_controller_config)しきい値の値に関係なくコールバック。 このサンプルは、サンプルの初期読み込みと呼ばれると呼ばれます。
+センサークラス拡張がしきい値に関係なく[Evtsensorstart](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorscx/ns-sensorscx-_sensor_controller_config)コールバックを呼び出すと、ジャイロスコープドライバーは常に1つのサンプル読み取りを報告する必要があります。 このサンプルは、「最初のサンプルの読み取り」と呼ばれています。
 
 ## <a name="related-topics"></a>関連トピック
 

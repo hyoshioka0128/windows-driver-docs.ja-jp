@@ -3,23 +3,23 @@ title: NDIS がネットワーク アダプターの電源ポリシーを設定�
 description: NDIS がネットワーク アダプターの電源ポリシーを設定する方法
 ms.assetid: ede0e33d-16f9-45ec-9e9d-b188f6360b2f
 keywords:
-- ネットワーク インターフェイス カード WDK ネットワーク、電源ポリシー
-- Nic の WDK ネットワーク、電源ポリシー
+- ネットワークインターフェイスカード WDK ネットワーク、電源ポリシー
+- Nic WDK ネットワーク、電源ポリシー
 - 電源ポリシー WDK ネットワーク
 - DEVICE_CAPABILITIES
 - OID_PNP_CAPABILITIES
-- デバイスの電源ポリシー所有者 WDK ネットワー キング
-- WDK の NDIS ミニポート、電源ポリシーの電源管理
+- デバイスの電源ポリシー所有者の WDK ネットワーク
+- 電源管理 WDK NDIS ミニポート、電源ポリシー
 - ユーザー入力の WDK 電源管理
-- WDK の NDIS ミニポート、ユーザー入力の電源管理
+- 電源管理 WDK NDIS ミニポート、ユーザー入力
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d49fb0ddb4e2d08a07fa15410ab9453238702abe
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 781bcb6698977493af8e47e1474150de652ef2e6
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360812"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842540"
 ---
 # <a name="how-ndis-sets-the-power-policy-for-a-network-adapter"></a>NDIS がネットワーク アダプターの電源ポリシーを設定する方法
 
@@ -27,19 +27,19 @@ ms.locfileid: "67360812"
 
 
 
-NDIS は、各ネットワーク デバイスのデバイスの電源ポリシー所有者として機能します。 そのため、NDIS は設定して、各ネットワーク デバイスの電源ポリシーを管理します。 デバイスの電源ポリシーの管理に関する詳細については、次を参照してください。[デバイス電源ポリシーを管理する](https://docs.microsoft.com/windows-hardware/drivers/kernel/managing-device-power-policy)します。
+NDIS は、各ネットワークデバイスのデバイス電源ポリシー所有者として機能します。 そのため、NDIS は各ネットワークデバイスの電源ポリシーを設定し、管理します。 デバイスの電源ポリシーを管理する方法の詳細については、「[デバイスの電源ポリシーの管理](https://docs.microsoft.com/windows-hardware/drivers/kernel/managing-device-power-policy)」を参照してください。
 
-NDIS では、次の情報を使用して、NIC の電源ポリシーを設定します。
+NDIS では、NIC の電源ポリシーを設定するために次の情報を使用します。
 
--   [**デバイス\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_capabilities)への応答を返します、バス ドライバー構造、 [ **IRP\_MN\_クエリ\_機能**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-capabilities) NDIS が発行された要求。
+-   [**デバイス\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_capabilities)の構造。 IRP によって発行された[ **\_クエリ\_機能**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-capabilities)を要求する IRP\_に応答して返されます。
 
--   ミニポート ドライバーの応答、 [OID\_PNP\_機能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-capabilities)NDIS によって発行された要求。
+-   NDIS によって発行された、 [OID\_PNP\_機能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-capabilities)要求に対するミニポートドライバーの応答。
 
--   ユーザーのユーザー インターフェイス (UI) から入力します。
+-   ユーザーインターフェイス (UI) からのユーザー入力。
 
-### <a href="" id="using-the-device-capabilities-structure"></a>デバイスを使用して\_機能の構造体
+### <a href="" id="using-the-device-capabilities-structure"></a>デバイス\_機能の構造の使用
 
-NDIS が他の要求だけでなく、発行することにより、NIC の機能をクエリする NIC が列挙されたときに、 [ **IRP\_MN\_クエリ\_機能**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-capabilities)要求。 この要求に応答して、バス ドライバーが返されます、 [**デバイス\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_capabilities)構造体。 NDIS は、この構造体をコピーし、nic、電源ポリシーを設定するときに、この構造体から次の情報を使用
+NIC が列挙されると、NDIS は、他の要求に加えて、 [**IRP\_\_クエリ\_機能**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-capabilities)要求を実行して、nic の機能に対してクエリを実行します。 この要求に応答して、バスドライバーは[**デバイス\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_capabilities)の構造を返します。 NDIS は、この構造をコピーし、NIC の電源ポリシーを設定するときに、この構造の次の情報を使用します。
 
 <table>
 <colgroup>
@@ -55,54 +55,54 @@ NDIS が他の要求だけでなく、発行することにより、NIC の機�
 <tbody>
 <tr class="odd">
 <td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/deviced1-and-deviced2" data-raw-source="[DeviceD1 and DeviceD2](https://docs.microsoft.com/windows-hardware/drivers/kernel/deviced1-and-deviced2)">DeviceD1 と DeviceD2</a></p></td>
-<td align="left"><p>デバイス D1 の電源状態をサポートしている場合は TRUE。</p></td>
+<td align="left"><p>デバイスが D1 の電源状態をサポートしている場合は TRUE。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/deviced1-and-deviced2" data-raw-source="[DeviceD1 and DeviceD2](https://docs.microsoft.com/windows-hardware/drivers/kernel/deviced1-and-deviced2)">DeviceD1 と DeviceD2</a></p></td>
-<td align="left"><p>デバイス D2 電源の状態をサポートしている場合は TRUE。</p></td>
+<td align="left"><p>デバイスが D2 の電源状態をサポートしている場合は TRUE。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/wakefromd0--wakefromd1--wakefromd2--and-wakefromd3" data-raw-source="[WakeFromD0, WakeFromD1, WakeFromD2, and WakeFromD3](https://docs.microsoft.com/windows-hardware/drivers/kernel/wakefromd0--wakefromd1--wakefromd2--and-wakefromd3)">WakeFromD0、WakeFromD1、WakeFromD2、および WakeFromD3</a></p></td>
-<td align="left"><p>TRUE の場合、デバイスが外部ウェイク信号 D0 の電源状態のときに応答できます。</p></td>
+<td align="left"><p>デバイスが D0 電源状態のときに外部のウェイクアップ信号に応答できる場合は TRUE。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/wakefromd0--wakefromd1--wakefromd2--and-wakefromd3" data-raw-source="[WakeFromD0, WakeFromD1, WakeFromD2, and WakeFromD3](https://docs.microsoft.com/windows-hardware/drivers/kernel/wakefromd0--wakefromd1--wakefromd2--and-wakefromd3)">WakeFromD0、WakeFromD1、WakeFromD2、および WakeFromD3</a></p></td>
-<td align="left"><p>TRUE の場合、デバイスが外部ウェイク信号 D1 の電源状態のときに応答できます。</p></td>
+<td align="left"><p>D1 の電源状態のときに、デバイスが外部ウェイクアップ信号に応答できる場合は TRUE。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/wakefromd0--wakefromd1--wakefromd2--and-wakefromd3" data-raw-source="[WakeFromD0, WakeFromD1, WakeFromD2, and WakeFromD3](https://docs.microsoft.com/windows-hardware/drivers/kernel/wakefromd0--wakefromd1--wakefromd2--and-wakefromd3)">WakeFromD0、WakeFromD1、WakeFromD2、および WakeFromD3</a></p></td>
-<td align="left"><p>TRUE の場合、デバイスが外部ウェイク信号 D2 の電源状態のときに応答できます。</p></td>
+<td align="left"><p>D2 電源状態のときに、デバイスが外部ウェイクアップ信号に応答できる場合は TRUE。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/wakefromd0--wakefromd1--wakefromd2--and-wakefromd3" data-raw-source="[WakeFromD0, WakeFromD1, WakeFromD2, and WakeFromD3](https://docs.microsoft.com/windows-hardware/drivers/kernel/wakefromd0--wakefromd1--wakefromd2--and-wakefromd3)">WakeFromD0、WakeFromD1、WakeFromD2、および WakeFromD3</a></p></td>
-<td align="left"><p>TRUE の場合、デバイスが外部ウェイク信号 D3 の電源状態のときに応答できます。</p></td>
+<td align="left"><p>D3 電源状態のときに、デバイスが外部ウェイクアップ信号に応答できる場合は TRUE。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/devicestate" data-raw-source="[DeviceState](https://docs.microsoft.com/windows-hardware/drivers/kernel/devicestate)">DeviceState</a><strong>[PowerSystemMaximum]</strong></p></td>
-<td align="left"><p>このデバイスは、各システムの電源状態から維持できる highest-powered デバイスの状態を指定します<strong>PowerSystemUnspecified</strong>に<strong>PowerSystemShutdown</strong>します。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/devicestate" data-raw-source="[DeviceState](https://docs.microsoft.com/windows-hardware/drivers/kernel/devicestate)">Devicestate</a><strong>[powersystemmaximum]</strong></p></td>
+<td align="left"><p>このデバイスがシステム電源状態ごとに保持できる、電力が最も高いデバイスの状態を、 <strong>Powersystemunspecified</strong>から<strong>powersystemunspecified</strong>までの間で指定します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/systemwake" data-raw-source="[SystemWake](https://docs.microsoft.com/windows-hardware/drivers/kernel/systemwake)">SystemWake</a></p></td>
-<td align="left"><p>利用した最下位のシステム電源の状態を指定します (S0 S4 を通じて) デバイスが、ウェイク イベントを通知できます。</p></td>
+<td align="left"><p>デバイスがウェイクイベントに信号を送ることができる、最も電力の低いシステム電源状態 (S0 ~ S4) を指定します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/devicewake" data-raw-source="[DeviceWake](https://docs.microsoft.com/windows-hardware/drivers/kernel/devicewake)">DeviceWake</a></p></td>
-<td align="left"><p>最も低い搭載デバイスの電源状態を指定します (D0 D3 を通じて) デバイスが、ウェイク イベントを通知できます。</p></td>
+<td align="left"><p>デバイスがウェイクイベントに信号を送ることができる、デバイスの電力の最低状態 (D0 ~ D3) を指定します。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-デバイスを使用する NDIS\_機能情報を確認します。
+NDIS はデバイスの\_機能の情報を使用して、次のことを判断します。
 
--   システムと、NIC の両方が、電源管理をサポートし、場合は、どのデバイスの電源状態が NIC に対して表示される各システム電源の状態。
+-   システムと NIC の両方で電源管理がサポートされている場合は、システムの電源状態ごとに NIC がどのデバイスの電源の状態にあるかを指定します。
 
--   システムと、NIC の両方をサポートして LAN でウェイク アップをし場合は、どのデバイスからの電源状態が、NIC が、システムのスリープを解除します。
+-   システムと NIC はどちらも wake on LAN をサポートしています。その場合、NIC がシステムをスリープ解除できる状態になります。
 
-**WakeFromD0**を通じて**WakeFromD3** NIC がシステムを起動するデバイスの電源状態を示します。
+**WakeFromD0** ~ **WAKEFROMD3**は、NIC がシステムをスリープ解除できるデバイスの電源状態を示します。
 
-**DeviceState**配列、各システムの電源状態の highest-powered デバイスの電源の状態を示します、NIC して、まだそのシステムの電源状態をサポートするをします。 たとえば、次の配列の値があるとします。
+**Devicestate**配列は、システムの電源状態ごとに、NIC が可能で、そのシステムの電源状態を引き続きサポートするデバイスの電源状態の最大値を示します。 たとえば、次の配列値について考えてみます。
 
 ```cpp
 DeviceState[PowerSystemWorking] PowerDeviceD0
@@ -113,59 +113,59 @@ DeviceState[PowerSystemHibernate] PowerDeviceD3
 DeviceState[PowerSystemShutdown] PowerDeviceD3
 ```
 
-システムが電源状態 S1 の場合は、サンプルの値の前の配列で示されるように、NIC でデバイスの電源状態 D1、または指定できます d2 に切り替わり、D3 します。 ときに、システムが電源状態 S2 または D2 または D3 のデバイスの電源状態で S3、NIC ができます。
+上記のサンプル値の配列で示されているように、システムの電源状態が S1 の場合、NIC はデバイスの電源状態 D1、D2、または D3 になります。 システムの電源状態が S2 または S3 の場合、NIC はデバイスの電源状態が D2 または D3 であることがあります。
 
-NDIS では、システムと NIC の両方が wake on LAN をサポートするかどうかを確認するのには両方、 **SystemWake**と**DeviceWake**メンバー。 両方**SystemWake**と**DeviceWake**に設定されている**PowerSystemUnspecified**NDIS は、NIC、電源管理の対応として扱います。 この場合、またはミニポート ドライバーの設定、NDIS\_属性\_なし\_停止\_ON\_NDIS、その後、初期化中に中断フラグ ミニポート ドライバーの問題、 [OID\_PNP\_機能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-capabilities)要求、NIC のウェイク アップ機能に関する詳細情報を取得します。
+システムと NIC の両方で wake on LAN がサポートされているかどうかを判断するために、NDIS は**systemwake**と**devicewake**の両方のメンバーを調べます。 **Systemwake**と**devicewake**の両方が**powersystemunspecified**に設定されている場合、NDIS は NIC を電源管理に対応するものとして扱います。 この場合、またはミニポートドライバーで NDIS\_属性が設定されている場合、初期化中に\_SUSPEND フラグの\_\_停止しない\_、NDIS はその後ミニポートドライバーに[OID\_PNP\_機能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-capabilities)を発行します。NIC のウェイクアップ機能に関する詳細情報の取得を要求します。
 
-### <a href="" id="using-oid-pnp-capabilities"></a>OID を使用して\_PNP\_機能
+### <a href="" id="using-oid-pnp-capabilities"></a>OID\_PNP\_機能の使用
 
-後、ミニポート ドライバーが正常に返しますからその[ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)関数、NDIS 送信 OID\_PNP\_ドライバーのいずれかの機能要求の以下は true です。
+ミニポートドライバーが[*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)関数から正常に復帰すると、次のいずれかに該当する場合、NDIS は、OID\_PNP\_機能の要求をドライバーに送信します。
 
--   両方の**SystemWake**と**DeviceWake**のメンバー、 [**デバイス\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_capabilities)によって返される構造体バス ドライバーは*いない*に設定**PowerSystemUnspecified**します。
+-   バスドライバーによって返される[**デバイス\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_capabilities)の構造体の**Systemwake**と**devicewake**の両方のメンバーが**powersystemunspecified**に設定されて*いません*。
 
--   ミニポート ドライバーの設定、NDIS\_属性\_いいえ\_HALT\_ON\_が呼び出されたときに中断フラグ[ **NdisMSetMiniportAttributes** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsetminiportattributes)初期化中にします。
+-   ミニポートドライバーは、初期化中に[**NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)を呼び出したときに、\_SUSPEND フラグに\_\_\_ないように、NDIS\_属性を設定します。
 
-NDIS が OID を発行することに注意してください。\_PNP\_、ユーザーがユーザー インターフェイスの LAN のスリープ解除を有効にするかどうかに関係なく、機能要求。
+ユーザーが wake on LAN をユーザーインターフェイスで有効にしているかどうかに関係なく、NDIS は、\_の PNP\_機能の要求に OID を発行します。
 
-ミニポート ドライバーは、NDIS を返す場合\_状態\_のクエリに対する応答で成功[OID\_PNP\_機能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-capabilities)、NDIS ミニポート ドライバーを電源管理-対応として扱われます。 ミニポート ドライバーは、NDIS を返す場合\_状態\_いない\_サポート、NDIS ミニポート ドライバーとして扱います古いミニポート ドライバーでは、電源管理機能を持つです。 このようなドライバーの電源管理の詳細については、次を参照してください。[古いミニポート ドライバーの電源管理](power-management-for-old-miniport-drivers.md)します。
+[OID\_PNP\_機能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-capabilities)のクエリに応答して、ミニポートドライバーが NDIS\_STATUS\_SUCCESS を返した場合、ndis はミニポートドライバーを電源管理対応として扱います。 ミニポートドライバーが NDIS\_STATUS を返し\_\_サポートされていない場合、NDIS は、そのミニポートドライバーを電源管理に対応していない古いミニポートドライバーとして扱います。 このようなドライバーの電源管理の詳細については、「[古いミニポートドライバーの電源管理](power-management-for-old-miniport-drivers.md)」を参照してください。
 
-OID が成功するのミニポート ドライバー\_PNP\_機能要求が要求に応答内の NDIS を次の情報を返します。
+OID\_PNP\_機能の要求に成功するミニポートドライバーは、要求に応じて次の情報を NDIS に返します。
 
--   最小デバイス電源状態、NIC がマジック パケットの受信時にシステムを起動します。
+-   マジックパケットの受信時に NIC がシステムをスリープ解除できる最も低いデバイス電源状態。
 
--   最小デバイス電源状態、NIC がプロトコル ドライバーを指定するパターンを含むネットワーク フレームの受信時にシステムを起動します。
+-   プロトコルドライバーによって指定されたパターンを含むネットワークフレームを受信したときに NIC がシステムをスリープ解除できる最も低いデバイス電源の状態。
 
-NDIS は、この情報を取得、すぐを決定します、各システムの電源状態のデバイスの電源状態 UI でユーザーが wake on LAN が有効になっている場合に、NIC を設定ができます。 許容される低電力デバイスがない場合、NIC がウェイク アップのシグナルを生成の状態 (すべての低電力デバイスの電源状態で指定された場合に、 **DeviceState**デバイスの配列\_機能構造体は、NIC がシステムを起動デバイス電源状態の最も低いより小さい)、NDIS により、**スタンバイからコンピューターの状態にデバイスを許可する**オプション、**電源管理** タブNIC の使用はできません。 次に、ユーザーには、wake on LAN が有効にすることはできません。
+NDIS は、この情報を取得するとすぐに、ユーザーが UI で wake on LAN を有効にした場合に NIC を設定できるデバイスの電源状態を、システムの電源状態ごとに決定します。 NIC がウェイクアップ信号を生成することができる低電力デバイスの状態がない場合 (つまり、デバイス\_機能構造の**Devicestate**配列に指定されているすべての低電力デバイスの電源状態が低い場合)NIC がシステムをスリープ解除できるデバイスの電源状態) NDIS では、 **[電源管理]** タブの nic に対して デバイスがスタンバイ状態から復帰 **[できるよう]** にする オプションが使用されます。 その後、ユーザーは wake on LAN を有効にできません。
 
-**注**  Wake on LAN は、NIC と、システムの両方が電源管理機能を持つ場合にのみ可能です。 システムの電源管理機能を持つは、NDIS は、NIC の電源管理機能をクエリできません。
+**  Wake** on LAN は、NIC とシステムの両方が電源管理に対応している場合にのみ可能です。 システムが電源管理に対応していない場合、NDIS は NIC の電源管理機能に対してクエリを実行しません。
 
  
 
-### <a name="using-user-input"></a>ユーザー入力を使用します。
+### <a name="using-user-input"></a>ユーザー入力の使用
 
-電源管理機能を持つ NIC や Microsoft Windows 2000 以降のバージョンを指定では、次のオプション、**電源管理**の NIC のタブ**プロパティ** ダイアログ ボックス。
+電源管理対応の NIC の場合、Microsoft Windows 2000 以降のバージョンでは、NIC の **[プロパティ]** ダイアログボックスの **[電源管理]** タブで次のオプションを指定できます。
 
-**電力を節約するには、このデバイスを無効にするコンピューターを許可します。**
+**コンピューターでこのデバイスの電源をオフにして電力を節約できるようにする**
 
-**スタンバイからコンピューターの状態にデバイスを許可します。**
+**デバイスがコンピューターをスタンバイ状態から復帰させることを許可する**
 
-NIC の電源管理を有効にする最初のオプションが既定で選択されます。 オプションをオフにすると、NDIS は電源管理に関して、古い NIC と NIC を扱います。 詳細については、次を参照してください。[古いミニポート ドライバーの電源管理](power-management-for-old-miniport-drivers.md)します。
+最初のオプションは、NIC の電源管理を有効にするために既定で選択されています。 ユーザーがオプションをクリアすると、NDIS は電源管理に関して NIC を古い NIC として扱います。 詳細については、「[古いミニポートドライバーの電源管理](power-management-for-old-miniport-drivers.md)」を参照してください。
 
-2 番目のオプションは、既定では明らかです。 NDIS は、許容される低電力状態が、NIC がウェイク アップのシグナルを生成できますがないことを判断した場合 NDIS 2 番目のオプション使用できなくなります。 たとえば場合、 **DeviceState**デバイスの配列メンバー\_機能の構造は、NIC は、すべてのシステムの低電力状態の D3 内でなければならないことを示す場合**DeviceWake**ことを示しますNIC がシステムを解除を利用した最下位のデバイスの状態が d2 に切り替わり、NDIS 網掛けは、2 番目のチェック ボックスを使用できないようにします。
+2番目のオプションは、既定ではオフになっています。 NDIS によって、NIC がウェイクアップシグナルを生成することが許可されている低電力状態がないと判断した場合、NDIS は2番目のオプションを使用できません。 たとえば、デバイス\_機能構造の**Devicestate**配列メンバーが、すべての低電力システム状態に対して、Nic が D3 に存在する必要があることを示し、 **DEVICESTATE**は、nic のシステムのスリープを解除できるのは D2 です。その後、2番目のチェックボックスは使用できなくなります。
 
-上記の 2 つのオプションだけでなく Windows XP および Windows Vista での 3 番目のオプションが提供、**電源管理**nic タブ。
+Windows XP と Windows Vista では、上記の2つのオプションに加えて、NIC の **[電源管理]** タブに3つ目のオプションがあります。
 
-**管理ステーションは、コンピューターをスタンバイ状態のみを許可します。**
+**管理ステーションがコンピューターをスタンバイ状態から復帰させることのみを許可する**
 
-下位に記載されている 2 番目のオプションは、このオプションは使用可能な場合にのみ。
+このオプションは、前に説明した2番目のオプションの下位にあり、次の場合にのみ使用できます。
 
--   ユーザーは、wake on LAN を有効にする 2 つ目のオプションを選択します。
+-   ユーザーが2番目のオプションを選択して wake on LAN を有効にしました。
 
--   応答で、ミニポート ドライバー、 [OID\_PNP\_機能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-capabilities)NIC がマジック パケットの受信時にシステムを wake ことが示されます。
+-   [OID\_PNP\_機能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-capabilities)に応答するミニポートドライバーは、マジックパケットの受信時に NIC がシステムをウェイクアップできることを示しています。
 
-**のみスタンバイからコンピューターを管理局を許可する**オプションが既定でオフです。 ユーザーは、マジック パケットの受信だけがシステムにウェイク アップのシグナルを生成する NIC を発生することを指定するには、このオプションを選択できます。
+[**管理ステーションにコンピューターをスタンバイから復帰**させる] オプションは、既定ではオフになっています。 ユーザーはこのオプションを選択して、マジックパケットの受信のみによって NIC がシステムにウェイクアップ信号を生成するように指定できます。
 
-ユーザーを選択または NIC の電源管理オプションがクリアされるたびに、システムは、変更の NDIS を通知します。 NDIS は、再起動前後で変更された設定が引き続き発生するように、レジストリに新しいに設定を書き込みます。
+ユーザーが NIC の電源管理オプションを選択またはクリアするたびに、システムによって変更が NDIS に通知されます。 NDIS は新しい設定をレジストリに書き込みます。これにより、変更された設定は再起動後も保持されます。
 
  
 

@@ -4,31 +4,31 @@ description: NIC スイッチのパラメーターのクエリ
 ms.assetid: 8C1F0F8A-D290-4552-A324-062DB92F6B5D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aeb951330ff4b8d3dab1802391cd7d1d4dee0da8
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e8ebc8aab9f8bc57baf53403fae1713aefc98b0f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67379202"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844877"
 ---
 # <a name="querying-the-parameters-of-a-nic-switch"></a>NIC スイッチのパラメーターのクエリ
 
 
-上にあるドライバーやユーザー アプリケーションでは、シングル ルート I/O 仮想化 (SR-IOV) をサポートするネットワーク アダプターで作成された NIC スイッチ パラメーターを取得できます。 ドライバーまたはアプリケーションのオブジェクト識別子 (OID) メソッド要求を発行[OID\_NIC\_スイッチ\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-parameters)これらのパラメーターを取得します。
+このドライバーまたはユーザーアプリケーションは、シングルルート i/o 仮想化 (SR-IOV) をサポートするネットワークアダプターで作成された NIC スイッチのパラメーターを取得できます。 ドライバーまたはアプリケーションは、 [oid\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-parameters)のオブジェクト識別子 (oid) メソッドの要求を発行します。これらのパラメーターを取得するには、\_のパラメーターを\_します。
 
-上にあるドライバーまたはユーザーのアプリケーションでは、この OID メソッド要求を発行、前に初期化する必要があります、 [ **NDIS\_NIC\_スイッチ\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_parameters)構造体。 ドライバーまたはアプリケーションを設定する必要があります、 **SwitchId**メンバーのパラメーターが返されるには、NIC のスイッチの識別子。
+この OID メソッド要求を実行する前に、それまでのドライバーまたはユーザーアプリケーションが、 [ **\_PARAMETERS 構造\_スイッチの NDIS\_NIC**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_parameters)を初期化する必要があります。 ドライバーまたはアプリケーションは、パラメーターが返される NIC スイッチの識別子に**Switchid**メンバーを設定する必要があります。
 
-**注**  以降 Windows Server 2012 では、SR-IOV インターフェイスをサポートしています NIC スイッチが 1 つだけ、ネットワーク アダプター。 このスイッチと呼ばれる、 *NIC スイッチの既定*、NDIS によって参照されている\_既定\_スイッチ\_ID です。
+**注**  Windows Server 2012 以降では、sr-iov インターフェイスはネットワークアダプター上で1つの NIC スイッチのみをサポートしています。 このスイッチは*既定の NIC スイッチ*と呼ばれ、NDIS\_既定\_スイッチ\_ID 識別子によって参照されます。
 
  
 
-この OID メソッド要求から正常に戻った後、 **InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体ポインターが含まれています、 [ **NDIS\_NIC\_スイッチ\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_parameters)構造体。 この構造体には、指定されたスイッチのパラメーターが含まれています。
+この OID メソッド要求から正常に復帰した後、 [**ndis\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造体の**informationbuffer**メンバーには、 [**ndis\_\_NIC**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_parameters)へのポインターが含まれ\_PARAMETERS 構造体がます. この構造体には、指定されたスイッチのパラメーターが含まれます。
 
-NDIS ハンドル、 [OID\_NIC\_スイッチ\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-parameters)ミニポート ドライバーに要求します。 NDIS は、次のソースから保持されているデータの内部キャッシュから情報を返します。
+NDIS は、ミニポートドライバーに対する[\_の\_スイッチ\_PARAMETERS](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-parameters)要求の OID を処理します。 NDIS は、次のソースから、管理するデータの内部キャッシュから情報を返します。
 
--   レジストリの標準化された設定の SR-IOV キーワード。 これらのキーワードの詳細については、次を参照してください。 [SR-IOV の標準化された INF キーワード](standardized-inf-keywords-for-sr-iov.md)します。
+-   レジストリ内の標準化された SR-IOV キーワード設定。 これらのキーワードの詳細については、「sr-iov[用の標準化](standardized-inf-keywords-for-sr-iov.md)された INF キーワード」を参照してください。
 
--   OID 要求[OID\_NIC\_スイッチ\_作成\_スイッチ](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-create-switch)と[OID\_NIC\_スイッチ\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-parameters).
+-   Oid の OID 要求[\_nic\_スイッチ\_作成\_スイッチ](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-create-switch)と[oid\_nic\_スイッチ\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-parameters)
 
  
 

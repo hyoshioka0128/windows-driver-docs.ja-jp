@@ -1,32 +1,32 @@
 ---
 title: OID_PM_REMOVE_WOL_PATTERN
-description: セットとしては、NDIS とプロトコル ドライバーは、ネットワーク アダプターから LAN (WOL) パターンで電源管理のウェイク アップを削除するのに OID_PM_REMOVE_WOL_PATTERN OID を使用します。
+description: セットとして、NDIS ドライバーとプロトコルドライバーは OID_PM_REMOVE_WOL_PATTERN OID を使用して、ネットワークアダプターから電源管理 wake on LAN (WOL) パターンを削除します。
 ms.assetid: fdaa2646-6f41-4f51-9c27-6194270f26ed
 ms.date: 08/08/2017
-keywords: -OID_PM_REMOVE_WOL_PATTERN ネットワーク ドライバーが Windows Vista 以降
+keywords: -Windows Vista 以降の OID_PM_REMOVE_WOL_PATTERN ネットワークドライバー
 ms.localizationpriority: medium
-ms.openlocfilehash: fa6aca8c2373babac2d05319485d525a497563d1
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 25d10b0d52671d7041c02cc1d69eccf076c78e41
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67373338"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844047"
 ---
-# <a name="oidpmremovewolpattern"></a>OID\_PM\_削除\_WOL\_パターン
+# <a name="oid_pm_remove_wol_pattern"></a>OID\_PM\_\_WOL\_パターンの削除
 
 
-NDIS およびプロトコルのドライバーが、OID を使用し、セットとして\_PM\_削除\_WOL\_LAN (WOL) パターンで電源管理のウェイク アップをネットワーク アダプターから削除するパターンの OID。 **InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体には、ULONG パターン識別子へのポインターが含まれています。
+セットとして、NDIS ドライバーとプロトコルドライバーは、ネットワークアダプターから電源管理 wake on LAN (WOL) パターンを削除するために、\_WOL\_PATTERN OID\_削除する OID\_PM を使用します。 [**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造体の**informationbuffer**メンバーには、ULONG パターン識別子へのポインターが含まれています。
 
 <a name="remarks"></a>注釈
 -------
 
-ドライバーの NDIS とプロトコルを使用して、OID\_PM\_削除\_WOL\_LAN (WOL) パターンにウェイク アップを基になるネットワーク アダプターから削除するパターン。
+NDIS およびプロトコルドライバーでは、OID\_PM\_使用して\_WOL\_パターンを削除し、基になるネットワークアダプターから wake on LAN (WOL) パターンを削除します。
 
-**データ。設定\_INFORMATION.InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体は、以前に追加された WOL パターン識別子の ULONG 値を指す必要があります。 NDIS でこのパターンの識別子の設定、 **PatternId**のメンバー、 [ **NDIS\_PM\_WOL\_パターン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_wol_pattern)ときに構造体 NDIS送信する前に、 [OID\_PM\_追加\_WOL\_パターン](oid-pm-add-wol-pattern.md)基になるネットワーク アダプターに OID 要求。
+**データ。\_情報を設定します。** [**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造体の informationbuffer メンバーは、以前に追加された WOL パターン識別子の ULONG 値をポイントする必要があります。 Ndis は、ndis [ **\_pm\_wol\_パターン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_wol_pattern)構造で、このパターン識別子を設定**します。** ndis は、前の OID\_pm を送信したときに\_[wol\_pattern](oid-pm-add-wol-pattern.md) OID 要求を基になるネットワークアダプター。
 
-### <a name="return-status-codes"></a>リターン状態コード
+### <a name="return-status-codes"></a>ステータスコードを返す
 
-ミニポート ドライバーの[ *MiniportOidRequest* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_oid_request)関数は、次のいずれかがこの要求の値を返します。
+ミニポートドライバーの[*Miniportoidrequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_oid_request)関数は、この要求に対して次のいずれかの値を返します。
 
 <table>
 <colgroup>
@@ -42,26 +42,26 @@ NDIS およびプロトコルのドライバーが、OID を使用し、セッ�
 <tbody>
 <tr class="odd">
 <td><p><strong>NDIS_STATUS_SUCCESS</strong></p></td>
-<td><p>ミニポート ドライバーでは、要求が正常に完了しました。</p></td>
+<td><p>ミニポートドライバーが要求を正常に完了しました。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>NDIS_STATUS_PENDING</strong></p></td>
-<td><p>ミニポート ドライバーでは、要求を非同期的に実行されます。 ミニポート ドライバーには、すべての処理が完了したら後、は、呼び出すことによって、要求が成功する必要があります、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismoidrequestcomplete" data-raw-source="[&lt;strong&gt;NdisMOidRequestComplete&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismoidrequestcomplete)"> <strong>NdisMOidRequestComplete</strong> </a>関数<strong>NDIS_STATUS_SUCCESS</strong>の<em>状態</em>パラメーター。</p></td>
+<td><p>ミニポートドライバーは、要求を非同期的に完了します。 ミニポートドライバーはすべての処理を完了した後、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismoidrequestcomplete" data-raw-source="[&lt;strong&gt;NdisMOidRequestComplete&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismoidrequestcomplete)"><strong>NdisMOidRequestComplete</strong></a>関数を呼び出し、 <em>STATUS</em>パラメーターに<strong>NDIS_STATUS_SUCCESS</strong>を渡すことによって、要求を成功させる必要があります。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>NDIS_STATUS_NOT_ACCEPTED</strong></p></td>
-<td><p>ミニポート ドライバーがリセットされています。</p></td>
+<td><p>ミニポートドライバーがリセットされています。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>NDIS_STATUS_REQUEST_ABORTED</strong></p></td>
-<td><p>ミニポート ドライバーでは、要求の処理を停止します。 たとえば、NDIS と呼ばれる、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_reset" data-raw-source="[&lt;em&gt;MiniportResetEx&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_reset)"> <em>MiniportResetEx</em> </a>関数。</p></td>
+<td><p>ミニポートドライバーが要求の処理を停止しました。 たとえば、NDIS は<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_reset" data-raw-source="[&lt;em&gt;MiniportResetEx&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_reset)"><em>Miniportresetex</em></a>関数を呼び出しました。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-NDIS は、この要求の次のステータス コードのいずれかを返します。
+NDIS は、この要求に対して次のいずれかの状態コードを返します。
 
 <table>
 <colgroup>
@@ -70,33 +70,33 @@ NDIS は、この要求の次のステータス コードのいずれかを返�
 </colgroup>
 <thead>
 <tr class="header">
-<th>項目</th>
+<th>用語</th>
 <th>説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p><strong>NDIS_STATUS_SUCCESS</strong></p></td>
-<td><p>OID 要求は正常に完了しました。</p></td>
+<td><p>OID 要求が正常に完了しました。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>NDIS_STATUS_NOT_SUPPORTED</strong></p></td>
-<td><p>NDIS バージョンのミニポート ドライバーは、NDIS 6.20 未満です。</p></td>
+<td><p>ミニポートドライバーの NDIS バージョンが NDIS 6.20 未満です。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>NDIS_STATUS_FILE_NOT_FOUND</strong></p></td>
-<td><p>OID 要求内のパターン識別子が無効です。</p></td>
+<td><p>OID 要求のパターン識別子が無効です。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>NDIS_STATUS_INVALID_LENGTH</strong></p></td>
-<td><p>情報バッファーが小さすぎます。 NDIS セット、<strong>データ。SET_INFORMATION します。BytesNeeded</strong>内のメンバー、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)"> <strong>NDIS_OID_REQUEST</strong> </a>構造体に必要な最小バッファー サイズ。</p></td>
+<td><p>情報バッファーが小さすぎます。 NDIS はデータを設定<strong>します。SET_INFORMATION.</strong> <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a>構造体の中で必要とされる最小バッファーサイズに対して、bytesneeded 必要です。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -107,11 +107,11 @@ NDIS は、この要求の次のステータス コードのいずれかを返�
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>以降では、NDIS 6.20 が動作をサポートします。 ミニポート ドライバーには必須です。</p></td>
+<td><p>NDIS 6.20 以降でサポートされています。 ミニポートドライバーの場合は必須です。</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Ntddndis.h (include Ndis.h)</td>
+<td>Ntddndis (Ndis .h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -119,13 +119,13 @@ NDIS は、この要求の次のステータス コードのいずれかを返�
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
+[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)
 
-[**NDIS\_PM\_WOL\_パターン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_wol_pattern)
+[**NDIS\_PM\_WOL\_パターン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_wol_pattern)
 
-[OID\_PM\_追加\_WOL\_パターン](oid-pm-add-wol-pattern.md)
+[OID\_PM\_\_WOL\_パターンの追加](oid-pm-add-wol-pattern.md)
 
-[**NDIS\_状態\_PM\_WOL\_パターン\_拒否済み**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-pm-wol-pattern-rejected)
+[**NDIS\_状態\_PM\_WOL\_パターン\_拒否されました**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-pm-wol-pattern-rejected)
 
  
 

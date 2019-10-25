@@ -1,18 +1,18 @@
 ---
-title: コネクションレス低い edge ドライバーの中間データの受信
+title: コネクションレスエッジ中間ドライバーデータの受信
 description: コネクションレスの下端を含む中間ドライバーでのデータの受信
 ms.assetid: 73143c2f-4127-41fc-b916-eac87521440a
 keywords:
-- 中間ドライバー WDK ネットワー キング、受信操作
-- NDIS は、ドライバー WDK を中間、受信操作
+- 中間ドライバー WDK ネットワーク、受信操作
+- NDIS 中間ドライバー WDK、受信操作
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c4a27b35c2d56985126be44a9072d90782751c9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 00cfa34adc8f1f8d724747f069371c3eb6762558
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368474"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844849"
 ---
 # <a name="receiving-data-in-an-intermediate-driver-with-a-connectionless-lower-edge"></a>コネクションレスの下端を含む中間ドライバーでのデータの受信
 
@@ -20,11 +20,11 @@ ms.locfileid: "67368474"
 
 
 
-コネクションレスの下端と中間のドライバーが必要、 [ **ProtocolReceiveNetBufferLists** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_receive_net_buffer_lists)ネットワーク データを受信する関数。
+ネットワークデータを受信するには、低速エッジがある中間ドライバーに[**ProtocolReceiveNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_receive_net_buffer_lists)関数が必要です。
 
-コネクションレスのミニポート ドライバーの呼び出しを基になる、 **NdisMIndicateReceiveNetBufferLists**、1 つ以上のリンクされたリストを渡すこと[ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)構造体より高いレベルのドライバーに示された構造体の所有権を放棄します。 NET を返すより高いレベルのドライバーのデータを使用すると、\_バッファー\_ミニポート ドライバーに構造体 (および指定したリソース) を一覧表示します。
+基になるコネクションレスなミニポートドライバーは、 **NdisMIndicateReceiveNetBufferLists**を呼び出し、1つ以上の[**NET\_バッファー\_リスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)構造のリンクリストを渡し、指定された構造体の所有権を上位に保っままします。レベルドライバー。 上位レベルのドライバーがデータを使用した場合は、NET\_BUFFER\_LIST 構造体 (および指定したリソース) がミニポートドライバーに返されます。
 
-コネクションレスの下端と中間のドライバーのデータの受信についての詳細については、次を参照してください。[プロトコル ドライバーの送信と受信操作](protocol-driver-send-and-receive-operations.md)します。
+コネクションレスの低いエッジを使用して中間ドライバーでデータを受信する方法の詳細については、「[プロトコルドライバーの送信および受信操作](protocol-driver-send-and-receive-operations.md)」を参照してください。
 
  
 

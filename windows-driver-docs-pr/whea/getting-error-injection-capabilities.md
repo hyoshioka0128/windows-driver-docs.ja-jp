@@ -3,27 +3,27 @@ title: エラー挿入機能の取得
 description: エラー挿入機能の取得
 ms.assetid: d4ff0d9c-bb17-4dff-8008-bf8d59e44621
 keywords:
-- エラーの挿入機能 WDK WHEA
-- エラーの挿入機能 WDK WHEA を取得します。
-- エラー WDK WHEA、エラーの挿入
-- WHEA WDK、エラーの挿入
-- Windows ハードウェア アーキテクチャ WDK のエラー、エラーの挿入
-- ハードウェア エラー WDK WHEA の挿入
+- エラー挿入機能 WDK WHEA
+- エラー挿入機能の取得 (WDK WHEA)
+- エラー WDK WHEA、エラー挿入
+- WHEA WDK、エラー挿入
+- Windows ハードウェアエラーアーキテクチャ WDK、エラー挿入
+- ハードウェアエラーの挿入 WDK WHEA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e2e02fb314100b8404ee8f6bf66807cd4228ba54
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4fc751bcadc1090cc81d4980a9d43f62319d8948
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367994"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844406"
 ---
 # <a name="getting-error-injection-capabilities"></a>エラー挿入機能の取得
 
 
-ユーザー モード アプリケーション機能を取得できます、エラーに関する情報の挿入、ハードウェア プラットフォームの呼び出すことによって、 [ **WHEAErrorInjectionMethods::GetErrorInjectionCapabilitiesRtn** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_whea/)メソッド。 このメソッドが戻る、 [ **WHEA\_エラー\_インジェクション\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_whea_error_injection_capabilities)でサポートされているエラーの挿入機能を記述する構造体、ハードウェア プラットフォームです。
+ユーザーモードアプリケーションでは、 [**WHEAErrorInjectionMethods:: GetErrorInjectionCapabilitiesRtn**](https://docs.microsoft.com/windows-hardware/drivers/ddi/_whea/)メソッドを呼び出すことによって、ハードウェアプラットフォームのエラー挿入機能に関する情報を取得できます。 このメソッドは、ハードウェアプラットフォームでサポートされているエラー挿入機能を記述する、 [**WHEA\_エラー\_挿入\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_whea_error_injection_capabilities)の構造体を返します。
 
-次のコード例では、エラーの挿入機能情報を取得する方法を示します。
+次のコード例は、エラー挿入機能の情報を取得する方法を示しています。
 
 ```cpp
 IWbemServices *pIWbemServices;

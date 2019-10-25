@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_VPCONFIG\_GETCONNECTINFO
-description: KSPROPERTY\_VPCONFIG\_GETCONNECTINFO プロパティは、すべての可能なビデオ ポート構成を取得します。
+title: KSK プロパティ\_VPCONFIG\_GETCONNECTINFO
+description: KSK プロパティ\_VPCONFIG\_GETCONNECTINFO プロパティは、可能なすべてのビデオポート構成を取得します。
 ms.assetid: 30ac1f7d-0218-49ed-8f6d-e58f56aee70e
 keywords:
-- KSPROPERTY_VPCONFIG_GETCONNECTINFO ストリーミング メディア デバイス
+- KSPROPERTY_VPCONFIG_GETCONNECTINFO ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f52830ca2e926778b15abe1734cce8a30db606f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ba2b181fefb737f533de96e20b9e8304b39e11e6
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67381916"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845227"
 ---
-# <a name="kspropertyvpconfiggetconnectinfo"></a>KSPROPERTY\_VPCONFIG\_GETCONNECTINFO
+# <a name="ksproperty_vpconfig_getconnectinfo"></a>KSK プロパティ\_VPCONFIG\_GETCONNECTINFO
 
 
-KSPROPERTY\_VPCONFIG\_GETCONNECTINFO プロパティは、すべての可能なビデオ ポート構成を取得します。
+KSK プロパティ\_VPCONFIG\_GETCONNECTINFO プロパティは、可能なすべてのビデオポート構成を取得します。
 
 ## <span id="ddk_ksproperty_vpconfig_getconnectinfo_ks"></span><span id="DDK_KSPROPERTY_VPCONFIG_GETCONNECTINFO_KS"></span>
 
@@ -41,7 +41,7 @@ KSPROPERTY\_VPCONFIG\_GETCONNECTINFO プロパティは、すべての可能な�
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,20 +50,20 @@ KSPROPERTY\_VPCONFIG\_GETCONNECTINFO プロパティは、すべての可能な�
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>いいえ</p></td>
+<td><p>[はい]</p></td>
+<td><p>必須ではない</p></td>
 <td><p>Pin</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ddvideoportconnect" data-raw-source="[&lt;strong&gt;DDVIDEOPORTCONNECT&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ddvideoportconnect)"><strong>DDVIDEOPORTCONNECT</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ddvideoportconnect" data-raw-source="[&lt;strong&gt;DDVIDEOPORTCONNECT&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ddvideoportconnect)"><strong>DDVIDEOPORTCONNECT</strong></a></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-プロパティの値 (データの操作) は、ビデオ ポート接続の構成を記述する DDVIDEOPORTCONNECT 構造です。
+プロパティ値 (操作データ) は、ビデオポート接続の構成を記述する DDVIDEOPORTCONNECT 構造体です。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -74,7 +74,7 @@ KSPROPERTY\_VPCONFIG\_GETCONNECTINFO プロパティは、すべての可能な�
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Ksmedia.h (Ksmedia.h を含む)</td>
+<td>Ksmedia .h (Ksk を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -82,7 +82,7 @@ KSPROPERTY\_VPCONFIG\_GETCONNECTINFO プロパティは、すべての可能な�
 ## <a name="see-also"></a>関連項目
 
 
-[**DDVIDEOPORTCONNECT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ddvideoportconnect)
+[**DDVIDEOPORTCONNECT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ddvideoportconnect)
 
  
 

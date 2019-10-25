@@ -1,9 +1,9 @@
 ---
 title: SM\_AddTarget 関数
-description: SM\_AddTarget WMI メソッドを WMI クライアントに指定されたターゲットに関連付けられているイベントを通知するために、WMI プロバイダーを構成します。
+description: SM\_AddTarget WMI メソッドは、指定されたターゲットに関連付けられているイベントを WMI クライアントに通知するように WMI プロバイダーを構成します。
 ms.assetid: 78e19496-1eb0-4d05-8637-f2e6d123208b
 keywords:
-- 記憶装置の SM_AddTarget 関数
+- SM_AddTarget function Storage デバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: c9a6e693b3b4cdabb27426c1b2453d3f382af595
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 800cadec0c88d95eff0f2e6717d1b69840b77155
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384319"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842602"
 ---
-# <a name="smaddtarget-function"></a>SM\_AddTarget 関数
+# <a name="sm_addtarget-function"></a>SM\_AddTarget 関数
 
 
-SM\_AddTarget WMI メソッドを WMI クライアントに指定されたターゲットに関連付けられているイベントを通知するために、WMI プロバイダーを構成します。
+SM\_AddTarget WMI メソッドは、指定されたターゲットに関連付けられているイベントを WMI クライアントに通知するように WMI プロバイダーを構成します。
 
 <a name="syntax"></a>構文
 ------
@@ -43,19 +43,19 @@ void SM_AddTarget(
 ----------
 
 *HbaPortWWN*   
-世界中のローカル ポート WMI クライアントは、イベント名 (WWN)
+WMI クライアントが受信するイベントを持つローカルポートのワールドワイド名 (WWN)。
 
 *DiscoveredPortWWN*   
-検出したターゲットを持つイベントを指定する世界中の名 (WWN)、WMI クライアントが表示されます。
+WMI クライアントが受信するイベントの検出されたターゲットを指定するワールド名 (WWN)。
 
 *DomainPortWWN*   
-WMI クライアントは、イベントのローカル ポートの SAS のドメイン世界中の名前を指定する世界名 (WWN)。
+WMI クライアントが受け取るイベントを持つローカルポートの、世界中の SAS ドメイン名を指定する、ワールドワイド名 (WWN)。
 
-*AllTargets*   
-レポートを対象のイベントのスコープです。 このメンバーがゼロの場合、WMI クライアントは DiscoveredPortWWN で示されたポートに関連付けられているイベントを受け取ります。 このメンバーが 0 以外の場合は、WMI クライアントは、すべての検出された現在のターゲットとして後で、検出されたターゲットに関連付けられているすべてのイベントを受け取ります。
+*Alltargets*   
+報告するターゲットイベントのスコープ。 このメンバーがゼロの場合、WMI クライアントは、DiscoveredPortWWN によって示されるポートに関連付けられているイベントを受信します。 このメンバーが0以外の場合、WMI クライアントは、現在検出されているすべてのターゲットと、今後検出されるターゲットに関連付けられているすべてのイベントを受信します。
 
-*HBAStatus*   
-操作の状態。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーでは、この情報を返します、SM の HBAStatus メンバー\_AddTarget\_構造体。
+*Hbastatus*   
+操作の状態。 許可される値とその説明の一覧については、「 [HBA\_STATUS](hba-status.md)」を参照してください。 ミニポートドライバーは、SM\_AddTarget\_OUT 構造の HBAStatus メンバーにこの情報を返します。
 
 <a name="return-value"></a>戻り値
 ------------
@@ -65,7 +65,7 @@ WMI メソッドには適用されません。
 <a name="remarks"></a>注釈
 -------
 
-この WMI メソッドは、ミリ秒に属する\_SM\_EventControl WMI クラスです。
+この WMI メソッドは、MS\_SM\_EventControl WMI クラスに属しています。
 
 <a name="requirements"></a>要件
 ------------
@@ -82,19 +82,19 @@ WMI メソッドには適用されません。
 </tr>
 <tr class="even">
 <td align="left"><p>Header</p></td>
-<td align="left">Hbapiwmi.h</td>
+<td align="left">Hbapiwmi</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[HBA\_状態](hba-status.md)
+[HBA\_の状態](hba-status.md)
 
-[**SM\_AddTarget\_IN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sm_addtarget_in)
+[**SM\_AddTarget\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sm_addtarget_in)
 
-[**SM\_AddTarget\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sm_addtarget_out)
+[**SM\_AddTarget\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sm_addtarget_out)
 
  
 

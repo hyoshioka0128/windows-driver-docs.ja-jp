@@ -1,28 +1,28 @@
 ---
 title: NDIS_STATUS_WWAN_PREFERRED_MULTICARRIER_PROVIDERS
-description: ミニポート ドライバーでは、前の OID_WWAN_PREFERRED_MULTICARRIER_PROVIDERSquery 要求に応答する NDIS_STATUS_WWAN_PREFERRED_MULTICARRIER_PROVIDERS 通知を使用します。ミニポート ドライバーは、この通知を使用して、MB サービスから OID_WWAN_PREFERRED_MULTICARRIER_PROVIDERS 設定要求の結果として更新プログラムに関する MB サービスに通知することがあります。 OID_WWAN_PREFERRED_MULTICARRIER_PROVIDERS セット要求への応答には、PreferredListHeader メンバー内の 0 個の要素を含める必要があります。 ミニポート ドライバーには、MB サービス マルチ キャリア プロバイダーの優先一覧 (PMCPL) が変更されたことを通知するためには、この通知が不要なイベントを送信できます。この通知は、NDIS_WWAN_PREFERRED_MULTICARRIER_PROVIDERS 構造体を使用します。
+description: ミニポートドライバーは、NDIS_STATUS_WWAN_PREFERRED_MULTICARRIER_PROVIDERS 通知を使用して、前の OID_WWAN_PREFERRED_MULTICARRIER_PROVIDERSquery 要求に応答します。また、この通知を使用して、MB サービスからの OID_WWAN_PREFERRED_MULTICARRIER_PROVIDERS set 要求の結果として、MB サービスに更新に関する情報を通知することもできます。 OID_WWAN_PREFERRED_MULTICARRIER_PROVIDERS set 要求への応答には、PreferredListHeader メンバーにゼロ要素が含まれている必要があります。 また、ミニポートドライバーは、この通知を使用して要請されていないイベントを送信して、推奨されるマルチキャリアプロバイダーリスト (PMCPL) が変更されたことを MB サービスに通知することもできます。この通知では、NDIS_WWAN_PREFERRED_MULTICARRIER_PROVIDERS 構造体が使用されます。
 ms.assetid: DBE8911D-1A92-40BC-94EB-BED3B8B82CB0
 ms.date: 07/18/2017
 keywords:
-- NDIS_STATUS_WWAN_PREFERRED_MULTICARRIER_PROVIDERS ネットワーク ドライバーが Windows Vista 以降
+- NDIS_STATUS_WWAN_PREFERRED_MULTICARRIER_PROVIDERS ネットワークドライバー (Windows Vista 以降)
 ms.localizationpriority: medium
-ms.openlocfilehash: 572e9df0ab54f193497ebb3ad19a50f01edcc106
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d5ec5345a77efbcc88edd9d7d82e988e9f69dc71
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377598"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844699"
 ---
-# <a name="ndisstatuswwanpreferredmulticarrierproviders"></a>NDIS\_状態\_WWAN\_優先\_マルチ\_プロバイダー
+# <a name="ndis_status_wwan_preferred_multicarrier_providers"></a>NDIS\_ステータス\_WWAN\_優先\_マルチキャリア\_プロバイダー
 
 
-ミニポート ドライバーを使用して、NDIS\_状態\_WWAN\_優先\_マルチ\_プロバイダーの通知を前に応答する[OID\_WWAN\_優先\_マルチ\_プロバイダー](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-preferred-multicarrier-providers)*クエリ*要求。
+ミニポートドライバーは、NDIS\_ステータス\_WWAN\_優先\_マルチキャリア\_プロバイダーの通知を使用して、以前の OID\_WWAN に応答し、[マルチキャリア\_プロバイダー](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-preferred-multicarrier-providers)*クエリ*要求。
 
-ミニポート ドライバーは可能性がありますもこの通知を使用して、OID の結果として更新プログラムに関する MB サービスに通知する\_WWAN\_優先\_マルチ\_プロバイダー*設定*からの要求MB サービスです。 OID への応答を\_WWAN\_優先\_マルチ\_プロバイダー*設定*要求内の 0 個の要素を含める必要があります、 **PreferredListHeader**メンバー。 ミニポート ドライバーには、MB サービス マルチ キャリア プロバイダーの優先一覧 (PMCPL) が変更されたことを通知するためには、この通知が不要なイベントを送信できます。
+また、ミニポートドライバーは、この通知を使用して、mb サービスからの要求をマルチキャリア\_PROVIDERS\_優先\_プロバイダーが*設定*した\_結果として、更新プログラムに関する情報を mb サービスに通知することもできます。 OID\_WWAN\_推奨される\_マルチキャリア\_プロバイダーの*設定*要求に対する応答には、 **PreferredListHeader**メンバー内に0個の要素が含まれている必要があります。 また、ミニポートドライバーは、この通知を使用して要請されていないイベントを送信して、推奨されるマルチキャリアプロバイダーリスト (PMCPL) が変更されたことを MB サービスに通知することもできます。
 
-この通知を使用して、 [ **NDIS\_WWAN\_優先\_マルチ\_プロバイダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_preferred_multicarrier_providers)構造体。
+この通知では、 [**NDIS\_WWAN\_優先\_マルチキャリア\_PROVIDERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_preferred_multicarrier_providers)構造体を使用します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -37,7 +37,7 @@ ms.locfileid: "67377598"
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Ndis.h</td>
+<td>Ndis. h</td>
 </tr>
 </tbody>
 </table>
@@ -45,7 +45,7 @@ ms.locfileid: "67377598"
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_WWAN\_優先\_マルチ\_プロバイダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_preferred_multicarrier_providers)
+[**NDIS\_WWAN\_優先\_マルチキャリア\_プロバイダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_preferred_multicarrier_providers)
 
  
 

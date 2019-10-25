@@ -5,27 +5,27 @@ ms.assetid: CAA92CA5-5CD6-4705-AA4C-54C1AA83ACA3
 ms.date: 07/18/2017
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 34d297cc1c68c2ed0b76285a492951aa66c20c4c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 696b2b320977be6341f37afc3354751ee6c6a5b5
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67359143"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842912"
 ---
 # <a name="wdi-task-oids"></a>WDI タスク OID
 
 
 このセクションには、WDI タスク Oid が含まれています。
 
-Wi-fi ドライバー インターフェイス (WDI) のオブジェクト識別子 (Oid) は、WDI を実装するミニポート ドライバーにのみ適用されます。
+Wi-fi Driver Interface (WDI) オブジェクト識別子 (Oid) は、WDI を実装するミニポートドライバーにのみ適用されます。
 
-次の表とを指定するかどうか WDI OID クエリ (Q)、セット (S) NDIS 6.0 メソッド (M) 要求必須またはオプションを実装します。
+次の表では、WDI OID query (Q)、set (S)、および NDIS 6.0 method (M) 要求を実装するかどうかを指定します。
 
-<a href="" id="r"></a>**R**  
-オブジェクトが必要です。 サポートすることを示します。 ミニポート ドライバー NDIS 状態コードを返すことによって、オブジェクトのセットまたはクエリの要求を失敗する必要がありますしない\_状態\_いない\_からサポートされているその[ *MiniportOidRequest* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_oid_request)関数。
+<a href="" id="r"></a> **\R\n\r\n**  
+オブジェクトのサポートが必要であることを示します。 ミニポートドライバーは、 [*Miniportoidrequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_oid_request)関数からサポートされて\_いない状態コード NDIS\_status\_返すことによって、オブジェクトの設定またはクエリ要求に失敗しないようにする必要があります。
 
-<a href="" id="o"></a>**O**  
-オブジェクトは省略可能なサポートすることを示します。 NDIS を返すことによって、要求は失敗は、ドライバーまたはミニポート ドライバーのクエリをサポートまたは、オブジェクトの要求を設定できます\_状態\_いない\_からサポートされているその[ *MiniportOidRequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_oid_request)関数。
+<a href="" id="o"></a>**I/o**  
+オブジェクトのサポートが省略可能であることを示します。 ミニポートドライバーは、オブジェクトのクエリまたは設定要求をサポートすることができます。または、ドライバーが、[*ミニ Portoidrequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_oid_request)関数からサポートされて\_いない NDIS\_ステータス\_を返すことによって要求を失敗させることができます。
 
 <table>
 <colgroup>
@@ -39,7 +39,7 @@ Wi-fi ドライバー インターフェイス (WDI) のオブジェクト識別
 <th>名前</th>
 <th>Q</th>
 <th>S</th>
-<th>M</th>
+<th>[M]</th>
 </tr>
 </thead>
 <tbody>

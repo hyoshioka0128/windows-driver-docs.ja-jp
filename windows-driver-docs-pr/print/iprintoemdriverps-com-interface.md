@@ -6,12 +6,12 @@ keywords:
 - IPrintOemDriverPS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e0fa4994cf5b23373da5043b8ef5e3508e5fb99
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ae9fd5789c32ffde3b067452e25387f7b5387fcd
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360723"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844321"
 ---
 # <a name="iprintoemdriverps-com-interface"></a>IPrintOemDriverPS COM インターフェイス
 
@@ -19,9 +19,9 @@ ms.locfileid: "67360723"
 
 
 
-`IPrintOemDriverPS` COM インターフェイスのプラグインの Pscript5 プリンター グラフィックス DLL によって提供されるユーティリティ操作へのアクセスをレンダリングを提供します。 これらの操作では、印刷スプーラをデータ ストリームを送信し、ドライバー管理の情報を取得します。
+`IPrintOemDriverPS` COM インターフェイスは、Pscript5 のプリンターグラフィックス DLL によって提供されるユーティリティ操作へのアクセスを備えたレンダリングプラグインを提供します。 これらの操作は、データストリームを印刷スプーラに送信し、ドライバーによって管理される情報を取得します。
 
-次の表とによって定義されたメソッドのすべてについて説明します、`IPrintOemDriverPS`インターフェイス。
+次の表に、`IPrintOemDriverPS` インターフェイスで定義されているすべてのメソッドとその説明を示します。
 
 <table>
 <colgroup>
@@ -36,19 +36,19 @@ ms.locfileid: "67360723"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemdriverps-drvgetdriversetting" data-raw-source="[&lt;strong&gt;IPrintOemDriverPS::DrvGetDriverSetting&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemdriverps-drvgetdriversetting)"><strong>IPrintOemDriverPS::DrvGetDriverSetting</strong></a></p></td>
-<td><p>プリンターの機能とその他の内部情報の現在の状態を返します。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemdriverps-drvgetdriversetting" data-raw-source="[&lt;strong&gt;IPrintOemDriverPS::DrvGetDriverSetting&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemdriverps-drvgetdriversetting)"><strong>IPrintOemDriverPS::D rvGetDriverSetting</strong></a></p></td>
+<td><p>プリンター機能とその他の内部情報の現在の状態を返します。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemdriverps-drvwritespoolbuf" data-raw-source="[&lt;strong&gt;IPrintOemDriverPS::DrvWriteSpoolBuf&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemdriverps-drvwritespoolbuf)"><strong>IPrintOemDriverPS::DrvWriteSpoolBuf</strong></a></p></td>
-<td><p>プリンター データをスプーラーに送信します。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemdriverps-drvwritespoolbuf" data-raw-source="[&lt;strong&gt;IPrintOemDriverPS::DrvWriteSpoolBuf&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemdriverps-drvwritespoolbuf)"><strong>IPrintOemDriverPS::D rvWriteSpoolBuf</strong></a></p></td>
+<td><p>プリンターデータをスプーラに送信します。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-詳細については、次を参照してください。[プリンター ドライバーの COM インターフェイスを実装する](implementing-printer-driver-com-interfaces.md)します。
+詳細については、「[プリンタドライバ COM インターフェイスの実装](implementing-printer-driver-com-interfaces.md)」を参照してください。
 
  
 

@@ -4,15 +4,15 @@ description: SCSI ミニポート ドライバーの HwScsiFindAdapter ルーチ
 ms.assetid: c89ad751-ff29-4aa7-b907-cb490d060906
 keywords:
 - HwScsiFindAdapter
-- SCSI ミニポート ドライバー WDK ストレージ、HwScsiFindAdapter
+- SCSI ミニポートドライバー WDK 記憶域、HwScsiFindAdapter
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fe8a1217bab4dfc0eb5362a974b3d7272bdc0e1b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9ca3badd855d43ebf226442fcb8d892a6066cce8
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385225"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842671"
 ---
 # <a name="scsi-miniport-drivers-hwscsifindadapter-routine"></a>SCSI ミニポート ドライバーの HwScsiFindAdapter ルーチン
 
@@ -20,11 +20,11 @@ ms.locfileid: "67385225"
 ## <span id="ddk_scsi_miniport_drivers_hwscsifindadapter_routine_kg"></span><span id="DDK_SCSI_MINIPORT_DRIVERS_HWSCSIFINDADAPTER_ROUTINE_KG"></span>
 
 
-オペレーティング システム固有のポートのドライバーをできるだけ多くの設定、 [**ポート\_構成\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/ns-srb-_port_configuration_information)ほど構成情報バッファーからことができます、ミニポート ドライバーの[ **HW\_初期化\_データ (SCSI)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/ns-srb-_hw_initialization_data)仕様とその他のソースを呼び出す前に、システムで、指定された*HwScsiFindAdapter*構成情報バッファーへのポインターとルーチン。
+オペレーティングシステム固有のポートドライバーは、ミニポートドライバーのハードウェア\_初期化\_データ (SCSI) によって可能な限り、構成情報バッファー内の[ **\_構成\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/srb/ns-srb-_port_configuration_information)を格納します[ **。** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/srb/ns-srb-_hw_initialization_data)構成情報バッファーへのポインターを使用して指定された*HwScsiFindAdapter*ルーチンを呼び出す前に、システム内の仕様およびその他のソース。
 
-一般に、 *HwScsiFindAdapter*ルーチンは、指定された構成情報を使用するためや呼び出し元の責任 **ScsiPort * * * Xxx*に必要な構成情報を収集するには識別される I/O バスで HBA がサポートするかどうかを確認、 **SystemIoBusNumber**ポート\_構成\_ポート ドライバーによって提供される情報。 そうである場合*HwScsiFindAdapter*ポートでサポートされている HBA の残りの構成情報の入力を担当\_構成\_については、ミニポート ドライバーのセットアップデバイス ドライバーが決定した状態の設定およびその HBA に関する拡張機能、*再度*に制御を返す前に適切な値のパラメーター。
+一般に、 *HwScsiFindAdapter*ルーチンは、指定された構成情報を使用するか、**ScsiPort * * Xxx*を呼び出すために十分な構成情報を収集して i/o 上の HBA をサポートするかどうかを判断する役割を担います。ポート\_構成の**SystemIoBusNumber**によって識別されるバスは、ポートドライバーによって提供される情報\_ます。 その場合、 *HwScsiFindAdapter*は、ポート\_構成\_情報でサポートされている HBA の残りの構成情報を入力する役割を担います。ドライバーは、その HBA についての状態を確認し、制御を返す前に *、パラメーターを*適切な値に設定します。
 
-参照してください[**ポート\_構成\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/ns-srb-_port_configuration_information)と[ *HwScsiFindAdapter* ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557300(v=vs.85))詳細についてはします。
+詳細については、「 [**PORT\_CONFIGURATION\_information**](https://docs.microsoft.com/windows-hardware/drivers/ddi/srb/ns-srb-_port_configuration_information) and [*HwScsiFindAdapter*](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557300(v=vs.85)) 」を参照してください。
 
  
 

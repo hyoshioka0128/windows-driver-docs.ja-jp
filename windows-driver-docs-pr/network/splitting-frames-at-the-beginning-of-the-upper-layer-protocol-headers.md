@@ -1,40 +1,40 @@
 ---
-title: 上位層プロトコル ヘッダーの先頭のフレームの分割
-description: 上部レイヤー プロトコル ヘッダーの先頭のフレームの分割
+title: 上部レイヤーのプロトコルヘッダーでフレームを分割する
+description: 上位レイヤーの先頭にフレームを分割する-プロトコルヘッダー
 ms.assetid: 2559ac20-46dc-4116-9d12-b2cd634e501b
 keywords:
-- ネットワーク、上位層プロトコルの先頭に WDK を分割するイーサネット フレーム
-- 上位層プロトコル WDK ヘッダー以外のデータの分割します。
+- 上層プロトコルからのイーサネットフレームの分割 WDK ネットワーク
+- 上位層プロトコル WDK ヘッダー-データの分割
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 80e240f7aeacc537ef6af82441008899f9109aaf
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9ac667525619b94bd67b5e6b6a653d2c4073edfa
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383623"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841868"
 ---
-# <a name="splitting-frames-at-the-beginning-of-the-upper-layer-protocol-headers"></a>上部レイヤー プロトコル ヘッダーの先頭のフレームの分割
+# <a name="splitting-frames-at-the-beginning-of-the-upper-layer-protocol-headers"></a>上位レイヤーの先頭にフレームを分割する-プロトコルヘッダー
 
 
 
 
 
-*上位層プロトコル*は TCP、UDP、ICMP などの IP トランスポート プロトコルです。
+*上位層プロトコル*は、TCP、UDP、ICMP などの IP トランスポートプロトコルです。
 
-**注**  IPsec、上のレイヤー-プロトコル ヘッダー データの分割の要件とは見なされません。 IPsec のフレームの分割の詳細については、次を参照してください。 [IPsec フレームの分割](splitting-ipsec-frames.md)します。
-
- 
-
-NIC が、指定された上限-レイヤー プロトコル ヘッダーの先頭に、イーサネット フレームを分割するかどうかは[ **NET\_バッファー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer) MDLs を正確に 2 つを含める必要があります。 最初の MDL を表すバッファーは、イーサネット フレーム (MAC ヘッダー) の最初のバイトを始める必要があり、上のレイヤー プロトコル ヘッダーの最初のバイトを示す 2 つ目の MDL バッファーを開始する必要があります。
-
-**注**  NIC は、TCP または UDP ペイロードで TCP および UDP のフレームを分割できます。 詳細については、次を参照してください。 [TCP ペイロードで分割フレーム](splitting-frames-at-the-tcp-payload.md)と[UDP ペイロードにフレームを分割](splitting-frames-at-the-udp-payload.md)します。
+**注**  IPsec は、ヘッダーデータの分割要件では、上位層プロトコルとは見なされません。 IPsec フレームの分割の詳細については、「 [Ipsec フレームの分割](splitting-ipsec-frames.md)」を参照してください。
 
  
 
-プロバイダーが、指定された上限-レイヤー プロトコル ヘッダーの先頭のフレームを分割する場合は、ヘッダー データの分割[ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)構造があります、NDIS\_NBL\_フラグ\_分割\_で\_上限\_レイヤー\_プロトコル\_ヘッダー フラグを設定、 **NblFlags**メンバー。 ヘッダー データの設定の詳細については、NET を分割の\_バッファー\_フラグの一覧を参照してください[設定 NET\_バッファー\_情報を一覧表示](setting-net-buffer-list-information.md)します。
+NIC が上層プロトコルヘッダーの先頭にイーサネットフレームを分割した場合、指定された[**NET\_バッファー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer)には、ちょうど2つの mdls が含まれている必要があります。 最初の MDL が記述するバッファーは、イーサネットフレーム (MAC ヘッダー) の最初のバイトで始まり、2番目の MDL が記述するバッファーは、上位層のプロトコルヘッダーの最初のバイトで始まる必要があります。
 
-NIC 結果のヘッダーのバッファーがある最大ヘッダー サイズよりも長い場合フレームを分割する必要があります。 ヘッダーの最大サイズを超えたときに、フレームを分割の詳細については、次を参照してください。[ヘッダーのバッファーを割り当てる](allocating-the-header-buffer.md)します。
+NIC が tcp または UDP のペイロードで TCP フレームと UDP フレームを分割できる  に**注意**してください。 詳細については、「 [TCP ペイロードでのフレームの分割](splitting-frames-at-the-tcp-payload.md)」と「[フレームの UDP ペイロードでの分割](splitting-frames-at-the-udp-payload.md)」を参照してください。
+
+ 
+
+ヘッダーデータの分割プロバイダーが上位層のプロトコルヘッダーの先頭にフレームを分割する場合、指定された[**NET\_BUFFER\_リスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)構造には、\_を分割\_に、NDIS\_NBL\_フラグを設定する必要があり\_UPPER\_レイヤー\_プロトコル\_ヘッダーフラグが**Nblflags**メンバーに設定されています。 ヘッダーの設定の詳細については、「ネットワーク\_バッファー\_リストフラグの設定」を参照してください。[ネットワーク\_バッファーの設定\_リストの情報](setting-net-buffer-list-information.md)
+
+結果のヘッダーバッファーの長さが最大ヘッダーサイズよりも長い場合、NIC はフレームを分割しないでください。 ヘッダーの最大サイズを超えたときのフレームの分割の詳細については、「[ヘッダーバッファーの割り当て](allocating-the-header-buffer.md)」を参照してください。
 
  
 

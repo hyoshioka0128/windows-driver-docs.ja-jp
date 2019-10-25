@@ -1,22 +1,22 @@
 ---
 title: WDI_TLV_P2P_BACKGROUND_DISCOVER_MODE
-description: WDI_TLV_P2P_BACKGROUND_DISCOVER_MODE では、Wi-Fi Direct バック グラウンドの検出モード パラメーターを含む TLV です。
+description: WDI_TLV_P2P_BACKGROUND_DISCOVER_MODE は、Wi-fi Direct バックグラウンド検出モードパラメーターを含む TLV です。
 ms.assetid: 987DB282-A992-497F-98B5-0D3DD477B91C
 ms.date: 07/18/2017
 keywords:
-- WDI_TLV_P2P_BACKGROUND_DISCOVER_MODE ネットワーク ドライバーが Windows Vista 以降
+- WDI_TLV_P2P_BACKGROUND_DISCOVER_MODE ネットワークドライバー (Windows Vista 以降)
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c0323cf72f029ab425147667b64d63c3492fd66
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0f7df9e0f598857c71ece77ddd6019cf1ac7c940
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386823"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842360"
 ---
-# <a name="wditlvp2pbackgrounddiscovermode"></a>WDI\_TLV\_P2P\_バック グラウンド\_DISCOVER\_モード
+# <a name="wdi_tlv_p2p_background_discover_mode"></a>WDI\_TLV\_P2P\_バックグラウンド\_\_モードの検出
 
 
-WDI\_TLV\_P2P\_バック グラウンド\_DISCOVER\_モードは、Wi-Fi Direct バック グラウンドの検出モード パラメーターを含む TLV します。
+WDI\_TLV\_P2P\_バックグラウンド\_検出\_モードは、Wi-fi Direct バックグラウンド検出モードパラメーターを含む TLV です。
 
 ## <a name="tlv-type"></a>TLV 型
 
@@ -26,7 +26,7 @@ WDI\_TLV\_P2P\_バック グラウンド\_DISCOVER\_モードは、Wi-Fi Direct 
 ## <a name="length"></a>長さ
 
 
-含まれるすべての要素のサイズの合計をバイト単位で。
+含まれているすべての要素のサイズの合計 (バイト単位)。
 
 ## <a name="values"></a>値
 
@@ -38,23 +38,23 @@ WDI\_TLV\_P2P\_バック グラウンド\_DISCOVER\_モードは、Wi-Fi Direct 
 </colgroup>
 <thead>
 <tr class="header">
-<th>型</th>
+<th>タスクバーの検索ボックスに</th>
 <th>説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_p2p_discover_type" data-raw-source="[&lt;strong&gt;WDI_P2P_DISCOVER_TYPE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_p2p_discover_type)"><strong>WDI_P2P_DISCOVER_TYPE</strong></a></td>
-<td>ポートで実行する探索の種類。</td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_p2p_discover_type" data-raw-source="[&lt;strong&gt;WDI_P2P_DISCOVER_TYPE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_p2p_discover_type)"><strong>WDI_P2P_DISCOVER_TYPE</strong></a></td>
+<td>ポートによって実行される探索の種類。</td>
 </tr>
 <tr class="even">
-<td><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_p2p_service_discovery_type" data-raw-source="[&lt;strong&gt;WDI_P2P_SERVICE_DISCOVERY_TYPE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_p2p_service_discovery_type)"><strong>WDI_P2P_SERVICE_DISCOVERY_TYPE</strong></a></td>
-<td>ポートで実行されるサービスの検出の種類。
-<p>唯一の有効な値は WDI_P2P_SERVICE_DISCOVERY_TYPE_NO_SERVICE_DISCOVERY および WDI_P2P_SERVICE_DISCOVERY_TYPE_SERVICE_NAME_ONLY です。</p></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_p2p_service_discovery_type" data-raw-source="[&lt;strong&gt;WDI_P2P_SERVICE_DISCOVERY_TYPE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_p2p_service_discovery_type)"><strong>WDI_P2P_SERVICE_DISCOVERY_TYPE</strong></a></td>
+<td>ポートによって実行されるサービス検出の種類。
+<p>有効な値は、WDI_P2P_SERVICE_DISCOVERY_TYPE_NO_SERVICE_DISCOVERY と WDI_P2P_SERVICE_DISCOVERY_TYPE_SERVICE_NAME_ONLY のみです。</p></td>
 </tr>
 <tr class="odd">
 <td>UINT32</td>
-<td>デバイスの表示タイムアウトします。 レポートのデバイスのエントリの最大タイムアウト (ミリ秒単位) を指定します。 これは、機能は、バック グラウンドのスキャンのみに必要です。</td>
+<td>デバイスの表示タイムアウト。 デバイスエントリを報告するための最大タイムアウト (ミリ秒単位) を指定します。 これは、バックグラウンドスキャンにのみ必要です。</td>
 </tr>
 </tbody>
 </table>
@@ -80,7 +80,7 @@ WDI\_TLV\_P2P\_バック グラウンド\_DISCOVER\_モードは、Wi-Fi Direct 
 </tr>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Wditypes.hpp</td>
+<td>Wditypes</td>
 </tr>
 </tbody>
 </table>

@@ -3,17 +3,17 @@ title: プロトコル ドライバーのページ可能で破棄可能なコー
 description: プロトコル ドライバーのページ可能で破棄可能なコード
 ms.assetid: acc27690-cdc3-433c-85c4-489501ea3d26
 keywords:
-- プロトコル ドライバー WDK のネットワーク、ページング、および破棄できるコード
-- NDIS プロトコル ドライバー WDK、ページングと破棄コード
-- ページングと破棄コード WDK NDIS プロトコル
+- プロトコルドライバー WDK ネットワーク、ページング可能で破棄可能なコード
+- NDIS プロトコルドライバー WDK、ページング可能で破棄可能なコード
+- ページング可能かつ破棄不可能なコード (WDK NDIS プロトコル)
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7faf33aa8507d0930d12974641d99b9e06508f44
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ae5aa75a6611d953ce40f1708fae594ffb4dcf96
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67357600"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843704"
 ---
 # <a name="pageable-and-discardable-code-in-a-protocol-driver"></a>プロトコル ドライバーのページ可能で破棄可能なコード
 
@@ -21,13 +21,13 @@ ms.locfileid: "67357600"
 
 
 
-ドライバー開発者向けがコードとして指定可能であれば、ページング可能なメモリ常駐型にする必要があるコードのシステム領域を解放します。 ページング可能として関数をマークすることができます、 [ **NDIS\_PAGEABLE\_関数**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff557121(v=vs.85))マクロ。 ページングの中からは、IRQL、リソースの管理機能、および関数の他の特性は、関数は、禁止する可能性があります。
+ドライバーの開発者は、可能な限りコードをページング可能として指定する必要があり、メモリ常駐型である必要があるコードのシステム領域が解放されます。 関数は、 [**NDIS\_ページング可能\_関数**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff557121(v=vs.85))マクロを使用して、ページング可能としてマークできます。 IRQL、リソース管理機能、および関数のその他の特性により、関数がページング不可能になる場合があります。
 
-すべて*ProtocolXxx*パッシブから範囲の IRQL で関数が実行される\_レベル ディスパッチを\_レベル。 IRQL でのみ実行される関数 = パッシブ\_レベルは、ページング可能としてマークする必要があります。
+すべての*Protocolxxx*関数は、パッシブ\_レベルから\_レベルをディスパッチする範囲の IRQL で実行されます。 IRQL = パッシブ\_レベルで排他的に実行される関数は、ページング可能としてマークする必要があります。
 
-IRQL で実行されるドライバー関数 = パッシブ\_レベルにできるページング可能な限り、呼び出すことも、IRQL で実行されている任意の関数によって呼び出される&gt;= ディスパッチ\_レベル--スピン ロックを取得する関数などです。 取得のスレッドの IRQL をディスパッチするときに生成されるスピン ロックを取得すると、\_レベル。 などのドライバー関数[ *ProtocolBindAdapterEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_bind_adapter_ex)、IRQL で実行される = パッシブ\_レベルでは、呼び出す必要がありますいない**Ndis * Xxx*** IRQLで実行される関数&gt;= ディスパッチ\_レベルのドライバー関数がページング可能なコードとしてマークされている場合。 それぞれの IRQL の詳細については**Ndis * Xxx*** 関数を参照してください[NDIS ライブラリ関数](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff557039(v=vs.85))します。
+IRQL = パッシブ\_レベルで実行されるドライバー関数は、を呼び出さない限り、または、スピンロックを取得する関数など、IRQL &gt;= ディスパッチ\_レベルで実行される関数によって呼び出されない限り、ページング可能にすることができます。 スピンロックを取得すると、獲得しているスレッドの IRQL が\_レベルにディスパッチされます。 IRQL = パッシブ\_レベルで実行されるドライバー関数 ( [*Protocolbindadapterex*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_bind_adapter_ex)など) では、そのドライバー関数がページング可能なコードとしてマークされている場合、irql &gt;= ディスパッチ\_レベルで実行される**Ndis * Xxx*** 関数を呼び出すことはできません。 各**ndis * Xxx*** 関数の IRQL の詳細については、「 [ndis Library Functions](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff557039(v=vs.85))」を参照してください。
 
-[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)関数からのみ呼び出されるコードと同様に、NDIS プロトコル ドライバーの**DriverEntry**を使用して、コードの初期化専用として指定する必要があります[ **NDIS\_INIT\_関数**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff557007(v=vs.85))マクロ。 このマクロで識別されるコードでは、システムの初期化時に 1 回だけ実行すると見なされます、その結果、その時間中にのみマップされます。 初期化のみを返します。 としてマークされた関数後は、破棄されます。
+Ndis プロトコルドライバーの[**driverentry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)関数、および**driverentry**からのみ呼び出されるコードは、 [**ndis\_INIT\_function**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff557007(v=vs.85))マクロを使用して初期化専用コードとして指定する必要があります。 このマクロで識別されるコードは、システムの初期化時に1回だけ実行されることを前提としています。その結果、この時間内にのみマップされます。 初期化としてマークされた関数は、を返すだけで、破棄されます。
 
  
 

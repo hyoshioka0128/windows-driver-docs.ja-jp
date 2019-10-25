@@ -3,16 +3,16 @@ title: CoNDIS WAN ミニポート ドライバー情報の設定
 description: CoNDIS WAN ミニポート ドライバー情報の設定
 ms.assetid: 950cb2cb-7f02-4f3c-924a-0d1e7bb19b55
 keywords:
-- ドライバー WDK ネットワーク、WAN いる CoNDIS 情報設定
+- CoNDIS WAN ドライバー WDK ネットワーク、情報設定
 - OID_WAN_CO_SET_LINK_INFO
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b73413927e8f3ba8d6a24a849528d877821644de
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7b1cb23df349f54cb98c735e9c6b4cc6296a07ad
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377022"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841946"
 ---
 # <a name="setting-condis-wan-miniport-driver-information"></a>CoNDIS WAN ミニポート ドライバー情報の設定
 
@@ -20,13 +20,13 @@ ms.locfileid: "67377022"
 
 
 
-このトピックでは、いる CoNDIS WAN ミニポート ドライバーに情報を設定するための要件の概要を示します。 上位層、ドライバーは呼び出し[ **NdisCoOidRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscooidrequest)いる CoNDIS WAN ミニポート ドライバーと、ミニポート ドライバーの NIC を管理する情報を変更するセットの要求とします。
+このトピックでは、CoNDIS WAN ミニポートドライバーで情報を設定するための要件の概要について説明します。 上層のドライバーは、set 要求を使用して[**NdisCoOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscooidrequest)を呼び出し、CONDIS WAN ミニポートドライバーとミニポートドライバーの NIC で保持される情報を変更します。
 
-NDISWAN 中間ドライバーでは、セットの要求を転送する NDIS 呼び出して WAN ミニポート ドライバーの[ **MiniportCoOidRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_co_oid_request)関数。 いる CoNDIS WAN ミニポート ドライバーでは、この関数はすべている CoNDIS ミニポート ドライバーの場合と同様、いる CoNDIS WAN ミニポート ドライバーがサポートする点を除いて[いる CoNDIS WAN オブジェクト](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/index)します。
+NDISWAN 中間ドライバーがセット要求を転送した後、NDIS は WAN ミニポートドライバーの[**MiniportCoOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_co_oid_request)関数を呼び出します。 Condis WAN ミニポートドライバーでは、この機能はすべての CoNDIS ドライバーと同じですが、condis wan ミニポートドライバーでは[CONDIS Wan オブジェクト](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/index)がサポートされている点が異なります。
 
-その他の要求は送信できずいる CoNDIS WAN ミニポート ドライバーにセットの現在の要求が完了するまでです。 NDIS ミニポート ドライバーがセットの要求がすぐに完了しない場合を返します\_状態\_から PENDING *MiniportCoOidRequest*後で呼び出す必要がありますと[ **NdisCoOidRequestComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscooidrequestcomplete)要求を完了します。
+現在のセット要求が完了するまで、他の要求は CoNDIS WAN ミニポートドライバーに送信されません。 ミニポートドライバーが set 要求をすぐに完了しない場合、NDIS\_STATUS\_*MiniportCoOidRequest*から返され、後で[**NdisCoOidRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscooidrequestcomplete)を呼び出して要求を完了する必要があります。
 
-いる CoNDIS WAN ミニポート ドライバーが認識し、次のいる CoNDIS WAN Oid に適切に対応する必要があります。
+Condis WAN ミニポートドライバーは、次の CoNDIS WAN Oid に対して認識し、適切に応答する必要があります。
 
 <table>
 <colgroup>
@@ -42,15 +42,15 @@ NDISWAN 中間ドライバーでは、セットの要求を転送する NDIS 呼
 <tbody>
 <tr class="odd">
 <td align="left"><p></p>
-<a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-wan-co-set-link-info" data-raw-source="[OID_WAN_CO_SET_LINK_INFO](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wan-co-set-link-info)">OID_WAN_CO_SET_LINK_INFO</a> VC の情報を設定します。</td>
-<td align="left"><p>必須</p></td>
+<a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-wan-co-set-link-info" data-raw-source="[OID_WAN_CO_SET_LINK_INFO](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wan-co-set-link-info)">OID_WAN_CO_SET_LINK_INFO</a>VC の情報を設定します。</td>
+<td align="left"><p>必須かどうか</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-いる CoNDIS WAN ミニポート ドライバーは、NDIS もサポートしています。[全般オブジェクト](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff546510(v=vs.85))します。 いる CoNDIS ミニポート ドライバーでは情報の設定の詳細については、次を参照してください。[クエリの実行または情報を設定する](querying-or-setting-information.md)します。
+CoNDIS WAN ミニポートドライバーは、NDIS[全般オブジェクト](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff546510(v=vs.85))もサポートしています。 CoNDIS ミニポートドライバーでの情報の設定の詳細については、「[情報の照会または設定](querying-or-setting-information.md)」を参照してください。
 
  
 

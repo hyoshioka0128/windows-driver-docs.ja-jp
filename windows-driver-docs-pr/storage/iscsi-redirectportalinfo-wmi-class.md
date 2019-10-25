@@ -4,17 +4,17 @@ description: ISCSI\_RedirectPortalInfo WMI クラス
 ms.assetid: 55730446-7c8b-4c9d-9473-f9bb6edd603e
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: edfb8ac11203552a8d32f5e924c7be5683f35718
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 143aaec79e33f9687bf14db4ce07c2c65fd328ea
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378414"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845382"
 ---
-# <a name="iscsiredirectportalinfo-wmi-class"></a>ISCSI\_RedirectPortalInfo WMI クラス
+# <a name="iscsi_redirectportalinfo-wmi-class"></a>ISCSI\_RedirectPortalInfo WMI クラス
 
 
-ISCSI\_RedirectPortalInfo WMI クラスには、iSCSI ポータルのコレクションに関する情報が含まれています。 このクラスが次のように定義されている*Mgmt.mof*します。
+ISCSI\_RedirectPortalInfo WMI クラスには、iSCSI ポータルのコレクションに関する情報が含まれています。 このクラスは、*管理 .mof*で次のように定義されています。
 
 ```cpp
 class ISCSI_RedirectPortalInfo
@@ -57,7 +57,7 @@ class ISCSI_RedirectPortalInfo
 };
 ```
 
-WMI ツールのスイートでは、上記のクラス定義をコンパイルするときに生成、 [ **ISCSI\_RedirectPortalInfo** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsimgt/ns-iscsimgt-_iscsi_redirectportalinfo)データ構造体。
+WMI ツールスイートは、前のクラス定義をコンパイルするときに、 [**ISCSI\_RedirectPortalInfo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/iscsimgt/ns-iscsimgt-_iscsi_redirectportalinfo)データ構造を生成します。
 
  
 

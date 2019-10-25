@@ -1,41 +1,41 @@
 ---
-Description: デバイス記述子には、全体として、USB デバイスに関する情報が含まれています。 このトピックでは、USB_DEVICE_DESCRIPTOR 構造を説明し、クライアント ドライバーがデバイス記述子を取得する要求を get 記述子を送信する方法に関する情報が含まれています。
+Description: デバイス記述子には、USB デバイス全体に関する情報が含まれています。 このトピックでは、USB_DEVICE_DESCRIPTOR 構造体について説明します。また、クライアントドライバーが get 記述子要求を送信してデバイス記述子を取得する方法についても説明します。
 title: USB デバイス記述子
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e1d4388e67fb3a283cc2c0fd4a9708804015fc30
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a7f6a01644f1b7890d3956d1623a6d70a320131b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360164"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844827"
 ---
 # <a name="usb-device-descriptors"></a>USB デバイス記述子
 
 
-デバイス記述子には、全体として、USB デバイスに関する情報が含まれています。 このトピックで説明します、 [ **USB\_デバイス\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbspec/ns-usbspec-_usb_device_descriptor)構造体であり、クライアント ドライバーがデバイスを取得する get 記述子の要求を送信する方法に関する情報が含まれています記述子。
+デバイス記述子には、USB デバイス全体に関する情報が含まれています。 このトピックでは、 [**USB\_デバイスの\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbspec/ns-usbspec-_usb_device_descriptor)構造について説明し、クライアントドライバーがデバイス記述子を取得するために get 記述子要求を送信する方法について説明します。
 
-すべてのユニバーサル シリアル バス (USB) デバイスは、デバイスに関連する情報を含む 1 つのデバイス記述子を提供できる必要があります。 [ **USB\_デバイス\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbspec/ns-usbspec-_usb_device_descriptor)構造体には、デバイスの記述子がについて説明します。 Windows では、その情報を使用して、情報のさまざまなセットを派生させます。 たとえば、 **idVendor**と**idProduct**フィールドはベンダーと製品の id をそれぞれ指定します。 Windows では、これらのフィールド値を使用して、作成、*ハードウェア ID*デバイス。 特定のデバイスのハードウェア ID を表示するには、開く**デバイス マネージャー**とデバイスのプロパティを表示します。 **詳細** タブで、**ハードウェア Id**プロパティの値をハードウェア ID を示します ("USB\\*XXX*") Windows によって生成されます。 **BcdUSB**フィールドは、デバイスが準拠する USB 仕様のバージョンを示します。 たとえば、0x0200 では、デバイスが USB 2.0 仕様どおりに設計されていることを示します。 **BcdDevice**値がデバイス定義のリビジョン番号を示します。 USB ドライバー スタックを使用して**bcdDevice**、と共に**idVendor**と**idProduct**ハードウェアとデバイスの互換性 Id を生成します。 これらを表示することで識別子**デバイス マネージャー**。 デバイス記述子では、デバイスがサポートする構成の総数も示します。
+各 Universal Serial Bus (USB) デバイスは、デバイスに関する関連情報を含む単一のデバイス記述子を提供できる必要があります。 [**USB\_デバイスの\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbspec/ns-usbspec-_usb_device_descriptor)構造体は、デバイス記述子を記述します。 Windows では、その情報を使用して、さまざまな情報のセットを取得します。 たとえば、 **idvendor**フィールドと**idvendor**フィールドでは、それぞれベンダー id と製品識別子が指定されています。 Windows では、これらのフィールド値を使用して、デバイスの*ハードウェア ID*を作成します。 特定のデバイスのハードウェア ID を表示するには、**デバイスマネージャー**を開き、デバイスのプロパティを表示します。 **[詳細]** タブの **[ハードウェア id]** プロパティ値は、Windows によって生成されるハードウェア id ("USB\\*XXX*") を示します。 **Bcdusb**フィールドは、デバイスが準拠している USB 仕様のバージョンを示します。 たとえば、0x0200 は、デバイスが USB 2.0 仕様に従って設計されていることを示します。 **Bcddevice**値は、デバイス定義のリビジョン番号を示します。 USB ドライバースタックでは、デバイスのハードウェア Id と互換性 Id を生成するために、 **Idvendor**および**idvendor**と共に**bcddevice**が使用されます。 これらの識別子は**デバイスマネージャー**で確認できます。 デバイス記述子は、デバイスがサポートしている構成の合計数も示しています。
 
-容量は最高速度で接続したときよりも高速容量でホスト コンピューターに、デバイスが接続されているときに、デバイスはそのデバイス記述子でさまざまな情報をレポート可能性があります。 デバイスでは、電源の状態の変更時など、接続の有効期間中にデバイス記述子に含まれる情報は変更しないでください。
+デバイスが高速容量で接続されている場合よりも高速な容量でホストコンピューターに接続されている場合、デバイスはデバイス記述子に異なる情報を報告することがあります。 デバイスでは、接続の有効期間中にデバイス記述子に含まれる情報を変更することはできません (電源状態の変更時を含む)。
 
-ホストは、コントロール転送を介してデバイス記述子を取得します。 転送の要求の種類は記述子を取得、宛先は、デバイスです。 クライアント ドライバーは、2 つの方法のいずれかでその転送を開始できます: framework USB ターゲット デバイス オブジェクトを使用して、または、URB 要求情報を送信することです。
+ホストは制御転送を介してデバイス記述子を取得します。 転送では、要求の種類は GET 記述子で、受信者はデバイスです。 クライアントドライバーは、フレームワークの USB ターゲットデバイスオブジェクトを使用するか、要求情報との URB を送信することによって、この転送を開始できます。
 
--   [デバイス記述子を取得します。](#getting-the-device-descriptor)
--   [サンプル デバイス記述子](#sample-device-descriptor)
+-   [デバイス記述子の取得](#getting-the-device-descriptor)
+-   [サンプルデバイス記述子](#sample-device-descriptor)
 
-## <a name="getting-the-device-descriptor"></a>デバイス記述子を取得します。
+## <a name="getting-the-device-descriptor"></a>デバイス記述子の取得
 
 
-Windows Driver Frameworks (WDF) のクライアント ドライバーは、framework USB ターゲット デバイス オブジェクトが作成された後にのみデバイス記述子を取得できます。
+Windows Driver framework (WDF) クライアントドライバーは、フレームワークの USB ターゲットデバイスオブジェクトが作成された後にのみ、デバイス記述子を取得できます。
 
-KMDF ドライバーは、呼び出すことで、USB ターゲット デバイス オブジェクト WDFUSBDEVICE ハンドルを取得する必要があります[ **WdfUsbTargetDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdevicecreate)します。 通常、クライアント ドライバーを呼び出す**WdfUsbTargetDeviceCreate**ドライバーの[ *EvtDevicePrepareHardware* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)コールバック実装します。 その後、クライアント ドライバーを呼び出す必要があります、 [ **WdfUsbTargetDeviceGetDeviceDescriptor** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdevicegetdevicedescriptor)メソッド。 デバイス記述子が呼び出し元が割り当てたで受信した後、呼び出しが完了したら、 [ **USB\_デバイス\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbspec/ns-usbspec-_usb_device_descriptor)構造体。
+KMDF ドライバーは、 [**WdfUsbTargetDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicecreate)を呼び出して、USB ターゲットデバイスオブジェクトへの WDFUSBDEVICE ハンドルを取得する必要があります。 通常、クライアントドライバーは、ドライバーの[*EvtdeviceWdfUsbTargetDeviceCreate ハードウェア*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)コールバック実装でを呼び出します。 その後、クライアントドライバーは[**WdfUsbTargetDeviceGetDeviceDescriptor**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicegetdevicedescriptor)メソッドを呼び出す必要があります。 呼び出しが完了すると、呼び出し元によって割り当てられた[**USB\_デバイス\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbspec/ns-usbspec-_usb_device_descriptor)構造でデバイス記述子が受信されます。
 
-UMDF ドライバーの framework デバイス オブジェクトをクエリする必要があります、 [ **IWDFUsbTargetDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nn-wudfusb-iwdfusbtargetdevice)ポインターと、呼び出し、 [ **IWDFUsbTargetDevice::RetrieveDescriptor**](https://msdn.microsoft.com/library/windows/hardware/ff560362_retrievedescriptor)メソッド USB を指定して\_デバイス\_記述子\_記述子の型と型。
+UMDF ドライバーは、 [**IWDFUsbTargetDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nn-wudfusb-iwdfusbtargetdevice)ポインターのフレームワークデバイスオブジェクトに対してクエリを実行し、 [**IWDFUsbTargetDevice:: RetrieveDescriptor**](https://msdn.microsoft.com/library/windows/hardware/ff560362_retrievedescriptor)メソッドを呼び出して、次のように\_型の USB\_デバイス\_記述子を指定する必要があります。記述子の型。
 
-ホストは、URB を送信することによってもデバイス記述子を取得できます。 このメソッドは、カーネル モード ドライバーにのみ適用されます。 ただし、クライアント ドライバーはドライバーが Windows Driver Model (WDM) に基づいていない限り、URB この種類の要求を送信することが必要です。 このようなドライバーを割り当てる必要があります、 [ **URB** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb)構造体を呼び出して、 [ **UsbBuildGetDescriptorRequest** ](https://docs.microsoft.com/previous-versions/ff538943(v=vs.85))マクロの形式を指定します要求の URB します。 ドライバーは、USB ドライバー スタックに URB を送信することで、要求を送信できます。 詳細については、次を参照してください。 [、URB を送信する方法](send-requests-to-the-usb-driver-stack.md)します。
+ホストは、URB を送信することによってデバイス記述子を取得することもできます。 このメソッドは、カーネルモードドライバーにのみ適用されます。 ただし、ドライバーが Windows Driver Model (WDM) に基づいている場合を除き、クライアントドライバーはこの種類の要求に対して URB を送信する必要はありません。 このようなドライバーでは、 [**urb**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb)構造を割り当ててから、 [**Usbbuildget記述子要求**](https://docs.microsoft.com/previous-versions/ff538943(v=vs.85))マクロを呼び出して、要求の urb の形式を指定する必要があります。 ドライバーは、USB ドライバースタックに URB を送信することによって、要求を送信できます。 詳細については、「 [URB を送信する方法](send-requests-to-the-usb-driver-stack.md)」を参照してください。
 
-このコード例では、適切な URB で pURB によって指し示されるバッファーの形式を UsbBuildGetDescriptorRequest 呼び出しを示します。
+このコード例では、次のように、適切な URB を使用して、が指すバッファーをフォーマットする Usbbuildget記述子要求呼び出しを示します。
 
 ```cpp
 UsbBuildGetDescriptorRequest(
@@ -51,10 +51,10 @@ UsbBuildGetDescriptorRequest(
 );
 ```
 
-## <a name="sample-device-descriptor"></a>サンプル デバイス記述子
+## <a name="sample-device-descriptor"></a>サンプルデバイス記述子
 
 
-この例は、USB web カメラ デバイスのデバイス記述子 (を参照してください[USB デバイス レイアウト](usb-device-layout.md)) USBView アプリケーションを使用して取得される。
+次の例では、USBView アプリケーションを使用して取得した USB web カメラデバイスのデバイス記述子 (「 [Usb デバイスレイアウト](usb-device-layout.md)」を参照) を示します。
 
 ``` syntax
 Device Descriptor:
@@ -75,14 +75,14 @@ iSerialNumber:        0x00
 bNumConfigurations:   0x01
 ```
 
-前の例では、デバイスは、USB 仕様、バージョン 2.0 に従って開発されて表示されます。 注、 **bDeviceClass**、 **bDeviceSubClass**、および**bDeviceProtocol**値。 これらの値は、1 つまたは複数の USB インターフェイスの関連付け記述子関数ごとの複数のインターフェイスをグループ化に使用できますが、デバイスに含まれているを示します。 詳細については、次を参照してください。 [USB インターフェイスの関連付けの記述子](usb-interface-association-descriptor.md)します。
+前の例では、デバイスが USB 仕様バージョン2.0 に従って開発されていることがわかります。 **Bdeviceclass**、 **BDeviceSubClass**、および**bdeviceclass**の値に注意してください。 これらの値は、関数ごとに複数のインターフェイスをグループ化するために使用できる1つ以上の USB インターフェイスの関連付け記述子がデバイスに含まれていることを示します。 詳細については、「 [USB インターフェイスの関連付け記述子](usb-interface-association-descriptor.md)」を参照してください。
 
-値を次に、確認**bMaxPacketSize0**します。 この値は、既定のエンドポイントの最大パケット サイズを示します。 このサンプルのデバイスは、その既定のエンドポイントを使用してデータを 64 バイトまでに転送できます。
+次に、 **bMaxPacketSize0**の値を確認します。 この値は、既定のエンドポイントの最大パケットサイズを示します。 このサンプルデバイスは、既定のエンドポイントを使用して最大64バイトのデータを転送できます。
 
-通常でデバイスを構成するクライアント ドライバーに関する情報を取得でサポートされる構成、デバイスでデバイス記述子を取得した後にします。 デバイスでサポートされる構成の数を確認するのには、検査、 **bNumConfigurations**返される構造体のメンバー。 このデバイスは、1 つの構成をサポートします。 USB の構成に関する情報を取得するには、ドライバーを取得する必要があります[USB 構成記述子](usb-configuration-descriptors.md)します。
+通常、デバイスを構成するために、クライアントドライバーはデバイス記述子を取得した後に、デバイスでサポートされている構成に関する情報を取得します。 デバイスでサポートされる構成の数を確認するには、返された構造体の**Bnumconfigurations**メンバーを調べます。 このデバイスは、1つの構成をサポートします。 USB 構成に関する情報を取得するには、ドライバーが[Usb 構成記述子](usb-configuration-descriptors.md)を取得する必要があります。
 
 ## <a name="related-topics"></a>関連トピック
-[USB ディスクリプター](usb-descriptors.md)  
+[USB 記述子](usb-descriptors.md)  
 [USB 構成記述子](usb-configuration-descriptors.md)  
 
 

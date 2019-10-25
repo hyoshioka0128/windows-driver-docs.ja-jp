@@ -3,17 +3,17 @@ title: 事前解析データを取得する
 description: 事前解析データを取得する
 ms.assetid: 7a2bdbd1-a970-421f-bbaa-40fe589bb49a
 keywords:
-- WDK を非表示に preparsed データ コレクション
-- HID コレクション WDK、preparsed データ
-- WDK の HID preparsed データ
+- コレクション WDK HID、preparsed data
+- HID コレクション WDK, preparsed data
+- preparsed data WDK HID
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a4a955819e7cd90b28471171dc2f4b0322a5bb4
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9eedd7df5eb1ecebcbe55a1b5959f7fd6395462a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385559"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841564"
 ---
 # <a name="obtaining-preparsed-data"></a>事前解析データを取得する
 
@@ -21,29 +21,29 @@ ms.locfileid: "67385559"
 
 
 
-このセクションでは、ユーザー モード アプリケーションとカーネル モード ドライバーの HID のコレクションを取得する方法について説明します[preparsed データ](preparsed-data.md)、を非表示レポートには、コレクションを記述するための非透過構造体。
+このセクションでは、ユーザーモードアプリケーションとカーネルモードドライバーが HID コレクションの[preparsed データ](preparsed-data.md)を取得する方法について説明します。このデータは、コレクションの hid レポートを記述する不透明な構造です。
 
-### <a name="user-mode-application"></a>ユーザー モード アプリケーション
+### <a name="user-mode-application"></a>ユーザーモードアプリケーション
 
-ユーザー モード アプリケーションは、のいずれかを呼び出す前に、コレクションの preparsed データを取得する必要があります、 [HIDClass サポート ルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)preparsed データを必要とします。 アプリケーションは、デバイス上の開いているファイルがある限り、コレクションの preparsed データへのアクセスを保持する必要があります。
+ユーザーモードアプリケーションは、preparsed データを必要とする[HIDClass サポートルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)を呼び出す前に、コレクションの preparsed データを取得する必要があります。 アプリケーションは、デバイス上に開いているファイルがある限り、コレクションの preparsed データへのアクセスを保持する必要があります。
 
-アプリケーションを呼び出すと、HID コレクション上のファイルを開いたら、 [ **HidD\_GetPreparsedData** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidsdi/nf-hidsdi-hidd_getpreparseddata)コレクションを返すルーチンに割り当てられたバッファー内のデータを preparsed します。
+HID コレクションでファイルを開いた後、アプリケーションは、 [**Hidd\_GetPreparsedData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidsdi/nf-hidsdi-hidd_getpreparseddata)を呼び出して、定期的に割り当てられたバッファーにコレクションの preparsed データを返します。
 
-アプリケーションを呼び出す必要があります[ **HidD\_FreePreparsedData** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidsdi/nf-hidsdi-hidd_freepreparseddata)アプリケーションが不要になったコレクションへのアクセスを必要とします。
+アプリケーションがコレクションへのアクセスを必要としなくなったときに、アプリケーションは、 [**Hidd\_FreePreparsedData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidsdi/nf-hidsdi-hidd_freepreparseddata)を呼び出す必要があります。
 
-### <a name="kernel-mode-driver"></a>カーネル モード ドライバー
+### <a name="kernel-mode-driver"></a>カーネルモードドライバー
 
-ドライバーにコレクションの取得、カーネル モード ドライバーでは、HID コレクションが開いたら、 [preparsed データ](preparsed-data.md)次のようにします。
+カーネルモードドライバーが HID コレクションを開くと、ドライバーは次の方法でコレクションの[preparsed データ](preparsed-data.md)を取得します。
 
 -   コレクションの preparsed データの長さを取得します。
 
 -   コレクションの preparsed データを取得します。
 
-Preparsed データの長さを確認するドライバーを使用して、 [ **IOCTL\_HID\_取得\_コレクション\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidclass/ni-hidclass-ioctl_hid_get_collection_information)要求。 この要求を返します、 [ **HID\_コレクション\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidclass/ns-hidclass-_hid_collection_information)構造体。 **DescriptorSize**この構造体のメンバーは、コレクションの preparsed データのバイト単位でサイズを指定します。 ドライバーは、少なくともこの非ページ プールからバッファーを割り当てる必要があります preparsed データを保持するサイズ。
+Preparsed データの長さを確認するために、ドライバーは[ **\_コレクション\_情報要求\_IOCTL\_HID**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidclass/ni-hidclass-ioctl_hid_get_collection_information)を使用します。 この要求は、 [**HID\_COLLECTION\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidclass/ns-hidclass-_hid_collection_information)構造体を返します。 この構造体の**記述子サイズ**のメンバーは、コレクションの preparsed データのサイズをバイト単位で指定します。 ドライバーは、preparsed データを保持するために、少なくともこのサイズの非ページプールからバッファーを割り当てる必要があります。
 
-Preparsed データ バッファーを割り当てた後、ドライバーを使用して、 [ **IOCTL\_HID\_取得\_コレクション\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidclass/ni-hidclass-ioctl_hid_get_collection_descriptor)への要求preparsed データを取得します。
+Preparsed データのバッファーを割り当てた後、ドライバーは、preparsed データを取得するために\_コレクション\_記述子要求を使用して、 [**IOCTL\_HID\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidclass/ni-hidclass-ioctl_hid_get_collection_descriptor)を使用します。
 
-Preparsed データを入手すると、ドライバーと共に使用できます、 **HidP\_** <em>Xxx</em> HID サポート ルーチン HID コレクションの機能に関する情報を取得し、抽出するにはHID レポートからデータを制御します。
+Preparsed データを取得した後、ドライバーはこのデータを**Hidp\_** <em>Xxx</em> HID サポートルーチンと共に使用して、hid コレクションの機能に関する情報を取得したり、hid レポートからコントロールデータを抽出したりできます。
 
  
 

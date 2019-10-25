@@ -1,47 +1,47 @@
 ---
 title: OID_WWAN_PCO
-description: OID_WWAN_PCO では、状態と、モデムが演算子のネットワークから受信した PCO 値のペイロードを報告します。
+description: OID_WWAN_PCO は、オペレータネットワークからモデムが受信した PCO 値の状態とペイロードを報告します。
 ms.assetid: BE664B41-3FE7-4E93-8739-12BD2F0AE5B8
 keywords:
 - OID_WWAN_PCO、PCO OID
 ms.date: 08/08/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8eeec5c7afe4ae3762233bfc8f65a78a28175793
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 545a15e9b0291f83e426ab0264f9ed0dbe2afd3d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360777"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843821"
 ---
-# <a name="oidwwanpco"></a>OID_WWAN_PCO
+# <a name="oid_wwan_pco"></a>OID_WWAN_PCO
 
-OID_WWAN_PCO では、状態と、モデムが携帯電話会社ネットワークから受信したプロトコル構成 Optiont (PCO) 値のペイロードを報告します。 モデムから返される PCO 値は、OID 要求の構造でポート番号を示す PDN に対応します。
+OID_WWAN_PCO は、モデムが携帯電話会社のネットワークから受信したプロトコル構成オプション t (PCO) 値の状態とペイロードを報告します。 モデムから返される PCO 値は、ポート番号によって OID 要求構造に指定されている PDN に対応します。
 
-クエリ要求を処理、モデムまず応答 NDIS_STATUS_INDICATION_REQUIRED でこの OID を受信するとします。 [NDIS_STATUS_WWAN_PCO_STATUS](ndis-status-wwan-pco-status.md)を含む通知が返されます、 [NDIS_WWAN_PCO_STATUS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_pco_status)クエリ要求が完了したときに構造体します。 **NDIS_WWAN_PCO_STATUS**、PCO 状態を格納し、 [WWAN_PCO_VALUE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wwan/ns-wwan-_wwan_pco_value) PCO 値を表す構造体です。
+クエリ要求の場合、モデムは最初にこの OID を受信したときに NDIS_STATUS_INDICATION_REQUIRED で応答します。 クエリ要求が完了すると、 [NDIS_WWAN_PCO_STATUS](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_pco_status)構造体を含む[NDIS_STATUS_WWAN_PCO_STATUS](ndis-status-wwan-pco-status.md)通知が返されます。 **NDIS_WWAN_PCO_STATUS**には、pco ステータスと pco 値を表す[WWAN_PCO_VALUE](https://docs.microsoft.com/windows-hardware/drivers/ddi/wwan/ns-wwan-_wwan_pco_value)構造体が含まれています。
 
-要求のセットには適用されません。
+Set 要求は適用できません。
 
 ## <a name="remarks"></a>注釈
 
-新しいをサポートしているホストからのクエリ要求を受信する Microsoft の受信トレイ ミニポート クラス ドライバーを使用するモデム、モデムが提供する必要があります**MBIM_CID_PCO** CID (インデックス = 9) で、 **MBB_UUID_BASIC_CONNECT_EXT_CONSTANT**サービスに応答するとき、 **MBIM_CID_DEVICE_SERVICES**クエリ。 詳細について*MBIM_CID_PCO*を参照してください[MB プロトコルの構成オプション (PCO) 操作](mb-protocol-configuration-options-pco-operations.md)します。
+Microsoft 受信トレイのミニポートクラスドライバーを使用してホストからクエリ要求を受信するモデムの場合、モデムは**MBB_UUID_BASIC_CONNECT_EXT_CONSTANT**サービスで新しい**MBIM_CID_PCO** CID (index = 9) をサポートしていることを通知する必要があります。**MBIM_CID_DEVICE_SERVICES**クエリに応答する場合。 *MBIM_CID_PCO*の詳細については、「 [MB プロトコル構成オプション (pco) 操作](mb-protocol-configuration-options-pco-operations.md)」を参照してください。
 
-モデムのミニポート ドライバーがサポートしていることをアドバタイズする必要があります選択モデム WWANSVC からクエリ要求を受信する Microsoft の受信トレイ ミニポート クラス ドライバー、使用、 *WWAN_OPTIONAL_SERVICE_CAPS_PCO*応答するときのオプション[OID OID_WWAN_DEVICE_CAPS_EX](oid-wwan-device-caps-ex.md)要求のクエリを実行します。
+Microsoft 受信トレイのミニポートクラスドライバーを使用しないモデムの場合、WWANSVC からクエリ要求を受信するために、モデムのミニポートドライバーは、OID OID_WWAN_ に応答するときに*WWAN_OPTIONAL_SERVICE_CAPS_PCO*オプションをサポートすることを通知する必要があります。 [DEVICE_CAPS_EX](oid-wwan-device-caps-ex.md)クエリ要求。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 | | |
 | --- | --- |
 | バージョン | Windows 10 バージョン 1709 |
-| Header | Ntddndis.h (include Ndis.h) |
+| Header | Ntddndis (Ndis .h を含む) |
 
 ## <a name="see-also"></a>関連項目
 
 [**NDIS_STATUS_WWAN_PCO_STATUS**](ndis-status-wwan-pco-status.md)
 
-[**NDIS_WWAN_PCO_STATUS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_pco_status)
+[**NDIS_WWAN_PCO_STATUS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_pco_status)
 
-[**WWAN_PCO_VALUE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wwan/ns-wwan-_wwan_pco_value) 
+[**WWAN_PCO_VALUE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wwan/ns-wwan-_wwan_pco_value) 
 
 [**OID OID_WWAN_DEVICE_CAPS_EX**](oid-wwan-device-caps-ex.md)
 
-[MB プロトコルの構成オプション (PCO) 操作](mb-protocol-configuration-options-pco-operations.md)
+[MB プロトコル構成オプション (PCO) 操作](mb-protocol-configuration-options-pco-operations.md)

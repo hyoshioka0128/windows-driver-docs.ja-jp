@@ -4,77 +4,27 @@ description: SIO_WSK_SET_SENDTO_ADDRESS
 ms.assetid: 2dd149d2-adc6-4e03-92de-ed76aa048886
 ms.date: 07/18/2017
 keywords:
-- SIO_WSK_SET_SENDTO_ADDRESS ネットワーク ドライバーが Windows Vista 以降
+- SIO_WSK_SET_SENDTO_ADDRESS ネットワークドライバー (Windows Vista 以降)
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c09f3971c888496cca51a9359af21b9818d453f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 58bda46c3aab4a43ba2c58ac6329119a0055414f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67379134"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841894"
 ---
-# <a name="siowsksetsendtoaddress"></a>SIO\_WSK\_設定\_SENDTO\_アドレス
+# <a name="sio_wsk_set_sendto_address"></a>SIO\_WSK\_設定\_SENDTO\_アドレス
 
 
-SIO\_WSK\_設定\_SENDTO\_アドレス ソケット I/O 制御操作により、WSK アプリケーションは、データグラム ソケットに対して固定の送信先のトランスポート アドレスを指定します。 このソケット I/O 制御操作は、データグラム ソケットだけに適用されます。
+SIO\_WSK\_\_SENDTO\_アドレスソケット i/o 制御操作を設定すると、WSK アプリケーションでデータグラムソケットの固定送信先トランスポートアドレスを指定できます。 このソケット i/o 制御操作は、データグラムソケットにのみ適用されます。
 
-WSK アプリケーションが、データグラム ソケットに対して固定の送信先のトランスポート アドレスを有効にしている場合は、ソケット経由で送信されるすべてのデータグラムが固定の送信先のトランスポート アドレスに送信されます。 ただし、任意のトランスポート アドレスからデータグラム ソケットで受信したが認められます。
+WSK アプリケーションで、データグラムソケットに固定の送信先トランスポートアドレスを設定すると、ソケットを介して送信されるすべてのデータグラムが固定送信先トランスポートアドレスに送信されます。 ただし、ソケットで受信したデータグラムは、任意のトランスポートアドレスから受け入れられます。
 
-WSK アプリケーションでは、代替リモート トランスポート アドレスを指定することによって、ソケットを使ってデータグラムを送信するときに固定の送信先のトランスポート アドレスをオーバーライドする、 *RemoteAddress*パラメーターを呼び出すときに、 [**WskSendTo** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_send_to)関数。 このような状況では、データグラムは固定の送信先のトランスポート アドレスの代わりに代替リモート トランスポート アドレスに送信されます。
+WSK アプリケーションは、 [**Wsksendto**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_send_to)関数を呼び出すときに、 *remoteaddress*パラメーターで別のリモートトランスポートアドレスを指定することによって、ソケットでデータグラムを送信するときに、固定された宛先トランスポートアドレスをオーバーライドできます。 この場合、データグラムは、固定された送信先トランスポートアドレスではなく、代替のリモートトランスポートアドレスに送信されます。
 
-WSK アプリケーションでは、固定の送信先のトランスポート アドレスを指定するこのソケット I/O 制御操作を使用している場合、データグラム ソケットがローカル トランスポート アドレスにバインドされた後は、する必要があります。
+WSK アプリケーションで、このソケット i/o 制御操作を使用して固定の宛先トランスポートアドレスを指定する場合は、データグラムソケットがローカルトランスポートアドレスにバインドされた後で、この処理を行う必要があります。
 
-WSK アプリケーションを呼び出して、データグラム ソケットに対して固定の送信先のトランスポート アドレスを設定する、 [ **WskControlSocket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_control_socket)関数は次のパラメーター。
-
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>パラメーター</th>
-<th>Value</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><em>RequestType</em></p></td>
-<td><p><strong>WskIoctl</strong></p></td>
-</tr>
-<tr class="even">
-<td><p><em>ControlCode</em></p></td>
-<td><p>SIO_WSK_SET_SENDTO_ADDRESS</p></td>
-</tr>
-<tr class="odd">
-<td><p><em>Level</em></p></td>
-<td><p>0</p></td>
-</tr>
-<tr class="even">
-<td><p><em>InputSize</em></p></td>
-<td><p>によってポイントされている SOCKADDR 構造体のサイズ、 <em>InputBuffer</em>パラメーター。</p></td>
-</tr>
-<tr class="odd">
-<td><p><em>InputBuffer</em></p></td>
-<td><p>データグラム ソケットに対して固定の送信先のトランスポート アドレスを指定する構造体へのポインター。 ポインターは、データグラム ソケットが作成されたとき、WSK アプリケーションが指定されているアドレス ファミリに対応する特定の SOCKADDR 構造体の型へのポインターである必要があります。</p></td>
-</tr>
-<tr class="even">
-<td><p><em>OutputSize</em></p></td>
-<td><p>0</p></td>
-</tr>
-<tr class="odd">
-<td><p><em>OutputBuffer</em></p></td>
-<td><p>NULL</p></td>
-</tr>
-<tr class="even">
-<td><p><em>OutputSizeReturned</em></p></td>
-<td><p>NULL</p></td>
-</tr>
-</tbody>
-</table>
-
-
-データグラム ソケットに対して固定の送信先のトランスポート アドレスをクリアする WSK アプリケーションが呼び出す、 **WskControlSocket**関数は次のパラメーター。
+データグラムソケットの固定送信先トランスポートアドレスを設定するために、WSK アプリケーションは次のパラメーターを使用して[**Wskcontrolsocket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_control_socket)関数を呼び出します。
 
 <table>
 <colgroup>
@@ -97,7 +47,57 @@ WSK アプリケーションを呼び出して、データグラム ソケット
 <td><p>SIO_WSK_SET_SENDTO_ADDRESS</p></td>
 </tr>
 <tr class="odd">
-<td><p><em>Level</em></p></td>
+<td><p><em>平準</em></p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="even">
+<td><p><em>InputSize</em></p></td>
+<td><p><em>InputBuffer</em>パラメーターによって示される SOCKADDR 構造体のサイズ。</p></td>
+</tr>
+<tr class="odd">
+<td><p><em>InputBuffer</em></p></td>
+<td><p>データグラムソケットの固定送信先トランスポートアドレスを指定する構造体へのポインター。 ポインターは、WSK アプリケーションがデータグラムソケットの作成時に指定したアドレスファミリに対応する、特定の SOCKADDR structure 型へのポインターである必要があります。</p></td>
+</tr>
+<tr class="even">
+<td><p><em>OutputSize</em></p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="odd">
+<td><p><em>OutputBuffer</em></p></td>
+<td><p>NULL</p></td>
+</tr>
+<tr class="even">
+<td><p><em>OutputSizeReturned</em></p></td>
+<td><p>NULL</p></td>
+</tr>
+</tbody>
+</table>
+
+
+データグラムソケットの固定送信先トランスポートアドレスをクリアするために、WSK アプリケーションは次のパラメーターを使用して**Wskcontrolsocket**関数を呼び出します。
+
+<table>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>パラメーター</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p><em>RequestType</em></p></td>
+<td><p><strong>WskIoctl</strong></p></td>
+</tr>
+<tr class="even">
+<td><p><em>ControlCode</em></p></td>
+<td><p>SIO_WSK_SET_SENDTO_ADDRESS</p></td>
+</tr>
+<tr class="odd">
+<td><p><em>平準</em></p></td>
 <td><p>0</p></td>
 </tr>
 <tr class="even">
@@ -125,7 +125,7 @@ WSK アプリケーションを呼び出して、データグラム ソケット
 
 
 
-呼び出すときに、WSK アプリケーションは IRP へのポインターを指定する必要があります、 **WskControlSocket**関数を設定または、データグラム ソケットに対して固定の送信先のトランスポート アドレスをクリアします。
+WSK アプリケーションは、 **Wskcontrolsocket**関数を呼び出してデータグラムソケットの固定送信先トランスポートアドレスを設定またはクリアするときに、IRP へのポインターを指定する必要があります。
 
 <a name="requirements"></a>要件
 ------------
@@ -138,11 +138,11 @@ WSK アプリケーションを呼び出して、データグラム ソケット
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>Windows Vista および Windows オペレーティング システムの以降のバージョンで使用できます。</p></td>
+<td><p>Windows Vista 以降のバージョンの Windows オペレーティングシステムで使用できます。</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Wsk.h (Wsk.h を含む)</td>
+<td>Wsk .h (Wsk .h を含む)</td>
 </tr>
 </tbody>
 </table>

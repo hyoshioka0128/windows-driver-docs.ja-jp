@@ -1,38 +1,38 @@
 ---
-Description: このトピックでは、イベント トレース、Logman ツールを使用して USB ETW をキャプチャする方法の情報を提供します。
+Description: このトピックでは、Logman ツールを使用した USB ETW イベントトレースのキャプチャについて説明します。
 title: Logman を使用して USB イベント トレースをキャプチャする方法
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 25423709e7baf468dd4a410dd4ace31cdeb60ef8
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: da15c2a3b419fc860bd4081db82dae8348c45988
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386259"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844991"
 ---
 # <a name="how-to-capture-a-usb-event-trace-with-logman"></a>Logman を使用して USB イベント トレースをキャプチャする方法
 
 
-このトピックの使用に関する情報を提供する、 [Logman](https://go.microsoft.com/fwlink/p/?linkid=617153) USB ETW イベントのトレースをキャプチャするツール。 Logman は、Windows に組み込まれているトレース ツールです。 Logman を使用して、イベント トレース ログ ファイルにイベントをキャプチャすることができます。
+このトピックでは、 [Logman](https://go.microsoft.com/fwlink/p/?linkid=617153)ツールを使用した USB ETW イベントトレースのキャプチャについて説明します。 Logman は、Windows に組み込まれているトレースツールです。 Logman を使用して、イベントをイベントトレースログファイルに取り込むことができます。
 
 ### <a name="prerequisites"></a>前提条件
 
-イベント トレース ログ ファイルが非常に高速に拡大できますが、サイズの小さいログ ファイルは移動を容易に送信します。 トレースを開始する前に確認するデバイスのアクティビティに集中できるように、余分なイベントをログから除外する次の手順を検討してください。
+イベントトレースログファイルは非常に高速に拡張できますが、より小さなログファイルの移動と送信が容易になります。 トレースを開始する前に、次の手順を実行して、調査するデバイスアクティビティに集中できるように、余分なイベントをログから除外することを検討してください。
 
--   関心のあるデバイスではない重要ではない USB デバイスをすべてを切断します。 少ない数のデバイスは、小さいトレースを読み取って分析を簡単に発生します。
--   システムに USB キーボードまたはマウスがある場合は、代わりに、リモート デスクトップを使用して、トレース コマンドを入力します。
--   開始と目的の操作を可能な限り、トレースの終了を絞り込みます。
--   USB のイベントの特定のカテゴリのみに関心がある場合は、記録されるイベントをフィルター処理するキーワードを使用できます。 詳細については、「解説」を参照してください。
+-   対象のデバイスではない、重要ではない USB デバイスを切断します。 デバイスが少なくなるほど、トレースが小さくなり、読み取りと分析が容易になります。
+-   システムに USB キーボードまたはマウスが搭載されている場合は、代わりにリモートデスクトップを使用してトレースコマンドを入力します。
+-   トレースの開始位置と終了位置を、関心のある操作の中でできるだけ狭くします。
+-   特定のカテゴリの USB イベントのみに関心がある場合は、キーワードを使用して、記録されたイベントをフィルター処理できます。 詳細については、「解説」を参照してください。
 
-USB 3.0 ドライバー スタックからのイベント トレースは、Windows 7 で導入された USB 2.0 ドライバー スタック トレースに似ています。 Windows 8 コンピューターに USB 2.0 ドライバー スタックからのイベント トレースをキャプチャできます。 USB 2.0、USB 3.0 ドライバー スタックからのイベント トレースをキャプチャする方法は似ています。 USB 2.0 接続または USB 3.0 ドライバー スタックからのイベントを個別に、キャプチャできます。 USB 3.0 ホスト コント ローラーに USB 2.0 デバイスを接続するときは、USB 3.0 ドライバー スタックからイベント トレースを取得します。 その場合は、USB 2.0 デバイス用の新しい USB 3.0 ドライバー スタック イベントを表示します。
+USB 3.0 ドライバースタックからのイベントトレースは、Windows 7 で導入された USB 2.0 ドライバースタックトレースに似ています。 USB 2.0 ドライバースタックからのイベントトレースは、Windows 8 コンピューターでキャプチャできます。 USB 2.0 と USB 3.0 ドライバースタックからイベントトレースをキャプチャする方法は似ています。 USB 2.0 または USB 3.0 ドライバースタックから個別にイベントをキャプチャできます。 Usb 2.0 デバイスを USB 3.0 ホストコントローラーに接続すると、USB 3.0 ドライバースタックからイベントトレースが取得されます。 その場合は、USB 2.0 デバイスの新しい USB 3.0 ドライバースタックイベントを表示します。
 
 <a name="instructions"></a>手順
 ------------
 
-**USB のトレース イベントを収集するには**
+**USB トレースイベントを収集するには**
 
-1.  管理者特権を持つコマンド プロンプト ウィンドウを開きます。 これを行うには、開始をクリックします。 型**cmd**検索ボックスに、cmd.exe を右クリックし、**管理者として実行**します。
-2.  コマンド プロンプト ウィンドウで、キャプチャ セッションを開始するこれらのコマンドを入力します。
+1.  管理者特権を持つコマンドプロンプトウィンドウを開きます。 これを行うには、[スタート] ボタンをクリックし、検索ボックスに「 **cmd** 」と入力します。 cmd.exe を右クリックし、 **[管理者として実行]** を選択します。
+2.  コマンドプロンプトウィンドウで、次のコマンドを入力してキャプチャセッションを開始します。
 
     ```cpp
     logman create trace -n usbtrace -o %SystemRoot%\Tracing\usbtrace.etl -nb 128 640 -bs 128
@@ -46,12 +46,12 @@ USB 3.0 ドライバー スタックからのイベント トレースは、Wind
 
     ```
 
-    これらの各コマンドが完了すると、Logman を表示します `The command completed successfully.`
+    これらの各コマンドが完了すると、Logman が表示され `The command completed successfully.`
 
-3.  紹介をキャプチャする操作を実行します。 たとえば、デバイスの列挙のイベントをキャプチャするには、プラグインできる「不明なデバイス」として表示されます、USB フラッシュ ドライブに**デバイス マネージャー**します。 コマンド プロンプト ウィンドウを開いたままにします。
-4.  シナリオを完了した後、セッションを停止します。 キャプチャ セッションを終了するこれらのコマンドを入力します。
+3.  キャプチャする操作を実行します。 たとえば、デバイスの列挙イベントをキャプチャするには、**デバイスマネージャー**に "不明なデバイス" と表示される USB フラッシュドライブを接続します。 [コマンドプロンプト] ウィンドウを開いたままにします。
+4.  シナリオを完了した後、セッションを停止します。 キャプチャセッションを終了するには、次のコマンドを入力します。
 
-    USB ハブおよびポート イベントの収集を停止するには、次のコマンドを実行します。
+    次のコマンドを実行して、USB ハブとポートイベントの収集を停止することができます。
 
     ```cpp
     logman stop -n usbtrace 
@@ -60,18 +60,18 @@ USB 3.0 ドライバー スタックからのイベント トレースは、Wind
 
     ```
 
-前のキャプチャ セッションでは、という名前の usbtrace.etl etl ファイルを生成します。 トレース ファイルが %systemroot% に格納されている\\トレース\\usbtrace.etl (c:\\Windows\\トレース\\usbtrace.etl)。 ファイルを別の場所に移動します。 または、次回のセッションをキャプチャするときに上書きすることを回避するために名前を変更します。
+前のキャプチャセッションでは、usbtrace という名前の etl ファイルが生成されます。 トレースファイルは% SystemRoot%\\Tracing\\トレースに格納されます (C:\\Windows\\トレース\\usbtrace。 ファイルを別の場所に移動するか、次のセッションをキャプチャするときに上書きされないように名前を変更します。
 
-ファイルには、USB 3.0 と USB 2.0 ドライバー スタックからのイベント トレースが含まれています。 USB ドライバー スタックの 1 つだけにイベント トレースを削減する場合は、他のドライバー スタックを次のトレース セッションから削除します。 トレース セッションから削除するドライバー スタックに対応する"logman update"の行を削除する手順 2 に示したコマンド シーケンスを変更することによって行うことができます。
+このファイルには、USB 3.0 および USB 2.0 ドライバースタックからのイベントトレースが含まれています。 イベントトレースを1つの USB ドライバースタックだけに縮小する場合は、次のトレースセッションから他のドライバースタックを削除します。 これを行うには、手順2で示されているコマンドシーケンスを変更して、トレースセッションから削除するドライバースタックに対応する "logman 更新" 行を削除します。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
-**USB 3.0 ドライバー スタックのイベントのフィルターをキャプチャします。**
+**USB 3.0 ドライバースタックイベントのキャプチャフィルター**
 
-ETW のキーワードをなどに注意してください**既定**と**PartialDataBusTrace** Logman のコマンドをキャプチャします。 これらの単語は、ETW キーワードを表示するイベントの種類を示すです。 ETW のキーワードを使用すると、USB ドライバーはトレース ログに書き込むし、USB 3.0 ドライバー スタックからキャプチャされたイベントを表示する情報の量をカスタマイズするイベントをフィルター処理します。 キーワードのいずれかに一致するイベントが保存されます。 分析中ではなく、キャプチャ時に使用するためのフィルター処理には、このメソッドは、することに注意してください。
+Logman キャプチャコマンドでは、 **Default**や**PARTIALDATABUSTRACE**などの ETW キーワードに注意してください。 これらの単語は、表示するイベントの種類を示す ETW キーワードです。 ETW キーワードを使用して、USB ドライバーがトレースログに書き込むイベントをフィルター処理し、USB 3.0 ドライバースタックからキャプチャされたイベントについて表示する情報の量をカスタマイズできます。 いずれかのキーワードに一致するイベントが保存されます。 このフィルター処理方法は、分析時ではなくキャプチャ時に使用することに注意してください。
 
-要件に応じて含まれるキーワードに基づいてイベントをフィルター処理することができます。 USB 3.0 ドライバー スタックのイベントをフィルター処理するためのキーワードを次に示します。
+要件に応じて、キーワードに基づいてイベントをフィルター処理できます。 USB 3.0 ドライバースタックイベントをフィルター処理するためのキーワードを次に示します。
 
 <table>
 <colgroup>
@@ -80,61 +80,61 @@ ETW のキーワードをなどに注意してください**既定**と**Partial
 </colgroup>
 <thead>
 <tr class="header">
-<th>ETW のキーワード</th>
+<th>ETW キーワード</th>
 <th>説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><strong>Default</strong></p></td>
-<td><p>一般的なトラブルシューティングに役立つイベントを示します。 イベントは、USB 2.0 の ETW イベントと同じですが、任意の USB 転送イベントを含めないでください。</p></td>
+<td><p><strong>標準</strong></p></td>
+<td><p>一般的なトラブルシューティングに役立つイベントを示します。 イベントは、USB 2.0 ETW イベントに似ていますが、USB 転送イベントは含まれていません。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>StateMachine</strong></p></td>
-<td><p>ドライバー内部のステート マシンの遷移を示しています。 イベントが含まれない、<strong>既定</strong>キーワード。</p></td>
+<td><p>ドライバー内部のステートマシンの遷移を表示します。 これらのイベントは、 <strong>Default</strong>キーワードには含まれていません。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>ランダウン</strong></p></td>
-<td><p>トレースの先頭にデバイス情報のイベントが表示され、USB ツリーの開始時の状態をキャプチャします。 デバイス情報<strong>ランダウン</strong>イベントは、トレースには、USB ディスクリプターや接続されているデバイスの USB デバイスの説明などの詳細が含まれているように、保存する重要です。 これらのイベントが含まれている、<strong>既定</strong>キーワード。 使用しない場合、<strong>既定</strong>キーワードを使用する必要がある、<strong>ランダウン</strong>キーワード。 残りのランダウン イベントは、ドライバー内部のステート マシンの最新の状態遷移に関する情報を提供します。 これらのイベントが含まれている、 <strong>StateMachine</strong>キーワード。</p></td>
+<td><p>トレースの開始時にデバイス情報イベントを表示し、USB ツリーの開始状態をキャプチャします。 デバイス情報<strong>ランダウン</strong>イベントは、接続されているデバイスの usb 記述子や usb デバイスの説明などの詳細がトレースに含まれるように保存することが重要です。 これらのイベントは、 <strong>Default</strong>キーワードに含まれています。 <strong>Default</strong>キーワードを使用しない場合は、<strong>ランダウン</strong>キーワードを使用する必要があります。 残りのランダウンイベントは、ドライバー内部のステートマシンの最新の状態遷移に関する情報を提供します。 これらのイベントは、 <strong>StateMachine</strong>キーワードに含まれています。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>電源</strong></p></td>
-<td><p>サブセットを示しています<strong>既定</strong>イベント。 デバイスの電源の遷移イベントを示します。</p></td>
+<td><p><strong>既定</strong>のイベントのサブセットを表示します。 デバイスの電源遷移イベントを表示します。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>IRP</strong></p></td>
-<td><p>サブセットを示しています<strong>既定</strong>イベント。 イベントは、ドライバーと Irp がユーザー モードの要求の結果、クライアントから Irp を表示します。 ただし、有効な USB 転送 (URB) 要求に表示されません、 <strong>IRP</strong>キーワードを必要と<strong>HeadersBusTrace</strong>、 <strong>PartialDataBusTrace</strong>、または<strong>FullDataBusTrace</strong>に表示するためにします。</p></td>
+<td><p><strong>既定</strong>のイベントのサブセットを表示します。 イベントは、クライアントドライバーからの Irp と、ユーザーモード要求に起因する Irp を示します。 ただし、有効な USB 転送 (URB) 要求は、 <strong>IRP</strong>キーワードと共に表示されず、表示されるためには<strong>HeadersBusTrace</strong>、 <strong>PartialDataBusTrace</strong>、または<strong>FullDataBusTrace</strong>が必要です。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>HeadersBusTrace</strong></p></td>
-<td><p>すべての USB 転送イベントが表示されますが、データ パケットは保存されません。</p></td>
+<td><p>すべての USB 転送イベントを表示しますが、データパケットは保存しません。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>PartialDataBusTrace</strong></p></td>
-<td><p>すべての USB 転送イベントを表示し、バスのデータのペイロードの制限を保存します。</p></td>
+<td><p>すべての USB 転送イベントを表示し、バスデータの制限されたペイロードを保存します。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>FullDataBusTrace</strong></p></td>
-<td><p>すべての USB 転送イベントを表示し、最大 4 KB の一括、割り込み、およびコントロールの転送のバスのデータを保存します。 最初のチェーンの MDL バッファーのみがログに記録されるに注意してください。 アイソクロナス bus データがログに記録されません (ただし、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb_isoch_transfer" data-raw-source="[&lt;strong&gt;URB_ISOCH_TRANSFER&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb_isoch_transfer)"> <strong>URB_ISOCH_TRANSFER</strong> </a>要求の構造を保存) します。 詳細については、次を参照してください。<a href="how-to-send-chained-mdls.md" data-raw-source="[How to send chained MDLs](how-to-send-chained-mdls.md)">を送信する方法のチェーン MDLs</a>と<a href="transfer-data-to-isochronous-endpoints.md" data-raw-source="[How to transfer data to USB isochronous endpoints](transfer-data-to-isochronous-endpoints.md)">USB アイソクロナス エンドポイントにデータを転送する方法</a>します。</p></td>
+<td><p>すべての USB 転送イベントを表示し、一括、割り込み、制御転送のために最大 4 KB のバスデータを保存します。 チェーンされた MDL の最初のバッファーだけがログに記録されることに注意してください。 アイソクロナスバスデータはログに記録されません (ただし、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb_isoch_transfer" data-raw-source="[&lt;strong&gt;URB_ISOCH_TRANSFER&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb_isoch_transfer)"><strong>URB_ISOCH_TRANSFER</strong></a>要求構造は保存されます)。 詳細については、「<a href="how-to-send-chained-mdls.md" data-raw-source="[How to send chained MDLs](how-to-send-chained-mdls.md)">チェーン MDLs を送信する方法</a>」および「<a href="transfer-data-to-isochronous-endpoints.md" data-raw-source="[How to transfer data to USB isochronous endpoints](transfer-data-to-isochronous-endpoints.md)">データを USB アイソクロナスエンドポイントに転送する方法</a>」を参照してください。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>HWVerifyHost</strong></p></td>
-<td><p>サブセットを示しています<strong>既定</strong>イベント。 USB ホスト コント ローラーのハードウェアでエラーが発生したときに、イベントを示します。</p></td>
+<td><p><strong>既定</strong>のイベントのサブセットを表示します。 イベントは、USB ホストコントローラーのハードウェアでエラーが発生したことを示します。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>HWVerifyHub</strong></p></td>
-<td><p>サブセットを示しています<strong>既定</strong>イベント。 USB ハブのハードウェアでエラーが発生したときに、イベントを示します。</p></td>
+<td><p><strong>既定</strong>のイベントのサブセットを表示します。 イベントは、USB ハブハードウェアでエラーが発生したことを示します。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>HWVerifyDevice</strong></p></td>
-<td><p>サブセットを示しています<strong>既定</strong>イベント。 USB デバイスのハードウェアにエラーが発生したときに、イベントを示します。</p></td>
+<td><p><strong>既定</strong>のイベントのサブセットを表示します。 イベントは、USB デバイスハードウェアでエラーが発生したことを示します。</p></td>
 </tr>
 </tbody>
 </table>
 
 
 
-たとえば、USB デバイスの電源の遷移をキャプチャするセッションを開始するコマンドのシーケンスを示します。 接続されているデバイスに対してのみイベントがキャプチャによりプロバイダー (USB 3.0 ドライバー スタック) を選択すると、USB 3.0 ホスト コント ローラーのダウン ストリーム。
+例として、USB デバイスの電源遷移をキャプチャするセッションを開始する一連のコマンドを次に示します。 プロバイダー (USB 3.0 ドライバースタック) の選択により、イベントは、USB 3.0 ホストコントローラーの下流に接続されているデバイスに対してのみキャプチャされます。
 
 ```cpp
 logman create trace -n usbtrace -o %SystemRoot%\Tracing\usbtrace.etl -nb 128 640 -bs 128
@@ -145,9 +145,9 @@ logman update trace -n usbtrace -p Microsoft-Windows-Kernel-IoTrace 0 2
 logman start -n usbtrace
 ```
 
-**電源イベントのフィルターをキャプチャします。**
+**Power イベントのキャプチャフィルター**
 
-USB デバイスの便利な ETW キーワードは、USB ポート ドライバーの PowerDiagnostics フラグです。 このキーワードを使用して、ポート ドライバーはホスト コント ローラーおよびエンドポイント情報をログ記録は、転送を記述するすべてのイベントが省略されます。 転送イベントを確認する必要がない場合は、85% トレース ログのサイズを小さく PowerDiagnostics キーワードを使用することができます。 次の例に示すように、トレースを開始するときに、PowerDiagnostics キーワードを指定します。
+Usb デバイス用の便利な ETW キーワードは、USB ポートドライバーの PowerDiagnostics フラグです。 このキーワードを使用すると、ポートドライバーはホストコントローラーとエンドポイント情報をログに記録しますが、転送を記述するすべてのイベントを除外します。 転送イベントを確認する必要がない場合は、PowerDiagnostics キーワードを使用して、トレースログのサイズを85% 程度減らすことができます。 トレースを開始するときに PowerDiagnostics キーワードを指定します。次に例を示します。
 
 ```cpp
 Logman start Usbtrace -p Microsoft-Windows-USB-USBPORT PowerDiagnostics -o usbtrace.etl -ets -nb 128 640 -bs 128
@@ -155,21 +155,21 @@ Logman start Usbtrace -p Microsoft-Windows-USB-USBPORT PowerDiagnostics -o usbtr
 Logman update Usbtrace -p Microsoft-Windows-USB-USBHUB –ets
 ```
 
-フィルター選択されたトレース ログに非同期多くのホスト コント ローラーがある場合はスケジュールが有効にして、イベントを無効にする、フィルターにより選択ときに、Netmon を使用してログを表示するフィルター処理を次の例に示すように。
+フィルター選択されたトレースログに多数のホストコントローラーの非同期スケジュールがある場合は、次の例に示すように、Netmon フィルターを使用してログを表示するときにフィルター処理できます。
 
 ```cpp
 NOT (Description == "USBPort_MicrosoftWindowsUSBUSBPORT:Host Controller Async Schedule Enable" 
 OR Description == "USBPort_MicrosoftWindowsUSBUSBPORT:Host Controller Async Schedule Disable")
 ```
 
-Netmon フィルターの詳細については、「USB Netmon フィルター」を参照してください[ケース スタディ。ETW と Netmon を使用して不明な USB デバイスのトラブルシューティングを](case-study--troubleshooting-an-unknown-usb-device-by-using-etw-and-netmon.md)します。
+Netmon フィルターの詳細については、「[ケーススタディ: ETW および Netmon を使用した不明な usb デバイスのトラブルシューティング](case-study--troubleshooting-an-unknown-usb-device-by-using-etw-and-netmon.md)」の「Usb Netmon フィルター」を参照してください。
 
-転送イベント ハブの要求と XACT エラーや、停止などのエラーが発生するデバイス要求など、トレース ログにすると便利な場合があります。 転送イベントが発生せず、ログをキャプチャし、その小さいログを分析する場合があります最初。 問題のシナリオで問題の一般的な理解をした後にフィルター処理せずに、トレースを再し実行します。
+場合によっては、ハブ要求や、XACT エラーやストールなどのエラーが発生するデバイス要求などの転送イベントをトレースログに記録すると便利です。 最初に、転送イベントのないログをキャプチャし、その小さいログを分析することができます。 次に、問題のシナリオの問題についてよく理解してから、フィルターを適用せずにトレースを再度実行します。
 
 ## <a name="related-topics"></a>関連トピック
-[USB の ETW を使用してください。](using-usb-etw.md)  
-[Windows のイベント トレースは USB](usb-event-tracing-for-windows.md)  
-[イベントの種類を分類に使用されるキーワードを定義します。](https://docs.microsoft.com/windows/desktop/WES/defining-keywords-used-to-classify-types-of-events)  
+[USB ETW の使用](using-usb-etw.md)  
+[USB Windows イベントトレーシング](usb-event-tracing-for-windows.md)  
+[イベントの種類を分類するために使用するキーワードの定義](https://docs.microsoft.com/windows/desktop/WES/defining-keywords-used-to-classify-types-of-events)  
 
 
 

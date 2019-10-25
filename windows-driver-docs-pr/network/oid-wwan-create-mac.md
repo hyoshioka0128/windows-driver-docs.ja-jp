@@ -1,30 +1,30 @@
 ---
 title: OID_WWAN_CREATE_MAC
-description: OID_WWAN_CREATE_MAC では、新しい NDIS ポートを作成するミニポート ドライバーを要求します。
+description: OID_WWAN_CREATE_MAC は、新しい NDIS ポートを作成するようにミニポートドライバーを要求します。
 ms.assetid: 4EF98858-86CD-409B-BE41-E57B24158609
 ms.date: 08/08/2017
-keywords: -OID_WWAN_CREATE_MAC ネットワーク ドライバーが Windows Vista 以降
+keywords: -Windows Vista 以降の OID_WWAN_CREATE_MAC ネットワークドライバー
 ms.localizationpriority: medium
-ms.openlocfilehash: f47777cb33098ad3fc733c2158d8e2446bf6f553
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f32d589fa027b401361f2a3d7de66b9fa550e0c3
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362855"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843867"
 ---
-# <a name="oidwwancreatemac"></a>OID\_WWAN\_作成\_MAC
+# <a name="oid_wwan_create_mac"></a>OID\_WWAN\_\_MAC の作成
 
 
-OID\_WWAN\_作成\_MAC は、新しい NDIS ポートを作成するミニポート ドライバーを要求します。 追加の PDP コンテキストのコンテキストのアクティブ化要求は、この新しい NDIS ポートで送信されます。
+OID\_WWAN\_新しい NDIS ポートを作成するために、\_MAC を作成するようにミニポートドライバーを要求します。 追加の PDP コンテキストに対するコンテキストアクティブ化要求は、この新しい NDIS ポートで送信されます。
 
-ミニポート ドライバーが非同期的に、最初に返す NDIS セット要求を処理する必要があります\_状態\_INDICATION\_元の要求と後で使用して要求を完了するには、必要な作業、 [ **NDIS\_WWAN\_MAC\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_mac_info)ポートに関連付けられているポート番号の NDIS と MAC アドレスを示す構造体。
+ミニポートドライバーは、set 要求を非同期に処理し、最初に NDIS\_\_STATUS を返し、元の要求に必要な\_を示し、その後、 [**ndis\_WWAN\_MAC で要求を完了する必要があり\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_mac_info)ポートに関連付けられている NDIS ポート番号と MAC アドレスを示す INFO 構造体。
 
 クエリ要求はサポートされていません。
 
 <a name="remarks"></a>注釈
 -------
 
-ミニポート ドライバーを作成する要求を処理する必要があります (アクティブ化) のデッドロックを防ぐために非同期的に新しい NDIS ポート。
+ミニポートドライバーは、デッドロックを防ぐために新しい NDIS ポートを非同期的に作成 (アクティブ化) する要求を処理する必要があります。
 
 <a name="requirements"></a>要件
 ------------
@@ -37,11 +37,11 @@ OID\_WWAN\_作成\_MAC は、新しい NDIS ポートを作成するミニポー
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>Windows 8.1 と Windows の以降のバージョンで使用できます。</p></td>
+<td><p>Windows の Windows 8.1 以降のバージョンで使用できます。</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Ntddndis.h (include Ndis.h)</td>
+<td>Ntddndis (Ndis .h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -49,7 +49,7 @@ OID\_WWAN\_作成\_MAC は、新しい NDIS ポートを作成するミニポー
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_WWAN\_MAC\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_mac_info)
+[**NDIS\_WWAN\_MAC\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_mac_info)
 
 [OID\_WWAN\_削除\_MAC](oid-wwan-delete-mac.md)
 

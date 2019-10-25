@@ -4,16 +4,16 @@ description: 電源管理用の標準化された INF キーワード
 ms.assetid: bec8dd96-f64a-40eb-ade9-73c9a66a756e
 ms.date: 08/01/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: ec32cac72955b92fecc9db9cd96c5306a4826e4c
-ms.sourcegitcommit: e2e4746c0efe082296c18de7ab14a1901e2eda9d
+ms.openlocfilehash: 5c9f647e485dd0b1ed90d6cf3b774272ebdcdc1d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71716938"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841844"
 ---
 # <a name="standardized-inf-keywords-for-power-management"></a>電源管理用の標準化された INF キーワード
 
-電源管理の標準化されたキーワードは、デバイスドライバーの INF ファイルで定義されています。 オペレーティングシステムは、これらの標準化されたキーワードを読み取って、デバイスの現在の電源管理機能を調整します。 デバイスドライバーは、ndis [ **\_ミニポート\_\_アダプターの\_一般属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)構造で、ndis に対するデバイスのハードウェア電源管理機能を常に示す必要があります。
+電源管理の標準化されたキーワードは、デバイスドライバーの INF ファイルで定義されています。 オペレーティングシステムは、これらの標準化されたキーワードを読み取って、デバイスの現在の電源管理機能を調整します。 デバイスドライバーは、ndis [ **\_ミニポート\_アダプター\_全般\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)構造の ndis に対して、デバイスのハードウェア電源管理機能を常に示す必要があります。
 
 次の標準化された INF キーワードは、ネットワークアダプターの電源管理機能のサポートを有効または無効にするために定義されています。
 
@@ -41,7 +41,7 @@ ms.locfileid: "71716938"
 <a href="" id="-pmwifirekeyoffload"></a> **\*Pmwi焼討 Keyoffload**  
 コンピューターがスリープ状態になったときに wake on ワイヤレス LAN (WOL) のグループテンポラル (GTK) のキー更新をオフロードするようにデバイスを有効にする必要があるかどうかを示す値。
 
-<a href="" id="-eee"></a> **\*ぃ**  
+<a href="" id="-eee"></a> **\*EEE**  
 デバイスで IEEE 802.3 az エネルギー効率の高いイーサネットを有効にする必要があるかどうかを示す値。
 
 このトピックの最後にある表の列では、列挙型キーワードの次の属性について説明します。
@@ -53,7 +53,7 @@ INF ファイルで指定する必要があり、レジストリに表示され�
 SubkeyName に関連付けられている表示テキスト。
 
 <a href="" id="value"></a>数値  
-リスト内の各オプションに関連付けられている列挙整数値。 この値は、 **ndi\\params\\** <em>subkeyname\\値</em>に格納されます。
+リスト内の各オプションに関連付けられている列挙整数値。 この値は、 **Ndi\\params\\** <em>subkeyname\\値</em>に格納されます。
 
 <a href="" id="enumdesc"></a>EnumDesc  
 メニューに表示される各値に関連付けられている表示テキスト。
@@ -66,7 +66,7 @@ SubkeyName に関連付けられている表示テキスト。
 <tr class="header">  
 <th align="left">SubkeyName</th>
 <th align="left">ParamDesc</th>
-<th align="left">[値]</th>
+<th align="left">Value</th>
 <th align="left">EnumDesc</th>
 </tr>
 </thead>
@@ -75,7 +75,7 @@ SubkeyName に関連付けられている表示テキスト。
 <td align="left"><p><strong><em>WakeOnPattern</strong></p></td>
 <td align="left"><p>Wake on パターン一致</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>Disabled</p></td>
+<td align="left"><p>無効</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -87,7 +87,7 @@ SubkeyName に関連付けられている表示テキスト。
 <td align="left"><p><strong></em>WakeOnMagicPacket</strong></p></td>
 <td align="left"><p>マジックパケットの Wake on</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>Disabled</p></td>
+<td align="left"><p>無効</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -99,7 +99,7 @@ SubkeyName に関連付けられている表示テキスト。
 <td align="left"><p><strong></em>ModernStandbyWoLMagicPacket</strong></p></td>
 <td align="left"><p>システムが<i>S0ix</i>の電源状態にあるときのマジックパケットの Wake on</p></td>
 <td align="left"><p>0 (既定値)</p></td>
-<td align="left"><p>Disabled</p></td>
+<td align="left"><p>無効</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -111,7 +111,7 @@ SubkeyName に関連付けられている表示テキスト。
 <td align="left"><p><strong><em>DeviceSleepOnDisconnect</strong></p></td>
 <td align="left"><p>切断時にデバイスをスリープ状態にする</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>Disabled</p></td>
+<td align="left"><p>無効</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -123,7 +123,7 @@ SubkeyName に関連付けられている表示テキスト。
 <td align="left"><p><strong></em>PMARPOffload</strong></p></td>
 <td align="left"><p>ARP オフロード</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>Disabled</p></td>
+<td align="left"><p>無効</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -135,7 +135,7 @@ SubkeyName に関連付けられている表示テキスト。
 <td align="left"><p><strong><em>PMNSOffload</strong></p></td>
 <td align="left"><p>NS オフロード</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>Disabled</p></td>
+<td align="left"><p>無効</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -144,10 +144,10 @@ SubkeyName に関連付けられている表示テキスト。
 <td align="left"><p>有効</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong></em>PMWiFiRekeyOffload</strong></p></td>
+<td align="left"><p><strong></em>Pmwi焼討 Keyoffload</strong></p></td>
 <td align="left"><p>WiFi のキー更新のオフロード</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>Disabled</p></td>
+<td align="left"><p>無効</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -159,7 +159,7 @@ SubkeyName に関連付けられている表示テキスト。
 <td align="left"><p><strong>* EEE</strong></p></td>
 <td align="left"><p>エネルギー効率の高いイーサネット</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>Disabled</p></td>
+<td align="left"><p>無効</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>

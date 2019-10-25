@@ -1,30 +1,30 @@
 ---
 title: UMDF フィルター ドライバーのインストール
-description: フィルター ドライバーでは、セットアップ クラスの特定のデバイスまたはすべてのデバイスをサポートできます。
+description: フィルタードライバーは、セットアップクラスの特定のデバイスまたはすべてのデバイスをサポートできます。
 ms.assetid: AE6D4E36-B758-451A-983E-6F0D7ADFD7A7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 27c172a681a2cc9b8427487a8b6ba3bb19f96588
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ca50b91261b82f80968ba847dc90d8c7995cc8ec
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371135"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844771"
 ---
 # <a name="installing-a-umdf-filter-driver"></a>UMDF フィルター ドライバーのインストール
 
 
-フィルター ドライバーでは、セットアップ クラスの特定のデバイスまたはすべてのデバイスをサポートできます。 上部のフィルターが関数デバイス上にアタッチ中に以下のデバイスの機能のドライバー、下位のフィルター ドライバーをアタッチします。
+フィルタードライバーは、セットアップクラスの特定のデバイスまたはすべてのデバイスをサポートできます。 下位のフィルタードライバーはデバイスの関数ドライバーの下にアタッチされ、上位のフィルターはデバイスの関数ドライバーの上にアタッチされます。
 
-このトピックでは、インストールして、ユーザー モード ドライバー フレームワーク (UMDF) デバイスに固有の (上限または下限) フィルター ドライバーを構成する方法について説明します。 UMDF を使用して、クラス フィルター ドライバーを記述することはできません。 このトピックでは、両方の UMDF バージョン 1 と 2 に適用されます。
+このトピックでは、ユーザーモードドライバーフレームワーク (UMDF) デバイス固有 (アッパーまたは下位) のフィルタードライバーをインストールして構成する方法について説明します。 UMDF を使用してクラスフィルタードライバーを書き込むことはできません。 このトピックは、UMDF バージョン1と2の両方に適用されます。
 
-デバイス スタックを作成するときは、フレームワークは UMDF ドライバー スタックごとの 1 つだけの連続したブロック現在サポートしていることに留意してください。 また、同じデバイス スタックの UMDF バージョン 1 とバージョン 2 のドライバーをインストールすることはできません。
+デバイススタックを構築するときは、現在フレームワークでサポートされているのは、スタックごとに1つの UMDF ドライバーの連続したブロックのみであることに注意してください。 また、同じデバイススタックに、UMDF version 1 および version 2 のドライバーをインストールすることはできません。
 
-**インストールして、ドライバーを構成する方法**
+**ドライバーをインストールして構成する方法**
 
-1.  UMDF 1 フィルター ドライバーを呼び出す必要があります[ **IWDFDeviceInitialize::SetFilter** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdeviceinitialize-setfilter)から、その[ **IDriverEntry::OnDeviceAdd** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-idriverentry-ondeviceadd)コールバック関数。 UMDF バージョン 2 以降、ドライバーはその代わりに呼び出す[ **WdfFdoInitSetFilter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdffdo/nf-wdffdo-wdffdoinitsetfilter)します。
+1.  UMDF 1 フィルタードライバーは、 [**Idriverentry:: OnDeviceAdd**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-idriverentry-ondeviceadd)コールバック関数から[**Iwdfdeviceinitialize:: SetFilter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdeviceinitialize-setfilter)を呼び出す必要があります。 UMDF バージョン2以降では、ドライバーは[**WdfFdoInitSetFilter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdffdo/nf-wdffdo-wdffdoinitsetfilter)を代わりに呼び出します。
 
-2.  指定する必要がありますには、ドライバーを指定できます、UMDF 固有ディレクティブだけでなく、 **UmdfService**と**UmdfServiceOrder**ディレクティブ。 このトピックでは、上位のフィルター ドライバーを指定します。
+2.  ドライバーで指定されているすべての UMDF 固有のディレクティブに加えて、 **umdfservice**と**Umdfserviceorder**ディレクティブを指定する必要があります。 このトピックでは、上位フィルタードライバーを指定します。
 
     ```cpp
     [<mydriver>_Install.NT.Wdf]
@@ -33,13 +33,13 @@ ms.locfileid: "67371135"
     UmdfServiceOrder=UMDFFunction,UMDFFilter
     ```
 
-    ドライバーが記載されている順序でデバイス スタックに追加されます、 **UmdfServiceOrder**エントリ。 最初のパラメーターは、デバイス スタックの最下位の UMDF ドライバーを指定します。 下位のフィルター ドライバーをインストールするには、単純の引数を逆**UmdfServiceOrder**します。
+    ドライバーは、 **Umdfserviceorder**エントリに記載されている順序でデバイススタックに追加されます。 最初のパラメーターは、デバイススタック内の最も下位の UMDF ドライバーを指定します。 下位のフィルタードライバーをインストールするには、 **Umdfserviceorder**の引数を逆にします。
 
-    これらおよびその他の UMDF 固有 INF ディレクティブの詳細については、次を参照してください。 [INF ファイルで WDF ディレクティブを指定する](specifying-wdf-directives-in-inf-files.md)します。
+    これらおよびその他の UMDF 固有の INF ディレクティブの詳細については、「 [Inf ファイルでの WDF ディレクティブの指定](specifying-wdf-directives-in-inf-files.md)」を参照してください。
 
-3.  ドライバーのデバイスのスタックに UMDF ドライバーのみが含まれている場合は、この手順をスキップします。
+3.  ドライバーのデバイススタックに UMDF ドライバーのみが含まれている場合は、この手順をスキップします。
 
-    ドライバーのデバイスのスタックに UMDF ではないすべてのドライバーが含まれている場合、INF ファイルを含める必要があります、 **AddReg**セクション上部のフィルター ドライバーとして、reflector を指定します。
+    ドライバーのデバイススタックに、UMDF ではないドライバーが含まれている場合、INF ファイルには、リフレクターを上位フィルタードライバーとして指定する**AddReg**セクションが含まれている必要があります。
 
     ```cpp
     [<mydriver>_Device_AddReg]
@@ -48,9 +48,9 @@ ms.locfileid: "67371135"
     HKR,,"UpperFilters",0x00010008,"WUDFRd" 
     ```
 
-4.  上部のフィルターとして、ドライバーが読み込まれた後は、スタック内の次のドライバーへの I/O 要求を転送する責任を負います。 を示すためには、KMDF 関数ドライバー上にある単純なパススルー ドライバー (UMDF バージョン 1) を検討してください。
+4.  ドライバーは、上位フィルターとして読み込まれた後、スタック内の次のドライバーに i/o 要求を転送します。 例として、KMDF 関数ドライバーを超える単純なパススルードライバー (UMDF version 1) について考えてみましょう。
 
-    最初に、既定の I/O のターゲットのインターフェイスを取得 (スタックの次のドライバー)。 書式を設定し、要求を送信します。 最も単純なシナリオは、次のようになります。
+    まず、既定の i/o ターゲット (スタック内の次のドライバー) のインターフェイスを取得します。 次に、要求を書式設定して送信します。 最も単純なシナリオは次のようになります。
 
     ```cpp
     IWDFIoTarget * kmdfIoTarget = NULL;

@@ -4,25 +4,25 @@ description: 厳密な優先順位アルゴリズム
 ms.assetid: 7C7A34CA-673C-4EFC-970D-08458AA83EAD
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aa57416a294e273220c8206b901b855146646609
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c7f777a209c2e5ccb123c72d5a9a0f71e07a59ef
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67370574"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841815"
 ---
 # <a name="strict-priority-algorithm"></a>厳密な優先順位アルゴリズム
 
 
-厳密な優先順位は、IEEE 802.1 q で指定されている伝送選択アルゴリズム (TSA)-2005 standard。 この標準は、IEEE 802.1 データ センター ブリッジング (DCB) インターフェイスのフレームワークの一部です。
+Strict priority は、IEEE 802.1 Q-2005 標準で指定されている伝送選択アルゴリズム (TSA) です。 この標準は、IEEE 802.1 データセンターブリッジング (DCB) インターフェイスのフレームワークの一部です。
 
-ネットワーク アダプターには、優先 TSA が施されている場合は、パケットの情報だけに基づいて転送に IEEE 802.1p の優先度レベルが指定された、パケットを選択します。 その結果より高い優先度レベルを持つパケットは常に低い優先度レベルを持つパケットを前に送信します。
+ネットワークアダプターは、厳密な優先順位の TSA を使用する場合、パケットの指定された IEEE 802.1 p 優先度レベルのみに基づいて、送信するパケットを選択します。 その結果、優先度の高いパケットは常に、優先度レベルの低いパケットより前に送信されます。
 
-ミニポート ドライバー NDIS を設定して、優先 TSA のサポートを指定する\_QOS\_機能\_STRICT\_TSA\_でサポートされている、**フラグ**メンバー[ **NDIS\_QOS\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_qos_capabilities)構造体。 ドライバーでは、この構造体を使用して、呼び出しの NDIS QoS と DCB の機能を登録します[ **NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsetminiportattributes)します。
+ミニポートドライバーは、ndis\_QOS\_機能を設定することによって、厳密な優先順位の TSA のサポートを指定します。これは、 [**ndis\_qos\_機能の FLAGS メンバーでサポートされてい\_厳格\_TSA\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_capabilities)構造体。 ドライバーは、この構造を使用して、 [**NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)への呼び出しに NDIS QOS と DCB 機能を登録します。
 
-優先度レベルの詳細については、次を参照してください。 [IEEE 802.1p の優先度レベル](ieee-802-1p-priority-levels.md)します。
+優先度レベルの詳細については、「 [IEEE 802.1 p Priority levels](ieee-802-1p-priority-levels.md)」を参照してください。
 
-**注**  NDIS 6.30、以降、DCB の NDIS サービスの品質 (QoS) をサポートしているミニポート ドライバー インターフェイスは優先順位の厳密な TSA のサポートを提供する必要があります。
+**注**  Ndis 6.30 以降では、DCB インターフェイスの ndis Quality of Service (QoS) をサポートするミニポートドライバーは、厳密な優先順位 TSA のサポートをアドバタイズする必要があります。
 
  
 

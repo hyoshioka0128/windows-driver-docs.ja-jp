@@ -3,19 +3,19 @@ title: 発信の実行
 description: 発信の実行
 ms.assetid: 295b3f6d-d53b-4030-b7e9-35ab7524d9aa
 keywords:
-- 発信呼び出しいる CoNDIS WAN のドライバー WDK ネットワーク
-- 発信呼び出し WDK WAN、電話サービス
-- いる CoNDIS TAPI WDK ネットワー キング、発信呼び出し
-- WDK いる CoNDIS WAN の呼び出しを送信
-- WDK いる CoNDIS WAN の呼び出し
+- CoNDIS WAN ドライバー WDK ネットワーク、発信呼び出し
+- 電話 services WDK WAN、発信呼び出し
+- CoNDIS TAPI WDK ネットワーク、発信呼び出し
+- 送信呼び出し WDK CoNDIS
+- WDK を呼び出す WAN
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 806f488db9d9d948bcc18678715c25bcc28e3e47
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 84556e2595d728716f31c6b9cbc6c475d8804797
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67356171"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844129"
 ---
 # <a name="making-outgoing-calls"></a>発信の実行
 
@@ -23,37 +23,37 @@ ms.locfileid: "67356171"
 
 
 
-アプリケーションは、発信通話を試みると、行を初めて開くする必要があります。 TAPI を呼び出すアプリケーションの結果として、行が開かれる**lineOpen**関数。 アプリケーションが、TAPI を呼び出す前に開かれた行にテレフォニーの呼び出しを配置する**lineMakeCall**関数を特定の宛先アドレスへのポインターを渡します。 パラメーターが要求されたセットアップの呼び出しが既定以外の場合、アプリケーションはまた、ポインターを LINECALLPARAMS 構造体を渡します。 アプリケーションが既定のセットアップの呼び出しのパラメーターを使用している場合**lineMakeCall** LINECALLPARAMS 構造体でこれらのパラメーターを提供します。 この構造体のメンバーでは、方法、テレフォニーの呼び出しではその設定をする必要がありますを指定します。
+アプリケーションが発信呼び出しを行う場合は、最初に行を開く必要があります。 アプリケーションが TAPI **Lineopen**関数を呼び出した結果として、行が開かれます。 前に開いた行にテレフォニー通話を配置するために、アプリケーションは TAPI **lineMakeCall**関数を呼び出し、特定の宛先アドレスへのポインターを渡します。 既定の呼び出しセットアップパラメーターが要求されていても、アプリケーションは、LINECALLPARAMS 構造体へのポインターを渡します。 アプリケーションで既定の呼び出し設定パラメーターが使用されている場合、 **lineMakeCall**はこれらのパラメーターを LINECALLPARAMS 構造体に提供します。 この構造体のメンバーは、テレフォニー呼び出しの設定方法を指定します。
 
-まずいる CoNDIS WAN ミニポート ドライバーを使用した仮想接続 (VC) を作成する NDPROXY ドライバーにより、これらの TAPI 関数呼び出しと、TAPI をカプセル化する NDIS 内のパラメーター構造体に、発信通話を行うためにします。 ミニポート ドライバーは発信通話を設定するこれらの TAPI パラメーターを使用します。 送信呼び出しが接続されている、設定、および行われる方法を次に示します。
+これらの TAPI 関数呼び出しによって、NDPROXY ドライバーは、最初に CoNDIS WAN ミニポートドライバーを使用して仮想接続 (VC) を作成し、次に発信呼び出しを行うために NDIS 構造体に TAPI パラメーターをカプセル化します。 ミニポートドライバーは、これらの TAPI パラメーターを使用して発信呼び出しを設定します。 発信呼び出しの接続方法、設定方法、および発信方法を次に示します。
 
--   NDPROXY 呼び出し[ **NdisCoCreateVc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscocreatevc)ミニポート ドライバーを使用した VC の作成を開始します。 NDPROXY 後**NdisCoCreateVc**、NDIS 呼び出しを同期操作として、 *ProtocolCoCreateVc*ミニポート ドライバーにコール マネージャーの機能が統合します。 NDIS に渡します*ProtocolCoCreateVc* VC を表すハンドルです。 場合に呼び出し**NdisCoCreateVc**が成功すると、NDIS 入力し、VC ハンドルを返します。 *ProtocolCoCreateVc*動的リソースおよびミニポートの呼び出しのマネージャー (MCM) ドライバーは、後でアクティブにされる VC の後続の処理を実行する必要があります構造のために必要な割り当てを実行します。 このようなリソースなどが、メモリ バッファー、データ構造体、イベント、およびそのようなその他の同様のリソースに限定されません。
+-   NDPROXY は[**NdisCoCreateVc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscocreatevc)を呼び出し、ミニポートドライバーを使用して VC の作成を開始します。 NDPROXY が**NdisCoCreateVc**を呼び出すと、NDIS は、ミニポートドライバーに統合されている呼び出しマネージャーの*ProtocolCoCreateVc*関数を同期操作として呼び出します。 NDIS は、VC を表すハンドルを*ProtocolCoCreateVc*に渡します。 **NdisCoCreateVc**の呼び出しが成功した場合、NDIS は VC ハンドルを入力して返します。 *ProtocolCoCreateVc*は、ポートコールマネージャー (mcm) ドライバーが、後でアクティブ化される VC に対して後続の操作を実行するために必要な動的リソースおよび構造体に必要な割り当てを実行します。 このようなリソースには、メモリバッファー、データ構造、イベント、その他の同様のリソースが含まれますが、これらに限定されません。
 
--   NDPROXY で発信呼び出しの TAPI パラメーターを指定する、 [ **CO\_AF\_TAPI\_ように\_呼び出す\_パラメーター** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff545373(v=vs.85))構造体。 NDPROXY、TAPI で渡された次の情報でこの構造体のメンバーを格納する**lineMakeCall**関数。
-    -   内の宛先アドレス、 **DestAddress**メンバー
-    -   開く行識別子、 **ulLineID**メンバー
-    -   構造体、LINECALLPARAMS、 **LineCallParams**メンバー
--   NDPROXY オーバーレイ CO\_AF\_TAPI\_こと\_呼び出す\_でパラメーターが構造体、**パラメーター**のメンバー、 [ **CO\_特定\_パラメーター** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff545396(v=vs.85))構造と設定、**長さ**CO のメンバー\_特定\_CO のサイズ パラメーター\_AF\_TAPI\_ように\_呼び出す\_パラメーター。
+-   NDPROXY は、 [**CO\_AF\_tapi**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff545373(v=vs.85))の送信通話に使用する tapi パラメーターを指定します。これにより、\_パラメーター構造\_呼び出し\_ます。 NDPROXY は、この構造体のメンバーに、TAPI **lineMakeCall**関数で渡された次の情報を入力します。
+    -   **Destaddress**メンバーの宛先アドレス
+    -   **UlLineID**メンバー内のオープンライン識別子
+    -   **LINECALLPARAMS**メンバーの LINECALLPARAMS 構造体
+-   NDPROXY は CO\_AF\_TAPI をオーバーレイし\_\_co [ **\_特定の\_パラメーター**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff545396(v=vs.85))構造の**パラメーター**メンバーに\_パラメーター構造を呼び出し、co の**Length**メンバーを設定します。\_特定の\_パラメーターを CO\_AF\_TAPI\_のサイズに設定し\_パラメーターを呼び出します。
 
--   NDPROXY 設定 CO\_特定\_パラメーター構造体を**MediaSpecific**のメンバー、 [ **CO\_メディア\_パラメーター**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff545388(v=vs.85))構造体。
+-   NDPROXY は、co\_固有の\_パラメーター構造を[**co\_MEDIA\_PARAMETERS**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff545388(v=vs.85))構造体の**MediaSpecific**メンバーに設定します。
 
--   NDPROXY CO にポインターを設定する\_メディア\_パラメーター構造体を**MediaParameters**のメンバー、 [ **CO\_呼び出す\_パラメーター**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff545384(v=vs.85))構造体。
+-   NDPROXY は、CO\_MEDIA\_PARAMETERS 構造体へのポインターを、 [**co\_呼び出し\_parameters**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff545384(v=vs.85))構造体の**MediaParameters**メンバーに設定します。
 
--   NDPROXY を呼び出す NDPROXY は、TAPI パラメーターをカプセル化すると、 [ **NdisClMakeCall** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisclmakecall)発信通話を開始する関数。 この関数の呼び出しで NDPROXY は塗りつぶされた CO にポインターを渡します\_呼び出す\_パラメーター構造体。 さらに NDIS、 [ **ProtocolCmMakeCall** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_cm_make_call)いる CoNDIS WAN ミニポート ドライバーのコール マネージャーの関数。 ミニポート ドライバーが CO のみを調べる必要があります\_AF\_TAPI\_ように\_を呼び出す\_パラメーターに構造体に埋め込まれた CO\_呼び出す\_パラメーター。 その他の呼び出しのパラメーターがない意味のあるこの場合です。 ミニポート ドライバーを呼び出す場合は、その後、ミニポート ドライバーには、発信通話の VC がアクティブに、 [ **NdisMCmActivateVc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcmactivatevc)関数し、塗りつぶされた CO にポインターを渡す\_の呼び出し\_パラメーター。
+-   NDPROXY が TAPI パラメーターをカプセル化すると、NDPROXY は[**NdisClMakeCall**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisclmakecall)関数を呼び出して発信呼び出しを開始します。 この関数呼び出しでは、NDPROXY は、入力された CO\_呼び出し\_PARAMETERS 構造体へのポインターを渡します。 さらに、NDIS は、CoNDIS WAN ミニポートドライバーの呼び出しマネージャーの[**ProtocolCmMakeCall**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_cm_make_call)関数を呼び出します。 ミニポートドライバーでは、CO\_AF\_TAPI\_を確認する必要があります。これにより、\_は\_パラメーター構造に埋め込まれた\_パラメーター構造を呼び出します。 この場合、他の呼び出しパラメーターは意味がありません。 その後、ミニポートドライバーが発信呼び出しの VC をアクティブにすると、ミニポートドライバーは[**NdisMCmActivateVc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcmactivatevc)関数を呼び出し、入力された CO\_呼び出し\_パラメーターへのポインターを渡します。
 
--   後、ミニポート ドライバーは、VC のテレフォニー呼び出しのパラメーターを確立し、それらの NIC を設定するネットワークとネゴシエートしたパラメーター、ミニポート ドライバーの呼び出しを呼び出し、 [ **NdisMCmMakeCallComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcmmakecallcomplete) VC 上の関数をデータ準備ができたことを示すために転送します。 この呼び出しで、ミニポート ドライバーは、VC とテレフォニー呼び出しのパラメーターに加えられた変更にハンドルを渡す必要があります。
+-   ミニポートドライバーがネットワークとネゴシエートし、VC のテレフォニー呼び出しパラメーターを確立し、これらの呼び出しパラメーター用に NIC を設定した後、ミニポートドライバーは[**NdisMCmMakeCallComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcmmakecallcomplete)関数を呼び出して、準備ができていることを示します。VC でのデータ転送。 この呼び出しでは、ミニポートドライバーは、テレフォニー呼び出しパラメーターに加えられた VC および変更のハンドルを渡す必要があります。
 
--   ミニポート ドライバーを変更する必要があります、 **CallMgrParameters** CO のメンバー\_呼び出す\_帯域幅などのパケットを転送するサービス (QoS) の品質を指定するパラメーターの構造体。 これを設定する**CallMgrParameters**メンバー、ミニポート ドライバーがのメンバー、 [ **CO\_呼び出す\_MANAGER\_パラメーター** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff545381(v=vs.85))構造体し、この構造体を指す**CallMgrParameters**します。 たとえば、送信し、(VC の 1 秒あたりのバイト単位) の速度が表示される、ミニポート ドライバー設定する必要があります、**数字再生 PeakBandwidth**のメンバー、**送信**と**受信**CO のメンバー\_呼び出す\_MANAGER\_パラメーター。 **送信**と**受信**メンバーは FLOWSPEC 構造体。 FLOWSPEC 構造の詳細については、Microsoft Windows SDK を参照してください。
+-   ミニポートドライバーは、CO\_CALL\_PARAMETERS 構造体の**CallMgrParameters**メンバーを変更して、帯域幅などのパケット転送のサービス品質 (QoS) を指定する必要があります。 この**CallMgrParameters**メンバーを設定するために、ミニポートドライバーは、 [**CO\_呼び出し\_MANAGER\_PARAMETERS**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff545381(v=vs.85))構造体のメンバーを読み込み、この構造体を**CallMgrParameters**に指定します。 たとえば、VC の1秒あたりの送信速度と受信速度を示すために、ミニポートドライバーは、CO\_CALL\_MANAGER の**送信**メンバーと**受信**メンバーの**peakbandwidth 幅**メンバーを設定する必要があり\_パラメータ. **送信**メンバーと**受信**メンバーは FLOWSPEC 構造体です。 FLOWSPEC 構造体の詳細については、Microsoft Windows SDK を参照してください。
 
--   ミニポート ドライバーがテレフォニー呼び出しのパラメーターを変更している場合に設定する必要があります、**フラグ**CO 内のメンバー\_呼び出す\_呼び出しでパラメーター構造体\_パラメーター\_変更しました。 結果として、 **NdisMCmMakeCallComplete** NDPROXY を呼び出し、NDIS ミニポート ドライバーによって行われた呼び出し*ProtocolClMakeCallComplete*関数が開始された非同期操作を完了するには**NdisClMakeCall**します。
+-   ミニポートドライバーがテレフォニー呼び出しパラメーターを変更した場合は、\_パラメーター\_変更された呼び出しを使用して、CO\_呼び出し\_パラメーター構造体に**フラグ**メンバーを設定する必要があります。 ミニポートドライバーによって実行される**NdisMCmMakeCallComplete**呼び出しの結果として、NDIS は、 **NdisClMakeCall**で開始された非同期操作を完了するために、ndproxy の*ProtocolClMakeCallComplete*関数を呼び出します。
 
--   ミニポート ドライバーには、送信呼び出しが完了したら後、NDPROXY は呼び出しが接続されている TAPI アプリケーションを通知します。 この TAPI アプリケーションは、呼び出し、TAPI **lineGetID** NDPROXY 適切ないる CoNDIS クライアントに通知する関数。 この**lineGetID**呼び出し、TAPI アプリケーションにはこれをアプリケーションにハンドルが必要です。 特定の TAPI デバイス クラスの文字列が指定されています。 NDPROXY では、この文字列を使用して、特定の TAPI デバイス クラスに対する SAP に登録されている CoNDIS クライアントを見つけます。 いる CoNDIS クライアントが NDISWAN の場合は、文字列は、NDIS です。 かどうか、NDPROXY を見つけて、TAPI アプリケーション NDPROXY 呼び出しで渡される文字列に一致する文字列での SAP [ **NdisMCmCreateVc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcmcreatevc) NDISWAN をディスパッチできますと接続エンドポイントを設定するには実行された送信呼び出しの通知です。 NDIS 呼び出します NDISWAN の*ProtocolCoCreateVc*関数し、VC を表すハンドルを渡します。
+-   ミニポートドライバーが発信呼び出しを正常に完了すると、NDPROXY は、その呼び出しが接続されていることを TAPI アプリケーションに通知します。 次に、この TAPI アプリケーションは、TAPI **lineGetID**関数を呼び出して、ndproxy に適切な condis クライアントを特定するように通知します。 この**lineGetID**の呼び出しでは、tapi アプリケーションは、アプリケーションがハンドルを必要とする特定の tapi デバイスクラスに文字列を提供します。 NDPROXY は、この文字列を使用して、以前に特定の TAPI デバイスクラスに対して SAP を登録した CoNDIS クライアントを検索します。 CoNDIS クライアントが指定されている場合、文字列は NDIS です。 NDPROXY が、TAPI アプリケーションによって渡された文字列と一致する文字列を含む SAP を検索する場合、NDPROXY は[**NdisMCmCreateVc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcmcreatevc)を呼び出して、作成された発信呼び出しの通知をディスパッチできる NDISWAN の接続エンドポイントを設定します。 さらに、NDIS は NDISWAN の*ProtocolCoCreateVc*関数を呼び出し、VC を表すハンドルを渡します。
 
--   呼び出す NDPROXY が NDISWAN と接続エンドポイントを設定した後、 [ **NdisCmDispatchIncomingCall** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscmdispatchincomingcall)送信呼び出しについて NDISWAN を通知する関数。 この呼び出しでは、NDPROXY はカプセル化された CO を渡します。\_AF\_TAPI\_ように\_呼び出し\_パラメーター構造体を含む、送信呼び出しのパラメーター。 NDIS 呼び出します NDISWAN の*ProtocolClIncomingCall*関数を NDISWAN を受け入れるか、要求された接続を拒否します。 NDISWAN には渡された呼び出しのパラメーターが変更された場合に設定する必要があります、**フラグ**CO でメンバー\_呼び出す\_呼び出しでパラメーター構造体\_パラメーター\_変更されました。
+-   NDPROXY は、NDISWAN を使用して接続エンドポイントを設定した後、 [**NdisCmDispatchIncomingCall**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscmdispatchincomingcall)関数を呼び出して、送信された呼び出しについて NDISWAN に通知します。 この呼び出しでは、NDPROXY はカプセル化された CO\_AF\_TAPI\_\_渡し、発信呼び出しパラメーターを含む\_PARAMETERS 構造体を呼び出します。 さらに、NDIS は NDISWAN の*ProtocolClIncomingCall*関数を呼び出します。この関数では、要求された接続を受け入れるか拒否します。 渡された呼び出しパラメーターが NDISWAN によって変更された場合は、\_パラメーターを呼び出して変更\_、CO\_呼び出し\_PARAMETERS 構造体に**Flags**メンバーを設定する必要があります。
 
--   接続を許可するかどうかを決定した後と、場合によって、呼び出しのパラメーターを変更した後に、NDISWAN の呼び出し、 [ **NdisClIncomingCallComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisclincomingcallcomplete)関数。 NDIS ミニポート ドライバーに呼び出されます*ProtocolCmIncomingCallComplete*関数。 NDISWAN が発信通話を承諾したかどうかや、ミニポート ドライバーを受け入れるか NDISWAN の呼び出しのパラメーターに変更の提案を拒否するかどうか、によって、ミニポート ドライバーを呼び出すか[ **NdisCmDispatchCallConnected**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscmdispatchcallconnected)または[ **NdisCmDispatchIncomingCloseCall** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscmdispatchincomingclosecall)関数。 **NdisCmDispatchCallConnected** NDISWAN VC NDPROXY 作成発信呼び出しでデータ転送を開始できることを通知します。 **NdisCmDispatchIncomingCloseCall** NDISWAN と NDPROXY 提案の送信呼び出しを壊さずに通知します。
+-   接続を受け入れるかどうかを決定し、場合によっては呼び出しパラメーターを変更した後に、NDISWAN は[**NdisClIncomingCallComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisclincomingcallcomplete)関数を呼び出します。 さらに、NDIS はミニポートドライバーの*Protocolcmincomingcallcomplete*関数を呼び出します。 NDISWAN が発信呼び出しを受け入れたかどうか、およびミニポートドライバーが呼び出しパラメーターに対する NDISWAN の提案された変更を受け入れるか拒否するかによって、ミニポートドライバーは[**NdisCmDispatchCallConnected**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscmdispatchcallconnected)または[**を呼び出します。NdisCmDispatchIncomingCloseCall**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscmdispatchincomingclosecall)関数。 **NdisCmDispatchCallConnected**は、送信呼び出し用に作成された、ndproxy がある VC でデータ転送を開始できることを NDISWAN に通知します。 **NdisCmDispatchIncomingCloseCall**は、提案された発信呼び出しを破棄するように NDISWAN と ndproxy に通知します。
 
--   発信通話を承諾した後 NDISWAN、NDPROXY を呼び出す、 [ **NdisCoGetTapiCallId** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscogettapicallid) VC の NDISWAN のコンテキストを識別する文字列を取得する関数。 NDPROXY は、TAPI アプリケーションにこの文字列を渡します。 TAPI アプリケーションでは、この VC コンテキストの文字列を使用して、呼び出しを完了する**lineGetID**します。
+-   NDISWAN が発信呼び出しを受け入れると、NDPROXY は[**NdisCoGetTapiCallId**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscogettapicallid)関数を呼び出して、VC の NDISWAN のコンテキストを識別する文字列を取得します。 NDPROXY は、この文字列を TAPI アプリケーションに渡します。 TAPI アプリケーションは、この VC コンテキスト文字列を使用して**lineGetID**の呼び出しを完了します。
 
  
 

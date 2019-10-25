@@ -6,12 +6,12 @@ keywords:
 - IPrintOemUni2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 052f9a04ccd610cbc7c9e5f18abf4a149597ba93
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: bd0e0ca712c93d1795042fa7f19d74ba9212083f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386501"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841768"
 ---
 # <a name="iprintoemuni2-com-interface"></a>IPrintOemUni2 COM インターフェイス
 
@@ -19,9 +19,9 @@ ms.locfileid: "67386501"
 
 
 
-`IPrintOemUni2` COM インターフェイスは、のすべてのメソッドが含まれていての機能を拡張、 [IPrintOemUni COM インターフェイス](iprintoemuni-com-interface.md)します。
+`IPrintOemUni2` COM インターフェイスには、のすべてのメソッドが含まれています。また、 [Iprintoemuni COM インターフェイス](iprintoemuni-com-interface.md)の機能が拡張されています。
 
-次の表とによって提供されるメソッドのすべてについて説明します、`IPrintOemUni2`インターフェイス。 プラグインを表示、表示されているすべてのメソッドを定義する必要があります。 かどうか、メソッドは必要ありません、単に返すことができます E\_NOTIMPL します。
+次の表に、`IPrintOemUni2` インターフェイスによって提供されるすべてのメソッドとその説明を示します。 レンダリングプラグインでは、表示されているすべてのメソッドを定義する必要があります。 メソッドが不要な場合は、単に E\_NOTIMPL を返すことができます。
 
 <table>
 <colgroup>
@@ -36,15 +36,15 @@ ms.locfileid: "67386501"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni2-writeprinter" data-raw-source="[&lt;strong&gt;IPrintOemUni2::WritePrinter&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni2-writeprinter)"><strong>IPrintOemUni2::WritePrinter</strong></a></p></td>
-<td><p>Unidrv ドライバーによって生成されたすべての出力データをキャプチャするプラグインを使用できます。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuni2-writeprinter" data-raw-source="[&lt;strong&gt;IPrintOemUni2::WritePrinter&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuni2-writeprinter)"><strong>IPrintOemUni2:: WritePrinter</strong></a></p></td>
+<td><p>プラグインが、Unidrv ドライバーによって生成されたすべての出力データをキャプチャできるようにします。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-詳細については、次を参照してください。[プリンター ドライバーの COM インターフェイスを実装する](implementing-printer-driver-com-interfaces.md)します。
+詳細については、「[プリンタドライバ COM インターフェイスの実装](implementing-printer-driver-com-interfaces.md)」を参照してください。
 
  
 

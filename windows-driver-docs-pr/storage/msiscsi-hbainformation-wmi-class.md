@@ -4,24 +4,24 @@ description: MSiSCSI\_HBAInformation WMI クラス
 ms.assetid: 24c44f97-5ff3-46fa-a5bf-aa76f7f0d3f2
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 3f48f2bad1c7d60583a887d58d0005dc4d5c0fbe
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 334a3ecf6234cc93a078f592578628a5259bba3e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67379679"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845363"
 ---
-# <a name="msiscsihbainformation-wmi-class"></a>MSiSCSI\_HBAInformation WMI クラス
+# <a name="msiscsi_hbainformation-wmi-class"></a>MSiSCSI\_HBAInformation WMI クラス
 
 
 ## <span id="ddk_msiscsi_hbainformation_wmi_class_kr"></span><span id="DDK_MSISCSI_HBAINFORMATION_WMI_CLASS_KR"></span>
 
 
-ISCSI イニシエーター サービスの使用、MSiSCSI\_アダプターとの通信に HBAInformation WMI クラスです。 読み込まれているミニポート ドライバーの各インスタンスに対して、このクラスの別のインスタンスが必要です。
+ISCSI イニシエーターサービスは、MSiSCSI\_HBAInformation WMI クラスを使用して、アダプターと通信します。 読み込まれるミニポートドライバーのインスタンスごとに、このクラスの個別のインスタンスを用意する必要があります。
 
-このクラスは、記憶域ミニポート ドライバーの特定のインスタンスに関連付けられているため、ミニポート ドライバーは、ミニポート ドライバーを管理する特定の物理デバイス オブジェクト (PDO) の名前を使用して、クラスを登録する必要があります。
+このクラスは記憶域ミニポートドライバーの特定のインスタンスに関連付けられているため、ミニポートドライバーは、ミニポートドライバーが管理する特定の物理デバイスオブジェクト (PDO) の名前を使用してクラスを登録する必要があります。
 
-MSiSCSI\_HBAInformation クラスが次のように定義されている*Mgmt.mof*します。
+MSiSCSI\_HBAInformation クラスは、*管理 .mof*で次のように定義されています。
 
 ```cpp
 class MSiSCSI_HBAInformation {
@@ -154,7 +154,7 @@ class MSiSCSI_HBAInformation {
 };
 ```
 
-WMI ツールのスイートでは、上記のクラス定義をコンパイルするときに生成、 [ **MSiSCSI\_HBAInformation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsimgt/ns-iscsimgt-_msiscsi_hbainformation)データ構造体。
+WMI ツールスイートは、前のクラス定義をコンパイルするときに、 [**Msiscsi\_HBAInformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/iscsimgt/ns-iscsimgt-_msiscsi_hbainformation)データ構造を生成します。
 
  
 

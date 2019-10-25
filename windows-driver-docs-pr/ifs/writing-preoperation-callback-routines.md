@@ -3,16 +3,16 @@ title: 操作前コールバック ルーチンの記述
 description: 操作前コールバック ルーチンの記述
 ms.assetid: 3f863c44-152e-43c9-8ef5-ec426986a3fe
 keywords:
-- preoperation コールバック ルーチン WDK ファイル システム ミニフィルター、書き込み
-- コールバック ルーチンを記述
+- preoperation コールバックルーチン WDK ファイルシステムミニフィルター、書き込み
+- コールバックルーチンの記述
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c063b80c9236421a56043ab1cb704825b9395033
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 16ed8db6369565dd0695d6c9a5dec54daaf5f47b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385640"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840915"
 ---
 # <a name="writing-preoperation-callback-routines"></a>操作前コールバック ルーチンの記述
 
@@ -20,24 +20,24 @@ ms.locfileid: "67385640"
 ## <span id="ddk_writing_preoperation_callback_routines_if"></span><span id="DDK_WRITING_PREOPERATION_CALLBACK_ROUTINES_IF"></span>
 
 
-1 つまたは複数を使用して、ファイル システム ミニフィルター ドライバー *preoperation コールバック ルーチン*フィルター I/O 操作をします。 [**Preoperation コールバック ルーチン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nc-fltkernel-pflt_pre_operation_callback)は従来のファイル システム フィルター ドライバーで使用されるディスパッチ ルーチンと似ています。
+ファイルシステムミニフィルタードライバーは、1つまたは複数の*preoperation コールバックルーチン*を使用して、i/o 操作をフィルター処理します。 [**Preoperation コールバックルーチン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nc-fltkernel-pflt_pre_operation_callback)は、従来のファイルシステムフィルタードライバーで使用されるディスパッチルーチンに似ています。
 
-ミニフィルター ドライバーでは、特定の種類の I/O 操作の preoperation コールバック ルーチンを登録のコールバック ルーチンのエントリ ポイントを格納することにより、 **OperationRegistration**のメンバー、 [ **FLT\_登録**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_registration)構造体。 ミニフィルター ドライバーでは、このメンバーを渡すパラメーターとして[ **FltRegisterFilter** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltregisterfilter)でその**DriverEntry**ルーチン。
+ミニフィルタードライバーは、 [**FLT\_REGISTRATION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_registration)構造体の**operationregistration**メンバーにコールバックルーチンのエントリポイントを格納することによって、特定の種類の i/o 操作に対して preoperation コールバックルーチンを登録します。 ミニパスドライバーは、このメンバーを**Driverentry**ルーチンの[**Fltregisterfilter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltregisterfilter)にパラメーターとして渡します。
 
-ミニフィルター ドライバーには、preoperation または postoperation コールバック ルーチンを登録する I/O 操作の種類のみが表示されます。 ミニフィルター ドライバーは登録を行わずに特定の種類の I/O 操作の preoperation コールバック ルーチンを登録することができます、 [ **postoperation コールバック ルーチン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nc-fltkernel-pflt_post_operation_callback)、またはその逆です。
+ミニフィルタードライバーは、preoperation または postoperation コールバックルーチンが登録されている種類の i/o 操作だけを受け取ります。 ミニフィルタードライバーは、 [**postoperation コールバックルーチン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nc-fltkernel-pflt_post_operation_callback)を登録せずに、特定の種類の i/o 操作に対して preoperation コールバックルーチンを登録できます。また、その逆も可能です。
 
-次の表では、特定の使用シナリオとその戻り値の preoperation コールバック ルーチンの実装を示します。
+次の表は、特定の使用シナリオとその戻り値に対する preoperation コールバックルーチンの実装を示しています。
 
 | 使用シナリオ                                                                                                                                                                        | 実装                                                                                                                                       | 返される値                      |
 |---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------|
-| ルーチンは、操作に関連しないと、操作の最終的な状態が必要としないまたは postoperation コールバックを持ちません。                                             | 完了時にミニフィルターの postoperation コールバックを呼び出さずに、I/O 操作を渡します。                                                | FLT\_PREOP\_成功\_いいえ\_コールバック   |
-| ルーチンは、操作の最終的な状態が必要です。                                                                                                                               | を通じて、postoperation コールバック ルーチンを呼び出すミニフィルターを必要とする操作を渡します。                                                     | FLT\_PREOP\_成功\_WITH\_コールバック |
-| ミニフィルターは完了またはこの操作は、将来の処理を続行する必要があります。                                                                                                     | 保留中の状態に、操作を配置します。 使用[ **FltCompletePendedPreOperation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltcompletependedpreoperation)後で、操作を完了します。 返す操作前のルーチンの間の許容の競合がある可能性があることに注意してください。 **FLT_PREOP_PENDING**、および**FltCompletePendingOperation**が呼び出されます。 フィルター マネージャーは、ドライバーからの入力を行わなくても、このシナリオを処理します。 | FLT\_PREOP\_PENDING                 |
-| Postoperation 処理では、同じスレッドのコンテキストでディスパッチ ルーチンが呼び出されたことがあります。 これにより、一貫性のある IRQL とは、ローカル変数の状態を保持します。 | Postoperation で操作を同期します。                                                                                                    | FLT\_PREOP\_同期             |
-| Preoperation コールバック ルーチンは、操作を完了する必要があります。                                                                                                                    | 操作の処理を停止し、最終的な NTSTATUS 値を割り当てます。                                                                                   | FLT\_PREOP\_完了                |
+| このルーチンは操作に関連しないため、操作の最終ステータスを必要としないか、postoperation コールバックがありません。                                             | 完了時にミニフィルターの postoperation コールバックを呼び出さずに、i/o 操作をパススルーします。                                                | FLT\_PREOP\_SUCCESS\_\_コールバックなし   |
+| ルーチンには、操作の最終状態が必要です。                                                                                                                               | 操作を通過し、ミニパスコールバックルーチンを呼び出す必要があります。                                                     | \_コールバックを使用した FLT\_PREOP\_成功\_ |
+| ミニフィルターを完了するか、今後この操作の処理を続行する必要があります。                                                                                                     | 操作を保留中の状態にします。 後で操作を完了するには、 [**Fltcompletependedpreoperation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltcompletependedpreoperation)を使用します。 **FLT_PREOP_PENDING**を返す事前操作ルーチンと**Fltcompletependingoperation**が呼び出される間に、許容される競合が発生する可能性があることに注意してください。 フィルターマネージャーは、ドライバーからの入力なしにこのシナリオを処理します。 | FLT\_PREOP\_保留中                 |
+| Postoperation の処理は、ディスパッチルーチンが呼び出されたのと同じスレッドのコンテキストで行われる必要があります。 これにより、一貫性のある IRQL が確保され、ローカル変数の状態が維持されます。 | 操作を postoperation と同期します。                                                                                                    | FLT\_PREOP\_SYNCHRONIZE             |
+| Preoperation コールバックルーチンは、操作を完了する必要があります。                                                                                                                    | 操作の処理を停止し、最後の NTSTATUS 値を割り当てます。                                                                                   | FLT\_PREOP\_完了                |
 
 
-各 preoperation コールバック ルーチンの定義は次のとおりです。
+すべての preoperation コールバックルーチンは、次のように定義されます。
 
 ```cpp
 typedef FLT_PREOP_CALLBACK_STATUS 
@@ -48,25 +48,25 @@ typedef FLT_PREOP_CALLBACK_STATUS
     ); 
 ```
 
-ディスパッチ ルーチンのように、IRQL で preoperation コールバック ルーチンを呼び出すことができます = パッシブ\_レベル、または IRQL = APC\_レベル。 IRQL で呼び出された通常 = パッシブ\_I/O 要求を生成したスレッドのコンテキストでのレベル。 Preoperation コールバック ルーチンに常に IRQL でと呼ばれる高速な I/O とファイル システム フィルター (FsFilter) 操作では、パッシブ =\_レベル。 ただし、IRP ベースの操作では、ミニフィルター ドライバーの preoperation コールバック ルーチンを呼び出すシステム ワーカー スレッドのコンテキストで上位フィルターまたはミニフィルター ドライバー アプリケーションの場合、操作を処理するため、ワーカー スレッドが。
+ディスパッチルーチンと同様に、preoperation コールバックルーチンは、IRQL = パッシブ\_レベル、または IRQL = APC\_レベルで呼び出すことができます。 通常、これは、i/o 要求を発信したスレッドのコンテキストで、IRQL = パッシブ\_レベルで呼び出されます。 高速 i/o およびファイルシステムフィルター (FsFilter) 操作の場合、preoperation コールバックルーチンは常に IRQL = パッシブ\_レベルで呼び出されます。 ただし、IRP ベースの操作では、より高いフィルターまたはミニフィルタードライバーによってワーカースレッドによる処理が pends された場合、システムワーカースレッドのコンテキストでミニフィルタードライバーの preoperation コールバックルーチンを呼び出すことができます。
 
-IRQL で postoperation ルーチン内でコンテキスト オブジェクトを取得できない&gt;APC\_レベル。 代わりに、preoperation ルーチンの中に、コンテキスト オブジェクトを取得する postoperation ルーチンに渡すか IRQL で postoperation 処理を行う&lt;APC を =\_レベル。 コンテキストの詳細については、次を参照してください。[管理コンテキスト](managing-contexts.md)します。
+IRQL &gt; APC\_レベルで、postoperation ルーチンでコンテキストオブジェクトを取得することはできません。 代わりに、preoperation ルーチンでコンテキストオブジェクトを取得し、それを postoperation ルーチンに渡すか、または IRQL &lt;= APC\_LEVEL で postoperation 処理を実行します。 コンテキストの詳細については、「[コンテキストの管理](managing-contexts.md)」を参照してください。
 
-フィルター マネージャーは、指定した I/O 操作でミニフィルター ドライバーの preoperation コールバック ルーチンを呼び出す、ミニフィルター ドライバーは一時的に、I/O 操作を制御します。 ミニフィルター ドライバーでは、これは、次のいずれかになるまで、このコントロールが保持されます。
+フィルターマネージャーが、特定の i/o 操作に対してミニフィルタードライバーの preoperation コールバックルーチンを呼び出すと、ミニフィルタードライバーによって i/o 操作が一時的に制御されます。 ミニフィルタードライバーは、次のいずれかの操作を実行するまで、このコントロールを保持します。
 
--   FLT 以外のステータス値を返します\_PREOP\_preoperation コールバック ルーチンから保留します。
+-   Preop コールバックルーチンから PENDING\_PREOP\_PENDING 以外の状態値を返します。
 
--   呼び出し[ **FltCompletePendedPreOperation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltcompletependedpreoperation) preoperation コールバック ルーチンを保留していた操作が処理する作業ルーチンから。
+-   Preoperation コールバックルーチンで保留されていた操作を処理した作業ルーチンから[**Fltcompletependedpreoperation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltcompletependedpreoperation)を呼び出します。
 
 このセクションの内容:
 
-[下位のミニフィルター インスタンス スタック、I/O 操作を渡す](passing-an-i-o-operation-down-the-minifilter-driver-instance-stack.md)
+[I/o 操作をミニフィルターインスタンススタックに渡す](passing-an-i-o-operation-down-the-minifilter-driver-instance-stack.md)
 
-[Preoperation コールバック ルーチン内の I/O 操作の完了](completing-an-i-o-operation-in-a-preoperation-callback-routine.md)
+[Preoperation コールバックルーチンでの i/o 操作の完了](completing-an-i-o-operation-in-a-preoperation-callback-routine.md)
 
-[Preoperation コールバック ルーチンで高速な I/O 操作を禁止しています](disallowing-a-fast-i-o-operation-in-a-preoperation-callback-routine.md)
+[Preoperation コールバックルーチンで高速 i/o 操作を禁止する](disallowing-a-fast-i-o-operation-in-a-preoperation-callback-routine.md)
 
-[保留中の Preoperation コールバック ルーチン内の I/O 操作](pending-an-i-o-operation-in-a-preoperation-callback-routine.md)
+[プリ操作コールバックルーチンで i/o 操作を保留しています](pending-an-i-o-operation-in-a-preoperation-callback-routine.md)
 
  
 

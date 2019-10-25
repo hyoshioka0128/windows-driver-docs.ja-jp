@@ -3,16 +3,16 @@ title: NDIS オブジェクト
 description: NDIS オブジェクト
 ms.assetid: 1a1338d7-f668-475b-99a9-4819de0a70c3
 keywords:
-- ジェネリックの NDIS オブジェクトの割り当てください。
-- ジェネリックの NDIS オブジェクト WDK ネットワーク
+- 汎用 NDIS オブジェクトの割り当て
+- 汎用 NDIS オブジェクト WDK ネットワーク
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a14525ed88655495c45414659fba4cc0e6393b0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 80d506f8a3a2644e3fa014b5777b010379769290
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67354968"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844359"
 ---
 # <a name="ndis-objects"></a>NDIS オブジェクト
 
@@ -20,9 +20,9 @@ ms.locfileid: "67354968"
 
 
 
-使用を処理するコンポーネント、NDIS がない、 [ **NdisAllocateGenericObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisallocategenericobject)ジェネリック NDIS オブジェクトを割り当てる関数。 コンポーネントを呼び出す必要があります、 [ **NdisFreeGenericObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfreegenericobject)関数が作成された汎用オブジェクトを解放する**NdisAllocateGenericObject**します。
+NDIS ハンドルを持たないコンポーネントでは、 [**NdisAllocateGenericObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocategenericobject)関数を使用して、汎用の NDIS オブジェクトを割り当てます。 コンポーネントは、 **NdisAllocateGenericObject**で作成された汎用オブジェクトを解放するために、 [**NdisFreeGenericObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfreegenericobject)関数を呼び出す必要があります。
 
-汎用オブジェクトの使用方法の詳細については、次を参照してください。[プール処理を取得する](obtaining-pool-handles.md)します。
+ジェネリックオブジェクトの使用方法の詳細については、「[プールハンドルの取得](obtaining-pool-handles.md)」を参照してください。
 
  
 

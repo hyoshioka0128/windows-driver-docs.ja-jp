@@ -3,16 +3,16 @@ title: ATA ポート ドライバーの電源管理
 description: ATA ポート ドライバーの電源管理
 ms.assetid: 01c37fed-3b5b-4dd9-bdbd-5c5499a2ddcf
 keywords:
-- ATA ポート ドライバー WDK、電源管理
-- 電源管理の WDK ATA ポート ドライバー
+- ATA ポートドライバー WDK、電源管理
+- 電源管理 WDK ATA ポートドライバー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f546e74df025fd1829699539d492124b891c1cf0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 31d552f08e5f3d649d86f24cf232626386bb8bf2
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368418"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845104"
 ---
 # <a name="ata-port-drivers-power-management"></a>ATA ポート ドライバーの電源管理
 
@@ -20,14 +20,14 @@ ms.locfileid: "67368418"
 ## <span id="ddk_ata_port_drivers_power_management_kg"></span><span id="DDK_ATA_PORT_DRIVERS_POWER_MANAGEMENT_KG"></span>
 
 
-**注**ATA ポートはドライバーと ATA ミニポート ドライバー モデルが変更されるか利用今後します。 代わりに、使用をお勧め、 [Storport ドライバー](https://docs.microsoft.com/windows-hardware/drivers/storage/storport-driver)と[Storport ミニポート](https://docs.microsoft.com/windows-hardware/drivers/storage/storport-miniport-drivers)ドライバー モデル。
+**メモ**ATA ポートドライバーと ATA ミニポートドライバーのモデルは、将来変更されるか、使用できなくなる可能性があります。 代わりに、 [storport ドライバー](https://docs.microsoft.com/windows-hardware/drivers/storage/storport-driver)および[storport ミニポート](https://docs.microsoft.com/windows-hardware/drivers/storage/storport-miniport-drivers)ドライバーモデルを使用することをお勧めします。
 
 
-ATA のポート ドライバーでは、個々 の LUN または個々 のチャネルで電源の状態を変更するミニポート ドライバーを使用します。 LUN の電源の状態を変更する ATA ポート ドライバーに送信、IRB IRB の関数値を持つ\_関数\_POWER\_デバイス ドライバーに変更します。 **PowerChange** IRB のメンバーは、現在を示します。 電源の状態を対象とします。 全体のチャンネルでは、ポート ドライバーの呼び出しの電源状態を変更する、 [ **IdeHwControl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/irb/nc-irb-ide_hw_control)ミニポート ドライバー ルーチン。
+ATA ポートドライバーを使用すると、ミニポートドライバーで個々の LUN または個々のチャネルの電源状態を変更できます。 LUN の電源状態を変更するために、ATA ポートドライバーは IRB\_関数の関数値を使用して IRB を送信し\_電源\_デバイスドライバーに変更します。 IRB の**Powerchange**メンバーは、現在の電源状態とターゲットの電源状態を示します。 チャネル全体の電源状態を変更するために、ポートドライバーは[**IdeHwControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/irb/nc-irb-ide_hw_control)ミニポートドライバールーチンを呼び出します。
 
-呼び出すことによって、ミニポート ドライバーが電源の状態遷移を開始できます[ **AtaPortRequestPowerStateChange**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/irb/nf-irb-ataportrequestpowerstatechange)します。 ミニポート ドライバーでは、後に、IDE デバイスのホット プラグでは、このルーチンを呼び出すことができます。
+ミニポートドライバーは、 [**AtaPortRequestPowerStateChange**](https://docs.microsoft.com/windows-hardware/drivers/ddi/irb/nf-irb-ataportrequestpowerstatechange)を呼び出すことによって電源状態の移行を開始できます。 ミニポートドライバーは、たとえば IDE デバイスのホットプラグの後に、このルーチンを呼び出す場合があります。
 
-ミニポート ドライバーからのアイドル状態の検出を行うことはお勧めします。
+ミニポートドライバーからアイドル状態の検出を行うことは推奨されません。
 
  
 

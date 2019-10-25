@@ -1,27 +1,27 @@
 ---
 title: GUID_NDIS_GEN_ENUMERATE_PORTS
-description: このトピックでは、NDIS WMI インターフェイスの GUID を GUID_NDIS_GEN_ENUMERATE_PORTS について説明します。
+description: このトピックでは、NDIS WMI インターフェイスの GUID_NDIS_GEN_ENUMERATE_PORTS GUID について説明します。
 ms.assetid: c7572ff2-c9e1-4605-9768-b14636ce007f
 keywords:
-- GUID_NDIS_GEN_ENUMERATE_PORTS、WDK GUID_NDIS_GEN_ENUMERATE_PORTS ネットワーク ドライバー
+- GUID_NDIS_GEN_ENUMERATE_PORTS、WDK GUID_NDIS_GEN_ENUMERATE_PORTS ネットワークドライバー
 ms.date: 11/22/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a2fddf9920673bb462b025d8d3f1c234d17568b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 41f20b3ca8a4d773e90663730f1f8d1602b7983e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382742"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842178"
 ---
-# <a name="guidndisgenenumerateports"></a>GUID_NDIS_GEN_ENUMERATE_PORTS
+# <a name="guid_ndis_gen_enumerate_ports"></a>GUID_NDIS_GEN_ENUMERATE_PORTS
 
-WMI クライアントでは、ミニポート アダプターに関連付けられているポートの一覧を取得するのに GUID GUID_NDIS_GEN_ENUMERATE_PORTS メソッドを使用できます。 この WMI GUID は、NDIS 6.0 および以降のバージョンでサポートされます。
+WMI クライアントは、GUID_NDIS_GEN_ENUMERATE_PORTS メソッド GUID を使用して、ミニポートアダプターに関連付けられているポートの一覧を取得できます。 この WMI GUID は、NDIS 6.0 以降のバージョンでサポートされています。
 
-NDIS は、この要求を処理し、ミニポート ドライバーが、OID クエリを受信しません。
+NDIS はこの要求を処理し、ミニポートドライバーは OID クエリを受け取りません。
 
-GUID_NDIS_GEN_ENUMERATE_PORTS には、ポートを列挙する WMI メソッド要求が必要です。 WMI のメソッド識別子には、NDIS_WMI_DEFAULT_METHOD_ID 必要があります。 WMI の入力バッファーに格納する必要があります、 [NDIS_WMI_METHOD_HEADER](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_wmi_method_header)ミニポート アダプタに対して NDIS ネットワーク インターフェイスの名前を識別する構造体、 **NetLuid**メンバーとする、0 を指定します、**PortNumber**メンバー。 WMI クライアントが取得できる、 **NetLuid**のアダプターの値、 [GUID_NDIS_ENUMERATE_ADAPTERS_EX](guid-ndis-enumerate-adapters-ex.md)メソッド GUID。
+GUID_NDIS_GEN_ENUMERATE_PORTS には、ポートを列挙するための WMI メソッド要求が必要です。 WMI メソッド識別子は NDIS_WMI_DEFAULT_METHOD_ID にする必要があります。 WMI 入力バッファーには、 **Netluid**メンバーのミニポートアダプターの NDIS ネットワークインターフェイス名を識別する[NDIS_WMI_METHOD_HEADER](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_wmi_method_header)構造体が含まれている必要があります。これ**は、ポート番号メンバーに**ゼロを指定します。 WMI クライアントは、 [GUID_NDIS_ENUMERATE_ADAPTERS_EX](guid-ndis-enumerate-adapters-ex.md)メソッド GUID を使用して、アダプターの**netluid**値を取得できます。
 
-GUID を持つ NDIS が返すデータ バッファーを含む、 [NDIS_PORT_ARRAY](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_port_array)構造体。 **NumberOfPorts** NDIS_PORT_ARRAY のメンバーには、ミニポート アダプターに関連付けられているアクティブなポートの数が含まれています。 **ポート**NDIS_PORT_ARRAY のメンバーにはへのポインターのリストが含まれています[NDIS_PORT_CHARACTERISTICS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_port_characteristics)構造体。 各 NDIS_PORT_CHARACTERISTICS 構造体は、1 つの NDIS ポートの特性を定義します。
+NDIS によって GUID と共に返されるデータバッファーには、 [NDIS_PORT_ARRAY](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_port_array)構造体が含まれています。 NDIS_PORT_ARRAY の**Numberofports**メンバーには、ミニポートアダプターに関連付けられているアクティブなポートの数が含まれています。 NDIS_PORT_ARRAY の**Ports**メンバーには、 [NDIS_PORT_CHARACTERISTICS](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_port_characteristics)構造体へのポインターの一覧が含まれています。 各 NDIS_PORT_CHARACTERISTICS 構造体は、1つの NDIS ポートの特性を定義します。
 
-ポートの列挙の詳細については、次を参照してください。 [OID_GEN_ENUMERATE_PORTS](oid-gen-enumerate-ports.md)します。
+ポートの列挙の詳細については、「 [OID_GEN_ENUMERATE_PORTS](oid-gen-enumerate-ports.md)」を参照してください。
 

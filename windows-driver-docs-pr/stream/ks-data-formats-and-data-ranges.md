@@ -3,26 +3,26 @@ title: KS のデータ形式とデータ範囲
 description: KS のデータ形式とデータ範囲
 ms.assetid: 44b55a5a-ec58-4c1e-b780-e20829fe3edf
 keywords:
-- ストリーミング データ形式の WDK カーネル
-- ストリーミング形式の WDK カーネル
-- WDK のカーネルがストリームの範囲します。
-- ストリーミング データ範囲の WDK カーネル
-- KS データ形式の WDK カーネルのストリーミング
-- KS データ範囲 WDK カーネル ストリーミング
-- KSDATARANGE
+- データ形式 WDK カーネルストリーミング
+- WDK カーネルストリーミングの形式
+- WDK カーネルストリーミングの範囲
+- データ範囲 WDK カーネルストリーミング
+- KS データ形式 WDK カーネルストリーミング
+- KS データ範囲 WDK カーネルストリーミング
+- KSDATARANGE 場合
 - KSDATAFORMAT
-- カーネルの WDK、データ範囲のストリーミング
-- KS WDK、データの範囲
-- カーネルの WDK、データ形式のストリーミング
+- カーネルストリーミング WDK、データ範囲
+- KS WDK、データ範囲
+- カーネルストリーミング WDK、データ形式
 - KS WDK、データ形式
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 298a08b7027ea3a9a53698390d7a1563a67a9c49
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a986ffe5827f08b570ee18641d0991e323ae94ec
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382519"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842520"
 ---
 # <a name="ks-data-formats-and-data-ranges"></a>KS のデータ形式とデータ範囲
 
@@ -30,27 +30,27 @@ ms.locfileid: "67382519"
 
 
 
-KS ピン指定データ形式し、範囲を使用して、 [ **KSDATAFORMAT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksdataformat)と[ **KSDATARANGE** ](https://docs.microsoft.com/previous-versions/ff561658(v=vs.85))構造体。 データの形式では、データ ストリーム、16 ビットのオーディオのサンプリング サイズなどの単一の属性を指定します。 データ範囲を指定します、複数の形式などのオーディオ サンプリング 16 ~ 24 ビットの範囲。
+KS ピンは、 [**KSDATAFORMAT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksdataformat)構造体と[**ksk datar構造**](https://docs.microsoft.com/previous-versions/ff561658(v=vs.85))体を使用して、データ形式と範囲を指定します。 データ形式は、データストリームの1つの属性を指定します。たとえば、オーディオサンプリングサイズは16ビットです。 データ範囲では、16-24 ビットのオーディオサンプリング範囲など、複数の形式を指定します。
 
-ミニドライバーが各 KSDATARANGE 構造体の配列を含む[ **KSPIN\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kspin_descriptor)が提供する構造体。 Microsoft 提供の形式で列挙*ksmedia.h*します。
+ミニドライバーには、提供されている各[**Kspin\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-kspin_descriptor)構造体の ksk datarの構造体の配列が含まれています。 Microsoft が提供する形式は、 *ksmedia. h*で列挙されます。
 
-KSDATARANGE 構造が KSDATAFORMAT 構造体と同じメンバーただし、ミニドライバーは KSDATARANGE の主要な形式、サブフォーマット、および指定子のメンバーのワイルドカード値を指定できます。
+KSK DATARの構造体には、KSDATAFORMAT 構造体と同じメンバーがあります。ただし、ミニドライバーでは、KSDATARANGE メジャー形式、サブフォーマット、および指定子のメンバーに対してワイルドカード値を指定できます。
 
-ミニドライバーでは、これらの構造の拡張のバージョンを使用して、メディア固有の値を定義します。 オーディオおよびビデオのキャプチャのしくみについてを参照してください。[オーディオ データ形式とデータ範囲](https://docs.microsoft.com/windows-hardware/drivers/audio/audio-data-formats-and-data-ranges)と[Stream の形式を選択する](selecting-a-stream-format.md)します。
+ミニドライバーでは、これらの構造の拡張バージョンを使用してメディア固有の値を定義します。 オーディオとビデオのキャプチャのしくみについては、「[オーディオデータ形式とデータ範囲](https://docs.microsoft.com/windows-hardware/drivers/audio/audio-data-formats-and-data-ranges)」および「[ストリーム形式の選択](selecting-a-stream-format.md)」を参照してください。
 
-クライアントは、クエリのフィルターをピン留めする指定されたファクトリでインスタンス化される pin のデータ形式のサポートを次のプロパティを使用します。
+クライアントは次のプロパティを使用して、フィルターの特定のピンファクトリによってインスタンス化された pin のデータ形式のサポートを照会します。
 
--   [**KSPROPERTY\_PIN\_DATARANGES**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-pin-dataranges)します。 KS フィルターは、pin の pin ファクトリによってインスタンス化でサポートされているすべてのデータ範囲を報告します。 これには、ピン留めできるすべてのデータ形式が含まれます*これまで*をサポートします。
+-   [**Ksk プロパティ\_ピン\_DATARANGES**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-pin-dataranges)です。 KS フィルターは、ピンファクトリによってインスタンス化されたピンでサポートされるすべてのデータ範囲を報告します。 これ*には、pin がサポートできる*すべてのデータ形式が含まれます。
 
--   [**KSPROPERTY\_PIN\_CONSTRAINEDDATARANGES**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-pin-constraineddataranges)します。 KS フィルターは、ピンの現在のドライバーの内部状態を暗証番号 (pin) ファクトリによってインスタンス化でサポートされているすべてのデータ範囲を報告します。
+-   [**Ksk プロパティ\_ピン\_CONSTRAINEDDATARANGES**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-pin-constraineddataranges)です。 KS フィルターは、現在の内部ドライバーの状態を指定して、ピンファクトリによってインスタンス化されたピンでサポートされるすべてのデータ範囲を報告します。
 
--   [**KSPROPERTY\_PIN\_PROPOSEDATAFORMAT**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-pin-proposedataformat)します。 クライアントは、pin の pin ファクトリによってインスタンス化、特定のデータ形式をサポートする場合、クエリには、このプロパティを使用できます。
+-   [**Ksk プロパティ\_ピン\_PROPOSEDATAFORMAT**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-pin-proposedataformat)です。 クライアントはこのプロパティを使用して、pin ファクトリによってインスタンス化された pin が特定のデータ形式をサポートしているかどうかを照会できます。
 
--   [**KSPROPERTY\_PIN\_DATAINTERSECTION**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-pin-dataintersection)します。 クライアントは、このプロパティを使用して、さまざまなデータ形式を提供することができます。
+-   [**Ksk プロパティ\_ピン\_DATAINTERSECTION 集合**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-pin-dataintersection)です。 クライアントはこのプロパティを使用して、さまざまなデータ形式を提供できます。
 
-現在のデータが書式設定や、を通じてデータ形式の変更を要求、ユーザー モードのクライアントで確認できます、暗証番号 (pin) がインスタンス化されると[KSPROPSETID\_接続](https://docs.microsoft.com/windows-hardware/drivers/stream/kspropsetid-connection)プロパティ要求。 たとえば、クライアントを使用して[ **KSPROPERTY\_接続\_PROPOSEDATAFORMAT** ](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-connection-proposedataformat) pin が特定のデータ形式をサポートしているかを判断します。 クライアントを使用して[ **KSPROPERTY\_接続\_DATAFORMAT** ](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-connection-dataformat)データ形式を変更します。
+Pin がインスタンス化されると、ユーザーモードクライアントは、現在のデータ形式を判断したり、 [Ksk Propsetid\_接続](https://docs.microsoft.com/windows-hardware/drivers/stream/kspropsetid-connection)プロパティ要求を使用してデータ形式の変更を要求したりすることができます。 たとえば、クライアントは、 [**Ksk プロパティ\_接続\_PROPOSEDATAFORMAT**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-connection-proposedataformat)を使用して、pin が特定のデータ形式をサポートしているかどうかを判断します。 クライアントは、 [**DATAFORMAT\_接続に Ksk プロパティ**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-connection-dataformat)を使用してデータ形式を変更\_ます。
 
-KS ミニドライバーとクライアントでは、データ形式に動的にネゴシエートできます。 ストリームのデータ形式が変更されたときに、ミニドライバーは、KSSTREAM を指定\_ヘッダー\_OPTIONSF\_DATADISCONTINUITY フラグ、 **OptionsFlags** 、KSSTREAM のメンバー\_ヘッダー。 ミニドライバーは、新しいデータ自体で説明する形式を渡します、 [ **KSDATAFORMAT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksdataformat)対応するデータ バッファー内の構造体。
+KS ミニドライバーとクライアントは、データ形式を動的にネゴシエートできます。 ストリームのデータ形式が変更された場合、ミニドライバーは、KSK ストリームの\_ヘッダーの**Optionsflags**メンバー内の\_optionsf\_datadiscontinuity フラグを指定して、ksk ストリーム\_ヘッダーを指定します。 ミニドライバーは、 [**KSDATAFORMAT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksdataformat)構造体で記述された新しいデータ形式を、対応するデータバッファーに渡します。
 
  
 

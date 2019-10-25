@@ -3,36 +3,36 @@ title: ATA ポート ドライバーのリセット メカニズム
 description: ATA ポート ドライバーのリセット メカニズム
 ms.assetid: adc27819-d1ae-4b97-8109-5d742c0595d3
 keywords:
-- ATA ポート ドライバー WDK、メカニズムをリセットします。
-- WDK ATA ポート ドライバーのメカニズムをリセットします。
-- LUN は、WDK ATA ポート ドライバーをリセットします。
+- ATA ポートドライバー WDK、リセットメカニズム
+- メカニズムのリセット WDK ATA ポートドライバー
+- LUN が WDK ATA ポートドライバーをリセットする
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e589f8b1b3cc51f60c515f3e612192797575fbe
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 37df2d3374bb4600a8504427c0bcb3ed14ec2c28
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368397"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845098"
 ---
 # <a name="ata-port-drivers-reset-mechanism"></a>ATA ポート ドライバーのリセット メカニズム
 
 
 ## <span id="ddk_ata_port_drivers_reset_mechanism_kg"></span><span id="DDK_ATA_PORT_DRIVERS_RESET_MECHANISM_KG"></span>
 
-**注**ATA ポートはドライバーと ATA ミニポート ドライバー モデルが変更されるか利用今後します。 代わりに、使用をお勧め、 [Storport ドライバー](https://docs.microsoft.com/windows-hardware/drivers/storage/storport-driver)と[Storport ミニポート](https://docs.microsoft.com/windows-hardware/drivers/storage/storport-miniport-drivers)ドライバー モデル。
+**メモ**ATA ポートドライバーと ATA ミニポートドライバーのモデルは、将来変更されるか、使用できなくなる可能性があります。 代わりに、 [storport ドライバー](https://docs.microsoft.com/windows-hardware/drivers/storage/storport-driver)および[storport ミニポート](https://docs.microsoft.com/windows-hardware/drivers/storage/storport-miniport-drivers)ドライバーモデルを使用することをお勧めします。
 
 
 
-ATA のポート ドライバーでは、いくつかの点で、Storport ドライバーのリセットのメカニズムのような 2 階層のリセットのメカニズムをサポートします。 詳細については、Storport のリセットのメカニズムを参照してください。 [Storport の多層をリセット](multi-tier-reset-in-storport.md)します。
+ATA ポートドライバーは、Storport ドライバーのリセットメカニズムと同様の点で、2層リセットメカニズムをサポートしています。 Storport リセットメカニズムの詳細については、「 [storport での多層リセット](multi-tier-reset-in-storport.md)」を参照してください。
 
-Storport ドライバーと SCSI ポート ドライバーとは異なり、ATA ポート ドライバーは、可能な限り全体のバスのリセットを回避します。 ATA ポート ドライバーが最初に、IRB を IRB の関数値を使用して個々 の LUN をリセットしようと\_関数\_LUN\_をリセットします。 リセットに失敗した場合、ATA ポート ドライバーは、全体のバスをリセットします。
+SCSI ポートドライバーとは異なり、Storport ドライバーと同様に、ATA ポートドライバーは、可能な限りバス全体をリセットすることを回避します。 ATA ポートドライバーは、最初に個々の LUN をリセットしようとします。これは、関数の値が IRB\_関数\_LUN\_リセットされます。 リセットが失敗した場合、ATA ポートドライバーはバス全体をリセットします。
 
-たとえば、ATA ポート ドライバーの問題を IRB LUN の未完了の要求の 1 つがタイムアウトした後に、LUN をリセットするとします。この LUN のリセットに応答してでは、ミニポート ドライバーは、ハードウェアがサポートしているとリセット IRB を含む LUN 上のすべての未処理要求が完了する場合に、デバイスのリセット操作を実行します。 リセット IRB はありませんがタイムアウトしました。 そのため追加の要求は発行されません、LUN に、ミニポート ドライバーが IRB リセットが完了しない場合。
+たとえば、LUN の未完了の要求の1つがタイムアウトした後に、ATA ポートドライバーが LUN をリセットする IRB を発行するとします。この LUN のリセットに応答して、ミニポートドライバーはデバイスのリセット操作を実行します。ハードウェアがこの操作をサポートしている場合は、リセット IRB を含めて、LUN 上のすべての未処理の要求を完了します。 リセット IRB は、タイムアウトしません。 そのため、ミニポートドライバーがリセット IRB を完了しないと、追加の要求は LUN に発行されません。
 
-ミニポート ドライバー IRB リセットに失敗した場合 (つまり、IRB IRB 以外のすべての状態のリセットが完了した\_状態\_成功)、ATA ポート ドライバー呼び出し、ミニポート ドライバーの[ **IdeHwReset**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/irb/nc-irb-ide_hw_reset)ルーチン全体のチャネルをリセットします。 ミニポート ドライバーはそのチャネルの未処理のすべての要求を完了する必要がありますし、そのチャネルに関連付けられているデバイスをリセットするハードウェア上で必要な操作を実行します。
+ミニポートドライバーがリセット IRB に失敗した場合 (つまり、IRB\_STATUS\_SUCCESS) 以外の状態のリセット IRB を完了した場合、ATA ポートドライバーはミニポートドライバーの[**IdeHwReset**](https://docs.microsoft.com/windows-hardware/drivers/ddi/irb/nc-irb-ide_hw_reset)ルーチンを呼び出して、チャネル全体をリセットします。 その後、ミニポートドライバーは、そのチャネルに対する未処理の要求をすべて完了し、ハードウェアに対して必要な操作を実行して、そのチャネルに接続されているデバイスをリセットする必要があります。
 
-ATA ポート ドライバーは、複数の Lun がデバイスのターゲットのリセットをサポートしていません。
+ATA ポートドライバーでは、複数の Lun を持つデバイスのターゲットリセットはサポートされていません。
 
  
 

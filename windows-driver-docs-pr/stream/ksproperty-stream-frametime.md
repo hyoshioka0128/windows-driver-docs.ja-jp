@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_ストリーム\_FRAMETIME
-description: KSPROPERTY\_ストリーム\_FRAMETIME プロパティにより、クライアントは、特定のメディア ストリームに基づいて次のフレームの継続時間を特定して、手順フレームにその情報を使用するシーケンス。
+title: KSK プロパティ\_ストリーム\_フレーム時間
+description: KSK プロパティ\_STREAM\_フレーム時間プロパティを使用すると、クライアントは、特定のメディアストリームに基づいて次のフレームの期間を決定し、その情報を使用してシーケンスをステップ実行できます。
 ms.assetid: 0cc218eb-1f21-4b45-ac48-b3e308bddfaf
 keywords:
-- KSPROPERTY_STREAM_FRAMETIME ストリーミング メディア デバイス
+- KSPROPERTY_STREAM_FRAMETIME ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 27eb5f123ede1ad818af6eac4e1ccc9219ed4554
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f9fa43c57d583adf441c220dd5be40818d42afa5
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67376354"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844956"
 ---
-# <a name="kspropertystreamframetime"></a>KSPROPERTY\_ストリーム\_FRAMETIME
+# <a name="ksproperty_stream_frametime"></a>KSK プロパティ\_ストリーム\_フレーム時間
 
 
-KSPROPERTY\_ストリーム\_FRAMETIME プロパティにより、クライアントは、特定のメディア ストリームに基づいて次のフレームの継続時間を特定して、手順フレームにその情報を使用するシーケンス。
+KSK プロパティ\_STREAM\_フレーム時間プロパティを使用すると、クライアントは、特定のメディアストリームに基づいて次のフレームの期間を決定し、その情報を使用してシーケンスをステップ実行できます。
 
 ## <span id="ddk_ksproperty_stream_frametime_ks"></span><span id="DDK_KSPROPERTY_STREAM_FRAMETIME_KS"></span>
 
@@ -41,7 +41,7 @@ KSPROPERTY\_ストリーム\_FRAMETIME プロパティにより、クライア�
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,11 +50,11 @@ KSPROPERTY\_ストリーム\_FRAMETIME プロパティにより、クライア�
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>いいえ</p></td>
+<td><p>[はい]</p></td>
+<td><p>必須ではない</p></td>
 <td><p>Pin</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksframetime" data-raw-source="[&lt;strong&gt;KSFRAMETIME&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksframetime)"><strong>KSFRAMETIME</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksframetime" data-raw-source="[&lt;strong&gt;KSFRAMETIME&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksframetime)"><strong>KSフレーム時間</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -64,13 +64,13 @@ KSPROPERTY\_ストリーム\_FRAMETIME プロパティにより、クライア�
 <a name="remarks"></a>注釈
 -------
 
-KSPROPERTY\_ストリーム\_FRAMETIME は pin が転送には、メディアの種類の詳細を認識しない場合に実装される省略可能なプロパティです。
+KSK プロパティ\_ストリーム\_フレーム時間は、転送するメディアの種類の詳細を pin が認識する場合に実装する必要があるオプションのプロパティです。
 
-プロパティは、レンダリング pin ではサポートされてし、データおよびそのフレームに関連付けられているすべてのフラグの次のフレームの継続時間を返すために使用します。 フレームは、一般に、データを分割する最小使用可能な単位です。 ビデオ ストリーム、ビデオのフレームまたはフィールドがあります。 オーディオ ストリーム内の各チャンネル用のサンプルになります。 MIDI の [次へ]、MIDI イベントになります。
+プロパティは、レンダリングピンによってサポートされており、次のデータフレームの期間と、そのフレームに関連付けられているフラグを返すために使用されます。 フレームは通常、データを分割できる最小の使用可能な単位です。 ビデオストリームの場合、これはビデオフレームまたはフィールドである可能性があります。 オーディオの場合は、ストリーム内の各チャネルのサンプルになります。 MIDI の場合、これは次の MIDI イベントになります。
 
-期間は、暗証番号 (pin) によって提供されるプレゼンテーション時間単位で測定されます。 これは、インターフェイスとプレゼンテーション時間で使用される分子と分母のペアに依存します。 これは、汎用のファイル リーダーなどの任意のメディアの種類に対応でないストリームには適用されません。
+この期間は、pin によって提供されるプレゼンテーション時間単位の観点から測定されます。 これは、インターフェイスと、プレゼンテーション時に使用される分子と分母のペアに依存します。 これは、汎用ファイルリーダーなど、特定のメディアの種類に向いていないストリームには適用されません。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -81,7 +81,7 @@ KSPROPERTY\_ストリーム\_FRAMETIME は pin が転送には、メディアの
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Ks.h (Ks.h を含む)</td>
+<td>Ks (Ks を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -89,9 +89,9 @@ KSPROPERTY\_ストリーム\_FRAMETIME は pin が転送には、メディアの
 ## <a name="see-also"></a>関連項目
 
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
-[**KSFRAMETIME**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksframetime)
+[**KSフレーム時間**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksframetime)
 
  
 

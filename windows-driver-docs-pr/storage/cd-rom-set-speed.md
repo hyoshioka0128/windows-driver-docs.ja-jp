@@ -4,39 +4,39 @@ description: CD-ROM 設定速度
 ms.assetid: 25a46b23-f823-4fc7-a370-cab1c9418a94
 keywords:
 - CD-ROM ドライバー WDK ストレージ
-- CD-ROM のストレージ ドライバー WDK
+- 記憶域 CD-ROM ドライバー WDK
 - 電源管理 WDK CD-ROM
-- 速度の WDK CD-ROM
-- バッテリ電源 WDK CD-ROM
-- WDK の CD-ROM の再生速度
+- WDK の高速 CD-ROM
+- バッテリ電源 (WDK) cd-rom
+- 再生速度 WDK CD-ROM
 - スピンドル速度 WDK CD-ROM
-- CD のスピードをセット
-- ストリーミングの設定します。
+- CD 速度の設定
+- ストリーミングの設定
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 527cbf2b02a93ad47a3f32ca76ec4d1dcf1ad615
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 88eccaddae806250717a2975a984c857185ca6d6
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368341"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841626"
 ---
 # <a name="cd-rom-set-speed"></a>CD-ROM 設定速度
 
 
-多くの場合、Cd を CD-ROM ドライブができる最適なスピンドル速度よりも小さい速度で回転すると便利です。 たとえば、ポータブル コンピューターで高速で回転 CD-ROM ドライブ、バッテリーの消耗非常に高速です。 CD-ROM ドライブは、バッテリ電源を節約するために低速に設定できます。
+多くの場合、CD-ROM ドライブで使用できる最適なスピンドル速度よりも速い速度で Cd をスピンすると便利です。 たとえば、ポータブルコンピューターでは、高速で高速に動作する CD-ROM ドライブを使用すると、バッテリが非常に高速に消費されます。 バッテリ電源を節約するために、CD-ROM ドライブを低速に設定することができます。
 
-一部のコンピューターでは、高速で動作を CD-ROM ドライブは必要ありません。 たとえば、media center コンピューターの CD-ROM ドライブでは、主に 1 X 上の速度を必要としないオーディオ再生をなどの操作を実行します。 CD-ROM ドライブに、スピン、たとえば、再生中、16 X 1 X だけの速度が必要なときに生成できる不適切なユーザー エクスペリエンスにつながる大きな音です。
+コンピューターによっては、CD-ROM ドライブを高速で動作させる必要がない場合があります。 たとえば、media center コンピューターの CD-ROM ドライブは、主に、の速度を必要としない、オーディオ再生などの操作を実行します。 再生中にスピンアップする CD-ROM ドライブ (再生中に16X など) は、1倍の速度が必要な場合は、ユーザーエクスペリエンスが悪いことにつながる大きなノイズが発生する可能性があります。
 
-バージョン 2、 *scsi-3 マルチ メディア コマンド*(MMC) の仕様には、CD-ROM の速度を設定するための 2 つのコマンドが定義されています。CD 速度の設定し、ストリーミングに設定します。 Windows Vista でアプリケーションは、送信することによってこれら 2 つのコマンドのいずれかの問題に CD-ROM クラス ドライバーを指示できます、 [ **IOCTL\_CDROM\_設定\_速度**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddcdrm/ni-ntddcdrm-ioctl_cdrom_set_speed)クラスのドライバーに要求します。
+*SCSI 3 マルチメディアコマンド*(MMC) 仕様のバージョン2では、cd-rom の速度を設定するための2つのコマンド (cd 速度の設定とストリーミングの設定) が定義されています。 Windows Vista では、アプリケーションは CD-ROM クラスドライバーに対して、これら2つのコマンドのいずれかを発行するように指示することができます。これを行うには、 [ **\_CDROM\_\_SPEED**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddcdrm/ni-ntddcdrm-ioctl_cdrom_set_speed)要求をクラスドライバーに送信します。
 
-呼び出し元の要求の種類の指定に CD-ROM デバイスを CD 速度の設定コマンドを送信する**CdromSetSpeed**で、 **RequestType**のメンバー [ **CDROM\_設定\_速度**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddcdrm/ns-ntddcdrm-_cdrom_set_speed)、IOCTL への入力で\_CDROM\_設定\_速度。
+[CD SPEED\_の設定] コマンドを CD-ROM デバイスに送信するには、呼び出し元は、 **CdromSetSpeed**の**RequestType**メンバー内の要求の種類として[ **\_速度**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddcdrm/ns-ntddcdrm-_cdrom_set_speed)を指定します。これには、IOCTL\_CDROM\_設定\_速度を設定します。
 
-呼び出し元の要求の種類の指定をデバイスにストリーミング設定のコマンドを送信する**CdromSetStreaming**で、 **RequestType**のメンバー [ **CDROM\_設定\_ストリーミング**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddcdrm/ns-ntddcdrm-_cdrom_set_streaming)、IOCTL への入力で\_CDROM\_設定\_速度。
+SET STREAMING コマンドをデバイスに送信するために、呼び出し元は、 [ **\_ストリーミング\_設定**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddcdrm/ns-ntddcdrm-_cdrom_set_streaming)されている Cd-rom の**RequestType** **メンバー内の**要求の種類を指定しています。これは、IOCTL\_cdrom\_set に入力し\_低速.
 
-アプリケーションでは、CD 速度の設定コマンドを使用して主軸速度を変更する場合、デバイスに自動的を返しますの既定の速度をメディアが変更されたときに。 アプリケーションでは、ストリーミング設定のコマンドを使用して主軸速度を変更する場合のメディアの変更には影響しません速度、呼び出し元の値を指定しない限り、 **FALSE**で、**持続**CD-ROM のメンバー\_設定\_ストリーミングの構造体。
+アプリケーションで [CD SPEED の設定] コマンドを使用してスピンドル速度を変更した場合、メディアが変更されると、デバイスは自動的に既定の速度に戻ります。 アプリケーションが、SET STREAMING コマンドを使用してスピンドル速度を変更した場合、呼び出し元が CDROM\_SET\_STREAMING 構造体の**永続**メンバーに**FALSE**の値を指定していない限り、メディアの変更は速度に影響しません。
 
-ストリーミング設定要求は、MMC 準拠のデバイスでのみ機能します。 アプリケーションでは、MMC 準拠でないデバイスにこの要求を送信する場合、CD-ROM クラス ドライバーには、要求は失敗します。
+SET STREAMING 要求は、MMC に準拠しているデバイスでのみ機能します。 アプリケーションが MMC に準拠していないデバイスにこの要求を送信した場合、CD-ROM クラスドライバーは要求を失敗させます。
 
  
 

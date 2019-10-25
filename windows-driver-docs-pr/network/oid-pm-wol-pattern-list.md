@@ -1,48 +1,48 @@
 ---
 title: OID_PM_WOL_PATTERN_LIST
-description: クエリとしてドライバーを重なって使用 OID_PM_WOL_PATTERN_LIST OID を列挙できます wake on LAN のパターンを基になるネットワーク アダプターに設定されています。
+description: クエリとして、これまでのドライバーは OID_PM_WOL_PATTERN_LIST OID を使用して、基になるネットワークアダプターに設定されている wake on LAN パターンを列挙できます。
 ms.assetid: 7e5a65d8-39ec-4624-aede-97df945ef5e5
 ms.date: 08/08/2017
-keywords: -OID_PM_WOL_PATTERN_LIST ネットワーク ドライバーが Windows Vista 以降
+keywords: -Windows Vista 以降の OID_PM_WOL_PATTERN_LIST ネットワークドライバー
 ms.localizationpriority: medium
-ms.openlocfilehash: 85fc196b3050aaf8dd20f7ce42d35003e418e254
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 83d61dbd692327cc649b3af3326cfb20e6687d5e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67373344"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844046"
 ---
-# <a name="oidpmwolpatternlist"></a>OID\_PM\_WOL\_パターン\_一覧
+# <a name="oid_pm_wol_pattern_list"></a>OID\_PM\_WOL\_パターン\_リスト
 
 
-クエリとしてドライバーを重なってできます OID を使用\_PM\_WOL\_パターン\_wake on LAN のパターンを基になるネットワーク アダプターに設定されているを列挙するリストの OID。 で、クエリから正常に戻った後、 **InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造に含まれる、一覧へのポインター [ **NDIS\_PM\_WOL\_パターン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_wol_pattern)現在追加 WOL パターンを記述する構造体。
+クエリとして、これまでのドライバーは OID\_PM\_WOL\_PATTERN\_LIST OID を使用して、基になるネットワークアダプターに設定されている wake on LAN パターンを列挙できます。 クエリから正常に戻った後、 [**ndis\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造の**informationbuffer**メンバーには、 [**NDIS\_PM\_\_WOL**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_wol_pattern)のリストへのポインターが含まれています。現在追加されている WOL パターン。
 
 <a name="remarks"></a>注釈
 -------
 
-NDIS は、ミニポート ドライバーにクエリを処理します。 NDIS ドライバーは、OID を使用できる\_PM\_WOL\_パターン\_基になるネットワーク アダプターに設定されているパターンに LAN でウェイク アップの一覧を取得する OID をリストします。
+NDIS はミニポートドライバーのクエリを処理します。 NDIS ドライバーでは、OID\_PM\_WOL\_PATTERN\_LIST OID を使用して、基になるネットワークアダプターに設定されている wake on LAN パターンの一覧を取得できます。
 
-各[ **NDIS\_PM\_WOL\_パターン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_wol_pattern) NDIS セットの一覧で構造体、 **NextWoLPatternOffset**メンバーをOID 情報バッファーの先頭からのオフセット (つまり、バッファーの先頭を**InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)へのポインターを構造体) を次の先頭に**NDIS\_PM\_WOL\_パターン**リスト内の構造。 内のオフセット、 **NextWoLPatternOffset**一覧の最後の構造体のメンバーは 0 になります。
+Ndis では、各[**ndis\_PM\_WOL\_パターン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_wol_pattern)構造について、 OID 情報バッファーの先頭からのオフセット (つまり、 **NextWoLPatternOffset メンバー) を設定します。** リスト内の次の**NDIS\_PM\_WOL\_パターン**構造の先頭に、 [**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造を指す) の informationbuffer メンバー。 リスト内の最後の構造体の**NextWoLPatternOffset**メンバーのオフセットが0です。
 
-内のオフセットを[ **NDIS\_PM\_WOL\_パターン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_wol_pattern)以外の構造体**NextWoLPatternOffset** (たとえば、 **NameBufferOffset**)、NDIS は、それぞれの先頭に相対的なオフセット**NDIS\_PM\_WOL\_パターン**構造体。
+Ndis\_PM のオフセットの場合、 **NextWoLPatternOffset**以外の[ **\_WOL\_パターン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_wol_pattern)構造 ( **namebufferoffset**など) では、ndis は各**ndis\_PM の先頭を基準とするオフセットを提供します。\_WOL\_パターン**構造です。
 
-ネットワーク アダプターに設定されている WOL パターンがない場合は、NDIS の設定、**データ。クエリ\_情報。BytesWritten**のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体をゼロを返す**NDIS\_の状態\_成功**要求。 内のデータ、**データ。クエリ\_INFORMATION.InformationBuffer** NDIS によってメンバーが変更されていません。
+ネットワークアダプターに WOL パターンが設定されていない場合、NDIS はデータを設定し**ます。クエリ\_情報。BytesWritten** OID のメンバーが[ **\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造体を0に指定し、要求の **\_成功を示す ndis\_ステータス**を返します。 データ内のデータ **。クエリ\_情報。 InformationBuffer**メンバーは、NDIS によって変更されていません。
 
-NDIS は、要求の次のステータス コードのいずれかを返します。
+NDIS は、要求に対して次のいずれかの状態コードを返します。
 
 <a href="" id="ndis-status-success"></a>NDIS\_状態\_成功  
-要求は正常に完了しました。 **InformationBuffer**存在する場合、WOL パターンの一覧へのポインターが含まれています。
+要求は正常に完了しました。 **Informationbuffer**には、WOL パターン (存在する場合) のリストへのポインターが含まれています。
 
-<a href="" id="ndis-status-pending"></a>NDIS\_状態\_PENDING  
-完了待ちになっています。 最終的な状態コードと結果は、呼び出し元の OID 要求完了ハンドラーに渡されるされます。
+<a href="" id="ndis-status-pending"></a>NDIS\_状態\_保留中  
+要求は完了待ちです。 最終的な状態コードと結果は、呼び出し元の OID 要求完了ハンドラーに渡されます。
 
-<a href="" id="ndis-status-buffer-too-short"></a>NDIS\_状態\_バッファー\_すぎます\_短い  
-情報バッファーが小さすぎます。 NDIS セット、**データ。クエリ\_情報。BytesNeeded** NDIS でメンバー\_OID\_構造体を最小バッファー サイズを要求が必要です。
+<a href="" id="ndis-status-buffer-too-short"></a>NDIS\_ステータス\_バッファー\_短すぎる\_  
+情報バッファーが短すぎます。 NDIS はデータを設定**します。クエリ\_情報。** 必要な最小バッファーサイズに対して、NDIS\_OID\_要求構造体のメンバーが必要です。
 
 <a href="" id="ndis-status-failure"></a>NDIS\_状態\_エラー  
-上記の理由以外の理由、要求が失敗しました。
+この要求は、上記の理由以外の理由で失敗しました。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -53,11 +53,11 @@ NDIS は、要求の次のステータス コードのいずれかを返しま�
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>以降では、NDIS 6.20 が動作をサポートします。 ミニポート ドライバーには要求されません。 (「解説」の「」を参照).</p></td>
+<td><p>NDIS 6.20 以降でサポートされています。 ミニポートドライバーが要求されていません。 (「解説」を参照してください。)</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Ntddndis.h (include Ndis.h)</td>
+<td>Ntddndis (Ndis .h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -65,15 +65,15 @@ NDIS は、要求の次のステータス コードのいずれかを返しま�
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
+[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)
 
-[**NDIS\_PM\_WOL\_パターン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_wol_pattern)
+[**NDIS\_PM\_WOL\_パターン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_wol_pattern)
 
-[OID\_PM\_追加\_WOL\_パターン](oid-pm-add-wol-pattern.md)
+[OID\_PM\_\_WOL\_パターンの追加](oid-pm-add-wol-pattern.md)
 
-[OID\_PM\_削除\_WOL\_パターン](oid-pm-remove-wol-pattern.md)
+[OID\_PM\_\_WOL\_パターンの削除](oid-pm-remove-wol-pattern.md)
 
-[OID\_PNP\_WAKE\_を\_パターン\_一覧](oid-pnp-wake-up-pattern-list.md)
+[OID\_PNP\_ウェイクアップ\_\_パターン\_一覧](oid-pnp-wake-up-pattern-list.md)
 
  
 

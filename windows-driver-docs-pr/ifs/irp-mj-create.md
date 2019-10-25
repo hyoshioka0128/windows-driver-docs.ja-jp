@@ -3,7 +3,7 @@ title: IRP_MJ_CREATE
 description: IRP\_MJ\_CREATE
 ms.assetid: fdcc81f0-e571-4194-88cd-d0956ca1577e
 keywords:
-- Irp_mj_create 用インストール可能なファイル システム ドライバー
+- IRP_MJ_CREATE インストール可能なファイルシステムドライバー
 topic_type:
 - apiref
 api_name:
@@ -12,88 +12,88 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d4831e1e42e874eb3741b25bc42a956fa9ca1b46
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 52d4e6bed0438b5d3627a11f59f721cb07b8e508
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67376090"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841180"
 ---
-# <a name="irpmjcreate"></a>IRP\_MJ\_CREATE
+# <a name="irp_mj_create"></a>IRP\_MJ\_CREATE
 
 
 ## <a name="when-sent"></a>送信時
 
 
-I/O マネージャー送信 IRP\_MJ\_とき新しいファイルまたはディレクトリを作成中、またはデバイス、ディレクトリ、またはボリュームが開かれるときに、既存のファイル要求の作成。 通常この IRP をなど、Microsoft Win32 関数を呼び出すがユーザー モード アプリケーションに代わって送信[ **CreateFile** ](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-createfilea)またはカーネル モード コンポーネントと呼ばれるに代わって[ **IoCreateFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatefile)、 [ **IoCreateFileSpecifyDeviceObjectHint**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-iocreatefilespecifydeviceobjecthint)、 [ **ZwCreateFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntcreatefile)、または[ **ZwOpenFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntopenfile)します。 作成要求が正常に完了すると、アプリケーションまたはカーネル モード コンポーネントでは、ファイル オブジェクトを識別するハンドルが受け取ります。
+I/o マネージャーは、新しいファイルまたはディレクトリが作成されているとき、または既存のファイル、デバイス、ディレクトリ、またはボリュームが開かれているときに、IRP\_MJ\_CREATE 要求を送信します。 通常、この IRP は、 [**CreateFile**](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-createfilea)などの Microsoft Win32 関数を呼び出したユーザーモードアプリケーションの代わりに、または[**iocreatefile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatefile)、 [**iocreatefilを**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-iocreatefilespecifydeviceobjecthint)呼び出したカーネルモードコンポーネントの代わりに送信されます。、 [**Zwcreatefile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntcreatefile)、または[**zwcreatefile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntopenfile)。 作成要求が正常に完了した場合、アプリケーションまたはカーネルモードコンポーネントは、ファイルオブジェクトへのハンドルを受け取ります。
 
-## <a name="operation-file-system-drivers"></a>操作:ファイル システム ドライバー
-
-
-ターゲット デバイス オブジェクトが、ファイル システムの制御デバイス オブジェクトの場合は、ファイル システム ドライバーのディスパッチ ルーチンする必要があります IRP を完了して、設定後、適切な NTSTATUS 値を返す*Irp -&gt;IoStatus.Status* *Irp -&gt;IoStatus.Information*適切な値にします。
-
-それ以外の場合、ファイル システム ドライバーは、作成要求を処理する必要があります。
-
-## <a name="operation-file-system-filter-drivers"></a>操作:ファイル システム フィルター ドライバー
+## <a name="operation-file-system-drivers"></a>操作: ファイルシステムドライバー
 
 
-フィルター ドライバーのディスパッチ ルーチンする必要があります IRP を完了して、設定後、適切な NTSTATUS 値を返す対象のデバイス オブジェクトが、フィルター ドライバーの制御デバイス オブジェクトの場合は、 *Irp -&gt;IoStatus.Status*と*Irp -&gt;IoStatus.Information*適切な値にします。
+ターゲットデバイスオブジェクトがファイルシステムのコントロールデバイスオブジェクトである場合、 *irp&gt;IoStatus. Status*および*irp-&gt;を設定した後に、ファイルシステムドライバーのディスパッチルーチンが irp を完了し、適切な NTSTATUS 値を返す必要があります。IoStatus. 情報*に適切な値を指定します。
 
-それ以外の場合、フィルター ドライバーを必要な処理を実行し、フィルターの性質、によって IRP を完了するか、またはスタック上の次の下位ドライバーに渡します。
+それ以外の場合、ファイルシステムドライバーは作成要求を処理する必要があります。
 
-一般に、フィルター ドライバーは返されません**状態\_PENDING**への応答で**IRP\_MJ\_作成**です。 ただし、下位レベルのドライバーを返す場合**状態\_PENDING**、フィルター ドライバーがドライバーのチェーンには、この状態値を渡す必要があります。
+## <a name="operation-file-system-filter-drivers"></a>操作: ファイルシステムフィルタードライバー
 
-ファイル システム フィルター ドライバー開発者が注意を[ **IoCreateStreamFileObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-iocreatestreamfileobject)により、 [ **IRP\_MJ\_クリーンアップ**](irp-mj-cleanup.md)ボリュームのファイル システム ドライバー スタックに送信される要求。 ファイル システム多くの場合、オブジェクトを作成ストリーム ファイルの操作の副作用として以外のため、 **IRP\_MJ\_作成**ストリームのファイル オブジェクトの作成を確実に検出するために、フィルター ドライバーに対することは困難です。 フィルター ドライバーを受信することはそのため**IRP\_MJ\_クリーンアップ**と[**IRP\_MJ\_閉じる**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-close)未知のファイル オブジェクトを要求します。 場合に[**IoCreateStreamFileObjectLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-iocreatestreamfileobjectlite)、 **IRP\_MJ\_クリーンアップ**要求は送信されません。
 
-&gt; \[!注\]&gt;とレガシ フィルター ドライバーを再実行の作成 をコールバックを作成後、リリースしに、再解析ポイント (補助バッファー) に関連付けられているバッファーを設定する必要がありますが**NULL**します。 レガシ フィルター ドライバーのこのバッファーを解放しに設定はないかどうか**NULL**ドライバーのメモリがリークします。 ミニフィルター ドライバーは、フィルター マネージャーでは、これはそれらのため、このようにする必要はありません。
+ターゲットデバイスオブジェクトがフィルタードライバーのコントロールデバイスオブジェクトである場合、 *irp&gt;iostatus. Status*および*irp-&gt;を設定した後、フィルタードライバーのディスパッチルーチンが irp を完了し、適切な NTSTATUS 値を返す必要があります。IoStatus. 情報*に適切な値を指定します。
+
+それ以外の場合、フィルタードライバーは必要な処理を実行し、フィルターの性質に応じて、IRP を完了するか、スタック上の次の下位のドライバーに渡します。
+
+一般に、フィルタードライバーは、 **IRP\_MJ\_CREATE**に応答して、**状態\_PENDING**を返さないようにする必要があります。 ただし、下位レベルのドライバーから**status\_PENDING**が返された場合、フィルタードライバーはこの状態の値をドライバーチェーンに渡す必要があります。
+
+ファイルシステムフィルタードライバーの作成者は、 [**Iocreatestreamfileobject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iocreatestreamfileobject)によって[**IRP\_MJ\_クリーンアップ**](irp-mj-cleanup.md)要求がボリュームのファイルシステムドライバースタックに送信されることに注意してください。 ファイルシステムは、 **IRP\_MJ\_create**以外の操作の副作用としてストリームファイルオブジェクトを作成することが多いため、フィルタードライバーがストリームファイルオブジェクトの作成を確実に検出することは困難です。 したがって、フィルタードライバーは、以前に表示されていないファイルオブジェクトに対して、 **irp\_MJ\_CLEANUP**および[**IRP\_\_MJ**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-close)を受け取ることを予期しています。 [**IocreatestreamfileMJ Tlite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iocreatestreamfileobjectlite)の場合、 **IRP\_\_クリーンアップ**要求は送信されません。
+
+&gt; \[!注\] &gt; レガシフィルタードライバーが作成後のコールバックで作成を再発行するときは、その再解析ポイント (補助バッファー) に関連付けられているバッファーを**NULL**に設定する必要があります。 レガシフィルタードライバーがこのバッファーを解放せず、 **NULL**に設定した場合、ドライバーはメモリをリークします。 フィルタマネージャはこれを実行するため、ミニフィルタドライバはこれを行う必要はありません。
 
  
 
 ## <a name="parameters"></a>パラメーター
 
 
-ファイル システムまたはフィルター ドライバーは呼び出し[ **IoGetCurrentIrpStackLocation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetcurrentirpstacklocation)ポインターを取得する、独自の特定の IRP で[**場所スタック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)、IRP として次の一覧に示すように*IrpSp*します。 (IRP が示した*Irp*)。ドライバーは IRP の IRP スタックの場所を作成する要求の処理では、次のメンバーで設定されている情報を使用できます。
+ファイルシステムまたはフィルタードライバーは、指定された IRP で[**Iogetlocation entiを**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation)呼び出して、irp 内の独自の[**スタックの場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)へのポインターを取得します。次の一覧には、 *irpsp*として示されています。 (IRP は、 *irp*として表示されます)。ドライバーは、create 要求を処理するときに、IRP の次のメンバーと IRP スタックの場所に設定されている情報を使用できます。
 
-<a href="" id="deviceobject"></a>*デバイス オブジェクト*  
-ターゲット デバイスのオブジェクトへのポインター。
+<a href="" id="deviceobject"></a>*DeviceObject*  
+ターゲットデバイスオブジェクトへのポインター。
 
-<a href="" id="irp--associatedirp-systembuffer"></a>*Irp-&gt;AssociatedIrp.SystemBuffer*  
-ポインターを[**ファイル\_完全\_EA\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_file_full_ea_information)-構造化されたバッファーの場合は、ファイル オブジェクトが拡張属性を持つファイルを表します。 このメンバーに設定している場合は、 **NULL**します。
+<a href="" id="irp--associatedirp-systembuffer"></a>*Irp-&gt;AssociatedIrp*  
+ファイルへのポインターは、ファイルオブジェクトが拡張属性を持つファイルを表している場合に、 [**EA\_の完全な\_\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_file_full_ea_information)ます。 それ以外の場合、このメンバーは**NULL**に設定されます。
 
-<a href="" id="irp--flags"></a>*Irp-&gt;フラグ*  
-この要求に対して、次のフラグが設定されます。
+<a href="" id="irp--flags"></a>*Irp&gt;フラグ*  
+この要求には、次のフラグが設定されています。
 
-IRP\_作成\_操作
+IRP\_\_操作の作成
 
-IRP\_DEFER\_IO\_完了
+IRP\_\_IO\_の完了を遅延します
 
 IRP\_同期\_API
 
-<a href="" id="irp--requestormode"></a>*Irp -&gt;requestormode で*か、操作を要求するプロセスの実行モードを示します**kernelmode である**または**UserMode**します。 場合に、SL に注意してください\_FORCE\_アクセス\_チェック フラグを設定、アクセス チェックを実行する必要があります、場合でも*Irp -&gt;requestormode で*は kernelmode であります。
+<a href="" id="irp--requestormode"></a>*Irp-&gt;irp->requestormode*操作を要求したプロセスの実行モード ( **kernelmode で**または**モード**) を示します。 SL\_強制\_アクセス\_チェックフラグが設定されている場合は、 *Irp-&gt;irp->requestormode*が kernelmode での場合でも、アクセスチェックを実行する必要があることに注意してください。
 
-<a href="" id="irp--iostatus"></a>*Irp -&gt;IoStatus*へのポインター、 [ **IO\_状態\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_status_block)に関する最終的な完了の状態および情報を受け取る、要求された操作。 ファイル システムのセット、**情報**値は次のいずれかに、この構造体のメンバー。
+<a href="" id="irp--iostatus"></a>*Irp&gt;IoStatus*最終的な完了状態と要求された操作に関する情報を受け取る、 [**IO\_ステータス\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_status_block)構造へのポインター。 この構造体の**情報**メンバーは、ファイルシステムによって次のいずれかの値に設定されます。
 
-ファイル\_作成
+ファイル\_作成済み
 
-ファイル\_は\_いない\_が存在
+ファイル\_\_存在しません\_
 
-ファイル\_EXISTS
+ファイル\_存在します
 
-ファイル\_OPENED
+ファイル\_開いています
 
-ファイル\_OVERWRITTEN
+上書きされたファイル\_
 
-ファイル\_優先
+ファイル\_置き換え済み
 
-<a href="" id="irp--overlay-allocationsize"></a>*Irp -&gt;Overlay.AllocationSize*最初のファイルのバイト単位での割り当てサイズ。 0 以外の値及ぼしませんしない限り、ファイルが作成されている、上書き、または置き換えできます。
+<a href="" id="irp--overlay-allocationsize"></a>*Irp&gt;オーバーレイのサイズ*変更ファイルの初期割り当てサイズ (バイト単位)。 0以外の値は、ファイルが作成、上書き、または置き換えられない限り、無効です。
 
-<a href="" id="irpsp--fileobject"></a>*IrpSp -&gt;FileObject* I/O マネージャーを作成または開かれたファイルを表す作成されたファイル オブジェクトへのポインター。 ファイル システムが IRP を処理するときに\_MJ\_作成要求、設定、 **FsContext**や**FsContext2**した値には、このファイル オブジェクトのフィールドファイル-システムに固有です。 値ではそのため、 **FsContext**と**FsContext2**フィールドできません有効と見なされるまで、ファイル システムの作成要求が処理した後。 詳細については、次を参照してください。[ファイル ストリーム、Stream のコンテキストや Stream あたり](https://docs.microsoft.com/windows-hardware/drivers/ifs/file-streams--stream-contexts--and-per-stream-contexts)します。
+<a href="" id="irpsp--fileobject"></a>*Irpsp-&gt;FileObject*作成または開くファイルを表すために i/o マネージャーによって作成されるファイルオブジェクトへのポインター。 ファイルシステムが IRP\_MJ\_CREATE 要求を処理すると、このファイルオブジェクトの**Fscontext**および場合によっては**FsContext2**フィールドが、ファイルシステム固有の値に設定されます。 このため、ファイルシステムによって create 要求が処理されるまで、 **Fscontext**フィールドと**FsContext2**フィールドの値を有効と見なすことはできません。 詳細については、「[ファイルストリーム、ストリームコンテキスト、およびストリームごとのコンテキスト](https://docs.microsoft.com/windows-hardware/drivers/ifs/file-streams--stream-contexts--and-per-stream-contexts)」を参照してください。
 
-[**FltCancelFileOpen** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltcancelfileopen)と[ **IoCancelFileOpen** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-iocancelfileopen)設定、FO\_ファイル\_オープン\_ファイル オブジェクトの取り消し済みフラグ**フラグ**フィールド。 このフラグを設定することを示します IRP\_MJ\_作成要求が取り消され、および[ **IRP\_MJ\_閉じる**](irp-mj-close.md)の要求が発行されますこのファイル オブジェクト。 作成要求が取り消されとを再発行することはできません。
+[**Fltcancelfileopen**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltcancelfileopen)と[**iocancelfileopen**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-iocancelfileopen)は、ファイルオブジェクトの**FLAGS**フィールドで、\_取り消されたフラグを開く\_\_ファイルを設定します。 このフラグを設定すると、IRP\_MJ\_CREATE 要求が取り消され、このファイルオブジェクトに対して[**irp\_MJ\_CLOSE**](irp-mj-close.md)要求が発行されることを示します。 作成要求がキャンセルされると、再発行することはできません。
 
-*IrpSp -&gt;FileObject*パラメーターにはへのポインターが含まれています、 **RelatedFileObject**フィールドに、これは、ファイルも\_オブジェクトの構造体。 **RelatedFileObject**ファイルのフィールド\_オブジェクトの構造を使用して、ファイルが既に開かれているオブジェクトを基準として、指定されたファイルが開かれているを指定します。 これは通常、ファイルの既存のストリームの基準としたストリーム ベースのファイルを開くことができますが、相対的なファイルがディレクトリを示します。 **RelatedFileObject**ファイルのフィールド\_オブジェクトの構造は、IRP の処理中にのみ有効です\_MJ\_作成します。
+*Irpsp-&gt;FileObject*パラメーターには、関連する**fileobject**フィールドへのポインターが含まれています。これは、ファイル\_obect 構造体でもあります。 ファイル\_オブジェクト構造の関連するフィールドは、既に開いているファイルオブジェクトを基準にし**て、特定**のファイルが開かれていることを示すために使用されます。 これは通常、相対ファイルがディレクトリであることを示していますが、ストリームベースのファイルは、既にファイルのストリームを使用して開いている可能性があります。 ファイル\_オブジェクト構造の関連性のある**fileobject**フィールドは、IRP\_MJ\_CREATE の処理中にのみ有効です。
 
-<a href="" id="irpsp--flags"></a>*IrpSp -&gt;フラグ*次の 1 つ以上。
+<a href="" id="irpsp--flags"></a>*Irpsp-&gt;フラグ*次の1つまたは複数を実行します。
 
 <table>
 <colgroup>
@@ -103,100 +103,100 @@ IRP\_同期\_API
 <thead>
 <tr class="header">
 <th align="left">Flag</th>
-<th align="left">説明</th>
+<th align="left">意味</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>SL_CASE_SENSITIVE</p></td>
-<td align="left"><p>このフラグが設定されている場合、ファイル名の比較は大文字になります。</p></td>
+<td align="left"><p>このフラグが設定されている場合、ファイル名の比較では大文字と小文字が区別されます。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>SL_FORCE_ACCESS_CHECK</p></td>
-<td align="left"><p>このフラグが設定されている場合、アクセス チェックが実行する必要がある場合でも、値の<em>IRP -&gt;requestormode で</em>は<strong>kernelmode である</strong>します。</p></td>
+<td align="left"><p>このフラグが設定されている場合は、 <em>IRP-&gt;irp->requestormode</em>の値が<strong>kernelmode で</strong>の場合でもアクセスチェックを実行する必要があります。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>SL_OPEN_PAGING_FILE</p></td>
-<td align="left"><p>このフラグが設定されている場合、ファイルが、ページング ファイルを使用します。</p></td>
+<td align="left"><p>このフラグが設定されている場合、ファイルはページングファイルになります。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>SL_OPEN_TARGET_DIRECTORY</p></td>
-<td align="left"><p>このフラグが設定されている場合、ファイルの親ディレクトリを開く必要があります。</p></td>
+<td align="left"><p>このフラグが設定されている場合は、ファイルの親ディレクトリを開く必要があります。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-<a href="" id="irpsp--majorfunction"></a>*IrpSp -&gt;MajorFunction* IRP を指定します\_MJ\_作成します。
+<a href="" id="irpsp--majorfunction"></a>*Irpsp-&gt;MajorFunction*IRP\_MJ\_作成することを指定します。
 
-<a href="" id="irpsp--parameters-create-ealength"></a>*IrpSp -&gt;Parameters.Create.EaLength* 、バッファーのバイト サイズ*Irp -&gt;AssociatedIrp.SystemBuffer*します。 場合の値*Irp -&gt;AssociatedIrp.SystemBuffer*は**NULL**、このメンバーは 0 である必要があります。
+<a href="" id="irpsp--parameters-create-ealength"></a>*Irpsp-&gt;パラメーター。 EaLength* *Irp&gt;AssociatedIrp*のバッファーのサイズ (バイト単位)。 *Irp-&gt;AssociatedIrp*の値が**NULL**の場合、このメンバーは0である必要があります。
 
-<a href="" id="irpsp--parameters-create-fileattributes"></a>*IrpSp -&gt;Parameters.Create.FileAttributes*作成またはファイルを開く際に適用する属性フラグのビット マスク。 明示的に指定された属性は、ファイルが作成、置き換え済み、または、場合によっては、上書きされる場合にのみ適用されます。 この値はファイルを既定では、\_属性\_NORMAL、または互換性フラグの論理和の組み合わせによって、他のフラグによってオーバーライドできます。 このメンバーに対応する、 *FileAttributes*パラメーターを[ **IoCreateFileSpecifyDeviceObjectHint**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-iocreatefilespecifydeviceobjecthint)します。
+<a href="" id="irpsp--parameters-create-fileattributes"></a>*Irpsp-&gt;パラメーター。 FileAttributes を作成します。* ファイルを作成または開くときに適用される属性フラグのビットマスク。 明示的に指定された属性は、ファイルが作成、置き換えられた場合、または上書きされた場合にのみ適用されます。 既定では、この値は FILE\_ATTRIBUTE\_NORMAL です。これは、他のフラグまたは互換性のあるフラグの論理和の組み合わせによってオーバーライドできます。 このメンバーは、 [**Iocreatefilを**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-iocreatefilespecifydeviceobjecthint)指定する*fileattributes*パラメーターに対応します。
 
-<a href="" id="irpsp--parameters-create-options"></a>*IrpSp -&gt;Parameters.Create.Options*作成またはファイルが既に存在する場合に実行されるアクションと同様に、ファイルを開くときに適用されるオプションを指定するフラグのビットマスク。
+<a href="" id="irpsp--parameters-create-options"></a>*Irpsp-&gt;パラメーター。作成. オプション*ファイルを作成または開くときに適用するオプション、およびファイルが既に存在する場合に実行するアクションを指定するフラグのビットマスク。
 
-このパラメーターの上位の 8 ビットに対応しています、*廃棄*パラメーターを[ **IoCreateFileSpecifyDeviceObjectHint**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-iocreatefilespecifydeviceobjecthint)します。
+このパラメーターの上位8ビットは、 [**Iocreatefil指定**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-iocreatefilespecifydeviceobjecthint)されたデバイス*の処理パラメーターに*対応します。
 
-このメンバーの下位 24 ビットに対応しています、 *CreateOptions*パラメーターを[ **IoCreateFileSpecifyDeviceObjectHint**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-iocreatefilespecifydeviceobjecthint)します。 ファイル (ウイルス対策プログラム) などのスキャンを実行するファイル システム フィルターとミニフィルター ドライバーは、ファイルに特に注意を払う必要があります\_完了\_場合\_OPLOCKED フラグ。 フィルターのブロックまたはそれ以外の場合、IRP を遅延する必要がありますいないこのフラグが設定されている場合\_MJ\_作成操作です。
+このメンバーの下位24ビットは、 *Createoptions*パラメーターに対応して[**iocreatefilを**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-iocreatefilespecifydeviceobjecthint)指定します。 ファイルのスキャンを実行するファイルシステムフィルターおよびミニフィルタードライバー (ウイルス対策プログラムなど) では、OPLOCKED フラグが\_場合、ファイル\_完了\_に特に注意する必要があります。 このフラグが設定されている場合は、フィルターで IRP\_MJ\_作成操作をブロックしたり、遅延させたりすることはできません。
 
-場合、ファイル\_完了\_場合\_(ディスパッチの作成) pre-create OPLOCKED フラグが設定パス、フィルター開始させては次の種類の操作のいずれかのため、oplock の中断が発生することができます。
+ファイル\_完了し\_場合、事前作成 (ディスパッチ) パスで\_OPLOCKED フラグが設定されていると、oplock が失われる可能性があるため、次のいずれの種類の操作も開始できません。
 
-IRP\_MJ\_クリーンアップ IRP\_MJ\_作成 IRP\_MJ\_ファイル\_システム\_コントロール IRP\_MJ\_フラッシュ\_バッファー IRP\_MJ\_ロック\_コントロール IRP\_MJ\_読み取り IRP\_MJ\_設定\_情報 IRP\_MJ\_かどうか、フィルターまたはミニフィルター優先できなくなり、ファイルを書き込む\_完了\_場合\_OPLOCKED フラグ、IRP を完了する必要があります\_MJ\_状態要求の作成\_共有\_違反が発生します。
+IRP\_MJ\_CLEANUP IRP\_MJ\_CREATE IRP\_MJ\_ファイル\_システム\_コントロール IRP\_MJ\_フラッシュ\_バッファー IRP\_MJ\_LOCK\_CONTROL IRP\_MJ\_READ IRP\_MJ\_SET\_INFORMATION IRP\_MJ\_\_の場合、フィルターまたはミニフィルターでファイルを受け入れることができない場合は書き込み\_\_OPLOCKED フラグは、IRP\_MJ\_CREATE 要求を完了する必要があります。状態\_共有\_違反です。
 
-場合、ファイル\_完了\_場合\_OPLOCKED フラグが設定が完了するまで (作成後の) パス、フィルター チェック ファイル システムが設定されているかどうか*Irp -&gt;IoStatus.Status*にステータス\_OPLOCK\_中断\_IN\_進行状況の状態の値。 この状態値が設定されていない場合は、ファイルでは、上記の操作のいずれかを開始するフィルターも安全です。 この状態値が設定されている場合は、oplock されていない、およびフィルターは、oplock を引き起こす可能性のあるすべての操作を開始する必要があります。 したがって、フィルターする必要があります延期ファイルでは、上記の操作はすべて、次の条件のいずれかが true になるまで。
+ファイル\_完了 (作成後) パスで\_OPLOCKED フラグが設定されている場合\_ファイルが完了した場合、フィルターは、ファイルシステムが*Irp-&gt;iostatus. status*に設定されているかどうかを確認する必要があります\_OPLOCK\_@no__t\_進行状況の状態の値 (_s)。 この状態値が設定されていない場合は、フィルターがファイルに対して上記の操作のいずれかを開始することが安全です。 この状態値が設定されている場合、oplock はまだ解除されていないため、oplock 解除を引き起こす可能性がある操作をフィルターで開始することはできません。 したがって、次のいずれかの条件が満たされるまで、ファイルに対する上記のすべての操作をフィルターで延期する必要があります。
 
--   Oplock の所有者に送信、FSCTL\_OPLOCK\_中断\_ファイル システムに要求を確認します。
--   フィルターまたはミニフィルター以外のシステム コンポーネントは、ファイル システムの oplock が完了するまで待機する必要がある I/O 要求を送信します (IRP など\_MJ\_読み取りまたは IRP\_MJ\_書き込み)。 フィルターまたはミニフィルターはこの新しい操作では、上記のディスパッチ (または preoperation コールバック) から操作ルーチンのいずれかをディスパッチまたは preoperation コールバック ルーチンは、oplock が完了するまで待機状態に配置されますので、開始することができます。
+-   Oplock の所有者は、ファイルシステムに対して、FSCTL\_OPLOCK\_中断\_確認要求を送信します。
+-   フィルターまたはミニフィルター以外のシステムコンポーネントは、oplock の解除が完了するまで待機する必要がある i/o 要求をファイルシステムに送信します (IRP\_MJ\_READ または IRP\_MJ\_WRITE など)。 フィルターまたはミニフィルターは、この新しい操作のディスパッチ (または事前操作コールバック) ルーチンから上記の操作のいずれかを開始できます。これは、ディスパッチまたは preoperation コールバックルーチンが、oplock の解除が完了するまで待機状態になるためです。
 
-<a href="" id="irpsp--parameters-create-securitycontext--accessstate"></a>*IrpSp -&gt;Parameters.Create.SecurityContext -&gt;AccessState*へのポインター、 [**アクセス\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_access_state)を含むオブジェクトの構造サブジェクト コンテキスト、付与されたアクセス型、および必要な残りの種類にアクセスします。
+<a href="" id="irpsp--parameters-create-securitycontext--accessstate"></a>*Irpsp-&gt;パラメーター。 SecurityContext-&gt;AccessState*オブジェクトのサブジェクトコンテキスト、アクセスの種類、およびその他の必要なアクセスの種類を含む、[**アクセス\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_access_state)構造体へのポインター。
 
-<a href="" id="irpsp--parameters-create-securitycontext--desiredaccess"></a>*IrpSp -&gt;Parameters.Create.SecurityContext -&gt;DesiredAccess*アクセス\_ファイルに対して要求されたアクセス権を指定するマスク構造体。 詳細については、の説明を参照して、 *DesiredAccess*パラメーターを[ **IoCreateFileSpecifyDeviceObjectHint**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-iocreatefilespecifydeviceobjecthint)します。
+<a href="" id="irpsp--parameters-create-securitycontext--desiredaccess"></a>*Irpsp-&gt;パラメーター。 SecurityContext-&gt;DesiredAccess*ファイルに要求されたアクセス権を指定して\_マスク構造にアクセスします。 詳細については、 [**IocreatefilDesiredAccess**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-iocreatefilespecifydeviceobjecthint)パラメーターの説明を参照してください。
 
-<a href="" id="irpsp--parameters-create-shareaccess"></a>*IrpSp -&gt;Parameters.Create.ShareAccess*ファイルに、要求は共有アクセス権限のビットマスクを指定します。 このメンバーが 0 の場合は、排他的アクセスが要求されています。 詳細については、の説明を参照して、 *ShareAccess*パラメーターを[ **IoCreateFileSpecifyDeviceObjectHint**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-iocreatefilespecifydeviceobjecthint)します。
+<a href="" id="irpsp--parameters-create-shareaccess"></a>*Irpsp-&gt;パラメーター。作成します。* ファイルに要求された共有アクセス権のビットマスク。 このメンバーがゼロの場合は、排他アクセスが要求されます。 詳細については、 [**Iocreatefil指定**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-iocreatefilespecifydeviceobjecthint)している場合は、*このパラメーターの*説明を参照してください。
 
 ## <a name="see-also"></a>関連項目
 
 
 [**アクセス\_マスク**](https://docs.microsoft.com/windows-hardware/drivers/kernel/access-mask)
 
-[**アクセス\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_access_state)
+[ **\_の状態へのアクセス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_access_state)
 
-[**ファイル\_完全\_EA\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_file_full_ea_information)
+[**ファイル\_EA\_の完全\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_file_full_ea_information)
 
-[**FltCancelFileOpen**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltcancelfileopen)
+[**FltCancelFileOpen**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltcancelfileopen)
 
-[**FltReissueSynchronousIo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltreissuesynchronousio)
+[**FltReissueSynchronousIo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltreissuesynchronousio)
 
-[**IO\_スタック\_場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)
+[**IO\_スタック\_の場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)
 
-[**IO\_状態\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_status_block)
+[**IO\_状態\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_status_block)
 
-[**IoCancelFileOpen**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-iocancelfileopen)
+[**IoCancelFileOpen**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-iocancelfileopen)
 
-[**IoCheckEaBufferValidity**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-iocheckeabuffervalidity)
+[**IoCheckEaBufferValidity**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iocheckeabuffervalidity)
 
-[**IoCreateFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatefile)
+[**IoCreateFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatefile)
 
-[**IoCreateFileSpecifyDeviceObjectHint**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-iocreatefilespecifydeviceobjecthint)
+[**Iocreatefilの場合は、デバイスを Ioint にします。** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-iocreatefilespecifydeviceobjecthint)
 
-[**IoCreateStreamFileObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-iocreatestreamfileobject)
+[**IoCreateStreamFileObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iocreatestreamfileobject)
 
-[**IoCreateStreamFileObjectLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-iocreatestreamfileobjectlite)
+[**Iocreatestreamfileite Tlite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iocreatestreamfileobjectlite)
 
-[**IoGetCurrentIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetcurrentirpstacklocation)
+[**Iogetlocation Entiの場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation)
 
-[**IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_irp)
+[**IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_irp)
 
 [**IRP\_MJ\_クリーンアップ**](irp-mj-cleanup.md)
 
-[**IRP\_MJ\_CLOSE**](irp-mj-close.md)
+[**IRP\_MJ\_閉じる**](irp-mj-close.md)
 
-[**IRP\_MJ\_(WDK カーネル リファレンス) を作成します。** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-create)
+[**IRP\_MJ\_CREATE (WDK カーネルリファレンス)** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-create)
 
-[**ZwCreateFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntcreatefile)
+[**ZwCreateFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntcreatefile)
 
-[**ZwOpenFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntopenfile)
+[**ZwOpenFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntopenfile)
 
  
 

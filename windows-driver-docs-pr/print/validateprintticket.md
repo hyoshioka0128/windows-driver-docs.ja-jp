@@ -1,40 +1,40 @@
 ---
 title: ValidatePrintTicket 概要
-description: 各プラグインは、検証、PrintTicket IPrintOemPrintTicketProvider::ValidatePrintTicket メソッドを呼び出します。
+description: '各プラグインは、IPrintOemPrintTicketProvider:: ValidatePrintTicket メソッドを呼び出して、PrintTicket を検証します。'
 ms.assetid: 3a4cf946-c931-4f71-9f1a-4efec4dfe866
 keywords:
 - ValidatePrintTicket
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 67fbaa90896d86d8cde63fd7cea429f181bb6d99
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a528f89f55339e656024eaf417c248dca398453b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67379105"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844757"
 ---
 # <a name="validateprintticket-overview"></a>ValidatePrintTicket 概要
 
 
-Unidrv と PScript5 の印刷ドライバーでは、次の図と一覧を表示するシーケンスを使用して印刷チケットを検証します。
+Unidrv および PScript5 印刷ドライバーは、次の図とリストに示されているシーケンスを使用して、印刷チケットを検証します。
 
-![unidrv と pscript5 のドライバーを印刷する方法を示すダイアグラムが印刷チケットを検証します。](images/ptpcvalpt-uml.gif)
+![unidrv および pscript5 印刷ドライバーで印刷チケットを検証する方法を示す図](images/ptpcvalpt-uml.gif)
 
-1.  各プラグインを呼び出し、 [ **IPrintOemPrintTicketProvider::ExpandIntentOptions** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemprintticketprovider-expandintentoptions)メソッド。
+1.  各プラグインに対して、 [**IPrintOemPrintTicketProvider:: ExpandIntentOptions**](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemprintticketprovider-expandintentoptions)メソッドを呼び出します。
 
-2.  呼び出す、 [ **IPrintOemPrintTicketProvider::ConvertPrintTicketToDevMode** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemprintticketprovider-convertprinttickettodevmode)メソッド。
+2.  [**IPrintOemPrintTicketProvider:: ConvertPrintTicketToDevMode**](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemprintticketprovider-convertprinttickettodevmode)メソッドを呼び出します。
 
-3.  各プラグインは、呼び出し**IPrintOemPrintTicketProvider::ConvertPrintTicketToDevMode**のプライベート部分に変換する、 [ **DEVMODEW** ](https://docs.microsoft.com/windows/desktop/api/wingdi/ns-wingdi-_devicemodew)構造体。
+3.  各プラグインに対して**IPrintOemPrintTicketProvider:: ConvertPrintTicketToDevMode**を呼び出して、 [**devmodew**](https://docs.microsoft.com/windows/desktop/api/wingdi/ns-wingdi-_devicemodew)構造体のプライベート部分を変換します。
 
-4.  パブリックおよびプライベートな部分を Unidrv または PScript5 印刷ドライバーがサポートする DEVMODEW 構造を検証します。
+4.  Unidrv または PScript5 print driver がサポートする DEVMODEW 構造の公開部分とプライベート部分を検証します。
 
-5.  各プラグイン、DEVMODEW 構造にプライベートな部分を検証します。
+5.  各プラグインについて、DEVMODEW 構造体のプライベートパートを検証します。
 
-6.  呼び出す、 [ **IPrintTicketProvider::ConvertPrintTicketToDevMode** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff554363(v=vs.85))メソッド。
+6.  [**IPrintTicketProvider:: ConvertPrintTicketToDevMode**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff554363(v=vs.85))メソッドを呼び出します。
 
-7.  各プラグインを呼び出し、 [ **IPrintOemPrintTicketProvider::ConvertDevModeToPrintTicket** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff553161(v=vs.85)) DEVMODEW 構造体のプライベート部分に変換します。
+7.  各プラグインに対して、 [**IPrintOemPrintTicketProvider:: ConvertDevModeToPrintTicket**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff553161(v=vs.85))メソッドを呼び出して、DEVMODEW 構造体のプライベート部分を変換します。
 
-8.  各プラグインを呼び出し、 [ **IPrintOemPrintTicketProvider::ValidatePrintTicket** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff553184(v=vs.85)) PrintTicket を検証するメソッド。
+8.  各プラグインに対して、 [**IPrintOemPrintTicketProvider:: ValidatePrintTicket**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff553184(v=vs.85))メソッドを呼び出して、PrintTicket を検証します。
 
  
 

@@ -1,38 +1,38 @@
 ---
 title: OID_SRIOV_SET_VF_POWER_STATE
-description: 上にある、ドライバーは、電源状態の指定された PCI Express (PCIe) 仮想機能 (VF)、ネットワーク アダプターを変更する OID_SRIOV_SET_VF_POWER_STATE のオブジェクト識別子 (OID) セット要求を発行します。
+description: ネットワークアダプターの指定された PCI Express (PCIe) 仮想関数 (VF) の電源状態を変更するために、OID_SRIOV_SET_VF_POWER_STATE のオブジェクト識別子 (OID) セット要求が発生します。
 ms.assetid: 9723518E-2312-48F9-820A-19F5567A33DB
 ms.date: 08/08/2017
-keywords: -OID_SRIOV_SET_VF_POWER_STATE ネットワーク ドライバーが Windows Vista 以降
+keywords: -Windows Vista 以降の OID_SRIOV_SET_VF_POWER_STATE ネットワークドライバー
 ms.localizationpriority: medium
-ms.openlocfilehash: 79d759e0886009552f4090d8ee731d7bf4040208
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 06e2c85565a0f5ae3feba00cec75982bab1a8102
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67366583"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843977"
 ---
-# <a name="oidsriovsetvfpowerstate"></a>OID\_SRIOV\_設定\_VF\_POWER\_状態
+# <a name="oid_sriov_set_vf_power_state"></a>OID\_SRIOV\_設定\_VF\_電源\_状態
 
 
-上にある、ドライバーの OID オブジェクト識別子 (OID) セット要求を発行する\_SRIOV\_設定\_VF\_POWER\_の状態が電源の状態の指定された PCI Express (PCIe) 仮想機能 (VF) を変更しますネットワーク アダプター。 電源状態の変更が特権操作のため、上にあるドライバーは、ネットワーク アダプターの PCIe 物理機能 (PF) のミニポート ドライバーをこの OID セット要求を発行します。 PF のミニポート ドライバー、VF で指定された電源の状態を設定します。
+それより前のドライバーは、OID のオブジェクト識別子 (OID) セット要求を発行\_SRIOV\_\_VF\_電源\_状態を設定して、ネットワークアダプターの指定された PCI Express (PCIe) 仮想関数 (VF) の電源状態を変更します。 電源状態の変更は特権操作であるため、この OID セット要求は、ネットワークアダプターの PCIe 物理機能 (PF) のミニポートドライバーに発行されます。 次に、PF ミニポートドライバーは、指定された電源状態を VF に設定します。
 
-**InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体にはへのポインターが含まれています、 [ **NDIS\_SRIOV\_設定\_VF\_POWER\_状態\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_sriov_set_vf_power_state_parameters)構造体。
+[**Ndis\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造体の**informationbuffer**メンバーには、 [**ndis\_SRIOV\_設定された、VF\_POWER\_STATE\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_set_vf_power_state_parameters)構造体へのポインターが含まれています。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
-PF ミニポート ドライバーには、この OID セットの要求が発行される、次のガイドラインに従う必要があります。
+PF ミニポートドライバーがこの OID セット要求を発行するときは、次のガイドラインに従う必要があります。
 
--   PF のミニポート ドライバーは、VF がで指定されたを確認する必要があります、 **VFId**のメンバー、 [ **NDIS\_SRIOV\_設定\_VF\_POWER\_状態\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_sriov_set_vf_power_state_parameters)構造体を以前に割り当てられているリソースします。 PF のミニポート ドライバーを VF 用のリソースの割り当ての OID メソッド要求中に[OID\_NIC\_スイッチ\_ALLOCATE\_VF](oid-nic-switch-allocate-vf.md)します。 割り当てられた状態で指定された VF でない場合、ドライバーは OID 要求に失敗する必要があります。
+-   PF ミニポートドライバーは、NDIS\_SRIOV の**VFId**メンバーによって指定された vf\_\_設定されていることを確認する必要があります[**vf\_POWER\_状態\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_set_vf_power_state_parameters)構造には、以前のリソースが含まれています。済み. PF ミニポートドライバーは、oid の OID メソッド要求中に、 [\_NIC\_スイッチによって\_vf\_割り当てら](oid-nic-switch-allocate-vf.md)れるため、vf のリソースを割り当てます。 指定した VF が割り当て済みの状態でない場合、ドライバーは OID 要求を失敗させる必要があります。
 
--   電源状態の操作は、指定 VF のみに影響する必要があります。 操作では、その他の VFs または同じネットワーク アダプターの PF には影響する必要があります。
+-   電源状態操作は、指定された VF にのみ影響する必要があります。 この操作は、同じネットワークアダプター上の他の VFs または PF に影響しないようにする必要があります。
 
-詳細については、次を参照してください。[仮想関数の状態の電源設定](https://docs.microsoft.com/windows-hardware/drivers/network/setting-the-power-state-of-a-virtual-function)します。
+詳細については、「[仮想関数の電源状態の設定](https://docs.microsoft.com/windows-hardware/drivers/network/setting-the-power-state-of-a-virtual-function)」を参照してください。
 
-### <a name="return-status-codes"></a>リターン状態コード
+### <a name="return-status-codes"></a>ステータスコードを返す
 
-OID OID の要求の設定の次のステータス コードのいずれかの PF ミニポート ドライバー返します\_SRIOV\_設定\_VF\_POWER\_状態。
+PF ミニポートドライバーは、oid\_SRIOV の OID セット要求について、次のいずれかの状態コードを返します。これは、\_VF\_電力\_状態\_設定されます。
 
 <table>
 <colgroup>
@@ -48,23 +48,23 @@ OID OID の要求の設定の次のステータス コードのいずれかの P
 <tbody>
 <tr class="odd">
 <td><p>NDIS_STATUS_SUCCESS</p></td>
-<td><p>OID 要求は正常に完了しました。</p></td>
+<td><p>OID 要求が正常に完了しました。</p></td>
 </tr>
 <tr class="even">
 <td><p>NDIS_STATUS_NOT_SUPPORTED</p></td>
-<td><p>PF のミニポート ドライバーでは、シングル ルート I/O 仮想化 (SR-IOV) インターフェイスをサポートしていませんか、またはインターフェイスを使用して有効になっていません。</p></td>
+<td><p>PF ミニポートドライバーは、シングルルート i/o 仮想化 (SR-IOV) インターフェイスをサポートしていないか、インターフェイスの使用が有効になっていません。</p></td>
 </tr>
 <tr class="odd">
 <td><p>NDIS_STATUS_INVALID_PARAMETER</p></td>
-<td><p>1 つ以上のメンバーの<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_sriov_set_vf_power_state_parameters" data-raw-source="[&lt;strong&gt;NDIS_SRIOV_SET_VF_POWER_STATE_PARAMETERS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_sriov_set_vf_power_state_parameters)"> <strong>NDIS_SRIOV_SET_VF_POWER_STATE_PARAMETERS</strong> </a>構造が無効な値を指定します。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_set_vf_power_state_parameters" data-raw-source="[&lt;strong&gt;NDIS_SRIOV_SET_VF_POWER_STATE_PARAMETERS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_set_vf_power_state_parameters)"><strong>NDIS_SRIOV_SET_VF_POWER_STATE_PARAMETERS</strong></a>構造体の1つ以上のメンバーに無効な値が含まれています。</p></td>
 </tr>
 <tr class="even">
 <td><p>NDIS_STATUS_INVALID_LENGTH</p></td>
-<td><p>情報バッファーが小さすぎます。 PF のミニポート ドライバーを設定する必要があります、<strong>データ。SET_INFORMATION します。BytesNeeded</strong>内のメンバー、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)"> <strong>NDIS_OID_REQUEST</strong> </a>構造体に必要な最小バッファー サイズ。</p></td>
+<td><p>情報バッファーが短すぎます。 PF ミニポートドライバーはデータを設定する必要があり<strong>ます。SET_INFORMATION.</strong> <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a>構造体の中で必要とされる最小バッファーサイズに対して、bytesneeded 必要です。</p></td>
 </tr>
 <tr class="odd">
 <td><p>NDIS_STATUS_FAILURE</p></td>
-<td><p>他の理由から、要求が失敗しました。</p></td>
+<td><p>他の理由で要求が失敗しました。</p></td>
 </tr>
 </tbody>
 </table>
@@ -82,11 +82,11 @@ OID OID の要求の設定の次のステータス コードのいずれかの P
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>NDIS 6.30 以降をサポートします。</p></td>
+<td><p>NDIS 6.30 以降でサポートされています。</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Ntddndis.h (include Ndis.h)</td>
+<td>Ntddndis (Ndis .h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -95,11 +95,11 @@ OID OID の要求の設定の次のステータス コードのいずれかの P
 
 
 ****
-[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
+[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)
 
-[**NDIS\_SRIOV\_設定\_VF\_POWER\_状態\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_sriov_set_vf_power_state_parameters)
+[**NDIS\_SRIOV\_設定\_VF\_電源\_状態\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_set_vf_power_state_parameters)
 
-[OID\_NIC\_スイッチ\_ALLOCATE\_VF](oid-nic-switch-allocate-vf.md)
+[OID\_NIC\_スイッチ\_割り当て\_VF](oid-nic-switch-allocate-vf.md)
 
  
 

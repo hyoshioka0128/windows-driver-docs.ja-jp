@@ -4,12 +4,12 @@ description: ドライバーによる WIA 項目のプロパティの読み取�
 ms.assetid: 4e592c62-e8bf-4b25-9c65-5a0079d3a857
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 39de774903f6a80a7853e08e50b54d849053e7fb
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7995023f08a606e0844959d99ea696a19a7934c3
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67376496"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840762"
 ---
 # <a name="reading-wia-item-properties-by-a-driver"></a>ドライバーによる WIA 項目のプロパティの読み取り
 
@@ -17,29 +17,29 @@ ms.locfileid: "67376496"
 
 
 
-WIA ミニドライバーする必要があります常に、プロパティ ドライバー項目ツリー内のベースとして使用の現在の設定。 読み取りとミニドライバーの項目のツリーへの書き込みアプリケーションは、ためことはありません最新でないことができます。 WIA ミニドライバーは、そのドライバーの項目のツリー内のプロパティからの読み取り、次の WIA サービス関数を使用する必要があります。
+WIA ミニドライバーは、常に、独自のドライバー項目ツリー内のプロパティを現在の設定の基礎として使用する必要があります。 アプリケーションはミニドライバーの項目ツリーから読み取りおよび書き込みを行っているため、最新の状態ではありません。 WIA ミニドライバーは、次の WIA サービス機能を使用して、そのドライバー項目ツリーのプロパティから読み取る必要があります。
 
-<a href="" id="wiasreadmultiple"></a>[**wiasReadMultiple**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamdef/nf-wiamdef-wiasreadmultiple)  
-WIA プロパティのすべての型を読み取る。 これは、既存のカスタム プロパティを含む、WIA アイテムに対して任意のプロパティを読み取る WIA ドライバーをできるようにする一般的な関数です。 呼び出しごとの複数のプロパティを読み取るために使用します。
+<a href="" id="wiasreadmultiple"></a>[**wiasReadMultiple**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamdef/nf-wiamdef-wiasreadmultiple)  
+すべての WIA プロパティの種類を読み取ります。 これは、wia ドライバーがカスタムプロパティを含む、WIA 項目上に存在するすべてのプロパティを読み取ることを可能にする一般的な関数です。 これは、呼び出しごとに複数のプロパティを読み取るために使用できます。
 
-<a href="" id="wiasreadpropstr"></a>[**wiasReadPropStr**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamdef/nf-wiamdef-wiasreadpropstr)  
-文字列の読み取り WIA プロパティ (VT 入力\_BSTR)。
+<a href="" id="wiasreadpropstr"></a>[**wiasReadPropStr**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamdef/nf-wiamdef-wiasreadpropstr)  
+文字列である WIA プロパティを読み取ります (「VT\_BSTR)」を参照してください。
 
-<a href="" id="wiasreadproplong"></a>[**wiasReadPropLong**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamdef/nf-wiamdef-wiasreadproplong)  
-読み取り WIA プロパティは、4 バイトの整数 (VT 入力\_I4)。
+<a href="" id="wiasreadproplong"></a>[**wiasReadPropLong p)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamdef/nf-wiamdef-wiasreadproplong)  
+4バイトの整数である WIA プロパティを読み取ります (「VT\_I4)」を参照してください。
 
-<a href="" id="wiasreadpropfloat"></a>[**wiasReadPropFloat**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamdef/nf-wiamdef-wiasreadpropfloat)  
-4 バイトの実数である読み取り WIA プロパティ (VT 入力\_R4)。
+<a href="" id="wiasreadpropfloat"></a>[**wiasReadPropFloat**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamdef/nf-wiamdef-wiasreadpropfloat)  
+4バイトの実数 (型 VT\_R4) である WIA プロパティを読み取ります。
 
-<a href="" id="wiasreadpropguid"></a>[**wiasReadPropGuid**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamdef/nf-wiamdef-wiasreadpropguid)  
-Guid である読み取り WIA プロパティ (VT 入力\_CLSID)。
+<a href="" id="wiasreadpropguid"></a>[**wiasReadPropGuid**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamdef/nf-wiamdef-wiasreadpropguid)  
+Guid である WIA プロパティを読み取ります (「VT\_CLSID」と入力します)。
 
-<a href="" id="wiasreadpropbin"></a>[**wiasReadPropBin**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamdef/nf-wiamdef-wiasreadpropbin)  
-符号なしバイトの文字列の読み取り WIA プロパティ (VT 入力\_ベクター |VT\_UI1)。
+<a href="" id="wiasreadpropbin"></a>[**wiasReadPropBin**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamdef/nf-wiamdef-wiasreadpropbin)  
+符号なしバイトの文字列である WIA プロパティを読み取ります (型 VT\_VECTOR |VT\_UI1)。
 
 ### <a name="reading-legal-values"></a>有効な値の読み取り
 
-WIA 項目のプロパティには、コンテナーとアクセス権の種類を定義する属性が含まれています。 (詳細については、次を参照してください[WIA 項目に WIA プロパティを追加する](adding-wia-properties-to-a-wia-item.md)。)。コンテナーの種類は WIA\_PROP\_なし、WIA\_PROP\_リスト、および WIA\_PROP\_範囲。 アクセス権は WIA\_PROP\_読み取りおよび WIA\_PROP\_RW します。 既存のプロパティの検証中に WIA ミニドライバーは、有効な値を読み取る必要があるかどうかを確認する内部の更新設定を確認する必要があります。 WIA ミニドライバーを使用する必要があります、 [ **wiasGetPropertyAttributes** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamdef/nf-wiamdef-wiasgetpropertyattributes)サービスをその WIA プロパティの現在の有効な値を読み取る関数。
+WIA 項目プロパティには、コンテナーとアクセス権の種類を定義する属性が含まれています。 (詳細については、「wia の[プロパティを Wia 項目に追加する](adding-wia-properties-to-a-wia-item.md)」を参照してください)。コンテナーの種類は、WIA\_PROP\_NONE、WIA\_PROP\_LIST、および WIA\_PROP\_RANGE です。 アクセス権は、WIA\_PROP\_READ および WIA\_PROP\_RW です。 既存のプロパティの検証中に、WIA ミニドライバーは、内部更新設定を確認して、有効な値を読み取る必要があるかどうかを判断する必要があります。 WIA ミニドライバーでは、 [**Wiasgetpropertyattributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamdef/nf-wiamdef-wiasgetpropertyattributes)サービス関数を使用して、wia プロパティの現在の有効な値を読み取る必要があります。
 
  
 

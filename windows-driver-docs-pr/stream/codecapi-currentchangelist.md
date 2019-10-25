@@ -1,23 +1,23 @@
 ---
-title: CODECAPI\_CURRENTCHANGELIST
-description: CODECAPI\_CURRENTCHANGELIST
+title: CODECAPI\_CURRENTCHANGELIST リスト
+description: CODECAPI\_CURRENTCHANGELIST リスト
 ms.assetid: f783857f-d1a1-417f-8f69-198b6f328a69
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 04ae314793bae53c9805e7b632533d181ee092ce
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c83cbb7ab2f2968ee0f5c150244dacf6d8d9b24e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63329588"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844725"
 ---
-# <a name="codecapicurrentchangelist"></a>CODECAPI\_CURRENTCHANGELIST
+# <a name="codecapi_currentchangelist"></a>CODECAPI\_CURRENTCHANGELIST リスト
 
 
 ## <span id="ddk_codecapi_currentchangelist_ks"></span><span id="DDK_CODECAPI_CURRENTCHANGELIST_KS"></span>
 
 
-CODECAPI\_など変更前のプロパティ「セット」呼び出しでパラメーターを示す CURRENTCHANGELIST プロパティが使用される[CODECAPI\_ALLSETTINGS](codecapi-allsettings.md)と[CODECAPI\_SETALLDEFAULTS](codecapi-setalldefaults.md)します。
+CODECAPI\_CURRENTCHANGELIST プロパティは、 [CODECAPI\_ALLSETTINGS](codecapi-allsettings.md)や[CODECAPI\_setalldefaults](codecapi-setalldefaults.md)など、前のプロパティ "set" 呼び出しで変更されたパラメーターを示すために使用されます。
 
 <table>
 <colgroup>
@@ -29,7 +29,7 @@ CODECAPI\_など変更前のプロパティ「セット」呼び出しでパラ�
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -38,8 +38,8 @@ CODECAPI\_など変更前のプロパティ「セット」呼び出しでパラ�
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>〇</p></td>
+<td><p>[はい]</p></td>
+<td><p>[はい]</p></td>
 <td><p>フィルター</p></td>
 <td><p>KSPROPERTY</p></td>
 <td><p>Guid の配列</p></td>
@@ -49,25 +49,25 @@ CODECAPI\_など変更前のプロパティ「セット」呼び出しでパラ�
 
  
 
-プロパティの値 (データの操作) は、Guid の配列です。
+プロパティ値 (操作データ) は、Guid の配列です。
 
 ### <a name="comments"></a>コメント
 
-プロパティの呼び出しを取得します。
+プロパティ get 呼び出し:
 
-アプリケーションは、0 以外のバッファー サイズを使用して呼び出しを取得するプロパティが場合、ミニドライバーは状態を返します\_バッファー\_すぎます\_小さなデータ ブロックに対して指定されたバッファーが小さすぎる場合。 返されるアイテムがない場合、ミニドライバーはステータスを返します\_成功します。 それ以外の場合に Guid のリストが返されます (つまり、sizeof(GUID) バイトが 16 バイト)。 返されるサイズ (バイト単位) のリストの長さは、(つまり、GUID の番号\*sizeof(GUID)) します。
+アプリケーションが0以外のバッファーサイズでプロパティ get 呼び出しを行う場合、指定されたバッファーがデータブロックに対して小さすぎると、ミニドライバーはステータス\_バッファー\_\_小さすぎます。 返される項目がない場合、ミニドライバーは STATUS\_SUCCESS を返します。 それ以外の場合は、Guid のリストが返されます (つまり、sizeof (GUID) バイトが16バイトと等しい)。 返されるサイズは、リストの長さをバイト単位で示します (つまり、GUID \* sizeof (GUID) の数)。
 
-プロパティの呼び出しを設定します。
+プロパティセットの呼び出し:
 
-現在の変更された Guid の一覧がリセットされます。
+変更された Guid の現在の一覧はリセットされます。
 
-### <a name="requirements"></a>必要条件
+### <a name="requirements"></a>要件
 
-**ヘッダー:** 宣言されている*ksmedia.h*します。 含める*ksmedia.h*します。
+**ヘッダー:** *Ksmedia. h*で宣言されています。 *Ksmedia. h*をインクルードします。
 
-### <a name="see-also"></a>関連項目
+### <a name="see-also"></a>参照
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier), [CODECAPI\_ALLSETTINGS](codecapi-allsettings.md), [CODECAPI\_SETALLDEFAULTS](codecapi-setalldefaults.md)
+[**Ksproperty**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)、 [CODECAPI\_allsettings](codecapi-allsettings.md)、 [CODECAPI\_setalldefaults](codecapi-setalldefaults.md)
 
  
 

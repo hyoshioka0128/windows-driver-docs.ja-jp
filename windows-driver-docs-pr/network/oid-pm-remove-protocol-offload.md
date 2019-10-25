@@ -1,52 +1,52 @@
 ---
 title: OID_PM_REMOVE_PROTOCOL_OFFLOAD
-description: セットの要求、NDIS、およびプロトコルのドライバーでは、OID_PM_REMOVE_PROTOCOL_OFFLOAD OID を使用して、削除するようネットワーク アダプターから、電源管理プロトコルの負荷を軽減します。
+description: NDIS ドライバーとプロトコルドライバーは、セット要求として OID_PM_REMOVE_PROTOCOL_OFFLOAD OID を使用して、ネットワークアダプターから電源管理プロトコルオフロードを削除します。
 ms.assetid: efca3018-28bf-4d91-b698-4b1c9e02f6e3
 ms.date: 08/08/2017
-keywords: -OID_PM_REMOVE_PROTOCOL_OFFLOAD ネットワーク ドライバーが Windows Vista 以降
+keywords: -Windows Vista 以降の OID_PM_REMOVE_PROTOCOL_OFFLOAD ネットワークドライバー
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d651a63c3502e7e6d57766ffe5b5d6d21b05068
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1e3d78133e8d79eb2b42824a3cade7658545068f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67354953"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844049"
 ---
-# <a name="oidpmremoveprotocoloffload"></a>OID\_PM\_削除\_プロトコル\_オフロード
+# <a name="oid_pm_remove_protocol_offload"></a>OID\_PM\_\_プロトコル\_オフロードの削除
 
 
-OID を使用する NDIS およびプロトコルのドライバー セットの要求として\_PM\_削除\_プロトコル\_オフロードの OID を電源管理のプロトコルを削除するネットワーク アダプターから負荷を軽減します。 **InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体にはへのポインターが含まれています、 **ULONG**プロトコル識別子の負荷を軽減します。
+設定要求として、NDIS ドライバーとプロトコルドライバーは、ネットワークアダプターから電源管理プロトコルオフロードを削除するために、\_プロトコル\_オフロード\_を削除する OID\_PM を使用します。 [**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造体の**informationbuffer**メンバーには、 **ULONG**プロトコルオフロード識別子へのポインターが含まれています。
 
 <a name="remarks"></a>注釈
 -------
 
-OID を使用する NDIS とプロトコル ドライバー\_PM\_削除\_プロトコル\_プロトコルを削除する OID のオフロードの基になるネットワーク アダプターから負荷を軽減します。
+NDIS およびプロトコルドライバーは、OID\_PM\_使用して\_プロトコル\_オフロード OID を削除し、基になるネットワークアダプターからプロトコルオフロードを削除します。
 
-**データ。設定\_INFORMATION.InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体を指す必要があります、 **ULONG**の値を先ほど追加したプロトコルのオフロード識別子。 NDIS このプロトコルのオフロード識別子の設定、 **ProtocolOffloadId**のメンバー、 [ **NDIS\_PM\_プロトコル\_オフロード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_protocol_offload)NDIS 送信する前に、構造体[OID\_PM\_追加\_プロトコル\_オフロード](oid-pm-add-protocol-offload.md)を基になるネットワーク アダプターに OID 要求。
+**データ。\_情報を設定します。** [**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造体の informationbuffer メンバーは、以前に追加されたプロトコルオフロード識別子の**ULONG**値をポイントする必要があります。 Ndis は、ndis [ **\_pm\_\_プロトコル**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_protocol_offload)の**ProtocolOffloadId**メンバーで、 [\_プロトコルの追加\_前の OID\_pm が送信されたときに、このプロトコルオフロード識別子を設定\_](oid-pm-add-protocol-offload.md)基になるネットワークアダプターに対して OID 要求をオフロードします。
 
-### <a name="remarks-for-miniport-driver-writers"></a>ミニポート ドライバー作成者には、「解説」
+### <a name="remarks-for-miniport-driver-writers"></a>ミニポートドライバーライターの解説
 
-NDIS により、バッファー サイズが少なくともが**sizeof**(**ULONG**) し、有効なプロトコルのオフロード ID が含まれます そのため、ミニポート ドライバーの[ *MiniportOidRequest* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_oid_request)関数は、NDIS を返す必要があります\_状態\_この要求の成功します。
+NDIS では、バッファーサイズが少なくとも**sizeof**(**ULONG**) であり、有効なプロトコルオフロード ID が含まれていることが保証されます。 そのため、ミニポートドライバーの[*Miniportoidrequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_oid_request)関数は、この要求に対して成功\_NDIS\_状態を返す必要があります。
 
-**注**  ミニポート ドライバーをリセットする場合、 [ *MiniportOidRequest* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_oid_request)関数は、NDIS を返す必要があります\_状態\_いない\_受理します。
+**注**  ミニポートドライバーがリセットされている場合、その[*Miniportoidrequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_oid_request)関数は、受け入れ\_受け入れられていない、NDIS\_の状態\_返す必要があります。
 
  
 
-### <a name="return-status-codes"></a>リターン状態コード
+### <a name="return-status-codes"></a>ステータスコードを返す
 
-NDIS は、この要求の次のステータス コードのいずれかを返します。
+NDIS は、この要求に対して次のいずれかの状態コードを返します。
 
 <a href="" id="ndis-status-success"></a>**NDIS\_状態\_成功**  
-プロトコルのオフロードが正常に削除されました。
+プロトコルオフロードが正常に削除されました。
 
-<a href="" id="ndis-status-pending"></a>**NDIS\_状態\_PENDING**  
-完了待ちになっています。 NDIS では、要求が完了した後、最終的な状態コードと結果を呼び出し元の OID 要求完了ハンドラーに渡すは。
+<a href="" id="ndis-status-pending"></a>**NDIS\_状態\_保留中**  
+要求は完了待ちです。 NDIS は、要求が完了した後に、最終的な状態コードと結果を呼び出し元の OID 要求完了ハンドラーに渡します。
 
-<a href="" id="ndis-status-invalid-length"></a>**NDIS\_状態\_無効な\_長さ**  
-情報バッファーが小さすぎます。 NDIS セット、**データ。設定\_情報。BytesNeeded**内のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)最小バッファー サイズ (バイト単位) を必要とされる構造体。
+<a href="" id="ndis-status-invalid-length"></a>**NDIS\_の状態\_無効な\_の長さです**  
+情報バッファーが小さすぎます。 NDIS はデータを設定**します。\_情報を設定します。** Byte で必要な最小バッファーサイズに対して、 [**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造体に必要な bytesneeded メンバー。
 
-<a href="" id="ndis-status-file-not-found"></a>**NDIS\_状態\_ファイル\_いない\_が見つかりました**  
-OID 要求のプロトコルのオフロード識別子が無効です。
+<a href="" id="ndis-status-file-not-found"></a>**NDIS\_状態\_ファイル\_見つかりませ\_んでした**  
+OID 要求のプロトコルオフロード id が無効です。
 
 <a name="requirements"></a>要件
 ------------
@@ -59,11 +59,11 @@ OID 要求のプロトコルのオフロード識別子が無効です。
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>以降では、NDIS 6.20 が動作をサポートします。 ミニポート ドライバーには必須です。</p></td>
+<td><p>NDIS 6.20 以降でサポートされています。 ミニポートドライバーの場合は必須です。</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Ntddndis.h (include Ndis.h)</td>
+<td>Ntddndis (Ndis .h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -71,11 +71,11 @@ OID 要求のプロトコルのオフロード識別子が無効です。
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
+[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)
 
-[**NDIS\_PM\_プロトコル\_オフロード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_protocol_offload)
+[**NDIS\_PM\_プロトコル\_オフロード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_protocol_offload)
 
-[OID\_PM\_追加\_プロトコル\_オフロード](oid-pm-add-protocol-offload.md)
+[OID\_PM\_\_プロトコル\_オフロードの追加](oid-pm-add-protocol-offload.md)
 
  
 

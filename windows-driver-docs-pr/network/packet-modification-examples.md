@@ -3,22 +3,22 @@ title: パケット変更例
 description: パケット変更例
 ms.assetid: dec76575-041b-4cbd-8042-184b15354f61
 keywords:
-- WDK Windows フィルタ リング プラットフォーム パケットの変更
+- パケット変更 WDK Windows フィルタリングプラットフォーム
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4facd3a3181c19b34287f5a3af26fde72727a24a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e1826428de19e33cd868b53b245f847fcedbb7b4
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382632"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843707"
 ---
 # <a name="packet-modification-examples"></a>パケット変更例
 
 
-次のコード例では、変更および WFP を持つパケットを検査する方法を示します。
+次のコード例は、WFP を使用してパケットを変更および検査する方法を示しています。
 
-### <a name="inline-packet-modification-from-outgoing-transport-layers"></a>インラインのパケット送信トランスポート レイヤーからの変更
+### <a name="inline-packet-modification-from-outgoing-transport-layers"></a>送信トランスポート層からのインラインパケット変更
 
 ```C++
 HANDLE gInjectionHandle;
@@ -170,7 +170,7 @@ Exit:
 }
 ```
 
-### <a name="out-of-band-packet-modification-from-incoming-datagram-data-layers"></a>受信データグラム データ レイヤーからのパケットの帯域外の変更
+### <a name="out-of-band-packet-modification-from-incoming-datagram-data-layers"></a>着信データグラムデータレイヤーからの帯域外パケットの変更
 
 ```C++
 typedef struct DD_RECV_CLASSIFY_INFO_ {
@@ -403,9 +403,9 @@ Exit:
 }
 ```
 
-### <a href="" id="non-intrusive-out-of-band-inspection-from-incoming-transport-layer-and"></a>受信トランスポート層と ALE 受信受け入れるレイヤーから非侵入型の帯域外の検査
+### <a href="" id="non-intrusive-out-of-band-inspection-from-incoming-transport-layer-and"></a>受信トランスポート層と ALE 受信/受け入れレイヤーからの非割り込みのアウトオブバンド検査
 
-検査手順については、変更することがなくパケット データを表示するコード例を次に示します。
+次に、パケットデータを変更せずに表示する検査手順のコード例を示します。
 
 ```C++
 typedef struct TL_ALE_RECV_CLASSIFY_INFO_ {
@@ -775,9 +775,9 @@ Exit:
 ## <a name="related-topics"></a>関連トピック
 
 
-[classifyFn](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
+[Classid (場合)](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
 
-[コールアウト付きの型](types-of-callouts.md)
+[コールアウトの種類](types-of-callouts.md)
 
  
 

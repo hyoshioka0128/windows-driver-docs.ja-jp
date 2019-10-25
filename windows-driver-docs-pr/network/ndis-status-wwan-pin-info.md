@@ -1,88 +1,88 @@
 ---
 title: NDIS_STATUS_WWAN_PIN_INFO
-description: ミニポート ドライバーでは、NDIS_STATUS_WWAN_PIN_INFO 通知を使用して OID クエリに応答し、OID_WWAN_PIN の要求を設定します。 ミニポート ドライバーは、この通知を使用して、不要なイベントを送信することはできません。この通知は、NDIS_WWAN_PIN_INFO 構造体を使用します。
+description: ミニポートドライバーは、NDIS_STATUS_WWAN_PIN_INFO 通知を使用して OID クエリに応答し、OID_WWAN_PIN の要求を設定します。 ミニポートドライバーは、この通知を使用して一方的なイベントを送信することはできません。この通知では、NDIS_WWAN_PIN_INFO 構造体が使用されます。
 ms.assetid: fa3c2467-2240-423b-b91b-f7e19d5be353
 ms.date: 08/08/2017
-keywords: -NDIS_STATUS_WWAN_PIN_INFO ネットワーク ドライバーが Windows Vista 以降
+keywords: -Windows Vista 以降の NDIS_STATUS_WWAN_PIN_INFO ネットワークドライバー
 ms.localizationpriority: medium
-ms.openlocfilehash: 449a69ac21e3577b2d37b8211a7d4f4bff87b7ab
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: dce91e3403f90a928cb65706bea5409108c6257b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377619"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844787"
 ---
-# <a name="ndisstatuswwanpininfo"></a>NDIS\_状態\_WWAN\_PIN\_情報
+# <a name="ndis_status_wwan_pin_info"></a>NDIS\_ステータス\_WWAN\_PIN\_情報
 
 
-ミニポート ドライバーを使用して、NDIS\_状態\_WWAN\_PIN\_OID クエリに応答し、要求の設定に情報通知[OID\_WWAN\_PIN](oid-wwan-pin.md)します。
+ミニポートドライバーは、NDIS\_ステータス\_WWAN\_PIN\_情報通知を使用して OID クエリに応答し、 [oid\_WWAN\_PIN](oid-wwan-pin.md)の要求を設定します。
 
-ミニポート ドライバーは、この通知を使用して、不要なイベントを送信することはできません。
+ミニポートドライバーは、この通知を使用して一方的なイベントを送信することはできません。
 
-この通知を使用して、 [ **NDIS\_WWAN\_PIN\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_pin_info)構造体。
+この通知では、 [**NDIS\_WWAN\_PIN\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_pin_info)構造を使用します。
 
 <a name="remarks"></a>注釈
 -------
 
-ミニポート ドライバーには、クエリ要求に応答の情報について、個人アイデンティティ暗証番号 (PIN) MB デバイスの現在の要求が返されます。 ミニポート ドライバーでは、一連の要求に対する応答で、以下のセクションで説明されているように入力状態の通知を返す必要があります。
+ミニポートドライバーは、クエリ要求への応答として、MB デバイスが現在想定している個人 Id 番号 (PIN) に関する情報を返す必要があります。 次のセクションで説明されているように、ミニポートドライバーは、set 要求に対する応答として、状態通知を返す必要があります。
 
-**WwanPinOperationEnter 要求に応答するには**
+**WwanPinOperationEnter 要求への応答**
 
-ミニポート ドライバーが、NDIS を使用すると\_状態\_WWAN\_PIN\_情報通知に応答する**WwanPinOperationEnter**要求すると、これらの手順を実装する必要があります。
+ミニポートドライバーが NDIS\_ステータス\_WWAN\_PIN\_情報通知を使用し**て Wwanpinoperationenter**要求に応答する場合は、次の手順を実装する必要があります。
 
--   成功した**WwanPinOperationEnter** MB デバイスが不要になった、PIN を必要とする場合は、クエリ要求、ミニポート ドライバーを設定する必要があります**uStatus** WWAN に\_状態\_成功し、**PinType**に**WwanPinTypeNone**します。
+-   **Wwanpinoperationenter**クエリ要求が正常に実行されると、MB デバイスで PIN が不要になったときに、ミニポートドライバーは**uStatus**を WWAN\_STATUS\_SUCCESS に設定し、 **Pintype**を**wwanpintypenone**に設定する必要があります。
 
--   失敗しました**WwanPinOperationEnter**要求、ミニポート ドライバーを設定する必要があります**uStatus** WWAN に\_状態\_失敗し、次の詳細に従って該当するデータを含めます。
+-   **Wwanpinoperationenter**要求が失敗した場合、ミニポートドライバーは、 **uStatus**を WWAN\_ステータス\_エラーに設定し、次の詳細に従って適用可能なデータを含める必要があります。
 
-    -   PIN を無効になっているまたは PIN が予期されていません。**WwanPinOperationEnter**セット要求、または現在、対応するピンが無効か、デバイスが必要、MB、ミニポート ドライバーを設定する必要があります**PinType**に**WwanPinTypeNone**します。 その他のすべてのメンバーは無視されます。
+    -   PIN が無効または PIN が不要: **Wwanpinoperationenter**セット要求では、対応する pin が無効になっているか、MB デバイスで現在想定されていない場合、ミニポートドライバーは**Pintype**を**Wwanpintypenone**に設定する必要があります。 他のすべてのメンバーは無視されます。
 
-    -   PIN がサポートされていません。MB デバイスでは、特定の暗証番号 (pin) はサポートされていない場合のミニポート ドライバーを設定する必要があります**uStatus** WWAN に\_状態\_いいえ\_デバイス\_サポートします。
+    -   PIN はサポートされていません。指定した PIN が MB デバイスでサポートされていない場合、ミニポートドライバーでは、 **uStatus**を WWAN\_\_に設定する必要があります。\_デバイス\_サポートされていません。
 
-    -   PIN Retrial:このモードで MB デバイスは、PIN として再入力する必要があります、 **AttemptsRemaining**値がまだゼロ以外の暗証番号 (pin) のこの特定の型。 ミニポート ドライバーを設定する必要があります**PinType**のと同じ値に**PinType** ndis\_WWAN\_設定\_ピン留めします。
+    -   PIN の入力: このモードでは、この特定の種類の PIN で**AttemptsRemaining**値が0以外の場合に、pin を再入力する必要があります。 ミニポートドライバーでは、 **pintype**を NDIS\_WWAN の**pintype**と同じ値に設定し\_PIN\_設定する必要があります。
 
-    -   ブロックをピン留めします。PIN がブロックされているときに**AttemptsRemaining**は 0 です。 操作は使用できません、暗証番号 (pin) のブロックを解除する場合は、ミニポート ドライバーを設定する必要があります**uStatus** WWAN に\_状態\_障害と**PinType**に**WwanPinTypeNone**. その他のすべてのメンバーは無視されます。
+    -   PIN のブロック: **AttemptsRemaining**が0の場合、pin はブロックされます。 PIN のブロック解除操作が使用できない場合、ミニポートドライバーでは、 **uStatus**を WWAN\_STATUS\_FAILURE に設定し、 **Pintype**を**Wwanpintypenone**に設定する必要があります。 他のすべてのメンバーは無視されます。
 
-        **注**  MB デバイスの PIN をサポートしている場合は、操作をブロック解除、ミニポート ドライバーが要求に応答する PIN ブロック解除の手順を実行する必要があります。
+        **注**  MB デバイスで pin ブロック解除操作がサポートされている場合、ミニポートドライバーは、Pin のブロック解除の手順に従って要求に応答する必要があります。
 
          
 
-    -   PIN のブロックを解除します。PIN がブロックされているときに**AttemptsRemaining**は 0 です。 暗証番号のブロックを解除するには、該当する場合、MB デバイスは、対応するピンのロックを解除キー (PUK) を要求する可能性があります。 この場合、ミニポート ドライバーを設定する必要があります**PinType**に対応する WwanPinType*Xxx*PUK に関連する詳細。
+    -   PIN のブロック解除: **AttemptsRemaining**が0の場合、pin はブロックされます。 PIN のブロックを解除するために、該当する場合は、対応する PIN ロック解除キー (PUK) が MB デバイスによって要求されることがあります。 この場合、ミニポートドライバーでは、 **Pintype**を対応する WwanPinType*Xxx*PUK に設定し、関連する詳細を指定する必要があります。
 
-    -   PUK を禁止します。失敗した試行の回数が、WwanPinType を入力するための事前定義された値を超えたかどうか*Xxx*PUK、PUK がブロックされています。 ミニポート ドライバーはこれを設定して通知する必要があります**uStatus** WWAN に\_状態\_障害と**PinType**に**WwanPinTypeNone**します。 ミニポート ドライバーが、NDIS を送信する必要があります PUK1 がブロックされている場合に\_状態\_WWAN\_準備\_情報とともに**ReadyState**に設定**WwanReadyStateBadSim**.
+    -   ブロックされた PUK: 失敗した試用の数が、WwanPinType*Xxx*PUK を入力するための事前設定された値を超えると、PUK はブロックされます。 ミニポートドライバーは、 **uStatus**を WWAN\_ステータス\_エラーに設定し、**ピンの種類**を**Wwanpintypenone**に設定して、これを通知する必要があります。 PUK1 がブロックされている場合、ミニポートドライバーは、 **ReadyState**を**WwanReadyStateBadSim**に設定して、NDIS\_STATUS\_WWAN\_READY\_情報を送信する必要があります。
 
-**WwanPinOperationEnable、WwanPinOperationDisable、WwanPinOperationChange 要求に応答します。**
+**WwanPinOperationEnable、Wwanpinoperationenable、または Wwanpinoperationenable 要求への応答**
 
-ミニポート ドライバーが、NDIS を使用すると\_状態\_WWAN\_PIN\_情報通知に応答する**WwanPinOperationEnable**、 **WwanPinOperationDisable**、および**WwanPinOperationChange**、次の操作を実装する必要があります。
+ミニポートドライバーが NDIS\_ステータス\_\_WWAN を使用する場合、\_情報通知をピン留めして、 **Wwanpinoperationenable**、 **wwanpinoperationenable**、および**wwanpinoperationenable**に応答するには、操作は次のとおりです。
 
--   成功した要求は、ミニポート ドライバーを設定する必要があります**uStatus** WWAN に\_状態\_成功します。 WWAN_PIN_INFO で他のメンバーは、次の状況を参照してください。
+-   要求が成功した場合、ミニポートドライバーは**uStatus**を WWAN\_ステータス\_SUCCESS に設定する必要があります。 WWAN_PIN_INFO のその他のメンバーについては、次の状況を参照してください。
 
--   ミニポート ドライバーを設定する必要があります**uStatus** WWAN に\_状態\_PIN が要求された状態で既にときに、暗証番号 (pin) を有効にし、ピン留めすると無効化の操作の成功します。 ミニポート ドライバーを設定する必要があります**PinType**に**WwanPinTypeNone**します。 他のメンバーは無視されます。
+-   ミニポートドライバーは、PIN が既に要求された状態にあるときに、pin の有効化と PIN の無効化の操作に対して、 **uStatus**を WWAN\_状態\_設定する必要があります。 ミニポートドライバーでは、 **Pintype**を**Wwanpintypenone**に設定する必要があります。 他のメンバーは無視されます。
 
--   PIN モードが無効から有効に変更されると、暗証番号 (pin) の状態が WwanPinStateNone にあります。
+-   PIN モードが [無効] から [有効] に変更された場合、PIN の状態は "WwanPinStateNone" になります。
 
--   MB デバイスに電源を入れ直したとき PIN1 が有効になっている場合に、暗証番号 (pin) の状態で WwanPinStateEnter ものとなります。
+-   PIN1 が有効になっている場合、電源が MB デバイスに設定されていると、PIN の状態が WwanPinStateEnter になります。
 
--   その他のすべてのピンの状態の固定からに変更できます WwanPinStateNone WwanPinStateEnter MB デバイスの特定の条件に基づいて。
+-   その他のすべての pin では、デバイス固有の状態に応じて、WwanPinStateNone から WwanPinStateEnter にピンの状態が変化することがあります。
 
--   PIN がサポートされていません。MB デバイスでは、暗証番号 (pin) の操作はサポートされていない場合のミニポート ドライバーを設定する必要があります**uStatus** WWAN に\_状態\_いいえ\_デバイス\_サポートします。 たとえばを有効にして、暗証番号 2 を無効化は通常サポートされません MB デバイスで上記のエラー コードを返す必要があるため。 その他のすべてのメンバーは無視されます。
+-   PIN はサポートされていません。 PIN 操作が MB デバイスでサポートされていない場合、ミニポートドライバーでは、 **uStatus**を WWAN\_\_に設定する必要があります。\_デバイス\_サポートされていません。 たとえば、PIN2 を有効または無効にすることは、通常、MB デバイスではサポートされていないため、上記のエラーコードを返す必要があります。 他のすべてのメンバーは無視されます。
 
--   PIN を入力する必要があります。ミニポート ドライバーを設定する必要があります暗証番号 (pin) の操作では、PIN を入力する必要がある場合**uStatus** WWAN に\_状態\_PIN\_REQUIRED と**PinType** WwanPinTypeに*Xxx*します。 他のメンバーは無視されます。
+-   PIN を入力する必要があります。 PIN 操作で PIN を入力する必要がある場合、ミニポートドライバーでは、 **uStatus**を WWAN\_\_状態に設定し、PIN\_REQUIRED と**Pintype**を Wwanpintype*Xxx*に設定する必要があります。 他のメンバーは無視されます。
 
--   PIN の変更操作:WWAN で無効な状態を変更する要求を返す必要がある場合 MB デバイスは、有効な状態にあるときにのみ、暗証番号 (pin) の値の変更を制限、\_状態\_PIN\_無効になっています。
+-   PIN の変更操作: MB デバイスが有効な状態にあるときにのみ PIN の値の変更を制限する場合は、無効の状態の変更要求を、WWAN\_状態\_PIN\_無効にして返す必要があります。
 
--   PIN Retrial:失敗した場合、ミニポート ドライバーを設定する必要があります**uStatus** WWAN に\_状態\_エラー、および**PinType**で指定された NDIS と同じ値に\_WWAN\_設定\_ピン留めします。 以外の他のメンバーは無視されます**AttemptsRemaining**します。 これは、正しくない PIN を入力するときに発生します。
+-   PIN の入力: エラーが発生した場合は、ミニポートドライバーで**uStatus**を WWAN\_ステータス\_エラーに設定し、 **PINTYPE**を NDIS\_wwan で指定された\_PIN\_設定したものと同じ値に設定する必要があります。 **AttemptsRemaining**を除き、他のメンバーは無視されます。 PIN が正しく入力されていない場合に発生する可能性があります。
 
--   ブロックをピン留めします。PIN がブロックされているときに、数**AttemptsRemaining**は 0 です。 操作は使用できません、暗証番号 (pin) のブロックを解除する場合は、ミニポート ドライバーを設定する必要があります**uStatus** WWAN に\_状態\_障害と**PinType**に**WwanPinTypeNone**. **AttemptsRemaining**を 0 に設定する必要があり、その他のすべてのメンバーは無視されます。
+-   PIN のブロック: **AttemptsRemaining**の数がゼロの場合、pin はブロックされます。 PIN のブロック解除操作が使用できない場合、ミニポートドライバーでは、 **uStatus**を WWAN\_STATUS\_FAILURE に設定し、 **Pintype**を**Wwanpintypenone**に設定する必要があります。 **AttemptsRemaining**は0に設定する必要があり、その他のすべてのメンバーは無視されます。
 
-    **注**  MB デバイスの PIN をサポートしている場合は、操作をブロック解除、ミニポート ドライバーが要求に応答する PIN ブロック解除の手順を実行する必要があります。
+    **注**  MB デバイスで pin ブロック解除操作がサポートされている場合、ミニポートドライバーは、Pin のブロック解除の手順に従って要求に応答する必要があります。
 
      
 
--   暗証番号のブロック解除:PIN がブロックされているときに**AttemptsRemaining**は 0 です。 PIN のブロックを解除するには、MB デバイスは該当する場合、対応する PUK を要求できます。 この場合、ミニポート ドライバーを設定する必要があります**uStatus** WWAN に\_状態\_障害、 **PinType**に対応する WwanPinType*Xxx*PUK、**PinState**に**WwanPinStateEnter**、および**AttemptsRemaining**有効 PUK を入力できる回数があります。
+-   PIN のブロック解除: **AttemptsRemaining**が0の場合、pin はブロックされます。 PIN のブロックを解除するために、該当する場合は、対応する PUK が MB デバイスによって要求されることがあります。 この場合、ミニポートドライバーは、 **uStatus**を WWAN\_ステータス\_エラー、 **pintype**を対応する Wwanpintype*Xxx*PUK、 **PinState** To **wwanpinstateenter**、 **AttemptsRemaining**に設定する必要があります。には、有効な PUK を入力するために許可されている試行回数が含まれている必要があります。
 
-    ミニポート ドライバー MB デバイスまたは SIM で結果をブロックに暗証番号 (pin) がブロックされた場合にイベント通知の送信する必要があります**ReadyState**設定**WwanReadyStateDeviceLocked**します。
+    MB のデバイスまたは SIM がブロックされた場合は、ミニポートドライバーが、 **ReadyState**を**WwanReadyStateDeviceLocked**に設定してイベント通知を送信する必要があります。
 
--   PIN1 ブロック時にアクティブな PDP コンテキストがある場合のミニポート ドライバーする必要があります PDP コンテキストを非アクティブ化し、PDP 非アクティブ化に関するオペレーティング システムに通知を送信されて、状態の変更をリンクします。
+-   PIN1 のブロック時にアクティブな PDP コンテキストがある場合、ミニポートドライバーは PDP コンテキストを非アクティブ化し、PDP の非アクティブ化とリンク状態の変更についてオペレーティングシステムに通知を送信する必要があります。
 
 <a name="requirements"></a>要件
 ------------
@@ -95,11 +95,11 @@ ms.locfileid: "67377619"
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>Windows 7 および Windows の以降のバージョンで使用できます。</p></td>
+<td><p>Windows 7 以降のバージョンの Windows で使用できます。</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Ndis.h</td>
+<td>Ndis. h</td>
 </tr>
 </tbody>
 </table>
@@ -107,9 +107,9 @@ ms.locfileid: "67377619"
 ## <a name="see-also"></a>関連項目
 
 
-[OID\_WWAN\_暗証番号 (PIN)](oid-wwan-pin.md)
+[OID\_WWAN\_PIN](oid-wwan-pin.md)
 
-[**NDIS\_状態\_WWAN\_PIN\_情報**](ndis-status-wwan-pin-info.md)
+[**NDIS\_ステータス\_WWAN\_PIN\_情報**](ndis-status-wwan-pin-info.md)
 
  
 

@@ -1,113 +1,113 @@
 ---
 title: OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES
-description: このトピックでは、OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES をについて説明します
+description: このトピックでは OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES について説明します。
 ms.assetid: F59D861C-B7DB-4C28-8842-4FDBAE1B95F1
-keywords: OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES、OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES RSSv2
+keywords: OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES, OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES RSSv2
 ms.date: 10/11/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 84ba83740d068d846bc02820c6f72758524ab314
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5614807dbc4922fb0e2969d4475ea0ec96d60826
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360806"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844604"
 ---
 [!include[RSSv2 Beta Prerelease](../rssv2-beta-prerelease.md)]
 
-# <a name="oidgenrsssetindirectiontableentries"></a>OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES
+# <a name="oid_gen_rss_set_indirection_table_entries"></a>OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES
 
-OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES OID に送信される[RSSv2](receive-side-scaling-version-2-rssv2-.md)-テーブルのエントリを対応のミニポート ドライバーに個々 の間接参照の移動を実行します。 この OID は、[同期 OID](synchronous-oid-request-interface-in-ndis-6-80.md)、つまり NDIS_STATUS_PENDING を返すことはできません。 これが発行される irql = DISPATCH_LEVEL メソッド要求のみと。 
+OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES OID は、 [RSSv2](receive-side-scaling-version-2-rssv2-.md)対応のミニポートドライバーに送信され、個々の間接テーブルエントリの移動を実行します。 この OID は[同期 oid](synchronous-oid-request-interface-in-ndis-6-80.md)です。つまり、NDIS_STATUS_PENDING を返すことはできません。 IRQL = = DISPATCH_LEVEL の場合にのみ、メソッド要求として発行されます。 
 
-この呼び出しで使用して、 *XxxSynchronousOidRequest*エントリ ポイントで、 *Xxx*か*ミニポート*または*フィルター*の種類に応じてドライバーが要求を受信します。 このエントリ ポイントは、状態を返す、NDIS_STATUS_PENDING を認識した場合に、システムのバグ チェックを実行します。
+この呼び出しでは、 *XxxSynchronousOidRequest*エントリポイントが使用されます。ここで、 *Xxx*は、要求を受信するドライバーの種類に応じて*ミニポート*または*フィルター*です。 このエントリポイントを指定すると、NDIS_STATUS_PENDING の戻り状態が表示された場合にシステムのバグチェックが発生します。
 
-OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES を使用して、 [NDIS_RSS_SET_INDIRECTION_ENTRIES](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_rss_set_indirection_entries)ミニポート アダプタを各アクションが、RSS の 1 つのエントリを移動アクションのセットを同期的に実行するように指示する構造体ターゲットに指定された VPort の間接指定テーブルでは、CPU を指定します。
+OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES は[NDIS_RSS_SET_INDIRECTION_ENTRIES](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_rss_set_indirection_entries)構造体を使用して、一連のアクションを同期的に実行するようにミニポートアダプターに指示します。各アクションは、の RSS 間接テーブルの1つのエントリを移動します。ターゲットとして指定された CPU に VPort を指定しました。
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>注釈
 
-この OID は、実行し、それを発行するプロセッサのコンテキスト内に完了する必要があります。 ミニポート ドライバーでは、NDIS_STATUS_SUCCESS を上位の層に戻ったときにこの OID に完全に実行する必要があります。 つまり、NDIS_STATUS_SUCCESS で最初の移動が終了した直後に、新しいプロセッサで複数 ite 用を移動するバックツー バック OID 要求を受信するミニポート ドライバーを準備する必要があります。 
+この OID は、それを発行したプロセッサコンテキストで実行され、完了する必要があります。 ミニポートドライバーは、NDIS_STATUS_SUCCESS を上位レイヤーに返すときに、この OID を完全に実行する必要があります。 つまり、NDIS_STATUS_SUCCESS での最初の移動が完了した直後に、新しいプロセッサで複数のを移動するために、バックツーバックの OID 要求を受信するようにミニポートドライバーが準備されている必要があります。 
 
 > [!TIP]
-> この OID を完全に実行すると、正常に、項目を移動する別のアクションを試行する準備ができて、ミニポート ドライバーである必要がありますを意味します。 実行中は規定はない受信トラフィックは、キューを移動するかできるソースの CPU またはターゲット CPU の直後に示されます。
+> この OID を完全に実行すると、予備を移動するための別の操作を正常に実行するために、ミニポートドライバーが準備されている必要があります。 転送中の受信トラフィックがキューの移動直後に示されます。これは、ソース CPU またはターゲット CPU 上に配置できます。
 
-上位層プロトコルは、OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES ite 用や、プライマリに設定し、既定の異なるプロセッサをポイントするプロセッサのパラメーターを発行します。 
+上層のプロトコルは、OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES や、プライマリおよび既定のプロセッサパラメーターを別のプロセッサを指すように設定するために、問題を解決します。 
 
-この OID は、いずれかに対して発行できます*active*または*非アクティブな*トラフィックの制御パラメーター。 ハンドル パラメーターの詳細については、次を参照してください。[受信側のバージョン 2 (RSSv2) スケーリング](receive-side-scaling-version-2-rssv2-.md)します。 Ite 用のパラメーターの*非アクティブな*状態では、ミニポート ドライバーの検証および関連する次の RSS 状態 (有効化または無効化) を変更するまでの間に、ターゲットのプロセッサをキャッシュする必要があります。 その時点では、プロセッサの数になるキャッシュされた*active*され、トラフィックを転送するために使用されます。 更新*active*パラメーター (これも検証する必要があります) する必要がありますを直ちに有効に、トラフィックを転送します。
+この OID は、アクティブまたは*非アクティブ* *な*トラフィックステアリングパラメーターに対して発行できます。 パラメーターのステアリングの詳細については、「 [Receive side scaling version 2 (RSSv2)](receive-side-scaling-version-2-rssv2-.md)」を参照してください。 *非アクティブ*状態のパラメーター/対象となる場合、ミニポートドライバーは、次の関連する RSS 状態の変更 (有効化または無効化) が行われるまで、ターゲットプロセッサを検証してキャッシュする必要があります。 その時点で、キャッシュされたプロセッサ番号が*アクティブ*になり、トラフィックを転送するために使用されます。 *アクティブな*パラメーター (検証も必要) への更新は、トラフィックを転送するために直ちに有効にする必要があります。
 
-OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES をミニポート アダプターに発行する必要があります、 *NDIS_OID_REQUEST_FLAGS_VPORT_ID_VALID*フラグをクリアします。 これは、配列内のさまざまな要素によって参照されている別の拡張の可能性があります。
+OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES は、 *NDIS_OID_REQUEST_FLAGS_VPORT_ID_VALID*フラグをオフにして、ミニポートアダプターに発行する必要があります。 これは、さまざまな VPorts が配列内の異なる要素によって参照されている可能性があるためです。
 
-IRQL でのみこの OID が呼び出される DISPATCH_LEVEL の = =。
+この OID は、IRQL = = DISPATCH_LEVEL でのみ呼び出されます。
 
-ミニポート ドライバーは、テーブル エントリ ・移動の数以上の間接参照操作で情報を提供するように処理するために準備する必要があります、 [NDIS_NIC_SWITCH_CAPABILITIES](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)構造体。 これで定義されている、 **NumberOfIndirectionTableEntriesPerNonDefaultVPort**または**NumberOfIndirectionTableEntriesForDefaultVPort** 、その構造体のメンバーまたは**128**RSS のネイティブ モードでします。
+ミニポートドライバーは、 [NDIS_NIC_SWITCH_CAPABILITIES](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)構造体で提供される間接テーブルエントリの移動アクションを少なくとも1個処理できるように準備する必要があります。 これは、その構造体の数値**Ofindirection Table個 Pernondefaultvport**メンバーまたは**Number ofindirection table個**、またはネイティブ RSS モードの**128**で定義されています。
 
-でき、更新数のエントリを実行するミニポート ドライバーを試みる必要がある、 **EntryStatus**のそれぞれに所属[NDIS_RSS_SET_INDIRECTION_ENTRY](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_rss_set_indirection_entry)操作の結果とします。
+ミニポートドライバーは、可能な限り多くのエントリを実行し、各[NDIS_RSS_SET_INDIRECTION_ENTRY](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_rss_set_indirection_entry)の**entrystatus**メンバーを操作の結果で更新する必要があります。
 
-### <a name="oid-handler-for-oidgenrsssetindirectiontableentries"></a>OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES の OID ハンドラー
+### <a name="oid-handler-for-oid_gen_rss_set_indirection_table_entries"></a>OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES の OID ハンドラー
 
-OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES の OID ハンドラーは次のように動作するが必要です。
+OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES の OID ハンドラーは、次のように動作することが想定されています。
 
-- OID の同期呼び出しの種類により NDIS_STATUS_PENDING の戻り値は許可されていません。
-- (以前はリモートのプロセッサで開始された) 現在の CPU が送信先と受信の ITE 移動を確定します。 
-- 完全なパラメーターの検証パスを実行するミニポート ドライバーを強くお勧めします。 、できない場合は、配列エントリの 1 つずつ検証および実行を実行します。 ミニポート ドライバーでは、すべての参照先オブジェクトが有効なかどうかは確認する必要があります具体的には。
-    - NDIS_STATUS_PENDING を返す、 **EntryStatus**フィールドは、項目は許可されていません。
-    - ミニポート アダプターが存在し、正常な状態にします。 それ以外の場合、設定、 **EntryStatus** NDIS_STATUS_ADAPTER_NOT_FOUND、NDIS_STATUS_ADAPTER_NOT_READY などするエントリのフィールド。
-    - 各 VPort が存在し、良好な状態にします。 それ以外の場合、設定、 **EntryStatus** NDIS_STATUS_INVALID_PORT、NDIS_STATUS_INVALID_PORT_STATE などするエントリのフィールド。
-    - 各間接指定テーブル エントリのインデックスでは、構成済みの範囲です。 この範囲は、0 xffff されているか、[0... NumberOfIndirectionTableEntries - 1] の範囲の設定、 [OID_GEN_RECEIVE_SCALE_PARAMETERS_V2](oid-gen-receive-scale-parameters-v2.md) OID。 0 xffff および 0 xfffe エントリのインデックスは、特別な意味を持ちます。0 xffff は、0 xfffe、プライマリのプロセッサを定義するときに、既定のプロセッサを定義します。 エラーの場合、ハンドラーの設定、 **EntryStatus** NDIS_STATUS_INVALID_PARAMETER するエントリのフィールド。
-    - 上位のレイヤーとミニポート ドライバー、項目を移動する前に、現在のプロセッサ (CPU のアクター) を指していることを期待しています。 つまり、リモートで、項目をリダイレクトできません。 これが true でない場合は、設定、 **EntryStatus** NDIS_STATUS_NOT_ACCEPTED するエントリのフィールド。
-    - ターゲットのすべてのプロセッサは有効では、ミニポート アダプターの RSS のセットの一部です。 それ以外の場合、設定、 **EntryStatus** NDIS_STATUS_INVALID_DATA するエントリのフィールド。
-- その後、またはパラメーターの検証パスの一部として、リソースの状況を検証します。 完全なバッチ (退避) の移動後に使用するキューの数を超えないことを検証、 **NumberOfQueues**設定、 [NDIS_RECEIVE_SCALE_PARAMETERS_V2](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_scale_parameters_v2)中に構造体、 [OID_GEN_RECEIVE_SCALE_PARAMETERS_V2](oid-gen-receive-scale-parameters-v2.md)要求。 それ以外の場合、NDIS_STATUS_NO_QUEUES が返されます。 NDIS_STATUS_NO_QUEUES をキューの構成済みの数の違反を表すすべての条件に使用する必要があります。 NDIS_STATUS_RESOURCES は、一時的なメモリ不足の条件を指定する場合にのみ使用する必要があります。
-- スケーリングのエンティティ (たとえば、VPort) ごとのリソースのチェックの一部として現在の CPU は他の場所に移動するポイントをすべて ite 用とミニポート ドライバーが条件を処理する必要があります.
+- OID の同期呼び出しの種類により、NDIS_STATUS_PENDING の戻り値は許可されません。
+- 現在の CPU (以前はリモートプロセッサで開始されたもの) に対して送信されたすべての受信 ITE の移動を最終処理します。 
+- パラメーターの完全な検証パスを実行するには、ミニポートドライバーを使用することを強くお勧めします。 可能でない場合は、1回だけの配列エントリの検証と実行を実行します。 ミニポートドライバーは、参照されているすべてのオブジェクトが有効かどうかを具体的に確認する必要があります。
+    - ITE の**Entrystatus**フィールドで NDIS_STATUS_PENDING を返すことは許可されていません。
+    - ミニポートアダプターが存在し、良好な状態です。 それ以外の場合は、エントリの**Entrystatus**フィールドを NDIS_STATUS_ADAPTER_NOT_FOUND、NDIS_STATUS_ADAPTER_NOT_READY などに設定します。
+    - 各 VPort は存在し、良好な状態です。 それ以外の場合は、エントリの**Entrystatus**フィールドを NDIS_STATUS_INVALID_PORT、NDIS_STATUS_INVALID_PORT_STATE などに設定します。
+    - 各間接テーブルのエントリインデックスは、構成された範囲内にあります。 この範囲は0xFFFF か、 [OID_GEN_RECEIVE_SCALE_PARAMETERS_V2](oid-gen-receive-scale-parameters-v2.md) OID によって設定された [0... Number Ofindirection tableentries-1] の範囲にあります。 0xFFFF と0xFFFE エントリのインデックスには特別な意味があります。0xFFFF は既定のプロセッサを定義し、0xFFFE はプライマリプロセッサを定義します。 エラーが発生した場合、ハンドラーはエントリの**Entrystatus**フィールドを NDIS_STATUS_INVALID_PARAMETER に設定します。
+    - 上位層とミニポートドライバーは、移動前に、ITE が現在のプロセッサ (アクター CPU) を指していることを想定しています。 つまり、ITE をリモートでリダイレクトすることはできません。 この値が true でない場合は、エントリの**Entrystatus**フィールドを NDIS_STATUS_NOT_ACCEPTED に設定します。
+    - すべてのターゲットプロセッサは有効で、ミニポートアダプターの RSS セットに含まれています。 それ以外の場合は、エントリの**Entrystatus**フィールドを NDIS_STATUS_INVALID_DATA に設定します。
+- その後、またはパラメーターの検証パスの一部として、リソースの状況を検証します。 完全バッチ移動 (退避) の後に使用されるキューの数が、 [OID_GEN_RECEIVE_SCALE_PARAMETERS_V2](oid-gen-receive-scale-parameters-v2.md)要求中に[NDIS_RECEIVE_SCALE_PARAMETERS_V2](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_scale_parameters_v2)構造体に設定されている**numberofqueues**を超えないことを確認します。 それ以外の場合は、NDIS_STATUS_NO_QUEUES が返されます。 NDIS_STATUS_NO_QUEUES は、構成されたキュー数の違反を表すすべての条件に使用する必要があります。 NDIS_STATUS_RESOURCES は、一時的なメモリ不足の状態を指定するためにのみ使用してください。
+- リソースチェックの一部として、各スケーリングエンティティ (VPort など) に対して、currrent CPU をポイントするすべてのデバイスが移動されると、ミニポートドライバーは条件を処理する必要があります。「」を参照してください。
 
-ミニポート ドライバーが無条件に新しい構成を適用できる必要があり、設定する必要があります、上記のチェックのすべてを渡す場合、 **EntryStatus** NDIS_STATUS_SUCCESS を各エントリのフィールド。
+上記のすべてのチェックに合格すると、ミニポートドライバーは新しい構成を無条件に適用できる必要があり、各エントリの**Entrystatus**フィールドを NDIS_STATUS_SUCCESS に設定する必要があります。
 
-一般に、この OID のハンドラーでは、非常に軽量必要があります。 NDIS は呼び出さないでくださいまたはスピンロックなどの考えられる同期操作のオペレーティング システムがサービス以外の場合と[ **NdisMConfigMSIXTableEntry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismconfigmsixtableentry)します。
+一般に、この OID のハンドラーは非常に軽量である必要があります。 スピンロックや[**NdisMConfigMSIXTableEntry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismconfigmsixtableentry)のような同期操作では、以外の NDIS またはオペレーティングシステムサービスを呼び出さないでください。
 
-ミニポート ドライバーは、状態または PnP イベントを示す NDIS を呼び出さないでください。
+ミニポートドライバーは、状態または PnP イベントを示すために、NDIS を呼び出すことはできません。
 
-ミニポート ドライバーも使用しないで受信/送信の完了がないこの OID ハンドラーのコンテキストで実行のためには再帰潜在顧客として。 上位のレイヤーでは、受信のコンテキストからこの OID を起動したり、インジケーターを送信することができます。
+また、ミニポートドライバーは、この OID ハンドラーのコンテキストで、受信/送信の完全な表示を使用しないようにする必要があります。これにより、再帰が発生します。 上位層は、受信または送信の表示コンテキストからこの OID を呼び出すことができます。
 
-### <a name="moving-all-indirection-table-entries"></a>すべての間接指定テーブル エントリの移動
+### <a name="moving-all-indirection-table-entries"></a>すべての間接テーブルエントリの移動
 
-ミニポート ドライバーが認識し、現在の CPU からのすべての間接指定テーブル エントリを移動する特別な要求を処理する必要があります。 RSSv2 で操作を行いますので、個々 の項目を移動、ミニポート ドライバーは、全体的な操作の原子性を保証する必要があります。 ミニポート ドライバーが既に実行されたすべてのコマンドを元に戻す必要があり、- コマンドでは、「失敗」として、すべてのコマンドをマークの移動コマンドの対応する配列の処理中に、バッチの途中でエラーが発生した場合**EntryStatus**フィールド。 上層のプロトコルが常に「成功」としてマークされているすべてのコマンドまたは「失敗」としてマークされているすべてのコマンドのいずれかを格納する「ite 用のすべての移動」バッチを要求して、(前に、または後の移行)、トラフィックが、結果の状態を従うこと見なされます。 これはバグの上位レイヤーには、「失敗」としてマークされているいくつかのエントリのみが表示される場合、システムを確認し、原因として、ミニポート ドライバー をポイントします。
+ミニポートドライバーは、すべての間接テーブルエントリを現在の CPU から離れた場所に移動する特別な要求を認識して処理する必要があります。 RSSv2 は個別の ITE 移動で動作するため、ミニポートドライバーは操作全体の原子性を保証する必要があります。 Move コマンドの対応する配列の処理中にバッチの途中でエラーが発生した場合、ミニポートドライバーは、既に実行されているすべてのコマンドを元に戻し、すべてのコマンドを "失敗" として "コマンドごとの**エントリの状態**" フィールドにマークする必要があります。 上位層プロトコルでは、常に "すべて移動" バッチに "succeeded" とマークされているすべてのコマンド、または "failed" とマークされたすべてのコマンドが含まれていることを前提としています。また、トラフィックが結果の状態 (移動の前または後) であると想定しています。 上位レイヤーに "failed" とマークされたエントリがある場合は、システムを確認し、その原因としてミニポートドライバーをポイントします。
 
-「Ite 用のすべての移動」コマンドの処理のミニポート ドライバーを支援するために、デッドロックを回避するには、上層のプロトコルのペアで、バッチ内のグループの移動コマンド**SwitchId + VPortId**フィールド、ように。
+ミニポートドライバーによる "すべて移動" コマンドの処理を支援し、デッドロックを回避するために、上層のプロトコルグループは、次のように**Switchid + VPortId**フィールドのペアでバッチ内のコマンドを移動します。
 
-- 上位のレイヤーが同じ VPort に「すべてを移動」コマンドの一部としてまとめて実行する必要があるコマンドは、全体的なバッチ内で連続して配置されます。
-- ミニポート ドライバーは、全体を実行しようとはしないでくださいコマンドのバッチは、「すべてを移動」の形式でのさまざまな拡張がターゲット可能性があります。 同じ VPort を対象とするコマンドのグループのみ (同じでタグ付け**SwitchId + VPortId**ペア) を実行する必要があります「すべてを移動」セマンティクスに準拠しています。
-- 上位のレイヤーでは、この「すべてを移動」のセマンティクスが考慮しません、ときに異なる VPort(s) にコマンドを使用して同じ VPort にコマンドをインターリーブに可能性があります。 この場合、「キューの数」違反のために同じ VPort コマンドの 2 つ目のグループは実行できない場合、ミニポート ドライバーが、対応する状態コード (NDIS_STATUS_NO_QUEUES) では、そのグループをマークし、上位のレイヤーが担当回復します。
+- "すべて移動" コマンドの一部として、上位層が一緒に実行されるコマンドは、バッチ全体に連続して配置されます。
+- ミニポートドライバーは、"すべて移動" の方法で、さまざまな VPorts をターゲットにすることがあるコマンドバッチ全体を実行しようとすることはできません。 同じ VPort (同じ**Switchid + VPortId** pair でタグ付けされたもの) を対象とするコマンドのグループのみ、"すべて移動" セマンティクスに準拠して実行する必要があります。
+- 上位層が "すべて移動" セマンティクスを考慮しない場合、コマンドが異なる VPort に対してコマンドを使用して同じ VPort にインターリーブされる可能性があります。 この場合、"キューの数" 違反が原因で同じ VPort に対して2番目のコマンドグループを実行できない場合、ミニポートドライバーは、対応するステータスコード (NDIS_STATUS_NO_QUEUES) を持つグループをマークし、上位層が際.
 
-たとえば、プロトコル レイヤーの上にある場合は、一連のこのようなコマンドを 2 等分します。
+たとえば、上層のプロトコルが次のような一連のコマンドを実行しているとします。
 
 - `VPort=1 ITE[0,1]`
 - `VPort=2 ITE[0]`
 - `VPort=1 ITE[2]`
 
-ミニポート ドライバーがアトミックに、すべての 4 つの移動コマンドを実行しようとする必要がないか、3 つすべてのコマンドを移動する`VPort=1`(`ITE[0,1,2]`)。 のみを実行する必要があります、 `VPort=1 ITE[0,1]` 「すべてを移動」に、グループ、`VPort=2 ITE[0]`グループ化し、`VPort=1 ITE[2]`します。 異なる結果を次の 3 つのコマンドのすべてのグループがあります。 グループなど、`VPort=1 ITE[0,1]`と`VPort=2 ITE[0]`が成功したと`VPort=1 ITE[2]`グループが失敗する可能性があります。 対応する結果を反映する必要があります**EntryStatus**各コマンドの構造体のメンバー。 これにより、ミニポート ドライバーは、全体的なバッチ (たとえば、ロック、全体のアダプター) の安全な実行の予防措置には必要ありません。 コマンドのみを特定 VPort のターゲットがシリアル化する必要があります、細かい単位あたりの VPort のロックは使用できますが、および特定のデッドロックを回避します。
+ミニポートドライバーは、4つの move コマンドすべて、または `VPort=1` (`ITE[0,1,2]`) の3つの移動コマンドすべてをアトミックに実行する必要はありません。 "すべて移動" の方法で `VPort=1 ITE[0,1]` グループを実行する必要があるだけで、`VPort=2 ITE[0]` グループを `VPort=1 ITE[2]`ます。 3つのコマンドグループはすべて、結果が異なる場合があります。 たとえば、`VPort=1 ITE[0,1]` と `VPort=2 ITE[0]` のグループは成功する可能性があり、`VPort=1 ITE[2]` グループは失敗する可能性があります。 結果は、各コマンド構造の対応する**Entrystatus**メンバーに反映される必要があります。 このように、ミニポートドライバーは、バッチ全体を安全に実行するための対策を講じる必要はありません (たとえば、アダプター全体をロックするなど)。 特定の VPort を対象とするコマンドのみをシリアル化し、より詳細な VPort ロックを使用することができます。また、特定のデッドロックが回避されます。
 
 > [!NOTE]
-> 同じエントリ状態では、コマンドのエントリのグループ全体をマークする必要があります。
+> コマンドエントリのグループ全体を同じエントリ状態でマークする必要があります。
 
-### <a name="error-conditions-and-status-codes"></a>エラー状況と状態コード
+### <a name="error-conditions-and-status-codes"></a>エラー状態と状態コード
 
-この OID では、エラーが発生したときに、次のステータス コードが返されます。
+この OID は、エラーが発生したときに次の状態コードを返します。
 
 | 状態コード | エラー状況 |
 | --- | --- |
-| NDIS_STATUS_INVALID_LENGTH | OID が正しくありません。 |
-| NDIS_STATUS_INVALID_PARAMETER | 無効な値を含むヘッダーまたは OID 自体で (ただし個々 のコマンドのエントリではなく) どちらか、他のフィールド。 |
+| NDIS_STATUS_INVALID_LENGTH | OID の形式が正しくありません。 |
+| NDIS_STATUS_INVALID_PARAMETER | ヘッダーまたは OID 自体に含まれるその他のフィールド (個々のコマンドエントリではありません) には、無効な値が含まれています。 |
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 | | |
 | --- | --- |
 | バージョン | Windows 10 バージョン 1709 |
-| Header | Ntddndis.h (include Ndis.h) |
+| Header | Ntddndis (Ndis .h を含む) |
 
 ## <a name="see-also"></a>関連項目
 
-- [Receive Side Scaling バージョン 2 (RSSv2)](receive-side-scaling-version-2-rssv2-.md)
-- [NDIS_RSS_SET_INDIRECTION_ENTRIES](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_rss_set_indirection_entries)
-- [NDIS_RSS_SET_INDIRECTION_ENTRY](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_rss_set_indirection_entry)
-- [NDIS_NIC_SWITCH_CAPABILITIES](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)
+- [Receive Side Scaling Version 2 (RSSv2)](receive-side-scaling-version-2-rssv2-.md)
+- [NDIS_RSS_SET_INDIRECTION_ENTRIES](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_rss_set_indirection_entries)
+- [NDIS_RSS_SET_INDIRECTION_ENTRY](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_rss_set_indirection_entry)
+- [NDIS_NIC_SWITCH_CAPABILITIES](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)
 - [OID_GEN_RECEIVE_SCALE_PARAMETERS_V2](oid-gen-receive-scale-parameters-v2.md)
-- [NDIS_RECEIVE_SCALE_PARAMETERS_V2](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_scale_parameters_v2)
+- [NDIS_RECEIVE_SCALE_PARAMETERS_V2](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_scale_parameters_v2)
 

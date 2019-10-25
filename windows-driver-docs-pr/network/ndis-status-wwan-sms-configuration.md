@@ -1,30 +1,30 @@
 ---
 title: NDIS_STATUS_WWAN_SMS_CONFIGURATION
-description: ミニポート ドライバーは、前の OID_WWAN_SMS_CONFIGURATION の入力候補 MB サービスに通知する NDIS_STATUS_WWAN_SMS_CONFIGURATION 通知を使用して \ 160; クエリまたはセットの要求、または SMS の変更の場合、イベント通知構成します。 ミニポート ドライバーには、この通知が不要なイベントを送信できます。この通知は、NDIS_WWAN_SMS_CONFIGURATION 構造体を使用します。
+description: ミニポートドライバーは、NDIS_STATUS_WWAN_SMS_CONFIGURATION 通知を使用して、以前の OID_WWAN_SMS_CONFIGURATION \ 160、クエリまたは set 要求の完了、または SMS の変更の場合のイベント通知を MB サービスに通知します。configuration. ミニポートドライバーは、この通知を使用して、要請されていないイベントも送信できます。この通知では、NDIS_WWAN_SMS_CONFIGURATION 構造体が使用されます。
 ms.assetid: 86dfe2dc-070b-43d9-b6fa-54dee985c65d
 ms.date: 08/08/2017
-keywords: -NDIS_STATUS_WWAN_SMS_CONFIGURATION ネットワーク ドライバーが Windows Vista 以降
+keywords: -Windows Vista 以降の NDIS_STATUS_WWAN_SMS_CONFIGURATION ネットワークドライバー
 ms.localizationpriority: medium
-ms.openlocfilehash: bb3f97a1dcad87fb73eadfcb4a88c1dfa6b9d48f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e017232daa44e5c6f772dfec8394b8e9684e5fbe
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386857"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844637"
 ---
-# <a name="ndisstatuswwansmsconfiguration"></a>NDIS\_状態\_WWAN\_SMS\_構成
+# <a name="ndis_status_wwan_sms_configuration"></a>NDIS\_ステータス\_WWAN\_SMS\_構成
 
 
-ミニポート ドライバーを使用して、NDIS\_状態\_WWAN\_SMS\_MB サービスに、前のいずれかの完了に関する通知の構成通知[OID\_WWAN\_SMS\_構成](oid-wwan-sms-configuration.md) の照会または SMS 構成では、要求、または変更の場合、イベント通知を設定します。
+ミニポートドライバーは、NDIS\_ステータス\_WWAN\_SMS\_構成通知を使用して、以前の[OID\_wwan\_sms\_構成](oid-wwan-sms-configuration.md)の完了を、MB サービスに伝え クエリまたはセット要求、または SMS 構成が変更された場合のイベント通知。
 
-ミニポート ドライバーには、この通知が不要なイベントを送信できます。
+ミニポートドライバーは、この通知を使用して、要請されていないイベントも送信できます。
 
-この通知を使用して、 [ **NDIS\_WWAN\_SMS\_構成**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_sms_configuration)構造体。
+この通知では、 [**NDIS\_WWAN\_SMS\_構成**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_sms_configuration)構造を使用します。
 
 <a name="remarks"></a>注釈
 -------
 
-ミニポート ドライバーは、MB デバイスの SMS サブシステムが SMS 操作の準備ができたときこの迷惑なを示す値を送信する必要があります。
+ミニポートドライバーは、MB デバイスの SMS サブシステムが SMS 操作の準備ができている場合に、この要請されていないという通知を送信する必要があります。
 
 <a name="requirements"></a>要件
 ------------
@@ -37,11 +37,11 @@ ms.locfileid: "67386857"
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>Windows 7 および Windows の以降のバージョンで使用できます。</p></td>
+<td><p>Windows 7 以降のバージョンの Windows で使用できます。</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Ndis.h</td>
+<td>Ndis. h</td>
 </tr>
 </tbody>
 </table>
@@ -51,7 +51,7 @@ ms.locfileid: "67386857"
 
 [OID\_WWAN\_SMS\_構成](oid-wwan-sms-configuration.md)
 
-[**NDIS\_WWAN\_SMS\_構成**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_sms_configuration)
+[**NDIS\_WWAN\_SMS\_構成**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_sms_configuration)
 
  
 

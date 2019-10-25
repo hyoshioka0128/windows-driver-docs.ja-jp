@@ -3,18 +3,18 @@ title: 同期されていない IdeHwBuildIo ルーチン
 description: 同期されていない IdeHwBuildIo ルーチン
 ms.assetid: 47e32f05-5c89-4423-b515-c774b94a9b84
 keywords:
-- ATA ポート ドライバー WDK、同期
-- WDK ATA ポート ドライバーの同期
+- ATA ポートドライバー WDK、同期
+- 同期 WDK ATA ポートドライバー
 - AtaHwBuildIo
-- 同期されていない処理 WDK ATA ポート ドライバー
+- 非同期処理の WDK ATA ポートドライバー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2240bc7e14449a323effff916b5e399f5a7ebad0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ca1b2e1fd2655df29e71db877edf9c8dac5546ce
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386810"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844439"
 ---
 # <a name="unsynchronized-idehwbuildio-routine"></a>同期されていない IdeHwBuildIo ルーチン
 
@@ -22,14 +22,14 @@ ms.locfileid: "67386810"
 ## <span id="ddk_unsynchronized_atahwbuildio_routine_kg"></span><span id="DDK_UNSYNCHRONIZED_ATAHWBUILDIO_ROUTINE_KG"></span>
 
 
-**注**ATA ポートはドライバーと ATA ミニポート ドライバー モデルが変更されるか利用今後します。 代わりに、使用をお勧め、 [Storport ドライバー](https://docs.microsoft.com/windows-hardware/drivers/storage/storport-driver)と[Storport ミニポート](https://docs.microsoft.com/windows-hardware/drivers/storage/storport-miniport-drivers)ドライバー モデル。
+**メモ**ATA ポートドライバーと ATA ミニポートドライバーのモデルは、将来変更されるか、使用できなくなる可能性があります。 代わりに、 [storport ドライバー](https://docs.microsoft.com/windows-hardware/drivers/storage/storport-driver)および[storport ミニポート](https://docs.microsoft.com/windows-hardware/drivers/storage/storport-miniport-drivers)ドライバーモデルを使用することをお勧めします。
 
 
-ATA ポート ドライバーは、ディスパッチするプロセッサの IRQL を発生させます。\_レベルまたはの上を呼び出す前に、ATA ミニポート ドライバーの起動 I/O ルーチン、 [ **IdeHwStartIo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/irb/nc-irb-ide_hw_startio)します。 ATA ポート ドライバーは、割り込みをマスクして開始の I/O ルーチンと、割り込みハンドラーが重要なオペレーティング システムの構造体へのアクセスを同期することを保証するために、プロセッサの IRQL を発生させます。 ミニポート ドライバーは、IRQL で開始 I/O ルーチンに費やされた時間を短縮する&gt;= ディスパッチ\_レベルに、ミニポート ドライバーには、 [ **IdeHwBuildIo** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/irb/nc-irb-ide_hw_buildio)ルーチン。 ATA のポート ドライバー呼び出し*IdeHwBuildIo* IRQL で&lt;= ディスパッチ\_レベル、ミニポート ドライバーを低い IRQL でできるだけ多くの I/O 要求の前処理し、コントロールを独占しないようにするため、プロセッサ。
+Ata ポートドライバーは、ATA ミニポートドライバーの開始 i/o ルーチン[**IdeHwStartIo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/irb/nc-irb-ide_hw_startio)を呼び出す前に\_レベル以上をディスパッチするプロセッサの IRQL を発生させます。 ATA ポートドライバーは、割り込みをマスクアウトし、開始 i/o ルーチンと割り込みハンドラーが重要なオペレーティングシステム構造へのアクセスを同期することを保証するために、プロセッサの IRQL を発生させます。 ポートの開始時にミニポートドライバーが開始 i/o ルーチンで使用する時間を短縮するには、&gt;= ディスパッチ\_レベルで、 [**IdeHwBuildIo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/irb/nc-irb-ide_hw_buildio)ルーチンを提供します。 ATA ポートドライバーは、IRQL &lt;= ディスパッチ\_レベルで*IdeHwBuildIo*を呼び出します。これにより、ミニポートドライバーは、低 irql でできるだけ多くの i/o 要求を前処理し、プロセッサの制御を独占するのを回避できます。
 
-Storport の I/O モデルでは、その開始 I/O ルーチンに費やした時間を最小限に同様の手法を使用します。 Storport ドライバーの使用方法の詳細については[ **HwStorBuildIo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-hw_buildio)を参照してください、[同期されていない HwStorBuildIo ルーチン](unsynchronized-hwstorbuildio-routine.md)します。
+Storport i/o モデルでは、同様の手法を使用して、開始 i/o ルーチンで費やされる時間を最小限に抑えています。 Storport ドライバーで[**HwStorBuildIo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nc-storport-hw_buildio)を使用する方法の詳細については、「同期されていない[HwStorBuildIo ルーチン](unsynchronized-hwstorbuildio-routine.md)」を参照してください。
 
-内で、デバイスの拡張機能などの重要なシステムの構造体へのアクセスを必要とする I/O 要求のすべての処理を行う必要があります、 [ **IdeHwStartIo** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/irb/nc-irb-ide_hw_startio)ルーチン。
+デバイス拡張機能などの重要なシステム構造へのアクセスを必要とする i/o 要求のすべての処理は、 [**IdeHwStartIo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/irb/nc-irb-ide_hw_startio)ルーチン内で実行する必要があります。
 
  
 

@@ -1,9 +1,9 @@
 ---
-title: AVC\_関数\_ピア\_は\_一覧
-description: AVC\_関数\_ピア\_は\_一覧
+title: '\_ピア\_DO\_リストの AVC\_関数'
+description: '\_ピア\_DO\_リストの AVC\_関数'
 ms.assetid: 80ffd94e-788f-4874-b716-3eb66d90e4aa
 keywords:
-- AVC_FUNCTION_PEER_DO_LIST ストリーミング メディア デバイス
+- AVC_FUNCTION_PEER_DO_LIST ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -12,26 +12,26 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4fcf8bff68757c53652db812fa93de5641e977be
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ac01e847714425e15a7875a7ab7a729b7caaf9ab
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386726"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845075"
 ---
-# <a name="avcfunctionpeerdolist"></a>AVC\_関数\_ピア\_は\_一覧
+# <a name="avc_function_peer_do_list"></a>\_ピア\_DO\_リストの AVC\_関数
 
 
 ## <span id="ddk_avc_function_peer_do_list_ks"></span><span id="DDK_AVC_FUNCTION_PEER_DO_LIST_KS"></span>
 
 
-**AVC\_関数\_ピア\_は\_一覧**すべて非仮想関数のコードでは検索*avc.sys*インスタンス。
+**Avc\_関数\_ピア\_DO\_LIST**関数のコードは、すべての非仮想*AVC*インスタンスを検索します。
 
 ### <a name="io-status-block"></a>I/O ステータス ブロック
 
-成功すると、AV/C をプロトコル ドライバーに設定**Irp -&gt;IoStatus.Status**ステータス\_成功します。
+成功した場合、AV/C プロトコルドライバーは、 **Irp&gt;iostatus. status**を STATUS\_SUCCESS に設定します。
 
-その他の戻り値には、考えられる。
+その他の戻り値には次のようなものがあります。
 
 <table>
 <colgroup>
@@ -47,7 +47,7 @@ ms.locfileid: "67386726"
 <tbody>
 <tr class="odd">
 <td><p>STATUS_INSUFFICIENT_RESOURCES</p></td>
-<td><p>デバイス オブジェクトの参照の一覧については、領域を取得できませんでした。</p></td>
+<td><p>デバイスオブジェクト参照の一覧の領域を取得できませんでした。</p></td>
 </tr>
 </tbody>
 </table>
@@ -56,7 +56,7 @@ ms.locfileid: "67386726"
 
 ### <a name="comments"></a>コメント
 
-この関数を使用して、**よう**、AVC のメンバー\_MULTIFUNC\_IRB 構造の下に示すようにします。
+この関数は、次に示すように、AVC\_MULTIFUNC\_IRB 構造体の**PeerList**メンバーを使用します。
 
 ```cpp
 typedef struct _AVC_MULTIFUNC_IRB {
@@ -75,23 +75,23 @@ typedef struct _AVC_MULTIFUNC_IRB {
 
 ### <a name="requirements"></a>要件
 
-**ヘッダー:** 宣言されている*avc.h*します。 含める*avc.h*します。
+**ヘッダー:** *Avc*で宣言されています。 *Avc. h*を含めます。
 
-### <a name="avcmultifuncirb-input"></a>AVC\_MULTIFUNC\_IRB 入力
+### <a name="avc_multifunc_irb-input"></a>AVC\_MULTIFUNC\_IRB 入力
 
-**一般的です**  
-**関数**にこのメンバーのサブメンバーを設定する必要があります**AVC\_関数\_ピア\_は\_一覧**、AVC から\_関数列挙体です。
+**的**  
+このメンバーの**関数**のサブメンバーは、AVC\_関数の列挙の **\_\_ピア\_DO\_関数**に設定する必要があります。
 
-<span id="PeerList"></span><span id="peerlist"></span><span id="PEERLIST"></span>**よう**  
-すべての非仮想 (ピア) インスタンスの一覧を示す*avc.sys*します。
+<span id="PeerList"></span><span id="peerlist"></span><span id="PEERLIST"></span>**PeerList**  
+*Avc*の非仮想 (ピア) インスタンスすべてのリストを指定します。
 
-呼び出し元が送信した GUID\_AVC\_クラス デバイス インターフェイスの要求を任意のオブジェクトがオブジェクトの一覧で返されます。 呼び出し元は、これらのオブジェクトへの参照を解放する必要があります (を通じて**ObDereferenceObject**)、し、一覧を格納しているメモリを解放 (を通じて**ExFreePool**) が完了します。
+呼び出し元は、オブジェクトリストに返されたいずれかのオブジェクトを介して、GUID\_AVC\_クラスのデバイスインターフェイス要求を送信できます。 呼び出し元は、( **ObDereferenceObject**を通じて) これらのオブジェクトへの参照を解放し、完了時に ( **exfreepool**を介して) リストを含むメモリを解放する必要があります。
 
-この関数のコードは、IRQL で呼び出すことができます&lt;= ディスパッチ\_レベル。
+この関数コードは、IRQL &lt;= ディスパッチ\_レベルで呼び出すことができます。
 
-### <a name="see-also"></a>関連項目
+### <a name="see-also"></a>参照
 
-[**AVC\_MULTIFUNC\_IRB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ns-avc-_avc_multifunc_irb)、 [ **AVC\_ピア\_は\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ns-avc-_avc_peer_do_list)、 [ **AVC\_関数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ne-avc-_tagavc_function)、 [**デバイス\_オブジェクト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_object)、 [ **ObDereferenceObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obdereferenceobject)、 [ **ExFreePool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-exfreepool)
+[**Avc\_MULTIFUNC\_IRB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ns-avc-_avc_multifunc_irb)、 [**avc\_ピア\_DO\_LIST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ns-avc-_avc_peer_do_list)、 [**avc\_関数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ne-avc-_tagavc_function)、[**デバイス\_オブジェクト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_object)、 [**ObDereferenceObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-obdereferenceobject)、 [**exfreepool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-exfreepool)
 
  
 

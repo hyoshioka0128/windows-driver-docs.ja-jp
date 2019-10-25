@@ -4,12 +4,12 @@ description: NDIS プロトコル ドライバーからの OID 要求の生成
 ms.assetid: a27d1c9c-fc7e-414f-8cad-595e8d8fe8f8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: be2ab09768ee39596ef2753f7f43c77284932110
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: bd3a85ce6e319ac687303d5ad199d0c1e0ce7c33
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382769"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842182"
 ---
 # <a name="generating-oid-requests-from-an-ndis-protocol-driver"></a>NDIS プロトコル ドライバーからの OID 要求の生成
 
@@ -17,25 +17,25 @@ ms.locfileid: "67382769"
 
 
 
-プロトコルの呼び出しを基になるドライバーの OID 要求を発信、 [ **NdisOidRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisoidrequest)関数。
+基になるドライバーに OID 要求を送信するために、プロトコルは[**NdisOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisoidrequest)関数を呼び出します。
 
-次の図は、プロトコル ドライバーによって送信されたが、OID 要求を示しています。
+次の図は、プロトコルドライバーによって生成される OID 要求を示しています。
 
-![プロトコル ドライバーで発生した、oid 要求を示す図](images/protocolrequest.png)
+![プロトコルドライバーによって生成された oid 要求を示す図](images/protocolrequest.png)
 
-プロトコル ドライバーを呼び出してから、 [ **NdisOidRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisoidrequest)関数、NDIS は、[次へ] の基になるドライバーの要求関数を呼び出します。 ミニポート ドライバーが OID 要求を処理する方法の詳細については、次を参照してください。[アダプターの OID 要求](miniport-adapter-oid-requests.md)します。 フィルター ドライバーが OID 要求を処理する方法の詳細については、次を参照してください。[フィルター モジュールの OID 要求](filter-module-oid-requests.md)します。
+プロトコルドライバーが[**NdisOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisoidrequest)関数を呼び出すと、NDIS は、次に基になるドライバーの要求関数を呼び出します。 ミニポートドライバーが OID 要求を処理する方法の詳細については、「[アダプターに対する Oid 要求](miniport-adapter-oid-requests.md)」を参照してください。 フィルタードライバーが OID 要求を処理する方法の詳細については、「[フィルターモジュール OID 要求](filter-module-oid-requests.md)」を参照してください。
 
-同期的に完了する**NdisOidRequest**返します NDIS\_状態\_成功またはエラー状態です。 非同期的に完了する**NdisOidRequest**返します NDIS\_状態\_保留します。
+同期的に完了するには、 **NdisOidRequest**によって、NDIS\_STATUS\_SUCCESS または error status が返されます。 非同期的に完了するために、 **NdisOidRequest**は NDIS\_STATUS\_PENDING を返します。
 
-場合**NdisOidRequest**返します NDIS\_状態\_保留中、NDIS 呼び出し、 [ **ProtocolOidRequestComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_oid_request_complete)関数の後に、基になるドライバーでは、OID 要求を完了します。 ここでは、NDIS がで要求の結果を渡す、 *OidRequest*パラメーターの*ProtocolOidRequestComplete*します。 NDIS 渡しますで要求の最終的な状態、*状態*パラメーターの*ProtocolOidRequestComplete*します。
+**NdisOidRequest**が NDIS\_STATUS\_PENDING を返した場合、ndis は基になるドライバーが OID 要求を完了した後に、 [**ProtocolOidRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_oid_request_complete)関数を呼び出します。 この場合、NDIS は*ProtocolOidRequestComplete*の*OidRequest*パラメーターに要求の結果を渡します。 NDIS は、 *ProtocolOidRequestComplete*の*status*パラメーターに要求の最終状態を渡します。
 
-場合**NdisOidRequest** NDIS を返します\_状態\_成功するでのクエリ要求の結果が返されますが、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)で構造体、 *OidRequest*パラメーター。 この場合は、NDIS は呼び出しません、 *ProtocolOidRequestComplete*関数。
+**NdisOidRequest**が NDIS\_STATUS\_SUCCESS を返した場合、 [**ndis\_OID\_request**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造体のクエリ要求の結果が、 *OidRequest*パラメーターに返されます。 この場合、NDIS は*ProtocolOidRequestComplete*関数を呼び出しません。
 
-どのような情報が正常に処理によって基になるドライバーでは、OID を発行するプロトコル ドライバーを決定する要求は、値を確認する必要があります、 **SupportedRevision** NDIS でメンバー\_OID\_要求OID 要求が返された後に構造体。 NDIS バージョン情報の詳細については、次を参照してください。 [NDIS バージョン情報を指定する](specifying-ndis-version-information.md)します。
+基になるドライバーによって正常に処理された情報を確認するには、oid 要求を発行するプロトコルドライバーが、oid 要求の後に、NDIS\_OID\_要求構造の**Supportedrevision**メンバーの値を確認する必要があります。型. NDIS バージョン情報の詳細については、「 [Ndis バージョン情報の指定](specifying-ndis-version-information.md)」を参照してください。
 
-場合は、基になるドライバーは、それ以降の状態を示す値を OID 要求を関連付ける必要があります、プロトコル ドライバーに設定する必要があります、 **RequestId** NDIS でメンバー\_OID\_要求の構造。 基になるドライバーは、状態の表示を行うときに、設定、 **RequestId**内のメンバー、 [ **NDIS\_状態\_INDICATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)構造体OID で指定された値を次のように要求します。
+基になるドライバーが OID 要求を後続のステータス表示に関連付ける必要がある場合は、プロトコルドライバーによって、NDIS\_OID\_要求構造に**RequestId**メンバーが設定されます。 基になるドライバーがステータスを表示すると、 [**NDIS\_ステータス\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)構造の**REQUESTID**メンバーが OID 要求で提供される値に設定されます。
 
-ドライバーを呼び出すことができます**NdisOidRequest**でバインディングの場合、*再起動*、*を実行している*、*一時停止中*、または*を一時停止*状態。
+ドライバーは、バインドが*再起動*、*実行中*、*一時停止*、または*一時停止*状態のときに**NdisOidRequest**を呼び出すことができます。
 
  
 

@@ -7,12 +7,12 @@ keywords:
 - SCSI ミニポートドライバー WDK ストレージ、オプションのルーチン
 ms.date: 10/08/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 08ef78bdaaf8eb2105873622a4640c6454ddff9b
-ms.sourcegitcommit: 5f4252ee4d5a72fa15cf8c68a51982c2bc6c8193
+ms.openlocfilehash: b63c54857dcf45e46041dfb9259b065a15442c22
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72256330"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842684"
 ---
 # <a name="required-and-optional-scsi-miniport-driver-routines"></a>必須およびオプションの SCSI ミニポート ドライバー ルーチン
 
@@ -38,12 +38,12 @@ ms.locfileid: "72256330"
 | [*HwScsiDmaStarted*](scsi-miniport-driver-s-hwscsidmastarted-routine.md) | システム dma コントローラーがポートドライバーによってプログラムされた後に、hba がシステム DMA コントローラーを使用して HBA 転送を設定する場合に必要です。 |
 | [*HwScsiAdapterState*](scsi-miniport-driver-s-hwscsiadapterstate-routine.md) | HBA に BIOS または x86 のリアルモードドライバーがない場合、または、x86 専用の Microsoft Windows システムでは実行されない場合は、省略可能です。 |
 | [*HwScsiAdapterControl*](scsi-miniport-driver-s-hwscsiadaptercontrol-routine.md) | ミニポートドライバーでプラグアンドプレイがサポートされている場合は必須です。 |
-| [HwScsiWmiExecuteMethod](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/scsiwmi/nc-scsiwmi-pscsiwmi_execute_method) | データブロックに関連付けられたメソッドを実行します。 このルーチンは省略可能です。 |
-| [HwScsiWmiFunctionControl](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/scsiwmi/nc-scsiwmi-pscsiwmi_function_control) | イベントの通知を有効または無効にします。また、ミニポートドライバーによって収集の負荷が高いと指定されたデータブロックのデータ収集を有効または無効にします。 任意。 |
-| [HwScsiWmiQueryDataBlock](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/scsiwmi/nc-scsiwmi-pscsiwmi_query_datablock) | 1つのインスタンスまたはデータブロックのすべてのインスタンスを取得します。 必須。 |
-| [HwScsiWmiQueryReginfo](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/scsiwmi/nc-scsiwmi-pscsiwmi_query_reginfo) | SCSI ポートドライバーによってミニポートドライバーに代わって登録されるデータおよびイベントブロックに関する情報を取得します。 必須。 |
-| [HwScsiWmiSetDataBlock](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/scsiwmi/nc-scsiwmi-pscsiwmi_set_datablock) | データブロックの1つのインスタンス内のすべてのデータ項目を変更します。 任意。 |
-| [HwScsiWmiSetDataItem](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/scsiwmi/nc-scsiwmi-pscsiwmi_set_dataitem) | データブロックのインスタンス内の1つのデータ項目を変更します。 任意。 |
+| [HwScsiWmiExecuteMethod](https://docs.microsoft.com/windows-hardware/drivers/ddi/scsiwmi/nc-scsiwmi-pscsiwmi_execute_method) | データブロックに関連付けられたメソッドを実行します。 このルーチンは省略可能です。 |
+| [HwScsiWmiFunctionControl](https://docs.microsoft.com/windows-hardware/drivers/ddi/scsiwmi/nc-scsiwmi-pscsiwmi_function_control) | イベントの通知を有効または無効にします。また、ミニポートドライバーによって収集の負荷が高いと指定されたデータブロックのデータ収集を有効または無効にします。 (省略可能)。 |
+| [HwScsiWmiQueryDataBlock](https://docs.microsoft.com/windows-hardware/drivers/ddi/scsiwmi/nc-scsiwmi-pscsiwmi_query_datablock) | 1つのインスタンスまたはデータブロックのすべてのインスタンスを取得します。 必須。 |
+| [HwScsiWmiQueryReginfo](https://docs.microsoft.com/windows-hardware/drivers/ddi/scsiwmi/nc-scsiwmi-pscsiwmi_query_reginfo) | SCSI ポートドライバーによってミニポートドライバーに代わって登録されるデータおよびイベントブロックに関する情報を取得します。 必須。 |
+| [HwScsiWmiSetDataBlock](https://docs.microsoft.com/windows-hardware/drivers/ddi/scsiwmi/nc-scsiwmi-pscsiwmi_set_datablock) | データブロックの1つのインスタンス内のすべてのデータ項目を変更します。 (省略可能)。 |
+| [HwScsiWmiSetDataItem](https://docs.microsoft.com/windows-hardware/drivers/ddi/scsiwmi/nc-scsiwmi-pscsiwmi_set_dataitem) | データブロックのインスタンス内の1つのデータ項目を変更します。 (省略可能)。 |
 
 上記の各ミニポートドライバールーチン ( [**Driverentry**](driverentry-of-scsi-miniport-driver.md)を除く) には、その機能を説明するための名前が付いています。 すべてのミニポートドライバーの初期エントリポイントに必要な名前である**Driverentry**を除き、ミニポートドライバールーチンの名前は、ドライバーライターが選択するすべてのものになります。
 

@@ -1,19 +1,19 @@
 ---
-title: WDF_PTR_ADD_OFFSET macro
+title: WDF_PTR_ADD_OFFSET マクロ
 description: WDF_PTR_ADD_OFFSET マクロは、アドレスにオフセット値を追加し、結果として得られるアドレスを返します。
 ms.assetid: 21402be4-ef71-4828-b588-d178d66472e5
 keywords:
-- WDF_PTR_ADD_OFFSET macro
+- WDF_PTR_ADD_OFFSET マクロ
 ms.date: 08/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 22116b3f13865a440689621f9c76353c43cae57b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d25e5af8889f724cfd0e345276a60869b980ef9c
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67372098"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845414"
 ---
-# <a name="wdfptraddoffset-macro"></a>WDF_PTR_ADD_OFFSET macro
+# <a name="wdf_ptr_add_offset-macro"></a>WDF_PTR_ADD_OFFSET マクロ
 
 
 **WDF_PTR_ADD_OFFSET**マクロは、アドレスにオフセット値を追加し、結果として得られるアドレスを返します。
@@ -31,30 +31,30 @@ PVOID WDF_PTR_ADD_OFFSET(
 <a name="parameters"></a>パラメーター
 ----------
 
-*_ptr*   
+*ptr  (_s)*  
 アドレスを指定します。
 
-*_offset*   
-バイト オフセットの値を指定します。
+*オフセット  (_c)*  
+オフセット値をバイト単位で指定します。
 
 <a name="return-value"></a>戻り値
 ------------
 
-結果として得られるアドレスへのポインターを返します。
+結果のアドレスへのポインターを返します。
 
 <a name="remarks"></a>注釈
 -------
 
-このマクロを呼び出す[ **WDF_PTR_ADD_OFFSET_TYPE** ](wdf-ptr-add-offset-type.md)で、*種類 (_t)* に PVOID パラメーターを設定します。
+このマクロは、 *_type*パラメーターを pvoid に設定して[**WDF_PTR_ADD_OFFSET_TYPE**](wdf-ptr-add-offset-type.md)を呼び出します。
 
-マクロの定義は次のとおりです。
+マクロは次のように定義されます。
 
 ```ManagedCPlusPlus
 #define WDF_PTR_ADD_OFFSET(_ptr, _offset) \
         WDF_PTR_ADD_OFFSET_TYPE(_ptr, _offset, PVOID)
 ```
 
-トースター サンプルから例を次に示します (トースター\\func\\機能を備えた\\wmi.c)。 例では、ドライバーが呼び出す**WDF_PTR_ADD_OFFSET**に渡す変換先バッファーのアドレスを決定するアドレスのオフセットを追加する、 [ **WDF_WMI_BUFFER_APPEND_STRING** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfwmi/nf-wdfwmi-wdf_wmi_buffer_append_string)関数。
+次に示すのは、トースターサンプル (トースター\\func\\特集\\wmi) の例です。 この例では、ドライバーは**WDF_PTR_ADD_OFFSET**を呼び出して、 [**WDF_WMI_BUFFER_APPEND_STRING**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfwmi/nf-wdfwmi-wdf_wmi_buffer_append_string)関数に渡す宛先バッファーアドレスを決定するために、アドレスにオフセットを追加します。
 
 ```cpp
         //
@@ -86,7 +86,7 @@ PVOID WDF_PTR_ADD_OFFSET(
             );
 ```
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -109,7 +109,7 @@ PVOID WDF_PTR_ADD_OFFSET(
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Wdfcore.h (Wdf.h を含む)</td>
+<td>Wdfcore .h (Wdf を含む)</td>
 </tr>
 </tbody>
 </table>

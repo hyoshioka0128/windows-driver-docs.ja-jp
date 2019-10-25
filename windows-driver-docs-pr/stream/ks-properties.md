@@ -3,17 +3,17 @@ title: KS のプロパティ
 description: KS のプロパティ
 ms.assetid: a385929e-1934-4d88-aaf9-ff1ddbfd30f7
 keywords:
-- カーネルの WDK、プロパティをストリーミングします。
-- ストリーミング KS プロパティ WDK カーネル
-- ストリーミング プロパティ WDK カーネル
+- カーネルストリーミング WDK、プロパティ
+- KS プロパティ WDK カーネルストリーミング
+- プロパティ WDK カーネルストリーミング
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ae3cf060312aed26900bef285c6ec0cf19849a19
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 04e309da40564c44f859a9cdafdbef30ee015f90
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382478"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842504"
 ---
 # <a name="ks-properties"></a>KS のプロパティ
 
@@ -21,23 +21,23 @@ ms.locfileid: "67382478"
 
 
 
-A*プロパティ*フィルターや暗証番号 (pin) などのオブジェクトのストリーミングのカーネルに属している機能またはコントロールの状態の設定を表します。 ミニドライバーをストリーミング カーネルのクライアントは get を送信し、要求のプロパティを設定 (KSPROPERTY\_型\_GET および KSPROPERTY\_型\_設定) フィルターと pin、ミニドライバーがインスタンス化します。 関連するプロパティのグループとして参照されます、*プロパティ セット*します。
+*プロパティ*は、フィルターや pin など、カーネルストリーミングオブジェクトに属する機能またはコントロールの状態の設定を表します。 カーネルストリーミングミニドライバーのクライアントは、get および set プロパティ要求 (KSK プロパティ\_TYPE\_GET および KSK プロパティ\_TYPE\_SET) を、ミニドライバーがインスタンス化したフィルターとピンに送信できます。 関連するプロパティのグループを*プロパティセット*と呼びます。
 
-取得または個々 のプロパティを設定、ユーザー モードのクライアントが Win32 関数を呼び出す**DeviceIoControl**で、 *dwIoControlCode* IOCTL にパラメーターが設定\_KS\_プロパティ。 **DeviceIoControl**については、Microsoft Windows SDK ドキュメントで説明します。 カーネル モードのクライアントが呼び出す必要があります[ **KsSynchronousDeviceControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksproxy/nf-ksproxy-kssynchronousdevicecontrol)します。
+個々のプロパティを取得または設定するために、ユーザーモードクライアントは、 *Dwiocontrolcode*パラメーターを IOCTL\_KS\_プロパティに設定して Win32 関数**DeviceIoControl**を呼び出します。 **DeviceIoControl**の詳細については Microsoft Windows SDK のドキュメントを参照してください。 カーネルモードクライアントは[**KsSynchronousDeviceControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksproxy/nf-ksproxy-kssynchronousdevicecontrol)を呼び出す必要があります。
 
-入力バッファーがいずれかを[ **KSPROPERTY** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)構造体または KSPROPERTY 構造と、要求に関連するその他の情報を含むラッパー。 この呼び出しに応答して、オペレーティング システムは、クラス ドライバーは IRP をディスパッチします。
+入力バッファーは、 [**Ksk プロパティ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)の構造体、または ksk プロパティの構造体と要求に関連するその他の情報を含むラッパーです。 この呼び出しに応答して、オペレーティングシステムは IRP をクラスドライバーにディスパッチします。
 
-クラス ドライバーは結果として得られる IRP を受信呼び出し[ **KsPropertyHandler**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-kspropertyhandler)します。 クラスのドライバーには、呼び出しのパラメーターとして、プロパティの要求の詳細を識別する KSPROPERTY 構造体のアドレスが含まれています。 プロパティの要求は、クラス ドライバー レベルまたはミニドライバーで提供されるハンドラーによって自動的に処理するかです。 参照してください[ストリーミング プロパティ設定のカーネル](https://docs.microsoft.com/windows-hardware/drivers/stream/avstream-property-sets)参照情報を含むプロパティ セットが、クラス ドライバーで処理され、ミニドライバーのハンドラーが必要なのです。 ミニドライバーでは、オーバーライドしたり、既定では、クラス ドライバーによって処理されるプロパティのコールバックを提供することで、クラス ドライバーのハンドラーを強化することができます。
+クラスドライバーは、生成された IRP を受け取ると、 [**Kspropertyhandler**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-kspropertyhandler)を呼び出します。 クラスドライバーは、プロパティ要求の詳細を識別する KSK プロパティ構造体のアドレスを呼び出しパラメーターとして含みます。 プロパティ要求は、クラスドライバーレベルまたはミニドライバーによって提供されるハンドラーで自動的に処理されます。 クラスドライバーによって処理され、ミニドライバーで提供されるハンドラーを必要とするプロパティセットなど、参照情報については、「[カーネルストリーミングプロパティセット](https://docs.microsoft.com/windows-hardware/drivers/stream/avstream-property-sets)」を参照してください。 ミニドライバーは、クラスドライバーによって既定で処理されるプロパティのコールバックを提供することによって、クラスドライバーハンドラーをオーバーライドまたは拡張できます。
 
-場合、ミニドライバーは、このプロパティのハンドラーを提供**KsPropertyHandler**さらにそこから適切なミニドライバーが指定したコールバックを要求します。
+ミニドライバーがこのプロパティのハンドラーを提供している場合は、 **Ksk Propertyhandler**によって、適切なミニドライバーが指定されたコールバックに要求が渡されます。
 
-型の構造体でそのプロパティのサポートのコールバックへのポインターを提供する、ミニドライバー [ **KSPROPERTY\_項目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksproperty_item)します。 グループ関連 KSPROPERTY の配列のミニドライバー\_内の項目の構造体、 [ **KSPROPERTY\_設定**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksproperty_set)構造体。 別のクラス ドライバー モデルには、プロパティ クラス ドライバーを使用可能なデータを設定するミニドライバーの若干異なる方法があります。 次のリンクでクラス ドライバー固有の情報を見つけることができます[カーネル ストリーミング](kernel-streaming.md)します。
+ミニドライバーは、 [**Ksk プロパティ\_ITEM**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksproperty_item)型の構造内のプロパティサポートコールバックへのポインターを提供します。 ミニドライバーは、構造体の[**ksk プロパティ\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksproperty_set) 、関連する ksk プロパティ\_項目の構造体をグループ化します。 クラスドライバーモデルによって、ミニドライバーがクラスドライバーでプロパティセットデータを使用できるようにするためのメソッドが少し異なります。 「[カーネルストリーミング](kernel-streaming.md)」のリンクに従って、クラスドライバー固有の情報を見つけることができます。
 
-ミニドライバーへのポインターも用意されています。、 [ **KSPROPERTY\_値**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksproperty_values)構造、KSPROPERTY\_項目の構造。 KSPROPERTY\_値構造体の配列を含む順番[ **KSPROPERTY\_MEMBERSLIST** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksproperty_memberslist)構造体。 これは、ミニドライバーがプロパティに使用できる値の種類とサイズを指定します。 各 KSPROPERTY\_MEMBERSLIST 構造体には、ヘッダーのメンバーが含まれていますを参照してください[ **KSPROPERTY\_MEMBERSHEADER** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksproperty_membersheader)法律の範囲またはの値を指定する方法については、。ミニドライバーをサポートするプロパティです。 このメカニズムでの実装を検索することもできます、 *Testcap*サンプル Microsoft Windows Driver Kit (WDK)。
+また、ミニドライバーは、ksk プロパティ\_項目構造体の[**Ksk プロパティ\_値**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksproperty_values)の構造体へのポインターも提供します。 KSK プロパティ\_VALUES 構造体には、 [ **\_memberslist**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksproperty_memberslist)構造体の ksk プロパティの配列が含まれています。 ここで、ミニドライバーは、プロパティに許容される値のサイズと種類を指定します。 各 KSK プロパティ\_memberslist 構造体には、ヘッダーメンバーが含まれています。ミニドライバーでサポートされているプロパティに有効な範囲または値を指定する方法については、「 [**Ksk プロパティ\_MEMBERSHEADER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksproperty_membersheader) 」を参照してください。 このメカニズムの実装については、Microsoft Windows Driver Kit (WDK) の*Testcap*サンプルを参照してください。
 
-プロパティに使用できる値の種類とサイズを報告するクラスのドライバーを返します、 [ **KSPROPERTY\_説明**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksproperty_description) 、KSPROPERTY への応答の構造体\_の種類\_クライアントからの BASICSUPPORT 要求。
+プロパティに許容される値のサイズと種類を報告するために、クラスドライバーは、クライアントからの\_BASICSUPPORT 要求\_型に応答して、 [**ksproperty\_DESCRIPTION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksproperty_description)構造体を返します。
 
-KSPROPERTY の一覧が追加されるクラス ドライバー\_MEMBERSHEADER 構造、KSPROPERTY\_構造を定義します。
+クラスドライバーは、\_説明の構造に ksk プロパティ\_MEMBERSHEADER 構造体を追加する場合があります。
 
  
 

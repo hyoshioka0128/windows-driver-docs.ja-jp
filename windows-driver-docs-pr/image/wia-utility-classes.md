@@ -4,26 +4,26 @@ ms.assetid: cc20a088-6470-4648-b7d9-999dbd74baf1
 description: ''
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fe433e5f5a2d40a1379dd2b0b110491c40b49371
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: feacee820d973a043176b1a3f4749a89aeed471c
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67387337"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840662"
 ---
 # <a name="wia-utility-classes"></a>WIA ユーティリティ クラス
 
 
-このトピックでは、WIA ユーティリティ ライブラリの一部である 3 つのヘルパー クラスをについて説明します。
+このトピックでは、WIA ユーティリティライブラリの一部である3つのヘルパークラスについて説明します。
 
--   [CWiauDbgFn クラス](#cwiaudbgfn-class)
--   [CWiauFormatConverter クラス](#cwiauformatconverter-class)
--   [CWiauPropertyList クラス](#cwiaupropertylist-class)
+-   [Cwi/Dbgfn クラス](#cwiaudbgfn-class)
+-   [Cwi/Formatconverter クラス](#cwiauformatconverter-class)
+-   [Cwi/Propertylist クラス](#cwiaupropertylist-class)
 
-## <a name="cwiaudbgfn-class"></a>CWiauDbgFn Class
+## <a name="cwiaudbgfn-class"></a>Cwi/Dbgfn クラス
 
 
-[CWiauDbgFn クラス](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540345(v=vs.85))関数またはメソッドの開始/終了用のヘルパー クラスがトレースをポイントします。
+[Cwiaudbgfn クラス](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540345(v=vs.85))は、関数またはメソッドのエントリ/終了ポイントのトレース用のヘルパークラスです。
 
 <table>
 <colgroup>
@@ -38,22 +38,22 @@ ms.locfileid: "67387337"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiautil/nf-wiautil-cwiaudbgfn-cwiaudbgfn" data-raw-source="[&lt;strong&gt;CWiauDbgFn::CWiauDbgFn&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiautil/nf-wiautil-cwiaudbgfn-cwiaudbgfn)"><strong>CWiauDbgFn::CWiauDbgFn</strong></a></p></td>
-<td><p>クラスのコンス トラクターです。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wiautil/nf-wiautil-cwiaudbgfn-cwiaudbgfn" data-raw-source="[&lt;strong&gt;CWiauDbgFn::CWiauDbgFn&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiautil/nf-wiautil-cwiaudbgfn-cwiaudbgfn)"><strong>Cwi/Dbgfn:: Cwi/Dbgfn</strong></a></p></td>
+<td><p>クラスコンストラクター。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiautil/nf-wiautil-cwiaudbgfn-~cwiaudbgfn" data-raw-source="[&lt;strong&gt;CWiauDbgFn::~CWiauDbgFn&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiautil/nf-wiautil-cwiaudbgfn-~cwiaudbgfn)"><strong>CWiauDbgFn::~CWiauDbgFn</strong></a></p></td>
-<td><p>クラスのデストラクターです。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wiautil/nf-wiautil-cwiaudbgfn-~cwiaudbgfn" data-raw-source="[&lt;strong&gt;CWiauDbgFn::~CWiauDbgFn&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiautil/nf-wiautil-cwiaudbgfn-~cwiaudbgfn)"><strong>Cwi/Dbgfn:: ~ Cwi/Dbgfn</strong></a></p></td>
+<td><p>クラスデストラクター。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <a name="cwiauformatconverter-class"></a>CWiauFormatConverter クラス
+## <a name="cwiauformatconverter-class"></a>Cwi/Formatconverter クラス
 
 
-[CWiauFormatConverter クラス](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540363(v=vs.85))はイメージが BMP 形式に変換するためのヘルパー クラスです。
+[Cwi/Formatconverter クラス](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540363(v=vs.85))は、イメージを BMP 形式に変換するためのヘルパークラスです。
 
 <table>
 <colgroup>
@@ -68,34 +68,34 @@ ms.locfileid: "67387337"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiautil/nf-wiautil-cwiauformatconverter-cwiauformatconverter" data-raw-source="[&lt;strong&gt;CWiauFormatConverter::CWiauFormatConverter&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiautil/nf-wiautil-cwiauformatconverter-cwiauformatconverter)"><strong>CWiauFormatConverter::CWiauFormatConverter</strong></a></p></td>
-<td><p>クラスのコンス トラクターです。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wiautil/nf-wiautil-cwiauformatconverter-cwiauformatconverter" data-raw-source="[&lt;strong&gt;CWiauFormatConverter::CWiauFormatConverter&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiautil/nf-wiautil-cwiauformatconverter-cwiauformatconverter)"><strong>Cwi/Formatconverter:: Cwi/Formatconverter</strong></a></p></td>
+<td><p>クラスコンストラクター。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiautil/nf-wiautil-cwiauformatconverter-~cwiauformatconverter" data-raw-source="[&lt;strong&gt;CWiauFormatConverter::~CWiauFormatConverter&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiautil/nf-wiautil-cwiauformatconverter-~cwiauformatconverter)"><strong>CWiauFormatConverter::~CWiauFormatConverter</strong></a></p></td>
-<td><p>クラスのデストラクターです。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wiautil/nf-wiautil-cwiauformatconverter-~cwiauformatconverter" data-raw-source="[&lt;strong&gt;CWiauFormatConverter::~CWiauFormatConverter&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiautil/nf-wiautil-cwiauformatconverter-~cwiauformatconverter)"><strong>Cwi/Formatconverter:: ~ Cwi/Formatconverter</strong></a></p></td>
+<td><p>クラスデストラクター。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiautil/nf-wiautil-cwiauformatconverter-converttobmp" data-raw-source="[&lt;strong&gt;CWiauFormatConverter::ConvertToBmp&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiautil/nf-wiautil-cwiauformatconverter-converttobmp)"><strong>CWiauFormatConverter::ConvertToBmp</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wiautil/nf-wiautil-cwiauformatconverter-converttobmp" data-raw-source="[&lt;strong&gt;CWiauFormatConverter::ConvertToBmp&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiautil/nf-wiautil-cwiauformatconverter-converttobmp)"><strong>Cwi/Formatconverter:: ConvertToBmp</strong></a></p></td>
 <td><p>イメージを BMP 形式に変換します。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiautil/nf-wiautil-cwiauformatconverter-init" data-raw-source="[&lt;strong&gt;CWiauFormatConverter::Init&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiautil/nf-wiautil-cwiauformatconverter-init)"><strong>CWiauFormatConverter::Init</strong></a></p></td>
-<td><p>イメージを変換するためのクラスと GDI + を初期化します。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wiautil/nf-wiautil-cwiauformatconverter-init" data-raw-source="[&lt;strong&gt;CWiauFormatConverter::Init&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiautil/nf-wiautil-cwiauformatconverter-init)"><strong>Cwi/Formatconverter:: Init</strong></a></p></td>
+<td><p>イメージを変換するために、クラスと GDI + を初期化します。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiautil/nf-wiautil-cwiauformatconverter-isformatsupported" data-raw-source="[&lt;strong&gt;CWiauFormatConverter::IsFormatSupported&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiautil/nf-wiautil-cwiauformatconverter-isformatsupported)"><strong>CWiauFormatConverter::IsFormatSupported</strong></a></p></td>
-<td><p>GDI + をサポートしているイメージの形式に変換することを確認します。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wiautil/nf-wiautil-cwiauformatconverter-isformatsupported" data-raw-source="[&lt;strong&gt;CWiauFormatConverter::IsFormatSupported&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiautil/nf-wiautil-cwiauformatconverter-isformatsupported)"><strong>Cwi/Formatconverter:: IsFormatSupported</strong></a></p></td>
+<td><p>GDI + が変換対象のイメージ形式をサポートしていることを確認します。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <a name="cwiaupropertylist-class"></a>CWiauPropertyList クラス
+## <a name="cwiaupropertylist-class"></a>Cwi/Propertylist クラス
 
 
-[CWiauPropertyList クラス](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540386(v=vs.85))を定義して、WIA プロパティ リストの初期化のヘルパー クラスです。
+[Cwi/Propertylist クラス](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540386(v=vs.85))は、WIA プロパティリストを定義および初期化するためのヘルパークラスです。
 
 <table>
 <colgroup>
@@ -110,88 +110,88 @@ ms.locfileid: "67387337"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiautil/nf-wiautil-cwiaupropertylist-cwiaupropertylist" data-raw-source="[&lt;strong&gt;CWiauPropertyList::CWiauPropertyList&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiautil/nf-wiautil-cwiaupropertylist-cwiaupropertylist)"><strong>CWiauPropertyList::CWiauPropertyList</strong></a></p></td>
-<td><p>クラスのコンス トラクターです。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wiautil/nf-wiautil-cwiaupropertylist-cwiaupropertylist" data-raw-source="[&lt;strong&gt;CWiauPropertyList::CWiauPropertyList&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiautil/nf-wiautil-cwiaupropertylist-cwiaupropertylist)"><strong>Cwi/Propertylist:: Cwi/Propertylist</strong></a></p></td>
+<td><p>クラスコンストラクター。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiautil/nf-wiautil-cwiaupropertylist-~cwiaupropertylist" data-raw-source="[&lt;strong&gt;CWiauPropertyList::~CWiauPropertyList&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiautil/nf-wiautil-cwiaupropertylist-~cwiaupropertylist)"><strong>CWiauPropertyList:: ~ CWiauPropertyList</strong></a></p></td>
-<td><p>クラスのデストラクターです。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wiautil/nf-wiautil-cwiaupropertylist-~cwiaupropertylist" data-raw-source="[&lt;strong&gt;CWiauPropertyList::~CWiauPropertyList&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiautil/nf-wiautil-cwiaupropertylist-~cwiaupropertylist)"><strong>Cwi/Propertylist:: ~ Cwi/Propertylist</strong></a></p></td>
+<td><p>クラスデストラクター。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiautil/nf-wiautil-cwiaupropertylist-defineproperty" data-raw-source="[&lt;strong&gt;CWiauPropertyList::DefineProperty&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiautil/nf-wiautil-cwiaupropertylist-defineproperty)"><strong>CWiauPropertyList::DefineProperty</strong></a></p></td>
-<td><p>プロパティ リストのオブジェクトにプロパティの定義を追加します。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wiautil/nf-wiautil-cwiaupropertylist-defineproperty" data-raw-source="[&lt;strong&gt;CWiauPropertyList::DefineProperty&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiautil/nf-wiautil-cwiaupropertylist-defineproperty)"><strong>CWiauPropertyList::D efineProperty</strong></a></p></td>
+<td><p>プロパティリストオブジェクトにプロパティ定義を追加します。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiautil/nf-wiautil-cwiaupropertylist-getpropid" data-raw-source="[&lt;strong&gt;CWiauPropertyList::GetPropId&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiautil/nf-wiautil-cwiaupropertylist-getpropid)"><strong>CWiauPropertyList::GetPropId</strong></a></p></td>
-<td><p>指定したインデックス位置にあるプロパティのプロパティの識別子 (ID) を取得します。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wiautil/nf-wiautil-cwiaupropertylist-getpropid" data-raw-source="[&lt;strong&gt;CWiauPropertyList::GetPropId&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiautil/nf-wiautil-cwiaupropertylist-getpropid)"><strong>Cwi/Propertylist:: GetPropId</strong></a></p></td>
+<td><p>指定したインデックス位置にあるプロパティのプロパティ識別子 (ID) を取得します。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiautil/nf-wiautil-cwiaupropertylist-init" data-raw-source="[&lt;strong&gt;CWiauPropertyList::Init&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiautil/nf-wiautil-cwiaupropertylist-init)"><strong>CWiauPropertyList::Init</strong></a></p></td>
-<td><p>プロパティ リストのオブジェクトを初期化します。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wiautil/nf-wiautil-cwiaupropertylist-init" data-raw-source="[&lt;strong&gt;CWiauPropertyList::Init&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiautil/nf-wiautil-cwiaupropertylist-init)"><strong>Cwi/Propertylist:: Init</strong></a></p></td>
+<td><p>プロパティリストオブジェクトを初期化します。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiautil/nf-wiautil-cwiaupropertylist-lookuppropid" data-raw-source="[&lt;strong&gt;CWiauPropertyList::LookupPropId&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiautil/nf-wiautil-cwiaupropertylist-lookuppropid)"><strong>CWiauPropertyList::LookupPropId</strong></a></p></td>
-<td><p>指定したプロパティ ID を持つプロパティのプロパティのインデックスを取得します。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wiautil/nf-wiautil-cwiaupropertylist-lookuppropid" data-raw-source="[&lt;strong&gt;CWiauPropertyList::LookupPropId&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiautil/nf-wiautil-cwiaupropertylist-lookuppropid)"><strong>Cwi/Propertylist:: LookupPropId</strong></a></p></td>
+<td><p>指定したプロパティ ID を持つプロパティのプロパティインデックスを取得します。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiautil/nf-wiautil-cwiaupropertylist-sendtowia" data-raw-source="[&lt;strong&gt;CWiauPropertyList::SendToWia&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiautil/nf-wiautil-cwiaupropertylist-sendtowia)"><strong>CWiauPropertyList::SendToWia</strong></a></p></td>
-<td><p>プロパティ リスト オブジェクト内に現在含まれているすべてのプロパティを定義する WIA サービスを呼び出します。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wiautil/nf-wiautil-cwiaupropertylist-sendtowia" data-raw-source="[&lt;strong&gt;CWiauPropertyList::SendToWia&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiautil/nf-wiautil-cwiaupropertylist-sendtowia)"><strong>Cwi/Propertylist:: SendToWia</strong></a></p></td>
+<td><p>WIA サービスを呼び出して、プロパティリストオブジェクトに現在格納されているすべてのプロパティを定義します。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiautil/nf-wiautil-cwiaupropertylist-setaccesssubtype(int_ulong_ulong)" data-raw-source="[&lt;strong&gt;CWiauPropertyList::SetAccessSubType&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiautil/nf-wiautil-cwiaupropertylist-setaccesssubtype(int_ulong_ulong))"><strong>CWiauPropertyList::SetAccessSubType</strong></a></p></td>
-<td><p>アクセスと、プロパティのサブタイプをリセットします。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wiautil/nf-wiautil-cwiaupropertylist-setaccesssubtype(int_ulong_ulong)" data-raw-source="[&lt;strong&gt;CWiauPropertyList::SetAccessSubType&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiautil/nf-wiautil-cwiaupropertylist-setaccesssubtype(int_ulong_ulong))"><strong>Cwi/Propertylist:: SetAccessSubType</strong></a></p></td>
+<td><p>プロパティのアクセスおよびサブタイプをリセットします。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540412(v=vs.85)" data-raw-source="[&lt;strong&gt;CWiauPropertyList::SetCurrentValue(BYTE*)&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540412(v=vs.85))"><strong>CWiauPropertyList::SetCurrentValue(BYTE*)</strong></a></p></td>
-<td><p>型があるプロパティの値を設定<strong>バイト</strong>配列。</p></td>
+<td><p><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540412(v=vs.85)" data-raw-source="[&lt;strong&gt;CWiauPropertyList::SetCurrentValue(BYTE*)&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540412(v=vs.85))"><strong>Cwisystem.windows.dependencyobject.setcurrentvalue Propertylist:: (BYTE *)</strong></a></p></td>
+<td><p>型が<strong>バイト</strong>配列であるプロパティの値を設定します。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540410(v=vs.85)" data-raw-source="[&lt;strong&gt;CWiauPropertyList::SetCurrentValue(BSTR)&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540410(v=vs.85))"><strong>CWiauPropertyList::SetCurrentValue(BSTR)</strong></a></p></td>
-<td><p>型がプロパティの値を設定<strong>BSTR</strong>します。</p></td>
+<td><p><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540410(v=vs.85)" data-raw-source="[&lt;strong&gt;CWiauPropertyList::SetCurrentValue(BSTR)&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540410(v=vs.85))"><strong>Cwisystem.windows.dependencyobject.setcurrentvalue Propertylist:: (BSTR)</strong></a></p></td>
+<td><p>型が<strong>BSTR</strong>であるプロパティの値を設定します。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540416(v=vs.85)" data-raw-source="[&lt;strong&gt;CWiauPropertyList::SetCurrentValue(CLSID)&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540416(v=vs.85))"><strong>CWiauPropertyList::SetCurrentValue(CLSID)</strong></a></p></td>
-<td><p>型がプロパティの値を設定<strong>CLSID</strong>します。</p></td>
+<td><p><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540416(v=vs.85)" data-raw-source="[&lt;strong&gt;CWiauPropertyList::SetCurrentValue(CLSID)&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540416(v=vs.85))"><strong>Cwisystem.windows.dependencyobject.setcurrentvalue Propertylist:: (CLSID)</strong></a></p></td>
+<td><p>型が<strong>CLSID</strong>であるプロパティの値を設定します。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540423(v=vs.85)" data-raw-source="[&lt;strong&gt;CWiauPropertyList::SetCurrentValue(FLOAT)&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540423(v=vs.85))"><strong>CWiauPropertyList::SetCurrentValue(FLOAT)</strong></a></p></td>
-<td><p>型がプロパティの値を設定<strong>FLOAT</strong>します。</p></td>
+<td><p><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540423(v=vs.85)" data-raw-source="[&lt;strong&gt;CWiauPropertyList::SetCurrentValue(FLOAT)&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540423(v=vs.85))"><strong>Cwisystem.windows.dependencyobject.setcurrentvalue Propertylist:: (FLOAT)</strong></a></p></td>
+<td><p>型が<strong>FLOAT</strong>であるプロパティの値を設定します。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540427(v=vs.85)" data-raw-source="[&lt;strong&gt;CWiauPropertyList::SetCurrentValue(LONG)&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540427(v=vs.85))"><strong>CWiauPropertyList::SetCurrentValue(LONG)</strong></a></p></td>
-<td><p>型がプロパティの値を設定<strong>長い</strong>します。</p></td>
+<td><p><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540427(v=vs.85)" data-raw-source="[&lt;strong&gt;CWiauPropertyList::SetCurrentValue(LONG)&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540427(v=vs.85))"><strong>Cwisystem.windows.dependencyobject.setcurrentvalue Propertylist:: (LONG)</strong></a></p></td>
+<td><p>型が<strong>LONG</strong>であるプロパティの値を設定します。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540430(v=vs.85)" data-raw-source="[&lt;strong&gt;CWiauPropertyList::SetCurrentValue(SYSTEMTIME)&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540430(v=vs.85))"><strong>CWiauPropertyList::SetCurrentValue(SYSTEMTIME)</strong></a></p></td>
-<td><p>型がプロパティの値を設定<strong>SYSTEMTIME</strong> (Microsoft Windows SDK のドキュメントで説明)。</p></td>
+<td><p><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540430(v=vs.85)" data-raw-source="[&lt;strong&gt;CWiauPropertyList::SetCurrentValue(SYSTEMTIME)&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540430(v=vs.85))"><strong>Cwisystem.windows.dependencyobject.setcurrentvalue Propertylist:: (SYSTEMTIME)</strong></a></p></td>
+<td><p>種類が<strong>SYSTEMTIME</strong>であるプロパティの値を設定します (Microsoft Windows SDK のドキュメントを参照)。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540436(v=vs.85)" data-raw-source="[&lt;strong&gt;CWiauPropertyList::SetValidValues(BSTR, list)&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540436(v=vs.85))"><strong>CWiauPropertyList::SetValidValues (BSTR、リスト)</strong></a></p></td>
-<td><p>型と、既定値の一覧の最新かつ有効な値を設定<strong>BSTR</strong>値。</p></td>
+<td><p><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540436(v=vs.85)" data-raw-source="[&lt;strong&gt;CWiauPropertyList::SetValidValues(BSTR, list)&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540436(v=vs.85))"><strong>Cwi/Propertylist:: SetValidValues (BSTR、list)</strong></a></p></td>
+<td><p>型と、 <strong>BSTR</strong>値のリストの既定値、現在の値、および有効な値を設定します。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540439(v=vs.85)" data-raw-source="[&lt;strong&gt;CWiauPropertyList::SetValidValues(CLSID, list)&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540439(v=vs.85))"><strong>CWiauPropertyList::SetValidValues (CLSID、リスト)</strong></a></p></td>
-<td><p>型と、既定値の一覧の最新かつ有効な値を設定<strong>CLSID</strong>値。</p></td>
+<td><p><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540439(v=vs.85)" data-raw-source="[&lt;strong&gt;CWiauPropertyList::SetValidValues(CLSID, list)&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540439(v=vs.85))"><strong>Cwi/Propertylist:: SetValidValues (CLSID, list)</strong></a></p></td>
+<td><p><strong>CLSID</strong>値の一覧の既定値、現在の値、および有効な値を設定します。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540447(v=vs.85)" data-raw-source="[&lt;strong&gt;CWiauPropertyList::SetValidValues(flag)&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540447(v=vs.85))"><strong>CWiauPropertyList::SetValidValues(flag)</strong></a></p></td>
-<td><p>型だけでなく、既定値は、フラグの設定によって決定されるプロパティの現在、および有効な値を設定します。</p></td>
+<td><p><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540447(v=vs.85)" data-raw-source="[&lt;strong&gt;CWiauPropertyList::SetValidValues(flag)&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540447(v=vs.85))"><strong>Cwi/Propertylist:: SetValidValues (フラグ)</strong></a></p></td>
+<td><p>フラグの設定によって値が決定されるプロパティの、型、および既定値、現在の値、および有効な値を設定します。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540452(v=vs.85)" data-raw-source="[&lt;strong&gt;CWiauPropertyList::SetValidValues(FLOAT, list)&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540452(v=vs.85))"><strong>CWiauPropertyList::SetValidValues (FLOAT, リスト)</strong></a></p></td>
-<td><p>型と、既定値の一覧の最新かつ有効な値を設定<strong>FLOAT</strong>値。</p></td>
+<td><p><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540452(v=vs.85)" data-raw-source="[&lt;strong&gt;CWiauPropertyList::SetValidValues(FLOAT, list)&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540452(v=vs.85))"><strong>Cwi/Propertylist:: SetValidValues (FLOAT、list)</strong></a></p></td>
+<td><p><strong>FLOAT</strong>値のリストの既定値、現在の値、および有効値を設定します。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540461(v=vs.85)" data-raw-source="[&lt;strong&gt;CWiauPropertyList::SetValidValues(FLOAT, range)&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540461(v=vs.85))"><strong>CWiauPropertyList::SetValidValues (FLOAT、範囲)</strong></a></p></td>
-<td><p>型と、既定値の範囲の現在、および有効な値を設定<strong>FLOAT</strong>値。</p></td>
+<td><p><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540461(v=vs.85)" data-raw-source="[&lt;strong&gt;CWiauPropertyList::SetValidValues(FLOAT, range)&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540461(v=vs.85))"><strong>Cwi/Propertylist:: SetValidValues (FLOAT, range)</strong></a></p></td>
+<td><p>型と、 <strong>FLOAT</strong>値の範囲の既定値、現在の値、および有効値を設定します。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540462(v=vs.85)" data-raw-source="[&lt;strong&gt;CWiauPropertyList::SetValidValues(LONG, list)&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540462(v=vs.85))"><strong>CWiauPropertyList::SetValidValues (LONG, リスト)</strong></a></p></td>
-<td><p>型と、既定値の一覧の最新かつ有効な値を設定<strong>長い</strong>値。</p></td>
+<td><p><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540462(v=vs.85)" data-raw-source="[&lt;strong&gt;CWiauPropertyList::SetValidValues(LONG, list)&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540462(v=vs.85))"><strong>Cwi/Propertylist:: SetValidValues (LONG、list)</strong></a></p></td>
+<td><p>型、および<strong>LONG</strong>型の値のリストの既定値、現在の値、および有効な値を設定します。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540468(v=vs.85)" data-raw-source="[&lt;strong&gt;CWiauPropertyList::SetValidValues(LONG, range)&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540468(v=vs.85))"><strong>CWiauPropertyList::SetValidValues (LONG、範囲)</strong></a></p></td>
-<td><p>型と、既定値の範囲の現在、および有効な値を設定<strong>長い</strong>値。</p></td>
+<td><p><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540468(v=vs.85)" data-raw-source="[&lt;strong&gt;CWiauPropertyList::SetValidValues(LONG, range)&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540468(v=vs.85))"><strong>Cwi/Propertylist:: SetValidValues (LONG, range)</strong></a></p></td>
+<td><p>型と、 <strong>LONG</strong>値の範囲の既定値、現在の値、有効な値を設定します。</p></td>
 </tr>
 </tbody>
 </table>

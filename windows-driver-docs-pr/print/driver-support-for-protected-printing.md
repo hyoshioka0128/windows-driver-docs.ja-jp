@@ -1,59 +1,59 @@
 ---
 title: 保護された印刷のドライバー サポート
-description: Windows 8.1 には、ユーザーが、ジョブ印刷する前に、プリンターを使用して、個人識別番号 (PIN) を指定する保護された印刷のサポートが含まれています。
+description: Windows 8.1 には、ジョブを印刷する前に、ユーザーがプリンターで使用する暗証番号 (PIN) を指定できるようにする、保護された印刷のサポートが含まれています。
 ms.assetid: 43569030-224F-46C6-963F-FC3BE24A0FB3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 020d4c1c358dd11d929f85390d18f2d5e2a556c4
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c6210f67860aedabc190fc851fc11c136cad053b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67356063"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845051"
 ---
 # <a name="driver-support-for-protected-printing"></a>保護された印刷のドライバー サポート
 
 
-Windows 8.1 には、ユーザーが、ジョブ印刷する前に、プリンターを使用して、個人識別番号 (PIN) を指定する保護された印刷のサポートが含まれています。
+Windows 8.1 には、ジョブを印刷する前に、ユーザーがプリンターで使用する暗証番号 (PIN) を指定できるようにする、保護された印刷のサポートが含まれています。
 
-Windows 8.1 では、コンテンツでは、出力がユーザーによって取得されることに関連する無駄な紙の使用量を削減するために、既定の PIN を指定することもできます。 このトピックでは、保護された印刷のサポートを提供するが可能な v4 印刷ドライバーをこのサポートを追加するために必要な手順についても説明します。 変更について説明します。
+また Windows 8.1 を使用すると、管理者は既定の PIN を指定して、印刷されたコンテンツに関連する、ユーザーが取得していないコンテンツの使用量を減らすことができます。 このトピックでは、保護された印刷をサポートするために加えられた変更について説明します。また、このサポートを v4 印刷ドライバーに追加するために必要な手順の概要も示します。
 
-## <a name="print-schema-changes"></a>印刷スキーマの変更
+## <a name="print-schema-changes"></a>スキーマ変更の印刷
 
-Windows 8.1 には、使用できる PrintTicket と PrintCapabilities ドキュメントを指定する印刷保護されている新しい印刷スキーマ キーワードが導入されています。 これらのキーワードは、新しいで定義されている*printschemakeywordsv11*名前空間。 この名前空間の URI を次に示します。
+Windows 8.1 には、PrintTicket および PrintCapabilities ドキュメントで保護された印刷を指定するために使用できる新しい印刷スキーマキーワードが導入されています。 これらのキーワードは、新しい*printschemakeywordsv11*名前空間で定義されています。 この名前空間の URI を次に示します。
 
 *http://schemas.microsoft.com/windows/2013/05/printing/printschemakeywordsv11*
 
-PrintTicket ファイルで保護された印刷を指定する方法については、次を参照してください。[印刷暗証番号 (pin) のサンプル ファイルは PrintTicket](sample-printticket-file-for-pin-printing.md)します。 PrintCapabilities ファイルで保護された印刷を指定する方法を参照してくださいと[暗証番号 (pin) 印刷用のサンプル PrintCapabilities ファイル](sample-printcapabilities-file-for-pin-printing.md)します。
+PrintTicket ファイルで保護された印刷を指定する方法については、「[ピン印刷用の Printticket ファイルの例](sample-printticket-file-for-pin-printing.md)」を参照してください。 また、PrintCapabilities ファイルで保護された印刷を指定する方法については、「 [PIN 印刷用のサンプル PrintCapabilities ファイル](sample-printcapabilities-file-for-pin-printing.md)」を参照してください。
 
-仕様は、ここでダウンロードできます。
+仕様は次の場所でダウンロードできます。
 
-[印刷スキーマ仕様 1.1](http://download.microsoft.com/download/1/6/a/16acc601-1b7a-42ad-8d4e-4f0aa156ec3e/print-schema-spec-1-1.zip)
+[印刷スキーマの仕様1.1](http://download.microsoft.com/download/1/6/a/16acc601-1b7a-42ad-8d4e-4f0aa156ec3e/print-schema-spec-1-1.zip)
 
-[印刷スキーマの仕様を 2.0](http://download.microsoft.com/download/d/e/c/deca6e6b-3e81-48e7-b7ef-6d92a547d03c/print-schema-spec-2-0.zip)
+[印刷スキーマの仕様2.0](http://download.microsoft.com/download/d/e/c/deca6e6b-3e81-48e7-b7ef-6d92a547d03c/print-schema-spec-2-0.zip)
 
 
 ## <a name="driver-changes"></a>ドライバーの変更
 
 
-V4 ドライバーを使用している場合は、汎用的なプリンターの説明 (GPD) または PostScript プリンターの説明 (PPD) ファイル、およびその他のドライバーに関連するコード ファイルに変更を加える必要があります。 変更によって影響を受けるドライバー関連のコード ファイルは、次のように分類できます。
+V4 ドライバーを使用している場合は、汎用プリンターの説明 (GPD) または PostScript プリンターの説明 (PPD) ファイル、およびその他のドライバー関連のコードファイルに変更を加える必要があります。 変更の影響を受けるドライバー関連のコードファイルは、次のように分類できます。
 
--   ドライバーの構成ファイル (GPD または PPD)
--   XPS 表示フィルター
+-   ドライバー構成ファイル (GPD または PPD)
+-   XPS レンダリングフィルター
 -   プリンターの拡張機能
 -   UWP デバイス アプリ
 
-**注**  できますドライバーを使用する v3 印刷スキーマのキーワードで保護された印刷の場合、PTProvider コードで、必要な変更を行った場合に限りです。 それらの変更を行うための手順は、このトピックの範囲外です。
+詳細については、PTProvider コードで必要な変更を行っている限り、保護された印刷用の Print Schema キーワードで v3 ドライバーを使用**する  ます**。 ただし、これらの変更を行う手順は、このトピックの範囲外です。
 
  
 
-次のセクションでは、保護された印刷をサポートするために、v4 ドライバーができるようにする変更を実装する方法についての詳細情報を提供します。
+以下のセクションでは、v4 ドライバーが保護された印刷をサポートできるようにする変更を実装する方法について詳しく説明します。
 
-**ドライバーの構成ファイル**
+**ドライバー構成ファイル**
 
-V4 印刷ドライバーのデータ ファイルで保護された印刷のサポートを示します。 データ ファイルは、GPD または PPD ファイルには、ドライバーを使用して任意の 1 つです。 保護された印刷を有効にする、MinLength と MaxLength のディレクティブを指定する必要があります。 次の表では、ドライバーの GPD または PPD ファイルに追加する必要があります、関連するキーワードについて説明します。
+V4 印刷ドライバーのデータファイルで保護された印刷のサポートを指定します。 データファイルは、GPD または PPD ファイルのいずれかです。ドライバーで使用されます。 保護された印刷を有効にするには、MinLength ディレクティブと MaxLength ディレクティブの両方を指定する必要があります。 次の表では、ドライバーの GPD ファイルまたは PPD ファイルに追加する必要がある関連キーワードについて説明します。
 
-**GPD ファイルに追加すると**します。 ドライバーは、GPD ファイルを使用している場合は、この構文を使用して、次の新しいキーワードを追加します。
+**GPD ファイルに追加するもの**。 ドライバーで GPD ファイルが使用されている場合は、次の新しいキーワードをこの構文を使用して追加します。
 
 <table>
 <colgroup>
@@ -65,36 +65,36 @@ V4 印刷ドライバーのデータ ファイルで保護された印刷のサ�
 </colgroup>
 <thead>
 <tr class="header">
-<th>Keyword</th>
+<th>キーワード</th>
 <th>説明</th>
-<th>Level</th>
-<th>指定できる値</th>
+<th>レベル</th>
+<th>使用できる値</th>
 <th>例</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong><em>JobPasscodeMinLength</strong></td>
-<td><p>サポートされている、暗証番号 (pin) の数値文字列の最小長。</p>
-<p>この値は、少なくとも 4 つと 15 を超えるである必要があります。</p></td>
+<td><strong><em>Jobpass Codeminlength</strong></td>
+<td><p>サポートされている PIN の数値文字列の最小文字数。</p>
+<p>この値は、少なくとも4で15以下でなければなりません。</p></td>
 <td>ルート</td>
-<td>すべて<a href="numeric-values.md" data-raw-source="[GPD numeric value](numeric-values.md)">GPD 数値</a></td>
-<td></em>JobPasscodeMinLength:4</td>
+<td>任意の<a href="numeric-values.md" data-raw-source="[GPD numeric value](numeric-values.md)">GPD の数値</a></td>
+<td></em>Jobpass Codeminlength: 4</td>
 </tr>
 <tr class="even">
-<td><strong><em>JobPasscodeMaxLength</strong></td>
-<td><p>サポートされている、暗証番号 (pin) の数値文字列の最大長。</p>
-<p>この値は、少なくとも 4 つと 15 を超えるである必要があります。 大きいまたは等しい必要があります、  <strong></em>JobPasscodeMinLength</strong>値。</p></td>
+<td><strong><em>Jobpass Codemaxlength</strong></td>
+<td><p>サポートされている PIN の数値文字列の最大長。</p>
+<p>この値は、少なくとも4で15以下でなければなりません。 <strong></em>Jobpass Codeminlength</strong>値以上である必要があります。</p></td>
 <td>ルート</td>
-<td>すべて<a href="numeric-values.md" data-raw-source="[GPD numeric value](numeric-values.md)">GPD 数値</a></td>
-<td>*JobPasscodeMaxLength:9</td>
+<td>任意の<a href="numeric-values.md" data-raw-source="[GPD numeric value](numeric-values.md)">GPD の数値</a></td>
+<td>\* Jobpass Codemaxlength: 9</td>
 </tr>
 </tbody>
 </table>
 
  
 
-**PPD ファイルに追加すると**します。 ドライバーが PPD ファイルを使用する場合は、この構文を使用して、次の新しいキーワードを追加します。
+**PPD ファイルに追加する内容**。 ドライバーで PPD ファイルが使用されている場合は、次の新しいキーワードをこの構文を使用して追加します。
 
 <table>
 <colgroup>
@@ -106,66 +106,66 @@ V4 印刷ドライバーのデータ ファイルで保護された印刷のサ�
 </colgroup>
 <thead>
 <tr class="header">
-<th>Keyword</th>
+<th>キーワード</th>
 <th>説明</th>
-<th>Level</th>
-<th>指定できる値</th>
+<th>レベル</th>
+<th>使用できる値</th>
 <th>例</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong><em>MSJobPasscodeMinLength</strong></td>
-<td><p>サポートされている、暗証番号 (pin) の数値文字列の最小長。</p>
-<p>この値は、少なくとも 4 つと 15 を超えるである必要があります。</p></td>
+<td><strong><em>Msjobpass Codeminlength</strong></td>
+<td><p>サポートされている PIN の数値文字列の最小文字数。</p>
+<p>この値は、少なくとも4で15以下でなければなりません。</p></td>
 <td>ルート</td>
-<td><p>"int"(QuotedValue)</p>
-<p>つまり、引用符で囲まれた整数値を表す必要があります。</p></td>
-<td></em>MSJobPasscodeMinLength:「4」</td>
+<td><p>"int" (QuotedValue)</p>
+<p>言い換えると、整数値は引用符で囲む必要があります。</p></td>
+<td></em>Msjobpass Codeminlength: "4"</td>
 </tr>
 <tr class="even">
-<td><strong><em>MSJobPasscodeMaxLength</strong></td>
-<td><p>サポートされている、暗証番号 (pin) の数値文字列の最大長。</p>
-<p>この値は、少なくとも 4 つと 15 を超えるである必要があります。 大きいまたは等しい必要があります、  <strong></em>MSJobPasscodeMinLength</strong>値。</p></td>
+<td><strong><em>Msjobpass Codemaxlength</strong></td>
+<td><p>サポートされている PIN の数値文字列の最大長。</p>
+<p>この値は、少なくとも4で15以下でなければなりません。 <strong></em>Msjobpass Codeminlength</strong>値以上である必要があります。</p></td>
 <td>ルート</td>
-<td><p>"int"(QuotedValue)</p>
-<p>つまり、引用符で囲まれた整数値を表す必要があります。</p></td>
-<td>\* MSJobPasscodeMaxLength:「9」</td>
+<td><p>"int" (QuotedValue)</p>
+<p>言い換えると、整数値は引用符で囲む必要があります。</p></td>
+<td>\* Msjobpass Codemaxlength: "9"</td>
 </tr>
 </tbody>
 </table>
 
  
 
-**ハードウェアの制約を指定する**します。 ハード ドライブなどのインストール可能なハードウェアなしの暗証番号 (pin) 印刷をサポートしていないデバイスがあれば、GPD または PPD のいずれかのファイルを使用してこれらの制約を指定します。 これを行うには、JobPasscode 機能と両方 JobPasscode オプションを表示し、(オンとオフ) に GPD または PPD ファイルを編集する必要があります。 ON/OFF オプションでは、適切な値に PrintSchemaKeywordMap または MSPrintSchemaKeywordMap のいずれかを設定する必要があります。
+**ハードウェアの制約を指定**します。 ハードドライブなどのインストール可能なハードウェアを使用せずに、ピン印刷をサポートしていないデバイスがある場合は、GPD または PPD ファイルを使用してこれらの制約を指定します。 これを行うには、GPD または PPD ファイルを編集して、JobPasscode コード機能と JobPasscode コードの両方のオプション (On と Off) を表示する必要があります。 ON/OFF オプションでは、PrintSchemaKeywordMap または MSPrintSchemaKeywordMap のいずれかを適切な値に設定する必要があります。
 
-**ソフトウェアの制約**します。 これらはサポートされていません。
+**ソフトウェアの制約**。 これらはサポートされていません。
 
-次の表では、保護された印刷およびハードウェアの制約のサポートを指定するキーワードを使用する必要がありますの有効な値を示します。
+次の表は、保護された印刷およびハードウェアの制約のサポートを指定する場合に使用する必要があるキーワードの有効な値を示しています。
 
-ファイルの種類のキーワードが有効な値は GPD\*機能 JobPasscode\*オプション
+ファイルの種類のキーワード有効値 GPD \*Feature JobPasscode コード \*オプション
 -   無効
--   ON
+-   有効
 
 \*PrintSchemaKeywordMap
--   "Off"
--   "On"
--   "JobPasscode"
+-   オート
+-   代わっ
+-   "JobPasscode コード"
 
-PPD\*機能 JobPasscode\*オプション
+PPD \*Feature JobPasscode コード \*オプション
 -   無効
--   ON
+-   有効
 
 \*MSPrintSchemaKeywordMap
--   "Off"
--   "On"
--   "JobPasscode"
+-   オート
+-   代わっ
+-   "JobPasscode コード"
 
  
 
 **GPD と PPD ファイルの例**
 
-インストール可能なハードウェア制約を使用して JobPasscode を指定する GPD ファイルの例を次に示します。
+GPD ファイルの例を次に示します。これは、インストール可能なハードウェア制約で JobPasscode コードを指定するものです。
 
 ```GDP
 *%
@@ -225,11 +225,11 @@ PPD\*機能 JobPasscode\*オプション
 }
 ```
 
-**注**  使用する必要があります、\*から意図せずに表示されているオプションには、保護された印刷を防ぐために TRUE ConcealFromUI キーワードと設定します。 上記の GPD ファイルの例を参照してください。
+\*ConcealFromUI キーワードを使用して、保護された印刷オプションが誤って表示されないように TRUE に設定する必要がある  に**注意**してください。 前の GPD ファイルの例を参照してください。
 
  
 
-インストール可能なハードウェア制約を使用して JobPasscode を指定する PPD ファイルの例を次に示します。
+インストール可能なハードウェア制約で JobPasscode コードを指定する PPD ファイルの例を次に示します。
 
 ```PPD
 *MSJobPasscodeMinLength: "4"
@@ -258,25 +258,25 @@ PPD\*機能 JobPasscode\*オプション
 *UIConstraints: *HardDisk False *JobPasscode
 ```
 
-前の PPD ファイルの例でわかるように、 \*UIConstraints キーワードがハードウェアの制限を示します。
+前の PPD ファイルの例でわかるように、\*UIConstraints キーワードはハードウェアの制約を示しています。
 
-**注**  Windows オペレーティング システムは、保護された印刷機能とその関連するオプションのロケール固有の文字列を自動的に表示されます。 この機能またはオプションの場合は、新しいローカライズされた名前を指定することはできません。
+Windows オペレーティングシステムによって、保護された印刷機能のロケール固有の文字列とそれに関連するオプションが自動的に表示さ  **ことに注意**してください。 この機能またはそのオプションに新しいローカライズされた名前を指定することはできません。
 
  
 
-**XPS 表示フィルター**
+**XPS レンダリングフィルター**
 
-これらのドライバーは、暗証番号 (pin) の値の PrintTicket 形式をデバイスで認識される値に変換できるように、既存のデバイス用のドライバーは、レンダリング コードに変更を必要があります。 一般に、いずれかが必要になります、既存の XPS 表示フィルターにコードを追加または保護された印刷をサポートする新しい XPS 表示フィルターの追加。 PCL6 と PostScript 標準 XPS レンダリング フィルターを使用するドライバーは、フィルター パイプラインの新しいストリーム フィルターを開発する必要があります。 この新しいストリーム フィルターがストリームが標準のフィルターを通過した後は、そのフィルター パイプラインでは、描画前 PDL ストリームに適切なコマンドを挿入します。
+既存のデバイスのドライバーは、レンダリングコードを変更する必要があります。これにより、これらのドライバーが PIN 値の PrintTicket 表現をデバイスが認識できる値に変換できるようになります。 一般に、既存の XPS 表示フィルターにコードを追加するか、保護された印刷をサポートするために新しい XPS レンダリングフィルターを追加する必要があります。 PCL6 および PostScript 用の標準の XPS レンダリングフィルターを使用するドライバーは、フィルターパイプラインの新しいストリームフィルターを作成する必要があります。 ストリームが標準フィルターを通過した後、この新しいストリームフィルターは、フィルターパイプラインの事前レンダリングされた PDL ストリームに適切なコマンドを挿入します。
 
-、クライアントまたはサーバー コンピューター上のレンダリング要件を最小限に抑えるには、XPS または OpenXPS をサポートする新しいデバイスをサポートするように、新しいキーワード追加の変換を使用せずに Microsoft 提案されます。
+Microsoft の推奨事項として、クライアントまたはサーバー PC のレンダリング要件を最小限に抑えるために、XPS または OpenXPS をサポートする新しいデバイスでは、追加の変換を使用せずに新しいキーワードをサポートする必要があります。
 
 **プリンターの拡張機能**
 
-プリンターの拡張機能は、印刷設定 UI で保護された印刷コントロールを表示できる必要があります。 これにより、デスクトップ アプリのユーザーは、プリンターの拡張機能を使用する場合は、保護された印刷機能を構成できます。 Microsoft は、変更を行って、 [ **IPrintSchemaTicket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprintschematicket)プリンターの拡張機能からの保護された印刷をサポートする Api のファミリです。
+プリンターの拡張機能は、印刷設定の UI で、保護された印刷のコントロールを表示できる必要があります。 これにより、デスクトップアプリのユーザーは、プリンターの拡張機能を使用するときに、保護された印刷機能を構成できます。 Microsoft は、 [**IPrintSchemaTicket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprintschematicket)ファミリの api がプリンター拡張機能からの保護された印刷をサポートできるように変更を加えています。
 
-**UWP デバイス アプリ**
+**UWP デバイスアプリ**
 
-Microsoft は許可の変更を行っても、 [ **IPrintSchemaTicket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprintschematicket)のコントロールを表示するデバイス アプリを UWP を使用する Api のファミリが、印刷設定 UI での印刷を保護します。
+また、Microsoft は、 [**IPrintSchemaTicket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprintschematicket)ファミリの API が UWP デバイスアプリと連携して、印刷設定の UI で保護された印刷のコントロールを表示できるように変更を加えています。
 
  
 

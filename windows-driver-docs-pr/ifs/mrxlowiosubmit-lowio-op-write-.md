@@ -1,9 +1,9 @@
 ---
-title: MRxLowIOSubmit\ LOWIO\_OP\_WRITE\ routine
-description: MRxLowIOSubmit\ LOWIO\_OP\_WRITE\ ルーチンは、ネットワークのミニ リダイレクターに書き込み要求を発行する RDBSS によって呼び出されます。
+title: MRxLowIOSubmit \ LOWIO\_OP\_書き込み \ ルーチン
+description: MRxLowIOSubmit \ LOWIO\_OP\_WRITE \ ルーチンは、ネットワークミニリダイレクターに書き込み要求を発行するために、RDBSS によって呼び出されます。
 ms.assetid: b70838e3-4e80-4ec9-88ba-0f608a1af78e
 keywords:
-- MRxLowIOSubmit LOWIO_OP_WRITE ルーチン インストール可能なファイル システム ドライバー
+- MRxLowIOSubmit LOWIO_OP_WRITE ルーチンのインストール可能なファイルシステムドライバー
 - PMRX_CALLDOWN
 topic_type:
 - apiref
@@ -15,17 +15,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f4ceadbf90a36c517062135cb038e176b30ac36e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 90344b22b39a76a9ef418aea4511143e667b1aca
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67370094"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841094"
 ---
-# <a name="mrxlowiosubmitlowioopwrite-routine"></a>MRxLowIOSubmit\[LOWIO\_OP\_書き込み\]ルーチン
+# <a name="mrxlowiosubmitlowio_op_write-routine"></a>MRxLowIOSubmit\[LOWIO\_OP\_書き込み\] ルーチン
 
 
-*MRxLowIOSubmit\[LOWIO\_OP\_書き込み\]* ルーチンを呼び出して[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)ネットワーク ミニリダイレクターに書き込み要求を発行します。
+*MRxLowIOSubmit\[LOWIO\_OP\_write\]* ルーチンは、ネットワークミニリダイレクターに書き込み要求を発行するために、 [RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)によって呼び出されます。
 
 <a name="syntax"></a>構文
 ------
@@ -42,13 +42,13 @@ NTSTATUS MRxLowIOSubmit[LOWIO_OP_WRITE](
 <a name="parameters"></a>パラメーター
 ----------
 
-*RxContext* \[入力、出力\]  
-RX へのポインター\_CONTEXT 構造体。 このパラメーターには、操作を要求している IRP が含まれています。
+*RxContext* \[in、out\]  
+RX\_コンテキスト構造体へのポインター。 このパラメーターには、操作を要求している IRP が含まれています。
 
 <a name="return-value"></a>戻り値
 ------------
 
-*MRxLowIOSubmit\[LOWIO\_OP\_書き込み\]* ステータスを返します\_次のいずれかなど、成功した場合に成功した場合、または、適切な NTSTATUS の値します。
+*MRxLowIOSubmit\[LOWIO\_OP\_書き込み\]* は正常に完了したか、適切な NTSTATUS 値 (次のいずれかの例)\_を返します。
 
 <table>
 <colgroup>
@@ -64,27 +64,27 @@ RX へのポインター\_CONTEXT 構造体。 このパラメーターには、
 <tbody>
 <tr class="odd">
 <td align="left"><strong>STATUS_FILE_CLOSED</strong></td>
-<td align="left"><p>FCB 構造体を取得したが、関連付けられている SRV_OPEN 構造が閉じられました。</p></td>
+<td align="left"><p>FCB 構造体が取得されましたが、関連付けられている SRV_OPEN 構造体が閉じられています。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>STATUS_INSUFFICIENT_RESOURCES</strong></td>
-<td align="left"><p>要求を完了するリソースの不足が発生しました。</p></td>
+<td align="left"><p>要求を完了するためのリソースが不足しています。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>STATUS_INVALID_DEVICE_REQUEST</strong></td>
-<td align="left"><p>無効なデバイス、要求が指定されました。</p></td>
+<td align="left"><p>無効なデバイス要求が指定されました。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>STATUS_INVALID_PARAMETER</strong></td>
-<td align="left"><p>無効なパラメーターがで指定された<em>RxContext</em>します。</p></td>
+<td align="left"><p><em>RxContext</em>で無効なパラメーターが指定されました。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>STATUS_NOT_IMPLEMENTED</strong></td>
-<td align="left"><p>このルーチンが実装されていません。</p></td>
+<td align="left"><p>このルーチンは実装されていません。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>STATUS_NOT_SUPPORTED</strong></td>
-<td align="left"><p>ネットワークのミニ リダイレクターでは、指定された要求がサポートされていません。</p></td>
+<td align="left"><p>指定された要求は、ネットワークミニリダイレクターでサポートされていません。</p></td>
 </tr>
 </tbody>
 </table>
@@ -94,27 +94,27 @@ RX へのポインター\_CONTEXT 構造体。 このパラメーターには、
 <a name="remarks"></a>注釈
 -------
 
-RDBSS 呼び出し*MRxLowIOSubmit\[LOWIO\_OP\_書き込み\]* 受信に応答する[ **IRP\_MJ\_書き込み** ](irp-mj-write.md)要求。
+RDBSS は、 [**IRP\_MJ\_書き込み**](irp-mj-write.md)要求の受信に応答して、 *MRxLowIOSubmit\[lowio\_OP\_書き込み\]* を呼び出します。
 
-呼び出しの前に*MRxLowIOSubmit\[LOWIO\_OP\_書き込み\]* 、RDBSS、RX では、次のメンバーを変更します\_CONTEXT 構造体が、が指す*RxContext*パラメーター。
+*MRxLowIOSubmit\[LOWIO\_OP\_WRITE\]* を呼び出す前に、 *RxContext*パラメーターが指す RX\_CONTEXT 構造体の次のメンバーを変更します。
 
-**LowIoContext.Operation** LOWIO にメンバーが設定されている\_OP\_を記述します。
+**Lowiocontext. Operation**メンバーは LOWIO\_OP\_WRITE に設定されています。
 
-**LowIoContext.ResourceThreadId**メンバー RDBSS で操作を開始したプロセスのスレッドに設定されます。
+**Lowiocontext threadid**メンバーは、RDBSS で操作を開始したプロセスのスレッドに設定されます。
 
-**LowIoContext.ParamsFor.ReadWrite.Key**メンバーの値に設定されます**IrpSp -&gt;Parameters.Read.Key**します。
+**Lowiocontext. ReadWrite. キー**メンバーは、 **irpsp-&gt;パラメーター**の値に設定されます。
 
-**ParamsFor.ReadWrite.Flags**メンバーが、LOWIO\_READWRITEFLAG\_ページング\_場合の IO のビットが設定されて**Irp -&gt;フラグ**IRPが\_ページング\_IO ビットにします。
+READWRITEFLAG**のパラメーター**には LOWIO\_\_PAGING\_io ビットが設定されています。この場合、 **Irp-&gt;フラグ**には、IRP\_ページング\_i/o ビットが設定されています。
 
-**ParamsFor.ReadWrite.Buffer**メンバー IoWriteAccess のロックされているユーザーのバッファーに設定されます。
+パラメーターを使用して、IoWriteAccess 用にロックされているユーザーバッファーに**設定します**。
 
-**LowIoContext.ParamsFor.ReadWrite.ByteCount**メンバーの値に設定されます**IrpSp -&gt;Parameters.Write.Length**します。
+**ByteCount**メンバーは、 **irpsp-&gt;のパラメーター**の値に設定されています。書き込み。長さ。
 
-書き込み要求通常によって実装されますネットワーク ミニリダイレクター非同期操作として非常に長い時間がかかるためです。 通常、操作は、リモート サーバーにネットワーク要求を送信するので構成されます。 サーバー上の書き込み要求が完了したときに、応答が取得されます。 これは、ローカルで開始されたキャンセルを処理するためのコンテキストを登録する必要がありますネットワーク ミニリダイレクター操作の例です。
+書き込み要求は、通常、非同期操作としてネットワークミニリダイレクターによって実装されます。これは、かなりの時間がかかる可能性があるためです。 通常、この操作は、リモートサーバーへのネットワーク要求の送信で構成されます。 応答は、サーバーで書き込み要求が完了したときに取得されます。 これは、ネットワークミニリダイレクターがキャンセル処理をローカルで行うためにコンテキストを登録する必要がある操作の例です。
 
-中に、 *MRxLowIOSubmit\[LOWIO\_OP\_書き込み\]* ルーチンは、処理中、 **LowIoContext.ResourceThreadId** RXのメンバー\_コンテキストを RDBSS で操作を開始したプロセスのスレッドを示すことが保証されます。 **LowIoContext.ResourceThreadId**別のスレッドの代わり FCB 構造体を解放するメンバーを使用することができます。 非同期のルーチンが完了したら、最初のスレッドから取得された FCB 構造体を解放できます。 FCB 構造体を呼び出すことによって解放できます[ **RxReleaseFcbResourceForThreadInMRx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrxfcb/nf-mrxfcb-rxreleasefcbresourceforthreadinmrx)します。
+*MRxLowIOSubmit\[lowio\_OP\_書き込み\]* ルーチンが処理されている間、RX\_コンテキストの**lowiocontext**スレッドメンバーは、を開始したプロセスのスレッドを示すことが保証されます。RDBSS での操作です。 **Lowiocontext threadid**メンバーを使用すると、別のスレッドに代わって FCB 構造体を解放できます。 非同期ルーチンが完了すると、初期スレッドから取得された FCB 構造体が解放されます。 FCB 構造体は、 [**RxReleaseFcbResourceForThreadInMRx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrxfcb/nf-mrxfcb-rxreleasefcbresourceforthreadinmrx)を呼び出すことによって解放できます。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -129,7 +129,7 @@ RDBSS 呼び出し*MRxLowIOSubmit\[LOWIO\_OP\_書き込み\]* 受信に応答す
 </tr>
 <tr class="even">
 <td align="left"><p>Header</p></td>
-<td align="left">Mrx.h (Mrx.h を含む)</td>
+<td align="left">Mrx .h (Mrx を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -143,17 +143,17 @@ RDBSS 呼び出し*MRxLowIOSubmit\[LOWIO\_OP\_書き込み\]* 受信に応答す
 
 [**MRxLowIOSubmit\[LOWIO\_OP\_IOCTL\]** ](mrxlowiosubmit-lowio-op-ioctl-.md)
 
-[**MRxLowIOSubmit\[LOWIO\_OP\_NOTIFY\_CHANGE\_DIRECTORY\]** ](mrxlowiosubmit-lowio-op-notify-change-directory-.md)
+[**MRxLowIOSubmit\[LOWIO\_OP\_\_\_ディレクトリの変更を通知\]** ](mrxlowiosubmit-lowio-op-notify-change-directory-.md)
 
-[**MRxLowIOSubmit\[LOWIO\_OP\_READ\]** ](mrxlowiosubmit-lowio-op-read-.md)
+[**MRxLowIOSubmit\[LOWIO\_OP\_読み取り\]** ](mrxlowiosubmit-lowio-op-read-.md)
 
 [**MRxLowIOSubmit\[LOWIO\_OP\_SHAREDLOCK\]** ](mrxlowiosubmit-lowio-op-sharedlock-.md)
 
-[**MRxLowIOSubmit\[LOWIO\_OP\_UNLOCK\]** ](mrxlowiosubmit-lowio-op-unlock-.md)
+[**MRxLowIOSubmit\[LOWIO\_OP\_ロック解除\]** ](mrxlowiosubmit-lowio-op-unlock-.md)
 
-[**MRxLowIOSubmit\[LOWIO\_OP\_UNLOCK\_MULTIPLE\]** ](mrxlowiosubmit-lowio-op-unlock-multiple-.md)
+[**MRxLowIOSubmit\[LOWIO\_OP\_ロック解除\_複数\]** ](mrxlowiosubmit-lowio-op-unlock-multiple-.md)
 
-[**RxReleaseFcbResourceForThreadInMRx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrxfcb/nf-mrxfcb-rxreleasefcbresourceforthreadinmrx)
+[**RxReleaseFcbResourceForThreadInMRx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrxfcb/nf-mrxfcb-rxreleasefcbresourceforthreadinmrx)
 
  
 

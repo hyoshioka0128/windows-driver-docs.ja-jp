@@ -4,12 +4,12 @@ description: 受信バッファー内の共有メモリ
 ms.assetid: 3e4d0534-3cbd-40df-b7c1-4f2c15bcd757
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d0b6d69a3c10a96fcd5f1404ee20dcaa81853555
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b5d917d8e0397f3ebddd0537ec1d30b6ed1936ef
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384911"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841926"
 ---
 # <a name="shared-memory-in-receive-buffers"></a>受信バッファー内の共有メモリ
 
@@ -17,21 +17,21 @@ ms.locfileid: "67384911"
 
 
 
-このセクションでは、共有のレイアウトを記述 VMQ のメモリ バッファーを受信します。受信表示でバッファーの使用の詳細についてを参照してください[VMQ 受信パス](vmq-receive-path.md)します。
+ここでは、VMQ 受信バッファーの共有メモリのレイアウトについて説明します。受信インジケーターでバッファーを使用する方法の詳細については、「 [VMQ 受信パス](vmq-receive-path.md)」を参照してください。
 
-上位のプロトコル ドライバーの設定、NDIS 場合\_受信\_キュー\_パラメーター\_先読み\_分割\_で必須フラグ、**フラグ**のメンバー[ **NDIS\_受信\_キュー\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)構造、ネットワーク アダプターを分割受信パケットのオフセットに等しいまたは先読みアサーションが要求されたサイズと使用 DMA 先読みデータと post 先読みのデータを別の共有メモリ セグメントに転送するよりも大きい。
+それより前のプロトコルドライバーが\_\_キューを受け取るように設定されている場合は\_先読み\_、Ndis の**Flags**メンバーで\_REQUIRED フラグを分割\_\_を[**受信\_キューに\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)構造では、ネットワークアダプターは、受信したパケットを、要求された先読みサイズ以上のオフセットで分割し、DMA を使用して先読みデータと先読み後のデータを別々の共有メモリセグメントに転送する必要があります。
 
-ミニポート ドライバー先読み型の設定の指定 (**NdisSharedMemoryUsageReceiveLookahead**) または共有メモリを割り当てるときにその他の共有メモリ型。 たとえば、ミニポート ドライバーが呼び出す、 [ **NdisAllocateSharedMemory** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisallocatesharedmemory)関数とセット、**使用状況**内のメンバー、 [ **NDIS\_共有\_メモリ\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_shared_memory_parameters)構造体を**NdisSharedMemoryUsageReceiveLookahead**します。 ミニポート ドライバーは、キューの割り当てが完了すると、キューの共有メモリを割り当てる必要があります。 割り当てとキューの共有メモリ リソースの解放については、次を参照してください。[共有メモリ リソース割り当て](shared-memory-resource-allocation.md)します。
+ミニポートドライバーは、共有メモリが割り当てられるときに、先読みの種類 (**NdisSharedMemoryUsageReceiveLookahead**) またはその他の共有メモリの種類の設定を指定します。 たとえば、ミニポートドライバーは[**NdisAllocateSharedMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocatesharedmemory)関数を呼び出し、 [**NDIS\_SHARED\_MEMORY\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_shared_memory_parameters)構造体の**Usage**メンバーをに**設定します。NdisSharedMemoryUsageReceiveLookahead**。 ミニポートドライバーは、キューの割り当てが完了すると、キューの共有メモリを割り当てる必要があります。 キューの共有メモリリソースの割り当てと解放の詳細については、「[共有メモリリソースの割り当て](shared-memory-resource-allocation.md)」を参照してください。
 
-次の図は、受信データは 2 つの共有メモリ バッファーに分割するときに、ネットワーク データのリレーションシップを示します。
+次の図は、受信データが2つの共有メモリバッファーに分割された場合のネットワークデータの関係を示しています。
 
-![受信データは 2 つの共有メモリ バッファーに分割するときは、ネットワーク データのリレーションシップを示す図](images/vmqpacket.png)
+![受信データが2つの共有メモリバッファーに分割された場合のネットワークデータの関係を示す図](images/vmqpacket.png)
 
-[ **NET\_バッファー\_SHARED\_メモリ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_shared_memory)構造体は、共有メモリ情報を指定します。 関連付けられているこのような共有メモリ バッファーのリンク リストがあります、 [ **NET\_バッファー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)構造体。
+[**NET\_BUFFER\_共有\_メモリ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_shared_memory)構造は、共有メモリ情報を指定します。 [**NET\_のバッファー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer)構造に関連付けられている共有メモリバッファーのリンクリストを使用できます。
 
-使用して、 [ **NET\_バッファー\_共有\_MEM\_次\_セグメント**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-shared-mem-next-segment)、 [ **NET\_バッファー\_SHARED\_MEM\_フラグ**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-shared-mem-flags)、 [ **NET\_バッファー\_SHARED\_をメモリ最適化\_処理**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-shared-mem-handle)、 [ **NET\_バッファー\_SHARED\_MEM\_オフセット**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-shared-mem-offset)、および[**NET\_バッファー\_共有\_MEM\_長さ**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-shared-mem-length) NET へのアクセスにマクロ\_バッファー\_SHARED\_、NET メモリ\_バッファーの構造体。 **SharedMemoryInfo** net メンバー\_バッファーの構造体には、最初のネットワークが含まれています。\_バッファー\_SHARED\_リンク リスト内のメモリ構造体。
+[**Net\_buffer\_共有\_メモリ\_次の\_セグメント**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-shared-mem-next-segment)、 [**net\_buffer\_共有\_メモリ\_フラグ**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-shared-mem-flags)、 [**net\_buffer\_共有\_メモリ @no__t_ を使用します。18_ ハンドル**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-shared-mem-handle)、 [**NET\_BUFFER\_共有\_メモリ\_オフセット**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-shared-mem-offset)、および[**net\_BUFFER\_共有\_メモリ\_** ](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-shared-mem-length)バッファーにアクセスするために、共有されている\_の\_@noNET\_のバッファー構造に含まれるメモリの __。 NET\_バッファー構造の**Sharedmemoryinfo**メンバーには、リンクリスト内の最初の NET\_BUFFER\_共有\_メモリ構造が含まれています。
 
-**注**  NDIS 6.30 以降、パケット データを別の lookahead バッファーに分割することは現在サポートされていません。 Windows Server 2012 以降では、上位のプロトコル ドライバーは未設定、 **NDIS\_受信\_キュー\_パラメーター\_先読み\_分割\_必要な作業**フラグ、**フラグ**のメンバー、 [ **NDIS\_受信\_キュー\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)構造体。
+**注**  NDIS 6.30 以降では、パケットデータを個別の先読みバッファーに分割することはサポートされなくなりました。 Windows Server 2012 以降のプロトコルドライバーでは、ndis の**Flags**メンバーで **\_キュー\_パラメーター\_先読み\_分割\_必要**フラグが\_設定されません[ **@no__ _\_QUEUE\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)構造体を受け取ります。
 
  
 

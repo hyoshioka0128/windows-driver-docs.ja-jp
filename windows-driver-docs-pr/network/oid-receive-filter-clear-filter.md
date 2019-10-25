@@ -1,74 +1,74 @@
 ---
 title: OID_RECEIVE_FILTER_CLEAR_FILTER
-description: ドライバーの問題を重なって OID は、ネットワーク アダプターで受信フィルターをクリアする OID_RECEIVE_FILTER_CLEAR_FILTER の要求を設定します。
+description: これまでのドライバーは、ネットワークアダプターの受信フィルターをクリアするために、OID_RECEIVE_FILTER_CLEAR_FILTER の OID セット要求を発行します。
 ms.assetid: 5e92a11a-468e-431d-b4e5-7b0da3847e8a
 ms.date: 08/08/2017
-keywords: -OID_RECEIVE_FILTER_CLEAR_FILTER ネットワーク ドライバーが Windows Vista 以降
+keywords: -Windows Vista 以降の OID_RECEIVE_FILTER_CLEAR_FILTER ネットワークドライバー
 ms.localizationpriority: medium
-ms.openlocfilehash: fcc670800aeca6d7cb687e842778b29edbce96ee
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b5f9791eca2fbabaac7db3b92aa75fc49a9dcdf3
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67374808"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844019"
 ---
-# <a name="oidreceivefilterclearfilter"></a>OID\_受信\_フィルター\_クリア\_フィルター
+# <a name="oid_receive_filter_clear_filter"></a>OID\_受信\_フィルター\_クリア\_フィルター
 
 
-OID の要求を設定しました OID ドライバーの問題を後続\_受信\_フィルター\_オフ\_ネットワーク アダプターで受信フィルターをクリアするフィルター。
+それより後のドライバーは、OID の OID セット要求を発行して\_受信\_\_フィルターを適用して、ネットワークアダプターの受信フィルターをクリア\_フィルターをクリアします。
 
-**InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体にはへのポインターが含まれています、 [ **NDIS\_受信\_フィルター\_クリア\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_filter_clear_parameters)構造体。
+[**Ndis\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造体の**informationbuffer**メンバーには、 [**ndis\_RECEIVE\_FILTER\_CLEAR\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_clear_parameters)構造体へのポインターが含まれています。
 
 <a name="remarks"></a>注釈
 -------
 
-NDIS フィルターが表示される次の NDIS インターフェイスで使用されます。
+NDIS 受信フィルターは、次の NDIS インターフェイスで使用されます。
 
--   [NDIS パケット結合](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-packet-coalescing)します。 使用する方法の詳細についてはこのインターフェイスでフィルターが表示されるを参照してください[管理パケット結合受信フィルター](https://docs.microsoft.com/windows-hardware/drivers/network/managing-packet-coalescing-receive-filters)します。
+-   [NDIS パケット合体](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-packet-coalescing)。 このインターフェイスで受信フィルターを使用する方法の詳細については、「[パケット合体受信フィルターの管理](https://docs.microsoft.com/windows-hardware/drivers/network/managing-packet-coalescing-receive-filters)」を参照してください。
 
--   [シングル ルート I/O 仮想化 (SR-IOV)](https://docs.microsoft.com/windows-hardware/drivers/network/single-root-i-o-virtualization--sr-iov-)します。 使用する方法の詳細についてはこのインターフェイスでフィルターが表示されるを参照してください[仮想ポートで受信フィルターを設定](https://docs.microsoft.com/windows-hardware/drivers/network/setting-a-receive-filter-on-a-virtual-port)します。
+-   [シングルルート I/o 仮想化 (sr-iov)](https://docs.microsoft.com/windows-hardware/drivers/network/single-root-i-o-virtualization--sr-iov-)。 このインターフェイスで受信フィルターを使用する方法の詳細については、「[仮想ポートでの受信フィルターの設定](https://docs.microsoft.com/windows-hardware/drivers/network/setting-a-receive-filter-on-a-virtual-port)」を参照してください。
 
--   [バーチャル マシン キュー (VMQ)](https://docs.microsoft.com/windows-hardware/drivers/network/virtual-machine-queue--vmq--in-ndis-6-20)。 使用する方法の詳細についてはこのインターフェイスでフィルターが表示されるを参照してください[設定および VMQ のフィルターをクリアする](https://docs.microsoft.com/windows-hardware/drivers/network/setting-and-clearing-vmq-filters)します。
+-   [仮想マシン キュー (VMQ)](https://docs.microsoft.com/windows-hardware/drivers/network/virtual-machine-queue--vmq--in-ndis-6-20)。 このインターフェイスで受信フィルターを使用する方法の詳細については、「 [VMQ フィルターの設定とクリア](https://docs.microsoft.com/windows-hardware/drivers/network/setting-and-clearing-vmq-filters)」を参照してください。
 
-OID の OID の要求を設定する\_受信\_フィルター\_クリア\_フィルターは NDIS パケットの結合、SR-IOV、または VMQ インターフェイスをサポートするミニポート ドライバーに対して必須です。
+Oid パケット合体、SR-IOV、または VMQ インターフェイスをサポートするミニポートドライバーでは、oid の OID set 要求\_フィルター\_クリア\_フィルターを\_受信する必要があります。
 
-NDIS プロトコルまたはフィルター ドライバーなどの上にあるドライバーは、OID を使用して\_受信\_フィルター\_オフ\_フィルターの設定、以前に設定を消去する要求フィルター。 受信フィルターを設定するドライバーだけをオフにします。
+前のドライバー (NDIS プロトコルやフィルタードライバーなど) では、OID\_受信\_フィルター\_クリア\_フィルターセット要求を使用して、以前に設定されたフィルターをクリアします。 受信フィルターを設定したドライバーだけがクリアされます。
 
-上にあるドライバーは、設定して、受信フィルターをクリアします、 **FilterId**のメンバー、 [ **NDIS\_受信\_フィルター\_クリア\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_filter_clear_parameters)フィルターの識別子を構造体。 ドライバーの以前の OID メソッド要求からフィルターの識別子を取得した[OID\_受信\_フィルター\_設定\_フィルター](oid-receive-filter-set-filter.md)します。
+前のドライバーでは、NDIS の**Filterid**メンバーを設定することによって受信フィルターをクリアします。これにより、 [ **\_パラメーター構造のクリア\_\_フィルターの\_が**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_clear_parameters)フィルターの識別子に設定されます。 ドライバーは、以前の OID メソッドの Oid 要求からフィルター識別子を取得し、 [\_フィルター\_設定された\_受信\_フィルター](oid-receive-filter-set-filter.md)を取得します。
 
-### <a name="additional-instructions-for-ndis-packet-coalescing"></a>NDIS に関する詳しい説明についてパケットの結合
+### <a name="additional-instructions-for-ndis-packet-coalescing"></a>NDIS パケット合体の追加手順
 
-次の点は、ミニポートおよび NDIS パケットの結合をサポートしている上位のドライバーに適用されます。
+次の点は、NDIS パケット合体をサポートするミニポートおよびそれ以降のドライバーに適用されます。
 
--   上位のドライバーをバインド解除またはドライバーからデタッチされる前に、ミニポート ドライバーの設定がすべての受信フィルターをオフにする必要があります。
+-   ドライバーがバインド解除される前、またはドライバーから切断される前に、ミニポートドライバーに設定されているすべての受信フィルターを消去する必要があります。
 
-### <a name="additional-guidelines-for-the-sr-iov-interface"></a>SR-IOV インターフェイスに関する追加のガイドライン
+### <a name="additional-guidelines-for-the-sr-iov-interface"></a>Sr-iov インターフェイスに関するその他のガイドライン
 
-ミニポートと SR-IOV インターフェイスをサポートするドライバーを前提に、次の点が適用されます。
+SR-IOV インターフェイスをサポートするミニポートおよびそれ以降のドライバーには、次の点が適用されます。
 
--   上にある、ドライバーは、設定されると、VPort を解放する前に、SR-IOV VPort のすべてのフィルターをクリアする必要があります。 上にあるドライバーも設定されると、ネットワーク アダプターには、そのバインドが閉じる前に、既定 VPort のすべてのフィルターをオフにする必要があります。
+-   前のドライバーでは、VPort を解放する前に、SR-IOV VPort に設定されているすべてのフィルターをクリアする必要があります。 このドライバーは、ネットワークアダプターへのバインドを閉じる前に、既定の VPort に設定されているすべてのフィルターをクリアする必要があります。
 
--   OID の OID 要求が完了しなかった場合、ミニポート ドライバーは既定以外の VPort 上のパケットを示していませんする必要があります\_受信\_フィルター\_オフ\_VPort の最後のフィルターをクリアするフィルター。
+-   ミニポートドライバーは、非既定の VPort のパケットを示す必要があります (oid の OID 要求が完了している場合)\_受信\_フィルター\_クリア\_フィルターを選択して、VPort の最後のフィルターをクリアします。
 
-    **注**  ミニポート ドライバーも示す必要がありますいない VPort の既定以外のパケットの OID 要求を完了して場合[OID\_NIC\_スイッチ\_削除\_VPORT](oid-nic-switch-delete-vport.md) 、VPort を解放します。
+    また、ミニポートドライバーが oid 要求を完了している場合は、非既定の VPort のパケットを示す必要が**あり  ** [\_NIC\_スイッチ\_\_VPORT を削除](oid-nic-switch-delete-vport.md)して、vport を解放します。
 
      
 
 ### <a name="additional-guidelines-for-the-vmq-interface"></a>VMQ インターフェイスに関する追加のガイドライン
 
-ミニポートおよび VMQ インターフェイスをサポートする上位のドライバーに、次の点が適用されます。
+次の点は、VMQ インターフェイスをサポートするミニポートおよびそれ以降のドライバーに適用されます。
 
--   上にある、ドライバーは、すべてをクリアする必要があります受信キューのキューを解放する前に、VMQ に設定するフィルター。 上にあるドライバーも設定されると、ネットワーク アダプターには、そのバインドが閉じる前に、既定または drop のキューのすべてのフィルターをオフにする必要があります。
+-   後続のドライバーは、キューを解放する前に、VMQ 受信キューに設定されているすべてのフィルターをクリアする必要があります。 また、このドライバーは、ネットワークアダプターへのバインドを閉じる前に、既定のキューまたはドロップキューに設定されているすべてのフィルターをクリアする必要があります。
 
--   OID の OID 要求が完了しなかった場合、ミニポート ドライバーは受信キュー上のパケットを示していませんする必要があります\_受信\_フィルター\_オフ\_受信キューの最後のフィルターをクリアするフィルター。
+-   \_受信キューの最後のフィルターをクリアするには\_フィルターをクリア\_フィルターをオフにして、oid の OID 要求を完了したときに、ミニポートドライバーで受信キューのパケットを示すことはできません\_。
 
-    **注**  ミニポート ドライバーも示す必要がありますいない受信キュー上のパケットの OID 要求を完了して場合[OID\_受信\_フィルター\_FREE\_キュー](oid-receive-filter-free-queue.md)受信キューを解放します。
+    また、ミニポートドライバーが oid 要求の oid 要求を完了している場合は、受信キューにあるパケットを示すこともできません\_受信キューを解放するには[\_フィルター\_無料\_キュー](oid-receive-filter-free-queue.md) **を  し**ます。
 
      
 
-### <a name="return-status-codes"></a>リターン状態コード
+### <a name="return-status-codes"></a>ステータスコードを返す
 
-ミニポート ドライバーの[ *MiniportOidRequest* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_oid_request)関数は、次のいずれかがこの要求の値を返します。
+ミニポートドライバーの[*Miniportoidrequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_oid_request)関数は、この要求に対して次のいずれかの値を返します。
 
 <table>
 <colgroup>
@@ -84,36 +84,36 @@ NDIS プロトコルまたはフィルター ドライバーなどの上にあ�
 <tbody>
 <tr class="odd">
 <td><p><strong>NDIS_STATUS_SUCCESS</strong></p></td>
-<td><p>ミニポート ドライバーでは、要求が正常に完了しました。</p></td>
+<td><p>ミニポートドライバーが要求を正常に完了しました。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>NDIS_STATUS_PENDING</strong></p></td>
-<td><p>ミニポート ドライバーでは、要求を非同期的に実行されます。 ミニポート ドライバーには、すべての処理が完了したら後、は、呼び出すことによって、要求が成功する必要があります、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismoidrequestcomplete" data-raw-source="[&lt;strong&gt;NdisMOidRequestComplete&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismoidrequestcomplete)"> <strong>NdisMOidRequestComplete</strong> </a>関数<strong>NDIS_STATUS_SUCCESS</strong>の<em>状態</em>パラメーター。</p></td>
+<td><p>ミニポートドライバーは、要求を非同期的に完了します。 ミニポートドライバーはすべての処理を完了した後、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismoidrequestcomplete" data-raw-source="[&lt;strong&gt;NdisMOidRequestComplete&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismoidrequestcomplete)"><strong>NdisMOidRequestComplete</strong></a>関数を呼び出し、 <em>STATUS</em>パラメーターに<strong>NDIS_STATUS_SUCCESS</strong>を渡すことによって、要求を成功させる必要があります。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>NDIS_STATUS_NOT_ACCEPTED</strong></p></td>
-<td><p>ミニポート アダプタは、突然削除されました。</p></td>
+<td><p>ミニポートアダプターが突然削除されています。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-NDIS は、この要求の次のステータス コードのいずれかを返します。
+NDIS は、この要求に対して次のいずれかの状態コードを返します。
 
 <a href="" id="ndis-status-success"></a>**NDIS\_状態\_成功**  
-指定したフィルターがクリアされました。
+指定されたフィルターが正常にクリアされました。
 
-<a href="" id="ndis-status-pending"></a>**NDIS\_状態\_PENDING**  
-完了待ちになっています。 NDIS では、要求が完了した後、最終的な状態コードと結果を呼び出し元の OID 要求完了ハンドラーに渡すは。
+<a href="" id="ndis-status-pending"></a>**NDIS\_状態\_保留中**  
+要求は完了待ちです。 NDIS は、要求が完了した後に、最終的な状態コードと結果を呼び出し元の OID 要求完了ハンドラーに渡します。
 
-<a href="" id="ndis-status-file-not-found"></a>**NDIS\_状態\_ファイル\_いない\_が見つかりました**  
-フィルターの識別子が無効です。
+<a href="" id="ndis-status-file-not-found"></a>**NDIS\_状態\_ファイル\_見つかりませ\_んでした**  
+フィルター識別子が無効です。
 
-<a href="" id="ndis-status-invalid-length"></a>**NDIS\_状態\_無効な\_長さ**  
-情報バッファーが小さすぎます。 NDIS セット、**データ。設定\_情報。BytesNeeded**内のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体に必要な最小バッファー サイズ。
+<a href="" id="ndis-status-invalid-length"></a>**NDIS\_の状態\_無効な\_の長さです**  
+情報バッファーが小さすぎます。 NDIS はデータを設定**します。\_情報を設定します。** 必要な最小バッファーサイズに対して、 [**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造体のメンバーが必要です。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -124,11 +124,11 @@ NDIS は、この要求の次のステータス コードのいずれかを返�
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>以降では、NDIS 6.20 が動作をサポートします。</p></td>
+<td><p>NDIS 6.20 以降でサポートされています。</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Ntddndis.h (include Ndis.h)</td>
+<td>Ntddndis (Ndis .h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -136,13 +136,13 @@ NDIS は、この要求の次のステータス コードのいずれかを返�
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
+[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)
 
-[**NDIS\_受信\_フィルター\_クリア\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_filter_clear_parameters)
+[**NDIS\_\_パラメーターをクリア\_\_フィルターを受け取る**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_clear_parameters)
 
 [OID\_NIC\_スイッチ\_削除\_VPORT](oid-nic-switch-delete-vport.md)
 
-[OID\_受信\_フィルター\_FREE\_キュー](oid-receive-filter-free-queue.md)
+[OID\_受信\_フィルター\_空き\_キュー](oid-receive-filter-free-queue.md)
 
 [OID\_受信\_フィルター\_設定\_フィルター](oid-receive-filter-set-filter.md)
 

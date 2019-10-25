@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_BDA\_CA\_スマート\_カード\_状態
-description: クライアントを使用して、KSPROPERTY\_BDA\_CA\_スマート\_カード\_ECM のマップ ノードに関連付けられているスマート カード リーダーの状態を確認する状態。
+title: KSK プロパティ\_BDA\_CA\_スマート\_カード\_状態
+description: クライアントは、KSK プロパティ\_BDA\_CA\_スマート\_\_カードの状態を使用して、ECM マップノードに関連付けられているスマートカードリーダーの状態を確認します。
 ms.assetid: a53cea17-0463-4909-839b-6e8ad67dac82
 keywords:
-- KSPROPERTY_BDA_CA_SMART_CARD_STATUS ストリーミング メディア デバイス
+- KSPROPERTY_BDA_CA_SMART_CARD_STATUS ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 845accb5a1f67f66c2d442177270d6f0eabd32bc
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4aeb59b2c0b9f7c62f49d7180f51375e3ae61d1a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364880"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842146"
 ---
-# <a name="kspropertybdacasmartcardstatus"></a>KSPROPERTY\_BDA\_CA\_スマート\_カード\_状態
+# <a name="ksproperty_bda_ca_smart_card_status"></a>KSK プロパティ\_BDA\_CA\_スマート\_カード\_状態
 
 
-クライアントを使用して、KSPROPERTY\_BDA\_CA\_スマート\_カード\_ECM のマップ ノードに関連付けられているスマート カード リーダーの状態を確認する状態。
+クライアントは、KSK プロパティ\_BDA\_CA\_スマート\_\_カードの状態を使用して、ECM マップノードに関連付けられているスマートカードリーダーの状態を確認します。
 
 ## <span id="ddk_ksproperty_bda_ca_smart_card_status_ks"></span><span id="DDK_KSPROPERTY_BDA_CA_SMART_CARD_STATUS_KS"></span>
 
@@ -41,7 +41,7 @@ ms.locfileid: "67364880"
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,8 +50,8 @@ ms.locfileid: "67364880"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>〇</p></td>
+<td><p>[はい]</p></td>
+<td><p>[はい]</p></td>
 <td><p>フィルター</p></td>
 <td><p>KSP_NODE</p></td>
 <td><p>ULONG</p></td>
@@ -64,9 +64,9 @@ ms.locfileid: "67364880"
 <a name="remarks"></a>注釈
 -------
 
-返される値は、スマート カード リーダーの状態を指定します。
+返される値は、スマートカードリーダーの状態を指定します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -77,7 +77,7 @@ ms.locfileid: "67364880"
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Bdamedia.h (Bdamedia.h を含む)</td>
+<td>Bdamedia (Bdamedia を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -85,9 +85,9 @@ ms.locfileid: "67364880"
 ## <a name="see-also"></a>関連項目
 
 
-[**KSEVENT\_BDA\_CA\_スマート\_カード\_状態\_CHANGED**](ksevent-bda-ca-smart-card-status-changed.md)
+[**KSEVENT\_BDA\_CA\_スマート\_カード\_状態\_変更**](ksevent-bda-ca-smart-card-status-changed.md)
 
-[**KSP\_ノード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_node)
+[**KSP\_ノード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksp_node)
 
  
 

@@ -4,42 +4,42 @@ description: Hyper-V 拡張可能スイッチ構成のクエリ
 ms.assetid: AF646860-01AB-4F4B-84F8-B570054B10FC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f52dd8578dd8f3f2a3d09317c3584b2d218c721
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 21a8115003c16d79c0c40807eda5f9224062ad5b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67379212"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844880"
 ---
 # <a name="querying-the-hyper-v-extensible-switch-configuration"></a>Hyper-V 拡張可能スイッチ構成のクエリ
 
 
-HYPER-V 拡張可能スイッチのインターフェイスには、拡張可能スイッチ、ポート、およびそのネットワーク アダプターの接続の現在の構成を照会する拡張可能スイッチ拡張機能によって発行されるオブジェクト識別子 (OID) 要求が含まれています。 これらの要求には、次の Oid が含まれます。
+Hyper-v 拡張可能スイッチインターフェイスには、拡張可能なスイッチ拡張機能によって発行されたオブジェクト識別子 (OID) 要求が含まれており、拡張スイッチ、そのポート、およびネットワークアダプター接続の現在の構成を照会できます。 これらの要求には、次の Oid が含まれます。
 
 <a href="" id="oid-switch-nic-array"></a>[OID\_スイッチ\_NIC\_配列](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-array)  
-この OID クエリ要求では、配列を返します。 配列内の各要素には、拡張可能スイッチ ポートに関連付けられているネットワーク アダプターの構成パラメーターを指定します。
+この OID クエリ要求では、配列が返されます。 配列の各要素は、拡張可能なスイッチポートに関連付けられているネットワークアダプターの構成パラメーターを指定します。
 
 <a href="" id="oid-switch-parameters"></a>[OID\_スイッチ\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-parameters)  
-この OID クエリ要求は、拡張可能スイッチの現在の構成を返します。
+この OID クエリ要求では、拡張可能スイッチの現在の構成が返されます。
 
 <a href="" id="oid-switch-port-array"></a>[OID\_スイッチ\_ポート\_配列](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-array)  
-この OID クエリ要求では、配列を返します。 配列内の各要素には、拡張可能スイッチ ポートの構成パラメーターを指定します。
+この OID クエリ要求では、配列が返されます。 配列の各要素は、拡張可能なスイッチポートの構成パラメーターを指定します。
 
 <a href="" id="oid-switch-port-property-enum"></a>[OID\_スイッチ\_ポート\_プロパティ\_列挙型](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-property-enum)  
-この OID メソッド要求は、配列を返します。 配列内の各要素には、指定した拡張可能スイッチ ポートのポリシーのプロパティを指定します。
+この OID メソッド要求は、配列を返します。 配列の各要素は、指定された拡張可能なスイッチポートのポリシーのプロパティを指定します。
 
-<a href="" id="oid-switch-property-enum"></a>[OID\_スイッチ\_プロパティ\_列挙型](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-property-enum)  
-この OID メソッド要求は、配列を返します。 配列内の各要素には、拡張可能スイッチのポリシーのプロパティを指定します。
+<a href="" id="oid-switch-property-enum"></a>[OID\_SWITCH\_プロパティ\_列挙型](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-property-enum)  
+この OID メソッド要求は、配列を返します。 配列の各要素は、拡張可能なスイッチポリシーのプロパティを指定します。
 
-**注**  最初に発行する必要がありますが、スイッチ拡張機能は、の hyper-v 拡張可能スイッチのバインド、ときに、 [OID\_切り替える\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-parameters)スイッチの基本的な情報を取得する OID。 場合、 **IsActive**のメンバー、 [ **NDIS\_スイッチ\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_switch_parameters)構造が FALSE で、拡張機能は、その他のクエリの Oid を発行する必要がありますまで、スイッチには、アクティブ化が完了しました。 ここで、 **NetEventSwitchActivate** [ **NET\_PNP\_イベント**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_pnp_event)通知スイッチのアクティブ化イベントを指定します。 場合、 **IsActive**メンバーは、TRUE をバインドで、拡張機能は安全に他のクエリの Oid を発行します。 Hyper-v 拡張可能なスイッチが完了していないアクティブ化中に、構成のクエリを実行すると、スイッチの構成の不完全な初期ビューを持つ拡張機能が発生します。
-
- 
-
-**注**  拡張機能は、独自の OID 要求を生成するときでは、この同じと同様の NDIS フィルター ドライバー。 これを行う方法の詳細については、次を参照してください。 [NDIS フィルター ドライバーから OID の要求を生成する](generating-oid-requests-from-an-ndis-filter-driver.md)します。
+**注**  スイッチ拡張機能が Hyper-v 拡張可能スイッチにバインドされている場合、基本的なスイッチ情報を取得するには、まず[oid\_スイッチ\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-parameters) oid を発行する必要があります。 [**NDIS\_switch\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_parameters)構造体の**ISACTIVE**メンバーが FALSE の場合、スイッチがアクティブ化を完了するまで、他のクエリ oid は拡張機能によって発行されません。 この場合、 **NetEventSwitchActivate** [**NET\_PNP\_イベント**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_pnp_event)通知は、スイッチアクティブ化イベントを指定します。 **IsActive**メンバーが BIND で TRUE の場合、拡張機能は他のクエリ oid を安全に発行できます。 Hyper-v 拡張可能スイッチのアクティブ化が完了していないときに構成を照会すると、拡張機能によってスイッチ構成の初期ビューが不完全になります。
 
  
 
-拡張可能スイッチ OID 要求の管理パスの詳細については、次を参照してください。 [Hyper-v 拡張可能スイッチ コントロール パスの OID 要求](hyper-v-extensible-switch-control-path-for-oid-requests.md)します。
+拡張機能によって独自の OID 要求が生成された場合、この処理は、NDIS フィルタードライバーと同じ方法で行われ**ます  。** この方法の詳細については、「 [NDIS フィルタードライバーからの OID 要求の生成](generating-oid-requests-from-an-ndis-filter-driver.md)」を参照してください。
+
+ 
+
+拡張可能なスイッチ OID 要求の制御パスの詳細については、「 [OID 要求の Hyper-v 拡張可能スイッチ制御パス](hyper-v-extensible-switch-control-path-for-oid-requests.md)」を参照してください。
 
  
 

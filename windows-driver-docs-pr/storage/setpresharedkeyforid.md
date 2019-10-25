@@ -4,27 +4,27 @@ description: SetPresharedKeyForId
 ms.assetid: d966fd05-31ac-4774-b970-e4ce3d02a5ba
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 2baab8921ae1b1c04bf53f57d3c45281b0967695
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0b42a5f4e8f341aead0928483e68a6542e179f14
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363965"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842430"
 ---
 # <a name="setpresharedkeyforid"></a>SetPresharedKeyForId
 
 
-**SetPresharedKeyForId**メソッドに特定の事前共有キーをイニシエーターを使用して、アグレッシブなまたはメイン モードのインターネット キーの第 1 フェーズ中に識別する識別子 (ID) に関連付ける管理アプリケーションを使用します。交換 (IKE)。
+**Setpresharedkeyforid**メソッドを使用すると、管理アプリケーションは特定の事前共有キーを ID (id) に関連付けることができます。この識別子は、発信側がアグレッシブまたはメインモードのインターネットキー交換 (IKE) のフェーズ1で自身を識別するために使用します。
 
-イニシエーター識別子 (および IP アドレスを含む)、キーに関連付けます、イニシエーターは、キー交換で事前共有キーを使用する場合、および識別パケットのデータ部分でターゲットに、識別子と関連付けられたキーを渡します (別名、「c0 >  *id ペイロード*)。 イニシエーター渡します、識別子と関連付けられたキーのアグレッシブなまたはメイン モードの IKE フェーズ 1」の説明に従って[RFC 2407](https://go.microsoft.com/fwlink/p/?linkid=64840)します。 Id ペイロードは、安全な方法でイニシエーターを識別するために、その特定の発信側との接続に適したセキュリティ ポリシーを選択するターゲットを許可します。
+イニシエーターがキー交換で事前共有キーを使用すると、キーがイニシエーターの識別子 (および IP アドレス) に関連付けられ、識別子とそれに関連付けられたキーが、id パケットのデータ部分のターゲットに渡されます (これは、id とも呼ばれます)。0 > 識別ペイロード)。 発信側は、 [RFC 2407](https://go.microsoft.com/fwlink/p/?linkid=64840)で説明されているように、アグレッシブまたはメインモードの IKE のフェーズ1で、識別子とそれに関連付けられているキーを渡します。 Id ペイロードでは、ターゲットがセキュリティで保護された方法でイニシエーターを識別し、特定のイニシエーターとの接続に適したセキュリティポリシーを選択できます。
 
-後に、 **SetPresharedKeyForId**メソッドは、事前共有キーを指定します。 イニシエーターする必要がありますに保存して、その不揮発性ストレージ不揮発性記憶域が使用可能な場合。 ただし、発信側も、IKE フェーズ 1 のネゴシエーション中にすばやく使用をすることができるように、作業メモリに事前共有キーを保持する必要があります。 これにより、キー交換の効率が向上します。 不揮発性メモリがイニシエーターを使用できない場合、発信側サービスはイニシエーター代わりにキーを格納します。
+**Setpresharedkeyforid**メソッドで事前共有キーを指定した後、不揮発性ストレージが使用可能な場合、イニシエーターは不揮発性ストレージにそのキーを格納する必要があります。 ただし、イニシエーターは、IKE フェーズ1のネゴシエーション中に迅速に使用できるように、作業メモリに事前共有キーを保持する必要もあります。 これにより、キー交換の効率が向上します。 不揮発性メモリをイニシエーターが使用できない場合、イニシエーターサービスは、イニシエーターに代わってキーを格納します。
 
-管理アプリケーションを使用できる、 **SetPresharedKeyForId**特定イニシエーター識別子と事前共有キーを関連付けるメソッド。 イニシエーターの識別子のすべての既定のキーを関連付ける、アプリケーションを呼び出すことができます、 [SetGroupPresharedKey](setgrouppresharedkey.md)メソッド。 識別子とキーの間の明示的な関連付けが存在する場合は、明示的な関連付けを指定するキーが、既定のキーよりも優先されます。
+管理アプリケーションは、 **Setpresharedkeyforid**メソッドを使用して、事前共有キーと特定のイニシエーター識別子を関連付けることができます。 既定のキーをすべてのイニシエーターの識別子に関連付けるために、アプリケーションは[Setgrouppresharedkey](setgrouppresharedkey.md)メソッドを呼び出すことができます。 識別子とキーの間に明示的なアソシエーションが存在する場合は、明示的な関連付けによって指定されたキーが既定のキーよりも優先されます。
 
-**SetPresharedKeyForId** 、パブリッシュされていないに属している[MSiSCSI\_SecurityConfigOperations WMI クラス](msiscsi-securityconfigoperations-wmi-class.md)します。 パラメーターの説明については、 **SetPresharedKeyForId**メソッドのメンバーの説明を参照してください、 [ **SetPresharedKeyForId\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsiop/ns-iscsiop-_setpresharedkeyforid_in)と[ **SetPresharedKeyForId\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsiop/ns-iscsiop-_setpresharedkeyforid_out)構造体。
+**Setpresharedkeyforid**は、発行されていない[Msiscsi\_SECURITYCONFIGOPERATIONS WMI クラス](msiscsi-securityconfigoperations-wmi-class.md)に属しています。 **Setpresharedkeyforid**メソッドのパラメーターの説明については、「 [ **」の setpresharedkeyforid\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/iscsiop/ns-iscsiop-_setpresharedkeyforid_in)と[**setpresharedkeyforid\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/iscsiop/ns-iscsiop-_setpresharedkeyforid_out)構造体のメンバーの説明を参照してください。
 
-ミニポート ドライバー、MSiSCSI を実装する\_SecurityConfigOperations WMI クラスをサポートする必要があります**SetPresharedKeyForId**します。
+MSiSCSI\_SecurityConfigOperations WMI クラスを実装するミニポートドライバーは、 **Setpresharedkeyforid**をサポートしている必要があります。
 
  
 

@@ -4,17 +4,17 @@ description: MPIO\_DSM\_パス\_V2 WMI クラス
 ms.assetid: ec7d75a0-cb40-46e8-ab1d-137a9331193e
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 0a9e57f9291ee0407b606ebf32dada8bbf0d69b5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4d51bbb3b118c31dbae0c4d7acb5d28d8cf60e5a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386163"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844970"
 ---
-# <a name="mpiodsmpathv2-wmi-class"></a>MPIO\_DSM\_パス\_V2 WMI クラス
+# <a name="mpio_dsm_path_v2-wmi-class"></a>MPIO\_DSM\_パス\_V2 WMI クラス
 
 
-MPIO の発行、MPIO\_DSM\_パス\_V2 WMI クラスには、GUID を登録して、その実装を処理する DSM が必要です。 MPIO ドライバーは、MPIO を使用して\_DSM\_パス\_V2 WMI クラス、DSM で報告されたパスの ID を識別するためにします。
+Mpio は、MPIO\_DSM\_Path\_V2 WMI クラスを発行しますが、DSM が GUID を登録し、その実装を処理することを想定しています。 MPIO ドライバーは、MPIO\_DSM\_Path\_V2 WMI クラスを使用して、DSM によって報告されたパス ID を識別します。
 
 ```cpp
 class MPIO_DSM_Path_V2
@@ -174,7 +174,7 @@ class MPIO_DSM_Path_V2
 };
 ```
 
-このクラスの定義が WMI ツール スイートによってコンパイルされると、生成、 [ **MPIO\_DSM\_パス\_V2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mpiodisk/ns-mpiodisk-_mpio_dsm_path_v2)データ構造体。 この WMI クラスに関連付けられているメソッドはありません。
+このクラス定義が WMI ツールスイートによってコンパイルされると、 [**MPIO\_DSM\_Path\_V2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mpiodisk/ns-mpiodisk-_mpio_dsm_path_v2)データ構造として MPIO が生成されます。 この WMI クラスに関連付けられているメソッドはありません。
 
  
 

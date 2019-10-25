@@ -1,58 +1,58 @@
 ---
 title: OID_NIC_SWITCH_DELETE_SWITCH
-description: NDIS は、ネットワーク アダプターから NIC スイッチを削除する OID_NIC_SWITCH_DELETE_SWITCH のオブジェクト識別子 (OID) セット要求を発行します。
+description: NDIS は、OID_NIC_SWITCH_DELETE_SWITCH のオブジェクト識別子 (OID) セット要求を発行して、ネットワークアダプターから NIC スイッチを削除します。
 ms.assetid: 5785B30F-B67F-4D5A-A93A-243D33B9CAE8
 ms.date: 08/08/2017
-keywords: -OID_NIC_SWITCH_DELETE_SWITCH ネットワーク ドライバーが Windows Vista 以降
+keywords: -Windows Vista 以降の OID_NIC_SWITCH_DELETE_SWITCH ネットワークドライバー
 ms.localizationpriority: medium
-ms.openlocfilehash: 9bb973eaf620f8fe23c1d21ab8ca0f7b26c2dda0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7199d00167497b89a4f4a92d06f72d872289aaaf
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362896"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844094"
 ---
-# <a name="oidnicswitchdeleteswitch"></a>OID\_NIC\_スイッチ\_削除\_スイッチ
+# <a name="oid_nic_switch_delete_switch"></a>OID\_NIC\_スイッチ\_削除\_スイッチ
 
 
-OID のオブジェクト識別子 (OID) セット要求を発行する NDIS\_NIC\_切り替える\_削除\_スイッチ、ネットワーク アダプターから NIC スイッチを削除します。
+NDIS は、OID のオブジェクト識別子 (OID) セット要求を発行\_NIC\_スイッチ\_削除\_スイッチを削除してネットワークアダプターから NIC スイッチを削除します。
 
-NDIS は、ミニポート ドライバーのネットワーク アダプターの PCI Express (PCIe) 物理機能 (PF) にこの OID セット要求を発行します。 この OID セットの要求は、PF ミニポート ドライバー シングル ルート I/O 仮想化 (SR-IOV) インターフェイスをサポートする必要があります。
+NDIS は、この OID セット要求をネットワークアダプターの PCI Express (PCIe) 物理機能 (PF) のミニポートドライバーに発行します。 この OID セット要求は、シングルルート i/o 仮想化 (SR-IOV) インターフェイスをサポートする PF ミニポートドライバーに必要です。
 
-**注**  などプロトコルまたはフィルター ドライバー、ドライバー、スライド PF ミニポート ドライバーにこの OID メソッド要求を発行できません。
+**注**  プロトコルやフィルタードライバーなどのドライバーは、この OID メソッド要求を PF ミニポートドライバーに発行できません。
 
  
 
-**InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体にはへのポインターが含まれています、 [ **NDIS\_NIC\_スイッチ\_削除\_スイッチ\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_delete_switch_parameters)構造体。
+[**Ndis\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造体の**informationbuffer**メンバーには、ndis\_NIC へのポインターが含まれています\_[ **\_スイッチ\_削除\_スイッチパラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_delete_switch_parameters)構造体。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
-OID の OID の要求を設定する\_NIC\_切り替える\_削除\_スイッチの OID メソッド要求を既に作成されている NIC スイッチを削除します[OID\_NIC\_スイッチ\_作成\_スイッチ](oid-nic-switch-create-switch.md)します。
+Oid\_NIC\_SWITCH\_DELETE\_スイッチの OID セット要求では、以前に作成された NIC スイッチが、Oid\_[NIC\_スイッチ\_作成\_スイッチ](oid-nic-switch-create-switch.md)によって削除されます。
 
-OID の OID メソッド要求を受け取ったとき\_NIC\_スイッチ\_削除\_スイッチ、PF ミニポート ドライバーでは、次を実行する必要があります。
+OID\_\_スイッチの oid メソッド要求を受信すると\_スイッチ\_削除されますが、PF ミニポートドライバーは次の操作を行う必要があります。
 
-1.  PF のミニポート ドライバーでは、静的な作成と NIC のスイッチの構成をサポートする場合は、指定した NIC スイッチに関連付けられているソフトウェア リソースを解放にする必要があります。 ただし、ドライバーのみを解放できますハードウェア リソースの NIC を切り替えるときに[ *MiniportHaltEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_halt)が呼び出されます。
+1.  PF ミニポートドライバーが NIC スイッチの静的な作成と構成をサポートしている場合は、指定された NIC スイッチに関連付けられているソフトウェアリソースを解放する必要があります。 ただし、ドライバーは、[*ミニ Porthaltex*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_halt)が呼び出されたときにのみ、NIC スイッチのハードウェアリソースを解放できます。
 
-    静的な NIC スイッチの作成の詳細については、次を参照してください。 [NIC スイッチの作成を静的](https://docs.microsoft.com/windows-hardware/drivers/network/static-creation-of-a-nic-switch)します。
+    静的 NIC スイッチの作成の詳細については、「 [Nic スイッチの静的作成](https://docs.microsoft.com/windows-hardware/drivers/network/static-creation-of-a-nic-switch)」を参照してください。
 
-2.  PF ミニポート ドライバーでは、動的な作成と NIC のスイッチの構成をサポートする場合、指定した NIC スイッチに関連付けられているハードウェアおよびソフトウェア リソースを無料する必要があります。
+2.  PF ミニポートドライバーが NIC スイッチの動的作成と構成をサポートしている場合は、指定された NIC スイッチに関連付けられているハードウェアおよびソフトウェアリソースを解放する必要があります。
 
-    動的な NIC スイッチの作成の詳細については、次を参照してください。 [NIC スイッチの動的な作成](https://docs.microsoft.com/windows-hardware/drivers/network/dynamic-creation-of-a-nic-switch)です。
+    動的な NIC スイッチの作成の詳細については、「 [Nic スイッチの動的作成](https://docs.microsoft.com/windows-hardware/drivers/network/dynamic-creation-of-a-nic-switch)」を参照してください。
 
-3.  ドライバーが呼び出すことによってに、アダプターで仮想化を無効にする必要があります、PF ミニポート ドライバーでは、動的に作成し、NIC のスイッチが削除されているすべてをサポートする場合[ **NdisMEnableVirtualization**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismenablevirtualization)します。 ネットワーク アダプターの設定を仮想化を無効にする必要があります、 *EnableVirtualization*パラメーターを FALSE と*NumVFs*パラメーターを 0 にします。
+3.  PF ミニポートドライバーが動的作成をサポートしていて、すべての NIC スイッチが削除されている場合、ドライバーは[**NdisMEnableVirtualization**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismenablevirtualization)を呼び出すことによって、アダプターの仮想化を無効にする必要があります。 仮想化を無効にするには、ネットワークアダプターで*Enablevirtualization*パラメーターを FALSE に設定し、 *numvfs*パラメーターを0に設定する必要があります。
 
-    [**NdisMEnableVirtualization** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismenablevirtualization)クリア、 **NumVFs**メンバーと**VF 有効**の PCI 構成領域で SR-IOV 拡張機能の構造内のビット、ネットワーク アダプターの PF.
+    [**NdisMEnableVirtualization**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismenablevirtualization)は、ネットワークアダプターの PF の PCI 構成領域にある Sr-iov 拡張機能構造の**numvfs**メンバーと**VF 有効化**ビットをクリアします。
 
-    **注**  PF ミニポート ドライバーでは、静的な作成と NIC のスイッチの構成をサポートする場合のみ呼び出す必要があります[ **NdisMEnableVirtualization** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismenablevirtualization)とき[*MiniportHaltEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_halt)が呼び出されます。
+    **注**  PF ミニポートドライバーが NIC スイッチの静的な作成と構成をサポートしている場合は、 [*Miniporthaltex*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_halt)が呼び出されたときにのみ[**NdisMEnableVirtualization**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismenablevirtualization)を呼び出す必要があります。
 
      
 
-詳細については、次を参照してください。 [NIC スイッチを削除する](https://docs.microsoft.com/windows-hardware/drivers/network/deleting-a-nic-switch)します。
+詳細については、「 [NIC スイッチの削除](https://docs.microsoft.com/windows-hardware/drivers/network/deleting-a-nic-switch)」を参照してください。
 
-### <a name="return-status-codes"></a>リターン状態コード
+### <a name="return-status-codes"></a>ステータスコードを返す
 
-ミニポート ドライバーの[ *MiniportOidRequest* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_oid_request)関数は、次のいずれかがこの要求の値を返します。
+ミニポートドライバーの[*Miniportoidrequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_oid_request)関数は、この要求に対して次のいずれかの値を返します。
 
 <table>
 <colgroup>
@@ -68,26 +68,26 @@ OID の OID メソッド要求を受け取ったとき\_NIC\_スイッチ\_削�
 <tbody>
 <tr class="odd">
 <td><p><strong>NDIS_STATUS_SUCCESS</strong></p></td>
-<td><p>ミニポート ドライバーでは、要求が正常に完了しました。</p></td>
+<td><p>ミニポートドライバーが要求を正常に完了しました。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>NDIS_STATUS_PENDING</strong></p></td>
-<td><p>ミニポート ドライバーでは、要求を非同期的に実行されます。 ミニポート ドライバーには、すべての処理が完了したら後、は、呼び出すことによって、要求が成功する必要があります、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismoidrequestcomplete" data-raw-source="[&lt;strong&gt;NdisMOidRequestComplete&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismoidrequestcomplete)"> <strong>NdisMOidRequestComplete</strong> </a>関数<strong>NDIS_STATUS_SUCCESS</strong>の<em>状態</em>パラメーター。</p></td>
+<td><p>ミニポートドライバーは、要求を非同期的に完了します。 ミニポートドライバーはすべての処理を完了した後、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismoidrequestcomplete" data-raw-source="[&lt;strong&gt;NdisMOidRequestComplete&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismoidrequestcomplete)"><strong>NdisMOidRequestComplete</strong></a>関数を呼び出し、 <em>STATUS</em>パラメーターに<strong>NDIS_STATUS_SUCCESS</strong>を渡すことによって、要求を成功させる必要があります。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>NDIS_STATUS_NOT_ACCEPTED</strong></p></td>
-<td><p>ミニポート ドライバーがリセットされています。</p></td>
+<td><p>ミニポートドライバーがリセットされています。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>NDIS_STATUS_REQUEST_ABORTED</strong></p></td>
-<td><p>ミニポート ドライバーでは、要求の処理を停止します。 たとえば、NDIS と呼ばれる、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_reset" data-raw-source="[&lt;em&gt;MiniportResetEx&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_reset)"> <em>MiniportResetEx</em> </a>関数。</p></td>
+<td><p>ミニポートドライバーが要求の処理を停止しました。 たとえば、NDIS は<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_reset" data-raw-source="[&lt;em&gt;MiniportResetEx&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_reset)"><em>Miniportresetex</em></a>関数を呼び出しました。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-NDIS は、この要求の次のステータス コードのいずれかを返します。
+NDIS は、この要求に対して次のいずれかの状態コードを返します。
 
 <table>
 <colgroup>
@@ -96,33 +96,33 @@ NDIS は、この要求の次のステータス コードのいずれかを返�
 </colgroup>
 <thead>
 <tr class="header">
-<th>項目</th>
+<th>用語</th>
 <th>説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p><strong>NDIS_STATUS_SUCCESS</strong></p></td>
-<td><p>OID 要求は正常に完了しました。</p></td>
+<td><p>OID 要求が正常に完了しました。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>NDIS_STATUS_NOT_SUPPORTED</strong></p></td>
-<td><p>PF のミニポート ドライバーが SR-IOV インターフェイスをサポートしないか、またはインターフェイスを使用して有効になっていません。</p></td>
+<td><p>PF ミニポートドライバーは sr-iov インターフェイスをサポートしていないか、インターフェイスの使用が有効になっていません。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>NDIS_STATUS_FILE_NOT_FOUND</strong></p></td>
-<td><p>1 つ以上のメンバーの<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_delete_switch_parameters" data-raw-source="[&lt;strong&gt;NDIS_NIC_SWITCH_DELETE_SWITCH_PARAMETERS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_delete_switch_parameters)"> <strong>NDIS_NIC_SWITCH_DELETE_SWITCH_PARAMETERS</strong> </a>構造が無効な値を指定します。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_delete_switch_parameters" data-raw-source="[&lt;strong&gt;NDIS_NIC_SWITCH_DELETE_SWITCH_PARAMETERS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_delete_switch_parameters)"><strong>NDIS_NIC_SWITCH_DELETE_SWITCH_PARAMETERS</strong></a>構造体の1つ以上のメンバーに無効な値が含まれています。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>NDIS_STATUS_INVALID_LENGTH</strong></p></td>
-<td><p>情報バッファーが小さすぎます。 NDIS セット、<strong>データ。SET_INFORMATION します。BytesNeeded</strong>内のメンバー、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)"> <strong>NDIS_OID_REQUEST</strong> </a>構造体に必要な最小バッファー サイズ。</p></td>
+<td><p>情報バッファーが小さすぎます。 NDIS はデータを設定<strong>します。SET_INFORMATION.</strong> <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a>構造体の中で必要とされる最小バッファーサイズに対して、bytesneeded 必要です。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -133,11 +133,11 @@ NDIS は、この要求の次のステータス コードのいずれかを返�
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>NDIS 6.30 以降をサポートします。</p></td>
+<td><p>NDIS 6.30 以降でサポートされています。</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Ntddndis.h (include Ndis.h)</td>
+<td>Ntddndis (Ndis .h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -146,19 +146,19 @@ NDIS は、この要求の次のステータス コードのいずれかを返�
 
 
 ****
-[*MiniportHaltEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_halt)
+[*ミニ Porthaltex*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_halt)
 
-[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
+[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)
 
-[**NDIS\_NIC\_スイッチ\_削除\_スイッチ\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_delete_switch_parameters)
+[**NDIS\_NIC\_スイッチ\_削除\_スイッチ\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_delete_switch_parameters)
 
-[OID\_NIC\_スイッチ\_ALLOCATE\_VF](oid-nic-switch-allocate-vf.md)
+[OID\_NIC\_スイッチ\_割り当て\_VF](oid-nic-switch-allocate-vf.md)
 
 [OID\_NIC\_スイッチ\_作成\_スイッチ](oid-nic-switch-create-switch.md)
 
 [OID\_NIC\_スイッチ\_削除\_VPORT](oid-nic-switch-delete-vport.md)
 
-[OID\_NIC\_スイッチ\_FREE\_VF](oid-nic-switch-free-vf.md)
+[OID\_NIC\_スイッチ\_空き\_VF](oid-nic-switch-free-vf.md)
 
  
 

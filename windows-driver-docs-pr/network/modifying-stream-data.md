@@ -3,27 +3,27 @@ title: ストリーム データの変更
 description: ストリーム データの変更
 ms.assetid: 8f591bc1-272c-4e53-8e49-3350c6a3a33e
 keywords:
-- WDK Windows フィルタ リング プラットフォーム、ストリーム データの変更のコールアウトを分類します。
-- ストリームのデータ変更 WDK Windows フィルタ リング プラットフォーム
+- コールアウトの分類 WDK Windows フィルタリングプラットフォーム、ストリームデータの変更
+- データ変更のストリーミング (WDK Windows Filtering Platform)
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 448e1a0a092e552ac08795e539662bc2481f5e96
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: fdf6fbcb0068343e458bfe851368a737237229c3
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67359225"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844221"
 ---
 # <a name="modifying-stream-data"></a>ストリーム データの変更
 
 
-コールアウトは、ストリーム レイヤーのデータを処理するときにその[ *classifyFn* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nc-fwpsk-fwps_callout_classify_fn0)コールアウト関数は、データ ストリーム内のデータを変更できます。 吹き出しの*classifyFn*コールアウト関数が変更されていない場合、ブロック データを削除するには、ストリームを通過するストリームで許容可能なデータを許可し、適切な場合は、ストリームに新しいまたは変データを挿入します。
+コール[*アウトが*](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nc-fwpsk-fwps_callout_classify_fn0)ストリームレイヤーでデータを処理する場合、データストリーム内のデータを変更することができます。 コールアウトの*classid*関数は、コールアウト関数によって、ストリーム内の許容されるデータが変更なしで渡され、削除されるストリーム内のデータをブロックし、適切なときに新しいデータまたは変更されたデータをストリームに挿入することを許可します。
 
-吹き出しできますと交換してストリーム内のデータを他のデータが置き換えられますが、データをブロックすることと同時に、ストリームに新しいデータを挿入します。 このような状況で、新しいデータは、ストリームからブロックされているデータの削除を同じ時点でストリームに挿入されます。
+コールアウトは、交換されるデータをブロックすることによって、ストリーム内のデータを他のデータに置き換えることができます。同時に、ストリームに新しいデータが挿入されます。 このような状況では、ブロックされたデータがストリームから削除されるのと同じ位置に、新しいデータがストリームに挿入されます。
 
-データ ストリームにデータを挿入するコールアウト ドライバーの場合は、最初インジェクション ハンドルを作成する必要があります。 これは、ネットワーク スタックに変更されたパケットのデータの挿入用に作成した同じインジェクション ハンドルを指定できます。 参照してください[パケットを検査し、Stream データ](inspecting-packet-and-stream-data.md)インジェクション ハンドルを作成する方法についてはします。
+データストリームにデータを挿入するためにコールアウトドライバーを使用するには、最初に挿入ハンドルを作成する必要があります。 これは、変更されたパケットデータをネットワークスタックに挿入するために作成される挿入ハンドルと同じものにすることができます。 挿入ハンドルの作成方法については[、「パケットおよびストリームデータの検査](inspecting-packet-and-stream-data.md)」を参照してください。
 
-ストリーム データを変更する方法については、サンプルを参照して、"Windows フィルタ リング プラットフォーム Stream 編集"で、[ハードウェア サンプル](https://go.microsoft.com/fwlink/p/?LinkId=618052)コード ギャラリー。
+ストリームデータを変更する方法の詳細については、「[ハードウェアのサンプル](https://go.microsoft.com/fwlink/p/?LinkId=618052)コードギャラリー」の「Windows Filtering Platform Stream Edit Sample」を参照してください。
 
  
 

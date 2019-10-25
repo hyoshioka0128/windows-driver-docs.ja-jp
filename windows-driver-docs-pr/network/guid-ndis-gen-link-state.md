@@ -1,31 +1,31 @@
 ---
 title: GUID_NDIS_GEN_LINK_STATE
-description: このトピックでは、NDIS WMI インターフェイスの GUID を GUID_NDIS_GEN_LINK_STATE について説明します。
+description: このトピックでは、NDIS WMI インターフェイスの GUID_NDIS_GEN_LINK_STATE GUID について説明します。
 ms.assetid: 0b0ebb57-33fb-4a18-b6e5-3f4300729280
 keywords:
-- GUID_NDIS_GEN_LINK_STATE、WDK GUID_NDIS_GEN_LINK_STATE ネットワーク ドライバー
+- GUID_NDIS_GEN_LINK_STATE、WDK GUID_NDIS_GEN_LINK_STATE ネットワークドライバー
 ms.date: 11/22/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6048b362463c2ca2bd8c01e4c4f4be74b4a611f0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: af7d1dd054ad9c0468c623a2916bf05a2a43fa02
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382709"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842289"
 ---
-# <a name="guidndisgenlinkstate"></a>GUID_NDIS_GEN_LINK_STATE
+# <a name="guid_ndis_gen_link_state"></a>GUID_NDIS_GEN_LINK_STATE
 
-WMI クライアントでは、現在のリンクの状態を判断するのに GUID_NDIS_GEN_LINK_STATE メソッド GUID を使用できます。 この WMI GUID は、NDIS 6.0 および以降のバージョンでサポートされます。
+WMI クライアントは、GUID_NDIS_GEN_LINK_STATE メソッド GUID を使用して、現在のリンクの状態を確認できます。 この WMI GUID は、NDIS 6.0 以降のバージョンでサポートされています。
 
-NDIS は、この GUID を処理し、ミニポート ドライバーが、OID クエリを受信しません。
+NDIS では、この GUID とミニポートドライバーは OID クエリを受け取りません。
 
-WMI クライアント GUID_NDIS_GEN_LINK_STATE WMI メソッドの要求を発行と NDIS ミニポート アダプターまたは NDIS ポートの現在のリンクの状態を返します。
+WMI クライアントが GUID_NDIS_GEN_LINK_STATE WMI メソッド要求を発行すると、NDIS はミニポートアダプターまたは NDIS ポートの現在のリンクの状態を返します。
 
-WMI のメソッド識別子は NDIS_WMI_DEFAULT_METHOD_ID、する必要があり、WMI の入力バッファーに格納する必要があります、 [NDIS_WMI_METHOD_HEADER](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_wmi_method_header)構造体。
+WMI メソッド識別子は NDIS_WMI_DEFAULT_METHOD_ID であり、WMI 入力バッファーには[NDIS_WMI_METHOD_HEADER](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_wmi_method_header)構造体が含まれている必要があります。
 
-この GUID を持つ NDIS が返すデータ バッファーを含む、 [NDIS_LINK_STATE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_link_state)構造体。
+この GUID で NDIS が返すデータバッファーには、 [NDIS_LINK_STATE](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_link_state)構造体が含まれています。
 
-ミニポート ドライバーでは、初期化中に、リンクの状態を指定し、状態インジケーターの更新プログラムを提供します。 WMI クライアントでは、リンクの状態が変更されたときに、更新プログラムを受信するのに GUID_NDIS_GEN_LINK_STATE GUID を使用できます。
+ミニポートドライバーは、初期化中にリンク状態を提供し、状態を示す更新プログラムを提供します。 WMI クライアントは、GUID_NDIS_GEN_LINK_STATE GUID を使用して、リンクの状態が変化したときに更新プログラムを受け取ることができます。
 
-リンクのステータスの詳細については、次を参照してください。 [OID_GEN_LINK_STATE](oid-gen-link-state.md)と[NDIS_STATUS_LINK_STATE](ndis-status-link-state.md)します。
+リンクステータスの詳細については、「 [OID_GEN_LINK_STATE](oid-gen-link-state.md) and [NDIS_STATUS_LINK_STATE](ndis-status-link-state.md)」を参照してください。
 

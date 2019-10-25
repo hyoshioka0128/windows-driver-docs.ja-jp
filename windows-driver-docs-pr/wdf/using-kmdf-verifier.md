@@ -4,82 +4,82 @@ description: KMDF 検証ツールの使用
 ms.assetid: ab6a0149-9341-435b-b7e7-9c5d6520ebd8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ec59065bdb69273a44fb6f0effc01f8abac13766
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ac1e0d92cd2cc0ffd5f502e38eb6a962741a9347
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67372238"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842128"
 ---
 # <a name="using-kmdf-verifier"></a>KMDF 検証ツールの使用
 
 
-フレームワークは、実行中の KMDF ドライバーをテストに使用できる組み込みの検証機能を提供します。 KMDF 検証機能と呼ばれる、この機能は、広範囲にドライバーの状態と、ドライバーが framework オブジェクトのメソッドに渡される引数を検証します。 フレームワークの検証ツールを使用するには、単独または汎用と共に[Driver Verifier (Verifier.exe)](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)ツール。
+フレームワークには、実行中の KMDF ドライバーのテストに使用できる組み込みの検証機能が用意されています。 KMDF Verifier と呼ばれるこの機能は、ドライバーの状態と、ドライバーがフレームワークオブジェクトメソッドに渡す引数を広範囲にわたって検証します。 フレームワークの検証機能は、単独で使用することも、汎用[ドライバー検証ツール (verifier)](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)ツールと共に使用することもできます。
 
-フレームワークがロックの取得と階層を確認します。 によってフレームワークへの呼び出し、適切な IRQL で発生する、適切な I/O キャンセル機能とキューの使用率を確認しますをドライバーとフレームワークに従って、文書化されていること、KMDF 検証機能が有効になっている場合コントラクト。 ドライバー開発者は、クラッシュ、ハング、またはアンロードに失敗することがなく、ドライバーが適切に応答かどうかをテストできるようににメモリ不足の条件をシミュレーションすることもできます。
+KMDF 検証機能が有効になっている場合、フレームワークはロックの取得と階層を確認し、フレームワークの呼び出しが正しい IRQL で実行されることを確認し、正しい i/o のキャンセルとキューの使用を確認し、ドライバーとフレームワークがドキュメントに従っていることを確認します。関する. また、ドライバー開発者が、クラッシュ、ハング、またはアンロードに失敗しないで適切に応答するかどうかをテストできるように、メモリ不足の状態をシミュレートすることもできます。
 
-KMDF 検証機能が有効にすると、フレームワークは、60 秒間の既定タイムアウト期間が終了する前に、いくつかのイベントについて説明した完了した場合、デバッガーに分割します。 この時点で、問題をデバッグしたり、タイムアウト期間を再起動するデバッガーで"g"を入力できます。 使用して既定のタイムアウト期間を変更することができます、 **DbgWaitForSignalTimeoutInSec**で説明されているレジストリ値[検証ツールの動作を制御する](#controlling-the-verifiers-behavior)します。
+KMDF 検証ツールが有効になっている場合、前に説明したイベントの一部が完了する前に、既定のタイムアウト時間60秒が経過すると、フレームワークはデバッガーに中断します。 この時点で、問題をデバッグしたり、デバッガーで「g」と入力してタイムアウト期間を再起動したりできます。 既定のタイムアウト期間を変更するには、「[検証ツールの動作の制御](#controlling-the-verifiers-behavior)」で説明されている**DbgWaitForSignalTimeoutInSec**レジストリ値を使用します。
 
-お勧め Driver Verifier (Verifier.exe) を実行中にテスト、および独自のドライバーと wdf01000.sys を確認してください ボックスの一覧に追加します。
+テスト中にドライバー検証ツール (ngen.exe) を実行し、独自のドライバーと wdf01000 を [確認] 一覧に追加することをお勧めします。
 
-ドライバーは、KMDF バージョン 1.9 以降でビルドされました、Verifier.exe を実行すると、KMDF 検証ツールが自動的に有効にします。
+ドライバーが KMDF バージョン1.9 以降を使用してビルドされている場合に、Verifier を実行すると、KMDF 検証ツールが自動的に有効になります。
 
-使用することも、 [WDF Verifier コントロール アプリケーション (WdfVerifier.exe)](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdf-verifier-control-application) KMDF 検証を無効にします。
+また、 [WDF Verifier コントロールアプリケーション (WdfVerifier)](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdf-verifier-control-application)を使用して、Kmdf 検証機能を有効または無効にすることもできます。
 
-## <a name="enabling-and-disabling-the-frameworks-built-in-verification"></a>有効にして、フレームワークの組み込みの検証を無効化
-
-
-この手順を使用して、KMDF Verifier を手動で有効にできます。
-
-1.  ドライバーは既に読み込まれている場合は、デバイス マネージャーを使用してデバイスを無効にします。 デバイスを無効にすると、ロードするドライバーと。
-2.  RegEdit を使用して設定を**VerifierOn** 0 以外の場合、ドライバーの値に**パラメーター\\Wdf**のサブキー、 **HKEY\_ローカル\_マシン\\システム\\CurrentControlSet\\サービス**Windows レジストリのキー。 0 以外の値は、KMDF 検証機能が有効になっていることを示します。
-
-    追加する必要があります**VerifierOn**サブキーが存在しない場合に手動でします。
-
-3.  これにより、ドライバーの読み込み、デバイスを再度有効にするのにには、デバイス マネージャーを使用します。
-4.  ドライバーを呼び出すと[ **WdfDriverCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nf-wdfdriver-wdfdrivercreate)、フレームワークは、レジストリを検査し、場合、フレームワークの検証を有効に**VerifierOn** 0 以外の値。
-
-フレームワークの検証を無効にする、同じ手順しますが、の値を設定**VerifierOn**をゼロにします。
-
-フレームワークの検証が有効になっているかどうかを確認するには、ドライバーの呼び出しの後の場所にブレークポイントを設定します[ **WdfDriverCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nf-wdfdriver-wdfdrivercreate)を使用すると、 [ **! wdfdriverinfo。** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfdriverinfo)デバッガー拡張機能コマンド。
-
-**!wdfkd.wdfdriverinfo** *&lt;your drivername&gt;*  **** **0x1**
-
-デバッガーの拡張機能コマンドの詳細については、次を参照してください。 [Framework ベースのドライバーの拡張機能をデバッガー](debugger-extensions-for-kmdf-drivers.md)します。
-
-## <a name="controlling-the-verifiers-behavior"></a>検証の動作を制御します。
+## <a name="enabling-and-disabling-the-frameworks-built-in-verification"></a>フレームワークの組み込み検証を有効または無効にする
 
 
-使用することをお勧め、 [WDF Verifier コントロール アプリケーション](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdf-verifier-control-application)を以下のオプションを制御します。 ただし、レジストリで次の値を直接変更することができます。
+次の手順に従って、KMDF 検証を手動で有効にすることができます。
 
-関連する値が下にある、**パラメーター\\Wdf**のサブキー、 **HKEY\_ローカル\_マシン\\システム\\CurrentControlSet\\サービス**キー。
+1.  ドライバーが既に読み込まれている場合は、デバイスマネージャーを使用してデバイスを無効にします。 デバイスを無効にすると、ドライバーがアンロードされます。
+2.  RegEdit **\_ローカル\_コンピューター\\システム\\CurrentControlSet\\サービス**キーの **\\** 、ドライバーのパラメーターの0以外の値**に設定する**には、RegEdit を使用します。登録. 0以外の値は、KMDF 検証機能が有効になっていることを示します。
 
-<a href="" id="verifyon-----------------reg-dword-"></a>**VerifyOn** (**REG\_DWORD**)  
-この値を有効にするのには 0 以外の値を設定、 [ **WDFVERIFY** ](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdfverify)マクロ。
+    **VerifierOn**がまだ存在しない場合は、サブキーに手動で追加する必要があります。
 
-<a href="" id="dbgbreakonerror-----------------------------reg-dword-"></a>**DbgBreakOnError** (**REG\_DWORD**)  
-(該当する場合) に、フレームワークがデバッガーに割り込むはこの値が 0 以外の値に設定されている場合、ドライバーを呼び出すたびに[ **WdfVerifierDbgBreakPoint**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfverifier/nf-wdfverifier-wdfverifierdbgbreakpoint)します。
+3.  デバイスマネージャーを使用してデバイスを再度有効にし、その結果、ドライバーを読み込みます。
+4.  ドライバーが[**Wdfdrivercreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nf-wdfdriver-wdfdrivercreate)を呼び出すと、フレームワークはレジストリを調べ、0以外の値に**VerifierOn**した場合にフレームワークの検証ツールを有効にします。
+
+フレームワークの検証を無効にするには、同じ手順を実行しますが、 **VerifierOn**の値を0に設定します。
+
+フレームワークの検証機能が有効になっているかどうかを判断するには、ドライバーが[**Wdfdrivercreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nf-wdfdriver-wdfdrivercreate)を呼び出した後、場所にブレークポイントを設定し、 [ **! wdfdrivercreate**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfdriverinfo)デバッガー拡張コマンドを使用します。
+
+*&lt;ドライバー&gt;*  **** **0x1**の場合は、 **! wdfkd. wdfdriverinfo を使用します。**
+
+デバッガー拡張機能のコマンドの詳細については、「[フレームワークベースのドライバーのデバッガー拡張](debugger-extensions-for-kmdf-drivers.md)」を参照してください。
+
+## <a name="controlling-the-verifiers-behavior"></a>検証機能の動作の制御
+
+
+以下のオプションを制御するには、 [WDF Verifier コントロールアプリケーション](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdf-verifier-control-application)を使用することをお勧めします。 ただし、レジストリ内の次の値を直接変更することができます。
+
+関連する値は、 **HKEY\_ローカル\_コンピューター\\System\\CurrentControlSet\\Services**キーの**パラメーター\\Wdf**サブキーの下にあります。
+
+<a href="" id="verifyon-----------------reg-dword-"></a>**Verifyon** (**REG\_DWORD**)  
+[**Wdfverify**](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdfverify)マクロを有効にするには、この値を0以外の値に設定します。
+
+<a href="" id="dbgbreakonerror-----------------------------reg-dword-"></a>**Dbgbreakonerror** (**REG\_DWORD**)  
+この値が0以外の値に設定されている場合、ドライバーが[**WdfVerifierDbgBreakPoint**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfverifier/nf-wdfverifier-wdfverifierdbgbreakpoint)を呼び出すたびに、フレームワークはデバッガーを中断します (使用可能な場合)。
 
 <a href="" id="dbgwaitforsignaltimeoutinsec---------------reg-dword-"></a>**DbgWaitForSignalTimeoutInSec** (**REG\_DWORD**)  
-以降では、Windows 8、ときに**VerifierOn**と**DbgBreakOnError**設定は、0 以外の値をドライバーは、設定して既定のタイムアウト期間を変更できます**DbgWaitForSignalTimeoutInSec**.
+Windows 8 以降では、 **VerifierOn**と**dbgbreakonerror**が0以外の値に設定されている場合、ドライバーは**DbgWaitForSignalTimeoutInSec**を設定して既定のタイムアウト期間を変更できます。
 
 <a href="" id="verifierallocatefailcount------------------------------reg-dword-"></a>**VerifierAllocateFailCount** (**REG\_DWORD**)  
-この値が値に設定されている場合*n*、フレームワークには、後で、ドライバーのオブジェクトのメモリを割り当てるすべての試行が失敗した、 *n 番目*割り当て。
+この値が*n*に設定されている場合、n*番目*の割り当ての後、ドライバーのオブジェクトにメモリを割り当てようとするたびに、フレームワークは失敗します。
 
-<a href="" id="trackhandles---------------reg-multi-sz-"></a>**TrackHandles** (**REG\_マルチ\_SZ**)  
-この値が framework オブジェクトのハンドルの 1 つまたは複数の型名のリストに設定されている場合、フレームワークは、指定したハンドル型に一致するすべてのオブジェクト ハンドルへの参照を追跡します。
+<a href="" id="trackhandles---------------reg-multi-sz-"></a>**Trackhandles** (**REG\_複数\_SZ**)  
+この値がフレームワークオブジェクトハンドルの1つ以上の型名のリストに設定されている場合、フレームワークは、指定されたハンドル型に一致するすべてのオブジェクトハンドルへの参照を追跡します。
 
 <a href="" id="enhancedverifieroptions-----------------------------reg-dword-"></a>**EnhancedVerifierOptions** (**REG\_DWORD**)  
 **KMDF のみ**
 
-フレームワークの検証の省略可能な機能を有効に使用できるビットマップが含まれています。
+フレームワークの検証ツールのオプション機能を有効にするために使用できるビットマップが含まれています。
 
-<a href="" id="verifydownlevel--------------reg-dword-"></a>**VerifyDownLevel** (**REG\_DWORD**)  
-場合は 0 以外の値に設定され、フレームワークの検証にドライバーがビルドされた後に追加されたテストが含まれています、ドライバーが現在のバージョンより古いフレームワークのバージョンでビルドされている場合。
+<a href="" id="verifydownlevel--------------reg-dword-"></a>**Verifydownlevel レベル**(**REG\_DWORD**)  
+0以外の値に設定されていて、現在のバージョンよりも古いバージョンのフレームワークを使用してドライバーがビルドされている場合、フレームワークの検証ツールには、ドライバーのビルド後に追加されたテストが含まれます。
 
-一般的な規則として、上記のレジストリ値を設定すると、削除不要になったとき。
+一般的な規則として、上記のレジストリ値を設定した場合は、不要になったときに削除します。
 
-これらのレジストリ値の完全な説明については、次を参照してください。[デバッグ フレームワーク ベースのドライバーのレジストリ値](registry-values-for-debugging-kmdf-drivers.md)します。
+これらのレジストリ値の詳細については、「[フレームワークベースのドライバーをデバッグするためのレジストリ値](registry-values-for-debugging-kmdf-drivers.md)」を参照してください。
 
  
 

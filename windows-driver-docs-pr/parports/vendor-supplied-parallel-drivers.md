@@ -3,17 +3,17 @@ title: ベンダー提供のパラレル ドライバー
 description: ベンダー提供のパラレル ドライバー
 ms.assetid: 2f706dd2-4032-4f4d-8146-2f3a81e28b62
 keywords:
-- 並列ドライバー WDK
-- パラレル ポート WDK、ベンダーから提供されたドライバー
-- ベンダーから提供された並列ドライバー WDK
+- パラレルドライバー WDK
+- パラレルポート WDK、ベンダーが提供するドライバー
+- ベンダー提供のパラレルドライバー WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 53f2ca73b5a721fd90b3894441c5ceb6d8a5fd78
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1ff643ce004fe70e80985415d8357f7f69807fc2
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67353573"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842313"
 ---
 # <a name="vendor-supplied-parallel-drivers"></a>ベンダー提供のパラレル ドライバー
 
@@ -21,23 +21,23 @@ ms.locfileid: "67353573"
 
 
 
-このセクションでは、動作し、パラレル ポートやデバイスを Microsoft Windows オペレーティング システムにインストールする方法について、次のトピックについて説明します。
+ここでは、Microsoft Windows オペレーティングシステムでパラレルポートとデバイスを操作およびインストールする方法について、次のトピックについて説明します。
 
-[並列ドライバーのベンダーが提供するための要件](requirements-for-vendor-supplied-parallel-drivers.md)
+[ベンダー提供のパラレルドライバーの要件](requirements-for-vendor-supplied-parallel-drivers.md)
 
-[パラレル ポートの動作](operating-a-parallel-port.md)
+[パラレルポートの操作](operating-a-parallel-port.md)
 
-[パラレル ポートに接続されている並列のデバイスの動作](operating-a-parallel-device-attached-to-a-parallel-port.md)
+[パラレルポートに接続されているパラレルデバイスの操作](operating-a-parallel-device-attached-to-a-parallel-port.md)
 
-[パラレル ポートとデバイスのインストール](installing-parallel-ports-and-devices.md)
+[パラレルポートとデバイスのインストール](installing-parallel-ports-and-devices.md)
 
-パラレル ポートやデバイスの Windows のサポートの詳細についてを参照してください。
+パラレルポートとデバイスの Windows サポートの詳細については、以下を参照してください。
 
 [パラレル ポートとデバイスの概要](introduction-to-parallel-ports-and-devices.md)
 
 [システム提供のパラレル ドライバー](system-supplied-parallel-drivers.md)
 
-[システム提供平行ドライバーへのクライアント インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
+[システム提供のパラレルドライバーへのクライアントインターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)
 
  
 

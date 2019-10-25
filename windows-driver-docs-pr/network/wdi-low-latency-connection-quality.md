@@ -1,28 +1,28 @@
 ---
 title: WDI 低待機時間接続品質
-description: このセクションでは、WDI で低待機時間の接続の品質を維持する方法をについて説明します
+description: このセクションでは、WDI で低待機時間接続を使用して品質を維持する方法について説明します。
 ms.assetid: 194A26DA-A138-4967-9A09-5843A38007E9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0777b6f1f8134ba08beb72ee2d7c3148650f8f37
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2a9d01cbe64e6c0d16169c2cba2715d3e0cf1bef
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67387207"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842921"
 ---
 # <a name="wdi-low-latency-connection-quality"></a>WDI 低待機時間接続品質
 
 
-低待機時間データのトラフィック (たとえば、VoIP アプリケーション) が必要なシステムで実行されているアプリケーションがある場合、低待機時間モード操作用のポートを構成できます。 この操作モードの場合、ドライバーは低待機時間モード用に構成されているポートのチャネルから移動することを (ローミング AP 以上のスキャン) などの任意の動作を変更する必要があります。 指定したガイダンスに従う必要がありますも、 [NDIS\_状態\_WDI\_INDICATION\_リンク\_状態\_変更](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wdi-indication-link-state-change)を示す値。 ホスト提供[ **WDI\_TLV\_低\_待機時間\_接続\_品質\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-low-latency-connection-quality-parameters)するポートこのモードである場合に使用する必要があります。 ポートがチャネルとの接続が低待機時間のローミングを開始する前に下に分類する必要があります最小リンクの品質評価の値をオフにする必要がある最大時間を指定します (送信を含む[NDIS\_状態\_WDI\_INDICATION\_ローミング\_必要](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wdi-indication-roaming-needed))。
+待機時間の短いデータトラフィック (たとえば、VoIP アプリケーション) を必要とするアプリケーションがシステム上で実行されている場合は、低待機時間モードの操作用にポートを構成できます。 この操作モードでは、ドライバーは、低待機時間モード用に構成されたポートのチャネルからの移動を引き起こす動作 (スキャンや、AP ローミングの向上など) を変更する必要があります。 また、NDIS\_STATUS\_WDI\_に指定されたガイダンスに従って[\_リンク\_状態\_変更](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wdi-indication-link-state-change)を示すことになります。 このホストは、ポートがこのモードのときに使用する必要がある[ **\_\_低の待機時間\_接続\_\_** ](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-low-latency-connection-quality-parameters)を提供します。 これにより、ポートがチャネルをオフにする最長時間と、低待機時間の\_\_\_ローミングを開始する前に接続を切断する必要がある最小リンク品質の値が指定され[\_ローミング\_必要](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wdi-indication-roaming-needed))。
 
-スキャン、ホストは、チャネルの最大時間 (アクティブおよびパッシブ チャネルに別の値がある) と最大時間上、アダプターにならない必要があります。 ホストでは、不要なスキャンも調整します。 ただし、アダプターがさらに場合は、スキャンを調整できる、 [ **WDI\_スキャン\_トリガー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_scan_trigger)は**WDI\_スキャン\_トリガー\_バック グラウンド**または**WDI\_スキャン\_トリガー\_ローミング**します。 アダプターは、このモードでは、独自のスキャンを実行する場合を探しています (スリープから復帰した後である) 場合を除き、チャネルで時間を削減する SSID が含まれることをお勧めします。 さらに、全体的なチャネルをオフの時間制限できるように、1 つのチャネルからスキャンで複数のチャネルをスキャンを回避する必要があります。
+スキャンの場合、ホストは最大チャネル熟考時間 (アクティブチャネルとパッシブチャネルに異なる値がある) を提供し、アダプターは最大時間を超えないようにする必要があります。 また、ホストは不要なスキャンを調整します。 ただし、アダプターでは、 [**WDI\_scan\_トリガー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_scan_trigger)が**WDI\_scan\_トリガー\_バックグラウンド**または**WDI\_スキャン**\_\_のローミングをトリガーする場合に、さらにスキャンを調整できます。 アダプターがこのモードで独自のスキャンを実行する場合は、そのアダプターが探している SSID (スリープからの再開後) を含めて、チャネルの熟考時間を短縮することをお勧めします。 また、1つのオフチャネルスキャンで複数のチャネルをスキャンして、全体のオフチャネルの時間制限を下回るようにする必要があります。
 
-ホストと見なします[NDIS\_状態\_WDI\_を示す値\_ローミング\_必要](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wdi-indication-roaming-needed)ローミング、このモードの場合、アダプターがする必要がありますので、アダプターから強力な要求この通知を送信する頻度について注意します。 アダプターは、独自のローミング/AP 選択決定を実行する場合、(近隣レポートや PMKIDs) などの適切なメカニズムを使用して検索と選択/順位の Ap をする必要があります。
+ホストは、 [NDIS\_状態\_WDI\_\_示す](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wdi-indication-roaming-needed)ことを考慮して、ローミング\_アダプターからの強い要求が必要であることを示します。このモードでは、アダプターは、この通知が送信される頻度に注意する必要があります。 アダプターが独自のローミング/AP 選択の決定を行う場合は、適切なメカニズム (近隣レポートや PMKIDs など) を使用して、Ap を検索および選択する必要があります。
 
-関連付け処理を最適化するために、アダプターする必要がありますエントリを使用してキャッシュされた BSS 参加中に TSF タイマーの同期可能な場合。 キャッシュされたエントリは、TSF タイマー同期新鮮なほとんどの場合は、最近のプローブ要求から取得されているため、これで十分です。 TSF の同期は、ドライバー、最新の状態のキャッシュされたプローブ応答がないアプリを選択することを決定する場合でも、後で実行できます。 ドライバーは、通常は 100 ミリ秒内に発生します。 [次へ] 内ビーコンを受信するまで、省電力、Wi-fi を無効にできます。
+アソシエーションプロセスを最適化するには、アダプターは、可能であれば、結合時に TSF タイマー同期にキャッシュされた BSS エントリを使用する必要があります。 キャッシュされたエントリは、最新のプローブ要求から取得されたものであるため、できるだけ多くの時間を必要とする TSF のタイマー同期に適しています。 TSF の同期は、ドライバーが最新のキャッシュされたプローブ応答を持たない AP を選択した場合でも、後で行うことができます。 ドライバーは、次のビーコンを受信するまで Wi-fi 電力の保存を無効にすることができます。これは通常、100ミリ秒内で発生します。
 
-マルチ チャネルの同時実行モードで使用する場合、あるアダプター採用 ECSA またはシームレス/いいえを有効にするためには、その他のメカニズム ジッター エクスペリエンス チャネルを多重化を実行するときにお勧めします。
+マルチチャネルの同時実行モードで動作している場合は、チャネルの多重化を実行するときに、アダプターが ECSA またはその他のメカニズムを使用して、シームレスな非ジッターエクスペリエンスを有効にすることをお勧めします。
 
  
 

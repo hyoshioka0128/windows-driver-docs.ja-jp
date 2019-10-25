@@ -3,63 +3,63 @@ title: コールアウトの種類
 description: コールアウトの種類
 ms.assetid: d9539403-7657-4e95-8791-309673d1207d
 keywords:
-- 保留中のパケット WDK Windows フィルタ リング プラットフォーム
-- 吹き出しは、WDK Windows フィルタ リング プラットフォームを種類します。
+- 保留中のパケット WDK Windows フィルタリングプラットフォーム
+- コールアウトの種類 WDK Windows フィルタリングプラットフォーム
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 56d309451f2c6d4e3a4b37ef195080cd392db58e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ca6f4829515cd5852b740c0f0118b7e2f043426a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368438"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841773"
 ---
 # <a name="types-of-callouts"></a>コールアウトの種類
 
 
-次の種類の吹き出しは、WFP で使用できます。
+次の種類のコールアウトを WFP と共に使用できます。
 
-<a href="" id="inline-inspection-callout-------"></a>**インラインの検査の吹き出し**   
-この種類の吹き出しは常に返します**FWP\_アクション\_続行**から、 [ *classifyFn* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nc-fwpsk-fwps_callout_classify_fn0)関数し、ネットワークを変更しません任意の方法でトラフィックです。 ネットワークの統計情報を収集する吹き出しは、この種類の吹き出しの例を示します。
+<a href="" id="inline-inspection-callout-------"></a>**インライン検査の吹き出し**   
+この種類のコールアウトは、常に、[*分類関数から*](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nc-fwpsk-fwps_callout_classify_fn0)**続行\_\_アクション**を返します。また、ネットワークトラフィックは一切変更されません。 ネットワーク統計情報を収集するコールアウトは、この種類のコールアウトの一例です。
 
-この種類の吹き出し、フィルター アクションの種類 (で指定された、**型**のメンバー、 [ **FWPS\_ACTION0** ](https://docs.microsoft.com/windows/desktop/api/fwpstypes/ns-fwpstypes-fwps_action0_)構造) に設定する必要があります**FWP\_アクション\_コールアウト\_検査**します。
+この種類のコールアウトの場合は、 [**Fwps\_ACTION0**](https://docs.microsoft.com/windows/desktop/api/fwpstypes/ns-fwpstypes-fwps_action0_)構造体の**型**メンバーで指定されたフィルターアクションの種類を、[**コールアウト\_検査]\_[.fwp\_アクション**] に設定する必要があります。
 
-<a href="" id="out-of-band-inspection-callout-------"></a>**帯域外の検査の吹き出し**   
-この種類の吹き出しには、ネットワーク トラフィックは変更されません。 代わりに、それを遅延外部で実行する任意の検査、 *classifyFn*関数「保留中」で指定されたデータと、TCP/IP に戻す保留データを reinjecting スタックのいずれかで、[パケット インジェクション関数](packet-injection-functions.md). 保留中の最初に返すことで後に、指定されたデータを複製することにより実装されます**FWP\_アクション\_ブロック**から、 *classifyFn*関数を持つ、 **FWPS\_分類\_アウト\_フラグ\_吸収**ビットが設定されます。
+<a href="" id="out-of-band-inspection-callout-------"></a>**帯域外検査の吹き出し**   
+この種類のコールアウトでは、ネットワークトラフィックは変更されません。 代わりに、指定されたデータを "保留" することによって、 *classid*の年関数の外部で行われる検査を延期し、[パケット挿入関数](packet-injection-functions.md)のいずれかを使用して、保留中のデータを tcp/ip スタックに reinjecting します。 Pending は、最初に指定されたデータを複製し、次に、 **Fwps\_分類\_OUT\_フラグ**を持つ*classid*によって **\_アクション\_ブロック**を返すことによって実装されます。ビットセット。
 
-<a href="" id="inline-modification-callout-------"></a>**インラインの変更の吹き出し**   
-この種類の吹き出しは、指定されたデータの複製を作成するネットワーク トラフィックを変更し、スタックからのクローンを変更して、TCP/IP に変更の複製を最後に挿入する、 *classifyFn*関数。 この種類の吹き出しも返します**FWP\_アクション\_ブロック**から、 *classifyFn*関数を持つ、 **FWPS\_分類\_アウト\_フラグ\_吸収**ビットが設定されます。
+<a href="" id="inline-modification-callout-------"></a>**インライン変更コールアウト**   
+この種類のコールアウトでは、最初に指定されたデータの複製を作成し、次に複製を変更してから、最後に変更された複製を*classid*の年関数から tcp/ip スタックに挿入することで、ネットワークトラフィックを変更します。 また、この種類のコールアウトは、 **Fwps\_分類\_OUT\_フラグ**を持つ*classid*関数から **\_ブロックの\_アクション**を返します。
 
-この種類の吹き出しのフィルター アクションの種類を設定する必要があります**FWP\_アクション\_コールアウト\_終端**します。
+この種類のコールアウトのフィルターアクションの種類は、**吹き出し\_終了\_吹き出し\_アクション**に設定する必要があります。
 
-<a href="" id="out-of-band-modification-callout-------"></a>**帯域外の変更の吹き出し**   
-まず、この種類の吹き出しを使用して、指定されたパケットを参照、 [ **FwpsReferenceNetBufferList0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsreferencenetbufferlist0)関数を持つ、 *intentToModify*パラメーターに設定**TRUE**します。 引き出し線を返します**FWP\_アクション\_ブロック**で、 **FWPS\_分類\_アウト\_フラグ\_吸収**ビットセットから、 *classifyFn*関数。 パケットが外部で変更する準備ができて場合*classifyFn*、引き出し線のクローンを作成、参照されているパケット (が複製するとすぐに元のパケットしは逆参照できます)。 引き出し線は、クローンを変更し、TCP/IP スタックに変更されたパケットを挿入します。
+<a href="" id="out-of-band-modification-callout-------"></a>**帯域外変更コールアウト**   
+この種類のコールアウトでは、最初に、 *intentToModify*パラメーターが**TRUE**に設定されている[**FwpsReferenceNetBufferList0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsreferencenetbufferlist0)関数を使用して、指定されたパケットを参照します。 次に、コールアウトは、 **\_アクション\_ブロック**を**FWPS\_分類\_OUT\_フラグ**を使用して返します。このフラグは、 *classid*の関数からビットセットを吸収します。 パケットが*classid*によって変更される準備ができたら、コールアウトは参照されたパケットを複製します (複製されるとすぐに、元のパケットを逆参照できます)。 その後、コールアウトが複製を変更し、変更されたパケットを TCP/IP スタックに挿入します。
 
-この種類の吹き出しのフィルター アクションの種類を設定する必要があります**FWP\_アクション\_コールアウト\_終端**します。
+この種類のコールアウトのフィルターアクションの種類は、**吹き出し\_終了\_吹き出し\_アクション**に設定する必要があります。
 
-<a href="" id="redirection-callout"></a>**リダイレクトの吹き出し**  
-この種類の吹き出しの詳細については、次を参照してください。 [Bind を使用して、または接続のリダイレクト](using-bind-or-connect-redirection.md)します。
+<a href="" id="redirection-callout"></a>**リダイレクト吹き出し**  
+この種類のコールアウトの詳細について[は、「Using Bind Or Connect リダイレクション](using-bind-or-connect-redirection.md)」を参照してください。
 
-これにはリダイレクト コールアウトの 2 つの種類があります。
+リダイレクトコールアウトには、次の2種類があります。
 
--   バインド リダイレクトの吹き出しには、ローカル アドレスと、ソケットのローカル ポートを変更するコールアウト ドライバーができます。
--   接続のリダイレクトの吹き出しには、リモート アドレスおよび接続のリモートのポートを変更するコールアウト ドライバーができます。
+-   バインドリダイレクトの吹き出しを使用すると、コールアウトドライバーはソケットのローカルアドレスとローカルポートを変更できます。
+-   接続リダイレクトの吹き出しを使用すると、コールアウトドライバーは接続のリモートアドレスとリモートポートを変更できます。
 
-この種類の吹き出しのフィルター アクションの種類に設定する必要があります**FWP\_アクション\_許可**します。
+この種類のコールアウトのフィルターアクションの種類は、 **\_アクション\_許可**に設定する必要があります。
 
-詳細については**FWPS\_分類\_アウト\_フラグ\_吸収**を参照してください[ **FWPS\_分類\_OUT0**](https://docs.microsoft.com/windows/desktop/api/fwpstypes/ns-fwpstypes-fwps_classify_out0_). このフラグは、WFP 破棄層では無効です。 返す**FWP\_アクション\_ブロック**で、 **FWPS\_分類\_アウト\_フラグ\_吸収**フラグの設定から、*classifyFn*関数原因が発生するパケットを破棄する、レイヤーを破棄するパケットはヒットしません、WFP のいずれかの方法でもは監査イベントを生成します。
+**Fwps\_分類\_OUT\_フラグ\_** の詳細については、「 [**fwps\_分類\_OUT0**](https://docs.microsoft.com/windows/desktop/api/fwpstypes/ns-fwpstypes-fwps_classify_out0_)」を参照してください。 このフラグは、どの WFP 破棄レイヤーでも有効ではありません。 **\_アクション\_BLOCK**を**FWPS\_分類\_OUT\_フラグ**と共に返す\_、分類*関数から設定された*"吸収フラグ" を使用すると、パケットが警告なしに破棄されます。この方法では、パケットは、どの WFP 破棄レイヤーにもヒットしません。また、監査イベントが生成されません。
 
-複製された net バッファーのリストを変更ことはできますが、net バッファーまたは MDLs、またはその両方を追加または削除してコールアウト取り消す必要がありますこのような変更呼び出しの前に、 [ **FwpsFreeCloneNetBufferList0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsfreeclonenetbufferlist0)関数。
+複製されたネットワークバッファーの一覧は変更できますが、たとえば、net buffer や MDLs を追加したり削除したりすることや、コールアウトでは、 [**FwpsFreeCloneNetBufferList0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsfreeclonenetbufferlist0)関数を呼び出す前に変更を元に戻す必要があります。
 
-吹き出しが「ハード」にありますパケットが保留の参照/複製-削除-再挿入メカニズムを使用する前に、パケット インスペクション、パケットの変更、または接続のリダイレクトを実行するその他の付記との共存、-、をオフにすると、元のパケットをドロップ**FWPS\_右\_アクション\_書き込み**フラグ、 **rights**のメンバー、 [ **FWPS\_分類\_OUT0**](https://docs.microsoft.com/windows/desktop/api/fwpstypes/ns-fwpstypes-fwps_classify_out0_)によって返される構造体、 *classifyFn*関数。 場合、 **FWPS\_右\_アクション\_書き込み**フラグが設定されて*classifyFn*が呼び出されます (これは、パケット保留可能性がありますと後でれるか、変更)、引き出し線の表示を保留する必要があり、現在のアクション タイプを変更しないでください変更される可能性が複製を挿入する重要度を高く吹き出しを待つ必要があります。
+パケット検査、パケット変更、または接続リダイレクトを実行する他のコールアウトと共存させるには、パケットを参照/複製 reinject メカニズムで保留する前に、コールアウトによって、Fwps をクリアすることによって元のパケットを "ハード" にする必要があります。 **\_RIGHT\_ACTION\_** [**Fwps wps**](https://docs.microsoft.com/windows/desktop/api/fwpstypes/ns-fwpstypes-fwps_classify_out0_)の**RIGHTS**メンバーでの書き込みフラグを作成します。これは、 *CLASSID*によって返される OUT0 構造体を\_分類します。 再挿入 **\_の権限を\_アクション\_書き込み**フラグが設定されている場合、 *classid*が呼び出されると (つまり、パケットが保留され、後でまたは変更される可能性があります)、コールアウトが表示を保留しないようにする必要があります。現在のアクションの種類。また、変更される可能性がある複製を挿入するために、より高重量のコールアウトを待機する必要があります。
 
-**FWPS\_右\_アクション\_書き込み**コールアウトとれたを分類するたびに、フラグを設定する必要があります。 コールアウト ドライバーをテストする必要があります、 **FWPS\_右\_アクション\_書き込み**吹き出しを返すアクションの権限をチェックするフラグ。 このフラグが設定されていないかどうか、引き出し返すことができますが、 **FWP\_アクション\_ブロック**アクションを拒否するために、 **FWP\_アクション\_許可**アクションを前の引き出しによって返されました。 示した例では[コールアウトを使用して、詳細な検査の](using-a-callout-for-deep-inspection.md)関数の終了フラグが設定されていない場合だけです。
+コールアウトが分類を pends たびに**Fwps\_RIGHT\_ACTION\_WRITE**フラグを設定する必要があります。 コールアウトドライバーは、 **Fwps\_RIGHT\_action\_WRITE**フラグをテストして、コールアウトがアクションを返す権限を確認する必要があります。 このフラグが設定されていない場合でも、コールアウトは、前のコールアウトによって返された**許可操作\_許可**アクションを\_拒否するために、 **\_アクション\_ブロック**アクションを返すことができます。 [詳細検査にコールアウトを使用して](using-a-callout-for-deep-inspection.md)いる例では、フラグが設定されていない場合にのみ、関数が終了します。
 
-[ **FwpsPendOperation0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpspendoperation0)関数から発信された保留パケットを使用して、 **FWPM\_レイヤー\_ALE\_リソース\_割り当て\_** <em>XXX</em>、 **FWPM\_レイヤー\_ALE\_AUTH\_リッスン\_** <em>XXX</em>、または**FWPM\_レイヤー\_ALE\_AUTH\_CONNECT\_** <em>XXX</em>[管理レイヤーをフィルタ リング](https://docs.microsoft.com/windows-hardware/drivers/network/management-filtering-layer-identifiers)します。
+[**FwpsPendOperation0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpspendoperation0)関数は、 **FWPM\_レイヤー\_ALE\_リソース**から送信されたパケットを保留するために使用され\_割り当て\_<em>XXX</em>、 **FWPM\_レイヤー\_ALE\_AUTH\_LISTEN\_** <em>XXX</em>、または**FWPM\_LAYER\_ALE\_AUTH\_CONNECT\_** <em>XXX</em> [管理のフィルターレイヤー](https://docs.microsoft.com/windows-hardware/drivers/network/management-filtering-layer-identifiers)に接続します。
 
-[ **FwpsPendClassify0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpspendclassify0)関数を使用して、次から発信された保留パケット[実行時のフィルター処理レイヤー](https://docs.microsoft.com/windows-hardware/drivers/network/run-time-filtering-layer-identifiers):
+[**FwpsPendClassify0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpspendclassify0)関数は、次の[実行時フィルタリングレイヤー](https://docs.microsoft.com/windows-hardware/drivers/network/run-time-filtering-layer-identifiers)から送信されるパケットを保留するために使用されます。
 
-FWPS\_レイヤー\_ALE\_エンドポイント\_クロージャ\_V4 FWPS\_レイヤー\_ALE\_エンドポイント\_クロージャ\_V6 FWPS\_レイヤー\_ALE\_CONNECT\_リダイレクト\_V4 FWPS\_レイヤー\_ALE\_CONNECT\_リダイレクト\_V6 FWPS\_レイヤー\_ALE\_バインド\_リダイレクト\_V4 FWPS\_レイヤー\_ALE\_バインド\_リダイレクト\_V6
+FWPS\_レイヤー\_ALE\_エンドポイント\_クロージャ\_V4 FWPS\_レイヤー\_ALE\_エンドポイント\_\_V6 FWPS\_レイヤー\_ALE\_接続\_リダイレクト\_V4 FWPS\_レイヤー\_ALE\_接続\_リダイレクト\_V6 FWPS\_レイヤー\_ALE\_バインド\_V4 FWPS\_レイヤー\_ALE\_バインド\_リダイレクト\_V6
  
 
  

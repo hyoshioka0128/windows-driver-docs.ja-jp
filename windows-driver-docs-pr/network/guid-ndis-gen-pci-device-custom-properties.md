@@ -1,30 +1,30 @@
 ---
 title: GUID_NDIS_GEN_PCI_DEVICE_CUSTOM_PROPERTIES
-description: WMI クライアントでは、現在のリンクの状態を判断するのに GUID_NDIS_GEN_PCI_DEVICE_CUSTOM_PROPERTIES メソッド GUID を使用できます。
+description: WMI クライアントは、GUID_NDIS_GEN_PCI_DEVICE_CUSTOM_PROPERTIES メソッド GUID を使用して、現在のリンクの状態を確認できます。
 ms.assetid: a02b9049-e521-41df-ab4d-41e334ef779e
 ms.date: 08/08/2017
-keywords: -GUID_NDIS_GEN_PCI_DEVICE_CUSTOM_PROPERTIES ネットワーク ドライバーが Windows Vista 以降
+keywords: -Windows Vista 以降の GUID_NDIS_GEN_PCI_DEVICE_CUSTOM_PROPERTIES ネットワークドライバー
 ms.localizationpriority: medium
-ms.openlocfilehash: 8247297d1f9e65e5c7d0b43b65a0e6b0c9406090
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 60970160dc2044c8523f11e937cbcbaa536e254b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382713"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842292"
 ---
-# <a name="guidndisgenpcidevicecustomproperties"></a>GUID\_NDIS\_GEN\_PCI\_デバイス\_カスタム\_プロパティ
+# <a name="guid_ndis_gen_pci_device_custom_properties"></a>GUID\_NDIS\_GEN\_PCI\_デバイス\_カスタム\_プロパティ
 
 
-WMI クライアントが、GUID を使用できる\_NDIS\_GEN\_PCI\_デバイス\_カスタム\_プロパティ メソッドのリンクの現在の状態を確認するのには GUID です。
+WMI クライアントは、GUID\_NDIS\_GEN\_PCI\_デバイス\_カスタム\_プロパティメソッド GUID を使用して、現在のリンクの状態を確認できます。
 
 <a name="remarks"></a>注釈
 -------
 
-NDIS は、この GUID を処理し、ミニポート ドライバーが、OID クエリを受信しません。
+NDIS では、この GUID とミニポートドライバーは OID クエリを受け取りません。
 
-WMI クライアントが GUID を発行したとき\_NDIS\_GEN\_PCI\_デバイス\_カスタム\_プロパティ WMI メソッドを要求、NDIS ミニポートの PCI デバイスの PCI のカスタム プロパティを返しますアダプター。 WMI のメソッド識別子は、NDIS をする必要があります\_WMI\_既定\_メソッド\_ID、および WMI の入力バッファーに格納する必要があります、 [ **NDIS\_WMI\_メソッド\_ヘッダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_wmi_method_header)構造体。
+WMI クライアントが GUID\_NDIS\_GEN\_PCI\_デバイス\_カスタム\_プロパティの WMI メソッド要求を発行すると、NDIS はミニポートアダプターの PCI デバイスの PCI カスタムプロパティを返します。 Wmi メソッド識別子は、NDIS\_WMI\_既定の\_メソッド\_ID であり、WMI 入力バッファーには、 [**ndis\_wmi\_method\_HEADER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_wmi_method_header)構造体が含まれている必要があります。
 
-この GUID を持つ NDIS が返すデータ バッファーを含む、 [ **NDIS\_PCI\_デバイス\_カスタム\_プロパティ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pci_device_custom_properties)構造体。
+この GUID と共に NDIS が返すデータバッファーには、[**カスタム\_プロパティの構造\_ndis\_PCI\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pci_device_custom_properties)が含まれています。
 
 <a name="requirements"></a>要件
 ------------
@@ -37,11 +37,11 @@ WMI クライアントが GUID を発行したとき\_NDIS\_GEN\_PCI\_デバイ�
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>NDIS 6.0 以降をサポートします。</p></td>
+<td><p>NDIS 6.0 以降でサポートされています。</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Ntddndis.h (include Ndis.h)</td>
+<td>Ntddndis (Ndis .h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -49,9 +49,9 @@ WMI クライアントが GUID を発行したとき\_NDIS\_GEN\_PCI\_デバイ�
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_PCI\_デバイス\_カスタム\_プロパティ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pci_device_custom_properties)
+[**NDIS\_PCI\_デバイス\_カスタム\_プロパティ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pci_device_custom_properties)
 
-[**NDIS\_WMI\_メソッド\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_wmi_method_header)
+[**NDIS\_WMI\_メソッド\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_wmi_method_header)
 
  
 

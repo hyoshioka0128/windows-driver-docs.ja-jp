@@ -1,36 +1,36 @@
 ---
 title: OID_TCP_TASK_IPSEC_OFFLOAD_V2_UPDATE_SA
-description: TCP/IP トランスポートは、セットとして、ミニポート ドライバーが NIC に指定されたセキュリティ アソシエーション (Sa) を更新することを要求する OID_TCP_TASK_IPSEC_OFFLOAD_V2_UPDATE_SA OID を使用してください。
+description: セットとして、TCP/IP トランスポートは OID_TCP_TASK_IPSEC_OFFLOAD_V2_UPDATE_SA OID を使用して、ミニポートドライバーが NIC 上の指定されたセキュリティアソシエーション (SAs) を更新するように要求します。
 ms.assetid: 22849103-9148-4621-b78f-b9f34f2c7ac1
 ms.date: 08/08/2017
-keywords: -OID_TCP_TASK_IPSEC_OFFLOAD_V2_UPDATE_SA ネットワーク ドライバーが Windows Vista 以降
+keywords: -Windows Vista 以降の OID_TCP_TASK_IPSEC_OFFLOAD_V2_UPDATE_SA ネットワークドライバー
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b6bc64efccd697b0be85646664c6bf80cfc8f2b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a11b334360a2028f0d6342b2097e96750f0fbad0
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67353703"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843883"
 ---
-# <a name="oidtcptaskipsecoffloadv2updatesa"></a>OID\_TCP\_タスク\_IPSEC\_オフロード\_V2\_UPDATE\_SA
+# <a name="oid_tcp_task_ipsec_offload_v2_update_sa"></a>OID\_TCP\_タスク\_IPSEC\_オフロード\_V2\_更新\_SA
 
 
-\[IPsec タスク オフロード機能は非推奨し、は使用できません。\]
+\[IPsec タスクオフロード機能は非推奨とされているため、使用しないでください。\]
 
-TCP/IP トランスポートが、OID を使用して、セットとして\_TCP\_タスク\_IPSEC\_オフロード\_V2\_更新\_SA OID ミニポート ドライバーが、指定したセキュリティを更新することを要求するにはNIC のアソシエーション (Sa)
+設定として、TCP/IP トランスポートは、IPSEC\_オフロード\_V2\_更新\_SA OID を\_する OID\_\_の OID を使用して、ミニポートドライバーが NIC 上の指定されたセキュリティアソシエーション (SAs) を更新するように要求します。
 
-**注**  NDIS OID 要求インターフェイスを直接この OID をサポートしています。 直接の OID 要求インターフェイスの詳細については、次を参照してください。 [NDIS 6.1 Direct OID 要求インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)します。
+**注**  NDIS では、この oid が直接 oid 要求インターフェイスでサポートされています。 直接 OID 要求インターフェイスの詳細については、「 [NDIS 6.1 DIRECT Oid Request interface](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)」を参照してください。
 
  
 
 <a name="remarks"></a>注釈
 -------
 
-IPsec をサポートするすべての NDIS 6.1 ミニポート ドライバーでは、バージョン 2 (IPsecOV2) は、この OID をサポートする必要がありますをオフロードします。
+IPsec オフロードバージョン 2 (IPsecOV2) をサポートするすべての NDIS 6.1 ミニポートドライバーは、この OID をサポートする必要があります。
 
-ミニポート ドライバーでは、この要求を受信したときに、ドライバーが NIC で指定された SAs を更新する必要があります。 ミニポート ドライバーが、SA が見つからないか、ESN はサポートされていない場合、この要求が失敗することができます。 この場合、返されるステータスは NDIS をする必要があります\_状態\_無効な\_パラメーター。
+ミニポートドライバーがこの要求を受信すると、ドライバーは NIC の指定された SAs を更新する必要があります。 SA が見つからない場合、または ESN がサポートされていない場合、ミニポートドライバーはこの要求を失敗させることができます。 この場合、返される状態は、"NDIS\_STATUS\_INVALID\_PARAMETER" になります。
 
-ミニポート ドライバーが、受信、 [ **IPSEC\_オフロード\_V2\_更新\_SA** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ipsec_offload_v2_update_sa)更新プログラムに関する情報を含む構造体と、[次へ] の IPSEC へのポインター\_オフロード\_V2\_UPDATE\_リンク リストで SA 構造体。
+ミニポートドライバーは、 [**ipsec\_オフロード\_V2\_更新\_プログラム**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ipsec_offload_v2_update_sa)に関する情報と、次の IPSEC\_オフロード\_V2\_update\_へのポインターに関する情報が含まれている ipsec SA 構造を受け取ります。リンクリスト内の構造体。
 
 <a name="requirements"></a>要件
 ------------
@@ -43,11 +43,11 @@ IPsec をサポートするすべての NDIS 6.1 ミニポート ドライバー
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>NDIS 6.1 以降をサポートします。</p></td>
+<td><p>NDIS 6.1 以降でサポートされています。</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Ntddndis.h (include Ndis.h)</td>
+<td>Ntddndis (Ndis .h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -55,7 +55,7 @@ IPsec をサポートするすべての NDIS 6.1 ミニポート ドライバー
 ## <a name="see-also"></a>関連項目
 
 
-[**IPSEC\_オフロード\_V2\_UPDATE\_SA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ipsec_offload_v2_update_sa)
+[**IPSEC\_OFFLOAD\_V2\_更新\_SA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ipsec_offload_v2_update_sa)
 
  
 

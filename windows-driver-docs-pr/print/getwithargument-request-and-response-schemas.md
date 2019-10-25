@@ -1,27 +1,27 @@
 ---
 title: GetWithArgument 要求と応答のスキーマ
-description: GetWithArgument 要求スキーマと対応する応答のスキーマ定義と、それぞれの例が下回っています。
+description: GetWithArgument 要求スキーマと対応する応答スキーマ定義、およびそれぞれの例を以下に示します。
 ms.assetid: F68731BC-2907-4FA2-B5A4-0FAC0A9F663A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6de45195127289ddbf510ea008aa0a65efbf4d19
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d197342049aa9e50188e06736f033c8a12d671e2
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63385241"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844583"
 ---
 # <a name="getwithargument-request-and-response-schemas"></a>GetWithArgument 要求と応答のスキーマ
 
 
-GetWithArgument 要求スキーマと対応する応答のスキーマ定義と、それぞれの例が下回っています。
+GetWithArgument 要求スキーマと対応する応答スキーマ定義、およびそれぞれの例を以下に示します。
 
 ## <a name="getwithargument-request-schema"></a>GetWithArgument 要求スキーマ
 
 
-GetWithArgument 要求は、現在の値の 1 つ以上のプリンターをクエリに使用されます。
+GetWithArgument 要求は、プリンターの現在の値の1つ以上のクエリに使用されます。
 
-この要求に応答が、次のセクションでは[GetWithArgument 応答スキーマ](#getwithargument-response-schema)します。
+この要求に対する応答は、次のセクションの[Getwithargument 応答スキーマ](#getwithargument-response-schema)にあります。
 
 ```xml
 <bidi:GetWithArgument xmlns:bidi='http://schemas.microsoft.com/windows/2005/03/printing/bidi'>
@@ -31,7 +31,7 @@ GetWithArgument 要求は、現在の値の 1 つ以上のプリンターをク�
 </bidi:GetWithArgument>
 ```
 
-GetWithArgument Request スキーマの正式な定義
+GetWithArgument 要求スキーマの正式な定義
 
 ```xml
 <?xml version='1.0'?>  
@@ -75,7 +75,7 @@ GetWithArgument Request スキーマの正式な定義
 
 ## <a name="getwithargument-response-schema"></a>GetWithArgument 応答スキーマ
 
-この例では、上記の GetWithArgument 要求に対する応答です。 成功したクエリでは、特定のスキーマの値になります。 失敗したクエリでは、結果は、エラー コードです。
+この例は、上記の GetWithArgument 要求に対する応答です。 クエリが成功した場合、結果は特定のスキーマの値になります。 クエリが失敗した場合、結果はエラーコードになります。
 
 ```xml
 <bidi:GetWithArgumentResponse xmlns:bidi="http://schemas.microsoft.com/windows/2005/03/printing/bidi">
@@ -140,8 +140,8 @@ GetWithArgument 応答スキーマの正式な定義
 
 ## <a name="related-topics"></a>関連トピック
 
-[双方向通信のスキーマ](bidirectional-communication-schema.md)  
+[双方向通信スキーマ](bidirectional-communication-schema.md)  
 
-[SendRecvXMLStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bidispl/nf-bidispl-ibidispl2-sendrecvxmlstream)  
+[SendRecvXMLStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/bidispl/nf-bidispl-ibidispl2-sendrecvxmlstream)  
 
-[SendRecvXMLString](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bidispl/nf-bidispl-ibidispl2-sendrecvxmlstring)  
+[SendRecvXMLString](https://docs.microsoft.com/windows-hardware/drivers/ddi/bidispl/nf-bidispl-ibidispl2-sendrecvxmlstring)  

@@ -1,20 +1,20 @@
 ---
-title: MPIO\_取得\_記述子 WMI クラス
-description: MPIO\_取得\_記述子 WMI クラス
+title: MPIO\_GET\_DESCRIPTOR WMI クラス
+description: MPIO\_GET\_DESCRIPTOR WMI クラス
 ms.assetid: 6d48c0b5-c20f-4017-aae5-0b00fa5de18d
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 4263296f8962633cce9a0305e2dbdad7474f28d8
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 57187ac72d935a495df0bb3f2d60e074e740eccc
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386155"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844968"
 ---
-# <a name="mpiogetdescriptor-wmi-class"></a>MPIO\_取得\_記述子 WMI クラス
+# <a name="mpio_get_descriptor-wmi-class"></a>MPIO\_GET\_DESCRIPTOR WMI クラス
 
 
-WMI クライアントが、MPIO を使用して\_取得\_記述子の WMI クラスの MPIO の MPIO ディスクのデバイス パスの組み合わせをクエリします。
+WMI クライアントは、mpio\_GET\_DESCRIPTOR WMI クラスを使用して、mpio ディスクのデバイスとパスのペアリングを MPIO に照会します。
 
 ```cpp
 class MPIO_GET_DESCRIPTOR
@@ -51,7 +51,7 @@ class MPIO_GET_DESCRIPTOR
 };
 ```
 
-このクラスの定義が WMI ツール スイートによってコンパイルされると、生成、 [ **MPIO\_取得\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mpiodisk/ns-mpiodisk-_mpio_get_descriptor)データ構造体。 この WMI クラスに関連付けられているメソッドはありません。
+このクラス定義が WMI ツールスイートによってコンパイルされると、 [**MPIO\_GET\_DESCRIPTOR**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mpiodisk/ns-mpiodisk-_mpio_get_descriptor)データ構造が生成されます。 この WMI クラスに関連付けられているメソッドはありません。
 
  
 

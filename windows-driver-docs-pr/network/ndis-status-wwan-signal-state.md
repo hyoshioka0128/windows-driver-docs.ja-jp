@@ -1,34 +1,34 @@
 ---
 title: NDIS_STATUS_WWAN_SIGNAL_STATE
-description: ミニポート ドライバーは、信号強度を測定すると通知を送信する NDIS_STATUS_WWAN_SIGNAL_STATE 通知を使用して、事前定義された間隔内で、しきい値の範囲外の強度の移動を通知します。
+description: ミニポートドライバーは、測定されたシグナルの強さが事前に定義された間隔でしきい値を超えたときに、NDIS_STATUS_WWAN_SIGNAL_STATE 通知を使用して信号強度の通知を送信します。
 ms.assetid: b5d6b2a6-ed19-45d9-85ca-ac66e38f41fd
 ms.date: 08/08/2017
-keywords: -NDIS_STATUS_WWAN_SIGNAL_STATE ネットワーク ドライバーが Windows Vista 以降
+keywords: -Windows Vista 以降の NDIS_STATUS_WWAN_SIGNAL_STATE ネットワークドライバー
 ms.localizationpriority: medium
-ms.openlocfilehash: 7cb20e46bf69c79c37a4bcddbb2ce3486fd0bcd8
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 23cf8ec2788e7965f2641e1bd36560086d40d340
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386863"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844642"
 ---
-# <a name="ndisstatuswwansignalstate"></a>NDIS\_状態\_WWAN\_信号\_状態
+# <a name="ndis_status_wwan_signal_state"></a>NDIS\_ステータス\_WWAN\_シグナル\_状態
 
 
-ミニポート ドライバーを使用して、NDIS\_状態\_WWAN\_信号\_信号強度を測定すると通知を送信する状態の通知、事前定義された間隔内で、しきい値の範囲外の強度の移動の通知.
+ミニポートドライバーは、NDIS\_ステータス\_WWAN\_SIGNAL\_状態通知を使用して、測定されたシグナルの強さが事前に定義された間隔でしきい値を超えたときに信号強度の通知を送信します。
 
-ミニポート ドライバーには、この通知が不要なイベントを送信できます。
+ミニポートドライバーは、この通知を使用して、要請されていないイベントも送信できます。
 
-この通知を使用して、 [ **NDIS\_WWAN\_信号\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_signal_state)構造体。
+この通知では、 [**NDIS\_WWAN\_SIGNAL\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_signal_state)構造体を使用します。
 
 <a name="remarks"></a>注釈
 -------
 
-既定では、ミニポート ドライバーは Rssi 値の変更によって、少なくとも過去 5 デシベル単位 +/-報告された値、または 1 つを示す値 5 秒ごとの最大の頻度でサービスに MB を通知する必要があります。 しきい値の値が指定された、 **SignalState.RssiThreshold**の NDIS メンバー\_WWAN\_信号\_状態構造体、で最大の頻度の値が指定されて**SignalState.RssiInterval**メンバー。
+既定では、Rssi 値が最後に報告された値から少なくとも +/-5 デシベルで変更された場合、または5秒ごとに1回表示される場合、ミニポートドライバーは MB サービスに通知する必要があります。 しきい値は、Signalstate に指定されて**います。 RssiThreshold**メンバーは、NDIS\_WWAN\_シグナル\_状態構造体です。最大 frequency 値は、 **Signalstate. RssiInterval**メンバーで指定されます。
 
-**DeviceCaps.WwanCellularClass**の NDIS メンバー\_WWAN\_デバイス\_CAPS 構造体が MB サービスによって Rssi 値を解釈する方法を制御します。 場合**WwanCellularClass**は**WwanCellularClassGSM**Rssi がデバイスの秘密度ノイズ フロア上デシベル単位として報告されます。 場合**WwanCellularClass**は**WwanCellularClassCDMA**Rssi がレベル RSSI (ノイズのアカウント) として報告されます。
+NDIS\_WWAN\_DEVICE\_CAPS 構造体の**DeviceCaps**メンバーは、MB サービスによって Rssi 値がどのように解釈されるかを制御します。 **WwanCellularClass**が**WwanCellularClassGSM**の場合、Rssi はデバイスの感度ノイズフロアを上回るデシベルとして報告されます。 **WwanCellularClass**が**WwanCellularClassCDMA**の場合、Rssi は補正 Rssi (ノイズ用のアカウント) として報告されます。
 
-信号の強度には、アプリケーションはポーリングする必要があることはありません。 起動時などの特殊な状況でのみ、アプリケーションを使用して、*クエリ*信号の強さを取得する要求。
+アプリケーションはシグナルの強さをポーリングしないようにする必要があります。 スタートアップなどの特殊な状況でのみ、アプリケーションは*クエリ*要求を使用してシグナルの強さを取得することがあります。
 
 <a name="requirements"></a>要件
 ------------
@@ -41,11 +41,11 @@ ms.locfileid: "67386863"
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>Windows 7 および Windows の以降のバージョンで使用できます。</p></td>
+<td><p>Windows 7 以降のバージョンの Windows で使用できます。</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Ndis.h</td>
+<td>Ndis. h</td>
 </tr>
 </tbody>
 </table>
@@ -53,9 +53,9 @@ ms.locfileid: "67386863"
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_WWAN\_信号\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_signal_state)
+[**NDIS\_WWAN\_シグナル\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_signal_state)
 
-[OID\_WWAN\_信号\_状態](oid-wwan-signal-state.md)
+[OID\_WWAN\_シグナル\_状態](oid-wwan-signal-state.md)
 
  
 

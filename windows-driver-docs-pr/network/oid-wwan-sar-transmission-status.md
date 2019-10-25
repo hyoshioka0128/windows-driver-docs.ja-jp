@@ -1,37 +1,37 @@
 ---
 title: OID_WWAN_SAR_TRANSMISSION_STATUS
-description: OID_WWAN_SAR_TRANSMISSION_STATUS を有効または特定吸収レート (SAR) 転送状態のモバイル ブロード バンド (MB) モデムからの通知を無効にします。
+description: OID_WWAN_SAR_TRANSMISSION_STATUS は、特定の吸収率 (SAR) の送信状態でのモバイルブロードバンド (MB) モデムからの通知を有効または無効にします。
 ms.assetid: 83DFEECD-468A-4A76-B881-DA22FBB3F3A6
 ms.date: 08/20/2018
-keywords: -OID_WWAN_SAR_TRANSMISSION_STATUS ネットワーク ドライバーが Windows Vista 以降
+keywords: -Windows Vista 以降の OID_WWAN_SAR_TRANSMISSION_STATUS ネットワークドライバー
 ms.localizationpriority: medium
-ms.openlocfilehash: d286f4955b0cd93aca25eb52c21771128a7a7c7a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7374ca461a7ca81de4e2cae12522fb61249b1f43
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368486"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843796"
 ---
-# <a name="oidwwansartransmissionstatus"></a>OID_WWAN_SAR_TRANSMISSION_STATUS
+# <a name="oid_wwan_sar_transmission_status"></a>OID_WWAN_SAR_TRANSMISSION_STATUS
 
-OID_WWAN_SAR_TRANSMISSION_STATUS を有効または特定吸収レート (SAR) 転送状態のモバイル ブロード バンド (MB) モデムからの通知を無効にします。
+OID_WWAN_SAR_TRANSMISSION_STATUS は、特定の吸収率 (SAR) の送信状態でのモバイルブロードバンド (MB) モデムからの通知を有効または無効にします。
 
-ミニポート ドライバーが非同期的に、最初に、元の要求に NDIS_STATUS_INDICATION_REQUIRED を返すこと、後で送信する前にクエリ要求を処理する必要があります、 [NDIS_STATUS_WWAN_SAR_TRANSMISSION_STATUS](ndis-status-wwan-sar-transmission-status.md)状態通知を含む、 [ **NDIS_WWAN_SAR_TRANSMISSION_STATUS_INFO** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_sar_transmission_status_info)行政区の通知転送状態であるかどうかを記述する構造体は、モデムで有効にします。
+ミニポートドライバーは、クエリ要求を非同期的に処理し、最初に NDIS_STATUS_INDICATION_REQUIRED を元の要求に戻してから、 [NDIS_STATUS_WWAN_SAR_TRANSMISSION_STATUS](ndis-status-wwan-sar-transmission-status.md)ステータス通知をSAR 送信状態の通知がモデムで有効になっているかどうかを示す[**NDIS_WWAN_SAR_TRANSMISSION_STATUS_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_sar_transmission_status_info)構造体。
 
-この OID のペイロードを含む、一連の要求について、 [ **NDIS_WWAN_SET_SAR_TRANSMISSION_STATUS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_set_sar_transmission_status) SAR 転送状態の通知を有効または無効になっているかどうかを指定する構造体。
+設定要求の場合、この OID のペイロードには、SAR 転送状態通知を有効にするか無効にするかを指定する[**NDIS_WWAN_SET_SAR_TRANSMISSION_STATUS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_set_sar_transmission_status)構造体が含まれます。
 
 ## <a name="remarks"></a>注釈
 
-各クエリまたは一連の要求後に、ミニポート ドライバーを返す必要があります、 [ **NDIS_WWAN_SAR_TRANSMISSION_STATUS_INFO** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_sar_transmission_status_info)内で行政区の通知転送状態であるかどうかを記述する構造体が有効になっています。モデム。
+各クエリまたは設定要求の後、ミニポートドライバーは、転送状態の SAR 通知がモデムで有効になっているかどうかを示す[**NDIS_WWAN_SAR_TRANSMISSION_STATUS_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_sar_transmission_status_info)構造体を返します。
 
-この OID の使用状況に関する詳細については、次を参照してください。 [MBIM_CID_MS_TRANSMISSION_STATUS](https://docs.microsoft.com/windows-hardware/drivers/network/mb-sar-platform-support#mbimcidmstransmissionstatus)します。
+この OID の使用方法の詳細については、「 [MBIM_CID_MS_TRANSMISSION_STATUS](https://docs.microsoft.com/windows-hardware/drivers/network/mb-sar-platform-support#mbimcidmstransmissionstatus)」を参照してください。
 
 ## <a name="requirements"></a>要件
 
 |   |   |
 | --- | --- |
-| バージョン | Windows 10 Version 1703 |
-| Header | Ntddndis.h (include Ndis.h) |
+| バージョン | Windows 10 バージョン 1703 |
+| Header | Ntddndis (Ndis .h を含む) |
 
 ## <a name="see-also"></a>関連項目
 
@@ -39,6 +39,6 @@ OID_WWAN_SAR_TRANSMISSION_STATUS を有効または特定吸収レート (SAR) �
 
 [NDIS_STATUS_WWAN_SAR_TRANSMISSION_STATUS](ndis-status-wwan-sar-transmission-status.md)
 
-[**NDIS_WWAN_SAR_TRANSMISSION_STATUS_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_sar_transmission_status_info)
+[**NDIS_WWAN_SAR_TRANSMISSION_STATUS_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_sar_transmission_status_info)
 
-[**NDIS_WWAN_SET_SAR_TRANSMISSION_STATUS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_set_sar_transmission_status)
+[**NDIS_WWAN_SET_SAR_TRANSMISSION_STATUS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_set_sar_transmission_status)

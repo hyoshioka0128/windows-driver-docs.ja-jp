@@ -3,15 +3,15 @@ title: 記憶域クラス ドライバーの DriverEntry ルーチン
 description: 記憶域クラス ドライバーの DriverEntry ルーチン
 ms.assetid: 45e929ff-b4e2-4855-8498-15ec4c30f497
 keywords:
-- DriverEntry WDK ストレージ
+- DriverEntry WDK storage
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c5cbd50daa298ad6ba550ad518551f281d517ed3
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9972210a1c5d05f248736a66add826fc82a688c9
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67379088"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845086"
 ---
 # <a name="storage-class-drivers-driverentry-routine"></a>記憶域クラス ドライバーの DriverEntry ルーチン
 
@@ -19,15 +19,15 @@ ms.locfileid: "67379088"
 ## <span id="ddk_storage_class_drivers_driverentry_routine_kg"></span><span id="DDK_STORAGE_CLASS_DRIVERS_DRIVERENTRY_ROUTINE_KG"></span>
 
 
-などの他の Windows NT カーネル モードより高度なドライバーを[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)ストレージ クラス ドライバーのルーチンは、次を実行する必要があります。
+他の Windows NT カーネルモードの上位レベルのドライバーと同様に、ストレージクラスドライバーの[**Driverentry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)ルーチンは、次の操作を行う必要があります。
 
-1.  呼び出すことによって適切なサイズのオブジェクトの拡張機能ドライバーを割り当てる[ **IoAllocateDriverObjectExtension**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocatedriverobjectextension)します。
+1.  [**Ioallocatedriverobjectextension**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioallocatedriverobjectextension)を呼び出して、適切なサイズのドライバーオブジェクト拡張を割り当てます。
 
-2.  必要に応じて、後で使用できるドライバーの拡張機能に入力のレジストリ パスをコピーし、ドライバーの拡張機能を初期化します。
+2.  必要に応じて、後で使用するために入力レジストリパスをドライバー拡張機能にコピーし、ドライバー拡張機能を初期化します。
 
-3.  入力のドライバ オブジェクトでそのディスパッチ エントリ ポイントを定義します。
+3.  入力ドライバーオブジェクトでディスパッチエントリポイントを定義します。
 
-PnP ドライバーの詳細については**DriverEntry**ルーチンを参照してください[DriverEntry ルーチンを記述](https://docs.microsoft.com/windows-hardware/drivers/kernel/writing-a-driverentry-routine)します。
+PnP ドライバーの**Driverentry**ルーチンの詳細については、「 [Driverentry ルーチンを記述する](https://docs.microsoft.com/windows-hardware/drivers/kernel/writing-a-driverentry-routine)」を参照してください。
 
  
 

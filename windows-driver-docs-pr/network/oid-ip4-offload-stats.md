@@ -6,25 +6,25 @@ keywords:
 - OID_IP4_OFFLOAD_STATS
 ms.date: 11/06/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7354a7f963d634843e665f0300d6b15d488337dd
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4e1a685714554d8e28692ebaf5e191a2acb91de3
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385730"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844589"
 ---
-# <a name="oidip4offloadstats"></a>OID_IP4_OFFLOAD_STATS
+# <a name="oid_ip4_offload_stats"></a>OID_IP4_OFFLOAD_STATS
 
-ホストのスタックは、オフロードされた TCP 接続上で、オフロード対象が処理される IPv4 データグラムの統計情報を取得する OID_IP4_OFFLOAD_STATS OID を照会します。 ホストのスタックは、この OID がゼロにこのような統計情報のカウンターをリセットする、オフロード対象を設定します。
+ホストスタックは OID_IP4_OFFLOAD_STATS OID に対してクエリを実行し、オフロードされた TCP 接続でオフロードターゲットが処理した IPv4 データグラムの統計情報を取得します。 ホストスタックはこの OID を設定して、オフロードターゲットがこのような統計のカウンターを0にリセットします。
 
-OID_IP4_OFFLOAD_STATS のクエリに応答してでは、オフロード対象を提供する入力で[IP_OFFLOAD_STATS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndischimney/ns-ndischimney-_ip_offload_stats)構造体。 IP_OFFLOAD_STATS 構造体には、オフロードされた TCP 接続上で処理された IPv4 データグラムの統計情報が含まれています。
+OID_IP4_OFFLOAD_STATS のクエリに応答して、オフロードターゲットは、入力された[IP_OFFLOAD_STATS](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndischimney/ns-ndischimney-_ip_offload_stats)構造体を提供します。 IP_OFFLOAD_STATS 構造体には、オフロードされた TCP 接続で処理された IPv4 データグラムの統計が含まれます。
 
-OID_IP4_OFFLOAD_STATS のセットへの応答、オフロード対象が、すべてのゼロにオフロードの TCP 接続をその IPv4 statistics カウンターをリセットする必要があります。
+OID_IP4_OFFLOAD_STATS のセットに対する応答として、オフロードターゲットは、オフロードされた TCP 接続のすべての IPv4 統計カウンターを0にリセットする必要があります。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 | | |
 | --- | --- |
 | バージョン | Windows Vista 以降 |
-| Header | Ntddndis.h (include Ndis.h) |
+| Header | Ntddndis (Ndis .h を含む) |
 

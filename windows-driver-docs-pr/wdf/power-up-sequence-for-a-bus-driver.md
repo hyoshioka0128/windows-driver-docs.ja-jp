@@ -4,21 +4,21 @@ description: バス ドライバーの電源投入シーケンス
 ms.assetid: 689746F4-E1A5-40BA-9FC4-29B0702D6E3E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ab08649508a423ec91e9043241be26512a451d67
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c9b16f77a7341119f7a971f9225067aa33e08046
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67376329"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842240"
 ---
 # <a name="power-up-sequence-for-a-bus-driver"></a>バス ドライバーの電源投入シーケンス
 
 
-次の図は、図の下部にあるデバイスが挿入された状態から開始、完全に operational 状態へのデバイスの追加時に、フレームワーク KMDF バス ドライバーのイベントのコールバック関数を呼び出す順序を示します。
+次の図は、デバイスを完全に動作状態にするときに、図の下部にあるデバイスが挿入された状態から開始すると、フレームワークが KMDF bus ドライバーのイベントコールバック関数を呼び出す順序を示しています。
 
-![バス ドライバーの電源投入シーケンス](images/pdo-powerup.png)
+![バスドライバーの電源投入シーケンス](images/pdo-powerup.png)
 
-フレームワークは、PDO が対応するデバイスは、システムから物理的に削除されるまで物理的に削除していません。 たとえば、ユーザーは、デバイス マネージャーでデバイスを無効にしますが、物理的に削除されません、フレームワークは、デバイス オブジェクトを保持します。 したがって、図の下部にある 3 つの手順はプラグ アンド プレイの列挙中にのみ発生: は、初期ブートまたはユーザーが新しいデバイスを挿入するときの中にします。 デバイスが以前無効になっていますが、物理的に削除、フレームワークが呼び出すことで起動、 [ *EvtDevicePrepareHardware* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)コールバック。
+フレームワークは、対応するデバイスがシステムから物理的に削除されるまで、PDO を物理的には削除しません。 たとえば、ユーザーがデバイスマネージャーでデバイスを無効にしても、物理的には削除しない場合、フレームワークはそのデバイスオブジェクトを保持します。 このため、図の下部にある3つの手順はプラグアンドプレイ列挙中にのみ発生します。つまり、最初の起動時またはユーザーが新しいデバイスを挿入したときに発生します。 デバイスが既に無効になっていて物理的に削除されていない場合、フレームワークは[*Evtdevicepreparehardware*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)コールバックを呼び出すことによって起動します。
 
  
 

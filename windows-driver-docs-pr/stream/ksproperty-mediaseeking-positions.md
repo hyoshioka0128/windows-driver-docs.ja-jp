@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_MEDIASEEKING\_位置
-description: KSPROPERTY\_MEDIASEEKING\_POSITIONS プロパティ フィルターのメディア時間や停止時刻を設定します。
+title: KSK プロパティ\_MEDIASEEKING\_位置
+description: KSK プロパティ\_MEDIASEEKING\_位置プロパティは、メディア時間やフィルターの停止時刻を設定します。
 ms.assetid: 20f0e97a-37bb-4c01-8012-b73bb765f4b9
 keywords:
-- KSPROPERTY_MEDIASEEKING_POSITIONS ストリーミング メディア デバイス
+- KSPROPERTY_MEDIASEEKING_POSITIONS ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 76b13e53802d39626950c8d2261723430b3a7ac6
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ad5d8d2f57f3b670670e0b93b31b042f43030d03
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67353238"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842298"
 ---
-# <a name="kspropertymediaseekingpositions"></a>KSPROPERTY\_MEDIASEEKING\_位置
+# <a name="ksproperty_mediaseeking_positions"></a>KSK プロパティ\_MEDIASEEKING\_位置
 
 
-KSPROPERTY\_MEDIASEEKING\_POSITIONS プロパティ フィルターのメディア時間や停止時刻を設定します。
+KSK プロパティ\_MEDIASEEKING\_位置プロパティは、メディア時間やフィルターの停止時刻を設定します。
 
 ## <span id="ddk_ksproperty_mediaseeking_positions_ks"></span><span id="DDK_KSPROPERTY_MEDIASEEKING_POSITIONS_KS"></span>
 
@@ -41,7 +41,7 @@ KSPROPERTY\_MEDIASEEKING\_POSITIONS プロパティ フィルターのメディ�
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,11 +50,11 @@ KSPROPERTY\_MEDIASEEKING\_POSITIONS プロパティ フィルターのメディ�
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>X</p></td>
-<td><p>〇</p></td>
+<td><p>必須ではない</p></td>
+<td><p>[はい]</p></td>
 <td><p>フィルター</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksproperty_positions" data-raw-source="[&lt;strong&gt;KSPROPERTY_POSITIONS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksproperty_positions)"><strong>KSPROPERTY_POSITIONS</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksproperty_positions" data-raw-source="[&lt;strong&gt;KSPROPERTY_POSITIONS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksproperty_positions)"><strong>KSPROPERTY_POSITIONS</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -64,7 +64,7 @@ KSPROPERTY\_MEDIASEEKING\_POSITIONS プロパティ フィルターのメディ�
 <a name="remarks"></a>注釈
 -------
 
-KSPROPERTY\_構造体の指定、現在の位置を置き、ストリームの合計期間に対する相対的な位置を停止します。
+KSK プロパティ\_position 構造体は、ストリームの合計継続時間を基準とした現在位置と停止位置を指定します。
 
 <a name="requirements"></a>要件
 ------------
@@ -77,7 +77,7 @@ KSPROPERTY\_構造体の指定、現在の位置を置き、ストリームの�
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Ks.h (Ks.h を含む)</td>
+<td>Ks (Ks を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -85,7 +85,7 @@ KSPROPERTY\_構造体の指定、現在の位置を置き、ストリームの�
 ## <a name="see-also"></a>関連項目
 
 
-[**KSPROPERTY\_位置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksproperty_positions)
+[**KSK プロパティ\_位置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksproperty_positions)
 
  
 

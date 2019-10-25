@@ -1,9 +1,9 @@
 ---
-title: MRxQueryQuotaInfo routine
-description: MRxQueryQuotaInfo ルーチンによって呼び出されます RDBSS 要求をネットワーク ミニリダイレクター クエリ クォータについては、ファイル システム オブジェクト。
+title: MRxQueryQuotaInfo ルーチン
+description: MRxQueryQuotaInfo ルーチンは、ネットワークミニリダイレクターがファイルシステムオブジェクトのクォータ情報を照会するように要求するために、RDBSS によって呼び出されます。
 ms.assetid: 44bf976b-09bc-4270-8c2e-8e55784aaa38
 keywords:
-- MRxQueryQuotaInfo ルーチン インストール可能なファイル システム ドライバー
+- MRxQueryQuotaInfo ルーチンのインストール可能なファイルシステムドライバー
 - PMRX_CALLDOWN
 topic_type:
 - apiref
@@ -15,17 +15,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c638972c78b43b8b2331ccc32a0e0961299a0187
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: bc8801abd633bf8639c316b4afab032767d74022
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67370980"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841087"
 ---
-# <a name="mrxqueryquotainfo-routine"></a>MRxQueryQuotaInfo routine
+# <a name="mrxqueryquotainfo-routine"></a>MRxQueryQuotaInfo ルーチン
 
 
-*MRxQueryQuotaInfo*ルーチンを呼び出して[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)ネットワーク ミニ リダイレクターがファイル システム オブジェクトのクォータ情報を照会することを要求します。
+*MRxQueryQuotaInfo*ルーチンは、ネットワークミニリダイレクターがファイルシステムオブジェクトのクォータ情報を照会するように要求するために、 [RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)によって呼び出されます。
 
 <a name="syntax"></a>構文
 ------
@@ -42,13 +42,13 @@ NTSTATUS MRxQueryQuotaInfo(
 <a name="parameters"></a>パラメーター
 ----------
 
-*RxContext* \[入力、出力\]  
-RX へのポインター\_CONTEXT 構造体。 このパラメーターには、操作を要求している IRP が含まれています。
+*RxContext* \[in、out\]  
+RX\_コンテキスト構造体へのポインター。 このパラメーターには、操作を要求している IRP が含まれています。
 
 <a name="return-value"></a>戻り値
 ------------
 
-*MRxQueryQuotaInfo*ステータスを返します\_次のいずれかなど、成功した場合に成功した場合、または、適切な NTSTATUS の値します。
+*MRxQueryQuotaInfo*は正常に完了した状態\_成功したか、または次のいずれかのような NTSTATUS 値を返します。
 
 <table>
 <colgroup>
@@ -64,29 +64,29 @@ RX へのポインター\_CONTEXT 構造体。 このパラメーターには、
 <tbody>
 <tr class="odd">
 <td align="left"><strong>STATUS_ACCESS_DENIED</strong></td>
-<td align="left"><p>呼び出し元には、この操作に適切なセキュリティが不足していました。</p></td>
+<td align="left"><p>呼び出し元には、この操作に対する適切なセキュリティが不足しています。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>STATUS_BUFFER_OVERFLOW</strong></td>
-<td align="left"><p>クォータ情報を受け取るバッファーが小さすぎます。</p>
-<p>これは戻り値は、成功を考慮してでできるだけの非常に有効なデータとして返す必要がある、 <strong>Info.Buffer</strong>によって示される RX_CONTEXT 構造体のメンバー、 <em>RxContext</em>パラメーター。</p></td>
+<td align="left"><p>クォータ情報を受信するバッファーが小さすぎます。</p>
+<p>この戻り値は成功と見なす必要があり、可能な限り多くの有効なデータが、 <em>RxContext</em>パラメーターによって示される RX_CONTEXT 構造体の<strong>情報バッファー</strong>のメンバーに返される必要があります。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>STATUS_BUFFER_TOO_SMALL</strong></td>
-<td align="left"><p>要求されたデータを受信するには、バッファーが小さすぎます。</p>
-<p>この値が返された場合、 <strong>InformationToReturn</strong>によって示される RX_CONTEXT 構造体のメンバー、 <em>RxContext</em>パラメーターは、呼び出しに必要なバッファーの最小サイズを設定する必要があります成功します。</p></td>
+<td align="left"><p>バッファーが小さすぎて要求されたデータを受け取ることができません。</p>
+<p>この値が返される場合、 <em>RxContext</em>パラメーターが指す RX_CONTEXT 構造体の<strong>InformationToReturn</strong>メンバーは、呼び出しが成功するために必要なバッファーの最小サイズに設定されている必要があります。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>STATUS_CONNECTION_DISCONNECTED</strong></td>
-<td align="left"><p>接続が切断されました。 これは、エラー コードです。</p></td>
+<td align="left"><p>接続が切断されました。 これはエラーコードです。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>STATUS_INSUFFICIENT_RESOURCES</strong></td>
-<td align="left"><p>クエリ完了までのリソースの不足が発生しました。 これは、エラー コードです。</p></td>
+<td align="left"><p>クエリを完了するためのリソースが不足しています。 これはエラーコードです。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>STATUS_INVALID_PARAMETER</strong></td>
-<td align="left"><p>無効なパラメーターが指定されました。 これは、エラー コードです。</p></td>
+<td align="left"><p>無効なパラメーターが指定されました。 これはエラーコードです。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>STATUS_NOT_SUPPORTED</strong></td>
@@ -100,31 +100,31 @@ RX へのポインター\_CONTEXT 構造体。 このパラメーターには、
 <a name="remarks"></a>注釈
 -------
 
-RDBSS への呼び出しを発行する*MRxQueryQuotaInfo*受信に応答する[ **IRP\_MJ\_クエリ\_クォータ**](irp-mj-query-quota.md)要求。
+RDBSS は、 [**IRP\_MJ\_クエリ\_クォータ**](irp-mj-query-quota.md)要求の受信に応答して、 *MRxQueryQuotaInfo*への呼び出しを発行します。
 
-呼び出しの前に*MRxQueryQuotaInfo*、RDBSS、RX では、次のメンバーを変更します\_によって示される CONTEXT 構造体、 *RxContext*パラメーター。
+*MRxQueryQuotaInfo*を呼び出す前に、RDBSS は、 *RxContext*パラメーターによって示される RX\_コンテキスト構造内の次のメンバーを変更します。
 
-**Info.Buffer**メンバーは、I/O 要求パケットからユーザー バッファーに設定されます。 このバッファーが RDBSS によってロックされて既に必要な場合。
+**情報バッファー**のメンバーは、i/o 要求パケットからのユーザーバッファーに設定されます。 このバッファーは、必要に応じて、RDBSS によって既にロックされています。
 
-**Info.LengthRemaining**に設定されているメンバー **IrpSp -&gt;Parameters.QueryQuota.Length**します。
+**LengthRemaining**メンバーは**irpsp-&gt;Parameters. Queryquota. Length**に設定されています。
 
-**QueryQuota.SidList**に設定されているメンバー **IrpSp -&gt;Parameters.QueryQuota.SidList**します。
+**Queryquota. sidlist**メンバーは**irpsp-&gt;Parameters. Queryquota. sidlist**に設定されています。
 
-**QueryQuota.SidListLength**に設定されているメンバー **IrpSp -&gt;Parameters.QueryQuota.SidListLength**します。
+**Queryquota. sidlistlength**メンバーは、irpsp-&gt;パラメーターに設定されています。 **Queryquota. sidlistlength**。
 
-**QueryQuota.StartSid**に設定されているメンバー **IrpSp -&gt;Parameters.QueryQuota.StartSid**します。
+**Queryquota. startsid**メンバーは**irpsp-&gt;Parameters. Queryquota. startsid**に設定されています。
 
-**QueryQuota.Length**に設定されているメンバー **IrpSp -&gt;Parameters.QueryQuota.Length**します。
+**Queryquota. length**メンバーは、 **irpsp-&gt;Parameters. queryquota. length**に設定されています。
 
-**QueryQuota.RestartScan**メンバーが 0 以外の値に設定されている**IrpSp -&gt;フラグ**が、SL\_再起動\_スキャン ビットが設定されます。
+**Irpsp-&gt;フラグ**に SL\_再起動\_スキャンビットが設定されている場合、 **RestartScan**メンバーは0以外に設定されます。
 
-**QueryQuota.ReturnSingleEntry**メンバーが 0 以外の値に設定されている**IrpSp -&gt;フラグ**が、SL\_返す\_単一\_エントリ ビットが設定します。
+**Irpsp-&gt;フラグ**に SL\_\_単一\_エントリビットセットが返される場合、**このメンバーは**0 以外の値に設定されます。
 
-**QueryQuota.IndexSpecified**メンバーが 0 以外の値に設定されている**IrpSp -&gt;フラグ**が、SL\_インデックス\_指定されたビットが設定されます。
+**Irpsp-&gt;フラグ**に SL\_インデックス\_指定されたビットセットがある場合、**指定さ**れたメンバーは0以外に設定されます。
 
-成功した場合、ネットワークのミニ リダイレクターを設定する必要があります、 **Info.LengthRemaining** 、RX のメンバー\_返されるクォータ情報の長さのための構造体。 場合に呼び出し*MRxQueryQuotaInfo*が成功した場合は、RDBSS セット、 **IoStatus.Information**に IRP のメンバー、 **Info.LengthRemaining** RXのメンバー\_コンテキスト。
+成功した場合、ネットワークミニリダイレクターは、RX\_コンテキスト構造の**LengthRemaining**メンバーに、返されるクォータ情報の長さを設定する必要があります。 *MRxQueryQuotaInfo*への呼び出しが成功した場合、RDBSS は IRP の**Iostatus. 情報**メンバーを RX\_コンテキストの**LengthRemaining**メンバーに設定します。
 
-場合に呼び出し*MRxQueryQuotaInfo*は成功しますが、 **InformationToReturn** 、RX のメンバー\_CONTEXT 構造は、返されるクォータ情報の長さを設定する必要があります。 呼び出しが成功した場合、 **InformationToReturn** RX のメンバー\_コンテキストは 0 に設定する必要があります。
+*MRxQueryQuotaInfo*の呼び出しが成功した場合、RX\_コンテキスト構造の**InformationToReturn**メンバーは、返されるクォータ情報の長さに設定する必要があります。 呼び出しが失敗した場合は、RX\_コンテキストの**InformationToReturn**メンバーを0に設定する必要があります。
 
 <a name="requirements"></a>要件
 ------------
@@ -141,7 +141,7 @@ RDBSS への呼び出しを発行する*MRxQueryQuotaInfo*受信に応答する[
 </tr>
 <tr class="even">
 <td align="left"><p>Header</p></td>
-<td align="left">Mrx.h (Mrx.h を含む)</td>
+<td align="left">Mrx .h (Mrx を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -149,7 +149,7 @@ RDBSS への呼び出しを発行する*MRxQueryQuotaInfo*受信に応答する[
 ## <a name="see-also"></a>関連項目
 
 
-[**MRxIsValidDirectory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_chkdir_calldown)
+[**MRxIsValidDirectory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_chkdir_calldown)
 
 [**MRxQueryDirectory**](mrxquerydirectory.md)
 

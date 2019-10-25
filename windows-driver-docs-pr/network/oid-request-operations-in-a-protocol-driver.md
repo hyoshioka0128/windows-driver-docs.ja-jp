@@ -3,18 +3,18 @@ title: プロトコル ドライバーの OID 要求操作
 description: プロトコル ドライバーの OID 要求操作
 ms.assetid: 767252a2-98de-4df2-89dc-ee48b2c7ca9d
 keywords:
-- プロトコル ドライバー WDK ネットワーク、OID 要求
-- NDIS プロトコル ドライバー WDK、OID 要求します。
-- OID 要求 WDK ネットワーク
-- Oid WDK ネットワー キング、プロトコル ドライバー
+- プロトコルドライバー WDK ネットワーク, OID 要求
+- NDIS プロトコルドライバー WDK、OID 要求
+- OID が WDK ネットワークを要求する
+- Oid WDK ネットワーク, プロトコルドライバー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: abd82494f48e218f1013a239faf4147b60466a13
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 45bb1bc83a95e36a36adfa4d7f8b4622b0fef0c9
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67356130"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844003"
 ---
 # <a name="oid-request-operations-in-a-protocol-driver"></a>プロトコル ドライバーの OID 要求操作
 
@@ -22,11 +22,11 @@ ms.locfileid: "67356130"
 
 
 
-プロトコル ドライバーに OID 要求の操作の 2 つの異なるインターフェイスがあります。 NDIS ドライバー コネクションレス低い edge 呼び出しでのプロトコル、 [ **NdisOidRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisoidrequest) OID 要求を開始する関数。 コネクションレスの下端との NDIS プロトコル ドライバーを指定する必要があります、 [ **ProtocolOidRequestComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_oid_request_complete)関数。 NDIS 呼び出し*ProtocolOidRequestComplete*基になるドライバーが保留中の OID 要求を完了するとします。 コネクションレスのプロトコル ドライバーに OID 要求の詳細については、次を参照してください。[プロトコル ドライバー OID 要求](protocol-driver-oid-requests.md)します。
+プロトコルドライバーの OID 要求操作には、2つの異なるインターフェイスがあります。 コネクションレスの下位エッジを持つ NDIS プロトコルドライバーは、 [**NdisOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisoidrequest)関数を呼び出して OID 要求を開始します。 コネクションレスの下端がある NDIS プロトコルドライバーは、 [**ProtocolOidRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_oid_request_complete)関数を提供する必要があります。 基になるドライバーが保留中の OID 要求を完了すると、NDIS は*ProtocolOidRequestComplete*を呼び出します。 コネクションレスプロトコルドライバーでの OID 要求の詳細については、「[プロトコルドライバー OID 要求](protocol-driver-oid-requests.md)」を参照してください。
 
-接続指向の NDIS (いる CoNDIS) プロトコルのドライバーの呼び出し、 [ **NdisCoOidRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscooidrequest) OID 要求を開始する関数。 いる CoNDIS プロトコルのドライバーを指定する必要があります、 [ **ProtocolCoOidRequestComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_co_oid_request_complete)関数。 NDIS 呼び出し*ProtocolOidRequestComplete*基になるドライバーが保留中の OID 要求を完了するとします。 接続指向プロトコル ドライバーの詳細情報の OID 要求を参照してください。 [Connection-Oriented 操作](connection-oriented-operations.md)します。
+接続指向 NDIS (CoNDIS プロトコルドライバーは、 [**NdisCoOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscooidrequest)関数を呼び出して OID 要求を開始します。 CoNDIS プロトコルドライバーは、 [**ProtocolCoOidRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_co_oid_request_complete)関数を提供する必要があります。 基になるドライバーが保留中の OID 要求を完了すると、NDIS は*ProtocolOidRequestComplete*を呼び出します。 接続指向プロトコルドライバーでの OID 要求の詳細については、「[接続指向の操作](connection-oriented-operations.md)」を参照してください。
 
-Oid の詳細については、次を参照してください。 [NDIS Oid](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)します。
+Oid の詳細については、「 [NDIS oid](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)」を参照してください。
 
  
 

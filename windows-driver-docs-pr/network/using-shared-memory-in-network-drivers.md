@@ -3,18 +3,18 @@ title: ネットワーク ドライバーの共有メモリの使用
 description: ネットワーク ドライバーの共有メモリの使用
 ms.assetid: f7dfe785-6c1a-4f56-9018-76be9cdec7fc
 keywords:
-- ネットワーク ドライバー WDK、共有メモリ
-- メモリの WDK ネットワーク
-- 共有メモリ WDK ネットワーク
-- メモリ アドレス空間の共有
+- ネットワークドライバー WDK、共有メモリ
+- メモリ WDK ネットワーク
+- 共有メモリの WDK ネットワーク
+- メモリアドレス空間の共有
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 80b41feb14999901e50a03014cb8b9484313f12d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 24c3ee96b9a8a162a6bd6744012604af0d006c13
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67354491"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842973"
 ---
 # <a name="using-shared-memory-in-network-drivers"></a>ネットワーク ドライバーの共有メモリの使用
 
@@ -22,9 +22,9 @@ ms.locfileid: "67354491"
 
 
 
-バス マスター ダイレクト メモリ アクセス (DMA) デバイス用のミニポート ドライバーは、ネットワーク インターフェイス カード (NIC) と、ミニポート ドライバーで使用するための共有メモリを割り当てます。
+バスマスタダイレクトメモリアクセス (DMA) デバイス用のミニポートドライバーは、ネットワークインターフェイスカード (NIC) およびミニポートドライバーによって使用される共有メモリを割り当てます。
 
-[**NdisMAllocateSharedMemory** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismallocatesharedmemory)バス マスター ミニポート ドライバー、ネットワーク アダプターとミニポート ドライバーの間の永続的な共有メモリを割り当てることによって呼び出すことができます。 この関数は、仮想アドレスと共有メモリの物理アドレスを返します。 呼び出すまで、アドレスが有効な[ **NdisMFreeSharedMemory** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismfreesharedmemory)メモリを解放します。
+[**NdisMAllocateSharedMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismallocatesharedmemory)は、バスマスタミニポートドライバーによって呼び出され、ネットワークアダプターとミニポートドライバー間の永続的な共有にメモリを割り当てることができます。 この関数は、共有メモリの仮想アドレスと物理アドレスを返します。 アドレスは、 [**NdisMFreeSharedMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismfreesharedmemory)を呼び出すとメモリが解放されるまで有効です。
 
  
 

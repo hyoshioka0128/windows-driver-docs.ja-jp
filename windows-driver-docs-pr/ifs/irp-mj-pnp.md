@@ -3,7 +3,7 @@ title: IRP_MJ_PNP
 description: IRP\_MJ\_PNP
 ms.assetid: aec2f309-02a1-460a-b674-33ad18286347
 keywords:
-- IRP_MJ_PNP インストール可能なファイル システム ドライバー
+- IRP_MJ_PNP インストール可能なファイルシステムドライバー
 topic_type:
 - apiref
 api_name:
@@ -12,29 +12,29 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 18e91b59085f7dc4ef196e98983a9625ebcba91f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ca7a088ebcade4b4211e39b8dd349bbf36c5cfc4
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384821"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841170"
 ---
-# <a name="irpmjpnp"></a>IRP\_MJ\_PNP
+# <a name="irp_mj_pnp"></a>IRP\_MJ\_PNP
 
 
 ## <a name="when-sent"></a>送信時
 
 
-プラグ アンド プレイ Manager 送信 IRP\_MJ\_PNP 要求、システムでプラグ アンド プレイのアクティビティが発生するたびにします。 その他のオペレーティング システムのコンポーネントとその他のカーネル モード ドライバーでは、送信することも特定の IRP\_MJ\_マイナー関数コードによって、PNP 要求。
+プラグアンドプレイ Manager は、システムでプラグアンドプレイアクティビティが発生するたびに、IRP\_MJ\_PNP 要求を送信します。 その他のオペレーティングシステムコンポーネントおよびその他のカーネルモードドライバーは、マイナー関数コードに応じて、特定の IRP\_MJ\_PNP 要求を送信することもできます。
 
-ドライバーのプラグ アンド プレイ IRP の処理要件の詳細については、次を参照してください。[プラグ アンド プレイ](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)します。
+ドライバーのプラグアンドプレイの IRP 処理要件の詳細については、「[プラグアンドプレイ](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)」を参照してください。
 
-IRP の参照情報について\_MJ\_PNP マイナー関数のコードは、「[プラグ アンド プレイ マイナー Irp](https://docs.microsoft.com/windows-hardware/drivers/kernel/plug-and-play-minor-irps)します。
+IRP\_MJ\_PNP のマイナー関数コードに関する参照情報については、「[マイナー irp のプラグアンドプレイ](https://docs.microsoft.com/windows-hardware/drivers/kernel/plug-and-play-minor-irps)」を参照してください。
 
-## <a name="operation-file-system-drivers"></a>操作:ファイル システム ドライバー
+## <a name="operation-file-system-drivers"></a>操作: ファイルシステムドライバー
 
 
-ファイル システムには、必要な操作を決定するマイナー関数コードを確認する必要があります。 ファイル システムには、次のマイナー関数コードを処理する必要があります。
+ファイルシステムは、マイナー関数のコードを確認して、どの操作が要求されているかを判断する必要があります。 ファイルシステムでは、次のマイナー関数コードを処理する必要があります。
 
 <table>
 <colgroup>
@@ -50,100 +50,100 @@ IRP の参照情報について\_MJ\_PNP マイナー関数のコードは、「
 <tbody>
 <tr class="odd">
 <td align="left"><p>IRP_MN_CANCEL_REMOVE_DEVICE</p></td>
-<td align="left"><p>前のクエリの削除デバイス要求がキャンセルされたことを示します。 この要求は、ファイル システムのアラートを生成して、キャンセルに関連するクリーンアップを実行する必要がある場合に送信されます。</p></td>
+<td align="left"><p>以前のクエリ削除要求が取り消されたことを示します。 この要求は、キャンセルに関連するクリーンアップを実行する必要がある場合に、ファイルシステムに警告するために送信されます。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>IRP_MN_QUERY_REMOVE_DEVICE</p></td>
-<td align="left"><p>デバイスが削除される直前にあることを示します。 PnP マネージャーにデバイスのファイル システムをマウントすると、ファイル システムおよびすべてのファイル システム フィルターにこの要求を送信します。 デバイスに開いているハンドルがある場合は、ファイル システムでは通常、クエリの削除要求が失敗します。 通常のファイル システムを将来を防ぐために、ボリュームのロックそうでない場合は、次の位置から要求を作成します。 マウントされたファイル システムがクエリの削除要求をサポートしていない場合、PnP マネージャー デバイスのクエリの削除要求は失敗します。</p></td>
+<td align="left"><p>デバイスが削除されようとしていることを示します。 ファイルシステムがデバイスにマウントされている場合、PnP マネージャーはこの要求をファイルシステムとファイルシステムフィルターに送信します。 デバイスに開いているハンドルがある場合、通常、ファイルシステムはクエリ削除要求に失敗します。 それ以外の場合、通常、ファイルシステムはボリュームをロックして、今後の作成要求が成功しないようにします。 マウントされたファイルシステムがクエリ削除要求をサポートしていない場合、PnP マネージャーはデバイスのクエリ削除要求に失敗します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>IRP_MN_REMOVE_DEVICE</p></td>
-<td align="left"><p>デバイスが削除される直前にあることを示します。 PnP マネージャーにデバイスのファイル システムをマウントすると、ファイル システムおよびすべてのファイル システム フィルターにこの IRP を送信します。 ファイル システムは、完了ルーチンをファイル システムからマウント解除、ボリュームの設定、デバイスの記憶域ドライバーをこの IRP をすぐに渡す必要があります。</p></td>
+<td align="left"><p>デバイスが削除されようとしていることを示します。 ファイルシステムがデバイスにマウントされている場合、PnP マネージャーは、この IRP をファイルシステムとファイルシステムフィルターに送信します。 ファイルシステムは、この IRP をデバイスのストレージドライバーにすぐに渡す必要があります。その後、ファイルシステムによってボリュームがマウント解除される完了ルーチンを設定します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>IRP_MN_START_DEVICE</p></td>
-<td align="left"><p>デバイスが開始されていることを示します。 ファイル システムでは、デバイスの記憶域ドライバーをこの IRP を渡す必要があります。</p></td>
+<td align="left"><p>デバイスが起動中であることを示します。 ファイルシステムは、この IRP をデバイスのストレージドライバーに渡す必要があります。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>IRP_MN_SURPRISE_REMOVAL</p></td>
-<td align="left"><p>デバイスが削除されたことを示します。 PnP マネージャーにデバイスのファイル システムをマウントすると、ファイル システムおよびすべてのファイル システム フィルターにこの IRP を送信します。 ファイル システムは、完了ルーチンをファイル システムからマウント解除、ボリュームの設定、デバイスの記憶域ドライバーをこの IRP をすぐに渡す必要があります。</p></td>
+<td align="left"><p>デバイスが削除されたことを示します。 ファイルシステムがデバイスにマウントされている場合、PnP マネージャーは、この IRP をファイルシステムとファイルシステムフィルターに送信します。 ファイルシステムは、この IRP をデバイスのストレージドライバーにすぐに渡す必要があります。その後、ファイルシステムによってボリュームがマウント解除される完了ルーチンを設定します。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <a name="operation-file-system-filter-drivers"></a>操作:ファイル システム フィルター ドライバー
+## <a name="operation-file-system-filter-drivers"></a>操作: ファイルシステムフィルタードライバー
 
 
-ファイル システム フィルター ドライバーは、次のガイドラインに従って PnP Irp を処理する必要があります。
+ファイルシステムフィルタードライバーは、次のガイドラインに従って、PnP Irp を処理する必要があります。
 
--   ボリュームは、ユーザーが正常に削除される直前には、PnP マネージャーに送信 IRP\_MN\_クエリ\_削除\_デバイス要求。 この IRP を受信するには、フィルターはボリューム上のすべての開いているハンドルを閉じるし、スタック上に次の下位ドライバー IRP を渡す必要があります。 これは、非常に重要です。 ドライバーは、すべての開いているハンドルを閉じる失敗した場合、これにより、ボリュームをマウント解除するから取り出されて順番物理デバイスを実行できなくなります。
+-   ユーザーによってボリュームが正常に削除されようとすると、PnP マネージャーは、\_デバイスの要求を削除\_、IRP\_\_クエリを送信します。 この IRP を受信すると、フィルターはボリューム上の開いているハンドルをすべて閉じ、スタック上の次の下位のドライバーに IRP を渡します。 これは非常に重要です。 ドライバーが開いているハンドルをすべて閉じるのに失敗した場合、ボリュームがマウント解除されないようにします。これにより、物理デバイスの取り出しを防止できます。
 
-    &gt; \[!注\] &gt; IRP を受信する\_MN\_クエリ\_削除\_FAT ファイル システムがすぐにそれを安全に削除できるすべてのボリュームをマウント解除、デバイスを要求します。 したがって、FAT ボリュームに接続されている任意のフィルターは、そのフィルター デバイス オブジェクトは、フィルターの完了ルーチンを呼び出す前に解放されますと予想されます。 NTFS ファイル システムはこれを実行しません。 したがって、NTFS ボリュームに接続されているフィルターは、こと、デバイス オブジェクトを引き続きに添付されます、ボリューム フィルターの完了のルーチンが呼び出されたときに期待できます。
+    &gt; \[!\_デバイス要求の削除\_IRP\_\_を正常に受信した &gt;\]、FAT ファイルシステムは、安全に削除できるすべてのボリュームを直ちにマウント解除します。 そのため、FAT ボリュームにアタッチされたフィルターは、フィルターの完了ルーチンが呼び出される前に、そのフィルターデバイスオブジェクトが解放されることを期待する必要があります。 NTFS ファイルシステムでは、この操作は行われません。 そのため、NTFS ボリュームにアタッチされたフィルターは、フィルターの完了ルーチンが呼び出されたときに、そのデバイスオブジェクトがボリュームにアタッチされることを期待できます。
 
      
 
--   IRP がなかった Irp\_MN\_クエリ\_削除\_デバイスの要求が IRP の前に\_MN\_キャンセル\_削除\_デバイスまたは IRP\_MN\_削除\_装置を削除する要求を受信またはデバイスの要求を受信した、安全に (記憶域デバイスのスタックによって失敗する) をスタックに渡されたしたりキャンセルと削除されるまで、キューに保持されます。
+-   Irp\_完了後に受信される Irp は、\_デバイスの要求を削除\_\_クエリを実行します。ただし、IRP\_が完了する前に、\_デバイスまたは IRP\_削除\_削除\_削除\_t_10_ DEVICE 要求を受信すると、スタックに安全に渡すことができます (ストレージデバイススタックによって失敗した場合)。または、削除またはデバイスの削除要求が受信されるまで、キューに保持できます。
 
--   フィルターは IRP を受信した場合\_MN\_キャンセル\_削除\_IRP への応答内のボリュームのすべての開いているハンドルが既に終了した後のデバイス要求\_MN\_クエリ\_削除\_デバイス要求と、ハンドルを開くことができます。 ただし、フィルターのみで実行できるこのその完了ルーチンでは、スタックの下にあるドライバーが IRP が正常に完了した後。
+-   フィルターが IRP\_完了した場合\_キャンセル\_\_デバイスの要求を削除します。 IRP\_に応答して、ボリュームの開いているハンドルをすべて閉じた後\_デバイスを削除\_ます。要求。ハンドルを再び開くことができます。 ただし、フィルターは、IRP がスタック内のドライバーによって正常に完了した後で、完了ルーチンでのみ実行できます。
 
--   フィルターが IRP を受信すると\_MN\_削除\_、通常は必要はありませんがされてを押しながら Irp をキューに IRP を受信するための IRP の処理を実行するデバイスで要求\_MN\_クエリ\_削除\_デバイス要求。 Irp キューで、保持している場合、フィルターがボリュームのすべての Irp をデキューする必要がありますと&lt;は&gt;失敗&lt;/i&gt;スタック上に次の下位ドライバー IRP を渡す前にすることです。
+-   フィルターが\_IRP を受信し、\_デバイスの要求\_削除すると、通常は irp に対して処理を実行する必要がありません。ただし、IRP\_完了した\_クエリを受信してから irp を保持している場合を除き\_\_デバイスの要求を削除します。 Irp がキューに保持されている場合、フィルターはそのボリュームのすべての Irp をデキューする必要があります。&gt;失敗した場合は、&lt;/i&gt; &lt;してから、IRP をスタック上の次の下位のドライバーに渡します。
 
--   IRP を受信する\_MN\_突然\_削除要求と、フィルターは、次を行う必要があります。
+-   \_予期しない IRP\_\_の削除要求を受信すると、フィルターは次の操作を実行します。
 
-    -   未解決の参照がなくなるまで、ファイル システムがスタックをクリーンアップできませんので、ボリュームにすべての開いているハンドルを閉じます。
+    -   未処理の参照がないまでファイルシステムがスタックをクリーンアップできないため、開いているすべてのハンドルをボリュームに対して閉じます。
 
-    -   フィルターに、キューに Irp が保持している場合か、それらが失敗することもできます下位のスタック (記憶域デバイスのスタックによって失敗する) を渡します。
+    -   フィルターが Irp をキューに保持している場合は、エラーを発生させるか、スタックに渡すことができます (ストレージデバイススタックによって失敗する場合)。
 
 ## <a name="parameters"></a>パラメーター
 
 
-ファイル システムまたはフィルター ドライバーは呼び出し[ **IoGetCurrentIrpStackLocation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetcurrentirpstacklocation)ポインターを取得する、独自の特定の IRP で[**場所スタック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)、IRP として次の一覧に示すように*IrpSp*します。 (IRP が示した*Irp*)。ドライバーは IRP のプラグ アンド プレイの要求の処理中の IRP スタックの場所は、次のメンバーで設定されている情報を使用できます。
+ファイルシステムまたはフィルタードライバーは、指定された IRP で[**Iogetlocation entiを**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation)呼び出して、irp 内の独自の[**スタックの場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)へのポインターを取得します。次の一覧には、 *irpsp*として示されています。 (IRP は、 *irp*として表示されます)。ドライバーは、プラグアンドプレイ要求の処理中に、IRP の次のメンバーと IRP スタックの場所に設定されている情報を使用できます。
 
-<a href="" id="deviceobject"></a>*デバイス オブジェクト*  
-ターゲット デバイスのオブジェクトへのポインター。
+<a href="" id="deviceobject"></a>*DeviceObject*  
+ターゲットデバイスオブジェクトへのポインター。
 
-<a href="" id="irp--iostatus"></a>*Irp-&gt;IoStatus*  
-ポインター、 [ **IO\_状態\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_status_block)最終的な完了の状態と、要求された操作に関する情報を受け取る。
+<a href="" id="irp--iostatus"></a>*Irp&gt;IoStatus*  
+最終的な完了状態と要求された操作に関する情報を受け取る、 [**IO\_ステータス\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_status_block)構造へのポインター。
 
 <a href="" id="irpsp--fileobject"></a>*IrpSp-&gt;FileObject*  
-このポインターにする必要があります**NULL** PnP Irp の。
+PnP Irp の場合、このポインターは**NULL**である必要があります。
 
 <a href="" id="irpsp--majorfunction"></a>*IrpSp-&gt;MajorFunction*  
-IRP を指定します\_MJ\_PNP します。
+IRP\_MJ\_PNP に指定します。
 
 <a href="" id="irpsp--minorfunction"></a>*IrpSp-&gt;MinorFunction*  
 次のいずれかです。
 
--   IRP\_MN\_CANCEL\_REMOVE\_DEVICE
--   IRP\_MN\_クエリ\_削除\_デバイス
--   IRP\_MN\_削除\_デバイス
--   IRP\_MN\_開始\_デバイス
--   IRP\_MN\_SURPRISE\_REMOVAL
+-   IRP\_\_キャンセル\_\_デバイスの削除
+-   IRP\_\_クエリ\_\_デバイスの削除
+-   IRP\_\_\_デバイスの削除
+-   \_デバイスを起動\_IRP\_
+-   IRP\_\_驚く\_削除
 
 ## <a name="see-also"></a>関連項目
 
 
-[**IO\_スタック\_場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)
+[**IO\_スタック\_の場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)
 
-[**IO\_状態\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_status_block)
+[**IO\_状態\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_status_block)
 
-[**IoGetCurrentIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetcurrentirpstacklocation)
+[**Iogetlocation Entiの場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation)
 
-[**IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_irp)
+[**IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_irp)
 
-[**IRP\_MJ\_PNP (WDK カーネル リファレンス)** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-pnp)
+[**IRP\_MJ\_PNP (WDK カーネルリファレンス)** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-pnp)
 
-[**IRP\_MN\_CANCEL\_REMOVE\_DEVICE**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-cancel-remove-device)
+[**IRP\_\_キャンセル\_\_デバイスの削除**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-cancel-remove-device)
 
-[**IRP\_MN\_クエリ\_削除\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-remove-device)
+[**IRP\_\_クエリ\_\_デバイスの削除**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-remove-device)
 
-[**IRP\_MN\_REMOVE\_DEVICE**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-remove-device)
+[**IRP\_\_\_デバイスの削除**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-remove-device)
 
-[**IRP\_MN\_START\_DEVICE**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)
+[ **\_デバイスを起動\_IRP\_** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)
 
-[**IRP\_MN\_SURPRISE\_REMOVAL**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-surprise-removal)
+[**IRP\_\_驚く\_削除**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-surprise-removal)
 
  
 

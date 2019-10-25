@@ -1,30 +1,30 @@
 ---
 title: RSC 状態のクエリと変更
-description: このセクションでは、クエリまたは coalescing (RSC) 状態 RSC 対応のミニポート ドライバーの現在の受信セグメントを変更する方法について説明します。
+description: このセクションでは、RSC 対応ミニポートドライバーの現在の受信セグメント合体 (RSC) 状態を照会または変更する方法について説明します。
 ms.assetid: 5455FBB2-3603-44EF-B1C6-494D31DD820D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ac1d26144e47ab596be373221c93ef3716bfba4c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5b35a3494657abfd6a58b492872902539a17f993
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385432"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844885"
 ---
 # <a name="querying-and-changing-rsc-state"></a>RSC 状態のクエリと変更
 
 
-このセクションでは、クエリまたは coalescing (RSC) 状態 RSC 対応のミニポート ドライバーの現在の受信セグメントを変更する方法について説明します。
+このセクションでは、RSC 対応ミニポートドライバーの現在の受信セグメント合体 (RSC) 状態を照会または変更する方法について説明します。
 
-## <a name="querying-rsc-state"></a>RSC の状態のクエリを実行します。
-
-
-発行することにより、RSC の現在の状態を問い合わせることができます、 [OID\_TCP\_オフロード\_現在\_CONFIG](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-offload-current-config) OID 要求。 NDIS は、この OID を処理し、ミニポートに渡しません。
-
-## <a name="changing-rsc-state"></a>RSC の状態を変更します。
+## <a name="querying-rsc-state"></a>RSC 状態のクエリ
 
 
-RSC を有効になっているか、発行することによって無効になっている、 [OID\_TCP\_オフロード\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-offload-parameters) OID 要求。 この OID を使用して、 [ **NDIS\_オフロード\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_offload_parameters)構造体。 この構造で、 **RscIPv4**と**RscIPv6**メンバーは、次の値を持つことができます。
+現在の RSC の状態を照会するには、 [oid\_TCP\_オフロード\_現在の\_CONFIG](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-offload-current-config) oid 要求を発行します。 NDIS はこの OID を処理し、ミニポートには渡しません。
+
+## <a name="changing-rsc-state"></a>RSC 状態の変更
+
+
+RSC を有効または無効にするには、 [oid\_TCP\_オフロード\_PARAMETERS](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-offload-parameters) oid 要求を発行します。 この OID では、 [**NDIS\_OFFLOAD\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_offload_parameters)構造体を使用します。 この構造体では、 **RscIPv4**メンバーと**RscIPv6**メンバーは次の値を持つことができます。
 
 <table>
 <colgroup>
@@ -33,14 +33,14 @@ RSC を有効になっているか、発行することによって無効にな�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">項目</th>
+<th align="left">用語</th>
 <th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>NDIS_OFFLOAD_PARAMETERS_NO_CHANGE</strong></p></td>
-<td align="left"><p>RSC の状態は変更されません。</p></td>
+<td align="left"><p>RSC の状態は変更されていません。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>NDIS_OFFLOAD_PARAMETERS_RSC_DISABLED</strong></p></td>
@@ -55,9 +55,9 @@ RSC を有効になっているか、発行することによって無効にな�
 
  
 
-ミニポート ドライバーのプロセスの後、 [OID\_TCP\_オフロード\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-offload-parameters) OID 要求を渡す必要があります、 [ **NDIS\_状態\_タスク\_オフロード\_現在\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-task-offload-current-config)で更新された状態の表示状態の負荷を軽減します。
+ミニポートドライバーは、 [\_TCP\_オフロード\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-offload-parameters) oid 要求の oid を処理した後で、 [**NDIS\_ステータス\_タスク\_オフロード\_現在の\_構成**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-task-offload-current-config)状態を示します。更新されたオフロード状態。
 
-ミニポート ドライバーが受信すると、 [OID\_TCP\_オフロード\_現在\_CONFIG](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-offload-current-config) OID 要求を**NDIS\_オフロード\_パラメーター\_RSC\_無効**フラグを指定すると、OID 要求を完了する前に、スタック上のセグメントを結合する既存のすべてのドライバーを示す必要があります。
+ミニポートドライバーが OID を受け取ると[\_TCP\_オフロード\_現在の\_構成](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-offload-current-config)OID 要求では、 **NDIS\_** \_\_RSC\_DISABLED フラグが指定されています。では、OID 要求を完了する前に、ドライバーはスタック上にある既存の結合されたセグメントを示す必要があります。
 
  
 

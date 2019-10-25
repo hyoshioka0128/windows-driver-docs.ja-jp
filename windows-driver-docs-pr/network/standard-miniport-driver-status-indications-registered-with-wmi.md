@@ -3,17 +3,17 @@ title: WMI に登録されている標準ミニポート ドライバー状態�
 description: WMI に登録されている標準ミニポート ドライバー状態表示
 ms.assetid: afebd0a2-c811-4534-9320-02b9292ba81b
 keywords:
-- 状態インジケーターの WDK ネットワー キング、WMI
-- WMI の WDK は、ネットワーク状態インジケーター
-- Windows Management Instrumentation WDK ネットワー キング、状態インジケーター
+- WDK ネットワーク、WMI の状態を示す状態
+- WMI WDK ネットワーク, 状態のインジケーター
+- WDK ネットワーク、状態の Windows Management Instrumentation
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a4175030b6a55869331f58ad9c0b4752d45fb8e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7317ad6e7c0d83652245b02fd0cf67eb5bc73361
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360760"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841852"
 ---
 # <a name="standard-miniport-driver-status-indications-registered-with-wmi"></a>WMI に登録されている標準ミニポート ドライバー状態表示
 
@@ -21,11 +21,11 @@ ms.locfileid: "67360760"
 
 
 
-NDIS が自動的に登録 Guid wmi のミニポート ドライバーを示す NDIS 状態インジケーターの[ **NdisMIndicateStatusEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismindicatestatusex)または[ **NdisMCoIndicateStatusEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcoindicatestatusex)関数。 全般的なステータス インジケーターの一覧は、次を参照してください。[状態インジケーター](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)します。
+NDIS は、 [**NdisMIndicateStatusEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismindicatestatusex)または[**NdisMCoIndicateStatusEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcoindicatestatusex)関数によってミニポートドライバーによって示される ndis ステータスを示すために、guid を WMI に自動的に登録します。 一般的な状態の表示の一覧については、「[ステータス](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)の表示」を参照してください。
 
-WMI クライアント登録される WMI NDIS WMI イベントを受信すると場合、NDIS は WMI イベントに対応する NDIS 状態表示に変換し、すべてのイベントに登録されている WMI クライアントにイベントを報告します。
+Wmi クライアントが NDIS WMI イベントを受信するために WMI に登録すると、NDIS は対応する NDIS 状態の情報を WMI イベントに変換し、イベントに登録されているすべての WMI クライアントにイベントを報告します。
 
-NDIS ドライバーは、カスタムの状態インジケーターを生成することもできます。 カスタムの状態インジケーターと WMI の詳細については、次を参照してください。 [Oid のカスタマイズと状態インジケーター](customized-oids-and-status-indications.md)します。
+NDIS ドライバーでは、カスタムステータスのインジケーターを生成することもできます。 カスタムステータス表示と WMI の詳細については、「カスタマイズされた[oid と状態](customized-oids-and-status-indications.md)の表示」を参照してください。
 
  
 

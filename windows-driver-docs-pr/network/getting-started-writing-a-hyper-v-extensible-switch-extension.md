@@ -1,77 +1,77 @@
 ---
-title: 記述について、HYPER-V 拡張可能スイッチの拡張機能
-description: このセクションは、HYPER-V 拡張可能スイッチの拡張機能の記述を開始する方法を説明します
+title: Hyper-v 拡張可能スイッチ拡張機能の作成の概要
+description: このセクションでは、Hyper-v 拡張可能スイッチ拡張機能の記述を開始する方法について説明します。
 ms.assetid: 91C6ED75-1057-4520-8E8E-28817D8F3C81
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 30f93b3e047839d98d15c1a76859874eedf4d5d0
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: fc7405f8b0cc19b4c2bf8ce9a2067e8ac47a2097
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67393403"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842181"
 ---
 # <a name="getting-started-writing-a-hyper-v-extensible-switch-extension"></a>Hyper-V 拡張可能スイッチ拡張機能の作成の開始
 
 
-HYPER-V 拡張可能スイッチの拡張機能は、NDIS フィルターです。 または、HYPER-V 拡張可能スイッチ (「HYPER-V 仮想スイッチ」とも呼ばれます) 内で実行される Windows フィルタ リング プラットフォーム (WFP) フィルターです。
+Hyper-v 拡張可能スイッチ拡張機能は、Hyper-v 拡張可能スイッチ ("Hyper-v 仮想スイッチ" とも呼ばれます) の内部で実行される NDIS フィルターまたは Windows フィルタリングプラットフォーム (WFP) フィルターです。
 
-拡張機能の 3 つのクラスがあります。 キャプチャ、フィルター、および転送します。 それらのすべては、NDIS フィルター ドライバーとして実装することができます。 フィルター拡張機能は、WFP フィルター ドライバーとして実装できます。
+拡張機能には、キャプチャ、フィルター処理、転送という3つのクラスがあります。 これらはすべて、NDIS フィルタードライバーとして実装できます。 フィルター拡張機能は、WFP フィルタードライバーとして実装することもできます。
 
-ドライバー開発者向けのアーキテクチャ概要については、次を参照してください。 [Hyper-v 拡張可能スイッチの概要](overview-of-the-hyper-v-extensible-switch.md)します。
+ドライバー開発者向けのアーキテクチャの概要については、「 [Hyper-v 拡張可能スイッチの概要](overview-of-the-hyper-v-extensible-switch.md)」を参照してください。
 
-HYPER-V 拡張可能スイッチの拡張機能を作成するには、次の手順を実行します。
+Hyper-v 拡張可能スイッチ拡張機能を作成するには、次の手順を実行します。
 
-1.  拡張機能のアーキテクチャとプログラミング モデルについて説明します。
-    -   以降では、NDIS ベースの拡張は、オンライン ドキュメントを読み取る[HYPER-V 拡張可能スイッチ](hyper-v-extensible-switch.md)します。 キャプチャ、フィルター処理、および転送拡張機能を使用して、標準の NDIS API をフィルター処理します。 NDIS インターフェイスは、構成、通知、および仮想スイッチと仮想マシンの id を提供する拡張されています。
-        [HYPER-V 拡張可能スイッチ関数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
-        [HYPER-V 拡張可能スイッチの列挙体](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/index)
-        [HYPER-V 拡張可能スイッチ構造体と共用体](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
-         [HYPER-V 拡張可能スイッチ Oid](https://docs.microsoft.com/windows-hardware/drivers/network/hyper-v-extensible-switch-oids)
-        [HYPER-V 拡張可能スイッチの状態インジケーター](https://docs.microsoft.com/windows-hardware/drivers/network/hyper-v-extensible-switch-status-indications)
-        [HYPER-V 拡張可能スイッチ マクロ](https://docs.microsoft.com/windows-hardware/drivers/network/hyper-v-extensible-switch-macros)
-    -   以降では、WFP ベースの拡張は、オンライン ドキュメントを読み取る[仮想スイッチを使用してフィルター](using-virtual-switch-filtering.md)します。
-    -   拡張機能に次の説明ビデオをご覧ください。
-        -   [HYPER-V 拡張可能スイッチの techEd セッション](https://channel9.msdn.com/Events/TechEd/NorthAmerica/2012/VIR307)
-        -   [Hyper V の拡張可能スイッチ、第 1 部-概要](https://channel9.msdn.com/posts/Hyper-V-Extensible-Switch-Part-I--Introduction)
-        -   [HYPER-V 拡張可能スイッチ、パート II: コントロールのパスを理解します。](https://channel9.msdn.com/posts/Hyper-V-Extensible-Switch-Part-II--Understanding-the-Control-Path)
-        -   [HYPER-V 拡張可能スイッチ、第 3 部-キャプチャおよびフィルターの拡張機能のデータパスの入出力](https://channel9.msdn.com/posts/Hyper-V-Extensible-Switch-Part-III--The-Ins-and-Outs-of-the-Data-Path-for-Capture-and-Filter-Extensi)
-    -   拡張機能の管理に使用できるいくつかの PowerShell コマンドもあります。 これらは記載[管理インストールされている HYPER-V 拡張可能スイッチ拡張機能](managing-installed-hyper-v-extensions.md)します。
+1.  拡張機能のアーキテクチャとプログラミングモデルについて説明します。
+    -   詳細については、「 [hyper-v 拡張可能スイッチ](hyper-v-extensible-switch.md)」を参照してください。 拡張機能のキャプチャ、フィルター処理、転送には、標準の NDIS フィルター API が使用されます。 NDIS インターフェイスは、仮想スイッチと仮想マシンの構成、通知、および id を提供するように強化されています。
+        Hyper-v 拡張可能スイッチの[関数](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
+        hyper-v 拡張可能スイッチの[列挙](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/index)体
+        hyper-v 拡張可能スイッチ[の構造と共用体](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
+        hyper-v 拡張可能スイッチの[oid](https://docs.microsoft.com/windows-hardware/drivers/network/hyper-v-extensible-switch-oids)
+        [hyper-v](https://docs.microsoft.com/windows-hardware/drivers/network/hyper-v-extensible-switch-status-indications) [Hyper-v 拡張可能スイッチマクロ](https://docs.microsoft.com/windows-hardware/drivers/network/hyper-v-extensible-switch-macros)
+        拡張可能なスイッチの状態のインジケーター
+    -   [仮想スイッチのフィルター処理を使用し](using-virtual-switch-filtering.md)た後に、WFP ベースの拡張機能に関するオンラインドキュメントを参照してください。
+    -   拡張機能については、次の説明ビデオをご覧ください。
+        -   [Hyper-v 拡張可能スイッチでの TechEd セッション](https://channel9.msdn.com/Events/TechEd/NorthAmerica/2012/VIR307)
+        -   [Hyper-v 拡張可能スイッチ、パート I-概要](https://channel9.msdn.com/posts/Hyper-V-Extensible-Switch-Part-I--Introduction)
+        -   [Hyper-v 拡張可能スイッチパート II —制御パスを理解する](https://channel9.msdn.com/posts/Hyper-V-Extensible-Switch-Part-II--Understanding-the-Control-Path)
+        -   [Hyper-v 拡張可能スイッチパート III —キャプチャとフィルター拡張機能のデータパスの入出力](https://channel9.msdn.com/posts/Hyper-V-Extensible-Switch-Part-III--The-Ins-and-Outs-of-the-Data-Path-for-Capture-and-Filter-Extensi)
+    -   拡張機能の管理に使用できる PowerShell コマンドがいくつかあります。 これらは、「[インストール済みの Hyper-v 拡張可能スイッチ拡張機能の管理](managing-installed-hyper-v-extensions.md)」に記載されています。
 
 2.  開発環境を設定します。
     -   Microsoft Visual Studio Professional 2012 をインストールします。
-    -   ダウンロードしてインストール[Windows Driver Kit 8](https://developer.microsoft.com/windows/hardware)します。
+    -   [Windows Driver Kit 8](https://developer.microsoft.com/windows/hardware)をダウンロードしてインストールします。
 
-3.  サンプル拡張機能を学習します。
-    -   ダウンロード、[転送拡張機能サンプルの NDIS](https://go.microsoft.com/fwlink/p/?LinkId=618935)します。
-    -   ダウンロード、 [WFP サンプル](https://go.microsoft.com/fwlink/p/?LinkId=618934)します。 これは、vSwitch 機能が含まれる機能のプロトタイプです。
+3.  サンプルの拡張機能を調べます。
+    -   [NDIS 転送拡張機能のサンプル](https://go.microsoft.com/fwlink/p/?LinkId=618935)をダウンロードします。
+    -   [WFP サンプル](https://go.microsoft.com/fwlink/p/?LinkId=618934)をダウンロードします。 これは、vSwitch 機能を含む機能しているプロトタイプです。
 
-4.  拡張機能を記述します。
-    -   フィルター コードの既存のポートを開始点として、サンプルの 1 つを使用したり、拡張機能をゼロから作成できます。
-    -   NDIS 拡張機能を開発する場合を使ってできます標準 NDIS INF いくつかの変更」の説明に従って[HYPER-V 拡張可能スイッチ拡張機能の要件を INF](inf-requirements-for-hyper-v-extensions.md)します。
+4.  拡張機能を作成します。
+    -   いずれかのサンプルを開始点として使用するか、既存のフィルターコードを移植するか、拡張機能を最初から作成します。
+    -   NDIS 拡張機能を開発している場合は、「 [Hyper-v 拡張可能スイッチ拡張機能の INF 要件](inf-requirements-for-hyper-v-extensions.md)」で説明されているように、標準の NDIS INF をいくつかの変更と共に使用できます。
 
-5.  拡張機能のビルドと単体テスト。
-    -   必要があります[Visual Studio を使用して、拡張機能を構築する](https://msdn.microsoft.com/library/windows/hardware/ff554644.aspx)します。
-    -   できます理解しておく拡張機能のビルド プロセスでコンパイルしているサンプル拡張機能を実行する Visual Studio を使用します。
+5.  拡張機能をビルドし、単体テストを行います。
+    -   [拡張機能をビルドするには、Visual Studio を使用](https://msdn.microsoft.com/library/windows/hardware/ff554644.aspx)する必要があります。
+    -   拡張機能のビルドプロセスを理解するには、Visual Studio を使用してサンプルの拡張機能をコンパイルして実行します。
 
-6.  署名済み拡張機能を取得するための Windows 認定 (ロゴ) プロセスについて説明します。
-    -   拡張機能のテストを渡す必要があります、 [Windows ハードウェア認定キット (HCK)](https://go.microsoft.com/fwlink/p/?LinkId=733613)します。
-    -   拡張機能の要件については、「で Filter.Driver.vSwitchExtension.ExtensionRequirements、 [Windows ハードウェア認定要件 - フィルター ドライバー](https://docs.microsoft.com/previous-versions/windows/hardware/cert-program/windows-hardware-certification-requirements---filter-driver)します。
+6.  拡張機能の署名を取得するための Windows 認定 (ロゴ) プロセスについて説明します。
+    -   拡張機能は、 [Windows ハードウェア認定キット (HCK)](https://go.microsoft.com/fwlink/p/?LinkId=733613)のテストに合格する必要があります。
+    -   拡張機能の要件については、「 [Windows ハードウェア認定の要件-フィルタードライバー](https://docs.microsoft.com/previous-versions/windows/hardware/cert-program/windows-hardware-certification-requirements---filter-driver) 」の「Driver. Vswitchextension. extensionrequirements 要件」に記載されています。
 
-7.  Windows ハードウェア認定キット環境を設定します。
-    -   ダウンロードしてインストール、 [Windows ハードウェア認定キット](https://msdn.microsoft.com/windows/hardware/hh852359)します。
+7.  Windows ハードウェア認定キット環境をセットアップします。
+    -   [Windows ハードウェア認定キット](https://msdn.microsoft.com/windows/hardware/hh852359)をダウンロードしてインストールします。
 
-8.  拡張機能の WHCK テストを実行します。
-    -   Filter.Driver.Fundamentals
-    -   Filter.Driver.Security
-    -   Filter.Driver.vSwitchExtension
+8.  拡張機能のテストを実行します。
+    -   フィルター. ドライバーの基礎
+    -   フィルター. Driver. Security
+    -   Driver. vSwitchExtension
 
-9.  WHCK 証明に合格する最終的な拡張機能と後に Microsoft に送信します。
-    -   拡張機能を追跡できなどの管理のパッケージによってデプロイされることを確認する特定の形式での MSI インストール パッケージとして送信する必要があります[System Center Virtual Machine Manager (SCVMM) 2012](https://docs.microsoft.com/previous-versions/technet-magazine/hh300651(v=msdn.10))します。 MSI の形式が定義されている[拡張ドライバー MSI パッケージ要件](https://docs.microsoft.com/windows-hardware/drivers/network/extension-driver-msi-packaging-requirements)します。
+9.  最終的な拡張機能が証明書に合格したら、Microsoft に送信します。
+    -   拡張機能は、 [System Center Virtual Machine Manager (SCVMM) 2012](https://docs.microsoft.com/previous-versions/technet-magazine/hh300651(v=msdn.10))などの管理パッケージで追跡および展開できるように、特定の形式の MSI インストールパッケージとして提出する必要があります。 MSI 形式は、[拡張機能ドライバーの Msi パッケージ要件](https://docs.microsoft.com/windows-hardware/drivers/network/extension-driver-msi-packaging-requirements)で定義されています。
 
-10. WindowsServerCatalog.com で拡張機能の一覧を表示します。
-    -   WindowsServerCatalog.com で拡張機能の簡単な説明を一覧表示します。
-    -   WindowsServerCatalog.com で認定された拡張機能の一覧を表示する方法については、間もなく提供されます。
+10. WindowsServerCatalog.com で拡張機能を一覧表示します。
+    -   WindowsServerCatalog.com の拡張機能の簡単な説明を一覧表示します。
+    -   認定された拡張機能を WindowsServerCatalog.com に掲載するための情報は、間もなく提供される予定です。
 
  
 

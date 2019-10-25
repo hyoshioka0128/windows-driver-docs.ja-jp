@@ -3,20 +3,20 @@ title: プールの割り当てとフリー ルーチン
 description: プールの割り当てとフリー ルーチン
 ms.assetid: 757eebc0-ebd4-49a1-acea-6c27956b4b23
 keywords:
-- RDBSS WDK ファイル システム、プールの割り当て
-- リダイレクトされたサブシステムの WDK のバッファリングをドライブのファイル システム、プールの割り当て
-- プール割り当て WDK RDBSS
-- RDBSS WDK ファイル システムでは、無料のルーチン
-- リダイレクトされたサブシステムの WDK のバッファリングをドライブのファイル システム、無料のルーチン
-- 無料の WDK RDBSS ルーチン
+- RDBSS WDK ファイルシステム、プールの割り当て
+- リダイレクトされたドライブバッファリングサブシステム WDK ファイルシステム、プールの割り当て
+- プールの割り当て (WDK RDBSS)
+- RDBSS WDK ファイルシステム、無料のルーチン
+- リダイレクトされたドライブバッファリングサブシステム WDK ファイルシステム、フリールーチン
+- 無料のルーチン WDK RDBSS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f868d30d8a92cdfe1894f68386e8cfb7da5c3a95
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0c5f018913de323fd05a5f26660b52792c80bc53
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67366787"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841030"
 ---
 # <a name="pool-allocation-and-free-routines"></a>プールの割り当てとフリー ルーチン
 
@@ -24,13 +24,13 @@ ms.locfileid: "67366787"
 ## <span id="ddk_pool_allocation_and_free_functions_if"></span><span id="DDK_POOL_ALLOCATION_AND_FREE_FUNCTIONS_IF"></span>
 
 
-RDBSS は、プールの割り当てに使用するルーチンを提供します。 通常、これらのルーチンは、これらのルーチンを直接呼び出すことではなく、マクロを使用すると呼ばれます。 マクロは、製品版でチェックされたビルド間の相違点を自動的に処理します。
+RDBSS には、プール割り当てに使用する多くのルーチンが用意されています。 通常、これらのルーチンは、これらのルーチンを直接呼び出すのではなく、マクロを使用して呼び出されます。 これらのマクロは、リテールビルドとチェックビルドの違いを自動的に処理します。
 
-チェックのビルドでは、これらのルーチンが標準カーネルの割り当てと解放ルーチン ラップするラッパーを追加する設計されました。 プールの割り当てと解放ルーチンのこれらのラッパーでは、追加のデバッグ情報を提供し、一連のチェックおよびカーネル プールの割り当てと解放ルーチンを呼び出す前に保護するためのさまざまな種類を実行するルーチンを呼び出します。 ただし、これらの機能はこれらの割り当てと無料のルーチンで現在実装されていませんが、今後のリリースで追加される可能性があります。
+チェックを行ったビルドでは、これらのルーチンは、通常のカーネル割り当ておよびフリールーチンのラッパーを追加するように設計されています。 プールの割り当てと解放のルーチンのラッパーは、追加のデバッグ情報を提供し、カーネルプールの割り当てと解放のルーチンを呼び出す前に、さまざまな種類のチェックと保護を実行するルーチンのセットを呼び出します。 ただし、これらの機能は、これらの割り当ておよびフリールーチンには現在実装されていませんが、今後のリリースで追加される可能性があります。
 
-無料のビルドでは、これらのルーチンになるカーネルの割り当てと無料のルーチンへの直接呼び出し[ **exallocatepoolwithtag に**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtag)と[ **ExFreePool** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-exfreepool).
+無料のビルドでは、これらのルーチンは、カーネルの割り当てとフリールーチン、 [**Exallocatepoolwithtag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag) 、および[**exfreepool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-exfreepool)への直接呼び出しになります。
 
-次の表には、RDBSS プールの割り当てと解放ルーチンが一覧表示します。
+次の表に、RDBSS プールの割り当てとフリールーチンを示します。
 
 <table>
 <colgroup>
@@ -46,25 +46,25 @@ RDBSS は、プールの割り当てに使用するルーチンを提供しま�
 <tbody>
 <tr class="odd">
 <td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ifs/-rxallocatepoolwithtag" data-raw-source="[&lt;strong&gt;_RxAllocatePoolWithTag&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ifs/-rxallocatepoolwithtag)"><strong>_RxAllocatePoolWithTag</strong></a></p></td>
-<td align="left"><p>このルーチンは、メモリの問題を把握するのに役立つ、ブロックの先頭 4 バイトのタグを使用して、プールからメモリを割り当てます。</p>
-<p>推奨されます、 <strong>RxAllocatePoolWithTag</strong>このルーチンを直接使用する代わりにマクロが呼び出されます。</p></td>
+<td align="left"><p>このルーチンは、メモリの問題をキャッチするために、ブロックの先頭に4バイトのタグがあるプールからメモリを割り当てます。</p>
+<p>このルーチンを直接使用するのではなく、 <strong>RxAllocatePoolWithTag</strong>マクロを呼び出すことをお勧めします。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ifs/-rxcheckmemoryblock" data-raw-source="[&lt;strong&gt;_RxCheckMemoryBlock&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ifs/-rxcheckmemoryblock)"><strong>_RxCheckMemoryBlock</strong></a></p></td>
-<td align="left"><p>このルーチンは、特別な RX_POOL_HEADER ヘッダーの署名のメモリ ブロックを確認します。 ルーチンを使用するには、ネットワークのミニ リダイレクター ドライバーはメモリにこの特別な署名ブロックを追加する必要がありますので注意が割り当てられます。</p>
-<p>この特殊なヘッダー ブロックが実装されていないために、このルーチンを使用しない必要があります。</p></td>
+<td align="left"><p>このルーチンは、メモリブロックに特別な RX_POOL_HEADER HEADER 署名があるかどうかをチェックします。 ネットワークミニリダイレクタードライバーは、ルーチンを使用するために割り当てられたメモリに、この特殊な署名ブロックを追加する必要があることに注意してください。</p>
+<p>この特別なヘッダーブロックが実装されていないため、このルーチンは使用しないでください。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ifs/-rxfreepool" data-raw-source="[&lt;strong&gt;_RxFreePool&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ifs/-rxfreepool)"><strong>_RxFreePool</strong></a></p></td>
-<td align="left"><p>このルーチンは、メモリ プールを解放します。</p>
-<p>推奨されます、 <strong>RxFreePool</strong>このルーチンを直接使用する代わりにマクロが呼び出されます。</p></td>
+<td align="left"><p>このルーチンは、メモリプールを解放します。</p>
+<p>このルーチンを直接使用するのではなく、 <strong>RxFreePool</strong>マクロを呼び出すことをお勧めします。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-定義されているマクロは、数、 *ntrxdef.h*ヘッダー ファイルで、これらのルーチンを呼び出します。 直接の前の表に表示されているルーチンを呼び出す代わりに次のマクロは通常使用されます。
+*Ntrxdef .h*ヘッダーファイルで定義されている多くのマクロは、これらのルーチンを呼び出します。 前の表に示したルーチンを直接呼び出すのではなく、通常は次のマクロを使用します。
 
 <table>
 <colgroup>
@@ -79,19 +79,19 @@ RDBSS は、プールの割り当てに使用するルーチンを提供しま�
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>RxAllocatePoolWithTag</strong> (<em>型</em>、<em>サイズ</em>、<em>タグ</em>)</p></td>
-<td align="left"><p>チェック済みのビルドでは、このマクロは、メモリの破壊のインスタンスを検出するのに役立つ、ブロックの先頭 4 バイトのタグを使用して、プールからメモリを割り当てます。</p>
-<p>製品版ビルドでは、このマクロが、直接呼び出しを<strong>exallocatepoolwithtag に</strong>します。</p></td>
+<td align="left"><p><strong>RxAllocatePoolWithTag</strong> (<em>type</em>、 <em>size</em>、 <em>tag</em>)</p></td>
+<td align="left"><p>Checked ビルドでは、このマクロは、メモリ trashing のインスタンスをキャッチするのに役立つ4バイトのタグを持つプールからメモリを割り当てます。</p>
+<p>リテールビルドでは、このマクロは<strong>Exallocatepoolwithtag</strong>への直接の呼び出しになります。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>RxCheckMemoryBlock</strong> (<em>ptr</em>)</p></td>
-<td align="left"><p>チェック済みのビルドでは、このマクロは、特別な RX_POOL_HEADER ヘッダーの署名のメモリ ブロックを確認します。</p>
-<p>製品版ビルドでこのマクロは何もしません。</p></td>
+<td align="left"><p>Checked ビルドでは、このマクロはメモリブロックに特別な RX_POOL_HEADER HEADER 署名があるかどうかをチェックします。</p>
+<p>リテールビルドでは、このマクロは何も行いません。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>RxFreePool</strong> (<em>ptr</em>)</p></td>
-<td align="left"><p>チェック済みのビルドでは、このマクロは、メモリ プールを解放します。</p>
-<p>製品版ビルドでは、このマクロが、直接呼び出しを<strong>ExFreePool</strong>します。</p></td>
+<td align="left"><p>チェックされたビルドでは、このマクロはメモリプールを解放します。</p>
+<p>リテールビルドでは、このマクロは<strong>Exfreepool</strong>への直接の呼び出しになります。</p></td>
 </tr>
 </tbody>
 </table>

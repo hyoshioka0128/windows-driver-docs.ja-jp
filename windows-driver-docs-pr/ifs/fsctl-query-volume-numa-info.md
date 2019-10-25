@@ -1,9 +1,9 @@
 ---
 title: FSCTL_QUERY_VOLUME_NUMA_INFO 制御コード
-description: FSCTL\_クエリ\_ボリューム\_NUMA\_情報制御コードは、ボリュームの Non-uniform Memory アーキテクチャ (NUMA) ノードの現在のインデックスを検索します。
+description: FSCTL\_QUERY\_VOLUME\_NUMA\_INFO control code は、ボリュームの現在の Non-uniform Memory Architecture (NUMA) ノードインデックスを検索します。
 ms.assetid: ADDA4A8C-0BF3-45F1-AFE5-956CE5D1FC01
 keywords:
-- FSCTL_QUERY_VOLUME_NUMA_INFO 制御コード インストール可能なファイル システム ドライバー
+- FSCTL_QUERY_VOLUME_NUMA_INFO 制御コードのインストール可能なファイルシステムドライバー
 topic_type:
 - apiref
 api_name:
@@ -15,19 +15,19 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 672e54146cbb05d949008f1270295c71266c83e7
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 95b9792b10fbf7f376a19b9fc65d5aec6f9bbbb1
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67380072"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841269"
 ---
-# <a name="fsctlqueryvolumenumainfo-control-code"></a>FSCTL\_クエリ\_ボリューム\_NUMA\_情報制御コード
+# <a name="fsctl_query_volume_numa_info-control-code"></a>FSCTL\_クエリ\_ボリューム\_NUMA\_情報制御コード
 
 
-**FSCTL\_クエリ\_ボリューム\_NUMA\_情報**制御コードは、ボリュームの Non-uniform Memory アーキテクチャ (NUMA) ノードの現在のインデックスを検索します。
+**FSCTL\_QUERY\_volume\_numa\_INFO** control code は、ボリュームの現在の Non-uniform Memory ARCHITECTURE (numa) ノードインデックスを検索します。
 
-この操作を実行するには、呼び出し、 [ **DeviceIoControl** ](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)関数は次のパラメーター。
+この操作を実行するには、次のパラメーターを使用して[**DeviceIoControl**](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)関数を呼び出します。
 
 ```ManagedCPlusPlus
 BOOL 
@@ -45,52 +45,52 @@ BOOL
 <a name="parameters"></a>パラメーター
 ----------
 
-*hDevice* \[で\]  
-デバイスへのハンドル。 デバイス ハンドルを取得する呼び出し、 [ **CreateFile** ](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-createfilea)関数。
+*Hdevice* \[\]  
+デバイスへのハンドル。 デバイスハンドルを取得するには、 [**CreateFile**](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-createfilea)関数を呼び出します。
 
-これにより、ファイルまたはディレクトリにもデバイスを識別するハンドルこともできます。 この FSCTL には、ファイルまたはディレクトリが含まれているボリュームの NUMA ノードが返されます。
+これは、デバイス内のファイルまたはディレクトリへのハンドルにすることもできます。 この FSCTL は、ファイルまたはディレクトリを含むボリュームの NUMA ノードを返します。
 
-*dwIoControlCode* \[in\]  
-操作の制御コード。 使用**FSCTL\_クエリ\_ボリューム\_NUMA\_情報**この操作にします。
+\] の*Dwiocontrolcode* \[  
+操作の制御コード。 この操作には、 **FSCTL\_\_ボリューム\_NUMA\_INFO**を使用してください。
 
-*lpInBuffer*   
-この操作では使用されません。設定**NULL**
+*Lpinbuffer*   
+この操作では使用されません。**NULL**に設定
 
-*nInBufferSize* \[in\]  
-この操作では使用されません。0 に設定します。
+\] の*nInBufferSize* \[  
+この操作では使用されません。を0に設定します。
 
-*lpOutBuffer* \[アウト\]  
-受け取るバッファーへのポインターを[ **FSCTL\_クエリ\_ボリューム\_NUMA\_情報\_出力**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_fsctl_query_volume_numa_info_output)以外を指定する構造体メモリ アーキテクチャ (NUMA) ボリュームの現在のノード、統一されました。
+*Lpoutbuffer* \[out\]  
+Non-uniform Memory Architecture (NUMA) ボリュームの現在のノードを指定する[**numa\_INFO\_出力構造\_FSCTL\_QUERY\_volume**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_fsctl_query_volume_numa_info_output)を受け取るバッファーへのポインター。
 
-*nOutBufferSize* \[in\]  
-(バイト単位)、出力バッファーのサイズ。
+\] の*Noutbuffersize* \[  
+出力バッファーのサイズ (バイト単位)。
 
-*lpBytesReturned* \[out\]  
-(バイト単位)、出力バッファーに格納されているデータのサイズを受け取る変数へのポインター。
+*Lpbytesreturned* \[out\] を返しました  
+出力バッファーに格納されているデータのサイズ (バイト単位) を受け取る変数へのポインター。
 
-出力バッファーが小さすぎる場合は、呼び出しが失敗した、 [ **GetLastError** ](https://docs.microsoft.com/windows/desktop/api/errhandlingapi/nf-errhandlingapi-getlasterror)返します**エラー\_不十分\_バッファー**、および*lpBytesReturned*は 0 です。
+出力バッファーが小さすぎると、呼び出しが失敗し、 [**GetLastError**](https://docs.microsoft.com/windows/desktop/api/errhandlingapi/nf-errhandlingapi-getlasterror)が**エラー\_\_バッファーが不足**し、 *lpbytesreturned* 0 を返します。
 
-場合*lpOverlapped*は**NULL**、 *lpBytesReturned*することはできません**NULL**します。 でもときに操作を返しません出力データと*lpOutBuffer*は**NULL**、 [ **DeviceIoControl** ](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)活用*lpBytesReturned*します。 このような操作の値の後に*lpBytesReturned*は意味がありません。
+*LpOverlapped*が**null**の場合、 *lpbytesreturned* **null**にすることはできません。 操作によって出力データが返されず、 *Lpoutbuffer*が**NULL**の場合でも、 [**DeviceIoControl**](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)は*lpoutbuffer*使用して返されます。 このような操作を行った後、*返された Lpbytesreturned*値は無意味になります。
 
-場合*lpOverlapped*ない**NULL**、 *lpBytesReturned*できる**NULL**します。 このパラメーターがない場合**NULL**操作は、そのデータを返します*lpBytesReturned*オーバー ラップ処理が完了するまでは無意味です。 返されるバイト数を取得する[ **GetOverlappedResult**](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-getoverlappedresult)します。 場合、 *hDevice*パラメーターは、I/O 完了ポートに関連付け、呼び出すことによって返されるバイト数を取得する[ **GetQueuedCompletionStatus**](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-getqueuedcompletionstatus)します。
+*LpOverlapped*が**null**でない場合は、 *lpbytesreturned* **null**になることがあります。 このパラメーターが**NULL**でなく、操作がデータを返す場合は、重複操作が完了するまで、 *lpbytesreturned 返さ*れることは意味がありません。 返されるバイト数を取得するには、 [**GetOverlappedResult**](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-getoverlappedresult)を呼び出します。 *Hdevice*パラメーターが i/o 完了ポートに関連付けられている場合は、 [**GetQueuedCompletionStatus**](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-getqueuedcompletionstatus)を呼び出すことによって返されるバイト数を取得できます。
 
-*lpOverlapped* \[in\]  
-ポインター、 [ **OVERLAPPED** ](https://docs.microsoft.com/windows/desktop/api/minwinbase/ns-minwinbase-_overlapped)構造体。
+\] の*lpOverlapped* \[  
+[**オーバーラップ**](https://docs.microsoft.com/windows/desktop/api/minwinbase/ns-minwinbase-_overlapped)された構造体へのポインター。
 
-場合*hDevice*を指定せずに開かれた**ファイル\_フラグ\_OVERLAPPED**、 *lpOverlapped*は無視されます。
+**ファイル\_\_フラグ**を指定せずに*hdevice*を開いた場合、 *lpOverlapped*は無視されます。
 
-場合*hDevice*で開かれた、**ファイル\_フラグ\_OVERLAPPED**フラグは、操作がオーバー ラップ (非同期) 操作として実行します。 この場合、 *lpOverlapped*有効 をポイントする必要があります[ **OVERLAPPED** ](https://docs.microsoft.com/windows/desktop/api/minwinbase/ns-minwinbase-_overlapped)イベント オブジェクトへのハンドルを含む構造体。 それ以外の場合、関数は、予測できない方法で失敗します。
+*Hdevice*が**ファイル\_フラグ**を使用して開かれている場合は、重複フラグ\_、この操作は、オーバーラップ (非同期) 操作として実行されます。 この場合、 *lpOverlapped*は、イベントオブジェクトへのハンドルを含む有効な[**オーバーラップ**](https://docs.microsoft.com/windows/desktop/api/minwinbase/ns-minwinbase-_overlapped)構造体を指す必要があります。 それ以外の場合、関数は予期しない方法で失敗します。
 
-重複した操作は、 [ **DeviceIoControl** ](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)を即座に返します、操作が完了したときに、イベント オブジェクトがシグナル状態とします。 それ以外の場合、操作が完了したか、エラーが発生するまでには、この関数は返されません。
+オーバーラップ操作の場合、 [**DeviceIoControl**](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)はすぐに制御を返し、操作が完了するとイベントオブジェクトを通知します。 それ以外の場合、この関数は、操作が完了するかエラーが発生するまで、を返しません。
 
 <a name="return-value"></a>戻り値
 ------------
 
-操作が正常に完了した場合[ **DeviceIoControl** ](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol) 0 以外の値を返します。
+操作が正常に完了した場合、 [**DeviceIoControl**](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)は0以外の値を返します。
 
-操作は、障害が発生したり、保留中で[ **DeviceIoControl** ](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)は 0 を返します。 拡張エラー情報を取得するには呼び出します[ **GetLastError**](https://docs.microsoft.com/windows/desktop/api/errhandlingapi/nf-errhandlingapi-getlasterror)します。
+操作が失敗した場合、または保留中の場合、 [**DeviceIoControl**](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)は0を返します。 エラーの詳細情報を取得するには、 [**GetLastError**](https://docs.microsoft.com/windows/desktop/api/errhandlingapi/nf-errhandlingapi-getlasterror)を呼び出します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -101,7 +101,7 @@ BOOL
 <tbody>
 <tr class="odd">
 <td align="left"><p>Header</p></td>
-<td align="left">WinIoctl.h;Ntifs.h</td>
+<td align="left">WinIoctl. h;Ntifs</td>
 </tr>
 </tbody>
 </table>
@@ -111,7 +111,7 @@ BOOL
 
 [**DeviceIoControl**](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)
 
-[**FSCTL\_クエリ\_ボリューム\_NUMA\_情報\_出力**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_fsctl_query_volume_numa_info_output)
+[**FSCTL\_クエリ\_ボリューム\_NUMA\_情報\_出力**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_fsctl_query_volume_numa_info_output)
 
  
 

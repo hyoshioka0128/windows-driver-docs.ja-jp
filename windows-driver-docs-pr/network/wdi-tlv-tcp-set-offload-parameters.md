@@ -1,32 +1,32 @@
 ---
 title: WDI_TLV_TCP_SET_OFFLOAD_PARAMETERS
-description: WDI_TLV_TCP_SET_OFFLOAD_PARAMETERS は、OID_WDI_SET_TCP_OFFLOAD_PARAMETERS のミニポート アダプターの TCP オフロード機能を含む TLV です。
+description: WDI_TLV_TCP_SET_OFFLOAD_PARAMETERS は、OID_WDI_SET_TCP_OFFLOAD_PARAMETERS 用のミニポートアダプターの TCP オフロード機能を含む TLV です。
 ms.assetid: 1DE1114A-E718-473F-B0EB-92AEFA4E7F13
 ms.date: 07/18/2017
 keywords:
-- WDI_TLV_TCP_SET_OFFLOAD_PARAMETERS ネットワーク ドライバーが Windows Vista 以降
+- WDI_TLV_TCP_SET_OFFLOAD_PARAMETERS ネットワークドライバー (Windows Vista 以降)
 ms.localizationpriority: medium
-ms.openlocfilehash: fb8119b7da3fca7f705e0773e8ea4280f5dfb872
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: eafde637f99e6a226fd16f14ef4b6bc548b2e1a5
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67357316"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841728"
 ---
-# <a name="wditlvtcpsetoffloadparameters"></a>WDI\_TLV\_TCP\_設定\_オフロード\_パラメーター
+# <a name="wdi_tlv_tcp_set_offload_parameters"></a>WDI\_TLV\_TCP\_設定\_オフロード\_パラメーター
 
 
-WDI\_TLV\_TCP\_設定\_オフロード\_パラメーターはミニポート アダプターの TCP オフロード機能を含む TLV [OID\_WDI\_セット\_TCP\_オフロード\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-set-tcp-offload-parameters)します。
+WDI\_TLV\_TCP\_設定\_オフロード\_パラメーターは TLV で、OID 用のミニポートアダプターの TCP オフロード機能が含まれています\_\_\_[tcp\_オフロード\_パラメーターを設定](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-set-tcp-offload-parameters)します。
 
 ## <a name="tlv-type"></a>TLV 型
 
 
-0xf2 の後ろ
+0Xf2 よう
 
 ## <a name="length"></a>長さ
 
 
-含まれるすべての要素のサイズの合計をバイト単位で。
+含まれているすべての要素のサイズの合計 (バイト単位)。
 
 ## <a name="values"></a>値
 
@@ -38,193 +38,193 @@ WDI\_TLV\_TCP\_設定\_オフロード\_パラメーターはミニポート ア
 </colgroup>
 <thead>
 <tr class="header">
-<th>型</th>
+<th>タスクバーの検索ボックスに</th>
 <th>説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>UINT8</td>
-<td>ミニポート アダプターの IPv4 チェックサムの設定です。
+<td>ミニポートアダプターの IPv4 チェックサム設定。
 <p>有効な値は次のとおりです。</p>
 <ul>
-<li><strong>NDIS_OFFLOAD_PARAMETERS_NO_CHANGE</strong> -ミニポート ドライバーでは、現在の設定を変更しないでください。</li>
-<li><strong>NDIS_OFFLOAD_PARAMETERS_TX_RX_DISABLED</strong> -無効になっています。</li>
-<li><strong>NDIS_OFFLOAD_PARAMETERS_TX_ENABLED_RX_DISABLED</strong> -に対応した送信と受信を無効になっています。</li>
-<li><strong>NDIS_OFFLOAD_PARAMETERS_RX_ENABLED_TX_DISABLED</strong> -に対応した受信と送信を無効になっています。</li>
-<li><strong>NDIS_OFFLOAD_PARAMETERS_TX_RX_ENABLED</strong> -送信を有効になっていると受信します。</li>
+<li><strong>NDIS_OFFLOAD_PARAMETERS_NO_CHANGE</strong> - ミニポートドライバーは、現在の設定を変更することはできません。</li>
+<li><strong>NDIS_OFFLOAD_PARAMETERS_TX_RX_DISABLED</strong> - 無効になっています。</li>
+<li><strong>NDIS_OFFLOAD_PARAMETERS_TX_ENABLED_RX_DISABLED</strong> - 送信が有効になっていて、受信が無効になっています。</li>
+<li><strong>NDIS_OFFLOAD_PARAMETERS_RX_ENABLED_TX_DISABLED</strong> - 受信用に有効になっており、送信が無効になっています。</li>
+<li><strong>NDIS_OFFLOAD_PARAMETERS_TX_RX_ENABLED</strong> - 送信と受信が有効になっています。</li>
 </ul></td>
 </tr>
 <tr class="even">
 <td>UINT8</td>
-<td>TCP パケットの IPv4 チェックサムの設定。
+<td>TCP パケットの IPv4 チェックサム設定。
 <p>有効な値は次のとおりです。</p>
 <ul>
-<li><strong>NDIS_OFFLOAD_PARAMETERS_NO_CHANGE</strong> -ミニポート ドライバーでは、現在の設定を変更しないでください。</li>
-<li><strong>NDIS_OFFLOAD_PARAMETERS_TX_RX_DISABLED</strong> -無効になっています。</li>
-<li><strong>NDIS_OFFLOAD_PARAMETERS_TX_ENABLED_RX_DISABLED</strong> -に対応した送信と受信を無効になっています。</li>
-<li><strong>NDIS_OFFLOAD_PARAMETERS_RX_ENABLED_TX_DISABLED</strong> -に対応した受信と送信を無効になっています。</li>
-<li><strong>NDIS_OFFLOAD_PARAMETERS_TX_RX_ENABLED</strong> -送信を有効になっていると受信します。</li>
+<li><strong>NDIS_OFFLOAD_PARAMETERS_NO_CHANGE</strong> - ミニポートドライバーは、現在の設定を変更することはできません。</li>
+<li><strong>NDIS_OFFLOAD_PARAMETERS_TX_RX_DISABLED</strong> - 無効になっています。</li>
+<li><strong>NDIS_OFFLOAD_PARAMETERS_TX_ENABLED_RX_DISABLED</strong> - 送信が有効になっていて、受信が無効になっています。</li>
+<li><strong>NDIS_OFFLOAD_PARAMETERS_RX_ENABLED_TX_DISABLED</strong> - 受信用に有効になっており、送信が無効になっています。</li>
+<li><strong>NDIS_OFFLOAD_PARAMETERS_TX_RX_ENABLED</strong> - 送信と受信が有効になっています。</li>
 </ul></td>
 </tr>
 <tr class="odd">
 <td>UINT8</td>
-<td>UDP パケットを IPv4 チェックサムの設定です。
+<td>UDP パケットの IPv4 チェックサム設定。
 <p>有効な値は次のとおりです。</p>
 <ul>
-<li><strong>NDIS_OFFLOAD_PARAMETERS_NO_CHANGE</strong> -ミニポート ドライバーでは、現在の設定を変更しないでください。</li>
-<li><strong>NDIS_OFFLOAD_PARAMETERS_TX_RX_DISABLED</strong> -無効になっています。</li>
-<li><strong>NDIS_OFFLOAD_PARAMETERS_TX_ENABLED_RX_DISABLED</strong> -に対応した送信と受信を無効になっています。</li>
-<li><strong>NDIS_OFFLOAD_PARAMETERS_RX_ENABLED_TX_DISABLED</strong> -に対応した受信と送信を無効になっています。</li>
-<li><strong>NDIS_OFFLOAD_PARAMETERS_TX_RX_ENABLED</strong> -送信を有効になっていると受信します。</li>
+<li><strong>NDIS_OFFLOAD_PARAMETERS_NO_CHANGE</strong> - ミニポートドライバーは、現在の設定を変更することはできません。</li>
+<li><strong>NDIS_OFFLOAD_PARAMETERS_TX_RX_DISABLED</strong> - 無効になっています。</li>
+<li><strong>NDIS_OFFLOAD_PARAMETERS_TX_ENABLED_RX_DISABLED</strong> - 送信が有効になっていて、受信が無効になっています。</li>
+<li><strong>NDIS_OFFLOAD_PARAMETERS_RX_ENABLED_TX_DISABLED</strong> - 受信用に有効になっており、送信が無効になっています。</li>
+<li><strong>NDIS_OFFLOAD_PARAMETERS_TX_RX_ENABLED</strong> - 送信と受信が有効になっています。</li>
 </ul></td>
 </tr>
 <tr class="even">
 <td>UINT8</td>
-<td>TCP パケットの IPv6 チェックサムの設定。
+<td>TCP パケットの IPv6 チェックサム設定。
 <p>有効な値は次のとおりです。</p>
 <ul>
-<li><strong>NDIS_OFFLOAD_PARAMETERS_NO_CHANGE</strong> -ミニポート ドライバーでは、現在の設定を変更しないでください。</li>
-<li><strong>NDIS_OFFLOAD_PARAMETERS_TX_RX_DISABLED</strong> -無効になっています。</li>
-<li><strong>NDIS_OFFLOAD_PARAMETERS_TX_ENABLED_RX_DISABLED</strong> -に対応した送信と受信を無効になっています。</li>
-<li><strong>NDIS_OFFLOAD_PARAMETERS_RX_ENABLED_TX_DISABLED</strong> -に対応した受信と送信を無効になっています。</li>
-<li><strong>NDIS_OFFLOAD_PARAMETERS_TX_RX_ENABLED</strong> -送信を有効になっていると受信します。</li>
+<li><strong>NDIS_OFFLOAD_PARAMETERS_NO_CHANGE</strong> - ミニポートドライバーは、現在の設定を変更することはできません。</li>
+<li><strong>NDIS_OFFLOAD_PARAMETERS_TX_RX_DISABLED</strong> - 無効になっています。</li>
+<li><strong>NDIS_OFFLOAD_PARAMETERS_TX_ENABLED_RX_DISABLED</strong> - 送信が有効になっていて、受信が無効になっています。</li>
+<li><strong>NDIS_OFFLOAD_PARAMETERS_RX_ENABLED_TX_DISABLED</strong> - 受信用に有効になっており、送信が無効になっています。</li>
+<li><strong>NDIS_OFFLOAD_PARAMETERS_TX_RX_ENABLED</strong> - 送信と受信が有効になっています。</li>
 </ul></td>
 </tr>
 <tr class="odd">
 <td>UINT8</td>
-<td>UDP パケットの IPv6 チェックサムの設定です。
+<td>UDP パケットの IPv6 チェックサム設定。
 <p>有効な値は次のとおりです。</p>
 <ul>
-<li><strong>NDIS_OFFLOAD_PARAMETERS_NO_CHANGE</strong> -ミニポート ドライバーでは、現在の設定を変更しないでください。</li>
-<li><strong>NDIS_OFFLOAD_PARAMETERS_TX_RX_DISABLED</strong> -無効になっています。</li>
-<li><strong>NDIS_OFFLOAD_PARAMETERS_TX_ENABLED_RX_DISABLED</strong> -に対応した送信と受信を無効になっています。</li>
-<li><strong>NDIS_OFFLOAD_PARAMETERS_RX_ENABLED_TX_DISABLED</strong> -に対応した受信と送信を無効になっています。</li>
-<li><strong>NDIS_OFFLOAD_PARAMETERS_TX_RX_ENABLED</strong> -送信を有効になっていると受信します。</li>
+<li><strong>NDIS_OFFLOAD_PARAMETERS_NO_CHANGE</strong> - ミニポートドライバーは、現在の設定を変更することはできません。</li>
+<li><strong>NDIS_OFFLOAD_PARAMETERS_TX_RX_DISABLED</strong> - 無効になっています。</li>
+<li><strong>NDIS_OFFLOAD_PARAMETERS_TX_ENABLED_RX_DISABLED</strong> - 送信が有効になっていて、受信が無効になっています。</li>
+<li><strong>NDIS_OFFLOAD_PARAMETERS_RX_ENABLED_TX_DISABLED</strong> - 受信用に有効になっており、送信が無効になっています。</li>
+<li><strong>NDIS_OFFLOAD_PARAMETERS_TX_RX_ENABLED</strong> - 送信と受信が有効になっています。</li>
 </ul></td>
 </tr>
 <tr class="even">
 <td>UINT8</td>
-<td>Large Send Offload バージョン 1 (LSOV1) 設定します。
+<td>Large Send Offload version 1 (LSOV1) 設定です。
 <p>有効な値は次のとおりです。</p>
 <ul>
-<li><strong>NDIS_OFFLOAD_PARAMETERS_NO_CHANGE</strong> -ミニポート ドライバーでは、現在の設定を変更しないでください。</li>
-<li><strong>NDIS_OFFLOAD_PARAMETERS_LSOV1_ENABLED</strong> - LSOV1 を有効にします。</li>
+<li><strong>NDIS_OFFLOAD_PARAMETERS_NO_CHANGE</strong> - ミニポートドライバーは、現在の設定を変更することはできません。</li>
+<li><strong>NDIS_OFFLOAD_PARAMETERS_LSOV1_ENABLED</strong> - LSOV1 が有効になっています。</li>
 <li><strong>NDIS_OFFLOAD_PARAMETERS_LSOV1_DISABLED</strong> - LSOV1 が無効になっています。</li>
 </ul></td>
 </tr>
 <tr class="odd">
 <td>UINT8</td>
-<td>インターネット プロトコル セキュリティ (IPsec) はオフロード設定です。
+<td>インターネットプロトコルセキュリティ (IPsec) オフロード設定。
 <p>有効な値は次のとおりです。</p>
 <ul>
-<li><strong>NDIS_OFFLOAD_PARAMETERS_NO_CHANGE</strong> -ミニポート ドライバーでは、現在の設定を変更しないでください。</li>
-<li><strong>NDIS_OFFLOAD_PARAMETERS_IPSECV1_DISABLED</strong> - IPsec オフロードを無効にします。</li>
-<li><strong>NDIS_OFFLOAD_PARAMETERS_IPSECV1_AH_ENABLED</strong> - IPsec 認証ヘッダー (AH) 機能は、送信を有効にして、受信の負荷を軽減します。</li>
-<li><strong>NDIS_OFFLOAD_PARAMETERS_IPSECV1_ESP_ENABLED</strong> - IPsec カプセル化のセキュリティ ペイロード (ESP) 機能は、送信を有効にして、受信の負荷を軽減します。</li>
-<li><strong>NDIS_OFFLOAD_PARAMETERS_IPSECV1_AH_AND_ESP_ENABLED</strong> - IPsec オフロード AH と ESP 機能は、送信を有効になっているし、受信します。</li>
+<li><strong>NDIS_OFFLOAD_PARAMETERS_NO_CHANGE</strong> - ミニポートドライバーは、現在の設定を変更することはできません。</li>
+<li><strong>NDIS_OFFLOAD_PARAMETERS_IPSECV1_DISABLED</strong> - IPsec オフロードが無効になっています。</li>
+<li><strong>NDIS_OFFLOAD_PARAMETERS_IPSECV1_AH_ENABLED</strong> -、送信と受信に対して IPsec オフロード認証ヘッダー (AH) 機能を有効にする必要があります。</li>
+<li><strong>NDIS_OFFLOAD_PARAMETERS_IPSECV1_ESP_ENABLED</strong> -、IPsec オフロードカプセル化セキュリティペイロード (ESP) 機能を送信と受信に対して有効にする必要があります。</li>
+<li><strong>NDIS_OFFLOAD_PARAMETERS_IPSECV1_AH_AND_ESP_ENABLED</strong> -、送信と受信に対して IPsec オフロード AH と ESP 機能が有効になっています。</li>
 </ul></td>
 </tr>
 <tr class="even">
 <td>UINT8</td>
-<td>大規模な用の送信にオフロード IPv4 バージョン 2 (LSOV2) 設定します。
+<td>IPv4 Large Send Offload version 2 (LSOV2) 設定です。
 <p>有効な値は次のとおりです。</p>
 <ul>
-<li><strong>NDIS_OFFLOAD_PARAMETERS_NO_CHANGE</strong> -ミニポート ドライバーでは、現在の設定を変更しないでください。</li>
-<li><strong>NDIS_OFFLOAD_PARAMETERS_LSOV2_ENABLED</strong> - LSOV2 ipv4 を有効にします。</li>
-<li><strong>NDIS_OFFLOAD_PARAMETERS_LSOV2_DISABLED</strong> - ipv4 LSOV2 が無効になっています。</li>
+<li><strong>NDIS_OFFLOAD_PARAMETERS_NO_CHANGE</strong> - ミニポートドライバーは、現在の設定を変更することはできません。</li>
+<li>IPv4 の<strong>NDIS_OFFLOAD_PARAMETERS_LSOV2_ENABLED</strong> - LSOV2 が有効になっています。</li>
+<li>IPv4 の<strong>NDIS_OFFLOAD_PARAMETERS_LSOV2_DISABLED</strong> - LSOV2 が無効になっています。</li>
 </ul></td>
 </tr>
 <tr class="odd">
 <td>UINT8</td>
-<td>大規模な用の送信にオフロード IPv6 バージョン 2 (LSOV2) 設定します。
+<td>IPv6 Large Send Offload version 2 (LSOV2) 設定。
 <p>有効な値は次のとおりです。</p>
 <ul>
-<li><strong>NDIS_OFFLOAD_PARAMETERS_NO_CHANGE</strong> -ミニポート ドライバーでは、現在の設定を変更しないでください。</li>
-<li><strong>NDIS_OFFLOAD_PARAMETERS_LSOV2_ENABLED</strong> - LSOV2 ipv6 が有効にします。</li>
-<li><strong>NDIS_OFFLOAD_PARAMETERS_LSOV2_DISABLED</strong> - ipv6 LSOV2 が無効になっています。</li>
+<li><strong>NDIS_OFFLOAD_PARAMETERS_NO_CHANGE</strong> - ミニポートドライバーは、現在の設定を変更することはできません。</li>
+<li>IPv6 の<strong>NDIS_OFFLOAD_PARAMETERS_LSOV2_ENABLED</strong> - LSOV2 が有効になっています。</li>
+<li>IPv6 の<strong>NDIS_OFFLOAD_PARAMETERS_LSOV2_DISABLED</strong> - LSOV2 が無効になっています。</li>
 </ul></td>
 </tr>
 <tr class="even">
 <td>UINT8</td>
-<td>IPv4 接続はオフロード設定です。
+<td>IPv4 接続のオフロード設定です。
 <p>有効な値は次のとおりです。</p>
 <ul>
-<li><strong>NDIS_OFFLOAD_PARAMETERS_NO_CHANGE</strong> -ミニポート ドライバーでは、現在の設定を変更しないでください。</li>
+<li><strong>NDIS_OFFLOAD_PARAMETERS_NO_CHANGE</strong> - ミニポートドライバーは、現在の設定を変更することはできません。</li>
 </ul></td>
 </tr>
 <tr class="odd">
 <td>UINT8</td>
-<td>IPv6 接続はオフロード設定です。
+<td>IPv6 接続のオフロード設定です。
 <p>有効な値は次のとおりです。</p>
 <ul>
-<li><strong>NDIS_OFFLOAD_PARAMETERS_NO_CHANGE</strong> -ミニポート ドライバーでは、現在の設定を変更しないでください。</li>
+<li><strong>NDIS_OFFLOAD_PARAMETERS_NO_CHANGE</strong> - ミニポートドライバーは、現在の設定を変更することはできません。</li>
 </ul></td>
 </tr>
 <tr class="even">
 <td>UINT8</td>
-<td>IPv4 のセグメントの結合の表示状態を示します。
+<td>IPv4 の受信セグメント合体状態を示します。
 <p>有効な値は次のとおりです。</p>
 <ul>
-<li><strong>NDIS_OFFLOAD_PARAMETERS_NO_CHANGE</strong> - RSC の状態は変更されません。</li>
-<li><strong>NDIS_OFFLOAD_PARAMETERS_RSC_ENABLED</strong> - RSC の状態が有効にします。</li>
+<li><strong>NDIS_OFFLOAD_PARAMETERS_NO_CHANGE</strong> - RSC の状態が変更されていません。</li>
+<li><strong>NDIS_OFFLOAD_PARAMETERS_RSC_ENABLED</strong> - RSC の状態が有効になっています。</li>
 <li><strong>NDIS_OFFLOAD_PARAMETERS_RSC_DISABLED</strong> - RSC の状態が無効になっています。</li>
 </ul></td>
 </tr>
 <tr class="odd">
 <td>UINT8</td>
-<td>IPv6 のセグメントの結合の表示状態を示します。
+<td>IPv6 の受信セグメント合体状態を示します。
 <p>有効な値は次のとおりです。</p>
 <ul>
-<li><strong>NDIS_OFFLOAD_PARAMETERS_NO_CHANGE</strong> - RSC の状態は変更されません。</li>
-<li><strong>NDIS_OFFLOAD_PARAMETERS_RSC_ENABLED</strong> - RSC の状態が有効にします。</li>
+<li><strong>NDIS_OFFLOAD_PARAMETERS_NO_CHANGE</strong> - RSC の状態が変更されていません。</li>
+<li><strong>NDIS_OFFLOAD_PARAMETERS_RSC_ENABLED</strong> - RSC の状態が有効になっています。</li>
 <li><strong>NDIS_OFFLOAD_PARAMETERS_RSC_DISABLED</strong> - RSC の状態が無効になっています。</li>
 </ul></td>
 </tr>
 <tr class="even">
 <td>UINT32</td>
-<td>値は、フラグのビットごとの OR です。 これは、0 に設定する必要があります。 現在定義されているフラグはありません。</td>
+<td>値は、フラグのビットごとの OR です。 0に設定する必要があります。 現在定義されているフラグはありません。</td>
 </tr>
 <tr class="odd">
 <td>UINT8</td>
-<td>インターネット プロトコル セキュリティ (IPsec) は、IPv6 と IPv4 の両方をサポートするミニポート アダプターのバージョン 2 の設定をオフロードします。 これには、IPv6 と IPv4 の両方のサポートの設定を指定します。
+<td>IPv6 と IPv4 の両方をサポートするミニポートアダプターのインターネットプロトコルセキュリティ (IPsec) オフロードバージョン2設定。 IPv6 と IPv4 の両方のサポートの設定を指定します。
 <p>有効な値は次のとおりです。</p>
 <ul>
-<li><strong>NDIS_OFFLOAD_PARAMETERS_NO_CHANGE</strong> -ミニポート ドライバーでは、現在の設定を変更しないでください。</li>
-<li><strong>NDIS_OFFLOAD_PARAMETERS_IPSECV2_DISABLED</strong> - IPsec オフロード バージョン 2 が無効になっています。</li>
-<li><strong>NDIS_OFFLOAD_PARAMETERS_IPSECV2_AH_ENABLED</strong> - IPsec オフロード バージョン 2 の認証ヘッダー (AH) 機能は、送信を有効にして、受信します。</li>
-<li><strong>NDIS_OFFLOAD_PARAMETERS_IPSECV2_ESP_ENABLED</strong> - IPsec オフロード バージョン 2 のカプセル化セキュリティ ペイロード (ESP) 機能は、送信を有効にして、受信します。</li>
-<li><strong>NDIS_OFFLOAD_PARAMETERS_IPSECV2_AH_AND_ESP_ENABLED</strong> - IPsec オフロード バージョン 2 の AH と ESP の機能は、送信を有効になっているし、受信します。</li>
+<li><strong>NDIS_OFFLOAD_PARAMETERS_NO_CHANGE</strong> - ミニポートドライバーは、現在の設定を変更することはできません。</li>
+<li><strong>NDIS_OFFLOAD_PARAMETERS_IPSECV2_DISABLED</strong> - IPsec オフロードバージョン2が無効になっています。</li>
+<li><strong>NDIS_OFFLOAD_PARAMETERS_IPSECV2_AH_ENABLED</strong> -、送信と受信に対して IPsec オフロードバージョン2認証ヘッダー (AH) 機能を有効にする必要があります。</li>
+<li><strong>NDIS_OFFLOAD_PARAMETERS_IPSECV2_ESP_ENABLED</strong> -、IPsec オフロードバージョン2のカプセル化セキュリティペイロード (ESP) 機能は、送信と受信に対して有効にする必要があります。</li>
+<li><strong>NDIS_OFFLOAD_PARAMETERS_IPSECV2_AH_AND_ESP_ENABLED</strong> - IPsec オフロードバージョン 2 AH および ESP の機能が送信と受信に対して有効になっています。</li>
 </ul></td>
 </tr>
 <tr class="even">
 <td>UINT8</td>
-<td>インターネット プロトコル セキュリティ (IPsec) は、IPv4 をサポートし、IPv6 をサポートしないミニポート アダプターのバージョン 2 の設定をオフロードします。 IPsecV2 メンバーを指定すると、ミニポート ドライバーでは、IPv6 をサポートする場合、IPv4 設定とこのメンバーは使用されません。
+<td>IPv4 をサポートし、IPv6 をサポートしていないミニポートアダプターのインターネットプロトコルセキュリティ (IPsec) オフロードバージョン2設定。 ミニポートドライバーが IPv6 をサポートしている場合、IPsecV2 メンバーは IPv4 設定を指定し、このメンバーは使用されません。
 <p>有効な値は次のとおりです。</p>
 <ul>
-<li><strong>NDIS_OFFLOAD_PARAMETERS_NO_CHANGE</strong> -ミニポート ドライバーでは、現在の設定を変更しないでください。</li>
-<li><strong>NDIS_OFFLOAD_PARAMETERS_IPSECV2_DISABLED</strong> - IPsec オフロード バージョン 2 が無効になっています。</li>
-<li><strong>NDIS_OFFLOAD_PARAMETERS_IPSECV2_AH_ENABLED</strong> - IPsec オフロード バージョン 2 の認証ヘッダー (AH) 機能は、送信を有効にして、受信します。</li>
-<li><strong>NDIS_OFFLOAD_PARAMETERS_IPSECV2_ESP_ENABLED</strong> - IPsec オフロード バージョン 2 のカプセル化セキュリティ ペイロード (ESP) 機能は、送信を有効にして、受信します。</li>
-<li><strong>NDIS_OFFLOAD_PARAMETERS_IPSECV2_AH_AND_ESP_ENABLED</strong> - IPsec オフロード バージョン 2 の AH と ESP の機能は、送信を有効になっているし、受信します。</li>
+<li><strong>NDIS_OFFLOAD_PARAMETERS_NO_CHANGE</strong> - ミニポートドライバーは、現在の設定を変更することはできません。</li>
+<li><strong>NDIS_OFFLOAD_PARAMETERS_IPSECV2_DISABLED</strong> - IPsec オフロードバージョン2が無効になっています。</li>
+<li><strong>NDIS_OFFLOAD_PARAMETERS_IPSECV2_AH_ENABLED</strong> -、送信と受信に対して IPsec オフロードバージョン2認証ヘッダー (AH) 機能を有効にする必要があります。</li>
+<li><strong>NDIS_OFFLOAD_PARAMETERS_IPSECV2_ESP_ENABLED</strong> -、IPsec オフロードバージョン2のカプセル化セキュリティペイロード (ESP) 機能は、送信と受信に対して有効にする必要があります。</li>
+<li><strong>NDIS_OFFLOAD_PARAMETERS_IPSECV2_AH_AND_ESP_ENABLED</strong> - IPsec オフロードバージョン 2 AH および ESP の機能が送信と受信に対して有効になっています。</li>
 </ul></td>
 </tr>
 <tr class="odd">
 <td>UINT8</td>
-<td>タスク オフロードのパケットをカプセル化されます。 プロトコル ドライバーでは、次の値のいずれかにこのフィールドを設定します。
+<td>カプセル化されたパケットタスクオフロード。 プロトコルドライバーは、このフィールドを次のいずれかの値に設定します。
 <p></p>
 <ul>
-<li><strong>NDIS_OFFLOAD_SET_NO_CHANGE</strong> (0) - NVGRE タスク オフロードの状態は変更されません。</li>
-<li><strong>NDIS_OFFLOAD_SET_ON</strong> (1) - により、NVGRE タスク オフロードです。</li>
-<li><strong>NDIS_OFFLOAD_SET_OFF</strong> (2) - を無効に NVGRE タスク オフロードです。</li>
+<li><strong>NDIS_OFFLOAD_SET_NO_CHANGE</strong> (0)-nvgre タスクオフロードの状態は変更されていません。</li>
+<li><strong>NDIS_OFFLOAD_SET_ON</strong> (1)-nvgre タスクのオフロードを有効にします。</li>
+<li><strong>NDIS_OFFLOAD_SET_OFF</strong> (2)-nvgre タスクのオフロードを無効にします。</li>
 </ul></td>
 </tr>
 <tr class="even">
 <td>UINT8</td>
-<td>型のカプセル化します。 このフィールドは、カプセル化パケット タスク オフロードに設定されている場合にのみ、有効な<strong>NDIS_OFFLOAD_SET_ON</strong>します。 カプセル化パケット タスク オフロード メンバーに設定されていないかどうかは<strong>NDIS_OFFLOAD_SET_ON</strong>、このメンバーは 0 になります。 プロトコル ドライバーは、または、必要なカプセル化の種類に対応するフラグのビットごとにカプセル化の種類を設定する必要があります。 これは、次のフラグから選択できます。
+<td>カプセル化の種類。 このフィールドは、カプセル化されたパケットタスクオフロードが<strong>NDIS_OFFLOAD_SET_ON</strong>に設定されている場合にのみ有効です。 カプセル化されたパケットタスクのオフロードメンバーが<strong>NDIS_OFFLOAD_SET_ON</strong>に設定されていない場合、このメンバーは0になります。 プロトコルドライバーでは、カプセル化の種類を、必要なカプセル化の型に対応するフラグのビットごとの OR に設定する必要があります。 次のフラグから選択できます。
 <p></p>
 <ul>
-<li><strong>NDIS_ENCAPSULATION_TYPE_GRE_MAC</strong> (0x00000001) - 指定 GRE MAC encapsulation (NVGRE)。</li>
+<li><strong>NDIS_ENCAPSULATION_TYPE_GRE_MAC</strong> (0x00000001)-GRE MAC カプセル化 (Nvgre) を指定します。</li>
 </ul></td>
 </tr>
 </tbody>
@@ -232,7 +232,7 @@ WDI\_TLV\_TCP\_設定\_オフロード\_パラメーターはミニポート ア
 
  
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -251,7 +251,7 @@ WDI\_TLV\_TCP\_設定\_オフロード\_パラメーターはミニポート ア
 </tr>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Wditypes.hpp</td>
+<td>Wditypes</td>
 </tr>
 </tbody>
 </table>
@@ -259,7 +259,7 @@ WDI\_TLV\_TCP\_設定\_オフロード\_パラメーターはミニポート ア
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_オフロード\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_offload_parameters)
+[**NDIS\_オフロード\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_offload_parameters)
 
 [OID\_WDI\_設定\_TCP\_オフロード\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-set-tcp-offload-parameters)
 

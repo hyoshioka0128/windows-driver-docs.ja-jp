@@ -4,21 +4,21 @@ description: ScsiReadCapacity
 ms.assetid: ee4a0d3f-028b-4d25-badf-393198da3191
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 1ca81c64f38cc58df5c5f3624bc28f64cde4e8fe
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a5c8934bc35a74d89a03e860ca8019757bdecb46
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363348"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842636"
 ---
 # <a name="scsireadcapacity"></a>ScsiReadCapacity
 
 
-**ScsiReadCapacity**メソッドは iSCSI イニシエーターをターゲットにログオンして、ターゲットで論理ユニットに読み取り容量コマンド SCSI を発行する HBA を管理し、結果を返すミニポート ドライバーに指示します。
+**ScsiReadCapacity**メソッドは、ISCSI イニシエーター HBA を管理するミニポートドライバーに対して、ターゲットにログオンし、SCSI 読み取り容量コマンドをターゲットの論理ユニットに発行し、結果を返すように指示します。
 
-この WMI メソッドは、パブリッシュされていないに属する[MSiSCSI\_操作 WMI クラス](msiscsi-operations-wmi-class.md)します。 パラメーターの説明については、 **ScsiReadCapacity**メソッドのメンバーの説明を参照してください、 [ **ScsiReadCapacity\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsiop/ns-iscsiop-_scsireadcapacity_in)と[ **ScsiReadCapacity\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsiop/ns-iscsiop-_scsireadcapacity_out)構造体。
+この WMI メソッドは、発行されていない[Msiscsi\_OPERATIONS WMI クラス](msiscsi-operations-wmi-class.md)に属しています。 **ScsiReadCapacity**メソッドのパラメーターの説明については、「」および「 [**ScsiReadCapacity\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/iscsiop/ns-iscsiop-_scsireadcapacity_out)構造体」の「メンバーの[ **\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/iscsiop/ns-iscsiop-_scsireadcapacity_in)説明」を参照してください。
 
-ミニポート ドライバー、MSiSCSI を実装する\_操作 WMI クラスをサポートする必要があります**ScsiReadCapacity**します。
+MSiSCSI\_Operations WMI クラスを実装するミニポートドライバーは、 **ScsiReadCapacity**をサポートしている必要があります。
 
  
 

@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_CAMERACONTROL\_拡張\_FOCUSSTATE
-description: KSPROPERTY\_CAMERACONTROL\_拡張\_FOCUSSTATE プロパティ ID、KSPROPERTY で定義されている\_CAMERACONTROL\_拡張\_プロパティの列挙を使用して、取得、フォーカス状態のドライバーから。 これは、読み取り専用フィルター レベルのプロパティです。
+title: KSK プロパティ\_CAMERACONTROL\_EXTENDED\_FOCUSSTATE
+description: Ksk プロパティ\_CAMERACONTROL\_EXTENDED\_FOCUSSTATE プロパティ ID\_で定義されている CAMERACONTROL\_拡張\_プロパティ列挙を使用して、ドライバーからフォーカス状態を取得します。 これは、読み取り専用のフィルターレベルのプロパティです。
 ms.assetid: 53D54443-59AD-4078-BD13-CB193B89E488
 keywords:
-- KSPROPERTY_CAMERACONTROL_EXTENDED_FOCUSSTATE ストリーミング メディア デバイス
+- KSPROPERTY_CAMERACONTROL_EXTENDED_FOCUSSTATE ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,16 +14,16 @@ api_type:
 - HeaderDef
 ms.date: 09/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ac971f909c30fcf96fbc31f98c407dec98e1d66
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 28c7cbf816661519837be2aadef01c2d6dd31410
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355377"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844835"
 ---
-# <a name="kspropertycameracontrolextendedfocusstate"></a>KSPROPERTY\_CAMERACONTROL\_拡張\_FOCUSSTATE
+# <a name="ksproperty_cameracontrol_extended_focusstate"></a>KSK プロパティ\_CAMERACONTROL\_EXTENDED\_FOCUSSTATE
 
-**KSPROPERTY\_CAMERACONTROL\_拡張\_FOCUSSTATE**で定義されているプロパティ ID、 [ **KSPROPERTY\_CAMERACONTROL\_拡張\_プロパティ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ne-ksmedia-ksproperty_cameracontrol_extended_property)列挙型を使用して、ドライバーからフォーカス状態を取得します。 これは、読み取り専用フィルター レベルのプロパティです。
+Ksk プロパティ **\_CAMERACONTROL\_extended\_FOCUSSTATE**プロパティ ID\_で定義されている[**CAMERACONTROL\_拡張\_プロパティ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ne-ksmedia-ksproperty_cameracontrol_extended_property)列挙を使用して、フォーカス状態をdriver. これは、読み取り専用のフィルターレベルのプロパティです。
 
 ## <a name="usage-summary-table"></a>使用状況の概要テーブル
 
@@ -35,9 +35,9 @@ ms.locfileid: "67355377"
 </colgroup>
 <thead>
 <tr class="header">
-<th>Scope</th>
+<th>適用範囲</th>
 <th>コントロール</th>
-<th>種類</th>
+<th>タスクバーの検索ボックスに</th>
 </tr>
 </thead>
 <tbody>
@@ -49,9 +49,9 @@ ms.locfileid: "67355377"
 </tbody>
 </table>
 
-[ **KSCAMERA\_EXTENDEDPROP\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)フラグ値には、カメラのドライバーによって返されるフォーカスの状態が含まれています。 これは、同期 get 唯一のコントロールです。 使用可能なフォーカス状態の値が提供されている、 [ **KSCAMERA\_EXTENDEDPROP\_FOCUSSTATE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ne-ksmedia-kscamera_extendedprop_focusstate)列挙体。
+[**KSCAMERA\_EXTENDEDPROP\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)の場合、flags 値にはカメラドライバーによって返されるフォーカス状態が含まれます。 これは、同期 get のみの制御です。 使用可能なフォーカス状態の値は、 [**KSCAMERA\_EXTENDEDPROP\_FOCUSSTATE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ne-ksmedia-kscamera_extendedprop_focusstate)列挙に示されます。
 
-次の表には、説明と要件が含まれています、 **KSCAMERA\_EXTENDEDPROP\_ヘッダー**フォーカス状態のコントロールを使用する場合は、フィールドを構造体します。
+次の表には、フォーカス状態コントロールを使用する場合の**KSCAMERA\_EXTENDEDPROP\_ヘッダー**構造のフィールドの説明と要件が含まれています。
 
 <table>
 <colgroup>
@@ -60,39 +60,39 @@ ms.locfileid: "67355377"
 </colgroup>
 <thead>
 <tr class="header">
-<th>Member</th>
+<th>メンバー</th>
 <th>説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>これは、1、</p></td>
+<td><p>これは1である必要があります。</p></td>
 </tr>
 <tr class="even">
 <td><p>PinId</p></td>
-<td><p>これでなければなりません<strong>KSCAMERA_EXTENDEDPROP_FILTERSCOPE</strong> (0 xffffffff)</p></td>
+<td><p>これは<strong>KSCAMERA_EXTENDEDPROP_FILTERSCOPE</strong> (0xffffffff) である必要があります。</p></td>
 </tr>
 <tr class="odd">
-<td><p>サイズ</p></td>
-<td><p>Sizeof 必要があります (<strong>KSCAMERA_EXTENDEDPROP_HEADER</strong>) + sizeof (<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_value" data-raw-source="[&lt;strong&gt;KSCAMERA_EXTENDEDPROP_VALUE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_value)"><strong>KSCAMERA_EXTENDEDPROP_VALUE</strong></a>)</p></td>
+<td><p>Size</p></td>
+<td><p>これは sizeof (<strong>KSCAMERA_EXTENDEDPROP_HEADER</strong>) + Sizeof (<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_value" data-raw-source="[&lt;strong&gt;KSCAMERA_EXTENDEDPROP_VALUE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_value)"><strong>KSCAMERA_EXTENDEDPROP_VALUE</strong></a>) である必要があります</p></td>
 </tr>
 <tr class="even">
 <td><p>結果</p></td>
-<td><p>これは、0 でなければなりません。</p></td>
+<td><p>0にする必要があります。</p></td>
 </tr>
 <tr class="odd">
 <td><p>機能</p></td>
-<td><p>これは、0 でなければなりません。</p></td>
+<td><p>0にする必要があります。</p></td>
 </tr>
 <tr class="even">
 <td><p>フラグ</p></td>
-<td><p>これは、読み取り専用フィールドです。 これには、ドライバーによって返されるフォーカスの状態が含まれています。 フォーカス状態の詳細については、次を参照してください。、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ne-ksmedia-kscamera_extendedprop_focusstate" data-raw-source="[&lt;strong&gt;KSCAMERA_EXTENDEDPROP_FOCUSSTATE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ne-ksmedia-kscamera_extendedprop_focusstate)"> <strong>KSCAMERA_EXTENDEDPROP_FOCUSSTATE</strong> </a>トピック。</p></td>
+<td><p>これは読み取り専用フィールドです。 これには、ドライバーによって返されるフォーカス状態が含まれます。 フォーカス状態の詳細については、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ne-ksmedia-kscamera_extendedprop_focusstate" data-raw-source="[&lt;strong&gt;KSCAMERA_EXTENDEDPROP_FOCUSSTATE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ne-ksmedia-kscamera_extendedprop_focusstate)"><strong>KSCAMERA_EXTENDEDPROP_FOCUSSTATE</strong></a>のトピックを参照してください。</p></td>
 </tr>
 </tbody>
 </table>
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 <table>
 <colgroup>

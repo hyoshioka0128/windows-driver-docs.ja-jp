@@ -3,48 +3,48 @@ title: IPsec Offload Version 2 の概要
 description: IPsec Offload Version 2 の概要
 ms.assetid: d8fd0bf8-f7b6-44ad-a3dc-f10bb20ce651
 keywords:
-- IPsecOV2 WDK TCP/IP トランスポートは、IPsecOV2 について
+- IPsecOV2 WDK TCP/IP transport、IPsecOV2 について
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dc9d12ecffec7edf84276b5256c0f6dab15dcf98
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9565942f7a7bf983626702d4ac8982ad3c1d75e9
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378676"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844173"
 ---
 # <a name="introduction-to-ipsec-offload-version-2"></a>IPsec Offload Version 2 の概要
 
-\[IPsec タスク オフロード機能は非推奨し、は使用できません。\]
+\[IPsec タスクオフロード機能は非推奨とされているため、使用しないでください。\]
 
 
 
 
-IPsec オフロード バージョン 2 (IPsecOV2) は、IPsec オフロード バージョン 1 (IPsecOV1) で提供されているサービスを拡張します。 IPsecOV1 オフロードと IPsec の詳細については、次を参照してください。 [IPsec オフロード バージョン 1](ipsec-offload-version-1.md)します。
+IPsec オフロードバージョン 2 (IPsecOV2) は、IPsec オフロードバージョン 1 (IPsecOV1) で提供されるサービスを拡張します。 IPsecOV1 オフロードと IPsec の詳細については、「 [Ipsec オフロードバージョン 1](ipsec-offload-version-1.md)」を参照してください。
 
-NDIS 6.1 と以降のミニポート ドライバー レポート、IPsecOV2 する NDIS ミニポート アダプターの機能をオフロードします。 IPsec の機能を報告します。
+NDIS 6.1 以降のミニポートドライバーは、ミニポートアダプターの IPsecOV2 オフロード機能を NDIS に報告します。 IPsec 機能を報告するには:
 
--   初期化中に、ミニポート ドライバーをレポート タスク オフロードの既定の構成およびミニポート アダプターのハードウェア機能、 [ **NDIS\_ミニポート\_アダプター\_オフロード\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_offload_attributes)構造体。
+-   初期化中に、ミニポートドライバーは、タスクオフロードの既定の構成と、 [**NDIS\_ミニポート\_アダプター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_offload_attributes)のミニポートアダプターのハードウェア機能を報告し、\_属性の構造\_オフロードします。
 
--   ミニポート ドライバーが現在の構成とをレポートする構成済みの機能を変更する場合、 [ **NDIS\_状態\_タスク\_オフロード\_現在\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-task-offload-current-config)状態を示す値。 場合、構成を変更することができます、 [OID\_TCP\_オフロード\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-offload-parameters) OID ミニポート アダプターの現在のタスク オフロードの構成を設定します。 また場合、ハードウェア構成、 [MUX 中間ドライバー](ndis-mux-intermediate-drivers.md)変更、MUX 中間ドライバーのハードウェア構成の変更を報告する必要があります、 [ **NDIS\_の状態\_タスク\_オフロード\_ハードウェア\_機能**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-task-offload-hardware-capabilities)状態を示す値。
+-   構成した機能が変更された場合は、現在の構成が、ミニポートドライバーによって、 [**NDIS\_ステータス\_タスク\_オフロード\_現在の\_構成**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-task-offload-current-config)状態が表示されます。 構成は、 [oid\_TCP\_オフロード\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-offload-parameters) oid によって、ミニポートアダプターの現在のタスクオフロード構成が設定されている場合に変更される可能性があります。 また、 [mux 中間ドライバー](ndis-mux-intermediate-drivers.md)のハードウェア構成が変更された場合、mux 中間ドライバーは、ハードウェア構成の変更を、 [**NDIS\_STATUS\_タスク\_オフロード\_ハードウェアに報告する必要があり\_機能**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-task-offload-hardware-capabilities)の状態を示します。
 
-NDIS ミニポート アダプターのオフロード機能にプロトコル ドライバーに関連する既定の構成を報告する、 [ **NDIS\_バインド\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_bind_parameters)構造体。 プロトコル ドライバーに重なって IPsecOV2 タスク オフロード、現在の構成でサポートされているサービスからサービスを選択できます。 [ **NDIS\_状態\_タスク\_オフロード\_現在\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-task-offload-current-config)状態表示により、後続のすべてプロトコル ドライバーは、新しい機能の情報で更新されます。
+NDIS は、ミニポートアダプターのオフロード機能の既定の構成を、 [**ndis\_BIND\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_bind_parameters)構造体のプロトコルドライバーに報告します。 プロトコルドライバーでは、現在の構成でサポートされているサービスから IPsecOV2 タスクオフロードサービスを選択できます。 [**NDIS\_status\_タスク\_オフロード\_現在の\_構成**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-task-offload-current-config)の状態の表示では、すべてのプロトコルドライバーが新機能の情報で更新されます。
 
-初期化中にハードウェアの機能をレポートするときに、ミニポート ドライバーは、レジストリから標準化されたキーワードを読み取る必要があります。 IPsecOV2 オフロード機能の詳細については、次を参照してください。[レポート NIC の IPsec オフロード バージョン 2 機能](reporting-a-nic-s-ipsec-offload-version-2-capabilities.md)します。
+初期化中にハードウェア機能を報告する場合、ミニポートドライバーはレジストリから標準化されたキーワードを読み取る必要があります。 IPsecOV2 オフロード機能の詳細については、「 [NIC の IPsec オフロードバージョン2機能の報告](reporting-a-nic-s-ipsec-offload-version-2-capabilities.md)」を参照してください。
 
-**注**  NDIS NDIS 6.1 と以降のドライバーの直接の OID 要求インターフェイスを提供します。 [OID の直接の要求パス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)クエリを実行したり、頻繁に設定されている OID 要求をサポートします。
+**  ndis**は、ndis 6.1 以降のドライバー用の直接 OID 要求インターフェイスを提供します。 [直接 oid 要求パス](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)は、クエリまたは頻繁に設定される oid 要求をサポートしています。
 
  
 
-IPsecOV2 の提供、 [OID\_TCP\_タスク\_IPSEC\_オフロード\_V2\_追加\_SA](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-task-ipsec-offload-v2-add-sa)、 [OID\_TCP\_タスク\_IPSEC\_オフロード\_V2\_UPDATE\_SA](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-task-ipsec-offload-v2-update-sa)、および[OID\_TCP\_タスク\_IPSEC\_オフロード\_V2\_削除\_SA](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-task-ipsec-offload-v2-delete-sa)追加、更新、およびセキュリティ アソシエーション (Sa) を削除するプロトコルのドライバーを有効にする OID 要求を送信します。 SAs の詳細については、次を参照してください。 [IPsec オフロード バージョン 2 のセキュリティ アソシエーションを管理する](managing-security-associations-in-ipsec-offload-version-2.md)します。
+IPsecOV2 は、 [ipsec\_オフロード\_v2\_\_SA](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-task-ipsec-offload-v2-add-sa)、 [OID\_TCP\_タスク\_ipsec\_オフロード\_V2 @no__t_ を追加する\_の\_TCP タスク\_の oid を提供14_ UPDATE\_SA](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-task-ipsec-offload-v2-update-sa)、 [OID\_TCP\_タスク\_IPSEC\_オフロード\_V2\_\_SA](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-task-ipsec-offload-v2-delete-sa)直接 OID 要求を削除して、プロトコルドライバーの追加、更新を有効にします。を削除し、セキュリティアソシエーション (SAs) を削除します。 SAs の詳細については、「 [IPsec オフロードバージョン2でのセキュリティアソシエーションの管理](managing-security-associations-in-ipsec-offload-version-2.md)」を参照してください。
 
-NIC は、送信で IPsec オフロード タスクを実行し、パスを受信できます。 NDIS ドライバーを使用して、 [ **NDIS\_IPSEC\_オフロード\_V2\_NET\_バッファー\_一覧\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_ipsec_offload_v2_net_buffer_list_info)、[ **NDIS\_IPSEC\_オフロード\_V2\_ヘッダー\_NET\_バッファー\_一覧\_情報** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_ipsec_offload_v2_header_net_buffer_list_info)、および[ **NDIS\_IPSEC\_オフロード\_V2\_トンネル\_NET\_バッファー\_ボックスの一覧\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_ipsec_offload_v2_tunnel_net_buffer_list_info) IPsec アウト オブ バンド (OOB) の情報にアクセスする構造体。
+NIC は、送信パスと受信パスに対して IPsec オフロードタスクを実行できます。 NDIS ドライバーでは、 [**ndis\_ipsec\_オフロード\_V2\_NET\_BUFFER\_LIST\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_ipsec_offload_v2_net_buffer_list_info)、 [**NDIS\_IPSEC\_OFFLOAD\_V2\_HEADER\_NET\_BUFFER\_LIST\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_ipsec_offload_v2_header_net_buffer_list_info)、および[**NDIS\_ipsec\_オフロード\_V2\_トンネル\_NET\_BUFFER\_LIST\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_ipsec_offload_v2_tunnel_net_buffer_list_info)構造体を使用して ipsec アウトオブバンド (OOB) にアクセスする参照.
 
-上にあるドライバーが OOB 情報の送信 SA と IPsec ヘッダー情報に、ハンドルを設定、送信パス上、 [ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)構造体を指定するにはNIC には、IPsecOV2 オフロード タスクを実行する必要があります。
+送信パスでは、これ以降のドライバーは、IPsecOV2 のオフロードタスクを実行する必要があることを指定するために、 [**NET\_BUFFER\_LIST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)構造の OOB 情報の送信 SA と IPsec ヘッダー情報にハンドルを設定します。
 
-受信パスでは、SA をオフロードすると後、NIC する必要があります実行 IPsec に NDIS ミニポート ドライバーが報告された機能に一致するすべての受信パケットの処理します。 ミニポート ドライバーは、OOB 情報で適切なフラグを設定、 [ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)特定を指定する構造体は、NIC が実行されるタスクをオフロードし、これらの操作の結果。
+受信パスでは、SA がオフロードされた後、NIC は、ミニポートドライバーが NDIS に報告した機能に一致するすべての受信パケットに対して IPsec 処理を実行する必要があります。 ミニポートドライバーは、 [**NET\_BUFFER\_LIST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)構造の OOB 情報に適切なフラグを設定して、NIC が実行する特定のオフロードタスクとそれらの操作の結果を指定します。
 
-送信し、受信 IPsecOV2 の処理についての詳細についてを参照してください。 [IPsec オフロード バージョン 2 でのネットワーク データの送信](sending-network-data-with-ipsec-offload-version-2.md)と[IPsec オフロード バージョン 2 でのネットワーク データの受信](receiving-network-data-with-ipsec-offload-version-2.md)します。
+IPsecOV2 での送受信処理の詳細については、「 [Ipsec オフロードバージョン2を使用してネットワークデータを送信](sending-network-data-with-ipsec-offload-version-2.md)する」および「 [Ipsec オフロードバージョン2でネットワークデータを受信](receiving-network-data-with-ipsec-offload-version-2.md)する」を参照してください。
 
  
 

@@ -4,47 +4,47 @@ description: プロキシ接続追跡の使用
 ms.assetid: 20A737D7-043D-4D05-A15D-85595E48521B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 44e8ffbd0db09d54b0de82578b20f84718c14291
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 92ef88b7c31d0aca84041f5eab8191ebbcfcbce9
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371774"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842975"
 ---
 # <a name="using-proxied-connections-tracking"></a>プロキシ接続追跡の使用
 
 
-追跡プロキシの接続は、Windows 8 および Windows の以降のバージョンでサポートされます。
+プロキシ接続の追跡は、Windows 8 以降のバージョンの Windows でサポートされています。
 
-この WFP 機能には、最終的な宛先に接続する接続のリダイレクトに基づく初期リダイレクト「レコード」の追跡が容易になります。 WFP は、コールアウト ドライバーの接続をリダイレクトすることもできます。
+この WFP 機能により、接続の最初のリダイレクトから宛先へのリダイレクト "レコード" の追跡が容易になります。 また、WFP は、コールアウトドライバーが接続をリダイレクトできるようにします。
 
-### <a name="proxied-connections-tracking"></a>追跡プロキシの接続
+### <a name="proxied-connections-tracking"></a>プロキシ接続の追跡
 
-(たとえば、さまざまな Isv が開発した) 複数のプロキシの存在は最終送付先との通信に 1 つのパーティで使用する接続が 2 番目のパーティ; してリダイレクトする順番新しい接続が元のパーティによってリダイレクトされる可能性がもう一度です。 プロキシの無限ループでスタックしている、取得と、元の接続追跡接続を行わず、最終的な宛先は到達で可能性があることはありません。
+複数のプロキシが存在する (たとえば、さまざまな Isv によって開発された) 場合、一方のパーティが最終的な送信先と通信するために使用する接続は、2番目のパーティによってリダイレクトされます。また、元のパーティによって新しい接続が再びリダイレクトされる可能性があります。 接続の追跡がないと、元の接続は無限プロキシループでスタックして最終的な宛先に達しない可能性があります。
 
-接続の追跡をサポートするためにデータ フィールドの識別子に追加されたものは次のとおりです。
+接続追跡をサポートするためのデータフィールド識別子への追加には、次のものがあります。
 
-<a href="" id="fwps-field-xxx-ale-original-app-id"></a>FWPS\_フィールド\_Xxx\_ALE\_元\_アプリ\_ID  
-プロキシ接続には、元のアプリケーションの完全パス。 このパスは xxx と同じ場合は、アプリケーションはプロキシ処理されていない、\_ALE\_アプリ\_id。
+<a href="" id="fwps-field-xxx-ale-original-app-id"></a>FWPS\_フィールド\_Xxx\_ALE\_元の\_アプリ\_ID  
+プロキシ接続用の元のアプリケーションの完全なパス。 アプリケーションがプロキシ化されていない場合、このパスは、xxx\_ALE\_アプリの\_ID と同じになります。
 
 <a href="" id="fwps-field-xxx-package-id"></a>FWPS\_フィールド\_Xxx\_パッケージ\_ID  
-パッケージ識別子は、関連付けられた AppContainer プロセスを識別するセキュリティ識別子 (SID) です。 SID 構造体の詳細については、Microsoft Windows sdk で SID 構造体の説明を参照してください。
+パッケージ識別子は、関連付けられている AppContainer プロセスを識別するセキュリティ識別子 (SID) です。 SID 構造の詳細については、Microsoft Windows SDK のドキュメントで SID 構造の説明を参照してください。
 
-### <a name="redirecting-connections"></a>接続をリダイレクトします。
+### <a name="redirecting-connections"></a>リダイレクト (接続を)
 
-コールアウト ドライバーは呼び出し、 [ **FwpsRedirectHandleCreate0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsredirecthandlecreate0) TCP 接続をリダイレクトするために使用できるハンドルを作成する関数。
+コールアウトドライバーは、 [**FwpsRedirectHandleCreate0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsredirecthandlecreate0)関数を呼び出して、TCP 接続をリダイレクトするために使用できるハンドルを作成します。
 
 ここでは、次のトピックについて説明します。
 
-リダイレクトのハンドルを使用してください。
+リダイレクトハンドルの使用
 
-リダイレクト状態のクエリを実行します。
+リダイレクト状態のクエリ
 
-### <a name="using-a-redirection-handle"></a>リダイレクトのハンドルを使用してください。
+### <a name="using-a-redirection-handle"></a>リダイレクトハンドルの使用
 
-リダイレクト コールアウトは、ローカルのプロセスに接続をリダイレクトできますエール接続前に、FwpsRedirectHandleCreate0 関数を使用したリダイレクト ハンドルを取得し、ハンドルを配置する必要があります、 [ **FWPS\_CONNECT\_REQUEST0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/ns-fwpsk-_fwps_connect_request0)構造体。 引き出し線は、ALE connect レイヤーをリダイレクトするための classifyFn で構造を変更します。
+ALE 接続リダイレクトの吹き出しでローカルプロセスに接続をリダイレクトする前に、FwpsRedirectHandleCreate0 関数を使用してリダイレクトハンドルを取得し、そのハンドルを[**Fwps\_connect\_REQUEST0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/ns-fwpsk-_fwps_connect_request0)構造体に配置する必要があります。 このコールアウトによって、ALE 接続リダイレクトレイヤーの Classid の構造が変更されます。
 
-FWPS\_CONNECT\_REQUEST0 構造体にはリダイレクトは、次のメンバーが含まれています。
+FWPS\_CONNECT\_REQUEST0 構造体には、リダイレクト用に次のメンバーが含まれています。
 
 <table>
 <colgroup>
@@ -53,41 +53,41 @@ FWPS\_CONNECT\_REQUEST0 構造体にはリダイレクトは、次のメンバ�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">項目</th>
+<th align="left">用語</th>
 <th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>localRedirectHandle</strong></p></td>
-<td align="left"><p>コールアウト ドライバーを呼び出すことによって作成されるリダイレクト ハンドル、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsredirecthandlecreate0" data-raw-source="[&lt;strong&gt;FwpsRedirectHandleCreate0&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsredirecthandlecreate0)"> <strong>FwpsRedirectHandleCreate0</strong> </a>関数。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsredirecthandlecreate0" data-raw-source="[&lt;strong&gt;FwpsRedirectHandleCreate0&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsredirecthandlecreate0)"><strong>FwpsRedirectHandleCreate0</strong></a>関数を呼び出すことによってコールアウトドライバーによって作成されたリダイレクトハンドル。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>localRedirectContext</strong></p></td>
-<td align="left"><p>コールアウト ドライバーを呼び出すことによって割り当てられているコールアウト ドライバーのコンテキスト領域、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtag" data-raw-source="[&lt;strong&gt;ExAllocatePoolWithTag&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtag)"> <strong>exallocatepoolwithtag に</strong></a>関数。</p></td>
+<td align="left"><p>このコールアウトドライバーが、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag" data-raw-source="[&lt;strong&gt;ExAllocatePoolWithTag&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag)"><strong>Exallocatepoolwithtag</strong></a>関数を呼び出すことによって割り当てた、コールアウトドライバーのコンテキスト領域。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>localRedirectContextSize</strong></p></td>
-<td align="left"><p>引き出し線のバイト単位のサイズは、コンテキストの領域を指定します。</p></td>
+<td align="left"><p>コールアウトによって指定されたコンテキスト領域のサイズ (バイト単位)。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-コールアウト ドライバーが完了したら、リダイレクトのハンドルを使用して、呼び出す必要があります、 [ **FwpsRedirectHandleDestroy0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsredirecthandledestroy0)ハンドルを破棄する関数。
+コールアウトドライバーがリダイレクトハンドルの使用を終了したら、 [**FwpsRedirectHandleDestroy0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsredirecthandledestroy0)関数を呼び出してハンドルを破棄する必要があります。
 
-### <a name="querying-the-redirect-state"></a>リダイレクト状態のクエリを実行します。
+### <a name="querying-the-redirect-state"></a>リダイレクト状態のクエリ
 
-コールアウト ドライバーは呼び出し、 [ **FwpsQueryConnectionRedirectState0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsqueryconnectionredirectstate0)接続のリダイレクトの状態を取得します。 [ **FWPS\_接続\_リダイレクト\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/ne-fwpsk-fwps_connection_redirect_state_)列挙型への呼び出しの戻り値の型は、 **FwpsQueryConnectionRedirectState0**関数。
+コールアウトドライバーは、接続のリダイレクト状態を取得するために[**FwpsQueryConnectionRedirectState0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsqueryconnectionredirectstate0)関数を呼び出します。 [**Fwps\_CONNECTION\_REDIRECT\_STATE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/ne-fwpsk-fwps_connection_redirect_state_)列挙体は、 **FwpsQueryConnectionRedirectState0**関数への呼び出しの戻り値の型です。
 
-リダイレクト状態が FWPS 場合\_接続\_いない\_REDIRECTED、ALE\_CONNECT\_リダイレクト吹き出しに進んでプロキシ接続します。
+リダイレクトの状態が FWPS の場合\_接続\_\_リダイレクトされていない場合は、ALE\_CONNECT\_REDIRECT コールアウトは、接続のプロキシに進むことができます。
 
-リダイレクト状態が FWPS 場合\_接続\_REDIRECTED\_BY\_SELF、ALE\_CONNECT\_リダイレクト コールアウトは、FWP を返す必要があります\_アクション\_許可/FWP\_アクション\_続行します。
+リダイレクトの状態が FWPS\_接続\_\_リダイレクトされている場合は、"\_" によってリダイレクトされます。そのためには、ALE\_接続\_リダイレクト 吹き出しで、"許可/\_アクション\_続行\_アクション\_を返す必要があります。
 
-リダイレクト状態が FWPS 場合\_接続\_REDIRECTED\_BY\_他 ALE\_CONNECT\_リダイレクト コールアウトでしたに進みますプロキシ接続が信頼していない場合、その他検査の結果。
+リダイレクトの状態が FWPS の場合、接続\_リダイレクトされた\_他の\_によってリダイレクトされた場合、\_他のインスペクターの結果を信頼していない場合、ALE\_CONNECT\_REDIRECT コールアウトが接続のプロキシに進む可能性があります。
 
-リダイレクト状態が FWPS 場合\_接続\_以前\_REDIRECTED\_BY\_SELF、ALE\_CONNECT\_リダイレクト コールアウトはリダイレクトを実行する必要がありますいない場合でもその他のインスペクターの結果は入力できません。 必要がありますか、許可または接続をブロック、ここでは、(ALE で\_AUTH\_CONNECT レイヤー)。
+リダイレクトの状態が FWPS\_接続\_以前に自己\_\_\_リダイレクトされている場合、他のインスペクターの結果が許容できない場合でも、ALE\_CONNECT\_REDIRECT コールアウトはリダイレクトを実行しないようにする必要があります。 この場合、接続を許可またはブロックする必要があります (ALE\_AUTH\_CONNECT レイヤー)。
 
  
 

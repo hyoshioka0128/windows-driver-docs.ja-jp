@@ -4,12 +4,12 @@ description: NDIS パケットのループ バック
 ms.assetid: 85967cd6-6945-46d1-8872-7b000689b6db
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 789a48a014ffdacff361b46a50ae82d90affef8c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 60ea3a48e62577669508551cd1bfc92a65e842b6
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67356211"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844141"
 ---
 # <a name="looping-back-ndis-packets"></a>NDIS パケットのループ バック
 
@@ -17,45 +17,45 @@ ms.locfileid: "67356211"
 
 
 
-場合は、NDIS\_NBL\_フラグ\_IS\_ループバック\_パケット フラグ、 **NblFlags**のメンバー、 [ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)構造が設定されている、パケットはループバック パケット。 プロトコルおよびフィルター ドライバーは、パケットがループバック パケットであるかを判断するには、このフラグを確認できます。
+NDIS\_NBL\_FLAGS\_が\_ループバック\_、 [**NET\_BUFFER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)の**nblflags**メンバーのパケットフラグが設定されていると、パケットはループバックパケットになります。 プロトコルドライバーとフィルタードライバーは、パケットがループバックパケットであるかどうかを確認するために、このフラグをチェックします。
 
-NDIS は、すべての次の 3 つの条件が満たされている場合、パケットをループします。
+次の3つの条件がすべて満たされた場合、NDIS はパケットをループバックします。
 
-1.  メディアの種類が、基になるミニポート アダプター **NdisMedium802\_3**または**NdisMedium802\_5**します。
+1.  基になるミニポートアダプターメディアの種類は、 **NdisMedium802\_3**または**NdisMedium802\_5**です。
 
-2.  次の 3 つの条件のいずれかが満たされています。
-    1.  プロトコル バインディング設定、NDIS\_パケット\_型\_無作為検出の設定で、 [OID\_GEN\_現在\_パケット\_フィルター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-current-packet-filter)OID のパケット フィルターを指定する (および、Windows 8 以降、NDIS を設定しなかった\_パケット\_型\_なし\_同じ OID にローカル) と同じ場合、次のいずれかです。
+2.  次の3つの条件のいずれかが満たされています。
+    1.  プロトコルバインドでは、NDIS\_PACKET\_TYPE\_プロミスカス設定を[oid\_GEN\_現在の\_パケット\_フィルター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-current-packet-filter) oid で設定し、パケットフィルターを指定します (および Windows 8 以降の場合)。では、NDIS\_PACKET\_TYPE\_同じ OID 内に\_ローカル) が設定されておらず、次のいずれかが当てはまります。
 
-        -   ミニポート アダプタには、複数のバインドがあります。
-        -   ミニポート アダプタに接続されているフィルター モジュールがあるし、フィルター モジュールが、受信ハンドラーを登録します。
+        -   ミニポートアダプターに複数のバインドがあります。
+        -   ミニポートアダプターにフィルターモジュールがアタッチされていて、フィルターモジュールによって受信ハンドラーが登録されています。
 
-    2.  プロトコル バインディング設定、NDIS\_パケット\_型\_すべて\_でローカルの設定、 [OID\_GEN\_現在\_パケット\_フィルター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-current-packet-filter)のパケット フィルターと、次のいずれかを指定する OID は true。
-        -   ミニポート アダプタには、複数のバインドがあります。
-        -   ミニポート アダプタに接続されているフィルター モジュールがあるし、フィルター モジュールが、受信ハンドラーを登録します。
+    2.  プロトコルバインドによって、NDIS\_PACKET\_TYPE\_すべての\_ローカル設定が[oid\_GEN\_現在の\_パケット\_フィルター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-current-packet-filter) oid で設定されます。これにより、パケットフィルターが指定され、次のいずれかに該当します。
+        -   ミニポートアダプターに複数のバインドがあります。
+        -   ミニポートアダプターにフィルターモジュールがアタッチされていて、フィルターモジュールによって受信ハンドラーが登録されています。
 
-    3.  呼び出し元の設定、NDIS\_送信\_フラグ\_確認\_の\_でループバック フラグ、 *SendFlags*のパラメーター、 [ **NdisSendNetBufferLists** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndissendnetbufferlists)関数。
+    3.  呼び出し元は、 [**NdisSendNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndissendnetbufferlists)関数の*sendflags*パラメーターで\_ループバックフラグの\_を確認\_\_フラグを送信するように NDIS\_設定します。
 
-3.  パケットが許容されるは、パケット フィルターを使用して設定によって決定される、 [OID\_GEN\_現在\_パケット\_フィルター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-current-packet-filter)ミニポート アダプターの OID。 例を次に示します。
-    -   パケットが直接パケットの場合は、パケットの宛先アドレスは、ミニポート アダプタの MAC アドレスと一致する必要があります。
-    -   パケットがマルチキャスト パケットの場合は、パケット フィルターは NDIS をいる必要があります\_パケット\_型\_すべて\_マルチキャスト セットまたは送信先アドレスと一致するマルチキャスト アドレスのいずれかのミニポート アダプターのマルチキャストでアドレスの一覧と、パケット フィルターは NDIS\_パケット\_型\_マルチキャストのセット。
-    -   パケットがブロードキャスト パケットの場合は、ミニポート アダプターのパケット フィルターは NDIS をいる必要があります\_パケット\_型\_ブロードキャストのセット。
-    -   ミニポート アダプタのパケット フィルターは NDIS\_パケット\_型\_PROMISCUOUS または NDIS\_パケット\_型\_すべて\_ローカル セット。
+3.  パケットフィルターセットによって設定されたパケットフィルターによって、ミニポートアダプターの[\_現在の\_パケット\_フィルター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-current-packet-filter) oid が\_使用されている場合は、そのパケットが許容されます。 次に例をいくつか示します。
+    -   パケットが直接パケットの場合は、パケットの宛先アドレスがミニポートアダプターの MAC アドレスと一致している必要があります。
+    -   パケットがマルチキャストパケットの場合、パケットフィルターには、NDIS\_PACKET\_TYPE\_すべての\_マルチキャストセット、または宛先アドレスが、ミニポートアダプターのマルチキャストアドレス一覧のマルチキャストアドレスの1つと一致している必要があります。パケットフィルターには、NDIS\_パケット\_種類\_マルチキャストセットがあります。
+    -   パケットがブロードキャストパケットの場合、ミニポートアダプターのパケットフィルターには、NDIS\_パケット\_種類\_ブロードキャストセットが必要です。
+    -   ミニポートアダプターのパケットフィルターには、NDIS\_パケット\_タイプ\_無作為検出または NDIS\_パケット\_型\_すべて\_ローカルセットが含まれています。
 
-プロトコル バインドでは、次のいずれかが true の場合、ループバック パケットを受け取ります。
+次のいずれかに該当する場合、プロトコルバインドはループバックパケットを受信します。
 
-1.  プロトコルのバインドは、NDIS、パケットの元の送信者\_送信\_フラグ\_確認\_の\_ループバックが設定されます。
+1.  プロトコルバインドはパケットの元の送信側であり、NDIS\_送信\_フラグ\_チェック\_\_ループバックが設定されていることを確認します。
 
-2.  プロトコルのバインドが NDIS を設定していない\_パケット\_型\_いいえ\_パケット フィルターはローカルです。
+2.  プロトコルバインドでは、パケットフィルターに\_ローカルではなく、NDIS\_PACKET\_TYPE\_設定されません。
 
-次のいずれかに当てはまる場合、プロトコル バインドは、ループバック パケットを受信しません。
+次のいずれかに該当する場合、プロトコルバインドはループバックパケットを受信しません。
 
-1.  プロトコル バインド設定 NDIS\_パケット\_型\_いいえ\_パケット フィルターし、ローカルがパケットの場合、元の送信者ではありません。
+1.  このプロトコルバインドでは、NDIS\_PACKET\_TYPE\_パケットフィルターにローカル\_が設定されておらず、パケットの元の送信者でもありません。
 
-2.  プロトコルのバインドは、元の送信者が NDIS\_送信\_フラグ\_確認\_の\_ループバックが設定されていない、 *SendFlags* への呼び出しでパラメーター[**NdisSendNetBufferLists** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndissendnetbufferlists)関数。
+2.  プロトコルバインドは元の送信側です\_が、 [**NdisSendNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndissendnetbufferlists)関数の*呼び出しで、* \_ループバックの\_フラグ\_チェック\_を送信することはできません。
 
-次の図は、ループバック アルゴリズムのロジック フローを示しています。
+次の図は、ループバックアルゴリズムのロジックフローを示しています。
 
-![ループバック アルゴリズムのロジック フローを示すフローチャート](images/loopback.png)
+![ループバックアルゴリズムロジックフローを示すフローチャート](images/loopback.png)
 
  
 

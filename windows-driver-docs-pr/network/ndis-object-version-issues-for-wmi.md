@@ -3,15 +3,15 @@ title: WMI の NDIS オブジェクト バージョンの問題
 description: WMI の NDIS オブジェクト バージョンの問題
 ms.assetid: 09440de8-125b-4155-9f28-c9f6893071b2
 keywords:
-- NDIS バージョンについて WDK には、WMI をサポートします。
+- NDIS バージョン情報 WDK、WMI サポート
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 119a301e32d03a41403ccc0437f6fae98af141ad
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4ff635f89567863fb15c0a6fd2929aee468a56ff
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67354970"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844363"
 ---
 # <a name="ndis-object-version-issues-for-wmi"></a>WMI の NDIS オブジェクト バージョンの問題
 
@@ -19,22 +19,22 @@ ms.locfileid: "67354970"
 
 
 
-このトピックでは、Windows Management Instrumentation (WMI) のサポートに影響を与える NDIS オブジェクト バージョンの問題について説明します。
+このトピックでは、Windows Management Instrumentation (WMI) のサポートに影響する NDIS オブジェクトバージョンの問題について説明します。
 
-WMI 管理オブジェクト フォーマット (MOF) ファイル内でバージョン管理はありません。 そのため、対応する NDIS 構造に新しいリビジョンがある場合は、MOF データ オブジェクトをより多くのフィールドが追加されています。
+WMI 管理オブジェクトフォーマット (MOF) ファイル内にバージョン管理はありません。 したがって、対応する NDIS 構造に新しいリビジョンがある場合は、MOF データオブジェクトにさらに多くのフィールドが追加されています。
 
-NDIS\_WMI\_Xxx\_ヘッダー構造体は、新しい NDIS バージョン以上のメンバーが追加されたときに新しいリビジョンをあります。 現在の NDIS の一覧については\_WMI\_Xxx\_ヘッダー構造体を参照してください[NDIS WMI 構造](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/index)します。
+新しいバージョンの NDIS に追加メンバーが追加されると、NDIS\_WMI\_Xxx\_ヘッダー構造に新しいリビジョンが追加されます。 現在の NDIS\_WMI\_Xxx\_ヘッダー構造の一覧については、「 [NDIS WMI 構造体](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/index)」を参照してください。
 
-クエリ操作の WMI 情報をアプリケーションにアクセスするときに、任意のデータにアクセスする前に返されたバッファーでバージョンを確認する必要があります。 設定操作では、アプリケーションを確認する必要があります、 **SupportedRevision** NDIS でメンバー\_WMI\_出力\_情報構造体の基になるドライバーが受け入れたバージョンを決定します。
+アプリケーションがクエリ操作の WMI 情報にアクセスするときは、データにアクセスする前に、返されたバッファーのバージョンを確認する必要があります。 設定操作の場合、アプリケーションは、NDIS\_WMI\_OUTPUT\_INFO 構造体の**Supportedrevision**メンバーを調べて、基になるドライバーが受け入れたバージョンを特定する必要があります。
 
-多くの WMI オブジェクトを含む、 **MSNdis\_ObjectHeader**と等価であるプロパティ、 [ **NDIS\_オブジェクト\_ヘッダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_object_header)構造体。 設定するときに、 **MSNdis\_ObjectHeader**プロパティ、設定、**型**と**リビジョン**に記載されているフィールド、 **NDIS\_オブジェクト\_ヘッダー**トピック。 64 ビット システムへのシームレスな移植性を確実には、設定、**サイズ**フィールドを`0xFFFF`します。
+多くの WMI オブジェクトには、 **MSNdis\_ObjectHeader**プロパティが含まれています。これは、 [**NDIS\_オブジェクト\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_object_header)構造に相当します。 **MSNdis\_ObjectHeader**プロパティを設定するときに、「 **NDIS\_オブジェクト\_ヘッダー** 」に記載されているように、 **Type**フィールドと**Revision**フィールドを設定します。 64ビットシステムへのシームレスな移植性を確保するには、 **Size**フィールドを `0xFFFF`に設定します。
 
 ## <a name="related-topics"></a>関連トピック
 
 
-[NDIS のバージョンの概要](overview-of-ndis-versions.md)
+[NDIS バージョンの概要](overview-of-ndis-versions.md)
 
-[NDIS バージョン情報を指定します。](specifying-ndis-version-information.md)
+[NDIS バージョン情報の指定](specifying-ndis-version-information.md)
 
  
 

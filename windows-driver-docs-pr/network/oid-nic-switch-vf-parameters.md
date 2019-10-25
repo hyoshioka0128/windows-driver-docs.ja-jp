@@ -1,48 +1,48 @@
 ---
 title: OID_NIC_SWITCH_VF_PARAMETERS
-description: 上にあるドライバー、またはユーザー モード アプリケーションは、現在の構成パラメーターの PCI Express (PCIe) 仮想機能 (VF)、ネットワーク アダプターを取得する OID_NIC_SWITCH_VF_PARAMETERS のオブジェクト識別子 (OID) メソッド要求を発行します。
+description: ネットワークアダプター上の PCI Express (PCIe) 仮想関数 (VF) の現在の構成パラメーターを取得するために、OID_NIC_SWITCH_VF_PARAMETERS のオブジェクト識別子 (OID) メソッドの要求を、それ以降のドライバーまたはユーザーモードアプリケーションが発行します。
 ms.assetid: DF08B0BA-6D86-4C4F-AC38-8A401F097925
 ms.date: 08/08/2017
-keywords: -OID_NIC_SWITCH_VF_PARAMETERS ネットワーク ドライバーが Windows Vista 以降
+keywords: -Windows Vista 以降の OID_NIC_SWITCH_VF_PARAMETERS ネットワークドライバー
 ms.localizationpriority: medium
-ms.openlocfilehash: 1892f41a97859058667d300f93dd900310367afe
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7b837949593853fd8f7b7c7107387da1a7c96dad
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383659"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844077"
 ---
-# <a name="oidnicswitchvfparameters"></a>OID\_NIC\_スイッチ\_VF\_パラメーター
+# <a name="oid_nic_switch_vf_parameters"></a>OID\_NIC\_スイッチ\_VF\_パラメーター
 
 
-上にあるドライバーまたはユーザー モード アプリケーションの OID オブジェクト識別子 (OID) メソッド要求の発行\_NIC\_スイッチ\_VF\_PCI Express (PCIe) の現在の構成パラメーターを取得するパラメーター仮想機能 (VF) ネットワーク アダプターにします。 OID メソッド要求を通じて割り当てられたリソースがある VFs のみ[OID\_NIC\_スイッチ\_ALLOCATE\_VF](oid-nic-switch-allocate-vf.md) OIDのOIDメソッドの要求を使って照会できます\_NIC\_スイッチ\_VF\_パラメーター。
+それ以降のドライバーまたはユーザーモードアプリケーションは、OID\_\_NIC のオブジェクト識別子 (OID) メソッド要求を発行します。これにより、VF\_パラメーター\_、の PCI Express (PCIe) 仮想関数 (VF) の現在の構成パラメーターを取得します。ネットワークアダプター。 Oid の oid メソッド要求を通じて割り当てられたリソースを持つ VFs [\_nic\_スイッチ\_割り当て\_vf](oid-nic-switch-allocate-vf.md)は、OID\_NIC\_スイッチ\_の oid メソッド要求を使用して照会でき\_パラメータ.
 
-OID の OID メソッド要求を処理する NDIS\_NIC\_スイッチ\_VF\_ミニポート ドライバーのパラメーター。
+NDIS では、OID\_NIC\_スイッチの OID メソッド要求を処理します。これは、ミニポートドライバーの VF\_パラメーター\_ます。
 
-OID メソッドの要求が行われたときに、 **InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体にはへのポインターが含まれています、[ **NDIS\_NIC\_スイッチ\_VF\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_parameters)構造体。
+OID メソッド要求が行われると、 [**ndis\_oid\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造の**informationbuffer**メンバーには、 [**ndis\_NIC\_スイッチ\_VF\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_parameters)構造体へのポインターが含まれています。
 
 <a name="remarks"></a>注釈
 -------
 
-上にあるドライバーまたはユーザー モード アプリケーションを設定して、VF にクエリを指定します、 **VFId**のメンバー、 [ **NDIS\_NIC\_スイッチ\_VF\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_parameters) VF の識別子に構造体。 上にあるドライバーやアプリケーションは次の方法のいずれかで VF 識別子を取得します。
+前のドライバーまたはユーザーモードアプリケーションでは、 [ **\_vf\_PARAMETERS 構造体\_\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_parameters)の**VFID**メンバーを vf の識別子に設定することによって、クエリの対象となる vf を指定します。 その後のドライバーまたはアプリケーションは、次のいずれかの方法で VF 識別子を取得します。
 
--   OID メソッド要求を発行して[OID\_NIC\_スイッチ\_ENUM\_VFS](oid-nic-switch-enum-vfs.md)します。
+-   Oid\_oid の OID メソッド要求を発行すると、 [\_列挙型\_VFS\_切り替わり](oid-nic-switch-enum-vfs.md)ます。
 
-    この OID 要求が正常に完了すると、上にあるドライバーまたはユーザー モード アプリケーションは、ネットワーク アダプターに割り当てられているすべての VFs の一覧を受け取ります。 リスト内の各要素は、 [ **NDIS\_NIC\_スイッチ\_VF\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_info)構造は、指定された、 VFid**VFId**メンバー。
+    この OID 要求が正常に完了した場合、それ以降のドライバーまたはユーザーモードアプリケーションは、ネットワークアダプターに割り当てられているすべての VFs の一覧を受け取ります。 リスト内の各要素は、 **VFId**メンバーによって指定された vf 識別子を使用して、 [ **\_の vf\_INFO 構造体\_スイッチの NDIS\_NIC**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_info)です。
 
--   OID メソッド要求を発行して[OID\_NIC\_スイッチ\_ALLOCATE\_VF](oid-nic-switch-allocate-vf.md)します。
+-   Oid\_oid の OID メソッド要求を発行することによって、 [\_VF\_割り当て\_](oid-nic-switch-allocate-vf.md)ます。
 
-    上にあるドライバーがで新しく作成された VF の識別子を受け取るこの OID 要求が正常に完了している場合、 **VFId** 、返されたメンバー [ **NDIS\_NIC\_スイッチ\_VF\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_parameters)構造体。
+    この OID 要求が正常に完了すると、新しく作成された VF の識別子が、返された[**NDIS\_NIC\_スイッチ\_VF\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_parameters)構造体の**VFId**メンバーに渡されます。
 
-    **注**  専用ドライバーの関連でこの方法で VF 識別子を取得できます。
+    **注**  は、この方法で VF 識別子を取得できるのは、それまでのドライバーのみです。
 
      
 
-OID メソッドの要求から正常に戻った後、 **InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体ポインターが含まれています、 [ **NDIS\_NIC\_スイッチ\_VF\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_parameters)構造体。 この構造体には、指定した VF の構成パラメーターが含まれています。
+OID メソッド要求から正常に戻った後、 [**ndis\_oid\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造の**informationbuffer**メンバーには、ndis\_\_NIC へのポインターが含まれ[ **\_VF\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_parameters)構造体。 この構造体には、指定された VF の構成パラメーターが含まれています。
 
-### <a name="return-status-codes"></a>リターン状態コード
+### <a name="return-status-codes"></a>ステータスコードを返す
 
-OID の OID メソッド要求を処理する NDIS\_NIC\_スイッチ\_VF\_ミニポート ドライバー、および返しますが、次の状態コードの OID の OID メソッド要求のパラメーターを\_NIC\_スイッチ\_VF\_パラメーター。
+NDIS は、oid の oid メソッド要求を処理します。これは、ミニポートドライバー用の VF\_パラメーター\_\_スイッチによって\_し、oid\_NIC の oid メソッド要求に対して次の状態コードを返します.
 
 <table>
 <colgroup>
@@ -58,27 +58,27 @@ OID の OID メソッド要求を処理する NDIS\_NIC\_スイッチ\_VF\_ミ�
 <tbody>
 <tr class="odd">
 <td><p>NDIS_STATUS_SUCCESS</p></td>
-<td><p>要求は正常に完了しました。 <strong>InformationBuffer</strong>へのポインター、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_parameters" data-raw-source="[&lt;strong&gt;NDIS_NIC_SWITCH_VF_PARAMETERS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_parameters)"> <strong>NDIS_NIC_SWITCH_VF_PARAMETERS</strong> </a>構造体。</p></td>
+<td><p>要求は正常に完了しました。 <strong>Informationbuffer</strong>メンバーは、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_parameters" data-raw-source="[&lt;strong&gt;NDIS_NIC_SWITCH_VF_PARAMETERS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_parameters)"><strong>NDIS_NIC_SWITCH_VF_PARAMETERS</strong></a>構造体を指します。</p></td>
 </tr>
 <tr class="even">
 <td><p>NDIS_STATUS_NOT_SUPPORTED</p></td>
-<td><p>ミニポート ドライバーでは、シングル ルート I/O 仮想化 (SR-IOV) インターフェイスをサポートしていませんか、またはインターフェイスを使用して有効になっていません。</p></td>
+<td><p>ミニポートドライバーがシングルルート i/o 仮想化 (SR-IOV) インターフェイスをサポートしていないか、インターフェイスの使用が有効になっていません。</p></td>
 </tr>
 <tr class="odd">
 <td><p>NDIS_STATUS_INVALID_PARAMETER</p></td>
-<td><p>1 つ以上のメンバーの<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_parameters" data-raw-source="[&lt;strong&gt;NDIS_NIC_SWITCH_VF_PARAMETERS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_parameters)"> <strong>NDIS_NIC_SWITCH_VF_PARAMETERS</strong> </a>構造が無効な値を指定します。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_parameters" data-raw-source="[&lt;strong&gt;NDIS_NIC_SWITCH_VF_PARAMETERS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_parameters)"><strong>NDIS_NIC_SWITCH_VF_PARAMETERS</strong></a>構造体の1つ以上のメンバーに無効な値が含まれています。</p></td>
 </tr>
 <tr class="even">
 <td><p>NDIS_STATUS_INVALID_LENGTH</p></td>
-<td><p>情報バッファーの長さが sizeof より小さい (<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_parameters" data-raw-source="[&lt;strong&gt;NDIS_NIC_SWITCH_VF_PARAMETERS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_parameters)"><strong>NDIS_NIC_SWITCH_VF_PARAMETERS</strong></a>)。 NDIS セット、<strong>データ。METHOD_INFORMATION します。BytesNeeded</strong>内のメンバー、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)"> <strong>NDIS_OID_REQUEST</strong> </a>構造体に必要な最小バッファー サイズ。</p></td>
+<td><p>情報バッファーの長さが sizeof (<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_parameters" data-raw-source="[&lt;strong&gt;NDIS_NIC_SWITCH_VF_PARAMETERS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_parameters)"><strong>NDIS_NIC_SWITCH_VF_PARAMETERS</strong></a>) 未満です。 NDIS はデータを設定<strong>します。METHOD_INFORMATION.</strong> <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a>構造体の中で必要とされる最小バッファーサイズに対して、bytesneeded 必要です。</p></td>
 </tr>
 <tr class="odd">
 <td><p>NDIS_STATUS_INVALID_LENGTH</p></td>
-<td><p>情報バッファーが小さすぎます。 NDIS セット、<strong>データ。METHOD_INFORMATION します。BytesNeeded</strong>内のメンバー、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)"> <strong>NDIS_OID_REQUEST</strong> </a>構造体に必要な最小バッファー サイズ。</p></td>
+<td><p>情報バッファーが短すぎます。 NDIS はデータを設定<strong>します。METHOD_INFORMATION.</strong> <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a>構造体の中で必要とされる最小バッファーサイズに対して、bytesneeded 必要です。</p></td>
 </tr>
 <tr class="even">
 <td><p>NDIS_STATUS_FAILURE</p></td>
-<td><p>他の理由から、要求が失敗しました。</p></td>
+<td><p>他の理由で要求が失敗しました。</p></td>
 </tr>
 </tbody>
 </table>
@@ -96,11 +96,11 @@ OID の OID メソッド要求を処理する NDIS\_NIC\_スイッチ\_VF\_ミ�
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>NDIS 6.30 以降をサポートします。</p></td>
+<td><p>NDIS 6.30 以降でサポートされています。</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Ntddndis.h (include Ndis.h)</td>
+<td>Ntddndis (Ndis .h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -109,15 +109,15 @@ OID の OID メソッド要求を処理する NDIS\_NIC\_スイッチ\_VF\_ミ�
 
 
 ****
-[**NDIS\_NIC\_スイッチ\_VF\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_parameters)
+[**NDIS\_NIC\_スイッチ\_VF\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_parameters)
 
-[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
+[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)
 
-[OID\_NIC\_スイッチ\_ALLOCATE\_VF](oid-nic-switch-allocate-vf.md)
+[OID\_NIC\_スイッチ\_割り当て\_VF](oid-nic-switch-allocate-vf.md)
 
-[OID\_NIC\_SWITCH\_ENUM\_VFS](oid-nic-switch-enum-vfs.md)
+[OID\_NIC\_スイッチ\_列挙型\_VFS](oid-nic-switch-enum-vfs.md)
 
-[**NDIS\_NIC\_スイッチ\_VF\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_info)
+[**NDIS\_NIC\_スイッチ\_VF\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_info)
 
 [OID\_NIC\_スイッチ\_VF\_パラメーター](oid-nic-switch-vf-parameters.md)
 

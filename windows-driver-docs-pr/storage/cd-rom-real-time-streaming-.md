@@ -1,85 +1,85 @@
 ---
 title: CD-ROM リアルタイム ストリーミング
-description: ストリーミング (または、リアルタイム ストリーミング) は、高速な読み取りおよび書き込み要求を光学式ドライブによって提供される機能です。
+description: ストリーミング (リアルタイムストリーミング) は、光ドライブによって提供される機能であり、高速な読み取りおよび書き込み要求を可能にします。
 ms.assetid: A4093485-076A-4414-A3D2-9285B2AC097B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e80381270311c97f3c080628cdcef52a07659c2
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 585c02a4a388528122707f5650561375c2016324
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368356"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841628"
 ---
-# <a name="span-idstoragecd-romreal-timestreamingspancd-rom-real-time-streaming"></a><span id="storage.cd-rom_real-time_streaming_"></span>CD-ROM のリアルタイムのストリーミング
+# <a name="span-idstoragecd-rom_real-time_streaming_spancd-rom-real-time-streaming"></a><span id="storage.cd-rom_real-time_streaming_"></span>CD-ROM のリアルタイムストリーミング
 
 
-ストリーミング (または、リアルタイム ストリーミング) は、高速な読み取りおよび書き込み要求を光学式ドライブによって提供される機能です。 Windows 7 以降の DVD ビデオのストリーミングのサポートは、UDF ファイル システム ドライバー、Udfs.sys、およびビデオ再生のサブシステムを含む、Windows Media Player に Cdrom.sys から、記憶域スタックのすべてのレイヤーで実装されています。
+ストリーミング (リアルタイムストリーミング) は、光ドライブによって提供される機能であり、高速な読み取りおよび書き込み要求を可能にします。 Windows 7 以降、DVD ビデオのストリーミングのサポートは、ストレージスタックのすべてのレイヤー (たとえば、UDF ファイルシステムドライバー、Udf .sys、ビデオ再生サブシステムを含む) から Windows Media Player に実装されています。
 
-## <a name="span-idaboutreal-timestreamingspanspan-idaboutreal-timestreamingspanspan-idaboutreal-timestreamingspanabout-real-time-streaming"></a><span id="About_real-time_streaming_"></span><span id="about_real-time_streaming_"></span><span id="ABOUT_REAL-TIME_STREAMING_"></span>リアルタイムのストリーミング
-
-
-一般に、読み取りし、光学式メディアへの書き込みアクセスの特徴は、2 つのプロパティ: 信頼性とパフォーマンスを維持します。 これらのプロパティは、相互に依存 (下位のパフォーマンスは低下信頼性の向上が実現されます) と同時に最大化することはできません。
-
-光学式メディア用のアプリケーションの大部分は信頼性 (つまり、データの整合性) に重点を置いています。 ただし、DVD はレコーダーもデジタル ビデオ camcorders などの特定のアプリケーションでは、持続的なパフォーマンスに重点を置いていて、適切な操作の特定のレベルの保証されたデータのスループットを必要とします。 仕様では、これらのアプリケーションは適切なデータ損失に対する回復力 (たとえば、ビデオ コーデックと仮定するいくつかのフレームが失われることができます)。 これらのアプリケーションでは、信頼性はない値が最も高い優先順位です。 光学式ドライブ (いわゆるリアルタイム ストリーミング) 特別なモードの操作を提供することでこのニーズに対処します。 このモードでのパフォーマンスを向上させる、読み取ったり書き込んだりするエラーは無視され、再試行またはエラーの修正または防止にドライブが実行されません。
-
-## <a name="span-iddevelopersupportforreal-timestreaminginwindowsspanspan-iddevelopersupportforreal-timestreaminginwindowsspanspan-iddevelopersupportforreal-timestreaminginwindowsspandeveloper-support-for-real-time-streaming-in-windows"></a><span id="Developer_support_for_real-time_streaming_in_Windows"></span><span id="developer_support_for_real-time_streaming_in_windows"></span><span id="DEVELOPER_SUPPORT_FOR_REAL-TIME_STREAMING_IN_WINDOWS"></span>Windows では、リアルタイム ストリーミングに対する開発者のサポート
+## <a name="span-idabout_real-time_streaming_spanspan-idabout_real-time_streaming_spanspan-idabout_real-time_streaming_spanabout-real-time-streaming"></a><span id="About_real-time_streaming_"></span><span id="about_real-time_streaming_"></span><span id="ABOUT_REAL-TIME_STREAMING_"></span>リアルタイムストリーミングについて
 
 
-以降、CD-ROM クラス ドライバー、Windows 7 では、Cdrom.sys、ストリーミングの低レベルの読み取りをサポートしているし、書き込み要求 (MMC 仕様の/WRITE12 READ12 コマンド)。 ユーザー モード アプリケーションで使用できます、 [ **IOCTL\_CDROM\_を有効にする\_ストリーミング**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddcdrm/ni-ntddcdrm-ioctl_cdrom_enable_streaming)を有効にするか、生データを読み取るのストリーミングを無効にすると書き込みの I/O 制御コード (IOCTL)要求します。 これらの読み取りおよび書き込み要求は、生の CD または DVD-ROM デバイス用に開かれたハンドルを使用して実行されます。
+一般に、光学メディアへの読み取り/書き込みアクセスには、信頼性と継続パフォーマンスの2つの特性があります。 これらのプロパティは相互に依存しており、同時に最大化することはできません (高い信頼性を実現するため、パフォーマンスが低下します)。
 
-さらに、カーネル モードのコンポーネントの変更があるように Cdrom.sys ハンドル[ **IRP\_MJ\_読み取り**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-read)と[ **IRP\_MJ\_書き込み**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-write)要求。 クラスのドライバーでは、リアルタイム ストリーミング要求が、デバイスの機能を満たすことを検証します。 この機能を実装するために Windows 7 に導入ストリーミング フラグを**SL\_リアルタイム\_ストリーム**、ドライバーの[ **IO\_スタック\_場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location). このフラグはストリーミングのすべての読み取りのアサートまたは書き込みを要求し、ストリーミング以外のすべての要求がクリアします。
+光学メディア用のアプリケーションの大部分は、信頼性 (つまり、データの整合性) に重点を置いています。 ただし、DVD レコーダーやデジタルビデオビデオカメラなどの特定のアプリケーションは、継続的なパフォーマンスを重視し、適切な操作のために一定レベルのデータスループットを必要とします。 仕様により、これらのアプリケーションは合理的なデータ損失に対する回復性を備えています (たとえば、ビデオコーデックでは、一部のフレームが失われる可能性があると仮定しています)。 これらのアプリケーションでは、信頼性が最高の優先順位ではありません。 光学ドライブは、特別な (いわゆるリアルタイムストリーミング) モードの操作を提供することによって、このニーズに対処します。 このモードのパフォーマンスを向上させるには、読み取りまたは書き込みエラーが無視され、ドライブは再試行やエラーの修正や防止を実行しません。
 
-記憶域ドライバー スタックでこれらの変更は、リアルタイムのデータを含むファイルに対して保証された速度で読み取り/書き込み操作を実行する (特に、ファイル システム ドライバーおよびアプリケーション) で上位のレイヤーを許可します。 Windows 7 以降を使用してリアルタイム ストリーミング用のファイルをマークすることができます、 [ **FSCTL\_マーク\_処理**](https://docs.microsoft.com/windows/desktop/api/winioctl/ni-winioctl-fsctl_mark_handle)制御コードとを設定して、ストリーミングのモードを指定します。**マーク\_処理\_リアルタイム**フラグ、 [**マーク\_処理\_情報**](https://docs.microsoft.com/windows/desktop/api/winioctl/ns-winioctl-mark_handle_info)構造体。
-
-図 1 は、正規表現とストリーミングの読み取りと書き込み要求と UDF ファイル システムと CDROM クラス ドライバー間のリレーションシップを示しています。
-
-![図 1: リアルタイム ストリーミング cdrom.sys および udfs.sys でのサポート](images/cdromstreaming.png)
-
-DVD の再生アプリケーションとファイル システム ドライバー Cdrom.sys (最下位レベル) の生のストリーミング サポートにアクセスする Ioctl を使用して、ストリーミング Udfs.sys で導入されたモードのファイル システムのサポートを使用してまたはの選択肢があります。 アプリケーションでは、Windows のビデオの再生をサブ システム全体としても指定できます。 再生、に加えて、Cdrom.sys とファイル システム レイヤーは、ストリーミングの記録をサポートします。
-
-## <a name="span-idverifyingdevicesupportforreal-timestreamingusingioctlsspanspan-idverifyingdevicesupportforreal-timestreamingusingioctlsspanspan-idverifyingdevicesupportforreal-timestreamingusingioctlsspanverifying-device-support-for-real-time-streaming-using-ioctls"></a><span id="Verifying_device_support_for_real-time_streaming_using_IOCTLs"></span><span id="verifying_device_support_for_real-time_streaming_using_ioctls"></span><span id="VERIFYING_DEVICE_SUPPORT_FOR_REAL-TIME_STREAMING_USING_IOCTLS"></span>デバイスでのサポートを確認しています Ioctl を使用したリアルタイム ストリーミング。
+## <a name="span-iddeveloper_support_for_real-time_streaming_in_windowsspanspan-iddeveloper_support_for_real-time_streaming_in_windowsspanspan-iddeveloper_support_for_real-time_streaming_in_windowsspandeveloper-support-for-real-time-streaming-in-windows"></a><span id="Developer_support_for_real-time_streaming_in_Windows"></span><span id="developer_support_for_real-time_streaming_in_windows"></span><span id="DEVELOPER_SUPPORT_FOR_REAL-TIME_STREAMING_IN_WINDOWS"></span>Windows でのリアルタイムストリーミングの開発者サポート
 
 
--   使用[ **IOCTL\_CDROM\_取得\_構成**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddcdrm/ni-ntddcdrm-ioctl_cdrom_get_configuration)ストリーミング機能が存在し、現在を判断します。
+Windows 7 以降では、CD-ROM クラスドライバーである Cdrom は、低レベルのストリーミングの読み取りおよび書き込み要求 (MMC 仕様の READ12/WRITE12 コマンド) をサポートしています。 ユーザーモードアプリケーションでは、 [**ioctl\_CDROM\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddcdrm/ni-ntddcdrm-ioctl_cdrom_enable_streaming)使用して\_streaming i/o 制御コード (ioctl) を有効にし、生の読み取り要求と書き込み要求のストリーミングを有効または無効にすることができます。 これらの読み取り要求と書き込み要求は、未加工の CD/DVD-ROM デバイス用に開かれたハンドルを使用して実行されます。
 
-## <a name="span-idenablingordisablingreal-timestreamingusingioctlsspanspan-idenablingordisablingreal-timestreamingusingioctlsspanspan-idenablingordisablingreal-timestreamingusingioctlsspanenabling-or-disabling-real-time-streaming-using-ioctls"></a><span id="Enabling_or_disabling_real-time_streaming_using_IOCTLs"></span><span id="enabling_or_disabling_real-time_streaming_using_ioctls"></span><span id="ENABLING_OR_DISABLING_REAL-TIME_STREAMING_USING_IOCTLS"></span>有効化または Ioctl を使用したリアルタイム ストリーミングを無効にします。
+さらに、カーネルモードのコンポーネントの場合は、 [**MJ が irp\_** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-read) MJ を処理する方法が変更されています。\_READ および[**irp\_\_書き込み**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-write)要求です。 クラスドライバーは、リアルタイムストリーミング要求がデバイスの機能を満たしているかどうかを検証します。 この機能を実装するために、Windows 7 では、ドライバーの[**IO\_スタック\_の場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)に、のストリーミングフラグ、 **SL\_リアルタイム\_ストリーム**が導入されました。 このフラグは、すべてのストリーミング読み取り要求または書き込み要求に対してアサートされ、すべての非ストリーミング要求に対して消去されます。
 
+ストレージドライバースタックでのこれらの変更により、より高いレイヤー (特にファイルシステムのドライバーとアプリケーション) が、リアルタイムデータを含むファイルに対して保証された速度で読み取り/書き込み操作を実行できるようになります。 Windows 7 以降では、 [**FSCTL\_マーク**](https://docs.microsoft.com/windows/desktop/api/winioctl/ni-winioctl-fsctl_mark_handle)を使用してファイルをリアルタイムストリーミング用にマークすることができます。これを行うには、コントロールコードを処理\_、マーク **\_ハンドル\_リアル**タイムフラグを設定してストリーミングモードを指定し[ **\_\_情報**](https://docs.microsoft.com/windows/desktop/api/winioctl/ns-winioctl-mark_handle_info)構造体を処理します。
 
--   使用して、 [ **IOCTL\_CDROM\_を有効にする\_ストリーミング**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddcdrm/ni-ntddcdrm-ioctl_cdrom_enable_streaming)を有効にし、生データを読み取るのストリーミングのモードを無効にする、または書き込み要求の I/O 制御コード。 この IOCTL パラメーターは出力がないと、サポート、 [ **CDROM\_ストリーミング\_コントロール**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddcdrm/ns-ntddcdrm-_cdrom_streaming_control)入力パラメーターとして構造体。
+図1は、通常の読み取りと書き込みの要求と、UDF ファイルシステムと CDROM クラスのドライバーの関係を示しています。
 
-    この IOCTL では、有効または、ハンドルごとにストリーミングのモードを無効にします。 既定では、ストリーミングはすべて新しく開かれた生の cd-rom ドライブ ハンドルを無効になります。 ファイル システムを使用しないし、生データを業務に対応する再生アプリケーションは、同じデバイスの 2 つのファイル ハンドルを開く必要があります。 ファイル システムのメタデータとファイルのリアルタイムのストリーミングの 1 つの正規表現の 1 つ。
+![図 1: cdrom および udf のリアルタイムストリーミングのサポート](images/cdromstreaming.png)
 
-## <a name="span-idspecifyingreal-timestreamingforirpmjreadandirpmjwriterequestsspanspan-idspecifyingreal-timestreamingforirpmjreadandirpmjwriterequestsspanspan-idspecifyingreal-timestreamingforirpmjreadandirpmjwriterequestsspanspecifying-real-time-streaming-for-irpmjread-and-irpmjwrite-requests"></a><span id="Specifying_real-time_streaming_for_IRP_MJ_READ_and_IRP_MJ_WRITE_requests"></span><span id="specifying_real-time_streaming_for_irp_mj_read_and_irp_mj_write_requests"></span><span id="SPECIFYING_REAL-TIME_STREAMING_FOR_IRP_MJ_READ_AND_IRP_MJ_WRITE_REQUESTS"></span>IRP のリアルタイム ストリーミングを指定する\_MJ\_読み取りおよび IRP\_MJ\_書き込み要求
+DVD 再生アプリケーションとファイルシステムドライバーでは、Ioctl を使用して、Cdrom (最下位レベル) の未加工のストリーミングサポートにアクセスするか、またはファイルシステムのサポートを使用して、Udf に導入されたストリーミングモードをサポートするかを選択できます。 アプリケーションには、Windows video 再生サブシステム全体を含めることもできます。 また、Cd-rom とファイルシステムのレイヤーは、再生に加えて、ストリーミング記録もサポートしています。
 
-
--   SL\_リアルタイム\_ストリーム フラグ、 [ **IoGetCurrentIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetcurrentirpstacklocation)(Irp)-&gt;Flags フィールド コントロールの読み取りし、書き込みストリーミング要求 ([ **IRP\_MJ\_読み取り**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-read)と[ **IRP\_MJ\_書き込み**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-write))。 フラグが読み取りすべてのストリーミングに設定されてと書き込みを要求し、ストリーミング以外のすべての要求をクリアします。 場合、SL\_リアルタイム\_ストリーム フラグが設定されて、Cdrom.sys READ10 または WRITE10 SCSI コマンドではなく READ12 および WRITE12 SCSI コマンドを使用して、ストリーミングの要求を実行します。 場合、SL\_リアルタイム\_、IRP のストリームのフラグが設定されて、デバイスが挿入された現在のメディアのストリーミングをサポートしていませんが、IRP はステータス コードの状態で拒否されます\_無効な\_デバイス\_を要求します。
-
-## <a name="span-idspecifyingreal-timestreamingforafileusingfsctlsspanspan-idspecifyingreal-timestreamingforafileusingfsctlsspanspan-idspecifyingreal-timestreamingforafileusingfsctlsspanspecifying-real-time-streaming-for-a-file-using-fsctls"></a><span id="Specifying_real-time_streaming_for_a_file_using_FSCTLs"></span><span id="specifying_real-time_streaming_for_a_file_using_fsctls"></span><span id="SPECIFYING_REAL-TIME_STREAMING_FOR_A_FILE_USING_FSCTLS"></span>リアルタイムのストリーミング FSCTLs を使用してファイルを指定します。
+## <a name="span-idverifying_device_support_for_real-time_streaming_using_ioctlsspanspan-idverifying_device_support_for_real-time_streaming_using_ioctlsspanspan-idverifying_device_support_for_real-time_streaming_using_ioctlsspanverifying-device-support-for-real-time-streaming-using-ioctls"></a><span id="Verifying_device_support_for_real-time_streaming_using_IOCTLs"></span><span id="verifying_device_support_for_real-time_streaming_using_ioctls"></span><span id="VERIFYING_DEVICE_SUPPORT_FOR_REAL-TIME_STREAMING_USING_IOCTLS"></span>Ioctl を使用したリアルタイムストリーミングのデバイスサポートの検証
 
 
--   ファイルの種類に関係なく、リアルタイムの読み取りの動作のすべてのファイルをマークすることができます。 これを行うには、次のように設定します、**マーク\_処理\_リアルタイム**フラグ、 [**マーク\_処理\_情報**](https://docs.microsoft.com/windows/desktop/api/winioctl/ns-winioctl-mark_handle_info)構造、および。送信し、 [ **FSCTL\_マーク\_処理**](https://docs.microsoft.com/windows/desktop/api/winioctl/ni-winioctl-fsctl_mark_handle)コードを制御します。 バッファなし I/O には、このフラグでマークされたファイルを開く必要があります。
--   アプリケーションがリアルタイム動作は、以前フラグが設定されたファイルをマーク解除を設定して、**マーク\_処理\_いない\_リアルタイム**フラグでマーク\_ハンドル\_情報構造体。
--   場合 FSCTL\_マーク\_マークが付いたハンドル制御コードが送信される\_処理\_リアルタイムと、CD や DVD ドライブまたはメディアがリアルタイムのストリーム配信機能はサポートされていません、IOCTLの状態を取得することを示す\_無効な\_デバイス\_を要求します。 状態のバッファリングせずにハンドルが開かれたかどうか\_無効な\_デバイス\_も要求が返されます。
+-   [**IOCTL\_\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddcdrm/ni-ntddcdrm-ioctl_cdrom_get_configuration)を使用して\_構成を取得し、ストリーミング機能が存在し、最新のものかどうかを確認します。
 
-## <a name="span-idperformingoptimumpowercalibrationopcbeforewritingspanspan-idperformingoptimumpowercalibrationopcbeforewritingspanspan-idperformingoptimumpowercalibrationopcbeforewritingspanperforming-optimum-power-calibration-opc-before-writing"></a><span id="Performing_Optimum_Power_Calibration__OPC__before_writing"></span><span id="performing_optimum_power_calibration__opc__before_writing"></span><span id="PERFORMING_OPTIMUM_POWER_CALIBRATION__OPC__BEFORE_WRITING"></span>書き込みの前に最適な電源の調整 (OPC) を実行します。
+## <a name="span-idenabling_or_disabling_real-time_streaming_using_ioctlsspanspan-idenabling_or_disabling_real-time_streaming_using_ioctlsspanspan-idenabling_or_disabling_real-time_streaming_using_ioctlsspanenabling-or-disabling-real-time-streaming-using-ioctls"></a><span id="Enabling_or_disabling_real-time_streaming_using_IOCTLs"></span><span id="enabling_or_disabling_real-time_streaming_using_ioctls"></span><span id="ENABLING_OR_DISABLING_REAL-TIME_STREAMING_USING_IOCTLS"></span>Ioctl を使用したリアルタイムストリーミングの有効化または無効化
 
 
-一部のアプリケーションは、ストリーミングの最初の書き込みが完了するには、OPC を待機する必要があるないように、事前に OPC 手順を実行する可能性があります。 Cdrom.sys と呼ばれる IOCTL を提供するのには、 [ **IOCTL\_CDROM\_送信\_OPC\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddcdrm/ni-ntddcdrm-ioctl_cdrom_send_opc_information)します。
+-   [**IOCTL\_CDROM\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddcdrm/ni-ntddcdrm-ioctl_cdrom_enable_streaming)使用して\_streaming i/o 制御コードを有効にし、生の読み取り要求と書き込み要求のストリーミングモードを有効または無効にします。 この IOCTL は出力パラメーターを持たず、 [**CDROM\_STREAMING\_制御**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddcdrm/ns-ntddcdrm-_cdrom_streaming_control)構造を入力パラメーターとしてサポートしています。
 
-## <a name="span-iddeterminingthereadwritespeedforthedrivespanspan-iddeterminingthereadwritespeedforthedrivespanspan-iddeterminingthereadwritespeedforthedrivespandetermining-the-readwrite-speed-for-the-drive"></a><span id="Determining_the_read_write_speed_for_the_drive"></span><span id="determining_the_read_write_speed_for_the_drive"></span><span id="DETERMINING_THE_READ_WRITE_SPEED_FOR_THE_DRIVE"></span>ドライブの読み取り/書き込み速度を決定します。
+    この IOCTL は、ハンドルごとにストリーミングモードを有効または無効にします。 既定では、新しく開かれたすべての未処理の CD-ROM ハンドルに対して、ストリーミングは無効になっています。 ファイルシステムを使用せず、生データを操作する再生アプリケーションでは、同じデバイスに対して2つのファイルハンドルを開く必要があります。1つはファイルシステムメタデータ用で、もう1つはリアルタイムファイル用のストリーミングです。
+
+## <a name="span-idspecifying_real-time_streaming_for_irp_mj_read_and_irp_mj_write_requestsspanspan-idspecifying_real-time_streaming_for_irp_mj_read_and_irp_mj_write_requestsspanspan-idspecifying_real-time_streaming_for_irp_mj_read_and_irp_mj_write_requestsspanspecifying-real-time-streaming-for-irp_mj_read-and-irp_mj_write-requests"></a><span id="Specifying_real-time_streaming_for_IRP_MJ_READ_and_IRP_MJ_WRITE_requests"></span><span id="specifying_real-time_streaming_for_irp_mj_read_and_irp_mj_write_requests"></span><span id="SPECIFYING_REAL-TIME_STREAMING_FOR_IRP_MJ_READ_AND_IRP_MJ_WRITE_REQUESTS"></span>IRP\_MJ\_READ および IRP\_MJ のリアルタイムストリーミングの指定\_書き込み要求
 
 
-MMC の仕様は、アプリケーションが望ましい読み取りを示すことと、ドライブが優れたバランスを検索できるように、I/O のストリーミングを使用する前に、書き込み速度、読み取りし、書き込みの品質のスループットをお勧めします。 アプリケーションで使用できます、 [ **IOCTL\_CDROM\_設定\_速度**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddcdrm/ni-ntddcdrm-ioctl_cdrom_set_speed)を優先の速度を示します。 ドライブのサポートされる機能を確認するのには、Windows 7 が導入された、 [ **IOCTL\_CDROM\_取得\_パフォーマンス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddcdrm/ni-ntddcdrm-ioctl_cdrom_get_performance)として受け取り、コードの制御、入力、 [ **CDROM\_パフォーマンス\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddcdrm/ns-ntddcdrm-_cdrom_performance_request)構造体。
+-   [**IogetMJ Enti Stacklocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation)(irp)-&gt;Flags フィールドの SL\_リアルタイム\_ストリームフラグは、読み取りおよび書き込みのストリーミング要求 ([**irp\_\_read**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-read)および[**Irp\_MJ\_write**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-write)) を制御します. フラグは、すべてのストリーミング読み取りおよび書き込み要求に対して設定され、すべての非ストリーミング要求に対して消去されます。 SL\_リアルタイム\_ストリームフラグが設定されている場合、READ12 および WRITE12 scsi コマンドを使用して、READ10 または WRITE10 SCSI コマンドではなく、ストリーミング要求が実行されます。 SL\_のリアルタイム\_ストリームフラグが IRP で設定されているにもかかわらず、デバイスが現在挿入されているメディアのストリーミングをサポートしていない場合、IRP は、状態コードの状態\_無効\_デバイス\_要求で拒否されます。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
-[**IOCTL\_CDROM\_ENABLE\_STREAMING**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddcdrm/ni-ntddcdrm-ioctl_cdrom_enable_streaming)  
-[**IOCTL\_CDROM\_GET\_PERFORMANCE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddcdrm/ni-ntddcdrm-ioctl_cdrom_get_performance)  
-[**IOCTL\_CDROM\_SEND\_OPC\_INFORMATION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddcdrm/ni-ntddcdrm-ioctl_cdrom_send_opc_information)  
-[**IOCTL\_CDROM\_SET\_SPEED**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddcdrm/ni-ntddcdrm-ioctl_cdrom_set_speed)  
-[**FSCTL\_マーク\_処理**](https://docs.microsoft.com/windows/desktop/api/winioctl/ni-winioctl-fsctl_mark_handle)  
-[**マーク\_処理\_情報**](https://docs.microsoft.com/windows/desktop/api/winioctl/ns-winioctl-mark_handle_info)  
-[**CDROM\_パフォーマンス\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddcdrm/ns-ntddcdrm-_cdrom_performance_request)  
+## <a name="span-idspecifying_real-time_streaming_for_a_file_using_fsctlsspanspan-idspecifying_real-time_streaming_for_a_file_using_fsctlsspanspan-idspecifying_real-time_streaming_for_a_file_using_fsctlsspanspecifying-real-time-streaming-for-a-file-using-fsctls"></a><span id="Specifying_real-time_streaming_for_a_file_using_FSCTLs"></span><span id="specifying_real-time_streaming_for_a_file_using_fsctls"></span><span id="SPECIFYING_REAL-TIME_STREAMING_FOR_A_FILE_USING_FSCTLS"></span>FSCTLs を使用してファイルのリアルタイムストリーミングを指定する
+
+
+-   ファイルの種類に関係なく、任意のファイルにリアルタイムの読み取り動作をマークすることができます。 これを行うには[ **\_INFO 構造体\_ハンドル**](https://docs.microsoft.com/windows/desktop/api/winioctl/ns-winioctl-mark_handle_info) **\_リアルタイム**フラグとしてマーク\_ハンドルを設定し、 [**FSCTL\_mark\_handle**](https://docs.microsoft.com/windows/desktop/api/winioctl/ni-winioctl-fsctl_mark_handle)コントロールコードを送信します。 このフラグでマークされたファイルは、バッファーなしの i/o に対して開く必要があります。
+-   以前にリアルタイムの動作のフラグが設定されていたファイルのマークを解除するには、マーク\_ハンドルを設定して、\_INFO 構造体\_ハンドルに **\_リアル**タイムの\_を設定します。
+-   FSCTL\_MARK\_ハンドル制御コードがマーク\_ハンドル\_リアルタイムで送信され、CD-ROM/DVD ドライブまたはメディアによってリアルタイムストリーミング機能がサポートされていないことが示されている場合、IOCTL は状態\_無効\_を返しデバイス\_要求。 ハンドルがバッファリングなしで開かれている場合は、状態\_無効\_デバイス\_要求も返されます。
+
+## <a name="span-idperforming_optimum_power_calibration__opc__before_writingspanspan-idperforming_optimum_power_calibration__opc__before_writingspanspan-idperforming_optimum_power_calibration__opc__before_writingspanperforming-optimum-power-calibration-opc-before-writing"></a><span id="Performing_Optimum_Power_Calibration__OPC__before_writing"></span><span id="performing_optimum_power_calibration__opc__before_writing"></span><span id="PERFORMING_OPTIMUM_POWER_CALIBRATION__OPC__BEFORE_WRITING"></span>書き込み前に最適な電力調整 (OPC) を実行する
+
+
+一部のアプリケーションでは、最初のストリーミング書き込みで OPC が終了するまで待機する必要がないように、事前に OPC プロシージャを実行することが必要になる場合があります。 これを行うために、Cdrom は Ioctl\_CDROM と呼ばれる IOCTL を提供し、 [ **\_OPC\_情報を送信\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddcdrm/ni-ntddcdrm-ioctl_cdrom_send_opc_information)ます。
+
+## <a name="span-iddetermining_the_read_write_speed_for_the_drivespanspan-iddetermining_the_read_write_speed_for_the_drivespanspan-iddetermining_the_read_write_speed_for_the_drivespandetermining-the-readwrite-speed-for-the-drive"></a><span id="Determining_the_read_write_speed_for_the_drive"></span><span id="determining_the_read_write_speed_for_the_drive"></span><span id="DETERMINING_THE_READ_WRITE_SPEED_FOR_THE_DRIVE"></span>ドライブの読み取り/書き込み速度を決定する
+
+
+MMC の仕様では、アプリケーションで、ストリーミング i/o を使用する前に推奨される読み取り速度と書き込み速度を示すことを推奨しています。これにより、読み取りと書き込みの品質とスループットのバランスを取ることができます。 アプリケーションでは、 [**IOCTL\_CDROM\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddcdrm/ni-ntddcdrm-ioctl_cdrom_set_speed)使用して\_速度を設定して、優先速度を示すことができます。 Windows 7 では、ドライブのサポートされている機能を確認するために、\_のパフォーマンス制御コードを取得するために、cdrom [ **\_パフォーマンス\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddcdrm/ns-ntddcdrm-_cdrom_performance_request)構造を入力として使用する[**IOCTL\_cdrom\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddcdrm/ni-ntddcdrm-ioctl_cdrom_get_performance)導入されました。
+
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
+[ **\_ストリーミングを有効にするために、IOCTL\_CDROM\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddcdrm/ni-ntddcdrm-ioctl_cdrom_enable_streaming)  
+[**IOCTL\_CDROM\_\_のパフォーマンスを得る**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddcdrm/ni-ntddcdrm-ioctl_cdrom_get_performance)  
+[**IOCTL\_CDROM\_\_OPC\_情報を送信する**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddcdrm/ni-ntddcdrm-ioctl_cdrom_send_opc_information)  
+[**IOCTL\_CDROM\_設定\_速度**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddcdrm/ni-ntddcdrm-ioctl_cdrom_set_speed)  
+[**FSCTL\_マーク\_ハンドル**](https://docs.microsoft.com/windows/desktop/api/winioctl/ni-winioctl-fsctl_mark_handle)  
+[ **\_情報をマーク\_ハンドル**](https://docs.microsoft.com/windows/desktop/api/winioctl/ns-winioctl-mark_handle_info)  
+[**CDROM\_のパフォーマンス\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddcdrm/ns-ntddcdrm-_cdrom_performance_request)  
 
 
 

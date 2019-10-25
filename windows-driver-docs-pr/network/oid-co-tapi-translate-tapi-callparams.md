@@ -6,18 +6,18 @@ keywords:
 - OID_CO_TAPI_TRANSLATE_TAPI_CALLPARAMS
 ms.date: 11/03/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 42f653a77c4d818465a6564ceca97cbb1097b586
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 124bfb0b0f89d2fdeee3942cc2793ab1341a9307
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385506"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842363"
 ---
-# <a name="oidcotapitranslatetapicallparams"></a>OID_CO_TAPI_TRANSLATE_TAPI_CALLPARAMS
+# <a name="oid_co_tapi_translate_tapi_callparams"></a>OID_CO_TAPI_TRANSLATE_TAPI_CALLPARAMS
 
-OID_CO_TAPI_TRANSLATE_TAPI_CALLPARAMS OID は、NDIS 呼び出しのパラメーターに TAPI 呼び出しのパラメーターを変換するには、コール マネージャーまたは統合呼び出し manager ミニポート (MCM) ドライバーを要求します。 この OID が返される NDIS を使用してクエリが入力としてパラメーターを呼び出すクライアント (として書式設定、 [CO_CALL_PARAMETERS](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff545384(v=vs.85))構造) に[NdisClMakeCall](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisclmakecall)クライアントが発信呼び出しを配置します。
+OID_CO_TAPI_TRANSLATE_TAPI_CALLPARAMS OID は、TAPI 呼び出しパラメーターを NDIS 呼び出しパラメーターに変換するために、呼び出しマネージャーまたは統合された call manager ミニポート (MCM) ドライバーを要求します。 この OID に対してクエリを行うクライアントは、返された NDIS 呼び出しパラメーターを[NdisClMakeCall](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisclmakecall)に入力 ( [CO_CALL_PARAMETERS](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff545384(v=vs.85))構造体として書式設定) として使用し、クライアントが発信呼び出しを配置します。
 
-この OID は、次のように定義されている CO_TAPI_TRANSLATE_TAPI_CALLPARAMS 構造体を使用します。
+この OID では、次のように定義されている CO_TAPI_TRANSLATE_TAPI_CALLPARAMS 構造体を使用します。
 
 ```c++
 typedef struct _CO_TAPI_TRANSLATE_TAPI_CALLPARAMS {
@@ -30,37 +30,37 @@ typedef struct _CO_TAPI_TRANSLATE_TAPI_CALLPARAMS {
 } CO_TAPI_TRANSLATE_TAPI_CALLPARAMS, *PCO_TAPI_TRANSLATE_TAPI_CALLPARAMS;
 ```
 
-この構造体のメンバーには、次の情報が含まれます。
+この構造体のメンバーには、次の情報が含まれています。
 
 **ulLineID**  
-発信通話の転送先の 0 から始まる行識別子を指定します。
+発信呼び出しの送信先となる、0から始まる行識別子を指定します。
 
 **ulAddressID**  
-0 から始まるアドレスの識別子を指定します (で指定された行に**ulLineID**) を発信呼び出しを送信します。
+発信呼び出しの送信先となる、0から始まるアドレス識別子を指定します ( **ulLineID**で指定された行)。
 
 **ulFlags**  
-クライアントは、ビット CO_TAPI_FLAG_OUTGOING_CALL を設定する必要があります**ulFlags**します。 クライアントがビット CO_TAPI_USE_DEFAULT_CALLPARAMS を必要に応じて設定**ulFlags**を無視するには、コール マネージャーまたは MCM のドライバーを必要とする、 **LineCallParams**戻り値の既定の NDIS 呼び出しパラメーターデバイスです。
+クライアントは、 **Ulflags**に CO_TAPI_FLAG_OUTGOING_CALL ビットを設定する必要があります。 クライアントは必要に応じて、CO_TAPI_USE_DEFAULT_CALLPARAMS ビットを**Ulflags**に設定して、呼び出しマネージャーまたは mcm ドライバーが**LineCallParams**を無視し、デバイスの既定の NDIS 呼び出しパラメーターを返すようにすることができます。
 
 **DestAddress**  
-指定します、 [NDIS_VAR_DATA_DESC](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff559020(v=vs.85)) NDIS_VAR_DATA_DESC 構造体の先頭から宛先アドレスへのオフセットを含む構造体が文字配列として書式設定します。 NDIS_VAR_DATA_DESC 構造体には、宛先アドレスの長さも含まれています。 送信先アドレスは、発信通話の転送先アドレスです。
+NDIS_VAR_DATA_DESC 構造体の先頭から、文字配列として書式設定された宛先アドレスへのオフセットを含む[NDIS_VAR_DATA_DESC](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff559020(v=vs.85))構造体を指定します。 NDIS_VAR_DATA_DESC 構造体には、宛先アドレスの長さも含まれます。 送信先アドレスは、発信呼び出しの送信先アドレスです。
 
 **LineCallParams**  
-指定します、 [NDIS_VAR_DATA_DESC](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff559020(v=vs.85)) LINE_CALL_PARAMS 構造に NDIS_VAR_DATA_DESC 構造体の先頭からのオフセットを含む構造体。 NDIS_VAR_DATA_DESC 構造体には、LINE_CALL_PARAMS 構造体の長さも含まれています。 LINE_CALL_PARAMS 構造体には、NDIS 呼び出しのパラメーターに変換する TAPI 呼び出しのパラメーターを指定します。 LINE_CALL_PARAMS 構造の詳細については、Microsoft Windows SDK と ndistapi.h ヘッダー ファイルを参照してください。
+NDIS_VAR_DATA_DESC 構造体の先頭から LINE_CALL_PARAMS 構造体までのオフセットを格納する[NDIS_VAR_DATA_DESC](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff559020(v=vs.85))構造体を指定します。 NDIS_VAR_DATA_DESC 構造体には、LINE_CALL_PARAMS 構造体の長さも含まれます。 LINE_CALL_PARAMS 構造体は、NDIS 呼び出しパラメーターに変換される TAPI 呼び出しパラメーターを指定します。 LINE_CALL_PARAMS 構造体の詳細については、Microsoft Windows SDK と ndistapi .h のヘッダーファイルを参照してください。
 
 **NdisCallParams**  
-指定します、 [NDIS_VAR_DATA_DESC](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff559020(v=vs.85)) CO_CALL_PARAMETERS 構造に NDIS_VAR_DATA_DESC 構造体の先頭からのオフセットを含む構造体。 NDIS_VAR_DATA_DESC 構造がの長さにはも含まれています、 [CO_CALL_PARAMETERS](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff545384(v=vs.85))構造体。 CO_CALL_PARAMETERS 構造体は、特定の TAPI 呼び出しのパラメーターに翻訳された NDIS 呼び出しのパラメーターを指定します。
+NDIS_VAR_DATA_DESC 構造体の先頭から CO_CALL_PARAMETERS 構造体までのオフセットを格納する[NDIS_VAR_DATA_DESC](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff559020(v=vs.85))構造体を指定します。 NDIS_VAR_DATA_DESC 構造体には、 [CO_CALL_PARAMETERS](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff545384(v=vs.85))構造体の長さも含まれます。 CO_CALL_PARAMETERS 構造体は、指定された TAPI 呼び出しパラメーターが変換された NDIS 呼び出しパラメーターを指定します。
 
 ## <a name="remarks"></a>注釈
 
-によって参照される CO_CALL_PARAMETERS 構造でコール マネージャーまたは MCM ドライバーが入力要求が成功した場合、 **NdisCallParams**翻訳済みの NDIS と呼び出しのパラメーター。 コール マネージャーまたは MCM ドライバーによって参照されるフラットなメモリの範囲内で CO_CALL_PARAMETERS 構造体を割り当て**NdisCallParams**します。 CO_CALL_PARAMETERS 構造体の長さの合計は、クライアントが書き込む**NdisCallParams.Length**します。
+要求が成功した場合、呼び出しマネージャーまたは MCM ドライバーは、 **NdisCallParams**によって参照される CO_CALL_PARAMETERS 構造体に、変換された NDIS 呼び出しパラメーターを格納します。 呼び出しマネージャーまたは MCM ドライバーは、 **NdisCallParams**によって参照されるフラットメモリセクション内に CO_CALL_PARAMETERS 構造体を割り当てる必要があります。 クライアントは、CO_CALL_PARAMETERS 構造体の合計長を**NdisCallParams**に書き込みます。
 
-場合は、クライアント設定内のビット CO_TAPI_USE_DEFAULT_CALLPARAMS **ulFlags**クライアントが TAPI 呼び出しのパラメーターを指定していません。 この場合、コール マネージャーまたは MCM ドライバーは、デバイスの既定の NDIS 呼び出しパラメーターを返す必要があります。 デバイスの既定の NDIS 呼び出しパラメーターがない場合、コール マネージャーまたは MCM ドライバーは NDIS_STATUS_FAILURE を返す必要があります。
+クライアントが**Ulflags**の CO_TAPI_USE_DEFAULT_CALLPARAMS ビットを設定した場合、クライアントは TAPI 呼び出しパラメーターを指定しません。 この場合、呼び出しマネージャーまたは MCM ドライバーは、デバイスの既定の NDIS 呼び出しパラメーターを返す必要があります。 デバイスに既定の NDIS 呼び出しパラメーターがない場合、呼び出しマネージャーまたは MCM ドライバーは NDIS_STATUS_FAILURE を返す必要があります。
 
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 | | |
 | --- | --- |
 | バージョン | Windows Vista 以降 |
-| Header | Ntddndis.h (include Ndis.h) |
+| Header | Ntddndis (Ndis .h を含む) |
 

@@ -3,21 +3,21 @@ title: プリンター ドライバーで CPSUI を使用する
 description: プリンター ドライバーで CPSUI を使用する
 ms.assetid: 898a855d-6a9a-4f98-9ee4-bad439427326
 keywords:
-- 共通のプロパティ シートのユーザー インターフェイスを WDK の印刷、プロパティ シートのページを表示します。
-- CPSUI WDK の印刷、プロパティ シートのページを表示します。
-- WDK プロパティ シートのページの印刷、表示します。
-- プロパティ シートのページを表示します。
-- 一般的なプロパティ シートのユーザー インターフェイス WDK CPSUI についての印刷
-- CPSUI WDK CPSUI についての印刷
-- WDK プロパティ シートのページを印刷するプリンター ドライバーで CPSUI について
+- 共通プロパティシートのユーザーインターフェイス WDK 印刷、プロパティシートページの表示
+- CPSUI WDK print、プロパティシートページの表示
+- プロパティシートページの WDK 印刷、表示
+- プロパティシートのページの表示
+- 一般的なプロパティシートのユーザーインターフェイス WDK print、CPSUI について
+- CPSUI WDK print、CPSUI について
+- プロパティシートページ WDK 印刷、CPSUI とプリンタードライバーの概要
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cf4ae849bf9db95797a2bc59d8f051c6a4f28a5b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d0b454eb7513502f5ba7b6a9efdf6f715d5cf939
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384171"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844201"
 ---
 # <a name="using-cpsui-with-printer-drivers"></a>プリンター ドライバーで CPSUI を使用する
 
@@ -25,31 +25,31 @@ ms.locfileid: "67384171"
 
 
 
-組み合わせて、印刷スプーラー[プリンター インターフェイス Dll](printer-interface-dll.md)CPSUI を使用して印刷するドキュメントとプリンター デバイスのプロパティ シート ページを作成します。 (Microsoft Word の場合) などのアプリケーションは、印刷ドキュメントのプロパティ シートを表示するとき、次の手順が含まれます。
+印刷スプーラは、[プリンターインターフェイス dll](printer-interface-dll.md)と組み合わせて CPSUI を使用して、印刷ドキュメントとプリンターデバイスのプロパティシートページを作成します。 次の手順は、アプリケーション (Microsoft Word など) によって印刷ドキュメントのプロパティシートが表示される場合に関係します。
 
-1.  アプリケーションは、印刷スプーラーを呼び出して**DocumentProperties**関数 (Microsoft Windows SDK のドキュメントで説明)、ドキュメントを印刷するプリンターを指定します。
+1.  アプリケーションは、印刷スプーラの**DocumentProperties**関数 (Microsoft Windows SDK のドキュメントで説明されています) を呼び出して、ドキュメントを印刷するプリンターを指定します。
 
-2.  印刷スプーラが CPSUI のエントリ ポイント関数を呼び出す[ **CommonPropertySheetUI**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/nf-compstui-commonpropertysheetuia)、内部を指定する[ **PFNPROPSHEETUI**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/nc-compstui-pfnpropsheetui)-型指定されたコールバック関数。
+2.  印刷スプーラは、内部的な[**PFNPROPSHEETUI**](https://docs.microsoft.com/windows-hardware/drivers/ddi/compstui/nc-compstui-pfnpropsheetui)型のコールバック関数を指定して、CPSUI のエントリポイント関数[**CommonPropertySheetUI**](https://docs.microsoft.com/windows-hardware/drivers/ddi/compstui/nf-compstui-commonpropertysheetuia)を呼び出します。
 
-3.  CPSUI では、スプーラーの PFNPROPSHEETUI に型指定されたコールバック関数を呼び出します。
+3.  CPSUI は、スプーラの PFNPROPSHEETUI によって型指定されたコールバック関数を呼び出します。
 
-4.  スプーラの PFNPROPSHEETUI に型指定されたコールバック関数によって CPSUI の[ **ComPropSheet** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/nc-compstui-pfncompropsheet)関数 (で、 [ **CPSFUNC\_追加\_PFNPROPSHEETUI** ](https://docs.microsoft.com/previous-versions/ff546391(v=vs.85))機能コード) に、適切なプリンター インターフェイスの DLL のアドレスの CPSUI を通知する[ **DrvDocumentPropertySheets** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winddiui/nf-winddiui-drvdocumentpropertysheets)関数。
+4.  スプーラの PFNPROPSHEETUI で型指定されたコールバック関数は、CPSUI の[**ComPropSheet**](https://docs.microsoft.com/windows-hardware/drivers/ddi/compstui/nc-compstui-pfncompropsheet)関数 ( [**cpsfunc\_ADD\_PFNPROPSHEETUI**](https://docs.microsoft.com/previous-versions/ff546391(v=vs.85))関数コード) を呼び出して、適切なプリンターインターフェイス DLL[**のアドレスを CPSUI に通知します。DrvDocumentPropertySheets**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winddiui/nf-winddiui-drvdocumentpropertysheets)関数。
 
-5.  CPSUI インターフェイスを呼び出し、プリンター DLL の**DrvDocumentPropertySheets**関数。
+5.  CPSUI は、プリンターインターフェイス DLL の**DrvDocumentPropertySheets**関数を呼び出します。
 
-6.  プリンター インターフェイス DLL の**DrvDocumentPropertySheets**関数 CPSUI の**ComPropSheet**関数 (通常、 [ **CPSFUNC\_の追加\_PCOMPROPSHEETUI** ](https://docs.microsoft.com/previous-versions/ff546388(v=vs.85))機能コード) プロパティ シート ページの説明に CPSUI を提供して[イベントのコールバックをページ](page-event-callbacks.md)します。
+6.  Printer interface DLL の**DrvDocumentPropertySheets**関数は、CPSUI の**ComPropSheet**関数 (通常は[**cpsfunc\_ADD\_PCOMPROPSHEETUI**](https://docs.microsoft.com/previous-versions/ff546388(v=vs.85))関数コード) を呼び出して、CPSUI をプロパティシートページに提供します。説明と[ページイベントのコールバック](page-event-callbacks.md)。
 
-7.  CPSUI の**ComPropSheet**関数呼び出し**CreatePropertySheetPage** (Windows SDK のドキュメントで説明)、プリンター インターフェイス DLL で指定されたプロパティ シートのページを作成します。 CPSUI を呼び出して**プロパティ シート**(Windows SDK のドキュメントで説明) プロパティ シートのページを表示します。
+7.  CPSUI の**ComPropSheet**関数は、 **createpropertysheet ページ**(Windows SDK ドキュメントで説明されています) を呼び出して、プリンターインターフェイス DLL によって指定されたプロパティシートページを作成します。 次に、CPSUI は、プロパティシートのページを表示するために、(Windows SDK のドキュメントで説明されている **) プロパティシートを呼び出します**。
 
-次の図は、次の手順を示します。
+次の図は、これらの手順を示しています。
 
-![プロパティ シートの表示に必要なモジュールを示す図](images/usecpsui.png)
+![プロパティシートの表示に関連するモジュールを示す図](images/usecpsui.png)
 
-アプリケーションのユーザーは、プロパティ シートのページを通過し、オプションの値を変更、オペレーティング システムに通知のページ イベント CPSUI と CPSUI、さらに、プリンター インターフェイス DLL によって指定されたページ イベント コールバックを呼び出します。 ページのイベントのコールバックは、ページ イベントを処理し、ストア新しく選択したオプション値を内部的には、必要に応じて。
+アプリケーションユーザーがプロパティシートのページを走査し、オプションの値を変更すると、オペレーティングシステムによって CPSUI のページイベントと CPSUI が通知され、プリンターインターフェイス DLL によって提供されるページイベントコールバックが呼び出されます。 ページイベントコールバックは、ページイベントを処理し、必要に応じて、新しく選択されたオプション値を内部に格納します。
 
-クリックして、ユーザーがプロパティ シートを閉じるときに、 **Ok**または**キャンセル**CPSUI ボタンがページを破棄し、原因、 **CommonPropertySheetUI**を返す関数印刷スプーラーをし、アプリケーションにコントロールを返します。
+ユーザーが **[Ok]** または **[キャンセル**] ボタンをクリックしてプロパティシートを閉じると、CPSUI によってページが破棄され、 **CommonPropertySheetUI**関数は印刷スプーラに戻り、その後、アプリケーションにコントロールが返されます。
 
-アプリケーションでは、印刷ドキュメントではなくプリンター デバイスのプロパティ シートを表示するとき、同じ手順が、アプリケーションが呼び出す、スプーラーのことを除いて**PrinterProperties**関数とスプーラー パス、プリンターのインターフェイスのアドレス DLL の[ **DrvDevicePropertySheets** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winddiui/nf-winddiui-drvdevicepropertysheets) CPSUI する関数。
+アプリケーションで印刷ドキュメントではなく、プリンターデバイスのプロパティシートが表示される場合も、同じ手順が実行されます。ただし、アプリケーションがスプーラの**Print properties**関数を呼び出し、スプーラーによってプリンターのアドレスが渡される点が異なります。インターフェイス DLL の[**DrvDevicePropertySheets**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winddiui/nf-winddiui-drvdevicepropertysheets)関数を CPSUI にします。
 
  
 

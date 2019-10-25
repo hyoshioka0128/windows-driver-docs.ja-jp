@@ -1,46 +1,46 @@
 ---
 title: OID_SWITCH_PROPERTY_ENUM
-description: HYPER-V 拡張可能なスイッチ、拡張機能の問題は、オブジェクト識別子 (OID) メソッドへの要求を OID_SWITCH_PROPERTY_ENUM の配列を取得します。
+description: Hyper-v 拡張可能スイッチ拡張機能は、配列を取得するために、OID_SWITCH_PROPERTY_ENUM のオブジェクト識別子 (OID) メソッド要求を発行します。
 ms.assetid: 45277355-4486-4CE0-ACBF-68D6BC6B79E7
 ms.date: 08/08/2017
-keywords: -OID_SWITCH_PROPERTY_ENUM ネットワーク ドライバーが Windows Vista 以降
+keywords: -Windows Vista 以降の OID_SWITCH_PROPERTY_ENUM ネットワークドライバー
 ms.localizationpriority: medium
-ms.openlocfilehash: 43082d97b615aa53f4fbd767fff250a113074490
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 220b0885b9393d13853bd363bcfe93b529fdde4d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386976"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843915"
 ---
-# <a name="oidswitchpropertyenum"></a>OID\_スイッチ\_プロパティ\_列挙型
+# <a name="oid_switch_property_enum"></a>OID\_SWITCH\_プロパティ\_列挙型
 
 
-HYPER-V 拡張可能スイッチの拡張機能の OID オブジェクト識別子 (OID) メソッド要求の発行\_切り替える\_プロパティ\_列挙型の配列を取得します。 この配列には、指定した条件に一致するプロビジョニングされたスイッチ ポリシーが含まれます。 配列内の各要素には、拡張可能スイッチのポリシーのプロパティを指定します。
+Hyper-v 拡張可能スイッチ拡張機能は、OID のオブジェクト識別子 (OID) メソッドの要求を発行して、\_SWITCH\_プロパティ\_列挙型に配列を取得します。 この配列には、指定した条件に一致するプロビジョニング済みスイッチポリシーが含まれています。 配列の各要素は、拡張可能なスイッチポリシーのプロパティを指定します。
 
-**InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体には、バッファーへのポインターが含まれています。 このバッファーには、次のデータが含まれています。
+[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造体の**informationbuffer**メンバーには、バッファーへのポインターが含まれています。 このバッファーには、次のデータが含まれています。
 
--   [ **NDIS\_切り替える\_プロパティ\_ENUM\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_switch_property_enum_parameters)拡張可能スイッチのポリシーのパラメーターを指定する構造体列挙体です。
+-   [**NDIS\_スイッチ\_プロパティ\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_property_enum_parameters) 、拡張可能なスイッチポリシーの列挙のパラメーターを指定する列挙型\_パラメーター構造です。
 
--   配列の[ **NDIS\_スイッチ\_プロパティ\_ENUM\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_switch_property_enum_info)構造体。 各構造体には、ポリシーを拡張可能スイッチに関する情報が含まれています。
+-   [**ENUM\_INFO 構造体\_、NDIS\_SWITCH\_プロパティ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_property_enum_info)の配列。 これらの各構造体には、拡張可能なスイッチポリシーに関する情報が含まれています。
 
-    **注**  、拡張機能の設定、拡張機能が拡張可能スイッチを指定したポリシーのインスタンスにプロビジョニングされていない場合、 **NumProperties**のメンバー、 [ **NDIS\_スイッチ\_プロパティ\_ENUM\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_switch_property_enum_parameters)構造体を 0、no [ **NDIS\_スイッチ\_プロパティ\_ENUM\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_switch_property_enum_info)構造体が返されます。
+    **注:** 拡張機能が指定された拡張可能なスイッチポリシーのインスタンスを使用してプロビジョニングされていない場合は、拡張機能によって、NDIS\_SWITCH\_プロパティ\_列挙型の**numproperties**メンバーが設定され  [ **\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_property_enum_parameters)構造体は0になり、 [**NDIS\_スイッチ\_プロパティ\_列挙型\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_property_enum_info)構造体が返されます。
 
      
 
 <a name="remarks"></a>注釈
 -------
 
-OID\_切り替える\_プロパティ\_列挙型の OID は、HYPER-V 拡張可能スイッチには、アクティブ化が完了したときにのみ発行する必要があります。 参照してください[HYPER-V 拡張可能スイッチの構成を照会](https://docs.microsoft.com/windows-hardware/drivers/network/querying-the-hyper-v-extensible-switch-configuration)の詳細。
+OID\_スイッチ\_プロパティ\_列挙型 OID は、Hyper-v 拡張スイッチでアクティブ化が完了している場合にのみ発行する必要があります。 詳細について[は、「Hyper-v 拡張可能スイッチ構成のクエリ](https://docs.microsoft.com/windows-hardware/drivers/network/querying-the-hyper-v-extensible-switch-configuration)」を参照してください。
 
-OID とは異なりは、クエリの要求[OID\_スイッチ\_ポート\_プロパティ\_ENUM](oid-switch-port-property-enum.md)、拡張機能をいずれかを呼び出す必要はありません*ReferenceSwitchXxx*または*DereferenceSwitchXxx* OID を発行するときに関数\_切り替える\_プロパティ\_拡張可能スイッチのドライバー スタック ダウン要求を列挙します。
+Oid [\_スイッチ\_ポート\_プロパティ\_列挙型](oid-switch-port-property-enum.md)の oid クエリ要求とは異なり、この拡張機能*では、* oid を発行するときに、任意の*DereferenceSwitchXxx*関数を呼び出す必要はありません\_拡張可能なスイッチドライバースタックの\_プロパティ\_列挙型要求を切り替えます。
 
-**注**  、拡張機能は OID の OID メソッド要求を受け取るかどうか\_スイッチ\_プロパティ\_列挙型にする必要があります要求を完了できません、OID。 代わりに、呼び出す必要があります[ **NdisFOidRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfoidrequest)拡張可能スイッチのドライバー スタック ダウン OID 要求を転送します。
+**注:** 拡張機能が OID の oid メソッド要求を受け取った場合は  \_SWITCH\_プロパティ\_列挙型であるため、oid 要求を完了することはできません。 代わりに、 [**NdisFOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfoidrequest)を呼び出して、拡張可能なスイッチドライバースタックで OID 要求を転送する必要があります。
 
  
 
-### <a name="return-status-codes"></a>リターン状態コード
+### <a name="return-status-codes"></a>ステータスコードを返す
 
-拡張可能スイッチの基になるミニポート edge OID の OID のクエリ要求が完了すると\_切り替える\_プロパティ\_列挙し、次のステータス コードのいずれかを返します。
+拡張可能スイッチの基になるミニポートエッジは、OID\_SWITCH\_プロパティ\_列挙型の OID クエリ要求を完了し、次のステータスコードのいずれかを返します。
 
 <table>
 <colgroup>
@@ -56,15 +56,15 @@ OID とは異なりは、クエリの要求[OID\_スイッチ\_ポート\_プロ
 <tbody>
 <tr class="odd">
 <td><p>NDIS_STATUS_SUCCESS</p></td>
-<td><p>OID 要求は正常に完了しました。</p></td>
+<td><p>OID 要求が正常に完了しました。</p></td>
 </tr>
 <tr class="even">
 <td><p>NDIS_STATUS_INVALID_LENGTH</p></td>
-<td><p>返される情報バッファーの長さが小さすぎる、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_switch_property_enum_parameters" data-raw-source="[&lt;strong&gt;NDIS_SWITCH_PROPERTY_ENUM_PARAMETERS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_switch_property_enum_parameters)"> <strong>NDIS_SWITCH_PROPERTY_ENUM_PARAMETERS</strong> </a>構造とその配列の<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_switch_property_enum_info" data-raw-source="[&lt;strong&gt;NDIS_SWITCH_PROPERTY_ENUM_INFO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_switch_property_enum_info)"> <strong>NDIS_SWITCH_PROPERTY_ENUM_情報</strong></a>要素。 拡張可能スイッチのセットの基になるミニポート edge、<strong>データ。METHOD_INFORMATION します。BytesNeeded</strong>内のメンバー、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)"> <strong>NDIS_OID_REQUEST</strong> </a>構造体に必要な最小バッファー サイズ。</p></td>
+<td><p>情報バッファーの長さが小さすぎて、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_property_enum_parameters" data-raw-source="[&lt;strong&gt;NDIS_SWITCH_PROPERTY_ENUM_PARAMETERS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_property_enum_parameters)"><strong>NDIS_SWITCH_PROPERTY_ENUM_PARAMETERS</strong></a>構造体と<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_property_enum_info" data-raw-source="[&lt;strong&gt;NDIS_SWITCH_PROPERTY_ENUM_INFO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_property_enum_info)"><strong>NDIS_SWITCH_PROPERTY_ENUM_INFO</strong></a>要素の配列を返すことができません。 拡張可能スイッチの基になるミニポートエッジによってデータが設定され<strong>ます。METHOD_INFORMATION.</strong> <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a>構造体の中で必要とされる最小バッファーサイズに対して、bytesneeded 必要です。</p></td>
 </tr>
 <tr class="odd">
 <td><p>NDIS_STATUS_FAILURE</p></td>
-<td><p>他の理由から、要求が失敗しました。</p></td>
+<td><p>他の理由で要求が失敗しました。</p></td>
 </tr>
 </tbody>
 </table>
@@ -82,11 +82,11 @@ OID とは異なりは、クエリの要求[OID\_スイッチ\_ポート\_プロ
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>NDIS 6.30 以降をサポートします。</p></td>
+<td><p>NDIS 6.30 以降でサポートされています。</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Ntddndis.h (include Ndis.h)</td>
+<td>Ntddndis (Ndis .h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -95,13 +95,13 @@ OID とは異なりは、クエリの要求[OID\_スイッチ\_ポート\_プロ
 
 
 ****
-[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
+[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)
 
-[**NDIS\_スイッチ\_プロパティ\_ENUM\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_switch_property_enum_info)
+[**NDIS\_スイッチ\_プロパティ\_列挙型\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_property_enum_info)
 
-[**NDIS\_スイッチ\_プロパティ\_ENUM\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_switch_property_enum_parameters)
+[**NDIS\_SWITCH\_プロパティ\_列挙型\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_property_enum_parameters)
 
-[HYPER-V 拡張可能スイッチの構成のクエリを実行します。](https://docs.microsoft.com/windows-hardware/drivers/network/querying-the-hyper-v-extensible-switch-configuration)
+[Hyper-v 拡張可能スイッチ構成のクエリ](https://docs.microsoft.com/windows-hardware/drivers/network/querying-the-hyper-v-extensible-switch-configuration)
 
  
 

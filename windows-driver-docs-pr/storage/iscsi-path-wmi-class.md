@@ -4,17 +4,17 @@ description: ISCSI\_パス WMI クラス
 ms.assetid: d4067869-2c67-42d3-988e-af825549853d
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 63a99b532c8e2122a7d37cde20269a60f71bdc0d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b3acf193ce8e941cc108bfc0ab288d9ed8dac9b0
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378431"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842264"
 ---
-# <a name="iscsipath-wmi-class"></a>ISCSI\_パス WMI クラス
+# <a name="iscsi_path-wmi-class"></a>ISCSI\_パス WMI クラス
 
 
-ISCSI\_パス WMI クラスには、iSCSI ポータルの接続に関する情報が含まれています。 このクラスが次のように定義されている*Mgmt.mof します。*
+ISCSI\_Path WMI クラスには、iSCSI ポータルの接続に関する情報が含まれています。 このクラスは、管理 .mof で次のように定義されてい*ます。*
 
 ```cpp
 class ISCSI_Path
@@ -59,7 +59,7 @@ class ISCSI_Path
 };
 ```
 
-WMI ツールのスイートでは、上記のクラス定義をコンパイルするときに生成、 [ **ISCSI\_パス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsimgt/ns-iscsimgt-_iscsi_path)データ構造体。
+WMI ツールスイートは、前のクラス定義をコンパイルするときに、 [**ISCSI\_パス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/iscsimgt/ns-iscsimgt-_iscsi_path)のデータ構造を生成します。
 
  
 

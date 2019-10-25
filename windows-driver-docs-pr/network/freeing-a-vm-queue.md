@@ -4,12 +4,12 @@ description: VM キューの解放
 ms.assetid: 32679638-eeef-4e11-bf56-c96f047e4de7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c17deb842749d18affe722ba3c7a11fda793128d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 51584d5dcfc3cbd0dae85fd49f25ff83c4971e8f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382767"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842120"
 ---
 # <a name="freeing-a-vm-queue"></a>VM キューの解放
 
@@ -17,29 +17,29 @@ ms.locfileid: "67382767"
 
 
 
-上にある、ドライバーの問題を受信キューを解放する、 [OID\_受信\_フィルター\_FREE\_キュー](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-free-queue) OID 要求のセット。 **InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体にはへのポインターが含まれています、 [ **NDIS\_受信\_キュー\_FREE\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_queue_free_parameters)の種類のキュー id を使用した構造**NDIS\_受信\_キュー\_ID**します。
+受信キューを解放するために、1つ前のドライバーが Oid を発行して、\_QUEUE set OID 要求を[\_フィルター\_\_受信](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-free-queue)します。 [**Ndis\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造体の**informationbuffer**メンバーには、 [**ndis\_RECEIVE\_queue**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_free_parameters)に対するポインターが含まれています。これには、型のキュー識別子を使用して、無料\_パラメーター構造が含まれます。**NDIS\_\_キュー\_ID を受信**します。
 
-[OID\_受信\_フィルター\_FREE\_キュー](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-free-queue)を使用して、上にあるドライバーが割り当てられている受信キューの解放、 [OID\_受信\_フィルター\_割り当てる\_キュー](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-allocate-queue) OID。 受信キューの割り当てに関する詳細については、次を参照してください。 [VM キューを割り当てる](allocating-a-vm-queue.md)します。
+[Oid\_受信\_フィルター\_解放](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-free-queue)された\_キューは、oid を使用して割り当てられた後のドライバーが\_キュー OID を[割り当てる\_の受信\_フィルター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-allocate-queue)を使用して割り当てられた受信キューを解放します。 受信キューの割り当ての詳細については、「 [VM キューの割り当て](allocating-a-vm-queue.md)」を参照してください。
 
-**注**  キューの識別子を持つ既定のキューの**NDIS\_既定\_受信\_キュー\_ID**、常に割り当てられているし、することはできません解放されます。
+**注**  既定のキューは、\_NDIS のキュー識別子を持つ既定のキューであり、 **\_queue\_ID の受信\_既定**のキューが割り当てられており、解放できないことに注意してください。
 
  
 
-上にある、ドライバーは、キューを解放する前にキューに設定するすべてのフィルターを解放する必要があります。 また、上にある、ドライバーを呼び出す前に、ネットワーク アダプターに割り当てられた、すべての受信キューを解放する必要があります、 [ **NdisCloseAdapterEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscloseadapterex)ネットワーク アダプターへのバインドを閉じます。 NDIS ミニポート ドライバーを呼び出す前に、ネットワーク アダプターに割り当てられているすべてのキューの解放[ *MiniportHaltEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_halt)関数。
+後続のドライバーは、キューを解放する前に、キューに設定されているすべてのフィルターを解放する必要があります。 また、 [**NdisCloseAdapterEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscloseadapterex)関数を呼び出してネットワークアダプターへのバインドを閉じる前に、ネットワークアダプターに割り当てられているすべての受信キューを解放する必要があります。 NDIS は、ミニポートドライバーの[*Miniporthaltex*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_halt)関数を呼び出す前に、ネットワークアダプターに割り当てられているすべてのキューを解放します。
 
-ミニポート ドライバーでは、無料のキューに要求を受信したときに、次は。
+ミニポートドライバーは、キューを解放する要求を受信すると、次のことを行います。
 
--   キューに関連付けられている共有メモリのリソースに DMA をすぐに停止する必要があります。
+-   は、キューに関連付けられている共有メモリリソースに対して DMA を直ちに停止する必要があります。
 
--   DMA が停止したことを示す状態表示を生成します。
+-   DMA が停止したことを示すステータスを生成します。
 
--   未処理のすべての待機[ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)構造体は、返される、キューに関連付けられています。
+-   キューに関連付けられているすべての未処理の[**NET\_BUFFER\_LIST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)構造体が返されるまで待機します。
 
--   関連付けられている共有メモリとハードウェア リソースを解放します。
+-   関連付けられている共有メモリとハードウェアリソースを解放します。
 
-ミニポート ドライバーが受信すると、 [OID\_受信\_フィルター\_FREE\_キュー](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-free-queue)セットの要求キューは、DMA の停止の状態を入力する必要があります、queue とミニポート、DMA が停止しますドライバーを使用して状態の変更を示す必要があります、 [ **NDIS\_状態\_受信\_キュー\_状態**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-receive-queue-state)状態を示す値。 キューの状態の詳細については、次を参照してください。[キューの状態と操作](queue-states-and-operations.md)します。
+ミニポートドライバーが[\_\_フィルター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-free-queue)を使用して\_キューセット要求を取得し\_受信する場合は、キューが停止 dma 状態になる必要があります。キューは、キューの dma を停止し、ミニポートドライバーは、 [**NDIS\_ステータス\_\_キュー\_状態**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-receive-queue-state)の状態を示します。 キューの状態の詳細については、「[キューの状態と操作](queue-states-and-operations.md)」を参照してください。
 
-ミニポート ドライバーの問題の後、 [ **NDIS\_状態\_受信\_キュー\_状態**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-receive-queue-state)状態を示す値、すべてを待機する、保留中関連付けられている共有メモリを解放できる前に完了する兆候が表示されます。 共有メモリを解放する方法の詳細については、次を参照してください。[共有メモリ リソース割り当て](shared-memory-resource-allocation.md)します。
+ミニポートドライバーが NDIS\_の状態を発行した後[ **\_\_\_キュー**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-receive-queue-state)の状態を示すメッセージが表示されたら、保留中のすべての受信通知が完了するまで待機してから、関連付けられている共有メモリを解放する必要があります。 共有メモリの解放の詳細については、「[共有メモリリソースの割り当て](shared-memory-resource-allocation.md)」を参照してください。
 
  
 

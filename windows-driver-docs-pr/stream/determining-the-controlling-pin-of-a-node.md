@@ -3,20 +3,20 @@ title: ノードの制御ピンの決定
 description: ノードの制御ピンの決定
 ms.assetid: be1236e2-c710-4833-863e-54e826e53f92
 keywords:
-- メソッドは、WDK BDA、暗証番号 (pin) を制御するノードを設定します。
-- プロパティは、WDK BDA、暗証番号 (pin) を制御するノードを設定します。
-- WDK BDA 暗証番号 (pin) を制御します。
-- ノードの制御のピン留め WDK BDA
-- WDK BDA 配列
-- 暗証番号 (pin) コント ローラー WDK BDA
+- メソッド設定 WDK BDA、ノード制御 pin
+- プロパティ設定 WDK BDA、ノード制御 pin
+- pin WDK BDA の制御
+- pin を制御するノード (WDK)
+- 配列 WDK BDA
+- pin コントローラー WDK BDA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0dfad0bbad0970d7f1d29c912fe880423b9fc0c8
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1ed66297709935be45fa47c5192d63fa831a9ed1
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360175"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844786"
 ---
 # <a name="determining-the-controlling-pin-of-a-node"></a>ノードの制御ピンの決定
 
@@ -24,21 +24,21 @@ ms.locfileid: "67360175"
 
 
 
-フィルターと pin とは異なりノードには、リング 3 でのアプリケーション アクセスできる、関連付けられているファイル ハンドルがありません。 ノードがフィルター内での内部コンポーネントであるため、存在する場所に、フィルターの入力と出力ピンの間。 ネットワーク プロバイダーを使用するには、どのフィルター pin を確認し、暗証番号 (pin) を使用して、ノードにアクセスする必要があります。 このフィルターの暗証番号 (pin) には、そのノードの制御の暗証番号 (pin) が呼び出されます。 ネットワーク プロバイダーが、KSPROPERTY をクエリ フィルターの BDA テンプレート接続リスト内の各ノードの制御の暗証番号 (pin) を決定する\_BDA\_制御\_PIN\_の ID プロパティ、 [KSPROPSETID\_BdaTopology](https://docs.microsoft.com/windows-hardware/drivers/stream/kspropsetid-bdatopology)プロパティ セット。 BDA ミニドライバーを呼び出し、 [ **BdaPropertyGetControllingPinId** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdasup/nf-bdasup-bdapropertygetcontrollingpinid)ノードごとに関数をサポートします。 この呼び出しで、ミニドライバーはへのポインターを渡す、 [ **KSP\_BDA\_ノード\_PIN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdamedia/ns-bdamedia-_ksp_bda_node_pin)構造体。 この構造体は、特定のノード型と、フィルターの入力のペアを制御するピンと出力ピンを取得するプロパティの要求を識別します。 BDA サポート ライブラリは、ノード型を制御するピンの識別子を返します。
+フィルターや pin とは異なり、ノードには、リング3のアプリケーションがアクセスできるファイルハンドルが関連付けられていません。 ノードはフィルター内の内部コンポーネントであるため、フィルターの入力ピンと出力ピンの間に存在します。 ネットワークプロバイダーは、使用するフィルター pin を決定してから、その pin を使用してノードにアクセスします。 このフィルターピンは、そのノードの制御ピンと呼ばれます。 フィルターの BDA テンプレート接続リストの各ノードについて制御する pin を決定するために、ネットワークプロバイダーは、ksk プロパティ\_BDA\_をクエリします。これは、 [Kspropsetid\_](https://docs.microsoft.com/windows-hardware/drivers/stream/kspropsetid-bdatopology)の\_PIN\_ID プロパティを制御します。プロパティセット。 さらに、BDA ミニドライバーは、各ノードの[**BdaPropertyGetControllingPinId**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bdasup/nf-bdasup-bdapropertygetcontrollingpinid) support 関数を呼び出します。 この呼び出しでは、ミニドライバーは[**KSP\_BDA\_ノード\_ピン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bdamedia/ns-bdamedia-_ksp_bda_node_pin)構造へのポインターを渡します。 この構造体は、特定のノードタイプの制御ピンと、フィルターの入力ピンと出力ピンのペアを取得するプロパティ要求を識別します。 BDA サポートライブラリは、ノード型の制御ピンの識別子を返します。
 
-BDA ミニドライバーが、KSPROPERTY を通常インターセプトされなく\_BDA\_制御\_PIN\_ID プロパティ。 ミニドライバーが自動的にディスパッチ、 **BdaPropertyGetControllingPinId** 、KSPROPSETID から関数をサポートして\_BdaTopology プロパティ セット。 参照してください[BDA デバイス トポロジを決定する](determining-bda-device-topology.md)詳細についてはします。
+通常、BDA ミニドライバーは\_PIN\_ID プロパティを制御する KSK プロパティ\_BDA\_をインターセプトしません。 ミニドライバーは、 **BdaPropertyGetControllingPinId** support 関数を KSK propsetid\_BdaTopology プロパティセットから自動的にディスパッチします。 詳細については、「 [BDA デバイストポロジの決定](determining-bda-device-topology.md)」を参照してください。
 
-サポート ライブラリが BDA ミニドライバーへのポインターをサポート ライブラリを提供するために、制御の暗証番号 (pin) の識別子を決定するすべての作業を行う、 [ **BDA\_フィルター\_テンプレート**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdasup/ns-bdasup-_bda_filter_template) BDA ミニドライバーは、運用を開始時に構造体します。 参照してください[開始 BDA ミニドライバー](starting-a-bda-minidriver.md)詳細についてはします。 通知 BDA サポート ライブラリ BDA に含まれる情報を制御するピンを確認する方法の BDA ミニドライバー\_フィルター\_テンプレート。 この情報には、次の内容が含まれます。
+サポートライブラリでは、bda ミニドライバーを[ **\_\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/bdasup/ns-bdasup-_bda_filter_template)使用すると、コントロールピンの識別子を決定するすべての作業を実行できます。これは、bda ミニドライバーが、bda操作を開始しました。 詳細について[は、「BDA ミニドライバーの開始](starting-a-bda-minidriver.md)」を参照してください。 Bda ミニドライバーは、bda サポートライブラリに対して、BDA\_FILTER\_テンプレートに含まれている情報を使用した pin の制御方法を通知します。 この情報には、次の内容が含まれます。
 
--   接続の配列。 この配列は、 [ **KSTOPOLOGY\_接続**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kstopology_connection)フィルター内でか、フィルターとの間、表現のノードと pin の間のすべての使用可能な接続の種類を提供する配列を作成できますフィルターに隣接します。 参照してください[接続トポロジのマッピング](mapping-connection-topology.md)、KSTOPOLOGY の詳細については\_接続の配列。
+-   接続の配列。 この配列は、フィルター内またはフィルターと隣接するフィルターの間で可能な、ノードとピンの種類の間のすべての接続の表現を提供する[**Kstopology\_接続**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-kstopology_connection)配列です。 KSTOPOLOGY\_接続配列の詳細については、「[接続トポロジのマッピング](mapping-connection-topology.md)」を参照してください。
 
--   共通値の配列。 ジョイントは、トポロジ内のポイントを別の出力を 1 つまたは複数のパスに分割します。 1 つの入力または 1 つ以上の入力が 1 つの出力パスに結合します。 ジョイントに渡された値が、KSTOPOLOGY 内の要素のインデックスに対応\_接続の配列。 ほとんどのトポロジは、1 つだけジョイント必要があります。
+-   結合値の配列。 ジョイントは、1つの入力が異なる出力への1つまたは複数のパスに分割されるトポロジのポイントで、1つの出力パスへの1つ以上の入力結合です。 ジョイントに指定された値は、KSTOPOLOGY\_接続配列内の要素のインデックスに対応します。 ほとんどのトポロジには、結合が1つだけあります。
 
--   配列の[ **BDA\_PIN\_ペアリング**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdasup/ns-bdasup-_bda_pin_pairing)構造体。 これらの構造は、入力と出力ピンの種類や、フィルターを作成できる入力型のインスタンスの最大数、フィルターを作成できる出力型のインスタンスの最大数を特定します。 これらの構造体には、入力と出力ピンの間の結合値の配列へのポインターも含まれます。 参照してください[BDA ミニドライバーを開始](starting-a-bda-minidriver.md)、BDA の詳細については\_PIN\_ペアリングの配列。
+-   \_ペアリング構造体の[**BDA\_ピン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bdasup/ns-bdasup-_bda_pin_pairing)の配列。 これらの構造体は、入力ピンと出力ピンの種類、フィルターで作成できる入力型のインスタンスの最大数、およびフィルターに作成できる出力の種類のインスタンスの最大数を識別します。 これらの構造体には、入力ピンと出力ピン間の結合値の配列へのポインターも含まれます。 BDA\_ピン\_配列のペアリングの詳細については、「 [bda を開始する](starting-a-bda-minidriver.md)」を参照してください。
 
-次の図は、サポート ライブラリが特定のノードを制御するフィルターの暗証番号 (pin) を決定する方法を示しています。
+次の図は、サポートライブラリによって、特定のノードを制御するフィルターピンがどのように決定されるかを示しています。
 
-![サポート ライブラリが特定のノードを制御するフィルターの暗証番号 (pin) を決定する方法を示す図](images/bdajoint.png)
+![特定のノードを制御するフィルターの pin をサポートライブラリが決定する方法を示す図](images/bdajoint.png)
 
  
 

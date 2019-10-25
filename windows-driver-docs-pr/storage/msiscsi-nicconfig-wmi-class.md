@@ -4,24 +4,24 @@ description: MSiSCSI\_NICConfig WMI クラス
 ms.assetid: 9b7a466d-a9bb-41c5-8f38-e5baf21e863a
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 8e2a35cca86758bf07a1e92a122fb04a61895467
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1893b7a4731cf1d84325acf3db56149b8dcf841d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385827"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845342"
 ---
-# <a name="msiscsinicconfig-wmi-class"></a>MSiSCSI\_NICConfig WMI クラス
+# <a name="msiscsi_nicconfig-wmi-class"></a>MSiSCSI\_NICConfig WMI クラス
 
 
 ## <span id="ddk_msiscsi_nicconfig_wmi_class_kr"></span><span id="DDK_MSISCSI_NICCONFIG_WMI_CLASS_KR"></span>
 
 
-MSiSCSI\_NICConfig WMI クラスには、ネットワーク インターフェイス カード (NIC) ポートがについて説明します。
+MSiSCSI\_NICConfig WMI クラスは、ネットワークインターフェイスカード (NIC) ポートを記述します。
 
-HBA イニシエーターのミニポート ドライバーは、MSiSCSI の 1 つのインスタンスを作成する必要があります\_HBA の各ポートの NICConfig クラス。
+HBA イニシエーターのミニポートドライバーは、HBA の各ポートに対して、MSiSCSI\_NICConfig クラスのインスタンスを1つ作成する必要があります。
 
-MSiSCSI\_NICConfig クラスで定義されます*Config.mof*します。
+MSiSCSI\_NICConfig クラスは、*構成 .mof*で定義されています。
 
 ```cpp
 class MSiSCSI_NICConfig {
@@ -50,7 +50,7 @@ class MSiSCSI_NICConfig {
 };
 ```
 
-WMI ツールのスイートでは、上記のクラス定義をコンパイルするときに生成、 [ **MSiSCSI\_NICConfig** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsicfg/ns-iscsicfg-_msiscsi_nicconfig)データ構造体。
+WMI ツールスイートは、前のクラス定義をコンパイルするときに、 [**Msiscsi\_NICConfig**](https://docs.microsoft.com/windows-hardware/drivers/ddi/iscsicfg/ns-iscsicfg-_msiscsi_nicconfig)データ構造体を生成します。
 
  
 

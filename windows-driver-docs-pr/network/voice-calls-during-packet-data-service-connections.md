@@ -4,37 +4,37 @@ description: パケット データ サービス接続時の音声通話
 ms.assetid: 441d2fea-eb39-4af5-a8de-c288c81be99a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8fc080093a852a7a6c14c0b78e2b0eb06fd2c274
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 976fdb043cc22875c050b64c46ce3ccb72cc2e87
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384363"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842941"
 ---
 # <a name="voice-calls-during-packet-data-service-connections"></a>パケット データ サービス接続時の音声通話
 
 
-次の図は、ミニポート ドライバーが音声通話がパケット データ サービスがアクティブな間に配置した場合に従う必要のあるプロセスを表します。 図は、例として、1 xrtt を使用しますが、手順も、他のエア インターフェイスに適用されます。 次の図に記載されているプロセスが返すミニポート ドライバーにのみ適用されます**WwanVoiceClassSeparateVoiceData**で、 **WwanVoiceClass** OID への応答でメンバー\_WWAN\_デバイス\_CAP*クエリ*要求。 太字表す OID の識別子またはトランザクションのフロー制御には、ラベルと通常のテキストに表示されるラベルは、OID 構造内で重要なフラグを表します。
+次の図は、パケットデータサービスがアクティブになっているときに、電話をかけたときにミニポートドライバーが従う必要があるプロセスを示しています。 図では例として1xRTT を使用しますが、この手順は他のエアインターフェイスにも当てはまります。 次の図に記載されているプロセスは、OID\_WWAN\_デバイス\_CAPS*クエリ*に応答して、 **WwanVoiceClass**メンバーで**WwanVoiceClassSeparateVoiceData**を返すミニポートドライバーにのみ適用されます。申請. 太字のラベルは OID 識別子またはトランザクションフロー制御を表し、通常のテキストのラベルは OID 構造内の重要なフラグを表します。
 
-![ミニポート ドライバーが音声通話がパケット データ サービスがアクティブな間に配置した場合に従う必要のあるプロセスを示す図](images/wwanvoicecalls.png)
+![パケットデータサービスがアクティブになっているときに、電話をかけたときにミニポートドライバーが従う必要があるプロセスを示す図](images/wwanvoicecalls.png)
 
-プロシージャでは、着信音声通話を承諾と、任意の既存のパケットの接続はかけることを前提としています。 返すミニポート ドライバー **WwanVoiceClassSimultaneousVoiceData**で、 **WwanVoiceClass** OID への応答でメンバー\_WWAN\_デバイス\_キャップ*クエリ*要求、現在のパケットの接続は影響がありません。
+この手順では、着信音声通話を受け入れると、既存のすべてのパケット接続が事前に割り込まれていることを前提としています。 OID\_WWAN\_デバイス\_CAP*クエリ*要求に応答して、 **WwanVoiceClass**メンバーの**WwanVoiceClassSimultaneousVoiceData**を返すミニポートドライバーの場合、現在のパケット接続をにすることはできません。影響を受ける.
 
-注意、仕様では、サービスが禁止されることも MB サービスは、回線の音声をサポートしていません。 プロセスには、次が記載されているグラフィックは、デバイスがときに、一度に 1 つだけですが、データと回線の両方の音声に処理できるだけ適用されます。 プロセスでは、優先順位の音声通話は、潜在的な既存のデータ接続経由で、前提としています。 この場合、ミニポート ドライバーでは、音声通話の間のデータ接続を中断する必要があります。 その後、ミニポート ドライバーでは、MB の接続を自動的に再確立することで、データ サービスを再開する必要があります。
+仕様上、MB サービスでは回線音声がサポートされておらず、サービスも禁止されていることに注意してください。 次の図に記載されているプロセスは、デバイスがデータと回線の両方の音声を処理できるが、一度に1つしか処理できない場合にのみ適用されます。 このプロセスでは、既存の既存のデータ接続よりも音声通話が優先されることを前提としています。 この場合、ミニポートドライバーは、音声通話中にデータ接続を中断する必要があります。 その後、ミニポートドライバーは、MB 接続を自動的に再確立することによって、データサービスを再開する必要があります。
 
-パケット データ サービスへの接続中に音声通話を処理するには、次の手順を使用します。
+パケットデータサービス接続中の音声通話を処理するには、次の手順に従います。
 
-1.  成功したパケット データ サービスの接続のミニポート ドライバーを送信する必要があります、 [ **NDIS\_WWAN\_パケット\_サービス\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_packet_service_state)現在の DataClass を示す MB サービスに通知が続く、 [ **NDIS\_状態\_リンク\_状態**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-link-state) MB に通知メディア接続として状態を示すためにサービス**MediaConnectStateConnected**します。
+1.  パケットデータサービス接続を成功させるには、ミニポートドライバーで、 [**ndis\_WWAN\_パケット\_サービス\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_packet_service_state)通知を MB サービスに送信して、現在の microsoft.visualstudio.ordesigner.dataclass.member の後に ndis を指定する必要があり[ **\_状態\_\_状態**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-link-state)通知を MB サービスにリンクして、メディアの接続状態を**MediaConnectStateConnected**として示します。
 
-2.  音声通話が配置または回答、ミニポート ドライバーを送信する必要があります、 [ **NDIS\_状態\_リンク\_状態**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-link-state) MB サービスへの通知を示すために、メディア接続の状態として**MediaConnectStateDisconnected**します。
+2.  音声通話が行われるか、または応答すると、ミニポートドライバーは、 **MediaConnectStateDisconnected**としてメディア接続状態を示すために、\_状態通知\_を MB サービスにリンクして、 [**NDIS\_状態**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-link-state)を送信する必要があります。
 
-3.  ミニポート ドライバーに送信する必要がありますし、 [ **NDIS\_状態\_WWAN\_コンテキスト\_状態**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-context-state) を示すMBサービスへの通知*VoiceCall*としてデバイスの状態**WwanVoiceCallStateInProgress**します。
+3.  その後、ミニポートドライバーは、 **WwanVoiceCallStateInProgress**としてのデバイスの*VoiceCall*状態を示す、 [ **\_コンテキスト\_状態通知の NDIS\_\_** ](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-context-state)状態を MB サービスに送信する必要があります。
 
-4.  切断、ミニポート ドライバーが、NDIS を送信する必要があります\_状態\_WWAN\_コンテキスト\_を示す MB サービスに状態の通知、 *VoiceCall* としてデバイスの状態**WwanVoiceCallStateHangup**します。
+4.  切断時に、ミニポートドライバーは、 **WwanVoiceCallStateHangup**としてのデバイスの*VoiceCall*状態を示す、\_コンテキスト\_状態通知の NDIS\_\_状態を MB サービスに送信する必要があります。
 
-5.  デバイスでは、音声通話が完了した後、パケットの接続が再開します。 ミニポート ドライバーに送信する必要があります、 [ **NDIS\_状態\_リンク\_状態**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-link-state)メディアを示す MB サービスへの通知と状態の接続**MediaConnectStateConnected**します。
+5.  音声通話が完了すると、デバイスはパケット接続を再開します。 ミニポートドライバーは、 **MediaConnectStateConnected**としてメディアの接続状態を示すために、 [ **\_状態通知\_** ](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-link-state)を MB サービスにリンクして、NDIS\_の状態を送信する必要があります。
 
-6.  ミニポート ドライバーは、NDIS を送信する必要があります\_WWAN\_パケット\_サービス\_現在 DataClass を示す MB サービスに状態の通知。
+6.  ミニポートドライバーは、現在の Microsoft.visualstudio.ordesigner.dataclass.member を示す NDIS\_WWAN\_パケット\_サービス\_状態通知を MB サービスに送信する必要があります。
 
  
 

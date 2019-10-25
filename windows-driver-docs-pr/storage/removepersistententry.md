@@ -1,9 +1,9 @@
 ---
 title: RemovePersistentEntry 関数
-description: RemovePersistentEntry メソッドでは、指定されたポートに関連付けられたバインディングの一覧からバインドを削除します。
+description: RemovePersistentEntry メソッドは、指定されたポートに関連付けられているバインドの一覧からバインドを削除します。
 ms.assetid: f192367e-2e17-44e4-aa0b-7d23cd828b11
 keywords:
-- 記憶装置の RemovePersistentEntry 関数
+- RemovePersistentEntry function Storage デバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 318af2c9b6df7a540e33635046d1b58186293da0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: cd42608261c2a6fc9f4eff82ac5bead090f46bfe
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368934"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842708"
 ---
 # <a name="removepersistententry-function"></a>RemovePersistentEntry 関数
 
 
-**RemovePersistentEntry**メソッドは、指定されたポートに関連付けられたバインディングの一覧から、バインドを削除します。
+**RemovePersistentEntry**メソッドは、指定されたポートに関連付けられているバインドの一覧からバインドを削除します。
 
 <a name="syntax"></a>構文
 ------
@@ -41,13 +41,13 @@ void RemovePersistentEntry(
 ----------
 
 *PortWWN*   
-永続的なバインドが変更するポートを示す世界中の名前。
+永続的なバインドが変更されるポートを示すワールドワイド名。
 
 *バインド*   
-型の構造体[ **HBAFCPBindingEntry2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_hbafcpbindingentry2)バインドの指定されたポートの一覧から削除するバインディングを示します。
+指定されたポートのバインディングリストから削除されるバインディングを示す[**HBAFCPBindingEntry2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_hbafcpbindingentry2)型の構造体。
 
-*HBAStatus*   
-に返された場合、操作の状態を格納します。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **RemovePersistentEntry\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_removepersistententry_out)構造体。
+*Hbastatus*   
+戻ると、操作の状態が格納されます。 許可される値とその説明の一覧については、「 [HBA\_STATUS](hba-status.md)」を参照してください。 ミニポートドライバーは、 [**RemovePersistentEntry\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_removepersistententry_out)構造体の**hbastatus**メンバーにこの情報を返します。
 
 <a name="return-value"></a>戻り値
 ------------
@@ -57,7 +57,7 @@ WMI メソッドには適用されません。
 <a name="remarks"></a>注釈
 -------
 
-この WMI メソッドが属する、 [MSFC\_HBAFCPInfo WMI クラス](msfc-hbafcpinfo-wmi-class.md)します。
+この WMI メソッドは、 [Msfc\_HBAFCPInfo WMI クラス](msfc-hbafcpinfo-wmi-class.md)に属しています。
 
 <a name="requirements"></a>要件
 ------------
@@ -74,17 +74,17 @@ WMI メソッドには適用されません。
 </tr>
 <tr class="even">
 <td align="left"><p>Header</p></td>
-<td align="left">Hbapiwmi.h (Hbapiwmi.h、Hbaapi.h、Hbaapi.h など)</td>
+<td align="left">Hbapiwmi (Hbapiwmi、Hbaapi. h、または Hbaapi .h を含む)</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[**RemovePersistentEntry\_IN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_removepersistententry_in)
+[**RemovePersistentEntry\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_removepersistententry_in)
 
-[**RemovePersistentEntry\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_removepersistententry_out)
+[**RemovePersistentEntry\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_removepersistententry_out)
 
  
 

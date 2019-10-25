@@ -3,79 +3,79 @@ title: UMDF での一般 I/O ターゲットの状態の制御
 description: UMDF での一般 I/O ターゲットの状態の制御
 ms.assetid: 479487b2-5ce5-4522-b195-58ee50d210b6
 keywords:
-- 一般的な I/O WDK UMDF、状態をターゲットします。
-- 対象の状態の I/O WDK UMDF の開始
-- 対象の状態の I/O WDK UMDF を停止しました
-- クエリの削除状態 WDK UMDF の終了
-- 終了した I/O ターゲット状態 WDK UMDF
-- 削除された I/O ターゲット状態 WDK UMDF
-- ローカルの I/O ターゲット WDK UMDF
-- リモートの I/O ターゲット WDK UMDF
-- I/O ターゲットを停止しています
-- I/O ターゲットを再起動します。
+- '一般的な i/o ターゲット: WDK UMDF、状態'
+- i/o ターゲット状態 WDK UMDF を開始しました
+- 停止した i/o ターゲット状態 WDK UMDF
+- クエリの終了-状態 WDK UMDF の削除
+- 閉じた i/o ターゲット状態 WDK UMDF
+- 削除された i/o ターゲット状態 WDK UMDF
+- ローカル i/o ターゲット (WDK UMDF)
+- リモート i/o ターゲット (WDK UMDF)
+- i/o ターゲットの停止
+- i/o ターゲットの再起動
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d1368de4df4f2f559e3405dc901d6c4ead9e474
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f51efc9445a154592db73216cc495b858565f1e7
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382877"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843644"
 ---
 # <a name="controlling-a-general-io-targets-state-in-umdf"></a>UMDF での一般 I/O ターゲットの状態の制御
 
 
 [!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
 
-フレームワークには、次の状態の一般的な I/O ターゲットを定義します。
+フレームワークは、一般的な i/o ターゲットに対して次の状態を定義します。
 
 <a href="" id="started"></a>**開始**  
-I/O ターゲットが開いている (つまり、UMDF ドライバーを使用可能な) と、ドライバーに I/O 要求を送信することができます。 フレームワークは、適切なドライバーを要求を配信します。
+I/o ターゲットが開いている (つまり、UMDF ドライバーによって使用可能になっている) と、ドライバーは i/o ターゲットに i/o 要求を送信できます。 フレームワークは、適切なドライバーに要求を配信します。
 
-<a href="" id="stopped"></a>**停止**  
-UMDF ドライバーは、ドライバーは、WDF を通過しない限りに、I/O ターゲットへの I/O 要求を送信できない場合は I/O ターゲットが開いて、\_要求\_送信\_オプション\_無視\_ターゲット\_状態フラグ*フラグ*への呼び出しでパラメーター、 [ **IWDFIoRequest::Send** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest-send)メソッド。
+<a href="" id="stopped"></a>**なく**  
+I/o ターゲットは開かれていますが、UMDF ドライバーが i/o ターゲットに i/o 要求を送信できません。ただし、ドライバーが WDF\_REQUEST\_SEND\_\_オプションを渡すと、\_ターゲット\_状態フラグが*Flags*パラメーターに設定されます。[**IWDFIoRequest:: Send**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-send)メソッドを呼び出します。
 
 フレームワークは、適切なドライバーへの要求の配信を停止します。
 
-<a href="" id="closed-for-query-remove-------"></a>**クエリの削除の終了**   
-I/O ターゲットは、そのデバイスを削除できるだけ可能性がありますのでは一時的に閉じられます。
+<a href="" id="closed-for-query-remove-------"></a>**クエリの終了-  の削除**  
+I/o ターゲットは、デバイスがすぐに削除される可能性があるため、一時的に閉じられています。
 
-<a href="" id="closed"></a>**終了**  
-I/O ターゲットが閉じられると、開始または停止することはできません。
+<a href="" id="closed"></a>**開閉**  
+I/o ターゲットは閉じているため、開始または停止できません。
 
 <a href="" id="deleted"></a>**削除**  
-I/O ターゲットのデバイスが削除されました。
+I/o ターゲットのデバイスは削除されています。
 
-[ **WDF\_IO\_ターゲット\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/ne-wdfiotarget-_wdf_io_target_state)列挙は、これらの状態を表す値を定義します。
+[**WDF\_IO\_ターゲット\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/ne-wdfiotarget-_wdf_io_target_state)列挙体は、これらの状態を表す値を定義します。
 
-### <a name="local-io-target-states"></a>ローカル I/O ターゲットの状態
+### <a name="local-io-target-states"></a>ローカル i/o ターゲットの状態
 
-フレームワークは自動的に開き、ローカルの I/O ターゲットを起動します。
+フレームワークによって、ローカルの i/o ターゲットが自動的に開き、開始されます。
 
-かどうか、必要に応じて、ドライバーを呼び出して[ **IWDFIoTargetStateManagement::Stop** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiotargetstatemanagement-stop)ローカルのターゲットの I/O および呼び出しを一時的に停止する[ **IWDFIoTargetStateManagement::Start** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiotargetstatemanagement-start)を再起動します。 たとえば、ドライバーは、一時的なエラー条件を検出した場合は、ローカル I/O ターゲットを停止し、エラー状態が修正された場合に I/O ターゲットを再起動することが。
+必要に応じて、ドライバーは[**IWDFIoTargetStateManagement:: Stop**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiotargetstatemanagement-stop)を呼び出してローカル i/o ターゲットを一時的に停止し、 [**IWDFIoTargetStateManagement:: Start**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiotargetstatemanagement-start)を呼び出して再起動することができます。 たとえば、ドライバーは、一時的なエラー状態を検出し、エラー状態が修正された場合に i/o ターゲットを再起動すると、ローカル i/o ターゲットを停止することがあります。
 
-フレームワークが自動的に停止し、I/O ターゲットを閉じる場合は、ローカルの I/O 対象のデバイスを削除すると、および[キャンセル](canceling-i-o-requests.md)ターゲットのキューにあるすべての I/O 要求。 フレームワークは、デバイス オブジェクトのイベントのコールバック関数を呼び出すことによって、デバイスが使用可能なでなくなったことをドライバーに通知します。 これらのコールバック関数の詳細については、次を参照してください。 [UMDF での PnP および電源管理のシナリオ](pnp-and-power-management-scenarios-in-umdf.md)します。
+ローカル i/o ターゲットのデバイスが削除されると、フレームワークは自動的に i/o ターゲットを停止して閉じ、ターゲットのキューにあるすべての i/o 要求を[キャンセル](canceling-i-o-requests.md)します。 フレームワークは、デバイスオブジェクトイベントコールバック関数を呼び出すことによって、デバイスが使用できなくなったことをドライバーに通知します。 これらのコールバック関数の詳細については、「 [UMDF の PnP および電源管理のシナリオ](pnp-and-power-management-scenarios-in-umdf.md)」を参照してください。
 
-ドライバーを呼び出すことができます[ **IWDFIoTargetStateManagement::GetState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiotargetstatemanagement-getstate)ローカル I/O ターゲットの現在の状態を取得します。
+ドライバーは[**IWDFIoTargetStateManagement:: GetState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiotargetstatemanagement-getstate)を呼び出して、ローカル i/o ターゲットの現在の状態を取得できます。
 
-### <a name="remote-io-target-states"></a>リモートの I/O ターゲットの状態
+### <a name="remote-io-target-states"></a>リモート i/o ターゲットの状態
 
-ドライバーを呼び出す必要があります[ **IWDFRemoteTarget::OpenFileByName** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfremotetarget-openfilebyname)または[ **IWDFRemoteTarget::OpenRemoteInterface** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfremotetarget-openremoteinterface)をリモートの I/O を開く対象とします。 ドライバーでは、リモートの I/O ターゲットが開いたら、フレームワークは、I/O ターゲットを自動的に開始します。
+ドライバーは、 [**Iwdfremotetarget:: OpenFileByName**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfremotetarget-openfilebyname)または[**Iwdfremotetarget:: openremoteinterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfremotetarget-openremoteinterface)を呼び出して、リモート i/o ターゲットを開く必要があります。 ドライバーがリモート i/o ターゲットを開くと、フレームワークは i/o ターゲットを自動的に開始します。
 
-かどうか、必要に応じて、ドライバーを呼び出して[ **IWDFRemoteTarget::Stop** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfremotetarget-stop) 、リモートの I/O のターゲットと呼び出しを一時的に停止する[ **IWDFRemoteTarget::Start** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfremotetarget-start)を再起動します。
+必要に応じて、ドライバーは[**Iwdfremotetarget:: Stop**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfremotetarget-stop)を呼び出して、リモート i/o ターゲットを一時的に停止し、 [**Iwdfremotetarget:: Start**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfremotetarget-start)を呼び出して再起動することができます。
 
-リモートの I/O ターゲット デバイスが削除された場合、framework 自動的に停止して I/O ターゲットを閉じますおよびドライバーは、次のイベントのコールバック関数を登録しない限り、対象のキュー内にあるすべての I/O 要求を取り消します。
+リモート i/o ターゲットのデバイスが削除されると、フレームワークは自動的に i/o ターゲットを停止して閉じ、次のイベントコールバック関数をドライバーが登録しない限り、ターゲットのキューにあるすべての i/o 要求をキャンセルします。
 
-<a href="" id="---------iremotetargetcallbackremoval--onremotetargetqueryremove--------"></a>[**IRemoteTargetCallbackRemoval::OnRemoteTargetQueryRemove**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iremotetargetcallbackremoval-onremotetargetqueryremove)  
-リモートの I/O ターゲット デバイスを削除する可能性があります、ドライバーに通知します。 ドライバーを呼び出す必要があります[ **IWDFRemoteTarget::CloseForQueryRemove** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfremotetarget-closeforqueryremove)ドライバー、デバイスの削除を許可するようにする場合。
+<a href="" id="---------iremotetargetcallbackremoval--onremotetargetqueryremove--------"></a>[**Iremotetargetの削除:: OnRemoteTargetQueryRemove**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iremotetargetcallbackremoval-onremotetargetqueryremove)  
+リモート i/o ターゲットのデバイスが削除される可能性があることをドライバーに通知します。 ドライバーがデバイスの削除を許可する場合は、ドライバーが[**Iwdfremotetarget:: CloseForQueryRemove**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfremotetarget-closeforqueryremove)を呼び出す必要があります。
 
-<a href="" id="---------iremotetargetcallbackremoval--onremotetargetremovecomplete--------"></a>[**IRemoteTargetCallbackRemoval::OnRemoteTargetRemoveComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iremotetargetcallbackremoval-onremotetargetremovecomplete)  
-リモートの I/O ターゲット デバイスが削除されたことをドライバーに通知します。 このコールバック関数を呼び出す必要があります[ **IWDFRemoteTarget::Close**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfremotetarget-close)します。
+<a href="" id="---------iremotetargetcallbackremoval--onremotetargetremovecomplete--------"></a>[**IremotetargetOnRemoteTargetRemoveComplete の削除::** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iremotetargetcallbackremoval-onremotetargetremovecomplete)  
+リモート i/o ターゲットのデバイスが削除されたことをドライバーに通知します。 このコールバック関数は、 [**Iwdfremotetarget:: Close**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfremotetarget-close)を呼び出す必要があります。
 
-<a href="" id="---------iremotetargetcallbackremoval--onremotetargetremovecanceled--------"></a>[**IRemoteTargetCallbackRemoval::OnRemoteTargetRemoveCanceled**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iremotetargetcallbackremoval-onremotetargetremovecanceled)  
-リモートの I/O ターゲット デバイスを削除する試行が取り消されたことをドライバーに通知します。 ドライバーを呼び出す必要があります、ドライバーを引き続き、ターゲットを使用する場合は、 [ **IWDFRemoteTarget::Reopen**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfremotetarget-reopen)します。 通常、ドライバーを呼び出します**再度開く**内から、 **OnRemoteTargetRemoveCanceled**コールバック関数が**再度開く**代わりに後に呼び出すことができます**OnRemoteTargetRemoveCanceled**を返します。
+<a href="" id="---------iremotetargetcallbackremoval--onremotetargetremovecanceled--------"></a>[**IremotetargetOnRemoteTargetRemoveCanceled の削除::** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iremotetargetcallbackremoval-onremotetargetremovecanceled)  
+リモート i/o ターゲットのデバイスを削除しようとしたことがキャンセルされたことをドライバーに通知します。 ドライバーがターゲットを引き続き使用するようにするには、ドライバーが[**Iwdfremotetarget:: 再度**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfremotetarget-reopen)を呼び出す必要があります。 通常、ドライバーは**OnRemoteTargetRemoveCanceled**コールバック関数内から**再び開く**ことを呼び出しますが、 **OnRemoteTargetRemoveCanceled**が返された後で、**再度開く**ことができます。
 
-ドライバーを呼び出すことができます[ **IWDFRemoteTarget::GetState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfremotetarget-getstate)をリモートの I/O ターゲットの現在の状態を取得します。
+ドライバーは、 [**Iwdfremotetarget:: GetState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfremotetarget-getstate)を呼び出して、リモート i/o ターゲットの現在の状態を取得できます。
 
  
 

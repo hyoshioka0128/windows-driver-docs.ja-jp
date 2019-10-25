@@ -1,6 +1,6 @@
 ---
-title: TVOT\_エディット ボックス
-description: TVOT\_エディット ボックス
+title: TVOT\_エディットボックス
+description: TVOT\_エディットボックス
 ms.assetid: efbfe6ff-129d-4bf5-a0e3-3cae575dfcd7
 keywords:
 - TVOT_EDITBOX 印刷デバイス
@@ -14,56 +14,56 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 947a734afef4c6fd8dca32f80af5d692e0cb041c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: bece37e215118bcdc77f826fed0370161fbe5422
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362784"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845251"
 ---
-# <a name="tvoteditbox"></a>TVOT\_エディット ボックス
+# <a name="tvot_editbox"></a>TVOT\_エディットボックス
 
 
 ## <span id="ddk_tvot_editbox_gg"></span><span id="DDK_TVOT_EDITBOX_GG"></span>
 
 
-TVOT\_エディット ボックスのオプションの種類は、グループ ボックス内でのエディット ボックスで構成されています。
+TVOT\_のエディットボックスオプションの種類は、グループボックス内のエディットボックスで構成されます。
 
-<span id="OPTITEM_Structure"></span><span id="optitem_structure"></span><span id="OPTITEM_STRUCTURE"></span>[**OPTITEM** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_optitem)構造体  
+<span id="OPTITEM_Structure"></span><span id="optitem_structure"></span><span id="OPTITEM_STRUCTURE"></span>[**Optitem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/compstui/ns-compstui-_optitem)データ  
 
 <span id="Sel_pSel"></span><span id="sel_psel"></span><span id="SEL_PSEL"></span>**Sel/pSel**  
-アプリケーションによって提供されるエディット ボックスの現在の内容を含む、NULL で終わる文字列へのポインター。
+エディットボックスの現在の内容を格納している、NULL で終わる文字列へのアプリケーション指定のポインター。
 
-<span id="OPTPARAM_Structure_Array__pOptParam_member_of_OPTTYPE_"></span><span id="optparam_structure_array__poptparam_member_of_opttype_"></span><span id="OPTPARAM_STRUCTURE_ARRAY__POPTPARAM_MEMBER_OF_OPTTYPE_"></span>[**OPTPARAM$** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_optparam)構造体の配列 (**pOptParam**のメンバー [ **OPTTYPE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_opttype))  
+<span id="OPTPARAM_Structure_Array__pOptParam_member_of_OPTTYPE_"></span><span id="optparam_structure_array__poptparam_member_of_opttype_"></span><span id="OPTPARAM_STRUCTURE_ARRAY__POPTPARAM_MEMBER_OF_OPTTYPE_"></span>[**Optparam**](https://docs.microsoft.com/windows-hardware/drivers/ddi/compstui/ns-compstui-_optparam)構造体配列 ( [**Opttype**](https://docs.microsoft.com/windows-hardware/drivers/ddi/compstui/ns-compstui-_opttype)の**poptparam**メンバー)  
 
 <span id="pData"></span><span id="pdata"></span><span id="PDATA"></span>**pData**  
-**pOptParam**\[0\]-&gt;**pData** editt ボックスの右側に表示するテキストの NULL で終わる文字列を指します。
+**Poptparam**\[0\]-&gt;**pData**は、editt ボックスの右側に表示される NULL で終わるテキスト文字列をポイントします。
 
-**pOptParam**\[1\]-&gt;**pData**編集ボックスの上に表示されるテキストの NULL で終わる文字列を指します。
+**Poptparam**\[1\]-&gt;**pData**は、エディットボックスの上に表示される NULL で終わるテキスト文字列をポイントします。
 
 <span id="IconID"></span><span id="iconid"></span><span id="ICONID"></span>**IconID**  
-**pOptParam**\[0\]-&gt;**IconID**エディット ボックスに関連付けるアイコンを識別します。
+**Poptparam**\[0\]-&gt;**IconID**は、エディットボックスに関連付けられるアイコンを識別します。
 
-**pOptParam**\[1\]-&gt;**IconID**エディット ボックスとによって指し示されるバッファーの両方のバイト単位のサイズを指定するために使用**pSel** OPTITEM 構造体。
+**Poptparam**\[1\]-&gt;**IconID**は、エディットボックスと、Optitem 構造体の**psel**が指すバッファーの両方のサイズ (バイト単位) を指定するために使用されます。
 
 <span id="lParam"></span><span id="lparam"></span><span id="LPARAM"></span>**lParam**  
-使用されていません。
+使用しません。
 
-<span id="OPTTYPE_Structure"></span><span id="opttype_structure"></span><span id="OPTTYPE_STRUCTURE"></span>[**OPTTYPE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_opttype)構造体  
+<span id="OPTTYPE_Structure"></span><span id="opttype_structure"></span><span id="OPTTYPE_STRUCTURE"></span>[**Opttype**](https://docs.microsoft.com/windows-hardware/drivers/ddi/compstui/ns-compstui-_opttype)データ  
 
-<span id="Type"></span><span id="type"></span><span id="TYPE"></span>**型**  
-TVOT\_エディット ボックス
+<span id="Type"></span><span id="type"></span><span id="TYPE"></span>**各種**  
+TVOT\_エディットボックス
 
-<span id="Count"></span><span id="count"></span><span id="COUNT"></span>**カウント**  
+<span id="Count"></span><span id="count"></span><span id="COUNT"></span>**数**  
 2
 
 <span id="Style"></span><span id="style"></span><span id="STYLE"></span>**スタイル**  
-使用されていません。
+使用しません。
 
 <span id="BegCtrlID"></span><span id="begctrlid"></span><span id="BEGCTRLID"></span>**BegCtrlID**  
-場合**pDlgPage**で[ **COMPROPSHEETUI** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_compropsheetui) CPSUI が指定したページを識別する場合、または**DlgTemplateID**で[ **DLGPAGE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_dlgpage) CPSUI が指定したテンプレートでは、識別**BegCtrlID**は使用されません。
+[**COMPROPSHEETUI**](https://docs.microsoft.com/windows-hardware/drivers/ddi/compstui/ns-compstui-_compropsheetui)の**pDlgPage**が CPSUI 提供のページを識別する場合、または[**DLGPAGE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/compstui/ns-compstui-_dlgpage)の**DlgTemplateID**が CPSUI で提供されるテンプレートを識別する場合、 **begctrlid**は使用されません。
 
-それ以外の場合、 **BegCtrlID**順番に番号付きの一連のコントロール id の最初のコントロールの識別子を含める必要があります。 コントロールの id は、次の Windows コントロールを識別する必要があります。
+それ以外の場合、 **Begctrlid**には、順番に番号が付けられた一連のコントロール id の最初のコントロール識別子が含まれている必要があります。 コントロール識別子は、次の Windows コントロールを識別する必要があります。
 
 <table>
 <colgroup>
@@ -72,49 +72,49 @@ TVOT\_エディット ボックス
 </colgroup>
 <thead>
 <tr class="header">
-<th>コントロールの識別子</th>
+<th>コントロール識別子</th>
 <th>Windows コントロール</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><strong>BegCtrlID</strong>内容</p></td>
-<td><p>グループ ボックス</p></td>
+<td><p><strong>Begctrlid</strong>の内容</p></td>
+<td><p>グループボックス</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>BegCtrlID</strong>内容は + 1</p></td>
+<td><p><strong>Begctrlid</strong>コンテンツ + 1</p></td>
 <td><p>タイトルのテキスト</p></td>
 </tr>
 <tr class="odd">
-<td><p><strong>BegCtrlID</strong>内容 + 2</p></td>
-<td><p>エディット ボックス</p></td>
+<td><p><strong>Begctrlid</strong>コンテンツ + 2</p></td>
+<td><p>エディットボックス</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>BegCtrlID</strong>内容 + 3</p></td>
-<td><p>[編集ボックス] アイコン</p></td>
+<td><p><strong>Begctrlid</strong>コンテンツ + 3</p></td>
+<td><p>[エディットボックス] アイコン</p></td>
 </tr>
 <tr class="odd">
-<td><p><strong>BegCtrlID</strong>内容は + 4</p></td>
-<td><p>編集ボックスの右側に配置されるテキスト</p></td>
+<td><p><strong>Begctrlid</strong>コンテンツ + 4</p></td>
+<td><p>エディットボックスの右側に配置されたテキスト</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>BegCtrlID</strong>内容 + 5</p></td>
-<td><p>テキストの編集ボックスの上に配置</p></td>
+<td><p><strong>Begctrlid</strong>コンテンツ + 5</p></td>
+<td><p>エディットボックスの上に配置されたテキスト</p></td>
 </tr>
 <tr class="odd">
-<td><p><strong>BegCtrlID</strong>内容 + 6</p></td>
-<td><p>チェック ボックスを拡張または拡張のプッシュ ボタン (省略可能)</p></td>
+<td><p><strong>Begctrlid</strong>のコンテンツ + 6</p></td>
+<td><p>拡張チェックボックスまたは拡張プッシュボタン (オプション)</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>BegCtrlID</strong>内容 + 7</p></td>
-<td><p>チェック ボックスを拡張または拡張ボタンのアイコン (省略可能)</p></td>
+<td><p><strong>Begctrlid</strong>コンテンツ + 7</p></td>
+<td><p>拡張チェックボックスまたは拡張プッシュボタンアイコン (省略可能)</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-詳細については、次を参照してください。 [Customizing CPSUI-Supported ウィンドウ コントロール](https://docs.microsoft.com/windows-hardware/drivers/print/customizing-cpsui-supported-window-controls)します。
+詳細については、「 [CPSUI でサポートされているウィンドウコントロールのカスタマイズ](https://docs.microsoft.com/windows-hardware/drivers/print/customizing-cpsui-supported-window-controls)」を参照してください。
 
 <a name="requirements"></a>要件
 ------------
@@ -127,7 +127,7 @@ TVOT\_エディット ボックス
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Compstui.h (include Compstui.h)</td>
+<td>Compstui (Compstui を含む)</td>
 </tr>
 </tbody>
 </table>

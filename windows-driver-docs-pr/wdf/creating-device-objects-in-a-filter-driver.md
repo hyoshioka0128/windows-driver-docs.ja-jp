@@ -3,32 +3,32 @@ title: フィルター ドライバーでのデバイス オブジェクトの�
 description: フィルター ドライバーでのデバイス オブジェクトの作成
 ms.assetid: f5a4851d-7caf-467d-9500-11f341fdf680
 keywords:
-- PnP WDK KMDF、フィルター ドライバー
-- プラグ アンド プレイ WDK KMDF、フィルター ドライバー
-- 電源管理 WDK KMDF、フィルター ドライバー
-- フィルター ドライバー WDK KMDF
-- DOs WDK KMDF をフィルター処理します。
+- PnP WDK KMDF, フィルタードライバー
+- WDK KMDF のプラグアンドプレイ、ドライバーのフィルター処理
+- 電源管理 WDK KMDF, フィルタードライバー
+- ドライバーのフィルター WDK KMDF
+- DOs WDK KMDF のフィルター処理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4937ea8ab634ffc7a87407ab01b670d04bf37100
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0752e13ee7dc6447a373ad826747afe3cab90b1a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377506"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844685"
 ---
 # <a name="creating-device-objects-in-a-filter-driver"></a>フィルター ドライバーでのデバイス オブジェクトの作成
 
 
-各[フィルター ドライバー](https://docs.microsoft.com/windows-hardware/drivers/kernel/filter-drivers)システム上に存在する、サポートされているデバイスの各フレームワーク デバイス オブジェクトを作成します。 フィルター ドライバーでは、これらのデバイス オブジェクトが作成される、ため、デバイス オブジェクトをフィルター (フィルター DOs) が呼び出されます。 デバイスのフィルター ドライバーの表現は、各フィルター操作を行います。
+各[フィルタードライバー](https://docs.microsoft.com/windows-hardware/drivers/kernel/filter-drivers)は、システムに存在する、サポートされている各デバイスのフレームワークデバイスオブジェクトを作成します。 これらのデバイスオブジェクトはフィルタードライバーによって作成されるため、[デバイスオブジェクトのフィルター選択] (DOs フィルター) と呼ばれます。 各フィルターは、フィルタードライバーによってデバイスが表現されます。
 
-フィルター関数のドライバーのように、ドライバー、提供、 [ *EvtDriverDeviceAdd* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)を識別するハンドルを受け取るコールバック関数を[ **WDFDEVICE\_INIT**](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdfdevice_init)構造体。 ドライバーは、同じセットを呼び出すことができます[framework デバイス オブジェクトの初期化メソッド](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/#device-init-methods)、WDFDEVICE で情報を格納するドライバー呼び出し関数を\_INIT 構造体。 関数のドライバーのようなフィルター ドライバーを呼び出すことも[framework FDO 初期化メソッド](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/#fdo-init-methods)します。
+フィルタードライバーは関数ドライバーと同様に、 [**Wdfdevice\_INIT**](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdfdevice_init)構造体へのハンドルを受け取る[*Evtdriverdeviceadd*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)コールバック関数を提供します。 ドライバーは、関数ドライバーが呼び出した同じ一連の[フレームワークデバイスオブジェクト初期化メソッド](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/#device-init-methods)を呼び出して、WDFDEVICE\_INIT 構造体に情報を格納できます。 関数ドライバーと同様に、フィルタードライバーは[FRAMEWORK FDO の初期化メソッド](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/#fdo-init-methods)を呼び出すこともできます。
 
-フィルター ドライバーの数が少ないは列挙子のソフトウェア専用デバイスです。 このようなフィルター ドライバーが呼び出せる[framework PDO 初期化メソッド](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/#pdo-init-methods)します。
+少数のフィルタードライバーは、子ソフトウェア専用デバイスを列挙します。 このようなフィルタードライバーは、[フレームワークの PDO 初期化メソッド](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/#pdo-init-methods)を呼び出すことができます。
 
-フィルター ドライバーを呼び出す必要があります[ **WdfFdoInitSetFilter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdffdo/nf-wdffdo-wdffdoinitsetfilter)します。
+フィルタードライバーは[**WdfFdoInitSetFilter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdffdo/nf-wdffdo-wdffdoinitsetfilter)を呼び出す必要があります。
 
-デバイス オブジェクトを作成する最後の手順を呼び出すことです。 [ **WdfDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicecreate)します。
+デバイスオブジェクトを作成する最後の手順は、 [**WdfDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate)を呼び出すことです。
 
  
 

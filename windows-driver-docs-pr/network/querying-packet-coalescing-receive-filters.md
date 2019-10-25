@@ -4,12 +4,12 @@ description: パケット結合受信フィルターのクエリ
 ms.assetid: D0B41718-37B9-4FB4-BA10-20765F836214
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c1250e4b0dce86c68d4a8a90eb5c74bb8e9583f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 61917538b8948893bc62f95c145c32638c5e74f8
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67379198"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844881"
 ---
 # <a name="querying-packet-coalescing-receive-filters"></a>パケット結合受信フィルターのクエリ
 
@@ -17,43 +17,43 @@ ms.locfileid: "67379198"
 
 
 
-上位のドライバーとアプリケーションのクエリは、次の手順に従って、ミニポート ドライバーにダウンロードされているフィルターが表示されるパケットを結合できます。
+その後のドライバーとアプリケーションは、次の手順を実行して、ミニポートドライバーにダウンロードされたパケット合体受信フィルターを照会できます。
 
--   OID メソッド要求を発行して、ミニポート ドライバーでの受信フィルターの一覧の列挙を要求[OID\_受信\_フィルター\_ENUM\_フィルター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-enum-filters)します。 詳細については、次を参照してください。[ミニポート ドライバーでの受信フィルターを列挙する](#enumerating-the-receive-filters-on-a-miniport-driver)します。
+-   Oid の OID メソッド要求を発行して、ミニポートドライバーに列挙された受信フィルターの一覧を要求します。 [ENUM\_フィルター\_列挙型フィルターを受け取る\_フィルターを\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-enum-filters)します。 詳細については、「[ミニポートドライバーで受信フィルターを列挙](#enumerating-the-receive-filters-on-a-miniport-driver)する」を参照してください。
 
--   受信フィルター ミニポート ドライバーのテスト条件のパラメーターを要求の OID メソッド要求を発行して[OID\_受信\_フィルター\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-parameters)します。 詳細については、次を参照してください[ミニポート ドライバーでの受信フィルターのクエリを実行する。](#querying-the-parameters-of-a-receive-filters-on-a-miniport-driver)
+-   Oid の OID メソッド要求を発行することによって、ミニポートドライバーの受信フィルターのテスト条件パラメーターを要求します。これには、 [\_フィルター\_パラメーターを\_受信](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-parameters)します。 詳細については、「[ミニポートドライバーでの受信フィルターのクエリ](#querying-the-parameters-of-a-receive-filters-on-a-miniport-driver)」を参照してください。
 
-NDIS ハンドル、 [OID\_受信\_フィルター\_ENUM\_フィルター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-enum-filters)と[OID\_受信\_フィルター\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-parameters)メソッド OID は、ミニポート ドライバーを要求します。 NDIS から受信したデータの内部キャッシュからの情報の取得、 [OID\_受信\_フィルター\_設定\_フィルター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-set-filter) OID 要求。
+NDIS は、 [\_フィルター\_列挙型\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-enum-filters)フィルターおよび OID を受け取る oid\_、ミニポートドライバーに対して\_パラメーターメソッド oid 要求を[受信\_フィルター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-parameters)処理します。 NDIS は、oid から受信したデータの内部キャッシュから情報を取得し、 [\_フィルター\_設定](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-set-filter)して oid 要求\_フィルター処理\_ます。
 
-## <a name="enumerating-the-receive-filters-on-a-miniport-driver"></a>ミニポート ドライバーでの受信フィルターを列挙します。
-
-
-ミニポート ドライバーにダウンロードされているフィルターをすべての受信パケットの結合の一覧を取得する上位のドライバーとアプリケーションでの OID メソッド要求が発行[OID\_受信\_フィルター\_列挙型\_フィルター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-enum-filters)します。 **InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体にはへのポインターが含まれています、 [ **NDIS\_受信\_フィルター\_情報\_配列**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_filter_info_array)構造体。
-
-**注**  上にあるドライバーまたはアプリケーションを初期化するときに、 [ **NDIS\_受信\_フィルター\_情報\_配列**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_filter_info_array)に設定する必要があります、構造、 **QueueId** NDIS メンバー\_既定\_受信\_キュー\_id。
-
- 
-
-OID メソッドの要求から正常に戻った後、 **InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体バッファーへのポインターが含まれています。 このバッファーは、以下を格納する形式です。
-
--   [ **NDIS\_受信\_フィルター\_情報\_配列**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_filter_info_array)で現在構成されている受信フィルターの一覧を指定する構造体、ミニポート ドライバー。
-
--   配列の[ **NDIS\_受信\_フィルター\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_filter_info)ミニポート ドライバーで現在構成されている受信フィルターに関する構造体。
-
-## <a name="querying-the-parameters-of-a-receive-filters-on-a-miniport-driver"></a>ミニポート ドライバーでの受信フィルターのパラメーターのクエリを実行します。
+## <a name="enumerating-the-receive-filters-on-a-miniport-driver"></a>ミニポートドライバーで受信フィルターを列挙する
 
 
-特定のパケットの結合のパラメーターを取得するには、受信のフィルター ドライバーが重なって、ミニポート ドライバーにダウンロードされた、またはアプリケーションの OID メソッド要求を発行する[OID\_受信\_フィルター\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-parameters)します。 **InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体にはへのポインターが含まれています、 [ **NDIS\_受信\_フィルター\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_filter_parameters)構造体。 上にあるドライバーまたはアプリケーションの初期化、 **NDIS\_受信\_フィルター\_パラメーター**構造体を設定して、 **FilterId**メンバーを 0 以外の IDパラメーターが返されるフィルターの値。
+ミニポートドライバーにダウンロードされたすべてのパケット合体受信フィルターの一覧を取得するために、その後のドライバーとアプリケーションは oid の OID メソッド要求を発行します。このフィルター [\_列挙\_フィルターを受け取る\_フィルターを\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-enum-filters)します。 [**Ndis\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造体の**informationbuffer**メンバーには、 [**ndis\_受信\_フィルター\_情報\_配列**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_info_array)構造体へのポインターが含まれています。
 
-**注**  上にあるドライバーの以前の OID メソッド要求から、フィルター ID を取得した[OID\_受信\_フィルター\_設定\_フィルター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-set-filter)または[OID\_受信\_フィルター\_ENUM\_フィルター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-enum-filters)します。 アプリケーションは、フィルター ID を OID の以前の OID メソッド要求から取得できますのみ\_受信\_フィルター\_ENUM\_フィルター。
+  前のドライバーまたはアプリケーションが Ndis を初期化して[ **\_フィルター\_情報\_配列構造\_受信**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_info_array)する場合は、 **QUEUEID**メンバーを NDIS\_DEFAULT\_receive に設定する必要がある**ことに注意**してください。キュー\_ID\_ます。
 
  
 
-OID メソッドの要求から正常に戻った後、 **InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体バッファーへのポインターが含まれています。 このバッファーは、以下を格納する形式です。
+OID メソッド要求から正常に戻った後、 [**NDIS\_oid\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造の**informationbuffer**メンバーには、バッファーへのポインターが含まれています。 このバッファーは、次のものが含まれるように書式設定されます。
 
--   [ **NDIS\_受信\_フィルター\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_filter_parameters) NDIS のパラメーターを指定する構造体は、フィルターを受信します。
+-   NDIS\_は、ミニポートドライバーで現在構成されている受信フィルターの一覧を指定する[ **\_フィルター\_情報\_配列**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_info_array)構造体を受け取ります。
 
--   配列の[ **NDIS\_受信\_フィルター\_フィールド\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_filter_field_parameters)フィルターを指定する構造体は、フィールドを 1 つの条件をテストします。ネットワーク パケットのヘッダー。
+-   ミニポートドライバーで現在構成されている受信フィルターについて[ **\_情報構造を受信\_フィルター処理する NDIS\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_info)の配列。
+
+## <a name="querying-the-parameters-of-a-receive-filters-on-a-miniport-driver"></a>ミニポートドライバーで受信フィルターのパラメーターを照会する
+
+
+ミニポートドライバーにダウンロードされた特定のパケット合体受信フィルターのパラメーターを取得するために、前のドライバーまたはアプリケーションは oid の OID メソッド要求を発行し、 [\_フィルター\_パラメーターを受け取る](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-parameters)ように\_します。 [**Ndis\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造体の**informationbuffer**メンバーには、 [**ndis\_受信\_フィルター\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_parameters)構造体へのポインターが含まれています。 前のドライバーまたはアプリケーションは、 **Filterid**メンバーを、パラメーターが返されるフィルターの0以外の id 値に設定することによって、 **NDIS\_受信\_フィルター\_パラメーター**構造を初期化します。
+
+これまでのドライバーでは、以前の OID メソッドの Oid 要求からフィルター ID を取得した  [\_受信\_フィルター\_設定](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-set-filter)されている**ことに注意**してください\_フィルターまたは[OID\_受信\_フィルター\_列挙\_フィルター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-enum-filters)。 アプリケーションで取得できるのは、以前の oid メソッドの OID の要求からフィルター ID を取得することだけで、列挙\_フィルター\_列挙\_フィルターを受け取る\_できます。
+
+ 
+
+OID メソッド要求から正常に戻った後、 [**NDIS\_oid\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造の**informationbuffer**メンバーには、バッファーへのポインターが含まれています。 このバッファーは、次のものが含まれるように書式設定されます。
+
+-   Ndis\_は、NDIS 受信フィルターのパラメーターを指定する[ **\_フィルター\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_parameters)構造を受け取ります。
+
+-   ネットワークパケットヘッダー内の1つのフィールドのフィルターテスト条件を指定する、 [ **\_フィルター\_フィールド\_パラメーター構造を受け取る NDIS\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_field_parameters)の配列。
 
  
 

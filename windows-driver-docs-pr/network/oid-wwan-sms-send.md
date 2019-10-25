@@ -1,42 +1,42 @@
 ---
 title: OID_WWAN_SMS_SEND
-description: OID_WWAN_SMS_SEND MB の別のデバイスに SMS テキスト メッセージを送信します。
+description: OID_WWAN_SMS_SEND は、SMS テキストメッセージを別の MB デバイスに送信します。
 ms.assetid: 557d2bdc-8414-4fcb-903c-23bb68955d07
 ms.date: 08/08/2017
-keywords: -OID_WWAN_SMS_SEND ネットワーク ドライバーが Windows Vista 以降
+keywords: -Windows Vista 以降の OID_WWAN_SMS_SEND ネットワークドライバー
 ms.localizationpriority: medium
-ms.openlocfilehash: 895b2e76ae38ea12b3fe9a5ecb2d6bf72fcefc79
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6e06857ffcba24dcc15ca621990a95ba95427d7e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383185"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843782"
 ---
-# <a name="oidwwansmssend"></a>OID\_WWAN\_SMS\_送信
+# <a name="oid_wwan_sms_send"></a>OID\_WWAN\_SMS\_送信
 
 
-OID\_WWAN\_SMS\_送信 MB の別のデバイスに SMS テキスト メッセージを送信します。
+OID\_WWAN\_SMS\_では、SMS テキストメッセージを別の MB デバイスに送信します。
 
 クエリ要求はサポートされていません。
 
-セットの使用を要求する、 [ **NDIS\_WWAN\_SMS\_送信**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_sms_send)構造体。
+Set 要求では、 [**NDIS\_WWAN\_SMS\_送信**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_sms_send)構造を使用します。
 
-ミニポート ドライバーは、この OID を非同期に処理し、NDIS を返す必要があります\_状態\_INDICATION\_セットの要求に必要な作業 provisional 応答。 ミニポート ドライバーに送信する必要があります、 [ **NDIS\_状態\_WWAN\_SMS\_送信**](ndis-status-wwan-sms-send.md)トランザクションが完了しているときを示す値。
+ミニポートドライバーは、この OID を非同期的に処理し、任意の set 要求に対して必要な一時的な応答\_通知\_NDIS\_の状態を返します。 ミニポートドライバーは、クライアントがトランザクションを完了したときに通知を[**送信する\_、\_\_の NDIS\_状態**](ndis-status-wwan-sms-send.md)を送信する必要があります。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
-詳細については、この OID を使用して、次を参照してください。 [WWAN SMS 操作](https://docs.microsoft.com/windows-hardware/drivers/network/mb-sms-operations)します。
+この OID の使用方法の詳細については、「 [WWAN SMS の操作](https://docs.microsoft.com/windows-hardware/drivers/network/mb-sms-operations)」を参照してください。
 
-この OID を処理するときに、ミニポート ドライバーは、プロバイダーのネットワークにアクセスできますが、Subscriber Identity Module (SIM カード) にアクセスしないでください。
+この OID を処理するとき、ミニポートドライバーはプロバイダーネットワークにアクセスできますが、サブスクライバー Id モジュール (SIM カード) にはアクセスできません。
 
-OID\_WWAN\_SMS\_送信は、デバイスの機能によって、PDU モードと CDMA モード SMS テキスト メッセージの送信をサポートしています。
+OID\_WWAN\_SMS\_SEND は、デバイスの機能に応じて、PDU モードと CDMA モードの両方の SMS テキストメッセージの送信をサポートします。
 
-PDU モード SMS テキスト メッセージのみをサポートするためには、GSM ベースのデバイスが必要です。 CDMA モード SMS テキスト メッセージのみをサポートするためには、CDMA ベースのデバイスが必要です。 ミニポート ドライバーでは、SMS テキスト メッセージ モードに関係なくセット要求を完了できる必要があります。
+GSM ベースのデバイスは、PDU モードの SMS テキストメッセージのみをサポートすることが想定されています。 CDMA ベースのデバイスは、CDMA モードの SMS テキストメッセージのみをサポートすることが想定されています。 ミニポートドライバーは、SMS テキストメッセージモードに関係なく、設定された要求を完了できる必要があります。
 
-ミニポート ドライバーは、NDIS を返す必要があります\_状態\_いない\_SMS テキスト メッセージ、または SMS テキスト メッセージを送信する機能をサポートしていない場合にサポートされます。
+ミニポートドライバーは、SMS テキストメッセージをサポートしていない場合、または SMS テキストメッセージを送信する機能がサポートされていない場合は、NDIS\_の状態\_\_返す必要があります。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -47,11 +47,11 @@ PDU モード SMS テキスト メッセージのみをサポートするため�
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>Windows 7 および Windows の以降のバージョンで使用できます。</p></td>
+<td><p>Windows 7 以降のバージョンの Windows で使用できます。</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Ntddndis.h (include Ndis.h)</td>
+<td>Ntddndis (Ndis .h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -59,9 +59,9 @@ PDU モード SMS テキスト メッセージのみをサポートするため�
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_WWAN\_SMS\_送信**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_sms_send)
+[**NDIS\_WWAN\_SMS\_送信**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_sms_send)
 
-[WWAN SMS の操作](https://docs.microsoft.com/windows-hardware/drivers/network/mb-sms-operations)
+[WWAN SMS 操作](https://docs.microsoft.com/windows-hardware/drivers/network/mb-sms-operations)
 
  
 

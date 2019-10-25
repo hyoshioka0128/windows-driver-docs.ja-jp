@@ -3,17 +3,17 @@ title: プロトコル ドライバーの状態表示
 description: プロトコル ドライバーの状態表示
 ms.assetid: 4b0426bb-4311-4251-b9ee-38d081f061e5
 keywords:
-- プロトコル ドライバー WDK ネットワー キング、状態インジケーター
-- NDIS プロトコル ドライバー WDK、状態インジケーター
-- 状態インジケーターの WDK ネットワー キング、プロトコル ドライバー
+- プロトコルドライバー (WDK ネットワーク)、状態のインジケーター
+- NDIS プロトコルドライバー WDK、状態の示さ
+- WDK ネットワークプロトコルドライバーの状態を示す状態
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cae9fc25de2fb70e9313b1037cbae106525f057e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e97189ff0ab5733b51d7897897dfdca610651bfd
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383609"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841827"
 ---
 # <a name="status-indications-in-a-protocol-driver"></a>プロトコル ドライバーの状態表示
 
@@ -21,11 +21,11 @@ ms.locfileid: "67383609"
 
 
 
-プロトコル ドライバーに状態インジケーターの 2 つの異なるインターフェイスがあります。 コネクションレスの下端との NDIS プロトコル ドライバーを指定するために必要な[ **ProtocolStatusEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_status_ex)関数。 NDIS 呼び出し*ProtocolStatusEx*基になるコネクションレス ミニポート ドライバーを呼び出すと[ **NdisMIndicateStatusEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismindicatestatusex)そのハードウェアの状態の変更を報告します。 NDIS 呼び出し*ProtocolStatusEx*状態の変更を開始するとき。 コネクションレスのプロトコル ドライバーに状態インジケーターの詳細については、次を参照してください。[プロトコル ドライバーに状態インジケーターの処理](handling-status-indications-in-a-protocol-driver.md)します。
+プロトコルドライバーには、状態を示す2つの異なるインターフェイスがあります。 [**Protocolstatusex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_status_ex)関数を提供するには、より低いエッジを持つ NDIS プロトコルドライバーが必要です。 NDIS は*Protocolstatusex*を呼び出します。基になるコネクションレスなミニポートドライバーが[**NdisMIndicateStatusEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismindicatestatusex)を呼び出して、ハードウェアの状態の変化を報告します。 状態の変更が開始されると、NDIS は*Protocolstatusex*を呼び出します。 コネクションレスプロトコルドライバーでの状態の表示の詳細については、「[プロトコルドライバーでのステータス](handling-status-indications-in-a-protocol-driver.md)表示の処理」を参照してください。
 
-接続指向プロトコル ドライバーを指定する必要があります、 [ **ProtocolCoStatusEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_co_status_ex)関数。 NDIS 呼び出し*ProtocolCoStatusEx*を基になる接続指向のミニポート ドライバーを呼び出すと[ **NdisMCoIndicateStatusEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcoindicatestatusex)そのハードウェアの状態の変更を報告するには. NDIS 呼び出し*ProtocolCoStatusEx*状態の変更を開始するとき。 接続指向プロトコル ドライバーに状態インジケーターの詳細については、次を参照してください[Connection-Oriented 操作。](connection-oriented-operations.md)
+接続指向プロトコルドライバーは、 [**Protocolcostatusex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_co_status_ex)関数を提供する必要があります。 基になる接続指向ミニポートドライバーが[**NdisMCoIndicateStatusEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcoindicatestatusex)を呼び出して、ハードウェアの状態の変化を報告する場合、NDIS は*Protocolcostatusex*を呼び出します。 状態の変更が開始されると、NDIS は*Protocolcostatusex*を呼び出します。 接続指向プロトコルドライバーの状態の表示の詳細については、「[接続指向の操作](connection-oriented-operations.md)」を参照してください。
 
-可能な状態インジケーターの完全な一覧を参照してください。[状態インジケーター](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)します。
+表示される状態の一覧については、「[ステータス](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)の表示」を参照してください。
 
  
 

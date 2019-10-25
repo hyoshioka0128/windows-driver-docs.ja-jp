@@ -3,15 +3,15 @@ title: CoNDIS WAN のその他の利点
 description: CoNDIS WAN のその他の利点
 ms.assetid: 5b937ae4-1486-4563-a863-5c02ba57c7df
 keywords:
-- いる CoNDIS WAN ドライバー WDK ネットワーク、利点があります。
+- CoNDIS WAN ドライバー WDK ネットワーク、特典
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 01cf14061446710d91a9e80c5360464f2ed378bd
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 931ecf83e939311c043e6cf09a81529e61144fc2
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67366534"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843755"
 ---
 # <a name="other-benefits-of-condis-wan"></a>CoNDIS WAN のその他の利点
 
@@ -19,17 +19,17 @@ ms.locfileid: "67366534"
 
 
 
-柔軟性とわかりやすくするため、だけでなくは、WAN いる CoNDIS モデルは、次の利点を提供します。
+Conconwan モデルには、柔軟性とシンプルさに加えて、次のような利点があります。
 
--   Multipacket をサポートしている CoNDIS WAN ミニポート ドライバー[送信し、受信操作](sending-and-receiving-data.md)します。
+-   Conmwan ミニポートドライバーは、マルチパケットの[送信操作と受信操作を](sending-and-receiving-data.md)サポートしています。
 
--   いる CoNDIS ミニポート ドライバーでは、受信パケットを示します、ときに、バインドされているプロトコルは、パケットの処理を延期できます。 NDIS WAN ミニポート ドライバーでは、受信パケットを示します、ときにバインドされているプロトコルではすぐにデータをコピーする必要があります。
+-   CoNDIS ミニポートドライバーが受信パケットを示している場合、バインドされたプロトコルはパケットの処理を遅らせることができます。 NDIS WAN ミニポートドライバーが受信パケットを示す場合、バインドされたプロトコルはデータを直ちにコピーする必要があります。
 
--   いる CoNDIS WAN multipoint 呼び出しをサポートしています。 Multipoint の呼び出しを作成する方法についての詳細については、次を参照してください。[呼び出しを行う](making-a-call.md)します。
+-   CoNDIS WAN は multipoint 呼び出しをサポートします。 マルチポイント呼び出しの詳細については、「[呼び出しを行う](making-a-call.md)」を参照してください。
 
--   いる CoNDIS WAN は、サービスの品質 (QoS) をサポートしています。 いる CoNDIS WAN のドライバーを使用して、 [ **NET\_バッファー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)構造体。 いる CoNDIS QoS の詳細については、次を参照してください。[呼び出しパラメーターの変更を要求する Client-Initiated](client-initiated-request-to-change-call-parameters.md)します。
+-   CoNDIS WAN では、サービスの品質 (QoS) がサポートされています。 CoNDIS WAN ドライバーは、 [**NET\_のバッファー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer)構造を使用します。 CoNDIS QoS の詳細については、「[クライアントが開始した要求の呼び出しパラメーターの変更](client-initiated-request-to-change-call-parameters.md)」を参照してください。
 
--   いる CoNDIS WAN のみ、WAN のドライバーに適用される今後の NDIS 拡張機能をサポートします。
+-   CoNDIS WAN のみが、WAN ドライバーに適用される将来の NDIS 拡張をサポートします。
 
  
 

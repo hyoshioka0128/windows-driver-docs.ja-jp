@@ -3,16 +3,16 @@ title: 操作後コールバック ルーチン内で I/O 操作を保留にす�
 description: 操作後コールバック ルーチン内で I/O 操作を保留にする
 ms.assetid: 126e13fb-51f6-4dcc-aa13-850921b3c752
 keywords:
-- postoperation コールバック ルーチン WDK ファイル システム ミニフィルター、保留中の操作
-- 保留中のコールバック ルーチン WDK で I/O 操作は、ファイル システム
+- postoperation コールバックルーチン WDK ファイルシステムミニフィルター、保留中の操作
+- コールバックルーチンにおける保留中の i/o 操作 WDK ファイルシステム
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e050d4bbdebbbe7e357b7418114583eff5d6a62
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: adafc1e13455253d82db9382f25c1d070ed7b3f3
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386056"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841038"
 ---
 # <a name="pending-an-io-operation-in-a-postoperation-callback-routine"></a>操作後コールバック ルーチン内で I/O 操作を保留にする
 
@@ -20,29 +20,29 @@ ms.locfileid: "67386056"
 ## <span id="ddk_pending_an_io_operation_in_a_postoperation_callback_routine_if"></span><span id="DDK_PENDING_AN_IO_OPERATION_IN_A_POSTOPERATION_CALLBACK_ROUTINE_IF"></span>
 
 
-ミニフィルター ドライバーの[ **postoperation コールバック ルーチン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nc-fltkernel-pflt_post_operation_callback)次の手順を実行することによって、I/O の保留操作ができます。
+ミニフィルタードライバーの[**postoperation コールバックルーチン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nc-fltkernel-pflt_post_operation_callback)は、次の手順を実行して i/o 操作を保留できます。
 
-1.  呼び出す[ **FltAllocateDeferredIoWorkItem** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltallocatedeferredioworkitem) I/O 操作を作業項目を割り当てられません。
+1.  I/o 操作のために作業項目を割り当てるために[**FltAllocateDeferredIoWorkItem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltallocatedeferredioworkitem)を呼び出しています。
 
-2.  呼び出す[ **FltQueueDeferredIoWorkItem** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltqueuedeferredioworkitem)システム ワーク キューに I/O 操作を投稿します。
+2.  [**FltQueueDeferredIoWorkItem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltqueuedeferredioworkitem)を呼び出して、i/o 操作をシステムの作業キューに送信します。
 
-3.  返す FLT\_POSTOP\_詳細\_処理\_必要な作業です。
+3.  FLT\_POSTOP を返すことで、\_処理\_必要な\_を増やすことができます。
 
-なおへの呼び出し**FltQueueDeferredIoWorkItem**次の条件のいずれかに該当する場合は失敗します。
+次のいずれかの条件に該当する場合、 **FltQueueDeferredIoWorkItem**の呼び出しは失敗することに注意してください。
 
--   操作は IRP ベースの I/O 操作ではありません。
+-   この操作は、IRP ベースの i/o 操作ではありません。
 
--   ページング I/O 操作にします。
+-   操作はページング i/o 操作です。
 
--   **TopLevelIrp** 、現在のスレッドのフィールドがない**NULL**します。 (このフィールドの値を検索する方法の詳細については、次を参照してください[ **IoGetTopLevelIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-iogettoplevelirp)。)。
+-   現在のスレッドの**TopLevelIrp**フィールドが**NULL**ではありません。 (このフィールドの値を検索する方法の詳細については、「 [**IoGetTopLevelIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iogettoplevelirp)」を参照してください)。
 
--   I/O 操作のターゲット インスタンスが破棄されています。 (フィルター マネージャーでは、このような状況を示す、FLTFL を設定して\_POST\_操作\_でドレイン中のフラグ、*フラグ*postoperation コールバック ルーチンへの入力パラメーターです)。
+-   I/o 操作のターゲットインスタンスが破棄されています。 (フィルターマネージャーは、この状況を示しています。これは、FLTFL\_POST\_操作\_、*フラグ*入力パラメーター内のドレインフラグを postoperation コールバックルーチンに設定することによって示されます。
 
-ミニフィルター ドライバーは、このエラーを処理するために準備する必要があります。 ミニフィルター ドライバーは、このようなエラーを処理できない場合に記載されている手法を使用してを考慮する必要があります[返す FLT\_PREOP\_同期](returning-flt-preop-synchronize.md)の代わりに保留中の I/O 操作。
+このエラーを処理するには、ミニフィルタードライバーを準備する必要があります。 ミニフィルタードライバーがこのようなエラーを処理できない場合は、「i/o 操作を保留するのではなく、 [FLT\_PREOP\_同期を返す](returning-flt-preop-synchronize.md)」で説明されている手法を使用することを検討してください。
 
-ミニフィルター ドライバーの postoperation コールバック ルーチン返します FLT\_POSTOP\_詳細\_処理\_必要に応じて、フィルター マネージャーがない補完を実行、さらに、I/O の処理ミニフィルター ドライバーのルーチンの呼び出しを操作するまで、操作を[ **FltCompletePendedPostOperation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltcompletependedpostoperation)操作の制御フィルター マネージャーを返します。 フィルター マネージャーが処理は実行、さらにこのような状況での作業工程の障害 NTSTATUS 値を設定する場合でも、 **IoStatus.Status**操作のコールバックのデータ構造のフィールド。
+ミニフィルタードライバーの postoperation コールバックルーチンによって FLT\_POSTOP が返された後\_より多くの\_処理\_必要な場合、フィルターマネージャーはミニフィルターを使用するまで i/o 操作の完了処理を実行しません。ドライバーの作業ルーチンは[**Fltcompletependedpostoperation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltcompletependedpostoperation)を呼び出して、操作の制御をフィルターマネージャーに返します。 このような状況では、操作のコールバックデータ構造の**iostatus. Status**フィールドに失敗の NTSTATUS 値が設定されている場合でも、フィルターマネージャーはそれ以上の処理を実行しません。
 
-デキューし、I/O 操作を呼び出す必要がありますの完了処理を実行する作業ルーチン**FltCompletePendedPostOperation**操作の制御フィルター マネージャーを返します。
+I/o 操作の完了処理をデキューして実行する作業ルーチンは、 **Fltcompletependedpostoperation**を呼び出して、操作の制御をフィルターマネージャーに返す必要があります。
 
  
 

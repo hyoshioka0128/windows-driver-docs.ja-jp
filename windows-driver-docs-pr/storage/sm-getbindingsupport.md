@@ -1,9 +1,9 @@
 ---
 title: SM\_GetBindingSupport 関数
-description: SM\_GetBindingSupport メソッドは、指定されたポートが現在有効になっているバインディング機能を取得します。
+description: SM\_GetBindingSupport メソッドは、指定されたポートに対して現在有効なバインド機能を取得します。
 ms.assetid: 0ca24cdf-b589-4096-a490-2acfdd576a91
 keywords:
-- 記憶装置の SM_GetBindingSupport 関数
+- SM_GetBindingSupport function Storage デバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 01dee510e2802b333174c24cf64aa222ccee9c1e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 300ffaf82b5115177a1feabb6bb13afb6204b5a7
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384315"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842601"
 ---
-# <a name="smgetbindingsupport-function"></a>SM\_GetBindingSupport 関数
+# <a name="sm_getbindingsupport-function"></a>SM\_GetBindingSupport 関数
 
 
-SM\_GetBindingSupport メソッドは、指定されたポートが現在有効になっているバインディング機能を取得します。
+SM\_GetBindingSupport メソッドは、指定されたポートに対して現在有効なバインド機能を取得します。
 
 <a name="syntax"></a>構文
 ------
@@ -42,16 +42,16 @@ void SM_GetBindingSupport(
 ----------
 
 *HbaPortWWN*   
-永続的なバインドを取得するポートの世界中の名 (WWN)。
+永続的なバインドを取得するポートのワールド名 (WWN)。
 
 *DomainPortWWN*   
-世界中のコールバック名 (WWN) ポートは\_を任意のポートの最小値を持つ識別子\_物理ファイバー チャネル ポートを使用して検出された SMP ポートの識別子。 値が 0 の物理ファイバー チャネル ポートを使用して SMP ポートが検出されない場合があります。
+コールバックのワールド名 (WWN)。 これは、物理ファイバーチャネルポートを使用して検出された SMP ポートの任意のポート\_識別子の最小値を持つポート\_識別子です。 物理ファイバーチャネルポートを使用して SMP ポートが検出されていない場合、この値は0になります。
 
-*HBAStatus*   
-操作の状態。 使用できる値とその説明の一覧は、次を参照してください。、 [HBA\_状態](hba-status.md)構造体。 ミニポート ドライバーでは、この情報を返します、GetBindingSupport の HBAStatus メンバー\_構造体。
+*Hbastatus*   
+操作の状態。 許可される値とその説明の一覧については、「 [HBA\_状態](hba-status.md)の構造」を参照してください。 ミニポートドライバーは、GetBindingSupport\_OUT 構造体の HBAStatus メンバーでこの情報を返します。
 
 *フラグ*   
-永続的なバインディングに関連する機能の特定のセットを提供するには、HBA の機能とそのミニポート ドライバーを示すビットマップ。 このパラメーターには値の一覧は、HBA の説明を参照してください。\_バインド\_型 WMI クラスの修飾子。
+永続的なバインディングに関連する特定の機能セットを提供する、HBA とそのミニポートドライバーの機能を示すビットマップ。 このパラメーターに指定できる値の一覧については、「WMI クラス修飾子の\_バインド\_HBA の説明を参照してください。
 
 <a name="return-value"></a>戻り値
 ------------
@@ -61,7 +61,7 @@ WMI メソッドには適用されません。
 <a name="remarks"></a>注釈
 -------
 
-この WMI メソッドは、ミリ秒に属する\_SM\_TargetInformationMethods WMI クラスです。
+この WMI メソッドは、MS\_SM\_TargetInformationMethods WMI クラスに属しています。
 
 <a name="requirements"></a>要件
 ------------
@@ -78,19 +78,19 @@ WMI メソッドには適用されません。
 </tr>
 <tr class="even">
 <td align="left"><p>Header</p></td>
-<td align="left">Hbapiwmi.h</td>
+<td align="left">Hbapiwmi</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[HBA\_状態](hba-status.md)
+[HBA\_の状態](hba-status.md)
 
-[**SM\_GetBindingSupport\_IN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sm_getbindingsupport_in)
+[**SM\_GetBindingSupport\_IN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sm_getbindingsupport_in)
 
-[**SM\_GetBindingSupport\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sm_getbindingsupport_out)
+[**SM\_GetBindingSupport\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sm_getbindingsupport_out)
 
  
 

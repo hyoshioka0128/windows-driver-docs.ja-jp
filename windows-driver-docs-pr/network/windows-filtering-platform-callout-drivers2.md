@@ -1,6 +1,6 @@
 ---
-title: Windows フィルタリングプラットフォームのコールアウトドライバーに関するトピック
-description: Windows フィルタリングプラットフォームのコールアウトドライバーに関するトピック
+title: Windows フィルタリング プラットフォーム コールアウト ドライバーに関するトピック
+description: Windows フィルタリング プラットフォーム コールアウト ドライバーに関するトピック
 ms.assetid: 494dd2be-ac1b-432b-8966-278534eca162
 keywords:
 - Windows フィルタリングプラットフォームのコールアウトドライバーの WDK
@@ -8,14 +8,14 @@ keywords:
 - WFP WDK ネットワーク
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fd7beaf750c244019c6253a0f92aa5c2dbb1bac4
-ms.sourcegitcommit: fec48fa5342d9cd4cd5ccc16aaa06e7c3d730112
+ms.openlocfilehash: f21942cf7bdaefe362f360f85a3f0f9d632b6cbc
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2019
-ms.locfileid: "69565715"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844394"
 ---
-# <a name="windows-filtering-platform-callout-driver-topics"></a>Windows フィルタリングプラットフォームのコールアウトドライバーに関するトピック
+# <a name="windows-filtering-platform-callout-driver-topics"></a>Windows フィルタリング プラットフォーム コールアウト ドライバーに関するトピック
 
 
 このセクションでは、Windows Filtering Platform (WFP) コールアウトドライバーについて説明し、次のトピックを示します。
@@ -36,7 +36,7 @@ ms.locfileid: "69565715"
 
 WFP の概要については、「 [Windows Filtering Platform](https://docs.microsoft.com/windows/desktop/FWP/windows-filtering-platform-start-page)」を参照してください。
 
-WFP のリファレンス情報については、「 [Windows フィルタリングプラットフォームのコールアウトドライバー](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)」を参照してください。
+WFP のリファレンス情報については、「 [Windows フィルタリングプラットフォームのコールアウトドライバー](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)」を参照してください。
 
  
 

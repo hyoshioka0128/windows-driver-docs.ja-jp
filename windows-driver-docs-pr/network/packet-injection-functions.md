@@ -3,21 +3,21 @@ title: パケット挿入関数
 description: パケット挿入関数
 ms.assetid: ebbcafb6-7fbf-40e6-8806-0131aa1d4df5
 keywords:
-- パケットの挿入関数 WDK Windows フィルタ リング プラットフォーム
-- インジェクション関数 WDK Windows フィルタ リング プラットフォーム
+- パケット挿入関数 WDK Windows フィルタリングプラットフォーム
+- インジェクション関数 WDK Windows フィルタリングプラットフォーム
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a1bbc61b4295003cafed8be66a142552455809d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a49b70f9a63ddcec9d989b8b4fbc995e942d4d39
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67357598"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843711"
 ---
 # <a name="packet-injection-functions"></a>パケット挿入関数
 
 
-コールアウト ドライバーは保留を挿入する次の WFP 関数を呼び出すことができます。 または TCP/IP スタックにパケット データを変更します。 元のデータを挿入できるか、可能な変換先、と共に適用可能なレイヤーは、次の表に一覧表示されます。
+コールアウトドライバーは、次の WFP 関数を呼び出して、保留または変更されたパケットデータを TCP/IP スタックに挿入できます。 次の表に、データの挿入元として使用できるレイヤーと、可能な変換先を示します。
 
 <table>
 <colgroup>
@@ -27,58 +27,58 @@ ms.locfileid: "67357598"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">インジェクション関数</th>
-<th align="left">該当のレイヤー</th>
+<th align="left">挿入関数</th>
+<th align="left">適用可能なレイヤー</th>
 <th align="left">宛先</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsinjectforwardasync0" data-raw-source="[&lt;strong&gt;FwpsInjectForwardAsync0&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsinjectforwardasync0)"><strong>FwpsInjectForwardAsync0</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsinjectforwardasync0" data-raw-source="[&lt;strong&gt;FwpsInjectForwardAsync0&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsinjectforwardasync0)"><strong>FwpsInjectForwardAsync0</strong></a></p></td>
 <td align="left"><p>ネットワーク層</p></td>
-<td align="left"><p>転送データのパス</p></td>
+<td align="left"><p>転送データパス</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsinjectnetworkreceiveasync0" data-raw-source="[&lt;strong&gt;FwpsInjectNetworkReceiveAsync0&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsinjectnetworkreceiveasync0)"><strong>FwpsInjectNetworkReceiveAsync0</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsinjectnetworkreceiveasync0" data-raw-source="[&lt;strong&gt;FwpsInjectNetworkReceiveAsync0&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsinjectnetworkreceiveasync0)"><strong>FwpsInjectNetworkReceiveAsync0</strong></a></p></td>
 <td align="left"><p>ネットワーク層</p></td>
-<td align="left"><p>受信データのパス</p></td>
+<td align="left"><p>受信データパス</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsinjectnetworksendasync0" data-raw-source="[&lt;strong&gt;FwpsInjectNetworkSendAsync0&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsinjectnetworksendasync0)"><strong>FwpsInjectNetworkSendAsync0</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsinjectnetworksendasync0" data-raw-source="[&lt;strong&gt;FwpsInjectNetworkSendAsync0&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsinjectnetworksendasync0)"><strong>FwpsInjectNetworkSendAsync0</strong></a></p></td>
 <td align="left"><p>ネットワーク層</p></td>
-<td align="left"><p>送信データのパス</p></td>
+<td align="left"><p>送信データパス</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsinjecttransportreceiveasync0" data-raw-source="[&lt;strong&gt;FwpsInjectTransportReceiveAsync0&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsinjecttransportreceiveasync0)"><strong>FwpsInjectTransportReceiveAsync0</strong></a></p></td>
-<td align="left"><p>トランスポート、データグラム データ、ICMP のエラーまたは ALE レイヤーからのパケット データ</p></td>
-<td align="left"><p>受信データのパス</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsinjecttransportreceiveasync0" data-raw-source="[&lt;strong&gt;FwpsInjectTransportReceiveAsync0&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsinjecttransportreceiveasync0)"><strong>FwpsInjectTransportReceiveAsync0</strong></a></p></td>
+<td align="left"><p>トランスポート、データグラムデータ、ICMP エラー、または ALE レイヤーからのパケットデータ</p></td>
+<td align="left"><p>受信データパス</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsinjecttransportsendasync0" data-raw-source="[&lt;strong&gt;FwpsInjectTransportSendAsync0&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsinjecttransportsendasync0)"><strong>FwpsInjectTransportSendAsync0</strong></a></p></td>
-<td align="left"><p>トランスポート、データグラム データ、ICMP のエラーまたは ALE レイヤーからのパケット データ</p></td>
-<td align="left"><p>送信データのパス</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsinjecttransportsendasync0" data-raw-source="[&lt;strong&gt;FwpsInjectTransportSendAsync0&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsinjecttransportsendasync0)"><strong>FwpsInjectTransportSendAsync0</strong></a></p></td>
+<td align="left"><p>トランスポート、データグラムデータ、ICMP エラー、または ALE レイヤーからのパケットデータ</p></td>
+<td align="left"><p>送信データパス</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsstreaminjectasync0" data-raw-source="[&lt;strong&gt;FwpsStreamInjectAsync0&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsstreaminjectasync0)"><strong>FwpsStreamInjectAsync0</strong></a></p></td>
-<td align="left"><p>TCP データ セグメント</p></td>
-<td align="left"><p>データ ストリーム</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsstreaminjectasync0" data-raw-source="[&lt;strong&gt;FwpsStreamInjectAsync0&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsstreaminjectasync0)"><strong>FwpsStreamInjectAsync0</strong></a></p></td>
+<td align="left"><p>TCP データセグメント</p></td>
+<td align="left"><p>データストリーム</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-さらに、 [ **FwpsQueryPacketInjectionState0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsquerypacketinjectionstate0)パケット データの挿入の履歴を検査する関数を使用します。
+また、 [**FwpsQueryPacketInjectionState0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsquerypacketinjectionstate0)関数を使用して、パケットデータの挿入履歴を検査します。
 
-引き出し線の挿入関数で必要とされるすべての必要な情報を指定できる場合クロス レイヤーの挿入が有効になっているし、net バッファーの一覧がインジェクション関数によって予期される形式。 コールアウトが転送パスでパケットをキャプチャ、ローカル コンピューター、および呼び出しの送信先アドレスの変更など**FwpsInjectTransportReceiveAsync0**にパケットをローカル コンピューターの TCP/IP スタックにリダイレクトします。
+挿入関数に必要なすべての情報がコールアウトによって提供される場合、クロスレイヤー挿入が有効になります。また、net buffer list は挿入関数によって想定される形式になります。 たとえば、コールアウトは、転送パスでパケットをキャプチャし、その宛先アドレスをローカルコンピューターのアドレスに変更し、 **FwpsInjectTransportReceiveAsync0**を呼び出してパケットをローカルコンピューターの tcp/ip スタックにリダイレクトすることができます。
 
-挿入された受信パケットは、ストリームの (TCP データ) 挿入を除くスタック、WFP レイヤーの"top"から挿入された送信パケットを再入力中にスタック、WFP のレイヤーの"bottom"から再入力します。 たとえば、受信データグラム データ層から挿入 UDP パケットは、スタックを再入力して、ネットワーク層、トランスポート層を走査、ALE が表示されるか (省略可能)、レイヤーをそのまま使用データグラム データ層に戻します。 別の UDP パケット送信のネットワーク層から挿入され、スタックを再入力し ALE (省略可能)、データグラム データ、およびトランスポート層を走査、ネットワーク層にバックアップされます。
+ストリーム (TCP データ) の挿入を除き、挿入された受信パケットはスタックおよび WFP レイヤーの "最下位" から再入力されますが、挿入された発信パケットはスタックおよび WFP レイヤーの "最上位" から再入力されます。 たとえば、受信データグラムデータレイヤーから挿入された UDP パケットは、スタックを再入力し、ネットワーク層、トランスポート層、ALE 受信または受け入れレイヤー (オプション) をスキャンして、データグラムデータレイヤーに戻します。 送信ネットワークレイヤーから別の UDP パケットが挿入されると、スタックに再入力され、ALE (オプション)、データグラムデータ、およびトランスポート層を走査し、ネットワーク層に戻ります。
 
-**FwpsInjectTransportReceiveAsync0** IPsec IPsec 検証ことになったが以前ので reinjected パケットの処理を自動的にバイパスします。
+**FwpsInjectTransportReceiveAsync0**は、以前は ipsec の検証を通過したため、再挿入パケットの ipsec 処理を自動的にバイパスします。
 
-WFP コールアウト ドライバーによって挿入されたパケットはパケットに変更が元のフィルター条件を見逃すことに原因の場合を除く吹き出しに再指定されます。 WFP が提供、 **FwpsQueryPacketInjectionState0**パケットが挿入された (または前に挿入された) かどうか、クエリへのコールアウトの関数のコールアウトので。 無限ループを防ぐため、コールアウトは、自動挿入されたパケットを許可する必要があります。
+WFP コールアウトドライバーによって挿入されたパケットは、パケットへの変更によって元のフィルター条件が満たされなくなる場合を除き、コールアウトに再設定されます。 WFP は、コールアウト用の**FwpsQueryPacketInjectionState0**関数を提供して、コールアウトによってパケットが挿入された (または前に挿入された) かどうかを照会します。 無限ループを防ぐために、コールアウトは自己挿入パケットを許可する必要があります。
 
-コールアウトは、これらの IP パケットを変更後に、IP またはトランスポート層のチェックサム、またはその両方を調整する必要があります。 吹き出しを設定できます、チェックサムを 0 に UDP IPv4 パケットよりも。 トランスポート層のチェックサムとの互換性をオフロードして、吹き出しに擬似チェックサムの計算と完全なチェックサムを適宜調整するには、次のロジックを使用できます。
+IP パケットを変更した後、コールアウトは IP またはトランスポート層のチェックサムを調整するか、両方とも調整する必要があります。 コールアウトは、IPv4 パケット上の UDP に対してチェックサムを0に設定できます。 トランスポート層のチェックサムオフロードとの互換性を確保し、それに応じて完全なチェックサムと擬似チェックサムの計算を調整するために、コールアウトは次のロジックを使用できます。
 
 ```cpp
 NDIS_TCP_IP_CHECKSUM_PACKET_INFO ChecksumInfo;
@@ -87,11 +87,11 @@ NDIS_TCP_IP_CHECKSUM_PACKET_INFO ChecksumInfo;
  NetBufferList,TcpIpChecksumNetBufferListInfo);
 ```
 
-ChecksumInfo.Transmit.NdisPacketTcpChecksum 場合**TRUE**、TCP 送信の操作がオフロードされます。 ChecksumInfo.Transmit.NdisPacketUdpChecksum 場合**TRUE**UDP の送信操作がオフロードします。
+NdisPacketTcpChecksum が**TRUE**の場合、TCP 送信操作はオフロードされます。 ChecksumInfo が**TRUE**の場合は、UDP 送信操作はオフロードされますが、
 
-Service Pack 1 (SP1) および Windows Server 2008、Windows Vista で場合 inMetaValues-&gt;headerIncludeHeaderLength が 0 より大きい、パケットの送信は、IP ヘッダーを含む生送信 reinjection します。 Windows Vista SP1 および Windows Server 2008 用の IP ヘッダーを含む生送信 reinjections を実行するのには、inMetaValues-の量で、複製されたパケットを退却&gt;headerIncludeHeaderLength inMetaValues - コピーと&gt;新しく拡張された領域を headerIncludeHeader します。 次に、net バッファーの一覧で、パケットの FwpsInjectTransportSendAsync0 を使用し、FWPS のままに\_トランスポート\_送信\_PARAMS0 パラメーターを設定**NULL**します。 Net のバッファーのリストに撤退操作の詳細については、次を参照してください。[撤退と高度な操作](retreat-and-advance-operations.md)します。
+Windows Vista Service Pack 1 (SP1) および Windows Server 2008 では、Inメタ値-&gt;headerIncludeHeaderLength が0より大きい場合、発信パケットは IP ヘッダーを含む未加工の送信再挿入です。 Windows Vista SP1 および Windows Server 2008 の IP ヘッダーを含む RAW send reinjections を実行するには、複製されたパケットを Inメタ値-&gt;headerIncludeHeaderLength の量で&gt;し、Inメタ値をコピーする必要があります。新しく拡張された領域に対する headerIncludeHeader。 次に、FwpsInjectTransportSendAsync0 をパケットの net buffer リストと共に使用し、FWPS\_TRANSPORT\_SEND\_PARAMS0 パラメーターを**NULL**に設定したままにします。 Net buffer リストの retreat 操作の詳細については、「 [Retreat 操作と](retreat-and-advance-operations.md)詳細な操作」を参照してください。
 
-**注**  net バッファーの一覧の生の送信操作では、1 つのネット バッファーのみを含める必要があります。 Net バッファー一覧に 1 つ以上のネットワーク バッファーが含まれている場合、net のバッファーの一覧を一連の net バッファーのリストに変換する必要が、各シリーズの 1 つのネットワーク バッファーを含める必要があります。 Net バッファー リストの管理についての詳細については、次を参照してください。 [NET\_バッファー アーキテクチャ](net-buffer-architecture.md)します。
+**注**  未加工の送信操作では、net buffer リストには1つの net バッファーのみを含める必要があります。 Net バッファーの一覧に複数の net バッファーが含まれている場合は、net buffer リストを一連の net buffer リストに変換し、各シリーズの各に1つの net バッファーを含める必要があります。 Net buffer リスト管理の詳細については、「 [net\_のバッファーアーキテクチャ](net-buffer-architecture.md)」を参照してください。
 
  
 

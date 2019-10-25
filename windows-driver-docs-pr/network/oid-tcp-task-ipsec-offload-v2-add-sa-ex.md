@@ -1,46 +1,46 @@
 ---
 title: OID_TCP_TASK_IPSEC_OFFLOAD_V2_ADD_SA_EX
-description: TCP/IP トランスポートは、セットとして、ミニポート ドライバーが NIC に指定されたセキュリティ アソシエーション (Sa) を追加することを要求する OID_TCP_TASK_IPSEC_OFFLOAD_V2_ADD_SA_EX OID を使用してください。
+description: セットとして、TCP/IP トランスポートは OID_TCP_TASK_IPSEC_OFFLOAD_V2_ADD_SA_EX OID を使用して、指定されたセキュリティアソシエーション (SAs) を NIC に追加するように要求します。
 ms.assetid: 9D356CFA-3353-4E62-9B1C-0FF650DCE75C
 ms.date: 08/08/2017
-keywords: -OID_TCP_TASK_IPSEC_OFFLOAD_V2_ADD_SA_EX ネットワーク ドライバーが Windows Vista 以降
+keywords: -Windows Vista 以降の OID_TCP_TASK_IPSEC_OFFLOAD_V2_ADD_SA_EX ネットワークドライバー
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a70f34e87382000bf04afd277dc3f06f97aeabb
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f0038311fbeb7573920fc4f31e5fc44b8265db9d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67353717"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843890"
 ---
-# <a name="oidtcptaskipsecoffloadv2addsaex"></a>OID\_TCP\_タスク\_IPSEC\_オフロード\_V2\_追加\_SA\_例
+# <a name="oid_tcp_task_ipsec_offload_v2_add_sa_ex"></a>OID\_TCP\_タスク\_IPSEC\_オフロード\_V2\_追加\_SA\_EX
 
 
-\[IPsec タスク オフロード機能は非推奨し、は使用できません。\]
+\[IPsec タスクオフロード機能は非推奨とされているため、使用しないでください。\]
 
-TCP/IP トランスポートが、OID を使用して、セットとして\_TCP\_タスク\_IPSEC\_オフロード\_V2\_追加\_SA\_ミニポート ドライバーの追加を要求する例: OID、NIC に指定されたセキュリティ アソシエーション (Sa)
+設定として、TCP/IP トランスポートでは、IPSEC\_オフロード\_V2\_\_SA\_EX OID を追加して、指定されたセキュリティアソシエーション (SAs) を追加するように要求するために、\_TCP\_\_タスクを使用します。NIC に対して。
 
-**注**  NDIS OID 要求インターフェイスを直接この OID をサポートしています。 直接の OID 要求インターフェイスの詳細については、次を参照してください。 [NDIS 6.1 Direct OID 要求インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)します。
+**注**  NDIS では、この oid が直接 oid 要求インターフェイスでサポートされています。 直接 OID 要求インターフェイスの詳細については、「 [NDIS 6.1 DIRECT Oid Request interface](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)」を参照してください。
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
-IPsec をサポートするすべての NDIS 6.30 ミニポート ドライバーでは、バージョン 2 (IPsecOV2) は、この OID をサポートする必要がありますをオフロードします。
+IPsec オフロードバージョン 2 (IPsecOV2) をサポートするすべての NDIS 6.30 ミニポートドライバーは、この OID をサポートする必要があります。
 
-TCP/IP トランスポートは、NIC が IPsecOV2 操作を実行できることを判断、TCP/IP トランスポートは、SAs を追加するミニポート ドライバーを要求します。 トランスポートは、トランスポートは、SA を追加する前に、NIC に IPsecOV2 操作をオフロードことはできません。
+TCP/IP トランスポートは、NIC が IPsecOV2 操作を実行できることを確認した後、SAs を追加するようにミニポートドライバーに要求します。 トランスポートが SA を追加する前に、トランスポートは IPsecOV2 操作を NIC にオフロードできません。
 
-ミニポート ドライバーでは、SAs の処理 IPsecOV2 の NIC を構成します。 OID に正常に設定されている\_TCP\_タスク\_IPSEC\_オフロード\_V2\_追加\_SA\_EX、ミニポート ドライバーが識別するハンドルを提供しますSA をオフロード、 **OffloadHandle**のメンバー、 [ **IPSEC\_オフロード\_V2\_追加\_SA\_EX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ipsec_offload_v2_add_sa_ex)構造体。 (たとえば、トランスポート ハンドルを使用して、送信パスで SA を使用してをオフロードすることを示します)。 SA はオフロードされたセットの要求が成功した場合。
+ミニポートドライバーは、SAs の IPsecOV2 処理用に NIC を構成します。 正常に OID に設定された\_TCP\_タスク\_IPSEC\_オフロード\_V2\_\_SA\_追加します。ミニポートドライバーは **、オフロード**SA を識別するハンドルを提供します。[**IPSEC\_オフロード\_V2\_\_SA\_EX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ipsec_offload_v2_add_sa_ex)構造体を追加します。 (たとえば、トランスポートは、送信パスのハンドルを使用して、使用するオフロード SA を示します)。 SA がオフロードされた場合、設定要求は成功します。
 
-ミニポート ドライバーを返せる OID 要求は、エラー状態など、NIC の複数の SAs をオフロードする容量が不足している場合。 また、ミニポート ドライバーは、競合状態を回避する必要があるために、エラー状態を返す可能性があります。 この場合は、NIC の構成が変更され、特定のアルゴリズムは含まれません。
+ミニポートドライバーは OID 要求のエラー状態を返すことがあります。たとえば、NIC の容量が不足しているために、より多くの SAs をオフロードすることができます。 また、競合状態を回避する必要があるため、ミニポートドライバーがエラー状態を返すことがあります。 この場合、NIC の構成が変更され、特定のアルゴリズムが除外されます。
 
-要求が失敗した場合、SAs がオフロードできません。 ミニポート ドライバーを設定する必要があります、SA の障害が発生した場合、 **OffloadHandle**メンバーに対応する IPSEC\_オフロード\_V2\_追加\_SA\_EX 構造体**NULL**します。
+要求が失敗した場合、SAs はオフロードされませんでした。 SA でエラーが発生した場合、ミニポートドライバーは、対応する IPSEC\_オフロード\_V2 の**Offloadhandle**メンバーを設定し\_\_SA\_EX 構造体を**NULL**に追加します。
 
-SAs でサポートできる NIC の最大数を報告するミニポート ドライバー、 **SaOffloadCapacity**のメンバー、 [ **NDIS\_IPSEC\_オフロード\_V2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_ipsec_offload_v2)初期化中に構造体。 かどうか、必要に応じて TCP/IP トランスポート設定できる、 [OID\_TCP\_タスク\_IPSEC\_オフロード\_V2\_削除\_SA](oid-tcp-task-ipsec-offload-v2-delete-sa.md)を要求する OIDミニポート ドライバー、SA を NIC から削除します。
+ミニポートドライバーは、初期化時に、 [**NDIS\_IPSEC\_オフロード\_V2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_ipsec_offload_v2)構造体の**Saoffloadcapacity**メンバーで NIC がサポートできる SAs の最大数を報告します。 必要に応じて、TCP/IP トランスポートによって、 [IPSEC\_オフロード\_V2\_\_sa oid\_\_\_](oid-tcp-task-ipsec-offload-v2-delete-sa.md)設定して、ミニポートドライバーが NIC から sa を削除するように要求することができます。
 
-この OID が以前のバージョンでは、実質的に同じ[OID\_TCP\_タスク\_IPSEC\_オフロード\_V2\_追加\_SA](oid-tcp-task-ipsec-offload-v2-add-sa.md)します。 唯一の違いは、更新された[ **IPSEC\_オフロード\_V2\_追加\_SA\_EX** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ipsec_offload_v2_add_sa_ex)構造体。
+この OID は、基本的に以前のバージョン、 [oid\_TCP\_タスク\_IPSEC\_オフロード\_V2\_\_SA を追加](oid-tcp-task-ipsec-offload-v2-add-sa.md)するのと同じです。 唯一の違いは、更新された[**IPSEC\_OFFLOAD\_V2\_\_SA\_EX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ipsec_offload_v2_add_sa_ex)構造体を追加することです。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -51,11 +51,11 @@ SAs でサポートできる NIC の最大数を報告するミニポート ド�
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>NDIS 6.30 以降をサポートします。</p></td>
+<td><p>NDIS 6.30 以降でサポートされています。</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Ntddndis.h (include Ndis.h)</td>
+<td>Ntddndis (Ndis .h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -63,13 +63,13 @@ SAs でサポートできる NIC の最大数を報告するミニポート ド�
 ## <a name="see-also"></a>関連項目
 
 
-[**IPSEC\_オフロード\_V2\_追加\_SA\_例**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ipsec_offload_v2_add_sa_ex)
+[**IPSEC\_オフロード\_V2\_\_SA\_EX を追加する**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ipsec_offload_v2_add_sa_ex)
 
-[**NDIS\_IPSEC\_オフロード\_V2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_ipsec_offload_v2)
+[**NDIS\_IPSEC\_オフロード\_V2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_ipsec_offload_v2)
 
-[OID\_TCP\_TASK\_IPSEC\_OFFLOAD\_V2\_ADD\_SA](oid-tcp-task-ipsec-offload-v2-add-sa.md)
+[OID\_TCP\_タスク\_IPSEC\_オフロード\_V2\_SA を追加\_](oid-tcp-task-ipsec-offload-v2-add-sa.md)
 
-[OID\_TCP\_TASK\_IPSEC\_OFFLOAD\_V2\_DELETE\_SA](oid-tcp-task-ipsec-offload-v2-delete-sa.md)
+[OID\_TCP\_タスク\_IPSEC\_オフロード\_V2\_\_SA の削除](oid-tcp-task-ipsec-offload-v2-delete-sa.md)
 
  
 

@@ -1,50 +1,50 @@
 ---
 title: OID_RECEIVE_FILTER_FREE_QUEUE
-description: NDIS プロトコル ドライバーでは、受信キューを解放する OID_RECEIVE_FILTER_FREE_QUEUE のオブジェクト識別子 (OID) セット要求を発行します。
+description: NDIS プロトコルドライバーは、RECEIVE キューを解放するために、OID_RECEIVE_FILTER_FREE_QUEUE のオブジェクト識別子 (OID) セット要求を発行します。
 ms.assetid: ee8cff69-2f5e-4798-9c18-28e996dd1dd4
 ms.date: 08/08/2017
-keywords: -OID_RECEIVE_FILTER_FREE_QUEUE ネットワーク ドライバーが Windows Vista 以降
+keywords: -Windows Vista 以降の OID_RECEIVE_FILTER_FREE_QUEUE ネットワークドライバー
 ms.localizationpriority: medium
-ms.openlocfilehash: 027a2da22b4188269b4057519cba857fc9432853
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d63764fa3fa4b896b731ad788661b210fb02e5d9
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371186"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844015"
 ---
-# <a name="oidreceivefilterfreequeue"></a>OID\_受信\_フィルター\_FREE\_キュー
+# <a name="oid_receive_filter_free_queue"></a>OID\_受信\_フィルター\_空き\_キュー
 
 
-OID のオブジェクト識別子 (OID) のセット要求を発行する NDIS プロトコル ドライバー\_受信\_フィルター\_FREE\_受信キューを解放するキュー。
+NDIS プロトコルドライバーは、オブジェクト識別子 (OID) を設定する OID の要求\_受信\_フィルター\_空き\_キューを取得して、受信キューを解放します。
 
-**InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体にはへのポインターが含まれています、 [ **NDIS\_受信\_キュー\_FREE\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_queue_free_parameters)の種類のキュー id を使用した構造**NDIS\_受信\_キュー\_ID**します。
+[**Ndis\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造体の**informationbuffer**メンバーには、 [**ndis\_RECEIVE\_queue**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_free_parameters)に対するポインターが含まれています。これには、型のキュー識別子を使用して、無料\_パラメーター構造が含まれます。**NDIS\_\_キュー\_ID を受信**します。
 
 <a name="remarks"></a>注釈
 -------
 
-OID の OID の要求を設定する\_受信\_フィルター\_FREE\_キューは NDIS 6.20 が動作し、それ以降のミニポート ドライバーの省略可能です。 仮想マシン キューのインターフェイスをサポートするミニポート ドライバーに対して必要があります。
+Oid\_\_フィルター\_\_受信する oid セット要求は、NDIS 6.20 以降のミニポートドライバーでは省略可能です。 バーチャルマシンキューインターフェイスをサポートするミニポートドライバーでは必須です。
 
-上位のドライバーの問題の後、 [OID\_受信\_フィルター\_割り当て\_キュー](oid-receive-filter-allocate-queue.md) OID に割り当てる受信キューでは、OID 発行\_受信\_フィルター\_FREE\_受信キューを解放するためのキューの OID。
+その後のドライバーが[\_フィルターを受け取る oid\_受信](oid-receive-filter-allocate-queue.md)し、受信キューを割り当てるために\_キュー OID を割り当てる\_、oid を発行\_キュー OID\_解放して受信を解放します。再生.
 
-NDIS ミニポート ドライバー、VMQ を解放するための要求の受信キューに、次の手順に従います。
+NDIS は、VMQ 受信キューを解放するようにミニポートドライバーを要求するときに、次の手順を実行します。
 
-1.  ネットワーク アダプターには、キューを DMA 停止状態を入力する必要があります、受信キューに関連付けられている受信バッファーへのデータの DMA 転送が停止します。 ネットワーク アダプターは、受信したときにおそらく DMA アクティビティを停止、 [OID\_受信\_フィルター\_オフ\_フィルター](oid-receive-filter-clear-filter.md) OID 要求を受信側の最後のフィルターの設定をクリアするにはキューです。
+1.  ネットワークアダプターは、受信キューに関連付けられているバッファーを受信するために、データの DMA 転送を停止します。その後、キューは DMA 停止状態になる必要があります。 ネットワークアダプターは、Oid を受信したときに DMA アクティビティを停止したことがあります。 [\_受信\_\_フィルターをクリア\_フィルター](oid-receive-filter-clear-filter.md) oid 要求を受信して、受信キューの最後の set フィルターをクリアします。
 
-2.  ミニポート ドライバーが生成されます、 [ **NDIS\_状態\_受信\_キュー\_状態**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-receive-queue-state)状態を示す値を**QueueState**のメンバー、 [ **NDIS\_受信\_キュー\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_receive_queue_state)構造体を設定**NdisReceiveQueueOperationalStateDmaStopped** NDIS DMA 転送が停止していることを通知します。
+2.  ミニポートドライバーによって、ndis\_の状態[ **\_受信\_\_キュー**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-receive-queue-state)の状態が表示されます。これには、 [**ndis\_receive\_queue\_state**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_receive_queue_state) Structure set の**queuestate**メンバーが含まれます。**NdisReceiveQueueOperationalStateDmaStopped**に、DMA 転送が停止されたことを NDIS に通知します。
 
-3.  ミニポート ドライバーは、指定された受信パケット、ミニポート ドライバーに返されるキューのすべての待機します。
+3.  ミニポートドライバーは、そのキューのすべての受信パケットがミニポートドライバーに返されるまで待機します。
 
-4.  ミニポート ドライバーのネットワーク アダプターの受信を呼び出して、キューに関連付けられているバッファーが割り当てられているすべての共有メモリを解放する[ **NdisFreeSharedMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfreesharedmemory)します。
+4.  ミニポートドライバーは、 [**NdisFreeSharedMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfreesharedmemory)を呼び出すことによって、キューに関連付けられているネットワークアダプターの受信バッファーに割り当てられたすべての共有メモリを解放します。
 
-5.  ミニポート ドライバーには、OID が完了すると\_受信\_フィルター\_FREE\_キュー OID 要求を受信キューを解放します。
+5.  ミニポートドライバーは、receive キューを解放するために、\_QUEUE OID 要求\_\_フィルターの\_を受信する OID を完了します。
 
-ミニポート ドライバーの呼び出し、 [ **NdisFreeSharedMemory** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfreesharedmemory)キュー用の共有メモリを解放します。 ドライバーが OID のコンテキストで共有メモリを解放する場合は、ミニポート ドライバーでは、既定以外のキューの共有メモリを割り当て、\_受信\_フィルター\_FREE\_キュー OID 中、キューが解放することができます。 無料のミニポート ドライバーのコンテキストで、既定のキューに割り当てられるメモリの共有、 [ *MiniportHaltEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_halt)関数。
+ミニポートドライバーは、 [**NdisFreeSharedMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfreesharedmemory)関数を呼び出して、キューの共有メモリを解放します。 ミニポートドライバーによって既定以外のキューの共有メモリが割り当てられている場合、ドライバーは、キューを解放している間に\_キュー OID を解放\_\_フィルターを使用して、共有メモリを OID のコンテキスト\_解放します。 ミニポートドライバーは、 [*Miniporthaltex*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_halt)関数のコンテキストで既定のキューに割り当てられた共有メモリを解放します。
 
-上にある、ドライバーは、設定されると、キューを解放する前に、キューのすべてのフィルターを解放する必要があります。 また、上にある、ドライバーを呼び出す前に、ネットワーク アダプターに割り当てられた、すべての受信キューを解放する必要があります、 [ **NdisCloseAdapterEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscloseadapterex)ネットワーク アダプターへのバインドを閉じます。 NDIS ミニポート ドライバーを呼び出す前に、ネットワーク アダプターに割り当てられているすべてのキューの解放[ *MiniportHaltEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_halt)関数。
+後続のドライバーは、キューを解放する前に、キューに設定されているすべてのフィルターを解放する必要があります。 また、 [**NdisCloseAdapterEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscloseadapterex)関数を呼び出してネットワークアダプターへのバインドを閉じる前に、ネットワークアダプターに割り当てられているすべての受信キューを解放する必要があります。 NDIS は、ミニポートドライバーの[*Miniporthaltex*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_halt)関数を呼び出す前に、ネットワークアダプターに割り当てられているすべてのキューを解放します。
 
-### <a name="return-status-codes"></a>リターン状態コード
+### <a name="return-status-codes"></a>ステータスコードを返す
 
-ミニポート ドライバーの[ *MiniportOidRequest* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_oid_request)関数は、次のいずれかがこの要求の値を返します。
+ミニポートドライバーの[*Miniportoidrequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_oid_request)関数は、この要求に対して次のいずれかの値を返します。
 
 <table>
 <colgroup>
@@ -60,26 +60,26 @@ NDIS ミニポート ドライバー、VMQ を解放するための要求の受�
 <tbody>
 <tr class="odd">
 <td><p><strong>NDIS_STATUS_SUCCESS</strong></p></td>
-<td><p>ミニポート ドライバーでは、要求が正常に完了しました。</p></td>
+<td><p>ミニポートドライバーが要求を正常に完了しました。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>NDIS_STATUS_PENDING</strong></p></td>
-<td><p>ミニポート ドライバーでは、要求を非同期的に実行されます。 ミニポート ドライバーには、すべての処理が完了したら後、は、呼び出すことによって、要求が成功する必要があります、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismoidrequestcomplete" data-raw-source="[&lt;strong&gt;NdisMOidRequestComplete&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismoidrequestcomplete)"> <strong>NdisMOidRequestComplete</strong> </a>関数<strong>NDIS_STATUS_SUCCESS</strong>の<em>状態</em>パラメーター。</p></td>
+<td><p>ミニポートドライバーは、要求を非同期的に完了します。 ミニポートドライバーはすべての処理を完了した後、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismoidrequestcomplete" data-raw-source="[&lt;strong&gt;NdisMOidRequestComplete&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismoidrequestcomplete)"><strong>NdisMOidRequestComplete</strong></a>関数を呼び出し、 <em>STATUS</em>パラメーターに<strong>NDIS_STATUS_SUCCESS</strong>を渡すことによって、要求を成功させる必要があります。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>NDIS_STATUS_NOT_ACCEPTED</strong></p></td>
-<td><p>ミニポート ドライバーがリセットされています。</p></td>
+<td><p>ミニポートドライバーがリセットされています。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>NDIS_STATUS_REQUEST_ABORTED</strong></p></td>
-<td><p>ミニポート ドライバーでは、要求の処理を停止します。 たとえば、NDIS と呼ばれる、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_reset" data-raw-source="[&lt;em&gt;MiniportResetEx&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_reset)"> <em>MiniportResetEx</em> </a>関数。</p></td>
+<td><p>ミニポートドライバーが要求の処理を停止しました。 たとえば、NDIS は<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_reset" data-raw-source="[&lt;em&gt;MiniportResetEx&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_reset)"><em>Miniportresetex</em></a>関数を呼び出しました。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-NDIS は、この要求の次のステータス コードのいずれかを返します。
+NDIS は、この要求に対して次のいずれかの状態コードを返します。
 
 <table>
 <colgroup>
@@ -99,15 +99,15 @@ NDIS は、この要求の次のステータス コードのいずれかを返�
 </tr>
 <tr class="even">
 <td><p><strong>NDIS_STATUS_PENDING</strong></p></td>
-<td><p>完了待ちになっています。 NDIS は最終的な状態コードと結果を渡します OID 要求の完了ハンドラーの呼び出し元の要求が完了した後。</p></td>
+<td><p>要求は完了待ちです。 NDIS は、要求が完了した後に、最終的な状態コードと結果を呼び出し元の OID 要求完了ハンドラーに渡します。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>NDIS_STATUS_INVALID_PARAMETER</strong></p></td>
-<td><p>キューの id が無効です。</p></td>
+<td><p>キュー id が無効です。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>NDIS_STATUS_INVALID_LENGTH</strong></p></td>
-<td><p>情報バッファーが短すぎます。 NDIS セット、<strong>データ</strong>.<strong>METHOD_INFORMATION</strong>.<strong>BytesNeeded</strong>内のメンバー、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)"> <strong>NDIS_OID_REQUEST</strong> </a>構造体に必要な最小バッファー サイズ。</p></td>
+<td><p>情報バッファーが短すぎます。 NDIS は<strong>データ</strong>を設定します。<strong>METHOD_INFORMATION</strong>。<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a>構造体の中で必要とされる最小バッファーサイズに対して、 <strong>bytesneeded 必要</strong>です。</p></td>
 </tr>
 </tbody>
 </table>
@@ -125,11 +125,11 @@ NDIS は、この要求の次のステータス コードのいずれかを返�
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>以降では、NDIS 6.20 が動作をサポートします。</p></td>
+<td><p>NDIS 6.20 以降でサポートされています。</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Ntddndis.h (include Ndis.h)</td>
+<td>Ntddndis (Ndis .h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -137,19 +137,19 @@ NDIS は、この要求の次のステータス コードのいずれかを返�
 ## <a name="see-also"></a>関連項目
 
 
-[*MiniportHaltEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_halt)
+[*ミニ Porthaltex*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_halt)
 
-[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
+[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)
 
-[**NDIS\_受信\_キュー\_FREE\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_queue_free_parameters)
+[**NDIS\_\_QUEUE\_FREE\_パラメーターを受け取る**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_free_parameters)
 
-[**NDIS\_状態\_受信\_キュー\_状態**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-receive-queue-state)
+[**NDIS\_ステータス\_\_キュー\_状態を受信します**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-receive-queue-state)
 
-[**NdisCloseAdapterEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscloseadapterex)
+[**NdisCloseAdapterEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscloseadapterex)
 
-[**NdisFreeSharedMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfreesharedmemory)
+[**NdisFreeSharedMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfreesharedmemory)
 
-[OID\_受信\_フィルター\_ALLOCATE\_キュー](oid-receive-filter-allocate-queue.md)
+[OID\_受信\_フィルター\_割り当て\_キュー](oid-receive-filter-allocate-queue.md)
 
  
 

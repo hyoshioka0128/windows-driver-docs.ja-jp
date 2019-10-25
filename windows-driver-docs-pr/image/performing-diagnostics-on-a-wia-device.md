@@ -4,12 +4,12 @@ description: WIA デバイスでの診断の実行
 ms.assetid: 15962c49-f03c-409b-b138-033893a50ec2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 81f5f51b645938473fd141ea8717a47f32ea3bd9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 02d76c9958b5cd89299d9f8bda6722737bc1b436
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67376542"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840775"
 ---
 # <a name="performing-diagnostics-on-a-wia-device"></a>WIA デバイスでの診断の実行
 
@@ -17,9 +17,9 @@ ms.locfileid: "67376542"
 
 
 
-WIA サービスは呼び出すことによって機能のデバイスの状態をテストすることができます、 [ **IStiUSD::Diagnostic** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-diagnostic)メソッド。 WIA ミニドライバーをハードウェアの現在の機能の状態を確認し、結果を報告します。 **IStiUSD::Diagnostic** WIA デバイスの既定のプロパティ ページ (Microsoft 提供のプロパティ ページ) で、「テスト デバイス」ボタンが押されたときに、メソッドが呼び出されます。
+WIA サービスでは、 [**Istiusd::D iとらわれ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/stiusd/nf-stiusd-istiusd-diagnostic)ないメソッドを呼び出すことによって、デバイスの機能状態をテストできます。 WIA ミニドライバーは、ハードウェアの現在の機能状態を確認し、結果を報告する必要があります。 **I:D i無関係**のメソッドは、WIA デバイスの既定のプロパティページ (Microsoft が提供するプロパティページ) で [テストデバイス] ボタンが押されたときにも呼び出されます。
 
-次の例の実装を示しています、 **IStiUSD::Diagnostic**メソッド。
+次の例では、 **ib usd::D iとらわれ**ないメソッドの実装を示します。
 
 ```cpp
 STDMETHODIMP CWIADevice::Diagnostic(LPSTI_DIAG pBuffer)

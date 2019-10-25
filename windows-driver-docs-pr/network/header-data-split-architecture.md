@@ -3,16 +3,16 @@ title: ヘッダー データの分割のアーキテクチャ
 description: ヘッダー データの分割のアーキテクチャ
 ms.assetid: a2594360-cbac-4f77-840a-2572a2381646
 keywords:
-- ヘッダー データの分割 WDK、アーキテクチャ
-- ヘッダー データ プロバイダー WDK の分割
+- ヘッダー-データ分割 WDK、アーキテクチャ
+- ヘッダー-データ分割プロバイダー WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b694ff32cebc0d0220bd092fc0c17e4bf801717f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0a12823d8ed28a48662059dda78535717801e432
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386352"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842544"
 ---
 # <a name="header-data-split-architecture"></a>ヘッダー データの分割のアーキテクチャ
 
@@ -20,29 +20,29 @@ ms.locfileid: "67386352"
 
 
 
-ヘッダー データの分割プロバイダーでは、ヘッダーと受信のイーサネット フレーム内のデータを別のバッファーに分割することでネットワークのパフォーマンスが向上します。 ヘッダー データ プロバイダーを分割するにはには、ネットワーク インターフェイス カード (NIC) と NDIS 6.1 または NIC の services 以降のバージョンのミニポート ドライバーが含まれています。
+ヘッダーデータ分割プロバイダーは、受信したイーサネットフレーム内のヘッダーとデータを別々のバッファーに分割することで、ネットワークパフォーマンスを向上させます。 ヘッダーデータ分割プロバイダーには、ネットワークインターフェイスカード (NIC) と、NIC にサービスを提供する NDIS 6.1 以降のミニポートドライバーが含まれています。
 
-ヘッダー データが分割されたアーキテクチャの図は、次のとおりです。
+次の図は、ヘッダーデータの分割アーキテクチャを示しています。
 
-![分割されたアーキテクチャのヘッダー データを示す図](images/hdsplitarchitecture.png)
+![ヘッダーデータの分割アーキテクチャを示す図](images/hdsplitarchitecture.png)
 
-ミニポート ドライバーでは、ヘッダー データの分割操作の受信用に NIC を設定する NDIS から構成情報を受け取ります。 また、ミニポート ドライバーは、送信および受信操作などの実行時の操作、NDIS、NIC のサービスを公開します。
+ミニポートドライバーは、NDIS から構成情報を受け取り、ヘッダーデータの分割受信操作用に NIC を設定します。 また、ミニポートドライバーは、送信操作や受信操作などの実行時操作のために、NIC のサービスを NDIS に公開します。
 
-ヘッダー データの分割操作の対応している NIC イーサネット フレームを受信して、ヘッダーを分割し、データを別の受信バッファー。
+ヘッダーデータの分割操作が可能な NIC は、イーサネットフレームを受信し、ヘッダーとデータを別々の受信バッファーに分割します。
 
-通常の NDIS ミニポート ドライバー使用には、NDIS に受信したデータを示す関数が表示されます。 また、ドライバーを割り当てる必要があります 1 つだけ[ **NET\_バッファー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)構造体を[ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)構造を示す場合にデータを受信しました。 詳細については、次を参照してください。[受信イーサネット フレームのことを示す](indicating-received-ethernet-frames.md)します。
+ミニポートドライバーは、NDIS に受信したデータを示すために通常の NDIS 受信機能を使用します。 また、ドライバーは、受信したデータを示すときに、net [ **\_バッファー\_リスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)構造体に厳密に1つの[**net\_バッファー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer)構造体を割り当てる必要があります。 詳細については、「[受信したイーサネットフレームを示す](indicating-received-ethernet-frames.md)」を参照してください。
 
-ヘッダー データの分割、 [ **NET\_バッファー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)受信インジケーターの構造は、記述子のヘッダー (MDLs) を一覧表示する別のメモリを使用して、受信したイーサネット フレームを分割し、データ。 また、 [ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)構造に含まれるヘッダー データについては、.NET での分割\_バッファー\_情報を一覧表示します。
+ヘッダーデータの分割の場合、受信表示の[**NET\_バッファー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer)構造は、ヘッダーとデータに個別のメモリ記述子リスト (mdls) を使用して、受信したイーサネットフレームを分割します。 また、 [**net\_buffer\_list**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)構造体には、NET\_BUFFER\_リスト情報のヘッダーデータの分割情報が含まれています。
 
-次の図は、受信したフレーム、分割バッファー、およびヘッダーのバッファーのメモリ レイアウトを示します。
+次の図は、受信フレーム、分割バッファー、およびヘッダーバッファーのメモリレイアウトを示しています。
 
-![受信したフレーム、分割バッファー、およびヘッダーのバッファーのメモリ レイアウトを示す図](images/hdspllitbuffers.png)
+![受信フレーム、分割バッファー、およびヘッダーバッファーのメモリレイアウトを示す図](images/hdspllitbuffers.png)
 
-ヘッダーのバッファーを連続したブロック記憶域にすべてあります。
+ヘッダーバッファーは、すべて連続したストレージブロック内に存在する必要があります。
 
-*上位層プロトコル*は TCP、UDP、ICMP などの IP トランスポート プロトコルです。
+*上位層プロトコル*は、TCP、UDP、ICMP などの IP トランスポートプロトコルです。
 
-**注**  IPsec は、ヘッダー データの分割の要件を定義するための上位層プロトコルをしないと見なされます。 IPsec のフレームの分割の詳細については、次を参照してください。 [IPsec フレームの分割](splitting-ipsec-frames.md)します。
+**注**  ヘッダーデータの分割要件を定義するために、IPsec は上位層のプロトコルとは見なされません。 IPsec フレームの分割の詳細については、「 [Ipsec フレームの分割](splitting-ipsec-frames.md)」を参照してください。
 
  
 

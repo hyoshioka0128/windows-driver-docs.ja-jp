@@ -3,19 +3,19 @@ title: 電源の設定要求の処理
 description: 電源の設定要求の処理
 ms.assetid: c69d4a9b-009a-4320-8e20-32a9cf9113bf
 keywords:
-- セット power WDK NDIS 中間の要求します。
-- スリープ状態 WDK NDIS 中間
-- WDK NDIS 中間の作業の状態
-- スタンバイ フラグ WDK NDIS 中間
-- WDK ネットワークの状態を電源します。
+- セット-パワー要求 WDK NDIS 中間
+- 休止状態 WDK NDIS 中間
+- 作業状態 WDK NDIS 中間
+- スタンバイフラグ WDK NDIS 中間
+- 電源状態 WDK ネットワーク
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 209a5eade46e226cf29319332410ff92fd4b7f9e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7feebd393ea710c9e7a2f45f185ccb1eaa40ee79
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67379827"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842115"
 ---
 # <a name="handling-a-set-power-request"></a>電源の設定要求の処理
 
@@ -23,91 +23,91 @@ ms.locfileid: "67379827"
 
 
 
-中間のドライバーでは、作業の状態 (ネットワーク デバイス D0 の電源状態) とスリープの状態 (ネットワーク デバイス D1、d2 に切り替わり、または D3 の電源状態) に電源を設定する要求を処理する必要があります。 中間のドライバーには、電源状態変数とスタンバイ フラグもを維持する必要があります。 これらの問題が説明されているこのトピックでさらにします。
+中間ドライバーでは、電源を動作状態 (ネットワークデバイスの電源状態が D0) に設定する要求を処理し、スリープ状態 (D1、D2、または D3 のネットワークデバイスの電源状態) に設定する必要があります。 中間ドライバーは、電源状態変数とスタンバイフラグも保持する必要があります。 これらの問題については、このトピックで詳しく説明します。
 
-中間ドライバーの電源管理の例については、次を参照してください。、 [NDIS MUX 中間ドライバーとオブジェクトの通知](https://go.microsoft.com/fwlink/p/?LinkId=617916)でドライバーのサンプル、 [Windows ドライバー サンプル](https://go.microsoft.com/fwlink/p/?LinkId=616507)GitHub リポジトリにあります。
+中間ドライバーの電源管理の例については、GitHub の[Windows ドライバーのサンプル](https://go.microsoft.com/fwlink/p/?LinkId=616507)リポジトリにある[NDIS MUX 中間ドライバーと通知オブジェクト](https://go.microsoft.com/fwlink/p/?LinkId=617916)ドライバーのサンプルを参照してください。
 
-### <a name="handling-a-set-power-request-to-a-sleeping-state"></a>スリープ状態にセット Power 要求の処理
+### <a name="handling-a-set-power-request-to-a-sleeping-state"></a>電源要求をスリープ状態に設定する
 
-中間のドライバーがスリープ状態にセット power 要求を処理する必要があります 2 つのケースがあります。
+中間ドライバーがスリープ状態に設定された電源要求を処理する必要がある場合は、次の2つがあります。
 
--   スリープ状態には、中間のドライバーの上端仮想ミニポート NDIS 要求。
+-   NDIS は、中間ドライバーの仮想ミニポートの上端がスリープ状態になることを要求します。
 
--   中間ドライバー プロトコルの下端は、プラグ アンド プレイ (PnP) イベント通知を受け取ったときに、スリープ状態を基になるミニポート ドライバーの移行を処理します。
+-   中間ドライバープロトコルの下端は、プラグアンドプレイ (PnP) イベント通知を受信したときに、基になるミニポートドライバーがスリープ状態に移行する処理を行います。
 
-これらのイベントは、任意の順序で発生することができ、1 つのイベントは必ずしもに付属して、その他。
+これらのイベントは任意の順序で発生する可能性があり、1つのイベントは必ずしも他のイベントに付随するとは限りません。
 
-仮想ミニポート中間ドライバーの上端は、電源をスリープ状態に設定する要求を受信したときに、要求を処理するためのイベントの順序のとおりです。
+中間ドライバーの仮想ミニポートの上端が、電源をスリープ状態に設定する要求を受信すると、要求を処理するためのイベントのシーケンスは次のようになります。
 
-1.  NDIS 呼び出し、 [ *ProtocolNetPnPEvent* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_net_pnp_event)各プロトコル ドライバーの機能が仮想ミニポートにバインドします。 呼び出し*ProtocolNetPnPEvent*を指定します、 **NetEventSetPower**スリープ状態のイベント。 中間のドライバーにバインドされているプロトコル ドライバーには、ネットワーク データを送信して、仮想ミニポート ドライバーの中間の OID の要求を行うが停止します。 NDIS は、基になるミニポート ドライバーがスリープ状態への移行を行っていることを示すまで、ネットワーク データと要求を送信する中間のドライバーのプロトコルの下端を続行できます。
+1.  NDIS は、仮想ミニポートにバインドされている各プロトコルドライバーの[*ProtocolNetPnPEvent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_net_pnp_event)関数を呼び出します。 *ProtocolNetPnPEvent*を呼び出すと、スリープ状態の**NetEventSetPower**イベントが指定されます。 中間ドライバーにバインドされているプロトコルドライバーは、ネットワークデータの送信を停止し、中間ドライバー仮想ミニポートに対する OID 要求を行います。 中間ドライバーの下位のプロトコルはネットワークデータの送信を継続でき、NDIS は基になるミニポートドライバーがスリープ状態に移行していることを示します。
 
-2.  NDIS が発行した後、上にあるドライバーおよびし仮想ミニポートを一時停止します、 **NetEventSetPower**イベント。 一時停止の原因は、低電力状態に遷移です。 仮想ミニポートを一時停止の詳細については、次を参照してください。[アダプターを一時停止](pausing-an-adapter.md)します。
+2.  NDIS は、 **NetEventSetPower**イベントを発行した後、それ以降のドライバーを一時停止し、仮想ミニポートを停止します。 一時停止を指定する理由は、低電力状態への移行です。 仮想ミニポートの一時停止の詳細については、「[アダプターの一時停止](pausing-an-adapter.md)」を参照してください。
 
-    **注**  いいえ OID 要求は、例外として、低電力状態になっている仮想ミニポートに送信できる[OID\_PNP\_設定\_POWER](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power)します。
-
-     
-
-3.  NDIS 問題、 [OID\_PNP\_設定\_POWER](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power)中間ドライバーの仮想ミニポートに要求します。 中間ドライバーは、NDIS を返すことによって、要求を受け入れる\_状態\_成功します。 中間ドライバーが、OID を伝達する必要がありますされません\_PNP\_設定\_電源要求の基になるミニポート ドライバーにします。 中間ドライバーには、この要求が完了すると、そのしたりしないでください、受信した複数のネットワーク データを示す場合でも、その基になるミニポート ドライバーからネットワーク データと状態インジケーターを受信し、状態を示します。
-
-中間のドライバーのプロトコルの下枠には、スリープ状態を基になるミニポート ドライバーが遷移、遷移を処理するためのイベントのシーケンスがとおりです。
-
-1.  NDIS 呼び出し、 [ *ProtocolNetPnPEvent* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_net_pnp_event)中間ドライバー プロトコルの下端の関数。 呼び出し*ProtocolNetPnPEvent*を指定します、 **NetEventSetPower**スリープ状態のイベント。 ネットワーク データを送信して、基になるミニポート ドライバーに OID 要求を行う、中間のドライバーを停止する必要があります。 未処理の要求または送信の場合は、中間のドライバーが NDIS を返す必要があります\_状態\_への呼び出しから PENDING *ProtocolNetPnPEvent*します。 中間ドライバー呼び出し[ **NdisCompleteNetPnPEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscompletenetpnpevent)への呼び出しを完了する*ProtocolNetPnPEvent*します。 ただし、中間のドライバーのプロトコルのエッジは、基になるミニポート ドライバーから受信したパケットと状態インジケーターをアクセスできます。 受信したネットワーク データを無視できます。 中間のドライバーの実装が基になるミニポート ドライバーの状態の監視に依存している場合、状態インジケーター引き続き監視する必要があります。
-
-2.  NDIS は中間のドライバーのプロトコルのエッジを一時停止しを実行した後、underying ミニポート アダプターを置いた、 **NetEventSetPower**イベント。 一時停止の原因は、低電力状態に遷移です。 プロトコル バインドを一時停止の詳細については、次を参照してください。[バインディングを一時停止](pausing-a-binding.md)します。
-
-    **注**  いいえ OID 要求は、例外として、低電力状態になっている、基になるミニポート アダプターに送信できます[OID\_PNP\_設定\_POWER](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power)します。
+    **ただし**  は、OID [\_PNP\_\_設定](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power)されている場合を除き、バーチャルミニポートが低電力状態のときには、このような oid 要求を送信することはできません。
 
      
 
-3.  NDIS 問題、 [OID\_PNP\_設定\_POWER](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power)基になるミニポート ドライバーに要求します。 ただし、基になるミニポート ドライバーが電源管理をサポートしていない場合に中止されます。 この場合は、NDIS は、基になるミニポート ドライバーを停止し、場合でも要求が基になるミニポート ドライバーと NIC からバインド解除するプロトコルを中間ドライバー 基になるミニポート ドライバーの OID の処理が正常に完了 (または、ミニポート ドライバーが停止した) 後にこれ以上のネットワーク データまたは状態いない示されます。
+3.  NDIS は、中間ドライバーの仮想ミニポートに対して電源要求\_設定されている[OID\_PNP\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power)発行します。 中間ドライバーは、NDIS\_STATUS\_SUCCESS を返すことによって要求を受け入れます。 中間ドライバーでは、\_電源要求の OID\_\_PNP を基になるミニポートドライバーに伝達することはできません。 中間ドライバーは、この要求を完了した後、ネットワークデータを受信したかどうかを示していないか、または基になるミニポートドライバーからのネットワークデータと状態の表示を保持している場合でも、状態を示していません。
 
-### <a name="handling-a-set-power-request-to-the-working-state"></a>作業状態セット Power 要求の処理
+中間のドライバーの下端が、基になるミニポートドライバーをスリープ状態に移行すると、遷移を処理するためのイベントのシーケンスは次のようになります。
 
-中間のドライバーが稼働状態にセット power 要求を処理する、2 つのケースがあります。
+1.  NDIS は、中間ドライバープロトコルの下端の[*ProtocolNetPnPEvent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_net_pnp_event)関数を呼び出します。 *ProtocolNetPnPEvent*を呼び出すと、スリープ状態の**NetEventSetPower**イベントが指定されます。 中間ドライバーは、ネットワークデータの送信を停止し、基になるミニポートドライバーに OID 要求を行う必要があります。 未処理の要求または送信がある場合、中間ドライバーは*ProtocolNetPnPEvent*への呼び出しから保留中の NDIS\_状態\_を返します。 中間ドライバーは、 [**NdisCompleteNetPnPEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscompletenetpnpevent)を呼び出して*ProtocolNetPnPEvent*への呼び出しを完了します。 中間ドライバーのプロトコルエッジでも、基になるミニポートドライバーから受信パケットと状態の表示を取得できます。 受信したネットワークデータは無視してかまいません。 中間のドライバーの実装が、基になるミニポートドライバーの状態の監視に依存している場合は、状態のインジケーターを引き続き監視する必要があります。
 
--   動作状態には、中間のドライバーの上端仮想ミニポート NDIS 要求。
+2.  NDIS は中間ドライバーのプロトコルエッジを一時停止し、 **NetEventSetPower**イベントを発行した後に、過少なミニポートアダプターを一時停止します。 一時停止を指定する理由は、低電力状態への移行です。 プロトコルバインドの一時停止の詳細については、「[バインディングの一時停止](pausing-a-binding.md)」を参照してください。
 
--   中間ドライバー プロトコルの下端は、プラグ アンド プレイ (PnP) イベント通知を受け取ったときに、基になるミニポート ドライバーへの移行作業の状態を処理します。
+    **ただし**、基になるミニポートアダプターが低電力状態のときに、oid 要求を送信することはできません。  ただし、 [oid\_PNP\_設定](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power)されている場合は\_電源が設定されます。
 
-これらのイベントは、任意の順序で発生することができ、1 つのイベントは必ずしもに付属して他のします。
+     
 
-仮想ミニポート中間ドライバーの上端は、電源を動作状態に設定する要求を受信したときに、要求を処理するためのイベントの順序のとおりです。
+3.  NDIS は、基になるミニポートドライバーに対して[電源要求\_設定する OID\_PNP\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power)発行します。 ただし、基になるミニポートドライバーが電源管理をサポートしていない場合は、停止されます。 この場合、NDIS が基になるミニポートドライバーを停止しても、基になるミニポートドライバーおよび NIC から中間ドライバープロトコルのバインドを解除するように要求されることはありません。 基になるミニポートドライバーが OID の処理を正常に完了した後 (またはミニポートドライバーが停止した場合)、それ以上のネットワークデータや状態は示されません。
 
-1.  NDIS 問題、 [OID\_PNP\_設定\_POWER](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power)中間ドライバーの仮想ミニポートにします。 中間ドライバー返します NDIS\_状態\_セット power 要求に成功します。 中間ドライバーが、OID を伝達する必要がありますされません\_PNP\_設定\_電源要求の基になるミニポート ドライバーにします。
+### <a name="handling-a-set-power-request-to-the-working-state"></a>電源要求を動作状態に設定する
 
-2.  NDIS は、仮想ミニポートを再起動し、セット power OID を発行した後、上にあるドライバーを再起動します。 仮想ミニポートを再開する方法の詳細については、次を参照してください。[アダプター開始](starting-an-adapter.md)します。
+次の2つのケースでは、中間ドライバーが動作状態へのセットの電源要求を処理します。
 
-3.  NDIS 呼び出し、 [ *ProtocolNetPnPEvent* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_net_pnp_event)上位プロトコル ドライバーの関数。 呼び出し*ProtocolNetPnPEvent*を指定します、 **NetEventSetPower**イベントを動作状態 (D0) を設定します。 バインド プロトコル ドライバーには、仮想ミニポートのドライバーの中間にネットワークのデータの送信を開始できます。
+-   NDIS は、中間ドライバーの仮想ミニポートの上端が動作状態になることを要求します。
 
-中間のドライバーの下端プロトコルでは、基になるミニポート ドライバーを動作状態を遷移、遷移を処理するためのイベントのシーケンスがとおりです。
+-   中間ドライバープロトコルの下端は、プラグアンドプレイ (PnP) イベント通知を受信したときに、基になるミニポートドライバーの動作状態への遷移を処理します。
 
-1.  NDIS 問題、 [OID\_PNP\_設定\_POWER](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power)基になるミニポート ドライバーまたは呼び出しをその[ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)基になるミニポート ドライバーが停止した場合はハンドラー。
+これらのイベントは任意の順序で発生する可能性があり、1つのイベントは必ずしも他のイベントに付随するわけではありません。
 
-2.  NDIS は、OID を発行した後、基になるミニポート ドライバー、プロトコルの端との中間の NDIS と基になるミニポート アダプターを再起動します。 プロトコル バインドを一時停止の詳細については、次を参照してください。[バインディングを再起動する](restarting-a-binding.md)します。
+中間ドライバーの仮想ミニポートの上端が、電源を動作状態に設定する要求を受信すると、要求を処理するためのイベントのシーケンスは次のようになります。
 
-3.  NDIS 呼び出し、 [ *ProtocolNetPnPEvent* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_net_pnp_event)中間ドライバーの機能です。 呼び出し*ProtocolNetPnPEvent*を指定します、 **NetEventSetPower**イベントを動作状態 (D0) を設定します。 ネットワーク データを基になるミニポート ドライバーに送信する中間のドライバーを開始できます。
+1.  NDIS は、中間ドライバーの仮想ミニポートに[\_電力を設定する OID\_PNP\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power)発行します。 中間ドライバーは、NDIS\_STATUS\_SUCCESS を set power request に返します。 中間ドライバーでは、\_電源要求の OID\_\_PNP を基になるミニポートドライバーに伝達することはできません。
 
-### <a name="power-states-and-the-standby-flag"></a>電源の状態およびスタンバイのフラグ
+2.  NDIS は仮想ミニポートを再起動した後、設定された power OID を発行した後、それ以降のドライバーを再起動します。 仮想ミニポートの再起動の詳細については、「[アダプターの開始](starting-an-adapter.md)」を参照してください。
 
-中間のドライバーは、仮想ミニポート インスタンスごとに別の電源状態変数を維持し、ドライバーを基になる各ミニポート ドライバーにバインドされている必要があります。 中間ドライバーである各仮想ミニポートの StandingBy フラグの管理もする必要があります。
+3.  NDIS は、プロトコルドライバーの[*ProtocolNetPnPEvent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_net_pnp_event)関数を呼び出します。 *ProtocolNetPnPEvent*を呼び出すと、動作状態 (D0) を設定する**NetEventSetPower**イベントが指定されます。 バインドされたプロトコルドライバーは、中間ドライバーの仮想ミニポートにネットワークデータの送信を開始できます。
 
--   設定**TRUE**仮想ミニポートまたは基になるミニポート ドライバーのいずれかの電源の状態から D0 離したときにします。
+中間のドライバーの下端が、基になるミニポートドライバーを動作状態に移行すると、遷移を処理するためのイベントのシーケンスは次のようになります。
 
--   設定**FALSE**と D0 へ仮想ミニポートまたは基になるミニポート ドライバーのいずれかの電源状態を返します。
+1.  NDIS は、基になるミニポートドライバーに\_電力を設定するか、基になるミニポートドライバーが停止した場合に[*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)ハンドラーを呼び出すことにより、 [OID\_\_PNP](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power)を発行します。
 
-**注**  MUX 中間ドライバー、可能性があります、基になるミニポート ドライバーに関連付けられている複数の仮想ミニポートまたは各仮想ミニポートに関連付けられている複数の基になるミニポートします。 ミニポート アダプターの電源の状態が変更されたときに関連付けられているミニポートのすべての動作も影響を受けます。 動作の影響を受ける方法は、実装固有です。 たとえば、負荷分散フェールオーバー (LBFO) ソリューションを実装するドライバー可能性がありますは非アクティブ化仮想ミニポート 1 つの基になるミニポート ドライバーが非アクティブ化。 ただし、基になるすべてのミニポート ドライバーに依存しているドライバーの実装は、基になるミニポート ドライバーが非アクティブ化されたときに、仮想ミニポートの非アクティブ化を必要があります。
+2.  NDIS は、基になるミニポートドライバーを再起動し、OID を発行した後、中間 NDIS および基になるミニポートアダプターのプロトコルエッジを再起動します。 プロトコルバインドの一時停止の詳細については、「[バインディングの再起動](restarting-a-binding.md)」を参照してください。
+
+3.  NDIS は、中間ドライバーの[*ProtocolNetPnPEvent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_net_pnp_event)関数を呼び出します。 *ProtocolNetPnPEvent*を呼び出すと、動作状態 (D0) を設定する**NetEventSetPower**イベントが指定されます。 中間ドライバーは、基になるミニポートドライバーへのネットワークデータの送信を開始できます。
+
+### <a name="power-states-and-the-standby-flag"></a>電源の状態とスタンバイフラグ
+
+中間ドライバーは、各仮想ミニポートインスタンスと、ドライバーがバインドされている基になるミニポートドライバーごとに、個別の電源状態変数を保持する必要があります。 中間ドライバーも、次のような仮想ミニポートごとにスタンドアロンフラグを維持する必要があります。
+
+-   仮想ミニポートまたは基になるミニポートドライバーの電源状態が D0 のままである場合は、 **TRUE**に設定します。
+
+-   仮想ミニポートまたは基になるミニポートドライバーの電源状態が D0 に戻る場合は、 **FALSE**に設定します。
+
+  **注**MUX 中間ドライバーでは、基になるミニポートドライバーに関連付けられている複数の仮想ミニポート、または各仮想ミニポートに関連付けられている複数の基になるミニポートが存在する場合があります。 ミニポートアダプターの電源状態が変化すると、関連付けられているすべてのミニポートの動作も影響を受けます。 動作がどのように影響を受けるかは、実装に固有のものです。 たとえば、負荷分散フェールオーバー (LBFO) ソリューションを実装するドライバーは、基になる1つのミニポートドライバーが非アクティブ化されている場合に、仮想ミニポートを非アクティブ化しないことがあります。 ただし、基になるすべてのミニポートドライバーに依存するドライバーの実装では、基になるミニポートドライバーが非アクティブ化されるときに、仮想ミニポートの非アクティブ化が必要になります。
 
  
 
-中間のドライバーは、次のように要求を処理するときに、StandingBy フラグと電源の状態変数を使用してください。
+中間ドライバーは、次のように要求を処理するときに、スタンドアロンフラグと電源状態変数を使用する必要があります。
 
--   ドライバーの[ *MiniportSendNetBufferLists* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_send_net_buffer_lists)仮想ミニポートおよびその基になるミニポート アダプターが両方とも D0 場合を除き、関数が失敗する必要があります。
+-   仮想ミニポートとその基になるミニポートアダプターの両方が D0 にある場合を除き、ドライバーの[*Miniportsendnetbufferlists*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_send_net_buffer_lists)関数は失敗します。
 
--   ドライバーの[ *MiniportOidRequest* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_oid_request)関数は、OID に常に成功する必要があります\_PNP\_クエリ\_ドライバーが後続の OID を受信するように電源\_PNP\_設定\_POWER 要求。
+-   ドライバーの[*Miniportoidrequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_oid_request)関数は、常に\_PNP\_クエリ\_電源に成功する必要があります。これにより、ドライバーは、その後、電源要求\_設定された後続の OID\_PNP を受け取ることができます。
 
--   ドライバーの[ *MiniportOidRequest* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_oid_request) D0 に仮想ミニポートがない場合、または StandingBy がある場合、関数は失敗する必要があります**TRUE**します。 それ以外の場合、D0 に基になるミニポート ドライバーがない場合は、1 つの要求をキューにする必要があります。 D0 の基になるミニポート ドライバーの状態になったら、キューに置かれた要求を処理する必要があります。
+-   仮想ミニポートが D0 にない場合、またはスタンドアロンが**TRUE**の場合、ドライバーの[*Miniportoidrequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_oid_request)関数は失敗します。 それ以外の場合は、基になるミニポートドライバーが D0 にない場合は、単一の要求をキューに置いてください。 基になるミニポートドライバーの状態が D0 になると、キューに登録された要求を処理する必要があります。
 
--   基になるミニポート ドライバーと仮想ミニポートの両方が D0 場合にのみ、中間ドライバー仮想ミニポートは状態を報告する必要があります。
+-   中間のドライバー仮想ミニポートは、基になるミニポートドライバーと仮想ミニポートの両方が D0 にある場合にのみ、ステータスを報告する必要があります。
 
  
 

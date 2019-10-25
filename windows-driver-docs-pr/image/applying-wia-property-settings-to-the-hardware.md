@@ -4,12 +4,12 @@ description: WIA プロパティ設定のハードウェアへの適用
 ms.assetid: adb85f77-1814-427b-8b75-0bfce4c8ca06
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c997e2f2227d91e7a869fa0ebba118bf090796b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: dc54a559c2405203c396ddc6f16ec4e0463c6f3a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67366770"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840895"
 ---
 # <a name="applying-wia-property-settings-to-the-hardware"></a>WIA プロパティ設定のハードウェアへの適用
 
@@ -17,15 +17,15 @@ ms.locfileid: "67366770"
 
 
 
-WIA アプリケーションを開始すると、データ転送、WIA サービスは、WIA プロパティの現在の設定を適用し、ハードウェアに任意のデバイスに固有の設定を適用する WIA ミニドライバーを示します。 サービスからの呼び出しの WIA、 [ **IWiaMiniDrv::drvWriteItemProperties** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvwriteitemproperties)メソッドを呼び出す前に、 [ **IWiaMiniDrv::drvAcquireItemData** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvacquireitemdata)メソッド。 WIA アプリケーションは、データ転送を開始する場合にのみ、後者のメソッドが呼び出されます。 WIA ミニドライバーは、ドライバー項目ツリー内のプロパティを読み取る WIA サービス関数を使用する必要があります。
+Wia アプリケーションでデータ転送が開始されると、wia サービスによって、現在の WIA プロパティ設定を適用し、デバイス固有の設定をハードウェアに適用する機会が WIA ミニドライバーに与えられます。 次に、 [**IWiaMiniDrv::D rvacquireitemdata**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvacquireitemdata)メソッドを呼び出す前に、WIA サービスが[**IWiaMiniDrv::d rvwriteitemproperties**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvwriteitemproperties)メソッドを呼び出します。 後者の方法は、WIA アプリケーションでデータ転送が開始された場合にのみ呼び出されます。 WIA ミニドライバーは、WIA サービスの機能を使用して、独自のドライバー項目ツリー内のプロパティを読み取る必要があります。
 
-### <a href="" id="implementing-iwiaminidrv-drvwriteitemproperties"></a>IWiaMiniDrv::drvWriteItemProperties を実装します。
+### <a href="" id="implementing-iwiaminidrv-drvwriteitemproperties"></a>IWiaMiniDrv の実装::d rvWriteItemProperties
 
-WIA サービスの呼び出し、 **IWiaMiniDrv::drvWriteItemProperties**後に、クライアントは、データ転送を要求します。 WIA サービスが呼び出しを実行する前に、このメソッドを呼び出す[ **IWiaMiniDrv::drvAcquireItemData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvacquireitemdata)します。 WIA ミニドライバーは、このメソッドから戻る前に、ハードウェアに必要なすべての設定をコミットする必要があります。
+クライアントがデータ転送を要求した後、WIA サービスは**IWiaMiniDrv::D rvwriteitemproperties**メソッドを呼び出します。 [**IWiaMiniDrv::D rvacquireitemdata**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvacquireitemdata)の呼び出しを行う前に、WIA サービスはこのメソッドを呼び出します。 WIA ミニドライバーは、このメソッドから戻る前に、ハードウェアに必要なすべての設定をコミットする必要があります。
 
-このメソッドが呼び出されると、WIA ミニドライバーにコミットされたデータ転送を実行します。 WIA サービスには、WIA をこの時点でデータを取得しようとする任意のアプリケーションは失敗\_エラー\_ビジー状態のエラー コード。
+このメソッドが呼び出されると、データ転送を実行するために、WIA ミニドライバーがコミットされました。 Wia サービスは、この時点でデータを取得しようとするすべてのアプリケーションが、WIA\_エラー\_ビジーエラーコードで失敗します。
 
-次の例の実装を示しています、 [ **IWiaMiniDrv::drvWriteItemProperties** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvwriteitemproperties)メソッド。
+次の例は、 [**IWiaMiniDrv::D rvwriteitemproperties**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvwriteitemproperties)メソッドの実装を示しています。
 
 ```cpp
 HRESULT _stdcall CWIADevice::drvWriteItemProperties(

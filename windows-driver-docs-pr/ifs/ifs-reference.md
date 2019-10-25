@@ -1,17 +1,17 @@
 ---
-title: IFS の参照
-description: 追加のファイル システムに関連するリファレンス ページが含まれています。
+title: IFS リファレンス
+description: ファイルシステム関連の追加の参照ページが含まれています。
 ms.date: 05/31/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 3b7fb3affa49cc05ee1b709a1ff449445f2b0797
-ms.sourcegitcommit: 95e3fd15d9c00a341e774d58a927856d750a35e8
+ms.openlocfilehash: 6fc62b48691d2b60fca3fe143dad952d146a260f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67410019"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841211"
 ---
 # <a name="additional-reference"></a>その他の参照情報
 
-ファイル システムに関連する開発に関連するほとんどのリファレンス ページにある[ファイル システム](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_ifsk/)で、[プログラミング リファレンスには、Windows Driver Kit (WDK)](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/)します。
+ファイルシステム関連の開発に関連するほとんどの参照ページは、 [『 Windows Driver Kit (WDK) 用プログラミングリファレンス』](https://docs.microsoft.com/windows-hardware/drivers/ddi/)の「[ファイルシステム](https://docs.microsoft.com/windows-hardware/drivers/ddi/_ifsk/)」にあります。
 
-このセクションには、追加の参照ページが含まれます。 上記のシステム セクションにリンク ファイルの下にある最終的に移行されます。
+このセクションには、追加の参照ページが含まれています。 最終的には、上記のリンクにある [ファイルシステム] セクションの下に移行されます。

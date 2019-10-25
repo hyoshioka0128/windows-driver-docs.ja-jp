@@ -1,24 +1,24 @@
 ---
-title: WDF_OBJECT_ATTRIBUTES_SET_CONTEXT_TYPE macro
-description: WDF_OBJECT_ATTRIBUTES_SET_CONTEXT_TYPE マクロは、オブジェクトの WDF_OBJECT_ATTRIBUTES 構造にオブジェクトのドライバー定義のコンテキスト情報を挿入します。
+title: WDF_OBJECT_ATTRIBUTES_SET_CONTEXT_TYPE マクロ
+description: WDF_OBJECT_ATTRIBUTES_SET_CONTEXT_TYPE マクロは、オブジェクトのドライバー定義コンテキスト情報をオブジェクトの WDF_OBJECT_ATTRIBUTES 構造体に挿入します。
 ms.assetid: cac8b8f4-cc6b-4e6c-ad0b-dee58e4673ff
 keywords:
-- WDF_OBJECT_ATTRIBUTES_SET_CONTEXT_TYPE macro
+- WDF_OBJECT_ATTRIBUTES_SET_CONTEXT_TYPE マクロ
 ms.date: 08/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 986ba27c2313630cd28b078c8b1b96b54671f777
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a911369335024996c4adc77bf9aafef13966b11e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67372116"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845417"
 ---
-# <a name="wdfobjectattributessetcontexttype-macro"></a>WDF_OBJECT_ATTRIBUTES_SET_CONTEXT_TYPE macro
+# <a name="wdf_object_attributes_set_context_type-macro"></a>WDF_OBJECT_ATTRIBUTES_SET_CONTEXT_TYPE マクロ
 
 
-\[KMDF および UMDF に適用されます。\]
+\[KMDF と UMDF\] に適用されます
 
-WDF_OBJECT_ATTRIBUTES_SET_CONTEXT_TYPE マクロは、オブジェクトのオブジェクトのドライバー定義のコンテキスト情報を挿入[ **WDF_OBJECT_ATTRIBUTES** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/ns-wdfobject-_wdf_object_attributes)構造体。
+WDF_OBJECT_ATTRIBUTES_SET_CONTEXT_TYPE マクロは、オブジェクトのドライバー定義コンテキスト情報をオブジェクトの[**WDF_OBJECT_ATTRIBUTES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/ns-wdfobject-_wdf_object_attributes)構造体に挿入します。
 
 <a name="syntax"></a>構文
 ------
@@ -33,27 +33,27 @@ void WDF_OBJECT_ATTRIBUTES_SET_CONTEXT_TYPE(
 <a name="parameters"></a>パラメーター
 ----------
 
-*方法を示します*   
-オブジェクトへのポインター [ **WDF_OBJECT_ATTRIBUTES** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/ns-wdfobject-_wdf_object_attributes)構造体。
+*属性  (_c)*  
+オブジェクトの[**WDF_OBJECT_ATTRIBUTES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/ns-wdfobject-_wdf_object_attributes)構造体へのポインター。
 
-*_contexttype*   
-オブジェクトのコンテキストの領域の内容を記述したドライバー定義構造体の構造体の型名。
+  の*種類 (_c)*  
+オブジェクトのコンテキスト空間の内容を記述するドライバー定義の構造体の構造体型の名前。
 
 <a name="return-value"></a>戻り値
 ------------
 
-このマクロでは、値は返されません。
+このマクロは値を返しません。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
-呼び出した後、WDF_OBJECT_ATTRIBUTES_SET_CONTEXT_TYPE マクロを使用する必要があります[ **WDF_OBJECT_ATTRIBUTES_INIT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nf-wdfobject-wdf_object_attributes_init)します。
+[**WDF_OBJECT_ATTRIBUTES_INIT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/nf-wdfobject-wdf_object_attributes_init)を呼び出した後、WDF_OBJECT_ATTRIBUTES_SET_CONTEXT_TYPE マクロを使用する必要があります。
 
-WDF_OBJECT_ATTRIBUTES_SET_CONTEXT_TYPE マクロの使用に関する詳細については、次を参照してください。[フレームワーク オブジェクト コンテキストの空間](https://docs.microsoft.com/windows-hardware/drivers/wdf/framework-object-context-space)します。
+WDF_OBJECT_ATTRIBUTES_SET_CONTEXT_TYPE マクロの使用方法の詳細については、「[フレームワークオブジェクトコンテキスト空間](https://docs.microsoft.com/windows-hardware/drivers/wdf/framework-object-context-space)」を参照してください。
 
-このマクロを使用するためのコード例を参照してください。 [ **WDF_DECLARE_CONTEXT_TYPE**](wdf-declare-context-type.md)します。
+このマクロを使用するコード例については、「 [**WDF_DECLARE_CONTEXT_TYPE**](wdf-declare-context-type.md)」を参照してください。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -76,7 +76,7 @@ WDF_OBJECT_ATTRIBUTES_SET_CONTEXT_TYPE マクロの使用に関する詳細に�
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Wdfobject.h (Wdf.h を含む)</td>
+<td>Wdfobject .h (Wdf を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -86,9 +86,9 @@ WDF_OBJECT_ATTRIBUTES_SET_CONTEXT_TYPE マクロの使用に関する詳細に�
 
 [**WDF_DECLARE_CONTEXT_TYPE**](wdf-declare-context-type.md)
 
-[**WDF_OBJECT_ATTRIBUTES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/ns-wdfobject-_wdf_object_attributes)
+[**WDF_OBJECT_ATTRIBUTES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/ns-wdfobject-_wdf_object_attributes)
 
-[**WDF_OBJECT_ATTRIBUTES_INIT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nf-wdfobject-wdf_object_attributes_init)
+[**WDF_OBJECT_ATTRIBUTES_INIT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/nf-wdfobject-wdf_object_attributes_init)
 
 [**WDF_OBJECT_ATTRIBUTES_INIT_CONTEXT_TYPE**](wdf-object-attributes-init-context-type.md)
 

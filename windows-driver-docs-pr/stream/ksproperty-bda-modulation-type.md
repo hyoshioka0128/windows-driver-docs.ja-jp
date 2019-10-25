@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_BDA\_変調\_型
-description: クライアントを使用して、KSPROPERTY\_BDA\_変調\_QPSK など 8VSB 復調器の種類を制御する型。
+title: KSK プロパティ\_BDA\_変調\_型
+description: クライアントは、KSK プロパティ\_BDA\_変調\_TYPE を使用して、QPSK や8VSB などの demodulator の種類を制御します。
 ms.assetid: 7c7dd8a4-4aa2-4e62-9b08-05c202df957d
 keywords:
-- KSPROPERTY_BDA_MODULATION_TYPE ストリーミング メディア デバイス
+- KSPROPERTY_BDA_MODULATION_TYPE ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d35a1b8eefba0adeafd91531b8c639eae61575a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a5ecc7bd18570b648131ff3d27a9a7bdf42fb55c
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67374624"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841605"
 ---
-# <a name="kspropertybdamodulationtype"></a>KSPROPERTY\_BDA\_変調\_型
+# <a name="ksproperty_bda_modulation_type"></a>KSK プロパティ\_BDA\_変調\_型
 
 
-クライアントを使用して、KSPROPERTY\_BDA\_変調\_QPSK など 8VSB 復調器の種類を制御する型。
+クライアントは、KSK プロパティ\_BDA\_変調\_TYPE を使用して、QPSK や8VSB などの demodulator の種類を制御します。
 
 ## <span id="ddk_ksproperty_bda_modulation_type_ks"></span><span id="DDK_KSPROPERTY_BDA_MODULATION_TYPE_KS"></span>
 
@@ -41,7 +41,7 @@ ms.locfileid: "67374624"
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,8 +50,8 @@ ms.locfileid: "67374624"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>〇</p></td>
+<td><p>[はい]</p></td>
+<td><p>[はい]</p></td>
 <td><p>フィルター</p></td>
 <td><p>KSP_NODE</p></td>
 <td><p>ModulationType</p></td>
@@ -64,9 +64,9 @@ ms.locfileid: "67374624"
 <a name="remarks"></a>注釈
 -------
 
-ModulationType 列挙型から返される値は、復調器の種類を識別します。
+ModulationType 列挙型から返された値は、demodulator 型を識別します。
 
-**NodeId** KSP のメンバー\_ノード復調器ノードの識別子を指定します。
+KSP の**NodeId**メンバー\_node は、demodulator ノードの識別子を指定します。
 
 <a name="requirements"></a>要件
 ------------
@@ -79,7 +79,7 @@ ModulationType 列挙型から返される値は、復調器の種類を識別�
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Bdamedia.h (Bdamedia.h を含む)</td>
+<td>Bdamedia (Bdamedia を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -87,7 +87,7 @@ ModulationType 列挙型から返される値は、復調器の種類を識別�
 ## <a name="see-also"></a>関連項目
 
 
-[**KSP\_ノード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_node)
+[**KSP\_ノード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksp_node)
 
 [**ModulationType**](https://docs.microsoft.com/previous-versions/windows/desktop/mstv/modulationtype)
 

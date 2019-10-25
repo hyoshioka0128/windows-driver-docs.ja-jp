@@ -1,22 +1,22 @@
 ---
 title: WDI_TLV_PM_CAPABILITIES (0x42)
-description: WDI_TLV_PM_CAPABILITIES では、電源管理機能を含む TLV です。
+description: WDI_TLV_PM_CAPABILITIES は、電源管理機能を含む TLV です。
 ms.assetid: DE8A5333-BE2B-4CBB-8C75-45ABBE35A635
 ms.date: 07/18/2017
 keywords:
-- WDI_TLV_PM_CAPABILITIES (0x42) ネットワーク ドライバーが Windows Vista 以降
+- WDI_TLV_PM_CAPABILITIES (0x42) ネットワークドライバー (Windows Vista 以降)
 ms.localizationpriority: medium
-ms.openlocfilehash: b790b5786990e8e161042ba6ac22c8810f3684b7
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 003e1201cbb576f60706971528dfcac212cc906a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382081"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845154"
 ---
-# <a name="wditlvpmcapabilities-0x42"></a>WDI\_TLV\_PM\_機能 (0x42)
+# <a name="wdi_tlv_pm_capabilities-0x42"></a>WDI\_TLV\_PM\_機能 (0x42)
 
 
-WDI\_TLV\_PM\_機能は、電源管理機能を含む TLV します。
+WDI\_TLV\_PM\_機能は、電源管理機能を含む TLV です。
 
 ## <a name="tlv-type"></a>TLV 型
 
@@ -26,7 +26,7 @@ WDI\_TLV\_PM\_機能は、電源管理機能を含む TLV します。
 ## <a name="length"></a>長さ
 
 
-含まれるすべての要素のサイズの合計をバイト単位で。
+含まれているすべての要素のサイズの合計 (バイト単位)。
 
 ## <a name="values"></a>値
 
@@ -38,14 +38,14 @@ WDI\_TLV\_PM\_機能は、電源管理機能を含む TLV します。
 </colgroup>
 <thead>
 <tr class="header">
-<th>型</th>
+<th>タスクバーの検索ボックスに</th>
 <th>説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>UINT32</td>
-<td>電源管理でサポートされるフラグを指定します。
+<td>電源管理のサポートされているフラグを指定します。
 <p>有効なフラグは次のとおりです。</p>
 <ul>
 <li>NDIS_PM_WAKE_PACKET_INDICATION_SUPPORTED</li>
@@ -54,7 +54,7 @@ WDI\_TLV\_PM\_機能は、電源管理機能を含む TLV します。
 </tr>
 <tr class="even">
 <td>UINT32</td>
-<td>Wake on LAN でサポートされるパターンを指定します。
+<td>サポートされている Wake on LAN パターンを指定します。
 <p>有効なパターンは次のとおりです。</p>
 <ul>
 <li>NDIS_PM_WOL_BITMAP_PATTERN_SUPPORTED (0x00000001)</li>
@@ -72,19 +72,19 @@ WDI\_TLV\_PM\_機能は、電源管理機能を含む TLV します。
 </tr>
 <tr class="even">
 <td>UINT32</td>
-<td>Wake on LAN のパターンの最大サイズを指定します。</td>
+<td>Wake on LAN の最大のパターンサイズを指定します。</td>
 </tr>
 <tr class="odd">
 <td>UINT32</td>
-<td>最大の Wake on LAN のパターンのオフセットを指定します。</td>
+<td>Wake on LAN の最大のパターンオフセットを指定します。</td>
 </tr>
 <tr class="even">
 <td>UINT32</td>
-<td>保存バッファーの最大の Wake on LAN パケットを指定します。</td>
+<td>Wake on LAN の最大パケット保存バッファーを指定します。</td>
 </tr>
 <tr class="odd">
 <td>UINT32</td>
-<td>サポートされているプロトコルのオフロードを指定します。
+<td>サポートされているプロトコルオフロードを指定します。
 <p>有効なオフロードは次のとおりです。</p>
 <ul>
 <li>NDIS_PM_PROTOCOL_OFFLOAD_ARP_SUPPORTED (0x00000001)</li>
@@ -94,27 +94,27 @@ WDI\_TLV\_PM\_機能は、電源管理機能を含む TLV します。
 </tr>
 <tr class="even">
 <td>UINT32</td>
-<td>IPv4 アドレスをオフロードする ARP の数を指定します。</td>
+<td>ARP オフロード IPv4 アドレスの数を指定します。</td>
 </tr>
 <tr class="odd">
 <td>UINT32</td>
-<td>IPv6 アドレスをオフロードする NS の数を指定します。</td>
+<td>NS オフロード IPv6 アドレスの数を指定します。</td>
 </tr>
 <tr class="even">
-<td><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ne-ntddndis-_ndis_device_power_state" data-raw-source="[&lt;strong&gt;NDIS_DEVICE_POWER_STATE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ne-ntddndis-_ndis_device_power_state)"><strong>NDIS_DEVICE_POWER_STATE</strong></a></td>
-<td>マジック パケットと最小のウェイク アップを指定します。</td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ne-ntddndis-_ndis_device_power_state" data-raw-source="[&lt;strong&gt;NDIS_DEVICE_POWER_STATE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ne-ntddndis-_ndis_device_power_state)"><strong>NDIS_DEVICE_POWER_STATE</strong></a></td>
+<td>最小マジックパケットウェイクアップを指定します。</td>
 </tr>
 <tr class="odd">
-<td><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ne-ntddndis-_ndis_device_power_state" data-raw-source="[&lt;strong&gt;NDIS_DEVICE_POWER_STATE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ne-ntddndis-_ndis_device_power_state)"><strong>NDIS_DEVICE_POWER_STATE</strong></a></td>
-<td>最小のパターンのウェイク アップを指定します。</td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ne-ntddndis-_ndis_device_power_state" data-raw-source="[&lt;strong&gt;NDIS_DEVICE_POWER_STATE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ne-ntddndis-_ndis_device_power_state)"><strong>NDIS_DEVICE_POWER_STATE</strong></a></td>
+<td>最小のパターンのウェイクアップを指定します。</td>
 </tr>
 <tr class="even">
-<td><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ne-ntddndis-_ndis_device_power_state" data-raw-source="[&lt;strong&gt;NDIS_DEVICE_POWER_STATE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ne-ntddndis-_ndis_device_power_state)"><strong>NDIS_DEVICE_POWER_STATE</strong></a></td>
-<td>最小のリンクの変更のウェイク アップを指定します。</td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ne-ntddndis-_ndis_device_power_state" data-raw-source="[&lt;strong&gt;NDIS_DEVICE_POWER_STATE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ne-ntddndis-_ndis_device_power_state)"><strong>NDIS_DEVICE_POWER_STATE</strong></a></td>
+<td>最小リンク変更ウェイクアップを指定します。</td>
 </tr>
 <tr class="odd">
 <td>UINT32</td>
-<td>サポートされるウェイク アップ イベントを指定します。
+<td>サポートされているウェイクアップイベントを指定します。
 <p>有効なイベントは次のとおりです。</p>
 <ul>
 <li>NDIS_PM_WAKE_ON_MEDIA_CONNECT_SUPPORTED (0x00000001)</li>
@@ -123,7 +123,7 @@ WDI\_TLV\_PM\_機能は、電源管理機能を含む TLV します。
 </tr>
 <tr class="even">
 <td>UINT32</td>
-<td>メディア固有のウェイク アップのイベントを指定します。
+<td>メディア固有のウェイクアップイベントを指定します。
 <p>有効なイベントは次のとおりです。</p>
 <ul>
 <li>NDIS_WLAN_WAKE_ON_NLO_DISCOVERY_SUPPORTED (0x00000001)</li>
@@ -137,7 +137,7 @@ WDI\_TLV\_PM\_機能は、電源管理機能を含む TLV します。
 
  
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -156,7 +156,7 @@ WDI\_TLV\_PM\_機能は、電源管理機能を含む TLV します。
 </tr>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Wditypes.hpp</td>
+<td>Wditypes</td>
 </tr>
 </tbody>
 </table>

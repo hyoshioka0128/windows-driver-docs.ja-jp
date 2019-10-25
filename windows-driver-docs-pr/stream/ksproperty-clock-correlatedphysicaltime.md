@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_クロック\_CORRELATEDPHYSICALTIME
-description: クライアントの使用、KSPROPERTY\_クロック\_CORRELATEDPHYSICALTIME プロパティを現在のシステム時刻のクロックの現在の物理的な時刻を比較します。
+title: KSK プロパティ\_CLOCK\_CORRELATEDPHYSICALTIME
+description: クライアントは、KSK プロパティ\_CLOCK\_CORRELATEDPHYSICALTIME プロパティを使用して、クロックの現在の時刻を現在のシステム時刻と比較します。
 ms.assetid: 49f74411-1489-4864-9213-e1894128e355
 keywords:
-- KSPROPERTY_CLOCK_CORRELATEDPHYSICALTIME ストリーミング メディア デバイス
+- KSPROPERTY_CLOCK_CORRELATEDPHYSICALTIME ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a3250b9b3e2fa6de53ce4fe6b80d6e1f57e192a6
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 30769b57ce6ddac3e008446722ffa3cb806e91da
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67373151"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842472"
 ---
-# <a name="kspropertyclockcorrelatedphysicaltime"></a>KSPROPERTY\_クロック\_CORRELATEDPHYSICALTIME
+# <a name="ksproperty_clock_correlatedphysicaltime"></a>KSK プロパティ\_CLOCK\_CORRELATEDPHYSICALTIME
 
 
-クライアントの使用、KSPROPERTY\_クロック\_CORRELATEDPHYSICALTIME プロパティを現在のシステム時刻のクロックの現在の物理的な時刻を比較します。
+クライアントは、KSK プロパティ\_CLOCK\_CORRELATEDPHYSICALTIME プロパティを使用して、クロックの現在の時刻を現在のシステム時刻と比較します。
 
 ## <span id="ddk_ksproperty_clock_correlatedphysicaltime_ks"></span><span id="DDK_KSPROPERTY_CLOCK_CORRELATEDPHYSICALTIME_KS"></span>
 
@@ -41,7 +41,7 @@ ms.locfileid: "67373151"
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,11 +50,11 @@ ms.locfileid: "67373151"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>いいえ</p></td>
+<td><p>[はい]</p></td>
+<td><p>必須ではない</p></td>
 <td><p>Pin</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kscorrelated_time" data-raw-source="[&lt;strong&gt;KSCORRELATED_TIME&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kscorrelated_time)"><strong>KSCORRELATED_TIME</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-kscorrelated_time" data-raw-source="[&lt;strong&gt;KSCORRELATED_TIME&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-kscorrelated_time)"><strong>KSCORRELATED_TIME</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -64,9 +64,9 @@ ms.locfileid: "67373151"
 <a name="remarks"></a>注釈
 -------
 
-KSCORRELATED\_時間構造体には現在のクロック時間が含まれています、**時間**メンバーとの相関関係を持つ物理時刻、 **SystemTime**メンバー。
+K焦げ RELATED\_TIME 構造体には、**時刻**メンバーの現在のクロック時間と**SystemTime**メンバーの関連する物理時間が含まれます。
 
-参照してください[KS クロック](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-clocks)します。
+「 [KS クロック](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-clocks)」も参照してください。
 
 <a name="requirements"></a>要件
 ------------
@@ -79,7 +79,7 @@ KSCORRELATED\_時間構造体には現在のクロック時間が含まれてい
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Ks.h (Ks.h を含む)</td>
+<td>Ks (Ks を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -87,9 +87,9 @@ KSCORRELATED\_時間構造体には現在のクロック時間が含まれてい
 ## <a name="see-also"></a>関連項目
 
 
-[**KSPROPERTY\_クロック\_PHYSICALTIME**](ksproperty-clock-physicaltime.md)
+[**KSK プロパティ\_CLOCK\_PHYSICALTIME**](ksproperty-clock-physicaltime.md)
 
-[**KeQueryPerformanceCounter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-kequeryperformancecounter)
+[**KeQueryPerformanceCounter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-kequeryperformancecounter)
 
  
 

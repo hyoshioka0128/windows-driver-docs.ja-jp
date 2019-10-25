@@ -3,20 +3,20 @@ title: AVStream の共通バッファー DMA
 description: AVStream の共通バッファー DMA
 ms.assetid: 8cbadb5a-f879-4fe0-a698-cde3b9f6df83
 keywords:
-- 一般的なバッファー DMA WDK AVStream
+- 共通バッファー DMA WDK AVStream
 - WDK AVStream のバッファー
 - AVStream WDK、ハードウェア
 - ハードウェア WDK AVStream
-- DMA は、WDK AVStream をサービスします。
-- ダイレクト メモリ アクセスの WDK AVStream
+- DMA サービス WDK AVStream
+- ダイレクトメモリアクセス WDK AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 92534fc14617978eb76b8ad5f6350724ecfee4a6
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: de6dbb52d010b13e74c4312c496dfb5f36ec90e7
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386651"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844716"
 ---
 # <a name="common-buffer-dma-in-avstream"></a>AVStream の共通バッファー DMA
 
@@ -24,27 +24,27 @@ ms.locfileid: "67386651"
 
 
 
-一般的なバッファーのダイレクト メモリ アクセス (DMA) は、デバイスは、キャプチャ バッファーに直接書き込みませんときに発生します。代わりに共通のバッファーとの間のデータをコピーします。
+一般的なバッファーダイレクトメモリアクセス (DMA) は、デバイスがキャプチャバッファーに直接書き込まない場合に発生します。代わりに、共通のバッファーとの間でデータをコピーします。
 
-AVStream ミニドライバーで共通のバッファー DMA を使用します。
+AVStream ミニドライバーで共通バッファー DMA を使用するには、次のようにします。
 
-1.  DMA アダプターを呼び出すことによって取得[ **IoGetDmaAdapter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdmaadapter)パケットに基づく DMA のようにします。 KSPIN を指定しない\_フラグ\_生成\_のマッピング、**フラグ**のメンバー、 [ **KSPIN\_記述子\_EX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_kspin_descriptor_ex)構造体、および AVStream では、DMA アダプターを登録しないでください。 独自のプライベート バッファーのコピー/スキームを実装する必要があります。
+1.  パケットベースの DMA のように[**IoGetDmaAdapter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdmaadapter)を呼び出して、dma アダプターを取得します。 KSPIN\_\_フラグを指定しないでください。 kspin [ **\_DESCRIPTOR\_EX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_kspin_descriptor_ex)構造体の**Flags**メンバーに\_マッピングを生成し、DMA アダプターを avstream に登録しないようにします。 独自のプライベートバッファー/コピースキームを実装することが必要になる場合があります。
 
-2.  割り込みサービス ルーチン (ISR) の登録」の説明に従って[ハードウェア AVStream ミニドライバーの書き込み](writing-avstream-minidrivers-for-hardware.md)
+2.  「[ハードウェアの AVStream ミニドライバーの作成](writing-avstream-minidrivers-for-hardware.md)」の説明に従って、interrupt service ルーチン (ISR) を登録します。
 
-場合、**フラグ**KSPIN のメンバー\_記述子\_EX 設定 KSPIN\_フラグ\_は\_いない\_開始\_次の処理AVStream 呼び出し前に、の手順が実行[ *AVStrMiniPinProcess*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nc-ks-pfnkspin):
+KSPIN\_記述子の**Flags**メンバー\_EX が kspin\_\_フラグを設定し、\_処理を開始\_ない場合は、Avstream が[*Avstrminipinprocess*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nc-ks-pfnkspin)を呼び出す前に次の手順が実行されます。
 
-1.  ミニドライバーは、その共通のバッファー転送を設定します。
+1.  ミニドライバーは、一般的なバッファー転送を設定します。
 
-2.  カーネルは、仕入先が以前に登録されている ISR を呼び出します。 ISR、ミニドライバーは遅延プロシージャ呼び出し (DPC) をキューします。
+2.  カーネルは、ベンダーが以前に登録した ISR を呼び出します。 ISR では、ミニドライバーは遅延プロシージャ呼び出し (DPC) をキューに置いています。
 
-3.  一般的なバッファーがいっぱいになった場合、ミニドライバーを呼び出す[ **KsPinAttemptProcessing** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-kspinattemptprocessing) DPC から。
+3.  共通バッファーがいっぱいになると、ミニドライバーは DPC から[**KsPinAttemptProcessing**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-kspinattemptprocessing)を呼び出します。
 
-4.  AVStream 呼び出しで指定された条件の場合は、プロセスのディスパッチ、**フラグ**のメンバー [ **KSPIN\_記述子\_EX** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_kspin_descriptor_ex)が満たされています。
+4.  [**Kspin\_記述子\_EX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_kspin_descriptor_ex)の**Flags**メンバーによって指定された条件が満たされた場合、avstream はプロセスディスパッチを呼び出します。
 
-ベンダーから提供された内[ *AVStrMiniPinProcess* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nc-ks-pfnkspin)コールバック ルーチンでは、1 つの可能な一連のアクションが次のようにします。
+ベンダーから提供された[*Avstrminipinprocess*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nc-ks-pfnkspin)コールバックルーチン内では、次のような1つの措置をとることができます。
 
-1.  呼び出す[ **KsPinGetLeadingEdgeStreamPointer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-kspingetleadingedgestreampointer):
+1.  [**KsPinGetLeadingEdgeStreamPointer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-kspingetleadingedgestreampointer)を呼び出します。
 
     ```cpp
     KSSTREAM_POINTER *Leading = KsPinGetLeadingEdgeStreamPointer (
@@ -53,13 +53,13 @@ AVStream ミニドライバーで共通のバッファー DMA を使用します
                    );
     ```
 
-2.  先頭のフレーム データをコピー&gt;StreamHeader -&gt;データと必要なフラグを設定し、時刻、適切なスタンプ情報[ **KSSTREAM\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksstream_header)します。
+2.  フレームデータを先頭&gt;StreamHeader-&gt;データにコピーし、適切な[**Ksk ストリーム\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksstream_header)に必要なフラグとタイムスタンプ情報を設定します。
 
-3.  呼び出す[ **KsStreamPointerUnlock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksstreampointerunlock)で*取り出し*に設定**TRUE**します。 (この値の*取り出し*を進めるストリーム ポインターをによりします)。
+3.  *Eject*が**TRUE**に設定された状態で、 [**ksstreamポインター unlock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksstreampointerunlock)を呼び出します。 (この*値を指定すると、* ストリームポインターが先に進みます)。
 
-4.  状態を返す\_保留します。
+4.  ステータスを返す\_保留中です。
 
-AVStream のミニドライバーによって設定されたフラグに基づいてこのキューを管理し、 [ **KSPIN\_記述子\_EX** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_kspin_descriptor_ex)構造体。
+AVStream は、 [**Kspin\_記述子\_EX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_kspin_descriptor_ex)構造体のミニドライバーによって設定されたフラグに基づいてキューを管理します。
 
  
 

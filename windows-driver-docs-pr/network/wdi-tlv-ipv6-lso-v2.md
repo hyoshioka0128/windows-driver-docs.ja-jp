@@ -1,24 +1,24 @@
 ---
 title: WDI_TLV_IPV6_LSO_V2 (0xD4)
-description: WDI_TLV_IPV6_LSO_V2 では、IPv6 の大規模なオフロード V2 の送信パラメーターを含む TLV です。
+description: WDI_TLV_IPV6_LSO_V2 は、IPv6 用の Large Send Offload V2 パラメーターを含む TLV です。
 ms.assetid: 898257D1-405A-46A3-AE63-26DFA8C1FAAC
 ms.date: 07/18/2017
 keywords:
-- WDI_TLV_IPV6_LSO_V2 (0xD4) ネットワーク ドライバーが Windows Vista 以降
+- WDI_TLV_IPV6_LSO_V2 (0xD4) ネットワークドライバー (Windows Vista 以降)
 ms.localizationpriority: medium
-ms.openlocfilehash: 85e46e89d61fcbf9fc4f11855ed75a432d9c44ec
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ec794d7cdd2909f8b662495f6dba6eb3bdbdcb99
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67380752"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842465"
 ---
-# <a name="wditlvipv6lsov2-0xd4"></a>WDI\_TLV\_IPV6\_LSO\_V2 (0xD4)
+# <a name="wdi_tlv_ipv6_lso_v2-0xd4"></a>WDI\_TLV\_IPV6\_LSO\_V2 (0xD4)
 
 
-WDI\_TLV\_IPV6\_LSO\_V2 は、IPv6 の大規模なオフロード V2 の送信パラメーターを含む TLV します。
+WDI\_TLV\_IPV6\_LSO\_V2 は、IPv6 用の Large Send Offload V2 パラメーターを含む TLV です。
 
-記載されている機能の値が報告[ **NDIS\_TCP\_IP\_チェックサム\_オフロード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_tcp_ip_checksum_offload)します。 NDIS を使用して、\_オフロード\_いない\_サポートと NDIS\_オフロード\_を介して機能を指定する際にサポートされている[OID\_WDI\_GET\_アダプター\_機能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-get-adapter-capabilities)します。
+機能の値は、「 [**NDIS\_TCP\_IP\_CHECKSUM\_OFFLOAD**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_tcp_ip_checksum_offload)」に記載されているように報告されます。 \_サポートされておらず、NDIS\_オフロード\_を使用します。\_、 [OID\_WDI\_GET\_ADAPTER\_機能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-get-adapter-capabilities)を使用して機能を指定する場合にサポートされ\_。
 
 ## <a name="tlv-type"></a>TLV 型
 
@@ -28,7 +28,7 @@ WDI\_TLV\_IPV6\_LSO\_V2 は、IPv6 の大規模なオフロード V2 の送信�
 ## <a name="length"></a>長さ
 
 
-含まれるすべての要素のサイズの合計をバイト単位で。
+含まれているすべての要素のサイズの合計 (バイト単位)。
 
 ## <a name="values"></a>値
 
@@ -40,7 +40,7 @@ WDI\_TLV\_IPV6\_LSO\_V2 は、IPv6 の大規模なオフロード V2 の送信�
 </colgroup>
 <thead>
 <tr class="header">
-<th>型</th>
+<th>タスクバーの検索ボックスに</th>
 <th>説明</th>
 </tr>
 </thead>
@@ -54,26 +54,26 @@ WDI\_TLV\_IPV6\_LSO\_V2 は、IPv6 の大規模なオフロード V2 の送信�
 </tr>
 <tr class="even">
 <td>UINT32</td>
-<td>最大サイズをオフロードします。 1 パケットあたり TCP ユーザー データのバイトの最大数で指定します。</td>
+<td>最大オフロードサイズ。 パケットあたりの TCP ユーザーデータの最大バイト数で指定されます。</td>
 </tr>
 <tr class="odd">
 <td>UINT32</td>
-<td>セグメントの最小数。 セグメント化の後に存在する必要のあるセグメントの最小数で指定します。</td>
+<td>最小セグメント数。 セグメント化後に存在する必要があるセグメントの最小数で指定します。</td>
 </tr>
 <tr class="even">
 <td>UINT32</td>
-<td>拡張機能の IP ヘッダーのあるパケットのチェックサムのオフロードがサポートされているかどうかを指定します。</td>
+<td>IP 拡張ヘッダーのあるパケットのチェックサムのオフロードがサポートされているかどうかを指定します。</td>
 </tr>
 <tr class="odd">
 <td>UINT32</td>
-<td>TCP オプションを使用してチェックサムのオフロードがサポートされているかどうかを指定します。</td>
+<td>TCP オプションを使用したチェックサムのオフロードがサポートされているかどうかを指定します。</td>
 </tr>
 </tbody>
 </table>
 
  
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -92,7 +92,7 @@ WDI\_TLV\_IPV6\_LSO\_V2 は、IPv6 の大規模なオフロード V2 の送信�
 </tr>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Wditypes.hpp</td>
+<td>Wditypes</td>
 </tr>
 </tbody>
 </table>

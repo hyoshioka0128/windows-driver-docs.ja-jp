@@ -3,20 +3,20 @@ title: ページ作成コールバック
 description: ページ作成コールバック
 ms.assetid: ec514d17-415e-417b-bb29-b37be43c3cf6
 keywords:
-- WDK CPSUI のコールバック関数
-- 共通のプロパティ シートのユーザー インターフェイスの WDK の印刷、コールバック
-- CPSUI WDK の印刷、コールバック
-- WDK プロパティ シートのページを印刷するコールバック
-- ページの作成のコールバックを WDK CPSUI
+- コールバック関数 WDK CPSUI
+- 共通プロパティシートのユーザーインターフェイス WDK print、コールバック
+- CPSUI WDK print、コールバック
+- プロパティシートページの WDK 印刷、コールバック
+- ページ作成コールバックの WDK CPSUI
 - CommonPropertySheetUI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a7f0acb8e4d854044fc975e44653e8e9dabd3be4
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e8ac4a1ecc8de0ba1909d93c92d69c12ef7c6f1b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360726"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845049"
 ---
 # <a name="page-creation-callbacks"></a>ページ作成コールバック
 
@@ -24,13 +24,13 @@ ms.locfileid: "67360726"
 
 
 
-アプリケーションが関数をポイント CPSUI のエントリに初期呼び出しを行うときに ([**CommonPropertySheetUI**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/nf-compstui-commonpropertysheetuia)) のアドレスを含める必要があります、 [ **PFNPROPSHEETUI**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/nc-compstui-pfnpropsheetui)-コールバック関数を入力します。 このコールバック関数は、プロパティ シートのページを記述して作成の CPSUI にこれらの説明を送信します。
+アプリケーションが CPSUI のエントリポイント関数 ([**CommonPropertySheetUI**](https://docs.microsoft.com/windows-hardware/drivers/ddi/compstui/nf-compstui-commonpropertysheetuia)) への最初の呼び出しを行うときは、 [**PFNPROPSHEETUI**](https://docs.microsoft.com/windows-hardware/drivers/ddi/compstui/nc-compstui-pfnpropsheetui)型のコールバック関数のアドレスを含める必要があります。 このコールバック関数は、プロパティシートページを記述し、それらの説明を作成のために CPSUI に送信します。
 
-CPSUI の**CommonPropertySheetUI**関数がすぐに PFNPROPSHEETUI に型指定された関数のアドレス指定するのにはコールバックを[ **PROPSHEETUI\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_propsheetui_info)構造体。 アプリケーションには、CPSUI を呼び出して[ **ComPropSheet** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/nc-compstui-pfncompropsheet) CPSUI は、次の図に示すように、ページの作成に使用できるページの説明を指定して、関数。
+CPSUI の**CommonPropertySheetUI**関数は、 [**PROPSHEETUI\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/compstui/ns-compstui-_propsheetui_info)構造体のアドレスを指定して、すぐに PFNPROPSHEETUI 型の関数にコールバックします。 次の図に示すように、アプリケーションでは、CPSUI の[**ComPropSheet**](https://docs.microsoft.com/windows-hardware/drivers/ddi/compstui/nc-compstui-pfncompropsheet)関数を呼び出して、CPSUI がページの作成に使用できるページの説明を提供できます。
 
-![アプリケーション cpsui 通信を示す図](images/comprop.png)
+![アプリケーションと cpsui の通信を示す図](images/comprop.png)
 
-詳細については、次を参照してください。[メソッドを指定するページの](methods-for-specifying-pages.md)します。
+詳細については、「[ページを指定するためのメソッド](methods-for-specifying-pages.md)」を参照してください。
 
  
 

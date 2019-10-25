@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_BDA\_内部\_FEC\_率
-description: クライアントを使用して、KSPROPERTY\_BDA\_内部\_FEC\_バイナリ畳み込みスキームを制御する際の速度が内部の転送エラーの修正に対して復調器ノードの種類を (FEC) を使用します。
+title: KSK プロパティ\_BDA\_内部\_FEC\_レート
+description: クライアントは、KSK プロパティ\_BDA\_内部\_FEC\_率を使用して、demodulator ノードの内部前方エラー修正 (FEC) 型に使用されるバイナリ畳み込み方式を制御します。
 ms.assetid: d5bf0ce0-d383-431f-85de-3d00f4831619
 keywords:
-- KSPROPERTY_BDA_INNER_FEC_RATE ストリーミング メディア デバイス
+- KSPROPERTY_BDA_INNER_FEC_RATE ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e117916f8e453372bcdf4a28eefb6929a08a23a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 98b84bfac03807315a6494cac496cc613cbca7e5
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364859"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842140"
 ---
-# <a name="kspropertybdainnerfecrate"></a>KSPROPERTY\_BDA\_内部\_FEC\_率
+# <a name="ksproperty_bda_inner_fec_rate"></a>KSK プロパティ\_BDA\_内部\_FEC\_レート
 
 
-クライアントを使用して、KSPROPERTY\_BDA\_内部\_FEC\_バイナリ畳み込みスキームを制御する際の速度が内部の転送エラーの修正に対して復調器ノードの種類を (FEC) を使用します。
+クライアントは、KSK プロパティ\_BDA\_内部\_FEC\_率を使用して、demodulator ノードの内部前方エラー修正 (FEC) 型に使用されるバイナリ畳み込み方式を制御します。
 
 ## <span id="ddk_ksproperty_bda_inner_fec_rate_ks"></span><span id="DDK_KSPROPERTY_BDA_INNER_FEC_RATE_KS"></span>
 
@@ -41,7 +41,7 @@ ms.locfileid: "67364859"
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,8 +50,8 @@ ms.locfileid: "67364859"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>〇</p></td>
+<td><p>[はい]</p></td>
+<td><p>[はい]</p></td>
 <td><p>フィルター</p></td>
 <td><p>KSP_NODE</p></td>
 <td><p>BinaryConvolutionCodeRate</p></td>
@@ -64,11 +64,11 @@ ms.locfileid: "67364859"
 <a name="remarks"></a>注釈
 -------
 
-BinaryConvolutionCodeRate 列挙型から返される値は、バイナリの畳み込みスキームを識別します。
+BinaryConvolutionCodeRate 列挙型から返された値は、バイナリの畳み込みスキームを識別します。
 
-**NodeId** KSP のメンバー\_ノード復調器ノードの識別子を指定します。
+KSP の**NodeId**メンバー\_node は、demodulator ノードの識別子を指定します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -79,7 +79,7 @@ BinaryConvolutionCodeRate 列挙型から返される値は、バイナリの畳
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Bdamedia.h (Bdamedia.h を含む)</td>
+<td>Bdamedia (Bdamedia を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -89,7 +89,7 @@ BinaryConvolutionCodeRate 列挙型から返される値は、バイナリの畳
 
 [**BinaryConvolutionCodeRate**](https://docs.microsoft.com/previous-versions/windows/desktop/mstv/binaryconvolutioncoderate)
 
-[**KSP\_ノード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_node)
+[**KSP\_ノード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksp_node)
 
  
 

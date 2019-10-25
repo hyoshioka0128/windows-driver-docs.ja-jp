@@ -3,17 +3,17 @@ title: フレームワーク要求オブジェクトの再利用
 description: フレームワーク要求オブジェクトの再利用
 ms.assetid: 9e3090a9-62d0-48b3-9f3b-7171dc6d2766
 keywords:
-- 要求の処理の WDK KMDF、要求オブジェクトを再利用
+- WDK KMDF の要求の処理、要求オブジェクトの再利用
 - 要求オブジェクト WDK KMDF、再利用
-- WDK KMDF をオブジェクトの要求を再利用
+- 要求オブジェクトの再利用 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 55daabf712c2bdb2249cc8c2195cf39088f176ac
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 498cf85da837e32a0cc752a1b70f5522bf6e2fac
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67376248"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842208"
 ---
 # <a name="reusing-framework-request-objects"></a>フレームワーク要求オブジェクトの再利用
 
@@ -21,13 +21,13 @@ ms.locfileid: "67376248"
 
 
 
-パフォーマンスを向上させるのには、framework ベースのドライバーを作成し、再利用できる大量の I/O をターゲットとほぼ同じ非同期要求を送信は、要求ごとに新しい要求オブジェクトを作成する代わりにオブジェクトを要求します。 ドライバーは、要求が完了した後、要求オブジェクトを再利用できます。
+パフォーマンスを向上させるために、ほぼ同一の非同期要求を作成して i/o ターゲットに送信するフレームワークベースのドライバーは、要求ごとに新しい要求オブジェクトを作成する代わりに、要求オブジェクトを再利用できます。 要求が完了すると、ドライバーは要求オブジェクトを再利用できます。
 
-ドライバーが呼び出すことによって、要求オブジェクトを作成してかどうか[ **WdfRequestCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestcreate)または[ **WdfRequestCreateFromIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestcreatefromirp)要求を再利用できます呼び出して[ **WdfRequestReuse**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestreuse)します。 ドライバーには、その I/O キューのフレームワークから受信した要求オブジェクトが再利用もできますが、受信した要求オブジェクトに含まれる IRP を変更することはできません。
+ドライバーが[**Wdfrequestcreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcreate)または[**Wdfrequestcreatefromirp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcreatefromirp)を呼び出して要求オブジェクトを作成した場合、 [**WdfRequestReuse**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestreuse)を呼び出すことによって要求を再利用できます。 また、ドライバーは、その i/o キューのフレームワークから受信した要求オブジェクトを再利用することもできますが、受信した要求オブジェクトに含まれる IRP を変更することはできません。
 
-説明されている失敗した場合の戻り値の発生状況を回避するように注意する場合は[ **WdfRequestReuse**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestreuse)、呼び出すことができます、ドライバー **WdfRequestReuse**内から、[ *CompletionRoutine* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nc-wdfrequest-evt_wdf_request_completion_routine)コールバック関数。 (、 *CompletionRoutine*コールバック関数が VOID の戻り値し、そのため、エラーを報告することはできません)。
+[**WdfRequestReuse**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestreuse)で説明されている失敗した戻り値の原因となる状況を避けるために、ドライバーは、実行可能[*ルーチン*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nc-wdfrequest-evt_wdf_request_completion_routine)のコールバック関数内から**WdfRequestReuse**を呼び出すことができます。 (*補完ルーチン*のコールバック関数には VOID の戻り値があるため、エラーを報告することはできません)。
 
-お使いのドライバーの場合、 [ *CompletionRoutine* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nc-wdfrequest-evt_wdf_request_completion_routine)ドライバーに呼び出す必要がありますが再利用する要求オブジェクトのコールバック関数、 [ **WdfRequestSetCompletionRoutine**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestsetcompletionroutine)呼び出した後[ **WdfRequestReuse**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestreuse)します。
+ドライバーが、再利用する要求オブジェクトに対して完了[*ルーチン*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nc-wdfrequest-evt_wdf_request_completion_routine)のコールバック関数を提供している場合、ドライバーは[**WdfRequestReuse**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestreuse)を呼び出した後に[**wdfrequestset ルーチン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsetcompletionroutine)を呼び出す必要があります。
 
  
 

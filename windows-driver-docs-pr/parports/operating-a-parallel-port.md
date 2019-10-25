@@ -3,17 +3,17 @@ title: パラレル ポートの操作
 description: パラレル ポートの操作
 ms.assetid: c9015a01-a7cb-41f4-9710-a868ef19f6d7
 keywords:
-- ベンダーから提供された並列ドライバー WDK、パラレル ポート操作
-- システムによって提供される関数のドライバー WDK パラレル ポート
-- 機能ドライバー WDK パラレル ポート
+- ベンダー提供のパラレルドライバー WDK、パラレルポート操作
+- システム提供の関数ドライバー WDK パラレルポート
+- 関数ドライバー WDK のパラレルポート
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5513f6e0b0f362e76fb623b3311eecdc82a68fad
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 994070744393cc3ed89e463336f947277367415d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67358493"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842736"
 ---
 # <a name="operating-a-parallel-port"></a>パラレル ポートの操作
 
@@ -21,33 +21,33 @@ ms.locfileid: "67358493"
 
 
 
-このセクションでは、パラレル ポートの並列のデバイスでは、関数のベンダーから提供されたドライバーの具体的には、クライアントの動作について説明します。
+このセクションでは、クライアント (特に、並列デバイス用のベンダーが提供する関数ドライバー) がパラレルポートを操作する方法について説明します。
 
-パラレル ポートのシステムによって提供される関数のドライバーでは、システムに列挙された各パラレル ポートの機能のデバイス オブジェクト (FDO) を作成します。 次のトピックでは、クライアントが、ポートの FDO によって提供されるインターフェイスを使用してパラレル ポートをどのように動作する方法について説明します。
+システムによって提供されるパラレルポートの関数ドライバーは、システム内で列挙された各パラレルポートに対して機能デバイスオブジェクト (FDO) を作成します。 次のトピックでは、ポートの FDO によって提供されるインターフェイスを使用して、クライアントがパラレルポートを操作する方法について説明します。
 
-[作成して、パラレル ポートの開始](creating-and-starting-a-parallel-port.md)
+[パラレルポートの作成と開始](creating-and-starting-a-parallel-port.md)
 
-[パラレル ポートを開いたり、閉じたりします。](opening-and-closing-a-parallel-port.md)
+[パラレルポートを開いたり閉じたりする](opening-and-closing-a-parallel-port.md)
 
-[パラレル ポートに関する情報の取得](obtaining-information-about-a-parallel-port.md)
+[パラレルポートに関する情報の取得](obtaining-information-about-a-parallel-port.md)
 
-[パラレル ポートの使用を同期します。](synchronizing-the-use-of-a-parallel-port.md)
+[パラレルポートの使用の同期](synchronizing-the-use-of-a-parallel-port.md)
 
-[選択して、パラレル ポートに接続されている IEEE 1284 デバイスの選択を解除](selecting-and-deselecting-an-ieee-1284-device-attached-to-a-parallel-p.md)
+[パラレルポートに接続されている IEEE 1284 デバイスの選択と選択解除](selecting-and-deselecting-an-ieee-1284-device-attached-to-a-parallel-p.md)
 
-[設定およびパラレル ポートの通信モードを解除](setting-and-clearing-the-communication-mode-on-a-parallel-port.md)
+[パラレルポートでの通信モードの設定とクリア](setting-and-clearing-the-communication-mode-on-a-parallel-port.md)
 
-[1284.3 データ、IEEE に接続するデバイスをリンクします。](connecting-to-an-ieee-1284-3-data-link-device.md)
+[IEEE 1284.3 データリンクデバイスへの接続](connecting-to-an-ieee-1284-3-data-link-device.md)
 
-[割り込みサービス ルーチンをパラレル ポートに接続します。](connecting-an-interrupt-service-routine-to-a-parallel-port.md)
+[割り込みサービスルーチンをパラレルポートに接続する](connecting-an-interrupt-service-routine-to-a-parallel-port.md)
 
-パラレル ポートのシステムのサポートの詳細についてを参照してください。
+パラレルポートのシステムサポートの詳細については、以下を参照してください。
 
 [ParallelPorts とデバイスの概要](introduction-to-parallel-ports-and-devices.md)
 
 [システム提供のパラレル ドライバー](system-supplied-parallel-drivers.md)
 
-[システム提供平行ドライバーへのクライアント インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
+[システム提供のパラレルドライバーへのクライアントインターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)
 
  
 

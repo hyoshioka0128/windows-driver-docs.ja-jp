@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_NUM\_ソース
-description: KSPROPERTY\_NUM\_ソース プロパティ セレクター単位で入力ピンの数を指定します。
+title: '\_ソースに\_KSK プロパティ'
+description: KSK プロパティ\_NUM\_SOURCES プロパティは、セレクター単位の入力ピンの数を指定します。
 ms.assetid: 94d0f926-0551-4fe2-aa7f-2898e04c4b36
 keywords:
-- KSPROPERTY_NUM_SOURCES ストリーミング メディア デバイス
+- KSPROPERTY_NUM_SOURCES ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 128b235518f6d46224e71097e145dc64daf42e58
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8973dc2fe5519036dc3fb3bdb4d6ef312bfb3099
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67375083"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842752"
 ---
-# <a name="kspropertynumsources"></a>KSPROPERTY\_NUM\_ソース
+# <a name="ksproperty_num_sources"></a>\_ソースに\_KSK プロパティ
 
 
-KSPROPERTY\_NUM\_ソース プロパティ セレクター単位で入力ピンの数を指定します。
+KSK プロパティ\_NUM\_SOURCES プロパティは、セレクター単位の入力ピンの数を指定します。
 
 ## <span id="ddk_ksproperty_num_sources_ks"></span><span id="DDK_KSPROPERTY_NUM_SOURCES_KS"></span>
 
@@ -41,7 +41,7 @@ KSPROPERTY\_NUM\_ソース プロパティ セレクター単位で入力ピン�
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,11 +50,11 @@ KSPROPERTY\_NUM\_ソース プロパティ セレクター単位で入力ピン�
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>X</p></td>
+<td><p>[はい]</p></td>
+<td><p>必須ではない</p></td>
 <td><p>フィルターまたはノード</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_selector_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_SELECTOR_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_selector_s)"><strong>KSPROPERTY_SELECTOR_S</strong> </a>または<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_selector_node_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_SELECTOR_NODE_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_selector_node_s)"> <strong>KSPROPERTY_SELECTOR_NODE_S</strong></a></p></td>
-<td><p>LONG</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_selector_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_SELECTOR_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_selector_s)"><strong>KSPROPERTY_SELECTOR_S</strong></a>または<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_selector_node_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_SELECTOR_NODE_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_selector_node_s)"> <strong>KSPROPERTY_SELECTOR_NODE_S</strong></a></p></td>
+<td><p>長い</p></td>
 </tr>
 </tbody>
 </table>
@@ -64,9 +64,9 @@ KSPROPERTY\_NUM\_ソース プロパティ セレクター単位で入力ピン�
 <a name="remarks"></a>注釈
 -------
 
-クライアントが内で使用可能なソースのピンの数を受け取る get 要求を行うときに、**値**プロパティ記述子構造体のメンバー。
+Get 要求を行うと、クライアントは、プロパティ記述子構造の**Value**メンバー内の使用可能なソース pin の数を受け取ります。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -77,7 +77,7 @@ KSPROPERTY\_NUM\_ソース プロパティ セレクター単位で入力ピン�
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Ksmedia.h (Ksmedia.h を含む)</td>
+<td>Ksmedia .h (Ksk を含む)</td>
 </tr>
 </tbody>
 </table>

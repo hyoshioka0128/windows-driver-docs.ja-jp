@@ -3,15 +3,15 @@ title: CoNDIS WAN ドライバーが利用できるその他の NDIS 機能
 description: CoNDIS WAN ドライバーが利用できるその他の NDIS 機能
 ms.assetid: eb002029-d7da-45ff-9308-f61d90f751d0
 keywords:
-- ドライバー WDK ネットワーク、いる CoNDIS WAN 機能
+- CoNDIS WAN ドライバー WDK ネットワーク、機能
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: be2f70082e161510a950209dd9c62a9dc9073c9f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: fa34492b76f08556ecda0779d40177af9f31e4e4
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67366531"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843751"
 ---
 # <a name="other-ndis-features-available-to-condis-wan-drivers"></a>CoNDIS WAN ドライバーが利用できるその他の NDIS 機能
 
@@ -19,19 +19,19 @@ ms.locfileid: "67366531"
 
 
 
-いる CoNDIS WAN ミニポート ドライバーまたは MCMs を次の機能の利用にできます。
+CoNDIS WAN ミニポートドライバーまたは MCMs では、次の機能を利用できます。
 
--   ミニポート ドライバーのプラグ アンド プレイ (PnP) イベント通知
+-   ミニポートドライバーのプラグアンドプレイ (PnP) イベント通知
 
--   統計カウンターの 64 ビット
+-   64ビット統計カウンター
 
--   送信パケットのキャンセル
+-   送信パケットの取り消し
 
--   登録、 [ *MiniportShutdownEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_shutdown)関数
+-   [*Miniportshutdownex*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_shutdown)関数を登録しています
 
--   新しいミニポート ドライバーの属性
+-   新しいミニポートドライバーの属性
 
--   安全な関数
+-   セーフ関数
 
  
 

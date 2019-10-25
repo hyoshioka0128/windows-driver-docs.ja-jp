@@ -4,53 +4,53 @@ description: NIC スイッチのパラメーターの設定
 ms.assetid: 79B4B0B7-32AB-4AE4-ACD2-CE17C93573BA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7920a274b0f7e3a82eaa746c39ba1973070b627b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 15832bd122143b09587454b51b0a334506c2eda3
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67375116"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841932"
 ---
 # <a name="setting-the-parameters-of-a-nic-switch"></a>NIC スイッチのパラメーターの設定
 
 
-上位のドライバーには、シングル ルート I/O 仮想化 (SR-IOV) をサポートするネットワーク アダプターで作成された NIC スイッチ パラメーターを変更できます。 オブジェクト識別子 (OID) を設定するドライバーの問題の要求の[OID\_NIC\_スイッチ\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-parameters)これらのパラメーターを変更します。 ミニポート ドライバーを PCI Express (PCIe) 物理機能 (PF) の SR-IOV 対応アダプターだけでは、この OID セット要求を処理します。
+前のドライバーでは、シングルルート i/o 仮想化 (SR-IOV) をサポートするネットワークアダプターで作成された NIC スイッチのパラメーターを変更できます。 このドライバーは、Oid\_のオブジェクト識別子 (OID) セット要求を発行し、 [\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-parameters)を変更して、これらのパラメーターを変更\_します。 SR-IOV アダプターの PCI Express (PCIe) 物理機能 (PF) のミニポートドライバーのみが、この OID セット要求を処理します。
 
-上にあるドライバーは、この OID セット要求を発行、前に初期化する必要があります、 [ **NDIS\_NIC\_スイッチ\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_parameters)パラメーターの設定を含む構造体NIC のスイッチで変更します。 ドライバーを初期化し、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request) OID 要求、およびセットの構造、 **InformationBuffer**メンバーをポインター、 **NDIS\_NIC\_スイッチ\_パラメーター**構造体。
+それより前のドライバーは、この OID セット要求を発行する前に、NIC スイッチで変更されるパラメーターを使用して、 [ **\_parameters 構造\_スイッチの NDIS\_nic**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_parameters)を初期化する必要があります。 次に、OID 要求の[**ndis\_oid\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造を初期化し、 **Informationbuffer**メンバーを**ndis\_NIC\_スイッチ\_PARAMETERS**構造体のポインターに設定します。
 
-NIC のスイッチの構成パラメーターの一部のサブセットのみを変更できます。 上にあるドライバーの次のメンバーを設定して変更するパラメーターを指定します、 [ **NDIS\_NIC\_スイッチ\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_parameters)構造体。
+変更できるのは、NIC スイッチの構成パラメーターの一部のみです。 前のドライバーでは、 [**NDIS\_NIC\_スイッチ\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_parameters)構造体の次のメンバーを設定することによって、変更するパラメーターを指定します。
 
--   **SwitchId**メンバー NIC スイッチ パラメーターを持つは変更の識別子に設定されます。
+-   **Switchid**メンバーは、パラメーターが変更される NIC スイッチの識別子に設定されます。
 
-    **注**  以降 Windows Server 2012 では、SR-IOV インターフェイスをサポートしています NIC スイッチが 1 つだけ、ネットワーク アダプター。 このスイッチと呼ばれる、*既定 NIC スイッチ*します。 **SwitchId** NDIS にメンバーを設定する必要があります\_既定\_スイッチ\_id。
-
-     
-
--   適切な NDIS\_NIC\_スイッチ\_パラメーター\_*Xxx*\_変更されたフラグが設定されて、**フラグ**メンバー。 メンバー、 [ **NDIS\_NIC\_スイッチ\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_parameters)構造体は、対応する NDIS 場合にのみ変更できます\_NIC\_スイッチ\_パラメーター\_*Xxx*\_Ntddndis.h で変更されたフラグが定義されています。
-
--   メンバー、 [ **NDIS\_NIC\_スイッチ\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_parameters) NDIS に対応する構造体\_NIC\_スイッチ\_パラメーター\_*Xxx*\_で変更されたフラグを設定、**フラグ**メンバーを変更する NIC のスイッチの構成パラメーターを使用して設定されます。
-
-    **注**  以降、Windows Server 2012 でのみ、 **SwitchName**のメンバー、 [ **NDIS\_NIC\_スイッチ\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_parameters)の OID セットの要求で構造を変更できます[OID\_NIC\_スイッチ\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-parameters)します。
+    **注**  Windows Server 2012 以降では、sr-iov インターフェイスはネットワークアダプター上で1つの NIC スイッチのみをサポートしています。 このスイッチは、既定の*NIC スイッチ*と呼ばれます。 **Switchid**メンバーを NDIS\_既定\_スイッチ\_ID に設定する必要があります。
 
      
 
-PF のミニポート ドライバーは、の OID のセット要求を受け取ったときにこれらのガイドラインに従う必要があります[OID\_NIC\_スイッチ\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-parameters)
+-   適切な NDIS\_NIC\_スイッチ\_パラメーター\_*Xxx*\_変更したフラグが**フラグ**メンバーで設定されます。 [**Ndis\_nic\_スイッチ\_parameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_parameters)構造体のメンバーは、対応する NDIS\_NIC\_スイッチ\_パラメーター\_*Xxx*\_changed フラグが Ntddndis で定義されている場合にのみ変更できます.
 
--   ドライバーがハードウェアに、変更が適用され、NDIS に OID 要求が完了した場合は、PF ミニポート ドライバーでは、ネットワーク アダプターの再初期化を必要とせず、変更を適用できます、\_状態\_成功します。
+-   Ndis [ **\_nic\_スイッチ\_parameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_parameters)構造体は、NDIS\_NIC\_スイッチ\_パラメーターに対応しています\_*Xxx*\_**フラグ**に設定されている変更フラグメンバーは、変更される NIC スイッチの構成パラメーターで設定されます。
 
-    この状態コードが返された場合、NDIS は、レジストリ内の NIC スイッチの構成情報を更新します。
-
--   ドライバーが NDIS に OID 要求を完了すると、PF ミニポート ドライバーには、変更を適用するネットワーク アダプターの再初期化が必要とする場合\_状態\_REINIT\_必要な作業です。
-
-    この状態コードが返されます、NDIS もレジストリ内の NIC スイッチの構成情報を更新します。 ただし、OID セット要求を発行した上にあるドライバーは、変更を反映するために、ネットワーク アダプターを再初期化する必要があります。
-
-    **注**  静的の NIC の作成と構成をサポートする PF ミニポート ドライバーは、NDIS を返すことができます\_状態\_REINIT\_新しいアダプターが再初期化するかどうかを確認するには、必要な作業有効にするパラメーターです。
+    **注**  Windows Server 2012 以降では、OID\_NIC の oid セット要求を使用して変更できるのは、 [**NDIS\_nic\_スイッチ\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_parameters)構造の**switchname**メンバーだけです[\_\_パラメーターを切り替え](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-parameters)ます。
 
      
 
--   OID で要求された変更を適用できないのは、PF ミニポート ドライバー、OID が失敗して、適切な NDIS を返すにする必要があります\_状態\_*Xxx*コード。
+PF ミニポートドライバーは、 [oid\_NIC\_スイッチ\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-parameters)の oid セット要求を受信するときに、これらのガイドラインに従う必要があります。
 
-    この場合は、NDIS は、レジストリ内の NIC スイッチの構成情報を更新できません。
+-   PF ミニポートドライバーがネットワークアダプターの再初期化を必要とせずに変更を適用できる場合、ドライバーは変更をハードウェアに適用し、NDIS\_STATUS\_SUCCESS による OID 要求を完了します。
+
+    この状態コードが返された場合、NDIS はレジストリ内の NIC スイッチの構成情報を更新します。
+
+-   PF ミニポートドライバーが変更を適用するためにネットワークアダプターを再初期化する必要がある場合、ドライバーは NDIS\_STATUS\_REINIT\_必要な OID 要求を完了します。
+
+    この状態コードが返された場合は、NDIS によって、レジストリ内の NIC スイッチの構成情報も更新されます。 ただし、OID セット要求を発行した後のドライバーは、変更を有効にするためにネットワークアダプターを再初期化する必要があります。
+
+    **注意**  静的 NIC の作成と構成をサポートする PF ミニポートドライバーでは、新しいパラメーターが有効になるようにアダプターが再初期化されるように、NDIS\_STATUS\_REINIT\_必要になる場合があります。
+
+     
+
+-   PF ミニポートドライバーが OID に要求された変更を適用できない場合、OID を失敗させて、適切な NDIS\_状態\_*Xxx*コードを返す必要があります。
+
+    この場合、NDIS はレジストリ内の NIC スイッチの構成情報を更新しません。
 
  
 

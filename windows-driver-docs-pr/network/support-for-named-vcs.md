@@ -3,20 +3,20 @@ title: 名前付き VC のサポート
 description: 名前付き VC のサポート
 ms.assetid: 797f737c-91e7-410b-91d5-5575d5b19e86
 keywords:
-- WMI の WDK、仮想ネットワークの接続
-- ネットワーク、仮想接続の名前を付け、マネージャー WDK を呼び出す
+- WMI WDK ネットワーク, 仮想接続
+- 呼び出しマネージャーの WDK ネットワーク、仮想接続の名前付け
 - 仮想接続 WDK NDIS WMI
 - VCs WDK NDIS WMI
-- 仮想接続の名前を付け、ミニポート コール マネージャー WDK ネットワーク
-- MCMs WDK ネットワー キング、namin
+- ミニポート呼び出しマネージャー WDK ネットワーク、仮想接続の名前付け
+- MCMs WDK ネットワーク、namin
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 61cc42d335bd53104f26c39ad00d20e60b7329b4
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4039d70d9117bb40d86f3e9e7f3df53e85368b8f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384201"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841800"
 ---
 # <a name="support-for-named-vcs"></a>名前付き VC のサポート
 
@@ -24,11 +24,11 @@ ms.locfileid: "67384201"
 
 
 
-NDIS は、WMI クライアント クエリを実行し、接続指向ミニポート アダプター仮想接続 (VC) ごとに情報を設定できます。 WMI クライアントまた VCs を列挙します。 WMI クライアントでは、クエリを実行したり、特定の VC に関連付けられている情報を設定することが、前に、スタンドアロンのコール マネージャーまたはクライアントの接続指向名前する必要があります、VC を呼び出して、 [ **NdisCoAssignInstanceName** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscoassigninstancename)関数。
+NDIS を使用すると、WMI クライアントは、接続指向のミニポートアダプターについて、仮想接続 (VC) ごとに照会し、情報を設定することができます。 WMI クライアントでは、VCs を列挙することもできます。 WMI クライアントが特定の VC に関連付けられている情報を照会または設定するには、スタンドアロンコールマネージャーまたは接続指向クライアントが、 [**NdisCoAssignInstanceName**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscoassigninstancename)関数を呼び出すことによって vc に名前を付ける必要があります。
 
-スタンドアロンの呼び出しの後にマネージャーまたは接続指向のクライアント設定を開始します VC の呼び出すことによって、 [ **NdisCoCreateVC** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscocreatevc)関数では、スタンドアロンのコール マネージャーまたはクライアントの接続指向のことができます名前と VC **NdisCoAssignInstanceName**します。 VC のインスタンスの名前を割り当てますの NDIS および WMI でインスタンス名を登録します。 WMI クライアントでは、VC とクエリを列挙し、または、VC を基準と Oid を設定できます。
+スタンドアロンコールマネージャーまたは接続指向クライアントが、 [**NdisCoCreateVC**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscocreatevc)関数を呼び出すことによって vc のセットアップを開始した後、スタンドアロンコールマネージャーまたは接続指向クライアントは、Vc に**NdisCoAssignInstanceName**という名前を付けます。 NDIS は、VC にインスタンス名を割り当て、インスタンス名を WMI に登録します。 WMI クライアントは、vc とクエリを列挙したり、VC に対して相対的な Oid を設定したりできます。
 
-ミニポート コール マネージャー (MCM) は使用できません[ **NdisCoAssignInstanceName** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscoassigninstancename)の VCs を名前にします。 代わりに、MCM は、VC のカスタム GUID と OID を作成し、NDIS を GUID の OID にマッピングを登録する必要があります。 カスタム Oid の登録の詳細については、次を参照してください。 [Oid のカスタマイズと状態インジケーター](customized-oids-and-status-indications.md)します。
+ミニポートコールマネージャー (MCM) では、 [**NdisCoAssignInstanceName**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscoassigninstancename)を使用して VCs に名前を指定することはできません。 代わりに、MCM で VC のカスタム GUID と OID を作成し、その GUID から OID へのマッピングを NDIS に登録する必要があります。 カスタム Oid の登録の詳細については、「カスタマイズされた[oid と状態](customized-oids-and-status-indications.md)の表示」を参照してください。
 
  
 

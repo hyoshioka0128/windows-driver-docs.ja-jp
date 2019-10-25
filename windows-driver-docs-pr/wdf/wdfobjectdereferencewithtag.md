@@ -1,24 +1,24 @@
 ---
 title: WdfObjectDereferenceWithTag マクロ
-description: オブジェクトを指定のフレームワークの参照カウント WdfObjectDereferenceWithTag マクロ デクリメントして、参照に、ドライバーの現在ファイル名と行番号を割り当てます。 このマクロは、参照にもタグ値を割り当てます。
+description: WdfObjectDereferenceWithTag マクロは、指定されたフレームワークオブジェクトの参照カウントをデクリメントし、ドライバーの現在のファイル名と行番号を参照に割り当てます。 このマクロは、参照にタグ値も割り当てます。
 ms.assetid: c5cfe516-ad62-4656-a033-d1800d9554a8
 keywords:
 - WdfObjectDereferenceWithTag マクロ
 ms.date: 08/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d16fbc4afe3e1101881903c3a22d087192fef7f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e5e2af1195bf03fe3e875ff40b6a32c46b1efdf5
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67372090"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842410"
 ---
 # <a name="wdfobjectdereferencewithtag-macro"></a>WdfObjectDereferenceWithTag マクロ
 
 
-\[KMDF および UMDF に適用されます。\]
+\[KMDF と UMDF\] に適用されます
 
-**WdfObjectDereferenceWithTag**指定のフレームワークの参照カウントをデクリメントをマクロを選択し、オブジェクト参照に、ドライバーの現在ファイル名と行番号を割り当てます。 このマクロは、参照にもタグ値を割り当てます。
+**WdfObjectDereferenceWithTag**マクロは、指定されたフレームワークオブジェクトの参照カウントをデクリメントし、ドライバーの現在のファイル名と行番号を参照に割り当てます。 このマクロは、参照にタグ値も割り当てます。
 
 <a name="syntax"></a>構文
 ------
@@ -33,34 +33,34 @@ VOID WdfObjectDereferenceWithTag(
 <a name="parameters"></a>パラメーター
 ----------
 
-*処理*\[で\]  
-Framework のオブジェクトへのハンドル。
+\] での \[の*処理*  
+フレームワークオブジェクトへのハンドル。
 
-*タグ*\[で\]  
-オブジェクト参照を識別するドライバーの定義済みの値。 タグの値は、ドライバーは以前に指定されたタグの値と一致する必要があります[ **WdfObjectReferenceWithTag**](wdfobjectreferencewithtag.md)します。
+\] 内の*タグ*\[  
+オブジェクト参照を識別するドライバー定義値。 タグ値は、ドライバーが以前に[**Wdfobjectreferencewithtag**](wdfobjectreferencewithtag.md)に指定したタグ値と一致している必要があります。
 
 <a name="return-value"></a>戻り値
 ------------
 
 なし。
 
-バグ チェックでは、ドライバー、無効なオブジェクトのハンドルを提供する場合に発生します。
+バグチェックは、ドライバーが無効なオブジェクトハンドルを提供した場合に発生します。
 
 <a name="remarks"></a>注釈
 -------
 
-前に、オブジェクトが削除されるオブジェクトの参照カウントには、0 になると、 **WdfObjectDereferenceWithTag**を返します。
+オブジェクトの参照カウントが0になると、 **WdfObjectDereferenceWithTag**が返される前にオブジェクトが削除される可能性があります。
 
-呼び出す[ **WdfObjectDereferenceActual** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nf-wdfobject-wdfobjectdereferenceactual)または**WdfObjectDereferenceWithTag**の代わりに[ **WdfObjectDereference** ](wdfobjectdereference.md) Microsoft デバッガーに追加の情報 (タグ文字列、行番号、およびファイル名) を提供します。 **WdfObjectDereferenceActual**中に、行番号とファイル名を指定するには、ドライバーは、 **WdfObjectDereferenceWithTag**ドライバーの現在の行番号とファイル名を使用します。
+[**Wdfobjectdereference 参照**](wdfobjectdereference.md)の代わりに[**WdfObjectDereferenceActual**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/nf-wdfobject-wdfobjectdereferenceactual)または**WdfObjectDereferenceWithTag**を呼び出すと、追加情報 (タグ文字列、行番号、およびファイル名) が Microsoft デバッガーに提供されます。 **WdfObjectDereferenceActual**では、ドライバーで行番号とファイル名を指定できます。 **WdfObjectDereferenceWithTag**では、ドライバーの現在の行番号とファイル名が使用されます。
 
-使用して、タグ、行番号、およびファイル名の値を表示することができます、 **! wdftagtracker**デバッガー拡張機能。 デバッガー拡張機能では、ポインターと、一連の文字の両方として、タグの値が表示されます。 詳細については、デバッガーの拡張機能は、次を参照してください。 [KMDF ドライバーをデバッグ](https://docs.microsoft.com/windows-hardware/drivers/wdf/debugging-a-wdf-driver)します。
+**! Wdftagtracker**デバッガー拡張機能を使用して、タグ、行番号、およびファイル名の値を表示できます。 デバッガー拡張機能は、ポインターと一連の文字の両方としてタグ値を表示します。 デバッガー拡張機能の詳細については、「 [KMDF ドライバーのデバッグ](https://docs.microsoft.com/windows-hardware/drivers/wdf/debugging-a-wdf-driver)」を参照してください。
 
-オブジェクトの参照カウントの詳細については、次を参照してください。 [Framework オブジェクトのライフ サイクル](https://docs.microsoft.com/windows-hardware/drivers/wdf/framework-object-life-cycle)します。
+オブジェクト参照カウントの詳細については、「[フレームワークオブジェクトのライフサイクル](https://docs.microsoft.com/windows-hardware/drivers/wdf/framework-object-life-cycle)」を参照してください。
 
 <a name="examples"></a>例
 --------
 
-次は、オブジェクトの参照カウントをデクリメントの例をコードし、タグ値を参照に代入します。
+次のコード例では、オブジェクトの参照カウントをデクリメントし、タグ値を参照に割り当てます。
 
 ```cpp
 WdfObjectDereferenceWithTag(
@@ -92,11 +92,11 @@ WdfObjectDereferenceWithTag(
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Wdfobject.h (Wdf.h を含む)</td>
+<td>Wdfobject .h (Wdf を含む)</td>
 </tr>
 <tr class="odd">
 <td><p>Library</p></td>
-<td>Wdf01000.sys (KMDF)。WUDFx02000.dll (UMDF)</td>
+<td>Wdf01000 (KMDF);WUDFx02000 (UMDF)</td>
 </tr>
 <tr class="even">
 <td><p>IRQL</p></td>
@@ -108,7 +108,7 @@ WdfObjectDereferenceWithTag(
 ## <a name="see-also"></a>関連項目
 
 
-[**WdfObjectDereference**](wdfobjectdereference.md)
+[**WdfObjectDereference 参照**](wdfobjectdereference.md)
 
 [**WdfObjectReferenceWithTag**](wdfobjectreferencewithtag.md)
 

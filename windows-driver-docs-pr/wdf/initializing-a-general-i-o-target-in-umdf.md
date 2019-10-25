@@ -3,51 +3,51 @@ title: UMDF での一般 I/O ターゲットの初期化
 description: UMDF での一般 I/O ターゲットの初期化
 ms.assetid: cf1b39c3-4c82-411b-8eef-117ac0fe793e
 keywords:
-- 一般的な I/O WDK UMDF、初期化の対象します。
-- WDK UMDF を対象と一般的な I/O の初期化
+- 一般的な i/o ターゲット WDK UMDF、初期化
+- 一般的な i/o ターゲットの初期化 WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e2cfd2f92d81ff34e31b4cd427847cc032db9198
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b9ae8b9fe69f008eeb9ad4de20793d1b0bfee238
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67380579"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845445"
 ---
 # <a name="initializing-a-general-io-target-in-umdf"></a>UMDF での一般 I/O ターゲットの初期化
 
 
 [!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
 
-一般的な I/O ターゲットを初期化するために、ドライバーを使用する手順は、I/O のターゲットがかどうかによって異なります[ローカル](general-i-o-targets-in-umdf.md)またはリモートです。
+一般的な i/o ターゲットを初期化するためにドライバーが使用する手順は、i/o ターゲットが[ローカル](general-i-o-targets-in-umdf.md)かリモートかによって異なります。
 
-### <a name="initializing-a-local-io-target"></a>ローカルの I/O ターゲットの初期化
+### <a name="initializing-a-local-io-target"></a>ローカル i/o ターゲットの初期化
 
-ローカルの I/O ターゲットには、デバイスの[I/O の既定のターゲット](general-i-o-targets-in-umdf.md)および I/O のターゲットのファイル ハンドル ベースです。
+ローカル i/o ターゲットには、デバイスの[既定の i/o ターゲット](general-i-o-targets-in-umdf.md)とファイルハンドルベースの i/o ターゲットが含まれます。
 
-ドライバーを呼び出すと、フレームワークに、デバイスのドライバーの既定の I/O ターゲットを初期化します、 [ **IWDFDriver::CreateDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdriver-createdevice)メソッド。 取得する、 [IWDFIoTarget](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfiotarget) 、ドライバー、デバイスの既定の I/O ターゲット、ドライバーの呼び出しにアクセスできるようにするインターフェイス、 [ **IWDFDevice::GetDefaultIoTarget** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdevice-getdefaultiotarget)メソッド。
+このフレームワークは、ドライバーが[**Iwdfdriver:: CreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdriver-createdevice)メソッドを呼び出すと、デバイスの既定の i/o ターゲットを初期化します。 ドライバーがデバイスの既定の i/o ターゲットにアクセスできるようにする[Iwdfiotarget](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfiotarget)インターフェイスを取得するために、ドライバーは[**Iwdfdevice:: GetDefaultIoTarget**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice-getdefaultiotarget)メソッドを呼び出します。
 
-ほとんどのドライバーでは、その既定の I/O ターゲットにのみ要求を送信します。
+ほとんどのドライバーは、既定の i/o ターゲットにのみ要求を送信します。
 
-UMDF ドライバーは、ネットワーク ソケット インターフェイスなどのハンドルに基づくインターフェイスの I/O 要求を送信する必要がある場合、ドライバーは、ファイル ハンドル ベースの I/O ターゲット オブジェクトを作成する必要があります。 ファイル ハンドル ベースの I/O ターゲット オブジェクトを作成するには、ドライバーは、次の操作を行う必要があります。
+UMDF ドライバーがネットワークソケットインターフェイスなどのハンドルベースのインターフェイスに i/o 要求を送信する必要がある場合、ドライバーはファイルハンドルベースの i/o ターゲットオブジェクトを作成する必要があります。 ファイルハンドルベースの i/o ターゲットオブジェクトを作成するには、ドライバーは次の操作を行う必要があります。
 
-1.  呼び出す、 **QueryInterface**メソッド、デバイスの[IWDFDevice](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfdevice)へのポインターを取得するインターフェイス、 [IWDFFileHandleTargetFactory](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdffilehandletargetfactory)インターフェイス。
+1.  デバイスの[Iwdfdevice](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfdevice)インターフェイスの**QueryInterface**メソッドを呼び出して、 [Iwdffilehandletargetfactory](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdffilehandletargetfactory)インターフェイスへのポインターを取得します。
 
-2.  Win32 を呼び出すことによって、ファイル、名前付きパイプ、またはソケットに Win32 ハンドルを取得[ **CreateFile**](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-createfilea)、 **CreateNamedPipe**、または**ソケット**関数.
+2.  Win32 [**CreateFile**](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-createfilea)、 **CreateNamedPipe**、または**socket**関数を呼び出して、ファイル、名前付きパイプ、またはソケットへの win32 ハンドルを取得します。
 
-3.  呼び出す、 [ **IWDFFileHandleTargetFactory::CreateFileHandleTarget** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdffilehandletargetfactory-createfilehandletarget)ファイル、パイプ、またはソケットのファイル ハンドル ベースの I/O ターゲット オブジェクトを作成します。
+3.  [**Iwdffilehandletargetfactory:: createfilehandletarget**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdffilehandletargetfactory-createfilehandletarget)メソッドを呼び出して、ファイルハンドルベースの i/o ターゲットオブジェクトをファイル、パイプ、またはソケットに作成します。
 
-取得する方法を示すコード例については、 [IWDFFileHandleTargetFactory](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdffilehandletargetfactory)インターフェイス、Win32 ハンドルを取得し、ファイル ハンドル ベースの I/O ターゲット オブジェクトを作成、コード例を参照[ **IWDFFileHandleTargetFactory::CreateFileHandleTarget**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdffilehandletargetfactory-createfilehandletarget)します。
+[Iwdffilehandletargetfactory](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdffilehandletargetfactory)インターフェイスを取得し、Win32 ハンドルを取得し、ファイルハンドルベースの i/o ターゲットオブジェクトを作成する方法を示すコード例については、 [**Iwdffilehandletargetfactory:: CreateFileHandleTarget にあるコード例を参照してください。** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdffilehandletargetfactory-createfilehandletarget).
 
-ドライバーがファイル ハンドル ベースの I/O ターゲットを作成した後、ドライバーは、I/O ターゲットを I/O 要求を送信できます。
+ドライバーがファイルハンドルベースの i/o ターゲットを作成した後、ドライバーは i/o ターゲットに i/o 要求を送信できます。
 
-### <a name="initializing-a-remote-io-target"></a>リモートの I/O ターゲットの初期化
+### <a name="initializing-a-remote-io-target"></a>リモート i/o ターゲットの初期化
 
-ドライバーは、リモートの I/O ターゲットを使用して、前に、リモート ターゲット オブジェクトを作成し、次のように、ターゲットを開きますする必要があります。
+ドライバーがリモート i/o ターゲットを使用できるようにするには、次のように、リモートターゲットオブジェクトを作成し、ターゲットを開く必要があります。
 
-1.  呼び出す[ **IWDFDevice2::CreateRemoteTarget** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdevice2-createremotetarget)リモート ターゲット オブジェクトを作成します。
+1.  [**IWDFDevice2:: CreateRemoteTarget**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice2-createremotetarget)を呼び出して、リモートのターゲットオブジェクトを作成します。
 
-2.  いずれかを呼び出す[ **IWDFRemoteTarget::OpenFileByName** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfremotetarget-openfilebyname) (ファイル用) または[ **IWDFRemoteTarget::OpenRemoteInterface** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfremotetarget-openremoteinterface) (用[デバイス インターフェイス](using-device-interfaces-in-umdf-drivers.md)) I/O 操作のターゲットを開きます。
+2.  [**Iwdfremotetarget:: OpenFileByName**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfremotetarget-openfilebyname) (ファイルの場合) または[**Iwdfremotetarget:: openremoteinterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfremotetarget-openremoteinterface) ([デバイスインターフェイス](using-device-interfaces-in-umdf-drivers.md)の場合) のいずれかを呼び出して、i/o 操作のターゲットを開きます。
 
  
 

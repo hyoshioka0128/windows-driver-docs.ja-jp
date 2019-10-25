@@ -1,37 +1,37 @@
 ---
 title: NDIS_STATUS_WWAN_UICC_FILE_STATUS
-description: ミニポート ドライバーでは、モバイル ブロード バンド (MB) のサービスに以前 OID_WWAN_UICC_FILE_STATUS クエリ要求の完了を通知するために、NDIS_STATUS_WWAN_UICC_FILE_STATUS 通知を使用します。
+description: ミニポートドライバーは、NDIS_STATUS_WWAN_UICC_FILE_STATUS 通知を使用して、以前の OID_WWAN_UICC_FILE_STATUS クエリ要求の完了をモバイルブロードバンド (MB) サービスに通知します。
 ms.assetid: ABC19EDC-E414-4783-BC3B-ECABDF06C0C5
 ms.date: 04/09/2019
-keywords: -NDIS_STATUS_WWAN_UICC_FILE_STATUS ネットワーク ドライバーが Windows Vista 以降
+keywords: -Windows Vista 以降の NDIS_STATUS_WWAN_UICC_FILE_STATUS ネットワークドライバー
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 3d5044299d100217d61e26fa8a96e8510a3100e9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6a235c5a4f6e7a54e307c9cf6097956a1360eeaf
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384639"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844811"
 ---
-# <a name="ndisstatuswwanuiccfilestatus"></a>NDIS_STATUS_WWAN_UICC_FILE_STATUS
+# <a name="ndis_status_wwan_uicc_file_status"></a>NDIS_STATUS_WWAN_UICC_FILE_STATUS
 
-ミニポート ドライバーを使用して、 **NDIS_STATUS_WWAN_UICC_FILE_STATUS**モバイル ブロード バンド (MB) のサービスに前回の完了を通知するために通知[OID_WWAN_UICC_FILE_STATUS](oid-wwan-uicc-file-status.md)クエリ要求.
+ミニポートドライバーは、 **NDIS_STATUS_WWAN_UICC_FILE_STATUS**通知を使用して、以前の[OID_WWAN_UICC_FILE_STATUS](oid-wwan-uicc-file-status.md)クエリ要求の完了をモバイルブロードバンド (MB) サービスに通知します。
 
-要請されていないイベントは適用されません。
+要請されていないイベントは適用できません。
 
-この通知を使用して、 [ **NDIS_WWAN_UICC_FILE_STATUS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_uicc_file_status)構造体。
+この通知では、 [**NDIS_WWAN_UICC_FILE_STATUS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_uicc_file_status)構造体が使用されます。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 |   |   |
 | --- | --- |
 | バージョン | Windows 10 バージョン 1903 |
-| Header | Ntddndis.h (include Ndis.h) |
+| Header | Ntddndis (Ndis .h を含む) |
 
 ## <a name="see-also"></a>関連項目
 
-[MB UICC アプリケーションとファイル システム アクセス](mb-uicc-application-and-file-system-access.md)
+[MB UICC アプリケーションとファイルシステムアクセス](mb-uicc-application-and-file-system-access.md)
 
 [OID_WWAN_UICC_FILE_STATUS](oid-wwan-uicc-file-status.md)
 
-[**NDIS_WWAN_UICC_FILE_STATUS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_uicc_file_status)
+[**NDIS_WWAN_UICC_FILE_STATUS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_uicc_file_status)

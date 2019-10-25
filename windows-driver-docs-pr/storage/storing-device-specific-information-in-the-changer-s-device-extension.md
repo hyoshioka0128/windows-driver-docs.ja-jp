@@ -3,17 +3,17 @@ title: チェンジャーのデバイス拡張へのデバイス固有情報の�
 description: チェンジャーのデバイス拡張へのデバイス固有情報の格納
 ms.assetid: 72048d84-1c2d-4f3c-b5e8-f55a812ad567
 keywords:
-- チェンジャー ドライバー WDK のストレージ、デバイスに固有のデータ ストレージ
-- 記憶域チェンジャー ドライバー WDK、デバイスに固有のデータ ストレージ
-- デバイスに固有のデータ ストレージの WDK チェンジャー
+- チェンジャードライバー WDK storage、デバイス固有のデータストレージ
+- ストレージチェンジャードライバー WDK、デバイス固有のデータストレージ
+- デバイス固有のデータストレージ WDK チェンジャー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 37397a7638768b4791e83fa88c7e6caa7a917d7f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 05ed58571c32b7949d1645007654226351a615e0
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383143"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844462"
 ---
 # <a name="storing-device-specific-information-in-the-changers-device-extension"></a>チェンジャーのデバイス拡張へのデバイス固有情報の格納
 
@@ -21,13 +21,13 @@ ms.locfileid: "67383143"
 ## <span id="ddk_storing_device_specific_information_in_the_changers_device_extensi"></span><span id="DDK_STORING_DEVICE_SPECIFIC_INFORMATION_IN_THE_CHANGERS_DEVICE_EXTENSI"></span>
 
 
-チェンジャー miniclass ドライバーがデバイスに固有のデータの必要なストレージを指定します、 [ **ChangerAdditionalExtensionSize** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mcd/nf-mcd-changeradditionalextensionsize)ルーチン。 チェンジャー クラス ドライバーに代わってチェンジャー miniclass ドライバーでは、要求されたストレージが割り当てられ、miniclass ドライバーの[ **ChangerInitialize** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mcd/nf-mcd-changerinitialize)ルーチン。
+チェンジャー miniclass ドライバーは、 [**Changeradditionalextensionsize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mcd/nf-mcd-changeradditionalextensionsize)ルーチン内のデバイス固有のデータに必要なストレージを指定します。 チェンジャークラスドライバーは、要求された記憶域をチェンジャー miniclass ドライバーの代わりに割り当て、miniclass ドライバーの[**Changerinitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mcd/nf-mcd-changerinitialize)ルーチンを呼び出します。
 
-チェンジャー miniclass ドライバーがデバイスの拡張機能にデータを格納するかどうかとどのようなデータを格納、ドライバーのデザイナーの責任です。 通常、SCSI 問い合わせデータまたはチェンジャー デバイスの SCSI 非同等を掲載しています。
+チェンジャー miniclass ドライバーがデバイス拡張機能にデータを格納するかどうかと、格納されるデータは、ドライバーデザイナーによって決まります。 これには通常、チェンジャーデバイスと同等の SCSI 問い合わせデータや SCSI 以外のものが含まれます。
 
-デバイスの拡張機能は、デバイス固有の要素のアドレスとの要求で渡された要素の 0 から始まるアドレス間で変換を miniclass ドライバーを使用するデータもあります。 要求では、要素は要素の種類を使用して、指定された型の最初の要素の 0 から始まるによってアドレス指定します。 デバイスに固有のアドレス通常に従っていないこの要素のアドレス指定スキームようにチェンジャー miniclass ドライバーがデバイスに固有の要素のアドレスを受け取る要素の 0 から始まるアドレスに変換する必要があります。
+デバイス拡張機能には、miniclass ドライバーがデバイス固有の要素アドレスと、要求で渡された0から始まる要素アドレスとの間で変換を行うために使用するデータが含まれる場合もあります。 要求では、要素は、指定された型の最初の要素の0から始まる要素型によってアドレス指定されます。 通常、デバイス固有のアドレスは、この要素のアドレス指定スキームに従っていないため、チェンジャー miniclass ドライバーは、受信した0から始まる要素アドレスをデバイス固有の要素アドレスに変換する必要があります。
 
-アドレスは、変換としてに miniclass ドライバーが要素のアドレスに変換する方法もかまいません。 プロセスを最適化するには、miniclass ドライバーは、デバイスの拡張機能で変換を容易にするデータを格納可能性があります。 たとえばの初期化で、ドライバーでしたから、SCSI 要素のアドレスの割り当て ページまたは SCSI 非同等のデバイス固有の要素のアドレスを取得、および格納する、デバイスに固有のアドレスを再構築に使用できるオフセットにマップしますデバイスの拡張機能内のオフセット。 次に、チェンジャー miniclass ドライバーでは、0 から始まる要素のアドレスを含む要求を受信したときに、デバイス固有の値を 0 から始まるアドレスに変換するのにデバイスの拡張機能に格納されたオフセットを使用できます。 チェンジャー miniclass ドライバーでは、システム ポート ドライバーに送信される Srb でこれらのデバイスに固有のアドレスを使用できます。
+アドレスが翻訳されている限り、miniclass ドライバーが要素アドレスをどのように変換するかは関係ありません。 プロセスを最適化するために、miniclass ドライバーは、デバイス拡張機能での翻訳を促進するデータを格納する場合があります。 たとえば、初期化時に、ドライバーは SCSI 要素のアドレス割り当てページまたは非 SCSI 対応のデバイス固有の要素アドレスを取得し、デバイス固有のアドレスを再構築するために使用できるオフセットにマップし、デバイス拡張機能でオフセットします。 次に、チェンジャー miniclass ドライバーが、0から始まる要素アドレスを含む要求を受信すると、デバイス拡張機能に格納されているオフセットを使用して、0から始まるアドレスをデバイス固有の同等のアドレスに変換できます。 チェンジャー miniclass ドライバーは、システムポートドライバーに送信される SRBs でこれらのデバイス固有のアドレスを使用できます。
 
  
 

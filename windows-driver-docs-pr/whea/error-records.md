@@ -3,76 +3,76 @@ title: エラー レコード
 description: エラー レコード
 ms.assetid: 080da29a-b5cb-45a5-848d-048d9612ee2a
 keywords:
-- Windows ハードウェア アーキテクチャ WDK のエラー、エラー レコード
-- WHEA WDK、エラー レコード
-- WDK WHEA、エラー レコードのエラー
-- WDK WHEA を記録するエラー
-- WDK WHEA エラー レコードの形式
-- WDK WHEA エラー レコードのヘッダー
-- エラー レコード セクション WDK WHEA
+- Windows ハードウェアエラーアーキテクチャ WDK、エラーレコード
+- WHEA WDK、エラーレコード
+- エラー WDK WHEA、エラーレコード
+- WDK WHEA のエラーレコード
+- エラーレコード形式 WDK WHEA
+- エラーレコードヘッダー WDK WHEA
+- エラーレコードセクション WDK WHEA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 18c8d54f2a454eed32681229b62f2cfd7d10b4e5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: aa1ea1c1e4ac6a34690afa23b471e36cbcd6bdc9
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362588"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844414"
 ---
 # <a name="error-records"></a>エラー レコード
 
 
-Windows ハードウェア エラー アーキテクチャ (WHEA) では、標準エラー レコードの形式を使用して、すべてのプラットフォームのハードウェア エラーを表します。 その結果、システム ファームウェアでは、Windows オペレーティング システム、およびユーザー モード アプリケーションでは、同じエラー レコードの形式に基づくすべてのハードウェア エラー レポートと回復メカニズムを設計できます。
+Windows ハードウェアエラーアーキテクチャ (WHEA) は、標準のエラーレコード形式を使用して、すべてのプラットフォームハードウェアエラーを表します。 その結果、システムファームウェア、Windows オペレーティングシステム、およびユーザーモードアプリケーションは、すべて同じエラーレコード形式に基づいてハードウェアエラー報告と復旧メカニズムを設計できます。
 
-WHEA で使用されるエラー レコードの形式がに基づいて、*共通プラットフォーム エラー レコード*の version 2.2 の付録 N」の説明に従って、 [Unified Extensible Firmware Interface (UEFI) 仕様](https://go.microsoft.com/fwlink/p/?linkid=69484).
+WHEA によって使用されるエラーレコードの形式は、「 [Unified Extensible Firmware Interface (UEFI) 仕様](https://go.microsoft.com/fwlink/p/?linkid=69484)のバージョン2.2 の付録 N」で説明されている*一般的なプラットフォームエラーレコード*に基づいています。
 
-次の図は、エラー レコードの一般的な形式を示します。
+次の図は、エラーレコードの一般的な形式を示しています。
 
-![エラー レコードの一般的な形式を示す図](images/whearecord.png)
+![エラーレコードの一般的な形式を示す図](images/whearecord.png)
 
-エラー レコードは、1 つまたは複数の固定長エラー レコード セクション記述子続くエラー レコード ヘッダーで構成されます。 各エラーの記録セクション記述子には、エラー データと情報のデータを含む可変長の関連するエラー レコード セクションがあります。 エラー レコードには、少なくとも 1 つのエラー レコードのセクションを含める必要があります。
+エラーレコードは、エラーレコードヘッダーの後に1つ以上の固定長エラーレコードセクション記述子が続くもので構成されます。 各エラーレコードセクション記述子には、エラーデータまたは情報データを含む、関連付けられた可変長のエラーレコードセクションがあります。 エラーレコードには、少なくとも1つのエラーレコードセクションが含まれている必要があります。
 
-エラー レコードには、エラー レコードのセクションとセクション記述子の動的な追加の余分なバッファー領域を含めることができます。 余分なバッファー領域がエラー レコードの既存のセクションのサイズを動的に増加することもできます。
+エラーレコードには、エラーレコードセクションとセクション記述子を動的に追加するための追加のバッファー領域を含めることができます。 追加のバッファー領域を使用して、既存のエラーレコードセクションのサイズを動的に増やすこともできます。
 
-エラー レコードは、 [ **WHEA\_エラー\_レコード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_whea_error_record)構造によってエラー レコードのヘッダーが説明されている、 [ **WHEA\_エラー\_レコード\_ヘッダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_whea_error_record_header)構造、およびエラーの記録セクション記述子がそれぞれで説明されている、 [ **WHEA\_エラー\_レコード\_セクション\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_whea_error_record_section_descriptor)構造体。
+エラーレコードは、 [**whea\_エラー\_レコード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_whea_error_record)の構造によって記述されます。エラーレコードヘッダーは、 [**whea\_エラー\_レコード\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_whea_error_record_header)構造によって記述され、エラーレコードのセクション記述子はそれぞれ[**WHEA\_エラー\_レコード\_セクション\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_whea_error_record_section_descriptor)の構造によって記述されます。
 
-各エラー レコード セクションには、次のセクションの種類のいずれかを指定できます。
+各エラーレコードセクションには、次のセクションの種類のいずれかを指定できます。
 
-<a href="" id="hardware-error-packet"></a>ハードウェア エラー パケット  
-このエラーの記録セクションには、エラーが報告された低レベル ハードウェア エラー ハンドラー (LLHEH) によって、オペレーティング システムに渡されたハードウェア エラー パケットが含まれています。 このセクションに含まれているデータは、 [WHEA\_エラー\_パケット](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff560465(v=vs.85))構造体。
+<a href="" id="hardware-error-packet"></a>ハードウェアエラーパケット  
+このエラーレコードセクションには、エラーを報告した低レベルのハードウェアエラーハンドラー (LLHEH) によってオペレーティングシステムに渡されたハードウェアエラーパケットが含まれています。 このセクションに含まれるデータは、 [WHEA\_エラー\_パケット](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff560465(v=vs.85))構造によって説明されています。
 
-<a href="" id="generic-processor-error"></a>ジェネリックのプロセッサのエラー  
-このエラー レコード セクションには、特定のプロセッサ アーキテクチャに固有ではないプロセッサ エラー データが含まれます。 このセクションに含まれているデータは、 [ **WHEA\_プロセッサ\_ジェネリック\_エラー\_セクション**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_whea_processor_generic_error_section)構造体。
+<a href="" id="generic-processor-error"></a>汎用プロセッサエラー  
+このエラーレコードセクションには、特定のプロセッサアーキテクチャに固有ではないプロセッサエラーデータが含まれています。 このセクションに含まれるデータは、 [**WHEA\_プロセッサ\_GENERIC\_ERROR\_section**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_whea_processor_generic_error_section)構造体によって説明されています。
 
-<a href="" id="x86-x64-processor-error"></a>x86 または x64 プロセッサのエラー  
-このエラー レコード セクションには、x86 または x64 プロセッサ アーキテクチャに固有のプロセッサのエラー データが含まれています。 このセクションに含まれているデータは、 [ **WHEA\_XPF\_プロセッサ\_エラー\_セクション**](https://msdn.microsoft.com/library/windows/hardware/ff560655)構造体。 次の図では、VariableInfo メンバー内のプロセッサのエラー データを含むデータ構造体の格納方法を示します。 
+<a href="" id="x86-x64-processor-error"></a>x86/x64 プロセッサエラー  
+このエラーレコードセクションには、x86 または x64 プロセッサアーキテクチャに固有のプロセッサエラーデータが含まれています。 このセクションに含まれるデータは、 [**WHEA\_XPF\_PROCESSOR\_ERROR\_section**](https://msdn.microsoft.com/library/windows/hardware/ff560655)構造体によって説明されています。 次の図は、プロセッサエラーデータを含むデータ構造が変数 Info メンバーに格納される方法を示しています。 
 
-![プロセッサのエラー データ](images/wheaxpfsection.gif)
+![プロセッサエラーデータ](images/wheaxpfsection.gif)
 
-<a href="" id="itanium-processor-error"></a>Itanium プロセッサのエラー  
-このエラー レコード セクションには、Itanium プロセッサ アーキテクチャに固有のプロセッサのエラー データが含まれています。 このエラーの記録セクションに含まれているエラー データの書式設定に関する詳細については、次を参照してください。、 [Intel Itanium プロセッサ ファミリのシステムの抽象化層の仕様](https://go.microsoft.com/fwlink/p/?linkid=72212)します。
+<a href="" id="itanium-processor-error"></a>Itanium プロセッサエラー  
+このエラーレコードセクションには、Itanium プロセッサアーキテクチャに固有のプロセッサエラーデータが含まれています。 このエラーレコードセクションに含まれるエラーデータの形式の詳細については、「 [Intel Itanium プロセッサファミリシステムアブストラクションレイヤーの仕様](https://go.microsoft.com/fwlink/p/?linkid=72212)」を参照してください。
 
-<a href="" id="itanium-processor-firmware-error-record-reference"></a>Itanium プロセッサ ファームウェア エラー レコードのリファレンス  
-このエラー レコード セクションには、Itanium プロセッサ アーキテクチャに固有のファームウェア エラー レコードへの参照が含まれています。 によってこのエラーの記録セクションが説明されている、 [ **WHEA\_ファームウェア\_エラー\_レコード\_参照**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_whea_firmware_error_record_reference)構造体。
+<a href="" id="itanium-processor-firmware-error-record-reference"></a>Itanium プロセッサファームウェアのエラーレコードの参照  
+このエラーレコードセクションには、Itanium プロセッサアーキテクチャに固有のファームウェアエラーレコードへの参照が含まれています。 このエラー記録セクションは、 [**WHEA\_ファームウェア\_エラー\_レコード\_参照**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_whea_firmware_error_record_reference)構造によって記述されています。
 
-<a href="" id="platform-memory-error"></a>プラットフォーム メモリ エラー  
-このエラー レコード セクションには、プラットフォーム メモリ エラーのデータが含まれています。 このセクションに含まれているデータは、 [ **WHEA\_メモリ\_エラー\_セクション**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_whea_memory_error_section)構造体。
+<a href="" id="platform-memory-error"></a>プラットフォームメモリエラー  
+このエラーレコードセクションには、プラットフォームメモリのエラーデータが含まれています。 このセクションに含まれるデータは、 [**WHEA\_MEMORY\_ERROR\_section**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_whea_memory_error_section)構造体によって説明されています。
 
-<a href="" id="nonmaskable-interrupt"></a>マスク不可能割り込み  
-このエラー レコード セクションには、マスク不可能割り込み (NMI) データが含まれています。 このセクションに含まれているデータは、 [ **WHEA\_NMI\_エラー\_セクション**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_whea_nmi_error_section)構造体。
+<a href="" id="nonmaskable-interrupt"></a>Nonmaskable 割り込み  
+このエラーレコードセクションには、nonmaskable interrupt (NMI) データが含まれています。 このセクションに含まれるデータは、 [**WHEA\_NMI\_エラー\_セクション**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_whea_nmi_error_section)構造によって説明されています。
 
 <a href="" id="pci-express-error"></a>PCI Express エラー  
-このエラー レコード セクションには、PCI Express エラー データが含まれています。 このセクションに含まれているデータは、 [ **WHEA\_PCIEXPRESS\_エラー\_セクション**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_whea_pciexpress_error_section)構造体。
+このエラーレコードセクションには、PCI Express エラーデータが含まれています。 このセクションに含まれるデータは、 [**WHEA\_PCIEXPRESS\_ERROR\_section**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_whea_pciexpress_error_section)構造体によって説明されています。
 
-<a href="" id="pci-pci-x-bus-error"></a>X-PCI/PCI バス エラー  
-このエラーの記録セクションには、X-PCI/PCI バス エラー データが含まれています。 このセクションに含まれているデータは、 [ **WHEA\_PCIXBUS\_エラー\_セクション**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_whea_pcixbus_error_section)構造体。
+<a href="" id="pci-pci-x-bus-error"></a>PCI/PCI-X バスエラー  
+このエラーレコードセクションには、PCI/PCI-X バスのエラーデータが含まれています。 このセクションに含まれるデータは、 [**WHEA\_PCIXBUS\_ERROR\_section**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_whea_pcixbus_error_section)構造体によって説明されています。
 
-<a href="" id="pci-pci-x-device-error"></a>X-PCI/PCI デバイス エラー  
-このエラーの記録セクションには、PCI/PCI-x デバイス エラー データが含まれています。 このセクションに含まれているデータは、 [ **WHEA\_PCIXDEVICE\_エラー\_セクション**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_whea_pcixdevice_error_section)構造体。
+<a href="" id="pci-pci-x-device-error"></a>PCI/PCI X デバイスエラー  
+このエラーレコードセクションには、PCI/PCI デバイスのエラーデータが含まれています。 このセクションに含まれるデータは、 [**WHEA\_PCIXDEVICE\_ERROR\_section**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_whea_pcixdevice_error_section)構造体によって説明されています。
 
-前の一覧にセクションの種類のいずれかに適合しない追加のハードウェア エラー データ、データを格納するプラットフォーム固有のエラー レコードのセクションを定義できます。 プラットフォーム固有のエラー レコードで定義されているエラーの種類を識別するための対応する GUID の種類ごとにレコードのセクションを定義する必要があります。 この GUID がで指定された、 **SectionType**いずれかのメンバー [ **WHEA\_エラー\_レコード\_セクション\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_whea_error_record_section_descriptor)エラー レコードのセクションの型を記述する構造体。
+前の一覧のいずれかのセクションの種類に適さない追加のハードウェアエラーデータの場合は、データを格納するようにプラットフォーム固有のエラーレコードセクションを定義できます。 定義されているプラットフォーム固有のエラーレコードセクションの種類ごとに、エラーレコードセクションの種類を識別する対応する GUID を定義する必要があります。 この GUID は、すべての WHEA の**Sectiontype**メンバーに指定されています。 [ **\_レコード\_セクション\_記述子の\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_whea_error_record_section_descriptor) 、その型のエラーレコードセクションを記述します。
 
-前の一覧にセクションの種類のいずれかにまたは定義されているプラットフォーム固有のエラー レコード セクションには適合しない追加のハードウェア エラーのデータがある場合は、一般的なエラー レコードのセクションがデータを格納する使用されます。
+前の一覧のいずれかのセクションの種類または定義されているプラットフォーム固有のエラーレコードセクションには適合しない追加のハードウェアエラーデータがある場合は、データを格納するために一般的なエラーレコードセクションが使用されます。
 
  
 

@@ -1,55 +1,55 @@
 ---
 title: OID_GEN_VLAN_ID
-description: クエリとして OID_GEN_VLAN_ID OID が NIC に構成されている VLAN 識別子 (ID) を報告します。
+description: クエリとして、OID_GEN_VLAN_ID OID は NIC の構成された VLAN 識別子 (ID) を報告します。
 ms.assetid: 4e024951-a578-4f69-873d-879aecc96e68
 ms.date: 08/08/2017
-keywords: -OID_GEN_VLAN_ID ネットワーク ドライバーが Windows Vista 以降
+keywords: -Windows Vista 以降の OID_GEN_VLAN_ID ネットワークドライバー
 ms.localizationpriority: medium
-ms.openlocfilehash: c72ace7609c2470cab589219d2fd10dcc943e606
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b2c4eb1bc61af459abdb79eeab86f6635fee5a27
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385732"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844591"
 ---
-# <a name="oidgenvlanid"></a>OID\_GEN\_VLAN\_ID
+# <a name="oid_gen_vlan_id"></a>OID\_GEN\_VLAN\_ID
 
 
-クエリ、OID として\_GEN\_VLAN\_nic ID OID が構成されている VLAN 識別子 (ID) を報告
+クエリとして、OID\_GEN\_VLAN\_ID OID は、NIC の構成された VLAN 識別子 (ID) を報告します。
 
-OID、セットとして\_GEN\_VLAN\_ミニポート ドライバーを処理する NIC の ID OID が構成されている VLAN 識別子 (ID) を指定します。
+設定として、OID\_GEN\_VLAN\_ID OID は、ミニポートドライバーが処理する NIC の構成された VLAN 識別子 (ID) を指定します。
 
 **バージョン情報**
 
-<a href="" id="windows-vista-and-later-versions-of-windows"></a>Windows Vista および Windows の以降のバージョン  
+<a href="" id="windows-vista-and-later-versions-of-windows"></a>Windows Vista 以降のバージョンの Windows  
 サポートされています。
 
-<a href="" id="ndis-6-0-and-later-miniport-drivers"></a>NDIS 6.0 とそれ以降のミニポート ドライバー  
+<a href="" id="ndis-6-0-and-later-miniport-drivers"></a>NDIS 6.0 以降のミニポートドライバー  
 (省略可能)。
 
-<a href="" id="ndis-5-1-miniport-drivers"></a>5.1 の NDIS ミニポート ドライバー  
-任意。
+<a href="" id="ndis-5-1-miniport-drivers"></a>NDIS 5.1 ミニポートドライバー  
+(省略可能)。
 
 <a href="" id="windows-xp"></a>Windows XP  
 サポートされています。
 
-<a href="" id="ndis-5-1-miniport-drivers"></a>5.1 の NDIS ミニポート ドライバー  
-任意。
+<a href="" id="ndis-5-1-miniport-drivers"></a>NDIS 5.1 ミニポートドライバー  
+(省略可能)。
 
 <a name="remarks"></a>注釈
 -------
 
-この要求で渡された情報バッファーには、NDIS が含まれています\_VLAN\_ID データ型。 この NDIS\_VLAN\_ID 値には、IEEE 802.1 q あたり 12 の最下位ビットで VLAN ID が含まれています-2005 standard。 以降、NDIS のビットを注文\_VLAN\_ID 値は予約されており、0 に設定する必要があります。 NDIS NDIS を定義することに注意してください\_VLAN\_ULONG としての ID。
+この要求で渡される情報バッファーには、NDIS\_VLAN\_ID データ型が含まれています。 この NDIS\_VLAN\_ID 値には、IEEE 802.1 Q-2005 標準に従って、下位12ビットの VLAN ID が含まれています。 NDIS\_VLAN\_ID 値の上位ビットは予約されているため、0に設定する必要があります。 NDIS では、NDIS\_VLAN\_ID が ULONG として定義されていることに注意してください。
 
-トランスポートが OID を使用する場合\_GEN\_VLAN\_ミニポート ドライバーのクエリの ID が nic に現在構成されている VLAN ID を返します セットで使用する場合、ミニポート ドライバーは、NIC の現在構成されている VLAN ID を指定した値に設定します。
+トランスポートが OID\_GEN\_VLAN\_ID を使用してクエリを実行すると、ミニポートドライバーは NIC に対して現在構成されている VLAN ID を返します。 セットで使用されている場合、ミニポートドライバーは、NIC の現在構成されている VLAN ID を、指定された値に設定します。
 
-ミニポート ドライバーの中に[ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)特定の NIC ドライバーの関数が最初に、NIC の VLAN ID を 0 に設定します。 ドライバーの*MiniportInitializeEx*関数し、レジストリから次の構成パラメーターを読み取るし、パラメーターが存在する場合は、NIC の VLAN ID をパラメーターの値に設定します。
+特定の NIC に対するミニポートドライバーの[*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)関数の実行中に、ドライバーは最初に NIC の VLAN ID をゼロに設定します。 次に、ドライバーの*MiniportInitializeEx*関数は、レジストリから次の構成パラメーターを読み取ります。また、パラメーターが存在する場合は、NIC の VLAN ID をパラメーターの値に設定します。
 
 ```syntax
 VlanId, REG_DWORD
 ```
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -60,7 +60,7 @@ VlanId, REG_DWORD
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Ntddndis.h (include Ndis.h)</td>
+<td>Ntddndis (Ndis .h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -68,7 +68,7 @@ VlanId, REG_DWORD
 ## <a name="see-also"></a>関連項目
 
 
-[*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)
+[*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)
 
  
 

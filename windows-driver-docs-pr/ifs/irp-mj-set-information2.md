@@ -1,28 +1,28 @@
 ---
-title: IRP_MJ_SET_INFORMATION 操作の Oplock の状態を確認
-description: IRP_MJ_SET_INFORMATION 操作の Oplock の状態を確認
+title: IRP_MJ_SET_INFORMATION 操作の Oplock 状態を確認しています
+description: IRP_MJ_SET_INFORMATION 操作の Oplock 状態を確認しています
 ms.assetid: d164be8d-cf42-4b96-9883-e0f8223bfde4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: df41fe498b6fc92a963999e4f98a1bb2c8704be5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: caacea027897c13c5114b2d515636a232a452f39
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67359258"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841148"
 ---
-# <a name="checking-the-oplock-state-of-an-irpmjsetinformation-operation"></a>IRP_MJ_SET_INFORMATION 操作の Oplock の状態を確認
+# <a name="checking-the-oplock-state-of-an-irp_mj_set_information-operation"></a>IRP_MJ_SET_INFORMATION 操作の Oplock 状態を確認しています
 
 
-IRP_MJ_SET_INFORMATION の特定の操作では、oplock の状態を確認します。 次の 6 つの操作では、このチェックを実行します。
+特定の IRP_MJ_SET_INFORMATION 操作で oplock 状態を確認します。 次の6つの操作でこのチェックが実行されます。
 
-### <a name="span-idfileendoffileinformationfileallocationinformationandfilevaliddatalengthinformationspanspan-idfileendoffileinformationfileallocationinformationandfilevaliddatalengthinformationspanspan-idfileendoffileinformationfileallocationinformationandfilevaliddatalengthinformationspanfileendoffileinformation-fileallocationinformation-and-filevaliddatalengthinformation"></a><span id="FileEndOfFileInformation__FileAllocationInformation__and_FileValidDataLengthInformation"></span><span id="fileendoffileinformation__fileallocationinformation__and_filevaliddatalengthinformation"></span><span id="FILEENDOFFILEINFORMATION__FILEALLOCATIONINFORMATION__AND_FILEVALIDDATALENGTHINFORMATION"></span>FileEndOfFileInformation、FileAllocationInformation、および FileValidDataLengthInformation
+### <a name="span-idfileendoffileinformation__fileallocationinformation__and_filevaliddatalengthinformationspanspan-idfileendoffileinformation__fileallocationinformation__and_filevaliddatalengthinformationspanspan-idfileendoffileinformation__fileallocationinformation__and_filevaliddatalengthinformationspanfileendoffileinformation-fileallocationinformation-and-filevaliddatalengthinformation"></a><span id="FileEndOfFileInformation__FileAllocationInformation__and_FileValidDataLengthInformation"></span><span id="fileendoffileinformation__fileallocationinformation__and_filevaliddatalengthinformation"></span><span id="FILEENDOFFILEINFORMATION__FILEALLOCATIONINFORMATION__AND_FILEVALIDDATALENGTHINFORMATION"></span>FileEndOfFileInformation、FileFileValidDataLengthInformation Information、および
 
-この情報は、次の操作は、ファイルまたはストリームで実行されているときに適用されます。
+この情報は、ファイルまたはストリームに対して次の操作が実行されている場合に適用されます。
 
-- 呼び出し元は、論理ストリームのサイズを変更しようとします。 キャッシュ マネージャーのレイジー ライター スレッドがファイルの新しい末尾を設定しようとすると、oplock のチェックが行われていないことに注意してください。 これは、ため、実際の書き込み要求を受け取ったときに、以前に行ったチェックです。
+- 呼び出し元がストリームの論理サイズを変更しようとしています。 キャッシュマネージャーのレイジーライタースレッドが新しいファイルの終わりを設定しようとすると、oplock チェックは行われないことに注意してください。 これは、実際の書き込み要求を受信したときにチェックが行われたためです。
 
-- 呼び出し元が割り当てられているストリームのサイズを変更しようとするとします。
+- 呼び出し元は、割り当てられたストリームのサイズを変更しようとします。
   <table>
   <tr>
   <th>要求の種類</th>
@@ -35,29 +35,29 @@ IRP_MJ_SET_INFORMATION の特定の操作では、oplock の状態を確認し�
   <p>フィルター</p>
   <p>読み取りハンドル</p>
   <p>読み取り/書き込み</p>
-  <p>書き込みハンドルの読み取り</p>
+  <p>読み取り/書き込み-ハンドル</p>
   </td>
   <td>
-  <p>(FileEndOfFileInformtion、FileAllocationInformation、FileValidDataLengthInformation 用) と IRP_MJ_SET_INFORMATION に分かれます。</p>
+  <p>次の場合に、IRP_MJ_SET_INFORMATION (FileendoffileFileValidDataLengthInformation、Fileて INFORMATION、および) で破損しています。</p>
   <ul>
   <li>
-  <p> 操作は、oplock を所有する FILE_OBJECT から別の oplock のキーを持つ、FILE_OBJECT で発生します。</p>
+  <p> この操作は、oplock を所有する FILE_OBJECT とは異なる oplock キーを持つ FILE_OBJECT に対して発生します。</p>
   </li>
   </ul>
   </td>
   </tr>
   <tr>
   <td>
-  <p>Oplock が破損している場合。</p>
+  <p>Oplock が解除された場合は、次のようになります。</p>
   <ul>
   <li>
-  <p> [なし] に中断します。</p>
+  <p> [なし] に分割します。</p>
   </li>
   <li>
-  <p>ハンドルの読み取り要求。操作がすぐに続行して、中断の受信確認が必要ですが (つまり、なし、受信確認を待機中)。</p>
+  <p>読み取りハンドル要求の場合: 中断の確認が必要ですが、操作はすぐに (つまり、受信確認を待たずに) 続行されます。</p>
   </li>
   <li>
-  <p> 他のすべての要求タイプ。操作を続行する前に、受信確認を受信する必要があります。</p>
+  <p> 他のすべての要求の種類: 操作が続行される前に受信確認を受信する必要があります。</p>
   </li>
   </ul>
   </td>
@@ -67,23 +67,23 @@ IRP_MJ_SET_INFORMATION の特定の操作では、oplock の状態を確認し�
   <p>Read</p>
   </td>
   <td>
-  <p>(FileEndOfFileInformtion、FileAllocationInformation、FileValidDataLengthInformation 用) と IRP_MJ_SET_INFORMATION に分かれます。</p>
+  <p>次の場合に、IRP_MJ_SET_INFORMATION (FileendoffileFileValidDataLengthInformation、Fileて INFORMATION、および) で破損しています。</p>
   <ul>
   <li>
-  <p> 操作は、oplock を所有する FILE_OBJECT から別の oplock のキーを持つ、FILE_OBJECT で発生します。</p>
+  <p> この操作は、oplock を所有する FILE_OBJECT とは異なる oplock キーを持つ FILE_OBJECT に対して発生します。</p>
   </li>
   </ul>
   </td>
   </tr>
   <tr>
   <td>
-  <p>Oplock が破損している場合。</p>
+  <p>Oplock が解除された場合は、次のようになります。</p>
   <ul>
   <li>
-  <p> [なし] に中断します。</p>
+  <p> [なし] に分割します。</p>
   </li>
   <li>
-  <p> 受信確認は必要ありません、すぐに、操作を続行します。</p>
+  <p> 確認は必要ありません。操作は直ちに続行されます。</p>
   </li>
   </ul>
   </td>
@@ -95,30 +95,30 @@ IRP_MJ_SET_INFORMATION の特定の操作では、oplock の状態を確認し�
   <td>
   <ul>
   <li>
-  <p> [なし] に常に中断します。</p>
+  <p> 常に [なし] になります。</p>
   </li>
   <li>
-  <p> 受信確認は必要ありません、すぐに、操作を続行します。</p>
+  <p> 確認は必要ありません。操作は直ちに続行されます。</p>
   </li>
   </ul>
   </td>
   </tr>
   </table>
   <p> </p>
-  <h3><a id="FileRenameInformation__FileShortNameInformation__and_FileLinkInformation"></a><a id="filerenameinformation__fileshortnameinformation__and_filelinkinformation"></a><a id="FILERENAMEINFORMATION__FILESHORTNAMEINFORMATION__AND_FILELINKINFORMATION"></a>FileRenameInformation、FileShortNameInformation、および FileLinkInformation</h3>
-  <p>この情報は、次の操作は、ファイルまたはストリームで実行されているときに適用されます。</p>
+  <h3><a id="FileRenameInformation__FileShortNameInformation__and_FileLinkInformation"></a><a id="filerenameinformation__fileshortnameinformation__and_filelinkinformation"></a><a id="FILERENAMEINFORMATION__FILESHORTNAMEINFORMATION__AND_FILELINKINFORMATION"></a>FileRenameInformation、FileShortNameInformation、FileLinkInformation</h3>
+  <p>この情報は、ファイルまたはストリームに対して次の操作が実行されている場合に適用されます。</p>
   <ul>
   <li>
-  <p> ファイルまたはストリームを変更する場合します。</p>
+  <p> ファイルまたはストリームの名前が変更されています。</p>
   </li>
   <li>
-  <p> 短い名前は、ファイルの設定されています。</p>
+  <p> ファイルに短い名前が設定されています。</p>
   </li>
   <li>
-  <p> ファイルのハード リンクを作成しています。 これは、新しいハード リンクを優先すると、別のファイルに既存のリンクとリンクの置き換えられる oplock が存在する場合で、oplock の状態に影響します。</p>
+  <p> ファイルのハードリンクが作成されています。 これは、新しいハードリンクが別のファイルへの既存のリンクを置き換えるときに、置き換えられるリンクに oplock が存在する場合に、oplock 状態に影響します。</p>
   </li>
   <li>
-  <p> Oplock が存在するストリームの上位ディレクトリを変更する場合、または親ディレクトリの短い名前が設定されています。</p>
+  <p> Oplock が存在するストリームの先祖ディレクトリの名前が変更されたか、または先祖ディレクトリの短い名前が設定されています。</p>
   </li>
   </ul>
   <table>
@@ -132,23 +132,23 @@ IRP_MJ_SET_INFORMATION の特定の操作では、oplock の状態を確認し�
   <p>フィルター</p>
   </td>
   <td>
-  <p>(FileRenameInformation、FileShortNameInformation、FileLinkInformation 用) と IRP_MJ_SET_INFORMATION に分かれます。</p>
+  <p>次の場合に、IRP_MJ_SET_INFORMATION (FileRenameInformation、FileShortNameInformation、および FileLinkInformation) で破損しています。</p>
   <ul>
   <li>
-  <p>  操作は、oplock を所有する FILE_OBJECT から別の oplock のキーを持つ、FILE_OBJECT で発生します。</p>
+  <p>  この操作は、oplock を所有する FILE_OBJECT とは異なる oplock キーを持つ FILE_OBJECT に対して発生します。</p>
   </li>
   </ul>
   </td>
   </tr>
   <tr>
   <td>
-  <p> Oplock が破損している場合。</p>
+  <p> Oplock が解除された場合は、次のようになります。</p>
   <ul>
   <li>
-  <p>  [なし] に中断します。</p>
+  <p>  [なし] に分割します。</p>
   </li>
   <li>
-  <p> 操作を続行する前に、受信確認を受信する必要があります。</p>
+  <p> 操作を続行するには、受信確認を受信する必要があります。</p>
   </li>
   </ul>
   </td>
@@ -158,49 +158,49 @@ IRP_MJ_SET_INFORMATION の特定の操作では、oplock の状態を確認し�
   <p>読み取りハンドル</p>
   </td>
   <td>
-  <p>(FileRenameInformation、FileShortNameInformation、FileLinkInformation 用) と IRP_MJ_SET_INFORMATION に分かれます。</p>
+  <p>次の場合に、IRP_MJ_SET_INFORMATION (FileRenameInformation、FileShortNameInformation、および FileLinkInformation) で破損しています。</p>
   <ul>
   <li>
-  <p>  操作は、oplock を所有する FILE_OBJECT から別の oplock のキーを持つ、FILE_OBJECT で発生します。</p>
+  <p>  この操作は、oplock を所有する FILE_OBJECT とは異なる oplock キーを持つ FILE_OBJECT に対して発生します。</p>
   </li>
   </ul>
   </td>
   </tr>
   <tr>
   <td>
-  <p> Oplock が破損している場合。</p>
+  <p> Oplock が解除された場合は、次のようになります。</p>
   <ul>
   <li>
-  <p>  読み取り専用に中断します。</p>
+  <p>  読み取りに中断します。</p>
   </li>
   <li>
-  <p> 操作を続行する前に、受信確認を受信する必要があります。</p>
+  <p> 操作を続行するには、受信確認を受信する必要があります。</p>
   </li>
   </ul>
   </td>
   </tr>
   <tr>
   <td rowspan="2">
-  <p>書き込みハンドルの読み取り</p>
+  <p>読み取り/書き込み-ハンドル</p>
   </td>
   <td>
-  <p>(FileRenameInformation、FileShortNameInformation、FileLinkInformation 用) と IRP_MJ_SET_INFORMATION に分かれます。</p>
+  <p>次の場合に、IRP_MJ_SET_INFORMATION (FileRenameInformation、FileShortNameInformation、および FileLinkInformation) で破損しています。</p>
   <ul>
   <li>
-  <p> 操作は、oplock を所有する FILE_OBJECT から別の oplock のキーを持つ、FILE_OBJECT で発生します。</p>
+  <p> この操作は、oplock を所有する FILE_OBJECT とは異なる oplock キーを持つ FILE_OBJECT に対して発生します。</p>
   </li>
   </ul>
   </td>
   </tr>
   <tr>
   <td>
-  <p>Oplock が破損している場合。</p>
+  <p>Oplock が解除された場合は、次のようになります。</p>
   <ul>
   <li>
-  <p> 読み取り/書き込みにブレークします。</p>
+  <p> 読み取り/書き込みに中断します。</p>
   </li>
   <li>
-  <p> 操作を続行する前に、受信確認を受信する必要があります。</p>
+  <p> 操作を続行するには、受信確認を受信する必要があります。</p>
   </li>
   </ul>
   </td>
@@ -215,7 +215,7 @@ IRP_MJ_SET_INFORMATION の特定の操作では、oplock の状態を確認し�
   <td>
   <ul>
   <li>
-  <p> Oplock は破損していない、受信確認は不要ですが、および、操作をすぐに続行します。</p>
+  <p> Oplock は解除されず、確認は必要ありません。操作は直ちに続行されます。</p>
   </li>
   </ul>
   </td>
@@ -223,7 +223,7 @@ IRP_MJ_SET_INFORMATION の特定の操作では、oplock の状態を確認し�
   </table>
   <p> </p>
   <h3><a id="FileDispositionInformation"></a><a id="filedispositioninformation"></a><a id="FILEDISPOSITIONINFORMATION"></a>FileDispositionInformation</h3>
-  <p>この情報は、呼び出し元のファイルを削除しようとするときに適用されます。</p>
+  <p>この情報は、呼び出し元がファイルを削除しようとしたときに適用されます。</p>
   <table>
   <tr>
   <th>要求の種類</th>
@@ -234,57 +234,57 @@ IRP_MJ_SET_INFORMATION の特定の操作では、oplock の状態を確認し�
   <p>読み取りハンドル</p>
   </td>
   <td>
-  <p>(FileDispositionInformation) をときに IRP_MJ_SET_INFORMATION に分かれます。</p>
+  <p>次の場合に IRP_MJ_SET_INFORMATION (FileDispositionInformation) で破損します。</p>
   <ul>
   <li>
-  <p>操作は、oplock を所有する FILE_OBJECT から別の oplock のキーを持つ、FILE_OBJECT で発生します。</p>
-  <p><b>AND</b></p>
+  <p>この操作は、oplock を所有する FILE_OBJECT とは異なる oplock キーを持つ FILE_OBJECT に対して発生します。</p>
+  <p><b>そして</b></p>
   </li>
   <li>
-  <p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_file_disposition_information"><b>FILE_DISPOSITION_INFORMATION</b></a>します。DeleteFile は<b>TRUE</b>します。</p>
+  <p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_disposition_information"><b>FILE_DISPOSITION_INFORMATION</b></a>。DeleteFile は<b>TRUE</b>です。</p>
   </li>
   </ul>
   </td>
   </tr>
   <tr>
   <td>
-  <p>Oplock が破損している場合。</p>
+  <p>Oplock が解除された場合は、次のようになります。</p>
   <ul>
   <li>
-  <p> 読み取り専用に中断します。</p>
+  <p> 読み取りに中断します。</p>
   </li>
   <li>
-  <p>操作を続行する前に、受信確認を受信する必要があります。</p>
+  <p>操作を続行するには、受信確認を受信する必要があります。</p>
   </li>
   </ul>
   </td>
   </tr>
   <tr>
   <td rowspan="2">
-  <p>書き込みハンドルの読み取り</p>
+  <p>読み取り/書き込み-ハンドル</p>
   </td>
   <td>
-  <p>(FileDispositionInformation) をときに IRP_MJ_SET_INFORMATION に分かれます。</p>
+  <p>次の場合に IRP_MJ_SET_INFORMATION (FileDispositionInformation) で破損します。</p>
   <ul>
   <li>
-  <p>操作は、oplock を所有する FILE_OBJECT から別の oplock のキーを持つ、FILE_OBJECT で発生します。</p>
-  <p><b>AND</b></p>
+  <p>この操作は、oplock を所有する FILE_OBJECT とは異なる oplock キーを持つ FILE_OBJECT に対して発生します。</p>
+  <p><b>そして</b></p>
   </li>
   <li>
-  <p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_file_disposition_information"><b>FILE_DISPOSITION_INFORMATION</b></a>します。DeleteFile は<b>TRUE</b>します。</p>
+  <p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_disposition_information"><b>FILE_DISPOSITION_INFORMATION</b></a>。DeleteFile は<b>TRUE</b>です。</p>
   </li>
   </ul>
   </td>
   </tr>
   <tr>
   <td>
-  <p>Oplock が破損している場合。</p>
+  <p>Oplock が解除された場合は、次のようになります。</p>
   <ul>
   <li>
-  <p> 読み取り/書き込みにブレークします。</p>
+  <p> 読み取り/書き込みに中断します。</p>
   </li>
   <li>
-  <p>操作を続行する前に、受信確認を受信する必要があります。</p>
+  <p>操作を続行するには、受信確認を受信する必要があります。</p>
   </li>
   </ul>
   </td>

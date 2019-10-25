@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_BDA\_AUTODEMODULATE\_停止
-description: クライアントを使用して、KSPROPERTY\_BDA\_AUTODEMODULATE\_demodulating 復調器ノードへのストリーミング シグナルを停止する停止します。
+title: KSK プロパティ\_BDA\_AUTODEMODULATE\_停止
+description: クライアントは、KSK プロパティ\_BDA\_AUTODEMODULATE\_STOP を使用して、信号ストリーミングの demodulating を demodulator ノードに停止します。
 ms.assetid: 4e937d5c-e43f-44cb-b3bb-fa1f8d496c5e
 keywords:
-- KSPROPERTY_BDA_AUTODEMODULATE_STOP ストリーミング メディア デバイス
+- KSPROPERTY_BDA_AUTODEMODULATE_STOP ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f9f768162ec306bf6c5ed98c304edd6e39085090
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0d499b2188a8cb05f3c992bb74a3a3361197475e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386921"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842158"
 ---
-# <a name="kspropertybdaautodemodulatestop"></a>KSPROPERTY\_BDA\_AUTODEMODULATE\_停止
+# <a name="ksproperty_bda_autodemodulate_stop"></a>KSK プロパティ\_BDA\_AUTODEMODULATE\_停止
 
 
-クライアントを使用して、KSPROPERTY\_BDA\_AUTODEMODULATE\_demodulating 復調器ノードへのストリーミング シグナルを停止する停止します。
+クライアントは、KSK プロパティ\_BDA\_AUTODEMODULATE\_STOP を使用して、信号ストリーミングの demodulating を demodulator ノードに停止します。
 
 ## <span id="ddk_ksproperty_bda_autodemodulate_stop_ks"></span><span id="DDK_KSPROPERTY_BDA_AUTODEMODULATE_STOP_KS"></span>
 
@@ -41,7 +41,7 @@ ms.locfileid: "67386921"
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,8 +50,8 @@ ms.locfileid: "67386921"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>X</p></td>
-<td><p>〇</p></td>
+<td><p>必須ではない</p></td>
+<td><p>[はい]</p></td>
 <td><p>フィルター</p></td>
 <td><p>KSP_NODE</p></td>
 <td><p>なし</p></td>
@@ -61,7 +61,7 @@ ms.locfileid: "67386921"
 
  
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -72,7 +72,7 @@ ms.locfileid: "67386921"
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Bdamedia.h (Bdamedia.h を含む)</td>
+<td>Bdamedia (Bdamedia を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -80,7 +80,7 @@ ms.locfileid: "67386921"
 ## <a name="see-also"></a>関連項目
 
 
-[**KSP\_ノード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_node)
+[**KSP\_ノード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksp_node)
 
  
 

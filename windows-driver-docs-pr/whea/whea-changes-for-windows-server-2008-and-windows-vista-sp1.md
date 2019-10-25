@@ -3,43 +3,43 @@ title: Windows Server 2008 および Windows Vista SP1 での WHEA の変更点
 description: Windows Server 2008 および Windows Vista SP1 での WHEA の変更点
 ms.assetid: fd66ee01-e262-45c2-bced-549192b0eca3
 keywords:
-- Windows ハードウェア エラー アーキテクチャ WDK、Windows Server 2008 の変更
-- Windows ハードウェア エラー アーキテクチャ WDK、Windows Vista SP1 の変更
+- Windows ハードウェアエラーアーキテクチャ WDK、Windows Server 2008 の変更
+- Windows ハードウェアエラーアーキテクチャ WDK、Windows Vista SP1 の変更
 - WHEA WDK、Windows Server 2008 の変更
 - WHEA WDK、Windows Vista SP1 の変更
-- Windows Server 2008 の WDK WHEA
-- Windows Server 2008 の WDK WHEA、WHEA を変更します。
-- Windows Vista SP1 の WDK WHEA
+- Windows Server 2008 WDK WHEA
+- Windows Server 2008 WDK WHEA、WHEA の変更
+- Windows Vista SP1 WDK WHEA
 - Windows Vista SP1 WDK WHEA、WHEA の変更
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e6481d9c693a7c51b0100bf1ce3d010247865689
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4357d16df3afc9435cc1e67ebac2b6db110dda64
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67387140"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845407"
 ---
 # <a name="whea-changes-for-windows-server-2008-and-windows-vista-sp1"></a>Windows Server 2008 および Windows Vista SP1 での WHEA の変更点
 
 
-Windows Server 2008 および Windows Vista SP1 以降、次の変更が行われた Windows ハードウェア エラー アーキテクチャ (WHEA) に。
+Windows Server 2008 および Windows Vista SP1 以降では、Windows ハードウェアエラーアーキテクチャ (WHEA) に次の変更が加えられました。
 
--   ハードウェア プラットフォーム ベンダーは、プラットフォーム固有の機能を使用するよう PSHED にプラグインを提供することで既定 WHEA プラットフォーム固有のハードウェア エラー ドライバー (PSHED) 機能を補うことができます。 PSHED のプラグインは、特殊な Windows デバイス ドライバー、PSHED によって呼び出されるコールバック インターフェイスを実装します。 プラグインの PSHED では、補強したり、Microsoft によって提供される PSHED の既定の動作をオーバーライドします。
+-   ハードウェアプラットフォームのベンダーは、プラットフォーム固有の機能を使用するプラグインを提供することによって、既定の WHEA プラットフォーム固有のハードウェアエラードライバー (PSHED) 機能を補うことができます。 このプラグインは、特別な Windows デバイスドライバーであり、pshed 呼び出されるコールバックインターフェイスを実装しています。 このプラグインの目的は、Microsoft が提供する既定の動作を補強または上書きすることです。
 
-    PSHED プラグインの詳細については、次を参照してください。[プラットフォームに固有のハードウェア エラー ドライバー プラグイン](platform-specific-hardware-error-driver-plug-ins2.md)します。
+    プラグインの詳細については、「[プラットフォーム固有のハードウェアエラードライバープラグイン](platform-specific-hardware-error-driver-plug-ins2.md)」を参照してください。
 
--   WHEA できるエラー レコードの永続化メカニズムをサポートしている[エラー レコード](error-records.md)不揮発性ストレージに格納されます。 その結果、ハードウェアの致命的なエラー条件のため、オペレーティング システムを再起動する必要がありますとエラー レコードが保持されます。 このメカニズムでは、システムが再起動したときに、ハードウェアの致命的なエラー条件に関連するエラーをキャプチャしたデータのいずれもが失われるように、エラー レコードが保持されます。
+-   WHEA では、エラー[レコード](error-records.md)を不揮発性ストレージに格納できるようにする、エラーレコードの永続化メカニズムがサポートされています。 その結果、致命的なハードウェアエラー状態のためにオペレーティングシステムを再起動する必要がある場合、エラーレコードは保持されます。 このメカニズムは、システムの再起動時に、致命的なハードウェアエラー状態に関連するキャプチャされたエラーデータが失われないように、エラーレコードを保持します。
 
-    エラー レコードの永続化の詳細については、次を参照してください。[エラー レコードの永続化メカニズム](error-record-persistence-mechanism.md)します。
+    エラーレコードの永続化の詳細については、「[エラーレコードの永続化メカニズム](error-record-persistence-mechanism.md)」を参照してください。
 
--   WHEA では、ハードウェア エラーが発生したときに、Event Tracing for Windows (ETW) イベントを生成します。 Windows Server 2008 以降、WHEA ハードウェアのエラー イベントとそのハードウェアのエラー イベントを記述するデータ テンプレートは、イベントと Windows Vista でサポートされているテンプレートによって異なります。
+-   WHEA は、ハードウェアエラーが発生するたびに、Windows イベントトレーシング (ETW) イベントを発生させます。 Windows Server 2008 以降では、Windows Vista でサポートされているイベントとテンプレートとは、このハードウェアエラーイベントを説明する WHEA ハードウェアエラーイベントとデータテンプレートが異なります。
 
-    WHEA で ETW のサポートの詳細については、次を参照してください。[ハードウェア エラー イベント](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_whea/)します。
+    WHEA での ETW のサポートの詳細については、「[ハードウェアエラーイベント](https://docs.microsoft.com/windows-hardware/drivers/ddi/_whea/)」を参照してください。
 
--   [WHEA ハードウェア エラーのイベント処理アプリケーション](whea-hardware-error-event-processing-applications.md)WHEA によってログに記録されたイベントをクエリすることによって、システム イベント ログからハードウェアのエラー イベントを取得できます。 ただし、Windows Server 2008 以降では、WHEA ハードウェア エラーのイベント ログに記録するプロバイダーの名前が変更されました。 これらのアプリケーションは、新しいプロバイダーによってエラー イベントにアクセスする必要があります。 詳細については、次を参照してください。[のハードウェア エラー イベント、システム イベント ログを照会](querying-the-system-event-log-for-hardware-error-events.md)します。
+-   [Whea ハードウェアエラーイベント処理アプリケーション](whea-hardware-error-event-processing-applications.md)は、whea によってログに記録されたイベントを照会することによって、システムイベントログからハードウェアエラーイベントを取得できます。 ただし、Windows Server 2008 以降では、WHEA ハードウェアエラーイベントをログに記録するプロバイダーの名前が変更されています。 これらのアプリケーションは、新しいプロバイダーを通じてエラーイベントにアクセスする必要があります。 詳細については、「[ハードウェアエラーイベントのシステムイベントログのクエリ](querying-the-system-event-log-for-hardware-error-events.md)」を参照してください。
 
--   WHEA のハードウェア エラーのイベントだけでなく、アプリケーションの処理[WHEA 管理アプリケーション](whea-management-applications.md)は、Windows Server 2008、Windows Vista SP1 と以降のバージョンの Windows ではサポートされています。 WHEA によって提供される WMI インターフェイス、ユーザー モード アプリケーションは、有効化またはエラーのソースを無効にしてテスト目的でハードウェア エラーを挿入するなど、WHEA 管理操作を実行できます。
+-   WHEA ハードウェアエラーイベント処理アプリケーションに加えて、windows Server 2008、Windows Vista SP1、およびそれ以降のバージョンの Windows では、 [whea 管理アプリケーション](whea-management-applications.md)がサポートされるようになりました。 ユーザーモードアプリケーションでは、WHEA によって提供される WMI インターフェイスを使用して、エラーソースの有効化または無効化や、テストのためのハードウェアエラーの挿入など、WHEA 管理操作を実行できます。
 
  
 

@@ -1,9 +1,9 @@
 ---
-title: KSEVENT\_しました\_検索
-description: KSEVENT\_しました\_自動\_検索が完了したときに、更新イベントがトリガーされます。
+title: KSEVENT\_VIDCAP\_検索
+description: 検索が完了すると、KSEVENT\_VIDCAP\_AUTO\_UPDATE イベントがトリガーされます。
 ms.assetid: 07c7ef26-4f88-40cf-84f2-14cc702f37d5
 keywords:
-- KSEVENT_VIDCAP_SEARCH ストリーミング メディア デバイス
+- KSEVENT_VIDCAP_SEARCH ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -12,22 +12,22 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ddb32ad312405eddbcb4a65e3f9e8871200ef608
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: f851fad3c8f03c0d98649610d55572a5b7c93b8b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67393389"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843673"
 ---
-# <a name="kseventvidcapsearch"></a>KSEVENT\_しました\_検索
+# <a name="ksevent_vidcap_search"></a>KSEVENT\_VIDCAP\_検索
 
 
-KSEVENT\_しました\_自動\_検索が完了したときに、更新イベントがトリガーされます。
+検索が完了すると、KSEVENT\_VIDCAP\_AUTO\_UPDATE イベントがトリガーされます。
 
 ## <span id="ddk_ksevent_vidcap_search_ks"></span><span id="DDK_KSEVENT_VIDCAP_SEARCH_KS"></span>
 
 
-### <a name="span-idusagesummarytablespanspan-idusagesummarytablespanusage-summary-table"></a><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル
+### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル
 
 <table>
 <colgroup>
@@ -39,20 +39,20 @@ KSEVENT\_しました\_自動\_検索が完了したときに、更新イベン�
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>イベント記述子の種類</th>
-<th>イベント値の型</th>
+<th>イベント値の種類</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>X</p></td>
-<td><p>〇</p></td>
+<td><p>必須ではない</p></td>
+<td><p>[はい]</p></td>
 <td><p>フィルター</p></td>
 <td><p><a href="https://docs.microsoft.com/previous-versions/ff561744(v=vs.85)" data-raw-source="[&lt;strong&gt;KSEVENT&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff561744(v=vs.85))"><strong>KSEVENT</strong></a></p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kseventdata" data-raw-source="[&lt;strong&gt;KSEVENTDATA&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kseventdata)"><strong>KSEVENTDATA</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-kseventdata" data-raw-source="[&lt;strong&gt;KSEVENTDATA&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-kseventdata)"><strong>KSEVENTDATA</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -62,9 +62,9 @@ KSEVENT\_しました\_自動\_検索が完了したときに、更新イベン�
 <a name="remarks"></a>注釈
 -------
 
-クライアントは、検索が完了したときに通知するために、特定トラックを検索するときは、このイベントの登録があります。
+クライアントは、特定のトラックを検索するときに、たとえば、検索が完了したことを通知するために、このイベントに登録できます。
 
-DirectShow フィルターと KsProxy の詳細については、次を参照してください。[カーネル ストリーミング プロキシ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_stream/index)します。
+DirectShow フィルターと Ksk プロキシの詳細については、「[カーネルストリーミングプロキシ](https://docs.microsoft.com/windows-hardware/drivers/ddi/_stream/index)」を参照してください。
 
  
 

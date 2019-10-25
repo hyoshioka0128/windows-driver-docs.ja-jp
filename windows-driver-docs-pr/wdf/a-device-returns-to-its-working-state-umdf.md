@@ -3,43 +3,43 @@ title: デバイスが動作状態に戻る
 description: デバイスが動作状態に戻る
 ms.assetid: 2b192eea-f731-4d61-be19-95724bf7b04a
 keywords:
-- 電源管理のシナリオ WDK UMDF、デバイスが稼働状態に戻す
-- デバイスの状態のシナリオ WDK UMDF の操作に戻る
+- 電源管理のシナリオ WDK UMDF、デバイスが動作状態に戻る
+- デバイスが動作状態に戻ります。 WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4632df1c4725dc0888ea611187bc2bd5ca0723a5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 41570e738284f46d13187655592cb0f5501151e3
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385335"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843656"
 ---
 # <a name="a-device-returns-to-its-working-state"></a>デバイスが動作状態に戻る
 
 
 [!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
 
-低電力状態にあるデバイスは、次のいずれかが発生した場合の稼働状態に返されます。
+次のいずれかが発生した場合、低電力状態のデバイスは稼動状態に戻ります。
 
--   デバイスは、外部イベントを検出し、そのバス上ウェイク信号をトリガーします。 カーネル モードのバス ドライバーでは、ウェイク信号を検出します。
+-   デバイスは外部イベントを検出し、そのバスで wake シグナルをトリガーします。 カーネルモードバスドライバーは、ウェイクアップ信号を検出します。
 
--   デバイスがアイドル状態だったし、ドライバーは呼び出し[ **IWDFDevice2::StopIdle**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdevice2-stopidle)します。
+-   デバイスはアイドル状態で、ドライバーは[**IWDFDevice2:: StopIdle**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice2-stopidle)を呼び出します。
 
--   システムの電源の状態は、低電力状態からの作業 (S0) 状態に変更されました。
+-   システムの電源状態が低電力状態から動作中 (S0) 状態に変わりました。
 
-それぞれの状況では、カーネル モードのバス ドライバーは、作業 (D0) の状態のデバイス (バスの子デバイス) を復元します。
+このような状況では、カーネルモードバスドライバーによってデバイス (バスの子デバイス) が動作 (D0) 状態に復元されます。
 
-各 UMDF ベース関数とフィルター ドライバーのデバイスをサポートする、フレームワークは、一度に 1 つのドライバーをドライバー スタックの最下位レベルである driver 以降では、シーケンスで、次を行います。
+デバイスをサポートする各 UMDF ベースの関数とフィルタードライバーについて、フレームワークは次の処理を一度に1つずつ実行します。ドライバーはドライバースタックの一番下のドライバーから始まります。
 
-1.  フレームワークは、ドライバーの[ **IPnpCallback::OnD0Entry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-ipnpcallback-ond0entry) (存在する) 場合、コールバック関数。
+1.  フレームワークは、ドライバーの[**IPnpCallback:: OnD0Entry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallback-ond0entry) callback 関数 (存在する場合) を呼び出します。
 
-2.  ドライバーがデバイスの電源ポリシーの所有者である場合は、フレームワーク、 [ **IPowerPolicyCallbackWakeFromS0::OnDisarmWakeFromS0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-ipowerpolicycallbackwakefroms0-ondisarmwakefroms0)または[ **IPowerPolicyCallbackWakeFromSx::OnDisarmWakeFromSx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-ipowerpolicycallbackwakefromsx-ondisarmwakefromsx)コールバック関数。
+2.  ドライバーがデバイスの電源ポリシーの所有者である場合、フレームワークは[**IPowerPolicyCallbackWakeFromS0:: OnDisarmWakeFromS0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipowerpolicycallbackwakefroms0-ondisarmwakefroms0)または[**IPowerPolicyCallbackWakeFromSx:: OnDisarmWakeFromSx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipowerpolicycallbackwakefromsx-ondisarmwakefromsx) callback 関数を呼び出します。
 
-3.  フレームワークの再起動のすべてのデバイスの電源管理対象の I/O キューと呼び出しの[ **IQueueCallbackIoResume::OnIoResume** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iqueuecallbackioresume-onioresume)コールバック関数 (必要な場合)。
+3.  フレームワークは、デバイスのすべての電源管理 i/o キューを再起動し、必要に応じて[**IQueueCallbackIoResume:: OnIoResume**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iqueuecallbackioresume-onioresume) callback 関数を呼び出します。
 
-4.  場合は、ドライバーは、自己管理型の I/O を使用して、フレームワークのドライバーの[ **IPnpCallbackSelfManagedIo::OnSelfManagedIoRestart** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-ipnpcallbackselfmanagedio-onselfmanagediorestart)コールバック関数。
+4.  ドライバーが自己管理型 i/o を使用している場合、フレームワークはドライバーの[**IPnpCallbackSelfManagedIo:: OnSelfManagedIoRestart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallbackselfmanagedio-onselfmanagediorestart) callback 関数を呼び出します。
 
-次の手順を示す図を表示するには、次を参照してください。[デバイスで、ユーザーのプラグ](a-user-plugs-in-a-device.md)します。
+これらの手順を示す図については、「[デバイスにユーザーが](a-user-plugs-in-a-device.md)接続している」を参照してください。
 
  
 

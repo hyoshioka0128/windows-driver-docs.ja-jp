@@ -4,22 +4,22 @@ description: MSFC\_EventBuffer WMI クラス
 ms.assetid: ce16e42c-5d0b-47e9-9baa-53dcec482940
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: e2e5d5d82aefc63473bdeda72ae1041f7a43f6cf
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f2926ab989023cf44656973b6bf888067e3cd037
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371161"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842866"
 ---
-# <a name="msfceventbuffer-wmi-class"></a>MSFC\_EventBuffer WMI クラス
+# <a name="msfc_eventbuffer-wmi-class"></a>MSFC\_EventBuffer WMI クラス
 
 
 ## <span id="ddk_msfc_eventbuffer_wmi_class_kr"></span><span id="DDK_MSFC_EVENTBUFFER_WMI_CLASS_KR"></span>
 
 
-T11 委員会をサポートする HBA ミニポート ドライバー*ファイバー チャネル HBA API*仕様では、MSFC\_アダプター イベント データがこれらの通知に登録されている WMI クライアントをレポートする EventBuffer クラスイベント。
+T11 委員会の*ファイバーチャネル HBA API*仕様をサポートする hba ミニポートドライバーは、msfc\_eventbuffer クラスを使用して、これらのイベントの通知を受け取るように登録されている WMI クライアントに、アダプターのイベントデータを報告します。
 
-MSFC\_EventBuffer クラスが次のように定義されている*Hbaapi.mof*:
+MSFC\_EventBuffer クラスは、 *Hbaapi .mof*で次のように定義されています。
 
 ```cpp
 class MSFC_EventBuffer { 
@@ -28,9 +28,9 @@ class MSFC_EventBuffer {
 };
 ```
 
-WMI ツール スイートによってコンパイルされるときに、このクラスの定義には、次のデータ構造が生成されます。
+WMI ツールスイートによってコンパイルされた場合、このクラス定義では次のデータ構造が生成されます。
 
-[**MSFC\_EventBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_msfc_eventbuffer)
+[**MSFC\_EventBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_msfc_eventbuffer)
 
 この WMI クラスに関連付けられているメソッドはありません。
 

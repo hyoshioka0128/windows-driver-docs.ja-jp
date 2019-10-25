@@ -3,22 +3,22 @@ title: TDI トランスポートの使用
 description: TDI トランスポートの使用
 ms.assetid: 58fb5e62-e15d-4f15-8eb3-3e302ea08c4f
 keywords:
-- TDI は、WDK Winsock Kernel を転送します。
+- TDI トランスポート WDK Winsock カーネル
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2753f2b49cde398da3caba407475f72b60dc9cfe
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: fb4f82a3bc0315636a9172092a2579f31f05e73c
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67372479"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842971"
 ---
 # <a name="using-tdi-transports"></a>TDI トランスポートの使用
 
 
-Winsock カーネル (WSK) サブシステムを使用するためのサポートを提供します[TDI](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff565094(v=vs.85))トランスポート。 使用して、WSK TDI トランスポートを使用するには[ネットワーク プログラミング インターフェイス (NPI)](network-programming-interface.md)WSK アプリケーション アドレス ファミリ、ソケットの種類の組み合わせをマップする必要があり、TDI ごとのプロトコルが転送に関連するデバイスの名前に使用します。これらのそれぞれの TDI を転送します。 WSK アプリケーションは、アドレス ファミリ、ソケットの種類の組み合わせをマップし、TDI のデバイス名にプロトコルのトランスポートを使用して、 [ **WSK\_TDI\_DEVICENAME\_マッピング**](https://docs.microsoft.com/windows-hardware/drivers/network/wsk-tdi-devicename-mapping)クライアント管理の操作。
+Winsock カーネル (WSK) サブシステムでは、 [TDI](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff565094(v=vs.85))トランスポートの使用がサポートされています。 WSK[ネットワークプログラミングインターフェイス (NPI)](network-programming-interface.md)を介して tdi トランスポートを使用するには、wsk アプリケーションで、使用する各 tdi トランスポートのアドレスファミリ、ソケットの種類、およびプロトコルの組み合わせを、それぞれの tdi の関連付けられたデバイス名にマップする必要があります。プロトコル. WSK アプリケーションは、アドレスファミリ、ソケットの種類、およびプロトコルの組み合わせを、 [**wsk\_tdi\_DEVICENAME\_マッピング**](https://docs.microsoft.com/windows-hardware/drivers/network/wsk-tdi-devicename-mapping)クライアントコントロール操作を使用して、tdi トランスポートのデバイス名にマップします。
 
-次のコード例では、TDI トランスポートのデバイス名を WSK アプリケーションがアドレス ファミリ、ソケットの種類、およびプロトコルの組み合わせをマップする方法を示します。
+次のコード例は、WSK アプリケーションで、アドレスファミリ、ソケットの種類、およびプロトコルの組み合わせを、TDI トランスポートのデバイス名にマップする方法を示しています。
 
 ```C++
 // Number of TDI mappings
@@ -66,9 +66,9 @@ NTSTATUS
 }
 ```
 
-WSK アプリケーションは、ソケットを作成する前に TDI トランスポートのデバイス名にアドレス ファミリ、ソケットの種類、およびプロトコルの組み合わせをマップする必要があります。 WSK アプリケーションでは、アドレス ファミリ、ソケットの種類、およびプロトコルの組み合わせを TDI トランスポートのデバイス名にマップされることが正常に後、アプリケーションは、マップされた TDI トランスポートを使用する新しいソケットを作成できます。
+WSK アプリケーションは、ソケットを作成する前に、アドレスファミリ、ソケットの種類、プロトコルの組み合わせを TDI トランスポートのデバイス名にマップする必要があります。 WSK アプリケーションで、アドレスファミリ、ソケットの種類、およびプロトコルの組み合わせが TDI トランスポートのデバイス名に正常にマップされた後、アプリケーションは、マップされた TDI トランスポートを使用する新しいソケットを作成できます。
 
-**注**  Windows Vista の後に、TDI が Microsoft Windows のバージョンでサポートされません。 使用[Windows フィルタ リング プラットフォーム](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)または[Winsock Kernel](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)代わりにします。
+Windows Vista 以降では、Microsoft Windows のバージョンでは TDI はサポートされませ**ん  。** 代わりに、 [Windows フィルタリングプラットフォーム](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)または[Winsock カーネル](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)を使用してください。
 
  
 

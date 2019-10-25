@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_CAMERACONTROL\_拡張\_PHOTOMAXFRAMERATE
-description: このプロパティは、写真シーケンス モードにあるときに、カメラの最大のキャプチャのフレーム レートを提供します。
+title: KSK プロパティ\_CAMERACONTROL\_拡張\_PHOTOMAXFRAMERATE
+description: このプロパティは、カメラがフォトシーケンスモードの場合の最大キャプチャフレームレートを示します。
 ms.assetid: 49A93E02-232C-4009-8F18-75D067CA7150
 keywords:
-- KSPROPERTY_CAMERACONTROL_EXTENDED_PHOTOMAXFRAMERATE ストリーミング メディア デバイス
+- KSPROPERTY_CAMERACONTROL_EXTENDED_PHOTOMAXFRAMERATE ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,16 +14,16 @@ api_type:
 - HeaderDef
 ms.date: 09/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 452a233fdb5ef3316d86c96875e1a331f7856c79
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b3ad8b4c4104e2204f42c16e4488e3c870a2ebbd
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327214"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841586"
 ---
-# <a name="kspropertycameracontrolextendedphotomaxframerate"></a>KSPROPERTY\_CAMERACONTROL\_拡張\_PHOTOMAXFRAMERATE
+# <a name="ksproperty_cameracontrol_extended_photomaxframerate"></a>KSK プロパティ\_CAMERACONTROL\_拡張\_PHOTOMAXFRAMERATE
 
-このプロパティは、写真シーケンス モードにあるときに、カメラの最大のキャプチャのフレーム レートを提供します。
+このプロパティは、カメラがフォトシーケンスモードの場合の最大キャプチャフレームレートを示します。
 
 ## <a name="usage-summary-table"></a>使用状況の概要テーブル
 
@@ -37,7 +37,7 @@ ms.locfileid: "63327214"
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -46,26 +46,26 @@ ms.locfileid: "63327214"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>〇</p></td>
+<td><p>[はい]</p></td>
+<td><p>[はい]</p></td>
 <td><p>Pin</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header" data-raw-source="[&lt;strong&gt;KSCAMERA_EXTENDEDPROP_HEADER&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)"><strong>KSCAMERA_EXTENDEDPROP_HEADER</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header" data-raw-source="[&lt;strong&gt;KSCAMERA_EXTENDEDPROP_HEADER&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)"><strong>KSCAMERA_EXTENDEDPROP_HEADER</strong></a></p></td>
 </tr>
 </tbody>
 </table>
 
-プロパティの値 (データの操作) が含まれています、 [ **KSCAMERA\_EXTENDEDPROP\_ヘッダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)構造と[ **KSCAMERA\_EXTENDEDPROP\_値**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_value)構造体。 1 秒あたりのフレームで最大フォト フレーム レートを設定または値として返される**KSCAMERA\_EXTENDEDPROP\_値**します。
+プロパティ値 (操作データ) には、 [**KSCAMERA\_extendedprop\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)構造と、 [**KSCAMERA\_EXTENDEDPROP\_値**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_value)の構造体が含まれています。 1秒あたりのフレーム数の最大フォトフレームレートは、 **KSCAMERA\_EXTENDEDPROP\_値**の値として設定または返されます。
 
-フラグのセットではありません、**フラグ**のメンバー [ **KSCAMERA\_EXTENDEDPROP\_ヘッダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)このプロパティの。
+このプロパティの[**KSCAMERA\_EXTENDEDPROP\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)の**flags**メンバーには、フラグが設定されていません。
 
-プロパティの合計データ サイズが**sizeof**(KSCAMERA\_EXTENDEDPROP\_ヘッダー) + **sizeof**(KSCAMERA\_EXTENDEDPROP\_値)。 **サイズ**のメンバー [ **KSCAMERA\_EXTENDEDPROP\_ヘッダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)はこのプロパティの合計データ サイズに設定します。
+プロパティデータの合計サイズは**sizeof**(KSCAMERA\_extendedprop\_HEADER) + **sizeof**(KSCAMERA\_extendedprop\_値) です。 [**KSCAMERA\_EXTENDEDPROP\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)の**size**メンバーは、この total property データサイズに設定されます。
 
-このプロパティのコントロールは、非同期およびないキャンセル可能なは。
+このプロパティコントロールは非同期であり、キャンセルできません。
 
 ## <a name="remarks"></a>注釈
 
-KSPROPERTY に応答するとき\_型\_GET 要求をドライバーのメンバーの設定、 [ **KSCAMERA\_EXTENDEDPROP\_ヘッダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)に、次の場合。
+\_GET 要求の種類\_KSK プロパティに応答すると、ドライバーは、 [**KSCAMERA\_EXTENDEDPROP\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)のメンバーを次のように設定します。
 
 <table>
 <colgroup>
@@ -74,8 +74,8 @@ KSPROPERTY に応答するとき\_型\_GET 要求をドライバーのメンバ�
 </colgroup>
 <thead>
 <tr class="header">
-<th>Member</th>
-<th>値</th>
+<th>メンバー</th>
+<th>Value</th>
 </tr>
 </thead>
 <tbody>
@@ -85,17 +85,17 @@ KSPROPERTY に応答するとき\_型\_GET 要求をドライバーのメンバ�
 </tr>
 <tr class="even">
 <td>PinId</td>
-<td>写真の暗証番号 (pin) の暗証番号 (pin) の ID。</td>
+<td>フォト pin の pin ID。</td>
 </tr>
 <tr class="odd">
-<td>サイズ</td>
-<td><p>sizeof(KSCAMERA_EXTENDEDPROP_HEADER) +</p>
-<p>sizeof(KSCAMERA_EXTENDEDPROP_VALUE)</p></td>
+<td>Size</td>
+<td><p>sizeof (KSCAMERA_EXTENDEDPROP_HEADER) +</p>
+<p>sizeof (KSCAMERA_EXTENDEDPROP_VALUE)</p></td>
 </tr>
 <tr class="even">
 <td>結果</td>
-<td><p>結果の最大フレーム レートを読み取ろうとしてエラー値。</p>
-<p>それ以外の場合は、0 に設定されます。</p></td>
+<td><p>最大フレームレートを読み取ろうとした結果のエラー値。</p>
+<p>それ以外の場合は0です。</p></td>
 </tr>
 <tr class="odd">
 <td>機能</td>
@@ -108,15 +108,15 @@ KSPROPERTY に応答するとき\_型\_GET 要求をドライバーのメンバ�
 </tbody>
 </table>
 
-フレーム レートの値の設定、**比率**のメンバー [ **KSCAMERA\_EXTENDEDPROP\_値**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_value)します。 **Ratio.HighPart**フレーム レートの分子が含まれていますと**Ratio.LowPart**フレーム レートの分母が含まれています。
+フレームレートの値は、 [**KSCAMERA\_EXTENDEDPROP\_値**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_value)の**比率**メンバーで設定されます。 **比率. HighPart**には、フレームレートと比率の分子が含まれ**ます。 lowpart**には、フレームレートの分母が含まれます。
 
-ドライバーは、フォト シーケンス モードでは、ときに、写真をキャプチャの最大フレーム レートを制限するために必要な場合があります。 これは、履歴のフレーム数での「時点」キャプチャ シナリオは、構成された時間範囲に含まれるようにします。 たとえば、メモリの制約に基づいて、アプリケーションが過去の履歴の価値の 1 秒をキャプチャする場合、必要があるため、キャプチャ レートを制限するフレームの N 個のみが必要です。
+ドライバーがフォトシーケンスモードの場合、写真キャプチャの最大フレームレートを制限する必要がある場合があります。 これは、構成された期間内に、特定の数の履歴フレームを含む "モーメントインタイム" キャプチャシナリオが含まれるようにするためです。 たとえば、メモリの制約に基づいて、アプリケーションで過去の履歴を1秒分キャプチャする場合は、キャプチャレートを上限にする必要があります。これにより、必要なフレーム数は N 個だけになります。
 
-設定すると、カメラが高速のフレームをキャプチャできる場合でも提供されているフレーム レート、要求レート、ドライバーは使用する必要があります。 必要に応じて、ドライバーは、要求レートを対応するために余分なフレームをドロップできます。
+設定すると、カメラがフレームを要求された速度で高速にキャプチャできる場合でも、ドライバーはフレームレートを使用する必要があります。 必要に応じて、ドライバーは、要求されたレートに合わせて余分なフレームをドロップできます。
 
-最大フレーム レートの値を 0 に設定 (0、上位との下位の場合は 0 を**比率**) ドライバーの最大フレーム レートの設定をクリアし、フレームをできる限り迅速に提供するドライバーを確認すると同じ効果があります。  フレーム レートを 0 に設定すると、すべての後続のクエリは値を返します最大フレーム レートのカメラのドライバーの考えられる。 
+最大フレームレートの値を 0 (HighPart の場合は0、**比率**の lowpart の場合は 0) に設定すると、ドライバーの最大フレームレート設定がクリアされ、可能な限り高速にフレームを提供するようにドライバーに指示した場合と同じ効果が得られます。  フレームレートが0に設定されると、その後のクエリでは、カメラドライバーで可能な最大フレームレートの値が返されます。 
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 <table>
 <colgroup>
@@ -126,11 +126,11 @@ KSPROPERTY に応答するとき\_型\_GET 要求をドライバーのメンバ�
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>Windows 8.1 以降を利用できます。</p></td>
+<td><p>Windows 8.1 以降で使用できます。</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Ksmedia.h (Ksmedia.h を含む)</td>
+<td>Ksmedia .h (Ksk を含む)</td>
 </tr>
 </tbody>
 </table>

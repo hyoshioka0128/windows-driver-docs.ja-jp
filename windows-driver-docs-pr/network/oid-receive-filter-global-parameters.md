@@ -1,55 +1,55 @@
 ---
 title: OID_RECEIVE_FILTER_GLOBAL_PARAMETERS
-description: 上にあるドライバーでは、グローバルを取得する OID_RECEIVE_FILTER_GLOBAL_PARAMETERS の要求がネットワーク アダプターのフィルターのパラメーターを受け取る OID クエリを発行します。
+description: その後のドライバーは、ネットワークアダプターのグローバル受信フィルターパラメーターを取得するために、OID_RECEIVE_FILTER_GLOBAL_PARAMETERS の OID クエリ要求を発行します。
 ms.assetid: be6f7210-d1f9-4490-838a-806488df41da
 ms.date: 08/08/2017
-keywords: -OID_RECEIVE_FILTER_GLOBAL_PARAMETERS ネットワーク ドライバーが Windows Vista 以降
+keywords: -Windows Vista 以降の OID_RECEIVE_FILTER_GLOBAL_PARAMETERS ネットワークドライバー
 ms.localizationpriority: medium
-ms.openlocfilehash: 38199a74d053ee45aab50c216be88cce168d1a4c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5d5d7bb47fce54f51b0b6a26b41c7d13e669ed62
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67359223"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844010"
 ---
-# <a name="oidreceivefilterglobalparameters"></a>OID\_受信\_フィルター\_GLOBAL\_パラメーター
+# <a name="oid_receive_filter_global_parameters"></a>グローバル\_パラメーター\_\_フィルターを受け取る OID\_
 
 
-上にあるドライバーは、OID の OID クエリ要求を発行\_受信\_フィルター\_GLOBAL\_グローバルを取得するパラメーターは、ネットワーク アダプターのフィルターのパラメーターを受信します。
+これまでのドライバーは oid クエリ要求 oid を発行\_、グローバル\_パラメーター\_受信\_フィルターを適用して、ネットワークアダプターのグローバル受信フィルターパラメーターを取得します。
 
-OID のクエリ要求から正常に戻った後、 **InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体ポインターが含まれています、 [ **NDIS\_受信\_フィルター\_GLOBAL\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_filter_global_parameters)構造体。
+OID クエリ要求から正常に返された後、 [**ndis\_oid\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造の**informationbuffer**メンバーには、ndis へのポインターが含まれています。これには、 [ **\_グローバル\_\_受信\_フィルターが含まれPARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_global_parameters)構造体。
 
 <a name="remarks"></a>注釈
 -------
 
-NDIS フィルターが表示される次の NDIS インターフェイスで使用されます。
+NDIS 受信フィルターは、次の NDIS インターフェイスで使用されます。
 
--   [NDIS パケット結合](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-packet-coalescing)します。 使用する方法の詳細についてはこのインターフェイスでフィルターが表示されるを参照してください[管理パケット結合受信フィルター](https://docs.microsoft.com/windows-hardware/drivers/network/managing-packet-coalescing-receive-filters)します。
+-   [NDIS パケット合体](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-packet-coalescing)。 このインターフェイスで受信フィルターを使用する方法の詳細については、「[パケット合体受信フィルターの管理](https://docs.microsoft.com/windows-hardware/drivers/network/managing-packet-coalescing-receive-filters)」を参照してください。
 
--   [シングル ルート I/O 仮想化 (SR-IOV)](https://docs.microsoft.com/windows-hardware/drivers/network/single-root-i-o-virtualization--sr-iov-)します。 使用する方法の詳細についてはこのインターフェイスでフィルターが表示されるを参照してください[仮想ポートで受信フィルターを設定](https://docs.microsoft.com/windows-hardware/drivers/network/setting-a-receive-filter-on-a-virtual-port)します。
+-   [シングルルート I/o 仮想化 (sr-iov)](https://docs.microsoft.com/windows-hardware/drivers/network/single-root-i-o-virtualization--sr-iov-)。 このインターフェイスで受信フィルターを使用する方法の詳細については、「[仮想ポートでの受信フィルターの設定](https://docs.microsoft.com/windows-hardware/drivers/network/setting-a-receive-filter-on-a-virtual-port)」を参照してください。
 
--   [バーチャル マシン キュー (VMQ)](https://docs.microsoft.com/windows-hardware/drivers/network/virtual-machine-queue--vmq--in-ndis-6-20)。 使用する方法の詳細についてはこのインターフェイスでフィルターが表示されるを参照してください[設定および VMQ のフィルターをクリアする](https://docs.microsoft.com/windows-hardware/drivers/network/setting-and-clearing-vmq-filters)します。
+-   [仮想マシン キュー (VMQ)](https://docs.microsoft.com/windows-hardware/drivers/network/virtual-machine-queue--vmq--in-ndis-6-20)。 このインターフェイスで受信フィルターを使用する方法の詳細については、「 [VMQ フィルターの設定とクリア](https://docs.microsoft.com/windows-hardware/drivers/network/setting-and-clearing-vmq-filters)」を参照してください。
 
-プロトコル ドライバー以降 NDIS 6.20 が動作では、OID を使用\_受信\_フィルター\_GLOBAL\_パラメーターの現在のグローバル構成パラメーターをクエリには、ネットワーク アダプターでフィルター処理を受信します。 プロトコル ドライバーがこの OID を使用して、受信の種類をフィルター処理するかどうかを判断または受信するなど、キューを有効または無効にします。
+NDIS 6.20 以降では、プロトコルドライバーは、グローバル\_パラメーター\_受信\_フィルターを使用して、ネットワークアダプターの受信フィルター処理のために現在のグローバル構成パラメーターを照会\_ます。 たとえば、プロトコルドライバーは、この OID を使用して、受信フィルターの種類または受信キューを有効にするか無効にするかを決定できます。
 
-### <a name="return-status-codes"></a>リターン状態コード
+### <a name="return-status-codes"></a>ステータスコードを返す
 
-OID の OID のクエリ要求を処理する NDIS\_受信\_フィルター\_GLOBAL\_ミニポート ドライバー、および次のステータス コードを返します。 1 つのパラメーター。
+NDIS は、ミニポートドライバーのグローバル\_パラメーター\_受信\_フィルター処理する oid の OID クエリ要求を処理し、次のいずれかのステータスコードを返します\_します。
 
 <a href="" id="ndis-status-success"></a>NDIS\_状態\_成功  
 要求は正常に完了しました。
 
-<a href="" id="ndis-status-pending"></a>NDIS\_状態\_PENDING  
-完了待ちになっています。 NDIS 渡します最終的な状態コードと結果を呼び出し元の OID 要求の完了ハンドラーに要求が完了した後。
+<a href="" id="ndis-status-pending"></a>NDIS\_状態\_保留中  
+要求は完了待ちです。 NDIS は、要求が完了した後に、最終的なステータスコードと結果を呼び出し元の OID 要求完了ハンドラーに渡します。
 
-<a href="" id="ndis-status-invalid-length"></a>NDIS\_状態\_無効な\_長さ  
-情報バッファーが小さすぎます。 NDIS セット、**データ。クエリ\_情報。BytesNeeded**内のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体に必要な最小バッファー サイズ。
+<a href="" id="ndis-status-invalid-length"></a>NDIS\_の状態\_無効な\_の長さです  
+情報バッファーが短すぎます。 NDIS はデータを設定**します。クエリ\_情報。** 必要な最小バッファーサイズに対して、 [**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造体のメンバーが必要です。
 
-<a href="" id="ndis-status-invalid-parameter"></a>NDIS\_状態\_無効な\_パラメーター  
-基になるネットワーク アダプターがサポートされていない機能を有効にしようとした要求が失敗しました。
+<a href="" id="ndis-status-invalid-parameter"></a>NDIS\_の状態\_無効な\_パラメーターです  
+基になるネットワークアダプターでサポートされていない機能を有効にしようとしたため、要求は失敗しました。
 
 <a href="" id="ndis-status-failure"></a>NDIS\_状態\_エラー  
-他の理由から、要求が失敗しました。
+他の理由で要求が失敗しました。
 
 <a name="requirements"></a>要件
 ------------
@@ -62,11 +62,11 @@ OID の OID のクエリ要求を処理する NDIS\_受信\_フィルター\_GLO
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>以降では、NDIS 6.20 が動作をサポートします。</p></td>
+<td><p>NDIS 6.20 以降でサポートされています。</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Ntddndis.h (include Ndis.h)</td>
+<td>Ntddndis (Ndis .h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -74,9 +74,9 @@ OID の OID のクエリ要求を処理する NDIS\_受信\_フィルター\_GLO
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
+[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)
 
-[**NDIS\_RECEIVE\_FILTER\_GLOBAL\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_filter_global_parameters)
+[**NDIS\_グローバル\_パラメーター\_を受け取る\_フィルター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_global_parameters)
 
  
 

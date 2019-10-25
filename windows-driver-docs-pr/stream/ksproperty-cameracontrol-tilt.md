@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_CAMERACONTROL\_傾き
-description: ユーザー モードのクライアントの使用、KSPROPERTY\_CAMERACONTROL\_傾きプロパティを取得またはカメラの傾きの設定を設定します。 このプロパティは省略可能です。
+title: KSK プロパティ\_CAMERACONTROL\_チルト
+description: ユーザーモードのクライアントは、KSK プロパティ\_CAMERACONTROL\_傾きプロパティを使用して、カメラの傾き設定を取得または設定します。 このプロパティは省略可能です。
 ms.assetid: 265315ce-6f35-4f5a-907f-b5595e7fb5af
 keywords:
-- KSPROPERTY_CAMERACONTROL_TILT ストリーミング メディア デバイス
+- KSPROPERTY_CAMERACONTROL_TILT ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ed0d05ecaf76b5661db7cfc661dfc6e257b91d2e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a4e66166604023b658300d4c4f4b0d72b09a0c41
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67373186"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842486"
 ---
-# <a name="kspropertycameracontroltilt"></a>KSPROPERTY\_CAMERACONTROL\_傾き
+# <a name="ksproperty_cameracontrol_tilt"></a>KSK プロパティ\_CAMERACONTROL\_チルト
 
 
-ユーザー モードのクライアントの使用、KSPROPERTY\_CAMERACONTROL\_傾きプロパティを取得またはカメラの傾きの設定を設定します。 このプロパティは省略可能です。
+ユーザーモードのクライアントは、KSK プロパティ\_CAMERACONTROL\_傾きプロパティを使用して、カメラの傾き設定を取得または設定します。 このプロパティは省略可能です。
 
 ## <span id="ddk_ksproperty_cameracontrol_tilt_ks"></span><span id="DDK_KSPROPERTY_CAMERACONTROL_TILT_KS"></span>
 
@@ -41,7 +41,7 @@ ms.locfileid: "67373186"
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,33 +50,33 @@ ms.locfileid: "67373186"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>〇</p></td>
+<td><p>[はい]</p></td>
+<td><p>[はい]</p></td>
 <td><p>フィルターまたはノード</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_cameracontrol_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_cameracontrol_s)"><strong>KSPROPERTY_CAMERACONTROL_S</strong> </a>または<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_NODE_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s)"> <strong>KSPROPERTY_CAMERACONTROL_NODE_S</strong></a></p></td>
-<td><p>LONG</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_s)"><strong>KSPROPERTY_CAMERACONTROL_S</strong></a>または<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_NODE_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s)"> <strong>KSPROPERTY_CAMERACONTROL_NODE_S</strong></a></p></td>
+<td><p>長い</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-プロパティの値 (データの操作) は、カメラの傾きの設定を指定する LONG が。 この値は度数で表されます。
+プロパティ値 (操作データ) は、カメラの傾き設定を指定する LONG です。 この値は度数で表されます。
 
-正の値は、画像の平面をポイントします。 負の値は、次の図に示すように、画像の平面をポイントします。
+正の値は、イメージの平面を上にポイントします。 負の値は、次の図に示すように、画像平面を下方向に指します。
 
-![図が表示されたカメラの傾きの値](images/cam-tilt-1.png)
+![カメラの傾きの値を示す図](images/cam-tilt-1.png)
 
-このプロパティをサポートするすべてのビデオ キャプチャ ミニドライバーには、このプロパティの値を範囲と既定値を定義する必要があります。 デバイスの範囲には、-180 +180 経由する必要があります。 既定値は 0 である必要があります。
+このプロパティをサポートするすべてのビデオキャプチャミニドライバーで、このプロパティの範囲と既定値を定義する必要があります。 デバイスの範囲は-180 ~ + 180 である必要があります。 既定値は0である必要があります。
 
-**注意**  書き込みや、アプリケーションのテスト、ときに注意する必要が実際には、一部のドライバーが定義傾きの値と標準的な単位に基づかないがカスタム ステップ値のカスタムの範囲。 ドライバーは、物理的にまたはデジタルの傾きのコントロールを実装できます。
+**注意**  アプリの作成時またはテスト時には、実際には、一部のドライバーで、傾きの値のカスタム範囲と、通常の単位に基づいていないカスタムのステップ値が定義されていることに注意してください。 ドライバーは、物理的またはデジタル的にチルトコントロールを実装する場合があります。
 
  
 
 <a name="remarks"></a>注釈
 -------
 
-**値**、KSPROPERTY のメンバー\_CAMERACONTROL\_S 構造体の傾きの設定を指定します。
+CAMERACONTROL\_S 構造体\_KSK プロパティの**値**メンバーは、傾きの設定を指定します。
 
 <a name="requirements"></a>要件
 ------------
@@ -89,7 +89,7 @@ ms.locfileid: "67373186"
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Ksmedia.h (Ksmedia.h を含む)</td>
+<td>Ksmedia .h (Ksk を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -97,9 +97,9 @@ ms.locfileid: "67373186"
 ## <a name="see-also"></a>関連項目
 
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
-[**KSPROPERTY\_CAMERACONTROL\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_cameracontrol_s)
+[**KSK プロパティ\_CAMERACONTROL\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_s)
 
  
 

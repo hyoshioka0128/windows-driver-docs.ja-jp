@@ -3,17 +3,17 @@ title: 印刷モニターの初期化
 description: 印刷モニターの初期化
 ms.assetid: 006727dd-aa0f-451c-b1c9-983d0c6401df
 keywords:
-- 印刷 WDK、モニターの初期化
-- 印刷のモニターを初期化しています
+- 印刷モニター WDK、初期化
+- 印刷モニターの初期化
 - LoadLibrary
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e54ede885448afa733d60386a4b5efb12b40f06b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5c0e35f11a3f951df81dc68b6f168360972e1eb8
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385987"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842304"
 ---
 # <a name="initializing-a-print-monitor"></a>印刷モニターの初期化
 
@@ -21,13 +21,13 @@ ms.locfileid: "67385987"
 
 
 
-スプーラは、印刷モニター DLL を読み込む LoadLibrary を呼び出し、システムは、DLL の直後を呼び出します。 **DllEntryPoint**関数。 一般のエントリ ポイント関数を呼び出す DisableThreadLibraryCalls、DLL はスレッドが作成され、削除されたときに不必要に通知しないよう、Microsoft Windows SDK のドキュメントで説明されていることをお勧めします。
+スプーラが、出力モニターの DLL を読み込むために LoadLibrary を呼び出すと、DLL の**Dllentrypoint**関数が直ちに呼び出されます。 通常は、Microsoft Windows SDK のドキュメントで説明されているように、エントリポイント関数で DisableThreadLibraryCalls を呼び出すことをお勧めします。これにより、スレッドが作成されて削除されたときに DLL が不必要に通知されることはありません。
 
-各 DLL は、LoadLibrary の呼び出し後、スプーラーが呼び出して初期化関数をエクスポートします。 言語は、Dll を監視し、ポートの監視のサーバー Dll のエクスポート、 [ **InitializePrintMonitor2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/nf-winsplp-initializeprintmonitor2)関数。 ポート モニター UI の Dll のエクスポート、 [ **InitializePrintMonitorUI** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/nf-winsplp-initializeprintmonitorui)関数。
+各 DLL は、LoadLibrary を呼び出した後にスプーラが呼び出す初期化関数をエクスポートします。 言語モニター Dll およびポートモニターサーバー Dll は、 [**InitializePrintMonitor2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winsplp/nf-winsplp-initializeprintmonitor2)関数をエクスポートします。 ポートモニターの UI Dll は、 [**Initializeprintmonitorui**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winsplp/nf-winsplp-initializeprintmonitorui)関数をエクスポートします。
 
-残りの部分にポインターを返すため、これら 2 つの初期化関数は、[印刷のモニターが定義されている関数](functions-defined-by-print-monitors.md)スプーラーが呼び出すことができます。 初期化関数では、負荷時の初期化の操作も実行できます。 モニターの[ **InitializePrintMonitor2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/nf-winsplp-initializeprintmonitor2)関数は、モニターのインスタンス ハンドルを返します。 モニターは、インスタンス固有の情報を格納するローカル メモリを割り当てるし、モニターのハンドルを割り当てられたメモリの識別子として使用する必要があります。
+これら2つの初期化関数は、[印刷モニターで定義されている](functions-defined-by-print-monitors.md)他の関数へのポインターを返すので、スプーラはこれらの関数を呼び出すことができます。 初期化関数は、読み込み時の初期化操作を実行することもできます。 モニターの[**InitializePrintMonitor2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winsplp/nf-winsplp-initializeprintmonitor2)関数は、モニターインスタンスハンドルを返します。 モニターは、インスタンス固有の情報を格納するためにローカルメモリを割り当て、割り当てられたメモリの識別子としてモニターハンドルを使用する必要があります。
 
-スプーラが開始されると、すべてのモニターがインストールされている Dll を読み込みます。 すべてのモニターの初期化関数を呼び出した後は、スプーラーは各ポート モニターを呼び出します。 [ **EnumPorts** ](https://docs.microsoft.com/previous-versions/ff548754(v=vs.85))関数で、モニターでサポートされているポートを列挙します。 (モニターをサポートしているポート、ポートが、モニターのデータベースに追加されている場合」の説明に従って[ポートを追加する](adding-a-port.md))。」の説明に従って、ポートを開くはサポートされている各[ポートを開いたり閉じたり](opening-and-closing-a-port.md)します。
+スプーラを初めて起動すると、インストールされているすべてのモニター Dll が読み込まれます。 すべてのモニター初期化関数を呼び出した後、スプーラは各ポートモニターの[**Enumports**](https://docs.microsoft.com/previous-versions/ff548754(v=vs.85))関数を呼び出します。この関数は、モニターでサポートされているポートを列挙します。 (ポートの[追加](adding-a-port.md)に関するページの説明に従って、ポートがモニターのデータベースに追加されている場合、モニターはポートをサポートします)。次に、「[ポートの開閉](opening-and-closing-a-port.md)」で説明されているように、サポートされている各ポートが開きます。
 
  
 

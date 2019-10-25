@@ -1,22 +1,22 @@
 ---
 title: WDI_TLV_SCAN_MODE
-description: WDI_TLV_SCAN_MODE では、スキャン モード パラメーターを含む TLV です。
+description: WDI_TLV_SCAN_MODE は、スキャンモードパラメーターを含む TLV です。
 ms.assetid: 9F954B66-4F1D-48F2-9316-BE623DF0CAE6
 ms.date: 07/18/2017
 keywords:
-- WDI_TLV_SCAN_MODE ネットワーク ドライバーが Windows Vista 以降
+- WDI_TLV_SCAN_MODE ネットワークドライバー (Windows Vista 以降)
 ms.localizationpriority: medium
-ms.openlocfilehash: b9c79939f2e99e5bbd5420be20070532f81010d7
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f22f52d952e4a8761417810f744f618d2cd8c94e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67366506"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841739"
 ---
-# <a name="wditlvscanmode"></a>WDI\_TLV\_スキャン\_モード
+# <a name="wdi_tlv_scan_mode"></a>WDI\_TLV\_SCAN\_モード
 
 
-WDI\_TLV\_スキャン\_モードは、スキャン モード パラメーターを含む TLV します。
+WDI\_TLV\_SCAN\_MODE は、スキャンモードパラメーターを含む TLV です。
 
 ## <a name="tlv-type"></a>TLV 型
 
@@ -26,21 +26,21 @@ WDI\_TLV\_スキャン\_モードは、スキャン モード パラメーター
 ## <a name="length"></a>長さ
 
 
-含まれるすべての要素のサイズの合計をバイト単位で。
+含まれているすべての要素のサイズの合計 (バイト単位)。
 
 ## <a name="values"></a>値
 
 
-| 型                                                | 説明                                                                                                                                                                                                                       |
+| タスクバーの検索ボックスに                                                | 説明                                                                                                                                                                                                                       |
 |-----------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| UINT8                                               | フル スキャンの手順を繰り返す回数。 この値が 0 に設定されている場合は、ホストにより、タスクが中止されるまでスキャンを繰り返す必要があります。                                                                     |
-| [**WDI\_スキャン\_型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_scan_type)       | 実行されるスキャンの種類を指定します。 場合 WDI\_スキャン\_型\_アクティブに設定されている、デバイスはアクティブ チャネルのみをスキャンする必要があります。                                                                                                |
-| UINT8                                               | ライブ更新が必要なかどうかと、上記の推奨される調整のロジックで見つかったときに、検出されたエントリを報告する必要がありますを指定します。 この値は、Microsoft コンポーネントが BSS リストのキャッシュを管理する場合に常に true です。 |
-| [**WDI\_スキャン\_トリガー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_scan_trigger) | スキャンのトリガーを指定します。                                                                                                                                                                                               |
+| UINT8                                               | フルスキャンの手順を繰り返す回数。 この値が0に設定されている場合は、タスクがホストによって中止されるまでスキャンを繰り返す必要があります。                                                                     |
+| [**WDI\_SCAN\_の種類**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_scan_type)       | 実行するスキャンの種類を指定します。 WDI\_SCAN\_TYPE\_ACTIVE が設定されている場合、デバイスはアクティブなチャネルのみをスキャンする必要があります。                                                                                                |
+| UINT8                                               | ライブ更新が必要かどうかを指定し、検出されたエントリが見つかった場合はそれを報告する必要があります。上記の推奨される調整ロジックを使用します。 Microsoft コンポーネントが BSS リストキャッシュを管理する場合、この値は常に true です。 |
+| [**WDI\_SCAN\_トリガー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_scan_trigger) | スキャンのトリガーを指定します。                                                                                                                                                                                               |
 
  
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -59,7 +59,7 @@ WDI\_TLV\_スキャン\_モードは、スキャン モード パラメーター
 </tr>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Wditypes.hpp</td>
+<td>Wditypes</td>
 </tr>
 </tbody>
 </table>

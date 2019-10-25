@@ -3,20 +3,20 @@ title: パラレル ポートとデバイスの IOCTL とコールバックの�
 description: パラレル ポートとデバイスの IOCTL とコールバックのサポート
 ms.assetid: 72a31f50-2f59-4a4d-aac7-571f83a94259
 keywords:
-- システム提供平行ドライバー WDK、Ioctl
-- Ioctl WDK 並列ドライバー
-- コールバック WDK 並列ドライバー
-- システム提供平行ドライバー WDK、コールバック
-- WDK、コールバックをデバイスに並列します。
-- デバイス、WDK の Ioctl に並列します。
+- システム提供のパラレルドライバー WDK、Ioctl
+- Ioctl WDK パラレルドライバー
+- コールバック WDK パラレルドライバー
+- システム提供のパラレルドライバー WDK、コールバック
+- 並列デバイス WDK、コールバック
+- パラレルデバイス WDK、Ioctl
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b5e8056f88375953f1507ba087cf1607f1763954
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0e7736f4dcec9d6675d6423a57080d539ffc7ffd
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67358523"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845318"
 ---
 # <a name="ioctl-and-callback-support-for-parallel-ports-and-devices"></a>パラレル ポートとデバイスの IOCTL とコールバックのサポート
 
@@ -24,45 +24,45 @@ ms.locfileid: "67358523"
 
 
 
-このセクションでは、システム提供平行ドライバーがオペレーティング パラレル ポートおよびパラレル ポートに接続されたデバイスをサポートする方法を説明するトピックへのリンクを提供します。
+このセクションでは、システム提供の並列ドライバーがパラレルポートに接続されている操作パラレルポートとデバイスをサポートする方法について説明するトピックへのリンクを示します。
 
-パラレル ポートに接続されている並列のデバイスのベンダー関数ドライバーは省略可能です。 システム提供平行ドライバー提供広範なサポート、ロウ デバイスとしての並列のデバイスを直接制御するため、デバイスの親を操作するためにパラレル ポート。
+パラレルポートに接続されているパラレルデバイスのベンダー関数ドライバーはオプションです。 システムによって提供されるパラレルドライバーは、並列デバイスを生のデバイスとして直接制御したり、デバイスの親パラレルポートを操作したりするための広範なサポートを提供します。
 
-については、システムによって提供される関数のドライバーには、Ioctl とコールバックにパラレル ポートを操作するには、次のトピックでは、参照してください。
+システム提供の関数ドライバーがパラレルポートを操作するために提供する Ioctl およびコールバックの詳細については、次のトピックを参照してください。
 
-[パラレル ポートに関する情報の取得](obtaining-information-about-a-parallel-port.md)
+[パラレルポートに関する情報の取得](obtaining-information-about-a-parallel-port.md)
 
-[パラレル ポートの使用を同期します。](synchronizing-the-use-of-a-parallel-port.md)
+[パラレルポートの使用の同期](synchronizing-the-use-of-a-parallel-port.md)
 
-[選択して、パラレル ポートに接続されている IEEE 1284 デバイスの選択を解除](selecting-and-deselecting-an-ieee-1284-device-attached-to-a-parallel-p.md)
+[パラレルポートに接続されている IEEE 1284 デバイスの選択と選択解除](selecting-and-deselecting-an-ieee-1284-device-attached-to-a-parallel-p.md)
 
-[設定およびパラレル ポートの通信モードを解除](setting-and-clearing-the-communication-mode-on-a-parallel-port.md)
+[パラレルポートでの通信モードの設定とクリア](setting-and-clearing-the-communication-mode-on-a-parallel-port.md)
 
-[1284.3 データ、IEEE に接続するデバイスをリンクします。](connecting-to-an-ieee-1284-3-data-link-device.md)
+[IEEE 1284.3 データリンクデバイスへの接続](connecting-to-an-ieee-1284-3-data-link-device.md)
 
-Ioctl およびパラレル ポートに接続されている並列のデバイスを操作するシステム提供のバス ドライバーを提供するコールバックについては、次を参照してください。
+システム提供のバスドライバーがパラレルポートに接続されている並列デバイスを操作するために提供する Ioctl およびコールバックの詳細については、以下を参照してください。
 
-[起動と使用の並列のデバイス](opening-and-using-a-parallel-device.md)
+[並列デバイスを開いて使用する](opening-and-using-a-parallel-device.md)
 
-[並列デバイスへの接続](connecting-to-a-parallel-device.md)
+[パラレルデバイスへの接続](connecting-to-a-parallel-device.md)
 
-[並列デバイスに関する情報を取得します。](obtaining-information-about-a-parallel-device.md)
+[パラレルデバイスに関する情報の取得](obtaining-information-about-a-parallel-device.md)
 
-[ロックおよび並列のデバイスで使用するため、パラレル ポートのロックを解除](locking-and-unlocking-a-parallel-port-for-use-by-a-parallel-device.md)
+[並列デバイスで使用するためのパラレルポートのロックとロック解除](locking-and-unlocking-a-parallel-port-for-use-by-a-parallel-device.md)
 
-[設定および並列のデバイスの通信モードを解除](setting-and-clearing-a-communication-mode-for-a-parallel-device.md)
+[パラレルデバイスの通信モードの設定とクリア](setting-and-clearing-a-communication-mode-for-a-parallel-device.md)
 
-[並列のデバイスに属性を設定](setting-attributes-on-a-parallel-device.md)
+[パラレルデバイスでの属性の設定](setting-attributes-on-a-parallel-device.md)
 
-[並列のデバイスの読み取りと書き込み](reading-and-writing-a-parallel-device.md)
+[並列デバイスの読み取りと書き込み](reading-and-writing-a-parallel-device.md)
 
-パラレル ポートおよびパラレル ポートに接続されたデバイスが動作する方法の詳細についてを参照してください。
+パラレルポートおよびパラレルポートに接続されているデバイスを操作する方法の詳細については、以下を参照してください。
 
-[パラレル ポートの動作](operating-a-parallel-port.md)
+[パラレルポートの操作](operating-a-parallel-port.md)
 
-[パラレル ポートに接続されている並列のデバイスの動作](operating-a-parallel-device-attached-to-a-parallel-port.md)
+[パラレルポートに接続されているパラレルデバイスの操作](operating-a-parallel-device-attached-to-a-parallel-port.md)
 
-[システム提供平行ドライバーへのクライアント インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
+[システム提供のパラレルドライバーへのクライアントインターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)
 
  
 

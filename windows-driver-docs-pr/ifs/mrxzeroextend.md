@@ -1,9 +1,9 @@
 ---
 title: MRxZeroExtend ルーチン
-description: MRxZeroExtend ルーチンは、ネットワークのミニ リダイレクターがファイル システム オブジェクトの内容を切り捨てることを要求する RDBSS によって呼び出されます。
+description: MRxZeroExtend ルーチンは、ネットワークミニリダイレクターがファイルシステムオブジェクトの内容を切り捨てることを要求するために、RDBSS によって呼び出されます。
 ms.assetid: d4a7c201-3c7d-40e9-a7da-17f40862c258
 keywords:
-- MRxZeroExtend ルーチン インストール可能なファイル システム ドライバー
+- MRxZeroExtend ルーチンのインストール可能なファイルシステムドライバー
 - PMRX_CALLDOWN
 topic_type:
 - apiref
@@ -15,17 +15,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c99066f28cfe3772be45e98e5a169ac08d3c01d9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c700125a6b6318942346339d7b9930f221051878
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67370076"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841063"
 ---
 # <a name="mrxzeroextend-routine"></a>MRxZeroExtend ルーチン
 
 
-*MRxZeroExtend*ルーチンを呼び出して[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)ネットワーク ミニ リダイレクターがファイル システム オブジェクトの内容を切り捨てることを要求します。
+*MRxZeroExtend*ルーチンは、ネットワークミニリダイレクターがファイルシステムオブジェクトの内容を切り捨てることを要求するために、 [RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)によって呼び出されます。
 
 <a name="syntax"></a>構文
 ------
@@ -42,13 +42,13 @@ NTSTATUS MRxZeroExtend(
 <a name="parameters"></a>パラメーター
 ----------
 
-*RxContext* \[入力、出力\]  
-RX へのポインター\_CONTEXT 構造体。 このパラメーターには、操作を要求している IRP が含まれています。
+*RxContext* \[in、out\]  
+RX\_コンテキスト構造体へのポインター。 このパラメーターには、操作を要求している IRP が含まれています。
 
 <a name="return-value"></a>戻り値
 ------------
 
-*MRxZeroExtend*ステータスを返します\_次のよう、成功した場合に成功した場合、または、適切な NTSTATUS の値します。
+*MRxZeroExtend*は正常に完了した状態\_成功したか、次のような適切な NTSTATUS 値を返します。
 
 <table>
 <colgroup>
@@ -64,7 +64,7 @@ RX へのポインター\_CONTEXT 構造体。 このパラメーターには、
 <tbody>
 <tr class="odd">
 <td align="left"><strong>STATUS_NOT_IMPLEMENTED</strong></td>
-<td align="left"><p>このルーチンが実装されていません。</p></td>
+<td align="left"><p>このルーチンは実装されていません。</p></td>
 </tr>
 </tbody>
 </table>
@@ -74,13 +74,13 @@ RX へのポインター\_CONTEXT 構造体。 このパラメーターには、
 <a name="remarks"></a>注釈
 -------
 
-*MRxZeroExtend*ファイル オブジェクトが削除のマークされていないと、ファイル オブジェクトは、ページング ファイルではない場合に、クリーンアップ操作の一部として呼び出されます。 *MRxZeroExtend*が呼び出され、有効なデータの長さとファイルのサイズの部分では、ゼロ拡張があることを確認します。 呼び出した後*MRxZeroExtend*、RDBSS セット、 **Header.ValidDataLength.QuadPart**等しく FCB 構造体の構造体のメンバー、 **Header.FileSize.QuadPart**FCB 構造体のメンバー。
+ファイルオブジェクトが削除対象としてマークされておらず、ファイルオブジェクトがページングファイルでない場合は、クリーンアップ操作の一部として*MRxZeroExtend*が呼び出されます。 *MRxZeroExtend*は、有効なデータ長とファイルサイズの間の部分がゼロ拡張であることを確認するために呼び出されます。 *MRxZeroExtend*を呼び出した後、RDBSS は fcb 構造体の構造体の**QuadPart**メンバーを、Fcb 構造体の**QuadPart**メンバーと等しい値に設定します。
 
-呼び出し*MRxZeroExtend*への呼び出しに続いて[ **MRxCleanupFobx** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff549841(v=vs.85))クリーンアップ操作の一部として。
+*MRxZeroExtend*の呼び出しの後に、クリーンアップ操作の一部として[**MRxCleanupFobx**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff549841(v=vs.85))が呼び出されます。
 
-戻り値を無視する RDBSS *MRxZeroExtend*します。
+RDBSS は、 *MRxZeroExtend*からの戻り値を無視します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -95,7 +95,7 @@ RX へのポインター\_CONTEXT 構造体。 このパラメーターには、
 </tr>
 <tr class="even">
 <td align="left"><p>Header</p></td>
-<td align="left">Mrx.h (Mrx.h を含む)</td>
+<td align="left">Mrx .h (Mrx を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -103,29 +103,29 @@ RX へのポインター\_CONTEXT 構造体。 このパラメーターには、
 ## <a name="see-also"></a>関連項目
 
 
-[**MRxAreFilesAliased**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_chkfcb_calldown)
+[**MRxAreFilesAliased**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_chkfcb_calldown)
 
 [**MRxCleanupFobx**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff549841(v=vs.85))
 
-[**MRxCloseSrvOpen**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_calldown)
+[**MRxCloseSrvOpen**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_calldown)
 
 [**MRxCollapseOpen**](mrxcollapseopen.md)
 
 [**MRxCreate**](mrxcreate.md)
 
-[**MRxDeallocateForFcb**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_deallocate_for_fcb)
+[**MRxDeallocateForFcb**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_deallocate_for_fcb)
 
-[**MRxDeallocateForFobx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_deallocate_for_fobx)
+[**MRxDeallocateForFobx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_deallocate_for_fobx)
 
-[**MRxExtendForCache**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_extendfile_calldown)
+[**MRxExtendForCache**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_extendfile_calldown)
 
 [**MRxExtendForNonCache**](mrxextendfornoncache.md)
 
 [**MRxFlush**](mrxflush.md)
 
-[**MRxForceClosed**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_forceclosed_calldown)
+[**MRxForceClosed**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_forceclosed_calldown)
 
-[**MRxIsLockRealizable**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_is_lock_realizable)
+[**MRxIsLockRealizable**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_is_lock_realizable)
 
 [**MRxShouldTryToCollapseThisOpen**](mrxshouldtrytocollapsethisopen.md)
 

@@ -1,38 +1,38 @@
 ---
 title: OID_WWAN_DEVICE_CAPS
-description: OID_WWAN_DEVICE_CAPS 返します MB デバイスの機能、サポート、携帯電話テクノロジなどのパケット データをサポートしています、無線周波数をサポートしています、それが提供する音声サービスの種類のクラスおよびサブスクライバーを使用しているかどうかIdentity モジュール (SIM カード)。 サポートされている携帯電話テクノロジと、デバイスが SIM を使用するかどうかは、ネットワーク プロバイダーの選択と SIM ユーザー インターフェイスはこれら 2 つの機能の値に依存しているため特に重要です。 省略可能なフィールドとしては、製造元、ファームウェアのリビジョンが返されます。 要求のセットがサポートされていません。 ミニポート ドライバーする必要がありますクエリ要求を処理、非同期的に最初に、元の要求に NDIS_STATUS_INDICATION_REQUIRED を返すと、後で、NDIS_WWAN_DEVICE_CAPS を含む NDIS_STATUS_WWAN_DEVICE_CAPS 状態通知の送信クエリ要求を完了するときは、MB デバイスの機能を示す構造体。
+description: OID_WWAN_DEVICE_CAPS は、サポートしている携帯電話テクノロジ、サポートされているパケットデータのクラス、サポートしているラジオの周波数、提供する音声サービスの種類、サブスクライバーを使用するかどうかなど、MB デバイスの機能を返します。Id モジュール (SIM カード)。 ネットワークプロバイダーの選択と SIM のユーザーインターフェイスは、この2つの機能の値に依存するため、サポートされている携帯電話テクノロジと、デバイスが SIM を使用するかどうかは特に重要です。 製造元とファームウェアのリビジョンは、オプションのフィールドとして返されます。 Set 要求はサポートされていません。 ミニポートドライバーは、クエリ要求を非同期的に処理し、最初に NDIS_STATUS_INDICATION_REQUIRED を元の要求に戻してから、NDIS_WWAN_DEVICE_CAPS を含む NDIS_STATUS_WWAN_DEVICE_CAPS ステータス通知を送信する必要があります。クエリ要求の完了時に、MB デバイスの機能を示す構造体。
 ms.assetid: bcf04d0b-70f3-48b7-a505-c82e50edadb2
 ms.date: 08/08/2017
-keywords: -OID_WWAN_DEVICE_CAPS ネットワーク ドライバーが Windows Vista 以降
+keywords: -Windows Vista 以降の OID_WWAN_DEVICE_CAPS ネットワークドライバー
 ms.localizationpriority: medium
-ms.openlocfilehash: cece38d740ade8029b242ebc9adb434dbdce09a9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 47da6d6fb38509d23ba6568bda6e823db1e449f6
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362852"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843861"
 ---
-# <a name="oidwwandevicecaps"></a>OID\_WWAN\_デバイス\_キャップ
+# <a name="oid_wwan_device_caps"></a>OID\_WWAN\_デバイス\_CAP
 
 
-OID\_WWAN\_デバイス\_CAP 返します方式のサポートを含む、MB デバイスの機能、サービスのパケット データをサポートしています、無線周波数をサポートしていますが、音声の種類のクラスこのオプションを提供すると、Subscriber Identity Module (SIM カード) を使用するかどうか。 サポートされている携帯電話テクノロジと、デバイスが SIM を使用するかどうかは、ネットワーク プロバイダーの選択と SIM ユーザー インターフェイスはこれら 2 つの機能の値に依存しているため特に重要です。 省略可能なフィールドとしては、製造元、ファームウェアのリビジョンが返されます。
+OID\_WWAN\_デバイス\_CAP は、サポートしている携帯電話テクノロジ、サポートされるパケットデータのクラス、サポートする無線周波数、サポートする音声サービスの種類など、MB デバイスの機能を返します。サブスクライバー Id モジュール (SIM カード) を使用するかどうか。 ネットワークプロバイダーの選択と SIM のユーザーインターフェイスは、この2つの機能の値に依存するため、サポートされている携帯電話テクノロジと、デバイスが SIM を使用するかどうかは特に重要です。 製造元とファームウェアのリビジョンは、オプションのフィールドとして返されます。
 
-要求のセットがサポートされていません。
+Set 要求はサポートされていません。
 
-ミニポート ドライバーは、最初に、非同期的には、NDIS を返すクエリ要求を処理する必要があります\_状態\_INDICATION\_元の要求とそれ以降の送信に必要な[ **NDIS\_状態\_WWAN\_デバイス\_CAP** ](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-device-caps)状態通知を含む、 [ **NDIS\_WWAN\_デバイス\_CAP** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_device_caps)クエリ要求を完了するときは、MB デバイスの機能を示す構造体。
+ミニポートドライバーは、クエリ要求を非同期的に処理し、最初に NDIS\_の状態\_返して、元の要求に必要な\_を示し、後で[**ndis\_ステータス\_WWAN\_デバイスに送信する必要があり\_** ](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-device-caps)クエリ要求の完了時に、MB デバイスの機能を示す[**NDIS\_WWAN\_デバイス\_caps**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_device_caps)構造体を含む cap 状態通知。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
-Windows 8 以降、MB ドライバー モデルは、バージョン 2.0 に更新されましたがします。 Windows 8 のミニポート ドライバーを設定する必要があります、 **Header.Revision**のメンバー、 [ **NDIS\_WWAN\_デバイス\_CAP** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_device_caps)構造体を**NDIS\_WWAN\_デバイス\_CAP\_リビジョン\_2**の*クエリ*要求。 Windows 7 のミニポート ドライバーを設定する必要があります、 **Header.Revision**のメンバー、 **NDIS\_WWAN\_デバイス\_CAP**構造体を**NDIS\_WWAN\_デバイス\_CAP\_リビジョン\_1**の*クエリ*要求。
+Windows 8 以降では、MB ドライバーモデルがバージョン2.0 に更新されました。 Windows 8 ミニポートドライバーでは、 [**ndis\_wwan\_device\_caps**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_device_caps)構造体の**Header. Revision**メンバーを**ndis\_WWAN\_デバイス\_cap\_リビジョン\_2**に設定する必要があります。*クエリ*要求。 Windows 7 ミニポートドライバーでは、 **ndis\_wwan\_device\_caps**構造体の**Header. Revision**メンバーを**ndis\_WWAN\_デバイス\_cap\_リビジョン**\_1*に設定する必要があります。クエリ*要求。
 
-詳細については、この OID を使用して、次を参照してください。 [WWAN ドライバーの初期化プロシージャ](https://docs.microsoft.com/windows-hardware/drivers/network/mb-miniport-driver-initialization)します。
+この OID の使用方法の詳細については、「 [WWAN ドライバーの初期化手順](https://docs.microsoft.com/windows-hardware/drivers/network/mb-miniport-driver-initialization)」を参照してください。
 
-処理クエリ、操作が、プロバイダーのネットワークまたは Subscriber Identity Module (SIM カード) にアクセスしないでください、ミニポート ドライバーはデバイスのメモリにアクセスできます。
+ミニポートドライバーは、クエリ操作を処理するときにデバイスのメモリにアクセスできますが、プロバイダーネットワークまたはサブスクライバー Id モジュール (SIM カード) にはアクセスできません。
 
-多くの「世界的な」MB デバイスは、2.5 g の頻度がバンドため、今日の周波数の複数のバンドをサポート/3 G が国によって異なります。 3 gpp 標準 (GSM ベースのネットワーク) と (CDMA ベースのネットワーク) 3GPP2 標準で指定された無線周波数は、次の表に示すすべての一覧。 両方の標準では、似たバンド分類手法を採用します。
+現在、多くの "世界中の" MB デバイスでは複数の周波数帯がサポートされています。これは、2.5 G/3G の周波数バンドが国と国によって異なるためです。 3GPP 標準 (GSM ベースのネットワークの場合) および3GPP2 標準 (CDMA ベースのネットワークの場合) で指定されているすべての無線周波数の一覧を次の表に示します。 どちらの標準も、同様のバンド分類スキームを採用しています。
 
-**3 gpp (GSM ベース) の周波数帯クラス**
+**3GPP (GSM ベース) 周波数バンドクラス**
 
 <table style="width:100%;">
 <colgroup>
@@ -45,17 +45,17 @@ Windows 8 以降、MB ドライバー モデルは、バージョン 2.0 に更�
 </colgroup>
 <thead>
 <tr class="header">
-<th>3 gpp バンド</th>
-<th>指定された範囲</th>
-<th>業界の名前</th>
-<th>アップリンク (BTS にミリ秒)</th>
-<th>ダウンリンク (BTS MS を)</th>
+<th>3GPP バンド</th>
+<th>指定されたスペクトル</th>
+<th>業界名</th>
+<th>アップリンク (MS から BTS へ)</th>
+<th>ダウンリンク (BTS ~ MS)</th>
 <th>地域</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>バンドは</p></td>
+<td><p>バンド I</p></td>
 <td><p>UMTS2100</p></td>
 <td><p>IMT</p></td>
 <td><p>1920-1980</p></td>
@@ -63,12 +63,12 @@ Windows 8 以降、MB ドライバー モデルは、バージョン 2.0 に更�
 <td><p>ヨーロッパ、韓国、日本、中国</p></td>
 </tr>
 <tr class="even">
-<td><p>バンド II</p></td>
+<td><p>帯域幅2</p></td>
 <td><p>UMTS1900</p></td>
 <td><p>PCS1900</p></td>
 <td><p>1850-1910</p></td>
 <td><p>1930-1990</p></td>
-<td><p>北アメリカ、LATAM</p></td>
+<td><p>北米、LATAM</p></td>
 </tr>
 <tr class="odd">
 <td><p>バンド III</p></td>
@@ -81,18 +81,18 @@ Windows 8 以降、MB ドライバー モデルは、バージョン 2.0 に更�
 <tr class="even">
 <td><p>バンド IV</p></td>
 <td><p>AWS</p></td>
-<td><p>AWS, 1.7/2.1</p></td>
+<td><p>AWS、1.7/2.1</p></td>
 <td><p>1710-1755</p></td>
 <td><p>2110-2155</p></td>
-<td><p>北アメリカ、LATAM</p></td>
+<td><p>北米、LATAM</p></td>
 </tr>
 <tr class="odd">
-<td><p>バンド V</p></td>
+<td><p>帯域幅 V</p></td>
 <td><p>UMTS850</p></td>
 <td><p>GSM850</p></td>
 <td><p>824-849</p></td>
 <td><p>869-894</p></td>
-<td><p>北アメリカ、LATAM</p></td>
+<td><p>北米、LATAM</p></td>
 </tr>
 <tr class="even">
 <td><p>バンド VI</p></td>
@@ -103,7 +103,7 @@ Windows 8 以降、MB ドライバー モデルは、バージョン 2.0 に更�
 <td><p>日本</p></td>
 </tr>
 <tr class="odd">
-<td><p>バンド第 7</p></td>
+<td><p>バンド VII</p></td>
 <td><p>UMTS2600</p></td>
 <td><p>UMTS2600</p></td>
 <td><p>2500-2570</p></td>
@@ -111,7 +111,7 @@ Windows 8 以降、MB ドライバー モデルは、バージョン 2.0 に更�
 <td><p>ヨーロッパ</p></td>
 </tr>
 <tr class="even">
-<td><p>バンド 8 部</p></td>
+<td><p>バンド VIII</p></td>
 <td><p>UMTS900</p></td>
 <td><p>EGSM900</p></td>
 <td><p>880-915</p></td>
@@ -139,27 +139,27 @@ Windows 8 以降、MB ドライバー モデルは、バージョン 2.0 に更�
 
  
 
-**3GPP2 (CDMA ベース) の周波数帯クラス**
+**3GPP2 (CDMA ベース) 周波数バンドクラス**
 
-3 gpp バンド業界名前アップリンク (BTS にミリ秒) (BTS ms) ダウンリンク バンド 0
+3GPP バンド業界名アップリンク (MS から BTS) ダウンリンク (BTS から MS) バンド0
 
-800 MHz の携帯電話
+800MHz 携帯電話
 
 824.025-844.995
 
 869.025-889.995
 
-バンドは
+バンド I
 
-1900 MHz バンド
+1900MHz 帯域
 
 1850-1910
 
 1930-1990
 
-バンド II
+帯域幅2
 
-TACS バンド
+TACS 帯域
 
 872.025-914.9875
 
@@ -167,7 +167,7 @@ TACS バンド
 
 バンド III
 
-JTACS バンド
+JTACS 帯域
 
 887.0125-924.9875
 
@@ -175,119 +175,119 @@ JTACS バンド
 
 バンド IV
 
-韓国語の PC のバンド
+韓国語 PC の帯域
 
-1750 - 1780
+1750 ~ 1780
 
-1840 - 1870
+1840 ~ 1870
 
-バンド V
+帯域幅 V
 
 450 MHz バンド
 
-410 - 483.475
+410 ~ 483.475
 
-420 - 493.475
+420 ~ 493.475
 
 バンド VI
 
-2 GHz バンド
+2 GHz の帯域
 
-1920 - 1979.950
+1920 ~ 1979.950
 
-2110 - 2169.950
+2110 ~ 2169.950
 
-バンド第 7
+バンド VII
 
 700 MHz バンド
 
-776 - 794
+776 ~ 794
 
-746 - 764
+746 ~ 764
 
-バンド 8 部
+バンド VIII
 
 1800 MHz バンド
 
-1710 - 1784.950
+1710 ~ 1784.950
 
-1805 - 1879.95
+1805 ~ 1879.95
 
 バンド IX
 
 900 MHz バンド
 
-880 - 914.950
+880 ~ 914.950
 
-925 - 959.950
+925 ~ 959.950
 
 バンド X
 
-セカンダリの 800 MHz バンド
+2番目の 800 MHz 帯域
 
-806 - 900.975
+806 ~ 900.975
 
-851 - 939.975
+851 ~ 939.975
 
 バンド XI
 
-400 MHz ヨーロッパ PAMR バンド
+400 MHz 欧州 PAMR バンド
 
-410 - 483.475
+410 ~ 483.475
 
-420 - 493.475
+420 ~ 493.475
 
-バンド 12 世
+バンド XII
 
-800 MHz PAMR バンド
+800 MHz の PAMR バンド
 
-870.125 - 875.9875
+870.125 ~ 875.9875
 
-915.0125 - 920.9875
+915.0125 ~ 920.9875
 
-バンド 13 世
+バンド XIII
 
-2.5 GHz IMT2000 拡張機能のバンド
+2.5 GHz IMT2000 拡張帯域幅
 
-2500 - 2570
+2500 ~ 2570
 
-2620 - 2690
+2620 ~ 2690
 
-バンド XIV
+帯域 XIV
 
-PC 1.9 GHz バンドの米国
+米国 PC 1.9 GHz バンド
 
-1850 - 1915
+1850 ~ 1915
 
-1930 - 1995
+1930 ~ 1995
 
-バンドされます。
+バンド XV
 
 AWS バンド
 
-1710 - 1755
+1710 ~ 1755
 
-2110 - 2155
+2110 ~ 2155
 
-バンド 16 世
+バンド XVI
 
-2\.5 GHz バンドの米国
+米国 2.5 GHz バンド
 
-2502 - 2568
+2502 ~ 2568
 
-2624 - 2690
+2624 ~ 2690
 
 バンド XVII
 
-米国 2.5 GHz 前方リンクのみバンド
+米国 2.5 GHz の前方リンクのみのバンド
 
 2624-2690
 
  
 
-両方のテーブル内の無線周波数バンドの単位は、メガヘルツ (MHz) です。
+両方のテーブルの無線周波数バンドの単位は、メガヘルツ (MHz) です。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -298,11 +298,11 @@ AWS バンド
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>Windows 7 および Windows の以降のバージョンで使用できます。</p></td>
+<td><p>Windows 7 以降のバージョンの Windows で使用できます。</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Ntddndis.h (include Ndis.h)</td>
+<td>Ntddndis (Ndis .h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -310,9 +310,9 @@ AWS バンド
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_WWAN\_デバイス\_キャップ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_device_caps)
+[**NDIS\_WWAN\_デバイス\_CAP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_device_caps)
 
-[WWAN ドライバーの初期化の手順](https://docs.microsoft.com/windows-hardware/drivers/network/mb-miniport-driver-initialization)
+[WWAN ドライバーの初期化手順](https://docs.microsoft.com/windows-hardware/drivers/network/mb-miniport-driver-initialization)
 
  
 

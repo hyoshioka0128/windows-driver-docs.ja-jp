@@ -1,24 +1,24 @@
 ---
 title: WDI_TLV_LSO_V1_CAPABILITIES (0xCC)
-description: WDI_TLV_LSO_V1_CAPABILITIES では、大規模なオフロード V1 の送信機能を含む TLV です。
+description: WDI_TLV_LSO_V1_CAPABILITIES は、大規模な送信オフロード V1 の機能を含む TLV です。
 ms.assetid: 22C5778A-F551-4931-A19C-7AA399221B3D
 ms.date: 07/18/2017
 keywords:
-- WDI_TLV_LSO_V1_CAPABILITIES (0 xcc) ネットワーク ドライバーが Windows Vista 以降
+- WDI_TLV_LSO_V1_CAPABILITIES (0xCC) ネットワークドライバー (Windows Vista 以降)
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f9a814f2db63dd713f8f50dd8750bf95a79e0eb
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5d4724e07e305fb4d370d437948876992afabc2c
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67354465"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842462"
 ---
-# <a name="wditlvlsov1capabilities-0xcc"></a>WDI\_TLV\_LSO\_V1\_機能 (0 xcc)
+# <a name="wdi_tlv_lso_v1_capabilities-0xcc"></a>WDI\_TLV\_LSO\_V1\_機能 (0xCC)
 
 
-WDI\_TLV\_LSO\_V1\_機能は、大規模なオフロード V1 の送信機能を含む TLV します。
+WDI\_TLV\_LSO\_V1\_機能は、大規模な送信オフロード V1 の機能を含む TLV です。
 
-記載されている機能の値が報告[ **NDIS\_TCP\_IP\_チェックサム\_オフロード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_tcp_ip_checksum_offload)します。 NDIS を使用して、\_オフロード\_いない\_サポートと NDIS\_オフロード\_を介して機能を指定する際にサポートされている[OID\_WDI\_GET\_アダプター\_機能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-get-adapter-capabilities)します。
+機能の値は、「 [**NDIS\_TCP\_IP\_CHECKSUM\_OFFLOAD**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_tcp_ip_checksum_offload)」に記載されているように報告されます。 \_サポートされておらず、NDIS\_オフロード\_を使用します。\_、 [OID\_WDI\_GET\_ADAPTER\_機能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-get-adapter-capabilities)を使用して機能を指定する場合にサポートされ\_。
 
 ## <a name="tlv-type"></a>TLV 型
 
@@ -28,7 +28,7 @@ WDI\_TLV\_LSO\_V1\_機能は、大規模なオフロード V1 の送信機能を
 ## <a name="length"></a>長さ
 
 
-含まれるすべての要素のサイズの合計をバイト単位で。
+含まれているすべての要素のサイズの合計 (バイト単位)。
 
 ## <a name="values"></a>値
 
@@ -40,7 +40,7 @@ WDI\_TLV\_LSO\_V1\_機能は、大規模なオフロード V1 の送信機能を
 </colgroup>
 <thead>
 <tr class="header">
-<th>型</th>
+<th>タスクバーの検索ボックスに</th>
 <th>説明</th>
 </tr>
 </thead>
@@ -54,19 +54,19 @@ WDI\_TLV\_LSO\_V1\_機能は、大規模なオフロード V1 の送信機能を
 </tr>
 <tr class="even">
 <td>UINT32</td>
-<td>最大サイズをオフロードします。 1 パケットあたり TCP ユーザー データのバイトの最大数で指定します。</td>
+<td>最大オフロードサイズ。 パケットあたりの TCP ユーザーデータの最大バイト数で指定されます。</td>
 </tr>
 <tr class="odd">
 <td>UINT32</td>
-<td>大きな TCP パケットとトランスポートで割り切れる必要がありますセグメントの最小数をセグメント化のためにハードウェアにオフロードできます。</td>
+<td>トランスポートがセグメント化のためにハードウェアにオフロードする前に、大きな TCP パケットが割り切れないセグメントの最小数。</td>
 </tr>
 <tr class="even">
 <td>UINT32</td>
-<td>TCP オプションがこのオフロード用にサポートされているかどうかを指定します。</td>
+<td>このオフロードで TCP オプションをサポートするかどうかを指定します。</td>
 </tr>
 <tr class="odd">
 <td>UINT32</td>
-<td>IP のオプションがこのオフロード用にサポートされているかどうかを指定します。</td>
+<td>このオフロードで IP オプションがサポートされているかどうかを指定します。</td>
 </tr>
 </tbody>
 </table>
@@ -92,7 +92,7 @@ WDI\_TLV\_LSO\_V1\_機能は、大規模なオフロード V1 の送信機能を
 </tr>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Wditypes.hpp</td>
+<td>Wditypes</td>
 </tr>
 </tbody>
 </table>

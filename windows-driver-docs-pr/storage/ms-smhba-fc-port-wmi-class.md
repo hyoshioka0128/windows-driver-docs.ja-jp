@@ -1,22 +1,22 @@
 ---
-title: MS\_SMHBA\_FC\_Port WMI クラス
-description: MS\_SMHBA\_FC\_Port WMI クラス
+title: MS\_SMHBA\_FC\_ポート WMI クラス
+description: MS\_SMHBA\_FC\_ポート WMI クラス
 ms.assetid: 671f14e4-c591-4df2-85a1-2db3f802ef5e
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: a280e8c66722218b200801cd16aed55ec87d8b46
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f1bc67601fcca2b7567e7d3800e767f9916f8a2b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386133"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844535"
 ---
-# <a name="mssmhbafcport-wmi-class"></a>MS\_SMHBA\_FC\_Port WMI クラス
+# <a name="ms_smhba_fc_port-wmi-class"></a>MS\_SMHBA\_FC\_ポート WMI クラス
 
 
-記憶域管理 API をサポートする HBA ミニポート ドライバーは、MS を使用して\_SMHBA\_FC\_ポートに関連付けられている FC アダプターのポート属性を公開するクラス。 このクラスの各ポートの 1 つのインスタンスが必要です。
+Storage Management API をサポートする HBA ミニポートドライバーは、MS\_SMHBA\_FC\_Port クラスを使用して、関連付けられている FC アダプターのポート属性を公開します。 各ポートには、このクラスのインスタンスが1つ存在する必要があります。
 
-MS\_SMHBA\_FC\_ポート クラスが次のように定義されている*Hbaapi.mof*:
+MS\_SMHBA\_FC\_Port クラスは、 *Hbaapi. mof*で次のように定義されています。
 
 ```cpp
 class MS_SMHBA_FC_Port 
@@ -53,9 +53,9 @@ class MS_SMHBA_FC_Port
 };
 ```
 
-このクラスの定義が WMI ツール スイートによってコンパイルされると、次のデータ構造が生成されます。
+このクラス定義が WMI ツールスイートによってコンパイルされると、次のデータ構造が生成されます。
 
-[**MS\_SMHBA\_FC\_ポート**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_ms_smhba_fc_port)
+[**MS\_SMHBA\_FC\_ポート**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_ms_smhba_fc_port)
 
 この WMI クラスに関連付けられているメソッドはありません。
 

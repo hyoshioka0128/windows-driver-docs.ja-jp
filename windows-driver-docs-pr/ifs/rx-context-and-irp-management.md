@@ -3,53 +3,53 @@ title: RX_CONTEXT と IRP 管理
 description: RX_CONTEXT と IRP 管理
 ms.assetid: 74ca681d-2599-442c-aebe-3556d6354f7f
 keywords:
-- Irp、RDBSS WDK ファイル システム
-- リダイレクトされたサブシステムの WDK のバッファリングをドライブのファイル システム、Irp
+- RDBSS WDK ファイルシステム、Irp
+- リダイレクトされたドライブバッファリングサブシステム WDK ファイルシステム、Irp
 - RX_CONTEXT 構造体
-- データ構造体の WDK ファイル システム
-- RDBSS WDK ファイル システム、接続およびファイル構造
-- リダイレクトされたサブシステムの WDK のバッファリングをドライブのファイル システム、接続およびファイル構造
-- 接続が WDK RDBSS 構造体します。
-- ファイル構造 WDK RDBSS
-- WDK RDBSS 構造体
-- WDK RDBSS の接続情報
+- データ構造の WDK ファイルシステム
+- RDBSS WDK ファイルシステム、接続およびファイル構造
+- リダイレクトされたドライブバッファリングサブシステム WDK ファイルシステム、接続とファイルの構造
+- 接続構造 (WDK RDBSS)
+- ファイル構造の WDK RDBSS
+- 構造の WDK RDBSS
+- 接続情報 WDK RDBSS
 - Irp WDK RDBSS
-- I/O 要求パケット WDK RDBSS
-- WDK RDBSS コンテキスト
+- I/o 要求パケット WDK RDBSS
+- コンテキスト WDK RDBSS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 570711bdce506dc3bb1ce06d3903435a3166fa31
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 28f08b93c8535bf2c782d20e8902e0852ab59e36
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385649"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840982"
 ---
-# <a name="rxcontext-and-irp-management"></a>RX\_コンテキストと IRP の管理
+# <a name="rx_context-and-irp-management"></a>RX\_コンテキストと IRP 管理
 
 
 ## <span id="ddk_rx_context_and_irp_management_if"></span><span id="DDK_RX_CONTEXT_AND_IRP_MANAGEMENT_IF"></span>
 
 
-RX\_CONTEXT 構造は RDBSS によって使用される、基本的なデータ構造のいずれかと、I/O を管理するネットワークのミニ-リダイレクター要求パケット (IRP)。 RX\_CONTEXT 構造は、処理中であり、グローバル リソースを IRP が完了すると解放を許可する状態情報が含まれています、IRP をについて説明します。 RX\_コンテキスト データ構造にカプセル化 IRP RDBSS を使用して、ネットワークのミニ リダイレクター、およびファイル システム。 RX\_CONTEXT 構造に 1 つの IRP とそのすべての IRP の処理に必要なコンテキストへのポインターが含まれています。
+RX\_コンテキスト構造は、i/o 要求パケット (IRP) を管理するために RDBSS とネットワークミニリダイレクターによって使用される基本的なデータ構造の1つです。 RX\_コンテキスト構造は、処理中の IRP を記述し、IRP の完了時にグローバルリソースを解放するための状態情報を格納します。 RX\_CONTEXT データ構造体は、RDBSS、ネットワークミニリダイレクター、およびファイルシステムで使用される IRP をカプセル化します。 RX\_コンテキスト構造体には、単一の IRP へのポインターと、IRP を処理するために必要なすべてのコンテキストが含まれます。
 
-RX\_CONTEXT 構造は IRP コンテキストまたは RxContext Windows Driver Kit (WDK) のヘッダー ファイルとネットワーク ミニ リダイレクター ドライバーの開発に使用されるその他のリソースとして呼ばします。
+RX\_コンテキスト構造は、Windows Driver Kit (WDK) のヘッダーファイルおよびネットワークミニリダイレクタードライバーの開発に使用されるその他のリソースで、IRP コンテキストまたは RxContext と呼ばれることがあります。
 
-RX\_コンテキストはさまざまなネットワークのミニ リダイレクターによって提供される追加情報が接続されているデータ構造体。 設計の観点からは、この追加情報をいくつかの方法のいずれかで処理できます。
+RX\_コンテキストは、さまざまなネットワークミニリダイレクターによって提供される追加情報が接続されるデータ構造です。 設計の観点からは、この追加情報は次のいずれかの方法で処理できます。
 
--   RX の一部として定義するコンテキスト ポインターでは、\_コンテキストで、ネットワークのミニ リダイレクターを使用して情報を格納できます。 つまり、たびに、RX\_CONTEXT 構造体が割り当てられ、破棄、ネットワークのミニ リダイレクター ドライバーには、関連付けられている別の割り当てまたは追加のネットワークを保持するメモリ ブロックの破棄を実行する必要がありますミニ リダイレクター情報。 RX 以降\_コンテキスト構造が作成され、多数の破棄、これはパフォーマンスの観点から適切な解決策ではありません。
+-   コンテンツを格納するためにネットワークミニリダイレクターが使用する、RX\_コンテキストの一部としてコンテキストポインターを定義できるようにします。 これは、RX\_コンテキスト構造が割り当てられ破棄されるたびに、ネットワークミニリダイレクタードライバーは、追加のネットワークミニリダイレクターを含むメモリブロックの割り当てまたは破棄を個別に実行する必要があることを意味します。参照. RX\_コンテキスト構造は作成され、大きな数値で破棄されるため、パフォーマンスの観点からは許容できるソリューションではありません。
 
--   別の方法では各 RX のサイズの割り当てを\_の各ネットワーク ミニ リダイレクター、ミニ リダイレクターを使用し、予約されている、事前に指定したコンテキストの構造体。 このアプローチは、追加の割り当てを回避でき、破棄は、RX が複雑になります。\_RDBSS で管理コードのコンテキスト。
+-   もう1つの方法は、各 RX\_コンテキスト構造のサイズを、各ネットワークミニリダイレクターの事前に指定された量だけ割り当てることで構成されます。これは、ミニリダイレクターで使用するために予約されます。 このような方法を採用すると、追加の割り当てと破棄が回避されますが、RDBSS の RX\_コンテキスト管理コードが複雑になります。
 
--   3 番目のアプローチは、各 RX の一部としてすべてのネットワーク ミニ リダイレクターは、同じ指定済みの領域を割り当てる\_コンテキスト。 これは、書式設定されていない領域をその上には、すべての必要な構造をさまざまなネットワークのミニ リダイレクターによって課されることができます。 このアプローチは、以前のアプローチの欠点を克服しています。 これは、現在 RDBSS で実装されているアプローチです。
+-   3番目の方法では、事前に指定された領域を割り当てます。これは、各 RX\_コンテキストの一部として、すべてのネットワークミニリダイレクターで同じです。 これは、さまざまなネットワークミニリダイレクターによって必要な構造を設定できる、フォーマットされていない領域です。 このようなアプローチでは、以前のアプローチに関連する欠点を克服できます。 これは、RDBSS で現在実装されているアプローチです。
 
-3 番目のアプローチは、RDBSS によって使用されるスキームです。 その結果、ネットワーク ミニ リダイレクター ドライバーの開発者を再試行してくださいし、RX で定義されているこの指定済みの領域に収まるように関連付けられているプライベート コンテキストを定義する必要があります\_コンテキスト データ構造体。 このルールに違反しているネットワーク ミニ リダイレクター ドライバーには、著しいパフォーマンスの低下が発生します。
+3番目の方法は、RDBSS によって使用されるスキームです。 そのため、ネットワークミニリダイレクタードライバーの開発者は、RX\_コンテキストデータ構造で定義されているこの事前指定領域に適合するように、関連付けられているプライベートコンテキストを試して定義する必要があります。 この規則に違反するネットワークミニリダイレクタードライバーは、大幅なパフォーマンスの低下を伴います。
 
-多くの RDBSS ルーチンやネットワークのミニ リダイレクターによってエクスポートされたルーチンが RX への参照を\_発信側のいずれかのスレッドまたは他のルーチンで使用されるスレッド コンテキストの構造体。 そのため、RX\_CONTEXT 構造体は非同期操作の使用を管理するカウントされた参照。 参照カウントがゼロ、RX になったときに\_CONTEXT 構造の作成が完了し、最後にリリースできる操作を逆参照します。
+ネットワークミニリダイレクターによってエクスポートされる多くの RDBSS ルーチンおよびルーチンは、受信側のスレッドまたはルーチンによって使用されるその他のスレッドで、RX\_のコンテキスト構造を参照します。 したがって、RX\_のコンテキスト構造は参照カウントされ、非同期操作の使用を管理します。 参照カウントがゼロになると、RX\_コンテキスト構造を終了し、最後の逆参照操作で解放できます。
 
-RDBSS、RX の操作に使用するルーチンのいくつか提供されます\_CONTEXT 構造体と関連付けられている IRP します。 これらのルーチンを割り当て、初期化、および、RX の削除に使用\_CONTEXT 構造体。 これらのルーチンは、RX に関連付けられている IRP の完了にも使用\_コンテキストと、RX のキャンセル ルーチンを設定\_コンテキスト。
+RDBSS は、RX\_コンテキスト構造および関連する IRP を操作するために使用される多くのルーチンを提供します。 これらのルーチンは、RX\_コンテキスト構造の割り当て、初期化、および削除に使用されます。 これらのルーチンは、RX\_コンテキストに関連付けられている IRP を完了し、RX\_コンテキストのキャンセルルーチンを設定するためにも使用されます。
 
-次のルーチン操作 RX\_CONTEXT 構造体。
+次のルーチンは、RX\_コンテキスト構造体を操作します。
 
 <table>
 <colgroup>
@@ -64,53 +64,53 @@ RDBSS、RX の操作に使用するルーチンのいくつか提供されます
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxprocs/nf-rxprocs-rxcompleterequest" data-raw-source="[&lt;strong&gt;RxCompleteRequest&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxprocs/nf-rxprocs-rxcompleterequest)"><strong>RxCompleteRequest</strong></a></p></td>
-<td align="left"><p>このルーチンは、RX_CONTEXT 構造体に関連付けられている IRP の完了に使用されます。 このルーチンは RDBSS によって内部的に使用され、ネットワークのミニ リダイレクターは使用できません。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxcompleterequest" data-raw-source="[&lt;strong&gt;RxCompleteRequest&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxcompleterequest)"><strong>RxCompleteRequest</strong></a></p></td>
+<td align="left"><p>このルーチンは、RX_CONTEXT 構造に関連付けられている IRP を完了するために使用されます。 このルーチンは、RDBSS によって内部的に使用されるため、ネットワークミニリダイレクターでは使用できません。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxprocs/nf-rxprocs-rxcompleterequest_real" data-raw-source="[&lt;strong&gt;RxCompleteRequest_Real&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxprocs/nf-rxprocs-rxcompleterequest_real)"><strong>RxCompleteRequest_Real</strong></a></p></td>
-<td align="left"><p>このルーチンは、RX_CONTEXT 構造体に関連付けられている IRP の完了に使用されます。 このルーチンは RDBSS によって内部的に使用され、ネットワークのミニ リダイレクターは使用できません。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxcompleterequest_real" data-raw-source="[&lt;strong&gt;RxCompleteRequest_Real&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxcompleterequest_real)"><strong>RxCompleteRequest_Real</strong></a></p></td>
+<td align="left"><p>このルーチンは、RX_CONTEXT 構造に関連付けられている IRP を完了するために使用されます。 このルーチンは、RDBSS によって内部的に使用されるため、ネットワークミニリダイレクターでは使用できません。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxcontx/nf-rxcontx-rxcreaterxcontext" data-raw-source="[&lt;strong&gt;RxCreateRxContext&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxcontx/nf-rxcontx-rxcreaterxcontext)"><strong>RxCreateRxContext</strong></a></p></td>
-<td align="left"><p>このルーチンでは、新しい RX_CONTEXT 構造、データ構造体を初期化します。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/rxcontx/nf-rxcontx-rxcreaterxcontext" data-raw-source="[&lt;strong&gt;RxCreateRxContext&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/rxcontx/nf-rxcontx-rxcreaterxcontext)"><strong>RxCreateRxContext</strong></a></p></td>
+<td align="left"><p>このルーチンは、新しい RX_CONTEXT 構造体を割り当て、データ構造体を初期化します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxcontx/nf-rxcontx-rxdereferenceanddeleterxcontext_real" data-raw-source="[&lt;strong&gt;RxDereferenceAndDeleteRxContext_Real&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxcontx/nf-rxcontx-rxdereferenceanddeleterxcontext_real)"><strong>RxDereferenceAndDeleteRxContext_Real</strong></a></p></td>
-<td align="left"><p>このルーチンは、RX_CONTEXT 構造体を逆参照し、参照カウントがゼロにする場合の割り当てを解除し、RDBSS インメモリ データ構造体から指定した RX_CONTEXT 構造を削除します。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/rxcontx/nf-rxcontx-rxdereferenceanddeleterxcontext_real" data-raw-source="[&lt;strong&gt;RxDereferenceAndDeleteRxContext_Real&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/rxcontx/nf-rxcontx-rxdereferenceanddeleterxcontext_real)"><strong>RxDereferenceAndDeleteRxContext_Real</strong></a></p></td>
+<td align="left"><p>このルーチンは、RX_CONTEXT 構造体を逆参照し、参照カウントがゼロになると、指定された RX_CONTEXT 構造体を RDBSS のメモリ内データ構造から解放し、削除します。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxcontx/nf-rxcontx-rxinitializecontext" data-raw-source="[&lt;strong&gt;RxInitializeContext&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxcontx/nf-rxcontx-rxinitializecontext)"><strong>RxInitializeContext</strong></a></p></td>
-<td align="left"><p>このルーチンでは、新しく割り当てられた RX_CONTEXT 構造体を初期化します。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/rxcontx/nf-rxcontx-rxinitializecontext" data-raw-source="[&lt;strong&gt;RxInitializeContext&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/rxcontx/nf-rxcontx-rxinitializecontext)"><strong>RxInitializeContext</strong></a></p></td>
+<td align="left"><p>このルーチンは、新しく割り当てられた RX_CONTEXT 構造体を初期化します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxcontx/nf-rxcontx-rxpreparecontextforreuse" data-raw-source="[&lt;strong&gt;RxPrepareContextForReuse&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxcontx/nf-rxcontx-rxpreparecontextforreuse)"><strong>RxPrepareContextForReuse</strong></a></p></td>
-<td align="left"><p>このルーチンは、すべての操作に固有の割り当てと以前に行った買収をリセットして再利用するため、RX_CONTEXT 構造を準備します。 IRP から得られるパラメーターは変更されません。 このルーチンは RDBSS によって内部的に使用され、ネットワークのミニ リダイレクターは使用できません。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/rxcontx/nf-rxcontx-rxpreparecontextforreuse" data-raw-source="[&lt;strong&gt;RxPrepareContextForReuse&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/rxcontx/nf-rxcontx-rxpreparecontextforreuse)"><strong>RxPrepareContextForReuse</strong></a></p></td>
+<td align="left"><p>このルーチンは、以前に実行されたすべての操作固有の割り当てと買収をリセットすることによって、再利用できるように RX_CONTEXT 構造を準備します。 IRP から取得したパラメーターは変更されません。 このルーチンは、RDBSS によって内部的に使用されるため、ネットワークミニリダイレクターでは使用できません。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxcontx/nf-rxcontx-rxresumeblockedoperations_serially" data-raw-source="[&lt;strong&gt;RxResumeBlockedOperations_Serially&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxcontx/nf-rxcontx-rxresumeblockedoperations_serially)"><strong>RxResumeBlockedOperations_Serially</strong></a></p></td>
-<td align="left"><p>このルーチンは、シリアル化されたブロッキング I/O キューに存在する場合、次の待機スレッドをウェイクします。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/rxcontx/nf-rxcontx-rxresumeblockedoperations_serially" data-raw-source="[&lt;strong&gt;RxResumeBlockedOperations_Serially&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/rxcontx/nf-rxcontx-rxresumeblockedoperations_serially)"><strong>RxResumeBlockedOperations_Serially</strong></a></p></td>
+<td align="left"><p>このルーチンは、シリアル化されたブロッキング i/o キューで次の待機中のスレッド (存在する場合) をウェイクアップします。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxcontx/nf-rxcontx-rxsetminirdrcancelroutine" data-raw-source="[&lt;strong&gt;RxSetMinirdrCancelRoutine&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxcontx/nf-rxcontx-rxsetminirdrcancelroutine)"><strong>RxSetMinirdrCancelRoutine</strong></a></p></td>
-<td align="left"><p>ネットワークのミニ リダイレクターを日常的な設定は、RX_CONTEXT 構造体のルーチンをキャンセルします。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/rxcontx/nf-rxcontx-rxsetminirdrcancelroutine" data-raw-source="[&lt;strong&gt;RxSetMinirdrCancelRoutine&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/rxcontx/nf-rxcontx-rxsetminirdrcancelroutine)"><strong>RxSetMinirdrCancelRoutine</strong></a></p></td>
+<td align="left"><p>ルーチンは、RX_CONTEXT 構造体のネットワークミニリダイレクターのキャンセルルーチンを設定します。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxcontx/nf-rxcontx-__rxsynchronizeblockingoperations" data-raw-source="[&lt;strong&gt;__RxSynchronizeBlockingOperations&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxcontx/nf-rxcontx-__rxsynchronizeblockingoperations)"><strong>__RxSynchronizeBlockingOperations</strong></a></td>
-<td align="left"><p>このルーチンは、同じ作業キューにブロッキング I/O を同期に使用されます。 このルーチンが、名前付きパイプ操作を同期する RDBSS によって内部的に使用されます。 このルーチンは、ネットワーク ミニリダイレクターによって保持されている別のキューに対する操作を同期するネットワークのミニ リダイレクターを使用できます。</p>
-<p>ルーチンは、Windows Server 2003 にできるだけです。</p></td>
+<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/rxcontx/nf-rxcontx-__rxsynchronizeblockingoperations" data-raw-source="[&lt;strong&gt;__RxSynchronizeBlockingOperations&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/rxcontx/nf-rxcontx-__rxsynchronizeblockingoperations)"><strong>__RxSynchronizeBlockingOperations</strong></a></td>
+<td align="left"><p>このルーチンは、ブロッキング i/o を同じ作業キューに同期するために使用されます。 このルーチンは、名前付きパイプ操作を同期するために RDBSS によって内部的に使用されます。 ネットワークミニリダイレクターはこのルーチンを使用して、ネットワークミニリダイレクターによって管理されている別のキューで操作を同期します。</p>
+<p>このルーチンは、Windows Server 2003 でのみ使用できます。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ifs/--rxsynchronizeblockingoperationsmaybedroppingfcblock" data-raw-source="[&lt;strong&gt;__RxSynchronizeBlockingOperationsMaybeDroppingFcbLock&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ifs/--rxsynchronizeblockingoperationsmaybedroppingfcblock)"><strong>__RxSynchronizeBlockingOperationsMaybeDroppingFcbLock</strong></a></td>
-<td align="left"><p>このルーチンは、同じ作業キューにブロッキング I/O を同期に使用されます。 このルーチンが、名前付きパイプ操作を同期する RDBSS によって内部的に使用されます。 このルーチンは、ネットワーク ミニリダイレクターによって保持されている別のキューに対する操作を同期するネットワークのミニ リダイレクターを使用できます。</p>
-<p>ルーチンは、Windows XP および Windows 2000 にできるだけです。</p></td>
+<td align="left"><p>このルーチンは、ブロッキング i/o を同じ作業キューに同期するために使用されます。 このルーチンは、名前付きパイプ操作を同期するために RDBSS によって内部的に使用されます。 ネットワークミニリダイレクターはこのルーチンを使用して、ネットワークミニリダイレクターによって管理されている別のキューで操作を同期します。</p>
+<p>このルーチンは、Windows XP および Windows 2000 でのみ使用できます。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-次のマクロが定義されている、 *rxcontx.h*前の表に、ルーチンを呼び出して、ヘッダー ファイルが一覧表示します。 これらのマクロは、通常これらのルーチンを直接呼び出す代わりに使用されます。
+次のマクロは、前の表に示したルーチンを呼び出す*rxcontx*ヘッダーファイルで定義されています。 これらのマクロは、通常、これらのルーチンを直接呼び出す代わりに使用されます。
 
 <table>
 <colgroup>
@@ -125,14 +125,14 @@ RDBSS、RX の操作に使用するルーチンのいくつか提供されます
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>RxSynchronizeBlockingOperations</strong>(<em>RXCONTEXT</em>,<em>FCB</em>,<em>IOQUEUE</em>)</p></td>
-<td align="left"><p>このマクロは、同じ作業キューにブロッキング I/O 要求を同期します。 Windows Server 2003 では、このマクロを呼び出す、 <strong>__RxSynchronizeBlockingOperations</strong>ルーチン、 <em>DropFcbLock</em>パラメーターに設定<strong>FALSE</strong>します。</p>
-<p>Windows XP および Windows 2000 では、このマクロを呼び出し、 <strong>__RxSynchronizeBlockingOperationsMaybeDroppingFcbLock</strong>ルーチン、 <em>DropFcbLock</em>パラメーターに設定<strong>FALSE</strong>.</p></td>
+<td align="left"><p><strong>RxSynchronizeBlockingOperations</strong>(<em>RXCONTEXT</em>、<em>FCB</em>、<em>ioqueue</em>)</p></td>
+<td align="left"><p>このマクロは、ブロッキング i/o 要求を同じ作業キューに同期します。 Windows Server 2003 では、このマクロは<em>Dropfcblock</em>パラメーターを<strong>FALSE</strong>に設定して<strong>__RxSynchronizeBlockingOperations</strong>ルーチンを呼び出します。</p>
+<p>Windows XP および Windows 2000 では、このマクロは<em>Dropfcblock</em>パラメーターを<strong>FALSE</strong>に設定して<strong>__RxSynchronizeBlockingOperationsMaybeDroppingFcbLock</strong>ルーチンを呼び出します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>RxSynchronizeBlockingOperations</strong>(<em>RXCONTEXT</em>,<em>FCB</em>,<em>IOQUEUE</em>)</p></td>
-<td align="left"><p>このマクロは、同じ作業キューにブロッキング I/O 要求を同期します。 Windows Server 2003 では、このマクロを呼び出す、 <strong>__RxSynchronizeBlockingOperations</strong>ルーチン、 <em>DropFcbLock</em>パラメーターに設定<strong>TRUE</strong>します。</p>
-<p>Windows XP および Windows 2000 では、このマクロを呼び出し、 <strong>__RxSynchronizeBlockingOperationsMaybeDroppingFcbLock</strong>ルーチン、 <em>DropFcbLock</em>パラメーターに設定<strong>TRUE</strong>.</p></td>
+<td align="left"><p><strong>RxSynchronizeBlockingOperations</strong>(<em>RXCONTEXT</em>、<em>FCB</em>、<em>ioqueue</em>)</p></td>
+<td align="left"><p>このマクロは、ブロッキング i/o 要求を同じ作業キューに同期します。 Windows Server 2003 では、このマクロは<em>Dropfcblock</em>パラメーターを<strong>TRUE</strong>に設定して<strong>__RxSynchronizeBlockingOperations</strong>ルーチンを呼び出します。</p>
+<p>Windows XP および Windows 2000 では、このマクロは<em>Dropfcblock</em>パラメーターを<strong>TRUE</strong>に設定して<strong>__RxSynchronizeBlockingOperationsMaybeDroppingFcbLock</strong>ルーチンを呼び出します。</p></td>
 </tr>
 </tbody>
 </table>

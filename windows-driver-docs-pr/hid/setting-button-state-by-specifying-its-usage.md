@@ -1,35 +1,35 @@
 ---
-title: その使用法を指定することによって設定ボタンの状態
-description: その使用法を指定することによって設定ボタンの状態
+title: 使用法を指定してボタンの状態を設定する
+description: 使用法を指定してボタンの状態を設定する
 ms.assetid: 0806f274-2b29-44f5-b487-4c0acb7a3e42
 keywords:
-- HID レポート WDK、コントロールのデータの設定
-- WDK を非表示に設定するコントロールのデータを報告します。
-- WDK の HID ボタンの使用
+- HID レポート WDK、コントロールデータの設定
+- WDK HID を報告し、コントロールデータを設定します
+- ボタンの使用法 WDK HID
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: b0ebf83eec8456e0f79acae0f289f6741d91c765
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f289a214e5e09d1e8bf4e8986e1ae29c7b5d844b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385801"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841555"
 ---
-# <a name="setting-button-state-by-specifying-its-usage"></a>その使用法を指定することによって設定ボタンの状態
+# <a name="setting-button-state-by-specifying-its-usage"></a>使用法を指定してボタンの状態を設定する
 
 
 
 
 
-アプリケーション、ドライバーは、次の HID サポート ルーチンのいずれかを呼び出すボタンの状態を正しく初期化の HID レポートに設定できます。
+アプリケーションまたはドライバーは、次のいずれかの HID サポートルーチンを呼び出すことによって、適切に初期化された HID レポートのボタンの状態を設定できます。
 
-<a href="" id="hidp-setbuttons--or-hidp-setusages-"></a>[**HidP\_SetButtons** ](https://docs.microsoft.com/windows-hardware/drivers/hid/hdpi-h-macros) (または[ **HidP\_SetUsages**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/nf-hidpi-hidp_setusages))  
-オン (1) 指定されたボタンのセットを設定します。
+<a href="" id="hidp-setbuttons--or-hidp-setusages-"></a>[**Hidp\_SetButtons**](https://docs.microsoft.com/windows-hardware/drivers/hid/hdpi-h-macros) (または[**Hidp\_setbuttons**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_setusages))  
+指定されたボタンのセットを ON (1) に設定します。
 
-<a href="" id="hidp-unsetbuttons--or-hidp-unsetusages-"></a>[**HidP\_UnsetButtons** ](https://docs.microsoft.com/windows-hardware/drivers/hid/hdpi-h-macros) (または[ **HidP\_UnsetUsages**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/nf-hidpi-hidp_unsetusages))  
-指定された一連のボタンは OFF に設定 (ゼロ)。
+<a href="" id="hidp-unsetbuttons--or-hidp-unsetusages-"></a>[**Hidp\_UnsetButtons**](https://docs.microsoft.com/windows-hardware/drivers/hid/hdpi-h-macros) (または[**Hidp\_unsetbuttons**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_unsetusages))  
+指定されたボタンのセットを OFF (ゼロ) に設定します。
 
-<a href="" id="see-also-initializing-hid-reports-"></a>参照してください[HID レポートの初期化](initializing-hid-reports.md)します。  
+<a href="" id="see-also-initializing-hid-reports-"></a>「 [HID レポートの初期化](initializing-hid-reports.md)」も参照してください。  
 
  
 

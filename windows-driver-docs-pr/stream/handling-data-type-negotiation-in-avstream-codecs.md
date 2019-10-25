@@ -3,39 +3,39 @@ title: AVStream コーデックのデータ型ネゴシエーションの処理
 description: AVStream コーデックのデータ型ネゴシエーションの処理
 ms.assetid: b5212429-dbc8-4e9a-b5a9-2431f8a1eb2a
 keywords:
-- ハードウェアのコーデック サポート WDK AVStream、データ型のネゴシエーション
-- データの種類のネゴシエーション WDK AVStream
-- AVStream ハードウェア コーデック WDK、データの種類のネゴシエーションを処理のサポートします。
+- ハードウェアコーデックサポート WDK AVStream、データ型ネゴシエーション
+- データ型ネゴシエーション WDK AVStream
+- AVStream ハードウェアコーデックサポート WDK、データ型ネゴシエーションの処理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5edacb66f45537baf480a3ac2c86f40e9227fc8d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 03716daec4b50d8dde2df8f4c97377324771916f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384053"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844505"
 ---
 # <a name="handling-data-type-negotiation-in-avstream-codecs"></a>AVStream コーデックのデータ型ネゴシエーションの処理
 
-デバイスが初期化されると、システム提供のデバイス プロキシ (Devproxy) モジュールは、ドライバーによって提供されるフィルター記述子を解析します。 さらに、Devproxy は、対応する MFT (Media Foundation の変換) の入力と出力ピンのドライバーでサポートされているデータの範囲を公開します。
+デバイスが初期化されると、システム提供のデバイスプロキシ (Devproxy) モジュールによって、ドライバーによって提供されるフィルター記述子が解析されます。 さらに、Devproxy は、対応する MFT (メディアファンデーション Transform) の入力ピンと出力ピンでドライバーでサポートされているデータ範囲を公開します。
 
-ストリーミングの開始時に、MF のパイプラインとユーザー モード アプリケーションは、ドライバーを使用したデータの種類のネゴシエーションを実行するのにこれらの範囲を使用します。
+ストリーミングが開始されると、MF パイプラインとユーザーモードのアプリケーションは、これらの範囲を使用して、ドライバーとのデータ型ネゴシエーションを実行します。
 
-次の操作は、データの種類のネゴシエーション中に発生します。
+データ型のネゴシエーション中に、次のような対話が行われます。
 
-1.  Devproxy では、ハードウェアのコーデック フィルターの場合は、各ピン記述子にミニドライバーによって提供されるデータの範囲を取得します。
+1.  Devproxy は、ハードウェアコーデックフィルターの各 pin 記述子のミニドライバーによって提供されるデータ範囲を取得します。
 
-2.  Devproxy は、ドライバーにデータの積集合要求を発行します。
+2.  Devproxy は、ドライバーに対してデータ共通部分の要求を発行します。
 
-3.  Devproxy MF に完全な型を公開します。
+3.  Devproxy は、完全な形式の型を MF に公開します。
 
-4.  MF トポロジ ビルダー (DirectShow グラフ ビルダーの MF に相当) は、ストリーミング トポロジを構築します。
+4.  MF トポロジビルダー (DirectShow graph ビルダーに相当する MF) は、ストリーミングトポロジを構築します。
 
-5.  ミニドライバーを呼び出すことによって、暗証番号 (pin) のデータ型が設定、MF トポロジ ビルダーが Devproxy 入力/出力ピンのデータ型を終了後[ *AVStrMiniPinSetDataFormat* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nc-ks-pfnkspinsetdataformat)コールバック関数。 Devproxy を呼び出す KS 暗証番号 (pin) が存在しない場合[ **KsCreatePin**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-kscreatepin)します。
+5.  MF トポロジビルダーは、Devproxy 入力/出力ピンのデータ型を終了した後、ミニドライバーの[*AVStrMiniPinSetDataFormat*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nc-ks-pfnkspinsetdataformat) callback 関数を呼び出すことによって、ピンのデータ型を設定します。 KS pin が存在しない場合、Devproxy は[**KsCreatePin**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-kscreatepin)を呼び出します。
 
-成功したデータの種類のネゴシエーションを有効にするには、ミニドライバーは以下の手順を実行する必要があります。
+データ型のネゴシエーションが正常に行われるようにするには、ミニドライバーで次の手順を実行する必要があります。
 
-1.  サポートされているデータの範囲の一覧を指定、 **DataRanges**のメンバー [ **KSPIN\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kspin_descriptor)ハードウェア コーデックのフィルターに含まれる公開されている各ピンにします。 次に、例を示します。
+1.  ハードウェアコーデックフィルターに含まれる公開された pin ごとに、 [**Kspin\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-kspin_descriptor)の**DataRanges**メンバーにサポートされるデータ範囲のリストを指定します。 次に、例を示します。
 
     ```cpp
     const PKSDATARANGE VideoDecoderInputPinDataRanges[8] = {
@@ -50,38 +50,38 @@ ms.locfileid: "67384053"
     };
     ```
 
-    ラッパー型で指定した範囲をここではなど[ **KS\_DATARANGE\_MPEG2\_ビデオ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_datarange_mpeg2_video)、 [ **KS\_DATARANGE\_ビデオ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_datarange_video)、および[ **KS\_DATARANGE\_VIDEO2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_datarange_video2)します。 前述のコード例で、各範囲に型キャスト[ **KSDATARANGE**](https://docs.microsoft.com/previous-versions/ff561658(v=vs.85))します。
+    この場合、指定された範囲は、 [ **\_MPEG2\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_datarange_mpeg2_video)\_、 [**ks DATARANGE\_video**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_datarange_video)、 [**KS\_datarange\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_datarange_video2)などのラッパー\_型になります。 前に示したコード例では、各範囲が型キャストになり[**ます。** ](https://docs.microsoft.com/previous-versions/ff561658(v=vs.85))
 
-    ラッパーの構造体の最後のメンバーと呼ばれる形式のブロック構造体など、KS\_DATARANGE\_MPEG2\_ビデオ **。VideoInfoHeader**します。
+    ラッパー構造体の最後のメンバーは、フォーマットブロック構造体と呼ばれます。たとえば、\_は、\_MPEG2\_ビデオです。**Videoinfoheader**。
 
-    継続的なデータ範囲をサポートしているドライバーでは、形式のブロック構造体で最大の値を指定する必要があります。 不連続のデータ範囲をサポートするドライバーは、形式のブロック構造の不連続値を格納する配列を指定します。
+    連続データ範囲をサポートするドライバーでは、ブロック構造の形式で最大値を指定する必要があります。 不連続データ範囲をサポートするドライバーでは、ブロック構造体の形式で不連続値を格納する配列を指定する必要があります。
 
-    後で、特定形式のサポートを要求しているドライバーには、その形式に一連の書式設定要求が失敗した場合、パフォーマンスが低下する可能性があります。 リスト形式のみがサポートを保証します。
+    指定された形式をサポートすることを要求するドライバーが、後で書式設定要求をその形式に失敗させた場合、パフォーマンスが低下する可能性があります。 サポートを保証する形式のみを一覧表示します。
 
-2.  ドライバーは KSSTATE 中に暗証番号 (pin) に設定するメディアの種類を許可する必要があります\_停止/KSSTATE\_を実行します。 アクションは必要ありませんは、ここ以外のこと、ドライバーは拒否する場合これを確認します。
+2.  KSK 状態\_STOP/KSSTATE\_実行されているときに、pin にメディアの種類を設定できるようにする必要があります。 ドライバーがこれを許可しないようにするために、以外の操作は必要ありません。
 
-3.  ドライバーに intersect ハンドラーを指定する必要があります[ **KSPIN\_記述子\_EX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_kspin_descriptor_ex).**IntersectHandler**各ピンにします。
+3.  ドライバーは、 [**Kspin\_記述子\_EX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_kspin_descriptor_ex)に intersect ハンドラーを指定する必要があります。各 pin の**IntersectHandler** 。
 
-4.  ミニドライバーのハンドラーを指定する必要があります、 [ **KSPROPERTY\_接続\_PROPOSEDATAFORMAT** ](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-connection-proposedataformat)プロパティ。
+4.  ミニドライバーは、 [**Ksk プロパティ\_接続\_PROPOSEDATAFORMAT**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-connection-proposedataformat)プロパティのハンドラーを提供する必要があります。
 
-5.  出力メディアの種類を設定すると、エンコーダーがメディアの種類の指定された出力に基づいて (暗証番号 (pin) の記述子を使用) して可能な入力の種類を報告する必要があります。 出力メディアの種類が設定されていない場合エンコーダーは任意の入力メディアの種類を報告する必要があります。
+5.  出力メディアの種類が設定されている場合、エンコーダーは、指定された出力メディアの種類に基づいて、使用可能な入力の種類 (pin 記述子を使用) を報告する必要があります。 出力メディアの種類が設定されていない場合、エンコーダーは入力メディアの種類を報告しません。
 
-6.  入力メディアの種類が設定されている場合、デコーダーは、指定された入力メディアの種類に基づく使用可能な出力の種類を報告する必要があります。
+6.  入力メディアの種類が設定されている場合、デコーダーは、指定された入力メディアの種類に基づいて、使用可能な出力の種類を報告する必要があります。
 
-7.  入力メディアの種類が設定されている場合、ビデオ プロセッサは、指定された入力メディアの種類に基づいて、出力の種類を報告する必要があります。
+7.  入力メディアの種類が設定されている場合、ビデオプロセッサは、指定された入力メディアの種類に基づいて出力の種類を報告する必要があります。
 
-8.  ドライバーをサポートする必要があります、 [ICodecAPI](https://docs.microsoft.com/en-us/previous-versions/ms784893(v%3Dvs.85))インターフェイス。 ユーザー モード コンポーネントは、このユーザー モード インターフェイスを使用してコーデック構成情報を取得できます。
+8.  ドライバーは、 [ICodecAPI](https://docs.microsoft.com/en-us/previous-versions/ms784893(v%3Dvs.85))インターフェイスをサポートする必要があります。 ユーザーモードのコンポーネントは、このユーザーモードインターフェイスを使用して、コーデックの構成情報を取得できます。
 
-9.  エンコーダーのセットアップ中に最初に、ICodecAPI プロパティを設定後に、出力メディアの種類。 次に、エンコーダーは入力の種類でサポートできるを現在の構成でのみ提供する必要があります。
+9.  エンコーダーのセットアップ中に、最初に ICodecAPI プロパティが設定され、その後に出力メディアの種類が設定されます。 この後、エンコーダーは、現在の構成でサポートできる入力型のみを提供する必要があります。
 
-10. **ICodecAPI**プロパティとコーデックの API のメディアのプロファイルとレベルなど、一部の地域でプロパティの重複を入力します。 このような場合は、メディアの種類に関連付けられているコーデック API プロパティは、ICodecAPI プロパティをオーバーライドします。 メディアの種類を設定すると後、ミニドライバーはプロパティが重複しているこれらの変更を許可しないでください。
+10. **ICodecAPI**のプロパティとコーデック API のメディアの種類のプロパティは、プロファイルやレベルなど、一部の領域で重複しています。 このような場合、メディアの種類に関連するコーデック API のプロパティは、ICodecAPI のプロパティよりも優先されます。 メディアの種類を設定した後、ミニドライバーは、これらの重複するプロパティを変更できないようにする必要があります。
 
-11. デコーダーのセットアップ中に、入力の型が最初に設定します。 次に、デコーダーはのみ出力の種類でサポートできると、現在の入力型を提供する必要があります。
+11. デコーダーのセットアップ時に、入力の種類が最初に設定されます。 この後、デコーダーは、現在の入力の種類でサポートできる出力の種類のみを提供する必要があります。
 
-12. エンコーダーに入力する必要がある 4 にする必要があります: 2:0 と、少なくとも NV12 インター レース/プログレッシブします。 予想される出力は MPEG2 PS の形式で圧縮された基本ストリーム/TS または H.264 Annex B
+12. エンコーダーへの予期される入力は、4:2:0、少なくとも NV12 インターレース/プログレッシブである必要があります。 予想される出力は、MPEG2 PS/TS または h.264 付属 B という形式の圧縮された基本ストリームです。
 
-13. デコーダーに想定される入力は、基本ストリームです。 予想される出力は、圧縮されていない NV12 としてソース ストリームのスケールなしバージョンです。
+13. デコーダーへの予期される入力は、基本ストリームです。 予想される出力は、圧縮されていない NV12 のソースストリームのバージョンです。
 
-14. AVStream ドライバーでピンは互いに依存しない状態が必要です。 つまり、入力ピンがからに移行できます、 **KSSTATE\_停止**まで、 **KSSTATE\_実行**で出力ピン留めしたまま、 **KSSTATE\_停止**状態。
+14. AVStream ドライバーのピンは、互いに独立した状態を持つ必要があります。 これは、入力ピンが ksk 状態 **\_** から移行して、**実行\_ksk**状態に遷移し、出力ピンが ksk 状態 **\_停止**状態のままである場合に実行されることを意味します。
 
-15. ミニドライバーを解釈する必要があります、ミニドライバーは、変数のデータ バッファーのサイズとプロパティの GET 要求を受信すると、 **NULL**としてクエリに必要なバッファーのサイズのバッファー。 ここでは、ドライバーは Irp の必要な長さを指定する必要があります&gt;IoStatus.Information フィールドと状態の戻り値\_バッファー\_オーバーフローが発生します。 さらに、ミニドライバーは、警告とエラーではなく、リターン コードを設定する必要があります。 たとえば、データの積集合のハンドラーを使用して、このガイダンスに従ってください。
+15. ミニドライバーが変数のデータバッファーサイズでプロパティ GET 要求を受信すると、ミニドライバーは、必要なバッファーサイズのクエリとして**NULL**バッファーを解釈する必要があります。 この場合、ドライバーは、Irp&gt;IoStatus. 情報フィールドに必要な長さを指定し、\_バッファー\_OVERFLOW の状態を返します。 また、ミニドライバーは、リターンコードをエラーではなく警告として設定する必要があります。 たとえば、次のガイダンスに従ってデータの共通部分がハンドラーになります。

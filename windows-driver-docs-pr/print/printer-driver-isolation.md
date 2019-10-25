@@ -1,52 +1,52 @@
 ---
 title: プリンター ドライバーの分離
-description: プリンター ドライバーの分離では、印刷スプーラが実行されているプロセスから独立しているプロセスで実行するプリンター ドライバーを有効にすると、Windows プリント サービスの信頼性が向上します。
+description: プリンタードライバーを分離すると、印刷スプーラが実行されているプロセスとは別のプロセスでプリンタードライバーを実行できるようになるため、Windows プリントサービスの信頼性が向上します。
 ms.assetid: b0f11b3f-92f7-41f6-8edb-63b5651f5499
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4cbff1bd4a672e0055ac1aa0b4579b4b3de08d1b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 54dda102a57d0abcd308d881f10d18f6ce336d63
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67380650"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840437"
 ---
 # <a name="printer-driver-isolation"></a>プリンター ドライバーの分離
 
 
-プリンター ドライバーの分離では、印刷スプーラが実行されているプロセスから独立しているプロセスで実行するプリンター ドライバーを有効にすると、Windows プリント サービスの信頼性が向上します。
+プリンタードライバーを分離すると、印刷スプーラが実行されているプロセスとは別のプロセスでプリンタードライバーを実行できるようになるため、Windows プリントサービスの信頼性が向上します。
 
-プリンター ドライバーの分離のサポートは、Windows 7、Windows Server 2008 R2 以降のオペレーティング システムで実装されます。
+プリンタードライバーの分離のサポートは、Windows 7、Windows Server 2008 R2、およびそれ以降のオペレーティングシステムで実装されています。
 
-Windows 7 と Windows Server 2008 R2 では、受信トレイのプリンター ドライバーはプリンター ドライバーの分離をサポートしてとを分離プロセスで実行できる必要があります。
+Windows 7 および Windows Server 2008 R2 では、受信トレイプリンタードライバーは、プリンタードライバーの分離をサポートし、分離されたプロセスで実行できる必要があります。
 
-### <a href="" id="previous-versions-of-windows"></a> Windows の以前のバージョン
+### <a href="" id="previous-versions-of-windows"></a>以前のバージョンの Windows
 
-Windows の以前のバージョンでプリンター ドライバーを常に、Windows Server 2008 を含む、スプーラーと同じプロセスで実行されました。 スプーラーのプロセスで実行されたプリンター ドライバー コンポーネントには、次のものが含まれています。
+Windows Server 2008 を含め、以前のバージョンの Windows では、プリンタードライバーは常にスプーラと同じプロセスで実行されていました。 スプーラプロセスで実行されたプリンタドライバコンポーネントには、次のものが含まれます。
 
 -   印刷ドライバーの構成モジュール
 
--   プリント プロセッサ
+-   プリントプロセッサ
 
--   モジュールの表示
+-   レンダリングモジュール
 
-1 つの印刷ドライバー コンポーネントのエラーの考えられる原因が失敗し、印刷サブシステム印刷操作のすべてのユーザーとすべての印刷コンポーネントを停止します。
+印刷ドライバーコンポーネントが1つでも失敗すると、印刷サブシステムが失敗し、すべてのユーザーとすべての印刷コンポーネントで印刷操作が停止する可能性があります。
 
-### <a href="" id="new-versions-of-windows"></a> 新しいバージョンの Windows
+### <a href="" id="new-versions-of-windows"></a>新しいバージョンの Windows
 
-Windows 7 および Windows Server 2008 R2 では、管理者は、オプションとして、構成できますプリンター ドライバーを分離プロセス - は、スプーラーのプロセスから別のプロセスで実行します。 ドライバーを分離するには、管理者は、印刷サービスの停止からドライバー コンポーネントで障害を予防できます。
+Windows 7 と Windows Server 2008 R2 では、管理者はオプションとして、プリンタードライバーを分離プロセスで実行するように構成することができます。これは、スプーラプロセスとは別のプロセスです。 ドライバーを分離することにより、管理者はドライバーコンポーネントのエラーによって印刷サービスが停止するのを防ぐことができます。
 
-スプーラー機能の詳細については、次を参照してください。[スプーラー コンポーネントの関数と構造体](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_print/index)します。
+スプーラ関数の詳細については、「[スプーラコンポーネントの関数と構造体](https://docs.microsoft.com/windows-hardware/drivers/ddi/_print/index)」を参照してください。
 
-### <a href="" id="driver-isolation-support-in-inf-files"></a> INF ファイルでのドライバーの分離のサポート
+### <a href="" id="driver-isolation-support-in-inf-files"></a>INF ファイルでのドライバーの分離のサポート
 
-既定では、プリンター ドライバーをインストールする INF ファイルが、ドライバーがドライバーの分離をサポートしていることを表していない場合、プリンター クラスのインストーラーは、スプーラーのプロセスで実行するドライバーを構成します。 ただし、INF ファイルでは、ドライバーがドライバーの分離をサポートしていることを示します、インストーラーは、ドライバーを分離プロセスで実行を構成します。 管理者は、これらの構成設定をオーバーライドし、指定、各ドライバーでは、スプーラーのプロセスまたは分離プロセスで、ドライバーを実行するかどうか。
+既定では、プリンタードライバーをインストールする INF ファイルにドライバーがドライバーの分離をサポートしていることが示されていない場合、プリンタークラスインストーラーによってドライバーがスプーラプロセスで実行されるように構成されます。 ただし、ドライバーがドライバーの分離をサポートしていることが INF ファイルによって示されている場合、インストーラーは、分離されたプロセスで実行されるようにドライバーを構成します。 管理者は、これらの構成設定を上書きして、各ドライバーのドライバーをスプーラプロセスで実行するか、分離プロセスで実行するかを指定できます。
 
-ドライバーの分離をサポートするプリンター ドライバーをインストールする INF ファイルを使用できる、 **DriverIsolation**ドライバーはプリンター ドライバーの分離をサポートするかどうかを示すキーワードです。 設定**DriverIsolation**= 2 は、ドライバーがドライバーの分離をサポートしていることを示します。 設定**DriverIsolation**= 0 では、ドライバーがドライバーの分離をサポートしていないことを示します。 省略すると、 **DriverIsolation** INF ファイルからのキーワードが設定と同じ効果**DriverIsolation**= 0。
+ドライバーの分離をサポートするために、プリンタードライバーをインストールする INF ファイルで**Driverisolation**キーワードを使用して、ドライバーがプリンタードライバーの分離をサポートしているかどうかを示すことができます。 **Driverisolation**= 2 を設定すると、ドライバーがドライバーの分離をサポートしていることを示します。 **Driverisolation**= 0 を設定すると、ドライバーがドライバーの分離をサポートしていないことを示します。 INF ファイルから**driverisolation**キーワードを省略すると、 **driverisolation**= 0 を設定した場合と同じ効果があります。
 
-### <a href="" id="spooler-functions-for-driver-isolation-settings"></a> ドライバーの分離設定のスプーラー関数
+### <a href="" id="spooler-functions-for-driver-isolation-settings"></a>ドライバー分離設定のスプーラ関数
 
-次の表では、ドライバーの分離設定を構成する管理者が使用できるスプーラー関数を示します。
+次の表は、管理者がドライバーの分離設定を構成するために使用できるスプーラ関数を示しています。
 
 <table>
 <colgroup>
@@ -61,21 +61,21 @@ Windows 7 および Windows Server 2008 R2 では、管理者は、オプショ�
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="https://go.microsoft.com/fwlink/p/?linkid=135631" data-raw-source="[GetPrinterDataEx](https://go.microsoft.com/fwlink/p/?linkid=135631)">GetPrinterDataEx</a></p></td>
-<td><p>プリンターのドライバーの分離設定を取得します。</p></td>
+<td><p><a href="https://go.microsoft.com/fwlink/p/?linkid=135631" data-raw-source="[GetPrinterDataEx](https://go.microsoft.com/fwlink/p/?linkid=135631)">Getプリンター Dataex</a></p></td>
+<td><p>プリンターのドライバー分離設定を取得します。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://go.microsoft.com/fwlink/p/?linkid=135632" data-raw-source="[SetPrinterDataEx](https://go.microsoft.com/fwlink/p/?linkid=135632)">SetPrinterDataEx</a></p></td>
-<td><p>プリンターのドライバーの分離設定を設定します。</p></td>
+<td><p><a href="https://go.microsoft.com/fwlink/p/?linkid=135632" data-raw-source="[SetPrinterDataEx](https://go.microsoft.com/fwlink/p/?linkid=135632)">Setプリンター Dataex</a></p></td>
+<td><p>プリンターのドライバー分離設定を設定します。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://go.microsoft.com/fwlink/p/?linkid=135633" data-raw-source="[EnumPrinterDataEx](https://go.microsoft.com/fwlink/p/?linkid=135633)">EnumPrinterDataEx</a></p></td>
-<td><p>プリンターのドライバーの分離設定を列挙します。</p></td>
+<td><p><a href="https://go.microsoft.com/fwlink/p/?linkid=135633" data-raw-source="[EnumPrinterDataEx](https://go.microsoft.com/fwlink/p/?linkid=135633)">Enumプリンター Dataex</a></p></td>
+<td><p>プリンタのドライバ分離設定を列挙します。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="https://go.microsoft.com/fwlink/p/?linkid=135634" data-raw-source="[FindFirstPrinterChangeNotification](https://go.microsoft.com/fwlink/p/?linkid=135634)">FindFirstPrinterChangeNotification</a></p>
 <p><a href="https://go.microsoft.com/fwlink/p/?linkid=135635" data-raw-source="[FindNextPrinterChangeNotification](https://go.microsoft.com/fwlink/p/?linkid=135635)">FindNextPrinterChangeNotification</a></p></td>
-<td><p>プリンターのドライバーの分離設定に対する変更の通知を要求します。</p></td>
+<td><p>プリンタのドライバ分離設定に対する変更の通知を要求します。</p></td>
 </tr>
 </tbody>
 </table>
@@ -84,14 +84,14 @@ Windows 7 および Windows Server 2008 R2 では、管理者は、オプショ�
 
 データの形式は次のとおりです。
 
--   各グループ内のドライバーがで区切られた '\\'
--   個々 のドライバー グループを区切って '\\\\'
+-   各グループのドライバーは '\\' で区切られます
+-   各ドライバーグループは '\\\\' で区切られています
 
-最初のグループは、スプーラーのプロセスにドライバーを読み込みます。 後続の各グループは、グループごとの分離プロセスでドライバーを読み込みます。 2 番目のグループは、既定で分離できるその他のドライバーが読み込まれる '共有' のグループと見なされます。
+最初のグループは、ドライバーをスプーラプロセスに読み込みます。 後続の各グループは、各グループの分離されたプロセスのドライバーを読み込みます。 2つ目のグループは、既定で他の分離対応ドライバーが読み込まれる "共有" グループと見なされます。
 
-### <a href="" id="configuring-driver-isolation-mode-through-administration"></a> 管理からドライバーの分離モードを構成します。
+### <a href="" id="configuring-driver-isolation-mode-through-administration"></a>管理によるドライバー分離モードの構成
 
-コンピューターの管理者は、Windows 印刷の管理コンソールを使用して、またはコンピューターにインストールされている各プリンター ドライバーのドライバーの分離設定を構成する Windows スプーラー関数を呼び出すことができます。 管理者は、次の表に示されている設定のいずれかを使用するドライバーを構成します。
+コンピューター管理者は、Windows 印刷管理コンソールを使用することも、Windows スプーラ機能を呼び出して、コンピューターにインストールされている各プリンタードライバーのドライバー分離設定を構成することもできます。 管理者は、次の表に示す設定のいずれかを使用するようにドライバーを構成します。
 
 <table>
 <colgroup>
@@ -100,49 +100,49 @@ Windows 7 および Windows Server 2008 R2 では、管理者は、オプショ�
 </colgroup>
 <thead>
 <tr class="header">
-<th>ドライバーの分離モード</th>
-<th>説明</th>
+<th>ドライバー分離モード</th>
+<th>意味</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>Shared</p></td>
-<td><p>その他のプリンター ドライバーでは共有されますが、スプーラーのプロセスとは別のプロセスで、ドライバーを実行します。</p></td>
+<td><p>共有</p></td>
+<td><p>他のプリンタードライバーと共有されているがスプーラプロセスとは別のプロセスで、ドライバーを実行します。</p></td>
 </tr>
 <tr class="even">
 <td><p>分離</p></td>
-<td><p>他のプリンター ドライバーとは共有されませんが、スプーラーのプロセスとは別のプロセスで、ドライバーを実行します。</p></td>
+<td><p>スプーラプロセスとは別のプロセスでドライバを実行し、他のプリンタドライバとは共有しないようにします。</p></td>
 </tr>
 <tr class="odd">
 <td><p>なし</p></td>
-<td><p>スプーラーのプロセスで、ドライバーを実行します。</p></td>
+<td><p>スプーラプロセスでドライバを実行します。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-理想的には、プリンター ドライバーは、共有モードで実行できるようにします。 実行を分離プロセスで他のプリンター ドライバーの共有が、スプーラーのプロセスから分離します。 ドライバーは、スプーラーのプロセスから別のプロセスで実行できる場合は、分離モードで実行する必要がありますが、プロセスを他のドライバーで共有が困難です。 たとえば、不適切に設計されたドライバーとの関連ドライバーまたは同じのドライバーの異なるバージョンの競合するファイル名がありますまたはドライバー可能性があります頻繁に障害で実行されているその他のドライバーの操作と競合するメモリ リークが発生同じプロセスです。
+プリンタードライバーは、共有モードで実行できるのが理想的です。 つまり、他のプリンタードライバーと共有される分離プロセスで実行されますが、スプーラプロセスとは異なります。 ドライバーは、スプーラプロセスとは別のプロセスで実行できるが、プロセスを他のドライバーと共有するのが困難な場合は、分離モードで実行する必要があります。 たとえば、適切に設計されていないドライバーは、関連するドライバーや同じドライバーの異なるバージョンのファイル名と競合している可能性があります。または、ドライバーが頻繁に障害を発生させるか、またはで実行される他のドライバーの操作を妨げるメモリリークが発生する可能性があります。同じプロセス。
 
-トラブルシューティングをサポートするには、ドメイン管理者は、ドメイン内のコンピューターでドライバーの分離機能を無効にできます。 または管理者は分離モードで実行するコンピューターのすべてのプリンター ドライバーを強制できます。 分離モードで各ドライバーは、スプーラーおよびその他のプリンター ドライバーから別のプロセスで実行する必要があります。
+トラブルシューティングをサポートするために、ドメイン管理者はドメイン内のコンピューターでドライバー分離機能を無効にすることができます。また、管理者は、コンピューター上のすべてのプリンタードライバーを強制的に分離モードで実行することもできます。 分離モードでは、各ドライバーはスプーラと他のプリンタードライバーとは別のプロセスで実行する必要があります。
 
-ドライバーの分離は、グループ ポリシーによって無効にした場合、分離がオフのすべてのプリンター ドライバーです。 分離が有効になっている場合、個々 のドライバーはモード チェックです。 ドライバーの分離モードの設定にされている場合で実行される共有、分離、または none レジストリ エントリに基づくモード。 ただし場合は、ドライバーには、分離モードの設定はありません。 分離との互換性が、共有モードで実行されます。 グループ ポリシーの上書きが、ドライバーが共有モードまたは none で実行するかどうかを決定、ドライバーが、モードと互換性がない場合モード。
+ドライバーの分離がグループポリシーによって無効にされている場合、すべてのプリンタードライバーで分離が無効になります。 分離が有効になっている場合、個々のドライバーはモードでチェックされます。 ドライバーが分離モードを設定している場合は、レジストリエントリに基づいて、共有、分離、またはなしモードで実行されます。 ただし、分離モードが設定されておらず、分離と互換性があるドライバーは、共有モードで実行されます。 ドライバーがモードと互換性がない場合は、グループポリシーの上書きによって、ドライバーが共有モードと none モードのどちらで実行されるかが決まります。
 
-次のグラフには、ドライバーの分離モードを選択するための意思決定のマップが表示されます。
+次の表は、ドライバーの分離モードを選択するためのデシジョンマップを示しています。
 
 ![ドライバーの分離モードを選択するためのフローチャート](images/isolation.png)
 
-### <a name="spooler-functions-allowed-under-driver-isolation"></a>ドライバーの分離レベルで許可されているスプーラー関数
+### <a name="spooler-functions-allowed-under-driver-isolation"></a>ドライバーの分離下で許可されるスプーラ関数
 
-ドライバーの分離レベルでは、特定の関数のみが許可されています。
+ドライバーの分離では、特定の関数のみが許可されます。
 
-### <a href="" id="spoolss-dll-functions"></a>Spoolss.dll 関数
+### <a href="" id="spoolss-dll-functions"></a>Spoolss 関数
 
-次の関数は、spoolss.dll によってエクスポートし、spoolss.lib へのリンクによるスプーラー プラグインを利用します。
+次の関数は、spoolss によってエクスポートされ、spoolss にリンクすることでスプーラプラグインで使用できます。
 
 **AddMonitorW**
 
-**AppendPrinterNotifyInfoData**
+**Appendプリンター Notifyinfodata**
 
 **ClosePrinter**
 
@@ -168,17 +168,17 @@ Windows 7 および Windows Server 2008 R2 では、管理者は、オプショ�
 
 **GetPrinterDataExW**
 
-**GetPrinterDataW**
+**Getプリンター Dataw**
 
-**GetPrinterDriverDirectoryW**
+**Getプリンター Driverdirectoryw**
 
-**GetPrinterDriverW**
+**Getプリンター Driverw**
 
-**GetPrinterW**
+**Getプリンター w**
 
 **ImpersonatePrinterClient**
 
-**OpenPrinterW**
+**Openプリンター w**
 
 **ReadPrinter**
 
@@ -190,21 +190,21 @@ Windows 7 および Windows Server 2008 R2 では、管理者は、オプショ�
 
 **SetPrinterDataExW**
 
-**SetPrinterDataW**
+**Setプリンター Dataw**
 
-**StartDocPrinterW**
+**Startdocプリンター w**
 
 **StartPagePrinter**
 
 **WritePrinter**
 
-### <a href="" id="winspool-drv-functions"></a>WinSpool.drv 関数
+### <a href="" id="winspool-drv-functions"></a>WinSpool. drv 関数
 
-次の関数は、winspool.drv によってエクスポートし、Winspool.h へのリンクによるスプーラー プラグインを利用します。
+次の関数は winspool によってエクスポートされ、Winspool にリンクすることでスプーラプラグインで使用できます。
 
-**AppendPrinterNotifyInfoData**
+**Appendプリンター Notifyinfodata**
 
-**復元するため**
+**ExtDeviceMode**
 
 **ImpersonatePrinterClient**
 
@@ -220,7 +220,7 @@ Windows 7 および Windows Server 2008 R2 では、管理者は、オプショ�
 
 **RouterAllocBidiResponseContainer**
 
-**RouterAllocPrinterNotifyInfo**
+**Routerallocプリンター Notifyinfo**
 
 **RouterCreatePrintAsyncNotificationChannel**
 
@@ -228,7 +228,7 @@ Windows 7 および Windows Server 2008 R2 では、管理者は、オプショ�
 
 **RouterFreeBidiResponseContainer**
 
-**RouterFreePrinterNotifyInfo**
+**Routerfreeプリンター Notifyinfo**
 
 **RouterGetPrintClassObject**
 

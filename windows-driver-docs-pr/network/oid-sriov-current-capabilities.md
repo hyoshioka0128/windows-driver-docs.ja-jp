@@ -1,40 +1,40 @@
 ---
 title: OID_SRIOV_CURRENT_CAPABILITIES
-description: 上にある、ドライバーは、現在の 1 つのルートのネットワーク アダプターの I/O 仮想化 (SR-IOV) 機能を取得する OID_SRIOV_CURRENT_CAPABILITIES のオブジェクト識別子 (OID) クエリ要求を発行します。
+description: このドライバーは、ネットワークアダプターの現在のシングルルート i/o 仮想化 (SR-IOV) 機能を取得するために、OID_SRIOV_CURRENT_CAPABILITIES のオブジェクト識別子 (OID) クエリ要求を発行します。
 ms.assetid: EE76B3F8-2883-484A-B2EE-6F7D4738934E
 ms.date: 08/08/2017
-keywords: -OID_SRIOV_CURRENT_CAPABILITIES ネットワーク ドライバーが Windows Vista 以降
+keywords: -Windows Vista 以降の OID_SRIOV_CURRENT_CAPABILITIES ネットワークドライバー
 ms.localizationpriority: medium
-ms.openlocfilehash: 76684f464d61d296cc25cd0af02bce65198273e7
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3462bf4802036fe60c78cee5ad4aceb6b73dad6a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67356108"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843992"
 ---
-# <a name="oidsriovcurrentcapabilities"></a>OID\_SRIOV\_現在\_機能
+# <a name="oid_sriov_current_capabilities"></a>OID\_SRIOV\_現在の\_機能
 
 
-上にある、ドライバーの OID オブジェクト識別子 (OID) のクエリ要求を発行する\_SRIOV\_現在\_現在シングル ルート I/O 仮想化 (SR-IOV) 機能のネットワーク アダプターを取得する機能。
+ネットワークアダプターの現在のシングルルート i/o 仮想化 (SR-IOV) 機能を取得するために、それ以降のドライバーは OID\_SRIOV のオブジェクト識別子 (OID) クエリ要求を発行し、現在の\_機能を\_します。
 
-**InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体にはへのポインターが含まれています、 [ **NDIS\_SRIOV\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_sriov_capabilities)構造体。
+[**Ndis\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造体の**informationbuffer**メンバーには、 [**ndis\_SRIOV\_CAPABILITIES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_capabilities)構造体へのポインターが含まれています。
 
 <a name="remarks"></a>注釈
 -------
 
-NDIS 6.30 以降、ミニポート ドライバーは、ネットワーク アダプターで有効になっている、SR-IOV ハードウェア機能を指定時にその[ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)関数が呼び出されます。 ドライバーの初期化、 [ **NDIS\_SRIOV\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_sriov_capabilities)現在有効になっているハードウェア機能の SR-IOV とセットの構造、 **CurrentSriovCapabilities**のメンバー、 [ **NDIS\_ミニポート\_アダプター\_ハードウェア\_支援\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_hardware_assist_attributes)構造体へのポインターを**NDIS\_SRIOV\_機能**構造体。 ミニポート ドライバーを呼び出して、 [ **NdisMSetMiniportAttributes** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsetminiportattributes)関数とセット、 *MiniportAttributes*パラメーターへのポインターを**NDIS\_ミニポート\_アダプター\_ハードウェア\_支援\_属性**構造体。
+NDIS 6.30 以降、ミニポートドライバーは、 [*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)関数が呼び出されたときに、ネットワークアダプターで有効になっている sr-iov ハードウェア機能を提供します。 このドライバーは、現在有効になっている SR-IOV ハードウェア機能を使用して[**ndis\_SRIOV\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_capabilities)構造を初期化し、NDIS\_ミニポート\_アダプターの**currentsriの**機能メンバーを設定します。 [ **\_ハードウェア\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_hardware_assist_attributes)は、 **NDIS\_SRIOV\_CAPABILITIES**構造体へのポインターに\_属性構造をサポートします。 次に、ミニポートドライバーは[**NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)関数を呼び出し、 *miniportattributes*パラメーターを NDIS\_ミニポート\_アダプターへのポインターに設定します **\_ハードウェア\_サポート\_属性**構造体。
 
-OID の OID クエリ要求を発行する上位のプロトコルとフィルター ドライバーがいない\_SRIOV\_現在\_機能します。 NDIS は、次のようにこれらのドライバーをネットワーク アダプターの現在有効になっている、SR-IOV 機能を提供します。
+プロトコルドライバーとフィルタードライバーは、OID\_SRIOV の OID クエリ要求を、現在の\_の機能\_発行する必要はありません。 NDIS は、次のように、ネットワークアダプターの現在有効になっている SR-IOV 機能をこれらのドライバーに提供します。
 
--   NDIS プロトコル ドライバーに関連する、基になるネットワーク アダプターの現在有効になっている、SR-IOV 機能の報告、 **SriovCapabilities**のメンバー、 [ **NDIS\_バインド\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_bind_parameters)バインド操作中に構造体。
+-   NDIS は、基になるネットワークアダプターの現在有効になっている**sr-iov 機能を**、バインド操作中に、 [**ndis\_bind\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_bind_parameters)構造内のプロトコルドライバーに報告します。
 
--   NDIS フィルター ドライバーに関連する、基になるネットワーク アダプターの現在有効になっている、SR-IOV 機能の報告、 **SriovCapabilities**のメンバー、 [ **NDIS\_フィルター\_アタッチ\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_filter_attach_parameters) attach 操作中に構造体。
+-   NDIS は、基になるネットワークアダプターの現在有効になっている SR-IOV 機能を、 [**ndis\_フィルター\_\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_filter_attach_parameters)の**sriの機能**メンバーにあるフィルタードライバーに報告します。アタッチ操作です。
 
-### <a name="return-status-codes"></a>リターン状態コード
+### <a name="return-status-codes"></a>ステータスコードを返す
 
-OID の OID のクエリ要求を処理する NDIS\_SRIOV\_現在\_ミニポート ドライバーの機能要求。 ドライバーにはこの OID 要求が発行するされません。
+NDIS は、ミニポートドライバーに対する現在の\_機能要求\_OID\_SRIOV の OID クエリ要求を処理します。 ドライバーは、この OID 要求を発行しません。
 
-NDIS が、OID を処理するときに\_SRIOV\_現在\_機能要求と、次のステータス コードの 1 つを返します。
+NDIS は、OID\_SRIOV\_現在の\_機能の要求を処理するときに、次のいずれかのステータスコードを返します。
 
 <table>
 <colgroup>
@@ -50,19 +50,19 @@ NDIS が、OID を処理するときに\_SRIOV\_現在\_機能要求と、次の
 <tbody>
 <tr class="odd">
 <td><p>NDIS_STATUS_SUCCESS</p></td>
-<td><p>OID 要求は正常に完了しました。</p></td>
+<td><p>OID 要求が正常に完了しました。</p></td>
 </tr>
 <tr class="even">
 <td><p>NDIS_STATUS_NOT_SUPPORTED</p></td>
-<td><p>ミニポート ドライバーでは、シングル ルート I/O 仮想化 (SR-IOV) インターフェイスをサポートしていませんか、またはインターフェイスを使用して有効になっていません。</p></td>
+<td><p>ミニポートドライバーがシングルルート i/o 仮想化 (SR-IOV) インターフェイスをサポートしていないか、インターフェイスの使用が有効になっていません。</p></td>
 </tr>
 <tr class="odd">
 <td><p>NDIS_STATUS_INVALID_LENGTH</p></td>
-<td><p>情報バッファーが小さすぎます。 ミニポート ドライバーを設定する必要があります、<strong>データ。QUERY_INFORMATION します。BytesNeeded</strong>内のメンバー、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)"> <strong>NDIS_OID_REQUEST</strong> </a>構造体に必要な最小バッファー サイズ。</p></td>
+<td><p>情報バッファーが短すぎます。 ミニポートドライバーはデータを設定する必要があり<strong>ます。QUERY_INFORMATION.</strong> <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a>構造体の中で必要とされる最小バッファーサイズに対して、bytesneeded 必要です。</p></td>
 </tr>
 <tr class="even">
 <td><p>NDIS_STATUS_FAILURE</p></td>
-<td><p>他の理由から、要求が失敗しました。</p></td>
+<td><p>他の理由で要求が失敗しました。</p></td>
 </tr>
 </tbody>
 </table>
@@ -80,11 +80,11 @@ NDIS が、OID を処理するときに\_SRIOV\_現在\_機能要求と、次の
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>NDIS 6.30 以降をサポートします。</p></td>
+<td><p>NDIS 6.30 以降でサポートされています。</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Ntddndis.h (include Ndis.h)</td>
+<td>Ntddndis (Ndis .h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -93,17 +93,17 @@ NDIS が、OID を処理するときに\_SRIOV\_現在\_機能要求と、次の
 
 
 ****
-[**NDIS\_バインド\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_bind_parameters)
+[**NDIS\_バインド\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_bind_parameters)
 
-[**NDIS\_フィルター\_アタッチ\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_filter_attach_parameters)
+[**NDIS\_フィルター\_\_パラメーターをアタッチする**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_filter_attach_parameters)
 
-[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
+[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)
 
-[**NDIS\_ミニポート\_アダプター\_ハードウェア\_支援\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_hardware_assist_attributes)
+[**NDIS\_ミニポート\_アダプター\_ハードウェア\_サポート\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_hardware_assist_attributes)
 
-[**NDIS\_SRIOV\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_sriov_capabilities)
+[**NDIS\_SRIOV\_の機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_capabilities)
 
-[**NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsetminiportattributes)
+[**NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)
 
  
 

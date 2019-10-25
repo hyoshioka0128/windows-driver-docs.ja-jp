@@ -3,58 +3,58 @@ title: 電源ポリシーの所有権
 description: 電源ポリシーの所有権
 ms.assetid: 8e44eedd-6afe-45c6-bbe8-42cfb6f6a644
 keywords:
-- 電源の WDK KMDF、所有権の管理
-- WDK KMDF の所有権
+- 電源管理 WDK KMDF、所有権
+- 所有権 WDK KMDF
 - 所有権 WDK KMDF、電源ポリシー
 - 電源ポリシー WDK KMDF
-- ウェイク アップ機能 WDK KMDF
-- 電源管理 WDK KMDF をスリープ状態します。
+- ウェイクアップ機能 WDK KMDF
+- スリープ電源管理 WDK KMDF
 - 低電力状態 WDK KMDF
-- デバイスの電源状態が WDK KMDF
+- デバイスの電源状態 WDK KMDF
 - 作業状態 WDK KMDF
-- 電源状態が WDK KMDF
+- 電源状態 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bdfdddedab23c1b6e455b220804d10322e5ff36f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6a1d1ae68c608648d512dd879d6f5983af947bb4
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67376346"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842242"
 ---
 # <a name="power-policy-ownership"></a>電源ポリシーの所有権
 
 
-各デバイス、いずれか (および 1 つだけ)、デバイスのドライバーのデバイスをする必要があります*電源ポリシー所有者*します。 電源ポリシー所有者は、適切な決定[デバイスの電源状態](https://docs.microsoft.com/windows-hardware/drivers/kernel/device-power-states)デバイスの電源の状態が変更されるたびに、デバイスのドライバー スタックへのデバイスと送信要求。
+デバイスごとに、デバイスのドライバーの1つ (1 つだけ) がデバイスの*電源ポリシーの所有者*である必要があります。 電源ポリシーの所有者は、デバイスの適切な[デバイスの電源状態](https://docs.microsoft.com/windows-hardware/drivers/kernel/device-power-states)を判断し、デバイスの電源状態が変更されるたびにデバイスのドライバースタックに要求を送信します。
 
-フレームワーク ベースのドライバーが要求するコードを含まない、フレームワークがそのコードを提供するため、デバイスの電力状態に変更します。 既定では、ときに、システムが入力、[システムがスリープ状態](https://docs.microsoft.com/windows-hardware/drivers/kernel/system-sleeping-states)フレームワークは D3 にデバイスの電源状態を削減するデバイスのバスのドライバーを確認します。 (、ドライバーように変更できます既定の動作、フレームワーク、D1 または D2 にデバイスのスリープ状態を設定する場合は、デバイスは、ウェイク アップ機能を提供します。)システムの電源が返されるときにその[(S0) の状態を操作](https://docs.microsoft.com/windows-hardware/drivers/kernel/system-working-state-s0)フレームワークの作業 (D0) 状態にデバイスを復元するバス ドライバーを要求します。
+フレームワークベースのドライバーには、デバイスの電源状態の変更を要求するコードが含まれていません。これは、フレームワークによってそのコードが提供されるためです。 既定では、システムが[スリープ状態](https://docs.microsoft.com/windows-hardware/drivers/kernel/system-sleeping-states)になるたびに、フレームワークはデバイスのバスのドライバーに対してデバイスの電力状態を D3 に下げるように要求します。 (デバイスがウェイクアップ機能を提供している場合、デバイスのスリープ状態が D1 または D2 に設定されるように、ドライバーによって既定の動作が変更される可能性があります)。システムの電源が[正常な状態 (S0)](https://docs.microsoft.com/windows-hardware/drivers/kernel/system-working-state-s0)に戻ると、フレームワークは、デバイスを動作 (D0) 状態に復元するようにバスドライバーに要求します。
 
-電源ポリシー所有者は有効にして、次のデバイス機能を無効にする責任を負いますもです。
+電源ポリシーの所有者は、次のデバイス機能を有効または無効にする役割も担います。
 
--   入力する、デバイスの機能、 [(スリープ) 低電力状態](https://docs.microsoft.com/windows-hardware/drivers/kernel/device-sleeping-states)がアイドル状態とシステムの作業 (S0) 状態のままになります
+-   デバイスがアイドル状態で、システムが動作中 (S0) 状態のままになっている場合に、デバイスが[低電力 (スリープ状態) 状態](https://docs.microsoft.com/windows-hardware/drivers/kernel/device-sleeping-states)に入る機能
 
--   夜間に起き出すそのものをスリープ状態から外部イベントを検出した場合に、デバイスの機能
+-   外部イベントを検出したときにスリープ状態からスリープ解除するデバイスの機能
 
--   システム全体のシステムの外部イベントを検出した場合に、スリープ状態から復帰するデバイスの機能
+-   外部イベントを検出したときにシステムのスリープ状態からシステム全体をウェイクアップするデバイスの能力
 
-電源ポリシーの所有者を呼び出すことも、デバイスは、これらのアイドル状態の電源とシステムのウェイク アップ機能をサポートする場合[ **WdfDeviceInitSetPowerPolicyEventCallbacks** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceinitsetpowerpolicyeventcallbacks)電源ポリシーのセットを登録するにはイベントのコールバック関数。
+デバイスでこれらのアイドル状態の電源とシステムのウェイクアップ機能がサポートされている場合、電源ポリシーの所有者は、 [**Wdfdeviceinitsetpowerpolicyeventcallbacks**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetpowerpolicyeventcallbacks)を呼び出して、一連の電源ポリシーイベントコールバック関数を登録することもできます。
 
-フレームワーク ベースのドライバーでは、既定では、デバイスの機能のドライバーは、電源ポリシー所有者です。 (関数ドライバーがないかどうかと、バス ドライバーが呼び出されて[ **WdfPdoInitAssignRawDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfpdo/nf-wdfpdo-wdfpdoinitassignrawdevice)、バス ドライバーは、電源ポリシー所有者)。 ドライバー スタックの電源ポリシーの所有者を変更する場合は、既定の電源ポリシーの所有者を呼び出す必要があります[ **WdfDeviceInitSetPowerPolicyOwnership** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceinitsetpowerpolicyownership)所有権、およびとなるドライバーを無効にします電源ポリシーの所有者を呼び出す必要があります**WdfDeviceInitSetPowerPolicyOwnership**所有権を有効にします。
+既定では、フレームワークベースのドライバーの場合、デバイスの関数ドライバーは電源ポリシーの所有者になります。 (関数ドライバーがなく、バスドライバーが[**Wdfpdoinit割り当て Rawdevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfpdo/nf-wdfpdo-wdfpdoinitassignrawdevice)を呼び出している場合、バスドライバーは電源ポリシーの所有者です)。 ドライバースタックの電源ポリシーの所有者を変更する場合は、既定の電源ポリシーの所有者が[**Wdfdeviceinitsetpowerpolicyownership**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetpowerpolicyownership)を呼び出して所有権を無効にする必要があります。また、電源ポリシーの所有者は、を呼び出す**必要があります。** の所有権を有効にするには、WdfDeviceInitSetPowerPolicyOwnership を使用します。
 
-フレームワークは、次の作業を電源ポリシー所有者には。
+このフレームワークは、電源ポリシーの所有者に対して次の作業を行います。
 
--   ドライバーとドライバー スタックの残りの部分の間のすべての電源ポリシー通信を処理します。 など、ドライバーはフレームワークは、要求を行うために、デバイスの電源の状態を変更するバス ドライバーを要求する必要はありません。
+-   ドライバーとその他のドライバースタック間のすべての電源ポリシー通信を処理します。 たとえば、フレームワークによって要求が行われるため、ドライバーはデバイスの電源状態を変更するようにバスドライバーに要求する必要はありません。
 
--   ドライバーは、電源ポリシー イベントのコールバック関数を登録場合、フレームワークに時期を有効または低電力状態からスリープ状態を解除するデバイスの機能を無効になったときにします。
+-   ドライバーが電源ポリシーイベントコールバック関数を登録している場合、デバイスが低電力状態からスリープ解除できるようにする時間が経過すると、フレームワークはそれらを呼び出します。
 
--   ドライバーは、ユーザーがアイドル状態の変更し、復帰の設定を許可している場合、フレームワークは、デバイス マネージャーを表示するプロパティ シート ページの形式でユーザー インターフェイスを提供します。
+-   ユーザーがドライバーでアイドル設定とウェイク設定を変更できるようにすると、フレームワークによって、デバイスマネージャー表示されるプロパティシートページの形式でユーザーインターフェイスが提供されます。
 
-電源ポリシー所有者の責任についての詳細については、次のトピックを参照してください。
+電源ポリシー所有者の責任の詳細については、次のトピックを参照してください。
 
--   [アイドル状態の電源のサポート](supporting-idle-power-down.md)
--   [システムのウェイク アップをサポートしています。](supporting-system-wake-up.md)
--   [デバイスがアイドル状態とスリープ解除の動作のユーザーによる制御](user-control-of-device-idle-and-wake-behavior.md)
--   [電源状態の機能をサポートしています。](supporting-functional-power-states.md)
+-   [アイドル状態の電源をサポートする](supporting-idle-power-down.md)
+-   [システムウェイクアップのサポート](supporting-system-wake-up.md)
+-   [デバイスのアイドル状態とウェイク動作のユーザーコントロール](user-control-of-device-idle-and-wake-behavior.md)
+-   [機能力状態のサポート](supporting-functional-power-states.md)
 
  
 

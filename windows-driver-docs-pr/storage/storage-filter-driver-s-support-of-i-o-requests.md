@@ -3,18 +3,18 @@ title: 記憶域フィルター ドライバーの I/O 要求サポート
 description: 記憶域フィルター ドライバーの I/O 要求サポート
 ms.assetid: 2899bf91-584f-47fe-9d5c-3feb07b8707e
 keywords:
-- フィルター ドライバー WDK を記憶域、I/O 要求をサポートします。
-- フィルター ドライバー WDK 記憶域、I/O 要求のサポート
-- SFD WDK の記憶域、I/O 要求のサポート
+- ストレージフィルタードライバー WDK、i/o 要求のサポート
+- フィルタードライバー WDK storage、i/o 要求のサポート
+- SFD WDK storage、i/o 要求のサポート
 - Irp WDK ストレージ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c61abbe23d0271fa35c1e0dc826349139ddd05cb
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5675573b90e6872fb899c3996d46b72ff14069fb
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368190"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844467"
 ---
 # <a name="storage-filter-drivers-support-of-io-requests"></a>記憶域フィルター ドライバーの I/O 要求サポート
 
@@ -22,23 +22,23 @@ ms.locfileid: "67368190"
 ## <span id="ddk_storage_filter_driver_s_support_of_i_o_requests_kg"></span><span id="DDK_STORAGE_FILTER_DRIVER_S_SUPPORT_OF_I_O_REQUESTS_KG"></span>
 
 
-高度な記憶域フィルター ドライバー (SFD) からユーザーのアプリケーションとより高度なドライバーは Irp をインターセプトし、(記憶域クラス ドライバーまたは別のフィルター ドライバー) は、次の下位ドライバーに渡される前に、必要に応じて変更します。 このような SFD に送信または標準以外の形式や、デバイスへの応答をプログラミングでデバイスから返されたデータを変換するなど、特別な処理を必要とする要求のデバイスに固有のサポートを提供する、 [ **IRP\_MJ\_デバイス\_コントロール**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-device-control)要求。
+上位レベルのストレージフィルタードライバー (SFD) は、ユーザーアプリケーションと上位レベルのドライバーから Irp をインターセプトし、必要に応じて、次の下位のドライバー (ストレージクラスドライバーまたは他のフィルタードライバー) に渡す前に必要に応じて変更します。 このような SFD は、非標準の形式でデバイスとの間で送受信されるデータの変換や、 [**IRP\_MJ\_デバイスへの応答としてのデバイスのプログラミングなど、特別な処理を必要とする要求に対してデバイス固有のサポートを提供し\_コントロール**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-device-control)要求。
 
-下位 SFD はされる Srb や記憶域クラス ドライバーによって発行された Irp を監視し、(記憶域ポート ドライバーまたは別のフィルター ドライバー) は、次の下位ドライバーに渡される前に、必要に応じて変更します。
+低レベルの SFD は、記憶域クラスドライバーによって発行された SRBs や Irp を監視し、必要に応じて、次の下位のドライバー (ストレージポートドライバーまたは他のフィルタードライバー) に渡す前に、それらを変更します。
 
-両方より高いレベルと下位レベル SFDs が下位のドライバーを特別な処理を必要としないすべての I/O 要求を処理できます。
+上位レベルと下位レベルの SFDs の両方で、より低いドライバーで、特別な処理を必要としないすべての i/o 要求を処理できます。
 
-記憶域クラス ドライバーでは、ように、SFD は上位レベルのすべてのカーネル モード ドライバーに共通の次の要件があります。
+ストレージクラスドライバーと同様に、SFD には、すべての上位レベルのカーネルモードドライバーに共通の次の要件があります。
 
--   セットを指定する必要があります*ディスパッチ*する I/O マネージャーやドライバーもより高度な Irp を送信する適切な I/O 操作ルーチン。 IRP の同じセットをサポートする必要があります、SFD\_MJ\_の種類のデバイスの記憶域クラス ドライバーとして XXX。
+-   I/o マネージャーや上位レベルのドライバーが適切な i/o 操作のために Irp を送信できる*ディスパッチ*ルーチンのセットを提供する必要があります。 SFD は、その種類のデバイスのストレージクラスドライバーと同じ IRP\_MJ\_XXX のセットをサポートしている必要があります。
 
--   [ **IRP\_MJ\_デバイス\_コントロール**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-device-control)要求すると、その物理デバイスが処理できるよう多くのクラス ドライバーでサポートされている I/O 制御コードをサポートし、、可能であれば、ドライバーで、残りの I/O 制御コードのサポートをエミュレートします。
+-   [**IRP\_MJ\_デバイス\_制御**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-device-control)要求では、その物理デバイスが処理できるクラスドライバーでサポートされている i/o 制御コードの数をサポートする必要があります。また、可能であれば、ドライバーの残りの i/o 制御コードのサポートをエミュレートします。
 
--   必要があります、 [ *DriverEntry* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)ルーチン、 [ *AddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)ルーチン、 [*アンロード*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_unload)ルーチン、および*ディスパッチ*を処理するルーチン PnP Irp の電源し、任意の他の標準的な高度なドライバーのルーチンなどがあることができます[ *IoCompletion*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)ルーチンは、必要に応じて。
+-   PnP と電源 Irp を処理するために[*Driverentry*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)ルーチン、 [*AddDevice*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)ルーチン、[*アンロード*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_unload)ルーチン、および*ディスパッチ*ルーチンが必要です。また、 [*iocompletion*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine)など、他の標準の上位レベルのドライバールーチンを使用することもできます。必要に応じてルーチン。
 
--   PnP 処理、電源管理、およびシステム コントロール Irp の規則に従う必要があります。
+-   PnP、電源管理、およびシステム制御の Irp を処理するためのルールに従っている必要があります。
 
-そのデバイスに特殊な機能がある場合、SFD が I/O 制御コードのドライバーの定義済みの I/O 制御コードをデバイス固有の種類のシステムに必要な設定に加えてのセットをサポートできます[ **IRP\_MJ\_デバイス\_コントロール**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-device-control)要求。
+デバイスに特別な機能がある場合、SFD は、システムに必要なデバイスタイプ固有の i/o 制御コードのセットに加えて、 [**IRP\_MJ\_デバイス\_制御**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-device-control)要求に対して、システムが必要とする一連の i/o 制御コードをサポートできます。
 
  
 

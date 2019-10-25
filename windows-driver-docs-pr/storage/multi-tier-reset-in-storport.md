@@ -4,15 +4,15 @@ description: Storport の多階層リセット
 ms.assetid: 11c717b9-5154-43dd-b357-ff093cabec4b
 keywords:
 - Storport ドライバー WDK、エラー
-- WDK Storport のエラー
+- エラー WDK Storport
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 865a3e4e6c96ead2631fc55fe0218fe84466e62b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 67b919419424826368d3f79293a2a8ee56a8cabf
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384661"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845091"
 ---
 # <a name="multi-tier-reset-in-storport"></a>Storport の多階層リセット
 
@@ -20,13 +20,13 @@ ms.locfileid: "67384661"
 ## <span id="ddk_multi_tier_reset_in_storport_kg"></span><span id="DDK_MULTI_TIER_RESET_IN_STORPORT_KG"></span>
 
 
-Storport ドライバーでは、SCSI ポートのドライバーよりもより高度なリセット パターンを実装します。 全体のバスのリセットの SCSI ポート手法は、SCSI バス上であっても、負荷の高い操作です。 ファイバー チャネル バスなどの高パフォーマンスのバスのバスのリセットもできない可能性があります。
+Storport ドライバーは、SCSI ポートドライバーよりも高度なリセットスキームを実装しています。 Scsi バス上でも、バス全体をリセットする SCSI ポートの手法は負荷の高い操作です。 高パフォーマンスのバス (ファイバーチャネルバスなど) では、バスのリセットが不可能な場合もあります。
 
-可能であれば、Storport ドライバーと関連する高度なドライバーは、論理ユニットのリセットを試みる。 これが失敗すると、Storport、デバイスをリセットしようとします。 最後に、このアプローチも失敗した場合、Storport、バスをリセットします。 このシーケンスは、バスのリセット操作の数が少ないを生成します。
+可能な場合は、Storport ドライバーおよび関連する上位レベルのドライバーが論理ユニットをリセットしようとします。 これが失敗した場合、Storport はデバイスのリセットを試みます。 最後に、この方法も失敗した場合、Storport によってバスがリセットされます。 このシーケンスでは、バスリセット操作が大幅に減少します。
 
-高パフォーマンスのバスのより複雑な要件に対処するには、Storport より多様なオプションのリセットを許可する多階層のリセット操作を実装します。 1 つではなく、要求できるされる Srb 経由で送信されるリセットの 2 種類あります。
+高パフォーマンスバスのより複雑な要件に対処するために、Storport では、さまざまなリセットオプションを可能にする多層リセット操作を実装しています。 SRBs を介して送信されるリセットには、1つではなく、要求できる2種類があります。
 
-バスのリセット操作に影響があります、同期コールバック ルーチンを最後に、 [ **HwStorResetBus**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-hw_reset_bus)します。
+最後に、バスのリセット操作は、同期コールバックルーチン[**HwStorResetBus**](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nc-storport-hw_reset_bus)によって行われます。
 
  
 

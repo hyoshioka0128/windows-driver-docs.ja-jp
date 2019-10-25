@@ -1,38 +1,38 @@
 ---
 title: NDIS_STATUS_WWAN_SMS_STATUS
-description: ミニポート ドライバーの使用、MB サービスを次のイベント、MB デバイスのメッセージ ストアに通知するために NDIS_STATUS_WWAN_SMS_STATUS 通知がいっぱいです。新しい SMS テキスト メッセージが到着した、MessageIndex.Miniport に対応する新しいメッセージをドライバーもこの通知が不要なイベントを送信します。この通知は、NDIS_WWAN_SMS_STATUS 構造体を使用します。
+description: ミニポートドライバーは、NDIS_STATUS_WWAN_SMS_STATUS 通知を使用して mb サービスに、MB デバイスのメッセージストアがいっぱいになったことを通知します。新しい SMS テキストメッセージが到着しました。 MessageIndex に対応する新しいメッセージが表示されます。ミニポートドライバーは、この通知を使用して、要請されていないイベントを送信することもできます。この通知では、NDIS_WWAN_SMS_STATUS 構造体が使用されます。
 ms.assetid: 65553a3f-57af-49ef-a3b7-ed35df0a319d
 ms.date: 08/08/2017
-keywords: -NDIS_STATUS_WWAN_SMS_STATUS ネットワーク ドライバーが Windows Vista 以降
+keywords: -Windows Vista 以降の NDIS_STATUS_WWAN_SMS_STATUS ネットワークドライバー
 ms.localizationpriority: medium
-ms.openlocfilehash: bbed29918c313239e12a8678c9335cfdb75ce7ff
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ce00553a17a3398f2f3ff20a43a967860039fcd3
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67372535"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844629"
 ---
-# <a name="ndisstatuswwansmsstatus"></a>NDIS\_状態\_WWAN\_SMS\_状態
+# <a name="ndis_status_wwan_sms_status"></a>NDIS\_ステータス\_WWAN\_SMS\_の状態
 
 
-ミニポート ドライバーを使用して、NDIS\_状態\_WWAN\_SMS\_MB サービスに、次のイベントを通知するために状態の通知。
+ミニポートドライバーは、NDIS\_ステータス\_WWAN\_SMS\_状態通知を使用して、MB サービスに次のイベントについて通知します。
 
--   MB デバイスのメッセージ ストアがいっぱいです。
+-   MB デバイスのメッセージストアがいっぱいです。
 
--   新しいメッセージに一致する、新しい SMS テキスト メッセージが到着した*MessageIndex*します。
+-   新しい SMS テキストメッセージが到着しました。 *Messageindex*に対応する新しいメッセージが表示されます。
 
-ミニポート ドライバーには、この通知が不要なイベントを送信できます。
+ミニポートドライバーは、この通知を使用して、要請されていないイベントも送信できます。
 
-この通知を使用して、 [ **NDIS\_WWAN\_SMS\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_sms_status)構造体。
+この通知では、 [**NDIS\_WWAN\_SMS\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_sms_status)構造を使用します。
 
 <a name="remarks"></a>注釈
 -------
 
-ミニポート ドライバーは、NDIS を使用する必要があります\_状態\_WWAN\_SMS\_クラス-0 以外 (flash/アラート) のすべてのメッセージの到着 MB サービスに通知する状態。 クラス 0 (flash/アラート) メッセージの到着、MB、サービスに通知するミニポート ドライバーを使用する必要があります[ **NDIS\_状態\_WWAN\_SMS\_受信**](ndis-status-wwan-sms-receive.md).
+ミニポートドライバーは、NDIS\_ステータス\_WWAN\_SMS\_ステータスを使用して、すべての非クラス 0 (フラッシュ/アラート) メッセージの到着を MB サービスに通知する必要があります。 クラス-0 (フラッシュ/アラート) メッセージの到着に関する情報を MB サービスに通知するには、ミニポートドライバーで、 [**SMS\_受信\_の NDIS\_ステータス\_WWAN**](ndis-status-wwan-sms-receive.md)を使用する必要があります。
 
-この表示でのトランザクション通知可能性があります、*クエリ*OID の要求\_WWAN\_SMS\_状態または要請されていないイベント。
+これは、OID\_WWAN\_SMS\_の状態または要請されていないイベントの*クエリ*要求に対するトランザクション通知である可能性があります。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -43,11 +43,11 @@ ms.locfileid: "67372535"
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>Windows 7 および Windows の以降のバージョンで使用できます。</p></td>
+<td><p>Windows 7 以降のバージョンの Windows で使用できます。</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Ndis.h</td>
+<td>Ndis. h</td>
 </tr>
 </tbody>
 </table>
@@ -55,9 +55,9 @@ ms.locfileid: "67372535"
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_WWAN\_SMS\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_sms_status)
+[**NDIS\_WWAN\_SMS\_の状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_sms_status)
 
-[**NDIS\_状態\_WWAN\_SMS\_受信**](ndis-status-wwan-sms-receive.md)
+[**NDIS\_ステータス\_WWAN\_SMS\_受信**](ndis-status-wwan-sms-receive.md)
 
  
 

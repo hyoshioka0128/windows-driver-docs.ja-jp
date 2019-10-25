@@ -3,18 +3,18 @@ title: BDA フィルターの構成
 description: BDA フィルターの構成
 ms.assetid: 4af9efc3-8073-4111-9ad0-8b2fba4d1545
 keywords:
-- メソッドは、WDK BDA、フィルターの構成を設定します。
-- プロパティは、WDK BDA、フィルターの構成を設定します。
+- メソッドは WDK BDA、フィルター構成を設定します
+- プロパティ設定 WDK BDA, フィルター構成
 - KSMETHODSETID_BdaDeviceConfiguration
-- WDK BDA フィルターの構成
+- フィルターの構成 WDK BDA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5676193716a52220377bff23cca7514b20369ef2
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 50f57c7916ccc552c658772faf54374420a1bb37
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386643"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844709"
 ---
 # <a name="configuring-a-bda-filter"></a>BDA フィルターの構成
 
@@ -22,9 +22,9 @@ ms.locfileid: "67386643"
 
 
 
-BDA ミニドライバーのメソッドの要求の処理、 [KSMETHODSETID\_BdaDeviceConfiguration](https://docs.microsoft.com/windows-hardware/drivers/stream/ksmethodsetid-bdadeviceconfiguration)フィルターの現在のグラフでミニドライバーのフィルターのインスタンスを構成する方法を設定します。
+BDA ミニドライバーは、現在のフィルターグラフのミニドライバーに対してフィルターインスタンスを構成するように設定された、 [Ksk Methodsetid\_](https://docs.microsoft.com/windows-hardware/drivers/stream/ksmethodsetid-bdadeviceconfiguration)のメソッド要求を処理します。
 
-2 つ、KSMETHODSETID のメソッドの次のコード スニペットで\_BDA サポート ライブラリに直接ディスパッチ BdaDeviceConfiguration メソッドのセットと残りのメソッドにディスパッチする前にインターセプト BDA ミニドライバーで最初BDA サポート ライブラリ。
+次のコードスニペットでは、KSMETHODSETID\_BdaDeviceConfiguration メソッドセットの2つのメソッドが、BDA サポートライブラリに直接ディスパッチされます。残りのメソッドは、bda にディスパッチする前に、BDA によって最初に受け取られます。サポートライブラリ。
 
 ```cpp
 //
@@ -99,7 +99,7 @@ errExit:
 }
 ```
 
-KSMETHOD\_BDA\_作成\_トポロジ メソッド要求は、ミニドライバーの CFilter::CreateTopology メソッドを呼び出します。 このメソッドは、BDA サポート ライブラリ関数を呼び出す[ **BdaMethodCreateTopology** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdasup/nf-bdasup-bdamethodcreatetopology)フィルター ピンの間のトポロジを作成します。 実際には、この関数は、その他のプロパティ セットのフィルターの既知の接続を反映するリング 3 でトポロジ構造を作成します。 BDA ミニドライバーは、KSMETHOD をインターセプトする必要があります\_BDA\_作成\_メソッド要求のかどうかそのミニドライバー送信する必要が特別な手順については、ハードウェアに接続するときに特定の前のコード スニペットに示すトポロジ入力ピンが 1 つからオフに変換し暗証番号 (pin) の種類--BDA デバイスがハードウェアの多重を実行し、任意の数の出力ピンを作成する場合などです。
+KSK メソッド\_BDA\_CREATE\_TOPOLOGY メソッド要求は、ミニドライバーの CFilter:: CreateTopology メソッドを呼び出します。 このメソッドは、BDA サポートライブラリ関数[**BdaMethodCreateTopology**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bdasup/nf-bdasup-bdamethodcreatetopology)を呼び出して、フィルターピン間のトポロジを作成します。 この関数は、実際には、他のプロパティセットのフィルターの既知の接続を反映するトポロジ構造をリング3で作成します。 ミニドライバーが特定の pin の種類に接続するときにハードウェアに特別な命令を送信する必要がある場合、前のコードスニペットに示すように、BDA ミニドライバーは KSK メソッド\_\_BDA をインターセプトし、\_トポロジメソッド要求を作成する必要があります。たとえば、BDA デバイスがハードウェア demultiplexing 化を実行し、1つの入力ピンから任意の数の出力ピン重ねを作成したとします。
 
  
 

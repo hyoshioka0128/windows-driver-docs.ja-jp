@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_CAMERACONTROL\_プライバシー
-description: KSPROPERTY\_CAMERACONTROL\_プライバシー プロパティでは、カメラ、センサーによって取得されてからビデオを防止するかどうかを指定します。
+title: KSK プロパティ\_CAMERACONTROL\_PRIVACY
+description: KSK プロパティ\_CAMERACONTROL\_PRIVACY プロパティは、カメラセンサーでビデオを取得できないようにするかどうかを指定します。
 ms.assetid: 6a96301e-b4f1-4d4d-9cc6-f0cb1e2c1391
 keywords:
-- KSPROPERTY_CAMERACONTROL_PRIVACY ストリーミング メディア デバイス
+- KSPROPERTY_CAMERACONTROL_PRIVACY ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e4f6ea473e449d7d27783bf06f1f577493bce8a1
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4671e996d90d21586e28cecb3d3e764c4ce9f54e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67353218"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842490"
 ---
-# <a name="kspropertycameracontrolprivacy"></a>KSPROPERTY\_CAMERACONTROL\_プライバシー
+# <a name="ksproperty_cameracontrol_privacy"></a>KSK プロパティ\_CAMERACONTROL\_PRIVACY
 
 
-KSPROPERTY\_CAMERACONTROL\_プライバシー プロパティでは、カメラ、センサーによって取得されてからビデオを防止するかどうかを指定します。
+KSK プロパティ\_CAMERACONTROL\_PRIVACY プロパティは、カメラセンサーでビデオを取得できないようにするかどうかを指定します。
 
 ## <span id="ddk_ksproperty_cameracontrol_privacy_ks"></span><span id="DDK_KSPROPERTY_CAMERACONTROL_PRIVACY_KS"></span>
 
@@ -41,7 +41,7 @@ KSPROPERTY\_CAMERACONTROL\_プライバシー プロパティでは、カメラ�
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,25 +50,25 @@ KSPROPERTY\_CAMERACONTROL\_プライバシー プロパティでは、カメラ�
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>〇</p></td>
+<td><p>[はい]</p></td>
+<td><p>[はい]</p></td>
 <td><p>フィルターまたはノード</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_cameracontrol_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_cameracontrol_s)"><strong>KSPROPERTY_CAMERACONTROL_S</strong> </a>または<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_NODE_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s)"> <strong>KSPROPERTY_CAMERACONTROL_NODE_S</strong></a></p></td>
-<td><p>LONG</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_s)"><strong>KSPROPERTY_CAMERACONTROL_S</strong></a>または<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_NODE_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s)"> <strong>KSPROPERTY_CAMERACONTROL_NODE_S</strong></a></p></td>
+<td><p>長い</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-プロパティの値 (データの操作) は、プライバシー モードかどうかを指定する LONG を有効にするにはまたは無効になっています。 値が 0 のことを示し、カメラ センサーがビデオのイメージをキャプチャできます 1 の値は、ビデオのイメージのキャプチャからカメラ センサーが禁止されていることを示します。
+プロパティ値 (操作データ) は、プライバシーモードを有効にするか無効にするかを指定する LONG です。 値0は、カメラセンサーがビデオイメージをキャプチャできることを示し、値1はカメラセンサーがビデオイメージをキャプチャできないことを示します。
 
 <a name="remarks"></a>注釈
 -------
 
-**値**、KSPROPERTY のメンバー\_CAMERACONTROL\_ノード\_の構造は、カメラ センサーがビデオをキャプチャする必要があるかどうかを指定します。
+KSK プロパティ\_CAMERACONTROL\_NODE\_S 構造体の**値**メンバーは、カメラセンサーでビデオをキャプチャするかどうかを指定します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -79,11 +79,11 @@ KSPROPERTY\_CAMERACONTROL\_プライバシー プロパティでは、カメラ�
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>Windows Vista および Windows オペレーティング システムの以降のバージョンで使用できます。</p></td>
+<td><p>Windows Vista 以降のバージョンの Windows オペレーティングシステムで使用できます。</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Ksmedia.h (Ksmedia.h を含む)</td>
+<td>Ksmedia .h (Ksk を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -91,7 +91,7 @@ KSPROPERTY\_CAMERACONTROL\_プライバシー プロパティでは、カメラ�
 ## <a name="see-also"></a>関連項目
 
 
-[**KSPROPERTY\_CAMERACONTROL\_ノード\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s)
+[**KSPROPERTY\_CAMERACONTROL\_NODE\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s)
 
  
 

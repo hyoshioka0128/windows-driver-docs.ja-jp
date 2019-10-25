@@ -3,16 +3,16 @@ title: ACE
 description: ACE
 ms.assetid: efdf43ae-d4d4-4950-9435-e10bf5b75cf2
 keywords:
-- アクセス制御エントリの WDK ファイル システム
-- ACE の WDK ファイル システム
+- アクセス制御エントリ WDK ファイルシステム
+- ACE WDK ファイルシステム
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8107b5a02a195ca7113093dc523de87bfec2784a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4214610341bc78bee0277767d4f6ee4d4fb29060
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371935"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841498"
 ---
 # <a name="ace"></a>ACE
 
@@ -20,9 +20,9 @@ ms.locfileid: "67371935"
 
 
 
-ACE は、アクセス制御リスト (ACL) でアクセス制御エントリ (ACE) です。
+ACE は、アクセス制御リスト (ACL) のアクセス制御エントリ (ACE) です。
 
-現在定義されている ACE 型を次に示します。
+次に、現在定義されている ACE 型を示します。
 
 <table>
 <colgroup>
@@ -31,58 +31,58 @@ ACE は、アクセス制御リスト (ACL) でアクセス制御エントリ (A
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">属性</th>
+<th align="left">備わっている</th>
 <th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>ACCESS_ALLOWED_ACE</p></td>
-<td align="left"><p>許可は、ユーザーまたはグループに権限を指定します。 この ACE は、随意 ACL (DACL) 内に格納されます。</p></td>
+<td align="left"><p>指定された権限をユーザーまたはグループに付与します。 この ACE は、随意 ACL (DACL) に格納されます。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>ACCESS_DENIED_ACE</p></td>
-<td align="left"><p>ユーザーまたはグループに指定された権限を拒否します。 この ACE は、DACL で格納されます。</p></td>
+<td align="left"><p>ユーザーまたはグループに対して指定された権限を拒否します。 この ACE は、DACL に格納されます。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>SYSTEM_AUDIT_ACE</p></td>
-<td align="left"><p>どのような種類のアクセスが発生するシステム レベルの監査を指定します。 この ACE は、システムの ACL (SACL) に格納されます。</p></td>
+<td align="left"><p>システムレベルの監査を実行するアクセスの種類を指定します。 この ACE は、システム ACL (SACL) に格納されます。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-4 つ目の ACE の構造、システム\_アラーム\_ACE、現在サポートされていません。
+4つ目の ACE 構造、システム\_アラーム\_ACE は、現在サポートされていません。
 
-ACL には、Ace のリストが含まれています。 ACE は、特定のユーザーまたはグループのオブジェクトへのアクセスを定義またはシステム管理メッセージまたは特定のユーザーまたはグループのアラームを生成するアクセスの種類を定義します。 ユーザーまたはグループは、セキュリティ識別子 (SID) によって識別されます。
+ACL には、Ace の一覧が含まれています。 ACE は、特定のユーザーまたはグループのオブジェクトへのアクセスを定義するか、特定のユーザーまたはグループのシステム管理メッセージまたはアラームを生成するアクセスの種類を定義します。 ユーザーまたはグループは、セキュリティ識別子 (SID) によって識別されます。
 
-各 ACE の ACE が始まる\_ヘッダー構造体。 ヘッダーの後のデータの形式は、ヘッダーで指定された ACE 型によって異なります。
+各 ACE は、ACE\_ヘッダー構造で開始されます。 ヘッダーに続くデータの形式は、ヘッダーに指定されている ACE の種類によって異なります。
 
-この構造体は、32 ビットの境界に合わせて調整する必要があります。
+この構造体は、32ビットの境界上に配置する必要があります。
 
-要件: ntifs.h (ntifs.h を含む)
+要件: ntifs (ntifs を含む)
 
 ## <a name="related-topics"></a>関連トピック
 
 
-[**アクセス\_許可\_ACE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_access_allowed_ace)
+[**アクセス\_許可\_ACE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_access_allowed_ace)
 
-[**アクセス\_DENIED\_ACE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_access_denied_ace)
+[**ACE\_アクセス\_拒否されました**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_access_denied_ace)
 
-[**ACE\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_ace_header)
+[**ACE\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_ace_header)
 
-[**ACL**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_acl)
+[ **.ACL**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_acl)
 
-[**RtlAddAccessAllowedAce**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-rtladdaccessallowedace)
+[**RtlAddAccessAllowedAce**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-rtladdaccessallowedace)
 
-[**RtlGetAce**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-rtlgetace)
+[**RtlGetAce**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-rtlgetace)
 
-[**SID**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_sid)
+[**SID**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_sid)
 
-[**システム\_アラーム\_ACE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_system_alarm_ace)
+[**システム\_アラーム\_ACE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_system_alarm_ace)
 
-[**システム\_監査\_ACE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_system_audit_ace)
+[**SYSTEM\_AUDIT\_ACE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_system_audit_ace)
 
  
 

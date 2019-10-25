@@ -3,68 +3,68 @@ title: デバイス停止要求の処理
 description: デバイス停止要求の処理
 ms.assetid: 4c8f37b3-7961-4c78-a88b-3eec58155e66
 keywords:
-- PnP WDK KMDF、デバイスを停止しています
-- プラグ アンド プレイ WDK KMDF、デバイスを停止しています
-- WDK KMDF のリソースを再配布
-- リソースの再配布 WDK KMDF
-- WDK KMDF のデバイスを削除します。
-- WDK KMDF とデバイスの停止要求
-- WKD KMDF、PnP とデバイスの停止要求
-- デバイスの一時停止 WDK KMDF
-- デバイスの一時停止 WDK KMDF、PnP
+- PnP WDK KMDF、デバイスの停止
+- WDK KMDF のプラグアンドプレイ、デバイスの停止
+- リソースの再配布 (WDK KMDF)
+- リソース再配布 (WDK KMDF)
+- WDK KMDF デバイスの削除
+- デバイス停止要求 WDK KMDF
+- デバイス停止要求 WKD KMDF、PnP
+- 一時的なデバイスの停止 WDK KMDF
+- 一時的なデバイスの停止 WDK KMDF、PnP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 43039e9051c22d9f05796252184b670fdb705f63
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 095f190f07ef38e22b496081ca73ba136487e01a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382844"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845219"
 ---
 # <a name="handling-requests-to-stop-a-device"></a>デバイス停止要求の処理
 
 
-これには、デバイスを停止するデバイスのドライバーを要求する前に、PnP、上司からドライバーをお勧めは、デバイスを停止するかどうか、2 つの状況があります。
+デバイスのドライバーに対してデバイスの停止を要求する前に、次の2つの状況が考えられます。デバイスを停止している場合は、PnP マネージャーによってドライバーが要求されます。
 
--   新しいデバイスをユーザーが接続され、PnP マネージャーである必要があります[システムのハードウェア リソースを再配布](#redistributing-resources)新しいデバイスを対応するためにします。
+-   ユーザーが新しいデバイスに接続し、新しいデバイスに対応するために、PnP マネージャーが[システムのハードウェアリソース](#redistributing-resources)を再配布する必要があります。
 
--   そのユーザーには、ユーザーが示されて[デバイスを削除](#a-user-removes-or-disables-a-device)します。
+-   ユーザーは[、デバイスを削除](#a-user-removes-or-disables-a-device)するように指定しています。
 
-ドライバーがこのような状況を処理できるいくつかの方法はあります。
+ドライバーでは、次のような状況に対処する方法がいくつかあります。
 
--   ドライバーが呼び出された場合[ **WdfDeviceSetSpecialFileSupport** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicesetspecialfilesupport)デバイスは特別なファイルをサポートしていると、特別なファイルが開いて、デバイスの場合、フレームワークは停止するデバイスを許可しないため、.
+-   デバイスが特別なファイルをサポートしていて、デバイスで特別なファイルが開いている場合、デバイスの停止をフレームワークで許可しないため、ドライバーが[**WdfDeviceSetSpecialFileSupport**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicesetspecialfilesupport)を呼び出しています。
 
--   比較的短時間に一時的にすべての中断を防ぐためには、ドライバーを呼び出すことができます[ **WdfDeviceSetStaticStopRemove**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicesetstaticstopremove)します。
+-   一時的にすべての業務中断を比較的短い時間だけ回避するために、ドライバーは[**Wdfdevicesetstaticstopremove**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicesetstaticstopremove)を呼び出すことができます。
 
--   評価を停止が試行されるたびに個別に処理は、ドライバーが提供できる[ *EvtDeviceQueryStop* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_query_stop)と[ *EvtDeviceQueryRemove* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_query_remove)コールバック関数。
+-   各停止試行を個別に評価して処理するために、ドライバーは[*Evtdevicequerystop*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_query_stop)および[*Evtdevicequerystop*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_query_remove)コールバック関数を提供できます。
 
-場合は、デバイスは、特別なファイルをサポートしていないと、ドライバーが提供しない停止やデバイスを削除することは、ドライバーまたはデバイスの問題ありません場合、 *EvtDeviceQueryStop*と*EvtDeviceQueryRemove*コールバック関数し、呼び出すことはありません**WdfDeviceSetStaticStopRemove**します。 ここでは PnP マネージャーは、そのドライバーを使用できるかどうかに最初に確認、デバイスを常に停止します。
+デバイスが特別なファイルをサポートしていない場合、デバイスの停止または削除がドライバーまたはデバイスで問題にならない場合、ドライバーは*Evtdevicequerystop*および*Evtdevicequerystop*コールバック関数を提供せず、呼び出し**を行いません。WdfDeviceSetStaticStopRemove**。 この場合、PnP マネージャーは、ドライバーで許可されているかどうかを最初に確認せずに、常にデバイスを停止します。
 
-### <a href="" id="redistributing-resources"></a> リソースの再配布
+### <a href="" id="redistributing-resources"></a>リソースの再配布
 
-場合があります、PnP マネージャーは、システムのハードウェア リソースを再配布する必要があります。 通常、この再配布は、バス ドライバーとことで、新しいデバイスが取り込まれていて、新しいデバイスが既に割り当てられているリソースが必要ですが報告されたために発生します。 リソースの再割り当てする前に、デバイスを停止する必要があります。
+場合によっては、PnP マネージャーがシステムのハードウェアリソースを再配布する必要があります。 通常、この再配布は、新しいデバイスが接続されていることをバスドライバーが報告し、新しいデバイスに既に割り当てられているリソースが必要であるために発生します。 リソースを再割り当てする前に、デバイスを停止する必要があります。
 
-ドライバーが提供できる、ビジー状態のデバイスを停止することがありますように PnP マネージャーは、ドライバーの必要がある場合、 [ *EvtDeviceQueryStop* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_query_stop)コールバック関数。 場合、ドライバーの*EvtDeviceQueryStop*コールバック関数がエラー状態値を返します、PnP マネージャーでは、デバイスは停止されません。
+ドライバーが PnP マネージャーによるビジー状態のデバイスの停止を防ぐ必要がある場合、ドライバーは[*Evtdevicequerystop*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_query_stop)コールバック関数を提供できます。 ドライバーの*Evtdevicequerystop*コールバック関数からエラー状態値が返された場合、PnP マネージャーはデバイスを停止しません。
 
-コールバック関数が状態を返す場合は、ドライバーは、デバイスを停止しても安全であるかを決定します、\_成功します。 その他のデバイスの場合は、ドライバーの中断を防ぐため、PnP マネージャーは、デバイスを一時的に停止します。
+ドライバーによってデバイスの停止が安全であると判断された場合は、コールバック関数によって STATUS\_SUCCESS が返されます。 デバイスの他のどのドライバーも停止できない場合は、PnP マネージャーによって一時的にデバイスが停止されます。
 
-フレームワーク ドライバーのイベントのコールバック関数、PnP マネージャーがリソースを再配布するデバイスを停止したときの順序の詳細については、次を参照してください。 [PnP マネージャーでは再配布システム Resources](the-pnp-manager-redistributes-system-resources.md)します。
+PnP マネージャーがデバイスを停止してリソースを再配布するときに、フレームワークがドライバーのイベントコールバック関数を呼び出す順序の詳細については、「 [Pnp マネージャーによるシステムリソース](the-pnp-manager-redistributes-system-resources.md)の再配布」を参照してください。
 
-### <a href="" id="a-user-removes-or-disables-a-device"></a> ユーザーが削除またはデバイスを無効にします
+### <a href="" id="a-user-removes-or-disables-a-device"></a>ユーザーがデバイスを削除または無効にする
 
-ユーザーでは、削除したり、一部のデバイスを無効にすることができます。 次に、例を示します。
+ユーザーは、一部のデバイスを削除または無効にすることができます。 次に、例を示します。
 
--   ドライバーを設定した場合、**リムーバブル**メンバー (および not、 **SurpriseRemovalOK**メンバー) のデバイスの[ **WDF\_デバイス\_PNP\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/ns-wdfdevice-_wdf_device_pnp_capabilities)構造体には、ユーザーことができます取り外しますプログラムを実行し、取り外す、または取り出すデバイス。
+-   ドライバーがデバイスの[**WDF\_デバイス\_PNP\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/ns-wdfdevice-_wdf_device_pnp_capabilities)の構造の**リムーバブル**メンバー ( **SurpriseRemovalOK**メンバーではない) を設定している場合、ユーザーは取り外しまたは取り出しハードウェアプログラムを実行できます。デバイスを取り外します。
 
--   ドライバーが設定されていない場合、 **NotDisableable**のデバイスのメンバー [ **WDF\_デバイス\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/ns-wdfdevice-_wdf_device_state)構造体には、ユーザーがデバイスを使用できますデバイスを無効にするマネージャー。
+-   ドライバーがデバイスの[**WDF\_デバイス\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/ns-wdfdevice-_wdf_device_state)構造の**notdisableable**メンバーを設定していない場合、ユーザーはデバイスマネージャーを使用してデバイスを無効にすることができます。
 
-このような場合、PnP マネージャーは、ユーザーが削除する前にデバイスを停止しようとします。
+このような場合は、ユーザーがデバイスを削除する前に、PnP マネージャーによってデバイスの停止が試行されます。
 
-ドライバーが提供できる場合があります、ビジー状態のデバイスの削除を防ぐために、ドライバーに必要な場合は、 [ *EvtDeviceQueryRemove* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_query_remove)コールバック関数。 場合、ドライバーの*EvtDeviceQueryRemove*コールバック関数がエラー状態値を返します、PnP マネージャーでは、デバイスは停止されません。
+ドライバーがビジー状態のデバイスを削除できないようにする必要がある場合、ドライバーは[*Evtdevicequeryremove*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_query_remove)コールバック関数を提供できます。 ドライバーの*Evtdevicequeryremove*コールバック関数からエラー状態値が返された場合、PnP マネージャーはデバイスを停止しません。
 
-コールバック関数が状態を返す場合は、ドライバーは、デバイスを削除するユーザーに対しても安全であるかを決定します、\_成功します。 他のデバイスの場合は、ドライバーには、削除ができないように、PnP マネージャーは、デバイスを停止します。
+ユーザーがデバイスを削除するのが安全であるとドライバーが判断した場合、コールバック関数は状態\_SUCCESS を返します。 デバイスのその他のドライバーが削除できない場合は、PnP マネージャーによってデバイスが停止されます。
 
-フレームワーク ドライバーのイベントのコールバック関数の削除、デバイスを停止するときに順序については、次を参照してください。[ユーザーがデバイスから切り離し](a-user-unplugs-a-device.md)します。
+デバイスの削除を停止するときに、フレームワークがドライバーのイベントコールバック関数を呼び出す順序の詳細については、「[ユーザーによるデバイスの Unplugs](a-user-unplugs-a-device.md)」を参照してください。
 
  
 

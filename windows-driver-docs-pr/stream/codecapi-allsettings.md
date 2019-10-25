@@ -4,20 +4,20 @@ description: CODECAPI\_ALLSETTINGS
 ms.assetid: 0ae11200-af21-476a-89a8-515bd98920a0
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 635cfa5aecfacaa7ff1ba5200196dd290949c509
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 31d92b135efd6bfbfddd3446d06c159643d75c92
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374208"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844732"
 ---
-# <a name="codecapiallsettings"></a>CODECAPI\_ALLSETTINGS
+# <a name="codecapi_allsettings"></a>CODECAPI\_ALLSETTINGS
 
 
 ## <span id="ddk_codecapi_allsettings_ks"></span><span id="DDK_CODECAPI_ALLSETTINGS_KS"></span>
 
 
-CODECAPI\_ミニドライバーで生成されたデータ ブロックを前後へ渡す ALLSETTINGS プロパティを使用します。
+CODECAPI\_ALLSETTINGS プロパティは、ミニドライバーによって生成されたデータブロックをパススルーするために使用されます。
 
 <table>
 <colgroup>
@@ -29,7 +29,7 @@ CODECAPI\_ミニドライバーで生成されたデータ ブロックを前後
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -38,8 +38,8 @@ CODECAPI\_ミニドライバーで生成されたデータ ブロックを前後
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>〇</p></td>
+<td><p>[はい]</p></td>
+<td><p>[はい]</p></td>
 <td><p>フィルター</p></td>
 <td><p>KSPROPERTY</p></td>
 <td><p>PVOID</p></td>
@@ -49,31 +49,31 @@ CODECAPI\_ミニドライバーで生成されたデータ ブロックを前後
 
  
 
-プロパティの値 (データの操作) は、型、PVOID ミニドライバーで生成されたデータ ブロックのユーザー モード バッファーへのポインターであるは。
+プロパティ値 (操作データ) は PVOID 型です。これは、ミニドライバーによって生成されたデータブロックのユーザーモードバッファーへのポインターです。
 
 ### <a name="comments"></a>コメント
 
-プロパティの呼び出しを取得します。
+プロパティ get 呼び出し:
 
-アプリケーションが 0 個の長バッファーを使用して呼び出しを取得するプロパティを行った場合、ミニドライバーは状態を返す必要があります\_バッファー\_OVERFLOW で必要なバッファー サイズを指定して、 **Irp-&gt;IoStatus.Information**フィールド。 バッファーの長さが 0 以外の場合、ミニドライバーは状態を返す必要があります\_バッファー\_すぎます\_小規模の指定されたバッファーが小さすぎる場合、データ ブロックのそれ以外の場合、ミニドライバーのパック データ ブロックには、その設定を指定できます後で復元します。
+アプリケーションが長さ0のバッファーを使用してプロパティ get 呼び出しを行う場合、ミニドライバーは状態\_バッファー\_オーバーフローを返し、 **Irp-&gt;IoStatus. 情報**フィールドに必要なバッファーサイズを指定する必要があります。 長さのバッファーが0以外の場合、ミニドライバーは、指定されたバッファーがデータブロックに対して小さすぎる場合に、ステータス\_バッファー\_\_小さすぎる必要があります。それ以外の場合、ミニドライバーは、後で復元できるデータブロックに設定をパックします。
 
-データの整合性を追加するミニドライバーの責任は、データ、巡回冗長検査 (CRC)、およびヘッダーの長さ、ミニドライバーが生成されるかを示す一意の GUID など、データを確認します。
+データの整合性チェックは、データを生成したミニドライバーを示す一意の GUID、巡回冗長検査 (CRC)、ヘッダー長など、データにミニドライバーが追加する必要があります。
 
-返されるデータは、軽量し、現在の設定を再構築に必要な情報のみを含めることが必要があります。
+返されるデータは軽量であり、現在の設定を再構築するために必要な情報のみが含まれている必要があります。
 
-アプリケーションでは、このプロパティを使用して、複数レベルの取り消し、そのプロジェクトで格納されているのです。
+アプリケーションでは、複数レベルの undos にこのプロパティが使用され、プロジェクトに格納されます。
 
-プロパティの呼び出しを設定します。
+プロパティセットの呼び出し:
 
-ミニドライバーは、データの整合性を検証する必要があり、チェックするデータ ブロック サイズが最大データ サイズ未満 (たとえば、ものすべてを拒否一定のサイズを超える)。 また、CRC とヘッダーの長さも確認してください。 ミニドライバーに反映される変更をキャッシュする必要がありますも[CODECAPI\_CURRENTCHANGELIST](codecapi-currentchangelist.md)します。
+ミニドライバーは、データの整合性を検証し、データブロックのサイズが最大データサイズ (たとえば、特定のサイズを超えてすべてを拒否するなど) であることを確認する必要があります。 また、CRC とヘッダーの長さも検証する必要があります。 また、ミニドライバーは、 [CODECAPI\_currentchangelist](codecapi-currentchangelist.md)に反映されるすべての変更をキャッシュする必要があります。
 
-### <a name="requirements"></a>必要条件
+### <a name="requirements"></a>要件
 
-**ヘッダー:** 宣言されている*ksmedia.h*します。 含める*ksmedia.h*します。
+**ヘッダー:** *Ksmedia. h*で宣言されています。 *Ksmedia. h*をインクルードします。
 
-### <a name="see-also"></a>関連項目
+### <a name="see-also"></a>参照
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)、 [CODECAPI\_CURRENTCHANGELIST](codecapi-currentchangelist.md)
+[**Ksk プロパティ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)、 [CODECAPI\_currentchangelist](codecapi-currentchangelist.md)リスト
 
  
 

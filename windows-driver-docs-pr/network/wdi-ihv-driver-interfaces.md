@@ -1,26 +1,26 @@
 ---
 title: WDI IHV ドライバー インターフェイス
-description: WDI IHV ミニポートは他の NDIS ミニポート ドライバーに似ています、開発手法と任意の NDIS ミニポートのドキュメントに実行します。
+description: WDI IHV ミニポートは、他の NDIS ミニポートドライバーと同じように、NDIS ミニポートの開発方法とドキュメントに従っています。
 ms.assetid: B4528C70-9FE4-4E00-9D0B-8832CCEC982E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6359910ef5e9fb769108cf24b3e77446e5073736
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ec567a375806ae73477c015caf86c078f38db260
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384543"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842925"
 ---
 # <a name="wdi-ihv-driver-interfaces"></a>WDI IHV ドライバー インターフェイス
 
 
-WDI IHV ミニポートは他の NDIS ミニポート ドライバーに似ています、開発手法と任意の NDIS ミニポートのドキュメントに実行します。 NDIS ハンドラーのネイティブ WLAN ミニポート ドライバーの責任は、MS コンポーネントと WDI IHV ドライバーの間に分割されます。 Microsoft の WLAN のコンポーネントが動作するすべての IHV が元に戻す必要があるないようにすべての Wi-fi ミニポートに適用される NDIS 要件処理します。 マッピングとネイティブの WLAN IHV ミニポート WDI IHV ミニポートに適用する場合の NDIS ハンドラーの動作の変更を以下に示します。
+WDI IHV ミニポートは、他の NDIS ミニポートドライバーと同じように、NDIS ミニポートの開発方法とドキュメントに従っています。 NDIS ハンドラーに対するネイティブ WLAN ミニポートドライバーの役割は、MS コンポーネントと WDI IHV ドライバーの間で分割されます。 Microsoft WLAN コンポーネントは、すべての Wi-fi ミニポートに適用される NDIS 要件を処理します。これにより、すべての IHV がすべての動作を再実行する必要がなくなります。 WDI IHV ミニポートに適用される場合、ネイティブ WLAN IHV ミニポートの NDIS ハンドラーに対するとの動作の変更について以下に説明します。
 
 -   [ドライバーのインストール](#driver-installation)
 -   [DriverEntry](#driverentry)
 -   [MiniportSetOptions](#miniportsetoptions)
 -   [MiniportInitializeEx](#miniportinitializeex)
--   [MiniportHaltEx](#miniporthaltex)
+-   [ミニ Porthaltex](#miniporthaltex)
 -   [MiniportDriverUnload](#miniportdriverunload)
 -   [MiniportPause](#miniportpause)
 -   [MiniportRestart](#miniportrestart)
@@ -31,253 +31,253 @@ WDI IHV ミニポートは他の NDIS ミニポート ドライバーに似て�
 -   [MiniportCancelOidRequest](#miniportcanceloidrequest)
 -   [NdisMIndicateStatusEx](#ndismindicatestatusex)
 -   [MiniportDirectOidRequest](#miniportdirectoidrequest)
--   [MiniportCancelDirectOidRequest](#miniportcanceldirectoidrequest)
+-   [Miniportcancelt Toidrequest](#miniportcanceldirectoidrequest)
 -   [MiniportSendNetBufferLists](#miniportsendnetbufferlists)
 -   [MiniportCancelSend](#miniportcancelsend)
 -   [MiniportReturnNetBufferLists](#miniportreturnnetbufferlists)
--   [WDI ハンドラー:MiniportWdiOpenAdapter](#wdi-handler-miniportwdiopenadapter)
--   [WDI ハンドラー:MiniportWdiCloseAdapter](#wdi-handler-miniportwdicloseadapter)
+-   [WDI handler: MiniportWdiOpenAdapter](#wdi-handler-miniportwdiopenadapter)
+-   [WDI handler: MiniportWdiCloseAdapter](#wdi-handler-miniportwdicloseadapter)
 
 ## <a name="driver-installation"></a>ドライバーのインストール
 
 
-WDI IHV ミニポート ドライバーが読み込まれ、システムにインストールされている方法を変更することはありません。 INF とインストール プロセスは、IHV ネイティブ WLAN のミニポート ドライバーに似ています。 既存の NDIS ドライバーなど、IHV ドライバーは IHV の WLAN のアダプターを使用するロードする必要がある場合、オペレーティング システムは、IHV ミニポート ドライバーの DriverEntry ルーチンを呼び出します。
+WDI IHV ミニポートドライバーをシステムに読み込んでインストールする方法に変更はありません。 INF とインストールのプロセスは、IHV ネイティブ WLAN ミニポートドライバーの処理と似ています。 既存の NDIS ドライバーと同様に、ihv の WLAN アダプターを使用するために IHV ドライバーを読み込む必要がある場合、オペレーティングシステムは IHV ミニポートドライバーの DriverEntry ルーチンを呼び出します。
 
 ## <a name="driverentry"></a>DriverEntry
 
 
-オペレーティング システムは、直接、WDI IHV ミニポート ドライバーの DriverEntry ルーチンを呼び出します。 IHV ミニポートでは、ほとんどの通常の NDIS ミニポート DriverEntry ルーチンのガイドラインに従います。 1 つの例外は呼び出し元ではなく[ **NdisMRegisterMiniportDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismregisterminiportdriver)、IHV ミニポート呼び出し[ **NdisMRegisterWdiMiniportDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/nf-dot11wdi-ndismregisterwdiminiportdriver) Microsoft WLAN のコンポーネントを有効にするオペレーティング システムに通知します。
+オペレーティングシステムは、WDI IHV ミニポートドライバーの DriverEntry ルーチンを直接呼び出します。 IHV ミニポートは、通常の NDIS ミニポートの DriverEntry ルーチンのガイドラインの大部分に従います。 1つの例外として、 [**NdisMRegisterMiniportDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismregisterminiportdriver)を呼び出す代わりに、IHV ミニポートは[**NdisMRegisterWdiMiniportDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/nf-dot11wdi-ndismregisterwdiminiportdriver)を呼び出して、Microsoft WLAN コンポーネントを有効にするようにオペレーティングシステムに指示します。
 
-次に、キー パラメーターの[ **NdisMRegisterWdiMiniportDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/nf-dot11wdi-ndismregisterwdiminiportdriver)します。
+[**NdisMRegisterWdiMiniportDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/nf-dot11wdi-ndismregisterwdiminiportdriver)の主なパラメーターを次に示します。
 
--   [**NDIS\_ミニポート\_ドライバー\_特性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_driver_characteristics):これは、NDIS を登録するネイティブ Wi-fi ミニポートを使用して、元の NDIS 構造体です。 WDI モデルでは、ほとんどのハンドラーのパラメーターは省略可能です。 唯一必要なハンドラーは**ミニポート\_OID\_要求\_ハンドラー**と**ミニポート\_ドライバー\_アンロード**します。 **ミニポート\_OID\_要求\_ハンドラー** IHV ドライバーに WDI メッセージを渡すために使用します。 その他の任意のハンドラーが指定されている場合、Microsoft の WLAN コンポーネント一般にハンドラーを呼び出します行われた後に独自のハンドラーの処理します。
--   [**NDIS\_ミニポート\_ドライバー\_WDI\_特性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ns-dot11wdi-_ndis_miniport_driver_wdi_characteristics):これは、WDI ミニポート ドライバーを実装する必要があるハンドラーの新しいセットです。 コントロールのパスに対して追加のハンドラーを登録する IHV ドライバーによって使用され、データ パスのハンドラーの完全なセットします。
+-   [**Ndis\_ミニポート\_ドライバー\_の特性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_driver_characteristics): これは、ネイティブの wi-fi ミニポートが ndis に登録するために使用する元の ndis 構造です。 WDI モデルでは、ほとんどのハンドラーパラメーターは省略可能です。 必須のハンドラーは、**ミニポート\_OID\_要求\_ハンドラー** 、および**ミニポート\_ドライバー\_アンロード**です。 WDI メッセージを IHV ドライバーに渡すために、**ミニポート\_OID\_要求\_ハンドラー**が使用されます。 他のハンドラーが指定されている場合、通常、Microsoft WLAN コンポーネントはハンドラーに対して独自の処理を実行した後にハンドラーを呼び出します。
+-   [**NDIS\_ミニポート\_ドライバー\_WDI\_の特性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_ndis_miniport_driver_wdi_characteristics): これは、WDI ミニポートドライバーが実装する必要がある新しいハンドラーのセットです。 これは、IHV ドライバーによって使用され、コントロールパス用の追加のハンドラーと、データパスのすべてのハンドラーのセットを登録します。
 
-Microsoft の WLAN コンポーネント更新のハンドラーで IHV ミニポート NdisMRegisterWdiMiniportDriver を呼び出すと[ **NDIS\_ミニポート\_ドライバー\_特性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_driver_characteristics) NDIS の呼び出しと[ **NdisMRegisterMiniportDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismregisterminiportdriver)します。 Microsoft の WLAN のコンポーネントが WDI IHV ミニポート ドライバーに単純化のサポートを提供できるハンドラーをインターセプトできるように、更新プログラムが実行されます。
+IHV ミニポートが NdisMRegisterWdiMiniportDriver を呼び出すと、Microsoft WLAN コンポーネントによって、 [**ndis\_ミニポート\_ドライバー\_特性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_driver_characteristics)のハンドラーが更新され、Ndis の[**NdisMRegisterMiniportDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismregisterminiportdriver)が呼び出されます。 更新プログラムが実行されるので、Microsoft WLAN コンポーネントは、WDI IHV ミニポートドライバーに対する支援/単純化を提供できるハンドラーをインターセプトできます。
 
-WDI IHV ミニポート ドライバーの DriverEntry プロセスの一般的なフローを次に示します
+WDI IHV ミニポートドライバーの DriverEntry プロセスの一般的なフローを次に示します。
 
 ![wdi driverentry フロー](images/wdi-driverentry-flow.png)
 
-DriverEntry の詳細については、次を参照してください。 [ **NDIS ミニポート ドライバーの DriverEntry**](https://docs.microsoft.com/windows-hardware/drivers/network/initializing-a-miniport-driver)します。
+DriverEntry の詳細については、「 [**driverentry OF NDIS ミニポートドライバー**](https://docs.microsoft.com/windows-hardware/drivers/network/initializing-a-miniport-driver)」を参照してください。
 
 ## <a name="miniportsetoptions"></a>MiniportSetOptions
 
 
-図のように、上記 DriverEntry、WDI IHV ミニポートが登録されている場合、 [ *MiniportSetOptions* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-set_options)ハンドラー、オペレーティング システムが、ミニポート ドライバーのコンテキストでその関数を呼び出す呼び出す[ **NdisMRegisterWdiMiniportDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/nf-dot11wdi-ndismregisterwdiminiportdriver)します。
+上記の DriverEntry ダイアグラムに示されているように、WDI IHV ミニポートで[*MiniportSetOptions*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-set_options)ハンドラーが登録されている場合、オペレーティングシステムは[**NdisMRegisterWdiMiniportDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/nf-dot11wdi-ndismregisterwdiminiportdriver)を呼び出すミニポートドライバーのコンテキストでその機能を呼び出します。
 
-IHV ミニポート ドライバーを使用して、オプションのハンドラーを登録するかどうか[ **NdisSetOptionalHandlers**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndissetoptionalhandlers)、これらのハンドラーしない Microsoft コンポーネントによって、WDI 層を介してシリアル化するに場合があります。 そのため、IHV コンポーネントは、これらのハンドラーの同期要件を処理する責任を負います。
+IHV ミニポートドライバーが[**NdisSetOptionalHandlers**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndissetoptionalhandlers)を使用してオプションハンドラーを登録した場合、Microsoft コンポーネントによって、これらのハンドラーが WDI レイヤーを介してシリアル化されない可能性があります。 そのため、IHV コンポーネントは、これらのハンドラーの同期要件を処理する役割を担います。
 
 ## <a name="miniportinitializeex"></a>MiniportInitializeEx
 
 
-WDI モデルを分割、 [ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)インターフェイスの呼び出しを複数 WDI に動作します。
+WDI モデルは、 [*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)の動作を複数の WDI インターフェイス呼び出しに分割します。
 
-1.  呼び出す[ *MiniportWdiAllocateAdapter*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/nc-dot11wdi-miniport_wdi_allocate_adapter)します。
+1.  [*Miniportwdiallocateadapter*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-miniport_wdi_allocate_adapter)を呼び出します。
 
-    オペレーティング システムには、IHV ハードウェアのインスタンスが検出されると、これは、WDI IHV ミニポート ドライバーには、最初の呼び出しになります。 この呼び出しで、WDI ミニポートは、ソフトウェアの表現を作成するために必要な操作を実行します (**MiniportAdapterContext**) のデバイス。 埋めるために、デバイスに関する情報も決定、 [ **NDIS\_ミニポート\_アダプター\_登録\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_registration_attributes)構造体。 Microsoft コンポーネントを特定の初期化を実行する WDI コマンドを送信するときに、後で、デバイスと Wi-fi スタックの実際の初期化が行われます。
+    オペレーティングシステムが IHV ハードウェアのインスタンスを検出すると、WDI IHV ミニポートドライバーへの最初の呼び出しになります。 この呼び出しで、WDI ミニポートは、デバイスのソフトウェア表現 (**Miniportadaptercontext**) を作成するために必要なアクションを実行します。 また、デバイスに関する情報を確認して、 [**NDIS\_ミニポート\_アダプター\_登録\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_registration_attributes)構造に入力します。 デバイスと Wi-fi スタックの実際の初期化は、Microsoft コンポーネントが特定の初期化を実行するために WDI コマンドを送信するときに、後で実行されます。
 
-    Microsoft コンポーネントを呼び出し、WDI IHV ミニポート ドライバーから取得したデータを使用して、 [ **NdisMSetMiniportAttributes** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsetminiportattributes)設定と、 [ **NDIS\_ミニポート\_アダプター\_登録\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_registration_attributes) NDIS にします。 ほとんどのフィールドの**NDIS\_ミニポート\_アダプター\_登録\_属性**Microsoft コンポーネントによって既定値が格納されます。 IHV ドライバーを設定する必要があります、 **MiniportAdapterContext**と**InterfaceType**フィールド。
+    Microsoft コンポーネントは、WDI IHV ミニポートドライバーから取得したデータを使用して[**NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)を呼び出し、NDIS [ **\_ミニポート\_アダプター\_登録\_の属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_registration_attributes)を ndis に設定します。 **NDIS\_ミニポート\_アダプター\_登録\_属性**のほとんどのフィールドには、Microsoft コンポーネントによって既定値が設定されます。 IHV ドライバーは、 **Miniportadaptercontext**フィールドと**InterfaceType**フィールドに入力する必要があります。
 
-    使用して、WDI コマンドの受信を開始、IHV ミニポート ドライバーからこの呼び出しが返されると、その[ *MiniportOidRequest* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_oid_request)ハンドラー。 この呼び出し中に、Microsoft コンポーネントは可能性がありますので、ここで実行される任意のアクティビティが迅速かつ信頼性の高いになるはずのリセット/復旧操作を実行できません。
+    この呼び出しが IHV ミニポートドライバーから戻ると、[*ミニ Portoidrequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_oid_request)ハンドラー経由で WDI コマンドの受信が開始されます。 この呼び出しの間に、Microsoft コンポーネントがリセット/回復操作を実行できない可能性があるため、ここで実行されるすべてのアクティビティを迅速かつ信頼性の高いものにする必要があります。
 
-2.  呼び出す[ *MiniportWdiOpenAdapter*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/nc-dot11wdi-miniport_wdi_open_adapter)します。
+2.  [*Miniportwdiopenadapter*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-miniport_wdi_open_adapter)を呼び出します。
 
-    後[ *MiniportWdiAllocateAdapter*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/nc-dot11wdi-miniport_wdi_allocate_adapter)、Microsoft のコンポーネントの呼び出し[ *MiniportWdiOpenAdapter* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/nc-dot11wdi-miniport_wdi_open_adapter)ファームウェアを読み込むとハードウェアを初期化します。
+    [*ミニ Portwdiallocateadapter*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-miniport_wdi_allocate_adapter)の後、Microsoft コンポーネントは[*Miniportwdiopenadapter*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-miniport_wdi_open_adapter)を呼び出して、ファームウェアを読み込み、ハードウェアを初期化します。
 
-3.  使用して複数の WDI コマンド[ *MiniportOidRequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_oid_request)します。
+3.  [*Miniportoidrequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_oid_request)を使用する複数の WDI コマンド。
 
-    後[ *MiniportWdiOpenAdapter*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/nc-dot11wdi-miniport_wdi_open_adapter)、Microsoft コンポーネント IHV ミニポートに以下のタスク/プロパティ/呼び出しを送信します。
+    [*Miniportwdiopenadapter*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-miniport_wdi_open_adapter)の後、Microsoft コンポーネントは、次のタスク/プロパティ/呼び出しを IHV ミニポートに送信します。
 
-    1.  呼び出す[ *MiniportWdiTalTxRxInitialize* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/nc-dot11wdi-miniport_wdi_tal_txrx_initialize)データ パスを初期化し、ハンドラーを交換します。
-    2.  呼び出す[OID\_WDI\_取得\_アダプター\_機能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-get-adapter-capabilities)アダプターの機能を取得します。
-    3.  呼び出す[OID\_WDI\_設定\_アダプター\_構成](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-set-adapter-configuration)にアダプターを構成します。
-    4.  呼び出す[OID\_WDI\_タスク\_設定\_ラジオ\_状態](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-task-set-radio-state)になっていない予期された状態でラジオを初期状態を設定します。
-    5.  呼び出す[ *MiniportWdiTalTxRxStart* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/nc-dot11wdi-miniport_wdi_tal_txrx_start)データ パスを設定します。
-    6.  呼び出す[OID\_WDI\_タスク\_作成\_ポート](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-task-create-port)初期のポートを作成します。
+    1.  [*MiniportWdiTalTxRxInitialize*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-miniport_wdi_tal_txrx_initialize)を呼び出して、データパスと交換ハンドラーを初期化します。
+    2.  OID\_WDI を呼び出して、アダプターの機能を取得する[\_アダプターの\_機能を取得\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-get-adapter-capabilities)ます。
+    3.  [OID\_WDI を呼び出して\_アダプター\_構成を設定](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-set-adapter-configuration)し、アダプターを構成\_ます。
+    4.  [OID\_WDI\_タスク\_\_設定](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-task-set-radio-state)して、必要な状態にない場合は、ラジオ\_の初期状態を設定します。
+    5.  [*MiniportWdiTalTxRxStart*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-miniport_wdi_tal_txrx_start)を呼び出して、データパスを設定します。
+    6.  [OID\_WDI\_タスク\_作成](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-task-create-port)し、初期ポートを作成するための\_ポートを作成します。
 
-    その他のコマンドを Microsoft コンポーネントの MiniportInitializeEx 処理の一環として、IHV コンポーネントに送信も可能性があります。 ただし、まで[ *MiniportWdiStartOperation* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/nc-dot11wdi-miniport_wdi_start_adapter_operation)を呼び出すと、無線通信を必要がある Microsoft コンポーネントをすべてのタスクを送信しません。 除く[OID\_WDI\_タスク\_オープン](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-task-open)常に送信される最初に、他のコマンド/呼び出しの順序が変わる可能性があります。
+    その他のコマンドは、Microsoft コンポーネントの MiniportInitializeEx 処理の一部として、IHV コンポーネントに送信されることもあります。 ただし、 [*MiniportWdiStartOperation*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-miniport_wdi_start_adapter_operation)が呼び出されるまで、Microsoft コンポーネントは無線通信を必要とするタスクを送信しません。 [OID\_WDI\_タスク\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-task-open)最初に常に送信されている場合を除き、他のコマンド/呼び出しの順序が変わる可能性があります。
 
-    Microsoft コンポーネントを呼び出し、WDI IHV ミニポート ドライバーから取得したデータを使用して、 [ **NdisMSetMiniportAttributes** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsetminiportattributes)設定と[ **NDIS\_ミニポート\_アダプター\_全般\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)と[ **NDIS\_ミニポート\_アダプター\_ネイティブ\_802\_11\_属性**](https://docs.microsoft.com/previous-versions/windows/hardware/wireless/ff565926(v=vs.85)) NDIS にします。
+    Microsoft コンポーネントは、WDI IHV ミニポートドライバーから取得したデータを使用して[**NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)を呼び出し、 [**NDIS\_ミニポート\_アダプター\_全般\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)および[**ndis\_ミニポートを設定します。\_アダプター\_ネイティブ\_802\_11\_** ](https://docs.microsoft.com/previous-versions/windows/hardware/wireless/ff565926(v=vs.85)) NDIS の属性です。
 
-4.  呼び出す[ *MiniportWdiStartOperation*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/nc-dot11wdi-miniport_wdi_start_adapter_operation)します。
+4.  [*MiniportWdiStartOperation*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-miniport_wdi_start_adapter_operation)を呼び出します。
 
-    これは、省略可能な WDI ミニポート ハンドラー内で[ **NDIS\_ミニポート\_ドライバー\_WDI\_特性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ns-dot11wdi-_ndis_miniport_driver_wdi_characteristics) IHV ドライバーを使用しています。その他の MiniportInitializeEx タスクを実行します。 これは、こともできます IHV ミニポートによって Microsoft コンポーネントのミニポートとミニポートの初期化が完了したことのヒントが必要なバック グラウンドのすべてのアクティビティを開始します。
+    これは、 [**NDIS\_ミニポート\_ドライバー\_WDI\_特性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_ndis_miniport_driver_wdi_characteristics)に含まれるオプションの WDI ミニポートハンドラーであり、IHV ドライバーは追加の MiniportInitializeEx タスクを実行するために使用できます。 また、IHV ミニポートは、Microsoft コンポーネントがミニポートの初期化を完了したことを示すヒントとして使用することもできます。また、ミニポートは必要なバックグラウンドアクティビティを開始できます。
 
-    次の図は、MiniportInitializeEx の流れを示しています。
+    次の図は、MiniportInitializeEx のフローを示しています。
 
     ![wdi ミニポート初期化フロー](images/wdi-miniport-initialization-flow.png)
 
-    中間の操作が失敗した場合は、Microsoft コンポーネントには、以前の操作とミニポートの起動が失敗した元に戻します。 たとえば場合、 [OID\_WDI\_タスク\_作成\_ポート](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-task-create-port)失敗した場合、データ パスは、クリーンアップ、 [OID\_WDI\_タスク\_閉じる](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-task-close)が送信され、ミニポートが失敗したとします。
+    中間操作が失敗した場合は、Microsoft コンポーネントによって前の操作が元に戻され、ミニポートの表示が失敗します。 たとえば、 [oid\_WDI\_タスク\_作成\_ポート](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-task-create-port)に障害が発生した場合、データパスはクリーンアップされ、 [OID\_WDI\_タスク\_CLOSE](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-task-close)が送信され、ミニポートは失敗します。
 
-## <a name="miniporthaltex"></a>MiniportHaltEx
+## <a name="miniporthaltex"></a>ミニ Porthaltex
 
 
-ネイティブ Wi-fi ミニポート[ *MiniportHaltEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_halt)操作を停止し、アダプターのインスタンスをクリーンアップするミニポートを指示するために使用します。 Microsoft コンポーネントの元の処理、WDI モデルで*MiniportHaltEx*を呼び出すし、WDI インターフェイスの複数の呼び出しに分割されます。
+ネイティブ Wi-fi ミニポートでは、ミニアドオンを使用し[*て、操作*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_halt)を停止し、アダプターインスタンスをクリーンアップするようにミニポートに指示します。 WDI モデルでは、Microsoft コンポーネントが元の*Miniporthaltex*呼び出しを処理し、複数の WDI インターフェイス呼び出しに分割します。
 
-1.  呼び出す[ *MiniportWdiStopOperation*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/nc-dot11wdi-miniport_wdi_stop_adapter_operation)します。
+1.  [*MiniportWdiStopOperation*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-miniport_wdi_stop_adapter_operation)を呼び出します。
 
-    これは、省略可能な WDI ミニポート ハンドラー内で[ **NDIS\_ミニポート\_ドライバー\_WDI\_特性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ns-dot11wdi-_ndis_miniport_driver_wdi_characteristics)を元に戻す、IHV ドライバーが使用できます。実行された操作[ *MiniportWdiStartOperation*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/nc-dot11wdi-miniport_wdi_start_adapter_operation)します。
+    これは、 [*MiniportWdiStartOperation*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-miniport_wdi_start_adapter_operation)で実行された操作を IHV ドライバーが元に戻すために使用できる、 [**NDIS\_ミニポート\_ドライバー\_WDI\_特性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_ndis_miniport_driver_wdi_characteristics)内のオプションの WDI ミニポートハンドラーです。
 
-2.  複数 WDI コマンドを使用して[ *MiniportOidRequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_oid_request)します。
+2.  [*Miniportoidrequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_oid_request)を使用する複数の WDI コマンド。
 
-    後[ *MiniportWdiStopOperation*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/nc-dot11wdi-miniport_wdi_stop_adapter_operation)、Microsoft コンポーネント/タスクのプロパティを IHV ドライバーの現在の状態をクリーンアップする IHV ミニポートに送信します。 このクリーンアップは、次に含めることができます。
+    [*MiniportWdiStopOperation*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-miniport_wdi_stop_adapter_operation)の後、Microsoft コンポーネントは、ihv ドライバーの現在の状態をクリーンアップするために、タスク/プロパティを ihv ミニポートに送信します。 このクリーンアップには、次のものが含まれる場合があります。
 
-    1.  呼び出す[OID\_WDI\_タスク\_切断](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-task-disconnect)/[OID\_WDI\_タスク\_停止\_AP](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-task-stop-ap)の既存の接続を破棄します。
-    2.  呼び出す[OID\_WDI\_タスク\_削除\_ポート](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-task-delete-port)ポートの削除をすべて作成します。
-    3.  呼び出す[ *MiniportWdiTalTxRxStop* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/nc-dot11wdi-miniport_wdi_tal_txrx_stop)データ パスを停止します。
-    4.  呼び出す[ *MiniportWdiTalTxRxDeinitialize* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/nc-dot11wdi-miniport_wdi_tal_txrx_deinitialize) deinitialize データ パスにします。
-    5.  ハードウェアの状態をクリーンアップする呼び出しです。 これは、送信、IHV を使用して、 [ *MiniportWdiCloseAdapter* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/nc-dot11wdi-miniport_wdi_close_adapter) IHV ドライバーに登録されています。
+    1.  [Oid\_WDI\_タスク\_切断](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-task-disconnect)/[oid\_WDI\_タスクを停止\_AP を停止](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-task-stop-ap)して既存の接続を破棄します。
+    2.  [OID\_WDI\_タスク\_削除\_ポートを削除](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-task-delete-port)して、作成されたすべてのポートを削除します。
+    3.  [*MiniportWdiTalTxRxStop*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-miniport_wdi_tal_txrx_stop)を呼び出して、データパスを停止します。
+    4.  [*MiniportWdiTalTxRxDeinitialize*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-miniport_wdi_tal_txrx_deinitialize)を呼び出して、データパスを deinitialize します。
+    5.  を呼び出して、ハードウェアの状態をクリーンアップします。 これは、IHV ドライバーによって登録された[*Miniportwdicloseadapter*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-miniport_wdi_close_adapter)を使用して ihv に送信されます。
 
-3.  Microsoft コンポーネントを呼び出すすべての上記のコマンドが呼び出されると、 [ *MiniportWdiFreeAdapter* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/nc-dot11wdi-miniport_wdi_free_adapter) IHV ドライバーがする可能性があります、ソフトウェアの状態を削除します。
+3.  上記のすべてのコマンドが呼び出されると、Microsoft コンポーネントは[*Miniportwdifreeadapter*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-miniport_wdi_free_adapter)を呼び出して、必要なソフトウェアの状態を IHV ドライバーが削除できるようにします。
 
-次の図は、MiniportHaltEx の流れを示しています。
+次の図は、MiniportHaltEx のフローを示しています。
 
-![wdi ミニポート halt フロー](images/wdi-miniport-halt-flow.png)
+![wdi ミニポート停止フロー](images/wdi-miniport-halt-flow.png)
 
-デバイスが突然削除されたか、システムの電源がオフされるかどうかがある場合は、MiniportHaltEx 処理は実行されません。 突然削除するを参照してください、 [MiniportDevicePnPEventNotify](#miniportdevicepnpeventnotify)ハンドラーの動作。 システムのシャット ダウンを参照してください、 [MiniportShutdownEx](#miniportshutdownex)ハンドラーの動作。
+デバイスが突然削除された場合、またはシステムの電源がオフになっている場合、ミニ Porthaltex 処理は実行されません。 突然の削除については、 [MiniportDevicePnPEventNotify](#miniportdevicepnpeventnotify)ハンドラーの動作を参照してください。 システムのシャットダウンについては、「 [Miniportshutdownex](#miniportshutdownex)ハンドラーの動作」を参照してください。
 
 ## <a name="miniportdriverunload"></a>MiniportDriverUnload
 
 
-[*MiniportDriverUnload* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_unload) WDI IHV ミニポートが読み込まれる前に呼び出されるハンドラーします。 WDI IHV ミニポート ドライバーでは、Microsoft 自体の登録を解除するコンポーネントを呼び出します。 Microsoft コンポーネントの呼び出し[ **NdisMDeregisterMiniportDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismderegisterminiportdriver)します。
+[*Miniportdriverunload*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_unload)は、WDI IHV ミニポートがアンロードされる前に呼び出されるハンドラーです。 WDI IHV ミニポートドライバーは、Microsoft コンポーネントを呼び出して、自身の登録を解除します。 Microsoft コンポーネントは[**NdisMDeregisterMiniportDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismderegisterminiportdriver)を呼び出します。
 
-次の図は、MiniportDriverUnload の流れを示しています。
+次の図は、MiniportDriverUnload のフローを示しています。
 
-![wdi ミニポート ドライバー アンロード フロー](images/wdi-miniport-driver-unload-flow.png)
+![wdi ミニポートドライバーのアンロードフロー](images/wdi-miniport-driver-unload-flow.png)
 
 ## <a name="miniportpause"></a>MiniportPause
 
 
-NDIS [ *MiniportPause* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_pause)要件は、Microsoft コンポーネントによって処理されます。 MiniportPause の一環としては、Microsoft コンポーネントは、データ パスを停止し、クリーンアップするまで待機します。 WDI IHV ミニポートに登録できます必要に応じて、 [ *MiniportWdiPostAdapterPause* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/nc-dot11wdi-miniport_wdi_post_adapter_pause)データ パスのクリーンアップが完了した後に、Microsoft コンポーネントによって呼び出されるコールバック。
+NDIS [*Miniportpause*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_pause)の要件は、Microsoft コンポーネントによって処理されます。 MiniportPause の一部として、Microsoft コンポーネントはデータパスを停止し、クリーンアップを待機します。 WDI IHV ミニポートは、必要に応じて、データパスのクリーンアップが完了した後に Microsoft コンポーネントによって呼び出される[*Miniportwdipostadapterpause*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-miniport_wdi_post_adapter_pause)コールバックに登録できます。
 
-次の図は、MiniportPause の流れを示しています。
+次の図は、MiniportPause のフローを示しています。
 
-![wdi ミニポート フローの一時停止](images/wdi-miniport-pause-flow.png)
+![wdi ミニポートの一時停止フロー](images/wdi-miniport-pause-flow.png)
 
 ## <a name="miniportrestart"></a>MiniportRestart
 
 
-NDIS [ *MiniportRestart* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_restart)要件は、Microsoft コンポーネントによって処理されます。 MiniportRestart の一環として、Microsoft コンポーネント MiniportPause の一部として実行されたデータ パスの一時停止作業を元に戻します。 WDI IHV ミニポートに登録できます必要に応じて、 [ *MiniportWdiPostAdapterRestart* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/nc-dot11wdi-miniport_wdi_post_adapter_restart)データ パスの再起動が完了した後に、Microsoft コンポーネントによって呼び出されるコールバック。
+NDIS [*Miniportrestart*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_restart)の要件は、Microsoft コンポーネントによって処理されます。 MiniportRestart の一部として、Microsoft コンポーネントは Miniportrestart の一部として実行されたデータパスの一時停止作業を元に戻します。 WDI IHV ミニポートは、必要に応じて、データパスの再起動が完了した後に Microsoft コンポーネントによって呼び出される[*Miniportwdipostadapterrestart*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-miniport_wdi_post_adapter_restart)コールバックに登録できます。
 
-次の図は、MiniportRestart の流れを示しています。
+次の図は、MiniportRestart のフローを示しています。
 
-![フローが再起動 wdi ミニポート](images/wdi-miniport-restart-flow.png)
+![wdi ミニポートの再起動フロー](images/wdi-miniport-restart-flow.png)
 
 ## <a name="miniportresetex"></a>MiniportResetEx
 
 
-[*MiniportResetEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_reset) Microsoft コンポーネントによって処理されません。 WDI IHV ミニポートに登録できます必要に応じて、 *MiniportResetEx* Microsoft コンポーネントによって呼び出されるコールバック。
+[*Miniportresetex*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_reset)は、Microsoft コンポーネントによって処理されません。 WDI IHV ミニポートは、必要に応じて、Microsoft コンポーネントによって呼び出される*Miniportresetex*コールバックに登録できます。
 
 ## <a name="miniportdevicepnpeventnotify"></a>MiniportDevicePnPEventNotify
 
 
-[*MiniportDevicePnPEventNotify* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_device_pnp_event_notify) PNP イベント デバイスの突然の削除などの NDIS ドライバーに通知するために使用します。 NDIS は、この通知を送信するときに最初に処理 WDI IHV ミニポートに転送されます。 IHV コンポーネントは、処理が終了したら、Microsoft のコンポーネントは、このイベントの適切な処理を実行します。 IHV コンポーネントに転送される呼び出しは他のタスクのコールバックとシリアル化されません。
+[*MiniportDevicePnPEventNotify*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_device_pnp_event_notify)は、デバイスの突然の削除などの PNP イベントを NDIS ドライバーに通知するために使用されます。 NDIS がこの通知を送信すると、まず、処理のために WDI IHV ミニポートに転送されます。 IHV コンポーネントの処理が完了すると、Microsoft コンポーネントはこのイベントに対して適切な処理を実行します。 IHV コンポーネントに転送される呼び出しは、他のタスクやコールバックと共にシリアル化されません。
 
-次の図は、MiniportDevicePnPEventNotify の流れを示しています。
+次の図は、MiniportDevicePnPEventNotify のフローを示しています。
 
-![wdi ミニポート ドライブ pnp 通知フロー](images/wdi-miniport-device-pnp-notification-flow.png)
+![wdi ミニポートドライブの pnp 通知フロー](images/wdi-miniport-device-pnp-notification-flow.png)
 
 ## <a name="miniportshutdownex"></a>MiniportShutdownEx
 
 
-[*MiniportShutdownEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_shutdown)システム シャット ダウン イベントの NDIS ドライバーに通知するために使用します。 NDIS は、この通知を送信するときに最初に Microsoft コンポーネントによって処理されます。 Microsoft コンポーネントでは、処理が完了すると、WDI IHV ミニポート処理のためにイベントを渡します。
+[*Miniportshutdownex*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_shutdown)は、システムシャットダウンイベントについて NDIS ドライバーに通知するために使用されます。 NDIS がこの通知を送信すると、まず Microsoft コンポーネントによって処理されます。 Microsoft コンポーネントの処理が完了すると、イベントが処理のために WDI IHV ミニポートに渡されます。
 
-次の図は、MiniportShutdownEx の流れを示しています。
+次の図は、MiniportShutdownEx のフローを示しています。
 
-![wdi ミニポート シャット ダウンのフロー](images/wdi-miniport-shutdown-flow.png)
+![wdi ミニポートのシャットダウンフロー](images/wdi-miniport-shutdown-flow.png)
 
 ## <a name="miniportoidrequest"></a>MiniportOidRequest
 
 
-[ *MiniportOidRequest* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_oid_request)ハンドラーが、必要なハンドラー WDI IHV ミニポートを実装する必要があります。 IHV ミニポートに WDI コマンドを送信する Microsoft コンポーネントによって使用されます。 Microsoft コンポーネントが IHV ミニポートに処理しない Oid を転送するようにも使用されます。
+[*Miniportoidrequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_oid_request)ハンドラーは、WDI IHV ミニポートで実装する必要がある必須のハンドラーです。 これは、WDI コマンドを IHV ミニポートに送信するために Microsoft コンポーネントによって使用されます。 また、Microsoft コンポーネントが IHV ミニポートに対して処理しない Oid を転送するためにも使用されます。
 
-[ *MiniportOidRequest* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_oid_request) WDI コマンドのメッセージ M1 見なさ WDI IHV ミニポートに呼び出す必要があります。 OID が完成したら、(いずれかによって[ **NdisMOidRequestComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismoidrequestcomplete)または非保留中からの戻り値を使用して*MiniportOidRequest*) M3 のメッセージとして考慮する必要があります、WDI タスク/コマンド。
+WDI IHV ミニポートへの[*Miniportoidrequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_oid_request)呼び出しは、WDI コマンドの M1 メッセージとして考慮する必要があります。 OID の完了 ( [**NdisMOidRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismoidrequestcomplete)を介して、または*Miniportoidrequest*からの非保留を返す) は、WDI Task/command の M3 メッセージと見なす必要があります。
 
-すべて WDI コマンドがある 2 つの潜在的なフィールドが、NDIS\_操作--からのステータス コードが返されるステータス コード、 [ *MiniportOidRequest* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_oid_request)呼び出し (または[ **NdisMOidRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismoidrequestcomplete)) と状態コード、 [ **WDI\_メッセージ\_ヘッダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ns-dot11wdi-_wdi_message_header)フィールド (OID が完成したら、またはを使用して[ **NdisMIndicateStatusEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismindicatestatusex))。 NDIS で常に次の Microsoft コンポーネント\_見て前に OID 完了から状態、 **WDI\_メッセージ\_HEADERStatus**フィールド。 処理 WDI OID の IHV コンポーネントへの期待は、次のとおりです。
+WDI のすべてのコマンドには、次の2つのフィールドがあります。このフィールドには、NDIS\_状態コードを操作のために返すことができます。これには、 [*Miniportoidrequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_oid_request)呼び出し (または[**NdisMOidRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismoidrequestcomplete)) からのステータスコード、および WDI の状態コードを指定し[ **\_MESSAGE\_HEADER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_wdi_message_header)フィールド (OID 入力候補または[**NdisMIndicateStatusEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismindicatestatusex)経由)。 Microsoft コンポーネントは、 **WDI\_MESSAGE\_HEADERStatus**フィールドを確認する前に、常に、OID の\_状態を OID の完了から調べます。 WDI OID 処理のための IHV コンポーネントの期待は次のとおりです。
 
-1.  WDI Oid が IHV コンポーネントを使用して送信された、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)**RequestType**の**NdisRequestMethod**、および対応するメッセージとメッセージの長さで、**データ。メソッド\_INFORMATION.InformationBuffer**と**データ。メソッド\_情報。InputBufferLength**それぞれフィールドします。
-2.  IHV コンポーネントは、コマンドの処理中にエラーがある場合は、OID が完了するまでエラーが報告されの [状態] フィールドを設定、 [ **WDI\_メッセージ\_ヘッダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ns-dot11wdi-_wdi_message_header)に非-成功 Wi-fi レベルの障害がある場合。
-3.  タスクとプロパティは、要求のポート番号はでは、 [ **WDI\_メッセージ\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ns-dot11wdi-_wdi_message_header)**PortId**フィールド。 **PortNumber**で、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)は常に 0 に設定します。
-4.  OID が完了したが、許容、 [ *MiniportOidRequest* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_oid_request)を返す NDIS\_状態\_PENDING OID を後で完了し、(同期または非同期)[ **NdisMOidRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismoidrequestcomplete)します。
-5.  IHV コンポーネント NDIS に OID が完了すると\_状態\_成功するを設定する必要がありますが、 **BytesWritten**適切な数の空白を含むバイトの OID は要求のフィールド、 [**WDI\_メッセージ\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ns-dot11wdi-_wdi_message_header)します。
-6.  かどうか、IHV コンポーネントが十分な領域、**データ。メソッド\_情報。OutputBufferLength** 、応答を入力するフィールド NDIS に OID が完了すると\_状態\_バッファー\_すぎます\_短いし、設定、**データ。メソッド\_情報。BytesNeeded**フィールド。 Microsoft コンポーネントは可能性があります、要求されたサイズのバッファーを割り当てるし、IHV に新しい要求の送信を試みます。
-7.  タスクに M4 の場合、タスクは、([**NdisMIndicateStatusEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismindicatestatusex)) かどうか、タスクとして報告された - 正常に開始 OID 入力候補が正常に完了する必要があります指定のみと**の状態**で、 [ **WDI\_メッセージ\_ヘッダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ns-dot11wdi-_wdi_message_header) OID で完了が成功します。
+1.  WDI Oid は、 [**NDIS\_oid\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)**RequestType**を使用して IHV コンポーネントに送信さ**れ、それ**に対応するメッセージとメッセージ長がデータに含まれ**ます。メソッド\_情報。 InformationBuffer**と**DATA。メソッド\_情報。InputBufferLength**フィールドそれぞれ。
+2.  コマンドの処理中にエラーが発生した場合、IHV コンポーネントは OID の完了時にエラーを報告します。 Wi-fi レベルの障害が発生している場合は、 [**WDI\_MESSAGE\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_wdi_message_header)の Status フィールドを no success に設定します。
+3.  タスクとプロパティの場合、要求のポート番号は、 [**WDI\_MESSAGE\_HEADER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_wdi_message_header)**ポート id**フィールドにあります。 [**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)の**ポート**番号は、常に0に設定されます。
+4.  OID を完成させるには、 [*Miniportoidrequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_oid_request)が NDIS\_STATUS\_を返し、後で[**NdisMOidRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismoidrequestcomplete)を使用して (同期または非同期に) oid を完了することが許容されます。
+5.  IHV コンポーネントが NDIS\_STATUS\_SUCCESS の OID を完了した場合、 [**WDI\_MESSAGE\_HEADER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_wdi_message_header)の領域を含む、oid 要求の**byteswritten**れたフィールドに適切なバイト数を設定する必要があります.
+6.  IHV コンポーネントのデータに十分な領域がない場合 **。メソッド\_情報。OutputBufferLength**フィールドは、応答を埋めるために、NDIS\_STATUS の OID を完了し\_バッファー\_短\_すぎてデータを設定し**ます。メソッド\_情報。BytesNeeded**フィールドです。 Microsoft コンポーネントが、要求されたサイズのバッファーを割り当てて、新しい要求を IHV に送信しようとする場合があります。
+7.  タスクの場合、タスクの M4 ([**NdisMIndicateStatusEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismindicatestatusex)) は、タスクが正常に開始したと報告された場合にのみ指定する必要があります--oid の完了が成功し、 [**WDI\_MESSAGE\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_wdi_message_header)の**状態**が oid で表示されます。完了は成功しました。
 
-次の図は、1 つの WDI コマンドにマップする NDIS OID 要求の例を示します。 オペレーティング システムによって OID 要求が送信されると、Microsoft コンポーネントが WDI OID 要求に変換し、IHV ミニポートに WDI OID 要求を送信します。 IHV ミニポート OID が完了すると、Microsoft コンポーネントは、元の OID 要求を適切に完了します。
+次の図は、単一の WDI コマンドにマップされる NDIS OID 要求の例を示しています。 OID 要求がオペレーティングシステムによって送信されると、Microsoft コンポーネントはそれを WDI OID 要求に変換し、WDI OID 要求を IHV ミニポートに送信します。 IHV ミニポートが OID を完了すると、Microsoft コンポーネントが元の OID 要求を適切に完了します。
 
-![wdi miniport oid request sequence for single wdi command](images/wdi-miniport-oid-request-single.png)
+![single wdi コマンドの wdi ミニポート oid 要求シーケンス](images/wdi-miniport-oid-request-single.png)
 
-複数 WDI OidRequests、OriginalOidRequest にマップし、WDI 要求の 1 つが失敗した場合、OriginalOidRequest も失敗します。 中間操作のサブセットが既に完了している場合、Microsoft コンポーネントは、サポートのクリーンアップ操作を元に戻すしようとします。
+WDI が複数の OidRequests にマップされ、いずれかの WDI 要求が失敗した場合、Aloidrequest も失敗します。 中間操作のサブセットが既に完了している場合、Microsoft コンポーネントはクリーンアップをサポートする操作を元に戻しようとします。
 
-次の図は、Microsoft コンポーネントによって完了、NDIS OID 要求処理の例を示します。 ときに OID 要求は、オペレーティング システムで Microsoft コンポーネント プロセスが送信され、OID が完了します。 この OID が WDI IHV ミニポートに渡されません。
+次の図は、Microsoft コンポーネントによって処理された NDIS OID 要求の例を示しています。 OID 要求がオペレーティングシステムによって送信されると、Microsoft コンポーネントは OID を処理して完了します。 この OID は、WDI IHV ミニポートに渡されません。
 
 ![microsoft コンポーネントによって処理される oid の wdi ミニポート oid 要求シーケンス](images/wdi-miniport-oid-request-wdi-handled.png)
 
-Microsoft コンポーネントによって認識されない Oid は、処理の IHV コンポーネントに直接転送されます。
+Microsoft コンポーネントによって認識されない Oid は、処理のために IHV コンポーネントに直接転送されます。
 
-![microsoft コンポーネントによって処理されない oid の wdi ミニポート oid 要求シーケンス](images/wdi-miniport-oid-request-unknown.png)
+![wdi microsoft コンポーネントによって処理されない oid のミニポート oid の要求シーケンス](images/wdi-miniport-oid-request-unknown.png)
 
-MiniportOidRequest の動作では、(ネイティブ Wi-fi ミニポート) と比較して WDI IHV ミニポート ドライバーに変更されません。 呼び出しはシリアル化され、IHV ミニポートできますが完了するか、同期または非同期の呼び出しで[ **NdisMOidRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismoidrequestcomplete)します。
+WDI IHV ミニポートドライバーでは、MiniportOidRequest の動作は変更されていません (ネイティブ Wi-fi ミニポートと比較)。 呼び出しはシリアル化され、IHV ミニポートは、 [**NdisMOidRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismoidrequestcomplete)の呼び出しを使用して同期的または非同期的に完了できます。
 
 ## <a name="miniportcanceloidrequest"></a>MiniportCancelOidRequest
 
 
-これは、WDI メッセージにマップされていない Oid を処理する必要がある WDI IHV ミニポートによって使用される、省略可能なハンドラーです。 このハンドラーは、WDI Oid には使用されません。 WDI Oid がすぐに完了する必要があり、保留中の OID をキャンセルしようとする IHV ミニポート ドライバーの必要はありません。 WDI タスクのキャンセルは、適切な取り消しタスク OID 要求を使用して処理されます。 マップされていない Oid は、想定される動作は、NDIS によって定義されます。
+これは、WDI メッセージにマップされていない Oid を処理する必要がある WDI IHV ミニポートによって使用される省略可能なハンドラーです。 このハンドラーは、どの WDI Oid にも使用されません。 WDI Oid は迅速に完了する必要があります。また、IHV ミニポートドライバーが保留中の OID をキャンセルしようとする必要はありません。 WDI タスクの取り消しは、適切な cancel task OID 要求を使用して処理されます。 マップされていない Oid の場合、想定される動作は NDIS によって定義されます。
 
 ## <a name="ndismindicatestatusex"></a>NdisMIndicateStatusEx
 
 
-[**NdisMIndicateStatusEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismindicatestatusex) WDI IHV ミニポートによって Microsoft コンポーネントに指示を送信するために使用します。 指標は、一方的な兆候 TKIP MIC の障害などがあります。 またはタスクの完了 (M4) の指示を要請します。
+[**NdisMIndicateStatusEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismindicatestatusex)は、WDI IHV ミニポートが Microsoft コンポーネントに通知を送信するために使用されます。 この表示には、TKIP MIC の故障などの非要請の兆候や、タスクの完了 (M4) に関する要請された表示などがあります。
 
-次の図を対応する NDIS/ネイティブ Wi-fi を示す値を持つ WDI indication の例を示します。 Microsoft コンポーネントを IHV ミニポートによって指示が送信されると、Microsoft のコンポーネントは既存を示す値に変換し、オペレーティング システムに転送します。
+次の図は、対応する NDIS/ネイティブ Wi-fi を示す WDI の例を示しています。 指示が IHV ミニポートによって Microsoft コンポーネントに送信されると、Microsoft コンポーネントはそれを既存の指示に変換し、オペレーティングシステムに転送します。
 
-![wdi ミニポートの状態を示す値のフロー](images/wdi-miniport-status-indication-flow.png)
+![wdi ミニポートの状態を示すフロー](images/wdi-miniport-status-indication-flow.png)
 
-次の図は、対応する NDIS/ネイティブ Wi-fi を示す値を持たない WDI indication の例を示します。 これは、Microsoft コンポーネントによって処理されます。
+次の図は、対応する NDIS/ネイティブ Wi-fi を示していない WDI を示す例を示しています。 これは、Microsoft コンポーネントによって処理されます。
 
-![ndis へ直接マッピングすることがなく wdi 状態の表示](images/wdi-miniport-status-indication-not-ndis.png)
+![wdi ndis に直接マッピングされることがない状態を示す](images/wdi-miniport-status-indication-not-ndis.png)
 
-次の図は、Microsoft コンポーネントによって認識されないものを示す値を示します。 として示す値が転送されるは、オペレーティング システムを。
+次の図は、Microsoft コンポーネントによって認識されないことを示しています。 この通知は、オペレーティングシステムにそのように転送されます。
 
-![microsoft コンポーネントによって認識されない wdi 状態の表示](images/wdi-miniport-status-indication-unknown.png)
+![wdi microsoft コンポーネントによって認識されない状態を示す](images/wdi-miniport-status-indication-unknown.png)
 
-NdisMIndicateStatusEx の動作では、(ネイティブ Wi-fi ミニポート) と比較して WDI IHV ミニポート ドライバーに変更されません。
+NdisMIndicateStatusEx の動作は、WDI IHV ミニポートドライバーでは変更されません (ネイティブ Wi-fi ミニポートと比較)。
 
 ## <a name="miniportdirectoidrequest"></a>MiniportDirectOidRequest
 
 
-これは、WDI メッセージにマップされていない直接の Oid を処理する必要がある場合、WDI IHV ミニポート ドライバーによって登録されているオプションのハンドラーです。 Wi-Fi Direct のすべての既存の直接 Oid は、このハンドラーは、その機能をサポートする必要はありませんので、WDI メッセージにマップされます。 サポートされていない直接 Oid は Microsoft コンポーネントによってシリアル化されません。
+これは、WDI メッセージにマップされていない直接の Oid を処理する必要がある場合に、WDI IHV ミニポートドライバーによって登録される省略可能なハンドラーです。 Wi-fi Direct 用の既存の直接 Oid はすべて WDI メッセージにマップされるため、このハンドラーはその機能をサポートするためには必要ありません。 サポートされていない直接 Oid は、Microsoft コンポーネントによってシリアル化されません。
 
-## <a name="miniportcanceldirectoidrequest"></a>MiniportCancelDirectOidRequest
+## <a name="miniportcanceldirectoidrequest"></a>Miniportcancelt Toidrequest
 
 
-これは、WDI メッセージにマップされていない直接の Oid を処理する必要がある WDI IHV ミニポートによって使用される、省略可能なハンドラーです。 マップされていない Oid は、想定される動作は、NDIS によって定義されます。
+これは、WDI メッセージにマップされていない直接の Oid を処理する必要がある WDI IHV ミニポートによって使用される省略可能なハンドラーです。 マップされていない Oid の場合、想定される動作は NDIS によって定義されます。
 
 ## <a name="miniportsendnetbufferlists"></a>MiniportSendNetBufferLists
 
 
-このハンドラーは、WDI IHV ミニポート ドライバーでは使用されませんし、指定されていない必要があります。 Microsoft コンポーネントを介して登録されたデータ パスのハンドラーを使用して[ **NDIS\_ミニポート\_ドライバー\_WDI\_特性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ns-dot11wdi-_ndis_miniport_driver_wdi_characteristics)にIHV ミニポートへの送信パケットを送信します。
+このハンドラーは、WDI IHV ミニポートドライバーでは使用されないため、指定しないでください。 Microsoft コンポーネントでは、 [**NDIS\_ミニポート\_ドライバー\_WDI\_特性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_ndis_miniport_driver_wdi_characteristics)によって登録されたデータパスハンドラーを使用して、送信パケットを IHV ミニポートに送信します。
 
 ## <a name="miniportcancelsend"></a>MiniportCancelSend
 
 
-このハンドラーは、WDI IHV ミニポート ドライバーでは使用されませんし、指定されていない必要があります。
+このハンドラーは、WDI IHV ミニポートドライバーでは使用されないため、指定しないでください。
 
 ## <a name="miniportreturnnetbufferlists"></a>MiniportReturnNetBufferLists
 
 
-このハンドラーは、WDI IHV ミニポート ドライバーでは使用されませんし、指定されていない必要があります。 Microsoft コンポーネントを介して登録されたデータ パスのハンドラーを使用して[ **NDIS\_ミニポート\_ドライバー\_WDI\_特性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ns-dot11wdi-_ndis_miniport_driver_wdi_characteristics)にIHV ミニポートに受信したパケットを返します。
+このハンドラーは、WDI IHV ミニポートドライバーでは使用されないため、指定しないでください。 Microsoft コンポーネントは、 [**NDIS\_ミニポート\_ドライバー\_WDI\_特性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_ndis_miniport_driver_wdi_characteristics)によって登録されたデータパスハンドラーを使用して、受信したパケットを IHV ミニポートに返します。
 
-## <a name="wdi-handler-miniportwdiopenadapter"></a>WDI ハンドラー:MiniportWdiOpenAdapter
-
-
-[ *MiniportWdiOpenAdapter* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/nc-dot11wdi-miniport_wdi_open_adapter)ハンドラーは IHV ドライバーで開いているタスクの操作を開始する Microsoft コンポーネントによって使用されます。 この呼び出しはすぐに完了する必要があり、オープン操作が正常に開始された場合、IHV が NDIS を返す必要があります\_状態\_この呼び出しと呼び出しの成功、 [ **OpenAdapterComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/nc-dot11wdi-ndis_wdi_open_adapter_complete)ハンドラーに渡される、 [ **NDIS\_WDI\_INIT\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ns-dot11wdi-_ndis_wdi_init_parameters)パラメーターの[ *MiniportWdiAllocateAdapter*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/nc-dot11wdi-miniport_wdi_allocate_adapter)します。
-
-## <a name="wdi-handler-miniportwdicloseadapter"></a>WDI ハンドラー:MiniportWdiCloseAdapter
+## <a name="wdi-handler-miniportwdiopenadapter"></a>WDI handler: MiniportWdiOpenAdapter
 
 
-[ *MiniportWdiCloseAdapter* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/nc-dot11wdi-miniport_wdi_close_adapter)ハンドラーは IHV ドライバーでタスクを閉じる操作を開始する Microsoft コンポーネントによって使用されます。 この呼び出しはすぐに完了する必要があり、オープン操作が正常に開始された場合、IHV が NDIS を返す必要があります\_状態\_この呼び出しと呼び出しの成功、 [ **CloseAdapterComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/nc-dot11wdi-ndis_wdi_close_adapter_complete)ハンドラーに渡される、 [ **NDIS\_WDI\_INIT\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ns-dot11wdi-_ndis_wdi_init_parameters)のパラメーター、 [ *MiniportWdiAllocateAdapter*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/nc-dot11wdi-miniport_wdi_allocate_adapter)します。
+[*Miniportwdiopenadapter*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-miniport_wdi_open_adapter)ハンドラーは、IHV ドライバーで Open Task 操作を開始するために Microsoft コンポーネントによって使用されます。 この呼び出しは迅速に完了する必要があります。また、オープン操作が正常に開始された場合、IHV は、この呼び出しで NDIS\_STATUS\_SUCCESS を返し、Ndis\_WDI に渡される[**Openadaptercomplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-ndis_wdi_open_adapter_complete)ハンドラーを呼び出す必要があり[ **\_INIT\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_ndis_wdi_init_parameters)パラメーターを[*Miniportwdiallocateadapter*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-miniport_wdi_allocate_adapter)に指定します。
+
+## <a name="wdi-handler-miniportwdicloseadapter"></a>WDI handler: MiniportWdiCloseAdapter
+
+
+[*Miniportwdicloseadapter*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-miniport_wdi_close_adapter)ハンドラーは、IHV ドライバーでタスクの終了操作を開始するために Microsoft コンポーネントによって使用されます。 この呼び出しは迅速に完了する必要があります。また、オープン操作が正常に開始された場合、IHV は、この呼び出しで NDIS\_STATUS\_SUCCESS を返し、Ndis\_WDI に渡される[**Closeadaptercomplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-ndis_wdi_close_adapter_complete)ハンドラーを呼び出す必要があり[ **@no_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_ndis_wdi_init_parameters) [*Miniportwdiallocateadapter*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-miniport_wdi_allocate_adapter)の _T_7_ INIT\_PARAMETERS パラメーター
 
  
 

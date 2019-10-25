@@ -1,43 +1,43 @@
 ---
 title: WDI_TLV_AUTH_ALGO_LIST
-description: WDI_TLV_AUTH_ALGO_LIST では、認証アルゴリズムの一覧を含む TLV です。
+description: WDI_TLV_AUTH_ALGO_LIST は、認証アルゴリズムの一覧を含む TLV です。
 ms.assetid: 6F5EC21B-C923-45ED-B62E-302D916AABE5
 ms.date: 07/18/2017
 keywords:
-- WDI_TLV_AUTH_ALGO_LIST ネットワーク ドライバーが Windows Vista 以降
+- WDI_TLV_AUTH_ALGO_LIST ネットワークドライバー (Windows Vista 以降)
 ms.localizationpriority: medium
-ms.openlocfilehash: b8043fceaf8e6ce8b59d05eaf2a43580b9387b3e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2666c667b90c1f3faec4e9e525d2a4f7c545d464
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386960"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842880"
 ---
-# <a name="wditlvauthalgolist"></a>WDI\_TLV\_AUTH\_ALGO\_一覧
+# <a name="wdi_tlv_auth_algo_list"></a>WDI\_TLV\_AUTH\_ALGO\_LIST
 
 
-WDI\_TLV\_AUTH\_ALGO\_リストは、認証アルゴリズムの一覧を含む TLV します。
+WDI\_TLV\_AUTH\_ALGO\_LIST は、認証アルゴリズムの一覧を含む TLV です。
 
 ## <a name="tlv-type"></a>TLV 型
 
 
-0x3c です.
+0X3c です
 
 ## <a name="length"></a>長さ
 
 
-配列のサイズをバイト単位で[ **WDI\_AUTH\_アルゴリズム**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_auth_algorithm)構造体。 配列には、1 つ以上の要素を含める必要があります。
+[**WDI\_AUTH\_アルゴリズム**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_auth_algorithm)構造体の配列のサイズ (バイト単位)。 配列には1つ以上の要素が含まれている必要があります。
 
 ## <a name="values"></a>値
 
 
-| 型                                                        | 説明                            |
+| タスクバーの検索ボックスに                                                        | 説明                            |
 |-------------------------------------------------------------|----------------------------------------|
-| [**WDI\_AUTH\_アルゴリズム**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_auth_algorithm)\[\] | 認証アルゴリズムの配列。 |
+| [**WDI\_AUTH\_ALGORITHM**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_auth_algorithm)\[\] | 認証アルゴリズムの配列。 |
 
  
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -56,7 +56,7 @@ WDI\_TLV\_AUTH\_ALGO\_リストは、認証アルゴリズムの一覧を含む 
 </tr>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Wditypes.hpp</td>
+<td>Wditypes</td>
 </tr>
 </tbody>
 </table>

@@ -1,60 +1,60 @@
 ---
 title: OID_SRIOV_PROBED_BARS
-description: NDIS は、ネットワーク アダプターの PCI Express (PCIe) ベース アドレスを登録します (バー) の値を取得する OID_SRIOV_PROBED_BARS のオブジェクト識別子 (OID) のクエリ要求を発行します。
+description: NDIS は、OID_SRIOV_PROBED_BARS のオブジェクト識別子 (OID) クエリ要求を発行して、ネットワークアダプターの PCI Express (PCIe) ベースアドレスレジスタ (バー) の値を取得します。
 ms.assetid: 81C3A5B5-58D5-41F4-A000-79F3F4E00DAD
 ms.date: 08/08/2017
-keywords: -OID_SRIOV_PROBED_BARS ネットワーク ドライバーが Windows Vista 以降
+keywords: -Windows Vista 以降の OID_SRIOV_PROBED_BARS ネットワークドライバー
 ms.localizationpriority: medium
-ms.openlocfilehash: 98dc6a518d6bffbb00e21c38ea0c289840f95ccf
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: fc31e0c4e6696ca67e74b1736cdb2b6002811865
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386315"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843986"
 ---
-# <a name="oidsriovprobedbars"></a>OID\_SRIOV\_PROBED\_バー
+# <a name="oid_sriov_probed_bars"></a>OID\_SRIOV\_プローブ\_バー
 
 
-OID のオブジェクト識別子 (OID) のクエリ要求を発行する NDIS\_SRIOV\_PROBED\_バー ネットワーク アダプターの PCI Express (PCIe) ベース アドレスを登録します (バー) の値を取得します。 この関数は、PCI バス ドライバーで実行されるクエリを次のネットワーク アダプターによって報告されたバーの値を返します。 このクエリでは、メモリまたはネットワーク アダプターで必要とされる I/O のアドレス空間を決定します。
+NDIS は、OID\_OID のオブジェクト識別子 (OID) クエリ要求を発行し、ネットワークアダプターの PCI Express (PCIe) ベースアドレスレジスタ (Bar) の値を取得するために、探索された\_バー\_します。 この関数は、PCI バスドライバーによって実行されるクエリに従ってネットワークアダプターによって報告されたバーの値を返します。 このクエリでは、ネットワークアダプターが必要とするメモリまたは i/o アドレス空間を決定します。
 
-OID の OID クエリ要求を発行する NDIS\_SRIOV\_PROBED\_ミニポート ドライバーのネットワーク アダプターの PCIe 物理機能 (PF) にあるバー。 この OID クエリ要求は、PF ミニポート ドライバー シングル ルート I/O 仮想化 (SR-IOV) インターフェイスをサポートする必要があります。
+NDIS は oid のクエリ要求 oid\_SRIOV\_ネットワークアダプターの PCIe 物理機能 (PF) のミニポートドライバーに\_バーを調査します。 この OID クエリ要求は、シングルルート i/o 仮想化 (SR-IOV) インターフェイスをサポートする PF ミニポートドライバーに必要です。
 
-**InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体には、バッファーへのポインターが含まれています。 このバッファーは、以下を格納する形式です。
+[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造体の**informationbuffer**メンバーには、バッファーへのポインターが含まれています。 このバッファーは、次のものが含まれるように書式設定されます。
 
--   [ **NDIS\_SRIOV\_PROBED\_バー\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_sriov_probed_bars_info)ネットワークの PCI バーでの読み取り操作のパラメーターを格納する構造体アダプター。
+-   [**NDIS\_SRIOV\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_probed_bars_info) 、ネットワークアダプターの PCI バーに対する読み取り操作のパラメーターを含む、\_バーの\_情報の構造を調査します。
 
--   PCIe ネットワーク アダプターの各横棒の ULONG 値の配列。 この配列内の要素の最大数は PCI\_TYPE0\_アドレス。
+-   PCIe ネットワークアダプターの各バーの ULONG 値の配列。 この配列内の要素の最大数は、PCI\_TYPE0\_アドレスです。
 
 <a name="remarks"></a>注釈
 -------
 
-HYPER-V 親パーティションの管理オペレーティング システムで実行され、PCI バス ドライバーでは、メモリまたは I/O の各 PCI ベース アドレスを登録 (バー) のネットワーク アダプターのアドレス空間の要件を照会します。 PCI バス ドライバーは、最初にバス アダプターを検出した場合に、このクエリを実行します。
+Hyper-v 親パーティションの管理オペレーティングシステムで実行される PCI バスドライバーは、ネットワークアダプターの各 PCI ベースアドレスレジスタ (バー) のメモリまたは i/o アドレス空間の要件を照会します。 PCI バスドライバーは、バス上のアダプターを最初に検出したときに、このクエリを実行します。
 
-この PCI バー クエリによって、PCI バス ドライバーは、次で決定します。
+Pci バスドライバーは、この PCI BAR クエリを使用して次のことを決定します。
 
--   かどうか、PCI バーは、ネットワーク アダプターによってサポートされます。
+-   PCI バーがネットワークアダプターによってサポートされているかどうか。
 
--   バーがサポートされている場合、どのくらいのメモリまたは I/O のアドレス空間がバーに必要です。
+-   バーがサポートされている場合は、バーに必要なメモリまたは i/o アドレス空間の量を指定します。
 
-仮想の PCI (VPCI) バス ドライバーは、HYPER-V 子パーティションのゲスト オペレーティング システムで実行されます。 VPCI バス ドライバーは VF の仮想ネットワーク アダプターを公開、PCI Express (PCIe) 仮想機能 (VF) が、子パーティションに関連付けられている場合 (*VF のネットワーク アダプター*)。 これは、前に、VPCI バス ドライバーは、必要なメモリまたは VF のネットワーク アダプターで必要とされるアドレス空間を決定する PCI バー クエリを実行する必要があります。
+仮想 PCI (VPCI) バスドライバーは、Hyper-v 子パーティションのゲストオペレーティングシステムで実行されます。 PCI Express (PCIe) 仮想関数 (VF) が子パーティションにアタッチされている場合、VPCI バスドライバーは VF (*vf ネットワークアダプター*) 用の仮想ネットワークアダプターを公開します。 これを行う前に、VPCI バスドライバーは、VF ネットワークアダプターに必要なメモリまたはアドレス空間を決定するために PCI バークエリを実行する必要があります。
 
-PCI の構成領域へのアクセスは、特権が必要であるために、HYPER-V 親パーティションの管理オペレーティング システムで実行されるコンポーネントによってのみ実行できます。 NDIS VPCI バス ドライバーでは、PCI バーを照会、発行 OID の OID クエリ要求を\_SRIOV\_PROBED\_PF ミニポート ドライバーにバー。 この OID クエリ要求によって返される結果は、メモリ アドレス領域の量は VF のネットワーク アダプターで必要になりますが確認できるように、VPCI バス ドライバーに転送されます。
+PCI 構成領域へのアクセスは特権操作であるため、Hyper-v 親パーティションの管理オペレーティングシステムで実行されるコンポーネントによってのみ実行できます。 VPCI バスドライバーが PCI バーに対してクエリを実行すると、NDIS は oid\_oid の OID クエリ要求を発行し、\_PF ミニポートドライバーに\_バーを調査します。 この OID クエリ要求によって返される結果は、VF ネットワークアダプターで必要とされるメモリアドレス空間の量を決定できるように、VPCI バスドライバーに転送されます。
 
-**注**  OID の OID 要求\_SRIOV\_PROBED\_バーは、NDIS でのみ発行できます。 フィルター ドライバーのプロトコルなどの上にあるドライバーによって、OID 要求は発行されませんする必要があります。
+Oid **  oid**要求\_SRIOV\_調査済みの\_バーは、NDIS によってのみ発行されます。 OID 要求は、フィルタードライバーのプロトコルなど、それまでのドライバーによって発行されていない必要があります。
 
  
 
-OID\_SRIOV\_PROBED\_バー クエリ要求に含まれる、 [ **NDIS\_SRIOV\_PROBED\_バー\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_sriov_probed_bars_info)構造体。 ドライバーによって参照される配列内の PCI バーの値を返す必要があります、PF ミニポート ドライバーでは、この OID を処理する場合、 **BaseRegisterValuesOffset**のメンバー、 **NDIS\_SRIOV\_PROBED\_バー\_情報**構造体。 配列内の各オフセットの PF ミニポート ドライバーは、物理アダプターの PCI 構成領域内の同じオフセットにあるバーの ULONG 値に配列の要素を設定する必要があります。
+OID\_SRIOV\_調査された\_バーのクエリ要求には、\_\_情報構造を調査した[**NDIS\_SRIOV**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_probed_bars_info)が含まれています。 PF ミニポートドライバーがこの OID を処理する場合、ドライバーは、 **NDIS\_\_\_\_SRIOV**の**BaseRegisterValuesOffset**メンバーによって参照される配列内の PCI バーの値を返す必要があります。 PF ミニポートドライバーは、配列内のオフセットごとに、物理アダプターの PCI 構成領域内の同じオフセットにあるバーの ULONG 値に配列要素を設定する必要があります。
 
-同じ値は、管理オペレーティング システムで実行されている PCI ドライバによって実行される PCI バーのクエリを次に各棒、ドライバーによって返される値があります。 PF のミニポート ドライバーを呼び出すことができます[ **NdisMQueryProbedBars** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismqueryprobedbars)にこの情報を確認します。
+ドライバーによって返される各棒値は、管理オペレーティングシステムで実行されている PCI ドライバーによって実行される PCI バークエリに続くものと同じ値である必要があります。 この情報を確認するために、PF ミニポートドライバーは[**NdisMQueryProbedBars**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismqueryprobedbars)を呼び出すことができます。
 
-PCI デバイスの横棒の詳細については、次を参照してください。、 *PCI ローカル バス仕様*します。
+PCI デバイスのバーの詳細については、 *Pci ローカルバスの仕様*を参照してください。
 
-VF PCI バー レジスタを照会する方法の詳細については、次を参照してください。、 [、PCI ベース アドレスを登録仮想関数のクエリを実行する](https://docs.microsoft.com/windows-hardware/drivers/network/querying-the-pci-base-address-registers-of-a-virtual-function)します。
+VF の PCI BAR レジスタに対してクエリを実行する方法の詳細については、「[仮想関数の Pci ベースアドレスレジスタを照会](https://docs.microsoft.com/windows-hardware/drivers/network/querying-the-pci-base-address-registers-of-a-virtual-function)する」を参照してください。
 
-### <a name="return-status-codes"></a>リターン状態コード
+### <a name="return-status-codes"></a>ステータスコードを返す
 
-PF のミニポート ドライバーでは、OID のクエリ要求は、次のステータス コードのいずれかを返します\_SRIOV\_PROBED\_バー。
+PF ミニポートドライバーは、OID\_\_\_SRIOV のクエリ要求について、次のいずれかの状態コードを返します。
 
 <table>
 <colgroup>
@@ -70,23 +70,23 @@ PF のミニポート ドライバーでは、OID のクエリ要求は、次の
 <tbody>
 <tr class="odd">
 <td><p>NDIS_STATUS_SUCCESS</p></td>
-<td><p>OID 要求は正常に完了しました。</p></td>
+<td><p>OID 要求が正常に完了しました。</p></td>
 </tr>
 <tr class="even">
 <td><p>NDIS_STATUS_NOT_SUPPORTED</p></td>
-<td><p>PF のミニポート ドライバーでは、シングル ルート I/O 仮想化 (SR-IOV) インターフェイスをサポートしていませんか、またはインターフェイスを使用して有効になっていません。</p></td>
+<td><p>PF ミニポートドライバーは、シングルルート i/o 仮想化 (SR-IOV) インターフェイスをサポートしていないか、インターフェイスの使用が有効になっていません。</p></td>
 </tr>
 <tr class="odd">
 <td><p>NDIS_STATUS_INVALID_PARAMETER</p></td>
-<td><p>1 つ以上のメンバーの<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_sriov_probed_bars_info" data-raw-source="[&lt;strong&gt;NDIS_SRIOV_PROBED_BARS_INFO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_sriov_probed_bars_info)"> <strong>NDIS_SRIOV_PROBED_BARS_INFO</strong> </a>構造が無効な値を指定します。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_probed_bars_info" data-raw-source="[&lt;strong&gt;NDIS_SRIOV_PROBED_BARS_INFO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_probed_bars_info)"><strong>NDIS_SRIOV_PROBED_BARS_INFO</strong></a>構造体の1つ以上のメンバーに無効な値が含まれています。</p></td>
 </tr>
 <tr class="even">
 <td><p>NDIS_STATUS_INVALID_LENGTH</p></td>
-<td><p>情報バッファーがより小さい (sizeof (<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_sriov_probed_bars_info" data-raw-source="[&lt;strong&gt;NDIS_SRIOV_PROBED_BARS_INFO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_sriov_probed_bars_info)"><strong>NDIS_SRIOV_PROBED_BARS_INFO</strong></a>) + PCI_TYPE0_ADDRESSES)。 PF のミニポート ドライバーを設定する必要があります、<strong>データ。QUERY_INFORMATION します。BytesNeeded</strong>内のメンバー、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)"> <strong>NDIS_OID_REQUEST</strong> </a>構造体に必要な最小バッファー サイズ。</p></td>
+<td><p>情報バッファーが未満 (sizeof (<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_probed_bars_info" data-raw-source="[&lt;strong&gt;NDIS_SRIOV_PROBED_BARS_INFO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_probed_bars_info)"><strong>NDIS_SRIOV_PROBED_BARS_INFO</strong></a>) + PCI_TYPE0_ADDRESSES) です。 PF ミニポートドライバーはデータを設定する必要があり<strong>ます。QUERY_INFORMATION.</strong> <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a>構造体の中で必要とされる最小バッファーサイズに対して、bytesneeded 必要です。</p></td>
 </tr>
 <tr class="odd">
 <td><p>NDIS_STATUS_FAILURE</p></td>
-<td><p>他の理由から、要求が失敗しました。</p></td>
+<td><p>他の理由で要求が失敗しました。</p></td>
 </tr>
 </tbody>
 </table>
@@ -104,11 +104,11 @@ PF のミニポート ドライバーでは、OID のクエリ要求は、次の
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>NDIS 6.30 以降をサポートします。</p></td>
+<td><p>NDIS 6.30 以降でサポートされています。</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Ntddndis.h (include Ndis.h)</td>
+<td>Ntddndis (Ndis .h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -117,11 +117,11 @@ PF のミニポート ドライバーでは、OID のクエリ要求は、次の
 
 
 ****
-[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
+[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)
 
-[**NDIS\_SRIOV\_PROBED\_バー\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_sriov_probed_bars_info)
+[**NDIS\_SRIOV\_調査した\_バーの\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_probed_bars_info)
 
-[**NdisMQueryProbedBars**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismqueryprobedbars)
+[**NdisMQueryProbedBars**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismqueryprobedbars)
 
  
 

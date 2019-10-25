@@ -1,9 +1,9 @@
 ---
-title: KSEVENT\_BDA\_CA\_モジュール\_UI\_要求
-description: クライアントを使用して、KSEVENT\_BDA\_CA\_モジュール\_UI\_要求されたインターフェイスのデータが取得してユーザーに表示する使用可能な場合に通知を要求します。
+title: KSEVENT\_BDA\_CA\_モジュール\_要求された UI\_
+description: クライアントは、インターフェイスデータを取得してユーザーに表示できるときに通知を要求するために要求するために、KSEVENT\_BDA\_CA\_モジュール\_UI\_を使用します。
 ms.assetid: c76bbe0d-7cc4-4594-b435-ad738ebbd141
 keywords:
-- KSEVENT_BDA_CA_MODULE_UI_REQUESTED ストリーミング メディア デバイス
+- KSEVENT_BDA_CA_MODULE_UI_REQUESTED ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,28 +14,28 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2391305aaf5182b8f10a206be65092208c6d71e2
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 85382c1a11b3ef08b69fb513b25dacf66a38c745
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382474"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842500"
 ---
-# <a name="kseventbdacamoduleuirequested"></a>KSEVENT\_BDA\_CA\_モジュール\_UI\_要求
+# <a name="ksevent_bda_ca_module_ui_requested"></a>KSEVENT\_BDA\_CA\_モジュール\_要求された UI\_
 
 
-クライアントを使用して、KSEVENT\_BDA\_CA\_モジュール\_UI\_要求されたインターフェイスのデータが取得してユーザーに表示する使用可能な場合に通知を要求します。
+クライアントは、インターフェイスデータを取得してユーザーに表示できるときに通知を要求するために要求するために、KSEVENT\_BDA\_CA\_モジュール\_UI\_を使用します。
 
 ## <span id="ddk_ksevent_bda_ca_module_ui_requested_ks"></span><span id="DDK_KSEVENT_BDA_CA_MODULE_UI_REQUESTED_KS"></span>
 
 
-### <a name="span-idspecifyingthiseventspanspan-idspecifyingthiseventspanspecifying-this-event"></a><span id="specifying_this_event"></span><span id="SPECIFYING_THIS_EVENT"></span>このイベントを指定します。
+### <a name="span-idspecifying_this_eventspanspan-idspecifying_this_eventspanspecifying-this-event"></a><span id="specifying_this_event"></span><span id="SPECIFYING_THIS_EVENT"></span>このイベントの指定
 
 KSEVENT
 
-### <a name="span-ideventdataspanspan-ideventdataspanevent-data"></a><span id="event_data"></span><span id="EVENT_DATA"></span>イベント データ
+### <a name="span-idevent_dataspanspan-idevent_dataspanevent-data"></a><span id="event_data"></span><span id="EVENT_DATA"></span>イベントデータ
 
-イベントに関する通知方法を説明する KSEVENTDATA 構造体。
+イベントについて通知する方法を記述する KSEVENTDATA 構造体。
 
 <a name="requirements"></a>要件
 ------------
@@ -48,7 +48,7 @@ KSEVENT
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Bdamedia.h (Bdamedia.h を含む)</td>
+<td>Bdamedia (Bdamedia を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -58,9 +58,9 @@ KSEVENT
 
 [**KSEVENT**](https://docs.microsoft.com/previous-versions/ff561744(v=vs.85))
 
-[**KSEVENTDATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kseventdata)
+[**KSEVENTDATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-kseventdata)
 
-[**KSPROPERTY\_BDA\_CA\_モジュール\_UI**](ksproperty-bda-ca-module-ui.md)
+[**KSK プロパティ\_BDA\_CA\_モジュール\_UI**](ksproperty-bda-ca-module-ui.md)
 
  
 

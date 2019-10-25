@@ -3,26 +3,26 @@ title: ソケットの制御操作の実行
 description: ソケットの制御操作の実行
 ms.assetid: 5d6ff02a-dc50-4818-9d0d-ba741fe7dfd8
 keywords:
-- Winsock カーネル WDK がネットワーク接続、管理操作
-- WSK WDK ネットワーク、管理操作
-- WDK Winsock Kernel の動作を制御します。
+- Winsock カーネル WDK ネットワーク、制御操作
+- WSK WDK ネットワーク、制御操作
+- コントロール操作 WDK Winsock カーネル
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 43096050da1d93a988ef852751e400889fb7d492
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f7f64863a2ace8c4dac3859222a08e2ce6a17215
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377048"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843687"
 ---
 # <a name="performing-control-operations-on-a-socket"></a>ソケットの制御操作の実行
 
 
-Winsock カーネル (WSK) アプリケーションでは、ソケットが正常に作成、ソケットでの管理操作を実行できます。 ソケットで実行できる管理操作には、設定しソケット オプションの取得とソケットの IOCTL 操作の実行が含まれます。
+Winsock カーネル (WSK) アプリケーションでソケットが正常に作成されたら、ソケットに対して制御操作を実行できます。 ソケットに対して実行できる制御操作には、ソケットオプションの設定と取得、ソケットの IOCTL 操作の実行などがあります。
 
-WSK アプリケーションを呼び出すことによってソケットでの管理操作を実行する、 [ **WskControlSocket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_control_socket)関数。 **WskControlSocket**関数で指し示されます、 **WskControlSocket**ソケットのプロバイダーのディスパッチ構造体のメンバー。 ソケットのプロバイダーのディスパッチ構造体を指す、**ディスパッチ**ソケット オブジェクトの構造体のメンバー ( [ **WSK\_ソケット**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/ns-wsk-_wsk_socket)) によって返された、ソケットの作成時に WSK サブシステムです。
+WSK アプリケーションは、 [**Wskcontrolsocket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_control_socket)関数を呼び出すことによって、ソケットに対する制御操作を実行します。 **Wskcontrolsocket**関数は、ソケットのプロバイダーディスパッチ構造体の**wskcontrolsocket**メンバーによってポイントされています。 ソケットの作成時に WSK サブシステムによって返されたソケットオブジェクト構造 ( [**wsk\_ソケット**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_socket)) の**ディスパッチ**メンバーによって、ソケットのプロバイダーディスパッチ構造体がポイントされます。
 
-次のコード例は、WSK アプリケーションに設定する方法を示しています、 [**ように\_EXCLUSIVEADDRUSE** ](https://docs.microsoft.com/windows-hardware/drivers/network/so-exclusiveaddruse)ソケット データグラム ソケットでのオプション。
+次のコード例では、WSK アプリケーションで、データグラムソケットに対して[**SO\_EXCLUSIVEADDRUSE**](https://docs.microsoft.com/windows-hardware/drivers/network/so-exclusiveaddruse) socket オプションを設定する方法を示します。
 
 ```C++
 // Prototype for the control socket IoCompletion routine
@@ -133,9 +133,9 @@ NTSTATUS
 }
 ```
 
-各ソケットがサポートされているオプションの詳細については、次を参照してください。 [ **WSK ソケット オプション**](https://docs.microsoft.com/windows-hardware/drivers/network/wsk-socket-options)します。
+サポートされている各ソケットオプションの詳細については、「 [**Wsk Socket options**](https://docs.microsoft.com/windows-hardware/drivers/network/wsk-socket-options)」を参照してください。
 
-次のコード例は、WSK アプリケーションが実行できる方法を示しています、 [ **SIO\_WSK\_設定\_リモート\_アドレス**](https://docs.microsoft.com/windows-hardware/drivers/network/sio-wsk-set-remote-address)ソケットの IOCTL の操作をデータグラム ソケット。
+次のコード例では、WSK アプリケーションで、データグラムソケットに対するリモート\_アドレスソケットの IOCTL 操作\_設定された[**SIO\_wsk\_** ](https://docs.microsoft.com/windows-hardware/drivers/network/sio-wsk-set-remote-address)実行する方法を示します。
 
 ```C++
 // Prototype for the control socket IoCompletion routine
@@ -243,7 +243,7 @@ NTSTATUS
 }
 ```
 
-各サポートされているソケットの IOCTL 操作の詳細については、次を参照してください。 [WSK ソケットの IOCTL 操作](https://docs.microsoft.com/windows-hardware/drivers/network/wsk-socket-ioctl-operations)します。
+サポートされている各ソケット IOCTL 操作の詳細については、「 [Wsk ソケット Ioctl 操作](https://docs.microsoft.com/windows-hardware/drivers/network/wsk-socket-ioctl-operations)」を参照してください。
 
  
 

@@ -3,18 +3,18 @@ title: ネットワーク インターフェイスの登録
 description: ネットワーク インターフェイスの登録
 ms.assetid: 7e3c3b0f-2013-4133-8b52-fa9e66f963cb
 keywords:
-- NDIS ネットワーク インターフェイス、WDK を登録します。
-- ネットワーク インターフェイス、WDK を登録します。
-- ネットワーク インターフェイスを登録します。
+- NDIS ネットワークインターフェイス WDK、登録
+- ネットワークインターフェイス WDK、登録
+- ネットワークインターフェイスの登録
 - NdisIfRegisterInterface
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 13ef1ce1d39472e2714f2d5aac9bbba17575f1f1
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: fb710df30599f88697498b6214ee7538d1cb1a09
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67353299"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842098"
 ---
 # <a name="registering-a-network-interface"></a>ネットワーク インターフェイスの登録
 
@@ -22,17 +22,17 @@ ms.locfileid: "67353299"
 
 
 
-コンピューターが再起動されるたびに NDIS 登録されているネットワーク インターフェイスの空のリストから始まります。 インターフェイス プロバイダーを呼び出し、 [ **NdisIfRegisterInterface** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisifregisterinterface)関数を開始またはインターフェイスが検出されるたびに、その[ **NET\_LUID**](https://docs.microsoft.com/windows/desktop/api/ifdef/ns-ifdef-net_luid_lh)値を認識します。 開始またはインターフェイスを検出するためのメカニズムは、アプリケーション固有です。
+コンピューターが再起動するたびに、NDIS は登録されているネットワークインターフェイスの空の一覧から開始します。 インターフェイスプロバイダーは、インターフェイスを開始または検出するたびに[**NdisIfRegisterInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisifregisterinterface)関数を呼び出し、その[**NET\_LUID**](https://docs.microsoft.com/windows/desktop/api/ifdef/ns-ifdef-net_luid_lh)値が既知であることを確認します。 インターフェイスを開始または検出するメカニズムは、アプリケーション固有です。
 
-**NdisIfRegisterInterface**返します NDIS\_状態\_NDIS では、コンピューター上の既知のインターフェイスの一覧に、指定したインターフェイスを正常に追加する場合にのみ成功します。 この場合、 **NdisIfRegisterInterface**インターフェイス インデックスを返します、 *pIfIndex*パラメーター。 ただしへの呼び出し**NdisIfRegisterInterface**わけでは、インターフェイスはアクティブです。、インターフェイスが存在する、この呼び出しがのみが保証されます。 **NdisIfRegisterInterface**返します NDIS\_状態\_リソース NDIS にインターフェイスを登録するための十分なリソースがない場合。 **NdisIfRegisterInterface**他 NDIS 状態の値を返すこともできます。
+**NdisIfRegisterInterface**は、指定されたインターフェイスをコンピューター上の既知のインターフェイスの一覧に正常に追加した場合にのみ、NDIS\_STATUS\_SUCCESS を返します。 この場合、 **NdisIfRegisterInterface**は、 *pifindex*パラメーターでインターフェイスインデックスを返します。 ただし、 **NdisIfRegisterInterface**の呼び出しは、インターフェイスがアクティブであることを意味するわけではありません。この呼び出しは、インターフェイスが存在することだけを保証します。 NDIS にインターフェイスを登録するために使用できる十分なリソースがない場合、 **NdisIfRegisterInterface**は NDIS\_STATUS\_リソースを返します。 **NdisIfRegisterInterface**は、他の NDIS 状態の値も返すことができます。
 
-*ProviderIfContext*パラメーターの**NdisIfRegisterInterface**ハンドルが含まれています。 このハンドルを、呼び出し元の OID のクエリに渡されると set 関数 - インターフェイスの呼び出し元のコンテキストの領域にします。 *PIfInfo*パラメーターにはへのポインターが含まれています、 [ **NET\_場合\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_if_information)インターフェイスに関する情報を含む構造体。
+**NdisIfRegisterInterface**の*ProviderIfContext*パラメーターには、インターフェイスの呼び出し元のコンテキスト領域へのハンドルが含まれています。このハンドルは、呼び出し元の OID クエリおよびセット関数に渡されます。 *PIfInfo*パラメーターには、インターフェイスに関する情報を含む情報の構造を[ **\_場合に、NET\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_if_information)へのポインターが含まれています。
 
-以下のトピックの詳細については、ネットワークはインターフェイスを**NdisIfRegisterInterface**正常に登録します。
+次のトピックでは、 **NdisIfRegisterInterface**によって正常に登録されるネットワークインターフェイスの詳細について説明します。
 
-[インターフェイス インデックスの割り当てください。](allocating-an-interface-index.md)
+[インターフェイスインデックスの割り当て](allocating-an-interface-index.md)
 
-[ネットワーク インターフェイスの情報](network-interface-information.md)
+[ネットワークインターフェイスの情報](network-interface-information.md)
 
  
 

@@ -3,66 +3,66 @@ title: ミニポート アダプターの Check-for-Hang 操作とリセット�
 description: ミニポート アダプターの Check-for-Hang 操作とリセット操作
 ms.assetid: 53ffc5a9-bcba-4189-8845-73adfcf6816d
 keywords:
-- ミニポート アダプタ WDK、ネットワークのチェック-ハングの操作
-- ミニポート アダプタの WDK ネットワー キング、リセットの操作
-- アダプター WDK、ネットワークのチェック-ハングの操作
-- アダプターの WDK ネットワー キング、リセットの操作
+- ミニポートアダプター WDK ネットワーク、ハングチェック操作
+- ミニポートアダプター WDK ネットワーク、リセット操作
+- WDK ネットワークのアダプター、ハングチェック操作
+- WDK ネットワークのアダプタ、リセット操作
 - MiniportCheckForHangEx
-- ハングし、o をリセット
+- ハングしてリセット o
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b837a050f0e5fd2f146ebe59bd6f433efc0a15e5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 411396de557625c94f2281377a8e5626aa2597b6
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67373977"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844257"
 ---
 # <a name="miniport-adapter-check-for-hang-and-reset-operations"></a>ミニポート アダプターの Check-for-Hang 操作とリセット操作
 
 ## <a name="overview"></a>概要
 
 > [!WARNING]
-> すべての NDIS 6.83 およびそれ以降のドライバーは、チェックのハング (CFH) とリセットの操作は推奨されません。 詳細については、次を参照してください。 [NDIS 6.83 以降のチェック-ハング用とリセット操作](#check-for-hang-and-reset-operations-in-ndis-683-and-later)します。
+> すべての NDIS 6.83 以降のドライバーでは、チェック-ハング (CFH) とリセット操作を使用しないことをお勧めします。 詳細については、「 [Check To Hang And Reset operation IN NDIS 6.83](#check-for-hang-and-reset-operations-in-ndis-683-and-later)」を参照してください。
 
-NDIS 呼び出し NDIS ミニポート ドライバーの[ *MiniportCheckForHangEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_check_for_hang)ネットワーク インターフェイス カード (NIC) を表す NDIS アダプターの操作の状態を確認する関数。 *MiniportCheckForHangEx*アダプターの内部状態をチェックし、返します**TRUE**アダプターが正しく動作しないことを検出した場合。
+NDIS は、ndis ミニポートドライバーの[*MiniportCheckForHangEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_check_for_hang)関数を呼び出して、ネットワークインターフェイスカード (NIC) を表す ndis アダプターの動作状態を確認します。 *MiniportCheckForHangEx*は、アダプターの内部状態を確認し、アダプターが正常に動作していないことを検出した場合は**TRUE**を返します。
 
-既定では、NDIS を呼び出す*MiniportCheckForHangEx*約 2 秒間隔。 場合*MiniportCheckForHangEx*返します**TRUE**、NDIS 呼び出し、NDIS ミニポート ドライバーの[ *MiniportResetEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_reset)関数。 2 秒の既定のタイムアウト値が小さすぎる場合、ミニポート ドライバーできますように設定を別の値の初期化時。
+既定では、NDIS は約2秒ごとに*MiniportCheckForHangEx*を呼び出します。 *MiniportCheckForHangEx*が**TRUE**を返す場合、ndis は ndis ミニポートドライバーの[*miniportresetex*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_reset)関数を呼び出します。 既定のタイムアウト値2秒が小さすぎる場合は、次のように、ミニポートドライバーで初期化時に別の値を設定できます。
 
-1.  設定、 **CheckForHangTimeInSeconds**のメンバー、 [ **NDIS\_ミニポート\_アダプター\_登録\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_registration_attributes) 0 以外の値構造体。
-2.  渡す、 [ **NDIS\_ミニポート\_アダプター\_登録\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_registration_attributes)構造体、 *MiniportAttributes*のパラメーター、 [ **NdisMSetMiniportAttributes** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsetminiportattributes)関数。
+1.  [**NDIS\_ミニポート\_アダプター\_登録\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_registration_attributes)構造の**CheckForHangTimeInSeconds**メンバーを0以外の値に設定します。
+2.  [**NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)関数の*miniportattributes*パラメーターに、 [**NDIS\_ミニポート\_アダプター\_登録\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_registration_attributes)の構造を渡します。
 
-ドライバー属性の設定の詳細については、次を参照してください。 [、アダプターの初期化](initializing-a-miniport-adapter.md)します。
-値**CheckForHangTimeInSeconds**ミニポート ドライバーの初期化時間よりも大きい必要があります。 ただし、ドライバーがより長くかかる場合**CheckForHangTimeInSeconds**秒を初期化するこのタイムアウトになるを呼び出してドライバーの ndis *MiniportCheckForHangEx*関数。 場合*MiniportCheckForHangEx*返します**TRUE**、NDIS を呼び出し、ドライバーの*MiniportResetEx*関数。 このため、ドライバーを同期する必要があります[ *MiniportCheckForHangEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_check_for_hang)ドライバーの初期化で動作する*MiniportCheckForHangEx*されません返す**TRUE**ドライバーが初期化を完了していない場合。
+ドライバー属性の設定の詳細については、「[アダプターの初期化](initializing-a-miniport-adapter.md)」を参照してください。
+**CheckForHangTimeInSeconds**の値は、ミニポートドライバーの初期化時間よりも大きくする必要があります。 ただし、ドライバーの初期化に**CheckForHangTimeInSeconds**秒以上かかる場合、このタイムアウトは期限切れになり、NDIS によってドライバーの*MiniportCheckForHangEx*関数が呼び出されます。 *MiniportCheckForHangEx*が**TRUE**を返す場合、NDIS はドライバーの*miniportresetex*関数を呼び出します。 このため、ドライバーの初期化が完了していない場合、 *MiniportCheckForHangEx*が**TRUE**を返さないように、ドライバーの[*MiniportCheckForHangEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_check_for_hang)関数をドライバーの初期化と同期する必要があります。
 
-ミニポート ドライバーに 2 つの連続呼び出し内の OID 要求は、完了しない場合*MiniportCheckForHangEx*、NDIS ドライバーを呼び出すことができます*MiniportResetEx*関数。 一部の OID 要求では、NDIS 呼び出し*MiniportResetEx*ドライバーでは 4 つの連続呼び出し内での要求が完了しないかどうか*MiniportCheckForHangEx*します。
+ミニポートドライバーが、 *MiniportCheckForHangEx*の2回目の呼び出し内で OID 要求を完了しない場合、NDIS はドライバーの*Miniportresetex*関数を呼び出すことができます。 一部の OID 要求では、 *MiniportCheckForHangEx*への連続した4回の呼び出し内でドライバーが要求を完了しない場合、NDIS は*Miniportresetex*を呼び出します。
 
-リセット操作には影響しません[ミニポート アダプタの操作状態](miniport-adapter-states-and-operations.md)します。 また、リセット操作が進行中は、アダプターの状態を変更する可能性があります。 NDIS ドライバーの呼び出すものなど[ *MiniportPause* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_pause)進行中のリセット操作がある場合に機能します。 この場合、ドライバーは、リセット、または要件は、各操作の実行中に任意の順序で一時停止操作を完了できます。
+リセット操作は、[ミニポートアダプターの動作状態](miniport-adapter-states-and-operations.md)に影響しません。 また、リセット操作の実行中にアダプターの状態が変わる可能性があります。 たとえば、NDIS は、実行中のリセット操作があるときに、ドライバーの[*Miniportpause*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_pause)関数を呼び出す場合があります。 この場合、ドライバーは、各操作の通常の要件に従って、任意の順序でリセット操作または一時停止操作を完了できます。
 
-ドライバーが要求パケットの送信の失敗時に、リセット操作またはキューに置かれ、完全に保持できる後でもです。 上位のドライバーが中に一時停止操作を完了できないことを確認する必要がありますただし、その送信パケットが保留中です。
+リセット操作の場合、ドライバーは要求パケットの送信に失敗することがあります。または、キューをキューに入れて後で完了させることができます。 ただし、送信パケットが保留されている間は、後続のドライバーが一時停止操作を完了できないことに注意してください。
 
-ミニポート ドライバーでは、成功または失敗の状態を返すことによって、リセット要求を同期的に完了できます。 ドライバーを返すことによってリセット要求を非同期的に実行できる**NDIS\_状態\_PENDING**します。 この場合、ドライバーを呼び出す必要があります[ **NdisMResetComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismresetcomplete)操作を完了します。
+ミニポートドライバーは、成功または失敗の状態を返すことによって、リセット要求を同期的に完了させることができます。 ドライバーは、 **NDIS\_STATUS\_PENDING**を返すことによって、リセット要求を非同期に完了できます。 この場合、ドライバーは[**NdisMResetComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismresetcomplete)を呼び出して操作を完了する必要があります。
 
-## <a name="check-for-hang-and-reset-operations-in-ndis-683-and-later"></a>チェックのハングのおよび NDIS 6.83 以降のリセット操作
+## <a name="check-for-hang-and-reset-operations-in-ndis-683-and-later"></a>NDIS 6.83 以降のハングおよびリセット操作の確認
 
-6\.83 前に、のバージョンの NDIS チェックのハング (CFH) とのリセット操作が常に、常に Connected (AOAC) システムでバッテリ寿命の問題のための推奨されません。 ただし、ドライバーでした使用 CFH AOAC 以外の Windows の他のシステムで、省略可能な実装することによって[ *MiniportCheckForHangEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_check_for_hang)と[ *MiniportResetEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_reset)コールバック関数。 
+6\.83 より前のバージョンの NDIS では、バッテリの寿命に問題があるため、Always On、常に接続されている (または電源に接続されている) システムでは、チェック-ハング (CFH) とリセット操作を使用しないことをお勧めしました。 ただし、ドライバーは、オプションの[*MiniportCheckForHangEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_check_for_hang)および[*Miniportresetex*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_reset)コールバック関数を実装することで、他の非機能の ac Windows システムでも cfh を使用できます。 
 
-NDIS 6.83 以降、これらのコールバック関数は推奨されませんで**すべて**電源機能に関係なく、Windows システムです。 CFH NDIS 6.83 以降を使用するロゴ テスト違反ではありませんが、NDIS ドライバーは、その使用法についてのガイダンスについては、次の表を使用してください。
+NDIS 6.83 以降、これらのコールバック関数は、電源機能に関係なく、**すべて**の Windows システムで推奨されません。 NDIS 6.83 以降で CFH を使用するためのロゴテスト違反ではありませんが、NDIS ドライバーでは、その使用方法に関するガイダンスとして次の表を使用する必要があります。
 
-| 呼び出し元 | 推奨 | メモ |
+| コール | 推奨事項 | 注意 |
 | --- | --- | --- |
-| ドライバーの AOAC システムを対象とします。 | 実装する必要があります。 | 定期的なチェックのハングのアクティビティのためのバッテリ寿命の問題が発生します。 |
-| Windows Server システムを対象とするドライバー | 実装する必要があります。 | CPU に負荷がかかっているときに問題が発生します。 |
-| 仮想 (ソフトウェア専用) のミニポート ドライバー | 実装する必要があります。 | リセットできないハードウェアなし |
-| 他の新しい NDIS 6.83 およびそれ以降のドライバー | 実装しないでください。 |
-| その他の既存の NDIS 6.82 と以前のコード | 変更するには必要ありませんが、削除のチェック-ハングのおよびリセットが後で再作成を検討してください |
+| 交流システムを対象とするドライバー | 実装しない | 定期的なハングチェックのアクティビティによって、バッテリの寿命に関する問題を発生させます。 |
+| Windows Server システムを対象とするドライバー | 実装しない | CPU の負荷が発生したときに問題が発生します。 |
+| 仮想 (ソフトウェアのみ) ミニポートドライバー | 実装しない | ハードウェアがないとリセットできません |
+| その他の新しい NDIS 6.83 以降のドライバー | 実装しない |
+| その他の既存の NDIS 6.82 およびそれ以前のコード | 変更する必要はありませんが、今後の作業のために、停止時のチェックを削除してリセットすることを検討してください |
 
 ## <a name="related-topics"></a>関連トピック
 
 
-[ミニポート ドライバーのハードウェアのリセット](hardware-reset.md)
+[ミニポートドライバーのハードウェアリセット](hardware-reset.md)
 
-[ミニポート ドライバーのリセットと Halt 関数](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff564064(v=vs.85))
+[ミニポートドライバーのリセットと停止の機能](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff564064(v=vs.85))
 
  
 

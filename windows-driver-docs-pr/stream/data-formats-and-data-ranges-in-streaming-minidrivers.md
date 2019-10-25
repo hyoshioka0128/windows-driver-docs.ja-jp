@@ -3,21 +3,21 @@ title: ストリーミング ミニドライバーのデータ形式とデータ
 description: ストリーミング ミニドライバーのデータ形式とデータ範囲
 ms.assetid: ea3aa4af-0c8c-429e-b399-0a196eadc5ef
 keywords:
-- Stream.sys クラス ドライバー WDK Windows 2000 のカーネル、データ形式と範囲
-- ミニドライバー WDK Windows 2000 のカーネルやデータ形式、範囲のストリーミング
-- WDK Windows 2000 のカーネル ストリーミング ミニドライバーでは、データの形式し、範囲
-- データ形式の WDK ストリーミング ミニドライバー
-- データ範囲の WDK ストリーミング ミニドライバー
-- WDK ストリーミング ミニドライバーの範囲
-- WDK ストリーミング ミニドライバーの形式
+- .Sys クラスドライバー WDK Windows 2000 カーネル、データ形式、および範囲
+- streaming ミニドライバー WDK Windows 2000 カーネル、データ形式、および範囲
+- ミニドライバー WDK Windows 2000 カーネルストリーミング、データ形式、および範囲
+- データ形式 WDK streaming ミニドライバー
+- データ範囲 WDK streaming ミニドライバー
+- 範囲 WDK streaming ミニドライバー
+- WDK streaming ミニドライバーの形式
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b63ded105b2f1a3b5ed2f1e0b1c25b6b138b29d6
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d901b623cc92394202f46f852c75ddbb6763c162
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67376388"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845148"
 ---
 # <a name="data-formats-and-data-ranges-in-streaming-minidrivers"></a>ストリーミング ミニドライバーのデータ形式とデータ範囲
 
@@ -25,9 +25,9 @@ ms.locfileid: "67376388"
 
 
 
-各ストリームでサポートするデータ範囲の詳細、 **StreamFormatsArray**のメンバー、 [ **HW\_ストリーム\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/ns-strmini-_hw_stream_information)構造体。
+各ストリームは、その[**HW\_ストリーム\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_stream_information)構造の**StreamFormatsArray**メンバーでサポートされるデータ範囲を詳細に説明します。
 
-形式と範囲の交差部分の詳細については、次を参照してください。 [AVStream のデータ範囲の交差部分](data-range-intersections-in-avstream.md)します。
+形式と範囲の積集合の詳細については、「 [AVStream のデータ範囲の交差](data-range-intersections-in-avstream.md)部分」を参照してください。
 
  
 
