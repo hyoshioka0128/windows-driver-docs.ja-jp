@@ -1,20 +1,20 @@
 ---
-title: MPIO\_ディスク\_情報 WMI クラス
-description: MPIO\_ディスク\_情報 WMI クラス
+title: MPIO\_DISK\_INFO WMI クラス
+description: MPIO\_DISK\_INFO WMI クラス
 ms.assetid: 75c66c84-d815-43a5-a70d-1952bf0e8d44
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: cba52b3b14290427d84f6893bf2b9fe7d4d51bb5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c35ab052a7b69d18e5cae68bbf5c86e7ab355011
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386162"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844975"
 ---
-# <a name="mpiodiskinfo-wmi-class"></a>MPIO\_ディスク\_情報 WMI クラス
+# <a name="mpio_disk_info-wmi-class"></a>MPIO\_DISK\_INFO WMI クラス
 
 
-WMI クライアントが、MPIO を使用して\_ディスク\_MPIO はすべて MPIO に関する情報を収集できるようにディスクをクエリする情報の WMI クラスは、システムで構成されます。
+WMI クライアントは、MPIO\_DISK\_INFO WMI クラスを使用して MPIO に照会し、システムで構成されているすべての MPIO ディスクに関する情報を収集します。
 
 ```cpp
 class MPIO_DISK_INFO
@@ -45,7 +45,7 @@ class MPIO_DISK_INFO
 };
 ```
 
-WMI ツール スイートによってコンパイルされると、このクラスの定義を生成、 [ **MPIO\_ディスク\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mpiowmi/ns-mpiowmi-_mpio_disk_info)データ構造体。 この WMI クラスに関連付けられているメソッドはありません。
+WMI ツールスイートによってコンパイルされると、このクラス定義によって、 [**MPIO\_DISK\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mpiowmi/ns-mpiowmi-_mpio_disk_info)データ構造が生成されます。 この WMI クラスに関連付けられているメソッドはありません。
 
  
 

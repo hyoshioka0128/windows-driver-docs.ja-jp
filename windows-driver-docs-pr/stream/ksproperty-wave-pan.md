@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_WAVE\_方向へパンします。
-description: KSPROPERTY\_WAVE\_パン プロパティを wave デバイスのパンの設定を指定します。
+title: KSK プロパティ\_WAVE\_PAN
+description: KSK プロパティ\_WAVE\_PAN プロパティは、wave デバイスの pan 設定を指定します。
 ms.assetid: 5ec4dc6d-44cb-4716-9f5b-dd044cd38239
 keywords:
-- KSPROPERTY_WAVE_PAN ストリーミング メディア デバイス
+- KSPROPERTY_WAVE_PAN ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c4b393bd563bda7e873551f52550a6d44f999a2
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: c35c16a45e5c6c309a87372840f1472f831e5b09
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67394114"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845013"
 ---
-# <a name="kspropertywavepan"></a>KSPROPERTY\_WAVE\_方向へパンします。
+# <a name="ksproperty_wave_pan"></a>KSK プロパティ\_WAVE\_PAN
 
 
-KSPROPERTY\_WAVE\_パン プロパティを wave デバイスのパンの設定を指定します。
+KSK プロパティ\_WAVE\_PAN プロパティは、wave デバイスの pan 設定を指定します。
 
 ## <span id="ddk_ksproperty_wave_pan_ks"></span><span id="DDK_KSPROPERTY_WAVE_PAN_KS"></span>
 
@@ -41,7 +41,7 @@ KSPROPERTY\_WAVE\_パン プロパティを wave デバイスのパンの設定�
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,10 +50,10 @@ KSPROPERTY\_WAVE\_パン プロパティを wave デバイスのパンの設定�
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>〇</p></td>
+<td><p>[はい]</p></td>
+<td><p>[はい]</p></td>
 <td><p>Pin</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
 <td><p><a href="https://docs.microsoft.com/previous-versions/ff567249(v=vs.85)" data-raw-source="[&lt;strong&gt;KSWAVE_PAN&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff567249(v=vs.85))"><strong>KSWAVE_PAN</strong></a></p></td>
 </tr>
 </tbody>
@@ -61,9 +61,9 @@ KSPROPERTY\_WAVE\_パン プロパティを wave デバイスのパンの設定�
 
  
 
-プロパティの値 (データの操作) は、KSWAVE\_パン構造、左右のパンのレベルについて説明します。
+プロパティ値 (操作データ) は、KSWAVE\_PAN 構造体で、左右のパンレベルを表します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -74,7 +74,7 @@ KSPROPERTY\_WAVE\_パン プロパティを wave デバイスのパンの設定�
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Ksmedia.h (Ksmedia.h を含む)</td>
+<td>Ksmedia .h (Ksk を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -82,9 +82,9 @@ KSPROPERTY\_WAVE\_パン プロパティを wave デバイスのパンの設定�
 ## <a name="see-also"></a>関連項目
 
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
-[**KSWAVE\_方向へパンします。** ](https://docs.microsoft.com/previous-versions/ff567249(v=vs.85))
+[**KSWAVE\_パン**](https://docs.microsoft.com/previous-versions/ff567249(v=vs.85))
 
  
 

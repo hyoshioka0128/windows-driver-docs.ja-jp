@@ -1,9 +1,9 @@
 ---
 title: GetPersistentBinding2 関数
-description: GetPersistentBinding2 メソッドは、論理ユニットのファイバー チャネル プロトコル (FCP) 識別子に、論理ユニットを識別するために、オペレーティング システムを使用する情報をマップする HBA のミニポート ドライバーを使用するバインディングを取得します。
+description: GetPersistentBinding2 メソッドは、HBA ミニポートドライバーが論理ユニットを識別するために使用する情報を論理ユニットのファイバーチャネルプロトコル (FCP) 識別子にマップするために使用するバインドを取得します。
 ms.assetid: 17734973-fa82-4f54-b882-d9a2f5ce2066
 keywords:
-- 記憶装置の GetPersistentBinding2 関数
+- GetPersistentBinding2 function Storage デバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 4165e861d2342d163bb301279b77270e3db9cf52
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 42113e99635b85e419f902cac0cb8b44f1b255be
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378519"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844689"
 ---
 # <a name="getpersistentbinding2-function"></a>GetPersistentBinding2 関数
 
 
-**GetPersistentBinding2**メソッドは、オペレーティング システムをファイバー チャネルのプロトコル (FCP) 識別子を論理ユニットを識別するために使用する情報をマップする HBA のミニポート ドライバーを使用するバインディングを取得します論理ユニットです。
+**GetPersistentBinding2**メソッドは、HBA ミニポートドライバーが論理ユニットを識別するために使用する情報を論理ユニットのファイバーチャネルプロトコル (FCP) 識別子にマップするために使用するバインドを取得します。
 
 <a name="syntax"></a>構文
 ------
@@ -44,22 +44,22 @@ void GetPersistentBinding2(
 ----------
 
 *PortWWN\[8\]*    
-永続的なバインドを取得するポートを示す世界中の名前。
+永続的なバインドを取得するポートを示す、世界規模の名前。
 
-*InEntryCount*   
-WMI プロバイダーをレポートできるバインド エントリの数を示す、*エントリ*パラメーター。
+*Inentrycount*   
+WMI プロバイダーが*エントリ*パラメーターで報告できるバインドエントリの数を示します。
 
-*HBAStatus*   
-に返された場合、操作の状態を格納します。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **GetFcpPersistentBinding\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_getfcppersistentbinding_out)構造体。
+*Hbastatus*   
+戻ると、操作の状態が格納されます。 許可される値とその説明の一覧については、「 [HBA\_STATUS](hba-status.md)」を参照してください。 ミニポートドライバーは、 [**GetFcpPersistentBinding\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_getfcppersistentbinding_out)構造体の**hbastatus**メンバーにこの情報を返します。
 
-*TotalEntryCount*   
-HBA に関連付けられた永続的なバインドの合計数を示します。
+*Totalentrycount*   
+HBA に関連付けられている永続的なバインドの合計数を示します。
 
-*OutEntryCount*   
-によって取得された永続的なバインドの合計数を示す、 **GetPersistentBinding2**メソッド. この値の場合に等しいまたはそれよりも少なくなります*TotalEntryCount*します。
+*Outentrycount*   
+**GetPersistentBinding2**メソッドによって取得された永続的なバインディングの合計数を示します。 この値は*Totalentrycount*以下です。
 
 *バインド\[\]*    
-型の構造体の配列[ **HBAFCPBindingEntry2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_hbafcpbindingentry2)オペレーティング システムとプロトコル (FCP) 識別子のファイバー チャネル HBA のバインディングを記述します。
+[**HBAFCPBindingEntry2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_hbafcpbindingentry2)型の構造体の配列。これは、オペレーティングシステムとファイバーチャネルプロトコル (FCP) の識別子の間の HBA のバインドを記述します。
 
 <a name="return-value"></a>戻り値
 ------------
@@ -69,7 +69,7 @@ WMI メソッドには適用されません。
 <a name="remarks"></a>注釈
 -------
 
-この WMI メソッドが属する、 [MSFC\_HBAFCPInfo WMI クラス](msfc-hbafcpinfo-wmi-class.md)します。
+この WMI メソッドは、 [Msfc\_HBAFCPInfo WMI クラス](msfc-hbafcpinfo-wmi-class.md)に属しています。
 
 <a name="requirements"></a>要件
 ------------
@@ -86,19 +86,19 @@ WMI メソッドには適用されません。
 </tr>
 <tr class="even">
 <td align="left"><p>Header</p></td>
-<td align="left">Hbapiwmi.h (Hbapiwmi.h、Hbaapi.h、Hbaapi.h など)</td>
+<td align="left">Hbapiwmi (Hbapiwmi、Hbaapi. h、または Hbaapi .h を含む)</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[**GetFcpPersistentBinding\_IN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_getfcppersistentbinding_in)
+[**GetFcpPersistentBinding\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_getfcppersistentbinding_in)
 
-[**GetFcpPersistentBinding\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_getfcppersistentbinding_out)
+[**GetFcpPersistentBinding\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_getfcppersistentbinding_out)
 
-[**HBAFCPBindingEntry2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_hbafcpbindingentry2)
+[**HBAFCPBindingEntry2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_hbafcpbindingentry2)
 
  
 

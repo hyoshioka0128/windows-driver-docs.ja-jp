@@ -4,21 +4,21 @@ description: AddiSNSServer
 ms.assetid: d1356174-a159-447a-9ef4-712385fe844a
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: d78139b5162ffb26d616c73e90f5965088fe1e86
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d2e6936e864d2b625a2247c585715d96d940f0f3
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386287"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845117"
 ---
 # <a name="addisnsserver"></a>AddiSNSServer
 
 
-**AddiSNSServer**メソッドは、イニシエーターがターゲットのクエリを実行する iSNS サーバーの一覧に iSNS サーバーを追加します。 HBA イニシエーターは、不揮発性メモリに iSNS サーバーの一覧を格納する必要があります。
+**Addisnsserver**メソッドは、イニシエーターがターゲットを照会する isns サーバーの一覧に isns サーバーを追加します。 HBA イニシエーターは、iSNS サーバーの一覧を不揮発性メモリに格納する必要があります。
 
-この WMI メソッドは、パブリッシュされていないに属する[MSiSCSI\_操作 WMI クラス](msiscsi-operations-wmi-class.md)します。 パラメーターの説明については、 **AddiSNSServer**メソッドのメンバーの説明を参照してください、 [ **AddiSNSServer\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsiop/ns-iscsiop-_addisnsserver_in)と[**AddiSNSServer\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsiop/ns-iscsiop-_addisnsserver_out)構造体。
+この WMI メソッドは、発行されていない[Msiscsi\_OPERATIONS WMI クラス](msiscsi-operations-wmi-class.md)に属しています。 **Addisnsserver**メソッドのパラメーターの説明については、addisnsserver の[ **\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/iscsiop/ns-iscsiop-_addisnsserver_in)のメンバーの説明と、 [**ADDISNSSERVER\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/iscsiop/ns-iscsiop-_addisnsserver_out)構造体を参照してください。
 
-ミニポート ドライバー、MSiSCSI を実装する\_操作 WMI クラスは、このメソッドをサポートする必要はありません。
+MSiSCSI\_Operations WMI クラスを実装するミニポートドライバーは、この方法をサポートするために必要ありません。
 
  
 

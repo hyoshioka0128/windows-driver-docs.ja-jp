@@ -3,24 +3,24 @@ title: ハードウェア エラーの挿入
 description: ハードウェア エラーの挿入
 ms.assetid: c27c79d9-c0b2-433b-b3f4-7674c361f1aa
 keywords:
-- ハードウェア エラー WDK WHEA の挿入
-- エラー WDK WHEA、WHEA WDK、挿入を挿入します。
-- 挿入する、Windows ハードウェア エラー アーキテクチャ WDK
+- ハードウェアエラーの挿入 WDK WHEA
+- エラー WDK WHEA、挿入、WHEA WDK、挿入
+- Windows ハードウェアエラーアーキテクチャ WDK、挿入
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ba7305f84ab2d3f05c3ffc5b3d0202fea1994182
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 678b063cacf101422fa90aaaef336c27747ae60a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67387162"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844399"
 ---
 # <a name="injecting-a-hardware-error"></a>ハードウェア エラーの挿入
 
 
-ユーザー モード アプリケーションは呼び出すことによって、ハードウェア プラットフォームにハードウェア エラーを挿入することができます、 [ **WHEAErrorInjectionMethods::InjectError** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_whea/)メソッド。 アプリケーションでは、ハードウェア エラーをテストして、システムのハードウェアのエラー処理機能を検証するハードウェア プラットフォームに挿入します。
+ユーザーモードアプリケーションは、 [**WHEAErrorInjectionMethods:: InjectError**](https://docs.microsoft.com/windows-hardware/drivers/ddi/_whea/)メソッドを呼び出すことによってハードウェアのエラーをハードウェアプラットフォームに挿入できます。 アプリケーションはハードウェアのエラーをハードウェアプラットフォームに挿入し、システムのハードウェアエラー処理機能をテストおよび検証します。
 
-次のコード例では、ハードウェア エラーを挿入する方法を示します。
+次のコード例は、ハードウェアエラーを挿入する方法を示しています。
 
 ```cpp
 IWbemServices *pIWbemServices;

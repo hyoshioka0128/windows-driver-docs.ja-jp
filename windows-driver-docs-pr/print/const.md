@@ -1,22 +1,22 @@
 ---
 title: Const (TCP/IP)
-description: TCP/IP Const コンストラクトでは、データ型と返される必要がある値を定義します。
+description: TCP/IP Const コンストラクトは、返される必要があるデータ型と値を定義します。
 ms.assetid: a0ede11d-ada4-4dc4-87a4-68c96635c0fd
 keywords:
-- Const のコンストラクト
+- Const コンストラクト
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: db847ce99201eb146899bdaae9a422a0c2aada3a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0a60a0caed5bad52519bfd44025e4c1b4e90270e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67379715"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843680"
 ---
 # <a name="const-tcpip"></a>Const (TCP/IP)
 
 
-TCP/IP Const コンストラクトでは、データ型と返される必要がある値を定義します。 Const 要素の値に変更されないためです。 Const のコンス トラクターは、Tcpbidi.xsd で定義されます。
+TCP/IP Const コンストラクトは、返される必要があるデータ型と値を定義します。 Const は、値が変更されない要素に使用されます。 Const コンストラクトは、Tcpbidi で定義されています。
 
 <table>
 <colgroup>
@@ -25,22 +25,22 @@ TCP/IP Const コンストラクトでは、データ型と返される必要が�
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
+<th>備わっている</th>
 <th>説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p><strong>name</strong></p></td>
-<td><p>スキーマの値の名前。</p></td>
+<td><p>スキーマ値の名前です。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>type</strong></p></td>
-<td><p>内のデータ型、<strong>値</strong>属性の値、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winspool/ne-winspool-bidi_type" data-raw-source="[&lt;strong&gt;BIDI_TYPE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winspool/ne-winspool-bidi_type)"> <strong>BIDI_TYPE</strong> </a>列挙体。</p></td>
+<td><p><strong>Value</strong>属性のデータの型。 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/winspool/ne-winspool-bidi_type" data-raw-source="[&lt;strong&gt;BIDI_TYPE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/winspool/ne-winspool-bidi_type)"><strong>BIDI_TYPE</strong></a>列挙体の値。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>value</strong></p></td>
-<td><p>定数の値を含む文字列。</p></td>
+<td><p>定数値を格納している文字列。</p></td>
 </tr>
 </tbody>
 </table>
@@ -49,7 +49,7 @@ TCP/IP Const コンストラクトでは、データ型と返される必要が�
 
 ### <a name="code-example"></a>コード例
 
-次のコード例では、双方向通信のスキーマを拡張を追加して、`Extension`プロパティを`Printer`プロパティ、および`Version`プロパティを`Extension`プロパティ。 例では、`Extension`定数が含まれる**値**エントリ、`Category`します。 また、`Version`が 2 つの定数**値**エントリ、`Major`と`Minor`します。
+次のコード例では、`Printer` プロパティに `Extension` プロパティを追加し、`Extension` プロパティに `Version` プロパティを追加することによって、bidi 通信スキーマを拡張します。 この例では、`Extension` に定数**値**のエントリ `Category`が含まれています。 また、`Version` には、`Major` と `Minor`の2つの定数**値**エントリがあります。
 
 ```cpp
 <Property name="Printer">
@@ -63,7 +63,7 @@ TCP/IP Const コンストラクトでは、データ型と返される必要が�
 </Property>
 ```
 
-前の例は、次のクエリ結果します。
+前の例では、次のクエリが実行されます。
 
 ```cpp
 \Printer.Extension:Category

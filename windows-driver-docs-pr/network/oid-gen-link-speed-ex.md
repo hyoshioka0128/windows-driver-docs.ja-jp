@@ -1,42 +1,42 @@
 ---
 title: OID_GEN_LINK_SPEED_EX
-description: クエリとして OID_GEN_LINK_SPEED_EX OID は提供、送信とインターフェイスのリンク速度を受信します。 バージョン情報の Windows Vista と laterSupported します。 NDIS 6.0 とそれ以降のミニポート driversNot が要求されました。 NDIS インターフェイス プロバイダーのみです。
+description: クエリとして、OID_GEN_LINK_SPEED_EX OID はインターフェイスの送信および受信リンク速度を提供します。 バージョン情報 Windows Vista および laterSupported。 NDIS 6.0 以降のミニポートの場合は要求されません。 NDIS インターフェイスプロバイダーのみ。
 ms.assetid: 86cc281b-3898-484c-9418-4408a45ebe71
 ms.date: 08/08/2017
-keywords: -OID_GEN_LINK_SPEED_EX ネットワーク ドライバーが Windows Vista 以降
+keywords: -Windows Vista 以降の OID_GEN_LINK_SPEED_EX ネットワークドライバー
 ms.localizationpriority: medium
-ms.openlocfilehash: a4606c22fb58a34079eb682adbb7a1d08f88da4a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e68913f9bf015d230b0eb0a8b0c6d6b14a518769
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369073"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844619"
 ---
-# <a name="oidgenlinkspeedex"></a>OID\_GEN\_リンク\_速度\_例
+# <a name="oid_gen_link_speed_ex"></a>OID\_GEN\_リンク\_速度\_EX
 
 
-クエリ、OID として\_GEN\_リンク\_速度\_EX OID はリンク速度インターフェイスの受信、送信します。
+クエリとして、OID\_GEN\_リンク\_速度\_EX では、インターフェイスの送信および受信リンク速度が提供されます。
 
 **バージョン情報**
 
 <a href="" id="windows-vista-and-later"></a>Windows Vista 以降  
 サポートされています。
 
-<a href="" id="ndis-6-0-and-later-miniport-drivers"></a>NDIS 6.0 とそれ以降のミニポート ドライバー  
-要求されません。 NDIS インターフェイス プロバイダーのみです。
+<a href="" id="ndis-6-0-and-later-miniport-drivers"></a>NDIS 6.0 以降のミニポートドライバー  
+要求されていません。 NDIS インターフェイスプロバイダーのみ。
 
 <a name="remarks"></a>注釈
 -------
 
-NDIS はこの OID を使用してクエリのリンク速度を[ネットワーク インターフェイスの NDIS](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-network-interfaces2)プロバイダー。 のみ NDIS インターフェイス プロバイダー、およびしたがってミニポート ドライバーではないまたはフィルター ドライバー、する必要がありますサポートこの OID OID 要求として。
+NDIS は、この OID を使用して、 [ndis ネットワークインターフェイス](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-network-interfaces2)プロバイダーのリンク速度を照会します。 この OID を OID 要求としてサポートする必要があるのは、NDIS インターフェイスプロバイダーだけです。そのため、ミニポートドライバーやフィルタードライバーはサポートしません。
 
-この OID でリンク速度を返します、 [ **NDIS\_リンク\_速度**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_link_speed)構造体。
+この OID は、 [**NDIS\_リンク\_SPEED**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_link_speed)構造のリンク速度を返します。
 
-ミニポート ドライバーでは、初期化中に、リンク速度を指定し、更新されたリンク速度を状態インジケーターに提供します。
+ミニポートドライバーは、初期化中にリンク速度を提供し、ステータスを示すリンク速度を更新します。
 
-ミニポート ドライバーでは、リンク速度を指定するには、設定、 **XmitLinkSpeed**と**RcvLinkSpeed**のメンバー、 [ **NDIS\_ミニポート\_アダプター\_全般\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)ミニポート ドライバーに渡します構造、 [ **NdisMSetMiniportAttributes** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsetminiportattributes)関数。
+ミニポートドライバーでリンク速度を指定するには、ミニポートドライバーによって渡される[**NDIS\_ミニポート\_アダプター\_GENERAL\_ATTRIBUTES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)構造体の**XmitLinkSpeed**および**rcvlinkspeed**メンバーを設定します。[**NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)関数。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -47,7 +47,7 @@ NDIS はこの OID を使用してクエリのリンク速度を[ネットワー
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Ntddndis.h (include Ndis.h)</td>
+<td>Ntddndis (Ndis .h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -55,13 +55,13 @@ NDIS はこの OID を使用してクエリのリンク速度を[ネットワー
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_リンク\_速度**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_link_speed)
+[**NDIS\_リンクの\_速度**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_link_speed)
 
-[**NDIS\_ミニポート\_アダプター\_全般\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)
+[**NDIS\_ミニポート\_アダプター\_全般\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)
 
-[**NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsetminiportattributes)
+[**NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)
 
-[NDIS ネットワーク インターフェイスの Oid](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-network-interface-oids)
+[NDIS ネットワークインターフェイス Oid](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-network-interface-oids)
 
  
 

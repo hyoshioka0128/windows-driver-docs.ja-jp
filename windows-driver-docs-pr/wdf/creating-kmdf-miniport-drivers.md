@@ -3,15 +3,15 @@ title: KMDF ミニポート ドライバーの作成
 description: KMDF ミニポート ドライバーの作成
 ms.assetid: 3e01827b-fe1e-49ce-8072-9fc6c751fc01
 keywords:
-- ミニポート ドライバー WDK KMDF
+- ミニポートドライバー WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f3f9f6df417eec2488976f1f299e43f7f50ffa1
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9ad5605ffd6441cd9cab9d6ee05c80f65a2db840
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377496"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844679"
 ---
 # <a name="creating-kmdf-miniport-drivers"></a>KMDF ミニポート ドライバーの作成
 
@@ -19,21 +19,21 @@ ms.locfileid: "67377496"
 
 
 
-ポート/ミニポート アーキテクチャにより、ミニポート ドライバー WDM またはフレームワーク インターフェイスを使用して他のドライバーと通信する場合、一部のミニポート ドライバーはカーネル モード ドライバー フレームワークを使用できます。 たとえば、 [NDIS ミニポート ドライバー WDM が削減 edge](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-miniport-drivers-with-a-wdm-lower-edge)フレームワークを使用して、下端を実装することができます。
+ポート/ミニポートアーキテクチャによって、ミニポートドライバーが WDM またはフレームワークインターフェイスを使用して他のドライバーと通信できる場合は、一部のミニポートドライバーでカーネルモードドライバーフレームワークを使用できます。 たとえば、 [WDM が低い状態の NDIS ミニポートドライバー](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-miniport-drivers-with-a-wdm-lower-edge)は、フレームワークを使用して下端を実装できます。
 
-ミニポート ドライバー、フレームワークを使用する場合は、ドライバーが必要です。
+ミニポートドライバーでフレームワークを使用する場合、ドライバーは次のことを行う必要があります。
 
--   設定、 [ **WdfDriverInitNoDispatchOverride** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/ne-wdfdriver-_wdf_driver_init_flags)フラグ、 **DriverInitFlags**のドライバーのメンバー [ **WDF\_ドライバー\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/ns-wdfdriver-_wdf_driver_config)呼び出す前に構造[ **WdfDriverCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nf-wdfdriver-wdfdrivercreate)します。 これにより、フラグを設定、ポート ドライバー、代わりに、フレームワークの I/O をインターセプトする要求パケット (Irp) I/O マネージャーがドライバーに指示しました。
+-   [**Wdfdrivercreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nf-wdfdriver-wdfdrivercreate)を呼び出す前に、ドライバーの[**WDF\_driver\_CONFIG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/ns-wdfdriver-_wdf_driver_config)構造体の**Driverinitflags**メンバーに[**WdfDriverInitNoDispatchOverride**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/ne-wdfdriver-_wdf_driver_init_flags)フラグを設定します。 このフラグを設定すると、i/o マネージャーがドライバーに転送した i/o 要求パケット (Irp) を、フレームワークではなくポートドライバーでインターセプトできます。
 
--   呼び出す[ **WdfDeviceMiniportCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfminiport/nf-wdfminiport-wdfdeviceminiportcreate)の代わりに[ **WdfDeviceCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicecreate)フレームワーク、ミニポート ドライバーのデバイス オブジェクトを作成するにはデバイス。 ミニポート ドライバーを呼び出す必要があります**WdfDeviceMiniportCreate**ときにそのポート ドライバーを通知をデバイスが使用可能です。
+-   [**WdfDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate)の代わりに[**WdfDeviceMiniportCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfminiport/nf-wdfminiport-wdfdeviceminiportcreate)を呼び出して、ミニポートドライバーのデバイス用のフレームワークデバイスオブジェクトを作成します。 ミニポートドライバーは、デバイスが使用可能であることをポートドライバーが通知するときに**WdfDeviceMiniportCreate**を呼び出す必要があります。
 
--   呼び出す[ **WdfObjectDelete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nf-wdfobject-wdfobjectdelete)デバイスでは削除するオブジェクトを[ **WdfDeviceMiniportCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfminiport/nf-wdfminiport-wdfdeviceminiportcreate)ドライバーを決定するときに、作成しますデバイスが削除されました。 (ドライバーが設定されているため、 [ **WdfDriverInitNoDispatchOverride** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/ne-wdfdriver-_wdf_driver_init_flags)フラグ、フレームワークは、デバイスが削除されたときを判断することはできず、デバイス オブジェクトを削除することはできません)。
+-   [**WdfDeviceMiniportCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfminiport/nf-wdfminiport-wdfdeviceminiportcreate)によって作成されたデバイスオブジェクトを削除するには、 [**wdfobjectdelete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/nf-wdfobject-wdfobjectdelete)を呼び出します。デバイスが削除されたことがドライバーによって判断された場合。 (ドライバーによって[**WdfDriverInitNoDispatchOverride**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/ne-wdfdriver-_wdf_driver_init_flags)フラグが設定されているため、デバイスがいつ削除され、デバイスオブジェクトを削除できないかは、フレームワークによって判断できません)。
 
--   呼び出す[ **WdfDriverMiniportUnload** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfminiport/nf-wdfminiport-wdfdriverminiportunload)ときに、ポート用のドライバーにより、ミニポート ドライバーをアンロードするのには、します。
+-   ポートドライバーが、ミニポートドライバーがアンロードされようとしていることを通知するときに、 [**Wdfdriverminiportunload**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfminiport/nf-wdfminiport-wdfdriverminiportunload)を呼び出します。
 
-基になるデバイスは、プラグ アンド プレイ (PnP) をサポートしている場合にのみ、ミニポート ドライバーでは、フレームワークを使用できます。 ミニポート ドライバーでは、フレームワークのコントロールのデバイス オブジェクトを使用できません。
+ミニポートドライバーは、基になるデバイスがプラグアンドプレイ (PnP) をサポートしている場合にのみ、フレームワークを使用できます。 ミニポートドライバーは、フレームワークのコントロールデバイスオブジェクトを使用できません。
 
-デバイス オブジェクトに制限が適用される、 [ **WdfDeviceMiniportCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfminiport/nf-wdfminiport-wdfdeviceminiportcreate)メソッドを作成します。 これらの制限事項の一覧は、次を参照してください。 [ **WdfDeviceMiniportCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfminiport/nf-wdfminiport-wdfdeviceminiportcreate)します。
+[**WdfDeviceMiniportCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfminiport/nf-wdfminiport-wdfdeviceminiportcreate)メソッドによって作成されるデバイスオブジェクトに制限が適用されます。 これらの制限の一覧については、「 [**WdfDeviceMiniportCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfminiport/nf-wdfminiport-wdfdeviceminiportcreate)」を参照してください。
 
  
 

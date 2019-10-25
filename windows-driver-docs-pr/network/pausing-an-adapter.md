@@ -3,21 +3,21 @@ title: アダプターの一時停止
 description: アダプターの一時停止
 ms.assetid: e24a9886-a1d7-4ca5-bed8-85db4a49ed9c
 keywords:
-- ミニポート アダプタ WDK ネットワーク、一時停止
-- アダプター WDK ネットワーク、一時停止
-- 一時停止状態の WDK ネットワーク
-- WDK のネットワークを一時停止の状態
+- ミニポートアダプター WDK ネットワーク、一時停止
+- WDK ネットワークのアダプター、一時停止
+- 状態 WDK ネットワークの一時停止
+- 一時停止状態 WDK ネットワーク
 - MiniportPause
-- ミニポート アダプターが一時停止
-- ミニポート アダプターが停止しています
+- ミニポートアダプターの一時停止
+- ミニポートアダプターの停止
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 539983513a04940149343b3867bdd8af6caa7ddc
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 844dfce6909bd237e14c7f16d34df157a5a55d30
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382619"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843695"
 ---
 # <a name="pausing-an-adapter"></a>アダプターの一時停止
 
@@ -25,17 +25,17 @@ ms.locfileid: "67382619"
 
 
 
-NDIS ミニポート ドライバーを呼び出す[ *MiniportPause* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_pause)一時停止操作を開始する関数。 アダプターは、一時停止操作が完了するまで一時停止状態のままです。
+NDIS は、ミニポートドライバーの[*Miniportpause*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_pause)関数を呼び出して、一時停止操作を開始します。 一時停止操作が完了するまで、アダプターは一時停止状態のままになります。
 
-一時停止状態では、ミニポート ドライバーを未処理に完了する必要がありますの操作を受信します。 ドライバーでは、未処理の送信操作を完了する必要がありますも、新しい送信要求を拒否する必要があります。
+一時停止中の状態では、ミニポートドライバーは未処理の受信操作を完了する必要があります。 また、ドライバーは未処理の送信操作を完了する必要があり、新しい送信要求をすべて拒否する必要があります。
 
-完了する受信操作を行うすべての呼び出しに、ドライバーが待機する、 [ **NdisMIndicateReceiveNetBufferLists** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismindicatereceivenetbufferlists)を返す関数と NDIS は未処理のすべてに返す必要があります[ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)構造体、ミニポート ドライバーの[ *MiniportReturnNetBufferLists* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_return_net_buffer_lists)関数。
+受信操作を完了するために、ドライバーは[**NdisMIndicateReceiveNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismindicatereceivenetbufferlists)関数へのすべての呼び出しが返されるまで待機し、NDIS はすべての未処理の[**NET\_バッファー\_リスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)構造体をミニポートドライバーの[*に返す必要があります。MiniportReturnNetBufferLists*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_return_net_buffer_lists)関数。
 
-未処理の送信操作を完了するミニポート ドライバーを呼び出す必要があります、 [ **NdisMSendNetBufferListsComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsendnetbufferlistscomplete)関数のすべての未処理の NET\_バッファー\_リストの構造体。 ドライバーに対して行われたすべての新しい送信要求を拒否すべきその[ *MiniportSendNetBufferLists* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_send_net_buffer_lists)すぐに機能します。
+未処理の送信操作を完了するには、ミニポートドライバーが、未処理のすべての NET\_BUFFER\_LIST 構造体に対して[**NdisMSendNetBufferListsComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsendnetbufferlistscomplete)関数を呼び出す必要があります。 ドライバーは、 [*Miniportsendnetbufferlists*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_send_net_buffer_lists)関数に対して行われた新しい送信要求を直ちに拒否する必要があります。
 
-ミニポート ドライバーでは、未処理のすべての送信が完了するし、受信操作、ドライバーは、同期または非同期で一時停止要求を完了する必要があります。 ドライバーを呼び出す場合は、一時停止操作が非同期的に完了したら、 [ **NdisMPauseComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismpausecomplete)一時停止要求を完了します。 一時停止要求を完了すると、ミニポート ドライバーが一時停止状態です。
+ミニポートドライバーがすべての未処理の送信および受信操作を完了した後、ドライバーは、同期または非同期のいずれかの方法で一時停止要求を完了する必要があります。 一時停止操作が非同期に完了した場合、ドライバーは[**NdisMPauseComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismpausecomplete)を呼び出して一時停止要求を完了します。 一時停止要求を完了すると、ミニポートドライバーが一時停止状態になります。
 
-NDIS はいない停止など、他のプラグ アンド プレイ操作を開始、初期化、電源変更、または再起動操作、ミニポート ドライバーが一時停止中の状態。 NDIS は、ミニポート ドライバーは一時停止状態になった後、これらのプラグ アンド プレイ操作を開始できます。
+ミニポートドライバーが一時停止状態にある間、NDIS は、停止、初期化、電源変更、再起動などのプラグアンドプレイ操作を開始しません。 ミニポートドライバーが一時停止状態になった後、NDIS はこれらのプラグアンドプレイ操作を開始できます。
 
  
 

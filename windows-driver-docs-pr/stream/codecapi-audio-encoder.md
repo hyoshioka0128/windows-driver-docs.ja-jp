@@ -1,23 +1,23 @@
 ---
-title: CODECAPI\_オーディオ\_エンコーダー
-description: CODECAPI\_オーディオ\_エンコーダー
+title: CODECAPI\_AUDIO\_ENCODER
+description: CODECAPI\_AUDIO\_ENCODER
 ms.assetid: c66cbbe1-36dc-4088-8ecd-7663d4503d6e
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 71774812c89a4f093f6cf4498a3c55de501b8a36
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ef9f7774d0c85f8c0296993a9b6dfbe6d08520fa
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63329598"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844729"
 ---
-# <a name="codecapiaudioencoder"></a>CODECAPI\_オーディオ\_エンコーダー
+# <a name="codecapi_audio_encoder"></a>CODECAPI\_AUDIO\_ENCODER
 
 
 ## <span id="ddk_codecapi_audio_encoder_ks"></span><span id="DDK_CODECAPI_AUDIO_ENCODER_KS"></span>
 
 
-オーディオ エンコーダーでは、この GUID (ユーザー モード KsProperty BASICSUPPORT でクエリを実行) のサポートを使用してオーディオ エンコーダーであることを示します。
+オーディオエンコーダーは、この GUID のサポート (ユーザーモード KsProperty BASICSUPPORT によって照会されます) を使用して、オーディオエンコーダーであることを示します。
 
 <table>
 <colgroup>
@@ -29,7 +29,7 @@ ms.locfileid: "63329598"
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -38,26 +38,26 @@ ms.locfileid: "63329598"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>X</p></td>
+<td><p>[はい]</p></td>
+<td><p>必須ではない</p></td>
 <td><p>フィルター</p></td>
 <td><p>KSPROPERTY</p></td>
-<td><p>BOOL</p></td>
+<td><p>型</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-プロパティ値 (データの操作) は BOOL 型の、ミニドライバーがオーディオのエンコードをサポートしているかどうかを指定します。 値**TRUE**ミニドライバーは、オーディオのエンコードがサポートしていることを示します。 フィルターは、オーディオ エンコーダーではない場合、この GUID をサポートする必要があります。
+プロパティ値 (操作データ) はブール型で、ミニドライバーがオーディオエンコーディングをサポートするかどうかを指定します。 値が**TRUE の場合**は、ミニドライバーがオーディオエンコーディングをサポートしていることを示します。 この GUID がオーディオエンコーダーではない場合は、フィルターでサポートしないでください。
 
-### <a name="requirements"></a>必要条件
+### <a name="requirements"></a>要件
 
-**ヘッダー:** 宣言されている*ksmedia.h*します。 含める*ksmedia.h*します。
+**ヘッダー:** *Ksmedia. h*で宣言されています。 *Ksmedia. h*をインクルードします。
 
-### <a name="see-also"></a>関連項目
+### <a name="see-also"></a>参照
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
  
 

@@ -9,12 +9,12 @@ keywords:
 - ミニポートドライバー WDK 記憶域、ATA ミニポートドライバー
 ms.date: 10/08/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 01d2d82deca974ee69985a054537414b8670589c
-ms.sourcegitcommit: 5f4252ee4d5a72fa15cf8c68a51982c2bc6c8193
+ms.openlocfilehash: e63b7ccae30dca03ac5c6a157eccb9d0adedb9a7
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72252439"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845101"
 ---
 # <a name="ata-miniport-drivers"></a>ATA ミニポート ドライバー
 
@@ -27,7 +27,7 @@ Ata ミニポートドライバーは、ATA ポートドライバーで動作し
 
 すべてのベンダーが提供するミニポートドライバーは、コントローラーインターフェイスを定義する一連のルーチンを実装するために必要です。 これらのルーチンを使用することによって、ミニポートドライバーは、システムによって提供されるコントローラードライバー *pciidex*と通信します。
 
-ベンダーが提供するミニポートドライバーは、コントローラードライバーと通信して、ポートとミニポートドライバーの両方を初期化し、ホストバスアダプター (HBA) を構成するために必要なパラメーターを交換します。 ルーチンがこのセクションで省略可能として明示的に識別されていない場合は、必須です。 省略可能なルーチンを実装しない場合は、 [IDE_CONTROLLER_INTERFACE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/irb/ns-irb-_ide_controller_interface)構造体の対応する関数ポインターがミニポートドライバーによって NULL に設定されていることを確認する必要があります。
+ベンダーが提供するミニポートドライバーは、コントローラードライバーと通信して、ポートとミニポートドライバーの両方を初期化し、ホストバスアダプター (HBA) を構成するために必要なパラメーターを交換します。 ルーチンがこのセクションで省略可能として明示的に識別されていない場合は、必須です。 省略可能なルーチンを実装しない場合は、 [IDE_CONTROLLER_INTERFACE](https://docs.microsoft.com/windows-hardware/drivers/ddi/irb/ns-irb-_ide_controller_interface)構造体の対応する関数ポインターがミニポートドライバーによって NULL に設定されていることを確認する必要があります。
 
 - DriverEntry
 - AtaAdapterControl
@@ -36,7 +36,7 @@ Ata ミニポートドライバーは、ATA ポートドライバーで動作し
 
 ## <a name="ata-channel-interface-routines"></a>ATA チャネルインターフェイスルーチン
 
-ベンダーが提供するミニポートドライバーでは、必要に応じて、チャネルインターフェイスを定義する一連のルーチンを実装できます。 これらのルーチンを使用すると、ミニポートドライバーは、ハードウェアに送信されるすべての要求を処理できます。 ミニポートドライバーは、チャネルインターフェイスを部分的に実装することはできません。 ミニポートドライバーが[**Atachannelinitroutine**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/irb/nf-irb-ataportinitializeex)ルーチンをサポートしている場合は、次のルーチンも実装する必要があります。
+ベンダーが提供するミニポートドライバーでは、必要に応じて、チャネルインターフェイスを定義する一連のルーチンを実装できます。 これらのルーチンを使用すると、ミニポートドライバーは、ハードウェアに送信されるすべての要求を処理できます。 ミニポートドライバーは、チャネルインターフェイスを部分的に実装することはできません。 ミニポートドライバーが[**Atachannelinitroutine**](https://docs.microsoft.com/windows-hardware/drivers/ddi/irb/nf-irb-ataportinitializeex)ルーチンをサポートしている場合は、次のルーチンも実装する必要があります。
 
 - AtaChannelInitRoutine
 - IdeHwInitialize

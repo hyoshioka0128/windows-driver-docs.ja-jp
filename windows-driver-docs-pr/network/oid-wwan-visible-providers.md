@@ -1,48 +1,48 @@
 ---
 title: OID_WWAN_VISIBLE_PROVIDERS
-description: OID_WWAN_VISIBLE_PROVIDERS は、現在表示されている MB デバイスの範囲内のネットワーク プロバイダーの一覧を返します。
+description: OID_WWAN_VISIBLE_PROVIDERS は、現在 MB のデバイスの範囲内に表示されているネットワークプロバイダーの一覧を返します。
 ms.assetid: 4dfd4477-6332-4163-8b3e-a1604b11d175
 ms.date: 08/08/2017
-keywords: -OID_WWAN_VISIBLE_PROVIDERS ネットワーク ドライバーが Windows Vista 以降
+keywords: -Windows Vista 以降の OID_WWAN_VISIBLE_PROVIDERS ネットワークドライバー
 ms.localizationpriority: medium
-ms.openlocfilehash: 280603e53f8f1505f342d91b568a9fea2867e98d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b061f28de86d13b47b7c5c8d74d63f467de36507
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385485"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843763"
 ---
-# <a name="oidwwanvisibleproviders"></a>OID\_WWAN\_VISIBLE\_プロバイダー
+# <a name="oid_wwan_visible_providers"></a>OID\_WWAN\_表示される\_プロバイダー
 
 
-OID\_WWAN\_VISIBLE\_プロバイダーが現在表示されている MB デバイスの範囲内でネットワーク プロバイダーの一覧を返します。
+OID\_WWAN\_表示される\_プロバイダーは、現在 MB のデバイス範囲内に表示されているネットワークプロバイダーの一覧を返します。
 
-要求のセットがサポートされていません。
+Set 要求はサポートされていません。
 
-ミニポート ドライバーは、最初に、非同期的には、NDIS を返すクエリ要求を処理する必要があります\_状態\_INDICATION\_元の要求とそれ以降の送信に必要な[ **NDIS\_状態\_WWAN\_VISIBLE\_プロバイダー** ](ndis-status-wwan-visible-providers.md)状態通知を含む、 [ **NDIS\_WWAN\_表示される\_プロバイダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_visible_providers)クエリ要求を完了するときに表示されているネットワーク プロバイダーに関する情報を提供する構造体。
+ミニポートドライバーでは、クエリ要求を非同期的に処理し、最初に NDIS\_STATUS を返し、元の要求に対して必要な\_を示し、その後、 [**ndis\_ステータス\_WWAN\_表示されるように\_する必要があり\_プロバイダー**](ndis-status-wwan-visible-providers.md) [ **\_WWAN\_含まれる**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_visible_providers)プロバイダーの状態通知は、クエリ要求の完了時に表示されるネットワークプロバイダーに関する情報を提供するために、表示される\_プロバイダーの構造を示します。
 
-*クエリ*要求指定 NDIS\_WWAN\_取得\_VISIBLE\_プロバイダーが入力として構造体します。 ときに、**アクション**WWAN でメンバー\_取得\_VISIBLE\_WWAN にプロバイダーが設定されている\_取得\_VISIBLE\_プロバイダー\_すべて、ミニポートには、参照できるすべてのプロバイダーを返す必要があります。 ときに、**アクション**WWAN でメンバー\_取得\_VISIBLE\_WWAN にプロバイダーが設定されている\_取得\_VISIBLE\_プロバイダー\_マルチミニポート ホーム プロバイダーとして設定できるマルチ キャリア プロバイダーの表示を返すのみ必要があります。
+*クエリ*要求では、NDIS\_WWAN\_入力として表示\_プロバイダーの構造\_取得します。 WWAN\_GET\_VISIBLE の**アクション**メンバーが表示されている場合\_プロバイダーは、表示されている\_プロバイダーを取得\_、すべてのミニポートから表示可能なすべてのプロバイダーが返されます。 WWAN\_GET\_VISIBLE の**アクション**メンバーが表示されている場合\_プロバイダーは、表示されている\_プロバイダー\_を取得します。\_プロバイダーを取得します。この場合、ミニポートは、表示可能なマルチキャリアプロバイダーを返す必要があります。ホームプロバイダーとして設定します。
 
-デバイスでする必要がありますが、プロバイダーの状態が正しく設定プロバイダーごとに表示されているプロバイダーの一覧が返されます。 たとえば、マルチ優先、プロバイダーは、WWAN としてタグ付けする必要があります\_プロバイダー\_状態\_優先\_マルチ、WWAN としてタグ付けする必要がありますいずれかの場合は、現在のホーム プロバイダー\_プロバイダー\_状態\_ホーム、現在では WWAN としてタグ付けする必要がありますいずれかの場合、プロバイダーが登録されている\_プロバイダー\_状態\_登録されています。
+デバイスによって返される表示プロバイダーの一覧では、プロバイダーごとにプロバイダーの状態が正しく設定されている必要があります。 たとえば、マルチキャリア優先プロバイダーは、WWAN\_プロバイダーの\_状態\_優先\_マルチキャリアとしてタグ付けされている必要があります。また、現在のホームプロバイダーについては、どのような\_タグを使用する必要があるかを指定します。HOME、現在登録されているプロバイダーについては、\_プロバイダー\_状態\_登録済みであることを示すタグを付ける必要があります。
 
-**Rssi**と**ErrorRate** WWAN のメンバー\_PROVIDER2 構造は、使用可能な場合、設定する必要があります。
+WWAN\_PROVIDER2 構造体の**Rssi**および**errorrate**メンバーは、使用可能な場合は設定する必要があります。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
-詳細については、この OID を使用して、次を参照してください。 [WWAN プロバイダー操作](https://docs.microsoft.com/windows-hardware/drivers/network/mb-provider-operations)します。
+この OID の使用方法の詳細については、「 [WWAN プロバイダーの操作](https://docs.microsoft.com/windows-hardware/drivers/network/mb-provider-operations)」を参照してください。
 
-ミニポート ドライバー Subscriber Identity Module (SIM カード) にアクセスできる処理がクエリ操作が、プロバイダーのネットワークにアクセスしないでください。
+ミニポートドライバーは、クエリ操作を処理するときにサブスクライバー Id モジュール (SIM カード) にアクセスできますが、プロバイダーネットワークにはアクセスできません。
 
-ミニポート ドライバーを設定する必要があります、 **VisibleListHeader.ElementType**メンバー *WwanStructProvider*します。
+ミニポートドライバーは、 **VisibleListHeader**メンバーを*WwanStructProvider*に設定する必要があります。
 
-CDMA ベースのネットワークでは、ミニポート ドライバーはネットワークで、優先ローミング リスト (PRL) のいずれかが現在表示されている場合は、ホーム プロバイダーのみを返す必要があります。 GSM ベースのネットワークでは、1 つ以上のプロバイダーが表示されているプロバイダーの一覧に存在する可能性があります。
+CDMA ベースのネットワークの場合、優先ローミングリスト (PRL) 内のいずれかのネットワークが現在表示されている場合、ミニポートドライバーはホームプロバイダーのみを返します。 GSM ベースのネットワークでは、表示されているプロバイダーの一覧に複数のプロバイダーが存在する場合があります。
 
-デバイスをサポートしないスキャン表示されているプロバイダーの接続中には、WWAN を返す必要がありますの\_状態\_ビジー状態のエラー値、 **uStatus**の NDIS メンバー\_WWAN\_表示される\_プロバイダーの構造体。
+接続中に表示されているプロバイダーのスキャンをサポートしていないデバイスは、NDIS\_\_\_WWAN の**uStatus**メンバーにある WWAN\_STATUS\_BUSY エラー値を返す必要があります。
 
-GSM ベースし、CDMA ベースの両方のデバイスでは、登録済みのモードで表示されているプロバイダーのスキャンをサポートする必要があります。 ただし、ミニポート ドライバーは、パケット データ プロトコル (PDP) コンテキストがアクティブな間に表示されているプロバイダーのスキャンをサポートする必要はありません (たとえば、デバイスから、プロバイダーのネットワークに接続が)。
+GSM ベースのデバイスと CDMA ベースのデバイスは両方とも、登録モードで表示されているプロバイダーのスキャンをサポートする必要があります。 ただし、パケットデータプロトコル (PDP) コンテキストがアクティブな場合 (デバイスがプロバイダーのネットワークに接続されている場合など)、表示されているプロバイダーのスキャンをサポートするためにミニポートドライバーは必要ありません。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -53,11 +53,11 @@ GSM ベースし、CDMA ベースの両方のデバイスでは、登録済み�
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>Windows 7 および Windows の以降のバージョンで使用できます。</p></td>
+<td><p>Windows 7 以降のバージョンの Windows で使用できます。</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Ntddndis.h (include Ndis.h)</td>
+<td>Ntddndis (Ndis .h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -65,11 +65,11 @@ GSM ベースし、CDMA ベースの両方のデバイスでは、登録済み�
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_WWAN\_VISIBLE\_プロバイダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_visible_providers)
+[**NDIS\_WWAN\_表示される\_プロバイダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_visible_providers)
 
-[**NDIS\_状態\_WWAN\_VISIBLE\_プロバイダー**](ndis-status-wwan-visible-providers.md)
+[**NDIS\_ステータス\_WWAN\_表示されている\_プロバイダ**](ndis-status-wwan-visible-providers.md)
 
-[WWAN プロバイダー操作](https://docs.microsoft.com/windows-hardware/drivers/network/mb-provider-operations)
+[WWAN プロバイダーの操作](https://docs.microsoft.com/windows-hardware/drivers/network/mb-provider-operations)
 
  
 

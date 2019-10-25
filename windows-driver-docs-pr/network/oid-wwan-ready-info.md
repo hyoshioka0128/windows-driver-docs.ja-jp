@@ -1,50 +1,50 @@
 ---
 title: OID_WWAN_READY_INFO
-description: OID_WWAN_READY_INFO では、デバイスの準備完了の状態、その Subscriber Identity Module (SIM カード) を含むを返します。
+description: OID_WWAN_READY_INFO は、デバイスの準備完了状態を返します。これには、そのサブスクライバー Id モジュール (SIM カード) が含まれます。
 ms.assetid: 3e6f6cb7-14fc-4eee-b5d6-d5e0cad46ea2
 ms.date: 08/08/2017
-keywords: -OID_WWAN_READY_INFO ネットワーク ドライバーが Windows Vista 以降
+keywords: -Windows Vista 以降の OID_WWAN_READY_INFO ネットワークドライバー
 ms.localizationpriority: medium
-ms.openlocfilehash: f5485b1c2352c82f4155e56075f15c4bfe2e6654
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f9b442eb56e0d1577ef8cd3dd27c030e636c3eff
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383187"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843799"
 ---
-# <a name="oidwwanreadyinfo"></a>OID\_WWAN\_準備\_情報
+# <a name="oid_wwan_ready_info"></a>OID\_WWAN\_準備完了\_情報
 
 
-OID\_WWAN\_準備\_情報がデバイスの準備完了の状態、その Subscriber Identity Module (SIM カード) を含むを返します。 これは、任意のセッションの先頭に通常発生します。
+OID\_WWAN\_準備完了\_情報は、デバイスの準備完了状態を返します。これには、そのサブスクライバー Id モジュール (SIM カード) が含まれます。 これは、通常、セッションの開始時に発生します。
 
-要求のセットがサポートされていません。
+Set 要求はサポートされていません。
 
-ミニポート ドライバーは、最初に、非同期的には、NDIS を返すクエリ要求を処理する必要があります\_状態\_INDICATION\_元の要求とそれ以降の送信に必要な[ **NDIS\_状態\_WWAN\_準備\_情報**](ndis-status-wwan-ready-info.md)状態通知を含む、 [ **NDIS\_WWAN\_準備完了\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_ready_info)クエリ要求を完了したときに、構造体を示す MB デバイスの準備完了状態。
+ミニポートドライバーは、クエリ要求を非同期的に処理し、最初に NDIS\_\_STATUS を返し、元の要求に対して必要な\_を示し、その後、 [**ndis\_ステータス\_WWAN\_準備完了\_に送信する必要があり**](ndis-status-wwan-ready-info.md)クエリ要求の完了時に、MB デバイスの準備完了状態を示す、 [**NDIS\_WWAN\_READY\_info**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_ready_info)構造体を含む情報ステータス通知。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
-詳細については、この OID を使用して、次を参照してください。 [MB デバイスの準備](https://docs.microsoft.com/windows-hardware/drivers/network/mb-device-readiness)します。
+この OID の使用方法の詳細については、「 [MB デバイスの準備](https://docs.microsoft.com/windows-hardware/drivers/network/mb-device-readiness)」を参照してください。
 
-ミニポート ドライバーがデバイスのメモリをアクセスまたは SIM カードの処理時にクエリ操作が、プロバイダーのネットワークにアクセスしないでください。
+ミニポートドライバーは、クエリ操作の処理時にデバイスメモリまたは SIM カードにアクセスできますが、プロバイダーネットワークにはアクセスできません。
 
-ミニポート ドライバーが (必要な) 場合、PIN がクリアされるまで待機する必要がありますと、サブスクライバーの id と電話番号 (TNs) を読み取るし、NDIS の ReadyInfo.ReadyState メンバーを設定し、\_WWAN\_準備\_情報WwanReadyStateInitialized 構造体。
+ミニポートドライバーは、PIN がクリアされる (必要な場合) まで待機してから、サブスクライバーの id と電話番号 (TNs) を読み取り、次に、NDIS\_\_\_の ReadyInfo の ReadyState メンバーをに設定します。WwanReadyStateInitialized.
 
-ミニポート ドライバーは OID に失敗することは決して\_WWAN\_準備\_必要があり、情報は常に正しいデバイスの準備完了状態を返します。
+ミニポートドライバーは、\_の OID\_の準備ができている\_情報ではなく、常に正しいデバイスの準備完了状態を返す必要があります。
 
-デバイスの準備完了状態が変更されるたびに、ミニポート ドライバーは MB サービスを常に通知する必要があります。
+ミニポートドライバーは、デバイスの準備ができているときに常に MB サービスに通知する必要があります。
 
-ミニポート ドライバーには、次の手順で、優れたユーザー エクスペリエンスを提供する必要がありますに従います。
+優れたユーザーエクスペリエンスを提供するには、ミニポートドライバーが次の手順に従う必要があります。
 
--   PIN1 がロックされている場合のミニポート ドライバーが準備完了の状態のイベント通知を送信する必要が最初**ReadyInfo.ReadyState**設定*WwanReadyStateDeviceLocked*します。 MB サービス要求を送信、ミニポート ドライバー、OID セット OID の\_WWAN\_ピン留めします。 デバイスのロックを解除し、ミニポート ドライバーを別の準備完了の状態のイベント通知を送信する必要があります後**ReadyInfo.ReadyState**に設定*WwanReadyStateInitialized*します。 ミニポート ドライバーにデバイスの準備完了状態を変更する必要があります PIN1 が正常にロックするまで*WwanReadyStateInitialized*します。
+-   PIN1 がロックされている場合、ミニポートドライバーは、 **ReadyInfo**を*WwanReadyStateDeviceLocked*に設定した状態のイベント通知を最初に送信する必要があります。 次に、MB サービスは、WWAN\_PIN\_oid セット要求の OID を送信します。 デバイスのロックが解除された後、ミニポートドライバーは、 **ReadyInfo**を*WwanReadyStateInitialized*に設定した状態で、別の準備完了イベント通知を送信する必要があります。 PIN1 が正常にロック解除されるまで、ミニポートドライバーでは、デバイスの準備完了状態を*WwanReadyStateInitialized*に変更することはできません。
 
--   ミニポート ドライバーでイベント通知の送信する必要がありますまず**ReadyInfo.ReadyState**設定*WwanReadyStateSimNotInserted* MB サービスが SIM カードが月として、存在しない場合、ミニポート ドライバーを読み込むときにSIM カードが挿入または削除を許可するデバイスの場合があります。 ミニポート ドライバーと別のイベント通知を送信する必要があります、デバイスに SIM カードのホットな挿入を検出する機能がある場合は、 **ReadyInfo.ReadyState**設定*WwanReadyStateInitialized*ときに、ユーザーは、SIM を挿入します。
+-   ミニポートドライバーは、まず、ReadyInfo を使用してイベント通知を送信する必要があります。*この場合、* MB サービスが sim カードが存在しない場合はミニポートドライバーを読み込む場合は、sim カードを使用できるデバイスの場合もあり**ます。** 挿入または削除されます。 デバイスに SIM カードのホット挿入を検出する機能がある場合、ミニポートドライバーは、ユーザーが SIM を挿入するときに、ReadyState を*WwanReadyStateInitialized*に設定**し**て、別のイベント通知を送信する必要があります。
 
--   サービス アクティブ化の状態を検出する機能を搭載するデバイスを設定する必要があります**ReadyInfo.ReadyState**に*WwanReadyStateNotActivated*します。 さらに、ミニポート ドライバーでは、サービスのアクティブ化をサポートする場合、ミニポート ドライバーが要求を受信 OID セット OID の\_WWAN\_サービス\_アクティブ化します。 サービスのアクティブ化が正常に完了、ミニポート ドライバーと別のイベント通知を送信する必要があります**ReadyInfo.ReadyState**設定*WwanReadyStateInitialized*します。
+-   サービスのアクティブ化の状態を検出する機能を持つデバイスは、 **ReadyInfo**を*WwanReadyStateNotActivated*に設定する必要があります。 さらに、ミニポートドライバーがサービスのアクティブ化をサポートしている場合、ミニポートドライバーは oid\_WWAN\_サービス\_アクティブ化の OID セット要求を受け取ります。 サービスのアクティブ化が正常に完了した場合、ミニポートドライバーは、ReadyInfo を*WwanReadyStateInitialized*に設定**し**て別のイベント通知を送信する必要があります。
 
--   ミニポート ドライバーを特定のファームウェアのリビジョンを必要とする必要があります、適切なファームウェアのリビジョンが使用できることを確認します。 ミニポート ドライバーが設定してイベント通知のトランザクションを完了する必要があります、ファームウェアのリビジョンが利用できない場合**ReadyInfo.ReadyState**に*WwanReadyStateFailure*します。
+-   特定のファームウェアのリビジョンを必要とするミニポートドライバーは、正しいファームウェアのリビジョンが使用可能であることを確認する必要があります。 ファームウェアのリビジョンが使用できない場合は、 **ReadyInfo**を*WwanReadyStateFailure*に設定して、ミニポートドライバーがイベント通知トランザクションを完了する必要があります。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -55,11 +55,11 @@ OID\_WWAN\_準備\_情報がデバイスの準備完了の状態、その Subscr
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>Windows 7 および Windows の以降のバージョンで使用できます。</p></td>
+<td><p>Windows 7 以降のバージョンの Windows で使用できます。</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Ntddndis.h (include Ndis.h)</td>
+<td>Ntddndis (Ndis .h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -67,11 +67,11 @@ OID\_WWAN\_準備\_情報がデバイスの準備完了の状態、その Subscr
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_WWAN\_準備\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_ready_info)
+[**NDIS\_WWAN\_準備完了\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_ready_info)
 
-[**NDIS\_状態\_WWAN\_準備\_情報**](ndis-status-wwan-ready-info.md)
+[**NDIS\_ステータス\_WWAN\_準備完了\_情報**](ndis-status-wwan-ready-info.md)
 
-[MB デバイスの準備](https://docs.microsoft.com/windows-hardware/drivers/network/mb-device-readiness)
+[デバイスの準備 (MB)](https://docs.microsoft.com/windows-hardware/drivers/network/mb-device-readiness)
 
  
 

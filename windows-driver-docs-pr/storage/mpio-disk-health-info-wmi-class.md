@@ -1,20 +1,20 @@
 ---
-title: MPIO\_ディスク\_ヘルス\_情報 WMI クラス
-description: MPIO\_ディスク\_ヘルス\_情報 WMI クラス
+title: MPIO\_DISK\_HEALTH\_INFO WMI クラス
+description: MPIO\_DISK\_HEALTH\_INFO WMI クラス
 ms.assetid: 5a3ca8be-8940-4ba4-9206-75d0c7c90d53
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 26f557913e60f271c03c4dd4ee10a2ee52c05abd
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 884804b867f4800c6357ce76874ab2685266febd
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386165"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844977"
 ---
-# <a name="mpiodiskhealthinfo-wmi-class"></a>MPIO\_ディスク\_ヘルス\_情報 WMI クラス
+# <a name="mpio_disk_health_info-wmi-class"></a>MPIO\_DISK\_HEALTH\_INFO WMI クラス
 
 
-MPIO ドライバーは、MPIO を使用して\_ディスク\_ヘルス\_情報 WMI クラスを管理しているすべての MPIO のディスクの正常性の統計情報を報告します。
+Mpio ドライバーは、MPIO\_DISK\_HEALTH\_INFO WMI クラスを使用して、管理対象のすべての MPIO ディスクの正常性の統計情報をレポートします。
 
 ```cpp
 class MPIO_DISK_HEALTH_INFO
@@ -41,7 +41,7 @@ class MPIO_DISK_HEALTH_INFO
 };
 ```
 
-このクラスの定義が WMI ツール スイートによってコンパイルされると、生成、 [ **MPIO\_ディスク\_正常性\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mpiowmi/ns-mpiowmi-_mpio_disk_health_info)データ構造体。 この WMI クラスに関連付けられているメソッドはありません。
+このクラス定義が WMI ツールスイートによってコンパイルされると、 [**MPIO\_DISK\_HEALTH\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mpiowmi/ns-mpiowmi-_mpio_disk_health_info)データ構造が生成されます。 この WMI クラスに関連付けられているメソッドはありません。
 
  
 

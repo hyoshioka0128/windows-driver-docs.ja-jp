@@ -1,25 +1,25 @@
 ---
 title: GUID_NDIS_GEN_INTERRUPT_MODERATION_PARAMETERS
-description: このトピックでは、NDIS WMI インターフェイスの GUID を GUID_NDIS_GEN_INTERRUPT_MODERATION_PARAMETERS について説明します。
+description: このトピックでは、NDIS WMI インターフェイスの GUID_NDIS_GEN_INTERRUPT_MODERATION_PARAMETERS GUID について説明します。
 ms.assetid: f4be78b8-421b-467a-a0a6-b8256b8a4ab3
 keywords:
-- GUID_NDIS_GEN_INTERRUPT_MODERATION_PARAMETERS、WDK GUID_NDIS_GEN_INTERRUPT_MODERATION_PARAMETERS ネットワーク ドライバー
+- GUID_NDIS_GEN_INTERRUPT_MODERATION_PARAMETERS、WDK GUID_NDIS_GEN_INTERRUPT_MODERATION_PARAMETERS ネットワークドライバー
 ms.date: 11/22/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c84baf4c2e7aa4f1a6394e896331f00a772e6de
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 24dfd38679bda5bdf09a93a6139a749b8aa6150d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382727"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842175"
 ---
-# <a name="guidndisgeninterruptmoderationparameters"></a>GUID_NDIS_GEN_INTERRUPT_MODERATION_PARAMETERS
+# <a name="guid_ndis_gen_interrupt_moderation_parameters"></a>GUID_NDIS_GEN_INTERRUPT_MODERATION_PARAMETERS
 
-WMI クライアントでは、ミニポート アダプターの割り込みのモデレート構成を設定するのに GUID_NDIS_GEN_PORT_PARAMETERS セットの GUID を使用できます。 この WMI GUID は、NDIS 6.0 および以降のバージョンでサポートされます。
+WMI クライアントは、GUID_NDIS_GEN_PORT_PARAMETERS set GUID を使用して、ミニポートアダプターの割り込みモデレーション構成を設定できます。 この WMI GUID は、NDIS 6.0 以降のバージョンでサポートされています。
 
-NDIS に変換するには、この GUID、 [OID_GEN_INTERRUPT_MODERATION](oid-gen-interrupt-moderation.md) OID を現在の構成を設定します。 すべての NDIS ミニポート ドライバーでは、この OID をサポートする必要があります。
+NDIS は、この GUID を[OID_GEN_INTERRUPT_MODERATION](oid-gen-interrupt-moderation.md) OID に変換し、現在の構成を設定します。 すべての NDIS ミニポートドライバーは、この OID をサポートする必要があります。
 
-WMI の入力バッファーが含まれています、 [NDIS_WMI_SET_HEADER](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_wmi_set_header)が続く構造体、 [NDIS_INTERRUPT_MODERATION_PARAMETERS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_interrupt_moderation_parameters)構造体。
+WMI 入力バッファーには、 [NDIS_WMI_SET_HEADER](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_wmi_set_header)構造体の後に[NDIS_INTERRUPT_MODERATION_PARAMETERS](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_interrupt_moderation_parameters)構造体が含まれています。
 
-ポート パラメーターの詳細については、次を参照してください。 [OID_GEN_INTERRUPT_MODERATION](oid-gen-interrupt-moderation.md)します。
+ポートパラメーターの詳細については、「 [OID_GEN_INTERRUPT_MODERATION](oid-gen-interrupt-moderation.md)」を参照してください。
 

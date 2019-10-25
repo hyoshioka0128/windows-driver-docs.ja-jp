@@ -1,40 +1,40 @@
 ---
 title: OID_SWITCH_NIC_UPDATED
-description: HYPER-V 拡張可能スイッチのプロトコルのエッジは、拡張可能スイッチのドライバー スタックを OID_SWITCH_NIC_UPDATED のオブジェクト識別子 (OID) セット要求を発行します。
+description: Hyper-v 拡張可能スイッチのプロトコルエッジは、OID_SWITCH_NIC_UPDATED のオブジェクト識別子 (OID) セット要求を拡張可能なスイッチドライバースタックに発行します。
 ms.assetid: C1B446A3-861F-41B4-99EF-C7CB45F86F39
 ms.date: 08/08/2017
-keywords: -OID_SWITCH_NIC_UPDATED ネットワーク ドライバーが Windows Vista 以降
+keywords: -Windows Vista 以降の OID_SWITCH_NIC_UPDATED ネットワークドライバー
 ms.localizationpriority: medium
-ms.openlocfilehash: 961da96e3927cc093e9f5b945c466dd18bb5f087
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1b2e8e5bd806e8ce87f10a797bd6e972f2529996
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67366574"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843941"
 ---
-# <a name="oidswitchnicupdated"></a>OID\_スイッチ\_NIC\_更新日
+# <a name="oid_switch_nic_updated"></a>OID\_スイッチ\_NIC\_更新されました
 
 
-HYPER-V 拡張可能スイッチのプロトコルのエッジの OID オブジェクト識別子 (OID) セット要求を発行する\_切り替える\_NIC\_拡張可能スイッチのドライバー スタックを更新します。 この OID 要求では、ネットワーク アダプターのパラメーターの更新プログラムの拡張可能スイッチの拡張機能を基になるに通知します。 OID は、Nic が接続された既にを切断プロセスを開始していないに対してのみ発行されます。 これらの実行時の構成変更を含めることができます**NicFriendlyName**、 **NetCfgInstanceId**、 **MTU**、 **NumaNodeId**、 **PermanentMacAddress**、 **VMMacAddress**、 **CurrentMacAddress**、および**VFAssigned**します。
+Hyper-v 拡張可能スイッチのプロトコルエッジは、OID\_スイッチ\_NIC のオブジェクト識別子 (OID) セット要求を発行し、\_拡張可能なスイッチドライバースタックに更新します。 この OID 要求は、ネットワークアダプターのパラメーターの更新について、基になる拡張可能なスイッチ拡張機能に通知します。 OID は、既に接続されていて、切断プロセスを開始していない Nic に対してのみ発行されます。 これらの実行時構成の変更には、 **NicFriendlyName**、 **netcfginstanceid**、 **MTU**、 **numPermanentMacAddress deid**、、 **vmmacaddress**、 **currentmacaddress**、および vfassigned を含めることができます。
 
-**InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体にはへのポインターが含まれています、 [ **NDIS\_スイッチ\_NIC\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_switch_nic_parameters)構造体。
+[**Ndis\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造体の**informationbuffer**メンバーには、 [**ndis\_SWITCH\_NIC\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_parameters)構造体へのポインターが含まれています。
 
 <a name="remarks"></a>注釈
 -------
 
-**PortId**のメンバー、 [ **NDIS\_スイッチ\_NIC\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_switch_nic_parameters)構造では、ポートを指定する、更新プログラム通知が行わします。 拡張可能スイッチ拡張機能の OID クエリ要求を発行して拡張可能スイッチには、これと他のポートのパラメーター情報を取得できます[OID\_切り替える\_ポート\_配列](oid-switch-port-array.md)します。
+[**NDIS\_スイッチ\_NIC\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_parameters)構造体の**ポート id**メンバーは、更新通知を行うポートを指定します。 拡張可能なスイッチ拡張機能では、 [oid\_スイッチ\_ポート\_配列](oid-switch-port-array.md)の oid クエリ要求を発行することによって、拡張可能スイッチ上のこのポートとその他のポートのパラメーター情報を取得できます。
 
-**インデックス**のメンバー、 [ **NDIS\_スイッチ\_NIC\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_switch_nic_parameters)構造体は、ネットワーク アダプターのインデックスを指定します。対象の更新の通知が行われました。 指定したネットワーク アダプター**インデックス**値がで指定された拡張可能スイッチ ポートに接続されている、 **PortId**メンバー。 これらのインデックス値の詳細については、次を参照してください。[ネットワーク アダプターのインデックス値](https://docs.microsoft.com/windows-hardware/drivers/network/network-adapter-index-values)します。
+[**NDIS\_スイッチ\_NIC\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_parameters)構造体の**インデックス**メンバーは、更新通知を行うネットワークアダプターのインデックスを指定します。 指定された**インデックス**値を持つネットワークアダプターは、**ポート id**メンバーによって指定された拡張可能なスイッチポートに接続されています。 これらのインデックス値の詳細については、「[ネットワークアダプターのインデックス値](https://docs.microsoft.com/windows-hardware/drivers/network/network-adapter-index-values)」を参照してください。
 
-拡張機能は、OID の要求を設定する OID の処理の次のガイドラインに従う必要があります\_スイッチ\_NIC\_更新日。
+この拡張機能は、次のガイドラインに従って OID\_スイッチ\_\_NIC のセット要求を処理する必要があります。
 
--   拡張機能は変更しないで、 [ **NDIS\_スイッチ\_NIC\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_switch_nic_parameters) OID 要求に関連付けられている構造体。
--   拡張機能では、基になる拡張機能をこの OID セット要求を常に転送する必要があります。 拡張機能は、要求を完了する必要があります。
--   拡張機能は、OID の独自の OID セット要求を発行する必要があります\_スイッチ\_NIC\_更新されました。
+-   この拡張機能では、OID 要求に関連付けられている[**NIC\_パラメーター構造\_、NDIS\_スイッチ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_parameters)を変更することはできません。
+-   拡張機能は、常にこの OID セット要求を基になる拡張機能に転送する必要があります。 拡張機能は要求を完了できません。
+-   拡張機能は、OID\_スイッチ\_NIC\_更新された独自の OID セット要求を発行してはなりません。
 
-### <a name="return-status-codes"></a>リターン状態コード
+### <a name="return-status-codes"></a>ステータスコードを返す
 
-拡張可能スイッチの基になるミニポート edge OID の OID のクエリ要求が完了すると\_切り替える\_NIC\_更新し、次のステータス コードを返します。
+拡張可能スイッチの基になるミニポートエッジは、OID\_スイッチの OID クエリ要求を完了し\_NIC\_更新し、次のステータスコードを返します。
 
 <table>
 <colgroup>
@@ -50,7 +50,7 @@ HYPER-V 拡張可能スイッチのプロトコルのエッジの OID オブジ�
 <tbody>
 <tr class="odd">
 <td><p>NDIS_STATUS_SUCCESS</p></td>
-<td><p>OID 要求は正常に完了しました。</p></td>
+<td><p>OID 要求が正常に完了しました。</p></td>
 </tr>
 </tbody>
 </table>
@@ -68,11 +68,11 @@ HYPER-V 拡張可能スイッチのプロトコルのエッジの OID オブジ�
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>NDIS 6.30 以降をサポートします。</p></td>
+<td><p>NDIS 6.30 以降でサポートされています。</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Ntddndis.h (include Ndis.h)</td>
+<td>Ntddndis (Ndis .h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -81,17 +81,17 @@ HYPER-V 拡張可能スイッチのプロトコルのエッジの OID オブジ�
 
 
 ****
-[*DereferenceSwitchNic*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_dereference_switch_nic)
+[*DereferenceSwitchNic*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_dereference_switch_nic)
 
-[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
+[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)
 
-[**NDIS\_SWITCH\_NIC\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_switch_nic_parameters)
+[**NDIS\_スイッチ\_NIC\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_parameters)
 
 [OID\_スイッチ\_NIC\_切断](oid-switch-nic-disconnect.md)
 
 [OID\_スイッチ\_ポート\_配列](oid-switch-port-array.md)
 
-[*ReferenceSwitchNic*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_reference_switch_nic)
+[*上書き/Nic*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_reference_switch_nic)
 
  
 

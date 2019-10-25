@@ -4,24 +4,24 @@ description: MSiSCSI\_InitiatorInstanceFailureEvent WMI クラス
 ms.assetid: 58ddfaf7-d2ec-4b06-8eef-f7b07285963d
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 1d50afa102299a7a928be302acb7da5646211460
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6db66e08b4f80e2f078b95f4f97025670bf7f102
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384333"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845359"
 ---
-# <a name="msiscsiinitiatorinstancefailureevent-wmi-class"></a>MSiSCSI\_InitiatorInstanceFailureEvent WMI クラス
+# <a name="msiscsi_initiatorinstancefailureevent-wmi-class"></a>MSiSCSI\_InitiatorInstanceFailureEvent WMI クラス
 
 
 ## <span id="ddk_msiscsi_initiatorinstancefailureevent_wmi_class_kr"></span><span id="DDK_MSISCSI_INITIATORINSTANCEFAILUREEVENT_WMI_CLASS_KR"></span>
 
 
-MSiSCSI\_InitiatorInstanceFailureEvent WMI クラスは、発信側インスタンスのエラーが発生したときにイベントを発生させます。
+MSiSCSI\_InitiatorInstanceFailureEvent WMI クラスは、イニシエーターインスタンスの障害が発生したときにイベントを発生させます。
 
-このクラスは、記憶域ミニポート ドライバーの特定のインスタンスに関連付けられているため、ミニポート ドライバーは、ミニポート ドライバーを管理する特定の物理デバイス オブジェクト (PDO) の名前を使用して、クラスを登録する必要があります。
+このクラスは記憶域ミニポートドライバーの特定のインスタンスに関連付けられているため、ミニポートドライバーは、ミニポートドライバーが管理する特定の物理デバイスオブジェクト (PDO) の名前を使用してクラスを登録する必要があります。
 
-MSiSCSI\_InitiatorInstanceFailureEvent クラスで定義されます*Mgmt.mof*します。
+MSiSCSI\_InitiatorInstanceFailureEvent クラスは、*管理 .mof*で定義されています。
 
 ```cpp
 class MSiSCSI_InitiatorInstanceFailureEvent : WMIEvent {
@@ -37,7 +37,7 @@ class MSiSCSI_InitiatorInstanceFailureEvent : WMIEvent {
 };
 ```
 
-WMI ツールのスイートでは、上記のクラス定義をコンパイルするときに生成、 [ **MSiSCSI\_InitiatorInstanceFailureEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsimgt/ns-iscsimgt-_msiscsi_initiatorinstancefailureevent)データ構造体。
+WMI ツールスイートは、前のクラス定義をコンパイルするときに、 [**Msiscsi\_InitiatorInstanceFailureEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/iscsimgt/ns-iscsimgt-_msiscsi_initiatorinstancefailureevent)データ構造体を生成します。
 
  
 

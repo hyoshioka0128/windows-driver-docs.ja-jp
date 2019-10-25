@@ -1,58 +1,58 @@
 ---
 title: OID_NIC_SWITCH_ENUM_VFS
-description: 上にあるドライバーまたはユーザー モード アプリケーションでは、配列を取得する OID_NIC_SWITCH_ENUM_VFS のオブジェクト識別子 (OID) メソッド要求を発行します。
+description: 前のドライバーまたはユーザーモードアプリケーションが、配列を取得するために OID_NIC_SWITCH_ENUM_VFS のオブジェクト識別子 (OID) メソッド要求を発行します。
 ms.assetid: ABACB70C-9307-4560-93DD-0475AD1FFF10
 ms.date: 08/08/2017
-keywords: -OID_NIC_SWITCH_ENUM_VFS ネットワーク ドライバーが Windows Vista 以降
+keywords: -Windows Vista 以降の OID_NIC_SWITCH_ENUM_VFS ネットワークドライバー
 ms.localizationpriority: medium
-ms.openlocfilehash: fddccb0e5ee1df3cb076d37ec0db31483386c329
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7e9acf7303d8f3f5af0d6ca11ce589116ac6f8be
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67380852"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844087"
 ---
-# <a name="oidnicswitchenumvfs"></a>OID\_NIC\_スイッチ\_ENUM\_VFS
+# <a name="oid_nic_switch_enum_vfs"></a>OID\_NIC\_スイッチ\_列挙型\_VFS
 
 
-上にあるドライバーまたはユーザー モード アプリケーションの OID オブジェクト識別子 (OID) メソッド要求の発行\_NIC\_スイッチ\_ENUM\_VFS 配列を取得します。 配列内の各要素は、NIC にアタッチされている属性の PCI Express (PCIe) 仮想機能 (VF) は、ネットワーク アダプターの NIC のスイッチのスイッチを指定します。
+それ以降のドライバーまたはユーザーモードアプリケーションは、OID\_NIC\_\_\_スイッチのオブジェクト識別子 (OID) メソッド要求を発行して、配列を取得します。 配列の各要素は、ネットワークアダプターの NIC スイッチの NIC スイッチに接続されている PCI Express (PCIe) 仮想関数 (VF) の属性を指定します。
 
-この OID クエリ要求から正常に戻った後、 **InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体以下を含むバッファーへのポインターが含まれます。
+この OID クエリ要求から正常に戻った後、 [**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造の**informationbuffer**メンバーには、次を含むバッファーへのポインターが含まれています。
 
--   [ **NDIS\_NIC\_スイッチ\_VF\_情報\_配列**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_info_array)配列内の要素の数を定義する構造体。
+-   [**NDIS\_NIC\_スイッチ\_VF\_INFO\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_info_array)配列内の要素の数を定義する配列構造体です。
 
--   配列の[ **NDIS\_NIC\_スイッチ\_VF\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_info)構造体。 各構造体には、NIC のスイッチのネットワーク アダプターの 1 つの VF に関する情報が含まれています。 VF がアタッチされている NIC の OID メソッド要求をスイッチに[OID\_NIC\_スイッチ\_割り当て\_VF](oid-nic-switch-allocate-vf.md)します。
+-   [**VF\_INFO 構造体\_の NDIS\_NIC\_スイッチ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_info)の配列。 これらの各構造体には、ネットワークアダプターの NIC スイッチ上の単一の VF に関する情報が含まれています。 VF は、Oid による oid メソッドの要求を介して NIC スイッチに接続されます。 [\_nic\_スイッチによって\_vf が割り当て\_](oid-nic-switch-allocate-vf.md)ます。
 
-    **注**  VFs が添付されていない場合、ネットワーク アダプター上の NIC スイッチに、 **NumElements**のメンバー、 [ **NDIS\_NIC\_スイッチ\_VF\_情報\_配列**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_info_array)構造を設定に 0 と no [ **NDIS\_NIC\_スイッチ\_VF\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_info)構造体が返されます。
+    **注**  ネットワークアダプターの nic スイッチに VFs が接続されていない場合は、NDIS\_NIC\_スイッチの**numelements**メンバー [ **\_VF\_INFO\_配列**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_info_array)構造体が0に設定され、NDIS がありません[ **\_NIC\_スイッチ\_VF\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_info)構造が返されます。
 
      
 
 <a name="remarks"></a>注釈
 -------
 
-上にあるドライバーとユーザー モード アプリケーションは、OID の OID メソッド要求を発行\_NIC\_切り替える\_ENUM\_VFS VFs を列挙するためには、ネットワーク アダプターの NIC のスイッチに接続します。
+それ以降のドライバーやユーザーモードアプリケーションは OID\_NIC\_スイッチの OID メソッド要求を発行して、ネットワークアダプターの NIC スイッチに接続されている VFs を列挙\_列挙型\_します。
 
-ドライバーまたはアプリケーションは、OID 要求を発行して、前に初期化する必要があります、 [ **NDIS\_NIC\_スイッチ\_VF\_情報\_配列**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_info_array)要求と共に渡される構造体。 ドライバーまたはアプリケーションは、初期化するときに、次のガイドラインに従う必要があります、 **NDIS\_NIC\_スイッチ\_VF\_情報\_配列**構造体。
+ドライバーまたはアプリケーションが OID 要求を発行する前に、要求と共に渡される、 [**VF\_INFO\_配列の構造\_、NDIS\_NIC\_スイッチ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_info_array)を初期化する必要があります。 ドライバーまたはアプリケーションは、 **NDIS\_NIC\_スイッチ\_VF\_情報\_配列**構造体を初期化するときに、次のガイドラインに従う必要があります。
 
--   場合は、NDIS\_NIC\_スイッチ\_VF\_情報\_配列\_ENUM\_ON\_特定\_スイッチ フラグに設定されて、**フラグ**メンバー、ドライバーまたはアプリケーションを設定する必要があります、 **SwitchId** SR-IOV ネットワーク アダプターで NIC スイッチ識別子へのメンバー。 この方法でこれらのメンバーを設定して指定された NIC スイッチ、SR-IOV ネットワーク アダプターに対してのみ、VF の情報が返されます。
+-   NDIS\_NIC\_スイッチ\_VF\_情報\_配列\_特定の\_スイッチフラグが**Flags**メンバーで設定されている場合では、ドライバーまたはアプリケーションが**Switchid**メンバーを sr-iov ネットワークアダプターの NIC スイッチ識別子に設定する必要があります。 この方法でこれらのメンバーを設定することにより、SR-IOV ネットワークアダプターの指定された NIC スイッチに対してのみ VF 情報が返されます。
 
-    **注**  上にあるドライバーとユーザー モード アプリケーションの OID クエリ要求を発行して NIC スイッチの識別子を取得できます[OID\_NIC\_切り替える\_ENUM\_スイッチ](oid-nic-switch-enum-switches.md)します。
+    [\_列挙型\_スイッチ、oid\_nic\_スイッチ](oid-nic-switch-enum-switches.md)の oid クエリ要求を発行することによって、後続のドライバーおよびユーザーモードアプリケーションが nic スイッチ識別子を**取得  こと**ができます。
 
      
 
--   場合、**フラグ**メンバーが 0 に設定されている、ドライバーまたはアプリケーションを設定する必要があります、 **SwitchId**メンバーをゼロにします。 この方法でこれらのメンバーを設定して、VF 情報がすべての返されます NIC は、SR-IOV ネットワーク アダプターのスイッチします。
+-   **Flags**メンバーが0に設定されている場合、ドライバーまたはアプリケーションは**switchid**メンバーを0に設定する必要があります。 この方法でこれらのメンバーを設定することにより、SR-IOV ネットワークアダプターのすべての NIC スイッチに対して VF 情報が返されます。
 
-**注**  以降 Windows Server 2012 では、Windows サポート NIC スイッチの既定値のみ、ネットワーク アダプター。 設定されているフラグに関係なく、**フラグ**、メンバー、 **SwitchId** NDIS にメンバーを設定する必要があります\_既定\_スイッチ\_id。
+**注**  windows Server 2012 以降では、ネットワークアダプターの既定の NIC スイッチのみがサポートされます。 **Flags**メンバーで設定されているフラグに関係なく、 **SWITCHID**メンバーを NDIS\_既定\_スイッチ\_ID に設定する必要があります。
 
  
 
-NIC のスイッチの詳細については、次を参照してください。 [NIC スイッチ](https://docs.microsoft.com/windows-hardware/drivers/network/nic-switches)します。
+NIC スイッチの詳細については、「 [Nic スイッチ](https://docs.microsoft.com/windows-hardware/drivers/network/nic-switches)」を参照してください。
 
-### <a name="return-status-codes"></a>リターン状態コード
+### <a name="return-status-codes"></a>ステータスコードを返す
 
-NDIS OID の OID メソッド要求を処理する\_NIC\_スイッチ\_ENUM\_ミニポート ドライバーの VFS 要求。 ドライバーにはこの OID 要求が発行するされません。
+NDIS では、OID\_NIC\_スイッチの OID メソッド要求を処理します。これにより、ミニポートドライバーの\_列挙型\_VFS 要求が処理されます。 ドライバーは、この OID 要求を発行しません。
 
-NDIS が、OID を処理するときに\_NIC\_スイッチ\_ENUM\_VFS 要求と、次のステータス コードの 1 つを返します。
+NDIS が OID\_NIC を処理するときに、\_列挙\_型の VFS 要求\_スイッチによって、次のステータスコードのいずれかが返されます。
 
 <table>
 <colgroup>
@@ -68,23 +68,23 @@ NDIS が、OID を処理するときに\_NIC\_スイッチ\_ENUM\_VFS 要求と�
 <tbody>
 <tr class="odd">
 <td><p>NDIS_STATUS_SUCCESS</p></td>
-<td><p>OID 要求は正常に完了しました。</p></td>
+<td><p>OID 要求が正常に完了しました。</p></td>
 </tr>
 <tr class="even">
 <td><p>NDIS_STATUS_NOT_SUPPORTED</p></td>
-<td><p>ミニポート ドライバーでは、シングル ルート I/O 仮想化 (SR-IOV) インターフェイスをサポートしていませんか、またはインターフェイスを使用して有効になっていません。</p></td>
+<td><p>ミニポートドライバーがシングルルート i/o 仮想化 (SR-IOV) インターフェイスをサポートしていないか、インターフェイスの使用が有効になっていません。</p></td>
 </tr>
 <tr class="odd">
 <td><p>NDIS_STATUS_INVALID_PARAMETER</p></td>
-<td><p>1 つ以上のメンバーの<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_info_array" data-raw-source="[&lt;strong&gt;NDIS_NIC_SWITCH_VF_INFO_ARRAY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_info_array)"> <strong>NDIS_NIC_SWITCH_VF_INFO_ARRAY</strong> </a>構造が無効な値を指定します。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_info_array" data-raw-source="[&lt;strong&gt;NDIS_NIC_SWITCH_VF_INFO_ARRAY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_info_array)"><strong>NDIS_NIC_SWITCH_VF_INFO_ARRAY</strong></a>構造体の1つ以上のメンバーに無効な値が含まれています。</p></td>
 </tr>
 <tr class="even">
 <td><p>NDIS_STATUS_INVALID_LENGTH</p></td>
-<td><p>情報バッファーが小さすぎます。 NDIS セット、<strong>データ。METHOD_INFORMATION します。BytesNeeded</strong>内のメンバー、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)"> <strong>NDIS_OID_REQUEST</strong> </a>構造体に必要な最小バッファー サイズ。</p></td>
+<td><p>情報バッファーが短すぎます。 NDIS はデータを設定<strong>します。METHOD_INFORMATION.</strong> <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a>構造体の中で必要とされる最小バッファーサイズに対して、bytesneeded 必要です。</p></td>
 </tr>
 <tr class="odd">
 <td><p>NDIS_STATUS_FAILURE</p></td>
-<td><p>他の理由から、要求が失敗しました。</p></td>
+<td><p>他の理由で要求が失敗しました。</p></td>
 </tr>
 </tbody>
 </table>
@@ -102,11 +102,11 @@ NDIS が、OID を処理するときに\_NIC\_スイッチ\_ENUM\_VFS 要求と�
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>NDIS 6.30 以降をサポートします。</p></td>
+<td><p>NDIS 6.30 以降でサポートされています。</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Ntddndis.h (include Ndis.h)</td>
+<td>Ntddndis (Ndis .h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -115,13 +115,13 @@ NDIS が、OID を処理するときに\_NIC\_スイッチ\_ENUM\_VFS 要求と�
 
 
 ****
-[**NDIS\_NIC\_スイッチ\_VF\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_info)
+[**NDIS\_NIC\_スイッチ\_VF\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_info)
 
-[**NDIS\_NIC\_スイッチ\_VF\_情報\_配列**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_info_array)
+[**NDIS\_NIC\_スイッチ\_VF\_情報\_配列**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_info_array)
 
-[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
+[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)
 
-[OID\_NIC\_スイッチ\_ALLOCATE\_VF](oid-nic-switch-allocate-vf.md)
+[OID\_NIC\_スイッチ\_割り当て\_VF](oid-nic-switch-allocate-vf.md)
 
 [OID\_NIC\_スイッチ\_作成\_スイッチ](oid-nic-switch-create-switch.md)
 

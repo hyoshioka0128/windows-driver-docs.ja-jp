@@ -1,35 +1,35 @@
 ---
 title: シリアル コントローラー ドライバーの概要
-description: Windows のすべてのバージョンでは、コント ローラーのシリアル デバイス ドライバーのサポートを提供します。
+description: Windows のすべてのバージョンで、シリアルコントローラーデバイスのドライバーサポートを提供します。
 ms.assetid: 1EA0221E-0F68-429B-9DA5-4AE2D3394A09
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a0577d62df4ec9e8d4e309f5110f129abc781e9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 548be9f69b02f116234f41eb1159605c5a51c9b0
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67356758"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845391"
 ---
 # <a name="serial-controller-drivers-overview"></a>シリアル コントローラー ドライバーの概要
 
-Windows のすべてのバージョンでは、コント ローラーのシリアル デバイス ドライバーのサポートを提供します。 用語*シリアル コント ローラー* 16550 ユニバーサル非同期受信側の送信元 (UART) または互換性のあるデバイスを指します。 シリアルのコント ローラーでは、逐次的に接続されている周辺機器と通信するシリアル ポートを持ちます。 シリアル通信をサポートするために Windows には、以下のようと Serenum.sys ドライバーとシリアル フレームワークの拡張機能 (SerCx および SerCx2) のバージョン 1 および 2 が含まれています。
+Windows のすべてのバージョンで、シリアルコントローラーデバイスのドライバーサポートを提供します。 "*シリアルコントローラー* " という用語は、16550 universal 非同期受信機 (UART) または互換性のあるデバイスを指します。 シリアルコントローラーにはシリアルポートがあり、シリアルポートはシリアルポートを介して、シリアル接続されている周辺機器と通信します。 シリアル通信をサポートするために、Windows には、シリアルの .sys および Serenum.sys ドライバーが含まれています。また、シリアルフレームワーク拡張機能 (SerCx および SerCx2) のバージョン1および2が含まれています。
 
-## <a name="serialsys-and-serenumsys"></a>以下のようと Serenum.sys
+## <a name="serialsys-and-serenumsys"></a>シリアル .sys と Serenum.sys
 
-Windows 2000 以降では、システムが指定したシリアル ドライバー、際に、サポート、スタンドアロンのシリアル ポート[COM ポート](configuration-of-com-ports.md)とマルチポート ボード。 シリアル列挙型のシステム提供のドライバー、Serenum.sys、スタックまたは互換性のあるシリアル ポート ドライバーによって制御されているシリアル ポートに接続されているデバイスを列挙します。 通常、際に、Windows を実行している PC の場合の上にある COM ポート (COM1、COM2、通常という名前) を制御します。 これらのポートは疎、rs-232 標準に準拠させるが、Pc をサポートするために進化してきました (たとえば、電圧レベル、暗証番号 (pin) の接続、およびハードウェア フロー制御)、事実上の標準をさらに組み込むことです。 詳細については、次を参照してください。[際に使用すると Serenum.sys](using-serial-sys-and-serenum-sys.md)します。
+Windows 2000 以降、システム提供のシリアルドライバーであるシリアルドライバーは、スタンドアロンのシリアルポート、 [COM ポート](configuration-of-com-ports.md)、およびマルチポートボードをサポートしています。 システム提供のシリアル列挙ドライバーである Serenum.sys は、シリアルポートに接続されているデバイスのうち、Serial .sys または互換性のあるシリアルポートドライバーによって制御されるものを列挙します。 通常、Windows を実行している PC の場合は、通常は COM1 や COM2 などという名前の COM ポートを制御します。 これらのポートは RS-232 標準に緩く準拠していますが、さらに、Pc をサポートするために進化した事実上標準 (電圧レベル、ピン接続、ハードウェアフロー制御など) も組み込まれています。 詳細については、「 [Using Serial .sys And serenum.sys](using-serial-sys-and-serenum-sys.md)」を参照してください。
 
-GitHub では、Windows ドライバーのサンプル リポジトリにはソース コードが含まれています、[シリアル](https://go.microsoft.com/fwlink/p/?LinkId=617962)と[Serenum](https://go.microsoft.com/fwlink/p/?LinkId=617961)ドライバーのサンプルと同様に動作し、代わりに、受信トレイの際にインストールすることができますSerenum.sys ドライバー。
+GitHub の Windows ドライバーサンプルリポジトリには、[シリアル](https://go.microsoft.com/fwlink/p/?LinkId=617962)および[serenum.sys](https://go.microsoft.com/fwlink/p/?LinkId=617961)ドライバーのサンプルのソースコードが含まれています。これらのサンプルは、と同様に動作し、受信トレイのシリアルドライバーと serenum.sys ドライバーの代わりにインストールできます。
 
 ## <a name="sercx-and-sercx2"></a>SerCx と SerCx2
 
-Windows 8 以降、SerCx は、integrated 回路基板の間でのシリアル通信をサポートするシステム提供のコンポーネントです。 SerCx は、カーネル モード ドライバー フレームワーク (KMDF) に拡張機能です。 この拡張機能は、シリアル コント ローラーのカスタムのドライバーの開発を簡略化します。 SerCx シリアル コント ローラーに共通する処理タスクの多くを処理することによって、シリアル コント ローラーの拡張機能ベースのドライバーを支援します。 このドライバーと通信を介して SerCx、 [SerCx デバイス ドライバー インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)します。
+Windows 8 以降では、SerCx はシステムによって提供されるコンポーネントで、印刷回路ボードの統合回線間のシリアル通信をサポートしています。 SerCx は、カーネルモードドライバーフレームワーク (KMDF) の拡張機能です。 この拡張機能により、シリアルコントローラー用のカスタムドライバーの開発が簡素化されます。 SerCx は、シリアルコントローラーに共通する多くの処理タスクを処理することによって、拡張機能に基づくシリアルコントローラードライバーを支援します。 このドライバーは、 [sercx デバイスドライバーインターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)を介して sercx と通信します。
 
-Windows 8.1 以降、SerCx2 によって SerCx が優先されます。 SerCx2 では、多くの機能強化をサイズとコント ローラーのシリアル ドライバーの複雑さを軽減する SerCx にします。 具体的には、SerCx2 とシリアル コント ローラーへのアクセスの競合が発生する I/O トランザクションをコーディネートのタイムアウトの管理に必要な処理作業のシリアル コント ローラーのドライバーを緩和します。 その結果、シリアル コント ローラー ドライバーは、小規模で単純なは。 シリアル コント ローラーのハードウェア ベンダーには、シリアルのコント ローラーのハードウェアに固有の機能を管理する、汎用コント ローラーのシリアル タスクを実行する SerCx2 に依存した拡張機能に基づくシリアル コント ローラー ドライバーが用意されています。 このドライバーと通信を介して SerCx2、 [SerCx2 デバイス ドライバー インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)します。
+Windows 8.1 以降では、SerCx は SerCx2 によって置き換えられています。 SerCx2 では、シリアルコントローラードライバーのサイズと複雑さを軽減するために、SerCx に対する多くの機能強化が行われています。 特に、SerCx2 はタイムアウトを管理するために必要な処理作業のシリアルコントローラードライバーを解放し、シリアルコントローラーへのアクセスのために競合する i/o トランザクションを調整します。 その結果、シリアルコントローラードライバーが小さく、より単純になります。 シリアルコントローラーのハードウェアベンダーは、シリアルコントローラーのハードウェア固有の機能を管理し、SerCx2 に依存して汎用のシリアルコントローラータスクを実行する、拡張ベースのシリアルコントローラードライバーを提供します。 このドライバーは、 [SerCx2 device driver インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)を介して SerCx2 と通信します。
 
-SerCx2 の詳細については、次を参照してください。[シリアルのフレームワークの拡張機能 (SerCx2) のバージョン 2 を使用して](using-version-2-of-the-serial-framework-extension.md)します。
+SerCx2 の詳細については、「 [Serial Framework Extension (SerCx2) のバージョン2の使用](using-version-2-of-the-serial-framework-extension.md)」を参照してください。
 
-ドライバー フレームワークの詳細については、次を参照してください[ドライバーの開発に WDF を使用する。](https://docs.microsoft.com/windows-hardware/drivers/wdf/using-the-framework-to-develop-a-driver)
+ドライバーフレームワークに関する一般的な情報については、「 [WDF を使用したドライバーの開発](https://docs.microsoft.com/windows-hardware/drivers/wdf/using-the-framework-to-develop-a-driver)」を参照してください。
 
 ## <a name="in-this-section"></a>このセクションの内容
 
@@ -46,12 +46,12 @@ SerCx2 の詳細については、次を参照してください。[シリアル
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="serial-i-o-request-interface.md" data-raw-source="[Serial I/O Request Interface](serial-i-o-request-interface.md)">I/O 要求をシリアル インターフェイス</a></p></td>
-<td><p>シリアル コント ローラーで、クライアントのポートに接続されている周辺機器を制御するには、アプリケーションまたは周辺機器のデバイス ドライバーは、ポートに I/O 要求を送信します。</p></td>
+<td><p><a href="serial-i-o-request-interface.md" data-raw-source="[Serial I/O Request Interface](serial-i-o-request-interface.md)">直列 i/o 要求インターフェイス</a></p></td>
+<td><p>シリアルコントローラー上のポートに接続されている周辺機器を制御するために、クライアントアプリケーションまたは周辺機器ドライバーが i/o 要求をポートに送信します。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="differences-between-sercx2-and-serial-sys.md" data-raw-source="[Differences Between SerCx2.sys and Serial.sys](differences-between-sercx2-and-serial-sys.md)">SerCx2.sys とスタックの違い</a></p></td>
-<td><p>受信トレイ Sercx2.sys とスタック ドライバー コンポーネントは、両方の実装が、<a href="serial-i-o-request-interface.md" data-raw-source="[serial I/O request interface](serial-i-o-request-interface.md)">シリアルの I/O 要求インターフェイス</a>、これらのコンポーネントに置き換えることはできません。 異なる要件のセットを満たすために、設計されています。</p></td>
+<td><p><a href="differences-between-sercx2-and-serial-sys.md" data-raw-source="[Differences Between SerCx2.sys and Serial.sys](differences-between-sercx2-and-serial-sys.md)">SerCx2 と http.sys の違い</a></p></td>
+<td><p>受信トレイ Sercx2 とシリアルドライバーコンポーネントの両方で<a href="serial-i-o-request-interface.md" data-raw-source="[serial I/O request interface](serial-i-o-request-interface.md)">シリアル i/o 要求インターフェイス</a>が実装されていますが、これらのコンポーネントは交換できません。 これらは、さまざまな要件のセットを満たすように設計されています。</p></td>
 </tr>
 </tbody>
 </table>

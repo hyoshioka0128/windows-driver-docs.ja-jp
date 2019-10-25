@@ -1,58 +1,58 @@
 ---
 title: NDIS_STATUS_WWAN_PACKET_SERVICE
-description: ミニポート ドライバーでは、パケットは、現在使用されているパケット データ サービスの種類の変更を通知するのになど、可用性の変更をサービスするときに、MB サービスに通知するのに NDIS_STATUS_WWAN_PACKET_SERVICE 通知を使用します。
+description: ミニポートドライバーは、NDIS_STATUS_WWAN_PACKET_SERVICE 通知を使用して、現在使用されているパケットデータサービスの種類への変更を通知するなど、パケットサービスの可用性が変化したときに MB サービスに通知します。
 ms.assetid: 7a04b54e-e07b-43dc-ba76-086d7521ff60
 ms.date: 08/08/2017
-keywords: -NDIS_STATUS_WWAN_PACKET_SERVICE ネットワーク ドライバーが Windows Vista 以降
+keywords: -Windows Vista 以降の NDIS_STATUS_WWAN_PACKET_SERVICE ネットワークドライバー
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e08ed1be5b53def4c3baf1b51b6d58384301694
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e12f5906cfad6030b88cd5615e289c6e19531597
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377624"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844760"
 ---
-# <a name="ndisstatuswwanpacketservice"></a>NDIS\_状態\_WWAN\_パケット\_サービス
+# <a name="ndis_status_wwan_packet_service"></a>NDIS\_ステータス\_WWAN\_パケット\_サービス
 
 
-ミニポート ドライバーを使用して、NDIS\_状態\_WWAN\_パケット\_パケットのパケット データの種類の変更を通知するなど、可用性の変更をサービスするときに、サービスに MB を通知サービスの通知現在使用されているサービスです。
+ミニポートドライバーは、NDIS\_ステータス\_WWAN\_パケット\_サービス通知を使用して、現在使用されているパケットデータサービスの種類への変更を通知するなど、パケットサービスの可用性が変化したときに MB サービスに通知します。
 
-ミニポート ドライバーには、この通知が不要なイベントを送信できます。
+ミニポートドライバーは、この通知を使用して、要請されていないイベントも送信できます。
 
-この通知を使用して、 [ **NDIS\_WWAN\_パケット\_サービス\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_packet_service_state)構造体。
+この通知では、 [**NDIS\_WWAN\_パケット\_サービス\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_packet_service_state)構造を使用します。
 
 <a name="remarks"></a>注釈
 -------
 
-CDMA ベースのミニポート ドライバーを自動的に開始できるパケットの場合に接続サービスがリソース割り当て/解放しない可能性があり、MB サービスにイベント通知を送信することができます。
+CDMA ベースのミニポートドライバーは、リソースの割り当て/解放が可能でない場合にパケットアタッチサービスを自動的に開始し、MB サービスにイベント通知を送信できます。
 
-ミニポート ドライバーは、イベント通知に関する次のガイドラインに従う必要があります。
+ミニポートドライバーは、イベント通知に関する次のガイドラインに従う必要があります。
 
--   ミニポート ドライバーを設定する必要があります**AvailableDataClasses** WWAN に設定されている\_データ\_クラス\_ミニポート ドライバーの初期化時に NONE。 その後、ミニポート ドライバーする必要がありますサービスに通知 MB に変更があるたびに**AvailableDataClasses**します。
+-   ミニポートドライバーは、ミニポートドライバーの初期化中に、[指定されたデータ\_クラス\_しない] を [WWAN\_データ**に設定する**] を設定する必要があります。 その後、空きポートドライバーは、空き**Dataclを**変更するたびに、MB サービスに通知する必要があります。
 
--   ミニポート ドライバーを設定する必要があります**CurrentDataClass** WWAN に\_データ\_クラス\_ミニポート ドライバーの初期化時に NONE。 その後、ミニポート ドライバーする必要がありますサービスに通知 MB に変更があるたびに**CurrentDataClass**します。 ミニポート ドライバーは、NDIS を送信する必要があります\_状態\_リンク\_状態通知の場合に変更**CurrentDataClass**送信変更されます。 または、リンク速度を受信します。
+-   ミニポートドライバーは、ミニポートドライバーの初期化中に、 **CurrentDataClass**を WWAN\_DATA\_クラス\_設定する必要があります。 その後、 **CurrentDataClass**に変更があった場合は常に、ミニポートドライバーが MB サービスに通知する必要があります。 **CurrentDataClass**への変更によって送信または受信リンク速度が変更された場合、ミニポートドライバーは NDIS\_状態\_リンク\_状態通知を送信する必要があります。
 
--   パケットのサービスでの変更状態の接続がある場合に、ミニポート ドライバーは MB サービスに通知する必要があります。
+-   ミニポートドライバーは、パケットサービスのアタッチ状態が変更されるたびに、MB サービスに通知する必要があります。
 
-ミニポート ドライバーに返す必要があります*クエリ*次の規則に従って結果。
+ミニポートドライバーは、次の規則に従って*クエリ*の結果を返す必要があります。
 
--   ミニポート ドライバーが WWAN を返す必要があります\_状態\_成功**WwanPacketServiceStateAttaching**デバイスがパケットをアタッチしようとしたときにします。
+-   ミニポートドライバーは、デバイスがパケット接続を試行するたびに、 **Wwanpacketservicestateattaching**で WWAN\_の状態\_SUCCESS を返す必要があります。
 
--   ミニポート ドライバーが WWAN を返す必要があります\_状態\_成功**WwanPacketServiceStateDetaching**デバイスがパケット デタッチしようとしたときにします。
+-   デバイスがパケットを切断しようとするたびに、ミニポートドライバーは、 **Wwanpacketservicestatedetaching**で WWAN\_の状態\_SUCCESS を返す必要があります。
 
--   デバイスは、最終的な状態では、ミニポート ドライバーは WWAN を返す必要があります\_状態\_適切な現在の状態と共に成功 ( **WwanPacketServiceStateAttached**または**WwanPacketServiceStateDetached**)
+-   デバイスが最終状態になると、ミニポートドライバーは、適切な現在の状態と共に、WWAN\_STATUS\_SUCCESS を返す必要があります ( **Wwanpacketservicestateattached**または**Wwanpacketservicestateattached はデタッチ**されています)。
 
--   ミニポート ドライバーする必要がありますクラスの一覧をすべて使用可能なデータのです。だけでなく、最高データ クラス使用できます。 両方に適用*クエリ*イベント通知と同様に操作します。
+-   ミニポートドライバーは、使用可能なすべてのデータクラスを一覧表示する必要があります。使用可能な最高のデータクラスだけではありません。 これは、*クエリ*操作とイベント通知の両方に適用されます。
 
-ミニポート ドライバーに返す必要があります*設定*次の規則に従って結果。
+ミニポートドライバーは、次の規則に従って*設定*された結果を返す必要があります。
 
--   WWAN を返す\_状態\_成功すると場合、*設定*で要求**WwanPacketServiceActionAttach**、サービスによって発行されると、デバイスがパケットに接続された状態で既に。
+-   **Wwanpacketserviceactionattach**で*Set* request がサービスによって発行され、デバイスが既にパケット接続されている状態になっている場合、WWAN\_STATUS\_SUCCESS を返します。
 
--   WWAN を返す\_状態\_成功すると場合、*設定*の要求**WwanPacketServiceActionDetach**、サービスによって発行されると、デバイスがパケットからデタッチされた状態で既に。
+-   **Wwanpacketserviceactiondetach**による*Set*要求がサービスによって発行され、デバイスが既にパケットデタッチ状態になっている場合、WWAN\_STATUS\_SUCCESS が返されます。
 
--   一時的な状態を返すことはありません、*設定*要求。 最終状態のみ**WwanPacketServiceStateAttached**または**WwanPacketServiceStateDetached** WWANでパケットのサービス操作を正常に完了した後に返す必要がある\_状態\_成功
+-   *Set*要求の一時的な状態を返しません。 WWAN\_ステータス\_成功したパケットサービス操作が正常に完了した後に返される必要があるのは、最後の状態である**Wwanpacketservicestateattached**または**wwanpacketservicestateattached**場合のみです。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -63,11 +63,11 @@ CDMA ベースのミニポート ドライバーを自動的に開始できる�
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>Windows 7 および Windows の以降のバージョンで使用できます。</p></td>
+<td><p>Windows 7 以降のバージョンの Windows で使用できます。</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Ndis.h</td>
+<td>Ndis. h</td>
 </tr>
 </tbody>
 </table>
@@ -75,7 +75,7 @@ CDMA ベースのミニポート ドライバーを自動的に開始できる�
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_WWAN\_パケット\_サービス\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_packet_service_state)
+[**NDIS\_WWAN\_パケット\_サービス\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_packet_service_state)
 
 [OID\_WWAN\_パケット\_サービス](oid-wwan-packet-service.md)
 

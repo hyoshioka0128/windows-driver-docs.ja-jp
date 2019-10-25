@@ -3,30 +3,30 @@ title: シリアル デバイスの読み取り/書き込みのタイムアウ�
 description: シリアル デバイスの読み取り/書き込みのタイムアウトを設定する
 ms.assetid: ed5b80a9-93cb-4e3f-9038-e715be35f206
 keywords:
-- シリアル ドライバー WDK、タイムアウト
-- タイムアウトの WDK シリアル デバイス
-- シリアル デバイス WDK、タイムアウト
-- タイムアウトの WDK シリアル デバイスを読み取る
-- タイムアウト WDK シリアル デバイスを書き込み
+- Serial driver WDK、タイムアウト
+- タイムアウト WDK シリアルデバイス
+- シリアルデバイス WDK、タイムアウト
+- 読み取りタイムアウト WDK シリアルデバイス
+- ライトタイムアウト WDK シリアルデバイス
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b9f584efeab0f858ebb42551d4439edf5525a965
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 07d7990770ae3ed4134bf26c1b92830bdaac1a32
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67356735"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845387"
 ---
 # <a name="setting-read-and-write-timeouts-for-a-serial-device"></a>シリアル デバイスの読み取り/書き込みのタイムアウトを設定する
 
-クライアントが使用できる、 [ **IOCTL\_シリアル\_設定\_タイムアウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddser/ni-ntddser-ioctl_serial_set_timeouts)読み取りと書き込みのため、システム提供の際にドライバーを使用するタイムアウト値を設定する要求要求します。 要求されたバイト数が転送されるか、タイムアウト イベントが発生するまでのバイトを転送する際に続行されます。
+クライアントは、 [**IOCTL\_serial\_set\_タイムアウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddser/ni-ntddser-ioctl_serial_set_timeouts)要求を使用して、システムによって提供される serial .sys ドライバーが読み取り要求と書き込み要求に使用するタイムアウト値を設定できます。 シリアル .sys は、要求されたバイト数が転送されるか、タイムアウトイベントが発生するまでバイトを転送し続けます。
 
-以下のように、タイムアウトの操作がユーザー モードの操作を準拠[COM ポート](configuration-of-com-ports.md)Microsoft Windows SDK の Windows ベースのサービスでサポートされている通信関数でサポートされています。
+Serial .sys のタイムアウト操作は、Microsoft Windows SDK 内の Windows ベースサービスでサポートされている通信機能によってサポートされる[COM ポート](configuration-of-com-ports.md)のユーザーモード操作に準拠しています。
 
-キューに配置中に、タイムアウトの操作は保留中の要求に適用されないことに注意してください。 タイムアウトの操作が要求を要求が最新になった後に適用 (要求を処理する際に起動時は、)。
+タイムアウト操作は、キューに入っている間、保留中の要求には適用されないことに注意してください。 タイムアウト操作は、要求が現在の状態になった後に、要求に適用されます (つまり、シリアル .sys は要求の処理を開始します)。
 
 読み取りと書き込みのタイムアウトの詳細については、次を参照してください。
 
-- [**シリアル\_タイムアウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddser/ns-ntddser-_serial_timeouts) Ntddser.h ヘッダー ファイルで、Windows Driver Kit (WDK) で構造体。
+- Windows Driver Kit (WDK) の Ntddser ヘッダーファイル内の[**シリアル\_タイムアウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddser/ns-ntddser-_serial_timeouts)構造体。
 
-- [ **SetCommTimeouts** ](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-setcommtimeouts)関数と[ **COMMTIMEOUTS** ](https://docs.microsoft.com/windows/desktop/api/winbase/ns-winbase-_commtimeouts)構造の Windows ベースのサービスでサポートされている、Windows SDK。
+- [**Setcommtimeouts**](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-setcommtimeouts)関数と、Windows SDK の Windows ベースサービスでサポートされている[**commタイムアウト**](https://docs.microsoft.com/windows/desktop/api/winbase/ns-winbase-_commtimeouts)構造体。

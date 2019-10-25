@@ -1,179 +1,179 @@
 ---
-Description: よく寄せられる型-C# の USB コネクタでの Windows システムを構築したい Oem の質問です。
-title: よく寄せられる質問 - Windows システム上の C-USB 型コネクタ
+Description: USB タイプ C コネクタを使用して Windows システムを構築する必要がある Oem 向けのよく寄せられる質問。
+title: FAQ-Windows システムでの USB タイプ-C コネクタ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cf0fe390047cdfb56f12883d905e64b32aac8aa4
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ec045e2702731f2542d91625d4b2f56c4d880466
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363912"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845005"
 ---
-# <a name="faq-usb-type-c-connector-on-a-windows-system"></a>よくあるご質問:Windows システムにおける USB Type-C コネクタ
+# <a name="faq-usb-type-c-connector-on-a-windows-system"></a>FAQ: Windows システムでの USB タイプ C コネクタ
 
-**Windows バージョン**:
+**Windows のバージョン**:
 
 * Windows 10 デスクトップ エディション (Home、Pro、Enterprise、Education)
 * Windows 10 Mobile
 
-一般的な USB 型-C# のコネクタでの Windows システムを構築したい Oem のディスカッション ポイント。
+USB タイプ C コネクタを使用して Windows システムを構築する必要がある Oem 向けの一般的な説明です。
 
-* [USB タイプ-c connector の機能](#usb-type-c-connector-features)
-* [オペレーティング システム入力代替モードを DP 2 レーン vs など、ネゴシエートする必要があります。配布ポイントの 4 レーン](#operating-system-input-into-which-alternate-mode-needs-to-be-negotiated-such-as-dp-2-lane-vs-dp-4-lane)
-* [型から C と PD 充電 os 起動前](#pre-os-charging-with-type-c-and-pd)
-* [Continuum のようなドッキングのシナリオを有効にする USB ホストがある場合に、電話の充電](#charging-the-phone-when-it-is-a-usb-host-to-enable-docking-scenarios-like-continuum)
-* [ビルボードの USB デバイスの Windows 10 Mobile のサポート](#windows10-mobile-support-of-usb-billboard-devices)
-* [Windows の以前のバージョンでサポートの USB 型-C#](#support-for-usb-type-c-on-earlier-versions-of-windows)
-* [UCSI が Windows の以前のバージョンでサポートします。](#ucsi-support-on-earlier-versions-of-windows)
+* [USB タイプ-C コネクタの機能](#usb-type-c-connector-features)
+* [代替モードのネゴシエートが必要なオペレーティングシステム入力 (DP 2-lane と DP 4-lane など)](#operating-system-input-into-which-alternate-mode-needs-to-be-negotiated-such-as-dp-2-lane-vs-dp-4-lane)
+* [タイプ C と PD による OS の課金](#pre-os-charging-with-type-c-and-pd)
+* [デバイスが USB ホストである場合に電話を請求して、連続性のようなドッキングシナリオを有効にする](#charging-the-phone-when-it-is-a-usb-host-to-enable-docking-scenarios-like-continuum)
+* [Windows 10 Mobile の USB ビルボードデバイスのサポート](#windows10-mobile-support-of-usb-billboard-devices)
+* [以前のバージョンの Windows での USB タイプ C のサポート](#support-for-usb-type-c-on-earlier-versions-of-windows)
+* [以前のバージョンの Windows での UCSI のサポート](#ucsi-support-on-earlier-versions-of-windows)
 * [UCSI の実装をテストする方法](#how-to-test-an-implementation-of-ucsi)
-* [条件と、さまざまなエラーの UI](#conditions-and-ui-for-the-different-errors)
-* [PD プロバイダーおよび PD プロバイダーではないシステムに PD コンシューマーに PD 以外のポートを接続します。](#connecting-a-non-pd-port-to-a-pd-provider-and-a-pd-consumer-to-a-system-that-is-not-a-pd-provider)
-* [これらの機能をサポートしていない PC に Thunderbolt や SuperMHL、PCI express を接続します。](#connecting-thunderbolt-supermhl-or-pci-express-to-a-pc-that-does-not-support-those-capabilities)
-* [サポートと MTP 経由で USB 型-C# Windows での制限事項](#support-and-limitations-for-mtp-over-usb-type-c-in-windows)
-* [どのダウン ストリーム デバイスおよびハブ接続し、USB コネクタ マネージャー (UCM) との通信](#how-downstream-devices-and-hubs-connect-and-communicate-with-usb-connector-manager-ucm)
-* [USB 型 C MUTT HLK テスト要件](#usb-type-c-mutt-requirements-for-hlk-tests)
-* [Microsoft で同じ Windows 10 SKU 間のデータ転送の P2P のサポートします。](#microsoft-support-for-p2p-data-transfer-between-the-same-windows10-sku)
-* [PMIC またはバッテリの充電状態を取得または設定のドライバーと UCM クラスの拡張機能 (UcmCx) 通信](#ucm-class-extension-ucmcx-communication-with-pmic-or-battery-driver-to-getset-charging-status)
-* [HLK サポートの USB 型-C#](#hlk-support-for-usb-type-c)
+* [さまざまなエラーの条件と UI](#conditions-and-ui-for-the-different-errors)
+* [Pd 以外のポートを pd プロバイダーに接続し、pd コンシューマーを pd プロバイダーではないシステムに接続する](#connecting-a-non-pd-port-to-a-pd-provider-and-a-pd-consumer-to-a-system-that-is-not-a-pd-provider)
+* [Thunderbolt icon、SuperMHL、または PCI express を、これらの機能をサポートしていない PC に接続する](#connecting-thunderbolt-supermhl-or-pci-express-to-a-pc-that-does-not-support-those-capabilities)
+* [Windows での USB タイプ C 経由の MTP のサポートと制限](#support-and-limitations-for-mtp-over-usb-type-c-in-windows)
+* [ダウンストリームデバイスとハブが USB コネクタマネージャー (UCM) に接続して通信する方法](#how-downstream-devices-and-hubs-connect-and-communicate-with-usb-connector-manager-ucm)
+* [HLK テストの USB タイプ-C MUTT の要件](#usb-type-c-mutt-requirements-for-hlk-tests)
+* [Microsoft では、同じ Windows 10 SKU 間での P2P データ転送をサポートしています](#microsoft-support-for-p2p-data-transfer-between-the-same-windows10-sku)
+* [UCM クラス拡張 (UcmCx) と PMIC またはバッテリドライバーとの通信による充電状態の取得/設定](#ucm-class-extension-ucmcx-communication-with-pmic-or-battery-driver-to-getset-charging-status)
+* [HLK USB タイプのサポート-C](#hlk-support-for-usb-type-c)
 * [UCSI](#ucsi)
-* [Windows 10 で実行されている UCSI 実装をテストします。](#test-a-ucsi-implementation-running-on-windows-10)
-* [Windows 10 で UCMCx クライアント ドライバーをテストします。](#test-a-ucmcx-client-driver-on-windows-10)
-* [VBus/VConn 制御とロール UCM クラスの拡張機能で処理操作を切り替える](#vbusvconn-control-and-role-switch-operations-handled-by-the-ucm-class-extension)
+* [Windows 10 で実行されている UCSI 実装をテストする](#test-a-ucsi-implementation-running-on-windows-10)
+* [Windows 10 で UCMCx クライアントドライバーをテストする](#test-a-ucmcx-client-driver-on-windows-10)
+* [UCM クラス拡張によって処理される VBus/Vbus 制御とロールスイッチ操作](#vbusvconn-control-and-role-switch-operations-handled-by-the-ucm-class-extension)
 
-## <a name="usb-type-c-connector-features"></a>USB タイプ-c connector の機能
+## <a name="usb-type-c-connector-features"></a>USB タイプ-C コネクタの機能
 
-### <a name="symmetric-and-reversible-design"></a>対称的、および元に戻すことのデザイン
+### <a name="symmetric-and-reversible-design"></a>対称および元に戻すことが可能な設計
 
-* コネクタは、*対称*します。 ケーブルでは、USB 型-C# のコネクタを使用するホストと関数のデバイスを許可する各 end の型から C の USB コネクタがあります。 コネクタを比較するイメージを次に示します。
-* コネクタは、*元に戻すこと*します。 従来のコネクタは、接続されている、「側-右上」する必要があります。 元に戻すことの設計では、コネクタを反転させることができます。
+* コネクタは*対称*です。 ケーブルには、各エンドで USB タイプの C コネクタがあり、ホストと機能デバイスで USB タイプ C コネクタを使用できます。 コネクタを比較するイメージを次に示します。
+* コネクタは、元に*戻す*ことができるように設計されています。 従来のコネクタは、"右側の" 側に接続する必要がありました。 元に戻せる設計では、コネクタを反転させることができます。
 
-### <a name="supports-all-usb-device-speeds"></a>すべての USB デバイス速度をサポートしています
+### <a name="supports-all-usb-device-speeds"></a>すべての USB デバイスの速度をサポートする
 
-コネクタは、低速、完全な高速、高速で (を含む SS +) SuperSpeed USB デバイスをサポートできます。
+コネクタは、低速、高速、高速、SuperSpeed (SS + を含む) の USB デバイスをサポートできます。
 
-### <a name="alternate-modes"></a>別のモード
+### <a name="alternate-modes"></a>代替モード
 
-コネクタがサポートできる*モードを代替*します。 別のモードの機能は、同時に USB 2.0 の維持および機能の充電中に、USB ケーブルで実行するための USB 以外のプロトコルを使用できます。 現在、最も人気のある別のモードは、ディスプレイ ポート等/DockPort と MHL は。
+コネクタは、*代替モード*をサポートできます。 代替モード機能を使用すると、usb ケーブル上で非 USB プロトコルを実行できます。同時に、usb 2.0 と充電の機能を維持できます。 現在、最も一般的な代替モードは DisplayPort/DockPort と MHL です。
 
 * **DisplayPort** /**DockPort**
 
-  この代替モードは、USB コネクタ経由で外部ディスプレイ ポート等を表示するには、オーディオ/ビデオをプロジェクトにできます。
+  この代替モードでは、ユーザーは、USB コネクタ経由で外部 DisplayPort を表示することができます。
 
 * **MHL**
 
-  MHL 代替モードはにより、ユーザーが外部プロジェクトのビデオ/オーディオ MHL をサポートするを表示します。
+  MHL の代替モードでは、ユーザーは MHL をサポートする外部ディスプレイにビデオ/オーディオを投影できます。
 
-* **ビルボードのエラー メッセージ**
+* **ビルボードのエラーメッセージ**
 
-  ユーザーが代替モードのデバイスを USB 型-C#、または接続されている PC または電話でサポートされていないアダプターを接続するデバイスまたはアダプターは問題のトラブルシューティングを行うユーザーを支援するエラー状態に関する情報を含むビルボード デバイスを公開できます。
+  接続されている PC または電話でサポートされていない USB タイプ C 代替モードデバイスまたはアダプターをユーザーが接続すると、デバイスまたはアダプターは、ユーザーが問題をトラブルシューティングするのに役立つエラー状態に関する情報を含むビルボードデバイスを公開できます。
 
-* **電力を制限します。**
+* **電力制限の向上**
 
-   USB タイプ-c コネクタを持つシステムが電源上限の引き上げ、5 v、3A、15W までをサポートできます。
+   USB タイプ C コネクタを使用するシステムでは、電力制限が高く、最大5V、3A、15W がサポートされています。
 
-   さらに、コネクタをサポートできます必要に応じて、*配信の電源を*で定義されている機能、 [USB 電力配信](https://go.microsoft.com/fwlink/p/?LinkID=623310)OEM です。 コネクタは、電源の配信をサポートする場合 USB 型-C# のシステム電源のソース プロバイダーとコンシューマーでき台の 100 w までをサポートします。
+   また、コネクタは、 [USB 電力配信](https://go.microsoft.com/fwlink/p/?LinkID=623310)の OEM によって定義されているように、必要に応じて、*電力配信*機能をサポートすることもできます。 コネクタが電力の配信をサポートしている場合は、USB タイプ C システムを電源供給プロバイダーまたはコンシューマーとして使用し、最大100W をサポートできます。
 
-* **USB 2 つのロールをサポートします。**
+* **USB デュアルロールのサポート**
 
-  周辺機器は USB 型-C# のコネクタでは、関数から従来のモバイル システムの役割をホストに変更すると、モバイル システムに接続できます。 同じシステムが PC に接続されているし、システムは、関数の役割を再開します。 PC ホストになります。
+  周辺機器は、USB タイプ C コネクタを使用してモバイルシステムに接続し、モバイルシステムの従来の役割を機能からホストに変更することができます。 同じシステムが PC に接続されている場合、システムは機能の役割を再開し、PC はホストになります。
 
-## <a name="operating-system-input-into-which-alternate-mode-needs-to-be-negotiated-such-as-dp-2-lane-vs-dp-4-lane"></a>オペレーティング システム入力代替モードを DP 2 レーン vs など、ネゴシエートする必要があります。配布ポイントの 4 レーン
+## <a name="operating-system-input-into-which-alternate-mode-needs-to-be-negotiated-such-as-dp-2-lane-vs-dp-4-lane"></a>代替モードのネゴシエートが必要なオペレーティングシステム入力 (DP 2-lane と DP 4-lane など)
 
-No. オペレーティング システム (または、Microsoft が提供するソフトウェア コンポーネント) には、別のモードを選択する際に一部再生されません。 コネクタは、USB コネクタ マネージャー (UCM) クライアント ドライバー具体的には、ドライバーによって決定されます。 ドライバーのハードウェア インターフェイスを使用して、コネクタのファームウェアと通信して行われます。
+いいえ。 オペレーティングシステム (または Microsoft が提供するすべてのソフトウェアコンポーネント) は、代替モードの選択には含まれません。 この決定は、コネクタのドライバー (具体的には、USB コネクタマネージャー (UCM) クライアントドライバーによって行われます。 ドライバーは、ハードウェアインターフェイスを使用してコネクタのファームウェアと通信することによってこれを行います。
 
-## <a name="pre-os-charging-with-type-c-and-pd"></a>型から C と PD 充電 os 起動前
+## <a name="pre-os-charging-with-type-c-and-pd"></a>タイプ C と PD による OS の課金
 
-Os 起動前の課金を有効にすると、OEM によって所有されます。 実装することもできます[USB 電力配信](https://go.microsoft.com/fwlink/p/?LinkID=623310)、料金は、オペレーティング システムを起動するまでの USB 型-c power レベルでします。
+プレ OS 課金の有効化は、OEM によって所有されています。 [Usb 電力配信](https://go.microsoft.com/fwlink/p/?LinkID=623310)を実装しないように選択することも、オペレーティングシステムを起動するまで Usb タイプ C の電源レベルで課金することもできます。
 
-## <a name="charging-the-phone-when-it-is-a-usb-host-to-enable-docking-scenarios-like-continuum"></a>Continuum のようなドッキングのシナリオを有効にする USB ホストがある場合に、電話の充電
+## <a name="charging-the-phone-when-it-is-a-usb-host-to-enable-docking-scenarios-like-continuum"></a>デバイスが USB ホストである場合に電話を請求して、連続性のようなドッキングシナリオを有効にする
 
-考慮する点を次に示します。
+次に、考慮すべき点をいくつか示します。
 
-* 実装する必要があります[USB 電力配信](https://go.microsoft.com/fwlink/p/?LinkID=623310)電源とデータ ロールが個別に交換するしないことができます。
-* ドックのアップ ストリームのポートは、USB 型-C# 仕様で定義されている課金 UFP として実装する必要があります。 詳細については、4.8.4、バージョン 1.1 のセクションを参照してください。
-* ドックが DR を要求する必要があります\_、DFP、またはプル要求に問題を解決した場合は、スワップ\_UFP に問題を解決した場合は、スワップします。
+* 電源とデータの役割を個別に交換できるように、 [USB 電源配布](https://go.microsoft.com/fwlink/p/?LinkID=623310)を実装する必要があります。
+* Dock のアップストリームポートは、USB タイプ C 仕様で定義されている充電 UFP として実装する必要があります。 詳細については、セクション4.8.4、バージョン1.1 を参照してください。
+* DFP に解決された場合、dock は DR\_スワップを要求する必要があります。または、UFP に解決された場合は、PR\_スワップします。
 
-  初期 DFP は、電源は、データのロールを変更する必要があります。 初期 UFP は、電源シンク power ロールを変更する必要があります。 これらのコールバック関数の実装では、これらの操作を実行できます。
+  最初の DFP は電源であるため、データの役割を変更する必要があります。 初期 UFP は電源シンクなので、電源ロールを変更する必要があります。 これらの操作は、次のコールバック関数の実装で実行できます。
 
-## <a name="windows10-mobile-support-of-usb-billboard-devices"></a>ビルボードの USB デバイスの Windows 10 Mobile のサポート
+## <a name="windows10-mobile-support-of-usb-billboard-devices"></a>Windows 10 Mobile の USB ビルボードデバイスのサポート
 
-はい、に従って、USB ビルボードをサポートするデバイスに電話を接続する場合、[ビルボード デバイス仕様の USB デバイス クラス定義](https://go.microsoft.com/fwlink/p/?linkid=620207)ユーザーに通知されます。 USB コネクタ マネージャー (UCM) クライアント ドライバーは、通知を処理する必要はありません。 システムで、代替のモードが認識されない場合は、モードを入力しないでください。
+はい。スマートフォンを、[ビルボードデバイス仕様の Usb デバイスクラス定義](https://go.microsoft.com/fwlink/p/?linkid=620207)に従って、usb ビルボードをサポートするデバイスに接続すると、ユーザーに通知されます。 USB コネクタマネージャ (UCM) クライアントドライバは、通知を処理する必要がありません。 システムで代替モードが認識されない場合は、モードには入りません。
 
-## <a name="support-for-usb-type-c-on-earlier-versions-of-windows"></a>Windows の以前のバージョンでサポートの USB 型-C#
+## <a name="support-for-usb-type-c-on-earlier-versions-of-windows"></a>以前のバージョンの Windows での USB タイプ C のサポート
 
-USB タイプ-C は Windows 10 以前の Windows のバージョンではサポートされていません。
+USB タイプ C は、Windows 10 より前のバージョンの Windows ではサポートされていません。
 
-## <a name="ucsi-support-on-earlier-versions-of-windows"></a>UCSI が Windows の以前のバージョンでサポートします。
+## <a name="ucsi-support-on-earlier-versions-of-windows"></a>以前のバージョンの Windows での UCSI のサポート
 
-UCSI は Windows 10 以前の Windows のバージョンでサポートされていません。
+UCSI は、Windows 10 より前のバージョンの Windows ではサポートされていません。
 
 ## <a name="how-to-test-an-implementation-of-ucsi"></a>UCSI の実装をテストする方法
 
-実装をテストするで指定されたガイドラインに従って[USB 型-c 手動の相互運用性のテスト手順](type.md)します。 Windows 10 用 Windows ハードウェア ラボ キット (HLK) USB テストを実行することをお勧めします。 これらのテストが記載されて[USB の Windows ハードウェア認定キット テスト](windows-hardware-certification-kit-tests-for-usb.md)します。
+実装をテストするには、 [USB タイプ C の手動による相互運用性のテスト手順](type.md)に関するガイドラインに従ってください。 Windows 10 用 Windows ハードウェアラボキット (HLK) で USB テストを実行することをお勧めします。 これらのテストは、「 [Windows ハードウェア認定キットの USB 用テスト](windows-hardware-certification-kit-tests-for-usb.md)」に記載されています。
 
-## <a name="conditions-and-ui-for-the-different-errors"></a>条件と、さまざまなエラーの UI
+## <a name="conditions-and-ui-for-the-different-errors"></a>さまざまなエラーの条件と UI
 
-Windows 10 では、USB 型-C# のハードウェアとソフトウェアのさまざまな組み合わせでの制限事項についてユーザーを教育する USB 型から C のエラー メッセージのセットを表示できます。 たとえば、ユーザーが「デバイスが充電緩やかに変化」充電器は、型-C# の USB コネクタに接続されている場合はメッセージが十分に強力で、システムと互換性がないまたは充電中以外のポートに接続されているを取得する可能性があります。 詳細については、次を参照してください。 [USB 型 C Windows システムのメッセージのトラブルシューティングを行う](https://go.microsoft.com/fwlink/?LinkId=526894)します。
+Windows 10 では、usb タイプ C のハードウェアとソフトウェアのさまざまな組み合わせによる制限事項についてユーザーを教育するのに役立つ、一連の USB タイプ C エラーメッセージを表示できます。 たとえば、USB タイプ C コネクタに接続されているチャージャーが十分ではない場合、システムとの互換性がない場合、または充電ポート以外に接続されている場合、ユーザーは "デバイスが充電されています" というメッセージが表示されることがあります。 詳細については、「 [USB タイプ-C Windows システムのメッセージのトラブルシューティング](https://go.microsoft.com/fwlink/?LinkId=526894)」を参照してください。
 
-## <a name="connecting-a-non-pd-port-to-a-pd-provider-and-a-pd-consumer-to-a-system-that-is-not-a-pd-provider"></a>PD プロバイダーおよび PD プロバイダーではないシステムに PD コンシューマーに PD 以外のポートを接続します。
+## <a name="connecting-a-non-pd-port-to-a-pd-provider-and-a-pd-consumer-to-a-system-that-is-not-a-pd-provider"></a>Pd 以外のポートを pd プロバイダーに接続し、pd コンシューマーを pd プロバイダーではないシステムに接続する
 
-PD 以外のポートが USB 型-C# の現在のレベルを使用して、システムを請求しようとするとします。 詳細については、次を参照してください。 [USB 3.1 と USB 型-C# 仕様](https://go.microsoft.com/fwlink/p/?LinkId=699515)します。
+非 PD ポートは、USB タイプ C の現在のレベルを使用してシステムの課金を試行します。 詳細については、「 [usb 3.1 および Usb C 仕様](https://go.microsoft.com/fwlink/p/?LinkId=699515)」を参照してください。
 
-## <a name="connecting-thunderbolt-supermhl-or-pci-express-to-a-pc-that-does-not-support-those-capabilities"></a>これらの機能をサポートしていない PC に Thunderbolt や SuperMHL、PCI express を接続します。
+## <a name="connecting-thunderbolt-supermhl-or-pci-express-to-a-pc-that-does-not-support-those-capabilities"></a>Thunderbolt icon、SuperMHL、または PCI express を、これらの機能をサポートしていない PC に接続する
 
-代替モード機能では、同時に USB 2.0 の維持および機能の充電中に、USB ケーブルで実行するため (Thunderbolt、SuperMHL) などの USB 以外のプロトコルを使用できます。 ユーザーは、USB 型-c 代替モードのデバイスまたは接続されている PC または Windows 10 を実行している電話でサポートされていないアダプターを接続する場合は、エラー条件が検出され、ユーザーにメッセージが表示されます。
+代替モード機能を使用すると、usb ケーブル上で非 USB プロトコル (Thunderbolt icon、SuperMHL など) を実行できます。同時に、usb 2.0 と充電の機能が維持されます。 接続されている PC または Windows 10 を実行している電話でサポートされていない USB タイプ C 代替モードデバイスまたはアダプターをユーザーが接続すると、エラー状態が検出され、ユーザーにメッセージが表示されます。
 
-* デバイスまたはアダプターは、ビルボードのデバイスを公開する場合、ユーザーには、問題をトラブルシューティングを行うのに役立つエラー条件についての情報が表示されます。 Windows 10 では、ビルボードのデバイスに、インボックス ドライバーを提供し、ユーザー エラーが発生したことを通知します。
-* ユーザーは、エラー通知が表示される、「USB 接続の改善を試してください」可能性があります。 詳細については、次を参照してください。 [USB 型 C Windows システムのエラー メッセージ](introduction-to-usb-type-c-connectors.md#-4)します。
+* デバイスまたはアダプターがビルボードデバイスを公開すると、問題のトラブルシューティングに役立つエラー状態に関する情報が表示されます。 Windows 10 は、ビルボードデバイス用にインボックスドライバーを提供し、エラーが発生したことをユーザーに通知します。
+* "USB 接続を改善してみてください" というエラー通知がユーザーに表示される場合があります。 詳細については、「 [USB タイプ-C Windows システムのエラーメッセージ](introduction-to-usb-type-c-connectors.md#-4)」を参照してください。
 
-最適な結果を PC または電話ケーブルで別のモードのデバイスまたはアダプターの要件を満たしていることを確認します。
+最適な結果を得るには、代替モードのデバイスまたはアダプターの要件が PC または電話またはケーブルによって満たされていることを確認してください。
 
-## <a name="support-and-limitations-for-mtp-over-usb-type-c-in-windows"></a>サポートと MTP 経由で USB 型-C# Windows での制限事項
+## <a name="support-and-limitations-for-mtp-over-usb-type-c-in-windows"></a>Windows での USB タイプ C 経由の MTP のサポートと制限
 
-Windows 10 デスクトップ エディションの場合は、開始側のロールで MTP をサポートしていますWindows 10 Mobile では、応答側ロールの MTP をサポートします。
+Windows 10 for desktop エディションでは、開始側ロールで MTP がサポートされています。Windows 10 Mobile では、応答側ロールで MTP がサポートされています。
 
-## <a name="how-downstream-devices-and-hubs-connect-and-communicate-with-usb-connector-manager-ucm"></a>どのダウン ストリーム デバイスおよびハブ接続し、USB コネクタ マネージャー (UCM) との通信
+## <a name="how-downstream-devices-and-hubs-connect-and-communicate-with-usb-connector-manager-ucm"></a>ダウンストリームデバイスとハブが USB コネクタマネージャー (UCM) に接続して通信する方法
 
-UCM は独自のデバイス スタック (を参照してください[アーキテクチャ。Windows システムの USB 型-C# のデザイン](architecture--usb-type-c-in-a-windows-system.md))。 Windows 10 のサポート USB 型-C# にはには、別のクラス ドライバーが、さまざまな種類 C の USB コネクタと通信する方法を知っているかどうかを確認する必要なプラミングが含まれます。 USB 型-C# の Windows 10 のサポートを取得するためには、UCM デバイス スタックをプラグインする必要があります。
+UCM は独自のデバイススタックです (「[アーキテクチャ: Windows システム向けの USB タイプ C 設計](architecture--usb-type-c-in-a-windows-system.md)」を参照してください)。 USB タイプ C の Windows 10 のサポートには、さまざまなクラスドライバーが異なる種類の USB (C) コネクタと通信する方法を認識できるようにするために必要な構成要素が含まれています。 USB タイプ C の Windows 10 サポートを利用するには、UCM デバイススタックにプラグインする必要があります。
 
-## <a name="usb-type-c-mutt-requirements-for-hlk-tests"></a>USB 型 C MUTT HLK テスト要件
+## <a name="usb-type-c-mutt-requirements-for-hlk-tests"></a>HLK テストの USB タイプ-C MUTT の要件
 
-Windows 10 用 Windows HLK には、USB ホストと関数のコント ローラーのテストが含まれています。 システムをテストするには、C A USB アダプターを使用します。 これらのテストが記載されて[USB の Windows ハードウェア認定キット テスト](windows-hardware-certification-kit-tests-for-usb.md)します。
+Windows 10 用の windows HLK には、USB ホストと機能コントローラーのテストが含まれています。 システムをテストするには、USB C アダプターを使用します。 これらのテストは、「 [Windows ハードウェア認定キットの USB 用テスト](windows-hardware-certification-kit-tests-for-usb.md)」に記載されています。
 
-## <a name="microsoft-support-for-p2p-data-transfer-between-the-same-windows10-sku"></a>Microsoft で同じ Windows 10 SKU 間のデータ転送の P2P のサポートします。
+## <a name="microsoft-support-for-p2p-data-transfer-between-the-same-windows10-sku"></a>Microsoft では、同じ Windows 10 SKU 間での P2P データ転送をサポートしています
 
-これは、有効な接続ではありません。
+これは有効な接続ではありません。
 
-* デスクトップ エディションの Windows 10 を実行している 2 つの Pc に接続することはできません。
-* Windows 10 Mobile を実行している 2 つのモバイル デバイスを接続することはできません。
+* Windows 10 を実行する2台の Pc をデスクトップエディションとして接続することはできません。
+* Windows 10 Mobile を実行している2つのモバイルデバイスを接続することはできません。
 
-ユーザーがこのような接続を確立しようとすると、Windows では、エラー メッセージが表示されます。 詳細については、次を参照してください。 [USB 型 C Windows システムのエラー メッセージ](introduction-to-usb-type-c-connectors.md#-6)します。
+ユーザーがこのような接続を試みると、エラーメッセージが表示されます。 詳細については、「 [USB タイプ-C Windows システムのエラーメッセージ](introduction-to-usb-type-c-connectors.md#-6)」を参照してください。
 
-Windows Mobile デバイスと Windows デスクトップ デバイスの間の唯一の有効な接続です。
+有効な接続は、Windows Mobile デバイスと Windows デスクトップデバイスの間のみです。
 
-## <a name="ucm-class-extension-ucmcx-communication-with-pmic-or-battery-driver-to-getset-charging-status"></a>PMIC またはバッテリの充電状態を取得または設定のドライバーと UCM クラスの拡張機能 (UcmCx) 通信
+## <a name="ucm-class-extension-ucmcx-communication-with-pmic-or-battery-driver-to-getset-charging-status"></a>UCM クラス拡張 (UcmCx) と PMIC またはバッテリドライバーとの通信による充電状態の取得/設定
 
-ソフトウェア支援型のプラットフォームに充電 UcmCx が PMIC およびバッテリ サブシステムと通信します。 クライアント ドライバーは、ハードウェア インターフェイスを通じて、ハードウェアと通信することで、課金レベルを判断します。 ハードウェア依存のプラットフォームでは、埋め込みコント ローラーは充電責任を負います。 UcmCx には、プロセスの一部はありません。
+ソフトウェア支援型の課金プラットフォームでは、UcmCx は PMIC とバッテリサブシステムと通信します。 クライアントドライバーは、ハードウェアインターフェイスを介してハードウェアと通信することによって、充電レベルを決定する場合があります。 ハードウェア支援型のプラットフォームでは、埋め込みコントローラーは課金を担当します。 UcmCx はプロセスに含まれません。
 
-## <a name="hlk-support-for-usb-type-c"></a>HLK サポートの USB 型-C#
+## <a name="hlk-support-for-usb-type-c"></a>HLK USB タイプのサポート-C
 
-Windows HLK の Windows 10 では、USB 型-C# の特定のテストはありません。 Windows 10 用 Windows HLK で USB テストを実行することをお勧めします。 これらのテストが記載されて[USB の Windows ハードウェア認定キット テスト](windows-hardware-certification-kit-tests-for-usb.md)します。
+Windows 10 用 Windows HLK では、USB タイプ C 固有のテストはありません。 Windows HLK for Windows 10 では、USB テストを実行することをお勧めします。 これらのテストは、「 [Windows ハードウェア認定キットの USB 用テスト](windows-hardware-certification-kit-tests-for-usb.md)」に記載されています。
 
 ## <a name="ucsi"></a>UCSI
 
-USB タイプ C コネクタ システム ソフトウェア インターフェイス (UCSI) 仕様は、USB 型 C コネクタ システム ソフトウェア インターフェイス (UCSI) の機能について説明し、ハードウェア コンポーネントの設計者、システム ビルダー、レジスタとデータの構造を説明しますデバイス ドライバー開発者向け。 取得、仕様から[このサイト](https://go.microsoft.com/fwlink/p/?LinkId=703713)します。
+USB タイプ-C コネクタシステムソフトウェアインターフェイス (UCSI) 仕様には、USB タイプ C コネクタシステムソフトウェアインターフェイス (UCSI) の機能が記述されています。また、ハードウェアコンポーネントデザイナー、システムビルダー、およびデバイスドライバーの開発者。 [このサイト](https://go.microsoft.com/fwlink/p/?LinkId=703713)から仕様を取得します。
 
-Microsoft では、Windows、UcmUcsi.sys、仕様で定義されている機能を実装すると、インボックス ドライバーを提供します。 このドライバーは、埋め込みコント ローラーのシステムを対象としています。
+Microsoft では、仕様で定義されている機能を実装するインボックスドライバー (UcmUcsi) を提供しています。 このドライバーは、コントローラーが組み込まれているシステムを対象としています。
 
-## <a name="test-a-ucsi-implementation-running-on-windows-10"></a>Windows 10 で実行されている UCSI 実装をテストします。
+## <a name="test-a-ucsi-implementation-running-on-windows-10"></a>Windows 10 で実行されている UCSI 実装をテストする
 
-Windows 10 用 Windows HLK で USB テストを実行することをお勧めします。 これらのテストが記載されて[USB の Windows ハードウェア認定キット テスト](windows-hardware-certification-kit-tests-for-usb.md)します。
+Windows HLK for Windows 10 では、USB テストを実行することをお勧めします。 これらのテストは、「 [Windows ハードウェア認定キットの USB 用テスト](windows-hardware-certification-kit-tests-for-usb.md)」に記載されています。
 
-## <a name="test-a-ucmcx-client-driver-on-windows-10"></a>Windows 10 で UCMCx クライアント ドライバーをテストします。
+## <a name="test-a-ucmcx-client-driver-on-windows-10"></a>Windows 10 で UCMCx クライアントドライバーをテストする
 
-Windows 10 用 Windows HLK で USB テストを実行することをお勧めします。 これらのテストが記載されて[USB の Windows ハードウェア認定キット テスト](windows-hardware-certification-kit-tests-for-usb.md)します。
+Windows HLK for Windows 10 では、USB テストを実行することをお勧めします。 これらのテストは、「 [Windows ハードウェア認定キットの USB 用テスト](windows-hardware-certification-kit-tests-for-usb.md)」に記載されています。
 
-## <a name="vbusvconn-control-and-role-switch-operations-handled-by-the-ucm-class-extension"></a>VBus/VConn 制御とロール UCM クラスの拡張機能で処理操作を切り替える
+## <a name="vbusvconn-control-and-role-switch-operations-handled-by-the-ucm-class-extension"></a>UCM クラス拡張によって処理される VBus/Vbus 制御とロールスイッチ操作
 
-UCM クラスの拡張機能は、コネクタのデータまたは電源の方向を変更するオペレーティング システムから要求を取得する可能性があります。 クライアント ドライバーの実装を呼び出すときに、それらの要求を取得、 [ *EVT\_UCM\_コネクタ\_設定\_データ\_ロール*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucmmanager/nc-ucmmanager-evt_ucm_connector_set_data_role)と[ *EVT\_UCM\_コネクタ\_設定\_POWER\_ロール*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucmmanager/nc-ucmmanager-evt_ucm_connector_set_power_role)コールバック関数 (場合、コネクタPD を実装)。 実装では、クライアント ドライバーが必要なコントロール、VBUS と VCONN pin です。 これらのコールバック関数の詳細については、次を参照してください。[型-C# の USB コネクタ ドライバー](bring-up-a-usb-type-c-connector-on-a-windows-system.md)します。
+UCM クラスの拡張機能は、オペレーティングシステムから、コネクタのデータまたは電源の方向を変更する要求を受け取る場合があります。 これらの要求を取得すると、クライアントドライバーの[ *.evt\_UCM\_コネクタの実装が呼び出され\_\_データ\_ロール*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucmmanager/nc-ucmmanager-evt_ucm_connector_set_data_role)および[ *.evt\_UCM\_コネクタ\_設定され\_電力\_ロール*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucmmanager/nc-ucmmanager-evt_ucm_connector_set_power_role)コールバック関数 (コネクタが PD を実装している場合)。 実装では、クライアントドライバーは VBUS ピンと VBUS pin を制御する必要があります。 これらのコールバック関数の詳細については、「 [Write a USB Type-C コネクタ driver](bring-up-a-usb-type-c-connector-on-a-windows-system.md)」を参照してください。

@@ -4,15 +4,15 @@ description: 記憶域クラス ドライバーの RemoveDevice ルーチン
 ms.assetid: fbcbfbab-676a-43d3-aa63-0ea5e5f265d2
 keywords:
 - RemoveDevice
-- クエリの削除要求の WDK ストレージ
+- クエリ-削除要求の WDK ストレージ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 54f5a87648c25c83ea769ee481616d791131ee7d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1bbe81c56d26e1de1e97380c8f353d552e424acc
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368879"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845287"
 ---
 # <a name="storage-class-drivers-removedevice-routine"></a>記憶域クラス ドライバーの RemoveDevice ルーチン
 
@@ -20,33 +20,33 @@ ms.locfileid: "67368879"
 ## <span id="ddk_storage_class_drivers_removedevice_routine_kg"></span><span id="DDK_STORAGE_CLASS_DRIVERS_REMOVEDEVICE_ROUTINE_KG"></span>
 
 
-デバイスが削除される直前には、PnP マネージャーは、クラス ドライバーの最初を呼び出します[ **DispatchPnP** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch) PnP - クエリの削除要求で日常的な (IRP\_MJ\_でのPNP[。 **IRP\_MN\_クエリ\_削除\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-remove-device)します。 記憶域クラス ドライバーは、次のケースのいずれかでクエリの削除要求に失敗する必要があります。
+デバイスを削除しようとしているときに、PnP マネージャーはまず、PnP クエリ削除要求 (IRP\_MJ\_PNP と Irp\_を使用して、クラスドライバーの[**DispatchPnP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)ルーチンを呼び出します。 [ **\_デバイスの削除\_\_** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-remove-device) ストレージクラスドライバーは、次のいずれかの場合にクエリ削除要求を失敗させる必要があります。
 
--   デバイスには、システムのページング ファイルや休止状態ファイルが含まれています。
+-   デバイスには、システムページングファイルまたは休止状態ファイルが含まれています。
 
--   ドライバーは、(たとえば、巻き戻しまたはテープを書式設定など) が取り消されないが長い操作を実行しています。
+-   ドライバーが長時間の操作を実行しています。この操作はキャンセルできません (テープの巻き戻しやフォーマットなど)。
 
--   デバイス (作成) に未処理のハンドルがあります。
+-   デバイスへの未処理ハンドルがあります (が作成します)。
 
-記憶域クラス ドライバーも失敗するクエリの削除要求のクラッシュ ダンプ、デバイスが要求した場合クラッシュ ダンプを無効にこのようなデバイスを削除するため。
+また、このようなデバイスを削除するとクラッシュダンプが無効になるため、デバイスにクラッシュダンプが要求された場合、ストレージクラスドライバーはクエリ削除要求に失敗することもあります。
 
-記憶域クラス ドライバーは、状態を返す場合\_PnP マネージャーを呼び出して、クラス ドライバーのクエリの削除に応答の成功が要求*DispatchPnP* PnP 削除要求で日常的な (IRP\_MJ\_で PNP [ **IRP\_MN\_削除\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-remove-device))。 記憶域クラス ドライバーの*DispatchPnP*日常的ないずれかを呼び出す内部*RemoveDevice*ルーチンまたは同じ機能のインラインを実装します。
+ストレージクラスドライバーがクエリ削除要求に応答して STATUS\_SUCCESS を返した場合、PnP マネージャーは、PnP 削除要求 (IRP\_MJ\_PNP with Irp\_を使用して、クラスドライバーの*DispatchPnP*ルーチンを呼び出し[ **\_\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-remove-device)) を削除します。 ストレージクラスドライバーの*DispatchPnP*ルーチンは、内部*removedevice*ルーチンを呼び出すか、同じ機能をインラインで実装します。
 
-記憶域クラス ドライバーの*RemoveDevice*ルーチンは、次を実行する必要があります。
+ストレージクラスドライバーの*Removedevice*ルーチンは、次の操作を行う必要があります。
 
--   メモリや、ドライバーによって割り当てられた、イベントなど、優れたリソースを解放します。
+-   ドライバーによって割り当てられたメモリやイベントなど、未解決のリソースを解放します。
 
--   ドライバーによって、作成された場合は、シンボリック リンクを削除します。
+-   ドライバーによって作成されたシンボリックリンクがある場合は削除します。
 
--   デバイス オブジェクト (FDO) を削除します。
+-   デバイスオブジェクト (FDO) を削除します。
 
--   次の下位のドライバーに要求を転送します。
+-   要求を次の下位のドライバーに転送します。
 
-記憶域クラス ドライバーは、(たとえば、パーティション分割されたメディア デバイス上のパーティションを表すなど) にスタートアップ時の Pdo を作成、このような Pdo は、PnP マネージャーは、記憶域クラス ドライバーを削除要求を送信すると既に削除されています。
+記憶域クラスドライバーが起動時に PDOs を作成した場合 (パーティション分割されたメディアデバイスのパーティションを表す場合など)、PnP マネージャーが削除要求をストレージクラスドライバーに送信すると、このような PDOs は既に削除されています。
 
-デバイス オブジェクトが削除された場合は、参照カウントが 0 になるまで、システムでデバイス オブジェクトが解決しないゼロ以外の参照カウントがある後に、もサイレント モードで消えます。 ストレージ クラス ドライバーは、デバイス オブジェクトが削除された後にデバイス オブジェクトへのポインターを使用して試みませんする必要があります。
+デバイスオブジェクトが削除された後でも、0以外の参照カウントがある場合、デバイスオブジェクトはその参照カウントが0になるまでシステム内に保持され、その後、デバイスオブジェクトは警告なしに消えます。 デバイスオブジェクトが削除された後、ストレージクラスドライバーはデバイスオブジェクトポインターを使用しないようにする必要があります。
 
-削除要求の処理の詳細については、次を参照してください。[デバイスを削除する](https://docs.microsoft.com/windows-hardware/drivers/kernel/removing-a-device)します。
+削除要求の処理の詳細については、「[デバイスの削除](https://docs.microsoft.com/windows-hardware/drivers/kernel/removing-a-device)」を参照してください。
 
  
 

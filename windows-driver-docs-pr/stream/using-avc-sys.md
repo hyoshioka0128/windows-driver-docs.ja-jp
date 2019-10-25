@@ -3,17 +3,17 @@ title: Avc.sys の使用
 description: Avc.sys の使用
 ms.assetid: 3b4ec139-ff01-40bd-8e29-92f554180585
 keywords:
-- Avc.sys 関数ドライバーに関する Avc.sys 関数ドライバー WDK、
-- AV/C WDK、Avc.sys 使用状況
-- サブユニット サポート WDK AV/C
+- Avc 関数ドライバー WDK、Avc 関数ドライバーについて
+- AV/C WDK、Avc の使用
+- サブユニットは WDK AV/C をサポートします
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 582b892285a76714f8228a38d944f1f302374ba4
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 39f697fc5c418de4515ab45ee46e68f3d2ef97f9
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67373040"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841656"
 ---
 # <a name="using-avcsys"></a>Avc.sys の使用
 
@@ -21,47 +21,47 @@ ms.locfileid: "67373040"
 
 
 
-Windows の後にロードし、初期化*Avc.sys*、 *Avc.sys* (いずれかを含む IEEE 1394 バスに接続されている使用標準 AV/C 単体テストとサブユニット コマンド AV/C のすべてのデバイスで作業中のサブユニットを検出するには仮想のサブユニット コンピューターが仮想 AV/C 単位)。 *Avc.sys* active サブユニットのすべてのデバイス識別子 (Id) を生成します。 次に、 *Avc.sys*各サブユニットのサブユニットを適切なドライバーの読み込み、標準のプラグ アンド プレイ (PnP) メカニズムを使用します。 によって生成される、サブユニット ドライバーおよびサブユニットのデバイス識別子をインストールする INF ファイルに基づくサブユニット ドライバーが読み込まれるが選択されて*Avc.sys* 「 [AV/C デバイス Id](av-c-device-identifiers.md)します。 ユニットの情報のサブユニットのと組み合わせて、AV/C デバイスからデバイス id が生成された***SubunitType***と***SubunitID***フィールド。 サブユニットをサポートするドライバーはベンダー固有かサブユニットの型のジェネリックであることができます。 ほとんどのデジタル ビデオ_カメラのサブユニット ドライバーは、Microsoft のなど*Msdv.sys*します。
+Windows が*avc*を読み込んで初期化した後、avc は標準の Av/c ユニットとサブユニットコマンドを使用して、IEEE 1394 バスに接続されているすべての Av/c デバイス上のアクティブなサブユニットを検出します (コンピューターが仮想 AV である場合は、virtual サブユニットを含む) *。* /C 単位)。 次に、すべてのアクティブなサブユニットに対してデバイス識別子 (IDs) が生成さ*れます*。 次に、 *Avc*は標準のプラグアンドプレイ (PnP) メカニズムを使用して、各サブシステムに適切なサブユニットドライバーを読み込みます。 読み込まれるサブユニットドライバーは、サブシステムドライバーをインストールする INF ファイルと、 *Avc*によって生成されるサブユニットのデバイス id に基づいて選択され、「 [AV/C デバイス id](av-c-device-identifiers.md)」で説明されています。 デバイス id は、サブユニットの***SubunitType***および***SubunitID***フィールドと組み合わせて、AV/C デバイスのユニット情報から生成されます。 サブユニットをサポートするドライバーは、ベンダー固有のものにすることも、サブユニットの種類に対して汎用的なものにすることもできます。 たとえば、ほとんどの DV ビデオカメラのサブユニットドライバーは、Microsoft が提供する*Msdv. sys*です。
 
-サブユニット ドライバーとの通信*Avc.sys* WDM アーキテクチャに基づくすべてのドライバーで採用されている標準の IRP に基づくメカニズムを通じてします。 サブユニット ドライバーはの割り当てと、AV/C プロトコル ドライバーをドライバー スタック ダウン Irp を送信してその AV/C サブユニットと通信*Avc.sys*します。 I/O 要求を行うには、ヘッダー ファイルをインクルード*Avc.h*、これで、Microsoft Windows Driver Kit (WDK) に付属しています。
+サブシステムドライバーは、WDM アーキテクチャに基づくすべてのドライバーによって使用される標準の IRP ベースのメカニズムによって、 *Avc*と通信します。 サブシステムドライバーは、Irp/c プロトコルドライバー ( *Avc*) に対して irp を割り当ててドライバースタックに送信することで、その Av/c サブユニットと通信します。 I/o 要求を行うには、Microsoft Windows Driver Kit (WDK) に付属しているヘッダーファイル*Avc. h*をインクルードします。
 
-サブユニット ドライバーは、初期化によって処理される Irp *Avc.sys*します。 サブユニット ドライバーの設定の IRP **Parameters.DeviceIoControl.IoControlCode** IOCTL AV/C の目的の操作に対応するメンバー。
+サブシステムドライバーは、 *Avc*によって処理される irp を割り当て、初期化します。 サブユニットドライバーは、必要な AV/C 操作に対応する IOCTL に、IRP の**DeviceIoControl**のメンバーを設定します。
 
-*Avc.sys* 2 つのいずれかの登録[デバイス インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)に読み込まれたどのサブユニット ドライバー スタックによって、サポート (ピアまたは仮想)。 これらのインターフェイスは、機能を定義する*Avc.sys*サブユニット ドライバーのエクスポート、他のドライバー、およびアプリケーションを使用します。 *Avc.sys*有効または無効、ドライバーの PnP 状態に応じて、インターフェイスの状態を変更します。
+*Avc*は、2つの[デバイスインターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)のいずれかを登録します。これは、どのサブシステムドライバースタックが読み込まれたか (ピアまたは仮想) によって異なります。 これらのインターフェイスは、サブ*システム*ドライバー、その他のドライバー、および使用するアプリケーションについて、Avc によってエクスポートされる機能を定義します。 次に、ドライバーの PnP 状態に従って、インターフェイスの状態を有効または無効に変更し*ます*。
 
-*Avc.sys* GUID の新しいインスタンスを登録します\_AVC\_クラスの外部の AV/C サブユニット (ピア スタック) のサポートを提供する読み込まれた場合。 このインターフェイスには、次の I/O 制御 (IOCTL) コードのみがサポートされています。
+*Avc*は、外部 AV/C サブユニット (ピアスタック) のサポートを提供するために読み込まれた場合に、GUID\_AVC\_クラスの新しいインスタンスを登録します。 このインターフェイスは、次の i/o 制御 (IOCTL) コードのみをサポートしています。
 
--   [**IOCTL\_AVC\_クラス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ni-avc-ioctl_avc_class)
+-   [**IOCTL\_AVC\_クラス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ni-avc-ioctl_avc_class)
 
-IOCTL\_AVC\_クラスは、複数の関数コードをさらにサポートします。 インスタンスの子ドライバー *Avc.sys*がその親のデバイス オブジェクトを使用して、このインターフェイスにアクセスをサポートするピアのサブユニットが保証されます。
+IOCTL\_AVC\_クラスでは、複数の関数コードがサポートされています。 ピアサブユニットをサポートするために、 *Avc*のインスタンスの子ドライバーは、親デバイスオブジェクトを介してこのインターフェイスにアクセスできることが保証されています。
 
-GUID\_AVC\_クラス インターフェイスは、すべての IOCTL をサポートしている\_AVC\_関数コードでは、各関数のリファレンス ページ」の説明に従って、利用に関する制限事項があるクラスします。
+GUID\_AVC\_クラスインターフェイスは、すべての IOCTL\_AVC\_クラス関数コードをサポートしていますが、各関数のリファレンスページで説明されているように、使用に制限があります。
 
-*Avc.sys* GUID の新しいインスタンスを登録します\_仮想\_AVC\_クラス、仮想 AV/C サブユニット (仮想スタック) のサポートを提供する、読み込まれた場合。 このインターフェイスには、次の 4 つの I/O 制御 (IOCTL) コードがサポートされています。
+サブユニットは、仮想\_AVC\_クラスが読み込まれた場合、そのクラス\_の新しいインスタンスを登録して、仮想 AV/C (仮想スタック) をサポートできるようにし*ます*。 このインターフェイスは、次の4つの i/o 制御 (IOCTL) コードをサポートしています。
 
--   [**IOCTL\_AVC\_クラス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ni-avc-ioctl_avc_class)
+-   [**IOCTL\_AVC\_クラス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ni-avc-ioctl_avc_class)
 
--   [**IOCTL\_AVC\_UPDATE\_仮想\_サブユニット\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ni-avc-ioctl_avc_update_virtual_subunit_info)
+-   [**IOCTL\_AVC\_更新\_仮想\_サブユニット\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ni-avc-ioctl_avc_update_virtual_subunit_info)
 
--   [**IOCTL\_AVC\_削除\_仮想\_サブユニット\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ni-avc-ioctl_avc_remove_virtual_subunit_info)
+-   [**IOCTL\_AVC\_\_仮想\_サブユニット\_情報を削除します**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ni-avc-ioctl_avc_remove_virtual_subunit_info)
 
--   [**IOCTL\_AVC\_BUS\_RESET**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ni-avc-ioctl_avc_bus_reset)
+-   [**IOCTL\_AVC\_BUS\_リセット**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ni-avc-ioctl_avc_bus_reset)
 
-GUID\_仮想\_AVC\_クラス インターフェイスはすべて IOCTL をサポートしていません\_AVC\_クラス関数のコード。 個々 の関数の各コードのリファレンス ページでは、GUID にサポートされているかどうかを指定します\_仮想\_AVC\_クラスのインスタンスの*Avc.sys*します。
+GUID\_VIRTUAL\_AVC\_クラスインターフェイスは、すべての IOCTL\_AVC\_クラス関数コードをサポートしていません。 個々の関数コードのリファレンスページでは、各関数コードがサポートされているかどうかを指定します。このページでは、 *avc*の\_仮想\_AVC\_クラスのインスタンスが使用されます。
 
-IOCTL\_AVC\_クラス Irp がカーネル モード (通常はドライバーの通信) でを通じてのみサポートされて[ **IRP\_MJ\_内部\_デバイス\_コントロール**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-internal-device-control)します。 そのため、アプリケーションには、IOCTL によって提供される関数がアクセスできない直接\_AVC\_クラス IOCTL コード。
+IOCTL\_AVC\_クラスの Irp は、 [**irp\_MJ\_内部\_デバイス\_コントロール**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-internal-device-control)を介して、カーネルモード (通常はドライバー間通信) でのみサポートされます。 そのため、アプリケーションは、IOCTL\_AVC\_クラスの IOCTL コードによって提供される関数に直接アクセスすることはできません。
 
-最後の 3 つの IOCTL コードがカーネル モードとからのユーザー モードの両方でサポートされて[ **IRP\_MJ\_デバイス\_コントロール**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-device-control)します。 つまりがアプリケーションを送信できるこれらの Ioctl に直接*Avc.sys*します。
+最後の3つの IOCTL コードは、カーネルモードとユーザーモードの両方で、 [**IRP\_MJ\_デバイス\_コントロール**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-device-control)でサポートされています。 これは、アプリケーションがこれらの Ioctl を*Avc*に直接送信できることを意味します。
 
-IOCTL\_AVC\_クラス IOCTL コードは、実行する C AV/操作の詳細を説明する I/O 要求ブロック (IRB) では常に伴う必要があります。 IRB ヘッダーには、IRB の残りの部分の構造が決まり、関数の数が含まれています。 サイズと IRB 構造体は、関数によって異なります。 *Avc.sys* 2 つのカスタム IRBs を使用します。
+IOCTL\_AVC\_クラスの ioctl コードには、常に i/o 要求ブロック (IRB) が付随している必要があります。これにより、実行する AV/C 操作がさらに説明されます。 IRB ヘッダーには、IRB の残りの部分の構造を決定する関数番号が含まれています。 IRB 構造体とサイズは、関数によって異なります。 Avc は、次の2つのカスタム IRBs*を使用します*。
 
--   [**AVC\_コマンド\_IRB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ns-avc-_avc_command_irb)
+-   [**AVC\_コマンド\_IRB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ns-avc-_avc_command_irb)
 
--   [**AVC\_MULTIFUNC\_IRB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ns-avc-_avc_multifunc_irb)
+-   [**AVC\_MULTIFUNC\_IRB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ns-avc-_avc_multifunc_irb)
 
-これを選択 IRB サブユニット ドライバーを使用する必要がありますは、必要な関数に依存します。 詳細については、IOCTL\_AVC\_クラスの関数コードでサポートされている*Avc.sys、* を参照してください[AV/C プロトコル ドライバー関数コード](https://docs.microsoft.com/windows-hardware/drivers/stream/av-c-protocol-driver-function-codes)。
+サブユニットドライバーが使用する必要がある IRB の選択は、目的の関数によって異なります。 Avc でサポートされている IOCTL\_AVC\_クラス関数コードの詳細については、「 [AV/C プロトコルドライバーの関数コード](https://docs.microsoft.com/windows-hardware/drivers/stream/av-c-protocol-driver-function-codes)」*を*参照してください。
 
-サブユニット ドライバーによって使用されるプライマリ AV/C 関数は[ **AVC\_関数\_コマンド**](https://docs.microsoft.com/windows-hardware/drivers/stream/avc-function-command)、使用、AVC\_コマンド\_IRB 構造体。 **AVC\_関数\_コマンド**AV/C を要求して、対応する C AV/応答の受信を送信します。 AV/C コマンドを構築するための詳細については、 *Avc.sys*AV/C オペコードと各コマンドのオペランドのサブユニット ドライバーが提供する必要があります。
+サブメニュードライバーによって使用されるプライマリ AV/C 関数は、avc [ **\_function\_コマンド**](https://docs.microsoft.com/windows-hardware/drivers/stream/avc-function-command)であり、AVC\_コマンド\_IRB 構造体を使用します。 **AVC\_関数\_コマンド**は、Av/c 要求を送信し、対応する Av/c 応答を受信します。 AV/C コマンドのビルドの詳細は、 *Avc*によって処理されますが、サブシステムドライバーは、各コマンドの Av/c オペコードとオペランドを提供する必要があります。
 
  
 

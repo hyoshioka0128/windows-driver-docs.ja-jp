@@ -4,12 +4,12 @@ description: SCSI パススルー要求を使用したクラス ドライバー�
 ms.assetid: 7f26e0bc-f01b-4430-aa9f-0f684fdbc2ec
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fe7404bb612d108552ef4e8c4a02361f680e9784
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 46668169e6911e62dc4cbccee4f507643d72cca6
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368370"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845095"
 ---
 # <a name="bypassing-the-class-driver-with-scsi-pass-through-requests"></a>SCSI パススルー要求を使用したクラス ドライバーのバイパス
 
@@ -17,13 +17,13 @@ ms.locfileid: "67368370"
 ## <span id="ddk_bypassing_the_class_driver_with_scsi_pass_through_requests_kg"></span><span id="DDK_BYPASSING_THE_CLASS_DRIVER_WITH_SCSI_PASS_THROUGH_REQUESTS_KG"></span>
 
 
-ほとんどの場合は、クラス ドライバーは、SCSI ポートと上位レベルのドライバーとアプリケーション間のすべての通信を仲介します。 ただし、一部のターゲット デバイスは、クラス ドライバーを必要はありません。 このようなデバイス ドライバーは、「パススルー」要求と呼ばれる要求のクラスを使用して SCSI ポートと直接通信する必要があります。 パススルーの要求を使用するには、上位のコンポーネントはこれを行うには、クラス ドライバーに基づいて証明書利用者のではなく、CDB、要求で使用される設定に必須です。
+ほとんどの場合、クラスドライバーは SCSI ポートと上位レベルのドライバーおよびアプリケーション間のすべての通信を仲介します。 ただし、一部のターゲットデバイスにはクラスドライバーがありません。 このようなデバイスのドライバーは、"パススルー" 要求と呼ばれる要求のクラスを使用して、SCSI ポートと直接通信する必要があります。 パススルー要求を使用するには、クラスドライバーに依存せずに、要求で使用される CDB を設定するために、上位レベルのコンポーネントが必要です。
 
-SCSI パススルー要求から成る型 IRP の IRP\_MJ\_デバイス\_の IOCTL コードによるコントロール[ **IOCTL\_SCSI\_渡す\_経由**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddscsi/ni-ntddscsi-ioctl_scsi_pass_through)または[ **IOCTL\_SCSI\_渡す\_を通じて\_直接**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddscsi/ni-ntddscsi-ioctl_scsi_pass_through_direct)します。 クラスのドライバーが IRP を設定する義務はクラスのドライバーを介して、要求が成功した場合**MinorFunction**コード IRP を\_MJ\_デバイス\_コントロール。 SCSI ポートは、パススルー要求がクラス ドライバーをバイパスするかどうかを判断するには、この値を確認します。 記憶域クラス ドライバーによってターゲット デバイスが要求された場合は、SCSI ポートに直接パススルーの要求を送信するアプリケーション エラーになります。
+SCSI パススルー要求は、irp の種類が irp\_MJ\_デバイス\_コントロールであり、ioctl の ioctl コードを使用して[ **\_scsi\_パス\_経由**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddscsi/ni-ntddscsi-ioctl_scsi_pass_through)または ioctl\_を通過\_[ **\_DIRECT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddscsi/ni-ntddscsi-ioctl_scsi_pass_through_direct)。 要求がクラスドライバーを介して渡される場合、クラスドライバーは、IRP の**Minorfunction**コードを IRP\_MJ\_デバイス\_コントロールに設定する義務があります。 SCSI ポートは、この値をチェックして、パススルー要求がクラスドライバーをバイパスしたかどうかを判断します。 ターゲットデバイスがストレージクラスドライバーによって要求されている場合、パススルー要求を直接 SCSI ポートに送信するアプリケーションエラーです。
 
-SCSI ポートでは、パススルーの要求に埋め込まれている SCSI コマンドの有効性はチェックされません。
+SCSI ポートは、パススルー要求に埋め込まれている SCSI コマンドの有効性をチェックしません。
 
-ストレージ クラス ドライバーの観点から SCSI パススルーの要求の詳細については、次を参照してください[SCSI パススルー要求の処理。](handling-scsi-pass-through-requests.md)
+ストレージクラスドライバーから見た SCSI パススルー要求の詳細については、「 [Scsi パススルー要求の処理](handling-scsi-pass-through-requests.md)」を参照してください。
 
  
 

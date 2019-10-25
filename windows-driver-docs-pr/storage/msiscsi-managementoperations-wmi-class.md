@@ -4,17 +4,17 @@ description: MSiSCSI\_ManagementOperations WMI クラス
 ms.assetid: 1037be46-6cae-458d-8549-927c7a053195
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 20291f4cdd88cddc0caa62fd1c1b3746caafa1ab
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 25e853881189b03e4526a88a1ab18289f12222cc
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67379089"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845344"
 ---
-# <a name="msiscsimanagementoperations-wmi-class"></a>MSiSCSI\_ManagementOperations WMI クラス
+# <a name="msiscsi_managementoperations-wmi-class"></a>MSiSCSI\_ManagementOperations WMI クラス
 
 
-MSiSCSI\_MangementOperations WMI クラスには、宛先アドレスに ICMP ping 要求を実行するための ping メソッドが含まれています。 このクラスは、Mgmt.mof で次のように定義されます。
+MSiSCSI\_MangementOperations WMI クラスには、送信先アドレスに対して ICMP ping 要求を実行するための ping メソッドが含まれています。 このクラスは、管理 .mof で次のように定義されています。
 
 ```cpp
 class MSiSCSI_ManagementOperations
@@ -71,7 +71,7 @@ class MSiSCSI_ManagementOperations
 };
 ```
 
-1 つ生成 WMI ツールのスイートでは、上記のクラス定義をコンパイルするときに、 [MSiSCSI\_ManagementOperations](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)データ構造体。
+WMI ツールスイートは、前のクラス定義をコンパイルするときに、 [Msiscsi\_ManagementOperations](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)データ構造体の1つを生成します。
 
  
 

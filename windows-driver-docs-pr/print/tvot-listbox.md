@@ -14,72 +14,72 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2adb27d5628bf8fab0b97dfec699db9881f7efed
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8b7cfcfdb5ba5380d74fa49342c095bca9575dce
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362764"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845253"
 ---
-# <a name="tvotlistbox"></a>TVOT\_LISTBOX
+# <a name="tvot_listbox"></a>TVOT\_LISTBOX
 
 
 ## <span id="ddk_tvot_listbox_gg"></span><span id="DDK_TVOT_LISTBOX_GG"></span>
 
 
-TVOT\_LISTBOX オプションの種類は、グループ ボックス内でリスト ボックスで構成されています。
+TVOT\_LISTBOX オプションの種類は、グループボックス内のリストボックスで構成されます。
 
-<span id="OPTITEM_Structure"></span><span id="optitem_structure"></span><span id="OPTITEM_STRUCTURE"></span>[**OPTITEM** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_optitem)構造体  
+<span id="OPTITEM_Structure"></span><span id="optitem_structure"></span><span id="OPTITEM_STRUCTURE"></span>[**Optitem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/compstui/ns-compstui-_optitem)データ  
 
 <span id="Sel_pSel"></span><span id="sel_psel"></span><span id="SEL_PSEL"></span>**Sel/pSel**  
-内のインデックス、 [ **OPTPARAM$** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_optparam)が指す配列、 **pOptParam**のオプションのメンバー [ **OPTTYPE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_opttype)構造体。 これには、現在選択されているオプションのパラメーターを指定します。
+オプションの[**Optparam**](https://docs.microsoft.com/windows-hardware/drivers/ddi/compstui/ns-compstui-_opttype)構造体の**poptparam**メンバーによってポイントされている[**optparam**](https://docs.microsoft.com/windows-hardware/drivers/ddi/compstui/ns-compstui-_optparam)配列にインデックスを作成します。 現在選択されているオプションパラメーターを指定します。
 
-<span id="OPTPARAM_Structure_Array__pOptParam_member_of_OPTTYPE_"></span><span id="optparam_structure_array__poptparam_member_of_opttype_"></span><span id="OPTPARAM_STRUCTURE_ARRAY__POPTPARAM_MEMBER_OF_OPTTYPE_"></span>[**OPTPARAM$** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_optparam)構造体の配列 (**pOptParam**のメンバー [ **OPTTYPE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_opttype))  
+<span id="OPTPARAM_Structure_Array__pOptParam_member_of_OPTTYPE_"></span><span id="optparam_structure_array__poptparam_member_of_opttype_"></span><span id="OPTPARAM_STRUCTURE_ARRAY__POPTPARAM_MEMBER_OF_OPTTYPE_"></span>[**Optparam**](https://docs.microsoft.com/windows-hardware/drivers/ddi/compstui/ns-compstui-_optparam)構造体配列 ( [**Opttype**](https://docs.microsoft.com/windows-hardware/drivers/ddi/compstui/ns-compstui-_opttype)の**poptparam**メンバー)  
 
 <span id="pData"></span><span id="pdata"></span><span id="PDATA"></span>**pData**  
-**pOptParam**\[0\]-&gt;**pData**リスト ボックスに表示される最初のテキスト文字列を指します。
+**Poptparam**\[0\] **-&gt;、** リストボックスに表示される最初のテキスト文字列をポイントします。
 
-**pOptParam**\[1\]-&gt;**pData**リスト ボックスに表示される 2 つ目のテキスト文字列を指します。
+**Poptparam**\[1\]-&gt;**pData**は、リストボックスに表示される2番目のテキスト文字列をポイントします。
 
-**pOptParam**\[*n*\]-&gt;**pData**を指す、 *n*番目の文字列を表示するにはリスト ボックス。
+**Poptparam**\[*n*\]-&gt;**pData**は、リストボックスに表示される*n*番目のテキスト文字列をポイントします。
 
 <span id="IconID"></span><span id="iconid"></span><span id="ICONID"></span>**IconID**  
-**pOptParam**\[0\]-&gt;**IconID**に文字列が最初に関連付けるアイコンを識別します。
+**Poptparam**\[0\]-&gt;**IconID**は、最初のテキスト文字列に関連付けられるアイコンを識別します。
 
-**pOptParam**\[1\]-&gt;**IconID**に 2 つ目のテキスト文字列に関連付けるアイコンを識別します。
+**Poptparam**\[1\]-&gt;**IconID**は、2番目のテキスト文字列に関連付けられるアイコンを識別します。
 
-**pOptParam**\[*n*\]-&gt;**IconID**に関連付けるアイコンを識別、 *n*番目のテキスト文字列。
+**Poptparam**\[*n*\]-&gt;**IconID**は、 *n*番目のテキスト文字列に関連付けられるアイコンを識別します。
 
 <span id="lParam"></span><span id="lparam"></span><span id="LPARAM"></span>**lParam**  
-使用されていません。
+使用しません。
 
-<span id="OPTTYPE_Structure"></span><span id="opttype_structure"></span><span id="OPTTYPE_STRUCTURE"></span>[**OPTTYPE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_opttype)構造体  
+<span id="OPTTYPE_Structure"></span><span id="opttype_structure"></span><span id="OPTTYPE_STRUCTURE"></span>[**Opttype**](https://docs.microsoft.com/windows-hardware/drivers/ddi/compstui/ns-compstui-_opttype)データ  
 
-<span id="Type"></span><span id="type"></span><span id="TYPE"></span>**型**  
+<span id="Type"></span><span id="type"></span><span id="TYPE"></span>**各種**  
 TVOT\_LISTBOX
 
-<span id="Count"></span><span id="count"></span><span id="COUNT"></span>**カウント**  
-OPTPARAM$ の構造体の数つまり、テキストの数は、リスト ボックスに表示される文字列です。
+<span id="Count"></span><span id="count"></span><span id="COUNT"></span>**数**  
+OPTPARAM 構造体の数。これは、リストボックスに表示されるテキスト文字列の数です。
 
 <span id="Style"></span><span id="style"></span><span id="STYLE"></span>**スタイル**  
-次のオプションのビット フラグを指定することができます。
+次のオプションのビットフラグを指定できます。
 
-<span id="OTS_LBCB_INCL_ITEM_NONE"></span><span id="ots_lbcb_incl_item_none"></span>OTS\_LBCB\_含める\_項目\_NONE  
-設定すると、CPSUI が含まれるかどうか"None"、リスト ボックス内の文字列。 "None"を選択した場合、 **Sel/pSel**共用体は、負の 1 に設定されます。
+<span id="OTS_LBCB_INCL_ITEM_NONE"></span><span id="ots_lbcb_incl_item_none"></span>OTS\_LBCB\_\_項目を含む)\_なし  
+設定した場合、CPSUI には、リストボックスに "None" という文字列が含まれます。 ユーザーが [なし] を選択した場合、 **sel/psel**共用体は負の値に設定されます。
 
-<span id="OTS_LBCB_NO_ICON16_IN_ITEM"></span><span id="ots_lbcb_no_icon16_in_item"></span>OTS\_LBCB\_いいえ\_ICON16\_IN\_項目  
-かどうか設定、CPSUI 描画されません。 各オプションのパラメーターのアイコン (**IconID** OPTPARAM$ で)、リスト ボックスで、パラメーターの値を表示するときにします。
+<span id="OTS_LBCB_NO_ICON16_IN_ITEM"></span><span id="ots_lbcb_no_icon16_in_item"></span>OTS\_LBCB\_\_項目に\_ICON16\_がありません  
+設定すると、CPSUI は、リストボックスにパラメーターの値を表示するときに、各オプションパラメーターのアイコン (OPTPARAM では**IconID** ) を描画しません。
 
-<span id="OTS_LBCB_PROPPAGE_LBUSECB"></span><span id="ots_lbcb_proppage_lbusecb"></span>OTS\_LBCB\_プロパティ ページ\_LBUSECB  
-Nontreeview プロパティ シート ページのオプションが表示されたら、リスト ボックスではなくコンボ ボックスとして表示されます。
+<span id="OTS_LBCB_PROPPAGE_LBUSECB"></span><span id="ots_lbcb_proppage_lbusecb"></span>OTS\_LBCB\_プロパティページ\_LBCB  
+Treeview 以外のプロパティシートページにオプションを表示すると、リストボックスではなくコンボボックスとして表示されます。
 
 <span id="OTS_LBCB_SORT"></span><span id="ots_lbcb_sort"></span>OTS\_LBCB\_並べ替え  
-CPSUI セットには、アルファベット順でのテキスト文字列が表示されます。 場合、
+設定すると、CPSUI はテキスト文字列をアルファベット順に表示します。
 
 <span id="BegCtrlID"></span><span id="begctrlid"></span><span id="BEGCTRLID"></span>**BegCtrlID**  
-場合**pDlgPage**で[ **COMPROPSHEETUI** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_compropsheetui) CPSUI が指定したページを識別する場合、または**DlgTemplateID**で[ **DLGPAGE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_dlgpage) CPSUI が指定したテンプレートでは、識別**BegCtrlID**は使用されません。
+[**COMPROPSHEETUI**](https://docs.microsoft.com/windows-hardware/drivers/ddi/compstui/ns-compstui-_compropsheetui)の**pDlgPage**が CPSUI 提供のページを識別する場合、または[**DLGPAGE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/compstui/ns-compstui-_dlgpage)の**DlgTemplateID**が CPSUI で提供されるテンプレートを識別する場合、 **begctrlid**は使用されません。
 
-それ以外の場合、 **BegCtrlID**順番に番号付きの一連のコントロール id の最初のコントロールの識別子を含める必要があります。 コントロールの id は、次の Windows コントロールを識別する必要があります。
+それ以外の場合、 **Begctrlid**には、順番に番号が付けられた一連のコントロール id の最初のコントロール識別子が含まれている必要があります。 コントロール識別子は、次の Windows コントロールを識別する必要があります。
 
 <table>
 <colgroup>
@@ -88,41 +88,41 @@ CPSUI セットには、アルファベット順でのテキスト文字列が�
 </colgroup>
 <thead>
 <tr class="header">
-<th>コントロールの識別子</th>
+<th>コントロール識別子</th>
 <th>Windows コントロール</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><strong>BegCtrlID</strong>内容</p></td>
-<td><p>グループ ボックス</p></td>
+<td><p><strong>Begctrlid</strong>の内容</p></td>
+<td><p>グループボックス</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>BegCtrlID</strong>内容は + 1</p></td>
+<td><p><strong>Begctrlid</strong>コンテンツ + 1</p></td>
 <td><p>タイトルのテキスト</p></td>
 </tr>
 <tr class="odd">
-<td><p><strong>BegCtrlID</strong>内容 + 2</p></td>
+<td><p><strong>Begctrlid</strong>コンテンツ + 2</p></td>
 <td><p>リスト ボックス</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>BegCtrlID</strong>内容 + 3</p></td>
-<td><p>リスト ボックスのアイコン</p></td>
+<td><p><strong>Begctrlid</strong>コンテンツ + 3</p></td>
+<td><p>リストボックスのアイコン</p></td>
 </tr>
 <tr class="odd">
-<td><p><strong>BegCtrlID</strong>内容は + 4</p></td>
-<td><p>チェック ボックスを拡張または拡張のプッシュ ボタン (省略可能)</p></td>
+<td><p><strong>Begctrlid</strong>コンテンツ + 4</p></td>
+<td><p>拡張チェックボックスまたは拡張プッシュボタン (オプション)</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>BegCtrlID</strong>内容 + 5</p></td>
-<td><p>チェック ボックスを拡張または拡張ボタンのアイコン (省略可能)</p></td>
+<td><p><strong>Begctrlid</strong>コンテンツ + 5</p></td>
+<td><p>拡張チェックボックスまたは拡張プッシュボタンアイコン (省略可能)</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-詳細については、次を参照してください。 [Customizing CPSUI-Supported ウィンドウ コントロール](https://docs.microsoft.com/windows-hardware/drivers/print/customizing-cpsui-supported-window-controls)します。
+詳細については、「 [CPSUI でサポートされているウィンドウコントロールのカスタマイズ](https://docs.microsoft.com/windows-hardware/drivers/print/customizing-cpsui-supported-window-controls)」を参照してください。
 
 <a name="requirements"></a>要件
 ------------
@@ -135,7 +135,7 @@ CPSUI セットには、アルファベット順でのテキスト文字列が�
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Compstui.h (include Compstui.h)</td>
+<td>Compstui (Compstui を含む)</td>
 </tr>
 </tbody>
 </table>

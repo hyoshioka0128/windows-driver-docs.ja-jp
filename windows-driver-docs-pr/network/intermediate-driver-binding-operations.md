@@ -4,12 +4,12 @@ description: 中間ドライバー バインド操作
 ms.assetid: 129a744c-d4d4-4741-9812-e76087c585fc
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b02a2c357de0a0a5e0a5df0129d46538429c235
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 468ea83f8f68cca1f51d2ef8796fdc82878a58d6
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67358615"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844187"
 ---
 # <a name="intermediate-driver-binding-operations"></a>中間ドライバー バインド操作
 
@@ -17,15 +17,15 @@ ms.locfileid: "67358615"
 
 
 
-NDIS を呼び出すミニポート アダプターが使用可能になるときに、 [ *ProtocolBindAdapterEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_bind_adapter_ex)そのミニポート アダプターにバインドできる任意の中間ドライバーの関数。
+ミニポートアダプターが使用可能になると、NDIS は、そのミニポートアダプターにバインドできる任意の中間ドライバーの[*Protocolbindadapterex*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_bind_adapter_ex)関数を呼び出します。
 
-中間のドライバー提供プロトコル バインディング操作を記載する必要があります[をアダプターにバインド](binding-to-an-adapter.md)します。
+中間ドライバーは、「[アダプターへのバインド](binding-to-an-adapter.md)」で説明されているプロトコルバインド操作を提供する必要があります。
 
-バインディング時のアクションには、割り当てのアダプター固有のコンテキスト バインディングの領域を初期化し、仮想のミニポートの初期化、および呼び出しが含まれます[ **NdisOpenAdapterEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisopenadapterex)にバインドする、。アダプター。
+バインディング時のアクションとしては、バインディングのアダプター固有のコンテキスト領域の割り当てと初期化、任意の仮想ミニポートの初期化、およびアダプターにバインドするための[**NdisOpenAdapterEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisopenadapterex)の呼び出しが含まれます。
 
-中間のドライバーが個別に割り当てる必要はありません[ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)バインディングごとにプールを構成します。 NET の割り当てに必要な中間ドライバー\_バッファー\_ドライバー デザインでは、独自の構造を割り当てることが必要な場合にのみプールの一覧の構造体。 それ以外の場合、ドライバーでは、他のドライバーから受信された構造に渡すことができますだけです。 このようなドライバーは、送信のための別のプールを割り当てるし、受信する必要があります。
+中間ドライバーでは、各バインドに個別の[**NET\_バッファー\_リスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)構造プールを割り当てる必要はありません。 中間ドライバーは、ドライバーの設計で独自の構造体を割り当てる必要がある場合にのみ、ネットワーク\_バッファー\_リスト構造プールを割り当てる必要があります。 それ以外の場合、ドライバーは他のドライバーから受け取った構造体を渡すことができます。 このようなドライバーでは、送信と受信に対して異なるプールを割り当てる必要があります。
 
-割り当てし、ネットワークのデータを管理するための要件については、次を参照してください。[中間ドライバー ネットワーク データ管理](intermediate-driver-network-data-management.md)します。
+ネットワークデータを割り当てて管理するための要件の詳細については、「[中間ドライバーネットワークデータ管理](intermediate-driver-network-data-management.md)」を参照してください。
 
  
 

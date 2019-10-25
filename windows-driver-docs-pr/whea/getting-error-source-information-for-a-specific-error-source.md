@@ -3,26 +3,26 @@ title: 特定のエラー ソースのエラー ソース情報の取得
 description: 特定のエラー ソースのエラー ソース情報の取得
 ms.assetid: 9979d654-8214-4e2d-9c6e-fc29a7f4ab40
 keywords:
-- エラー ソース WDK WHEA、情報の取得
-- WDK WHEA、エラーのソースのエラー
-- WHEA WDK、エラーのソース情報を取得します。
-- エラー ソースの情報を取得する、Windows ハードウェア エラー アーキテクチャ WDK
-- ハードウェア エラー ソース WDK WHEA、情報の取得
+- WDK WHEA のエラーソース、情報の取得
+- エラー WDK WHEA、エラーソース
+- WHEA WDK、エラーソース情報の取得
+- Windows ハードウェアエラーアーキテクチャ WDK、エラーソース情報の取得
+- ハードウェアエラーソース WDK WHEA、情報の取得
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 765b5bb44d711548ff9a828b23698c8b840e1e67
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 80bc564e6ed5e86556756bea5490480997df10e6
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386479"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844422"
 ---
 # <a name="getting-error-source-information-for-a-specific-error-source"></a>特定のエラー ソースのエラー ソース情報の取得
 
 
-ユーザー モード アプリケーションが特定の情報を取得できます[エラー ソース](hardware-errors-and-error-sources.md)ハードウェア プラットフォームによって呼び出すことによってサポートされている、 [ **WHEAErrorSourceMethods::GetErrorSourceInfoRtn**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_whea/)メソッド。 このメソッドが戻る、 [ **WHEA\_エラー\_ソース\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_whea_error_source_descriptor)指定したエラーのソースを記述する構造体。
+ユーザーモードアプリケーションでは、 [**WHEAErrorSourceMethods:: GetErrorSourceInfoRtn**](https://docs.microsoft.com/windows-hardware/drivers/ddi/_whea/)メソッドを呼び出すことによって、ハードウェアプラットフォームでサポートされている特定の[エラーソース](hardware-errors-and-error-sources.md)に関する情報を取得できます。 このメソッドは、指定されたエラーソースを記述する[ **\_ソース\_記述子構造体の WHEA\_エラー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_whea_error_source_descriptor)を返します。
 
-次のコード例では、特定のエラーのソースのエラーのソース情報を取得する方法を示します。
+次のコード例は、特定のエラーソースのエラーソース情報を取得する方法を示しています。
 
 ```cpp
 IWbemServices *pIWbemServices;

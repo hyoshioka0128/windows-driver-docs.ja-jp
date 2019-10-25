@@ -1,28 +1,28 @@
 ---
-Description: USB デバイス Emulation(UDE) クラスの拡張機能と、クライアント ドライバーが、エミュレートされたホストのコント ローラーとそれに接続されたデバイスに対して実行する必要がありますタスクの動作について説明します。
+Description: USB デバイスエミュレーション (UDE) クラス拡張の動作と、エミュレートされたホストコントローラーと接続されているデバイスに対してクライアントドライバーが実行する必要があるタスクについて説明します。
 title: UDE クライアント ドライバーを記述する
 ms.date: 01/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: e06d4acd349f1d132975032c9a4a76bac1e07d93
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 84973b34e70b02981b5f0d90d9ceb8c90c7e98ca
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67366496"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843661"
 ---
 # <a name="write-a-ude-client-driver"></a>UDE クライアント ドライバーを記述する
 
 **要約**
 
-- UDE オブジェクトとクラスの拡張機能とクライアント ドライバーによって使用されるハンドル。
-- コント ローラーの機能のクエリを実行して、コント ローラーをリセットする機能をエミュレートされたホスト コント ローラーを作成します。
-- 電源管理とデータのために設定すると仮想の USB デバイスの作成は、エンドポイントを介して転送します。
+- クラス拡張とクライアントドライバーによって使用される UDE オブジェクトとハンドル。
+- コントローラーの機能を照会してコントローラーをリセットする機能を備えた、エミュレートされたホストコントローラーを作成する。
+- 仮想 USB デバイスを作成し、エンドポイントを使用して電源管理とデータ転送を設定します。
 
 **適用対象:**
 
 - Windows 10
 
-**最終更新日。**
+**最終更新日時:**
 
 - 2015 年 11 月
 
@@ -30,49 +30,49 @@ ms.locfileid: "67366496"
 
 - [エミュレートされた USB ホスト コントローラー ドライバーのプログラミング参照](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt628025(v=vs.85))
 
-USB デバイス Emulation(UDE) クラスの拡張機能と、クライアント ドライバーが、エミュレートされたホストのコント ローラーとそれに接続されたデバイスに対して実行する必要がありますタスクの動作について説明します。 ルーチンとコールバック関数のセットを通じてそれぞれのクラス ドライバーとクラスの拡張機能の通信方法に関する情報を提供します。 機能についても説明を実装するために、クライアント ドライバーが必要です。
+USB デバイスエミュレーション (UDE) クラス拡張の動作と、エミュレートされたホストコントローラーと接続されているデバイスに対してクライアントドライバーが実行する必要があるタスクについて説明します。 この例では、一連のルーチンとコールバック関数によって、クラスドライバーとクラス拡張がそれぞれと通信する方法について説明します。 また、クライアントドライバーが実装する必要がある機能についても説明します。
 
 ## <a name="before-you-begin"></a>始める前に
 
-- [インストール](https://go.microsoft.com/fwlink/p/?LinkID=733614)最新 Windows Driver Kit (WDK)、開発用コンピューター。 このキットが必要なヘッダー ファイルとライブラリを具体的には、UDE クライアント ドライバーを記述するため、必要があります。
-  - スタブ ライブラリは、(Udecxstub.lib)。 ライブラリは、クライアント ドライバーによって行われた呼び出しを変換し、UdeCx まで渡したりします。
-  - ヘッダー ファイルでは、Udecx.h します。
-- Windows 10 をターゲット コンピューターにインストールします。
-- UDE の把握します。 参照してください[アーキテクチャ。USB デバイス Emulation(UDE)](usb-emulated-device--ude--architecture.md)します。
-- Windows Driver Foundation (WDF) を理解します。 参考資料。[Windows Driver Foundation でのドライバーの開発]( https://go.microsoft.com/fwlink/p/?LinkId=691676)少額 Orwick と Guy Smith によって書き込まれた、します。
+- 最新の Windows Driver Kit (WDK) 開発用コンピューターを[インストール](https://go.microsoft.com/fwlink/p/?LinkID=733614)します。 このキットには、UDE クライアントドライバーを作成するために必要なヘッダーファイルとライブラリが用意されています。具体的には、次のものが必要です。
+  - スタブライブラリ (Udecxstub .lib)。 ライブラリは、クライアントドライバーによって行われた呼び出しを変換し、UdeCx に渡します。
+  - ヘッダーファイル Udecx。
+- 対象のコンピューターに Windows 10 をインストールします。
+- UDE について理解を深めます。 「[アーキテクチャ: USB デバイスエミュレーション (UDE)](usb-emulated-device--ude--architecture.md)」を参照してください。
+- Windows Driver Foundation (WDF) について理解を深めます。 推奨される読み取り: 小額 Orwick および Guy Smith によって作成され[た Windows Driver Foundation を使用したドライバーの開発]( https://go.microsoft.com/fwlink/p/?LinkId=691676)。
 
 ## <a name="ude-objects-and-handles"></a>UDE オブジェクトとハンドル
 
-UDE クラスの拡張機能と、クライアント ドライバーは、エミュレートされたホスト コント ローラーとそのエンドポイントと、デバイスとホスト間のデータ転送に使用する翻訳を含む、仮想デバイスを表す特定の WDF オブジェクトを使用します。 クライアント ドライバーは、オブジェクトの作成を要求し、クラスの拡張機能によって、オブジェクトの有効期間を管理します。
+UDE クラス拡張機能とクライアントドライバーは、エミュレートされたホストコントローラーと仮想デバイスを表す特定の WDF オブジェクトを使用します。これには、デバイスとホスト間でデータを転送するために使用されるエンドポイントと URBs が含まれます。 クライアントドライバーはオブジェクトの作成を要求し、オブジェクトの有効期間はクラス拡張によって管理されます。
 
-- **エミュレートされたホスト コント ローラーのオブジェクト (WDFDEVICE)**
+- **エミュレートされたホストコントローラーオブジェクト (WDFDEVICE)**
 
-    エミュレートされたホスト コント ローラーを表し、UDE クラスの拡張機能と、クライアント ドライバーとの間の主要なハンドルです。
+    は、エミュレートされたホストコントローラーを表します。は、UDE クラス拡張とクライアントドライバーの間のメインハンドルです。
 
-- **UDE デバイス オブジェクト (UDECXUSBDEVICE)**
+- **UDE デバイスオブジェクト (UDECXUSBDEVICE)**
 
-    エミュレートされたホスト コント ローラー上のポートに接続されている仮想の USB デバイスを表します。
+    エミュレートされたホストコントローラー上のポートに接続されている仮想 USB デバイスを表します。
 
-- **UDE エンドポイント オブジェクト (UDECXUSBENDPOINT)**
+- **UDE エンドポイントオブジェクト (UDECXUSBENDPOINT)**
 
-    USB デバイスのパイプをシーケンシャルにデータを表します。 ソフトウェアの要求を送信または受信エンドポイントでのデータを受信するために使用します。
+    USB デバイスのシーケンシャルデータパイプを表します。 エンドポイントでデータを送受信するためのソフトウェア要求を受信するために使用されます。
 
-## <a name="initialize-the-emulated-host-controller"></a>エミュレートされたホスト コント ローラーを初期化します。
+## <a name="initialize-the-emulated-host-controller"></a>エミュレートされたホストコントローラーを初期化します
 
-クライアント ドライバーが、エミュレートされたホスト コント ローラーの WDFDEVICE ハンドルを取得するシーケンスの概要を次に示します。 ドライバーがこれらのタスクを実行することをお勧めします。 その[ *EvtDriverDeviceAdd* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)コールバック関数。
+エミュレートされたホストコントローラーの WDFDEVICE ハンドルをクライアントドライバーが取得するシーケンスの概要を次に示します。 ドライバーは、 [*Evtdriverdeviceadd*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)コールバック関数でこれらのタスクを実行することをお勧めします。
 
-1. 呼び出す[ **UdecxInitializeWdfDeviceInit** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxwdfdevice/nf-udecxwdfdevice-udecxinitializewdfdeviceinit)への参照を渡すことによって[WDFDEVICE\_INIT](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdfdevice_init)フレームワークによって渡されます。
-2. 初期化、 [WDFDEVICE\_INIT](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdfdevice_init)このデバイスが他の USB ホスト コント ローラーに似ていますが表示されるようにセットアップ情報を含む構造体します。 たとえば、FDO 名とシンボリック リンクを割り当て、Microsoft から提供された GUID を持つデバイスのインターフェイスを登録\_DEVINTERFACE\_USB\_ホスト\_デバイス インターフェイスの GUID としてコント ローラーの GUID をアプリケーションでは、デバイスを識別するハンドルを開くことができます。
-3. 呼び出す[ **WdfDeviceCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicecreate) framework デバイス オブジェクトを作成します。
-4. 呼び出す[ **UdecxWdfDeviceAddUsbDeviceEmulation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxwdfdevice/nf-udecxwdfdevice-udecxwdfdeviceaddusbdeviceemulation)し、クライアント ドライバーのコールバック関数を登録します。
+1. フレームワークによって渡された[wdfdevice\_INIT](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdfdevice_init)への参照を渡すことによって、 [**Udecxinitializewdfdeviceinit**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxwdfdevice/nf-udecxwdfdevice-udecxinitializewdfdeviceinit)を呼び出します。
+2. このデバイスが他の USB ホストコントローラーと同様に表示されるように、 [Wdfdevice\_INIT](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdfdevice_init)構造体をセットアップ情報で初期化します。 たとえば、FDO 名とシンボリックリンクを割り当てる場合は、アプリケーションが次のハンドルを開くことができるように、Microsoft が提供する GUID\_DEVINTERFACE\_USB\_ホスト\_コントローラー GUID としてデバイスインターフェイスを登録します。ドライブ.
+3. [**WdfDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate)を呼び出して、フレームワークデバイスオブジェクトを作成します。
+4. [**Udecxwdfdeviceaddusbdeviceemulation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxwdfdevice/nf-udecxwdfdevice-udecxwdfdeviceaddusbdeviceemulation)を呼び出し、クライアントドライバーのコールバック関数を登録します。
 
-    ここでは、ホスト コント ローラーのオブジェクトに関連付けられている UDE クラスの拡張機能によって呼び出されるコールバック関数です。 クライアント ドライバーでは、これらの関数を実装する必要があります。
+    ここでは、UDE クラス拡張によって呼び出される、ホストコントローラーオブジェクトに関連付けられているコールバック関数を示します。 これらの関数は、クライアントドライバーによって実装される必要があります。
 
-    [*EVT\_UDECX\_WDF\_デバイス\_クエリ\_USB\_機能*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxwdfdevice/nc-udecxwdfdevice-evt_udecx_wdf_device_query_usb_capability)  
-    クライアント ドライバーは、クラスの拡張機能に報告する必要があります、ホスト コント ローラーでサポートされている機能を決定します。
+    [ *.EVT\_UDECX\_WDF\_デバイス\_クエリ\_USB\_機能*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxwdfdevice/nc-udecxwdfdevice-evt_udecx_wdf_device_query_usb_capability)  
+    クライアントドライバーがクラス拡張に報告する必要があるホストコントローラーによってサポートされる機能を決定します。
 
-    [*EVT\_UDECX\_WDF\_デバイス\_リセット*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxwdfdevice/nc-udecxwdfdevice-evt_udecx_wdf_device_reset)  
-    (省略可能)。 ホスト コント ローラーや接続されたデバイスをリセットします。
+    [ *.EVT\_UDECX\_WDF\_デバイス\_リセット*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxwdfdevice/nc-udecxwdfdevice-evt_udecx_wdf_device_reset)  
+    (省略可能)。 ホストコントローラーまたは接続されているデバイスをリセットします。
 
     ```cpp
 
@@ -252,11 +252,11 @@ UDE クラスの拡張機能と、クライアント ドライバーは、エミ
     ```
 
 
-## <a name="handle-user-mode-ioctl-requests-sent-to-the-host-controller"></a>ホスト コント ローラーに送信されたユーザー モードの IOCTL 要求を処理します。
+## <a name="handle-user-mode-ioctl-requests-sent-to-the-host-controller"></a>ホストコントローラーに送信されたユーザーモードの IOCTL 要求を処理します
 
-初期化中に、UDE クライアント ドライバーは、GUID を公開する\_DEVINTERFACE\_USB\_ホスト\_コント ローラー デバイス インターフェイスの GUID。 これにより、その GUID を使用してデバイスのハンドルを開いているアプリケーションから IOCTL 要求を受信するドライバーができます。 IOCTL 制御コードの一覧は、次を参照してください。[アプリケーションとサービス用の USB Ioctl](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#um-ioctl)デバイスとインターフェイスの GUID。GUID\_DEVINTERFACE\_USB\_ホスト\_コント ローラー。
+初期化中に、UDE クライアントドライバーは、USB\_ホスト\_コントローラーのデバイスインターフェイス GUID\_DEVINTERFACE\_GUID を公開します。 これにより、ドライバーは、その GUID を使用してデバイスハンドルを開くアプリケーションから IOCTL 要求を受け取ることができます。 IOCTL 制御コードの一覧については、「デバイスインターフェイス GUID を使用した[アプリケーションとサービスの Usb ioctl](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#um-ioctl) : GUID\_devinterface\_USB\_HOST\_CONTROLLER」を参照してください。
 
-クライアント ドライバーはそれらの要求を処理するために登録、 [ *EvtIoDeviceControl* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_queue_io_device_control)イベント コールバック。 実装では、要求を処理する代わりに、ドライバー、UDE クラスの拡張処理のために要求を転送できます。 要求を転送するように、ドライバーを呼び出す必要があります[ **UdecxWdfDeviceTryHandleUserIoctl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxwdfdevice/nf-udecxwdfdevice-udecxwdfdevicetryhandleuserioctl)します。 受信 IOCTL 制御コードがデバイスの記述子の取得などの標準の要求に対応している場合、クラス拡張は処理し、要求が正常に完了します。 この場合、 **UdecxWdfDeviceTryHandleUserIoctl**戻り値として TRUE になって完了します。 それ以外の場合、呼び出しは、FALSE と、ドライバーは、要求を完了する方法を決定する必要がありますを返します。 最も単純な実装でドライバーは、呼び出すことによって適切なエラー コードを使用して要求を完了できます[ **WdfRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestcomplete)します。
+これらの要求を処理するために、クライアントドライバーは[*Evtiodevicecontrol*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_device_control)イベントコールバックを登録します。 の実装では、要求を処理するのではなく、ドライバーが UDE クラス拡張に要求を転送して処理できるようにすることができます。 要求を転送するには、ドライバーで[**Udecxwdfdevicetryhandleuserioctl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxwdfdevice/nf-udecxwdfdevice-udecxwdfdevicetryhandleuserioctl)を呼び出す必要があります。 受信した IOCTL 制御コードが、デバイス記述子の取得などの標準要求に対応する場合、クラス拡張は、要求を処理して正常に完了します。 この場合、 **Udecxwdfdevicetryhandleuserioctl**は戻り値として TRUE で完了します。 それ以外の場合、呼び出しは FALSE を返し、ドライバーは要求を完了する方法を決定する必要があります。 最も単純な実装では、ドライバーは[**Wdfrequestcomplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcomplete)を呼び出すことによって、適切なエラーコードを使用して要求を完了できます。
 
 ```cpp
 
@@ -304,12 +304,12 @@ exit:
 }
 ```
 
-## <a name="report-the-capabilities-of-the-host-controller"></a>ホスト コント ローラーの機能を報告します。
+## <a name="report-the-capabilities-of-the-host-controller"></a>ホストコントローラーの機能を報告する
 
 
-上位レイヤー ドライバーでは、USB ホスト コント ローラーの機能を使用できます、前に、ドライバーがコント ローラーで、これらの機能がサポートされているかどうかを決定する必要があります。 ドライバーは、呼び出すことによってこのようなクエリを行う[ **WdfUsbTargetDeviceQueryUsbCapability** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdevicequeryusbcapability)と[ **USBD\_QueryUsbCapability** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/hh406230(v=vs.85)). これらの呼び出しは、USB デバイス Emulation(UDE) クラスの拡張機能に転送されます。 クラスの拡張機能に要求を取得するには、クライアント ドライバーが呼び出す[ *EVT\_UDECX\_WDF\_デバイス\_クエリ\_USB\_機能*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxwdfdevice/nc-udecxwdfdevice-evt_udecx_wdf_device_query_usb_capability)実装します。 この呼び出し後にのみ[ *EvtDriverDeviceAdd* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)が完了したら、通常[ *EvtDevicePrepareHardware* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware) 後ではなく、[*EvtDeviceReleaseHardware*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_release_hardware)します。 これは、コールバック関数が必要です。
+上位レイヤードライバーが USB ホストコントローラーの機能を使用できるようにするには、そのドライバーがコントローラーによってサポートされているかどうかを判断する必要があります。 ドライバーは、 [**WdfUsbTargetDeviceQueryUsbCapability**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicequeryusbcapability)および[**USBD\_queryusbcapability**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/hh406230(v=vs.85))を呼び出すことによって、このようなクエリを行います。 これらの呼び出しは、USB デバイスエミュレーション (UDE) クラス拡張に転送されます。 クラス拡張は、要求を取得すると、クライアントドライバーの[ *.evt\_UDECX\_WDF\_デバイス\_クエリ\_USB\_機能*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxwdfdevice/nc-udecxwdfdevice-evt_udecx_wdf_device_query_usb_capability)の実装を呼び出します。 この呼び出しは、 [*Evtdriverdeviceadd*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)の完了後にのみ行われます。通常は、 [*EvtDeviceReleaseHardware*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_release_hardware)の後ではなく、 [*evtdriverdeviceadd*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)で実行されます。 これはコールバック関数が必要です。
 
-実装では、クライアント ドライバーは、要求された機能がサポートしているかどうかを報告する必要があります。 静的ストリームなど、特定の機能は UDE によってサポートされていません。
+実装では、クライアントドライバーは、要求された機能をサポートしているかどうかを報告する必要があります。 一部の機能は、静的ストリームなどの UDE ではサポートされていません。
 
 ```cpp
 NTSTATUS
@@ -349,61 +349,61 @@ Controller_EvtControllerQueryUsbCapability(
 }
 ```
 
-## <a name="create-a-virtual-usb-device"></a>仮想の USB デバイスを作成します。
+## <a name="create-a-virtual-usb-device"></a>仮想 USB デバイスを作成する
 
-仮想の USB デバイスは、USB デバイスのような動作します。 複数のインターフェイスの構成をサポートし、各インターフェイスの代替設定をサポートしています。 各設定には、1 つのエンドポイントにデータ転送に使用されることができます。 すべての記述子 (デバイス、構成、インターフェイス、エンドポイント) は、デバイスが実際の USB デバイスのような情報を通報できるように、UDE クライアント ドライバーによって設定されます。
+仮想 USB デバイスは、USB デバイスに似た動作をします。 複数のインターフェイスを持つ構成をサポートし、各インターフェイスが別の設定をサポートします。 各設定には、データ転送に使用されるエンドポイントをもう1つ含めることができます。 すべての記述子 (デバイス、構成、インターフェイス、エンドポイント) は、デバイスが実際の USB デバイスと同じように情報を報告できるように、UDE クライアントドライバーによって設定されます。
 
 > [!NOTE]
-> UDE クライアント ドライバーは外部ハブをサポートしていません
+> UDE クライアントドライバーが外部ハブをサポートしていない
 
-クライアント ドライバーが UDE デバイス オブジェクトの UDECXUSBDEVICE ハンドルを作成し、シーケンスの概要を次に示します。 ドライバーは、エミュレートされたホスト コント ローラーの WDFDEVICE ハンドルが取得した後、これらの手順を実行する必要があります。 ドライバーがこれらのタスクを実行することをお勧めします。 その[ *EvtDriverDeviceAdd* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)コールバック関数。
+クライアントドライバーが UDE デバイスオブジェクトの UDECXUSBDEVICE ハンドルを作成するシーケンスの概要を次に示します。 ドライバーは、エミュレートされたホストコントローラーの WDFDEVICE ハンドルを取得した後に、これらの手順を実行する必要があります。 ドライバーは、 [*Evtdriverdeviceadd*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)コールバック関数でこれらのタスクを実行することをお勧めします。
 
-1. 呼び出す[ **UdecxUsbDeviceInitAllocate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxusbdevice/nf-udecxusbdevice-udecxusbdeviceinitallocate)デバイスを作成するために必要な初期化パラメーターへのポインターを取得します。 この構造体は、UDE クラスの拡張機能によって割り当てられます。
-2. メンバーを設定してイベントのコールバック関数を登録[ **UDECX\_USB\_デバイス\_状態\_変更\_コールバック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxusbdevice/ns-udecxusbdevice-_udecx_usb_device_state_change_callbacks)と呼び出して[ **UdecxUsbDeviceInitSetStateChangeCallbacks**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxusbdevice/nf-udecxusbdevice-udecxusbdeviceinitsetstatechangecallbacks)します。 ここでは、UDE デバイス オブジェクトに関連付けられている、UDE クラスの拡張機能によって呼び出されるコールバック関数です。
+1. デバイスを作成するために必要な初期化パラメーターへのポインターを取得するには、 [**Udecxusbdeviceinitallocate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nf-udecxusbdevice-udecxusbdeviceinitallocate)を呼び出します。 この構造体は、UDE クラス拡張によって割り当てられます。
+2. [**Udecx\_USB\_デバイス\_\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/ns-udecxusbdevice-_udecx_usb_device_state_change_callbacks)のメンバーを設定して\_コールバックを変更し、 [**Udecxusbdeviceinitsetstatechangecallバッキング**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nf-udecxusbdevice-udecxusbdeviceinitsetstatechangecallbacks)を呼び出すことによって、イベントコールバック関数を登録します。 Ude デバイスオブジェクトに関連付けられているコールバック関数は、UDE クラス拡張機能によって呼び出されます。
 
-    これらの関数は、作成するか、エンドポイントを構成するクライアント ドライバーによって実装されます。
+    これらの関数は、エンドポイントを作成または構成するためにクライアントドライバーによって実装されます。
 
-   - [*EVT\_UDECX\_USB\_デバイス\_既定\_エンドポイント\_追加*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxusbdevice/nc-udecxusbdevice-evt_udecx_usb_device_default_endpoint_add)
-   - [*EVT\_UDECX\_USB\_デバイス\_エンドポイント\_追加*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxusbdevice/nc-udecxusbdevice-evt_udecx_usb_device_endpoint_add)
-   - [*EVT\_UDECX\_USB\_デバイス\_エンドポイント\_構成*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxusbdevice/nc-udecxusbdevice-evt_udecx_usb_device_endpoints_configure)
+   - [ *.EVT\_UDECX\_USB\_デバイス\_既定\_エンドポイント\_追加*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nc-udecxusbdevice-evt_udecx_usb_device_default_endpoint_add)
+   - [ *.EVT\_UDECX\_USB\_デバイス\_エンドポイント\_追加*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nc-udecxusbdevice-evt_udecx_usb_device_endpoint_add)
+   - [ *.EVT\_UDECX\_USB\_デバイス\_エンドポイント\_構成*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nc-udecxusbdevice-evt_udecx_usb_device_endpoints_configure)
 
      <!-- -->
 
-   - [*EVT\_UDECX\_USB\_デバイス\_D0\_エントリ*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxusbdevice/nc-udecxusbdevice-evt_udecx_usb_device_d0_entry)
-   - [*EVT\_UDECX\_USB\_デバイス\_D0\_終了*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxusbdevice/nc-udecxusbdevice-evt_udecx_usb_device_d0_exit)
-   - [*EVT\_UDECX\_USB\_デバイス\_設定\_関数\_SUSPEND\_AND\_WAKE*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxusbdevice/nc-udecxusbdevice-evt_udecx_usb_device_set_function_suspend_and_wake)
+   - [ *.EVT\_UDECX\_USB\_デバイス\_D0\_ENTRY*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nc-udecxusbdevice-evt_udecx_usb_device_d0_entry)
+   - [ *.EVT\_UDECX\_USB\_デバイス\_D0\_終了*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nc-udecxusbdevice-evt_udecx_usb_device_d0_exit)
+   - [ *.EVT\_UDECX\_USB\_デバイス\_設定\_関数\_中断\_と\_ウェイク*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nc-udecxusbdevice-evt_udecx_usb_device_set_function_suspend_and_wake)
 
-3. 呼び出す[ **UdecxUsbDeviceInitSetSpeed** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxusbdevice/nf-udecxusbdevice-udecxusbdeviceinitsetspeed) USB デバイスの速度ともデバイス、USB 2.0 または SuperSpeed デバイスの種類を設定します。
-4. 呼び出す[ **UdecxUsbDeviceInitSetEndpointsType** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxusbdevice/nf-udecxusbdevice-udecxusbdeviceinitsetendpointstype)デバイスをサポートするエンドポイントの種類を指定する: 単純型または動的です。 クライアント ドライバーが単純なエンドポイントを作成することを選択する場合、ドライバーは、デバイスを接続する前にエンドポイントのすべてのオブジェクトを作成する必要があります。 デバイスは、インターフェイスあたり 1 つだけの構成とインターフェイスの 1 つだけ設定が必要です。 動的のエンドポイントの場合、ドライバーは、受信したときに、デバイスを接続した後、いつでもにエンドポイントを作成できます、 [ *EVT\_UDECX\_USB\_デバイス\_エンドポイント\_構成*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxusbdevice/nc-udecxusbdevice-evt_udecx_usb_device_endpoints_configure)イベント コールバック。 参照してください[動的エンドポイントを作成する](#create-dynamic-endpoints)します。
-5. これらのデバイスに必要な記述子を追加するメソッドを呼び出します。
+3. [**Udecxusbdeviceinitsetspeed**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nf-udecxusbdevice-udecxusbdeviceinitsetspeed)を呼び出して、usb デバイスの速度と、デバイス、usb 2.0、SuperSpeed デバイスの種類を設定します。
+4. デバイスがサポートするエンドポイントの種類を指定するには、 [**Udecxusbdeviceinitsetendpointstype**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nf-udecxusbdevice-udecxusbdeviceinitsetendpointstype)を呼び出します。 simple または dynamic です。 クライアントドライバーが単純なエンドポイントを作成することを選択した場合、ドライバーはデバイスに接続する前にすべてのエンドポイントオブジェクトを作成する必要があります。 デバイスに必要な構成は1つだけであり、インターフェイスの設定はインターフェイスごとに1つだけである必要があります。 動的エンドポイントの場合、ドライバーは、デバイスを接続した後に、デバイスを接続した後に、\_\_デバイスを接続した後で、 [ *\_デバイス\_エンドポイント\_* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nc-udecxusbdevice-evt_udecx_usb_device_endpoints_configure)イベントコールバックを構成することにより、いつでもエンドポイントを作成できます。 「[動的エンドポイントの作成](#create-dynamic-endpoints)」を参照してください。
+5. これらのメソッドのいずれかを呼び出して、必要な記述子をデバイスに追加します。
 
-   - [**UdecxUsbDeviceInitAddDescriptor**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxusbdevice/nf-udecxusbdevice-udecxusbdeviceinitadddescriptor)
-   - [**UdecxUsbDeviceInitAddDescriptorWithIndex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxusbdevice/nf-udecxusbdevice-udecxusbdeviceinitadddescriptorwithindex)
-   - [**UdecxUsbDeviceInitAddStringDescriptor**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxusbdevice/nf-udecxusbdevice-udecxusbdeviceinitaddstringdescriptor)
-   - [**UdecxUsbDeviceInitAddStringDescriptorRaw**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxusbdevice/nf-udecxusbdevice-udecxusbdeviceinitaddstringdescriptorraw)
+   - [**UdecxUsbDeviceInitAddDescriptor**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nf-udecxusbdevice-udecxusbdeviceinitadddescriptor)
+   - [**Udecxusbdeviceinitadd記述子 Withindex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nf-udecxusbdevice-udecxusbdeviceinitadddescriptorwithindex)
+   - [**UdecxUsbDeviceInitAddStringDescriptor**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nf-udecxusbdevice-udecxusbdeviceinitaddstringdescriptor)
+   - [**Udecxusbdeviceinitaddstring記述子 Raw**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nf-udecxusbdevice-udecxusbdeviceinitaddstringdescriptorraw)
 
-     UDE クラスの拡張機能は、クライアント ドライバーが、上記の方法のいずれかを使用して初期化中に提供する標準的な記述子の要求を受信した場合、クラス拡張は自動的に要求を完了します。 クラスの拡張機能は、クライアント ドライバーには、その要求を転送しません。 この設計では、ドライバーがに対する制御要求を処理する必要がある要求の数を減らします。 さらに、セットアップのパケットの広範な解析および処理を必要とする記述子ロジックを実装するために、ドライバーの必要もありません**wLength**と**TransferBufferLength**正しくします。 この一覧には、標準的な要求が含まれています。 クライアント ドライバーは (記述子を追加する前のメソッドが呼び出された) 場合のみ、これらの要求を確認する必要はありません。
+     UDE クラス拡張が、前のいずれかのメソッドを使用して初期化時にクライアントドライバーによって提供された標準記述子の要求を受け取った場合、クラス拡張は自動的に要求を完了します。 クラス拡張は、その要求をクライアントドライバーに転送しません。 この設計により、ドライバーが制御要求を処理するために必要な要求の数が減ります。 さらに、セットアップパケットを広範囲に解析し、 **Wlength**および**transferbufferlength**を正しく処理する必要がある記述子ロジックをドライバーに実装する必要もなくなりました。 この一覧には、標準要求が含まれています。 クライアントドライバーは、これらの要求を確認する必要はありません (前のメソッドが記述子を追加するために呼び出された場合のみ)。
 
-   - USB\_要求\_取得\_記述子
+   - USB\_要求\_\_記述子を取得します
    - USB\_要求\_設定\_構成
-   - USB\_要求\_設定\_インターフェイス
-   - USB\_要求\_設定\_アドレス
-   - USB\_要求\_設定\_機能
-   - USB\_機能\_関数\_中断
-   - USB\_機能\_リモート\_ウェイク アップ
-   - USB\_要求\_クリア\_機能
-   - USB\_機能\_エンドポイント\_失速
+   - USB\_要求\_\_インターフェイス
+   - USB\_要求\_\_アドレスを設定します
+   - USB\_要求\_\_機能の設定
+   - USB\_機能\_機能\_中断
+   - リモート\_ウェイクアップ\_USB\_機能
+   - USB\_要求\_\_機能をクリア
+   - USB\_機能\_エンドポイント\_停止
    - USB\_要求\_設定\_SEL
-   - USB\_要求\_アイソクロナス\_遅延
+   - USB\_要求\_ISOCH\_遅延
 
-     ただし、インターフェイス、クラス固有またはベンダー定義の記述子の要求、UDE クラスの拡張機能に転送クライアント ドライバー。 ドライバーは、GET を処理する必要があります\_記述子要求。
+     ただし、インターフェイス、クラス固有、またはベンダー定義の記述子に対する要求では、UDE クラス拡張機能によってそれらがクライアントドライバーに転送されます。 ドライバーは、これらの GET\_記述子要求を処理する必要があります。
 
-6. 呼び出す[ **UdecxUsbDeviceCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxusbdevice/nf-udecxusbdevice-udecxusbdevicecreate) UDE デバイス オブジェクトを作成および UDECXUSBDEVICE ハンドルを取得します。
-7. 静的なエンドポイントを呼び出すことによって作成[ **UdecxUsbEndpointCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxusbendpoint/nf-udecxusbendpoint-udecxusbendpointcreate)します。 参照してください[単純なエンドポイントを作成する](#create-simple-endpoints)します。
-8. 呼び出す[ **UdecxUsbDevicePlugIn** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxusbdevice/nf-udecxusbdevice-udecxusbdeviceplugin)をデバイスが接続されているし、エンドポイント上の I/O 要求を受信できる UDE クラスの拡張機能を示します。 この呼び出しの後、クラス拡張もエンドポイントおよび USB デバイスのコールバック関数を呼び出すことができます。
-    **注**クライアント ドライバーを呼び出すことができる場合、USB デバイスは、実行時に削除する必要があります、 [ **UdecxUsbDevicePlugOutAndDelete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxusbdevice/nf-udecxusbdevice-udecxusbdeviceplugoutanddelete)します。 ドライバーは、デバイスを使用する場合、その必要がありますを呼び出して作成[ **UdecxUsbDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxusbdevice/nf-udecxusbdevice-udecxusbdevicecreate)します。
+6. [**UdecxUsbDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nf-udecxusbdevice-udecxusbdevicecreate)を呼び出して ude デバイスオブジェクトを作成し、UDECXUSBDEVICE ハンドルを取得します。
+7. [**Udecxusbendpointcreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbendpoint/nf-udecxusbendpoint-udecxusbendpointcreate)を呼び出して、静的なエンドポイントを作成します。 「[単純なエンドポイントの作成](#create-simple-endpoints)」を参照してください。
+8. [**Udecxusbdeviceplugin**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nf-udecxusbdevice-udecxusbdeviceplugin)を呼び出して、デバイスが接続されていること、およびエンドポイントで i/o 要求を受信できることを ude クラス拡張に示します。 この呼び出しの後、クラス拡張は、エンドポイントおよび USB デバイスでコールバック関数を呼び出すこともできます。
+    **メモ** USB デバイスを実行時に削除する必要がある場合、クライアントドライバーは[**UdecxUsbDevicePlugOutAndDelete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nf-udecxusbdevice-udecxusbdeviceplugoutanddelete)を呼び出すことができます。 デバイスを使用する必要がある場合は、 [**UdecxUsbDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nf-udecxusbdevice-udecxusbdevicecreate)を呼び出してドライバーを作成する必要があります。
 
-この例では、記述子の宣言は、グローバル変数、例と同様、HID デバイスは、ここに示すように宣言すると見なされます。
+この例では、記述子宣言はグローバル変数と見なされます。これは、次の例のように、HID デバイスの場合と同じように宣言されています。
 
 ```cpp
 const UCHAR g_UsbDeviceDescriptor[] = {
@@ -426,7 +426,7 @@ const UCHAR g_UsbDeviceDescriptor[] = {
 };
 ```
 
-クライアント ドライバーが、コールバック関数を登録し、デバイスの速度を設定し、エンドポイントの種類を示す最後にいくつかのデバイス記述子の設定の初期化パラメーターを指定する例を示します。
+次に示すのは、クライアントドライバーが、コールバック関数の登録、デバイス速度の設定、エンドポイントの種類の指定、最後にいくつかのデバイス記述子の設定を行って、初期化パラメーターを指定している例です。
 
 ```cpp
 
@@ -578,50 +578,50 @@ exit:
 ## <a name="power-management-of-the-usb-device"></a>USB デバイスの電源管理
 
 
-UDE クラスの拡張機能は、低電力状態または動作状態に戻して、デバイスの送信要求を受信したときに、クライアント ドライバーのコールバック関数を呼び出します。 これらのコールバック関数は、USB デバイスのスリープ解除をサポートする必要があります。 クライアント ドライバーでは、以前の呼び出しにによってその実装が登録されている[ **UdecxUsbDeviceInitSetStateChangeCallbacks**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxusbdevice/nf-udecxusbdevice-udecxusbdeviceinitsetstatechangecallbacks)します。
+UDE クラス拡張は、デバイスを低電力状態に送信する要求を受信したとき、または動作状態に戻すときに、クライアントドライバーのコールバック関数を呼び出します。 これらのコールバック関数は、wake をサポートする USB デバイスに必要です。 クライアントドライバーは、 [**Udecxusbdeviceinitsetstatechangecallbacks**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nf-udecxusbdevice-udecxusbdeviceinitsetstatechangecallbacks)の前の呼び出しで、によって実装を登録しました。
 
-詳細については、次を参照してください。 [USB デバイスの電源状態](comparing-usb-device-states-to-wdm-device-states.md)します。
+詳細については、「 [USB デバイスの電源状態](comparing-usb-device-states-to-wdm-device-states.md)」を参照してください。
 
-[*EVT\_UDECX\_USB\_デバイス\_D0\_エントリ*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxusbdevice/nc-udecxusbdevice-evt_udecx_usb_device_d0_entry)  
-クライアント ドライバーでは、Dx 状態から d0 へのデバイスを移行します。
+[ *.EVT\_UDECX\_USB\_デバイス\_D0\_ENTRY*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nc-udecxusbdevice-evt_udecx_usb_device_d0_entry)  
+クライアントドライバーは、デバイスを Dx 状態から D0 状態に移行します。
 
-[*EVT\_UDECX\_USB\_デバイス\_D0\_終了*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxusbdevice/nc-udecxusbdevice-evt_udecx_usb_device_d0_exit)  
-クライアント ドライバーでは、Dx 状態 D0 状態からデバイスを移行します。
+[ *.EVT\_UDECX\_USB\_デバイス\_D0\_終了*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nc-udecxusbdevice-evt_udecx_usb_device_d0_exit)  
+クライアントドライバーは、デバイスを D0 状態から Dx 状態に移行します。
 
-[*EVT\_UDECX\_USB\_デバイス\_設定\_関数\_SUSPEND\_AND\_WAKE*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxusbdevice/nc-udecxusbdevice-evt_udecx_usb_device_set_function_suspend_and_wake)  
-クライアント ドライバーでは、仮想の USB 3.0 デバイスの指定したインターフェイスの関数の状態を変更します。
+[ *.EVT\_UDECX\_USB\_デバイス\_設定\_関数\_中断\_と\_ウェイク*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nc-udecxusbdevice-evt_udecx_usb_device_set_function_suspend_and_wake)  
+クライアントドライバーは、仮想 USB 3.0 デバイスの指定されたインターフェイスの機能の状態を変更します。
 
-USB 3.0 デバイスは、低電力状態を入力する個々 の関数を使用します。 各関数は、ウェイク信号を送信できるもあります。 UDE クラスの拡張機能を呼び出すことによって、クライアント ドライバーに通知[ *EVT\_UDECX\_USB\_デバイス\_設定\_関数\_SUSPEND\_AND\_WAKE*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxusbdevice/nc-udecxusbdevice-evt_udecx_usb_device_set_function_suspend_and_wake)します。 このイベントは、関数の電源状態の変更を示し、関数が新しい状態から復帰がかどうかのクライアント ドライバーに通知。 関数では、クラス拡張は、ウェイク アップは関数のインターフェイスの数を渡します。
-クライアント ドライバーは、仮想 USB デバイスを開始する、関数リンクが低電力状態からのスリープ解除すると、独自の中断、またはその両方の操作をシミュレートできます。 USB 2.0 デバイスの場合、ドライバーを呼び出す必要があります[ **UdecxUsbDeviceSignalWake**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxusbdevice/nf-udecxusbdevice-udecxusbdevicesignalwake)、ドライバー、最新のデバイスのスリープ解除を有効になっている場合は、 [ *EVT\_UDECX\_USB\_デバイス\_D0\_終了*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxusbdevice/nc-udecxusbdevice-evt_udecx_usb_device_d0_exit)します。 USB 3.0 デバイスの場合、ドライバーを呼び出す必要があります[ **UdecxUsbDeviceSignalFunctionWake** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxusbdevice/nf-udecxusbdevice-udecxusbdevicesignalfunctionwake) USB 3.0 ウェイク アップ機能関数であるためです。 デバイス全体が低電力状態の場合、またはこのような状態では場合、 **UdecxUsbDeviceSignalFunctionWake**デバイスのスリープします。
+USB 3.0 デバイスでは、個々の機能が低電力状態に入ることができます。 各関数は、ウェイクアップ信号を送信することもできます。 UDE クラスの拡張機能は、 [ *.evt\_UDECX\_USB\_\_デバイス*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nc-udecxusbdevice-evt_udecx_usb_device_set_function_suspend_and_wake)を呼び出すことによってクライアントドライバーに通知し、\_\_を中断\_および\_ウェイクします。 このイベントは、関数の電源状態の変更を示し、関数が新しい状態から復帰できるかどうかをクライアントドライバーに通知します。 関数では、クラス拡張は、ウェイクアップしている関数のインターフェイス番号を渡します。
+クライアントドライバーは、低リンクの電源状態、機能の中断、またはその両方から、仮想 USB デバイス自体のウェイクアップを開始する操作をシミュレートできます。 USB 2.0 デバイスの場合、ドライバーは[**Udecxusbデバイス Ignalwake**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nf-udecxusbdevice-udecxusbdevicesignalwake)を呼び出す必要があります。これは、最新の[ *.evt\_udecx\_USB\_デバイス\_D0\_終了*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nc-udecxusbdevice-evt_udecx_usb_device_d0_exit)します。 USB 3.0 デバイスの場合は、USB 3.0 ウェイク機能が機能ごとに使用されるため、ドライバーは[**Udecxusbデバイス Ignalfunctionwake**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nf-udecxusbdevice-udecxusbdevicesignalfunctionwake)を呼び出す必要があります。 デバイス全体の電源が入っていない場合、またはそのような状態になっている場合は、 **Udecxusb装置 Ignalfunctionwake**によってデバイスがウェイクアップされます。
 
-## <a name="create-simple-endpoints"></a>単純なエンドポイントを作成します。
+## <a name="create-simple-endpoints"></a>単純なエンドポイントを作成する
 
 
-クライアント ドライバーでは、UDE エンドポイントのオブジェクトと、USB デバイスからのデータ転送を処理するために作成します。 ドライバーは、UDE デバイスを作成した後、接続されているように、デバイスを報告する前に、単純なエンドポイントを作成します。
+クライアントドライバーは、USB デバイスとの間のデータ転送を処理するために、UDE エンドポイントオブジェクトを作成します。 ドライバーは、UDE デバイスを作成した後、デバイスを接続先として報告する前に、単純なエンドポイントを作成します。
 
-クライアント ドライバーが UDE エンドポイント オブジェクトの UDECXUSBENDPOINT ハンドルを作成し、シーケンスの概要を次に示します。 ドライバーは、仮想の USB デバイスの UDECXUSBDEVICE ハンドルが取得した後、これらの手順を実行する必要があります。 ドライバーがこれらのタスクを実行することをお勧めします。 その[ *EvtDriverDeviceAdd* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)コールバック関数。
+ここでは、クライアントドライバーが UDE エンドポイントオブジェクトの UDECXUSBENDPOINT ハンドルを作成するシーケンスの概要について説明します。 ドライバーは、仮想 USB デバイスの UDECXUSBDEVICE ハンドルを取得した後に、これらの手順を実行する必要があります。 ドライバーは、 [*Evtdriverdeviceadd*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)コールバック関数でこれらのタスクを実行することをお勧めします。
 
-1. 呼び出す[ **UdecxUsbSimpleEndpointInitAllocate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxusbendpoint/nf-udecxusbendpoint-udecxusbsimpleendpointinitallocate)クラスの拡張機能によって割り当てられた初期化パラメーターへのポインターを取得します。
-2. 呼び出す[ **UdecxUsbEndpointInitSetEndpointAddress** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxusbendpoint/nf-udecxusbendpoint-udecxusbendpointinitsetendpointaddress)初期化パラメーターで、エンドポイント アドレスを設定します。
-3. 呼び出す[ **UdecxUsbEndpointInitSetCallbacks** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxusbendpoint/nf-udecxusbendpoint-udecxusbendpointinitsetcallbacks)クライアント ドライバーによって実装されるコールバック関数を登録します。
+1. [**Udecxusbsimpleendpointinitallocate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbendpoint/nf-udecxusbendpoint-udecxusbsimpleendpointinitallocate)を呼び出して、クラス拡張によって割り当てられた初期化パラメーターへのポインターを取得します。
+2. [**Udecxusbendpointinitsetendpointaddress**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbendpoint/nf-udecxusbendpoint-udecxusbendpointinitsetendpointaddress)を呼び出して、初期化パラメーターのエンドポイントアドレスを設定します。
+3. [**Udecxusbendpointinitsetcallbacks**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbendpoint/nf-udecxusbendpoint-udecxusbendpointinitsetcallbacks)を呼び出して、クライアントドライバーで実装されているコールバック関数を登録します。
 
-    これらの関数は、キュー、およびエンドポイントに要求を処理するために、クライアント ドライバーによって実装されます。
+    これらの関数は、エンドポイントでキューと要求を処理するためにクライアントドライバーによって実装されます。
 
-    [*EVT\_UDECX\_USB\_エンドポイント\_リセット*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxusbendpoint/nc-udecxusbendpoint-evt_udecx_usb_endpoint_reset)  
-    仮想の USB デバイスのエンドポイントをリセットします。
+    [ *.EVT\_UDECX\_USB\_エンドポイント\_リセット*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbendpoint/nc-udecxusbendpoint-evt_udecx_usb_endpoint_reset)  
+    仮想 USB デバイスのエンドポイントをリセットします。
 
-    [*EVT\_UDECX\_USB\_エンドポイント\_開始*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxusbendpoint/nc-udecxusbendpoint-evt_udecx_usb_endpoint_start)  
-    (省略可能)。 I/O 要求の処理を開始します。
+    [ *.EVT\_UDECX\_USB\_エンドポイント\_開始*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbendpoint/nc-udecxusbendpoint-evt_udecx_usb_endpoint_start)  
+    (省略可能)。 I/o 要求の処理を開始します
 
-    [*EVT\_UDECX\_USB\_エンドポイント\_消去*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxusbendpoint/nc-udecxusbendpoint-evt_udecx_usb_endpoint_purge)  
-    (省略可能)。 エンドポイントのキューへの I/O 要求のキューを停止し、未処理の要求をキャンセルします。
+    [ *.EVT\_UDECX\_USB\_エンドポイント\_消去*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbendpoint/nc-udecxusbendpoint-evt_udecx_usb_endpoint_purge)  
+    (省略可能)。 エンドポイントのキューへの i/o 要求のキューを停止し、未処理の要求をキャンセルします。
 
-4. 呼び出す[ **UdecxUsbEndpointCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxusbendpoint/nf-udecxusbendpoint-udecxusbendpointcreate) endpoint オブジェクトを作成および UDECXUSBENDPOINT ハンドルを取得します。
-5. 呼び出す[ **UdecxUsbEndpointSetWdfIoQueue** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxusbendpoint/nf-udecxusbendpoint-udecxusbendpointsetwdfioqueue)にフレームワークのキュー オブジェクトをエンドポイントに関連付けます。 該当する場合は、エンドポイントにオブジェクトを適切な属性の設定によって、キューの WDF の親オブジェクトを設定できます。
+4. [**Udecxusbendpointcreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbendpoint/nf-udecxusbendpoint-udecxusbendpointcreate)を呼び出して、エンドポイントオブジェクトを作成し、udecxusbendpoint ハンドルを取得します。
+5. [**Udecxusbendpointsetwdfioqueue**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbendpoint/nf-udecxusbendpoint-udecxusbendpointsetwdfioqueue)を呼び出して、フレームワークキューオブジェクトをエンドポイントに関連付けます。 該当する場合は、適切な属性を設定することによって、エンドポイントオブジェクトをキューの WDF 親オブジェクトに設定できます。
 
-    エンドポイントのすべてのオブジェクトでは、転送要求を処理するために、フレームワークのキュー オブジェクトがあります。 クラスの拡張機能が受け取る転送要求ごとに、フレームワークの要求オブジェクトをキューします。 キューの状態 (開始、削除) は、UDE によって管理されるクラスの拡張機能と、クライアント ドライバーする必要がありますいないその状態を変更します。 各要求オブジェクトには、USB 要求のブロックが含まれています ([**URB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb))、転送の詳細を格納しています。
+    すべてのエンドポイントオブジェクトには、転送要求を処理するためのフレームワークキューオブジェクトがあります。 クラス拡張によって受信される転送要求ごとに、フレームワークの要求オブジェクトをキューに格納します。 キューの状態 (開始済み、削除済み) は UDE クラス拡張によって管理され、クライアントドライバーはその状態を変更することはできません。 各要求オブジェクトには、転送の詳細を含む USB 要求ブロック ([**URB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb)) が含まれています。
 
-この例では、クライアント ドライバーは、既定のコントロール エンドポイントを作成します。
+この例では、クライアントドライバーが既定のコントロールエンドポイントを作成します。
 
 ```cpp
 EVT_WDF_IO_QUEUE_IO_INTERNAL_DEVICE_CONTROL IoEvtControlUrb;
@@ -700,35 +700,35 @@ exit:
 }
 ```
 
-## <a name="create-dynamic-endpoints"></a>動的エンドポイントを作成します。
+## <a name="create-dynamic-endpoints"></a>動的エンドポイントの作成
 
 
-クライアント ドライバーでは、(ハブのドライバーとクライアント ドライバーで) に代わって、UDE クラスの拡張機能の要求で動的エンドポイントを作成できます。 クラスの拡張機能は、これらのコールバック関数を呼び出すことによって、要求を行います。
+クライアントドライバーは、UDE クラス拡張の要求時に (ハブドライバーとクライアントドライバーに代わって) 動的エンドポイントを作成できます。 クラス拡張は、次のいずれかのコールバック関数を呼び出すことによって要求を行います。
 
-[*EVT\_UDECX\_USB\_デバイス\_既定\_エンドポイント\_追加*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxusbdevice/nc-udecxusbdevice-evt_udecx_usb_device_default_endpoint_add)  
-クライアント ドライバーは、既定のコントロール エンドポイント (エンドポイント 0) を作成します。
+[ *.EVT\_UDECX\_USB\_デバイス\_既定\_エンドポイント\_追加*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nc-udecxusbdevice-evt_udecx_usb_device_default_endpoint_add)  
+クライアントドライバーは、既定のコントロールエンドポイント (エンドポイント 0) を作成します。
 
-[*EVT\_UDECX\_USB\_デバイス\_エンドポイント\_追加*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxusbdevice/nc-udecxusbdevice-evt_udecx_usb_device_endpoint_add)  
-クライアント ドライバーでは、動的エンドポイントを作成します。
+[ *.EVT\_UDECX\_USB\_デバイス\_エンドポイント\_追加*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nc-udecxusbdevice-evt_udecx_usb_device_endpoint_add)  
+クライアントドライバーは、動的エンドポイントを作成します。
 
-[*EVT\_UDECX\_USB\_デバイス\_エンドポイント\_構成*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxusbdevice/nc-udecxusbdevice-evt_udecx_usb_device_endpoints_configure)  
-クライアント ドライバーでは、代替の設定を選択する、現在のエンドポイントを無効にする、または動的エンドポイントを追加で構成を変更します。
+[ *.EVT\_UDECX\_USB\_デバイス\_エンドポイント\_構成*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nc-udecxusbdevice-evt_udecx_usb_device_endpoints_configure)  
+クライアントドライバーは、別の設定を選択するか、現在のエンドポイントを無効にするか、動的エンドポイントを追加して、構成を変更します。
 
-クライアント ドライバーでは、呼び出し中に、上記のコールバックが登録されている[ **UdecxUsbDeviceInitSetStateChangeCallbacks**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxusbdevice/nf-udecxusbdevice-udecxusbdeviceinitsetstatechangecallbacks)します。 作成するを参照[仮想の USB デバイス](#create-a-virtual-usb-device)します。
-このメカニズムにより、クライアント ドライバーを USB 構成とデバイスのインターフェイスの設定を動的に変更します。 たとえば、エンドポイント オブジェクトが必要ですか、既存の endpoint オブジェクトを解放する必要があります、クラス拡張機能から呼び出さ、 [ *EVT\_UDECX\_USB\_デバイス\_エンドポイント\_構成*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxusbdevice/nc-udecxusbdevice-evt_udecx_usb_device_endpoints_configure)します。
+クライアントドライバーは、 [**Udecxusbdeviceinitsetstatechangecallbacks**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nf-udecxusbdevice-udecxusbdeviceinitsetstatechangecallbacks)の呼び出し中に、前のコールバックを登録しました。 「[仮想 USB デバイス](#create-a-virtual-usb-device)を作成する」を参照してください。
+このメカニズムにより、クライアントドライバーはデバイスの USB 構成とインターフェイスの設定を動的に変更できます。 たとえば、エンドポイントオブジェクトが必要な場合、または既存のエンドポイントオブジェクトを解放する必要がある場合、クラス拡張は、[*構成\_\_エンドポイント\_UDECX\_USB\_デバイス*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nc-udecxusbdevice-evt_udecx_usb_device_endpoints_configure)を呼び出します。
 
-クライアント ドライバーがコールバック関数の実装内でエンドポイント オブジェクト UDECXUSBENDPOINT ハンドルを作成し、シーケンスの概要を次に示します。
+コールバック関数の実装において、クライアントドライバーがエンドポイントオブジェクトの UDECXUSBENDPOINT ハンドルを作成するシーケンスの概要を次に示します。
 
-1. 呼び出す[ **UdecxUsbEndpointInitSetEndpointAddress** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxusbendpoint/nf-udecxusbendpoint-udecxusbendpointinitsetendpointaddress)初期化パラメーターで、エンドポイント アドレスを設定します。
-2. 呼び出す[ **UdecxUsbEndpointInitSetCallbacks** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxusbendpoint/nf-udecxusbendpoint-udecxusbendpointinitsetcallbacks)クライアント ドライバーによって実装されるコールバック関数を登録します。 単純なエンドポイントと同様に、ドライバーを登録できますこれらのコールバック関数。
-    - [*EVT\_UDECX\_USB\_エンドポイント\_リセット*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxusbendpoint/nc-udecxusbendpoint-evt_udecx_usb_endpoint_reset) (必須)。
-    - [*EVT\_UDECX\_USB\_エンドポイント\_開始*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxusbendpoint/nc-udecxusbendpoint-evt_udecx_usb_endpoint_start)
-    - [*EVT\_UDECX\_USB\_エンドポイント\_消去*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxusbendpoint/nc-udecxusbendpoint-evt_udecx_usb_endpoint_purge)
+1. [**Udecxusbendpointinitsetendpointaddress**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbendpoint/nf-udecxusbendpoint-udecxusbendpointinitsetendpointaddress)を呼び出して、初期化パラメーターのエンドポイントアドレスを設定します。
+2. [**Udecxusbendpointinitsetcallbacks**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbendpoint/nf-udecxusbendpoint-udecxusbendpointinitsetcallbacks)を呼び出して、クライアントドライバーで実装されているコールバック関数を登録します。 単純なエンドポイントと同様に、ドライバーは次のコールバック関数を登録できます。
+    - [ *.Evt\_UDECX\_USB\_エンドポイント\_リセット*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbendpoint/nc-udecxusbendpoint-evt_udecx_usb_endpoint_reset)(必須)。
+    - [ *.EVT\_UDECX\_USB\_エンドポイント\_開始*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbendpoint/nc-udecxusbendpoint-evt_udecx_usb_endpoint_start)
+    - [ *.EVT\_UDECX\_USB\_エンドポイント\_消去*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbendpoint/nc-udecxusbendpoint-evt_udecx_usb_endpoint_purge)
 
-3. 呼び出す[ **UdecxUsbEndpointCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxusbendpoint/nf-udecxusbendpoint-udecxusbendpointcreate) endpoint オブジェクトを作成および UDECXUSBENDPOINT ハンドルを取得します。
-4. 呼び出す[ **UdecxUsbEndpointSetWdfIoQueue** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxusbendpoint/nf-udecxusbendpoint-udecxusbendpointsetwdfioqueue)にフレームワークのキュー オブジェクトをエンドポイントに関連付けます。
+3. [**Udecxusbendpointcreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbendpoint/nf-udecxusbendpoint-udecxusbendpointcreate)を呼び出して、エンドポイントオブジェクトを作成し、udecxusbendpoint ハンドルを取得します。
+4. [**Udecxusbendpointsetwdfioqueue**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbendpoint/nf-udecxusbendpoint-udecxusbendpointsetwdfioqueue)を呼び出して、フレームワークキューオブジェクトをエンドポイントに関連付けます。
 
-この実装の例では、クライアント ドライバーは、動的な既定のコントロール エンドポイントを作成します。
+この実装例では、クライアントドライバーは動的な既定のコントロールエンドポイントを作成します。
 
 ```cpp
 NTSTATUS
@@ -784,59 +784,59 @@ exit:
 }
 ```
 
-## <a name="perform-error-recovery-by-resetting-an-endpoint"></a>エンドポイントをリセットすることで、エラーからの回復を実行します。
+## <a name="perform-error-recovery-by-resetting-an-endpoint"></a>エンドポイントをリセットしてエラー回復を実行する
 
 
-データ転送は、エンドポイントの停止条件などのさまざまな理由により失敗します。 場合は、失敗した転送エラー状態がクリアされるまで、エンドポイントが要求を処理することはできません。 UDE クラスの拡張機能には、失敗したデータ転送が発生した、クライアント ドライバーが呼び出されます[ *EVT\_UDECX\_USB\_エンドポイント\_リセット*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxusbendpoint/nc-udecxusbendpoint-evt_udecx_usb_endpoint_reset)コールバック関数は、以前の呼び出しに登録されているドライバー [ **UdecxUsbEndpointInitSetCallbacks**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxusbendpoint/nf-udecxusbendpoint-udecxusbendpointinitsetcallbacks)します。 実装では、ドライバーは、パイプの停止の状態をクリアし、エラー状態をクリアするために必要なその他の手順を実行できます。
+場合によっては、エンドポイントの停止条件など、さまざまな理由によりデータ転送が失敗することがあります。 転送が失敗した場合、エンドポイントは、エラー状態がクリアされるまで要求を処理できません。 UDE クラス拡張機能でデータ転送が失敗すると、クライアントドライバーの[ *.evt\_UDECX\_USB\_エンドポイント\_リセット*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbendpoint/nc-udecxusbendpoint-evt_udecx_usb_endpoint_reset)コールバック関数が呼び出されます。これは、前回のへ[**の呼び出しで登録されたドライバーです。UdecxUsbEndpointInitSetCallbacks バック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbendpoint/nf-udecxusbendpoint-udecxusbendpointinitsetcallbacks)。 実装では、ドライバーがパイプの停止状態をクリアし、その他の必要な手順を実行してエラー状態をクリアすることができます。
 
-この呼び出しは非同期です。 ドライバーが呼び出すことによって適切なエラー コードを使用して要求を完了する必要があります、クライアントが、リセット操作が完了したら、 [ **WdfRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestcomplete)します。 その呼び出しは、状態のリセット操作の完了に関する UDE クライアントの拡張機能を通知します。
+この呼び出しは非同期です。 リセット操作でクライアントが終了した後、ドライバーは、 [**Wdfrequestcomplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcomplete)を呼び出すことによって、適切なエラーコードを使用して要求を完了する必要があります。 この呼び出しにより、UDE クライアントの拡張機能に、状態を持つリセット操作の完了が通知されます。
 
-**注**クライアント ドライバーが、ホスト コント ローラーをリセットする際のオプションで複雑なソリューションがエラーからの回復に必要な場合。 このロジックを実装することができます、 [ *EVT\_UDECX\_WDF\_デバイス\_リセット*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxwdfdevice/nc-udecxwdfdevice-evt_udecx_wdf_device_reset)ドライバーがそのに登録されているコールバック関数[**UdecxWdfDeviceAddUsbDeviceEmulation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxwdfdevice/nf-udecxwdfdevice-udecxwdfdeviceaddusbdeviceemulation)呼び出します。 該当する場合、ドライバーは、ホスト コント ローラーおよびすべてのダウン ストリーム デバイスをリセットできます。 ドライバーを指定する必要があるかどうか、クライアント ドライバーでは、コント ローラーをリセットが、すべてのダウン ストリーム デバイスをリセットする必要はありません、 **UdeWdfDeviceResetActionResetEachUsbDevice**登録時に構成パラメーターにします。 クラスの拡張機能を呼び出す場合、 *EVT\_UDECX\_WDF\_デバイス\_リセット*接続されたデバイスごとにします。
+**メモ** エラー回復に複雑なソリューションが必要な場合は、クライアントドライバーにホストコントローラーをリセットするオプションがあります。 このロジックは、ドライバーによって[**Udecxwdfdeviceaddusbdeviceエミュレーション**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxwdfdevice/nf-udecxwdfdevice-udecxwdfdeviceaddusbdeviceemulation)呼び出しに登録されていた[ *\_udecx\_WDF\_デバイス\_リセット*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxwdfdevice/nc-udecxwdfdevice-evt_udecx_wdf_device_reset)コールバック関数に、.evt で実装できます。 該当する場合、ドライバーはホストコントローラーとすべてのダウンストリームデバイスをリセットできます。 クライアントドライバーがコントローラーをリセットする必要がなく、すべてのダウンストリームデバイスをリセットする必要がある場合、ドライバーでは、登録時に構成パラメーターに**Udewdfdeviceresetactionresetを**指定する必要があります。 この場合、クラス拡張は、接続されている各デバイスに対して、 *.evt\_UDECX\_WDF\_デバイス\_リセット*を呼び出します。
 
-## <a name="implement-queue-state-management"></a>キューの状態管理を実装します。
+## <a name="implement-queue-state-management"></a>キュー状態管理の実装
 
-UDE エンドポイントのオブジェクトに関連付けられているフレームワークのキュー オブジェクトの状態は、UDE クラスの拡張機能によって管理されます。 ただし、クライアント ドライバーでは、他の内部キューにエンドポイントのキューから要求を転送するクライアントする必要があります、エンドポイントの I/O のフローでの変更を処理するロジックを実装します。 これらのコールバック関数に登録されている[ **UdecxUsbEndpointInitSetCallbacks**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxusbendpoint/nf-udecxusbendpoint-udecxusbendpointinitsetcallbacks)します。
+UDE エンドポイントオブジェクトに関連付けられているフレームワークキューオブジェクトの状態は、UDE クラス拡張によって管理されます。 ただし、クライアントドライバーがエンドポイントキューから他の内部キューに要求を転送する場合、クライアントは、エンドポイントの i/o フローの変更を処理するロジックを実装する必要があります。 これらのコールバック関数は、 [**Udecxusbendpointinitsetcallbacks**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbendpoint/nf-udecxusbendpoint-udecxusbendpointinitsetcallbacks)に登録されます。
 
 ### <a name="endpoint-purge-operation"></a>エンドポイントの消去操作
 
-エンドポイントごとに 1 つのキューで UDE クライアント ドライバーを実装できます[ *EVT\_UDECX\_USB\_エンドポイント\_パージ*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxusbendpoint/nc-udecxusbendpoint-evt_udecx_usb_endpoint_purge)この例で示すようにします。
+次の例に示すように、エンドポイントごとに1つのキューを持つ UDE クライアントドライバーは、 [*USB\_エンド\_ポイントを\_\_UDECX*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbendpoint/nc-udecxusbendpoint-evt_udecx_usb_endpoint_purge)を実装できます。
 
-[ *EVT\_UDECX\_USB\_エンドポイント\_パージ*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxusbendpoint/nc-udecxusbendpoint-evt_udecx_usb_endpoint_purge)実装で、クライアント ドライバーはから転送されるすべての I/O を確認する必要なエンドポイントのキューが完了し、その新しく転送された I/O は、クライアント ドライバーのまでも失敗[ *EVT\_UDECX\_USB\_エンドポイント\_開始*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxusbendpoint/nc-udecxusbendpoint-evt_udecx_usb_endpoint_start)が呼び出されます。 呼び出すことによってこれらの要件が満たされて[ **UdecxUsbEndpointPurgeComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxusbendpoint/nf-udecxusbendpoint-udecxusbendpointpurgecomplete)I/O がすべて転送されることを確認することが完了し、将来の I/O の転送が失敗しました。
+[ *.Evt\_UDECX\_USB\_エンドポイント\_消去*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbendpoint/nc-udecxusbendpoint-evt_udecx_usb_endpoint_purge)の実装では、クライアントドライバーは、エンドポイントのキューから転送されたすべての i/o が完了していることを確認する必要があります。また、新しく転送された i/o も、クライアントに対して失敗します。ドライバーの[ *.evt\_UDECX\_USB\_エンドポイント\_開始*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbendpoint/nc-udecxusbendpoint-evt_udecx_usb_endpoint_start)が呼び出されます。 これらの要件は、 [**UdecxUsbEndpointPurgeComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbendpoint/nf-udecxusbendpoint-udecxusbendpointpurgecomplete)を呼び出すことによって満たされます。これにより、転送されたすべての i/o が完了し、今後の転送 i/o が失敗します。
 
-### <a name="endpoint-start-operation"></a>エンドポイントの操作の開始
+### <a name="endpoint-start-operation"></a>エンドポイントの開始操作
 
-[ *EVT\_UDECX\_USB\_エンドポイント\_開始*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxusbendpoint/nc-udecxusbendpoint-evt_udecx_usb_endpoint_start)実装で、クライアント ドライバーは、エンドポイントの上の I/O の処理を開始するために必要キュー、およびエンドポイントの転送された I/O を受信するすべてのキュー。 エンドポイントが作成された後、このコールバック関数から制御が戻た後までのすべての I/O は受信しません。 このコールバックは、後の I/O の処理の状態のエンドポイントを返します[ *EVT\_UDECX\_USB\_エンドポイント\_パージ*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxusbendpoint/nc-udecxusbendpoint-evt_udecx_usb_endpoint_purge)が完了するとします。
-
-
-## <a name="handling-data-transfer-requests-urbs"></a>処理データの転送要求 (翻訳)
+[ *.Evt\_UDECX\_USB\_エンドポイント\_* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbendpoint/nc-udecxusbendpoint-evt_udecx_usb_endpoint_start)実装を開始するために、クライアントドライバーはエンドポイントのキュー、およびエンドポイントの転送 i/o を受信するすべてのキューでの i/o 処理を開始する必要があります。 エンドポイントが作成された後は、このコールバック関数が戻るまで i/o は受信されません。 このコールバックは、 [ *.evt\_UDECX\_USB\_エンドポイント\_の消去*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbendpoint/nc-udecxusbendpoint-evt_udecx_usb_endpoint_purge)の完了後に、エンドポイントを処理 i/o の状態に戻します。
 
 
-クライアント デバイスのエンドポイントに送信された USB I/O 要求を処理するには、インターセプト、 [EVT_WDF_IO_QUEUE_IO_INTERNAL_DEVICE_CONTROL](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_queue_io_internal_device_control)と共に使用するキュー オブジェクトに対してコールバック[ **UdecxUsbEndpointInitSetCallbacks** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxusbendpoint/nf-udecxusbendpoint-udecxusbendpointinitsetcallbacks)エンドポイント、キューに関連付けるとき。 プロセスの I/O は、そのコールバックで、 [IOCTL\_内部\_USB\_送信\_URB](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_internal_usb_submit_urb) IoControlCode (下のサンプル コードを参照してください[メソッドを処理するURB](#urb-handling-methods)。).
+## <a name="handling-data-transfer-requests-urbs"></a>データ転送要求の処理 (URBs)
 
 
-## <a name="urb-handling-methods"></a>URB 処理メソッド
+クライアントデバイスのエンドポイントに送信された USB i/o 要求を処理するには、キューをに関連付けているときに、 [**Udecxusbendpointinitsetcallbacks**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbendpoint/nf-udecxusbendpoint-udecxusbendpointinitsetcallbacks)で使用されるキューオブジェクトの[EVT_WDF_IO_QUEUE_IO_INTERNAL_DEVICE_CONTROL](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_internal_device_control)コールバックをインターセプトします。終点. このコールバックでは、 [IOCTL\_内部\_USB](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbioctl/ni-usbioctl-ioctl_internal_usb_submit_urb)のプロセス i/o は\_URB iocontrolcode を送信\_ます (「 [urb 処理メソッド](#urb-handling-methods)」のサンプルコードを参照してください)。
 
 
-一部としての処理を使用して翻訳[IOCTL\_内部\_USB\_送信\_URB](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_internal_usb_submit_urb) A UDE クライアント ドライバーの仮想デバイス上のエンドポイントに関連付けられているキューへのポインターを取得できます、これらのメソッドを使用して、I/O 要求のバッファーを転送します。
+## <a name="urb-handling-methods"></a>URB の処理方法
 
-これらの関数は、キュー、およびエンドポイントに要求を処理するために、クライアント ドライバーによって実装されます。
 
-[**UdecxUrbRetrieveControlSetupPacket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxurb/nf-udecxurb-udecxurbretrievecontrolsetuppacket)  
-指定のフレームワークの要求オブジェクトから USB コントロール セットアップ パケットを取得します。
+内部\_USB を\_介した URBs の処理の一環として、仮想デバイス上のエンドポイントに関連付けられているキューの[\_URB を送信\_](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbioctl/ni-usbioctl-ioctl_internal_usb_submit_urb) 、ude クライアントドライバーは、次のような方法で i/o 要求の転送バッファーへのポインターを取得することができます。メソッド
 
-[**UdecxUrbRetrieveBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxurb/nf-udecxurb-udecxurbretrievebuffer)  
-エンドポイントのキューに送信される指定のフレームワークの要求オブジェクトから、URB の転送のバッファーを取得します。
+これらの関数は、エンドポイントでキューと要求を処理するためにクライアントドライバーによって実装されます。
 
-[**UdecxUrbSetBytesCompleted**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxurb/nf-udecxurb-udecxurbsetbytescompleted)  
-フレームワークの要求オブジェクト内に含まれる URB に転送されたバイト数を設定します。
+[**UdecxUrbRetrieveControlSetupPacket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxurb/nf-udecxurb-udecxurbretrievecontrolsetuppacket)  
+指定されたフレームワーク要求オブジェクトから USB コントロールのセットアップパケットを取得します。
 
-[**UdecxUrbComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxurb/nf-udecxurb-udecxurbcomplete)  
-USB に固有の完了ステータス コードと URB 要求を完了します。
+[**UdecxUrbRetrieveBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxurb/nf-udecxurb-udecxurbretrievebuffer)  
+エンドポイントキューに送信された、指定されたフレームワーク要求オブジェクトからの URB の転送バッファーを取得します。
 
-[**UdecxUrbCompleteWithNtStatus**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxurb/nf-udecxurb-udecxurbcompletewithntstatus)  
-NTSTATUS コードで URB 要求を完了します。
+[**UdecxUrbSetBytesCompleted 完了しました**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxurb/nf-udecxurb-udecxurbsetbytescompleted)  
+フレームワークの要求オブジェクト内に含まれる URB に転送されるバイト数を設定します。
 
-一般的な I/O が USB を転送の URB の処理の流れを次に示します。
+[**UdecxUrbComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxurb/nf-udecxurb-udecxurbcomplete)  
+USB 固有の完了ステータスコードを使用して、URB 要求を完了します。
+
+[**UdecxUrbCompleteWithNtStatus**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxurb/nf-udecxurb-udecxurbcompletewithntstatus)  
+NTSTATUS コードを使用して URB 要求を完了します。
+
+以下は、USB 出力転送の URB に対する一般的な i/o 処理のフローです。
 
 ```cpp
 static VOID
@@ -889,8 +889,8 @@ exit:
 }
 ```
 
-クライアント ドライバーでは、DPC とは別に、I/O 要求を完了できます。 これらのベスト プラクティスに従います。
+クライアントドライバーは、DPC とは別ので i/o 要求を完了できます。 次のベストプラクティスに従ってください。
 
-- 既存の USB ドライバーとの互換性を確実には、UDE クライアントが呼び出す必要があります[ **WdfRequestComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestcomplete)ディスパッチで\_レベル。
-- 場合、 [ **URB** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb)エンドポイントのキューおよび、呼び出し元のドライバーのスレッドまたは DPC、要求で同期的に処理を開始する必要があります同期的に完了できませんドライバーに追加されました。 個別の DPC が必要なドライバーを呼び出すことによってキューに入れるため、 [ **WdfDpcEnqueue**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdpc/nf-wdfdpc-wdfdpcenqueue)します。
-- UDE クラスの拡張機能を呼び出すときに[ *EvtIoCanceledOnQueue* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_queue_io_canceled_on_queue)または[ *EvtRequestCancel*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nc-wdfrequest-evt_wdf_request_cancel)、クライアント ドライバーが完了する必要があります、呼び出し元のスレッドまたは DPC から個別の DPC に URB を受け取りました。 これを行うには、ドライバーが提供する必要があります、 *EvtIoCanceledOnQueue*コールバックをその[ **URB** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb)キュー。
+- 既存の USB ドライバーとの互換性を確保するために、UDE クライアントは、ディスパッチ\_レベルで[**Wdfrequestcomplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcomplete)を呼び出す必要があります。
+- [**URB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb)がエンドポイントのキューに追加され、呼び出し元のドライバーのスレッドまたは DPC でドライバーが同期的に処理を開始する場合、要求を同期的に完了することはできません。 この目的には別の DPC が必要です。これは、 [**Wdfdpcenqueue**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdpc/nf-wdfdpc-wdfdpcenqueue)を呼び出してドライバーをキューに置いています。
+- UDE クラス拡張機能が[*EvtIoCanceledOnQueue*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_canceled_on_queue)または[*Evtrequestcancel*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nc-wdfrequest-evt_wdf_request_cancel)を呼び出すと、クライアントドライバーは、呼び出し元のスレッドまたは dpc とは別の dpc で受信した URB を完了する必要があります。 これを行うには、ドライバーが[**URB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb)キューの*EvtIoCanceledOnQueue*コールバックを提供する必要があります。

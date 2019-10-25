@@ -3,18 +3,18 @@ title: ATA ポート ドライバーのキュー管理
 description: ATA ポート ドライバーのキュー管理
 ms.assetid: feba86a6-2b89-41c9-9b14-b76c2522a332
 keywords:
-- ATA ポート ドライバー WDK、キュー
-- キューの WDK ATA ポート ドライバー
-- デバイスのキューの WDK ATA ポート ドライバー
-- LUN キュー WDK ATA ポート ドライバー
+- ATA ポートドライバー WDK、キュー
+- WDK ATA ポートドライバーをキューに置いてください
+- デバイスキュー WDK ATA ポートドライバー
+- LUN キュー WDK ATA ポートドライバー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ec23706d25cf5c60853b470f5ff39f5b21a4dda0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f53e19e772ccf720f84c4eea112a6eecc4cc147a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368427"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845105"
 ---
 # <a name="ata-port-drivers-queue-management"></a>ATA ポート ドライバーのキュー管理
 
@@ -22,20 +22,20 @@ ms.locfileid: "67368427"
 ## <span id="ddk_ata_port_drivers_queue_management_kg"></span><span id="DDK_ATA_PORT_DRIVERS_QUEUE_MANAGEMENT_KG"></span>
 
 
-**注**ATA ポートはドライバーと ATA ミニポート ドライバー モデルが変更されるか利用今後します。 代わりに、使用をお勧め、 [Storport ドライバー](https://docs.microsoft.com/windows-hardware/drivers/storage/storport-driver)と[Storport ミニポート](https://docs.microsoft.com/windows-hardware/drivers/storage/storport-miniport-drivers)ドライバー モデル。
+**メモ**ATA ポートドライバーと ATA ミニポートドライバーのモデルは、将来変更されるか、使用できなくなる可能性があります。 代わりに、 [storport ドライバー](https://docs.microsoft.com/windows-hardware/drivers/storage/storport-driver)および[storport ミニポート](https://docs.microsoft.com/windows-hardware/drivers/storage/storport-miniport-drivers)ドライバーモデルを使用することをお勧めします。
 
 
-ATA ポート ドライバーには、デバイスのキュー、ミニポート ドライバーによって公開される各論理ユニット番号 (LUN) の IDE コント ローラーで有効になっている各チャネルに対して別のキューが維持されます。 これらのキューが連携して、ミニポート ドライバーへの要求のフローを制御します。
+ATA ポートドライバーは、ミニポートドライバーによって公開されている論理ユニット番号 (LUN) ごとにデバイスキューを保持し、IDE コントローラーで有効になっているチャネルごとに個別のキューを保持します。 これらのキューは、ミニポートドライバーへの要求のフローを制御するために連携します。
 
-次の図は、ポート ドライバーの LUN のキューからチャネルのキューに要求のフローを示しています。
+次の図は、ポートドライバーの LUN キューからチャネルキューへの要求のフローを示しています。
 
-![ata のデバイスとチャネルのキュー](images/ataqueues.png)
+![ata デバイスキューとチャネルキュー](images/ataqueues.png)
 
-ATA ポート ドライバーは、I/O のプッシュ モデルを使用しているために、ATA ポート ドライバーはミニポート ドライバーのミニポート ドライバーには、次のパケットを転送する前に、入力を要求を待機しません。 ATA のポートのドライバーを使用する I/O モデルについては、次を参照してください。 [ATA ポート I/O モデル](ata-port-i-o-model.md)します。
+ATA ポートドライバーでは i/o のプッシュモデルが使用されるため、ATA ポートドライバーはミニポートドライバーが次のパケットをミニポートドライバーに転送する前に入力を要求するのを待機しません。 ATA ポートドライバーで使用される i/o モデルの詳細については、「 [Ata ポート I/o モデル](ata-port-i-o-model.md)」を参照してください。
 
-それにもかかわらず、ATA ポート ドライバー*は*ミニポート ドライバーにプッシュ ダウンの要求の数を制限します。 要求の数は、ミニポート ドライバーに割り当てられている値、 **NumberOfOverlappedRequests**のメンバー、 [ **IDE\_チャネル\_構成**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/irb/ns-irb-_ide_channel_configuration)構造体。 ATA ポート ドライバーでは、その特定のチャネルのミニポート ドライバーに転送が未完了の「重複」要求の数のカウントを保持します。 この数の値を超えた場合**NumberOfOverlappedRequests**、ミニポート ドライバーに新しい要求を渡す ATA ポート ドライバーを停止します。 ATA ポート ドライバーは、キューにすべての新しい要求を保持し、ミニポート ドライバーが一部の要求を完了するまで待機します。 未処理の要求の数の値を下回る後**NumberOfOverlappedRequests**、ミニポート ドライバーに要求を送信ポートのドライバーを再開します。
+それに*もかかわらず*、ATA ポートドライバーでは、ミニポートドライバーにプッシュダウンされる要求の数が制限されます。 要求の数は、ミニポートドライバーが[**IDE\_チャネル\_構成**](https://docs.microsoft.com/windows-hardware/drivers/ddi/irb/ns-irb-_ide_channel_configuration)構造の**NumberOfOverlappedRequests**メンバーに割り当てる値です。 ATA ポートドライバーは、特定のチャネルのミニポートドライバーに転送された未完了の "重複" 要求の数を保持します。 この数値が**NumberOfOverlappedRequests**の値を超えると、ATA ポートドライバーはミニポートドライバーへの新しい要求の受け渡しを停止します。 ATA ポートドライバーは、すべての新しい要求をキューに保持し、ミニポートドライバーがいくつかの要求を完了するまで待機します。 未処理の要求の数が**NumberOfOverlappedRequests**の値を下回ると、ポートドライバーはミニポートドライバーへの要求の送信を再開します。
 
-ATA のミニポート ドライバーではポート ドライバーから呼び出すことで受信した要求のフローを制御できますも、 [ **AtaPortDeviceBusy** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/irb/nf-irb-ataportdevicebusy)と[ **AtaPortDeviceReady**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/irb/nf-irb-ataportdeviceready)ルーチン。
+ATA ミニポートドライバーは、 [**AtaPortDeviceBusy**](https://docs.microsoft.com/windows-hardware/drivers/ddi/irb/nf-irb-ataportdevicebusy)ルーチンと[**AtaPortDeviceReady**](https://docs.microsoft.com/windows-hardware/drivers/ddi/irb/nf-irb-ataportdeviceready)ルーチンを呼び出すことによって、ポートドライバーから受信する要求のフローを制御することもできます。
 
  
 

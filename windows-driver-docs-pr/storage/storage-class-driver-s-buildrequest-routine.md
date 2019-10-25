@@ -4,18 +4,18 @@ description: 記憶域クラス ドライバーの BuildRequest ルーチン
 ms.assetid: 2ba26628-4862-440c-b8f1-dd983cf9923b
 keywords:
 - BuildRequest
-- I/O スタックの場所の WDK ストレージ
-- WDK 記憶域の要求を再試行しています
-- SCSI 要求意味 WDK ストレージ
-- 要求の意味が WDK ストレージ
+- I/o スタックの場所 WDK ストレージ
+- WDK ストレージの再試行要求
+- SCSI 要求感知 WDK ストレージ
+- 要求 sense WDK ストレージ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7587cc600364d89fb54b9f7544edcdaafbcefaba
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: fd6f9d63a9514c62ba62d4ab116daca462bec6b0
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368222"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844754"
 ---
 # <a name="storage-class-drivers-buildrequest-routine"></a>記憶域クラス ドライバーの BuildRequest ルーチン
 
@@ -23,31 +23,31 @@ ms.locfileid: "67368222"
 ## <span id="ddk_storage_class_drivers_buildrequest_routine_kg"></span><span id="DDK_STORAGE_CLASS_DRIVERS_BUILDREQUEST_ROUTINE_KG"></span>
 
 
-上位レベルのすべてのカーネル モード ドライバーなど、記憶域クラス ドライバーは、次の下位のドライバーの IRP の I/O スタックの場所を設定する必要がありますと[記憶域周辺機器への要求の処理](handling-requests-to-storage-peripherals.md)します。 クラス ドライバーを設定する使いなれたシステム提供のポートのドライバーの Irp では、ポート ドライバーの I/O スタックの場所は次のように設定します。
+すべての上位レベルのカーネルモードドライバーと同様に、記憶域の[周辺機器への要求を処理](handling-requests-to-storage-peripherals.md)するときに、ストレージクラスドライバーは、次の下位のドライバーに対して IRP の i/o スタックの場所を設定する必要があります。 システムが提供するポートドライバーの SRBs を使用してクラスドライバーが設定する Irp では、ポートドライバーの i/o スタックの場所は次のように設定されます。
 
--   **MajorFunction** IRP を含む\_MJ\_SCSI
+-   **MajorFunction**には、IRP\_MJ\_SCSI が含まれています
 
--   **Parameters.Scsi.Srb** SRB へのポインターが含まれています
+-   Srb には、SRB へのポインターが含まれてい**ます。**
 
-各クラス ドライバーは、それらを設定する Cdb で基になる記憶域ポート ドライバーともされる Srb のメモリの割り当てを担当します。 クラス ドライバーとそのされる Srb のルック アサイド リストを設定できますか**ExInitializeNPageLookasideList**呼び出したり**ExAllocatePool**非ページ メモリ。 参照してください[ルック アサイド リストを使用した](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-lookaside-lists)ルック アサイド リストおよび非ページ プールの使用に関する詳細。
+各クラスドライバーは、SRBs にメモリを割り当て、基になるストレージポートドライバー用に CDBs を設定する役割を担います。 クラスドライバーでは、SRBs のルックアサイドリストを設定**するか、** 非ページメモリに対して**Exallocatepool**を呼び出すことができます。 ルックアサイドリストと非ページプールの使用の詳細については、「[ルックアサイドリストの使用](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-lookaside-lists)」を参照してください。
 
-プールから、またはドライバーが作成したルック アサイド リストから、メモリを割り当てます、かどうかすべての記憶域クラス ドライバーはされる Srb のメモリを解放します。 記憶域クラス ドライバーの*IoCompletion*で説明されているルーチン[記憶域クラス ドライバー IoCompletion ルーチン](storage-class-driver-s-iocompletion-routines.md)、通常される Srb ルック アサイド リストに戻るに割り当てられたメモリを解放します。
+プールからメモリを割り当てるか、ドライバーによって作成されたルックアサイドリストからメモリを割り当てるかにかかわらず、すべてのストレージクラスドライバーは、SRBs に割り当てられたメモリを解放する役割を担います。 ストレージクラスドライバーの*Iocompletion*ルーチン ([ストレージクラスドライバーの iocompletion ルーチン](storage-class-driver-s-iocompletion-routines.md)) で説明されているように、通常は、SRBs に割り当てられたメモリをルックアサイドリストに解放します。
 
-クラス ドライバーの*BuildRequest*ルーチンは、デバイスとの通信に設定されている CDB の長さを含む SRB メンバーで適切な値を設定する必要があります。 設定を要求センス情報や、ドライバーは、再試行する必要がありますを返す要求の場合、 *IoCompletion* IRP の日常的な。 読み取りまたは書き込み要求を Or、 **SrbFlags**で、適切な転送の方向、SRB\_フラグ\_データ\_IN または SRB\_フラグ\_データ\_それぞれします。
+クラスドライバーの*Buildrequest*ルーチンは、デバイスと通信するように設定されている CDB の長さなど、SRB メンバーに適切な値を設定する必要があります。 要求に関する情報を返す要求や、ドライバーが再試行しなければならない可能性がある要求については、IRP に*Iocompletion*ルーチンを設定します。 読み取り要求または書き込み要求の場合、 **Srbflags**は適切な転送方向、SRB\_フラグ\_データ\_または SRB\_フラグ\_データ\_出力されます。
 
-A *BuildRequest*ルーチンが、SRB のペアを設定する責任を共有*SendSrbSynchronous*と*SendSrbAsynchronous*ルーチン。 つまり、 *BuildRequest*ルーチンよく、すべての要求に対して設定される SRB メンバーを設定中に、 *SendSrbXxx* SRB の値を設定要求の種類ごとにのみ関連する各ルーチン。 ポート ドライバーに IRP が渡されると、 *SendSrbAsynchronous* 、日常的な IRP ようを設定すると、ドライバーによって提供される*IoCompletion*ルーチン。
+*Buildrequest*ルーチンは、 *Sendsrbsynchronous*ルーチンと*SendSrbAsynchronous*ルーチンのペアを使用して SRB を設定する責任を共有する場合があります。 つまり、 *Buildrequest*ルーチンは、すべての要求に対して一般的に設定されている SRB メンバーを設定できました。一方、 *Sendsrbxxx*ルーチンでは、各種類の要求に対して SRB 値が適切に設定されます。 IRP が*SendSrbAsynchronous*ルーチンからポートドライバーに渡される場合は、ドライバーによって提供される*iocompletion*ルーチンを使用して irp を設定する必要があります。
 
-ほとんどされる Srb 設定クラス ドライバーが読み込まれた後、**関数**メンバー SRB に設定\_関数\_EXECUTE\_SCSI バス経由で送信するデバイスの I/O 要求を示します。
+クラスドライバーが読み込まれると、最も多くの SRBs が設定されます。これにより、**関数**メンバーが SRB\_関数に設定され\_\_SCSI が実行され、バスを介して送信されるデバイス i/o 要求が示されます。
 
-システム定義の SRB メンバーとその値の詳細については、次を参照してください。 [ **SCSI\_要求\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/ns-srb-_scsi_request_block)します。
+システム定義の SRB メンバーとその値の詳細については、「 [**SCSI\_REQUEST\_BLOCK**](https://docs.microsoft.com/windows-hardware/drivers/ddi/srb/ns-srb-_scsi_request_block)」を参照してください。
 
-### <a name="span-idsettingupsrbsforrequestsensespanspan-idsettingupsrbsforrequestsensespanspan-idsettingupsrbsforrequestsensespansetting-up-srbs-for-request-sense"></a><span id="Setting_Up_SRBs_for_Request_Sense"></span><span id="setting_up_srbs_for_request_sense"></span><span id="SETTING_UP_SRBS_FOR_REQUEST_SENSE"></span>要求の意味のされる Srb の設定
+### <a name="span-idsetting_up_srbs_for_request_sensespanspan-idsetting_up_srbs_for_request_sensespanspan-idsetting_up_srbs_for_request_sensespansetting-up-srbs-for-request-sense"></a><span id="Setting_Up_SRBs_for_Request_Sense"></span><span id="setting_up_srbs_for_request_sense"></span><span id="SETTING_UP_SRBS_FOR_REQUEST_SENSE"></span>Request Sense の SRBs の設定
 
-クラスのドライバーでは、ポート ドライバーがターゲット コント ローラーには、条件の確認が返されるときに、SCSI 要求意味またはそれと同等の情報を返すことを要求できます。 これを行うには、クラス ドライバーの設定**SenseInfoBuffer**ポインターと**SenseInfoBufferLength** SRB のためポート ドライバー戻ることができます要求意味については、条件が発生した場合。 ポートのドライバーを設定して要求センス情報が返されることを示します、 **SrbStatus** SRB を持つメンバー\_状態\_AUTOSENSE\_IRP が返されるときに有効です。 詳細については*InterpretSenseInfo*ルーチンを参照してください[記憶域クラス ドライバー InterpretRequestSense ルーチン](storage-class-driver-s-interpretrequestsense-routine.md)します。
+クラスドライバーは、ターゲットコントローラーからチェック条件が返されたときに、ポートドライバーが SCSI の要求意味または同等の情報を返すように要求できます。 これを行うために、クラスドライバーは**Senseinfobuffer**ポインターと**Senseinfobufferlength**を SRB に設定します。これにより、ポートドライバーは、チェック条件が発生した場合に要求に関する情報を返すことができます。 ポートドライバーは、SRB\_STATUS を使用して**Srbstatus**メンバーを設定することによって要求センス情報が返されたことを示しています。これは、IRP を返したときに有効\_\_ます。 の*解釈*の詳細については、「[ストレージクラスドライバーの解釈 requestsense ルーチン](storage-class-driver-s-interpretrequestsense-routine.md)」を参照してください。
 
-### <a name="span-idretriesspanspan-idretriesspanspan-idretriesspanretries"></a><span id="Retries"></span><span id="retries"></span><span id="RETRIES"></span>再試行
+### <a name="span-idretriesspanspan-idretriesspanspan-idretriesspanretries"></a><span id="Retries"></span><span id="retries"></span><span id="RETRIES"></span>試行
 
-記憶域クラス ドライバーは、ターゲット/コント ローラーのエラー、バスのリセット、または要求タイムアウトが原因で失敗した要求を再試行します。 その結果、多くのクラス ドライバーは IRP の独自 I/O スタックの場所での再試行回数を維持します。 このようなクラス ドライバーの*BuildRequest*ルーチンが初期化することも、特定の要求の再試行回数の上限を設定する前にその*IoCompletion*ルーチンとポートのドライバーに IRP を送信します。 詳細については*RetryRequest*ルーチンを参照してください[記憶域クラス ドライバー RetryRequest ルーチン](storage-class-driver-s-retryrequest-routine.md)します。
+ストレージクラスドライバーは、ターゲット/コントローラーのエラー、バスのリセット、または要求のタイムアウトによって失敗した要求を再試行する役割を担います。 そのため、多くのクラスドライバーは、IRP の i/o スタックの場所に再試行回数を保持します。 このようなクラスドライバーの*Buildrequest*ルーチンでは、指定された要求の再試行制限を初期化する前に、その要求の*iocompletion*ルーチンを設定し、IRP をポートドライバーに送信することもできます。 *Retryrequest*ルーチンの詳細については、「[ストレージクラスドライバーの retryrequest ルーチン](storage-class-driver-s-retryrequest-routine.md)」を参照してください。
 
  
 

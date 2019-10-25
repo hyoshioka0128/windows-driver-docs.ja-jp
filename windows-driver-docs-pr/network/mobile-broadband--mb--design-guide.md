@@ -1,17 +1,17 @@
 ---
-title: モバイルブロードバンド (MB) 設計ガイドに関するトピック
-description: モバイルブロードバンド (MB) 設計ガイドに関するトピック
+title: モバイル ブロード バンド (MB) 設計ガイドに関するトピック
+description: モバイル ブロード バンド (MB) 設計ガイドに関するトピック
 ms.assetid: d5db6b69-c5a9-41d5-88c9-7c4d1e7c9c03
 ms.date: 08/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 17a15a0f45f6cf77d0a4fd93a4cdb76e24736ff8
-ms.sourcegitcommit: fec48fa5342d9cd4cd5ccc16aaa06e7c3d730112
+ms.openlocfilehash: 84e13c423b535043d5e57973fe31cbf8c3dfca42
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2019
-ms.locfileid: "69565656"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844228"
 ---
-# <a name="mobile-broadband-mb-design-guide-topics"></a>モバイルブロードバンド (MB) 設計ガイドに関するトピック
+# <a name="mobile-broadband-mb-design-guide-topics"></a>モバイル ブロード バンド (MB) 設計ガイドに関するトピック
 
 
 「モバイルブロードバンド (MB)」の設計ガイドでは、モバイルブロードバンドミニポートドライバーで実行する必要がある操作とタスクについて説明します。
@@ -87,7 +87,7 @@ ms.locfileid: "69565656"
 ## <a name="related-topics"></a>関連トピック
 
 
-[モバイルブロードバンドリファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
+[モバイルブロードバンドリファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
 
  
 

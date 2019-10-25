@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_BDA\_ノード\_メソッド
-description: クライアントを使用して、KSPROPERTY\_BDA\_ノード\_ノードでサポートされるメソッドの一覧を取得するメソッド。
+title: KSK プロパティ\_BDA\_NODE\_メソッド
+description: クライアントは、KSK プロパティ\_BDA\_NODE\_メソッドを使用して、ノードでサポートされているメソッドの一覧を取得します。
 ms.assetid: 143456dc-1910-4db4-8584-9cd19d09e8ce
 keywords:
-- KSPROPERTY_BDA_NODE_METHODS ストリーミング メディア デバイス
+- KSPROPERTY_BDA_NODE_METHODS ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 76fb7a3a6da4d2d500901b67c00e2f1e00666a10
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2322cc7ead722b427a3233dca290c1dc180a8b67
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364826"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844348"
 ---
-# <a name="kspropertybdanodemethods"></a>KSPROPERTY\_BDA\_ノード\_メソッド
+# <a name="ksproperty_bda_node_methods"></a>KSK プロパティ\_BDA\_NODE\_メソッド
 
 
-クライアントを使用して、KSPROPERTY\_BDA\_ノード\_ノードでサポートされるメソッドの一覧を取得するメソッド。
+クライアントは、KSK プロパティ\_BDA\_NODE\_メソッドを使用して、ノードでサポートされているメソッドの一覧を取得します。
 
 ## <span id="ddk_ksproperty_bda_node_methods_ks"></span><span id="DDK_KSPROPERTY_BDA_NODE_METHODS_KS"></span>
 
@@ -41,7 +41,7 @@ ms.locfileid: "67364826"
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,11 +50,11 @@ ms.locfileid: "67364826"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>X</p></td>
+<td><p>[はい]</p></td>
+<td><p>必須ではない</p></td>
 <td><p>フィルター</p></td>
 <td><p>KSPROPERTY</p></td>
-<td><p>Guid のリスト</p></td>
+<td><p>Guid の一覧</p></td>
 </tr>
 </tbody>
 </table>
@@ -64,11 +64,11 @@ ms.locfileid: "67364826"
 <a name="remarks"></a>注釈
 -------
 
-ノードでサポートされるメソッドの一覧は、Guid の一覧を示します。
+ノードでサポートされているメソッドの一覧は、Guid の一覧です。
 
-ネットワーク プロバイダーでは、このプロパティを使用して、BDA テンプレートの接続リスト内の各ノードの機能のクエリを実行します。
+ネットワークプロバイダーは、このプロパティを使用して、BDA テンプレート接続リスト内の各ノードの機能を照会します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -79,7 +79,7 @@ ms.locfileid: "67364826"
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Bdamedia.h (Bdamedia.h を含む)</td>
+<td>Bdamedia (Bdamedia を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -87,9 +87,9 @@ ms.locfileid: "67364826"
 ## <a name="see-also"></a>関連項目
 
 
-[**BdaPropertyNodeMethods**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdasup/nf-bdasup-bdapropertynodemethods)
+[**BdaPropertyNodeMethods**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bdasup/nf-bdasup-bdapropertynodemethods)
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
  
 

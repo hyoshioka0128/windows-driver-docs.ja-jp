@@ -3,19 +3,19 @@ title: AVStream のクロック
 description: AVStream のクロック
 ms.assetid: fc1d5bca-72e3-48e2-b46f-09a13bba83b4
 keywords:
-- WDK AVStream をクロックします。
-- AVStream クロック WDK
-- WDK AVStream のクロックをピン留め
-- WDK AVStream のタイマー
-- WDK AVStream の時間
+- 時計 WDK AVStream
+- AVStream の時計 WDK
+- pin の時計 WDK AVStream
+- タイマー WDK AVStream
+- 時間 WDK AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3ef24bd850ce2eb63f5935e8da7de7c416c224b9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 319d699d1aba3d64a1329c0d2f0fef37799b8357
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386710"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845018"
 ---
 # <a name="avstream-clocks"></a>AVStream のクロック
 
@@ -23,21 +23,21 @@ ms.locfileid: "67386710"
 
 
 
-AVStream のフィルターでは、pin でのクロックがサポートされます。
+AVStream フィルターでは、ピンの時計がサポートされています。
 
-で、AVStream 暗証番号 (pin) が時計を公開していることを示す設定 KSPIN\_フラグ\_実装\_出勤、**フラグ**最初のメンバー [ **KSPIN\_記述子\_EX** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_kspin_descriptor_ex)で、 **PinDescriptors**のメンバー [ **KSFILTER\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_ksfilter_descriptor).
+AVStream の pin が時計を公開することを示すには、KSPIN\_フラグを設定し\_最初の[**kspin\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_kspin_descriptor_ex)の**Flags**メンバーに\_クロックを実装します。これは、KSK フィルターの**pindescriptors**メンバーの例\_[ **_t_11_ 記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_ksfilter_descriptor)。
 
-ポインターを提供する[ **KSCLOCK\_ディスパッチ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_ksclock_dispatch)構造体[ **KSPIN\_ディスパッチ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_kspin_dispatch)します。
+[**Kspin\_ディスパッチ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_kspin_dispatch)の[**ksclock\_ディスパッチ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_ksclock_dispatch)構造体へのポインターも提供します。
 
-クロックの要求で定義されたメソッドを使用して、 [IKsReferenceClock](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nn-ks-iksreferenceclock)インターフェイス。 取得することができます、 *IKsReferenceClock*呼び出してインターフェイス[ **KsPinGetReferenceClockInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-kspingetreferenceclockinterface)します。 AVStream ミニドライバーが完了すると、インターフェイスを解放します。
+クロック要求を行うには、 [Iksreferenceclock](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nn-ks-iksreferenceclock)インターフェイスに定義されているメソッドを使用します。 [**Kspingetreferenceclockinterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-kspingetreferenceclockinterface)を呼び出すことによって、 *Iksk referenceclock*インターフェイスを取得できます。 AVStream ミニドライバーは、完了時にインターフェイスを解放する役割を担います。
 
-配置するタイマー値を取得する、 **PresentationTime**フィールド[ **KSSTREAM\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksstream_header)、呼び出す[ **IKsReferenceClock::GetCorrelatedTime**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-iksreferenceclock-getcorrelatedtime)します。
+[**Ksk ストリーム\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksstream_header)の**プレゼンテーション時間**フィールドに配置するタイマー値を取得するには、 [**iksk Referenceclock:: GetCorrelatedTime**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-iksreferenceclock-getcorrelatedtime)を呼び出します。
 
-クロックが選択されている場合でも、クロックが決して GraphEdit に表示されることに注意してください。
+時計が選択されている場合でも、[GraphEdit] に時計が表示されないことに注意してください。
 
-クロックが選択されていることを確認するへの呼び出しを確認します。 [IKsReferenceClock](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nn-ks-iksreferenceclock)メソッド KSCLOCK で指定されたルーチンをディスパッチする呼び出しを生成する\_ディスパッチします。
+クロックが選択されていることを確認するには、 [Iksreferenceclock](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nn-ks-iksreferenceclock)メソッドの呼び出しによって、KSCLOCK\_dispatch に指定されたディスパッチルーチンの呼び出しが生成されることを確認します。
 
-フィルターは、一時停止状態にグラフ遷移するときに、クロックを選択します。 たとえば、キャプチャ フィルターのプッシュ ソースには任意のフィルターには、クロック プロバイダーとして基本設定が与えられます。
+フィルターグラフマネージャーは、グラフが一時停止状態に遷移するときにクロックを選択します。 プッシュソースであるフィルター (たとえばキャプチャフィルター) は、クロックプロバイダーとして設定されます。
 
  
 

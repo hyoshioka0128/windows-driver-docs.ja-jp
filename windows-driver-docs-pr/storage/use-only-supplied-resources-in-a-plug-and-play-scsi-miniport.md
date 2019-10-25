@@ -3,19 +3,19 @@ title: プラグ アンド プレイの SCSI ミニポートで提供された�
 description: プラグ アンド プレイの SCSI ミニポートで提供されたリソースのみの使用
 ms.assetid: 26c688dc-b6af-4a0c-8401-d53e653d90b3
 keywords:
-- SCSI ミニポート ドライバー WDK 記憶域、PnP
+- SCSI ミニポートドライバー WDK 記憶域、PnP
 - PnP WDK SCSI
-- プラグ アンド プレイ WDK SCSI
-- SCSI ミニポート ドライバーに変換します。
+- WDK SCSI のプラグアンドプレイ
+- SCSI ミニポートドライバーの変換
 - リソース制限 WDK SCSI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 870722da8a289979c9b6f42ce63c22b2a00a4ce5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0f8da9555242ef358b7b8fb161a0b95f34d239bf
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386798"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845443"
 ---
 # <a name="use-only-supplied-resources-in-a-plug-and-play-scsi-miniport"></a>プラグ アンド プレイの SCSI ミニポートで提供されたリソースのみの使用
 
@@ -23,11 +23,11 @@ ms.locfileid: "67386798"
 ## <span id="ddk_use_only_supplied_resources_in_a_plug_and_play_scsi_miniport_kg"></span><span id="DDK_USE_ONLY_SUPPLIED_RESOURCES_IN_A_PLUG_AND_PLAY_SCSI_MINIPORT_KG"></span>
 
 
-削減または排除、いくつかの既知のメモリの場所にアクセスして自分のデバイスを検出するドライバーのプラグ アンド プレイ システムの目標の 1 つです。 これには、その HBA の構成領域を読み取ることによって、リソースを決定するドライバーが含まれます。
+プラグアンドプレイシステムの目標の1つは、既知のメモリの場所にアクセスすることによってデバイスを検出するドライバーの数を減らしたり、削除したりすることです。 これには、HBA の構成領域を読み取ることによってリソースを決定するドライバーが含まれます。
 
-プラグ アンド プレイでは、列挙可能なバス上のデバイスは、バス ドライバーによって検出されます。 特殊なケースの修正プログラムを提供すると、破損したバスとブリッジのパーツなどのこれにより、リソースの競合を処理するために、バス ドライバー。
+プラグアンドプレイでは、バスのドライバーによって、列挙可能なバス上のデバイスが検出されます。 これにより、バスドライバーはリソースの競合を処理し、障害が発生したバスやブリッジパーツに対して特殊なケース修正を行うことができます。
 
-その結果、SCSI ミニポート ドライバーでは、Microsoft Windows 2000 以降のシステムで、ポート ドライバー (ある場合) によって提供されるリソースのみを使用する必要があります。 ミニポート ドライバーが許可されたポート ドライバーが値 0 のアクセスの範囲で渡す場合にのみ、HBA のバスをスキャンします。 ミニポート ドライバーは、それに割り当てられていないリソースを使用しようとすると、 [ **ScsiPortGetDeviceBase** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportgetdevicebase)呼び出しは失敗します。 通話の読み取りし、書き込みのデバイスを登録または正しくマップされていないポートも失敗する可能性があります。
+そのため、SCSI ミニポートドライバーは、Microsoft Windows 2000 以降のシステムで、ポートドライバーによって提供されるリソース (存在する場合) のみを使用する必要があります。 ポートドライバーがゼロ値のアクセス範囲を通過した場合にのみ、ミニポートドライバーで HBA のバスをスキャンできます。 ミニポートドライバーが割り当てられていないリソースを使用しようとすると、 [**ScsiPortGetDeviceBase**](https://docs.microsoft.com/windows-hardware/drivers/ddi/srb/nf-srb-scsiportgetdevicebase)の呼び出しは失敗します。 また、正常にマップされていないデバイスレジスタまたはポートの読み取りと書き込みの呼び出しも失敗する可能性があります。
 
  
 

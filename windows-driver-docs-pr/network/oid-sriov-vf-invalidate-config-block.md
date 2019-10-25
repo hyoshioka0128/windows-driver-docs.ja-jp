@@ -1,69 +1,69 @@
 ---
 title: OID_SRIOV_VF_INVALIDATE_CONFIG_BLOCK
-description: NDIS は、ミニポート ドライバーの PCI Express (PCIe) 仮想機能 (VF) 1 つまたは複数の構成ブロック内のデータが変更されたことを通知する OID_SRIOV_VF_INVALIDATE_CONFIG_BLOCK のオブジェクト識別子 (OID) メソッド要求を発行します。
+description: NDIS は、1つまたは複数の構成ブロック内のデータが変更された PCI Express (PCIe) 仮想機能 (VF) のミニポートドライバーに通知するために、OID_SRIOV_VF_INVALIDATE_CONFIG_BLOCK のオブジェクト識別子 (OID) メソッド要求を発行します。
 ms.assetid: CF73E0DA-20DA-49A0-80B0-0F5A56DCEF5D
 ms.date: 08/08/2017
-keywords: -OID_SRIOV_VF_INVALIDATE_CONFIG_BLOCK ネットワーク ドライバーが Windows Vista 以降
+keywords: -Windows Vista 以降の OID_SRIOV_VF_INVALIDATE_CONFIG_BLOCK ネットワークドライバー
 ms.localizationpriority: medium
-ms.openlocfilehash: f335c7a7798bbf74b978956a9c61f9c8ff2466f5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 54838ce21ac6c3a5a1007429ce026109b6d79c33
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67366579"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843975"
 ---
-# <a name="oidsriovvfinvalidateconfigblock"></a>OID\_SRIOV\_VF\_INVALIDATE\_CONFIG\_ブロック
+# <a name="oid_sriov_vf_invalidate_config_block"></a>OID\_SRIOV\_VF\_無効\_構成\_ブロック
 
 
-OID のオブジェクト識別子 (OID) メソッド要求を発行する NDIS\_SRIOV\_VF\_INVALIDATE\_CONFIG\_ミニポート ドライバーの PCI Express (PCIe) 仮想機能 (VF) そのデータへの通知をブロック1 つまたは複数の構成ブロック内でが変更されました。 NDIS ミニポート ドライバー PCIe 物理機能 (PF) を呼び出すときにこの OID の問題[ **NdisMInvalidateConfigBlock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisminvalidateconfigblock)します。
+NDIS では、オブジェクト識別子 (OID) のメソッド要求 OID\_SRIOV\_VF\_無効\_CONFIG\_ブロックを無効にして、1つまたは複数の構成内のデータを PCI Express (PCIe) 仮想機能 (VF) のミニポートドライバーに通知します。ブロックが変更されました。 NDIS は、PCIe 物理機能 (PF) のミニポートドライバーが[**NdisMInvalidateConfigBlock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisminvalidateconfigblock)を呼び出すときに、この OID を発行します。
 
-**InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体にはへのポインターが含まれています、 [ **NDIS\_SRIOV\_VF\_INVALIDATE\_CONFIG\_ブロック\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_sriov_vf_invalidate_config_block_info)構造体。 この構造体を持つデータが変更されている 1 つ以上の仮想機能 (VF) の構成ブロックを指定します (*無効*) によって PF のミニポート ドライバー。
+[**Ndis\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造体の**informationbuffer**メンバーには、 [**ndis\_SRIOV\_VF**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_vf_invalidate_config_block_info)へのポインターが含まれており\_CONFIG\_BLOCK\_INFO 構造体\_無効にします。 この構造体は、PF ミニポートドライバーによってデータが変更 (*無効*) された1つまたは複数の仮想関数 (VF) 構成ブロックを指定します。
 
 <a name="remarks"></a>注釈
 -------
 
-VF 構成ブロックは、PF と VF のミニポート ドライバーの間のバック チャネル通信に使用されます。 IHV は、デバイスの 1 つ以上の VF 構成ブロックを定義できます。 各 VF 構成ブロックは、IHV で定義された形式、長さ、およびブロック id。
+VF 構成ブロックは、PF および VF ミニポートドライバー間のバックチャネル通信に使用されます。 IHV は、デバイスに対して1つまたは複数の VF 構成ブロックを定義できます。 各 VF 構成ブロックには、IHV によって定義された形式、長さ、およびブロック ID があります。
 
-**注**  各 VF 構成ブロックからのデータは、PF と VF のミニポート ドライバーでのみ使用します。
+  **注**各 VF 構成ブロックのデータは、PF および vf ミニポートドライバーによってのみ使用されます。
 
  
 
-VF 構成データは、次のドライバーの間で交換されます。
+VF 構成データは、次のドライバー間で交換されます。
 
--   VF ドライバー、ゲスト オペレーティング システムで実行されます。 このオペレーティング システムは、HYPER-V 子パーティション内で実行されます。
+-   VF ドライバー。ゲストオペレーティングシステムで実行されます。 このオペレーティングシステムは、Hyper-v 子パーティション内で実行されます。
 
--   PF ドライバーは、管理オペレーティング システムで実行されます。 このオペレーティング システムは、HYPER-V 親パーティション内で実行されます。
+-   管理オペレーティングシステムで実行される PF ドライバー。 このオペレーティングシステムは、Hyper-v の親パーティション内で実行されます。
 
-NDIS ミニポート ドライバーおよび無効な VF 構成データの通知を処理するために次の手順に従います。
+無効な VF 構成データの通知を処理するために、NDIS およびミニポートドライバーは次の手順を実行します。
 
-1.  NDIS、ゲスト オペレーティング システムの I/O 制御要求を発行[ **IOCTL\_VPCI\_INVALIDATE\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/vpci/ni-vpci-ioctl_vpci_invalidate_block)要求。 この IOCTL が完了したら、NDIS は VF 構成データが変更されたことが通知されます。
+1.  ゲストオペレーティングシステムでは、NDIS は[**IOCTL\_VPCI**](https://docs.microsoft.com/windows-hardware/drivers/ddi/vpci/ni-vpci-ioctl_vpci_invalidate_block)の i/o 制御要求を発行し、\_ブロック要求を無効に\_します。 この IOCTL が完了すると、NDIS には、VF 構成データが変更されたことが通知されます。
 
-2.  管理オペレーティング システムでは、次の手順が発生します。
+2.  管理オペレーティングシステムでは、次の手順が実行されます。
 
-    1.  PF のミニポート ドライバー呼び出し、 [ **NdisMInvalidateConfigBlock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisminvalidateconfigblock) VF 構成データが変更され、無効になっている NDIS に通知します。 ドライバーのセット、 *BlockMask* VF 構成ブロックを指定する ULONGLONG ビットマスクにパラメーターが変更されました。 ビットマスクの各ビットは、VF 構成ブロックに対応します。 ビットが 1 つに設定されている場合、対応する VF 構成ブロック内のデータが変更されました。
-    2.  NDIS は、VF 構成ブロックのデータへの変更について、管理オペレーティング システムで実行される仮想化スタックを通知します。 仮想化スタックは、キャッシュ、 *BlockMask*パラメーターのデータ。
+    1.  PF ミニポートドライバーは、 [**NdisMInvalidateConfigBlock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisminvalidateconfigblock)関数を呼び出して、VF 構成データが変更され、無効になったことを NDIS に通知します。 ドライバーは、どの VF 構成ブロックが変更されたかを指定する ULONGLONG ビットマスクに*Blockmask*パラメーターを設定します。 ビットマスクの各ビットは、VF 構成ブロックに対応します。 ビットが1に設定されている場合は、対応する VF 構成ブロック内のデータが変更されます。
+    2.  NDIS は、管理オペレーティングシステムで実行される仮想化スタックを、VF 構成ブロックデータの変更について通知します。 仮想化スタックは、 *Blockmask*パラメーターデータをキャッシュします。
 
-        **注**  PF ミニポート ドライバーを呼び出すたびに[ **NdisMInvalidateConfigBlock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisminvalidateconfigblock)、仮想化スタックの Or、 *BlockMask*キャッシュに現在の値を持つパラメーターのデータ。
+        **注**  PF ミニポートドライバーが[**NdisMInvalidateConfigBlock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisminvalidateconfigblock)を呼び出すたびに、仮想化スタックは、*ブロックマスク*パラメーターデータにキャッシュ内の現在の値を指定します。
 
          
 
-    3.  仮想化スタックでは、VF 構成データの無効化について、ゲスト オペレーティング システムで実行される仮想の PCI (VPCI) ドライバーに通知します。 仮想化スタックは、キャッシュされた送信*BlockMask* VPCI ドライバーにパラメーターのデータ。
+    3.  仮想化スタックは、ゲストオペレーティングシステムで実行されている仮想 PCI (VPCI) ドライバーに、VF 構成データの無効化について通知します。 仮想化スタックは、キャッシュされた*Blockmask*パラメーターデータを vpci ドライバーに送信します。
 
-3.  ゲスト オペレーティング システムでは、次の手順が発生します。
+3.  ゲストオペレーティングシステムでは、次の手順が実行されます。
 
-    1.  VPCI ドライバーは、キャッシュされた保存*BlockMask*でパラメーターのデータ、 **BlockMask**のメンバー、 [ **VPCI\_INVALIDATE\_ブロック\_出力**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/vpci/ns-vpci-_vpci_invalidate_block_output)構造に関連付けられている、 [ **IOCTL\_VPCI\_INVALIDATE\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/vpci/ni-vpci-ioctl_vpci_invalidate_block)要求。
+    1.  VPCI ドライバーは、キャッシュされた*blockmask*パラメーターデータを Vpci の**blockmask**メンバーに保存します。これにより、IOCTL\_vpci に関連付けられている[ **\_ブロック\_出力構造が\_無効**](https://docs.microsoft.com/windows-hardware/drivers/ddi/vpci/ns-vpci-_vpci_invalidate_block_output)になり[ **\_ブロック要求\_無効**](https://docs.microsoft.com/windows-hardware/drivers/ddi/vpci/ni-vpci-ioctl_vpci_invalidate_block)にします。
 
-    2.  VPCI ドライバーが正常に完了、 [ **IOCTL\_VPCI\_INVALIDATE\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/vpci/ni-vpci-ioctl_vpci_invalidate_block)要求。 NDIS が OID の OID メソッド要求を発行してこのような場合は、\_SRIOV\_VF\_INVALIDATE\_CONFIG\_VF のミニポート ドライバーをブロックします。 [ **NDIS\_SRIOV\_VF\_INVALIDATE\_CONFIG\_ブロック\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_sriov_vf_invalidate_config_block_info) OID 要求で渡されますが。 この構造体が含まれていますが、キャッシュされた*BlockMask*パラメーターのデータ。
+    2.  VPCI ドライバーは[**IOCTL\_vpci\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/vpci/ni-vpci-ioctl_vpci_invalidate_block)正常に完了し、ブロック要求を\_無効にします。 これが発生すると、NDIS は oid\_oid の OID メソッド要求を発行し\_VF\_無効\_構成\_、VF ミニポートドライバーにブロックします。 [**NDIS\_SRIOV\_VF\_無効\_構成\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_vf_invalidate_config_block_info)は OID 要求で渡されます。 この構造体には、キャッシュされた*Blockmask*パラメーターのデータが含まれます。
 
-        NDIS 別問題も[ **IOCTL\_VPCI\_INVALIDATE\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/vpci/ni-vpci-ioctl_vpci_invalidate_block) VF 構成データの変更の連続する通知を処理するために要求します。
+        また、NDIS では、別の[**IOCTL\_VPCI\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/vpci/ni-vpci-ioctl_vpci_invalidate_block)も発行されます。これにより、VF 構成データへの変更の継続的な通知を処理するために、ブロック要求\_ブロックが発生
 
-    3.  VF ドライバーが、OID を処理するときに\_SRIOV\_VF\_INVALIDATE\_CONFIG\_ブロックの要求、指定した VF 構成要素からデータを読み取ることです。
+    3.  VF ドライバーが OID\_処理するとき\_VF\_無効\_構成\_ブロック要求は、指定された VF 構成ブロックからデータを読み取ります。
 
-シングル ルート I/O 仮想化 (SR-IOV) インターフェイス内でのバック チャネル通信の詳細については、次を参照してください。 [SR-IOV PF/VF のバック チャネル通信](https://docs.microsoft.com/windows-hardware/drivers/network/sr-iov-pf-vf-backchannel-communication)します。
+シングルルート i/o 仮想化 (SR-IOV) インターフェイス内でのバックチャネル通信の詳細については、「sr-iov [PF/VF バックチャネル通信](https://docs.microsoft.com/windows-hardware/drivers/network/sr-iov-pf-vf-backchannel-communication)」を参照してください。
 
-### <a name="return-status-codes"></a>リターン状態コード
+### <a name="return-status-codes"></a>ステータスコードを返す
 
-ミニポート ドライバーでは、OID の OID メソッド要求の次のステータス コードのいずれかを返します\_SRIOV\_VF\_INVALIDATE\_CONFIG\_をブロックします。
+ミニポートドライバーは、oid\_SRIOV\_VF の OID メソッド要求について、次のいずれかの状態コードを返し\_CONFIG\_BLOCK を無効に\_ます。
 
 <table>
 <colgroup>
@@ -79,23 +79,23 @@ NDIS ミニポート ドライバーおよび無効な VF 構成データの通�
 <tbody>
 <tr class="odd">
 <td><p>NDIS_STATUS_SUCCESS</p></td>
-<td><p>OID 要求は正常に完了しました。</p></td>
+<td><p>OID 要求が正常に完了しました。</p></td>
 </tr>
 <tr class="even">
 <td><p>NDIS_STATUS_NOT_SUPPORTED</p></td>
-<td><p>ミニポート ドライバーでは、シングル ルート I/O 仮想化 (SR-IOV) インターフェイスをサポートしていませんか、またはインターフェイスを使用して有効になっていません。</p></td>
+<td><p>ミニポートドライバーがシングルルート i/o 仮想化 (SR-IOV) インターフェイスをサポートしていないか、インターフェイスの使用が有効になっていません。</p></td>
 </tr>
 <tr class="odd">
 <td><p>NDIS_STATUS_INVALID_PARAMETER</p></td>
-<td><p>1 つ以上のメンバーの<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_sriov_vf_invalidate_config_block_info" data-raw-source="[&lt;strong&gt;NDIS_SRIOV_VF_INVALIDATE_CONFIG_BLOCK_INFO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_sriov_vf_invalidate_config_block_info)"> <strong>NDIS_SRIOV_VF_INVALIDATE_CONFIG_BLOCK_INFO</strong> </a>構造が無効な値を指定します。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_vf_invalidate_config_block_info" data-raw-source="[&lt;strong&gt;NDIS_SRIOV_VF_INVALIDATE_CONFIG_BLOCK_INFO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_vf_invalidate_config_block_info)"><strong>NDIS_SRIOV_VF_INVALIDATE_CONFIG_BLOCK_INFO</strong></a>構造体の1つ以上のメンバーに無効な値が含まれています。</p></td>
 </tr>
 <tr class="even">
 <td><p>NDIS_STATUS_INVALID_LENGTH</p></td>
-<td><p>情報バッファーが小さすぎます。 NDIS セット、<strong>データ。SET_INFORMATION します。BytesNeeded</strong>内のメンバー、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)"> <strong>NDIS_OID_REQUEST</strong> </a>構造体のサイズを<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_sriov_vf_invalidate_config_block_info" data-raw-source="[&lt;strong&gt;NDIS_SRIOV_VF_INVALIDATE_CONFIG_BLOCK_INFO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_sriov_vf_invalidate_config_block_info)"> <strong>NDIS_SRIOV_VF_INVALIDATE_CONFIG_BLOCK_INFO</strong></a>構造体。</p></td>
+<td><p>情報バッファーが短すぎます。 NDIS はデータを設定<strong>します。SET_INFORMATION.BytesNeeded</strong>構造体の<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"></a>メンバーが<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_vf_invalidate_config_block_info" data-raw-source="[&lt;strong&gt;NDIS_SRIOV_VF_INVALIDATE_CONFIG_BLOCK_INFO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_vf_invalidate_config_block_info)"><strong>NDIS_SRIOV_VF_INVALIDATE_CONFIG_BLOCK_INFO</strong></a>構造体のサイズに必要としています。</p></td>
 </tr>
 <tr class="odd">
 <td><p>NDIS_STATUS_FAILURE</p></td>
-<td><p>他の理由から、要求が失敗しました。</p></td>
+<td><p>他の理由で要求が失敗しました。</p></td>
 </tr>
 </tbody>
 </table>
@@ -113,11 +113,11 @@ NDIS ミニポート ドライバーおよび無効な VF 構成データの通�
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>NDIS 6.30 以降をサポートします。</p></td>
+<td><p>NDIS 6.30 以降でサポートされています。</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Ntddndis.h (include Ndis.h)</td>
+<td>Ntddndis (Ndis .h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -126,17 +126,17 @@ NDIS ミニポート ドライバーおよび無効な VF 構成データの通�
 
 
 ****
-[**IOCTL\_VPCI\_INVALIDATE\_BLOCK**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/vpci/ni-vpci-ioctl_vpci_invalidate_block)
+[**IOCTL\_VPCI\_\_ブロックを無効にします**](https://docs.microsoft.com/windows-hardware/drivers/ddi/vpci/ni-vpci-ioctl_vpci_invalidate_block)
 
-[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
+[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)
 
-[**NDIS\_SRIOV\_VF\_INVALIDATE\_CONFIG\_ブロック\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_sriov_vf_invalidate_config_block_info)
+[**NDIS\_SRIOV\_VF\_によって\_構成\_ブロック\_情報が無効になります**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_vf_invalidate_config_block_info)
 
-[**NdisMInvalidateConfigBlock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisminvalidateconfigblock)
+[**NdisMInvalidateConfigBlock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisminvalidateconfigblock)
 
-[OID\_SRIOV\_読み取り\_VF\_CONFIG\_領域](oid-sriov-read-vf-config-space.md)
+[OID\_SRIOV\_読み取り\_VF\_CONFIG\_SPACE](oid-sriov-read-vf-config-space.md)
 
-[**VPCI\_INVALIDATE\_ブロック\_出力**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/vpci/ns-vpci-_vpci_invalidate_block_output)
+[**VPCI\_\_ブロック\_出力を無効にします**](https://docs.microsoft.com/windows-hardware/drivers/ddi/vpci/ns-vpci-_vpci_invalidate_block_output)
 
  
 

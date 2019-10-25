@@ -1,48 +1,48 @@
 ---
 title: OID_SWITCH_NIC_SAVE
-description: オブジェクト識別子 (OID) のメソッドを要求 OID_SWITCH_NIC_SAVE の操作中に、拡張可能スイッチ ポートとそのネットワーク アダプター接続の実行時データを保存する HYPER-V 拡張可能スイッチに関する問題のプロトコルのエッジ。
+description: 'Hyper-v 拡張可能スイッチのプロトコルエッジは、拡張可能なスイッチポートとそのネットワークアダプター接続の実行時データを保存する操作中に、オブジェクト識別子 (OID: object identifier) メソッドの OID_SWITCH_NIC_SAVE 要求を発行します。'
 ms.assetid: FE2F9767-7186-42FF-85C1-2A8203FEF629
 ms.date: 08/08/2017
-keywords: -OID_SWITCH_NIC_SAVE ネットワーク ドライバーが Windows Vista 以降
+keywords: -Windows Vista 以降の OID_SWITCH_NIC_SAVE ネットワークドライバー
 ms.localizationpriority: medium
-ms.openlocfilehash: 23c2a7f8d71446b72d2b0dd8d7bc44aeed1b4ec6
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 124188f6bf80e4de7c10462789d4db71b583bfef
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385497"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843946"
 ---
-# <a name="oidswitchnicsave"></a>OID\_スイッチ\_NIC\_保存
+# <a name="oid_switch_nic_save"></a>OID\_スイッチ\_NIC\_保存
 
 
-HYPER-V 拡張可能スイッチのプロトコルのエッジの OID オブジェクト識別子 (OID) メソッド要求を発行する\_切り替える\_NIC\_拡張可能スイッチ ポートとそのネットワーク アダプターの実行時データを保存するための操作中に保存接続します。 拡張機能は、実行時のデータを保存して後で復元できるように、このデータを返します。 実行時のデータを保存すると後の OID のセット要求を通じた復元[OID\_スイッチ\_NIC\_復元](oid-switch-nic-restore.md)します。
+Hyper-v 拡張可能スイッチのプロトコルエッジは、オブジェクト識別子 (OID) のメソッド要求を OID\_します。これは、拡張可能なスイッチポートとそのネットワークアダプター接続の実行時データを保存するための操作中に保存\_\_NIC です。 この拡張機能は、実行時データを保存して後で復元できるように、このデータを返します。 実行時のデータが保存されると、 [oid\_スイッチ\_\_NIC](oid-switch-nic-restore.md)の設定要求によって復元されます。
 
-**InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体にはへのポインターが含まれています、 [ **NDIS\_スイッチ\_NIC\_保存\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_switch_nic_save_state)構造体。 この構造体は、拡張可能スイッチのプロトコル edge によって割り当てられます。
+[**Ndis\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造の**informationbuffer**メンバーには、ndis\_\_スイッチへのポインターが含まれています。これには、 [**NIC\_\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_save_state)構造が保存されます。 この構造体は、拡張可能スイッチのプロトコルエッジによって割り当てられます。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
-OID の OID メソッド要求を受け取ったとき\_切り替える\_NIC\_保存、拡張可能スイッチ拡張機能で、次の手順に従って実行時データが保存されます。
+Oid の OID メソッド要求を受信すると\_スイッチ\_NIC\_保存すると、拡張可能なスイッチ拡張機能によって次のように実行時データが保存されます。
 
--   拡張機能内のデータの保存、 [ **NDIS\_スイッチ\_NIC\_保存\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_switch_nic_save_state)構造から*SaveDataOffset*構造体の先頭からのバイト数。
+-   拡張機能は、 [**NDIS\_スイッチ\_\_NIC**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_save_state)内のデータを保存します。これにより、構造体の先頭から*SaveDataOffset*バイトを開始位置として\_状態構造が保存されます。
 
--   場合、 *SaveDataSize*提供に必要なデータを保存する、拡張メソッドの構造体の設定を保持するのに十分な大きさでない*BytesNeeded*フィールド NDIS を\_SIZEOF\_NDIS\_スイッチ\_NIC\_保存\_状態\_リビジョン\_1 および保存を保持するために必要なバッファーのデータ、NDIS に OID が完了して\_ステータス\_バッファー\_すぎます\_短い。 必要なサイズの OID を再発行します。
+-   指定された*Savedatasize*が、必要な保存データを保持するのに十分な大きさではない場合、拡張機能によって、メソッド構造の*BYTESNEEDED*フィールドが NDIS\_SIZEOF\_NDIS\_スイッチ\_NIC\_保存\_状態に設定されます。リビジョン\_1 に加えて、保存データを保持するために必要なバッファーの量を加算し\_、NDIS\_ステータス\_バッファー\_短時間\_している OID を完了します。 OID は必要なサイズで再発行されます。
 
--   拡張機能の設定、 *ExtensionId*と*ExtensionFriendlyName*の独自の識別子と名前、フィールドし、NDIS に OID メソッド要求が完了すると\_状態\_成功しました。 この原因のいずれかに拡張を許可するもう 1 つの OID メソッド要求を発行する拡張可能スイッチのプロトコルの端を返す複数のデータを保存または他の拡張機能を許可するには、独自のデータを保存するスタックがダウンします。
+-   拡張機能は、 *Extensionid*および*extensionid*フィールドに独自の識別子と名前を設定し、NDIS\_STATUS\_SUCCESS による OID メソッド要求を完了します。 これにより、拡張可能なスイッチのプロトコルエッジで別の OID メソッド要求が発行され、拡張機能によってより多くの保存データが返されるか、他の拡張機能によって独自のデータが保存されます。
 
-**注**  呼び出す必要がありますが、拡張機能では、実行時のデータを保存することはない場合、 [ **NdisFOidRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfoidrequest)拡張機能を基になるはこの OID メソッドの要求を転送するように、拡張可能スイッチ ドライバー スタックです。 この手順の詳細については、次を参照してください。 [NDIS フィルター ドライバーでの OID 要求のフィルタ リング](https://docs.microsoft.com/windows-hardware/drivers/network/filtering-oid-requests-in-an-ndis-filter-driver)します。
+**注**  保存するランタイムデータが拡張機能にない場合は、 [**NdisFOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfoidrequest)を呼び出して、この OID メソッド要求を拡張可能なスイッチドライバースタック内の基になる拡張機能に転送する必要があります。 この手順の詳細については、「 [NDIS フィルタードライバーでの OID 要求のフィルター処理](https://docs.microsoft.com/windows-hardware/drivers/network/filtering-oid-requests-in-an-ndis-filter-driver)」を参照してください。
 
  
 
-HYPER-V 拡張可能スイッチの設定、*ヘッダー*、 *PortId*、 *NicIdex*、 *SaveDataSize*と*SaveDataOffset* OID を発行する前に構造体のフィールド。 拡張機能は、これらのフィールドを変更できません。
+Hyper-v 拡張可能スイッチは、OID を発行する前に、構造体の*Header*、*ポート id*、 *NicIdex*、 *savedatasize* 、および*SaveDataOffset*の各フィールドを設定します。 拡張機能はこれらのフィールドを変更できません。
 
-OID の OID メソッド要求\_切り替える\_NIC\_保存は拡張可能スイッチの基になるミニポート edge によって最終的に処理されます。 NDIS に OID 要求が完了するこの OID メソッド要求は拡張可能スイッチのミニポート edge によって受信されると、\_状態\_成功します。 実行時のデータの拡張可能スイッチ ドライバー スタック内のすべての拡張機能をクエリが実行されている拡張可能スイッチのプロトコルの端に通知します。 拡張可能スイッチのプロトコルのエッジの OID セットの要求を発行し、 [OID\_切り替える\_NIC\_保存\_完了](oid-switch-nic-save-complete.md)保存を完了する操作。
+OID\_スイッチ\_\_NIC の OID メソッド要求は、最終的に、拡張可能スイッチの基になるミニポートエッジによって処理されます。 この OID メソッド要求は、拡張可能スイッチのミニポートエッジによって受信された後、NDIS\_STATUS\_SUCCESS による OID 要求を完了します。 これにより、拡張可能スイッチのプロトコルエッジに、拡張スイッチドライバースタックのすべての拡張機能が実行時データを照会したことが通知されます。 拡張可能なスイッチのプロトコルエッジは oid セットの要求を発行して、 [\_\_NIC\_スイッチ](oid-switch-nic-save-complete.md)を設定し、保存\_完了して保存操作を完了します。
 
-拡張可能スイッチ ポートの実行時データを保存する方法の詳細については、次を参照してください。[保存 Hyper-v 拡張可能なスイッチ実行時データ](https://docs.microsoft.com/windows-hardware/drivers/network/saving-hyper-v-extensible-switch-run-time-data)します。
+拡張可能なスイッチポートのランタイムデータを保存する方法の詳細については、「 [Hyper-v 拡張可能スイッチの実行時データの保存](https://docs.microsoft.com/windows-hardware/drivers/network/saving-hyper-v-extensible-switch-run-time-data)」を参照してください。
 
-### <a name="return-status-codes"></a>リターン状態コード
+### <a name="return-status-codes"></a>ステータスコードを返す
 
-拡張可能スイッチ拡張機能は、OID の OID メソッド要求の次のステータス コードのいずれかを返します\_切り替える\_NIC\_を保存します。
+拡張可能なスイッチ拡張機能は、oid\_スイッチ\_\_NIC の OID メソッド要求について、次のいずれかの状態コードを返します。
 
 <table>
 <colgroup>
@@ -58,22 +58,22 @@ OID の OID メソッド要求\_切り替える\_NIC\_保存は拡張可能ス�
 <tbody>
 <tr class="odd">
 <td><p>NDIS_STATUS_BUFFER_TOO_SHORT</p></td>
-<td><p>情報バッファーの長さが小さすぎるため、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_switch_nic_save_state" data-raw-source="[&lt;strong&gt;NDIS_SWITCH_NIC_SAVE_STATE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_switch_nic_save_state)"> <strong>NDIS_SWITCH_NIC_SAVE_STATE</strong> </a>とその関連の実行時データ、拡張可能スイッチの拡張機能を設定する必要があります、<strong>データ。METHOD_INFORMATION します。BytesNeeded</strong>内のメンバー、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)"> <strong>NDIS_OID_REQUEST</strong> </a>構造体に必要な最小バッファー サイズ。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_save_state" data-raw-source="[&lt;strong&gt;NDIS_SWITCH_NIC_SAVE_STATE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_save_state)"><strong>NDIS_SWITCH_NIC_SAVE_STATE</strong></a>とそれに関連付けられたランタイムデータに対して、情報バッファーの長さが小さすぎます。拡張可能なスイッチ拡張機能では、データを設定する必要があり<strong>ます。METHOD_INFORMATION.</strong> <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a>構造体の中で必要とされる最小バッファーサイズに対して、bytesneeded 必要です。</p></td>
 </tr>
 <tr class="even">
 <td><p>NDIS_STATUS_SUCCESS</p></td>
-<td><p>拡張機能は、保存する実行時データを返す場合、この状態を返します。</p></td>
+<td><p>拡張機能は、保存する実行時データを返す場合に、この状態を返します。</p></td>
 </tr>
 <tr class="odd">
 <td><p>NDIS_STATUS_<em>Xxx</em></p></td>
-<td><p>他の理由から、要求が失敗しました。</p></td>
+<td><p>他の理由で要求が失敗しました。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-拡張可能スイッチの基になるミニポート edge OID の OID メソッド要求の次のステータス コードを返します\_切り替える\_NIC\_を保存します。
+拡張可能スイッチの基になるミニポートエッジは、oid\_スイッチ\_\_NIC の OID メソッド要求について、次のステータスコードを返します。
 
 <table>
 <colgroup>
@@ -89,7 +89,7 @@ OID の OID メソッド要求\_切り替える\_NIC\_保存は拡張可能ス�
 <tbody>
 <tr class="odd">
 <td><p>NDIS_STATUS_SUCCESS</p></td>
-<td><p>OID 要求は正常に完了しました。</p></td>
+<td><p>OID 要求が正常に完了しました。</p></td>
 </tr>
 </tbody>
 </table>
@@ -107,11 +107,11 @@ OID の OID メソッド要求\_切り替える\_NIC\_保存は拡張可能ス�
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>NDIS 6.30 以降をサポートします。</p></td>
+<td><p>NDIS 6.30 以降でサポートされています。</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Ntddndis.h (include Ndis.h)</td>
+<td>Ntddndis (Ndis .h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -120,15 +120,15 @@ OID の OID メソッド要求\_切り替える\_NIC\_保存は拡張可能ス�
 
 
 ****
-[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
+[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)
 
-[**NDIS\_スイッチ\_NIC\_保存\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_switch_nic_save_state)
+[**NDIS\_スイッチ\_NIC\_\_の状態を保存する**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_save_state)
 
-[**NdisFOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfoidrequest)
+[**NdisFOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfoidrequest)
 
 [OID\_スイッチ\_NIC\_復元](oid-switch-nic-restore.md)
 
-[OID\_スイッチ\_NIC\_保存\_完了](oid-switch-nic-save-complete.md)
+[OID\_\_NIC の切り替え\_保存\_完了](oid-switch-nic-save-complete.md)
 
  
 

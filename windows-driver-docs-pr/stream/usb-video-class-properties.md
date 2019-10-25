@@ -1,42 +1,42 @@
 ---
 title: USB ビデオ クラスのプロパティ
-description: USB ビデオ クラスのクライアントは、このトピックで説明する次のビデオ キャプチャ プロパティ セットを使用できます。
+description: USB Video クラスのクライアントは、このトピックで説明する次のビデオキャプチャプロパティセットを使用できます。
 ms.assetid: 6295926b-4ec5-42f5-98ca-a375d36f917b
 keywords:
-- USB ビデオ クラス ドライバー WDK AVStream、プロパティ
-- ビデオのクラス ドライバー WDK USB、プロパティ
+- USB ビデオクラスドライバー WDK AVStream、プロパティ
+- ビデオクラスドライバー WDK USB、プロパティ
 - UVC ドライバー WDK AVStream、プロパティ
-- プロパティは、WDK USB ビデオ クラスを設定します。
+- プロパティセット WDK USB ビデオクラス
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1454f3a7107afaca69b26289bd3741af00c7024d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8dae84f8a8162d842e71e30d835353dcb6ad1ede
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383138"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844655"
 ---
 # <a name="usb-video-class-properties"></a>USB ビデオ クラスのプロパティ
 
 
-USB ビデオ クラスのクライアントは、次のビデオ キャプチャ プロパティ セットを使用できます。
+USB Video クラスのクライアントは、次のビデオキャプチャのプロパティセットを使用できます。
 
-[PROPSETID\_しました\_CAMERACONTROL](https://docs.microsoft.com/windows-hardware/drivers/stream/propsetid-vidcap-cameracontrol)
-[PROPSETID\_しました\_ビデオ プロシージャ アンプ](https://docs.microsoft.com/windows-hardware/drivers/stream/propsetid-vidcap-videoprocamp)USB ビデオ クラスのクライアントは、フィルターに要求を行うことができますまたは、個々 のノード。 ノード ベースのプロパティの機能は、事前 USB ビデオ クラスのフィルターに基づくプロパティのと同じです。
+[Propsetid\_VIDCAP\_CAMERACONTROL](https://docs.microsoft.com/windows-hardware/drivers/stream/propsetid-vidcap-cameracontrol)
+[PROPSETID\_VIDCAP\_VIDEOPROCAMP](https://docs.microsoft.com/windows-hardware/drivers/stream/propsetid-vidcap-videoprocamp) 、USB ビデオクラスのクライアントは、フィルターまたは個々のノードで要求を行うことができます。 ノードベースのプロパティの機能は、事前 USB Video クラスのフィルターベースのプロパティと同じです。
 
-ノード ベースのプロパティを指定する設定、KSPROPERTY\_型\_トポロジ フラグのフラグのメンバーでは、 [ **KSPROPERTY** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)プロパティ記述子に含まれている構造体構造体-たとえば、 [ **KSPROPERTY\_CAMERACONTROL\_ノード\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s)します。
+ノードベースのプロパティを指定するには、プロパティ記述子の構造に含まれている[**Ksk プロパティ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)構造体の Flags メンバー (たとえば、 [**KSK プロパティ\_CAMERACONTROL @no__t_7 に、KSK プロパティ\_TYPE\_トポロジフラグを設定します。_ ノード\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s)。
 
-クライアントが複数のノードを 1 つのフィルターを処理できるため、USB ビデオ クラスにより、Ihv が個別に制御されたレンズを複数のカメラをサポートするために。
+クライアントは1つのフィルター上の複数のノードに対応できるため、USB ビデオクラスを使用すると、複数の独立したレンズがあるカメラをサポートできます。
 
-さらに、新しいプロパティ セットが定義されています。
+さらに、新しいプロパティセットが定義されています。
 
-[PROPSETID\_しました\_セレクター](https://docs.microsoft.com/windows-hardware/drivers/stream/propsetid-vidcap-selector) PROPSETID に含まれるプロパティ項目\_しました\_セレクターは、ノード ベースします。
+[Propsetid\_VIDCAP\_SELECTOR](https://docs.microsoft.com/windows-hardware/drivers/stream/propsetid-vidcap-selector)PROPSETID\_VIDCAP\_SELECTOR に含まれるプロパティ項目はノードベースです。
 
-呼び出す[ **KsSynchronousDeviceControl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksproxy/nf-ksproxy-kssynchronousdevicecontrol)または**DeviceIoControl**ユーザー モード コンポーネントからプロパティの要求を行います。 **DeviceIoControl** Microsoft Windows SDK ドキュメントに記載されています。
+[**KsSynchronousDeviceControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksproxy/nf-ksproxy-kssynchronousdevicecontrol)または**DeviceIoControl**を呼び出して、ユーザーモードコンポーネントからのプロパティ要求を作成します。 **DeviceIoControl**については、Microsoft Windows SDK のドキュメントを参照してください。
 
-上記の 4 つのプロパティ セットに含まれるプロパティ項目の各操作により、DirectShow の COM インターフェイスに対応するメソッドがあります。 メソッドの詳細については、Windows SDK の DirectShow のドキュメントを参照してください。
+上記の4つのプロパティセットに含まれる各プロパティ項目には、DirectShow COM インターフェイスに対応するメソッドがあります。 メソッドの詳細については、Windows SDK の DirectShow のドキュメントを参照してください。
 
-USB ビデオ クラス デバイスには、いくつかサポートできるまたは上に示したすべてのプロパティ セット。
+USB ビデオクラスデバイスは、上記のプロパティセットの一部またはすべてをサポートできます。
 
  
 

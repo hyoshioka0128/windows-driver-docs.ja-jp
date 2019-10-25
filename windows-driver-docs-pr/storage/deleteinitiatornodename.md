@@ -4,21 +4,21 @@ description: DeleteInitiatorNodeName
 ms.assetid: 955ff574-a73b-42fa-8302-1012de5c9fee
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 00fb087e06a510dfa0ac5504860d29b6cc34c1fc
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ffdb52f0b9923290050afc1f8a36bf7ec20f80fb
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368308"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845187"
 ---
 # <a name="deleteinitiatornodename"></a>DeleteInitiatorNodeName
 
 
-**DeleteInitiatorNodeName**メソッドは HBA イニシエーターを指定された iSCSI ノードの名前が有効でなくなったことを管理するミニポート ドライバーに通知します。 状況によっては、イニシエーター Hba は、チャレンジ ハンドシェイク認証プロトコル (CHAP) 認証にノード名を使用します。
+**DeleteInitiatorNodeName**メソッドは、指定された iSCSI ノード名が無効になったことを、HBA イニシエーターを管理するミニポートドライバーに通知します。 状況によっては、イニシエーター Hba はチャレンジハンドシェイク認証プロトコル (CHAP) 認証でノード名を使用します。
 
-実装するミニポート ドライバー、 [MSiSCSI\_操作 WMI クラス](msiscsi-operations-wmi-class.md)このメソッドをサポートする必要はありません。
+[Msiscsi\_OPERATIONS WMI クラス](msiscsi-operations-wmi-class.md)を実装するミニポートドライバーは、この方法をサポートするために必要ありません。
 
-MSiSCSI\_操作 WMI クラスは発行されません。 パラメーターの説明については、 **DeleteInitiatorNodeName**メソッドのメンバーの説明を参照してください、 [ **DeleteInitiatorNodeName\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsiop/ns-iscsiop-_deleteinitiatornodename_in)[ **DeleteInitiatorNodeName\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsiop/ns-iscsiop-_deleteinitiatornodename_out)構造体。
+MSiSCSI\_Operations WMI クラスは発行されていません。 **DeleteInitiatorNodeName**メソッドのパラメーターの説明については、「」および「 [**DeleteInitiatorNodeName\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/iscsiop/ns-iscsiop-_deleteinitiatornodename_out)構造体」の「メンバーの[ **\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/iscsiop/ns-iscsiop-_deleteinitiatornodename_in)説明」を参照してください。
 
  
 

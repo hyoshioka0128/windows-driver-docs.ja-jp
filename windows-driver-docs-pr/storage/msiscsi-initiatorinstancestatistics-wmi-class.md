@@ -4,14 +4,14 @@ description: MSiSCSI\_InitiatorInstanceStatistics WMI クラス
 ms.assetid: 5cb20302-e3f9-40fe-b501-7c23d284c120
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 45066bed27cbbd47e7523380f3769ecddbdfe663
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6ea5dc9ddf719a95620d992ddfe194400eaee723
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384336"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845357"
 ---
-# <a name="msiscsiinitiatorinstancestatistics-wmi-class"></a>MSiSCSI\_InitiatorInstanceStatistics WMI クラス
+# <a name="msiscsi_initiatorinstancestatistics-wmi-class"></a>MSiSCSI\_InitiatorInstanceStatistics WMI クラス
 
 
 ## <span id="ddk_msiscsi_initiatorinstancestatistics_wmi_class_kr"></span><span id="DDK_MSISCSI_INITIATORINSTANCESTATISTICS_WMI_CLASS_KR"></span>
@@ -19,9 +19,9 @@ ms.locfileid: "67384336"
 
 MSiSCSI\_InitiatorInstanceStatistics WMI クラスは、イニシエーターの統計情報を公開します。
 
-このクラスは、記憶域ミニポート ドライバーの特定のインスタンスに関連付けられているため、ミニポート ドライバーは、ミニポート ドライバーを管理する特定の物理デバイス オブジェクト (PDO) の名前を使用して、クラスを登録する必要があります。
+このクラスは記憶域ミニポートドライバーの特定のインスタンスに関連付けられているため、ミニポートドライバーは、ミニポートドライバーが管理する特定の物理デバイスオブジェクト (PDO) の名前を使用してクラスを登録する必要があります。
 
-MSiSCSI\_InitiatorInstanceStatistics クラスで定義されます*Iscsiprf.mof*します。
+MSiSCSI\_InitiatorInstanceStatistics クラスは*Iscsiprf*で定義されています。
 
 ```cpp
 class MSiSCSI_InitiatorInstanceStatistics : Win32_PerfRawData {
@@ -63,7 +63,7 @@ class MSiSCSI_InitiatorInstanceStatistics : Win32_PerfRawData {
 };
 ```
 
-WMI ツールのスイートでは、上記のクラス定義をコンパイルするときに生成、 [ **MSiSCSI\_InitiatorInstanceStatistics** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsiprf/ns-iscsiprf-_msiscsi_initiatorinstancestatistics)データ構造体。
+WMI ツールスイートは、前のクラス定義をコンパイルするときに、 [**Msiscsi\_InitiatorInstanceStatistics**](https://docs.microsoft.com/windows-hardware/drivers/ddi/iscsiprf/ns-iscsiprf-_msiscsi_initiatorinstancestatistics)データ構造体を生成します。
 
  
 

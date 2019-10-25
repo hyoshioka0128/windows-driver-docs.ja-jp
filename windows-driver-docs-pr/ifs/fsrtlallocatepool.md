@@ -3,7 +3,7 @@ title: FsRtlAllocatePool
 description: 使われていません。
 ms.assetid: f20e1db9-e72d-493e-a87e-9c84cd4b8ee5
 keywords:
-- FsRtlAllocatePool インストール可能なファイル システム ドライバー
+- FsRtlAllocatePool のインストール可能なファイルシステムドライバー
 topic_type:
 - apiref
 api_name:
@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dadf8d1b8876353f9943706f13c5b49d9a23ae49
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d674b19288c511b433c440b9f7612a3fea21e875
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67366220"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841238"
 ---
 # <a name="fsrtlallocatepool"></a>FsRtlAllocatePool
 
@@ -25,7 +25,7 @@ ms.locfileid: "67366220"
 
 
 
-**FsRtlAllocatePool**ルーチンは、廃止されていますが、既存のドライバー バイナリをサポートするためにエクスポートされます。 使用[ **FsRtlAllocatePoolWithTag** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-fsrtlallocatepoolwithtag)代わりにします。
+**Fsrtlallocatepool**ルーチンは互換性のために残されていますが、既存のドライバーバイナリをサポートするためにエクスポートされています。 代わりに、 [**Fsrtlallocatepoolwithtag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-fsrtlallocatepoolwithtag)を使用してください。
 
  
 

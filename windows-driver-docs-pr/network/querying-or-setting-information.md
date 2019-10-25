@@ -3,15 +3,15 @@ title: 情報のクエリと設定
 description: 情報のクエリと設定
 ms.assetid: 39bd9846-7c7e-4b93-8060-4da9c66ac591
 keywords:
-- 接続指向の情報の照会
+- 接続指向情報のクエリ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ff3ccd33913d00dab3a910a6c487ca2ac63aa073
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9976f73bb9aa0ea56d217f50c27ec35ac2492bef
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67381186"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844893"
 ---
 # <a name="querying-or-setting-information"></a>情報のクエリと設定
 
@@ -19,23 +19,23 @@ ms.locfileid: "67381186"
 
 
 
-いる CoNDIS プロトコル ドライバーおよび NDIS は、基になるドライバーに OID 要求を送信できます。 いる CoNDIS プロトコル ドライバーおよびミニポート コール マネージャー (MCMs) では、その他のプロトコル ドライバーに OID 要求を送信できますも。
+CoNDIS プロトコルドライバーと NDIS は、基になるドライバーに OID 要求を送信できます。 CoNDIS プロトコルドライバーとミニポートコールマネージャー (MCMs) は、他のプロトコルドライバーに OID 要求を送信することもできます。
 
-接続指向のクライアントまたは呼び出しマネージャーは、 [ **NdisCoOidRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscooidrequest)クエリまたはバインディング上の別のプロトコル ドライバーによって、または基になるミニポート ドライバーによって管理されている情報を設定します。
+接続指向クライアントまたは呼び出しマネージャーは、 [**NdisCoOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscooidrequest)を呼び出して、バインドまたは基になるミニポートドライバーによって、別のプロトコルドライバーによって管理されている情報を照会または設定します。
 
-呼び出す前に**NdisCoOidRequest**、クライアントまたは呼び出しのマネージャーを選択し、その要求のバッファーを割り当てますを初期化します、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体。 この構造体では、照会したり、設定されているは、OID のデータを渡すために使用されるバッファーを指すようにする情報 (OID) を識別する要求 (クエリまたはセット) の種類を指定します。
+**NdisCoOidRequest**を呼び出す前に、クライアントまたは呼び出しマネージャーは、要求のバッファーを割り当て、 [**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造体を初期化します。 この構造体は、要求の種類 (クエリまたはセット) を指定し、クエリまたは設定する情報 (OID) を識別し、OID データを渡すために使用されるバッファーを指します。
 
-接続指向のクライアントまたは呼び出し manager 渡します、有効な場合*NdisAfHandle* (を参照してください[アドレス ファミリ](address-families.md))、NDIS 呼び出し、 [ **ProtocolCoOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_co_oid_request)バインディングでは、各プロトコル ドライバーの機能です。
+接続指向クライアントまたはコールマネージャーが有効な*NdisAfHandle* (「[アドレスファミリ](address-families.md)」を参照してください) を渡すと、NDIS はバインドで各プロトコルドライバーの[**ProtocolCoOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_co_oid_request)関数を呼び出します。
 
-NDIS は、デバイスの特性、構成可能な設定、および統計情報などのパラメーターを含む、アダプターのパラメーターを識別するためにオブジェクト識別子 (OID) の値を定義します。 Oid の詳細については、次を参照してください。 [NDIS Oid](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)します。
+NDIS は、デバイスの特性、構成可能な設定、統計などの操作パラメーターを含む、アダプターのパラメーターを識別するオブジェクト識別子 (OID) の値を定義します。 Oid の詳細については、「 [NDIS oid](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)」を参照してください。
 
 ここでは、次のトピックについて説明します。
 
-[いる CoNDIS ミニポート ドライバー OID 要求](condis-miniport-driver-oid-requests.md)
+[CoNDIS ミニポートドライバー OID 要求](condis-miniport-driver-oid-requests.md)
 
-[いる CoNDIS プロトコル ドライバー OID 要求](condis-protocol-driver-oid-requests.md)
+[CoNDIS Protocol Driver OID 要求](condis-protocol-driver-oid-requests.md)
 
-[いる CoNDIS MCM OID 要求](condis-mcm-oid-requests.md)
+[Conmcm OID 要求](condis-mcm-oid-requests.md)
 
  
 

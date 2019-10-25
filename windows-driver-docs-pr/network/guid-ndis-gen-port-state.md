@@ -1,27 +1,27 @@
 ---
 title: GUID_NDIS_GEN_PORT_STATE
-description: このトピックでは、NDIS WMI インターフェイスの GUID を GUID_NDIS_GEN_PORT_STATE について説明します。
+description: このトピックでは、NDIS WMI インターフェイスの GUID_NDIS_GEN_PORT_STATE GUID について説明します。
 ms.assetid: 0632843e-ea79-4ada-919e-8ab7d94a4421
 keywords:
-- GUID_NDIS_GEN_PORT_STATE、WDK GUID_NDIS_GEN_PORT_STATE ネットワーク ドライバー
+- GUID_NDIS_GEN_PORT_STATE、WDK GUID_NDIS_GEN_PORT_STATE ネットワークドライバー
 ms.date: 11/22/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c7c7b3f98eadbe8ed0002fe41a543fd4f250324
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c52b9f26b121137ae183bddf8dabb6bfb54b4859
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382702"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842284"
 ---
-# <a name="guidndisgenportstate"></a>GUID_NDIS_GEN_PORT_STATE
+# <a name="guid_ndis_gen_port_state"></a>GUID_NDIS_GEN_PORT_STATE
 
-WMI クライアントでは、NDIS ポートの状態を取得するのに GUID GUID_NDIS_GEN_PORT_STATE メソッドを使用できます。 この WMI GUID は、NDIS 6.0 および以降のバージョンでサポートされます。
+WMI クライアントは、GUID_NDIS_GEN_PORT_STATE メソッド GUID を使用して、NDIS ポートの状態を取得できます。 この WMI GUID は、NDIS 6.0 以降のバージョンでサポートされています。
 
-GUID_NDIS_GEN_PORT_STATE では、NDIS ポートの状態を返す WMI メソッド要求が必要です。 WMI のメソッド識別子は NDIS_WMI_DEFAULT_METHOD_ID、する必要があり、WMI の入力バッファーに格納する必要があります、 [NDIS_WMI_METHOD_HEADER](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_wmi_method_header)構造体。
+GUID_NDIS_GEN_PORT_STATE では、NDIS ポートの状態を返す WMI メソッド要求が必要です。 WMI メソッド識別子は NDIS_WMI_DEFAULT_METHOD_ID であり、WMI 入力バッファーには[NDIS_WMI_METHOD_HEADER](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_wmi_method_header)構造体が含まれている必要があります。
 
-NDIS は、この GUID を処理し、ミニポート ドライバーが、OID クエリを受信しません。
+NDIS はこの GUID を処理し、ミニポートドライバーは OID クエリを受け取りません。
 
-GUID を持つ NDIS が返すデータ バッファーを含む、 [NDIS_PORT_STATE](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-port-state)構造体。
+NDIS によって GUID と共に返されるデータバッファーには、 [NDIS_PORT_STATE](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-port-state)構造体が含まれています。
 
-ポートの状態の詳細については、次を参照してください。 [OID_GEN_PORT_STATE](oid-gen-port-state.md)します。
+ポートの状態の詳細については、「 [OID_GEN_PORT_STATE](oid-gen-port-state.md)」を参照してください。
 

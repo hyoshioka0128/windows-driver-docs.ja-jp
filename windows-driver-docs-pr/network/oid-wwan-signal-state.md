@@ -1,84 +1,84 @@
 ---
 title: OID_WWAN_SIGNAL_STATE
-description: OID_WWAN_SIGNAL_STATE 返します。 または現在のシグナルの状態を設定します。
+description: OID_WWAN_SIGNAL_STATE は、現在のシグナルの状態を返します。値の設定も行います。
 ms.assetid: 6f5d8fd6-b4cf-4058-a27e-d4f7cea19f47
 ms.date: 04/05/2019
-keywords: -OID_WWAN_SIGNAL_STATE ネットワーク ドライバーが Windows Vista 以降
+keywords: -Windows Vista 以降の OID_WWAN_SIGNAL_STATE ネットワークドライバー
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: e8b2de8da14904a5cd2a1c8a030f9eba1103826a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c3ef17d56b2dc7e15d01ad33b2fb22825bbd4156
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361156"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843792"
 ---
-# <a name="oidwwansignalstate"></a>OID\_WWAN\_信号\_状態
+# <a name="oid_wwan_signal_state"></a>OID\_WWAN\_シグナル\_状態
 
 
-OID\_WWAN\_信号\_状態を返すか、現在のシグナルの状態を設定します。
+OID\_WWAN\_シグナル\_状態は、現在のシグナル状態を返します。値の設定も行います。
 
-ミニポート ドライバー セットを処理する必要があり、クエリ要求が最初に、非同期に返す NDIS\_状態\_を示す値\_元の要求とそれ以降の送信に必要な[ **NDIS\_ステータス\_WWAN\_信号\_状態**](ndis-status-wwan-signal-state.md)状態通知を含む、 [ **NDIS\_WWAN\_信号\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_signal_state)設定の完了に関係なく、エンドユーザーに示すように現在シグナル状態の表示に関する情報を提供または要求をクエリする構造体。
+ミニポートドライバーは、セットおよびクエリ要求を非同期的に処理し、最初に NDIS\_の\_状態を返し、元の要求に対して必要な\_を示し、その後、 [**ndis\_ステータス\_WWAN\_SIGNAL を送信する必要があり @no**](ndis-status-wwan-signal-state.md)set または query の完了に関係なく、エンドユーザーに表示される現在のシグナル状態の通知に関する情報を提供するために、 [**NDIS\_WWAN\_シグナル\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_signal_state)構造を含んだ状態の通知を表示します。要求.
 
-呼び出し元をユーザーが現在シグナル状態の表示を設定する要求を提供、 [ **NDIS\_WWAN\_設定\_信号\_INDICATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_set_signal_indication)適切な情報、ミニポート ドライバー構造体。
+現在のシグナル状態の通知をエンドユーザーに設定するように要求している呼び出し元は、NDIS\_WWAN を提供し、適切な情報を使用して[ **\_シグナル\_示す\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_set_signal_indication)をミニポートドライバーに設定します。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
-詳細については、この OID を使用して、次を参照してください。 [WWAN 信号強度操作](https://docs.microsoft.com/windows-hardware/drivers/network/mb-signal-strength-operations)します。
+この OID の使用方法の詳細については、「 [WWAN 信号強度の操作](https://docs.microsoft.com/windows-hardware/drivers/network/mb-signal-strength-operations)」を参照してください。
 
-ミニポート ドライバー アクセスしないでください、プロバイダーのネットワークまたは Subscriber Identity Module (SIM カード) とクエリの処理または操作を設定します。
+クエリまたはセット操作を処理するときに、ミニポートドライバーがプロバイダーネットワークまたはサブスクライバー Id モジュール (SIM カード) にアクセスすることはできません。
 
-一般に、シグナルの状態が示されますのではなくにポーリングされます。 ただし、現在シグナルの状態が MB サービスによって決定する必要がある場合に、この OID は使用されます。
+一般に、シグナル状態はポーリングではなく示す必要があります。 ただし、この OID は、現在のシグナル状態を MB サービスによって決定する必要がある場合に使用できます。
 
-クエリ要求に応答して、ミニポート ドライバーは、NDIS を送信する必要があります\_状態\_WWAN\_信号\_状態通知します。
+クエリ要求への応答として、ミニポートドライバーは、\_WWAN\_シグナル\_状態通知の NDIS\_状態を送信する必要があります。
 
-MB サービスからセットの要求のミニポート ドライバーが必要です。
+MB サービスからのセット要求では、ミニポートドライバーは次のことを行う必要があります。
 
--   現在の値を返す**Rssi**と**ErrorRate** NDIS で\_WWAN\_信号\_の絶対値のレポートに加えて、状態の構造体**RssiInterval**と**RssiThreshold**ミニポート ドライバーで設定されています。
+-   「」に設定されている**Rssiinterval**と**rssiinterval**の絶対値を報告するだけでなく、NDIS\_WWAN\_SIGNAL\_STATE 構造**体の現在の値** **を返し**ます。ミニポートドライバー。
 
--   内部的にキャッシュ、 **RssiInterval**や**RssiThreshold**値の場合でも、デバイスが任意の演算子と共に現在登録されていないと、その制限パラメーターの設定でデバイスによって課されることができます登録後の考えられる状態になります。 ミニポート ドライバーは、[次へ] の即時使用可能な状況ではこれらの設定を適用するようにしてください。
+-   デバイスが現在のオペレーターに登録されていない場合でも、パラメーターの設定時にデバイスによって課される制限を適用できる場合にのみ、 **Rssiinterval**と**rssiinterval**の値を内部でキャッシュします。 ミニポートドライバーは、次の直ちに使用可能な状況でこれらの設定を適用しようとします。
 
--   ハードウェアやソフトウェア無線スイッチの状態が OFF が現在の場合は、要求を正常に完了します。 ミニポート ドライバーでは、要求データをキャッシュし、信号強度、スイッチがオンにするとレポート作成を開始します。
+-   ハードウェアまたはソフトウェアのラジオスイッチの状態が現在オフになっている場合は、要求を正常に完了します。 ミニポートドライバーは、要求データをキャッシュし、スイッチがオンになった後のシグナルの強さの報告を開始します。
 
--   適切なこの要求が失敗する可能性が**uStatus**エラー コードを設定します。
+-   は、適切な**uStatus**エラーコードセットでこの要求を失敗させることができます。
 
-MB サービスからのクエリ要求を処理するときに、ミニポート ドライバーでは、次を実行できます。
+ミニポートドライバーは、MB サービスからのクエリ要求を処理するときに、次の操作を実行できます。
 
--   現在の値を返す**Rssi**と**ErrorRate** NDIS で\_WWAN\_信号\_の絶対値のレポートに加えて、状態の構造体**RssiInterval**と**RssiThreshold**ミニポート ドライバーで設定されています。
+-   「」に設定されている**Rssiinterval**と**rssiinterval**の絶対値を報告するだけでなく、NDIS\_WWAN\_SIGNAL\_STATE 構造**体の現在の値** **を返し**ます。ミニポートドライバー。
 
--   適切なこの要求は失敗**uStatus**エラー コードを設定します。
+-   適切な**uStatus**エラーコードセットでこの要求を失敗させます。
 
-戻り値。
+戻り値:
 
-NDIS\_状態\_いない\_サポートされています。
+NDIS\_の状態\_\_サポートされていません
 
-ミニポート ドライバーでは、信号の強さをサポートしていないデバイスの機能を認識している特定のデバイスのこれには、このエラー コードで要求を失敗を返すことができます。
+信号の強さをサポートしていないデバイスの機能を認識している特定のデバイスでは、ミニポートドライバーはこのエラーを返すことがあります。このエラーコードでは、要求が失敗する可能性があります。
 
 **推奨される実装**
 
 1.  デバイスは、信号強度のインジケーターをサポートする必要があります。
 
-2.  ドライバーの少なくとも 50% の信号強度指標を報告する必要があります、 **RssiInterval** 5 分の期間を設定します。
+2.  ドライバーは、5分間にわたって、 **Rssiinterval**設定の少なくとも50% の信号強度を報告する必要があります。
 
-3.  デバイスは、次の状態で信号の強さを報告を避ける必要があります。
-    1.  デバイスがない登録または登録解除およびは GSM デバイスのみに適用されます。
-    2.  オプションの有効な状態には OFF です。
-    3.  上記の状態を信号の強さをクエリを次のデータ ミニポート ドライバーで返される必要があります。
+3.  デバイスは、次の状態でシグナルの強さを報告しないようにする必要があります。
+    1.  デバイスが登録されていないか登録解除されているため、GSM デバイスにのみ適用されます。
+    2.  無線の有効な状態がオフです。
+    3.  上記の状態では、信号強度に対するクエリが、ミニポートドライバーによって次のデータと共に返される必要があります。
 
         Rssi = WWAN\_RSSI\_不明
 
-        ErrorRate = WWAN\_ERROR\_RATE\_UNKNOWN;
+        ErrorRate = WWAN\_エラー\_率\_不明です。
 
-        RssiInterval = &lt; WWAN\_RSSI\_無効、WWAN\_RSSI\_既定値またはセットの最後の値&gt;
+        RssiInterval = &lt; WWAN\_RSSI\_DISABLE、WWAN\_RSSI\_DEFAULT または last set 値&gt;
 
-        RssiThreshold = &lt; WWAN\_RSSI\_無効、WWAN\_RSSI\_既定値またはセットの最後の値&gt;
+        RssiThreshold = &lt; WWAN\_RSSI\_DISABLE、WWAN\_RSSI\_DEFAULT または last set 値&gt;
 
 ### <a name="windows-10-version-1903"></a>Windows 10 バージョン 1903
 
-Windows 10、バージョンが 1903 年以降 OID_WWAN_SIGNAL_STATE は、リビジョン 3 にアップグレードされています。 このリビジョンでは、新しい参照信号を受信した電力 (RSRP) およびミニポート ドライバーからのシグナル ノイズ (SNR) 値のクエリをホストできるようにします。 ミニポート ドライバーは、ドライバーは、5 G をサポートしている場合、この OID とそのデータ構造体のリビジョン 3 を使用する必要があります。
+Windows 10 バージョン1903以降では、OID_WWAN_SIGNAL_STATE はリビジョン3にアップグレードされました。 このリビジョンにより、ホストは、ミニポートドライバーから新しい reference signal received power (RSRP) 値と Signal to 騒音 (SNR) 値を照会できるようになります。 ドライバーで5G がサポートされている場合、ミニポートドライバーは、この OID のリビジョン3とそのデータ構造を使用する必要があります。
 
-5 G データ クラスのサポートに関する詳細については、次を参照してください。 [MB 5 G データ クラスのサポート](mb-5g-data-class-support.md)します。
+5G data クラスのサポートの詳細については、「 [MB 5G データクラスのサポート](mb-5g-data-class-support.md)」を参照してください。
 
 <a name="requirements"></a>要件
 ------------
@@ -91,11 +91,11 @@ Windows 10、バージョンが 1903 年以降 OID_WWAN_SIGNAL_STATE は、リ�
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>Windows 7 および Windows の以降のバージョンで使用できます。</p></td>
+<td><p>Windows 7 以降のバージョンの Windows で使用できます。</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Ntddndis.h (include Ndis.h)</td>
+<td>Ntddndis (Ndis .h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -103,9 +103,9 @@ Windows 10、バージョンが 1903 年以降 OID_WWAN_SIGNAL_STATE は、リ�
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_WWAN\_設定\_信号\_を示す値**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_set_signal_indication)
+[**NDIS\_WWAN\_\_シグナル\_示す設定**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_set_signal_indication)
 
-[WWAN 信号強度の操作](https://docs.microsoft.com/windows-hardware/drivers/network/mb-signal-strength-operations)
+[WWAN の信号強度の操作](https://docs.microsoft.com/windows-hardware/drivers/network/mb-signal-strength-operations)
 
  
 

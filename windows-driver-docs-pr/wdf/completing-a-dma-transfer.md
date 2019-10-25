@@ -4,35 +4,35 @@ description: DMA 転送の完了
 ms.assetid: 86383b9f-9b82-4afa-81ac-2ab09bd8778b
 keywords:
 - DMA 操作 WDK KMDF、転送
-- バス マスター DMA WDK KMDF の転送
-- DMA は、WDK KMDF、完了の転送します。
-- WDK KMDF 転送が DMA の完了
+- バスマスタ DMA WDK KMDF、転送
+- DMA 転送 WDK KMDF、完了
+- DMA 転送の完了 (WDK KMDF)
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a81150c78514ea0ad46487480120fce46d6add9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1646d0ab87170f3222adebb45a062ccadff51f58
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382889"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844610"
 ---
 # <a name="completing-a-dma-transfer"></a>DMA 転送の完了
 
 
-\[KMDF にのみ適用されます。\]
+\[は KMDF にのみ適用され\]
 
 
 
 
-通常、ドライバーの[ *EvtInterruptDpc* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)コールバック関数には、DMA の各転送の処理が完了します。
+通常、ドライバーの[*EvtInterruptDpc*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc) callback 関数は、各 DMA 転送の処理を完了します。
 
-最初、DMA の複数のトランザクションが同時に、進行中であることができますので、 [ *EvtInterruptDpc* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc) DMA トランザクション完了の転送に関連付けられているコールバック関数が決定する必要があります。 コールバック関数はときに、ドライバーが格納されるトランザクション ハンドルを取得することによってこれを行うことができます、 [DMA トランザクションを開始](starting-a-dma-transaction.md)します。 デバイス拡張機能を取得する、 [PLX9x5x](https://go.microsoft.com/fwlink/p/?linkid=256157)サンプルが呼び出される関数を定義します**PLxGetDeviceContext** Private.h ヘッダー ファイルで。
+1つ目は、複数の DMA トランザクションが同時に実行される可能性があるためです。そのため、 [*EvtInterruptDpc*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc) callback 関数は、完了した転送が関連付けられている dma トランザクションを特定する必要があります。 このコールバック関数は、 [DMA トランザクションの開始](starting-a-dma-transaction.md)時にドライバーが格納したトランザクションハンドルを取得することによって、この処理を実行できます。 [PLX9x5x](https://go.microsoft.com/fwlink/p/?linkid=256157)サンプルでは、デバイス拡張機能を取得するために、 **PLxGetDeviceContext**という名前の関数を独自のヘッダーファイルで定義しています。
 
 ```cpp
 WDF_DECLARE_CONTEXT_TYPE_WITH_NAME(DEVICE_EXTENSION, PLxGetDeviceContext)
 ```
 
-その後、ドライバーの  [ *EvtInterruptDpc* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)コールバックは次のこと。
+次に、ドライバーの[*EvtInterruptDpc*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)コールバックで、次のことを行います。
 
 ```cpp
 WDFDMATRANSACTION   dmaTransaction;
@@ -43,31 +43,31 @@ devExt  = PLxGetDeviceContext(WdfInterruptGetDevice(Interrupt));
 dmaTransaction = devExt->WriteDmaTransaction;
 ```
 
-次に、 [ *EvtInterruptDpc* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)コールバック関数は、フレームワークを通知する必要があります、転送は、次の転送の完了方法のいずれかを呼び出して完了すると。
+次に、 [*EvtInterruptDpc*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc) callback 関数は、次のいずれかの転送完了メソッドを呼び出すことによって、転送が完了したことをフレームワークに通知する必要があります。
 
--   [**WdfDmaTransactionDmaCompleted**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdmatransaction/nf-wdfdmatransaction-wdfdmatransactiondmacompleted)転送が正常に完了し、ハードウェアが転送されるバイト数を報告しない場合、します。
+-   [**Wdfdmatransactiondmacom*** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdmatransaction/nf-wdfdmatransaction-wdfdmatransactiondmacompleted)転送が正常に完了し、ハードウェアが転送されたバイト数を報告しない場合。
 
--   [**WdfDmaTransactionDmaCompletedWithLength**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdmatransaction/nf-wdfdmatransaction-wdfdmatransactiondmacompletedwithlength)転送が正常に完了し、ハードウェアは、転送済みバイト数 (または転送されないバイト数) の数を報告する場合、またはドライバーがエラーを検出し、指定した場合、転送する、転送を再試行するゼロの数。 フレームワークが 0 のままにし、そのために同じ転送を送信するバイト数から減算します、ドライバーは、0 の転送数を指定する場合、 [ *EvtProgramDma* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdmatransaction/nc-wdfdmatransaction-evt_wdf_program_dma)コールバック関数。
+-   [**Wdfdmatransactiondmacompletedwithlength**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdmatransaction/nf-wdfdmatransaction-wdfdmatransactiondmacompletedwithlength)。転送が正常に完了し、ハードウェアが転送されたバイト数 (または転送されていないバイト数) を報告した場合、またはドライバーがエラーを検出し、転送カウントを0に指定した場合は、転送を再試行してください。 ドライバーで転送カウントが0に指定されている場合、フレームワークは、保持されているバイト数から0を減算します。これにより、同じ転送が[*Evtprogramdma*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdmatransaction/nc-wdfdmatransaction-evt_wdf_program_dma)コールバック関数に送信されます。
 
--   [**WdfDmaTransactionDmaCompletedFinal**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdmatransaction/nf-wdfdmatransaction-wdfdmatransactiondmacompletedfinal)ハードウェア、アンダーランまたは失敗の状態を報告する場合。
+-   [**Wdfdmatransactiondmacomて**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdmatransaction/nf-wdfdmatransaction-wdfdmatransactiondmacompletedfinal)、ハードウェアがアンダーランまたはエラー状態を報告する場合は、最終です。
 
-ドライバーを呼び出すことができます[ **WdfDmaTransactionGetCurrentDmaTransferLength** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdmatransaction/nf-wdfdmatransaction-wdfdmatransactiongetcurrentdmatransferlength)の完成した転送元の長さを取得します。 この呼び出しは、デバイスがない転送されたバイト数を報告する場合に役立ちますドライバーが非転送の数を減算するため、元のバイトの長さを転送しを呼び出す **。WdfDmaTransactionGetCurrentDmaTransferLength**を実際の転送サイズを報告します。
+ドライバーは、 [**Wdfdmatransactiongetcurrentdmatransの長さ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdmatransaction/nf-wdfdmatransaction-wdfdmatransactiongetcurrentdmatransferlength)を呼び出して、完了した転送の元の長さを取得できます。 この呼び出しは、転送されなかったバイト数をデバイスが報告する場合に便利です。これは、ドライバーが元の転送の長さから転送できないバイト数を減算して、 **Wdfdmatransactiongetcurrentdmatransferlength**をに呼び出すことができるためです。実際の転送サイズを報告します。
 
-フレームワークに通知の前の転送の完了メソッドを 1 つ[DMA 転送](dma-transactions-and-dma-transfers.md)(全体ではない[DMA トランザクション](dma-transactions-and-dma-transfers.md)) が完了します。 ドライバーは、これらのメソッドのいずれかを呼び出してから、ドライバーはかどうか、トランザクションが複数の転送が必要ですかを確認するメソッドの戻り値を確認します。
+上記の各転送完了メソッドは、( [dma トランザクション](dma-transactions-and-dma-transfers.md)全体ではなく) シングル[dma 転送](dma-transactions-and-dma-transfers.md)が完了したことをフレームワークに通知します。 ドライバーは、これらのメソッドのいずれかを呼び出すと、メソッドの戻り値をチェックして、トランザクションにより多くの転送が必要かどうかを確認します。
 
--   完了メソッドの戻り値の値が**FALSE**フレームワークに追加の DMA 転送は DMA のトランザクションの処理を完了に必要なことが決定されます。
+-   完了メソッドの戻り値が**FALSE**の場合、このフレームワークは dma トランザクションの処理を完了するために追加の dma 転送が必要であると判断しました。
 
-    通常、ドライバーの[ *EvtInterruptDpc* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)コールバック関数だけを返します。 フレームワークは、ドライバーの[ *EvtProgramDma* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdmatransaction/nc-wdfdmatransaction-evt_wdf_program_dma)コールバック関数をもう一度とコールバック関数は、次の転送では、ハードウェアをプログラミングできます。
+    通常、ドライバーの[*EvtInterruptDpc*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc) callback 関数はを返します。 フレームワークは、ドライバーの[*Evtprogramdma*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdmatransaction/nc-wdfdmatransaction-evt_wdf_program_dma)コールバック関数を再度呼び出します。コールバック関数は、次の転送用にハードウェアをプログラミングできます。
 
-    転送の完了方法の状態では常にステータス値を指定\_詳細\_処理\_ここで必要です。
+    転送の完了方法では、状態の値が提供されます。この値は常に STATUS\_\_処理\_必要があります。
 
--   戻り値が場合**TRUE**、DMA トランザクションの複数の転送が発生します。
+-   戻り値が**TRUE**の場合、DMA トランザクションに対してこれ以上の転送は行われません。
 
-    転送の完了メソッドでは、状態値を提供します。 状態値が状態の場合\_成功した場合、DMA トランザクションのすべての転送が完了して、ドライバーである必要があります[DMA のトランザクションを完了](completing-a-dma-transaction.md)します。 状態値が何である場合は、エラーが発生し、DMA トランザクションが完了していません。
+    転送の完了メソッドは、状態の値を提供します。 状態の値\_が [成功] の場合、DMA トランザクションのすべての転送が完了し、ドライバーが[dma トランザクションを完了](completing-a-dma-transaction.md)する必要があります。 状態の値が他の値の場合は、エラーが発生し、DMA トランザクションが完了していない可能性があります。
 
-場合、 [ *EvtInterruptDpc* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)コールバック関数には、エラーが検出される、通常、タイマーの期限切れや、転送エラーのシグナル通知ハードウェア割り込みによってドライバーを再起動現在のトランザクションの転送します。
+[*EvtInterruptDpc*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc) callback 関数がエラーを検出した場合、通常はタイマーの有効期限が切れたか、転送エラーを通知するハードウェア割り込みが原因で、ドライバーはトランザクションの現在の転送を再開できます。
 
-トランザクションの現在の転送をドライバーの再起動を[ *EvtInterruptDpc* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)コールバック関数を呼び出すことができます[ **WdfDmaTransactionDmaCompletedWithLength**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdmatransaction/nf-wdfdmatransaction-wdfdmatransactiondmacompletedwithlength)で、 *TransferredLength*パラメーター 0 に設定します。
+トランザクションの現在の転送を再開するには、ドライバーの[*EvtInterruptDpc*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc) callback 関数は、 *transferredlength*パラメーターを0に設定して[**Wdfdmatransactiondmacompletedwithlength**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdmatransaction/nf-wdfdmatransaction-wdfdmatransactiondmacompletedwithlength)を呼び出すことができます。
 
  
 

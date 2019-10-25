@@ -3,78 +3,78 @@ title: 機能ドライバーでのデバイス オブジェクトの作成
 description: 機能ドライバーでのデバイス オブジェクトの作成
 ms.assetid: 3b988f6d-c50e-412d-85cb-031746535ff4
 keywords:
-- PnP WDK KMDF、関数のドライバー
-- プラグ アンド プレイ WDK KMDF、関数のドライバー
-- 電源管理 WDK KMDF、関数のドライバー
-- 機能ドライバー WDK KMDF
-- WDK KMDF の機能のデバイス オブジェクト
-- Fdo WDK KMDF
+- PnP WDK KMDF, 関数ドライバー
+- プラグアンドプレイ WDK KMDF, 関数ドライバー
+- 電源管理 WDK KMDF, 関数ドライバー
+- 関数ドライバー WDK KMDF
+- 機能デバイスオブジェクト WDK KMDF
+- FDOs WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 54fe53b4b7978960eceb15c5071651a8b92f0821
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ee33a46d0b72d5b675ceda3b86d0b2c3051e3190
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382381"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844681"
 ---
 # <a name="creating-device-objects-in-a-function-driver"></a>機能ドライバーでのデバイス オブジェクトの作成
 
 
-各[関数ドライバー](https://docs.microsoft.com/windows-hardware/drivers/kernel/function-drivers)システム上に存在する、サポートされているデバイスの各フレームワーク デバイス オブジェクトを作成します。 関数のドライバーによっては、これらのデバイス オブジェクトが作成された、ため、機能のデバイス オブジェクト (Fdo) は呼び出されます。 各 FDO は function ドライバーのデバイスを表したものです。
+各[関数ドライバー](https://docs.microsoft.com/windows-hardware/drivers/kernel/function-drivers)は、システムに存在する、サポートされている各デバイスのフレームワークデバイスオブジェクトを作成します。 これらのデバイスオブジェクトは関数ドライバーによって作成されるため、機能デバイスオブジェクト (FDOs) と呼ばれます。 各 FDO は、デバイスの関数ドライバーの表現です。
 
-関数ドライバー フレームワークのデバイス オブジェクトを作成する必要がありますたびに、フレームワーク、ドライバーの[ *EvtDriverDeviceAdd* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)コールバック関数。 フレームワークは、システムでサポートされているデバイスのいずれかが存在するドライバーに通知するには、このコールバック関数を呼び出します。
+関数ドライバーは、フレームワークがドライバーの[*Evtdriverdeviceadd*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)コールバック関数を呼び出すたびに、フレームワークデバイスオブジェクトを作成する必要があります。 フレームワークは、このコールバック関数を呼び出して、サポートされているデバイスの1つがシステムに存在することをドライバーに通知します。
 
-ドライバーの[ *EvtDriverDeviceAdd* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)コールバック関数へのポインターを受け取る、 [ **WDFDEVICE\_INIT** ](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdfdevice_init)構造体。 ドライバーのセットを呼び出すことができます[framework デバイス オブジェクトの初期化メソッド](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/#device-init-methods)、WDFDEVICE で情報を格納する\_INIT 構造体。 さらに、ドライバーの関数を呼び出すことができます[framework FDO 初期化メソッド](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/#fdo-init-methods)します。
+ドライバーの[*Evtdriverdeviceadd*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)コールバック関数は、 [**wdfdevice\_INIT**](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdfdevice_init)構造体へのポインターを受け取ります。 ドライバーは、一連の[フレームワークデバイスオブジェクトの初期化メソッド](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/#device-init-methods)を呼び出すことができます。このメソッドは、wdfdevice\_INIT 構造体に情報を格納します。 さらに、関数ドライバーは、[フレームワーク FDO の初期化メソッド](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/#fdo-init-methods)を呼び出すことができます。
 
-Function ドライバー framework デバイス オブジェクトを作成すると、通常は、次の手順が含まれています。
+通常、関数ドライバーでフレームワークデバイスオブジェクトを作成するには、次の手順を実行します。
 
--   PnP、パワー、および電源ポリシーのコールバック関数を登録しています。
+-   PnP、電源、および電源ポリシーのコールバック関数を登録しています。
 
-    ほとんどの関数のドライバー呼び出し[ **WdfDeviceInitSetPnpPowerEventCallbacks** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceinitsetpnppowereventcallbacks) PnP と電力のコールバック関数を登録します。 これらのコールバック関数の詳細については、次を参照してください。 [PnP をサポートしていると関数のドライバーでの電源管理](supporting-pnp-and-power-management-in-function-drivers.md)します。
+    ほとんどの関数ドライバーは[**WdfDeviceInitSetPnpPowerEventCallbacks**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetpnppowereventcallbacks)を呼び出して、PnP および電源コールバック関数を登録します。 これらのコールバック関数の詳細については、「[関数ドライバーでの PnP と電源管理のサポート](supporting-pnp-and-power-management-in-function-drivers.md)」を参照してください。
 
-    デバイスは、低電力アイドル状態をサポートしていますまたは、ウェイク アップ機能を備えて、場合、関数のドライバーもは[ **WdfDeviceInitSetPowerPolicyEventCallbacks** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceinitsetpowerpolicyeventcallbacks)電源ポリシーのコールバックを登録するには。関数。 これらのコールバック関数の詳細については、次を参照してください。[電源ポリシー所有権](power-policy-ownership.md)します。
+    デバイスで低電力アイドルがサポートされている場合、またはウェイクアップ機能がある場合、関数ドライバーは通常、 [**Wdfdeviceinitsetpowerpolicyeventcallbacks**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetpowerpolicyeventcallbacks)も呼び出して、電源ポリシーコールバック関数を登録します。 これらのコールバック関数の詳細については、「[電源ポリシーの所有権](power-policy-ownership.md)」を参照してください。
 
--   ドライバー固有のコールバック関数の関数を登録しています。
+-   関数ドライバー固有のコールバック関数を登録しています。
 
-    一部の関数のドライバー呼び出し[ **WdfFdoInitSetEventCallbacks**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdffdo/nf-wdffdo-wdffdoinitseteventcallbacks)場合、それらのデバイスで必要なシステムのハードウェア リソースを指定するときに参加する必要があります。 ハードウェア リソースの詳細については、次を参照してください。 [Framework ベースのドライバーのハードウェア リソース](hardware-resources-for-kmdf-drivers.md)します。
+    一部の関数ドライバーは、デバイスが必要とするシステムハードウェアリソースの指定に参加する必要がある場合に、 [**Wdffdoinitseteventcallbacks バック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdffdo/nf-wdffdo-wdffdoinitseteventcallbacks)を呼び出します。 ハードウェアリソースの詳細については、「[フレームワークベースのドライバーのハードウェアリソース](hardware-resources-for-kmdf-drivers.md)」を参照してください。
 
--   ファイルのイベントのコールバック関数を登録しています。
+-   ファイルイベントのコールバック関数を登録しています。
 
-    ドライバーを呼び出す必要があります、ドライバーは、アプリケーションを開くか、デバイス上のファイルを閉じたときに応答する必要がある場合、 [ **WdfDeviceInitSetFileObjectConfig** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceinitsetfileobjectconfig) framework ファイル オブジェクトのコールバック関数を登録するには. 詳細については、次を参照してください。 [Framework ファイル オブジェクトを使用する](framework-file-objects.md)します。
+    アプリケーションがデバイス上のファイルを開いたり閉じたりしたときにドライバーが応答する必要がある場合、ドライバーは[**Wdfdeviceinitsetfileobjectconfig**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetfileobjectconfig)を呼び出して、フレームワークファイルオブジェクトのコールバック関数を登録する必要があります。 詳細については、「 [Framework ファイルオブジェクトの使用](framework-file-objects.md)」を参照してください。
 
--   I/O 要求の属性を設定します。
+-   I/o 要求の属性を設定しています。
 
-    ドライバーを呼び出すことができる場合、ドライバーはフレームワークのキュー オブジェクトからの I/O 要求を受信、 [ **WdfDeviceInitSetRequestAttributes** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceinitsetrequestattributes)フレームワークがデバイスを割り当てることのコンテキストのメモリを設定するには要求オブジェクト。 詳細については、次を参照してください。[要求オブジェクトのコンテキストを使用して](using-request-object-context.md)します。
+    ドライバーがフレームワークキューオブジェクトから i/o 要求を受信する場合、ドライバーは[**Wdfdeviceinitsetrequestattributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetrequestattributes)を呼び出して、フレームワークがデバイスの要求オブジェクトに割り当てるコンテキストメモリを設定できます。 詳細については、「[要求オブジェクトコンテキストの使用](using-request-object-context.md)」を参照してください。
 
 -   デバイスの特性を設定します。
 
-    通常、関数ドライバーは、一部のデバイスの特性を指定する次のメソッドを呼び出します。
+    通常、関数ドライバーは、デバイスの特性を指定するために、次のメソッドの一部を呼び出します。
 
-    -   [**WdfDeviceInitSetDeviceType**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceinitsetdevicetype)ドライバーがサポートするハードウェアの種類を識別します。
-    -   [**WdfDeviceInitSetIoType**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceinitsetiotype)をドライバーがアプリケーションからの I/O 要求を処理する場合は、データのバッファーにアクセスするためのメソッドを識別します。
-    -   [**WdfDeviceInitSetCharacteristics**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceinitsetcharacteristics)デバイスは読み取り専用またはリムーバブル メディアをサポートしているかどうかなど、デバイスの特性を設定します。
-    -   [**WdfDeviceInitSetExclusive**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceinitsetexclusive)デバイスは、一度に 1 つのアプリケーションでの排他アクセスを必要とする場合、します。
-    -   [**WdfDeviceInitSetPowerInrush**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceinitsetpowerinrush)低電力状態からの作業 (D0) 状態に遷移するとき、デバイスに、突入電流が必要な場合、します。
-    -   [**WdfDeviceInitSetPowerPageable** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceinitsetpowerpageable)または[ **WdfDeviceInitSetPowerNotPageable**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceinitsetpowernotpageable)システムは、ドライバーはページング可能なデータにアクセスする必要があるかどうかを示すために、スリープ状態と動作 (S0) 状態の遷移中です。
-    -   [**WdfDeviceInitAssignName**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceinitassignname)デバイス オブジェクトに名前を割り当てます。
-    -   [**WdfDeviceInitAssignSDDLString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceinitassignsddlstring)セキュリティ記述子をデバイス オブジェクトに割り当てます。
-    -   [**WdfDeviceInitSetDeviceClass**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceinitsetdeviceclass)デバイスのセットアップ クラスを識別します。
--   デバイスのプロパティを取得します。
+    -   [**WdfDeviceInitSetDeviceType**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetdevicetype)。ドライバーがサポートするハードウェアの種類を識別します。
+    -   [**Wdfdeviceinitsetiotype**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetiotype)。ドライバーがアプリケーションからの i/o 要求を処理する場合に、データバッファーにアクセスするためのメソッドを識別します。
+    -   [**Wdfdeviceinitsetcharacteristics**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetcharacteristics)。デバイスが読み取り専用であるか、リムーバブルメディアをサポートしているかなど、デバイスの特性を設定します。
+    -   [**Wdfdeviceinitsetexclusive**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetexclusive)。デバイスが一度に1つのアプリケーションによる排他アクセスを必要とする場合。
+    -   デバイスが低電力状態から動作中 (D0) 状態に遷移するときに、現在の突入電流が必要な場合は[**WdfDeviceInitSetPowerInrush**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetpowerinrush)。
+    -   [**Wdfdeviceinitsetpowerpageable**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetpowerpageable)または[**Wdfdeviceinitsetpowernotページング**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetpowernotpageable)。システムがスリープ状態と動作中 (S0) 状態の間で遷移しているときに、ドライバーがページング可能なデータにアクセスする必要があるかどうかを指定します。
+    -   [**Wdfdeviceinitassign name**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitassignname)。デバイスオブジェクトに名前を割り当てます。
+    -   [**Wdfdeviceinitassign Sddlstring**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitassignsddlstring)。これにより、デバイスオブジェクトにセキュリティ記述子が割り当てられます。
+    -   [**Wdfdeviceinitsetdeviceclass**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetdeviceclass)。デバイスのセットアップクラスを識別します。
+-   デバイスのプロパティを取得しています。
 
-    場合があります関数ドライバーでは、デバイスのバスのドライバーやその他の下位のドライバーが設定されているデバイスのプロパティに関する情報を取得する必要があります。 ドライバーを呼び出すことができます[ **WdfFdoInitQueryProperty** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdffdo/nf-wdffdo-wdffdoinitqueryproperty)または[ **WdfFdoInitAllocAndQueryProperty** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdffdo/nf-wdffdo-wdffdoinitallocandqueryproperty)この情報を取得します。 Windows 8.1 以降を対象とする新しいドライバーが呼び出せる[ **WdfFdoInitQueryPropertyEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdffdo/nf-wdffdo-wdffdoinitquerypropertyex)と[ **WdfFdoInitAllocAndQueryPropertyEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdffdo/nf-wdffdo-wdffdoinitallocandquerypropertyex).
+    場合によっては、デバイスのバスのドライバーまたはその他の下位のドライバーによって設定されたデバイスのプロパティに関する情報を取得する必要があります。 ドライバーは、この情報を取得するために、 [**wdffdoinitqueryproperty**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdffdo/nf-wdffdo-wdffdoinitqueryproperty)または[**Wdffdoinitallocandqueryproperty**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdffdo/nf-wdffdo-wdffdoinitallocandqueryproperty)を呼び出すことができます。 Windows 8.1 以降をターゲットとする新しいドライバーでは、 [**Wdffdoinitquerypropertyex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdffdo/nf-wdffdo-wdffdoinitquerypropertyex)と[**Wdffdoinitallocandquerypropertyex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdffdo/nf-wdffdo-wdffdoinitallocandquerypropertyex)を呼び出すことができます。
 
--   デバイスのレジストリ キーへのアクセス。
+-   デバイスのレジストリキーにアクセスしています。
 
-    関数のドライバーによっては、デバイスまたは別のドライバー、ユーザー、またはインストール パッケージが配置されている場合、レジストリのドライバーに関する情報を取得する必要があります。 ドライバーが呼び出せる[ **WdfFdoInitOpenRegistryKey** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdffdo/nf-wdffdo-wdffdoinitopenregistrykey)デバイスまたはドライバーのレジストリ キーを開きます。 詳細については、次を参照してください。 [Framework ベースのドライバーのレジストリを使用して](https://docs.microsoft.com/windows-hardware/drivers/wdf/using-the-registry-in-wdf-drivers)します。
+    一部の関数ドライバーでは、別のドライバー、ユーザー、またはインストールパッケージがレジストリに配置したデバイスまたはドライバーに関する情報を取得する必要があります。 ドライバーは、 [**Wdffdoinitopenregistrykey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdffdo/nf-wdffdo-wdffdoinitopenregistrykey)を呼び出して、デバイスまたはドライバーのレジストリキーを開くことができます。 詳細については、「[フレームワークベースのドライバーでのレジストリの使用](https://docs.microsoft.com/windows-hardware/drivers/wdf/using-the-registry-in-wdf-drivers)」を参照してください。
 
--   動的な列挙を使用する既定の子リスト構成を作成します。
+-   動的列挙に使用する既定の子リスト構成を作成しています。
 
-    かどうか、バスの機能のドライバーを記述して、ドライバーは、バスに接続されている子デバイスの動的な列挙を実行している場合、ドライバーを呼び出す必要があります[ **WdfFdoInitSetDefaultChildListConfig** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdffdo/nf-wdffdo-wdffdoinitsetdefaultchildlistconfig). 詳細については、次を参照してください。[バス上のデバイスを列挙する](enumerating-the-devices-on-a-bus.md)します。
+    バス用の関数ドライバーを作成していて、バスに接続されている子デバイスの動的な列挙をドライバーが実行する場合、ドライバーは[**Wdffdoinitsetdefaultchildlistconfig**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdffdo/nf-wdffdo-wdffdoinitsetdefaultchildlistconfig)を呼び出す必要があります。 詳細については、「[バス上のデバイスの列挙](enumerating-the-devices-on-a-bus.md)」を参照してください。
 
--   デバイス オブジェクトを作成します。
+-   デバイスオブジェクトを作成しています。
 
-    デバイス オブジェクトを作成する最後の手順を呼び出すことです。 [ **WdfDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicecreate)します。
+    デバイスオブジェクトを作成する最後の手順は、 [**WdfDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate)を呼び出すことです。
 
  
 

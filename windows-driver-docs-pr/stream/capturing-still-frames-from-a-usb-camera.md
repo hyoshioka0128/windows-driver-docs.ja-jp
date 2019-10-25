@@ -3,25 +3,25 @@ title: USB カメラからの静止画のキャプチャ
 description: USB カメラからの静止画のキャプチャ
 ms.assetid: 762021ea-753c-4cd2-9eec-1403ee918d4e
 keywords:
-- Windows 2000 カーネル ストリーミング モデル WDK、USBCAMD2 ミニドライバー ライブラリ
-- ストリーミング モデル WDK Windows 2000 カーネル、USBCAMD2 ミニドライバー ライブラリ
-- カーネル ストリーミング モデルの WDK、USBCAMD2 ミニドライバー ライブラリ
-- WDK Windows 2000 のカーネル ストリーミング USBCAMD2 ミニドライバー ライブラリ
-- USB ベースのストリーミング カメラ WDK USBCAMD2
+- Windows 2000 カーネルストリーミングモデル WDK、USBCAMD2 ミニドライバーライブラリ
+- ストリーミングモデル WDK Windows 2000 カーネル、USBCAMD2 ミニドライバーライブラリ
+- カーネルストリーミングモデル WDK、USBCAMD2 ミニドライバーライブラリ
+- USBCAMD2 ミニドライバー library WDK Windows 2000 カーネルストリーミング
+- USB ベースのストリーミングカメラの WDK USBCAMD2
 - カメラ WDK USBCAMD2
-- まだ WDK USBCAMD2 のフレームをキャプチャします。
-- フレームはまだ WDK USBCAMD2 をキャプチャします。
-- 一括パイプ WDK USBCAMD2
-- プッシュ モデル WDK USBCAMD2
-- プル モデル WDK USBCAMD2
+- まだフレームをキャプチャする WDK USBCAMD2
+- 静止フレームは WDK USBCAMD2 をキャプチャします
+- bulk pipe WDK USBCAMD2
+- プッシュモデルの WDK USBCAMD2
+- プルモデルの WDK USBCAMD2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dcc85bc6fa240e59496d1d72dda61d584ddacfbd
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1499661294b68fe5ea22d1dad939b825cbfb85e9
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386661"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844739"
 ---
 # <a name="capturing-still-frames-from-a-usb-camera"></a>USB カメラからの静止画のキャプチャ
 
@@ -29,39 +29,39 @@ ms.locfileid: "67386661"
 
 
 
-USBCAMD2、別の機能を提供する[静止画像ドライバー](https://docs.microsoft.com/windows-hardware/drivers/image/still-image-drivers)カメラの一括パイプを介してカメラからまだフレームを取得します。
+USBCAMD2 は、カメラのバルクパイプを介してカメラから静止フレームを取得するために、別の[静止イメージドライバー](https://docs.microsoft.com/windows-hardware/drivers/image/still-image-drivers)の機能を提供します。
 
-***<em>まだフレームのキャプチャをサポートするためには、USBCAMD2 ミニドライバーを次に実行する必要があります。</em>***
+***<em>静止フレームキャプチャをサポートするために、USBCAMD2 ミニドライバーは次を実行する必要があります。</em>***
 
--   呼び出す[ *USBCAMD\_BulkReadWrite* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbcamdi/nc-usbcamdi-pfnusbcamd_bulkreadwrite) 、PROPSETID から\_しました\_VIDEOCONTROL プロパティ ハンドラーにミニドライバーに割り当てられたバッファーへのポインターを渡すと静止画像をキャプチャできます。 ポインターがある必要がありますいない**NULL**します。
+-   PROPSETID\_VIDCAP\_VIDEOCONTROL プロパティハンドラーから[*USBCAMD\_BulkReadWrite*](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbcamdi/nc-usbcamdi-pfnusbcamd_bulkreadwrite)を呼び出し、静止イメージをキャプチャできるミニドライバーに割り当てられたバッファーへのポインターを渡します。 ポインターを**NULL**にすることはできません。
 
--   USBCAMD2 を呼び出して、ミニドライバーの[ *CamNewVideoFrameEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbcamdi/nc-usbcamdi-pcam_new_frame_routine_ex)一括転送を開始する前に、コールバック関数。 カメラ ミニドライバーは、実際の静止フレームが DirectShow によって割り当てられた最大サイズ未満であると判断した場合、一括転送の要求されたサイズを縮小できます。
+-   次に、USBCAMD2 は、一括転送を開始する前に、ミニドライバーの[*CamNewVideoFrameEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbcamdi/nc-usbcamdi-pcam_new_frame_routine_ex) callback 関数を呼び出します。 カメラミニドライバーは、実際の静止フレームが、DirectShow によって割り当てられた最大サイズよりも小さくなると判断した場合に、要求されたサイズの一括転送を減らすことができます。
 
--   一括転送が完了したら、USBCAMD2 呼び出してミニドライバーの[ *CamProcessRawVideoFrameEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbcamdi/nc-usbcamdi-pcam_process_raw_frame_routine_ex)追加処理を実行するミニドライバーを許可するコールバック関数。
+-   一括転送が完了すると、USBCAMD2 はミニドライバーの[*CamProcessRawVideoFrameEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbcamdi/nc-usbcamdi-pcam_process_raw_frame_routine_ex) callback 関数を呼び出して、ミニドライバーが追加の処理を実行できるようにします。
 
-使用するフレーム データ フローは、引き続き、*プル*モデル。 プルは、アプリケーションは、静止フレームを要求したときに発生します。 または、まだフレーム データ フロー内でも、*プッシュ*モデル。 プッシュは、ユーザーにプッシュ ボタン、カメラ デバイス イベントをトリガーするときに発生します。
+静止フレームデータフローは、*プル*モデルでの使用を目的としています。 プルは、アプリケーションが静止フレームを要求したときに発生します。 また、フレームデータフローも*プッシュ*モデルで機能します。 プッシュは、ユーザーがカメラのボタンを押してデバイスイベントをトリガーしたときに発生します。
 
-*<strong>* 使用する、* * *</strong>プル** * * *、STI ミニドライバー * * * から取得するモデルがまだフレーム
+\* * プル * * * * モデルを使用して、STI ミニドライバーから静止フレームを取得するには * * * *  *<strong>*  *</strong>*
 
--   カメラに関連付けられている WDM ビデオ キャプチャ ソース フィルターを開きます。
+-   カメラに関連付けられている WDM ビデオキャプチャソースフィルターを開きます。
 
--   前の手順で取得されたフィルター ハンドルでまだ暗証番号 (pin) を開きます。
+-   前の手順で取得したフィルターハンドルで静止ピンを開きます。
 
--   呼び出す**ReadFile**の最大サイズのバッファーでは、その pin。
+-   最大サイズのバッファーを使用して、そのピンで**ReadFile**を呼び出します。
 
--   一時停止から実行するように、ストリームの状態を設定します。
+-   ストリームの状態を "一時停止" から "実行" に設定します。
 
--   USBCAMD2 カメラ ミニドライバーのインターフェイス ポインターを取得[PROPSETID\_しました\_VIDEOCONTROL](https://docs.microsoft.com/windows-hardware/drivers/stream/propsetid-vidcap-videocontrol)プロパティ セット。
+-   USBCAMD2 camera ミニドライバーの[Propsetid\_VIDCAP\_VIDEOCONTROL](https://docs.microsoft.com/windows-hardware/drivers/stream/propsetid-vidcap-videocontrol)プロパティセットへのインターフェイスポインターを取得します。
 
--   設定、 *KS\_VideoControlFlag\_トリガー*に関連付けられているフラグ[ **KSPROPERTY\_VIDEOCONTROL\_モード**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-videocontrol-mode).
+-   [ **\_VIDEOCONTROL\_モード**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-videocontrol-mode)に関連付けられている、 *\_videocontrolflag\_トリガー*フラグを設定します。
 
-*<strong>* サポートするために、* * *</strong>プッシュ** * * * を取得するモデルは、まだカメラ * からフレーム
+\* * プッシュ * * * モデルをサポートして、カメラから静止フレームを取得するには * * * *  *<strong>*  *</strong>*
 
--   渡す、 *USBCAMD\_CamControlFlag\_EnableDeviceEvents*フラグを呼び出すときに[ **USBCAMD\_InitializeNewInterface** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbcamdi/nf-usbcamdi-usbcamd_initializenewinterface)からミニドライバーの SRB 内\_初期化\_デバイス ハンドラー。 ミニドライバー処理 SRB\_初期化\_内からデバイスの[ *AdapterReceivePacket* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbcamdi/nc-usbcamdi-padapter_receive_packet_routine)コールバック関数。
+-   ミニドライバーの SRB\_INITIALIZE\_DEVICE handler 内から[**USBCAMD\_InitializeNewInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbcamdi/nf-usbcamdi-usbcamd_initializenewinterface)を呼び出すと、 *USBCAMD\_CamControlFlag\_enabledeviceevents*フラグが渡されます。 ミニドライバーは、 [*Adapterreceivepacket*](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbcamdi/nc-usbcamdi-padapter_receive_packet_routine)コールバック関数内から\_デバイスを初期化\_処理します。
 
--   USBCAMD2 送信、 [ **KSEVENT\_VIDCAPTOSTI\_EXT\_トリガー** ](https://docs.microsoft.com/windows-hardware/drivers/stream/ksevent-vidcaptosti-ext-trigger)イベント、ユーザーに、[トリガー] ボタンをプッシュするときに、登録済みのイメージング アプリケーションをカメラ。
+-   USBCAMD2 は、ユーザーがカメラの [トリガー] ボタンを押すと、登録されているイメージングアプリケーションに[**KSEVENT\_VIDCAPTOSTI\_EXT\_TRIGGER**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksevent-vidcaptosti-ext-trigger)イベントを送信します。
 
-要求された一括読み取りまたは書き込みを取り消す場合は、アプリケーションを呼び出す必要があります**CancelIO**静止暗証番号 (pin) へのハンドルをします。 アプリケーションを呼び出す必要があります (USB 一括アウト パイプ) 経由のカメラに転送する必要があるテーブル場合、 **WriteFile**静止暗証番号 (pin) へのハンドルをします。
+要求された一括読み取りまたは書き込みをキャンセルするには、アプリケーションが静止ピンをハンドルする**CancelIO**を呼び出す必要があります。 (USB 一括送信パイプを使用して) テーブルをカメラに転送する必要がある場合は、アプリケーションで**WriteFile**を呼び出して、まだ pin をハンドルする必要があります。
 
  
 

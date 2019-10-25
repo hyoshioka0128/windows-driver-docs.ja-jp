@@ -4,12 +4,12 @@ description: データ転送のキャンセル
 ms.assetid: a7900968-df57-41d9-abb1-4d2c97517362
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2565f99a249e30c3587a90080b1f99a654ac04dc
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d0ffdf121fb9e80b3e148aea92866a096ef2e95a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67366732"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840883"
 ---
 # <a name="canceling-a-data-transfer"></a>データ転送のキャンセル
 
@@ -17,15 +17,15 @@ ms.locfileid: "67366732"
 
 
 
-WIA アプリケーションと WIA ミニドライバーは、いつでも、データ転送をキャンセルすることができます。 WIA ミニドライバーがによって返される値をチェックして、アプリケーションがデータ転送を取り消すかどうかを判断することができます、 [ **IWiaMiniDrvCallBack::MiniDrvCallback** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrvcallback-minidrvcallback)メソッド。 場合、メソッドが返す S\_false の場合、データ転送が取り消されました。 WIA ミニドライバーは、購入アクティビティをすべて停止する必要があります、アイドル状態に戻ります。 次のデータ転送の準備完了です。
+WIA アプリケーションと WIA ミニドライバーは、いつでもデータ転送をキャンセルできます。 WIA ミニドライバーは、 [**IWiaMiniDrvCallBack:: MiniDrvCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrvcallback-minidrvcallback)メソッドによって返された値をチェックすることによって、アプリケーションでデータ転送が取り消されたかどうかを判断できます。 メソッドからが返された場合、\_FALSE の場合、データ転送は取り消されています。 WIA ミニドライバーは、すべての取得アクティビティを停止し、アイドル状態に戻す必要があります。 その後、次のデータ転送の準備が整います。
 
-WIA ミニドライバーを返すことによって、データ転送がキャンセルされたことを通知できます S\_から FALSE、 [ **IWiaMiniDrv::drvAcquireItemData** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvacquireitemdata)メソッド。 一部のデバイスでは、データ転送を中止できるハードウェア上で [キャンセル] ボタンがあります。 このような場合は、WIA ミニドライバーを返す必要があります S\_FALSE。
+WIA ミニドライバーは、 [**IWiaMiniDrv::D rvacquireitemdata**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvacquireitemdata)メソッドから S\_FALSE を返すことによって、データ転送が取り消されたことを通知できます。 一部のデバイスには、データ転送を中止できるハードウェア上の [キャンセル] ボタンがあります。 このような場合、WIA ミニドライバーは\_FALSE を返す必要があります。
 
-**注**  なし、エラーを宣言して、返す WIA スキャンでキャンセルすることは S\_FALSE。 ただし、Windows XP およびそれ以降のオペレーティング システムではのみWindows Millennium Edition ではありません。
+  、エラーを宣言して、S\_FALSE を返すことなく、WIA スキャンをキャンセルできることに**注意**してください。 ただし、これは Windows XP 以降のオペレーティングシステムでのみ可能です。Windows Millennium Edition では使用できません。
 
  
 
-コードから受信したすべての戻り値、 **IWiaMiniDrvCallBack::MiniDrvCallback**メソッドで返される、 **IWiaMiniDrv::drvAcquireItemData**メソッド。 アプリケーションで、エラー コードを返した場合、 **IWiaMiniDrvCallBack::MiniDrvCallback**メソッド、WIA ミニドライバー WIA サービスへのエラー コード、アイドル状態、および戻り値に戻り、データ転送は停止する必要があります。
+**IWiaMiniDrvCallBack:: MiniDrvCallback**メソッドから受け取ったすべてのリターンコードは、 **IWiaMiniDrv::d rvacquireitemdata**メソッドで返される必要があります。 アプリケーションから**IWiaMiniDrvCallBack:: MiniDrvCallback**メソッドでエラーコードが返された場合、wia ミニドライバーはデータ転送を停止し、アイドル状態に戻り、そのエラーコードを wia サービスに返す必要があります。
 
  
 

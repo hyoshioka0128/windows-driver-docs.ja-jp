@@ -1,36 +1,36 @@
 ---
 title: NDIS_STATUS_WWAN_PIN_LIST
-description: ミニポート ドライバーでは、OID_WWAN_PIN_LIST の OID クエリ要求に応答する NDIS_STATUS_WWAN_PIN_LIST 通知を使用します。 ミニポート ドライバーは、この通知を使用して、不要なイベントを送信することはできません。この通知は、NDIS_WWAN_PIN_LIST 構造体を使用します。
+description: ミニポートドライバーは、NDIS_STATUS_WWAN_PIN_LIST 通知を使用して OID_WWAN_PIN_LIST の OID クエリ要求に応答します。 ミニポートドライバーは、この通知を使用して一方的なイベントを送信することはできません。この通知では、NDIS_WWAN_PIN_LIST 構造体が使用されます。
 ms.assetid: fd8e6734-d032-445a-819a-0d5a773e9ea3
 ms.date: 08/08/2017
-keywords: -NDIS_STATUS_WWAN_PIN_LIST ネットワーク ドライバーが Windows Vista 以降
+keywords: -Windows Vista 以降の NDIS_STATUS_WWAN_PIN_LIST ネットワークドライバー
 ms.localizationpriority: medium
-ms.openlocfilehash: 72c8a0a0b71ef80276663a27c73a7ce290861533
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0a27a714d3dbee5c630b683f8fe3f66d9025d03a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377606"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844701"
 ---
-# <a name="ndisstatuswwanpinlist"></a>NDIS\_状態\_WWAN\_PIN\_一覧
+# <a name="ndis_status_wwan_pin_list"></a>NDIS\_ステータス\_WWAN\_PIN\_一覧
 
 
-ミニポート ドライバーを使用して、NDIS\_状態\_WWAN\_PIN\_の OID クエリ要求に応答するリスト通知[OID\_WWAN\_PIN\_ボックスの一覧](oid-wwan-pin-list.md).
+ミニポートドライバーは、NDIS\_ステータス\_WWAN\_PIN\_リスト通知を使用して、 [oid\_](oid-wwan-pin-list.md)の oid クエリ要求に応答します。
 
-ミニポート ドライバーは、この通知を使用して、不要なイベントを送信することはできません。
+ミニポートドライバーは、この通知を使用して一方的なイベントを送信することはできません。
 
-この通知を使用して、 [ **NDIS\_WWAN\_PIN\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_pin_list)構造体。
+この通知では、 [**NDIS\_WWAN\_PIN\_リスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_pin_list)構造を使用します。
 
 <a name="remarks"></a>注釈
 -------
 
-この目安は、OID の OID クエリ要求に応答のみ通知\_WWAN\_PIN\_一覧。 要請されていない問題は、この表示はありません。
+これは、OID\_WWAN\_PIN\_リストの OID クエリ要求への応答のみを示す通知です。 この表示には、要求されていない表示は想定されていません。
 
-OID の結果として発生する PIN の入力モードを変更しても\_WWAN\_暗証番号 (pin) を有効または操作を無効にする、NDIS は発生しません\_状態\_WWAN\_PIN\_一覧を示す値。
+OID\_WWAN\_PIN の有効化または無効化操作の結果として PIN 入力モードが変更されても、\_は、NDIS のステータス\_WWAN\_PIN\_一覧表示されません。
 
-クエリ要求ごとに、ミニポート ドライバーですべてのデバイスをサポートするピンの現在の PinMode が現在の状態を反映するように更新する必要がありますに注意してください。
+デバイスでサポートされているすべてのピンの現在の PinMode は、各クエリ要求のミニポートドライバーによって現在の状態を反映するように更新する必要があることに注意してください。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -41,11 +41,11 @@ OID の結果として発生する PIN の入力モードを変更しても\_WWA
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>Windows 7 および Windows の以降のバージョンで使用できます。</p></td>
+<td><p>Windows 7 以降のバージョンの Windows で使用できます。</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Ndis.h</td>
+<td>Ndis. h</td>
 </tr>
 </tbody>
 </table>
@@ -53,9 +53,9 @@ OID の結果として発生する PIN の入力モードを変更しても\_WWA
 ## <a name="see-also"></a>関連項目
 
 
-[OID\_WWAN\_PIN\_一覧](oid-wwan-pin-list.md)
+[OID\_WWAN\_PIN\_リスト](oid-wwan-pin-list.md)
 
-[**NDIS\_WWAN\_PIN\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_pin_list)
+[**NDIS\_WWAN\_PIN\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_pin_list)
 
  
 

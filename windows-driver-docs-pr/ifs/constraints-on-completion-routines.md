@@ -3,15 +3,15 @@ title: 完了ルーチンに関する制約
 description: 完了ルーチンに関する制約
 ms.assetid: 3873fd27-cfa8-414d-9437-c0789b20ff27
 keywords:
-- IRP の完了ルーチン WDK ファイル システム、制約
+- IRP 完了ルーチン WDK ファイルシステム、制約
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cfef0e1bb97664352ec7376d79a30016635ca4de
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 78ed54a0c334ec16d2d0bae56c6f7b9035289d7c
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385758"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841457"
 ---
 # <a name="constraints-on-completion-routines"></a>完了ルーチンに関する制約
 
@@ -19,45 +19,45 @@ ms.locfileid: "67385758"
 ## <span id="ddk_constraints_on_completion_routines_if"></span><span id="DDK_CONSTRAINTS_ON_COMPLETION_ROUTINES_IF"></span>
 
 
-次のガイドラインでは、ファイル システム フィルター ドライバー完了ルーチンの一般的なプログラミング エラーを回避する方法について簡単に説明します。
+次のガイドラインでは、ファイルシステムフィルタードライバーの完了ルーチンでの一般的なプログラミングエラーを回避する方法について簡単に説明します。
 
-### <a name="span-idirql-relatedconstraintsspanspan-idirql-relatedconstraintsspanspan-idirql-relatedconstraintsspanirql-related-constraints"></a><span id="IRQL-Related_Constraints"></span><span id="irql-related_constraints"></span><span id="IRQL-RELATED_CONSTRAINTS"></span>IRQL 関連の制約
+### <a name="span-idirql-related_constraintsspanspan-idirql-related_constraintsspanspan-idirql-related_constraintsspanirql-related-constraints"></a><span id="IRQL-Related_Constraints"></span><span id="irql-related_constraints"></span><span id="IRQL-RELATED_CONSTRAINTS"></span>IRQL に関連する制約
 
-IRQL のディスパッチの完了ルーチンを呼び出すことができますので\_次の制約の対象は、レベル。
+完了ルーチンは IRQL ディスパッチ\_レベルで呼び出すことができるため、次の制約が適用されます。
 
--   完了ルーチンが低いかどうかなどを必要とするカーネル モードのルーチンを安全に呼び出すことはできません[ **IoDeleteDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iodeletedevice)または[ **ObQueryNameString** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-obquerynamestring).
+-   完了ルーチンは、 [**Iodeletedevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iodeletedevice)や[**obquerynamestring**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-obquerynamestring)など、低い IRQL を必要とするカーネルモードルーチンを安全に呼び出すことができません。
 
--   完了ルーチンで使用される任意のデータ構造は、非ページ プールから割り当てられる必要があります。
+-   完了ルーチンで使用されるデータ構造は、非ページプールから割り当てられる必要があります。
 
--   ページング可能な完了ルーチンを作成できません。
+-   完了ルーチンをページング可能にすることはできません。
 
--   完了ルーチンには、リソース、ミュー テックス、または高速なミュー テックスを取得できません。 ただし、スピン ロックを取得することができます。
+-   完了ルーチンは、リソース、ミューテックス、または高速ミューテックスを取得できません。 ただし、スピンロックを取得することはできます。
 
-### <a name="span-idcheckingthependingreturnedflagspanspan-idcheckingthependingreturnedflagspanspan-idcheckingthependingreturnedflagspanchecking-the-pendingreturned-flag"></a><span id="Checking_the_PendingReturned_Flag"></span><span id="checking_the_pendingreturned_flag"></span><span id="CHECKING_THE_PENDINGRETURNED_FLAG"></span>PendingReturned フラグのチェック
+### <a name="span-idchecking_the_pendingreturned_flagspanspan-idchecking_the_pendingreturned_flagspanspan-idchecking_the_pendingreturned_flagspanchecking-the-pendingreturned-flag"></a><span id="Checking_the_PendingReturned_Flag"></span><span id="checking_the_pendingreturned_flag"></span><span id="CHECKING_THE_PENDINGRETURNED_FLAG"></span>PendingReturned たフラグを確認しています
 
--   確認する必要があります完了ルーチンでは、イベントを通知、しない限り、 **Irp -&gt;PendingReturned**フラグ。 このフラグが設定されている場合、完了ルーチンを呼び出す必要があります[ **IoMarkIrpPending** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iomarkirppending) IRP が保留中としてマークします。
+-   完了ルーチンがイベントを通知する場合を除き、 **Irp&gt;PendingReturned た**フラグを確認する必要があります。 このフラグが設定されている場合、完了ルーチンは[**Iomarkirppending**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iomarkirppending)を呼び出して、IRP を pending としてマークする必要があります。
 
--   呼び出す必要がありますいない場合は、完了のルーチンでは、イベントを通知、 [ **IoMarkIrpPending**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iomarkirppending)します。
+-   完了ルーチンがイベントを通知する場合、 [**Iomarkirppending**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iomarkirppending)を呼び出すことはできません。
 
-### <a name="span-idconstraintsonreturningstatusspanspan-idconstraintsonreturningstatusspanspan-idconstraintsonreturningstatusspanconstraints-on-returning-status"></a><span id="Constraints_on_Returning_Status"></span><span id="constraints_on_returning_status"></span><span id="CONSTRAINTS_ON_RETURNING_STATUS"></span>制約の状態を返す
+### <a name="span-idconstraints_on_returning_statusspanspan-idconstraints_on_returning_statusspanspan-idconstraints_on_returning_statusspanconstraints-on-returning-status"></a><span id="Constraints_on_Returning_Status"></span><span id="constraints_on_returning_status"></span><span id="CONSTRAINTS_ON_RETURNING_STATUS"></span>ステータスを返す場合の制約
 
--   ファイル システム フィルター ドライバー完了ルーチンは、いずれかの状態を返す必要があります\_成功または状態\_詳細\_処理\_必要な作業です。 その他のすべての NTSTATUS 値の状態にリセットされます\_I/O マネージャーによって成功します。
+-   ファイルシステムフィルタードライバーの完了ルーチンでは、必要な\_処理\_\_の状態\_成功または状態のいずれかを返す必要があります。 その他のすべての NTSTATUS 値は、i/o マネージャーによって [状態]\_[成功] にリセットされます。
 
-### <a name="span-idconstraintsonreturningstatusmoreprocessingrequiredspanspan-idconstraintsonreturningstatusmoreprocessingrequiredspanspan-idconstraintsonreturningstatusmoreprocessingrequiredspanconstraints-on-returning-statusmoreprocessingrequired"></a><span id="Constraints_on_Returning_STATUS_MORE_PROCESSING_REQUIRED"></span><span id="constraints_on_returning_status_more_processing_required"></span><span id="CONSTRAINTS_ON_RETURNING_STATUS_MORE_PROCESSING_REQUIRED"></span>状態を返す制約\_詳細\_処理\_必要な作業
+### <a name="span-idconstraints_on_returning_status_more_processing_requiredspanspan-idconstraints_on_returning_status_more_processing_requiredspanspan-idconstraints_on_returning_status_more_processing_requiredspanconstraints-on-returning-status_more_processing_required"></a><span id="Constraints_on_Returning_STATUS_MORE_PROCESSING_REQUIRED"></span><span id="constraints_on_returning_status_more_processing_required"></span><span id="CONSTRAINTS_ON_RETURNING_STATUS_MORE_PROCESSING_REQUIRED"></span>ステータスを返すための制約\_\_処理\_必要があります
 
-3 つのケースがある場合、完了ルーチンの状態を返す必要があります\_詳細\_処理\_REQUIRED:
+完了ルーチンがステータスを返す必要がある場合は、次の3つのケース\_\_処理\_必要があります。
 
--   ときに、対応するディスパッチ ルーチンは、完了ルーチンによって通知するイベントを待機しています。 ここでは状態を返す必要が\_詳細\_処理\_I/O マネージャーが IRP の完了の日常的な取得後に途中で完了するを防ぐために必要な作業です。
+-   対応するディスパッチルーチンが、完了ルーチンによってイベントが通知されるのを待機している場合。 この場合は、完了ルーチンが返された後に i/o マネージャーが IRP を途中で完了しないようにするために、ステータス\_より多くの\_処理\_必要があります。
 
--   完了ルーチンのワーカーのキューに IRP が投稿して、状態が返されましたが、対応するディスパッチ ルーチンと\_保留します。 状態を返すために重要ですが同様に、ここで\_詳細\_処理\_I/O マネージャーが IRP の完了の日常的な取得後に途中で完了するを防ぐために必要な作業です。
+-   完了ルーチンが IRP をワーカーキューにポストし、対応するディスパッチルーチンが状態\_PENDING を返した場合。 このケースでは、完了ルーチンが返された後に i/o マネージャーが IRP を途中で完了しないようにするために、ステータス\_より多く\_処理\_必要があります。
 
--   呼び出すことによって、同じドライバーが IRP を作成するときに[ **IoAllocateIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocateirp)または[ **IoBuildAsynchronousFsdRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iobuildasynchronousfsdrequest)します。 ドライバーより高度なドライバーからこの IRP を受信しませんでした、ため、その安全に完了ルーチンの IRP を解放することができます。 呼び出した後[ **IoFreeIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iofreeirp)、完了ルーチンの状態を返す必要があります\_詳細\_処理\_ことを示すために必要な作業それ以上ない完了処理が必要です。
+-   同じドライバーが[**Ioallocateirp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioallocateirp)または[**IoBuildAsynchronousFsdRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuildasynchronousfsdrequest)を呼び出すことによって IRP を作成したとき。 ドライバーは、上位レベルのドライバーからこの IRP を受信しなかったため、完了ルーチンで IRP を安全に解放できます。 [**Iofreeirp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iofreeirp)を呼び出した後、完了ルーチンは、それ以上の完了処理が不要であることを示すために必要な\_処理\_のステータス\_を返す必要があります。
 
-完了ルーチンの状態を返すことができない\_詳細\_処理\_oplock 操作に必要です。 Oplock の操作は保留 (ワーカー キューにポストされた)、することはできず、ディスパッチ ルーチンは、状態を返すことはできません\_保留にします。
+完了ルーチンは、oplock 操作に必要な\_処理\_より多くの\_状態を返すことはできません。 Oplock 操作を保留 (worker キューに投稿) することはできません。また、ディスパッチルーチンは、保留中のステータス\_を返すことはできません。
 
-### <a name="span-idconstraintsonpostingirpstoaworkqueuespanspan-idconstraintsonpostingirpstoaworkqueuespanspan-idconstraintsonpostingirpstoaworkqueuespanconstraints-on-posting-irps-to-a-work-queue"></a><span id="Constraints_on_Posting_IRPs_to_a_Work_Queue"></span><span id="constraints_on_posting_irps_to_a_work_queue"></span><span id="CONSTRAINTS_ON_POSTING_IRPS_TO_A_WORK_QUEUE"></span>Irp の作業キューに投稿の制約
+### <a name="span-idconstraints_on_posting_irps_to_a_work_queuespanspan-idconstraints_on_posting_irps_to_a_work_queuespanspan-idconstraints_on_posting_irps_to_a_work_queuespanconstraints-on-posting-irps-to-a-work-queue"></a><span id="Constraints_on_Posting_IRPs_to_a_Work_Queue"></span><span id="constraints_on_posting_irps_to_a_work_queue"></span><span id="CONSTRAINTS_ON_POSTING_IRPS_TO_A_WORK_QUEUE"></span>Irp を作業キューに投稿する際の制約
 
--   完了ルーチンの Irp 作業キューに投稿する場合を呼び出す必要[ **IoMarkIrpPending** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iomarkirppending)各 IRP ワーカー キューに送信する前にします。 それ以外の場合、IRP でしたデキューされた別のドライバーのルーチンで完了し、呼び出しの前に、システムによって解放**IoMarkIrpPending**原因となり、クラッシュが発生します。
+-   完了ルーチンが Irp を作業キューにポストする場合は、各 IRP をワーカーキューにポストする前に、 [**Iomarkirppending**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iomarkirppending)を呼び出す必要があります。 それ以外の場合は、IRP をデキューして別のドライバールーチンによって完了し、 **Iomarkirppending**の呼び出しが発生する前にシステムによって解放され、クラッシュが発生する可能性があります。
 
  
 

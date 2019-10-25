@@ -1,50 +1,50 @@
 ---
 title: OID_NDK_SET_STATE
-description: セットの要求として NDIS および上にあるドライバーは、ミニポート アダプターの NDK 機能の状態を設定するのに OID_NDK_SET_STATE OID を使用します。
+description: NDIS およびそれ以降のドライバーは、set 要求として、OID_NDK_SET_STATE OID を使用して、ミニポートアダプターの NDK 機能の状態を設定します。
 ms.assetid: 5BA49F42-FE37-4860-B68F-92A7F4007639
 ms.date: 08/08/2017
-keywords: -OID_NDK_SET_STATE ネットワーク ドライバーが Windows Vista 以降
+keywords: -Windows Vista 以降の OID_NDK_SET_STATE ネットワークドライバー
 ms.localizationpriority: medium
-ms.openlocfilehash: 5bc4521807299d4b7573821208341920cdd6b32b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 017e0e4a059b37e0e9b0470366b510ea34af4650
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371807"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844106"
 ---
-# <a name="oidndksetstate"></a>OID\_NDK\_設定\_状態
+# <a name="oid_ndk_set_state"></a>OID\_NDK\_\_状態の設定
 
 
-セットの要求では、NDIS および上にあるドライバーを使用、OID\_NDK\_設定\_状態 OID ミニポート アダプターの NDK 機能の状態を設定します。
+NDIS およびそれ以降のドライバーは、set 要求として OID\_NDK\_設定\_状態 OID を使用して、ミニポートアダプターの NDK 機能の状態を設定します。
 
-NDIS 6.30 と以降のミニポート ドライバー NDK サービスを提供するには、この OID をサポートする必要があります。 それ以外の場合、この OID は省略可能です。
+NDK サービスを提供する NDIS 6.30 以降のミニポートドライバーでは、この OID がサポートされている必要があります。 それ以外の場合、この OID は省略可能です。
 
 <a name="remarks"></a>注釈
 -------
 
-NDIS 問題では、この OID、 **InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体を指す、 **ブール**と**InformationBufferLength**メンバー sizeof と等しく (**ブール**)。
+NDIS は、この OID を[**ndis\_\_oid**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)の**informationbuffer**メンバーと共に発行します。これは、**ブール値**と**informationbufferlength**メンバーを指す要求構造体は sizeof (**boolean**) と等しくなります。
 
--   場合、**ブール**値は**TRUE**と **\*NetworkDirect**キーワード値が 0 以外の場合、ミニポート アダプターの NDK 機能を有効にする必要があります。
+-   **ブール**値が**TRUE**で **\*NetworkDirect**キーワード値が0以外の場合は、ミニポートアダプターの NDK 機能を有効にする必要があります。
 
-    ミニポート ドライバーが読み取ることができます、  **\*NetworkDirect**キーワードの値によって、次の手順します。
+    ミニポートドライバーは、次の手順に従って、 **\*の NetworkDirect**キーワード値を読み取ることができます。
 
-    1.  呼び出す[ **NdisOpenConfigurationEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisopenconfigurationex) NDIS 処理を[ **NdisMRegisterMiniportDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismregisterminiportdriver)関数で返されるときに、ミニポート ドライバーが初期化されました。 呼び出し元の詳細については**NdisOpenConfigurationEx**を参照してください[NDIS 6.0 のミニポート ドライバーでレジストリを読み取る](https://docs.microsoft.com/windows-hardware/drivers/network/reading-the-registry-in-an-ndis-6-0-miniport-driver)します。
+    1.  ミニポートドライバーが初期化されたときに[**NdisMRegisterMiniportDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismregisterminiportdriver)関数によって返された NDIS ハンドルを使用して[**NdisOpenConfigurationEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisopenconfigurationex)を呼び出します。 **NdisOpenConfigurationEx**の呼び出しの詳細については、「 [NDIS 6.0 ミニポートドライバーでのレジストリの読み取り](https://docs.microsoft.com/windows-hardware/drivers/network/reading-the-registry-in-an-ndis-6-0-miniport-driver)」を参照してください。
 
-    2.  呼び出す[**エミュレーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisreadconfiguration)を渡して。
+    2.  [**NdisReadConfiguration**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisreadconfiguration)を呼び出し、次のように渡します。
 
-        -   "\*NetworkDirect"用、*キーワード*パラメーター
+        -   *キーワード*パラメーターの "\*NetworkDirect"
 
-        -   **NdisParameterInteger**の*ParameterType*パラメーター
+        -   *ParameterType*パラメーターの**NdisParameterInteger**
 
--   場合、**ブール**値は**FALSE**、ミニポート アダプタの NDK 機能を無効にする必要があります。
+-   **ブール**値が**FALSE**の場合は、ミニポートアダプターの NDK 機能を無効にする必要があります。
 
-有効または無効では、NDK 機能、ミニポート ドライバーに[ *MiniportOidRequest* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_oid_request)コールバック関数が」の手順に従う必要があります[の有効化とNDK機能を無効にします](https://docs.microsoft.com/windows-hardware/drivers/network/enabling-and-disabling-ndk-functionality).
+NDK 機能を有効または無効にするには、ミニポートドライバーの[*Miniportoidrequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_oid_request)コールバック関数が、 [Ndk 機能の有効化と無効化](https://docs.microsoft.com/windows-hardware/drivers/network/enabling-and-disabling-ndk-functionality)に関する手順に従う必要があります。
 
-**注**  NDK 対応のミニポート ドライバーに呼び出す必要がありますしない[ **NdisMNetPnPEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismnetpnpevent)のコンテキストからその[ *MiniportOidRequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_oid_request)関数は、ため、デッドロックが発生する可能性があります。 代わりに、呼び出す必要があります、 **NdisMNetPnPEvent**から他のコンテキストまたはキュー作業項目。
+**  NDK**対応のミニポートドライバーでは、 [**NdisMNetPnPEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismnetpnpevent)を[*miniportoidrequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_oid_request)関数のコンテキストから呼び出すことはできません。これを行うとデッドロックが発生する可能性があるためです。 代わりに、他のコンテキストから**NdisMNetPnPEvent**を呼び出すか、作業項目をキューに置いてください。
 
  
 
-NDK 対応のミニポート ドライバーの[ *MiniportOidRequest* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_oid_request)関数が返す必要があります**状態\_成功**OID の\_NDK\_設定\_状態 OID 要求エラーが発生しない限り、します。 ドライバーに返す必要がありますいない**NDIS\_状態\_PENDING**します。
+NDK 対応のミニポートドライバーの[*Miniportoidrequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_oid_request)関数は、エラーが発生しない限り、OID\_NDK\_\_設定された oid に対して、状態 **\_成功**を返す必要があります。 ドライバーは、 **NDIS\_STATUS\_PENDING**を返さないようにする必要があります。
 
 <a name="requirements"></a>要件
 ------------
@@ -65,11 +65,11 @@ NDK 対応のミニポート ドライバーの[ *MiniportOidRequest* ](https://
 </tr>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>NDIS 6.30 以降をサポートします。</p></td>
+<td><p>NDIS 6.30 以降でサポートされています。</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Ntddndis.h (include Ndis.h)</td>
+<td>Ntddndis (Ndis .h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -77,17 +77,17 @@ NDK 対応のミニポート ドライバーの[ *MiniportOidRequest* ](https://
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
+[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)
 
-[**NdisMNetPnPEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismnetpnpevent)
+[**NdisMNetPnPEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismnetpnpevent)
 
-[**NdisQueueIoWorkItem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisqueueioworkitem)
+[**NdisQueueIoWorkItem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisqueueioworkitem)
 
-[**NdisReadConfiguration**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisreadconfiguration)
+[**NdisReadConfiguration**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisreadconfiguration)
 
-[**NDK\_ADAPTER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndkpi/ns-ndkpi-_ndk_adapter)
+[**NDK\_アダプター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndkpi/ns-ndkpi-_ndk_adapter)
 
-[OID\_NDK\_SET\_STATE](oid-ndk-set-state.md)
+[OID\_NDK\_\_状態の設定](oid-ndk-set-state.md)
 
  
 

@@ -4,47 +4,47 @@ description: 仮想ポートへの受信フィルターの移動
 ms.assetid: 6315FB18-3F57-43C2-B864-3759058092BB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e414115224b86943e6e22313a0ecce733fe041a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a28616bdb1c4519289af795b7dc780a24a888e68
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67387295"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844217"
 ---
 # <a name="moving-a-receive-filter-to-a-virtual-port"></a>仮想ポートへの受信フィルターの移動
 
 
-オブジェクト識別子 (OID) のセット上にあるドライバーの問題の要求の[OID\_受信\_フィルター\_移動\_フィルター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-move-filter)受信フィルターを別の仮想ポート (VPort) に移動するにはNIC のスイッチで VPort します。 通常など、仮想化スタックの上にある、ドライバーは、次の条件のいずれかに該当する場合、この OID 要求を発行します。
+この後のドライバーは、オブジェクト識別子 (OID) セットの Oid 要求を発行します。 [\_受信フィルターを\_フィルター\_移動\_フィルター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-move-filter)を利用して、仮想ポート (vport) から NIC スイッチの別の vport に受信フィルターを移動します。 通常、次のいずれかの条件に該当する場合、仮想化スタックなどのそれ以降のドライバーは、この OID 要求を発行します。
 
--   仮想化スタックでは、既定 VPort の受信フィルターを設定します。 このフィルターには、メディア アクセス コントロール (MAC) アドレスと、HYPER-V 子パーティションで公開されている仮想マシン (VM) ネットワーク アダプターの仮想 LAN (VLAN) のパラメーターが含まれています。 これにより、ソフトウェア ベースの合成データ パス経由で VM ネットワーク アダプターと基になるネットワーク アダプター間で転送されるパケット。
+-   仮想化スタックは、既定の VPort に受信フィルターを設定します。 このフィルターには、Hyper-v 子パーティションで公開されている仮想マシン (VM) ネットワークアダプターのメディアアクセスコントロール (MAC) アドレスと仮想 LAN (VLAN) のパラメーターが含まれています。 これにより、ソフトウェアベースの合成データパスを介して、VM ネットワークアダプターと基礎となるネットワークアダプターの間でパケットを転送できます。
 
-    リソースの PCI Express (PCIe) 仮想機能 (VF) が割り当てられているし、VF が子パーティションに接続されている、仮想化スタックは VF に既定以外の VPort を作成します。 仮想化スタックはし、VF に VPort がアタッチされている既定以外に、既定 VPort から VM のネットワーク アダプターの受信フィルターを移動します。 これにより、VF、ハードウェア ベースのデータ パス経由で VM ネットワーク アダプターと基になるネットワーク アダプター間で転送されるパケット。
+    PCI Express (PCIe) 仮想機能 (VF) のリソースが割り当てられ、VF が子パーティションに接続されると、仮想化スタックによって、VF に既定以外の VPort が作成されます。 仮想化スタックは、VM ネットワークアダプターの受信フィルターを既定の VPort から、VF に接続されている既定以外の VPort に移動します。 これにより、ハードウェアベースの VF データパスを介して、VM ネットワークアダプターと基礎となるネットワークアダプターの間でパケットを転送できます。
 
-    これらのデータ パスの詳細については、次を参照してください。 [SR-IOV データ パス](sr-iov-data-paths.md)します。
+    これらのデータパスの詳細については、「sr-iov[データパス](sr-iov-data-paths.md)」を参照してください。
 
--   ゲスト オペレーティング システムがまだ実行されている HYPER-V 子パーティションから、VF がデタッチされました。 上にあるドライバーが、PF. に VPort がアタッチされている既定値に VPort 既定以外からの VM ネットワーク アダプターの受信フィルターを移動する OID セット要求を発行するこの例では、 この場合、合成データ パスにパケット トラフィックが戻されます。
+-   VF は、ゲストオペレーティングシステムがまだ実行されている Hyper-v 子パーティションからデタッチされています。 この場合、前のドライバーは OID セット要求を発行して、VM ネットワークアダプターの受信フィルターを既定以外の VPort から、PF に接続されている既定の VPort に移動します。 この場合、パケットトラフィックは合成データパスに戻ります。
 
-OID セット要求を発行している上位のドライバー 1 つ VPort から別 VPort に受信フィルターを移動するに[OID\_受信\_フィルター\_移動\_フィルター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-move-filter)します。 **InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体にはへのポインターが含まれています、 [ **NDIS\_受信\_フィルター\_移動\_フィルター\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_filter_clear_parameters)構造体。
+受信フィルターを1つの VPort から別の VPort に移動するには、その後のドライバーが oid セットの oid 要求を発行[\_、\_フィルター\_移動\_フィルターを受け取り](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-move-filter)ます。 [**Ndis\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造体の**informationbuffer**メンバーには、 [**ndis\_受信\_フィルター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_clear_parameters)\_\_パラメーター構造へのポインターが含まれています。
 
-ドライバーの問題を遮断する前に、 [OID\_受信\_フィルター\_移動\_フィルター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-move-filter)要求と、それを初期化する必要があります、 [ **NDIS\_受信\_フィルター\_移動\_フィルター\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_filter_move_filter_parameters)次のように構造体。
+それより前のドライバーが[\_\_OID](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-move-filter)を発行する前に、フィルター要求\_フィルター要求\_移動するために、NDIS を初期化する必要があります\_\_を[**受信\_フィルター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_move_filter_parameters)\_\_ののを移動ます。構造体は次のようになります。
 
--   ドライバーのセット、 **FilterId**メンバーの以前に割り当てられた識別子の識別子には、フィルターを受信します。
+-   このドライバーは、 **Filterid**メンバーを、以前に割り当てられた受信フィルターの識別子の識別子に設定します。
 
-    **注**  上にあるドライバーから以前の OID メソッド要求のフィルターの識別子を取得した[OID\_受信\_フィルター\_設定\_フィルター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-set-filter)または[OID\_受信\_フィルター\_ENUM\_フィルター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-enum-filters)します。
+    これまでのドライバーでは、以前の OID メソッドの Oid の要求からフィルター識別子を取得した  [\_受信\_フィルター\_設定](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-set-filter)されている**ことに注意**してください\_フィルター\_[列挙\_列挙\_列挙 @no__ フィルター (_s)](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-enum-filters)
 
      
 
--   ドライバーのセット、 **SourceQueueId** NDIS メンバー\_既定\_受信\_キュー\_id。
+-   ドライバーは、 **Sourcequeueid**メンバーを NDIS\_既定\_受信\_キュー\_ID に設定します。
 
--   ドライバーのセット、 **SourceVPortId**メンバーにこのフィルターを設定すると以前 VPort の識別子。
+-   ドライバーは、このフィルターが既に設定されている VPort の識別子に**SourceVPortId**メンバーを設定します。
 
--   ドライバーのセット、 **DestQueueId** NDIS メンバー\_既定\_受信\_キュー\_id。
+-   このドライバーは、 **Destqueueid**メンバーを NDIS\_既定\_受信\_キュー\_ID に設定します。
 
--   ドライバーのセット、 **DestVPortId**メンバーがこのフィルターは、移動する VPort の識別子。
+-   ドライバーは、このフィルターを移動する VPort の識別子に**DestVPortId**メンバーを設定します。
 
-NDIS のメンバーの検証、 [ **NDIS\_受信\_フィルター\_移動\_フィルター\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_filter_move_filter_parameters) OID を転送する前にPF のミニポート ドライバーに要求を設定します。
+NDIS は、OID セット要求を PF ミニポートドライバーに転送する前に、 [ **\_受信\_フィルターを受け取る**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_move_filter_parameters)ことによって、ndis のメンバーを検証\_フィルター\_\_します。
 
-PF のミニポート ドライバーでは、この OID セット要求を処理する場合は、分割不可能な操作で受信フィルターに移動する必要があります。 ドライバーは、同時に受信キューと VPort からフィルターを削除し、別の受信キューと VPort に設定するには、ネットワーク アダプターを構成できる必要があります。
+PF ミニポートドライバーは、この OID セット要求を処理するときに、分割不可能な操作で受信フィルターを移動する必要があります。 ドライバーは、受信キューと VPort からフィルターを同時に削除し、別の受信キューと VPort に設定するように、ネットワークアダプターを構成できる必要があります。
 
  
 

@@ -4,19 +4,19 @@ description: MS\_SMHBA\_SASPHYSTATISTICS WMI クラス
 ms.assetid: 72afc856-8232-492f-b8d2-4e88dd9fe723
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 96ea2dc029f0bcbf8b18abc7c30e047a80fc2f0c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7aa2011419a088058d243cdbbbf0a4e2643448ce
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386125"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844526"
 ---
-# <a name="mssmhbasasphystatistics-wmi-class"></a>MS\_SMHBA\_SASPHYSTATISTICS WMI クラス
+# <a name="ms_smhba_sasphystatistics-wmi-class"></a>MS\_SMHBA\_SASPHYSTATISTICS WMI クラス
 
 
-記憶域管理 API をサポートする HBA ミニポート ドライバーは、MS を使用して\_SMHBA\_SASPHYSTATISTICS クラスは、アダプターのポートに関連付けられている統計情報を公開します。 このクラスの各ポートの 1 つのインスタンスが必要です。
+Storage Management API をサポートする HBA ミニポートドライバーは、MS\_SMHBA\_SASPHYSTATISTICS クラスを使用して、アダプターポートに関連付けられている統計情報を公開します。 各ポートには、このクラスのインスタンスが1つ存在する必要があります。
 
-MS\_SMHBA\_SASPHYSTATISTICS クラスが次のように定義されている*Hbaapi.mof*:
+MS\_SMHBA\_SASPHYSTATISTICS クラスは、 *Hbaapi .mof*で次のように定義されています。
 
 ```cpp
 class MS_SMHBA_SASPHYSTATISTICS
@@ -50,9 +50,9 @@ class MS_SMHBA_SASPHYSTATISTICS
 };
 ```
 
-このクラスの定義が WMI ツール スイートによってコンパイルされると、次のデータ構造が生成されます。
+このクラス定義が WMI ツールスイートによってコンパイルされると、次のデータ構造が生成されます。
 
-[**MS\_SMHBA\_SASPHYSTATISTICS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_ms_smhba_sasphystatistics)
+[**MS\_SMHBA\_SASPHYSTATISTICS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_ms_smhba_sasphystatistics)
 
 この WMI クラスに関連付けられているメソッドはありません。
 

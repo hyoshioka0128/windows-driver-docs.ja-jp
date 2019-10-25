@@ -1,9 +1,9 @@
 ---
-title: KSEVENT\_チューナー\_開始\_スキャン
-description: KSEVENT\_チューナー\_開始\_スキャン イベントが、ドライバーがスキャン操作を開始して、ユーザー モードのクライアント ドライバーには、チューニングのデバイスに関連付けられたときに、スキャン操作が完了すると通知を要求します。
+title: KSEVENT\_チューナー\_\_スキャンを開始します
+description: KSEVENT\_チューナー\_は、ドライバーがスキャン操作を開始したことを示す\_イベント要求を開始し、ドライバーに関連付けられているチューニングデバイスがスキャン操作を完了したときにユーザーモードクライアントに通知します。
 ms.assetid: 63f6917e-30d2-4734-92fa-49a4291efafd
 keywords:
-- KSEVENT_TUNER_INITIATE_SCAN ストリーミング メディア デバイス
+- KSEVENT_TUNER_INITIATE_SCAN ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -12,19 +12,19 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bb2d83c134c4c8ae10ddcae45d99f68cc46f36a9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 83ab636034238f8f3a1d5616767a13910bb3b8b7
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385216"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844921"
 ---
-# <a name="kseventtunerinitiatescan"></a>KSEVENT\_チューナー\_開始\_スキャン
+# <a name="ksevent_tuner_initiate_scan"></a>KSEVENT\_チューナー\_\_スキャンを開始します
 
 
-KSEVENT\_チューナー\_開始\_スキャン イベントが、ドライバーがスキャン操作を開始して、ユーザー モードのクライアント ドライバーには、チューニングのデバイスに関連付けられたときに、スキャン操作が完了すると通知を要求します。
+KSEVENT\_チューナー\_は、ドライバーがスキャン操作を開始したことを示す\_イベント要求を開始し、ドライバーに関連付けられているチューニングデバイスがスキャン操作を完了したときにユーザーモードクライアントに通知します。
 
-### <a name="span-idusagesummarytablespanspan-idusagesummarytablespanusage-summary-table"></a><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル
+### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル
 
 <table>
 <colgroup>
@@ -36,20 +36,20 @@ KSEVENT\_チューナー\_開始\_スキャン イベントが、ドライバー
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>イベント記述子の種類</th>
-<th>イベント値の型</th>
+<th>イベント値の種類</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>X</p></td>
-<td><p>〇</p></td>
+<td><p>必須ではない</p></td>
+<td><p>[はい]</p></td>
 <td><p>Pin</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksevent_tuner_initiate_scan_s" data-raw-source="[&lt;strong&gt;KSEVENT_TUNER_INITIATE_SCAN_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksevent_tuner_initiate_scan_s)"><strong>KSEVENT_TUNER_INITIATE_SCAN_S</strong></a></p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kseventdata" data-raw-source="[&lt;strong&gt;KSEVENTDATA&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kseventdata)"><strong>KSEVENTDATA</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksevent_tuner_initiate_scan_s" data-raw-source="[&lt;strong&gt;KSEVENT_TUNER_INITIATE_SCAN_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksevent_tuner_initiate_scan_s)"><strong>KSEVENT_TUNER_INITIATE_SCAN_S</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-kseventdata" data-raw-source="[&lt;strong&gt;KSEVENTDATA&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-kseventdata)"><strong>KSEVENTDATA</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -59,40 +59,40 @@ KSEVENT\_チューナー\_開始\_スキャン イベントが、ドライバー
 <a name="remarks"></a>注釈
 -------
 
-すべてのスキャン要求は、非ブロッキング必要があります。 ドライバーは、スキャン操作が制御を返す前に完了するを待ちません。 実際には、ドライバーで別のスレッドを使用して、スキャン操作を実行する必要があります。
+スキャン要求はすべて、非ブロッキングである必要があります。 つまり、ドライバーはスキャン操作が完了するのを待たずに制御を戻します。 実際、ドライバーはスキャン操作を実行するために別のスレッドを使用する必要があります。
 
-一方、KSEVENT\_チューナー\_開始\_スキャン イベントがの独立した[ **KSPROPERTY\_チューナー\_頻度**](ksproperty-tuner-frequency.md)、KSEVENT\_チューナー\_開始\_スキャンに対応する、 **KS\_チューナー\_チューニング\_EXACT**チューニングでは、フラグ、 **TuningFlags**のメンバー、 [ **KSPROPERTY\_チューナー\_頻度\_S** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_tuner_frequency_s)構造体。 これは、スキャンは常にしようとする次のチャネルの正確な頻度を決定することを意味します。 ドライバーによって、チューニングのデバイスに続くチューニング戦略を制御することも、(KS\_チューナー\_戦略\_ドライバー\_から調整、**戦略**のメンバー[ **KSPROPERTY\_チューナー\_モード\_CAP\_S** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_tuner_mode_caps_s)構造)。 これらの固定のフラグと戦略が後に常に別のフラグと戦略を使用してコントロールする場合でも**KSPROPERTY\_チューナー\_頻度**します。
+KSEVENT\_チューナー\_開始\_SCAN イベントは、 [ **\_チューナー\_FREQUENCY**](ksproperty-tuner-frequency.md)、KSEVENT\_チューナーに依存しませんが、は KS\_チューナーに対応し\_**t_12_ チューニング\_** Ksk プロパティの**Tuningflags**メンバー [ **\_チューナー\_FREQUENCY\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_tuner_frequency_s)構造体の正確なチューニングフラグです。 つまり、スキャンは常に次のチャネルの正確な周波数を判断しようとします。 また、チューニングデバイスが従うチューニング戦略はドライバー (KS\_チューナー\_戦略\_\_ドライバーによって制御されます。**これは、** [**KSK プロパティ\_チューナー\_MODE\_MODE のメンバーからチューニングされます。\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_tuner_mode_caps_s)構造体)。 これらの固定フラグと戦略は、異なるフラグと戦略を使用して**Ksk プロパティ\_チューナーの\_頻度**を制御している場合でも常に続きます。
 
-つまり、KSTUNER\_チューニング\_フラグと KSTUNER\_戦略値 KSEVENT の動作には影響しません\_チューナー\_開始\_をスキャンします。
+つまり、KSTUNER\_チューニング\_フラグと KSTUNER\_戦略の値は、\_スキャンの開始\_KSEVENT\_チューナーの動作には影響しません。
 
-***<em>入力候補および状態</em>***
+***<em>完了と状態</em>***
 
-スキャンの status プロパティ[ **KSPROPERTY\_チューナー\_スキャン\_状態**](ksproperty-tuner-scan-status.md)現在頻度とシグナル ロックの状態に関する情報を提供します。 アプリケーションが、KSPROPERTY からロックの状態をクエリ\_チューナー\_スキャン\_STATUS プロパティ。 またクエリを実行[ **KSPROPERTY\_チューナー\_標準\_モード**](ksproperty-tuner-standard-mode.md)プロパティについては、信号標準の自動検出します。 信号が見つからないかどうか、KSPROPERTY、要求された範囲\_チューナー\_スキャン\_状態プロパティが返す、**チューナー\_LockType\_None** 内の値**LockStatus**のメンバー、 [ **KSPROPERTY\_チューナー\_スキャン\_状態\_S** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_tuner_scan_status_s)構造体。 チューニングのデバイスが信号をチューナーの標準を自動的に検出代替の標準でのシグナルが見つかった場合は、チューニング デバイス自体がへの要求を処理できる、 [ **KSPROPERTY\_チューナー\_標準**](ksproperty-tuner-standard.md)プロパティ。 チューニングのデバイスはを超えて段階的に、ロック、ループ (PLL) ロックでは、先に進むこと可能性がありますが、標準が不明指定可能性があります。 または、チューニングのデバイスは標準の異なるシグナルに自動調整可能性があります。 また、チューニングのデバイスがそのシグナル標準に完全なロックを取得でもと代替の標準を決定可能性があります。 このような状況は、周波数範囲にシグナルで複数の標準がある場合に発生する可能性です。
+スキャン状態プロパティ[**ksproperty\_チューナー\_スキャン\_ステータス**](ksproperty-tuner-scan-status.md)には、現在の頻度とシグナルロックの状態に関する情報が表示されます。 アプリケーションは、KSK プロパティ\_チューナー\_SCAN\_STATUS プロパティからロックの状態を照会します。 また、アプリケーションは、 [**Ksk プロパティ\_チューナー\_標準\_モード**](ksproperty-tuner-standard-mode.md)プロパティにクエリを行い、自動シグナル標準の検出に関する情報を検索します。 要求された範囲内にシグナルが見つからなかった場合、KSK プロパティ\_チューナー\_SCAN\_STATUS プロパティは、**チューナー\_LockType**プロパティ\_チューナーの**lockstatus**メンバーのを返します。 [ **\_スキャン\_状態\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_tuner_scan_status_s)構造体です。 チューニングデバイスが信号からチューナー標準を自動的に検出し、別の標準の信号が検出された場合、チューニングデバイス自体は、 [**Ksk プロパティ\_チューナー\_標準**](ksproperty-tuner-standard.md)プロパティへの要求を処理できます。 チューニングデバイスは、段階的ロックループ (PLL) ロックを超えて続行できない可能性があり、標準が不明であることが指定されている可能性があります。 または、チューニングデバイスが異なるシグナル標準に自動的に調整される場合があります。 また、チューニングデバイスでは、そのシグナル標準に対して完全なロックを取得し、代替規格を決定することもできます。 このような状況は、頻度スペクトルに複数のシグナル標準がある場合に発生する可能性があります。
 
 ***<em>境界条件</em>***
 
-ドライバーでは、アプリケーションが範囲外のチャネルの中心周波数が検出されると場合、ドライバーする必要がありますシグナルを無視し、次のシグナルに移動ドライバーでは、指定した範囲内で可能な最も近いは返されませんする必要があります。 ドライバーは、アプリケーションがチャネルの一覧をコンパイルしようとした場合、チャネルの重複するカウントを回避するために次のシグナルに移動する必要があります。
+チャネルのセンター周波数がアプリケーションが提供する範囲を超えていることがドライバーによって検出された場合、ドライバーはその信号を無視し、次の信号に移動する必要があります。ドライバーは、指定された範囲内で最適な近似を返すことはできません。 アプリケーションがチャネルリストをコンパイルしようとしたときにチャネルが重複しないようにするには、ドライバーを次のシグナルに移動する必要があります。
 
-同じ理由で、アプリケーションは、期待されるチャネルの半分の帯域幅によってクエリの範囲をシフトする必要があります (約 6/2 = 3 のアナログおよびデジタル テレビ MHz)、ハードウェアに信号が検出した場合に特にが二重チャネルがないことを確認するカウントをハードウェアデコードできません。 このような状況では、ドライバーは、特定のチャンネルを二重にカウントを回避するが困難なをは。
+同じ理由から、アプリケーションでは、予想されるチャネル帯域幅の半分 (アナログおよびデジタルテレビの場合は約 6/2 = 3MHz) を使用してクエリの範囲をシフトする必要があります。これにより、ハードウェアがハードウェアの信号を検出したときに、特にチャネルが二重にカウントされないようにします。デコードできません。 このような状況では、ドライバーが特定のチャネルを二重にカウントすることが困難になります。
 
-***<em>複数の標準のスペクトル</em>***
+***<em>複数標準の Spectra</em>***
 
-たびに新しいチャネル、スキャン操作が完了する必要があります。 または信号を検出します。 ドライバーがを介してスキャン状態に戻ります、 [ **KSPROPERTY\_チューナー\_スキャン\_状態**](ksproperty-tuner-scan-status.md)プロパティ。 場合でも、ドライバーは、新しく見つかったチャネルでは、以前に適用された標準が一致しないことを決定します。 新しいチャネルが検出されるたびに、スキャンが完了する必要があります。 アプリケーションでは、新しいチャネル情報を処理する必要があり、標準的な信号と同じで別のチャネルを探すスキャン要求を再送信する必要があります。
+スキャン操作は、新しいチャネルまたはシグナルが見つかったときに完了する必要があります。 ドライバーは、 [**Ksk プロパティ\_チューナー\_scan\_status**](ksproperty-tuner-scan-status.md)プロパティを通じてスキャンの状態を返します。 新たに見つかったチャネルが以前に適用された標準に一致しないと判断した場合でも、新しいチャネルが見つかるたびにスキャンを完了する必要があります。 アプリケーションは新しいチャネル情報を処理する必要があり、スキャン要求を再送信して、同じシグナル標準を持つ別のチャネルを検索する必要があります。
 
 ## <a name="see-also"></a>関連項目
 
 
-[**KSEVENT\_チューナー\_開始\_スキャン\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksevent_tuner_initiate_scan_s)
+[**KSEVENT\_チューナー\_\_スキャン\_S を開始します。** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksevent_tuner_initiate_scan_s)
 
-[**KSEVENTDATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kseventdata)
+[**KSEVENTDATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-kseventdata)
 
-[**KSPROPERTY\_チューナー\_スキャン\_状態**](ksproperty-tuner-scan-status.md)
+[**KSK プロパティ\_チューナー\_スキャン\_状態**](ksproperty-tuner-scan-status.md)
 
-[**KSPROPERTY\_チューナー\_スキャン\_キャップ**](ksproperty-tuner-scan-caps.md)
+[**KSK プロパティ\_チューナー\_スキャン\_CAPS**](ksproperty-tuner-scan-caps.md)
 
-[**KSPROPERTY\_チューナー\_標準**](ksproperty-tuner-standard.md)
+[**KSK プロパティ\_チューナー\_STANDARD**](ksproperty-tuner-standard.md)
 
-[**KSPROPERTY\_チューナー\_標準\_モード**](ksproperty-tuner-standard-mode.md)
+[**KSK プロパティ\_チューナー\_標準\_モード**](ksproperty-tuner-standard-mode.md)
 
  
 

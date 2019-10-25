@@ -4,26 +4,26 @@ description: MSiSCSI\_SecurityCapabilities WMI クラス
 ms.assetid: 50f7aa98-0743-4775-808b-c5a90dc1d0fe
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 2e6f7a3932ada476e569ca7736cffeef408462f1
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f4a6400fbfaf426119ae5d18702825e8d464fbac
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384667"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845327"
 ---
-# <a name="msiscsisecuritycapabilities-wmi-class"></a>MSiSCSI\_SecurityCapabilities WMI クラス
+# <a name="msiscsi_securitycapabilities-wmi-class"></a>MSiSCSI\_SecurityCapabilities WMI クラス
 
 
 ## <span id="ddk_msiscsi_securitycapabilities_wmi_class_kr"></span><span id="DDK_MSISCSI_SECURITYCAPABILITIES_WMI_CLASS_KR"></span>
 
 
-MSiSCSI\_SecurityCapabilities WMI クラスが、開始側のセキュリティ機能について説明します。
+MSiSCSI\_SecurityCapabilities WMI クラスは、イニシエーターのセキュリティ機能を記述します。
 
-ミニポート ドライバーは、MSiSCSI を実装する必要があります\_SecurityCapabilities クラスを管理する HBA が IPsec をサポートしている場合。
+It が管理する HBA が IPsec をサポートしている場合、ミニポートドライバーは MSiSCSI\_SecurityCapabilities クラスを実装する必要があります。
 
-MSiSCSI\_SecurityCapabilities クラスは、記憶域ミニポート ドライバーの特定のインスタンスに関連付け、ミニポート ドライバーは、特定の物理デバイス オブジェクト (PDO) の名前を使用して、クラスを登録する必要がありますミニポートドライバーを管理します。
+MSiSCSI\_SecurityCapabilities クラスは記憶域ミニポートドライバーの特定のインスタンスに関連付けられているため、ミニポートドライバーは、ミニポートドライバーが持つ特定の物理デバイスオブジェクト (PDO) の名前を使用して、クラスを登録する必要があります。管理.
 
-MSiSCSI\_SecurityCapabilities クラスで定義されます*Config.mof*します。
+MSiSCSI\_SecurityCapabilities クラスは、*構成 .mof*で定義されています。
 
 ```cpp
 class MSiSCSI_SecurityCapabilities {
@@ -53,7 +53,7 @@ class MSiSCSI_SecurityCapabilities {
 };
 ```
 
-WMI ツールのスイートでは、上記のクラス定義をコンパイルするときに生成、 [ **MSiSCSI\_SecurityCapabilities** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsicfg/ns-iscsicfg-_msiscsi_securitycapabilities)データ構造体。
+WMI ツールスイートは、前のクラス定義をコンパイルするときに、 [**Msiscsi\_SecurityCapabilities**](https://docs.microsoft.com/windows-hardware/drivers/ddi/iscsicfg/ns-iscsicfg-_msiscsi_securitycapabilities)データ構造を生成します。
 
  
 

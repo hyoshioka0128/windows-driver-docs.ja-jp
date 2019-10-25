@@ -1,55 +1,55 @@
 ---
 title: SerCx2 PIO-受信トランザクション
-description: SerCx2 すべてシリアル コント ローラーを必要とドライバーのサポートを実装するトランザクションの使用が I/O (PIO) をプログラムを受信します。
+description: SerCx2 では、プログラム i/o (PIO) を使用する受信トランザクションのサポートを実装するために、すべてのシリアルコントローラードライバーが必要です。
 ms.assetid: 00C43A55-ACAF-4AB6-BDFB-F3D9350C4536
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 15a29de3836a96c4e0a5b9cbd2985bd00548664f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 74b09b724e4b4a08ac7fea592f0de353649a6e47
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67356774"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845403"
 ---
 # <a name="sercx2-pio-receive-transactions"></a>SerCx2 PIO-受信トランザクション
 
-SerCx2 すべてシリアル コント ローラーを必要とドライバーのサポートを実装するトランザクションの使用が I/O (PIO) をプログラムを受信します。 SerCx2 PIO 受信トランザクションを開始するには、ドライバーが呼び出す[ *EvtSerCx2PioReceiveReadBuffer* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nc-sercx-evt_sercx2_pio_receive_read_buffer)イベント コールバック関数と、読み取りバッファーのパラメーターとして提供します。
+SerCx2 では、プログラム i/o (PIO) を使用する受信トランザクションのサポートを実装するために、すべてのシリアルコントローラードライバーが必要です。 PIO 受信トランザクションを開始するために、SerCx2 はドライバーの[*EvtSerCx2PioReceiveReadBuffer*](https://docs.microsoft.com/windows-hardware/drivers/ddi/sercx/nc-sercx-evt_sercx2_pio_receive_read_buffer)イベントコールバック関数を呼び出し、パラメーターとして読み取りバッファーを提供します。
 
-この呼び出し中に、 *EvtSerCx2PioReceiveReadBuffer*関数は、FIFO シリアル コント ローラーのハードウェアでの受信から読み取りバッファーにデータを転送します。 このデータ転送では、読み取りバッファーがいっぱいか、または、データの受信 FIFO からすぐに利用できるまで続けられます。 転送の終了時に、関数は、FIFO から読み取りバッファーに正常に転送されたバイト数を返します。 この関数より多くのデータを受信することのない待機します。
+この呼び出し中、 *EvtSerCx2PioReceiveReadBuffer*関数は、シリアルコントローラーハードウェアの受信 FIFO から読み取りバッファーにデータを転送します。 このデータ転送は、読み取りバッファーがいっぱいになるか、receive FIFO からすぐに使用できるデータがない状態になるまで続行されます。 転送が終了すると、この関数は、FIFO から読み取りバッファーに正常に転送されたバイト数を返します。 この関数は、さらに多くのデータを受信するのを待機することはありません。
 
-## <a name="creating-the-pio-receive-object"></a>PIO 受信オブジェクトを作成します。
+## <a name="creating-the-pio-receive-object"></a>PIO 受信オブジェクトの作成
 
-SerCx2 がコント ローラーのシリアル ドライバーを呼び出す前に*EvtSerCx2PioReceive*Xxx * * 関数の場合、ドライバーが呼び出す必要があります、 [ **SerCx2PioReceiveCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nf-sercx-sercx2pioreceivecreate)メソッドSerCx2 でこれらの関数を登録します。 このメソッドは、入力パラメーターとしてへのポインターを[ **SERCX2\_PIO\_受信\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/ns-sercx-_sercx2_pio_receive_config)ドライバーのへのポインターを含む構造体*EvtSerCx2PioReceive*Xxx * * 関数。
+SerCx2 がシリアルコントローラードライバーの*EvtSerCx2PioReceive*Xxx * * 関数を呼び出すことができるようにするには、ドライバーが[**SerCx2PioReceiveCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sercx/nf-sercx-sercx2pioreceivecreate)メソッドを呼び出してこれらの関数を SerCx2 に登録する必要があります。 このメソッドは、入力パラメーターとして、 [**SERCX2\_PIO\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/sercx/ns-sercx-_sercx2_pio_receive_config)へのポインターとして、ドライバーの*EvtSerCx2PioReceive*Xxx * * 関数へのポインターを含む CONFIG 構造体を\_受け取ります。
 
-ドライバーは、次の関数の 3 つすべての実装に必要な。
+ドライバーは、次の3つの機能すべてを実装する必要があります。
 
-- [*EvtSerCx2PioReceiveReadBuffer*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nc-sercx-evt_sercx2_pio_receive_read_buffer)
-- [*EvtSerCx2PioReceiveEnableReadyNotification*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nc-sercx-evt_sercx2_pio_receive_enable_ready_notification)
-- [*EvtSerCx2PioReceiveCancelReadyNotification*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nc-sercx-evt_sercx2_pio_receive_cancel_ready_notification)
+- [*EvtSerCx2PioReceiveReadBuffer*](https://docs.microsoft.com/windows-hardware/drivers/ddi/sercx/nc-sercx-evt_sercx2_pio_receive_read_buffer)
+- [*EvtSerCx2PioReceiveEnableReadyNotification*](https://docs.microsoft.com/windows-hardware/drivers/ddi/sercx/nc-sercx-evt_sercx2_pio_receive_enable_ready_notification)
+- [*EvtSerCx2PioReceiveCancelReadyNotification*](https://docs.microsoft.com/windows-hardware/drivers/ddi/sercx/nc-sercx-evt_sercx2_pio_receive_cancel_ready_notification)
 
-オプションとして、ドライバーは、次の関数の一方または両方を実装できます。
+オプションとして、ドライバーは次の機能のいずれかまたは両方を実装できます。
 
-- [*EvtSerCx2PioReceiveInitializeTransaction*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nc-sercx-evt_sercx2_pio_receive_initialize_transaction)
-- [*EvtSerCx2PioReceiveCleanupTransaction*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nc-sercx-evt_sercx2_pio_receive_cleanup_transaction)
+- [*EvtSerCx2PioReceiveInitializeTransaction*](https://docs.microsoft.com/windows-hardware/drivers/ddi/sercx/nc-sercx-evt_sercx2_pio_receive_initialize_transaction)
+- [*EvtSerCx2PioReceiveCleanupTransaction*](https://docs.microsoft.com/windows-hardware/drivers/ddi/sercx/nc-sercx-evt_sercx2_pio_receive_cleanup_transaction)
 
-**SerCx2PioReceiveCreate**メソッドが PIO 受信オブジェクトを作成し、呼び出し元のドライバーを提供する[ **SERCX2PIORECEIVE** ](https://docs.microsoft.com/windows-hardware/drivers/serports/sercx2-object-handles)このオブジェクトのハンドルします。 ドライバーの*EvtSerCx2PioReceive*Xxx * * すべての関数は、最初のパラメーターとしてこのハンドルを受け取ります。 次の SerCx2 メソッドは、最初のパラメーターとして、このハンドルを受け取ります。
+**SerCx2PioReceiveCreate**メソッドは、PIO 受信オブジェクトを作成し、このオブジェクトへの[**SERCX2PIORECEIVE**](https://docs.microsoft.com/windows-hardware/drivers/serports/sercx2-object-handles)ハンドルを呼び出し元のドライバーに提供します。 ドライバーの*EvtSerCx2PioReceive*Xxx * * 関数はすべて、このハンドルを最初のパラメーターとして受け取ります。 次の SerCx2 メソッドは、このハンドルを最初のパラメーターとして受け取ります。
 
-- [**SerCx2PioReceiveReady**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nf-sercx-sercx2pioreceiveready)
-- [**SerCx2PioReceiveInitializeTransactionComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nf-sercx-sercx2pioreceiveinitializetransactioncomplete)
-- [**SerCx2PioReceiveCleanupTransactionComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nf-sercx-sercx2pioreceivecleanuptransactioncomplete)
+- [**SerCx2PioReceiveReady**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sercx/nf-sercx-sercx2pioreceiveready)
+- [**SerCx2PioReceiveInitializeTransactionComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sercx/nf-sercx-sercx2pioreceiveinitializetransactioncomplete)
+- [**SerCx2PioReceiveCleanupTransactionComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sercx/nf-sercx-sercx2pioreceivecleanuptransactioncomplete)
 
 ## <a name="hardware-initialization-and-clean-up"></a>ハードウェアの初期化とクリーンアップ
 
-シリアル コント ローラーのドライバーによっては、PIO 受信トランザクションの開始時シリアル コント ローラーのハードウェアを初期化するために、またはトランザクションの最後に、シリアル コント ローラーのハードウェアの状態をクリーンアップする必要があります。
+シリアルコントローラードライバーによっては、PIO 受信トランザクションの開始時にシリアルコントローラーハードウェアを初期化したり、トランザクションの終了時にシリアルコントローラーのハードウェア状態をクリーンアップしたりすることが必要になる場合があります。
 
-ドライバーが実装されている場合、 [ *EvtSerCx2PioReceiveInitializeTransaction* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nc-sercx-evt_sercx2_pio_receive_initialize_transaction)イベント コールバック関数、SerCx2 を呼び出す前にシリアル コント ローラーを初期化するためには、この関数、 *EvtSerCx2PioReceiveReadBuffer*トランザクションを開始した呼び出し。 実装されている場合、 *EvtSerCx2PioReceiveInitializeTransaction*関数を呼び出す必要があります、 [ **SerCx2PioReceiveInitializeTransactionComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nf-sercx-sercx2pioreceiveinitializetransactioncomplete)に通知するメソッドSerCx2 ドライバーでは、シリアル コント ローラーの初期化が完了するとします。
+ドライバーが[*EvtSerCx2PioReceiveInitializeTransaction*](https://docs.microsoft.com/windows-hardware/drivers/ddi/sercx/nc-sercx-evt_sercx2_pio_receive_initialize_transaction)イベントコールバック関数を実装している場合、SerCx2 はこの関数を呼び出して、トランザクションを開始する*EvtSerCx2PioReceiveReadBuffer*呼び出しの前にシリアルコントローラーを初期化します。 実装されている場合、 *EvtSerCx2PioReceiveInitializeTransaction*関数は[**SerCx2PioReceiveInitializeTransactionComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sercx/nf-sercx-sercx2pioreceiveinitializetransactioncomplete)メソッドを呼び出して、ドライバーがシリアルコントローラーの初期化を完了したときに SerCx2 に通知する必要があります。
 
-ドライバーが実装されている場合、 [ *EvtSerCx2PioReceiveCleanupTransaction* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nc-sercx-evt_sercx2_pio_receive_cleanup_transaction)イベント コールバック関数では、最後後のハードウェアの状態をクリーンアップするには、この関数を呼び出す SerCx2 *EvtSerCx2PioReceiveReadBuffer*トランザクションで呼び出します。 実装されている場合、 *EvtSerCx2PioReceiveInitializeTransaction*関数を呼び出す必要があります、 [ **SerCx2PioReceiveCleanupTransactionComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nf-sercx-sercx2pioreceivecleanuptransactioncomplete) SerCx2 を通知するためにメソッドときに、ドライバーでは、シリアル コント ローラーのクリーンアップが完了するとします。
+ドライバーが[*EvtSerCx2PioReceiveCleanupTransaction*](https://docs.microsoft.com/windows-hardware/drivers/ddi/sercx/nc-sercx-evt_sercx2_pio_receive_cleanup_transaction)イベントコールバック関数を実装している場合、SerCx2 はこの関数を呼び出して、トランザクションの最終*EvtSerCx2PioReceiveReadBuffer*呼び出しの後にハードウェアの状態をクリーンアップします。 実装されている場合、 *EvtSerCx2PioReceiveInitializeTransaction*関数は[**SerCx2PioReceiveCleanupTransactionComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sercx/nf-sercx-sercx2pioreceivecleanuptransactioncomplete)メソッドを呼び出して、ドライバーがシリアルコントローラーのクリーンアップを完了したことを SerCx2 に通知する必要があります。
 
 ## <a name="ready-notifications"></a>準備完了の通知
 
-ときに、 *EvtSerCx2PioReceiveReadBuffer*以上データはすぐに読み取りが可能な受信 FIFO から SerCx2 後、シリアル コント ローラーで、まで PIO 受信トランザクションを完了できませんので終了を呼び出す多くのデータを受信します。 この場合、SerCx2 を呼び出す、 [ *EvtSerCx2PioReceiveEnableReadyNotification* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nc-sercx-evt_sercx2_pio_receive_enable_ready_notification)準備完了の通知を有効にするイベントのコールバック関数。 通常、この関数には、1 つまたは複数のバイトのデータは FIFO の受信から読み取り可能なときにトリガーされるように、割り込みが有効にします。 この通知が有効になっている場合にのみシリアル コント ローラー ドライバーが呼び出す、 [ **SerCx2PioReceiveReady** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nf-sercx-sercx2pioreceiveready)受信 FIFO は空でないことに、ドライバーが検出されたときに、SerCx2 を通知するメソッド。 SerCx2 の呼び出しでこの通知に応答して、 *EvtSerCx2PioReceiveReadBuffer*新しく受信したデータを読み取る関数。
+Receive FIFO から読み取ることができるデータがなくなったために*EvtSerCx2PioReceiveReadBuffer*呼び出しが終了した場合、SerCx2 は、後でシリアルコントローラーがより多くのデータを受信するまで、PIO 受信トランザクションを完了できません。 この場合、SerCx2 は[*EvtSerCx2PioReceiveEnableReadyNotification*](https://docs.microsoft.com/windows-hardware/drivers/ddi/sercx/nc-sercx-evt_sercx2_pio_receive_enable_ready_notification)イベントコールバック関数を呼び出して、準備完了の通知を有効にします。 通常、この関数は、1バイト以上のデータを受信 FIFO から読み取ることができる場合に、割り込みがトリガーされるようにします。 この通知が有効になっている場合にのみ、シリアルコントローラードライバーは[**SerCx2PioReceiveReady**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sercx/nf-sercx-sercx2pioreceiveready)メソッドを呼び出して、受信 FIFO が空になっていないことをドライバーが検出したときに SerCx2 に通知します。 この通知に応答して、SerCx2 は*EvtSerCx2PioReceiveReadBuffer*関数を呼び出して、新しく受信したデータを読み取ります。
 
-さらに SerCx2 では、準備完了の通知を使用して、PIO 受信トランザクションとして処理されます。 読み取り要求の処理中にタイムアウトを効率的に管理します。 これらのタイムアウトの詳細については、次を参照してください。 [**シリアル\_タイムアウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddser/ns-ntddser-_serial_timeouts)します。
+また、SerCx2 は準備完了の通知を使用して、PIO-受信トランザクションとして処理される読み取り要求の処理中にタイムアウトを効率的に管理します。 これらのタイムアウトの詳細については、「 [**SERIAL\_のタイムアウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddser/ns-ntddser-_serial_timeouts)」を参照してください。
 
-SerCx2 を呼び出して、読み取り要求がタイムアウトになるかが取り消されたときに、準備完了の通知が有効である場合、 [ *EvtSerCx2PioReceiveCancelReadyNotification* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nc-sercx-evt_sercx2_pio_receive_cancel_ready_notification)をキャンセルするイベントのコールバック関数、保留中通知します。 返すかどうかはこの関数は、保留中の通知を正常にキャンセル、 **TRUE**します。 戻り値**TRUE**シリアル コント ローラー ドライバーが呼び出すことが保証されます[ **SerCx2PioReceiveReady**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nf-sercx-sercx2pioreceiveready)します。 戻り値**FALSE**コント ローラー ドライバーが既に呼び出されてかがすぐに呼び出すことを示します**SerCx2PioReceiveReady**します。
+読み取り要求がタイムアウトまたはキャンセルされたときに準備完了の通知が有効になっている場合、SerCx2 は[*EvtSerCx2PioReceiveCancelReadyNotification*](https://docs.microsoft.com/windows-hardware/drivers/ddi/sercx/nc-sercx-evt_sercx2_pio_receive_cancel_ready_notification)イベントコールバック関数を呼び出して、保留中の通知をキャンセルします。 この関数が保留中の通知を正常にキャンセルした場合は、 **TRUE**を返します。 戻り値が**TRUE の場合**、シリアルコントローラードライバーは[**SerCx2PioReceiveReady**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sercx/nf-sercx-sercx2pioreceiveready)を呼び出さないことを保証します。 戻り値が**FALSE**の場合は、コントローラードライバーが既に呼び出されているか、すぐに**SerCx2PioReceiveReady**を呼び出したことを示します。

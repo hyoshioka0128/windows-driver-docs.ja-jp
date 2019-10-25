@@ -1,38 +1,38 @@
 ---
 title: OID_WWAN_SERVICE_ACTIVATION
-description: OID_WWAN_SERVICE_ACTIVATION では、ミニポート ドライバー プロバイダーのネットワークにアクセスするためにサービスのアクティブ化を開始するように指示します。
+description: OID_WWAN_SERVICE_ACTIVATION は、プロバイダーのネットワークへのアクセスを取得するために、サービスのアクティブ化を開始するようにミニポートドライバーに指示します。
 ms.assetid: a70c087d-0650-4aab-b78e-0d5a7aa49eb6
 ms.date: 08/08/2017
-keywords: -OID_WWAN_SERVICE_ACTIVATION ネットワーク ドライバーが Windows Vista 以降
+keywords: -Windows Vista 以降の OID_WWAN_SERVICE_ACTIVATION ネットワークドライバー
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a7e5f7a8d8dee6dce48be439e127c385a2042b4
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 97ec330be6aeeee3c0017fbd7d67f495e15ddc6f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383179"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843793"
 ---
-# <a name="oidwwanserviceactivation"></a>OID\_WWAN\_サービス\_アクティブ化
+# <a name="oid_wwan_service_activation"></a>OID\_WWAN\_サービス\_アクティブ化
 
 
-OID\_WWAN\_サービス\_ライセンス認証プロバイダーのネットワークにアクセスするためにサービスのアクティブ化を開始するミニポート ドライバーに指示します。
+OID\_WWAN\_サービス\_アクティブ化は、プロバイダーのネットワークへのアクセスを取得するために、サービスのアクティブ化を開始するようにミニポートドライバーに指示します。
 
 クエリ要求はサポートされていません。
 
-ミニポート ドライバーが非同期的に、最初に返す NDIS セット要求を処理する必要があります\_状態\_INDICATION\_元の要求とそれ以降の送信に必要な[ **NDIS\_状態\_WWAN\_サービス\_アクティベーション**](ndis-status-wwan-service-activation.md)状態通知を含む、 [ **NDIS\_WWAN\_サービス\_アクティベーション**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_service_activation)構造体をトランザクションが完了しているときに、プロバイダーのネットワークにアクセスするためにサービスのアクティブ化を開始します。
+ミニポートドライバーは、set 要求を非同期に処理し、最初に NDIS\_STATUS\_を返し、元の要求に必要な\_を示し、後で[**ndis\_ステータス\_WWAN\_サービスに送信する必要があり\_** ](ndis-status-wwan-service-activation.md)トランザクションの完了時にプロバイダーのネットワークにアクセスするためにサービスのアクティブ化を開始するための[**NDIS\_WWAN\_サービス\_アクティブ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_service_activation)化構造を含むアクティベーションステータス通知。
 
 <a name="remarks"></a>注釈
 -------
 
-詳細については、この OID を使用して、次を参照してください。 [MB サービスの検出とアクティブ化](https://docs.microsoft.com/windows-hardware/drivers/network/mb-service-detection-and-activation)します。
+この OID の使用方法の詳細については、「 [MB サービスの検出とアクティブ化](https://docs.microsoft.com/windows-hardware/drivers/network/mb-service-detection-and-activation)」を参照してください。
 
-処理するときに、プロバイダーのネットワークは、クエリまたは要求を設定またはミニポート ドライバーが Subscriber Identity Module (SIM カード) にアクセスできます。
+ミニポートドライバーは、クエリまたは設定要求を処理するときに、サブスクライバー Id モジュール (SIM カード) またはプロバイダーネットワークにアクセスできます。
 
-MB サービス OID を使用して\_WWAN\_サービス\_ライセンス認証の場合は、サービスのアクティブ化プロセスがミニポート ドライバーとユーザーの相互作用が必要です。
+MB サービスは、サービスのアクティブ化プロセスでミニポートドライバーとユーザー操作が必要な場合に、OID\_WWAN\_サービス\_ライセンス認証を使用します。
 
-これは開始ミニポート ドライバーまたはサービス プロバイダーのヘルプ デスクを呼び出すなどの帯域外の手動のサービスのアクティブ化は必要ありません。 場合に、上記のシナリオと同様に、デバイスをアクティブ化した後、現在のミニポート ドライバー **ReadyState**は*WwanReadyStateNotActivated*、ミニポート ドライバーが MB の初期化で続行され、NDIS を使用して準備完了状態の変更の MB サービスに通知\_状態\_WWAN\_準備\_情報を示す値。
+これは、ミニポートドライバーが開始した、またはサービスプロバイダーのヘルプデスクへの呼び出しなど、帯域外の手動サービスのアクティブ化には必要ありません。 上記のシナリオのようにデバイスをアクティブ化した後、現在のミニポートドライバー **ReadyState**が*WwanReadyStateNotActivated*の場合、ミニポートドライバーは、mb の初期化に進み、mb サービスに対して準備完了の状態の変化を通知します。NDIS\_ステータス\_WWAN\_準備ができている\_情報を示します。
 
-ミニポート ドライバーは、NDIS を返す必要があります\_状態\_いない\_ミニポート ドライバー ベースのサービスのアクティブ化をサポートしていない場合にサポートされています。
+ミニポートドライバーは、ミニポートドライバーベースのサービスのアクティブ化をサポートしていない場合、NDIS\_の状態\_返す必要があり\_サポートされていません。
 
 <a name="requirements"></a>要件
 ------------
@@ -45,11 +45,11 @@ MB サービス OID を使用して\_WWAN\_サービス\_ライセンス認証�
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>Windows 7 および Windows の以降のバージョンで使用できます。</p></td>
+<td><p>Windows 7 以降のバージョンの Windows で使用できます。</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Ntddndis.h (include Ndis.h)</td>
+<td>Ntddndis (Ndis .h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -57,11 +57,11 @@ MB サービス OID を使用して\_WWAN\_サービス\_ライセンス認証�
 ## <a name="see-also"></a>関連項目
 
 
-[OID\_WWAN\_準備\_情報](oid-wwan-ready-info.md)
+[OID\_WWAN\_準備完了\_情報](oid-wwan-ready-info.md)
 
-[**NDIS\_WWAN\_サービス\_アクティブ化**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_service_activation)
+[**NDIS\_WWAN\_サービス\_アクティブ化**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_service_activation)
 
-[**NDIS\_状態\_WWAN\_サービス\_アクティブ化**](ndis-status-wwan-service-activation.md)
+[**NDIS\_ステータス\_WWAN\_サービス\_アクティブ化**](ndis-status-wwan-service-activation.md)
 
 [MB サービスの検出とアクティブ化](https://docs.microsoft.com/windows-hardware/drivers/network/mb-service-detection-and-activation)
 

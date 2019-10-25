@@ -3,16 +3,16 @@ title: 印刷プロバイダーによって定義されている関数
 description: 印刷プロバイダーによって定義されている関数
 ms.assetid: 4fae4b69-ed4b-47b6-b6e8-41733aed51a5
 keywords:
-- プロバイダー WDK、関数を印刷します。
-- 関数の WDK 印刷プロバイダー
+- 印刷プロバイダー WDK、functions
+- functions WDK 印刷プロバイダー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 540544e24a32ced840847d6ba3144802e53dc532
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: 8e617511b1d4e5f508ded0e53d9fe2907925a55d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67393457"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845299"
 ---
 # <a name="functions-defined-by-print-providers"></a>印刷プロバイダーによって定義されている関数
 
@@ -20,39 +20,39 @@ ms.locfileid: "67393457"
 
 
 
-**警告**  以降 Windows 10 では、サード パーティの印刷プロバイダーをサポートする Api は非推奨とされます。 Microsoft には、サード パーティの印刷プロバイダーに他の投資はお勧めしません。 さらに、Windows 8 および v4 印刷ドライバー モデルが使用可能な新しい製品では、サード パーティの印刷プロバイダーが作成や v4 印刷ドライバーを使用するキューを管理します。
+**警告**   Windows 10 以降では、サードパーティの印刷プロバイダーをサポートする api は非推奨とされます。 Microsoft では、サードパーティの印刷プロバイダーに投資することはお勧めしません。 さらに、Windows 8 および v4 印刷ドライバーモデルが使用可能な新しい製品では、サードパーティ製の印刷プロバイダーが v4 印刷ドライバーを使用するキューを作成または管理できないことがあります。
 
  
 
-このトピックでは、すべての印刷のプロバイダーが提供できる機能を一覧表示します。 これらの関数のほとんどは、Microsoft Windows SDK ドキュメントで説明します。 関数は、Windows Driver Kit (WDK) で説明されている、関数名は、関連付けられている参照ページへのリンクを提供します。
+このトピックでは、印刷プロバイダーが提供できるすべての関数の一覧を示します。 これらの関数の大部分については、Microsoft Windows SDK のドキュメントを参照してください。 関数が Windows Driver Kit (WDK) で記述されている場合、関数名は関連付けられている参照ページへのリンクを提供します。
 
-すべての印刷プロバイダーは、上記のすべての関数のポインターを提供する必要があります。 ただし、ほとんどのベンダーから提供された印刷プロバイダーは、関数で定義されている操作の多くをサポートする必要はありません「部分的なプロバイダー」です。 関数ポインターの多くは、そのため、 **NULL**します。 部分的な印刷プロバイダーの詳細については、次を参照してください。[ネットワーク印刷のプロバイダーを記述](writing-a-network-print-provider.md)します。
+すべての印刷プロバイダーは、一覧表示されているすべての関数のポインターを提供する必要があります。 ただし、ほとんどのベンダーが提供する印刷プロバイダーは、関数によって定義される操作の多くをサポートする必要がない "部分プロバイダー" です。 したがって、関数ポインターの多くは**NULL**にすることができます。 部分的な印刷プロバイダーの詳細については、「[ネットワーク印刷プロバイダーの作成](writing-a-network-print-provider.md)」を参照してください。
 
-サポートする必要がある関数は次の関数のリストで、"Required"ラベル付けされます。
+次の関数の一覧では、サポートする必要がある関数に "Required" というラベルが付いています。
 
-すべての印刷プロバイダーは、初期化関数をエクスポートする必要があります[ **InitializePrintProvidor**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/nf-winsplp-initializeprintprovidor)します。 その他のすべての関数へのポインターを指定する必要があります、 [ **PRINTPROVIDOR** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/ns-winsplp-_printprovidor)構造体。 (これら 2 つの名前は、スペルが間違っているが、ヘッダー ファイル、Winsplp.h で表示される名前との一貫性に注意してください)。
+すべての印刷プロバイダーは、初期化関数[**Initializeprintプロビジョニング Dor**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winsplp/nf-winsplp-initializeprintprovidor)をエクスポートする必要があります。 他のすべての関数へのポインターは、 [**Print、または**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winsplp/ns-winsplp-_printprovidor)構造体で指定する必要があります。 (これらの2つの名前はスペルが間違っていますが、ヘッダーファイルに表示されている名前と一致していることに注意してください。
 
-関数は、グループに分割し、次のセクションに表示されます。
+関数はグループに分割され、次のセクションに示されています。
 
 初期化関数
 
-印刷キューの管理機能
+印刷キュー管理関数
 
-プリンター ドライバーの管理機能
+プリンタードライバー管理機能
 
-印刷ジョブの作成機能
+印刷ジョブの作成関数
 
-印刷ジョブのスケジュールの機能
+印刷ジョブのスケジュール関数
 
-フォームの管理機能
+フォーム管理関数
 
-印刷の管理機能のプロセッサ
+プリントプロセッサ管理関数
 
-印刷管理機能の監視
+印刷モニターの管理機能
 
-ポートの管理機能
+ポート管理関数
 
-レジストリの管理機能
+レジストリ管理関数
 
 その他の関数
 
@@ -71,15 +71,15 @@ ms.locfileid: "67393457"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/nf-winsplp-initializeprintprovidor" data-raw-source="[&lt;strong&gt;InitializePrintProvidor&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/nf-winsplp-initializeprintprovidor)"><strong>InitializePrintProvidor</strong> </a> (必須)</p></td>
-<td><p>印刷のプロバイダーを初期化し、指定された関数へのポインターを返します。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/winsplp/nf-winsplp-initializeprintprovidor" data-raw-source="[&lt;strong&gt;InitializePrintProvidor&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/winsplp/nf-winsplp-initializeprintprovidor)"><strong>Initializeprintプロビジョニング Dor</strong></a> (必須)</p></td>
+<td><p>印刷プロバイダーを初期化し、指定された関数へのポインターを返します。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <a href="" id="ddk-print-queue-management-functions-gg"></a>印刷キューの管理機能
+### <a href="" id="ddk-print-queue-management-functions-gg"></a>印刷キュー管理関数
 
 <table>
 <colgroup>
@@ -94,15 +94,15 @@ ms.locfileid: "67393457"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><strong>AddPrinter</strong></p></td>
-<td><p>印刷のプロバイダーで管理されている一覧に印刷キューを追加し、印刷キューをプリント プロセッサを関連付けます。</p></td>
+<td><p><strong>Interactivesession.addprinter</strong></p></td>
+<td><p>印刷プロバイダーによって管理される一覧に印刷キューを追加し、印刷プロセッサを印刷キューに関連付けます。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>AddPrinterConnection</strong></p></td>
-<td><p>指定した印刷キューへの接続を作成します。</p></td>
+<td><p>指定された印刷キューへの接続を作成します。</p></td>
 </tr>
 <tr class="odd">
-<td><p><strong>ClosePrinter</strong> (必須)</p></td>
+<td><p><strong>Closeprinter</strong> (必須)</p></td>
 <td><p>指定した印刷キューへの呼び出し元のアクセスを無効にします。</p></td>
 </tr>
 <tr class="even">
@@ -110,40 +110,40 @@ ms.locfileid: "67393457"
 <td><p>印刷プロバイダーによって管理されている一覧から印刷キューを削除します。</p></td>
 </tr>
 <tr class="odd">
-<td><p><strong>DeletePrinterConnection</strong></p></td>
+<td><p><strong>DeletePrinterConnection 接続</strong></p></td>
 <td><p>指定した印刷キューへの接続を削除します。</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>EnumPrinters</strong> (必須)</p></td>
-<td><p>印刷のプロバイダーによって現在管理されている印刷キューの一覧を列挙します。</p></td>
+<td><p><strong>Enumprinters</strong> (必須)</p></td>
+<td><p>印刷プロバイダーによって現在管理されている印刷キューの一覧を列挙します。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>FindClosePrinterChangeNotification</strong></p></td>
-<td><p>有効にしていたプリンターの変更通知を無効にします。 <strong>FindFirstPrinterChangeNotification</strong>します。</p></td>
+<td><p><strong>FindFirstPrinterChangeNotification</strong>によって有効にされたプリンターの変更通知を無効にします。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>FindFirstPrinterChangeNotification</strong></p></td>
-<td><p>指定したプリンター イベントを待機する、呼び出し元が使用できる待機オブジェクト ハンドルを返します。</p></td>
+<td><p>指定されたプリンターイベントを待機するために呼び出し元が使用できる待機オブジェクトへのハンドルを返します。</p></td>
 </tr>
 <tr class="odd">
-<td><p><strong>GetPrinter</strong> (必須)</p></td>
-<td><p>指定した印刷キューの現在パラメーター値を返します。</p></td>
+<td><p><strong>Getprinter</strong> (必須)</p></td>
+<td><p>指定された印刷キューの現在のパラメーター値を返します。</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>ようになりました</strong>(必須)</p></td>
+<td><p><strong>OpenPrinter</strong> (必須)</p></td>
 <td><p>指定した印刷キューへの呼び出し元のアクセスを有効にします。</p></td>
 </tr>
 <tr class="odd">
 <td><p><a href="https://docs.microsoft.com/previous-versions/ff561930(v=vs.85)" data-raw-source="[&lt;strong&gt;RefreshPrinterChangeNotification&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff561930(v=vs.85))"><strong>RefreshPrinterChangeNotification</strong></a></p></td>
-<td><p>クライアントが呼び出す場合、ルーターによって呼び出されます<strong>FindNextPrinterChangeNotification</strong> (Microsoft Windows SDK のドキュメントを参照してください)、PRINTER_NOTIFY_OPTIONS_REFRESH でフラグを設定します。</p></td>
+<td><p>クライアントが<strong>FindNextPrinterChangeNotification</strong>を呼び出した場合、ルーターによって呼び出されます (Microsoft Windows SDK のドキュメントを参照)。 PRINTER_NOTIFY_OPTIONS_REFRESH フラグが設定されています。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>ResetPrinter</strong></p></td>
-<td><p>印刷キューのデータ型を変更または<a href="https://docs.microsoft.com/windows/desktop/api/wingdi/ns-wingdi-_devicemodew" data-raw-source="[&lt;strong&gt;DEVMODEW&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/wingdi/ns-wingdi-_devicemodew)"> <strong>DEVMODEW</strong> </a>構造体。</p></td>
+<td><p>印刷キューのデータ型または<a href="https://docs.microsoft.com/windows/desktop/api/wingdi/ns-wingdi-_devicemodew" data-raw-source="[&lt;strong&gt;DEVMODEW&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/wingdi/ns-wingdi-_devicemodew)"><strong>Devmodew</strong></a>構造体を変更します。</p></td>
 </tr>
 <tr class="odd">
-<td><p><strong>SetPrinter</strong> (必須)</p></td>
-<td><p>指定した印刷キューのパラメーターを設定します。</p></td>
+<td><p><strong>Setprinter</strong> (必須)</p></td>
+<td><p>指定された印刷キューのパラメーターを設定します。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>WaitForPrinterChange</strong></p></td>
@@ -154,7 +154,7 @@ ms.locfileid: "67393457"
 
  
 
-### <a href="" id="ddk-printer-driver-management-functions-gg"></a>プリンター ドライバーの管理機能
+### <a href="" id="ddk-printer-driver-management-functions-gg"></a>プリンタードライバー管理機能
 
 <table>
 <colgroup>
@@ -169,43 +169,43 @@ ms.locfileid: "67393457"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><strong>AddPrinterDriver</strong></p></td>
-<td><p>指定したサーバーには、指定したプリンターのドライバー ファイルを追加します。</p></td>
+<td><p><strong>Addプリンタードライバー</strong></p></td>
+<td><p>指定されたプリンターのドライバーファイルを指定されたサーバーに追加します。</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>AddPrinterDriverEx</strong></p></td>
-<td><p>同じ<strong>AddPrinterDriver</strong>、追加のパラメーターを使用します。</p></td>
+<td><p><strong>Addプリンター Driverex</strong></p></td>
+<td><p><strong>Addプリンタードライバー</strong>と同じですが、パラメーターが追加されています。</p></td>
 </tr>
 <tr class="odd">
-<td><p><strong>DeletePrinterDriver</strong></p></td>
-<td><p>指定したサーバー上の指定したプリンターのドライバー ファイルへのアクセスを削除します。</p></td>
+<td><p><strong>Deleteプリンタードライバー</strong></p></td>
+<td><p>指定したサーバーで、指定したプリンターのドライバーファイルへのアクセスを削除します。</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>DeletePrinterDriverEx</strong></p></td>
-<td><p>同じ<strong>DeletePrinterDriver</strong>、追加のパラメーターを使用します。</p></td>
+<td><p><strong>Deleteプリンター Driverex</strong></p></td>
+<td><p><strong>Deleteプリンタードライバー</strong>と同じですが、パラメーターが追加されています。</p></td>
 </tr>
 <tr class="odd">
-<td><p><strong>EnumPrinterDrivers</strong></p></td>
-<td><p>呼び出すことによって指定されたサーバーに追加されたプリンター ドライバーの一覧を返します<strong>AddPrinterDriver</strong>または<strong>AddPrinterDriverEx</strong>します。</p></td>
+<td><p><strong>Enumプリンタードライバー</strong></p></td>
+<td><p><strong>Addprinter driver</strong>または<strong>Addprinter driverex</strong>を呼び出して、指定されたサーバーに追加されているプリンタードライバーの一覧を返します。</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>GetPrinterDriver</strong></p></td>
-<td><p>呼び出し元に渡すことができますし、プリンター ドライバーに関する情報を返します<strong>AddPrinterDriver</strong>します。 (返される情報は、INF ファイルから通常取得)。</p></td>
+<td><p><strong>Getプリンタードライバー</strong></p></td>
+<td><p>プリンタードライバーに関する情報を返します。この情報は、呼び出し元が<strong>Addprinter driver</strong>に渡すことができます。 (通常、返された情報は INF ファイルから取得されます)。</p></td>
 </tr>
 <tr class="odd">
-<td><p><strong>GetPrinterDriverEx</strong></p></td>
-<td><p>同じ<strong>GetPrinterDriver</strong>、追加のパラメーターを使用します。</p></td>
+<td><p><strong>Getプリンター Driverex</strong></p></td>
+<td><p><strong>Getプリンタードライバー</strong>と同じですが、パラメーターが追加されています。</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>GetPrinterDriverDirectory</strong></p></td>
-<td><p>ドライバーのディレクトリ サーバーのプリンターの名前を返します。</p></td>
+<td><p><strong>Getプリンター Driverdirectory</strong></p></td>
+<td><p>サーバーのプリンタードライバーディレクトリの名前を返します。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <a href="" id="ddk-print-job-creation-functions-gg"></a>印刷ジョブの作成機能
+### <a href="" id="ddk-print-job-creation-functions-gg"></a>印刷ジョブの作成関数
 
 <table>
 <colgroup>
@@ -221,17 +221,17 @@ ms.locfileid: "67393457"
 <tbody>
 <tr class="odd">
 <td><p></p>
-<strong>AbortPrinter</strong> (必須)</td>
-<td><p>指定した印刷キューから現在のジョブを削除しようとします。</p></td>
+<strong>プリンターの強制</strong>(必須)</td>
+<td><p>指定された印刷キューから現在のジョブを削除しようとします。</p></td>
 </tr>
 <tr class="even">
 <td><p></p>
-<strong>AddJob</strong> (必須)</td>
-<td><p>ジョブの識別子とスプール ファイルのパスを返します。 呼び出し元を使用して<a href="https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-createfilea" data-raw-source="[&lt;strong&gt;CreateFile&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-createfilea)"> <strong>CreateFile</strong> </a>と<strong>WriteFile</strong>スプール ファイルにデータを送信します。</p></td>
+<strong>Addjob</strong> (必須)</td>
+<td><p>ジョブ識別子とスプールファイルパスを返します。 呼び出し元は、 <a href="https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-createfilea" data-raw-source="[&lt;strong&gt;CreateFile&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-createfilea)"><strong>CreateFile</strong></a>と<strong>WriteFile</strong>を使用して、スプールファイルにデータを送信します。</p></td>
 </tr>
 <tr class="odd">
 <td><p></p>
-<strong>EndDocPrinter</strong> (必須)</td>
+<strong>Enddocprinter</strong> (必須)</td>
 <td><p>ジョブの完了操作を実行します。</p></td>
 </tr>
 <tr class="even">
@@ -244,33 +244,33 @@ ms.locfileid: "67393457"
 </tr>
 <tr class="even">
 <td><p></p>
-<strong>ScheduleJob</strong> (必須)</td>
-<td><p>指定したジョブをスケジュールできることをプロバイダーに通知します。 ジョブがによって以前返されるジョブの識別子で指定された<strong>AddJob</strong>します。</p></td>
+<strong>Schedulejob</strong> (必須)</td>
+<td><p>指定されたジョブをスケジュールできることをプロバイダーに通知します。 このジョブは、 <strong>Addjob</strong>によって以前に返されたジョブ識別子によって指定されます。</p></td>
 </tr>
 <tr class="odd">
 <td><p></p>
-<strong>StartDocPrinter</strong> (必須)</td>
-<td><p>印刷ジョブをスプールする印刷プロバイダーを準備します。</p></td>
+<strong>Startdocprinter</strong> (必須)</td>
+<td><p>印刷プロバイダーが印刷ジョブのスプールを開始できるように準備します。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>StartPagePrinter</strong></p></td>
-<td><p>印刷ジョブ ページの受信に印刷プロバイダーを準備します。</p></td>
+<td><p>印刷プロバイダーに印刷ジョブページを受け取る準備をします。</p></td>
 </tr>
 <tr class="odd">
 <td><p></p>
-<strong>WritePrinter</strong> (必須)</td>
-<td><p>印刷ジョブのデータ ストリームの一部を受け取ります。</p></td>
+<strong>Writeprinter</strong> (必須)</td>
+<td><p>印刷ジョブのデータストリームの一部を受け取ります。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-**注**   、 **AddJob**.**ScheduleJob**シーケンスは、代わりに、 **StartDocPrinter**.**EndDocPrinter**シーケンス。
+**Addjob**   に**注意**してください...**Schedulejob**シーケンスは、 **startdocprinter**の代替手段です...**Enddocprinter**シーケンス。
 
  
 
-### <a href="" id="ddk-print-job-scheduling-functions-gg"></a>印刷ジョブのスケジュールの機能
+### <a href="" id="ddk-print-job-scheduling-functions-gg"></a>印刷ジョブのスケジュール関数
 
 <table>
 <colgroup>
@@ -286,25 +286,25 @@ ms.locfileid: "67393457"
 <tbody>
 <tr class="odd">
 <td><p></p>
-<strong>EnumJobs</strong> (必須)</td>
+<strong>Enumjobs</strong> (必須)</td>
 <td><p>スケジュールされた印刷ジョブの一覧を返します。</p></td>
 </tr>
 <tr class="even">
 <td><p></p>
-<strong>GetJob</strong> (必須)</td>
+<strong>Getjob</strong> (必須)</td>
 <td><p>ジョブのパラメーターを返します。</p></td>
 </tr>
 <tr class="odd">
 <td><p></p>
-<strong>SetJob</strong> (必須)</td>
-<td><p>キャンセル、一時停止、再開すると、または、印刷ジョブを再開またはジョブのパラメーターを設定します。</p></td>
+<strong>Setjob</strong> (必須)</td>
+<td><p>印刷ジョブをキャンセル、一時停止、再開、または再起動するか、ジョブパラメーターを設定します。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <a href="" id="ddk-forms-management-functions-gg"></a>フォームの管理機能
+### <a href="" id="ddk-forms-management-functions-gg"></a>フォーム管理関数
 
 <table>
 <colgroup>
@@ -320,11 +320,11 @@ ms.locfileid: "67393457"
 <tbody>
 <tr class="odd">
 <td><p><strong>AddForm</strong></p></td>
-<td><p>利用可能なプリンターの一覧を指定されたフォームを追加します。</p></td>
+<td><p>指定したプリンターで使用できるフォームの一覧に、指定したフォームを追加します。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>DeleteForm</strong></p></td>
-<td><p>利用可能なプリンターの一覧から、指定した形式を削除します。</p></td>
+<td><p>指定したプリンターで使用可能な一覧から、指定したフォームを削除します。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>EnumForms</strong></p></td>
@@ -343,31 +343,31 @@ ms.locfileid: "67393457"
 
  
 
-### <a href="" id="ddk-print-processor-management-functions-gg"></a>印刷の管理機能のプロセッサ
+### <a href="" id="ddk-print-processor-management-functions-gg"></a>プリントプロセッサ管理関数
 
-関数の説明**AddPrintProcessor**
+関数の説明**Addprintprocessor**
 
-指定されたサーバーでプリント プロセッサをインストールし、それを呼び出すことができる、印刷プロバイダーの一覧に追加します。
+指定されたサーバーに印刷プロセッサをインストールし、印刷プロバイダーが呼び出すことのできるリストに追加します。
 
 **DeletePrintProcessor**
 
-印刷のプロバイダーを呼び出すことができるものの一覧から、プリント プロセッサを削除します。
+印刷プロバイダーが呼び出すことができるプリントプロセッサの一覧から、プリントプロセッサを削除します。
 
-**EnumPrintProcessorDataTypes**
+**EnumPrintProcessorDataTypes 型**
 
-印刷のプロバイダーによって呼び出すことができるプリント プロセッサによってサポートされるデータ型の一覧を返します。
+印刷プロバイダーによって呼び出し可能な、印刷プロセッサによってサポートされるデータ型の一覧を返します。
 
 **EnumPrintProcessors**
 
-印刷のプロバイダーを呼び出すことができるプリント プロセッサの一覧を返します。
+印刷プロバイダーが呼び出すことができるプリントプロセッサの一覧を返します。
 
 **GetPrintProcessorDirectory**
 
-プリント プロセッサ ファイルの保存されているディレクトリのパスを返します。
+印刷プロセッサファイルを格納するディレクトリパスを返します。
 
  
 
-### <a href="" id="ddk-print-monitor-management-functions-gg"></a>印刷管理機能の監視
+### <a href="" id="ddk-print-monitor-management-functions-gg"></a>印刷モニターの管理機能
 
 <table>
 <colgroup>
@@ -383,22 +383,22 @@ ms.locfileid: "67393457"
 <tbody>
 <tr class="odd">
 <td><p><strong>AddMonitor</strong></p></td>
-<td><p>印刷のプロバイダーを呼び出すことができるものの一覧には、印刷のモニターを追加します。</p></td>
+<td><p>印刷プロバイダーが呼び出すことのできる一覧に印刷モニターを追加します。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>DeleteMonitor</strong></p></td>
-<td><p>印刷のプロバイダーを呼び出すことができるものの一覧から、印刷のモニターを削除します。</p></td>
+<td><p>印刷プロバイダーが呼び出すことのできるリストから印刷モニターを削除します。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>EnumMonitors</strong></p></td>
-<td><p>印刷のプロバイダーを呼び出すことができる印刷のモニターの一覧を返します。</p></td>
+<td><p>印刷プロバイダーが呼び出すことのできる印刷モニターの一覧を返します。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <a href="" id="ddk-port-management-functions-gg"></a>ポートの管理機能
+### <a href="" id="ddk-port-management-functions-gg"></a>ポート管理関数
 
 <table>
 <colgroup>
@@ -414,37 +414,37 @@ ms.locfileid: "67393457"
 <tbody>
 <tr class="odd">
 <td><p><strong>AddPort</strong></p></td>
-<td><p>通常、指定したポート モニターを呼び出すことによって利用可能なリストに、プリンター ポートを追加します。 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/nf-winsplp-addportui" data-raw-source="[&lt;strong&gt;AddPortUI&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/nf-winsplp-addportui)"> <strong>AddPortUI</strong> </a>関数。</p></td>
+<td><p>プリンターポートを使用可能な一覧に追加します。通常は、指定したポートモニターの<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/winsplp/nf-winsplp-addportui" data-raw-source="[&lt;strong&gt;AddPortUI&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/winsplp/nf-winsplp-addportui)"><strong>AddPortUI</strong></a>関数を呼び出します。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>AddPortEx</strong></p></td>
-<td><p>同じ<strong>AddPort</strong>、追加のパラメーターを使用します。</p></td>
+<td><p><strong>Addport</strong>と同じですが、追加のパラメーターがあります。</p></td>
 </tr>
 <tr class="odd">
 <td><p></p>
 <strong>ConfigurePort</strong> (必須)</td>
-<td><p>呼び出して、指定したポート モニターの通常、プリンター ポートを構成します<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/nf-winsplp-configureportui" data-raw-source="[&lt;strong&gt;ConfigurePortUI&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/nf-winsplp-configureportui)"> <strong>ConfigurePortUI</strong> </a>関数。</p></td>
+<td><p>プリンターポートを構成します。通常は、指定したポートモニターの<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/winsplp/nf-winsplp-configureportui" data-raw-source="[&lt;strong&gt;ConfigurePortUI&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/winsplp/nf-winsplp-configureportui)"><strong>ConfigurePortUI</strong></a>関数を呼び出します。</p></td>
 </tr>
 <tr class="even">
 <td><p></p>
-<strong>DeletePort</strong> (必須)</td>
-<td><p>通常、指定したポート モニターを呼び出すことによって利用可能な一覧からプリンター ポートを削除します。 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/nf-winsplp-deleteportui" data-raw-source="[&lt;strong&gt;DeletePortUI&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/nf-winsplp-deleteportui)"> <strong>DeletePortUI</strong> </a>関数。</p></td>
+<strong>Deleteport</strong> (必須)</td>
+<td><p>使用可能なプリンターポートを一覧から削除します。通常は、指定したポートモニターの<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/winsplp/nf-winsplp-deleteportui" data-raw-source="[&lt;strong&gt;DeletePortUI&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/winsplp/nf-winsplp-deleteportui)"><strong>DeletePortUI</strong></a>関数を呼び出します。</p></td>
 </tr>
 <tr class="odd">
 <td><p></p>
-<strong>EnumPorts</strong> (必須)</td>
-<td><p>利用可能なポートの一覧を返します。</p></td>
+<strong>Enumports</strong> (必須)</td>
+<td><p>使用可能なプリンターポートの一覧を返します。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>SetPort</strong></p></td>
-<td><p>指定されたプリンター ポートのパラメーターを設定します。</p></td>
+<td><p>指定したプリンターポートのパラメーターを設定します。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <a href="" id="ddk-registry-management-functions-gg"></a>レジストリの管理機能
+### <a href="" id="ddk-registry-management-functions-gg"></a>レジストリ管理関数
 
 <table>
 <colgroup>
@@ -459,44 +459,44 @@ ms.locfileid: "67393457"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><strong>DeletePrinterData</strong></p></td>
-<td><p>指定したプリンターの下の指定された値名に現在割り当てられている値を削除します<strong>PrinterDriverData</strong>キー。</p></td>
+<td><p><strong>Deleteプリンターデータ</strong></p></td>
+<td><p>指定したプリンターのプリンター<strong>ドライバーデータ</strong>キーの下にある、指定した値の名前に現在割り当てられている値を削除します。</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>DeletePrinterDataEx</strong></p></td>
-<td><p>同じ<strong>DeletePrinterData</strong>、追加のパラメーターを使用します。</p></td>
+<td><p><strong>Deleteプリンター Dataex</strong></p></td>
+<td><p><strong>Deleteプリンターデータ</strong>と同じですが、追加のパラメーターがあります。</p></td>
 </tr>
 <tr class="odd">
-<td><p><strong>DeletePrinterKey</strong></p></td>
-<td><p>指定したプリンターの下のレジストリに現在格納されている場合、指定したキーおよびそのサブキーを削除します<strong>PrinterDriverData</strong>キー。</p></td>
+<td><p><strong>Deleteプリンターキー</strong></p></td>
+<td><p>指定したプリンターの printer <strong>Driverdata</strong>キーの下にあるレジストリに現在格納されている場合は、指定したキーとそのサブキーを削除します。</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>EnumPrinterData</strong></p></td>
-<td><p>それぞれの値の名前であり、現在割り当てられている指定されたプリンターの下のレジストリに格納されている値を返します<strong>PrinterDriverData</strong>キー。</p></td>
+<td><p><strong>Enumプリンターデータ</strong></p></td>
+<td><p>値の名前と現在割り当てられている値を返します。値は、指定したプリンターのプリンターのプリンター <strong>Driverdata</strong>キーの下にあるレジストリに格納されています。</p></td>
 </tr>
 <tr class="odd">
-<td><p><strong>EnumPrinterDataEx</strong></p></td>
-<td><p>同じ<strong>EnumPrinterData</strong>、追加のパラメーターを使用します。</p></td>
+<td><p><strong>Enumプリンター Dataex</strong></p></td>
+<td><p><strong>Enumプリンターデータ</strong>と同じです。追加のパラメーターがあります。</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>EnumPrinterKey</strong></p></td>
-<td><p>指定したキー名の下のレジストリに現在含まれているサブキーの一覧を返します。</p></td>
+<td><p><strong>Enumプリンターキー</strong></p></td>
+<td><p>指定されたキー名の下にあるレジストリに現在格納されているサブキーの一覧を返します。</p></td>
 </tr>
 <tr class="odd">
-<td><p><strong>GetPrinterData</strong></p></td>
-<td><p>指定したプリンターの下のレジストリに格納されている指定された値の名前に現在割り当てられている値を返します<strong>PrinterDriverData</strong>キー。</p></td>
+<td><p><strong>Getプリンターデータ</strong></p></td>
+<td><p>指定された値の名前に現在割り当てられている値を返します。指定されたプリンターのプリンタ<strong>ドライバデータ</strong>キーの下にあるレジストリに格納されています。</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>GetPrinterDataEx</strong></p></td>
-<td><p>同じ<strong>GetPrinterData</strong>、追加のパラメーターを使用します。</p></td>
+<td><p><strong>Getプリンター Dataex</strong></p></td>
+<td><p><strong>Getプリンターデータ</strong>と同じですが、パラメーターが追加されています。</p></td>
 </tr>
 <tr class="odd">
-<td><p><strong>SetPrinterData</strong></p></td>
-<td><p>指定された値の名前と値を指定したプリンターの 、レジストリに格納<strong>PrinterDriverData</strong>キー。</p></td>
+<td><p><strong>Setプリンターデータ</strong></p></td>
+<td><p>指定した値の名前と値をレジストリの指定したプリンターのプリンター<strong>ドライバーデータ</strong>キーの下に格納します。</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>SetPrinterDataEx</strong></p></td>
-<td><p>同じ<strong>SetPrinterData</strong>、追加のパラメーターを使用します。</p></td>
+<td><p><strong>Setプリンター Dataex</strong></p></td>
+<td><p><strong>Setプリンターデータ</strong>と同じですが、パラメーターが追加されています。</p></td>
 </tr>
 </tbody>
 </table>
@@ -519,7 +519,7 @@ ms.locfileid: "67393457"
 <tbody>
 <tr class="odd">
 <td><p><a href="https://docs.microsoft.com/previous-versions/ff564255(v=vs.85)" data-raw-source="[&lt;strong&gt;XcvData&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff564255(v=vs.85))"><strong>XcvData</strong></a></p></td>
-<td><p>ポート モニター UI の DLL とポートの監視サーバー DLL 間の通信パスを提供します。</p></td>
+<td><p>ポートモニターの UI DLL とポート監視サーバーの DLL との間に通信パスを提供します。</p></td>
 </tr>
 </tbody>
 </table>

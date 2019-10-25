@@ -1,77 +1,77 @@
 ---
-Description: ここでは、C-USB 型システムの一部の例のデザインです。
-title: USB タイプ-c システムのハードウェアの設計
+Description: ここでは、USB タイプ C システムの設計例をいくつか紹介します。
+title: USB タイプ C システムのハードウェア設計
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 44a2677550b5c56a958b77a9af31ec3844a8263d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1612bc64e8d0741183f850788c96b505e98a0e9e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63371851"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845001"
 ---
-# <a name="hardware-design-usb-type-c-systems"></a>ハードウェアのデザイン:USB Type-C システム
+# <a name="hardware-design-usb-type-c-systems"></a>ハードウェア設計: USB タイプ-C システム
 
 
-**最終更新日**
+**最終更新日時**
 
 -   2016 年 12 月
 
-\[いくつかの情報は、リリース版の発売までに著しく変更される可能性がありますが、リリース前の製品に関連します。 Microsoft では、一切の保証、明示または黙示にかかわらず、ここで提供される情報はありません。\]
+\[一部の情報はリリース前の製品に関する事項であり、正式版がリリースされるまでに大幅に変更される可能性があります。 ここに記載された情報について、Microsoft は明示または黙示を問わずいかなる保証をするものでもありません。\]
 
-ここでは、C-USB 型システムの一部の例のデザインです。
+ここでは、USB タイプ C システムの設計例をいくつか紹介します。
 
-一般的な USB C 型システムでは、これらのコンポーネントがあります。
+一般的な USB タイプ C システムには、次のコンポーネントがあります。
 
--   **ロール-USB デュアル コント ローラー**ことができるか、または周辺機器デバイス/関数/ロールでホストの役割で動作します。 このコンポーネントは SoC. に統合されています。
--   **バッテリの充電 1.2 検出**特定 Soc に統合されている可能性があります。 ソフトウェアで他のユーザーを実装、SoC ベンダーによっては検出ロジックを実装する PMIC モジュールを提供します。 Windows 10 Mobile には、すべてのオプションがサポートしています。 このコンポーネントに関する情報を取得、SoC ベンダーに問い合わせてください。
--   **型 C PD ポート コント ローラー**種類 C の USB コネクタの [cc] ピンを管理します。 BMC のエンコードとデコードの電力配信メッセージをサポートしています。 このコンポーネントは通常、ほとんどの Soc に統合されていません。
--   **Mux**種類 C ポート コント ローラーによって検出された印刷の向きに応じてコント ローラー上のポートの SuperSpeed USB ペア。 Mux SuperSpeed ペアと、場合によっては SBU 行 (表示モジュールでは、通常は) 別の場所と代替のモードを開始します。
--   **VBus/VConn**ソースが必要です。 ほとんどの PMICs VBus/VConn コントロールを実装します。 詳細については、SoC PMIC/ベンダーにお問い合わせください。
+-   **USB デュアルロールコントローラー**は、ホストロールでも、機能/デバイス/周辺機器ロールでも動作できます。 このコンポーネントは、SoC に統合されています。
+-   **バッテリ充電1.2 の検出**は、特定のソケットに統合されている可能性があります。 一部の SoC ベンダは、検出ロジックを実装する PMIC モジュールを提供し、他の開発者はソフトウェアに実装します。 Windows 10 Mobile では、これらすべてのオプションがサポートされています。 このコンポーネントの詳細については、SoC ベンダにお問い合わせください。
+-   **「-C-PD Port controller** 」と入力すると、USB タイプ c コネクタの CC ピンが管理されます。 では、BMC エンコード/電力配信メッセージのデコードがサポートされています。 このコンポーネントは、通常、ほとんどのソケットに統合されていません。
+-   **Mux**タイプ C ポートコントローラーによって検出された向きに応じて、コントローラー上のポートに USB ペアを SuperSpeed します。 Mux SuperSpeed のペアと、場合によっては、代替モードに入るときに他の場所 (通常は表示モジュール) の行を SBU します。
+-   **Vbus/Vbus** source が必要です。 ほとんどの PMICs は VBus/Vbus コントロールを実装します。 詳細については、SoC/PMIC ベンダにお問い合わせください。
 
-## <a href="" id="emb"></a>埋め込みコント ローラーと USB 型-c システムの設計
-
-
-USB タイプ-c システムのコンポーネントに加えて、上記の一覧で、埋め込みコント ローラーことができます。 このインテリジェントなマイクロ コント ローラー システムの種類 C および配信の電源ポリシー マネージャーとして機能します。
-
-USB タイプを押しながら C システム埋め込みコント ローラーの例を次に示します。
-
-![埋め込みコント ローラー デバイスの usb 型 c ハードウェア設計の例](images/type-c-hw1.png)
-
-別のビューを次に示します。
-
-![埋め込みコント ローラー デバイスの usb 型 c ハードウェア設計の例](images/type-c-hw1-1.png)
-
-システム埋め込みコント ローラーでは、Microsoft によって提供されるインボックス ドライバーを USB 型 C コネクタ システム ソフトウェア インターフェイス (UCSI) 仕様を実装するには、UcmUcsi.sys を読み込みます。
-
-[UCSI ドライバー](ucsi.md)します。 ドライバーの読み込まれたデバイス スタックの詳細については、次を参照してください。[ドライバーとシステムの USB 型-C# のコンポーネントをサポートするためにコント ローラーが埋め込まれた](architecture--usb-type-c-in-a-windows-system.md#drivers)します。
+## <a href="" id="emb"></a>USB タイプ-C システム設計と埋め込みコントローラー
 
 
-埋め込みコント ローラーを搭載したシステム非 ACPI のトランスポートを使用しています。 
+前の一覧のコンポーネントに加えて、USB タイプ C システムは、埋め込みコントローラーを持つことができます。 このインテリジェントなマイクロコントローラーは、システムのタイプ C および電力配信ポリシーマネージャーとして機能します。
+
+次に、埋め込みコントローラーを備えた USB タイプ C システムの例を示します。
+
+![usb タイプ-c 組み込みコントローラーデバイス用のハードウェア設計の例](images/type-c-hw1.png)
+
+もう1つのビューを次に示します。
+
+![usb タイプ-c 組み込みコントローラーデバイス用のハードウェア設計の例](images/type-c-hw1-1.png)
+
+コントローラーが埋め込まれているシステムの場合は、USB タイプの C コネクタシステムソフトウェアインターフェイス (UCSI) 仕様を実装する、Microsoft が提供する組み込みのドライバー UcmUcsi を読み込みます。
+
+[Ucsi ドライバー](ucsi.md)。 ドライバー用に読み込まれたデバイススタックの詳細については、「 [embedded コントローラーを備えたシステムの USB タイプをサポートする C コンポーネント](architecture--usb-type-c-in-a-windows-system.md#drivers)」を参照してください。
+
+
+非 ACPI トランスポートを使用するコントローラーが埋め込まれているシステムの場合。 
 
 [Write a UCSI client driver (UCSI クライアント ドライバーの作成)](write-a-ucsi-driver.md)
 
-[USB タイプ-c ドライバー リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_usbref/#type-c-driver-reference)
+[USB タイプ-C ドライバーリファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/_usbref/#type-c-driver-reference)
 
-## <a href="" id="hardware"></a>USB タイプ-c システムの設計
+## <a href="" id="hardware"></a>USB タイプ-C システム設計
 
 
-埋め込みコント ローラーがないモバイル デバイスを USB C 型システムの例を次に示します。
+次に、埋め込みコントローラーのないモバイルデバイスの USB タイプ C システムの例を示します。
 
-![モバイル デバイスの usb 型 c ハードウェア設計の例](images/type-c-hw2.png)
+![モバイルデバイス向けの usb タイプ-c ハードウェア設計の例](images/type-c-hw2.png)
 
-別のビューを次に示します。
+もう1つのビューを次に示します。
 
-![埋め込みコント ローラーがない、型 c ハードウェアの設計例 usb デバイス](images/type-c-hw2-1.png)
+![usb タイプ-c ハードウェア設計サンプルデバイス (埋め込みコントローラーなし)](images/type-c-hw2-1.png)
 
-上記の設計では、コネクタと通信し、コネクタで USB 型-C# のイベントに関する情報を通知するオペレーティング システムを保持するドライバーを実装します。
+上記の設計では、コネクタと通信するドライバーを実装し、コネクタで USB タイプ C イベントについてオペレーティングシステムに通知するようにします。
 
-[USB タイプ-c コネクタのドライバーを作成します。](bring-up-a-usb-type-c-connector-on-a-windows-system.md)
+[USB タイプの C コネクタドライバーを作成する](bring-up-a-usb-type-c-connector-on-a-windows-system.md)
 
-[USB タイプ-c ドライバー リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_usbref/#type-c-driver-reference)
+[USB タイプ-C ドライバーリファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/_usbref/#type-c-driver-reference)
 
 ## <a name="related-topics"></a>関連トピック
-[USB タイプ-c コネクタの Windows のサポート](oem-tasks-for-bringing-up-a-usb-typec.md)  
+[USB タイプ C コネクタの Windows サポート](oem-tasks-for-bringing-up-a-usb-typec.md)  
 
 
 

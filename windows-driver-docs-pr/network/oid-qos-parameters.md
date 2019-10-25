@@ -1,78 +1,78 @@
 ---
 title: OID_QOS_PARAMETERS
-description: データ センター ブリッジング (DCB) コンポーネント (Msdcb.sys) は、ネットワーク アダプターでローカルの NDIS サービスの品質 (QoS) パラメーターを構成する OID_QOS_PARAMETERS のオブジェクト識別子 (OID) メソッド要求を発行します。
+description: データセンターブリッジング (DCB) コンポーネント (Msdcb) は、OID_QOS_PARAMETERS のオブジェクト識別子 (OID) メソッド要求を発行して、ネットワークアダプターでローカルの NDIS Quality of Service (QoS) パラメーターを構成します。
 ms.assetid: 1CA97C8A-8F5B-4AB2-B68E-DF1FA772C08F
 ms.date: 08/08/2017
-keywords: -OID_QOS_PARAMETERS ネットワーク ドライバーが Windows Vista 以降
+keywords: -Windows Vista 以降の OID_QOS_PARAMETERS ネットワークドライバー
 ms.localizationpriority: medium
-ms.openlocfilehash: 052d4967cb2f1bc10e66f9728a924515f802460f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f7c295ef30da68bc07fb353789dc79027e3ad270
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371805"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844025"
 ---
-# <a name="oidqosparameters"></a>OID\_QOS\_パラメーター
+# <a name="oid_qos_parameters"></a>OID\_QOS\_パラメーター
 
 
-OID のオブジェクト識別子 (OID) メソッド要求を発行するデータ センター ブリッジング (DCB) コンポーネント (Msdcb.sys)\_QOS\_ネットワーク アダプターでローカルの NDIS サービスの品質 (QoS) パラメーターを構成するパラメーター。
+データセンターブリッジング (DCB) コンポーネント (Msdcb) は、OID のオブジェクト識別子 (OID) メソッド要求を発行し、ネットワークアダプターでローカルの NDIS Quality Service (QoS) パラメーターを構成するために QOS\_パラメーターを\_します。
 
-**InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体にはへのポインターが含まれています、 [ **NDIS\_QOS\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_qos_parameters)構造体。
+[**Ndis\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造体の**informationbuffer**メンバーには、 [**ndis\_QOS\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters)構造体へのポインターが含まれています。
 
-**注**この OID メソッド要求は、IEEE 802.1 データ センター ブリッジング (DCB) インターフェイスの NDIS QoS をサポートするミニポート ドライバーに対して必須です。
+**メモ** この OID メソッド要求は、IEEE 802.1 Data Center ブリッジング (DCB) インターフェイスの NDIS QoS をサポートするミニポートドライバーに必須です。
 
 
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
-OID の OID メソッドの要求をローカルの NDIS QoS パラメーターを取得するミニポート ドライバー\_QOS\_パラメーター。 これらのパラメーターは、ネットワーク アダプターが、送信に優先順位を定義または*エグレス*パケット。 これらのパラメーターの詳細については、次を参照してください。 [NDIS QoS パラメーターの概要](https://docs.microsoft.com/windows-hardware/drivers/network/overview-of-ndis-qos-parameters)します。
+ミニポートドライバーは、oid\_QOS\_パラメーターを使用して、ローカル NDIS QoS パラメーターを取得します。 これらのパラメーターは、ネットワークアダプターがパケットの送信*または*送信に優先順位を設定する方法を定義します。 これらのパラメーターの詳細については、「 [NDIS QoS パラメーターの概要](https://docs.microsoft.com/windows-hardware/drivers/network/overview-of-ndis-qos-parameters)」を参照してください。
 
-**注**DCB コンポーネントは、OID の OID メソッド要求を発行できるのみ\_QOS\_パラメーター。 上位のプロトコルまたはフィルター ドライバーをこの OID を発行する必要があります。 DCB のコンポーネントの詳細については、次を参照してください。[データ センター ブリッジングの NDIS QoS アーキテクチャ](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-qos-architecture-for-data-center-bridging)します。
+**メモ** DCB コンポーネントのみが、oid の oid メソッド要求を\_QOS\_パラメーターに発行できます。 プロトコルまたはフィルタードライバーがこの OID を発行することはできません。 DCB コンポーネントの詳細については、「[データセンターブリッジングの NDIS QoS アーキテクチャ](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-qos-architecture-for-data-center-bridging)」を参照してください。
 
 
 
-DCB のコンポーネントの問題、OID\_QOS\_次の条件でパラメーター要求。
+DCB コンポーネントは、次の条件下で、OID\_QOS\_PARAMETERS 要求を発行します。
 
--   システム管理者では、インストールまたは Microsoft DCB サーバーの機能をアンインストールします。
+-   システム管理者は、Microsoft DCB server 機能をインストールまたはアンインストールします。
 
-    DCB のサーバー機能の詳細については、次を参照してください。 [System-Provided DCB コンポーネント](https://docs.microsoft.com/windows-hardware/drivers/network/system-provided-dcb-components)します。
+    DCB サーバー機能の詳細については、「[システム指定の DCB コンポーネント](https://docs.microsoft.com/windows-hardware/drivers/network/system-provided-dcb-components)」を参照してください。
 
--   システム管理者は、有効または機能がまだインストールされているときに、DCB サーバー機能を無効にします。
+-   システム管理者は、機能がまだインストールされている間は、DCB サーバーの機能を有効または無効にします。
 
 -   システム管理者は、DCB サーバー機能のパラメーターのいずれかを変更します。
 
--   オペレーティング システムでは、開始またはがインストールされるため、DCB サーバー機能を再起動します。
+-   DCB サーバー機能のインストール中に、オペレーティングシステムが起動または再起動します。
 
-ミニポート ドライバーが OID の OID メソッド要求を処理するときに\_QOS\_パラメーターでは、次のガイドラインに従ってする必要があります。
+ミニポートドライバーが oid\_の oid メソッド要求を処理するときに、QOS\_パラメーターの場合は、次のガイドラインに従う必要があります。
 
--   ミニポート ドライバー内のデータのコピー、 [ **NDIS\_QOS\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_qos_parameters)の NDIS QoS パラメーターをローカル キャッシュに構造体。 ドライバーは、NDIS QoS パラメーターをローカルのキャッシュとキャッシュのリモート ピアから受信した NDIS QoS パラメーターに基づいて、運用の NDIS QoS パラメーターを解決します。
+-   ミニポートドライバーは、 [**ndis\_qos\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters)構造内のデータをローカル ndis qos パラメーターのキャッシュにコピーします。 その後、ドライバーは、ローカル NDIS QoS パラメーターのキャッシュと、リモートピアから受信した NDIS QoS パラメーターのキャッシュに基づいて、動作している NDIS qos パラメーターを解決します。
 
-    ミニポート ドライバーがその運用パラメーターを解決する方法の詳細については、次を参照してください。[運用上の NDIS QoS パラメーターを解決する](https://docs.microsoft.com/windows-hardware/drivers/network/resolving-operational-ndis-qos-parameters)します。
+    ミニポートドライバーが操作パラメーターを解決する方法の詳細については、「[運用 NDIS QoS パラメーターの解決](https://docs.microsoft.com/windows-hardware/drivers/network/resolving-operational-ndis-qos-parameters)」を参照してください。
 
--   ミニポート ドライバーが含まれるすべてのデータを変更する必要があります、 [ **NDIS\_QOS\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_qos_parameters)構造体。 ドライバーが、OID メソッド要求を完了し、内で元のデータを返す必要があります、 **NDIS\_QOS\_パラメーター**構造体。
+-   ミニポートドライバーは、 [**NDIS\_QOS\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters)構造体内に含まれるデータを変更することはできません。 ドライバーは OID メソッド要求を完了し、 **NDIS\_QOS\_PARAMETERS**構造内の元のデータを返す必要があります。
 
--   **NDIS\_QOS\_パラメーター\_WILLING**フラグは、ミニポート ドライバーが有効または、ローカル Data Center Bridging Exchange (DCBX) しようとして状態を無効にするかどうかを指定します。 ドライバーは、次のように、このフラグを処理します。
+-   [ **NDIS\_QOS\_PARAMETERS\_** ] フラグは、ミニポートドライバーがローカルデータセンターブリッジング (dcbx) の許可状態を有効または無効にするかどうかを指定します。 ドライバーは、このフラグを次のように処理します。
 
-    -   このフラグが設定されている場合は、ミニポート ドライバーにしようとして状態ローカル DCBX が有効にする必要があります。 これにより、QoS の設定でリモートで構成されるドライバーができます。 この場合、ドライバーは、リモートの QoS パラメーターに基づく運用 QoS パラメーターを解決します。 ミニポート ドライバーでは、独立系ハードウェア ベンダー (IHV) で定義されている独自の QoS 設定に基づいて、運用の QoS パラメーターを解決することもできます。
+    -   このフラグが設定されている場合は、ミニポートドライバーでローカルの DCBX の状態を有効にする必要があります。 これにより、ドライバーは QoS 設定を使用してリモートで構成できます。 この場合、ドライバーは、リモート QoS パラメーターに基づいて、操作の QoS パラメーターを解決します。 また、ミニポートドライバーは、独立系ハードウェアベンダー (IHV) によって定義されている独自の QoS 設定に基づいて、動作中の QoS パラメーターを解決することもできます。
 
-    -   このフラグが設定されていない場合、ミニポート ドライバーはしようとして状態ローカル DCBX を無効にする必要があります。 これにより、リモートの QoS パラメーターではなく、ローカルの QoS パラメーターから、運用の QoS パラメーターを解決するのには、ドライバーができます。 ミニポート ドライバーを無効にするかをローカルの QoS パラメーターをオーバーライドする必要がありますも、関連する**NDIS\_QOS\_パラメーター\_*Xxx*\_構成済み**フラグは設定されません。
+    -   このフラグが設定されていない場合、ミニポートドライバーはローカルの DCBX の状態を無効にする必要があります。 これにより、ドライバーは、リモート QoS パラメーターではなく、ローカルの QoS パラメーターから操作 QoS パラメーターを解決できます。 また、ミニポートドライバーは、関連する**NDIS\_qos\_パラメーター\_*XXX*\_構成**フラグが設定されていないローカル qos パラメーターも無効または無効にする必要があります。
 
-        たとえば、ミニポート ドライバーは IHV によって定義されている QoS パラメーターに独自の設定で構成されていないローカル QoS パラメーターをオーバーライドできます。 ローカルの QoS パラメーターで指定されていない独自の設定がない場合、 **NDIS\_QOS\_パラメーター\_*Xxx*\_構成済み**フラグ、ドライバーは、ネットワーク アダプターにこれらの QoS パラメーターを使用を無効にする必要があります。
+        たとえば、ミニポートドライバーは、構成されていないローカル QoS パラメーターを、IHV によって定義された QoS パラメーターの独自の設定で上書きすることができます。 **NDIS\_qos\_parameters\_*XXX*\_構成**されたフラグで指定されていないローカル qos パラメーターに固有の設定がない場合、ドライバーはネットワークでこれらの QoS パラメーターの使用を無効にする必要があります。アダプター.
 
-        **注**プロトコルや、ネットワーク アダプターで有効になっているテクノロジによって使用される QoS パラメーターが侵害される場合、ドライバーは構成されているローカル QoS パラメーターを上書きもできます。 たとえば、ドライバーは、Ethernet (FCoE) プロトコル経由でファイバー チャネル経由のリモート ブート用にネットワーク アダプターが有効になっている場合、ローカル QoS パラメーターをオーバーライドできます。
+        **メモ** また、ネットワークアダプターで有効になっているプロトコルやテクノロジによって使用される QoS パラメーターが危害を受けた場合に、構成されたローカル QoS パラメーターを上書きすることもできます。 たとえば、ネットワークアダプターでファイバーチャネル over Ethernet (FCoE) プロトコルによるリモートブートが有効になっている場合、ドライバーはローカルの QoS パラメーターを上書きできます。
 
-    ローカル DCBX の詳細については、状態のような場面を参照してください[DCBX 許容状態のローカル管理](https://docs.microsoft.com/windows-hardware/drivers/network/managing-the-local-dcbx-willing-state)します。
+    ローカルの DCBX の状態の詳細については、「[ローカルの dcbx の状態の管理](https://docs.microsoft.com/windows-hardware/drivers/network/managing-the-local-dcbx-willing-state)」を参照してください。
 
-ミニポート ドライバーがローカルの QoS パラメーターを上書きする方法の詳細については、次を参照してください。 [NDIS QoS パラメーターを管理する](https://docs.microsoft.com/windows-hardware/drivers/network/managing-ndis-qos--parameters)します。
+ミニポートドライバーがローカル QoS パラメーターを上書きする方法の詳細については、「 [NDIS Qos パラメーターの管理](https://docs.microsoft.com/windows-hardware/drivers/network/managing-ndis-qos--parameters)」を参照してください。
 
-**注**ローカル QoS パラメーターを上書きする必要があります OID の OID メソッド要求は失敗するミニポート ドライバーが発生しない\_QOS\_パラメーター。
+**メモ** ローカルの QoS パラメーターをオーバーライドして、ミニポートドライバーが oid の oid メソッド要求を失敗させないようにする必要があります。これは、QOS\_パラメーター\_ます。
 
-ミニポート ドライバーがローカルの QoS パラメーターを管理する方法の詳細については、次を参照してください。 [NDIS QoS パラメーターをローカル設定](https://docs.microsoft.com/windows-hardware/drivers/network/setting-local-ndis-qos-parameters)します。
+ミニポートドライバーでローカルの QoS パラメーターを管理する方法の詳細については、「[ローカル NDIS Qos パラメーターの設定](https://docs.microsoft.com/windows-hardware/drivers/network/setting-local-ndis-qos-parameters)」を参照してください。
 
-### <a name="return-status-codes"></a>リターン状態コード
+### <a name="return-status-codes"></a>ステータスコードを返す
 
-ミニポート ドライバーでは、次のステータス コードのいずれかを返します。
+ミニポートドライバーは、次のいずれかの状態コードを返します。
 
 <table>
 <colgroup>
@@ -88,27 +88,27 @@ DCB のコンポーネントの問題、OID\_QOS\_次の条件でパラメータ
 <tbody>
 <tr class="odd">
 <td><p>NDIS_STATUS_SUCCESS</p></td>
-<td><p>OID 要求は正常に完了しました。</p></td>
+<td><p>OID 要求が正常に完了しました。</p></td>
 </tr>
 <tr class="even">
 <td><p>NDIS_STATUS_PENDING</p></td>
-<td><p>保留中の入力候補の OID 要求です。 ミニポート ドライバーを呼び出すと<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismoidrequestcomplete" data-raw-source="[&lt;strong&gt;NdisMOidRequestComplete&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismoidrequestcomplete)"> <strong>NdisMOidRequestComplete</strong></a>NDIS は最終的な状態コードを渡すし、呼び出し元の要求の後の OID 要求の完了ハンドラーに結果が完了しました。</p></td>
+<td><p>OID 要求の完了が保留されています。 ミニポートドライバーが<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismoidrequestcomplete" data-raw-source="[&lt;strong&gt;NdisMOidRequestComplete&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismoidrequestcomplete)"><strong>NdisMOidRequestComplete</strong></a>を呼び出すと、NDIS は、要求が完了した後に、最終的なステータスコードと結果を呼び出し元の OID 要求完了ハンドラーに渡します。</p></td>
 </tr>
 <tr class="odd">
 <td><p>NDIS_STATUS_NOT_SUPPORTED</p></td>
-<td><p>ミニポート ドライバーでは、NDIS QoS インターフェイスはサポートしません。</p></td>
+<td><p>ミニポートドライバーは、NDIS QoS インターフェイスをサポートしていません。</p></td>
 </tr>
 <tr class="even">
 <td><p>NDIS_STATUS_INVALID_PARAMETER</p></td>
-<td><p>1 つ以上のメンバー、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_qos_parameters" data-raw-source="[&lt;strong&gt;NDIS_QOS_PARAMETERS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_qos_parameters)"> <strong>NDIS_QOS_PARAMETERS</strong> </a>構造が正しくない値を含めることができます。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters" data-raw-source="[&lt;strong&gt;NDIS_QOS_PARAMETERS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters)"><strong>NDIS_QOS_PARAMETERS</strong></a>構造体の1つ以上のメンバーに無効な値が含まれています。</p></td>
 </tr>
 <tr class="odd">
 <td><p>NDIS_STATUS_INVALID_LENGTH</p></td>
-<td><p>情報バッファーの長さがより小さい<strong>sizeof</strong>(<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_qos_parameters" data-raw-source="[&lt;strong&gt;NDIS_QOS_PARAMETERS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_qos_parameters)"><strong>NDIS_QOS_PARAMETERS</strong></a>)。 NDIS セット、<strong>データ。QUERY_INFORMATION します。BytesNeeded</strong>内のメンバー、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)"> <strong>NDIS_OID_REQUEST</strong> </a>構造体に必要な最小バッファー サイズ。</p></td>
+<td><p>情報バッファーの長さが<strong>sizeof</strong>(<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters" data-raw-source="[&lt;strong&gt;NDIS_QOS_PARAMETERS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters)"><strong>NDIS_QOS_PARAMETERS</strong></a>) 未満です。 NDIS はデータを設定<strong>します。QUERY_INFORMATION.</strong> <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a>構造体の中で必要とされる最小バッファーサイズに対して、bytesneeded 必要です。</p></td>
 </tr>
 <tr class="even">
 <td><p>NDIS_STATUS_FAILURE</p></td>
-<td><p>他の理由から、要求が失敗しました。</p></td>
+<td><p>他の理由で要求が失敗しました。</p></td>
 </tr>
 </tbody>
 </table>
@@ -126,11 +126,11 @@ DCB のコンポーネントの問題、OID\_QOS\_次の条件でパラメータ
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>NDIS 6.30 以降をサポートします。</p></td>
+<td><p>NDIS 6.30 以降でサポートされています。</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Ntddndis.h (include Ndis.h)</td>
+<td>Ntddndis (Ndis .h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -139,15 +139,15 @@ DCB のコンポーネントの問題、OID\_QOS\_次の条件でパラメータ
 
 
 ****
-[**NdisMOidRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismoidrequestcomplete)
+[**NdisMOidRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismoidrequestcomplete)
 
-[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
+[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)
 
-[**NDIS\_QOS\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_qos_capabilities)
+[**NDIS\_QOS\_の機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_capabilities)
 
-[**NDIS\_状態\_QOS\_運用\_パラメーター\_変更**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-qos-operational-parameters-change)
+[**NDIS\_ステータス\_QOS\_操作\_パラメーター\_変更**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-qos-operational-parameters-change)
 
-[**NDIS\_状態\_QOS\_リモート\_パラメーター\_変更**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-qos-remote-parameters-change)
+[**NDIS\_ステータス\_QOS\_リモート\_パラメーター\_変更**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-qos-remote-parameters-change)
 
 
 

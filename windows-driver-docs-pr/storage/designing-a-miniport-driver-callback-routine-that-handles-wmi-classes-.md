@@ -1,18 +1,18 @@
 ---
-title: WMI クラスを処理するためにデザイン ミニポート コールバック ルーチン
+title: WMI クラスを処理するミニポートコールバックルーチンの設計
 description: データ フィールドを含む WMI クラスを処理するミニポート ドライバー コールバック ルーチンの設計
 ms.assetid: 6e08f9c1-e541-4e5f-8c99-f81d5793cc21
 keywords:
-- WMI される Srb WDK の記憶域、コールバック ルーチンの設計
-- コールバック ルーチン WDK WMI される Srb
+- WMI SRBs WDK storage、コールバックルーチンの設計
+- コールバックルーチン WDK WMI SRBs
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 478d86a7bad8855bbe18e1a7be31ae08e0a8368f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4d94ed37757124a85364223668781a085850e013
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368310"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845186"
 ---
 # <a name="designing-a-miniport-driver-callback-routine-that-handles-wmi-classes-with-data-fields"></a>データ フィールドを含む WMI クラスを処理するミニポート ドライバー コールバック ルーチンの設計
 
@@ -20,11 +20,11 @@ ms.locfileid: "67368310"
 ## <span id="ddk_designing_a_miniport_driver_callback_routine_that_handles_wmi_clas"></span><span id="DDK_DESIGNING_A_MINIPORT_DRIVER_CALLBACK_ROUTINE_THAT_HANDLES_WMI_CLAS"></span>
 
 
-このセクションでは、コールバック ルーチンがデータ フィールドを持つ WMI クラスの入力と出力データを処理する必要がある方法について説明します.
+ここでは、データフィールドを持つ WMI クラスの入力データと出力データをコールバックルーチンで処理する方法について説明します。「」を参照してください。
 
-WMI クラスにデータ フィールドが含まれている場合、WMI ツール スイートの間でデータの構造体の宣言が生成されます。 構造体の宣言では、入力データと、クラスに属している WMI メソッドのパラメーターが出力に生成される構造体とは別です。 WMI メソッドを処理するために、WMI ツール スイートを生成する構造体の詳細については、設計を処理する WMI クラスとメソッドのミニポート ドライバー コールバック ルーチンを参照してください。
+WMI クラスにデータフィールドが含まれている場合は、WMI ツールスイートによってデータの構造体宣言が生成されます。 構造体の宣言は、クラスに属する WMI メソッドの入力パラメーターと出力パラメーターを保持するために生成される構造体とは別のものです。 Wmi ツールスイートが WMI メソッドを処理するために生成する構造体の詳細については、「メソッドを使用して WMI クラスを処理するミニポートドライバーコールバックルーチンの設計」を参照してください。
 
-たとえばには、次の WMI クラス定義をコンパイル**mofcomp**で .h ファイルを生成および**wmimofck**します。
+たとえば、次の WMI クラス定義を**mofcomp.exe**でコンパイルし、 **wmimofck**を使用して .h ファイルを生成するとします。
 
 ```cpp
 class HBAFCPBindingEntry
@@ -46,7 +46,7 @@ class HBAFCPBindingEntry
 };
 ```
 
-結果として得られる .h ファイルは、次の構造体の宣言が含まれます。
+結果の .h ファイルには、次の構造体宣言が含まれます。
 
 ```cpp
 typedef struct _HBAFCPBindingEntry
@@ -57,9 +57,9 @@ typedef struct _HBAFCPBindingEntry
 } HBAFCPBindingEntry, *PHBAFCPBindingEntry;
 ```
 
-データ入力と出力データを管理するときに、SRB の入力と出力バッファーにこの構造体宣言をキャストすることができます。
+入力データと出力データを管理するときに、この構造体の宣言を SRB の入力バッファーと出力バッファーにキャストできます。
 
-、戻る前に、コールバック ルーチンを呼び出す必要があります[ **ScsiPortWmiPostProcess**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/scsiwmi/nf-scsiwmi-scsiportwmipostprocess)します。 この SCSI ポート WMI ライブラリ ルーチンでは、要求の状態と戻り値のデータのサイズなどの情報を要求コンテキストを更新します。 要求コンテキストに格納されているデータの詳細については、次を参照してください。 [ **SCSIWMI\_要求\_コンテキスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/scsiwmi/ns-scsiwmi-scsiwmi_request_context)します。
+を返す前に、コールバックルーチンは[**ScsiPortWmiPostProcess**](https://docs.microsoft.com/windows-hardware/drivers/ddi/scsiwmi/nf-scsiwmi-scsiportwmipostprocess)を呼び出す必要があります。 この SCSI ポート WMI ライブラリルーチンは、要求の状態や返されるデータのサイズなどの情報で要求コンテキストを更新します。 要求コンテキストに格納されているデータの詳細については、「 [**SCSIWMI\_request\_context**](https://docs.microsoft.com/windows-hardware/drivers/ddi/scsiwmi/ns-scsiwmi-scsiwmi_request_context)」を参照してください。
 
  
 

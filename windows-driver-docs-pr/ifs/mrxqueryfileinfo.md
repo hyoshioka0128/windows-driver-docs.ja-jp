@@ -1,9 +1,9 @@
 ---
-title: MRxQueryFileInfo routine
-description: TheMRxQueryFileInfo ルーチンによって呼び出されます RDBSS を要求できるネットワーク ミニリダイレクター クエリ ファイルの情報をファイル システム オブジェクト。
+title: MRxQueryFileInfo ルーチン
+description: TheMRxQueryFileInfo ルーチンは RDBSS によって呼び出され、ネットワークミニリダイレクターがファイルシステムオブジェクトのファイル情報を照会するよう要求します。
 ms.assetid: 201b749c-527b-4c02-a860-d2f54777dc32
 keywords:
-- MRxQueryFileInfo ルーチン インストール可能なファイル システム ドライバー
+- MRxQueryFileInfo ルーチンのインストール可能なファイルシステムドライバー
 - PMRX_CALLDOWN
 topic_type:
 - apiref
@@ -15,17 +15,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 51240b38fb8af60facab91e2fb0c6d2586f5056e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 982ad1abf13c3115cf3593b764d96b043eee5013
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67375671"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841090"
 ---
-# <a name="mrxqueryfileinfo-routine"></a>MRxQueryFileInfo routine
+# <a name="mrxqueryfileinfo-routine"></a>MRxQueryFileInfo ルーチン
 
 
-*MRxQueryFileInfo*ルーチンを呼び出して[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)ネットワーク ミニ リダイレクターがファイル システム オブジェクト上のファイル情報を照会することを要求します。
+*MRxQueryFileInfo*ルーチンは[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)によって呼び出され、ネットワークミニリダイレクターがファイルシステムオブジェクトのファイル情報を照会するよう要求します。
 
 <a name="syntax"></a>構文
 ------
@@ -42,13 +42,13 @@ NTSTATUS MRxQueryFileInfo(
 <a name="parameters"></a>パラメーター
 ----------
 
-*RxContext* \[入力、出力\]  
-RX へのポインター\_CONTEXT 構造体。 このパラメーターには、操作を要求している IRP が含まれています。
+*RxContext* \[in、out\]  
+RX\_コンテキスト構造体へのポインター。 このパラメーターには、操作を要求している IRP が含まれています。
 
 <a name="return-value"></a>戻り値
 ------------
 
-*MRxQueryFileInfo*ステータスを返します\_次のいずれかなど、成功した場合に成功した場合、または、適切な NTSTATUS の値します。
+*MRxQueryFileInfo*は正常に完了した状態\_成功したか、または次のいずれかのような NTSTATUS 値を返します。
 
 <table>
 <colgroup>
@@ -64,34 +64,34 @@ RX へのポインター\_CONTEXT 構造体。 このパラメーターには、
 <tbody>
 <tr class="odd">
 <td align="left"><strong>STATUS_ACCESS_DENIED</strong></td>
-<td align="left"><p>呼び出し元には、この操作に適切なセキュリティが不足していました。</p></td>
+<td align="left"><p>呼び出し元には、この操作に対する適切なセキュリティが不足しています。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>STATUS_BUFFER_OVERFLOW</strong></td>
-<td align="left"><p>ファイル情報を受け取るバッファーが小さすぎます。</p>
-<p>これは戻り値は、成功を考慮してでできるだけの非常に有効なデータとして返す必要がある、 <strong>Info.Buffer</strong>によって示される RX_CONTEXT 構造体のメンバー、 <em>RxContext</em>パラメーター。</p></td>
+<td align="left"><p>ファイル情報を受信するバッファーが小さすぎます。</p>
+<p>この戻り値は成功と見なす必要があり、可能な限り多くの有効なデータが、 <em>RxContext</em>パラメーターによって示される RX_CONTEXT 構造体の<strong>情報バッファー</strong>のメンバーに返される必要があります。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>STATUS_BUFFER_TOO_SMALL</strong></td>
-<td align="left"><p>要求されたデータを受信するには、バッファーが小さすぎます。</p>
-<p>この値が返された場合、 <strong>InformationToReturn</strong>によって示される RX_CONTEXT 構造体のメンバー、 <em>RxContext</em>パラメーターは、呼び出しに必要なバッファーの最小サイズを設定する必要があります成功します。</p></td>
+<td align="left"><p>バッファーが小さすぎて要求されたデータを受け取ることができません。</p>
+<p>この値が返される場合、 <em>RxContext</em>パラメーターが指す RX_CONTEXT 構造体の<strong>InformationToReturn</strong>メンバーは、呼び出しが成功するために必要なバッファーの最小サイズに設定されている必要があります。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>STATUS_INSUFFICIENT_RESOURCES</strong></td>
-<td align="left"><p>クエリ完了までのリソースの不足が発生しました。</p></td>
+<td align="left"><p>クエリを完了するためのリソースが不足しています。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>STATUS_INVALID_NETWORK_RESPONSE</strong></td>
-<td align="left"><p>リモート サーバーから、無効なファイル情報バッファーを受信しました。</p></td>
+<td align="left"><p>リモートサーバーから無効なファイル情報バッファーを受け取りました。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>STATUS_INVALID_PARAMETER</strong></td>
 <td align="left"><p>無効なパラメーターが指定されました。</p>
-<p>無効な値の場合、この値が返されることができます、 <strong>FileInformationClass</strong> RX_CONTEXT でメンバーが渡されます。 この値は、場合にも返される、 <strong>FileInformationClass</strong>指定されたメンバーが、 <strong>FileStreamInformation</strong>リモート ファイル システムでは、ストリームをサポートしていません。</p></td>
+<p>この値は、RX_CONTEXT の<strong>Fileinformationclass</strong>メンバーに無効な値が渡された場合に返されます。 この値は、指定された<strong>Fileinformationclass</strong>メンバーが<strong>FileStreamInformation</strong>用であり、リモートファイルシステムでストリームがサポートされていない場合にも返されます。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>STATUS_OBJECT_NAME_NOT_FOUND</strong></td>
-<td align="left"><p>オブジェクト名が見つかりませんでした。 これは、エラー コードです。</p></td>
+<td align="left"><p>オブジェクト名が見つかりませんでした。 これはエラーコードです。</p></td>
 </tr>
 </tbody>
 </table>
@@ -101,29 +101,29 @@ RX へのポインター\_CONTEXT 構造体。 このパラメーターには、
 <a name="remarks"></a>注釈
 -------
 
-RDBSS への呼び出しを発行する*MRxQueryFileInfo*受信に応答する[ **IRP\_MJ\_クエリ\_情報**](irp-mj-query-information.md)要求。
+RDBSS は、 [**IRP\_MJ\_クエリ\_情報**](irp-mj-query-information.md)要求の受信に応答して、 *MRxQueryFileInfo*への呼び出しを発行します。
 
-呼び出しの前に*MRxQueryFileInfo*、RDBSS、RX では、次のメンバーを変更します\_によって示される CONTEXT 構造体、 *RxContext*パラメーター。
+*MRxQueryFileInfo*を呼び出す前に、RDBSS は、 *RxContext*パラメーターによって示される RX\_コンテキスト構造内の次のメンバーを変更します。
 
-**Info.FileInformationClass**に設定されているメンバー **IrpSp -&gt;Parameters.QueryFile.FileInformationClass**、ファイルを要求された\_情報\_クラス値。
+**Info. fileinformationclass**メンバーは、 **irpsp-&gt;Parameters. Queryfile. fileinformationclass**に設定され、要求されたファイル\_情報\_クラス値に設定されます。
 
-**Info.Buffer**メンバーは、I/O 要求パケットからユーザー バッファーに設定されます。
+**情報バッファー**のメンバーは、i/o 要求パケットからのユーザーバッファーに設定されます。
 
-**Info.LengthRemaining**に設定されているメンバー **IrpSp -&gt;Parameters.QueryFile.Length**します。
+**LengthRemaining**メンバーは、 **irpsp-&gt;Parameters. Queryfile. の値**に設定されます。
 
-**QueryDirectory.FileIndex**に設定されているメンバー **IrpSp -&gt;Parameters.QueryDirectory.FileIndex**します。
+**Querydirectory. fileindex**メンバーは**irpsp-&gt;Parameters. Querydirectory. fileindex**に設定されます。
 
-**QueryDirectory.RestartScan**メンバーが設定される場合**IrpSp -&gt;フラグ**が、SL\_再起動\_スキャン ビットが設定されます。
+**Irpsp-&gt;フラグ**に SL\_再起動\_スキャンビットが設定されている場合は、 **RestartScan**メンバーが設定されます。
 
-**QueryDirectory.ReturnSingleEntry**メンバーが設定される場合**IrpSp -&gt;フラグ**が SL\_返す\_単一\_エントリ ビットが設定します。
+**Irpsp-&gt;フラグ**が SL を持つ場合は、 **Querydirectory. returnsingleentry**メンバーが設定され\_単一\_エントリビットセットが返さ\_ます。
 
-**QueryDirectory.InitialQuery**メンバーが設定される場合**Fobx -&gt;UnicodeQueryTemplate.Buffer**は**NULL**と**Fobx&gt;フラグ**FOBX を持たない\_フラグ\_一致\_すべてビットが設定されます。
+UnicodeQueryTemplate が**NULL**で fobx **&gt;フラグ**に FOBX\_フラグが設定されていない **&gt;** 場合は、 **querydirectory. initialquery**メンバーが設定されます。これは、すべてのビットセット\_\_一致しません。
 
-成功した場合、ネットワークのミニ リダイレクターを設定する必要があります、 **Info.LengthRemaining** 、RX のメンバー\_コンテキスト構造体を**Info.Length**ファイル情報の長さマイナス メンバー返されます。 場合に呼び出し*MRxQueryFileInfo*が成功した場合は、RDBSS セット、 **IoStatus.Information**に IRP のメンバー **IrpSp-&gt;Parameters.QueryFile.Length**マイナス、 **Info.LengthRemaining** RX のメンバー\_コンテキスト。
+成功した場合、ネットワークミニリダイレクターは、RX\_コンテキスト構造の**LengthRemaining**メンバーを、返されたファイル情報の長さを差し引いた**値に設定する必要**があります。 *MRxQueryFileInfo*への呼び出しが成功した場合、RDBSS は IRP の**Iostatus. 情報**メンバーを**irpsp-&gt;パラメーター**に設定します。 LengthRemaining メンバーから RX\_コンテキストの値を差し引いた値 **。**
 
-RDBSS は、SL で要求をサポートしていません\_インデックス\_の指定されたビット、 **IrpSp -&gt;フラグ**を設定します。 ネットワークのミニ リダイレクターはへの呼び出しを受信しません*MRxQueryFileInfo* 、SL で\_インデックス\_の指定されたビット**IrpSp -&gt;フラグ**を設定します。
+RDBSS は、SL\_インデックス\_指定された、 **Irpsp-&gt;フラグ**が設定されている要求をサポートしていません。 ネットワークミニリダイレクターは、SL\_インデックス\_指定されている**Irpsp-&gt;フラグ**が設定された状態で、 *MRxQueryFileInfo*への呼び出しを受信しません。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -138,7 +138,7 @@ RDBSS は、SL で要求をサポートしていません\_インデックス\_�
 </tr>
 <tr class="even">
 <td align="left"><p>Header</p></td>
-<td align="left">Mrx.h (Mrx.h を含む)</td>
+<td align="left">Mrx .h (Mrx を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -146,7 +146,7 @@ RDBSS は、SL で要求をサポートしていません\_インデックス\_�
 ## <a name="see-also"></a>関連項目
 
 
-[**MRxIsValidDirectory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_chkdir_calldown)
+[**MRxIsValidDirectory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_chkdir_calldown)
 
 [**MRxQueryDirectory**](mrxquerydirectory.md)
 

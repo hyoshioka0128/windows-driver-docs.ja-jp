@@ -1,20 +1,20 @@
 ---
-title: DSM\_ロード\_残高\_ポリシー\_V2 WMI クラス
-description: DSM\_ロード\_残高\_ポリシー\_V2 WMI クラス
+title: DSM\_負荷\_分散\_ポリシー\_V2 WMI クラス
+description: DSM\_負荷\_分散\_ポリシー\_V2 WMI クラス
 ms.assetid: 8895d0ca-b9bd-4f8d-bf8f-4ba2f459c264
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 1921d549cb23d68f36a0cce6dde726b9b27a1b56
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d473314a9ab2e9bcdb2c8172cca233f18bb08792
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368240"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845163"
 ---
-# <a name="dsmloadbalancepolicyv2-wmi-class"></a>DSM\_ロード\_残高\_ポリシー\_V2 WMI クラス
+# <a name="dsm_load_balance_policy_v2-wmi-class"></a>DSM\_負荷\_分散\_ポリシー\_V2 WMI クラス
 
 
-MPIO DSM の発行\_ロード\_残高\_ポリシー\_V2 WMI クラスには、GUID を登録して、その実装を処理する DSM が必要です。 MPIO ドライバーは DSM を使用して\_読み込む\_残高\_ポリシー\_V2 WMI クラス、MPIO ディスクに適用される負荷分散ポリシーを識別するためにします。
+MPIO は、DSM\_負荷\_バランス\_ポリシー\_V2 WMI クラスを発行しますが、DSM が GUID を登録し、その実装を処理することを想定しています。 MPIO ドライバーは、DSM\_LOAD\_の負荷分散\_ポリシー\_V2 WMI クラスを使用して、MPIO ディスクに適用されている負荷分散ポリシーを特定します。
 
 ```cpp
 class DSM_Load_Balance_Policy_V2
@@ -83,7 +83,7 @@ class DSM_Load_Balance_Policy_V2
 };
 ```
 
-このクラスの定義が WMI ツール スイートによってコンパイルされると、生成、 [ **DSM\_ロード\_残高\_ポリシー\_V2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mpiodisk/ns-mpiodisk-_dsm_load_balance_policy_v2)データ構造体。 この WMI クラスに関連付けられているメソッドはありません。
+このクラス定義が WMI ツールスイートによってコンパイルされると、 [**DSM\_負荷\_分散\_ポリシー\_V2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mpiodisk/ns-mpiodisk-_dsm_load_balance_policy_v2)データ構造になります。 この WMI クラスに関連付けられているメソッドはありません。
 
  
 

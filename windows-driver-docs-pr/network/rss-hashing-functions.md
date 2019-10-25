@@ -3,28 +3,28 @@ title: RSS ハッシュ関数
 description: RSS ハッシュ関数
 ms.assetid: e7698573-c3d1-4ac6-a985-93cf7fc6e585
 keywords:
-- 受信側スケーリング WDK ネットワーク、ハッシュ
-- RSS の WDK にネットワーク接続、ハッシュ
-- WDK RSS ハッシュ
+- 受信側のスケーリング WDK ネットワーク、ハッシュ
+- RSS WDK ネットワーク、ハッシュ
+- ハッシュ WDK RSS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 737c559674cecfbf629aad04f62ddc76f239369a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c7603cb30b39da21b605d1be6bd5d1cb8a3fa584
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382162"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842006"
 ---
 # <a name="rss-hashing-functions"></a>RSS ハッシュ関数
 
 
 ## <a name="overview"></a>概要
 
-NIC のミニポート ドライバー、RSS ハッシュ関数でを使用して RSS ハッシュ値を計算します。
+NIC またはそのミニポートドライバーは、rss ハッシュ値を計算するために RSS ハッシュ関数を使用します。
 
-ドライバーの重なって Cpu への接続を割り当てるには、ハッシュ型、関数、およびテーブルを設定します。 詳細については、次を参照してください。 [RSS 構成](rss-configuration.md)します。
+それ以降のドライバーは、ハッシュの種類、関数、およびテーブルを設定して、Cpu への接続を割り当てます。 詳細については、「 [RSS の構成](rss-configuration.md)」を参照してください。
 
-ハッシュ関数には、次のいずれかを指定できます。
+ハッシュ関数は、次のいずれかになります。
 
 - **NdisHashFunctionToeplitz**
 - **NdisHashFunctionReserved1**
@@ -32,27 +32,27 @@ NIC のミニポート ドライバー、RSS ハッシュ関数でを使用し�
 - **NdisHashFunctionReserved3**
 
 >[!NOTE]
-> 現時点では、 **NdisHashFunctionToeplitz**は唯一のハッシュ関数をミニポート ドライバーを使用できます。 他のハッシュ関数は、NDIS 用に予約されています。 
+> 現時点では、ミニポートドライバーで使用できる唯一のハッシュ関数は**NdisHashFunctionToeplitz**です。 その他のハッシュ関数は、NDIS 用に予約されています。 
 
-ミニポート ドライバーは、ハッシュ関数と各で使用される値を識別する必要があります[ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)受信したデータの構造体の前に、ドライバーを示します。 詳細については、次を参照してください。 [RSS の受信データのことを示す](indicating-rss-receive-data.md)します。
+ミニポートドライバーは、ドライバーが受信データを示す前に、各[**NET\_BUFFER\_LIST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)構造体で使用されるハッシュ関数と値を識別する必要があります。 詳細については、「 [RSS 受信データの表示](indicating-rss-receive-data.md)」を参照してください。
 
 ## <a name="examples"></a>例
 
-次の 4 つの擬似コード例を計算する方法を示して、 **NdisHashFunctionToeplitz**ハッシュ値。 これらの例は、利用できる 4 つの可能なハッシュ型を表す**NdisHashFunctionToeplitz**します。 ハッシュの種類の詳細については、次を参照してください。 [RSS ハッシュ型](rss-hashing-types.md)します。
+次の4つの擬似コード例は、 **NdisHashFunctionToeplitz**ハッシュ値を計算する方法を示しています。 これらの例は、 **NdisHashFunctionToeplitz**で使用可能な4つのハッシュの種類を表しています。 ハッシュの種類の詳細については、「 [RSS ハッシュの種類](rss-hashing-types.md)」を参照してください。
 
-例を簡素化するには、入力バイト ストリームを処理する汎用的なアルゴリズムが必要です。 バイト ストリームの特定の形式は、4 つの例では後で定義されます。
+この例を簡単にするために、入力バイトストリームを処理する一般化されたアルゴリズムが必要です。 バイトストリームの特定の形式は、後の4つの例で定義されています。
 
-上位のドライバーは、ハッシュ計算で使用するため、ミニポート ドライバーに秘密キー (K) を提供します。 長さ 40 バイト (320 bits) が重要です。 キーの詳細については、次を参照してください。 [RSS 構成](rss-configuration.md)します。
+このドライバーは、ハッシュ計算で使用するシークレットキー (K) をミニポートドライバーに提供します。 キーの長さは40バイト (320 ビット) です。 キーの詳細については、「 [RSS の構成](rss-configuration.md)」を参照してください。
 
-入力を含む配列を指定した*n*バイト、バイト ストリームは次のように定義されています。
+*N*バイトを含む入力配列を指定すると、バイトストリームは次のように定義されます。
 
 ```c++
 input[0] input[1] input[2] ... input[n-1]
 ```
 
-左端のバイトの入力\[0\]、および入力の最上位ビット\[0\]一番左のビットです。 右端のバイトの入力\[n-1\]、および入力の最下位ビット\[n-1\]右端のビットです。
+左端のバイトは\[0\]になり、入力\[0\] の最上位ビットが左端になります。 右端のバイトは\[n-1\]の入力であり、最小ビットの入力\[n-1\] が右端になりますが、です。
 
-前述の定義を指定するには、一般的な入力バイト ストリームを処理するための疑似コードは次のように定義されます。
+上記の定義により、一般的な入力バイトストリームを処理するための擬似コードは次のように定義されます。
 
 ```c++
 ComputeHash(input[], n)
@@ -67,11 +67,11 @@ shift K left 1 bit position
 return result
 ```
 
-擬似コードには、フォームのエントリが含まれています。@n-mします。 これらのエントリは、TCP パケット内の各要素のバイト範囲を特定します。
+擬似コードには @n-mの形式のエントリが含まれています。 これらのエントリは、TCP パケット内の各要素のバイト範囲を識別します。
 
-### <a name="example-hash-calculation-for-ipv4-with-the-tcp-header"></a>Ipv4 の場合、TCP ヘッダーでハッシュ計算の例
+### <a name="example-hash-calculation-for-ipv4-with-the-tcp-header"></a>TCP ヘッダーを使用した IPv4 のハッシュ計算の例
 
-パケットで発生した順序を維持し、バイト配列に、パケットの発信元アドレス、DestinationAddress、SourcePort、および DestinationPort フィールドを連結します。
+パケット内で発生した順序を維持したまま、パケットの SourceAddress、DestinationAddress、Sourceaddress、および Destinationaddress の各フィールドをバイト配列に連結します。
 
 ```c++
 Input[12] = @12-15, @16-19, @20-21, @22-23
@@ -80,16 +80,16 @@ Result = ComputeHash(Input, 12)
 
 ### <a name="example-hash-calculation-for-ipv4-only"></a>IPv4 のみのハッシュ計算の例
 
-バイト配列には、パケットの発信元アドレスと DestinationAddress フィールドを連結します。
+パケットの SourceAddress フィールドと DestinationAddress フィールドを連結して、バイト配列にします。
 
 ```c++
 Input[8] = @12-15, @16-19
 Result = ComputeHash(Input, 8) 
 ```
 
-### <a name="example-hash-calculation-for-ipv6-with-the-tcp-header"></a>TCP ヘッダーと IPv6 のハッシュ計算の例
+### <a name="example-hash-calculation-for-ipv6-with-the-tcp-header"></a>TCP ヘッダーを使用した IPv6 のハッシュ計算の例
 
-パケットに発生した順序を維持し、バイト配列には、パケットの発信元アドレス、DestinationAddress、SourcePort、および DestinationPort フィールドを連結します。
+パケット内で発生した順序を維持したまま、パケットの SourceAddress、DestinationAddress、Sourceaddress、および Destinationaddress の各フィールドをバイト配列に連結します。
 
 ```c++
 Input[36] = @8-23, @24-39, @40-41, @42-43
@@ -98,7 +98,7 @@ Result = ComputeHash(Input, 36)
 
 ### <a name="example-hash-calculation-for-ipv6-only"></a>IPv6 のみのハッシュ計算の例
 
-バイト配列には、パケットの発信元アドレスと DestinationAddress フィールドを連結します。
+パケットの SourceAddress フィールドと DestinationAddress フィールドを連結して、バイト配列にします。
 
 ```c++
 Input[32] = @8-23, @24-39

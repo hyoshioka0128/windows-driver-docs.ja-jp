@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_ビデオ プロシージャ アンプ\_COLORENABLE
-description: KSPROPERTY\_ビデオ プロシージャ アンプ\_COLORENABLE プロパティは、色を使用する設定を制御します。 このプロパティは省略可能です。
+title: KSK プロパティ\_VIDEOPROCAMP\_COLORENABLE
+description: KSK プロパティ\_VIDEOPROCAMP\_COLORENABLE プロパティは、color enable 設定を制御します。 このプロパティは省略可能です。
 ms.assetid: 9e484135-8388-4498-a3bb-99fb3b6dd84e
 keywords:
-- KSPROPERTY_VIDEOPROCAMP_COLORENABLE ストリーミング メディア デバイス
+- KSPROPERTY_VIDEOPROCAMP_COLORENABLE ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bb1ef4997b0096fa3251ee8a8fce3778b07b49fb
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 17217900d8f853c17585a3dd07b6fefdeb384287
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67381957"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844768"
 ---
-# <a name="kspropertyvideoprocampcolorenable"></a>KSPROPERTY\_ビデオ プロシージャ アンプ\_COLORENABLE
+# <a name="ksproperty_videoprocamp_colorenable"></a>KSK プロパティ\_VIDEOPROCAMP\_COLORENABLE
 
 
-KSPROPERTY\_ビデオ プロシージャ アンプ\_COLORENABLE プロパティは、色を使用する設定を制御します。 このプロパティは省略可能です。
+KSK プロパティ\_VIDEOPROCAMP\_COLORENABLE プロパティは、color enable 設定を制御します。 このプロパティは省略可能です。
 
 ## <span id="ddk_ksproperty_videoprocamp_colorenable_ks"></span><span id="DDK_KSPROPERTY_VIDEOPROCAMP_COLORENABLE_KS"></span>
 
@@ -41,7 +41,7 @@ KSPROPERTY\_ビデオ プロシージャ アンプ\_COLORENABLE プロパティ�
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,25 +50,25 @@ KSPROPERTY\_ビデオ プロシージャ アンプ\_COLORENABLE プロパティ�
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>〇</p></td>
+<td><p>[はい]</p></td>
+<td><p>[はい]</p></td>
 <td><p>フィルターまたはノード</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videoprocamp_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOPROCAMP_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videoprocamp_s)"><strong>KSPROPERTY_VIDEOPROCAMP_S</strong> </a>または<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videoprocamp_node_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOPROCAMP_NODE_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videoprocamp_node_s)"> <strong>KSPROPERTY_VIDEOPROCAMP_NODE_S</strong></a></p></td>
-<td><p>LONG</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videoprocamp_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOPROCAMP_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videoprocamp_s)"><strong>KSPROPERTY_VIDEOPROCAMP_S</strong></a>または<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videoprocamp_node_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOPROCAMP_NODE_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videoprocamp_node_s)"> <strong>KSPROPERTY_VIDEOPROCAMP_NODE_S</strong></a></p></td>
+<td><p>長い</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-プロパティの値 (データの操作) は、カメラの色を使用する設定を指定する LONG が。 この値は 0 または 1 のいずれかにあります。 このプロパティの既定値は 1 です。 値 0 は色が無効になっていることを示します。 値 1 は、色が有効になっていることを示します。
+プロパティ値 (操作データ) は、カメラの色の有効化設定を指定する LONG です。 この値には、0または1を指定できます。 このプロパティの既定値は1です。 値0は、その色が無効であることを示します。 値1は、その色が有効になっていることを示します。
 
 <a name="remarks"></a>注釈
 -------
 
-**値**、KSPROPERTY のメンバー\_ビデオ プロシージャ アンプ\_の構造は、色の設定を有効にするを指定します。
+VIDEOPROCAMP\_S 構造体\_KSK プロパティの**値**メンバーは、color enable 設定を指定します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -79,7 +79,7 @@ KSPROPERTY\_ビデオ プロシージャ アンプ\_COLORENABLE プロパティ�
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Ksmedia.h (Ksmedia.h を含む)</td>
+<td>Ksmedia .h (Ksk を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -87,9 +87,9 @@ KSPROPERTY\_ビデオ プロシージャ アンプ\_COLORENABLE プロパティ�
 ## <a name="see-also"></a>関連項目
 
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
-[**KSPROPERTY\_ビデオ プロシージャ アンプ\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videoprocamp_s)
+[**KSK プロパティ\_VIDEOPROCAMP\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videoprocamp_s)
 
  
 

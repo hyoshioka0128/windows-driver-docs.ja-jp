@@ -1,6 +1,6 @@
 ---
 title: NFC のアーキテクチャ
-description: Windows 上の NFC スタックの大まかなアーキテクチャの図は、後でさらに表示されます。 NFC UMDF ドライバーでは、この仕様で説明されている Ddi を実装します。
+description: Windows での NFC スタックのアーキテクチャの概要図を以下に示します。 NFC UMDF ドライバーは、この仕様で説明されている DDIs を実装します。
 ms.assetid: 0FA2BE92-05E1-40D1-AD1D-AE9ADF425E67
 keywords:
 - NFC
@@ -10,28 +10,28 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 382be44e5d0b65bb3235b1d2eb3fd2efa49a12c2
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6e3ca359cba07b01e056dffe1f2670872be9eb5b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383580"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841696"
 ---
 # <a name="nfc-architecture"></a>NFC のアーキテクチャ
 
 
-Windows 上の NFC スタックの大まかなアーキテクチャの図は、後でさらに表示されます。 NFC UMDF ドライバーでは、この仕様で説明されている Ddi を実装します。
+Windows での NFC スタックのアーキテクチャの概要図を以下に示します。 NFC UMDF ドライバーは、この仕様で説明されている DDIs を実装します。
 
--   [フィールドの近接 DDI をほぼ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)– 近接メッセージを渡す近接メッセージの交換をピア ツー ピアとの受信など、NFC タグからデータを書き込む提供パブリッシュ/サブスクライブ機能。
--   [要素 DDI をセキュリティで保護された](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)– NFC コント ローラーに接続されているセキュリティで保護された要素 (SEs) を列挙するためにアクセスを提供します、により、セキュリティで保護されたリーダーの外部に公開される要素および NFCC とアプレットから上位の層へのイベントの転送を許可しても構成および NFC チップ リッスン モードのルーティング構成の管理へのアクセスを提供します。 アクセスも提供 ISO/IEC を送受信するデバイスをリモートにリッスン モードで 7816 4 Apdu します。
--   [スマート カード DDI](https://docs.microsoft.com/previous-versions/dn905601(v=vs.85)) – 出発/カード到着をリッスンできるようにスマート カードと対話するための低レベル アクセスを提供します、により、スマート カードへの転送を要求でき、スマート カードの情報を取得します。
--   [無線管理 DDI](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index) – 近接 (P2P および読み取り/書き込みモード) とセキュリティで保護された要素 (カードのエミュレーション モード) のオプションの状態を設定するコントロール パネル (CPL) アプリケーションへのアクセスを提供します。
+-   [近距離無線近接性 DDI](https://docs.microsoft.com/windows-hardware/drivers/ddi/index) –近接メッセージ受け渡し用の発行/サブスクライブ機能を提供します。これには、近接メッセージのピアツーピア交換、NFC タグからのデータの受信と書き込みが含まれます。
+-   [Secure ELEMENT DDI](https://docs.microsoft.com/windows-hardware/drivers/ddi/index) – NFC コントローラーに接続されているセキュリティで保護された要素 (SEs) を列挙するためのアクセスを提供し、セキュリティで保護された要素を外部閲覧者に公開し、nfcc とアプレットから上位のレイヤーにイベントを転送できるようにします。また、NFC チップのリッスンモードルーティング構成を構成および管理するためのアクセス。 また、リッスンモードで ISO/IEC 7816-4 APDUs を受信し、リモートデバイスに送信するためのアクセスも提供します。
+-   [スマートカード DDI](https://docs.microsoft.com/previous-versions/dn905601(v=vs.85)) –カードの到着や出発をリッスンする機能、スマートカードへの要求の送信、スマートカード情報の取得を許可するなど、スマートカードと対話するための低レベルのアクセスを提供します。
+-   [ラジオ管理 DDI](https://docs.microsoft.com/windows-hardware/drivers/ddi/index) –コントロールパネル (CPL) アプリケーションにアクセスして、近接 (P2P および reader/writer モード) および secure 要素 (カードエミュレーションモード) の無線状態を設定します。
 
-![アプリケーションから最下部から上、ユーザー モード サービス、UMDF ドライバー、カーネル モード、ハードウェアの NFC スタックを示すフローチャートです。](images/nfcarchitecture.png)
+![一番上にあるアプリケーションから開始される NFC スタックと、ユーザーモードサービス、UMDF ドライバー、カーネルモード、ハードウェア下部のハードウェアを説明するフローチャート。](images/nfcarchitecture.png)
 
  
 
  
 ## <a name="related-topics"></a>関連トピック
- [NFC デバイス ドライバー インターフェイス (DDI) リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
+ [NFC デバイス ドライバー インターフェイス (DDI) リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)  
  

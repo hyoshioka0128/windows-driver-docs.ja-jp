@@ -6,12 +6,12 @@ keywords:
 - 送信操作 WDK ネイティブ 802.11 IHV 拡張 DLL
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e6c51974297a278f64d039ddbe29eedd60df2553
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 16311a14c0c3a12a2cfc30ad1e8d6c43fdd20c0e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67373862"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841982"
 ---
 # <a name="send-operations"></a>送信操作
 
@@ -20,19 +20,19 @@ ms.locfileid: "67373862"
 
  
 
-呼び出すことによって開始された後の関連付け操作を実行するときに[ *Dot11ExtIhvPerformPostAssociate*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_perform_post_associate)、IHV 拡張機能の DLL は、ワイヤレス LAN (WLAN) アダプターを介してパケットを送信できます。 詳細については、後の関連付け操作は、次を参照してください。[後関連付け操作](post-association-operations.md)します。
+[*Dot11ExtIhvPerformPostAssociate*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_perform_post_associate)の呼び出しによって開始された関連付け後の操作を実行すると、IHV 拡張 DLL は、ワイヤレス LAN (WLAN) アダプターを介してパケットを送信できます。 関連付け後の操作の詳細については、「[関連付け後の操作](post-association-operations.md)」を参照してください。
 
-通常、DLL のセキュリティにパケットを送信データ ポートの認証のためのアクセス ポイント (AP) を介して有効になっているアルゴリズムを使用して[ **Dot11ExtSetAuthAlgorithm**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11ext_set_auth_algorithm)します。 拡張 DLL の IHV 呼び出し**Dot11ExtSetAuthAlgorithm**関連付け前の操作中にします。 この操作の詳細については、次を参照してください。[関連付け前操作](pre-association-operations.md)します。
+通常、DLL は、 [**Dot11ExtSetAuthAlgorithm**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11ext_set_auth_algorithm)によって有効になっているアルゴリズムを使用して、データポート認証のためにセキュリティパケットをアクセスポイント (AP) に送信します。 IHV 拡張 DLL は、関連付け前の操作中に**Dot11ExtSetAuthAlgorithm**を呼び出します。 この操作の詳細については、「[事前関連付け操作](pre-association-operations.md)」を参照してください。
 
-**注**  Windows Vista の IHV 拡張機能の DLL は、基本的なサービスのインフラストラクチャ (BSS) ネットワークの設定のみをサポートします。
+**注**  Windows Vista では、IHV 拡張 DLL は、インフラストラクチャの基本サービスセット (BSS) ネットワークのみをサポートしています。
 
  
 
-パケットを送信するときに、IHV 拡張 DLL は次のガイドラインに従う必要があります。
+パケットを送信する場合、IHV 拡張 DLL は次のガイドラインに従う必要があります。
 
--   IHV 拡張機能の DLL は、802.11 メディア アクセス制御 (MAC) のヘッダー、LLC (必要に応じて) カプセル化、およびペイロード データを含む、完全な 802.11 データ パケットのメモリを割り当てる必要があります。
+-   IHV 拡張 DLL は、802.11 データパケット全体のメモリを割り当てる必要があります。これには、802.11 メディアアクセスコントロール (MAC) ヘッダー、必要に応じての接続のカプセル化、およびペイロードデータが含まれます。
 
-    次の表では、フィールドと 802.11 MAC ヘッダー内のサブフィールドを IHV 拡張機能の DLL または WLAN アダプターによって設定について説明します。
+    次の表では、802.11 MAC ヘッダー内のフィールドとサブフィールドを、IHV 拡張 DLL または WLAN アダプターによって設定されています。
 
     <table>
     <colgroup>
@@ -44,111 +44,111 @@ ms.locfileid: "67373862"
     <thead>
     <tr class="header">
     <th align="left">フィールド名</th>
-    <th align="left">サブフィールドの名前</th>
-    <th align="left">拡張 DLL の IHV によって設定します。</th>
-    <th align="left">WLAN アダプターによって設定します。</th>
+    <th align="left">サブフィールド名</th>
+    <th align="left">IHV 拡張 DLL による設定</th>
+    <th align="left">WLAN アダプターによる設定</th>
     </tr>
     </thead>
     <tbody>
     <tr class="odd">
-    <td align="left"><p>Frame コントロール</p></td>
+    <td align="left"><p>フレームコントロール</p></td>
     <td align="left"><p>プロトコルのバージョン</p></td>
     <td align="left"><p>X</p></td>
     <td align="left"></td>
     </tr>
     <tr class="even">
-    <td align="left"><p>Frame コントロール</p></td>
-    <td align="left"><p>型</p></td>
+    <td align="left"><p>フレームコントロール</p></td>
+    <td align="left"><p>タスクバーの検索ボックスに</p></td>
     <td align="left"><p>X</p></td>
     <td align="left"></td>
     </tr>
     <tr class="odd">
-    <td align="left"><p>Frame コントロール</p></td>
-    <td align="left"><p>サブタイプ</p></td>
+    <td align="left"><p>フレームコントロール</p></td>
+    <td align="left"><p>内部</p></td>
     <td align="left"><p>X</p></td>
     <td align="left"></td>
     </tr>
     <tr class="even">
-    <td align="left"><p>Frame コントロール</p></td>
+    <td align="left"><p>フレームコントロール</p></td>
     <td align="left"><p>DS に</p></td>
     <td align="left"><p>X</p></td>
     <td align="left"></td>
     </tr>
     <tr class="odd">
-    <td align="left"><p>Frame コントロール</p></td>
+    <td align="left"><p>フレームコントロール</p></td>
     <td align="left"><p>DS から</p></td>
     <td align="left"><p>X</p></td>
     <td align="left"></td>
     </tr>
     <tr class="even">
-    <td align="left"><p>Frame コントロール</p></td>
-    <td align="left"><p>複数のフラグメント</p></td>
+    <td align="left"><p>フレームコントロール</p></td>
+    <td align="left"><p>その他のフラグメント</p></td>
     <td align="left"></td>
     <td align="left"><p>X</p></td>
     </tr>
     <tr class="odd">
-    <td align="left"><p>Frame コントロール</p></td>
+    <td align="left"><p>フレームコントロール</p></td>
     <td align="left"><p>再試行</p></td>
     <td align="left"></td>
     <td align="left"><p>X</p></td>
     </tr>
     <tr class="even">
-    <td align="left"><p>Frame コントロール</p></td>
-    <td align="left"><p>電源管理</p></td>
+    <td align="left"><p>フレームコントロール</p></td>
+    <td align="left"><p>Pwr の場合</p></td>
     <td align="left"></td>
     <td align="left"><p>X</p></td>
     </tr>
     <tr class="odd">
-    <td align="left"><p>Frame コントロール</p></td>
-    <td align="left"><p>多くのデータ</p></td>
+    <td align="left"><p>フレームコントロール</p></td>
+    <td align="left"><p>その他のデータ</p></td>
     <td align="left"></td>
     <td align="left"><p>X</p></td>
     </tr>
     <tr class="even">
-    <td align="left"><p>Frame コントロール</p></td>
+    <td align="left"><p>フレームコントロール</p></td>
     <td align="left"><p>保護されたフレーム</p></td>
     <td align="left"></td>
     <td align="left"><p>X</p></td>
     </tr>
     <tr class="odd">
-    <td align="left"><p>Frame コントロール</p></td>
+    <td align="left"><p>フレームコントロール</p></td>
     <td align="left"><p>[オーダー]</p></td>
     <td align="left"><p>X</p></td>
     <td align="left"></td>
     </tr>
     <tr class="even">
-    <td align="left"><p>実行時間と ID</p></td>
+    <td align="left"><p>期間/ID</p></td>
     <td align="left"></td>
     <td align="left"></td>
     <td align="left"><p>X</p></td>
     </tr>
     <tr class="odd">
-    <td align="left"><p>住所 1</p></td>
+    <td align="left"><p>アドレス1</p></td>
     <td align="left"></td>
     <td align="left"><p>X</p></td>
     <td align="left"></td>
     </tr>
     <tr class="even">
-    <td align="left"><p>住所 2</p></td>
+    <td align="left"><p>アドレス2</p></td>
     <td align="left"></td>
     <td align="left"><p>X</p></td>
     <td align="left"></td>
     </tr>
     <tr class="odd">
-    <td align="left"><p>住所 3</p></td>
+    <td align="left"><p>アドレス3</p></td>
     <td align="left"></td>
     <td align="left"><p>X</p></td>
     <td align="left"></td>
     </tr>
     <tr class="even">
-    <td align="left"><p>シーケンス コントロール</p></td>
-    <td align="left"><p>フラグメントの数</p></td>
+    <td align="left"><p>シーケンスコントロール</p></td>
+    <td align="left"><p>フラグメント番号</p></td>
     <td align="left"></td>
     <td align="left"><p>X</p></td>
     </tr>
     <tr class="odd">
-    <td align="left"><p>シーケンス コントロール</p></td>
-    <td align="left"><p>Sequence Number</p></td>
+    <td align="left"><p>シーケンスコントロール</p></td>
+    <td align="left"><p>シーケンス番号</p></td>
     <td align="left"></td>
     <td align="left"><p>X</p></td>
     </tr>
@@ -157,16 +157,16 @@ ms.locfileid: "67373862"
 
      
 
--   IHV 拡張 DLL の呼び出し、 [ **Dot11ExtSendPacket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11ext_send_packet)ワイヤレス LAN (WLAN) アダプターを介してパケットを送信する関数。 DLL は、関数のパケットを識別する一意のハンドル値を渡します*hSendCompletion*パラメーター。 通常、DLL がパケットを含む、割り当てられたバッファーのアドレスを渡します、 *hSendCompletion*パラメーター。
-    **注**  呼び出しを通じて、ユニキャスト パケットのみを送信できる、 [ **Dot11ExtSendPacket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11ext_send_packet)関数。
+-   IHV 拡張 DLL は、 [**Dot11ExtSendPacket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11ext_send_packet)関数を呼び出して、ワイヤレス LAN (WLAN) アダプター経由でパケットを送信します。 DLL は、パケットを識別する一意のハンドル値を関数の*Hsendcompletion*パラメーターに渡します。 通常、DLL は、パケットを含む割り当てられたバッファーのアドレスを*Hsendcompletion*パラメーターに渡します。
+    [**Dot11ExtSendPacket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11ext_send_packet)関数への呼び出しを通じて送信できるのは、ユニキャストパケットのみであることに**注意**してください  。
 
      
 
--   オペレーティング システムを呼び出す WLAN アダプターには、パケットが送信、ときに、 [ *Dot11ExtIhvSendPacketCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_send_packet_completion)関数。 オペレーティング システムは、パケットのハンドル値を渡します、 *hSendCompletion*関数のパラメーター。 このハンドルの値は呼び出しで IHV 拡張 DLL で使用される同じ値になります[ **Dot11ExtSendPacket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11ext_send_packet)します。
+-   WLAN アダプターがパケットを送信すると、オペレーティングシステムは[*Dot11ExtIhvSendPacketCompletion*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_send_packet_completion)関数を呼び出します。 オペレーティングシステムは、パケットのハンドル値を関数の*Hsendcompletion*パラメーターに渡します。 このハンドル値は、 [**Dot11ExtSendPacket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11ext_send_packet)の呼び出しで IHV 拡張 DLL によって使用される値と同じになります。
 
-    ときに[ *Dot11ExtIhvSendPacketCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_send_packet_completion)が呼び出されると、IHV 拡張機能の DLL は、パケットを割り当てられたメモリを解放する必要があります。
+    [*Dot11ExtIhvSendPacketCompletion*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_send_packet_completion)が呼び出されると、IHV 拡張 DLL はパケットに割り当てられたメモリを解放する必要があります。
 
-    **注**  IHV 拡張 DLL を経由して送信パケットに割り当てられたリソースを解放する必要があります[ **Dot11ExtSendPacket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11ext_send_packet)に対応する呼び出しまで[*Dot11ExtIhvSendPacketCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_send_packet_completion)されます。
+    [**Dot11ExtSendPacket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11ext_send_packet)を介して送信されたパケットに割り当てられたリソースは、 [*Dot11ExtIhvSendPacketCompletion*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_send_packet_completion)への対応する呼び出しが行われるまで解放されない  **ことに注意**してください。
 
      
 

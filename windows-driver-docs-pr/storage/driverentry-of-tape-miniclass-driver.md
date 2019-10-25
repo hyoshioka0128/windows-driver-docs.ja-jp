@@ -1,9 +1,9 @@
 ---
-title: テープ Miniclass ドライバーの DriverEntry ルーチン
-description: DriverEntry では、テープ miniclass ドライバーを初期化します。 このルーチンが必要です。
+title: Tape Miniclass Driver ルーチンの DriverEntry
+description: DriverEntry は、tape miniclass ドライバーを初期化します。 このルーチンは必須です。
 ms.assetid: dc082f31-5ec5-491e-a347-8f8e485c042b
 keywords:
-- DriverEntry ルーチン ストレージ デバイス
+- DriverEntry のルーチンストレージデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - DllExport
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 1407c3fc2fb9035754ae0b72659b3e94ac9bab4a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 034bd2fb6c439d722a34c0fa8fad4df60471074d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368260"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845168"
 ---
-# <a name="driverentry-of-tape-miniclass-driver-routine"></a>テープ Miniclass ドライバーの DriverEntry ルーチン
+# <a name="driverentry-of-tape-miniclass-driver-routine"></a>Tape Miniclass Driver ルーチンの DriverEntry
 
 
-**DriverEntry**テープ miniclass ドライバーを初期化します。 このルーチンが必要です。
+**Driverentry**は、tape miniclass ドライバーを初期化します。 このルーチンは必須です。
 
 <a name="syntax"></a>構文
 ------
@@ -39,29 +39,29 @@ ULONG DriverEntry(
 <a name="parameters"></a>パラメーター
 ----------
 
-*[引数 1]* \[で\]  
-テープの miniclass ドライバーからに渡されるドライバー コンテキストへのポインター [ **TapeClassInitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/minitape/nf-minitape-tapeclassinitialize)します。 コンテキスト情報の形式は、OS 固有で移植可能なテープ miniclass ドライバーによって解釈する必要があります。
+\] の*引数 1* \[  
+テープ miniclass ドライバーが[**TapeClassInitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/minitape/nf-minitape-tapeclassinitialize)に渡すドライバーコンテキストへのポインター。 コンテキスト情報の形式は OS 固有であり、ポータブルテープ miniclass ドライバーでは解釈できません。
 
-*[引数 2]* \[で\]  
-テープの miniclass ドライバーからに渡される 2 つ目のコンテキスト構造へのポインター **TapeClassInitialize**します。 コンテキスト情報の形式は、OS 固有で移植可能なテープ miniclass ドライバーによって解釈する必要があります。
+\] の*引数 2* \[  
+Tape miniclass ドライバーが**TapeClassInitialize**に渡す2番目のコンテキスト構造へのポインター。 コンテキスト情報の形式は OS 固有であり、ポータブルテープ miniclass ドライバーでは解釈できません。
 
 <a name="return-value"></a>戻り値
 ------------
 
-**DriverEntry**呼び出しによって返される値を返します**TapeClassInitialize**します。
+**Driverentry**は、 **TapeClassInitialize**への呼び出しによって返された値を返します。
 
 <a name="remarks"></a>注釈
 -------
 
-**DriverEntry**テープ miniclass ドライバーの最初のエントリ ポイントです。
+**Driverentry**は、tape miniclass ドライバーの最初のエントリポイントです。
 
-**TapeClassInitialize** 、必要なドライバーの初期化のテープ miniclass ドライバーの主要なタスクのほとんどを実行**DriverEntry**ルーチンは、テープの入力を割り当てたり\_INIT\_データ\_EX ドライバー固有の定数とエントリ ポイントを含む構造体。
+**TapeClassInitialize**は、必要なドライバーの初期化の大部分を実行するため、tape miniclass ドライバーの**driverentry**ルーチンの主なタスクは、次を使用して、テープ\_INIT\_DATA\_EX 構造体に割り当てて入力することです。ドライバー固有の定数とエントリポイント。
 
-**DriverEntry**最初に呼び出す必要があります[ **TapeClassZeroMemory** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/minitape/nf-minitape-tapeclasszeromemory)テープを消去する\_INIT\_データ\_EX 構造体。 **DriverEntry**構造内の値とポインターを設定します。
+**Driverentry**では、最初に[**TapeClassZeroMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/minitape/nf-minitape-tapeclasszeromemory)を呼び出して、テープ\_INIT\_DATA\_EX 構造体をクリアする必要があります。 **Driverentry**は、構造体の値とポインターを設定します。
 
-**DriverEntry**呼び出し**TapeClassInitialize**し、テープのアドレスを渡します\_INIT\_データ\_EX と 2 つのポインターに渡された**DriverEntry**( *[引数 1]* と *[引数 2]* )。 **TapeClassInitialize**ドライバーの初期化が完了して、テープ miniclass ドライバーの状態を返します**DriverEntry**ルーチン。 **DriverEntry**から受信した状態を返します**TapeClassInitialize**します。
+**Driverentry**は**TapeClassInitialize**を呼び出し、\_EX\_DATA EX と**Driverentry** (*引数 1*および*引数 2*) に渡された2つのポインターを\_します。 **TapeClassInitialize**はドライバーの初期化を完了し、status を tape miniclass ドライバーの**driverentry**ルーチンに返します。 **Driverentry**は、 **TapeClassInitialize**から受信した状態を返します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -76,29 +76,29 @@ ULONG DriverEntry(
 </tr>
 <tr class="even">
 <td align="left"><p>Header</p></td>
-<td align="left">Minitape.h</td>
+<td align="left">Minitape</td>
 </tr>
 <tr class="odd">
 <td align="left"><p>Library</p></td>
-<td align="left">NtosKrnl.lib</td>
+<td align="left">Ntoskrnl.exe</td>
 </tr>
 <tr class="even">
 <td align="left"><p>DLL</p></td>
-<td align="left">NtosKrnl.exe</td>
+<td align="left">Ntoskrnl.exe</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[**テープ\_INIT\_データ\_例**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/minitape/ns-minitape-_tape_init_data_ex)
+[**TAPE\_INIT\_DATA\_EX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/minitape/ns-minitape-_tape_init_data_ex)
 
-[**TapeClassInitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/minitape/nf-minitape-tapeclassinitialize)
+[**TapeClassInitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/minitape/nf-minitape-tapeclassinitialize)
 
-[**TapeClassZeroMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/minitape/nf-minitape-tapeclasszeromemory)
+[**TapeClassZeroMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/minitape/nf-minitape-tapeclasszeromemory)
 
-[**テープ\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/minitape/ne-minitape-_tape_status)
+[**テープの\_の状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/minitape/ne-minitape-_tape_status)
 
  
 

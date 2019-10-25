@@ -8,12 +8,12 @@ keywords:
 - ポートドライバー WDK ストレージ
 ms.date: 10/08/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 83a1a645d650a588e223f4e885dadc227de4add2
-ms.sourcegitcommit: 0610366df5de756bf8aa6bfc631eba5e3cd84578
+ms.openlocfilehash: 509f43e2d823626664ee956eb71cecbeb4591ba1
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72262175"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844463"
 ---
 # <a name="storage-port-drivers"></a>記憶域ポート ドライバー
 
@@ -27,7 +27,7 @@ Microsoft Windows には、システムによって提供される3つのスト�
 
 Storport ドライバーは、SCSI ポートよりも効率的で高パフォーマンスのドライバーです。 そのため、可能な場合は、Storport ドライバーで動作するミニポートドライバーを開発する必要があります。 特に、ホストベースの RAID やファイバーチャネルアダプターなど、高パフォーマンスのデバイスで Storport を使用することが重要です。 Storport は、プラグアンドプレイ (PnP) をサポートしていない、またはシステム DMA を使用する必要があるアダプターまたはデバイスでは使用できません。 Storport ドライバーの使用に関する制限の詳細な一覧については、「[アダプターで Storport を使用するための要件](requirements-for-using-storport-with-an-adapter.md)」を参照してください。
 
-ATA ポートドライバーは、ポートドライバーが記憶域クラスドライバーなどの上位レベルのドライバーと通信するために使用する、SCSI ベースのプロトコルから ATA ミニポートドライバーをシールドします。 たとえば、SCSI ポートまたは Storport に接続されているミニポートドライバーは、SCSI sense データをポートドライバーに提供する必要があります。 これは、ATA ミニポートドライバーには必要ありません。 Ata ポートドライバーは、ata コマンドを使用して ata ミニポートドライバーから必要なデータを収集し、そのデータを SCSI sense データ形式に準拠するように整理して、SCSI sense データであるかのように上位レベルのドライバーにデータを渡します。 また、ATA ポートドライバーは、上位レベルのドライバーから受信した各[SCSI_REQUEST_BLOCK](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/ns-srb-_scsi_request_block)を[IDE_REQUEST_BLOCK](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/irb/ns-irb-_ide_request_block)という ata ベースの同等のものに変換します。
+ATA ポートドライバーは、ポートドライバーが記憶域クラスドライバーなどの上位レベルのドライバーと通信するために使用する、SCSI ベースのプロトコルから ATA ミニポートドライバーをシールドします。 たとえば、SCSI ポートまたは Storport に接続されているミニポートドライバーは、SCSI sense データをポートドライバーに提供する必要があります。 これは、ATA ミニポートドライバーには必要ありません。 Ata ポートドライバーは、ata コマンドを使用して ata ミニポートドライバーから必要なデータを収集し、そのデータを SCSI sense データ形式に準拠するように整理して、SCSI sense データであるかのように上位レベルのドライバーにデータを渡します。 また、ATA ポートドライバーは、上位レベルのドライバーから受信した各[SCSI_REQUEST_BLOCK](https://docs.microsoft.com/windows-hardware/drivers/ddi/srb/ns-srb-_scsi_request_block)を[IDE_REQUEST_BLOCK](https://docs.microsoft.com/windows-hardware/drivers/ddi/irb/ns-irb-_ide_request_block)という ata ベースの同等のものに変換します。
 
 各ポートドライバーは、ベンダーが提供する一連の記憶域ミニポートドライバーと通信し、ミニポートドライバーが呼び出す一連のサポートルーチンを提供します。 各ポートドライバーは、すべての記憶域ミニポートドライバーが実装する必要がある標準のルーチンセットを呼び出すことによって、ミニポートドライバーと通信します。 SCSI ポートドライバー、Storport ドライバー、および ATA ポートドライバーによって呼び出されるミニポートドライバールーチンは、互いによく似ています。 ポートドライバーのサポートルーチンとミニポートドライバーのルーチンの一覧については、次のセクションを参照してください。
 
